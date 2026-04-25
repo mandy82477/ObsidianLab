@@ -1,0 +1,21 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "News Aggregator",
+      "runtimeExecutable": "python",
+      "runtimeArgs": ["-m", "news_aggregator.main"],
+      "cwd": "C:/Users/Mandy/CLAUDE_OBSIDIAN/ObsidianLab",
+      "port": 0,
+      "note": "One-shot batch job — fetches news, generates digest, commits to git. No HTTP server."
+    },
+    {
+      "name": "Claude Usage Tray",
+      "runtimeExecutable": "pythonw",
+      "runtimeArgs": ["claude_usage_tray.py"],
+      "cwd": "C:/Users/Mandy/CLAUDE_OBSIDIAN/ObsidianLab/claude_tray",
+      "port": 0,
+      "note": "System tray GUI app — reads ~/.claude usage data. No HTTP server."
+    }
+  ]
+}

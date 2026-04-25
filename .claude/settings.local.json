@@ -1,0 +1,24 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(cd /tmp)",
+      "Bash(python3 -c \":*)",
+      "Bash(py --version)",
+      "Bash(python -c \"import pdfplumber; print\\(''ok''\\)\")",
+      "Bash(python -m pip install pdfplumber -q)",
+      "Bash(python:*)",
+      "Bash(pip show:*)",
+      "Bash(pip install:*)",
+      "Bash(pythonw claude_usage_tray.py)",
+      "Bash(taskkill /F /IM pythonw.exe)",
+      "Bash(tasklist)",
+      "Bash(wmic process:*)",
+      "Bash(powershell -Command \"Stop-Process -Name pythonw -Force\")",
+      "Bash(powershell -Command \"Stop-Process -Name pythonw -Force -ErrorAction SilentlyContinue\")",
+      "Bash(powershell -Command \"Stop-Process -Name python -Force -ErrorAction SilentlyContinue\")",
+      "Skill(claude-api)",
+      "Skill(claude-api:*)",
+      "Bash(where claude *)"
+    ]
+  }
+}
