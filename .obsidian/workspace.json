@@ -152,13 +152,21 @@
             "state": {
               "type": "outline",
               "state": {
+<<<<<<< HEAD
                 "file": "Obsidian x Git 團隊協作與視覺化插件配置指南.md",
+=======
+                "file": "Hello.md",
+>>>>>>> cffe13358295da73136b5ec8d504ac606a74a36b
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
+<<<<<<< HEAD
               "title": "Obsidian x Git 團隊協作與視覺化插件配置指南 的大綱"
+=======
+              "title": "Hello 的大綱"
+>>>>>>> cffe13358295da73136b5ec8d504ac606a74a36b
             }
           },
           {
@@ -172,6 +180,19 @@
             }
           },
           {
+<<<<<<< HEAD
+=======
+            "id": "182c6a7375ce4029",
+            "type": "leaf",
+            "state": {
+              "type": "copilot-chat-view",
+              "state": {},
+              "icon": "message-square",
+              "title": "Copilot"
+            }
+          },
+          {
+>>>>>>> cffe13358295da73136b5ec8d504ac606a74a36b
             "id": "de3cb9f04acf2c0c",
             "type": "leaf",
             "state": {
@@ -208,11 +229,16 @@
       "command-palette:開啟命令面板": false,
       "bases:建立新的 base": false,
       "table-editor-obsidian:Advanced Tables Toolbar": false,
+<<<<<<< HEAD
+=======
+      "copilot:Open Copilot Chat": false,
+>>>>>>> cffe13358295da73136b5ec8d504ac606a74a36b
       "obsidian-git:Open Git source control": false,
       "mermaid-tools:Open Mermaid Toolbar": false,
       "templater-obsidian:Templater": false
     }
   },
+<<<<<<< HEAD
   "active": "f34f4c97b3bc2cf1",
   "lastOpenFiles": [
     "ObsidianLab",
@@ -254,5 +280,24 @@
     "未命名.canvas",
     "Pasted image 20260424225801.png",
     "Pasted image 20260424224018.png"
+=======
+  "active": "7166c27900f06c42",
+  "lastOpenFiles": [
+    "未命名.canvas",
+    "Hello.md",
+    "Pasted image 20260424225801.png",
+    "Pasted image 20260424224018.png",
+    "歡迎.md",
+    "未命名 1.base",
+    "Hello.md.md",
+    "Test.mmd.md",
+    "未命名.base",
+    "未命名.md",
+    "未命名 1",
+    "未命名",
+    "copilot/copilot-conversations/Why_I_cannot_標題_is_not_collapible@20260424_215938.md",
+    "copilot/copilot-conversations",
+    "copilot"
+>>>>>>> cffe13358295da73136b5ec8d504ac606a74a36b
   ]
 }
