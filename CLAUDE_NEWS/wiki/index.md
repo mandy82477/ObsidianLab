@@ -2,7 +2,7 @@
 
 LLM 查詢此 wiki 時，**先讀這個檔案**找相關頁面，再讀具體頁面取得詳細資訊。
 
-**最後更新：** 2026-04-25 | **頁面數：** 9
+**最後更新：** 2026-04-26 | **頁面數：** 11
 
 ---
 
@@ -19,7 +19,8 @@ LLM 查詢此 wiki 時，**先讀這個檔案**找相關頁面，再讀具體頁
 | [[entities/claude-code]] | product | active | Claude Code CLI 主頁：功能、已知問題、社群工具 |
 | [[entities/opus-4-7]] | model | active（爭議）| Opus 4.7 發布細節、思考深度爭議、cache 問題 |
 | [[entities/pricing]] | policy | 持續調整 | 訂閱方案、近期政策變動、token 成本注意事項 |
-| [[entities/mythos]] | model | 限制存取 | 高能力安全模型，已遭駭客嘗試存取 |
+| [[entities/mythos]] | model | 限制存取 | 高能力安全模型，七週發現 2,000+ 漏洞 |
+| [[entities/bugcrawl]] | feature | 測試中 | Anthropic 測試中的 Claude Code 漏洞偵測工具 |
 
 ---
 
@@ -30,6 +31,7 @@ LLM 查詢此 wiki 時，**先讀這個檔案**找相關頁面，再讀具體頁
 | [[topics/code-quality-decline]] | monitoring | Claude Code 效能退步事件，Anthropic 已承認工程疏失 |
 | [[topics/google-investment]] | resolved | Google 投資 400 億美元，含循環算力交易 |
 | [[topics/competitor-landscape]] | ongoing | Google 祕密開發競品，Sergey Brin 主導 |
+| [[topics/community-tech-patterns]] | ongoing | 社群技術應用趨勢：multi-agent、skills 設計、工具生態 |
 
 ---
 
