@@ -1,38 +1,153 @@
-# Claude Code News Wiki — Schema
+# CLAUDE.md
 
-本文件定義 wiki 的結構、慣例與操作流程，是 LLM 維護此知識庫的核心指引。
+This file provides guidance to Claude Code (claude.ai/code) when working with code in this repository.
 
 ---
 
-## 目錄結構
+## 專案概述
+
+這個 repo 有兩個獨立部分：
+
+1. **`news_aggregator/`** — Python 爬蟲，每日自動抓取 Claude / Anthropic 相關新聞，寫出 `news/YYYY-MM-DD.md`
+2. **`wiki/`** — LLM 維護的知識庫，從日報萃取並整理成結構化頁面
+
+---
+
+## 快速上手（首次設定）
+
+### 步驟 1：安裝 Python 依賴
+
+```bash
+pip install -r requirements_news.txt
+```
+
+### 步驟 2：建立 `.env` 設定 API 金鑰
+
+在 repo 根目錄建立 `.env` 檔案：
 
 ```
-ObsidianLab/
-├── news/YYYY-MM-DD.md      ← 每日日報（不可修改，唯讀來源）
-├── wiki/
-│   ├── index.md            ← 所有 wiki 頁的目錄（查詢入口）
-│   ├── log.md              ← Append-only 時序紀錄
-│   ├── overview.md         ← 當前局勢綜覽（每週更新）
-│   ├── entities/           ← 實體頁：模型、功能、人物、產品
-│   └── topics/             ← 進行中議題：跨日追蹤的事件或趨勢
-└── CLAUDE.md               ← 本文件（Schema）
+ANTHROPIC_API_KEY=sk-ant-...   # 必要：用於 LLM 過濾與摘要
+GITHUB_TOKEN=ghp_...           # 建議：提高 GitHub API rate limit
+REDDIT_CLIENT_ID=...           # 可選：啟用 Reddit 來源
+REDDIT_CLIENT_SECRET=...
+```
+
+`ANTHROPIC_API_KEY` 若未設定，會自動退回使用本機 `claude` CLI（需登入 Claude.ai Pro）。
+
+### 步驟 3：手動執行一次確認正常
+
+```bash
+python -m news_aggregator.main
+```
+
+執行完成後應看到 `news/YYYY-MM-DD.md` 被寫出，並自動 git commit & push。
+
+### 步驟 4：設定 Windows 工作排程器（自動化）
+
+用 Windows 工作排程器每天定時執行 `run_news.bat`，建議時間為每日 08:00。
+執行日誌會寫到 `logs/task_scheduler.log`，聚合器本身的日誌在 `logs/news_aggregator.log`。
+
+---
+
+## 每日操作流程
+
+```
+每天
+  ├─ [自動] run_news.bat 執行 → 產生 news/YYYY-MM-DD.md + git push
+  └─ [手動] 告訴 Claude：「請根據今天的日報執行 ingest，更新 wiki」
+              → Claude 更新 wiki/entities/、wiki/topics/、wiki/log.md、wiki/index.md
+
+每週
+  └─ [手動] 告訴 Claude：「執行 wiki lint 並更新 overview.md」
+```
+
+### 每日 Wiki Ingest 指令範例
+
+```
+請根據 news/2026-04-26.md 執行每日 ingest，更新 wiki。
+```
+
+### 每週 Wiki Lint 指令範例
+
+```
+請執行 wiki lint：找出矛盾頁面、孤立頁面、過期 ongoing 議題，並更新 wiki/overview.md。
 ```
 
 ---
 
-## 層級職責
+## 執行聚合器
 
-| 層級 | 路徑 | 誰寫 | 規則 |
-|------|------|------|------|
-| Raw Sources | `news/` | 程式自動 | 不可修改 |
-| Wiki | `wiki/` | LLM 維護 | 可增刪改 |
-| Schema | `CLAUDE.md` | 人 + LLM | 共同演進 |
+```bash
+# 手動執行（需在 repo 根目錄）
+python -m news_aggregator.main
+
+# Windows 排程器使用的 bat 檔
+run_news.bat
+```
+
+安裝依賴：
+```bash
+pip install -r requirements_news.txt
+```
+
+環境變數（放在 repo 根目錄的 `.env`）：
+```
+ANTHROPIC_API_KEY=...      # 用於 LLM 過濾 + 摘要（可選，無則退回 claude CLI）
+GITHUB_TOKEN=...           # 用於 GitHub Releases 來源（可選）
+REDDIT_CLIENT_ID=...       # 用於 Reddit 來源（可選）
+REDDIT_CLIENT_SECRET=...
+```
 
 ---
 
-## 頁面格式
+## 聚合器 Pipeline 架構
 
-### entities/ 頁面
+```
+sources/*.py  →  dedup.py  →  enricher.py  →  filter.py  →  analyzer.py  →  digest.py
+```
+
+| 模組 | 職責 |
+|------|------|
+| `sources/base.py` | `FeedItem` dataclass + `BaseSource` ABC |
+| `sources/*.py` | 各來源 fetch，回傳 `list[FeedItem]`，失敗回傳 `[]` 不 raise |
+| `dedup.py` | URL 正規化去重 + 模糊標題去重（threshold 0.85）；官方來源優先 |
+| `enricher.py` | 用 trafilatura 抓原文補充 `summary` 欄位 |
+| `filter.py` | 呼叫 Claude Haiku 批次評分 1–5，丟棄 < 3 分（無 API key 則略過） |
+| `analyzer.py` | 呼叫 Claude 產生繁體中文 Markdown 摘要；三條路徑：API key → claude CLI → fallback |
+| `classifier.py` | regex 分類（pricing / tech_update / tech_discuss）+ 亮點偵測 |
+| `digest.py` | 組合 header + body + 來源狀態表，寫出 `news/YYYY-MM-DD.md` |
+| `config.py` | 路徑、API token、`LOOKBACK_HOURS=26`、`MAX_ITEMS_PER_SOURCE=20` |
+| `dedup.py` `seen_urls.json` | 跨執行的 URL 去重快取 |
+
+新增來源：繼承 `BaseSource`，實作 `fetch() -> list[FeedItem]`，在 `main.py` 的 `sources` 列表加入即可。
+
+---
+
+## Wiki Schema
+
+### 目錄結構
+
+```
+wiki/
+├── index.md        ← 查詢入口，所有頁面目錄
+├── log.md          ← Append-only 時序紀錄（不可修改既有條目）
+├── overview.md     ← 當前局勢綜覽（每週更新）
+├── entities/       ← 模型、功能、人物、產品的持久頁面
+└── topics/         ← 跨日追蹤的進行中議題
+```
+
+`news/` 為唯讀原始資料，不可修改。
+
+### 每日 Ingest 流程（LLM 執行）
+
+1. 讀 `news/YYYY-MM-DD.md`
+2. 比對 `wiki/index.md` 找受影響的既有頁面
+3. 更新相關 entities/ 和 topics/ 頁面
+4. 若新議題持續 ≥ 2 天，建立新的 topics/ 頁
+5. Append 至 `wiki/log.md`
+6. 更新 `wiki/index.md`
+
+### entities/ 頁面格式
 
 ```markdown
 # 實體名稱
@@ -43,19 +158,12 @@ ObsidianLab/
 **最後更新：** YYYY-MM-DD
 
 ## 現況
-（一段簡短的當前狀態說明）
-
 ## 歷史記錄
-（時序條列，新的在上）
-
 ## 相關議題
-（連結到 topics/ 頁面）
-
 ## 參考來源
-（連結到相關日報）
 ```
 
-### topics/ 頁面
+### topics/ 頁面格式
 
 ```markdown
 # 議題名稱
@@ -65,60 +173,34 @@ ObsidianLab/
 **最後更新：** YYYY-MM-DD
 
 ## 摘要
-（一段話說明這個議題是什麼）
-
 ## 時序
-（事件列表，最新在上）
-
+## 技術彙整
 ## 目前結論
-（目前已知的結論或待確認事項）
-
 ## 相關實體
-（連結到 entities/ 頁面）
 ```
 
----
+**技術彙整** 區塊：跨多天日報萃取的技術細節，條列式呈現。包含：
+- 涉及的技術機制、API 行為、參數變化
+- 已確認的限制或已知問題
+- 社群發現的 workaround 或最佳實踐
+- 每次 ingest 後累積更新，不重複已有條目
 
-## 操作流程
+議題解決後移至 entities/ 作為歷史記錄，不刪除。
 
-### 每日 Ingest（程式自動執行）
+### 搜尋策略
 
-1. 讀取當日 `news/YYYY-MM-DD.md`
-2. 比對 `wiki/index.md`，找出被今日新聞觸及的既有頁面
-3. 更新相關 entities/ 和 topics/ 頁面
-4. 若新議題持續 2 天以上，建立新的 topics/ 頁
-5. 在 `wiki/log.md` 追加本次執行紀錄
-6. 更新 `wiki/index.md`
+1. 先讀 `wiki/index.md`
+2. 再讀 `wiki/log.md` 確認最近更新
+3. 最後讀具體頁面
 
-### Lint（每週手動或 Claude 執行）
+### 連結慣例
 
-- 找出矛盾頁面（兩頁描述同一事件但說法不同）
-- 找出孤立頁面（無其他頁面連結到它）
-- 標記可能已過期的 "ongoing" 議題
-- 建議新實體頁（被多次提及但尚無專頁）
-
----
-
-## 連結慣例
-
-- 頁面之間使用 Obsidian wikilink：`[[entities/claude-code]]`
+- 頁面間：`[[entities/claude-code]]`
 - 引用日報：`[[news/2026-04-25]]`
-- 外部連結使用標準 Markdown：`[標題](url)`
+- 外部：`[標題](url)`
 
----
+### 注意事項
 
-## 搜尋策略
-
-查詢時，LLM 應：
-1. 先讀 `wiki/index.md` 找相關頁面
-2. 再讀 `wiki/log.md` 確認最近有無相關更新
-3. 最後讀具體頁面取得詳細資訊
-
----
-
-## 注意事項
-
-- 每頁的「最後更新」欄位必須在每次修改時同步更新
-- 議題頁面解決後，移至 entities/ 作為歷史記錄，勿刪除
-- `log.md` 只能 append，不可修改既有條目
-- 繁體中文為主要語言；英文術語保留英文
+- 每次修改頁面必須同步更新「最後更新」欄位
+- `log.md` 只能 append
+- 繁體中文為主；英文術語保留英文

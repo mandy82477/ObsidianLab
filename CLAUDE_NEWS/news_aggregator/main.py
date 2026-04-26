@@ -68,13 +68,16 @@ def main() -> None:
     logger.info("After relevance filter: %d items", len(filtered))
 
     today = date.today()
-    digest_path = render(filtered, today, source_status)
+    digest_path, is_fallback = render(filtered, today, source_status)
     logger.info("Digest written: %s", digest_path)
 
-    try:
-        commit_and_push(digest_path)
-    except GitError as e:
-        logger.warning("Git push skipped: %s", e)
+    if is_fallback:
+        logger.warning("Digest is fallback (plain list) — skipping git push")
+    else:
+        try:
+            commit_and_push(digest_path)
+        except GitError as e:
+            logger.warning("Git push skipped: %s", e)
 
     elapsed = time.time() - start
     logger.info("=== Run complete: %d items / %d sources / %.1fs ===", len(deduped), len(sources), elapsed)

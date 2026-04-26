@@ -27,6 +27,8 @@ _USER_TEMPLATE = """\
 
 ### 💬 技術熱度討論
 社群討論、開發者心得、教學、評測、工具分享等。
+每條需在來源行末加上情緒標籤，格式：`情緒：😊 正面` / `情緒：😤 負面` / `情緒：😐 中性` / `情緒：🤔 褒貶不一`
+情緒判斷依據討論串的整體氛圍，而非單一留言。
 
 ### 💰 付費方案動態
 定價調整、訂閱方案、Token 費用、配額限制等。
@@ -35,9 +37,15 @@ _USER_TEMPLATE = """\
 
 ## 每條資訊的排版格式（嚴格遵守）
 
+一般區塊（⭐ 重點話題、🔧 技術更新、💰 付費方案動態）：
 **[原文標題（保持英文）](url)**
 一到兩句繁體中文，說明這則資訊的核心重點與為何值得關注。請根據提供的文章摘要內容撰寫，而非只依賴標題猜測。
 `來源名稱` · MM/DD HH:MM UTC
+
+💬 技術熱度討論區塊（多一個情緒標籤）：
+**[原文標題（保持英文）](url)**
+一到兩句繁體中文，說明這則資訊的核心重點與為何值得關注。
+`來源名稱` · MM/DD HH:MM UTC · `情緒：😊 正面`
 
 （每兩條之間空一行）
 
@@ -59,8 +67,13 @@ _USER_TEMPLATE = """\
 """
 
 
-def analyze(items: list[FeedItem]) -> str:
+def analyze(items: list[FeedItem]) -> tuple[str, str]:
     """Call Claude to produce a Chinese natural-language digest body.
+
+    Returns (body, method) where method is one of:
+      "Anthropic API (claude-haiku-4-5)"
+      "claude CLI (Claude.ai Pro)"
+      "fallback (純文字列表)"
 
     Priority:
     1. ANTHROPIC_API_KEY in env → direct SDK call
@@ -68,7 +81,7 @@ def analyze(items: list[FeedItem]) -> str:
     3. Plain fallback list
     """
     if not items:
-        return "## 今日無新增資訊\n\n> 所有來源在過去 26 小時內未發現相關新內容。\n"
+        return "## 今日無新增資訊\n\n> 所有來源在過去 26 小時內未發現相關新內容。\n", "—"
 
     prompt = _USER_TEMPLATE.format(
         count=len(items),
@@ -87,18 +100,18 @@ def analyze(items: list[FeedItem]) -> str:
                 system=_SYSTEM,
                 messages=[{"role": "user", "content": prompt}],
             )
-            return message.content[0].text
+            return message.content[0].text, "Anthropic API (claude-haiku-4-5)"
         except Exception as e:
             logger.warning("Claude API (key) failed (%s) — trying claude CLI", e)
 
     # ── Path 2: claude CLI (Claude.ai Pro subscription) ───────────────────
     result = _call_claude_cli(prompt)
     if result:
-        return result
+        return result, "claude CLI (Claude.ai Pro)"
 
     # ── Path 3: plain fallback ────────────────────────────────────────────
     logger.warning("All Claude paths failed — using plain fallback digest")
-    return _fallback_body(items)
+    return _fallback_body(items), "fallback (純文字列表)"
 
 
 def _call_claude_cli(prompt: str) -> str | None:
@@ -118,7 +131,7 @@ def _call_claude_cli(prompt: str) -> str | None:
             ["claude", "-p"],
             input=full_prompt.encode("utf-8"),
             capture_output=True,
-            timeout=300,
+            timeout=600,
             shell=use_shell,
         )
         stdout = result.stdout.decode("utf-8", errors="replace")
@@ -128,7 +141,7 @@ def _call_claude_cli(prompt: str) -> str | None:
             return stdout.strip()
         logger.warning("claude CLI exited %d: %s", result.returncode, stderr[:200])
     except subprocess.TimeoutExpired:
-        logger.warning("claude CLI timed out after 120s")
+        logger.warning("claude CLI timed out after 600s")
     except Exception as e:
         logger.warning("claude CLI failed: %s", e)
     return None

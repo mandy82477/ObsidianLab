@@ -40,18 +40,29 @@ _PROMPT = """\
 def filter_relevant(items: list[FeedItem], min_score: int = 3) -> list[FeedItem]:
     """Return only items with LLM relevance score >= min_score.
 
-    Falls back to all items if filter cannot run.
+    Tries: API key → claude CLI → keep all (fallback).
     """
     if not items:
         return items
 
+    raw: str | None = None
+
     api_key = os.environ.get("ANTHROPIC_API_KEY")
-    if not api_key:
-        logger.info("ANTHROPIC_API_KEY not set — skipping relevance filter")
+    if api_key:
+        try:
+            raw = _call_api(items, api_key)
+        except Exception as e:
+            logger.warning("Relevance filter API failed (%s) — trying claude CLI", e)
+
+    if raw is None:
+        raw = _call_claude_cli(items)
+
+    if raw is None:
+        logger.warning("Relevance filter unavailable — keeping all %d items", len(items))
         return items
 
     try:
-        scores = _score_items(items, api_key)
+        scores = _parse_scores(raw, len(items))
         kept = [item for item, score in zip(items, scores) if score >= min_score]
         dropped = len(items) - len(kept)
         logger.info(
@@ -60,18 +71,16 @@ def filter_relevant(items: list[FeedItem], min_score: int = 3) -> list[FeedItem]
         )
         return kept if kept else items  # never return empty list
     except Exception as e:
-        logger.warning("Relevance filter failed (%s) — keeping all %d items", e, len(items))
+        logger.warning("Relevance filter parse failed (%s) — keeping all %d items", e, len(items))
         return items
 
 
 # ── internals ─────────────────────────────────────────────────────────────────
 
-def _score_items(items: list[FeedItem], api_key: str) -> list[int]:
+def _call_api(items: list[FeedItem], api_key: str) -> str:
     import anthropic
 
-    items_text = _format_for_filter(items)
-    prompt = _PROMPT.format(count=len(items), items_text=items_text)
-
+    prompt = _PROMPT.format(count=len(items), items_text=_format_for_filter(items))
     client = anthropic.Anthropic(api_key=api_key)
     message = client.messages.create(
         model="claude-haiku-4-5-20251001",
@@ -79,9 +88,40 @@ def _score_items(items: list[FeedItem], api_key: str) -> list[int]:
         system=_SYSTEM,
         messages=[{"role": "user", "content": prompt}],
     )
-    raw = message.content[0].text.strip()
+    return message.content[0].text.strip()
 
-    return _parse_scores(raw, len(items))
+
+def _call_claude_cli(items: list[FeedItem]) -> str | None:
+    import shutil
+    import subprocess
+    import sys
+
+    if not shutil.which("claude"):
+        logger.warning("claude CLI not found in PATH — skipping relevance filter")
+        return None
+
+    prompt = _PROMPT.format(count=len(items), items_text=_format_for_filter(items))
+    full_prompt = f"{_SYSTEM}\n\n{prompt}"
+    use_shell = sys.platform == "win32"
+    try:
+        result = subprocess.run(
+            ["claude", "-p"],
+            input=full_prompt.encode("utf-8"),
+            capture_output=True,
+            timeout=120,
+            shell=use_shell,
+        )
+        stdout = result.stdout.decode("utf-8", errors="replace")
+        stderr = result.stderr.decode("utf-8", errors="replace")
+        if result.returncode == 0 and stdout.strip():
+            logger.info("claude CLI filter succeeded")
+            return stdout.strip()
+        logger.warning("claude CLI filter exited %d: %s", result.returncode, stderr[:200])
+    except subprocess.TimeoutExpired:
+        logger.warning("claude CLI filter timed out")
+    except Exception as e:
+        logger.warning("claude CLI filter failed: %s", e)
+    return None
 
 
 def _format_for_filter(items: list[FeedItem]) -> str:

@@ -2,7 +2,7 @@
 
 **狀態：** resolved（已宣布）
 **開始日期：** 2026-04-24
-**最後更新：** 2026-04-25
+**最後更新：** 2026-04-26
 
 ---
 
@@ -44,6 +44,15 @@ Bloomberg、TechCrunch、Reuters、NYT、Axios 等多個主流媒體同步報導
 - Google 同時也在秘密開發 Claude Code 競品（見 [[topics/competitor-landscape]]）
 - 此投資延續 Google 先前已有的 Anthropic 股東關係（之前已有數輪投資）
 - Amazon 也是 Anthropic 的重要投資者，形成多方大廠支持格局
+
+---
+
+## 技術彙整
+
+- **投資結構**：現金 + 運算資源混合形式；Anthropic 同步承諾購買 Google TPU 算力（循環融資）
+- **算力綁定**：此結構實質增加 Anthropic 對 Google Cloud TPU 基礎設施的依賴度
+- **估值計算基礎**：3,500 億美元估值含初期 100 億現金承諾，其餘 300 億為績效條件觸發
+- **股東關係**：Google 為多輪投資方，Amazon 亦為重要股東，形成多方大廠支持格局
 
 ---
 

@@ -3,7 +3,7 @@
 **類型：** product
 **狀態：** active
 **首次出現：** 2025（正式推出）
-**最後更新：** 2026-04-25
+**最後更新：** 2026-04-26
 
 ---
 
@@ -26,6 +26,8 @@ Claude Code 是 Anthropic 的 AI 編碼 CLI 工具，支援 agentic 工作流程
 
 ## 已知問題
 
+- **HERMES.md 計費路由 bug**（2026-04-25 回報）：git commit 歷史中含大寫字串「HERMES.md」會觸發靜默切換至 API 額外計費，完全繞過 Max 方案配額；Anthropic 確認為 bug 但拒絕退款，已知損失達 $200。見 [[entities/pricing]]
+- **主題模式不跟隨系統**（issue #2990）：`auto` 主題僅在啟動時偵測一次，不會即時同步 macOS dark/light 切換；社群 workaround：WezTerm + Lua 事件鉤子
 - **Stop Hooks 被忽略**（2026-04-24 回報）：Claude 4.7 開始無視自訂 stop hooks，影響依賴 hooks 的自動化工作流程，屬行為退步（regression）
 - **效能退步事件**：見 [[topics/code-quality-decline]]
 - **MCP Token 消耗問題**：多個 MCP Server 併用時，每條訊息可能消耗 20,000+ tokens
@@ -36,6 +38,10 @@ Claude Code 是 Anthropic 的 AI 編碼 CLI 工具，支援 agentic 工作流程
 
 | 日期 | 事件 |
 |------|------|
+| 2026-04-26 | HERMES.md 計費路由 bug 曝光，Anthropic 確認但拒絕退款 |
+| 2026-04-26 | Anthropic 測試 Bugcrawl 漏洞偵測工具，見 [[entities/bugcrawl]] |
+| 2026-04-26 | Anthropic 工程部落格詳解 Claude Research 多代理架構設計 |
+| 2026-04-26 | 多個社群工具發布：Claude Squad（多人協作）、mux0（多 agent 終端）、agent-order（Codex+Claude PRD 協作） |
 | 2026-04-25 | 社群開發 CC-Canary 工具自動偵測效能漂移 |
 | 2026-04-24 | Stop hooks 失效問題被回報（Claude 4.7） |
 | 2026-04-24 | Anthropic 正式承認效能退步源於工程疏失 |
@@ -56,6 +62,9 @@ Claude Code 是 Anthropic 的 AI 編碼 CLI 工具，支援 agentic 工作流程
 - **[CC-Canary](https://github.com/delta-hq/cc-canary)** — 讀取 `~/.claude/projects/` JSONL log 偵測效能漂移
 - **[claude-anyteam](https://github.com/JonathanRosado/claude-anyteam)** — 讓 Codex/Gemini 加入 Agent Teams
 - **[Claude Code Manager](https://claude.ldlework.com/)** — Web UI 集中管理 CLAUDE.md、hooks、skills
+- **[Claude Squad](https://www.reddit.com/r/ClaudeAI/comments/1svmpkv/)** — 多人協作編碼，每人以自己的 Claude Code 作為 agent，orchestrator 分派平行任務並合併分支
+- **[mux0](https://mux0.com/)** — 開源 macOS 終端機，側邊欄即時顯示多 agent 執行狀態（running / idle / needs input）
+- **[agent-order](https://github.com/btahir/agent-order)** — 讓 Codex 與 Claude 各自寫 PRD 再互相批判，避免答案向先開口方塌縮
 
 ---
 
@@ -67,3 +76,4 @@ Claude Code 是 Anthropic 的 AI 編碼 CLI 工具，支援 agentic 工作流程
 ## 參考來源
 
 - [[news/2026-04-25]]
+- [[news/2026-04-26]]

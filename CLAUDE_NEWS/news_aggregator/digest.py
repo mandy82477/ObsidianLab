@@ -10,7 +10,7 @@ def render(
     items: list[FeedItem],
     run_date: date,
     source_status: dict[str, dict],
-) -> Path:
+) -> tuple[Path, bool]:
     NEWS_DIR.mkdir(parents=True, exist_ok=True)
     out_path = NEWS_DIR / f"{run_date.isoformat()}.md"
 
@@ -30,7 +30,7 @@ def render(
         "",
     ]
 
-    body = analyze(items)
+    body, analyze_method = analyze(items)
 
     footer = [
         "",
@@ -51,9 +51,10 @@ def render(
         "",
         "---",
         "",
-        f"*自動產生 by Claude Code News Aggregator · {now_str}*",
+        f"*自動產生 by Claude Code News Aggregator · {now_str} · 摘要方式：{analyze_method}*",
     ]
 
     content = "\n".join(header) + body + "\n\n" + "\n".join(footer)
     out_path.write_text(content, encoding="utf-8")
-    return out_path
+    is_fallback = analyze_method.startswith("fallback")
+    return out_path, is_fallback
