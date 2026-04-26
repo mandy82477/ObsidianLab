@@ -78,16 +78,17 @@ python -m news_aggregator.main
 ## 執行聚合器
 
 ```bash
-# 手動執行（需在 repo 根目錄）
+# 手動執行（需在 src/ 目錄下）
+cd src
 python -m news_aggregator.main
 
 # Windows 排程器使用的 bat 檔
-run_news.bat
+src\run_news.bat
 ```
 
 安裝依賴：
 ```bash
-pip install -r requirements_news.txt
+pip install -r src/requirements_news.txt
 ```
 
 環境變數（放在 repo 根目錄的 `.env`）：
@@ -101,6 +102,8 @@ REDDIT_CLIENT_SECRET=...
 ---
 
 ## 聚合器 Pipeline 架構
+
+程式碼位於 `src/news_aggregator/`，執行日誌在 `src/logs/`。
 
 ```
 sources/*.py  →  dedup.py  →  enricher.py  →  filter.py  →  analyzer.py  →  digest.py
