@@ -2,7 +2,7 @@
 
 **狀態：** ongoing
 **開始日期：** 2026-04-25
-**最後更新：** 2026-04-26
+**最後更新：** 2026-04-27
 
 ---
 
@@ -13,6 +13,24 @@
 ---
 
 ## 時序
+
+### 2026-04-27
+- **TDD 驅動開發迴圈**：EvanFlow — 16 個技能 + 2 個子代理人，每步驟設有人工確認節點，不自動 commit，強調使用者控制
+- **問題定義優先**：Relay plugin — 強制 Claude Code 在動手寫程式前深入對齊問題定義，核心改變是將 Plan Mode 的提問層級從「實作細節」拉升至「問題本質」
+- **精簡 CLAUDE.md 策略**：parsh 案例 — 將 CLAUDE.md 保持精簡、以「規則」而非「建議」形式撰寫，有效減少冗余代碼與漂移行為
+- **架構層自動化審查**：modularity plugin — Balanced Coupling 模型分析模組化設計，解決 AI 加速代碼生成同時技術債也加速累積的問題
+- **Figma MCP 設計工作流**：Claude Code + Figma MCP 搭配，Creative Bloq 評測 AI 輔助設計效果
+- **effort 等級 vs 拒絕率**：系統性測試顯示提升 effort 不增加拒絕率；medium vs high 差異僅在回答深度（正面回應增長 29–47%），拒絕僅增長 11%，顛覆「高 effort 更容易拒絕」假設
+- **harness 設計模式實作**：將 Anthropic 官方 harness 設計模式實作為 Claude Code 插件，發現 Claude 常在測試未通過時自信回報「成功」
+- **Cerbos 授權政策技能**：將自然語言需求轉換為帶測試案例的結構化 authZ policy，指出 AI 幻覺在此類任務直接導致安全漏洞
+- **vibe-coding 里程碑**：非技術背景 PM 以 Claude 在 47 天內獨立開發並上線產品，強調範疇控制與清晰需求撰寫為成功核心
+- **多代理瀏覽器**：Rapunzel — 以樹狀標籤頁介面管理多個同時運行的 AI 代理（Claude Code / Codex / Gemini），定位為「Chrome for agents」，解決終端機多代理追蹤困難的問題
+- **代理人沙盒**：SmolVM — 讓 Claude Code 與 Codex 在完全隔離的本機沙盒中執行，單指令啟動，支援 git 憑證整合，保護宿主系統安全
+- **完成驗證 Hook**：Groundtruth — Stop Hook，強制 Claude Code 在宣告「完成」前必須提供可驗證的執行證明，否則拒絕結束回合，解決 Claude 自信宣稱完成但實際未完成的問題
+- **跨工具 Skills 移植**：OpenCode-power-pack — 將 Anthropic 官方 11 個 Claude Code 技能（代碼審查、安全審計、前端設計等）移植至 OpenCode，打破官方插件的工具綁定限制
+- **APFS Worktree 優化**：利用 Apple File System 的 clone 機制建立 WorktreeCreate hook，多個 worktree 共享相同檔案不佔額外空間，Mac 用戶實用
+- **邊學邊做技能模組**：在完成 Claude Code 架構工作後，提供以認知科學（預測、生成、間隔重複）為基礎的 10–15 分鐘學習練習，讓開發者在使用 AI 的同時累積技術深度
+- **MCP 創意實驗**：Doom Inside Claude Code — 將原版 Doom 嵌入 Claude Code 狀態列，可由使用者手動控制或讓 Claude 透過 MCP 自主遊玩，展示 MCP 的創意應用邊界
 
 ### 2026-04-26
 - **多人協作編碼**：Claude Squad — 每人以自己的 Claude Code 作為 agent，orchestrator 分派平行任務並自動合併分支
@@ -52,6 +70,18 @@
 - **推理強度 vs 安全邊界**：高推理強度不會放寬安全限制，兩者獨立控制
 - **Context window 縮減**：舊版模型將回退至 200k context，依賴超長 context 的工作流需重新評估
 
+### CLAUDE.md 設計原則
+
+- **精簡優於詳盡**：CLAUDE.md 保持精簡（parsh 案例），以「規則」（rule）而非「建議」（suggestion）撰寫，有效減少 AI 冗余代碼與行為漂移
+- **問題定義先於實作**：Relay plugin 的核心洞見 — Plan Mode 提問層級若停在「實作細節」，AI 常繞過問題本質直接動手；拉升至「為什麼這樣設計」層級效果顯著
+- **人工確認節點**：EvanFlow 每步驟設有確認節點，不自動 commit；此模式在需要嚴謹品質控制的場景比全自動化更受信賴
+
+### effort 等級與模型行為
+
+- **effort 提升 ≠ 拒絕率提升**：系統性測試（CVP Run 5，Opus 4.6）顯示 medium → high effort 主要影響回答深度（29–47% 增長），拒絕率增長僅 11%
+- **Opus vs Sonnet 穩定性差異**：HN 社群數據顯示 Sonnet 在 context 不完整時非預期失誤率達 20–35%；Opus 在不完整情境下明顯更穩定
+- **Usage Policy 與 effort 無關**：Opus 4.7 的隨機 Usage Policy 拒絕問題（見 [[entities/opus-4-7]]）與 effort 等級無關，屬獨立 bug
+
 ### 工具生態痛點
 
 - **發現性差**：skills 與 MCP 伺服器散落各處，品質參差，缺乏集中發現機制
@@ -76,6 +106,14 @@
 | **claude-anyteam** | 整合工具 | 🔥🔥   | 讓 Codex/Gemini 加入 Claude Code Agent Teams    |
 | **流程 skill 化**     | 工作流  | 🔥     | 將多步驟設定流程包裝為單一 skill 取代 README                |
 | **WezTerm 主題同步**   | 環境配置 | 🔥     | Lua 事件鉤子實現 dark/light 即時同步（issue #2990 暫行方案） |
+| **EvanFlow**         | 工作流  | 🔥🔥   | TDD 驅動迴圈，16 技能 + 2 子代理人，每步人工確認，不自動 commit |
+| **Relay plugin**     | 工作流  | 🔥🔥   | 強制 Claude Code 先對齊問題本質再動手，Plan Mode 提問升級 |
+| **精簡 CLAUDE.md 策略** | 使用技巧 | 🔥🔥   | 以「規則」非「建議」撰寫，保持精簡，有效減少冗余與漂移（parsh 案例） |
+| **modularity plugin** | 架構工具 | 🔥     | Balanced Coupling 模型分析模組化，防 AI 加速技術債累積 |
+| **Groundtruth**       | 工作流  | 🔥🔥   | Stop Hook，強制 Claude 提供可驗證執行證明才能宣告完成 |
+| **SmolVM**            | 安全工具 | 🔥🔥   | 本機沙盒執行 Claude Code / Codex，單指令啟動，保護宿主系統 |
+| **Rapunzel**          | 終端工具 | 🔥🔥   | 樹狀標籤頁多代理瀏覽器，支援 Claude Code / Codex / Gemini |
+| **OpenCode-power-pack** | 整合工具 | 🔥   | 11 個 Claude Code 官方技能移植至 OpenCode，打破工具綁定 |
 
 > 熱度定義：🔥🔥🔥 跨平台多次出現 / 社群廣泛討論；🔥🔥 單平台高互動；🔥 值得關注但尚未擴散
 
@@ -87,6 +125,8 @@
 - Multi-agent 協作是最熱門的探索方向，但有效的任務分解方式尚無定論
 - Skills 正在從「指令封裝」演進為「知識框架載體」
 - 工具發現性是尚未解決的生態系問題
+- CLAUDE.md 最佳實踐逐漸收斂：精簡 + 規則導向優於冗長 + 建議導向
+- 「問題定義先於實作」正成為新的工作流範式（Relay plugin、harness 模式等多個案例印證）
 
 ---
 
@@ -99,3 +139,4 @@
 
 - [[news/2026-04-25]]
 - [[news/2026-04-26]]
+- [[news/2026-04-27]]

@@ -14,6 +14,13 @@ REPOS = [
     "anthropics/anthropic-sdk-typescript",
 ]
 
+# GitHub repo search queries — find new community tools before media coverage
+REPO_SEARCH_QUERIES = [
+    "claude-code in:name,description",
+    "claude anthropic in:name",
+    "mcp-server claude in:name,description",
+]
+
 
 class GitHubReleases(BaseSource):
     def fetch(self) -> list[FeedItem]:
@@ -24,6 +31,8 @@ class GitHubReleases(BaseSource):
                 headers["Authorization"] = f"Bearer {GITHUB_TOKEN}"
 
             items = []
+
+            # ── Official releases ─────────────────────────────────────────────
             for repo in REPOS:
                 try:
                     resp = requests.get(
@@ -33,7 +42,7 @@ class GitHubReleases(BaseSource):
                         params={"per_page": 5},
                     )
                     remaining = int(resp.headers.get("X-RateLimit-Remaining", 999))
-                    if remaining <= 5:
+                    if remaining <= 10:
                         logger.warning("GitHub rate limit low (%d remaining), skipping further calls", remaining)
                         break
                     resp.raise_for_status()
@@ -58,7 +67,45 @@ class GitHubReleases(BaseSource):
                 except Exception as e:
                     logger.warning("GitHubReleases repo '%s' failed: %s", repo, e)
 
-            return items[:MAX_ITEMS_PER_SOURCE]
+            # ── Community repo search ─────────────────────────────────────────
+            cutoff_date = cutoff.strftime("%Y-%m-%d")
+            for query in REPO_SEARCH_QUERIES:
+                try:
+                    resp = requests.get(
+                        "https://api.github.com/search/repositories",
+                        headers=headers,
+                        timeout=REQUEST_TIMEOUT,
+                        params={
+                            "q": f"{query} created:>{cutoff_date}",
+                            "sort": "stars",
+                            "order": "desc",
+                            "per_page": 8,
+                        },
+                    )
+                    remaining = int(resp.headers.get("X-RateLimit-Remaining", 999))
+                    if remaining <= 10:
+                        logger.warning("GitHub rate limit low (%d remaining), stopping repo search", remaining)
+                        break
+                    resp.raise_for_status()
+                    for repo in resp.json().get("items", []):
+                        try:
+                            pub = datetime.fromisoformat(repo["created_at"].replace("Z", "+00:00"))
+                        except Exception:
+                            pub = datetime.now(tz=timezone.utc)
+                        desc = (repo.get("description") or "")[:300]
+                        items.append(FeedItem(
+                            title=repo["full_name"],
+                            url=repo["html_url"],
+                            source="GitHub Search",
+                            published=pub,
+                            score=repo.get("stargazers_count", 0),
+                            summary=desc,
+                            category="community",
+                        ))
+                except Exception as e:
+                    logger.warning("GitHub repo search '%s' failed: %s", query, e)
+
+            return items[:MAX_ITEMS_PER_SOURCE * 2]
         except Exception as e:
             logger.warning("GitHubReleases.fetch failed: %s", e)
             return []

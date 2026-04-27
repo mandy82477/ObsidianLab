@@ -15,6 +15,8 @@ SUBREDDIT_QUERIES = [
     ("ClaudeAI", "Anthropic"),
     ("artificial", "Claude Code"),
     ("MachineLearning", "Anthropic"),
+    ("LocalLLaMA", "Claude"),
+    ("LocalLLaMA", "Anthropic"),
 ]
 
 

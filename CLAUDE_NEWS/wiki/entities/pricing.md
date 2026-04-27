@@ -2,7 +2,7 @@
 
 **類型：** policy
 **狀態：** active（持續調整中）
-**最後更新：** 2026-04-26
+**最後更新：** 2026-04-27
 
 ---
 
@@ -20,6 +20,12 @@
 ---
 
 ## 近期政策變動
+
+### 2026-04-27：Max 方案配額多工場景不足
+同時使用 Claude Code 與視覺功能的用戶回報早上 **8:30 即觸及當日用量上限**，反映 Max 方案在 Code + vision 多工場景下的配額設計存在實際痛點。
+
+### 2026-04-27：Google 400 億投資對定價的指標意義
+Google 確認對 Anthropic 追加 400 億美元投資，分析師指出 Anthropic 具備更充裕資本空間維持現有定價或推進企業方案擴張，對長期訂閱定價策略具有指標意義。見 [[topics/google-investment]]
 
 ### 2026-04-25：HERMES.md 靜默計費 bug
 git commit 歷史中出現大寫字串「HERMES.md」，會觸發 Claude Code 靜默切換至 API 額外計費模式，完全繞過 Max 方案配額，已知造成用戶單日損失 **$200**。Anthropic 支援確認為 bug，但**拒絕退款**。
@@ -71,4 +77,5 @@ The Verge（2026-04-24）報導，AI 商業化壓力下，Anthropic 等實驗室
 
 - [[news/2026-04-25]]
 - [[news/2026-04-26]]
+- [[news/2026-04-27]]
 - [官方說明文件](https://support.claude.com/en/articles/11940350-claude-code-model-configuration)
