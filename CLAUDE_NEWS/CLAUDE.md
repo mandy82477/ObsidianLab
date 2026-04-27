@@ -11,6 +11,8 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 1. **`news_aggregator/`** — Python 爬蟲，每日自動抓取 Claude / Anthropic 相關新聞，寫出 `news/YYYY-MM-DD.md`
 2. **`wiki/`** — LLM 維護的知識庫，從日報萃取並整理成結構化頁面
 
+完整流程圖見 `src/DesignDocument/Design Diagram.md`。
+
 ---
 
 ## 快速上手（首次設定）
@@ -18,7 +20,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 ### 步驟 1：安裝 Python 依賴
 
 ```bash
-pip install -r requirements_news.txt
+pip install -r src/requirements_news.txt
 ```
 
 ### 步驟 2：建立 `.env` 設定 API 金鑰
@@ -27,7 +29,7 @@ pip install -r requirements_news.txt
 
 ```
 ANTHROPIC_API_KEY=sk-ant-...   # 必要：用於 LLM 過濾與摘要
-GITHUB_TOKEN=ghp_...           # 建議：提高 GitHub API rate limit
+GITHUB_TOKEN=ghp_...           # 建議：用於 GitHub Releases + Repo Search，提高 rate limit
 REDDIT_CLIENT_ID=...           # 可選：啟用 Reddit 來源
 REDDIT_CLIENT_SECRET=...
 ```
@@ -37,34 +39,49 @@ REDDIT_CLIENT_SECRET=...
 ### 步驟 3：手動執行一次確認正常
 
 ```bash
+cd src
 python -m news_aggregator.main
 ```
 
-執行完成後應看到 `news/YYYY-MM-DD.md` 被寫出，並自動 git commit & push。
+執行完成後應看到 `news/YYYY-MM-DD.md` 被寫出，並自動 git commit & push（含 `seen_urls.json`）。
 
 ### 步驟 4：設定 Windows 工作排程器（自動化）
 
-用 Windows 工作排程器每天定時執行 `run_news.bat`，建議時間為每日 08:00。
-執行日誌會寫到 `logs/task_scheduler.log`，聚合器本身的日誌在 `logs/news_aggregator.log`。
+用 Windows 工作排程器每天定時執行 `src/run_news.bat`，建議時間為每日 08:00。
+`run_news.bat` 會依序執行三個步驟（詳見下方）。
+
+執行日誌：
+- `src/logs/task_scheduler.log` — 完整 pipeline 日誌
+- `src/logs/news_aggregator.log` — 聚合器詳細日誌
 
 ---
 
-## 每日操作流程
+## 每日自動化流程
+
+`run_news.bat` 每天自動執行，**wiki ingest 已整合在內，無需手動觸發**。
 
 ```
-每天
-  ├─ [自動] run_news.bat 執行 → 產生 news/YYYY-MM-DD.md + git push
-  └─ [手動] 告訴 Claude：「請根據今天的日報執行 ingest，更新 wiki」
-              → Claude 更新 wiki/entities/、wiki/topics/、wiki/log.md、wiki/index.md
+每天 08:00（Windows 排程器）
+  ├─ Step 1  Python 聚合器 → news/YYYY-MM-DD.md + seen_urls.json → git push
+  ├─ Step 2  claude -p "/wiki-ingest" → 更新 wiki/entities/、wiki/topics/、wiki/log.md、wiki/index.md
+  └─ Step 3  git add wiki/ → commit "wiki: auto-ingest YYYY-MM-DD" → git push
 
-每週
-  └─ [手動] 告訴 Claude：「執行 wiki lint 並更新 overview.md」
+每週（手動）
+  └─ 告訴 Claude：「執行 wiki lint 並更新 overview.md」
 ```
 
-### 每日 Wiki Ingest 指令範例
+### 手動觸發 Wiki Ingest
+
+若需要補跑（例如排程失敗、或日報重新抓取後想更新 wiki）：
 
 ```
-請根據 news/2026-04-26.md 執行每日 ingest，更新 wiki。
+/wiki-ingest
+```
+
+或指定日期：
+
+```
+請根據 news/2026-04-27.md 執行每日 ingest，更新 wiki。
 ```
 
 ### 每週 Wiki Lint 指令範例
@@ -75,54 +92,43 @@ python -m news_aggregator.main
 
 ---
 
-## 執行聚合器
-
-```bash
-# 手動執行（需在 src/ 目錄下）
-cd src
-python -m news_aggregator.main
-
-# Windows 排程器使用的 bat 檔
-src\run_news.bat
-```
-
-安裝依賴：
-```bash
-pip install -r src/requirements_news.txt
-```
-
-環境變數（放在 repo 根目錄的 `.env`）：
-```
-ANTHROPIC_API_KEY=...      # 用於 LLM 過濾 + 摘要（可選，無則退回 claude CLI）
-GITHUB_TOKEN=...           # 用於 GitHub Releases 來源（可選）
-REDDIT_CLIENT_ID=...       # 用於 Reddit 來源（可選）
-REDDIT_CLIENT_SECRET=...
-```
-
----
-
 ## 聚合器 Pipeline 架構
 
 程式碼位於 `src/news_aggregator/`，執行日誌在 `src/logs/`。
 
 ```
-sources/*.py  →  dedup.py  →  enricher.py  →  filter.py  →  analyzer.py  →  digest.py
+sources/*.py  →  dedup.py  →  enricher.py  →  filter.py  →  analyzer.py  →  digest.py  →  git_push.py
 ```
 
 | 模組 | 職責 |
 |------|------|
 | `sources/base.py` | `FeedItem` dataclass + `BaseSource` ABC |
-| `sources/*.py` | 各來源 fetch，回傳 `list[FeedItem]`，失敗回傳 `[]` 不 raise |
-| `dedup.py` | URL 正規化去重 + 模糊標題去重（threshold 0.85）；官方來源優先 |
-| `enricher.py` | 用 trafilatura 抓原文補充 `summary` 欄位 |
-| `filter.py` | 呼叫 Claude Haiku 批次評分 1–5，丟棄 < 3 分（無 API key 則略過） |
-| `analyzer.py` | 呼叫 Claude 產生繁體中文 Markdown 摘要；三條路徑：API key → claude CLI → fallback |
-| `classifier.py` | regex 分類（pricing / tech_update / tech_discuss）+ 亮點偵測 |
+| `sources/anthropic_blog.py` | Anthropic 官方 Blog RSS |
+| `sources/github_releases.py` | 官方 Releases（3 個 repo）+ GitHub Search API 搜尋過去 26h 內新建的社群工具 repo |
+| `sources/hackernews.py` | Story 搜尋（score ≥ 3）+ Show HN 搜尋（score ≥ 1，捕捉剛發布的工具） |
+| `sources/reddit.py` | r/ClaudeAI、r/artificial、r/MachineLearning、r/LocalLLaMA |
+| `sources/google_news.py` | Google News RSS，查詢 "Claude Code" / "Anthropic AI" |
+| `dedup.py` | URL 正規化去重 + 模糊標題去重（threshold 0.85）；官方來源優先；維護 `seen_urls.json` |
+| `enricher.py` | 用 trafilatura 抓原文補充 `summary` 欄位（最多 600 字） |
+| `filter.py` | 呼叫 Claude Haiku 批次評分 1–5，丟棄 < 3 分；無 API key 則退回 claude CLI，再退回保留全部 |
+| `analyzer.py` | 呼叫 Claude 產生繁體中文 Markdown 摘要；輸出 5 個區塊（見下方）；三條路徑：API key → claude CLI → fallback |
 | `digest.py` | 組合 header + body + 來源狀態表，寫出 `news/YYYY-MM-DD.md` |
+| `git_push.py` | `git add news/YYYY-MM-DD.md seen_urls.json` → commit → push |
 | `config.py` | 路徑、API token、`LOOKBACK_HOURS=26`、`MAX_ITEMS_PER_SOURCE=20` |
-| `dedup.py` `seen_urls.json` | 跨執行的 URL 去重快取 |
 
-新增來源：繼承 `BaseSource`，實作 `fetch() -> list[FeedItem]`，在 `main.py` 的 `sources` 列表加入即可。
+### analyzer.py 輸出區塊
+
+| 區塊 | 內容 |
+|------|------|
+| ⭐ 重點話題 | 跨多來源同時出現或引發大量討論的項目（2–5 則） |
+| 🔧 技術更新 | 模型發布、功能更新、API/SDK 變更、官方公告 |
+| 💬 技術熱度討論 | 社群討論、工具分享、開發者心得，附情緒標籤 |
+| 💰 付費方案動態 | 定價、配額、Token 費用 |
+| 📌 今日聚焦 | 3–5 點條列總結，標籤：重大事件 / 持續追蹤 / 新工具 / 社群趨勢 / 風險警示 |
+
+### 新增來源
+
+繼承 `BaseSource`，實作 `fetch() -> list[FeedItem]`，在 `main.py` 的 `sources` 列表加入即可。
 
 ---
 
@@ -144,11 +150,13 @@ wiki/
 ### 每日 Ingest 流程（LLM 執行）
 
 1. 讀 `news/YYYY-MM-DD.md`
-2. 比對 `wiki/index.md` 找受影響的既有頁面
-3. 更新相關 entities/ 和 topics/ 頁面
-4. 若新議題持續 ≥ 2 天，建立新的 topics/ 頁
-5. Append 至 `wiki/log.md`
-6. 更新 `wiki/index.md`
+2. 讀 `wiki/index.md` + `wiki/log.md`，確認未重複 ingest
+3. 比對日報內容，找受影響的既有頁面
+4. 更新相關 entities/ 和 topics/ 頁面
+5. 若新議題持續 ≥ 2 天，建立新的 topics/ 頁
+6. 若新實體有具體資訊可記錄，建立新的 entities/ 頁
+7. Append 至 `wiki/log.md`
+8. 更新 `wiki/index.md`
 
 ### entities/ 頁面格式
 
