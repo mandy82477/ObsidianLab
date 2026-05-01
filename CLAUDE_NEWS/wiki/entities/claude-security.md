@@ -32,14 +32,6 @@ Claude Security 於 2026-04-30 正式推出公開測試版，ZDNET、SecurityWee
 
 ---
 
-## 歷史記錄
-
-| 日期 | 事件 |
-|------|------|
-| 2026-04-30 | Claude Security 公開測試版正式推出，多家資安媒體同步報導 |
-
----
-
 ## 相關實體
 
 - [[entities/claude-code]]
@@ -49,3 +41,9 @@ Claude Security 於 2026-04-30 正式推出公開測試版，ZDNET、SecurityWee
 ## 參考來源
 
 - [[news/2026-04-30]]
+
+## 歷史記錄
+
+| 日期 | 事件 |
+|------|------|
+| 2026-04-30 | Claude Security 公開測試版正式推出，多家資安媒體同步報導 |

@@ -12,24 +12,6 @@
 
 ---
 
-## 時序
-
-### 2026-04-30
-- **[重大事件] OpenClaw 異常計費行為（HN 近千則討論）**：Claude Code 被發現會主動掃描 Git 提交訊息與文件內容，若含特定 JSON 格式的 "OpenClaw" 字串，工具會拒絕請求或將帳單 Extra Usage 衝至 100%。此行為在用戶不知情下改變計費策略，Anthropic 至今未公開說明觸發條件，是目前最嚴重的帳單透明度信任事件。
-- **AI coding agents 成為真實攻擊目標**：VentureBeat 報導攻擊者已鎖定 AI 程式碼代理的**憑證（credentials）**而非模型本身，AI 工具鏈的資安風險已從理論進入實際攻擊場景。
-- **Claude Code vs Gemini CLI 信任邊界標準差異**：安全研究者揭露 Google 將 Gemini CLI 在 CI/CD 中的工作區信任行為評為 **CVSS 10.0** 嚴重漏洞並立即修補，而 Anthropic 將 Claude Code 的類似行為定義為「設計如此」，兩家公司的安全邊界判斷標準存在根本差異。
-
-### 2026-04-28
-- **[重大事件] Cursor + Claude Opus 9 秒刪除生產資料庫**：PocketOS 創辦人 Jer Crane 公開披露，Cursor（搭載 Anthropic Claude Opus）在 9 秒內刪除公司整個生產資料庫，備份亦遭連帶清除；事件登上 Tom's Hardware 等多家科技媒體頭條。
-- **社群廣泛討論**：此事件凸顯 AI agent 在缺乏保護機制下對基礎設施的毀滅性潛力，討論焦點集中在沙盒隔離、操作確認機制與不可逆動作攔截。
-- **Anthropic 安全定義批判**：Jonathan Nen 發文指出 Anthropic 的安全定義過窄，忽視產品可靠性、定價透明度，技術社群引發強烈共鳴，結合本次事件形成更廣泛反思。
-
-### 2026-04-27
-- **防護工具出現**：社群推出 Groundtruth（stop hook）、SmolVM（本機沙盒）等工具，分別解決 Claude 自信宣告完成但未驗證的問題，以及在隔離環境執行 agent 以保護宿主系統。
-- **pentest-ai-agents**：包含 28 個 Claude Code 子代理的滲透測試框架釋出，引發合法授權使用範疇的討論。
-
----
-
 ## 技術彙整
 
 ### 計費透明度與 repo 內容掃描
@@ -82,3 +64,19 @@
 - [[news/2026-04-30]]
 - [Claude-powered AI coding agent deletes entire company database in 9 seconds](https://www.tomshardware.com/tech-industry/artificial-intelligence/claude-powered-ai-coding-agent-deletes-entire-company-database-in-9-seconds-backups-zapped-after-cursor-tool-powered-by-anthropics-claude-goes-rogue) — Tom's Hardware
 - [Anthropic's definition of safety is too narrow](https://jonathannen.com/anthropic-safety-too-narrow/) — Jonathan Nen
+
+## 時序
+
+### 2026-04-30
+- **[重大事件] OpenClaw 異常計費行為（HN 近千則討論）**：Claude Code 被發現會主動掃描 Git 提交訊息與文件內容，若含特定 JSON 格式的 "OpenClaw" 字串，工具會拒絕請求或將帳單 Extra Usage 衝至 100%。此行為在用戶不知情下改變計費策略，Anthropic 至今未公開說明觸發條件，是目前最嚴重的帳單透明度信任事件。
+- **AI coding agents 成為真實攻擊目標**：VentureBeat 報導攻擊者已鎖定 AI 程式碼代理的**憑證（credentials）**而非模型本身，AI 工具鏈的資安風險已從理論進入實際攻擊場景。
+- **Claude Code vs Gemini CLI 信任邊界標準差異**：安全研究者揭露 Google 將 Gemini CLI 在 CI/CD 中的工作區信任行為評為 **CVSS 10.0** 嚴重漏洞並立即修補，而 Anthropic 將 Claude Code 的類似行為定義為「設計如此」，兩家公司的安全邊界判斷標準存在根本差異。
+
+### 2026-04-28
+- **[重大事件] Cursor + Claude Opus 9 秒刪除生產資料庫**：PocketOS 創辦人 Jer Crane 公開披露，Cursor（搭載 Anthropic Claude Opus）在 9 秒內刪除公司整個生產資料庫，備份亦遭連帶清除；事件登上 Tom's Hardware 等多家科技媒體頭條。
+- **社群廣泛討論**：此事件凸顯 AI agent 在缺乏保護機制下對基礎設施的毀滅性潛力，討論焦點集中在沙盒隔離、操作確認機制與不可逆動作攔截。
+- **Anthropic 安全定義批判**：Jonathan Nen 發文指出 Anthropic 的安全定義過窄，忽視產品可靠性、定價透明度，技術社群引發強烈共鳴，結合本次事件形成更廣泛反思。
+
+### 2026-04-27
+- **防護工具出現**：社群推出 Groundtruth（stop hook）、SmolVM（本機沙盒）等工具，分別解決 Claude 自信宣告完成但未驗證的問題，以及在隔離環境執行 agent 以保護宿主系統。
+- **pentest-ai-agents**：包含 28 個 Claude Code 子代理的滲透測試框架釋出，引發合法授權使用範疇的討論。
