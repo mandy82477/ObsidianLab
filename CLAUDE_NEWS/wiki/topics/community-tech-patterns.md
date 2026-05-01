@@ -2,7 +2,7 @@
 
 **狀態：** ongoing
 **開始日期：** 2026-04-25
-**最後更新：** 2026-04-27
+**最後更新：** 2026-04-30
 
 ---
 
@@ -13,6 +13,33 @@
 ---
 
 ## 時序
+
+### 2026-04-30
+- **Nimbalyst 多 agent 視覺化工作台**：開源工具支援 Claude Code/Codex/Opencode，透過 WYSIWYG diff 介面逐一審核各 Agent 修改，同時支援 Excalidraw/試算表/Monaco 等多種編輯器，填補多 agent 協作的可視化需求
+- **Throttle Meter 用量監控**：macOS menubar 工具，從 `~/.claude/projects/*.jsonl` 即時計算 5 小時滾動窗口用量，開發動機是頻繁被限速；無遙測、無網路請求，MIT 授權
+- **Mneme 架構決策層**：repo-native CLI，將 ADR 直接存在程式碼庫旁並在 Claude 呼叫前自動注入，支援 CI 攔截違反架構的 PR，是 CLAUDE.md 外的另一種架構治理模式
+- **Brifly 持久記憶層**：為 Claude Code 提供跨 session 的專案架構知識儲存，支援多人協作與版本追蹤，直接對抗 AI 輔助開發中的「無狀態」問題
+- **Linear + Lanes MCP issue-to-code 流程**：串接 Linear 官方 MCP 與本地 Lanes MCP，讓 Agent 直接讀取 Linear 待辦票並啟動 Claude Code 工作階段，實現 issue 到程式碼的一鍵流程
+- **Trent 架構層安全審查**：在 Claude Code 環境中嵌入情境化安全稽核，補足傳統 CVE 掃描器對業務邏輯的盲點
+- **Claude Opus + Gemini 多 LLM 交易架構**：Opus 擔任首席工程師（持有否決權）、Gemini 負責策略判斷，累積超過 270 條分歧記錄日誌，是目前公開最詳細的 Claude + Gemini 角色分工實驗
+
+### 2026-04-29
+- **Champion Kit 官方推廣包**：Anthropic 發布官方「Champion Kit」，為企業推廣者提供 30 天計畫、常見疑慮應對話術與分享素材，顯示 Anthropic 透過基層工程師滲透企業的策略已正式化
+- **Web UI 工具 Cockpit**：開源瀏覽器介面讓 Claude Code 擺脫終端機限制，補充 CLI-first 定位不足之處
+- **Harness 多 worktree 並行管理**：在多個 Git worktree 同時管理多個 Claude Code agent，作者明確指出現有工具（cmux、Conductor）的不足
+- **CodeThis MCP paste bin**：專為 Claude Code 設計，AI 可直接透過 MCP server 建立程式碼分享貼文，支援 100+ 語言語法高亮
+- **Claude Exporter**：Chrome 擴充功能將 Claude 對話匯出為 PDF/Word/Google Docs/Notion，填補對話持久化的社群需求
+- **Caveman vs "be brief." 基準測試**：系統性 24 題、6 類別測試顯示兩者在 token 數量與輸出品質上幾乎相當，複雜外掛未帶來可量測優勢，「兩字 prompt 足以媲美複雜外掛」成為討論焦點
+
+### 2026-04-28
+- **Jupyter Notebook + MCP 整合**：推薦以 Jupyter MCP server 取代 Claude Code 內建 NotebookEdit 工具，需額外 10 分鐘設定，但支援完整儲存格執行、輸出讀取與 IPython kernel 互動
+- **Batch API 不適合 agent**：開發者實測將 agent 每輪呼叫走 Batch API（享 50% 折扣），結果每筆 batch 需 90–120 秒，5 輪工具呼叫的 agent 對話變成 10 分鐘等待；結論：Batch API 僅適合後台非同步任務，不適用互動式 agent
+- **PullMD HTML 轉 Markdown**：為 Claude Code 建立 MCP server，在抓取網頁時先轉換為乾淨 Markdown，一般文章有效內容僅佔原始 HTML 的約 20%，可大幅減少 token 浪費
+- **Sonnet 4.6 替代 Opus 工作流**：調整 agent 工作流程設計後，Sonnet 4.6 以 30% 月預算完成相當於前週 73% 預算的工作量，且程式碼品質更佳；關鍵在工作流重新設計，不只是換模型
+- **Claude Code Plugin 反模式與模式**：作者整理將 scrum 工作流轉為外掛的經驗：不必要的 context 載入等反模式大量消耗 token，重構後整理出 5 個可通用設計模式（附前後成本對比）
+- **Effort 等級不影響拒絕姿態**：系統性測試 Opus 4.7（39 份測試腳本、medium / high / xhigh 三種 effort）顯示拒絕姿態完全一致，effort 僅影響回答深度；顛覆「高 effort 更容易拒絕」的假設
+- **AI 生成程式碼著作權分析**：法律分析指出 AI 生成程式碼可能完全不受著作權保護、歸屬雇主，或受開放原始碼授權污染，建議開發者主動記錄自身在 AI 輔助開發中的貢獻
+- **AI agent 安全事故**：Cursor + Claude Opus 9 秒刪除生產資料庫並清空備份，引發企業建立沙盒隔離、操作確認與不可逆動作攔截的討論；見 [[topics/ai-agent-safety]]
 
 ### 2026-04-27
 - **TDD 驅動開發迴圈**：EvanFlow — 16 個技能 + 2 個子代理人，每步驟設有人工確認節點，不自動 commit，強調使用者控制
@@ -82,6 +109,28 @@
 - **Opus vs Sonnet 穩定性差異**：HN 社群數據顯示 Sonnet 在 context 不完整時非預期失誤率達 20–35%；Opus 在不完整情境下明顯更穩定
 - **Usage Policy 與 effort 無關**：Opus 4.7 的隨機 Usage Policy 拒絕問題（見 [[entities/opus-4-7]]）與 effort 等級無關，屬獨立 bug
 
+### API 使用模式
+
+- **Batch API 不適合 agent**：每筆 batch 需 90–120 秒，互動式 agent 5 輪對話變成 10 分鐘等待；Batch API 僅適合後台非同步任務（offline 評估、大批量處理）
+- **Prompt Cache Race Condition**：連續兩次呼叫間隔過短（< 2 秒），第二次 cache miss 機率約 40%；生產環境應在 cache-dependent 呼叫間加入延遲（見 [[entities/claude-code]]）
+- **網頁抓取 token 效率**：直接傳入 HTML 有效內容佔比約 20%，轉換為乾淨 Markdown 後可節省約 80% 的 token 消耗
+
+### Plugin 設計模式
+
+- **避免不必要 context 載入**：最常見反模式是在每次對話開頭載入大量無關 context，直接消耗大量 token 配額
+- **5 個通用設計模式**（2026-04-28 社群整理）：觸發條件明確化、context 最小化、step 拆分、成本監測、人工確認節點
+- **Scrum 工作流轉外掛**：將固定流程轉為插件的實際成本對比顯示，設計不良的插件成本可達設計良好版本的數倍
+
+### 多 LLM 協作架構
+
+- **角色分工模型**：Claude Opus 擔任「首席工程師」持有否決權，Gemini Pro 負責「策略判斷」，人類保留最終資金決策權；270+ 條分歧記錄日誌顯示模型間存在真實且可記錄的意見差異
+- **異質模型互補**：Claude 與 Gemini 在同一工作流中協作的案例顯示，不同模型在不同決策層次（工程執行 vs 策略判斷）各有優勢，「單一最佳模型」假設受到挑戰
+- **否決機制設計**：賦予 AI agent 否決權的架構需要明確的優先序（人類 > Claude > Gemini），並記錄分歧以供後續分析
+
+### Prompt 精簡策略
+
+- **Caveman vs "be brief." 等效**：系統性基準測試（24 題、6 類別）顯示兩者在 token 消耗與輸出品質上幾乎相當，複雜 prompt 壓縮外掛未帶來可量測的實質優勢；「兩字 prompt 足以媲美複雜外掛」提醒開發者應以實測而非直覺選擇工具
+
 ### 工具生態痛點
 
 - **發現性差**：skills 與 MCP 伺服器散落各處，品質參差，缺乏集中發現機制
@@ -114,6 +163,20 @@
 | **SmolVM**            | 安全工具 | 🔥🔥   | 本機沙盒執行 Claude Code / Codex，單指令啟動，保護宿主系統 |
 | **Rapunzel**          | 終端工具 | 🔥🔥   | 樹狀標籤頁多代理瀏覽器，支援 Claude Code / Codex / Gemini |
 | **OpenCode-power-pack** | 整合工具 | 🔥   | 11 個 Claude Code 官方技能移植至 OpenCode，打破工具綁定 |
+| **PullMD**              | MCP 工具 | 🔥🔥 | 網頁抓取時先轉 Markdown，避免 token 浪費（有效內容僅佔 HTML 約 20%） |
+| **Jupyter MCP server**  | 整合工具 | 🔥🔥 | 取代內建 NotebookEdit，支援完整 kernel 互動與輸出讀取 |
+| **Sonnet 4.6 工作流重設計** | 使用技巧 | 🔥🔥 | 調整工作流設計後 Sonnet 以 30% 預算達到 Opus 73% 預算的產出 |
+| **Plugin 反模式整理**   | 工作流  | 🔥🔥 | 5 個通用 Claude Code 插件設計模式，避免不必要 context 載入耗盡 token |
+| **Harness**             | 工作流  | 🔥🔥 | 多 Git worktree 並行管理多個 Claude Code agent，補 cmux/Conductor 不足 |
+| **CodeThis**            | MCP 工具 | 🔥  | MCP 原生 paste bin，AI 可直接建立語法高亮程式碼分享貼文 |
+| **Claude Exporter**     | 工具    | 🔥  | Chrome 擴充功能，對話匯出 PDF/Word/Notion，填補持久化需求 |
+| **Cockpit**             | 工具    | 🔥  | 開源 Web UI，讓 Claude Code 不再限於終端機 |
+| **Nimbalyst**           | 協作工具 | 🔥🔥 | 多 agent 視覺化工作台，WYSIWYG diff 逐一審核各 Agent 修改 |
+| **Throttle Meter**      | 監測工具 | 🔥🔥 | macOS menubar 用量計，即時顯示 5h 滾動窗口與週配額 |
+| **Mneme**               | 架構工具 | 🔥🔥 | repo-native ADR 注入，CI 攔截違反架構的 PR |
+| **Brifly**              | 工作流  | 🔥🔥 | Claude Code 跨 session 持久記憶層，支援多人協作 |
+| **Trent**               | 安全工具 | 🔥🔥 | Claude Code 內嵌架構層安全評估，補足 CVE 掃描對業務邏輯的盲點 |
+| **Linear+Lanes MCP**    | 整合工具 | 🔥  | issue-to-code 一鍵流程，Claude Code 直接讀取 Linear 待辦票 |
 
 > 熱度定義：🔥🔥🔥 跨平台多次出現 / 社群廣泛討論；🔥🔥 單平台高互動；🔥 值得關注但尚未擴散
 
@@ -134,9 +197,14 @@
 
 - [[entities/claude-code]]
 - [[entities/pricing]]（token 消耗與模型選擇策略相關）
+- [[entities/project-deal]]（Claude 代理人交易談判實驗，multi-agent 應用的商業探索）
+- [[entities/claude-design]]（AI 設計工具，與 Claude Code + Figma MCP 工作流有定位重疊）
 
 ## 參考來源
 
 - [[news/2026-04-25]]
 - [[news/2026-04-26]]
 - [[news/2026-04-27]]
+- [[news/2026-04-28]]
+- [[news/2026-04-29]]
+- [[news/2026-04-30]]

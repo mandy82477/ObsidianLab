@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="utf-8">
+<title>Components — Buttons & Inputs</title>
+<link rel="stylesheet" href="../colors_and_type.css">
+<style>
+  body { margin: 0; padding: 20px; background: var(--bg-0); width: 700px; box-sizing: border-box; }
+  .row { display:flex; gap:10px; align-items:center; flex-wrap:wrap; margin-bottom: 12px; }
+  .lbl { font-family: var(--font-display); font-size: 11px; text-transform: uppercase; letter-spacing: 0.06em; color: var(--fg-3); margin-bottom: 6px; width: 100%; }
+  .btn {
+    font-family: var(--font-display); font-size: 14px; font-weight: 500;
+    padding: 8px 14px; border-radius: var(--radius-2);
+    border: 1px solid var(--border-2); background: var(--bg-2); color: var(--fg-1);
+    cursor: pointer;
+    display: inline-flex; gap: 6px; align-items: center;
+    transition: background 100ms, border-color 100ms;
+  }
+  .btn:hover { background: var(--bg-3); border-color: var(--border-strong); }
+  .btn--primary { background: var(--purple-7); border-color: var(--purple-7); color: white; }
+  .btn--primary:hover { background: var(--purple-9); border-color: var(--purple-9); }
+  .btn--ghost { background: transparent; border-color: transparent; color: var(--fg-2); }
+  .btn--ghost:hover { background: var(--bg-2); color: var(--fg-1); }
+  .input {
+    font-family: var(--font-body); font-size: 14px;
+    background: var(--bg-1); border: 1px solid var(--border-2);
+    color: var(--fg-1);
+    padding: 8px 12px; border-radius: var(--radius-2);
+    width: 100%;
+  }
+  .input::placeholder { color: var(--fg-3); }
+  .input:focus { outline: none; border-color: var(--purple-7); box-shadow: 0 0 0 3px var(--purple-tint); }
+  .search {
+    display:flex; align-items:center; gap:8px;
+    background: var(--bg-1); border: 1px solid var(--border-2);
+    border-radius: var(--radius-2); padding: 6px 10px; flex: 1;
+  }
+  .search input { background: transparent; border: 0; color: var(--fg-1); flex:1; outline: none; font-family: var(--font-mono); font-size: 13px; }
+  .search .kbd { font-family: var(--font-mono); font-size: 11px; color: var(--fg-3); border:1px solid var(--border-1); padding: 1px 5px; border-radius: 3px; }
+</style>
+</head>
+<body>
+<div class="row"><div class="lbl">Buttons</div>
+  <button class="btn btn--primary">Open in Vault</button>
+  <button class="btn">Re-ingest</button>
+  <button class="btn btn--ghost">Cancel</button>
+</div>
+<div class="row"><div class="lbl">Search field (cmd-K)</div>
+  <div class="search">
+    <span style="color:var(--fg-3); font-family:var(--font-mono); font-size:14px">⌕</span>
+    <input value="HERMES.md" placeholder="Search wiki, news, entities…">
+    <span class="kbd">⌘K</span>
+  </div>
+</div>
+<div class="row"><div class="lbl">Text input</div>
+  <input class="input" placeholder="Filter by entity name…">
+</div>
+</body>
+</html>

@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="utf-8">
+<title>Callouts</title>
+<link rel="stylesheet" href="../colors_and_type.css">
+<style>
+  body { margin: 0; padding: 16px; background: var(--bg-0); width: 700px; box-sizing: border-box; }
+  .callout { margin: 8px 0; }
+  .callout:first-child { margin-top: 0; }
+  .callout p { font-size: 13px; color: var(--fg-2); margin: 0; }
+</style>
+</head>
+<body>
+<div class="callout callout--note">
+  <div class="callout__title">📝 Note</div>
+  <p>Anthropic 已於 2026-04-24 正式承認 Claude Code 效能退步源於工程疏失。</p>
+</div>
+<div class="callout callout--warning">
+  <div class="callout__title">⚠️ 待確認 · Pending</div>
+  <p>Mythos 駭客入侵事件細節尚待官方聲明，建議持續追蹤。</p>
+</div>
+<div class="callout callout--danger">
+  <div class="callout__title">⛔ Billing alert</div>
+  <p>HERMES.md 計費路由 bug：git commit 訊息中含此字串會觸發靜默 API 計費。</p>
+</div>
+<div class="callout callout--quote">
+  <div class="callout__title">💬 r/ClaudeAI</div>
+  <p>「Opus 4.7 可以用一個改變來拯救：讓使用者控制思考深度，而非模型自行決定。」</p>
+</div>
+</body>
+</html>

@@ -3,7 +3,8 @@ from datetime import datetime, timedelta, timezone
 
 import requests
 
-from news_aggregator.config import GITHUB_TOKEN, LOOKBACK_HOURS, MAX_ITEMS_PER_SOURCE, REQUEST_TIMEOUT
+import news_aggregator.config as _cfg
+from news_aggregator.config import GITHUB_TOKEN, MAX_ITEMS_PER_SOURCE, REQUEST_TIMEOUT
 from news_aggregator.sources.base import BaseSource, FeedItem
 
 logger = logging.getLogger(__name__)
@@ -25,7 +26,7 @@ REPO_SEARCH_QUERIES = [
 class GitHubReleases(BaseSource):
     def fetch(self) -> list[FeedItem]:
         try:
-            cutoff = datetime.now(tz=timezone.utc) - timedelta(hours=LOOKBACK_HOURS)
+            cutoff = datetime.now(tz=timezone.utc) - timedelta(hours=_cfg.LOOKBACK_HOURS)
             headers = {"Accept": "application/vnd.github.v3+json", "User-Agent": "ClaudeNewsBot/1.0"}
             if GITHUB_TOKEN:
                 headers["Authorization"] = f"Bearer {GITHUB_TOKEN}"

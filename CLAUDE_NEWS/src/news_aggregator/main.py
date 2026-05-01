@@ -1,8 +1,11 @@
+import argparse
 import logging
 import logging.handlers
+import math
 import time
-from datetime import date, datetime, timezone
+from datetime import date, datetime, time as dt_time, timedelta, timezone
 
+import news_aggregator.config as _cfg
 from news_aggregator.config import LOG_DIR, NEWS_DIR
 from news_aggregator.dedup import deduplicate
 from news_aggregator.digest import render
@@ -29,11 +32,38 @@ def setup_logging() -> None:
     )
 
 
+def parse_args() -> argparse.Namespace:
+    p = argparse.ArgumentParser(description="Claude/Anthropic news aggregator")
+    p.add_argument(
+        "--date",
+        metavar="YYYY-MM-DD",
+        help="Backfill date: fetch news for exactly this day (default: today)",
+    )
+    return p.parse_args()
+
+
 def main() -> None:
+    args = parse_args()
     setup_logging()
     logger = logging.getLogger(__name__)
     start = time.time()
-    logger.info("=== News aggregator run started ===")
+
+    # ── Date / lookback setup ─────────────────────────────────────────────────
+    until_dt: datetime | None = None
+    if args.date:
+        target_date = date.fromisoformat(args.date)
+        since_dt = datetime.combine(target_date, dt_time.min, tzinfo=timezone.utc)
+        until_dt = since_dt + timedelta(days=1)
+        now_utc = datetime.now(tz=timezone.utc)
+        lookback = math.ceil((now_utc - since_dt).total_seconds() / 3600) + 1
+        _cfg.LOOKBACK_HOURS = lookback
+        logger.info(
+            "=== News aggregator run started (backfill %s, lookback=%dh) ===",
+            args.date, lookback,
+        )
+    else:
+        target_date = date.today()
+        logger.info("=== News aggregator run started ===")
 
     NEWS_DIR.mkdir(parents=True, exist_ok=True)
 
@@ -61,14 +91,19 @@ def main() -> None:
     deduped = deduplicate(all_items)
     logger.info("After dedup: %d items (was %d)", len(deduped), len(all_items))
 
+    # Backfill: drop articles published AFTER the target day ends
+    if until_dt is not None:
+        before_clip = len(deduped)
+        deduped = [it for it in deduped if it.published is None or it.published < until_dt]
+        logger.info("Clipped to %s window: %d → %d items", args.date, before_clip, len(deduped))
+
     enriched = enrich(deduped)
     logger.info("Enrichment done: %d items", len(enriched))
 
     filtered = filter_relevant(enriched)
     logger.info("After relevance filter: %d items", len(filtered))
 
-    today = date.today()
-    digest_path, is_fallback = render(filtered, today, source_status)
+    digest_path, is_fallback = render(filtered, target_date, source_status)
     logger.info("Digest written: %s", digest_path)
 
     if is_fallback:

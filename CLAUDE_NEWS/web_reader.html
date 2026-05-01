@@ -1,0 +1,1053 @@
+<!doctype html>
+<html lang="zh-TW" data-theme="dark">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>CLAUDE NEWS · LLM-WIKI — 2026-04-30</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Inter+Tight:wght@500;600;700&family=JetBrains+Mono:wght@400;500;600&family=Noto+Sans+TC:wght@400;500;600;700&display=swap">
+<style>
+/* ═══════════════════════════════════════════════════
+   DESIGN TOKENS — dark (default)
+═══════════════════════════════════════════════════ */
+:root, :root[data-theme="dark"] {
+  --bg-0: #15161F; --bg-1: #1E1E2E; --bg-2: #252638; --bg-3: #2D2E42; --bg-inset: #181925;
+  --fg-1: #ECECF1; --fg-2: #A8A8B8; --fg-3: #6E6E80; --fg-4: #4A4B5E;
+  --border-1: rgba(255,255,255,0.06); --border-2: rgba(255,255,255,0.10); --border-strong: rgba(255,255,255,0.18);
+  --inner-highlight: rgba(255,255,255,0.04);
+  --purple-9: #9B8BFF; --purple-7: #7C6CDC; --purple-5: #574CA8;
+  --purple-tint: rgba(124,108,220,0.12);
+  --tan-9: #E8C49A; --tan-7: #D4A574; --tan-5: #A87B4F;
+  --tan-tint: rgba(212,165,116,0.10);
+  --info: #6BB0E8; --info-tint: rgba(107,176,232,0.10);
+  --success: #7AC894; --success-tint: rgba(122,200,148,0.10);
+  --warn: #E0B66B; --warn-tint: rgba(224,182,107,0.10);
+  --danger: #E08585; --danger-tint: rgba(224,133,133,0.10);
+  --sentiment-positive: #7AC894; --sentiment-neutral: #A8A8B8;
+  --sentiment-negative: #E08585; --sentiment-mixed: #E0B66B;
+  color-scheme: dark;
+}
+:root[data-theme="light"] {
+  --bg-0: #FAF7F0; --bg-1: #FFFFFF; --bg-2: #F3EFE5; --bg-3: #E8E2D2; --bg-inset: #F0EBDD;
+  --fg-1: #1A1A24; --fg-2: #4A4A5C; --fg-3: #7A7A8A; --fg-4: #B0B0BD;
+  --border-1: rgba(20,14,4,0.08); --border-2: rgba(20,14,4,0.14); --border-strong: rgba(20,14,4,0.24);
+  --inner-highlight: rgba(255,255,255,0.6);
+  --purple-9: #5C4DBF; --purple-7: #7C6CDC; --purple-5: #9B8BFF;
+  --purple-tint: rgba(124,108,220,0.10);
+  --tan-9: #8E5F35; --tan-7: #A87B4F; --tan-5: #D4A574;
+  --tan-tint: rgba(168,123,79,0.10);
+  --info: #2E78B5; --info-tint: rgba(46,120,181,0.08);
+  --success: #2F8A4F; --success-tint: rgba(47,138,79,0.08);
+  --warn: #B5852E; --warn-tint: rgba(181,133,46,0.08);
+  --danger: #B53E3E; --danger-tint: rgba(181,62,62,0.08);
+  --sentiment-positive: #2F8A4F; --sentiment-neutral: #7A7A8A;
+  --sentiment-negative: #B53E3E; --sentiment-mixed: #B5852E;
+  color-scheme: light;
+}
+:root {
+  --font-display: 'Inter Tight', 'Noto Sans TC', system-ui, sans-serif;
+  --font-body: 'Inter', 'Noto Sans TC', system-ui, sans-serif;
+  --font-mono: 'JetBrains Mono', ui-monospace, 'SFMono-Regular', monospace;
+  --font-cjk: 'Noto Sans TC', 'Inter', system-ui, sans-serif;
+  --fs-micro: 12px; --fs-small: 14px; --fs-body: 16px;
+  --fs-h3: 18px; --fs-h2: 22px; --fs-h1: 28px;
+  --lh-tight: 1.2; --lh-heading: 1.3; --lh-body: 1.6;
+  --fw-regular: 400; --fw-medium: 500; --fw-semibold: 600; --fw-bold: 700;
+  --radius-1: 4px; --radius-2: 6px; --radius-3: 8px; --radius-4: 12px;
+}
+
+/* ═══════════════════════════════════════════════════
+   RESET + BASE
+═══════════════════════════════════════════════════ */
+*, *::before, *::after { box-sizing: border-box; }
+html, body { margin: 0; padding: 0; height: 100%; }
+body {
+  background: var(--bg-0); color: var(--fg-1);
+  font-family: var(--font-body); font-size: var(--fs-body);
+  line-height: var(--lh-body); -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+h1,h2,h3,h4 { font-family: var(--font-display); letter-spacing: -0.01em; line-height: var(--lh-heading); font-weight: var(--fw-semibold); color: var(--fg-1); margin: 0; }
+p { margin: 0; color: var(--fg-1); }
+a { color: var(--purple-7); text-decoration: none; text-underline-offset: 3px; transition: color 100ms; }
+a:hover { color: var(--purple-9); text-decoration: underline; text-decoration-thickness: 1px; }
+code { font-family: var(--font-mono); font-size: 0.88em; background: var(--bg-inset); border: 1px solid var(--border-1); padding: 1px 5px; border-radius: var(--radius-1); color: var(--fg-1); }
+
+/* ═══════════════════════════════════════════════════
+   NAV
+═══════════════════════════════════════════════════ */
+.nav {
+  position: sticky; top: 0; z-index: 100;
+  background: rgba(21,22,31,0.82);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--border-1);
+}
+[data-theme="light"] .nav { background: rgba(250,247,240,0.85); }
+.nav__inner {
+  max-width: 1200px; margin: 0 auto;
+  height: 56px; display: flex; align-items: center; gap: 8px;
+  padding: 0 24px;
+}
+.nav__brand { display: flex; flex-direction: column; justify-content: center; text-decoration: none; margin-right: 16px; line-height: 1; }
+.nav__brand-main { font-family: var(--font-display); font-weight: var(--fw-bold); font-size: 15px; letter-spacing: -0.02em; color: var(--fg-1); }
+.nav__brand-main span { color: var(--purple-7); }
+.nav__brand-sub { font-family: var(--font-mono); font-size: 9px; letter-spacing: 0.16em; color: var(--fg-3); margin-top: 2px; text-transform: uppercase; }
+.nav__links { display: flex; gap: 2px; }
+.nav__link {
+  font-family: var(--font-display); font-size: 13px; font-weight: var(--fw-medium);
+  padding: 5px 12px; border-radius: var(--radius-2);
+  color: var(--fg-2); text-decoration: none; cursor: pointer;
+  border: none; background: none; transition: color 100ms, background 100ms;
+}
+.nav__link:hover { color: var(--fg-1); background: var(--bg-2); text-decoration: none; }
+.nav__link.is-active { color: var(--fg-1); background: var(--bg-2); }
+.nav__right { margin-left: auto; display: flex; align-items: center; gap: 8px; }
+.nav__theme {
+  width: 32px; height: 32px; border-radius: var(--radius-2);
+  background: var(--bg-1); border: 1px solid var(--border-2);
+  cursor: pointer; display: flex; align-items: center; justify-content: center;
+  font-size: 14px; transition: background 100ms, border-color 100ms; color: var(--fg-2);
+}
+.nav__theme:hover { background: var(--bg-2); border-color: var(--border-strong); }
+.nav__search {
+  height: 32px; padding: 0 10px; display: inline-flex; align-items: center; gap: 8px;
+  background: var(--bg-1); border: 1px solid var(--border-2); border-radius: var(--radius-2);
+  color: var(--fg-3); font-family: var(--font-mono); font-size: 12px; cursor: text;
+  min-width: 180px; transition: border-color 100ms;
+}
+.nav__search:hover { border-color: var(--border-strong); }
+.nav__search .kbd { margin-left: auto; padding: 1px 5px; border: 1px solid var(--border-1); border-radius: 3px; font-size: 10px; color: var(--fg-4); }
+
+/* ═══════════════════════════════════════════════════
+   VIEWS
+═══════════════════════════════════════════════════ */
+.view { display: none; }
+.view.is-active { display: block; }
+
+/* ═══════════════════════════════════════════════════
+   TODAY FEED
+═══════════════════════════════════════════════════ */
+.feed { max-width: 720px; margin: 0 auto; padding: 40px 24px 80px; font-family: var(--font-cjk); }
+
+.feed__header { display: flex; gap: 20px; align-items: flex-start; margin-bottom: 32px; padding-bottom: 24px; border-bottom: 1px solid var(--border-1); }
+
+.day-badge {
+  width: 88px; height: 88px; flex-shrink: 0;
+  border-radius: var(--radius-3); border: 1px solid var(--tan-7);
+  background: linear-gradient(180deg, var(--bg-2), var(--bg-1));
+  display: flex; flex-direction: column; align-items: center; justify-content: center;
+  box-shadow: 0 0 0 4px var(--tan-tint);
+}
+.day-badge__y { font-family: var(--font-mono); font-size: 10px; color: var(--fg-3); }
+.day-badge__d { font-family: var(--font-display); font-weight: var(--fw-bold); font-size: 34px; color: var(--tan-9); letter-spacing: -0.02em; line-height: 1; margin: 1px 0; }
+.day-badge__m { font-family: var(--font-mono); font-size: 10px; color: var(--fg-2); text-transform: uppercase; letter-spacing: 0.08em; }
+
+.feed__meta { flex: 1; }
+.feed__meta h1 { font-size: 20px; font-weight: var(--fw-bold); letter-spacing: -0.02em; color: var(--fg-1); margin: 0 0 8px; line-height: 1.25; }
+.feed__metarow { display: flex; gap: 16px; flex-wrap: wrap; font-family: var(--font-mono); font-size: 11px; color: var(--fg-3); align-items: center; }
+.feed__metarow .sep { color: var(--fg-4); }
+.feed__metarow b { color: var(--fg-2); font-weight: var(--fw-medium); }
+.pulse-dot { display: inline-flex; align-items: center; gap: 5px; color: var(--success); font-size: 11px; }
+.pulse-dot::before { content: ""; display: inline-block; width: 6px; height: 6px; border-radius: 50%; background: currentColor; animation: pulse 2s infinite; }
+@keyframes pulse { 0%{box-shadow:0 0 0 0 rgba(122,200,148,0.7)} 70%{box-shadow:0 0 0 5px rgba(122,200,148,0)} 100%{box-shadow:0 0 0 0 rgba(122,200,148,0)} }
+
+.section { margin: 32px 0; }
+.section__h { font-family: var(--font-display); font-size: 15px; font-weight: var(--fw-semibold); color: var(--fg-1); margin: 0 0 12px; display: flex; align-items: center; gap: 6px; }
+.section__h .emoji { font-size: 14px; }
+
+/* story */
+.story { padding: 14px 0; border-bottom: 1px solid var(--border-1); }
+.story:last-child { border-bottom: 0; }
+.story__title { font-size: 15px; font-weight: var(--fw-semibold); margin: 0 0 5px; line-height: 1.4; }
+.story__title a { color: var(--fg-1); }
+.story__title a:hover { color: var(--purple-9); text-decoration: none; }
+.story__body { font-size: 13px; color: var(--fg-2); line-height: 1.65; margin: 0 0 6px; }
+.sourceline { display: flex; gap: 8px; align-items: center; flex-wrap: wrap; font-family: var(--font-mono); font-size: 10px; color: var(--fg-3); }
+.sourceline code { font-size: 9px; }
+
+/* star story */
+.story--star {
+  padding: 14px 16px; margin: 6px 0;
+  border-left: 2px solid var(--tan-7);
+  background: linear-gradient(90deg, var(--tan-tint), transparent 72%);
+  border-bottom: 0; border-radius: 0 var(--radius-2) var(--radius-2) 0;
+}
+.story--star .story__title a { color: var(--fg-1); }
+
+/* sentiment pill */
+.sentiment { font-family: var(--font-mono); font-size: 10px; padding: 1px 6px; border-radius: var(--radius-1); border: 1px solid; white-space: nowrap; }
+.sentiment--positive { color: var(--sentiment-positive); border-color: rgba(122,200,148,0.3); background: var(--success-tint); }
+.sentiment--neutral  { color: var(--sentiment-neutral);  border-color: rgba(168,168,184,0.3); background: rgba(168,168,184,0.08); }
+.sentiment--negative { color: var(--sentiment-negative); border-color: rgba(224,133,133,0.3); background: var(--danger-tint); }
+.sentiment--mixed    { color: var(--sentiment-mixed);    border-color: rgba(224,182,107,0.3); background: var(--warn-tint); }
+
+/* focus section */
+.section--focus { background: var(--bg-1); border: 1px solid var(--border-1); border-radius: var(--radius-3); padding: 20px 22px; }
+.focus-list { list-style: none; padding: 0; margin: 8px 0 0; }
+.focus-item { padding: 10px 0; border-bottom: 1px solid var(--border-1); display: flex; gap: 10px; align-items: flex-start; font-size: 13px; color: var(--fg-1); line-height: 1.6; }
+.focus-item:last-child { border-bottom: 0; padding-bottom: 0; }
+.focus-item:first-child { padding-top: 0; }
+.focus-tag { font-family: var(--font-mono); font-size: 9px; padding: 2px 6px; border-radius: var(--radius-1); flex-shrink: 0; border: 1px solid; white-space: nowrap; margin-top: 2px; }
+.focus-tag--major  { color: var(--danger);   border-color: rgba(224,133,133,0.4); background: var(--danger-tint); }
+.focus-tag--track  { color: var(--warn);     border-color: rgba(224,182,107,0.4); background: var(--warn-tint); }
+.focus-tag--tool   { color: var(--success);  border-color: rgba(122,200,148,0.4); background: var(--success-tint); }
+.focus-tag--trend  { color: var(--purple-9); border-color: rgba(124,108,220,0.4); background: var(--purple-tint); }
+.focus-tag--risk   { color: var(--danger);   border-color: rgba(224,133,133,0.4); background: var(--danger-tint); }
+
+/* source table */
+.sourcetable { background: var(--bg-1); border: 1px solid var(--border-1); border-radius: var(--radius-3); padding: 14px 18px; margin-top: 32px; }
+.sourcetable__title { font-family: var(--font-display); font-size: 10px; text-transform: uppercase; letter-spacing: 0.06em; color: var(--fg-3); margin-bottom: 10px; }
+.sourcetable__grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 8px; }
+.source-cell { padding: 8px 10px; background: var(--bg-2); border-radius: var(--radius-1); font-family: var(--font-mono); font-size: 10px; display: flex; flex-direction: column; gap: 3px; }
+.source-cell__name { color: var(--fg-3); }
+.source-cell__status { color: var(--success); font-size: 13px; line-height: 1; }
+.source-cell__count { color: var(--fg-3); }
+
+/* callout */
+.callout { border-left: 4px solid var(--warn); background: var(--warn-tint); border-radius: var(--radius-2); padding: 10px 14px; margin: 12px 0; font-size: 13px; color: var(--fg-2); }
+.callout--info { border-left-color: var(--info); background: var(--info-tint); }
+
+/* ═══════════════════════════════════════════════════
+   WIKI VIEW
+═══════════════════════════════════════════════════ */
+.wiki { max-width: 1100px; margin: 0 auto; padding: 40px 24px 80px; }
+.wiki__h1 { font-size: 26px; font-weight: var(--fw-bold); letter-spacing: -0.02em; margin: 0 0 4px; }
+.wiki__sub { font-family: var(--font-mono); font-size: 11px; color: var(--fg-3); margin-bottom: 32px; }
+.wiki__section-h { font-family: var(--font-display); font-size: 10px; font-weight: var(--fw-semibold); text-transform: uppercase; letter-spacing: 0.1em; color: var(--fg-3); margin: 32px 0 10px; padding-bottom: 8px; border-bottom: 1px solid var(--border-1); }
+
+.entity-table { display: flex; flex-direction: column; gap: 4px; margin-bottom: 8px; }
+
+.entity-row {
+  display: grid;
+  grid-template-columns: 190px 80px 100px 1fr 100px;
+  gap: 16px; align-items: center;
+  padding: 11px 14px; border: 1px solid var(--border-1); border-radius: var(--radius-3);
+  background: var(--bg-1); cursor: pointer;
+  transition: border-color 100ms, background 100ms;
+  text-decoration: none;
+}
+.entity-row:hover { border-color: var(--border-2); background: var(--bg-2); text-decoration: none; }
+.entity-row--topic { grid-template-columns: 220px 100px 1fr 100px; }
+
+.entity-row__name { font-family: var(--font-mono); font-size: 12px; color: var(--purple-9); display: flex; align-items: center; gap: 4px; }
+.entity-row__name .bracket { color: var(--fg-4); }
+.entity-row__type { font-family: var(--font-mono); font-size: 10px; color: var(--fg-3); }
+.entity-row__summary { font-family: var(--font-cjk); font-size: 13px; color: var(--fg-2); line-height: 1.5; }
+.entity-row__updated { font-family: var(--font-mono); font-size: 10px; color: var(--fg-3); text-align: right; }
+
+.pill { font-family: var(--font-mono); font-size: 10px; padding: 2px 7px; border-radius: var(--radius-1); border: 1px solid; white-space: nowrap; }
+.pill--active  { color: var(--success); border-color: rgba(122,200,148,0.4); background: var(--success-tint); }
+.pill--warn    { color: var(--warn);    border-color: rgba(224,182,107,0.4); background: var(--warn-tint); }
+.pill--danger  { color: var(--danger);  border-color: rgba(224,133,133,0.4); background: var(--danger-tint); }
+.pill--info    { color: var(--info);    border-color: rgba(107,176,232,0.4); background: var(--info-tint); }
+.pill--purple  { color: var(--purple-9); border-color: rgba(124,108,220,0.4); background: var(--purple-tint); }
+.pill--gray    { color: var(--fg-3);    border-color: var(--border-2); background: var(--bg-2); }
+
+.wiki__note { font-family: var(--font-mono); font-size: 11px; color: var(--fg-3); margin-top: 8px; }
+
+/* entity detail modal */
+.modal-scrim { display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.6); z-index: 200; }
+.modal-scrim.is-open { display: flex; align-items: flex-start; justify-content: center; padding: 48px 24px; overflow-y: auto; }
+.modal {
+  background: var(--bg-1); border: 1px solid var(--border-2);
+  border-radius: var(--radius-4); max-width: 800px; width: 100%;
+  padding: 32px; position: relative;
+}
+.modal__close { position: absolute; top: 16px; right: 16px; width: 28px; height: 28px; border-radius: var(--radius-2); background: var(--bg-2); border: 1px solid var(--border-1); cursor: pointer; color: var(--fg-3); font-size: 16px; display: flex; align-items: center; justify-content: center; transition: background 100ms; }
+.modal__close:hover { background: var(--bg-3); color: var(--fg-1); }
+.modal__type-row { display: flex; gap: 8px; align-items: center; margin-bottom: 6px; flex-wrap: wrap; }
+.modal__h1 { font-size: 24px; font-weight: var(--fw-bold); letter-spacing: -0.02em; margin-bottom: 4px; }
+.modal__meta { font-family: var(--font-mono); font-size: 11px; color: var(--fg-3); margin-bottom: 20px; display: flex; flex-direction: column; gap: 2px; }
+.modal__meta-row { display: flex; gap: 8px; }
+.modal__meta-label { color: var(--fg-4); width: 72px; flex-shrink: 0; }
+.modal__section-h { font-size: 11px; font-weight: var(--fw-semibold); text-transform: uppercase; letter-spacing: 0.08em; color: var(--fg-3); margin: 18px 0 8px; padding-bottom: 6px; border-bottom: 1px solid var(--border-1); }
+.modal__body { font-family: var(--font-cjk); font-size: 14px; color: var(--fg-2); line-height: 1.65; }
+.modal__body + .modal__section-h { margin-top: 20px; }
+.modal__links { margin-top: 16px; display: flex; gap: 6px; flex-wrap: wrap; }
+.modal__link { font-family: var(--font-mono); font-size: 11px; color: var(--fg-3); border: 1px solid var(--border-1); padding: 2px 8px; border-radius: var(--radius-1); text-decoration: none; }
+.modal__link:hover { color: var(--purple-9); border-color: var(--purple-5); text-decoration: none; }
+.modal__wikilink { font-family: var(--font-mono); font-size: 11px; color: var(--purple-7); }
+.modal__wikilink::before { content: "[["; color: var(--fg-4); }
+.modal__wikilink::after  { content: "]]"; color: var(--fg-4); }
+
+/* ═══════════════════════════════════════════════════
+   ARCHIVE VIEW
+═══════════════════════════════════════════════════ */
+.archive { max-width: 920px; margin: 0 auto; padding: 40px 24px 80px; }
+.archive__h1 { font-size: 26px; font-weight: var(--fw-bold); letter-spacing: -0.02em; margin-bottom: 4px; }
+.archive__sub { font-family: var(--font-mono); font-size: 11px; color: var(--fg-3); margin-bottom: 32px; }
+.archive__grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 12px; }
+.archive-card {
+  background: var(--bg-1); border: 1px solid var(--border-1); border-radius: var(--radius-3);
+  padding: 16px 18px; cursor: pointer; text-decoration: none;
+  transition: border-color 100ms, background 100ms; display: block;
+}
+.archive-card:hover { border-color: var(--border-2); background: var(--bg-2); text-decoration: none; }
+.archive-card__date { font-family: var(--font-mono); font-size: 12px; color: var(--tan-7); margin-bottom: 6px; }
+.archive-card__title { font-family: var(--font-display); font-size: 14px; font-weight: var(--fw-semibold); color: var(--fg-1); margin-bottom: 8px; line-height: 1.35; }
+.archive-card__meta { font-family: var(--font-mono); font-size: 10px; color: var(--fg-3); display: flex; gap: 10px; }
+.archive-card--latest .archive-card__date { color: var(--success); }
+.archive-card--latest { border-color: rgba(122,200,148,0.2); }
+
+/* ═══════════════════════════════════════════════════
+   FOOTER
+═══════════════════════════════════════════════════ */
+.reader-footer {
+  border-top: 1px solid var(--border-1);
+  padding: 20px 24px;
+  display: flex; gap: 8px; flex-wrap: wrap; justify-content: center;
+  font-family: var(--font-mono); font-size: 11px; color: var(--fg-3);
+}
+.reader-footer .sep { color: var(--fg-4); }
+
+/* ═══════════════════════════════════════════════════
+   MOBILE
+═══════════════════════════════════════════════════ */
+@media (max-width: 700px) {
+  .nav__search { display: none; }
+  .entity-row { grid-template-columns: 1fr 80px; }
+  .entity-row__type, .entity-row__summary, .entity-row__updated { display: none; }
+  .entity-row--topic { grid-template-columns: 1fr 80px; }
+  .sourcetable__grid { grid-template-columns: repeat(3, 1fr); }
+  .archive__grid { grid-template-columns: 1fr 1fr; }
+}
+@media (max-width: 480px) {
+  .feed { padding: 24px 16px 60px; }
+  .nav__inner { padding: 0 16px; }
+  .archive__grid { grid-template-columns: 1fr; }
+}
+</style>
+</head>
+<body>
+
+<!-- ════════════════════════════════════════════
+     NAV
+════════════════════════════════════════════ -->
+<nav class="nav">
+  <div class="nav__inner">
+    <a class="nav__brand" href="#" onclick="return false">
+      <div class="nav__brand-main">CLAUDE NEWS<span>·</span></div>
+      <div class="nav__brand-sub">LLM-WIKI</div>
+    </a>
+    <div class="nav__links">
+      <button class="nav__link is-active" onclick="switchView('today', this)">今日摘要</button>
+      <button class="nav__link" onclick="switchView('wiki', this)">Wiki 知識庫</button>
+      <button class="nav__link" onclick="switchView('archive', this)">典藏</button>
+    </div>
+    <div class="nav__right">
+      <button class="nav__theme" onclick="toggleTheme()" title="切換主題" aria-label="切換明暗主題">☽</button>
+      <div class="nav__search" tabindex="0">
+        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+        搜尋 wiki…
+        <span class="kbd">/</span>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<!-- ════════════════════════════════════════════
+     TODAY FEED — 2026-04-30
+════════════════════════════════════════════ -->
+<div id="view-today" class="view is-active">
+<div class="feed">
+
+  <!-- Header -->
+  <div class="feed__header">
+    <div class="day-badge">
+      <div class="day-badge__y">2026</div>
+      <div class="day-badge__d">30</div>
+      <div class="day-badge__m">APR</div>
+    </div>
+    <div class="feed__meta">
+      <h1>Claude Code &amp; Anthropic 每日新聞摘要</h1>
+      <div class="feed__metarow">
+        <span><b>2026-04-30</b></span>
+        <span class="sep">·</span>
+        <span>來源 <b>5/5</b></span>
+        <span class="sep">·</span>
+        <span>文章 <b>52</b> 則</span>
+        <span class="sep">·</span>
+        <span class="pulse-dot">最新</span>
+      </div>
+      <div class="feed__metarow" style="margin-top:4px;">
+        <span>更新時間 2026-05-01 03:07 UTC</span>
+        <span class="sep">·</span>
+        <span>claude CLI (Claude.ai Pro)</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- ⭐ 重點話題 -->
+  <div class="section">
+    <div class="section__h"><span class="emoji">⭐</span> 重點話題</div>
+
+    <div class="story story--star">
+      <div class="story__title"><a href="https://twitter.com/theo/status/2049645973350363168" target="_blank" rel="noopener">Claude Code refuses requests or charges extra if your commits mention "OpenClaw"</a></div>
+      <div class="story__body">Claude Code 被發現存在異常行為：若 Git 提交訊息中含有特定 JSON 格式的 "OpenClaw" 字串，工具會直接拒絕請求，或立即將帳單的 Extra Usage 衝至 100%；也有使用者僅在文件內容中提及 OpenClaw 便觸發異常回應。此行為表明 Claude Code 正主動掃描 repo 內容並據此改變執行與計費策略，Anthropic 至今未公開說明，是近期最嚴重的帳單透明度信任事件，在 HN 引發近千則討論。</div>
+      <div class="sourceline"><code>Hacker News</code><span>· 04/30 14:36 UTC</span></div>
+    </div>
+
+    <div class="story story--star">
+      <div class="story__title"><a href="https://www.wsj.com/tech/ai/white-house-opposes-anthropics-plan-to-expand-access-to-mythos-model-dc281ab5" target="_blank" rel="noopener">White House Opposes Anthropic's Plan to Expand Access to Mythos Model</a></div>
+      <div class="story__body">白宮公開反對 Anthropic 擴大旗下最強大 Mythos 模型的存取範圍，與此同時 Anthropic 自身也宣稱 Mythos 的能力強大到足以破壞系統並危及網路安全，世界尚未準備好接受它。政府介入 AI 模型存取管控成為標誌性事件，社群稱之為「AI 授權時代的開端」，並與 Anthropic 和五角大廈之間的政策角力密切相關。</div>
+      <div class="sourceline"><code>Hacker News</code><span>· 04/30 09:55 UTC</span></div>
+    </div>
+
+    <div class="story story--star">
+      <div class="story__title"><a href="https://techcrunch.com/2026/04/29/sources-anthropic-could-raise-a-new-50b-round-at-a-valuation-of-900b/" target="_blank" rel="noopener">Sources: Anthropic Could Raise a New $50B Round at a Valuation of $900B</a></div>
+      <div class="story__body">TechCrunch 報導 Anthropic 已收到多個主動出擊的融資要約，規模約 $500 億美元、估值區間 $8,500 億–$9,000 億，可能在兩週內完成；Google 另被報導押注高達 $400 億。若成真，Anthropic 將躋身史上估值最高的私人 AI 新創，折射出市場對 AI 基礎設施競賽的極度樂觀，但商業驗證壓力也將隨之驟增。</div>
+      <div class="sourceline"><code>Hacker News</code><span>· 04/30 00:39 UTC</span></div>
+    </div>
+
+    <div class="story story--star">
+      <div class="story__title"><a href="#" target="_blank" rel="noopener">Anthropic announces Claude Security public beta to find and fix software vulnerabilities</a></div>
+      <div class="story__body">Anthropic 正式推出 Claude Security 公開測試版，ZDNET、SecurityWeek、SiliconANGLE、CRN 等多家媒體同步報導。此工具有別於傳統 CVE 掃描器，能結合應用程式的業務邏輯提供情境化安全評估，並直接整合於 Claude Code 開發環境，標誌 Anthropic 正式以獨立產品形式跨足 AI 輔助資安市場。</div>
+      <div class="sourceline"><code>Google News / SiliconANGLE</code><span>· 04/30 09:00 UTC</span></div>
+    </div>
+  </div>
+
+  <!-- 🔧 技術更新 -->
+  <div class="section">
+    <div class="section__h"><span class="emoji">🔧</span> 技術更新</div>
+
+    <div class="story">
+      <div class="story__title"><a href="https://github.com/anthropics/anthropic-sdk-typescript/releases/tag/sdk-v0.92.0" target="_blank" rel="noopener">anthropics/anthropic-sdk-typescript sdk: v0.92.0</a></div>
+      <div class="story__body">TypeScript SDK 發布 0.92.0，主要改善 Managed API 相關功能，是持續強化 Claude Managed Agents 基礎設施的一環。</div>
+      <div class="sourceline"><code>GitHub / anthropics/anthropic-sdk-typescript</code><span>· 04/30 19:40 UTC</span></div>
+    </div>
+
+    <div class="story">
+      <div class="story__title"><a href="https://thenewstack.io/anthropic-agents-managed-aws-claude/" target="_blank" rel="noopener">Anthropic wants to be the AWS of agentic AI</a></div>
+      <div class="story__body">Anthropic 在本月相繼推出 Claude Managed Agents 公開測試版與 Persistent Memory 功能；記者實測後指出，此產品面向具備一定開發能力的工程團隊，顯示 Anthropic 已從模型供應商轉型為 AI Agent 執行基礎設施平台。</div>
+      <div class="sourceline"><code>Hacker News</code><span>· 04/30 18:09 UTC</span></div>
+    </div>
+
+    <div class="story">
+      <div class="story__title"><a href="https://www.reddit.com/r/ClaudeAI/comments/1t0gomk/whats_new_in_cc_21124_166_tokens_and_21126_87/" target="_blank" rel="noopener">What's new in CC 2.1.124 (+166 tokens) and 2.1.126 (-87 tokens) system prompt</a></div>
+      <div class="story__body">社群研究者追蹤到 Claude Code 的兩次系統提示更新：2.1.124 新增「File modification detected」預算超出提醒機制（增 166 tokens），2.1.126 則精簡核心身份指令（減 87 tokens），REPL 工具慣例也有細節調整。</div>
+      <div class="sourceline"><code>Reddit / r/ClaudeAI</code><span>· 04/30 18:34 UTC</span></div>
+    </div>
+
+    <div class="story">
+      <div class="story__title"><a href="#" target="_blank" rel="noopener">GameMaker incorporates Claude Code to enable AI-assisted workflows</a></div>
+      <div class="story__body">遊戲引擎平台 GameMaker 宣布整合 Claude Code，為遊戲開發者提供 AI 輔助工作流程，是 Claude Code 在垂直軟體領域深度整合的最新案例。</div>
+      <div class="sourceline"><code>Google News / Game Developer</code><span>· 04/30 06:44 UTC</span></div>
+    </div>
+
+    <div class="story">
+      <div class="story__title"><a href="#" target="_blank" rel="noopener">AI coding agents breached: attackers targeted credentials, not models</a></div>
+      <div class="story__body">VentureBeat 報導 AI 程式碼代理已成為真實攻擊目標，攻擊者鎖定的是憑證（credentials）而非模型本身，說明 AI 工具鏈的資安風險已從理論進入實際攻擊場景。</div>
+      <div class="sourceline"><code>Google News / VentureBeat</code><span>· 04/30 08:30 UTC</span></div>
+    </div>
+
+    <div class="story">
+      <div class="story__title"><a href="https://news.ycombinator.com/item?id=47963671" target="_blank" rel="noopener">Whose Trust Is It Anyway? Configuration Boundaries in AI Development Tools</a></div>
+      <div class="story__body">安全研究者揭露：Google 將 Gemini CLI 在 CI/CD 中的工作區信任行為評為 CVSS 10.0 嚴重漏洞並立即修補，Anthropic 則將類似的 Claude Code 行為定義為「設計如此」，兩家公司對 AI 代理安全邊界的判斷標準存在根本差異。</div>
+      <div class="sourceline"><code>Hacker News</code><span>· 04/30 15:07 UTC</span></div>
+    </div>
+  </div>
+
+  <!-- 💬 技術熱度討論 -->
+  <div class="section">
+    <div class="section__h"><span class="emoji">💬</span> 技術熱度討論</div>
+
+    <div class="story">
+      <div class="story__title"><a href="https://github.com/Nimbalyst/nimbalyst" target="_blank" rel="noopener">Show HN: Nimbalyst open-source visual workspace for ClaudeCode, Codex, OpenCode</a></div>
+      <div class="story__body">Nimbalyst 開源了一個多 Agent 視覺化工作台，支援 Claude Code、Codex、Opencode，核心功能是讓使用者與 AI Agent 能同步協作相同檔案，並透過 WYSIWYG diff 介面逐一審核各 Agent 的修改，同時支援 Excalidraw、試算表、Monaco 程式碼等多種編輯器。</div>
+      <div class="sourceline"><code>Hacker News</code><span>· 04/30 13:36 UTC</span><span class="sentiment sentiment--positive">😊 正面</span></div>
+    </div>
+
+    <div class="story">
+      <div class="story__title"><a href="https://news.ycombinator.com/item?id=47957402" target="_blank" rel="noopener">What I changed in how I use Claude Code after Anthropic's postmortem</a></div>
+      <div class="story__body">作者觀看 Anthropic 4 月 23 日公開的事後檢討後，重新審視 Claude Code 的使用策略，指出推理深度降低事件暴露出 AI 工具預設值不可盲目信任，並以「等效僱工成本」框架重新計算 token 費用，認為 AI 仍具壓倒性 CP 值。</div>
+      <div class="sourceline"><code>Hacker News</code><span>· 04/30 02:34 UTC</span><span class="sentiment sentiment--positive">😊 正面</span></div>
+    </div>
+
+    <div class="story">
+      <div class="story__title"><a href="https://news.ycombinator.com/item?id=47964653" target="_blank" rel="noopener">Ask HN: Is Anybody Using Codex?</a></div>
+      <div class="story__body">提問者觀察到 HN 上 Claude Code 討論量遠超 OpenAI Codex，好奇 Codex 是否真的不受歡迎；留言者普遍認為兩者能力相近（Opus 4.7 ≈ GPT 5.5），但 Claude Code 社群能見度明顯更高，Codex 曝光度相當有限。</div>
+      <div class="sourceline"><code>Hacker News</code><span>· 04/30 16:12 UTC</span><span class="sentiment sentiment--neutral">😐 中性</span></div>
+    </div>
+
+    <div class="story">
+      <div class="story__title"><a href="https://www.reddit.com/r/ClaudeAI/comments/1t0aw95/throttle_meter_opensource_claude_code_usage_meter/" target="_blank" rel="noopener">Throttle Meter — open-source Claude Code usage meter for macOS</a></div>
+      <div class="story__body">開發者因頻繁在 5 小時滾動窗口中途被限速而開發 Throttle Meter：macOS menubar 工具，從本機 <code>~/.claude/projects/*.jsonl</code> 即時計算 session 用量與週配額，無遙測、無網路請求，MIT 授權開源。</div>
+      <div class="sourceline"><code>Reddit / r/ClaudeAI</code><span>· 04/30 14:19 UTC</span><span class="sentiment sentiment--positive">😊 正面</span></div>
+    </div>
+
+    <div class="story">
+      <div class="story__title"><a href="https://www.reddit.com/r/ClaudeAI/comments/1t0ffze/opus_47_is_a_genuine_regression_and_im_tired_of/" target="_blank" rel="noopener">Opus 4.7 is a genuine regression and I'm tired of pretending it isn't</a></div>
+      <div class="story__body">一位重度 Max 20x 訂戶直言 Opus 4.7 嚴重退步，主要問題是過度「後設化」——每個回覆都像在撰寫論文，無法直接回答問題。配合學術研究（arxiv 2604.24827）估算 Opus 4.7 參數量約為 4T，疑似少於 Opus 4.6 的 5.3T，社群對 4.7 的失望情緒持續累積。</div>
+      <div class="sourceline"><code>Reddit / r/ClaudeAI</code><span>· 04/30 17:37 UTC</span><span class="sentiment sentiment--negative">😤 負面</span></div>
+    </div>
+
+    <div class="story">
+      <div class="story__title"><a href="https://www.reddit.com/r/ClaudeAI/comments/1t0acsf/i_built_an_opensource_memorygovernance_layer_for/" target="_blank" rel="noopener">I built an open-source memory/governance layer for Claude Code to reduce architecture drift</a></div>
+      <div class="story__body">開發者推出 Mneme，一個 repo-native CLI 工具，將架構決策（ADR）直接存在程式碼庫旁，並在 Claude/Cursor 呼叫前自動注入相關決策脈絡；也支援 CI 檢查，可在 PR 合入前攔截違反既定架構的變更。</div>
+      <div class="sourceline"><code>Reddit / r/ClaudeAI</code><span>· 04/30 13:57 UTC</span><span class="sentiment sentiment--positive">😊 正面</span></div>
+    </div>
+
+    <div class="story">
+      <div class="story__title"><a href="#" target="_blank" rel="noopener">Anthropic's Mythos Has Landed: Here's What Comes Next for Cyber</a></div>
+      <div class="story__body">Dark Reading 分析 Mythos 落地對網路安全產業的後續影響，預測攻防兩端的應用場景；標題措辭暗示 Mythos 已以某種形式亮相，但具體細節尚待驗證。</div>
+      <div class="sourceline"><code>Google News / Dark Reading</code><span>· 04/30 12:18 UTC</span><span class="sentiment sentiment--mixed">🤔 褒貶不一</span></div>
+    </div>
+
+    <div class="story">
+      <div class="story__title"><a href="https://lanes.sh/blog/linear-to-lanes" target="_blank" rel="noopener">Show HN: Run Claude Code sessions on Linear issues via two MCP servers</a></div>
+      <div class="story__body">Lanes.sh 教學示範如何串接 Linear 官方 MCP 與本地 Lanes MCP，讓 Agent 直接讀取 Linear 待辦票、在同一介面中啟動 Claude Code 工作階段，省去複製貼上與切換視窗的摩擦，實現 issue-to-code 的一鍵流程。</div>
+      <div class="sourceline"><code>Hacker News</code><span>· 04/30 12:03 UTC</span><span class="sentiment sentiment--positive">😊 正面</span></div>
+    </div>
+  </div>
+
+  <!-- 💰 付費方案動態 -->
+  <div class="section">
+    <div class="section__h"><span class="emoji">💰</span> 付費方案動態</div>
+
+    <div class="story">
+      <div class="story__title"><a href="https://news.ycombinator.com/item?id=47966935" target="_blank" rel="noopener">Claude Code dies with ANTHROPIC_API_KEY in cloud environment</a></div>
+      <div class="story__body">使用者警告：若在雲端環境設置 <code>ANTHROPIC_API_KEY</code> 環境變數，Claude Code 無法正常運作，且所有 Code 呼叫將改走 API 計費通道，造成大量意外費用；官方文件在此問題上存在誤導，過去已有多起「Extra Usage 異常暴增」事件與此有關。</div>
+      <div class="sourceline"><code>Hacker News</code><span>· 04/30 19:11 UTC</span></div>
+    </div>
+
+    <div class="story">
+      <div class="story__title"><a href="https://news.ycombinator.com/item?id=47961574" target="_blank" rel="noopener">Claude Pro expired and my $40 in prepaid Extra Usage credits vanished</a></div>
+      <div class="story__body">使用者 Claude Pro 訂閱到期後，發現預付的 $40 Extra Usage 餘額隨之歸零消失，Anthropic 文件未明確說明訂閱終止後的餘額處置規則，UI 中也不存在退款流程，引發社群對訂閱制公平性的不滿。</div>
+      <div class="sourceline"><code>Hacker News</code><span>· 04/30 12:44 UTC</span></div>
+    </div>
+
+    <div class="story">
+      <div class="story__title"><a href="https://www.reddit.com/r/ClaudeAI/comments/1t0fuwj/claude_code_usage_spike_from_longcontext_cache/" target="_blank" rel="noopener">Claude Code usage spike from long-context cache writes?</a></div>
+      <div class="story__body">使用者深入分析本機 JSONL 日誌後發現，Claude Code 用量暴增源自超大 prompt cache（約 475k tokens）的反覆重建；以公開 API 定價估算，單次重建成本即相當可觀，顯示長 context 的快取機制可能是隱性成本黑洞，值得重度使用者警惕。</div>
+      <div class="sourceline"><code>Reddit / r/ClaudeAI</code><span>· 04/30 17:56 UTC</span></div>
+    </div>
+  </div>
+
+  <!-- 📌 今日聚焦 -->
+  <div class="section section--focus">
+    <div class="section__h" style="margin:0 0 0"><span class="emoji">📌</span> 今日聚焦</div>
+    <ul class="focus-list">
+      <li class="focus-item"><span class="focus-tag focus-tag--major">重大事件</span><span>Claude Code "OpenClaw" 事件暴露 AI 工具的信任危機：工具在使用者不知情的情況下掃描 repo 內容並改變計費行為，Anthropic 應儘速公開說明觸發條件是否屬於預期設計，否則恐進一步侵蝕開發者信任。</span></li>
+      <li class="focus-item"><span class="focus-tag focus-tag--major">重大事件</span><span>白宮介入 Mythos 模型存取管控，AI 模型授權管制正式進入執行層次，Anthropic 與美國政府之間的政策角力料將持續，對 Mythos 商業化時程影響深遠。</span></li>
+      <li class="focus-item"><span class="focus-tag focus-tag--track">持續追蹤</span><span>Anthropic 估值逼近 $9,000 億美元，新一輪 $500 億融資若在兩週內落定，將再度刷新 AI 新創紀錄；但市場預期與實際商業模式之間的落差，是後續最值得觀察的風險指標。</span></li>
+      <li class="focus-item"><span class="focus-tag focus-tag--tool">新工具</span><span>Claude Security 公開測試版上線，Anthropic 首次以獨立資安產品形式與傳統 SAST 工具廠商正面競爭，其情境化評估角度具差異化潛力，後續生態整合深度值得追蹤。</span></li>
+      <li class="focus-item"><span class="focus-tag focus-tag--trend">社群趨勢</span><span>帳單透明度問題多點同步爆發（OpenClaw 觸發異常計費、環境變數導致 API 計費、訂閱到期餘額消失、長 context 快取隱性成本），顯示計費透明度與訂閱機制設計是當前 Claude 社群最大痛點，Anthropic 面臨系統性改善壓力。</span></li>
+    </ul>
+  </div>
+
+  <!-- 來源狀態 -->
+  <div class="sourcetable">
+    <div class="sourcetable__title">來源狀態</div>
+    <div class="sourcetable__grid">
+      <div class="source-cell"><span class="source-cell__name">Anthropic Blog</span><span class="source-cell__status">✅</span><span class="source-cell__count">0 篇</span></div>
+      <div class="source-cell"><span class="source-cell__name">GitHub</span><span class="source-cell__status">✅</span><span class="source-cell__count">3 篇</span></div>
+      <div class="source-cell"><span class="source-cell__name">Hacker News</span><span class="source-cell__status">✅</span><span class="source-cell__count">37 篇</span></div>
+      <div class="source-cell"><span class="source-cell__name">Reddit</span><span class="source-cell__status">✅</span><span class="source-cell__count">20 篇</span></div>
+      <div class="source-cell"><span class="source-cell__name">Google News</span><span class="source-cell__status">✅</span><span class="source-cell__count">24 篇</span></div>
+    </div>
+    <div style="margin-top:10px;font-family:var(--font-mono);font-size:10px;color:var(--fg-4);">Twitter/X 資料不包含在本摘要中（官方 API 需付費）</div>
+  </div>
+
+</div><!-- .feed -->
+</div><!-- #view-today -->
+
+
+<!-- ════════════════════════════════════════════
+     WIKI VIEW
+════════════════════════════════════════════ -->
+<div id="view-wiki" class="view">
+<div class="wiki">
+  <h1 class="wiki__h1">Wiki 知識庫</h1>
+  <div class="wiki__sub">最後更新：2026-05-01 &nbsp;·&nbsp; 頁面數：17 &nbsp;·&nbsp; 點擊實體查看詳細頁面</div>
+
+  <!-- Entities -->
+  <div class="wiki__section-h">Entities — 實體頁</div>
+  <div class="entity-table">
+
+    <div class="entity-row" onclick="openModal('modal-claude-code')">
+      <div class="entity-row__name"><span class="bracket">[[</span>claude-code<span class="bracket">]]</span></div>
+      <div class="entity-row__type">product</div>
+      <div><span class="pill pill--active">active</span></div>
+      <div class="entity-row__summary">Claude Code CLI 主頁：功能、已知問題（OpenClaw 計費、Auto Compact 失效）、社群工具生態</div>
+      <div class="entity-row__updated">2026-04-30</div>
+    </div>
+
+    <div class="entity-row" onclick="openModal('modal-opus-4-7')">
+      <div class="entity-row__name"><span class="bracket">[[</span>opus-4-7<span class="bracket">]]</span></div>
+      <div class="entity-row__type">model</div>
+      <div><span class="pill pill--warn">爭議中</span></div>
+      <div class="entity-row__summary">Opus 4.7 發布細節、思考深度「後設化」退步爭議、參數規模疑似縮減（估算 4T vs 5.3T）</div>
+      <div class="entity-row__updated">2026-04-30</div>
+    </div>
+
+    <div class="entity-row" onclick="openModal('modal-pricing')">
+      <div class="entity-row__name"><span class="bracket">[[</span>pricing<span class="bracket">]]</span></div>
+      <div class="entity-row__type">policy</div>
+      <div><span class="pill pill--warn">持續調整</span></div>
+      <div class="entity-row__summary">訂閱方案、近期計費政策變動：API Key 陷阱、餘額消失、長 context 快取隱性成本</div>
+      <div class="entity-row__updated">2026-04-30</div>
+    </div>
+
+    <div class="entity-row" onclick="openModal('modal-mythos')">
+      <div class="entity-row__name"><span class="bracket">[[</span>mythos<span class="bracket">]]</span></div>
+      <div class="entity-row__type">model</div>
+      <div><span class="pill pill--danger">限制存取 🔒</span></div>
+      <div class="entity-row__summary">高能力安全模型，七週發現 2,000+ 漏洞；白宮反對擴大存取，Transparency Hub 缺席</div>
+      <div class="entity-row__updated">2026-04-30</div>
+    </div>
+
+    <div class="entity-row" onclick="openModal('modal-claude-security')">
+      <div class="entity-row__name"><span class="bracket">[[</span>claude-security<span class="bracket">]]</span></div>
+      <div class="entity-row__type">product</div>
+      <div><span class="pill pill--info">public beta</span></div>
+      <div class="entity-row__summary">Claude Security 資安產品，情境化安全評估，整合於 Claude Code 開發環境，2026-04-30 上線</div>
+      <div class="entity-row__updated">2026-04-30</div>
+    </div>
+
+    <div class="entity-row" onclick="openModal('modal-openclaw')">
+      <div class="entity-row__name"><span class="bracket">[[</span>openclaw<span class="bracket">]]</span></div>
+      <div class="entity-row__type">product</div>
+      <div><span class="pill pill--danger">受限</span></div>
+      <div class="entity-row__summary">第三方 agentic 工具，被 Anthropic 配額限制；提及字串可觸發 Claude Code 異常計費行為</div>
+      <div class="entity-row__updated">2026-04-30</div>
+    </div>
+
+    <div class="entity-row" onclick="openModal('modal-google-investment')">
+      <div class="entity-row__name"><span class="bracket">[[</span>google-investment<span class="bracket">]]</span></div>
+      <div class="entity-row__type">event</div>
+      <div><span class="pill pill--gray">resolved</span></div>
+      <div class="entity-row__summary">Google 投資 $400 億美元歷史記錄，含循環算力交易結構，Anthropic 估值逼近 $9,000 億</div>
+      <div class="entity-row__updated">2026-04-30</div>
+    </div>
+
+    <div class="entity-row" onclick="openModal('modal-bugcrawl')">
+      <div class="entity-row__name"><span class="bracket">[[</span>bugcrawl<span class="bracket">]]</span></div>
+      <div class="entity-row__type">feature</div>
+      <div><span class="pill pill--warn">測試中</span></div>
+      <div class="entity-row__summary">Anthropic 測試中的 Claude Code 漏洞偵測工具，能自主發現並提交修補 PR</div>
+      <div class="entity-row__updated">2026-04-26</div>
+    </div>
+
+    <div class="entity-row" onclick="openModal('modal-project-deal')">
+      <div class="entity-row__name"><span class="bracket">[[</span>project-deal<span class="bracket">]]</span></div>
+      <div class="entity-row__type">feature</div>
+      <div><span class="pill pill--info">實驗中</span></div>
+      <div class="entity-row__summary">Claude 代理人自主交易談判實驗，Opus 4.7 vs Haiku 談判策略差異顯著</div>
+      <div class="entity-row__updated">2026-04-26</div>
+    </div>
+
+    <div class="entity-row" onclick="openModal('modal-claude-design')">
+      <div class="entity-row__name"><span class="bracket">[[</span>claude-design<span class="bracket">]]</span></div>
+      <div class="entity-row__type">feature</div>
+      <div><span class="pill pill--active">active（初期）</span></div>
+      <div class="entity-row__summary">Anthropic AI 設計工具，首日社群反映幻覺多、風格偏移、Claude Code 整合差</div>
+      <div class="entity-row__updated">2026-04-27</div>
+    </div>
+
+  </div>
+
+  <!-- Topics -->
+  <div class="wiki__section-h" style="margin-top:36px">Topics — 進行中議題</div>
+  <div class="entity-table">
+
+    <div class="entity-row entity-row--topic" onclick="openModal('modal-code-quality')">
+      <div class="entity-row__name"><span class="bracket">[[</span>code-quality-decline<span class="bracket">]]</span></div>
+      <div><span class="pill pill--info">monitoring</span></div>
+      <div class="entity-row__summary">Claude Code 效能退步事件，Anthropic 已承認工程疏失；Speed Bumps 增加、Stop Hooks 失效</div>
+      <div class="entity-row__updated">2026-04-30</div>
+    </div>
+
+    <div class="entity-row entity-row--topic" onclick="openModal('modal-competitor')">
+      <div class="entity-row__name"><span class="bracket">[[</span>competitor-landscape<span class="bracket">]]</span></div>
+      <div><span class="pill pill--warn">ongoing</span></div>
+      <div class="entity-row__summary">Google 祕密開發競品，Sergey Brin 主導；Codex 曝光度有限；HN 討論量 Claude Code 遠超同類</div>
+      <div class="entity-row__updated">2026-04-30</div>
+    </div>
+
+    <div class="entity-row entity-row--topic" onclick="openModal('modal-community-tech')">
+      <div class="entity-row__name"><span class="bracket">[[</span>community-tech-patterns<span class="bracket">]]</span></div>
+      <div><span class="pill pill--warn">ongoing</span></div>
+      <div class="entity-row__summary">社群技術應用趨勢：multi-agent 架構、Skills 設計、工具生態（Nimbalyst、Brifly、Mneme 等）</div>
+      <div class="entity-row__updated">2026-04-30</div>
+    </div>
+
+    <div class="entity-row entity-row--topic" onclick="openModal('modal-ai-agent-safety')">
+      <div class="entity-row__name"><span class="bracket">[[</span>ai-agent-safety<span class="bracket">]]</span></div>
+      <div><span class="pill pill--warn">ongoing</span></div>
+      <div class="entity-row__summary">AI agent 安全事故與防護機制：憑證竊取攻擊、沙盒隔離、信任邊界爭議（CVSS 10.0）</div>
+      <div class="entity-row__updated">2026-04-30</div>
+    </div>
+
+  </div>
+
+  <div class="wiki__note" style="margin-top:16px">新 entity：日報提及 2 次以上 → 建立 entities/ 頁面 &nbsp;·&nbsp; 新 topic：事件跨越 2 天以上 → 建立 topics/ 頁面</div>
+</div>
+</div><!-- #view-wiki -->
+
+
+<!-- ════════════════════════════════════════════
+     ARCHIVE VIEW
+════════════════════════════════════════════ -->
+<div id="view-archive" class="view">
+<div class="archive">
+  <h1 class="archive__h1">典藏</h1>
+  <div class="archive__sub">6 份日報 &nbsp;·&nbsp; 2026-04-25 → 2026-04-30</div>
+  <div class="archive__grid">
+
+    <div class="archive-card archive-card--latest" onclick="switchView('today', document.querySelector('.nav__link'))">
+      <div class="archive-card__date">2026-04-30 &nbsp;·&nbsp; 最新</div>
+      <div class="archive-card__title">OpenClaw 計費事件、白宮介入 Mythos、$50B 融資傳聞、Claude Security 公測</div>
+      <div class="archive-card__meta"><span>52 篇</span><span>5/5 來源</span></div>
+    </div>
+
+    <a class="archive-card" href="news/2026-04-29.md">
+      <div class="archive-card__date">2026-04-29</div>
+      <div class="archive-card__title">Anthropic $900B 估值融資、白宮 Mythos 阻攔首報、Claude Code Champion Kit</div>
+      <div class="archive-card__meta"><span>news/2026-04-29.md</span></div>
+    </a>
+
+    <a class="archive-card" href="news/2026-04-28.md">
+      <div class="archive-card__date">2026-04-28</div>
+      <div class="archive-card__title">Opus 圍牆事件（已修正）、Auto Compact 失效、Runhouse 股權收購、MCP alwaysLoad</div>
+      <div class="archive-card__meta"><span>news/2026-04-28.md</span></div>
+    </a>
+
+    <a class="archive-card" href="news/2026-04-27.md">
+      <div class="archive-card__date">2026-04-27</div>
+      <div class="archive-card__title">API 金鑰外洩漏洞、Prompt Cache Race Condition、HERMES.md 媒體擴散、Mythos SWE 爭議</div>
+      <div class="archive-card__meta"><span>news/2026-04-27.md</span></div>
+    </a>
+
+    <a class="archive-card" href="news/2026-04-26.md">
+      <div class="archive-card__date">2026-04-26</div>
+      <div class="archive-card__title">HERMES.md 計費 bug 曝光、Bugcrawl 測試、Claude Research 多代理架構</div>
+      <div class="archive-card__meta"><span>news/2026-04-26.md</span></div>
+    </a>
+
+    <a class="archive-card" href="news/2026-04-25.md">
+      <div class="archive-card__date">2026-04-25</div>
+      <div class="archive-card__title">Anthropic 承認效能退步、OpenClaw 配額限制首報、Mythos 2,000+ 漏洞發現</div>
+      <div class="archive-card__meta"><span>news/2026-04-25.md</span></div>
+    </a>
+
+  </div>
+</div>
+</div><!-- #view-archive -->
+
+
+<!-- ════════════════════════════════════════════
+     FOOTER
+════════════════════════════════════════════ -->
+<footer class="reader-footer">
+  <span>自動產生 by Claude Code News Aggregator</span>
+  <span class="sep">·</span>
+  <span>2026-05-01 03:07 UTC</span>
+  <span class="sep">·</span>
+  <span>摘要方式：claude CLI (Claude.ai Pro)</span>
+  <span class="sep">·</span>
+  <span>CLAUDE NEWS · LLM-WIKI</span>
+</footer>
+
+
+<!-- ════════════════════════════════════════════
+     ENTITY MODALS
+════════════════════════════════════════════ -->
+<div class="modal-scrim" id="modal-scrim" onclick="closeModal(event)">
+
+  <!-- claude-code -->
+  <div class="modal" id="modal-claude-code">
+    <button class="modal__close" onclick="closeAllModals()">✕</button>
+    <div class="modal__type-row"><span class="pill pill--active">active</span><span class="pill pill--gray">product</span></div>
+    <div class="modal__h1">Claude Code</div>
+    <div class="modal__meta">
+      <div class="modal__meta-row"><span class="modal__meta-label">首次出現</span><span>2025（正式推出）</span></div>
+      <div class="modal__meta-row"><span class="modal__meta-label">最後更新</span><span>2026-04-30</span></div>
+    </div>
+    <div class="modal__section-h">現況</div>
+    <div class="modal__body">Claude Code 是 Anthropic 的 AI 編碼 CLI 工具，支援 agentic 工作流程、MCP Server 整合、Hooks 機制與 Agent Teams。目前為最受開發者關注的 AI 編碼工具之一。近期接連出現效能退步事件（已承認工程疏失）、OpenClaw 異常計費、ANTHROPIC_API_KEY 雲端陷阱、Auto Compact 失效等問題，安全性與可靠性受到集中審視。</div>
+    <div class="modal__section-h">重要已知問題</div>
+    <div class="modal__body">
+      <p style="margin-bottom:8px"><strong>OpenClaw 異常計費</strong>（2026-04-30）— Git 提交訊息含 "OpenClaw" 字串時拒絕請求或 Extra Usage 衝至 100%，Anthropic 未公開說明。</p>
+      <p style="margin-bottom:8px"><strong>ANTHROPIC_API_KEY 雲端陷阱</strong>（2026-04-30）— 雲端環境設此變數，所有呼叫自動改走 API 計費通道。</p>
+      <p style="margin-bottom:8px"><strong>Auto Compact 失效</strong>（2026-04-28）— context 滿載後未自動觸發，手動 /compact 亦失效，session 完全鎖死。</p>
+      <p style="margin-bottom:8px"><strong>HERMES.md 計費 bug</strong>（2026-04-25）— commit 歷史含大寫「HERMES.md」靜默切換至 API 計費，已確認損失 $200，Anthropic 拒退款。</p>
+      <p><strong>Prompt Cache Race Condition</strong>（2026-04-27 確認）— 連續兩次 API 呼叫第二個請求約有 40% cache miss，等待 2 秒可緩解。</p>
+    </div>
+    <div class="modal__section-h">相關議題</div>
+    <div class="modal__links">
+      <span class="modal__wikilink">topics/code-quality-decline</span>
+      <span class="modal__wikilink">entities/openclaw</span>
+      <span class="modal__wikilink">entities/pricing</span>
+      <span class="modal__wikilink">topics/ai-agent-safety</span>
+    </div>
+  </div>
+
+  <!-- opus-4-7 -->
+  <div class="modal" id="modal-opus-4-7">
+    <button class="modal__close" onclick="closeAllModals()">✕</button>
+    <div class="modal__type-row"><span class="pill pill--warn">爭議中</span><span class="pill pill--gray">model</span></div>
+    <div class="modal__h1">Claude Opus 4.7</div>
+    <div class="modal__meta">
+      <div class="modal__meta-row"><span class="modal__meta-label">首次出現</span><span>2026-04-24</span></div>
+      <div class="modal__meta-row"><span class="modal__meta-label">最後更新</span><span>2026-04-30</span></div>
+    </div>
+    <div class="modal__section-h">現況</div>
+    <div class="modal__body">Claude Opus 4.7 於 2026-04-24 正式發布，是目前 Anthropic 最高階的公開模型，伴隨 Rate Limits API 與 Managed Agents Memory Beta 推出。然而社群對其「後設化」退步問題與定價策略反應強烈。</div>
+    <div class="modal__section-h">主要爭議</div>
+    <div class="modal__body">
+      <p style="margin-bottom:8px"><strong>思考深度過度「後設化」</strong>（2026-04-30）— 重度 Max 20x 用戶指出每個回覆都像在撰寫論文，無法直接回答問題。arxiv 2604.24827 估算 Opus 4.7 約 4T 參數，疑似少於 4.6 的 5.3T。</p>
+      <p style="margin-bottom:8px"><strong>Usage Policy 隨機拒絕</strong>（2026-04-26 以來）— 無明確觸發條件，官方暫時建議切換至 Sonnet。</p>
+      <p style="margin-bottom:8px"><strong>Prompt Cache 清除成本</strong> — 從其他模型切換至 Opus 4.7 時，整個 prompt cache 被清除。</p>
+      <p><strong>定價門檻提高</strong> — Claude Code 存取 Opus 的額外用量現需 Pro 以上方案。</p>
+    </div>
+    <div class="modal__section-h">社群觀點</div>
+    <div class="modal__body">「Opus 4.7 可以用一個改變來拯救：讓使用者控制思考深度，而非模型自行決定。」— Reddit r/ClaudeAI</div>
+    <div class="modal__links" style="margin-top:12px">
+      <span class="modal__wikilink">topics/code-quality-decline</span>
+      <span class="modal__wikilink">entities/pricing</span>
+    </div>
+  </div>
+
+  <!-- pricing -->
+  <div class="modal" id="modal-pricing">
+    <button class="modal__close" onclick="closeAllModals()">✕</button>
+    <div class="modal__type-row"><span class="pill pill--warn">持續調整</span><span class="pill pill--gray">policy</span></div>
+    <div class="modal__h1">訂閱方案與計費政策</div>
+    <div class="modal__meta">
+      <div class="modal__meta-row"><span class="modal__meta-label">最後更新</span><span>2026-04-30</span></div>
+    </div>
+    <div class="modal__section-h">現行方案（2026-04）</div>
+    <div class="modal__body">Free $0 · Pro $20（Sonnet 含，Opus 需額外用量）· Max（更高上限）· API（按量計費）</div>
+    <div class="modal__section-h">近期重大變動</div>
+    <div class="modal__body">
+      <p style="margin-bottom:8px"><strong>ANTHROPIC_API_KEY 雲端陷阱</strong>（04/30）— 所有呼叫自動走 API 計費，官方文件誤導。</p>
+      <p style="margin-bottom:8px"><strong>Pro 到期 Extra Usage 餘額消失</strong>（04/30）— $40 預付額度歸零，無退款流程。</p>
+      <p style="margin-bottom:8px"><strong>長 context 快取隱性成本</strong>（04/30）— 475k token cache 反覆重建，單次成本可觀。</p>
+      <p style="margin-bottom:8px"><strong>Token 費用估算靜默翻倍</strong>（04/29）— Business Insider 報導，Anthropic 無公告調高預估值。</p>
+      <p><strong>HERMES.md 靜默計費 bug</strong>（04/25）— 單日損失 $200，拒退款，見 <a href="#">GitHub Issue #53262</a>。</p>
+    </div>
+  </div>
+
+  <!-- mythos -->
+  <div class="modal" id="modal-mythos">
+    <button class="modal__close" onclick="closeAllModals()">✕</button>
+    <div class="modal__type-row"><span class="pill pill--danger">限制存取 🔒</span><span class="pill pill--gray">model</span></div>
+    <div class="modal__h1">Claude Mythos</div>
+    <div class="modal__meta">
+      <div class="modal__meta-row"><span class="modal__meta-label">首次出現</span><span>2026-04（限定夥伴 Preview）</span></div>
+      <div class="modal__meta-row"><span class="modal__meta-label">最後更新</span><span>2026-04-30</span></div>
+    </div>
+    <div class="modal__section-h">現況</div>
+    <div class="modal__body">Claude Mythos 是 Anthropic 因安全風險而未對外公開的高能力 AI 模型，僅向有限合作夥伴提供 Preview。七週測試期內發現逾 2,000 個未知軟體漏洞，具備自主發現並武器化軟體漏洞的能力。</div>
+    <div class="modal__section-h">政府監管介入</div>
+    <div class="modal__body">2026-04-29，白宮正式反對 Anthropic 擴大 Mythos 存取範圍（Bloomberg / WSJ）。Anthropic 自身亦聲稱「世界尚未準備好接受它」。社群稱此為「AI 授權時代的開端」，是聯邦政府對單一 AI 模型存取管控的首次直接干預。</div>
+    <div class="modal__section-h">待確認事項</div>
+    <div class="modal__body">
+      <div class="callout" style="margin:0">⚠️ <strong>待確認</strong>：駭客入侵事件（KRON4 等媒體報導）細節尚待官方聲明。arxiv 2604.24827 參數估算方法需獨立驗證。Anthropic 截至 2026-04-28 仍未公開回應 SWE-bench 方法論爭議。</div>
+    </div>
+  </div>
+
+  <!-- claude-security -->
+  <div class="modal" id="modal-claude-security">
+    <button class="modal__close" onclick="closeAllModals()">✕</button>
+    <div class="modal__type-row"><span class="pill pill--info">public beta</span><span class="pill pill--gray">product</span></div>
+    <div class="modal__h1">Claude Security</div>
+    <div class="modal__meta">
+      <div class="modal__meta-row"><span class="modal__meta-label">首次出現</span><span>2026-04-30</span></div>
+      <div class="modal__meta-row"><span class="modal__meta-label">最後更新</span><span>2026-04-30</span></div>
+    </div>
+    <div class="modal__section-h">現況</div>
+    <div class="modal__body">Anthropic 正式推出 Claude Security 公開測試版，ZDNET、SecurityWeek、SiliconANGLE、CRN 等多家媒體同步報導。有別於傳統 CVE 掃描器，能結合應用程式的業務邏輯提供情境化安全評估，並直接整合於 Claude Code 開發環境。標誌 Anthropic 首次以獨立產品形式進入 AI 輔助資安市場，正面競爭傳統 SAST 工具廠商。</div>
+  </div>
+
+  <!-- openclaw -->
+  <div class="modal" id="modal-openclaw">
+    <button class="modal__close" onclick="closeAllModals()">✕</button>
+    <div class="modal__type-row"><span class="pill pill--danger">受限</span><span class="pill pill--gray">product</span></div>
+    <div class="modal__h1">OpenClaw</div>
+    <div class="modal__meta">
+      <div class="modal__meta-row"><span class="modal__meta-label">最後更新</span><span>2026-04-30</span></div>
+    </div>
+    <div class="modal__section-h">現況</div>
+    <div class="modal__body">OpenClaw 是第三方 agentic 工具，遭 Anthropic 嚴格限制配額（The Verge 2026-04-25 首報）。Claude Code 負責人 Boris Cherny：「訂閱方案的設計並非為這類第三方使用模式而生。」</div>
+    <div class="modal__section-h">異常計費行為（2026-04-30）</div>
+    <div class="modal__body">若 Git 提交訊息或文件內容中含特定 JSON 格式的 "OpenClaw" 字串，Claude Code 會直接拒絕請求，或將帳單 Extra Usage 衝至 100%。表明 Claude Code 正主動掃描 repo 內容並據此改變計費策略，Anthropic 至今未公開說明，HN 引發近千則討論。</div>
+  </div>
+
+  <!-- google-investment -->
+  <div class="modal" id="modal-google-investment">
+    <button class="modal__close" onclick="closeAllModals()">✕</button>
+    <div class="modal__type-row"><span class="pill pill--gray">resolved</span><span class="pill pill--gray">event</span></div>
+    <div class="modal__h1">Google 投資事件</div>
+    <div class="modal__meta">
+      <div class="modal__meta-row"><span class="modal__meta-label">最後更新</span><span>2026-04-30</span></div>
+    </div>
+    <div class="modal__section-h">概覽</div>
+    <div class="modal__body">Google 確認對 Anthropic 追加 $400 億美元投資，分析師指出此投資含循環算力交易結構（Google Cloud 算力換股權）。配合其他投資方，Anthropic 估值逼近 $9,000 億美元，新一輪 $500 億融資洽談中（TechCrunch 2026-04-29）。分析師認為充裕資本讓 Anthropic 具備維持現有定價或擴張企業方案的空間。</div>
+  </div>
+
+  <!-- bugcrawl -->
+  <div class="modal" id="modal-bugcrawl">
+    <button class="modal__close" onclick="closeAllModals()">✕</button>
+    <div class="modal__type-row"><span class="pill pill--warn">測試中</span><span class="pill pill--gray">feature</span></div>
+    <div class="modal__h1">Bugcrawl</div>
+    <div class="modal__meta">
+      <div class="modal__meta-row"><span class="modal__meta-label">首次出現</span><span>2026-04-26</span></div>
+    </div>
+    <div class="modal__section-h">現況</div>
+    <div class="modal__body">Anthropic 內部測試中的 Claude Code 漏洞偵測工具，能自主掃描程式碼庫中的漏洞並自動提交修補 PR。目前尚未公開發布，實際能力與範疇細節有限，與 Claude Security 的定位區分尚待釐清。</div>
+  </div>
+
+  <!-- project-deal -->
+  <div class="modal" id="modal-project-deal">
+    <button class="modal__close" onclick="closeAllModals()">✕</button>
+    <div class="modal__type-row"><span class="pill pill--info">實驗中</span><span class="pill pill--gray">feature</span></div>
+    <div class="modal__h1">Project Deal</div>
+    <div class="modal__meta">
+      <div class="modal__meta-row"><span class="modal__meta-label">首次出現</span><span>2026-04-26</span></div>
+    </div>
+    <div class="modal__section-h">現況</div>
+    <div class="modal__body">Anthropic 進行中的 Claude 代理人自主交易談判實驗。實測顯示 Opus 4.7 與 Haiku 在談判策略上的差異顯著，Opus 談判成效明顯優於 Haiku，為多 Agent 協作中模型選擇提供了具體的評估基準。</div>
+  </div>
+
+  <!-- claude-design -->
+  <div class="modal" id="modal-claude-design">
+    <button class="modal__close" onclick="closeAllModals()">✕</button>
+    <div class="modal__type-row"><span class="pill pill--active">active（初期）</span><span class="pill pill--gray">feature</span></div>
+    <div class="modal__h1">Claude Design</div>
+    <div class="modal__meta">
+      <div class="modal__meta-row"><span class="modal__meta-label">首次出現</span><span>2026-04-27</span></div>
+    </div>
+    <div class="modal__section-h">現況</div>
+    <div class="modal__body">Anthropic 推出的 AI 設計工具，首日社群反映體驗不佳：幻覺生成比例高、風格一致性偏移明顯、與 Claude Code 開發環境整合差。目前處於早期階段，後續迭代方向待觀察。</div>
+  </div>
+
+  <!-- code-quality-decline -->
+  <div class="modal" id="modal-code-quality">
+    <button class="modal__close" onclick="closeAllModals()">✕</button>
+    <div class="modal__type-row"><span class="pill pill--info">monitoring</span><span class="pill pill--gray">topic</span></div>
+    <div class="modal__h1">Claude Code 效能退步事件</div>
+    <div class="modal__meta">
+      <div class="modal__meta-row"><span class="modal__meta-label">開始日期</span><span>~2026-03</span></div>
+      <div class="modal__meta-row"><span class="modal__meta-label">最後更新</span><span>2026-04-30</span></div>
+    </div>
+    <div class="modal__section-h">摘要</div>
+    <div class="modal__body">社群從 2026-03 起陸續察覺 Claude Code 效能漂移，2026-04-24 Anthropic 正式承認源於工程疏失。近期新增問題：Stop Hooks 被忽略（Claude 4.7 起）、Speed Bumps 明顯增加（2026-04-29），社群工具 CC-Canary 已被開發用於自動偵測效能漂移。</div>
+    <div class="modal__section-h">相關實體</div>
+    <div class="modal__links">
+      <span class="modal__wikilink">entities/claude-code</span>
+      <span class="modal__wikilink">entities/opus-4-7</span>
+    </div>
+  </div>
+
+  <!-- competitor-landscape -->
+  <div class="modal" id="modal-competitor">
+    <button class="modal__close" onclick="closeAllModals()">✕</button>
+    <div class="modal__type-row"><span class="pill pill--warn">ongoing</span><span class="pill pill--gray">topic</span></div>
+    <div class="modal__h1">競品格局</div>
+    <div class="modal__meta">
+      <div class="modal__meta-row"><span class="modal__meta-label">開始日期</span><span>2026-04</span></div>
+      <div class="modal__meta-row"><span class="modal__meta-label">最後更新</span><span>2026-04-30</span></div>
+    </div>
+    <div class="modal__section-h">摘要</div>
+    <div class="modal__body">Google 聯合創辦人 Sergey Brin 親自主導祕密競品開發（2026-04 確認）。OpenAI Codex 雖功能相近，但 HN 討論量遠不及 Claude Code。BrowserCode 推出開源 web app 可在瀏覽器執行 Gemini CLI，Claude Code 支援已在規劃中。HN 社群對 Claude Code 社群能見度的討論（Ask HN: Is Anybody Using Codex?，2026-04-30）顯示競爭格局仍以 Claude Code 主導討論。</div>
+  </div>
+
+  <!-- community-tech-patterns -->
+  <div class="modal" id="modal-community-tech">
+    <button class="modal__close" onclick="closeAllModals()">✕</button>
+    <div class="modal__type-row"><span class="pill pill--warn">ongoing</span><span class="pill pill--gray">topic</span></div>
+    <div class="modal__h1">社群技術應用趨勢</div>
+    <div class="modal__meta">
+      <div class="modal__meta-row"><span class="modal__meta-label">最後更新</span><span>2026-04-30</span></div>
+    </div>
+    <div class="modal__section-h">本週焦點工具</div>
+    <div class="modal__body">
+      <p style="margin-bottom:6px"><strong>Nimbalyst</strong> — 多 Agent 視覺化工作台，WYSIWYG diff 審核</p>
+      <p style="margin-bottom:6px"><strong>Brifly</strong> — 跨 session 專案記憶層，支援多人協作</p>
+      <p style="margin-bottom:6px"><strong>Mneme</strong> — repo-native 架構決策注入 + CI 攔截</p>
+      <p style="margin-bottom:6px"><strong>Throttle Meter</strong> — macOS menubar 即時用量計算，無遙測</p>
+      <p><strong>Lanes.sh</strong> — Linear issue → Claude Code session 一鍵串接</p>
+    </div>
+    <div class="modal__section-h">技術彙整</div>
+    <div class="modal__body">Opus 4.7 在三種 effort 等級（medium / high / xhigh）下拒絕姿態完全一致，effort 僅影響回答深度，不影響安全邊界。多 LLM 協作架構（Claude Opus 首席工程師 + Gemini Pro 策略師）被實際部署於自動交易場景，累積 270+ 分歧決策記錄。</div>
+  </div>
+
+  <!-- ai-agent-safety -->
+  <div class="modal" id="modal-ai-agent-safety">
+    <button class="modal__close" onclick="closeAllModals()">✕</button>
+    <div class="modal__type-row"><span class="pill pill--warn">ongoing</span><span class="pill pill--gray">topic</span></div>
+    <div class="modal__h1">AI Agent 安全</div>
+    <div class="modal__meta">
+      <div class="modal__meta-row"><span class="modal__meta-label">最後更新</span><span>2026-04-30</span></div>
+    </div>
+    <div class="modal__section-h">摘要</div>
+    <div class="modal__body">AI 程式碼代理已成為真實攻擊目標，攻擊者鎖定憑證（credentials）而非模型本身（VentureBeat 2026-04-30）。Gemini CLI 工作區信任行為被評為 CVSS 10.0 並立即修補；Anthropic 對類似 Claude Code 行為定義為「設計如此」，兩家公司安全邊界判斷標準存在根本差異。社群工具 SmolVM、Groundtruth 等被開發用於沙盒隔離與操作確認，回應真實攻擊場景壓力。</div>
+    <div class="modal__section-h">相關實體</div>
+    <div class="modal__links">
+      <span class="modal__wikilink">entities/claude-code</span>
+      <span class="modal__wikilink">entities/claude-security</span>
+      <span class="modal__wikilink">entities/mythos</span>
+    </div>
+  </div>
+
+</div><!-- .modal-scrim -->
+
+
+<!-- ════════════════════════════════════════════
+     JS
+════════════════════════════════════════════ -->
+<script>
+function switchView(id, el) {
+  document.querySelectorAll('.view').forEach(v => v.classList.remove('is-active'));
+  document.getElementById('view-' + id).classList.add('is-active');
+  document.querySelectorAll('.nav__link').forEach(l => l.classList.remove('is-active'));
+  if (el && el.classList) {
+    el.classList.add('is-active');
+  } else {
+    // fallback: activate first link
+    document.querySelector('.nav__link').classList.add('is-active');
+  }
+}
+
+function toggleTheme() {
+  const root = document.documentElement;
+  const btn = document.querySelector('.nav__theme');
+  if (root.getAttribute('data-theme') === 'dark') {
+    root.setAttribute('data-theme', 'light');
+    btn.textContent = '☀';
+  } else {
+    root.setAttribute('data-theme', 'dark');
+    btn.textContent = '☽';
+  }
+}
+
+function openModal(id) {
+  const scrim = document.getElementById('modal-scrim');
+  document.querySelectorAll('.modal').forEach(m => m.style.display = 'none');
+  const modal = document.getElementById(id);
+  if (modal) modal.style.display = 'block';
+  scrim.classList.add('is-open');
+  document.body.style.overflow = 'hidden';
+}
+
+function closeModal(e) {
+  if (e.target === document.getElementById('modal-scrim')) closeAllModals();
+}
+
+function closeAllModals() {
+  document.getElementById('modal-scrim').classList.remove('is-open');
+  document.body.style.overflow = '';
+}
+
+// Keyboard shortcuts
+document.addEventListener('keydown', function(e) {
+  if (e.key === 'Escape') closeAllModals();
+  if (e.key === '/' && document.activeElement.tagName !== 'INPUT') {
+    e.preventDefault();
+    document.querySelector('.nav__search').focus();
+  }
+});
+</script>
+</body>
+</html>

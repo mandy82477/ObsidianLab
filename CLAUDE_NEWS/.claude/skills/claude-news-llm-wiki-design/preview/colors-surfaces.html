@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="utf-8">
+<title>Colors — Surfaces & Foreground</title>
+<link rel="stylesheet" href="../colors_and_type.css">
+<style>
+  body { margin: 0; padding: 20px; background: var(--bg-0); width: 700px; box-sizing: border-box; }
+  .grid { display:grid; grid-template-columns: repeat(5, 1fr); gap:8px; }
+  .sw { border-radius: var(--radius-2); padding: 16px 10px; font-family: var(--font-mono); font-size: 11px; border:1px solid var(--border-1); }
+  .sw .name { font-size: 12px; color: var(--fg-1); font-weight:600; margin-bottom:4px; font-family: var(--font-display); letter-spacing:-0.01em;}
+  .sw .hex { color: var(--fg-2); }
+  .group-title { font-family: var(--font-display); font-size: 13px; color: var(--fg-2); text-transform: uppercase; letter-spacing: 0.06em; margin: 14px 0 6px; }
+  .group-title:first-child { margin-top: 0; }
+  .fg .sw { background: var(--bg-1); height: 60px; }
+  .fg .dot { width:18px; height:18px; border-radius:50%; margin-bottom: 8px; border:1px solid var(--border-1); }
+</style>
+</head>
+<body>
+  <div class="group-title">Surfaces</div>
+  <div class="grid">
+    <div class="sw" style="background:#15161F"><div class="name">bg-0</div><div class="hex">#15161F</div></div>
+    <div class="sw" style="background:#1E1E2E"><div class="name">bg-1</div><div class="hex">#1E1E2E</div></div>
+    <div class="sw" style="background:#252638"><div class="name">bg-2</div><div class="hex">#252638</div></div>
+    <div class="sw" style="background:#2D2E42"><div class="name">bg-3</div><div class="hex">#2D2E42</div></div>
+    <div class="sw" style="background:#181925"><div class="name">bg-inset</div><div class="hex">#181925</div></div>
+  </div>
+  <div class="group-title">Foreground</div>
+  <div class="grid fg">
+    <div class="sw"><div class="dot" style="background:#ECECF1"></div><div class="name" style="color:#ECECF1">fg-1</div><div class="hex">#ECECF1</div></div>
+    <div class="sw"><div class="dot" style="background:#A8A8B8"></div><div class="name" style="color:#A8A8B8">fg-2</div><div class="hex">#A8A8B8</div></div>
+    <div class="sw"><div class="dot" style="background:#6E6E80"></div><div class="name" style="color:#6E6E80">fg-3</div><div class="hex">#6E6E80</div></div>
+    <div class="sw"><div class="dot" style="background:#4A4B5E"></div><div class="name" style="color:#4A4B5E">fg-4</div><div class="hex">#4A4B5E</div></div>
+    <div class="sw"><div class="dot" style="background:rgba(255,255,255,0.10);border-color:#fff3"></div><div class="name">border-2</div><div class="hex">10% w</div></div>
+  </div>
+</body>
+</html>

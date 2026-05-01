@@ -1,10 +1,9 @@
 # Google 投資 Anthropic 400 億美元
 
-> ⚠️ **已遷移**：此頁已於 2026-05-01 Lint 遷移至 [[entities/google-investment]]，完整內容請參閱該頁。
-
-**狀態：** resolved（已宣布）
-**開始日期：** 2026-04-24
-**最後更新：** 2026-04-27
+**類型：** event
+**狀態：** resolved（已完成，後續新輪融資進行中）
+**首次出現：** 2026-04-24
+**最後更新：** 2026-05-01
 
 ---
 
@@ -13,6 +12,8 @@
 2026-04-24，Google 宣布以現金與運算資源形式向 Anthropic 投資最高 **400 億美元**，初期承諾 100 億，其餘 300 億視績效目標達成情況追加。此次投資估值 Anthropic 為 **3,500 億美元**，是 AI 領域迄今規模最大的單筆投資之一。
 
 Bloomberg、TechCrunch、Reuters、NYT、Axios 等多個主流媒體同步報導。
+
+> **後續**：2026-04-29/30，TechCrunch / Bloomberg 報導 Anthropic 正洽談以 $8,500–9,000 億美元估值進行新一輪 $500 億融資，為不同輪次事件，見 [[entities/pricing]]。
 
 ---
 
@@ -49,7 +50,7 @@ Bloomberg、TechCrunch、Reuters、NYT、Axios 等多個主流媒體同步報導
 
 ## 背景脈絡
 
-- Google 同時也在秘密開發 Claude Code 競品（見 [[topics/competitor-landscape]]）
+- Google 同時也在秘密開發 Claude Code 競品（見 [[topics/competitor-landscape]]），此舉顯示即使是戰略投資方也將 Claude Code 視為必須正面競爭的對手
 - 此投資延續 Google 先前已有的 Anthropic 股東關係（之前已有數輪投資）
 - Amazon 也是 Anthropic 的重要投資者，形成多方大廠支持格局
 
@@ -79,6 +80,8 @@ Bloomberg、TechCrunch、Reuters、NYT、Axios 等多個主流媒體同步報導
 ## 相關實體
 
 - [[entities/claude-code]]
+- [[entities/pricing]]（後續融資輪次）
+- [[topics/competitor-landscape]]（Google 同時投資 Anthropic 又開發競品）
 
 ## 參考來源
 

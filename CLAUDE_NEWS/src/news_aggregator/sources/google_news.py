@@ -4,7 +4,8 @@ from datetime import datetime, timezone
 import feedparser
 import requests
 
-from news_aggregator.config import LOOKBACK_HOURS, MAX_ITEMS_PER_SOURCE, REQUEST_TIMEOUT
+import news_aggregator.config as _cfg
+from news_aggregator.config import MAX_ITEMS_PER_SOURCE, REQUEST_TIMEOUT
 from news_aggregator.sources.base import BaseSource, FeedItem
 
 logger = logging.getLogger(__name__)
@@ -16,7 +17,7 @@ class GoogleNews(BaseSource):
     def fetch(self) -> list[FeedItem]:
         try:
             from datetime import timedelta
-            cutoff = datetime.now(tz=timezone.utc) - timedelta(hours=LOOKBACK_HOURS)
+            cutoff = datetime.now(tz=timezone.utc) - timedelta(hours=_cfg.LOOKBACK_HOURS)
             items: list[FeedItem] = []
 
             for query in QUERIES:

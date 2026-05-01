@@ -5,7 +5,8 @@ from datetime import datetime, timedelta, timezone
 import feedparser
 import requests
 
-from news_aggregator.config import LOOKBACK_HOURS, MAX_ITEMS_PER_SOURCE, REQUEST_TIMEOUT
+import news_aggregator.config as _cfg
+from news_aggregator.config import MAX_ITEMS_PER_SOURCE, REQUEST_TIMEOUT
 from news_aggregator.sources.base import BaseSource, FeedItem
 
 logger = logging.getLogger(__name__)
@@ -23,13 +24,16 @@ SUBREDDIT_QUERIES = [
 class Reddit(BaseSource):
     def fetch(self) -> list[FeedItem]:
         try:
-            cutoff = datetime.now(tz=timezone.utc) - timedelta(hours=LOOKBACK_HOURS)
+            lookback = _cfg.LOOKBACK_HOURS
+            cutoff = datetime.now(tz=timezone.utc) - timedelta(hours=lookback)
+            # Reddit's ?t= param is server-side: use 'week' for backfill runs > 26h
+            reddit_time = "week" if lookback > 30 else "day"
             items = []
 
             for subreddit, query in SUBREDDIT_QUERIES:
                 url = (
                     f"https://www.reddit.com/r/{subreddit}/search.rss"
-                    f"?q={query.replace(' ', '+')}&sort=new&t=day&restrict_sr=1"
+                    f"?q={query.replace(' ', '+')}&sort=new&t={reddit_time}&restrict_sr=1"
                 )
                 fetched = _fetch_rss(url)
                 for entry in fetched[:MAX_ITEMS_PER_SOURCE // 2]:

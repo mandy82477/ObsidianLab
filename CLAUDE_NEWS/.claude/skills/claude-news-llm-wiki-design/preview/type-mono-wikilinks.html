@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="utf-8">
+<title>Type — Mono & Wikilinks</title>
+<link rel="stylesheet" href="../colors_and_type.css">
+<style>
+  body { margin: 0; padding: 24px; background: var(--bg-0); width: 700px; box-sizing: border-box; font-size: 14px; }
+  .block { background: var(--bg-1); border: 1px solid var(--border-1); border-radius: var(--radius-3); padding: 16px; margin-bottom: 12px; }
+  .block:last-child { margin-bottom: 0; }
+  .lbl { font-family: var(--font-display); font-size: 11px; text-transform: uppercase; letter-spacing: 0.06em; color: var(--fg-3); margin-bottom: 8px; }
+  pre { margin: 0; }
+</style>
+</head>
+<body>
+  <div class="block">
+    <div class="lbl">JetBrains Mono · code & paths</div>
+    <pre><code>cd src
+python -m news_aggregator.main</code></pre>
+  </div>
+  <div class="block">
+    <div class="lbl">Wikilinks — inline</div>
+    <p style="color:var(--fg-2); font-family:var(--font-cjk)">議題 <a class="wikilink" href="#">topics/code-quality-decline</a> 仍處於 monitoring 狀態，相關實體見 <a class="wikilink" href="#">entities/opus-4-7</a>。</p>
+  </div>
+</body>
+</html>

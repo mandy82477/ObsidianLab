@@ -12,6 +12,7 @@ from concurrent.futures import ThreadPoolExecutor, as_completed
 from urllib.parse import urlparse
 
 import requests
+from requests.adapters import HTTPAdapter
 
 from news_aggregator.config import REQUEST_TIMEOUT
 from news_aggregator.sources.base import FeedItem
@@ -21,8 +22,25 @@ logger = logging.getLogger(__name__)
 MAX_SUMMARY_CHARS = 800
 _THIN_THRESHOLD = 120   # existing summary shorter than this → try to enrich
 _WORKERS = 6
+_ARTICLE_TIMEOUT = 8    # per-URL cap for article fetching (trafilatura.fetch_url ignores ours)
 _HN_FIREBASE = "https://hacker-news.firebaseio.com/v0/item/{}.json"
 _HN_ITEM_RE = re.compile(r"news\.ycombinator\.com/item\?id=(\d+)")
+
+# Domains where article extraction is useless or handled separately
+_SKIP_ARTICLE_DOMAINS = frozenset([
+    "github.com",
+    "news.google.com",
+    "reddit.com",
+    "twitter.com",
+    "x.com",
+    "linkedin.com",
+])
+
+# Shared session with larger connection pool (avoids "pool is full" warnings)
+_session = requests.Session()
+_adapter = HTTPAdapter(pool_connections=10, pool_maxsize=20)
+_session.mount("http://", _adapter)
+_session.mount("https://", _adapter)
 
 
 # ── public API ────────────────────────────────────────────────────────────────
@@ -105,7 +123,7 @@ def _enrich_hn(item: FeedItem, hn_id: str) -> FeedItem:
 
 def _hn_api(item_id: str) -> dict | None:
     try:
-        resp = requests.get(
+        resp = _session.get(
             _HN_FIREBASE.format(item_id),
             timeout=REQUEST_TIMEOUT,
             headers={"User-Agent": "ClaudeNewsBot/1.0"},
@@ -129,7 +147,7 @@ def _fetch_reddit(url: str) -> str:
     try:
         # Strip trailing slash, append .json
         json_url = url.rstrip("/") + ".json"
-        resp = requests.get(
+        resp = _session.get(
             json_url,
             timeout=REQUEST_TIMEOUT,
             headers={"User-Agent": "ClaudeNewsBot/1.0"},
@@ -149,14 +167,28 @@ def _fetch_reddit(url: str) -> str:
 # ── Generic article ───────────────────────────────────────────────────────────
 
 def _fetch_article(url: str) -> str:
-    """Extract main article text using trafilatura."""
+    """Extract main article text using requests + trafilatura.
+
+    Uses requests (with _ARTICLE_TIMEOUT) instead of trafilatura.fetch_url()
+    so that we control the timeout — trafilatura.fetch_url() has its own 30s
+    default that ignores REQUEST_TIMEOUT and causes slow pipeline runs.
+    """
     try:
         import trafilatura
-        downloaded = trafilatura.fetch_url(url)
-        if not downloaded:
+        # Skip domains where extraction is useless or handled separately
+        domain = urlparse(url).netloc.lstrip("www.")
+        if domain in _SKIP_ARTICLE_DOMAINS:
+            return ""
+        resp = _session.get(
+            url,
+            timeout=_ARTICLE_TIMEOUT,
+            headers={"User-Agent": "Mozilla/5.0 (compatible; ClaudeNewsBot/1.0)"},
+            allow_redirects=True,
+        )
+        if resp.status_code != 200:
             return ""
         text = trafilatura.extract(
-            downloaded,
+            resp.text,
             include_comments=False,
             include_tables=False,
             no_fallback=False,
@@ -166,7 +198,7 @@ def _fetch_article(url: str) -> str:
         logger.debug("trafilatura not installed, skipping article fetch")
         return ""
     except Exception as e:
-        logger.debug("trafilatura failed for %s: %s", url, e)
+        logger.debug("article fetch failed for %s: %s", url, e)
         return ""
 
 

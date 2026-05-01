@@ -3,13 +3,13 @@
 **類型：** product
 **狀態：** active
 **首次出現：** 2025（正式推出）
-**最後更新：** 2026-04-27
+**最後更新：** 2026-04-30
 
 ---
 
 ## 現況
 
-Claude Code 是 Anthropic 的 AI 編碼 CLI 工具，支援 agentic 工作流程、MCP Server 整合、Hooks 機制與 Agent Teams。目前為最受開發者關注的 AI 編碼工具之一。近期接連出現效能退步事件（已承認工程疏失）、HERMES.md 靜默計費 bug、API 金鑰外洩漏洞，安全性與可靠性受到集中審視。
+Claude Code 是 Anthropic 的 AI 編碼 CLI 工具，支援 agentic 工作流程、MCP Server 整合、Hooks 機制與 Agent Teams。目前為最受開發者關注的 AI 編碼工具之一。近期接連出現效能退步事件（已承認工程疏失）、HERMES.md 靜默計費 bug、API 金鑰外洩漏洞、Auto Compact 失效等問題，安全性與可靠性受到集中審視。v2.1.121 新增 MCP `alwaysLoad` 選項，Runhouse 團隊透過股權收購加入 Anthropic 以強化 agentic 基礎架構。
 
 ---
 
@@ -35,6 +35,13 @@ Claude Code 是 Anthropic 的 AI 編碼 CLI 工具，支援 agentic 工作流程
 - **Usage Policy 隨機拒絕**（Opus 4.7 以來）：Claude Code 頻繁出現無明確觸發條件的 Usage Policy 拒絕；官方建議切換至 `/model claude-sonnet-4-20250514` 作為緩解手段；見 [[entities/opus-4-7]]
 - **版本管理不透明**（2026-04-27）：執行 `claude update` 後版本從 2.1.120 降回 2.1.119，疑似靜默撤版，官方 changelog 與索引資訊不一致
 - **Mac 卸載不完整**：依官方教學卸載後，macOS 仍殘留「Claude Code URL Handler」應用程式
+- **Auto Compact 失效**（2026-04-28 回報）：context window 滿載後 Auto Compact 未自動觸發，手動執行 `/compact` 亦失效，導致整個 session 鎖死；即使重購額外用量並重啟工具問題仍未解決
+- **Prompt Cache Race Condition**（2026-04-27 確認）：連續兩次呼叫 `client.messages.create()` 時，第二個請求約有 40% 機率發生 cache miss；在兩次呼叫之間等待 2 秒可穩定解決；已由 Anthropic 工程師確認追蹤中。見 [Issue #1451](https://github.com/anthropics/anthropic-sdk-python/issues/1451)
+- **Tool/Connector Schema 洩漏**（2026-04-27 回報）：Claude Chat（Opus 4.7）在每則訊息末尾附加完整 function schema 及 userStyle 內容，跨對話串持續存在且疑為帳號層級污染，更換新對話串或關閉 userStyle 均無法完全解決，目前無官方修復
+- **Speed Bumps 增加**（2026-04-29 回報）：多位長期使用者反映本週起 Claude Code 明顯增加中途暫停詢問的頻率，即使簡單任務也頻繁打斷工作流程，社群猜測與系統層級的行為調整有關，無官方說明
+- **OpenClaw 異常計費行為**（2026-04-30，HN 近千則討論）：若 Git 提交訊息或文件內容中含特定 JSON 格式的 "OpenClaw" 字串，Claude Code 會直接拒絕請求，或將帳單 Extra Usage 衝至 100%；表明 Claude Code 正主動掃描 repo 內容並據此改變計費策略，Anthropic 至今未公開說明
+- **ANTHROPIC_API_KEY 雲端計費陷阱**（2026-04-30）：雲端環境設置此環境變數時，所有呼叫自動改走 API 計費通道，見 [[entities/pricing]]
+- **Claude Projects 對話消失**（2026-04-30 回報）：重度使用者三度遭遇整天的創作對話無故消失，在記錄中留下日期空白，且無法透過搜尋找回
 
 ---
 
@@ -42,6 +49,17 @@ Claude Code 是 Anthropic 的 AI 編碼 CLI 工具，支援 agentic 工作流程
 
 | 日期 | 事件 |
 |------|------|
+| 2026-04-30 | GameMaker 宣布整合 Claude Code，為遊戲開發者提供 AI 輔助工作流程 |
+| 2026-04-30 | v2.1.124 系統提示更新：新增「File modification detected」預算超出提醒機制（+166 tokens）；v2.1.126 精簡核心身份指令（-87 tokens） |
+| 2026-04-30 | Claude Security 公開測試版推出，情境化安全評估直接整合於 Claude Code；見 [[entities/claude-security]] |
+| 2026-04-30 | TypeScript SDK v0.92.0：改善 Managed API 相關功能 |
+| 2026-04-30 | Anthropic 定位為「agentic AI 的 AWS」：Managed Agents + Persistent Memory 公開測試版 |
+| 2026-04-29 | Anthropic 發布官方「Champion Kit」：為推動企業採用 Claude Code 的工程師設計，含 30 天推廣計畫、常見疑慮應對話術與分享素材 |
+| 2026-04-29 | 社群工具：Cockpit（Web UI）、Harness（多 worktree 並行 agent）、CodeThis（MCP paste bin）、Claude Exporter（匯出至 PDF/Word/Notion）|
+| 2026-04-28 | v2.1.121 發布：MCP `alwaysLoad` 選項（設為 true 跳過 tool-search 延遲）、`claude plugin prune` 清除舊外掛 |
+| 2026-04-28 | Runhouse 團隊股權收購：分散式 AI 基礎設施與計算編排專家加入 Anthropic，強化 agentic 工作流底層架構 |
+| 2026-04-28 | Auto Compact 失效事件被回報，session 鎖死問題無法通過重啟解決 |
+| 2026-04-28 | Anthropic 為 Managed Agents 加入跨會話記憶功能（正式公告） |
 | 2026-04-27 | API 金鑰外洩漏洞被媒體報導：可能在自動化流程中洩漏至 npm 等公開倉庫 |
 | 2026-04-27 | HERMES.md 計費 bug 引發更廣泛媒體關注，確認損失達 $200，等待修復 |
 | 2026-04-27 | 版本從 2.1.120 回滾至 2.1.119，疑似靜默撤版 |
@@ -81,6 +99,16 @@ Claude Code 是 Anthropic 的 AI 編碼 CLI 工具，支援 agentic 工作流程
 - **[SmolVM](https://github.com/CelestoAI/SmolVM)** — 本機沙盒環境，讓 Claude Code / Codex 在完全隔離的容器中執行，保護宿主系統，單指令啟動
 - **[Groundtruth](https://github.com/vnmoorthy/groundtruth)** — Stop Hook，強制 Claude Code 在宣告「完成」前提供可驗證的執行證明，解決自信宣稱成功但實際未驗證的問題
 - **[OpenCode-power-pack](https://github.com/waybarrios/opencode-power-pack)** — 將 Anthropic 官方 11 個 Claude Code 技能移植至 OpenCode，打破工具平台綁定
+- **[PullMD](https://www.reddit.com/r/ClaudeAI/comments/1sxzlh6/pullmd_gave_claude_code_an_mcp_server_so_it_stops/)** — MCP server，抓取網頁時先將 HTML 轉換為乾淨 Markdown，避免浪費 token 處理 cookie banner 等無用內容（一般文章有效內容僅佔原始 HTML 約 20%）
+- **[Cockpit](https://github.com/alexjbarnes/cockpit)** — 開源 Web UI，讓使用者不再受限於終端機環境操作 Claude Code
+- **[Harness](https://github.com/frenchie4111/harness)** — 在多個 Git worktree 上並行管理多個 Claude Code agent，作者對現有工具（cmux、Conductor）不滿而自行開發
+- **[CodeThis](https://codethis.dev/)** — MCP 原生 paste bin，支援 100+ 語言語法高亮，AI 可透過 MCP server 直接建立貼文；免費版含 REST API 與 MCP，Pro 方案 $9/月
+- **[Claude Exporter](https://chromewebstore.google.com/detail/claude-exporter-claude-ch/mhckealbblinipeplfddmbcohdidkfjf)** — Chrome 擴充功能，可將 Claude 對話匯出為 PDF、Word、Google Docs 或 Notion，支援自訂字型，無需帳號
+- **[Throttle Meter](https://www.reddit.com/r/ClaudeAI/comments/1t0aw95/)** — macOS menubar 工具，從 `~/.claude/projects/*.jsonl` 即時計算 session 用量與週配額，無遙測，MIT 授權
+- **[Brifly](https://www.getbrifly.com/)** — Claude Code 持久記憶層，儲存專案架構知識讓 AI 跨 session 記住上下文，支援多人協作
+- **[Mneme](https://www.reddit.com/r/ClaudeAI/comments/1t0acsf/)** — repo-native CLI，將架構決策（ADR）存於程式碼庫旁並在 Claude 呼叫前自動注入，支援 CI 攔截違反架構的 PR
+- **[Nimbalyst](https://github.com/Nimbalyst/nimbalyst)** — 多 Agent 視覺化工作台，支援 Claude Code/Codex/Opencode，含 WYSIWYG diff 逐一審核各 Agent 修改
+- **[Trent](https://trent.ai/solutions/claude-code-security/)** — Claude Code 內嵌架構層安全評估，情境化判斷應用邏輯安全性，補足 CVE 掃描盲點
 
 ---
 
@@ -88,9 +116,15 @@ Claude Code 是 Anthropic 的 AI 編碼 CLI 工具，支援 agentic 工作流程
 
 - [[topics/code-quality-decline]]
 - [[topics/competitor-landscape]]
+- [[topics/ai-agent-safety]]
+- [[entities/claude-design]]（AI 設計工具，與 Claude Code 整合尚不完善）
+- [[entities/openclaw]]（第三方 agentic 工具，Anthropic 主動管控中）
 
 ## 參考來源
 
 - [[news/2026-04-25]]
 - [[news/2026-04-26]]
 - [[news/2026-04-27]]
+- [[news/2026-04-28]]
+- [[news/2026-04-29]]
+- [[news/2026-04-30]]

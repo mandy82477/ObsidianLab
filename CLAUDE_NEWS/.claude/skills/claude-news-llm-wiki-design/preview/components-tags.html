@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="utf-8">
+<title>Components — Tags & Badges</title>
+<link rel="stylesheet" href="../colors_and_type.css">
+<style>
+  body { margin: 0; padding: 20px; background: var(--bg-0); width: 700px; box-sizing: border-box; }
+  .row { display:flex; flex-wrap:wrap; gap:8px; margin-bottom: 12px; }
+  .row:last-child { margin-bottom: 0; }
+  .lbl { font-family: var(--font-display); font-size: 11px; text-transform: uppercase; letter-spacing: 0.06em; color: var(--fg-3); margin-bottom: 6px; width: 100%; }
+  .tag {
+    display: inline-flex; gap: 6px; align-items: center;
+    font-family: var(--font-mono); font-size: 12px;
+    padding: 3px 8px; border-radius: var(--radius-1);
+    background: var(--bg-2); border: 1px solid var(--border-1);
+    color: var(--fg-2);
+  }
+  .tag--purple { background: var(--purple-tint); border-color: rgba(124,108,220,0.3); color: var(--purple-9); }
+  .tag--tan    { background: var(--tan-tint); border-color: rgba(212,165,116,0.3); color: var(--tan-9); }
+  .tag--success{ background: var(--success-tint); border-color: rgba(122,200,148,0.3); color: var(--success); }
+  .tag--warn   { background: var(--warn-tint); border-color: rgba(224,182,107,0.3); color: var(--warn); }
+  .tag--danger { background: var(--danger-tint); border-color: rgba(224,133,133,0.3); color: var(--danger); }
+  .badge-sentiment {
+    font-family: var(--font-cjk); font-size: 12px; padding: 2px 8px;
+    border-radius: var(--radius-1); background: var(--bg-2);
+    border: 1px solid var(--border-1);
+  }
+</style>
+</head>
+<body>
+<div class="row"><div class="lbl">Status tags · entity / topic state</div>
+  <span class="tag tag--success">● active</span>
+  <span class="tag tag--warn">● monitoring</span>
+  <span class="tag">● ongoing</span>
+  <span class="tag tag--danger">● deprecated</span>
+  <span class="tag tag--purple">● rumoured</span>
+</div>
+<div class="row"><div class="lbl">Source chips</div>
+  <span class="tag">Hacker News</span>
+  <span class="tag">r/ClaudeAI</span>
+  <span class="tag">GitHub</span>
+  <span class="tag">Anthropic Blog</span>
+  <span class="tag">Google News</span>
+</div>
+<div class="row"><div class="lbl">Sentiment</div>
+  <span class="badge-sentiment" style="color:var(--sentiment-positive)">情緒：😊 正面</span>
+  <span class="badge-sentiment" style="color:var(--sentiment-neutral)">情緒：😐 中性</span>
+  <span class="badge-sentiment" style="color:var(--sentiment-negative)">情緒：😤 負面</span>
+  <span class="badge-sentiment" style="color:var(--sentiment-mixed)">情緒：🤔 褒貶不一</span>
+</div>
+<div class="row"><div class="lbl">Today's Focus labels</div>
+  <span class="tag tag--danger">[重大事件]</span>
+  <span class="tag tag--warn">[持續追蹤]</span>
+  <span class="tag tag--success">[新工具]</span>
+  <span class="tag tag--purple">[社群趨勢]</span>
+  <span class="tag tag--danger">[風險警示]</span>
+</div>
+</body>
+</html>

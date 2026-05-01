@@ -2,7 +2,7 @@
 
 LLM 查詢此 wiki 時，**先讀這個檔案**找相關頁面，再讀具體頁面取得詳細資訊。
 
-**最後更新：** 2026-04-27 | **頁面數：** 13
+**最後更新：** 2026-05-01 | **頁面數：** 17
 
 ---
 
@@ -23,6 +23,9 @@ LLM 查詢此 wiki 時，**先讀這個檔案**找相關頁面，再讀具體頁
 | [[entities/bugcrawl]] | feature | 測試中 | Anthropic 測試中的 Claude Code 漏洞偵測工具 |
 | [[entities/project-deal]] | feature | 實驗中 | Anthropic Claude 代理人自主交易談判實驗，Opus vs Haiku 差異顯著 |
 | [[entities/claude-design]] | feature | active（初期）| Anthropic AI 設計工具，首日社群反映幻覺多、風格偏移、Claude Code 整合差 |
+| [[entities/claude-security]] | product | public beta | Claude Security 資安產品，情境化安全評估，整合於 Claude Code 開發環境 |
+| [[entities/openclaw]] | product | 受限 | 第三方 agentic 工具，被 Anthropic 配額限制並觸發 Claude Code 異常計費行為 |
+| [[entities/google-investment]] | event | resolved | Google 投資 400 億美元歷史記錄，含循環算力交易結構 |
 
 ---
 
@@ -31,9 +34,10 @@ LLM 查詢此 wiki 時，**先讀這個檔案**找相關頁面，再讀具體頁
 | 頁面 | 狀態 | 摘要 |
 |------|------|------|
 | [[topics/code-quality-decline]] | monitoring | Claude Code 效能退步事件，Anthropic 已承認工程疏失 |
-| [[topics/google-investment]] | resolved | Google 投資 400 億美元，含循環算力交易 |
+| [[topics/google-investment]] | resolved | ⚠️ 已遷移至 [[entities/google-investment]] |
 | [[topics/competitor-landscape]] | ongoing | Google 祕密開發競品，Sergey Brin 主導 |
 | [[topics/community-tech-patterns]] | ongoing | 社群技術應用趨勢：multi-agent、skills 設計、工具生態 |
+| [[topics/ai-agent-safety]] | ongoing | AI agent 安全事故與防護機制：資料庫刪除事件、沙盒隔離、操作確認 |
 
 ---
 

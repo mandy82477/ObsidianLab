@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="utf-8">
+<title>Vault — CLAUDE_NEWS</title>
+<link rel="stylesheet" href="../../colors_and_type.css">
+<link rel="stylesheet" href="vault.css">
+<script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+</head>
+<body>
+<div id="root"></div>
+<script type="text/babel" src="Primitives.jsx"></script>
+<script type="text/babel" src="VaultShell.jsx"></script>
+<script type="text/babel" src="FileTree.jsx"></script>
+<script type="text/babel" src="EditorPane.jsx"></script>
+<script type="text/babel" src="BacklinksPane.jsx"></script>
+<script type="text/babel">
+const { useState } = React;
+
+function App() {
+  const [active, setActive] = useState("wiki/entities/claude-code.md");
+  return (
+    <VaultShell activeFile={active}>
+      <div className="vault__pane vault__pane--left">
+        <FileTree activeFile={active} onSelect={setActive} />
+      </div>
+      <div className="vault__pane vault__pane--mid">
+        <div className="vault__tabbar">
+          <div className="vtab vtab--active">
+            <img src="https://unpkg.com/lucide-static@latest/icons/file-text.svg" />
+            <span>{active.split("/").pop()}</span>
+            <span className="vtab__close">×</span>
+          </div>
+          <button className="iconbtn iconbtn--sm"><img src="https://unpkg.com/lucide-static@latest/icons/plus.svg"/></button>
+        </div>
+        <div className="vault__editor-scroll">
+          <EditorPane file={active} />
+        </div>
+      </div>
+      <div className="vault__pane vault__pane--right">
+        <BacklinksPane file={active} />
+      </div>
+    </VaultShell>
+  );
+}
+
+ReactDOM.createRoot(document.getElementById("root")).render(<App />);
+</script>
+</body>
+</html>

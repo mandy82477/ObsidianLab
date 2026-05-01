@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "CLAUDE_NEWS/CLAUDE.md",
+                "file": "CLAUDE_NEWS/news/2026-04-30.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "CLAUDE"
+              "title": "2026-04-30"
             }
           }
         ]
@@ -180,7 +180,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 473.5
+    "width": 200,
+    "collapsed": true
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -199,36 +200,39 @@
   },
   "active": "c84f80fd58a47c6e",
   "lastOpenFiles": [
+    "CLAUDE_NEWS/news/2026-04-29.md",
+    "CLAUDE_NEWS/wiki/log.md",
+    "CLAUDE_NEWS/CLAUDE.md",
+    "CLAUDE_NEWS/wiki/topics/competitor-landscape.md",
+    "CLAUDE_NEWS/wiki/topics/google-investment.md",
+    "CLAUDE_NEWS/wiki/entities/claude-design.md",
+    "CLAUDE_NEWS/wiki/index.md",
+    "CLAUDE_NEWS/wiki/topics/community-tech-patterns.md",
+    "CLAUDE_NEWS/wiki/topics/code-quality-decline.md",
+    "CLAUDE_NEWS/wiki/topics/ai-agent-safety.md",
+    "CLAUDE_NEWS/wiki/entities/bugcrawl.md",
+    "CLAUDE_NEWS/wiki/entities/claude-code.md",
+    "CLAUDE_NEWS/wiki/entities/mythos.md",
+    "CLAUDE_NEWS/wiki/entities/opus-4-7.md",
+    "CLAUDE_NEWS/wiki/entities/pricing.md",
+    "CLAUDE_NEWS/wiki/entities/project-deal.md",
+    "CLAUDE_NEWS/news/2026-04-28.md",
+    "CLAUDE_NEWS/wiki/index.md.tmp.29252.1777381542324",
+    "CLAUDE_NEWS/wiki/topics/code-quality-decline.md.tmp.29252.1777381454588",
+    "CLAUDE_NEWS/wiki/topics/code-quality-decline.md.tmp.29252.1777381434826",
+    "CLAUDE_NEWS/wiki/entities/opus-4-7.md.tmp.29252.1777381413201",
+    "CLAUDE_NEWS/wiki/entities/claude-code.md.tmp.29252.1777381363925",
     "CLAUDE_NEWS/src/DesignDocument/Design Diagram.md",
     "CLAUDE_NEWS/news/2026-04-25.md",
-    "CLAUDE_NEWS/CLAUDE.md",
     "CLAUDE_NEWS/wiki/log.md.tmp.7004.1777305430069",
-    "CLAUDE_NEWS/wiki/entities/claude-design.md",
     "CLAUDE_NEWS/wiki/entities/claude-code.md.tmp.7004.1777305381107",
     "CLAUDE_NEWS/wiki/topics/community-tech-patterns.md.tmp.7004.1777305363820",
-    "CLAUDE_NEWS/wiki/topics/competitor-landscape.md",
-    "CLAUDE_NEWS/wiki/log.md",
     "CLAUDE_NEWS/wiki/overview.md",
-    "CLAUDE_NEWS/wiki/topics/code-quality-decline.md",
-    "CLAUDE_NEWS/wiki/topics/google-investment.md",
-    "CLAUDE_NEWS/wiki/topics/community-tech-patterns.md",
-    "CLAUDE_NEWS/wiki/entities/project-deal.md",
     "CLAUDE_NEWS/news/2026-04-27.md",
     "CLAUDE_NEWS/src/news_aggregator/config.py.tmp.13996.1777209106681",
     "CLAUDE_NEWS/src/run_news.bat",
-    "CLAUDE_NEWS/src/requirements_news.txt",
-    "CLAUDE_NEWS/src/logs/task_scheduler.log",
-    "CLAUDE_NEWS/src/logs/news_aggregator.log",
-    "CLAUDE_NEWS/src/logs",
-    "CLAUDE_NEWS/src/news_aggregator/sources/__pycache__/__init__.cpython-313.pyc",
     "未命名.md",
     "未命名.canvas",
-    "CLAUDE_NEWS/news/2026-04-26.md",
-    "CLAUDE_NEWS/wiki/entities/pricing.md",
-    "CLAUDE_NEWS/wiki/entities/opus-4-7.md",
-    "CLAUDE_NEWS/wiki/entities/mythos.md",
-    "CLAUDE_NEWS/wiki/entities/claude-code.md",
-    "CLAUDE_NEWS/wiki/entities/bugcrawl.md",
-    "CLAUDE_NEWS/wiki/index.md"
+    "CLAUDE_NEWS/news/2026-04-26.md"
   ]
 }

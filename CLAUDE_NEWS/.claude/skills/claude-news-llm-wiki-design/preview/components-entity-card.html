@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="utf-8">
+<title>Components — Entity Card</title>
+<link rel="stylesheet" href="../colors_and_type.css">
+<style>
+  body { margin: 0; padding: 16px; background: var(--bg-0); width: 700px; box-sizing: border-box; }
+  .card {
+    background: var(--bg-1); border: 1px solid var(--border-1);
+    border-radius: var(--radius-3); padding: 16px;
+    position: relative;
+  }
+  .card::before {
+    content: ""; position: absolute; inset: 0 0 auto 0; height: 1px;
+    background: var(--inner-highlight); border-radius: var(--radius-3) var(--radius-3) 0 0;
+  }
+  .card:hover { border-color: var(--border-2); }
+  .head { display: flex; justify-content: space-between; align-items: baseline; gap: 12px; margin-bottom: 10px; }
+  .title { font-family: var(--font-display); font-size: 18px; font-weight: 600; color: var(--fg-1); }
+  .meta { font-family: var(--font-mono); font-size: 11px; color: var(--fg-3); display: flex; gap: 10px; }
+  .meta b { color: var(--fg-2); font-weight: 500; }
+  .summary { font-size: 14px; color: var(--fg-2); line-height: 1.6; margin: 8px 0; font-family: var(--font-cjk); }
+  .footer { display: flex; gap: 6px; margin-top: 12px; }
+  .tag { font-family: var(--font-mono); font-size: 11px; padding: 2px 7px; border-radius: 4px; background: var(--purple-tint); color: var(--purple-9); border:1px solid rgba(124,108,220,0.25); }
+</style>
+</head>
+<body>
+<div class="card">
+  <div class="head">
+    <div class="title">Claude Opus 4.7</div>
+    <div class="meta"><span><b>type</b> model</span><span><b>state</b> active</span><span><b>updated</b> 2026-04-27</span></div>
+  </div>
+  <p class="summary">Anthropic 最高階公開模型，思考深度由模型自行決定，社群普遍認為在需要深度推理的問題上回應淺薄；Usage Policy 隨機觸發拒絕，官方建議切換至 Sonnet 緩解。</p>
+  <div class="footer">
+    <span class="tag">[[topics/code-quality-decline]]</span>
+    <span class="tag">[[entities/pricing]]</span>
+  </div>
+</div>
+</body>
+</html>

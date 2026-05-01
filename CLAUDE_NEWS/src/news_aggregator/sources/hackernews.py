@@ -4,7 +4,8 @@ from datetime import datetime, timezone
 
 import requests
 
-from news_aggregator.config import LOOKBACK_HOURS, MAX_ITEMS_PER_SOURCE, REQUEST_TIMEOUT, SEARCH_TERMS
+import news_aggregator.config as _cfg
+from news_aggregator.config import MAX_ITEMS_PER_SOURCE, REQUEST_TIMEOUT, SEARCH_TERMS
 from news_aggregator.sources.base import BaseSource, FeedItem
 
 logger = logging.getLogger(__name__)
@@ -15,7 +16,7 @@ HN_SEARCH_URL = "https://hn.algolia.com/api/v1/search"
 class HackerNews(BaseSource):
     def fetch(self) -> list[FeedItem]:
         try:
-            cutoff = int(time.time()) - (LOOKBACK_HOURS * 3600)
+            cutoff = int(time.time()) - (_cfg.LOOKBACK_HOURS * 3600)
             items: list[FeedItem] = []
 
             # Regular story search (score >= 3)

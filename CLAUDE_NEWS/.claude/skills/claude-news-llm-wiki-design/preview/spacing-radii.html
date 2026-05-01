@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="utf-8">
+<title>Spacing & Radii</title>
+<link rel="stylesheet" href="../colors_and_type.css">
+<style>
+  body { margin: 0; padding: 20px; background: var(--bg-0); width: 700px; box-sizing: border-box; font-size:13px; }
+  .section { margin-bottom: 16px; }
+  .lbl { font-family: var(--font-display); font-size: 11px; text-transform: uppercase; letter-spacing: 0.06em; color: var(--fg-3); margin-bottom: 8px; }
+  .row { display: flex; gap: 12px; align-items: end; }
+  .stack { display: flex; flex-direction: column; align-items: center; gap: 4px; }
+  .bar { background: var(--purple-7); border-radius: 2px; width: 100%; }
+  .num { font-family: var(--font-mono); font-size: 11px; color: var(--fg-2); }
+  .radii { display: flex; gap: 12px; }
+  .radii .r { width: 56px; height: 56px; background: var(--bg-2); border:1px solid var(--border-2); display:flex; align-items:center; justify-content:center; font-family:var(--font-mono); font-size:11px; color: var(--fg-2); }
+</style>
+</head>
+<body>
+<div class="section">
+  <div class="lbl">Spacing — 4px grid</div>
+  <div class="row">
+    <div class="stack" style="width:36px"><div class="bar" style="height:4px"></div><div class="num">1 · 4</div></div>
+    <div class="stack" style="width:36px"><div class="bar" style="height:8px"></div><div class="num">2 · 8</div></div>
+    <div class="stack" style="width:36px"><div class="bar" style="height:12px"></div><div class="num">3 · 12</div></div>
+    <div class="stack" style="width:36px"><div class="bar" style="height:16px"></div><div class="num">4 · 16</div></div>
+    <div class="stack" style="width:36px"><div class="bar" style="height:24px"></div><div class="num">6 · 24</div></div>
+    <div class="stack" style="width:36px"><div class="bar" style="height:32px"></div><div class="num">8 · 32</div></div>
+    <div class="stack" style="width:36px"><div class="bar" style="height:48px"></div><div class="num">12 · 48</div></div>
+    <div class="stack" style="width:36px"><div class="bar" style="height:64px"></div><div class="num">16 · 64</div></div>
+  </div>
+</div>
+<div class="section">
+  <div class="lbl">Radii</div>
+  <div class="radii">
+    <div class="r" style="border-radius:4px">4 · chip</div>
+    <div class="r" style="border-radius:6px">6 · button</div>
+    <div class="r" style="border-radius:8px">8 · card</div>
+    <div class="r" style="border-radius:12px">12 · modal</div>
+    <div class="r" style="border-radius:999px">∞ · avatar</div>
+  </div>
+</div>
+</body>
+</html>

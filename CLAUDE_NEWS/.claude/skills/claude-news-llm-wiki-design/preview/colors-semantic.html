@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="utf-8">
+<title>Colors — Semantic</title>
+<link rel="stylesheet" href="../colors_and_type.css">
+<style>
+  body { margin: 0; padding: 20px; background: var(--bg-0); width: 700px; box-sizing: border-box; }
+  .grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; }
+  .row {
+    background: var(--bg-1);
+    border:1px solid var(--border-1);
+    border-radius: var(--radius-3);
+    padding: 14px;
+    display:flex; flex-direction:column; gap: 6px;
+  }
+  .row .bar { height:6px; border-radius:3px; }
+  .row .name { font-family: var(--font-display); font-size: 14px; font-weight: 600; }
+  .row .hex { font-family: var(--font-mono); font-size: 11px; color: var(--fg-2); }
+  .row .use { font-size: 12px; color: var(--fg-3); }
+</style>
+</head>
+<body>
+<div class="grid">
+  <div class="row"><div class="bar" style="background:#6BB0E8"></div><div class="name" style="color:#6BB0E8">info</div><div class="hex">#6BB0E8</div><div class="use">notes, neutral system messages</div></div>
+  <div class="row"><div class="bar" style="background:#7AC894"></div><div class="name" style="color:#7AC894">success</div><div class="hex">#7AC894</div><div class="use">✅ source ok · positive sentiment</div></div>
+  <div class="row"><div class="bar" style="background:#E0B66B"></div><div class="name" style="color:#E0B66B">warn</div><div class="hex">#E0B66B</div><div class="use">⚠️ pending confirmation</div></div>
+  <div class="row"><div class="bar" style="background:#E08585"></div><div class="name" style="color:#E08585">danger</div><div class="hex">#E08585</div><div class="use">😤 negative · pipeline failures</div></div>
+</div>
+</body>
+</html>

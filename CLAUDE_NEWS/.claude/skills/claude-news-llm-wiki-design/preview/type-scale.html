@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="utf-8">
+<title>Type — Display & Body</title>
+<link rel="stylesheet" href="../colors_and_type.css">
+<style>
+  body { margin: 0; padding: 24px; background: var(--bg-0); width: 700px; box-sizing: border-box; }
+  .row { display: flex; align-items: baseline; gap: 16px; padding: 8px 0; border-bottom: 1px solid var(--border-1); }
+  .row:last-child { border-bottom: 0; }
+  .meta { width: 120px; flex-shrink: 0; font-family: var(--font-mono); font-size: 11px; color: var(--fg-3); }
+  .meta b { color: var(--fg-1); font-weight: 600; }
+  .specimen { color: var(--fg-1); }
+</style>
+</head>
+<body>
+  <div class="row"><div class="meta"><b>H1</b> 28/1.3 700</div><div class="specimen" style="font-family:var(--font-display); font-size:28px; font-weight:700; letter-spacing:-0.01em">每日新聞摘要 · Claude Code</div></div>
+  <div class="row"><div class="meta"><b>H2</b> 22/1.3 600</div><div class="specimen" style="font-family:var(--font-display); font-size:22px; font-weight:600; letter-spacing:-0.01em">⭐ 重點話題 · Top stories</div></div>
+  <div class="row"><div class="meta"><b>H3</b> 18/1.3 600</div><div class="specimen" style="font-family:var(--font-display); font-size:18px; font-weight:600">已知問題與爭議</div></div>
+  <div class="row"><div class="meta"><b>Body</b> 16/1.6</div><div class="specimen">Anthropic 正處於快速擴張與品質爭議並存的關鍵節點。</div></div>
+  <div class="row"><div class="meta"><b>Small</b> 14/1.6</div><div class="specimen" style="font-size:14px;color:var(--fg-2)">Hacker News · 04/30 14:36 UTC</div></div>
+  <div class="row"><div class="meta"><b>Micro</b> 12 caps</div><div class="specimen" style="font-size:12px;color:var(--fg-3); text-transform:uppercase; letter-spacing:0.06em; font-weight:500">Last updated · 2026-04-27</div></div>
+</body>
+</html>

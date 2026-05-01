@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="utf-8">
+<title>Brand — Iconography & Glyphs</title>
+<link rel="stylesheet" href="../colors_and_type.css">
+<style>
+  body { margin: 0; padding: 20px; background: var(--bg-0); width: 700px; box-sizing: border-box; }
+  .grid { display: grid; grid-template-columns: repeat(8, 1fr); gap: 6px; }
+  .cell { background: var(--bg-1); border: 1px solid var(--border-1); border-radius: var(--radius-2); padding: 12px 6px; display: flex; flex-direction: column; align-items: center; gap: 6px; }
+  .cell .ico { font-size: 18px; line-height: 1; }
+  .cell .nm { font-family: var(--font-mono); font-size: 10px; color: var(--fg-3); }
+  .lbl { font-family: var(--font-display); font-size: 11px; text-transform: uppercase; letter-spacing: 0.06em; color: var(--fg-3); margin: 8px 0 6px; }
+  .lbl:first-child { margin-top: 0; }
+  .lucide { width: 18px; height: 18px; }
+</style>
+</head>
+<body>
+<div class="lbl">Semantic emoji — fixed set</div>
+<div class="grid">
+  <div class="cell"><div class="ico">⭐</div><div class="nm">top story</div></div>
+  <div class="cell"><div class="ico">🔧</div><div class="nm">tech</div></div>
+  <div class="cell"><div class="ico">💬</div><div class="nm">discuss</div></div>
+  <div class="cell"><div class="ico">💰</div><div class="nm">pricing</div></div>
+  <div class="cell"><div class="ico">📌</div><div class="nm">focus</div></div>
+  <div class="cell"><div class="ico">✅</div><div class="nm">verified</div></div>
+  <div class="cell"><div class="ico">⚠️</div><div class="nm">unverified</div></div>
+  <div class="cell"><div class="ico">⛔</div><div class="nm">stopped</div></div>
+  <div class="cell"><div class="ico">🔒</div><div class="nm">restricted</div></div>
+  <div class="cell"><div class="ico">📈</div><div class="nm">trending</div></div>
+  <div class="cell"><div class="ico">🔥</div><div class="nm">hot</div></div>
+  <div class="cell"><div class="ico">😊</div><div class="nm">positive</div></div>
+  <div class="cell"><div class="ico">😐</div><div class="nm">neutral</div></div>
+  <div class="cell"><div class="ico">😤</div><div class="nm">negative</div></div>
+  <div class="cell"><div class="ico">🤔</div><div class="nm">mixed</div></div>
+  <div class="cell"><div class="ico">📝</div><div class="nm">note</div></div>
+</div>
+<div class="lbl">UI icons — Lucide via CDN</div>
+<div class="grid">
+  <div class="cell"><img class="lucide" src="https://unpkg.com/lucide-static@latest/icons/search.svg" style="filter: invert(0.7)"><div class="nm">search</div></div>
+  <div class="cell"><img class="lucide" src="https://unpkg.com/lucide-static@latest/icons/file-text.svg" style="filter: invert(0.7)"><div class="nm">file-text</div></div>
+  <div class="cell"><img class="lucide" src="https://unpkg.com/lucide-static@latest/icons/link-2.svg" style="filter: invert(0.7)"><div class="nm">link-2</div></div>
+  <div class="cell"><img class="lucide" src="https://unpkg.com/lucide-static@latest/icons/external-link.svg" style="filter: invert(0.7)"><div class="nm">external</div></div>
+  <div class="cell"><img class="lucide" src="https://unpkg.com/lucide-static@latest/icons/chevron-right.svg" style="filter: invert(0.7)"><div class="nm">chevron</div></div>
+  <div class="cell"><img class="lucide" src="https://unpkg.com/lucide-static@latest/icons/folder.svg" style="filter: invert(0.7)"><div class="nm">folder</div></div>
+  <div class="cell"><img class="lucide" src="https://unpkg.com/lucide-static@latest/icons/git-branch.svg" style="filter: invert(0.7)"><div class="nm">git</div></div>
+  <div class="cell"><img class="lucide" src="https://unpkg.com/lucide-static@latest/icons/clock.svg" style="filter: invert(0.7)"><div class="nm">clock</div></div>
+</div>
+</body>
+</html>
