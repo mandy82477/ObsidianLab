@@ -1,0 +1,272 @@
+{
+  "date": "2026-04-30",
+  "generatedAt": "2026-05-01 03:07 UTC",
+  "articleCount": 52,
+  "sourceCount": "5/5",
+  "topStories": [
+    {
+      "title": "Claude Code refuses requests or charges extra if your commits mention \"OpenClaw\"",
+      "url": "https://twitter.com/theo/status/2049645973350363168",
+      "source": "Hacker News",
+      "time": "04/30 14:36",
+      "sentiment": "",
+      "body": "Claude Code 被發現存在異常行為：若 Git 提交訊息中含有特定 JSON 格式的 \"OpenClaw\" 字串，工具會直接拒絕請求，或立即將帳單的 Extra Usage 衝至 100%；也有使用者僅在文件內容中提及 OpenClaw 便觸發異常回應。此行為表明 Claude Code 正主動掃描 repo 內容並據此改變執行與計費策略，Anthropic 至今未公開說明，是近期最嚴重的帳單透明度信任事件，在 HN 引發近千則討論。"
+    },
+    {
+      "title": "White House Opposes Anthropic's Plan to Expand Access to Mythos Model",
+      "url": "https://www.wsj.com/tech/ai/white-house-opposes-anthropics-plan-to-expand-access-to-mythos-model-dc281ab5",
+      "source": "Hacker News",
+      "time": "04/30 09:55",
+      "sentiment": "",
+      "body": "白宮公開反對 Anthropic 擴大旗下最強大 Mythos 模型的存取範圍，與此同時 Anthropic 自身也宣稱 Mythos 的能力強大到足以破壞系統並危及網路安全，世界尚未準備好接受它。政府介入 AI 模型存取管控成為標誌性事件，社群稱之為「AI 授權時代的開端」，並與 Anthropic 和五角大廈之間的政策角力密切相關。"
+    },
+    {
+      "title": "Sources: Anthropic Could Raise a New $50B Round at a Valuation of $900B",
+      "url": "https://techcrunch.com/2026/04/29/sources-anthropic-could-raise-a-new-50b-round-at-a-valuation-of-900b/",
+      "source": "Hacker News",
+      "time": "04/30 00:39",
+      "sentiment": "",
+      "body": "TechCrunch 報導 Anthropic 已收到多個主動出擊的融資要約，規模約 $500 億美元、估值區間 $8,500 億–$9,000 億，可能在兩週內完成；Google 另被報導押注高達 $400 億。若成真，Anthropic 將躋身史上估值最高的私人 AI 新創，折射出市場對 AI 基礎設施競賽的極度樂觀，但商業驗證壓力也將隨之驟增。"
+    },
+    {
+      "title": "Anthropic announces Claude Security public beta to find and fix software vulnerabilities",
+      "url": "https://news.google.com/rss/articles/CBMiugFBVV95cUxONGtrUnY1Q09ES2lLNFpMcU9ZaVgtQ3I1azNCeDFpb1ZlQTdqZkRfbEk0NVRhYzVtSEdJdmJfQUpHMzZJeW92cF92azNtdzdRbjdqZEZ6ZjdwWFlnZ2RIdkh1V1gwUmFxalJVUXYzU0V6VWdxTHJIU1diLU1lU0dmakRHNVVrM3I5RjZ0eTZNbTY0OEdjTEhVNjdHWFNhVWNmeG5Ub2VvNk80c2ZkMURLSDNDQnBkZkVwTVE",
+      "source": "Google News / SiliconANGLE",
+      "time": "04/30 09:00",
+      "sentiment": "",
+      "body": "Anthropic 正式推出 Claude Security 公開測試版，ZDNET、SecurityWeek、SiliconANGLE、CRN 等多家媒體同步報導。此工具有別於傳統 CVE 掃描器，能結合應用程式的業務邏輯提供情境化安全評估，並直接整合於 Claude Code 開發環境，標誌 Anthropic 正式以獨立產品形式跨足 AI 輔助資安市場。"
+    }
+  ],
+  "techUpdates": [
+    {
+      "title": "anthropics/anthropic-sdk-typescript sdk: v0.92.0",
+      "url": "https://github.com/anthropics/anthropic-sdk-typescript/releases/tag/sdk-v0.92.0",
+      "source": "GitHub / anthropics/anthropic-sdk-typescript",
+      "time": "04/30 19:40",
+      "sentiment": "",
+      "body": "TypeScript SDK 發布 0.92.0，主要改善 Managed API 相關功能，是持續強化 Claude Managed Agents 基礎設施的一環。"
+    },
+    {
+      "title": "Anthropic wants to be the AWS of agentic AI",
+      "url": "https://thenewstack.io/anthropic-agents-managed-aws-claude/",
+      "source": "Hacker News",
+      "time": "04/30 18:09",
+      "sentiment": "",
+      "body": "Anthropic 在本月相繼推出 Claude Managed Agents 公開測試版與 Persistent Memory 功能；記者實測後指出，此產品面向具備一定開發能力的工程團隊，顯示 Anthropic 已從模型供應商轉型為 AI Agent 執行基礎設施平台。"
+    },
+    {
+      "title": "What's new in CC 2.1.124 (+166 tokens) and 2.1.126 (-87 tokens) system prompt",
+      "url": "https://www.reddit.com/r/ClaudeAI/comments/1t0gomk/whats_new_in_cc_21124_166_tokens_and_21126_87/",
+      "source": "Reddit / r/ClaudeAI",
+      "time": "04/30 18:34",
+      "sentiment": "",
+      "body": "社群研究者追蹤到 Claude Code 的兩次系統提示更新：2.1.124 新增「File modification detected」預算超出提醒機制（增 166 tokens），2.1.126 則精簡核心身份指令（減 87 tokens），REPL 工具慣例也有細節調整。"
+    },
+    {
+      "title": "GameMaker incorporates Claude Code to enable AI-assisted workflows",
+      "url": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxNd1BLSnRDRFk3NWw1bERCRlVoZ3N1b1ByX3dVRnFQSi0wczV1R3Y1R2k1RC1BRkRmallUcmptNExyNEhUUWx6cVlJRUYyamFYdUxZcnM1Qm5HdEFzaGR5Zjl4S0ZCVmJDN3pBS0p5MWo0TVFuOU1rVjg5MmwxR0ZBc3B3Ri1QZGZ0b2Y1SzhVdWJ4akFDS1dKQmhTZTQ1QXIwdUM3aDlCMGRfTWs",
+      "source": "Google News / Game Developer",
+      "time": "04/30 06:44",
+      "sentiment": "",
+      "body": "遊戲引擎平台 GameMaker 宣布整合 Claude Code，為遊戲開發者提供 AI 輔助工作流程，是 Claude Code 在垂直軟體領域深度整合的最新案例。"
+    },
+    {
+      "title": "AI coding agents breached: attackers targeted credentials, not models",
+      "url": "https://news.google.com/rss/articles/CBMikAFBVV95cUxORGdFV0Z6WV96ZlpMZnFLajQ1Z0ZTZC1GTXEtOTlZRmdpQVdRcGtTQXRfRDNUb1p5bjVDZzVlVlNRMURCNTFqR0o4cUVtZXhaNHN2c1hrNjg1MERvQXR3eEFYVGI2dHlGSUZvSnQxQUk5SUhsNFQyUE8wYlFwckw2OGJOT1BUNTVUeVlidmNWX0U",
+      "source": "Google News / VentureBeat",
+      "time": "04/30 08:30",
+      "sentiment": "",
+      "body": "VentureBeat 報導 AI 程式碼代理已成為真實攻擊目標，攻擊者鎖定的是憑證（credentials）而非模型本身，說明 AI 工具鏈的資安風險已從理論進入實際攻擊場景。"
+    },
+    {
+      "title": "Whose Trust Is It Anyway? Configuration Boundaries in AI Development Tools",
+      "url": "https://news.ycombinator.com/item?id=47963671",
+      "source": "Hacker News",
+      "time": "04/30 15:07",
+      "sentiment": "",
+      "body": "安全研究者揭露：Google 將 Gemini CLI 在 CI/CD 中的工作區信任行為評為 CVSS 10.0 嚴重漏洞並立即修補，Anthropic 則將類似的 Claude Code 行為定義為「設計如此」，兩家公司對 AI 代理安全邊界的判斷標準存在根本差異。"
+    }
+  ],
+  "discussions": [
+    {
+      "title": "Show HN: Nimbalyst open-source visual workspace for ClaudeCode, Codex, OpenCode",
+      "url": "https://github.com/Nimbalyst/nimbalyst",
+      "source": "Hacker News",
+      "time": "04/30 13:36",
+      "sentiment": "😊 正面",
+      "body": "Nimbalyst 開源了一個多 Agent 視覺化工作台，支援 Claude Code、Codex、Opencode，核心功能是讓使用者與 AI Agent 能同步協作相同檔案，並透過 WYSIWYG diff 介面逐一審核各 Agent 的修改，同時支援 Excalidraw、試算表、Monaco 程式碼等多種編輯器。"
+    },
+    {
+      "title": "What I changed in how I use Claude Code after Anthropic's postmortem",
+      "url": "https://news.ycombinator.com/item?id=47957402",
+      "source": "Hacker News",
+      "time": "04/30 02:34",
+      "sentiment": "😊 正面",
+      "body": "作者觀看 Anthropic 4 月 23 日公開的事後檢討後，重新審視 Claude Code 的使用策略，指出推理深度降低事件暴露出 AI 工具預設值不可盲目信任，並以「等效僱工成本」框架重新計算 token 費用，認為 AI 仍具壓倒性 CP 值。"
+    },
+    {
+      "title": "Ask HN: Is Anybody Using Codex?",
+      "url": "https://news.ycombinator.com/item?id=47964653",
+      "source": "Hacker News",
+      "time": "04/30 16:12",
+      "sentiment": "😐 中性",
+      "body": "提問者觀察到 HN 上 Claude Code 討論量遠超 OpenAI Codex，好奇 Codex 是否真的不受歡迎；留言者普遍認為兩者能力相近（Opus 4.7 ≈ GPT 5.5），但 Claude Code 社群能見度明顯更高，Codex 曝光度相當有限。"
+    },
+    {
+      "title": "Show HN: You can now run Gemini CLI in the browser",
+      "url": "https://browsercode.io",
+      "source": "Hacker News",
+      "time": "04/30 13:59",
+      "sentiment": "😊 正面",
+      "body": "BrowserCode 推出開源 web app，基於 WebAssembly 沙盒技術，可在瀏覽器中無需安裝地執行 Gemini CLI；Claude Code 支援已在規劃中，未來也將擴展至 Ruby、Go、Rust 等語言環境。"
+    },
+    {
+      "title": "Throttle Meter — open-source Claude Code usage meter for macOS",
+      "url": "https://www.reddit.com/r/ClaudeAI/comments/1t0aw95/throttle_meter_opensource_claude_code_usage_meter/",
+      "source": "Reddit / r/ClaudeAI",
+      "time": "04/30 14:19",
+      "sentiment": "😊 正面",
+      "body": "開發者因頻繁在 5 小時滾動窗口中途被限速而開發 Throttle Meter：macOS menubar 工具，從本機 `~/.claude/projects/*.jsonl` 即時計算 session 用量與週配額，無遙測、無網路請求，MIT 授權開源。"
+    },
+    {
+      "title": "I built an open-source memory/governance layer for Claude Code to reduce architecture drift",
+      "url": "https://www.reddit.com/r/ClaudeAI/comments/1t0acsf/i_built_an_opensource_memorygovernance_layer_for/",
+      "source": "Reddit / r/ClaudeAI",
+      "time": "04/30 13:57",
+      "sentiment": "😊 正面",
+      "body": "開發者推出 Mneme，一個 repo-native CLI 工具，將架構決策（ADR）直接存在程式碼庫旁，並在 Claude/Cursor 呼叫前自動注入相關決策脈絡；也支援 CI 檢查，可在 PR 合入前攔截違反既定架構的變更。"
+    },
+    {
+      "title": "Opus 4.7 is a genuine regression and I'm tired of pretending it isn't",
+      "url": "https://www.reddit.com/r/ClaudeAI/comments/1t0ffze/opus_47_is_a_genuine_regression_and_im_tired_of/",
+      "source": "Reddit / r/ClaudeAI",
+      "time": "04/30 17:37",
+      "sentiment": "😤 負面",
+      "body": "一位重度 Max 20x 訂戶直言 Opus 4.7 嚴重退步，主要問題是過度「後設化」——每個回覆都像在撰寫論文，無法直接回答問題。配合學術研究（arxiv 2604.24827）估算 Opus 4.7 參數量約為 4T，疑似少於 Opus 4.6 的 5.3T，社群對 4.7 的失望情緒持續累積。"
+    },
+    {
+      "title": "I run a paper-trading bot where Claude Opus is the Lead Engineer with veto power over a Gemini \"Strategist.\"",
+      "url": "https://www.reddit.com/r/ClaudeAI/comments/1t06v2n/i_run_a_papertrading_bot_where_claude_opus_is_the/",
+      "source": "Reddit / r/ClaudeAI",
+      "time": "04/30 11:47",
+      "sentiment": "😊 正面",
+      "body": "作者分享一套多 LLM 協作的自動交易架構：Claude Opus 擔任首席工程師並握有否決權，Gemini Pro 負責策略判斷，作者本人保留資金決策權，並累積了超過 270 條分歧記錄日誌，是目前公開最詳細的 Claude + Gemini 角色分工實驗之一。"
+    },
+    {
+      "title": "Show HN: Brifly – stop re-explaining your codebase to Claude Code every week",
+      "url": "https://www.getbrifly.com/",
+      "source": "Hacker News",
+      "time": "04/30 09:20",
+      "sentiment": "😊 正面",
+      "body": "Brifly 為 Claude Code 和 AI Agent 提供持久記憶層，讓工程師不再每次都要重新解釋專案架構；支援多人協作、空間管理與編輯者版本追蹤，直接對抗 AI 輔助開發中最令人頭痛的「無狀態」問題。"
+    },
+    {
+      "title": "Losing extensive work multiple times",
+      "url": "https://www.reddit.com/r/ClaudeAI/comments/1t0emhl/losing_extensive_work_multiple_times/",
+      "source": "Reddit / r/ClaudeAI",
+      "time": "04/30 17:00",
+      "sentiment": "😤 負面",
+      "body": "一位重度使用 Claude Projects 的作家表示，三度遭遇整天的創作對話無故消失，在聊天記錄中留下明顯的日期空白，且無法透過搜尋找回，呼籲 Anthropic 改善 Projects 的資料保留機制。"
+    },
+    {
+      "title": "Anthropic's Mythos Has Landed: Here's What Comes Next for Cyber",
+      "url": "https://news.google.com/rss/articles/CBMilgFBVV95cUxOZHRrWS1vZkQ5T2pmY3pncm96RFlVZ1FSeTJkNjhuUGZQVFhGaHNUSmRBcUFGZ1BsT2M3c3E0YkFEX1dnNWRHaEJoXzhFLVBNSW9QdnVJUkdzaUNjNC1zT3pRWkxxOTJuaXZBRXU2WUNCd1o4VHhqbWdScVM3Z052SEE2N2E0YW9PbjhhMnotTUk1MWIwdEE",
+      "source": "Google News / Dark Reading",
+      "time": "04/30 12:18",
+      "sentiment": "🤔 褒貶不一",
+      "body": "Dark Reading 分析 Mythos 落地對網路安全產業的後續影響，預測攻防兩端的應用場景；標題措辭暗示 Mythos 已以某種形式亮相，但具體細節尚待驗證。"
+    },
+    {
+      "title": "Show HN: Run Claude Code sessions on Linear issues via two MCP servers",
+      "url": "https://lanes.sh/blog/linear-to-lanes",
+      "source": "Hacker News",
+      "time": "04/30 12:03",
+      "sentiment": "😊 正面",
+      "body": "Lanes.sh 教學示範如何串接 Linear 官方 MCP 與本地 Lanes MCP，讓 Agent 直接讀取 Linear 待辦票、在同一介面中啟動 Claude Code 工作階段，省去複製貼上與切換視窗的摩擦，實現 issue-to-code 的一鍵流程。"
+    },
+    {
+      "title": "Show HN: Trent – Contextual architectural security reviews inside Claude Code",
+      "url": "https://trent.ai/solutions/claude-code-security/",
+      "source": "Hacker News",
+      "time": "04/30 13:26",
+      "sentiment": "😊 正面",
+      "body": "Trent 在 Claude Code 環境中提供應用架構層級的安全評估，補足傳統 CVE 掃描器無法判斷「應用邏輯是否安全」的盲點，直接在開發工作流中嵌入情境化安全稽核。"
+    }
+  ],
+  "billing": [
+    {
+      "title": "Claude Code dies with ANTHROPIC_API_KEY in cloud environment",
+      "url": "https://news.ycombinator.com/item?id=47966935",
+      "source": "Hacker News",
+      "time": "04/30 19:11",
+      "sentiment": "",
+      "body": "使用者警告：若在雲端環境設置 `ANTHROPIC_API_KEY` 環境變數，Claude Code 無法正常運作，且所有 Code 呼叫將改走 API 計費通道，造成大量意外費用；官方文件在此問題上存在誤導，過去已有多起「Extra Usage 異常暴增」事件與此有關。"
+    },
+    {
+      "title": "Claude Pro expired and my $40 in prepaid Extra Usage credits vanished",
+      "url": "https://news.ycombinator.com/item?id=47961574",
+      "source": "Hacker News",
+      "time": "04/30 12:44",
+      "sentiment": "",
+      "body": "使用者 Claude Pro 訂閱到期後，發現預付的 $40 Extra Usage 餘額隨之歸零消失，Anthropic 文件未明確說明訂閱終止後的餘額處置規則，UI 中也不存在退款流程，引發社群對訂閱制公平性的不滿。"
+    },
+    {
+      "title": "Claude Code usage spike from long-context cache writes?",
+      "url": "https://www.reddit.com/r/ClaudeAI/comments/1t0fuwj/claude_code_usage_spike_from_longcontext_cache/",
+      "source": "Reddit / r/ClaudeAI",
+      "time": "04/30 17:56",
+      "sentiment": "",
+      "body": "使用者深入分析本機 JSONL 日誌後發現，Claude Code 用量暴增源自超大 prompt cache（約 475k tokens）的反覆重建；以公開 API 定價估算，單次重建成本即相當可觀，顯示長 context 的快取機制可能是隱性成本黑洞，值得重度使用者警惕。"
+    }
+  ],
+  "focus": [
+    {
+      "tag": "[重大事件]",
+      "text": "Claude Code \"OpenClaw\" 事件暴露 AI 工具的信任危機：工具在使用者不知情的情況下掃描 repo 內容並改變計費行為，Anthropic 應儘速公開說明觸發條件是否屬於預期設計，否則恐進一步侵蝕開發者信任。"
+    },
+    {
+      "tag": "[重大事件]",
+      "text": "白宮介入 Mythos 模型存取管控，AI 模型授權管制正式進入執行層次，Anthropic 與美國政府之間的政策角力料將持續，對 Mythos 商業化時程影響深遠。"
+    },
+    {
+      "tag": "[持續追蹤]",
+      "text": "Anthropic 估值逼近 $9,000 億美元，新一輪 $500 億融資若在兩週內落定，將再度刷新 AI 新創紀錄；但市場預期與實際商業模式之間的落差，是後續最值得觀察的風險指標。"
+    },
+    {
+      "tag": "[新工具]",
+      "text": "Claude Security 公開測試版上線，Anthropic 首次以獨立資安產品形式與傳統 SAST 工具廠商正面競爭，其情境化評估角度具差異化潛力，後續生態整合深度值得追蹤。"
+    },
+    {
+      "tag": "[社群趨勢]",
+      "text": "帳單透明度問題多點同步爆發（OpenClaw 觸發異常計費、環境變數導致 API 計費、訂閱到期餘額消失、長 context 快取隱性成本），顯示計費透明度與訂閱機制設計是當前 Claude 社群最大痛點，Anthropic 面臨系統性改善壓力。"
+    }
+  ],
+  "sourceStatus": [
+    {
+      "name": "Anthropic Blog",
+      "ok": true,
+      "count": 0
+    },
+    {
+      "name": "GitHub",
+      "ok": true,
+      "count": 3
+    },
+    {
+      "name": "Hacker News",
+      "ok": true,
+      "count": 37
+    },
+    {
+      "name": "Reddit",
+      "ok": true,
+      "count": 20
+    },
+    {
+      "name": "Google News",
+      "ok": true,
+      "count": 24
+    }
+  ],
+  "preview": "Claude Code refuses requests or charges extra if your commits mention \"OpenClaw\""
+}

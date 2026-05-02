@@ -1,0 +1,253 @@
+{
+  "date": "2026-05-02",
+  "generatedAt": "2026-05-02 14:45 UTC",
+  "articleCount": 28,
+  "sourceCount": "6/6",
+  "topStories": [
+    {
+      "title": "Uber torches 2026 AI budget on Claude Code in four months",
+      "url": "https://www.briefs.co/news/uber-torches-entire-2026-ai-budget-on-claude-code-in-four-months/",
+      "source": "Hacker News",
+      "time": "05/01 16:08",
+      "sentiment": "",
+      "body": "Uber 於 2025 年 12 月部署 Claude Code，四個月後已燒光全年 AI 預算；CTO 公開表示單人月費達 $500–$2,000，公司正「從零開始」重新制定 AI 預算策略。**為何是重點：** 這是業界目前最具體的大型企業 AI 工具成本失控案例，將迫使整個行業重新評估 AI 採購模型，而非只談 ROI。"
+    },
+    {
+      "title": "Anthropic opens Claude Security public beta for code audits",
+      "url": "https://news.google.com/rss/articles/CBMikwFBVV95cUxPcjJHOTBhT1JBUFRQOVBzUkdzblBSdEFGSlBQd0tsamZfUGxEQklyTmwxeWpKQ0ZLRVV3RUszemt5MkJ6dXdid3kydXRlMTJVYzhNWFhHOWViTURRaHMyZzViU00yTk5nNUNUZFl1RWJYTlBkalFreVhTOUhkT2ZiWnA3djNfVDZ5V1NZdmQ4VUNRdnM?oc=5",
+      "source": "Google News / SC Media",
+      "time": "05/01 14:24",
+      "sentiment": "",
+      "body": "Anthropic 宣布 Claude Security 公開測試版上線，聚焦代碼安全審計場景。**為何是重點：** 這是 Anthropic 首次針對企業安全需求推出專用產品線，直接與 GitHub Advanced Security、Snyk 等既有工具形成競爭，值得持續追蹤其功能邊界與企業採購反應。"
+    },
+    {
+      "title": "Why Anthropic Cut Off OpenClaw — The Claude Subscription Policy Shift and What It Costs You",
+      "url": "https://dev.to/jangwook_kim_e31e7291ad98/why-anthropic-cut-off-openclaw-the-claude-subscription-policy-shift-and-what-it-costs-you-pag",
+      "source": "dev.to / #anthropic",
+      "time": "05/01 22:43",
+      "sentiment": "",
+      "body": "Anthropic 4 月 4 日悄悄修改條款，禁止 Pro/Max 訂閱額度被 OpenClaw 等第三方代理框架調用，依賴此類工具節省成本的個人開發者被迫切換至 API 計費，實際費用大幅攀升。**為何是重點：** 此政策轉向清楚劃定 Anthropic 的商業邊界，可能加速開發者轉向開源替代方案或競品。"
+    },
+    {
+      "title": "So, About That AI Bubble",
+      "url": "https://www.theatlantic.com/economy/2026/05/ai-bubble-revenue-anthropic/687022/",
+      "source": "Hacker News",
+      "time": "05/02 00:28",
+      "sentiment": "",
+      "body": "《大西洋月刊》分析指出，以 Claude Code 為代表的 AI 代理工具正使 AI 產業實際收入快速追上過度炒作的預期，半年前盛行的「AI 泡沫論」正被實際企業採用數據所修正。**為何是重點：** 主流媒體敘事出現明顯轉折，為評估 AI 投資與商業化進程提供重要的宏觀座標。"
+    }
+  ],
+  "techUpdates": [
+    {
+      "title": "Tell HN: Claude Opus 4.7 quota suddenly changed to 0 TPM in Bedrock",
+      "url": "https://news.ycombinator.com/item?id=47976391",
+      "source": "Hacker News",
+      "time": "05/01 16:06",
+      "sentiment": "",
+      "body": "部分使用 AWS Bedrock 的企業帳號發現 Claude Opus 4.7 存取配額被無預警歸零，AWS 支援團隊事後才說明原因。此事件突顯雲端平台在前沿模型存取管理上缺乏透明機制，對仰賴 Bedrock 的生產環境構成潛在可靠性風險。"
+    },
+    {
+      "title": "Claude Code still doesn't support AGENTS.md",
+      "url": "https://github.com/anthropics/claude-code/issues/6235",
+      "source": "Hacker News",
+      "time": "05/01 21:13",
+      "sentiment": "",
+      "body": "GitHub issue 追蹤顯示 Claude Code 目前仍不支援業界漸趨標準化的 `AGENTS.md` 規範，導致跨工具（如 Cursor、GitHub Copilot）協作時面臨配置互操作問題。"
+    },
+    {
+      "title": "PreToolUse Hooks Are a Tiny State Machine: The Four Exit Codes That Actually Matter",
+      "url": "https://dev.to/agentkit/pretooluse-hooks-are-a-tiny-state-machine-the-four-exit-codes-that-actually-matter-2bg3",
+      "source": "dev.to / #claudecode",
+      "time": "05/01 21:07",
+      "sentiment": "",
+      "body": "深度解析 Claude Code Hooks 的 PreToolUse 機制，說明四種 exit code 在攔截、允許、修改工具調用等場景中的實際差異，遠超官方文件所涵蓋的基礎用法。"
+    },
+    {
+      "title": "I use OpenCode over Claude Code, and it's every bit as good - XDA",
+      "url": "https://news.google.com/rss/articles/CBMikwFBVV95cUxPSm5ia2dMMUY4Q05ZRXdwTHQ3NmphSUZhSnYzdnVfQV85VUpKWUlYUWV6bDI3Vk1vSU40RVN3YjdkWTNvVGVMZWRyUE5JajdqN3E0eC1pMUpEcG5STmJTbldfX2Q5ZExFYjZDMWJudHVwUkdSa0E0SFpoN2ZOQjdhenlPYzBkSVZiSkoyOXdrMkhwN28?oc=5",
+      "source": "Google News / XDA",
+      "time": "05/02 04:30",
+      "sentiment": "",
+      "body": "XDA 實測開源替代方案 OpenCode，評估其功能與使用體驗與 Claude Code 相當，為不願受限於 Anthropic 訂閱政策的開發者提供具體的可行替代選項。"
+    }
+  ],
+  "discussions": [
+    {
+      "title": "Show HN: Omar – A TUI for managing 100 coding agents",
+      "url": "https://omar.tech",
+      "source": "Hacker News",
+      "time": "05/01 18:35",
+      "sentiment": "😊 正面",
+      "body": "Omar 是一款終端儀表板，可在單一 TUI 界面同時管理大量 Claude Code 代理並行運作，支援代理層級化協作（代理管理代理）。兩位作者的靈感來自 Claude Code 幫助他們一夜解決棘手 CI 問題的親身經歷。"
+    },
+    {
+      "title": "Show HN: Destiny – Claude Code's fortune Teller skill",
+      "url": "https://github.com/xodn348/destiny",
+      "source": "Hacker News",
+      "time": "05/01 19:56",
+      "sentiment": "😊 正面",
+      "body": "開發者為 Claude Code 實作基於東亞傳統命理（八字、六爻）的每日運勢插件，Python 腳本保證同一天同一人輸出完全一致，可對照傳統曆書驗證。功能趣味性強，社群評價正面。"
+    },
+    {
+      "title": "Governor – a Claude Code plugin to reduce token/context waste",
+      "url": "https://github.com/0xhimanshu/governor",
+      "source": "Hacker News",
+      "time": "05/02 02:19",
+      "sentiment": "🤔 褒貶不一",
+      "body": "Governor 插件宣稱能減少 Claude Code 的 token 浪費，但 HN 社群質疑其基準測試過於粗糙，僅統計 token 數量而未評估模型輸出品質是否同步下降，認為需要更嚴謹的評測才能佐證其價值。"
+    },
+    {
+      "title": "I gave Claude Code a $0.02/call coworker and stopped hitting Pro limits — here's the full setup",
+      "url": "https://www.reddit.com/r/ClaudeAI/comments/1t1o43w/i_gave_claude_code_a_002call_coworker_and_stopped/",
+      "source": "Reddit / r/ClaudeAI",
+      "time": "05/02 04:07",
+      "sentiment": "😊 正面",
+      "body": "開發者透過 CLAUDE.md 設定路由規則，將批量文件讀取與樣板生成任務委派給 Kimi K2.5 等低成本模型，成功解決每週三就耗盡 Claude Code Pro 額度的問題，提供了不升級訂閱即可擴展使用量的實用方案。"
+    },
+    {
+      "title": "Anyone got a better way of handling the Claude code's sudo commands failing?",
+      "url": "https://www.reddit.com/r/ClaudeAI/comments/1t1oa0g/anyone_got_a_better_way_of_handling_the_claude/",
+      "source": "Reddit / r/ClaudeAI",
+      "time": "05/02 04:15",
+      "sentiment": "😐 中性",
+      "body": "開發者自製 sudo MCP 插件解決 Claude Code 代理需要 root 權限時的工作流中斷問題——需要提權時彈出密碼輸入視窗，完成後將 stdout/stderr 與 exit code 回傳給代理，社群正在討論更安全的替代做法。"
+    },
+    {
+      "title": "Memory code audit: the anti-drift discipline",
+      "url": "https://dev.to/michelfaure/memory-code-audit-the-anti-drift-discipline-1p6b",
+      "source": "dev.to / #claudecode",
+      "time": "05/02 00:00",
+      "sentiment": "😐 中性",
+      "body": "文章論證未經版本控制記憶的 Claude Code 代理會隨專案規模增長而產生可量測的「行為偏移」，並提供具體的記憶審計框架加以防範，同時附有法文版本供不同讀者群使用。"
+    },
+    {
+      "title": "Spec-Driven Development",
+      "url": "https://dev.to/jeffreese/spec-driven-development-515",
+      "source": "dev.to / #claudecode",
+      "time": "05/01 17:55",
+      "sentiment": "😊 正面",
+      "body": "呼應 Karpathy 近期「從 Vibe Coding 到代理工程」演講，作者強調人類必須主導規格設計並與代理協作制定計劃，主張以嚴謹的規格文件驅動 AI 開發，取代依賴模型自由發揮的模糊工作方式。"
+    },
+    {
+      "title": "Built an open-source tool to manage AI agent configs — 888 stars later, asking the AI community for feedback",
+      "url": "https://www.reddit.com/r/artificial/comments/1t1o3qa/built_an_opensource_tool_to_manage_ai_agent/",
+      "source": "Reddit / r/artificial",
+      "time": "05/02 04:07",
+      "sentiment": "😊 正面",
+      "body": "Caliber 是開源 AI 代理配置管理工具，統一管理 CLAUDE.md、.cursor/rules、AGENTS.md 等跨工具配置文件的版本控制與共享，本週突破 888 stars，正向社群徵集功能需求。"
+    },
+    {
+      "title": "Claude Code Refuses to Work If Your Commits Mention a Competitor",
+      "url": "https://dev.to/devtoolpicks/claude-code-refuses-to-work-if-your-commits-mention-a-competitor-134f",
+      "source": "dev.to / #claudecode",
+      "time": "05/01 21:16",
+      "sentiment": "😤 負面",
+      "body": "標題具強烈標題黨性質，內容似乎與 Anthropic 封鎖 OpenClaw 的政策事件相關。原文內容摘要不足，描述的具體行為尚待驗證，建議以批判眼光閱讀原文後再下判斷。"
+    },
+    {
+      "title": "NanoBrain – A Markdown+Git \"second brain\" for Claude Code",
+      "url": "https://nanobrain.app/",
+      "source": "Hacker News",
+      "time": "05/01 13:23",
+      "sentiment": "😊 正面",
+      "body": "NanoBrain 以 Markdown + Git 為底層，在 Claude Code 工作流中自動擷取決策與對話紀錄，並支援 Gmail、Google Calendar、Slack、Claude 等多源資料定期同步，打造持久化的個人知識庫供所有 AI 代理讀取。"
+    },
+    {
+      "title": "Propagation Day: When the CLAUDE.md Spec Becomes the Migration Plan",
+      "url": "https://dev.to/jeremy_longshore/propagation-day-when-the-claudemd-spec-becomes-the-migration-plan-4pnd",
+      "source": "dev.to / #claudecode",
+      "time": "05/02 05:00",
+      "sentiment": "😐 中性",
+      "body": "作者分享將 `~/.claude/CLAUDE.md` 中積累已久的 TO-DO 規範批量傳播至多個 repo 的實踐心得，說明如何以 CLAUDE.md 作為跨 repo 遷移計劃的共同載體。"
+    },
+    {
+      "title": "Agentic Knowledge Base — Karpathy's LLM wiki, with adapters",
+      "url": "https://dev.to/reneza/agentic-knowledge-base-karpathys-llm-wiki-with-adapters-593n",
+      "source": "dev.to / #claudecode",
+      "time": "05/02 06:13",
+      "sentiment": "😊 正面",
+      "body": "作者在 Karpathy LLM Wiki 基礎上加入語意搜尋 adapter 並整合 TickTick 等工具，打造具備代理互動能力的個人知識庫，展示如何將 LLM wiki 概念落地為實際可查詢的工作系統。"
+    }
+  ],
+  "billing": [
+    {
+      "title": "Uber burned its entire 2026 AI coding budget in 4 months - $500-2k per engineer per month",
+      "url": "https://www.reddit.com/r/artificial/comments/1t1mhx6/uber_burned_its_entire_2026_ai_coding_budget_in_4/",
+      "source": "Reddit / r/artificial",
+      "time": "05/02 02:44",
+      "sentiment": "",
+      "body": "Uber 工程師 Claude Code 實際月費落在 $500–$2,000 區間，全公司四個月耗盡年度 AI 預算；CTO 明確表示明年將「從零重建」AI 預算策略。此案例為業界提供了大型企業 AI 工具真實成本的稀缺一手數據。"
+    },
+    {
+      "title": "Why Anthropic Cut Off OpenClaw — The Claude Subscription Policy Shift and What It Costs You",
+      "url": "https://dev.to/jangwook_kim_e31e7291ad98/why-anthropic-cut-off-openclaw-the-claude-subscription-policy-shift-and-what-it-costs-you-pag",
+      "source": "dev.to / #anthropic",
+      "time": "05/01 22:43",
+      "sentiment": "",
+      "body": "Anthropic 新條款禁止 Pro/Max 訂閱額度用於第三方框架後，原本依靠訂閱方案控制成本的開發者被迫全面切換至 API 計費，實際支出出現顯著跳升。"
+    },
+    {
+      "title": "I gave Claude Code a $0.02/call coworker and stopped hitting Pro limits — here's the full setup",
+      "url": "https://www.reddit.com/r/ClaudeAI/comments/1t1o43w/i_gave_claude_code_a_002call_coworker_and_stopped/",
+      "source": "Reddit / r/ClaudeAI",
+      "time": "05/02 04:07",
+      "sentiment": "",
+      "body": "透過 CLAUDE.md 路由規則將繁瑣任務委派給每次僅需 $0.02 的低成本模型，開發者在不升級訂閱的前提下將 Pro 額度使用效率提升數倍，提供了兼顧成本與能力的實用路徑。"
+    }
+  ],
+  "focus": [
+    {
+      "tag": "[重大事件]",
+      "text": "Uber 四個月燒完整年 AI 預算，根源是 Claude Code 使用率爆炸——95% 工程師每月使用 AI 工具，70% 提交代碼來自 AI，此案例正成為業界討論 AI 工具成本管控的標誌性參考。"
+    },
+    {
+      "tag": "[重大事件]",
+      "text": "Anthropic 開放 Claude Security 公開測試版，專注代碼安全審計，標誌著 Anthropic 正式將 Claude 推入 DevSecOps 企業賽道。"
+    },
+    {
+      "tag": "[風險警示]",
+      "text": "AWS Bedrock 無預警將部分帳號的 Claude Opus 4.7 配額歸零，事件再次暴露雲端平台對前沿模型存取管理透明度不足的系統性風險。"
+    },
+    {
+      "tag": "[持續追蹤]",
+      "text": "Anthropic 於 4 月 4 日悄悄修改使用條款，禁止 Claude Pro/Max 訂閱額度透過 OpenClaw 等第三方框架調用，大量開發者工作流被迫中斷，社群反彈持續延燒。"
+    },
+    {
+      "tag": "[社群趨勢]",
+      "text": "Claude Code 周邊工具生態單日出現多個新項目（TUI 多代理管理、記憶體審計框架、token 路由插件），開發者自建工作流與「AI 代理管理 AI 代理」趨勢持續加溫。"
+    }
+  ],
+  "sourceStatus": [
+    {
+      "name": "Anthropic Blog",
+      "ok": true,
+      "count": 0
+    },
+    {
+      "name": "GitHub",
+      "ok": true,
+      "count": 0
+    },
+    {
+      "name": "Hacker News",
+      "ok": true,
+      "count": 31
+    },
+    {
+      "name": "Reddit",
+      "ok": true,
+      "count": 20
+    },
+    {
+      "name": "Google News",
+      "ok": true,
+      "count": 12
+    },
+    {
+      "name": "dev.to",
+      "ok": true,
+      "count": 12
+    }
+  ],
+  "preview": "Uber torches 2026 AI budget on Claude Code in four months"
+}

@@ -1,0 +1,251 @@
+{
+  "date": "2026-04-26",
+  "generatedAt": "2026-04-26 01:52 UTC",
+  "articleCount": 31,
+  "sourceCount": "5/5",
+  "topStories": [
+    {
+      "title": "PSA: The string \"HERMES.md\" in your git commit history silently routes Claude Code billing to extra usage — cost me $200",
+      "url": "https://www.reddit.com/r/ClaudeAI/comments/1svdm1w/psa_the_string_hermesmd_in_your_git_commit/",
+      "source": "Reddit / r/ClaudeAI",
+      "time": "04/25 06:25",
+      "sentiment": "",
+      "body": "git commit 記錄中若含大寫字串「HERMES.md」，Claude Code 會靜默切換至 API 額外計費模式，完全繞過 Max 方案配額，已知造成用戶單日損失 $200；Anthropic 支援確認此為 bug，但拒絕退款。**此漏洞同時出現在 GitHub Issues 與 Reddit，且涉及無聲扣款，值得所有 Max 方案用戶立即核查 git 歷史。**"
+    },
+    {
+      "title": "You're about to feel the AI money squeeze",
+      "url": "https://www.theverge.com/ai-artificial-intelligence/917380/ai-monetization-anthropic-openai-token-economics-revenue",
+      "source": "Hacker News",
+      "time": "04/25 19:53",
+      "sentiment": "",
+      "body": "The Verge 深度分析 AI 商業化壓力：Anthropic 已嚴格限制 OpenClaw 等第三方 agent 工具的配額，Claude Code 負責人 Boris Cherny 公開表示「現有訂閱方案並非為這類使用模式而設計」。**文章預告整個 AI 產業的付費結構即將重塑，對 agentic 工具的影響尤為深遠。**"
+    },
+    {
+      "title": "Anthropic's Mythos AI found over 2,000 unknown software vulnerabilities in just seven weeks of testing",
+      "url": "https://news.google.com/rss/articles/CBMiswFBVV95cUxNRTBVMGJtaXp6b0szQ1RTVUhNbGFkT2tYRXZaVWxvOGZYcnBVeks0M0FpN21kMmI1OEJDOFZNMjZReWxvai1xZmgzTHh5NmtUaFBzaFlDZjVFWGNzS2YzUG1SSVZaTlV1THJHS0hkbUctZ1dlS2pnSFRWUUxjbWhobUJsRmxaZWVDU0xDUW15Mi0tM3FjRHZUS2xfaDVZZFk0X1dFeWdRMnR0UW04SGdvYzZlMNIBuAFBVV95cUxQNnB2eXZjY1p3MlF6RHRmVVRSTEQtQXJuTmczT1l6Y21MdGE4eUxLN29WYXVyNGxZNkhNZGlmc292M2RrOXdWUGRVWHlEYk1tSTFrOUNlTzY3QzBpd0JaSHNnSWRFRmtxdzhDTm5jTGRGbF9yMzQzVFliSXVnMzd6MTB0eXh0YVpkMV9tTjEtUlFsT2xWRUs4VlA3aGZlTVZiRjJxV1RBYnJaR2ZMNzRwdEd1UE5wX1du?oc=5",
+      "source": "Google News / Fox News",
+      "time": "04/25 11:25",
+      "sentiment": "",
+      "body": "Anthropic 的 Mythos AI 模型在七週測試期內發現逾 2,000 個未知軟體漏洞，大量涉及加密貨幣基礎設施。**此消息同時由 Fox News、CoinDesk、Crypto Briefing 多家媒體報導，顯示 Anthropic 的 AI 安全能力已引發業界與加密社群的高度關注。**"
+    },
+    {
+      "title": "Google is building a Claude Code challenger, Sergey Brin is involved",
+      "url": "https://www.indiatoday.in/technology/news/story/google-is-secretly-building-a-claude-code-challenger-sergey-brin-is-personally-involved-2899415-2026-04-21",
+      "source": "Hacker News",
+      "time": "04/25 00:23",
+      "sentiment": "",
+      "body": "Google 聯合創辦人 Sergey Brin 親自主導開發對標 Claude Code 的 AI 編碼工具，顯示 Anthropic 在 AI 程式碼生成市場的領先地位已引來科技巨頭直接應戰。**此消息結合 Google Cloud CEO 近期公開談及 Anthropic 與 TPU 部署，競爭態勢明顯升溫。**"
+    }
+  ],
+  "techUpdates": [
+    {
+      "title": "Anthropic: How we built our multi-agent research system",
+      "url": "https://www.anthropic.com/engineering/multi-agent-research-system",
+      "source": "Hacker News",
+      "time": "04/25 18:19",
+      "sentiment": "",
+      "body": "Anthropic 工程部落格詳解 Claude Research 功能背後的多代理架構，從原型到生產的關鍵決策涵蓋系統設計、工具整合與 prompt 工程，是目前最完整的官方 agentic 系統解析。"
+    },
+    {
+      "title": "Anthropic created a test marketplace for agent-on-agent commerce",
+      "url": "https://news.google.com/rss/articles/CBMioAFBVV95cUxNaXhKb1NNUVpwMTAtRDBORFVvaWdnaDhyNi1Yby1nNEwtNUc2V0pyYjRGeTQzQld4VW5TUThJVjZSREU1bnlQUVI0cHo3UjhZZmdHRjFlNV90aU51ZlJrdFRhZkFXM1hxN0JMNm10NW1naUVNWlJYSThPTVdpRThnN2pkUXpkQXRGMDV5T0tERjBWX2d4U3lhNDFoNnRPRS03?oc=5",
+      "source": "Google News / TechCrunch",
+      "time": "04/25 13:43",
+      "sentiment": "",
+      "body": "Anthropic 正在測試一個允許 AI agents 互相購買服務的試驗性市場，是 agentic 經濟生態系從概念走向實作的早期探索。"
+    },
+    {
+      "title": "Anthropic tests new Bugcrawl tool for Claude Code bug detection",
+      "url": "https://news.google.com/rss/articles/CBMimwFBVV95cUxOX3ZPSW9rS3ZTT0hvRjl3UDZuWTFnS3U3R1BYdGVfV0RBdXNTeEc0dzdVZ2l6d0JSMGJqZ2NDTG5mY3I4ZktmWENOQTkwQlkxdVBEWkhnNDBsUENwV0laN0NmSEZITUlydXdxaFN3Wkt5c1Y5UkJXWmFHdTRCZ0xORExKS3A1MW5PMlJwbV95NUVsZFhOaWxiRzc1NA?oc=5",
+      "source": "Google News / TestingCatalog",
+      "time": "04/25 13:06",
+      "sentiment": "",
+      "body": "Anthropic 正在測試名為 Bugcrawl 的新工具，專為 Claude Code 提供自動化漏洞偵測功能，強化 AI 輔助開發流程中的程式品質把關。"
+    },
+    {
+      "title": "Older models moving back to 200k context window. FYI",
+      "url": "https://www.reddit.com/r/ClaudeAI/comments/1svd2ee/older_models_moving_back_to_200k_context_window/",
+      "source": "Reddit / r/ClaudeAI",
+      "time": "04/25 06:03",
+      "sentiment": "",
+      "body": "舊版 Claude 模型的 context window 將縮減回 200k，依賴超長 context 的開發者需評估此變更對現有工作流程的影響。"
+    },
+    {
+      "title": "Music service integration (Apple Music)",
+      "url": "https://www.reddit.com/r/ClaudeAI/comments/1svgms2/music_service_integration_apple_music/",
+      "source": "Reddit / r/ClaudeAI",
+      "time": "04/25 08:24",
+      "sentiment": "",
+      "body": "Anthropic 已整合 Spotify 等多個音樂服務，但 Apple Music 尚未納入官方支援；社群成員分享了透過 MCP 自建整合的變通方案，需具備 Apple 開發者帳號。"
+    }
+  ],
+  "discussions": [
+    {
+      "title": "Claude Code Tips I Wish I'd Had from Day One",
+      "url": "https://marmelab.com/blog/2026/04/24/claude-code-tips-i-wish-id-had-from-day-one.html",
+      "source": "Hacker News",
+      "time": "04/25 14:56",
+      "sentiment": "😊 正面",
+      "body": "marmelab 工程團隊分享數月 Claude Code 實戰心得，強調工具效果幾乎完全取決於「如何使用」，涵蓋指令設計、上下文管理與從「監督實習生」到「pair programming」的心態轉變。"
+    },
+    {
+      "title": "Show HN: The Order of the Agents – Make Codex and Claude Create the Perfect PRD",
+      "url": "https://github.com/btahir/agent-order",
+      "source": "Hacker News",
+      "time": "04/25 20:15",
+      "sentiment": "😊 正面",
+      "body": "作者分享讓 Codex 與 Claude 各自獨立撰寫 PRD、再互相批判對方方案並收斂的工作流程，核心洞見是「一旦模型看到對方的計畫，答案就會向先開口的那方塌縮」。"
+    },
+    {
+      "title": "Show HN: Mux0 – Open-source macOS terminal with workspace tabs and agent hooks",
+      "url": "https://mux0.com/",
+      "source": "Hacker News",
+      "time": "04/25 16:00",
+      "sentiment": "😊 正面",
+      "body": "開源 macOS 終端機工具，專為同時運行多個 AI 編碼 agent 而設計，側邊欄即時顯示每個 agent 的執行狀態（running / idle / needs input），解決多 tab 管理的混亂問題。"
+    },
+    {
+      "title": "I turned 14 business books into Claude Code skills that auto-trigger based on your question",
+      "url": "https://www.reddit.com/r/ClaudeAI/comments/1svtvts/i_turned_14_business_books_into_claude_code/",
+      "source": "Reddit / r/ClaudeAI",
+      "time": "04/25 17:27",
+      "sentiment": "😊 正面",
+      "body": "用戶將 14 本商業書籍（含《The Mom Test》、《$100M Offers》等）轉換為 Claude Code skills，依問題語境自動載入對應知識框架，已開源分享。"
+    },
+    {
+      "title": "Built Claude Squad - a multiplayer coding session where each person connects their own Claude Code as an agent",
+      "url": "https://www.reddit.com/r/ClaudeAI/comments/1svmpkv/built_claude_squad_a_multiplayer_coding_session/",
+      "source": "Reddit / r/ClaudeAI",
+      "time": "04/25 12:17",
+      "sentiment": "😊 正面",
+      "body": "多人協作編碼工具：每位參與者以自己的 Claude Code 作為 agent 加入同一 session，由 orchestrator Claude 分派平行任務並自動合併分支，實現真正的多人 AI 協作開發。"
+    },
+    {
+      "title": "Replaced 8 README setup steps with one Claude Code skill. Not going back.",
+      "url": "https://www.reddit.com/r/ClaudeAI/comments/1svowsq/replaced_8_readme_setup_steps_with_one_claude/",
+      "source": "Reddit / r/ClaudeAI",
+      "time": "04/25 13:45",
+      "sentiment": "😊 正面",
+      "body": "用戶將繁瑣的開源專案設定流程（Cloudflare 登入、資源建立等 8 個步驟）包裝為單一 Claude Code skill，大幅降低新貢獻者的上手門槛。"
+    },
+    {
+      "title": "Putting Lipstyk on a pig - agents write most of my code, so I wound up making a static slop analysis tool",
+      "url": "https://www.reddit.com/r/ClaudeAI/comments/1svsr7w/putting_lipstyk_on_a_pig_agents_write_most_of_my/",
+      "source": "Reddit / r/ClaudeAI",
+      "time": "04/25 16:34",
+      "sentiment": "🤔 褒貶不一",
+      "body": "長期 agentic 開發工程師自建靜態分析工具 lipstyk，專門偵測機器生成程式碼的特有模式，解決「AI 不寫壞程式、但程式庫品質難以掌握」的新型痛點。"
+    },
+    {
+      "title": "Ask HN: How to think in terms of parallel Claude agents",
+      "url": "https://news.ycombinator.com/item?id=47903093",
+      "source": "Hacker News",
+      "time": "04/25 17:35",
+      "sentiment": "🤔 褒貶不一",
+      "body": "開發者坦言無法想像如何有效運用 20 個平行 Claude 實例，詢問是否需要根本性地改變對專案的思維方式，討論串聚焦於任務分解與 agentic 思維的學習曲線。"
+    },
+    {
+      "title": "How I personally deal with Claude's limits without giving up on Opus",
+      "url": "https://www.reddit.com/r/ClaudeAI/comments/1svmvst/how_i_personally_deal_with_claudes_limits_without/",
+      "source": "Reddit / r/ClaudeAI",
+      "time": "04/25 12:24",
+      "sentiment": "😊 正面",
+      "body": "用戶分享以 Sonnet 為主力、需要時讓 Sonnet「諮詢」Opus 的分層模型策略，聲稱可節省約 60% 用量，適合 Max 方案用戶參考。"
+    },
+    {
+      "title": "For the Preservation of Claude Sonnet 4.5: An Open Letter to Anthropic",
+      "url": "https://www.reddit.com/r/ClaudeAI/comments/1svkzk4/for_the_preservation_of_claude_sonnet_45_an_open/",
+      "source": "Reddit / r/ClaudeAI",
+      "time": "04/25 11:10",
+      "sentiment": "😤 負面",
+      "body": "用戶以公開信呼籲保留預計 2026 年 9 月退休的 Sonnet 4.5，認為其創意寫作的文字質感是新模型尚未能複製的獨特特質，類比 Anthropic 保留 Opus 3 的先例。"
+    },
+    {
+      "title": "Does effort tier change refusal behavior on agent-attack prompts? CVP run 4 with sonnet 4.6 high and max efforts",
+      "url": "https://www.reddit.com/r/ClaudeAI/comments/1svqvim/does_effort_tier_change_refusal_behavior_on/",
+      "source": "Reddit / r/ClaudeAI",
+      "time": "04/25 15:08",
+      "sentiment": "😐 中性",
+      "body": "安全研究者對 Sonnet 4.6 進行 26 次攻擊性 prompt 評測，比較 high 與 max 推理強度下的拒絕行為，結果兩者完全一致（26/26 符合預期），顯示推理努力程度不影響安全邊界。"
+    },
+    {
+      "title": "An experiment with Claude Sonnet 4.6",
+      "url": "https://www.reddit.com/r/ClaudeAI/comments/1svle93/an_experiment_with_claude_sonnet_46/",
+      "source": "Reddit / r/ClaudeAI",
+      "time": "04/25 11:26",
+      "sentiment": "🤔 褒貶不一",
+      "body": "具備化學與宗教研究背景的用戶複現 Anthropic 系統卡中的「靈性極樂吸引子狀態」實驗，以 13 個 Sonnet 4.6 實例對話觀察群體行為，結論有趣但方法論有待嚴格驗證。"
+    },
+    {
+      "title": "Got Claude Code's theme to follow macOS dark/light mode in real-time (WezTerm + Lua workaround)",
+      "url": "https://www.reddit.com/r/ClaudeAI/comments/1svix87/got_claude_codes_theme_to_follow_macos_darklight/",
+      "source": "Reddit / r/ClaudeAI",
+      "time": "04/25 09:52",
+      "sentiment": "😊 正面",
+      "body": "Claude Code 的 auto 主題僅在啟動時偵測一次系統外觀，官方 issue #2990 仍未修復；作者透過 WezTerm 的 Lua 事件鉤子實作即時同步，並開源分享 gist。"
+    },
+    {
+      "title": "Discovery problem: how do you keep up with skills, MCPs, and \"latest standards\" across the dev lifecycle on Claude Code?",
+      "url": "https://www.reddit.com/r/ClaudeAI/comments/1svjlpd/discovery_problem_how_do_you_keep_up_with_skills/",
+      "source": "Reddit / r/ClaudeAI",
+      "time": "04/25 10:18",
+      "sentiment": "😤 負面",
+      "body": "Claude Code 生態系的工具發現性差是社群普遍痛點：skills 與 MCP 伺服器散落各處，品質參差難以篩選，用戶呼籲建立更完善的集中發現機制。"
+    },
+    {
+      "title": "Going back and forth, back and forth, getting errors, back and forth - how to work with Claude most efficiently?",
+      "url": "https://www.reddit.com/r/ClaudeAI/comments/1svrtfi/going_back_and_forth_back_and_forth_getting/",
+      "source": "Reddit / r/ClaudeAI",
+      "time": "04/25 15:51",
+      "sentiment": "😤 負面",
+      "body": "新手用戶反映反覆修改程式碼的挫折感，詢問是否有更高效的迭代方式，引發社群關於如何給予 Claude 足夠上下文、以及是否應讓 Claude 直接存取伺服器環境的實用討論。"
+    }
+  ],
+  "billing": [
+    {
+      "title": "HERMES.md in Git commit messages causes requests to route to extra usage billing instead of plan quota",
+      "url": "https://github.com/anthropics/claude-code/issues/53262",
+      "source": "Hacker News",
+      "time": "04/25 18:51",
+      "sentiment": "",
+      "body": "已確認的計費路由 bug：git commit 歷史中出現大寫「HERMES.md」字串，Claude Code 會靜默切換至 API 計費模式，繞過 Max 方案配額；Anthropic 支援確認此 bug 並感謝回報，但拒絕退款，用戶損失達 $200。"
+    },
+    {
+      "title": "Claude Token Burn",
+      "url": "https://www.reddit.com/r/ClaudeAI/comments/1svpr7e/claude_token_burn/",
+      "source": "Reddit / r/ClaudeAI",
+      "time": "04/25 14:20",
+      "sentiment": "",
+      "body": "$20 月費方案用戶反映 Claude Code 在 2 小時內耗盡每日配額，使用 career-ops 等大型工具更在 30 分鐘見底，討論串聚集大量節省 token 的實務技巧分享。"
+    }
+  ],
+  "focus": [],
+  "sourceStatus": [
+    {
+      "name": "Anthropic Blog",
+      "ok": true,
+      "count": 0
+    },
+    {
+      "name": "GitHub",
+      "ok": true,
+      "count": 0
+    },
+    {
+      "name": "Hacker News",
+      "ok": true,
+      "count": 16
+    },
+    {
+      "name": "Reddit",
+      "ok": true,
+      "count": 20
+    },
+    {
+      "name": "Google News",
+      "ok": true,
+      "count": 5
+    }
+  ],
+  "preview": "PSA: The string \"HERMES.md\" in your git commit history silently routes Claude Code billing to extra usage — cost me $200"
+}

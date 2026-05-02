@@ -1,0 +1,13 @@
+{
+  "id": "claude-design",
+  "pageType": "entity",
+  "name": "Claude Design",
+  "entityType": "feature",
+  "status": "active（初期，體驗粗糙）",
+  "pill": "active",
+  "firstSeen": "2026-04-27",
+  "startDate": "",
+  "lastUpdated": "2026-04-27",
+  "summary": "Claude Design 是 Anthropic 推出的 AI 設計工具功能，旨在讓 Claude 具備輔助 UI／視覺設計的能力。目前處於初期階段，社群評價以負面為主——幻覺嚴重、工具錯誤頻繁，且輸出設計風格過度貼近 Anthropic 自家品牌，忽略用戶提供的設計素材。 ---",
+  "markdown": "# Claude Design\n\n**類型：** feature\n**狀態：** active（初期，體驗粗糙）\n**首次出現：** 2026-04-27\n**最後更新：** 2026-04-27\n\n---\n\n## 現況\n\nClaude Design 是 Anthropic 推出的 AI 設計工具功能，旨在讓 Claude 具備輔助 UI／視覺設計的能力。目前處於初期階段，社群評價以負面為主——幻覺嚴重、工具錯誤頻繁，且輸出設計風格過度貼近 Anthropic 自家品牌，忽略用戶提供的設計素材。\n\n---\n\n## 已知問題（首日社群回報）\n\n- **幻覺嚴重**：設計輸出中出現不存在的元素或錯誤的尺寸設定\n- **工具錯誤頻繁**：與 Claude Code 的回合制工作流不協調，工具呼叫常失敗\n- **品牌風格偏移**：輸出設計過度貼近 Anthropic 自家品牌風格，忽略用戶上傳的設計素材和風格指引\n- **Claude Code 整合差**：與 Claude Code 的協作工作流尚不順暢\n\n---\n\n## 系統提示詞洩露\n\n2026-04-27，有開發者透過讓 Claude Design 洩漏部分指引，成功反向工程其系統提示詞，並以近似版本公開分享。此事件顯示 Claude Design 的提示工程邏輯可被複製至其他 LLM 或 Claude Code 環境，降低了其差異化壁壘。\n\n---\n\n## 相關功能\n\n- Claude Code + Figma MCP 搭配使用：Creative Bloq 評測為另一種 AI 輔助設計路徑，與 Claude Design 定位有重疊\n\n---\n\n## 相關實體\n\n- [[entities/claude-code]]\n\n## 參考來源\n\n- [[news/2026-04-27]]\n"
+}

@@ -16,9 +16,11 @@ from pathlib import Path
 
 ROOT = Path(__file__).parent.parent
 WIKI_ENTITIES = ROOT / "wiki" / "entities"
-WIKI_TOPICS = ROOT / "wiki" / "topics"
-NEWS_DIR = ROOT / "news"
-OUT_JS = ROOT / "web_reader" / "data" / "data.js"
+WIKI_TOPICS   = ROOT / "wiki" / "topics"
+NEWS_DIR      = ROOT / "news"
+OUT_JS        = ROOT / "web_reader" / "data" / "data.js"
+OUT_WIKI_DIR  = ROOT / "web_reader" / "data" / "wiki"
+OUT_DIGEST_DIR= ROOT / "web_reader" / "data" / "digest"
 
 # ── Status → CSS pill class ──────────────────────────────────────────────────
 
@@ -265,17 +267,46 @@ def build():
         except Exception as e:
             print(f"  [warn] digest {f.name}: {e}")
 
-    wiki_data = {"entities": entities, "topics": topics, "digestIndex": digest_index}
+    # ── Write per-wiki JSON files (full content including markdown) ──────────
+    OUT_WIKI_DIR.mkdir(parents=True, exist_ok=True)
+    existing_wiki_ids = {f.stem for f in OUT_WIKI_DIR.glob("*.json")}
+    current_wiki_ids  = {item["id"] for item in entities + topics}
+    for stale in existing_wiki_ids - current_wiki_ids:
+        (OUT_WIKI_DIR / f"{stale}.json").unlink()
+        print(f"  [clean] removed stale wiki/{stale}.json")
+    for item in entities + topics:
+        with (OUT_WIKI_DIR / f"{item['id']}.json").open("w", encoding="utf-8") as fp:
+            json.dump(item, fp, ensure_ascii=False, indent=2)
+
+    # ── Write per-digest JSON files ───────────────────────────────────────────
+    OUT_DIGEST_DIR.mkdir(parents=True, exist_ok=True)
+    existing_digest_dates = {f.stem for f in OUT_DIGEST_DIR.glob("*.json")}
+    current_digest_dates  = set(digest_all.keys())
+    for stale in existing_digest_dates - current_digest_dates:
+        (OUT_DIGEST_DIR / f"{stale}.json").unlink()
+        print(f"  [clean] removed stale digest/{stale}.json")
+    for date_str, d in digest_all.items():
+        with (OUT_DIGEST_DIR / f"{date_str}.json").open("w", encoding="utf-8") as fp:
+            json.dump(d, fp, ensure_ascii=False, indent=2)
+
+    # ── Write slim data.js (no markdown, no DIGEST_ALL) ───────────────────────
+    def slim(item):
+        return {k: v for k, v in item.items() if k != "markdown"}
+
+    wiki_data = {
+        "entities":    [slim(e) for e in entities],
+        "topics":      [slim(t) for t in topics],
+        "digestIndex": digest_index,
+    }
 
     OUT_JS.parent.mkdir(parents=True, exist_ok=True)
     with OUT_JS.open("w", encoding="utf-8") as fp:
         fp.write("// AUTO-GENERATED — do not edit. Run: python scripts/build_web.py\n")
         fp.write("window.WIKI_DATA = ")
         json.dump(wiki_data, fp, ensure_ascii=False, indent=2)
-        fp.write(";\n\n")
-        fp.write("window.DIGEST_ALL = ")
-        json.dump(digest_all, fp, ensure_ascii=False, indent=2)
         fp.write(";\n")
+        fp.write("// Digest content is loaded on-demand from data/digest/{date}.json\n")
+        fp.write("// Wiki content is loaded on-demand from data/wiki/{id}.json\n")
 
     # Update cache-busting version in index.html
     ver = str(int(time.time()))
@@ -286,7 +317,10 @@ def build():
         html = _re.sub(r'data/data\.js(\?v=\d+)?', f'data/data.js?v={ver}', html)
         index.write_text(html, encoding="utf-8")
 
-    print(f"OK: {len(entities)} entities, {len(topics)} topics, {len(digest_all)} digests -> {OUT_JS}")
+    print(f"OK: {len(entities)} entities, {len(topics)} topics, {len(digest_all)} digests")
+    print(f"    -> {OUT_JS} ({OUT_JS.stat().st_size//1024} KB)")
+    print(f"    -> {OUT_WIKI_DIR}/ ({len(entities)+len(topics)} files)")
+    print(f"    -> {OUT_DIGEST_DIR}/ ({len(digest_all)} files)")
 
 
 if __name__ == "__main__":

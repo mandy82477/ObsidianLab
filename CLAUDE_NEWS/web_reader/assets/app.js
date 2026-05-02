@@ -8,6 +8,34 @@
   let rendered = { today: false, wiki: false, archive: false };
   let detailReturnView = 'wiki';
 
+  // ── On-demand fetch caches ───────────────────────────────────────────────────
+  const _wikiCache   = {};   // id   → full wiki object
+  const _digestCache = {};   // date → full digest object
+
+  async function fetchWiki(id) {
+    if (_wikiCache[id]) return _wikiCache[id];
+    const res = await fetch(`data/wiki/${encodeURIComponent(id)}.json`);
+    if (!res.ok) throw new Error(`wiki/${id}: HTTP ${res.status}`);
+    const data = await res.json();
+    _wikiCache[id] = data;
+    return data;
+  }
+
+  async function fetchDigest(date) {
+    if (_digestCache[date]) return _digestCache[date];
+    const res = await fetch(`data/digest/${encodeURIComponent(date)}.json`);
+    if (!res.ok) throw new Error(`digest/${date}: HTTP ${res.status}`);
+    const data = await res.json();
+    _digestCache[date] = data;
+    return data;
+  }
+
+  function setDetailLoading(msg) {
+    const el = $('#detail-content');
+    if (el) el.innerHTML =
+      `<div style="padding:60px;text-align:center;color:var(--fg-3);font-family:var(--font-mono);font-size:12px">${msg}</div>`;
+  }
+
   // ── Sort state ───────────────────────────────────────────────────────────────
   let entitySort = { key: 'lastUpdated', dir: 'desc' };
   let topicSort  = { key: 'lastUpdated', dir: 'desc' };
@@ -165,7 +193,9 @@
     const dp = dateParts(d.date);
     const parts = [];
 
-    const isLatest = Object.keys(window.DIGEST_ALL || {}).sort().reverse()[0] === d.date;
+    const _idx = (window.WIKI_DATA || {}).digestIndex || [];
+    const _latestDate = _idx.length ? _idx.slice().sort((a,b) => b.date.localeCompare(a.date))[0].date : null;
+    const isLatest = _latestDate === d.date;
     parts.push(`<div class="feed__header">
   <div class="day-badge">
     <div class="day-badge__y">${esc(dp.y)}</div>
@@ -236,13 +266,22 @@
   }
 
   // ── Latest digest ────────────────────────────────────────────────────────────
-  function renderLatestDigest() {
+  async function renderLatestDigest() {
     const container = $('#digest-content');
     if (!container) return;
-    const all = window.DIGEST_ALL || {};
-    const dates = Object.keys(all).sort().reverse();
-    if (!dates.length) { container.innerHTML = ''; return; }
-    renderDigest(all[dates[0]], container);
+    const index = (window.WIKI_DATA || {}).digestIndex || [];
+    if (!index.length) { container.innerHTML = ''; return; }
+    const latestDate = index.slice().sort((a,b) => b.date.localeCompare(a.date))[0].date;
+    container.innerHTML =
+      `<div style="padding:60px;text-align:center;color:var(--fg-3);font-family:var(--font-mono);font-size:12px">載入中…</div>`;
+    try {
+      const d = await fetchDigest(latestDate);
+      renderDigest(d, container);
+    } catch(e) {
+      container.innerHTML =
+        `<div style="padding:40px;text-align:center;color:var(--fg-3);font-family:var(--font-mono);font-size:12px">載入失敗：${latestDate}.json</div>`;
+      console.error(e);
+    }
   }
 
   // ── Wiki ─────────────────────────────────────────────────────────────────────
@@ -313,17 +352,24 @@
   }
 
   // ── Open wiki entity/topic as full page ──────────────────────────────────────
-  window.openWikiPage = function (id, type) {
-    const data = window.WIKI_DATA || {};
-    const list = type === 'entity' ? data.entities : data.topics;
-    const item = (list || []).find(x => x.id === id);
-    if (!item) return;
-
+  window.openWikiPage = async function (id, type) {
     detailReturnView = 'wiki';
     const backLabel = $('#detail-back-label');
     if (backLabel) backLabel.textContent = 'Wiki 知識庫';
     const crumb = $('#detail-breadcrumb');
     if (crumb) crumb.textContent = id;
+
+    switchView('detail', null);
+    setDetailLoading('載入中…');
+
+    let item;
+    try {
+      item = await fetchWiki(id);
+    } catch(e) {
+      setDetailLoading(`載入失敗：${esc(id)}.json`);
+      console.error(e);
+      return;
+    }
 
     // strip H1 + front-matter metadata
     let md = (item.markdown || '');
@@ -352,7 +398,7 @@
       `<div class="detail__meta-row"><span class="detail__meta-label">${esc(r.label)}</span><span>${esc(r.val)}</span></div>`
     ).join('');
 
-    const typeLabel = type === 'entity' ? '實體' : '議題';
+    const typeLabel = (item.pageType || type) === 'entity' ? '實體' : '議題';
 
     $('#detail-content').innerHTML = `
 <div class="detail__type-row">
@@ -362,30 +408,34 @@
 <h1 class="detail__h1">${esc(item.name)}</h1>
 ${metaRows.length ? `<div class="detail__meta">${metaHtml}</div>` : ''}
 <div class="detail__body">${bodyHtml}</div>`;
-
-    switchView('detail', null);
   };
 
   // ── Open archive digest as full page ─────────────────────────────────────────
-  window.openDigestPage = function (date) {
-    const d = (window.DIGEST_ALL || {})[date];
-    if (!d) return;
-
+  window.openDigestPage = async function (date) {
     detailReturnView = 'archive';
     const backLabel = $('#detail-back-label');
     if (backLabel) backLabel.textContent = '典藏';
     const crumb = $('#detail-breadcrumb');
     if (crumb) { crumb.textContent = date; crumb.style.cssText = 'font-family:var(--font-mono);font-size:12px;color:var(--tan-7)'; }
 
-    // wrap in a feed container for proper feed styles
+    switchView('detail', null);
+    setDetailLoading('載入中…');
+
+    let d;
+    try {
+      d = await fetchDigest(date);
+    } catch(e) {
+      setDetailLoading(`載入失敗：${esc(date)}.json`);
+      console.error(e);
+      return;
+    }
+
     const wrapper = document.createElement('div');
     wrapper.className = 'feed';
     wrapper.style.cssText = 'max-width:100%;padding:0';
     renderDigest(d, wrapper);
     $('#detail-content').innerHTML = '';
     $('#detail-content').appendChild(wrapper);
-
-    switchView('detail', null);
   };
 
   // ── Close detail — return to previous view ───────────────────────────────────
