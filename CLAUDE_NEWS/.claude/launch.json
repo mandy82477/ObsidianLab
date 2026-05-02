@@ -1,0 +1,1 @@
+{"version":"0.0.1","configurations":[{"name":"web-reader","runtimeExecutable":"python","runtimeArgs":["-m","http.server","3131","--directory","web_reader"],"port":3131}]}

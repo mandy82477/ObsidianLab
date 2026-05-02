@@ -15,19 +15,20 @@ from news_aggregator.sources.base import FeedItem
 logger = logging.getLogger(__name__)
 
 _SYSTEM = (
-    "你是新聞分類專家，專門評估科技新聞與「Claude Code / Anthropic AI 技術動態」的相關程度。"
+    "你是新聞分類專家，專門評估科技新聞與「Claude Code」的相關程度。"
     "輸出純 JSON，不要加任何前言或說明。"
 )
 
 _PROMPT = """\
-以下是 {count} 篇新聞，請評估每篇與「Claude Code 或 Anthropic 技術動態」的相關程度。
+以下是 {count} 篇新聞，請評估每篇與「Claude Code」的相關程度。
+本專案聚焦 Claude Code（Anthropic 的 AI 編碼 CLI 工具），不追蹤一般 Anthropic 公司新聞或其他 AI 工具。
 
 評分標準：
-5 = 核心：直接討論 Claude Code 功能、bug、使用體驗、版本更新
-4 = 重要：Anthropic 官方公告（模型發布、定價、政策、API 變更）
-3 = 相關：AI 工具/代理框架趨勢，且與 Claude/Anthropic 有明確連結
-2 = 邊緣：只是附帶提及 Anthropic/Claude，主題是其他產品或公司
-1 = 無關：主題與 Claude Code 或 Anthropic 無實質關連
+5 = 核心：直接討論 Claude Code 功能、bug、使用體驗、版本更新、CLI 操作、hooks、MCP 整合
+4 = 重要：直接影響 Claude Code 使用者的 Anthropic 公告（定價變更、API 變更、模型更新、Claude Code 相關政策）
+3 = 相關：以 Claude Code 為主角的工具整合、社群工具、企業採用案例；或 Claude Code 競品的直接比較報導
+2 = 邊緣：主題是其他 AI 工具，但有明確提及 Claude Code 作為對比；或 Anthropic 新聞但與 Claude Code 無直接關聯
+1 = 無關：一般 AI 趨勢、其他公司新聞、只是附帶一句提到 Claude 或 Anthropic
 
 請輸出 JSON 陣列，每個元素只含 idx（從 0 開始）和 score：
 [{{"idx": 0, "score": 4}}, {{"idx": 1, "score": 2}}, ...]

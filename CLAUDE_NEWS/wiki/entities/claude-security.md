@@ -3,13 +3,15 @@
 **類型：** product
 **狀態：** public beta（公開測試版）
 **首次出現：** 2026-04-30
-**最後更新：** 2026-04-30
+**最後更新：** 2026-05-02
 
 ---
 
 ## 現況
 
-Claude Security 於 2026-04-30 正式推出公開測試版，ZDNET、SecurityWeek、SiliconANGLE、CRN 等多家媒體同步報導。這是 Anthropic 首次以**獨立資安產品形式**跨足 AI 輔助資安市場，直接整合於 Claude Code 開發環境。
+Claude Security 於 2026-04-30 宣布推出公開測試版，並於 2026-05-01 正式向**全部 Enterprise 客戶**開放。ZDNET、SecurityWeek、SiliconANGLE、CRN、Pulse 2.0 等多家媒體報導。這是 Anthropic 首次以**獨立資安產品形式**跨足 AI 輔助資安市場，直接整合於 Claude Code 開發環境。
+
+核心運作方式：以類安全研究員的方式**讀取 Git 歷史**、**跨檔案追蹤資料流**，目標大幅降低傳統規則掃描的誤報率。多位開發者指出「**推理式驗證（reasoned verification）**」才是本次發布真正的差異化設計決策——工具可自動確認漏洞真實性並提出修復建議，而非僅標記疑似問題。
 
 ---
 
@@ -46,4 +48,5 @@ Claude Security 於 2026-04-30 正式推出公開測試版，ZDNET、SecurityWee
 
 | 日期 | 事件 |
 |------|------|
+| 2026-05-01 | Claude Security 正式向全部 Enterprise 客戶開放；社群討論「推理式驗證」為核心差異 |
 | 2026-04-30 | Claude Security 公開測試版正式推出，多家資安媒體同步報導 |

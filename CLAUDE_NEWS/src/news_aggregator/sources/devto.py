@@ -1,5 +1,6 @@
+"""dev.to RSS source — developer community articles tagged with Claude / Anthropic."""
 import logging
-from datetime import datetime, timezone
+from datetime import datetime, timedelta, timezone
 
 import feedparser
 import requests
@@ -10,57 +11,50 @@ from news_aggregator.sources.base import BaseSource, FeedItem
 
 logger = logging.getLogger(__name__)
 
-QUERIES = [
-    "Claude Code",
-    "Anthropic AI",
-    "Anthropic Claude",
-    "Claude API",
-    "MCP server Anthropic",
+# dev.to tag-based RSS feeds
+TAGS = [
+    "claudecode",
+    "anthropic",
+    "claudeai",
 ]
 
 
-class GoogleNews(BaseSource):
+class DevTo(BaseSource):
     def fetch(self) -> list[FeedItem]:
         try:
-            from datetime import timedelta
             cutoff = datetime.now(tz=timezone.utc) - timedelta(hours=_cfg.LOOKBACK_HOURS)
             items: list[FeedItem] = []
 
-            for query in QUERIES:
-                url = (
-                    f"https://news.google.com/rss/search"
-                    f"?q={query.replace(' ', '+')}&hl=en-US&gl=US&ceid=US:en"
-                )
+            for tag in TAGS:
+                url = f"https://dev.to/feed/tag/{tag}"
                 try:
-                    raw = requests.get(url, headers={"User-Agent": "ClaudeNewsBot/1.0"}, timeout=REQUEST_TIMEOUT)
+                    raw = requests.get(
+                        url,
+                        headers={"User-Agent": "ClaudeNewsBot/1.0"},
+                        timeout=REQUEST_TIMEOUT,
+                    )
                     raw.raise_for_status()
                     feed = feedparser.parse(raw.content)
-                    if feed.bozo and not feed.entries:
-                        logger.warning("GoogleNews feed malformed for '%s': %s", query, feed.bozo_exception)
-                        continue
 
                     for entry in feed.entries[:MAX_ITEMS_PER_SOURCE]:
                         pub = _parse_time(entry)
                         if pub and pub < cutoff:
                             continue
-                        source_name = "Google News"
-                        if hasattr(entry, "source") and hasattr(entry.source, "title"):
-                            source_name = f"Google News / {entry.source.title}"
                         items.append(FeedItem(
                             title=entry.get("title", "(no title)"),
                             url=entry.get("link", ""),
-                            source=source_name,
+                            source=f"dev.to / #{tag}",
                             published=pub or datetime.now(tz=timezone.utc),
                             score=0,
                             summary=entry.get("summary", "")[:200],
                             category="community",
                         ))
                 except Exception as e:
-                    logger.warning("GoogleNews query '%s' failed: %s", query, e)
+                    logger.warning("DevTo tag '%s' failed: %s", tag, e)
 
-            return items
+            return items[:MAX_ITEMS_PER_SOURCE]
         except Exception as e:
-            logger.warning("GoogleNews.fetch failed: %s", e)
+            logger.warning("DevTo.fetch failed: %s", e)
             return []
 
 

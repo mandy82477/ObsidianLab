@@ -3,7 +3,7 @@
 **類型：** model
 **狀態：** 限制存取（非公開）
 **首次出現：** 2026-04（限定夥伴 Preview）
-**最後更新：** 2026-04-30
+**最後更新：** 2026-05-02
 
 ---
 
@@ -74,6 +74,12 @@ Anthropic 的「Project Glasswing」聚焦 AI 資安威脅，Mizuho 分析師認
 
 ---
 
+## OpenAI Cyber 限制存取事件（2026-05-01）
+
+TechCrunch 報導，Sam Altman 在公開批評 Anthropic 限制 Mythos 存取範圍之後，旋即宣布 OpenAI 的 **GPT-5.5 Cyber**（高能力資安模型）同樣採用限制性推出策略，僅開放給通過審核的「關鍵防禦者」。社群廣泛討論此舉的雙重標準意涵：Altman 對 Anthropic 的批評顯得站不住腳，同時也間接驗證了高能力 AI 資安工具在公開部署前確實存在實際安全顧慮。
+
+---
+
 ## 參考來源
 
 - [[news/2026-04-25]]
@@ -81,5 +87,6 @@ Anthropic 的「Project Glasswing」聚焦 AI 資安威脅，Mizuho 分析師認
 - [[news/2026-04-28]]
 - [[news/2026-04-29]]
 - [[news/2026-04-30]]
+- [[news/2026-05-02]]
 - [What Anthropic's Mythos Means for the Future of Cybersecurity](https://spectrum.ieee.org/ai-cybersecurity-mythos) — IEEE Spectrum
 - [Anthropic's Argument for Mythos SWE-bench improvement contains a fatal error](https://www.philosophicalhacker.com/post/anthropic-error/) — The Philosophical Hacker

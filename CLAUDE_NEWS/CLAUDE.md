@@ -48,7 +48,7 @@ python -m news_aggregator.main
 ### 步驟 4：設定 Windows 工作排程器（自動化）
 
 用 Windows 工作排程器每天定時執行 `src/run_news.bat`，建議時間為每日 08:00。
-`run_news.bat` 會依序執行三個步驟（詳見下方）。
+`run_news.bat` 會依序執行四個步驟（詳見下方）。
 
 執行日誌：
 - `src/logs/task_scheduler.log` — 完整 pipeline 日誌
@@ -58,13 +58,14 @@ python -m news_aggregator.main
 
 ## 每日自動化流程
 
-`run_news.bat` 每天自動執行，**wiki ingest 已整合在內，無需手動觸發**。
+`run_news.bat` 每天自動執行，**wiki ingest 與網站建置已整合在內，無需手動觸發**。
 
 ```
 每天 08:00（Windows 排程器）
   ├─ Step 1  Python 聚合器 → news/YYYY-MM-DD.md + seen_urls.json → git push
   ├─ Step 2  claude -p "/wiki-ingest" → 更新 wiki/entities/、wiki/topics/、wiki/log.md、wiki/index.md
-  └─ Step 3  git add wiki/ → commit "wiki: auto-ingest YYYY-MM-DD" → git push
+  ├─ Step 3  git add wiki/ → commit "wiki: auto-ingest YYYY-MM-DD" → git push
+  └─ Step 4  python scripts/build_web.py → 更新 web_reader/data/data.js → commit "web: rebuild YYYY-MM-DD" → git push
 
 每週（手動）
   └─ 告訴 Claude：「執行 wiki lint 並更新 overview.md」
@@ -107,7 +108,8 @@ sources/*.py  →  dedup.py  →  enricher.py  →  filter.py  →  analyzer.py 
 | `sources/github_releases.py` | 官方 Releases（3 個 repo）+ GitHub Search API 搜尋過去 26h 內新建的社群工具 repo |
 | `sources/hackernews.py` | Story 搜尋（score ≥ 3）+ Show HN 搜尋（score ≥ 1，捕捉剛發布的工具） |
 | `sources/reddit.py` | r/ClaudeAI、r/artificial、r/MachineLearning、r/LocalLLaMA |
-| `sources/google_news.py` | Google News RSS，查詢 "Claude Code" / "Anthropic AI" |
+| `sources/google_news.py` | Google News RSS，查詢 `"Claude Code"` / `"Anthropic AI"` / `"Anthropic Claude"` / `"Claude API"` / `"MCP server Anthropic"` |
+| `sources/devto.py` | dev.to RSS，tag：`#claudecode`、`#anthropic`、`#claudeai` |
 | `dedup.py` | URL 正規化去重 + 模糊標題去重（threshold 0.85）；官方來源優先；維護 `seen_urls.json` |
 | `enricher.py` | 用 trafilatura 抓原文補充 `summary` 欄位（最多 600 字） |
 | `filter.py` | 呼叫 Claude Haiku 批次評分 1–5，丟棄 < 3 分；無 API key 則退回 claude CLI，再退回保留全部 |

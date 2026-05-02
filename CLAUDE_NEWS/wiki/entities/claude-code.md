@@ -3,7 +3,7 @@
 **類型：** product
 **狀態：** active
 **首次出現：** 2025（正式推出）
-**最後更新：** 2026-04-30
+**最後更新：** 2026-05-02
 
 ---
 
@@ -42,6 +42,7 @@ Claude Code 是 Anthropic 的 AI 編碼 CLI 工具，支援 agentic 工作流程
 - **OpenClaw 異常計費行為**（2026-04-30，HN 近千則討論）：若 Git 提交訊息或文件內容中含特定 JSON 格式的 "OpenClaw" 字串，Claude Code 會直接拒絕請求，或將帳單 Extra Usage 衝至 100%；表明 Claude Code 正主動掃描 repo 內容並據此改變計費策略，Anthropic 至今未公開說明
 - **ANTHROPIC_API_KEY 雲端計費陷阱**（2026-04-30）：雲端環境設置此環境變數時，所有呼叫自動改走 API 計費通道，見 [[entities/pricing]]
 - **Claude Projects 對話消失**（2026-04-30 回報）：重度使用者三度遭遇整天的創作對話無故消失，在記錄中留下日期空白，且無法透過搜尋找回
+- **Session 歷史 30 天自動刪除**（2026-05-01 確認）：Claude Code 預設在 30 天後自動刪除 session `.jsonl` 歷史檔；可透過 `npx agentinit agent set claude cleanupPeriodDays 365` 將保留期間延長至 365 天
 
 ---
 
@@ -78,6 +79,12 @@ Claude Code 是 Anthropic 的 AI 編碼 CLI 工具，支援 agentic 工作流程
 - **[Mneme](https://www.reddit.com/r/ClaudeAI/comments/1t0acsf/)** — repo-native CLI，將架構決策（ADR）存於程式碼庫旁並在 Claude 呼叫前自動注入，支援 CI 攔截違反架構的 PR
 - **[Nimbalyst](https://github.com/Nimbalyst/nimbalyst)** — 多 Agent 視覺化工作台，支援 Claude Code/Codex/Opencode，含 WYSIWYG diff 逐一審核各 Agent 修改
 - **[Trent](https://trent.ai/solutions/claude-code-security/)** — Claude Code 內嵌架構層安全評估，情境化判斷應用邏輯安全性，補足 CVE 掃描盲點
+- **[Omar](https://omar.tech)** — TUI 儀表板，可在終端機統一管理大規模 Claude Code Agent 群（宣稱支援 100 個同時運行的 Agent），支援 Agent 層級化管理（類似公司組織架構）
+- **[graphify](https://github.com/graphify-dev/graphify)** — Claude Code 插件，透過 Leiden 社群偵測建立程式碼知識圖譜，宣稱每次查詢可減少 71 倍 token 用量；26 天內達 450k+ 下載、40k stars（GitHub #2），社群發現非預期用途：SQL schema、Obsidian vault、學術論文
+- **[NanoBrain](https://nanobrain.app/)** — git-backed Markdown 個人知識庫，透過 hook 在 session 結束時進行低延遲（< 50ms）append，整合 Gmail、Google Calendar、Slack 等資料來源定時匯入；適合需要跨 AI Agent 共享長期知識的場景
+- **[Council](https://council.armstr.ng/)** — 開源 CLI，自動偵測系統上安裝的 claude、codex、gemini 並平行執行同一 prompt，最後由一個「主持人」模型彙整回答並標記分歧點；MIT 授權
+- **[Destiny](https://github.com/xodn348/destiny)** — Claude Code 占卜插件，輸入生日後執行 `/destiny` 取得今日運勢；底層用 Python 計算八字/卦象/五行，確保結果可驗證，文字詮釋層才交由 LLM 生成
+- **[Mote](https://www.reddit.com/r/ClaudeAI/comments/1t16urg/)** — 可自主在 Minecraft Bedrock 中遊玩的 Claude Code Agent，另提供 wizard 工具讓任何人只用一個 `.md` 檔案即可創建類似 Agent
 
 ---
 
@@ -97,11 +104,15 @@ Claude Code 是 Anthropic 的 AI 編碼 CLI 工具，支援 agentic 工作流程
 - [[news/2026-04-28]]
 - [[news/2026-04-29]]
 - [[news/2026-04-30]]
+- [[news/2026-05-02]]
 
 ## 版本歷史
 
 | 日期 | 事件 |
 |------|------|
+| 2026-05-02 | v2.1.126：`/model` 選擇器現在從 gateway 的 `/v1/models` 端點列出模型（適用於 `ANTHROPIC_BASE_URL` 自訂 gateway 場景）；新增 `claude project purge` 指令 |
+| 2026-05-02 | 社群工具：Omar（100 agent TUI 管理）、graphify（知識圖譜插件 450k+ 下載）、NanoBrain（git-backed 知識庫）、Council（多模型並行 CLI）、Destiny（占卜技能）、Mote（Minecraft agent）|
+| 2026-05-02 | GameMaker 正式啟用 Claude Code 整合（AI 輔助遊戲開發工作流程），iCapital 金融平台採用 Anthropic 技術 |
 | 2026-04-30 | GameMaker 宣布整合 Claude Code，為遊戲開發者提供 AI 輔助工作流程 |
 | 2026-04-30 | v2.1.124 系統提示更新：新增「File modification detected」預算超出提醒機制（+166 tokens）；v2.1.126 精簡核心身份指令（-87 tokens） |
 | 2026-04-30 | Claude Security 公開測試版推出，情境化安全評估直接整合於 Claude Code；見 [[entities/claude-security]] |

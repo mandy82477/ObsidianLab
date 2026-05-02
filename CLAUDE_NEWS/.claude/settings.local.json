@@ -2,7 +2,8 @@
   "permissions": {
     "allow": [
       "Bash(python -c ' *)",
-      "Bash(python scripts/build_web.py)"
+      "Bash(python scripts/build_web.py)",
+      "mcp__Claude_Preview__preview_start"
     ]
   }
 }
