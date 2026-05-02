@@ -2,7 +2,7 @@
 
 **狀態：** ongoing
 **開始日期：** 2026-04-25
-**最後更新：** 2026-04-30
+**最後更新：** 2026-05-02
 
 ---
 
@@ -71,6 +71,17 @@
 - **發現性差**：skills 與 MCP 伺服器散落各處，品質參差，缺乏集中發現機制
 - **主題模式**：Claude Code `auto` 主題僅啟動時偵測一次，不即時同步系統外觀（issue #2990）
 - **Session log 路徑**：`~/.claude/projects/` 儲存 JSONL 格式 session log，可供自製工具讀取分析
+- **Session 歷史保留**：預設 30 天自動刪除 session `.jsonl`；可執行 `npx agentinit agent set claude cleanupPeriodDays 365` 延長保留期
+
+### 知識圖譜應用
+
+- **Leiden 社群偵測建立程式碼知識圖譜**（graphify）：26 天達 450k+ 下載、40k stars，宣稱每次查詢可減少 71 倍 token 用量；意外使用場景包括 SQL schema、Obsidian vault、學術論文，顯示知識圖譜在非純程式碼領域也有廣泛應用
+- **git-backed Markdown 知識庫**（NanoBrain）：< 50ms append 延遲透過 hook 在 session 結束時更新，整合 Gmail/Google Calendar/Slack，是目前完整度最高的 AI Agent 跨工具共享知識庫方案
+
+### 封閉技能生態批判（2026-05-01）
+
+- **Anthropic 將新功能鎖在付費雲端**：社群批評 Ultraplan、Ultrareview、Cloud Security 等新功能鎖在付費雲端而非開放技能生態，使開放與封閉技能形成分裂
+- **「無法檢視的 prompt 就無法組合」**：社群擔憂封閉技能阻礙生態建設，降低開發者對工具行為的可預測性與可延伸性
 
 ---
 
@@ -112,6 +123,13 @@
 | **Brifly**              | 工作流  | 🔥🔥 | Claude Code 跨 session 持久記憶層，支援多人協作 |
 | **Trent**               | 安全工具 | 🔥🔥 | Claude Code 內嵌架構層安全評估，補足 CVE 掃描對業務邏輯的盲點 |
 | **Linear+Lanes MCP**    | 整合工具 | 🔥  | issue-to-code 一鍵流程，Claude Code 直接讀取 Linear 待辦票 |
+| **Omar**                | 終端工具 | 🔥🔥🔥 | TUI 儀表板統一管理 100 個 Claude Code Agent，支援層級化 Agent 管理 |
+| **graphify**            | 知識圖譜 | 🔥🔥🔥 | Leiden 偵測建程式碼知識圖譜，71 倍 token 減少，26 天 450k+ 下載 40k stars |
+| **NanoBrain**           | 知識庫  | 🔥🔥 | git-backed Markdown 知識庫，< 50ms append，整合 Gmail/Calendar/Slack |
+| **Council**             | 多模型  | 🔥🔥 | 並行執行 claude+codex+gemini 同一 prompt，主持模型彙整並標記分歧 |
+| **Chrome 用量監控擴充**  | 監測工具 | 🔥🔥 | 即時顯示 token 數、context 使用量、prompt cache 倒數、速率限制進度條 |
+| **Destiny**             | 趣味工具 | 🔥  | Claude Code 占卜插件，Python 計算八字/卦象，LLM 詮釋文字 |
+| **Mote**                | 創意工具 | 🔥  | 可自主玩 Minecraft Bedrock 的 Claude Code Agent |
 
 > 熱度定義：🔥🔥🔥 跨平台多次出現 / 社群廣泛討論；🔥🔥 單平台高互動；🔥 值得關注但尚未擴散
 
@@ -143,8 +161,18 @@
 - [[news/2026-04-28]]
 - [[news/2026-04-29]]
 - [[news/2026-04-30]]
+- [[news/2026-05-02]]
 
 ## 時序
+
+### 2026-05-01
+- **Omar — 100 Agent TUI 管理儀表板**：兩位開發者因不堪多視窗切換之苦打造，支援 Agent 層級化管理（類似公司組織架構），展示 multi-agent 工作流管理工具需求快速浮現
+- **graphify — 知識圖譜插件爆紅**：26 天達全球 GitHub rank #2（450k+ 下載、40k stars），透過 Leiden 社群偵測建立程式碼知識圖譜，宣稱 71 倍 token 效率；意外使用場景（SQL schema、Obsidian vault、學術論文）顯示知識圖譜在非程式碼領域的通用性
+- **Chrome 用量監控擴充**：在 Claude.ai 介面即時顯示每則訊息 token 數、context 使用量、提示快取倒數計時及速率限制進度條，解決原生介面對用量透明度幾乎為零的痛點
+- **NanoBrain — git-backed 個人知識庫**：< 50ms append 延遲透過 hook 在 session 結束時更新，整合 Gmail/Google Calendar/Slack 定時匯入，適合需要 AI Agent 跨工具共享長期知識的場景
+- **Council — 多模型並行 CLI**：自動偵測系統上的 claude/codex/gemini 並平行執行同一 prompt，由「主持人」模型彙整並標記分歧點；MIT 授權，適合多模型交叉驗證場景
+- **自修改 Agent 系統節省 50% API 費用**：讓本地 GPU（RTX 5070）在閒置時段執行低優先任務，有效降低 50% Claude API 費用；repo 已開源
+- **Destiny 占卜插件 + Mote Minecraft Agent**：社群創意應用持續延伸 Claude Code 邊界，Destiny 底層以 Python 計算八字/卦象確保結果可驗證、Mote 可自主玩 Minecraft Bedrock
 
 ### 2026-04-30
 - **Nimbalyst 多 agent 視覺化工作台**：開源工具支援 Claude Code/Codex/Opencode，透過 WYSIWYG diff 介面逐一審核各 Agent 修改，同時支援 Excalidraw/試算表/Monaco 等多種編輯器，填補多 agent 協作的可視化需求

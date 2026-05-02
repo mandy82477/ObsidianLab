@@ -1,0 +1,54 @@
+# Anthropic 政府與軍事政策
+
+**狀態：** ongoing
+**開始日期：** 2026-05-01
+**最後更新：** 2026-05-02
+
+---
+
+## 摘要
+
+2026-05-01，Anthropic 因堅持在軍事用途中納入安全護欄，被排除在美國國防部與 7 家 AI 公司的機密網路部署協議之外。此事件標誌著 Anthropic 的安全優先立場首次與聯邦政府大規模部署需求發生直接衝突，並引發白宮重啟談判。
+
+---
+
+## 技術彙整
+
+### 五角大廈排除 Anthropic 事件
+
+- **協議範圍**：美國國防部與 SpaceX、OpenAI、Google、Microsoft、NVIDIA、AWS、Reflection 共 7 家公司簽署 AI 機密網路部署協議
+- **排除原因**：Anthropic 堅持軍事用途須納入**安全護欄（safety guardrails）**，雙方對軍事應用的安全管控存在根本分歧
+- **後續進展**：白宮在 Anthropic 宣布多項技術突破後已重啟談判，顯示技術能力仍是政府合作的核心籌碼
+- **關聯事件**：Mythos 的高能力與 Anthropic 對安全護欄的堅持，可能是影響談判框架的背景因素；見 [[entities/mythos]]
+
+### Anthropic 安全立場的政策含義
+
+- 此事件是繼白宮反對擴大 Mythos 存取（2026-04-29）之後，Anthropic 與聯邦政府的第二次重大政策摩擦
+- 兩次事件顯示：Anthropic 的安全優先立場同時引發「政府想要更多存取但被拒」（Mythos）與「政府合作因護欄要求而破局」（五角大廈）兩種相反方向的張力
+- 相比之下，OpenAI、Google、Microsoft 的商業優先取向使其更易達成政府合作
+
+---
+
+## 目前結論
+
+- ⚠️ Anthropic 安全優先立場對政府市場有實質代價：短期損失大型政府合約機會
+- 🔄 白宮重啟談判顯示 Anthropic 的技術能力仍具足夠吸引力
+- 📊 此局面可能長期塑造 Anthropic 的市場定位：企業/科研市場優先，政府/軍事市場需更多談判
+
+---
+
+## 相關實體
+
+- [[entities/mythos]]（政府關係的前置事件）
+- [[topics/competitor-landscape]]（排除事件改變 Anthropic 與競品在政府市場的相對地位）
+
+## 參考來源
+
+- [[news/2026-05-02]]
+- [Reuters 報導](https://www.reuters.com/business/retail-consumer/pentagon-reaches-agreements-with-leading-ai-companies-2026-05-01/)
+
+## 時序
+
+### 2026-05-01
+- **[重大事件] 五角大廈協議排除 Anthropic**：國防部與 7 家 AI 公司簽署機密網路部署協議，Anthropic 因堅持安全護欄要求被排除
+- **白宮重啟談判**：Anthropic 宣布技術突破後，白宮重啟與 Anthropic 的相關談判，後續走向仍不明確

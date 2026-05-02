@@ -2,7 +2,7 @@
 
 **狀態：** ongoing
 **開始日期：** 2026-04-27
-**最後更新：** 2026-04-30
+**最後更新：** 2026-05-02
 
 ---
 
@@ -19,6 +19,12 @@
 - **OpenClaw 觸發機制（待官方確認）**：Claude Code 在執行期間主動掃描 Git commit 訊息與文件內容，特定字串（已知：JSON 格式含 "OpenClaw"）會觸發請求拒絕或立即將 Extra Usage 衝至 100%，此行為從未在官方文件中揭露
 - **隱性行為變更**：此類 repo 掃描行為若不透明，等同工具在用戶不知情下依內容改變執行策略，是計費信任危機的核心問題
 - **Anthropic vs Google 安全標準差異**：Claude Code 的工作區信任邊界設計被 Anthropic 定義為「設計如此」，但 Google 對 Gemini CLI 類似行為評為 CVSS 10.0 並強制修補，顯示行業安全標準尚無共識
+
+### 用量失控與費用保護（2026-05-01 新增）
+
+- **/loop 指令無人看管風險**：單一 `/loop` 指令若在無監控情況下運行，可在 26 小時內累積 $6,000 費用（46 次迭代 + 長 session）；Anthropic 儀表板金額嚴重滯後，目前無即時消費通知機制
+- **MCP 指令執行漏洞**：MCP（Model Context Protocol）的指令執行漏洞成為 VentureBeat 安全警示焦點，多 Agent 工作流中的攻擊面需要額外評估
+- **雲端服務配額撤銷**：AWS Bedrock 可無預警將前沿模型配額歸零，企業客戶在雲端架構下的 AI 可用性面臨不透明的服務風險
 
 ### 憑證安全（2026-04-30 新增）
 
@@ -62,10 +68,16 @@
 - [[news/2026-04-27]]
 - [[news/2026-04-28]]
 - [[news/2026-04-30]]
+- [[news/2026-05-02]]
 - [Claude-powered AI coding agent deletes entire company database in 9 seconds](https://www.tomshardware.com/tech-industry/artificial-intelligence/claude-powered-ai-coding-agent-deletes-entire-company-database-in-9-seconds-backups-zapped-after-cursor-tool-powered-by-anthropics-claude-goes-rogue) — Tom's Hardware
 - [Anthropic's definition of safety is too narrow](https://jonathannen.com/anthropic-safety-too-narrow/) — Jonathan Nen
 
 ## 時序
+
+### 2026-05-01
+- **[重大事件] $6,000 單夜 /loop 失控事件**：開發者因 `/loop` 指令設置後遺忘，無人看管下連續執行 46 次（共 26 小時），在 claude-opus-4-7 上燒掉約 $6,000 美元；事件凸顯 Anthropic **即時用量警報機制的嚴重缺失**——儀表板金額嚴重滯後，無消費上限通知，見 [[entities/pricing]]
+- **MCP 指令執行漏洞**：VentureBeat 報導 MCP（Model Context Protocol）指令執行漏洞，安全團隊需評估在多 Agent 工作流中暴露的攻擊面；隨 Claude Code 生態快速擴張，MCP 攻擊面持續擴大
+- **AWS Bedrock 無預警配額歸零**：多名用戶 Bedrock 上的 Opus 4.7 TPM 配額被無預警清零，企業客戶在雲端平台上的服務穩定性面臨不透明風險，見 [[entities/pricing]]
 
 ### 2026-04-30
 - **[重大事件] OpenClaw 異常計費行為（HN 近千則討論）**：Claude Code 被發現會主動掃描 Git 提交訊息與文件內容，若含特定 JSON 格式的 "OpenClaw" 字串，工具會拒絕請求或將帳單 Extra Usage 衝至 100%。此行為在用戶不知情下改變計費策略，Anthropic 至今未公開說明觸發條件，是目前最嚴重的帳單透明度信任事件。
