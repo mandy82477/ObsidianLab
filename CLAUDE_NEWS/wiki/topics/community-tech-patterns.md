@@ -83,6 +83,30 @@
 - **Anthropic 將新功能鎖在付費雲端**：社群批評 Ultraplan、Ultrareview、Cloud Security 等新功能鎖在付費雲端而非開放技能生態，使開放與封閉技能形成分裂
 - **「無法檢視的 prompt 就無法組合」**：社群擔憂封閉技能阻礙生態建設，降低開發者對工具行為的可預測性與可延伸性
 
+### Hooks 精細化控制
+
+- **PreToolUse 四種 exit code**：Block（阻止工具執行）、Allow（放行）、Modify（修改工具輸入後放行）、Error（視為工具執行失敗）；官方文件僅介紹基礎用法，四種 exit code 的實際差異遠超文件描述，影響攔截、允許、修改等場景的設計決策
+- **PreToolUse 是一台小型狀態機**：每次工具調用前皆可插入判斷邏輯，結合 exit code 可實現精細的工具調用治理
+
+### Token 路由與成本優化（2026-05-02）
+
+- **CLAUDE.md 路由規則委派低優先任務**：透過 CLAUDE.md 路由規則，將批量文件讀取、樣板生成等繁瑣任務委派給 $0.02/call 的低成本模型（如 Kimi K2.5），在不升級訂閱的前提下大幅提升 Pro 額度使用效率
+- **異質模型路由的關鍵設計**：任務特性決定路由目標；對話性推理走高能力模型，批量機械性任務走低成本模型；可在同一 CLAUDE.md 用條件規則控制
+
+### 記憶體治理與行為漂移防範（2026-05-02）
+
+- **未版本控制的記憶會導致行為偏移**：研究顯示未經版本控制的 Claude Code 代理記憶會隨專案規模增長產生可量測的「行為偏移」（anti-drift），表現為指令遵從性下降、行為不一致性增加
+- **記憶審計框架**：解決方案包含定期審計 agent 記憶、版本控制記憶文件（如納入 git）、定期 prune 過期或衝突的記憶條目
+
+### 規格驅動開發（2026-05-02）
+
+- **Spec-Driven Development vs Vibe Coding**：呼應 Karpathy「從 Vibe Coding 到代理工程」演講，強調人類必須主導規格設計並與代理協作制定計畫；嚴謹的規格文件（spec）應取代依賴模型自由發揮的模糊工作方式
+- **與 CLAUDE.md 最佳實踐一致**：規格驅動開發本質上是將「規格設計的責任留在人類手中」，與 CLAUDE.md 精簡+規則導向的原則相互呼應
+
+### CLAUDE.md 跨 repo 傳播
+
+- **全局 CLAUDE.md 作為遷移計劃載體**：將 `~/.claude/CLAUDE.md` 中積累的規範批量傳播至多個 repo，讓全局規範落地到各個專案；此模式下 CLAUDE.md 從「單一 repo 指令檔」升級為「跨 repo 遷移計劃的共同載體」
+
 ---
 
 ## 熱門應用
@@ -130,6 +154,8 @@
 | **Chrome 用量監控擴充**  | 監測工具 | 🔥🔥 | 即時顯示 token 數、context 使用量、prompt cache 倒數、速率限制進度條 |
 | **Destiny**             | 趣味工具 | 🔥  | Claude Code 占卜插件，Python 計算八字/卦象，LLM 詮釋文字 |
 | **Mote**                | 創意工具 | 🔥  | 可自主玩 Minecraft Bedrock 的 Claude Code Agent |
+| **Governor**            | 工具    | 🔥  | Token 浪費優化插件，效果存疑（HN 社群質疑基準測試粗糙，未評估輸出品質） |
+| **Caliber**             | 工具    | 🔥🔥 | 跨工具 AI config 統一管理（CLAUDE.md/.cursor/rules/AGENTS.md），本週 888 stars |
 
 > 熱度定義：🔥🔥🔥 跨平台多次出現 / 社群廣泛討論；🔥🔥 單平台高互動；🔥 值得關注但尚未擴散
 
@@ -164,6 +190,17 @@
 - [[news/2026-05-02]]
 
 ## 時序
+
+### 2026-05-02
+- **PreToolUse Hooks 四種 exit code**：深度解析 Block/Allow/Modify/Error 四種 exit code 在攔截、放行、修改工具調用等場景的實際差異，官方文件嚴重低估其複雜度
+- **Token 路由降成本**：開發者透過 CLAUDE.md 路由規則將繁瑣任務委派給 Kimi K2.5 等 $0.02/call 低成本模型，不升級訂閱即可大幅提升 Pro 額度效率（解決每週三就耗盡配額的問題）
+- **Governor — token 優化插件（存疑）**：宣稱可減少 Claude Code token 浪費，但 HN 社群質疑基準測試粗糙，僅統計 token 數量未評估輸出品質，需更嚴謹評測
+- **Caliber — 跨工具 AI config 統一管理**：開源工具統一版控 CLAUDE.md、.cursor/rules、AGENTS.md 等跨平台配置，本週突破 888 stars，社群徵集功能需求
+- **記憶體防漂移框架**：agent 記憶未版本控制時會隨規模增長產生可量測的行為偏移；具體審計框架：定期 prune、版本控制記憶文件、標記衝突條目
+- **規格驅動開發**：呼應 Karpathy 演講，主張以嚴謹規格文件取代 vibe coding，人類主導規格設計，AI 負責實作執行
+- **CLAUDE.md 跨 repo 傳播**：將 `~/.claude/CLAUDE.md` 中積累的規範批量傳播至多個 repo，以全局 CLAUDE.md 作為跨 repo 遷移計畫的共同載體
+- **Agentic Knowledge Base（Karpathy LLM wiki 進化版）**：在 Karpathy LLM Wiki 基礎上加入語意搜尋 adapter 並整合 TickTick 等工具，打造可被代理查詢的工作知識系統
+- **sudo MCP 插件**：自製 MCP 解決 Claude Code 代理需要 root 權限時的工作流中斷，需提權時彈出密碼視窗，完成後將 stdout/stderr 與 exit code 回傳代理；社群討論更安全的替代做法
 
 ### 2026-05-01
 - **Omar — 100 Agent TUI 管理儀表板**：兩位開發者因不堪多視窗切換之苦打造，支援 Agent 層級化管理（類似公司組織架構），展示 multi-agent 工作流管理工具需求快速浮現

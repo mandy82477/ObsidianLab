@@ -44,7 +44,7 @@ REM ---- Step 2: Wiki ingest (claude -p, non-interactive) ----------------------
 echo [Step 2/4] Wiki ingest...
 echo [%DATE% %TIME%] Starting wiki ingest... >> "%LOG_FILE%"
 cd /d "%REPO_ROOT%"
-claude -p "%WIKI_PROMPT%" --dangerously-skip-permissions >> "%LOG_FILE%" 2>&1
+call claude -p "%WIKI_PROMPT%" --dangerously-skip-permissions >> "%LOG_FILE%" 2>&1
 if ERRORLEVEL 1 (
     echo [Step 2/4] FAILED - skipping wiki push
     echo [%DATE% %TIME%] Wiki ingest FAILED - skipping wiki push >> "%LOG_FILE%"
