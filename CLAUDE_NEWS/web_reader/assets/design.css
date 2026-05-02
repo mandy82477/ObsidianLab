@@ -345,6 +345,7 @@ code { font-family: var(--font-mono); font-size: 0.88em; background: var(--bg-in
 
 /* Main 2-col layout */
 .about__main { display: grid; grid-template-columns: 1fr 320px; gap: 20px; align-items: start; }
+.about__col { min-width: 0; }
 
 /* Column headings */
 .about__col-h { font-family: var(--font-display); font-size: 14px; font-weight: var(--fw-semibold); color: var(--fg-1); margin-bottom: 12px; display: flex; align-items: center; gap: 8px; }
@@ -401,8 +402,11 @@ code { font-family: var(--font-mono); font-size: 0.88em; background: var(--bg-in
 }
 .about__step {
   flex: 1;
+  min-width: 0;
   text-align: center;
   padding: 0 6px;
+  overflow-wrap: break-word;
+  word-break: break-word;
 }
 /* Circular node */
 .about__step-num {
