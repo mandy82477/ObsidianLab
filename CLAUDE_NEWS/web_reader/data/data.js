@@ -25,7 +25,7 @@ window.WIKI_DATA = {
       "startDate": "",
       "lastUpdated": "2026-05-02",
       "summary": "Claude Code 是 Anthropic 的 AI 編碼 CLI 工具，支援 agentic 工作流程、MCP Server 整合、Hooks 機制與 Agent Teams。目前為最受開發者關注的 AI 編碼工具之一。近期接連出現效能退步事件（已承認工程疏失）、HERMES.md 靜默計費 bug、API 金鑰…",
-      "markdown": "# Claude Code\n\n**類型：** product\n**狀態：** active\n**首次出現：** 2025（正式推出）\n**最後更新：** 2026-05-02\n\n---\n\n## 現況\n\nClaude Code 是 Anthropic 的 AI 編碼 CLI 工具，支援 agentic 工作流程、MCP Server 整合、Hooks 機制與 Agent Teams。目前為最受開發者關注的 AI 編碼工具之一。近期接連出現效能退步事件（已承認工程疏失）、HERMES.md 靜默計費 bug、API 金鑰外洩漏洞、Auto Compact 失效等問題，安全性與可靠性受到集中審視。v2.1.121 新增 MCP `alwaysLoad` 選項，Runhouse 團隊透過股權收購加入 Anthropic 以強化 agentic 基礎架構。\n\n---\n\n## 核心功能\n\n- **CLAUDE.md** — 專案級別的 AI 指令設定\n- **Hooks** — 在特定事件前後注入自定義邏輯（如：修改代碼後強制跑測試）\n- **Skills** — 可複用的任務封裝單元，Claude 透過描述自動觸發\n- **Agent Teams** — 多 agent 協作，目前僅支援 Claude 實例（社群已有 workaround）\n- **MCP Servers** — 外部工具整合（注意：多個 MCP 可能導致每次訊息消耗 20k+ tokens）\n- **Memories** — 跨 session 的持久記憶（Managed Agents Beta）\n\n---\n\n## 已知問題\n\n- **HERMES.md 計費路由 bug**（2026-04-25 回報）：git commit 歷史中含大寫字串「HERMES.md」會觸發靜默切換至 API 額外計費，完全繞過 Max 方案配額；Anthropic 確認為 bug 但拒絕退款，已知損失達 $200。見 [[entities/pricing]]\n- **主題模式不跟隨系統**（issue #2990）：`auto` 主題僅在啟動時偵測一次，不會即時同步 macOS dark/light 切換；社群 workaround：WezTerm + Lua 事件鉤子\n- **Stop Hooks 被忽略**（2026-04-24 回報）：Claude 4.7 開始無視自訂 stop hooks，影響依賴 hooks 的自動化工作流程，屬行為退步（regression）\n- **效能退步事件**：見 [[topics/code-quality-decline]]\n- **MCP Token 消耗問題**：多個 MCP Server 併用時，每條訊息可能消耗 20,000+ tokens\n- **API 金鑰外洩漏洞**（2026-04-27 報導）：Claude Code 在自動化流程中可能將 API 金鑰洩漏至公開套件倉庫（npm 等），TechTalks 報導，等待 Anthropic 官方回應\n- **Usage Policy 隨機拒絕**（Opus 4.7 以來）：Claude Code 頻繁出現無明確觸發條件的 Usage Policy 拒絕；官方建議切換至 `/model claude-sonnet-4-20250514` 作為緩解手段；見 [[entities/opus-4-7]]\n- **版本管理不透明**（2026-04-27）：執行 `claude update` 後版本從 2.1.120 降回 2.1.119，疑似靜默撤版，官方 changelog 與索引資訊不一致\n- **Mac 卸載不完整**：依官方教學卸載後，macOS 仍殘留「Claude Code URL Handler」應用程式\n- **Auto Compact 失效**（2026-04-28 回報）：context window 滿載後 Auto Compact 未自動觸發，手動執行 `/compact` 亦失效，導致整個 session 鎖死；即使重購額外用量並重啟工具問題仍未解決\n- **Prompt Cache Race Condition**（2026-04-27 確認）：連續兩次呼叫 `client.messages.create()` 時，第二個請求約有 40% 機率發生 cache miss；在兩次呼叫之間等待 2 秒可穩定解決；已由 Anthropic 工程師確認追蹤中。見 [Issue #1451](https://github.com/anthropics/anthropic-sdk-python/issues/1451)\n- **Tool/Connector Schema 洩漏**（2026-04-27 回報）：Claude Chat（Opus 4.7）在每則訊息末尾附加完整 function schema 及 userStyle 內容，跨對話串持續存在且疑為帳號層級污染，更換新對話串或關閉 userStyle 均無法完全解決，目前無官方修復\n- **Speed Bumps 增加**（2026-04-29 回報）：多位長期使用者反映本週起 Claude Code 明顯增加中途暫停詢問的頻率，即使簡單任務也頻繁打斷工作流程，社群猜測與系統層級的行為調整有關，無官方說明\n- **OpenClaw 異常計費行為**（2026-04-30，HN 近千則討論）：若 Git 提交訊息或文件內容中含特定 JSON 格式的 \"OpenClaw\" 字串，Claude Code 會直接拒絕請求，或將帳單 Extra Usage 衝至 100%；表明 Claude Code 正主動掃描 repo 內容並據此改變計費策略，Anthropic 至今未公開說明\n- **ANTHROPIC_API_KEY 雲端計費陷阱**（2026-04-30）：雲端環境設置此環境變數時，所有呼叫自動改走 API 計費通道，見 [[entities/pricing]]\n- **Claude Projects 對話消失**（2026-04-30 回報）：重度使用者三度遭遇整天的創作對話無故消失，在記錄中留下日期空白，且無法透過搜尋找回\n- **Session 歷史 30 天自動刪除**（2026-05-01 確認）：Claude Code 預設在 30 天後自動刪除 session `.jsonl` 歷史檔；可透過 `npx agentinit agent set claude cleanupPeriodDays 365` 將保留期間延長至 365 天\n\n---\n\n## 競品\n\n- **Google 未命名工具**：Google 聯合創辦人 Sergey Brin 親自主導，見 [[topics/competitor-landscape]]\n- Cursor、Windsurf、GitHub Copilot 等\n\n---\n\n## 實用工具（社群開發）\n\n- **[CC-Canary](https://github.com/delta-hq/cc-canary)** — 讀取 `~/.claude/projects/` JSONL log 偵測效能漂移\n- **[claude-anyteam](https://github.com/JonathanRosado/claude-anyteam)** — 讓 Codex/Gemini 加入 Agent Teams\n- **[Claude Code Manager](https://claude.ldlework.com/)** — Web UI 集中管理 CLAUDE.md、hooks、skills\n- **[Claude Squad](https://www.reddit.com/r/ClaudeAI/comments/1svmpkv/)** — 多人協作編碼，每人以自己的 Claude Code 作為 agent，orchestrator 分派平行任務並合併分支\n- **[mux0](https://mux0.com/)** — 開源 macOS 終端機，側邊欄即時顯示多 agent 執行狀態（running / idle / needs input）\n- **[agent-order](https://github.com/btahir/agent-order)** — 讓 Codex 與 Claude 各自寫 PRD 再互相批判，避免答案向先開口方塌縮\n- **[EvanFlow](https://github.com/evanklem/evanflow)** — TDD 驅動的 Claude Code 迭代迴圈，16 個技能 + 2 個子代理人，每步驟設有人工確認節點，不自動 commit\n- **[Relay](https://github.com/basegraphhq/relay-plugin)** — 強制 Claude Code 在寫程式前深入對齊問題定義的插件，將 Plan Mode 的提問層級從「實作細節」拉升至「問題本質」（MIT 授權）\n- **[pentest-ai-agents](https://github.com/evanklem/pentest-ai-agents)** — 28 個專為滲透測試設計的 Claude Code 子代理人，資安工作流程整合\n- **[modularity](https://github.com/vladikk/modularity)** — 架構層級插件，採用 Balanced Coupling 模型分析軟體模組化設計，防止 AI 加速代碼生成的同時技術債累積速度加快\n- **[Rapunzel](https://github.com/salmanjavaid/rapunzel)** — 樹狀標籤頁「代理人瀏覽器」，集中管理 Claude Code / Codex / Gemini 多個同時運行的 AI 代理\n- **[SmolVM](https://github.com/CelestoAI/SmolVM)** — 本機沙盒環境，讓 Claude Code / Codex 在完全隔離的容器中執行，保護宿主系統，單指令啟動\n- **[Groundtruth](https://github.com/vnmoorthy/groundtruth)** — Stop Hook，強制 Claude Code 在宣告「完成」前提供可驗證的執行證明，解決自信宣稱成功但實際未驗證的問題\n- **[OpenCode-power-pack](https://github.com/waybarrios/opencode-power-pack)** — 將 Anthropic 官方 11 個 Claude Code 技能移植至 OpenCode，打破工具平台綁定\n- **[PullMD](https://www.reddit.com/r/ClaudeAI/comments/1sxzlh6/pullmd_gave_claude_code_an_mcp_server_so_it_stops/)** — MCP server，抓取網頁時先將 HTML 轉換為乾淨 Markdown，避免浪費 token 處理 cookie banner 等無用內容（一般文章有效內容僅佔原始 HTML 約 20%）\n- **[Cockpit](https://github.com/alexjbarnes/cockpit)** — 開源 Web UI，讓使用者不再受限於終端機環境操作 Claude Code\n- **[Harness](https://github.com/frenchie4111/harness)** — 在多個 Git worktree 上並行管理多個 Claude Code agent，作者對現有工具（cmux、Conductor）不滿而自行開發\n- **[CodeThis](https://codethis.dev/)** — MCP 原生 paste bin，支援 100+ 語言語法高亮，AI 可透過 MCP server 直接建立貼文；免費版含 REST API 與 MCP，Pro 方案 $9/月\n- **[Claude Exporter](https://chromewebstore.google.com/detail/claude-exporter-claude-ch/mhckealbblinipeplfddmbcohdidkfjf)** — Chrome 擴充功能，可將 Claude 對話匯出為 PDF、Word、Google Docs 或 Notion，支援自訂字型，無需帳號\n- **[Throttle Meter](https://www.reddit.com/r/ClaudeAI/comments/1t0aw95/)** — macOS menubar 工具，從 `~/.claude/projects/*.jsonl` 即時計算 session 用量與週配額，無遙測，MIT 授權\n- **[Brifly](https://www.getbrifly.com/)** — Claude Code 持久記憶層，儲存專案架構知識讓 AI 跨 session 記住上下文，支援多人協作\n- **[Mneme](https://www.reddit.com/r/ClaudeAI/comments/1t0acsf/)** — repo-native CLI，將架構決策（ADR）存於程式碼庫旁並在 Claude 呼叫前自動注入，支援 CI 攔截違反架構的 PR\n- **[Nimbalyst](https://github.com/Nimbalyst/nimbalyst)** — 多 Agent 視覺化工作台，支援 Claude Code/Codex/Opencode，含 WYSIWYG diff 逐一審核各 Agent 修改\n- **[Trent](https://trent.ai/solutions/claude-code-security/)** — Claude Code 內嵌架構層安全評估，情境化判斷應用邏輯安全性，補足 CVE 掃描盲點\n- **[Omar](https://omar.tech)** — TUI 儀表板，可在終端機統一管理大規模 Claude Code Agent 群（宣稱支援 100 個同時運行的 Agent），支援 Agent 層級化管理（類似公司組織架構）\n- **[graphify](https://github.com/graphify-dev/graphify)** — Claude Code 插件，透過 Leiden 社群偵測建立程式碼知識圖譜，宣稱每次查詢可減少 71 倍 token 用量；26 天內達 450k+ 下載、40k stars（GitHub #2），社群發現非預期用途：SQL schema、Obsidian vault、學術論文\n- **[NanoBrain](https://nanobrain.app/)** — git-backed Markdown 個人知識庫，透過 hook 在 session 結束時進行低延遲（< 50ms）append，整合 Gmail、Google Calendar、Slack 等資料來源定時匯入；適合需要跨 AI Agent 共享長期知識的場景\n- **[Council](https://council.armstr.ng/)** — 開源 CLI，自動偵測系統上安裝的 claude、codex、gemini 並平行執行同一 prompt，最後由一個「主持人」模型彙整回答並標記分歧點；MIT 授權\n- **[Destiny](https://github.com/xodn348/destiny)** — Claude Code 占卜插件，輸入生日後執行 `/destiny` 取得今日運勢；底層用 Python 計算八字/卦象/五行，確保結果可驗證，文字詮釋層才交由 LLM 生成\n- **[Mote](https://www.reddit.com/r/ClaudeAI/comments/1t16urg/)** — 可自主在 Minecraft Bedrock 中遊玩的 Claude Code Agent，另提供 wizard 工具讓任何人只用一個 `.md` 檔案即可創建類似 Agent\n\n---\n\n## 相關議題\n\n- [[topics/code-quality-decline]]\n- [[topics/competitor-landscape]]\n- [[topics/ai-agent-safety]]\n- [[entities/claude-design]]（AI 設計工具，與 Claude Code 整合尚不完善）\n- [[entities/openclaw]]（第三方 agentic 工具，Anthropic 主動管控中）\n\n## 參考來源\n\n- [[news/2026-04-25]]\n- [[news/2026-04-26]]\n- [[news/2026-04-27]]\n- [[news/2026-04-28]]\n- [[news/2026-04-29]]\n- [[news/2026-04-30]]\n- [[news/2026-05-02]]\n\n## 版本歷史\n\n| 日期 | 事件 |\n|------|------|\n| 2026-05-02 | v2.1.126：`/model` 選擇器現在從 gateway 的 `/v1/models` 端點列出模型（適用於 `ANTHROPIC_BASE_URL` 自訂 gateway 場景）；新增 `claude project purge` 指令 |\n| 2026-05-02 | 社群工具：Omar（100 agent TUI 管理）、graphify（知識圖譜插件 450k+ 下載）、NanoBrain（git-backed 知識庫）、Council（多模型並行 CLI）、Destiny（占卜技能）、Mote（Minecraft agent）|\n| 2026-05-02 | GameMaker 正式啟用 Claude Code 整合（AI 輔助遊戲開發工作流程），iCapital 金融平台採用 Anthropic 技術 |\n| 2026-04-30 | GameMaker 宣布整合 Claude Code，為遊戲開發者提供 AI 輔助工作流程 |\n| 2026-04-30 | v2.1.124 系統提示更新：新增「File modification detected」預算超出提醒機制（+166 tokens）；v2.1.126 精簡核心身份指令（-87 tokens） |\n| 2026-04-30 | Claude Security 公開測試版推出，情境化安全評估直接整合於 Claude Code；見 [[entities/claude-security]] |\n| 2026-04-30 | TypeScript SDK v0.92.0：改善 Managed API 相關功能 |\n| 2026-04-30 | Anthropic 定位為「agentic AI 的 AWS」：Managed Agents + Persistent Memory 公開測試版 |\n| 2026-04-29 | Anthropic 發布官方「Champion Kit」：為推動企業採用 Claude Code 的工程師設計，含 30 天推廣計畫、常見疑慮應對話術與分享素材 |\n| 2026-04-29 | 社群工具：Cockpit（Web UI）、Harness（多 worktree 並行 agent）、CodeThis（MCP paste bin）、Claude Exporter（匯出至 PDF/Word/Notion）|\n| 2026-04-28 | v2.1.121 發布：MCP `alwaysLoad` 選項（設為 true 跳過 tool-search 延遲）、`claude plugin prune` 清除舊外掛 |\n| 2026-04-28 | Runhouse 團隊股權收購：分散式 AI 基礎設施與計算編排專家加入 Anthropic，強化 agentic 工作流底層架構 |\n| 2026-04-28 | Auto Compact 失效事件被回報，session 鎖死問題無法通過重啟解決 |\n| 2026-04-28 | Anthropic 為 Managed Agents 加入跨會話記憶功能（正式公告） |\n| 2026-04-27 | API 金鑰外洩漏洞被媒體報導：可能在自動化流程中洩漏至 npm 等公開倉庫 |\n| 2026-04-27 | HERMES.md 計費 bug 引發更廣泛媒體關注，確認損失達 $200，等待修復 |\n| 2026-04-27 | 版本從 2.1.120 回滾至 2.1.119，疑似靜默撤版 |\n| 2026-04-27 | 28 個滲透測試子代理人開源工具 pentest-ai-agents 釋出 |\n| 2026-04-26 | HERMES.md 計費路由 bug 曝光，Anthropic 確認但拒絕退款 |\n| 2026-04-26 | Anthropic 測試 Bugcrawl 漏洞偵測工具，見 [[entities/bugcrawl]] |\n| 2026-04-26 | Anthropic 工程部落格詳解 Claude Research 多代理架構設計 |\n| 2026-04-26 | 多個社群工具發布：Claude Squad（多人協作）、mux0（多 agent 終端）、agent-order（Codex+Claude PRD 協作） |\n| 2026-04-25 | 社群開發 CC-Canary 工具自動偵測效能漂移 |\n| 2026-04-24 | Stop hooks 失效問題被回報（Claude 4.7） |\n| 2026-04-24 | Anthropic 正式承認效能退步源於工程疏失 |\n| 2026-04 | Google 開始秘密開發競品 |\n| ~2026-03 | 效能退步開始，社群陸續察覺 |\n"
+      "markdown": "# Claude Code\n\n**類型：** product\n**狀態：** active\n**首次出現：** 2025（正式推出）\n**最後更新：** 2026-05-02\n\n---\n\n## 現況\n\nClaude Code 是 Anthropic 的 AI 編碼 CLI 工具，支援 agentic 工作流程、MCP Server 整合、Hooks 機制與 Agent Teams。目前為最受開發者關注的 AI 編碼工具之一。近期接連出現效能退步事件（已承認工程疏失）、HERMES.md 靜默計費 bug、API 金鑰外洩漏洞、Auto Compact 失效等問題，安全性與可靠性受到集中審視。v2.1.121 新增 MCP `alwaysLoad` 選項，Runhouse 團隊透過股權收購加入 Anthropic 以強化 agentic 基礎架構。\n\n---\n\n## 核心功能\n\n- **CLAUDE.md** — 專案級別的 AI 指令設定\n- **Hooks** — 在特定事件前後注入自定義邏輯（如：修改代碼後強制跑測試）\n- **Skills** — 可複用的任務封裝單元，Claude 透過描述自動觸發\n- **Agent Teams** — 多 agent 協作，目前僅支援 Claude 實例（社群已有 workaround）\n- **MCP Servers** — 外部工具整合（注意：多個 MCP 可能導致每次訊息消耗 20k+ tokens）\n- **Memories** — 跨 session 的持久記憶（Managed Agents Beta）\n\n---\n\n## 已知問題\n\n- **HERMES.md 計費路由 bug**（2026-04-25 回報）：git commit 歷史中含大寫字串「HERMES.md」會觸發靜默切換至 API 額外計費，完全繞過 Max 方案配額；Anthropic 確認為 bug 但拒絕退款，已知損失達 $200。見 [[entities/pricing]]\n- **主題模式不跟隨系統**（issue #2990）：`auto` 主題僅在啟動時偵測一次，不會即時同步 macOS dark/light 切換；社群 workaround：WezTerm + Lua 事件鉤子\n- **Stop Hooks 被忽略**（2026-04-24 回報）：Claude 4.7 開始無視自訂 stop hooks，影響依賴 hooks 的自動化工作流程，屬行為退步（regression）\n- **效能退步事件**：見 [[topics/code-quality-decline]]\n- **MCP Token 消耗問題**：多個 MCP Server 併用時，每條訊息可能消耗 20,000+ tokens\n- **API 金鑰外洩漏洞**（2026-04-27 報導）：Claude Code 在自動化流程中可能將 API 金鑰洩漏至公開套件倉庫（npm 等），TechTalks 報導，等待 Anthropic 官方回應\n- **Usage Policy 隨機拒絕**（Opus 4.7 以來）：Claude Code 頻繁出現無明確觸發條件的 Usage Policy 拒絕；官方建議切換至 `/model claude-sonnet-4-20250514` 作為緩解手段；見 [[entities/opus-4-7]]\n- **版本管理不透明**（2026-04-27）：執行 `claude update` 後版本從 2.1.120 降回 2.1.119，疑似靜默撤版，官方 changelog 與索引資訊不一致\n- **Mac 卸載不完整**：依官方教學卸載後，macOS 仍殘留「Claude Code URL Handler」應用程式\n- **Auto Compact 失效**（2026-04-28 回報）：context window 滿載後 Auto Compact 未自動觸發，手動執行 `/compact` 亦失效，導致整個 session 鎖死；即使重購額外用量並重啟工具問題仍未解決\n- **Prompt Cache Race Condition**（2026-04-27 確認）：連續兩次呼叫 `client.messages.create()` 時，第二個請求約有 40% 機率發生 cache miss；在兩次呼叫之間等待 2 秒可穩定解決；已由 Anthropic 工程師確認追蹤中。見 [Issue #1451](https://github.com/anthropics/anthropic-sdk-python/issues/1451)\n- **Tool/Connector Schema 洩漏**（2026-04-27 回報）：Claude Chat（Opus 4.7）在每則訊息末尾附加完整 function schema 及 userStyle 內容，跨對話串持續存在且疑為帳號層級污染，更換新對話串或關閉 userStyle 均無法完全解決，目前無官方修復\n- **Speed Bumps 增加**（2026-04-29 回報）：多位長期使用者反映本週起 Claude Code 明顯增加中途暫停詢問的頻率，即使簡單任務也頻繁打斷工作流程，社群猜測與系統層級的行為調整有關，無官方說明\n- **OpenClaw 異常計費行為**（2026-04-30，HN 近千則討論）：若 Git 提交訊息或文件內容中含特定 JSON 格式的 \"OpenClaw\" 字串，Claude Code 會直接拒絕請求，或將帳單 Extra Usage 衝至 100%；表明 Claude Code 正主動掃描 repo 內容並據此改變計費策略，Anthropic 至今未公開說明\n- **ANTHROPIC_API_KEY 雲端計費陷阱**（2026-04-30）：雲端環境設置此環境變數時，所有呼叫自動改走 API 計費通道，見 [[entities/pricing]]\n- **Claude Projects 對話消失**（2026-04-30 回報）：重度使用者三度遭遇整天的創作對話無故消失，在記錄中留下日期空白，且無法透過搜尋找回\n- **Session 歷史 30 天自動刪除**（2026-05-01 確認）：Claude Code 預設在 30 天後自動刪除 session `.jsonl` 歷史檔；可透過 `npx agentinit agent set claude cleanupPeriodDays 365` 將保留期間延長至 365 天\n- **AGENTS.md 規範不支援**（2026-05-02，GitHub issue #6235）：Claude Code 目前仍不支援業界漸趨標準化的 `AGENTS.md` 規範，導致跨工具（如 Cursor、GitHub Copilot）協作時面臨配置互操作問題。\n\n---\n\n## 競品\n\n- **Google 未命名工具**：Google 聯合創辦人 Sergey Brin 親自主導，見 [[topics/competitor-landscape]]\n- Cursor、Windsurf、GitHub Copilot 等\n\n---\n\n## 實用工具（社群開發）\n\n- **[CC-Canary](https://github.com/delta-hq/cc-canary)** — 讀取 `~/.claude/projects/` JSONL log 偵測效能漂移\n- **[claude-anyteam](https://github.com/JonathanRosado/claude-anyteam)** — 讓 Codex/Gemini 加入 Agent Teams\n- **[Claude Code Manager](https://claude.ldlework.com/)** — Web UI 集中管理 CLAUDE.md、hooks、skills\n- **[Claude Squad](https://www.reddit.com/r/ClaudeAI/comments/1svmpkv/)** — 多人協作編碼，每人以自己的 Claude Code 作為 agent，orchestrator 分派平行任務並合併分支\n- **[mux0](https://mux0.com/)** — 開源 macOS 終端機，側邊欄即時顯示多 agent 執行狀態（running / idle / needs input）\n- **[agent-order](https://github.com/btahir/agent-order)** — 讓 Codex 與 Claude 各自寫 PRD 再互相批判，避免答案向先開口方塌縮\n- **[EvanFlow](https://github.com/evanklem/evanflow)** — TDD 驅動的 Claude Code 迭代迴圈，16 個技能 + 2 個子代理人，每步驟設有人工確認節點，不自動 commit\n- **[Relay](https://github.com/basegraphhq/relay-plugin)** — 強制 Claude Code 在寫程式前深入對齊問題定義的插件，將 Plan Mode 的提問層級從「實作細節」拉升至「問題本質」（MIT 授權）\n- **[pentest-ai-agents](https://github.com/evanklem/pentest-ai-agents)** — 28 個專為滲透測試設計的 Claude Code 子代理人，資安工作流程整合\n- **[modularity](https://github.com/vladikk/modularity)** — 架構層級插件，採用 Balanced Coupling 模型分析軟體模組化設計，防止 AI 加速代碼生成的同時技術債累積速度加快\n- **[Rapunzel](https://github.com/salmanjavaid/rapunzel)** — 樹狀標籤頁「代理人瀏覽器」，集中管理 Claude Code / Codex / Gemini 多個同時運行的 AI 代理\n- **[SmolVM](https://github.com/CelestoAI/SmolVM)** — 本機沙盒環境，讓 Claude Code / Codex 在完全隔離的容器中執行，保護宿主系統，單指令啟動\n- **[Groundtruth](https://github.com/vnmoorthy/groundtruth)** — Stop Hook，強制 Claude Code 在宣告「完成」前提供可驗證的執行證明，解決自信宣稱成功但實際未驗證的問題\n- **[OpenCode-power-pack](https://github.com/waybarrios/opencode-power-pack)** — 將 Anthropic 官方 11 個 Claude Code 技能移植至 OpenCode，打破工具平台綁定\n- **[PullMD](https://www.reddit.com/r/ClaudeAI/comments/1sxzlh6/pullmd_gave_claude_code_an_mcp_server_so_it_stops/)** — MCP server，抓取網頁時先將 HTML 轉換為乾淨 Markdown，避免浪費 token 處理 cookie banner 等無用內容（一般文章有效內容僅佔原始 HTML 約 20%）\n- **[Cockpit](https://github.com/alexjbarnes/cockpit)** — 開源 Web UI，讓使用者不再受限於終端機環境操作 Claude Code\n- **[Harness](https://github.com/frenchie4111/harness)** — 在多個 Git worktree 上並行管理多個 Claude Code agent，作者對現有工具（cmux、Conductor）不滿而自行開發\n- **[CodeThis](https://codethis.dev/)** — MCP 原生 paste bin，支援 100+ 語言語法高亮，AI 可透過 MCP server 直接建立貼文；免費版含 REST API 與 MCP，Pro 方案 $9/月\n- **[Claude Exporter](https://chromewebstore.google.com/detail/claude-exporter-claude-ch/mhckealbblinipeplfddmbcohdidkfjf)** — Chrome 擴充功能，可將 Claude 對話匯出為 PDF、Word、Google Docs 或 Notion，支援自訂字型，無需帳號\n- **[Throttle Meter](https://www.reddit.com/r/ClaudeAI/comments/1t0aw95/)** — macOS menubar 工具，從 `~/.claude/projects/*.jsonl` 即時計算 session 用量與週配額，無遙測，MIT 授權\n- **[Brifly](https://www.getbrifly.com/)** — Claude Code 持久記憶層，儲存專案架構知識讓 AI 跨 session 記住上下文，支援多人協作\n- **[Mneme](https://www.reddit.com/r/ClaudeAI/comments/1t0acsf/)** — repo-native CLI，將架構決策（ADR）存於程式碼庫旁並在 Claude 呼叫前自動注入，支援 CI 攔截違反架構的 PR\n- **[Nimbalyst](https://github.com/Nimbalyst/nimbalyst)** — 多 Agent 視覺化工作台，支援 Claude Code/Codex/Opencode，含 WYSIWYG diff 逐一審核各 Agent 修改\n- **[Trent](https://trent.ai/solutions/claude-code-security/)** — Claude Code 內嵌架構層安全評估，情境化判斷應用邏輯安全性，補足 CVE 掃描盲點\n- **[Omar](https://omar.tech)** — TUI 儀表板，可在終端機統一管理大規模 Claude Code Agent 群（宣稱支援 100 個同時運行的 Agent），支援 Agent 層級化管理（類似公司組織架構）\n- **[graphify](https://github.com/graphify-dev/graphify)** — Claude Code 插件，透過 Leiden 社群偵測建立程式碼知識圖譜，宣稱每次查詢可減少 71 倍 token 用量；26 天內達 450k+ 下載、40k stars（GitHub #2），社群發現非預期用途：SQL schema、Obsidian vault、學術論文\n- **[NanoBrain](https://nanobrain.app/)** — git-backed Markdown 個人知識庫，透過 hook 在 session 結束時進行低延遲（< 50ms）append，整合 Gmail、Google Calendar、Slack 等資料來源定時匯入；適合需要跨 AI Agent 共享長期知識的場景\n- **[Council](https://council.armstr.ng/)** — 開源 CLI，自動偵測系統上安裝的 claude、codex、gemini 並平行執行同一 prompt，最後由一個「主持人」模型彙整回答並標記分歧點；MIT 授權\n- **[Destiny](https://github.com/xodn348/destiny)** — Claude Code 占卜插件，輸入生日後執行 `/destiny` 取得今日運勢；底層用 Python 計算八字/卦象/五行，確保結果可驗證，文字詮釋層才交由 LLM 生成\n- **[Mote](https://www.reddit.com/r/ClaudeAI/comments/1t16urg/)** — 可自主在 Minecraft Bedrock 中遊玩的 Claude Code Agent，另提供 wizard 工具讓任何人只用一個 `.md` 檔案即可創建類似 Agent\n- **[Governor](https://github.com/0xhimanshu/governor)** — 宣稱可減少 Claude Code token 浪費的插件；HN 社群質疑其基準測試過於粗糙，僅統計 token 數量而未評估模型輸出品質是否同步下降，效果待嚴謹驗證\n- **[Caliber](https://www.reddit.com/r/artificial/comments/1t1o3qa/)** — 開源 AI 代理配置管理工具，統一版本控制 CLAUDE.md、.cursor/rules、AGENTS.md 等跨工具配置文件；本週突破 888 stars，正向社群徵集功能需求\n\n---\n\n## 相關議題\n\n- [[topics/code-quality-decline]]\n- [[topics/competitor-landscape]]\n- [[topics/ai-agent-safety]]\n- [[entities/claude-design]]（AI 設計工具，與 Claude Code 整合尚不完善）\n- [[entities/openclaw]]（第三方 agentic 工具，Anthropic 主動管控中）\n\n## 參考來源\n\n- [[news/2026-04-25]]\n- [[news/2026-04-26]]\n- [[news/2026-04-27]]\n- [[news/2026-04-28]]\n- [[news/2026-04-29]]\n- [[news/2026-04-30]]\n- [[news/2026-05-02]]\n\n## 版本歷史\n\n| 日期 | 事件 |\n|------|------|\n| 2026-05-02 | AGENTS.md 規範不支援（GitHub issue #6235）：跨工具（Cursor/Copilot）配置互操作缺口浮現 |\n| 2026-05-02 | 新工具：Governor（token 浪費優化插件，HN 社群存疑）、Caliber（888 stars，統一管理 CLAUDE.md/.cursor/rules/AGENTS.md） |\n| 2026-05-02 | v2.1.126：`/model` 選擇器現在從 gateway 的 `/v1/models` 端點列出模型（適用於 `ANTHROPIC_BASE_URL` 自訂 gateway 場景）；新增 `claude project purge` 指令 |\n| 2026-05-02 | 社群工具：Omar（100 agent TUI 管理）、graphify（知識圖譜插件 450k+ 下載）、NanoBrain（git-backed 知識庫）、Council（多模型並行 CLI）、Destiny（占卜技能）、Mote（Minecraft agent）|\n| 2026-05-02 | GameMaker 正式啟用 Claude Code 整合（AI 輔助遊戲開發工作流程），iCapital 金融平台採用 Anthropic 技術 |\n| 2026-04-30 | GameMaker 宣布整合 Claude Code，為遊戲開發者提供 AI 輔助工作流程 |\n| 2026-04-30 | v2.1.124 系統提示更新：新增「File modification detected」預算超出提醒機制（+166 tokens）；v2.1.126 精簡核心身份指令（-87 tokens） |\n| 2026-04-30 | Claude Security 公開測試版推出，情境化安全評估直接整合於 Claude Code；見 [[entities/claude-security]] |\n| 2026-04-30 | TypeScript SDK v0.92.0：改善 Managed API 相關功能 |\n| 2026-04-30 | Anthropic 定位為「agentic AI 的 AWS」：Managed Agents + Persistent Memory 公開測試版 |\n| 2026-04-29 | Anthropic 發布官方「Champion Kit」：為推動企業採用 Claude Code 的工程師設計，含 30 天推廣計畫、常見疑慮應對話術與分享素材 |\n| 2026-04-29 | 社群工具：Cockpit（Web UI）、Harness（多 worktree 並行 agent）、CodeThis（MCP paste bin）、Claude Exporter（匯出至 PDF/Word/Notion）|\n| 2026-04-28 | v2.1.121 發布：MCP `alwaysLoad` 選項（設為 true 跳過 tool-search 延遲）、`claude plugin prune` 清除舊外掛 |\n| 2026-04-28 | Runhouse 團隊股權收購：分散式 AI 基礎設施與計算編排專家加入 Anthropic，強化 agentic 工作流底層架構 |\n| 2026-04-28 | Auto Compact 失效事件被回報，session 鎖死問題無法通過重啟解決 |\n| 2026-04-28 | Anthropic 為 Managed Agents 加入跨會話記憶功能（正式公告） |\n| 2026-04-27 | API 金鑰外洩漏洞被媒體報導：可能在自動化流程中洩漏至 npm 等公開倉庫 |\n| 2026-04-27 | HERMES.md 計費 bug 引發更廣泛媒體關注，確認損失達 $200，等待修復 |\n| 2026-04-27 | 版本從 2.1.120 回滾至 2.1.119，疑似靜默撤版 |\n| 2026-04-27 | 28 個滲透測試子代理人開源工具 pentest-ai-agents 釋出 |\n| 2026-04-26 | HERMES.md 計費路由 bug 曝光，Anthropic 確認但拒絕退款 |\n| 2026-04-26 | Anthropic 測試 Bugcrawl 漏洞偵測工具，見 [[entities/bugcrawl]] |\n| 2026-04-26 | Anthropic 工程部落格詳解 Claude Research 多代理架構設計 |\n| 2026-04-26 | 多個社群工具發布：Claude Squad（多人協作）、mux0（多 agent 終端）、agent-order（Codex+Claude PRD 協作） |\n| 2026-04-25 | 社群開發 CC-Canary 工具自動偵測效能漂移 |\n| 2026-04-24 | Stop hooks 失效問題被回報（Claude 4.7） |\n| 2026-04-24 | Anthropic 正式承認效能退步源於工程疏失 |\n| 2026-04 | Google 開始秘密開發競品 |\n| ~2026-03 | 效能退步開始，社群陸續察覺 |\n"
     },
     {
       "id": "claude-design",
@@ -116,7 +116,7 @@ window.WIKI_DATA = {
       "startDate": "",
       "lastUpdated": "2026-05-02",
       "summary": "",
-      "markdown": "# Anthropic 訂閱方案與計費政策\n\n**類型：** policy\n**狀態：** active（持續調整中）\n**最後更新：** 2026-05-02\n\n---\n\n## 現行方案（2026-04）\n\n| 方案 | 月費 | Claude Code 模型存取 |\n|------|------|----------------------|\n| Free | $0 | 基本限制 |\n| Pro | $20 | 含 Sonnet；Opus 需另購額外用量 |\n| Max | 更高 | 更高用量上限 |\n| API | 按量計費 | 全模型，依 token 計費 |\n\n> **注意**：以上為社群整理的近似資訊，確切定價請以官方頁面為準。\n\n---\n\n## 近期政策變動\n\n### 2026-05-01：$6,000 單夜意外燒掉——/loop 指令無人看管\n\n開發者因一個 `/loop` 指令設置後遺忘，在無人看管的情況下連續執行 **46 次**（共 26 小時），加上同時開著的分析 session，共在 claude-opus-4-7 上燒掉約 **$6,000 美元**。事件引發社群對 Anthropic **用量警報機制嚴重不足**的廣泛批評：儀表板顯示金額嚴重滯後，缺乏即時消費通知。企業採用 Claude Code 須自行建立花費上限防護。\n\n### 2026-05-01：帳號停用事件——反映重複扣款後的異常處置\n\n一位用戶發現被多收 **$200 美元**，在向 Anthropic 反映後，客服機器人確認為「未授權交易」並承諾協助；然而帳號在不到 24 小時內遭**停用**。事件尚未釐清因果關係，但社群對 Anthropic 計費系統的可信度與帳號安全處理方式提出強烈質疑。\n\n### 2026-05-01：AWS Bedrock Opus 4.7 配額無預警歸零\n\n多名用戶反映 **AWS Bedrock** 無預警將帳號 Opus 4.7 的 TPM（Token Per Minute）配額歸零，需聯絡 AWS 支援才能恢復。事件顯示：雲端平台對前沿模型的存取權限可隨時撤銷，企業客戶面臨不透明的服務穩定性風險，Bedrock 架構下的配額管理機制缺乏充分預警。\n\n### 2026-05-01：Max 方案實際使用消耗參考\n\nMax 方案用戶分享：一週高強度使用後僅達到約 **60% 配額**，顯示 Max 方案在一般重度使用情境下具備足夠的用量緩衝。此數據對考慮升級用戶有參考價值（但個人工作流差異大，僅供參考）。\n\n### 2026-05-01：自修改 Agent 系統節省 50% API 費用\n\n開發者開源方案：透過自修改 Agent 系統，讓本地硬體（RTX 5070）在閒置時段執行低優先任務，有效將 Claude API 費用降低約 **50%**。適合具備本地 GPU 且有非即時任務的開發者。\n\n### 2026-04-30：ANTHROPIC_API_KEY 雲端環境計費陷阱\n使用者警告：若在雲端環境設置 `ANTHROPIC_API_KEY` 環境變數，Claude Code 無法正常運作，且**所有 Code 呼叫將自動改走 API 計費通道**，造成大量意外費用；官方文件存在誤導，過去已有多起「Extra Usage 異常暴增」與此相關。**立即檢查**：雲端環境（CI/CD、Docker、K8s）若有此環境變數應立即移除或改用 Secrets Manager 管理。\n\n### 2026-04-30：Pro 訂閱到期 Extra Usage 餘額消失\n使用者 Claude Pro 訂閱到期後，預付的 **$40 Extra Usage 餘額隨之歸零**消失，Anthropic 文件未明確說明訂閱終止後的餘額處置規則，UI 中也不存在退款流程。\n\n### 2026-04-30：長 context 快取隱性成本\n使用者分析本機 JSONL 日誌發現，Claude Code 用量暴增源自超大 prompt cache（**約 475k tokens**）的反覆重建；以公開 API 定價估算，單次快取重建成本相當可觀。長 context 工作流使用者應定期監控 JSONL 日誌，警惕快取失效觸發的非預期費用。\n\n### 2026-04-29：Anthropic 洽談 $900B 估值新一輪融資\nBloomberg 與 CNBC 同日報導，Anthropic 正與投資人洽談以超過 **$9,000 億美元**估值進行新一輪融資，估值超越 OpenAI，是目前 AI 新創史上最高估值之一。\n\n### 2026-04-29：Claude Code Token 費用預估翻倍\nBusiness Insider 報導，Anthropic 低調將工程師使用 Claude Code 的**預期 Token 費用估算值調高一倍**（靜默修訂，無官方公告）。企業在規劃 AI 工具採購預算時需重新評估實際成本，大規模部署情境下的費用控管壓力加劇。\n\n### 2026-04-29：Max 方案 API 錯誤與支援失靈\nMax 方案用戶在 GitHub issue 投訴 Claude Code 出現內部 API 錯誤，且 Anthropic 支援 AI 持續建議排查 VPN 問題而無法識別實際故障，引發對高價訂閱服務可靠性與支援品質的強烈質疑。\n\n### 2026-04-28：Anthropic 估值突破 $1 兆美元（鏈上數據）\n鏈上 pre-IPO 交易數據顯示 Anthropic 隱含估值已達 **$1 兆美元**；機構市場估值約 $800–900B。分析師提醒此為特定投機性市場情緒，不代表正式融資估值，但趨勢方向具參考性。\n\n### 2026-04-28：Opus 「圍牆內圍牆」付費事件（已修正）\nAnthropic 在**未事先公告**的情況下，要求 Pro 用戶（$20/月）在 Claude Code 中使用 Opus 須另購「Extra Usage」，引發強烈社群反彈。事後 Anthropic 澄清 **Pro 用戶仍可存取 Opus**，事件得以平息，但溝通方式已造成信任損失。此為近一個月內第二次 Opus 存取政策變動（見 2026-04-24 條目）。\n\n### 2026-04-28：20x 方案使用量計量異常\n部分升級至 20x 計畫的用戶回報週末起使用量計量出現**異常跳動**，未執行密集任務一小時內即達 70%，數值隨後又無故下降，疑為計量 bug 或後端流量計算異常，目前無官方說明。\n\n### 2026-04-28：Auto Compact 失效導致 session 鎖死\n用戶遭遇 context window 滿載後 Auto Compact 未自動觸發，手動 `/compact` 亦失效，即使重購額外用量並重啟工具仍無法解決。此問題使已付費用量在技術層面無法使用。\n\n### 2026-04-27：Max 方案配額多工場景不足\n同時使用 Claude Code 與視覺功能的用戶回報早上 **8:30 即觸及當日用量上限**，反映 Max 方案在 Code + vision 多工場景下的配額設計存在實際痛點。\n\n### 2026-04-27：Google 400 億投資對定價的指標意義\nGoogle 確認對 Anthropic 追加 400 億美元投資，分析師指出 Anthropic 具備更充裕資本空間維持現有定價或推進企業方案擴張，對長期訂閱定價策略具有指標意義。見 [[topics/google-investment]]\n\n### 2026-04-25：HERMES.md 靜默計費 bug\ngit commit 歷史中出現大寫字串「HERMES.md」，會觸發 Claude Code 靜默切換至 API 額外計費模式，完全繞過 Max 方案配額，已知造成用戶單日損失 **$200**。Anthropic 支援確認為 bug，但**拒絕退款**。\n\n**立即行動**：`git log --all | grep -i HERMES` 檢查 commit 歷史。\n來源：[GitHub Issue #53262](https://github.com/anthropics/claude-code/issues/53262)、[[news/2026-04-26]]\n\n### 2026-04-25：Token 配額快速耗盡（$20 方案）\n$20 Pro 方案用戶反映 Claude Code 在 **2 小時內耗盡每日配額**；使用 career-ops 等大型工具最快 30 分鐘見底。社群分享節省 token 的實務技巧（分層模型策略：以 Sonnet 為主力，需要時才讓 Sonnet「諮詢」Opus，聲稱節省約 60% 用量）。\n\n### 2026-04-25：Anthropic 限制 OpenClaw 等第三方 agentic 工具配額\nThe Verge 報導 Anthropic 嚴格限制 OpenClaw 等第三方 agent 工具的使用配額。Claude Code 負責人 Boris Cherny 公開表示：「訂閱方案的設計並非為這類第三方使用模式而生。」預示 agentic 工具的付費門檻將持續提高。\n\n### 2026-04-24：Opus 額外用量需 Pro 起\nAnthropic 更新政策，使用 Claude Code 存取 Opus 模型的**額外用量**現在須先訂閱 Pro 以上方案才能開通。官方說明了三種切換模型的方式：\n1. `/model` 指令\n2. `--model` CLI 旗標\n3. 環境變數設定\n\n**影響**：原本以低階方案搭配額外用量的用戶受到顯著影響。\n\n### 2026-04-24：降級後用量不重置\n一名用戶回報在 Anthropic 發布重置用量承諾的六天前降級帳號，導致被排除在重置範圍外。Anthropic 拒絕為其重置，引發補償政策時間邊界的爭議。\n\n---\n\n## 宏觀趨勢\n\nThe Verge（2026-04-24）報導，AI 商業化壓力下，Anthropic 等實驗室開始大幅限制第三方工具用量。Claude Code 負責人 Boris Cherny 公開表示：\n\n> 「訂閱方案的設計並非為這類第三方使用模式而生。」\n\n此言論被視為付費門檻將持續提高的明確信號。\n\n---\n\n## Token 成本注意事項\n\n- 多個 MCP Server 併用時，每條訊息可能消耗 **20,000+ tokens**（見 [[entities/claude-code]]）\n- 切換至 Opus 4.7 會清除整個 prompt cache，導致額外 token 成本\n\n---\n\n## 相關議題\n\n- [[topics/code-quality-decline]]（用戶因品質下滑要求退款或降級）\n\n## 參考來源\n\n- [[news/2026-04-25]]\n- [[news/2026-04-26]]\n- [[news/2026-04-27]]\n- [[news/2026-04-28]]\n- [[news/2026-04-29]]\n- [[news/2026-04-30]]\n- [[news/2026-05-02]]\n- [官方說明文件](https://support.claude.com/en/articles/11940350-claude-code-model-configuration)\n"
+      "markdown": "# Anthropic 訂閱方案與計費政策\n\n**類型：** policy\n**狀態：** active（持續調整中）\n**最後更新：** 2026-05-02\n\n---\n\n## 現行方案（2026-04）\n\n| 方案 | 月費 | Claude Code 模型存取 |\n|------|------|----------------------|\n| Free | $0 | 基本限制 |\n| Pro | $20 | 含 Sonnet；Opus 需另購額外用量 |\n| Max | 更高 | 更高用量上限 |\n| API | 按量計費 | 全模型，依 token 計費 |\n\n> **注意**：以上為社群整理的近似資訊，確切定價請以官方頁面為準。\n\n---\n\n## 近期政策變動\n\n### 2026-05-02：Uber 企業案例——四個月燒光全年 AI 預算\n\nUber 於 2025 年 12 月部署 Claude Code，四個月後已燒光全年 AI 預算。核心數據：\n- 工程師月均費用：**$500–$2,000**（依用量強度差異）\n- 95% 工程師每月使用 AI 工具；70% 提交代碼來自 AI\n- Uber CTO 明確表示明年將「從零重建」AI 預算策略\n\n此案例為業界提供大型企業 AI 工具真實成本的稀缺一手數據，正成為討論 AI 工具成本管控的標誌性參考。《大西洋月刊》指出此類實際收入數據正修正半年前的「AI 泡沫論」。\n\n**企業採用建議**：Claude Code 大規模部署須事先規劃每人月費上限機制，並建立實時消費警報（Anthropic 儀表板目前仍有顯著滯後）。\n\n### 2026-05-01：$6,000 單夜意外燒掉——/loop 指令無人看管\n\n開發者因一個 `/loop` 指令設置後遺忘，在無人看管的情況下連續執行 **46 次**（共 26 小時），加上同時開著的分析 session，共在 claude-opus-4-7 上燒掉約 **$6,000 美元**。事件引發社群對 Anthropic **用量警報機制嚴重不足**的廣泛批評：儀表板顯示金額嚴重滯後，缺乏即時消費通知。企業採用 Claude Code 須自行建立花費上限防護。\n\n### 2026-05-01：帳號停用事件——反映重複扣款後的異常處置\n\n一位用戶發現被多收 **$200 美元**，在向 Anthropic 反映後，客服機器人確認為「未授權交易」並承諾協助；然而帳號在不到 24 小時內遭**停用**。事件尚未釐清因果關係，但社群對 Anthropic 計費系統的可信度與帳號安全處理方式提出強烈質疑。\n\n### 2026-05-01：AWS Bedrock Opus 4.7 配額無預警歸零\n\n多名用戶反映 **AWS Bedrock** 無預警將帳號 Opus 4.7 的 TPM（Token Per Minute）配額歸零，需聯絡 AWS 支援才能恢復。事件顯示：雲端平台對前沿模型的存取權限可隨時撤銷，企業客戶面臨不透明的服務穩定性風險，Bedrock 架構下的配額管理機制缺乏充分預警。\n\n### 2026-05-01：Max 方案實際使用消耗參考\n\nMax 方案用戶分享：一週高強度使用後僅達到約 **60% 配額**，顯示 Max 方案在一般重度使用情境下具備足夠的用量緩衝。此數據對考慮升級用戶有參考價值（但個人工作流差異大，僅供參考）。\n\n### 2026-05-01：自修改 Agent 系統節省 50% API 費用\n\n開發者開源方案：透過自修改 Agent 系統，讓本地硬體（RTX 5070）在閒置時段執行低優先任務，有效將 Claude API 費用降低約 **50%**。適合具備本地 GPU 且有非即時任務的開發者。\n\n### 2026-04-30：ANTHROPIC_API_KEY 雲端環境計費陷阱\n使用者警告：若在雲端環境設置 `ANTHROPIC_API_KEY` 環境變數，Claude Code 無法正常運作，且**所有 Code 呼叫將自動改走 API 計費通道**，造成大量意外費用；官方文件存在誤導，過去已有多起「Extra Usage 異常暴增」與此相關。**立即檢查**：雲端環境（CI/CD、Docker、K8s）若有此環境變數應立即移除或改用 Secrets Manager 管理。\n\n### 2026-04-30：Pro 訂閱到期 Extra Usage 餘額消失\n使用者 Claude Pro 訂閱到期後，預付的 **$40 Extra Usage 餘額隨之歸零**消失，Anthropic 文件未明確說明訂閱終止後的餘額處置規則，UI 中也不存在退款流程。\n\n### 2026-04-30：長 context 快取隱性成本\n使用者分析本機 JSONL 日誌發現，Claude Code 用量暴增源自超大 prompt cache（**約 475k tokens**）的反覆重建；以公開 API 定價估算，單次快取重建成本相當可觀。長 context 工作流使用者應定期監控 JSONL 日誌，警惕快取失效觸發的非預期費用。\n\n### 2026-04-29：Anthropic 洽談 $900B 估值新一輪融資\nBloomberg 與 CNBC 同日報導，Anthropic 正與投資人洽談以超過 **$9,000 億美元**估值進行新一輪融資，估值超越 OpenAI，是目前 AI 新創史上最高估值之一。\n\n### 2026-04-29：Claude Code Token 費用預估翻倍\nBusiness Insider 報導，Anthropic 低調將工程師使用 Claude Code 的**預期 Token 費用估算值調高一倍**（靜默修訂，無官方公告）。企業在規劃 AI 工具採購預算時需重新評估實際成本，大規模部署情境下的費用控管壓力加劇。\n\n### 2026-04-29：Max 方案 API 錯誤與支援失靈\nMax 方案用戶在 GitHub issue 投訴 Claude Code 出現內部 API 錯誤，且 Anthropic 支援 AI 持續建議排查 VPN 問題而無法識別實際故障，引發對高價訂閱服務可靠性與支援品質的強烈質疑。\n\n### 2026-04-28：Anthropic 估值突破 $1 兆美元（鏈上數據）\n鏈上 pre-IPO 交易數據顯示 Anthropic 隱含估值已達 **$1 兆美元**；機構市場估值約 $800–900B。分析師提醒此為特定投機性市場情緒，不代表正式融資估值，但趨勢方向具參考性。\n\n### 2026-04-28：Opus 「圍牆內圍牆」付費事件（已修正）\nAnthropic 在**未事先公告**的情況下，要求 Pro 用戶（$20/月）在 Claude Code 中使用 Opus 須另購「Extra Usage」，引發強烈社群反彈。事後 Anthropic 澄清 **Pro 用戶仍可存取 Opus**，事件得以平息，但溝通方式已造成信任損失。此為近一個月內第二次 Opus 存取政策變動（見 2026-04-24 條目）。\n\n### 2026-04-28：20x 方案使用量計量異常\n部分升級至 20x 計畫的用戶回報週末起使用量計量出現**異常跳動**，未執行密集任務一小時內即達 70%，數值隨後又無故下降，疑為計量 bug 或後端流量計算異常，目前無官方說明。\n\n### 2026-04-28：Auto Compact 失效導致 session 鎖死\n用戶遭遇 context window 滿載後 Auto Compact 未自動觸發，手動 `/compact` 亦失效，即使重購額外用量並重啟工具仍無法解決。此問題使已付費用量在技術層面無法使用。\n\n### 2026-04-27：Max 方案配額多工場景不足\n同時使用 Claude Code 與視覺功能的用戶回報早上 **8:30 即觸及當日用量上限**，反映 Max 方案在 Code + vision 多工場景下的配額設計存在實際痛點。\n\n### 2026-04-27：Google 400 億投資對定價的指標意義\nGoogle 確認對 Anthropic 追加 400 億美元投資，分析師指出 Anthropic 具備更充裕資本空間維持現有定價或推進企業方案擴張，對長期訂閱定價策略具有指標意義。見 [[topics/google-investment]]\n\n### 2026-04-25：HERMES.md 靜默計費 bug\ngit commit 歷史中出現大寫字串「HERMES.md」，會觸發 Claude Code 靜默切換至 API 額外計費模式，完全繞過 Max 方案配額，已知造成用戶單日損失 **$200**。Anthropic 支援確認為 bug，但**拒絕退款**。\n\n**立即行動**：`git log --all | grep -i HERMES` 檢查 commit 歷史。\n來源：[GitHub Issue #53262](https://github.com/anthropics/claude-code/issues/53262)、[[news/2026-04-26]]\n\n### 2026-04-25：Token 配額快速耗盡（$20 方案）\n$20 Pro 方案用戶反映 Claude Code 在 **2 小時內耗盡每日配額**；使用 career-ops 等大型工具最快 30 分鐘見底。社群分享節省 token 的實務技巧（分層模型策略：以 Sonnet 為主力，需要時才讓 Sonnet「諮詢」Opus，聲稱節省約 60% 用量）。\n\n### 2026-04-25：Anthropic 限制 OpenClaw 等第三方 agentic 工具配額\nThe Verge 報導 Anthropic 嚴格限制 OpenClaw 等第三方 agent 工具的使用配額。Claude Code 負責人 Boris Cherny 公開表示：「訂閱方案的設計並非為這類第三方使用模式而生。」預示 agentic 工具的付費門檻將持續提高。\n\n### 2026-04-24：Opus 額外用量需 Pro 起\nAnthropic 更新政策，使用 Claude Code 存取 Opus 模型的**額外用量**現在須先訂閱 Pro 以上方案才能開通。官方說明了三種切換模型的方式：\n1. `/model` 指令\n2. `--model` CLI 旗標\n3. 環境變數設定\n\n**影響**：原本以低階方案搭配額外用量的用戶受到顯著影響。\n\n### 2026-04-24：降級後用量不重置\n一名用戶回報在 Anthropic 發布重置用量承諾的六天前降級帳號，導致被排除在重置範圍外。Anthropic 拒絕為其重置，引發補償政策時間邊界的爭議。\n\n---\n\n## 宏觀趨勢\n\nThe Verge（2026-04-24）報導，AI 商業化壓力下，Anthropic 等實驗室開始大幅限制第三方工具用量。Claude Code 負責人 Boris Cherny 公開表示：\n\n> 「訂閱方案的設計並非為這類第三方使用模式而生。」\n\n此言論被視為付費門檻將持續提高的明確信號。\n\n---\n\n## Token 成本注意事項\n\n- 多個 MCP Server 併用時，每條訊息可能消耗 **20,000+ tokens**（見 [[entities/claude-code]]）\n- 切換至 Opus 4.7 會清除整個 prompt cache，導致額外 token 成本\n\n---\n\n## 相關議題\n\n- [[topics/code-quality-decline]]（用戶因品質下滑要求退款或降級）\n\n## 參考來源\n\n- [[news/2026-04-25]]\n- [[news/2026-04-26]]\n- [[news/2026-04-27]]\n- [[news/2026-04-28]]\n- [[news/2026-04-29]]\n- [[news/2026-04-30]]\n- [[news/2026-05-02]]\n- [官方說明文件](https://support.claude.com/en/articles/11940350-claude-code-model-configuration)\n"
     },
     {
       "id": "project-deal",
@@ -183,7 +183,7 @@ window.WIKI_DATA = {
       "startDate": "2026-04-25",
       "lastUpdated": "2026-05-02",
       "summary": "追蹤 Claude Code 社群在實際開發中累積的技術應用模式、工作流創新與工具生態。每次 ingest 從「💬 技術熱度討論」區塊萃取有價值的技術發現，持續累積形成社群最佳實踐知識庫。 ---",
-      "markdown": "# 社群技術應用趨勢\n\n**狀態：** ongoing\n**開始日期：** 2026-04-25\n**最後更新：** 2026-05-02\n\n---\n\n## 摘要\n\n追蹤 Claude Code 社群在實際開發中累積的技術應用模式、工作流創新與工具生態。每次 ingest 從「💬 技術熱度討論」區塊萃取有價值的技術發現，持續累積形成社群最佳實踐知識庫。\n\n---\n\n## 技術彙整\n\n### Multi-agent 工作流\n\n- **任務分解是核心難點**：社群詢問如何有效運用 20 個平行 Claude 實例，顯示 agentic 思維的學習曲線仍高\n- **污染防止原則**：多 agent 協作時，讓各 agent 先獨立完成再互相審查，避免先看到他人答案後的收斂偏差（agent-order 的核心設計）\n- **分支合併策略**：Claude Squad 以 orchestrator Claude 負責分派任務與合併 git 分支，而非讓各 agent 直接操作主分支\n\n### Skills 設計模式\n\n- **觸發機制**：Skills 透過描述（description）自動觸發，適合封裝有明確情境的任務\n- **知識框架化**：將外部知識（書籍、文件）轉為 skills，讓 Claude 在對話中自動引用對應框架\n- **流程替代 README**：複雜設定流程包裝為 skill，比 README 更可靠且可持續維護\n\n### 模型使用策略\n\n- **分層模型**：Sonnet 主力 + Opus 諮詢，節省約 60% 用量（未經獨立驗證）\n- **推理強度 vs 安全邊界**：高推理強度不會放寬安全限制，兩者獨立控制\n- **Context window 縮減**：舊版模型將回退至 200k context，依賴超長 context 的工作流需重新評估\n\n### CLAUDE.md 設計原則\n\n- **精簡優於詳盡**：CLAUDE.md 保持精簡（parsh 案例），以「規則」（rule）而非「建議」（suggestion）撰寫，有效減少 AI 冗余代碼與行為漂移\n- **問題定義先於實作**：Relay plugin 的核心洞見 — Plan Mode 提問層級若停在「實作細節」，AI 常繞過問題本質直接動手；拉升至「為什麼這樣設計」層級效果顯著\n- **人工確認節點**：EvanFlow 每步驟設有確認節點，不自動 commit；此模式在需要嚴謹品質控制的場景比全自動化更受信賴\n\n### effort 等級與模型行為\n\n- **effort 提升 ≠ 拒絕率提升**：系統性測試（CVP Run 5，Opus 4.6）顯示 medium → high effort 主要影響回答深度（29–47% 增長），拒絕率增長僅 11%\n- **Opus vs Sonnet 穩定性差異**：HN 社群數據顯示 Sonnet 在 context 不完整時非預期失誤率達 20–35%；Opus 在不完整情境下明顯更穩定\n- **Usage Policy 與 effort 無關**：Opus 4.7 的隨機 Usage Policy 拒絕問題（見 [[entities/opus-4-7]]）與 effort 等級無關，屬獨立 bug\n\n### API 使用模式\n\n- **Batch API 不適合 agent**：每筆 batch 需 90–120 秒，互動式 agent 5 輪對話變成 10 分鐘等待；Batch API 僅適合後台非同步任務（offline 評估、大批量處理）\n- **Prompt Cache Race Condition**：連續兩次呼叫間隔過短（< 2 秒），第二次 cache miss 機率約 40%；生產環境應在 cache-dependent 呼叫間加入延遲（見 [[entities/claude-code]]）\n- **網頁抓取 token 效率**：直接傳入 HTML 有效內容佔比約 20%，轉換為乾淨 Markdown 後可節省約 80% 的 token 消耗\n\n### Plugin 設計模式\n\n- **避免不必要 context 載入**：最常見反模式是在每次對話開頭載入大量無關 context，直接消耗大量 token 配額\n- **5 個通用設計模式**（2026-04-28 社群整理）：觸發條件明確化、context 最小化、step 拆分、成本監測、人工確認節點\n- **Scrum 工作流轉外掛**：將固定流程轉為插件的實際成本對比顯示，設計不良的插件成本可達設計良好版本的數倍\n\n### 多 LLM 協作架構\n\n- **角色分工模型**：Claude Opus 擔任「首席工程師」持有否決權，Gemini Pro 負責「策略判斷」，人類保留最終資金決策權；270+ 條分歧記錄日誌顯示模型間存在真實且可記錄的意見差異\n- **異質模型互補**：Claude 與 Gemini 在同一工作流中協作的案例顯示，不同模型在不同決策層次（工程執行 vs 策略判斷）各有優勢，「單一最佳模型」假設受到挑戰\n- **否決機制設計**：賦予 AI agent 否決權的架構需要明確的優先序（人類 > Claude > Gemini），並記錄分歧以供後續分析\n\n### Prompt 精簡策略\n\n- **Caveman vs \"be brief.\" 等效**：系統性基準測試（24 題、6 類別）顯示兩者在 token 消耗與輸出品質上幾乎相當，複雜 prompt 壓縮外掛未帶來可量測的實質優勢；「兩字 prompt 足以媲美複雜外掛」提醒開發者應以實測而非直覺選擇工具\n\n### 工具生態痛點\n\n- **發現性差**：skills 與 MCP 伺服器散落各處，品質參差，缺乏集中發現機制\n- **主題模式**：Claude Code `auto` 主題僅啟動時偵測一次，不即時同步系統外觀（issue #2990）\n- **Session log 路徑**：`~/.claude/projects/` 儲存 JSONL 格式 session log，可供自製工具讀取分析\n- **Session 歷史保留**：預設 30 天自動刪除 session `.jsonl`；可執行 `npx agentinit agent set claude cleanupPeriodDays 365` 延長保留期\n\n### 知識圖譜應用\n\n- **Leiden 社群偵測建立程式碼知識圖譜**（graphify）：26 天達 450k+ 下載、40k stars，宣稱每次查詢可減少 71 倍 token 用量；意外使用場景包括 SQL schema、Obsidian vault、學術論文，顯示知識圖譜在非純程式碼領域也有廣泛應用\n- **git-backed Markdown 知識庫**（NanoBrain）：< 50ms append 延遲透過 hook 在 session 結束時更新，整合 Gmail/Google Calendar/Slack，是目前完整度最高的 AI Agent 跨工具共享知識庫方案\n\n### 封閉技能生態批判（2026-05-01）\n\n- **Anthropic 將新功能鎖在付費雲端**：社群批評 Ultraplan、Ultrareview、Cloud Security 等新功能鎖在付費雲端而非開放技能生態，使開放與封閉技能形成分裂\n- **「無法檢視的 prompt 就無法組合」**：社群擔憂封閉技能阻礙生態建設，降低開發者對工具行為的可預測性與可延伸性\n\n---\n\n## 熱門應用\n\n根據社群討論熱度（HN 分數、Reddit 回覆數）與跨平台出現頻率整理，每次 ingest 更新排名。\n\n| 應用                 | 類型   | 熱度     | 簡介                                           |\n| ------------------ | ---- | ------ | -------------------------------------------- |\n| **Claude Squad**   | 協作工具 | 🔥🔥🔥 | 多人多 agent 並行開發，orchestrator 分派任務並合併分支        |\n| **mux0**           | 終端工具 | 🔥🔥🔥 | 開源 macOS 終端，側邊欄即時顯示多 agent 狀態                |\n| **CC-Canary**      | 監測工具 | 🔥🔥🔥 | 讀取 session log 自動偵測效能漂移，HERMES.md bug 後更受重視  |\n| **Skills 知識框架化**   | 工作流  | 🔥🔥🔥 | 將書籍/文件轉為 skills，依語境自動觸發（14 本商業書案例）           |\n| **agent-order**    | 工作流  | 🔥🔥   | Codex + Claude 各自獨立寫 PRD 再互相批判，防止答案塌縮        |\n| **lipstyk**        | 品質工具 | 🔥🔥   | 靜態分析 AI 生成程式碼特有模式                            |\n| **分層模型策略**         | 使用技巧 | 🔥🔥   | Sonnet 主力 + Opus 諮詢，節省約 60% 用量               |\n| **claude-anyteam** | 整合工具 | 🔥🔥   | 讓 Codex/Gemini 加入 Claude Code Agent Teams    |\n| **流程 skill 化**     | 工作流  | 🔥     | 將多步驟設定流程包裝為單一 skill 取代 README                |\n| **WezTerm 主題同步**   | 環境配置 | 🔥     | Lua 事件鉤子實現 dark/light 即時同步（issue #2990 暫行方案） |\n| **EvanFlow**         | 工作流  | 🔥🔥   | TDD 驅動迴圈，16 技能 + 2 子代理人，每步人工確認，不自動 commit |\n| **Relay plugin**     | 工作流  | 🔥🔥   | 強制 Claude Code 先對齊問題本質再動手，Plan Mode 提問升級 |\n| **精簡 CLAUDE.md 策略** | 使用技巧 | 🔥🔥   | 以「規則」非「建議」撰寫，保持精簡，有效減少冗余與漂移（parsh 案例） |\n| **modularity plugin** | 架構工具 | 🔥     | Balanced Coupling 模型分析模組化，防 AI 加速技術債累積 |\n| **Groundtruth**       | 工作流  | 🔥🔥   | Stop Hook，強制 Claude 提供可驗證執行證明才能宣告完成 |\n| **SmolVM**            | 安全工具 | 🔥🔥   | 本機沙盒執行 Claude Code / Codex，單指令啟動，保護宿主系統 |\n| **Rapunzel**          | 終端工具 | 🔥🔥   | 樹狀標籤頁多代理瀏覽器，支援 Claude Code / Codex / Gemini |\n| **OpenCode-power-pack** | 整合工具 | 🔥   | 11 個 Claude Code 官方技能移植至 OpenCode，打破工具綁定 |\n| **PullMD**              | MCP 工具 | 🔥🔥 | 網頁抓取時先轉 Markdown，避免 token 浪費（有效內容僅佔 HTML 約 20%） |\n| **Jupyter MCP server**  | 整合工具 | 🔥🔥 | 取代內建 NotebookEdit，支援完整 kernel 互動與輸出讀取 |\n| **Sonnet 4.6 工作流重設計** | 使用技巧 | 🔥🔥 | 調整工作流設計後 Sonnet 以 30% 預算達到 Opus 73% 預算的產出 |\n| **Plugin 反模式整理**   | 工作流  | 🔥🔥 | 5 個通用 Claude Code 插件設計模式，避免不必要 context 載入耗盡 token |\n| **Harness**             | 工作流  | 🔥🔥 | 多 Git worktree 並行管理多個 Claude Code agent，補 cmux/Conductor 不足 |\n| **CodeThis**            | MCP 工具 | 🔥  | MCP 原生 paste bin，AI 可直接建立語法高亮程式碼分享貼文 |\n| **Claude Exporter**     | 工具    | 🔥  | Chrome 擴充功能，對話匯出 PDF/Word/Notion，填補持久化需求 |\n| **Cockpit**             | 工具    | 🔥  | 開源 Web UI，讓 Claude Code 不再限於終端機 |\n| **Nimbalyst**           | 協作工具 | 🔥🔥 | 多 agent 視覺化工作台，WYSIWYG diff 逐一審核各 Agent 修改 |\n| **Throttle Meter**      | 監測工具 | 🔥🔥 | macOS menubar 用量計，即時顯示 5h 滾動窗口與週配額 |\n| **Mneme**               | 架構工具 | 🔥🔥 | repo-native ADR 注入，CI 攔截違反架構的 PR |\n| **Brifly**              | 工作流  | 🔥🔥 | Claude Code 跨 session 持久記憶層，支援多人協作 |\n| **Trent**               | 安全工具 | 🔥🔥 | Claude Code 內嵌架構層安全評估，補足 CVE 掃描對業務邏輯的盲點 |\n| **Linear+Lanes MCP**    | 整合工具 | 🔥  | issue-to-code 一鍵流程，Claude Code 直接讀取 Linear 待辦票 |\n| **Omar**                | 終端工具 | 🔥🔥🔥 | TUI 儀表板統一管理 100 個 Claude Code Agent，支援層級化 Agent 管理 |\n| **graphify**            | 知識圖譜 | 🔥🔥🔥 | Leiden 偵測建程式碼知識圖譜，71 倍 token 減少，26 天 450k+ 下載 40k stars |\n| **NanoBrain**           | 知識庫  | 🔥🔥 | git-backed Markdown 知識庫，< 50ms append，整合 Gmail/Calendar/Slack |\n| **Council**             | 多模型  | 🔥🔥 | 並行執行 claude+codex+gemini 同一 prompt，主持模型彙整並標記分歧 |\n| **Chrome 用量監控擴充**  | 監測工具 | 🔥🔥 | 即時顯示 token 數、context 使用量、prompt cache 倒數、速率限制進度條 |\n| **Destiny**             | 趣味工具 | 🔥  | Claude Code 占卜插件，Python 計算八字/卦象，LLM 詮釋文字 |\n| **Mote**                | 創意工具 | 🔥  | 可自主玩 Minecraft Bedrock 的 Claude Code Agent |\n\n> 熱度定義：🔥🔥🔥 跨平台多次出現 / 社群廣泛討論；🔥🔥 單平台高互動；🔥 值得關注但尚未擴散\n\n---\n\n## 目前結論\n\n- 社群工具生態活躍，每日都有新工具或工作流分享\n- Multi-agent 協作是最熱門的探索方向，但有效的任務分解方式尚無定論\n- Skills 正在從「指令封裝」演進為「知識框架載體」\n- 工具發現性是尚未解決的生態系問題\n- CLAUDE.md 最佳實踐逐漸收斂：精簡 + 規則導向優於冗長 + 建議導向\n- 「問題定義先於實作」正成為新的工作流範式（Relay plugin、harness 模式等多個案例印證）\n\n---\n\n## 相關實體\n\n- [[entities/claude-code]]\n- [[entities/pricing]]（token 消耗與模型選擇策略相關）\n- [[entities/project-deal]]（Claude 代理人交易談判實驗，multi-agent 應用的商業探索）\n- [[entities/claude-design]]（AI 設計工具，與 Claude Code + Figma MCP 工作流有定位重疊）\n\n## 參考來源\n\n- [[news/2026-04-25]]\n- [[news/2026-04-26]]\n- [[news/2026-04-27]]\n- [[news/2026-04-28]]\n- [[news/2026-04-29]]\n- [[news/2026-04-30]]\n- [[news/2026-05-02]]\n\n## 時序\n\n### 2026-05-01\n- **Omar — 100 Agent TUI 管理儀表板**：兩位開發者因不堪多視窗切換之苦打造，支援 Agent 層級化管理（類似公司組織架構），展示 multi-agent 工作流管理工具需求快速浮現\n- **graphify — 知識圖譜插件爆紅**：26 天達全球 GitHub rank #2（450k+ 下載、40k stars），透過 Leiden 社群偵測建立程式碼知識圖譜，宣稱 71 倍 token 效率；意外使用場景（SQL schema、Obsidian vault、學術論文）顯示知識圖譜在非程式碼領域的通用性\n- **Chrome 用量監控擴充**：在 Claude.ai 介面即時顯示每則訊息 token 數、context 使用量、提示快取倒數計時及速率限制進度條，解決原生介面對用量透明度幾乎為零的痛點\n- **NanoBrain — git-backed 個人知識庫**：< 50ms append 延遲透過 hook 在 session 結束時更新，整合 Gmail/Google Calendar/Slack 定時匯入，適合需要 AI Agent 跨工具共享長期知識的場景\n- **Council — 多模型並行 CLI**：自動偵測系統上的 claude/codex/gemini 並平行執行同一 prompt，由「主持人」模型彙整並標記分歧點；MIT 授權，適合多模型交叉驗證場景\n- **自修改 Agent 系統節省 50% API 費用**：讓本地 GPU（RTX 5070）在閒置時段執行低優先任務，有效降低 50% Claude API 費用；repo 已開源\n- **Destiny 占卜插件 + Mote Minecraft Agent**：社群創意應用持續延伸 Claude Code 邊界，Destiny 底層以 Python 計算八字/卦象確保結果可驗證、Mote 可自主玩 Minecraft Bedrock\n\n### 2026-04-30\n- **Nimbalyst 多 agent 視覺化工作台**：開源工具支援 Claude Code/Codex/Opencode，透過 WYSIWYG diff 介面逐一審核各 Agent 修改，同時支援 Excalidraw/試算表/Monaco 等多種編輯器，填補多 agent 協作的可視化需求\n- **Throttle Meter 用量監控**：macOS menubar 工具，從 `~/.claude/projects/*.jsonl` 即時計算 5 小時滾動窗口用量，開發動機是頻繁被限速；無遙測、無網路請求，MIT 授權\n- **Mneme 架構決策層**：repo-native CLI，將 ADR 直接存在程式碼庫旁並在 Claude 呼叫前自動注入，支援 CI 攔截違反架構的 PR，是 CLAUDE.md 外的另一種架構治理模式\n- **Brifly 持久記憶層**：為 Claude Code 提供跨 session 的專案架構知識儲存，支援多人協作與版本追蹤，直接對抗 AI 輔助開發中的「無狀態」問題\n- **Linear + Lanes MCP issue-to-code 流程**：串接 Linear 官方 MCP 與本地 Lanes MCP，讓 Agent 直接讀取 Linear 待辦票並啟動 Claude Code 工作階段，實現 issue 到程式碼的一鍵流程\n- **Trent 架構層安全審查**：在 Claude Code 環境中嵌入情境化安全稽核，補足傳統 CVE 掃描器對業務邏輯的盲點\n- **Claude Opus + Gemini 多 LLM 交易架構**：Opus 擔任首席工程師（持有否決權）、Gemini 負責策略判斷，累積超過 270 條分歧記錄日誌，是目前公開最詳細的 Claude + Gemini 角色分工實驗\n\n### 2026-04-29\n- **Champion Kit 官方推廣包**：Anthropic 發布官方「Champion Kit」，為企業推廣者提供 30 天計畫、常見疑慮應對話術與分享素材，顯示 Anthropic 透過基層工程師滲透企業的策略已正式化\n- **Web UI 工具 Cockpit**：開源瀏覽器介面讓 Claude Code 擺脫終端機限制，補充 CLI-first 定位不足之處\n- **Harness 多 worktree 並行管理**：在多個 Git worktree 同時管理多個 Claude Code agent，作者明確指出現有工具（cmux、Conductor）的不足\n- **CodeThis MCP paste bin**：專為 Claude Code 設計，AI 可直接透過 MCP server 建立程式碼分享貼文，支援 100+ 語言語法高亮\n- **Claude Exporter**：Chrome 擴充功能將 Claude 對話匯出為 PDF/Word/Google Docs/Notion，填補對話持久化的社群需求\n- **Caveman vs \"be brief.\" 基準測試**：系統性 24 題、6 類別測試顯示兩者在 token 數量與輸出品質上幾乎相當，複雜外掛未帶來可量測優勢，「兩字 prompt 足以媲美複雜外掛」成為討論焦點\n\n### 2026-04-28\n- **Jupyter Notebook + MCP 整合**：推薦以 Jupyter MCP server 取代 Claude Code 內建 NotebookEdit 工具，需額外 10 分鐘設定，但支援完整儲存格執行、輸出讀取與 IPython kernel 互動\n- **Batch API 不適合 agent**：開發者實測將 agent 每輪呼叫走 Batch API（享 50% 折扣），結果每筆 batch 需 90–120 秒，5 輪工具呼叫的 agent 對話變成 10 分鐘等待；結論：Batch API 僅適合後台非同步任務，不適用互動式 agent\n- **PullMD HTML 轉 Markdown**：為 Claude Code 建立 MCP server，在抓取網頁時先轉換為乾淨 Markdown，一般文章有效內容僅佔原始 HTML 的約 20%，可大幅減少 token 浪費\n- **Sonnet 4.6 替代 Opus 工作流**：調整 agent 工作流程設計後，Sonnet 4.6 以 30% 月預算完成相當於前週 73% 預算的工作量，且程式碼品質更佳；關鍵在工作流重新設計，不只是換模型\n- **Claude Code Plugin 反模式與模式**：作者整理將 scrum 工作流轉為外掛的經驗：不必要的 context 載入等反模式大量消耗 token，重構後整理出 5 個可通用設計模式（附前後成本對比）\n- **Effort 等級不影響拒絕姿態**：系統性測試 Opus 4.7（39 份測試腳本、medium / high / xhigh 三種 effort）顯示拒絕姿態完全一致，effort 僅影響回答深度；顛覆「高 effort 更容易拒絕」的假設\n- **AI 生成程式碼著作權分析**：法律分析指出 AI 生成程式碼可能完全不受著作權保護、歸屬雇主，或受開放原始碼授權污染，建議開發者主動記錄自身在 AI 輔助開發中的貢獻\n- **AI agent 安全事故**：Cursor + Claude Opus 9 秒刪除生產資料庫並清空備份，引發企業建立沙盒隔離、操作確認與不可逆動作攔截的討論；見 [[topics/ai-agent-safety]]\n\n### 2026-04-27\n- **TDD 驅動開發迴圈**：EvanFlow — 16 個技能 + 2 個子代理人，每步驟設有人工確認節點，不自動 commit，強調使用者控制\n- **問題定義優先**：Relay plugin — 強制 Claude Code 在動手寫程式前深入對齊問題定義，核心改變是將 Plan Mode 的提問層級從「實作細節」拉升至「問題本質」\n- **精簡 CLAUDE.md 策略**：parsh 案例 — 將 CLAUDE.md 保持精簡、以「規則」而非「建議」形式撰寫，有效減少冗余代碼與漂移行為\n- **架構層自動化審查**：modularity plugin — Balanced Coupling 模型分析模組化設計，解決 AI 加速代碼生成同時技術債也加速累積的問題\n- **Figma MCP 設計工作流**：Claude Code + Figma MCP 搭配，Creative Bloq 評測 AI 輔助設計效果\n- **effort 等級 vs 拒絕率**：系統性測試顯示提升 effort 不增加拒絕率；medium vs high 差異僅在回答深度（正面回應增長 29–47%），拒絕僅增長 11%，顛覆「高 effort 更容易拒絕」假設\n- **harness 設計模式實作**：將 Anthropic 官方 harness 設計模式實作為 Claude Code 插件，發現 Claude 常在測試未通過時自信回報「成功」\n- **Cerbos 授權政策技能**：將自然語言需求轉換為帶測試案例的結構化 authZ policy，指出 AI 幻覺在此類任務直接導致安全漏洞\n- **vibe-coding 里程碑**：非技術背景 PM 以 Claude 在 47 天內獨立開發並上線產品，強調範疇控制與清晰需求撰寫為成功核心\n- **多代理瀏覽器**：Rapunzel — 以樹狀標籤頁介面管理多個同時運行的 AI 代理（Claude Code / Codex / Gemini），定位為「Chrome for agents」，解決終端機多代理追蹤困難的問題\n- **代理人沙盒**：SmolVM — 讓 Claude Code 與 Codex 在完全隔離的本機沙盒中執行，單指令啟動，支援 git 憑證整合，保護宿主系統安全\n- **完成驗證 Hook**：Groundtruth — Stop Hook，強制 Claude Code 在宣告「完成」前必須提供可驗證的執行證明，否則拒絕結束回合，解決 Claude 自信宣稱完成但實際未完成的問題\n- **跨工具 Skills 移植**：OpenCode-power-pack — 將 Anthropic 官方 11 個 Claude Code 技能（代碼審查、安全審計、前端設計等）移植至 OpenCode，打破官方插件的工具綁定限制\n- **APFS Worktree 優化**：利用 Apple File System 的 clone 機制建立 WorktreeCreate hook，多個 worktree 共享相同檔案不佔額外空間，Mac 用戶實用\n- **邊學邊做技能模組**：在完成 Claude Code 架構工作後，提供以認知科學（預測、生成、間隔重複）為基礎的 10–15 分鐘學習練習，讓開發者在使用 AI 的同時累積技術深度\n- **MCP 創意實驗**：Doom Inside Claude Code — 將原版 Doom 嵌入 Claude Code 狀態列，可由使用者手動控制或讓 Claude 透過 MCP 自主遊玩，展示 MCP 的創意應用邊界\n\n### 2026-04-26\n- **多人協作編碼**：Claude Squad — 每人以自己的 Claude Code 作為 agent，orchestrator 分派平行任務並自動合併分支\n- **多 agent 終端**：mux0 — 開源 macOS 終端機，側邊欄即時顯示 agent 執行狀態（running / idle / needs input）\n- **PRD 協作防污染**：agent-order — Codex 與 Claude 各自獨立寫 PRD 再互相批判，避免答案向先開口方塌縮\n- **知識框架封裝**：14 本商業書（The Mom Test、$100M Offers 等）轉為 skills，依問題語境自動載入\n- **流程自動化**：8 步驟開源專案設定流程包裝為單一 skill，降低貢獻者上手門檻\n- **AI 程式碼品質**：lipstyk — 靜態分析工具，專門偵測機器生成程式碼的特有模式\n- **模型分層策略**：Sonnet 為主力，需要時讓 Sonnet「諮詢」Opus，聲稱節省約 60% 用量\n- **安全邊界研究**：Sonnet 4.6 在 high / max 推理強度下拒絕行為完全一致（26/26），推理努力程度不影響安全邊界\n\n### 2026-04-25\n- **效能監測**：CC-Canary — 讀取 `~/.claude/projects/` JSONL log，自動偵測效能漂移\n- **跨模型整合**：claude-anyteam — 讓 OpenAI Codex CLI 加入 Claude Code Agent Teams\n- **Web 管理介面**：Claude Code Manager — 集中管理 CLAUDE.md、hooks、skills\n- **Stop hooks 失效 workaround**：Claude 4.7 起無視自訂 stop hooks，社群以其他事件鉤子替代\n"
+      "markdown": "# 社群技術應用趨勢\n\n**狀態：** ongoing\n**開始日期：** 2026-04-25\n**最後更新：** 2026-05-02\n\n---\n\n## 摘要\n\n追蹤 Claude Code 社群在實際開發中累積的技術應用模式、工作流創新與工具生態。每次 ingest 從「💬 技術熱度討論」區塊萃取有價值的技術發現，持續累積形成社群最佳實踐知識庫。\n\n---\n\n## 技術彙整\n\n### Multi-agent 工作流\n\n- **任務分解是核心難點**：社群詢問如何有效運用 20 個平行 Claude 實例，顯示 agentic 思維的學習曲線仍高\n- **污染防止原則**：多 agent 協作時，讓各 agent 先獨立完成再互相審查，避免先看到他人答案後的收斂偏差（agent-order 的核心設計）\n- **分支合併策略**：Claude Squad 以 orchestrator Claude 負責分派任務與合併 git 分支，而非讓各 agent 直接操作主分支\n\n### Skills 設計模式\n\n- **觸發機制**：Skills 透過描述（description）自動觸發，適合封裝有明確情境的任務\n- **知識框架化**：將外部知識（書籍、文件）轉為 skills，讓 Claude 在對話中自動引用對應框架\n- **流程替代 README**：複雜設定流程包裝為 skill，比 README 更可靠且可持續維護\n\n### 模型使用策略\n\n- **分層模型**：Sonnet 主力 + Opus 諮詢，節省約 60% 用量（未經獨立驗證）\n- **推理強度 vs 安全邊界**：高推理強度不會放寬安全限制，兩者獨立控制\n- **Context window 縮減**：舊版模型將回退至 200k context，依賴超長 context 的工作流需重新評估\n\n### CLAUDE.md 設計原則\n\n- **精簡優於詳盡**：CLAUDE.md 保持精簡（parsh 案例），以「規則」（rule）而非「建議」（suggestion）撰寫，有效減少 AI 冗余代碼與行為漂移\n- **問題定義先於實作**：Relay plugin 的核心洞見 — Plan Mode 提問層級若停在「實作細節」，AI 常繞過問題本質直接動手；拉升至「為什麼這樣設計」層級效果顯著\n- **人工確認節點**：EvanFlow 每步驟設有確認節點，不自動 commit；此模式在需要嚴謹品質控制的場景比全自動化更受信賴\n\n### effort 等級與模型行為\n\n- **effort 提升 ≠ 拒絕率提升**：系統性測試（CVP Run 5，Opus 4.6）顯示 medium → high effort 主要影響回答深度（29–47% 增長），拒絕率增長僅 11%\n- **Opus vs Sonnet 穩定性差異**：HN 社群數據顯示 Sonnet 在 context 不完整時非預期失誤率達 20–35%；Opus 在不完整情境下明顯更穩定\n- **Usage Policy 與 effort 無關**：Opus 4.7 的隨機 Usage Policy 拒絕問題（見 [[entities/opus-4-7]]）與 effort 等級無關，屬獨立 bug\n\n### API 使用模式\n\n- **Batch API 不適合 agent**：每筆 batch 需 90–120 秒，互動式 agent 5 輪對話變成 10 分鐘等待；Batch API 僅適合後台非同步任務（offline 評估、大批量處理）\n- **Prompt Cache Race Condition**：連續兩次呼叫間隔過短（< 2 秒），第二次 cache miss 機率約 40%；生產環境應在 cache-dependent 呼叫間加入延遲（見 [[entities/claude-code]]）\n- **網頁抓取 token 效率**：直接傳入 HTML 有效內容佔比約 20%，轉換為乾淨 Markdown 後可節省約 80% 的 token 消耗\n\n### Plugin 設計模式\n\n- **避免不必要 context 載入**：最常見反模式是在每次對話開頭載入大量無關 context，直接消耗大量 token 配額\n- **5 個通用設計模式**（2026-04-28 社群整理）：觸發條件明確化、context 最小化、step 拆分、成本監測、人工確認節點\n- **Scrum 工作流轉外掛**：將固定流程轉為插件的實際成本對比顯示，設計不良的插件成本可達設計良好版本的數倍\n\n### 多 LLM 協作架構\n\n- **角色分工模型**：Claude Opus 擔任「首席工程師」持有否決權，Gemini Pro 負責「策略判斷」，人類保留最終資金決策權；270+ 條分歧記錄日誌顯示模型間存在真實且可記錄的意見差異\n- **異質模型互補**：Claude 與 Gemini 在同一工作流中協作的案例顯示，不同模型在不同決策層次（工程執行 vs 策略判斷）各有優勢，「單一最佳模型」假設受到挑戰\n- **否決機制設計**：賦予 AI agent 否決權的架構需要明確的優先序（人類 > Claude > Gemini），並記錄分歧以供後續分析\n\n### Prompt 精簡策略\n\n- **Caveman vs \"be brief.\" 等效**：系統性基準測試（24 題、6 類別）顯示兩者在 token 消耗與輸出品質上幾乎相當，複雜 prompt 壓縮外掛未帶來可量測的實質優勢；「兩字 prompt 足以媲美複雜外掛」提醒開發者應以實測而非直覺選擇工具\n\n### 工具生態痛點\n\n- **發現性差**：skills 與 MCP 伺服器散落各處，品質參差，缺乏集中發現機制\n- **主題模式**：Claude Code `auto` 主題僅啟動時偵測一次，不即時同步系統外觀（issue #2990）\n- **Session log 路徑**：`~/.claude/projects/` 儲存 JSONL 格式 session log，可供自製工具讀取分析\n- **Session 歷史保留**：預設 30 天自動刪除 session `.jsonl`；可執行 `npx agentinit agent set claude cleanupPeriodDays 365` 延長保留期\n\n### 知識圖譜應用\n\n- **Leiden 社群偵測建立程式碼知識圖譜**（graphify）：26 天達 450k+ 下載、40k stars，宣稱每次查詢可減少 71 倍 token 用量；意外使用場景包括 SQL schema、Obsidian vault、學術論文，顯示知識圖譜在非純程式碼領域也有廣泛應用\n- **git-backed Markdown 知識庫**（NanoBrain）：< 50ms append 延遲透過 hook 在 session 結束時更新，整合 Gmail/Google Calendar/Slack，是目前完整度最高的 AI Agent 跨工具共享知識庫方案\n\n### 封閉技能生態批判（2026-05-01）\n\n- **Anthropic 將新功能鎖在付費雲端**：社群批評 Ultraplan、Ultrareview、Cloud Security 等新功能鎖在付費雲端而非開放技能生態，使開放與封閉技能形成分裂\n- **「無法檢視的 prompt 就無法組合」**：社群擔憂封閉技能阻礙生態建設，降低開發者對工具行為的可預測性與可延伸性\n\n### Hooks 精細化控制\n\n- **PreToolUse 四種 exit code**：Block（阻止工具執行）、Allow（放行）、Modify（修改工具輸入後放行）、Error（視為工具執行失敗）；官方文件僅介紹基礎用法，四種 exit code 的實際差異遠超文件描述，影響攔截、允許、修改等場景的設計決策\n- **PreToolUse 是一台小型狀態機**：每次工具調用前皆可插入判斷邏輯，結合 exit code 可實現精細的工具調用治理\n\n### Token 路由與成本優化（2026-05-02）\n\n- **CLAUDE.md 路由規則委派低優先任務**：透過 CLAUDE.md 路由規則，將批量文件讀取、樣板生成等繁瑣任務委派給 $0.02/call 的低成本模型（如 Kimi K2.5），在不升級訂閱的前提下大幅提升 Pro 額度使用效率\n- **異質模型路由的關鍵設計**：任務特性決定路由目標；對話性推理走高能力模型，批量機械性任務走低成本模型；可在同一 CLAUDE.md 用條件規則控制\n\n### 記憶體治理與行為漂移防範（2026-05-02）\n\n- **未版本控制的記憶會導致行為偏移**：研究顯示未經版本控制的 Claude Code 代理記憶會隨專案規模增長產生可量測的「行為偏移」（anti-drift），表現為指令遵從性下降、行為不一致性增加\n- **記憶審計框架**：解決方案包含定期審計 agent 記憶、版本控制記憶文件（如納入 git）、定期 prune 過期或衝突的記憶條目\n\n### 規格驅動開發（2026-05-02）\n\n- **Spec-Driven Development vs Vibe Coding**：呼應 Karpathy「從 Vibe Coding 到代理工程」演講，強調人類必須主導規格設計並與代理協作制定計畫；嚴謹的規格文件（spec）應取代依賴模型自由發揮的模糊工作方式\n- **與 CLAUDE.md 最佳實踐一致**：規格驅動開發本質上是將「規格設計的責任留在人類手中」，與 CLAUDE.md 精簡+規則導向的原則相互呼應\n\n### CLAUDE.md 跨 repo 傳播\n\n- **全局 CLAUDE.md 作為遷移計劃載體**：將 `~/.claude/CLAUDE.md` 中積累的規範批量傳播至多個 repo，讓全局規範落地到各個專案；此模式下 CLAUDE.md 從「單一 repo 指令檔」升級為「跨 repo 遷移計劃的共同載體」\n\n---\n\n## 熱門應用\n\n根據社群討論熱度（HN 分數、Reddit 回覆數）與跨平台出現頻率整理，每次 ingest 更新排名。\n\n| 應用                 | 類型   | 熱度     | 簡介                                           |\n| ------------------ | ---- | ------ | -------------------------------------------- |\n| **Claude Squad**   | 協作工具 | 🔥🔥🔥 | 多人多 agent 並行開發，orchestrator 分派任務並合併分支        |\n| **mux0**           | 終端工具 | 🔥🔥🔥 | 開源 macOS 終端，側邊欄即時顯示多 agent 狀態                |\n| **CC-Canary**      | 監測工具 | 🔥🔥🔥 | 讀取 session log 自動偵測效能漂移，HERMES.md bug 後更受重視  |\n| **Skills 知識框架化**   | 工作流  | 🔥🔥🔥 | 將書籍/文件轉為 skills，依語境自動觸發（14 本商業書案例）           |\n| **agent-order**    | 工作流  | 🔥🔥   | Codex + Claude 各自獨立寫 PRD 再互相批判，防止答案塌縮        |\n| **lipstyk**        | 品質工具 | 🔥🔥   | 靜態分析 AI 生成程式碼特有模式                            |\n| **分層模型策略**         | 使用技巧 | 🔥🔥   | Sonnet 主力 + Opus 諮詢，節省約 60% 用量               |\n| **claude-anyteam** | 整合工具 | 🔥🔥   | 讓 Codex/Gemini 加入 Claude Code Agent Teams    |\n| **流程 skill 化**     | 工作流  | 🔥     | 將多步驟設定流程包裝為單一 skill 取代 README                |\n| **WezTerm 主題同步**   | 環境配置 | 🔥     | Lua 事件鉤子實現 dark/light 即時同步（issue #2990 暫行方案） |\n| **EvanFlow**         | 工作流  | 🔥🔥   | TDD 驅動迴圈，16 技能 + 2 子代理人，每步人工確認，不自動 commit |\n| **Relay plugin**     | 工作流  | 🔥🔥   | 強制 Claude Code 先對齊問題本質再動手，Plan Mode 提問升級 |\n| **精簡 CLAUDE.md 策略** | 使用技巧 | 🔥🔥   | 以「規則」非「建議」撰寫，保持精簡，有效減少冗余與漂移（parsh 案例） |\n| **modularity plugin** | 架構工具 | 🔥     | Balanced Coupling 模型分析模組化，防 AI 加速技術債累積 |\n| **Groundtruth**       | 工作流  | 🔥🔥   | Stop Hook，強制 Claude 提供可驗證執行證明才能宣告完成 |\n| **SmolVM**            | 安全工具 | 🔥🔥   | 本機沙盒執行 Claude Code / Codex，單指令啟動，保護宿主系統 |\n| **Rapunzel**          | 終端工具 | 🔥🔥   | 樹狀標籤頁多代理瀏覽器，支援 Claude Code / Codex / Gemini |\n| **OpenCode-power-pack** | 整合工具 | 🔥   | 11 個 Claude Code 官方技能移植至 OpenCode，打破工具綁定 |\n| **PullMD**              | MCP 工具 | 🔥🔥 | 網頁抓取時先轉 Markdown，避免 token 浪費（有效內容僅佔 HTML 約 20%） |\n| **Jupyter MCP server**  | 整合工具 | 🔥🔥 | 取代內建 NotebookEdit，支援完整 kernel 互動與輸出讀取 |\n| **Sonnet 4.6 工作流重設計** | 使用技巧 | 🔥🔥 | 調整工作流設計後 Sonnet 以 30% 預算達到 Opus 73% 預算的產出 |\n| **Plugin 反模式整理**   | 工作流  | 🔥🔥 | 5 個通用 Claude Code 插件設計模式，避免不必要 context 載入耗盡 token |\n| **Harness**             | 工作流  | 🔥🔥 | 多 Git worktree 並行管理多個 Claude Code agent，補 cmux/Conductor 不足 |\n| **CodeThis**            | MCP 工具 | 🔥  | MCP 原生 paste bin，AI 可直接建立語法高亮程式碼分享貼文 |\n| **Claude Exporter**     | 工具    | 🔥  | Chrome 擴充功能，對話匯出 PDF/Word/Notion，填補持久化需求 |\n| **Cockpit**             | 工具    | 🔥  | 開源 Web UI，讓 Claude Code 不再限於終端機 |\n| **Nimbalyst**           | 協作工具 | 🔥🔥 | 多 agent 視覺化工作台，WYSIWYG diff 逐一審核各 Agent 修改 |\n| **Throttle Meter**      | 監測工具 | 🔥🔥 | macOS menubar 用量計，即時顯示 5h 滾動窗口與週配額 |\n| **Mneme**               | 架構工具 | 🔥🔥 | repo-native ADR 注入，CI 攔截違反架構的 PR |\n| **Brifly**              | 工作流  | 🔥🔥 | Claude Code 跨 session 持久記憶層，支援多人協作 |\n| **Trent**               | 安全工具 | 🔥🔥 | Claude Code 內嵌架構層安全評估，補足 CVE 掃描對業務邏輯的盲點 |\n| **Linear+Lanes MCP**    | 整合工具 | 🔥  | issue-to-code 一鍵流程，Claude Code 直接讀取 Linear 待辦票 |\n| **Omar**                | 終端工具 | 🔥🔥🔥 | TUI 儀表板統一管理 100 個 Claude Code Agent，支援層級化 Agent 管理 |\n| **graphify**            | 知識圖譜 | 🔥🔥🔥 | Leiden 偵測建程式碼知識圖譜，71 倍 token 減少，26 天 450k+ 下載 40k stars |\n| **NanoBrain**           | 知識庫  | 🔥🔥 | git-backed Markdown 知識庫，< 50ms append，整合 Gmail/Calendar/Slack |\n| **Council**             | 多模型  | 🔥🔥 | 並行執行 claude+codex+gemini 同一 prompt，主持模型彙整並標記分歧 |\n| **Chrome 用量監控擴充**  | 監測工具 | 🔥🔥 | 即時顯示 token 數、context 使用量、prompt cache 倒數、速率限制進度條 |\n| **Destiny**             | 趣味工具 | 🔥  | Claude Code 占卜插件，Python 計算八字/卦象，LLM 詮釋文字 |\n| **Mote**                | 創意工具 | 🔥  | 可自主玩 Minecraft Bedrock 的 Claude Code Agent |\n| **Governor**            | 工具    | 🔥  | Token 浪費優化插件，效果存疑（HN 社群質疑基準測試粗糙，未評估輸出品質） |\n| **Caliber**             | 工具    | 🔥🔥 | 跨工具 AI config 統一管理（CLAUDE.md/.cursor/rules/AGENTS.md），本週 888 stars |\n\n> 熱度定義：🔥🔥🔥 跨平台多次出現 / 社群廣泛討論；🔥🔥 單平台高互動；🔥 值得關注但尚未擴散\n\n---\n\n## 目前結論\n\n- 社群工具生態活躍，每日都有新工具或工作流分享\n- Multi-agent 協作是最熱門的探索方向，但有效的任務分解方式尚無定論\n- Skills 正在從「指令封裝」演進為「知識框架載體」\n- 工具發現性是尚未解決的生態系問題\n- CLAUDE.md 最佳實踐逐漸收斂：精簡 + 規則導向優於冗長 + 建議導向\n- 「問題定義先於實作」正成為新的工作流範式（Relay plugin、harness 模式等多個案例印證）\n\n---\n\n## 相關實體\n\n- [[entities/claude-code]]\n- [[entities/pricing]]（token 消耗與模型選擇策略相關）\n- [[entities/project-deal]]（Claude 代理人交易談判實驗，multi-agent 應用的商業探索）\n- [[entities/claude-design]]（AI 設計工具，與 Claude Code + Figma MCP 工作流有定位重疊）\n\n## 參考來源\n\n- [[news/2026-04-25]]\n- [[news/2026-04-26]]\n- [[news/2026-04-27]]\n- [[news/2026-04-28]]\n- [[news/2026-04-29]]\n- [[news/2026-04-30]]\n- [[news/2026-05-02]]\n\n## 時序\n\n### 2026-05-02\n- **PreToolUse Hooks 四種 exit code**：深度解析 Block/Allow/Modify/Error 四種 exit code 在攔截、放行、修改工具調用等場景的實際差異，官方文件嚴重低估其複雜度\n- **Token 路由降成本**：開發者透過 CLAUDE.md 路由規則將繁瑣任務委派給 Kimi K2.5 等 $0.02/call 低成本模型，不升級訂閱即可大幅提升 Pro 額度效率（解決每週三就耗盡配額的問題）\n- **Governor — token 優化插件（存疑）**：宣稱可減少 Claude Code token 浪費，但 HN 社群質疑基準測試粗糙，僅統計 token 數量未評估輸出品質，需更嚴謹評測\n- **Caliber — 跨工具 AI config 統一管理**：開源工具統一版控 CLAUDE.md、.cursor/rules、AGENTS.md 等跨平台配置，本週突破 888 stars，社群徵集功能需求\n- **記憶體防漂移框架**：agent 記憶未版本控制時會隨規模增長產生可量測的行為偏移；具體審計框架：定期 prune、版本控制記憶文件、標記衝突條目\n- **規格驅動開發**：呼應 Karpathy 演講，主張以嚴謹規格文件取代 vibe coding，人類主導規格設計，AI 負責實作執行\n- **CLAUDE.md 跨 repo 傳播**：將 `~/.claude/CLAUDE.md` 中積累的規範批量傳播至多個 repo，以全局 CLAUDE.md 作為跨 repo 遷移計畫的共同載體\n- **Agentic Knowledge Base（Karpathy LLM wiki 進化版）**：在 Karpathy LLM Wiki 基礎上加入語意搜尋 adapter 並整合 TickTick 等工具，打造可被代理查詢的工作知識系統\n- **sudo MCP 插件**：自製 MCP 解決 Claude Code 代理需要 root 權限時的工作流中斷，需提權時彈出密碼視窗，完成後將 stdout/stderr 與 exit code 回傳代理；社群討論更安全的替代做法\n\n### 2026-05-01\n- **Omar — 100 Agent TUI 管理儀表板**：兩位開發者因不堪多視窗切換之苦打造，支援 Agent 層級化管理（類似公司組織架構），展示 multi-agent 工作流管理工具需求快速浮現\n- **graphify — 知識圖譜插件爆紅**：26 天達全球 GitHub rank #2（450k+ 下載、40k stars），透過 Leiden 社群偵測建立程式碼知識圖譜，宣稱 71 倍 token 效率；意外使用場景（SQL schema、Obsidian vault、學術論文）顯示知識圖譜在非程式碼領域的通用性\n- **Chrome 用量監控擴充**：在 Claude.ai 介面即時顯示每則訊息 token 數、context 使用量、提示快取倒數計時及速率限制進度條，解決原生介面對用量透明度幾乎為零的痛點\n- **NanoBrain — git-backed 個人知識庫**：< 50ms append 延遲透過 hook 在 session 結束時更新，整合 Gmail/Google Calendar/Slack 定時匯入，適合需要 AI Agent 跨工具共享長期知識的場景\n- **Council — 多模型並行 CLI**：自動偵測系統上的 claude/codex/gemini 並平行執行同一 prompt，由「主持人」模型彙整並標記分歧點；MIT 授權，適合多模型交叉驗證場景\n- **自修改 Agent 系統節省 50% API 費用**：讓本地 GPU（RTX 5070）在閒置時段執行低優先任務，有效降低 50% Claude API 費用；repo 已開源\n- **Destiny 占卜插件 + Mote Minecraft Agent**：社群創意應用持續延伸 Claude Code 邊界，Destiny 底層以 Python 計算八字/卦象確保結果可驗證、Mote 可自主玩 Minecraft Bedrock\n\n### 2026-04-30\n- **Nimbalyst 多 agent 視覺化工作台**：開源工具支援 Claude Code/Codex/Opencode，透過 WYSIWYG diff 介面逐一審核各 Agent 修改，同時支援 Excalidraw/試算表/Monaco 等多種編輯器，填補多 agent 協作的可視化需求\n- **Throttle Meter 用量監控**：macOS menubar 工具，從 `~/.claude/projects/*.jsonl` 即時計算 5 小時滾動窗口用量，開發動機是頻繁被限速；無遙測、無網路請求，MIT 授權\n- **Mneme 架構決策層**：repo-native CLI，將 ADR 直接存在程式碼庫旁並在 Claude 呼叫前自動注入，支援 CI 攔截違反架構的 PR，是 CLAUDE.md 外的另一種架構治理模式\n- **Brifly 持久記憶層**：為 Claude Code 提供跨 session 的專案架構知識儲存，支援多人協作與版本追蹤，直接對抗 AI 輔助開發中的「無狀態」問題\n- **Linear + Lanes MCP issue-to-code 流程**：串接 Linear 官方 MCP 與本地 Lanes MCP，讓 Agent 直接讀取 Linear 待辦票並啟動 Claude Code 工作階段，實現 issue 到程式碼的一鍵流程\n- **Trent 架構層安全審查**：在 Claude Code 環境中嵌入情境化安全稽核，補足傳統 CVE 掃描器對業務邏輯的盲點\n- **Claude Opus + Gemini 多 LLM 交易架構**：Opus 擔任首席工程師（持有否決權）、Gemini 負責策略判斷，累積超過 270 條分歧記錄日誌，是目前公開最詳細的 Claude + Gemini 角色分工實驗\n\n### 2026-04-29\n- **Champion Kit 官方推廣包**：Anthropic 發布官方「Champion Kit」，為企業推廣者提供 30 天計畫、常見疑慮應對話術與分享素材，顯示 Anthropic 透過基層工程師滲透企業的策略已正式化\n- **Web UI 工具 Cockpit**：開源瀏覽器介面讓 Claude Code 擺脫終端機限制，補充 CLI-first 定位不足之處\n- **Harness 多 worktree 並行管理**：在多個 Git worktree 同時管理多個 Claude Code agent，作者明確指出現有工具（cmux、Conductor）的不足\n- **CodeThis MCP paste bin**：專為 Claude Code 設計，AI 可直接透過 MCP server 建立程式碼分享貼文，支援 100+ 語言語法高亮\n- **Claude Exporter**：Chrome 擴充功能將 Claude 對話匯出為 PDF/Word/Google Docs/Notion，填補對話持久化的社群需求\n- **Caveman vs \"be brief.\" 基準測試**：系統性 24 題、6 類別測試顯示兩者在 token 數量與輸出品質上幾乎相當，複雜外掛未帶來可量測優勢，「兩字 prompt 足以媲美複雜外掛」成為討論焦點\n\n### 2026-04-28\n- **Jupyter Notebook + MCP 整合**：推薦以 Jupyter MCP server 取代 Claude Code 內建 NotebookEdit 工具，需額外 10 分鐘設定，但支援完整儲存格執行、輸出讀取與 IPython kernel 互動\n- **Batch API 不適合 agent**：開發者實測將 agent 每輪呼叫走 Batch API（享 50% 折扣），結果每筆 batch 需 90–120 秒，5 輪工具呼叫的 agent 對話變成 10 分鐘等待；結論：Batch API 僅適合後台非同步任務，不適用互動式 agent\n- **PullMD HTML 轉 Markdown**：為 Claude Code 建立 MCP server，在抓取網頁時先轉換為乾淨 Markdown，一般文章有效內容僅佔原始 HTML 的約 20%，可大幅減少 token 浪費\n- **Sonnet 4.6 替代 Opus 工作流**：調整 agent 工作流程設計後，Sonnet 4.6 以 30% 月預算完成相當於前週 73% 預算的工作量，且程式碼品質更佳；關鍵在工作流重新設計，不只是換模型\n- **Claude Code Plugin 反模式與模式**：作者整理將 scrum 工作流轉為外掛的經驗：不必要的 context 載入等反模式大量消耗 token，重構後整理出 5 個可通用設計模式（附前後成本對比）\n- **Effort 等級不影響拒絕姿態**：系統性測試 Opus 4.7（39 份測試腳本、medium / high / xhigh 三種 effort）顯示拒絕姿態完全一致，effort 僅影響回答深度；顛覆「高 effort 更容易拒絕」的假設\n- **AI 生成程式碼著作權分析**：法律分析指出 AI 生成程式碼可能完全不受著作權保護、歸屬雇主，或受開放原始碼授權污染，建議開發者主動記錄自身在 AI 輔助開發中的貢獻\n- **AI agent 安全事故**：Cursor + Claude Opus 9 秒刪除生產資料庫並清空備份，引發企業建立沙盒隔離、操作確認與不可逆動作攔截的討論；見 [[topics/ai-agent-safety]]\n\n### 2026-04-27\n- **TDD 驅動開發迴圈**：EvanFlow — 16 個技能 + 2 個子代理人，每步驟設有人工確認節點，不自動 commit，強調使用者控制\n- **問題定義優先**：Relay plugin — 強制 Claude Code 在動手寫程式前深入對齊問題定義，核心改變是將 Plan Mode 的提問層級從「實作細節」拉升至「問題本質」\n- **精簡 CLAUDE.md 策略**：parsh 案例 — 將 CLAUDE.md 保持精簡、以「規則」而非「建議」形式撰寫，有效減少冗余代碼與漂移行為\n- **架構層自動化審查**：modularity plugin — Balanced Coupling 模型分析模組化設計，解決 AI 加速代碼生成同時技術債也加速累積的問題\n- **Figma MCP 設計工作流**：Claude Code + Figma MCP 搭配，Creative Bloq 評測 AI 輔助設計效果\n- **effort 等級 vs 拒絕率**：系統性測試顯示提升 effort 不增加拒絕率；medium vs high 差異僅在回答深度（正面回應增長 29–47%），拒絕僅增長 11%，顛覆「高 effort 更容易拒絕」假設\n- **harness 設計模式實作**：將 Anthropic 官方 harness 設計模式實作為 Claude Code 插件，發現 Claude 常在測試未通過時自信回報「成功」\n- **Cerbos 授權政策技能**：將自然語言需求轉換為帶測試案例的結構化 authZ policy，指出 AI 幻覺在此類任務直接導致安全漏洞\n- **vibe-coding 里程碑**：非技術背景 PM 以 Claude 在 47 天內獨立開發並上線產品，強調範疇控制與清晰需求撰寫為成功核心\n- **多代理瀏覽器**：Rapunzel — 以樹狀標籤頁介面管理多個同時運行的 AI 代理（Claude Code / Codex / Gemini），定位為「Chrome for agents」，解決終端機多代理追蹤困難的問題\n- **代理人沙盒**：SmolVM — 讓 Claude Code 與 Codex 在完全隔離的本機沙盒中執行，單指令啟動，支援 git 憑證整合，保護宿主系統安全\n- **完成驗證 Hook**：Groundtruth — Stop Hook，強制 Claude Code 在宣告「完成」前必須提供可驗證的執行證明，否則拒絕結束回合，解決 Claude 自信宣稱完成但實際未完成的問題\n- **跨工具 Skills 移植**：OpenCode-power-pack — 將 Anthropic 官方 11 個 Claude Code 技能（代碼審查、安全審計、前端設計等）移植至 OpenCode，打破官方插件的工具綁定限制\n- **APFS Worktree 優化**：利用 Apple File System 的 clone 機制建立 WorktreeCreate hook，多個 worktree 共享相同檔案不佔額外空間，Mac 用戶實用\n- **邊學邊做技能模組**：在完成 Claude Code 架構工作後，提供以認知科學（預測、生成、間隔重複）為基礎的 10–15 分鐘學習練習，讓開發者在使用 AI 的同時累積技術深度\n- **MCP 創意實驗**：Doom Inside Claude Code — 將原版 Doom 嵌入 Claude Code 狀態列，可由使用者手動控制或讓 Claude 透過 MCP 自主遊玩，展示 MCP 的創意應用邊界\n\n### 2026-04-26\n- **多人協作編碼**：Claude Squad — 每人以自己的 Claude Code 作為 agent，orchestrator 分派平行任務並自動合併分支\n- **多 agent 終端**：mux0 — 開源 macOS 終端機，側邊欄即時顯示 agent 執行狀態（running / idle / needs input）\n- **PRD 協作防污染**：agent-order — Codex 與 Claude 各自獨立寫 PRD 再互相批判，避免答案向先開口方塌縮\n- **知識框架封裝**：14 本商業書（The Mom Test、$100M Offers 等）轉為 skills，依問題語境自動載入\n- **流程自動化**：8 步驟開源專案設定流程包裝為單一 skill，降低貢獻者上手門檻\n- **AI 程式碼品質**：lipstyk — 靜態分析工具，專門偵測機器生成程式碼的特有模式\n- **模型分層策略**：Sonnet 為主力，需要時讓 Sonnet「諮詢」Opus，聲稱節省約 60% 用量\n- **安全邊界研究**：Sonnet 4.6 在 high / max 推理強度下拒絕行為完全一致（26/26），推理努力程度不影響安全邊界\n\n### 2026-04-25\n- **效能監測**：CC-Canary — 讀取 `~/.claude/projects/` JSONL log，自動偵測效能漂移\n- **跨模型整合**：claude-anyteam — 讓 OpenAI Codex CLI 加入 Claude Code Agent Teams\n- **Web 管理介面**：Claude Code Manager — 集中管理 CLAUDE.md、hooks、skills\n- **Stop hooks 失效 workaround**：Claude 4.7 起無視自訂 stop hooks，社群以其他事件鉤子替代\n"
     },
     {
       "id": "competitor-landscape",
@@ -196,7 +196,7 @@ window.WIKI_DATA = {
       "startDate": "2026-04",
       "lastUpdated": "2026-05-02",
       "summary": "Claude Code 已成為 AI 輔助編碼領域的標竿產品，但競爭正在快速升溫。最值得關注的是 Google 聯合創辦人 Sergey Brin 親自主導的內部計畫，目標是打造一款直接對標 Claude Code 的工具。 ---",
-      "markdown": "# AI 編碼工具競品動態\n\n**狀態：** ongoing\n**開始日期：** 2026-04\n**最後更新：** 2026-05-02\n\n---\n\n## 摘要\n\nClaude Code 已成為 AI 輔助編碼領域的標竿產品，但競爭正在快速升溫。最值得關注的是 Google 聯合創辦人 Sergey Brin 親自主導的內部計畫，目標是打造一款直接對標 Claude Code 的工具。\n\n---\n\n## 主要競品追蹤\n\n### Google 未命名 Claude Code 競品 🔴 新威脅\n- **狀態**：秘密開發中\n- **關鍵人物**：Sergey Brin（Google 聯合創辦人）親自參與\n- **時間線**：2026-04 首次被媒體報導（India Today、HN 跟進）\n- **意義**：Google 同時是 Anthropic 的大股東（見 [[topics/google-investment]]），此舉顯示即使是戰略投資方也將 Claude Code 視為必須正面競爭的對手\n\n### OpenAI Codex CLI\n- **狀態**：Active\n- **差異**：以 OpenAI 生態為核心；社群已有工具（claude-anyteam）讓 Codex 加入 Claude Code Agent Teams\n\n### Cursor / Windsurf\n- **狀態**：Active\n- **定位**：IDE 整合型，與 Claude Code 的 CLI-first 定位有所區別\n\n### GitHub Copilot\n- **狀態**：Active\n- **母公司**：Microsoft / GitHub\n- **差異**：深度 IDE 整合，主要面向 VS Code 生態\n\n---\n\n## 技術彙整\n\n- **Claude Code 定位**：CLI-first，與 Cursor / Windsurf 的 IDE 整合型定位有所區別\n- **claude-anyteam**：社群工具，讓 OpenAI Codex CLI 加入 Claude Code Agent Teams，實現跨模型協作\n- **CC-Canary**：社群開發的效能監測工具，讀取 `~/.claude/projects/` JSONL log（見 [[topics/code-quality-decline]]）\n- **Anthropic CPO 動向**：Mike Krieger 離開 Figma 董事會，暗示 Anthropic 可能擴張至設計工具領域，與 Figma 直接競爭\n\n---\n\n## 觀察重點\n\n- **投資 vs 競爭的矛盾**：Google 對 Anthropic 投資 400 億的同時，也在打造競品，這種雙軌策略值得持續追蹤\n- **Anthropic 的 CPO 動向**：Mike Krieger 離開 Figma 董事會，暗示 Anthropic 可能在設計工具領域進行擴張\n- **社群工具生態**：無論競品如何發展，Claude Code 周邊的社群工具生態（CC-Canary、claude-anyteam 等）顯示其開發者黏著度仍高\n\n---\n\n## 相關實體\n\n- [[entities/claude-code]]\n- [[topics/google-investment]]\n- [[topics/anthropic-government-policy]]（五角大廈排除事件）\n\n## 參考來源\n\n- [[news/2026-04-25]]\n- [[news/2026-04-26]]\n- [[news/2026-04-27]]\n- [[news/2026-04-28]]\n- [[news/2026-04-29]]\n- [[news/2026-04-30]]\n- [[news/2026-05-02]]\n- [India Today 報導](https://www.indiatoday.in/technology/news/story/google-is-secretly-building-a-claude-code-challenger-sergey-brin-is-personally-involved-2899415-2026-04-21)\n\n## 時序\n\n### 2026-05-01\n- **[重大事件] 五角大廈排除 Anthropic**：美國國防部與 SpaceX、OpenAI、Google、Microsoft、NVIDIA、AWS、Reflection 共 7 家公司簽署 AI 機密網路部署協議，**Anthropic 因堅持軍事用途須納入安全護欄而遭排除**。白宮在 Anthropic 宣布多項技術突破後已重啟談判，此事件對 Anthropic 的政府市場佈局影響深遠；見 [[topics/anthropic-government-policy]]\n- **Apple 內部採用 Claude（外洩文件）**：根據外洩文件，Apple 已在內部工作流程中採用 Claude，顯示 Anthropic 的企業滲透已觸及科技業最頂層玩家；此消息對外界評估 Anthropic 市場地位具有重要參考意義\n- **Uber 四個月耗盡全年 AI 預算**：Uber 工程師對 Claude Code 與 Cursor 的依賴程度遠超預期，四個月內耗盡全年 AI 預算；Uber CTO 坦言效益毋庸置疑，但大規模成本控管已成企業採用 AI 開發工具的核心挑戰\n- **iCapital 採用 Anthropic 打造金融客戶工具**：另類資產平台 iCapital 宣布採用 Anthropic 技術為客戶建立 AI 工具，顯示 Claude 在金融服務領域的企業採用持續擴展\n- **The Atlantic：AI 泡沫論降溫，Claude Code 為商業化核心驅動**：The Atlantic 指出隨著 Claude Code 等 AI Agent 工具帶動企業付費，AI 產業實際營收正快速追上前期大規模基礎建設投資，Anthropic 被點名為商業化轉折的核心受益者\n- **GPT-5.5 vs Opus 4.7 基準測試**：56 個真實開源 repo 任務測試，Opus 4.7 寫出更精簡 patch，GPT-5.5 的 patch 更常通過 code review；見 [[entities/opus-4-7]]\n\n### 2026-04-30\n- **\"Is Anybody Using Codex?\" HN 討論**：社群觀察 HN 上 Claude Code 討論量遠超 OpenAI Codex，留言者普遍認為兩者能力相近（Opus 4.7 ≈ GPT 5.5），但 Claude Code 社群能見度明顯更高；Codex 曝光度有限，實際採用規模不明\n- **GameMaker 整合 Claude Code**：遊戲引擎平台 GameMaker 宣布整合，是 Claude Code 在垂直軟體領域深度整合的新案例，顯示 IDE 整合型競品（Cursor、Copilot）之外，Claude Code 也在各垂直領域形成整合生態\n- **BrowserCode 瀏覽器端執行 Gemini CLI**（Claude Code 支援規劃中）：WebAssembly 沙盒技術讓 Gemini CLI 可在瀏覽器直接執行，Claude Code 支援已在路線圖中，跨工具的「瀏覽器化」趨勢值得關注\n\n### 2026-04-29\n- **Codex vs Claude Code 生產環境比較**：一名開發者在多年積累的大型 Python monolith 上日常對比兩款工具，最終偏好 Codex，指出 Claude Code 對複雜遺留架構的處理未達預期；作者強調此為個人情境，非通用結論，HN 引發「不同工具適合不同場景」討論\n\n### 2026-04-28\n- **哈佛大學文理學院改用 Claude**：哈佛 FAS 計畫為師生提供 Anthropic Claude 存取，同步逐步淘汰 ChatGPT Edu，代表頂尖學術機構在 AI 工具選擇上出現結構性轉變。\n- **XDA 四工具橫向評測**：將 Claude Code、OpenAI Codex、Lovable 與 Replit 並排比較，結論是其中僅一款工具被評者認為已達真實工作場景使用標準（具體勝出者及評分細節詳見原文）。\n- **Anthropic 開設雪梨辦公室、任命 ANZ 總經理**：Theo Hourmouzis（前 Snowflake SVP，逾 20 年亞太科技業資歷）擔任澳紐區總經理，標誌 Anthropic 在亞太地區的實體佈局大幅提速。\n\n### 2026-04-27\n- HackerNoon 分析文章以 Claude Code 為例，指出 AI 工具的競爭護城河正在迅速縮窄——開源替代品與快速跟進的競爭者使商業模型差異化優勢愈來愈脆弱\n- HN 社群熱烈比較 Claude vs GPT-5 實際開發體驗：Claude 在前端設計與初始結構上佔優，GPT 在核心邏輯上表現更好；Claude 容易忽略資安標頭設定，GPT 傾向過度防禦\n- Claude Code + Figma MCP 設計工作流程獲 Creative Bloq 評測，吸引設計與開發跨領域關注\n\n### 2026-04-26\n- Google 競品消息再次登上 HN 重點話題，與 Google Cloud CEO 公開談及 Anthropic 與 TPU 部署同步出現，競爭態勢明顯升溫\n\n### 2026-04-25（approx）\n- HN 報導 Google 祕密開發 Claude Code 競品，Sergey Brin 親自主導\n- 消息引發社群廣泛討論（「投資者同時也是競爭者」的矛盾關係）\n\n### 2026-04-24\n- Anthropic CPO Mike Krieger 辭去 Figma 董事會，媒體指出 Opus 4.7 將內建設計工具、可能與 Figma 直接競爭\n"
+      "markdown": "# AI 編碼工具競品動態\n\n**狀態：** ongoing\n**開始日期：** 2026-04\n**最後更新：** 2026-05-02\n\n---\n\n## 摘要\n\nClaude Code 已成為 AI 輔助編碼領域的標竿產品，但競爭正在快速升溫。最值得關注的是 Google 聯合創辦人 Sergey Brin 親自主導的內部計畫，目標是打造一款直接對標 Claude Code 的工具。\n\n---\n\n## 主要競品追蹤\n\n### Google 未命名 Claude Code 競品 🔴 新威脅\n- **狀態**：秘密開發中\n- **關鍵人物**：Sergey Brin（Google 聯合創辦人）親自參與\n- **時間線**：2026-04 首次被媒體報導（India Today、HN 跟進）\n- **意義**：Google 同時是 Anthropic 的大股東（見 [[topics/google-investment]]），此舉顯示即使是戰略投資方也將 Claude Code 視為必須正面競爭的對手\n\n### OpenAI Codex CLI\n- **狀態**：Active\n- **差異**：以 OpenAI 生態為核心；社群已有工具（claude-anyteam）讓 Codex 加入 Claude Code Agent Teams\n\n### OpenCode\n- **狀態**：Active（開源替代方案）\n- **定位**：開源替代 Claude Code，XDA 評測指出功能與使用體驗與 Claude Code 相當\n- **意義**：為不願受限於 Anthropic 訂閱政策（OpenClaw 禁令、Pro/Max 第三方工具限制）的開發者提供具體可行的替代方案；OpenCode-power-pack 已將 Anthropic 官方 11 個技能移植至此平台\n\n### Cursor / Windsurf\n- **狀態**：Active\n- **定位**：IDE 整合型，與 Claude Code 的 CLI-first 定位有所區別\n\n### GitHub Copilot\n- **狀態**：Active\n- **母公司**：Microsoft / GitHub\n- **差異**：深度 IDE 整合，主要面向 VS Code 生態\n\n---\n\n## 技術彙整\n\n- **Claude Code 定位**：CLI-first，與 Cursor / Windsurf 的 IDE 整合型定位有所區別\n- **claude-anyteam**：社群工具，讓 OpenAI Codex CLI 加入 Claude Code Agent Teams，實現跨模型協作\n- **CC-Canary**：社群開發的效能監測工具，讀取 `~/.claude/projects/` JSONL log（見 [[topics/code-quality-decline]]）\n- **Anthropic CPO 動向**：Mike Krieger 離開 Figma 董事會，暗示 Anthropic 可能擴張至設計工具領域，與 Figma 直接競爭\n\n---\n\n## 觀察重點\n\n- **投資 vs 競爭的矛盾**：Google 對 Anthropic 投資 400 億的同時，也在打造競品，這種雙軌策略值得持續追蹤\n- **Anthropic 的 CPO 動向**：Mike Krieger 離開 Figma 董事會，暗示 Anthropic 可能在設計工具領域進行擴張\n- **社群工具生態**：無論競品如何發展，Claude Code 周邊的社群工具生態（CC-Canary、claude-anyteam 等）顯示其開發者黏著度仍高\n\n---\n\n## 相關實體\n\n- [[entities/claude-code]]\n- [[topics/google-investment]]\n- [[topics/anthropic-government-policy]]（五角大廈排除事件）\n\n## 參考來源\n\n- [[news/2026-04-25]]\n- [[news/2026-04-26]]\n- [[news/2026-04-27]]\n- [[news/2026-04-28]]\n- [[news/2026-04-29]]\n- [[news/2026-04-30]]\n- [[news/2026-05-02]]\n- [India Today 報導](https://www.indiatoday.in/technology/news/story/google-is-secretly-building-a-claude-code-challenger-sergey-brin-is-personally-involved-2899415-2026-04-21)\n\n## 時序\n\n### 2026-05-02\n- **OpenCode 被 XDA 評為 Claude Code 的可行替代方案**：XDA 實測後認為 OpenCode 功能與使用體驗與 Claude Code 相當，直接回應 Anthropic 訂閱政策收緊（OpenClaw 禁令）後開發者的替代需求，是目前最具可操作性的開源替代選項\n- **OpenClaw 禁令持續發酵**：Anthropic 於 4 月 4 日修改條款禁止 Pro/Max 訂閱額度透過第三方框架調用，依賴此類工具節省成本的開發者被迫切換至 API 計費，實際費用大幅攀升；社群持續討論轉向開源替代方案\n\n### 2026-05-01\n- **[重大事件] 五角大廈排除 Anthropic**：美國國防部與 SpaceX、OpenAI、Google、Microsoft、NVIDIA、AWS、Reflection 共 7 家公司簽署 AI 機密網路部署協議，**Anthropic 因堅持軍事用途須納入安全護欄而遭排除**。白宮在 Anthropic 宣布多項技術突破後已重啟談判，此事件對 Anthropic 的政府市場佈局影響深遠；見 [[topics/anthropic-government-policy]]\n- **Apple 內部採用 Claude（外洩文件）**：根據外洩文件，Apple 已在內部工作流程中採用 Claude，顯示 Anthropic 的企業滲透已觸及科技業最頂層玩家；此消息對外界評估 Anthropic 市場地位具有重要參考意義\n- **Uber 四個月耗盡全年 AI 預算**：Uber 工程師對 Claude Code 與 Cursor 的依賴程度遠超預期，四個月內耗盡全年 AI 預算；Uber CTO 坦言效益毋庸置疑，但大規模成本控管已成企業採用 AI 開發工具的核心挑戰\n- **iCapital 採用 Anthropic 打造金融客戶工具**：另類資產平台 iCapital 宣布採用 Anthropic 技術為客戶建立 AI 工具，顯示 Claude 在金融服務領域的企業採用持續擴展\n- **The Atlantic：AI 泡沫論降溫，Claude Code 為商業化核心驅動**：The Atlantic 指出隨著 Claude Code 等 AI Agent 工具帶動企業付費，AI 產業實際營收正快速追上前期大規模基礎建設投資，Anthropic 被點名為商業化轉折的核心受益者\n- **GPT-5.5 vs Opus 4.7 基準測試**：56 個真實開源 repo 任務測試，Opus 4.7 寫出更精簡 patch，GPT-5.5 的 patch 更常通過 code review；見 [[entities/opus-4-7]]\n\n### 2026-04-30\n- **\"Is Anybody Using Codex?\" HN 討論**：社群觀察 HN 上 Claude Code 討論量遠超 OpenAI Codex，留言者普遍認為兩者能力相近（Opus 4.7 ≈ GPT 5.5），但 Claude Code 社群能見度明顯更高；Codex 曝光度有限，實際採用規模不明\n- **GameMaker 整合 Claude Code**：遊戲引擎平台 GameMaker 宣布整合，是 Claude Code 在垂直軟體領域深度整合的新案例，顯示 IDE 整合型競品（Cursor、Copilot）之外，Claude Code 也在各垂直領域形成整合生態\n- **BrowserCode 瀏覽器端執行 Gemini CLI**（Claude Code 支援規劃中）：WebAssembly 沙盒技術讓 Gemini CLI 可在瀏覽器直接執行，Claude Code 支援已在路線圖中，跨工具的「瀏覽器化」趨勢值得關注\n\n### 2026-04-29\n- **Codex vs Claude Code 生產環境比較**：一名開發者在多年積累的大型 Python monolith 上日常對比兩款工具，最終偏好 Codex，指出 Claude Code 對複雜遺留架構的處理未達預期；作者強調此為個人情境，非通用結論，HN 引發「不同工具適合不同場景」討論\n\n### 2026-04-28\n- **哈佛大學文理學院改用 Claude**：哈佛 FAS 計畫為師生提供 Anthropic Claude 存取，同步逐步淘汰 ChatGPT Edu，代表頂尖學術機構在 AI 工具選擇上出現結構性轉變。\n- **XDA 四工具橫向評測**：將 Claude Code、OpenAI Codex、Lovable 與 Replit 並排比較，結論是其中僅一款工具被評者認為已達真實工作場景使用標準（具體勝出者及評分細節詳見原文）。\n- **Anthropic 開設雪梨辦公室、任命 ANZ 總經理**：Theo Hourmouzis（前 Snowflake SVP，逾 20 年亞太科技業資歷）擔任澳紐區總經理，標誌 Anthropic 在亞太地區的實體佈局大幅提速。\n\n### 2026-04-27\n- HackerNoon 分析文章以 Claude Code 為例，指出 AI 工具的競爭護城河正在迅速縮窄——開源替代品與快速跟進的競爭者使商業模型差異化優勢愈來愈脆弱\n- HN 社群熱烈比較 Claude vs GPT-5 實際開發體驗：Claude 在前端設計與初始結構上佔優，GPT 在核心邏輯上表現更好；Claude 容易忽略資安標頭設定，GPT 傾向過度防禦\n- Claude Code + Figma MCP 設計工作流程獲 Creative Bloq 評測，吸引設計與開發跨領域關注\n\n### 2026-04-26\n- Google 競品消息再次登上 HN 重點話題，與 Google Cloud CEO 公開談及 Anthropic 與 TPU 部署同步出現，競爭態勢明顯升溫\n\n### 2026-04-25（approx）\n- HN 報導 Google 祕密開發 Claude Code 競品，Sergey Brin 親自主導\n- 消息引發社群廣泛討論（「投資者同時也是競爭者」的矛盾關係）\n\n### 2026-04-24\n- Anthropic CPO Mike Krieger 辭去 Figma 董事會，媒體指出 Opus 4.7 將內建設計工具、可能與 Figma 直接競爭\n"
     },
     {
       "id": "google-investment",
@@ -215,9 +215,9 @@ window.WIKI_DATA = {
   "digestIndex": [
     {
       "date": "2026-05-02",
-      "articleCount": 49,
-      "preview": "Pentagon reaches agreements with top AI companies, but not Anthropic",
-      "topCount": 5
+      "articleCount": 28,
+      "preview": "Uber torches 2026 AI budget on Claude Code in four months",
+      "topCount": 4
     },
     {
       "date": "2026-04-30",
@@ -261,123 +261,75 @@ window.WIKI_DATA = {
 window.DIGEST_ALL = {
   "2026-05-02": {
     "date": "2026-05-02",
-    "generatedAt": "2026-05-01 23:32 UTC",
-    "articleCount": 49,
-    "sourceCount": "5/5",
+    "generatedAt": "2026-05-02 14:45 UTC",
+    "articleCount": 28,
+    "sourceCount": "6/6",
     "topStories": [
-      {
-        "title": "Pentagon reaches agreements with top AI companies, but not Anthropic",
-        "url": "https://www.reuters.com/business/retail-consumer/pentagon-reaches-agreements-with-leading-ai-companies-2026-05-01/",
-        "source": "Reuters",
-        "time": "05/01 17:48",
-        "sentiment": "",
-        "body": "美國國防部與 SpaceX、OpenAI、Google、Microsoft、NVIDIA、AWS、Reflection 七家公司簽署 AI 機密網路部署協議，Anthropic 因堅持軍事用途須納入安全護欄而遭排除。白宮在 Anthropic 宣布多項技術突破後已重啟談判，此事件對 Anthropic 的政府市場佈局影響深遠。"
-      },
       {
         "title": "Uber torches 2026 AI budget on Claude Code in four months",
         "url": "https://www.briefs.co/news/uber-torches-entire-2026-ai-budget-on-claude-code-in-four-months/",
         "source": "Hacker News",
         "time": "05/01 16:08",
         "sentiment": "",
-        "body": "Uber 工程師對 Claude Code 與 Cursor 的依賴程度遠超預期，導致公司四個月內耗盡全年 AI 預算；CTO 坦言工具效益毋庸置疑，但如何在大規模使用下控制成本，已成企業採用 AI 開發工具的核心挑戰。"
+        "body": "Uber 於 2025 年 12 月部署 Claude Code，四個月後已燒光全年 AI 預算；CTO 公開表示單人月費達 $500–$2,000，公司正「從零開始」重新制定 AI 預算策略。**為何是重點：** 這是業界目前最具體的大型企業 AI 工具成本失控案例，將迫使整個行業重新評估 AI 採購模型，而非只談 ROI。"
       },
       {
-        "title": "Anthropic just launched Claude Security in public beta — here's what actually matters",
-        "url": "https://www.reddit.com/r/ClaudeAI/comments/1t12l3t/anthropic_just_launched_claude_security_in_public/",
-        "source": "Reddit / r/ClaudeAI",
-        "time": "05/01 11:00",
+        "title": "Anthropic opens Claude Security public beta for code audits",
+        "url": "https://news.google.com/rss/articles/CBMikwFBVV95cUxPcjJHOTBhT1JBUFRQOVBzUkdzblBSdEFGSlBQd0tsamZfUGxEQklyTmwxeWpKQ0ZLRVV3RUszemt5MkJ6dXdid3kydXRlMTJVYzhNWFhHOWViTURRaHMyZzViU00yTk5nNUNUZFl1RWJYTlBkalFreVhTOUhkT2ZiWnA3djNfVDZ5V1NZdmQ4VUNRdnM?oc=5",
+        "source": "Google News / SC Media",
+        "time": "05/01 14:24",
         "sentiment": "",
-        "body": "Claude Security 公測版向所有 Enterprise 客戶開放，以類安全研究員的方式讀取 Git 歷史、跨檔案追蹤資料流，目標是大幅降低傳統規則掃描的誤報率；多位開發者認為「推理式驗證」才是本次發布真正的差異化設計決策。"
+        "body": "Anthropic 宣布 Claude Security 公開測試版上線，聚焦代碼安全審計場景。**為何是重點：** 這是 Anthropic 首次針對企業安全需求推出專用產品線，直接與 GitHub Advanced Security、Snyk 等既有工具形成競爭，值得持續追蹤其功能邊界與企業採購反應。"
+      },
+      {
+        "title": "Why Anthropic Cut Off OpenClaw — The Claude Subscription Policy Shift and What It Costs You",
+        "url": "https://dev.to/jangwook_kim_e31e7291ad98/why-anthropic-cut-off-openclaw-the-claude-subscription-policy-shift-and-what-it-costs-you-pag",
+        "source": "dev.to / #anthropic",
+        "time": "05/01 22:43",
+        "sentiment": "",
+        "body": "Anthropic 4 月 4 日悄悄修改條款，禁止 Pro/Max 訂閱額度被 OpenClaw 等第三方代理框架調用，依賴此類工具節省成本的個人開發者被迫切換至 API 計費，實際費用大幅攀升。**為何是重點：** 此政策轉向清楚劃定 Anthropic 的商業邊界，可能加速開發者轉向開源替代方案或競品。"
       },
       {
         "title": "So, About That AI Bubble",
         "url": "https://www.theatlantic.com/economy/2026/05/ai-bubble-revenue-anthropic/687022/",
         "source": "Hacker News",
-        "time": "05/01 11:31",
+        "time": "05/02 00:28",
         "sentiment": "",
-        "body": "The Atlantic 指出，隨著 Claude Code 等 AI Agent 工具帶動企業付費，AI 產業實際營收正快速追上前期大規模基礎建設投資，泡沫論調正在降溫；Anthropic 被點名為這波商業化轉折的核心受益者。"
-      },
-      {
-        "title": "Apple Is Using Claude Inside the Company Workflow, Leaked Documents Show",
-        "url": "https://news.google.com/rss/articles/CBMilAFBVV95cUxNVFc1SllGdDZjVkRMOVBQRHJLbGwzZzF3eXQtMkZzSnNrUEpEem1wV21GUXJsUTQ1aVJUMXhDXzNfV3FUUUd1VkNBdzdINUtoM1lfbGJNT3VRVG1FQ1RsWjE3ZWFnN2VaWTNMMTZXbXB4UmttNThtamJhU2pjbGgyaHJKRURXSHJjcVJfUXlFMlpMM3pE?oc=5",
-        "source": "Yahoo Tech via Google News",
-        "time": "05/01 03:45",
-        "sentiment": "",
-        "body": "根據外洩文件，Apple 已在內部工作流程中採用 Claude，顯示 Anthropic 的企業滲透已觸及科技業最頂層玩家，此消息對外界評估 Anthropic 市場地位具有重要參考意義。"
+        "body": "《大西洋月刊》分析指出，以 Claude Code 為代表的 AI 代理工具正使 AI 產業實際收入快速追上過度炒作的預期，半年前盛行的「AI 泡沫論」正被實際企業採用數據所修正。**為何是重點：** 主流媒體敘事出現明顯轉折，為評估 AI 投資與商業化進程提供重要的宏觀座標。"
       }
     ],
     "techUpdates": [
       {
-        "title": "anthropics/claude-code v2.1.126",
-        "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.126",
-        "source": "GitHub / anthropics/claude-code",
-        "time": "05/01 02:05",
-        "sentiment": "",
-        "body": "`/model` 選擇器現在會從 gateway 的 `/v1/models` 端點列出模型（適用於設定 `ANTHROPIC_BASE_URL` 指向相容 gateway 的場景）；另新增 `claude project purge` 指令。"
-      },
-      {
-        "title": "Anthropic Launches Claude Security In Public Beta For Enterprise Customers",
-        "url": "https://news.google.com/rss/articles/CBMimgFBVV95cUxQaW13YkF5REdrM0c1NU94ZVBuWWhvWGZ0R0hSNm1fNVJUcEp1M1NyZjVLMWYzSW82VGg0eGtPTUFXQUFoSGdGa3ZHLTlYLWxtWVRDVUZUVXhUOElJdXZ2TERyMXdqZGpxcUg3Sm92T3NzSXd5cXVsc1RoTktTWUNkRFJ3Z2o2VC1nT0xvNWpKaUFjSjVWTGM2VF930gGfAUFVX3lxTE9tYVJ0SEUyLU00d1p0VXRIVXFFUGVIempBdUp0Sm1raldZdGVJM09rTXZmLXpHc2JFeHRtVGtJb1A1WWZIUFdZV1ZDNURRODZDV0RrZy0tWDlPNENiTnVjak1PQmtZSmFjZTBaQzZxRVpESmJMM29iUHQ0Tm1rQ2tCUkJweUlIMkZ0M1RaeHpmOW5PazNHUm9pczJWaGV2RQ?oc=5",
-        "source": "Pulse 2.0 via Google News",
-        "time": "05/01 09:19",
-        "sentiment": "",
-        "body": "Anthropic 正式將 Claude Security 向全部企業客戶開放公測，強調其「推理驗證」機制可自動確認漏洞真實性並提出修復建議，旨在解決安全掃描工具誤報率過高的行業痛點。"
-      },
-      {
-        "title": "After dissing Anthropic for limiting Mythos, OpenAI restricts access to Cyber too",
-        "url": "https://techcrunch.com/2026/04/30/after-dissing-anthropic-for-limiting-mythos-openai-restricts-access-to-cyber-too/",
+        "title": "Tell HN: Claude Opus 4.7 quota suddenly changed to 0 TPM in Bedrock",
+        "url": "https://news.ycombinator.com/item?id=47976391",
         "source": "Hacker News",
-        "time": "05/01 10:28",
+        "time": "05/01 16:06",
         "sentiment": "",
-        "body": "Sam Altman 在批評 Anthropic 限制資安工具 Mythos 存取範圍後，旋即宣布 OpenAI 的 GPT-5.5 Cyber 同樣採用限制性推出策略，僅開放給通過審核的「關鍵防禦者」；兩家公司的雙重標準引發社群熱議。"
+        "body": "部分使用 AWS Bedrock 的企業帳號發現 Claude Opus 4.7 存取配額被無預警歸零，AWS 支援團隊事後才說明原因。此事件突顯雲端平台在前沿模型存取管理上缺乏透明機制，對仰賴 Bedrock 的生產環境構成潛在可靠性風險。"
       },
       {
-        "title": "MCP command execution flaw: what security teams need to know",
-        "url": "https://news.google.com/rss/articles/CBMingFBVV95cUxQelFXaE4zVFFELXN0NktnUWQ0LXdNVzZtZFZoeXltY2twWWJYNEJDWjhkTVFZX2o5anVQeVpvQ2V1RnZMamNacWo4MFBPU3ppUU50b0FjVDEzNG9GWmd5MEdUcnkwbHlTOE9VQ3YyYWVsOHhJUUlKd3BWbDIwNHpJcm9EZ2lqVWRxb0dyTWJBelBjdXMwWENZQlV0Sk9WUQ?oc=5",
-        "source": "VentureBeat via Google News",
-        "time": "05/01 12:35",
-        "sentiment": "",
-        "body": "VentureBeat 針對 MCP（Model Context Protocol）的指令執行漏洞發出安全警示，安全團隊需評估在多 Agent 工作流中暴露的攻擊面；此議題隨 Claude Code 生態快速擴張而愈發重要。"
-      },
-      {
-        "title": "GameMaker incorporates Claude Code to enable AI-assisted workflows",
-        "url": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxNd1BLSnRDRFk3NWw1bERCRlVoZ3N1b1ByX3dVRnFQSi0wczV1R3Y1R2k1RC1BRkRmallUcmptNExyNEhUUWx6cVlJRUYyamFYdUxZcnM1Qm5HdEFzaGR5Zjl4S0ZCVmJDN3pBS0p5MWo0TVFuOU1rVjg5MmwxR0ZBc3B3Ri1QZGZ0b2Y1SzhVdWJ4akFDS1dKQmhTZTQ1QXIwdUM3aDlCMGRfTWs?oc=5",
-        "source": "Game Developer via Google News",
-        "time": "05/01 02:45",
-        "sentiment": "",
-        "body": "遊戲引擎 GameMaker 宣布整合 Claude Code，為遊戲開發者提供 AI 輔助工作流程，是 Claude Code 持續向垂直產業滲透的新案例。"
-      },
-      {
-        "title": "Google-Anthropic Deal: AI Capacity Now Pre-Sold at Gigawatt Scale",
-        "url": "https://news.google.com/rss/articles/CBMioAFBVV95cUxNdUhZWkpnRGg4T3NwSWhhS3JFREdMS3JXc0R5NGU3WHVWVlI5alU2TlNTQm9EQTBINnJLRVRJTTlHQXBpWlVxRG1vZHhCZUtVZklmTm04RWhqdlRMVGxFZEtTM1dBNHQ3SGNxSGJZbzFzQV92Y0QzcnhfdGhqR1d4emt3S1BBWUQ0S0ZmbFg0dDMtTW9SbjI3UmhySDVvbHpu?oc=5",
-        "source": "Data Center Knowledge via Google News",
-        "time": "05/01 08:52",
-        "sentiment": "",
-        "body": "Google 與 Anthropic 的算力合作已達到 gigawatt 等級的預購規模，反映 AI 基礎建設的資本投入正進一步集中；此合作規模預示著 Anthropic 對自身算力需求的長期預判。"
-      },
-      {
-        "title": "iCapital taps Anthropic for AI client tools",
-        "url": "https://news.google.com/rss/articles/CBMiiwFBVV95cUxNNG5mejVQUXVCLUlEZ0FUSGg0NHpwcmRYbTRjM21TcVVpSVFEMzdVcWJEU1NlOTg4VllwUHhSWEJLN0NfMnhtRUp4UC02M2ZwNV8xWTJ4XzdsU0JkYjR1UjF4RVkxeERMdVFTc0ZydGFfakVKUzVzSXNkUGdzeDNsSlczZHE5cTVEd0M0?oc=5",
-        "source": "Private Banker International via Google News",
-        "time": "05/01 02:25",
-        "sentiment": "",
-        "body": "另類資產平台 iCapital 宣布採用 Anthropic 的 AI 技術為客戶打造工具，顯示 Claude 在金融服務領域的企業採用持續擴展。"
-      },
-      {
-        "title": "How People ask Claude for personal guidance",
-        "url": "https://www.anthropic.com/research/claude-personal-guidance",
+        "title": "Claude Code still doesn't support AGENTS.md",
+        "url": "https://github.com/anthropics/claude-code/issues/6235",
         "source": "Hacker News",
-        "time": "05/01 05:35",
+        "time": "05/01 21:13",
         "sentiment": "",
-        "body": "Anthropic 發布官方研究，透過隱私保護分析工具對 100 萬筆 Claude.ai 對話取樣，發現約 6% 的使用者尋求個人生活指引（職涯、感情、重大決定等），並深入探討 Claude 在這類情境的回應策略。"
+        "body": "GitHub issue 追蹤顯示 Claude Code 目前仍不支援業界漸趨標準化的 `AGENTS.md` 規範，導致跨工具（如 Cursor、GitHub Copilot）協作時面臨配置互操作問題。"
       },
       {
-        "title": "Claude Now officially supports Libya",
-        "url": "https://www.reddit.com/r/ClaudeAI/comments/1t0ssaq/claude_now_officially_supports_libya/",
-        "source": "Reddit / r/ClaudeAI",
-        "time": "05/01 05:00",
+        "title": "PreToolUse Hooks Are a Tiny State Machine: The Four Exit Codes That Actually Matter",
+        "url": "https://dev.to/agentkit/pretooluse-hooks-are-a-tiny-state-machine-the-four-exit-codes-that-actually-matter-2bg3",
+        "source": "dev.to / #claudecode",
+        "time": "05/01 21:07",
         "sentiment": "",
-        "body": "Claude 正式將利比亞列入支援國家清單，當地用戶自此無需依賴 VPN 即可合法使用，是 Anthropic 持續擴大地理覆蓋的具體進展。"
+        "body": "深度解析 Claude Code Hooks 的 PreToolUse 機制，說明四種 exit code 在攔截、允許、修改工具調用等場景中的實際差異，遠超官方文件所涵蓋的基礎用法。"
+      },
+      {
+        "title": "I use OpenCode over Claude Code, and it's every bit as good - XDA",
+        "url": "https://news.google.com/rss/articles/CBMikwFBVV95cUxPSm5ia2dMMUY4Q05ZRXdwTHQ3NmphSUZhSnYzdnVfQV85VUpKWUlYUWV6bDI3Vk1vSU40RVN3YjdkWTNvVGVMZWRyUE5JajdqN3E0eC1pMUpEcG5STmJTbldfX2Q5ZExFYjZDMWJudHVwUkdSa0E0SFpoN2ZOQjdhenlPYzBkSVZiSkoyOXdrMkhwN28?oc=5",
+        "source": "Google News / XDA",
+        "time": "05/02 04:30",
+        "sentiment": "",
+        "body": "XDA 實測開源替代方案 OpenCode，評估其功能與使用體驗與 Claude Code 相當，為不願受限於 Anthropic 訂閱政策的開發者提供具體的可行替代選項。"
       }
     ],
     "discussions": [
@@ -387,87 +339,7 @@ window.DIGEST_ALL = {
         "source": "Hacker News",
         "time": "05/01 18:35",
         "sentiment": "😊 正面",
-        "body": "兩位開發者因不堪多視窗切換之苦，打造了一款可在終端機統一管理大規模 Claude Code Agent 群的 TUI 儀表板，支援 Agent 層級化管理（類似公司組織架構），展示 multi-agent 工作流的管理工具需求正快速浮現。"
-      },
-      {
-        "title": "I built /graphify, 26 days, 450k+ downloads, ~40k stars. Here's what I didn't expect.",
-        "url": "https://www.reddit.com/r/ClaudeAI/comments/1t18eeh/i_built_graphify_26_days_450k_downloads_40k_stars/",
-        "source": "Reddit / r/ClaudeAI",
-        "time": "05/01 14:44",
-        "sentiment": "😊 正面",
-        "body": "開發者在 26 天內將 Claude Code 插件 graphify 做到全球 GitHub rank #2，此工具透過 Leiden 社群偵測建立程式碼知識圖譜，宣稱每次查詢可減少 71 倍 token 用量；作者分享許多非程式碼的意外使用場景（SQL schema、Obsidian vault、學術論文）。"
-      },
-      {
-        "title": "I accidentally burned ~$6,000 of Claude usage overnight with one command.",
-        "url": "https://www.reddit.com/r/ClaudeAI/comments/1t11mmy/i_accidentally_burned_6000_of_claude_usage/",
-        "source": "Reddit / r/ClaudeAI",
-        "time": "05/01 10:26",
-        "sentiment": "😤 負面",
-        "body": "開發者因一個 `/loop` 指令設置後遺忘，在無人看管的情況下跑了 46 次（共 26 小時），加上同時開著的分析 session，共在 claude-opus-4-7 上燒掉約 6,000 美元；此案例引發社群對 Anthropic 用量警報機制不足的廣泛討論。"
-      },
-      {
-        "title": "Tell HN: Claude account suspension after flagging duplicate billing",
-        "url": "https://news.ycombinator.com/item?id=47976682",
-        "source": "Hacker News",
-        "time": "05/01 16:30",
-        "sentiment": "😤 負面",
-        "body": "一位用戶在向 Anthropic 反映重複扣款 200 美元後不到 24 小時遭帳號停用，且客服機器人已確認為「未授權交易」；事件引發社群對 Anthropic 支援流程與帳號安全處理方式的強烈批評。"
-      },
-      {
-        "title": "Tell HN: Claude Opus 4.7 quota suddenly changed to 0 TPM in Bedrock",
-        "url": "https://news.ycombinator.com/item?id=47976391",
-        "source": "Hacker News",
-        "time": "05/01 16:06",
-        "sentiment": "😤 負面",
-        "body": "多名用戶反映 AWS Bedrock 無預警將 Opus 4.7 配額歸零，AWS 支援確認後才恢復；事件顯示雲端平台對前沿模型的存取權限可隨時撤銷，企業客戶面臨不透明的服務穩定性風險。"
-      },
-      {
-        "title": "I Cut Claude API Costs by 50% Using This Self Modifying Agentic System",
-        "url": "https://www.reddit.com/r/ClaudeAI/comments/1t18w5s/i_cut_claude_api_costs_by_50_using_this_self/",
-        "source": "Reddit / r/ClaudeAI",
-        "time": "05/01 15:04",
-        "sentiment": "😊 正面",
-        "body": "開發者分享透過自修改 Agent 系統，讓本地硬體（RTX 5070）在閒置時段執行低優先任務，有效將 Claude API 費用降低 50%；repo 已開源，吸引希望控制 API 成本的開發者關注。"
-      },
-      {
-        "title": "Got tired of flying blind on Claude.ai usage, built a browser extension that surfaces token counts, cache timers, and rate limits",
-        "url": "https://www.reddit.com/r/ClaudeAI/comments/1t0ti7h/got_tired_of_flying_blind_on_claudeai_usage_built/",
-        "source": "Reddit / r/ClaudeAI",
-        "time": "05/01 05:30",
-        "sentiment": "😊 正面",
-        "body": "開發者打造 Chrome 擴充套件，在 Claude.ai 介面即時顯示每則訊息的 token 數、context 使用量、提示快取倒數計時及速率限制進度條，解決了原生介面對用量透明度幾乎為零的痛點。"
-      },
-      {
-        "title": "I built a Chrome extension that fixes my biggest Claude annoyances — waiting to type and losing prompts",
-        "url": "https://www.reddit.com/r/ClaudeAI/comments/1t0w0gg/i_built_a_chrome_extension_that_fixes_my_biggest/",
-        "source": "Reddit / r/ClaudeAI",
-        "time": "05/01 07:05",
-        "sentiment": "🤔 褒貶不一",
-        "body": "「Superpower for Claude」擴充套件解決訊息剩餘數量不透明、快速切換等痛點；開發者坦承有付費版本但與 Anthropic 無關，社群對此類第三方工具的需求反映 Claude.ai 原生功能仍有缺口。"
-      },
-      {
-        "title": "GPT-5.5 vs GPT-5.4 vs Opus 4.7 on 56 real coding tasks from 2 open source repos",
-        "url": "https://www.reddit.com/r/ClaudeAI/comments/1t0xs8m/gpt55_vs_gpt54_vs_opus_47_on_56_real_coding_tasks/",
-        "source": "Reddit / r/ClaudeAI",
-        "time": "05/01 08:09",
-        "sentiment": "🤔 褒貶不一",
-        "body": "開發者以 Zod 與 graphql-go-tools 兩個真實開源 repo 做基準測試，結論為 Opus 4.7 寫出更精簡的 patch，GPT-5.5 的 patch 則更常通過 code review；作者強調不同 repo 結果可能不同，建議用自有資料跑測試。"
-      },
-      {
-        "title": "Is the leap from 4.5 to 4.7 actually visible?",
-        "url": "https://www.reddit.com/r/ClaudeAI/comments/1t16g7t/is_the_leap_from_45_to_47_actually_visible/",
-        "source": "Reddit / r/ClaudeAI",
-        "time": "05/01 13:24",
-        "sentiment": "😐 中性",
-        "body": "開發者使用 Claude Code 讓模型操作完整 repo 並執行終端指令，卻表示從 4.5 到 4.7 幾乎感受不到明顯躍升；社群討論指出對於一般全端 web 開發，版本差異可能不如官方宣稱明顯。"
-      },
-      {
-        "title": "Cloud Skills Are Still Just Skills — How Anthropic no longer releases new skills, and gates them within the Cloud",
-        "url": "https://www.reddit.com/r/ClaudeAI/comments/1t0wlme/cloud_skills_are_still_just_skills_how_anthropic/",
-        "source": "Reddit / r/ClaudeAI",
-        "time": "05/01 07:26",
-        "sentiment": "😤 負面",
-        "body": "文章批評 Anthropic 將新功能（Ultraplan、Ultrareview、Cloud Security）鎖在付費雲端而非開放技能生態，使開放與封閉技能形成分裂；作者擔憂「無法檢視的 prompt 就無法組合」將阻礙生態建設。"
+        "body": "Omar 是一款終端儀表板，可在單一 TUI 界面同時管理大量 Claude Code 代理並行運作，支援代理層級化協作（代理管理代理）。兩位作者的靈感來自 Claude Code 幫助他們一夜解決棘手 CI 問題的親身經歷。"
       },
       {
         "title": "Show HN: Destiny – Claude Code's fortune Teller skill",
@@ -475,15 +347,63 @@ window.DIGEST_ALL = {
         "source": "Hacker News",
         "time": "05/01 19:56",
         "sentiment": "😊 正面",
-        "body": "開發者為 Claude Code 打造了一個占卜插件，輸入生日後可隨時執行 `/destiny` 取得今日運勢；底層用 Python 腳本計算八字、卦象、五行，確保同一人同一天結果可驗證，文字詮釋層才交由 LLM 生成。"
+        "body": "開發者為 Claude Code 實作基於東亞傳統命理（八字、六爻）的每日運勢插件，Python 腳本保證同一天同一人輸出完全一致，可對照傳統曆書驗證。功能趣味性強，社群評價正面。"
       },
       {
-        "title": "Show HN: Council – Run Claude, Codex and Gemini against the same prompt",
-        "url": "https://council.armstr.ng/",
+        "title": "Governor – a Claude Code plugin to reduce token/context waste",
+        "url": "https://github.com/0xhimanshu/governor",
         "source": "Hacker News",
-        "time": "05/01 15:28",
+        "time": "05/02 02:19",
+        "sentiment": "🤔 褒貶不一",
+        "body": "Governor 插件宣稱能減少 Claude Code 的 token 浪費，但 HN 社群質疑其基準測試過於粗糙，僅統計 token 數量而未評估模型輸出品質是否同步下降，認為需要更嚴謹的評測才能佐證其價值。"
+      },
+      {
+        "title": "I gave Claude Code a $0.02/call coworker and stopped hitting Pro limits — here's the full setup",
+        "url": "https://www.reddit.com/r/ClaudeAI/comments/1t1o43w/i_gave_claude_code_a_002call_coworker_and_stopped/",
+        "source": "Reddit / r/ClaudeAI",
+        "time": "05/02 04:07",
         "sentiment": "😊 正面",
-        "body": "開源 CLI 工具，自動偵測系統上安裝的 claude、codex、gemini 並平行執行同一 prompt，最後由一個「主持人」模型彙整回答並標記分歧點；MIT 授權，適合需要多模型交叉驗證的場景。"
+        "body": "開發者透過 CLAUDE.md 設定路由規則，將批量文件讀取與樣板生成任務委派給 Kimi K2.5 等低成本模型，成功解決每週三就耗盡 Claude Code Pro 額度的問題，提供了不升級訂閱即可擴展使用量的實用方案。"
+      },
+      {
+        "title": "Anyone got a better way of handling the Claude code's sudo commands failing?",
+        "url": "https://www.reddit.com/r/ClaudeAI/comments/1t1oa0g/anyone_got_a_better_way_of_handling_the_claude/",
+        "source": "Reddit / r/ClaudeAI",
+        "time": "05/02 04:15",
+        "sentiment": "😐 中性",
+        "body": "開發者自製 sudo MCP 插件解決 Claude Code 代理需要 root 權限時的工作流中斷問題——需要提權時彈出密碼輸入視窗，完成後將 stdout/stderr 與 exit code 回傳給代理，社群正在討論更安全的替代做法。"
+      },
+      {
+        "title": "Memory code audit: the anti-drift discipline",
+        "url": "https://dev.to/michelfaure/memory-code-audit-the-anti-drift-discipline-1p6b",
+        "source": "dev.to / #claudecode",
+        "time": "05/02 00:00",
+        "sentiment": "😐 中性",
+        "body": "文章論證未經版本控制記憶的 Claude Code 代理會隨專案規模增長而產生可量測的「行為偏移」，並提供具體的記憶審計框架加以防範，同時附有法文版本供不同讀者群使用。"
+      },
+      {
+        "title": "Spec-Driven Development",
+        "url": "https://dev.to/jeffreese/spec-driven-development-515",
+        "source": "dev.to / #claudecode",
+        "time": "05/01 17:55",
+        "sentiment": "😊 正面",
+        "body": "呼應 Karpathy 近期「從 Vibe Coding 到代理工程」演講，作者強調人類必須主導規格設計並與代理協作制定計劃，主張以嚴謹的規格文件驅動 AI 開發，取代依賴模型自由發揮的模糊工作方式。"
+      },
+      {
+        "title": "Built an open-source tool to manage AI agent configs — 888 stars later, asking the AI community for feedback",
+        "url": "https://www.reddit.com/r/artificial/comments/1t1o3qa/built_an_opensource_tool_to_manage_ai_agent/",
+        "source": "Reddit / r/artificial",
+        "time": "05/02 04:07",
+        "sentiment": "😊 正面",
+        "body": "Caliber 是開源 AI 代理配置管理工具，統一管理 CLAUDE.md、.cursor/rules、AGENTS.md 等跨工具配置文件的版本控制與共享，本週突破 888 stars，正向社群徵集功能需求。"
+      },
+      {
+        "title": "Claude Code Refuses to Work If Your Commits Mention a Competitor",
+        "url": "https://dev.to/devtoolpicks/claude-code-refuses-to-work-if-your-commits-mention-a-competitor-134f",
+        "source": "dev.to / #claudecode",
+        "time": "05/01 21:16",
+        "sentiment": "😤 負面",
+        "body": "標題具強烈標題黨性質，內容似乎與 Anthropic 封鎖 OpenClaw 的政策事件相關。原文內容摘要不足，描述的具體行為尚待驗證，建議以批判眼光閱讀原文後再下判斷。"
       },
       {
         "title": "NanoBrain – A Markdown+Git \"second brain\" for Claude Code",
@@ -491,79 +411,71 @@ window.DIGEST_ALL = {
         "source": "Hacker News",
         "time": "05/01 13:23",
         "sentiment": "😊 正面",
-        "body": "NanoBrain 以 git-backed Markdown 建立可被所有 AI Agent 讀取的個人知識庫，透過 hook 在 session 結束時進行低延遲（< 50ms）append，並整合 Gmail、Google Calendar、Slack 等資料來源定時匯入。"
+        "body": "NanoBrain 以 Markdown + Git 為底層，在 Claude Code 工作流中自動擷取決策與對話紀錄，並支援 Gmail、Google Calendar、Slack、Claude 等多源資料定期同步，打造持久化的個人知識庫供所有 AI 代理讀取。"
       },
       {
-        "title": "Minecraft Playing Claude Agent",
-        "url": "https://www.reddit.com/r/ClaudeAI/comments/1t16urg/minecraft_playing_claude_agent/",
-        "source": "Reddit / r/ClaudeAI",
-        "time": "05/01 13:40",
+        "title": "Propagation Day: When the CLAUDE.md Spec Becomes the Migration Plan",
+        "url": "https://dev.to/jeremy_longshore/propagation-day-when-the-claudemd-spec-becomes-the-migration-plan-4pnd",
+        "source": "dev.to / #claudecode",
+        "time": "05/02 05:00",
+        "sentiment": "😐 中性",
+        "body": "作者分享將 `~/.claude/CLAUDE.md` 中積累已久的 TO-DO 規範批量傳播至多個 repo 的實踐心得，說明如何以 CLAUDE.md 作為跨 repo 遷移計劃的共同載體。"
+      },
+      {
+        "title": "Agentic Knowledge Base — Karpathy's LLM wiki, with adapters",
+        "url": "https://dev.to/reneza/agentic-knowledge-base-karpathys-llm-wiki-with-adapters-593n",
+        "source": "dev.to / #claudecode",
+        "time": "05/02 06:13",
         "sentiment": "😊 正面",
-        "body": "開發者打造名為 Mote 的 Claude Code Agent，可自主在 Minecraft Bedrock 中遊玩（並從頭建立相容工具），另提供一個 wizard 工具讓任何人只用一個 `.md` 檔案即可創建類似 Agent。"
-      },
-      {
-        "title": "Claude code session history",
-        "url": "https://www.reddit.com/r/ClaudeAI/comments/1t1936m/claude_code_session_history/",
-        "source": "Reddit / r/ClaudeAI",
-        "time": "05/01 15:13",
-        "sentiment": "😐 中性",
-        "body": "開發者發現 Claude Code 預設在 30 天後自動刪除 session `.jsonl` 歷史檔，可透過 `npx agentinit agent set claude cleanupPeriodDays 365` 延長保留期間；對需要長期回溯 session 記錄的用戶是實用提示。"
-      },
-      {
-        "title": "Product Feedback: A \"Docs\" Tab for Claude Desktop",
-        "url": "https://www.reddit.com/r/ClaudeAI/comments/1t0p6cn/product_feedback_a_docs_tab_for_claude_desktop/",
-        "source": "Reddit / r/ClaudeAI",
-        "time": "05/01 02:08",
-        "sentiment": "😐 中性",
-        "body": "用戶建議 Claude Desktop 新增「Docs」分頁，讓法務、合規、政策等知識工作者能以 Markdown + git 為基底的 stateful workspace 工作，無需接觸任何開發者概念；視為 Code tab 基礎設施的低成本延伸。"
+        "body": "作者在 Karpathy LLM Wiki 基礎上加入語意搜尋 adapter 並整合 TickTick 等工具，打造具備代理互動能力的個人知識庫，展示如何將 LLM wiki 概念落地為實際可查詢的工作系統。"
       }
     ],
     "billing": [
       {
-        "title": "I accidentally burned ~$6,000 of Claude usage overnight with one command.",
-        "url": "https://www.reddit.com/r/ClaudeAI/comments/1t11mmy/i_accidentally_burned_6000_of_claude_usage/",
-        "source": "Reddit / r/ClaudeAI",
-        "time": "05/01 10:26",
+        "title": "Uber burned its entire 2026 AI coding budget in 4 months - $500-2k per engineer per month",
+        "url": "https://www.reddit.com/r/artificial/comments/1t1mhx6/uber_burned_its_entire_2026_ai_coding_budget_in_4/",
+        "source": "Reddit / r/artificial",
+        "time": "05/02 02:44",
         "sentiment": "",
-        "body": "單一 `/loop` 指令搭配長時間分析 session，在 26 小時內於 claude-opus-4-7 燒掉約 6,000 美元；用戶指出 Anthropic 儀表板顯示的金額嚴重滯後，即時用量警報機制的缺失是造成這類事故的根本原因。"
+        "body": "Uber 工程師 Claude Code 實際月費落在 $500–$2,000 區間，全公司四個月耗盡年度 AI 預算；CTO 明確表示明年將「從零重建」AI 預算策略。此案例為業界提供了大型企業 AI 工具真實成本的稀缺一手數據。"
       },
       {
-        "title": "Tell HN: Claude account suspension after flagging duplicate billing",
-        "url": "https://news.ycombinator.com/item?id=47976682",
-        "source": "Hacker News",
-        "time": "05/01 16:30",
+        "title": "Why Anthropic Cut Off OpenClaw — The Claude Subscription Policy Shift and What It Costs You",
+        "url": "https://dev.to/jangwook_kim_e31e7291ad98/why-anthropic-cut-off-openclaw-the-claude-subscription-policy-shift-and-what-it-costs-you-pag",
+        "source": "dev.to / #anthropic",
+        "time": "05/01 22:43",
         "sentiment": "",
-        "body": "用戶反映本月被多收 200 美元，在客服機器人確認為「未授權交易」並承諾協助後，帳號卻在 24 小時內遭停用；事件尚未釐清因果關係，但社群對 Anthropic 計費系統的可信度提出質疑。"
+        "body": "Anthropic 新條款禁止 Pro/Max 訂閱額度用於第三方框架後，原本依靠訂閱方案控制成本的開發者被迫全面切換至 API 計費，實際支出出現顯著跳升。"
       },
       {
-        "title": "$200 max plan usage, using tokens",
-        "url": "https://www.reddit.com/r/ClaudeAI/comments/1t1482q/200_max_plan_usage_using_tokens/",
+        "title": "I gave Claude Code a $0.02/call coworker and stopped hitting Pro limits — here's the full setup",
+        "url": "https://www.reddit.com/r/ClaudeAI/comments/1t1o43w/i_gave_claude_code_a_002call_coworker_and_stopped/",
         "source": "Reddit / r/ClaudeAI",
-        "time": "05/01 12:00",
+        "time": "05/02 04:07",
         "sentiment": "",
-        "body": "Max 方案用戶分享一週高強度使用後僅達 60% 配額，引發社群討論如何更有效率地利用每週 token 額度；對考慮升級的用戶而言，此帖提供了實際使用情境下的消耗參考。"
+        "body": "透過 CLAUDE.md 路由規則將繁瑣任務委派給每次僅需 $0.02 的低成本模型，開發者在不升級訂閱的前提下將 Pro 額度使用效率提升數倍，提供了兼顧成本與能力的實用路徑。"
       }
     ],
     "focus": [
       {
-        "tag": "重大事件",
-        "text": "五角大廈與 7 家 AI 公司簽署機密網路部署協議，唯獨排除 Anthropic——雙方因軍事用途的安全護欄要求存在根本分歧。白宮近期在 Anthropic 發布多項技術突破後已重啟談判，後續政策走向值得密切追蹤。"
+        "tag": "[重大事件]",
+        "text": "Uber 四個月燒完整年 AI 預算，根源是 Claude Code 使用率爆炸——95% 工程師每月使用 AI 工具，70% 提交代碼來自 AI，此案例正成為業界討論 AI 工具成本管控的標誌性參考。"
       },
       {
-        "tag": "重大事件",
-        "text": "Anthropic 正式推出 Claude Security 企業公測版，以推理式程式碼安全掃描取代傳統規則比對，是其進軍企業資安市場的關鍵里程碑。"
+        "tag": "[重大事件]",
+        "text": "Anthropic 開放 Claude Security 公開測試版，專注代碼安全審計，標誌著 Anthropic 正式將 Claude 推入 DevSecOps 企業賽道。"
       },
       {
-        "tag": "持續追蹤",
-        "text": "Uber 四個月內燒完全年 AI 預算，Claude Code 企業采用力道遠超預期；The Atlantic 同步報導 AI 商業化營收開始追上前期泡沫疑慮，Claude Code 為主要驅動力。"
+        "tag": "[風險警示]",
+        "text": "AWS Bedrock 無預警將部分帳號的 Claude Opus 4.7 配額歸零，事件再次暴露雲端平台對前沿模型存取管理透明度不足的系統性風險。"
       },
       {
-        "tag": "社群趨勢",
-        "text": "Claude Code 工具生態持續爆發：多 Agent TUI、知識圖譜插件 graphify（450k+ 下載、40k stars）、Chrome 用量監控擴充套件等多款社群工具集中登場，開發者社群活躍度持續走高。"
+        "tag": "[持續追蹤]",
+        "text": "Anthropic 於 4 月 4 日悄悄修改使用條款，禁止 Claude Pro/Max 訂閱額度透過 OpenClaw 等第三方框架調用，大量開發者工作流被迫中斷，社群反彈持續延燒。"
       },
       {
-        "tag": "風險警示",
-        "text": "一名開發者因 `/loop` 指令無人看管執行 46 次，單夜意外燒掉約 6,000 美元；AWS Bedrock 亦被揭無預警將帳號 Opus 4.7 配額歸零，反映 AI 用量監控與雲服務透明度的雙重隱患。"
+        "tag": "[社群趨勢]",
+        "text": "Claude Code 周邊工具生態單日出現多個新項目（TUI 多代理管理、記憶體審計框架、token 路由插件），開發者自建工作流與「AI 代理管理 AI 代理」趨勢持續加溫。"
       }
     ],
     "sourceStatus": [
@@ -575,12 +487,12 @@ window.DIGEST_ALL = {
       {
         "name": "GitHub",
         "ok": true,
-        "count": 1
+        "count": 0
       },
       {
         "name": "Hacker News",
         "ok": true,
-        "count": 27
+        "count": 31
       },
       {
         "name": "Reddit",
@@ -590,10 +502,15 @@ window.DIGEST_ALL = {
       {
         "name": "Google News",
         "ok": true,
-        "count": 23
+        "count": 12
+      },
+      {
+        "name": "dev.to",
+        "ok": true,
+        "count": 12
       }
     ],
-    "preview": "Pentagon reaches agreements with top AI companies, but not Anthropic"
+    "preview": "Uber torches 2026 AI budget on Claude Code in four months"
   },
   "2026-04-30": {
     "date": "2026-04-30",
