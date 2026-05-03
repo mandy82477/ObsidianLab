@@ -3,13 +3,13 @@
 **類型：** product
 **狀態：** active
 **首次出現：** 2025（正式推出）
-**最後更新：** 2026-05-02
+**最後更新：** 2026-05-03
 
 ---
 
 ## 現況
 
-Claude Code 是 Anthropic 的 AI 編碼 CLI 工具，支援 agentic 工作流程、MCP Server 整合、Hooks 機制與 Agent Teams。目前為最受開發者關注的 AI 編碼工具之一。近期接連出現效能退步事件（已承認工程疏失）、HERMES.md 靜默計費 bug、API 金鑰外洩漏洞、Auto Compact 失效等問題，安全性與可靠性受到集中審視。v2.1.121 新增 MCP `alwaysLoad` 選項，Runhouse 團隊透過股權收購加入 Anthropic 以強化 agentic 基礎架構。
+Claude Code 是 Anthropic 的 AI 編碼 CLI 工具，支援 agentic 工作流程、MCP Server 整合、Hooks 機制與 Agent Teams。目前為最受開發者關注的 AI 編碼工具之一。近期接連出現效能退步事件（已承認工程疏失）、HERMES.md 靜默計費 bug、API 金鑰外洩漏洞、Auto Compact 失效等問題，安全性與可靠性受到集中審視。v2.1.121 新增 MCP `alwaysLoad` 選項，Runhouse 團隊透過股權收購加入 Anthropic 以強化 agentic 基礎架構。2026-05-03 加入 macOS 電腦使用（computer use）功能，Claude Code 與 Claude Cowork 均可直接控制 macOS 桌面的滑鼠與鍵盤，從純程式碼助理擴展為全桌面自動化代理。
 
 ---
 
@@ -88,6 +88,7 @@ Claude Code 是 Anthropic 的 AI 編碼 CLI 工具，支援 agentic 工作流程
 - **[Mote](https://www.reddit.com/r/ClaudeAI/comments/1t16urg/)** — 可自主在 Minecraft Bedrock 中遊玩的 Claude Code Agent，另提供 wizard 工具讓任何人只用一個 `.md` 檔案即可創建類似 Agent
 - **[Governor](https://github.com/0xhimanshu/governor)** — 宣稱可減少 Claude Code token 浪費的插件；HN 社群質疑其基準測試過於粗糙，僅統計 token 數量而未評估模型輸出品質是否同步下降，效果待嚴謹驗證
 - **[Caliber](https://www.reddit.com/r/artificial/comments/1t1o3qa/)** — 開源 AI 代理配置管理工具，統一版本控制 CLAUDE.md、.cursor/rules、AGENTS.md 等跨工具配置文件；本週突破 888 stars，正向社群徵集功能需求
+- **[TradingAgents Plugin](https://github.com/lucemia/trading-agents-plugin)** — 將多代理股票分析框架改寫為 Claude Code 插件，在現有 Claude 訂閱下免額外 API 費用執行 7 個並行/序列分析子代理（技術面、基本面、投資組合管理等）
 
 ---
 
@@ -108,11 +109,14 @@ Claude Code 是 Anthropic 的 AI 編碼 CLI 工具，支援 agentic 工作流程
 - [[news/2026-04-29]]
 - [[news/2026-04-30]]
 - [[news/2026-05-02]]
+- [[news/2026-05-03]]
 
 ## 版本歷史
 
 | 日期 | 事件 |
 |------|------|
+| 2026-05-03 | macOS 電腦使用（computer use）功能上線：Claude Code / Claude Cowork 可直接控制 macOS 桌面滑鼠與鍵盤，升格為全桌面自動化代理 |
+| 2026-05-03 | 新工具：TradingAgents Plugin（免額外 API 費的 7 子代理股票分析框架，訂閱內執行）|
 | 2026-05-02 | AGENTS.md 規範不支援（GitHub issue #6235）：跨工具（Cursor/Copilot）配置互操作缺口浮現 |
 | 2026-05-02 | 新工具：Governor（token 浪費優化插件，HN 社群存疑）、Caliber（888 stars，統一管理 CLAUDE.md/.cursor/rules/AGENTS.md） |
 | 2026-05-02 | v2.1.126：`/model` 選擇器現在從 gateway 的 `/v1/models` 端點列出模型（適用於 `ANTHROPIC_BASE_URL` 自訂 gateway 場景）；新增 `claude project purge` 指令 |

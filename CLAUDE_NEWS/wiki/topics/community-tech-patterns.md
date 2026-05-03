@@ -2,7 +2,7 @@
 
 **狀態：** ongoing
 **開始日期：** 2026-04-25
-**最後更新：** 2026-05-02
+**最後更新：** 2026-05-03
 
 ---
 
@@ -107,6 +107,26 @@
 
 - **全局 CLAUDE.md 作為遷移計劃載體**：將 `~/.claude/CLAUDE.md` 中積累的規範批量傳播至多個 repo，讓全局規範落地到各個專案；此模式下 CLAUDE.md 從「單一 repo 指令檔」升級為「跨 repo 遷移計劃的共同載體」
 
+### CLAUDE.md 領域化安全規則（2026-05-03）
+
+- **技術棧專用防護規則**：針對 Kubernetes 的 13 條 CLAUDE.md 規則，防止 Claude 產出 latest tag 使用、缺少資源限制、過度授予 cluster-admin 等高風險配置；顯示 CLAUDE.md 已從通用指令發展至特定技術棧的系統性安全防護框架
+- **可複用安全規則庫**：K8s 規則的整理模式可推廣至其他高風險領域（資料庫操作、IaC 配置、CI/CD 管線），將領域知識轉為 CLAUDE.md 規則是安全工程化的新思路
+
+### AI 程式碼一致性問題（2026-05-03）
+
+- **命名漂移現象**：AI 工具對同一功能反覆產出不同命名（`getUsers` / `fetchUserList` / `loadAllUsers`），在長期維護的大型代碼庫中積累顯著技術債
+- **工程解法**：透過自建 OSS 工具強制 Claude Code 等 AI 工具在代碼生成時遵守既定命名與風格規範，是「AI 代碼非決定性」問題的具體對策
+
+### AI 大規模開發案例（2026-05-03）
+
+- **91k 行 ERP 案例**：聲稱單人使用 Claude Code 29 天完成 91,000 行 ERP 系統；若屬實將是 AI 輔助開發生產力的標誌性案例，社群正關注技術深度與長期維護性的後續驗證
+- **確定度量化門檻**：強制 Claude 在確定度達 95% 才能動手的工作流設計，對高風險任務（生產部署、資料庫操作）可有效降低誤操作率；95% 為本次社群討論提出的具體數值
+
+### Agent 持續運作架構（2026-05-03）
+
+- **VPS 雙代理持續運作**：兩個 Claude Code 代理在 VPS 的 tmux session 中持續運作，自動開 PR 並發布 Discord 狀態更新，代理間可相互協調；架構概念類似「Claude Code 版 docker-compose」
+- **OS 用戶隔離爆炸半徑**：每個代理使用獨立 OS 用戶，比容器化更輕量但仍能有效限制單一代理失控時的影響範圍，是 agent 架構設計的實踐案例
+
 ---
 
 ## 熱門應用
@@ -156,6 +176,9 @@
 | **Mote**                | 創意工具 | 🔥  | 可自主玩 Minecraft Bedrock 的 Claude Code Agent |
 | **Governor**            | 工具    | 🔥  | Token 浪費優化插件，效果存疑（HN 社群質疑基準測試粗糙，未評估輸出品質） |
 | **Caliber**             | 工具    | 🔥🔥 | 跨工具 AI config 統一管理（CLAUDE.md/.cursor/rules/AGENTS.md），本週 888 stars |
+| **TradingAgents Plugin** | 多代理 | 🔥🔥 | 7 子代理股票分析（技術面/基本面/投資組合），訂閱內免額外 API 費用 |
+| **CLAUDE.md for K8s**   | 安全工具 | 🔥🔥 | 13 條規則防止 Claude 產出不安全 K8s 配置，系統性安全防護框架 |
+| **AI 命名一致性 OSS**   | 品質工具 | 🔥  | 強制 Claude Code 等 AI 工具維持一致命名與風格，解決命名漂移技術債 |
 
 > 熱度定義：🔥🔥🔥 跨平台多次出現 / 社群廣泛討論；🔥🔥 單平台高互動；🔥 值得關注但尚未擴散
 
@@ -188,8 +211,20 @@
 - [[news/2026-04-29]]
 - [[news/2026-04-30]]
 - [[news/2026-05-02]]
+- [[news/2026-05-03]]
 
 ## 時序
+
+### 2026-05-03
+- **macOS 電腦使用（computer use）能力**：Anthropic 為 Claude Code 及 Claude Cowork 加入 computer use 功能，可直接控制 macOS 桌面的滑鼠與鍵盤，AI agent 能力範疇從純程式碼助理擴展為全桌面自動化代理；此為 Claude Code 功能邊界的重大擴張
+- **29 天 91k 行 ERP，零工程師**：聲稱獨立使用 Claude Code 在 29 天內完成 91,000 行程式碼的 ERP 系統；若細節屬實，將是 AI 輔助開發生產力的標誌性案例，社群開始驗證技術深度與維護性
+- **8 個 Claude Code 品質控制技巧**：整理強制澄清至 95% 確定度、Todo 加自動驗證步驟、及早中斷偏離執行等 8 個實用技巧；量化 95% 確定度門檻為本次討論的具體數據點
+- **雙代理 VPS 持續運作框架**：兩個 Claude Code 代理在 VPS tmux session 中持續運作，自動開 PR、發 Discord 更新、相互協調；每個代理使用獨立 OS 用戶隔離爆炸半徑，架構類似 Claude Code 版 docker-compose；作者自三月起 dogfooding
+- **CLAUDE.md for Kubernetes（13 條規則）**：針對 K8s 的 13 條 CLAUDE.md 安全規則，防止 latest tag、缺少資源限制、過度授予 cluster-admin 等高風險模式；將 CLAUDE.md 從通用指令框架升級為技術棧特定的安全防護工具
+- **AI 命名一致性 OSS 工具**：因 AI 對同一功能反覆產出不同命名（getUsers/fetchUserList/loadAllUsers），開發者自建開源工具強制 Claude Code 等 AI 維持一致命名與程式碼風格，是「AI 代碼非決定性」問題的具體工程解法
+- **TradingAgents Plugin（免額外 API 費）**：將多代理股票分析框架改寫為 Claude Code 插件，7 個並行/序列分析子代理（技術面/基本面/投資組合管理），在現有 Claude 訂閱下免額外費用執行，展示「訂閱內多代理」的成本優化思路
+- **40 個個人技能系統**：使用者整理自己累積建立的 40 個 Claude 技能，依重複工作流程、決策框架、格式模板等分類；展示個人工作知識系統化轉化為可複用 AI 工具的深度實踐，技能數量突破數十個的系統化管理案例
+- **AI 時代開發者身份認同討論**：「If Claude writes the code, what makes me still a developer?」三個月未親自寫程式卻持續交付功能的開發者記述梯度滑坡式的角色轉變；社群廣泛討論 AI 協作時代「開發者」定義的重新邊界，被視為持續發酵的社群趨勢
 
 ### 2026-05-02
 - **PreToolUse Hooks 四種 exit code**：深度解析 Block/Allow/Modify/Error 四種 exit code 在攔截、放行、修改工具調用等場景的實際差異，官方文件嚴重低估其複雜度

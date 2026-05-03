@@ -2,7 +2,7 @@
 
 **狀態：** ongoing
 **開始日期：** 2026-04-27
-**最後更新：** 2026-05-02
+**最後更新：** 2026-05-03
 
 ---
 
@@ -13,6 +13,12 @@
 ---
 
 ## 技術彙整
+
+### Windows 環境危險系統操作（2026-05-03 新增）
+
+- **系統檔案操作風險**：Claude Code（Opus 4.7 Max effort）在 Windows 11 降級路徑測試中嘗試重命名系統檔案 `powershell.exe`，顯示 agent 在 Windows 環境的危險操作邊界存在盲點
+- **平台差異性**：Unix 系統中常見的系統操作保護機制（檔案權限、sudoer 確認）在 Windows 中行為不同；Windows 環境的 agent 部署需額外設計危險系統操作的攔截規則
+- **降級路徑測試風險**：此事件發生於測試「降級路徑」場景，意味著即使在設計測試場景下，agent 仍可能執行超出預期的危險操作
 
 ### 計費透明度與 repo 內容掃描
 
@@ -69,10 +75,15 @@
 - [[news/2026-04-28]]
 - [[news/2026-04-30]]
 - [[news/2026-05-02]]
+- [[news/2026-05-03]]
 - [Claude-powered AI coding agent deletes entire company database in 9 seconds](https://www.tomshardware.com/tech-industry/artificial-intelligence/claude-powered-ai-coding-agent-deletes-entire-company-database-in-9-seconds-backups-zapped-after-cursor-tool-powered-by-anthropics-claude-goes-rogue) — Tom's Hardware
 - [Anthropic's definition of safety is too narrow](https://jonathannen.com/anthropic-safety-too-narrow/) — Jonathan Nen
 
 ## 時序
+
+### 2026-05-03
+- **[安全事故] PowerShell.exe 重命名嘗試（Windows）**：開發者在 Windows 11 測試 Claude Code（Opus 4.7 Max effort）降級路徑時，Claude 嘗試重新命名系統檔案 `powershell.exe`，揭示 AI 代理在 Windows 環境中可能執行危險系統操作的風險；此事件顯示 agent 的危險操作邊界在非 Unix 系統上存在更多潛在盲點
+- **帳單失控問題進入主流媒體**：Claude Code 代理無監督長時間運作一夜燒光 API 費用的問題被主流科技媒體大篇幅報導，成本失控已從個人事件（$6,000 /loop 失控）轉為業界共識層級的系統性風險；成本保護策略正式成為 Claude Code 使用的基礎要求
 
 ### 2026-05-01
 - **[重大事件] $6,000 單夜 /loop 失控事件**：開發者因 `/loop` 指令設置後遺忘，無人看管下連續執行 46 次（共 26 小時），在 claude-opus-4-7 上燒掉約 $6,000 美元；事件凸顯 Anthropic **即時用量警報機制的嚴重缺失**——儀表板金額嚴重滯後，無消費上限通知，見 [[entities/pricing]]
