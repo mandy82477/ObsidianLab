@@ -2,7 +2,7 @@
 
 **類型：** policy
 **狀態：** active（持續調整中）
-**最後更新：** 2026-05-03
+**最後更新：** 2026-05-04
 
 ---
 
@@ -20,6 +20,18 @@
 ---
 
 ## 近期政策變動
+
+### 2026-05-04：Claude Pro 訂閱包含 Claude Code 說明不一致
+
+多名 Claude Pro（$20/月）訂閱者在訂閱後 **7 天**收到「Claude Code 試用結束」提示，並被引導升級至 Max 方案；此說明與官方定價頁面「Pro 包含 Claude Code」相矛盾，顯示 Anthropic 的方案權益說明存在混淆，有待官方正式釐清。建議 Pro 用戶在訂閱前向 Anthropic 支援確認 Claude Code 存取權益的確切範圍。
+
+### 2026-05-04：Amazon Bedrock 新用戶授權即時過期問題
+
+多名新用戶依照官方文件透過 Amazon Bedrock 設定 Claude Code API 金鑰後，在取得 Anthropic 模型存取授權後約 **5 分鐘內**即收到「expired」通知，帳戶仍有餘額（如 $100）卻無法繼續使用。疑為 Bedrock 市集授權流程的已知問題，建議聯絡 AWS Support 處理。
+
+### 2026-05-04：Claude 5 小時滾動視窗機制與預排程技巧
+
+社群揭示 Claude Code 5 小時滾動使用視窗的計時規則：從**第一則訊息**開始計時，而非固定時段重置。技巧：透過 Claude Code Routines 預先排程一條輕量訊息，「提前啟動」計時視窗，確保正式工作時段能使用完整額度。此機制細節原本並不透明，需靠社群自行摸索。
 
 ### 2026-05-03：AI 代理帳單失控問題進入主流討論
 
@@ -154,4 +166,5 @@ The Verge（2026-04-24）報導，AI 商業化壓力下，Anthropic 等實驗室
 - [[news/2026-04-30]]
 - [[news/2026-05-02]]
 - [[news/2026-05-03]]
+- [[news/2026-05-04]]
 - [官方說明文件](https://support.claude.com/en/articles/11940350-claude-code-model-configuration)

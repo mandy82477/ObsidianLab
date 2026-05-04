@@ -3,13 +3,13 @@
 **類型：** product
 **狀態：** active
 **首次出現：** 2025（正式推出）
-**最後更新：** 2026-05-03
+**最後更新：** 2026-05-04
 
 ---
 
 ## 現況
 
-Claude Code 是 Anthropic 的 AI 編碼 CLI 工具，支援 agentic 工作流程、MCP Server 整合、Hooks 機制與 Agent Teams。目前為最受開發者關注的 AI 編碼工具之一。近期接連出現效能退步事件（已承認工程疏失）、HERMES.md 靜默計費 bug、API 金鑰外洩漏洞、Auto Compact 失效等問題，安全性與可靠性受到集中審視。v2.1.121 新增 MCP `alwaysLoad` 選項，Runhouse 團隊透過股權收購加入 Anthropic 以強化 agentic 基礎架構。2026-05-03 加入 macOS 電腦使用（computer use）功能，Claude Code 與 Claude Cowork 均可直接控制 macOS 桌面的滑鼠與鍵盤，從純程式碼助理擴展為全桌面自動化代理。
+Claude Code 是 Anthropic 的 AI 編碼 CLI 工具，支援 agentic 工作流程、MCP Server 整合、Hooks 機制與 Agent Teams。目前為最受開發者關注的 AI 編碼工具之一。近期接連出現效能退步事件（已承認工程疏失）、HERMES.md 靜默計費 bug、API 金鑰外洩漏洞、Auto Compact 失效等問題，安全性與可靠性受到集中審視。v2.1.121 新增 MCP `alwaysLoad` 選項，Runhouse 團隊透過股權收購加入 Anthropic 以強化 agentic 基礎架構。2026-05-03 加入 macOS 電腦使用（computer use）功能，Claude Code 與 Claude Cowork 均可直接控制 macOS 桌面的滑鼠與鍵盤，從純程式碼助理擴展為全桌面自動化代理。2026-05-04 重大事件：Anthropic 因人為疏失導致 Claude Code 原始碼外洩，已向各平台發出逾 8,100 次 DMCA 下架請求，引發 AI 生成程式碼版權歸屬的法律辯論，社群分支「Claw-Code」隨之誕生；社群亦發現 Claude Cowork/Desktop 悄悄支援任意第三方 LLM（OpenAI、Gemini、本地模型、企業閘道 Bedrock/Vertex/Foundry），無任何官方公告；Claude Connectors 透過 MCP 擴展至創意工作軟體（Adobe、Blender、Ableton、Affinity、Autodesk Fusion）。
 
 ---
 
@@ -44,6 +44,7 @@ Claude Code 是 Anthropic 的 AI 編碼 CLI 工具，支援 agentic 工作流程
 - **Claude Projects 對話消失**（2026-04-30 回報）：重度使用者三度遭遇整天的創作對話無故消失，在記錄中留下日期空白，且無法透過搜尋找回
 - **Session 歷史 30 天自動刪除**（2026-05-01 確認）：Claude Code 預設在 30 天後自動刪除 session `.jsonl` 歷史檔；可透過 `npx agentinit agent set claude cleanupPeriodDays 365` 將保留期間延長至 365 天
 - **AGENTS.md 規範不支援**（2026-05-02，GitHub issue #6235）：Claude Code 目前仍不支援業界漸趨標準化的 `AGENTS.md` 規範，導致跨工具（如 Cursor、GitHub Copilot）協作時面臨配置互操作問題。
+- **原始碼外洩與 DMCA 風波**（2026-05-04 持續延燒）：Anthropic 因人為疏失導致 Claude Code 原始碼外洩，已向各平台發出逾 8,100 次 DMCA 下架請求，引發 AI 生成程式碼版權歸屬的法律辯論；社群以外洩程式碼為基礎重建的「Claw-Code」分支隨之誕生，影響已超出技術層面。
 
 ---
 
@@ -88,6 +89,13 @@ Claude Code 是 Anthropic 的 AI 編碼 CLI 工具，支援 agentic 工作流程
 - **[Mote](https://www.reddit.com/r/ClaudeAI/comments/1t16urg/)** — 可自主在 Minecraft Bedrock 中遊玩的 Claude Code Agent，另提供 wizard 工具讓任何人只用一個 `.md` 檔案即可創建類似 Agent
 - **[Governor](https://github.com/0xhimanshu/governor)** — 宣稱可減少 Claude Code token 浪費的插件；HN 社群質疑其基準測試過於粗糙，僅統計 token 數量而未評估模型輸出品質是否同步下降，效果待嚴謹驗證
 - **[Caliber](https://www.reddit.com/r/artificial/comments/1t1o3qa/)** — 開源 AI 代理配置管理工具，統一版本控制 CLAUDE.md、.cursor/rules、AGENTS.md 等跨工具配置文件；本週突破 888 stars，正向社群徵集功能需求
+- **[Semble](https://github.com/MinishLab/semble)** — 針對大型代碼庫的 Claude Code agent 搜尋效率工具，結合 Model2Vec 靜態嵌入、BM25 與 RRF 重排序，宣稱比 grep 少用 98% 的 token；無需 API 金鑰，解決 agent 搜尋失敗後退化為讀整個檔案的問題
+- **[Kirikiri](https://news.ycombinator.com/item?id=47996198)** — 以 Flutter + dartssh2 打造的 iOS 開源 app，透過連接 Google Cloud Shell 或 SSH 伺服器遠端執行 Claude Code，以浮動按鈕取代軟體鍵盤常用指令
+- **[JupyterLab Claude Code Extension](https://github.com/stellarshenson/jupyterlab_claude_code_extension)** — 開源 JupyterLab 擴充套件，讓資料科學家直接在 Jupyter 環境使用 Claude Code，無需切換至獨立終端機
+- **[Prism MCP](https://www.reddit.com/r/ClaudeAI/comments/1t3gdif/)** — VS Code 擴充套件，透過 MCP 將語言伺服器（LSP）語義導航能力接入 Claude Code，讓 AI 以語義方式瀏覽代碼庫而非依賴 grep；已發布於 VS Code Marketplace
+- **[claudely](https://www.reddit.com/r/ClaudeAI/comments/1t38e7c/)** — 在保留 Claude Code 完整插件生態（Skills、MCP、Hooks）的前提下，將後端切換至 LM Studio/Ollama/llama.cpp，無需修改主配置文件
+- **[Smithy](https://github.com/smithy-ai/smithy-ai)** — 讓開發者從 Jira、GitLab 或 Forgejo 直接觸發容器化 Claude Code 工作階段，每個 issue 對應獨立容器分支，完成後自動開 PR、回應 CI 並整合 PR 回饋
+- **[Patina](https://www.reddit.com/r/ClaudeAI/comments/1t3eurx/)** — 開源 CLI（MIT，已上 npm），透過「retro loop」機制自動維護 CLAUDE.md，防止 AI harness 配置「腐化」（修正行為復發、規則膨脹失焦）
 - **[TradingAgents Plugin](https://github.com/lucemia/trading-agents-plugin)** — 將多代理股票分析框架改寫為 Claude Code 插件，在現有 Claude 訂閱下免額外 API 費用執行 7 個並行/序列分析子代理（技術面、基本面、投資組合管理等）
 
 ---
@@ -110,11 +118,17 @@ Claude Code 是 Anthropic 的 AI 編碼 CLI 工具，支援 agentic 工作流程
 - [[news/2026-04-30]]
 - [[news/2026-05-02]]
 - [[news/2026-05-03]]
+- [[news/2026-05-04]]
 
 ## 版本歷史
 
 | 日期 | 事件 |
 |------|------|
+| 2026-05-04 | 原始碼外洩事件持續擴大：Anthropic 已向各平台發出逾 8,100 次 DMCA 下架請求，引發 AI 生成程式碼版權歸屬法律辯論，社群分支「Claw-Code」誕生 |
+| 2026-05-04 | Claude Cowork/Desktop 悄悄加入支援任意第三方 LLM 功能（OpenAI、Gemini、本地模型、Bedrock/Vertex/Foundry 企業閘道），無任何官方公告，由社群自行發現 |
+| 2026-05-04 | Claude Connectors 透過 MCP 擴展至創意工作軟體：Adobe（After Effects/Photoshop/Illustrator）、Blender、Ableton Live、Affinity、Autodesk Fusion |
+| 2026-05-04 | Claude API 全球直接存取正式開放，擴大全球服務覆蓋範圍 |
+| 2026-05-04 | 新工具：Semble（code search 比 grep 少 98% token）、Kirikiri（iOS mobile IDE）、JupyterLab 擴充套件、Prism MCP（VS Code LSP 橋接）、claudely（本地 LLM 無痛切換）、Smithy（issue tracker 觸發容器化 session）、Patina（CLAUDE.md 維護 CLI） |
 | 2026-05-03 | macOS 電腦使用（computer use）功能上線：Claude Code / Claude Cowork 可直接控制 macOS 桌面滑鼠與鍵盤，升格為全桌面自動化代理 |
 | 2026-05-03 | 新工具：TradingAgents Plugin（免額外 API 費的 7 子代理股票分析框架，訂閱內執行）|
 | 2026-05-02 | AGENTS.md 規範不支援（GitHub issue #6235）：跨工具（Cursor/Copilot）配置互操作缺口浮現 |

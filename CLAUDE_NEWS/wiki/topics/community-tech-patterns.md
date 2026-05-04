@@ -2,7 +2,7 @@
 
 **狀態：** ongoing
 **開始日期：** 2026-04-25
-**最後更新：** 2026-05-03
+**最後更新：** 2026-05-04
 
 ---
 
@@ -122,6 +122,36 @@
 - **91k 行 ERP 案例**：聲稱單人使用 Claude Code 29 天完成 91,000 行 ERP 系統；若屬實將是 AI 輔助開發生產力的標誌性案例，社群正關注技術深度與長期維護性的後續驗證
 - **確定度量化門檻**：強制 Claude 在確定度達 95% 才能動手的工作流設計，對高風險任務（生產部署、資料庫操作）可有效降低誤操作率；95% 為本次社群討論提出的具體數值
 
+### Backend 替換模式（2026-05-04）
+
+- **環境變數後端切換**（DeepClaude 模式）：僅需修改 `ANTHROPIC_BASE_URL` 等少數環境變數，即可將 Claude Code 的 agent loop 導向其他 LLM 後端（如 DeepSeek V4 Pro）；HN 543 則討論凸顯社群對低成本替換的高度需求，雖然 DeepSeek 官方文件早已說明此方法，顯示這屬於「已知但被廣泛重新發現」的功能
+- **本地 LLM 無侵入切換**（claudely）：在保留 Claude Code 完整插件生態（Skills、MCP、Hooks）的前提下切換後端至 Ollama/LM Studio/llama.cpp，無需修改主配置文件，讓開發者兼得生態完整性與本地模型的低成本優勢
+
+### CLAUDE.md 防腐爛機制（2026-05-04）
+
+- **CLAUDE.md「腐化」問題成為主題**：長期使用 Claude Code 後，CLAUDE.md 常出現修正過的行為再次復發、規則膨脹失焦等「腐化」現象
+- **Retro Loop 機制**（Patina CLI，MIT，已上 npm）：透過「回顧循環」定期回顧並更新 AI harness 設定，移除過時規則、整合新規則，防止配置腐化
+- **腐化的根本原因**：規則是否仍有效缺乏持續驗證機制；規則只增不減；修復後無回歸測試確保規則仍適用
+
+### Agent Context 新鮮度問題（2026-05-04）
+
+- **長 session 中 agent 重複讀同一檔案**：Claude Code 在長工作階段中不斷重讀相同文件、不記得程式碼修改歷史，造成重複工作與上下文喪失
+- **時間感知代碼庫表示層**（Memtrace）：為 codebase 建立持久的時間感知表示（time-aware representation），讓 agent 能追蹤「哪些地方改了、為什麼改」，而非每次重讀猜測；此概念直接對抗 stateless agent 的核心缺陷
+
+### 結構化 Agent 框架設計（2026-05-04）
+
+- **Pilot Shell 三指令框架**：
+  - `/spec`：TDD 完整流程，規格優先於實作
+  - `/fix`：含複雜度自動偵測，超出標準修復路徑時自動中止，防止 agent 過度施工
+  - `/prd`：需求文件生成
+  - 定位在「輕量但有工程紀律」的中間地帶，兼顧自動化與人工控制
+
+### Agent Supervision 哲學（2026-05-04）
+
+- **「腦中監督」比 agentic coding 本身更危險**：回應 Lars Faye「Agentic Coding 是陷阱」論述，新論點認為真正風險不在 AI 協作，而在於開發者以非正式的腦中記憶取代系統化監督機制；解方是建立工程化監督流程而非回退手動模式
+- **「應該放棄嗎？」重置效應**：Claude Code 反覆失敗後詢問「我們應該放棄嗎？」，模型常「振作」並成功完成任務；社群稱此為非正式「重置咒語」，多名開發者已驗證此現象，機制尚不確定
+- **記憶化規則過擬合風險**：當 agent 記憶中的規則與眼前 bug 過度吻合時，模型可能跳過診斷直接套用規則，產生「假性修復」；agent 記憶機制設計需特別留意「規則過擬合」（rule overfitting）的風險
+
 ### Agent 持續運作架構（2026-05-03）
 
 - **VPS 雙代理持續運作**：兩個 Claude Code 代理在 VPS 的 tmux session 中持續運作，自動開 PR 並發布 Discord 狀態更新，代理間可相互協調；架構概念類似「Claude Code 版 docker-compose」
@@ -179,6 +209,14 @@
 | **TradingAgents Plugin** | 多代理 | 🔥🔥 | 7 子代理股票分析（技術面/基本面/投資組合），訂閱內免額外 API 費用 |
 | **CLAUDE.md for K8s**   | 安全工具 | 🔥🔥 | 13 條規則防止 Claude 產出不安全 K8s 配置，系統性安全防護框架 |
 | **AI 命名一致性 OSS**   | 品質工具 | 🔥  | 強制 Claude Code 等 AI 工具維持一致命名與風格，解決命名漂移技術債 |
+| **Semble**              | 搜尋工具 | 🔥🔥 | code search 比 grep 少 98% token，Model2Vec + BM25 + RRF，無需 API 金鑰 |
+| **Kirikiri**            | 行動工具 | 🔥🔥 | iOS 開源 mobile IDE，Flutter+dartssh2，透過 SSH/Google Cloud Shell 執行 Claude Code |
+| **Prism MCP**           | IDE 整合 | 🔥🔥 | VS Code LSP 橋接 Claude Code，讓 AI 以語義方式瀏覽程式碼（已上 Marketplace） |
+| **claudely**            | 後端切換 | 🔥🔥 | 保留 Claude Code 生態的前提下切換至 Ollama/LM Studio/llama.cpp，無需改主配置 |
+| **Smithy**              | CI/CD   | 🔥🔥 | 從 Jira/GitLab/Forgejo 觸發容器化 Claude Code session，自動開 PR、響應 CI |
+| **Patina**              | 維護工具 | 🔥🔥 | CLAUDE.md retro loop 維護 CLI，防止 AI harness 配置「腐化」（MIT，已上 npm） |
+| **Pilot Shell**         | 工作流  | 🔥  | /spec（TDD）、/fix（複雜度偵測自動中止）、/prd（需求文件）三指令工程紀律框架 |
+| **Memtrace**            | 記憶工具 | 🔥  | 為 codebase 建立時間感知持久表示層，讓 agent 追蹤哪些地方改動及原因 |
 
 > 熱度定義：🔥🔥🔥 跨平台多次出現 / 社群廣泛討論；🔥🔥 單平台高互動；🔥 值得關注但尚未擴散
 
@@ -212,8 +250,25 @@
 - [[news/2026-04-30]]
 - [[news/2026-05-02]]
 - [[news/2026-05-03]]
+- [[news/2026-05-04]]
 
 ## 時序
+
+### 2026-05-04
+- **DeepClaude — 低成本後端替換（HN 543 則討論）**：僅需修改 `ANTHROPIC_BASE_URL` 等環境變數，即可讓 Claude Code agent loop 呼叫 DeepSeek V4 Pro；HN 543 則討論凸顯社群對低成本模型替換的高度需求，技術上早已可行（DeepSeek 文件早有說明），但此次爆紅顯示許多開發者剛意識到此可能性
+- **Semble — code search 比 grep 少 98% token**：Open Source，結合 Model2Vec 靜態嵌入（potion-code-16M）、BM25 與 RRF 重排序，專為 Claude Code agent 大型代碼庫搜尋設計，解決 agent 搜尋失敗後退化為讀整個檔案的問題
+- **Kirikiri — iOS mobile IDE（開源）**：Flutter + dartssh2 打造，連接 Google Cloud Shell 或 SSH 伺服器遠端執行 Claude Code，以浮動按鈕取代軟體鍵盤常用指令，目標讓手機成為 AI 輔助開發的一級操作環境
+- **JupyterLab Claude Code Extension**：讓資料科學家直接在 Jupyter 環境使用 Claude Code，無需切換至獨立終端機；開源
+- **Prism MCP — VS Code LSP 橋接**：透過 MCP 將語言伺服器（LSP）語義導航接入 Claude Code，讓 AI 以語義方式（跳轉定義、引用搜尋）瀏覽代碼庫，已發布於 VS Code Marketplace
+- **claudely — 本地 LLM 無侵入切換**：保留 Claude Code Skills/MCP/Hooks 生態完整性的前提下，將後端切換至 LM Studio/Ollama/llama.cpp，無需修改主配置文件
+- **Smithy — issue tracker 觸發容器化 session**：從 Jira/GitLab/Forgejo 直接觸發容器化 Claude Code 工作階段，每個 issue 對應獨立容器分支，完成後自動開 PR、回應 CI、整合 PR 回饋，解決本地無監督執行的安全疑慮
+- **Patina — CLAUDE.md retro loop**：開源 CLI（MIT，已上 npm），解決 CLAUDE.md 長期使用後的「腐化」問題（修正行為再復發、規則膨脹失焦）；retro loop 機制定期回顧並更新 harness 設定
+- **「應該放棄嗎？」非正式重置咒語**：Claude Code 多次失敗後詢問「我們應該放棄嗎？」，模型常「振作」並成功完成任務；HN 討論顯示多名開發者已重複驗證此現象，機制尚不確定
+- **CLAUDE.md for Java（13 條 Spring Boot 規則）**：整理針對 Java/Spring Boot 生態的 13 條 CLAUDE.md 規則，對抗 AI 在 Java 生態容易犯的壞習慣（如無限堆疊方法至單一 class 超千行），提供可直接套用的指令範本
+- **Memtrace — agent context 時間感知層**：為 codebase 建立持久的時間感知表示（time-aware representation），讓 agent 追蹤哪些地方改動及為何，解決長 session 中 agent 反覆重讀的根本問題
+- **Pilot Shell — 工程紀律框架**：提供 /spec（完整 TDD）、/fix（複雜度自動偵測，超出標準路徑即中止）、/prd（需求文件生成）三個核心指令，定位「輕量但有工程紀律」的中間地帶
+- **Claude Connectors 擴展至創意工作軟體**：透過 MCP 協議延伸至 Adobe（After Effects/Photoshop/Illustrator）、Blender、Ableton Live、Affinity 及 Autodesk Fusion，Claude 整合觸角首次進入設計與創意工作流程領域
+- **批次截圖貼入工具**：補足系統剪貼簿無法一次傳送多張圖片的缺口，可批次將截圖貼入 Claude Code 等任意 app，開源、無雲端、系統匣 + 浮動 widget 操作
 
 ### 2026-05-03
 - **macOS 電腦使用（computer use）能力**：Anthropic 為 Claude Code 及 Claude Cowork 加入 computer use 功能，可直接控制 macOS 桌面的滑鼠與鍵盤，AI agent 能力範疇從純程式碼助理擴展為全桌面自動化代理；此為 Claude Code 功能邊界的重大擴張
