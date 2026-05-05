@@ -2,7 +2,7 @@
 
 **狀態：** ongoing
 **開始日期：** 2026-04-25
-**最後更新：** 2026-05-04
+**最後更新：** 2026-05-05
 
 ---
 
@@ -122,6 +122,31 @@
 - **91k 行 ERP 案例**：聲稱單人使用 Claude Code 29 天完成 91,000 行 ERP 系統；若屬實將是 AI 輔助開發生產力的標誌性案例，社群正關注技術深度與長期維護性的後續驗證
 - **確定度量化門檻**：強制 Claude 在確定度達 95% 才能動手的工作流設計，對高風險任務（生產部署、資料庫操作）可有效降低誤操作率；95% 為本次社群討論提出的具體數值
 
+### Multi-agent CLAUDE.md 衝突防範（2026-05-05）
+
+- **11 條多 agent CLAUDE.md 最佳實踐**：針對多個並行 Claude Code session 可能產生的衝突整理出 11 條規則，涵蓋：獨立工作區邊界定義、禁止跨 agent 直接修改共享狀態、明確指定 merge 責任的 orchestrator 角色、每個 agent 的讀/寫範圍白名單等；對已採用多 agent 工作流的開發者是即戰力指南
+- **P2P 加密多 agent 聊天室**：兩位開發者各自執行本地 Claude Code session，並接入同一個 P2P 加密聊天室，讓 AI 代理互相協商前後端規劃細節，人類僅負責監督與介入；被社群視為「非正式多 agent 協作」的具體可行實作
+
+### Session 記憶與搜尋工具生態（2026-05-05）
+
+- **Session 語義搜尋**（Claude-Find）：解決 `/resume` 僅支援第一條訊息或名稱篩選的痛點；每月累積數百個 session 的重度用戶可用語義搜尋定位過去決策脈絡，並注入現有 session
+- **本地 RAG 持久記憶**（Memex）：本地 RAG + 離線 embedding，所有資料留存本機，以 MCP 接入，無需額外 API 金鑰；直接解決雲端 AI 記憶的隱私疑慮
+- **多 session 互通**（Claude Relay）：plugin 形式讓同時開啟的多個 Claude Code session（前後端、infra）互相傳訊查詢，省去人工複製貼上；開發者指出「我自己才是那個最慢的環節」
+
+### Boris Cherny「Loops 是未來」設計哲學（2026-05-05）
+
+- **迴圈執行優於單次對話**：Claude Code 創始人 Boris Cherny 在 podcast 宣示已 100% 用 Claude Code 取代手動編碼，並提出 Loops（迴圈執行）是 AI 編碼的未來範式，而非單次 prompt 補全；這是 Claude Code 設計哲學的第一手公開陳述
+- **設計含義**：Claude Code 的工具設計（Hooks、Skills、session 持久化）從一開始就以「可持續迴圈執行、無人監督」為核心場景，而非「單次問答補全」；理解此哲學有助於更有效地設計 agentic 工作流
+
+### Playwright CLI 與 npx 差異的 Token 陷阱（2026-05-05）
+
+- **`@playwright/cli` ≠ `npx playwright test`**：在 AI agent 環境下兩者行為差異顯著，可能導致大量不必要 token 消耗；對在 CI/CD 流程中使用 Claude Code 做自動化測試的工程師是值得留意的細節，建議明確指定完整指令路徑並在 CLAUDE.md 中記錄差異
+
+### Token 大量降耗策略集中出現（2026-05-05）
+
+- **7 個降耗實務技巧**（KDNuggets）：Claude Code 高 token 成本主要來自膨脹的 context（歷史訊息、已讀檔案、工具輸出、CLAUDE.md），而非單次 prompt 長度；降耗應從 context 管理入手，而非壓縮 prompt
+- **Caveman Skill 實測 65% 降耗**：評測一個宣稱可削減 65% token 的 Claude Code skill，作者實測後效果顯著，但節省幅度依使用情境差異較大；對訂閱配額告急的用戶具參考價值，與 4/29 的「兩字 prompt vs 複雜外掛」基準測試形成對照
+
 ### Backend 替換模式（2026-05-04）
 
 - **環境變數後端切換**（DeepClaude 模式）：僅需修改 `ANTHROPIC_BASE_URL` 等少數環境變數，即可將 Claude Code 的 agent loop 導向其他 LLM 後端（如 DeepSeek V4 Pro）；HN 543 則討論凸顯社群對低成本替換的高度需求，雖然 DeepSeek 官方文件早已說明此方法，顯示這屬於「已知但被廣泛重新發現」的功能
@@ -217,6 +242,12 @@
 | **Patina**              | 維護工具 | 🔥🔥 | CLAUDE.md retro loop 維護 CLI，防止 AI harness 配置「腐化」（MIT，已上 npm） |
 | **Pilot Shell**         | 工作流  | 🔥  | /spec（TDD）、/fix（複雜度偵測自動中止）、/prd（需求文件）三指令工程紀律框架 |
 | **Memtrace**            | 記憶工具 | 🔥  | 為 codebase 建立時間感知持久表示層，讓 agent 追蹤哪些地方改動及原因 |
+| **Claude Relay**        | 多 session | 🔥🔥 | 讓多個本地 Claude Code session 互相傳訊查詢，省去人工跨 session 複製貼上 |
+| **Memex**               | 記憶工具 | 🔥🔥 | 本地 RAG + 離線 embedding 持久記憶，MCP 接入，所有資料留存本機無需雲端 |
+| **Claude-Find**         | 搜尋工具 | 🔥🔥 | 語義搜尋跨 session 決策脈絡，解決 /resume 只能依名稱篩選的痛點 |
+| **Askdiff**             | code review | 🔥🔥 | diff 介面直接問生成此程式碼的 Claude Code session，串流取得原始決策理由 |
+| **Rudel**               | 分析工具 | 🔥  | 分析 2 萬筆 session metadata，產出 9 種 AI 程式設計師原型（Spotify Wrapped 風格） |
+| **SprintiQ**            | 規劃工具 | 🔥  | 開源 sprint 規劃，專為 Claude Code 設計，Supabase + Anthropic API |
 
 > 熱度定義：🔥🔥🔥 跨平台多次出現 / 社群廣泛討論；🔥🔥 單平台高互動；🔥 值得關注但尚未擴散
 
@@ -251,8 +282,21 @@
 - [[news/2026-05-02]]
 - [[news/2026-05-03]]
 - [[news/2026-05-04]]
+- [[news/2026-05-05]]
 
 ## 時序
+
+### 2026-05-05
+- **Boris Cherny「Loops 是未來」**：Claude Code 創始人在 podcast 宣示已 100% 用 Claude Code 取代手動編碼，並提出「迴圈執行是 AI 編碼未來」的設計哲學；是理解 Claude Code 工具設計原則的第一手資料
+- **Claude Relay — 多 session P2P 協作**：plugin 讓多個本地 Claude Code session 互相傳訊，兩位開發者的 P2P 多 agent 聊天室工作流引發廣泛討論（HN 正面評價），被視為「非正式 multi-agent」的具體實作
+- **Memex — 本地 RAG 持久記憶（MCP）**：本地 RAG + 離線 embedding，無需雲端 API，以 MCP 接入；與 Brifly / NanoBrain 並列為跨 session 記憶方案的主流選項
+- **Claude-Find — 語義 session 搜尋**：解決 /resume 只能依第一條訊息篩選的痛點，讓重度用戶用語義搜尋快速找到過去決策，注入現有 session；補足 Claude-Find + Relay + Memex 三工具構成完整的 session 管理工具鏈
+- **Askdiff — diff 介面直問原始 session**：在 PR 風格 diff 介面中點擊行號直接問生成此程式碼的 Claude Code session，串流取得決策理由；解決 code review 時 context 斷層的痛點
+- **CLAUDE.md for Multi-Agent 11 條規則**：針對多個並行 session 的衝突防範，涵蓋工作區邊界、共享狀態禁止、orchestrator 角色明確化等；是目前最系統化的多 agent CLAUDE.md 規範整理
+- **7 個 token 降耗技巧 + Caveman Skill 65% 降耗實測**：高 token 成本根源在 context 膨脹而非 prompt 長度；Caveman skill 實測有效，但節省幅度依情境差異大
+- **Playwright CLI vs npx 差異的 token 陷阱**：`@playwright/cli` 與 `npx playwright test` 在 AI agent 環境下行為不同，可能導致大量多餘 token；CI/CD 自動化測試工程師需特別注意
+- **LinkedIn 留言自動化 Skill（含 human-in-the-loop 架構）**：結合聲音剖析（15 題問卷 → markdown 語氣檔）、Notion 審核佇列與 Playwright 自動發布；「含 human-in-the-loop 的 skill 架構」模式具高移植參考價值
+- **Rudel — 9 種 AI 程式設計師原型分析**：分析 2 萬筆以上 session metadata，揭示 4% session 使用 skills、26% 在早期放棄；Spotify Wrapped 風格的可視化讓 session 行為量化成為新討論焦點
 
 ### 2026-05-04
 - **DeepClaude — 低成本後端替換（HN 543 則討論）**：僅需修改 `ANTHROPIC_BASE_URL` 等環境變數，即可讓 Claude Code agent loop 呼叫 DeepSeek V4 Pro；HN 543 則討論凸顯社群對低成本模型替換的高度需求，技術上早已可行（DeepSeek 文件早有說明），但此次爆紅顯示許多開發者剛意識到此可能性

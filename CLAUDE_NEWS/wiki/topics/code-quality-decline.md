@@ -2,7 +2,7 @@
 
 **狀態：** monitoring（官方已說明，待驗證恢復）
 **開始日期：** 2026-03（推測）
-**最後更新：** 2026-05-03
+**最後更新：** 2026-05-05
 
 ---
 
@@ -53,10 +53,14 @@ Claude Code 在 2026 年 3 月至 4 月間出現長達約一個月的效能明�
 - [[news/2026-04-29]]
 - [[news/2026-04-30]]
 - [[news/2026-05-03]]
+- [[news/2026-05-05]]
 - [CC-Canary GitHub](https://github.com/delta-hq/cc-canary)
 - [Anthropic's definition of safety is too narrow](https://jonathannen.com/anthropic-safety-too-narrow/)
 
 ## 時序（最新在上）
+
+### 2026-05-05
+- **Opus 4.7 退步討論再升溫**：dev.to 文章《Claude Opus 4.7 Is a Regression》引發討論，部分開發者聲稱 Opus 4.7 在編碼任務中不如 4.6，已主動回退舊版；與 4/30 的「後設化退步」批評相互呼應；見 [[entities/opus-4-7]]
 
 ### 2026-05-03
 - **[社群問責] 4/23 事後報告 50+ 修復社群獨立驗證**：社群開發者主動逐一驗證 Claude Code 負責人 Boris Cherny 在 4/23 發布的事後報告中承諾的超過 50 項修復，提供獨立於官方的實測評估。此為少見的社群對官方承諾進行系統性問責的行動，驗證結果正逐步揭露哪些修復已落實、哪些仍有差距。

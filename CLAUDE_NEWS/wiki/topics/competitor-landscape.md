@@ -2,13 +2,13 @@
 
 **狀態：** ongoing
 **開始日期：** 2026-04
-**最後更新：** 2026-05-04
+**最後更新：** 2026-05-05
 
 ---
 
 ## 摘要
 
-Claude Code 已成為 AI 輔助編碼領域的標竿產品，但競爭正在快速升溫。最值得關注的是 Google 聯合創辦人 Sergey Brin 親自主導的內部計畫，目標是打造一款直接對標 Claude Code 的工具。2026-05-04 新發展：Anthropic 已悄悄讓 Claude Desktop/Cowork 支援任意第三方 LLM（OpenAI、Gemini、本地模型、企業閘道），競爭格局從「Claude vs. others」正在轉向「Claude 作為多模型接入層」；Claude Connectors 同期擴展至創意工作軟體（Adobe、Blender、Ableton 等），正式進入 Figma 等工具的競爭版圖。
+Claude Code 已成為 AI 輔助編碼領域的標竿產品，但競爭正在快速升溫。最值得關注的是 Google 聯合創辦人 Sergey Brin 親自主導的內部計畫，目標是打造一款直接對標 Claude Code 的工具。2026-05-04 新發展：Anthropic 已悄悄讓 Claude Desktop/Cowork 支援任意第三方 LLM（OpenAI、Gemini、本地模型、企業閘道），競爭格局從「Claude vs. others」正在轉向「Claude 作為多模型接入層」；Claude Connectors 同期擴展至創意工作軟體（Adobe、Blender、Ableton 等），正式進入 Figma 等工具的競爭版圖。**2026-05-05 重大警示**：OpenAI Codex 在 4/30 發布 v0.128.0 後單週下載量暴增 1397%（達 8,610 萬次），同期 Claude Code 下滑 38%（720 萬次），是自 Claude Code 崛起以來最明顯的市場份額競爭壓力訊號，需持續追蹤走勢。
 
 ---
 
@@ -20,8 +20,9 @@ Claude Code 已成為 AI 輔助編碼領域的標竿產品，但競爭正在快�
 - **時間線**：2026-04 首次被媒體報導（India Today、HN 跟進）
 - **意義**：Google 同時是 Anthropic 的大股東（見 [[topics/google-investment]]），此舉顯示即使是戰略投資方也將 Claude Code 視為必須正面競爭的對手
 
-### OpenAI Codex CLI
-- **狀態**：Active
+### OpenAI Codex CLI 🔴 下載量首次超越 Claude Code
+- **狀態**：Active（快速成長）
+- **關鍵轉折**：v0.128.0（2026-04-30）新增持久化 `/goal` 工作流，支援跨步驟任務規劃；單週下載量 +1397%（8,610 萬次 vs Claude Code 720 萬次，-38%）
 - **差異**：以 OpenAI 生態為核心；社群已有工具（claude-anyteam）讓 Codex 加入 Claude Code Agent Teams
 
 ### OpenCode
@@ -73,9 +74,15 @@ Claude Code 已成為 AI 輔助編碼領域的標竿產品，但競爭正在快�
 - [[news/2026-04-30]]
 - [[news/2026-05-02]]
 - [[news/2026-05-04]]
+- [[news/2026-05-05]]
 - [India Today 報導](https://www.indiatoday.in/technology/news/story/google-is-secretly-building-a-claude-code-challenger-sergey-brin-is-personally-involved-2899415-2026-04-21)
 
 ## 時序
+
+### 2026-05-05
+- **[重大警示] OpenAI Codex 下載量首次超越 Claude Code**：TickerTrends 資料顯示，截至 5/3 當週 Codex 下載量達 8,610 萬次（週增 1397%），Claude Code 下滑 38% 至 720 萬次；轉折點是 OpenAI 在 4/30 發布 Codex v0.128.0，新增持久化 `/goal` 工作流，支援跨步驟任務規劃。這是 Claude Code 崛起以來最明顯的競爭壓力訊號，需持續追蹤後續週數走勢以判斷是否持續
+- **Amazon 向全體員工部署 Claude Code 與 Codex（雙品牌並行）**：Amazon 軟體開發體驗 VP Jim Haughwout 內部公告即刻向全體企業員工開放兩款工具；Amazon 同時是 Anthropic 與 OpenAI 的大規模投資方，此次雙品牌並行採用格外罕見，反映出企業端並不打算只押注單一供應商，「單一 AI 編碼工具標配」模式受到挑戰
+- **DeepClaude — 17x 成本替換方案持續發酵**：DeepClaude 工具將 Claude Code 後端替換為 DeepSeek V4 Pro，聲稱成本降低 17 倍；配合費用比較文章（DeepClaude vs Claude Code vs Codex Pro 2026 Cost Stack），顯示部分開發者在成本壓力下已積極評估替代方案
 
 ### 2026-05-04
 - **[重大變化] Claude Desktop/Cowork 悄悄加入第三方 LLM 支援**：作者花 20 小時研究後發現 Anthropic 已在 Claude Desktop/Cowork 中加入支援任意第三方 LLM 的功能，涵蓋 OpenAI、Gemini、開源模型（透過 OpenRouter）、本地模型及企業閘道（Bedrock、Vertex、Foundry），無任何官方公告，完全由社群自行挖掘。此舉代表 Anthropic 實際上已將 Claude Code/Cowork 定位為多模型平台，競爭格局從「Claude vs. others」轉向「Claude 作為多模型接入層」

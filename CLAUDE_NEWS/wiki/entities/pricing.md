@@ -2,7 +2,7 @@
 
 **類型：** policy
 **狀態：** active（持續調整中）
-**最後更新：** 2026-05-04
+**最後更新：** 2026-05-05
 
 ---
 
@@ -20,6 +20,18 @@
 ---
 
 ## 近期政策變動
+
+### 2026-05-05：Anthropic 悄悄縮短 Claude Code 提示快取窗口（未公告）
+
+Anthropic 在 **4 月初**悄悄將 Claude Code 的預設提示快取（prompt cache）窗口縮短，在未調整名目訂閱費的情況下，實質上提高了用戶的 token 消耗速度。此改動未發出任何官方公告，是繼 token 費用估算翻倍（2026-04-29）之後，第二次被社群自行發現的靜默計費影響。訂閱用戶若近期配額消耗明顯加快，此為最可能的原因。
+
+- **技術影響**：快取窗口縮短 → 系統提示（大型 CLAUDE.md、工具 schema）需更頻繁重新寫入快取 → 有效 token 消耗量實質上升
+- **社群反應**：開發者對透明度強烈不滿，多名 HN 用戶指出配額消耗異常加速，並點出此為未公告改動
+- **建議行動**：監控 `~/.claude/projects/*.jsonl` 的 `cache_creation_input_tokens` 欄位，對比改動前後的快取命中率
+
+### 2026-05-05：Ollama 本地模型 vs Claude Code 訂閱 $20 成本比較熱議
+
+Reddit 討論串對比相同預算下 Ollama 本地模型與 Claude Code/Codex $20 訂閱的取捨。部分用戶表示 Claude Code $20 方案的配額對「簡單任務」也不夠用，本地端無限制使用對輕量用戶更有吸引力；但社群回應兩極，複雜任務仍以 Claude Code 勝出。配合 7 個 token 降耗實務技巧文章（KDNuggets）同步出現，顯示成本控管已成主流開發者關注焦點。
 
 ### 2026-05-04：Claude Pro 訂閱包含 Claude Code 說明不一致
 
@@ -167,4 +179,5 @@ The Verge（2026-04-24）報導，AI 商業化壓力下，Anthropic 等實驗室
 - [[news/2026-05-02]]
 - [[news/2026-05-03]]
 - [[news/2026-05-04]]
+- [[news/2026-05-05]]
 - [官方說明文件](https://support.claude.com/en/articles/11940350-claude-code-model-configuration)
