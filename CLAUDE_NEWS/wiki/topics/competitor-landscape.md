@@ -2,13 +2,13 @@
 
 **狀態：** ongoing
 **開始日期：** 2026-04
-**最後更新：** 2026-05-05
+**最後更新：** 2026-05-06
 
 ---
 
 ## 摘要
 
-Claude Code 已成為 AI 輔助編碼領域的標竿產品，但競爭正在快速升溫。最值得關注的是 Google 聯合創辦人 Sergey Brin 親自主導的內部計畫，目標是打造一款直接對標 Claude Code 的工具。2026-05-04 新發展：Anthropic 已悄悄讓 Claude Desktop/Cowork 支援任意第三方 LLM（OpenAI、Gemini、本地模型、企業閘道），競爭格局從「Claude vs. others」正在轉向「Claude 作為多模型接入層」；Claude Connectors 同期擴展至創意工作軟體（Adobe、Blender、Ableton 等），正式進入 Figma 等工具的競爭版圖。**2026-05-05 重大警示**：OpenAI Codex 在 4/30 發布 v0.128.0 後單週下載量暴增 1397%（達 8,610 萬次），同期 Claude Code 下滑 38%（720 萬次），是自 Claude Code 崛起以來最明顯的市場份額競爭壓力訊號，需持續追蹤走勢。
+Claude Code 已成為 AI 輔助編碼領域的標竿產品，但競爭正在快速升溫。最值得關注的是 Google 聯合創辦人 Sergey Brin 親自主導的內部計畫，目標是打造一款直接對標 Claude Code 的工具。2026-05-04 新發展：Anthropic 已悄悄讓 Claude Desktop/Cowork 支援任意第三方 LLM（OpenAI、Gemini、本地模型、企業閘道），競爭格局從「Claude vs. others」正在轉向「Claude 作為多模型接入層」；Claude Connectors 同期擴展至創意工作軟體（Adobe、Blender、Ableton 等），正式進入 Figma 等工具的競爭版圖。**2026-05-05 重大警示**：OpenAI Codex 在 4/30 發布 v0.128.0 後單週下載量暴增 1397%（達 8,610 萬次），同期 Claude Code 下滑 38%（720 萬次），是自 Claude Code 崛起以來最明顯的市場份額競爭壓力訊號，需持續追蹤走勢。**2026-05-06**：以 DeepSeek 為基礎的 Claude Code clone 迅速累積 8,700 GitHub Stars，同期出現聲稱可降低 17 倍成本的 DeepClaude 開源替代方案，低成本替代生態正加速形成；社群對 Claude Code 功能認可與對其定價反彈的雙重壓力，正同步催生開源替代生態。
 
 ---
 
@@ -75,9 +75,15 @@ Claude Code 已成為 AI 輔助編碼領域的標竿產品，但競爭正在快�
 - [[news/2026-05-02]]
 - [[news/2026-05-04]]
 - [[news/2026-05-05]]
+- [[news/2026-05-06]]
 - [India Today 報導](https://www.indiatoday.in/technology/news/story/google-is-secretly-building-a-claude-code-challenger-sergey-brin-is-personally-involved-2899415-2026-04-21)
 
 ## 時序
+
+### 2026-05-06
+- **[新威脅] DeepSeek Claude Code Clone 8,700 Stars**：以 DeepSeek 為基礎打造的 Claude Code clone 迅速累積 8,700 顆 Star（Pandaily 報導），同期出現聲稱可降低 17 倍成本的 DeepClaude 開源方案；社群對 Claude Code 功能的認可與對定價的反彈，正同步催生低成本替代生態，需觀察 Anthropic 的回應策略
+- **Claude Code 累積 121,000 GitHub Stars 里程碑**：媒體分析文章（Augment Code）探討為何愈來愈多開發者跳過傳統 IDE、直接選用 CLI 工具，強調 Claude Code 作為「anti-IDE」趨勢的代表
+- **Boris Cherny「軟體工程已死」第二波報導**：Anthropic 工程師 Boris Cherny 再次公開宣示 Anthropic 內部已無傳統軟體工程師職位，引發業界持續論戰（Times of India 等媒體報導），開發者身份認同議題再度升溫
 
 ### 2026-05-05
 - **[重大警示] OpenAI Codex 下載量首次超越 Claude Code**：TickerTrends 資料顯示，截至 5/3 當週 Codex 下載量達 8,610 萬次（週增 1397%），Claude Code 下滑 38% 至 720 萬次；轉折點是 OpenAI 在 4/30 發布 Codex v0.128.0，新增持久化 `/goal` 工作流，支援跨步驟任務規劃。這是 Claude Code 崛起以來最明顯的競爭壓力訊號，需持續追蹤後續週數走勢以判斷是否持續

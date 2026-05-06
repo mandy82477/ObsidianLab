@@ -3,13 +3,13 @@
 **類型：** product
 **狀態：** active
 **首次出現：** 2025（正式推出）
-**最後更新：** 2026-05-05
+**最後更新：** 2026-05-06
 
 ---
 
 ## 現況
 
-Claude Code 是 Anthropic 的 AI 編碼 CLI 工具，支援 agentic 工作流程、MCP Server 整合、Hooks 機制與 Agent Teams。目前為最受開發者關注的 AI 編碼工具之一。近期接連出現效能退步事件（已承認工程疏失）、HERMES.md 靜默計費 bug、API 金鑰外洩漏洞、Auto Compact 失效等問題，安全性與可靠性受到集中審視。v2.1.121 新增 MCP `alwaysLoad` 選項，Runhouse 團隊透過股權收購加入 Anthropic 以強化 agentic 基礎架構。2026-05-03 加入 macOS 電腦使用（computer use）功能，Claude Code 與 Claude Cowork 均可直接控制 macOS 桌面的滑鼠與鍵盤，從純程式碼助理擴展為全桌面自動化代理。2026-05-04 重大事件：Anthropic 因人為疏失導致 Claude Code 原始碼外洩，已向各平台發出逾 8,100 次 DMCA 下架請求，引發 AI 生成程式碼版權歸屬的法律辯論，社群分支「Claw-Code」隨之誕生；社群亦發現 Claude Cowork/Desktop 悄悄支援任意第三方 LLM（OpenAI、Gemini、本地模型、企業閘道 Bedrock/Vertex/Foundry），無任何官方公告；Claude Connectors 透過 MCP 擴展至創意工作軟體（Adobe、Blender、Ableton、Affinity、Autodesk Fusion）。2026-05-05 重大進展：Amazon 正式向全體企業員工推出 Claude Code（與 OpenAI Codex 並行），成為大型企業雙品牌 AI 編碼工具並行部署的首例；v2.1.128 發布（`/color` 隨機配色、`/mcp` 顯示各伺服器工具數量）。Claude Code 創始人 Boris Cherny 在 podcast 中宣示「Loops（迴圈執行）是 AI 編碼的未來」，首次公開闡明 Claude Code 的設計哲學核心。
+Claude Code 是 Anthropic 的 AI 編碼 CLI 工具，支援 agentic 工作流程、MCP Server 整合、Hooks 機制與 Agent Teams。目前為最受開發者關注的 AI 編碼工具之一。近期接連出現效能退步事件（已承認工程疏失）、HERMES.md 靜默計費 bug、API 金鑰外洩漏洞、Auto Compact 失效等問題，安全性與可靠性受到集中審視。v2.1.121 新增 MCP `alwaysLoad` 選項，Runhouse 團隊透過股權收購加入 Anthropic 以強化 agentic 基礎架構。2026-05-03 加入 macOS 電腦使用（computer use）功能，Claude Code 與 Claude Cowork 均可直接控制 macOS 桌面的滑鼠與鍵盤，從純程式碼助理擴展為全桌面自動化代理。2026-05-04 重大事件：Anthropic 因人為疏失導致 Claude Code 原始碼外洩，已向各平台發出逾 8,100 次 DMCA 下架請求，引發 AI 生成程式碼版權歸屬的法律辯論，社群分支「Claw-Code」隨之誕生；社群亦發現 Claude Cowork/Desktop 悄悄支援任意第三方 LLM（OpenAI、Gemini、本地模型、企業閘道 Bedrock/Vertex/Foundry），無任何官方公告；Claude Connectors 透過 MCP 擴展至創意工作軟體（Adobe、Blender、Ableton、Affinity、Autodesk Fusion）。2026-05-05 重大進展：Amazon 正式向全體企業員工推出 Claude Code（與 OpenAI Codex 並行），成為大型企業雙品牌 AI 編碼工具並行部署的首例；v2.1.128 發布（`/color` 隨機配色、`/mcp` 顯示各伺服器工具數量）。Claude Code 創始人 Boris Cherny 在 podcast 中宣示「Loops（迴圈執行）是 AI 編碼的未來」，首次公開闡明 Claude Code 的設計哲學核心。2026-05-06 新進展：v2.1.128/129 自動推送至 VS Code 後造成 Windows 用戶 extension 完全無法啟動的嚴重 regression（createRequire polyfill hardcoded build path + Mantle endpoint 認證失效），v2.1.131 已緊急修復，數小時內即回應大量 Reddit 回報；Claude Code 累積 GitHub Stars 達 121,000，成為 AI coding assistant 中增長最具話題性的案例；Python SDK v0.99.0 與 TypeScript SDK v0.94.0 同步發布，新增 workspace 定向功能；Claude Security 從封閉預覽移至公開 Beta，開發者現可在 Claude Code 工作流中直接使用 AI 驅動安全審查功能。Boris Cherny 再次公開宣示「軟體工程已死」，強調 Anthropic 內部已無傳統軟體工程師職位，引發業界廣泛論戰。
 
 ---
 
@@ -103,6 +103,9 @@ Claude Code 是 Anthropic 的 AI 編碼 CLI 工具，支援 agentic 工作流程
 - **[Claude-Find](https://github.com/Cavinooo/claude-find)** — 解決 `/resume` 只能依第一條訊息或自訂名稱篩選的痛點，讓重度用戶可用語義搜尋快速定位過去 session 的決策脈絡，注入現有 session
 - **[Askdiff](https://github.com/narghev/askdiff)** — 在 GitHub PR 風格的 diff 介面中，讓開發者可直接對生成程式碼的同一個 Claude Code session 提問（點擊行號），串流取得原始決策理由，解決 code review 時的 context 切換痛點
 - **[Rudel](https://app.rudel.ai/wrapped)** — 分析 2 萬筆以上 Claude Code/Codex session metadata，從一致性、強度、repo 廣度、成本密度等維度萃取出 9 種 AI 程式設計師原型，以 Spotify Wrapped 風格互動卡片呈現；資料顯示 4% session 使用了 skills，26% 在早期就被放棄
+- **[Claudette](https://utensils.io/claudette/)** — 開源桌面工具，讓每個 Claude Code agent 擁有獨立的 git worktree、session 與終端機，實現 speculative parallelism 工作流（多分支同時執行、無衝突切換）；社群顯示已有開發者手動實踐類似做法數月，工具化需求確實存在
+- **[claude-smart](https://github.com/ReflexioAI/claude-smart)** — 開源 Claude Code 外掛，透過將用戶糾正（correction）泛化為跨專案通用規則來解決「同樣錯誤一犯再犯」的問題，聲稱 context footprint 遠低於 claude-mem；社群評價褒貶不一
+- **[Dreamer](https://www.reddit.com/r/ClaudeAI/comments/1t5cirj/)** — 開源專案，透過 MCP server 讓 agent 提交短期記憶，再由排程工作整合進長期記憶並更新 AGENTS.md 與 skills，靈感來自 Claude 的 dream mode，支援任意 coding agent
 
 ---
 
@@ -126,11 +129,17 @@ Claude Code 是 Anthropic 的 AI 編碼 CLI 工具，支援 agentic 工作流程
 - [[news/2026-05-03]]
 - [[news/2026-05-04]]
 - [[news/2026-05-05]]
+- [[news/2026-05-06]]
 
 ## 版本歷史
 
 | 日期 | 事件 |
 |------|------|
+| 2026-05-06 | v2.1.131 緊急修復：v2.1.128/129 自動推送後 Windows VS Code extension 完全無法啟動（createRequire polyfill hardcoded build path）+ Mantle endpoint 認證失效；數小時內因 Reddit 大量回報而緊急回應 |
+| 2026-05-06 | Python SDK v0.99.0 + TypeScript SDK v0.94.0 同步發布，新增 client 層 workspace 定向功能（同一 SDK 實例可針對指定 workspace 發出請求），雙線同日維持功能同步節奏 |
+| 2026-05-06 | Claude Code 累積 121,000 GitHub Stars，分析文章探討為何開發者跳過傳統 IDE 直接使用 CLI 工具 |
+| 2026-05-06 | Claude Security 從封閉預覽移至公開 Beta，開發者可在 Claude Code 工作流中直接使用 AI 驅動的安全審查功能，無需另行安裝工具；見 [[entities/claude-security]] |
+| 2026-05-06 | 新工具：Claudette（每個 agent 獨立 git worktree + session + 終端機的 speculative parallelism 工作流）、claude-smart（將糾正泛化為跨專案通用規則的自我改進插件）、Dreamer（MCP team memory server，支援任意 coding agent） |
 | 2026-05-05 | Amazon 正式向全體企業員工部署 Claude Code 與 OpenAI Codex（雙品牌並行），軟體開發體驗 VP Jim Haughwout 內部公告；AI 編碼工具進入大型企業標配部署階段 |
 | 2026-05-05 | v2.1.128：`/color`（無參數）隨機選取 session 顯示顏色；`/mcp` 顯示各伺服器工具數量並標記 0 工具連線伺服器；`--plugin-dir` 行為調整 |
 | 2026-05-05 | Boris Cherny（Claude Code 創始人）在 podcast 中宣示：已 100% 用 Claude Code 取代手動編碼；「Loops（迴圈執行）是 AI 編碼的未來」，而非單次對話補全 |

@@ -2,7 +2,7 @@
 
 **狀態：** ongoing
 **開始日期：** 2026-04-25
-**最後更新：** 2026-05-05
+**最後更新：** 2026-05-06
 
 ---
 
@@ -171,6 +171,37 @@
   - `/prd`：需求文件生成
   - 定位在「輕量但有工程紀律」的中間地帶，兼顧自動化與人工控制
 
+### Speculative Parallelism 工作流（2026-05-06）
+
+- **每個 agent 擁有獨立 git worktree + session + 終端機**（Claudette）：開源桌面工具讓每個 Claude Code agent 擁有完全隔離的環境，實現 speculative parallelism 工作流——多個分支可同時執行且無衝突；社群顯示已有開發者手動實踐類似做法數月，工具化使這個模式變得可複用
+
+### Skills Unix 哲學（2026-05-06）
+
+- **每個 skill 只做一件事**：使用 Claude Code Skills 一年後的實踐總結：skill 設計越精簡（遵循 Unix 哲學「每個 skill 只做一件事、功能過多就拆分」），模型自動選用正確 skill 的準確率越高；skill 功能過多導致觸發歧義，模型選錯工具，是 skill catalog 設計的核心反模式
+
+### Hooks 強制執行機制（2026-05-06）
+
+- **PostToolUse 強制執行 Claude 可能略過的步驟**：透過在 PostToolUse 等工作流節點觸發 shell 指令，可強制執行 Claude 可能「自行判斷可略過」的步驟（程式碼格式化、自動 commit、強制測試）；解決 agent 「自以為完成」的核心痛點，是比 CLAUDE.md 指令更可靠的行為約束機制
+- **Hooks vs CLAUDE.md 的本質差別**：CLAUDE.md 是「建議」，模型可選擇忽略；Hooks 是「強制執行」，透過 shell 指令保證執行，適合不允許跳過的關鍵流程節點
+
+### CLAUDE.md 語言生態規則集爆發（2026-05-06）
+
+- **各語言專用規則集同日密集出現**（olivia_craft + natevoss 等）：dev.to 同日出現 5+ 篇針對特定語言的 CLAUDE.md 規則集：Rails（防止 legacy 模式）、Kotlin（coroutine 安全）、Flutter/Dart（防脆弱行動端程式碼）、Scala（慣用函數式）、Modern C++（防 1998 風格）、CLI bug 除錯後整理的 4 條實戰規則；社群正在各語言生態快速建立 AI 導向開發規範
+- **趨勢意義**：CLAUDE.md 語言專用化，從「通用 AI 指令框架」演進為「語言生態特定的安全防護與風格守衛工具」；產量和速度的加速預示一個社群驅動的 CLAUDE.md 規則庫生態正在成形
+
+### Agentic 工作流的組織協調挑戰（2026-05-06）
+
+- **PR review 成為多人 multi-agent 的新瓶頸**：多個開發者並行使用 Claude Code 後，PR review 數量過多、內容混亂、缺乏共同脈絡，成為新瓶頸；主張「協調必須發生在 IDE 之前」——agentic 工作流的下一個挑戰是組織協調層面（類似 agentic Slack）而非技術層面（IDE 插件）
+- **工作流形態演化預測**：當前的「單人 agentic IDE」模式將演化為「多 agent 協調平台」，需要有共同 context 的跨人跨 agent 協調機制
+
+### Claude Code 作為 MCP 協調中心（2026-05-06）
+
+- **MCP Hub 模式**：將 Claude Code 作為 n8n、瀏覽器 LLM 介面等多個自動化平台的 MCP 協調中心，讓多個自動化工具統一透過 Claude Code 控制；適合需要整合多個自動化工具並統一介面的開發者，是 Claude Code 從「coding assistant」延伸為「自動化協調中心」的具體實踐
+
+### Self-improving Rules（2026-05-06）
+
+- **將糾正（correction）泛化為通用規則**（claude-smart）：現有記憶體方案只存事實、無法捕捉用戶糾正；透過將糾正泛化為跨專案通用規則，解決「同樣錯誤一犯再犯」的問題；與 claude-mem 的差異在於 context footprint 更小，但是否能準確泛化糾正仍有爭議
+
 ### Agent Supervision 哲學（2026-05-04）
 
 - **「腦中監督」比 agentic coding 本身更危險**：回應 Lars Faye「Agentic Coding 是陷阱」論述，新論點認為真正風險不在 AI 協作，而在於開發者以非正式的腦中記憶取代系統化監督機制；解方是建立工程化監督流程而非回退手動模式
@@ -248,6 +279,9 @@
 | **Askdiff**             | code review | 🔥🔥 | diff 介面直接問生成此程式碼的 Claude Code session，串流取得原始決策理由 |
 | **Rudel**               | 分析工具 | 🔥  | 分析 2 萬筆 session metadata，產出 9 種 AI 程式設計師原型（Spotify Wrapped 風格） |
 | **SprintiQ**            | 規劃工具 | 🔥  | 開源 sprint 規劃，專為 Claude Code 設計，Supabase + Anthropic API |
+| **Claudette**           | 工作流  | 🔥🔥 | 每個 agent 獨立 git worktree + session + 終端機，speculative parallelism 工作流，HN 討論活躍 |
+| **claude-smart**        | 記憶工具 | 🔥  | 將用戶糾正泛化為跨專案通用規則，解決同樣錯誤反覆出現的問題，context footprint 宣稱優於 claude-mem |
+| **Dreamer**             | 記憶工具 | 🔥  | MCP server 短期記憶→長期記憶排程整合，自動更新 AGENTS.md + skills，支援任意 coding agent |
 
 > 熱度定義：🔥🔥🔥 跨平台多次出現 / 社群廣泛討論；🔥🔥 單平台高互動；🔥 值得關注但尚未擴散
 
@@ -283,8 +317,24 @@
 - [[news/2026-05-03]]
 - [[news/2026-05-04]]
 - [[news/2026-05-05]]
+- [[news/2026-05-06]]
 
 ## 時序
+
+### 2026-05-06
+- **v2.1.131 緊急修復 Windows VS Code regression**：v2.1.128/129 推送後 Windows VS Code extension 無法啟動，數小時內因 Reddit 大量回報而緊急發布 v2.1.131 修復（createRequire polyfill hardcoded build path + Mantle endpoint 認證失效），凸顯 Claude Code 用戶密度之高可實現近即時問題追蹤
+- **Speculative Parallelism 工具化**（Claudette）：開源桌面工具讓每個 Claude Code agent 擁有獨立 git worktree + session + 終端機；社群顯示已有開發者手動實踐此模式數月，工具化讓 speculative parallelism 工作流進入主流可及性
+- **Skills Unix 哲學確立**：「每個 skill 只做一件事、功能過多就拆分」被 1 年實踐驗證可提升模型自動選用正確 skill 的準確率；skill catalog 設計的最重要原則之一
+- **CLAUDE.md 語言規則集爆發**：同日出現 Rails、Kotlin、Flutter/Dart、Scala、Modern C++ 五個語言的專用規則集文章，顯示 CLAUDE.md 語言特定化趨勢正快速加速；社群正建立去中心化的語言生態 AI 開發規範庫
+- **Hooks 深度介紹**（PostToolUse）：社群文章深度解析 Hooks 機制強制執行 Claude 可能略過之步驟（格式化、commit）的實際應用，強調「Hooks = 強制執行，CLAUDE.md = 建議」的根本差別
+- **6 Agent Patterns from Leaked Source**：基於 3/31 意外外洩的 Claude Code TypeScript 原始碼（1,900 個檔案）整理出 6 個值得參考的 agent 設計模式（dev.to）
+- **Claude Code as MCP Hub 實務分享**：整合 n8n、瀏覽器 LLM 介面等自動化平台為 Claude Code 統一 MCP 協調中心的實務經驗（dev.to forgeflows）
+- **Agentic Slack vs IDE 討論**：從多人團隊實際使用 Claude Code 的視角，指出 PR review 已成新瓶頸，主張「協調必須發生在 IDE 之前」，為 agentic 工作流組織化挑戰提供系統性分析
+- **Self-improving rules**（claude-smart）：將用戶糾正泛化為跨專案通用規則，解決現有記憶體方案無法捕捉糾正的問題；HN 評價褒貶不一
+- **Dreamer — MCP team memory server**：短期記憶→長期記憶排程整合，自動更新 AGENTS.md 與 skills，靈感來自 Claude dream mode，支援任意 coding agent
+- **Pure CLI, Pure Unix, Zero IDE**（Raspberry Pi 5 + tmux）：展示 Claude Code 作為純 CLI 工具的最大靈活性——在 Raspberry Pi 5 上 24/7 運行，從手機、平板、筆電無縫接入，打破 IDE 依賴
+- **Git for AI Agents（早期開源）**：針對 AI 驅動開發中 git 痛點（無法追蹤「為何改動」、rewind 不可靠）開發的 AI agent 專用版本控制替代方案，屬早期開源概念，討論方向有參考價值
+- **Boris Cherny「軟體工程已死」第二波**：Times of India 等媒體再度報導 Boris Cherny 的觀點，Anthropic 內部已無傳統軟體工程師職位，開發者身份認同議題持續發酵
 
 ### 2026-05-05
 - **Boris Cherny「Loops 是未來」**：Claude Code 創始人在 podcast 宣示已 100% 用 Claude Code 取代手動編碼，並提出「迴圈執行是 AI 編碼未來」的設計哲學；是理解 Claude Code 工具設計原則的第一手資料
