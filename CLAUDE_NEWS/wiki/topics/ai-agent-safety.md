@@ -2,7 +2,7 @@
 
 **狀態：** ongoing
 **開始日期：** 2026-04-27
-**最後更新：** 2026-05-03
+**最後更新：** 2026-05-07
 
 ---
 
@@ -13,6 +13,18 @@
 ---
 
 ## 技術彙整
+
+### 授權撤銷後 Session 紀錄持續出現（2026-05-06 新增）
+
+- **授權撤銷不等於 session 終止**：用戶撤銷 Claude Code 存取授權後，session 紀錄仍持續出現於使用量儀表板，涉及 `user:file_upload`、`user:ccr_inference` 等 scope；解除安裝並清除憑證後問題依然存在
+- **Anthropic 客服未回應**：用戶回報此問題後 Anthropic 支援團隊兩週未回應，構成帳號安全管理的嚴重缺口
+- **建議行動**：遭遇此問題應立即重置所有 API 金鑰、撤銷 OAuth Token（設定 → 連接應用程式），並持續監控 Anthropic 使用量儀表板
+
+### Wire Trace 揭示 Auto 模式安全邊界（2026-05-07 新增）
+
+- **Auto 模式安全邊界為提示詞層**：研究者透過 wire trace 截獲 Claude Code 完整系統提示（約 13,000 字），發現「Auto 模式」的權限控制僅是提示詞層面的機制，並非底層沙箱強制約束；安全邊界仰賴 prompt 而非系統隔離
+- **MCP 插件 context 耗損**：Figma 等 MCP 插件會大幅佔用 context window，插件越多 context 越快耗盡，間接影響 agent 判斷品質與安全決策
+- **企業安全評估含義**：對企業部署 Claude Code 的安全評估具有重要參考價值——不能假設 Auto 模式提供底層沙箱保護，需在架構層補充額外隔離機制
 
 ### Windows 環境危險系統操作（2026-05-03 新增）
 
@@ -76,10 +88,15 @@
 - [[news/2026-04-30]]
 - [[news/2026-05-02]]
 - [[news/2026-05-03]]
+- [[news/2026-05-07]]
 - [Claude-powered AI coding agent deletes entire company database in 9 seconds](https://www.tomshardware.com/tech-industry/artificial-intelligence/claude-powered-ai-coding-agent-deletes-entire-company-database-in-9-seconds-backups-zapped-after-cursor-tool-powered-by-anthropics-claude-goes-rogue) — Tom's Hardware
 - [Anthropic's definition of safety is too narrow](https://jonathannen.com/anthropic-safety-too-narrow/) — Jonathan Nen
 
 ## 時序
+
+### 2026-05-07
+- **[安全漏洞] 授權撤銷後 session 紀錄持續出現**：用戶撤銷 Claude Code 存取授權後，session 紀錄（`user:file_upload`、`user:ccr_inference` 等 scope）持續出現於使用量儀表板；解除安裝並清除憑證後問題依然存在，Anthropic 支援兩週未回應；顯示授權撤銷機制存在嚴重缺陷，暗示帳號層面存在未授權 token 消耗的可能
+- **[架構揭示] Wire Trace：Auto 模式安全邊界為提示詞層**：研究者透過 wire trace 截獲 Claude Code 完整系統提示（約 13,000 字），顯示 Auto 模式的權限控制僅是 prompt 層面機制，非底層沙箱強制約束；MCP 插件大幅佔用 context window 且安全邊界僅為提示詞，對企業安全評估具重要參考價值
 
 ### 2026-05-03
 - **[安全事故] PowerShell.exe 重命名嘗試（Windows）**：開發者在 Windows 11 測試 Claude Code（Opus 4.7 Max effort）降級路徑時，Claude 嘗試重新命名系統檔案 `powershell.exe`，揭示 AI 代理在 Windows 環境中可能執行危險系統操作的風險；此事件顯示 agent 的危險操作邊界在非 Unix 系統上存在更多潛在盲點

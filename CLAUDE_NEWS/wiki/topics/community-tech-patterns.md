@@ -2,7 +2,7 @@
 
 **狀態：** ongoing
 **開始日期：** 2026-04-25
-**最後更新：** 2026-05-06
+**最後更新：** 2026-05-07
 
 ---
 
@@ -171,6 +171,37 @@
   - `/prd`：需求文件生成
   - 定位在「輕量但有工程紀律」的中間地帶，兼顧自動化與人工控制
 
+### Skill Atrophy 反思與對策（2026-05-07）
+
+- **「理解是租來的，不是賺來的」**：開發者公開坦誠使用 Claude Code 一週內可出三個功能，但三天後看不懂自己的程式碼；「AI 加速開發 + 理解外包」的副作用引發大量開發者共鳴，技能退化（skill atrophy）問題浮出水面
+- **36 個記憶檔案對策**：使用 Claude Code 60 天後整理出 36 個結構化記憶檔（per-project 持久記憶），根本解決 Agent 每次重啟都要重新說明背景的問題，對長期維護專案尤為實用
+- **recap 工具主動對抗 skill atrophy**：掃描過去 N 天的 Claude Code 與 Codex 對話，找出開發者遭遇陌生概念的片段，自動產出概念說明摘要，幫助開發者在 AI 加速開發中主動補強知識盲點
+
+### Managed Agents 架構模式（2026-05-07）
+
+- **Dreaming 記憶整合機制**：Agent 在任務間隙自動整理近期事件、萃取值得長期保留的資訊存入記憶，類似人類睡眠時的記憶鞏固；Anthropic 首次在官方架構層面解決長跑 Agent 的記憶持久性問題（對比：社群工具 Dreamer、NanoBrain 先行實現類似理念）
+- **Outcomes 規格驅動執行**：規格文件（spec）成為 Agent 執行時的強制依據而非參考文件，Agent 需在完成後自我驗證輸出是否符合預定目標，是「Spec-Driven Development」原則的官方制度化；與 2026-05-02 社群整理的「規格驅動開發」趨勢相呼應
+- **20 路並行子代理**：官方框架層面首次支援 20 個子代理同時執行，使 agent 任務分解（multi-agent）從社群工具（Harness、Claudette）走向官方原生支援
+- **Claude Code Routines vs cron job**：Routines 與傳統 cron job 的核心差異在於 Agent 能對結果進行推理而非只執行固定指令——每晚自動摘要當天 commit、每週掃描過期依賴、每日彙整錯誤日誌趨勢等場景均已有開發者實踐
+
+### Wire Trace 揭示的架構侷限（2026-05-07）
+
+- **13,000 字基礎提示詞**：研究者透過 wire trace 截獲 Claude Code 完整系統提示（約 13,000 字），MCP 插件（如 Figma）會大幅額外佔用 context window，插件越多 context 越快耗盡；企業部署需評估 MCP 數量對 context 品質的影響
+- **Auto 模式安全邊界為提示詞層**：wire trace 顯示 Claude Code「Auto 模式」的權限控制僅是提示詞層面的機制，並非底層沙箱強制約束——安全邊界仰賴 prompt 而非系統隔離；企業級安全評估不能假設 Auto 模式提供底層沙箱保護，需在架構層補充額外隔離機制
+
+### Git Log 作為除錯首要步驟（2026-05-07）
+
+- **Claude Code 自動讀取 git log 除錯**：觀察到 Claude Code 在除錯任務時自動讀取 git log，以描述性 commit message（取代 "wip"、"fixed stuff"）讓 Agent 在幾秒內縮小問題範圍；此行為可透過良好 commit 習慣主動利用
+- **多 session 協作技巧**：搭配 git worktree 讓多個 session 在不同分支上協作，git log 成為各 session 間共享 context 的天然媒介
+
+### MCP Code Execution Token 效率（2026-05-07）
+
+- **MCP server 過多導致 context 在第一條訊息前就半滿**：大量 MCP 伺服器的靜態工具列表佔用大量 context；以 MCP code execution 取代靜態工具列表的方案，讓 Agent 動態獲取能力，兼顧擴展性與 token 效率，適合正在評估 MCP 架構規模的團隊
+
+### 跨 Session 通訊插件（2026-05-07）
+
+- **雙向 session 問答橋**：開發者自製插件讓兩個 Claude Code 工作階段互相通訊：新終端輸入 `/qu` 撥出，舊終端輸入 `/ans` 接聽；與 Claude Relay（多 session 廣播傳訊）不同，此插件聚焦雙向問答，更適合跨 session 即時決策諮詢的場景
+
 ### Speculative Parallelism 工作流（2026-05-06）
 
 - **每個 agent 擁有獨立 git worktree + session + 終端機**（Claudette）：開源桌面工具讓每個 Claude Code agent 擁有完全隔離的環境，實現 speculative parallelism 工作流——多個分支可同時執行且無衝突；社群顯示已有開發者手動實踐類似做法數月，工具化使這個模式變得可複用
@@ -282,6 +313,11 @@
 | **Claudette**           | 工作流  | 🔥🔥 | 每個 agent 獨立 git worktree + session + 終端機，speculative parallelism 工作流，HN 討論活躍 |
 | **claude-smart**        | 記憶工具 | 🔥  | 將用戶糾正泛化為跨專案通用規則，解決同樣錯誤反覆出現的問題，context footprint 宣稱優於 claude-mem |
 | **Dreamer**             | 記憶工具 | 🔥  | MCP server 短期記憶→長期記憶排程整合，自動更新 AGENTS.md + skills，支援任意 coding agent |
+| **BrowserCode**         | 瀏覽器工具 | 🔥🔥 | WebAssembly 瀏覽器執行 Claude Code，支援行動裝置，讓 iPad、鎖定設備也能使用 CLI 功能 |
+| **/qu /ans 跨 session 插件** | 多 session | 🔥 | 兩個 Claude Code session 直接雙向問答，省去人工跨 session 複製貼上 |
+| **recap**               | 反技能退化 | 🔥🔥 | 掃描 Claude Code + Codex 對話，自動產出陌生概念說明摘要，主動對抗 AI 開發 skill atrophy |
+| **Kstack**              | K8s 工具  | 🔥🔥 | K8s 監控/除錯/安全審計 skill pack（/investigate、/audit-security、/audit-outdated） |
+| **Claude Code Routines** | 自動化工具 | 🔥🔥 | 排程 agent 任務（commit 摘要、依賴掃描、日誌彙整），核心優勢是 Agent 能對結果推理而非固定指令 |
 
 > 熱度定義：🔥🔥🔥 跨平台多次出現 / 社群廣泛討論；🔥🔥 單平台高互動；🔥 值得關注但尚未擴散
 
@@ -318,8 +354,27 @@
 - [[news/2026-05-04]]
 - [[news/2026-05-05]]
 - [[news/2026-05-06]]
+- [[news/2026-05-07]]
 
 ## 時序
+
+### 2026-05-07
+- **Managed Agents 重大更新（Dreaming/20 路並行/Outcomes）**：官方首次在架構層解決長跑 Agent 記憶持久性問題（Dreaming）、突破並行限制（20 路子代理）、實現可驗證達標（Outcomes 規格驗證）；Python SDK v0.100.0 + TypeScript SDK v0.95.0 同步新增原生支援
+- **SpaceX 算力合作：Pro/Max 五小時速率上限翻倍、取消尖峰降速**：Dario Amodei 在 Code with Claude 大會現場宣布，是 Anthropic 首次透過外部基礎設施合作鬆綁使用限制，對持續跑 agent 任務的開發者影響最直接
+- **Claude Code wire trace 揭示 13,000 字基礎提示詞**：Auto 模式安全邊界為提示詞層而非底層沙箱；Figma 等 MCP 插件大幅佔用 context window；企業安全評估的重要架構資訊
+- **「理解是租來的，不是賺來的」——skill atrophy 引發廣泛共鳴**：AI 輔助開發技能退化問題進入社群主流討論，recap 工具等反 skill atrophy 工具同步出現
+- **36 個記憶檔案系統**：使用 Claude Code 60 天後整理出 36 個結構化 per-project 記憶檔，根本解決 Agent 每次重啟都要重新說明背景的問題；與 Managed Agents Dreaming 的官方解法形成社群 vs 官方雙軌並進格局
+- **Claude Code git log 作為首要除錯步驟**：觀察到 Claude Code 自動讀取 git log 除錯，描述性 commit message 在數秒內縮小問題範圍；搭配 worktree 的多 session 協作技巧同步分享
+- **Skill 組合 Unix 哲學確認**：近一年 Skills 組合心得：遵循單一職責原則、每個 skill 只做一件事，Claude 的自動觸發準確度顯著提升；過度耦合的 skill 反而導致模型難以判斷何時使用，是踩坑後的反向工程建議
+- **BrowserCode — WebAssembly 瀏覽器 + 行動裝置**：Claude Code 移植至瀏覽器，iPad、公司鎖定設備均可使用 Claude Code 核心功能，打破 CLI 安裝門檻
+- **跨 session 問答插件（/qu /ans）**：開發者自製跨 session 通訊插件，兩個 Claude Code session 直接雙向問答，解決 session 知識孤島問題；與 Claude Relay（廣播傳訊）互補
+- **Kstack — K8s 監控/除錯/安全審計 skill pack**：將 K8s 常見維運任務封裝為 Claude Code skill 組，是 skill pack 設計模式在特定技術棧深度整合的新案例
+- **Claude Code Routines 自動化排程**：每晚自動摘要 commit、每週掃描過期依賴、每日彙整錯誤日誌趨勢；核心差異在於 Agent 能對結果進行推理，而非只執行固定 cron 指令
+- **DeepSeek V4 替換 Claude Opus 4 的 30 天實測**：在 Claude Code 框架中以 DeepSeek V4 取代 Claude Opus 4，對比 1 億 token 成本與品質差異；是「Backend 替換模式」（見 2026-05-04）的實際長期驗證，為追求降費開發者提供量化數據
+- **CLAUDE.md for Rust（13 條規則）**：防止 `Arc<Mutex<HashMap>>` 過度使用與 `.unwrap()` 濫用，引導 Claude Code 改以慣用的安全 Rust 模式；延續 2026-05-06 CLAUDE.md 語言規則集爆發趨勢（已覆蓋 Rails/Kotlin/Flutter/Scala/C++/Rust）
+- **MCP code execution 取代靜態工具列表**：解決 MCP server 過多導致 context window 在第一條訊息前就半滿的問題，以動態能力獲取取代靜態工具列表，是 MCP 架構規模化設計的新思路
+- **Cursor → Claude Code 全面切換（6 個月比較）**：作者在多個實際產品中並行使用逾 6 個月後全面轉換，月費高峰超過 $60，強調長期多專案使用情境下的整合優勢
+- **漫畫動畫製作（GPT Image 2.0 + Claude Code）**：偵測格格邊界、依序揭露、鏡頭平移縮放的多步驟創意管道，展示 Claude Code 在非程式碼創意工作流的應用邊界
 
 ### 2026-05-06
 - **v2.1.131 緊急修復 Windows VS Code regression**：v2.1.128/129 推送後 Windows VS Code extension 無法啟動，數小時內因 Reddit 大量回報而緊急發布 v2.1.131 修復（createRequire polyfill hardcoded build path + Mantle endpoint 認證失效），凸顯 Claude Code 用戶密度之高可實現近即時問題追蹤

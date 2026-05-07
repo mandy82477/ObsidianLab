@@ -2,7 +2,7 @@
 
 **狀態：** ongoing
 **開始日期：** 2026-04
-**最後更新：** 2026-05-06
+**最後更新：** 2026-05-07
 
 ---
 
@@ -76,9 +76,14 @@ Claude Code 已成為 AI 輔助編碼領域的標竿產品，但競爭正在快�
 - [[news/2026-05-04]]
 - [[news/2026-05-05]]
 - [[news/2026-05-06]]
+- [[news/2026-05-07]]
 - [India Today 報導](https://www.indiatoday.in/technology/news/story/google-is-secretly-building-a-claude-code-challenger-sergey-brin-is-personally-involved-2899415-2026-04-21)
 
 ## 時序
+
+### 2026-05-07
+- **DeepSeek V4 替換 Claude Opus 4 的 30 天實測**：開發者在 Claude Code 框架中以 DeepSeek V4 取代 Claude Opus 4，進行 30 天、1 億 token 的成本與品質對比測試，為追求降低費用的開發者提供具體量化數據，社群尚待進一步驗證結論可靠性
+- **Cursor 重度用戶全面轉換至 Claude Code（六個月比較）**：作者在多個實際產品中同時使用 Cursor 與 Claude Code 超過六個月，最終全面轉換，月費高峰超過 $60，強調 Claude Code 在長期多專案使用情境下的整合優勢
 
 ### 2026-05-06
 - **[新威脅] DeepSeek Claude Code Clone 8,700 Stars**：以 DeepSeek 為基礎打造的 Claude Code clone 迅速累積 8,700 顆 Star（Pandaily 報導），同期出現聲稱可降低 17 倍成本的 DeepClaude 開源方案；社群對 Claude Code 功能的認可與對定價的反彈，正同步催生低成本替代生態，需觀察 Anthropic 的回應策略
