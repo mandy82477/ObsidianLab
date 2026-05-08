@@ -2,7 +2,7 @@
 
 **狀態：** ongoing
 **開始日期：** 2026-04-25
-**最後更新：** 2026-05-07
+**最後更新：** 2026-05-08
 
 ---
 
@@ -171,6 +171,37 @@
   - `/prd`：需求文件生成
   - 定位在「輕量但有工程紀律」的中間地帶，兼顧自動化與人工控制
 
+### 本機持久化記憶架構（2026-05-08）
+
+- **Local stack MCP 整合、39ms 檢索**：開發者分享自建本機持久化記憶層：本地向量資料庫 + MCP 整合，實現 39ms 快速檢索；同時解決每次對話從零開始，以及記憶庫成長後大量消耗 token 的雙重痛點
+- **架構核心原則**：避免將全部記憶注入 context（token 消耗過高），改以語義查詢按需取回相關片段；本機方案同時解決雲端記憶的隱私疑慮，與 Memex 思路相近但強調自建可控性
+- **意義**：是對 Managed Agents Dreaming 官方解法的社群自建補充，在等待官方成熟前已形成可用架構
+
+### 120 提示詞模式實證研究（2026-05-08）
+
+- **研究規模與方法**：系統性整理並實測 120 種提示詞模式，資料來源涵蓋 Discord、GitHub、Twitter 及個人使用三個月，是目前社群最大規模的實證型 prompt 效果驗證
+- **驗證標準**：以可量測的輸出差異為判斷依據而非主觀感受；相比 Caveman 基準測試（24 題），此研究規模與方法論更嚴謹，結果有助於建立社群 prompt engineering 共識
+
+### Token 用量極端案例（2026-05-08）
+
+- **3.77 億 token / 月（雙工具並用實測）**：開發者同時使用 Claude Code 與 OpenAI Codex 兩個月，單月消耗高達 37.7 億 token，引發對 token 效率管理與實際成本的關注
+- **多工具並用策略**：不選邊站、同時使用 Claude Code + Codex 的策略，與 Claudy（多供應商設定檔切換）的設計需求相呼應；對重度開發者而言訂閱方案的 token 成本優勢更加凸顯
+- **成本意涵**：此案例說明 API 計費模式在高頻使用下費用可觀，推動訂閱制成為重度用戶的更佳選擇
+
+### 整合模式選擇框架（2026-05-08）
+
+- **三種模式系統比較**：社群深度比較 Claude Code 三種整合部署模式：
+  1. **編輯器嵌入**（Cursor / Windsurf）：緊密 UX 但受廠商管控，IDE 升級可能破壞工作流
+  2. **終端機原生**（Claude Code CLI）：全功能但無 IDE context 感知，適合重度 agent 長跑工作流
+  3. **橋接方案**（VS Code extension + CLI 橋接）：嘗試兼顧兩者但增加複雜度
+- **選擇依據**：任務類型（互動補全 vs 長跑 agent）、IDE 依賴程度、對廠商管控的接受度；無單一最佳選擇，只有最適合特定工作流的配置
+
+### Boris Cherny 反「vibe coding」與技術術語演化（2026-05-08）
+
+- **術語疲勞與主張**：Claude Code 創始人 Boris Cherny 在「Code with Claude」大會公開表示厭倦「vibe coding」一詞，正尋找替代描述，同時宣稱「寫程式問題已被解決」（coding is solved），2026 年自己從未手寫一行程式
+- **社群兩極反應**：Business Insider、HN、YouTube 多平台討論，有人認同 AI 輔助開發的效率躍升，也有人直接回應「Claude Code 太不穩定、已放棄使用」
+- **術語演化意涵**：從「vibe coding」（感覺驅動）到「spec-driven development」（規格驅動）的術語轉移，反映社群對 AI 開發方法論的共識正在收斂；與 2026-05-02 規格驅動開發條目及 Boris Cherny 整體設計哲學一脈相承
+
 ### Skill Atrophy 反思與對策（2026-05-07）
 
 - **「理解是租來的，不是賺來的」**：開發者公開坦誠使用 Claude Code 一週內可出三個功能，但三天後看不懂自己的程式碼；「AI 加速開發 + 理解外包」的副作用引發大量開發者共鳴，技能退化（skill atrophy）問題浮出水面
@@ -318,6 +349,11 @@
 | **recap**               | 反技能退化 | 🔥🔥 | 掃描 Claude Code + Codex 對話，自動產出陌生概念說明摘要，主動對抗 AI 開發 skill atrophy |
 | **Kstack**              | K8s 工具  | 🔥🔥 | K8s 監控/除錯/安全審計 skill pack（/investigate、/audit-security、/audit-outdated） |
 | **Claude Code Routines** | 自動化工具 | 🔥🔥 | 排程 agent 任務（commit 摘要、依賴掃描、日誌彙整），核心優勢是 Agent 能對結果推理而非固定指令 |
+| **Claudy**              | 多供應商工具 | 🔥🔥 | Rust 撰寫，多供應商設定檔一鍵切換（Anthropic/Gemini/Codex）、本地代理 MCP 橋接、token 用量分析 |
+| **DataMoat**            | 安全工具 | 🔥🔥 | AES-256-GCM 加密工作記錄為本機私有資產，支援搜尋/重用/移交，vault 金鑰完全留在本機，企業安全首選 |
+| **4-agent Code Review** | 工作流  | 🔥🔥 | 架構師代理（純協調）+ 三模型廠商專家代理，審查意見需具體證據，可包裝為 MCP 替代 CodeRabbit，MIT |
+| **awesome-ux-skills**   | 設計工具 | 🔥  | Nielsen + Shape of AI 等 UX 原則技能集，供設計導向工程師重複使用，省去每次重查設計規範成本 |
+| **OpticOdds MCP**       | 垂直整合 | 🔥  | 首個透過 MCP 向 Claude Desktop 提供即時運動賠率資料的 API，MCP 生態從開發工具向垂直產業延伸的首案例 |
 
 > 熱度定義：🔥🔥🔥 跨平台多次出現 / 社群廣泛討論；🔥🔥 單平台高互動；🔥 值得關注但尚未擴散
 
@@ -355,8 +391,19 @@
 - [[news/2026-05-05]]
 - [[news/2026-05-06]]
 - [[news/2026-05-07]]
+- [[news/2026-05-08]]
 
 ## 時序
+
+### 2026-05-08
+- **CVE-2026-39861 安全危機 + 1-click RCE**：Claude Code 爆出 CVSS 7.7 沙箱逃逸漏洞（symlink 逃逸），v2.1.64 修補；Anthropic 對 1-click RCE 的「不應該點確認」回應引發信任危機；兩則安全事件同日在 HN 上版，是社群安全討論密度最高的單日
+- **v2.1.133 `worktree.baseRef` 設定**：新增 `fresh` | `head` 選項，讓使用者精細控制 worktree 基準分支，對多工作樹並行工作流設計具直接影響
+- **本機持久化記憶 39ms**：開發者分享 local stack + MCP 整合、39ms 檢索的持久記憶架構，解決無狀態 agent 問題；社群自建解法持續與 Managed Agents Dreaming 官方方案並行演進
+- **120 提示詞模式實測**：目前社群最大規模的實證型 prompt 效果研究，以可量測差異（非主觀感受）為驗證標準，是本週最具參考價值的方法論貢獻
+- **3.77 億 token / 月案例**：Claude Code + Codex 雙工具並用兩個月，揭露單月 token 消耗極端值，引發效率管理與成本討論
+- **整合模式選擇框架**：社群系統化比較編輯器嵌入 vs 終端機原生 vs 橋接方案三種模式，形成選擇依據清單
+- **Boris Cherny「coding is solved」+ 厭倦「vibe coding」**：「Code with Claude」大會言論在 Business Insider、HN、YouTube 多平台引發廣泛討論，社群對「coding is solved」論斷反應兩極
+- **新工具**：Claudy（Rust 多供應商管理）、DataMoat（AES-256-GCM 工作記錄加密）、4-agent Code Review（架構師 + 三模型審查，MIT）、awesome-ux-skills（UX 原則技能集）、OpticOdds MCP（首個運動賠率 MCP API，垂直產業擴展案例）
 
 ### 2026-05-07
 - **Managed Agents 重大更新（Dreaming/20 路並行/Outcomes）**：官方首次在架構層解決長跑 Agent 記憶持久性問題（Dreaming）、突破並行限制（20 路子代理）、實現可驗證達標（Outcomes 規格驗證）；Python SDK v0.100.0 + TypeScript SDK v0.95.0 同步新增原生支援

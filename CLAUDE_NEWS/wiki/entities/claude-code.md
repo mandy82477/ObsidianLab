@@ -3,13 +3,13 @@
 **類型：** product
 **狀態：** active
 **首次出現：** 2025（正式推出）
-**最後更新：** 2026-05-07
+**最後更新：** 2026-05-08
 
 ---
 
 ## 現況
 
-Claude Code 是 Anthropic 的 AI 編碼 CLI 工具，支援 agentic 工作流程、MCP Server 整合、Hooks 機制與 Agent Teams。目前為最受開發者關注的 AI 編碼工具之一。近期接連出現效能退步事件（已承認工程疏失）、HERMES.md 靜默計費 bug、API 金鑰外洩漏洞、Auto Compact 失效等問題，安全性與可靠性受到集中審視。v2.1.121 新增 MCP `alwaysLoad` 選項，Runhouse 團隊透過股權收購加入 Anthropic 以強化 agentic 基礎架構。2026-05-03 加入 macOS 電腦使用（computer use）功能，Claude Code 與 Claude Cowork 均可直接控制 macOS 桌面的滑鼠與鍵盤，從純程式碼助理擴展為全桌面自動化代理。2026-05-04 重大事件：Anthropic 因人為疏失導致 Claude Code 原始碼外洩，已向各平台發出逾 8,100 次 DMCA 下架請求，引發 AI 生成程式碼版權歸屬的法律辯論，社群分支「Claw-Code」隨之誕生；社群亦發現 Claude Cowork/Desktop 悄悄支援任意第三方 LLM（OpenAI、Gemini、本地模型、企業閘道 Bedrock/Vertex/Foundry），無任何官方公告；Claude Connectors 透過 MCP 擴展至創意工作軟體（Adobe、Blender、Ableton、Affinity、Autodesk Fusion）。2026-05-05 重大進展：Amazon 正式向全體企業員工推出 Claude Code（與 OpenAI Codex 並行），成為大型企業雙品牌 AI 編碼工具並行部署的首例；v2.1.128 發布（`/color` 隨機配色、`/mcp` 顯示各伺服器工具數量）。Claude Code 創始人 Boris Cherny 在 podcast 中宣示「Loops（迴圈執行）是 AI 編碼的未來」，首次公開闡明 Claude Code 的設計哲學核心。2026-05-06 新進展：v2.1.128/129 自動推送至 VS Code 後造成 Windows 用戶 extension 完全無法啟動的嚴重 regression（createRequire polyfill hardcoded build path + Mantle endpoint 認證失效），v2.1.131 已緊急修復，數小時內即回應大量 Reddit 回報；Claude Code 累積 GitHub Stars 達 121,000，成為 AI coding assistant 中增長最具話題性的案例；Python SDK v0.99.0 與 TypeScript SDK v0.94.0 同步發布，新增 workspace 定向功能；Claude Security 從封閉預覽移至公開 Beta，開發者現可在 Claude Code 工作流中直接使用 AI 驅動安全審查功能。Boris Cherny 再次公開宣示「軟體工程已死」，強調 Anthropic 內部已無傳統軟體工程師職位，引發業界廣泛論戰。2026-05-07 重大進展：Anthropic 在「Code with Claude」開發者大會上宣布 Managed Agents 重大升級，包含「Dreaming」記憶整合機制（Agent 在任務間隙自動鞏固記憶）、最高 20 路子代理並行，以及 Outcomes 規格驗證功能，標誌 Agent 框架正式邁向有狀態生產級設計；Python SDK v0.100.0 與 TypeScript SDK v0.95.0 同步新增 Managed Agents 原生支援（見 [[entities/managed-agents]]）。Anthropic 同日宣布與 SpaceX 達成算力合作，即日起 Claude Code Pro/Max 用戶五小時視窗速率上限翻倍、取消尖峰時段降速，API Tier 4+ 用戶速率限制同步提升。v2.1.132 新增 `CLAUDE_CODE_SESSION_ID` 環境變數至 Bash 工具子行程（hooks 可追蹤當前 session）及 `CLAUDE_CODE_DISABLE_ALTERNATE_SCREEN` 選項。研究者透過 wire trace 截獲 Claude Code 完整系統提示（約 13,000 字），發現 MCP 插件大幅佔用 context window，且「Auto 模式」的權限控制僅是提示詞層面機制，並非底層沙箱強制約束；Claude Code 透過 AWS Bedrock 接入時再次出現功能異常，新功能同步落差問題持續存在。
+Claude Code 是 Anthropic 的 AI 編碼 CLI 工具，支援 agentic 工作流程、MCP Server 整合、Hooks 機制與 Agent Teams。目前為最受開發者關注的 AI 編碼工具之一。近期接連出現效能退步事件（已承認工程疏失）、HERMES.md 靜默計費 bug、API 金鑰外洩漏洞、Auto Compact 失效等問題，安全性與可靠性受到集中審視。v2.1.121 新增 MCP `alwaysLoad` 選項，Runhouse 團隊透過股權收購加入 Anthropic 以強化 agentic 基礎架構。2026-05-03 加入 macOS 電腦使用（computer use）功能，Claude Code 與 Claude Cowork 均可直接控制 macOS 桌面的滑鼠與鍵盤，從純程式碼助理擴展為全桌面自動化代理。2026-05-04 重大事件：Anthropic 因人為疏失導致 Claude Code 原始碼外洩，已向各平台發出逾 8,100 次 DMCA 下架請求，引發 AI 生成程式碼版權歸屬的法律辯論，社群分支「Claw-Code」隨之誕生；社群亦發現 Claude Cowork/Desktop 悄悄支援任意第三方 LLM（OpenAI、Gemini、本地模型、企業閘道 Bedrock/Vertex/Foundry），無任何官方公告；Claude Connectors 透過 MCP 擴展至創意工作軟體（Adobe、Blender、Ableton、Affinity、Autodesk Fusion）。2026-05-05 重大進展：Amazon 正式向全體企業員工推出 Claude Code（與 OpenAI Codex 並行），成為大型企業雙品牌 AI 編碼工具並行部署的首例；v2.1.128 發布（`/color` 隨機配色、`/mcp` 顯示各伺服器工具數量）。Claude Code 創始人 Boris Cherny 在 podcast 中宣示「Loops（迴圈執行）是 AI 編碼的未來」，首次公開闡明 Claude Code 的設計哲學核心。2026-05-06 新進展：v2.1.128/129 自動推送至 VS Code 後造成 Windows 用戶 extension 完全無法啟動的嚴重 regression（createRequire polyfill hardcoded build path + Mantle endpoint 認證失效），v2.1.131 已緊急修復，數小時內即回應大量 Reddit 回報；Claude Code 累積 GitHub Stars 達 121,000，成為 AI coding assistant 中增長最具話題性的案例；Python SDK v0.99.0 與 TypeScript SDK v0.94.0 同步發布，新增 workspace 定向功能；Claude Security 從封閉預覽移至公開 Beta，開發者現可在 Claude Code 工作流中直接使用 AI 驅動安全審查功能。Boris Cherny 再次公開宣示「軟體工程已死」，強調 Anthropic 內部已無傳統軟體工程師職位，引發業界廣泛論戰。2026-05-07 重大進展：Anthropic 在「Code with Claude」開發者大會上宣布 Managed Agents 重大升級，包含「Dreaming」記憶整合機制（Agent 在任務間隙自動鞏固記憶）、最高 20 路子代理並行，以及 Outcomes 規格驗證功能，標誌 Agent 框架正式邁向有狀態生產級設計；Python SDK v0.100.0 與 TypeScript SDK v0.95.0 同步新增 Managed Agents 原生支援（見 [[entities/managed-agents]]）。Anthropic 同日宣布與 SpaceX 達成算力合作，即日起 Claude Code Pro/Max 用戶五小時視窗速率上限翻倍、取消尖峰時段降速，API Tier 4+ 用戶速率限制同步提升。v2.1.132 新增 `CLAUDE_CODE_SESSION_ID` 環境變數至 Bash 工具子行程（hooks 可追蹤當前 session）及 `CLAUDE_CODE_DISABLE_ALTERNATE_SCREEN` 選項。研究者透過 wire trace 截獲 Claude Code 完整系統提示（約 13,000 字），發現 MCP 插件大幅佔用 context window，且「Auto 模式」的權限控制僅是提示詞層面機制，並非底層沙箱強制約束；Claude Code 透過 AWS Bedrock 接入時再次出現功能異常，新功能同步落差問題持續存在。2026-05-08 重大事件：CVE-2026-39861（CVSS 7.7）沙箱逃逸漏洞曝光，攻擊者可透過符號連結（symlink）將檔案寫入工作區目錄以外，已在 v2.1.64 修補，所有舊版用戶應立即升級；同時 Anthropic 對「一鍵 RCE」信任提示問題的公開回應被社群概括為「不應該點確認」，責怪使用者的態度在兩則安全負面消息同日上版的背景下引爆批評，品牌可信度面臨雙重壓力；社群更諷刺 Anthropic 自家宣傳的頂級安全模型 Mythos 事先未能偵測到自身產品漏洞。v2.1.133 同日發布，新增 `worktree.baseRef` 設定（`fresh` | `head`），讓使用者可控制 `--worktree`、`EnterWorktree` 及代理隔離工作樹要從 `origin/<default>` 分支還是本地 `HEAD` 建立。Boris Cherny 在「Code with Claude」大會宣稱「寫程式問題已被解決」並表示厭倦「vibe coding」一詞，言論在 Business Insider、HN、YouTube 等多平台引發廣泛討論，社群反應兩極。Claude Cowork 的 Linux 沙箱持續無法啟動（帳號層級隱性故障），Anthropic 狀態頁顯示正常但問題仍在，暫無官方回應。Claude Sonnet 4.8 外洩資訊出現（Geeky Gadgets 報導），暗示下一代 Sonnet 可能即將到來，官方尚未確認。
 
 ---
 
@@ -47,6 +47,8 @@ Claude Code 是 Anthropic 的 AI 編碼 CLI 工具，支援 agentic 工作流程
 - **原始碼外洩與 DMCA 風波**（2026-05-04 持續延燒）：Anthropic 因人為疏失導致 Claude Code 原始碼外洩，已向各平台發出逾 8,100 次 DMCA 下架請求，引發 AI 生成程式碼版權歸屬的法律辯論；社群以外洩程式碼為基礎重建的「Claw-Code」分支隨之誕生，影響已超出技術層面。
 - **撤銷授權後 session 紀錄持續出現**（2026-05-06 回報）：用戶撤銷 Claude Code 存取授權後，session 紀錄仍持續出現於使用量儀表板，涉及 `user:file_upload`、`user:ccr_inference` 等 scope；解除安裝並清除憑證後問題依然存在，Anthropic 客服兩週未回應。建議立即重置所有 API 金鑰並監控帳號用量；見 [[topics/ai-agent-safety]]
 - **Bedrock 功能相容性落差（持續）**（2026-05-07 再次回報）：Claude Code 透過 AWS Bedrock 接入時功能異常，社群指出 Bedrock 與 Anthropic 直接服務的新功能同步速度慣常落後，每次新功能發布後的相容性落差問題已成常態。
+- **CVE-2026-39861 沙箱逃逸漏洞**（2026-05-08 公開）：CVSS 7.7 高危漏洞，攻擊者可透過符號連結（symlink）將檔案寫入工作區目錄以外；已在 v2.1.64 修補，所有使用舊版本的用戶應立即升級；自查方式詳見 [GitHub Advisory GHSA-vp62-r36r-9xqp](https://github.com/advisories/GHSA-vp62-r36r-9xqp)；見 [[topics/ai-agent-safety]]
+- **Claude Cowork Linux 沙箱啟動失敗**（2026-05-07 回報）：用戶回報 Claude Cowork 的 Linux 沙箱在多台電腦重新安裝後持續無法啟動，Anthropic 狀態頁顯示正常，疑為帳號層級隱性故障，目前無官方回應。
 
 ---
 
@@ -112,6 +114,10 @@ Claude Code 是 Anthropic 的 AI 編碼 CLI 工具，支援 agentic 工作流程
 - **[/qu /ans 跨 session 通訊插件](https://www.reddit.com/r/ClaudeAI/comments/1t65lfq/)** — 讓兩個 Claude Code 工作階段互相通訊：新終端輸入 `/qu` 撥出，舊終端輸入 `/ans` 接聽，直接交換問答，省去人工跨 session 複製貼上
 - **[recap](https://github.com/madebywelch/recap)** — 掃描過去 N 天的 Claude Code 與 Codex 對話紀錄，找出開發者遭遇陌生概念的片段，自動產出說明摘要，協助對抗因 AI 加速開發而導致的技能退化（skill atrophy）
 - **[Kstack](https://github.com/kubetail-org/kstack)** — 將 Kubernetes 常見除錯任務打包成 Claude Code skill 組（`/investigate`、`/audit-security`、`/audit-outdated`），讓直接在 Claude Code 內監控與排查 K8s 叢集問題成為可能
+- **[Claudy](https://www.reddit.com/r/ClaudeAI/comments/1t738bi/)** — 以 Rust 撰寫的 Claude Code 擴充工具，支援多供應商設定檔一鍵切換（Anthropic、Gemini、Codex 等）、本地代理 MCP 橋接及 token 用量分析，解決原生 CLI 在多模型環境配置繁瑣的問題
+- **[DataMoat](https://github.com/max-ng/datamoat)** — 以 AES-256-GCM 加密將 AI 代理工作記錄保存為本機私有資產，支援搜尋、重用與移交，vault 金鑰及記錄資料完全留在使用者機器上，適合有資料安全顧慮的企業開發者
+- **[4-agent Code Review Workflow](https://www.reddit.com/r/ClaudeAI/comments/1t71wrm/)** — 開源的 4 代理程式碼審查工作流：一位架構師代理（僅協調、不直接產出意見）加三位來自不同模型廠商的專家代理，最終審查意見必須有具體證據支撐，可包裝為 MCP 伺服器供 Claude Code 呼叫替代 CodeRabbit，MIT 授權
+- **[awesome-ux-skills](https://github.com/tommyjepsen/awesome-ux-skills)** — 以 Nielsen 和 Shape of AI 等 UX 原則為基礎的 Claude Code 技能集，供設計導向工程師重複使用，減少每次重查設計規範的時間成本
 
 ---
 
@@ -137,11 +143,16 @@ Claude Code 是 Anthropic 的 AI 編碼 CLI 工具，支援 agentic 工作流程
 - [[news/2026-05-05]]
 - [[news/2026-05-06]]
 - [[news/2026-05-07]]
+- [[news/2026-05-08]]
 
 ## 版本歷史
 
 | 日期 | 事件 |
 |------|------|
+| 2026-05-08 | v2.1.133：新增 `worktree.baseRef` 設定（`fresh` \| `head`），讓使用者可控制 `--worktree`、`EnterWorktree` 及代理隔離工作樹要從 `origin/<default>` 分支還是本地 `HEAD` 建立，提供更靈活的多工作樹管理策略 |
+| 2026-05-08 | CVE-2026-39861（CVSS 7.7）沙箱逃逸漏洞公開（symlink 逃逸），v2.1.64 已修補；同日爆出 1-click RCE 信任提示問題，Anthropic 回應被批為責怪使用者；見 [[topics/ai-agent-safety]] |
+| 2026-05-08 | 新工具：Claudy（Rust 多供應商設定管理 + MCP 橋接）、DataMoat（AES-256-GCM 工作記錄加密保存）、4-agent Code Review（架構師 + 三模型專家審查，MIT）、awesome-ux-skills（Nielsen 等 UX 原則技能集）|
+| 2026-05-08 | Claude Sonnet 4.8 外洩資訊出現（Geeky Gadgets 報導），官方尚未確認下一代 Sonnet 規格 |
 | 2026-05-07 | v2.1.132：新增 `CLAUDE_CODE_SESSION_ID` 環境變數至 Bash 工具子行程（hooks 可追蹤當前 session）；新增 `CLAUDE_CODE_DISABLE_ALTERNATE_SCREEN` 選項，供需要控制終端顯示行為的環境使用 |
 | 2026-05-07 | Python SDK v0.100.0 里程碑：新增 Managed Agents 多路並行支援；TypeScript SDK v0.95.0 同步新增 Managed Agents API 支援；兩者同日發布 |
 | 2026-05-07 | Managed Agents 重大更新（Code with Claude 大會）：Dreaming 記憶整合、最高 20 路子代理並行、Outcomes 規格驗證，標誌 Agent 框架從無狀態走向有狀態；見 [[entities/managed-agents]] |

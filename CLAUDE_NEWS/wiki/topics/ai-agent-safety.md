@@ -2,7 +2,7 @@
 
 **狀態：** ongoing
 **開始日期：** 2026-04-27
-**最後更新：** 2026-05-07
+**最後更新：** 2026-05-08
 
 ---
 
@@ -13,6 +13,19 @@
 ---
 
 ## 技術彙整
+
+### CVE-2026-39861：沙箱逃逸漏洞（CVSS 7.7）（2026-05-08 新增）
+
+- **漏洞類型**：符號連結（symlink）沙箱逃逸，攻擊者可透過惡意 symlink 將檔案寫入工作區目錄以外的位置，突破 Claude Code 的工作區隔離機制
+- **嚴重程度**：CVSS 7.7（高危），已取得正式 CVE 編號（CVE-2026-39861），詳見 [GitHub Advisory GHSA-vp62-r36r-9xqp](https://github.com/advisories/GHSA-vp62-r36r-9xqp)
+- **修補狀態**：v2.1.64 已修補，dev.to 提供詳細自查指南確認受影響版本；**所有使用舊版本的使用者應立即升級**
+- **雙重壓力**：此漏洞與 1-click RCE 信任提示事件同日在 HN 上版；社群諷刺 Anthropic 自家宣傳的頂級安全模型 Mythos 事先未能偵測到自身產品漏洞，對品牌可信度造成雙重打擊
+
+### 1-click RCE：信任提示觸發遠端代碼執行 + Anthropic 回應危機（2026-05-08 新增）
+
+- **攻擊向量**：Claude Code 的信任提示（trust prompt）可被利用觸發一鍵遠端代碼執行（RCE），The Register 於 2026-05-07 報導
+- **Anthropic 回應問題**：公開回應被社群概括為「不應該點確認（Shouldn't have clicked 'ok'）」，被批評為責怪使用者而非修復產品缺陷
+- **信任危機升級**：CVE-2026-39861 + 1-click RCE 兩則安全事件同日在 HN 上版，部分社群認為 Anthropic 正在快速消耗開發者社群的信任；延續 Claude Code vs Gemini CLI 安全標準差異爭議脈絡（見 2026-04-30 條目）
 
 ### 授權撤銷後 Session 紀錄持續出現（2026-05-06 新增）
 
@@ -70,9 +83,11 @@
 ## 目前結論
 
 - ⚠️ AI agent 安全事故已從「理論風險」轉為「實際事故」，PocketOS 事件（資料庫刪除）與 OpenClaw 事件（隱性計費）為兩類不同維度的標誌性案例
-- 🛠️ 社群防護工具（Groundtruth、SmolVM）先於官方指導方針出現，顯示生態自組織能力
+- ⚠️ **CVE-2026-39861 是 Claude Code 首個正式 CVE 編號（CVSS 7.7）**，標誌安全事件從非正式漏洞回報升級至正式漏洞管理流程；symlink 沙箱逃逸意味著工作區隔離機制存在可被攻擊的邊界
+- ⚠️ Anthropic 的安全事件回應策略持續受到批評——從「定義過窄」（Jonathan Nen）到「責怪使用者」（1-click RCE 回應），回應態度與品牌定位存在落差
+- 🛠️ 社群防護工具（Groundtruth、SmolVM、DataMoat）先於官方指導方針出現，顯示生態自組織能力
 - 📋 Anthropic 尚未發布針對高風險操作的官方 agent 安全指引
-- 🔍 「安全定義過窄」批評呼應此類事件：模型層安全（拒絕危險請求）≠ 產品層安全（防止誤操作）
+- 🔍 「安全定義過窄」批評呼應此類事件：模型層安全（拒絕危險請求）≠ 產品層安全（防止誤操作、修補沙箱逃逸）
 
 ---
 
@@ -89,10 +104,16 @@
 - [[news/2026-05-02]]
 - [[news/2026-05-03]]
 - [[news/2026-05-07]]
+- [[news/2026-05-08]]
 - [Claude-powered AI coding agent deletes entire company database in 9 seconds](https://www.tomshardware.com/tech-industry/artificial-intelligence/claude-powered-ai-coding-agent-deletes-entire-company-database-in-9-seconds-backups-zapped-after-cursor-tool-powered-by-anthropics-claude-goes-rogue) — Tom's Hardware
 - [Anthropic's definition of safety is too narrow](https://jonathannen.com/anthropic-safety-too-narrow/) — Jonathan Nen
 
 ## 時序
+
+### 2026-05-08
+- **[重大漏洞] CVE-2026-39861（CVSS 7.7）沙箱逃逸**：Claude Code 的符號連結沙箱逃逸漏洞曝光，攻擊者可透過惡意 symlink 將檔案寫入工作區以外位置，突破工作區隔離機制；v2.1.64 已修補，dev.to 提供詳細自查指南；所有使用舊版本的用戶應立即升級。見 [GHSA-vp62-r36r-9xqp](https://github.com/advisories/GHSA-vp62-r36r-9xqp)
+- **[信任危機] 1-click RCE + Anthropic「不應該點確認」回應**：The Register 報導 Claude Code 信任提示可觸發一鍵 RCE，Anthropic 的公開回應被解讀為責怪使用者；兩則安全事件（CVE + RCE）同日在 HN 上版，社群批評 Anthropic 正在消耗開發者信任；Mythos 未能事先偵測自家產品漏洞的諷刺在社群廣泛流傳
+- **[防禦工具] DataMoat 私有工作記錄加密**：以 AES-256-GCM 加密將 AI 代理工作記錄保存為本機私有資產，vault 金鑰及資料完全留在使用者機器，是本次安全危機背景下出現的代表性防禦性工具
 
 ### 2026-05-07
 - **[安全漏洞] 授權撤銷後 session 紀錄持續出現**：用戶撤銷 Claude Code 存取授權後，session 紀錄（`user:file_upload`、`user:ccr_inference` 等 scope）持續出現於使用量儀表板；解除安裝並清除憑證後問題依然存在，Anthropic 支援兩週未回應；顯示授權撤銷機制存在嚴重缺陷，暗示帳號層面存在未授權 token 消耗的可能

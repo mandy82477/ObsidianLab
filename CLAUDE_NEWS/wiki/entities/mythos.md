@@ -3,7 +3,7 @@
 **類型：** model
 **狀態：** 限制存取（非公開）
 **首次出現：** 2026-04（限定夥伴 Preview）
-**最後更新：** 2026-05-02
+**最後更新：** 2026-05-08
 
 ---
 
@@ -74,6 +74,12 @@ Anthropic 的「Project Glasswing」聚焦 AI 資安威脅，Mizuho 分析師認
 
 ---
 
+## CVE-2026-39861 與 Mythos 的諷刺（2026-05-08）
+
+Claude Code 爆出 CVE-2026-39861（CVSS 7.7）沙箱逃逸漏洞後，社群廣泛討論一個頗具諷刺性的觀察：Anthropic 自家宣傳的「頂級安全模型」Mythos，以七週發現 2,000+ 軟體漏洞的能力著稱，卻事先未能偵測到自身產品 Claude Code 的嚴重安全漏洞。此觀察在 Hacker News 討論中被廣泛引用，成為質疑 Anthropic 安全定義一致性的新論據，也再次呼應 Jonathan Nen 的「安全定義過窄」批評（見 [[topics/ai-agent-safety]]）。
+
+---
+
 ## OpenAI Cyber 限制存取事件（2026-05-01）
 
 TechCrunch 報導，Sam Altman 在公開批評 Anthropic 限制 Mythos 存取範圍之後，旋即宣布 OpenAI 的 **GPT-5.5 Cyber**（高能力資安模型）同樣採用限制性推出策略，僅開放給通過審核的「關鍵防禦者」。社群廣泛討論此舉的雙重標準意涵：Altman 對 Anthropic 的批評顯得站不住腳，同時也間接驗證了高能力 AI 資安工具在公開部署前確實存在實際安全顧慮。
@@ -88,5 +94,6 @@ TechCrunch 報導，Sam Altman 在公開批評 Anthropic 限制 Mythos 存取範
 - [[news/2026-04-29]]
 - [[news/2026-04-30]]
 - [[news/2026-05-02]]
+- [[news/2026-05-08]]
 - [What Anthropic's Mythos Means for the Future of Cybersecurity](https://spectrum.ieee.org/ai-cybersecurity-mythos) — IEEE Spectrum
 - [Anthropic's Argument for Mythos SWE-bench improvement contains a fatal error](https://www.philosophicalhacker.com/post/anthropic-error/) — The Philosophical Hacker
