@@ -22,7 +22,7 @@ window.WIKI_DATA = {
       "pill": "active",
       "firstSeen": "2025（正式推出）",
       "startDate": "",
-      "lastUpdated": "2026-05-07",
+      "lastUpdated": "2026-05-08",
       "summary": "Claude Code 是 Anthropic 的 AI 編碼 CLI 工具，支援 agentic 工作流程、MCP Server 整合、Hooks 機制與 Agent Teams。目前為最受開發者關注的 AI 編碼工具之一。近期接連出現效能退步事件（已承認工程疏失）、HERMES.md 靜默計費 bug、API 金鑰…"
     },
     {
@@ -82,7 +82,7 @@ window.WIKI_DATA = {
       "pill": "gray",
       "firstSeen": "2026-04（限定夥伴 Preview）",
       "startDate": "",
-      "lastUpdated": "2026-05-02",
+      "lastUpdated": "2026-05-08",
       "summary": "Claude Mythos 是 Anthropic 因安全風險而未對外公開發布的高能力 AI 模型，目前僅向有限合作夥伴提供 Preview 存取。**2026-04-29，白宮正式反對 Anthropic 擴大 Mythos 存取範圍**，AI 模型存取管控首次出現聯邦政府層級的直接干預，是 Mythos 政策走向的…"
     },
     {
@@ -144,7 +144,7 @@ window.WIKI_DATA = {
       "pill": "active",
       "firstSeen": "",
       "startDate": "2026-04-27",
-      "lastUpdated": "2026-05-07",
+      "lastUpdated": "2026-05-08",
       "summary": "隨著 AI agent 被賦予更高自主性與系統操作權限，安全事故與防護工具同步出現。2026-04-28 的資料庫刪除事件是迄今最具代表性的 AI agent 失控案例，引發業界對自主 AI 工具操作安全防護的緊迫討論。 ---"
     },
     {
@@ -180,7 +180,7 @@ window.WIKI_DATA = {
       "pill": "active",
       "firstSeen": "",
       "startDate": "2026-04-25",
-      "lastUpdated": "2026-05-07",
+      "lastUpdated": "2026-05-08",
       "summary": "追蹤 Claude Code 社群在實際開發中累積的技術應用模式、工作流創新與工具生態。每次 ingest 從「💬 技術熱度討論」區塊萃取有價值的技術發現，持續累積形成社群最佳實踐知識庫。 ---"
     },
     {
@@ -209,6 +209,12 @@ window.WIKI_DATA = {
     }
   ],
   "digestIndex": [
+    {
+      "date": "2026-05-08",
+      "articleCount": 33,
+      "preview": "[官方] anthropics/claude-code v2.1.133",
+      "topCount": 0
+    },
     {
       "date": "2026-05-07",
       "articleCount": 45,
