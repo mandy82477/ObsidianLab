@@ -128,6 +128,7 @@ Claude Code 是 Anthropic 的 AI 編碼 CLI 工具，支援 agentic 工作流程
 - [[topics/ai-agent-safety]]
 - [[entities/claude-design]]（AI 設計工具，與 Claude Code 整合尚不完善）
 - [[entities/openclaw]]（第三方 agentic 工具，Anthropic 主動管控中）
+- [[entities/boris-cherny]]（Claude Code 創始人與負責人）
 
 ## 參考來源
 

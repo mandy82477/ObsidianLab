@@ -374,6 +374,7 @@
 
 - [[entities/claude-code]]
 - [[entities/pricing]]（token 消耗與模型選擇策略相關）
+- [[entities/managed-agents]]（官方 Agent 框架：Dreaming 記憶整合、20 路並行、Outcomes 規格驗證）
 - [[entities/project-deal]]（Claude 代理人交易談判實驗，multi-agent 應用的商業探索）
 - [[entities/claude-design]]（AI 設計工具，與 Claude Code + Figma MCP 工作流有定位重疊）
 

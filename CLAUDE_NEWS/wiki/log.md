@@ -5,6 +5,22 @@ Append-only 紀錄。每次 ingest、query 或 lint 都在此追加一條。
 
 ---
 
+## 2026-05-08 Lint
+
+- 修正矛盾：
+  - `entities/google-investment.md`：移除重複的 2026-04-27 時序條目（內容完全重複，保留第一份）
+  - `entities/pricing.md`：`最後更新` 欄位從 2026-05-07 更正為 2026-05-08（2026-05-08 ingest 有更新此頁）
+- 補連結（孤立頁面修正）：
+  - `topics/community-tech-patterns.md` → 在「相關實體」補上 `[[entities/managed-agents]]`（新頁面 2026-05-07 建立後未反映在此頁）
+  - `entities/claude-code.md` → 在「相關議題」補上 `[[entities/boris-cherny]]`
+- 狀態更新：無
+- 遷移至 entities：無（`topics/google-investment.md` 已在上次 lint 遷移）
+- 新增 entities：
+  - `entities/boris-cherny.md`（Claude Code 創始人，10+ 次跨頁提及，涵蓋 Loops 設計哲學、「coding is solved」論戰、4/23 事後報告、第三方工具邊界聲明）
+- overview.md：已全面重寫（反映 2026-04-25 至 2026-05-08 局勢，含 CVE 安全危機、SpaceX 算力合作、Managed Agents 升級、競品壓力轉折點）
+
+---
+
 ## 2026-05-08 Ingest
 
 - 來源日報：[[news/2026-05-08]]

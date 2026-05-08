@@ -2,6 +2,18 @@
 window.WIKI_DATA = {
   "entities": [
     {
+      "id": "boris-cherny",
+      "pageType": "entity",
+      "name": "Boris Cherny",
+      "entityType": "person",
+      "status": "active",
+      "pill": "active",
+      "firstSeen": "2026-04-23（事後報告發布）",
+      "startDate": "",
+      "lastUpdated": "2026-05-08",
+      "summary": "Boris Cherny 是 Anthropic Claude Code 的創始人與負責人（Head of Claude Code），是 Claude Code 產品方向最主要的公開代言人。他以高頻率的公開聲明、哲學宣言與工程分享，持續引發開發者社群廣泛討論，被視為 Anthropic 技術文化的外部窗口。 ---"
+    },
+    {
       "id": "bugcrawl",
       "pageType": "entity",
       "name": "Bugcrawl",
@@ -118,7 +130,7 @@ window.WIKI_DATA = {
       "pill": "active",
       "firstSeen": "",
       "startDate": "",
-      "lastUpdated": "2026-05-07",
+      "lastUpdated": "2026-05-08",
       "summary": ""
     },
     {

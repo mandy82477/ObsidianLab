@@ -1,12 +1,12 @@
 # Claude / Anthropic 生態系概覽
 
-**最後更新：** 2026-05-01
+**最後更新：** 2026-05-08
 
 ---
 
 ## 當前局勢
 
-Anthropic 正處於商業擴張加速與信任危機並存的關鍵節點。估值已接近 $9,000 億美元（新輪融資洽談中），Claude Security 公開測試版正式跨足資安市場，Anthropic 自我定位為「agentic AI 的 AWS」。但同時，帳單透明度問題多點同步爆發（OpenClaw 異常計費 / API KEY 計費陷阱 / Pro 餘額消失），加上白宮介入 Mythos 存取管控，使 Anthropic 在商業面與監管面都面臨前所未有的外部壓力。
+Anthropic 在「商業加速擴張」與「產品安全信任危機」兩股力量的交叉點上持續運行。SpaceX 算力合作（220,000 GPU）大幅鬆綁 Pro/Max 速率限制，Managed Agents 重大升級（Dreaming/20路/Outcomes）宣示有狀態 Agent 框架成熟，估值洽談接近 $9,000 億美元，市場面全面強勁。然而，CVE-2026-39861（CVSS 7.7）沙箱逃逸漏洞、1-click RCE 信任提示事件、Claude Cowork Linux 沙箱持續故障，以及 Anthropic「責怪使用者」的安全回應態度，使開發者社群信任持續受到侵蝕。兩股力量的拉鋸正在塑造本階段 Anthropic 的核心矛盾。
 
 ---
 
@@ -15,8 +15,10 @@ Anthropic 正處於商業擴張加速與信任危機並存的關鍵節點。估�
 | 模型 | 狀態 | 備注 |
 |------|------|------|
 | Claude Sonnet 4.6 | ✅ Active | 目前社群推薦主力，CP 值最佳 |
-| Claude Opus 4.7 | ⚠️ Active（爭議）| 過度「後設化」退步爭議；參數量疑似低於 4.6（4T vs 5.3T）|
-| Claude Mythos | 🔒 限制存取 | 白宮反對擴大；Anthropic 自稱「世界未準備好」|
+| Claude Opus 4.7 | ⚠️ Active（爭議）| 後設化退步批評持續；參數量疑似低於 4.6（4T vs 5.3T）；Fortify 安全掃描修復失敗率高 |
+| Claude Haiku 4.5 | ✅ Active | SWE-bench Verified 73.3%；成本效益日益受重視 |
+| Claude Sonnet 4.8 | 🔮 外洩資訊 | Geeky Gadgets 報導；官方尚未確認 |
+| Claude Mythos | 🔒 限制存取 | 白宮反對擴大；未能事先偵測自家 CVE 被社群諷刺 |
 
 ---
 
@@ -24,68 +26,84 @@ Anthropic 正處於商業擴張加速與信任危機並存的關鍵節點。估�
 
 ### 🔴 高度關注
 
-1. **[[topics/ai-agent-safety]] — 帳單透明度與 agent 安全**
-   - OpenClaw 事件：Claude Code 靜默掃描 repo 內容並改變計費行為（HN 近千則討論，Anthropic 未說明）
-   - AI coding agent 憑證竊取攻擊已成真實威脅
-   - Claude Code vs Gemini CLI 信任邊界標準差異（Anthropic 稱「設計如此」vs Google 視為 CVSS 10.0）
+1. **[[topics/ai-agent-safety]] — 安全信任危機多點爆發**
+   - CVE-2026-39861（CVSS 7.7）沙箱逃逸漏洞：symlink 攻擊可逃逸工作區隔離，v2.1.64 已修補，舊版應立即升級
+   - 1-click RCE 信任提示問題：Anthropic「不應該點確認」回應被批為責怪使用者，品牌可信度雙重受壓
+   - 授權撤銷後 session 紀錄持續出現：Anthropic 支援兩週未回應，API 金鑰外洩風險
+   - Wire Trace 揭示 Auto 模式安全邊界為提示詞層而非底層沙箱——企業部署安全評估的重要發現
 
-2. **[[entities/mythos]] — 政府監管介入**
-   - 白宮正式反對擴大 Mythos 存取（Bloomberg / WSJ），涉及五角大廈政策角力
-   - Anthropic 自稱 Mythos「世界尚未準備好接受它」
-   - SWE-bench 評測方法論爭議仍懸而未決
+2. **[[topics/competitor-landscape]] — 競品壓力升溫**
+   - OpenAI Codex 單週下載量 8,610 萬次（+1397%）vs Claude Code 720 萬次（-38%）：本年度最大市場份額壓力訊號
+   - DeepSeek clone 8,700 Stars + DeepClaude 17x 低成本替代：開源替代生態加速形成
+   - Claude Desktop/Cowork 悄悄支援任意第三方 LLM，競爭格局轉向「Claude 作為多模型接入層」
 
 ### 🟡 持續追蹤
 
-3. **[[topics/code-quality-decline]] — 品質問題延伸**
-   - 原工程疏失已承認，但 speed bumps 增加（2026-04-29）與 Opus 4.7 後設化退步（2026-04-30）持續
-   - Claude Projects 對話消失事件（三度發生）未獲官方回應
+3. **[[topics/community-tech-patterns]] — 社群技術趨勢活躍**
+   - Managed Agents Dreaming + 20 路並行 + Outcomes 是本週最重大的官方架構更新
+   - 120 提示詞模式實證研究是目前最嚴謹的社群 prompt engineering 貢獻
+   - Skill Atrophy（技能退化）問題進入主流討論，recap 等反退化工具同步出現
+   - Boris Cherny「coding is solved」+ 反「vibe coding」在多平台引發廣泛討論
 
-4. **[[topics/competitor-landscape]] — 競品生態演化**
-   - Google 同時投資 Anthropic 又秘密開發競品（Sergey Brin 主導）
-   - Codex 社群能見度低但能力漸趨相近（Opus 4.7 ≈ GPT 5.5）
-   - GameMaker 等垂直領域開始深度整合 Claude Code
+4. **[[topics/anthropic-government-policy]] — 政府合作局勢持續**
+   - 五角大廈因安全護欄分歧排除 Anthropic，白宮已重啟談判
+   - Anthropic 安全優先立場短期有政府市場代價，長期技術籌碼仍具吸引力
+
+5. **[[topics/code-quality-decline]] — 監測中**
+   - 4/23 承諾的 50+ 修復社群正獨立驗證中
+   - Opus 4.7 退步討論持續，但無新重大事件
 
 ---
 
-## 近兩週重大事件（2026-04-25 至 2026-04-30）
+## 近兩週重大事件（2026-04-25 至 2026-05-08）
 
 | 日期 | 事件 | 影響 |
 |------|------|------|
-| 04-30 | OpenClaw 異常計費行為曝光 | 帳單透明度信任危機 🔴 |
-| 04-30 | 白宮反對 Mythos 擴大存取（WSJ 確認） | 政府監管正式介入 🔴 |
-| 04-30 | Claude Security 公開測試版上線 | Anthropic 跨足 AI 資安市場 |
-| 04-30 | ANTHROPIC_API_KEY 雲端計費陷阱揭露 | 企業部署風險提示 |
-| 04-29 | Anthropic 洽談 $900B 估值 $500 億新融資 | 估值創歷史新高 |
-| 04-29 | Token 費用估算靜默翻倍 | 企業預算規劃衝擊 |
-| 04-28 | Claude Security 前身：Bugcrawl 測試中 | 資安產品線雛形 |
+| 05-08 | CVE-2026-39861（CVSS 7.7）沙箱逃逸 + 1-click RCE | 安全信任危機 🔴 |
+| 05-08 | Boris Cherny「coding is solved」+ SpaceX 算力細節確認 | 社群兩極反應 |
+| 05-07 | Managed Agents Dreaming/20路/Outcomes 重大升級 | Agent 框架成熟里程碑 |
+| 05-07 | SpaceX 算力合作：Pro/Max 速率上限翻倍、取消尖峰降速 | 開發者使用體驗重大改善 |
+| 05-06 | v2.1.131 緊急修復 Windows VS Code regression | 運維可靠性問題 |
+| 05-06 | Claude Code 121K GitHub Stars + Claude Security 公開 Beta | 生態里程碑 |
+| 05-05 | OpenAI Codex 下載量首次超越 Claude Code（+1397%）| 競爭格局轉折點 🔴 |
+| 05-05 | Amazon 全員雙品牌並行部署 Claude Code + Codex | 企業多供應商策略成主流 |
+| 05-04 | Claude Code 原始碼外洩 + 8,100 DMCA + Claw-Code 誕生 | 版權與生態衝擊 |
+| 05-04 | Claude Desktop/Cowork 悄悄支援第三方 LLM | 競爭策略重大轉向 |
+| 05-03 | macOS computer use 功能上線 | 桌面自動化代理能力 |
+| 05-01 | 五角大廈排除 Anthropic，白宮重啟談判 | 政府市場格局影響 |
+| 05-01 | $6,000 /loop 失控事件 | 用量安全議題標誌性案例 |
+| 04-30 | OpenClaw 異常計費行為曝光（HN 近千則討論）| 計費透明度信任危機 🔴 |
 | 04-28 | Cursor + Claude Opus 9 秒刪除生產資料庫 | AI agent 安全標誌性事件 |
-| 04-27 | Google 400 億投資確認（見 [[entities/google-investment]]）| 算力綁定結構確認 |
-| 04-25 | Anthropic 限制 OpenClaw 等第三方工具配額 | 第三方工具生態管控開始 |
+| 04-27 | Google 400 億投資確認（[[entities/google-investment]]）| 算力綁定結構確認 |
 
 ---
 
-## 社群工具生態（截至 2026-04-30）
+## 社群工具生態（截至 2026-05-08）
 
-本週期共有 **20+ 款社群工具**湧現，見 [[topics/community-tech-patterns]]。熱度最高：
+共追蹤 **50+ 款社群工具**，見 [[topics/community-tech-patterns]]。近兩週熱度最高：
 
-- 🔥🔥🔥 **Claude Squad / mux0 / CC-Canary** — 多 agent 協作基礎設施
-- 🔥🔥 **Groundtruth / SmolVM** — agent 安全防護工具
-- 🔥🔥 **Throttle Meter / Mneme / Brifly** — 用量監控與記憶管理（本週新增）
-- 🔥🔥 **Nimbalyst / Trent** — 多 agent 視覺化與安全審查（本週新增）
+- 🔥🔥🔥 **Omar / graphify / Claude Squad** — 大規模 agent 管理基礎設施
+- 🔥🔥🔥 **Managed Agents Dreaming** — 官方首個有狀態記憶整合機制
+- 🔥🔥 **DataMoat / SmolVM / Groundtruth** — 安全防護工具（CVE 危機下需求激增）
+- 🔥🔥 **recap / claude-smart / Dreamer** — 反技能退化與記憶治理工具
+- 🔥🔥 **Claudy / claudely** — 多供應商切換（競品壓力下需求上升）
 
 ---
 
 ## 商業動態
 
-- **估值**：鏈上數據 $1T（04-28）→ 洽談 $850–900B 新輪（04-29/30），估值高但市場預期 vs 實際商業模式的落差值得關注
-- **市場擴張**：哈佛 FAS 採用 Claude（取代 ChatGPT Edu）、澳紐辦公室（Sydney）、Runhouse 股權收購
-- **產品擴張**：Claude Security（AI 資安）、Managed Agents（agentic 平台）、Claude Design（設計工具，評價尚低）
+- **估值**：洽談 $850–900B 新輪融資（估值追平或超越 OpenAI）
+- **算力**：SpaceX Colossus 220,000 GPU（孟菲斯），gigawatt 等級 Google 算力預購，CoreWeave 合作
+- **市場擴張**：Amazon 全員部署、Apple 內部採用（外洩文件）、哈佛、Uber（$500–$2K/月/工程師）
+- **產品擴張**：Claude Security（公開 Beta）、Managed Agents（生產級 Agent 框架）、Claude Connectors（創意工具）
+- **競爭策略轉向**：Claude Desktop/Cowork 支援任意第三方 LLM，從「Claude 只用 Claude 模型」轉向「Claude 作為多模型接入層」
 
 ---
 
 ## 社群情緒指標
 
-- HN 討論熱度：🔥🔥 極高（OpenClaw 事件近千則討論，Mythos 政策爭議持續）
-- Reddit 情緒：😠😠 明顯負面（帳單透明度、Opus 4.7 退步、Projects 對話消失）
-- 開發者工具活躍度：📈 持續高（每日仍有新工具湧現，生態黏著度仍高）
-- 信任指標：⬇️ 下降中（OpenClaw 事件 + 多重計費透明度問題同步爆發）
+- HN 討論熱度：🔥🔥🔥 極高（CVE 雙重安全事件、Managed Agents 大會宣布、SpaceX 合作）
+- Reddit 情緒：😐 中性偏負（安全事件衝擊抵銷速率改善的正面情緒）
+- 開發者工具活躍度：📈 持續高（50+ 工具，每週仍有批次新工具湧現）
+- 信任指標：⬇️ 持續下降（CVE「責怪使用者」回應 + 授權撤銷缺陷 + 透明度問題）
+- 競爭壓力：🔴 上升（Codex 下載量逆轉、DeepSeek clone 加速形成）
