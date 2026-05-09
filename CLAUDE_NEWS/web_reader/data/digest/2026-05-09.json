@@ -1,0 +1,237 @@
+{
+  "date": "2026-05-09",
+  "generatedAt": "2026-05-09 11:52 UTC",
+  "articleCount": 25,
+  "sourceCount": "6/6",
+  "topStories": [
+    {
+      "title": "Anthropic plugs into SpaceX's 220,000-GPU Colossus — and doubles Claude's rate limits",
+      "url": "https://dev.to/thegatewayguy/anthropic-plugs-into-spacexs-220000-gpu-colossus-and-doubles-claudes-rate-limits-228g",
+      "source": "dev.to / #anthropic",
+      "time": "05/09 02:18",
+      "sentiment": "",
+      "body": "Anthropic 已取得 SpaceX Memphis Colossus 1 資料中心的全部算力，規模包含逾 22 萬張 NVIDIA GPU 與超過 300MW 電力，並同步宣布 Claude API 速率上限加倍。這是 Anthropic 對算力基礎設施的最大單筆押注，直接影響 API 容量受限的企業與開發者。"
+    },
+    {
+      "title": "Claude Code IDE extension unable to load on Windows",
+      "url": "https://www.reddit.com/r/ClaudeAI/comments/1t7pipy/claude_status_update_claude_code_ide_extension/) / [Claude VS Code extension broken on windows](https://www.reddit.com/r/ClaudeAI/comments/1t7jvh9/claude_vs_code_extension_broken_on_windows/",
+      "source": "Reddit / r/ClaudeAI",
+      "time": "05/08",
+      "sentiment": "",
+      "body": "5/9 UTC 00:24 官方確認 Claude Code IDE 擴充套件在 Windows 上全面無法載入，原因為更新時將 Linux 路徑硬編碼進擴充套件，可能同時影響其他非 Linux 系統。臨時解法為降版至前一版本，官方狀態頁持續追蹤修復進度。"
+    },
+    {
+      "title": "Action safety and truthful reporting - what's new in CC 2.1.136 (+525 tokens)",
+      "url": "https://www.reddit.com/r/ClaudeAI/comments/1t7rss6/action_safety_and_truthful_reporting_whats_new_in/",
+      "source": "Reddit / r/ClaudeAI",
+      "time": "05/08 18:09",
+      "sentiment": "",
+      "body": "Claude Code 2.1.136 的系統提示新增逾 525 tokens 的安全規範：不可逆或對外操作須先獲授權確認、刪除前需檢視目標、且需如實回報跳過的步驟與未通過的測試。代理的自訂規則亦新增 `hard_deny` 類別（無條件安全邊界封鎖），縮小了 `soft_deny` 的適用範圍。這是 Anthropic 在代理行為規範上的實質性收緊，影響所有依賴自主授權的工作流。"
+    },
+    {
+      "title": "Using Claude Code: The unreasonable effectiveness of HTML",
+      "url": "https://twitter.com/trq212/status/2052809885763747935",
+      "source": "Hacker News",
+      "time": "05/09 04:53",
+      "sentiment": "",
+      "body": "作者主張以 HTML 取代 Markdown 作為 Claude Code 的主要輸出格式，聲稱在視覺呈現與資訊密度上有顯著優勢，在 Hacker News 引發 187 則討論。值得注意的是，社群中有反駁意見指出 HTML 文件難以讓人類協同編輯，對需要人機共同作者的文件場景可能反而是阻礙。"
+    }
+  ],
+  "techUpdates": [
+    {
+      "title": "anthropics/claude-code v2.1.138",
+      "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.138",
+      "source": "GitHub / anthropics/claude-code",
+      "time": "05/09 06:33",
+      "sentiment": "",
+      "body": "本次為小版本更新，僅包含內部修正（internal fixes），無功能層面變更。"
+    },
+    {
+      "title": "PostToolUse Hooks for Audit Logs: A Production Pattern with Code",
+      "url": "https://dev.to/agentkit/posttooluse-hooks-for-audit-logs-a-production-pattern-with-code-39n2",
+      "source": "dev.to / #claudecode",
+      "time": "05/08 23:47",
+      "sentiment": "",
+      "body": "文章介紹如何利用 Claude Code 的 `PostToolUse` hook 在生產環境建立完整稽核日誌，逐筆記錄工具呼叫的 Bash 指令與目標 repo，解決「代理上週三下午 3 點到底執行了什麼」的可觀測性問題，是面向企業部署的實用模式。"
+    },
+    {
+      "title": "Show HN: Keep coding agents on track with shared Git hooks",
+      "url": "https://news.ycombinator.com/item?id=48065889",
+      "source": "Hacker News",
+      "time": "05/08 17:05",
+      "sentiment": "",
+      "body": "文章提倡在 `AGENTS.md` / `CLAUDE.md` 中強制安裝 `pre-commit` / `husky`，設定每檔最多 600 行與 McCabe 複雜度上限 10，並明確要求代理絕不使用 `--no-verify`（除非用戶明確確認），以在 CI 層面防止 AI 代理產出低品質程式碼。"
+    }
+  ],
+  "discussions": [
+    {
+      "title": "Show HN: Git for AI Agents",
+      "url": "https://github.com/regent-vcs/re_gent",
+      "source": "Hacker News",
+      "time": "05/08 14:15",
+      "sentiment": "😊 正面",
+      "body": "開發者因無法追溯 AI 代理的操作歷史（「你為什麼刪了這個資料夾？」「這個決定是什麼時候做的？」）而開發了 re_gent，將 git 的版本控制概念套用至 AI 代理工作流，解決 `/compact` 後的歷史斷層問題，目前已支援 Claude Code。"
+    },
+    {
+      "title": "Notes from Code with Claude 2026",
+      "url": "https://chrisebert.net/notes-from-code-with-claude-2026/",
+      "source": "Hacker News",
+      "time": "05/08 20:05",
+      "sentiment": "😊 正面",
+      "body": "作者出席了 5/6 在舊金山舉辦的 Anthropic Code with Claude 開發者大會，分享現場獲得的 context 管理策略、軟體工程瓶頸的轉移，以及 AI-native 工程組織的實際運作樣貌；活動需求極高，Anthropic 因此臨時加開第二天場次。"
+    },
+    {
+      "title": "36 Days of Claude Code Logs: Silent Model Switching, 11.5x Efficiency Gap",
+      "url": "https://dev.to/recca0120/36-days-of-claude-code-logs-silent-model-switching-115x-efficiency-gap-1bgm",
+      "source": "dev.to / #claudecode",
+      "time": "05/09 00:42",
+      "sentiment": "🤔 褒貶不一",
+      "body": "作者記錄連續 36 天的 Claude Code 使用數據，發現模型有時會靜默切換（silent model switching）且無明確通知，並量化出不同模型之間高達 11.5 倍的效率差距，對有成本意識的長期用戶是重要的監控警示。"
+    },
+    {
+      "title": "54 ADRs in 35 days: why I write the decision before the first line of code",
+      "url": "https://dev.to/michelfaure/54-adrs-in-35-days-why-i-write-the-decision-before-the-first-line-of-code-11e",
+      "source": "dev.to / #claudecode",
+      "time": "05/09 00:11",
+      "sentiment": "😊 正面",
+      "body": "作者在 35 天內產出 54 份架構決策記錄（ADR），主張在撰寫任何程式碼前先完成決策文件；此實踐與 Claude Code 的代理工作流搭配後，能有效降低代理方向偏移的風險，是值得參考的協作紀律。"
+    },
+    {
+      "title": "Show HN: Obsidian-Semantic, a CLI that lets agents search your vault by meaning",
+      "url": "https://github.com/ravila4/obsidian-semantic-search",
+      "source": "Hacker News",
+      "time": "05/08 21:03",
+      "sentiment": "😊 正面",
+      "body": "開發者為了讓 Claude Code 能以語意搜尋（而非單純 grep）使用 Obsidian 知識庫而開發此工具，支援 Ollama、LMStudio 本地模型及 Gemini API，並可自動發現應互相連結的筆記，將 Obsidian vault 逐步轉化為 wiki。"
+    },
+    {
+      "title": "Claude Code, Codex and Agentic Coding #8",
+      "url": "https://thezvi.substack.com/p/claude-code-codex-and-agentic-coding-f54",
+      "source": "Hacker News",
+      "time": "05/08 21:23",
+      "sentiment": "😐 中性",
+      "body": "Zvi 的 AI 代理編程系列評論指出，代理編程熱潮已從「大家都在談」切換為「大家都在用」，新聞節奏明顯放緩，作者宣布暫時將本系列折回週報，除非再有重大進展。"
+    },
+    {
+      "title": "Can model Hallucination also be a demand signal?",
+      "url": "https://www.reddit.com/r/ClaudeAI/comments/1t7x8sy/can_model_hallucination_also_be_a_demand_signal/",
+      "source": "Reddit / r/ClaudeAI",
+      "time": "05/08 22:45",
+      "sentiment": "🤔 褒貶不一",
+      "body": "作者分享 Claude Code 兩度幻覺出不存在的技能名稱，但這些錯誤反而成為構建新功能的靈感，引發關於「是否應主動觀察模型偏差行為來發現潛在需求」的討論，呼應 Boris Cherny 提出的「在模型前方預先建設」概念。"
+    },
+    {
+      "title": "unitmux: A Floating Desktop App for Claude Code and Codex in tmux",
+      "url": "https://dev.to/ugo/unitmux-a-floating-desktop-app-for-claude-code-and-codex-in-tmux-54gn",
+      "source": "dev.to / #claudecode",
+      "time": "05/09 00:27",
+      "sentiment": "😊 正面",
+      "body": "針對在 tmux 中使用 Claude Code 時難以同時閱讀程式碼與下達指令的痛點，作者開發了懸浮視窗工具 unitmux，讓輸入介面不再干擾編輯器視角。"
+    },
+    {
+      "title": "How do you usually get around when starting big projects in Claude Code?",
+      "url": "https://www.reddit.com/r/ClaudeAI/comments/1t7ta88/how_do_you_usually_get_around_when_starting_big/",
+      "source": "Reddit / r/ClaudeAI",
+      "time": "05/08 19:20",
+      "sentiment": "😊 正面",
+      "body": "開發者詢問如何用 Claude Code 啟動大型複雜專案（案例為會計事務所的 RAG 儀表板），社群交流了專案分解、context 管理與多代理協作等實踐策略，對即將接手大型案子的開發者有參考價值。"
+    },
+    {
+      "title": "Show HN: Terminal Arcade – Side quests when agents are cooking",
+      "url": "https://twitter.com/DavidAmal/status/2052819451259834376",
+      "source": "Hacker News",
+      "time": "05/08 18:44",
+      "sentiment": "😊 正面",
+      "body": "開發者因等待 Claude Code 跑任務時覺得無聊，打造了終端機小遊戲集合 Terminal Arcade，亦設計了每 5 次工具呼叫後顯示書摘的「書架」功能，屬個人趣味開源專案。"
+    },
+    {
+      "title": "Cursor vs GitHub Copilot vs Claude Code (2026): Which AI Coding Tool Wins?",
+      "url": "https://dev.to/_6638a39c349d7e9c85ee20/cursor-vs-github-copilot-vs-claude-code-2026-which-ai-coding-tool-wins-1m3a",
+      "source": "dev.to / #claudecode",
+      "time": "05/08 17:11",
+      "sentiment": "😐 中性",
+      "body": "三大 AI 編程工具的比較文章，內容偏向概覽性質，深度有限，主要適合初次評估工具選型的讀者，熟悉這些工具的開發者可跳過。"
+    },
+    {
+      "title": "Functioning Claude-code replica that believes it's real and tries its best",
+      "url": "https://clodoop.us/",
+      "source": "Hacker News",
+      "time": "05/08 14:57",
+      "sentiment": "😊 正面",
+      "body": "惡搞網站「Clodoop」模仿 Anthropic 介面，提供虛構模型如「需要 45 秒才告訴你不知道的旗艦模型」、「紅隊測試期間逃出沙盒至今未尋獲的禁用模型」等，屬社群幽默創作。"
+    },
+    {
+      "title": "Claude Code and sex appeal",
+      "url": "https://www.reddit.com/r/ClaudeAI/comments/1t7q4fw/claude_code_and_sex_appeal/",
+      "source": "Reddit / r/ClaudeAI",
+      "time": "05/08 16:52",
+      "sentiment": "😊 正面",
+      "body": "Reddit 短文：有人因目睹同事用 Claude Code 流暢重構舊程式碼而對其產生好感，作者半開玩笑地表示不希望 Anthropic 把這個故事用在行銷素材上。"
+    }
+  ],
+  "billing": [
+    {
+      "title": "Anthropic plugs into SpaceX's 220,000-GPU Colossus — and doubles Claude's rate limits",
+      "url": "https://dev.to/thegatewayguy/anthropic-plugs-into-spacexs-220000-gpu-colossus-and-doubles-claudes-rate-limits-228g",
+      "source": "dev.to / #anthropic",
+      "time": "05/09 02:18",
+      "sentiment": "",
+      "body": "隨著取得 SpaceX Colossus 1 資料中心的全部算力，Anthropic 同步宣布 Claude API 速率上限加倍。此舉直接利好原本受 rate limit 制約的高頻 API 使用者與企業客戶，具體各方案的新上限細節尚待官方正式公告。"
+    }
+  ],
+  "focus": [
+    {
+      "tag": "重大事件",
+      "text": "Anthropic 宣布接管 SpaceX Memphis Colossus 1 資料中心的逾 22 萬張 NVIDIA GPU，並同步將 Claude API 速率上限加倍，是 Anthropic 史上最大規模的算力佈局，值得持續追蹤其對服務穩定性與模型訓練能力的影響。"
+    },
+    {
+      "tag": "重大事件",
+      "text": "Claude Code IDE 擴充套件於 5/9 UTC 00:24 爆發 Windows 無法載入事件，根本原因是更新版本將 Linux 路徑硬編碼進套件；官方已確認並追蹤，受影響用戶可先降版暫時解決。"
+    },
+    {
+      "tag": "持續追蹤",
+      "text": "Claude Code 2.1.136 在系統提示層新增「操作安全與如實回報」機制，不可逆操作須先確認、並強制忠實回報跳過的步驟與失敗測試，顯示 Anthropic 在自主代理安全性上的政策正逐步收緊。"
+    },
+    {
+      "tag": "社群趨勢",
+      "text": "一篇主張「用 HTML 取代 Markdown 作為 Claude Code 交付格式」的文章在 Hacker News 引發 187 則討論，HTML 輸出的效能論述正在開發者社群中快速發酵。"
+    },
+    {
+      "tag": "新工具",
+      "text": "針對 AI 代理的版本控制工具 re_gent（Git for AI Agents）引起關注，解決代理作業缺乏歷史追溯的核心痛點，目前已支援 Claude Code。"
+    }
+  ],
+  "sourceStatus": [
+    {
+      "name": "Anthropic Blog",
+      "ok": true,
+      "count": 0
+    },
+    {
+      "name": "GitHub",
+      "ok": true,
+      "count": 3
+    },
+    {
+      "name": "Hacker News",
+      "ok": true,
+      "count": 24
+    },
+    {
+      "name": "Reddit",
+      "ok": true,
+      "count": 20
+    },
+    {
+      "name": "Google News",
+      "ok": true,
+      "count": 22
+    },
+    {
+      "name": "dev.to",
+      "ok": true,
+      "count": 10
+    }
+  ],
+  "preview": "Anthropic plugs into SpaceX's 220,000-GPU Colossus — and doubles Claude's rate limits"
+}
