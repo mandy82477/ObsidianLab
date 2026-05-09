@@ -2,7 +2,7 @@
 
 **狀態：** monitoring（官方已說明，待驗證恢復）
 **開始日期：** 2026-03（推測）
-**最後更新：** 2026-05-05
+**最後更新：** 2026-05-09
 
 ---
 
@@ -17,6 +17,7 @@ Claude Code 在 2026 年 3 月至 4 月間出現長達約一個月的效能明�
 - **Session log 路徑**：`~/.claude/projects/` 存放 JSONL 格式的 session log，CC-Canary 透過此路徑讀取歷史資料進行效能比對
 - **CC-Canary 判定等級**：`HOLDING`（穩定）／`SUSPECTED REGRESSION`（疑似退步）／`CONFIRMED REGRESSION`（確認退步）
 - **Stop hooks 失效**：Claude 4.7 起無視自訂 stop hooks，與整體效能退步為獨立問題，機制層面尚未公開說明
+- **靜默模型切換（Silent Model Switching）**：開發者記錄 36 天使用數據，發現模型有時在無明確通知的情況下靜默切換，用戶無法確知實際使用的模型版本；不同模型間效率差距高達 11.5 倍，靜默切換可能導致效率和成本的非預期變化；與 2026-04-27「版本管理不透明」（執行 claude update 靜默撤版）議題相呼應，顯示 Anthropic 在模型與版本透明度上的系統性不足
 - **Anthropic 說明原因**：engineering missteps（工程疏失），非刻意的模型行為調整（非 RLHF 過度修正）
 
 ---
@@ -54,10 +55,14 @@ Claude Code 在 2026 年 3 月至 4 月間出現長達約一個月的效能明�
 - [[news/2026-04-30]]
 - [[news/2026-05-03]]
 - [[news/2026-05-05]]
+- [[news/2026-05-09]]
 - [CC-Canary GitHub](https://github.com/delta-hq/cc-canary)
 - [Anthropic's definition of safety is too narrow](https://jonathannen.com/anthropic-safety-too-narrow/)
 
 ## 時序（最新在上）
+
+### 2026-05-09
+- **靜默模型切換（11.5 倍效率差距）**：開發者持續 36 天記錄 Claude Code 使用數據，量化出不同模型間 11.5 倍的效率差距，並觀察到模型有時靜默切換（silent model switching）且無明確通知；對有成本意識的長期用戶是重要的監控警示，建議搭配 Throttle Meter 或 session log 監控實際模型使用情況
 
 ### 2026-05-05
 - **Opus 4.7 退步討論再升溫**：dev.to 文章《Claude Opus 4.7 Is a Regression》引發討論，部分開發者聲稱 Opus 4.7 在編碼任務中不如 4.6，已主動回退舊版；與 4/30 的「後設化退步」批評相互呼應；見 [[entities/opus-4-7]]

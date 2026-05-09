@@ -3,13 +3,13 @@
 **類型：** product
 **狀態：** active
 **首次出現：** 2025（正式推出）
-**最後更新：** 2026-05-08
+**最後更新：** 2026-05-09
 
 ---
 
 ## 現況
 
-Claude Code 是 Anthropic 的 AI 編碼 CLI 工具，支援 agentic 工作流程、MCP Server 整合、Hooks 機制與 Agent Teams。目前為最受開發者關注的 AI 編碼工具之一。近期接連出現效能退步事件（已承認工程疏失）、HERMES.md 靜默計費 bug、API 金鑰外洩漏洞、Auto Compact 失效等問題，安全性與可靠性受到集中審視。v2.1.121 新增 MCP `alwaysLoad` 選項，Runhouse 團隊透過股權收購加入 Anthropic 以強化 agentic 基礎架構。2026-05-03 加入 macOS 電腦使用（computer use）功能，Claude Code 與 Claude Cowork 均可直接控制 macOS 桌面的滑鼠與鍵盤，從純程式碼助理擴展為全桌面自動化代理。2026-05-04 重大事件：Anthropic 因人為疏失導致 Claude Code 原始碼外洩，已向各平台發出逾 8,100 次 DMCA 下架請求，引發 AI 生成程式碼版權歸屬的法律辯論，社群分支「Claw-Code」隨之誕生；社群亦發現 Claude Cowork/Desktop 悄悄支援任意第三方 LLM（OpenAI、Gemini、本地模型、企業閘道 Bedrock/Vertex/Foundry），無任何官方公告；Claude Connectors 透過 MCP 擴展至創意工作軟體（Adobe、Blender、Ableton、Affinity、Autodesk Fusion）。2026-05-05 重大進展：Amazon 正式向全體企業員工推出 Claude Code（與 OpenAI Codex 並行），成為大型企業雙品牌 AI 編碼工具並行部署的首例；v2.1.128 發布（`/color` 隨機配色、`/mcp` 顯示各伺服器工具數量）。Claude Code 創始人 Boris Cherny 在 podcast 中宣示「Loops（迴圈執行）是 AI 編碼的未來」，首次公開闡明 Claude Code 的設計哲學核心。2026-05-06 新進展：v2.1.128/129 自動推送至 VS Code 後造成 Windows 用戶 extension 完全無法啟動的嚴重 regression（createRequire polyfill hardcoded build path + Mantle endpoint 認證失效），v2.1.131 已緊急修復，數小時內即回應大量 Reddit 回報；Claude Code 累積 GitHub Stars 達 121,000，成為 AI coding assistant 中增長最具話題性的案例；Python SDK v0.99.0 與 TypeScript SDK v0.94.0 同步發布，新增 workspace 定向功能；Claude Security 從封閉預覽移至公開 Beta，開發者現可在 Claude Code 工作流中直接使用 AI 驅動安全審查功能。Boris Cherny 再次公開宣示「軟體工程已死」，強調 Anthropic 內部已無傳統軟體工程師職位，引發業界廣泛論戰。2026-05-07 重大進展：Anthropic 在「Code with Claude」開發者大會上宣布 Managed Agents 重大升級，包含「Dreaming」記憶整合機制（Agent 在任務間隙自動鞏固記憶）、最高 20 路子代理並行，以及 Outcomes 規格驗證功能，標誌 Agent 框架正式邁向有狀態生產級設計；Python SDK v0.100.0 與 TypeScript SDK v0.95.0 同步新增 Managed Agents 原生支援（見 [[entities/managed-agents]]）。Anthropic 同日宣布與 SpaceX 達成算力合作，即日起 Claude Code Pro/Max 用戶五小時視窗速率上限翻倍、取消尖峰時段降速，API Tier 4+ 用戶速率限制同步提升。v2.1.132 新增 `CLAUDE_CODE_SESSION_ID` 環境變數至 Bash 工具子行程（hooks 可追蹤當前 session）及 `CLAUDE_CODE_DISABLE_ALTERNATE_SCREEN` 選項。研究者透過 wire trace 截獲 Claude Code 完整系統提示（約 13,000 字），發現 MCP 插件大幅佔用 context window，且「Auto 模式」的權限控制僅是提示詞層面機制，並非底層沙箱強制約束；Claude Code 透過 AWS Bedrock 接入時再次出現功能異常，新功能同步落差問題持續存在。2026-05-08 重大事件：CVE-2026-39861（CVSS 7.7）沙箱逃逸漏洞曝光，攻擊者可透過符號連結（symlink）將檔案寫入工作區目錄以外，已在 v2.1.64 修補，所有舊版用戶應立即升級；同時 Anthropic 對「一鍵 RCE」信任提示問題的公開回應被社群概括為「不應該點確認」，責怪使用者的態度在兩則安全負面消息同日上版的背景下引爆批評，品牌可信度面臨雙重壓力；社群更諷刺 Anthropic 自家宣傳的頂級安全模型 Mythos 事先未能偵測到自身產品漏洞。v2.1.133 同日發布，新增 `worktree.baseRef` 設定（`fresh` | `head`），讓使用者可控制 `--worktree`、`EnterWorktree` 及代理隔離工作樹要從 `origin/<default>` 分支還是本地 `HEAD` 建立。Boris Cherny 在「Code with Claude」大會宣稱「寫程式問題已被解決」並表示厭倦「vibe coding」一詞，言論在 Business Insider、HN、YouTube 等多平台引發廣泛討論，社群反應兩極。Claude Cowork 的 Linux 沙箱持續無法啟動（帳號層級隱性故障），Anthropic 狀態頁顯示正常但問題仍在，暫無官方回應。Claude Sonnet 4.8 外洩資訊出現（Geeky Gadgets 報導），暗示下一代 Sonnet 可能即將到來，官方尚未確認。
+Claude Code 是 Anthropic 的 AI 編碼 CLI 工具，支援 agentic 工作流程、MCP Server 整合、Hooks 機制與 Agent Teams。目前為最受開發者關注的 AI 編碼工具之一。近期接連出現效能退步事件（已承認工程疏失）、HERMES.md 靜默計費 bug、API 金鑰外洩漏洞、Auto Compact 失效等問題，安全性與可靠性受到集中審視。v2.1.121 新增 MCP `alwaysLoad` 選項，Runhouse 團隊透過股權收購加入 Anthropic 以強化 agentic 基礎架構。2026-05-03 加入 macOS 電腦使用（computer use）功能，Claude Code 與 Claude Cowork 均可直接控制 macOS 桌面的滑鼠與鍵盤，從純程式碼助理擴展為全桌面自動化代理。2026-05-04 重大事件：Anthropic 因人為疏失導致 Claude Code 原始碼外洩，已向各平台發出逾 8,100 次 DMCA 下架請求，引發 AI 生成程式碼版權歸屬的法律辯論，社群分支「Claw-Code」隨之誕生；社群亦發現 Claude Cowork/Desktop 悄悄支援任意第三方 LLM（OpenAI、Gemini、本地模型、企業閘道 Bedrock/Vertex/Foundry），無任何官方公告；Claude Connectors 透過 MCP 擴展至創意工作軟體（Adobe、Blender、Ableton、Affinity、Autodesk Fusion）。2026-05-05 重大進展：Amazon 正式向全體企業員工推出 Claude Code（與 OpenAI Codex 並行），成為大型企業雙品牌 AI 編碼工具並行部署的首例；v2.1.128 發布（`/color` 隨機配色、`/mcp` 顯示各伺服器工具數量）。Claude Code 創始人 Boris Cherny 在 podcast 中宣示「Loops（迴圈執行）是 AI 編碼的未來」，首次公開闡明 Claude Code 的設計哲學核心。2026-05-06 新進展：v2.1.128/129 自動推送至 VS Code 後造成 Windows 用戶 extension 完全無法啟動的嚴重 regression（createRequire polyfill hardcoded build path + Mantle endpoint 認證失效），v2.1.131 已緊急修復，數小時內即回應大量 Reddit 回報；Claude Code 累積 GitHub Stars 達 121,000，成為 AI coding assistant 中增長最具話題性的案例；Python SDK v0.99.0 與 TypeScript SDK v0.94.0 同步發布，新增 workspace 定向功能；Claude Security 從封閉預覽移至公開 Beta，開發者現可在 Claude Code 工作流中直接使用 AI 驅動安全審查功能。Boris Cherny 再次公開宣示「軟體工程已死」，強調 Anthropic 內部已無傳統軟體工程師職位，引發業界廣泛論戰。2026-05-07 重大進展：Anthropic 在「Code with Claude」開發者大會上宣布 Managed Agents 重大升級，包含「Dreaming」記憶整合機制（Agent 在任務間隙自動鞏固記憶）、最高 20 路子代理並行，以及 Outcomes 規格驗證功能，標誌 Agent 框架正式邁向有狀態生產級設計；Python SDK v0.100.0 與 TypeScript SDK v0.95.0 同步新增 Managed Agents 原生支援（見 [[entities/managed-agents]]）。Anthropic 同日宣布與 SpaceX 達成算力合作，即日起 Claude Code Pro/Max 用戶五小時視窗速率上限翻倍、取消尖峰時段降速，API Tier 4+ 用戶速率限制同步提升。v2.1.132 新增 `CLAUDE_CODE_SESSION_ID` 環境變數至 Bash 工具子行程（hooks 可追蹤當前 session）及 `CLAUDE_CODE_DISABLE_ALTERNATE_SCREEN` 選項。研究者透過 wire trace 截獲 Claude Code 完整系統提示（約 13,000 字），發現 MCP 插件大幅佔用 context window，且「Auto 模式」的權限控制僅是提示詞層面機制，並非底層沙箱強制約束；Claude Code 透過 AWS Bedrock 接入時再次出現功能異常，新功能同步落差問題持續存在。2026-05-08 重大事件：CVE-2026-39861（CVSS 7.7）沙箱逃逸漏洞曝光，攻擊者可透過符號連結（symlink）將檔案寫入工作區目錄以外，已在 v2.1.64 修補，所有舊版用戶應立即升級；同時 Anthropic 對「一鍵 RCE」信任提示問題的公開回應被社群概括為「不應該點確認」，責怪使用者的態度在兩則安全負面消息同日上版的背景下引爆批評，品牌可信度面臨雙重壓力；社群更諷刺 Anthropic 自家宣傳的頂級安全模型 Mythos 事先未能偵測到自身產品漏洞。v2.1.133 同日發布，新增 `worktree.baseRef` 設定（`fresh` | `head`），讓使用者可控制 `--worktree`、`EnterWorktree` 及代理隔離工作樹要從 `origin/<default>` 分支還是本地 `HEAD` 建立。Boris Cherny 在「Code with Claude」大會宣稱「寫程式問題已被解決」並表示厭倦「vibe coding」一詞，言論在 Business Insider、HN、YouTube 等多平台引發廣泛討論，社群反應兩極。Claude Cowork 的 Linux 沙箱持續無法啟動（帳號層級隱性故障），Anthropic 狀態頁顯示正常但問題仍在，暫無官方回應。Claude Sonnet 4.8 外洩資訊出現（Geeky Gadgets 報導），暗示下一代 Sonnet 可能即將到來，官方尚未確認。2026-05-09 新事件：Claude Code IDE 擴充套件（VS Code 等）於 UTC 00:24 爆發 Windows 全面無法載入事件，根本原因為更新版本將 Linux 路徑硬編碼進套件，官方已確認並在狀態頁追蹤，受影響用戶可先降版暫時解決，為繼 v2.1.128/129（2026-05-06）後的第二次 Windows 平台重大相容性事故。v2.1.136 系統提示大幅更新（+525 tokens），新增「操作安全與如實回報」機制：不可逆或對外操作須先獲授權確認、刪除前需檢視目標、必須如實回報跳過的步驟與未通過的測試；代理自訂規則新增 `hard_deny` 類別（無條件安全邊界封鎖），縮小 `soft_deny` 適用範圍，是 Anthropic 在自主代理行為規範上的實質性收緊，影響所有依賴自主授權的工作流。v2.1.138 發布，僅含內部修正（internal fixes），無功能層面變更。
 
 ---
 
@@ -49,6 +49,7 @@ Claude Code 是 Anthropic 的 AI 編碼 CLI 工具，支援 agentic 工作流程
 - **Bedrock 功能相容性落差（持續）**（2026-05-07 再次回報）：Claude Code 透過 AWS Bedrock 接入時功能異常，社群指出 Bedrock 與 Anthropic 直接服務的新功能同步速度慣常落後，每次新功能發布後的相容性落差問題已成常態。
 - **CVE-2026-39861 沙箱逃逸漏洞**（2026-05-08 公開）：CVSS 7.7 高危漏洞，攻擊者可透過符號連結（symlink）將檔案寫入工作區目錄以外；已在 v2.1.64 修補，所有使用舊版本的用戶應立即升級；自查方式詳見 [GitHub Advisory GHSA-vp62-r36r-9xqp](https://github.com/advisories/GHSA-vp62-r36r-9xqp)；見 [[topics/ai-agent-safety]]
 - **Claude Cowork Linux 沙箱啟動失敗**（2026-05-07 回報）：用戶回報 Claude Cowork 的 Linux 沙箱在多台電腦重新安裝後持續無法啟動，Anthropic 狀態頁顯示正常，疑為帳號層級隱性故障，目前無官方回應。
+- **Windows IDE 擴充套件全面無法載入**（2026-05-09 UTC 00:24）：更新版本將 Linux 路徑硬編碼進擴充套件，導致 VS Code 等 IDE 在 Windows 上全面無法啟動，官方已確認並在狀態頁追蹤；臨時解法：降版至前一版本；此為第二次 Windows 平台相容性重大事故（見 2026-05-06 v2.1.131 緊急修復）。
 
 ---
 
@@ -118,6 +119,9 @@ Claude Code 是 Anthropic 的 AI 編碼 CLI 工具，支援 agentic 工作流程
 - **[DataMoat](https://github.com/max-ng/datamoat)** — 以 AES-256-GCM 加密將 AI 代理工作記錄保存為本機私有資產，支援搜尋、重用與移交，vault 金鑰及記錄資料完全留在使用者機器上，適合有資料安全顧慮的企業開發者
 - **[4-agent Code Review Workflow](https://www.reddit.com/r/ClaudeAI/comments/1t71wrm/)** — 開源的 4 代理程式碼審查工作流：一位架構師代理（僅協調、不直接產出意見）加三位來自不同模型廠商的專家代理，最終審查意見必須有具體證據支撐，可包裝為 MCP 伺服器供 Claude Code 呼叫替代 CodeRabbit，MIT 授權
 - **[awesome-ux-skills](https://github.com/tommyjepsen/awesome-ux-skills)** — 以 Nielsen 和 Shape of AI 等 UX 原則為基礎的 Claude Code 技能集，供設計導向工程師重複使用，減少每次重查設計規範的時間成本
+- **[re_gent](https://github.com/regent-vcs/re_gent)** — 「Git for AI Agents」，將 git 版本控制概念套用至 AI 代理工作流，解決 `/compact` 後的歷史斷層與「代理何時刪除這個資料夾」的追溯問題，目前已支援 Claude Code
+- **[unitmux](https://dev.to/ugo/unitmux-a-floating-desktop-app-for-claude-code-and-codex-in-tmux-54gn)** — tmux 環境下使用 Claude Code 時的懸浮視窗工具，讓輸入介面不干擾編輯器視角，改善多工作窗口的操作體驗
+- **[obsidian-semantic](https://github.com/ravila4/obsidian-semantic-search)** — 讓 Claude Code 能以語義搜尋（而非 grep）使用 Obsidian 知識庫，支援 Ollama、LMStudio 本地模型及 Gemini API，可自動發現應互相連結的筆記
 
 ---
 
@@ -145,11 +149,15 @@ Claude Code 是 Anthropic 的 AI 編碼 CLI 工具，支援 agentic 工作流程
 - [[news/2026-05-06]]
 - [[news/2026-05-07]]
 - [[news/2026-05-08]]
+- [[news/2026-05-09]]
 
 ## 版本歷史
 
 | 日期 | 事件 |
 |------|------|
+| 2026-05-09 | v2.1.138：internal fixes only，無功能層面變更 |
+| 2026-05-09 | v2.1.136 系統提示大幅更新（+525 tokens）：「操作安全與如實回報」機制新增，不可逆操作須確認、刪除前需檢視目標、必須如實回報跳過步驟與未通過測試；代理規則新增 `hard_deny`（無條件安全邊界封鎖），縮小 `soft_deny` 適用範圍；見 [[topics/ai-agent-safety]] |
+| 2026-05-09 | Windows IDE 擴充套件全面無法載入（UTC 00:24）：更新版本將 Linux 路徑硬編碼進套件，官方確認追蹤中，臨時解法降版；繼 2026-05-06 v2.1.131 修復後的第二次 Windows 平台重大相容性事故 |
 | 2026-05-08 | v2.1.133：新增 `worktree.baseRef` 設定（`fresh` \| `head`），讓使用者可控制 `--worktree`、`EnterWorktree` 及代理隔離工作樹要從 `origin/<default>` 分支還是本地 `HEAD` 建立，提供更靈活的多工作樹管理策略 |
 | 2026-05-08 | CVE-2026-39861（CVSS 7.7）沙箱逃逸漏洞公開（symlink 逃逸），v2.1.64 已修補；同日爆出 1-click RCE 信任提示問題，Anthropic 回應被批為責怪使用者；見 [[topics/ai-agent-safety]] |
 | 2026-05-08 | 新工具：Claudy（Rust 多供應商設定管理 + MCP 橋接）、DataMoat（AES-256-GCM 工作記錄加密保存）、4-agent Code Review（架構師 + 三模型專家審查，MIT）、awesome-ux-skills（Nielsen 等 UX 原則技能集）|

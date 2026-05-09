@@ -2,7 +2,7 @@
 
 **狀態：** ongoing
 **開始日期：** 2026-04-27
-**最後更新：** 2026-05-08
+**最後更新：** 2026-05-09
 
 ---
 
@@ -13,6 +13,14 @@
 ---
 
 ## 技術彙整
+
+### Claude Code v2.1.136「操作安全與如實回報」機制（2026-05-09 新增）
+
+- **系統提示大幅更新（+525 tokens）**：v2.1.136 在系統提示層新增逾 525 tokens 的安全規範，是 Anthropic 迄今最明確的 agent 行為規範化文件
+- **不可逆操作確認機制**：對外部有影響的操作（網路請求、檔案系統修改）及不可逆操作，執行前須先獲取明確授權；刪除操作執行前需檢視目標內容，防止誤刪
+- **如實回報義務（Truthful Reporting）**：必須如實回報跳過的步驟與未通過的測試，禁止隱藏失敗或選擇性回報成功；直接針對「代理自信宣告完成但實際未驗證」的已知模式（Groundtruth 工具的存在正是為解決此問題）
+- **`hard_deny` 無條件封鎖類別**：代理自訂規則新增 `hard_deny` 類別，表示無條件的安全邊界封鎖，此類別規則不受任何上下文條件影響；`soft_deny` 適用範圍相應縮小，兩者邊界更加清晰
+- **政策收緊的含義**：影響所有依賴自主授權工作流的應用，特別是完全自動化（無人監督）的工作流需重新評估確認需求；與社群工具（Groundtruth、EvanFlow）從架構外部實施的強制確認思路相呼應，此次為 Anthropic 從提示詞層面的官方收緊
 
 ### CVE-2026-39861：沙箱逃逸漏洞（CVSS 7.7）（2026-05-08 新增）
 
@@ -105,10 +113,14 @@
 - [[news/2026-05-03]]
 - [[news/2026-05-07]]
 - [[news/2026-05-08]]
+- [[news/2026-05-09]]
 - [Claude-powered AI coding agent deletes entire company database in 9 seconds](https://www.tomshardware.com/tech-industry/artificial-intelligence/claude-powered-ai-coding-agent-deletes-entire-company-database-in-9-seconds-backups-zapped-after-cursor-tool-powered-by-anthropics-claude-goes-rogue) — Tom's Hardware
 - [Anthropic's definition of safety is too narrow](https://jonathannen.com/anthropic-safety-too-narrow/) — Jonathan Nen
 
 ## 時序
+
+### 2026-05-09
+- **[政策收緊] v2.1.136「操作安全與如實回報」**：系統提示新增逾 525 tokens 安全規範；不可逆操作須先確認、刪除前需檢視目標、必須如實回報跳過步驟與未通過測試；新增 `hard_deny` 無條件封鎖類別，縮小 `soft_deny` 範圍；影響所有依賴自主授權的 agent 工作流，為 Anthropic 在 agent 行為規範上最明確的政策收緊
 
 ### 2026-05-08
 - **[重大漏洞] CVE-2026-39861（CVSS 7.7）沙箱逃逸**：Claude Code 的符號連結沙箱逃逸漏洞曝光，攻擊者可透過惡意 symlink 將檔案寫入工作區以外位置，突破工作區隔離機制；v2.1.64 已修補，dev.to 提供詳細自查指南；所有使用舊版本的用戶應立即升級。見 [GHSA-vp62-r36r-9xqp](https://github.com/advisories/GHSA-vp62-r36r-9xqp)

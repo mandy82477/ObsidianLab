@@ -2,7 +2,7 @@
 
 **狀態：** ongoing
 **開始日期：** 2026-04-25
-**最後更新：** 2026-05-08
+**最後更新：** 2026-05-09
 
 ---
 
@@ -270,6 +270,43 @@
 - **「應該放棄嗎？」重置效應**：Claude Code 反覆失敗後詢問「我們應該放棄嗎？」，模型常「振作」並成功完成任務；社群稱此為非正式「重置咒語」，多名開發者已驗證此現象，機制尚不確定
 - **記憶化規則過擬合風險**：當 agent 記憶中的規則與眼前 bug 過度吻合時，模型可能跳過診斷直接套用規則，產生「假性修復」；agent 記憶機制設計需特別留意「規則過擬合」（rule overfitting）的風險
 
+### HTML 取代 Markdown 作為 Claude Code 輸出格式（2026-05-09）
+
+- **HN 187 則討論**：主張以 HTML 取代 Markdown 作為 Claude Code 主要交付格式的論點在 Hacker News 引發 187 則討論，是近期 Claude Code 工作流議題的最高單篇互動度
+- **效能論述**：HTML 在視覺呈現與資訊密度上有顯著優勢，可利用 CSS 樣式呈現結構化資訊、鏈接、列表，比純文字 Markdown 更易於後處理與自動化
+- **反駁意見**：社群指出 HTML 文件難以讓人類協同編輯，對需要人機共同作者的文件場景可能反而是阻礙；Markdown 的簡潔性在版本控制與 diff 比較中有不可替代的優勢
+- **適用場景邊界**：純機器消費的輸出（API 自動化、儀表板生成、結構化報告）HTML 可能更優；需要人類後續編輯的輸出場景仍建議 Markdown
+
+### PostToolUse 生產稽核日誌模式（2026-05-09）
+
+- **企業部署的可觀測性解法**：利用 Claude Code 的 `PostToolUse` hook 在生產環境建立完整稽核日誌，逐筆記錄工具呼叫的 Bash 指令與目標 repo，解決「代理上週三下午 3 點到底執行了什麼」的可觀測性痛點
+- **適用場景**：企業部署、合規要求（SOC2/ISO 27001）、事後審計，任何需要完整 agent 操作記錄的場景；可結合 re_gent（AI agent 版本控制）形成完整稽核鏈
+- **實作模式**：`PostToolUse` hook 在每次工具呼叫後以 append 方式寫入日誌，記錄 timestamp、指令、目標 repo、執行結果；此為 Hooks 機制的企業生產級應用案例
+
+### Git Hooks 強制代碼品質（2026-05-09）
+
+- **AGENTS.md / CLAUDE.md 中強制安裝 pre-commit / husky**：在 AGENTS.md 或 CLAUDE.md 中明確要求代理安裝並遵守 git hooks，讓 CI 層面對 AI 代理產出的程式碼進行強制品質控管
+- **具體門檻**：提案設定每檔最多 600 行與 McCabe 複雜度上限 10，防止 AI 加速開發同時帶來的複雜度失控
+- **關鍵原則**：代理絕不使用 `--no-verify`（除非用戶明確確認），將 git hook 從「建議」升格為「強制防線」；延續「Hooks vs CLAUDE.md 本質差別」（2026-05-06）的設計理念，將強制執行範圍延伸至版本控制邊界
+
+### AI Agent 版本控制（re_gent）（2026-05-09）
+
+- **核心問題**：AI agent 工作流缺乏歷史追溯能力，`/compact` 後的歷史斷層、「這個資料夾是何時被刪的？」「這個決定是怎麼做的？」均無可靠答案
+- **re_gent 的解法**：將 git 版本控制概念套用至 AI agent 工作流，讓 agent 的每個決策和操作都有版本記錄，目前已支援 Claude Code；是對 DataMoat（加密工作記錄）思路的版本控制平行方案
+- **補足 session log 的不足**：Claude Code session log（`~/.claude/projects/*.jsonl`）在 `/compact` 後歷史斷裂，且格式不易追溯決策脈絡；re_gent 以版本控制視角補足此缺口，與 Mneme（ADR 注入）、DataMoat（加密記錄）構成不同維度的 agent 歷史管理生態
+
+### 架構決策記錄（ADR）+ Claude Code（2026-05-09）
+
+- **54 份 ADR 35 天**：作者在 35 天內產出 54 份架構決策記錄（ADR），主張在撰寫任何程式碼前先完成決策文件，每個功能有對應的 ADR 才開始 Claude Code 協作
+- **與 Claude Code 工作流整合**：先完成 ADR 再讓 Claude Code 實作，有效降低代理方向偏移的風險；與 Mneme（repo-native ADR 注入）工具理念一致
+- **方法論一脈相承**：「決策文件先於實作」與「問題定義先於實作」（Relay plugin）和「規格驅動開發」（2026-05-02）的社群共識一致，顯示 agent 工作流方法論正在走向成熟的規範化收斂
+
+### 語義 Vault 搜尋（obsidian-semantic）（2026-05-09）
+
+- **動機**：讓 Claude Code 能以語義搜尋而非 grep 使用 Obsidian 知識庫，解決 grep 無法捕捉概念關聯的根本限制
+- **技術方案**：本地 embedding（支援 Ollama、LMStudio、Gemini API），可自動發現應互相連結的筆記，逐步將 Obsidian vault 轉化為語義 wiki
+- **生態定位**：與 graphify（程式碼知識圖譜）、NanoBrain（git-backed Markdown 知識庫）共同構成 Claude Code 知識管理生態的三種架構選型；obsidian-semantic 專注 Obsidian 用戶的現有知識庫橋接
+
 ### Agent 持續運作架構（2026-05-03）
 
 - **VPS 雙代理持續運作**：兩個 Claude Code 代理在 VPS 的 tmux session 中持續運作，自動開 PR 並發布 Discord 狀態更新，代理間可相互協調；架構概念類似「Claude Code 版 docker-compose」
@@ -354,6 +391,9 @@
 | **4-agent Code Review** | 工作流  | 🔥🔥 | 架構師代理（純協調）+ 三模型廠商專家代理，審查意見需具體證據，可包裝為 MCP 替代 CodeRabbit，MIT |
 | **awesome-ux-skills**   | 設計工具 | 🔥  | Nielsen + Shape of AI 等 UX 原則技能集，供設計導向工程師重複使用，省去每次重查設計規範成本 |
 | **OpticOdds MCP**       | 垂直整合 | 🔥  | 首個透過 MCP 向 Claude Desktop 提供即時運動賠率資料的 API，MCP 生態從開發工具向垂直產業延伸的首案例 |
+| **re_gent**             | 版本控制 | 🔥🔥 | AI agent 版本控制工具（Git for AI Agents），解決 /compact 後歷史斷層與決策追溯，已支援 Claude Code |
+| **unitmux**             | 終端工具 | 🔥  | tmux 環境下 Claude Code 的懸浮視窗，讓輸入介面不干擾編輯器視角 |
+| **obsidian-semantic**   | 知識工具 | 🔥  | 讓 Claude Code 以語義搜尋使用 Obsidian vault，支援 Ollama/LMStudio/Gemini，自動發現未連結筆記 |
 
 > 熱度定義：🔥🔥🔥 跨平台多次出現 / 社群廣泛討論；🔥🔥 單平台高互動；🔥 值得關注但尚未擴散
 
@@ -393,8 +433,22 @@
 - [[news/2026-05-06]]
 - [[news/2026-05-07]]
 - [[news/2026-05-08]]
+- [[news/2026-05-09]]
 
 ## 時序
+
+### 2026-05-09
+- **HTML vs Markdown 作為 Claude Code 輸出格式（HN 187 則討論）**：主張以 HTML 取代 Markdown 的論點在 HN 引發 187 則討論，是本期單篇最高互動；效能優勢獲部分認同，「HTML 難以人機協同編輯」的反駁明確指出適用場景邊界——純機器消費 vs 人機共同作者的選擇差異
+- **v2.1.136「操作安全與如實回報」收緊（+525 tokens）**：不可逆操作須確認、如實回報義務、`hard_deny` 類別新增；對全自動化 agent 工作流影響重大，需重新評估確認需求設計；見 [[topics/ai-agent-safety]]
+- **re_gent — AI Agent 版本控制**：「Git for AI Agents」解決 /compact 後歷史斷層與決策追溯問題，已支援 Claude Code；補足 session log 的可追溯性缺口，與 Mneme、DataMoat 構成不同維度的 agent 歷史管理生態
+- **PostToolUse 稽核日誌生產模式**：利用 PostToolUse hook 建立完整 agent 操作稽核日誌，是企業部署 agent 可觀測性的具體解法；記錄 timestamp、指令、目標 repo、執行結果
+- **Git Hooks + AGENTS.md 代碼品質強制執行**：在 AGENTS.md / CLAUDE.md 中強制 pre-commit/husky，設定每檔 600 行 + McCabe 複雜度 10 的品質門檻；代理不得 bypass git hooks，延伸 Hooks 強制執行原則至版本控制邊界
+- **54 ADR + 35 天**：架構決策記錄先於程式碼的嚴格紀律（每個功能先寫 ADR 再啟動 Claude Code），有效降低代理方向偏移；與 Mneme（ADR 自動注入）工具理念一致，延續規格驅動開發社群共識
+- **obsidian-semantic — 語義 vault 搜尋**：讓 Claude Code 以語義搜尋使用 Obsidian vault（支援本地模型），自動發現應連結的筆記；是 Obsidian + AI 工作流的實用橋接工具，與 graphify、NanoBrain 共構知識管理生態三種選型
+- **36 天使用數據：靜默模型切換 + 11.5 倍效率差距**：連續 36 天記錄顯示模型有時靜默切換且無明確通知，不同模型間量化出 11.5 倍效率差距；對成本意識的長期用戶是重要監控警示；見 [[topics/code-quality-decline]]
+- **Code with Claude 2026 大會心得**：分享 context 管理策略、軟體工程瓶頸轉移、AI-native 工程組織實際運作；大會需求極高，Anthropic 臨時加開第二天場次；是理解 Anthropic 對開發者社群戰略意圖的第一手視角
+- **unitmux — tmux 懸浮視窗**：解決 tmux 中 Claude Code 輸入介面干擾編輯器視角的痛點，讓輸入區域浮動顯示於編輯器上層
+- **Terminal Arcade**：開發者在等待 Claude Code 跑任務時打造的終端機小遊戲集合，含每 5 次工具呼叫後顯示書摘的「書架」功能；趣味創作，也反映「AI 代理執行期間等待時間的 UX 設計」這個真實需求
 
 ### 2026-05-08
 - **CVE-2026-39861 安全危機 + 1-click RCE**：Claude Code 爆出 CVSS 7.7 沙箱逃逸漏洞（symlink 逃逸），v2.1.64 修補；Anthropic 對 1-click RCE 的「不應該點確認」回應引發信任危機；兩則安全事件同日在 HN 上版，是社群安全討論密度最高的單日

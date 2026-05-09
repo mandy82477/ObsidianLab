@@ -2,7 +2,7 @@
 
 **類型：** policy
 **狀態：** active（持續調整中）
-**最後更新：** 2026-05-08
+**最後更新：** 2026-05-09
 
 ---
 
@@ -21,9 +21,9 @@
 
 ## 近期政策變動
 
-### 2026-05-07–08：SpaceX 算力合作，即日起速率上限翻倍
+### 2026-05-07–09：SpaceX 算力合作正式到位，API 速率上限翻倍
 
-Anthropic 宣布與 SpaceX 達成算力合作協議，取得其 Colossus 叢集的計算資源（220,000 顆 GPU，孟菲斯資料中心），為目前全球最大 AI 訓練叢集之一。2026-05-08 MSN、Pulse 2.0、The New Stack 等多媒體同步跟進報導，確認此為官方正式聲明。即日起三項變更全數生效：
+Anthropic 宣布正式接入 SpaceX Memphis Colossus 1 資料中心的全部算力，規模包含逾 220,000 顆 NVIDIA GPU 與超過 300MW 電力供應，為目前全球最大 AI 訓練叢集之一。2026-05-08 MSN、Pulse 2.0、The New Stack 等多媒體同步跟進報導；2026-05-09 dev.to 文章確認「Anthropic 已接入」（已到位）並報導 Claude API 速率上限加倍。即日起三項變更全數生效：
 
 1. **Claude Code Pro/Max 訂閱者的五小時視窗速率上限翻倍**
 2. **取消 Pro/Max 用戶的 Claude Code 尖峰時段降速機制**
@@ -212,4 +212,5 @@ The Verge（2026-04-24）報導，AI 商業化壓力下，Anthropic 等實驗室
 - [[news/2026-05-06]]
 - [[news/2026-05-07]]
 - [[news/2026-05-08]]
+- [[news/2026-05-09]]
 - [官方說明文件](https://support.claude.com/en/articles/11940350-claude-code-model-configuration)
