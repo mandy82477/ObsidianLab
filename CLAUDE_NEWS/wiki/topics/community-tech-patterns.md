@@ -2,7 +2,7 @@
 
 **狀態：** ongoing
 **開始日期：** 2026-04-25
-**最後更新：** 2026-05-09
+**最後更新：** 2026-05-10
 
 ---
 
@@ -307,6 +307,27 @@
 - **技術方案**：本地 embedding（支援 Ollama、LMStudio、Gemini API），可自動發現應互相連結的筆記，逐步將 Obsidian vault 轉化為語義 wiki
 - **生態定位**：與 graphify（程式碼知識圖譜）、NanoBrain（git-backed Markdown 知識庫）共同構成 Claude Code 知識管理生態的三種架構選型；obsidian-semantic 專注 Obsidian 用戶的現有知識庫橋接
 
+### 本機圖資料庫降低 Session Token 成本（2026-05-10）
+
+- **快取不跨 session 是費用主因**：每次新 session 因 prompt cache 不跨 session 需重新讀取大量相同檔案，是 pay-as-you-go 用戶 session 費用達 $6–10 的主要原因（類似 2026-05-05 的 token 降耗討論，但更聚焦 session 成本結構）
+- **圖資料庫索引解法**：建立本機圖資料庫（graph database）索引整個 codebase，讓模型只讀取結構化摘要而非原始檔案；不使用 AST 或向量，而以 LLM 生成關係圖的方式具有創意，成功大幅壓低 session 費用
+- **任務層級 token 預算**：Tokenyst 讓 Claude Code pay-as-you-go 用戶在任務層級設定 token 預算，每次提示後即時顯示剩餘額度與使用比例，是費用控管工具鏈的新補充
+
+### Multi-agent 研究調查團隊架構（2026-05-10）
+
+- **六代理分工**：作者以六個功能各異的 agent（Scout、分析師、撰寫員等）打造「AI 企業應用案例地圖」，目前已累積逾 250 個真實案例
+- **實務驗證意義**：此案例在大量 multi-agent 理論討論中提供可驗證的實務實作，展示 multi-agent 架構在知識蒐集與整理任務上的具體生產力；與 2026-05-01 的 Omar（100 agent TUI 管理）不同，聚焦在「任務驅動型 agent 分工」而非「管理介面」
+
+### Claude Code 架構深度解析（dev.to 系列）（2026-05-10）
+
+- **系列文章第一章**：分析 Claude Code 工程架構，指出大多數人誤以為 Claude Code 只是「能寫程式的聊天框」，底層工程設計遠比表面複雜
+- **社群知識深化趨勢**：此系列代表社群對 Claude Code 從「使用工具」到「理解工具原理」的知識深化，與 CLAUDE.md 被發現作為 candidate-context（`<system-reminder>` 包裹）的架構揭示同步出現，顯示社群正在系統性解構 Claude Code 內部架構
+
+### 三層疊加式 AI Code Review（2026-05-10）
+
+- **多層防護必要性**：作者發現所有 PR 通過單一 AI reviewer 後仍上線 3 個 bug，轉而測試三層疊加式 AI code review 流程；對依賴單一 AI reviewer 作為最後防線的團隊是有用的警示
+- **與社群 4-agent Code Review 工作流的關係**：此文件測試的是「多層次（multi-layer）」而非「多代理（multi-agent）」review，關注深度層次分工 vs 角色分工，兩種方向互補
+
 ### Agent 持續運作架構（2026-05-03）
 
 - **VPS 雙代理持續運作**：兩個 Claude Code 代理在 VPS 的 tmux session 中持續運作，自動開 PR 並發布 Discord 狀態更新，代理間可相互協調；架構概念類似「Claude Code 版 docker-compose」
@@ -394,6 +415,11 @@
 | **re_gent**             | 版本控制 | 🔥🔥 | AI agent 版本控制工具（Git for AI Agents），解決 /compact 後歷史斷層與決策追溯，已支援 Claude Code |
 | **unitmux**             | 終端工具 | 🔥  | tmux 環境下 Claude Code 的懸浮視窗，讓輸入介面不干擾編輯器視角 |
 | **obsidian-semantic**   | 知識工具 | 🔥  | 讓 Claude Code 以語義搜尋使用 Obsidian vault，支援 Ollama/LMStudio/Gemini，自動發現未連結筆記 |
+| **Remind**              | 排程工具 | 🔥🔥 | Mac 本機排程 Claude Code，用「提醒事項」App 指定時間觸發，支援 iPhone/Apple Watch，可續接既有 session |
+| **draft CLI plugin**    | 記憶工具 | 🔥🔥 | session-init hook 自動注入結構化產品上下文摘要，解決跨 session 記憶歸零，不呼叫額外 API |
+| **Snyk + Claude Code**  | 安全工具 | 🔥🔥 | 60 秒整合 Snyk，對 AI 產出程式碼即時掃描 SQL injection/XSS/金鑰外洩，在進入 repo 前攔截 |
+| **Tokenyst**            | 監測工具 | 🔥🔥 | Claude Code pay-as-you-go 任務層級 token 預算設定，每次提示後即時顯示剩餘額度與使用比例 |
+| **Agentize**            | 工作流  | 🔥  | 評估並改善 codebase 的「agent 就緒度」，Claude Code skills 協助 AI agent 更有效理解現有專案 |
 
 > 熱度定義：🔥🔥🔥 跨平台多次出現 / 社群廣泛討論；🔥🔥 單平台高互動；🔥 值得關注但尚未擴散
 
@@ -436,6 +462,17 @@
 - [[news/2026-05-09]]
 
 ## 時序
+
+### 2026-05-10
+- **Mac 本機排程工具**：Remind — 透過系統「提醒事項」App 設定時間觸發 claude 指令，結果寫回提醒事項；支援 iPhone/Apple Watch 跨裝置，可透過 frontmatter 續接既有 session；補足 Claude Code 缺乏 Mac 本機排程的功能空白
+- **跨 session 記憶注入**：draft CLI plugin — session-init hook 自動注入結構化產品上下文摘要，不呼叫額外 API 或另跑模型，完全在現有 Claude 訂閱額度內解決跨 session 記憶歸零問題
+- **AI 程式碼安全掃描整合**：Snyk + Claude Code — 60 秒整合 Snyk 對 AI 產出程式碼即時掃描 SQL injection/XSS/金鑰外洩，在程式碼進入 repo 之前即時攔截；對大量使用 Claude Code 的團隊具實際參考價值
+- **token 預算管理**：Tokenyst — Claude Code pay-as-you-go 任務層級 token 預算，每次提示後即時顯示剩餘額度；session 費用 $6–10 的根因是快取不跨 session，社群同日提出圖資料庫索引 codebase 的創意解法
+- **codebase agent 就緒度評估**：Agentize — Claude Code skills 評估並改善 codebase 的「agent 就緒度」，協助 AI agent 更有效理解現有專案結構
+- **CLAUDE.md candidate-context 架構揭示**：社群逆向工程發現 CLAUDE.md 被以 `<system-reminder>` + 「may or may not be relevant」包裹，直接解釋「CLAUDE.md 指令被忽略」的根本原因；與 Claude Code 原始碼解析系列（dev.to Chapter 1）同步出現，顯示社群正在系統性解構 Claude Code 內部架構
+- **Multi-agent 研究團隊 250+ 案例**：6 個功能各異的 agent 打造「AI 企業應用案例地圖」，250+ 真實案例；展示 multi-agent 在知識蒐集任務上的具體生產力，是社群罕見的可驗證大規模實務案例
+- **LED 狀態指示燈硬體整合**：有人將 LED 燈改造成 Claude Code 即時執行狀態指示燈（XDA 報導），讓開發者直觀得知 AI agent 是否仍在運行，無需盯著終端機；展示 Claude Code MCP 生態向硬體整合延伸的創意邊界
+- **三層疊加式 AI Code Review**：測試多層 AI review 流程，發現單一 AI reviewer 作為最後防線仍有遺漏 bug 的風險；對企業部署 Claude Code 做 code quality gate 的團隊有實務警示價值
 
 ### 2026-05-09
 - **HTML vs Markdown 作為 Claude Code 輸出格式（HN 187 則討論）**：主張以 HTML 取代 Markdown 的論點在 HN 引發 187 則討論，是本期單篇最高互動；效能優勢獲部分認同，「HTML 難以人機協同編輯」的反駁明確指出適用場景邊界——純機器消費 vs 人機共同作者的選擇差異

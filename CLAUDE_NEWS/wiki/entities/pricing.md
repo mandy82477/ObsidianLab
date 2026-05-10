@@ -2,7 +2,7 @@
 
 **類型：** policy
 **狀態：** active（持續調整中）
-**最後更新：** 2026-05-09
+**最後更新：** 2026-05-10
 
 ---
 
@@ -20,6 +20,16 @@
 ---
 
 ## 近期政策變動
+
+### 2026-05-10：Claude Opus API 速率限制調降（ServeTheHome 報導）
+
+ServeTheHome 為首家報導 Anthropic 於 2026 年 5 月初悄悄調降 Claude Opus API 速率限制的媒體，具體上限數字尚待官方確認；重度 Opus API 用戶建議主動測試目前可用配額，並追蹤官方定價頁面公告。此舉與 SpaceX 算力合作帶來的整體速率提升（2026-05-07）同時期出現，顯示 Anthropic 可能對不同模型進行差異化速率限制管理，集中算力於使用率更高的 Sonnet 系列。
+
+### 2026-05-10：Pay-as-you-go Session 費用 $6–10 的成因與壓低策略
+
+社群討論指出，每次新 Claude Code session 因 prompt cache **不跨 session** 需重新讀取大量相同檔案，是費用偏高（$6–10/次）的主因。主要應對策略：
+- **本機圖資料庫索引**：以 LLM 生成 codebase 關係圖並存為圖資料庫，讓模型只讀取結構化摘要而非原始檔案，有效大幅降低每次 session 費用；不使用 AST 或向量，以 graph 方式呈現程式碼關係
+- **任務層級 token 預算**：Tokenyst（HN ShowHN）讓 pay-as-you-go 用戶為每個任務設定 token 上限，每次提示後即時顯示剩餘額度與使用比例，提升費用透明度
 
 ### 2026-05-07–09：SpaceX 算力合作正式到位，API 速率上限翻倍
 
@@ -213,4 +223,5 @@ The Verge（2026-04-24）報導，AI 商業化壓力下，Anthropic 等實驗室
 - [[news/2026-05-07]]
 - [[news/2026-05-08]]
 - [[news/2026-05-09]]
+- [[news/2026-05-10]]
 - [官方說明文件](https://support.claude.com/en/articles/11940350-claude-code-model-configuration)

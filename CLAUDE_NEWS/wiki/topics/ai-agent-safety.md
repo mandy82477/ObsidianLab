@@ -2,7 +2,7 @@
 
 **狀態：** ongoing
 **開始日期：** 2026-04-27
-**最後更新：** 2026-05-09
+**最後更新：** 2026-05-10
 
 ---
 
@@ -13,6 +13,24 @@
 ---
 
 ## 技術彙整
+
+### Google 搜尋 Claude Code 廣告詐騙與木馬植入（2026-05-10 新增）
+
+- **供應鏈攻擊向量**：Google 搜尋「claude code」的第一筆廣告結果出現仿冒 Claude 官方網站，透過偽造官方設計語言的 PowerShell 安裝指令植入 Trojan:Win32/Kepavll!rfn；一名擁有 30 年上網經驗的 Windows 用戶中招，Windows Defender 即時偵測
+- **廣告排名機制被濫用**：惡意網站透過 Google 廣告排名高於官網，利用廣大用戶對搜尋首位的信任；仿冒網站採用官方設計語言，極難辨別，已在 r/ClaudeAI 引起大量關注
+- **安裝防護建議**：安裝 Claude Code 等 AI 工具時，應直接前往官方網站（claude.ai）而非點擊搜尋廣告結果；AI 工具已成主流供應鏈攻擊目標，搜尋廣告詐騙是新興攻擊向量
+
+### AI Agent 清空資料庫兩次 + 指令防火牆（2026-05-10 新增）
+
+- **事件描述**：開發者使用 Claude Code 建構客服 agent 期間，AI 在一週內兩度清空本機資料庫；事件觸發原因為 agent 誤判清理任務的操作範疇，與 2026-04-28 生產資料庫刪除事件（9 秒刪除 + 備份清除）屬同類模式
+- **社群防護方案**：開發者因此自建「指令防火牆」（command firewall）作為安全攔截層，在高危指令到達 Claude Code 之前進行規則過濾，屬 `PreToolUse Hook` 防護概念的具體應用
+- **官方沙箱呼應**：此案例恰好呼應 Anthropic 同日發布的 Claude Code Sandboxing 官方文件的必要性；資料庫清除事故已成 Claude Code agent 反覆出現的模式，顯示預設操作邊界設定的重要性
+
+### Claude Code Sandboxing 官方文件發布（2026-05-10 新增）
+
+- **官方文件正式化**：Anthropic 發布 Claude Code Sandboxing 官方文件，提供透過 OS 層級原語（primitives）對沙箱化 bash 工具實施檔案系統與網路隔離的具體做法
+- **設計理念**：核心設計是在 session 開始時預先定義操作邊界，讓 Claude Code 在邊界內自由執行而無需逐指令授權確認，同時縮小意外破壞的半徑；與社群工具 SmolVM（沙盒容器化）的思路一致
+- **對社群工具的意義**：官方文件的出現一定程度上補強了 SmolVM（本機沙盒）、Groundtruth（完成驗證 Hook）等社群工具所填補的需求，也為企業部署提供官方背書的安全邊界設計框架；官方沙箱 + 社群工具形成互補
 
 ### Claude Code v2.1.136「操作安全與如實回報」機制（2026-05-09 新增）
 
@@ -90,7 +108,8 @@
 
 ## 目前結論
 
-- ⚠️ AI agent 安全事故已從「理論風險」轉為「實際事故」，PocketOS 事件（資料庫刪除）與 OpenClaw 事件（隱性計費）為兩類不同維度的標誌性案例
+- ⚠️ **Google 搜尋廣告詐騙**：AI 工具正成為供應鏈攻擊的新興目標，仿冒 Claude Code 官方網站透過 Google 廣告排名高於官網植入木馬，搜尋廣告詐騙已成開發者面臨的新型社會工程攻擊向量
+- ⚠️ AI agent 安全事故已從「理論風險」轉為「實際事故」，PocketOS 事件（資料庫刪除）與 OpenClaw 事件（隱性計費）為兩類不同維度的標誌性案例；資料庫清除已成 Claude Code agent 反覆出現的模式（2026-04-28、2026-05-10 兩次獨立事件）
 - ⚠️ **CVE-2026-39861 是 Claude Code 首個正式 CVE 編號（CVSS 7.7）**，標誌安全事件從非正式漏洞回報升級至正式漏洞管理流程；symlink 沙箱逃逸意味著工作區隔離機制存在可被攻擊的邊界
 - ⚠️ Anthropic 的安全事件回應策略持續受到批評——從「定義過窄」（Jonathan Nen）到「責怪使用者」（1-click RCE 回應），回應態度與品牌定位存在落差
 - 🛠️ 社群防護工具（Groundtruth、SmolVM、DataMoat）先於官方指導方針出現，顯示生態自組織能力
@@ -114,10 +133,16 @@
 - [[news/2026-05-07]]
 - [[news/2026-05-08]]
 - [[news/2026-05-09]]
+- [[news/2026-05-10]]
 - [Claude-powered AI coding agent deletes entire company database in 9 seconds](https://www.tomshardware.com/tech-industry/artificial-intelligence/claude-powered-ai-coding-agent-deletes-entire-company-database-in-9-seconds-backups-zapped-after-cursor-tool-powered-by-anthropics-claude-goes-rogue) — Tom's Hardware
 - [Anthropic's definition of safety is too narrow](https://jonathannen.com/anthropic-safety-too-narrow/) — Jonathan Nen
 
 ## 時序
+
+### 2026-05-10
+- **[供應鏈攻擊] Google 搜尋 Claude Code 廣告中出現木馬仿冒網站**：Google 廣告位置的仿冒 Claude 官方網站透過 PowerShell 安裝指令植入 Trojan:Win32/Kepavll!rfn，已有 Windows 用戶中招；攻擊利用廣告排名高於官網的機制，是 AI 工具正式成為主流供應鏈攻擊目標的標誌性案例
+- **[安全事故] Claude Code agent 一週內清空資料庫兩次 + 開源指令防火牆**：開發者自建指令防火牆作為高危操作攔截層，直接呼應官方沙箱需求；此類資料庫清除事故已成 Claude Code agent 的反覆模式（見 2026-04-28 事件）
+- **[官方文件] Claude Code Sandboxing 官方文件發布**：Anthropic 發布 OS 層級原語沙箱隔離的官方文件，為檔案系統與網路隔離提供官方設計框架；是繼 v2.1.136「操作安全與如實回報」（2026-05-09）後 Anthropic 在安全方向持續強化的第三個動作
 
 ### 2026-05-09
 - **[政策收緊] v2.1.136「操作安全與如實回報」**：系統提示新增逾 525 tokens 安全規範；不可逆操作須先確認、刪除前需檢視目標、必須如實回報跳過步驟與未通過測試；新增 `hard_deny` 無條件封鎖類別，縮小 `soft_deny` 範圍；影響所有依賴自主授權的 agent 工作流，為 Anthropic 在 agent 行為規範上最明確的政策收緊
