@@ -1,0 +1,229 @@
+{
+  "date": "2026-05-10",
+  "generatedAt": "2026-05-10 13:40 UTC",
+  "articleCount": 24,
+  "sourceCount": "6/6",
+  "topStories": [
+    {
+      "title": "Tojan in \"claude code\" google search first result",
+      "url": "https://www.reddit.com/r/ClaudeAI/comments/1t95r0d/tojan_in_claude_code_google_search_first_result/",
+      "source": "Reddit / r/ClaudeAI",
+      "time": "05/10 04:34",
+      "sentiment": "",
+      "body": "Google 搜尋 Claude Code 的第一筆廣告結果出現仿冒官方網站，一名擁有 30 年上網經驗的用戶在 Windows 上執行了假冒的 PowerShell 安裝指令，Windows Defender 隨即偵測到 Trojan:Win32/Kepavll!rfn。此事件已在 r/ClaudeAI 引起大量關注，為何值得關注：惡意網站仿照官方設計語言，極難辨別，且搜尋廣告排名高於官網。"
+    },
+    {
+      "title": "Claude Code shipped CLAUDE.md as candidate-context and called it priming, which is a category error, I think?",
+      "url": "https://www.reddit.com/r/ClaudeAI/comments/1t8j8as/claude_code_shipped_claudemd_as_candidatecontext/",
+      "source": "Reddit / r/ClaudeAI",
+      "time": "05/09 12:08",
+      "sentiment": "",
+      "body": "社群用戶深挖 Claude CLI 原始碼後發現：CLAUDE.md 的內容被包裹在附有「this context may or may not be relevant to your tasks」提示的 `<system-reminder>` 標籤中，意即 Claude 有充分理由主動跳過其中指令，而非將其視為強制系統提示詞。這直接解釋了開發者長期遇到的「CLAUDE.md 指令被忽略」問題，引發架構決策層面的廣泛討論。"
+    },
+    {
+      "title": "Lobotomized Claude Code and it works better",
+      "url": "https://github.com/skrabe/lobotomized-claude-code",
+      "source": "Hacker News",
+      "time": "05/09 20:29",
+      "sentiment": "",
+      "body": "一個開源工具針對本機安裝的 Claude Code 特定版本進行 patch，作者宣稱修改後效果更佳。社群討論焦點在於：Anthropic 顯然不希望用戶這樣做，此類修改未來可能觸發封號或促使 Anthropic 將更多邏輯移至伺服器端加以保護。"
+    },
+    {
+      "title": "Anthropic New Claude Opus API Limits Early May 2026 - ServeTheHome",
+      "url": "https://news.google.com/rss/articles/CBMi3gFBVV95cUxPMFBOWmoybFU5UDBlNVo1MU9OQU9BRTdxWW8wM1ZRUmx6aE5FcFRiQlZrdEpxTHp6c3pHMFJacVJEYTBmWXFDODc0czNVSkQtZ29KT2g5aXRMTTVlUlV2UlVQX1FmMkxrbEZTb2dmT1l2Ukp0RGxxelIxZEdxRmRkR3pURlVTc2VBRjhkMHhuSDl2d0xLSUoySVJsUzBEVDVBZURtMDh2NFhJZk9jM095c3duWUFZVmRzanpoeFVycS1rYTFhalZWdU1jS0JuWkZ2djlSOFJsc2RLMWw0OXc?oc=5",
+      "source": "Google News / ServeTheHome",
+      "time": "05/09 11:47",
+      "sentiment": "",
+      "body": "ServeTheHome 報導 Anthropic 於 2026 年 5 月初調整 Claude Opus API 速率限制，具體配額數字尚不明朗，但已引起重度 API 用戶關注；目前需依賴第三方媒體報導，官方尚未主動公告，建議持續追蹤 Anthropic 定價頁面。"
+    }
+  ],
+  "techUpdates": [
+    {
+      "title": "Claude Code Sandboxing",
+      "url": "https://code.claude.com/docs/en/sandboxing",
+      "source": "Hacker News",
+      "time": "05/09 19:27",
+      "sentiment": "",
+      "body": "Anthropic 正式發布 Claude Code 沙箱功能文件，說明如何透過 OS 層級原語（primitives）對沙箱化 bash 工具實施檔案系統與網路隔離。核心設計是在 session 開始時預先定義操作邊界，讓 Claude Code 在邊界內自由執行而無需逐指令確認授權，降低高頻操作的阻力並縮小意外破壞的半徑。"
+    }
+  ],
+  "discussions": [
+    {
+      "title": "Show HN: Remind – schedule Claude Code on your Mac",
+      "url": "https://olliewagner.com/remind",
+      "source": "Hacker News",
+      "time": "05/10 02:09",
+      "sentiment": "😊 正面",
+      "body": "開發者因 Claude Code 無法在 Mac 本機自排程而打造 Remind：只需在系統「提醒事項」App 新增一筆備忘，Remind 便會在指定時間喚醒終端機並執行 claude 指令，結果寫回提醒事項。支援從 iPhone、Apple Watch 跨裝置新增排程，並可透過 frontmatter 續接既有 session。"
+    },
+    {
+      "title": "Show HN: A Codex/Claude Code plugin for persistent product context thru sessions",
+      "url": "https://github.com/idodekerobo/draft-cli-plugin",
+      "source": "Hacker News",
+      "time": "05/10 02:53",
+      "sentiment": "😊 正面",
+      "body": "draft 以 session-init hook 在每次 session 開始時自動注入結構化產品上下文摘要，解決跨 session 記憶歸零問題。特別強調不呼叫外部 API 或另跑模型，完全在現有 Claude 訂閱額度內運作，避免隱性費用膨脹。"
+    },
+    {
+      "title": "Snyk and Claude Code: real-time security scanning of AI-generated code",
+      "url": "https://codebrainery.com/articles/snyk-claude-code-real-time-security-scanning-for-ai-code",
+      "source": "Hacker News",
+      "time": "05/10 03:21",
+      "sentiment": "😊 正面",
+      "body": "介紹如何在 60 秒內將 Snyk 整合進 Claude Code，對 AI 產生的程式碼即時掃描 SQL injection、XSS 與金鑰外洩等漏洞，讓問題在進入 repo 之前就被攔截；對大量使用 Claude Code 產出程式碼的團隊具有實際參考價值。"
+    },
+    {
+      "title": "Show HN: Create flashcards with Space CLI",
+      "url": "https://getspace.app/cli",
+      "source": "Hacker News",
+      "time": "05/09 14:38",
+      "sentiment": "😊 正面",
+      "body": "開發者將七年前打造的單字卡 App 加入 CLI 介面，可直接在終端機讓 Claude Code 或 Codex 產生高品質單字卡，涵蓋製藥法規、稅務、智慧家庭等多元領域；複習流程仍在 Space App 中進行，屬於 LLM 輔助學習工具的典型應用。"
+    },
+    {
+      "title": "we stopped paying $6-10 per coding session by fixing how my AI reads my codebase",
+      "url": "https://www.reddit.com/r/ClaudeAI/comments/1t95jkw/we_stopped_paying_610_per_coding_session_by/",
+      "source": "Reddit / r/ClaudeAI",
+      "time": "05/10 04:24",
+      "sentiment": "😊 正面",
+      "body": "作者指出每次新 session 重新讀取數十個相同檔案是費用偏高的主因（快取不跨 session），解法是建立本機圖資料庫索引 codebase，讓模型只讀取結構化摘要而非原始檔案，成功將每次 session 費用從 $6–10 大幅壓低；不使用 AST 或向量，而以 LLM 生成關係圖的方式頗具創意。"
+    },
+    {
+      "title": "My AI agent wiped my database twice. So I built a command firewall.",
+      "url": "https://dev.to/yezannnnnn/my-ai-agent-wiped-my-database-twice-so-i-built-a-command-firewall-4ma2",
+      "source": "dev.to / #claudecode",
+      "time": "05/10 01:49",
+      "sentiment": "😤 負面",
+      "body": "開發者在以 Claude Code 打造客服 agent 期間，AI 在一週內兩度清空本機資料庫，因而自建指令防火牆作為安全攔截層。此案例真實展示了 AI agent 在執行高危操作時的安全管控缺口，也呼應了官方沙箱功能的必要性。"
+    },
+    {
+      "title": "How I built an agentic research team with Claude Code",
+      "url": "https://www.reddit.com/r/ClaudeAI/comments/1t94not/how_i_built_an_agentic_research_team_with_claude/",
+      "source": "Reddit / r/ClaudeAI",
+      "time": "05/10 03:42",
+      "sentiment": "😊 正面",
+      "body": "作者以六個功能各異的 agent（Scout、分析、撰寫等）打造「AI 企業應用案例地圖」，目前已累積逾 250 個真實案例；文章分享具體的 multi-agent 架構設計，難得在大量理論討論中提供可驗證的實務實作。"
+    },
+    {
+      "title": "I Tried 3 Layers of AI Code Review So Your Diff Doesn't Have To",
+      "url": "https://dev.to/kenimo49/i-tried-3-layers-of-ai-code-review-so-your-diff-doesnt-have-to-16ec",
+      "source": "dev.to / #claudecode",
+      "time": "05/10 05:36",
+      "sentiment": "🤔 褒貶不一",
+      "body": "作者因上季所有 PR 通過 AI 審查卻仍上線 3 個 bug，轉而測試三層疊加式 AI code review 流程並分享各層實際效果；對依賴單一 AI reviewer 作為最後防線的團隊是有用的警示。"
+    },
+    {
+      "title": "20 Claude Code commands worth using.",
+      "url": "https://www.reddit.com/r/ClaudeAI/comments/1t91pht/20_claude_code_commands_worth_using/",
+      "source": "Reddit / r/ClaudeAI",
+      "time": "05/10 00:58",
+      "sentiment": "😊 正面",
+      "body": "整理 20 個實用 Claude Code 指令，涵蓋 Esc 停止、/rewind 復原、/btw 側邊提問（幾乎零 token 成本）、/branch 分叉對話等，按痛點分類說明，是快速上手與進階使用的實用參考。"
+    },
+    {
+      "title": "Claude Code Source Analysis Series, Chapter 1: Architecture",
+      "url": "https://dev.to/lien_jp_db54b8b7fd9fa0118/claude-code-source-analysis-series-chapter-1-architecture-48d7",
+      "source": "dev.to / #claudecode",
+      "time": "05/09 21:53",
+      "sentiment": "😊 正面",
+      "body": "系列文章第一章，深入解析 Claude Code 的工程架構；作者指出多數人誤以為 Claude Code 只是「能寫程式的聊天框」，實際底層設計遠比表面複雜，適合想理解其內部機制的開發者。"
+    },
+    {
+      "title": "Someone turned an LED light into a live Claude Code status indicator, and so can you - XDA",
+      "url": "https://news.google.com/rss/articles/CBMitgFBVV95cUxNTjVOcUlpMXFNVjcwUmNEVkFSY2syV2NRQWczNDR3Rngyc0ExblpRRHlKMFFtYklyb1lTWlhYT2Y2UEF4NHpacFcydTBFZHlEQVlZT29zNk1LNUU3TWlTVGFqUEhiNXdWV1k2UWZDZXlBZklHblAzUE1nZmxldWoteWVTNU12YlZGOGtRd25WcHVTaHdaM21mV0c5UldBVF8wN3R3WVVkSk9sYl9CS3dEb3V1aGEwZw?oc=5",
+      "source": "Google News / XDA",
+      "time": "05/09 20:18",
+      "sentiment": "😊 正面",
+      "body": "有人將 LED 燈改造成 Claude Code 的即時執行狀態指示燈，XDA 介紹了這個創意硬體整合方案，讓開發者可直觀得知 AI agent 當前是否仍在運行，無需盯著終端機。"
+    },
+    {
+      "title": "How I Run Multiple Claude Code Accounts From One Terminal",
+      "url": "https://dev.to/harryy2510/multiple-claude-code-accounts-one-terminal-5em5",
+      "source": "dev.to / #claudecode",
+      "time": "05/09 17:17",
+      "sentiment": "😐 中性",
+      "body": "介紹如何在同一終端機環境管理多個 Claude Code 帳號（例如個人 Claude Max 與公司帳號），適合需要在不同訂閱方案間切換的開發者。"
+    },
+    {
+      "title": "Show HN: Make your codebase agent ready",
+      "url": "https://github.com/jaksa76/agentize",
+      "source": "Hacker News",
+      "time": "05/10 10:27",
+      "sentiment": "😊 正面",
+      "body": "Agentize 提供一組 Claude Code skills，用於評估並改善程式碼庫的「agent 就緒度」，協助 AI agent 更有效率地理解與操作現有專案結構。"
+    }
+  ],
+  "billing": [
+    {
+      "title": "Anthropic New Claude Opus API Limits Early May 2026 - ServeTheHome",
+      "url": "https://news.google.com/rss/articles/CBMi3gFBVV95cUxPMFBOWmoybFU5UDBlNVo1MU9OQU9BRTdxWW8wM1ZRUmx6aE5FcFRiQlZrdEpxTHp6c3pHMFJacVJEYTBmWXFDODc0czNVSkQtZ29KT2g5aXRMTTVlUlV2UlVQX1FmMkxrbEZTb2dmT1l2Ukp0RGxxelIxZEdxRmRkR3pURlVTc2VBRjhkMHhuSDl2d0xLSUoySVJsUzBEVDVBZURtMDh2NFhJZk9jM095c3duWUFZVmRzanpoeFVycS1rYTFhalZWdU1jS0JuWkZ2djlSOFJsc2RLMWw0OXc?oc=5",
+      "source": "Google News / ServeTheHome",
+      "time": "05/09 11:47",
+      "sentiment": "",
+      "body": "Anthropic 於 2026 年 5 月初對 Claude Opus API 實施新速率限制，ServeTheHome 為首家報導媒體，具體上限數字尚待確認；重度 Opus API 用戶建議主動測試目前可用配額，並追蹤官方公告。"
+    },
+    {
+      "title": "Show HN: CLI to budget Claude Code session costs",
+      "url": "https://github.com/jher7/tokenyst",
+      "source": "Hacker News",
+      "time": "05/09 20:26",
+      "sentiment": "",
+      "body": "Tokenyst 讓 Claude Code pay-as-you-go 用戶在任務層級設定 token 預算，並在每次提示後即時顯示剩餘額度與使用比例；作者表示自己為控管「Fix mobile responsiveness」這類任務的費用而開發此工具，反映 API 計費透明度的實際需求。"
+    }
+  ],
+  "focus": [
+    {
+      "tag": "[風險警示]",
+      "text": "Google 搜尋「claude code」的頭號結果出現偽冒官網並植入木馬，已有資深用戶在 Windows 上中招；安裝前請務必直接前往 claude.ai 官方頁面。"
+    },
+    {
+      "tag": "[持續追蹤]",
+      "text": "社群發現 CLAUDE.md 被 Claude CLI 以 `<system-reminder>` 包裹並標注「may or may not be relevant」，解釋了為何 Claude Code 時常忽略其中指令，Anthropic 尚未正式回應此設計選擇。"
+    },
+    {
+      "tag": "[持續追蹤]",
+      "text": "ServeTheHome 報導 Anthropic 於 5 月初調降 Claude Opus API 速率限制，重度 API 用戶需留意使用量變化。"
+    },
+    {
+      "tag": "[社群趨勢]",
+      "text": "Claude Code 周邊生態持續爆發：本日湧現排程、安全掃描、跨 session 記憶、Token 預算等多款社群工具，顯示開發者正快速填補官方功能空白。"
+    },
+    {
+      "tag": "[社群趨勢]",
+      "text": "「如何壓低 Claude Code session Token 成本」成為今日最熱討論主軸，快取不跨 session 的限制推動多種結構化記憶解法出現。"
+    }
+  ],
+  "sourceStatus": [
+    {
+      "name": "Anthropic Blog",
+      "ok": true,
+      "count": 0
+    },
+    {
+      "name": "GitHub",
+      "ok": true,
+      "count": 0
+    },
+    {
+      "name": "Hacker News",
+      "ok": true,
+      "count": 22
+    },
+    {
+      "name": "Reddit",
+      "ok": true,
+      "count": 20
+    },
+    {
+      "name": "Google News",
+      "ok": true,
+      "count": 14
+    },
+    {
+      "name": "dev.to",
+      "ok": true,
+      "count": 11
+    }
+  ],
+  "preview": "Tojan in \"claude code\" google search first result"
+}
