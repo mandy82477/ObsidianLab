@@ -1,9 +1,9 @@
 # Managed Agents
 
 **類型：** feature
-**狀態：** active（研究預覽）
+**狀態：** active（正式發布）
 **首次出現：** 2026-04-28
-**最後更新：** 2026-05-07
+**最後更新：** 2026-05-11
 
 ---
 
@@ -18,6 +18,8 @@ Anthropic Managed Agents 是 Claude Platform 上的官方 Agent 框架，提供�
 - **Outcomes 規格驗證**：Agent 完成後自我驗證輸出是否符合預定規格文件（spec），代表 AI 代理設計從「盡力而為」走向「可驗證達標」的範式轉變
 
 Python SDK v0.100.0 與 TypeScript SDK v0.95.0 同步新增 Managed Agents 原生支援（2026-05-06/07）。
+
+2026-05-11 週，Managed Agents **正式發布**（從研究預覽升格），Anthropic 定義多代理協作的官方托管服務邊界。一位已自建 multi-agent 系統 70 天的開發者在 Reddit 分享實戰架構：以 Opus 作為決策層、OpenCode 作為工程師層、多個研究代理並行，並指出「**任務簡報的撰寫品質**才是多代理系統成敗的核心」，不依賴官方工具照樣可行；社群開始對官方托管方案與自組架構的功能差距進行系統性比較。
 
 ---
 
@@ -50,12 +52,14 @@ Python SDK v0.100.0 與 TypeScript SDK v0.95.0 同步新增 Managed Agents 原�
 - [[news/2026-04-28]]
 - [[news/2026-04-30]]
 - [[news/2026-05-07]]
+- [[news/2026-05-11]]
 - [Ars Technica 報導](https://arstechnica.com/ai/2026/05/anthropics-claude-can-now-dream-sort-of/)
 
 ## 歷史記錄
 
 | 日期 | 事件 |
 |------|------|
+| 2026-05-11 | 正式發布（從研究預覽升格）；社群自建 70 天多代理架構開發者分享實戰：Opus 決策層 + OpenCode 工程師層 + 並行研究代理，核心結論是任務簡報品質決定系統成敗；官方 vs 社群自組方案的比較進入主流討論 |
 | 2026-05-07 | Python SDK v0.100.0 + TypeScript SDK v0.95.0 新增 Managed Agents 原生支援，雙線同日發布 |
 | 2026-05-06 | 「Code with Claude」大會宣布重大更新：Dreaming 記憶整合、20 路子代理並行、Outcomes 規格驗證 |
 | 2026-04-30 | 公開測試版推出，Anthropic 定位為「agentic AI 的 AWS」，Managed Agents + Persistent Memory 同步開放 |

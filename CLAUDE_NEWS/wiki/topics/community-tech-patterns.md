@@ -2,7 +2,7 @@
 
 **狀態：** ongoing
 **開始日期：** 2026-04-25
-**最後更新：** 2026-05-10
+**最後更新：** 2026-05-11
 
 ---
 
@@ -328,6 +328,41 @@
 - **多層防護必要性**：作者發現所有 PR 通過單一 AI reviewer 後仍上線 3 個 bug，轉而測試三層疊加式 AI code review 流程；對依賴單一 AI reviewer 作為最後防線的團隊是有用的警示
 - **與社群 4-agent Code Review 工作流的關係**：此文件測試的是「多層次（multi-layer）」而非「多代理（multi-agent）」review，關注深度層次分工 vs 角色分工，兩種方向互補
 
+### Judge Gate：語意級 Agent 品質驗證（2026-05-11）
+
+- **普遍失敗模式**：自主編程代理在「測試通過、linter 無誤」後即宣告任務完成，但實際功能可能仍不完整；測試框架只能驗證語法正確性，無法判斷語義完整性
+- **Judge Gate 概念**：在現有測試層之上增加「judge gate」——語意層的額外驗證步驟，以另一個 LLM 或人工審核確認功能實際完成，而非僅依賴傳統測試框架的結構性驗證
+- **意義**：是對「測試通過 = 功能完成」這個 AI agent 常見假設的系統性挑戰，對全自動化 CI/CD 流程中的品質保證設計有直接影響
+
+### AI Agent 語意層漂移 CI 測試（2026-05-11）
+
+- **問題定義**：AI agent 在多日執行中可能悄悄偏離預期行為（語意層漂移 / semantic drift），傳統 CI 測試無法偵測
+- **六秒 CI 測試**：作者分享如何用一個**僅需六秒**的 CI 測試偵測 agent 的語意層漂移，防止代理在不知情情況下偏離目標行為；方法論：在 CI 流程中定期對代理發送探針任務並比對輸出分布，用統計指標而非固定預期值判斷行為是否偏移
+- **實踐價值**：對長期運行的 Claude Code agent 工作流（如 vibe coding loop、每日排程任務），語意漂移偵測是尚未被廣泛解決的 QA 盲點
+
+### 多代理 PR Review 超越官方工具（2026-05-11）
+
+- **adamsreview 設計**：以平行子代理、多階段驗證與 JSON 持久狀態執行 PR review；每個子代理從不同角度（安全性、邏輯正確性、效能、可維護性）獨立審查，最終交叉彙整
+- **作者聲稱效果**：在自測中比官方 /review、/ultrareview、CodeRabbit 及 Greptile 捕捉到更多真實 bug，同時誤報率更低；並支援與 Codex CLI 組成 ensemble review
+- **生態意義**：官方 PR review 工具已存在的情況下，社群以多代理架構做出差異化，顯示 Claude Code 插件生態正走向深度定制，間接壓力測試官方工具的品質上限；需獨立驗證作者聲稱的效果
+
+### CLAUDE.md 記憶規則驗證技巧（2026-05-11）
+
+- **金絲雀規則（canary rule）**：在記憶或 CLAUDE.md 中埋入特定「金絲雀指令」（如要求 Claude 在每則回應前加上特定奇特前綴），可快速驗證 Claude 是否確實載入並執行了記憶規則；若前綴未出現即可判定記憶未生效
+- **直接詢問專案設定**：詢問 Claude「目前載入的專案設定內容是什麼」，可立即確認 CLAUDE.md 是否被正確解讀；搭配金絲雀規則，兩招形成 10 秒快速一致性檢查
+- **適用場景**：對依賴 CLAUDE.md 或記憶系統的自動化工作流尤為重要，是社群自 CLAUDE.md candidate-context 架構揭示（2026-05-10）後催生的實用對策
+
+### AGENTS.md 跨工具插件簡報（2026-05-11）
+
+- **統一配置文件**：以 AGENTS.md 作為跨工具（Claude Code、Cursor、GitHub Copilot 等）的統一插件簡報文件，讓不同 AI 工具共享相同的代理人配置說明，降低跨工具整合的設定重複成本
+- **Kobiton 案例**：Kobiton 在跨工具自動化測試環境中實踐此模式，不同 AI 工具共享同一份代理配置，顯示 AGENTS.md 有潛力成為跨工具 AI 配置的業界標準
+- **與 CLAUDE.md 的關係**：CLAUDE.md 是 Claude Code 專屬指令，AGENTS.md 是跨工具通用的代理簡報文件；兩者定位互補，AGENTS.md 解決的是工具綁定問題，CLAUDE.md 解決的是 Claude 特定行為調優問題
+
+### Agent Skill 商業價值評估（2026-05-11）
+
+- **ClawMart 分析 40+ 技能上架心得**：AI agent 應用商店作者整理讓 agent skill 值得購買的關鍵特質：解決可驗證的具體痛點（非模糊「提升效率」）、skill 行為可預期可重現、首次使用成功率高、有清晰的適用場景邊界說明
+- **警示**：部分結論帶有商業動機，宜交叉驗證；此分析也側面反映 skill 生態的商業化正在加速，對開源 skill 開發者也有參考價值
+
 ### Agent 持續運作架構（2026-05-03）
 
 - **VPS 雙代理持續運作**：兩個 Claude Code 代理在 VPS 的 tmux session 中持續運作，自動開 PR 並發布 Discord 狀態更新，代理間可相互協調；架構概念類似「Claude Code 版 docker-compose」
@@ -420,6 +455,8 @@
 | **Snyk + Claude Code**  | 安全工具 | 🔥🔥 | 60 秒整合 Snyk，對 AI 產出程式碼即時掃描 SQL injection/XSS/金鑰外洩，在進入 repo 前攔截 |
 | **Tokenyst**            | 監測工具 | 🔥🔥 | Claude Code pay-as-you-go 任務層級 token 預算設定，每次提示後即時顯示剩餘額度與使用比例 |
 | **Agentize**            | 工作流  | 🔥  | 評估並改善 codebase 的「agent 就緒度」，Claude Code skills 協助 AI agent 更有效理解現有專案 |
+| **adamsreview**         | 工作流  | 🔥🔥 | 多代理 PR review，平行子代理 + 多階段驗證，作者聲稱比官方 /review、/ultrareview、CodeRabbit 捕捉更多真實 bug |
+| **vibe-log-cli**        | 自動化工具 | 🔥 | Claude Code 插件自動生成每日 / 每週開發工作摘要，適合 vibe coding 長期用戶 |
 
 > 熱度定義：🔥🔥🔥 跨平台多次出現 / 社群廣泛討論；🔥🔥 單平台高互動；🔥 值得關注但尚未擴散
 
@@ -460,8 +497,20 @@
 - [[news/2026-05-07]]
 - [[news/2026-05-08]]
 - [[news/2026-05-09]]
+- [[news/2026-05-11]]
 
 ## 時序
+
+### 2026-05-11
+- **Managed Agents 正式發布 + 社群 vs 官方架構比較**：70 天自建多代理系統的開發者分享實戰架構（Opus 決策層 + OpenCode 工程師層 + 並行研究代理），核心洞見：「任務簡報品質才是多代理系統成敗的核心」；官方托管方案與社群自組架構的功能差距比較進入主流討論
+- **adamsreview — 多代理 PR Review 超越官方工具宣言**：以平行子代理、多階段驗證、JSON 持久狀態執行 PR review；作者聲稱比官方 /review、/ultrareview、CodeRabbit 及 Greptile 捕捉更多真實 bug；在官方 PR review 工具已存在情況下做出差異化，是插件生態深度定制的代表案例
+- **Judge Gate 概念**：提出「語意層 agent 品質驗證」作為傳統測試框架之上的額外驗證層——「測試通過 ≠ 功能完成」是自主編程代理的結構性盲點；六秒 CI 語意漂移偵測方法補足相同問題的持續監控維度
+- **Opus 4.7 提示詞行為轉變確認**：精讀 Anthropic 官方 31 頁提示詞指南後確認 Opus 4.7 更趨字面解讀，4.6 時代的通用模糊指令在 4.7 下表現明顯下滑；需更明確的指令設計，所有現有 prompt 工程實踐需重新審視
+- **費用管理新一輪熱議**：$514/30 天詳細費用分析 + 配額管理指南（同作者兩篇互補）；Pro 方案 0% 使用量仍被收取 $3.37 extra usage 的透明度問題同步浮現；費用成為本週社群最熱議焦點
+- **CLAUDE.md 記憶驗證兩招**：金絲雀規則（在記憶中埋入特定奇特前綴）+ 直接詢問專案設定，是 CLAUDE.md candidate-context 架構揭示（2026-05-10）催生的快速一致性檢查對策；對自動化工作流的可靠性設計有參考價值
+- **AGENTS.md 跨工具插件簡報模式**：以 AGENTS.md 統一跨工具代理配置（Kobiton 案例），降低 Claude Code / Cursor / GitHub Copilot 跨工具整合的設定重複成本
+- **Claude Code Desktop vs Claude Cowork 定位混淆**：用戶困惑兩款產品功能高度重疊，Anthropic 尚未給出清晰的差異化說明
+- **新工具**：vibe-log-cli（每日/每週開發工作摘要自動生成）、academic-research-skills（蘇格拉底反思模式技能包，社群評價分歧）
 
 ### 2026-05-10
 - **Mac 本機排程工具**：Remind — 透過系統「提醒事項」App 設定時間觸發 claude 指令，結果寫回提醒事項；支援 iPhone/Apple Watch 跨裝置，可透過 frontmatter 續接既有 session；補足 Claude Code 缺乏 Mac 本機排程的功能空白

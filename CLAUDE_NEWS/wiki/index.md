@@ -2,7 +2,7 @@
 
 LLM 查詢此 wiki 時，**先讀這個檔案**找相關頁面，再讀具體頁面取得詳細資訊。
 
-**最後更新：** 2026-05-10 | **頁面數：** 20
+**最後更新：** 2026-05-11 | **頁面數：** 20
 
 ---
 
@@ -26,7 +26,7 @@ LLM 查詢此 wiki 時，**先讀這個檔案**找相關頁面，再讀具體頁
 | [[entities/claude-security]] | product | public beta | Claude Security 資安產品，情境化安全評估，整合於 Claude Code 開發環境 |
 | [[entities/openclaw]] | product | 受限 | 第三方 agentic 工具，被 Anthropic 配額限制並觸發 Claude Code 異常計費行為 |
 | [[entities/google-investment]] | event | resolved | Google 投資 400 億美元歷史記錄，含循環算力交易結構 |
-| [[entities/managed-agents]] | feature | active（研究預覽）| Managed Agents 官方框架：Dreaming 記憶整合、20 路並行子代理、Outcomes 規格驗證 |
+| [[entities/managed-agents]] | feature | active（正式發布）| Managed Agents 官方框架：Dreaming 記憶整合、20 路並行子代理、Outcomes 規格驗證 |
 | [[entities/boris-cherny]] | person | active | Claude Code 創始人，「Loops 是未來」設計哲學、「coding is solved」論戰、第三方工具邊界聲明 |
 
 ---
