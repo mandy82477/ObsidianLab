@@ -2,7 +2,7 @@
 
 **狀態：** ongoing
 **開始日期：** 2026-04-25
-**最後更新：** 2026-05-11
+**最後更新：** 2026-05-12
 
 ---
 
@@ -363,6 +363,53 @@
 - **ClawMart 分析 40+ 技能上架心得**：AI agent 應用商店作者整理讓 agent skill 值得購買的關鍵特質：解決可驗證的具體痛點（非模糊「提升效率」）、skill 行為可預期可重現、首次使用成功率高、有清晰的適用場景邊界說明
 - **警示**：部分結論帶有商業動機，宜交叉驗證；此分析也側面反映 skill 生態的商業化正在加速，對開源 skill 開發者也有參考價值
 
+### `/goal` Fire-and-Forget 自動化模式（2026-05-12）
+
+- **官方新功能**：v2.1.139 推出的 `/goal` 指令代表 Claude Code 首次具備真正的 fire-and-forget 能力；用戶設定可驗證的完成條件後，每輪執行結束由一個小型快速模型判斷條件是否成立——未達成則自動開始下一輪，無需人工介入
+- **適用場景邊界**：設計上適合有明確終態的長時間任務（模組遷移完成、所有測試通過、API 端點全部回應 200），不適合開放式或目標模糊的任務
+- **社群反應**：Reddit 對 `/goal` 的反應熱烈，多名用戶形容這是「Claude Code 首個真正的 fire-and-forget 循環」，此版本包含 104 項變更；見 [[entities/managed-agents]]
+- **Anthropic 抄自開源爭議**：部分社群成員指出 `/goal` 的概念早已在 OpenClaw 等社群工具中實現，質疑 Anthropic 是否長期觀察開源社群後直接內建功能而未給予信用，Anthropic 未回應
+
+### 對抗性審查（Adversarial Review）工作流（2026-05-12）
+
+- **問題根源**：Claude Code 面對模糊規格時存在系統性偏差——傾向於以最少衝突的方式解讀任務，導致任務開始後出現靜默失敗（silent failure）
+- **對抗性雙代理設計**：開發者追蹤六個生產專案後，設計出「對抗性審查」工作流：第一個 Claude 負責起草任務 kickoff 文件，第二個 Claude 扮演批評者事先挑毛病（指出可能失敗的場景、模糊假設、潛在依賴衝突），執行前先讓兩個 Claude 達成共識
+- **效果**：作者報告此工作流顯著降低執行後的靜默失敗率，特別是在長時間任務和規格不完整的場景
+- **與 agent-order 的關係**：agent-order（讓 Codex + Claude 各自獨立寫 PRD 再互相批判）類似概念，但此工作流聚焦在同一 Claude 模型的雙實例角色分工（起草者 vs 批評者），而非跨模型比較
+
+### Writ 規則強制執行（Neo4j 知識圖譜 Pipeline）（2026-05-12）
+
+- **問題**：Claude Code 常忽略 CLAUDE.md 中的規則，原因之一是 CLAUDE.md 作為 candidate-context（`<system-reminder>`）可被模型跳過；同時載入所有規則也因無關規則佔用 token 而降低精準度
+- **Writ 的解法**：透過五階段 Neo4j 知識圖譜 Pipeline，在每次工具呼叫前自動擷取與當前任務語義最相關的規則子集，只注入相關規則，兼顧規則遵守率與 token 效率
+- **技術架構**：以 Neo4j 儲存規則及其語義關係，每次任務啟動時依 context 做圖遍歷，找出相關規則集；比純 CLAUDE.md 文字比對更具選擇性，比全量載入更省 token
+- **意義**：是「CLAUDE.md 強制執行」與「規則過多導致 token 浪費」這個雙重困境的社群工程解法，與官方 Hooks 機制（強制執行）和 CLAUDE.md（建議）的層次設計形成互補
+
+### 跨環境 Agent 記憶協定（ltm / Core Memory Packet）（2026-05-12）
+
+- **現有方案的根本缺陷**：CLAUDE.md、`.cursor/rules`、AGENTS.md 等現有 agent 記憶方案均為 Markdown 文件，無法在不同編輯器、不同機器、不同 AI 模型之間攜帶和同步
+- **ltm 的設計**：基於 JSON 協定（Core Memory Packet）的 Agent 記憶工具，設計上實現供應商中立的持久化記憶；Core Memory Packet 包含結構化的 agent 記憶資料（任務歷史、學習到的偏好、已知約束），可在任何支援該協定的工具間交換
+- **跨環境攜帶性**：相比 Markdown 記憶方案，ltm 的 JSON 結構可被任何工具解析，不依賴特定 AI 工具的指令解讀機制
+- **與其他記憶工具的定位差異**：Memex（本地 RAG）、NanoBrain（git-backed Markdown）、Dreamer（MCP → AGENTS.md 整合）均聚焦單一環境內的記憶持久化；ltm 的差異化在於跨工具、跨機器的記憶可攜性
+
+### Checkpoint Commits 與 Git History 管理（2026-05-12）
+
+- **問題**：Claude Code 自動建立的 checkpoint commit 大量污染 git 歷史，使 git log 充斥無意義的自動化提交；搭配 worktree 使用時問題更嚴重，每個子 Agent 各自建立分支並獨立 checkpoint
+- **社群清理方案**：
+  - **Interactive rebase + squash**：`git rebase -i HEAD~N` 將 N 個 checkpoint 壓縮為一個有意義的提交
+  - **git filter-repo**：批量重寫 git 歷史，移除特定 checkpoint commit pattern
+  - **事前預防**：在 CLAUDE.md 中明確指示 Claude 減少自動 checkpoint 頻率，或指定 commit 時機
+- **結構性問題**：worktree 多 Agent 架構下，每個子 Agent 分支的 checkpoint 最終合併時會製造更大量的 history 污染，是 multi-agent 工作流的已知副作用；目前無官方解決方案
+
+### Context 管理是大型專案 Claude Code 的核心瓶頸（2026-05-12）
+
+- **主流認知更新**：在大型專案使用 Claude Code 的最大瓶頸被確認是 Context 管理，而非程式碼生成品質——LLM 的 attention 機制在缺乏完整系統全貌時，會生成「看起來正確但邏輯有誤」的程式碼
+- **根本原因**：Transformer attention 機制在 context 不完整時容易聚焦在局部符合的片段，忽略全域一致性；這不是「Claude Code 不夠聰明」，而是 attention 架構的基本特性
+- **應對策略**（社群整理）：
+  - 在任務開始前系統性注入架構概覽文件（非僅 CLAUDE.md）
+  - 使用 graphify、Semble 等工具建立結構化 codebase 索引，讓 Claude 讀摘要而非原始檔案
+  - 分拆大型任務，確保每個子任務的 context 足夠聚焦
+  - 在每個 session 開始時重新確認 context 完整性（見 CLAUDE.md 記憶驗證兩招，2026-05-11）
+
 ### Agent 持續運作架構（2026-05-03）
 
 - **VPS 雙代理持續運作**：兩個 Claude Code 代理在 VPS 的 tmux session 中持續運作，自動開 PR 並發布 Discord 狀態更新，代理間可相互協調；架構概念類似「Claude Code 版 docker-compose」
@@ -457,6 +504,11 @@
 | **Agentize**            | 工作流  | 🔥  | 評估並改善 codebase 的「agent 就緒度」，Claude Code skills 協助 AI agent 更有效理解現有專案 |
 | **adamsreview**         | 工作流  | 🔥🔥 | 多代理 PR review，平行子代理 + 多階段驗證，作者聲稱比官方 /review、/ultrareview、CodeRabbit 捕捉更多真實 bug |
 | **vibe-log-cli**        | 自動化工具 | 🔥 | Claude Code 插件自動生成每日 / 每週開發工作摘要，適合 vibe coding 長期用戶 |
+| **HiveTerm**            | 多 Agent 工作站 | 🔥🔥 | 單一介面管理多個 Claude Code Agent 工作階段，支援任務分派與進度追蹤 |
+| **Writ**                | 規則強制工具 | 🔥🔥 | Neo4j 知識圖譜 5 階段 Pipeline 自動擷取相關規則集，解決 CLAUDE.md 被忽略 + 無關規則耗 token 雙重問題 |
+| **Agent FM**            | 監測工具 | 🔥 | 以「廣播」形式聽覺化呈現 Claude Code + Codex Agent 執行狀態，本地開源 MIT |
+| **Usage4Claude 3.0.0**  | 監測工具 | 🔥🔥 | 開源 macOS 選單列用量追蹤，3.0.0 版新增 Codex 追蹤，憑證存 Keychain |
+| **ltm**                 | 記憶工具 | 🔥🔥 | Core Memory Packet JSON 協定，跨編輯器 / 跨機器 / 跨模型的供應商中立 Agent 記憶 |
 
 > 熱度定義：🔥🔥🔥 跨平台多次出現 / 社群廣泛討論；🔥🔥 單平台高互動；🔥 值得關注但尚未擴散
 
@@ -498,8 +550,19 @@
 - [[news/2026-05-08]]
 - [[news/2026-05-09]]
 - [[news/2026-05-11]]
+- [[news/2026-05-12]]
 
 ## 時序
+
+### 2026-05-12
+- **`/goal` fire-and-forget 官方正式功能**：v2.1.139 推出 `/goal` 指令，是 Claude Code 首個真正的 fire-and-forget 循環——設定可驗證完成條件後，小型快速模型自動判斷條件成立與否並決定是否繼續執行；Reddit 社群熱烈反應，被視為 Claude Code 邁向非同步工作流的關鍵里程碑；見 [[entities/managed-agents]]
+- **Agent View 統一多 session 管理**：同版本推出 Agent View（Research Preview），`claude agents` 可查看所有並行工作階段即時狀態（執行中/等待輸入/已完成），解決過去需要手動管理多個終端機視窗的工作流痛點；多家媒體（TestingCatalog 等）廣泛報導，是本日最受媒體引用的技術更新
+- **對抗性審查工作流**：開發者分享讓兩個 Claude 實例扮演起草者與批評者的工作流，事前讓批評者 Claude 挑毛病後再執行，顯著降低靜默失敗率；與 agent-order（跨模型 PRD 互評）的設計理念相近但聚焦同模型雙角色分工
+- **Writ 規則強制執行**：Neo4j 知識圖譜 5 階段 Pipeline 自動擷取語義相關規則集，是「CLAUDE.md 被忽略 + 無關規則耗 token」雙重困境的社群工程解法，比 Hooks 機制更聚焦規則精準注入，比全量 CLAUDE.md 載入更省 token
+- **ltm 跨環境 Agent 記憶**：Core Memory Packet JSON 協定讓 Agent 記憶可跨編輯器、跨機器、跨模型攜帶，直接指出 CLAUDE.md 等 Markdown 方案的跨環境局限；與 Memex（本地 RAG）、NanoBrain（git-backed）定位不同，聚焦可攜性而非持久化深度
+- **Context 管理是大型專案核心瓶頸**：大型專案使用 Claude Code 的最大瓶頸被確認為 Context 管理而非程式碼品質——LLM attention 機制在缺乏系統全貌時生成「看起來正確但邏輯有誤」的程式碼；具體應對策略包括系統性注入架構概覽、結構化 codebase 索引、任務分拆
+- **Checkpoint Commits git history 污染**：Claude Code 自動 checkpoint commit 污染 git log 的問題在 Reddit 引發熱議，搭配 worktree 使用時問題更嚴重；社群整理多種清理方案（interactive rebase squash、git filter-repo），目前無官方解法
+- **新工具**：HiveTerm（多 Agent 工作站）、Writ（Neo4j 規則強制執行）、Agent FM（聽覺化進度廣播，MIT）、Usage4Claude 3.0.0（含 Codex 追蹤，Keychain 認證）、ltm（跨環境 JSON 記憶協定）
 
 ### 2026-05-11
 - **Managed Agents 正式發布 + 社群 vs 官方架構比較**：70 天自建多代理系統的開發者分享實戰架構（Opus 決策層 + OpenCode 工程師層 + 並行研究代理），核心洞見：「任務簡報品質才是多代理系統成敗的核心」；官方托管方案與社群自組架構的功能差距比較進入主流討論

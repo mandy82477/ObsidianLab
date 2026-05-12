@@ -3,7 +3,7 @@
 **類型：** feature
 **狀態：** active（正式發布）
 **首次出現：** 2026-04-28
-**最後更新：** 2026-05-11
+**最後更新：** 2026-05-12
 
 ---
 
@@ -21,6 +21,8 @@ Python SDK v0.100.0 與 TypeScript SDK v0.95.0 同步新增 Managed Agents 原�
 
 2026-05-11 週，Managed Agents **正式發布**（從研究預覽升格），Anthropic 定義多代理協作的官方托管服務邊界。一位已自建 multi-agent 系統 70 天的開發者在 Reddit 分享實戰架構：以 Opus 作為決策層、OpenCode 作為工程師層、多個研究代理並行，並指出「**任務簡報的撰寫品質**才是多代理系統成敗的核心」，不依賴官方工具照樣可行；社群開始對官方托管方案與自組架構的功能差距進行系統性比較。
 
+2026-05-12，v2.1.139 新增兩項擴展多代理能力的重要功能：**Agent View**（Research Preview）提供統一面板管理所有並行 Claude Code 工作階段的即時狀態（執行中 / 等待輸入 / 已完成），執行 `claude agents` 啟用，解決過去需要手動管理多個終端機視窗的工作流痛點；**`/goal` 指令**實現 fire-and-forget 自動化，用戶設定可驗證的完成條件後，每輪執行結束由一個小型快速模型判斷條件是否成立、未達成則自動開始下一輪，適用於模組遷移、測試全通過等有明確終態的長時間任務，官方稱之為 Claude Code 正式具備「非同步工作流」能力。
+
 ---
 
 ## 核心功能
@@ -31,6 +33,8 @@ Python SDK v0.100.0 與 TypeScript SDK v0.95.0 同步新增 Managed Agents 原�
 | Dreaming | 任務間隙自動整理記憶，類似睡眠記憶鞏固 | 研究預覽 |
 | 20 路並行子代理 | 最高 20 個子代理同時執行 | 公開測試 |
 | Outcomes 規格驗證 | Agent 自我驗證輸出是否符合規格文件 | 公開測試 |
+| Agent View | 統一面板管理所有並行 session 即時狀態（`claude agents`） | 研究預覽 |
+| `/goal` 指令 | fire-and-forget 自動化，小型快速模型驗證完成條件 | 正式發布（v2.1.139） |
 
 ---
 
@@ -53,12 +57,14 @@ Python SDK v0.100.0 與 TypeScript SDK v0.95.0 同步新增 Managed Agents 原�
 - [[news/2026-04-30]]
 - [[news/2026-05-07]]
 - [[news/2026-05-11]]
+- [[news/2026-05-12]]
 - [Ars Technica 報導](https://arstechnica.com/ai/2026/05/anthropics-claude-can-now-dream-sort-of/)
 
 ## 歷史記錄
 
 | 日期 | 事件 |
 |------|------|
+| 2026-05-12 | v2.1.139 新增 Agent View（Research Preview，統一多 session 管理面板，`claude agents`）與 `/goal` 指令（fire-and-forget 自動化，小型快速模型驗證完成條件），是 Claude Code 邁向真正非同步工作流的關鍵里程碑 |
 | 2026-05-11 | 正式發布（從研究預覽升格）；社群自建 70 天多代理架構開發者分享實戰：Opus 決策層 + OpenCode 工程師層 + 並行研究代理，核心結論是任務簡報品質決定系統成敗；官方 vs 社群自組方案的比較進入主流討論 |
 | 2026-05-07 | Python SDK v0.100.0 + TypeScript SDK v0.95.0 新增 Managed Agents 原生支援，雙線同日發布 |
 | 2026-05-06 | 「Code with Claude」大會宣布重大更新：Dreaming 記憶整合、20 路子代理並行、Outcomes 規格驗證 |

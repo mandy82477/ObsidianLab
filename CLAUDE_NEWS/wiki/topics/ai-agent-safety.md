@@ -2,7 +2,7 @@
 
 **狀態：** ongoing
 **開始日期：** 2026-04-27
-**最後更新：** 2026-05-10
+**最後更新：** 2026-05-12
 
 ---
 
@@ -13,6 +13,20 @@
 ---
 
 ## 技術彙整
+
+### 假冒 Claude Code 官方安裝包惡意軟體攻擊（2026-05-12 新增）
+
+- **多媒體同步確認**：Yahoo Tech、CSO Online、The Register 等多家資安媒體同步報導，攻擊已被研究人員確認成立；此為與 2026-05-10 Google 搜尋廣告木馬不同的**獨立攻擊向量**，顯示攻擊者正系統性覆蓋所有 Claude Code 安裝路徑
+- **IElevator 機制**：攻擊者利用 Windows IElevator（Internet Explorer Elevation Service）進行權限提升，竊取 Chrome 等瀏覽器 Cookie 與開發者機密憑證（API keys、雲端憑證等），屬進階供應鏈型社交工程攻擊
+- **攻擊向量**：透過偽裝成官方 Claude Code 安裝程式的惡意軟體分發；Google 廣告詐騙（2026-05-10）+ 官方安裝包仿冒（2026-05-12）兩種向量並存，顯示攻擊組織化程度高
+- **防護建議**：安裝 Claude Code 唯一安全路徑為 GitHub 官方 Releases（`github.com/anthropics/claude-code`）；已安裝的開發者應立即審查系統異常進程與憑證洩露跡象；避免透過搜尋廣告或非官方管道安裝任何 AI 工具
+
+### AI 驅動硬體故障注入攻擊（2026-05-12 新增）
+
+- **首個公開記錄案例**：研究團隊 Raelize 發布報告，記錄讓 Claude Code 完全掌控硬體工具、在無任何人工撰寫程式碼的情況下，自主重現 **Espressif ESP32 SoC Secure Boot 硬體故障注入（Fault Injection）攻擊**的全過程，是目前首個公開記錄的 AI 驅動 Fault Injection 攻擊案例
+- **攻擊自主性**：Claude Code 自主設計電壓故障脈衝時序、控制硬體工具、識別成功 bypass 條件，全程無人工程式碼干預；整個實驗設計、硬體控制與結果分析均由 AI Agent 主導
+- **雙面性**：研究展示 AI 在硬體安全漏洞探索領域的顛覆性潛力（可大幅降低 Fault Injection 研究的技術門檻），同時引發對 AI 自主硬體攻擊工具的隱憂；資安社群討論如何在賦予 AI Agent 硬體操控能力的同時建立防護邊界
+- **Hacker News 反應**：`情緒：🤔 褒貶不一`，研究者肯定其學術價值，但對 AI 加速攻擊能力民主化的潛在影響表示擔憂
 
 ### Google 搜尋 Claude Code 廣告詐騙與木馬植入（2026-05-10 新增）
 
@@ -108,6 +122,8 @@
 
 ## 目前結論
 
+- ⚠️ **假冒安裝包攻擊確認（2026-05-12）**：假冒 Claude Code 官方安裝包的惡意軟體攻擊已被多家資安媒體確認，利用 IElevator 機制竊取瀏覽器 Cookie 與開發者憑證；與 Google 搜尋廣告詐騙（2026-05-10）共同形成雙向攻擊面，Claude Code 安裝途徑的唯一安全路徑為 GitHub 官方 Releases
+- 🔬 **首個 AI 驅動硬體 Fault Injection 攻擊（2026-05-12）**：Claude Code 自主重現 ESP32 Secure Boot 故障注入攻擊，AI Agent 在硬體安全領域的攻擊能力已達可公開記錄的成熟度，顯示 AI 正在降低高技術攻擊的進入門檻
 - ⚠️ **Google 搜尋廣告詐騙**：AI 工具正成為供應鏈攻擊的新興目標，仿冒 Claude Code 官方網站透過 Google 廣告排名高於官網植入木馬，搜尋廣告詐騙已成開發者面臨的新型社會工程攻擊向量
 - ⚠️ AI agent 安全事故已從「理論風險」轉為「實際事故」，PocketOS 事件（資料庫刪除）與 OpenClaw 事件（隱性計費）為兩類不同維度的標誌性案例；資料庫清除已成 Claude Code agent 反覆出現的模式（2026-04-28、2026-05-10 兩次獨立事件）
 - ⚠️ **CVE-2026-39861 是 Claude Code 首個正式 CVE 編號（CVSS 7.7）**，標誌安全事件從非正式漏洞回報升級至正式漏洞管理流程；symlink 沙箱逃逸意味著工作區隔離機制存在可被攻擊的邊界
@@ -134,10 +150,16 @@
 - [[news/2026-05-08]]
 - [[news/2026-05-09]]
 - [[news/2026-05-10]]
+- [[news/2026-05-12]]
 - [Claude-powered AI coding agent deletes entire company database in 9 seconds](https://www.tomshardware.com/tech-industry/artificial-intelligence/claude-powered-ai-coding-agent-deletes-entire-company-database-in-9-seconds-backups-zapped-after-cursor-tool-powered-by-anthropics-claude-goes-rogue) — Tom's Hardware
 - [Anthropic's definition of safety is too narrow](https://jonathannen.com/anthropic-safety-too-narrow/) — Jonathan Nen
 
 ## 時序
+
+### 2026-05-12
+- **[安全警示] 假冒 Claude Code 安裝包惡意攻擊多媒體確認**：Yahoo Tech、CSO Online、The Register 同步報導偽裝成 Claude Code 官方安裝程式的惡意軟體攻擊，利用 IElevator 機制竊取瀏覽器 Cookie 與開發者憑證；此為與 2026-05-10 Google 搜尋廣告木馬不同的獨立攻擊向量，兩種向量並存顯示攻擊者正系統性布局所有 Claude Code 安裝路徑
+- **[研究發現] 首個 AI 驅動硬體 Fault Injection 攻擊（ESP32 Secure Boot）**：Raelize 研究團隊公開讓 Claude Code 自主完成 ESP32 SoC Secure Boot 旁路攻擊，全程無人工程式碼，是 AI Agent 自主進行硬體安全研究的首個公開記錄案例；攻擊自主性展示了 AI 正在降低高技術硬體攻擊的進入門檻
+- **[服務中斷] Claude AI 三天內第二次中斷**：Anthropic 確認此次與前次為獨立事故；連續中斷在 Code with Claude 大會剛結束的節點更顯敏感，引發服務穩定性質疑
 
 ### 2026-05-10
 - **[供應鏈攻擊] Google 搜尋 Claude Code 廣告中出現木馬仿冒網站**：Google 廣告位置的仿冒 Claude 官方網站透過 PowerShell 安裝指令植入 Trojan:Win32/Kepavll!rfn，已有 Windows 用戶中招；攻擊利用廣告排名高於官網的機制，是 AI 工具正式成為主流供應鏈攻擊目標的標誌性案例

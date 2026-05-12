@@ -2,13 +2,13 @@
 
 **狀態：** ongoing
 **開始日期：** 2026-04
-**最後更新：** 2026-05-07
+**最後更新：** 2026-05-12
 
 ---
 
 ## 摘要
 
-Claude Code 已成為 AI 輔助編碼領域的標竿產品，但競爭正在快速升溫。最值得關注的是 Google 聯合創辦人 Sergey Brin 親自主導的內部計畫，目標是打造一款直接對標 Claude Code 的工具。2026-05-04 新發展：Anthropic 已悄悄讓 Claude Desktop/Cowork 支援任意第三方 LLM（OpenAI、Gemini、本地模型、企業閘道），競爭格局從「Claude vs. others」正在轉向「Claude 作為多模型接入層」；Claude Connectors 同期擴展至創意工作軟體（Adobe、Blender、Ableton 等），正式進入 Figma 等工具的競爭版圖。**2026-05-05 重大警示**：OpenAI Codex 在 4/30 發布 v0.128.0 後單週下載量暴增 1397%（達 8,610 萬次），同期 Claude Code 下滑 38%（720 萬次），是自 Claude Code 崛起以來最明顯的市場份額競爭壓力訊號，需持續追蹤走勢。**2026-05-06**：以 DeepSeek 為基礎的 Claude Code clone 迅速累積 8,700 GitHub Stars，同期出現聲稱可降低 17 倍成本的 DeepClaude 開源替代方案，低成本替代生態正加速形成；社群對 Claude Code 功能認可與對其定價反彈的雙重壓力，正同步催生開源替代生態。
+Claude Code 已成為 AI 輔助編碼領域的標竿產品，但競爭正在快速升溫。最值得關注的是 Google 聯合創辦人 Sergey Brin 親自主導的內部計畫，目標是打造一款直接對標 Claude Code 的工具。2026-05-04 新發展：Anthropic 已悄悄讓 Claude Desktop/Cowork 支援任意第三方 LLM（OpenAI、Gemini、本地模型、企業閘道），競爭格局從「Claude vs. others」正在轉向「Claude 作為多模型接入層」；Claude Connectors 同期擴展至創意工作軟體（Adobe、Blender、Ableton 等），正式進入 Figma 等工具的競爭版圖。**2026-05-05 重大警示**：OpenAI Codex 在 4/30 發布 v0.128.0 後單週下載量暴增 1397%（達 8,610 萬次），同期 Claude Code 下滑 38%（720 萬次），是自 Claude Code 崛起以來最明顯的市場份額競爭壓力訊號，需持續追蹤走勢。**2026-05-06**：以 DeepSeek 為基礎的 Claude Code clone 迅速累積 8,700 GitHub Stars，同期出現聲稱可降低 17 倍成本的 DeepClaude 開源替代方案，低成本替代生態正加速形成；社群對 Claude Code 功能認可與對其定價反彈的雙重壓力，正同步催生開源替代生態。**2026-05-12 新數據**：逾 **157,000 名開發者**已轉向 OpenCode 作為對沖 Anthropic 依賴的備案，即便 Code with Claude 大會宣佈倍增速率限制，供應商鎖定顧慮仍推動開源替代選擇，是目前最具體的競品分流量化數據。
 
 ---
 
@@ -26,9 +26,10 @@ Claude Code 已成為 AI 輔助編碼領域的標竿產品，但競爭正在快�
 - **差異**：以 OpenAI 生態為核心；社群已有工具（claude-anyteam）讓 Codex 加入 Claude Code Agent Teams
 
 ### OpenCode
-- **狀態**：Active（開源替代方案）
+- **狀態**：Active（開源替代方案，快速成長）
 - **定位**：開源替代 Claude Code，XDA 評測指出功能與使用體驗與 Claude Code 相當
-- **意義**：為不願受限於 Anthropic 訂閱政策（OpenClaw 禁令、Pro/Max 第三方工具限制）的開發者提供具體可行的替代方案；OpenCode-power-pack 已將 Anthropic 官方 11 個技能移植至此平台
+- **用戶規模**：2026-05-12 The New Stack 報導，已有逾 **157,000 名開發者**轉向 OpenCode 以對沖對 Anthropic 的依賴，即便 Code with Claude 大會宣佈倍增速率限制、移除尖峰降速、簽下 SpaceX Colossus 1（22 萬張 Nvidia GPU）算力協議，社群對單一供應商鎖定的結構性顧慮仍未消散
+- **意義**：為不願受限於 Anthropic 訂閱政策（OpenClaw 禁令、Pro/Max 第三方工具限制）的開發者提供具體可行的替代方案；OpenCode-power-pack 已將 Anthropic 官方 11 個技能移植至此平台；157K 開發者數字是 Claude Code 崛起後最具體的競品分流數據
 
 ### Cursor / Windsurf
 - **狀態**：Active
@@ -77,9 +78,16 @@ Claude Code 已成為 AI 輔助編碼領域的標竿產品，但競爭正在快�
 - [[news/2026-05-05]]
 - [[news/2026-05-06]]
 - [[news/2026-05-07]]
+- [[news/2026-05-12]]
 - [India Today 報導](https://www.indiatoday.in/technology/news/story/google-is-secretly-building-a-claude-code-challenger-sergey-brin-is-personally-involved-2899415-2026-04-21)
 
 ## 時序
+
+### 2026-05-12
+- **[OpenCode 157K 開發者里程碑]**：The New Stack 報導逾 15.7 萬名開發者轉向 OpenCode 作為備案，即便 Anthropic 在 Code with Claude 大會宣佈倍增速率限制與 Opus 配額，平台鎖定（vendor lock-in）的結構性顧慮仍是驅動開源替代選擇的主因
+- **[UiPath 開放平台整合]**：RPA 龍頭 UiPath 宣布開放平台給所有 AI 編程 Agent，優先整合 Claude Code 與 OpenAI Codex，顯示企業自動化市場正將 AI 編碼工具視為核心組件；Claude Code 藉此進入 RPA/企業流程自動化的生態版圖，是繼 Amazon 全員部署（2026-05-05）之後的另一個大型企業整合案例
+- **[Signadot Kubernetes 整合]**：Signadot 推出讓 Claude Code、Codex 與 Cursor 直接在真實 Kubernetes 環境驗證程式碼變更的新技能，代表 AI 編程工具的競爭正從「寫程式」延伸至「生產環境驗證」的更廣泛開發生命週期
+- **[Claude Code 生態系工具爆發（社群）]**：同一天湧現 BrowserCode（WebAssembly 瀏覽器版）、HiveTerm（多 Agent 工作站）、Writ（Neo4j 規則強制執行）、Usage4Claude 3.0.0（含 Codex 追蹤）等社群工具；生態系擴張速度加快，進一步提高 Claude Code 的轉換成本
 
 ### 2026-05-07
 - **DeepSeek V4 替換 Claude Opus 4 的 30 天實測**：開發者在 Claude Code 框架中以 DeepSeek V4 取代 Claude Opus 4，進行 30 天、1 億 token 的成本與品質對比測試，為追求降低費用的開發者提供具體量化數據，社群尚待進一步驗證結論可靠性
