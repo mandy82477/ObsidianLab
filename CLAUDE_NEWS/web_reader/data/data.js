@@ -34,7 +34,7 @@ window.WIKI_DATA = {
       "pill": "active",
       "firstSeen": "2025（正式推出）",
       "startDate": "",
-      "lastUpdated": "2026-05-11",
+      "lastUpdated": "2026-05-12",
       "summary": "Claude Code 是 Anthropic 的 AI 編碼 CLI 工具，支援 agentic 工作流程、MCP Server 整合、Hooks 機制與 Agent Teams。目前為最受開發者關注的 AI 編碼工具之一。近期接連出現效能退步事件（已承認工程疏失）、HERMES.md 靜默計費 bug、API 金鑰…"
     },
     {
@@ -82,7 +82,7 @@ window.WIKI_DATA = {
       "pill": "active",
       "firstSeen": "2026-04-28",
       "startDate": "",
-      "lastUpdated": "2026-05-11",
+      "lastUpdated": "2026-05-12",
       "summary": "Anthropic Managed Agents 是 Claude Platform 上的官方 Agent 框架，提供持久記憶、多路並行執行與可驗證輸出等功能。2026-04-28 首次加入跨會話記憶功能（正式公告）；2026-04-30 推出公開測試版，Anthropic 定位為「agentic AI 的 AWS」。…"
     },
     {
@@ -130,7 +130,7 @@ window.WIKI_DATA = {
       "pill": "active",
       "firstSeen": "",
       "startDate": "",
-      "lastUpdated": "2026-05-11",
+      "lastUpdated": "2026-05-12",
       "summary": ""
     },
     {
@@ -156,7 +156,7 @@ window.WIKI_DATA = {
       "pill": "active",
       "firstSeen": "",
       "startDate": "2026-04-27",
-      "lastUpdated": "2026-05-10",
+      "lastUpdated": "2026-05-12",
       "summary": "隨著 AI agent 被賦予更高自主性與系統操作權限，安全事故與防護工具同步出現。2026-04-28 的資料庫刪除事件是迄今最具代表性的 AI agent 失控案例，引發業界對自主 AI 工具操作安全防護的緊迫討論。 ---"
     },
     {
@@ -192,7 +192,7 @@ window.WIKI_DATA = {
       "pill": "active",
       "firstSeen": "",
       "startDate": "2026-04-25",
-      "lastUpdated": "2026-05-11",
+      "lastUpdated": "2026-05-12",
       "summary": "追蹤 Claude Code 社群在實際開發中累積的技術應用模式、工作流創新與工具生態。每次 ingest 從「💬 技術熱度討論」區塊萃取有價值的技術發現，持續累積形成社群最佳實踐知識庫。 ---"
     },
     {
@@ -204,7 +204,7 @@ window.WIKI_DATA = {
       "pill": "active",
       "firstSeen": "",
       "startDate": "2026-04",
-      "lastUpdated": "2026-05-07",
+      "lastUpdated": "2026-05-12",
       "summary": "Claude Code 已成為 AI 輔助編碼領域的標竿產品，但競爭正在快速升溫。最值得關注的是 Google 聯合創辦人 Sergey Brin 親自主導的內部計畫，目標是打造一款直接對標 Claude Code 的工具。2026-05-04 新發展：Anthropic 已悄悄讓 Claude Desktop/Cow…"
     },
     {
@@ -221,6 +221,12 @@ window.WIKI_DATA = {
     }
   ],
   "digestIndex": [
+    {
+      "date": "2026-05-12",
+      "articleCount": 45,
+      "preview": "Agent View in Claude Code",
+      "topCount": 3
+    },
     {
       "date": "2026-05-11",
       "articleCount": 21,
