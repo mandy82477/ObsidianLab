@@ -2,7 +2,7 @@
 
 LLM 查詢此 wiki 時，**先讀這個檔案**找相關頁面，再讀具體頁面取得詳細資訊。
 
-**最後更新：** 2026-05-13 | **頁面數：** 21
+**最後更新：** 2026-05-13（lint）| **頁面數：** 21
 
 ---
 
@@ -38,10 +38,10 @@ LLM 查詢此 wiki 時，**先讀這個檔案**找相關頁面，再讀具體頁
 |------|------|------|
 | [[topics/code-quality-decline]] | monitoring | Claude Code 效能退步事件，Anthropic 已承認工程疏失 |
 | [[topics/google-investment]] | resolved | ⚠️ 已遷移至 [[entities/google-investment]] |
-| [[topics/competitor-landscape]] | ongoing | Google 祕密開發競品，Sergey Brin 主導 |
-| [[topics/community-tech-patterns]] | ongoing | 社群技術應用趨勢：multi-agent、skills 設計、工具生態 |
-| [[topics/ai-agent-safety]] | ongoing | AI agent 安全事故與防護機制：資料庫刪除事件、沙盒隔離、操作確認 |
-| [[topics/anthropic-government-policy]] | ongoing | Anthropic 政府與軍事政策：五角大廈排除事件、安全護欄堅持、白宮重啟談判 |
+| [[topics/competitor-landscape]] | ongoing | Google 祕密開發競品 + OpenCode 157K 分流 + DeepSeek clone 低成本替代生態 |
+| [[topics/community-tech-patterns]] | ongoing | 社群技術應用趨勢：multi-agent、skills 設計、工具生態（70+ 工具）|
+| [[topics/ai-agent-safety]] | ongoing | AI agent 安全：假冒安裝包 + AI 生成程式碼 90% 漏洞 + CVE-2026-39861 + 資料庫刪除事件 |
+| [[topics/anthropic-government-policy]] | monitoring | Anthropic 政府與軍事政策：五角大廈排除事件、安全護欄堅持、白宮重啟談判（11 天無新進展）|
 
 ---
 

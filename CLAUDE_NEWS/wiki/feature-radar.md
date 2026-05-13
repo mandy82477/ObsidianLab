@@ -3,7 +3,7 @@
 追蹤 Claude / Claude Code 每個新發布功能的社群熱度、試用價值與快速上手方式。
 每次 ingest 後由 LLM 維護：新增功能、更新熱度、補充社群回饋。
 
-**最後更新：** 2026-05-13
+**最後更新：** 2026-05-13（含 5/13 ingest 更新）
 
 ---
 
@@ -76,6 +76,8 @@ claude agents
 
 **社群反應：** 初步正面，但部分使用者仍偏好 mux0 / Nimbalyst 等社群工具提供的更細緻控制。
 
+**v2.1.140 補充（2026-05-13）：** `subagent_type` 現在支援大小寫不敏感及分隔符號不敏感匹配（`"Code Reviewer"` → `code-reviewer`），進一步降低多代理配置摩擦。
+
 ---
 
 ### Managed Agents — 官方多代理托管框架
@@ -126,6 +128,8 @@ const task = await client.managedAgents.tasks.create({
 ```
 
 **社群關鍵洞察：** 自建 multi-agent 開發者指出「任務簡報（brief）的撰寫品質才是系統成敗的核心」，非框架選擇。官方托管 vs 社群自組架構差距仍在社群持續比較中。
+
+**2026-05-13 更新：** Boris Cherny 公開每晚讓**數千個 AI 子代理**執行「深度工作」的工作流（白天設框架 → 夜間數千子代理並行深入研究 → 早上整合），被 Business Insider 主流媒體報導。這是 Managed Agents 20 路並行能力的極端個人應用案例，也驗證了官方工具正在降低大規模子代理配置的摩擦（v2.1.140 的 `subagent_type` 不敏感匹配）。
 
 **相關頁面：** [[entities/managed-agents]]
 
@@ -215,7 +219,7 @@ Claude Code / Claude Cowork 可直接控制 macOS 桌面滑鼠與鍵盤，從純
 | macOS Computer Use | 2026-05-03 | 🔥🔥🔥 | ✅ 推薦 | 正式發布 |
 | Claude Code Sandboxing | 2026-05-10 | 🔥🔥🔥 | ⚡ 有條件 | 正式發布 |
 | 操作安全 + `hard_deny` | 2026-05-09 | 🔥🔥🔥 | ✅ 推薦 | 正式發布 |
-| Claude Security（公開 Beta） | 2026-05-06 | 🔥🔥 | ⏳ 觀望 | 公開測試 |
+| Claude Security（公開 Beta） | 2026-05-06 | 🔥🔥🔥 | ⚡ 有條件推薦 | 公開測試 |
 | Claude Connectors 創意工作 | 2026-05-04 | 🔥🔥 | ⚡ 有條件 | 正式發布 |
 | MCP `alwaysLoad` | 2026-04-28 | 🔥🔥 | ✅ 推薦 | 正式發布 |
 | `worktree.baseRef` 設定 | 2026-05-08 | 🔥 | ⚡ 有條件 | 正式發布 |

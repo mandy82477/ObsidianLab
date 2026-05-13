@@ -5,6 +5,27 @@ Append-only 紀錄。每次 ingest、query 或 lint 都在此追加一條。
 
 ---
 
+## 2026-05-13 Lint
+
+- 修正矛盾：
+  - `overview.md`：全面重寫（反映 2026-05-08 至 2026-05-13 共 5 天重大事件，原版停在 2026-05-08）；新增「功能試用推薦」快速查閱表格；更新競品數據（157K OpenCode）、算力到位（SpaceX Colossus 1）、安全事件（假冒安裝包 + 90% 漏洞評測）
+- 補連結：
+  - `entities/claude-security.md` → 新增頂部 feature-radar 熱度標籤（🔥🔥🔥 / ⚡）與 [[feature-radar]] 連結
+  - `wiki/overview.md` → 在社群工具生態與功能試用推薦區塊補上 [[feature-radar]] 連結（共 2 處）
+  - `topics/community-tech-patterns.md` → 確認已有 [[entities/claude-design]] 連結（lint 前已正確）
+- 狀態更新：
+  - `topics/anthropic-government-policy.md`：`ongoing` → `monitoring`（2026-05-02 至今 11 天無新進展，白宮談判狀態不明）
+- 遷移至 entities：無
+- 新增 entities：無（掃描所有頁面，無未建頁面被提及 3+ 次的新名稱）
+- feature-radar.md 更新：
+  - Agent View 條目補充 v2.1.140 `subagent_type` 不敏感匹配改善
+  - Managed Agents 條目補充 Boris Cherny 數千子代理工作流（2026-05-13）
+  - Claude Security 試用價值升級：⏳ 觀望 → ⚡ 有條件推薦（AI 生成程式碼 90% 漏洞評測確認資安審查需求，熱度 🔥🔥 → 🔥🔥🔥）
+  - 全覽表 Claude Security 欄同步更新
+- overview.md：已全面重寫（反映 2026-04-25 至 2026-05-13 局勢，含 agentic AI 生產化加速、安全信任多點爆發、分流訊號具體化）
+
+---
+
 ## 2026-05-13 Ingest
 
 - 來源日報：[[news/2026-05-13]]

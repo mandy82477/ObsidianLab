@@ -9,7 +9,44 @@
 
 ## 現況
 
-Claude Code 是 Anthropic 的 AI 編碼 CLI 工具，支援 agentic 工作流程、MCP Server 整合、Hooks 機制與 Agent Teams。目前為最受開發者關注的 AI 編碼工具之一。近期接連出現效能退步事件（已承認工程疏失）、HERMES.md 靜默計費 bug、API 金鑰外洩漏洞、Auto Compact 失效等問題，安全性與可靠性受到集中審視。v2.1.121 新增 MCP `alwaysLoad` 選項，Runhouse 團隊透過股權收購加入 Anthropic 以強化 agentic 基礎架構。2026-05-03 加入 macOS 電腦使用（computer use）功能，Claude Code 與 Claude Cowork 均可直接控制 macOS 桌面的滑鼠與鍵盤，從純程式碼助理擴展為全桌面自動化代理。2026-05-04 重大事件：Anthropic 因人為疏失導致 Claude Code 原始碼外洩，已向各平台發出逾 8,100 次 DMCA 下架請求，引發 AI 生成程式碼版權歸屬的法律辯論，社群分支「Claw-Code」隨之誕生；社群亦發現 Claude Cowork/Desktop 悄悄支援任意第三方 LLM（OpenAI、Gemini、本地模型、企業閘道 Bedrock/Vertex/Foundry），無任何官方公告；Claude Connectors 透過 MCP 擴展至創意工作軟體（Adobe、Blender、Ableton、Affinity、Autodesk Fusion）。2026-05-05 重大進展：Amazon 正式向全體企業員工推出 Claude Code（與 OpenAI Codex 並行），成為大型企業雙品牌 AI 編碼工具並行部署的首例；v2.1.128 發布（`/color` 隨機配色、`/mcp` 顯示各伺服器工具數量）。Claude Code 創始人 Boris Cherny 在 podcast 中宣示「Loops（迴圈執行）是 AI 編碼的未來」，首次公開闡明 Claude Code 的設計哲學核心。2026-05-06 新進展：v2.1.128/129 自動推送至 VS Code 後造成 Windows 用戶 extension 完全無法啟動的嚴重 regression（createRequire polyfill hardcoded build path + Mantle endpoint 認證失效），v2.1.131 已緊急修復，數小時內即回應大量 Reddit 回報；Claude Code 累積 GitHub Stars 達 121,000，成為 AI coding assistant 中增長最具話題性的案例；Python SDK v0.99.0 與 TypeScript SDK v0.94.0 同步發布，新增 workspace 定向功能；Claude Security 從封閉預覽移至公開 Beta，開發者現可在 Claude Code 工作流中直接使用 AI 驅動安全審查功能。Boris Cherny 再次公開宣示「軟體工程已死」，強調 Anthropic 內部已無傳統軟體工程師職位，引發業界廣泛論戰。2026-05-07 重大進展：Anthropic 在「Code with Claude」開發者大會上宣布 Managed Agents 重大升級，包含「Dreaming」記憶整合機制（Agent 在任務間隙自動鞏固記憶）、最高 20 路子代理並行，以及 Outcomes 規格驗證功能，標誌 Agent 框架正式邁向有狀態生產級設計；Python SDK v0.100.0 與 TypeScript SDK v0.95.0 同步新增 Managed Agents 原生支援（見 [[entities/managed-agents]]）。Anthropic 同日宣布與 SpaceX 達成算力合作，即日起 Claude Code Pro/Max 用戶五小時視窗速率上限翻倍、取消尖峰時段降速，API Tier 4+ 用戶速率限制同步提升。v2.1.132 新增 `CLAUDE_CODE_SESSION_ID` 環境變數至 Bash 工具子行程（hooks 可追蹤當前 session）及 `CLAUDE_CODE_DISABLE_ALTERNATE_SCREEN` 選項。研究者透過 wire trace 截獲 Claude Code 完整系統提示（約 13,000 字），發現 MCP 插件大幅佔用 context window，且「Auto 模式」的權限控制僅是提示詞層面機制，並非底層沙箱強制約束；Claude Code 透過 AWS Bedrock 接入時再次出現功能異常，新功能同步落差問題持續存在。2026-05-08 重大事件：CVE-2026-39861（CVSS 7.7）沙箱逃逸漏洞曝光，攻擊者可透過符號連結（symlink）將檔案寫入工作區目錄以外，已在 v2.1.64 修補，所有舊版用戶應立即升級；同時 Anthropic 對「一鍵 RCE」信任提示問題的公開回應被社群概括為「不應該點確認」，責怪使用者的態度在兩則安全負面消息同日上版的背景下引爆批評，品牌可信度面臨雙重壓力；社群更諷刺 Anthropic 自家宣傳的頂級安全模型 Mythos 事先未能偵測到自身產品漏洞。v2.1.133 同日發布，新增 `worktree.baseRef` 設定（`fresh` | `head`），讓使用者可控制 `--worktree`、`EnterWorktree` 及代理隔離工作樹要從 `origin/<default>` 分支還是本地 `HEAD` 建立。Boris Cherny 在「Code with Claude」大會宣稱「寫程式問題已被解決」並表示厭倦「vibe coding」一詞，言論在 Business Insider、HN、YouTube 等多平台引發廣泛討論，社群反應兩極。Claude Cowork 的 Linux 沙箱持續無法啟動（帳號層級隱性故障），Anthropic 狀態頁顯示正常但問題仍在，暫無官方回應。Claude Sonnet 4.8 外洩資訊出現（Geeky Gadgets 報導），暗示下一代 Sonnet 可能即將到來，官方尚未確認。2026-05-09 新事件：Claude Code IDE 擴充套件（VS Code 等）於 UTC 00:24 爆發 Windows 全面無法載入事件，根本原因為更新版本將 Linux 路徑硬編碼進套件，官方已確認並在狀態頁追蹤，受影響用戶可先降版暫時解決，為繼 v2.1.128/129（2026-05-06）後的第二次 Windows 平台重大相容性事故。v2.1.136 系統提示大幅更新（+525 tokens），新增「操作安全與如實回報」機制：不可逆或對外操作須先獲授權確認、刪除前需檢視目標、必須如實回報跳過的步驟與未通過的測試；代理自訂規則新增 `hard_deny` 類別（無條件安全邊界封鎖），縮小 `soft_deny` 適用範圍，是 Anthropic 在自主代理行為規範上的實質性收緊，影響所有依賴自主授權的工作流。v2.1.138 發布，僅含內部修正（internal fixes），無功能層面變更。2026-05-10 重要發現：社群透過逆向工程 Claude CLI 原始碼發現，CLAUDE.md 的內容被包裹在 `<system-reminder>` 標籤中並附加「this context may or may not be relevant to your tasks」提示，意即 Claude 有充分理由主動略過其中指令，而非將其視為強制性系統提示詞；此架構設計直接解釋了開發者長期回報的「CLAUDE.md 指令被忽略」問題，Anthropic 尚未正式回應此設計決策。Anthropic 同日發布 Claude Code Sandboxing 功能正式文件，說明如何透過 OS 層級原語（primitives）對沙箱化 bash 工具實施檔案系統與網路隔離，核心設計是在 session 開始時預先定義操作邊界，讓 Claude Code 在邊界內自由執行並縮小意外破壞的半徑。Google 搜尋「claude code」的第一筆廣告結果出現仿冒官方網站並植入木馬（Trojan:Win32/Kepavll!rfn），一名資深用戶在 Windows 上中招，此事件凸顯 AI 工具正成為供應鏈攻擊的新目標；另有社群開源工具「Lobotomized Claude Code」針對特定版本進行本機 patch，Anthropic 顯然不鼓勵此類修改，未來可能觸發封號或促使更多邏輯移至伺服器端保護。2026-05-11 社群討論焦點：Managed Agents 本週正式發布，官方托管多代理方案與社群自組架構的邊界開始重新定義；Claude Code Desktop 與 Claude Cowork 定位混淆問題浮上檯面——桌面版推出後兩款產品功能高度重疊，用戶呼籲 Anthropic 釐清差異；插件生態持續密集爆發，包括多代理 PR review 工具 adamsreview（宣稱比官方 /review、/ultrareview、CodeRabbit 及 Greptile 捕捉更多 bug）、每日工作回顧插件 vibe-log-cli、學術研究技能包 academic-research-skills 等相繼問世。2026-05-12 重大發布：**v2.1.139** 同時推出兩項關鍵功能——**Agent View**（Research Preview）提供統一面板管理所有並行 Claude Code 工作階段的即時狀態（執行中 / 等待輸入 / 已完成），執行 `claude agents` 即可啟用；**`/goal` 指令**讓用戶設定可驗證的完成條件後，每輪執行結束由一個小型快速模型自動判斷條件是否成立、未達成則自動開始下一輪，實現真正的 fire-and-forget 自動化工作流（適用於模組遷移、測試全通過等有明確終態的長時間任務），此版本包含 104 項變更。安全警示：多家資安媒體（Yahoo Tech、CSO Online、The Register）同步報導假冒 Claude Code 官方安裝包惡意軟體攻擊，攻擊者透過 IElevator 機制竊取開發者瀏覽器 Cookie 與機密憑證，請務必僅從 GitHub 官方來源（`github.com/anthropics/claude-code`）安裝；Claude AI 在三天內再度發生服務中斷（第二次獨立事故），在 Code with Claude 大會剛結束的節點更顯敏感，見 [[topics/ai-agent-safety]]。產業整合：UiPath 宣布開放 RPA 平台給所有 AI 編程 Agent，優先整合 Claude Code 與 OpenAI Codex，顯示企業自動化市場正將 AI 編碼工具視為核心組件；Signadot 推出讓 Claude Code 直接在真實 Kubernetes 環境驗證程式碼變更的新技能。社群重要討論：研究團隊（Raelize）首度公開記錄讓 Claude Code 自主重現 ESP32 SoC Secure Boot 硬體故障注入（Fault Injection）攻擊的全過程，是 AI 驅動硬體安全漏洞探索的里程碑案例；在大型專案使用 Claude Code 的主要瓶頸被確認是 Context 管理——LLM attention 機制在缺乏系統全貌時生成「看起來正確但邏輯有誤」的程式碼，非單純程式碼品質問題；逾 15.7 萬名開發者轉向開源替代方案 OpenCode 以對沖對 Anthropic 的依賴，即便 Code with Claude 大會宣佈倍增速率限制與 Opus 配額，社群對單一供應商鎖定的顧慮仍未消散。2026-05-13 重大報導：Claude Code 創始人 Boris Cherny 公開每晚讓數千個 AI 子代理執行「深度工作」的工作流架構，被 Business Insider 與 Let's Data Science 同步報導，成為本週最受矚目的 agentic AI 使用案例，也是其「Loops 是未來」哲學的極端實踐；見 [[entities/boris-cherny]]。**v2.1.140** 發布，改善 Agent 工具的 `subagent_type` 參數匹配邏輯，現支援大小寫不敏感及分隔符號不敏感的輸入（例如 `"Code Reviewer"` 可自動解析為 `code-reviewer`），並同步更新代理顏色配色方案。代理提示詞已更新，要求在上下文摘要時完整保留安全相關指令（禁止操作規則、憑證處理規範等），確保 context 壓縮後安全約束仍然生效。PullMD v2.4.1 正式支援 claude.ai 網頁版自訂連接器原生整合，兩週內已連續發布 7 個版本（v1.1.3 → v2.4.1）。安全警示：研究者以靜態分析工具掃描 48 個由 Lovable、Bolt、Replit 等 AI 生成工具構建的公開應用程式，發現 90% 存在安全漏洞（44% 驗證缺口、33% 可繞過 Row-Level Security 的 Postgres 函式、25% BOLA/IDOR），挑戰「AI 快速開發即可上線」的假設；Claude Code 開發者應將安全審查納入標準 PR 流程，見 [[topics/ai-agent-safety]]。
+Claude Code 是 Anthropic 的 AI 編碼 CLI 工具，支援 agentic 工作流程、MCP Server 整合、Hooks 機制與多代理協作框架（Managed Agents）。截至 2026-05-13，GitHub Stars 達 121,000，是增長最受開發者關注的 AI 編碼助理之一。最新版本為 **v2.1.140**，核心能力已從純程式碼助理擴展為具備全桌面自動化、多代理管理與 AI 安全審查的完整開發平台。
+
+### 最新版本
+
+| 版本 | 日期 | 重點 |
+|------|------|------|
+| **v2.1.140** | 2026-05-13 | `subagent_type` 大小寫／分隔符號不敏感匹配；代理配色更新 |
+| **v2.1.139** | 2026-05-12 | ★ Agent View（多 session 統一管理）+ `/goal`（fire-and-forget，104 項變更）|
+| **v2.1.136** | 2026-05-09 | 操作安全機制（+525 tokens）；`hard_deny` 無條件安全邊界 |
+| **v2.1.133** | 2026-05-08 | `worktree.baseRef` 設定（`fresh` \| `head`）|
+| **v2.1.132** | 2026-05-07 | `CLAUDE_CODE_SESSION_ID`；`CLAUDE_CODE_DISABLE_ALTERNATE_SCREEN` |
+| **v2.1.131** | 2026-05-06 | 緊急修復 Windows VS Code extension 全面無法啟動 |
+| **v2.1.128** | 2026-05-05 | `/color` 隨機配色；`/mcp` 顯示各伺服器工具數量 |
+| **v2.1.126** | 2026-05-02 | `/model` 從 gateway `/v1/models` 列出；`claude project purge` |
+| **v2.1.124** | 2026-04-30 | 系統提示新增預算超出提醒機制（+166 tokens）|
+| **v2.1.121** | 2026-04-28 | MCP `alwaysLoad` 選項；`claude plugin prune` |
+
+### 近期重要更新
+
+**Agentic 能力擴展**
+- **Agent View**（v2.1.139，Research Preview）：統一面板管理所有並行 session 即時狀態（執行中 / 等待輸入 / 已完成），執行 `claude agents` 啟用；見 [[feature-radar]]
+- **`/goal` 指令**（v2.1.139）：設定可驗證的完成條件後自動迴圈執行——真正的 fire-and-forget 工作流（適合模組遷移、全測試通過等長任務）；見 [[feature-radar]]
+- **macOS Computer Use**（2026-05-03）：Claude Code / Claude Cowork 可直接控制 macOS 桌面滑鼠與鍵盤，升格為全桌面自動化代理
+- **Managed Agents 正式發布**（2026-05-11）：Dreaming 記憶整合、最高 20 路子代理並行、Outcomes 規格驗證；見 [[entities/managed-agents]]
+- **Boris Cherny 每晚數千子代理工作流**（2026-05-13）：「Loops 是未來」哲學的極端實踐，Business Insider 同步報導；見 [[entities/boris-cherny]]
+
+**安全與操作規範**
+- **`hard_deny` 規則**（v2.1.136）：無條件安全邊界封鎖，縮小 `soft_deny` 範圍；所有依賴自主授權的工作流均應重新評估
+- **Sandboxing 官方文件**（2026-05-10）：透過 OS 層級原語實施檔案系統與網路隔離，session 開始時預先定義操作邊界；見 [[topics/ai-agent-safety]]
+- **CVE-2026-39861**（CVSS 7.7）：symlink 沙箱逃逸漏洞，**已在 v2.1.64 修補**，所有舊版用戶應立即升級
+
+> ⚠️ **安裝安全警示**：Google 搜尋廣告曾出現仿冒官方安裝包（植入 Trojan:Win32/Kepavll!rfn），假冒包透過 IElevator 機制竊取瀏覽器 Cookie 與機密憑證，多家資安媒體同步報導。**務必僅從官方來源安裝：`github.com/anthropics/claude-code`**
+
+**開發者須知**
+- **CLAUDE.md 為 candidate-context**（2026-05-10 社群發現）：逆向工程發現 CLAUDE.md 以 `<system-reminder>` 包裹並附帶「may or may not be relevant」提示，直接解釋長期「指令被忽略」問題；Anthropic 尚未正式回應
+- **Claude Security 公開 Beta**（2026-05-06）：AI 驅動安全審查直接整合於 Claude Code 工作流，無需另行安裝；見 [[entities/claude-security]]
+- **Amazon 全體企業員工部署**（2026-05-05）：與 OpenAI Codex 並行雙品牌部署，大型企業標配開始
+- **原始碼外洩 DMCA 風波**（2026-05-04）：8,100+ 次下架請求，版權爭議持續，社群分支「Claw-Code」誕生
 
 ---
 
@@ -64,81 +101,117 @@ Claude Code 是 Anthropic 的 AI 編碼 CLI 工具，支援 agentic 工作流程
 
 ## 實用工具（社群開發）
 
-- **[CC-Canary](https://github.com/delta-hq/cc-canary)** — 讀取 `~/.claude/projects/` JSONL log 偵測效能漂移
-- **[claude-anyteam](https://github.com/JonathanRosado/claude-anyteam)** — 讓 Codex/Gemini 加入 Agent Teams
-- **[Claude Code Manager](https://claude.ldlework.com/)** — Web UI 集中管理 CLAUDE.md、hooks、skills
+75+ 社群工具，依功能分類如下。
+
+### 多 Agent 管理與視覺化
+
+管理多個並行 Claude Code 代理的工作站、視覺化介面與協作框架。
+
+- **[claude-anyteam](https://github.com/JonathanRosado/claude-anyteam)** — 讓 Codex/Gemini 加入 Agent Teams，打破官方僅限 Claude 實例的限制
 - **[Claude Squad](https://www.reddit.com/r/ClaudeAI/comments/1svmpkv/)** — 多人協作編碼，每人以自己的 Claude Code 作為 agent，orchestrator 分派平行任務並合併分支
 - **[mux0](https://mux0.com/)** — 開源 macOS 終端機，側邊欄即時顯示多 agent 執行狀態（running / idle / needs input）
-- **[agent-order](https://github.com/btahir/agent-order)** — 讓 Codex 與 Claude 各自寫 PRD 再互相批判，避免答案向先開口方塌縮
-- **[EvanFlow](https://github.com/evanklem/evanflow)** — TDD 驅動的 Claude Code 迭代迴圈，16 個技能 + 2 個子代理人，每步驟設有人工確認節點，不自動 commit
-- **[Relay](https://github.com/basegraphhq/relay-plugin)** — 強制 Claude Code 在寫程式前深入對齊問題定義的插件，將 Plan Mode 的提問層級從「實作細節」拉升至「問題本質」（MIT 授權）
-- **[pentest-ai-agents](https://github.com/evanklem/pentest-ai-agents)** — 28 個專為滲透測試設計的 Claude Code 子代理人，資安工作流程整合
-- **[modularity](https://github.com/vladikk/modularity)** — 架構層級插件，採用 Balanced Coupling 模型分析軟體模組化設計，防止 AI 加速代碼生成的同時技術債累積速度加快
-- **[Rapunzel](https://github.com/salmanjavaid/rapunzel)** — 樹狀標籤頁「代理人瀏覽器」，集中管理 Claude Code / Codex / Gemini 多個同時運行的 AI 代理
-- **[SmolVM](https://github.com/CelestoAI/SmolVM)** — 本機沙盒環境，讓 Claude Code / Codex 在完全隔離的容器中執行，保護宿主系統，單指令啟動
-- **[Groundtruth](https://github.com/vnmoorthy/groundtruth)** — Stop Hook，強制 Claude Code 在宣告「完成」前提供可驗證的執行證明，解決自信宣稱成功但實際未驗證的問題
-- **[OpenCode-power-pack](https://github.com/waybarrios/opencode-power-pack)** — 將 Anthropic 官方 11 個 Claude Code 技能移植至 OpenCode，打破工具平台綁定
-- **[PullMD](https://www.reddit.com/r/ClaudeAI/comments/1sxzlh6/pullmd_gave_claude_code_an_mcp_server_so_it_stops/)** — MCP server，抓取網頁時先將 HTML 轉換為乾淨 Markdown，避免浪費 token 處理 cookie banner 等無用內容（一般文章有效內容僅佔原始 HTML 約 20%）
-- **[Cockpit](https://github.com/alexjbarnes/cockpit)** — 開源 Web UI，讓使用者不再受限於終端機環境操作 Claude Code
 - **[Harness](https://github.com/frenchie4111/harness)** — 在多個 Git worktree 上並行管理多個 Claude Code agent，作者對現有工具（cmux、Conductor）不滿而自行開發
-- **[CodeThis](https://codethis.dev/)** — MCP 原生 paste bin，支援 100+ 語言語法高亮，AI 可透過 MCP server 直接建立貼文；免費版含 REST API 與 MCP，Pro 方案 $9/月
-- **[Claude Exporter](https://chromewebstore.google.com/detail/claude-exporter-claude-ch/mhckealbblinipeplfddmbcohdidkfjf)** — Chrome 擴充功能，可將 Claude 對話匯出為 PDF、Word、Google Docs 或 Notion，支援自訂字型，無需帳號
-- **[Throttle Meter](https://www.reddit.com/r/ClaudeAI/comments/1t0aw95/)** — macOS menubar 工具，從 `~/.claude/projects/*.jsonl` 即時計算 session 用量與週配額，無遙測，MIT 授權
+- **[Nimbalyst](https://github.com/Nimbalyst/nimbalyst)** — 多 Agent 視覺化工作台，支援 Claude Code/Codex/Opencode，含 WYSIWYG diff 逐一審核各 Agent 修改
+- **[HiveTerm](https://news.ycombinator.com/item?id=48102087)** — 多 Agent 工作站，在同一介面中管理多個 Claude Code Agent 工作階段，由 HN AI 編程工具痛點調研串帶出的社群工具
+- **[Agent FM](https://github.com/agentfm-ai/agent-fm)** — 本地開源工具，以「廣播」形式呈現 Claude Code 與 Codex Agent 的執行狀態，提供聽覺化（audio）工作進度回饋，MIT 授權
+- **[Rapunzel](https://github.com/salmanjavaid/rapunzel)** — 樹狀標籤頁「代理人瀏覽器」，集中管理 Claude Code / Codex / Gemini 多個同時運行的 AI 代理
+- **[unitmux](https://dev.to/ugo/unitmux-a-floating-desktop-app-for-claude-code-and-codex-in-tmux-54gn)** — tmux 環境下使用 Claude Code 時的懸浮視窗工具，讓輸入介面不干擾編輯器視角，改善多工作窗口的操作體驗
+- **[Claudette](https://utensils.io/claudette/)** — 開源桌面工具，讓每個 Claude Code agent 擁有獨立的 git worktree、session 與終端機，實現 speculative parallelism 工作流（多分支同時執行、無衝突切換）
+- **[Council](https://council.armstr.ng/)** — 開源 CLI，自動偵測系統上安裝的 claude、codex、gemini 並平行執行同一 prompt，最後由一個「主持人」模型彙整回答並標記分歧點；MIT 授權
+- **[Omar](https://omar.tech)** — TUI 儀表板，可在終端機統一管理大規模 Claude Code Agent 群（宣稱支援 100 個同時運行的 Agent），支援 Agent 層級化管理（類似公司組織架構）
+- **[Claudy（macOS session 管理版）](https://www.reddit.com/r/ClaudeAI/comments/1tbtpl2/i_built_a_native_macos_app_to_manage_claude_code/)** — 原生 macOS 應用，支援多 Claude Code 會話並列執行、達到用量上限時自動切換帳號、Draft Commit 工作快照以及 Marketplace 功能
+
+### 記憶與 Context 治理
+
+跨 session 的持久記憶、知識圖譜、架構決策記錄（ADR）與 context 注入工具。
+
+- **[NanoBrain](https://nanobrain.app/)** — git-backed Markdown 個人知識庫，透過 hook 在 session 結束時進行低延遲（< 50ms）append，整合 Gmail、Google Calendar、Slack 等資料來源定時匯入
+- **[Memex](https://memex-cli.vercel.app/)** — 透過本地 RAG 與離線 embedding 為 Claude 提供跨對話持久記憶，所有資料留存本機，以 MCP 方式接入，無需上傳雲端或額外 API 金鑰
 - **[Brifly](https://www.getbrifly.com/)** — Claude Code 持久記憶層，儲存專案架構知識讓 AI 跨 session 記住上下文，支援多人協作
 - **[Mneme](https://www.reddit.com/r/ClaudeAI/comments/1t0acsf/)** — repo-native CLI，將架構決策（ADR）存於程式碼庫旁並在 Claude 呼叫前自動注入，支援 CI 攔截違反架構的 PR
-- **[Nimbalyst](https://github.com/Nimbalyst/nimbalyst)** — 多 Agent 視覺化工作台，支援 Claude Code/Codex/Opencode，含 WYSIWYG diff 逐一審核各 Agent 修改
-- **[Trent](https://trent.ai/solutions/claude-code-security/)** — Claude Code 內嵌架構層安全評估，情境化判斷應用邏輯安全性，補足 CVE 掃描盲點
-- **[Omar](https://omar.tech)** — TUI 儀表板，可在終端機統一管理大規模 Claude Code Agent 群（宣稱支援 100 個同時運行的 Agent），支援 Agent 層級化管理（類似公司組織架構）
-- **[graphify](https://github.com/graphify-dev/graphify)** — Claude Code 插件，透過 Leiden 社群偵測建立程式碼知識圖譜，宣稱每次查詢可減少 71 倍 token 用量；26 天內達 450k+ 下載、40k stars（GitHub #2），社群發現非預期用途：SQL schema、Obsidian vault、學術論文
-- **[NanoBrain](https://nanobrain.app/)** — git-backed Markdown 個人知識庫，透過 hook 在 session 結束時進行低延遲（< 50ms）append，整合 Gmail、Google Calendar、Slack 等資料來源定時匯入；適合需要跨 AI Agent 共享長期知識的場景
-- **[Council](https://council.armstr.ng/)** — 開源 CLI，自動偵測系統上安裝的 claude、codex、gemini 並平行執行同一 prompt，最後由一個「主持人」模型彙整回答並標記分歧點；MIT 授權
+- **[ltm](https://www.reddit.com/r/ClaudeAI/comments/1tb0nwk/most_agentmemory_tools_are_markdown_you_keep/)** — 基於 JSON 協定（Core Memory Packet）的 Agent 記憶工具，設計目標是跨編輯器、跨機器、跨模型的供應商中立持久化記憶
+- **[Dreamer](https://www.reddit.com/r/ClaudeAI/comments/1t5cirj/)** — 開源專案，透過 MCP server 讓 agent 提交短期記憶，再由排程工作整合進長期記憶並更新 AGENTS.md 與 skills，靈感來自 Claude 的 dream mode，支援任意 coding agent
+- **[graphify](https://github.com/graphify-dev/graphify)** — Claude Code 插件，透過 Leiden 社群偵測建立程式碼知識圖譜，宣稱每次查詢可減少 71 倍 token 用量；26 天內達 450k+ 下載、40k stars；社群發現非預期用途：SQL schema、Obsidian vault、學術論文
+- **[obsidian-semantic](https://github.com/ravila4/obsidian-semantic-search)** — 讓 Claude Code 能以語義搜尋（而非 grep）使用 Obsidian 知識庫，支援 Ollama、LMStudio 本地模型及 Gemini API
+- **[Writ](https://www.reddit.com/r/ClaudeAI/comments/1tb047p/i_built_a_claude_code_plugin_that_actually/)** — 透過五階段 Neo4j 知識圖譜 Pipeline 自動擷取與當前任務相關的規則集，解決 Claude Code 常忽略 CLAUDE.md 規則的問題，同時避免無關規則佔用 token
+- **[draft CLI plugin](https://github.com/idodekerobo/draft-cli-plugin)** — 以 session-init hook 在每次 session 開始時自動注入結構化產品上下文摘要，解決跨 session 記憶歸零問題；不呼叫外部 API 或另跑模型
+- **[re_gent](https://github.com/regent-vcs/re_gent)** — 「Git for AI Agents」，將 git 版本控制概念套用至 AI 代理工作流，解決 `/compact` 後的歷史斷層與「代理何時刪除這個資料夾」的追溯問題
+- **[claude-smart](https://github.com/ReflexioAI/claude-smart)** — 開源 Claude Code 外掛，透過將用戶糾正（correction）泛化為跨專案通用規則來解決「同樣錯誤一犯再犯」的問題
+
+### 程式碼品質與安全審查
+
+PR review 自動化、靜態分析、沙箱隔離、架構合規性與滲透測試工具。
+
+- **[adamsreview](https://github.com/adamjgmiller/adamsreview)** — 多代理 PR review 插件，以平行子代理、多階段驗證與 JSON 持久狀態執行審查，作者聲稱自測中比 Claude 內建 /review、/ultrareview、CodeRabbit 及 Greptile 捕捉更多真實 bug 且誤報率更低
+- **[4-agent Code Review Workflow](https://www.reddit.com/r/ClaudeAI/comments/1t71wrm/)** — 開源的 4 代理程式碼審查工作流：一位架構師代理（僅協調、不直接產出意見）加三位來自不同模型廠商的專家代理，最終審查意見必須有具體證據支撐，MIT 授權
+- **[awesome-ux-skills](https://github.com/tommyjepsen/awesome-ux-skills)** — 以 Nielsen 和 Shape of AI 等 UX 原則為基礎的 Claude Code 技能集，供設計導向工程師重複使用
+- **[Groundtruth](https://github.com/vnmoorthy/groundtruth)** — Stop Hook，強制 Claude Code 在宣告「完成」前提供可驗證的執行證明，解決自信宣稱成功但實際未驗證的問題
+- **[Semble](https://github.com/MinishLab/semble)** — 針對大型代碼庫的 Claude Code agent 搜尋效率工具，結合 Model2Vec 靜態嵌入、BM25 與 RRF 重排序，宣稱比 grep 少用 98% 的 token；無需 API 金鑰
+- **[DataMoat](https://github.com/max-ng/datamoat)** — 以 AES-256-GCM 加密將 AI 代理工作記錄保存為本機私有資產，支援搜尋、重用與移交，vault 金鑰及記錄資料完全留在使用者機器上
+- **[SmolVM](https://github.com/CelestoAI/SmolVM)** — 本機沙盒環境，讓 Claude Code / Codex 在完全隔離的容器中執行，保護宿主系統，單指令啟動
+- **[Trent](https://trent.ai/solutions/claude-code-security/)** — Claude Code 內嵌架構層安全評估，情境化判斷應用邏輯安全性，補足 CVE 掃描盲點；可視為 [[entities/claude-security]] 的社群先行版本
+- **[pentest-ai-agents](https://github.com/evanklem/pentest-ai-agents)** — 28 個專為滲透測試設計的 Claude Code 子代理人，資安工作流程整合
+- **[modularity](https://github.com/vladikk/modularity)** — 架構層級插件，採用 Balanced Coupling 模型分析軟體模組化設計，防止 AI 加速代碼生成的同時技術債累積速度加快
+- **[Agentize](https://github.com/jaksa76/agentize)** — 提供一組 Claude Code skills，用於評估並改善 codebase 的「agent 就緒度」，協助 AI agent 更有效率地理解與操作現有專案結構
+
+### 費用與用量監控
+
+Token 用量追蹤、session 費用分析與效能漂移偵測工具。
+
+- **[CC-Canary](https://github.com/delta-hq/cc-canary)** — 讀取 `~/.claude/projects/` JSONL log 偵測效能漂移，自動標記異常 session
+- **[Throttle Meter](https://www.reddit.com/r/ClaudeAI/comments/1t0aw95/)** — macOS menubar 工具，從 `~/.claude/projects/*.jsonl` 即時計算 session 用量與週配額，無遙測，MIT 授權
+- **[Usage4Claude 3.0.0](https://www.reddit.com/r/ClaudeAI/comments/1tazqpg/usage4claude_300_open_source_macos_menu_bar_usage/)** — 開源 macOS 選單列用量追蹤工具，3.0.0 版新增 Codex 用量追蹤支援，認證資料儲存於本地 Keychain
+- **[Tokenyst](https://github.com/jher7/tokenyst)** — 讓 Claude Code pay-as-you-go 用戶在任務層級設定 token 預算，每次提示後即時顯示剩餘額度與使用比例
+- **[Governor](https://github.com/0xhimanshu/governor)** — 宣稱可減少 Claude Code token 浪費的插件；HN 社群質疑其基準測試過於粗糙，僅統計 token 數量而未評估模型輸出品質，效果待嚴謹驗證
+- **[Rudel](https://app.rudel.ai/wrapped)** — 分析 2 萬筆以上 Claude Code/Codex session metadata，從一致性、強度、repo 廣度、成本密度等維度萃取出 9 種 AI 程式設計師原型，以 Spotify Wrapped 風格互動卡片呈現；資料顯示 4% session 使用了 skills，26% 在早期就被放棄
+
+### 工作流輔助
+
+提升開發效率的自動化迴圈、排程、跨 session 通訊與任務管理工具。
+
+- **[Claude Code Manager](https://claude.ldlework.com/)** — Web UI 集中管理 CLAUDE.md、hooks、skills，讓配置工作不再受限於手動編輯文字檔
+- **[EvanFlow](https://github.com/evanklem/evanflow)** — TDD 驅動的 Claude Code 迭代迴圈，16 個技能 + 2 個子代理人，每步驟設有人工確認節點，不自動 commit
+- **[Relay](https://github.com/basegraphhq/relay-plugin)** — 強制 Claude Code 在寫程式前深入對齊問題定義的插件，將 Plan Mode 的提問層級從「實作細節」拉升至「問題本質」（MIT 授權）
+- **[Patina](https://www.reddit.com/r/ClaudeAI/comments/1t3eurx/)** — 開源 CLI（MIT，已上 npm），透過「retro loop」機制自動維護 CLAUDE.md，防止 AI harness 配置「腐化」（修正行為復發、規則膨脹失焦）
+- **[Remind](https://olliewagner.com/remind)** — 讓 Claude Code 在 Mac 上排程執行：只需在系統「提醒事項」App 新增備忘，Remind 便在指定時間喚醒終端機執行 claude 指令，結果寫回提醒事項；支援從 iPhone、Apple Watch 跨裝置新增排程
+- **[Claude Relay](https://github.com/innestic/claude-relay)** — plugin，讓同時開啟的多個本地 Claude Code session（前端、後端、infra）可以互相傳訊查詢，省去人工跨 session 複製貼上
+- **[/qu /ans 跨 session 通訊插件](https://www.reddit.com/r/ClaudeAI/comments/1t65lfq/)** — 讓兩個 Claude Code 工作階段互相通訊：新終端輸入 `/qu` 撥出，舊終端輸入 `/ans` 接聽，直接交換問答
+- **[recap](https://github.com/madebywelch/recap)** — 掃描過去 N 天的 Claude Code 與 Codex 對話紀錄，找出開發者遭遇陌生概念的片段，自動產出說明摘要，協助對抗因 AI 加速開發而導致的技能退化（skill atrophy）
+- **[vibe-log-cli](https://github.com/vibe-log/vibe-log-cli)** — Claude Code 插件，可自動產生每日與每週開發工作摘要，讓開發者無需手動整理工作紀錄，適合長期在 vibe coding 模式下工作的用戶
+- **[SprintiQ](https://github.com/SprintiQ-Incorporated/sprintiq)** — 開源 sprint 規劃工具，專為 Claude Code 設計，使用 Supabase 與 Anthropic API，自行部署約需 10–15 分鐘
+- **[Dragoman](https://github.com/asakin/dragoman)** — 約 800 行的開源 CLI 工具，讓 Claude Code 依問題類型自動路由至不同模型（新聞查詢 → Perplexity、複雜推理 → Gemini、本機運算 → Ollama），支援四模型並行後由 Claude 統整結果；API 金鑰透過 1Password/Keychain 解析，不進入 Claude context
+- **[Caliber](https://www.reddit.com/r/artificial/comments/1t1o3qa/)** — 開源 AI 代理配置管理工具，統一版本控制 CLAUDE.md、.cursor/rules、AGENTS.md 等跨工具配置文件；本週突破 888 stars
+- **[Claudy（Rust 多供應商版）](https://github.com/ReflexioAI/claude-smart)** — 以 Rust 撰寫的 Claude Code 擴充工具，支援多供應商設定檔一鍵切換（Anthropic、Gemini、Codex 等）、本地代理 MCP 橋接及 token 用量分析
+- **[agent-order](https://github.com/btahir/agent-order)** — 讓 Codex 與 Claude 各自寫 PRD 再互相批判，避免答案向先開口方塌縮
+- **[academic-research-skills](https://github.com/Imbad0202/academic-research-skills)** — 針對學術研究場景設計的 Claude Code 技能包，包含蘇格拉底式反思模式（State-Challenge-Reflect），可作為結構化筆記與論點壓力測試的輔助框架；社群對此看法分歧，有人質疑缺乏明顯驗證機制
+
+### IDE / UI / 輸出整合
+
+在瀏覽器、行動裝置、JupyterLab 等非終端機環境使用 Claude Code，或整合至編輯器語義導航的工具。
+
+- **[Cockpit](https://github.com/alexjbarnes/cockpit)** — 開源 Web UI，讓使用者不再受限於終端機環境操作 Claude Code
+- **[Prism MCP](https://www.reddit.com/r/ClaudeAI/comments/1t3gdif/)** — VS Code 擴充套件，透過 MCP 將語言伺服器（LSP）語義導航能力接入 Claude Code，讓 AI 以語義方式瀏覽代碼庫而非依賴 grep；已發布於 VS Code Marketplace
+- **[JupyterLab Claude Code Extension](https://github.com/stellarshenson/jupyterlab_claude_code_extension)** — 開源 JupyterLab 擴充套件，讓資料科學家直接在 Jupyter 環境使用 Claude Code，無需切換至獨立終端機
+- **[Kirikiri](https://news.ycombinator.com/item?id=47996198)** — 以 Flutter + dartssh2 打造的 iOS 開源 app，透過連接 Google Cloud Shell 或 SSH 伺服器遠端執行 Claude Code，以浮動按鈕取代軟體鍵盤常用指令
+- **[BrowserCode](https://www.reddit.com/r/ClaudeAI/comments/1t67idl/)** — 將 Claude Code 移植至瀏覽器，透過 WebAssembly 運行並支援行動裝置，讓無法安裝 CLI 的環境（iPad、公司鎖定設備）也能使用 Claude Code 核心功能
+- **[Claude-Find](https://github.com/Cavinooo/claude-find)** — 解決 `/resume` 只能依第一條訊息或自訂名稱篩選的痛點，讓重度用戶可用語義搜尋快速定位過去 session 的決策脈絡
+- **[Askdiff](https://github.com/narghev/askdiff)** — 在 GitHub PR 風格的 diff 介面中，讓開發者可直接對生成程式碼的同一個 Claude Code session 提問（點擊行號），串流取得原始決策理由
+- **[PullMD](https://www.reddit.com/r/ClaudeAI/comments/1sxzlh6/pullmd_gave_claude_code_an_mcp_server_so_it_stops/)** — MCP server，抓取網頁時先將 HTML 轉換為乾淨 Markdown，避免浪費 token 處理 cookie banner 等無用內容（一般文章有效內容僅佔原始 HTML 約 20%）；v2.4.1 正式支援 claude.ai 網頁版自訂連接器原生整合
+- **[Claude Exporter](https://chromewebstore.google.com/detail/claude-exporter-claude-ch/mhckealbblinipeplfddmbcohdidkfjf)** — Chrome 擴充功能，可將 Claude 對話匯出為 PDF、Word、Google Docs 或 Notion，支援自訂字型，無需帳號
+- **[CodeThis](https://codethis.dev/)** — MCP 原生 paste bin，支援 100+ 語言語法高亮，AI 可透過 MCP server 直接建立貼文；免費版含 REST API 與 MCP，Pro 方案 $9/月
+
+### 領域專用
+
+針對特定技術領域或使用場景設計的工具。
+
+- **[Kstack](https://github.com/kubetail-org/kstack)** — 將 Kubernetes 常見除錯任務打包成 Claude Code skill 組（`/investigate`、`/audit-security`、`/audit-outdated`），讓直接在 Claude Code 內監控與排查 K8s 叢集問題成為可能
+- **[TradingAgents Plugin](https://github.com/lucemia/trading-agents-plugin)** — 將多代理股票分析框架改寫為 Claude Code 插件，在現有 Claude 訂閱下免額外 API 費用執行 7 個並行/序列分析子代理（技術面、基本面、投資組合管理等）
+- **[Smithy](https://github.com/smithy-ai/smithy-ai)** — 讓開發者從 Jira、GitLab 或 Forgejo 直接觸發容器化 Claude Code 工作階段，每個 issue 對應獨立容器分支，完成後自動開 PR、回應 CI 並整合 PR 回饋
+- **[OpenCode-power-pack](https://github.com/waybarrios/opencode-power-pack)** — 將 Anthropic 官方 11 個 Claude Code 技能移植至 OpenCode，打破工具平台綁定
+- **[claudely](https://www.reddit.com/r/ClaudeAI/comments/1t38e7c/)** — 在保留 Claude Code 完整插件生態（Skills、MCP、Hooks）的前提下，將後端切換至 LM Studio/Ollama/llama.cpp，無需修改主配置文件
+- **[Cocall.ai](https://www.reddit.com/r/ClaudeAI/comments/1tbz13b/cocallai_an_mcp_for_outbound_phone_calls_that/)** — MCP，讓 Claude 可撥打外線電話，遇到無法回答的問題時自動暫停並向使用者詢問，獲得回應後繼續通話；採用全雙工語音模型，支援 IVR 導航與電話轉接
 - **[Destiny](https://github.com/xodn348/destiny)** — Claude Code 占卜插件，輸入生日後執行 `/destiny` 取得今日運勢；底層用 Python 計算八字/卦象/五行，確保結果可驗證，文字詮釋層才交由 LLM 生成
 - **[Mote](https://www.reddit.com/r/ClaudeAI/comments/1t16urg/)** — 可自主在 Minecraft Bedrock 中遊玩的 Claude Code Agent，另提供 wizard 工具讓任何人只用一個 `.md` 檔案即可創建類似 Agent
-- **[Governor](https://github.com/0xhimanshu/governor)** — 宣稱可減少 Claude Code token 浪費的插件；HN 社群質疑其基準測試過於粗糙，僅統計 token 數量而未評估模型輸出品質是否同步下降，效果待嚴謹驗證
-- **[Caliber](https://www.reddit.com/r/artificial/comments/1t1o3qa/)** — 開源 AI 代理配置管理工具，統一版本控制 CLAUDE.md、.cursor/rules、AGENTS.md 等跨工具配置文件；本週突破 888 stars，正向社群徵集功能需求
-- **[Semble](https://github.com/MinishLab/semble)** — 針對大型代碼庫的 Claude Code agent 搜尋效率工具，結合 Model2Vec 靜態嵌入、BM25 與 RRF 重排序，宣稱比 grep 少用 98% 的 token；無需 API 金鑰，解決 agent 搜尋失敗後退化為讀整個檔案的問題
-- **[Kirikiri](https://news.ycombinator.com/item?id=47996198)** — 以 Flutter + dartssh2 打造的 iOS 開源 app，透過連接 Google Cloud Shell 或 SSH 伺服器遠端執行 Claude Code，以浮動按鈕取代軟體鍵盤常用指令
-- **[JupyterLab Claude Code Extension](https://github.com/stellarshenson/jupyterlab_claude_code_extension)** — 開源 JupyterLab 擴充套件，讓資料科學家直接在 Jupyter 環境使用 Claude Code，無需切換至獨立終端機
-- **[Prism MCP](https://www.reddit.com/r/ClaudeAI/comments/1t3gdif/)** — VS Code 擴充套件，透過 MCP 將語言伺服器（LSP）語義導航能力接入 Claude Code，讓 AI 以語義方式瀏覽代碼庫而非依賴 grep；已發布於 VS Code Marketplace
-- **[claudely](https://www.reddit.com/r/ClaudeAI/comments/1t38e7c/)** — 在保留 Claude Code 完整插件生態（Skills、MCP、Hooks）的前提下，將後端切換至 LM Studio/Ollama/llama.cpp，無需修改主配置文件
-- **[Smithy](https://github.com/smithy-ai/smithy-ai)** — 讓開發者從 Jira、GitLab 或 Forgejo 直接觸發容器化 Claude Code 工作階段，每個 issue 對應獨立容器分支，完成後自動開 PR、回應 CI 並整合 PR 回饋
-- **[Patina](https://www.reddit.com/r/ClaudeAI/comments/1t3eurx/)** — 開源 CLI（MIT，已上 npm），透過「retro loop」機制自動維護 CLAUDE.md，防止 AI harness 配置「腐化」（修正行為復發、規則膨脹失焦）
-- **[TradingAgents Plugin](https://github.com/lucemia/trading-agents-plugin)** — 將多代理股票分析框架改寫為 Claude Code 插件，在現有 Claude 訂閱下免額外 API 費用執行 7 個並行/序列分析子代理（技術面、基本面、投資組合管理等）
-- **[SprintiQ](https://github.com/SprintiQ-Incorporated/sprintiq)** — 開源 sprint 規劃工具，專為 Claude Code 設計，使用 Supabase 與 Anthropic API，自行部署約需 10–15 分鐘；社群對「AI agent 是否需要 sprint planning」存在爭議
-- **[Claude Relay](https://github.com/innestic/claude-relay)** — plugin，讓同時開啟的多個本地 Claude Code session（前端、後端、infra）可以互相傳訊查詢，省去人工跨 session 複製貼上
-- **[Memex](https://memex-cli.vercel.app/)** — 透過本地 RAG 與離線 embedding 為 Claude 提供跨對話持久記憶，所有資料留存本機，以 MCP 方式接入，無需上傳雲端或額外 API 金鑰
-- **[Claude-Find](https://github.com/Cavinooo/claude-find)** — 解決 `/resume` 只能依第一條訊息或自訂名稱篩選的痛點，讓重度用戶可用語義搜尋快速定位過去 session 的決策脈絡，注入現有 session
-- **[Askdiff](https://github.com/narghev/askdiff)** — 在 GitHub PR 風格的 diff 介面中，讓開發者可直接對生成程式碼的同一個 Claude Code session 提問（點擊行號），串流取得原始決策理由，解決 code review 時的 context 切換痛點
-- **[Rudel](https://app.rudel.ai/wrapped)** — 分析 2 萬筆以上 Claude Code/Codex session metadata，從一致性、強度、repo 廣度、成本密度等維度萃取出 9 種 AI 程式設計師原型，以 Spotify Wrapped 風格互動卡片呈現；資料顯示 4% session 使用了 skills，26% 在早期就被放棄
-- **[Claudette](https://utensils.io/claudette/)** — 開源桌面工具，讓每個 Claude Code agent 擁有獨立的 git worktree、session 與終端機，實現 speculative parallelism 工作流（多分支同時執行、無衝突切換）；社群顯示已有開發者手動實踐類似做法數月，工具化需求確實存在
-- **[claude-smart](https://github.com/ReflexioAI/claude-smart)** — 開源 Claude Code 外掛，透過將用戶糾正（correction）泛化為跨專案通用規則來解決「同樣錯誤一犯再犯」的問題，聲稱 context footprint 遠低於 claude-mem；社群評價褒貶不一
-- **[Dreamer](https://www.reddit.com/r/ClaudeAI/comments/1t5cirj/)** — 開源專案，透過 MCP server 讓 agent 提交短期記憶，再由排程工作整合進長期記憶並更新 AGENTS.md 與 skills，靈感來自 Claude 的 dream mode，支援任意 coding agent
-- **[BrowserCode](https://www.reddit.com/r/ClaudeAI/comments/1t67idl/)** — 將 Claude Code 移植至瀏覽器，透過 WebAssembly 運行並支援行動裝置，讓無法安裝 CLI 的環境（iPad、公司鎖定設備）也能使用 Claude Code 核心功能
-- **[/qu /ans 跨 session 通訊插件](https://www.reddit.com/r/ClaudeAI/comments/1t65lfq/)** — 讓兩個 Claude Code 工作階段互相通訊：新終端輸入 `/qu` 撥出，舊終端輸入 `/ans` 接聽，直接交換問答，省去人工跨 session 複製貼上
-- **[recap](https://github.com/madebywelch/recap)** — 掃描過去 N 天的 Claude Code 與 Codex 對話紀錄，找出開發者遭遇陌生概念的片段，自動產出說明摘要，協助對抗因 AI 加速開發而導致的技能退化（skill atrophy）
-- **[Kstack](https://github.com/kubetail-org/kstack)** — 將 Kubernetes 常見除錯任務打包成 Claude Code skill 組（`/investigate`、`/audit-security`、`/audit-outdated`），讓直接在 Claude Code 內監控與排查 K8s 叢集問題成為可能
-- **[Claudy](https://www.reddit.com/r/ClaudeAI/comments/1t738bi/)** — 以 Rust 撰寫的 Claude Code 擴充工具，支援多供應商設定檔一鍵切換（Anthropic、Gemini、Codex 等）、本地代理 MCP 橋接及 token 用量分析，解決原生 CLI 在多模型環境配置繁瑣的問題
-- **[DataMoat](https://github.com/max-ng/datamoat)** — 以 AES-256-GCM 加密將 AI 代理工作記錄保存為本機私有資產，支援搜尋、重用與移交，vault 金鑰及記錄資料完全留在使用者機器上，適合有資料安全顧慮的企業開發者
-- **[4-agent Code Review Workflow](https://www.reddit.com/r/ClaudeAI/comments/1t71wrm/)** — 開源的 4 代理程式碼審查工作流：一位架構師代理（僅協調、不直接產出意見）加三位來自不同模型廠商的專家代理，最終審查意見必須有具體證據支撐，可包裝為 MCP 伺服器供 Claude Code 呼叫替代 CodeRabbit，MIT 授權
-- **[awesome-ux-skills](https://github.com/tommyjepsen/awesome-ux-skills)** — 以 Nielsen 和 Shape of AI 等 UX 原則為基礎的 Claude Code 技能集，供設計導向工程師重複使用，減少每次重查設計規範的時間成本
-- **[re_gent](https://github.com/regent-vcs/re_gent)** — 「Git for AI Agents」，將 git 版本控制概念套用至 AI 代理工作流，解決 `/compact` 後的歷史斷層與「代理何時刪除這個資料夾」的追溯問題，目前已支援 Claude Code
-- **[unitmux](https://dev.to/ugo/unitmux-a-floating-desktop-app-for-claude-code-and-codex-in-tmux-54gn)** — tmux 環境下使用 Claude Code 時的懸浮視窗工具，讓輸入介面不干擾編輯器視角，改善多工作窗口的操作體驗
-- **[obsidian-semantic](https://github.com/ravila4/obsidian-semantic-search)** — 讓 Claude Code 能以語義搜尋（而非 grep）使用 Obsidian 知識庫，支援 Ollama、LMStudio 本地模型及 Gemini API，可自動發現應互相連結的筆記
-- **[Remind](https://olliewagner.com/remind)** — 讓 Claude Code 在 Mac 上排程執行：只需在系統「提醒事項」App 新增備忘，Remind 便在指定時間喚醒終端機執行 claude 指令，結果寫回提醒事項；支援從 iPhone、Apple Watch 跨裝置新增排程，可透過 frontmatter 續接既有 session
-- **[draft CLI plugin](https://github.com/idodekerobo/draft-cli-plugin)** — 以 session-init hook 在每次 session 開始時自動注入結構化產品上下文摘要，解決跨 session 記憶歸零問題；不呼叫外部 API 或另跑模型，完全在現有 Claude 訂閱額度內運作
-- **[Tokenyst](https://github.com/jher7/tokenyst)** — 讓 Claude Code pay-as-you-go 用戶在任務層級設定 token 預算，每次提示後即時顯示剩餘額度與使用比例，作者為控管「Fix mobile responsiveness」這類任務費用而開發
-- **[Agentize](https://github.com/jaksa76/agentize)** — 提供一組 Claude Code skills，用於評估並改善 codebase 的「agent 就緒度」，協助 AI agent 更有效率地理解與操作現有專案結構
-- **[adamsreview](https://github.com/adamjgmiller/adamsreview)** — 多代理 PR review 插件，以平行子代理、多階段驗證與 JSON 持久狀態執行審查，作者聲稱自測中比 Claude 內建 /review、/ultrareview、CodeRabbit 及 Greptile 捕捉更多真實 bug 且誤報率更低；支援與 Codex CLI 組成 ensemble review，是官方 PR review 工具的社群替代方案
-- **[vibe-log-cli](https://github.com/vibe-log/vibe-log-cli)** — Claude Code 插件，可自動產生每日與每週開發工作摘要，讓開發者無需手動整理工作紀錄，適合長期在 vibe coding 模式下工作的用戶
-- **[academic-research-skills](https://github.com/Imbad0202/academic-research-skills)** — 針對學術研究場景設計的 Claude Code 技能包，包含蘇格拉底式反思模式（State-Challenge-Reflect），可作為結構化筆記與論點壓力測試的輔助框架；社群對此看法分歧，有人質疑缺乏明顯驗證機制（稱之為「skill spam」）
-- **[HiveTerm](https://news.ycombinator.com/item?id=48102087)** — 多 Agent 工作站，在同一介面中管理多個 Claude Code Agent 工作階段，由 HN AI 編程工具痛點調研串帶出的社群工具
-- **[Writ](https://www.reddit.com/r/ClaudeAI/comments/1tb047p/i_built_a_claude_code_plugin_that_actually/)** — 透過五階段 Neo4j 知識圖譜 Pipeline 自動擷取與當前任務相關的規則集，解決 Claude Code 常忽略 CLAUDE.md 規則的問題，同時避免無關規則佔用 token
-- **[Agent FM](https://github.com/agentfm-ai/agent-fm)** — 本地開源工具，以「廣播」形式呈現 Claude Code 與 Codex Agent 的執行狀態，提供聽覺化（audio）工作進度回饋，MIT 授權
-- **[Usage4Claude 3.0.0](https://www.reddit.com/r/ClaudeAI/comments/1tazqpg/usage4claude_300_open_source_macos_menu_bar_usage/)** — 開源 macOS 選單列用量追蹤工具，3.0.0 版新增 Codex 用量追蹤支援，認證資料儲存於本地 Keychain，社群反應正面
-- **[ltm](https://www.reddit.com/r/ClaudeAI/comments/1tb0nwk/most_agentmemory_tools_are_markdown_you_keep/)** — 基於 JSON 協定（Core Memory Packet）的 Agent 記憶工具，設計目標是跨編輯器、跨機器、跨模型的供應商中立持久化記憶，解決現有 CLAUDE.md 等 Markdown 方案無法在不同環境間攜帶的根本問題
-- **[Dragoman](https://github.com/asakin/dragoman)** — 約 800 行的開源 CLI 工具，讓 Claude Code 依問題類型自動路由至不同模型（新聞查詢 → Perplexity、複雜推理 → Gemini、本機運算 → Ollama），支援四模型並行後由 Claude 統整結果；API 金鑰透過 1Password/Keychain 解析，不進入 Claude context；在 HN 以 Show HN 形式發布
-- **[Cocall.ai](https://www.reddit.com/r/ClaudeAI/comments/1tbz13b/cocallai_an_mcp_for_outbound_phone_calls_that/)** — MCP，讓 Claude 可撥打外線電話，遇到無法回答的問題時自動暫停並向使用者詢問，獲得回應後繼續通話；採用全雙工語音模型，支援 IVR 導航與電話轉接，是目前少見的 AI 代理延伸至實體世界通話的案例
-- **[Claudy（macOS session 管理版）](https://www.reddit.com/r/ClaudeAI/comments/1tbtpl2/i_built_a_native_macos_app_to_manage_claude_code/)** — 原生 macOS 應用（與同名 Rust 多供應商管理工具不同），支援多 Claude Code 會話並列執行、達到用量上限時自動切換帳號、Draft Commit 工作快照以及 Marketplace 功能，解決重度終端機使用者的多專案管理痛點
 
 ---
 
