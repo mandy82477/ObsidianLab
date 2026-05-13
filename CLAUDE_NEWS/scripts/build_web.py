@@ -343,7 +343,7 @@ def build():
         "entities":    [slim(e) for e in entities],
         "topics":      [slim(t) for t in topics],
         "digestIndex": digest_index,
-        "radar": {k: v for k, v in radar.items() if k != "markdown"} if radar else None,
+        "radar": radar if radar else None,  # include markdown — rendered inline, no fetch needed
     }
 
     OUT_JS.parent.mkdir(parents=True, exist_ok=True)

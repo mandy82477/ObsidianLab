@@ -369,12 +369,18 @@
     setDetailLoading('載入中…');
 
     let item;
-    try {
-      item = await fetchWiki(id);
-    } catch(e) {
-      setDetailLoading(`載入失敗：${esc(id)}.json`);
-      console.error(e);
-      return;
+    // feature-radar is embedded in data.js — no fetch needed
+    const inlineRadar = (window.WIKI_DATA || {}).radar;
+    if (id === 'feature-radar' && inlineRadar?.markdown) {
+      item = inlineRadar;
+    } else {
+      try {
+        item = await fetchWiki(id);
+      } catch(e) {
+        setDetailLoading(`載入失敗：${esc(id)}.json`);
+        console.error(e);
+        return;
+      }
     }
 
     // strip H1 + front-matter metadata
