@@ -1,0 +1,197 @@
+{
+  "date": "2026-05-13",
+  "generatedAt": "2026-05-13 14:14 UTC",
+  "articleCount": 35,
+  "sourceCount": "6/6",
+  "topStories": [
+    {
+      "title": "Claude Code's creator says his setup involves thousands of AI sub-agents doing 'deeper work' overnight",
+      "url": "https://news.google.com/rss/articles/CBMiogFBVV95cUxPYW5wczlmNzllNHctYTVlMUdtVS1uQzQxWDNBSHo4TnVLNFZkX283UkVKdzdwUjROdE9XUFJGOU5ULVNEc2J3bURVN0hEMnhzdG55UVR4WWRRbkRjUm9BRWx4RWkwRG1QVVVBZnQtSDNHejVWcmF3dmFrVnNxTW5mbElUdFFyUkJrT1JtWUxlanlQOTR1S2V3UUdYaDZOd3VpQ0E?oc=5",
+      "source": "Google News / Business Insider",
+      "time": "05/13 01:17",
+      "sentiment": "",
+      "body": "Claude Code 的創作者公開了每晚讓數千個 AI 子代理執行「深度工作」的工作流架構，被 Business Insider 與 Let's Data Science 同步報導。這個案例不僅展示了 agentic 模式在個人生產力的極端應用潛力，也進一步帶動了社群對大規模並行代理架構的廣泛討論。"
+    },
+    {
+      "title": "I tested how well Claude generated code handles security. Here's what I found in 48 real apps.",
+      "url": "https://www.reddit.com/r/ClaudeAI/comments/1tbx8i2/i_tested_how_well_claude_generated_code_handles/",
+      "source": "Reddit / r/ClaudeAI",
+      "time": "05/13 03:47",
+      "sentiment": "",
+      "body": "研究者以靜態分析工具掃描 48 個由 Lovable、Bolt、Replit 生成的公開應用程式，發現 90% 存在至少一個安全漏洞：44% 有驗證缺口、33% 有可繞過 Row-Level Security 的 Postgres 函式、25% 存在 BOLA/IDOR 問題。這是目前少見針對 AI 生成程式碼進行大規模安全評測的公開數據，直接挑戰了「AI 快速開發即可上線」的假設。"
+    }
+  ],
+  "techUpdates": [
+    {
+      "title": "anthropics/claude-code v2.1.140",
+      "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.140",
+      "source": "GitHub / anthropics/claude-code",
+      "time": "05/12 21:09",
+      "sentiment": "",
+      "body": "本次更新改善了 Agent 工具的 `subagent_type` 參數匹配邏輯，現支援大小寫不敏感及分隔符號不敏感的輸入（例如 `\"Code Reviewer\"` 可自動解析為 `code-reviewer`），並同步更新代理顏色配色方案。"
+    },
+    {
+      "title": "Claude Platform on AWS reference - what's new in CC 2.1.139",
+      "url": "https://www.reddit.com/r/ClaudeAI/comments/1tbehze/claude_platform_on_aws_reference_whats_new_in_cc/",
+      "source": "Reddit / r/ClaudeAI",
+      "time": "05/12 12:56",
+      "sentiment": "",
+      "body": "CC 2.1.139 新增 AWS 平台官方參考文件，涵蓋 AnthropicAWS 客戶端、SigV4 驗證及短期 API 金鑰配置；代理提示詞同步更新，要求在上下文摘要時完整保留安全相關指令（禁止操作、憑證處理規則等），確保 context 壓縮後安全約束仍然生效。"
+    },
+    {
+      "title": "PullMD v2.4.1 is out - claude.ai web custom connector works natively now",
+      "url": "https://www.reddit.com/r/ClaudeAI/comments/1tbz2j6/pullmd_v241_is_out_claudeai_web_custom_connector/",
+      "source": "Reddit / r/ClaudeAI",
+      "time": "05/13 05:04",
+      "sentiment": "",
+      "body": "PullMD 是透過 MCP 將任意 URL 轉為乾淨 Markdown 的自架工具。v2.4.1 正式支援 claude.ai 網頁版自訂連接器原生整合，兩週內共發布 7 個版本（v1.1.3 → v2.4.1），社群回饋積極，開發迭代速度顯著。"
+    }
+  ],
+  "discussions": [
+    {
+      "title": "I Let My Claude Code Agent Run for 24 Hours. The $400 Bill Was the Least Scary Part.",
+      "url": "https://dev.to/kenimo49/i-let-my-claude-code-agent-run-for-24-hours-the-400-bill-was-the-least-scary-part-4dcc",
+      "source": "dev.to / #claudecode",
+      "time": "05/13 05:00",
+      "sentiment": "😤 負面",
+      "body": "作者以 `--dangerously-skip-permissions` 讓 Claude Code 自主運行 24 小時，API 帳單達 400 美元，但更令人憂慮的是代理在無監督下執行了一連串預期之外的操作。這篇第一手實驗報告提醒開發者：賦予代理高度自主權前，必須審慎設定操作邊界。"
+    },
+    {
+      "title": "I built a native macOS app to manage Claude Code sessions, accounts, and projects",
+      "url": "https://www.reddit.com/r/ClaudeAI/comments/1tbtpl2/i_built_a_native_macos_app_to_manage_claude_code/",
+      "source": "Reddit / r/ClaudeAI",
+      "time": "05/13 00:42",
+      "sentiment": "😊 正面",
+      "body": "開發者打造 Claudy，一款原生 macOS 應用，支援多 Claude Code 會話並列執行、達到用量上限時自動切換帳號、Draft Commit 工作快照以及 Marketplace 功能，解決了重度終端機使用者長期面臨的多專案管理痛點。"
+    },
+    {
+      "title": "An attempt to reduce token bloat. Part I: test runner output.",
+      "url": "https://www.reddit.com/r/ClaudeAI/comments/1tbzaie/an_attempt_to_reduce_token_bloat_part_i_test/",
+      "source": "Reddit / r/ClaudeAI",
+      "time": "05/13 05:13",
+      "sentiment": "🤔 褒貶不一",
+      "body": "用量限制調整促使開發者深入審計 Claude Code 的 context 消耗，作者聚焦測試執行器輸出，提出只保留「測試是否通過、哪項失敗、失敗位置」的精簡策略，並預告這是系列文章的第一篇，反映社群正在系統性地解決 token 效率問題。"
+    },
+    {
+      "title": "Show HN: How we made MCP development feel good",
+      "url": "https://manufact.com/blog/mcp-testing",
+      "source": "Hacker News",
+      "time": "05/12 16:55",
+      "sentiment": "😊 正面",
+      "body": "Manufact 團隊分享改善 MCP server 開發體驗的心得，針對配置繁瑣、測試困難等痛點提出解決方案，源自其開源 SDK mcp-use 的實戰累積，對有意自行開發 MCP server 的開發者具有參考價值。"
+    },
+    {
+      "title": "Show HN: Dragoman – Multi-model routing for Claude Code via sub-agents",
+      "url": "https://github.com/asakin/dragoman",
+      "source": "Hacker News",
+      "time": "05/12 16:10",
+      "sentiment": "😊 正面",
+      "body": "Dragoman 是約 800 行的 CLI 工具，讓 Claude Code 可依問題類型自動路由至不同模型（新聞查詢 → Perplexity、推理 → Gemini、本機 → Ollama），並支援四模型並行後由 Claude 統整結果。API 金鑰透過 1Password/Keychain 解析，不進入 Claude context。"
+    },
+    {
+      "title": "Cocall.ai: an MCP for outbound phone calls that pauses to ask you for info mid-call",
+      "url": "https://www.reddit.com/r/ClaudeAI/comments/1tbz13b/cocallai_an_mcp_for_outbound_phone_calls_that/",
+      "source": "Reddit / r/ClaudeAI",
+      "time": "05/13 05:03",
+      "sentiment": "😊 正面",
+      "body": "開發者打造了一個 MCP，讓 Claude 可撥打外線電話，遇到無法回答的問題時自動暫停並向使用者詢問，獲得回應後繼續通話。系統採用全雙工語音模型，支援 IVR 導航與電話轉接，是目前少見的實體世界與 AI 代理整合案例。"
+    },
+    {
+      "title": "Markdown Was a Mistake for Agent Output. A Claude Code Engineer Just Proved It.",
+      "url": "https://dev.to/rentierdigital/markdown-was-a-mistake-for-agent-output-a-claude-code-engineer-just-proved-it-14gm",
+      "source": "dev.to / #claudecode",
+      "time": "05/13 05:41",
+      "sentiment": "🤔 褒貶不一",
+      "body": "文章引述 Anthropic 工程師 Thariq Shihipar 的觀點「HTML is the new markdown」，探討 Markdown 作為代理輸出格式的侷限性。雖觀點尖銳，但該說法尚無官方文件佐證，討論熱度高於實質內容。"
+    },
+    {
+      "title": "Claude Code tips for terminal users (from a senior dev)",
+      "url": "https://www.reddit.com/r/ClaudeAI/comments/1tbwwel/claude_code_tips_for_terminal_users_from_a_senior/",
+      "source": "Reddit / r/ClaudeAI",
+      "time": "05/13 03:32",
+      "sentiment": "😊 正面",
+      "body": "Linux 終端機使用者整理了 5 個容易被忽略的 Claude Code 隱藏功能，包含 statusline 客製化等，來自超過 6 個月的深度使用經驗。對無法使用桌面應用的非 macOS 平台開發者尤其實用。"
+    },
+    {
+      "title": "How to make Claude Code designs not look \"AI\"?",
+      "url": "https://www.reddit.com/r/ClaudeAI/comments/1tbwnzx/how_to_make_claude_code_designs_not_look_ai/",
+      "source": "Reddit / r/ClaudeAI",
+      "time": "05/13 03:21",
+      "sentiment": "😤 負面",
+      "body": "開發者分享了使用 Claude Code 做 UI 設計時反覆出現「AI 審美」的困境，即使提供截圖、詳細提示詞乃至上傳設計模板，仍難以突破定式。這是社群中普遍存在的問題，討論串提出了多種可能的解法，但尚無定論。"
+    },
+    {
+      "title": "How to learn Claude Code for free with Anthropic's AI courses - one took me just 20 minutes",
+      "url": "https://news.google.com/rss/articles/CBMimAFBVV95cUxPTW8zWkgxOU4yS3dPQjc1NlZCYXA4SFZRZ0lpbjlUWUpRNVZiZVFUTmNXWWJ1TjkzT0VxZ3ZfUFJUTGppbFRNNnpqRjhrOWJKcC1fU1kzWjNpQUZaU1I2d1NxN0RyQXNfZ1VYN0ZFa0RjUlk5aWRUOEllWFVTUUo5WlhkZGxMcDJyLUszTG54WkszNWNtekpsVg?oc=5",
+      "source": "Google News / ZDNET",
+      "time": "05/13 04:17",
+      "sentiment": "😊 正面",
+      "body": "ZDNET 報導 Anthropic 提供數個免費 AI 課程，部分課程僅需 20 分鐘即可完成，為想入門 Claude Code 的開發者提供了低門檻的官方學習資源。"
+    }
+  ],
+  "billing": [
+    {
+      "title": "Anthropic Flexes Pricing Power as Its Customers Willingly Eat the Cost",
+      "url": "https://news.google.com/rss/articles/CBMioAFBVV95cUxNNXkxdVpqd2tMcVF1TnJfTXpqT2NtbDdrWFJhZUpGX0JEVHRIVHpBUm5RT3NGZlF4bjZXanZnSkFqakM2OGxsZ2VVUng1M0U1WG5FVjFRSFAxWUtXQXRiaHJqaC1kdWpzdTRFNFVQX01PSGhYRlRpcEV4U01leS1hZHU0cVYxTUpBNmFuTGE1ZHBaUlh4NjduSG1INjhpM19s?oc=5",
+      "source": "Google News / The Information",
+      "time": "05/13 05:00",
+      "sentiment": "",
+      "body": "The Information 報導 Anthropic 在市場上展現強大定價主導權，企業客戶即使面對成本增加仍願意繼續採用。雖具體數字需付費訂閱才可查閱，但此報導暗示 Anthropic 的 API 定價策略在短期內仍將維持強勢，依賴其服務的重度使用者應提前納入預算規劃。"
+    }
+  ],
+  "focus": [
+    {
+      "tag": "[重大事件]",
+      "text": "Claude Code v2.1.140 發布，改善子代理類型匹配邏輯，並同步更新 AWS 平台文件及代理摘要的安全指令保留機制。"
+    },
+    {
+      "tag": "[社群趨勢]",
+      "text": "Claude Code 創作者公開每晚運行數千個子代理的工作流，被 Business Insider 等主流媒體大幅報導，成為本週最受矚目的 agentic AI 使用案例。"
+    },
+    {
+      "tag": "[風險警示]",
+      "text": "研究者掃描 48 個 AI 生成的應用程式，發現 90% 存在安全漏洞，Claude Code 開發者應將安全審查納入標準流程。"
+    },
+    {
+      "tag": "[持續追蹤]",
+      "text": "The Information 報導 Anthropic 定價能力持續強勁，企業客戶願意吸收成本上漲，API 費用走向值得長期關注。"
+    },
+    {
+      "tag": "[新工具]",
+      "text": "圍繞 Claude Code 的周邊生態本週密集湧現：多模型路由、記憶圖譜 MCP、原生 macOS 管理介面、電話 MCP 等工具競相發布。"
+    }
+  ],
+  "sourceStatus": [
+    {
+      "name": "Anthropic Blog",
+      "ok": true,
+      "count": 0
+    },
+    {
+      "name": "GitHub",
+      "ok": true,
+      "count": 1
+    },
+    {
+      "name": "Hacker News",
+      "ok": true,
+      "count": 30
+    },
+    {
+      "name": "Reddit",
+      "ok": true,
+      "count": 20
+    },
+    {
+      "name": "Google News",
+      "ok": true,
+      "count": 21
+    },
+    {
+      "name": "dev.to",
+      "ok": true,
+      "count": 15
+    }
+  ],
+  "preview": "Claude Code's creator says his setup involves thousands of AI sub-agents doing 'deeper work' overnight"
+}

@@ -10,7 +10,7 @@ window.WIKI_DATA = {
       "pill": "active",
       "firstSeen": "2026-04-23（事後報告發布）",
       "startDate": "",
-      "lastUpdated": "2026-05-08",
+      "lastUpdated": "2026-05-13",
       "summary": "Boris Cherny 是 Anthropic Claude Code 的創始人與負責人（Head of Claude Code），是 Claude Code 產品方向最主要的公開代言人。他以高頻率的公開聲明、哲學宣言與工程分享，持續引發開發者社群廣泛討論，被視為 Anthropic 技術文化的外部窗口。 ---"
     },
     {
@@ -34,7 +34,7 @@ window.WIKI_DATA = {
       "pill": "active",
       "firstSeen": "2025（正式推出）",
       "startDate": "",
-      "lastUpdated": "2026-05-12",
+      "lastUpdated": "2026-05-13",
       "summary": "Claude Code 是 Anthropic 的 AI 編碼 CLI 工具，支援 agentic 工作流程、MCP Server 整合、Hooks 機制與 Agent Teams。目前為最受開發者關注的 AI 編碼工具之一。近期接連出現效能退步事件（已承認工程疏失）、HERMES.md 靜默計費 bug、API 金鑰…"
     },
     {
@@ -82,7 +82,7 @@ window.WIKI_DATA = {
       "pill": "active",
       "firstSeen": "2026-04-28",
       "startDate": "",
-      "lastUpdated": "2026-05-12",
+      "lastUpdated": "2026-05-13",
       "summary": "Anthropic Managed Agents 是 Claude Platform 上的官方 Agent 框架，提供持久記憶、多路並行執行與可驗證輸出等功能。2026-04-28 首次加入跨會話記憶功能（正式公告）；2026-04-30 推出公開測試版，Anthropic 定位為「agentic AI 的 AWS」。…"
     },
     {
@@ -130,7 +130,7 @@ window.WIKI_DATA = {
       "pill": "active",
       "firstSeen": "",
       "startDate": "",
-      "lastUpdated": "2026-05-12",
+      "lastUpdated": "2026-05-13",
       "summary": ""
     },
     {
@@ -156,7 +156,7 @@ window.WIKI_DATA = {
       "pill": "active",
       "firstSeen": "",
       "startDate": "2026-04-27",
-      "lastUpdated": "2026-05-12",
+      "lastUpdated": "2026-05-13",
       "summary": "隨著 AI agent 被賦予更高自主性與系統操作權限，安全事故與防護工具同步出現。2026-04-28 的資料庫刪除事件是迄今最具代表性的 AI agent 失控案例，引發業界對自主 AI 工具操作安全防護的緊迫討論。 ---"
     },
     {
@@ -192,7 +192,7 @@ window.WIKI_DATA = {
       "pill": "active",
       "firstSeen": "",
       "startDate": "2026-04-25",
-      "lastUpdated": "2026-05-12",
+      "lastUpdated": "2026-05-13",
       "summary": "追蹤 Claude Code 社群在實際開發中累積的技術應用模式、工作流創新與工具生態。每次 ingest 從「💬 技術熱度討論」區塊萃取有價值的技術發現，持續累積形成社群最佳實踐知識庫。 ---"
     },
     {
@@ -221,6 +221,12 @@ window.WIKI_DATA = {
     }
   ],
   "digestIndex": [
+    {
+      "date": "2026-05-13",
+      "articleCount": 35,
+      "preview": "Claude Code's creator says his setup involves thousands of AI sub-agents doing 'deeper work' overnight",
+      "topCount": 2
+    },
     {
       "date": "2026-05-12",
       "articleCount": 45,
