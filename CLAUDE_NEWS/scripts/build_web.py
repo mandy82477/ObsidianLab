@@ -17,6 +17,7 @@ from pathlib import Path
 ROOT = Path(__file__).parent.parent
 WIKI_ENTITIES = ROOT / "wiki" / "entities"
 WIKI_TOPICS   = ROOT / "wiki" / "topics"
+WIKI_RADAR    = ROOT / "wiki" / "feature-radar.md"
 NEWS_DIR      = ROOT / "news"
 OUT_JS        = ROOT / "web_reader" / "data" / "data.js"
 OUT_WIKI_DIR  = ROOT / "web_reader" / "data" / "wiki"
@@ -57,6 +58,38 @@ META_RE = {
 }
 
 SUMMARY_HEADERS = ["## 現況", "## 摘要"]
+
+
+def strip_llm_sections(md: str) -> str:
+    """Remove any H2 section whose title contains '給 LLM' (and everything after it)."""
+    return re.sub(r'\n## [^\n]*給 LLM[^\n]*\n[\s\S]*', '', md)
+
+
+def parse_radar(f: Path) -> dict:
+    raw = f.read_text(encoding="utf-8")
+    lines = raw.splitlines()
+    name = lines[0].lstrip("# ").strip() if lines else f.stem
+
+    last_updated = ""
+    lu_re = re.compile(r"\*\*最後更新[：:]\*\*\s*(.+)")
+    for line in lines:
+        m = lu_re.match(line)
+        if m:
+            # strip parenthetical annotations like "（含 5/13 ingest 更新）"
+            last_updated = re.sub(r'[（(][^）)]*[）)]', '', m.group(1)).strip()
+            break
+
+    return {
+        "id": "feature-radar",
+        "pageType": "radar",
+        "name": name,
+        "entityType": "meta",
+        "status": "",
+        "pill": "warn",
+        "lastUpdated": last_updated,
+        "markdown": strip_llm_sections(raw),
+        "summary": "追蹤 Claude / Claude Code 每個新發布功能的社群熱度、試用價值與快速上手方式。",
+    }
 
 
 def parse_wiki(f: Path, page_type: str) -> dict:
@@ -267,16 +300,29 @@ def build():
         except Exception as e:
             print(f"  [warn] digest {f.name}: {e}")
 
+    # ── Parse feature radar (root-level wiki doc) ─────────────────────────────
+    radar = None
+    if WIKI_RADAR.exists():
+        try:
+            radar = parse_radar(WIKI_RADAR)
+        except Exception as e:
+            print(f"  [warn] feature-radar: {e}")
+
     # ── Write per-wiki JSON files (full content including markdown) ──────────
     OUT_WIKI_DIR.mkdir(parents=True, exist_ok=True)
     existing_wiki_ids = {f.stem for f in OUT_WIKI_DIR.glob("*.json")}
     current_wiki_ids  = {item["id"] for item in entities + topics}
+    if radar:
+        current_wiki_ids.add(radar["id"])  # prevent stale-cleanup of feature-radar.json
     for stale in existing_wiki_ids - current_wiki_ids:
         (OUT_WIKI_DIR / f"{stale}.json").unlink()
         print(f"  [clean] removed stale wiki/{stale}.json")
     for item in entities + topics:
         with (OUT_WIKI_DIR / f"{item['id']}.json").open("w", encoding="utf-8") as fp:
             json.dump(item, fp, ensure_ascii=False, indent=2)
+    if radar:
+        with (OUT_WIKI_DIR / "feature-radar.json").open("w", encoding="utf-8") as fp:
+            json.dump(radar, fp, ensure_ascii=False, indent=2)
 
     # ── Write per-digest JSON files ───────────────────────────────────────────
     OUT_DIGEST_DIR.mkdir(parents=True, exist_ok=True)
@@ -297,6 +343,7 @@ def build():
         "entities":    [slim(e) for e in entities],
         "topics":      [slim(t) for t in topics],
         "digestIndex": digest_index,
+        "radar": {k: v for k, v in radar.items() if k != "markdown"} if radar else None,
     }
 
     OUT_JS.parent.mkdir(parents=True, exist_ok=True)
@@ -317,7 +364,8 @@ def build():
         html = _re.sub(r'data/data\.js(\?v=\d+)?', f'data/data.js?v={ver}', html)
         index.write_text(html, encoding="utf-8")
 
-    print(f"OK: {len(entities)} entities, {len(topics)} topics, {len(digest_all)} digests")
+    print(f"OK: {len(entities)} entities, {len(topics)} topics, {len(digest_all)} digests" +
+          (" + radar" if radar else ""))
     print(f"    -> {OUT_JS} ({OUT_JS.stat().st_size//1024} KB)")
     print(f"    -> {OUT_WIKI_DIR}/ ({len(entities)+len(topics)} files)")
     print(f"    -> {OUT_DIGEST_DIR}/ ({len(digest_all)} files)")

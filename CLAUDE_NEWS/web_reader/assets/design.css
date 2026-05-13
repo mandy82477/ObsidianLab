@@ -203,6 +203,23 @@ code { font-family: var(--font-mono); font-size: 0.88em; background: var(--bg-in
 .wiki__section-header .wiki__section-h { margin: 0; padding: 0; border: none; }
 .wiki__note { font-family: var(--font-mono); font-size: 11px; color: var(--fg-3); margin-top: 8px; }
 
+/* ── Feature Radar Card ──────────────────────────────────────────────────────── */
+.radar-card {
+  display: flex; align-items: center; gap: 16px;
+  padding: 14px 18px; border-radius: var(--radius-3);
+  border: 1px solid rgba(224,182,107,0.22);
+  background: var(--warn-tint);
+  cursor: pointer; transition: border-color 0.15s, background 0.15s;
+  margin-bottom: 4px; outline: none;
+}
+.radar-card:hover, .radar-card:focus { border-color: rgba(224,182,107,0.48); background: rgba(224,182,107,0.13); }
+.radar-card__icon { font-size: 26px; flex-shrink: 0; line-height: 1; }
+.radar-card__body { flex: 1; min-width: 0; }
+.radar-card__title { font-family: var(--font-display); font-size: 14px; font-weight: var(--fw-semibold); color: var(--fg-1); margin-bottom: 2px; }
+.radar-card__desc { font-family: var(--font-cjk); font-size: 12px; color: var(--fg-3); }
+.radar-card__meta { font-family: var(--font-mono); font-size: 10px; color: var(--fg-4); flex-shrink: 0; white-space: nowrap; }
+.radar-card__arrow { color: var(--warn); font-size: 15px; flex-shrink: 0; opacity: 0.65; }
+
 /* ── Sort bar ────────────────────────────────────────────────────────────────── */
 .sort-bar { display: flex; align-items: center; gap: 4px; flex-wrap: wrap; }
 .sort-bar__label { font-family: var(--font-mono); font-size: 10px; color: var(--fg-4); margin-right: 2px; letter-spacing: 0.04em; }

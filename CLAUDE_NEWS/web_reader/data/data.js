@@ -35,7 +35,7 @@ window.WIKI_DATA = {
       "firstSeen": "2025（正式推出）",
       "startDate": "",
       "lastUpdated": "2026-05-13",
-      "summary": "Claude Code 是 Anthropic 的 AI 編碼 CLI 工具，支援 agentic 工作流程、MCP Server 整合、Hooks 機制與 Agent Teams。目前為最受開發者關注的 AI 編碼工具之一。近期接連出現效能退步事件（已承認工程疏失）、HERMES.md 靜默計費 bug、API 金鑰…"
+      "summary": "Claude Code 是 Anthropic 的 AI 編碼 CLI 工具，支援 agentic 工作流程、MCP Server 整合、Hooks 機制與多代理協作框架（Managed Agents）。截至 2026-05-13，GitHub Stars 達 121,000，是增長最受開發者關注的 AI 編碼助理之一…"
     },
     {
       "id": "claude-design",
@@ -58,7 +58,7 @@ window.WIKI_DATA = {
       "pill": "active",
       "firstSeen": "2026-04-30",
       "startDate": "",
-      "lastUpdated": "2026-05-06",
+      "lastUpdated": "2026-05-13",
       "summary": "Claude Security 於 2026-04-30 宣布推出公開測試版，並於 2026-05-01 正式向**全部 Enterprise 客戶**開放。ZDNET、SecurityWeek、SiliconANGLE、CRN、Pulse 2.0 等多家媒體報導。這是 Anthropic 首次以**獨立資安產品形式*…"
     },
     {
@@ -164,11 +164,11 @@ window.WIKI_DATA = {
       "pageType": "topic",
       "name": "Anthropic 政府與軍事政策",
       "entityType": "",
-      "status": "ongoing",
-      "pill": "active",
+      "status": "monitoring（11 天無新進展，白宮談判狀態不明）",
+      "pill": "warn",
       "firstSeen": "",
       "startDate": "2026-05-01",
-      "lastUpdated": "2026-05-02",
+      "lastUpdated": "2026-05-13（lint 狀態更新）",
       "summary": "2026-05-01，Anthropic 因堅持在軍事用途中納入安全護欄，被排除在美國國防部與 7 家 AI 公司的機密網路部署協議之外。此事件標誌著 Anthropic 的安全優先立場首次與聯邦政府大規模部署需求發生直接衝突，並引發白宮重啟談判。 ---"
     },
     {
@@ -329,7 +329,17 @@ window.WIKI_DATA = {
       "preview": "Google plans to invest up to $40B in Anthropic",
       "topCount": 4
     }
-  ]
+  ],
+  "radar": {
+    "id": "feature-radar",
+    "pageType": "radar",
+    "name": "功能熱度雷達",
+    "entityType": "meta",
+    "status": "",
+    "pill": "warn",
+    "lastUpdated": "2026-05-13",
+    "summary": "追蹤 Claude / Claude Code 每個新發布功能的社群熱度、試用價值與快速上手方式。"
+  }
 };
 // Digest content is loaded on-demand from data/digest/{date}.json
 // Wiki content is loaded on-demand from data/wiki/{id}.json

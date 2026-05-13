@@ -322,6 +322,12 @@
     const subEl = $('#wiki-sub');
     if (subEl) subEl.textContent = `最後更新：${today} · 頁面數：${totalPages} · 點擊實體查看詳細頁面`;
 
+    // Populate radar card last-updated label
+    const radarMeta = $('#radar-card-updated');
+    if (radarMeta && data.radar?.lastUpdated) {
+      radarMeta.textContent = `最後更新 ${data.radar.lastUpdated}`;
+    }
+
     buildSortBar('sort-bar-entity', ENTITY_SORT_OPTIONS, entitySort, 'setSortEntity');
     buildSortBar('sort-bar-topic',  TOPIC_SORT_OPTIONS,  topicSort,  'setSortTopic');
     renderEntityRows();
@@ -398,7 +404,8 @@
       `<div class="detail__meta-row"><span class="detail__meta-label">${esc(r.label)}</span><span>${esc(r.val)}</span></div>`
     ).join('');
 
-    const typeLabel = (item.pageType || type) === 'entity' ? '實體' : '議題';
+    const _pt = item.pageType || type;
+    const typeLabel = _pt === 'entity' ? '實體' : _pt === 'radar' ? '熱度雷達' : '議題';
 
     $('#detail-content').innerHTML = `
 <div class="detail__type-row">
