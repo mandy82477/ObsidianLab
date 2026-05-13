@@ -2,7 +2,7 @@
 
 **類型：** policy
 **狀態：** active（持續調整中）
-**最後更新：** 2026-05-12
+**最後更新：** 2026-05-13
 
 ---
 
@@ -20,6 +20,12 @@
 ---
 
 ## 近期政策變動
+
+### 2026-05-13：Anthropic 定價主導權強勁，企業客戶吸收成本上漲
+
+The Information 報導 Anthropic 在市場上展現強大定價主導權，企業客戶即使面對成本增加仍願意繼續採用。雖具體定價數字需付費訂閱才可查閱，但此報導暗示 Anthropic 的 API 定價策略在短期內仍將維持強勢，依賴其服務的重度用戶應提前納入預算規劃。
+
+此為 The Information 獨家報導，是業界對 Anthropic 定價能力評估的重要參考，也與 Anthropic 的系列商業利好（SpaceX 算力合作、企業採用加速）形成一致的市場強勢敘事。建議依賴 Anthropic API 的企業評估多供應商策略以避免定價風險；見 [[topics/competitor-landscape]]。
 
 ### 2026-05-12：Claude Code Ultra Review 費用透明度爭議
 
@@ -256,4 +262,5 @@ The Verge（2026-04-24）報導，AI 商業化壓力下，Anthropic 等實驗室
 - [[news/2026-05-10]]
 - [[news/2026-05-11]]
 - [[news/2026-05-12]]
+- [[news/2026-05-13]]
 - [官方說明文件](https://support.claude.com/en/articles/11940350-claude-code-model-configuration)

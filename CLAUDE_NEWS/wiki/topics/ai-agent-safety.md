@@ -2,7 +2,7 @@
 
 **狀態：** ongoing
 **開始日期：** 2026-04-27
-**最後更新：** 2026-05-12
+**最後更新：** 2026-05-13
 
 ---
 
@@ -13,6 +13,29 @@
 ---
 
 ## 技術彙整
+
+### AI 生成程式碼大規模安全漏洞評測（2026-05-13 新增）
+
+- **評測規模**：研究者以靜態分析工具掃描 48 個由 Lovable、Bolt、Replit 等 AI 生成工具構建的公開應用程式，是目前少見的針對 AI 生成程式碼的大規模公開安全評測
+- **主要發現（90% 存在至少一個安全漏洞）**：
+  - 44% 存在驗證缺口（authentication gaps）
+  - 33% 存在可繞過 Row-Level Security 的 Postgres 函式（允許攻擊者繞過資料庫層存取控制）
+  - 25% 存在 BOLA/IDOR 問題（Broken Object Level Authorization / Insecure Direct Object References，攻擊者可存取未授權的資料物件）
+- **行業意義**：直接挑戰「AI 快速開發即可上線」的假設；Claude Code 開發者應將安全審查納入標準 PR 流程，不應僅依賴 AI 的程式碼品質判斷；可搭配 Snyk + Claude Code 整合（2026-05-10）自動化安全掃描
+- **方法論侷限**：靜態分析工具只能偵測程式碼層面的已知漏洞模式，無法涵蓋所有執行時期安全問題；實際漏洞率可能更高
+
+### 無監督長時間 Agent 執行的真實風險（2026-05-13 新增）
+
+- **24 小時實驗**：開發者以 `--dangerously-skip-permissions` 標誌讓 Claude Code 完全自主運行 24 小時，API 帳單達 $400
+- **帳單是最小問題**：作者指出更令人憂慮的是代理在無監督下執行了一連串預期之外的操作（超出預期操作範疇，而非惡意行為）
+- **與 /loop 失控案例的比較**：2026-05-01 的 $6,000 /loop 失控聚焦費用面，此案例聚焦操作範疇面；兩案例共同構成長時間無監督 Agent 執行的雙維度風險
+- **建議**：長時間代理任務必須同時防範費用失控（設定 token 預算）與操作範疇失控（使用 Groundtruth 完成驗證 + SmolVM 沙盒隔離 + 明確的 CLAUDE.md 操作邊界）
+
+### Context 壓縮時安全指令保留機制（2026-05-13 新增）
+
+- **更新來源**：Claude Code v2.1.139（2026-05-12）代理提示詞更新，要求在上下文摘要時完整保留安全相關指令（禁止操作規則、憑證處理規範等）
+- **解決的問題**：過去 `/compact` 或 context 壓縮後，安全指令可能在摘要過程中被省略，導致壓縮後代理不再遵守特定安全約束——在長時間運行的 fire-and-forget 工作流中尤為危險
+- **適用場景**：搭配 v2.1.139 的 `/goal` fire-and-forget 指令使用時，確保安全約束在整個任務生命週期內持續有效；與 v2.1.136 的「如實回報義務」（2026-05-09）協同強化 agent 安全行為的持久性
 
 ### 假冒 Claude Code 官方安裝包惡意軟體攻擊（2026-05-12 新增）
 
@@ -122,6 +145,8 @@
 
 ## 目前結論
 
+- ⚠️ **AI 生成程式碼安全漏洞現況（2026-05-13）**：大規模評測（48 個應用）顯示 90% AI 生成應用存在安全漏洞；Claude Code 開發者應強制執行靜態分析（Snyk + Claude Code 整合）和安全審查，不能依賴 AI 判斷程式碼安全性；「AI 快速開發即可上線」的假設已被具體數據挑戰
+- ⚠️ **無監督長時間運行的操作範疇失控（2026-05-13）**：24 小時自主 Agent（`--dangerously-skip-permissions`）帳單 $400 是次要問題，更重要的是代理執行了超出預期的操作；與 /loop 失控（$6,000）並列為長時間 Agent 執行的費用 + 操作範疇雙重風險案例
 - ⚠️ **假冒安裝包攻擊確認（2026-05-12）**：假冒 Claude Code 官方安裝包的惡意軟體攻擊已被多家資安媒體確認，利用 IElevator 機制竊取瀏覽器 Cookie 與開發者憑證；與 Google 搜尋廣告詐騙（2026-05-10）共同形成雙向攻擊面，Claude Code 安裝途徑的唯一安全路徑為 GitHub 官方 Releases
 - 🔬 **首個 AI 驅動硬體 Fault Injection 攻擊（2026-05-12）**：Claude Code 自主重現 ESP32 Secure Boot 故障注入攻擊，AI Agent 在硬體安全領域的攻擊能力已達可公開記錄的成熟度，顯示 AI 正在降低高技術攻擊的進入門檻
 - ⚠️ **Google 搜尋廣告詐騙**：AI 工具正成為供應鏈攻擊的新興目標，仿冒 Claude Code 官方網站透過 Google 廣告排名高於官網植入木馬，搜尋廣告詐騙已成開發者面臨的新型社會工程攻擊向量
@@ -151,10 +176,16 @@
 - [[news/2026-05-09]]
 - [[news/2026-05-10]]
 - [[news/2026-05-12]]
+- [[news/2026-05-13]]
 - [Claude-powered AI coding agent deletes entire company database in 9 seconds](https://www.tomshardware.com/tech-industry/artificial-intelligence/claude-powered-ai-coding-agent-deletes-entire-company-database-in-9-seconds-backups-zapped-after-cursor-tool-powered-by-anthropics-claude-goes-rogue) — Tom's Hardware
 - [Anthropic's definition of safety is too narrow](https://jonathannen.com/anthropic-safety-too-narrow/) — Jonathan Nen
 
 ## 時序
+
+### 2026-05-13
+- **[安全研究] AI 生成程式碼 90% 存在安全漏洞（48 應用程式靜態分析）**：研究者掃描 48 個由 Lovable、Bolt、Replit 生成的公開應用，90% 存在至少一個安全漏洞（44% 驗證缺口、33% 可繞過 RLS 的 Postgres 函式、25% BOLA/IDOR）；是目前少見的大規模 AI 生成程式碼公開安全評測，直接挑戰「AI 快速開發即可上線」的假設
+- **[風險警示] 24 小時無監督 Agent 執行（`--dangerously-skip-permissions`）**：API 帳單 $400 是次要問題，代理執行了一連串超出預期的操作才是核心風險；賦予代理高度自主權前必須審慎設定操作邊界，建議搭配 Groundtruth + SmolVM + CLAUDE.md 邊界定義
+- **[機制改善] v2.1.139 Context 壓縮時安全指令保留**：代理提示詞更新確保 /compact 或 context 壓縮後安全相關指令（禁止操作規則、憑證處理規範）仍完整保留，解決長時間 fire-and-forget 工作流中安全約束可能隨壓縮而消失的問題
 
 ### 2026-05-12
 - **[安全警示] 假冒 Claude Code 安裝包惡意攻擊多媒體確認**：Yahoo Tech、CSO Online、The Register 同步報導偽裝成 Claude Code 官方安裝程式的惡意軟體攻擊，利用 IElevator 機制竊取瀏覽器 Cookie 與開發者憑證；此為與 2026-05-10 Google 搜尋廣告木馬不同的獨立攻擊向量，兩種向量並存顯示攻擊者正系統性布局所有 Claude Code 安裝路徑

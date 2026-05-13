@@ -2,7 +2,7 @@
 
 **狀態：** ongoing
 **開始日期：** 2026-04-25
-**最後更新：** 2026-05-12
+**最後更新：** 2026-05-13
 
 ---
 
@@ -410,6 +410,36 @@
   - 分拆大型任務，確保每個子任務的 context 足夠聚焦
   - 在每個 session 開始時重新確認 context 完整性（見 CLAUDE.md 記憶驗證兩招，2026-05-11）
 
+### 多模型路由工作流（Dragoman）（2026-05-13）
+
+- **依問題類型路由模型**：開源 CLI 工具 Dragoman（約 800 行）讓 Claude Code 依問題類型自動路由至不同專業模型——新聞/時事查詢 → Perplexity；複雜推理 → Gemini；本機運算 → Ollama；Claude 作為整合層統整最終回答
+- **4 模型並行 + 彙整**：支援四個模型同時執行相同 prompt，最後由 Claude 統整並標記分歧點；延續 Council（並行多模型）的設計理念，但聚焦 Claude Code 工作流整合而非一次性 prompt 比較
+- **API 金鑰安全設計**：API 金鑰透過 1Password/Keychain 解析，完全不進入 Claude context，是 API 金鑰管理的安全最佳實踐範例
+- **意義**：多模型協作架構從「實驗性」走向「工具化」；與 Token 路由策略（2026-05-02）的 CLAUDE.md 路由規則取向不同，聚焦不同工具的能力互補而非成本優化
+
+### 電話 MCP：AI 代理與實體通話整合（2026-05-13）
+
+- **Cocall.ai 架構**：AI 代理撥打外線電話，遇到不確定的問題時自動暫停，轉回詢問使用者後再繼續通話；採用全雙工語音模型，支援 IVR 導航（按鍵選單）與電話轉接
+- **人機協作模式**：不同於完全自主代理，此工具強調「遇到邊界問題暫停確認」的人機協作設計，是 Agent 操作確認節點概念在實體世界的延伸
+- **意義**：是目前少見的 AI 代理從數位世界延伸至實體通話世界的案例；MCP 生態持續向現實世界操作延伸（繼 OpticOdds MCP、Cocall 等），顯示 Claude Code 生態已超出純開發工具範疇
+
+### Token Bloat 系統性對策（2026-05-13）
+
+- **測試執行器輸出精簡**：Claude Code 用量限制促使開發者深入審計 context 消耗，作者聚焦測試執行器輸出，提出只保留「測試是否通過、哪項失敗、失敗位置」的精簡策略；預告這是系列文章的第一篇
+- **根本問題框架化**：Token bloat 的主要來源是 context 膨脹（歷史訊息、測試輸出、工具回傳），而非 prompt 本身；系統性降耗需從 context 生命週期管理入手——此系列代表社群正在以系統化方式解決 token 效率問題，繼 token 降耗策略（2026-05-05）之後的更深度演進
+
+### 大規模子代理工作流實踐（2026-05-13）
+
+- **Boris Cherny 的數千個子代理工作流**：Claude Code 創始人公開每晚讓數千個 AI 子代理執行「深度工作」的工作流，是 Managed Agents 20 路並行子代理能力在個人工作流中的極端應用，展示大規模 agentic 模式的可行邊界
+- **與官方工具的正向回饋**：此工作流建立在 v2.1.140 改善的 subagent_type 匹配（大小寫不敏感）與 Agent View（統一 session 管理）基礎之上，顯示官方功能更新與社群使用案例之間的正向回饋；社群需求驗證官方功能優先序，官方工具降低社群工作流門檻
+- **社群討論帶動**：被主流媒體（Business Insider、Let's Data Science）大幅報導後，社群對大規模並行代理架構的討論密度顯著提升；見 [[entities/boris-cherny]]、[[entities/managed-agents]]
+
+### AI 生成程式碼安全審查必要性（2026-05-13）
+
+- **90% AI 生成應用存在安全漏洞**：48 個應用程式掃描結果（44% 驗證缺口、33% RLS bypass、25% BOLA/IDOR）是目前最具說服力的具體數據，直接挑戰「AI 快速開發即可上線」假設
+- **開發流程含義**：Claude Code 開發者應將安全審查（如 Snyk + Claude Code 整合，2026-05-10）納入標準 PR 流程；AI 生成程式碼不比人工撰寫更安全，快速開發的速度優勢可能掩蓋安全問題
+- **與 Claude Security 的關係**：此研究為 Anthropic 的 Claude Security 公開 Beta（2026-05-06）和社群工具 Trent（架構層安全評估）提供了需求支撐；見 [[entities/claude-security]]、[[topics/ai-agent-safety]]
+
 ### Agent 持續運作架構（2026-05-03）
 
 - **VPS 雙代理持續運作**：兩個 Claude Code 代理在 VPS 的 tmux session 中持續運作，自動開 PR 並發布 Discord 狀態更新，代理間可相互協調；架構概念類似「Claude Code 版 docker-compose」
@@ -509,6 +539,8 @@
 | **Agent FM**            | 監測工具 | 🔥 | 以「廣播」形式聽覺化呈現 Claude Code + Codex Agent 執行狀態，本地開源 MIT |
 | **Usage4Claude 3.0.0**  | 監測工具 | 🔥🔥 | 開源 macOS 選單列用量追蹤，3.0.0 版新增 Codex 追蹤，憑證存 Keychain |
 | **ltm**                 | 記憶工具 | 🔥🔥 | Core Memory Packet JSON 協定，跨編輯器 / 跨機器 / 跨模型的供應商中立 Agent 記憶 |
+| **Dragoman**            | 路由工具 | 🔥🔥 | 多模型路由 CLI，依問題類型自動路由至 Perplexity/Gemini/Ollama，支援 4 模型並行 + Claude 彙整，HN Show HN |
+| **Cocall.ai**           | MCP 工具 | 🔥🔥 | AI 代理撥打外線電話，遇不確定問題自動暫停詢問使用者再繼續，全雙工語音，支援 IVR 導航 |
 
 > 熱度定義：🔥🔥🔥 跨平台多次出現 / 社群廣泛討論；🔥🔥 單平台高互動；🔥 值得關注但尚未擴散
 
@@ -551,8 +583,19 @@
 - [[news/2026-05-09]]
 - [[news/2026-05-11]]
 - [[news/2026-05-12]]
+- [[news/2026-05-13]]
 
 ## 時序
+
+### 2026-05-13
+- **Boris Cherny 每晚數千個 AI 子代理工作流**：Claude Code 創始人公開讓數千個子代理夜間執行「深度工作」的極端 agentic 工作流，被 Business Insider 與 Let's Data Science 主流媒體大幅報導；是個人生產力 agentic AI 的里程碑案例，也是「Loops 是未來」哲學的公開極端實踐；見 [[entities/boris-cherny]]、[[entities/managed-agents]]
+- **v2.1.140 subagent_type 匹配改善**：大小寫不敏感及分隔符號不敏感，`"Code Reviewer"` 可自動解析為 `code-reviewer`，降低子代理配置的摩擦，推動多代理架構的易用性；見 [[entities/claude-code]]
+- **Dragoman 多模型路由 CLI**：約 800 行開源 CLI，讓 Claude Code 依問題類型路由至不同模型（Perplexity/Gemini/Ollama），支援 4 模型並行 + Claude 統整；API 金鑰走 1Password/Keychain 不進入 Claude context；HN Show HN 形式發布
+- **Cocall.ai 電話 MCP**：AI 代理與實體通話整合（撥打外線、自動暫停詢問、IVR 導航），是 MCP 生態向實體世界延伸的代表案例，繼 OpticOdds MCP 後進一步拓展 Claude Code 的垂直應用邊界
+- **Token Bloat 系列：測試輸出精簡策略**：開發者聚焦測試執行器輸出作為降耗第一步，提出只保留「通過/失敗/位置」資訊的精簡格式，預告系列文章；代表社群正在系統性解決 token 效率問題
+- **AI 生成程式碼安全漏洞評測（48 應用，90%）**：大規模靜態分析結果（44% 驗證缺口、33% RLS bypass、25% BOLA/IDOR）直接挑戰「AI 快速開發即可上線」；安全審查必須成為 Claude Code 開發的標準流程；見 [[topics/ai-agent-safety]]
+- **Anthropic 定價主導權持續強勁**：The Information 報導企業客戶願意吸收成本上漲，API 費用走向值得長期關注；對依賴 Anthropic API 的企業有預算規劃含義；見 [[entities/pricing]]
+- **新工具**：Dragoman（多模型路由 CLI）、Cocall.ai（電話 MCP）、Claudy macOS session 管理版（多 session 並列 + 自動帳號切換 + Draft Commit + Marketplace）；PullMD v2.4.1 支援 claude.ai 網頁版自訂連接器原生整合
 
 ### 2026-05-12
 - **`/goal` fire-and-forget 官方正式功能**：v2.1.139 推出 `/goal` 指令，是 Claude Code 首個真正的 fire-and-forget 循環——設定可驗證完成條件後，小型快速模型自動判斷條件成立與否並決定是否繼續執行；Reddit 社群熱烈反應，被視為 Claude Code 邁向非同步工作流的關鍵里程碑；見 [[entities/managed-agents]]
