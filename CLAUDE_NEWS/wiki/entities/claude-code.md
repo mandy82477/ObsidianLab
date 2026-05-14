@@ -3,18 +3,19 @@
 **類型：** product
 **狀態：** active
 **首次出現：** 2025（正式推出）
-**最後更新：** 2026-05-13
+**最後更新：** 2026-05-14
 
 ---
 
 ## 現況
 
-Claude Code 是 Anthropic 的 AI 編碼 CLI 工具，支援 agentic 工作流程、MCP Server 整合、Hooks 機制與多代理協作框架（Managed Agents）。截至 2026-05-13，GitHub Stars 達 121,000，是增長最受開發者關注的 AI 編碼助理之一。最新版本為 **v2.1.140**，核心能力已從純程式碼助理擴展為具備全桌面自動化、多代理管理與 AI 安全審查的完整開發平台。
+Claude Code 是 Anthropic 的 AI 編碼 CLI 工具，支援 agentic 工作流程、MCP Server 整合、Hooks 機制與多代理協作框架（Managed Agents）。截至 2026-05-14，GitHub Stars 達 121,000+，是增長最受開發者關注的 AI 編碼助理之一。最新版本為 **v2.1.141**，核心能力已從純程式碼助理擴展為具備全桌面自動化、多代理管理與 AI 安全審查的完整 agent 開發平台。
 
 ### 最新版本
 
 | 版本 | 日期 | 重點 |
 |------|------|------|
+| **v2.1.141** | 2026-05-13 | `terminalSequence` 欄位至 Hook JSON（無控制終端環境下桌面通知 + 視窗標題 + 響鈴）；`CLAUDE_CODE_PLUGIN_PRE` 擴展插件系統 |
 | **v2.1.140** | 2026-05-13 | `subagent_type` 大小寫／分隔符號不敏感匹配；代理配色更新 |
 | **v2.1.139** | 2026-05-12 | ★ Agent View（多 session 統一管理）+ `/goal`（fire-and-forget，104 項變更）|
 | **v2.1.136** | 2026-05-09 | 操作安全機制（+525 tokens）；`hard_deny` 無條件安全邊界 |
@@ -33,6 +34,8 @@ Claude Code 是 Anthropic 的 AI 編碼 CLI 工具，支援 agentic 工作流程
 - **`/goal` 指令**（v2.1.139）：設定可驗證的完成條件後自動迴圈執行——真正的 fire-and-forget 工作流（適合模組遷移、全測試通過等長任務）；見 [[feature-radar]]
 - **macOS Computer Use**（2026-05-03）：Claude Code / Claude Cowork 可直接控制 macOS 桌面滑鼠與鍵盤，升格為全桌面自動化代理
 - **Managed Agents 正式發布**（2026-05-11）：Dreaming 記憶整合、最高 20 路子代理並行、Outcomes 規格驗證；見 [[entities/managed-agents]]
+- **`/loop`、`/batch`、`/background` 指令**（官方文件 2026-05-14 上線）：`/loop` 固定循環、`/batch` 批次任務、`/background` 背景執行，與 `/goal` 共同構成完整自主執行指令套件，Claude Code 產品定位正式轉向「設定目標、自主完成」的 agent 開發範式；見 [[feature-radar]]
+- **Cat Wu：AI 下一步是「主動性（proactivity）」**（2026-05-14）：Claude Code 負責人接受訪問，指出 AI 下一重大躍進是主動完成任務（無需使用者提示），與自主執行指令套件方向完全呼應
 - **Boris Cherny 每晚數千子代理工作流**（2026-05-13）：「Loops 是未來」哲學的極端實踐，Business Insider 同步報導；見 [[entities/boris-cherny]]
 
 **安全與操作規範**
@@ -158,6 +161,8 @@ PR review 自動化、靜態分析、沙箱隔離、架構合規性與滲透測�
 
 Token 用量追蹤、session 費用分析與效能漂移偵測工具。
 
+- **[Ledger](https://github.com/delta-hq/cc-ledger)** — Rust 打造的本地 hook 工具，即時攔截失控 session 並追蹤每個 PR 的 token 成本；支援 macOS 選單欄、Web dashboard 及 CLI 三種介面；開發動機：作者在單次 session 中燒掉中位數 40 倍 token
+- **[Clawdmeter](https://github.com/clawdmeter)** — ESP32-S3 實體桌面儀表板，即時顯示 Claude Code token 用量；費用高度敏感背景下，是 AI 成本可見性向實體裝置延伸的代表案例
 - **[CC-Canary](https://github.com/delta-hq/cc-canary)** — 讀取 `~/.claude/projects/` JSONL log 偵測效能漂移，自動標記異常 session
 - **[Throttle Meter](https://www.reddit.com/r/ClaudeAI/comments/1t0aw95/)** — macOS menubar 工具，從 `~/.claude/projects/*.jsonl` 即時計算 session 用量與週配額，無遙測，MIT 授權
 - **[Usage4Claude 3.0.0](https://www.reddit.com/r/ClaudeAI/comments/1tazqpg/usage4claude_300_open_source_macos_menu_bar_usage/)** — 開源 macOS 選單列用量追蹤工具，3.0.0 版新增 Codex 用量追蹤支援，認證資料儲存於本地 Keychain
@@ -173,6 +178,7 @@ Token 用量追蹤、session 費用分析與效能漂移偵測工具。
 - **[EvanFlow](https://github.com/evanklem/evanflow)** — TDD 驅動的 Claude Code 迭代迴圈，16 個技能 + 2 個子代理人，每步驟設有人工確認節點，不自動 commit
 - **[Relay](https://github.com/basegraphhq/relay-plugin)** — 強制 Claude Code 在寫程式前深入對齊問題定義的插件，將 Plan Mode 的提問層級從「實作細節」拉升至「問題本質」（MIT 授權）
 - **[Patina](https://www.reddit.com/r/ClaudeAI/comments/1t3eurx/)** — 開源 CLI（MIT，已上 npm），透過「retro loop」機制自動維護 CLAUDE.md，防止 AI harness 配置「腐化」（修正行為復發、規則膨脹失焦）
+- **[Lanes](https://lanes.sh/)** — v0.39 新增 GitHub 與 Linear 雙向整合：直接從看板拉取 ticket，透過 MCP 讓 agent 存取 tracker，支援 `#9` / `ENG-9` 格式快速搜尋，實現零複製貼上的 AI 開發工作流
 - **[Remind](https://olliewagner.com/remind)** — 讓 Claude Code 在 Mac 上排程執行：只需在系統「提醒事項」App 新增備忘，Remind 便在指定時間喚醒終端機執行 claude 指令，結果寫回提醒事項；支援從 iPhone、Apple Watch 跨裝置新增排程
 - **[Claude Relay](https://github.com/innestic/claude-relay)** — plugin，讓同時開啟的多個本地 Claude Code session（前端、後端、infra）可以互相傳訊查詢，省去人工跨 session 複製貼上
 - **[/qu /ans 跨 session 通訊插件](https://www.reddit.com/r/ClaudeAI/comments/1t65lfq/)** — 讓兩個 Claude Code 工作階段互相通訊：新終端輸入 `/qu` 撥出，舊終端輸入 `/ans` 接聽，直接交換問答
@@ -197,6 +203,7 @@ Token 用量追蹤、session 費用分析與效能漂移偵測工具。
 - **[Claude-Find](https://github.com/Cavinooo/claude-find)** — 解決 `/resume` 只能依第一條訊息或自訂名稱篩選的痛點，讓重度用戶可用語義搜尋快速定位過去 session 的決策脈絡
 - **[Askdiff](https://github.com/narghev/askdiff)** — 在 GitHub PR 風格的 diff 介面中，讓開發者可直接對生成程式碼的同一個 Claude Code session 提問（點擊行號），串流取得原始決策理由
 - **[PullMD](https://www.reddit.com/r/ClaudeAI/comments/1sxzlh6/pullmd_gave_claude_code_an_mcp_server_so_it_stops/)** — MCP server，抓取網頁時先將 HTML 轉換為乾淨 Markdown，避免浪費 token 處理 cookie banner 等無用內容（一般文章有效內容僅佔原始 HTML 約 20%）；v2.4.1 正式支援 claude.ai 網頁版自訂連接器原生整合
+- **[agent-html-skills](https://github.com/f-labs-io/agent-html-skills)** — Claude Code plugin，讓 Claude 在認為必要時主動生成 HTML 視覺化輸出（雙向工件生成），並支援自動提交回 Claude Code 介面；受「HTML 的非凡有效性」文章啟發
 - **[Claude Exporter](https://chromewebstore.google.com/detail/claude-exporter-claude-ch/mhckealbblinipeplfddmbcohdidkfjf)** — Chrome 擴充功能，可將 Claude 對話匯出為 PDF、Word、Google Docs 或 Notion，支援自訂字型，無需帳號
 - **[CodeThis](https://codethis.dev/)** — MCP 原生 paste bin，支援 100+ 語言語法高亮，AI 可透過 MCP server 直接建立貼文；免費版含 REST API 與 MCP，Pro 方案 $9/月
 
@@ -243,12 +250,16 @@ Token 用量追蹤、session 費用分析與效能漂移偵測工具。
 - [[news/2026-05-10]]
 - [[news/2026-05-11]]
 - [[news/2026-05-12]]
+- [[news/2026-05-14]]
 - [[news/2026-05-13]]
 
 ## 版本歷史
 
 | 日期 | 事件 |
 |------|------|
+| 2026-05-14 | 官方文件發布 `/loop`、`/batch`、`/background` 完整自主執行指令套件（搭配 v2.1.139 的 `/goal`），Claude Code 產品定位正式轉向 agent 開發平台；Claude Code 負責人 Cat Wu 指出「AI 下一步是主動性（proactivity）」；6/15 訂閱 programmatic 用量剝離公告引發強烈反彈，`claude-pee` 繞過工具出現；見 [[entities/pricing]] |
+| 2026-05-14 | 新工具：Ledger（Rust PR 層級 token 成本追蹤 + macOS 選單欄 + Web dashboard）、Clawdmeter（ESP32-S3 實體 token 監控面板）、Grafana Dashboard（Claude Code 用量 Prometheus 監控）、agent-html-skills（雙向 HTML 工件生成 plugin）、Lanes v0.39（GitHub + Linear 雙向整合） |
+| 2026-05-13 | v2.1.141：`terminalSequence` 欄位至 Hook JSON（無控制終端環境桌面通知 + 視窗標題 + 響鈴）；`CLAUDE_CODE_PLUGIN_PRE` 擴展插件系統能力 |
 | 2026-05-13 | v2.1.140：改善 Agent 工具的 `subagent_type` 參數匹配邏輯，支援大小寫不敏感及分隔符號不敏感（例如 `"Code Reviewer"` 自動解析為 `code-reviewer`），並更新代理顏色配色方案；代理提示詞更新以確保 context 壓縮後安全指令完整保留；見 [[entities/managed-agents]] |
 | 2026-05-13 | Boris Cherny 公開每晚讓數千個 AI 子代理執行「深度工作」的工作流架構，被 Business Insider 與 Let's Data Science 同步報導；研究者掃描 48 個 AI 生成應用發現 90% 存在安全漏洞（44% 驗證缺口、33% 可繞過 RLS 的 Postgres 函式、25% BOLA/IDOR）；見 [[topics/ai-agent-safety]] |
 | 2026-05-13 | 新工具：Dragoman（多模型路由 CLI，HN Show HN）、Cocall.ai（外線電話 MCP）、Claudy macOS session 管理版（多 session 並列 + 自動帳號切換）；PullMD v2.4.1 支援 claude.ai 網頁版自訂連接器原生整合 |

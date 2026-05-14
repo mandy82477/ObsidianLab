@@ -2,7 +2,7 @@
 
 **狀態：** ongoing
 **開始日期：** 2026-04
-**最後更新：** 2026-05-12
+**最後更新：** 2026-05-14
 
 ---
 
@@ -77,11 +77,16 @@ Claude Code 已成為 AI 輔助編碼領域的標竿產品，但競爭正在快�
 - [[news/2026-05-04]]
 - [[news/2026-05-05]]
 - [[news/2026-05-06]]
+- [[news/2026-05-14]]
 - [[news/2026-05-07]]
 - [[news/2026-05-12]]
 - [India Today 報導](https://www.indiatoday.in/technology/news/story/google-is-secretly-building-a-claude-code-challenger-sergey-brin-is-personally-involved-2899415-2026-04-21)
 
 ## 時序
+
+### 2026-05-14
+- **[政策驅動分流] 6/15 programmatic 用量改按 API 費率計費，加速競品轉換**：`claude -p`、Agent SDK、Claude Code GitHub Actions 及第三方 SDK 全數剝離訂閱方案；已有用戶宣告轉向 Codex 或 Gemini；OpenClaw 恢復允許但需付信用池費用；此次政策調整是繼 OpenClaw 禁令後最大規模的計費結構改變，顯著縮短與替代方案的轉換成本差距；見 [[entities/pricing]]、[[entities/openclaw]]
+- **[架構因應] 多 LLM 混合策略成為主流應對方向**：Opus 4.7 作為 orchestrator + DeepSeek V4 Pro 承擔大量 token 輸出，是 Max20 方案下最大化性價比的具體策略；此架構意味著 Anthropic 不再是所有 token 的唯一供應商，DeepSeek 等低成本模型在工作流中取得更大份額
 
 ### 2026-05-12
 - **[OpenCode 157K 開發者里程碑]**：The New Stack 報導逾 15.7 萬名開發者轉向 OpenCode 作為備案，即便 Anthropic 在 Code with Claude 大會宣佈倍增速率限制與 Opus 配額，平台鎖定（vendor lock-in）的結構性顧慮仍是驅動開源替代選擇的主因

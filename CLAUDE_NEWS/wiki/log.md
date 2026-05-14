@@ -5,6 +5,21 @@ Append-only 紀錄。每次 ingest、query 或 lint 都在此追加一條。
 
 ---
 
+## 2026-05-14 Ingest
+
+- 來源日報：[[news/2026-05-14]]
+- 更新頁面：
+  - `entities/pricing.md`（2026-05-14 重大政策：6/15 起 programmatic 用量剝離訂閱方案，改為信用池（Pro $20 / Max 5x $100 / Max 20x $200），按完整 API 費率計費；週限制臨時提高 50% 至 7/13；claude-pee 繞過工具出現；開發者強烈反彈及轉換競品）
+  - `entities/claude-code.md`（v2.1.141 terminalSequence + CLAUDE_CODE_PLUGIN_PRE；/loop・/batch・/background 官方文件上線；Cat Wu 訪問 AI 主動性論述；新工具：Ledger/Clawdmeter/Grafana Dashboard/agent-html-skills/Lanes v0.39；版本歷史 2026-05-14 兩條、2026-05-13 v2.1.141 一條）
+  - `entities/openclaw.md`（狀態更新：受限→允許（信用池計費）；新增 2026-05-14 事件：恢復允許但改走信用池）
+  - `wiki/feature-radar.md`（/goal 熱度升至 🔥🔥🔥🔥🔥；新增 /loop・/batch・/background 條目 🔥🔥🔥🔥；更新全覽表）
+  - `topics/community-tech-patterns.md`（新增 2026-05-14 時序：費用可觀測性工具爆發/多 LLM 混合架構/claude-pee PTY 繞過/雙向 HTML 工件/週末 PoC/commit 學習技能；新增技術彙整：費用可觀測性工具、多 LLM 混合架構條目）
+  - `topics/competitor-landscape.md`（新增 2026-05-14 時序：政策驅動分流 + 多 LLM 混合策略）
+- 新增頁面：無
+- 摘要：Anthropic 宣布 6/15 起 programmatic 用量全面剝離訂閱方案（信用池制）為最大事件，引發開發者強烈反彈、claude-pee 繞過工具誕生、多 LLM 混合策略討論加速；官方 /loop・/batch・/background 指令文件同步上線，標誌 Claude Code 正式轉向 agent 開發平台定位。
+
+---
+
 ## 2026-05-13 Lint
 
 - 修正矛盾：

@@ -61,6 +61,14 @@
 - **角色分工模型**：Claude Opus 擔任「首席工程師」持有否決權，Gemini Pro 負責「策略判斷」，人類保留最終資金決策權；270+ 條分歧記錄日誌顯示模型間存在真實且可記錄的意見差異
 - **異質模型互補**：Claude 與 Gemini 在同一工作流中協作的案例顯示，不同模型在不同決策層次（工程執行 vs 策略判斷）各有優勢，「單一最佳模型」假設受到挑戰
 - **否決機制設計**：賦予 AI agent 否決權的架構需要明確的優先序（人類 > Claude > Gemini），並記錄分歧以供後續分析
+- **成本導向的 multi-LLM 混合架構**（2026-05-14）：Opus 4.7 作為 orchestrator + DeepSeek V4 作為 worker 的混合策略，是訂閱費用調整後的具體因應方案；「高能力決策層 + 低成本執行層」模式預計成為 6/15 後的主流架構選擇；適合 Max 20x 方案下需最大化性價比的重度自動化用戶
+
+### 費用可觀測性工具（Cost Observability）
+
+- **本地 JSONL 解析是成本追蹤核心手段**：`~/.claude/projects/*.jsonl` 已成社群費用分析的標準資料來源，數十款工具圍繞此格式構建（Throttle Meter、CC-Canary、Ledger、Usage4Claude）
+- **PR 層級 token 成本追蹤**（Ledger，2026-05-14）：從 session 層級拆解至 PR 層級，讓每個功能的 AI 成本可量化並比較，是「AI 開發成本作為工程指標」的具體實踐
+- **硬體整合顯示 token 用量**（Clawdmeter，2026-05-14）：ESP32-S3 實體面板讓 AI 成本可見性延伸至實體裝置，在費用敏感度高漲的當下格外受矚目；代表費用可觀測性需求已溢出純軟體工具的範疇
+- **Grafana + Prometheus 監控模式**（2026-05-14）：把 Claude Code 用量視為可觀測的系統指標，以 SRE 式監控 dashboard 追蹤開發者行為數據；企業部署 Claude Code 時的標準監控模式
 
 ### Prompt 精簡策略
 
@@ -582,10 +590,20 @@
 - [[news/2026-05-08]]
 - [[news/2026-05-09]]
 - [[news/2026-05-11]]
+- [[news/2026-05-14]]
 - [[news/2026-05-12]]
 - [[news/2026-05-13]]
 
 ## 時序
+
+### 2026-05-14
+- **訂閱 programmatic 用量剝離——費用可觀測性工具需求爆發**：6/15 起 `claude -p` / Agent SDK 改按全額 API 費率計費，直接推動 token 成本分析工具密集出現同一天：Ledger（Rust，PR 層級 token 追蹤 + macOS 選單欄 + Web dashboard）、Clawdmeter（ESP32-S3 實體 token 監控面板）、Grafana + Prometheus 監控 dashboard；費用可觀測性從「選配」成為「必備」；見 [[entities/pricing]]
+- **多 LLM 混合架構作為訂閱費用因應策略**：Opus 4.7 擔任決策 orchestrator、DeepSeek V4 Pro 承擔大量 token 輸出的混合架構，在 Max20 方案下最大化性價比；「高能力 orchestrator + 低成本 worker」的跨廠商架構預計成為 6/15 後的主流因應方式；見 [[topics/competitor-landscape]]
+- **PTY 終端模擬繞過工具（claude-pee）**：透過 PTY 模擬互動終端執行 claude、注入輸入並用 stop hook 截取輸出，使 `-p` 用量不進入獨立信用池；繼 Claw-Code 後第二個以工程手段繞過 Anthropic 限制的社群工具，作者坦言為臨時方案
+- **雙向 HTML 工件生成（agent-html-skills）**：受「HTML 的非凡有效性」文章啟發，讓 Claude Code 在認為必要時**主動**生成 HTML 視覺化輸出（非用戶觸發），並支援自動提交回介面；是「agent 主動視覺化」工作流的首個開源實現，與 Cat Wu 訪問「主動性（proactivity）」方向呼應
+- **「週末 + Claude Code = 替代商業訂閱工具」持續驗證**：同一天出現兩個案例——Tauri macOS 語音輸入 app（取代 $15/月 Wispr Flow）與 Bloomberg 風格股票分析工具（取代付費訂閱），均由領域知識持有者（非工程背景）用幾天完成；印證「領域專家 × Claude Code」的快速工具化路徑持續成熟
+- **commit-triggered 學習技能模式**：每次 commit 後觸發學習提示的 Skill，概念是將開發流程轉化為刻意練習機會；社群評論認為包裝過度（底層僅 bash + LLM 提示），但「anti-skill-atrophy 整合於開發工作流」的方向持續共鳴；見 2026-05-09 skill atrophy 討論串
+- **新工具**：Ledger（Rust PR token 成本追蹤）、Clawdmeter（ESP32-S3 桌面 token 面板）、Grafana Dashboard（Claude Code Prometheus 監控）、agent-html-skills（雙向 HTML 工件）、Lanes v0.39（GitHub/Linear 雙向整合）
 
 ### 2026-05-13
 - **Boris Cherny 每晚數千個 AI 子代理工作流**：Claude Code 創始人公開讓數千個子代理夜間執行「深度工作」的極端 agentic 工作流，被 Business Insider 與 Let's Data Science 主流媒體大幅報導；是個人生產力 agentic AI 的里程碑案例，也是「Loops 是未來」哲學的公開極端實踐；見 [[entities/boris-cherny]]、[[entities/managed-agents]]
