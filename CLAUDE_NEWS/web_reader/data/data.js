@@ -26,6 +26,18 @@ window.WIKI_DATA = {
       "summary": "Bugcrawl 是 Anthropic 正在測試的新工具，專為 Claude Code 提供自動化漏洞偵測功能，強化 AI 輔助開發流程中的程式品質把關。目前尚未正式公開，資訊來源為 Google News / TestingCatalog 報導。 ---"
     },
     {
+      "id": "cat-wu",
+      "pageType": "entity",
+      "name": "Cat Wu",
+      "entityType": "person",
+      "status": "active",
+      "pill": "active",
+      "firstSeen": "2026-05-14",
+      "startDate": "",
+      "lastUpdated": "2026-05-15",
+      "summary": "Cat Wu 是 Anthropic Claude Code 產品負責人（Head of Claude Code Products），與創始人 Boris Cherny（見 [[entities/boris-cherny]]）共同主導 Claude Code 的產品方向。2026-05-14，她在公開訪問中提出 AI …"
+    },
+    {
       "id": "claude-code",
       "pageType": "entity",
       "name": "Claude Code",
@@ -184,6 +196,18 @@ window.WIKI_DATA = {
       "summary": "Claude Code 在 2026 年 3 月至 4 月間出現長達約一個月的效能明顯退步，引發大量開發者不滿。2026-04-24，Anthropic 首次正式承認此問題，說明原因為**工程疏失**（engineering missteps），並非刻意的模型行為調整。 ---"
     },
     {
+      "id": "community-tech-discussions",
+      "pageType": "topic",
+      "name": "社群技術討論趨勢",
+      "entityType": "",
+      "status": "ongoing",
+      "pill": "active",
+      "firstSeen": "",
+      "startDate": "2026-04-25",
+      "lastUpdated": "2026-05-15",
+      "summary": "追蹤 Claude Code 社群中活躍的概念辯論、設計哲學、實證研究與技術反思。與 [[topics/community-tech-patterns]] 追蹤具體工具和工作流不同，本頁聚焦思想碰撞：什麼哲學正在成形、什麼假設受到挑戰、什麼共識正在收斂。每次 ingest 從「💬 技術熱度討論」區塊萃取有討論價值的觀點…"
+    },
+    {
       "id": "community-tech-patterns",
       "pageType": "topic",
       "name": "社群技術應用趨勢",
@@ -192,8 +216,8 @@ window.WIKI_DATA = {
       "pill": "active",
       "firstSeen": "",
       "startDate": "2026-04-25",
-      "lastUpdated": "2026-05-15",
-      "summary": "追蹤 Claude Code 社群在實際開發中累積的技術應用模式、工作流創新與工具生態。每次 ingest 從「💬 技術熱度討論」區塊萃取有價值的技術發現，持續累積形成社群最佳實踐知識庫。 ---"
+      "lastUpdated": "2026-05-15（拆分技術討論至 community-tech-discussions）",
+      "summary": "追蹤 Claude Code 社群在實際開發中累積的**工具、工作流與應用模式**。每次 ingest 從「💬 技術熱度討論」區塊萃取具體可執行的技術發現，持續累積形成社群最佳實踐知識庫。 概念辯論、設計哲學與技術反思見 [[topics/community-tech-discussions]]。 ---"
     },
     {
       "id": "competitor-landscape",

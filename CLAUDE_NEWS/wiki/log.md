@@ -399,3 +399,50 @@ Append-only 紀錄。每次 ingest、query 或 lint 都在此追加一條。
 
 **新建 overview：**
 - `overview.md`
+
+---
+
+## 2026-05-15 Re-ingest（品質審查補跑）
+
+- 來源日報：[[news/2026-05-15]]（已於同日 Ingest 處理，本次為品質審查補跑）
+- 更新頁面：
+  - `entities/pricing.md`（完整重構：以 6/15 互動式 vs 程式化雙軌計費架構為核心，新增方案對照表、費用管控技巧、6/15 前行動清單；歷史政策紀錄保留但壓縮）
+- 新增機制：
+  - `CLAUDE.md` 新增「Wiki 頁面呈現品質標準」（必須修復 + 警示觸發重構規則）
+  - `wiki-ingest.md` 新增 Step 4b 呈現品質審查（強制核對）
+  - `wiki-lint.md` 新增 Step 3e 呈現品質審查（全頁面掃描）
+  - `.claude/settings.local.json` 新增 PostToolUse Hook（markdownlint-cli2 自動掃描）
+  - 新增 `/wiki-backfill` 與 `/wiki-digest` 指令
+- 呈現品質審查結果：
+  - `entities/claude-code.md`（336 行）✅ 通過——版本歷史以表格壓縮，功能分主題區塊
+  - `entities/pricing.md`（210 行）✅ 通過——重構後計費架構清晰置頂，表格呈現
+  - `topics/competitor-landscape.md`（160 行）✅ 通過
+  - `topics/ai-agent-safety.md`（239 行）✅ 通過——技術彙整按主題組織，時序含 [tag] 分類
+  - `topics/community-tech-patterns.md`（836 行）📋 待辦——過大，建議 lint 時將舊 時序 條目壓縮進 技術彙整；當前結構可讀，不阻礙使用
+- 摘要：本次補跑以建立呈現品質審查機制為主，並完成 pricing.md 架構重構，使 6/15 計費雙軌制在頁面頂部即可讀懂。
+
+---
+
+## 2026-05-15 Lint
+
+- 修正矛盾：無
+- 補連結：
+  - 新建 `entities/cat-wu.md`（Cat Wu 被 claude-code.md × 2 + community-tech-patterns.md × 2 + feature-radar.md 提及共 5 次，達建頁閾值）
+  - `entities/claude-code.md` → 補上 `[[entities/cat-wu]]`（近期重要更新 + 相關議題兩處）
+  - `topics/community-tech-patterns.md` → 2026-05-15 及 2026-05-14 兩筆 Cat Wu 提及補 wikilink
+- 狀態更新：無（所有 ongoing/monitoring 狀態確認無需調整）
+- 遷移至 entities：無
+- 新增 entities：`entities/cat-wu.md`（Claude Code 產品負責人，AI 主動性論述）
+- 呈現品質：
+  - `topics/competitor-landscape.md` ⚠️ 已修復：16 個連續日期條目新增 3 個主題分組（企業競爭白熱化 / Codex 崛起與分流 / 早期格局）
+  - `topics/community-tech-patterns.md` 📋 待辦：836 行過大，最舊 4 個時序條目（2026-04-25 至 2026-04-28）待壓縮至技術彙整；工作量過大，記錄待辦，次週 lint 處理
+  - 其餘所有頁面（12 entities + 4 topics）✅ 通過
+- overview.md：已全面重寫（反映 2026-05-14/15 計費政策、Microsoft 授權取消、Cat Wu proactivity 論述、Ramp 企業超越數據）
+
+## 2026-05-15 拆分 community-tech-patterns
+
+- 原因：community-tech-patterns.md 達 836 行，技術彙整混入應用（工具/工作流）與討論（哲學/辯論/實證）兩種性質
+- 新增頁面：`topics/community-tech-discussions.md`（技術討論趨勢）
+- 移出條目（24 項）：effort 等級與模型行為、多 LLM 協作架構、工具生態痛點、封閉技能生態批判、規格驅動開發、記憶體治理與行為漂移防範、AI 程式碼一致性問題、AI 大規模開發案例、Boris Cherny「Loops 是未來」、Agent Supervision 哲學、Skills Unix 哲學、Agentic 工作流組織協調挑戰、Wire Trace 架構侷限、120 提示詞實證研究、Token 用量極端案例、整合模式選擇框架、Boris Cherny 反 vibe coding、Skill Atrophy 反思、HTML vs Markdown、Claude Code 架構深度解析、三層 Code Review、Judge Gate、Context 管理核心瓶頸、AI 生成程式碼安全審查必要性
+- 結果：patterns.md 836→716 行；discussions.md 244 行（新）
+- 更新：index.md（頁數 22→23）、community-tech-patterns.md（摘要、目前結論、相關實體）

@@ -85,6 +85,8 @@ Claude Code 已成為 AI 輔助編碼領域的標竿產品，但競爭正在快�
 
 ## 時序
 
+#### 企業競爭白熱化（2026-05-12 至 2026-05-15）
+
 ### 2026-05-15
 - **[重大事件] Microsoft 取消內部 Claude Code 授權，轉推 GitHub Copilot CLI**：Microsoft 去年 12 月起向數千名內部員工（含工程師、PM、設計師等非工程師職能）開放 Claude Code，但因規模過大帶來成本壓力，現正陸續取消授權；此舉標誌大型企業 AI 工具採購的成本敏感度臨界點，也是 Microsoft 自家 Copilot 與 Claude Code 在企業市場首次正面競爭的明確訊號；見 [[entities/claude-code]]
 - **[里程碑] Anthropic 企業採用率首次超越 OpenAI（Ramp AI Index）**：Anthropic 2026 年 4 月企業採用率達 **34.4%**，OpenAI 為 **32.3%**，Claude Code 快速普及是主驅動力；Ramp 經濟學家提醒市場競爭仍高度動盪，領先地位並不穩固
@@ -99,6 +101,8 @@ Claude Code 已成為 AI 輔助編碼領域的標竿產品，但競爭正在快�
 - **[UiPath 開放平台整合]**：RPA 龍頭 UiPath 宣布開放平台給所有 AI 編程 Agent，優先整合 Claude Code 與 OpenAI Codex，顯示企業自動化市場正將 AI 編碼工具視為核心組件；Claude Code 藉此進入 RPA/企業流程自動化的生態版圖，是繼 Amazon 全員部署（2026-05-05）之後的另一個大型企業整合案例
 - **[Signadot Kubernetes 整合]**：Signadot 推出讓 Claude Code、Codex 與 Cursor 直接在真實 Kubernetes 環境驗證程式碼變更的新技能，代表 AI 編程工具的競爭正從「寫程式」延伸至「生產環境驗證」的更廣泛開發生命週期
 - **[Claude Code 生態系工具爆發（社群）]**：同一天湧現 BrowserCode（WebAssembly 瀏覽器版）、HiveTerm（多 Agent 工作站）、Writ（Neo4j 規則強制執行）、Usage4Claude 3.0.0（含 Codex 追蹤）等社群工具；生態系擴張速度加快，進一步提高 Claude Code 的轉換成本
+
+#### Codex 崛起與分流（2026-05-01 至 2026-05-07）
 
 ### 2026-05-07
 - **DeepSeek V4 替換 Claude Opus 4 的 30 天實測**：開發者在 Claude Code 框架中以 DeepSeek V4 取代 Claude Opus 4，進行 30 天、1 億 token 的成本與品質對比測試，為追求降低費用的開發者提供具體量化數據，社群尚待進一步驗證結論可靠性
@@ -130,6 +134,8 @@ Claude Code 已成為 AI 輔助編碼領域的標竿產品，但競爭正在快�
 - **iCapital 採用 Anthropic 打造金融客戶工具**：另類資產平台 iCapital 宣布採用 Anthropic 技術為客戶建立 AI 工具，顯示 Claude 在金融服務領域的企業採用持續擴展
 - **The Atlantic：AI 泡沫論降溫，Claude Code 為商業化核心驅動**：The Atlantic 指出隨著 Claude Code 等 AI Agent 工具帶動企業付費，AI 產業實際營收正快速追上前期大規模基礎建設投資，Anthropic 被點名為商業化轉折的核心受益者
 - **GPT-5.5 vs Opus 4.7 基準測試**：56 個真實開源 repo 任務測試，Opus 4.7 寫出更精簡 patch，GPT-5.5 的 patch 更常通過 code review；見 [[entities/opus-4-7]]
+
+#### 早期格局（2026-04-24 至 2026-04-30）
 
 ### 2026-04-30
 - **"Is Anybody Using Codex?" HN 討論**：社群觀察 HN 上 Claude Code 討論量遠超 OpenAI Codex，留言者普遍認為兩者能力相近（Opus 4.7 ≈ GPT 5.5），但 Claude Code 社群能見度明顯更高；Codex 曝光度有限，實際採用規模不明

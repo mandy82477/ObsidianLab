@@ -36,7 +36,7 @@ Claude Code 是 Anthropic 的 AI 編碼 CLI 工具，支援 agentic 工作流程
 - **macOS Computer Use**（2026-05-03）：Claude Code / Claude Cowork 可直接控制 macOS 桌面滑鼠與鍵盤，升格為全桌面自動化代理
 - **Managed Agents 正式發布**（2026-05-11）：Dreaming 記憶整合、最高 20 路子代理並行、Outcomes 規格驗證；見 [[entities/managed-agents]]
 - **`/loop`、`/batch`、`/background` 指令**（官方文件 2026-05-14 上線）：`/loop` 固定循環、`/batch` 批次任務、`/background` 背景執行，與 `/goal` 共同構成完整自主執行指令套件，Claude Code 產品定位正式轉向「設定目標、自主完成」的 agent 開發範式；見 [[feature-radar]]
-- **Cat Wu：AI 下一步是「主動性（proactivity）」**（2026-05-14）：Claude Code 負責人接受訪問，指出 AI 下一重大躍進是主動完成任務（無需使用者提示），與自主執行指令套件方向完全呼應
+- **Cat Wu：AI 下一步是「主動性（proactivity）」**（2026-05-14）：Claude Code 負責人接受訪問，指出 AI 下一重大躍進是主動完成任務（無需使用者提示），與自主執行指令套件方向完全呼應；見 [[entities/cat-wu]]
 - **Boris Cherny 每晚數千子代理工作流**（2026-05-13）：「Loops 是未來」哲學的極端實踐，Business Insider 同步報導；見 [[entities/boris-cherny]]
 
 **安全與操作規範**
@@ -230,7 +230,8 @@ Token 用量追蹤、session 費用分析與效能漂移偵測工具。
 - [[topics/ai-agent-safety]]
 - [[entities/claude-design]]（AI 設計工具，與 Claude Code 整合尚不完善）
 - [[entities/openclaw]]（第三方 agentic 工具，Anthropic 主動管控中）
-- [[entities/boris-cherny]]（Claude Code 創始人與負責人）
+- [[entities/boris-cherny]]（Claude Code 創始人）
+- [[entities/cat-wu]]（Claude Code 產品負責人，AI 主動性論述）
 
 ## 參考來源
 

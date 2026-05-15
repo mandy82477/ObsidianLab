@@ -5,5 +5,18 @@
       "Bash(python scripts/build_web.py)",
       "mcp__Claude_Preview__preview_start"
     ]
+  },
+  "hooks": {
+    "PostToolUse": [
+      {
+        "matcher": "Edit|Write",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "markdownlint-cli2 \"wiki/**/*.md\" || true"
+          }
+        ]
+      }
+    ]
   }
 }
