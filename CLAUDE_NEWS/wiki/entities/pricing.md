@@ -6,282 +6,184 @@
 
 ---
 
-## 現行方案（2026-04）
+## 計費架構（2026-06-15 起正式生效）
 
-| 方案 | 月費 | Claude Code 模型存取 |
-|------|------|----------------------|
-| Free | $0 | 基本限制 |
-| Pro | $20 | 含 Sonnet；Opus 需另購額外用量 |
-| Max | 更高 | 更高用量上限 |
-| API | 按量計費 | 全模型，依 token 計費 |
+Anthropic 將使用場景切分為**兩條獨立計費軌道**：
 
-> **注意**：以上為社群整理的近似資訊，確切定價請以官方頁面為準。
+### 軌道 1：互動式使用（Interactive）— 訂閱涵蓋
 
----
+| 涵蓋範圍 | 說明 |
+|---------|------|
+| Claude.ai 網頁介面 | 人工驅動對話 |
+| Claude Code 互動 session | 使用者在終端手動操作 |
+| 一般 API 互動呼叫 | 人工觸發的請求 |
 
-## 近期政策變動
-
-### 2026-05-15：6/15 計費變更持續延燒——社群反應、第三方工具衝擊、官方回應
-
-#### 社群情緒分析（約 120 則反應）
-- **負面（約六成）**：認為 Max 5x 月信用 $100 對重度 Agent 用量嚴重不足
-- **理解（約兩成）**：認為程式化用量本應與互動用量分開計費
-- **觀望（約兩成）**：等待 6/15 實際上線後評估
-
-#### 受衝擊的第三方工具
-Zed、Conductor、T3 Code、Superset 等基於 Agent SDK 建構的工具均直接受影響，6/15 後用量將從訂閱池切換至獨立信用額度；Lanes（其架構從未使用受影響的計費路徑）聲明不受影響，Zed 已發布官方說明文解析影響與應對選項。
-
-#### Ars Technica 官方訪談——Claude Code 產品主管說明邏輯
-Anthropic Claude Code 產品主管接受 Ars Technica 專訪，說明用量限制設計邏輯、資訊透明度政策，及「精簡執行框架（lean harness）」的設計哲學；此訪談是 Agent SDK 計費爭議持續延燒之際 Anthropic 最完整的官方立場表述，但社群認為說明仍不足以消除疑慮。
-
-#### VS Code 擴充套件計費歸屬仍不明
-用戶詢問 VS Code 擴充套件的用量是否計入新信用池，Anthropic 尚未提供明確答覆，政策邊界仍待官方文件補充說明。
-
-#### Ungate 工具出現（ToS 風險）
-GitHub 開源工具 Ungate 宣稱可將 Claude Max 訂閱用量路由至 Cursor，估算 $100 Max 訂閱的 token 價值相當於 $2,000 API 費用；此類工具的出現反映訂戶對計費變更的高度焦慮，**使用前應確認是否符合 Anthropic 服務條款**。
+→ 費用包含在訂閱月費內，受「5 小時視窗速率上限」管控
 
 ---
 
-### 2026-05-14：訂閱方案剝離 programmatic 用量——6 月 15 日起信用池制全面上線
+### 軌道 2：程式化使用（Programmatic）— 信用池計費
 
-Anthropic 正式宣布：6 月 15 日起，**`claude -p`、Agent SDK、Claude Code GitHub Actions 及第三方 Agent SDK app 的用量，將完全脫離訂閱方案，改為獨立信用池，按完整 API 費率計費**（不享任何訂閱折扣）。
+| 涵蓋範圍 | 計費方式 |
+|---------|---------|
+| `claude -p`（headless / 非互動模式） | 按完整 API 費率，從信用池扣除 |
+| Agent SDK 呼叫 | 同上 |
+| Claude Code GitHub Actions | 同上 |
+| 第三方 Agent SDK app（如 Zed、Conductor、T3 Code） | 同上 |
 
-| 方案 | 月費 | 新增信用池 |
-|------|------|-----------|
-| Pro | $20 | $20/月 |
-| Max 5x | $50 | $100/月 |
-| Max 20x | $200 | $200/月 |
+→ **不享任何訂閱折扣**，信用池用盡後需額外購買
 
-**實際財務衝擊**：Max 5x 用戶試算後發現，即便只用 40% 週配額，換算為 API 費率約需 **$1,000/月**（是現行方案的 10 倍以上）。此舉等同正式宣告：**訂閱方案僅涵蓋互動式人工使用，自動化工作流必須自行負擔 API 費用**。
+---
 
-主要後續效應：
-- 已有用戶宣告取消訂閱，轉向 Codex 或 Gemini；見 [[topics/competitor-landscape]]
-- 社群開發者發布 `claude-pee` 繞過工具（PTY 終端模擬 + stop hook 截取輸出），試圖讓 `-p` 用量不進入獨立信用池，Anthropic 尚未回應
-- Anthropic 同步將所有付費方案週用量上限**臨時提高 50%（至 7 月 13 日）**作為過渡緩衝
+## 方案對照表（2026-06-15 後）
 
-此為繼 2026-04-25「OpenClaw 配額限制」之後，第二次大幅調整 programmatic 用量政策；OpenClaw 等第三方工具此次被允許恢復，但改走信用池計費；見 [[entities/openclaw]]。**6/15 前建議行動**：盤點所有 `claude -p` / Agent SDK / CI 自動化用量，依每月信用池上限評估是否足夠或需備案。
+| 方案 | 月費 | 互動用量 | Programmatic 信用池/月 |
+|------|------|---------|----------------------|
+| Free | $0 | 基本限制 | 無 |
+| Pro | $20 | 標準 | $20（按 API 費率） |
+| Max 5x | $50 | 5× Pro | $100（按 API 費率） |
+| Max 20x | $200 | 20× Pro | $200（按 API 費率） |
+| API only | 按量 | — | 直接按 API 費率 |
 
-### 2026-05-13：Anthropic 定價主導權強勁，企業客戶吸收成本上漲
+> **財務衝擊試算**：Max 5x 用戶若程式化使用達週配額 40%，換算 API 費率約需 **$1,000/月**（是月費的 20 倍）
 
-The Information 報導 Anthropic 在市場上展現強大定價主導權，企業客戶即使面對成本增加仍願意繼續採用。雖具體定價數字需付費訂閱才可查閱，但此報導暗示 Anthropic 的 API 定價策略在短期內仍將維持強勢，依賴其服務的重度用戶應提前納入預算規劃。
+> **過渡緩衝**：6/15 前 Anthropic 臨時將所有付費方案週用量上限**提高 50%**（至 7 月 13 日）
 
-此為 The Information 獨家報導，是業界對 Anthropic 定價能力評估的重要參考，也與 Anthropic 的系列商業利好（SpaceX 算力合作、企業採用加速）形成一致的市場強勢敘事。建議依賴 Anthropic API 的企業評估多供應商策略以避免定價風險；見 [[topics/competitor-landscape]]。
+---
 
-### 2026-05-12：Claude Code Ultra Review 費用透明度爭議
+## 6/15 前建議行動
 
-用戶實測 Claude Code Ultra Review 功能，實際費用為**每次 $100–$140**（適用約 50–100 個檔案的 PR），與官方介面顯示的 **$5–$20 估算相差數倍**；用戶認為程式碼審查品質尚可，但費用透明度問題引發批評，是繼靜默計費 bug 與 token 費用翻倍之後的第三次費用透明度爭議。Anthropic 尚未就此差距給出說明。
+- [ ] 盤點所有 `claude -p`、Agent SDK、CI 自動化的月均用量
+- [ ] 對照各方案信用池上限，評估是否足夠或需升級/備案
+- [ ] 若使用 Zed、Conductor、T3 Code 等第三方工具，確認其計費切換說明
+- [ ] 設定費用警報（Anthropic 儀表板有顯示延遲，建議自建監控腳本）
 
-### 2026-05-12：Claude Max 5x 月費分析——正常月 $159 vs 高峰月 $6,600
+---
 
-用戶解析自身 Claude Max 5x（**$100/月**）的 JSONL 使用紀錄並套用 Anthropic 公開定價：
-- **正常月份**（中等使用量）：API 等值費用約 $159
-- **高峰月份**（密集使用 Claude Code）：API 等值費用高達 **$6,600**
-- 訂閱 vs. API 費用的節省效益在高峰月超過 65 倍，是目前社群最完整的 Max 5x ROI 量化數據
-- 此分析間接印證重度用戶選擇訂閱制的理性依據，也凸顯 API 計費模式下 Claude Code 密集使用的成本壓力
+## 費用管控技巧
 
-### 2026-05-12：第三方平台購買 Claude Code Max x20 的風險討論
+| 問題 | 建議對策 |
+|------|---------|
+| Agent 無限迴圈燒錢 | 工具層面設硬性費用上限；不依賴 Claude 自判 |
+| 94% token 流向 Opus | 在 CLAUDE.md 設定分層模型路由（繁瑣任務指定 Haiku） |
+| Session 重啟費用 $6–10 | 用本機圖資料庫索引取代每次重讀完整 codebase |
+| 5 小時視窗浪費 | 預排一條輕量訊息提前啟動計時，確保工作時段完整使用 |
+| Prompt cache 耗盡 | 監控 `~/.claude/projects/*.jsonl` 的 `cache_creation_input_tokens` |
+| 儀表板金額嚴重滯後 | 自建腳本定期查詢 Anthropic API 用量，勿只看儀表板 |
 
-用戶分享以**第三方平台 $100/月**使用 Claude Code Max x20 方案（等同官方更高階配置）約兩個月的經驗，並詢問帳號被封禁的風險。此類替代購買行為涉及服務條款爭議，社群回應謹慎，Anthropic 未公開說明其執法策略；建議謹慎評估 ToS 風險後再做選擇。
+---
 
-### 2026-05-11：Pro 方案 0% 使用量仍被收取 Extra Usage 費用
+## 重要政策變動紀錄
 
-用戶反映在 Pro 方案用量儀表板顯示 **0%** 的情況下，Claude Code 僅執行 2–3 個簡單提示後即被收取 **$3.37 額外費用**，且收到「需啟用 extra usage 才能使用 1M context」的錯誤訊息。此事件揭示 Pro 訂閱方案與 API 計費模式之間的邊界對用戶仍不透明：
-- **根本問題**：1M context window 功能觸發 API 計費通道，即使整體訂閱用量顯示 0%
-- **用戶困惑點**：儀表板用量指標與實際費用扣款之間存在感知落差
-- **現狀**：Anthropic 尚未就計費透明度改善發出公告
+### 2026-05-15：6/15 計費變更社群反應、第三方工具衝擊、官方回應
 
-### 2026-05-11：Claude Code 30 天 $514 使用費詳細分析
+- **社群情緒**：約六成負面（Max 5x $100 信用池對重度 agent 用量嚴重不足）、兩成理解、兩成觀望
+- **受衝擊工具**：Zed、Conductor、T3 Code、Superset；Lanes 聲明不受影響；Zed 已發布應對說明
+- **官方回應**：Ars Technica 專訪 Claude Code 產品主管，說明「lean harness」設計哲學，社群認為說明仍不足
+- **灰色地帶**：VS Code 擴充套件用量是否計入新信用池，Anthropic 尚未明確答覆
+- **Ungate 工具出現**：宣稱可將 Max 訂閱用量路由至 Cursor（$100 = $2,000 API 等值）；**使用前確認 ToS**
 
-一位開發者記錄 50 個工作階段、30 天共花費 **$514** 使用 Claude Code 的詳細數據分析，是目前社群最完整的長期費用追蹤案例：
-- 涵蓋各類使用情境的成本結構分析與高消耗來源識別
-- 同作者提供**配額管理完整指南（2026 版）**：追蹤、監控並主動控制 Claude Code 使用量的實務策略，避免不知情超出預算
-- 兩篇文章互補，適合評估長期 ROI 與規劃用量管理策略的開發者
+### 2026-05-14：正式宣布 Programmatic 計費分離
 
-### 2026-05-10：Claude Opus API 速率限制調降（ServeTheHome 報導）
+Anthropic 宣布 6/15 起 `claude -p`、Agent SDK、Claude Code GitHub Actions 及第三方 Agent SDK app 完全脫離訂閱，改為獨立信用池，按完整 API 費率計費。主要後續效應：
+- 部分用戶宣告取消訂閱，轉向 Codex 或 Gemini（見 [[topics/competitor-landscape]]）
+- 社群開發者發布 `claude-pee` 繞過工具（PTY 終端模擬），Anthropic 尚未回應
+- OpenClaw 等第三方工具恢復，但改走信用池計費（見 [[entities/openclaw]]）
 
-ServeTheHome 為首家報導 Anthropic 於 2026 年 5 月初悄悄調降 Claude Opus API 速率限制的媒體，具體上限數字尚待官方確認；重度 Opus API 用戶建議主動測試目前可用配額，並追蹤官方定價頁面公告。此舉與 SpaceX 算力合作帶來的整體速率提升（2026-05-07）同時期出現，顯示 Anthropic 可能對不同模型進行差異化速率限制管理，集中算力於使用率更高的 Sonnet 系列。
+### 2026-05-13：Anthropic 定價主導權強勁
 
-### 2026-05-10：Pay-as-you-go Session 費用 $6–10 的成因與壓低策略
+The Information 報導企業客戶即使面對成本上漲仍持續採用；Anthropic API 定價策略短期維持強勢。
 
-社群討論指出，每次新 Claude Code session 因 prompt cache **不跨 session** 需重新讀取大量相同檔案，是費用偏高（$6–10/次）的主因。主要應對策略：
-- **本機圖資料庫索引**：以 LLM 生成 codebase 關係圖並存為圖資料庫，讓模型只讀取結構化摘要而非原始檔案，有效大幅降低每次 session 費用；不使用 AST 或向量，以 graph 方式呈現程式碼關係
-- **任務層級 token 預算**：Tokenyst（HN ShowHN）讓 pay-as-you-go 用戶為每個任務設定 token 上限，每次提示後即時顯示剩餘額度與使用比例，提升費用透明度
+### 2026-05-12：費用透明度三連擊
 
-### 2026-05-07–09：SpaceX 算力合作正式到位，API 速率上限翻倍
+- **Ultra Review 費用落差**：每次 $100–140（適用 50–100 個檔案 PR），但官方估算顯示 $5–20；相差數倍
+- **Max 5x ROI 分析**：正常月 API 等值 $159；高峰月（密集 Claude Code）高達 $6,600；訂閱節省最高 65 倍
+- **第三方平台 Max 20x ToS 風險**：以第三方 $100/月使用更高階方案，封禁風險不明
 
-Anthropic 宣布正式接入 SpaceX Memphis Colossus 1 資料中心的全部算力，規模包含逾 220,000 顆 NVIDIA GPU 與超過 300MW 電力供應，為目前全球最大 AI 訓練叢集之一。2026-05-08 MSN、Pulse 2.0、The New Stack 等多媒體同步跟進報導；2026-05-09 dev.to 文章確認「Anthropic 已接入」（已到位）並報導 Claude API 速率上限加倍。即日起三項變更全數生效：
+### 2026-05-11：Pro 方案 0% 用量仍遭收費
 
-1. **Claude Code Pro/Max 訂閱者的五小時視窗速率上限翻倍**
-2. **取消 Pro/Max 用戶的 Claude Code 尖峰時段降速機制**
-3. **API Tier 4 及以上用戶的速率限制提升**
+用戶儀表板顯示 0% 情況下，2–3 個提示後被收取 $3.37 Extra Usage；根本問題：1M context window 觸發 API 計費通道，獨立於訂閱用量計量。Anthropic 尚未公告改善。
 
-此舉直接回應開發者長期對使用上限的抱怨，Dario Amodei 在「Code with Claude」大會現場親自宣布。為 Anthropic 首次透過外部基礎設施合作大幅鬆綁使用限制，對持續跑 agent 任務的重度開發者意義重大。
+### 2026-05-11：Claude Code 30 天 $514 詳細成本分析
 
-另有部分 Max 5x 用戶回報週配額使用量從 40% 驟降至 3%，懷疑週使用上限同步悄悄調高，但官方公告僅明確提及五小時視窗的調整，週限制異動目前尚未獲官方確認。
+50 個工作階段真實數據；同作者提供配額管理完整指南（2026 版），為目前社群最完整的長期費用追蹤案例。
 
-### 2026-05-06：GitHub Copilot 27 倍 Opus 加價——直接使用 API 的成本比較
+### 2026-05-10：Opus API 速率限制悄悄調降
 
-GitHub Copilot Pro+ 對 Claude Opus 採 **27 倍加價**，引發開發者實測比較。一名同時訂閱 Copilot（$39/月）及 Claude Pro 的用戶，詳細試算直接使用 Anthropic API 的成本差異，為考慮轉換的開發者提供可對照框架。留言串廣泛討論，顯示 Copilot 的 Opus 加價策略正推動部分開發者轉向直接 API 計費或調整訂閱組合。
+ServeTheHome 首報；與 SpaceX 算力到位（Sonnet 速率翻倍）同時期出現，顯示差異化模型速率管理。
 
-### 2026-05-06：94% Token 流向錯誤模型——模型路由設定最佳化
+### 2026-05-10：Pay-as-you-go Session 費用 $6–10 的成因
 
-開發者發現 Claude Code **預設將約 94% 的 token 消耗在 Opus 上**，而這些繁瑣任務 Haiku 即可勝任。透過調整模型路由設定，可大幅降低 API 費用。
-- **核心問題**：Claude Code 預設路由偏向高能力模型，即使簡單任務（格式化、讀取文件、樣板生成）也不例外
-- **解決方案**：在 CLAUDE.md 或 agent 設定中指定任務類型與模型對應規則，參考分層模型策略（Sonnet/Haiku 主力 + Opus 諮詢）
+Prompt cache 不跨 session，每次重啟需重讀大量相同檔案。對策：本機圖資料庫索引（LLM 生成 codebase 關係圖）、Tokenyst（任務層級 token 預算工具）。
 
-### 2026-05-06：工具迴圈帳單爆衝——多個真實案例同步出現
+### 2026-05-07–09：SpaceX 算力到位，速率上限翻倍
 
-同日出現三起因 Claude Code agent 工具迴圈造成帳單失控的案例：
-- **yarn.lock 衝突無限迴圈**（顧問跨多新創調查）：agent 卡在 yarn.lock 衝突導致無限迴圈，當天帳單衝至 **£400**；已開源本地 proxy 工具在費用達上限時硬性中止 API 呼叫
-- **agent/daemon 無效迴圈 $500**（用戶親身案例）：上週因 agent/daemon 產生無效 API 呼叫迴圈，意外支出約 **$500**，修復後才首次在重置前出現剩餘用量
-- **共同模式**：agent 卡在可重試的失敗狀態（lock 衝突、依賴安裝錯誤），不斷重試但每次皆失敗；需以工具層面的費用上限而非仰賴 Claude 自身判斷來中斷；Anthropic 儀表板顯示金額嚴重滯後問題持續未改善
+三項變更同步生效：Pro/Max Claude Code 五小時視窗速率翻倍、取消 Pro/Max 尖峰時段降速、API Tier 4+ 速率提升。Dario Amodei 在 Code with Claude 大會現場宣布。
 
-### 2026-05-05：Anthropic 悄悄縮短 Claude Code 提示快取窗口（未公告）
+### 2026-05-06：三起費用議題同日爆發
 
-Anthropic 在 **4 月初**悄悄將 Claude Code 的預設提示快取（prompt cache）窗口縮短，在未調整名目訂閱費的情況下，實質上提高了用戶的 token 消耗速度。此改動未發出任何官方公告，是繼 token 費用估算翻倍（2026-04-29）之後，第二次被社群自行發現的靜默計費影響。訂閱用戶若近期配額消耗明顯加快，此為最可能的原因。
+- **GitHub Copilot Pro+ 對 Opus 27 倍加價**：推動開發者比較直接 API 成本
+- **94% Token 流向 Opus**：Claude Code 預設路由問題，可在 CLAUDE.md 設定分層路由解決
+- **Agent 工具迴圈帳單失控三案例**：yarn.lock 衝突 £400、agent daemon $500；需工具層面費用硬上限
 
-- **技術影響**：快取窗口縮短 → 系統提示（大型 CLAUDE.md、工具 schema）需更頻繁重新寫入快取 → 有效 token 消耗量實質上升
-- **社群反應**：開發者對透明度強烈不滿，多名 HN 用戶指出配額消耗異常加速，並點出此為未公告改動
-- **建議行動**：監控 `~/.claude/projects/*.jsonl` 的 `cache_creation_input_tokens` 欄位，對比改動前後的快取命中率
+### 2026-05-05：提示快取窗口悄悄縮短（未公告）
 
-### 2026-05-05：Ollama 本地模型 vs Claude Code 訂閱 $20 成本比較熱議
+Anthropic 於 4 月初靜默縮短預設 prompt cache 窗口，實質提高 token 消耗速度；為繼 Token 費用估算翻倍（2026-04-29）後第二次被社群自行發現的靜默計費改動。
 
-Reddit 討論串對比相同預算下 Ollama 本地模型與 Claude Code/Codex $20 訂閱的取捨。部分用戶表示 Claude Code $20 方案的配額對「簡單任務」也不夠用，本地端無限制使用對輕量用戶更有吸引力；但社群回應兩極，複雜任務仍以 Claude Code 勝出。配合 7 個 token 降耗實務技巧文章（KDNuggets）同步出現，顯示成本控管已成主流開發者關注焦點。
+### 2026-05-03：AI 代理帳單失控進入主流媒體
 
-### 2026-05-04：Claude Pro 訂閱包含 Claude Code 說明不一致
-
-多名 Claude Pro（$20/月）訂閱者在訂閱後 **7 天**收到「Claude Code 試用結束」提示，並被引導升級至 Max 方案；此說明與官方定價頁面「Pro 包含 Claude Code」相矛盾，顯示 Anthropic 的方案權益說明存在混淆，有待官方正式釐清。建議 Pro 用戶在訂閱前向 Anthropic 支援確認 Claude Code 存取權益的確切範圍。
-
-### 2026-05-04：Amazon Bedrock 新用戶授權即時過期問題
-
-多名新用戶依照官方文件透過 Amazon Bedrock 設定 Claude Code API 金鑰後，在取得 Anthropic 模型存取授權後約 **5 分鐘內**即收到「expired」通知，帳戶仍有餘額（如 $100）卻無法繼續使用。疑為 Bedrock 市集授權流程的已知問題，建議聯絡 AWS Support 處理。
-
-### 2026-05-04：Claude 5 小時滾動視窗機制與預排程技巧
-
-社群揭示 Claude Code 5 小時滾動使用視窗的計時規則：從**第一則訊息**開始計時，而非固定時段重置。技巧：透過 Claude Code Routines 預先排程一條輕量訊息，「提前啟動」計時視窗，確保正式工作時段能使用完整額度。此機制細節原本並不透明，需靠社群自行摸索。
-
-### 2026-05-03：AI 代理帳單失控問題進入主流討論
-
-Claude Code 代理在無監督長時間運作時一夜燒光大量 API 費用的問題正式進入主流媒體視野。核心風險場景：代理在無人看管狀態下自主執行 token 密集型操作（程式碼搜尋、反覆重試、大量文件讀寫），可能在一夜間燒盡數百至數千美元。
-- **建議控制策略**：設定 per-session token 上限、在 CLAUDE.md 加入費用敏感的工作中止條件、建立外部監控腳本定期查詢 Anthropic API 用量、每 N 步強制要求人工確認
-- **根本問題**：Anthropic 儀表板金額嚴重滯後（見 2026-05-01 /loop 失控事件），缺乏即時消費通知機制，尚未改善
-
-### 2026-05-03：本地 LLM 替代失敗——最終仍訂閱 Pro
-
-使用者嘗試以 Ollama 本地模型（Gemma 4）取代 Claude API 以節省費用，發現本地模型無法適應 Claude Code 的代理工作流（思考迴圈、輸出格式不符），最終仍訂閱 Claude Pro。此案例真實反映本地部署方案的現有侷限：當 Claude Code 的 agent loop 依賴特定輸出格式與推理能力時，低成本替代方案在工程實用性上仍有明顯差距。
+Claude Code 代理無監督運作一夜燒掉數百至數千美元成為主流議題；Anthropic 儀表板金額嚴重滯後問題持續未改善。
 
 ### 2026-05-02：Uber 企業案例——四個月燒光全年 AI 預算
 
-Uber 於 2025 年 12 月部署 Claude Code，四個月後已燒光全年 AI 預算。核心數據：
-- 工程師月均費用：**$500–$2,000**（依用量強度差異）
-- 95% 工程師每月使用 AI 工具；70% 提交代碼來自 AI
-- Uber CTO 明確表示明年將「從零重建」AI 預算策略
+工程師月均費用 $500–2,000；95% 工程師使用 AI 工具；70% 提交代碼來自 AI；CTO 表示明年將重建 AI 預算策略。為業界大規模部署最完整的成本一手數據。
 
-此案例為業界提供大型企業 AI 工具真實成本的稀缺一手數據，正成為討論 AI 工具成本管控的標誌性參考。《大西洋月刊》指出此類實際收入數據正修正半年前的「AI 泡沫論」。
+### 2026-05-01：$6,000 單夜燒掉
 
-**企業採用建議**：Claude Code 大規模部署須事先規劃每人月費上限機制，並建立實時消費警報（Anthropic 儀表板目前仍有顯著滯後）。
+`/loop` 指令遺忘後無人看管執行 46 次（26 小時）；Anthropic 儀表板金額嚴重滯後，缺乏即時消費通知。
 
-### 2026-05-01：$6,000 單夜意外燒掉——/loop 指令無人看管
+### 2026-04-30：雲端環境 `ANTHROPIC_API_KEY` 計費陷阱
 
-開發者因一個 `/loop` 指令設置後遺忘，在無人看管的情況下連續執行 **46 次**（共 26 小時），加上同時開著的分析 session，共在 claude-opus-4-7 上燒掉約 **$6,000 美元**。事件引發社群對 Anthropic **用量警報機制嚴重不足**的廣泛批評：儀表板顯示金額嚴重滯後，缺乏即時消費通知。企業採用 Claude Code 須自行建立花費上限防護。
+雲端環境設置此環境變數時，所有 Code 呼叫自動改走 API 計費通道。**立即行動**：檢查 CI/CD、Docker、K8s 環境是否有此變數。
 
-### 2026-05-01：帳號停用事件——反映重複扣款後的異常處置
+### 2026-04-29：Token 費用預估翻倍（靜默修訂）
 
-一位用戶發現被多收 **$200 美元**，在向 Anthropic 反映後，客服機器人確認為「未授權交易」並承諾協助；然而帳號在不到 24 小時內遭**停用**。事件尚未釐清因果關係，但社群對 Anthropic 計費系統的可信度與帳號安全處理方式提出強烈質疑。
+Business Insider 報導 Anthropic 低調調高 Claude Code 預期 Token 費用估算值一倍，無官方公告。
 
-### 2026-05-01：AWS Bedrock Opus 4.7 配額無預警歸零
+### 2026-04-28：Opus「圍牆內圍牆」事件（已修正）
 
-多名用戶反映 **AWS Bedrock** 無預警將帳號 Opus 4.7 的 TPM（Token Per Minute）配額歸零，需聯絡 AWS 支援才能恢復。事件顯示：雲端平台對前沿模型的存取權限可隨時撤銷，企業客戶面臨不透明的服務穩定性風險，Bedrock 架構下的配額管理機制缺乏充分預警。
+Pro 用戶無預告須額外購買才能使用 Opus；Anthropic 事後澄清 Pro 仍可存取，但信任損失已造成。
 
-### 2026-05-01：Max 方案實際使用消耗參考
+### 2026-04-25：HERMES.md 靜默計費 Bug
 
-Max 方案用戶分享：一週高強度使用後僅達到約 **60% 配額**，顯示 Max 方案在一般重度使用情境下具備足夠的用量緩衝。此數據對考慮升級用戶有參考價值（但個人工作流差異大，僅供參考）。
+git commit 歷史出現大寫字串「HERMES.md」會觸發靜默切換至 API 額外計費模式，已知損失單日 $200；Anthropic 確認為 bug 但**拒絕退款**。
+**立即行動**：`git log --all | grep -i HERMES`
+來源：[GitHub Issue #53262](https://github.com/anthropics/claude-code/issues/53262)
 
-### 2026-05-01：自修改 Agent 系統節省 50% API 費用
+### 2026-04-25：第三方 Agentic 工具配額限制
 
-開發者開源方案：透過自修改 Agent 系統，讓本地硬體（RTX 5070）在閒置時段執行低優先任務，有效將 Claude API 費用降低約 **50%**。適合具備本地 GPU 且有非即時任務的開發者。
-
-### 2026-04-30：ANTHROPIC_API_KEY 雲端環境計費陷阱
-使用者警告：若在雲端環境設置 `ANTHROPIC_API_KEY` 環境變數，Claude Code 無法正常運作，且**所有 Code 呼叫將自動改走 API 計費通道**，造成大量意外費用；官方文件存在誤導，過去已有多起「Extra Usage 異常暴增」與此相關。**立即檢查**：雲端環境（CI/CD、Docker、K8s）若有此環境變數應立即移除或改用 Secrets Manager 管理。
-
-### 2026-04-30：Pro 訂閱到期 Extra Usage 餘額消失
-使用者 Claude Pro 訂閱到期後，預付的 **$40 Extra Usage 餘額隨之歸零**消失，Anthropic 文件未明確說明訂閱終止後的餘額處置規則，UI 中也不存在退款流程。
-
-### 2026-04-30：長 context 快取隱性成本
-使用者分析本機 JSONL 日誌發現，Claude Code 用量暴增源自超大 prompt cache（**約 475k tokens**）的反覆重建；以公開 API 定價估算，單次快取重建成本相當可觀。長 context 工作流使用者應定期監控 JSONL 日誌，警惕快取失效觸發的非預期費用。
-
-### 2026-04-29：Anthropic 洽談 $900B 估值新一輪融資
-Bloomberg 與 CNBC 同日報導，Anthropic 正與投資人洽談以超過 **$9,000 億美元**估值進行新一輪融資，估值超越 OpenAI，是目前 AI 新創史上最高估值之一。
-
-### 2026-04-29：Claude Code Token 費用預估翻倍
-Business Insider 報導，Anthropic 低調將工程師使用 Claude Code 的**預期 Token 費用估算值調高一倍**（靜默修訂，無官方公告）。企業在規劃 AI 工具採購預算時需重新評估實際成本，大規模部署情境下的費用控管壓力加劇。
-
-### 2026-04-29：Max 方案 API 錯誤與支援失靈
-Max 方案用戶在 GitHub issue 投訴 Claude Code 出現內部 API 錯誤，且 Anthropic 支援 AI 持續建議排查 VPN 問題而無法識別實際故障，引發對高價訂閱服務可靠性與支援品質的強烈質疑。
-
-### 2026-04-28：Anthropic 估值突破 $1 兆美元（鏈上數據）
-鏈上 pre-IPO 交易數據顯示 Anthropic 隱含估值已達 **$1 兆美元**；機構市場估值約 $800–900B。分析師提醒此為特定投機性市場情緒，不代表正式融資估值，但趨勢方向具參考性。
-
-### 2026-04-28：Opus 「圍牆內圍牆」付費事件（已修正）
-Anthropic 在**未事先公告**的情況下，要求 Pro 用戶（$20/月）在 Claude Code 中使用 Opus 須另購「Extra Usage」，引發強烈社群反彈。事後 Anthropic 澄清 **Pro 用戶仍可存取 Opus**，事件得以平息，但溝通方式已造成信任損失。此為近一個月內第二次 Opus 存取政策變動（見 2026-04-24 條目）。
-
-### 2026-04-28：20x 方案使用量計量異常
-部分升級至 20x 計畫的用戶回報週末起使用量計量出現**異常跳動**，未執行密集任務一小時內即達 70%，數值隨後又無故下降，疑為計量 bug 或後端流量計算異常，目前無官方說明。
-
-### 2026-04-28：Auto Compact 失效導致 session 鎖死
-用戶遭遇 context window 滿載後 Auto Compact 未自動觸發，手動 `/compact` 亦失效，即使重購額外用量並重啟工具仍無法解決。此問題使已付費用量在技術層面無法使用。
-
-### 2026-04-27：Max 方案配額多工場景不足
-同時使用 Claude Code 與視覺功能的用戶回報早上 **8:30 即觸及當日用量上限**，反映 Max 方案在 Code + vision 多工場景下的配額設計存在實際痛點。
-
-### 2026-04-27：Google 400 億投資對定價的指標意義
-Google 確認對 Anthropic 追加 400 億美元投資，分析師指出 Anthropic 具備更充裕資本空間維持現有定價或推進企業方案擴張，對長期訂閱定價策略具有指標意義。見 [[topics/google-investment]]
-
-### 2026-04-25：HERMES.md 靜默計費 bug
-git commit 歷史中出現大寫字串「HERMES.md」，會觸發 Claude Code 靜默切換至 API 額外計費模式，完全繞過 Max 方案配額，已知造成用戶單日損失 **$200**。Anthropic 支援確認為 bug，但**拒絕退款**。
-
-**立即行動**：`git log --all | grep -i HERMES` 檢查 commit 歷史。
-來源：[GitHub Issue #53262](https://github.com/anthropics/claude-code/issues/53262)、[[news/2026-04-26]]
-
-### 2026-04-25：Token 配額快速耗盡（$20 方案）
-$20 Pro 方案用戶反映 Claude Code 在 **2 小時內耗盡每日配額**；使用 career-ops 等大型工具最快 30 分鐘見底。社群分享節省 token 的實務技巧（分層模型策略：以 Sonnet 為主力，需要時才讓 Sonnet「諮詢」Opus，聲稱節省約 60% 用量）。
-
-### 2026-04-25：Anthropic 限制 OpenClaw 等第三方 agentic 工具配額
-The Verge 報導 Anthropic 嚴格限制 OpenClaw 等第三方 agent 工具的使用配額。Claude Code 負責人 Boris Cherny 公開表示：「訂閱方案的設計並非為這類第三方使用模式而生。」預示 agentic 工具的付費門檻將持續提高。
-
-### 2026-04-24：Opus 額外用量需 Pro 起
-Anthropic 更新政策，使用 Claude Code 存取 Opus 模型的**額外用量**現在須先訂閱 Pro 以上方案才能開通。官方說明了三種切換模型的方式：
-1. `/model` 指令
-2. `--model` CLI 旗標
-3. 環境變數設定
-
-**影響**：原本以低階方案搭配額外用量的用戶受到顯著影響。
-
-### 2026-04-24：降級後用量不重置
-一名用戶回報在 Anthropic 發布重置用量承諾的六天前降級帳號，導致被排除在重置範圍外。Anthropic 拒絕為其重置，引發補償政策時間邊界的爭議。
+The Verge 報導 Anthropic 限制 OpenClaw 等工具；Claude Code 負責人 Boris Cherny：「訂閱方案的設計並非為這類第三方使用模式而生。」（預示 6/15 政策的早期信號）
 
 ---
 
 ## 宏觀趨勢
 
-The Verge（2026-04-24）報導，AI 商業化壓力下，Anthropic 等實驗室開始大幅限制第三方工具用量。Claude Code 負責人 Boris Cherny 公開表示：
-
-> 「訂閱方案的設計並非為這類第三方使用模式而生。」
-
-此言論被視為付費門檻將持續提高的明確信號。
+Anthropic 的計費方向明確：**訂閱方案僅涵蓋人工互動使用，自動化工作流必須自行負擔 API 費用**。6/15 政策是此方向的正式成文化，非突發轉向。企業大規模部署須預先規劃人均月費上限與即時費用警報機制。
 
 ---
 
 ## Token 成本注意事項
 
-- 多個 MCP Server 併用時，每條訊息可能消耗 **20,000+ tokens**（見 [[entities/claude-code]]）
+- 多個 MCP Server 併用時，每條訊息可能消耗 **20,000+ tokens**
 - 切換至 Opus 4.7 會清除整個 prompt cache，導致額外 token 成本
 
 ---
 
 ## 相關議題
 
+- [[topics/competitor-landscape]]（用戶因費用轉向 Codex / Gemini）
 - [[topics/code-quality-decline]]（用戶因品質下滑要求退款或降級）
+- [[entities/openclaw]]（第三方工具計費政策演變）
 
 ## 參考來源
 
@@ -302,7 +204,7 @@ The Verge（2026-04-24）報導，AI 商業化壓力下，Anthropic 等實驗室
 - [[news/2026-05-10]]
 - [[news/2026-05-11]]
 - [[news/2026-05-12]]
-- [[news/2026-05-15]]
-- [[news/2026-05-14]]
 - [[news/2026-05-13]]
+- [[news/2026-05-14]]
+- [[news/2026-05-15]]
 - [官方說明文件](https://support.claude.com/en/articles/11940350-claude-code-model-configuration)
