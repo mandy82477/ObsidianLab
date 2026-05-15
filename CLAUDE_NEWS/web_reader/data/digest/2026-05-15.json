@@ -1,0 +1,269 @@
+{
+  "date": "2026-05-15",
+  "generatedAt": "2026-05-15 14:02 UTC",
+  "articleCount": 41,
+  "sourceCount": "6/6",
+  "topStories": [
+    {
+      "title": "Anthropic Moves Claude Code SDK and claude -p Out of Subscription Plans",
+      "url": "https://twitter.com/ClaudeDevs/status/2054610152817619388",
+      "source": "Hacker News",
+      "time": "05/14 18:37",
+      "sentiment": "",
+      "body": "Anthropic 宣布自 6 月 15 日起，Agent SDK 與 `claude -p` 不再共用訂閱配額，改為獨立月額信用（Max 20x：$200、Max 5x：$100、Pro：$20），額度耗盡後程式化呼叫暫停。**為何是重點：** 這是 Anthropic 付費結構的根本性轉變，所有基於 Agent SDK 建構的第三方工具（Zed、Conductor、Superset 等）用戶均受影響，社群反應分析顯示負面聲音佔約六成。"
+    },
+    {
+      "title": "Microsoft Starts Canceling Claude Code Licenses",
+      "url": "https://www.theverge.com/tech/930447/microsoft-claude-code-discontinued-notepad",
+      "source": "Hacker News",
+      "time": "05/14 20:53",
+      "sentiment": "",
+      "body": "Microsoft 從去年 12 月起開放數千名內部開發者（含 PM、設計師等非工程師職能）使用 Claude Code，但因規模過大帶來成本壓力，現正陸續取消授權並改推 GitHub Copilot CLI。**為何是重點：** 此舉標誌著大型企業在 AI 工具採購上的成本敏感度臨界點，也是微軟自家 Copilot 與 Claude Code 在企業市場首次正面競爭的訊號。"
+    },
+    {
+      "title": "OpenAI Just Lost Its Enterprise AI Crown to Anthropic",
+      "url": "https://www.businessinsider.com/anthropic-tops-openai-business-ai-adoption-ramp-index-2026-5",
+      "source": "Hacker News",
+      "time": "05/15 05:04",
+      "sentiment": "",
+      "body": "Ramp AI Index 最新數據顯示，Anthropic 2026 年 4 月企業採用率達 34.4%，首次超越 OpenAI 的 32.3%，Claude Code 快速普及是主要驅動力。**為何是重點：** 這是 Anthropic 在企業市場達到的具象徵意義的里程碑，但 Ramp 經濟學家也提醒市場競爭仍高度波動，領先地位並不穩固。"
+    },
+    {
+      "title": "How Claude Code Works in Large Codebases",
+      "url": "https://claude.com/blog/how-claude-code-works-in-large-codebases-best-practices-and-where-to-start",
+      "source": "Hacker News",
+      "time": "05/15 04:15",
+      "sentiment": "",
+      "body": "Anthropic 官方發表「Claude Code at Scale」系列首篇，彙整數百萬行 monorepo、數十年舊系統、跨數十個 repo 的分散式架構等真實部署場景的成功模式。**為何是重點：** 這是 Anthropic 少見的大規模生產環境實戰指南，HN 討論熱度達 203，是本週最受工程社群關注的技術文章。"
+    },
+    {
+      "title": "Claude Code's Product Lead Talks Usage Limits, Transparency, and the \"Lean Harness\"",
+      "url": "https://news.google.com/rss/articles/CBMitAFBVV95cUxNci1HZm5FRlRCaVlRWWpBV3p1ZzkwTmFHN0ZrZElDWTlraFVRSkV5WWtzdjBGWkZIREJicUkzcEswZzBoeEpfdEVnQ3JfNmZCb0x0NS1RWThhRmNWaXJTQ3JhRXdfWHExaWlBYmdwYlZZZ3lLazNwbnJYUy1TTVUtV2pKNm16d19pTGx5bjZzSW1KREhxR19qb095dE93MEdyRDZ1bUg0NldHR2I0c05mTG1nRVA?oc=5",
+      "source": "Google News / Ars Technica",
+      "time": "05/15 02:30",
+      "sentiment": "",
+      "body": "Ars Technica 專訪 Claude Code 產品主管，聚焦用量限制設計邏輯、資訊透明度政策，以及「精簡執行框架（lean harness）」的設計哲學。在 Agent SDK 計費爭議甚囂塵上之際，這篇官方立場的說明具重要參考價值。"
+    }
+  ],
+  "techUpdates": [
+    {
+      "title": "anthropics/claude-code v2.1.142",
+      "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.142",
+      "source": "GitHub / anthropics/claude-code",
+      "time": "05/14 22:55",
+      "sentiment": "",
+      "body": "本次更新為 `claude agents` 指令新增 8 個旗標：`--add-dir`、`--settings`、`--mcp-config`、`--plugin-dir`、`--permission-mode`、`--model`、`--effort`、`--dangerously-skip-permissions`，開發者現可直接在指令列指定模型版本、MCP 配置路徑、工作目錄與權限模式，大幅提升 Agent 啟動時的細粒度控制能力。"
+    },
+    {
+      "title": "What Anthropic's New Claude Billing Means for Zed Users",
+      "url": "https://zed.dev/blog/anthropic-subscription-changes",
+      "source": "Hacker News",
+      "time": "05/14 19:54",
+      "sentiment": "",
+      "body": "Zed 官方針對 6/15 計費變更發布說明文，解析透過 Zed 使用 Claude 的用量將從原有訂閱池切換至獨立 Agent SDK 信用額度的實際影響，並整理各方案用戶的可選應對方案。"
+    },
+    {
+      "title": "Workaround for Anthropic's June 15 Billing Change (Impacted: Conductor, Superset, Zed)",
+      "url": "https://lanes.sh/blog/claude-billing-split",
+      "source": "Hacker News",
+      "time": "05/15 11:20",
+      "sentiment": "",
+      "body": "Lanes.sh 詳細說明哪些工具受 6/15 計費變更衝擊（Zed、Conductor、T3 Code、Superset 等基於 Agent SDK 建構的工具），並解釋 Lanes 為何不受影響（其架構從未使用受影響的計費路徑），對評估工具切換的開發者具實用參考價值。"
+    }
+  ],
+  "discussions": [
+    {
+      "title": "I Gave Claude Code a Microphone via MCP. Now It Asks Me Questions Before Writing Code.",
+      "url": "https://www.reddit.com/r/ClaudeAI/comments/1tdupsr/i_gave_claude_code_a_microphone_via_mcp_now_it/",
+      "source": "Reddit / r/ClaudeAI",
+      "time": "05/15 04:21",
+      "sentiment": "😊 正面",
+      "body": "開發者透過 MCP 整合麥克風，讓 Claude Code 在需要更多脈絡時主動發出語音提問，使用者口語回答後繼續執行任務，突破傳統文字輸入的互動模式，是一個值得關注的人機介面實驗。"
+    },
+    {
+      "title": "\"Claude Deleted My Project\" Posts Are Getting Higher Day by Day, So I Built a Safety Gate",
+      "url": "https://www.reddit.com/r/ClaudeAI/comments/1tdrzfo/claude_deleted_my_project_posts_are_getting/",
+      "source": "Reddit / r/ClaudeAI",
+      "time": "05/15 02:14",
+      "sentiment": "😐 中性",
+      "body": "在「Claude 刪除整個專案」類型的帖子持續增加後（近期已有超過 700 則留言的相關討論），開發者為 GrapeRoot Pro 加入破壞性操作閘門：執行 `rm -rf` 等危險指令前，自動顯示受影響檔案清單（含讀寫次數與最後存取時間）並暫停等待確認。"
+    },
+    {
+      "title": "Memory Drift? Context Bloat? A Claude Code Skill I Wrote to Manage Long-Running Memory Libraries",
+      "url": "https://www.reddit.com/r/ClaudeAI/comments/1tdtmr6/memory_drift_context_bloat_a_claude_code_skill_i/",
+      "source": "Reddit / r/ClaudeAI",
+      "time": "05/15 03:34",
+      "sentiment": "😊 正面",
+      "body": "使用者在同一專案跑了三個月 Claude Code auto-memory 後，記憶庫出現命名分歧、frontmatter 缺失、搜尋失效等退化問題，因此撰寫 skill 強制執行命名規範，並配合 bash 審計腳本自動偵測品質漂移，對長期自動化工作流程有具體參考價值。"
+    },
+    {
+      "title": "When Parallel Sub-Agents in Claude Code Actually Save Money and When They Burn It",
+      "url": "https://www.reddit.com/r/ClaudeAI/comments/1tdorkr/when_parallel_subagents_in_claude_code_actually/",
+      "source": "Reddit / r/ClaudeAI",
+      "time": "05/14 23:13",
+      "sentiment": "😐 中性",
+      "body": "作者引用 Anthropic 官方數據（多 Agent 系統約消耗 15 倍 token，快取命中可降至 10%），以具體計算說明哪些任務適合平行子 Agent、哪些反而成本暴增，是近期少見有官方數字支撐的實務分析文。"
+    },
+    {
+      "title": "I Created a Skill That Saves Up to 25% of Context Window Cap and Cuts Total Token Usage by 3–5% Per Session",
+      "url": "https://www.reddit.com/r/ClaudeAI/comments/1tdwj8m/i_created_skill_that_save_up_to_25_of_context/",
+      "source": "Reddit / r/ClaudeAI",
+      "time": "05/15 05:33",
+      "sentiment": "😊 正面",
+      "body": "開發者分享名為「monk」的 skill，讓 Agent 執行期間保持靜默、僅在完成後輸出標準化結果，實測可節省約 25% 上下文視窗容量，適合不需要即時追蹤操作過程的批次自動化任務。"
+    },
+    {
+      "title": "Anthropic Was Supposed to Be Different. They're Not Anymore.",
+      "url": "https://www.reddit.com/r/ClaudeAI/comments/1tdmk7a/anthropic_was_supposed_to_be_different_theyre_not/",
+      "source": "Reddit / r/ClaudeAI",
+      "time": "05/14 21:16",
+      "sentiment": "😤 負面",
+      "body": "一位付費 Max 訂戶詳細列出 Anthropic 自 1 月以來的策略轉向：封鎖 OAuth token、靜默更新法律文件、再到最新 Agent SDK 獨立計費，認為 Anthropic 正在系統性地將重度訂戶推向 API 計費，與其「使命導向」品牌形象出現落差。"
+    },
+    {
+      "title": "Your CLAUDE.md Is Wasting Tokens (And It's Probably Not Helping)",
+      "url": "https://dev.to/abdlrahmansaberabdo/your-claudemd-is-wasting-tokens-and-its-probably-not-helping-3jdh",
+      "source": "dev.to / #claudecode",
+      "time": "05/15 02:23",
+      "sentiment": "🤔 褒貶不一",
+      "body": "文章指出許多開發者的 CLAUDE.md 過度冗長，每次對話都消耗大量 token，但對實際行為改善有限，提出精簡 CLAUDE.md 的具體建議。在 Token 成本敏感度上升的當下，是值得一讀的反思文。"
+    },
+    {
+      "title": "Five Silent Failure Modes I Codified After 35 Effective Days of Solo ERP Coding",
+      "url": "https://dev.to/michelfaure/five-silent-failure-modes-i-codified-after-35-effective-days-of-solo-erp-coding-40do",
+      "source": "dev.to / #claudecode",
+      "time": "05/15 01:24",
+      "sentiment": "🤔 褒貶不一",
+      "body": "開發者以 35 天獨立打造 ERP 系統的經驗，歸納出五種 Claude Code 在長期任務中容易出現的「靜默失敗模式」（無報錯但輸出不符預期），對依賴 Agent 執行複雜業務邏輯的開發者具警示價值。"
+    },
+    {
+      "title": "Claude Code vs Cursor — 90 Days with Both in 2026",
+      "url": "https://dev.to/muhammad_moeed/claude-code-vs-cursor-90-days-with-both-in-2026-2dha",
+      "source": "dev.to / #claudecode",
+      "time": "05/14 16:43",
+      "sentiment": "😐 中性",
+      "body": "作者同時使用 Claude Code 與 Cursor 達 90 天後的比較結論：兩者並非直接競爭，Claude Code 更適合 Agent 驅動的自動化任務，Cursor 在互動式編輯體驗上仍有優勢，建議根據工作流性質選擇而非二擇一。"
+    },
+    {
+      "title": "I Built a Tool That Gives Claude Code Eyes on Videos — Extract Code from Any Tutorial",
+      "url": "https://dev.to/sanmariano/i-built-a-tool-that-gives-claude-code-eyes-on-videos-extract-code-from-any-tutorial-22l8",
+      "source": "dev.to / #claudecode",
+      "time": "05/14 17:31",
+      "sentiment": "😊 正面",
+      "body": "開發者打造 videocode 工具，可將任意程式教學影片轉換為可直接執行的程式碼並整合進 Claude Code 工作流，解決看教學影片時需反覆暫停手動抄寫的痛點。"
+    },
+    {
+      "title": "Show HN: PlanBridge — Open-Source Tool for Precise Feedback on Coding Agent Plans",
+      "url": "https://github.com/contextbridge/planbridge",
+      "source": "Hacker News",
+      "time": "05/14 18:22",
+      "sentiment": "😊 正面",
+      "body": "ContextBridge 開源 PlanBridge，透過 Agent hook 在本地瀏覽器渲染 Markdown 計劃書，讓使用者可直接在計劃文字上留下行內評論，解決在終端機審閱 Agent 計劃時難以精確標注的 UX 痛點。"
+    },
+    {
+      "title": "Show HN: My Time Has Come — Let Claude Code Wrap Up Before 5-Hour Usage Runs Out",
+      "url": "https://github.com/JinBa1/my-time-has-come",
+      "source": "Hacker News",
+      "time": "05/15 09:46",
+      "sentiment": "😊 正面",
+      "body": "開發者因 Pro 計劃配額有限，開發此工具讓 Claude Code 在用量限制將至時自動收尾任務，避免因突然停止而留下未完成的 repo 狀態，反映訂閱用量焦慮已成為一類普遍的開發者需求。"
+    },
+    {
+      "title": "I Let Claude Code Do a Performance Review on My iOS App — Here's What It Found",
+      "url": "https://dev.to/toddsullivan/claude-code-performance-review-4i40",
+      "source": "dev.to / #claudecode",
+      "time": "05/15 00:02",
+      "sentiment": "😊 正面",
+      "body": "開發者讓 Claude Code 對其離線優先 iOS 畜牧計數 App（使用 YOLOv8n）執行效能審查，分享 AI 診斷出的具體問題與建議，是 Claude Code 作為程式碼審查工具的實際使用案例。"
+    }
+  ],
+  "billing": [
+    {
+      "title": "Anthropic Built the Agentic Features. Now They're Billing Them Separately.",
+      "url": "https://www.reddit.com/r/ClaudeAI/comments/1tdjx4f/anthropic_built_the_agentic_features_now_theyre/",
+      "source": "Reddit / r/ClaudeAI",
+      "time": "05/14 19:08",
+      "sentiment": "",
+      "body": "作者彙整社群約 120 則反應的情緒分佈：負面約六成（認為 $100/月的 Max 5x 信用對重度 Agent 用量嚴重不足），約兩成表示理解（認為程式化用量應與互動用量分開），其餘持觀望態度。各方案月額信用：Max 20x = $200、Max 5x = $100、Pro = $20。"
+    },
+    {
+      "title": "Anthropic Tosses Agents into the API Billing Pool",
+      "url": "https://news.google.com/rss/articles/CBMipAFBVV95cUxQbEprTVRNQXZubmQ2MXd6WXV1LUZNanZaWXh0ekxJSWxCQUV2RGNiS0w0SExKekVSUmVFU1ZKdlFPamxMM3RJTXBCLTBNaVdzS2Y2aGxHOHJtc3ZPamdZMGxKTlo1VXVpVTd3U2Z6aVc5Wjhia2NJamRPaUdaVndobzdWRTN2VnhmVnNVVk5EVHNVSHBfRG9fWXpHNko5eGZ1Rnpjeg?oc=5",
+      "source": "Google News / The Register",
+      "time": "05/14 12:03",
+      "sentiment": "",
+      "body": "The Register 分析 Anthropic 將 Agent 使用量移入 API 計費機制的商業意義，指出此舉對企業客戶與獨立開發者的影響程度不同，並認為這是 Anthropic 商業化策略從「訂閱友好」走向「用量分級」的關鍵轉折點。"
+    },
+    {
+      "title": "Is the New Monthly Agent SDK Credit Applicable for the VS Code Extension?",
+      "url": "https://www.reddit.com/r/ClaudeAI/comments/1tdpot8/is_the_new_monthly_agent_sdk_credit_applicable/",
+      "source": "Reddit / r/ClaudeAI",
+      "time": "05/15 00:05",
+      "sentiment": "",
+      "body": "用戶詢問 6/15 新計費政策是否涵蓋 VS Code 擴充套件，目前 Anthropic 尚未提供明確答覆，顯示政策邊界仍有待釐清，相關用戶建議持續關注官方文件更新。"
+    },
+    {
+      "title": "Show HN: Ungate — Use Claude and GPT Subscriptions in Cursor Without API Costs",
+      "url": "https://github.com/orchidfiles/ungate",
+      "source": "Hacker News",
+      "time": "05/14 14:16",
+      "sentiment": "",
+      "body": "Ungate 工具宣稱可將 Claude Max 訂閱用量路由至 Cursor，作者估算 $100 Claude Max 訂閱的實際 token 價值相當於 $2,000 API 費用。此類工具的出現反映訂戶對計費變更的高度焦慮，但使用前應確認是否符合 Anthropic 服務條款。"
+    }
+  ],
+  "focus": [
+    {
+      "tag": "[付費方案動態]",
+      "text": "Anthropic 宣布 6 月 15 日起將 Agent SDK 與 `claude -p` 用量從訂閱配額獨立拆分，建立月額信用池，社群負評逾六成，直接衝擊所有基於 Agent SDK 建構的第三方工具開發者。"
+    },
+    {
+      "tag": "[重大事件]",
+      "text": "Microsoft 正在取消內部 Claude Code 授權，數千名開發者將改用 GitHub Copilot CLI，儘管 Claude Code 在 Microsoft 內部過去六個月極受歡迎——兩家公司企業市場競爭正式浮上檯面。"
+    },
+    {
+      "tag": "[持續追蹤]",
+      "text": "Ramp AI Index 數據顯示 Anthropic 企業採用率首次超越 OpenAI（34.4% vs 32.3%），主要驅動力為 Claude Code 快速擴散，但市場競爭仍高度動盪。"
+    },
+    {
+      "tag": "[新工具]",
+      "text": "Claude Code v2.1.142 釋出，`claude agents` 新增 8 個旗標，大幅提升 Agent 執行時的細粒度控制能力。"
+    },
+    {
+      "tag": "[社群趨勢]",
+      "text": "本週社群湧現大量記憶管理、安全防護與 Token 節省工具，顯示重度使用者開始主動為長期工作流程建立系統性防護機制。"
+    }
+  ],
+  "sourceStatus": [
+    {
+      "name": "Anthropic Blog",
+      "ok": true,
+      "count": 2
+    },
+    {
+      "name": "GitHub",
+      "ok": true,
+      "count": 1
+    },
+    {
+      "name": "Hacker News",
+      "ok": true,
+      "count": 36
+    },
+    {
+      "name": "Reddit",
+      "ok": true,
+      "count": 20
+    },
+    {
+      "name": "Google News",
+      "ok": true,
+      "count": 25
+    },
+    {
+      "name": "dev.to",
+      "ok": true,
+      "count": 16
+    }
+  ],
+  "preview": "Anthropic Moves Claude Code SDK and claude -p Out of Subscription Plans"
+}

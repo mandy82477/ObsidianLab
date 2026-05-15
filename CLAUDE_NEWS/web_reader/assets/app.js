@@ -457,19 +457,140 @@ ${metaRows.length ? `<div class="detail__meta">${metaHtml}</div>` : ''}
     switchView(detailReturnView, returnBtn);
   };
 
+  // ── Search ───────────────────────────────────────────────────────────────────
+  let _searchIdx = -1;   // selected result index
+
+  function buildSearchCorpus() {
+    const data = window.WIKI_DATA || {};
+    const corpus = [];
+    (data.entities || []).forEach(e => corpus.push({ ...e, _type: 'entity' }));
+    (data.topics  || []).forEach(t => corpus.push({ ...t, _type: 'topic'  }));
+    return corpus;
+  }
+
+  function highlight(text, q) {
+    if (!q || !text) return esc(text);
+    const re = new RegExp('(' + q.replace(/[.*+?^${}()|[\]\\]/g, '\\$&') + ')', 'gi');
+    return esc(text).replace(re, '<mark>$1</mark>');
+  }
+
+  function runSearch(q) {
+    const results = $('#search-results');
+    if (!results) return;
+    _searchIdx = -1;
+    if (!q.trim()) { results.innerHTML = ''; return; }
+
+    const corpus = buildSearchCorpus();
+    const lq = q.toLowerCase();
+
+    const scored = corpus.map(item => {
+      const name    = (item.name    || '').toLowerCase();
+      const id      = (item.id      || '').toLowerCase();
+      const type    = (item.entityType || '').toLowerCase();
+      const summary = (item.summary || '').toLowerCase();
+      let score = 0;
+      if (name === lq || id === lq)             score = 100;
+      else if (name.startsWith(lq))             score = 80;
+      else if (id.startsWith(lq))               score = 70;
+      else if (name.includes(lq))               score = 50;
+      else if (id.includes(lq))                 score = 40;
+      else if (type.includes(lq))               score = 25;
+      else if (summary.includes(lq))            score = 10;
+      return { item, score };
+    }).filter(r => r.score > 0).sort((a, b) => b.score - a.score).slice(0, 8);
+
+    if (!scored.length) {
+      results.innerHTML = `<div class="search-empty">找不到「${esc(q)}」相關結果</div>`;
+      return;
+    }
+
+    results.innerHTML = scored.map(({ item }, i) => {
+      const typeCls = item._type === 'entity' ? 'entity' : 'topic';
+      const typeLabel = item._type === 'entity' ? '實體' : '議題';
+      return `<div class="search-result" data-idx="${i}" data-id="${esc(item.id)}" data-pagetype="${esc(item._type)}"
+                   onclick="pickSearch('${esc(item.id)}','${esc(item._type)}')">
+  <span class="search-result__type search-result__type--${typeCls}">${typeLabel}</span>
+  <div class="search-result__body">
+    <div class="search-result__name">${highlight(item.name || item.id, q)}</div>
+    ${item.summary ? `<div class="search-result__summary">${esc(item.summary.slice(0, 80))}…</div>` : ''}
+  </div>
+  <span class="search-result__pill"><span class="pill pill--${item.pill}">${esc(shortStatus(item.status))}</span></span>
+</div>`;
+    }).join('');
+  }
+
+  function navigateSearch(dir) {
+    const items = $$('#search-results .search-result');
+    if (!items.length) return;
+    items.forEach(el => el.classList.remove('is-selected'));
+    _searchIdx = (_searchIdx + dir + items.length) % items.length;
+    items[_searchIdx].classList.add('is-selected');
+    items[_searchIdx].scrollIntoView({ block: 'nearest' });
+  }
+
+  function confirmSearch() {
+    const sel = $('#search-results .search-result.is-selected') || $('#search-results .search-result');
+    if (sel) sel.click();
+  }
+
+  window.pickSearch = function (id, pageType) {
+    closeSearch();
+    openWikiPage(id, pageType);
+  };
+
+  window.openSearch = function () {
+    const overlay = $('#search-overlay');
+    if (!overlay) return;
+    overlay.classList.add('is-open');
+    document.body.style.overflow = 'hidden';
+    const input = $('#search-input');
+    if (input) { input.value = ''; input.focus(); }
+    const results = $('#search-results');
+    if (results) results.innerHTML = '';
+    _searchIdx = -1;
+  };
+
+  window.closeSearch = function () {
+    const overlay = $('#search-overlay');
+    if (!overlay) return;
+    overlay.classList.remove('is-open');
+    document.body.style.overflow = '';
+  };
+
+  // wire up search input on DOMContentLoaded (below)
+
   // ── Init ─────────────────────────────────────────────────────────────────────
   document.addEventListener('DOMContentLoaded', () => {
     // keyboard shortcuts
     document.addEventListener('keydown', e => {
       if (e.key === 'Escape') {
+        const overlay = $('#search-overlay');
+        if (overlay && overlay.classList.contains('is-open')) { closeSearch(); return; }
         const detail = $('#view-detail');
         if (detail && detail.classList.contains('is-active')) closeDetail();
       }
-      if (e.key === '/' && document.activeElement.tagName !== 'INPUT') {
+      if (e.key === '/' && document.activeElement.tagName !== 'INPUT' && document.activeElement.tagName !== 'TEXTAREA') {
         e.preventDefault();
-        // future: focus search
+        openSearch();
+      }
+      // Arrow keys in search
+      if ($('#search-overlay')?.classList.contains('is-open')) {
+        if (e.key === 'ArrowDown' || e.key === 'ArrowUp') {
+          e.preventDefault();
+          navigateSearch(e.key === 'ArrowDown' ? 1 : -1);
+        }
+        if (e.key === 'Enter') {
+          e.preventDefault();
+          confirmSearch();
+        }
       }
     });
+
+    // search input live handler
+    const searchInput = $('#search-input');
+    if (searchInput) {
+      searchInput.addEventListener('input', () => runSearch(searchInput.value));
+    }
 
     // marked.js config
     if (typeof marked !== 'undefined') {
