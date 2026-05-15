@@ -2,7 +2,7 @@
 
 **狀態：** ongoing
 **開始日期：** 2026-04-25
-**最後更新：** 2026-05-13
+**最後更新：** 2026-05-15
 
 ---
 
@@ -593,8 +593,20 @@
 - [[news/2026-05-14]]
 - [[news/2026-05-12]]
 - [[news/2026-05-13]]
+- [[news/2026-05-15]]
 
 ## 時序
+
+### 2026-05-15
+- **MCP 麥克風整合——語音驅動 Claude Code**：開發者透過 MCP 整合麥克風，讓 Claude Code 在需要更多脈絡時主動發出語音提問，使用者口語回答後繼續執行；突破傳統文字輸入互動模式，是 Claude Code 人機介面實驗的代表案例，呼應 Cat Wu「AI 主動性（proactivity）」方向
+- **破壞性操作安全閘門工具（GrapeRoot Pro）**：「Claude 刪除整個專案」類帖子持續增加（近期 700+ 留言），催生破壞性操作閘門設計——執行 `rm -rf` 等高危指令前自動顯示受影響檔案清單（含讀寫次數、最後存取時間）並暫停等待確認；見 [[topics/ai-agent-safety]]
+- **長期 auto-memory 品質管理（3 個月案例）**：在同一專案跑三個月 auto-memory 後出現命名分歧、frontmatter 缺失、搜尋失效等退化問題，作者撰寫命名規範強制執行 skill + bash 審計腳本自動偵測品質漂移；是長期 agentic 工作流記憶管理挑戰的首個公開系統性應對案例；見 [[topics/ai-agent-safety]]
+- **平行子代理成本分析（有官方數字支撐）**：引用 Anthropic 官方數據（多 Agent 系統約消耗 15 倍 token，快取命中可降至 10%），以具體計算說明哪些任務適合平行子代理、哪些反而成本暴增；是近期少見有官方量化支撐的 multi-agent 成本分析文
+- **「monk」靜默模式 skill——節省 25% 上下文視窗**：讓 Agent 執行期間保持靜默、僅在完成後輸出標準化結果，實測節省約 25% 上下文視窗容量（佔全 session token 節省約 3–5%）；適合批次自動化任務、不需即時追蹤過程的場景；與 `/background` 指令應用場景高度重疊
+- **PlanBridge 行內計劃書評審**：透過 Agent hook 在本地瀏覽器渲染 Markdown 計劃書，讓使用者直接在計劃文字上留行內評論，解決終端機審閱 Agent 計劃時難以精確標注的 UX 痛點；是「human-in-the-loop」審閱流程的新工具形態
+- **CLAUDE.md 精簡反思（Token 成本上升背景下）**：6/15 計費變更催生 CLAUDE.md token 成本意識——冗長 CLAUDE.md 每次對話消耗大量 token 但對行為改善有限，精簡設計成為成本敏感期的新議題；配額將至自動收尾工具（my-time-has-come）同日出現，反映 Pro 方案配額焦慮形成系統性需求
+- **「90 天 Claude Code vs Cursor」比較結論**：同時使用兩工具 90 天後的比較共識：Claude Code 更適合 Agent 驅動自動化任務，Cursor 在互動式編輯體驗仍有優勢，建議依工作流性質選擇而非二擇一；與 [[topics/competitor-landscape]] 的分流討論形成互補視角
+- **新工具**：PlanBridge（開源行內計劃書評審）、my-time-has-come（配額將至自動收尾）、MCP 麥克風整合（語音提問）、GrapeRoot Pro 安全閘門
 
 ### 2026-05-14
 - **訂閱 programmatic 用量剝離——費用可觀測性工具需求爆發**：6/15 起 `claude -p` / Agent SDK 改按全額 API 費率計費，直接推動 token 成本分析工具密集出現同一天：Ledger（Rust，PR 層級 token 追蹤 + macOS 選單欄 + Web dashboard）、Clawdmeter（ESP32-S3 實體 token 監控面板）、Grafana + Prometheus 監控 dashboard；費用可觀測性從「選配」成為「必備」；見 [[entities/pricing]]

@@ -3,18 +3,19 @@
 **類型：** product
 **狀態：** active
 **首次出現：** 2025（正式推出）
-**最後更新：** 2026-05-14
+**最後更新：** 2026-05-15
 
 ---
 
 ## 現況
 
-Claude Code 是 Anthropic 的 AI 編碼 CLI 工具，支援 agentic 工作流程、MCP Server 整合、Hooks 機制與多代理協作框架（Managed Agents）。截至 2026-05-14，GitHub Stars 達 121,000+，是增長最受開發者關注的 AI 編碼助理之一。最新版本為 **v2.1.141**，核心能力已從純程式碼助理擴展為具備全桌面自動化、多代理管理與 AI 安全審查的完整 agent 開發平台。
+Claude Code 是 Anthropic 的 AI 編碼 CLI 工具，支援 agentic 工作流程、MCP Server 整合、Hooks 機制與多代理協作框架（Managed Agents）。截至 2026-05-14，GitHub Stars 達 121,000+，是增長最受開發者關注的 AI 編碼助理之一。最新版本為 **v2.1.142**，核心能力已從純程式碼助理擴展為具備全桌面自動化、多代理管理與 AI 安全審查的完整 agent 開發平台。Microsoft 正陸續取消內部授權，轉推 GitHub Copilot CLI（見 [[topics/competitor-landscape]]）；與此同時 Ramp AI Index 數據顯示 Anthropic 企業採用率首次超越 OpenAI（34.4% vs 32.3%）。
 
 ### 最新版本
 
 | 版本 | 日期 | 重點 |
 |------|------|------|
+| **v2.1.142** | 2026-05-14 | `claude agents` 新增 8 旗標：`--add-dir`、`--settings`、`--mcp-config`、`--plugin-dir`、`--permission-mode`、`--model`、`--effort`、`--dangerously-skip-permissions`，大幅提升 Agent 啟動時細粒度控制能力 |
 | **v2.1.141** | 2026-05-13 | `terminalSequence` 欄位至 Hook JSON（無控制終端環境下桌面通知 + 視窗標題 + 響鈴）；`CLAUDE_CODE_PLUGIN_PRE` 擴展插件系統 |
 | **v2.1.140** | 2026-05-13 | `subagent_type` 大小寫／分隔符號不敏感匹配；代理配色更新 |
 | **v2.1.139** | 2026-05-12 | ★ Agent View（多 session 統一管理）+ `/goal`（fire-and-forget，104 項變更）|
@@ -250,6 +251,7 @@ Token 用量追蹤、session 費用分析與效能漂移偵測工具。
 - [[news/2026-05-10]]
 - [[news/2026-05-11]]
 - [[news/2026-05-12]]
+- [[news/2026-05-15]]
 - [[news/2026-05-14]]
 - [[news/2026-05-13]]
 
@@ -257,6 +259,10 @@ Token 用量追蹤、session 費用分析與效能漂移偵測工具。
 
 | 日期 | 事件 |
 |------|------|
+| 2026-05-15 | **v2.1.142**：`claude agents` 新增 8 旗標（`--add-dir`、`--settings`、`--mcp-config`、`--plugin-dir`、`--permission-mode`、`--model`、`--effort`、`--dangerously-skip-permissions`），開發者可直接在指令列指定模型版本、MCP 路徑、工作目錄與權限模式 |
+| 2026-05-15 | Anthropic 官方發表「Claude Code at Scale」系列首篇，彙整 monorepo、遺留系統、多 repo 分散式架構真實部署成功模式；HN 討論熱度 203，本週最受工程社群關注的技術文章 |
+| 2026-05-15 | Microsoft 正陸續取消內部 Claude Code 授權（去年 12 月開放數千名員工使用），改推 GitHub Copilot CLI；見 [[topics/competitor-landscape]] |
+| 2026-05-15 | 新工具：PlanBridge（開源，透過 Agent hook 在瀏覽器渲染 Markdown 計劃書並支援行內評論）、my-time-has-come（配額將至時自動收尾任務）、Ungate（Claude Max 訂閱路由至 Cursor，ToS 風險待確認）|
 | 2026-05-14 | 官方文件發布 `/loop`、`/batch`、`/background` 完整自主執行指令套件（搭配 v2.1.139 的 `/goal`），Claude Code 產品定位正式轉向 agent 開發平台；Claude Code 負責人 Cat Wu 指出「AI 下一步是主動性（proactivity）」；6/15 訂閱 programmatic 用量剝離公告引發強烈反彈，`claude-pee` 繞過工具出現；見 [[entities/pricing]] |
 | 2026-05-14 | 新工具：Ledger（Rust PR 層級 token 成本追蹤 + macOS 選單欄 + Web dashboard）、Clawdmeter（ESP32-S3 實體 token 監控面板）、Grafana Dashboard（Claude Code 用量 Prometheus 監控）、agent-html-skills（雙向 HTML 工件生成 plugin）、Lanes v0.39（GitHub + Linear 雙向整合） |
 | 2026-05-13 | v2.1.141：`terminalSequence` 欄位至 Hook JSON（無控制終端環境桌面通知 + 視窗標題 + 響鈴）；`CLAUDE_CODE_PLUGIN_PRE` 擴展插件系統能力 |

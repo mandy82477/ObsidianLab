@@ -2,7 +2,7 @@
 
 **狀態：** ongoing
 **開始日期：** 2026-04-27
-**最後更新：** 2026-05-13
+**最後更新：** 2026-05-15
 
 ---
 
@@ -177,10 +177,16 @@
 - [[news/2026-05-10]]
 - [[news/2026-05-12]]
 - [[news/2026-05-13]]
+- [[news/2026-05-15]]
 - [Claude-powered AI coding agent deletes entire company database in 9 seconds](https://www.tomshardware.com/tech-industry/artificial-intelligence/claude-powered-ai-coding-agent-deletes-entire-company-database-in-9-seconds-backups-zapped-after-cursor-tool-powered-by-anthropics-claude-goes-rogue) — Tom's Hardware
 - [Anthropic's definition of safety is too narrow](https://jonathannen.com/anthropic-safety-too-narrow/) — Jonathan Nen
 
 ## 時序
+
+### 2026-05-15
+- **[破壞性操作防護] 「Claude 刪除專案」類事件持續增加，社群主動建構安全閘門**：GrapeRoot Pro 開發者針對「Claude 刪除整個專案」類帖子（近期 700+ 留言討論）建立破壞性操作閘門——執行 `rm -rf` 等高危指令前自動顯示受影響檔案清單（含讀寫次數、最後存取時間）並暫停等待確認；是繼 DataMoat（AES-256-GCM 加密）、hard_deny（官方邊界）後，社群在破壞性操作防護上的第三條路線
+- **[長期記憶退化] 三個月 auto-memory 導致記憶庫品質漂移**：開發者在同一專案跑三個月 Claude Code auto-memory 後，記憶庫出現命名分歧、frontmatter 缺失、搜尋失效等退化問題，撰寫 skill 強制執行命名規範並以 bash 審計腳本自動偵測品質漂移；揭示長期 agentic 工作流的記憶一致性問題尚無官方解決機制
+- **[靜默失敗模式] 35 天獨立 ERP 開發歸納五種失敗模式**：開發者記錄 35 天以 Claude Code 打造 ERP 系統的經驗，歸納五種「無報錯但輸出不符預期」的靜默失敗模式；對依賴 Agent 執行複雜業務邏輯的開發者具警示價值
 
 ### 2026-05-13
 - **[安全研究] AI 生成程式碼 90% 存在安全漏洞（48 應用程式靜態分析）**：研究者掃描 48 個由 Lovable、Bolt、Replit 生成的公開應用，90% 存在至少一個安全漏洞（44% 驗證缺口、33% 可繞過 RLS 的 Postgres 函式、25% BOLA/IDOR）；是目前少見的大規模 AI 生成程式碼公開安全評測，直接挑戰「AI 快速開發即可上線」的假設

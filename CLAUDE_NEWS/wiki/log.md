@@ -5,6 +5,21 @@ Append-only 紀錄。每次 ingest、query 或 lint 都在此追加一條。
 
 ---
 
+## 2026-05-15 Ingest
+
+- 來源日報：[[news/2026-05-15]]
+- 更新頁面：
+  - `entities/pricing.md`（新增 2026-05-15：社群情緒分析（60% 負面）、第三方工具衝擊（Zed/Conductor/Superset）、Ars Technica 官方訪談、VS Code 計費歸屬不明、Ungate 工具 ToS 風險）
+  - `entities/claude-code.md`（v2.1.142 `claude agents` 8 旗標；「Claude Code at Scale」官方大型 codebase 指南；Microsoft 取消內部授權；新工具 PlanBridge/my-time-has-come/Ungate；更新現況說明）
+  - `topics/competitor-landscape.md`（新增 2026-05-15 時序：Microsoft 取消授權轉推 Copilot CLI；Anthropic 企業採用率首次超越 OpenAI（34.4% vs 32.3%）；第三方工具分化；摘要更新）
+  - `topics/community-tech-patterns.md`（新增 2026-05-15 時序：MCP 麥克風語音整合/破壞性操作安全閘門/長期 auto-memory 品質管理/平行子代理成本分析/monk 靜默模式 skill/PlanBridge 行內評審/CLAUDE.md 精簡反思/Claude Code vs Cursor 比較）
+  - `topics/ai-agent-safety.md`（新增 2026-05-15 時序：「Claude 刪除專案」安全閘門/長期記憶退化/35 天 ERP 靜默失敗模式）
+  - `wiki/feature-radar.md`（新增 `claude agents` v2.1.142 細粒度旗標條目 🔥🔥；更新全覽表）
+- 新增頁面：無
+- 摘要：Anthropic 6/15 計費變更持續延燒（第三方工具分化、60% 社群負評、官方訪談補充說明）；Microsoft 取消內部 Claude Code 授權轉推 Copilot CLI 標誌企業市場首次正面競爭；Ramp AI Index 首次顯示 Anthropic 企業採用率超越 OpenAI（34.4% vs 32.3%）；社群大量湧現記憶管理、安全防護與 Token 節省工具。
+
+---
+
 ## 2026-05-14 Ingest
 
 - 來源日報：[[news/2026-05-14]]
