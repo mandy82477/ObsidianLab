@@ -156,11 +156,13 @@ wiki/
 2. 讀 `wiki/index.md` + `wiki/log.md`，確認未重複 ingest
 3. 比對日報內容，找受影響的既有頁面
 4. 更新相關 entities/ 和 topics/ 頁面
-5. 若新議題持續 ≥ 2 天，建立新的 topics/ 頁
-6. 若新實體有具體資訊可記錄，建立新的 entities/ 頁
-7. **更新 `wiki/feature-radar.md`**（見下方規則）
-8. Append 至 `wiki/log.md`
-9. 更新 `wiki/index.md`
+5. 判斷事件性質，決定建頁類型：
+   - **具體事物**（模型/工具/人物/產品）有足夠描述 → 當天建 entities/ 頁
+   - **現象/爭議/趨勢** 且 log.md 顯示昨天也出現 → 建 topics/ 頁
+   - **現象/爭議/趨勢** 今天首次出現 → 暫記於相關 entities/ 歷史，明天再評估
+6. **更新 `wiki/feature-radar.md`**（見下方規則）
+7. Append 至 `wiki/log.md`
+8. 更新 `wiki/index.md`
 
 ### feature-radar.md 更新規則
 
@@ -272,3 +274,25 @@ wiki/
 - 每次修改頁面必須同步更新「最後更新」欄位
 - `log.md` 只能 append
 - 繁體中文為主；英文術語保留英文
+
+---
+
+## Wiki Ingest Workflow
+
+- Wiki 檔案只能建立或修改在 `CLAUDE_NEWS/wiki/` 路徑下，**不可**誤存至父層 `ObsidianLab/` 目錄
+- 每次 ingest 結束必須同時更新 `log.md`（append）與 `index.md`（同步新增頁面與頁面總數）
+- 更新頁面前先用 Grep 確認是否已有 `## 參考來源` 區塊，避免重複插入
+- `community-tech-patterns.md` 等大型頁面（> 300 行）使用 Grep + offset 讀取目標段落，不做全文讀取
+- 每次 ingest 結尾必須輸出強制核對清單並全部勾選（見 `/wiki-ingest` Step 9）
+
+---
+
+## 大型檔案平行編輯
+
+當 wiki 頁面過長無法一次讀完時，使用以下策略：
+
+1. 先用 Grep 搜尋目標區塊的關鍵標題，取得行號範圍
+2. 用 `Read` 搭配 `offset` / `limit` 只讀取需要的段落，避免讀取整份大型檔案
+3. 若同一次 ingest 需要更新多個不相關頁面，在單一訊息中發出多個 Edit 呼叫（平行執行，縮短總時間）
+
+典型大型頁面：`wiki/topics/community-tech-patterns.md`、`wiki/entities/claude-code.md`
