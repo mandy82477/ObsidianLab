@@ -5,6 +5,22 @@ Append-only 紀錄。每次 ingest、query 或 lint 都在此追加一條。
 
 ---
 
+## 2026-05-16 Ingest
+
+- 來源日報：[[news/2026-05-16]]
+- 更新頁面：
+  - `entities/claude-code.md`（v2.1.143 plugin 依賴強制執行；GitHub Copilot 新應用競爭；Anthropic 尋找下一個突破性產品；新工具：Code Quest、CostHawk、AI 引用稽核 MCP、answering machine MCP；更新現況與版本歷史）
+  - `entities/pricing.md`（新增 2026-05-16：Max 20x 用量上限未生效數學實證、社群促銷時序整理、Lanes.sh 影響範圍說明、費用焦慮集體高峰、週配額意外重置 bug、「credit 包裝漲價」批評）
+  - `entities/managed-agents.md`（新增 2026-05-16 歷史記錄：dev.to Dreaming 機制深度技術分析）
+  - `topics/competitor-landscape.md`（新增 2026-05-16 時序：GitHub Copilot 新應用明確對標 Claude Code、Anthropic 尋找下一個突破性產品；更新摘要）
+  - `topics/community-tech-discussions.md`（新增「harness 變差了」辯論、Agentic RAG + eval harness 兩個新討論；更新熱門討論表格、技術彙整、時序）
+  - `topics/community-tech-patterns.md`（新增 2026-05-16 時序：費用焦慮高峰、Custom base URL、Agentic RAG、X 演算法文件化、非工程師 MCP 六個月心得；新增 Code Quest / CostHawk 工具）
+  - `wiki/feature-radar.md`（新增 v2.1.143 Plugin 依賴關係強制執行條目；更新全覽表）
+- 新增頁面：無
+- 摘要：Claude Code v2.1.143 plugin 依賴強制執行為最重要技術更新；GitHub Copilot 正面對標 Claude Code 是競品競爭升級訊號；6/15 計費後遺症延燒（Max 用量上限未生效數學實證、促銷透明度質疑、費用優化文章集中爆發）；「harness 變差了」論點為近期「Claude Code 退步感」提供結構性反論。
+
+---
+
 ## 2026-05-15 Ingest
 
 - 來源日報：[[news/2026-05-15]]

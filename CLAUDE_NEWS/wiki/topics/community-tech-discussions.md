@@ -20,6 +20,8 @@
 
 | 討論主題 | 首見 | 熱度 | 模式 | 核心論點 | 衍生 |
 |---------|------|------|------|---------|------|
+| 「Claude Code 沒有變差，harness 變差了」 | 2026-05-16 | 🔥🔥 | ☄️閃現 | 長達兩個月的「Claude Code 退步」社群抱怨根源在 harness 設定與用法，而非模型退步；為近期普遍負面情緒提供有力反論，與 CLAUDE.md candidate-context 揭示一脈相承 | — |
+| Agentic RAG + eval harness 防幻覺 | 2026-05-16 | 🔥🔥 | ☄️閃現 | BM25 + Obsidian vault 工程書籍 RAG，token 從 50K 降至 5K；更重要的是同時建立 eval harness 驗證 Claude 是否幻覺，是少數將「驗證機制」納入工作流的實戰分享 | — |
 | Boris Cherny「coding is solved」/ 反 vibe coding | 2026-05-08 | 🔥🔥🔥🔥🔥 | 🌊延燒 | 多平台（HN/Business Insider/YouTube）廣泛討論，社群兩極化；術語從 vibe coding 走向 spec-driven | — |
 | AI 生成程式碼 90% 有安全漏洞 | 2026-05-13 | 🔥🔥🔥🔥 | ☄️閃現 | 48 應用靜態分析最具說服力的安全反例，直接挑戰「AI 快速上線」假設 | — |
 | HTML vs Markdown 輸出格式辯論 | 2026-05-09 | 🔥🔥🔥 | ☄️閃現 | HN 187 則討論；共識：HTML → 機器消費，Markdown → 人機協作 | agent-html-skills |
@@ -181,6 +183,17 @@
 - **開發流程含義**：Claude Code 開發者應將安全審查（如 Snyk + Claude Code 整合，2026-05-10）納入標準 PR 流程；AI 生成程式碼不比人工撰寫更安全，快速開發的速度優勢可能掩蓋安全問題
 - **與 Claude Security 的關係**：此研究為 Anthropic 的 Claude Security 公開 Beta（2026-05-06）和社群工具 Trent（架構層安全評估）提供了需求支撐；見 [[entities/claude-security]]、[[topics/ai-agent-safety]]
 
+### Harness vs 模型退步辯論（2026-05-16）
+
+- **「兩個月的退步感來自 harness 設定，而非模型能力下降」**：dev.to 文章分析長達兩個月的「Claude Code 變差了」社群抱怨潮，主張問題根源在 harness（腳手架工具鏈）的設定與用法——CLAUDE.md 腐爛、hooks 設定失效、context 管理退化，這些問題隨專案時間積累，被感知為「模型退步」，但實為 harness 維護問題
+- **與既有認知框架的一致性**：此論點與 2026-05-10 CLAUDE.md candidate-context 揭示（指令被忽略的根源在 harness 架構）、2026-05-07 skill atrophy 討論（AI 加速導致 harness 設計知識退化）形成一致框架：「問題通常在工具鏈配置，不在模型」
+
+### Agentic RAG 與 Eval Harness 結合（2026-05-16）
+
+- **BM25 + 向量搜尋降低 token 消耗 10 倍**：開發者將工程類 PDF 轉為 Markdown 存入 Obsidian vault，以 BM25 + 語義搜尋讓 Claude 只讀相關段落，將每次問答 token 消耗從約 50,000 降至約 5,000（10 倍節省）
+- **Eval harness 驗證 Claude 是否幻覺**：更值得關注的是開發者同時建立了評估框架，主動驗證 Claude 回答是否存在幻覺，是社群中少數將「驗證機制」系統性納入 AI 工作流的案例；與 Judge Gate（2026-05-11）的語意層驗證概念相呼應——「不能只靠 AI 說它對就算對」
+- **意義**：RAG 降耗已成社群共識，此案例的亮點是「評估閉環」設計，為 AI 知識庫工作流提供了更可靠的品質保證路徑
+
 ---
 
 ## 目前結論
@@ -225,6 +238,7 @@
 - [[news/2026-05-13]]
 - [[news/2026-05-14]]
 - [[news/2026-05-15]]
+- [[news/2026-05-16]]
 
 ## 時序
 
@@ -232,6 +246,7 @@
 
 | 日期 | 討論事件 |
 |------|---------|
+| 2026-05-16 | 「Claude Code 沒有變差，harness 變差了」辯論（dev.to）：harness 設定退化被誤感知為模型退步；Agentic RAG + eval harness 防幻覺（50K→5K token，Obsidian vault）；非工程師台灣創業者六個月獨自用 Claude Code 開發 MCP 伺服器心得 |
 | 2026-05-13 | AI 生成程式碼 90% 安全漏洞（48 應用靜態分析）|
 | 2026-05-12 | Context 管理為大型專案核心瓶頸確認 |
 | 2026-05-10 | Claude Code 架構深度解析系列（dev.to）啟動 |

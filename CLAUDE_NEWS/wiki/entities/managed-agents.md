@@ -3,7 +3,7 @@
 **類型：** feature
 **狀態：** active（正式發布）
 **首次出現：** 2026-04-28
-**最後更新：** 2026-05-13
+**最後更新：** 2026-05-16
 
 ---
 
@@ -151,12 +151,14 @@ while (!['completed', 'failed'].includes(task.status)) {
 - [[news/2026-05-11]]
 - [[news/2026-05-12]]
 - [[news/2026-05-13]]
+- [[news/2026-05-16]]
 - [Ars Technica 報導](https://arstechnica.com/ai/2026/05/anthropics-claude-can-now-dream-sort-of/)
 
 ## 歷史記錄
 
 | 日期 | 事件 |
 |------|------|
+| 2026-05-16 | dev.to 深度文章分析 Managed Agents 三項功能的技術機制：聚焦 Dreaming 機制——Agent 在非活躍期間如何透過 Outcomes 與 Orchestration 進行自我優化，副標「How Agents Self-Improve While You Sleep」；是 Code with Claude 大會功能的首篇深度技術解析，對關注 agent 長期自主執行行為的開發者有參考價值 |
 | 2026-05-13 | v2.1.140 改善 `subagent_type` 大小寫不敏感及分隔符號不敏感匹配（`"Code Reviewer"` → `code-reviewer`），降低多代理配置摩擦；Boris Cherny 公開每晚讓數千個 AI 子代理執行「深度工作」的工作流，被 Business Insider 等主流媒體報導，是 Managed Agents 大規模並行能力的極端現實應用案例 |
 | 2026-05-12 | v2.1.139 新增 Agent View（Research Preview，統一多 session 管理面板，`claude agents`）與 `/goal` 指令（fire-and-forget 自動化，小型快速模型驗證完成條件），是 Claude Code 邁向真正非同步工作流的關鍵里程碑 |
 | 2026-05-11 | 正式發布（從研究預覽升格）；社群自建 70 天多代理架構開發者分享實戰：Opus 決策層 + OpenCode 工程師層 + 並行研究代理，核心結論是任務簡報品質決定系統成敗；官方 vs 社群自組方案的比較進入主流討論 |

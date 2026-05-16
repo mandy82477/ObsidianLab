@@ -2,13 +2,13 @@
 
 **狀態：** ongoing
 **開始日期：** 2026-04
-**最後更新：** 2026-05-15
+**最後更新：** 2026-05-16
 
 ---
 
 ## 摘要
 
-Claude Code 已成為 AI 輔助編碼領域的標竿產品，但競爭正在快速升溫。最值得關注的是 Google 聯合創辦人 Sergey Brin 親自主導的內部計畫，目標是打造一款直接對標 Claude Code 的工具。2026-05-04 新發展：Anthropic 已悄悄讓 Claude Desktop/Cowork 支援任意第三方 LLM（OpenAI、Gemini、本地模型、企業閘道），競爭格局從「Claude vs. others」正在轉向「Claude 作為多模型接入層」；Claude Connectors 同期擴展至創意工作軟體（Adobe、Blender、Ableton 等），正式進入 Figma 等工具的競爭版圖。**2026-05-05 重大警示**：OpenAI Codex 在 4/30 發布 v0.128.0 後單週下載量暴增 1397%（達 8,610 萬次），同期 Claude Code 下滑 38%（720 萬次），是自 Claude Code 崛起以來最明顯的市場份額競爭壓力訊號，需持續追蹤走勢。**2026-05-06**：以 DeepSeek 為基礎的 Claude Code clone 迅速累積 8,700 GitHub Stars，同期出現聲稱可降低 17 倍成本的 DeepClaude 開源替代方案，低成本替代生態正加速形成；社群對 Claude Code 功能認可與對其定價反彈的雙重壓力，正同步催生開源替代生態。**2026-05-12 新數據**：逾 **157,000 名開發者**已轉向 OpenCode 作為對沖 Anthropic 依賴的備案，即便 Code with Claude 大會宣佈倍增速率限制，供應商鎖定顧慮仍推動開源替代選擇，是目前最具體的競品分流量化數據。**2026-05-15 重大事件**：① Microsoft 宣布陸續取消數千名內部員工的 Claude Code 授權（去年 12 月起開放，涵蓋工程師、PM、設計師等職能），改推 GitHub Copilot CLI；Anthropic 與 Microsoft 在企業市場的正面競爭首次浮上檯面。② Ramp AI Index 最新數據顯示 Anthropic 企業採用率達 **34.4%**，首次超越 OpenAI 的 **32.3%**，Claude Code 快速普及是主驅動力，但市場競爭仍高度動盪，領先地位不穩固。
+Claude Code 已成為 AI 輔助編碼領域的標竿產品，但競爭正在快速升溫。最值得關注的是 Google 聯合創辦人 Sergey Brin 親自主導的內部計畫，目標是打造一款直接對標 Claude Code 的工具。2026-05-04 新發展：Anthropic 已悄悄讓 Claude Desktop/Cowork 支援任意第三方 LLM（OpenAI、Gemini、本地模型、企業閘道），競爭格局從「Claude vs. others」正在轉向「Claude 作為多模型接入層」；Claude Connectors 同期擴展至創意工作軟體（Adobe、Blender、Ableton 等），正式進入 Figma 等工具的競爭版圖。**2026-05-05 重大警示**：OpenAI Codex 在 4/30 發布 v0.128.0 後單週下載量暴增 1397%（達 8,610 萬次），同期 Claude Code 下滑 38%（720 萬次），是自 Claude Code 崛起以來最明顯的市場份額競爭壓力訊號，需持續追蹤走勢。**2026-05-06**：以 DeepSeek 為基礎的 Claude Code clone 迅速累積 8,700 GitHub Stars，同期出現聲稱可降低 17 倍成本的 DeepClaude 開源替代方案，低成本替代生態正加速形成；社群對 Claude Code 功能認可與對其定價反彈的雙重壓力，正同步催生開源替代生態。**2026-05-12 新數據**：逾 **157,000 名開發者**已轉向 OpenCode 作為對沖 Anthropic 依賴的備案，即便 Code with Claude 大會宣佈倍增速率限制，供應商鎖定顧慮仍推動開源替代選擇，是目前最具體的競品分流量化數據。**2026-05-15 重大事件**：① Microsoft 宣布陸續取消數千名內部員工的 Claude Code 授權（去年 12 月起開放，涵蓋工程師、PM、設計師等職能），改推 GitHub Copilot CLI；Anthropic 與 Microsoft 在企業市場的正面競爭首次浮上檯面。② Ramp AI Index 最新數據顯示 Anthropic 企業採用率達 **34.4%**，首次超越 OpenAI 的 **32.3%**，Claude Code 快速普及是主驅動力，但市場競爭仍高度動盪，領先地位不穩固。**2026-05-16**：GitHub 推出全新 Copilot 應用程式，明確將 Claude Code 與 OpenAI Codex 列為競爭目標，AI 編程 agent 賽道從比功能進入正面搶用戶階段；Anthropic 據報積極尋找下一個「Claude Code 等級」突破性產品，顯示管理層承受持續創新壓力。
 
 ---
 
@@ -77,6 +77,7 @@ Claude Code 已成為 AI 輔助編碼領域的標竿產品，但競爭正在快�
 - [[news/2026-05-04]]
 - [[news/2026-05-05]]
 - [[news/2026-05-06]]
+- [[news/2026-05-16]]
 - [[news/2026-05-15]]
 - [[news/2026-05-14]]
 - [[news/2026-05-07]]
@@ -85,7 +86,11 @@ Claude Code 已成為 AI 輔助編碼領域的標竿產品，但競爭正在快�
 
 ## 時序
 
-#### 企業競爭白熱化（2026-05-12 至 2026-05-15）
+#### 企業競爭白熱化（2026-05-12 至 2026-05-16）
+
+### 2026-05-16
+- **[重大事件] GitHub Copilot 推出全新應用程式，明確對標 Claude Code**：GitHub 發布新 Copilot 應用程式，明確將 Claude Code 與 OpenAI Codex 列為競爭目標，AI 編程 agent 賽道從比功能進入正面搶用戶階段（The New Stack 報導）；這是 GitHub/Microsoft 首次以產品名點名對標 Claude Code，意義在於競爭性質升級——從「功能競爭」到「直接挖用戶」
+- **[戰略訊號] Anthropic 積極尋找下一個「Claude Code 等級」突破性產品**：據 Sources/Alex Heath 報導，Anthropic 內部正積極尋找足以複製 Claude Code 成功模式的下一個突破性產品，顯示管理層將 Claude Code 視為創新基準，同時承受持續創新壓力
 
 ### 2026-05-15
 - **[重大事件] Microsoft 取消內部 Claude Code 授權，轉推 GitHub Copilot CLI**：Microsoft 去年 12 月起向數千名內部員工（含工程師、PM、設計師等非工程師職能）開放 Claude Code，但因規模過大帶來成本壓力，現正陸續取消授權；此舉標誌大型企業 AI 工具採購的成本敏感度臨界點，也是 Microsoft 自家 Copilot 與 Claude Code 在企業市場首次正面競爭的明確訊號；見 [[entities/claude-code]]

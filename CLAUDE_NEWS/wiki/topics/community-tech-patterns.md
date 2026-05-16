@@ -2,7 +2,7 @@
 
 **狀態：** ongoing
 **開始日期：** 2026-04-25
-**最後更新：** 2026-05-15（拆分技術討論至 community-tech-discussions）
+**最後更新：** 2026-05-16
 
 ---
 
@@ -20,6 +20,8 @@
 
 | 應用                 | 類型   | 熱度     | 簡介                                           |
 | ------------------ | ---- | ------ | -------------------------------------------- |
+| **Code Quest**     | Web UI   | 🔥🔥   | Claude Code 網頁互動模式 UI，針對 6/15 計費調整設計，最大化訂閱利用效率 |
+| **CostHawk 排行榜** | 監測工具 | 🔥🔥   | 公開 token 消耗排行榜，比較 Claude Code / Codex / Cursor 用戶用量，不儲存 prompt |
 | **Claude Squad**   | 協作工具 | 🔥🔥🔥 | 多人多 agent 並行開發，orchestrator 分派任務並合併分支        |
 | **mux0**           | 終端工具 | 🔥🔥🔥 | 開源 macOS 終端，側邊欄即時顯示多 agent 狀態                |
 | **CC-Canary**      | 監測工具 | 🔥🔥🔥 | 讀取 session log 自動偵測效能漂移，HERMES.md bug 後更受重視  |
@@ -474,8 +476,17 @@
 - [[news/2026-05-12]]
 - [[news/2026-05-13]]
 - [[news/2026-05-15]]
+- [[news/2026-05-16]]
 
 ## 時序
+
+### 2026-05-16
+- **API 費用焦慮達本週最顯著集體高峰**：6/15 計費調整背景下，同日出現大量成本控管教學——「7 種降費策略」（$200–800 月費區間開發者適用）、「不修改代碼省 10–30%」（prompt caching 與路由優化）、bootstrapped 創業者費用管控討論、Claude Code 替代方案整理；成本焦慮主導本週技術熱度，形成集體情緒；見 [[entities/pricing]]
+- **Custom base URL 串接多 API provider**：Claude Code 透過自訂 base URL 串接非 Anthropic 的 API 提供商（GPT-4o、Gemini 等），達到降價、自動 failover 或多模型混用；在 6/15 計費調整前夕，此類繞道方案關注度明顯上升，是 6/15 後「多 LLM 混合策略」的實踐路徑之一
+- **Agentic RAG + eval harness 防幻覺（50K→5K token 案例）**：開發者以 BM25 + Obsidian vault 建立工程書籍 RAG 系統，token 消耗從 50,000 降至 5,000；更值得關注的是同時建立 eval harness 驗證 Claude 是否幻覺，是少數將「驗證機制」系統性納入工作流的實戰案例；見 [[topics/community-tech-discussions]]
+- **X 開源演算法 + Claude Code 文件化案例**：開發者使用 Claude Code 閱讀 X（Twitter）開源的推薦演算法，整理為平易近人英文說明（完整 8 步驟），是 Claude Code 用於「理解大型陌生程式碼庫並文件化」的典型案例，展示技術文件化上的實用價值
+- **非工程師 × Claude Code = 完整 MCP 伺服器（6 個月心得）**：台灣非工程師背景創業者獨自用 Claude Code 開發 MCP 伺服器六個月；核心洞察：「Claude 能寫任何代碼，但產品決策、架構取捨仍需人來做；非工程師的優勢在於沒有技術偏見，更容易做出以產品為中心的架構決定」
+- **新工具**：Code Quest（Web UI 互動模式，針對 6/15 計費設計）、CostHawk（公開 token 用量排行榜，Claude Code/Codex/Cursor 三方比較）、AI 引用資格稽核 MCP（13 工具，AI 原生 SEO，無需 API key）、answering machine MCP（Claude Code 用戶間留言功能）
 
 ### 2026-05-15
 - **MCP 麥克風整合——語音驅動 Claude Code**：開發者透過 MCP 整合麥克風，讓 Claude Code 在需要更多脈絡時主動發出語音提問，使用者口語回答後繼續執行；突破傳統文字輸入互動模式，是 Claude Code 人機介面實驗的代表案例，呼應 [[entities/cat-wu|Cat Wu]]「AI 主動性（proactivity）」方向

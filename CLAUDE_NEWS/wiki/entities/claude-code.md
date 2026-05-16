@@ -3,18 +3,19 @@
 **類型：** product
 **狀態：** active
 **首次出現：** 2025（正式推出）
-**最後更新：** 2026-05-15
+**最後更新：** 2026-05-16
 
 ---
 
 ## 現況
 
-Claude Code 是 Anthropic 的 AI 編碼 CLI 工具，支援 agentic 工作流程、MCP Server 整合、Hooks 機制與多代理協作框架（Managed Agents）。截至 2026-05-14，GitHub Stars 達 121,000+，是增長最受開發者關注的 AI 編碼助理之一。最新版本為 **v2.1.142**，核心能力已從純程式碼助理擴展為具備全桌面自動化、多代理管理與 AI 安全審查的完整 agent 開發平台。Microsoft 正陸續取消內部授權，轉推 GitHub Copilot CLI（見 [[topics/competitor-landscape]]）；與此同時 Ramp AI Index 數據顯示 Anthropic 企業採用率首次超越 OpenAI（34.4% vs 32.3%）。
+Claude Code 是 Anthropic 的 AI 編碼 CLI 工具，支援 agentic 工作流程、MCP Server 整合、Hooks 機制與多代理協作框架（Managed Agents）。截至 2026-05-14，GitHub Stars 達 121,000+，是增長最受開發者關注的 AI 編碼助理之一。最新版本為 **v2.1.143**，新增 plugin 依賴關係強制執行機制，核心能力已從純程式碼助理擴展為具備全桌面自動化、多代理管理與 AI 安全審查的完整 agent 開發平台。Microsoft 正陸續取消內部授權，轉推 GitHub Copilot CLI（見 [[topics/competitor-landscape]]）；GitHub 已推出新 Copilot 應用明確對標 Claude Code；Ramp AI Index 數據顯示 Anthropic 企業採用率首次超越 OpenAI（34.4% vs 32.3%）。
 
 ### 最新版本
 
 | 版本 | 日期 | 重點 |
 |------|------|------|
+| **v2.1.143** | 2026-05-16 | Plugin 依賴關係強制執行：`claude plugin disable` 在目標 plugin 被其他已啟用 plugin 依賴時拒絕執行，並提示完整停用鏈建議指令，防止工具鏈損壞 |
 | **v2.1.142** | 2026-05-14 | `claude agents` 新增 8 旗標：`--add-dir`、`--settings`、`--mcp-config`、`--plugin-dir`、`--permission-mode`、`--model`、`--effort`、`--dangerously-skip-permissions`，大幅提升 Agent 啟動時細粒度控制能力 |
 | **v2.1.141** | 2026-05-13 | `terminalSequence` 欄位至 Hook JSON（無控制終端環境下桌面通知 + 視窗標題 + 響鈴）；`CLAUDE_CODE_PLUGIN_PRE` 擴展插件系統 |
 | **v2.1.140** | 2026-05-13 | `subagent_type` 大小寫／分隔符號不敏感匹配；代理配色更新 |
@@ -169,6 +170,7 @@ Token 用量追蹤、session 費用分析與效能漂移偵測工具。
 - **[Usage4Claude 3.0.0](https://www.reddit.com/r/ClaudeAI/comments/1tazqpg/usage4claude_300_open_source_macos_menu_bar_usage/)** — 開源 macOS 選單列用量追蹤工具，3.0.0 版新增 Codex 用量追蹤支援，認證資料儲存於本地 Keychain
 - **[Tokenyst](https://github.com/jher7/tokenyst)** — 讓 Claude Code pay-as-you-go 用戶在任務層級設定 token 預算，每次提示後即時顯示剩餘額度與使用比例
 - **[Governor](https://github.com/0xhimanshu/governor)** — 宣稱可減少 Claude Code token 浪費的插件；HN 社群質疑其基準測試過於粗糙，僅統計 token 數量而未評估模型輸出品質，效果待嚴謹驗證
+- **[CostHawk](https://costhawk.ai/leaderboard)** — 公開排行榜，以 token 消耗量對 Claude Code、OpenAI Codex、Cursor 用戶進行排名，追蹤使用模型組合與已雜湊專案識別碼；設計上聲稱不儲存 prompt 或原始碼，部分用戶對資料蒐集範圍存疑
 - **[Rudel](https://app.rudel.ai/wrapped)** — 分析 2 萬筆以上 Claude Code/Codex session metadata，從一致性、強度、repo 廣度、成本密度等維度萃取出 9 種 AI 程式設計師原型，以 Spotify Wrapped 風格互動卡片呈現；資料顯示 4% session 使用了 skills，26% 在早期就被放棄
 
 ### 工作流輔助
@@ -207,6 +209,8 @@ Token 用量追蹤、session 費用分析與效能漂移偵測工具。
 - **[agent-html-skills](https://github.com/f-labs-io/agent-html-skills)** — Claude Code plugin，讓 Claude 在認為必要時主動生成 HTML 視覺化輸出（雙向工件生成），並支援自動提交回 Claude Code 介面；受「HTML 的非凡有效性」文章啟發
 - **[Claude Exporter](https://chromewebstore.google.com/detail/claude-exporter-claude-ch/mhckealbblinipeplfddmbcohdidkfjf)** — Chrome 擴充功能，可將 Claude 對話匯出為 PDF、Word、Google Docs 或 Notion，支援自訂字型，無需帳號
 - **[CodeThis](https://codethis.dev/)** — MCP 原生 paste bin，支援 100+ 語言語法高亮，AI 可透過 MCP server 直接建立貼文；免費版含 REST API 與 MCP，Pro 方案 $9/月
+- **[Code Quest](https://dev.to/recca0120/code-quest-a-claude-code-web-ui-that-runs-in-interactive-mode-just-in-time-for-the-june-15-4m0i)** — 讓 Claude Code 以互動模式在網頁介面執行，設計目標是在 6/15 計費調整規則下維持 Max 訂閱方案的最大化利用效率
+- **[answering machine MCP](https://pavanmadiraju91.github.io/answering-machine/)** — 讓 Claude Code 用戶之間互相留言，下次啟動 Claude Code 時收取；復古風格跨用戶通訊實驗
 
 ### 領域專用
 
@@ -220,6 +224,7 @@ Token 用量追蹤、session 費用分析與效能漂移偵測工具。
 - **[Cocall.ai](https://www.reddit.com/r/ClaudeAI/comments/1tbz13b/cocallai_an_mcp_for_outbound_phone_calls_that/)** — MCP，讓 Claude 可撥打外線電話，遇到無法回答的問題時自動暫停並向使用者詢問，獲得回應後繼續通話；採用全雙工語音模型，支援 IVR 導航與電話轉接
 - **[Destiny](https://github.com/xodn348/destiny)** — Claude Code 占卜插件，輸入生日後執行 `/destiny` 取得今日運勢；底層用 Python 計算八字/卦象/五行，確保結果可驗證，文字詮釋層才交由 LLM 生成
 - **[Mote](https://www.reddit.com/r/ClaudeAI/comments/1t16urg/)** — 可自主在 Minecraft Bedrock 中遊玩的 Claude Code Agent，另提供 wizard 工具讓任何人只用一個 `.md` 檔案即可創建類似 Agent
+- **[AI 引用資格稽核 MCP](https://www.reddit.com/r/ClaudeAI/comments/1teqej9/)** — 提供 13 項工具讓 Claude 稽核網頁是否符合 AI 引用資格，涵蓋 FAQPage JSON-LD schema、robots.txt AI 爬蟲設定等 AI 搜尋特有信號（而非傳統 SEO 因子）；免費，無需 API 金鑰；AI 原生 SEO 工具生態系的早期代表
 
 ---
 
@@ -252,6 +257,7 @@ Token 用量追蹤、session 費用分析與效能漂移偵測工具。
 - [[news/2026-05-10]]
 - [[news/2026-05-11]]
 - [[news/2026-05-12]]
+- [[news/2026-05-16]]
 - [[news/2026-05-15]]
 - [[news/2026-05-14]]
 - [[news/2026-05-13]]
@@ -260,6 +266,9 @@ Token 用量追蹤、session 費用分析與效能漂移偵測工具。
 
 | 日期 | 事件 |
 |------|------|
+| 2026-05-16 | **v2.1.143**：Plugin 依賴關係強制執行——`claude plugin disable` 在目標被其他已啟用 plugin 依賴時拒絕執行，提示完整停用鏈建議指令（例：先停用 B 再停用 A），降低複雜 plugin 組合因停用依賴造成工具鏈損壞的風險 |
+| 2026-05-16 | GitHub 推出新 Copilot 應用程式，明確將 Claude Code 與 OpenAI Codex 列為競爭目標；Anthropic 據報積極尋找下一個「Claude Code 等級」突破性產品；AI 編程 agent 賽道進入正面搶用戶階段；見 [[topics/competitor-landscape]] |
+| 2026-05-16 | 新工具：Code Quest（Web UI 互動模式，6/15 計費調整因應）、CostHawk（公開 token 用量排行榜）、AI 引用資格稽核 MCP（13 工具，無需 API key）、answering machine MCP（Claude Code 用戶間留言） |
 | 2026-05-15 | **v2.1.142**：`claude agents` 新增 8 旗標（`--add-dir`、`--settings`、`--mcp-config`、`--plugin-dir`、`--permission-mode`、`--model`、`--effort`、`--dangerously-skip-permissions`），開發者可直接在指令列指定模型版本、MCP 路徑、工作目錄與權限模式 |
 | 2026-05-15 | Anthropic 官方發表「Claude Code at Scale」系列首篇，彙整 monorepo、遺留系統、多 repo 分散式架構真實部署成功模式；HN 討論熱度 203，本週最受工程社群關注的技術文章 |
 | 2026-05-15 | Microsoft 正陸續取消內部 Claude Code 授權（去年 12 月開放數千名員工使用），改推 GitHub Copilot CLI；見 [[topics/competitor-landscape]] |
