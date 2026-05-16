@@ -458,14 +458,36 @@ ${metaRows.length ? `<div class="detail__meta">${metaHtml}</div>` : ''}
   };
 
   // ── Search ───────────────────────────────────────────────────────────────────
-  let _searchIdx = -1;   // selected result index
+  let _searchIdx  = -1;      // keyboard-selected result index
+  let _searchCorpus = null;  // null = not yet loaded
 
-  function buildSearchCorpus() {
-    const data = window.WIKI_DATA || {};
-    const corpus = [];
-    (data.entities || []).forEach(e => corpus.push({ ...e, _type: 'entity' }));
-    (data.topics  || []).forEach(t => corpus.push({ ...t, _type: 'topic'  }));
-    return corpus;
+  // Load search-index.json once; fallback to metadata-only corpus on error
+  async function loadSearchCorpus() {
+    if (_searchCorpus) return;
+    try {
+      const r = await fetch('data/search-index.json');
+      _searchCorpus = await r.json();
+    } catch (e) {
+      console.warn('[search] index load failed, falling back to metadata', e);
+      const data = window.WIKI_DATA || {};
+      _searchCorpus = [
+        ...(data.entities || []).map(e => ({ ...e, type: 'entity', text: e.summary || '' })),
+        ...(data.topics   || []).map(t => ({ ...t, type: 'topic',  text: t.summary || '' })),
+      ];
+    }
+  }
+
+  // Extract a snippet of text around the first keyword match
+  function getSnippet(text, q, context = 90) {
+    const lower = text.toLowerCase();
+    const qi    = lower.indexOf(q.toLowerCase());
+    if (qi < 0) return '';
+    const start   = Math.max(0, qi - 25);
+    const end     = Math.min(text.length, qi + q.length + context);
+    let snippet   = text.slice(start, end).replace(/\n/g, ' ').trim();
+    if (start > 0)              snippet = '…' + snippet;
+    if (end < text.length)      snippet += '…';
+    return snippet;
   }
 
   function highlight(text, q) {
@@ -480,41 +502,58 @@ ${metaRows.length ? `<div class="detail__meta">${metaHtml}</div>` : ''}
     _searchIdx = -1;
     if (!q.trim()) { results.innerHTML = ''; return; }
 
-    const corpus = buildSearchCorpus();
-    const lq = q.toLowerCase();
+    if (!_searchCorpus) {
+      results.innerHTML = '<div class="search-empty">索引載入中，請稍候再試…</div>';
+      return;
+    }
 
-    const scored = corpus.map(item => {
+    const lq = q.toLowerCase();
+    const scored = _searchCorpus.map(item => {
       const name    = (item.name    || '').toLowerCase();
       const id      = (item.id      || '').toLowerCase();
-      const type    = (item.entityType || '').toLowerCase();
       const summary = (item.summary || '').toLowerCase();
+      const text    = (item.text    || '').toLowerCase();
       let score = 0;
-      if (name === lq || id === lq)             score = 100;
-      else if (name.startsWith(lq))             score = 80;
-      else if (id.startsWith(lq))               score = 70;
-      else if (name.includes(lq))               score = 50;
-      else if (id.includes(lq))                 score = 40;
-      else if (type.includes(lq))               score = 25;
-      else if (summary.includes(lq))            score = 10;
+      if (name === lq || id === lq)   score = 100;
+      else if (name.startsWith(lq))   score = 80;
+      else if (id.startsWith(lq))     score = 70;
+      else if (name.includes(lq))     score = 50;
+      else if (id.includes(lq))       score = 40;
+      else if (summary.includes(lq))  score = 20;
+      else if (text.includes(lq))     score = 10;
       return { item, score };
-    }).filter(r => r.score > 0).sort((a, b) => b.score - a.score).slice(0, 8);
+    }).filter(r => r.score > 0).sort((a, b) => b.score - a.score).slice(0, 10);
 
     if (!scored.length) {
       results.innerHTML = `<div class="search-empty">找不到「${esc(q)}」相關結果</div>`;
       return;
     }
 
-    results.innerHTML = scored.map(({ item }, i) => {
-      const typeCls = item._type === 'entity' ? 'entity' : 'topic';
-      const typeLabel = item._type === 'entity' ? '實體' : '議題';
-      return `<div class="search-result" data-idx="${i}" data-id="${esc(item.id)}" data-pagetype="${esc(item._type)}"
-                   onclick="pickSearch('${esc(item.id)}','${esc(item._type)}')">
+    results.innerHTML = scored.map(({ item, score }, i) => {
+      const pageType  = item.type || item.pageType || 'entity';
+      const isRadar   = pageType === 'radar';
+      const typeCls   = (pageType === 'topic') ? 'topic' : 'entity';
+      const typeLabel = isRadar ? '雷達' : (pageType === 'topic' ? '議題' : '實體');
+
+      // For name/summary hits show summary; for content hits show match context
+      let snippetHtml = '';
+      if (score <= 20 && item.text) {
+        const raw = getSnippet(item.text, q);
+        if (raw) snippetHtml = `<div class="search-result__snippet">${highlight(raw, q)}</div>`;
+      } else if (item.summary) {
+        snippetHtml = `<div class="search-result__summary">${esc(item.summary.slice(0, 90))}…</div>`;
+      }
+
+      const pill   = item.pill   || 'gray';
+      const status = item.status || '';
+      return `<div class="search-result" data-idx="${i}" data-id="${esc(item.id)}" data-pagetype="${esc(pageType)}"
+                   onclick="pickSearch('${esc(item.id)}','${esc(pageType)}')">
   <span class="search-result__type search-result__type--${typeCls}">${typeLabel}</span>
   <div class="search-result__body">
     <div class="search-result__name">${highlight(item.name || item.id, q)}</div>
-    ${item.summary ? `<div class="search-result__summary">${esc(item.summary.slice(0, 80))}…</div>` : ''}
+    ${snippetHtml}
   </div>
-  <span class="search-result__pill"><span class="pill pill--${item.pill}">${esc(shortStatus(item.status))}</span></span>
+  <span class="search-result__pill"><span class="pill pill--${pill}">${esc(shortStatus(status))}</span></span>
 </div>`;
     }).join('');
   }
@@ -548,6 +587,8 @@ ${metaRows.length ? `<div class="detail__meta">${metaHtml}</div>` : ''}
     const results = $('#search-results');
     if (results) results.innerHTML = '';
     _searchIdx = -1;
+    // Pre-load search corpus in background (no-op if already loaded)
+    loadSearchCorpus();
   };
 
   window.closeSearch = function () {

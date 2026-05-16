@@ -446,3 +446,10 @@ Append-only 紀錄。每次 ingest、query 或 lint 都在此追加一條。
 - 移出條目（24 項）：effort 等級與模型行為、多 LLM 協作架構、工具生態痛點、封閉技能生態批判、規格驅動開發、記憶體治理與行為漂移防範、AI 程式碼一致性問題、AI 大規模開發案例、Boris Cherny「Loops 是未來」、Agent Supervision 哲學、Skills Unix 哲學、Agentic 工作流組織協調挑戰、Wire Trace 架構侷限、120 提示詞實證研究、Token 用量極端案例、整合模式選擇框架、Boris Cherny 反 vibe coding、Skill Atrophy 反思、HTML vs Markdown、Claude Code 架構深度解析、三層 Code Review、Judge Gate、Context 管理核心瓶頸、AI 生成程式碼安全審查必要性
 - 結果：patterns.md 836→716 行；discussions.md 244 行（新）
 - 更新：index.md（頁數 22→23）、community-tech-patterns.md（摘要、目前結論、相關實體）
+
+## 2026-05-16 熱門討論表格擴充
+
+- 變更：`topics/community-tech-discussions.md` 熱門討論表格新增 `模式` 欄（☄️閃現/🌊延燒/🌸落幕/🌋重燃/🌙靜候）與 `衍生` 欄
+- 補連結：HTML vs Markdown 討論 → 衍生 `agent-html-skills`；Skill Atrophy → 衍生 `recap 工具`；多 LLM 協作 → 衍生 `Opus+DeepSeek 混合架構`
+- 新增規則：`CLAUDE.md` 補入 community-tech-patterns ↔ community-tech-discussions 雙向連結規則、模式判斷規則（含重燃偵測邏輯）
+- 確認 emoji 方案：重燃模式採 🌋（火山重燃）

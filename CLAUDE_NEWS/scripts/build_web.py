@@ -19,9 +19,39 @@ WIKI_ENTITIES = ROOT / "wiki" / "entities"
 WIKI_TOPICS   = ROOT / "wiki" / "topics"
 WIKI_RADAR    = ROOT / "wiki" / "feature-radar.md"
 NEWS_DIR      = ROOT / "news"
-OUT_JS        = ROOT / "web_reader" / "data" / "data.js"
-OUT_WIKI_DIR  = ROOT / "web_reader" / "data" / "wiki"
-OUT_DIGEST_DIR= ROOT / "web_reader" / "data" / "digest"
+OUT_JS           = ROOT / "web_reader" / "data" / "data.js"
+OUT_WIKI_DIR     = ROOT / "web_reader" / "data" / "wiki"
+OUT_DIGEST_DIR   = ROOT / "web_reader" / "data" / "digest"
+OUT_SEARCH_INDEX = ROOT / "web_reader" / "data" / "search-index.json"
+
+# ── Markdown → plain text (for search index) ────────────────────────────────
+
+def strip_markdown_to_text(md: str) -> str:
+    """Strip markdown syntax to plain searchable text."""
+    text = md
+    # Remove fenced code blocks (keep content — useful for command search)
+    text = re.sub(r'```\w*\n?', '', text)
+    # Remove inline code backticks (keep text)
+    text = re.sub(r'`([^`\n]+)`', r'\1', text)
+    # Remove heading markers
+    text = re.sub(r'^#{1,6}\s+', '', text, flags=re.MULTILINE)
+    # Remove bold/italic markers (keep text)
+    text = re.sub(r'\*{1,3}([^*\n]+)\*{1,3}', r'\1', text)
+    # Remove wiki links [[page]] or [[page|label]] → keep label or page name
+    text = re.sub(r'\[\[(?:[^\]|]+\|)?([^\]]+)\]\]', r'\1', text)
+    # Remove markdown links [text](url) → keep text
+    text = re.sub(r'\[([^\]]+)\]\([^)]+\)', r'\1', text)
+    # Remove table separator rows
+    text = re.sub(r'^\|[-:| ]+\|$', '', text, flags=re.MULTILINE)
+    # Replace table pipes with space
+    text = re.sub(r'\|', ' ', text)
+    # Remove horizontal rules
+    text = re.sub(r'^---+$', '', text, flags=re.MULTILINE)
+    # Collapse whitespace
+    text = re.sub(r'\n{3,}', '\n\n', text)
+    text = re.sub(r'[ \t]{2,}', ' ', text)
+    return text.strip()
+
 
 # ── Status → CSS pill class ──────────────────────────────────────────────────
 
@@ -364,9 +394,31 @@ def build():
         html = _re.sub(r'data/data\.js(\?v=\d+)?', f'data/data.js?v={ver}', html)
         index.write_text(html, encoding="utf-8")
 
+    # ── Write search index (full plain text, stripped of markdown syntax) ────────
+    search_index = []
+    for item in entities + topics:
+        search_index.append({
+            "id":      item["id"],
+            "type":    item["pageType"],
+            "name":    item["name"],
+            "summary": item["summary"],
+            "text":    strip_markdown_to_text(item.get("markdown", "")),
+        })
+    if radar:
+        search_index.append({
+            "id":      radar["id"],
+            "type":    "radar",
+            "name":    radar["name"],
+            "summary": radar["summary"],
+            "text":    strip_markdown_to_text(radar.get("markdown", "")),
+        })
+    with OUT_SEARCH_INDEX.open("w", encoding="utf-8") as fp:
+        json.dump(search_index, fp, ensure_ascii=False, separators=(",", ":"))
+
     print(f"OK: {len(entities)} entities, {len(topics)} topics, {len(digest_all)} digests" +
           (" + radar" if radar else ""))
     print(f"    -> {OUT_JS} ({OUT_JS.stat().st_size//1024} KB)")
+    print(f"    -> {OUT_SEARCH_INDEX} ({OUT_SEARCH_INDEX.stat().st_size//1024} KB)")
     print(f"    -> {OUT_WIKI_DIR}/ ({len(entities)+len(topics)} files)")
     print(f"    -> {OUT_DIGEST_DIR}/ ({len(digest_all)} files)")
 
