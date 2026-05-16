@@ -76,14 +76,12 @@
 | **Trent** | 安全工具 | 🟡 | ⚡ | Claude Code 內嵌架構層安全評估，補足 CVE 掃描對業務邏輯的盲點 |
 | **SmolVM** | 安全工具 | 🟡 | ⚡ | 本機沙盒執行 Claude Code / Codex，單指令啟動，保護宿主系統 |
 | **Rapunzel** | 終端工具 | 🟡 | ⚡ | 樹狀標籤頁多代理瀏覽器，支援 Claude Code / Codex / Gemini |
-| **CLAUDE.md for K8s** | 安全工具 | 🟡 | ⚡ | 13 條規則防止 Claude 產出不安全 K8s 配置，系統性安全防護框架 |
 | **Jupyter MCP server** | 整合工具 | 🟡 | ⚡ | 取代內建 NotebookEdit，支援完整 kernel 互動與輸出讀取 |
 | **PullMD** | MCP 工具 | 🟡 | ⚡ | 網頁抓取時先轉 Markdown，避免 token 浪費（有效內容僅佔 HTML 約 20%） |
 | **Harness** | 工作流 | 🟡 | ✅ | 多 Git worktree 並行管理多個 Claude Code agent，補 cmux/Conductor 不足 |
 | **Groundtruth** | 工作流 | 🟡 | ⚡ | Stop Hook，強制 Claude 提供可驗證執行證明才能宣告完成 |
 | **EvanFlow** | 工作流 | 🟡 | ⚡ | TDD 驅動迴圈，16 技能 + 2 子代理人，每步人工確認，不自動 commit |
 | **Relay plugin** | 工作流 | 🟡 | ⚡ | 強制 Claude Code 先對齊問題本質再動手，Plan Mode 提問升級 |
-| **agent-order** | 工作流 | 🟡 | ⚡ | Codex + Claude 各自獨立寫 PRD 再互相批判，防止答案塌縮 |
 | **lipstyk** | 品質工具 | 🟡 | ⚡ | 靜態分析 AI 生成程式碼特有模式 |
 | **claude-anyteam** | 整合工具 | 🟡 | ⚡ | 讓 Codex/Gemini 加入 Claude Code Agent Teams |
 | **awesome-ux-skills** | 設計工具 | 🔴 | ⚡ | Nielsen + Shape of AI 等 UX 原則技能集，供設計導向工程師重複使用 |
@@ -107,7 +105,6 @@
 | **OpenCode-power-pack** | 整合工具 | 🔴 | ⚡ | 11 個 Claude Code 官方技能移植至 OpenCode，打破工具綁定 |
 | **WezTerm 主題同步** | 環境配置 | 🔴 | ⚡ | Lua 事件鉤子實現 dark/light 即時同步（issue #2990 暫行方案） |
 | **modularity plugin** | 架構工具 | 🔴 | ⏳ | Balanced Coupling 模型分析模組化，防 AI 加速技術債累積 |
-| **流程 skill 化** | 工作流 | 🔴 | ✅ | 將多步驟設定流程包裝為單一 skill 取代 README |
 | **AI 命名一致性 OSS** | 品質工具 | 🔴 | ⚡ | 強制 Claude Code 等 AI 工具維持一致命名與風格，解決命名漂移技術債 |
 | **Destiny** | 趣味工具 | 🔴 | ⏳ | Claude Code 占卜插件，Python 計算八字/卦象，LLM 詮釋文字 |
 | **Mote** | 創意工具 | 🔴 | ⏳ | 可自主玩 Minecraft Bedrock 的 Claude Code Agent |

@@ -14,6 +14,27 @@
 
 ---
 
+## 模式概覽
+
+| 類別 | 代表技巧 | 成熟度 | 核心概念 |
+|------|---------|--------|---------|
+| **Multi-agent 架構** | Claude Squad、Speculative Parallelism | ✅ 成熟 | orchestrator 分派 + 獨立 git worktree，防答案塌縮 |
+| **Skills 設計** | 知識框架化、流程 skill 化 | ✅ 成熟 | description 自動觸發，將書籍/流程封裝為可複用 skill |
+| **CLAUDE.md 管理** | 精簡規則策略、Self-improving Rules、防腐爛機制 | ✅ 成熟 | 以「規則」非「建議」撰寫，CI 攔截違反架構 PR |
+| **Hooks 與自動化** | PostToolUse 稽核、Git Hooks 品質門、/goal Fire-and-Forget | ✅ 成熟 | 強制執行 > CLAUDE.md 建議；Stop Hook 要求可驗證完成證明 |
+| **模型使用策略** | 分層模型（Sonnet + Opus）、多模型路由 | ⚡ 活躍 | 依任務複雜度路由，節省 60% 用量；Dragoman 自動路由 |
+| **Token / 成本優化** | Prompt 精簡、MCP Code Execution、Token Bloat 對策 | ⚡ 活躍 | HTML→Markdown 降 80% token；npx vs CLI 路徑差異陷阱 |
+| **記憶與知識管理** | ltm Core Memory Packet、本機圖資料庫、NanoBrain | ⚡ 活躍 | 跨 session / 跨工具持久記憶；Leiden 圖譜減少 71 倍 token |
+| **Plugin / MCP 整合** | Plugin 反模式整理、Claude Code 作為 MCP 協調中心 | ⚡ 活躍 | 避免不必要 context 載入；Claude Code 主導 MCP 工具鏈協作 |
+| **多代理 PR Review** | 4-agent Code Review、對抗性審查工作流 | ⚡ 活躍 | 架構師代理協調 + 多廠商模型交叉審查，超越單模型 review |
+| **Agent 版本控制** | re_gent、Checkpoint Commits、ADR 注入 | ⏳ 新興 | /compact 後決策追溯；git history 作為 agent 共享 context |
+| **安全架構** | CLAUDE.md for K8s、語意層漂移 CI 測試、Trent 內嵌評估 | ⏳ 新興 | AI 加速開發下的系統性安全防線；CI 攔截語義退化 |
+| **跨環境 Agent 記憶** | Core Memory Packet、Agent 持續運作架構 | ⏳ 新興 | 跨編輯器 / 跨機器 / 跨模型的供應商中立記憶協定 |
+
+> 成熟度：✅ 成熟（社群廣泛實踐）/ ⚡ 活躍（持續演進中）/ ⏳ 新興（近期出現，尚在探索）
+
+---
+
 ## 技術彙整
 
 ### Multi-agent 工作流
