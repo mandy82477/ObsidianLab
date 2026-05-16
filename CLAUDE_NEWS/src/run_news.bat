@@ -45,13 +45,23 @@ echo [Step 2/4] Wiki ingest...
 echo [%DATE% %TIME%] Starting wiki ingest... >> "%LOG_FILE%"
 cd /d "%REPO_ROOT%"
 call claude -p "%WIKI_PROMPT%" --dangerously-skip-permissions >> "%LOG_FILE%" 2>&1
+set CLAUDE_EXIT=%ERRORLEVEL%
+REM Use git diff to detect actual wiki changes (more reliable than claude's exit code)
+git -C "%REPO_ROOT%" diff --quiet wiki/
 if ERRORLEVEL 1 (
-    echo [Step 2/4] FAILED - skipping wiki push
-    echo [%DATE% %TIME%] Wiki ingest FAILED - skipping wiki push >> "%LOG_FILE%"
-    exit /b 0
+    REM Wiki files changed — ingest succeeded regardless of exit code
+    echo [Step 2/4] OK
+    echo [%DATE% %TIME%] Wiki ingest OK >> "%LOG_FILE%"
+) else (
+    if %CLAUDE_EXIT% NEQ 0 (
+        REM No changes AND claude exited with error — genuine failure
+        echo [Step 2/4] FAILED - no wiki changes and claude exited %CLAUDE_EXIT%
+        echo [%DATE% %TIME%] Wiki ingest FAILED (exit %CLAUDE_EXIT%, no changes) - skipping wiki push >> "%LOG_FILE%"
+        exit /b 0
+    )
+    echo [Step 2/4] OK - no wiki changes
+    echo [%DATE% %TIME%] Wiki ingest OK (no changes) >> "%LOG_FILE%"
 )
-echo [Step 2/4] OK
-echo [%DATE% %TIME%] Wiki ingest OK >> "%LOG_FILE%"
 
 REM ---- Step 3: Commit and push wiki changes -----------------------------------
 echo [Step 3/4] Pushing wiki...

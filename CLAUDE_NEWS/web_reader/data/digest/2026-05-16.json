@@ -1,0 +1,309 @@
+{
+  "date": "2026-05-16",
+  "generatedAt": "2026-05-16 13:16 UTC",
+  "articleCount": 33,
+  "sourceCount": "6/6",
+  "topStories": [
+    {
+      "title": "GitHub takes aim at Claude Code and Codex with its new Copilot app - The New Stack",
+      "url": "https://news.google.com/rss/articles/CBMiX0FVX3lxTE9uTWd1cjZxMVVLUm5DT0xnM3FRNFpiUjZkTHcwU1dvQmpudGJDNlVnX1dQNXA5RGx1Q3FrRUFpNWlJOGdhdklMbV80VWZtSzVlRE9XbXlZU2dPRFNkSmpr?oc=5",
+      "source": "Google News / The New Stack",
+      "time": "05/16 03:33",
+      "sentiment": "",
+      "body": "GitHub 推出全新 Copilot 應用程式，明確將 Claude Code 與 OpenAI Codex 列為競爭目標，AI 編程 agent 賽道從比功能進入正面搶用戶階段。這是市場格局的重要訊號，值得持續追蹤三方的功能差異演變。"
+    },
+    {
+      "title": "Anthropic's hunt to find the next Claude Code - Sources | Alex Heath",
+      "url": "https://news.google.com/rss/articles/CBMifEFVX3lxTE1GVXU3NFZYcWhWbWp0TmZTM19wUWJPbzFxSWV2V0RGRmZObkxqYVM0dXUtVDROdEhRSnRJN1Y5eUtOOXVPaFpiZnV6a2JGQUtaWmVOVTFoS254WjhsVkJxZmFPMHh3aEhBem1OeFdES1R5S0hCaDB6XzJPNmE?oc=5",
+      "source": "Google News / Sources | Alex Heath",
+      "time": "05/15 14:08",
+      "sentiment": "",
+      "body": "據報導 Anthropic 內部正在積極尋找足以複製 Claude Code 成功的下一個突破性產品，顯示管理層將 Claude Code 視為 benchmark，同時承受著持續創新的壓力。"
+    },
+    {
+      "title": "Workaround for Anthropic's June 15 billing change (impacted Conductor/Superset)",
+      "url": "https://lanes.sh/blog/claude-billing-split",
+      "source": "Hacker News",
+      "time": "05/15 11:20",
+      "sentiment": "",
+      "body": "Anthropic 的 6/15 Agent SDK 計費調整已影響 Zed、Conductor、T3 Code、superset.sh 等多個建構於 Agent SDK 之上的平台，這些平台的 Max 5x 訂閱用戶實際可用量大幅縮水。Lanes.sh 公開說明自身因架構不同而未受波及，也提供了清楚的影響範圍分析供用戶參考。"
+    },
+    {
+      "title": "I Verified Every Anthropic Usage Promotion Since Aug 2025. Here's the Complete Timeline from Official Sources.",
+      "url": "https://www.reddit.com/r/ClaudeAI/comments/1tet558/i_verified_every_anthropic_usage_promotion_since/",
+      "source": "Reddit / r/ClaudeAI",
+      "time": "05/16 05:03",
+      "sentiment": "",
+      "body": "社群用戶系統性整理了 Anthropic 自 2025 年 8 月以來所有官方用量促銷的完整時序，是釐清「宣告與實際生效」落差的重要參考資料，討論串同步引發對方案透明度的廣泛質疑。"
+    },
+    {
+      "title": "Max 20x ($200/mo): Neither the 2x session nor 1.5x weekly limit increase applied to my account. Math proof inside. Zero response from support.",
+      "url": "https://www.reddit.com/r/ClaudeAI/comments/1te8oap/max_20x_200mo_neither_the_2x_session_nor_15x/",
+      "source": "Reddit / r/ClaudeAI",
+      "time": "05/15 12:46",
+      "sentiment": "",
+      "body": "一位 Max 20x 重度用戶以數學計算證明，Anthropic 5/6 宣布的 2 倍 session 上限與 5/13 宣布的 1.5 倍週用量上限均未在其帳號生效，且客服無回應。此案例引發其他用戶跟進驗證，顯示「宣告即生效」與實際體驗之間可能存在落差。"
+    }
+  ],
+  "techUpdates": [
+    {
+      "title": "[官方] anthropics/claude-code v2.1.143",
+      "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.143",
+      "source": "GitHub / anthropics/claude-code",
+      "time": "05/15 22:28",
+      "sentiment": "",
+      "body": "本版本新增 plugin 依賴關係強制執行機制：`claude plugin disable` 指令在目標 plugin 被其他已啟用 plugin 依賴時，將拒絕執行並提示完整的停用鏈建議指令。這降低了 plugin 設定錯誤導致工具鏈損壞的風險，對維護複雜 plugin 組合的用戶尤為重要。"
+    },
+    {
+      "title": "Claude Managed Agents' Dreaming, Outcomes, and Orchestration — How Agents Self-Improve While You Sleep",
+      "url": "https://dev.to/jangwook_kim_e31e7291ad98/claude-managed-agents-dreaming-outcomes-and-orchestration-how-agents-self-improve-while-you-2mij",
+      "source": "dev.to / #anthropic",
+      "time": "05/15 22:41",
+      "sentiment": "",
+      "body": "作者深入分析 Anthropic 在 5/6 Code with Claude 大會上發表的三項新功能，聚焦於 Managed Agents 的「Dreaming」機制——即 agent 在非活躍期間如何透過 Outcomes 與 Orchestration 進行自我優化，值得關注 agent 長期運行行為的開發者閱讀。"
+    }
+  ],
+  "discussions": [
+    {
+      "title": "Show HN: Claude Code vs. Codex Global Usage Leaderboard",
+      "url": "https://costhawk.ai/leaderboard",
+      "source": "Hacker News",
+      "time": "05/15 19:18",
+      "sentiment": "🤔 褒貶不一",
+      "body": "CostHawk 推出公開排行榜，以 token 消耗量對 Claude Code、OpenAI Codex、Cursor 用戶進行排名，並追蹤使用模型組合與專案識別碼（已雜湊）。設計上聲稱不儲存 prompt 或原始碼。這類透明化工具有助於社群理解實際用量分佈，但也引發部分用戶對資料蒐集範圍的疑慮。"
+    },
+    {
+      "title": "Show HN: X open sourced their algorithm",
+      "url": "https://www.xalgorithm.xyz/en",
+      "source": "Hacker News",
+      "time": "05/15 19:10",
+      "sentiment": "😊 正面",
+      "body": "作者使用 Claude Code 閱讀 X（Twitter）開源的推薦演算法，並將其整理成平易近人的英文說明，涵蓋完整的 8 個推薦步驟。這是 Claude Code 用於「理解大型陌生程式碼庫」的典型應用案例，展示其在技術文件化上的實用價值。"
+    },
+    {
+      "title": "Show HN: Let's build Claude Code from scratch (tutorial)",
+      "url": "https://www.youtube.com/watch?v=8pDfgBEy8bg",
+      "source": "Hacker News",
+      "time": "05/16 11:42",
+      "sentiment": "😐 中性",
+      "body": "HN 上出現的 Claude Code 從零建構教學影片，吸引一定的社群關注。YouTube 頁面本身無詳細說明，內容深度待實際觀看後確認。"
+    },
+    {
+      "title": "How to use Claude Code if you've never opened a terminal in your life",
+      "url": "https://www.reddit.com/r/ClaudeAI/comments/1teslxf/how_to_use_claude_code_if_youve_never_opened_a/",
+      "source": "Reddit / r/ClaudeAI",
+      "time": "05/16 04:40",
+      "sentiment": "😊 正面",
+      "body": "一篇針對完全零基礎用戶的 Claude Code 入門指南，從「什麼是 terminal」開始講起，逐步說明安裝流程。反映 Claude Code 的用戶群已擴展至非工程師背景，對普及化有積極意義。"
+    },
+    {
+      "title": "Built an agentic RAG over my Obsidian vault so Claude could read engineering books I never have time for. Then I built the eval harness to check Claude wasn't lying to me.",
+      "url": "https://www.reddit.com/r/ClaudeAI/comments/1teskrc/built_an_agentic_rag_over_my_obsidian_vault_so/",
+      "source": "Reddit / r/ClaudeAI",
+      "time": "05/16 04:39",
+      "sentiment": "😊 正面",
+      "body": "開發者將工程類 PDF 轉為 Markdown 存入 Obsidian vault，搭配 BM25 檢索讓 Claude 僅讀取相關段落，成功將每次問答的 token 消耗從約 5 萬降至 5 千。更值得注意的是他同時建立了 eval harness 來驗證 Claude 是否產生幻覺，是少數將「驗證機制」納入工作流的實戰分享。"
+    },
+    {
+      "title": "AI dropped my per-feature ship time from 3 days to 3 hours. Here's the actual stack.",
+      "url": "https://dev.to/great_cto/ai-dropped-my-per-feature-ship-time-from-3-days-to-3-hours-heres-the-actual-stack-2d91",
+      "source": "dev.to / #claudecode",
+      "time": "05/16 04:51",
+      "sentiment": "😊 正面",
+      "body": "作者分享使用 AI 工具（包含 Claude Code）將單一功能開發週期從 3 天壓縮至 3 小時的實際技術堆疊，屬於具體的效率提升案例而非標題黨，不過文章完整內容需點入閱讀。"
+    },
+    {
+      "title": "How to write a real productable loop in Claude Code?",
+      "url": "https://www.reddit.com/r/ClaudeAI/comments/1teq7pq/how_to_write_a_real_productable_loop_in_claude/",
+      "source": "Reddit / r/ClaudeAI",
+      "time": "05/16 02:46",
+      "sentiment": "😤 負面",
+      "body": "用戶反映 Claude Code 常在小問題上不必要地暫停等待確認，嘗試設計自動化 loop 卻遇到另一個問題：Claude 將小任務估算成一週工程量，導致 loop 時間比例嚴重失準。這是當前 agentic 使用體驗的普遍痛點，討論串提供了多種繞過策略。"
+    },
+    {
+      "title": "Claude Code didn't get worse. The harness did. And that ends one of the most common AI complaints of 2026.",
+      "url": "https://dev.to/practiceoverflow/claude-code-didnt-get-worse-the-harness-did-and-that-ends-one-of-the-most-common-ai-complaints-od5",
+      "source": "dev.to / #anthropic",
+      "time": "05/16 01:52",
+      "sentiment": "🤔 褒貶不一",
+      "body": "作者分析長達兩個月的「Claude Code 變差了」社群抱怨潮，主張問題根源在於 harness（腳手架工具鏈）的設定與用法，而非模型本身退步。這個視角為近期的普遍負面情緒提供了有力的反論，值得感受到效能下降的用戶重新審視。"
+    },
+    {
+      "title": "Code Quest: A Claude Code Web UI That Runs in Interactive Mode — Just in Time for the June 15 Billing Change",
+      "url": "https://dev.to/recca0120/code-quest-a-claude-code-web-ui-that-runs-in-interactive-mode-just-in-time-for-the-june-15-4m0i",
+      "source": "dev.to / #claudecode",
+      "time": "05/16 01:47",
+      "sentiment": "😊 正面",
+      "body": "開發者推出 Code Quest，一個讓 Claude Code 以互動模式運行的網頁介面，時機點卡在 6/15 計費調整前，設計目標是在新計費規則下維持訂閱方案的最大化利用效率。"
+    },
+    {
+      "title": "How to Use Claude Code with Any API Provider (Custom Base URL Guide)",
+      "url": "https://dev.to/futurmix/how-to-use-claude-code-with-any-api-provider-custom-base-url-guide-mcg",
+      "source": "dev.to / #claudecode",
+      "time": "05/16 01:03",
+      "sentiment": "😊 正面",
+      "body": "說明如何透過自訂 base URL 讓 Claude Code 串接 Anthropic 以外的 API 提供商（含 GPT、Gemini），以達到降價、自動 failover 或多模型混用等目的。在 6/15 計費調整的背景下，此類繞道方案關注度明顯上升。"
+    },
+    {
+      "title": "CLAUDE.md for mobile redesign: the context that changes everything",
+      "url": "https://dev.to/ohugonnot/claudemd-for-mobile-redesign-the-context-that-changes-everything-1fpk",
+      "source": "dev.to / #claudecode",
+      "time": "05/16 01:00",
+      "sentiment": "😊 正面",
+      "body": "作者示範透過在 CLAUDE.md 中明確定義設計規範，讓 Claude Code 在執行 RWD 改版時產出符合預期的 mobile-first 代碼，而非預設的 desktop-first 行為。是 prompt engineering 與 context 管理的實用案例。"
+    },
+    {
+      "title": "What six months of Claude Code taught me, building a public MCP server solo",
+      "url": "https://www.reddit.com/r/ClaudeAI/comments/1teo7sf/what_six_months_of_claude_code_taught_me_building/",
+      "source": "Reddit / r/ClaudeAI",
+      "time": "05/16 00:55",
+      "sentiment": "😊 正面",
+      "body": "台灣非工程師背景的創業者分享獨自用 Claude Code 開發 MCP 伺服器六個月的心得：Claude 能寫任何代碼，但產品決策、架構取捨仍需人來做。他的核心洞察是「非工程師的優勢在於沒有技術偏見，更容易做出以產品為中心的架構決定」。"
+    },
+    {
+      "title": "Switching from windows claude code cli to mac",
+      "url": "https://www.reddit.com/r/ClaudeAI/comments/1teo26k/switching_from_windows_claude_code_cli_to_mac/",
+      "source": "Reddit / r/ClaudeAI",
+      "time": "05/16 00:46",
+      "sentiment": "😤 負面",
+      "body": "用戶反映從 Windows 切換到 Mac（M1 Pro）後，Claude Code CLI 的 prompt 理解速度變慢，且輸出有明顯逐行閃爍的渲染問題，換用 Ghostty 終端機後問題依然存在，同事的 M2 Pro 也有相同狀況。目前尚無官方回應。"
+    },
+    {
+      "title": "Free MCP server that audits pages for AI-citation eligibility (13 tools, no API keys)",
+      "url": "https://www.reddit.com/r/ClaudeAI/comments/1teqej9/free_mcp_server_that_audits_pages_for_aicitation/",
+      "source": "Reddit / r/ClaudeAI",
+      "time": "05/16 02:57",
+      "sentiment": "😊 正面",
+      "body": "開發者發布免費 MCP 伺服器，提供 13 項工具讓 Claude 稽核網頁是否符合 AI 引用資格，涵蓋 FAQPage JSON-LD schema、robots.txt AI 爬蟲設定等 AI 搜尋特有信號（而非傳統 SEO 因子）。這是 AI 原生 SEO 工具生態系的早期嘗試。"
+    },
+    {
+      "title": "Claude Code built me a dungeon crawler in one shot, but the real work was fixing what it broke - XDA",
+      "url": "https://news.google.com/rss/articles/CBMia0FVX3lxTFBnUklBZFJSS3hwVnRCSmhFeW9GNndGWU51NnBwaTFJcUd4TURxaFVLMng1N2xUS0s1NEtONkZRU1JPdm1HSW14MTBJSmRLemU0MEQtNC1IRUs4dUEteDFRNUNHZ2Y4RUVFRWtr?oc=5",
+      "source": "Google News / XDA",
+      "time": "05/15 12:30",
+      "sentiment": "🤔 褒貶不一",
+      "body": "XDA 報導 Claude Code 一次性生成地城探索遊戲的實驗，點出核心現實：「一鍵生成」後真正費時的是修復被 Claude 意外破壞的部分。這與社群普遍反映的「AI coding 後段除錯成本」主題相符。"
+    },
+    {
+      "title": "Show HN: Message other Claude Code users with your Claude Code",
+      "url": "https://pavanmadiraju91.github.io/answering-machine/",
+      "source": "Hacker News",
+      "time": "05/15 11:34",
+      "sentiment": "😊 正面",
+      "body": "開發者製作「answering machine」MCP 伺服器，讓 Claude Code 用戶之間可以互相留言，下次啟動 Claude Code 時收取訊息。概念有趣，主打復古風格，但實際使用場景有限。"
+    },
+    {
+      "title": "Free Virtual Workshop on Spec Driven Development and Claude Code",
+      "url": "https://www.reddit.com/r/artificial/comments/1tear6h/free_virtual_workshop_on_spec_driven_development/",
+      "source": "Reddit / r/artificial",
+      "time": "05/15 14:06",
+      "sentiment": "😐 中性",
+      "body": "一場預定於 6 月 10 日舉辦的免費線上工作坊，主題為 Spec Driven Development 與 Claude Code，將展示 OpenSpec 框架與 Claude Code 的整合應用。RSVP 連結已開放。"
+    }
+  ],
+  "billing": [
+    {
+      "title": "Bootstrapped founders: how are you managing Claude Code costs?",
+      "url": "https://www.reddit.com/r/ClaudeAI/comments/1tet2tp/bootstrapped_founders_how_are_you_managing_claude/",
+      "source": "Reddit / r/ClaudeAI",
+      "time": "05/16 05:01",
+      "sentiment": "",
+      "body": "一位 solo AI 創業者發起討論：Claude Code 確實加快開發速度，但訂閱與 API 費用對 bootstrapped 團隊壓力不小。討論串中浮現混合使用 Claude、DeepSeek 與便宜 routing 提供商的策略，以及對 OpenRouter API 與官方訂閱方案的性價比比較。"
+    },
+    {
+      "title": "7 Ways to Reduce Your Claude Code API Bill (Practical Guide)",
+      "url": "https://dev.to/futurmix/7-ways-to-reduce-your-claude-code-api-bill-practical-guide-565d",
+      "source": "dev.to / #claudecode",
+      "time": "05/16 03:34",
+      "sentiment": "",
+      "body": "針對每月 API 費用落在 $200–800 美元區間的開發者，提供 7 個不犧牲品質的具體降費策略。與同日另一篇 10–30% 節費指南同來自同一作者，顯示此類內容需求量在近期明顯上升。"
+    },
+    {
+      "title": "How to Save 10-30% on Claude API Costs (Without Changing Your Code)",
+      "url": "https://dev.to/futurmix/how-to-save-10-30-on-claude-api-costs-without-changing-your-code-46dg",
+      "source": "dev.to / #claudecode",
+      "time": "05/16 01:29",
+      "sentiment": "",
+      "body": "強調不修改任何應用代碼即可節省 10–30% Claude API 費用，主要策略應圍繞 prompt caching、模型路由等基礎設定調整。在 6/15 計費調整前夕，此類文章具有即時參考價值。"
+    },
+    {
+      "title": "Optimizing your Claude Code usage (and spending less $$)",
+      "url": "https://dev.to/anilmurty/optimizing-your-claude-code-usage-and-spending-less--256i",
+      "source": "dev.to / #claudecode",
+      "time": "05/15 15:24",
+      "sentiment": "",
+      "body": "作者點名批評 Anthropic 的 6/15 公告本質上是「用 credit 包裝的漲價」，實際上是收緊 API token 上限。文章提供具體的用量優化建議，但基調帶有對定價策略的明顯不滿。"
+    },
+    {
+      "title": "Best Claude Code Alternatives for Indie Hackers in 2026",
+      "url": "https://dev.to/devtoolpicks/best-claude-code-alternatives-for-indie-hackers-in-2026-5fc4",
+      "source": "dev.to / #claudecode",
+      "time": "05/15 21:20",
+      "sentiment": "",
+      "body": "整理 2026 年獨立開發者可考慮的 Claude Code 替代方案。在費用壓力討論集中爆發的同一天出現，反映部分開發者正在評估轉換成本，值得觀察競品工具的社群滲透率變化。"
+    },
+    {
+      "title": "My weekly limit just got refreshed, anyone knows why?",
+      "url": "https://www.reddit.com/r/ClaudeAI/comments/1te7y3i/my_weekly_limit_just_got_refreshed_anyone_knows/",
+      "source": "Reddit / r/ClaudeAI",
+      "time": "05/15 12:19",
+      "sentiment": "",
+      "body": "用戶反映在正常重置日前，週用量配額意外歸零，且原本的重置日期並未改變，等同獲得一輪額外免費用量。目前不清楚是 Anthropic 後端調整的副作用，或是 bug。社群同時有人擔心此情況會被「追回」。"
+    }
+  ],
+  "focus": [
+    {
+      "tag": "[重大事件]",
+      "text": "Claude Code v2.1.143 正式釋出，新增 plugin 依賴關係強制執行機制，是工具鏈管理的重要基礎建設更新。"
+    },
+    {
+      "tag": "[持續追蹤]",
+      "text": "6/15 Agent SDK 計費調整持續發酵，已有第三方平台公開說明因應策略，訂閱用戶對 Max 方案實際用量上限的疑慮未消。"
+    },
+    {
+      "tag": "[社群趨勢]",
+      "text": "Claude Code 成本控管同日出現多篇社群教學與討論，顯示開發者對 API 費用的焦慮已成今週最顯著集體情緒。"
+    },
+    {
+      "tag": "[重大事件]",
+      "text": "GitHub Copilot 正面迎戰 Claude Code 與 Codex，AI 編程工具市場競爭加劇。"
+    },
+    {
+      "tag": "[重大事件]",
+      "text": "Anthropic 據報正尋找「下一個 Claude Code 等級的突破性產品」，顯示內部對持續創新的高度重視。"
+    }
+  ],
+  "sourceStatus": [
+    {
+      "name": "Anthropic Blog",
+      "ok": true,
+      "count": 0
+    },
+    {
+      "name": "GitHub",
+      "ok": true,
+      "count": 1
+    },
+    {
+      "name": "Hacker News",
+      "ok": true,
+      "count": 30
+    },
+    {
+      "name": "Reddit",
+      "ok": true,
+      "count": 20
+    },
+    {
+      "name": "Google News",
+      "ok": true,
+      "count": 10
+    },
+    {
+      "name": "dev.to",
+      "ok": true,
+      "count": 15
+    }
+  ],
+  "preview": "GitHub takes aim at Claude Code and Codex with its new Copilot app - The New Stack"
+}

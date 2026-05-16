@@ -1,6 +1,7 @@
-# 功能熱度雷達
+# 官方功能熱度雷達
 
-追蹤 Claude / Claude Code 每個新發布功能的社群熱度、試用價值與快速上手方式。
+追蹤 Anthropic 官方發布的 Claude / Claude Code 功能熱度、試用價值與快速上手方式。
+僅收錄官方 changelog、release note 或官方公告來源；社群工具見 [[topics/community-tech-tools]]。
 每次 ingest 後由 LLM 維護：新增功能、更新熱度、補充社群回饋。
 
 **最後更新：** 2026-05-16（含 5/16 ingest 更新）

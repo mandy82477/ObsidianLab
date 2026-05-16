@@ -421,6 +421,7 @@
 <h1 class="detail__h1">${esc(item.name)}</h1>
 ${metaRows.length ? `<div class="detail__meta">${metaHtml}</div>` : ''}
 <div class="detail__body">${bodyHtml}</div>`;
+    makeTablesSortable($('#detail-content'));
   };
 
   // ── Open archive digest as full page ─────────────────────────────────────────
@@ -449,6 +450,7 @@ ${metaRows.length ? `<div class="detail__meta">${metaHtml}</div>` : ''}
     renderDigest(d, wrapper);
     $('#detail-content').innerHTML = '';
     $('#detail-content').appendChild(wrapper);
+    makeTablesSortable($('#detail-content'));
   };
 
   // ── Close detail — return to previous view ───────────────────────────────────
@@ -599,6 +601,55 @@ ${metaRows.length ? `<div class="detail__meta">${metaHtml}</div>` : ''}
   };
 
   // wire up search input on DOMContentLoaded (below)
+
+  // ── Sortable tables ──────────────────────────────────────────────────────────
+  function cellSortValue(text) {
+    const t = text.trim();
+    const fires = (t.match(/🔥/g) || []).length;
+    if (fires > 0) return fires;
+    // Activity circles
+    if (t.includes('🟢')) return 3;
+    if (t.includes('🟡')) return 2;
+    if (t.includes('🔴')) return 1;
+    if (t.includes('⚫')) return 0;
+    // Trial value
+    if (t.includes('✅')) return 3;
+    if (t.includes('⚡')) return 2;
+    if (t.includes('⏳')) return 1;
+    if (t.includes('⚠️')) return 0;
+    if (t.includes('❌')) return -1;
+    // Date strings sort lexicographically (YYYY-MM-DD or MM-DD)
+    if (/^\d{2,4}-\d{2}(-\d{2})?$/.test(t)) return t;
+    return t.toLowerCase();
+  }
+
+  function sortTable(table, col, activeTh, ths) {
+    const tbody = table.querySelector('tbody');
+    if (!tbody) return;
+    const wasAsc = activeTh.classList.contains('sort-asc');
+    const dir = wasAsc ? -1 : 1;
+    ths.forEach(th => th.classList.remove('sort-asc', 'sort-desc'));
+    activeTh.classList.add(dir === 1 ? 'sort-asc' : 'sort-desc');
+    const rows = Array.from(tbody.querySelectorAll('tr'));
+    rows.sort((a, b) => {
+      const av = cellSortValue(a.cells[col]?.textContent || '');
+      const bv = cellSortValue(b.cells[col]?.textContent || '');
+      if (typeof av === 'number' && typeof bv === 'number') return (av - bv) * dir;
+      return String(av).localeCompare(String(bv), 'zh-TW') * dir;
+    });
+    rows.forEach(r => tbody.appendChild(r));
+  }
+
+  function makeTablesSortable(container) {
+    container.querySelectorAll('.detail__body table').forEach(table => {
+      const ths = Array.from(table.querySelectorAll('thead th'));
+      if (!ths.length) return;
+      ths.forEach((th, col) => {
+        th.classList.add('sortable');
+        th.addEventListener('click', () => sortTable(table, col, th, ths));
+      });
+    });
+  }
 
   // ── Init ─────────────────────────────────────────────────────────────────────
   document.addEventListener('DOMContentLoaded', () => {
