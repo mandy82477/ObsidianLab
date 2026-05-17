@@ -107,6 +107,15 @@ code { font-family: var(--font-mono); font-size: 0.88em; background: var(--bg-in
 }
 .nav__search:hover { border-color: var(--border-strong); }
 .nav__search .kbd { margin-left: auto; padding: 1px 5px; border: 1px solid var(--border-1); border-radius: 3px; font-size: 10px; color: var(--fg-4); }
+.nav__search-btn {
+  display: none;
+  width: 36px; height: 36px; border-radius: var(--radius-2);
+  background: var(--bg-1); border: 1px solid var(--border-2);
+  cursor: pointer; align-items: center; justify-content: center;
+  color: var(--fg-2); transition: background 100ms, border-color 100ms;
+  padding: 0; flex-shrink: 0;
+}
+.nav__search-btn:hover { background: var(--bg-2); border-color: var(--border-strong); color: var(--fg-1); }
 
 /* ── Views ───────────────────────────────────────────────────────────────────── */
 .view { display: none; }
@@ -203,6 +212,9 @@ code { font-family: var(--font-mono); font-size: 0.88em; background: var(--bg-in
 .wiki__section-header .wiki__section-h { margin: 0; padding: 0; border: none; }
 .wiki__note { font-family: var(--font-mono); font-size: 11px; color: var(--fg-3); margin-top: 8px; }
 
+/* ── Pinned cards row ────────────────────────────────────────────────────────── */
+.pinned-cards { display: flex; flex-direction: column; gap: 8px; margin-bottom: 4px; }
+
 /* ── Feature Radar Card ──────────────────────────────────────────────────────── */
 .radar-card {
   display: flex; align-items: center; gap: 16px;
@@ -219,6 +231,23 @@ code { font-family: var(--font-mono); font-size: 0.88em; background: var(--bg-in
 .radar-card__desc { font-family: var(--font-cjk); font-size: 12px; color: var(--fg-3); }
 .radar-card__meta { font-family: var(--font-mono); font-size: 10px; color: var(--fg-4); flex-shrink: 0; white-space: nowrap; }
 .radar-card__arrow { color: var(--warn); font-size: 15px; flex-shrink: 0; opacity: 0.65; }
+
+/* ── Gap Card ────────────────────────────────────────────────────────────────── */
+.gap-card {
+  display: flex; align-items: center; gap: 16px;
+  padding: 14px 18px; border-radius: var(--radius-3);
+  border: 1px solid rgba(212,165,116,0.22);
+  background: var(--tan-tint);
+  cursor: pointer; transition: border-color 0.15s, background 0.15s;
+  outline: none;
+}
+.gap-card:hover, .gap-card:focus { border-color: rgba(212,165,116,0.48); background: rgba(212,165,116,0.13); }
+.gap-card__icon { font-size: 26px; flex-shrink: 0; line-height: 1; }
+.gap-card__body { flex: 1; min-width: 0; }
+.gap-card__title { font-family: var(--font-display); font-size: 14px; font-weight: var(--fw-semibold); color: var(--fg-1); margin-bottom: 2px; }
+.gap-card__desc { font-family: var(--font-cjk); font-size: 12px; color: var(--fg-3); }
+.gap-card__meta { font-family: var(--font-mono); font-size: 10px; color: var(--fg-4); flex-shrink: 0; white-space: nowrap; }
+.gap-card__arrow { color: var(--tan-7); font-size: 15px; flex-shrink: 0; opacity: 0.65; }
 
 /* ── Sort bar ────────────────────────────────────────────────────────────────── */
 .sort-bar { display: flex; align-items: center; gap: 4px; flex-wrap: wrap; }
@@ -346,6 +375,41 @@ code { font-family: var(--font-mono); font-size: 0.88em; background: var(--bg-in
 .detail__wikilink { font-family: var(--font-mono); font-size: 12px; color: var(--purple-7); }
 .detail__wikilink::before { content: "[["; color: var(--fg-4); }
 .detail__wikilink::after  { content: "]]"; color: var(--fg-4); }
+.detail__wikilink--link {
+  font-family: var(--font-mono); font-size: 12px; color: var(--purple-7);
+  background: none; border: none; padding: 0; cursor: pointer;
+  text-decoration: underline; text-decoration-style: dotted;
+  text-underline-offset: 2px; text-decoration-color: var(--purple-5);
+  transition: color 100ms;
+}
+.detail__wikilink--link:hover { color: var(--purple-9); }
+.detail__wikilink--link::before { content: "[["; color: var(--fg-4); font-style: normal; }
+.detail__wikilink--link::after  { content: "]]"; color: var(--fg-4); font-style: normal; }
+
+/* ── Tools insights panel ────────────────────────────────────────────────────── */
+.tools-insights {
+  background: var(--bg-1); border: 1px solid var(--border-1); border-radius: var(--radius-3);
+  padding: 14px 18px; margin-bottom: 24px;
+}
+.tools-insights__title { font-family: var(--font-mono); font-size: 10px; text-transform: uppercase; letter-spacing: 0.08em; color: var(--fg-4); margin-bottom: 12px; }
+.tools-insights__stats { display: flex; align-items: center; gap: 0; flex-wrap: wrap; margin-bottom: 12px; }
+.tools-insights__stat { display: flex; align-items: center; gap: 10px; padding: 0 18px; }
+.tools-insights__stat:first-child { padding-left: 0; }
+.tools-insights__divider { width: 1px; height: 28px; background: var(--border-1); flex-shrink: 0; }
+.tools-insights__num { font-family: var(--font-display); font-size: 22px; font-weight: var(--fw-bold); color: var(--fg-1); line-height: 1; }
+.tools-insights__label { font-family: var(--font-mono); font-size: 11px; color: var(--fg-3); }
+.tools-insights__activity { font-family: var(--font-mono); font-size: 12px; color: var(--fg-2); white-space: nowrap; }
+.tools-insights__adopt    { font-family: var(--font-mono); font-size: 12px; color: var(--fg-2); white-space: nowrap; }
+.tools-insights__filter-bar { display: flex; flex-wrap: wrap; gap: 6px; }
+.tools-insights__filter-btn {
+  font-family: var(--font-mono); font-size: 11px;
+  padding: 3px 9px; border-radius: var(--radius-1);
+  border: 1px solid var(--border-1); background: transparent;
+  color: var(--fg-3); cursor: pointer;
+  transition: color 100ms, border-color 100ms, background 100ms;
+}
+.tools-insights__filter-btn:hover { color: var(--fg-1); border-color: var(--border-2); background: var(--bg-2); }
+.tools-insights__filter-btn.is-active { color: var(--purple-9); border-color: rgba(124,108,220,0.35); background: var(--purple-tint); }
 
 /* ── About page ──────────────────────────────────────────────────────────────── */
 .about { max-width: 960px; margin: 0 auto; padding: 52px 24px 80px; }
@@ -603,6 +667,7 @@ code { font-family: var(--font-mono); font-size: 0.88em; background: var(--bg-in
 /* ── Mobile ───────────────────────────────────────────────────────────────────── */
 @media (max-width: 700px) {
   .nav__search { display: none; }
+  .nav__search-btn { display: flex; }
   .entity-row { grid-template-columns: 1fr 80px; }
   .entity-row__type, .entity-row__summary, .entity-row__updated { display: none; }
   .entity-row--topic { grid-template-columns: 1fr 80px; }

@@ -328,6 +328,13 @@
       radarMeta.textContent = `最後更新 ${data.radar.lastUpdated}`;
     }
 
+    // Populate gap card last-updated label
+    const gapMeta = $('#gap-card-updated');
+    if (gapMeta) {
+      const gapTopic = (data.topics || []).find(t => t.id === 'official-community-gap');
+      if (gapTopic?.lastUpdated) gapMeta.textContent = `最後更新 ${gapTopic.lastUpdated}`;
+    }
+
     buildSortBar('sort-bar-entity', ENTITY_SORT_OPTIONS, entitySort, 'setSortEntity');
     buildSortBar('sort-bar-topic',  TOPIC_SORT_OPTIONS,  topicSort,  'setSortTopic');
     renderEntityRows();
@@ -392,9 +399,22 @@
     if (typeof marked !== 'undefined') {
       md = md.replace(/\[\[([^\]]+)\]\]/g, (_, p) => `<WIKILINK>${p}</WIKILINK>`);
       bodyHtml = marked.parse(md);
-      bodyHtml = bodyHtml.replace(/<WIKILINK>([^<]+)<\/WIKILINK>/g, (_, p) =>
-        `<span class="detail__wikilink">${esc(p)}</span>`
-      );
+      bodyHtml = bodyHtml.replace(/<WIKILINK>([^<]+)<\/WIKILINK>/g, (_, p) => {
+        // news/ links have no detail page — render as plain span
+        if (p.startsWith('news/')) return `<span class="detail__wikilink">${esc(p)}</span>`;
+        // resolve id + type from path prefix
+        let wiId, wiType;
+        if (p.startsWith('entities/')) { wiId = p.slice(9); wiType = 'entity'; }
+        else if (p.startsWith('topics/')) { wiId = p.slice(7); wiType = 'topic'; }
+        else if (p === 'feature-radar')  { wiId = 'feature-radar'; wiType = 'radar'; }
+        else {
+          const wdata = window.WIKI_DATA || {};
+          wiId = p;
+          wiType = (wdata.topics || []).some(t => t.id === p) ? 'topic' : 'entity';
+        }
+        const safeId = wiId.replace(/\\/g, '\\\\').replace(/'/g, "\\'");
+        return `<button class="detail__wikilink detail__wikilink--link" onclick="openWikiPage('${safeId}','${wiType}')">${esc(p)}</button>`;
+      });
     } else {
       bodyHtml = `<pre style="white-space:pre-wrap;font-size:13px">${esc(md)}</pre>`;
     }
@@ -422,6 +442,7 @@
 ${metaRows.length ? `<div class="detail__meta">${metaHtml}</div>` : ''}
 <div class="detail__body">${bodyHtml}</div>`;
     makeTablesSortable($('#detail-content'));
+    if (id === 'community-tech-tools') injectToolsInsights($('#detail-content'));
   };
 
   // ── Open archive digest as full page ─────────────────────────────────────────
@@ -601,6 +622,102 @@ ${metaRows.length ? `<div class="detail__meta">${metaHtml}</div>` : ''}
   };
 
   // wire up search input on DOMContentLoaded (below)
+
+  // ── Tools insights panel ─────────────────────────────────────────────────────
+  let _toolsFilterActive = 'all';
+
+  window._setToolsFilter = function (key) {
+    _toolsFilterActive = key;
+    // Update filter button styles
+    $$('.tools-insights__filter-btn').forEach(btn => {
+      btn.classList.toggle('is-active', btn.dataset.filter === key);
+    });
+    // Show/hide table rows
+    const detail = $('#detail-content');
+    if (!detail) return;
+    const table = detail.querySelector('.detail__body table');
+    if (!table) return;
+    const rows = Array.from(table.querySelectorAll('tbody tr'));
+    rows.forEach(row => {
+      if (key === 'all') { row.style.display = ''; return; }
+      const cells = row.cells;
+      const actCell  = cells[2] ? cells[2].textContent.trim() : '';
+      const adoptCell = cells[3] ? cells[3].textContent.trim() : '';
+      const typeCell  = cells[1] ? cells[1].textContent.trim() : '';
+      let show = false;
+      if (key === 'active')   show = actCell.includes('🟢');
+      else if (key === 'adopted') show = adoptCell.includes('✅');
+      else if (key === 'niche')   show = adoptCell.includes('⚡');
+      else show = typeCell === key;
+      row.style.display = show ? '' : 'none';
+    });
+  };
+
+  function injectToolsInsights(container) {
+    const body = container.querySelector('.detail__body');
+    if (!body) return;
+    const table = body.querySelector('table');
+    if (!table) return;
+    const rows = Array.from(table.querySelectorAll('tbody tr'));
+    if (!rows.length) return;
+
+    let active = 0, cooling = 0, inactive = 0;
+    let adopted = 0, niche = 0, watching = 0;
+    const typeCount = {};
+
+    rows.forEach(row => {
+      const cells = row.cells;
+      if (cells.length < 4) return;
+      const act   = cells[2].textContent.trim();
+      const adopt = cells[3].textContent.trim();
+      const type  = cells[1].textContent.trim();
+      if (act.includes('🟢')) active++;
+      else if (act.includes('🟡')) cooling++;
+      else if (act.includes('🔴')) inactive++;
+      if (adopt.includes('✅')) adopted++;
+      else if (adopt.includes('⚡')) niche++;
+      else if (adopt.includes('⏳')) watching++;
+      if (type) typeCount[type] = (typeCount[type] || 0) + 1;
+    });
+
+    const total = rows.length;
+    const topTypes = Object.entries(typeCount).sort((a, b) => b[1] - a[1]).slice(0, 6);
+    const filterBtns = [
+      { key: 'all',     label: `全部 ${total}` },
+      { key: 'active',  label: `🟢 活躍 ${active}` },
+      { key: 'adopted', label: `✅ 廣泛採用 ${adopted}` },
+      { key: 'niche',   label: `⚡ 小圈子 ${niche}` },
+    ];
+    topTypes.forEach(([t]) => filterBtns.push({ key: t, label: t }));
+
+    const panel = document.createElement('div');
+    panel.className = 'tools-insights';
+    panel.innerHTML = `
+<div class="tools-insights__title">工具概覽</div>
+<div class="tools-insights__stats">
+  <div class="tools-insights__stat">
+    <span class="tools-insights__num">${total}</span>
+    <span class="tools-insights__label">收錄工具</span>
+  </div>
+  <div class="tools-insights__divider"></div>
+  <div class="tools-insights__stat">
+    <span class="tools-insights__activity">🟢 活躍 <b>${active}</b></span>
+    <span class="tools-insights__activity">🟡 冷卻 <b>${cooling}</b></span>
+    <span class="tools-insights__activity">🔴 沉寂 <b>${inactive}</b></span>
+  </div>
+  <div class="tools-insights__divider"></div>
+  <div class="tools-insights__stat">
+    <span class="tools-insights__adopt">✅ 廣泛 <b>${adopted}</b></span>
+    <span class="tools-insights__adopt">⚡ 小圈子 <b>${niche}</b></span>
+    <span class="tools-insights__adopt">⏳ 觀望 <b>${watching}</b></span>
+  </div>
+</div>
+<div class="tools-insights__filter-bar">
+  ${filterBtns.map(f => `<button class="tools-insights__filter-btn${f.key === 'all' ? ' is-active' : ''}" data-filter="${esc(f.key)}" onclick="_setToolsFilter('${f.key.replace(/'/g, "\\'")}')">${esc(f.label)}</button>`).join('')}
+</div>`;
+    body.insertAdjacentElement('beforebegin', panel);
+    _toolsFilterActive = 'all';
+  }
 
   // ── Sortable tables ──────────────────────────────────────────────────────────
   function cellSortValue(text) {

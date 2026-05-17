@@ -254,6 +254,18 @@ window.WIKI_DATA = {
       "startDate": "2026-04-24",
       "lastUpdated": "2026-04-27",
       "summary": "2026-04-24，Google 宣布以現金與運算資源形式向 Anthropic 投資最高 **400 億美元**，初期承諾 100 億，其餘 300 億視績效目標達成情況追加。此次投資估值 Anthropic 為 **3,500 億美元**，是 AI 領域迄今規模最大的單筆投資之一。 Bloomberg、TechC…"
+    },
+    {
+      "id": "official-community-gap",
+      "pageType": "topic",
+      "name": "官方功能 vs 社群痛點缺口分析",
+      "entityType": "",
+      "status": "ongoing",
+      "pill": "active",
+      "firstSeen": "",
+      "startDate": "2026-05-17",
+      "lastUpdated": "2026-05-17",
+      "summary": "比對社群工具所反映的開發者痛點，與 Anthropic 官方功能路線之間的覆蓋情況。識別哪些痛點官方正在積極解決、哪些被忽略或結構性缺席。 每次 ingest 後評估：若有新官方功能對應既有缺口，更新收斂程度欄位。 ---"
     }
   ],
   "digestIndex": [

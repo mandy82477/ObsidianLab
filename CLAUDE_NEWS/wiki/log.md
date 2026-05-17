@@ -469,3 +469,10 @@ Append-only 紀錄。每次 ingest、query 或 lint 都在此追加一條。
 - 補連結：HTML vs Markdown 討論 → 衍生 `agent-html-skills`；Skill Atrophy → 衍生 `recap 工具`；多 LLM 協作 → 衍生 `Opus+DeepSeek 混合架構`
 - 新增規則：`CLAUDE.md` 補入 community-tech-patterns ↔ community-tech-discussions 雙向連結規則、模式判斷規則（含重燃偵測邏輯）
 - 確認 emoji 方案：重燃模式採 🌋（火山重燃）
+
+## 2026-05-17 新增 official-community-gap + community-tech-tools 痛點洞察
+
+- 新增頁面：`topics/official-community-gap.md` — 官方功能 vs 社群痛點缺口矩陣，含 9 個痛點、收斂程度評估、結構性原因分析與預測指標
+- 更新頁面：`topics/community-tech-tools.md` — 新增 `## 痛點洞察` 區塊，含痛點主題表格、CLAUDE.md 失效四原因、AI 輔助開發副作用分析；參考來源新增 official-community-gap 連結
+- 更新：`index.md`（頁數 24→25，新增 official-community-gap 條目）
+- Web reader：wiki 首頁新增「官方 vs 社群缺口分析」卡片
