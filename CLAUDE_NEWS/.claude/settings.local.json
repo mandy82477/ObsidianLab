@@ -3,7 +3,17 @@
     "allow": [
       "Bash(python -c ' *)",
       "Bash(python scripts/build_web.py)",
-      "mcp__Claude_Preview__preview_start"
+      "mcp__Claude_Preview__preview_start",
+      "Bash(git -C \"C:\\\\Users\\\\Mandy\\\\CLAUDE_OBSIDIAN\\\\ObsidianLab\\\\CLAUDE_NEWS\" add wiki/)",
+      "Bash(git -C \"C:\\\\Users\\\\Mandy\\\\CLAUDE_OBSIDIAN\\\\ObsidianLab\\\\CLAUDE_NEWS\" commit -m \"wiki: auto-ingest 2026-05-16\")",
+      "Bash(git -C \"C:\\\\Users\\\\Mandy\\\\CLAUDE_OBSIDIAN\\\\ObsidianLab\\\\CLAUDE_NEWS\" push)",
+      "Bash(git add *)",
+      "Bash(git commit -m ' *)",
+      "Bash(git push *)",
+      "Bash(Get-Content \"C:\\\\Users\\\\Mandy\\\\CLAUDE_OBSIDIAN\\\\ObsidianLab\\\\CLAUDE_NEWS\\\\wiki\\\\topics\\\\community-tech-tools.md\")",
+      "Bash(Measure-Object -Line)",
+      "PowerShell(Get-Content *)",
+      "Bash(python *)"
     ]
   },
   "hooks": {
