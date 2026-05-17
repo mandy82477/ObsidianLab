@@ -130,7 +130,7 @@ window.WIKI_DATA = {
       "pill": "active",
       "firstSeen": "2026-04-24",
       "startDate": "",
-      "lastUpdated": "2026-05-11",
+      "lastUpdated": "2026-05-17",
       "summary": "Claude Opus 4.7 於 2026-04-24 正式發布，是目前 Anthropic 最高階的公開模型。伴隨發布的還有 Rate Limits API（管理員可程式化查詢速率限制）與 Managed Agents Memory Beta（在 `managed-agents-2026-04-01` 請求標頭下啟…"
     },
     {
@@ -228,7 +228,7 @@ window.WIKI_DATA = {
       "pill": "active",
       "firstSeen": "",
       "startDate": "2026-04-25",
-      "lastUpdated": "2026-05-16",
+      "lastUpdated": "2026-05-17",
       "summary": "追蹤 Claude Code 社群發布的工具、插件與 skill 專案。每次 ingest 從日報萃取新工具並更新活躍度與採用狀態。 工作流模式與技術做法見 [[topics/community-tech-patterns]]。概念辯論見 [[topics/community-tech-discussions]]。官方…"
     },
     {
@@ -240,7 +240,7 @@ window.WIKI_DATA = {
       "pill": "active",
       "firstSeen": "",
       "startDate": "2026-04",
-      "lastUpdated": "2026-05-16",
+      "lastUpdated": "2026-05-17",
       "summary": "Claude Code 已成為 AI 輔助編碼領域的標竿產品，但競爭正在快速升溫。最值得關注的是 Google 聯合創辦人 Sergey Brin 親自主導的內部計畫，目標是打造一款直接對標 Claude Code 的工具。2026-05-04 新發展：Anthropic 已悄悄讓 Claude Desktop/Cow…"
     },
     {
@@ -271,8 +271,8 @@ window.WIKI_DATA = {
   "digestIndex": [
     {
       "date": "2026-05-17",
-      "articleCount": 26,
-      "preview": "Ask HN: Do you still spend time maintaining Claude.md / AGENTS.md files?",
+      "articleCount": 33,
+      "preview": "Microsoft starts canceling Claude Code licenses",
       "topCount": 3
     },
     {
