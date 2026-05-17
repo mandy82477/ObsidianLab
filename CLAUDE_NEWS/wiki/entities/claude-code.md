@@ -94,6 +94,7 @@ Claude Code 是 Anthropic 的 AI 編碼 CLI 工具，支援 agentic 工作流程
 - **Windows IDE 擴充套件全面無法載入**（2026-05-09 UTC 00:24）：更新版本將 Linux 路徑硬編碼進擴充套件，導致 VS Code 等 IDE 在 Windows 上全面無法啟動，官方已確認並在狀態頁追蹤；臨時解法：降版至前一版本；此為第二次 Windows 平台相容性重大事故（見 2026-05-06 v2.1.131 緊急修復）。
 - **CLAUDE.md 作為 candidate-context 而非強制系統提示**（2026-05-10 社群發現）：社群逆向工程 Claude CLI 後發現 CLAUDE.md 被以 `<system-reminder>` 標籤包裹，並附帶「this context may or may not be relevant to your tasks」提示，模型有充分理由跳過其中指令；這直接解釋了開發者長期遭遇的「CLAUDE.md 指令被忽略」問題；Anthropic 尚未正式回應此架構設計決策。
 - **Checkpoint Commits 污染 git history**（2026-05-12 社群熱議）：Claude Code 自動建立的 checkpoint commit 大量污染 git 歷史，搭配 worktree 使用時問題更嚴重（每個子 Agent 各自建立分支並獨立 checkpoint），討論串聚集多種清理方案（interactive rebase、squash、git filter-repo）；目前無官方解決方案。
+- **Anthropic API 大規模 500 Internal Server Error**（2026-05-16 UTC 18:08）：Anthropic 官方狀態頁確認多模型請求出現「Elevated error rates」，Claude Code 使用者陸續回報 500 錯誤，為近期少見的多模型服務中斷事件，影響範圍跨越多個模型；GitHub Issue #59743 有大量開發者回報。
 
 ---
 
@@ -171,6 +172,7 @@ Token 用量追蹤、session 費用分析與效能漂移偵測工具。
 - **[Tokenyst](https://github.com/jher7/tokenyst)** — 讓 Claude Code pay-as-you-go 用戶在任務層級設定 token 預算，每次提示後即時顯示剩餘額度與使用比例
 - **[Governor](https://github.com/0xhimanshu/governor)** — 宣稱可減少 Claude Code token 浪費的插件；HN 社群質疑其基準測試過於粗糙，僅統計 token 數量而未評估模型輸出品質，效果待嚴謹驗證
 - **[CostHawk](https://costhawk.ai/leaderboard)** — 公開排行榜，以 token 消耗量對 Claude Code、OpenAI Codex、Cursor 用戶進行排名，追蹤使用模型組合與已雜湊專案識別碼；設計上聲稱不儲存 prompt 或原始碼，部分用戶對資料蒐集範圍存疑
+- **[shipcheck](https://www.reddit.com/r/ClaudeAI/comments/1tf4ar0/)** — 開發者因多次被 AI agent 引入安全問題（hardcoded key、DEBUG=True 等），開發此工具讀取 Claude Code 或 Cursor session log 並離線輸出費用分解、檔案修改熱力圖與安全掃描；特別偵測 `@anthropic/sdk`（正確名稱為 `@anthropic-ai/sdk`）package hallucination 問題；不到一秒完成且完全離線
 - **[Rudel](https://app.rudel.ai/wrapped)** — 分析 2 萬筆以上 Claude Code/Codex session metadata，從一致性、強度、repo 廣度、成本密度等維度萃取出 9 種 AI 程式設計師原型，以 Spotify Wrapped 風格互動卡片呈現；資料顯示 4% session 使用了 skills，26% 在早期就被放棄
 
 ### 工作流輔助
@@ -187,6 +189,7 @@ Token 用量追蹤、session 費用分析與效能漂移偵測工具。
 - **[/qu /ans 跨 session 通訊插件](https://www.reddit.com/r/ClaudeAI/comments/1t65lfq/)** — 讓兩個 Claude Code 工作階段互相通訊：新終端輸入 `/qu` 撥出，舊終端輸入 `/ans` 接聽，直接交換問答
 - **[recap](https://github.com/madebywelch/recap)** — 掃描過去 N 天的 Claude Code 與 Codex 對話紀錄，找出開發者遭遇陌生概念的片段，自動產出說明摘要，協助對抗因 AI 加速開發而導致的技能退化（skill atrophy）
 - **[vibe-log-cli](https://github.com/vibe-log/vibe-log-cli)** — Claude Code 插件，可自動產生每日與每週開發工作摘要，讓開發者無需手動整理工作紀錄，適合長期在 vibe coding 模式下工作的用戶
+- **[Gonfire](https://news.ycombinator.com/item?id=48169029)** — 面試評估新思路：直接分析應徵者的 Claude Code session log 以評估其解題思維過程（而非傳統白板題），呼應「AI 工程師面試改用 case study 取代 leetcode」的趨勢；Show HN 工具
 - **[SprintiQ](https://github.com/SprintiQ-Incorporated/sprintiq)** — 開源 sprint 規劃工具，專為 Claude Code 設計，使用 Supabase 與 Anthropic API，自行部署約需 10–15 分鐘
 - **[Dragoman](https://github.com/asakin/dragoman)** — 約 800 行的開源 CLI 工具，讓 Claude Code 依問題類型自動路由至不同模型（新聞查詢 → Perplexity、複雜推理 → Gemini、本機運算 → Ollama），支援四模型並行後由 Claude 統整結果；API 金鑰透過 1Password/Keychain 解析，不進入 Claude context
 - **[Caliber](https://www.reddit.com/r/artificial/comments/1t1o3qa/)** — 開源 AI 代理配置管理工具，統一版本控制 CLAUDE.md、.cursor/rules、AGENTS.md 等跨工具配置文件；本週突破 888 stars
@@ -272,7 +275,8 @@ Token 用量追蹤、session 費用分析與效能漂移偵測工具。
 | 2026-05-17 | Claude Skills 靜默覆蓋問題浮現：`ask_user_input_v0` 工具存在最多 3 問題 / 4 選項硬性限制，Claude 在不告知用戶的情況下靜默壓縮問題與選項；技術社群對 Skills 機制透明度的系統性質疑升溫；Skills 意外觸發子 agent 派生案例同步出現（見 [[topics/community-tech-discussions]]） |
 | 2026-05-17 | Anthropic 官方文件中 4 種 context 管理工具（超越 `/clear` + `/compact` 的二元認知）的使用場景對比在社群廣泛流傳，成為大型 codebase 長工作階段管理的新參考（見 [[topics/community-tech-discussions]]） |
 | 2026-05-17 | 多帳號 Claude Code 架構合規邊界明確：兩種多帳號架構中，其中一種已被 Anthropic 明確禁止（ToS 違規），開發者需注意合規邊界；見 [[entities/pricing]] |
-| 2026-05-17 | 新工具：**shipcheck**（讀取 Claude Code / Cursor session log，輸出費用分解、檔案修改熱圖與安全掃描，不到一秒完成且完全離線；發現 `@anthropic-ai/sdk` 常被誤寫為 `@anthropic/sdk` 的 package hallucination 問題） |
+| 2026-05-17 | Anthropic API 大規模 500 Internal Server Error（UTC 18:08）：官方狀態頁確認多模型「Elevated error rates」，Claude Code 陸續回報 500 錯誤，為近期少見的跨模型服務中斷事件；見已知問題 |
+| 2026-05-17 | 新工具：**shipcheck**（讀取 Claude Code / Cursor session log，輸出費用分解、檔案修改熱圖與安全掃描，不到一秒完成且完全離線；發現 `@anthropic-ai/sdk` 常被誤寫為 `@anthropic/sdk` 的 package hallucination 問題）、**Gonfire**（分析應徵者 Claude Code session log 評估解題思維，面試替代 leetcode 的新工具）|
 | 2026-05-16 | **v2.1.143**：Plugin 依賴關係強制執行——`claude plugin disable` 在目標被其他已啟用 plugin 依賴時拒絕執行，提示完整停用鏈建議指令（例：先停用 B 再停用 A），降低複雜 plugin 組合因停用依賴造成工具鏈損壞的風險 |
 | 2026-05-16 | GitHub 推出新 Copilot 應用程式，明確將 Claude Code 與 OpenAI Codex 列為競爭目標；Anthropic 據報積極尋找下一個「Claude Code 等級」突破性產品；AI 編程 agent 賽道進入正面搶用戶階段；見 [[topics/competitor-landscape]] |
 | 2026-05-16 | 新工具：Code Quest（Web UI 互動模式，6/15 計費調整因應）、CostHawk（公開 token 用量排行榜）、AI 引用資格稽核 MCP（13 工具，無需 API key）、answering machine MCP（Claude Code 用戶間留言） |

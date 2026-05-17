@@ -5,6 +5,25 @@ Append-only 紀錄。每次 ingest、query 或 lint 都在此追加一條。
 
 ---
 
+## 2026-05-17 Ingest（補充 2）
+
+- 來源日報：[[news/2026-05-17]]
+- 更新頁面：
+  - `topics/community-tech-tools.md`（新增 4 個工具：machine、cv-claw、shipcheck、Gonfire；更新最後更新日期至 2026-05-17）
+  - `topics/community-tech-patterns.md`（補充 2026-05-17 新工具列表：加入 machine、cv-claw、Gonfire）
+- 新增頁面：無
+- 摘要（補充 2）：工具目錄補入今日 Show HN 新工具——machine（per-project VM 安全隔離）、cv-claw（Skill 履歷生成器）、shipcheck（session log 費用與安全審計）、Gonfire（session log 面試評估）。
+
+## 2026-05-17 Ingest（補充）
+
+- 來源日報：[[news/2026-05-17]]
+- 更新頁面（補充本次第一次 ingest 遺漏項目）：
+  - `entities/claude-code.md`（補入：Anthropic API 500 Internal Server Error 已知問題、shipcheck 工具至費用監控列表、Gonfire 工具至工作流輔助列表、版本歷史 2026-05-17 補充條目）
+  - `entities/opus-4-7.md`（新增 2026-05-17：Claude 4.7 vs 4.6 使用場景社群共識形成；更新最後更新日期）
+  - `topics/competitor-landscape.md`（新增 2026-05-17 時序：Microsoft 授權取消 techbuzz.ai 報導 + Adobe Lightroom Linux 移植正向案例；更新最後更新日期）
+- 新增頁面：無
+- 摘要（補充）：Microsoft 授權取消故事由非主流媒體再度報導（可信度待核實）；Claude 4.7 vs 4.6 使用場景共識在社群清晰化（4.7=結構化任務，4.6=探索性寫作）；Anthropic API 500 跨模型服務中斷事件記錄；兩款 session log 分析新工具（shipcheck 安全審計、Gonfire 面試評估）補入工具目錄。
+
 ## 2026-05-17 Ingest
 
 - 來源日報：[[news/2026-05-17]]

@@ -2,7 +2,7 @@
 
 **狀態：** ongoing
 **開始日期：** 2026-04-25
-**最後更新：** 2026-05-16
+**最後更新：** 2026-05-17
 
 ---
 
@@ -27,6 +27,10 @@
 
 | 工具                        | 類型          | 活躍  | 採用  | 簡介                                                                             |
 | ------------------------- | ----------- | --- | --- | ------------------------------------------------------------------------------ |
+| **machine**               | 安全/VM 工具   | 🟢  | ⏳   | Show HN 工具，為每個專案建立獨立 Lima VM，預設配置 Claude Code + Codex，session-only secrets 確保密鑰不跨工作區洩漏，解決 agentic coding 場景下 npm 惡意套件等 supply chain 安全疑慮 |
+| **cv-claw**               | Skill 工具   | 🟢  | ⚡   | Claude Skill 驅動的履歷生成器，HTML 為模板格式、JSON 為資料層，模板與內容完全分離架構；受 X 貼文啟發開發，Show HN 發布 |
+| **shipcheck**             | 監測/安全工具  | 🟢  | ⚡   | 離線讀取 Claude Code / Cursor session log，輸出費用分解、檔案修改熱圖與安全掃描；特別偵測 `@anthropic-ai/sdk` 常被誤寫為 `@anthropic/sdk` 的 package hallucination 問題，不到一秒完成 |
+| **Gonfire**               | 評估工具      | 🟢  | ⏳   | Show HN 工具，直接分析應徵者的 Claude Code session log 以評估解題思維過程，取代傳統白板題；呼應「AI 工程師面試改用 case study 取代 leetcode」的社群趨勢 |
 | **Omar**                  | 終端工具        | 🟢  | ✅   | TUI 儀表板統一管理 100 個 Claude Code Agent，支援層級化 Agent 管理                             |
 | **graphify**              | 知識圖譜        | 🟢  | ✅   | Leiden 偵測建程式碼知識圖譜，71 倍 token 減少，26 天 450k+ 下載 40k stars                        |
 | **Claude Squad**          | 協作工具        | 🟢  | ✅   | 多人多 agent 並行開發，orchestrator 分派任務並合併分支                                          |

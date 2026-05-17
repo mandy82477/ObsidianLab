@@ -2,7 +2,7 @@
 
 **狀態：** ongoing
 **開始日期：** 2026-04
-**最後更新：** 2026-05-16
+**最後更新：** 2026-05-17
 
 ---
 
@@ -77,6 +77,7 @@ Claude Code 已成為 AI 輔助編碼領域的標竿產品，但競爭正在快�
 - [[news/2026-05-04]]
 - [[news/2026-05-05]]
 - [[news/2026-05-06]]
+- [[news/2026-05-17]]
 - [[news/2026-05-16]]
 - [[news/2026-05-15]]
 - [[news/2026-05-14]]
@@ -86,7 +87,11 @@ Claude Code 已成為 AI 輔助編碼領域的標竿產品，但競爭正在快�
 
 ## 時序
 
-#### 企業競爭白熱化（2026-05-12 至 2026-05-16）
+#### 企業競爭白熱化（2026-05-12 至 2026-05-17）
+
+### 2026-05-17
+- **[持續追蹤] Microsoft 授權取消故事由 techbuzz.ai 再度報導**：非主流科技媒體 techbuzz.ai 以「Microsoft starts canceling Claude Code licenses」為題發布文章，被 Google News / Phoronix 收錄，為 2026-05-15 已確認的事件提供額外媒體曝光；原始報導可信度有待核實（敘事語氣偏向故事性，無 Anthropic 或 Microsoft 官方確認）；實際授權取消事件已於 2026-05-15 記錄
+- **[正向案例] Adobe Lightroom CC Linux 移植借助 Claude Code 完成**：Phoronix 報導 Claude Code 協助完成 Adobe Lightroom CC 在 Linux 的複雜移植工程，展現 AI 編程 Agent 在跨平台相容性修補這類高難度、需大量系統知識任務上的實際能力；同時驗證 Claude Code 在 Anthropic 傳統核心客群（Apple/企業開發者）之外的跨平台工程使用場景
 
 ### 2026-05-16
 - **[重大事件] GitHub Copilot 推出全新應用程式，明確對標 Claude Code**：GitHub 發布新 Copilot 應用程式，明確將 Claude Code 與 OpenAI Codex 列為競爭目標，AI 編程 agent 賽道從比功能進入正面搶用戶階段（The New Stack 報導）；這是 GitHub/Microsoft 首次以產品名點名對標 Claude Code，意義在於競爭性質升級——從「功能競爭」到「直接挖用戶」

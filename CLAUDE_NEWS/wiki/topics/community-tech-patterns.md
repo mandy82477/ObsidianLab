@@ -411,7 +411,7 @@
 - **Claude + SSH 伺服器存取替代 Dispatch**：開發者透過 `list_vms` 與 `run_command` 工具讓 Claude Chat 取得伺服器 SSH 存取權，解決無法隨時開啟筆電執行 Claude Code 的痛點，代表「Claude Chat 作為 agent 觸發點」的邊界持續延伸
 - **Grounded Code AI 開發方法論系列（dev.to）**：連發四篇涵蓋應拋棄的「人工時代昂貴習慣」、以 spec.md 為核心工件、五步驟開發循環（spec → plan → implement → verify → consolidate）到局部性 + 合約 + 隔離十大原則，是目前最系統性的 AI 輔助開發方法論整理之一
 - **Adobe Lightroom CC Linux 移植**：開發者借助 Claude Code 完成 Lightroom CC 在 Linux 上的主要移植工作（Phoronix 報導），是 Claude Code 處理複雜跨平台工程任務的代表性現實案例
-- **新工具**：shipcheck（讀取 Claude Code / Cursor session log，輸出費用分解 + 檔案修改熱圖 + 安全掃描，完全離線；附帶發現 `@anthropic-ai/sdk` 常被誤寫為 `@anthropic/sdk` 的 package hallucination 問題）
+- **新工具**：shipcheck（讀取 Claude Code / Cursor session log，輸出費用分解 + 檔案修改熱圖 + 安全掃描，完全離線；附帶發現 `@anthropic-ai/sdk` 常被誤寫為 `@anthropic/sdk` 的 package hallucination 問題）、machine（每個專案獨立 Lima VM，預設 Claude Code + Codex，session-only secrets 解決 supply chain 安全疑慮，Show HN）、cv-claw（Claude Skill 履歷生成器，HTML 模板 + JSON 資料層分離，Show HN）、Gonfire（分析應徵者 Claude Code session log 評估解題思維，面試替代 leetcode 新方案，Show HN）
 
 ### 2026-05-16
 - **API 費用焦慮達本週最顯著集體高峰**：6/15 計費調整背景下，同日出現大量成本控管教學——「7 種降費策略」（$200–800 月費區間開發者適用）、「不修改代碼省 10–30%」（prompt caching 與路由優化）、bootstrapped 創業者費用管控討論、Claude Code 替代方案整理；成本焦慮主導本週技術熱度，形成集體情緒；見 [[entities/pricing]]

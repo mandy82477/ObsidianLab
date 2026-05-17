@@ -35,17 +35,17 @@ LLM 查詢此 wiki 時，**先讀這個檔案**找相關頁面，再讀具體頁
 
 ## Topics（進行中議題）
 
-| 頁面 | 狀態 | 摘要 |
-|------|------|------|
-| [[topics/code-quality-decline]] | monitoring | Claude Code 效能退步事件，Anthropic 已承認工程疏失 |
-| [[topics/google-investment]] | resolved | ⚠️ 已遷移至 [[entities/google-investment]] |
-| [[topics/competitor-landscape]] | ongoing | Google 祕密開發競品 + OpenCode 157K 分流 + DeepSeek clone 低成本替代生態 |
-| [[topics/community-tech-tools]] | ongoing | 社群工具目錄：80+ 工具的活躍度、採用狀態追蹤 |
-| [[topics/community-tech-patterns]] | ongoing | 社群技術模式：multi-agent、skills 設計、工作流最佳實踐 |
-| [[topics/community-tech-discussions]] | ongoing | 社群技術討論趨勢：設計哲學辯論、實證研究、架構反思（HTML vs MD、Skill Atrophy 等）|
-| [[topics/ai-agent-safety]] | ongoing | AI agent 安全：假冒安裝包 + AI 生成程式碼 90% 漏洞 + CVE-2026-39861 + 資料庫刪除事件 |
-| [[topics/anthropic-government-policy]] | monitoring | Anthropic 政府與軍事政策：五角大廈排除事件、安全護欄堅持、白宮重啟談判（11 天無新進展）|
-| [[topics/official-community-gap]] | ongoing | 官方功能 vs 社群痛點缺口矩陣：哪些痛點官方正在解決、哪些結構性缺席 |
+| 頁面                                     | 狀態         | 摘要                                                             |
+| -------------------------------------- | ---------- | -------------------------------------------------------------- |
+| [[topics/code-quality-decline]]        | monitoring | Claude Code 效能退步事件，Anthropic 已承認工程疏失                           |
+| [[topics/google-investment]]           | resolved   | ⚠️ 已遷移至 [[entities/google-investment]]                         |
+| [[topics/competitor-landscape]]        | ongoing    | Google 祕密開發競品 + OpenCode 157K 分流 + DeepSeek clone 低成本替代生態      |
+| [[topics/community-tech-tools]]        | ongoing    | 社群工具目錄：80+ 工具的活躍度、採用狀態追蹤                                       |
+| [[topics/community-tech-patterns]]     | ongoing    | 社群技術模式：multi-agent、skills 設計、工作流最佳實踐                           |
+| [[topics/community-tech-discussions]]  | ongoing    | 社群技術討論趨勢：設計哲學辯論、實證研究、架構反思（HTML vs MD、Skill Atrophy 等）          |
+| [[topics/ai-agent-safety]]             | ongoing    | AI agent 安全：假冒安裝包 + AI 生成程式碼 90% 漏洞 + CVE-2026-39861 + 資料庫刪除事件 |
+| [[topics/anthropic-government-policy]] | monitoring | Anthropic 政府與軍事政策：五角大廈排除事件、安全護欄堅持、白宮重啟談判（11 天無新進展）             |
+| [[topics/official-community-gap]]      | ongoing    | 官方功能 vs 社群痛點缺口矩陣：哪些痛點官方正在解決、哪些結構性缺席                            |
 
 ---
 
