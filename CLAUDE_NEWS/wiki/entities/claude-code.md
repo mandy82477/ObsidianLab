@@ -3,7 +3,7 @@
 **類型：** product
 **狀態：** active
 **首次出現：** 2025（正式推出）
-**最後更新：** 2026-05-16
+**最後更新：** 2026-05-17
 
 ---
 
@@ -257,6 +257,7 @@ Token 用量追蹤、session 費用分析與效能漂移偵測工具。
 - [[news/2026-05-10]]
 - [[news/2026-05-11]]
 - [[news/2026-05-12]]
+- [[news/2026-05-17]]
 - [[news/2026-05-16]]
 - [[news/2026-05-15]]
 - [[news/2026-05-14]]
@@ -266,6 +267,12 @@ Token 用量追蹤、session 費用分析與效能漂移偵測工具。
 
 | 日期 | 事件 |
 |------|------|
+| 2026-05-17 | 開發者以 Claude Code 完成 Adobe Lightroom CC 在 Linux 的主要移植工作（Phoronix 報導），展現 AI Coding Agent 在複雜跨平台工程任務的實際能力 |
+| 2026-05-17 | 社群分享高複雜度持久性自主 agent 系統：語義 + 情節雙重記憶、德英雙語語音對話、情緒狀態追蹤、螢幕感知、自主排程、即時 SaaS 生成，代表社群 agentic 工程複雜度快速提升的里程碑案例 |
+| 2026-05-17 | Claude Skills 靜默覆蓋問題浮現：`ask_user_input_v0` 工具存在最多 3 問題 / 4 選項硬性限制，Claude 在不告知用戶的情況下靜默壓縮問題與選項；技術社群對 Skills 機制透明度的系統性質疑升溫；Skills 意外觸發子 agent 派生案例同步出現（見 [[topics/community-tech-discussions]]） |
+| 2026-05-17 | Anthropic 官方文件中 4 種 context 管理工具（超越 `/clear` + `/compact` 的二元認知）的使用場景對比在社群廣泛流傳，成為大型 codebase 長工作階段管理的新參考（見 [[topics/community-tech-discussions]]） |
+| 2026-05-17 | 多帳號 Claude Code 架構合規邊界明確：兩種多帳號架構中，其中一種已被 Anthropic 明確禁止（ToS 違規），開發者需注意合規邊界；見 [[entities/pricing]] |
+| 2026-05-17 | 新工具：**shipcheck**（讀取 Claude Code / Cursor session log，輸出費用分解、檔案修改熱圖與安全掃描，不到一秒完成且完全離線；發現 `@anthropic-ai/sdk` 常被誤寫為 `@anthropic/sdk` 的 package hallucination 問題） |
 | 2026-05-16 | **v2.1.143**：Plugin 依賴關係強制執行——`claude plugin disable` 在目標被其他已啟用 plugin 依賴時拒絕執行，提示完整停用鏈建議指令（例：先停用 B 再停用 A），降低複雜 plugin 組合因停用依賴造成工具鏈損壞的風險 |
 | 2026-05-16 | GitHub 推出新 Copilot 應用程式，明確將 Claude Code 與 OpenAI Codex 列為競爭目標；Anthropic 據報積極尋找下一個「Claude Code 等級」突破性產品；AI 編程 agent 賽道進入正面搶用戶階段；見 [[topics/competitor-landscape]] |
 | 2026-05-16 | 新工具：Code Quest（Web UI 互動模式，6/15 計費調整因應）、CostHawk（公開 token 用量排行榜）、AI 引用資格稽核 MCP（13 工具，無需 API key）、answering machine MCP（Claude Code 用戶間留言） |

@@ -2,7 +2,7 @@
 
 **狀態：** ongoing
 **開始日期：** 2026-04-25
-**最後更新：** 2026-05-16
+**最後更新：** 2026-05-17
 
 ---
 
@@ -396,9 +396,22 @@
 - [[news/2026-05-12]]
 - [[news/2026-05-13]]
 - [[news/2026-05-15]]
+- [[news/2026-05-17]]
 - [[news/2026-05-16]]
 
 ## 時序
+
+### 2026-05-17
+- **Claude Skills 作為 dotfiles 管理 + 子代理派生邊界探索**：開發者分享將 Claude Skills 視為個人化配置（類似 dotfiles）進行管理的心得，並記錄 skills 意外觸發子 agent 派生的實際案例；`ask_user_input_v0` 工具存在最多 3 問題 / 4 選項硬性限制導致靜默壓縮，技術社群開始系統性質疑 Skills 機制的透明度與可控性；見 [[topics/community-tech-discussions]]
+- **Anthropic Generator-Evaluator 多 agent 架構實踐（12 輪對抗迭代）**：開發者仿照 Anthropic 工程部落格公布的 Generator-Evaluator 架構（靈感來自 GAN），以 Kiro CLI 進行 12 輪對抗式迭代生成行銷網站；架構要點：Planner 單次執行 → Generator ↔ Evaluator 循環，各 agent 零共享 context，對抗性循環比單輪生成顯著提升輸出品質
+- **持久性自主 agent 系統工程達新高度**：開發者幾乎完全以 Claude Code 建構持久性 agent 系統，具備語義 + 情節雙重記憶、德英雙語語音對話、情緒狀態追蹤、螢幕感知、自主排程任務、即時 SaaS 生成等功能；是迄今社群分享中功能最完整的 agentic 工程作品，呼應 [[entities/boris-cherny]] 的「Loops 是未來」哲學
+- **Context 管理 4 工具最佳實踐**：社群整理 Anthropic 官方 Best Practices 文件中的 4 種 context 管理工具（超越 `/clear` + `/compact` 的二元認知），提供更細緻的大型 codebase 長工作階段管理策略；在有 3–8 MB 原始碼的大型主題中，開發者開始系統性討論每任務後是否應強制 `/clear`
+- **Design-to-code CSS 規格先行工作流**：前端開發者分享設計稿轉碼最佳實踐：先讓 Claude 生成完整 CSS 規格文件與設計交接文件，再執行轉碼，可有效避免「差不多就好」的設計意圖流失；此「先規格後實作」模式與規格驅動開發哲學高度一致
+- **100 個 Claude + Codex 平行 session 行銷診斷**：開發者工具首發後零互動，立即同時啟動 100 個 Claude + Codex agent 進行行銷診斷，30 分鐘取得改善 playbook；展示「用 AI 診斷 AI 工具行銷失敗」的自我修復實驗路徑，也是目前社群最大規模平行 agent 批次分析案例之一
+- **Claude + SSH 伺服器存取替代 Dispatch**：開發者透過 `list_vms` 與 `run_command` 工具讓 Claude Chat 取得伺服器 SSH 存取權，解決無法隨時開啟筆電執行 Claude Code 的痛點，代表「Claude Chat 作為 agent 觸發點」的邊界持續延伸
+- **Grounded Code AI 開發方法論系列（dev.to）**：連發四篇涵蓋應拋棄的「人工時代昂貴習慣」、以 spec.md 為核心工件、五步驟開發循環（spec → plan → implement → verify → consolidate）到局部性 + 合約 + 隔離十大原則，是目前最系統性的 AI 輔助開發方法論整理之一
+- **Adobe Lightroom CC Linux 移植**：開發者借助 Claude Code 完成 Lightroom CC 在 Linux 上的主要移植工作（Phoronix 報導），是 Claude Code 處理複雜跨平台工程任務的代表性現實案例
+- **新工具**：shipcheck（讀取 Claude Code / Cursor session log，輸出費用分解 + 檔案修改熱圖 + 安全掃描，完全離線；附帶發現 `@anthropic-ai/sdk` 常被誤寫為 `@anthropic/sdk` 的 package hallucination 問題）
 
 ### 2026-05-16
 - **API 費用焦慮達本週最顯著集體高峰**：6/15 計費調整背景下，同日出現大量成本控管教學——「7 種降費策略」（$200–800 月費區間開發者適用）、「不修改代碼省 10–30%」（prompt caching 與路由優化）、bootstrapped 創業者費用管控討論、Claude Code 替代方案整理；成本焦慮主導本週技術熱度，形成集體情緒；見 [[entities/pricing]]

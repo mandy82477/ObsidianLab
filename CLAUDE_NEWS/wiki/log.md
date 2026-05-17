@@ -5,6 +5,21 @@ Append-only 紀錄。每次 ingest、query 或 lint 都在此追加一條。
 
 ---
 
+## 2026-05-17 Ingest
+
+- 來源日報：[[news/2026-05-17]]
+- 更新頁面：
+  - `entities/claude-code.md`（新增 2026-05-17：Adobe Lightroom Linux 移植案例、持久性自主 agent 系統、Claude Skills 靜默覆蓋問題、context 管理 4 工具、多帳號合規紅線、shipcheck 新工具；更新最後更新日期）
+  - `entities/pricing.md`（新增 2026-05-17：`claude -p` 計費衝擊持續、多帳號架構合規邊界明確）
+  - `topics/community-tech-patterns.md`（新增 2026-05-17 時序：Skills-as-dotfiles + 子代理派生、Generator-Evaluator 12 輪對抗迭代、持久性自主 agent 系統、context 4 工具實踐、CSS 規格先行設計稿轉碼、100 平行 agent 行銷診斷、SSH + Claude Chat 伺服器存取、Grounded Code 方法論系列、Adobe Lightroom Linux 移植、shipcheck 新工具）
+  - `topics/community-tech-discussions.md`（新增 CLAUDE.md/AGENTS.md 維護效益辯論、Claude Skills 靜默覆蓋兩個新討論；更新 Context 管理熱度 🔥🔥→🔥🔥🔥、模式 ☄️閃現→🌊延燒；新增 Skills 機制邊界技術彙整；新增 2026-05-17 時序）
+  - `topics/official-community-gap.md`（新增 2026-05-17 Ingest 更新：Skills 透明度缺口新證據、CLAUDE.md 失效缺口持續驗證）
+  - `wiki/feature-radar.md`（更新最後更新日期；本日無官方新功能發布）
+- 新增頁面：無
+- 摘要：Claude Skills 靜默覆蓋指令與子代理派生問題為本日最熱門技術議題，呼應官方社群缺口矩陣「CLAUDE.md 規則失效」欄位；CLAUDE.md/AGENTS.md 維護效益辯論（HN）引發廣泛共鳴；社群自主 agent 工程達高複雜度里程碑；context 管理 4 工具實踐廣泛流傳；多帳號 ToS 合規紅線明確。
+
+---
+
 ## 2026-05-16 Ingest
 
 - 來源日報：[[news/2026-05-16]]
