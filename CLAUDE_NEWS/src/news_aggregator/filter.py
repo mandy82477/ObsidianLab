@@ -10,6 +10,7 @@ import logging
 import os
 import re
 
+from news_aggregator.config import HAIKU_MODEL
 from news_aggregator.sources.base import FeedItem
 
 logger = logging.getLogger(__name__)
@@ -70,7 +71,10 @@ def filter_relevant(items: list[FeedItem], min_score: int = 3) -> list[FeedItem]
             "Relevance filter: kept %d / %d items (dropped %d with score < %d)",
             len(kept), len(items), dropped, min_score,
         )
-        return kept if kept else items  # never return empty list
+        if not kept:
+            logger.warning("Relevance filter returned empty list — keeping all %d items", len(items))
+            return items
+        return kept
     except Exception as e:
         logger.warning("Relevance filter parse failed (%s) — keeping all %d items", e, len(items))
         return items
@@ -84,9 +88,9 @@ def _call_api(items: list[FeedItem], api_key: str) -> str:
     prompt = _PROMPT.format(count=len(items), items_text=_format_for_filter(items))
     client = anthropic.Anthropic(api_key=api_key)
     message = client.messages.create(
-        model="claude-haiku-4-5-20251001",
+        model=HAIKU_MODEL,
         max_tokens=1024,
-        system=_SYSTEM,
+        system=[{"type": "text", "text": _SYSTEM, "cache_control": {"type": "ephemeral"}}],
         messages=[{"role": "user", "content": prompt}],
     )
     return message.content[0].text.strip()

@@ -7,7 +7,7 @@ import requests
 
 import news_aggregator.config as _cfg
 from news_aggregator.config import MAX_ITEMS_PER_SOURCE, REQUEST_TIMEOUT
-from news_aggregator.sources.base import BaseSource, FeedItem
+from news_aggregator.sources.base import BaseSource, FeedItem, parse_feed_time
 
 logger = logging.getLogger(__name__)
 
@@ -37,7 +37,7 @@ class Reddit(BaseSource):
                 )
                 fetched = _fetch_rss(url)
                 for entry in fetched[:MAX_ITEMS_PER_SOURCE // 2]:
-                    pub = _parse_time(entry)
+                    pub = parse_feed_time(entry)
                     if pub and pub < cutoff:
                         continue
                     items.append(FeedItem(
@@ -76,11 +76,3 @@ def _fetch_rss(url: str) -> list:
     return []
 
 
-def _parse_time(entry) -> datetime | None:
-    try:
-        t = entry.get("published_parsed") or entry.get("updated_parsed")
-        if t:
-            return datetime.fromtimestamp(time.mktime(t), tz=timezone.utc)
-    except Exception:
-        pass
-    return None

@@ -6,9 +6,11 @@ Priority per item type:
   Reddit post   → Reddit JSON API selftext
   Other         → trafilatura on the article URL (only if summary is thin)
 """
+import html
 import logging
 import re
 from concurrent.futures import ThreadPoolExecutor, as_completed
+from dataclasses import replace
 from urllib.parse import urlparse
 
 import requests
@@ -111,11 +113,13 @@ def _enrich_hn(item: FeedItem, hn_id: str) -> FeedItem:
         if article:
             parts.append(article)
 
-    # Top-2 comments for discussion context
-    for kid_id in (data.get("kids") or [])[:2]:
-        comment = _hn_api(str(kid_id))
-        if comment and comment.get("text"):
-            parts.append("💬 " + _strip_html(comment["text"]))
+    # Top-2 comments for discussion context — fetch in parallel
+    kid_ids = [str(k) for k in (data.get("kids") or [])[:2]]
+    if kid_ids:
+        with ThreadPoolExecutor(max_workers=len(kid_ids)) as pool:
+            for comment in pool.map(_hn_api, kid_ids):
+                if comment and comment.get("text"):
+                    parts.append("💬 " + _strip_html(comment["text"]))
 
     combined = "\n\n".join(parts)
     return _with_summary(item, combined) if combined else item
@@ -166,6 +170,12 @@ def _fetch_reddit(url: str) -> str:
 
 # ── Generic article ───────────────────────────────────────────────────────────
 
+try:
+    import trafilatura as _trafilatura
+except ImportError:
+    _trafilatura = None  # type: ignore[assignment]
+
+
 def _fetch_article(url: str) -> str:
     """Extract main article text using requests + trafilatura.
 
@@ -173,8 +183,10 @@ def _fetch_article(url: str) -> str:
     so that we control the timeout — trafilatura.fetch_url() has its own 30s
     default that ignores REQUEST_TIMEOUT and causes slow pipeline runs.
     """
+    if _trafilatura is None:
+        logger.debug("trafilatura not installed, skipping article fetch")
+        return ""
     try:
-        import trafilatura
         # Skip domains where extraction is useless or handled separately
         domain = urlparse(url).netloc.lstrip("www.")
         if domain in _SKIP_ARTICLE_DOMAINS:
@@ -187,16 +199,13 @@ def _fetch_article(url: str) -> str:
         )
         if resp.status_code != 200:
             return ""
-        text = trafilatura.extract(
+        text = _trafilatura.extract(
             resp.text,
             include_comments=False,
             include_tables=False,
             no_fallback=False,
         )
         return (text or "").strip()
-    except ImportError:
-        logger.debug("trafilatura not installed, skipping article fetch")
-        return ""
     except Exception as e:
         logger.debug("article fetch failed for %s: %s", url, e)
         return ""
@@ -205,18 +214,10 @@ def _fetch_article(url: str) -> str:
 # ── helpers ───────────────────────────────────────────────────────────────────
 
 def _with_summary(item: FeedItem, text: str) -> FeedItem:
-    clean = text.strip()[:MAX_SUMMARY_CHARS]
-    from dataclasses import replace
-    return replace(item, summary=clean)
+    return replace(item, summary=text.strip()[:MAX_SUMMARY_CHARS])
 
 
-def _strip_html(html: str) -> str:
-    """Very lightweight HTML tag stripper."""
-    text = re.sub(r"<[^>]+>", " ", html)
-    text = re.sub(r"&amp;", "&", text)
-    text = re.sub(r"&lt;", "<", text)
-    text = re.sub(r"&gt;", ">", text)
-    text = re.sub(r"&quot;", '"', text)
-    text = re.sub(r"&#x27;", "'", text)
-    text = re.sub(r"\s+", " ", text)
-    return text.strip()
+def _strip_html(raw: str) -> str:
+    text = re.sub(r"<[^>]+>", " ", raw)
+    text = html.unescape(text)
+    return re.sub(r"\s+", " ", text).strip()

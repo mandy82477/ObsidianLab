@@ -55,14 +55,13 @@ def deduplicate(items: list[FeedItem]) -> list[FeedItem]:
     final: list[FeedItem] = []
     for item in result:
         duplicate = False
-        for kept in final:
+        for idx, kept in enumerate(final):
             ratio = difflib.SequenceMatcher(None, item.title.lower(), kept.title.lower()).ratio()
             if ratio > 0.85:
                 # Replace kept if current has better score/priority
                 if item.score > kept.score or (
                     item.score == kept.score and _source_rank(item) < _source_rank(kept)
                 ):
-                    idx = final.index(kept)
                     final[idx] = item
                 duplicate = True
                 break

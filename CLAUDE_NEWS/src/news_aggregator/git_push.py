@@ -2,7 +2,7 @@ import logging
 import subprocess
 from pathlib import Path
 
-from news_aggregator.config import REPO_ROOT
+from news_aggregator.config import REPO_ROOT, SEEN_CACHE_FILE
 
 logger = logging.getLogger(__name__)
 
@@ -17,9 +17,8 @@ def commit_and_push(digest_path: Path) -> None:
 
     _run(["git", "add", rel_path], "git add")
     # Also commit seen_urls.json so dedup state persists across runs
-    seen_urls_path = REPO_ROOT / "src" / "news_aggregator" / "seen_urls.json"
-    if seen_urls_path.exists():
-        seen_urls = seen_urls_path.relative_to(REPO_ROOT).as_posix()
+    if SEEN_CACHE_FILE.exists():
+        seen_urls = SEEN_CACHE_FILE.relative_to(REPO_ROOT).as_posix()
         _run(["git", "add", seen_urls], "git add seen_urls")
     _run(["git", "commit", "-m", f"news: daily digest {date_str}"], "git commit", allow_nothing=True)
     _run(["git", "push"], "git push")

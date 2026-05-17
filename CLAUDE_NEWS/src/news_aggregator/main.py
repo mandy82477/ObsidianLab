@@ -3,6 +3,7 @@ import logging
 import logging.handlers
 import math
 import time
+from concurrent.futures import ThreadPoolExecutor, as_completed
 from datetime import date, datetime, time as dt_time, timedelta, timezone
 
 import news_aggregator.config as _cfg
@@ -80,15 +81,22 @@ def main() -> None:
     all_items = []
     source_status: dict[str, dict] = {}
 
-    for name, source in sources:
-        try:
-            items = source.fetch()
-            all_items.extend(items)
-            source_status[name] = {"ok": True, "count": len(items)}
-            logger.info("%s: %d item(s)", name, len(items))
-        except Exception as e:
-            source_status[name] = {"ok": False, "count": 0}
-            logger.warning("%s: fetch raised unexpected exception: %s", name, e)
+    def _fetch_source(name_source: tuple) -> tuple[str, list]:
+        name, source = name_source
+        return name, source.fetch()
+
+    with ThreadPoolExecutor(max_workers=len(sources)) as pool:
+        futures = {pool.submit(_fetch_source, ns): ns[0] for ns in sources}
+        for fut in as_completed(futures):
+            name = futures[fut]
+            try:
+                _, items = fut.result()
+                all_items.extend(items)
+                source_status[name] = {"ok": True, "count": len(items)}
+                logger.info("%s: %d item(s)", name, len(items))
+            except Exception as e:
+                source_status[name] = {"ok": False, "count": 0}
+                logger.warning("%s: fetch raised unexpected exception: %s", name, e)
 
     deduped = deduplicate(all_items)
     logger.info("After dedup: %d items (was %d)", len(deduped), len(all_items))

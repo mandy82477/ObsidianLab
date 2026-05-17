@@ -27,7 +27,6 @@ class AnthropicBlog(BaseSource):
 
             # Extract /news/slug links and their adjacent titles
             links = re.findall(r'href="(/news/[a-z0-9_-]+)"', resp.text)
-            seen = set(links)  # dedupe while preserving order
             unique_links = list(dict.fromkeys(links))
 
             # Load seen-URL cache

@@ -1,6 +1,7 @@
 import logging
 import os
 
+from news_aggregator.config import HAIKU_MODEL
 from news_aggregator.sources.base import FeedItem
 
 logger = logging.getLogger(__name__)
@@ -101,12 +102,12 @@ def analyze(items: list[FeedItem]) -> tuple[str, str]:
             import anthropic
             client = anthropic.Anthropic(api_key=api_key)
             message = client.messages.create(
-                model="claude-haiku-4-5",
+                model=HAIKU_MODEL,
                 max_tokens=4096,
-                system=_SYSTEM,
+                system=[{"type": "text", "text": _SYSTEM, "cache_control": {"type": "ephemeral"}}],
                 messages=[{"role": "user", "content": prompt}],
             )
-            return message.content[0].text, "Anthropic API (claude-haiku-4-5)"
+            return message.content[0].text, "Anthropic API (claude-haiku-4-5-20251001)"
         except Exception as e:
             logger.warning("Claude API (key) failed (%s) — trying claude CLI", e)
 

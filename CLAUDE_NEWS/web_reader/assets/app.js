@@ -119,8 +119,7 @@
     const root = document.documentElement;
     const next = root.getAttribute('data-theme') === 'light' ? 'dark' : 'light';
     root.setAttribute('data-theme', next);
-    const btn = $('.nav__theme');
-    if (btn) btn.textContent = next === 'dark' ? '☽' : '☀';
+    localStorage.setItem('claude-news-theme', next);
   };
 
   // ── Tab switch ──────────────────────────────────────────────────────────────
@@ -222,7 +221,7 @@
     // focus — first
     if (d.focus?.length) {
       parts.push(`<div class="section section--focus">
-<div class="section__h" style="margin:0 0 0"><span class="emoji">📌</span> 今日聚焦</div>
+<div class="section__h"><span class="emoji">📌</span> 今日聚焦</div>
 <ul class="focus-list">`);
       d.focus.forEach(f => {
         const cls = focusTagCls(f.tag);
@@ -319,8 +318,11 @@
     const totalPages = (data.entities?.length || 0) + (data.topics?.length || 0);
     const today = new Date().toISOString().slice(0, 10);
 
+    const lastUpdated = data.radar?.lastUpdated
+      || (data.digestIndex || []).slice().sort((a, b) => b.date.localeCompare(a.date))[0]?.date
+      || today;
     const subEl = $('#wiki-sub');
-    if (subEl) subEl.textContent = `最後更新：${today} · 頁面數：${totalPages} · 點擊實體查看詳細頁面`;
+    if (subEl) subEl.textContent = `最後更新：${lastUpdated} · 共 ${totalPages} 個頁面`;
 
     // Populate radar card last-updated label
     const radarMeta = $('#radar-card-updated');
