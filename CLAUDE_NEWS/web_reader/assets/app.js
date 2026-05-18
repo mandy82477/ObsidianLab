@@ -172,7 +172,7 @@
   }
 
   const FOCUS_TAG_MAP = { '重大事件':'major','持續追蹤':'track','新工具':'tool','社群趨勢':'trend','風險警示':'risk' };
-  function focusTagCls(tag) { return FOCUS_TAG_MAP[tag] || 'track'; }
+  function focusTagCls(tag) { return FOCUS_TAG_MAP[tag.replace(/^\[|\]$/g, '')] || 'track'; }
 
   function shortStatus(s) {
     return (s || '').replace(/[（(][^）)]*[）)]/g, '').trim();
@@ -508,7 +508,7 @@
 
     $('#detail-content').innerHTML = `
 <div class="detail__type-row">
-  <span class="pill pill--${item.pill}">${esc(item.status)}</span>
+  ${item.status ? `<span class="pill pill--${item.pill}">${esc(item.status)}</span>` : ''}
   <span class="pill pill--gray">${esc(item.entityType || typeLabel)}</span>
 </div>
 <h1 class="detail__h1">${esc(item.name)}</h1>

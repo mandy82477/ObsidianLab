@@ -58,14 +58,17 @@ python -m news_aggregator.main
 
 ## 每日自動化流程
 
-`run_news.bat` 每天自動執行，**wiki ingest 與網站建置已整合在內，無需手動觸發**。
+`run_news.bat` 每天自動執行完整流程（含 `claude -p` wiki ingest）。`/news-pipeline` 為互動式等效指令，wiki ingest 由 Claude 直接在 session 內執行（不走 `claude -p`，不產生 6/15 後的額外計費）。
 
 ```
-每天 08:00（Windows 排程器）
+每天 08:00（Windows 排程器，run_news.bat）
   ├─ Step 1  Python 聚合器 → news/YYYY-MM-DD.md + seen_urls.json → git push
   ├─ Step 2  claude -p "/wiki-ingest" → 更新 wiki/entities/、wiki/topics/、wiki/log.md、wiki/index.md
   ├─ Step 3  git add wiki/ → commit "wiki: auto-ingest YYYY-MM-DD" → git push
   └─ Step 4  python scripts/build_web.py → 更新 web_reader/data/data.js → commit "web: rebuild YYYY-MM-DD" → git push
+
+手動（互動式 Claude Code，/news-pipeline）
+  └─ 同上 5 步，但 Step 2 由 Claude 直接執行（不走 claude -p）
 
 每週（手動）
   └─ 告訴 Claude：「執行 wiki lint 並更新 overview.md」
