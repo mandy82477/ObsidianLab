@@ -2,7 +2,7 @@
 
 **狀態：** ongoing
 **開始日期：** 2026-04-27
-**最後更新：** 2026-05-15
+**最後更新：** 2026-05-18
 
 ---
 
@@ -143,8 +143,21 @@
 
 ---
 
+## 技術彙整（新增）
+
+### Claude Code RCE via Deeplink（2026-05-18 新增）
+
+- **漏洞類型**：deeplink 觸發遠端程式碼執行（RCE）；攻擊者可透過精心構造的 deeplink URI 觸發 Claude Code 執行任意指令，無需使用者手動確認信任提示
+- **與既有漏洞的區別**：與 CVE-2026-39861（symlink 沙箱逃逸）和 1-click RCE（信任提示）為獨立攻擊向量；deeplink 攻擊面代表攻擊者已從「軟體安裝路徑」（假冒安裝包、Google 廣告詐騙）延伸至「執行時期協議處理」
+- **攻擊場景**：受害者開啟惡意 deeplink（可能來自 email、網頁、CI/CD 觸發等），Claude Code 在本機執行攻擊者指定的指令
+- **當前狀態**：修補狀態待確認；建議使用者監控 Anthropic 安全公告頁面
+- **防護建議**：勿開啟不明來源的 deeplink；在確認修補前避免讓 Claude Code 在高權限環境（root、生產伺服器）執行
+
+---
+
 ## 目前結論
 
+- ⚠️ **Claude Code RCE via Deeplink（2026-05-18）**：第三個 RCE 類公開漏洞，攻擊者從安裝路徑轉向執行時期協議處理；Claude Code 的攻擊面持續被系統性探索，建議追蹤官方安全公告
 - ⚠️ **AI 生成程式碼安全漏洞現況（2026-05-13）**：大規模評測（48 個應用）顯示 90% AI 生成應用存在安全漏洞；Claude Code 開發者應強制執行靜態分析（Snyk + Claude Code 整合）和安全審查，不能依賴 AI 判斷程式碼安全性；「AI 快速開發即可上線」的假設已被具體數據挑戰
 - ⚠️ **無監督長時間運行的操作範疇失控（2026-05-13）**：24 小時自主 Agent（`--dangerously-skip-permissions`）帳單 $400 是次要問題，更重要的是代理執行了超出預期的操作；與 /loop 失控（$6,000）並列為長時間 Agent 執行的費用 + 操作範疇雙重風險案例
 - ⚠️ **假冒安裝包攻擊確認（2026-05-12）**：假冒 Claude Code 官方安裝包的惡意軟體攻擊已被多家資安媒體確認，利用 IElevator 機制竊取瀏覽器 Cookie 與開發者憑證；與 Google 搜尋廣告詐騙（2026-05-10）共同形成雙向攻擊面，Claude Code 安裝途徑的唯一安全路徑為 GitHub 官方 Releases
@@ -166,6 +179,7 @@
 
 ## 參考來源
 
+- [[news/2026-05-18]]
 - [[news/2026-04-27]]
 - [[news/2026-04-28]]
 - [[news/2026-04-30]]
@@ -182,6 +196,9 @@
 - [Anthropic's definition of safety is too narrow](https://jonathannen.com/anthropic-safety-too-narrow/) — Jonathan Nen
 
 ## 時序
+
+### 2026-05-18
+- **[重大漏洞] Claude Code RCE via 惡意 deeplink**：資安研究人員揭露 Claude Code 存在遠端程式碼執行（RCE）漏洞，攻擊者可透過精心構造的 deeplink 觸發任意指令執行（CyberSecurityNews 報導，05/17 19:20 UTC）；此為繼 CVE-2026-39861（symlink 沙箱逃逸）、1-click RCE（信任提示觸發）後，Claude Code 第三個公開 RCE 類漏洞；攻擊向量從信任提示轉移至 deeplink，意味著攻擊者正在系統性探索 Claude Code 的新攻擊面；建議使用者密切追蹤 Anthropic 安全公告，官方修補狀態待確認
 
 ### 2026-05-15
 - **[破壞性操作防護] 「Claude 刪除專案」類事件持續增加，社群主動建構安全閘門**：GrapeRoot Pro 開發者針對「Claude 刪除整個專案」類帖子（近期 700+ 留言討論）建立破壞性操作閘門——執行 `rm -rf` 等高危指令前自動顯示受影響檔案清單（含讀寫次數、最後存取時間）並暫停等待確認；是繼 DataMoat（AES-256-GCM 加密）、hard_deny（官方邊界）後，社群在破壞性操作防護上的第三條路線

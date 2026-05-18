@@ -5,6 +5,23 @@ Append-only 紀錄。每次 ingest、query 或 lint 都在此追加一條。
 
 ---
 
+## 2026-05-18 Ingest
+
+- 來源日報：[[news/2026-05-18]]
+- 更新頁面：
+  - `topics/ai-agent-safety.md`（新增 2026-05-18 時序：Claude Code RCE via deeplink；新增技術彙整；更新目前結論）
+  - `topics/competitor-landscape.md`（新增 2026-05-18 時序：Microsoft 遷移媒體確認、Uber 預算 Forbes 報導、Codex 超越文章、混搭工作流）
+  - `entities/managed-agents.md`（新增 2026-05-18：Proactive Workflows + Capability Curve 官方公告）
+  - `entities/pricing.md`（新增 2026-05-18：Uber 企業成本警示、Opus+Sonnet 混合策略）
+  - `topics/community-tech-tools.md`（新增 6 工具：Semble、AnyFrame、Agetor、agent-baton、LockedIn、Claude Usage Widget）
+  - `topics/community-tech-patterns.md`（新增 2026-05-18 時序：角色分工 6.7 倍加速、多操作員架構、速率上限轉移、62.5 分鐘 cache 規則、逆向工程惡意軟體）
+  - `topics/community-tech-discussions.md`（新增 3 討論：/compact 設計決策遺忘、知識圖譜實際效益存疑、14 條反駁規則工具包）
+  - `wiki/feature-radar.md`（新增 Proactive Workflows + Capability Curve 條目；更新全覽表）
+- 新增頁面：無
+- 摘要：今日最重要事件為 Claude Code RCE deeplink 漏洞（第三個 RCE 類漏洞）、Microsoft 遷移至 Copilot CLI 獲主流媒體確認、Uber 企業成本案例登上 Forbes、Proactive Workflows 官方公告。社群湧現 6 個新工具，聚焦速率監控與 Agent 沙盒。/compact 設計決策遺忘和知識圖譜效益存疑是本日最具反思價值的討論。
+
+---
+
 ## 2026-05-17 Ingest（補充 2）
 
 - 來源日報：[[news/2026-05-17]]

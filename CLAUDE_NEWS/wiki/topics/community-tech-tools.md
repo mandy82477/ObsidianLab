@@ -2,7 +2,7 @@
 
 **狀態：** ongoing
 **開始日期：** 2026-04-25
-**最後更新：** 2026-05-17
+**最後更新：** 2026-05-18
 
 ---
 
@@ -27,6 +27,12 @@
 
 | 工具                        | 類型          | 活躍  | 採用  | 簡介                                                                             |
 | ------------------------- | ----------- | --- | --- | ------------------------------------------------------------------------------ |
+| **Semble**                | 搜尋工具      | 🟢  | ⚡   | 專為 Claude Code 等 Agent 優化的程式碼搜尋工具，結合 Model2Vec 靜態嵌入 + BM25 融合檢索，宣稱比 grep 節省 98% token；Show HN 發布 |
+| **AnyFrame**              | 沙盒工具      | 🟢  | ⚡   | 為 Claude Code/Codex 提供微 VM 沙盒環境，一次定義 Agent（repo + 安裝指令 + skills + MCP）並快取映像檔，支援 Python SDK 或 Web 介面，可整合 Linear/Sentry MCP；Show HN 發布 |
+| **Agetor**                | 任務管理      | 🟢  | ⏳   | 開源 Harness 排程器，以看板（Kanban）介面管理多個 Claude Code 任務，透過 tmux 在互動模式執行，避免在多個終端機間切換；v0.0.1 已支援 Claude Code；Show HN 發布 |
+| **agent-baton**           | 監測工具      | 🟢  | ⚡   | 利用 Anthropic 使用量 API + Claude Code hook，在觸及速率上限前主動發出警告並轉移進行中的工作，解決 Claude Code 靜默中斷的長期痛點 |
+| **LockedIn**              | 記憶工具      | 🟢  | ⚡   | Claude Code 插件（1 路由技能 + 6 子技能），在 session 中持續記錄開發者工作脈絡，下次對話的 Claude 可直接繼承上次進度，無需重新說明背景 |
+| **Claude Usage Widget**   | 監測工具      | 🟢  | ✅   | 浮動桌面小工具，讀取 Anthropic 速率限制 API 標頭，即時顯示 5 小時 session 使用量（含色彩進度條）、每週配額、token 輸入輸出統計，每 5 秒更新，支援 Windows + macOS |
 | **machine**               | 安全/VM 工具   | 🟢  | ⏳   | Show HN 工具，為每個專案建立獨立 Lima VM，預設配置 Claude Code + Codex，session-only secrets 確保密鑰不跨工作區洩漏，解決 agentic coding 場景下 npm 惡意套件等 supply chain 安全疑慮 |
 | **cv-claw**               | Skill 工具   | 🟢  | ⚡   | Claude Skill 驅動的履歷生成器，HTML 為模板格式、JSON 為資料層，模板與內容完全分離架構；受 X 貼文啟發開發，Show HN 發布 |
 | **shipcheck**             | 監測/安全工具  | 🟢  | ⚡   | 離線讀取 Claude Code / Cursor session log，輸出費用分解、檔案修改熱圖與安全掃描；特別偵測 `@anthropic-ai/sdk` 常被誤寫為 `@anthropic/sdk` 的 package hallucination 問題，不到一秒完成 |

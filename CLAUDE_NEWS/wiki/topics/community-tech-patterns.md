@@ -2,7 +2,7 @@
 
 **狀態：** ongoing
 **開始日期：** 2026-04-25
-**最後更新：** 2026-05-17
+**最後更新：** 2026-05-18
 
 ---
 
@@ -400,6 +400,14 @@
 - [[news/2026-05-16]]
 
 ## 時序
+
+### 2026-05-18
+- **Agent 角色分工帶來 6.7 倍速度提升（3 角色拆分實測）**：開發者將單一「全能 Strategist Agent」拆分為三個專責角色後，相同 WebSearch 任務時間從 20 分鐘降至 3 分鐘（6.7 倍加速）；架構邏輯：角色專一化讓每個 agent 的 context 更精簡、指令更聚焦，是對「單一 Agent 越來越臃腫」問題的具體反向工程；可搭配 Managed Agents 20 路並行能力實現
+- **多操作員 Claude Code 架構（Hub + MCP + CLI + Docker + 桌面監控）**：開發者展示企業級多操作員架構：Hub 協調層 + MCP 客戶端 + CLI + Docker 無頭工作者 + 桌面監控器，支援多人同步觀察同一 Claude Code 工作階段、跨 repo 路由子任務，且 Agent 可自行召喚更多 Agent；是目前社群分享中架構最完整的多操作員協作系統
+- **速率上限前自動轉移工作流（agent-baton 模式）**：利用 Anthropic 使用量 API 預測速率上限到達時間，在觸及前主動警告並轉移進行中的工作至備用 session；解決 Claude Code 靜默中斷的長期痛點，是 `/loop` 失控事件（$6,000）後社群自發演化出的防護機制
+- **Claude Cache 刷新策略：62.5 分鐘規則**：開發者推導 Claude 5 分鐘 Prompt Cache 的最佳刷新決策——「62.5 分鐘規則」說明在特定頻率下主動刷新比讓 Cache 過期更划算；對高頻 API 使用者（含 CI/CD 自動化、多 agent 協作）具有實際成本意義；見 [[entities/pricing]]
+- **逆向工程 Android 惡意軟體實戰（資安研究場景）**：作者用 Claude Code 分析 AliExpress 35 美元投影機內建 Android 惡意軟體，自動回傳資料至未知域名；展示 Claude Code 在資安逆向工程領域的實際應用潛力，是繼 ESP32 Fault Injection（2026-05-12）後的第二個 Claude Code 資安研究代表案例
+- **新工具**：Semble（code search 98% token 節省）、AnyFrame（微 VM Agent 沙盒）、Agetor（看板 Harness 排程器）、agent-baton（速率上限前轉移工作）、LockedIn（session 脈絡記憶插件）、Claude Usage Widget（桌面浮動 token 監控）
 
 ### 2026-05-17
 - **Claude Skills 作為 dotfiles 管理 + 子代理派生邊界探索**：開發者分享將 Claude Skills 視為個人化配置（類似 dotfiles）進行管理的心得，並記錄 skills 意外觸發子 agent 派生的實際案例；`ask_user_input_v0` 工具存在最多 3 問題 / 4 選項硬性限制導致靜默壓縮，技術社群開始系統性質疑 Skills 機制的透明度與可控性；見 [[topics/community-tech-discussions]]
