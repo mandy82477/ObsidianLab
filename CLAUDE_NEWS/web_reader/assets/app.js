@@ -144,10 +144,17 @@
       .replace(/"/g, '&quot;').replace(/'/g, '&#39;');
   }
 
-  const MONTHS = ['JAN','FEB','MAR','APR','MAY','JUN','JUL','AUG','SEP','OCT','NOV','DEC'];
+  const MONTHS = ['January','February','March','April','May','June','July','August','September','October','November','December'];
+  const DOW    = ['Sun','Mon','Tue','Wed','Thu','Fri','Sat'];
   function dateParts(dateStr) {
     const p = dateStr.split('-');
-    return { y: p[0], m: MONTHS[parseInt(p[1],10)-1] || '', d: parseInt(p[2]||'0',10) };
+    const dt = new Date(dateStr + 'T00:00:00Z');
+    return {
+      y:   p[0],
+      m:   MONTHS[parseInt(p[1],10)-1] || '',
+      d:   parseInt(p[2]||'0',10),
+      dow: isNaN(dt) ? '' : DOW[dt.getUTCDay()],
+    };
   }
 
   const SENTIMENT_MAP = {
@@ -198,22 +205,18 @@
     parts.push(`<div class="feed__header">
   <div class="day-badge">
     <div class="day-badge__y">${esc(dp.y)}</div>
-    <div class="day-badge__d">${dp.d}</div>
-    <div class="day-badge__m">${dp.m}</div>
+    <span class="day-badge__d">${dp.d}</span>
+    <div class="day-badge__m">${esc(dp.m)} · ${esc(dp.dow)}</div>
   </div>
   <div class="feed__meta">
-    <h1>Claude Code &amp; Anthropic 每日新聞摘要</h1>
+    <h1>每日新聞摘要 · Claude Code &amp; Anthropic</h1>
     <div class="feed__metarow">
-      <span><b>${esc(d.date)}</b></span>
+      <span><b>${d.articleCount}</b> articles</span>
       <span class="sep">·</span>
-      <span>來源 <b>${esc(d.sourceCount || '')}</b></span>
-      <span class="sep">·</span>
-      <span>文章 <b>${d.articleCount}</b> 則</span>
-      <span class="sep">·</span>
-      ${isLatest ? '<span class="pulse-dot">最新</span>' : ''}
+      ${isLatest ? '<span class="pulse-dot">fresh</span>' : ''}
     </div>
-    <div class="feed__metarow" style="margin-top:4px">
-      <span>更新時間 ${esc(d.generatedAt)}</span>
+    <div class="feed__metarow" style="margin-top:4px;font-size:11px">
+      <span>${esc(d.date)} · ${esc(d.sourceCount || '')} sources · generated ${esc(d.generatedAt)}</span>
     </div>
   </div>
 </div>`);
@@ -221,7 +224,7 @@
     // focus — first
     if (d.focus?.length) {
       parts.push(`<div class="section section--focus">
-<div class="section__h"><span class="emoji">📌</span> 今日聚焦</div>
+<div class="section__h"><span class="section__h-label">今 日 聚 焦</span><span class="section__h-en">today's focus</span><span class="section__h-count">${d.focus.length} items</span></div>
 <ul class="focus-list">`);
       d.focus.forEach(f => {
         const cls = focusTagCls(f.tag);
@@ -232,33 +235,31 @@
 
     // sections
     const sections = [
-      { key: 'topStories',  emoji: '⭐', label: '重點話題',   star: true  },
-      { key: 'techUpdates', emoji: '🔧', label: '技術更新',   star: false },
-      { key: 'discussions', emoji: '💬', label: '技術熱度討論', star: false },
-      { key: 'billing',     emoji: '💰', label: '付費方案動態', star: false },
+      { key: 'topStories',  emoji: '⭐', label: '重點話題',   en: 'headlines',         star: true  },
+      { key: 'techUpdates', emoji: '🔧', label: '技術更新',   en: 'technical updates', star: false },
+      { key: 'discussions', emoji: '💬', label: '技術熱度討論', en: 'discussion',        star: false },
+      { key: 'billing',     emoji: '💰', label: '付費方案動態', en: 'pricing & access',  star: false },
     ];
 
-    sections.forEach(({ key, emoji, label, star }) => {
+    sections.forEach(({ key, emoji, label, en, star }) => {
       if (!d[key]?.length) return;
+      const spaced = label.split('').join(' ');
       parts.push(`<div class="section">
-<div class="section__h"><span class="emoji">${emoji}</span> ${label}</div>`);
+<div class="section__h"><span class="section__h-label">${spaced}</span><span class="section__h-en">${en}</span><span class="section__h-count">${d[key].length} items</span></div>`);
       d[key].forEach(s => parts.push(storyHtml(s, star)));
       parts.push('</div>');
     });
 
-    // source status grid
+    // source status — one-line ribbon
     if (d.sourceStatus?.length) {
-      parts.push(`<div class="sourcetable">
-<div class="sourcetable__title">來源狀態</div>
-<div class="sourcetable__grid">`);
-      d.sourceStatus.forEach(s => {
-        parts.push(`<div class="source-cell">
-  <span class="source-cell__name">${esc(s.name)}</span>
-  <span class="source-cell__status">${s.ok ? '✅' : '❌'}</span>
-  <span class="source-cell__count">${s.count} 篇</span>
-</div>`);
+      parts.push(`<aside class="source-ribbon">
+<span class="source-ribbon__label">SOURCES</span>`);
+      d.sourceStatus.forEach((s, i) => {
+        const zero = s.count === 0 ? ' src-n--zero' : '';
+        if (i > 0) parts.push(`<span class="source-ribbon__sep">·</span>`);
+        parts.push(`<span class="source-ribbon__item"><span class="src-name">${esc(s.name.toLowerCase())}</span><span class="src-n${zero}">${s.count}</span></span>`);
       });
-      parts.push('</div><div class="sourcetable__note">Twitter/X 資料不包含在本摘要中（官方 API 需付費）</div></div>');
+      parts.push('</aside>');
     }
 
     container.innerHTML = parts.join('\n');
@@ -344,26 +345,96 @@
   }
 
   // ── Archive ──────────────────────────────────────────────────────────────────
+  const MONTH_NAMES_FULL = ['January','February','March','April','May','June','July','August','September','October','November','December'];
+  const DOW_NAMES = ['SUN','MON','TUE','WED','THU','FRI','SAT'];
   function renderArchive() {
     const container = $('#archive-grid');
     if (!container) return;
     const index = (window.WIKI_DATA || {}).digestIndex || [];
     if (!index.length) { container.innerHTML = ''; return; }
 
-    const dates = index.map(d => d.date).sort().reverse();
+    // sort newest first
+    const sorted = [...index].sort((a,b) => b.date.localeCompare(a.date));
+    const dates = sorted.map(d => d.date);
+    const totalArticles = sorted.reduce((sum, d) => sum + (d.articleCount || 0), 0);
     const subEl = $('#archive-sub');
-    if (subEl && dates.length) subEl.textContent = `${dates.length} 份日報 · ${dates[dates.length-1]} → ${dates[0]}`;
+    if (subEl && dates.length) {
+      subEl.innerHTML = `<b>${dates[dates.length-1]}</b> → <b>${dates[0]}</b> <span class="sep">·</span> <b>${dates.length}</b> 份日報 <span class="sep">·</span> <b>${totalArticles}</b> 文章`;
+    }
 
-    container.innerHTML = index.map((d, i) => {
-      const isLatest = i === 0;
-      const cls = 'archive-card' + (isLatest ? ' archive-card--latest' : '');
-      const dateLabel = isLatest ? `${esc(d.date)} · 最新` : esc(d.date);
-      return `<div class="${cls}" onclick="openDigestPage('${esc(d.date)}')">
-  <div class="archive-card__date">${dateLabel}</div>
-  <div class="archive-card__title">${esc(d.preview)}</div>
-  <div class="archive-card__meta"><span>${d.articleCount} 篇</span><span>⭐ ${d.topCount}</span></div>
-</div>`;
+    // group by YYYY-MM, newest month first
+    const months = {};
+    sorted.forEach(d => {
+      const ym = d.date.slice(0, 7);
+      (months[ym] = months[ym] || []).push(d);
+    });
+    const monthKeys = Object.keys(months).sort().reverse();
+
+    const parts = [];
+    monthKeys.forEach((ym, mi) => {
+      const days = months[ym];
+      const [y, m] = ym.split('-');
+      const monthName = MONTH_NAMES_FULL[parseInt(m, 10) - 1] || '';
+      const monthArticles = days.reduce((s, d) => s + (d.articleCount || 0), 0);
+      const range = `${days[days.length-1].date} → ${days[0].date.slice(5)}`;
+      parts.push(`<section class="arch__month">
+  <div class="arch__monthMark">
+    <div class="arch__monthMark__num">${esc(m)} · ${esc(y)}</div>
+    <span class="arch__monthMark__name">${esc(monthName)}</span>
+    <div class="arch__monthMark__meta">
+      <div>${esc(range)}</div>
+      <div><b>${days.length}</b> digests<span class="sep">·</span><b>${monthArticles}</b> articles</div>
+    </div>
+  </div>
+  <div class="arch__days">`);
+      days.forEach((d, di) => {
+        const isLatest = mi === 0 && di === 0;
+        const dateObj = new Date(d.date + 'T00:00:00Z');
+        const dow = isNaN(dateObj) ? '' : DOW_NAMES[dateObj.getUTCDay()];
+        const dateCls = 'arch__row__date' + (isLatest ? ' arch__row__date--latest' : '');
+        parts.push(`<a href="#${esc(d.date)}" class="arch__row" onclick="event.preventDefault();openDigestPage('${esc(d.date)}')">
+  <div class="${dateCls}">${esc(d.date.slice(5))}<span class="dow">${esc(dow)}</span></div>
+  <div class="arch__row__focus">${esc(d.preview)}</div>
+  <div class="arch__row__count">${d.articleCount}<span class="unit">items</span></div>
+</a>`);
+      });
+      parts.push(`</div>
+</section>`);
+    });
+
+    // sparkline — oldest → newest left to right
+    const chrono = [...sorted].reverse();
+    const counts = chrono.map(d => d.articleCount || 0);
+    const max = Math.max(...counts, 1);
+    const W = 1100, H = 80;
+    const stepX = counts.length > 1 ? W / (counts.length - 1) : 0;
+    const pts = counts.map((v, i) => `${(i * stepX).toFixed(1)},${(H - (v / max) * (H - 12) - 4).toFixed(1)}`).join(' ');
+    const ranked = counts.map((v, i) => ({ v, i })).sort((a, b) => b.v - a.v).slice(0, 3);
+    const peakDates = ranked.map(r => chrono[r.i].date.slice(5)).join(', ');
+    const dotsSvg = ranked.map(r => {
+      const cx = r.i * stepX, cy = H - (r.v / max) * (H - 12) - 4;
+      return `<circle cx="${cx.toFixed(1)}" cy="${cy.toFixed(1)}" r="3" fill="var(--ochre-9)"/>`;
     }).join('');
+
+    parts.push(`<aside class="arch__spark">
+  <div class="arch__spark__head">
+    <span>daily volume</span>
+    <em>signal across ${counts.length} days</em>
+    <span class="ct">${counts.length} pts · ochre marks top 3</span>
+  </div>
+  <svg class="arch__spark__svg" viewBox="0 0 ${W} ${H}" preserveAspectRatio="none">
+    <line x1="0" y1="${H-4}" x2="${W}" y2="${H-4}" stroke="var(--border-1)" stroke-width="1"/>
+    <polyline points="${pts}" fill="none" stroke="var(--ink-2)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" opacity="0.8"/>
+    ${dotsSvg}
+  </svg>
+  <div class="arch__spark__legend">
+    <span>${esc(chrono[0]?.date || '')}</span>
+    <span>peaks · ${esc(peakDates)}</span>
+    <span>${esc(chrono[chrono.length-1]?.date || '')}</span>
+  </div>
+</aside>`);
+
+    container.innerHTML = parts.join('\n');
   }
 
   // ── Open wiki entity/topic as full page ──────────────────────────────────────

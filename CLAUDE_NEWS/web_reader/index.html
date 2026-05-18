@@ -22,8 +22,16 @@
     <div class="nav__brand" role="button" tabindex="0" aria-label="返回今日摘要"
          onclick="switchView('today', document.querySelector('[data-view=today]'))"
          onkeydown="if(event.key==='Enter'||event.key===' ')switchView('today',document.querySelector('[data-view=today]'))">
-      <div class="nav__brand-main">CLAUDE NEWS<span>·</span></div>
-      <div class="nav__brand-sub">LLM-WIKI</div>
+      <svg class="nav__brand-mark" width="26" height="26" viewBox="0 0 44 44" fill="none" aria-hidden="true">
+        <rect x="2" y="2" width="40" height="40" rx="2" fill="none" stroke="var(--ochre-7)" stroke-width="1"/>
+        <path d="M14 18 L14 26 L18 26" stroke="var(--ochre-9)" stroke-width="1.5" stroke-linecap="round" fill="none"/>
+        <circle cx="22" cy="22" r="2.5" fill="var(--ochre-9)"/>
+        <path d="M30 18 L30 26 L26 26" stroke="var(--ochre-9)" stroke-width="1.5" stroke-linecap="round" fill="none"/>
+      </svg>
+      <div class="nav__brand-text">
+        <div class="nav__brand-main">CLAUDE NEWS<span>·</span></div>
+        <div class="nav__brand-sub">L L M &middot; W I K I</div>
+      </div>
     </div>
     <div class="nav__links">
       <button class="nav__link is-active" data-view="today"
@@ -62,7 +70,8 @@
 <!-- WIKI -->
 <div id="view-wiki" class="view">
   <div class="wiki">
-    <h1 class="wiki__h1">Wiki 知識庫</h1>
+    <div class="wiki__kicker">wiki · 知識圖譜</div>
+    <h1 class="wiki__h1">Claude / Anthropic <em>知識圖譜</em></h1>
     <div class="wiki__sub" id="wiki-sub"></div>
 
     <!-- PINNED CARDS -->
@@ -112,7 +121,8 @@
 <!-- ARCHIVE -->
 <div id="view-archive" class="view">
   <div class="archive">
-    <h1 class="archive__h1">典藏</h1>
+    <div class="archive__kicker">archive · 時序檔案室</div>
+    <h1 class="archive__h1">每一天，<em>歸檔</em>。</h1>
     <div class="archive__sub" id="archive-sub"></div>
     <div class="archive__grid" id="archive-grid"></div>
   </div>
@@ -136,38 +146,57 @@
 <div id="view-about" class="view">
   <div class="about">
 
-    <!-- Hero -->
+    <!-- Hero — poetic, italic em accent -->
     <div class="about__hero">
-      <div class="about__hero-label">DEVELOPER INTELLIGENCE</div>
-      <h1 class="about__hero-title">CLAUDE NEWS · LLM-WIKI</h1>
-      <p class="about__hero-desc">每日聚焦 Claude Code 與 Anthropic 核心動態，從官方更新到社群實測，一站掌握技術情報。</p>
+      <div class="about__hero-label">關於這個檔案室 · about this archive</div>
+      <h1 class="about__hero-title">A <em>quiet</em> wiki of <em>noisy</em> news.</h1>
+      <p class="about__hero-desc">每日聚焦 Claude Code 與 Anthropic 核心動態，從官方更新到社群實測，一站掌握技術情報。所有條目經 LLM 評分過濾、繁中摘要、再沉澱進 wiki，給需要穩定訊號而非即時噪音的工程師。</p>
     </div>
 
-    <!-- 4 category chips -->
+    <!-- 4 category pillars with roman numerals -->
     <div class="about__categories">
-      <div class="about__cat about__cat--official">
+      <a href="#how" class="about__cat about__cat--official">
+        <div class="about__cat-num">i.</div>
         <div class="about__cat-title">官方核心</div>
-        <div class="about__cat-sub">GitHub & SDK 迭代</div>
-      </div>
-      <div class="about__cat about__cat--community">
+        <div class="about__cat-desc">Anthropic 公告、GitHub Changelog、SDK 與 API 迭代。</div>
+        <div class="about__cat-sub">Official · Source-of-Truth</div>
+      </a>
+      <a href="#how" class="about__cat about__cat--community">
+        <div class="about__cat-num">ii.</div>
         <div class="about__cat-title">社群實測</div>
-        <div class="about__cat-sub">Reddit & HN 深度討論</div>
-      </div>
-      <div class="about__cat about__cat--ecosystem">
+        <div class="about__cat-desc">Hacker News 與 Reddit 上的真實使用回饋、Bug 與變通。</div>
+        <div class="about__cat-sub">Community · Field-Reports</div>
+      </a>
+      <a href="#how" class="about__cat about__cat--ecosystem">
+        <div class="about__cat-num">iii.</div>
         <div class="about__cat-title">生態動態</div>
-        <div class="about__cat-sub">融資與企業合作動態</div>
-      </div>
-      <div class="about__cat about__cat--warn">
+        <div class="about__cat-desc">融資、人事、競品與生態興起的周邊工具。</div>
+        <div class="about__cat-sub">Ecosystem · Around-Anthropic</div>
+      </a>
+      <a href="#limits" class="about__cat about__cat--warn">
+        <div class="about__cat-num">iv.</div>
         <div class="about__cat-title">時效延遲</div>
-        <div class="about__cat-sub">26–30 小時穩定資訊</div>
-      </div>
+        <div class="about__cat-desc">26–30 小時穩定資訊；社交平台首發訊號需另尋管道。</div>
+        <div class="about__cat-sub">Delay · Stable-Not-Instant</div>
+      </a>
+    </div>
+    <div class="about__cat-foot">
+      <span>四個主軸 · four pillars</span>
+      <span class="about__cat-foot-rule"></span>
+      <span class="about__cat-foot-warn">✆ delay 26–30h</span>
     </div>
 
-    <!-- HOW IT WORKS -->
-    <div class="about__how">
-      <div class="about__col-h">運作方式</div>
+    <!-- HOW IT WORKS — flow steps -->
+    <div class="about__how" id="how">
+      <header class="about__sec-h">
+        <span class="about__sec-h__num">01</span>
+        <h2 class="about__sec-h__title">運作 <em>方式</em></h2>
+        <span class="about__sec-h__rule"></span>
+        <span class="about__sec-h__sub">how a day gets filed</span>
+      </header>
       <div class="about__steps">
         <div class="about__step about__step--has-tip">
+          <div class="about__step-icon"><svg viewBox="0 0 24 24"><path d="M5 5 a10 10 0 0 1 14 0"/><path d="M8 8 a6 6 0 0 1 8 0"/><path d="M11 11 a3 3 0 0 1 2 0"/><circle cx="12" cy="14" r="1.4"/><path d="M12 15 L9 21"/><path d="M12 15 L15 21"/><path d="M9 21 L15 21"/></svg></div>
           <div class="about__step-num">01</div>
           <div class="about__step-label">多來源抓取</div>
           <div class="about__step-sub">每日 6 個管道</div>
@@ -181,26 +210,31 @@
           </div>
         </div>
         <div class="about__step">
+          <div class="about__step-icon"><svg viewBox="0 0 24 24"><circle cx="9" cy="12" r="5"/><circle cx="15" cy="12" r="5"/></svg></div>
           <div class="about__step-num">02</div>
           <div class="about__step-label">去重過濾</div>
           <div class="about__step-sub">URL + 標題模糊比對</div>
         </div>
         <div class="about__step">
+          <div class="about__step-icon"><svg viewBox="0 0 24 24"><path d="M12 3 L14 9.5 L20.5 9.5 L15.3 13.5 L17.3 20 L12 16 L6.7 20 L8.7 13.5 L3.5 9.5 L10 9.5 Z"/></svg></div>
           <div class="about__step-num">03</div>
           <div class="about__step-label">AI 相關性評分</div>
           <div class="about__step-sub">1–5 分，≥3 保留</div>
         </div>
         <div class="about__step">
+          <div class="about__step-icon"><svg viewBox="0 0 24 24"><path d="M5 3 L17 3 L17 21 L5 21 Z"/><path d="M8 8 L14 8"/><path d="M8 12 L14 12"/><path d="M8 16 L11 16"/><path d="M19 6 L21 8 L15 14 L13 14 L13 12 Z"/></svg></div>
           <div class="about__step-num">04</div>
           <div class="about__step-label">LLM 摘要</div>
           <div class="about__step-sub">繁中 Markdown 日報</div>
         </div>
         <div class="about__step">
+          <div class="about__step-icon"><svg viewBox="0 0 24 24"><path d="M4 4 L11 4 L12 6 L12 21 L11 19 L4 19 Z"/><path d="M20 4 L13 4 L12 6 L12 21 L13 19 L20 19 Z"/></svg></div>
           <div class="about__step-num">05</div>
           <div class="about__step-label">Wiki 沉澱</div>
           <div class="about__step-sub">entities / topics 更新</div>
         </div>
         <div class="about__step">
+          <div class="about__step-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M3 12 L21 12"/><path d="M12 3 C 8 7, 8 17, 12 21"/><path d="M12 3 C 16 7, 16 17, 12 21"/></svg></div>
           <div class="about__step-num">06</div>
           <div class="about__step-label">網站更新</div>
           <div class="about__step-sub">data.js 重建部署</div>
@@ -208,95 +242,124 @@
       </div>
     </div>
 
-    <!-- Main 2-col layout -->
-    <div class="about__main">
-
-      <!-- Left: strengths + weaknesses -->
-      <div class="about__col">
-
-        <div class="about__col-h about__col-h--check">涵蓋範圍</div>
-        <div class="about__items">
-          <div class="about__item">
-            <span class="about__item-tag">官方</span>
-            <div class="about__item-body">
-              <div class="about__item-title">技術與定價迭代</div>
-              <div class="about__item-desc">精準追蹤 GitHub Changelog、SDK 演進與 API 定價結構變化。</div>
+    <!-- SCOPE / LIMITS — editorial split -->
+    <div class="about__scope" id="limits">
+      <div class="about__scope-half about__scope-half--do">
+        <div class="about__scope-eyebrow">02 · scope</div>
+        <h2 class="about__scope-h">我們 <em>做</em></h2>
+        <div class="about__scope-items">
+          <div class="about__scope-item">
+            <span class="about__scope-tag">官方</span>
+            <div>
+              <div class="about__scope-title">技術與定價迭代</div>
+              <div class="about__scope-desc">精準追蹤 GitHub Changelog、SDK 演進與 API 定價結構變化。</div>
             </div>
           </div>
-          <div class="about__item">
-            <span class="about__item-tag">生態</span>
-            <div class="about__item-body">
-              <div class="about__item-title">合作與融資動態</div>
-              <div class="about__item-desc">監測 Anthropic 融資動態、大型企業合作案（如 AWS/Google）與政策趨勢。</div>
+          <div class="about__scope-item">
+            <span class="about__scope-tag">生態</span>
+            <div>
+              <div class="about__scope-title">合作與融資動態</div>
+              <div class="about__scope-desc">監測 Anthropic 融資動態、大型企業合作案（AWS / Google）與政策趨勢。</div>
             </div>
           </div>
-          <div class="about__item">
-            <span class="about__item-tag">社群</span>
-            <div class="about__item-body">
-              <div class="about__item-title">真實情緒與避坑指南</div>
-              <div class="about__item-desc">匯集開發者對產品效能的真實回饋，透視核心 Bug 與替代方案。</div>
-            </div>
-          </div>
-        </div>
-
-        <div class="about__col-h about__col-h--cross">已知限制</div>
-        <div class="about__items">
-          <div class="about__item">
-            <span class="about__item-tag about__item-tag--warn">時效</span>
-            <div class="about__item-body">
-              <div class="about__item-title">X 與 Discord 即時訊號</div>
-              <div class="about__item-desc">無法捕捉首發於社交平台的秒級爆料、漏洞回報與突發動態。</div>
-            </div>
-          </div>
-          <div class="about__item">
-            <span class="about__item-tag about__item-tag--warn">深度</span>
-            <div class="about__item-body">
-              <div class="about__item-title">企業內部非公開資訊</div>
-              <div class="about__item-desc">NDA 保護下的企業實測數據、內部佈署經驗，與未公開的產品路線，均在涵蓋範圍之外。</div>
-            </div>
-          </div>
-          <div class="about__item">
-            <span class="about__item-tag about__item-tag--warn">語域</span>
-            <div class="about__item-body">
-              <div class="about__item-title">非英語系市場在地化表現</div>
-              <div class="about__item-desc">針對亞洲開發社群（日、韓、中）的特定 Bug 與應用案例觀測受限。</div>
+          <div class="about__scope-item">
+            <span class="about__scope-tag">社群</span>
+            <div>
+              <div class="about__scope-title">真實情緒與避坑指南</div>
+              <div class="about__scope-desc">匯集開發者對產品效能的真實回饋，透視核心 Bug 與替代方案。</div>
             </div>
           </div>
         </div>
-
-      </div><!-- /.about__col -->
-
-      <!-- Right: audience -->
-      <div class="about__col">
-
-        <div class="about__audience-card about__audience-card--for">
-          <div class="about__audience-eyebrow">✦ 適合族群</div>
-          <div class="about__audience-sub">Optimized For</div>
-          <ul class="about__audience-list">
-            <li>資深開發者：在版本升級前需要確認穩定性與相容性。</li>
-            <li>工程師 / 技術人員：持續追蹤 Claude Code API 演進與定價變化。</li>
-            <li>創業者與產品人：想透過官方方向尋找生態商機。</li>
-          </ul>
+      </div>
+      <div class="about__scope-half about__scope-half--dont">
+        <div class="about__scope-eyebrow">03 · limits</div>
+        <h2 class="about__scope-h">我們 <em>不做</em></h2>
+        <div class="about__scope-items">
+          <div class="about__scope-item">
+            <span class="about__scope-tag">時效</span>
+            <div>
+              <div class="about__scope-title">X 與 Discord 即時訊號</div>
+              <div class="about__scope-desc">無法捕捉首發於社交平台的秒級爆料、漏洞回報與突發動態。</div>
+            </div>
+          </div>
+          <div class="about__scope-item">
+            <span class="about__scope-tag">深度</span>
+            <div>
+              <div class="about__scope-title">企業內部非公開資訊</div>
+              <div class="about__scope-desc">NDA 保護下的企業實測數據、內部佈署經驗，與未公開的產品路線。</div>
+            </div>
+          </div>
+          <div class="about__scope-item">
+            <span class="about__scope-tag">語域</span>
+            <div>
+              <div class="about__scope-title">非英語系市場在地化</div>
+              <div class="about__scope-desc">針對亞洲開發社群（日、韓、中）的特定 Bug 與應用案例觀測受限。</div>
+            </div>
+          </div>
         </div>
+      </div>
+    </div>
 
-        <div class="about__audience-card about__audience-card--not">
-          <div class="about__audience-eyebrow">⊘ 不適合族群</div>
-          <div class="about__audience-sub">Not For</div>
-          <ul class="about__audience-list">
-            <li>即時新聞工作者：需要追蹤社交平台秒級爆料與突發事件。</li>
-            <li>影音學習者：以影音教學或互動 Demo 為主要學習方式。</li>
-            <li>在地化專才：主要關注特定語系（日、韓、中）本地市場動態。</li>
-          </ul>
-        </div>
+    <!-- AUDIENCE — editorial split with big italic numerals -->
+    <div class="about__aud">
+      <div class="about__aud-col about__aud-col--for">
+        <div class="about__aud-bignum">for.</div>
+        <div class="about__aud-bignum-sub">Optimized For</div>
+        <h3 class="about__aud-h">適合族群</h3>
+        <ul class="about__aud-list">
+          <li><b>資深開發者</b>：在版本升級前需要確認穩定性與相容性。</li>
+          <li><b>工程師 / 技術人員</b>：持續追蹤 Claude Code API 演進與定價變化。</li>
+          <li><b>創業者與產品人</b>：想透過官方方向尋找生態商機。</li>
+        </ul>
+      </div>
+      <div class="about__aud-col about__aud-col--not">
+        <div class="about__aud-bignum">not for.</div>
+        <div class="about__aud-bignum-sub">Not For</div>
+        <h3 class="about__aud-h">不適合族群</h3>
+        <ul class="about__aud-list">
+          <li><b>即時新聞工作者</b>：需要追蹤社交平台秒級爆料與突發事件。</li>
+          <li><b>影音學習者</b>：以影音教學或互動 Demo 為主要學習方式。</li>
+          <li><b>在地化專才</b>：主要關注特定語系（日、韓、中）本地市場動態。</li>
+        </ul>
+      </div>
+    </div>
 
-      </div><!-- /.about__col -->
-
-    </div><!-- /.about__main -->
-
-    <!-- Bottom quote -->
+    <!-- QUOTE -->
     <div class="about__quote">
       <div class="about__quote-text">「濾除社群雜訊，直擊 Claude Code 技術核心。」</div>
       <div class="about__quote-sub">為需要深度與穩定資訊的工程師而建</div>
+    </div>
+
+    <!-- PROVENANCE band — sumi-on-paper closing -->
+    <div class="about__prov">
+      <div class="about__prov-inner">
+        <div>
+          <div class="about__prov-h">last ingest</div>
+          <div class="about__prov-last"><em>2026·05·17</em>&nbsp;&nbsp;12:45 UTC</div>
+          <div class="about__prov-lastsub">26 articles · 6/6 sources · score ≥ 3</div>
+        </div>
+        <div>
+          <div class="about__prov-h">sources</div>
+          <div class="about__prov-sources">
+            anthropic.com<br>
+            github.com/<span>releases</span><br>
+            news.ycombinator.com<br>
+            reddit.com/<span>r/ClaudeAI</span><br>
+            news.google.com<br>
+            dev.to
+          </div>
+        </div>
+        <div class="about__prov-repo">
+          <div class="about__prov-h">source</div>
+          <a href="https://github.com/mandy82477/ObsidianLab" target="_blank" rel="noreferrer">github.com/mandy82477/ObsidianLab ↗</a>
+          <div class="about__prov-meta">
+            obsidian vault · markdown<br>
+            wiki/ · entities / topics<br>
+            news/ · daily reports<br>
+            CC-BY · personal project
+          </div>
+        </div>
+      </div>
     </div>
 
   </div>
@@ -322,7 +385,7 @@
 </footer>
 
 <!-- Data (generated by scripts/build_web.py) -->
-<script src="data/data.js?v=1779028378" defer></script>
+<script src="data/data.js?v=1779113353" defer></script>
 <!-- Markdown renderer -->
 <script src="https://cdn.jsdelivr.net/npm/marked@12/marked.min.js" defer></script>
 <!-- App logic -->

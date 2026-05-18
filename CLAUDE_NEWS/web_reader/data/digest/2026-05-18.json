@@ -1,0 +1,293 @@
+{
+  "date": "2026-05-18",
+  "generatedAt": "2026-05-18 14:00 UTC",
+  "articleCount": 40,
+  "sourceCount": "6/6",
+  "topStories": [
+    {
+      "title": "Microsoft moves engineers from Claude Code to GitHub Copilot CLI",
+      "url": "https://news.google.com/rss/articles/CBMigwFBVV95cUxNX3N5MUt1dGJGazBXRmktallZVi04X2d1c29DVUZ1ZXFCbDhVcUJ6cUN4Z3lZcmo4Tm5FQXIta1hwWV9hSVhRRDRsbGg2NEVBWnVmSkwtNV9pSFQxcjZWVUZ1UnJkeVdrWU1DR1Y4Rz",
+      "source": "Google News / Developer Tech News",
+      "time": "05/18 01:01",
+      "sentiment": "",
+      "body": "微軟將內部工程師從 Claude Code 遷移至自家的 GitHub Copilot CLI，此舉被視為 AI 編碼工具競爭進入白熱化的指標事件，值得持續觀察微軟是否進一步在企業端推廣 Copilot 以取代競品。"
+    },
+    {
+      "title": "Uber Burns Its 2026 AI Budget In Four Months On Claude Code",
+      "url": "https://news.google.com/rss/articles/CBMiswFBVV95cUxQTXNxUDVCWE5JY3Z0Yk1hVHBianJiWUJhYlppWmZwOEFzZFI4VE8wOV9VRVVlRy1sdnB6SzRSSlhGeWstWVg4Z1pmTUhQQ3FwSU1sUkI4OFE4aVZfSFJQV0ZYVjBzRkxJbE5ScVN5Rj",
+      "source": "Google News / Forbes",
+      "time": "05/17 19:18",
+      "sentiment": "",
+      "body": "Forbes 報導 Uber 四個月耗盡全年 AI 預算，根源在於工程師大量使用 Claude Code；此事件直接呼應社群長期討論的 Token 成本問題，也讓企業採購決策者開始重新評估 AI 工具的 ROI。"
+    },
+    {
+      "title": "Claude Code RCE Flaw Lets Attackers Execute Commands via Malicious Deeplinks",
+      "url": "https://news.google.com/rss/articles/CBMiYEFVX3lxTFBfOGpPa0ZCcTRlU0paaDgzTElXUkh4dFlwT0J6bC1ZUjBib2hDYmRtTkJ5VXZZY1BCYnpNRU9zYjFNUFdNZVRzZURRSlpXZUJMaldvb2ZiOHRjekJzdHVvMNIBZkFVX3lxTFBMdzVYek",
+      "source": "Google News / CyberSecurityNews",
+      "time": "05/17 19:20",
+      "sentiment": "",
+      "body": "資安研究人員揭露 Claude Code 存在遠端程式碼執行（RCE）漏洞，攻擊者可透過精心構造的 deeplink 觸發任意指令執行，目前已引起廣泛關注，建議使用者密切追蹤 Anthropic 的安全公告。"
+    },
+    {
+      "title": "Anthropic's Code With Claude Announces Managed Agents, Proactive Workflows, Capability Curve",
+      "url": "https://news.google.com/rss/articles/CBMiYkFVX3lxTE52WF95M3JQX2VQYU9LSnB6ZjgtbTVhZW9pbFEyZEVRaHdNTFVzYzZkMEtBbks0QUpIdk9DZFdEX05ENkVraUZ1dWVjZVlMTlRIVk8xT0hJdkJPeFBkTVB2YUZB",
+      "source": "Google News / InfoQ",
+      "time": "05/18 05:14",
+      "sentiment": "",
+      "body": "Anthropic 正式宣布 Managed Agents 架構、主動式工作流程與 Capability Curve 功能，顯示 Claude Code 正從開發者工具升級為可自主排程任務的企業 Agent 平台，是本週最重要的官方動向。"
+    }
+  ],
+  "techUpdates": [
+    {
+      "title": "Show HN: Semble – Code search for agents that uses 98% fewer tokens than grep",
+      "url": "https://github.com/MinishLab/semble",
+      "source": "Hacker News",
+      "time": "05/17 15:37",
+      "sentiment": "",
+      "body": "Semble 結合 Model2Vec 靜態嵌入與 BM25 融合檢索，專為 Claude Code 等 Agent 優化程式碼搜尋，宣稱比 grep 節省 98% Token，對大型專案尤為實用。"
+    },
+    {
+      "title": "engram v3.4.0 — keep Claude Code running under the new limits",
+      "url": "https://www.reddit.com/r/ClaudeAI/comments/1tglzq1/engram_v340_keep_claude_code_running_under_the/",
+      "source": "Reddit / r/ClaudeAI",
+      "time": "05/18 05:02",
+      "sentiment": "",
+      "body": "engram v3.4.0 新增專屬 Anthropic 外掛，提供 `/engram:cost`（查詢 Token 消耗）、`/engram:query`（快速上下文檢索）、`/engram:mistakes`（列出近期執行錯誤）三個新指令，針對近期速率限制收緊問題提供因應方案。"
+    },
+    {
+      "title": "Show HN: AnyFrame – Sandboxes for AI Agents",
+      "url": "https://anyfrm.com",
+      "source": "Hacker News",
+      "time": "05/18 03:30",
+      "sentiment": "",
+      "body": "AnyFrame 為 Claude Code 或 Codex 提供微 VM 沙盒環境，支援一次定義 Agent（repo、安裝指令、技能、MCP）並快取映像檔，透過 Python SDK 或 Web 介面操控，可整合 Linear、Sentry 等 MCP 連接器。"
+    },
+    {
+      "title": "Show HN: Agetor - An open-source Harness Orchestrator",
+      "url": "https://github.com/alamops/agetor",
+      "source": "Hacker News",
+      "time": "05/17 23:25",
+      "sentiment": "",
+      "body": "Agetor 是開源的 Harness 排程器，以看板（Kanban）介面管理多個 Claude Code 任務，透過 tmux 在互動模式下執行，避免在多個終端機間切換，v0.0.1 已支援 Claude Code。"
+    },
+    {
+      "title": "Same /goal Feature, Two Agent Personalities",
+      "url": "https://dev.to/skyguan92/same-goal-feature-two-agent-personalities-5315",
+      "source": "dev.to / #claudecode",
+      "time": "05/17 20:59",
+      "sentiment": "",
+      "body": "Claude Code 在 5 月 12 日 v2.1.139 版本中正式加入 `/goal` 功能（與 Codex 同類功能並列），文章比較兩者在相同指令下的 Agent 行為差異，對研究 Agent 個性設計有參考價值。"
+    },
+    {
+      "title": "I built a free desktop widget to monitor your Claude Code session usage in real time (Windows + macOS)",
+      "url": "https://www.reddit.com/r/ClaudeAI/comments/1tgjkxt/i_built_a_free_desktop_widget_to_monitor_your/",
+      "source": "Reddit / r/ClaudeAI",
+      "time": "05/18 03:21",
+      "sentiment": "",
+      "body": "開發者打造一款浮動桌面小工具，讀取 Anthropic 速率限制 API 標頭，即時顯示 5 小時工作階段使用量（含色彩進度條）、每週配額、Token 輸入輸出統計，每 5 秒更新，支援 Windows 與 macOS。"
+    }
+  ],
+  "discussions": [
+    {
+      "title": "Reverse engineering Android malware from popular Chinese projectors",
+      "url": "https://zanestjohn.com/blog/reing-with-claude-code",
+      "source": "Hacker News",
+      "time": "05/18 00:36",
+      "sentiment": "😊 正面",
+      "body": "作者用 Claude Code 逆向工程一台 35 美元 AliExpress 投影機內建的 Android 惡意軟體，投影機連上 Wi-Fi 後即自動向未知域名回傳資料，示範 Claude Code 在資安研究場景中的實際應用潛力。"
+    },
+    {
+      "title": "I paid €200/month to become Claude Code's parole officer",
+      "url": "https://www.reddit.com/r/ClaudeAI/comments/1tgmnwo/i_paid_200month_to_become_claude_codes_parole/",
+      "source": "Reddit / r/ClaudeAI",
+      "time": "05/18 05:28",
+      "sentiment": "🤔 褒貶不一",
+      "body": "作者花費 €200/月並累積大量實戰經驗後，給出褒貶並陳的評價：Claude Code 在 UI/UX 探索與快速原型上表現出色有「品味」，但在長期大型專案中行為難以預測，有如需要持續監管的工具。"
+    },
+    {
+      "title": "The failure mode I keep hitting in long Claude Code sessions — anyone else?",
+      "url": "https://www.reddit.com/r/ClaudeAI/comments/1tglril/the_failure_mode_i_keep_hitting_in_long_claude/",
+      "source": "Reddit / r/ClaudeAI",
+      "time": "05/18 04:54",
+      "sentiment": "😤 負面",
+      "body": "作者累積 100+ 小時後指出核心痛點：Claude Code 不是「忘記程式碼」，而是「忘記設計決策的理由」——執行 `/compact` 後，模型會提出看似正確但違背先前決策的重構建議，對複雜系統開發是隱性風險。"
+    },
+    {
+      "title": "Make Claude Code disagree with you: a 14-rule counterpart toolkit (install in 1 command)",
+      "url": "https://dev.to/michelfaure/make-claude-code-disagree-with-you-a-14-rule-counterpart-toolkit-install-en-1-commande-11pe",
+      "source": "dev.to / #claudecode",
+      "time": "05/18 02:18",
+      "sentiment": "😊 正面",
+      "body": "作者在 32 天 solo 開發 ERP（118,808 行 TypeScript）後，總結出讓 Claude Code 主動反駁使用者的 14 條規則工具包，旨在避免 AI 盲目迎合，提升程式碼決策品質。"
+    },
+    {
+      "title": "I Installed a Knowledge Graph on Claude Code. 14 Days Later, the Audit Killed My Enthusiasm.",
+      "url": "https://dev.to/rentierdigital/i-installed-a-knowledge-graph-on-claude-code-14-days-later-the-audit-killed-my-enthusiasm-1p1n",
+      "source": "dev.to / #claudecode",
+      "time": "05/18 05:41",
+      "sentiment": "😤 負面",
+      "body": "作者在兩個生產專案上試用 graphify 知識圖譜外掛，兩週後審計結果令人失望——期望中的 Token 節省與程式碼品質提升均未達預期，值得計畫採用類似方案的開發者參考。"
+    },
+    {
+      "title": "I Gave My Strategist Agent WebSearch. 5 Topics Took 20 Minutes. Splitting It Into 3 Roles Made It 3.",
+      "url": "https://dev.to/kenimo49/i-gave-my-strategist-agent-websearch-5-topics-took-20-minutes-splitting-it-into-3-roles-made-it-3-27na",
+      "source": "dev.to / #claudecode",
+      "time": "05/18 05:00",
+      "sentiment": "😊 正面",
+      "body": "作者將單一「全能 Agent」拆分為三個專責角色後，相同任務時間從 20 分鐘降至 3 分鐘，具體驗證了 Agent 角色分工在效能上的顯著優勢。"
+    },
+    {
+      "title": "What multi-operator Claude Code looks like once you build the plumbing",
+      "url": "https://www.reddit.com/r/ClaudeAI/comments/1tggjco/what_multioperator_claude_code_looks_like_once/",
+      "source": "Reddit / r/ClaudeAI",
+      "time": "05/18 00:42",
+      "sentiment": "😊 正面",
+      "body": "作者展示以 Hub + MCP 客戶端 + CLI + Docker 無頭工作者 + 桌面監控器組成的多操作員架構，支援多人同步觀察同一 Claude Code 工作階段，並可跨 repo 路由子任務，Agents 可自行召喚更多 Agents。"
+    },
+    {
+      "title": "Made claude code warn you, time before it hits usage to transfer the pending work, all dynamically",
+      "url": "https://www.reddit.com/r/ClaudeAI/comments/1tgel55/made_claude_code_warn_you_time_before_it_hits/",
+      "source": "Reddit / r/ClaudeAI",
+      "time": "05/17 22:51",
+      "sentiment": "😊 正面",
+      "body": "作者打造 agent-baton，利用 Anthropic 使用量 API 與 Claude Code 的 hook 機制，在觸及速率上限前主動發出警告並轉移進行中的工作，解決 Claude Code 靜默中斷的長期痛點。"
+    },
+    {
+      "title": "I built a Claude Code plugin so Claude remembers what I shipped",
+      "url": "https://www.reddit.com/r/ClaudeAI/comments/1tg8yg6/i_built_a_claude_code_plugin_so_claude_remembers/",
+      "source": "Reddit / r/ClaudeAI",
+      "time": "05/17 18:11",
+      "sentiment": "😊 正面",
+      "body": "作者開發 LockedIn 外掛（1 個路由技能 + 6 個子技能），可在工作階段中持續記錄開發者的工作脈絡，使下次對話的 Claude 能直接繼承上次進度，無需重新說明背景。"
+    },
+    {
+      "title": "Codex Pulling Ahead of Claude Code? Read the 2026 Shift",
+      "url": "https://dev.to/max_quimby/codex-pulling-ahead-of-claude-code-read-the-2026-shift-7m9",
+      "source": "dev.to / #claudecode",
+      "time": "05/17 19:53",
+      "sentiment": "🤔 褒貶不一",
+      "body": "同一週內有三位獨立創作者同步發表「Codex 正在超越 Claude Code」的觀點，文章整理此趨勢背後的脈絡，但內容仍以個人主觀評測為主，結論尚待更多客觀數據支撐。"
+    },
+    {
+      "title": "5 Tips to Cut Claude Code Token Usage by 30%",
+      "url": "https://dev.to/llm_link_top/5-tips-to-cut-claude-code-token-usage-by-30-1o15",
+      "source": "dev.to / #claudecode",
+      "time": "05/17 18:21",
+      "sentiment": "😊 正面",
+      "body": "作者分享數月每日使用 Claude Code 後歸納出的 5 項習慣，聲稱可降低約 30% Token 消耗，對受成本壓力困擾的開發者具有實用參考價值。"
+    },
+    {
+      "title": "I use Claude Code and Codex together, and the combination does something neither can do alone",
+      "url": "https://news.google.com/rss/articles/CBMitAFBVV95cUxNMDR5YVhCSjVaanVMc0RRaU0xLTdCMy1WY0ktbUNZSG5kODRMNzlQc3R4dk9LNGlyZ0tmSVdTWGo1d3otRXk4ZXluXy15WkNVeHM2dWVOR1hicTcwQllwcW52S21yTU52LTFvWXBxSF",
+      "source": "Google News / XDA",
+      "time": "05/17 14:00",
+      "sentiment": "😊 正面",
+      "body": "XDA 報導有開發者同時搭配使用 Claude Code 與 Codex，發現兩者互補可達成單一工具無法實現的工作流程，此類「混搭 AI 工具」策略正在社群中興起。"
+    },
+    {
+      "title": "Tokenomics: Is it cost effective to refresh Claude's cache, or let it expire?",
+      "url": "https://skids.dev/blog/anthropic-cache-tokenomics/",
+      "source": "Hacker News",
+      "time": "05/17 21:52",
+      "sentiment": "😐 中性",
+      "body": "作者深入分析 Claude 5 分鐘 Prompt Cache 的最佳刷新策略，推導出「62.5 分鐘規則」，認為在特定頻率下主動刷新比讓 Cache 過期更划算，對高頻 API 使用者有實際參考意義。"
+    },
+    {
+      "title": "I Built 69 AI Products in 30 Days Using Claude Code",
+      "url": "https://dev.to/gaiaratio/i-built-69-ai-products-in-30-days-using-claude-code-heres-the-code-cost-and-confession-4ed8",
+      "source": "dev.to / #claudeai",
+      "time": "05/17 13:59",
+      "sentiment": "🤔 褒貶不一",
+      "body": "作者以「30 天建 69 個 AI 產品」的規模實驗 Claude Code，並公開程式碼、成本明細與坦白告白，是一則兼具數字吸引力與實戰反思的開發者心得，但單日 2+ 產品的節奏不免讓人質疑品質深度。"
+    },
+    {
+      "title": "Claude's real superpower isn't code — it's what happens when you add these MCP servers",
+      "url": "https://news.google.com/rss/articles/CBMigwFBVV95cUxPZUw0Z1dPeW5xY2hGNTFBUE1jS0FqUGhjb0FwNDZycFdvTXRYSVFCREhnZXU2V3dTTUozSDN4V19iRVhob19lUVVfR3ZFeVA1YkZ1dm5nbkxHMENkdE82VWJIbzg2WlkybUl0eFV4R2t3Yl9ZY29GZWNuckFJcVB2UWNZWQ",
+      "source": "Google News / MakeUseOf",
+      "time": "05/17 12:00",
+      "sentiment": "😊 正面",
+      "body": "MakeUseOf 點出 Claude 的真正優勢在於透過 MCP 伺服器擴展能力，而非純粹的程式碼生成，文章介紹幾組推薦的 MCP Server 組合，有助於初學者了解 Claude 生態系的進階玩法。"
+    }
+  ],
+  "billing": [
+    {
+      "title": "Uber Burns Its 2026 AI Budget In Four Months On Claude Code",
+      "url": "https://news.google.com/rss/articles/CBMiswFBVV95cUxQTXNxUDVCWE5JY3Z0Yk1hVHBianJiWUJhYlppWmZwOEFzZFI4VE8wOV9VRVVlRy1sdnB6SzRSSlhGeWstWVg4Z1pmTUhQQ3FwSU1sUkI4OFE0aVZfSFJQV0ZYVjBzRkxJbE5ScVN5Rj",
+      "source": "Google News / Forbes",
+      "time": "05/17 19:18",
+      "sentiment": "",
+      "body": "Uber 工程師大規模使用 Claude Code 導致 2026 年全年 AI 預算在四個月內耗盡，凸顯企業在缺乏細粒度使用量控管工具的情況下，AI 成本極易失控；此事件可能加速企業對 AI 採購政策的重新審視。"
+    },
+    {
+      "title": "engram v3.4.0 — keep Claude Code running under the new limits",
+      "url": "https://www.reddit.com/r/ClaudeAI/comments/1tglzq1/engram_v340_keep_claude_code_running_under_the/",
+      "source": "Reddit / r/ClaudeAI",
+      "time": "05/18 05:02",
+      "sentiment": "",
+      "body": "本次 engram 更新的背景是 Claude Code 速率限制突然收緊，以及 Pro 訂閱方案可能移除 Claude Code 存取權的傳言，新版本的 `/engram:cost` 指令讓使用者可即時掌握 Token 消耗，降低超量計費風險。"
+    },
+    {
+      "title": "Plan with Opus 4.7 -> Execute with Sonnet 4.6?",
+      "url": "https://www.reddit.com/r/ClaudeAI/comments/1tglcta/plan_with_opus_47_execute_with_sonnet_46/",
+      "source": "Reddit / r/ClaudeAI",
+      "time": "05/18 04:37",
+      "sentiment": "",
+      "body": "社群熱議「Opus 規劃 + Sonnet 執行」的成本優化策略，核心邏輯是以高能力模型處理需要深度推理的規劃階段，再切換至價格較低的 Sonnet 執行具體任務，以降低整體 Token 花費。"
+    }
+  ],
+  "focus": [
+    {
+      "tag": "[風險警示]",
+      "text": "Claude Code 被揭露存在 RCE 安全漏洞，攻擊者可透過惡意 deeplink 執行任意指令，使用者應立即關注官方修補進度。"
+    },
+    {
+      "tag": "[重大事件]",
+      "text": "Microsoft 將工程師從 Claude Code 遷移至 GitHub Copilot CLI，是 AI 編碼工具市場格局變化的重要訊號。"
+    },
+    {
+      "tag": "[重大事件]",
+      "text": "Forbes 報導 Uber 在四個月內燒光 2026 年全年 AI 預算，主因正是大規模使用 Claude Code，企業成本控制問題浮上檯面。"
+    },
+    {
+      "tag": "[持續追蹤]",
+      "text": "Anthropic 發表 Managed Agents 與主動式工作流程（Proactive Workflows）架構，標誌 Claude Code 向企業 Agent 平台演進。"
+    },
+    {
+      "tag": "[社群趨勢]",
+      "text": "社群湧現大量圍繞速率限制、Token 計費的自製工具與討論，反映使用者對配額壓力的普遍不滿。"
+    }
+  ],
+  "sourceStatus": [
+    {
+      "name": "Hacker News",
+      "ok": true,
+      "count": 18
+    },
+    {
+      "name": "Google News",
+      "ok": true,
+      "count": 26
+    },
+    {
+      "name": "Anthropic Blog",
+      "ok": true,
+      "count": 0
+    },
+    {
+      "name": "GitHub",
+      "ok": true,
+      "count": 0
+    },
+    {
+      "name": "dev.to",
+      "ok": true,
+      "count": 17
+    },
+    {
+      "name": "Reddit",
+      "ok": true,
+      "count": 20
+    }
+  ],
+  "preview": "Microsoft moves engineers from Claude Code to GitHub Copilot CLI"
+}
