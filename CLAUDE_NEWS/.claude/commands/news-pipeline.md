@@ -1,5 +1,5 @@
 ---
-description: 完整每日 pipeline：抓新聞 → wiki ingest → 推送 wiki → 建置 web reader → 推送。取代 run_news.bat。
+description: 完整每日 pipeline：抓新聞 → wiki ingest → 推送 wiki → 建置 web reader → 推送。
 argument-hint: [YYYY-MM-DD]
 ---
 
@@ -35,7 +35,7 @@ PYTHON -m news_aggregator.main [--date TARGET_DATE]
 
 ## Step 2：Wiki Ingest
 
-執行與 `/wiki-ingest` 相同的完整流程（不要呼叫子 skill，直接在本 session 執行所有步驟）：
+執行完整 wiki ingest 流程（直接在本 session 執行，不呼叫 `claude -p`）：
 
 1. 讀取 `news/TARGET_DATE.md`
 2. 讀取 `wiki/index.md` + `wiki/log.md`，確認未重複 ingest
@@ -46,7 +46,9 @@ PYTHON -m news_aggregator.main [--date TARGET_DATE]
 7. Append 至 `wiki/log.md`
 8. 更新 `wiki/index.md`
 9. 執行呈現品質審查（見 CLAUDE.md）
-10. 輸出 Step 9 核對清單（格式同 wiki-ingest.md）
+10. 輸出 Step 9 核對清單
+
+- Step 2 失敗時記錄但繼續 Step 4（web build 不依賴 wiki）
 
 ---
 
@@ -60,7 +62,7 @@ git -C REPO_ROOT commit -m "wiki: auto-ingest TARGET_DATE"
 git -C REPO_ROOT push
 ```
 
-- 若 wiki 無任何變更（git diff 為空），跳過 commit，繼續 Step 4
+- 若 wiki 無任何變更，跳過 commit，繼續 Step 4
 
 ---
 
@@ -105,6 +107,6 @@ git -C REPO_ROOT push
 
 - 所有 Bash 指令使用絕對路徑，不依賴 PATH 環境變數
 - Step 1 失敗時停止整個 pipeline
-- Step 2 失敗時記錄但繼續 Step 4（web build 不依賴 wiki）
+- Step 2（wiki ingest）失敗時記錄並繼續 Step 4
 - Step 4 失敗時跳過 Step 5
 - 繁體中文輸出

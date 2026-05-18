@@ -1,0 +1,964 @@
+<!doctype html>
+<html lang="zh-TW" data-theme="light">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>關於 — CLAUDE NEWS · LLM-WIKI</title>
+<link rel="stylesheet" href="../../colors_and_type.css">
+<link rel="stylesheet" href="web_reader.css">
+<style>
+  /* ============================================================
+     About v2 — flow leads, split scope/limits, provenance band
+     ============================================================ */
+
+  body { font-family: var(--font-cjk); }
+
+  .about {
+    max-width: 1180px;
+    margin: 0 auto;
+    padding: 56px 32px 0;
+  }
+
+  /* ============================================================
+     #1 + #2  HERO — kicker over title, full width, no right desc.
+     Category strip demoted to single mono line (jump-links).
+     #7 — tight 32px gap to today-strip (paired)
+     ============================================================ */
+  .hero2 {
+    padding: 12px 0 40px;
+  }
+  .hero2__kicker {
+    font-family: var(--font-mono);
+    font-size: 10px;
+    letter-spacing: 0.32em;
+    text-transform: uppercase;
+    color: var(--ink-3);
+    margin-bottom: 28px;
+    display: flex;
+    align-items: center;
+    gap: 14px;
+  }
+  .hero2__kicker::after {
+    content: "";
+    flex: 1;
+    height: 1px;
+    background: var(--border-1);
+  }
+  .hero2__title {
+    font-family: var(--font-display);
+    font-size: clamp(56px, 8vw, 96px);
+    font-weight: 300;
+    letter-spacing: -0.03em;
+    color: var(--ink-1);
+    margin: 0 0 24px;
+    line-height: 0.92;
+    text-wrap: balance;
+    max-width: 14ch;
+  }
+  .hero2__title em {
+    font-style: italic;
+    color: var(--ochre-9);
+    font-weight: 300;
+  }
+  .hero2__intro {
+    font-family: var(--font-cjk);
+    font-size: 17px;
+    line-height: 1.75;
+    color: var(--ink-2);
+    max-width: 56ch;
+    margin: 0;
+  }
+
+  /* category strip — mono jump-line */
+  .catstrip {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    flex-wrap: wrap;
+    padding: 14px 0;
+    border-top: 1px solid var(--border-1);
+    border-bottom: 1px solid var(--border-1);
+    margin-bottom: 16px;
+    font-family: var(--font-mono);
+    font-size: 11px;
+    letter-spacing: 0.12em;
+  }
+  .catstrip__label {
+    text-transform: uppercase;
+    color: var(--ink-3);
+    letter-spacing: 0.32em;
+    font-size: 9px;
+  }
+  .catstrip a {
+    color: var(--ink-1);
+    text-decoration: none;
+    border-bottom: 1px dotted transparent;
+    padding-bottom: 1px;
+    transition: border-color 150ms ease, color 150ms ease;
+  }
+  .catstrip a:hover { color: var(--ochre-9); border-bottom-color: var(--ochre-9); }
+  .catstrip__sep {
+    color: var(--ink-4, #c9c1b3);
+  }
+  .catstrip__warn {
+    margin-left: auto;
+    font-family: var(--font-mono);
+    font-size: 10px;
+    color: var(--warn);
+    letter-spacing: 0.04em;
+  }
+
+  /* ============================================================
+     INTRO — four pillars (canonical — supersedes catstrip)
+     ============================================================ */
+  .intro4 {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 0;
+    margin: 8px 0 16px;
+    padding: 28px 0;
+    border-top: 1px solid var(--ink-1);
+    border-bottom: 1px solid var(--ink-1);
+  }
+  .intro4__col {
+    padding: 0 24px;
+    border-right: 1px solid var(--border-1);
+    text-decoration: none;
+    color: inherit;
+    transition: background 200ms ease;
+    border-bottom: 0;
+  }
+  .intro4__col:first-child { padding-left: 0; }
+  .intro4__col:last-child  { padding-right: 0; border-right: 0; }
+  .intro4__col:hover { background: var(--ochre-wash); border-bottom: 0; }
+  .intro4__col:hover .intro4__num { color: var(--ochre-9); }
+  .intro4__num {
+    font-family: var(--font-display);
+    font-style: italic;
+    font-size: 42px;
+    font-weight: 400;
+    color: var(--ink-3);
+    line-height: 1;
+    margin-bottom: 18px;
+    letter-spacing: -0.01em;
+    transition: color 200ms ease;
+  }
+  .intro4__title {
+    font-family: var(--font-cjk);
+    font-size: 22px;
+    font-weight: 500;
+    color: var(--ink-1);
+    margin-bottom: 12px;
+    letter-spacing: 0.02em;
+  }
+  .intro4__desc {
+    font-family: var(--font-cjk);
+    font-size: 14px;
+    line-height: 1.75;
+    color: var(--ink-2);
+    font-weight: 400;
+  }
+  .intro4__sub {
+    margin-top: 14px;
+    font-family: var(--font-mono);
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--ink-3);
+  }
+  .intro4-foot {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    padding-bottom: 8px;
+    margin-bottom: 56px;
+    font-family: var(--font-mono);
+    font-size: 12px;
+    font-weight: 500;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--ink-3);
+  }
+  .intro4-foot__rule { flex: 1; height: 1px; background: var(--border-1); }
+  .intro4-foot__warn { color: var(--warn); letter-spacing: 0.14em; }
+  @media (max-width: 880px) {
+    .intro4 { grid-template-columns: repeat(2, 1fr); row-gap: 24px; }
+    .intro4__col:nth-child(2) { border-right: 0; }
+    .intro4__col { padding-left: 16px !important; padding-right: 16px !important; }
+  }
+
+  /* ============================================================
+     #5  TODAY'S NUMBERS — living mono ribbon
+     ============================================================ */
+  .today-strip {
+    display: grid;
+    grid-template-columns: auto repeat(3, 1fr) auto;
+    align-items: center;
+    gap: 32px;
+    padding: 18px 24px;
+    background: var(--bg-1);
+    color: var(--ink-1);
+    border: 1px solid var(--border-2);
+    border-radius: var(--radius-3);
+    margin-bottom: 96px;
+  }
+  .today-strip__label {
+    font-family: var(--font-mono);
+    color: var(--ochre-7);
+    font-size: 9px;
+    letter-spacing: 0.32em;
+    text-transform: uppercase;
+    line-height: 1.3;
+  }
+  .today-strip__label .date {
+    display: block;
+    color: var(--ink-2);
+    font-size: 10px;
+    margin-top: 4px;
+    letter-spacing: 0.16em;
+  }
+  .today-strip__stat {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    border-left: 1px solid var(--border-1);
+    padding-left: 24px;
+  }
+  .today-strip__stat-num {
+    font-family: var(--font-display);
+    color: var(--ink-1);
+    font-size: 28px;
+    font-weight: 400;
+    line-height: 1;
+    letter-spacing: -0.01em;
+  }
+  .today-strip__stat-num em {
+    font-style: italic;
+    color: var(--ochre-9);
+    font-weight: 300;
+  }
+  .today-strip__stat-label {
+    font-family: var(--font-mono);
+    color: var(--ink-4, #c9c1b3);
+    font-size: 9px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+  }
+  .today-strip__pulse {
+    width: 8px; height: 8px;
+    border-radius: 50%;
+    background: var(--success, #5a8c4a);
+    box-shadow: 0 0 0 0 var(--success, #5a8c4a);
+    animation: pulse 2.4s ease-out infinite;
+    align-self: center;
+    margin-left: 8px;
+  }
+  @keyframes pulse {
+    0% { box-shadow: 0 0 0 0 rgba(90,140,74,0.5); }
+    70% { box-shadow: 0 0 0 10px rgba(90,140,74,0); }
+    100% { box-shadow: 0 0 0 0 rgba(90,140,74,0); }
+  }
+
+  /* ============================================================
+     #3  FLOW CHART now leads — section header, generous spacing
+     ============================================================ */
+  .section-h {
+    display: flex;
+    align-items: baseline;
+    gap: 18px;
+    margin-bottom: 36px;
+  }
+  .section-h__num {
+    font-family: var(--font-mono);
+    font-size: 12px;
+    font-weight: 500;
+    letter-spacing: 0.32em;
+    color: var(--ink-3);
+  }
+  .section-h__title {
+    font-family: var(--font-display);
+    font-size: 32px;
+    font-weight: 400;
+    color: var(--ink-1);
+    letter-spacing: -0.01em;
+  }
+  .section-h__title em { font-style: italic; color: var(--ochre-9); font-weight: 400; }
+  .section-h__rule {
+    flex: 1;
+    height: 1px;
+    background: var(--border-1);
+  }
+  .section-h__sub {
+    font-family: var(--font-mono);
+    font-size: 12px;
+    font-weight: 500;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--ink-3);
+  }
+
+  .how2 { margin-bottom: 96px; } /* #7 generous */
+
+  .flow {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 0;
+    position: relative;
+    padding: 12px 0 32px;
+  }
+  .flow::before {
+    content: "";
+    position: absolute;
+    top: 40px;
+    left: 7%;
+    right: 7%;
+    height: 1px;
+    background: repeating-linear-gradient(to right, var(--ink-4, #c9c1b3) 0, var(--ink-4, #c9c1b3) 4px, transparent 4px, transparent 8px);
+    z-index: 0;
+  }
+  .flow__step {
+    position: relative;
+    z-index: 1;
+    text-align: center;
+    padding: 0 8px;
+  }
+  .flow__icon {
+    width: 56px; height: 56px;
+    display: inline-flex; align-items: center; justify-content: center;
+    background: var(--bg-0);
+    border: 1px solid var(--border-2);
+    border-radius: 50%;
+    margin-bottom: 14px;
+    color: var(--ink-1);
+    transition: border-color 200ms ease, background 200ms ease, color 200ms ease;
+  }
+  .flow__step:hover .flow__icon {
+    border-color: var(--ochre-7, var(--ochre-9));
+    background: var(--ochre-wash, var(--ochre-tint));
+    color: var(--ochre-9);
+  }
+  .flow__icon svg { width: 24px; height: 24px; stroke: currentColor; fill: none; stroke-width: 1.4; stroke-linecap: round; stroke-linejoin: round; }
+  .flow__num {
+    font-family: var(--font-mono);
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 0.32em;
+    color: var(--ink-3);
+    margin-bottom: 8px;
+  }
+  .flow__label {
+    font-family: var(--font-cjk);
+    font-size: 16px;
+    font-weight: 500;
+    color: var(--ink-1);
+    line-height: 1.35;
+    margin-bottom: 6px;
+  }
+  .flow__sub {
+    font-family: var(--font-mono);
+    font-size: 11px;
+    color: var(--ink-3);
+    line-height: 1.55;
+    letter-spacing: 0.04em;
+  }
+  .flow__step::after {
+    content: "›";
+    position: absolute;
+    top: 30px;
+    right: -7px;
+    font-family: var(--font-display);
+    font-size: 20px;
+    color: var(--ink-3);
+    background: var(--bg-0);
+    width: 14px; text-align: center;
+    line-height: 1;
+  }
+  .flow__step:last-child::after { display: none; }
+
+  .flow__step--has-tip { cursor: help; }
+  .flow__tooltip {
+    position: absolute;
+    top: calc(100% + 8px);
+    left: 50%;
+    transform: translateX(-50%);
+    background: var(--bg-1);
+    border: 1px solid var(--border-2);
+    border-radius: var(--radius-3);
+    padding: 10px 14px;
+    box-shadow: var(--shadow-2);
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 200ms ease;
+    z-index: 5;
+    width: 180px;
+    text-align: left;
+  }
+  .flow__step--has-tip:hover .flow__tooltip { opacity: 1; }
+  .flow__tip-item {
+    font-family: var(--font-mono);
+    font-size: 10px;
+    color: var(--ink-2);
+    padding: 2px 0;
+    letter-spacing: 0.04em;
+  }
+  .flow__tip-item::before { content: "· "; color: var(--ink-4, #c9c1b3); }
+
+  /* ============================================================
+     #4  SCOPE / LIMITS — visceral split (ink-dark vs paper)
+     ============================================================ */
+  .scope {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    margin: 0 -32px 64px;
+    background: var(--bg-1);
+    border-top: 1px solid var(--border-2);
+    border-bottom: 1px solid var(--border-2);
+  }
+  .scope__half {
+    padding: 48px 56px;
+  }
+  .scope__half--do {
+    background: var(--ochre-tint, #f3e9d4);
+    color: var(--ink-1);
+    border-right: 1px solid var(--ochre-7);
+  }
+  .scope__half--dont {
+    background: var(--bg-1);
+    color: var(--ink-1);
+  }
+  .scope__eyebrow {
+    font-family: var(--font-mono);
+    font-size: 12px;
+    font-weight: 500;
+    letter-spacing: 0.32em;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+    opacity: 0.7;
+  }
+  .scope__half--do .scope__eyebrow { color: var(--ochre-9); opacity: 1; }
+  .scope__half--dont .scope__eyebrow { color: var(--ink-3); }
+  .scope__h {
+    font-family: var(--font-display);
+    font-size: 36px;
+    font-weight: 400;
+    line-height: 1.05;
+    margin-bottom: 32px;
+    letter-spacing: -0.015em;
+  }
+  .scope__half--do .scope__h em { font-style: italic; color: var(--ochre-9); font-weight: 300; }
+  .scope__half--dont .scope__h em { font-style: italic; color: var(--ochre-9); font-weight: 300; }
+  .scope__items { display: flex; flex-direction: column; gap: 18px; }
+  .scope__item {
+    display: grid;
+    grid-template-columns: 48px 1fr;
+    gap: 14px;
+    padding-bottom: 18px;
+    border-bottom: 1px solid rgba(120, 95, 50, 0.18);
+  }
+  .scope__half--dont .scope__item { border-bottom-color: var(--border-1); }
+  .scope__item:last-child { border-bottom: 0; padding-bottom: 0; }
+  .scope__tag {
+    font-family: var(--font-mono);
+    font-size: 13px;
+    font-weight: 500;
+    letter-spacing: 0.12em;
+    padding-top: 2px;
+  }
+  .scope__half--do .scope__tag { color: var(--ochre-9); }
+  .scope__half--dont .scope__tag { color: var(--ochre-9); }
+  .scope__title {
+    font-family: var(--font-cjk);
+    font-size: 17px;
+    font-weight: 500;
+    line-height: 1.45;
+    margin-bottom: 8px;
+  }
+  .scope__desc {
+    font-family: var(--font-cjk);
+    font-size: 14px;
+    line-height: 1.75;
+    opacity: 0.78;
+    font-weight: 400;
+  }
+
+  /* ============================================================
+     AUDIENCE v2 — editorial split, no cards, asymmetric
+     ============================================================ */
+  .aud {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0;
+    margin-bottom: 32px;
+    border-top: 1px solid var(--ink-1);
+    border-bottom: 1px solid var(--border-1);
+  }
+  .aud__col {
+    padding: 40px 36px 36px;
+    position: relative;
+  }
+  .aud__col--for { background: var(--bg-0); border-right: 1px solid var(--border-2); }
+  .aud__col--not { background: var(--bg-1); }
+  .aud__bignum {
+    font-family: var(--font-display);
+    font-size: 88px;
+    font-style: italic;
+    font-weight: 300;
+    line-height: 0.85;
+    letter-spacing: -0.04em;
+    margin: 0 0 8px;
+  }
+  .aud__col--for .aud__bignum { color: var(--ochre-9); }
+  .aud__col--not .aud__bignum { color: var(--ink-3); text-decoration: line-through; text-decoration-thickness: 1px; text-decoration-color: var(--ink-4, #c9c1b3); }
+  .aud__bignum-sub {
+    font-family: var(--font-display);
+    font-style: italic;
+    font-size: 16px;
+    color: var(--ink-3);
+    margin-bottom: 8px;
+    font-weight: 400;
+  }
+  .aud__h {
+    font-family: var(--font-cjk);
+    font-size: 19px;
+    font-weight: 500;
+    color: var(--ink-1);
+    margin: 0 0 28px;
+    padding-bottom: 16px;
+    border-bottom: 1px solid var(--border-1);
+  }
+  .aud__col--for .aud__h::after { content: " · 適合"; color: var(--ochre-9); font-style: italic; font-family: var(--font-display); font-weight: 500; font-size: 17px; margin-left: 4px; }
+  .aud__col--not .aud__h::after { content: " · 不適合"; color: var(--ink-3); font-style: italic; font-family: var(--font-display); font-weight: 500; font-size: 17px; margin-left: 4px; }
+  .aud__list { list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 18px; counter-reset: aud; }
+  .aud__list li {
+    font-family: var(--font-cjk);
+    font-size: 15px;
+    line-height: 1.75;
+    color: var(--ink-2);
+    padding-left: 42px;
+    position: relative;
+    counter-increment: aud;
+    font-weight: 400;
+  }
+  .aud__list li::before {
+    content: counter(aud, decimal-leading-zero);
+    position: absolute;
+    left: 0;
+    top: 3px;
+    font-family: var(--font-mono);
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 0.18em;
+    color: var(--ink-3);
+    width: 32px;
+    border-bottom: 1px solid var(--border-2);
+    padding-bottom: 3px;
+  }
+  .aud__col--for .aud__list li::before { color: var(--ochre-9); border-bottom-color: var(--ochre-7); }
+  .aud__list li b {
+    color: var(--ink-1);
+    font-weight: 500;
+  }
+
+  /* QUOTE — pulled out of bg, simpler */
+  .quote2 {
+    text-align: center;
+    padding: 64px 24px;
+    border-top: 1px solid var(--ink-1);
+    border-bottom: 1px solid var(--ink-1);
+    margin: 0 -32px 0;
+    background: var(--ochre-wash);
+  }
+  .quote2__text {
+    font-family: var(--font-display);
+    font-style: italic;
+    font-size: clamp(22px, 3vw, 32px);
+    font-weight: 400;
+    color: var(--ink-1);
+    line-height: 1.4;
+    margin-bottom: 14px;
+    letter-spacing: -0.015em;
+    max-width: 36ch;
+    margin-left: auto; margin-right: auto;
+  }
+  .quote2__sub {
+    font-family: var(--font-mono);
+    font-size: 12px;
+    color: var(--ink-3);
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    font-weight: 500;
+  }
+
+  /* ============================================================
+     #6  PROVENANCE BAND — close the loop
+     ============================================================ */
+  .prov {
+    background: var(--ink-1);
+    color: var(--bg-0);
+    margin: 0 -32px;
+    padding: 56px 56px 48px;
+  }
+  .prov__inner {
+    max-width: 1080px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1.4fr 1fr 1fr;
+    gap: 56px;
+    align-items: start;
+  }
+  .prov__h {
+    font-family: var(--font-mono);
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 0.32em;
+    text-transform: uppercase;
+    color: var(--ochre-7);
+    margin-bottom: 16px;
+  }
+  .prov__last {
+    font-family: var(--font-display);
+    font-size: 26px;
+    font-weight: 400;
+    letter-spacing: -0.005em;
+    line-height: 1.3;
+    color: var(--bg-0);
+    margin-bottom: 10px;
+  }
+  .prov__last em { font-style: italic; color: var(--ochre-7); }
+  .prov__lastsub {
+    font-family: var(--font-mono);
+    font-size: 12px;
+    color: var(--ink-4, #c9c1b3);
+    letter-spacing: 0.04em;
+    line-height: 1.75;
+  }
+  .prov__sources {
+    font-family: var(--font-mono);
+    font-size: 13px;
+    color: var(--bg-2, #e9e2d4);
+    line-height: 2;
+  }
+  .prov__sources span { color: var(--ink-4, #c9c1b3); }
+  .prov__repo a {
+    font-family: var(--font-mono);
+    font-size: 13px;
+    color: var(--bg-0);
+    text-decoration: none;
+    border-bottom: 1px dotted var(--ochre-7);
+    padding-bottom: 2px;
+    font-weight: 500;
+  }
+  .prov__repo a:hover { color: var(--ochre-7); }
+  .prov__repo .meta {
+    margin-top: 14px;
+    color: var(--ink-4, #c9c1b3);
+    font-family: var(--font-mono);
+    font-size: 11px;
+    line-height: 1.7;
+    letter-spacing: 0.04em;
+  }
+
+  @media (max-width: 880px) {
+    .today-strip { grid-template-columns: 1fr 1fr; gap: 20px; padding: 18px; }
+    .today-strip__label { grid-column: span 2; }
+    .today-strip__pulse { display: none; }
+    .flow { grid-template-columns: repeat(2, 1fr); row-gap: 32px; }
+    .flow::before { display: none; }
+    .flow__step::after { display: none; }
+    .scope { grid-template-columns: 1fr; }
+    .scope__half { padding: 36px 28px; }
+    .aud { grid-template-columns: 1fr; }
+    .prov__inner { grid-template-columns: 1fr; gap: 32px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<header class="reader__nav">
+  <div class="reader__nav-inner">
+    <a class="reader__brand" href="index.html">
+      <svg width="28" height="28" viewBox="0 0 44 44" fill="none">
+        <rect x="2" y="2" width="40" height="40" rx="2" fill="var(--bg-1)" stroke="var(--ochre-7)"/>
+        <path d="M14 18 L14 26 L18 26" stroke="var(--ochre-9)" stroke-width="1.5" stroke-linecap="round" fill="none"/>
+        <circle cx="22" cy="22" r="2.5" fill="var(--ochre-9)"/>
+        <path d="M30 18 L30 26 L26 26" stroke="var(--ochre-9)" stroke-width="1.5" stroke-linecap="round" fill="none"/>
+      </svg>
+      <div>
+        <div class="reader__brand-name">CLAUDE NEWS</div>
+        <div class="reader__brand-sub">L L M · W I K I</div>
+      </div>
+    </a>
+    <nav class="reader__navlinks">
+      <a href="index.html">Today</a>
+      <a href="index.html">Archive</a>
+      <a href="index.html">Wiki</a>
+      <a href="about.html" class="is-active">About</a>
+    </nav>
+    <button class="reader__search">
+      <img src="https://unpkg.com/lucide-static@latest/icons/search.svg" />
+      <span>Search…</span>
+      <span class="kbd">⌘K</span>
+    </button>
+  </div>
+</header>
+
+<main>
+  <div class="about">
+
+    <!-- HERO #1 — full-width title, kicker above, intro paragraph -->
+    <section class="hero2">
+      <div class="hero2__kicker">about · 關於這個檔案室</div>
+      <h1 class="hero2__title">A quiet <em>wiki</em> of noisy news.</h1>
+      <p class="hero2__intro">每日聚焦 Claude Code 與 Anthropic 核心動態，從官方更新到社群實測，一站掌握技術情報。所有條目經 LLM 評分過濾、繁中摘要、再沉澱進 wiki，給需要穩定訊號而非即時噪音的工程師。</p>
+    </section>
+
+    <!-- INTRODUCTION — four pillars of what this site covers (canonical — was catstrip) -->
+    <section class="intro4" aria-label="what this is">
+      <a href="#flow" class="intro4__col">
+        <div class="intro4__num">i.</div>
+        <div class="intro4__title">官方核心</div>
+        <div class="intro4__desc">Anthropic 公告、GitHub Changelog、SDK 與 API 迭代。</div>
+        <div class="intro4__sub">Official · Source-of-Truth</div>
+      </a>
+      <a href="#flow" class="intro4__col">
+        <div class="intro4__num">ii.</div>
+        <div class="intro4__title">社群實測</div>
+        <div class="intro4__desc">Hacker News 與 Reddit 上的真實使用回饋、Bug 與變通。</div>
+        <div class="intro4__sub">Community · Field-Reports</div>
+      </a>
+      <a href="#flow" class="intro4__col">
+        <div class="intro4__num">iii.</div>
+        <div class="intro4__title">生態動態</div>
+        <div class="intro4__desc">融資、人事、競品與生態興起的周邊工具。</div>
+        <div class="intro4__sub">Ecosystem · Around-Anthropic</div>
+      </a>
+      <a href="#scope" class="intro4__col">
+        <div class="intro4__num">iv.</div>
+        <div class="intro4__title">企業合作</div>
+        <div class="intro4__desc">大型企業佈署、AWS / Google 合作、政策趨勢與動態。</div>
+        <div class="intro4__sub">Enterprise · Strategic-Moves</div>
+      </a>
+    </section>
+    <div class="intro4-foot">
+      <span>四個主軸 · four pillars</span>
+      <span class="intro4-foot__rule"></span>
+      <span class="intro4-foot__warn">✆ delay 26–30h</span>
+    </div>
+
+    <!-- #5  TODAY'S NUMBERS — living mono ribbon -->
+    <section class="today-strip" aria-label="today">
+      <div class="today-strip__label">latest<br><span class="date">2026 · 04 · 30</span></div>
+      <div class="today-strip__stat">
+        <div class="today-strip__stat-num">52</div>
+        <div class="today-strip__stat-label">articles</div>
+      </div>
+      <div class="today-strip__stat">
+        <div class="today-strip__stat-num">5<em>/5</em></div>
+        <div class="today-strip__stat-label">sources hit</div>
+      </div>
+      <div class="today-strip__stat">
+        <div class="today-strip__stat-num">≥<em>3</em></div>
+        <div class="today-strip__stat-label">score kept</div>
+      </div>
+      <div class="today-strip__pulse" title="live"></div>
+    </section>
+
+    <!-- #3  FLOW CHART now leads -->
+    <section class="how2" id="flow">
+      <header class="section-h">
+        <span class="section-h__num">01</span>
+        <h2 class="section-h__title">運作 <em>方式</em></h2>
+        <span class="section-h__rule"></span>
+        <span class="section-h__sub">how a day gets filed</span>
+      </header>
+
+      <div class="flow">
+        <div class="flow__step flow__step--has-tip">
+          <div class="flow__icon"><svg viewBox="0 0 24 24"><path d="M5 5 a10 10 0 0 1 14 0"/><path d="M8 8 a6 6 0 0 1 8 0"/><path d="M11 11 a3 3 0 0 1 2 0"/><circle cx="12" cy="14" r="1.4"/><path d="M12 15 L9 21"/><path d="M12 15 L15 21"/><path d="M9 21 L15 21"/></svg></div>
+          <div class="flow__num">01</div>
+          <div class="flow__label">多來源抓取</div>
+          <div class="flow__sub">6 sources / day</div>
+          <div class="flow__tooltip">
+            <div class="flow__tip-item">Anthropic Blog</div>
+            <div class="flow__tip-item">GitHub Releases</div>
+            <div class="flow__tip-item">Hacker News</div>
+            <div class="flow__tip-item">Reddit</div>
+            <div class="flow__tip-item">Google News</div>
+            <div class="flow__tip-item">dev.to</div>
+          </div>
+        </div>
+        <div class="flow__step">
+          <div class="flow__icon"><svg viewBox="0 0 24 24"><circle cx="9" cy="12" r="5"/><circle cx="15" cy="12" r="5"/></svg></div>
+          <div class="flow__num">02</div>
+          <div class="flow__label">去重過濾</div>
+          <div class="flow__sub">url + fuzzy title</div>
+        </div>
+        <div class="flow__step">
+          <div class="flow__icon"><svg viewBox="0 0 24 24"><path d="M12 3 L14 9.5 L20.5 9.5 L15.3 13.5 L17.3 20 L12 16 L6.7 20 L8.7 13.5 L3.5 9.5 L10 9.5 Z"/></svg></div>
+          <div class="flow__num">03</div>
+          <div class="flow__label">相關性評分</div>
+          <div class="flow__sub">1–5 · keep ≥3</div>
+        </div>
+        <div class="flow__step">
+          <div class="flow__icon"><svg viewBox="0 0 24 24"><path d="M5 3 L17 3 L17 21 L5 21 Z"/><path d="M8 8 L14 8"/><path d="M8 12 L14 12"/><path d="M8 16 L11 16"/><path d="M19 6 L21 8 L15 14 L13 14 L13 12 Z"/></svg></div>
+          <div class="flow__num">04</div>
+          <div class="flow__label">LLM 摘要</div>
+          <div class="flow__sub">tw markdown</div>
+        </div>
+        <div class="flow__step">
+          <div class="flow__icon"><svg viewBox="0 0 24 24"><path d="M4 4 L11 4 L12 6 L12 21 L11 19 L4 19 Z"/><path d="M20 4 L13 4 L12 6 L12 21 L13 19 L20 19 Z"/></svg></div>
+          <div class="flow__num">05</div>
+          <div class="flow__label">Wiki 沉澱</div>
+          <div class="flow__sub">entities / topics</div>
+        </div>
+        <div class="flow__step">
+          <div class="flow__icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M3 12 L21 12"/><path d="M12 3 C 8 7, 8 17, 12 21"/><path d="M12 3 C 16 7, 16 17, 12 21"/></svg></div>
+          <div class="flow__num">06</div>
+          <div class="flow__label">網站更新</div>
+          <div class="flow__sub">static rebuild</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- #4  SCOPE / LIMITS — visceral split -->
+    <section class="scope" id="scope">
+      <div class="scope__half scope__half--do">
+        <div class="scope__eyebrow">02 · scope</div>
+        <h2 class="scope__h">我們 <em>做</em></h2>
+        <div class="scope__items">
+          <div class="scope__item">
+            <span class="scope__tag">官方</span>
+            <div>
+              <div class="scope__title">技術與定價迭代</div>
+              <div class="scope__desc">精準追蹤 GitHub Changelog、SDK 演進與 API 定價結構變化。</div>
+            </div>
+          </div>
+          <div class="scope__item">
+            <span class="scope__tag">生態</span>
+            <div>
+              <div class="scope__title">合作與融資動態</div>
+              <div class="scope__desc">監測 Anthropic 融資動態、大型企業合作案（如 AWS / Google）與政策趨勢。</div>
+            </div>
+          </div>
+          <div class="scope__item">
+            <span class="scope__tag">社群</span>
+            <div>
+              <div class="scope__title">真實情緒與避坑指南</div>
+              <div class="scope__desc">匯集開發者對產品效能的真實回饋，透視核心 Bug 與替代方案。</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="scope__half scope__half--dont">
+        <div class="scope__eyebrow">03 · limits</div>
+        <h2 class="scope__h">我們 <em>不做</em></h2>
+        <div class="scope__items">
+          <div class="scope__item">
+            <span class="scope__tag">時效</span>
+            <div>
+              <div class="scope__title">X 與 Discord 即時訊號</div>
+              <div class="scope__desc">無法捕捉首發於社交平台的秒級爆料、漏洞回報與突發動態。</div>
+            </div>
+          </div>
+          <div class="scope__item">
+            <span class="scope__tag">深度</span>
+            <div>
+              <div class="scope__title">企業內部非公開資訊</div>
+              <div class="scope__desc">NDA 保護下的企業實測數據、內部佈署經驗，與未公開的產品路線。</div>
+            </div>
+          </div>
+          <div class="scope__item">
+            <span class="scope__tag">語域</span>
+            <div>
+              <div class="scope__title">非英語系市場在地化</div>
+              <div class="scope__desc">針對亞洲開發社群（日、韓、中）的特定 Bug 與應用案例觀測受限。</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- AUDIENCE -->
+    <section>
+      <header class="section-h">
+        <span class="section-h__num">04</span>
+        <h2 class="section-h__title">適合 <em>族群</em></h2>
+        <span class="section-h__rule"></span>
+        <span class="section-h__sub">who this is for</span>
+      </header>
+      <div class="aud">
+        <div class="aud__col aud__col--for">
+          <div class="aud__bignum">for.</div>
+          <div class="aud__bignum-sub">Optimized For</div>
+          <h3 class="aud__h">Built for</h3>
+          <ul class="aud__list">
+            <li><b>資深開發者</b>：在版本升級前需要確認穩定性與相容性。</li>
+            <li><b>工程師 / 技術人員</b>：持續追蹤 Claude Code API 演進與定價變化。</li>
+            <li><b>創業者與產品人</b>：想透過官方方向尋找生態商機。</li>
+          </ul>
+        </div>
+        <div class="aud__col aud__col--not">
+          <div class="aud__bignum">not for.</div>
+          <div class="aud__bignum-sub">Not For</div>
+          <h3 class="aud__h">Skip if</h3>
+          <ul class="aud__list">
+            <li><b>即時新聞工作者</b>：需要追蹤社交平台秒級爆料與突發事件。</li>
+            <li><b>影音學習者</b>：以影音教學或互動 Demo 為主要學習方式。</li>
+            <li><b>在地化專才</b>：主要關注特定語系（日、韓、中）本地市場動態。</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- QUOTE -->
+    <div class="quote2">
+      <div class="quote2__text">「濾除社群雜訊，直擊 Claude Code 技術核心。」</div>
+      <div class="quote2__sub">為需要深度與穩定資訊的工程師而建</div>
+    </div>
+
+    <!-- #6  PROVENANCE BAND -->
+    <section class="prov">
+      <div class="prov__inner">
+        <div>
+          <div class="prov__h">last ingest</div>
+          <div class="prov__last"><em>2026·04·30</em> &nbsp;08:00 TST</div>
+          <div class="prov__lastsub">52 articles · 5/5 sources · ≥3 score · 1.4s</div>
+        </div>
+        <div>
+          <div class="prov__h">sources</div>
+          <div class="prov__sources">
+            anthropic.com<br>
+            github.com/<span>releases</span><br>
+            news.ycombinator.com<br>
+            reddit.com/<span>r/LocalLLaMA</span><br>
+            news.google.com<br>
+            dev.to
+          </div>
+        </div>
+        <div class="prov__repo">
+          <div class="prov__h">source</div>
+          <a href="https://github.com/mandy82477/ObsidianLab" target="_blank" rel="noreferrer">github.com/mandy82477/ObsidianLab ↗</a>
+          <div class="meta">
+            obsidian vault · markdown<br>
+            wiki/ · entities / topics<br>
+            news/ · daily reports<br>
+            CC-BY · personal project
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </div>
+</main>
+
+<footer class="reader__footer">
+  <span>CLAUDE NEWS · LLM-WIKI</span>
+  <span>· 自動產生 by Claude Code News Aggregator</span>
+  <span>· source: <code>github.com/mandy82477/ObsidianLab</code></span>
+</footer>
+
+</body>
+</html>

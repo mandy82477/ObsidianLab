@@ -1,47 +1,69 @@
-// EntityList.jsx — wiki index
+// EntityList.jsx — wiki index page (presentation only)
+// Data lives in data-sample.js — edit that file, not this one.
+
+function WikilinkRow({ path, summary, state, stateColor, updated }) {
+  return (
+    <a href="#" className="entityrow">
+      <div className="entityrow__main">
+        <div className="entityrow__link">
+          <span className="br">[[</span>
+          <span className="path">{path}</span>
+          <span className="br">]]</span>
+        </div>
+        <div className="entityrow__summary">{summary}</div>
+      </div>
+      <div className="entityrow__state"><span className={"pill pill--"+stateColor}>● {state}</span></div>
+      <div className="entityrow__updated">{updated || ""}</div>
+    </a>
+  );
+}
+
 function EntityList() {
-  const rows = [
-    { name: "claude-code", type: "product", state: "active", stateColor: "success", summary: "Claude Code CLI 主頁：功能、已知問題、社群工具", updated: "2026-04-27" },
-    { name: "opus-4-7", type: "model", state: "active（爭議）", stateColor: "warn", summary: "Opus 4.7 發布細節、思考深度爭議、cache 問題", updated: "2026-04-27" },
-    { name: "mythos", type: "model", state: "限制存取", stateColor: "danger", summary: "高能力安全模型，七週發現 2,000+ 漏洞", updated: "2026-04-27" },
-    { name: "pricing", type: "policy", state: "持續調整", stateColor: "warn", summary: "訂閱方案、近期政策變動、token 成本", updated: "2026-04-27" },
-    { name: "bugcrawl", type: "feature", state: "測試中", stateColor: "info", summary: "Anthropic 測試中的漏洞偵測工具", updated: "2026-04-26" },
-    { name: "claude-design", type: "feature", state: "active（初期）", stateColor: "info", summary: "Anthropic AI 設計工具，首日評價偏負面", updated: "2026-04-27" },
-    { name: "project-deal", type: "feature", state: "實驗中", stateColor: "info", summary: "Anthropic Claude 代理人自主交易談判實驗", updated: "2026-04-27" },
+  const scrolls = [
+    { num: "i.",  name: "wiki/overview",      sub: "當前局勢·每週更新", href: "#wiki/overview" },
+    { num: "ii.", name: "wiki/feature-radar", sub: "熱度雷達·每日更新", href: "#wiki/feature-radar" },
   ];
-  const topics = [
-    { name: "code-quality-decline", state: "monitoring", stateColor: "warn", summary: "Claude Code 效能退步事件" },
-    { name: "google-investment", state: "resolved", stateColor: "success", summary: "Google 投資 400 億美元" },
-    { name: "competitor-landscape", state: "ongoing", stateColor: "info", summary: "Google 祕密開發競品" },
-    { name: "community-tech-patterns", state: "ongoing", stateColor: "info", summary: "社群技術應用趨勢追蹤" },
-  ];
+
+  const entities = window.SAMPLE_ENTITIES || [];
+  const topics   = window.SAMPLE_TOPICS   || [];
+  const meta     = window.SAMPLE_META     || {};
+
+  const totalPages = entities.length + topics.length + scrolls.length;
+
   return (
     <div className="wikipage">
-      <div className="wikipage__head">
-        <h1>Wiki</h1>
-        <p className="text-secondary">LLM-curated knowledge graph of the Claude / Anthropic ecosystem. <b>13</b> pages · last updated 2026-04-27.</p>
-      </div>
-      <h2>Entities</h2>
+      <header className="hero" style={{padding: "0 0 36px"}}>
+        <div className="hero__kicker">wiki · 知識圖譜</div>
+        <h1 className="hero__title"><em>{totalPages}</em> pages<span className="br">·</span>a graph.</h1>
+        <div className="hero__meta">
+          <span><b>{entities.length}</b> entities</span>
+          <span className="sep">·</span>
+          <span><b>{topics.length}</b> topics</span>
+          <span className="sep">·</span>
+          <span>last ingest <b>{meta.lastIngestFull || "—"}</b></span>
+          <span className="sep">·</span>
+          <span>obsidian-style markdown</span>
+        </div>
+      </header>
+
+      {/* top-level scrolls — overview + feature-radar */}
+      <nav className="scrolls" aria-label="top-level wiki pages">
+        {scrolls.map((s) => (
+          <a key={s.name} href={s.href} className="scrolls__col">
+            <div className="scrolls__num">{s.num}</div>
+            <div className="scrolls__name">{s.name}</div>
+            <div className="scrolls__sub">{s.sub}</div>
+          </a>
+        ))}
+      </nav>
+
+      <h2>entities — 實體頁</h2>
       <div className="entitytable">
-        {rows.map((r,i)=>(
-          <a key={i} href="#" className="entityrow">
-            <div className="entityrow__name"><span className="wikilink-glyph">[[</span><span>entities/{r.name}</span><span className="wikilink-glyph">]]</span></div>
-            <div className="entityrow__type">{r.type}</div>
-            <div className="entityrow__state"><span className={"pill pill--"+r.stateColor}>● {r.state}</span></div>
-            <div className="entityrow__summary">{r.summary}</div>
-            <div className="entityrow__updated">{r.updated}</div>
-          </a>
-        ))}
+        {entities.map((r) => <WikilinkRow key={r.path} {...r} />)}
       </div>
-      <h2 style={{marginTop: 32}}>Topics</h2>
+      <h2>topics — 進行中議題</h2>
       <div className="entitytable entitytable--topics">
-        {topics.map((r,i)=>(
-          <a key={i} href="#" className="entityrow">
-            <div className="entityrow__name"><span className="wikilink-glyph">[[</span><span>topics/{r.name}</span><span className="wikilink-glyph">]]</span></div>
-            <div className="entityrow__state"><span className={"pill pill--"+r.stateColor}>● {r.state}</span></div>
-            <div className="entityrow__summary">{r.summary}</div>
-          </a>
-        ))}
+        {topics.map((r) => <WikilinkRow key={r.path} {...r} />)}
       </div>
     </div>
   );

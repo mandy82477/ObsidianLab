@@ -1,10 +1,12 @@
 <!doctype html>
-<html lang="en" data-theme="dark">
+<html lang="en" data-theme="light">
 <head>
 <meta charset="utf-8">
-<title>CLAUDE NEWS · LLM-WIKI</title>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>claude news · llm·wiki</title>
 <link rel="stylesheet" href="../../colors_and_type.css">
 <link rel="stylesheet" href="web_reader.css">
+<script src="data-sample.js"></script>
 <script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
 <script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
 <script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
@@ -14,19 +16,28 @@
 <script type="text/babel" src="ReaderShell.jsx"></script>
 <script type="text/babel" src="TodayFeed.jsx"></script>
 <script type="text/babel" src="EntityList.jsx"></script>
+<script type="text/babel" src="ArchiveList.jsx"></script>
 <script type="text/babel">
-const { useState } = React;
+const { useState, useEffect } = React;
 function App() {
-  const [active, setActive] = useState("today");
+  const initial = (() => {
+    const h = (location.hash || "").replace(/^#/, "");
+    return ["today", "wiki", "archive"].includes(h) ? h : "today";
+  })();
+  const [active, setActive] = useState(initial);
+  useEffect(() => {
+    const onHash = () => {
+      const h = (location.hash || "").replace(/^#/, "");
+      if (["today", "wiki", "archive"].includes(h)) setActive(h);
+    };
+    window.addEventListener("hashchange", onHash);
+    return () => window.removeEventListener("hashchange", onHash);
+  }, []);
   return (
-    <ReaderShell active={active} onNav={setActive}>
+    <ReaderShell active={active} onNav={(v)=>{setActive(v); history.replaceState(null, "", "#"+v);}}>
       {active === "today" && <TodayFeed />}
       {active === "wiki" && <EntityList />}
-      {active === "archive" && <div style={{maxWidth:920, margin:"40px auto", padding:24}}>
-        <h1 style={{fontFamily:"var(--font-display)", fontSize:32, fontWeight:700}}>Archive</h1>
-        <p className="text-secondary">52 daily digests · 2026-03-09 → 2026-04-30</p>
-        <p className="text-tertiary" style={{marginTop:16}}>(archive grid placeholder — see TodayFeed for layout)</p>
-      </div>}
+      {active === "archive" && <ArchiveList />}
     </ReaderShell>
   );
 }

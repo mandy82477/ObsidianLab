@@ -17,10 +17,28 @@
 <script type="text/babel" src="EditorPane.jsx"></script>
 <script type="text/babel" src="BacklinksPane.jsx"></script>
 <script type="text/babel">
-const { useState } = React;
+const { useState, useEffect } = React;
+
+const DEFAULT_FILE = "wiki/entities/claude-code.md";
+
+// Accept any well-formed vault path — no hardcoded allowlist to maintain.
+function isValidPath(h) {
+  return /^(wiki\/(entities|topics)\/[\w\-]+\.md|wiki\/(index|overview|feature-radar|log)\.md|news\/\d{4}-\d{2}-\d{2}\.md|(CLAUDE|README)\.md)$/.test(h);
+}
 
 function App() {
-  const [active, setActive] = useState("wiki/entities/claude-code.md");
+  const fromHash = () => {
+    const h = decodeURIComponent((location.hash || "").replace(/^#/, ""));
+    return isValidPath(h) ? h : DEFAULT_FILE;
+  };
+  const [active, setActive] = useState(fromHash);
+
+  useEffect(() => {
+    const onHash = () => setActive(fromHash());
+    window.addEventListener("hashchange", onHash);
+    return () => window.removeEventListener("hashchange", onHash);
+  }, []);
+
   return (
     <VaultShell activeFile={active}>
       <div className="vault__pane vault__pane--left">
