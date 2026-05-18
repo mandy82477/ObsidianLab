@@ -2,7 +2,7 @@
 
 LLM 查詢此 wiki 時，**先讀這個檔案**找相關頁面，再讀具體頁面取得詳細資訊。
 
-**最後更新：** 2026-05-18 | **頁面數：** 25
+**最後更新：** 2026-05-18 | **頁面數：** 26
 
 ---
 
@@ -46,6 +46,7 @@ LLM 查詢此 wiki 時，**先讀這個檔案**找相關頁面，再讀具體頁
 | [[topics/ai-agent-safety]]             | ongoing    | AI agent 安全：假冒安裝包 + AI 生成程式碼 90% 漏洞 + CVE-2026-39861 + 資料庫刪除事件 |
 | [[topics/anthropic-government-policy]] | monitoring | Anthropic 政府與軍事政策：五角大廈排除事件、安全護欄堅持、白宮重啟談判（11 天無新進展）             |
 | [[topics/official-community-gap]]      | ongoing    | 官方功能 vs 社群痛點缺口矩陣：哪些痛點官方正在解決、哪些結構性缺席                            |
+| [[topics/enterprise-cost-management]]  | ongoing    | 企業規模採用 Claude 的成本結構挑戰：Uber/Microsoft 案例、缺失工具、因應策略                            |
 
 ---
 

@@ -5,6 +5,14 @@ Append-only 紀錄。每次 ingest、query 或 lint 都在此追加一條。
 
 ---
 
+## 2026-05-18 新頁面建立
+
+- 新增頁面：`topics/enterprise-cost-management.md`
+- 原因：企業規模 Claude 成本管理議題跨越多天且升至財經媒體層級，現有 pricing.md（政策面）與 community-tech-patterns.md（個人工法面）均未覆蓋「企業採用成本結構挑戰」此角度
+- 更新：`wiki/index.md`（頁面數 25→26，新增目錄條目）
+
+---
+
 ## 2026-05-18 Ingest
 
 - 來源日報：[[news/2026-05-18]]
