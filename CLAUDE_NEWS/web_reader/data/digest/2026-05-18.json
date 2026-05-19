@@ -37,14 +37,13 @@
       "body": "Anthropic 正式宣布 Managed Agents 架構、主動式工作流程與 Capability Curve 功能，顯示 Claude Code 正從開發者工具升級為可自主排程任務的企業 Agent 平台，是本週最重要的官方動向。"
     }
   ],
-  "techUpdates": [],
-  "discussions": [
+  "techUpdates": [
     {
       "title": "Show HN: Semble – Code search for agents that uses 98% fewer tokens than grep",
       "url": "https://github.com/MinishLab/semble",
       "source": "Hacker News",
       "time": "05/17 15:37",
-      "sentiment": "😊 正面",
+      "sentiment": "",
       "body": "Semble 結合 Model2Vec 靜態嵌入與 BM25 融合檢索，專為 Claude Code 等 Agent 優化程式碼搜尋，宣稱比 grep 節省 98% Token，對大型專案尤為實用。"
     },
     {
@@ -52,7 +51,7 @@
       "url": "https://www.reddit.com/r/ClaudeAI/comments/1tglzq1/engram_v340_keep_claude_code_running_under_the/",
       "source": "Reddit / r/ClaudeAI",
       "time": "05/18 05:02",
-      "sentiment": "😊 正面",
+      "sentiment": "",
       "body": "engram v3.4.0 新增專屬 Anthropic 外掛，提供 `/engram:cost`（查詢 Token 消耗）、`/engram:query`（快速上下文檢索）、`/engram:mistakes`（列出近期執行錯誤）三個新指令，針對近期速率限制收緊問題提供因應方案。"
     },
     {
@@ -60,7 +59,7 @@
       "url": "https://anyfrm.com",
       "source": "Hacker News",
       "time": "05/18 03:30",
-      "sentiment": "😊 正面",
+      "sentiment": "",
       "body": "AnyFrame 為 Claude Code 或 Codex 提供微 VM 沙盒環境，支援一次定義 Agent（repo、安裝指令、技能、MCP）並快取映像檔，透過 Python SDK 或 Web 介面操控，可整合 Linear、Sentry 等 MCP 連接器。"
     },
     {
@@ -68,7 +67,7 @@
       "url": "https://github.com/alamops/agetor",
       "source": "Hacker News",
       "time": "05/17 23:25",
-      "sentiment": "😊 正面",
+      "sentiment": "",
       "body": "Agetor 是開源的 Harness 排程器，以看板（Kanban）介面管理多個 Claude Code 任務，透過 tmux 在互動模式下執行，避免在多個終端機間切換，v0.0.1 已支援 Claude Code。"
     },
     {
@@ -76,7 +75,7 @@
       "url": "https://dev.to/skyguan92/same-goal-feature-two-agent-personalities-5315",
       "source": "dev.to / #claudecode",
       "time": "05/17 20:59",
-      "sentiment": "😐 中性",
+      "sentiment": "",
       "body": "Claude Code 在 5 月 12 日 v2.1.139 版本中正式加入 `/goal` 功能（與 Codex 同類功能並列），文章比較兩者在相同指令下的 Agent 行為差異，對研究 Agent 個性設計有參考價值。"
     },
     {
@@ -84,9 +83,11 @@
       "url": "https://www.reddit.com/r/ClaudeAI/comments/1tgjkxt/i_built_a_free_desktop_widget_to_monitor_your/",
       "source": "Reddit / r/ClaudeAI",
       "time": "05/18 03:21",
-      "sentiment": "😊 正面",
+      "sentiment": "",
       "body": "開發者打造一款浮動桌面小工具，讀取 Anthropic 速率限制 API 標頭，即時顯示 5 小時工作階段使用量（含色彩進度條）、每週配額、Token 輸入輸出統計，每 5 秒更新，支援 Windows 與 macOS。"
-    },
+    }
+  ],
+  "discussions": [
     {
       "title": "Reverse engineering Android malware from popular Chinese projectors",
       "url": "https://zanestjohn.com/blog/reing-with-claude-code",
