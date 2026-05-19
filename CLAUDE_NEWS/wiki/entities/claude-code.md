@@ -3,18 +3,19 @@
 **類型：** product
 **狀態：** active
 **首次出現：** 2025（正式推出）
-**最後更新：** 2026-05-17
+**最後更新：** 2026-05-19
 
 ---
 
 ## 現況
 
-Claude Code 是 Anthropic 的 AI 編碼 CLI 工具，支援 agentic 工作流程、MCP Server 整合、Hooks 機制與多代理協作框架（Managed Agents）。截至 2026-05-14，GitHub Stars 達 121,000+，是增長最受開發者關注的 AI 編碼助理之一。最新版本為 **v2.1.143**，新增 plugin 依賴關係強制執行機制，核心能力已從純程式碼助理擴展為具備全桌面自動化、多代理管理與 AI 安全審查的完整 agent 開發平台。Microsoft 正陸續取消內部授權，轉推 GitHub Copilot CLI（見 [[topics/competitor-landscape]]）；GitHub 已推出新 Copilot 應用明確對標 Claude Code；Ramp AI Index 數據顯示 Anthropic 企業採用率首次超越 OpenAI（34.4% vs 32.3%）。
+Claude Code 是 Anthropic 的 AI 編碼 CLI 工具，支援 agentic 工作流程、MCP Server 整合、Hooks 機制與多代理協作框架（Managed Agents）。截至 2026-05-14，GitHub Stars 達 121,000+，是增長最受開發者關注的 AI 編碼助理之一。最新版本為 **v2.1.144**，新增 plugin 依賴關係強制執行機制，核心能力已從純程式碼助理擴展為具備全桌面自動化、多代理管理與 AI 安全審查的完整 agent 開發平台。Microsoft 正陸續取消內部授權，轉推 GitHub Copilot CLI（見 [[topics/competitor-landscape]]）；GitHub 已推出新 Copilot 應用明確對標 Claude Code；Ramp AI Index 數據顯示 Anthropic 企業採用率首次超越 OpenAI（34.4% vs 32.3%）。
 
 ### 最新版本
 
 | 版本 | 日期 | 重點 |
 |------|------|------|
+| **v2.1.144** | 2026-05-19 | 新增 `/resume` 指令支援背景 session：`claude --bg` 啟動的 session 可與互動式 session 並列顯示（標記為 `bg`），加入 elapsed duration 計時顯示 |
 | **v2.1.143** | 2026-05-16 | Plugin 依賴關係強制執行：`claude plugin disable` 在目標 plugin 被其他已啟用 plugin 依賴時拒絕執行，並提示完整停用鏈建議指令，防止工具鏈損壞 |
 | **v2.1.142** | 2026-05-14 | `claude agents` 新增 8 旗標：`--add-dir`、`--settings`、`--mcp-config`、`--plugin-dir`、`--permission-mode`、`--model`、`--effort`、`--dangerously-skip-permissions`，大幅提升 Agent 啟動時細粒度控制能力 |
 | **v2.1.141** | 2026-05-13 | `terminalSequence` 欄位至 Hook JSON（無控制終端環境下桌面通知 + 視窗標題 + 響鈴）；`CLAUDE_CODE_PLUGIN_PRE` 擴展插件系統 |
@@ -270,6 +271,9 @@ Token 用量追蹤、session 費用分析與效能漂移偵測工具。
 
 | 日期 | 事件 |
 |------|------|
+| 2026-05-19 | **v2.1.144**：新增 `/resume` 指令支援背景 session（`claude --bg` 啟動的 session 可與互動式 session 並列顯示，標記為 `bg`）；加入 elapsed duration 計時顯示 |
+| 2026-05-19 | Anthropic 收購 Stainless（官方 SDK + MCP 伺服器生成商，傳聞金額逾 $300M）；Microsoft 六個月內部測試全貌揭露（dev.to）：開發者普遍認可但財務層以成本終止；攝影機存取請求隱私疑慮；Claude Code .env 明文 SQLite 安全揭露；見 [[entities/stainless]]、[[topics/ai-agent-safety]]、[[topics/enterprise-cost-management]] |
+| 2026-05-19 | 新工具：**Claude Soul**（MCP server + hooks 跨 session 學習引擎，~200 session 後報告出現意外行為）、**cdesktop**（開源整合 Claude Code + Codex + Gemini CLI 等 5 個 coding agent，支援 20+ 第三方模型，`npx` 執行）、**InsForge**（YC P26 開源後端平台，讓 coding agent 直接部署、操作與 debug 後端及基礎設施）|
 | 2026-05-17 | 開發者以 Claude Code 完成 Adobe Lightroom CC 在 Linux 的主要移植工作（Phoronix 報導），展現 AI Coding Agent 在複雜跨平台工程任務的實際能力 |
 | 2026-05-17 | 社群分享高複雜度持久性自主 agent 系統：語義 + 情節雙重記憶、德英雙語語音對話、情緒狀態追蹤、螢幕感知、自主排程、即時 SaaS 生成，代表社群 agentic 工程複雜度快速提升的里程碑案例 |
 | 2026-05-17 | Claude Skills 靜默覆蓋問題浮現：`ask_user_input_v0` 工具存在最多 3 問題 / 4 選項硬性限制，Claude 在不告知用戶的情況下靜默壓縮問題與選項；技術社群對 Skills 機制透明度的系統性質疑升溫；Skills 意外觸發子 agent 派生案例同步出現（見 [[topics/community-tech-discussions]]） |

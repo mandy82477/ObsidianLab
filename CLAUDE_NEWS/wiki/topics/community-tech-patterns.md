@@ -2,7 +2,7 @@
 
 **狀態：** ongoing
 **開始日期：** 2026-04-25
-**最後更新：** 2026-05-18
+**最後更新：** 2026-05-19
 
 ---
 
@@ -400,6 +400,13 @@
 - [[news/2026-05-16]]
 
 ## 時序
+
+### 2026-05-19
+- **1000 小時 AI Coding Agent 工作流心得（人工介入節點設計）**：開發者在 1000 小時實戰後總結核心工作流：明確設置人工介入節點、主動限制 agent 自主度，避免「跨模組重構同名方法」等高破壞性錯誤；核心洞察是「把 agent 當強大工具而非獨立員工」——agent 擅長小範圍精準任務，放任大範圍自主決策才是高風險來源
+- **7 步驟 AI 內容 SEO Pipeline（$0.45/篇，每天 15 分鐘）**：開發者開源以 Claude Code slash commands 串接的 7 步驟內容 SEO pipeline，每篇文章成本 $0.45、每天只需 15 分鐘，展示 AI 工作流在內容生產的具體落地數據；是目前社群分享中成本最低且有明確數字的 AI 內容生產案例
+- **Android 惡意軟體逆向工程（Adafruit 案例）**：Adafruit 分享使用 Claude Code 逆向分析 Android 惡意軟體的實作案例，展示 AI 輔助資安分析在 APK 逆向場景的可行性；是繼 AliExpress 投影機惡意軟體（2026-05-18）後，連續兩日出現 AI + 資安逆向工程的案例，顯示此應用場景正在成形
+- **Anthropic 跨部門 Claude Code 使用報告**：Anthropic 公開跨 10 個團隊（含法務、行銷等非技術部門）的 Claude Code 實際使用情況，是「AI coding 工具的使用範疇已超越傳統開發場景」的官方首次確認
+- **新工具**：Claude Soul（跨 session 學習引擎，MCP + hooks，~200 session 後出現意外行為）、cdesktop（開源桌面整合 5 個 coding agent + 20+ 第三方模型）、InsForge（YC P26，coding agent 的開源 Heroku，直接部署後端基礎設施）
 
 ### 2026-05-18
 - **Agent 角色分工帶來 6.7 倍速度提升（3 角色拆分實測）**：開發者將單一「全能 Strategist Agent」拆分為三個專責角色後，相同 WebSearch 任務時間從 20 分鐘降至 3 分鐘（6.7 倍加速）；架構邏輯：角色專一化讓每個 agent 的 context 更精簡、指令更聚焦，是對「單一 Agent 越來越臃腫」問題的具體反向工程；可搭配 Managed Agents 20 路並行能力實現

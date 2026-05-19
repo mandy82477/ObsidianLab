@@ -5,6 +5,34 @@ Append-only 紀錄。每次 ingest、query 或 lint 都在此追加一條。
 
 ---
 
+## 2026-05-19 新頁面建立
+
+- 新增頁面：`entities/stainless.md`
+- 原因：Anthropic 宣布收購 Stainless（傳聞 $300M+），首次出現且為重大企業事件，具體業務（官方 SDK + MCP 伺服器生成）構成戰略基礎設施
+- 更新：`wiki/index.md`（頁面數 26→27，新增目錄條目）
+
+---
+
+## 2026-05-19 Ingest
+
+- 來源日報：[[news/2026-05-19]]
+- 更新頁面：
+  - `entities/stainless.md`（新建：Anthropic 收購 Stainless，$300M+，MCP 伺服器生成能力戰略意義）
+  - `topics/ai-agent-safety.md`（新增 2026-05-19 時序：.env SQLite 明文、webcam 存取疑慮、RCE deeplink 跟進報導；新增技術彙整：.env SQLite 明文存儲；更新目前結論）
+  - `entities/claude-code.md`（新增 v2.1.144；更新版本歷史 2026-05-19；更新最後更新日期）
+  - `entities/managed-agents.md`（新增 2026-05-19：自架沙箱 + MCP 隧道；核心功能表格新增 4 項）
+  - `entities/pricing.md`（新增 2026-05-19：臨時 5h x2 + 50% 週上限提升；企業成本壓力持續）
+  - `topics/enterprise-cost-management.md`（新增 2026-05-19 時序：Microsoft 六個月內測揭露、企業帳單三倍 HN 討論；更新目前結論）
+  - `topics/competitor-landscape.md`（新增 2026-05-19 時序：Microsoft 內部測試全貌 dev.to 深度揭露）
+  - `topics/community-tech-tools.md`（新增 3 工具：Claude Soul、cdesktop、InsForge）
+  - `topics/community-tech-patterns.md`（新增 2026-05-19 時序：1000h 工作流、SEO pipeline、Android 惡意軟體 RE、Anthropic 內部報告、新工具）
+  - `topics/community-tech-discussions.md`（新增 3 討論：MCP context bloat 量化、Claude 隱藏 bug、靜默失敗五種模式；新增 MCP Context Bloat 技術彙整）
+  - `wiki/feature-radar.md`（新增自架沙箱 + MCP 隧道 + /resume 兩個功能條目；更新全覽表）
+- 新增頁面：`entities/stainless.md`
+- 摘要：今日最重要事件為 Anthropic 收購 Stainless（$300M+，MCP 伺服器生成控制權），Claude Code 安全多面爆發（.env SQLite 明文、webcam 隱私、RCE deeplink 持續報導），Microsoft 六個月內部測試全貌揭露（開發者愛它但財務殺了它），Managed Agents 自架沙箱 + MCP 隧道企業功能上線。社群首次量化 MCP context bloat（9 伺服器 = 38k tokens），AI 工具可靠性問題（靜默隱藏 bug、靜默失敗）密集出現。
+
+---
+
 ## 2026-05-18 新頁面建立
 
 - 新增頁面：`topics/enterprise-cost-management.md`

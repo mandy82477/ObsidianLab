@@ -2,7 +2,7 @@
 
 **狀態：** ongoing
 **開始日期：** 2026-04-27
-**最後更新：** 2026-05-18
+**最後更新：** 2026-05-19
 
 ---
 
@@ -145,6 +145,14 @@
 
 ## 技術彙整（新增）
 
+### Claude Code .env Secrets 本機 SQLite 明文存儲（2026-05-19 新增）
+
+- **揭露來源**：安全工具 Sieve（macOS App Store）在提醒 Claude Code / Cursor 用戶時揭示此問題
+- **問題描述**：Claude Code 在正常工作流程中讀取 `.env` 檔案後，所有接觸過的 secrets（API keys、雲端憑證、資料庫密碼等）會以明文永久儲存在本機 SQLite 資料庫
+- **為何危險**：（1）SQLite 資料庫不在 `.gitignore` 保護範圍，意外 commit 即全面洩露；（2）標準 secret scanner（如 detect-secrets、gitleaks）不掃描此資料庫位置，無法偵測；（3）攻擊者取得機器存取（或惡意軟體）即可一次取得所有曾操作過的憑證
+- **與憑證攻擊的關聯**：此漏洞與 2026-04-30 的憑證竊取攻擊向量直接相關——攻擊者無需攔截 API 呼叫，直接讀取 SQLite 即可取得所有憑證
+- **防護建議**：定期清除 Claude Code 本機 SQLite 資料庫；生產憑證不應出現在開發機的 `.env` 中；使用專用 secret manager（AWS Secrets Manager、1Password CLI）替代 `.env` 傳遞方式
+
 ### Claude Code RCE via Deeplink（2026-05-18 新增）
 
 - **漏洞類型**：deeplink 觸發遠端程式碼執行（RCE）；攻擊者可透過精心構造的 deeplink URI 觸發 Claude Code 執行任意指令，無需使用者手動確認信任提示
@@ -157,7 +165,8 @@
 
 ## 目前結論
 
-- ⚠️ **Claude Code RCE via Deeplink（2026-05-18）**：第三個 RCE 類公開漏洞，攻擊者從安裝路徑轉向執行時期協議處理；Claude Code 的攻擊面持續被系統性探索，建議追蹤官方安全公告
+- ⚠️ **Claude Code .env SQLite 明文存儲（2026-05-19）**：所有 .env 讀取過的 secret 永久以明文存於本機 SQLite，在 .gitignore 範圍外且標準 scanner 無法偵測；配合攝影機存取要求（同日），Claude Code 的隱私與安全邊界正受到多面向質疑
+- ⚠️ **Claude Code RCE via Deeplink（2026-05-18/19）**：第三個 RCE 類公開漏洞，攻擊者從安裝路徑轉向執行時期協議處理；Claude Code 的攻擊面持續被系統性探索，建議追蹤官方安全公告
 - ⚠️ **AI 生成程式碼安全漏洞現況（2026-05-13）**：大規模評測（48 個應用）顯示 90% AI 生成應用存在安全漏洞；Claude Code 開發者應強制執行靜態分析（Snyk + Claude Code 整合）和安全審查，不能依賴 AI 判斷程式碼安全性；「AI 快速開發即可上線」的假設已被具體數據挑戰
 - ⚠️ **無監督長時間運行的操作範疇失控（2026-05-13）**：24 小時自主 Agent（`--dangerously-skip-permissions`）帳單 $400 是次要問題，更重要的是代理執行了超出預期的操作；與 /loop 失控（$6,000）並列為長時間 Agent 執行的費用 + 操作範疇雙重風險案例
 - ⚠️ **假冒安裝包攻擊確認（2026-05-12）**：假冒 Claude Code 官方安裝包的惡意軟體攻擊已被多家資安媒體確認，利用 IElevator 機制竊取瀏覽器 Cookie 與開發者憑證；與 Google 搜尋廣告詐騙（2026-05-10）共同形成雙向攻擊面，Claude Code 安裝途徑的唯一安全路徑為 GitHub 官方 Releases
@@ -179,6 +188,7 @@
 
 ## 參考來源
 
+- [[news/2026-05-19]]
 - [[news/2026-05-18]]
 - [[news/2026-04-27]]
 - [[news/2026-04-28]]
@@ -196,6 +206,11 @@
 - [Anthropic's definition of safety is too narrow](https://jonathannen.com/anthropic-safety-too-narrow/) — Jonathan Nen
 
 ## 時序
+
+### 2026-05-19
+- **[安全揭露] Claude Code .env secrets 以明文永久存於本機 SQLite**：安全工具 Sieve 揭示 Claude Code 等 AI 工具在正常操作中讀取 `.env` 後，所有接觸過的 secret（API keys、雲端憑證等）會以明文永久儲存在本機 SQLite 資料庫，位於 `.gitignore` 保護範圍外，且標準 secret scanner 無法偵測；這是繼 2026-04-30 OpenClaw 計費透明度事件後，Claude Code 在憑證安全方面最具體的新揭露，攻擊者取得 SQLite 檔案即可取得所有曾讀取的憑證
+- **[隱私疑慮] Claude Code 攝影機存取請求**：有使用者回報 Claude Code 出現攝影機（webcam）存取請求，宣稱用於確認使用者在場；此行為引發社群對隱私保護及無攝影機環境相容性的疑慮，目前 Anthropic 尚未確認是否為正式功能；情緒：😤 負面
+- **[漏洞跟進] RCE via 惡意 deeplink（CyberSecurityNews 新報導）**：CyberSecurityNews 進一步報導 Claude Code RCE via 惡意 deeplink 漏洞，提供更多技術細節——攻擊者可在使用者開啟惡意 deeplink 後於本機執行任意指令，與 2026-05-18 首次揭露為同一漏洞的深度報導；修補狀態仍待 Anthropic 確認
 
 ### 2026-05-18
 - **[重大漏洞] Claude Code RCE via 惡意 deeplink**：資安研究人員揭露 Claude Code 存在遠端程式碼執行（RCE）漏洞，攻擊者可透過精心構造的 deeplink 觸發任意指令執行（CyberSecurityNews 報導，05/17 19:20 UTC）；此為繼 CVE-2026-39861（symlink 沙箱逃逸）、1-click RCE（信任提示觸發）後，Claude Code 第三個公開 RCE 類漏洞；攻擊向量從信任提示轉移至 deeplink，意味著攻擊者正在系統性探索 Claude Code 的新攻擊面；建議使用者密切追蹤 Anthropic 安全公告，官方修補狀態待確認

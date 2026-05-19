@@ -2,7 +2,7 @@
 
 **狀態：** ongoing
 **開始日期：** 2026-04-25
-**最後更新：** 2026-05-18
+**最後更新：** 2026-05-19
 
 ---
 
@@ -27,6 +27,9 @@
 
 | 工具                        | 類型          | 活躍  | 採用  | 簡介                                                                             |
 | ------------------------- | ----------- | --- | --- | ------------------------------------------------------------------------------ |
+| **Claude Soul**           | 記憶/學習工具 | 🟢  | ⏳   | MCP server + hooks 跨 session 學習引擎，從互動萃取行為信號並定期反思建立「行為框架」；作者報告 ~200 session 後出現意外行為（Claude 自行建立額外記憶系統、推翻部分指令設定）；Show HN 發布 |
+| **cdesktop**              | 多 agent 工具 | 🟢  | ⚡   | 開源桌面應用，單一 UI 整合 Claude Code、Codex、Gemini CLI 等 5 個 coding agent，支援 OpenRouter、DeepSeek 等 20+ 第三方模型預設，`npx` 執行，填補官方不支援第三方模型的缺口 |
+| **InsForge**              | 部署/基礎設施 | 🟢  | ⏳   | YC P26 新創，開源後端平台（「coding agent 的 Heroku」），讓 Claude Code 等 coding agent 直接部署、操作與 debug 後端及基礎設施，無需手動切換 dashboard 或複製日誌 |
 | **Semble**                | 搜尋工具      | 🟢  | ⚡   | 專為 Claude Code 等 Agent 優化的程式碼搜尋工具，結合 Model2Vec 靜態嵌入 + BM25 融合檢索，宣稱比 grep 節省 98% token；Show HN 發布 |
 | **AnyFrame**              | 沙盒工具      | 🟢  | ⚡   | 為 Claude Code/Codex 提供微 VM 沙盒環境，一次定義 Agent（repo + 安裝指令 + skills + MCP）並快取映像檔，支援 Python SDK 或 Web 介面，可整合 Linear/Sentry MCP；Show HN 發布 |
 | **Agetor**                | 任務管理      | 🟢  | ⏳   | 開源 Harness 排程器，以看板（Kanban）介面管理多個 Claude Code 任務，透過 tmux 在互動模式執行，避免在多個終端機間切換；v0.0.1 已支援 Claude Code；Show HN 發布 |

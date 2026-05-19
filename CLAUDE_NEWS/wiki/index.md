@@ -2,7 +2,7 @@
 
 LLM 查詢此 wiki 時，**先讀這個檔案**找相關頁面，再讀具體頁面取得詳細資訊。
 
-**最後更新：** 2026-05-18 | **頁面數：** 26
+**最後更新：** 2026-05-19 | **頁面數：** 27
 
 ---
 
@@ -28,6 +28,7 @@ LLM 查詢此 wiki 時，**先讀這個檔案**找相關頁面，再讀具體頁
 | [[entities/openclaw]] | product | 允許（信用池計費）| 第三方 agentic 工具，歷經禁令後 6/15 起恢復允許但改走信用池 API 費率計費 |
 | [[entities/google-investment]] | event | resolved | Google 投資 400 億美元歷史記錄，含循環算力交易結構 |
 | [[entities/managed-agents]] | feature | active（正式發布）| Managed Agents 官方框架：Dreaming 記憶整合、20 路並行子代理、Outcomes 規格驗證 |
+| [[entities/stainless]] | product | acquired | Anthropic 以 ~$300M 收購，官方 SDK + MCP 伺服器生成商，MCP 生態基礎設施控制點 |
 | [[entities/boris-cherny]] | person | active | Claude Code 創始人，「Loops 是未來」設計哲學、「coding is solved」論戰、第三方工具邊界聲明 |
 | [[entities/cat-wu]] | person | active | Claude Code 產品負責人，「AI 下一步是主動性（proactivity）」論述 |
 

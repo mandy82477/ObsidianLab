@@ -3,7 +3,7 @@
 **類型：** feature
 **狀態：** active（正式發布）
 **首次出現：** 2026-04-28
-**最後更新：** 2026-05-18
+**最後更新：** 2026-05-19
 
 ---
 
@@ -22,6 +22,8 @@ Python SDK v0.100.0 與 TypeScript SDK v0.95.0 同步新增 Managed Agents 原�
 2026-05-11 週，Managed Agents **正式發布**（從研究預覽升格），Anthropic 定義多代理協作的官方托管服務邊界。一位已自建 multi-agent 系統 70 天的開發者在 Reddit 分享實戰架構：以 Opus 作為決策層、OpenCode 作為工程師層、多個研究代理並行，並指出「**任務簡報的撰寫品質**才是多代理系統成敗的核心」，不依賴官方工具照樣可行；社群開始對官方托管方案與自組架構的功能差距進行系統性比較。
 
 2026-05-13，**v2.1.140** 改善 Agent 工具的 `subagent_type` 參數匹配邏輯，支援大小寫不敏感及分隔符號不敏感（例如 `"Code Reviewer"` 可自動解析為 `code-reviewer`），降低多代理配置的摩擦。同日，Claude Code 創始人 Boris Cherny 公開了每晚讓**數千個 AI 子代理**執行「深度工作」的工作流架構，被 Business Insider 與 Let's Data Science 同步報導，是 Managed Agents 20 路並行能力在個人工作流中的極端應用案例，也是社群對大規模 agentic 工作流的最高需求驗證；見 [[entities/boris-cherny]]。
+
+2026-05-19，Anthropic 在 Managed Agents 平台新增兩項企業重要能力：**自架沙箱（self-hosted sandboxes）** 讓企業客戶可在自有基礎設施上執行 agent 工作流，而非依賴 Anthropic 雲端沙盒，直接回應企業資料不出境與合規需求；**MCP 隧道（MCP tunnels）** 讓私有部署的 MCP 伺服器能安全連接 Claude Code agent，無需將內部服務暴露於公網。此兩項能力搭配 Proactive Workflows，標誌 Anthropic 全面布局企業私有雲 agent 部署場景。詳見 the-decoder.com 報導。
 
 2026-05-18，Anthropic 正式公告兩項新能力：**Proactive Workflows**（主動式工作流程）讓 Agent 能夠自主排程並在適當時機主動觸發任務（而非等待用戶輸入），是 Claude Code 從「被動工具」轉型為「主動 Agent 平台」的關鍵里程碑；**Capability Curve** 提供 Agent 能力曲線追蹤機制，協助用戶和企業客戶評估 Agent 在不同任務類型的能力進展。此公告由 InfoQ 報導，與 Cat Wu 的「AI 的下一步是主動性（proactivity）」論述直接呼應；見 [[entities/cat-wu]]。
 
@@ -129,6 +131,10 @@ while (!['completed', 'failed'].includes(task.status)) {
 | Outcomes 規格驗證 | Agent 自我驗證輸出是否符合規格文件 | 公開測試 |
 | Agent View | 統一面板管理所有並行 session 即時狀態（`claude agents`） | 研究預覽 |
 | `/goal` 指令 | fire-and-forget 自動化，小型快速模型驗證完成條件 | 正式發布（v2.1.139） |
+| Proactive Workflows | Agent 可主動排程並自動觸發任務，無需等待使用者輸入 | 公開測試 |
+| Capability Curve | Agent 能力曲線追蹤，評估不同任務類型能力進展 | 公開測試 |
+| 自架沙箱（Self-hosted Sandboxes） | 企業在自有基礎設施執行 agent 工作流，資料不出境 | 公開測試 |
+| MCP 隧道（MCP Tunnels） | 私有 MCP 伺服器安全連接 Claude Code，無需暴露公網 | 公開測試 |
 
 ---
 
@@ -153,6 +159,7 @@ while (!['completed', 'failed'].includes(task.status)) {
 - [[news/2026-05-11]]
 - [[news/2026-05-12]]
 - [[news/2026-05-13]]
+- [[news/2026-05-19]]
 - [[news/2026-05-16]]
 - [Ars Technica 報導](https://arstechnica.com/ai/2026/05/anthropics-claude-can-now-dream-sort-of/)
 
@@ -160,6 +167,7 @@ while (!['completed', 'failed'].includes(task.status)) {
 
 | 日期 | 事件 |
 |------|------|
+| 2026-05-19 | 新增**自架沙箱（self-hosted sandboxes）**與 **MCP 隧道（MCP tunnels）**：企業客戶可在自有基礎設施執行 agent 工作流，私有 MCP 伺服器無需公開即可連接 Claude Code；the-decoder.com 報導 |
 | 2026-05-18 | InfoQ 報導「Code With Claude Announces Managed Agents, Proactive Workflows, Capability Curve」，Anthropic 正式公告 **Proactive Workflows** 與 **Capability Curve** 兩項新能力：Proactive Workflows 讓 Agent 可主動（而非被動等待觸發）排程並執行任務，與 Cat Wu 「AI 的下一步是主動性（proactivity）」論述一致；Capability Curve 提供 Agent 能力曲線追蹤機制，協助用戶評估 Agent 在不同任務類型的能力進展 |
 | 2026-05-16 | dev.to 深度文章分析 Managed Agents 三項功能的技術機制：聚焦 Dreaming 機制——Agent 在非活躍期間如何透過 Outcomes 與 Orchestration 進行自我優化，副標「How Agents Self-Improve While You Sleep」；是 Code with Claude 大會功能的首篇深度技術解析，對關注 agent 長期自主執行行為的開發者有參考價值 |
 | 2026-05-13 | v2.1.140 改善 `subagent_type` 大小寫不敏感及分隔符號不敏感匹配（`"Code Reviewer"` → `code-reviewer`），降低多代理配置摩擦；Boris Cherny 公開每晚讓數千個 AI 子代理執行「深度工作」的工作流，被 Business Insider 等主流媒體報導，是 Managed Agents 大規模並行能力的極端現實應用案例 |

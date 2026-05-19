@@ -4,7 +4,7 @@
 僅收錄官方 changelog、release note 或官方公告來源；社群工具見 [[topics/community-tech-tools]]。
 每次 ingest 後由 LLM 維護：新增功能、更新熱度、補充社群回饋。
 
-**最後更新：** 2026-05-18（含 5/18 ingest 更新；新增 Proactive Workflows + Capability Curve）
+**最後更新：** 2026-05-19（含 5/19 ingest 更新；新增自架沙箱 + MCP 隧道 + /resume 指令）
 
 ---
 
@@ -29,6 +29,8 @@
 
 | 功能 | 發布日期 | 熱度 | 試用價值 | 狀態 |
 |------|----------|------|----------|------|
+| 自架沙箱 + MCP 隧道 | 2026-05-19 | 🔥🔥🔥 | ⚡ 有條件推薦 | 公開測試 |
+| `/resume` 指令（v2.1.144） | 2026-05-19 | 🔥🔥 | ✅ 推薦 | 正式發布 |
 | Proactive Workflows | 2026-05-18 | 🔥🔥🔥 | ⏳ 觀望 | 公告（細節待確認）|
 | Capability Curve | 2026-05-18 | 🔥🔥 | ⏳ 觀望 | 公告（細節待確認）|
 | Plugin 依賴關係強制執行（v2.1.143） | 2026-05-16 | 🔥 | ✅ 推薦 | 正式發布 |
@@ -51,6 +53,45 @@
 ---
 
 ## 🆕 最新功能（2026-05）
+
+### 自架沙箱 + MCP 隧道（Self-hosted Sandboxes + MCP Tunnels）
+**發布：** 2026-05-19（官方公告） | **熱度：** 🔥🔥🔥 | **試用價值：** ⚡ 有條件推薦 | **狀態：** 公開測試
+
+**是什麼：** Anthropic 在 Managed Agents 平台新增兩項企業功能。**自架沙箱**讓企業在自有基礎設施上執行 agent 工作流，資料不需送至 Anthropic 雲端。**MCP 隧道**讓私有部署的 MCP 伺服器能安全連接 Claude Code agent，無需將內部服務暴露公網。
+
+**為何熱：** 直接解除大型企業採用 Managed Agents 的兩大障礙——資料主權與私有 MCP 存取。結合 Proactive Workflows，標誌 Anthropic 全面布局企業私有雲 agent 場景；對有資料合規需求（金融、醫療、政府）的企業而言試用價值高。
+
+**快速上手：**
+```
+# 詳細配置文件待 Anthropic 正式發布
+# 基本流程：在自有基礎設施部署 Anthropic agent runtime
+# 再透過 MCP 隧道配置連接內部 MCP 伺服器
+# 持續追蹤：https://anthropic.com/claude-code/managed-agents
+```
+
+**注意事項：** 自架沙箱需要自行管理基礎設施安全與更新；MCP 隧道的身份驗證機制與延遲影響需在 PoC 階段充分測試。
+
+---
+
+### `/resume` 指令（v2.1.144）
+**發布：** 2026-05-19（v2.1.144） | **熱度：** 🔥🔥 | **試用價值：** ✅ 推薦 | **狀態：** 正式發布
+
+**是什麼：** 新增 `/resume` 指令，支援背景 session 恢復。透過 `claude --bg` 啟動的背景 session 現可與互動式 session 並列顯示（標記為 `bg`），並加入 elapsed duration 計時，讓多 session 管理更直覺。
+
+**為何熱：** 是 `/goal` fire-and-forget 工作流的重要補充——背景任務跑完後可直接 `/resume` 切回，不需重新開啟新 session；對大量使用背景自動化 agent 的開發者有直接效益。
+
+**快速上手：**
+```bash
+# 啟動背景 session
+claude --bg "執行測試套件並修復失敗的測試"
+
+# 在互動式 session 中恢復背景 session
+/resume
+```
+
+**注意事項：** 搭配 Agent View（`claude agents`，v2.1.139+）使用效果最佳。
+
+---
 
 ### Proactive Workflows
 **發布：** 2026-05-18（官方公告） | **熱度：** 🔥🔥🔥 | **試用價值：** ⏳ 觀望 | **狀態：** 公告（細節待確認）

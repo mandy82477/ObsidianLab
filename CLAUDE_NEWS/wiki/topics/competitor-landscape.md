@@ -2,7 +2,7 @@
 
 **狀態：** ongoing
 **開始日期：** 2026-04
-**最後更新：** 2026-05-18
+**最後更新：** 2026-05-19
 
 ---
 
@@ -81,7 +81,7 @@ Claude Code 已成為 AI 輔助編碼的標竿產品，但競爭正快速升溫�
 
 ## 參考來源
 
-- [[news/2026-05-18]] · [[news/2026-05-17]] · [[news/2026-05-16]] · [[news/2026-05-15]]
+- [[news/2026-05-19]] · [[news/2026-05-18]] · [[news/2026-05-17]] · [[news/2026-05-16]] · [[news/2026-05-15]]
 - [[news/2026-05-14]] · [[news/2026-05-12]] · [[news/2026-05-07]] · [[news/2026-05-06]]
 - [[news/2026-05-05]] · [[news/2026-05-04]] · [[news/2026-05-02]] · [[news/2026-05-01]]
 - [[news/2026-04-30]] · [[news/2026-04-29]] · [[news/2026-04-28]] · [[news/2026-04-27]]
@@ -92,7 +92,10 @@ Claude Code 已成為 AI 輔助編碼的標竿產品，但競爭正快速升溫�
 
 ## 時序
 
-#### 企業競爭白熱化（2026-05-12 至 2026-05-18）
+#### 企業競爭白熱化（2026-05-12 至 2026-05-19）
+
+### 2026-05-19
+- **[dev.to 深度揭露] Microsoft 內部測試全貌：開發者愛它，財務殺了它**：「Microsoft Just Killed Claude Code Internally. Their Own Devs Loved It.」一文詳述 Experiences + Devices 部門六個月測試結果——開發者普遍認為 Claude Code 優於自家工具，但財務層以成本終止採購；此案例在 dev.to #claudecode 社群引發廣泛討論，成為「使用者滿意度 vs 企業採購決策」結構性落差的標準案例；與 [[topics/enterprise-cost-management]] 的成本壓力分析直接呼應
 
 ### 2026-05-18
 - **Microsoft 遷移獲主流媒體確認**：Developer Tech News 正式報導「Microsoft moves engineers from Claude Code to GitHub Copilot CLI」，確認 2026-05-15 記錄的事件，在企業採購圈引發廣泛討論
