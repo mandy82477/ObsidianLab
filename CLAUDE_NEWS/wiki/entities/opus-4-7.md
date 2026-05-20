@@ -3,7 +3,7 @@
 **類型：** model
 **狀態：** active（爭議中）
 **首次出現：** 2026-04-24
-**最後更新：** 2026-05-17
+**最後更新：** 2026-05-20
 
 ---
 
@@ -117,9 +117,14 @@ Reddit 討論（2026-04-28）有開發者分享從 Opus 切換至 Sonnet 4.6 的
 
 - [[topics/code-quality-decline]]
 
+### Claude Code 高 Token 模式 vs 一般對話體驗分歧（2026-05-20 社群回報）
+
+Reddit r/ClaudeAI 實測分享：Opus 4.7 在 **Claude Code 搭配 max effort 模式**下表現亮眼，被評為目前最強的 agentic coding 體驗；但在**一般對話（chat）**中，即使開啟 adaptive thinking，仍有用戶認為不如 4.6 Extended 精準，且出現假設與幻覺問題。這印證了「Opus 4.7 是 agentic task 優先設計」的社群觀察——其設計目標可能是高 token、多步驟的 agent 工作流，而非傳統對話式 Q&A。
+
 ## 參考來源
 
 - [[news/2026-04-25]]
+- [[news/2026-05-20]]
 - [[news/2026-04-27]]
 - [[news/2026-04-28]]
 - [[news/2026-04-30]]

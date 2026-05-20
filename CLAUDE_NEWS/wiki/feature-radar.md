@@ -4,7 +4,7 @@
 僅收錄官方 changelog、release note 或官方公告來源；社群工具見 [[topics/community-tech-tools]]。
 每次 ingest 後由 LLM 維護：新增功能、更新熱度、補充社群回饋。
 
-**最後更新：** 2026-05-19（含 5/19 ingest 更新；新增自架沙箱 + MCP 隧道 + /resume 指令）
+**最後更新：** 2026-05-20（含 5/20 ingest 更新；新增 claude agents --json + HTML 輸出官方背書）
 
 ---
 
@@ -29,8 +29,10 @@
 
 | 功能 | 發布日期 | 熱度 | 試用價值 | 狀態 |
 |------|----------|------|----------|------|
+| HTML 輸出格式（官方背書） | 2026-05-20 | 🔥🔥🔥🔥 | ⚡ 有條件推薦 | 官方建議（非新功能，策略轉向）|
+| `claude agents --json`（v2.1.145） | 2026-05-20 | 🔥🔥 | ✅ 推薦 | 正式發布 |
 | 自架沙箱 + MCP 隧道 | 2026-05-19 | 🔥🔥🔥 | ⚡ 有條件推薦 | 公開測試 |
-| `/resume` 指令（v2.1.144） | 2026-05-19 | 🔥🔥 | ✅ 推薦 | 正式發布 |
+| `/resume` 背景 session 擴展（v2.1.144） | 2026-05-19 | 🔥 | ✅ 推薦 | 正式發布 |
 | Proactive Workflows | 2026-05-18 | 🔥🔥🔥 | ⏳ 觀望 | 公告（細節待確認）|
 | Capability Curve | 2026-05-18 | 🔥🔥 | ⏳ 觀望 | 公告（細節待確認）|
 | Plugin 依賴關係強制執行（v2.1.143） | 2026-05-16 | 🔥 | ✅ 推薦 | 正式發布 |
@@ -54,6 +56,43 @@
 
 ## 🆕 最新功能（2026-05）
 
+### HTML 輸出格式（官方策略轉向）
+**發布：** 2026-05-20（Anthropic 官方 Blog） | **熱度：** 🔥🔥🔥🔥 | **試用價值：** ⚡ 有條件推薦 | **狀態：** 官方建議
+
+**是什麼：** Anthropic 官方 Blog 由 Claude Code 團隊成員撰文（《Using Claude Code: The unreasonable effectiveness of HTML》），主張以 **HTML 取代 Markdown** 作為 AI agent 輸出格式。理由：HTML 表達能力更強（支援表格、折疊、互動元件）、可直接在瀏覽器分享，且 Claude 已能高品質生成 HTML；此文代表**官方對輸出格式的策略轉向**，非 Claude 新功能，但對工作流設計影響重大。
+
+**為何熱：** 此主題在 2026-05-09 已在 HN 引發 187 則討論（社群自發），官方背書後社群熱度大幅提升（🌋重燃）；Claude Code 生成報告、data viz、工具輸出的開發者應優先考慮切換
+
+**快速上手：**
+```
+# 在 prompt 中明確要求 HTML 輸出
+"請用 HTML 格式輸出分析報告，要可以直接在瀏覽器開啟"
+"生成一個 HTML dashboard，包含折疊區塊和互動表格"
+# 搭配 Claude Code 的 Write 工具直接輸出 .html 檔案
+```
+
+**注意事項：** Markdown 仍適合人機協作的純文字場景（CLAUDE.md、PR 描述）；HTML 更適合最終輸出、儀表板、分享用報告；見 [[topics/community-tech-discussions]]（HTML vs Markdown 討論）
+
+---
+
+### `claude agents --json`（v2.1.145）
+**發布：** 2026-05-20（v2.1.145） | **熱度：** 🔥🔥 | **試用價值：** ✅ 推薦 | **狀態：** 正式發布
+
+**是什麼：** `claude agents --json` 指令將目前所有存活的 Claude session 以 JSON 格式輸出，包含 `agent_id`（本 session ID）與 `parent_agent_id`（父 session ID，支援多層 agent 層級識別）。
+
+**為何熱：** 直接解鎖 tmux-resurrect、status bar、session picker 等工具的整合需求；多層 agent 工作流的可觀察性大幅提升；對管理大量並行 agent 的工作流（如 Claude Squad、Harness）尤為實用。
+
+**快速上手：**
+```bash
+claude agents --json          # 輸出所有 session 的 JSON 列表（含 agent_id）
+claude agents --json | jq '.[] | .agent_id'   # 取得所有 agent ID
+# 搭配 tmux-resurrect：在 session 恢復時用 agent_id 識別對應任務
+```
+
+**注意事項：** `parent_agent_id` 在非層級架構的 session 中為 null；建議搭配 v2.1.142 的細粒度 agent 旗標使用。
+
+---
+
 ### 自架沙箱 + MCP 隧道（Self-hosted Sandboxes + MCP Tunnels）
 **發布：** 2026-05-19（官方公告） | **熱度：** 🔥🔥🔥 | **試用價值：** ⚡ 有條件推薦 | **狀態：** 公開測試
 
@@ -73,10 +112,10 @@
 
 ---
 
-### `/resume` 指令（v2.1.144）
-**發布：** 2026-05-19（v2.1.144） | **熱度：** 🔥🔥 | **試用價值：** ✅ 推薦 | **狀態：** 正式發布
+### `/resume` 背景 session 擴展（v2.1.144）
+**發布：** 2026-05-19（v2.1.144） | **熱度：** 🔥 | **試用價值：** ✅ 推薦 | **狀態：** 正式發布
 
-**是什麼：** 新增 `/resume` 指令，支援背景 session 恢復。透過 `claude --bg` 啟動的背景 session 現可與互動式 session 並列顯示（標記為 `bg`），並加入 elapsed duration 計時，讓多 session 管理更直覺。
+**是什麼：** `/resume` 本已存在，v2.1.144 將其擴展以支援背景 session。`claude --bg` 啟動的背景 session 現可在 `/resume` 列表與互動式 session 並列顯示（標記為 `bg`），並加入 elapsed duration 計時。
 
 **為何熱：** 是 `/goal` fire-and-forget 工作流的重要補充——背景任務跑完後可直接 `/resume` 切回，不需重新開啟新 session；對大量使用背景自動化 agent 的開發者有直接效益。
 

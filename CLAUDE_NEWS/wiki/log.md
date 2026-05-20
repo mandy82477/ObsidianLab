@@ -5,6 +5,24 @@ Append-only 紀錄。每次 ingest、query 或 lint 都在此追加一條。
 
 ---
 
+## 2026-05-20 Ingest
+
+- 來源日報：[[news/2026-05-20]]
+- 更新頁面：
+  - `entities/claude-code.md`（新增 v2.1.145；新增攝影機存取問題與 RCE deeplink 至已知問題；更新最後更新日期）
+  - `entities/stainless.md`（重大更新：服務關閉公告；新增 Ironic 替代方案；更新狀態與歷史記錄）
+  - `topics/ai-agent-safety.md`（新增 2026-05-20 時序：RCE deeplink 廣泛報導、攝影機存取議題持續；更新最後更新日期）
+  - `entities/opus-4-7.md`（新增 2026-05-20：Claude Code max effort 優異 vs 一般對話體驗弱化分歧）
+  - `topics/community-tech-tools.md`（新增 5 工具：TokenShield、Logbox、PrismoDev、claude-autopilot、mdviewer）
+  - `topics/community-tech-patterns.md`（新增 2026-05-20 時序：engramx 89.1% token 減少、repo 架構護欄、35 agent 協調、multi-agent review 41% 不一致）
+  - `topics/community-tech-discussions.md`（HTML vs Markdown 更新為 🌋重燃 + 熱度 +1；新增 multi-agent review 可靠性、auto-memory 副作用、skill creator economy 討論）
+  - `entities/pricing.md`（新增 2026-05-20：Claude Code 定價溝通混亂事件 Simon Willison 分析）
+  - `wiki/feature-radar.md`（新增 HTML 輸出官方背書、claude agents --json；更新全覽表）
+- 新增頁面：無
+- 摘要：今日最重要事件為 Stainless 收購後隨即宣布服務關閉（9 月停止對外服務，OpenAI/Google 等客戶急尋替代），Claude Code RCE deeplink 漏洞持續報導，Anthropic 官方 Blog 正式背書 HTML 取代 Markdown 作為 agent 輸出格式（設計策略轉向），claude agents --json 新增多層 agent 識別能力。社群工具爆發（TokenShield/Logbox/PrismoDev）聚焦 token 節省，multi-agent review 可靠性遭實測挑戰（41% 不一致）
+
+---
+
 ## 2026-05-19 新頁面建立
 
 - 新增頁面：`entities/stainless.md`

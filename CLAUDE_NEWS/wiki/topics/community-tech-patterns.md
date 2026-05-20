@@ -401,6 +401,13 @@
 
 ## 時序
 
+### 2026-05-20
+- **engramx Skill Pack v4.0.0 token 優化實測（89.1% 減少）**：開發者在 87 個檔案（163K token）的專案中，透過 engramx Skill Pack v4.0.0 將 Claude Code 每次啟動需讀取的 token 從 163,000 降至 17,722（減少 89.1%），是目前社群最具體的「解決 session 失憶」量化案例
+- **Repo 內嵌 `.claude/skills/` 架構護欄**：開發者分享將架構契約、腳手架決策樹、硬性限制寫入 `.claude/skills/` 目錄的實踐——任何人 clone repo 後 Claude Code 會自動載入，達到「架構護欄隨 repo 分發」的效果，無需額外配置
+- **35 個 Claude Code Agent 協調設計**：單人工作室分享管理 35 個 Claude Code agent 協作的實踐，重點在如何以明確角色分工避免 agent 互相衝突、維持 quality gate 流程正常運作
+- **Multi-agent Code Review 可靠性實測（41% 不一致率）**：讓三個 Claude Code sub-agent 審查同一個 PR，發現 41% 的評論彼此不一致，對「多 agent code review = 免費升級」的假設提出實證挑戰；建議搭配人工最終審查，不宜純依賴 multi-agent 結論
+- **新工具**：TokenShield（本地 proxy 去除重複 tool_result，宣稱減少 40–70% token）、Logbox（dev log 導入 SQLite + MCP 查詢）、PrismoDev（本地掃描 context bloat 診斷工具）、claude-autopilot（多模型自動化 dev pipeline）
+
 ### 2026-05-19
 - **1000 小時 AI Coding Agent 工作流心得（人工介入節點設計）**：開發者在 1000 小時實戰後總結核心工作流：明確設置人工介入節點、主動限制 agent 自主度，避免「跨模組重構同名方法」等高破壞性錯誤；核心洞察是「把 agent 當強大工具而非獨立員工」——agent 擅長小範圍精準任務，放任大範圍自主決策才是高風險來源
 - **7 步驟 AI 內容 SEO Pipeline（$0.45/篇，每天 15 分鐘）**：開發者開源以 Claude Code slash commands 串接的 7 步驟內容 SEO pipeline，每篇文章成本 $0.45、每天只需 15 分鐘，展示 AI 工作流在內容生產的具體落地數據；是目前社群分享中成本最低且有明確數字的 AI 內容生產案例

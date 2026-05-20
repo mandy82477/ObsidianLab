@@ -27,6 +27,11 @@
 
 | 工具                        | 類型          | 活躍  | 採用  | 簡介                                                                             |
 | ------------------------- | ----------- | --- | --- | ------------------------------------------------------------------------------ |
+| **TokenShield**           | token 優化  | 🟢  | ⚡   | 本地 Node.js proxy，攔截送往 api.anthropic.com 的請求並去除重複的 tool_result 內容（同一檔案多次被讀等情況），宣稱可減少 40–70% 的 Claude Code 費用；npmjs 發布 |
+| **Logbox**                | 監測工具    | 🟢  | ⚡   | 將 dev server log 導入本地 SQLite，再透過 MCP 讓 Claude Code 直接查詢，解決 Claude 無法即時追蹤 log 流的問題；Show HN 發布 |
+| **PrismoDev**             | 診斷工具    | 🟢  | ⚡   | 掃描本地 Claude Code / Codex session log，找出 context bloat 來源（過大的 CLAUDE.md、重複 tool output、broad repo exploration 等），不需 API key，本地離線運行；Show HN 發布 |
+| **claude-autopilot**      | 多模型 pipeline | 🟢 | ⏳  | 多模型自動化開發 pipeline，宣稱每週可處理數十萬行 gross churn，支援 Rails、Alembic、Django 等多框架；作者坦承是 gross 而非 net 產出，社群謹慎評估中；Show HN 發布 |
+| **mdviewer**              | 文件工具    | 🟢  | ⚡   | 100% 用 AI coding agent 完成的原生 macOS Markdown 閱覽器，支援 Obsidian 延伸語法、Mermaid、數學公式，以 Tauri 2（Rust + webview）打造，無 Electron 依賴；Show HN 發布 |
 | **Claude Soul**           | 記憶/學習工具 | 🟢  | ⏳   | MCP server + hooks 跨 session 學習引擎，從互動萃取行為信號並定期反思建立「行為框架」；作者報告 ~200 session 後出現意外行為（Claude 自行建立額外記憶系統、推翻部分指令設定）；Show HN 發布 |
 | **cdesktop**              | 多 agent 工具 | 🟢  | ⚡   | 開源桌面應用，單一 UI 整合 Claude Code、Codex、Gemini CLI 等 5 個 coding agent，支援 OpenRouter、DeepSeek 等 20+ 第三方模型預設，`npx` 執行，填補官方不支援第三方模型的缺口 |
 | **InsForge**              | 部署/基礎設施 | 🟢  | ⏳   | YC P26 新創，開源後端平台（「coding agent 的 Heroku」），讓 Claude Code 等 coding agent 直接部署、操作與 debug 後端及基礎設施，無需手動切換 dashboard 或複製日誌 |

@@ -2,7 +2,7 @@
 
 **狀態：** ongoing
 **開始日期：** 2026-04-27
-**最後更新：** 2026-05-19
+**最後更新：** 2026-05-20
 
 ---
 
@@ -206,6 +206,10 @@
 - [Anthropic's definition of safety is too narrow](https://jonathannen.com/anthropic-safety-too-narrow/) — Jonathan Nen
 
 ## 時序
+
+### 2026-05-20
+- **[安全漏洞] Claude Code RCE via 惡意 Deeplink — 廣泛媒體報導**：CyberSecurityNews 發布詳細技術報導，確認攻擊者可利用惡意 Deeplink 在受害者端執行任意指令；此為針對 Claude Code 的第三個公開 RCE 類漏洞，攻擊面已從安裝路徑（假冒安裝包）轉向執行時期協議處理（deeplink）；官方修補狀態仍未確認，建議避免開啟不明來源 deeplink
+- **[隱私疑慮] Claude Code 攝影機存取問題持續發酵**：Twitter 等平台帖文持續引發討論，核心疑慮為企業安全環境（禁用攝影機）及無攝影機設備的相容性；Anthropic 尚未正式說明此功能的適用條件與觸發邏輯
 
 ### 2026-05-19
 - **[安全揭露] Claude Code .env secrets 以明文永久存於本機 SQLite**：安全工具 Sieve 揭示 Claude Code 等 AI 工具在正常操作中讀取 `.env` 後，所有接觸過的 secret（API keys、雲端憑證等）會以明文永久儲存在本機 SQLite 資料庫，位於 `.gitignore` 保護範圍外，且標準 secret scanner 無法偵測；這是繼 2026-04-30 OpenClaw 計費透明度事件後，Claude Code 在憑證安全方面最具體的新揭露，攻擊者取得 SQLite 檔案即可取得所有曾讀取的憑證
