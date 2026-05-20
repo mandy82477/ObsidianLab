@@ -345,6 +345,16 @@ wiki/
 2. 讀取對應 `news/YYYY-MM-DD.md`，grep 關鍵字找原始條目
 3. 原始條目通常含完整標題與來源平台，可作為引用依據
 
+### community-tech-tools 工具新增規則
+
+新增工具至 `topics/community-tech-tools.md` 時，必須遵守以下格式：
+
+**表格欄位：** `| 工具 | 類型 | 採用 | 首次出現 | 簡介 |`
+- **工具欄**：若在日報中找到 URL（GitHub / HN / Reddit 等），格式為 `[**ToolName**](url)`；若無 URL，格式為 `**ToolName**`
+- **首次出現**：填入日報日期（YYYY-MM-DD）；若無法確認則填 `—`
+- **採用初始值**：新工具預設 `⏳ 觀望中`；Show HN / Reddit 正面反應明顯者填 `⚡`
+- **URL 取得方式**：直接從當天日報原文中擷取（日報中的 Markdown 連結包含原始 URL）
+
 ---
 
 ## Wiki 頁面呈現品質標準

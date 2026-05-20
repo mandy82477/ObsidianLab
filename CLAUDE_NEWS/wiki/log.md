@@ -5,6 +5,18 @@ Append-only 紀錄。每次 ingest、query 或 lint 都在此追加一條。
 
 ---
 
+## 2026-05-20 Schema 升級 | community-tech-tools 表格重構
+
+- 變更：`topics/community-tech-tools.md` 工具表格 schema 調整
+  - 移除 `活躍` 欄（🟢/🟡/🔴 指標）：舊指標測量「最近是否出現在日報」，但常用工具本就不頻繁出現，導致全部顯示過期，設計缺陷
+  - 新增 `首次出現` 欄（YYYY-MM-DD）：記錄工具首次進入 wiki 的日報日期，提供時間脈絡
+  - 工具名稱新增可點擊連結：格式 `[**ToolName**](url)`，URL 從日報原文擷取；無 URL 者保持 `**ToolName**`
+  - 移除重複的 Semble 條目（原在兩處出現，合併為一，首次出現更正為 2026-05-04）
+- 更新：`CLAUDE.md` 新增 `community-tech-tools 工具新增規則` 章節，規範未來 ingest 時的工具欄格式（含 URL 取得方式、首次出現日期、採用初始值）
+- 統計：共 ~90 個工具條目已完成格式更新；有 URL 的工具約 30 個，其餘填 `—` 待後續補充
+
+---
+
 ## 2026-05-20 Ingest
 
 - 來源日報：[[news/2026-05-20]]
