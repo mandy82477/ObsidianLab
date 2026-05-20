@@ -32,7 +32,7 @@
 | Agentic RAG + eval harness 防幻覺 | 2026-05-16 | 🔥🔥 | ☄️閃現 | BM25 + Obsidian vault 工程書籍 RAG，token 從 50K 降至 5K；更重要的是同時建立 eval harness 驗證 Claude 是否幻覺，是少數將「驗證機制」納入工作流的實戰分享 | — |
 | Boris Cherny「coding is solved」/ 反 vibe coding | 2026-05-08 | 🔥🔥🔥🔥🔥 | 🌊延燒 | 多平台（HN/Business Insider/YouTube）廣泛討論，社群兩極化；術語從 vibe coding 走向 spec-driven | — |
 | AI 生成程式碼 90% 有安全漏洞 | 2026-05-13 | 🔥🔥🔥🔥 | ☄️閃現 | 48 應用靜態分析最具說服力的安全反例，直接挑戰「AI 快速上線」假設 | — |
-| HTML vs Markdown 輸出格式辯論 | 2026-05-09 | 🔥🔥🔥🔥 | 🌋重燃 | HN 187 則討論；共識：HTML → 機器消費，Markdown → 人機協作；2026-05-20 Anthropic 官方 Blog 發文背書 HTML，升至官方策略轉向（重燃原因：官方首次正式表態）| agent-html-skills |
+| HTML vs Markdown 輸出格式辯論 | 2026-05-09 | 🔥🔥🔥🔥 | 🌋重燃 | HN 187 則討論；原始論點：HTML 視覺呈現與資訊密度更優；反駁：HTML 難以人機協同編輯；2026-05-20 Anthropic 官方 Blog 發文背書 HTML（理由：表達能力強、瀏覽器直接開啟、分享便利），升至官方策略轉向（重燃原因：官方首次正式表態）| agent-html-skills |
 | Multi-agent Code Review 可靠性 | 2026-05-20 | 🔥🔥🔥 | ☄️閃現 | 三個 Claude Code sub-agent 審查同一 PR 發現 41% 意見不一致，對「多 agent review = 免費升級」假設提出實證挑戰；multi-agent 可靠性問題首次有具體數字支撐 | — |
 | Auto-memory 功能副作用疑慮 | 2026-05-20 | 🔥🔥 | ☄️閃現 | Claude Code v2.1.59 起預設開啟 auto-memory（在 `~/.claude/projects/*/memory/` 靜默建立 .md 檔），被懷疑是部分「Opus 被砍弱」或「session 變笨」現象的隱性變數；社群等待實驗驗證 | — |
 | Skill 創作者缺乏變現機制 | 2026-05-20 | 🔥🔥 | ☄️閃現 | 開發者有意願付費購買高品質 skill 但 Anthropic 無商業化路徑；creator economy 缺席是 skill 生態成熟的結構性障礙 | — |
@@ -180,7 +180,7 @@
 - **HN 187 則討論**：主張以 HTML 取代 Markdown 作為 Claude Code 主要交付格式的論點在 Hacker News 引發 187 則討論，是近期 Claude Code 工作流議題的最高單篇互動度
 - **效能論述**：HTML 在視覺呈現與資訊密度上有顯著優勢，可利用 CSS 樣式呈現結構化資訊、鏈接、列表，比純文字 Markdown 更易於後處理與自動化
 - **反駁意見**：社群指出 HTML 文件難以讓人類協同編輯，對需要人機共同作者的文件場景可能反而是阻礙；Markdown 的簡潔性在版本控制與 diff 比較中有不可替代的優勢
-- **適用場景邊界**：純機器消費的輸出（API 自動化、儀表板生成、結構化報告）HTML 可能更優；需要人類後續編輯的輸出場景仍建議 Markdown
+- **適用場景邊界**：社群反駁指出 HTML 難以人機協同編輯，隱含 HTML 更適合不需人工後續編輯的輸出；「純機器消費」為推論，非社群原文說法
 
 ### Claude Code 架構深度解析（dev.to 系列）（2026-05-10）
 
