@@ -55,6 +55,13 @@
 
 ## 技術彙整
 
+### MCP Context Bloat 實測量化（2026-05-19）
+
+- **首次具體量化**：開發者實測 9 個 MCP 伺服器（共 142 個工具），每輪對話冷啟動即消耗 38,000 tokens 系統提示；以 Sonnet 費率計算，200 輪對話成本高達數十美元，MCP 工具量是隱性費用最大來源之一
+- **「按需啟用」策略**：作者建議根據任務類型動態載入 MCP 伺服器，而非將所有伺服器常態開啟；呼應 Wire Trace（2026-05-07）揭示的「MCP 插件大幅佔用 context window」問題，此次首次有精確數字佐證
+- **與 auto-compact 的交互作用**：38k tokens 冷啟動意味著每次 context 壓縮後重新載入的起點更高，加速下一輪壓縮；對長工作 session 的成本影響呈複利式累積
+- **重新審視效益**：此數據促使社群重新評估「載入越多 MCP = 功能越強」假設——工具數量帶來的能力提升，可能被 context 消耗抵消
+
 ### Claude Skills 機制邊界（2026-05-17）
 
 - **`ask_user_input_v0` 硬性限制**：Skills 使用的 `ask_user_input_v0` 工具存在最多 3 個問題、每題最多 4 個選項的硬性上限；當問題或選項超出限制時，Claude 在不告知用戶的情況下靜默壓縮，用戶無法得知原始問題被修改
@@ -68,57 +75,100 @@
 - **效益疑問**：即使精簡的指令檔（< 100 行）仍常被模型忽略（與 CLAUDE.md candidate-context 架構直接相關）；社群對「維護指令檔是否值得」的分歧在此討論串清晰呈現
 - **連結既有問題**：此討論與「CLAUDE.md 失效」官方社群缺口（見 [[topics/official-community-gap]]）以及 2026-05-10 發現的 candidate-context 架構（見 [[entities/claude-code]]）相互印證
 
-### effort 等級與模型行為
+### Harness vs 模型退步辯論（2026-05-16）
 
-- **effort 提升 ≠ 拒絕率提升**：系統性測試（CVP Run 5，Opus 4.6）顯示 medium → high effort 主要影響回答深度（29–47% 增長），拒絕率增長僅 11%
-- **Opus vs Sonnet 穩定性差異**：HN 社群數據顯示 Sonnet 在 context 不完整時非預期失誤率達 20–35%；Opus 在不完整情境下明顯更穩定
-- **Usage Policy 與 effort 無關**：Opus 4.7 的隨機 Usage Policy 拒絕問題（見 [[entities/opus-4-7]]）與 effort 等級無關，屬獨立 bug
+- **「兩個月的退步感來自 harness 設定，而非模型能力下降」**：dev.to 文章分析長達兩個月的「Claude Code 變差了」社群抱怨潮，主張問題根源在 harness（腳手架工具鏈）的設定與用法——CLAUDE.md 腐爛、hooks 設定失效、context 管理退化，這些問題隨專案時間積累，被感知為「模型退步」，但實為 harness 維護問題
+- **與既有認知框架的一致性**：此論點與 2026-05-10 CLAUDE.md candidate-context 揭示（指令被忽略的根源在 harness 架構）、2026-05-07 skill atrophy 討論（AI 加速導致 harness 設計知識退化）形成一致框架：「問題通常在工具鏈配置，不在模型」
 
-### 多 LLM 協作架構
+### Agentic RAG 與 Eval Harness 結合（2026-05-16）
 
-- **角色分工模型**：Claude Opus 擔任「首席工程師」持有否決權，Gemini Pro 負責「策略判斷」，人類保留最終資金決策權；270+ 條分歧記錄日誌顯示模型間存在真實且可記錄的意見差異
-- **異質模型互補**：Claude 與 Gemini 在同一工作流中協作的案例顯示，不同模型在不同決策層次（工程執行 vs 策略判斷）各有優勢，「單一最佳模型」假設受到挑戰
-- **否決機制設計**：賦予 AI agent 否決權的架構需要明確的優先序（人類 > Claude > Gemini），並記錄分歧以供後續分析
-- **成本導向的 multi-LLM 混合架構**（2026-05-14）：Opus 4.7 作為 orchestrator + DeepSeek V4 作為 worker 的混合策略，是訂閱費用調整後的具體因應方案；「高能力決策層 + 低成本執行層」模式預計成為 6/15 後的主流架構選擇；適合 Max 20x 方案下需最大化性價比的重度自動化用戶
+- **BM25 + 向量搜尋降低 token 消耗 10 倍**：開發者將工程類 PDF 轉為 Markdown 存入 Obsidian vault，以 BM25 + 語義搜尋讓 Claude 只讀相關段落，將每次問答 token 消耗從約 50,000 降至約 5,000（10 倍節省）
+- **Eval harness 驗證 Claude 是否幻覺**：更值得關注的是開發者同時建立了評估框架，主動驗證 Claude 回答是否存在幻覺，是社群中少數將「驗證機制」系統性納入 AI 工作流的案例；與 Judge Gate（2026-05-11）的語意層驗證概念相呼應——「不能只靠 AI 說它對就算對」
+- **意義**：RAG 降耗已成社群共識，此案例的亮點是「評估閉環」設計，為 AI 知識庫工作流提供了更可靠的品質保證路徑
 
-### MCP Context Bloat 實測量化（2026-05-19）
+### AI 生成程式碼安全審查必要性（2026-05-13）
 
-- **首次具體量化**：開發者實測 9 個 MCP 伺服器（共 142 個工具），每輪對話冷啟動即消耗 38,000 tokens 系統提示；以 Sonnet 費率計算，200 輪對話成本高達數十美元，MCP 工具量是隱性費用最大來源之一
-- **「按需啟用」策略**：作者建議根據任務類型動態載入 MCP 伺服器，而非將所有伺服器常態開啟；呼應 Wire Trace（2026-05-07）揭示的「MCP 插件大幅佔用 context window」問題，此次首次有精確數字佐證
-- **與 auto-compact 的交互作用**：38k tokens 冷啟動意味著每次 context 壓縮後重新載入的起點更高，加速下一輪壓縮；對長工作 session 的成本影響呈複利式累積
-- **重新審視效益**：此數據促使社群重新評估「載入越多 MCP = 功能越強」假設——工具數量帶來的能力提升，可能被 context 消耗抵消
+- **90% AI 生成應用存在安全漏洞**：48 個應用程式掃描結果（44% 驗證缺口、33% RLS bypass、25% BOLA/IDOR）是目前最具說服力的具體數據，直接挑戰「AI 快速開發即可上線」假設
+- **開發流程含義**：Claude Code 開發者應將安全審查（如 Snyk + Claude Code 整合，2026-05-10）納入標準 PR 流程；AI 生成程式碼不比人工撰寫更安全，快速開發的速度優勢可能掩蓋安全問題
+- **與 Claude Security 的關係**：此研究為 Anthropic 的 Claude Security 公開 Beta（2026-05-06）和社群工具 Trent（架構層安全評估）提供了需求支撐；見 [[entities/claude-security]]、[[topics/ai-agent-safety]]
 
-### 工具生態痛點
+### Context 管理是大型專案 Claude Code 的核心瓶頸（2026-05-12）
 
-- **發現性差**：skills 與 MCP 伺服器散落各處，品質參差，缺乏集中發現機制
-- **主題模式**：Claude Code `auto` 主題僅啟動時偵測一次，不即時同步系統外觀（issue #2990）
-- **Session log 路徑**：`~/.claude/projects/` 儲存 JSONL 格式 session log，可供自製工具讀取分析
-- **Session 歷史保留**：預設 30 天自動刪除 session `.jsonl`；可執行 `npx agentinit agent set claude cleanupPeriodDays 365` 延長保留期
+- **主流認知更新**：在大型專案使用 Claude Code 的最大瓶頸被確認是 Context 管理，而非程式碼生成品質——LLM 的 attention 機制在缺乏完整系統全貌時，會生成「看起來正確但邏輯有誤」的程式碼
+- **根本原因**：Transformer attention 機制在 context 不完整時容易聚焦在局部符合的片段，忽略全域一致性；這不是「Claude Code 不夠聰明」，而是 attention 架構的基本特性
+- **應對策略**（社群整理）：
+  - 在任務開始前系統性注入架構概覽文件（非僅 CLAUDE.md）
+  - 使用 graphify、Semble 等工具建立結構化 codebase 索引，讓 Claude 讀摘要而非原始檔案
+  - 分拆大型任務，確保每個子任務的 context 足夠聚焦
+  - 在每個 session 開始時重新確認 context 完整性（見 CLAUDE.md 記憶驗證兩招，2026-05-11）
 
-### 封閉技能生態批判（2026-05-01）
+### Judge Gate：語意級 Agent 品質驗證（2026-05-11）
 
-- **Anthropic 將新功能鎖在付費雲端**：社群批評 Ultraplan、Ultrareview、Cloud Security 等新功能鎖在付費雲端而非開放技能生態，使開放與封閉技能形成分裂
-- **「無法檢視的 prompt 就無法組合」**：社群擔憂封閉技能阻礙生態建設，降低開發者對工具行為的可預測性與可延伸性
+- **普遍失敗模式**：自主編程代理在「測試通過、linter 無誤」後即宣告任務完成，但實際功能可能仍不完整；測試框架只能驗證語法正確性，無法判斷語義完整性
+- **Judge Gate 概念**：在現有測試層之上增加「judge gate」——語意層的額外驗證步驟，以另一個 LLM 或人工審核確認功能實際完成，而非僅依賴傳統測試框架的結構性驗證
+- **意義**：是對「測試通過 = 功能完成」這個 AI agent 常見假設的系統性挑戰，對全自動化 CI/CD 流程中的品質保證設計有直接影響
 
-### 規格驅動開發（2026-05-02）
+### Claude Code 架構深度解析（dev.to 系列）（2026-05-10）
 
-- **Spec-Driven Development vs Vibe Coding**：呼應 Karpathy「從 Vibe Coding 到代理工程」演講，強調人類必須主導規格設計並與代理協作制定計畫；嚴謹的規格文件（spec）應取代依賴模型自由發揮的模糊工作方式
-- **與 CLAUDE.md 最佳實踐一致**：規格驅動開發本質上是將「規格設計的責任留在人類手中」，與 CLAUDE.md 精簡+規則導向的原則相互呼應
+- **系列文章第一章**：分析 Claude Code 工程架構，指出大多數人誤以為 Claude Code 只是「能寫程式的聊天框」，底層工程設計遠比表面複雜
+- **社群知識深化趨勢**：此系列代表社群對 Claude Code 從「使用工具」到「理解工具原理」的知識深化，與 CLAUDE.md 被發現作為 candidate-context（`<system-reminder>` 包裹）的架構揭示同步出現，顯示社群正在系統性解構 Claude Code 內部架構
 
-### 記憶體治理與行為漂移防範（2026-05-02）
+### 三層疊加式 AI Code Review（2026-05-10）
 
-- **未版本控制的記憶會導致行為偏移**：研究顯示未經版本控制的 Claude Code 代理記憶會隨專案規模增長產生可量測的「行為偏移」（anti-drift），表現為指令遵從性下降、行為不一致性增加
-- **記憶審計框架**：解決方案包含定期審計 agent 記憶、版本控制記憶文件（如納入 git）、定期 prune 過期或衝突的記憶條目
+- **多層防護必要性**：作者發現所有 PR 通過單一 AI reviewer 後仍上線 3 個 bug，轉而測試三層疊加式 AI code review 流程；對依賴單一 AI reviewer 作為最後防線的團隊是有用的警示
+- **與社群 4-agent Code Review 工作流的關係**：此文件測試的是「多層次（multi-layer）」而非「多代理（multi-agent）」review，關注深度層次分工 vs 角色分工，兩種方向互補
 
-### AI 程式碼一致性問題（2026-05-03）
+### HTML 取代 Markdown 作為 Claude Code 輸出格式（2026-05-09）
 
-- **命名漂移現象**：AI 工具對同一功能反覆產出不同命名（`getUsers` / `fetchUserList` / `loadAllUsers`），在長期維護的大型代碼庫中積累顯著技術債
-- **工程解法**：透過自建 OSS 工具強制 Claude Code 等 AI 工具在代碼生成時遵守既定命名與風格規範，是「AI 代碼非決定性」問題的具體對策
+- **來源：** Twitter @trq212 貼文，引發 HN 187 則討論
+- **原始論點**：HTML 在視覺呈現與資訊密度上有顯著優勢，可利用 CSS 樣式呈現結構化資訊、鏈接、列表
+- **反駁意見**：社群指出 HTML 文件難以讓人類協同編輯，對需要人機共同作者的文件場景可能反而是阻礙；Markdown 的簡潔性在版本控制與 diff 比較中有不可替代的優勢
+- **適用場景邊界**：社群反駁指出 HTML 難以人機協同編輯，隱含 HTML 更適合不需人工後續編輯的輸出；「純機器消費」為推論，非社群原文說法
+- **關鍵回響：** 📝 支持：2026-05-20 Anthropic 官方 Blog《The unreasonable effectiveness of HTML》正式背書，論據為表達能力強 + 瀏覽器直接開啟 + 分享便利
 
-### AI 大規模開發案例（2026-05-03）
+### Boris Cherny 反「vibe coding」與技術術語演化（2026-05-08）
 
-- **91k 行 ERP 案例**：聲稱單人使用 Claude Code 29 天完成 91,000 行 ERP 系統；若屬實將是 AI 輔助開發生產力的標誌性案例，社群正關注技術深度與長期維護性的後續驗證
-- **確定度量化門檻**：強制 Claude 在確定度達 95% 才能動手的工作流設計，對高風險任務（生產部署、資料庫操作）可有效降低誤操作率；95% 為本次社群討論提出的具體數值
+- **術語疲勞與主張**：Claude Code 創始人 Boris Cherny 在「Code with Claude」大會公開表示厭倦「vibe coding」一詞，正尋找替代描述，同時宣稱「寫程式問題已被解決」（coding is solved），2026 年自己從未手寫一行程式
+- **社群兩極反應**：Business Insider、HN、YouTube 多平台討論，有人認同 AI 輔助開發的效率躍升，也有人直接回應「Claude Code 太不穩定、已放棄使用」
+- **術語演化意涵**：從「vibe coding」（感覺驅動）到「spec-driven development」（規格驅動）的術語轉移，反映社群對 AI 開發方法論的共識正在收斂；見 [[entities/boris-cherny]]
+
+### 整合模式選擇框架（2026-05-08）
+
+- **三種模式系統比較**：社群深度比較 Claude Code 三種整合部署模式：
+  1. **編輯器嵌入**（Cursor / Windsurf）：緊密 UX 但受廠商管控，IDE 升級可能破壞工作流
+  2. **終端機原生**（Claude Code CLI）：全功能但無 IDE context 感知，適合重度 agent 長跑工作流
+  3. **橋接方案**（VS Code extension + CLI 橋接）：嘗試兼顧兩者但增加複雜度
+- **選擇依據**：任務類型（互動補全 vs 長跑 agent）、IDE 依賴程度、對廠商管控的接受度；無單一最佳選擇，只有最適合特定工作流的配置
+
+### Token 用量極端案例（2026-05-08）
+
+- **3.77 億 token / 月（雙工具並用實測）**：開發者同時使用 Claude Code 與 OpenAI Codex 兩個月，單月消耗高達 3.77 億 token，引發對 token 效率管理與實際成本的關注
+- **多工具並用策略**：不選邊站、同時使用 Claude Code + Codex 的策略，與 Claudy（多供應商設定檔切換）的設計需求相呼應；對重度開發者而言訂閱方案的 token 成本優勢更加凸顯
+
+### 120 提示詞模式實證研究（2026-05-08）
+
+- **研究規模與方法**：系統性整理並實測 120 種提示詞模式，資料來源涵蓋 Discord、GitHub、Twitter 及個人使用三個月，是目前社群最大規模的實證型 prompt 效果驗證
+- **驗證標準**：以可量測的輸出差異為判斷依據而非主觀感受；相比 Caveman 基準測試（24 題），此研究規模與方法論更嚴謹，結果有助於建立社群 prompt engineering 共識
+
+### Skill Atrophy 反思與對策（2026-05-07）
+
+- **「理解是租來的，不是賺來的」**：開發者公開坦誠使用 Claude Code 一週內可出三個功能，但三天後看不懂自己的程式碼；「AI 加速開發 + 理解外包」的副作用引發大量開發者共鳴，技能退化（skill atrophy）問題浮出水面
+- **36 個記憶檔案對策**：使用 Claude Code 60 天後整理出 36 個結構化記憶檔（per-project 持久記憶），根本解決 Agent 每次重啟都要重新說明背景的問題，對長期維護專案尤為實用
+- **recap 工具主動對抗 skill atrophy**：掃描過去 N 天的 Claude Code 與 Codex 對話，找出開發者遭遇陌生概念的片段，自動產出概念說明摘要，幫助開發者在 AI 加速開發中主動補強知識盲點
+
+### Wire Trace 揭示的架構侷限（2026-05-07）
+
+- **13,000 字基礎提示詞**：研究者透過 wire trace 截獲 Claude Code 完整系統提示（約 13,000 字），MCP 插件（如 Figma）會大幅額外佔用 context window，插件越多 context 越快耗盡；企業部署需評估 MCP 數量對 context 品質的影響
+- **Auto 模式安全邊界為提示詞層**：wire trace 顯示 Claude Code「Auto 模式」的權限控制僅是提示詞層面的機制，並非底層沙箱強制約束——安全邊界仰賴 prompt 而非系統隔離；企業級安全評估不能假設 Auto 模式提供底層沙箱保護，需在架構層補充額外隔離機制
+
+### Agentic 工作流的組織協調挑戰（2026-05-06）
+
+- **PR review 成為多人 multi-agent 的新瓶頸**：多個開發者並行使用 Claude Code 後，PR review 數量過多、內容混亂、缺乏共同脈絡，成為新瓶頸；主張「協調必須發生在 IDE 之前」——agentic 工作流的下一個挑戰是組織協調層面（類似 agentic Slack）而非技術層面（IDE 插件）
+- **工作流形態演化預測**：當前的「單人 agentic IDE」模式將演化為「多 agent 協調平台」，需要有共同 context 的跨人跨 agent 協調機制
+
+### Skills Unix 哲學（2026-05-06）
+
+- **每個 skill 只做一件事**：使用 Claude Code Skills 一年後的實踐總結：skill 設計越精簡（遵循 Unix 哲學「每個 skill 只做一件事、功能過多就拆分」），模型自動選用正確 skill 的準確率越高；skill 功能過多導致觸發歧義，模型選錯工具，是 skill catalog 設計的核心反模式
 
 ### Boris Cherny「Loops 是未來」設計哲學（2026-05-05）
 
@@ -131,99 +181,50 @@
 - **「應該放棄嗎？」重置效應**：Claude Code 反覆失敗後詢問「我們應該放棄嗎？」，模型常「振作」並成功完成任務；社群稱此為非正式「重置咒語」，多名開發者已驗證此現象，機制尚不確定
 - **記憶化規則過擬合風險**：當 agent 記憶中的規則與眼前 bug 過度吻合時，模型可能跳過診斷直接套用規則，產生「假性修復」；agent 記憶機制設計需特別留意「規則過擬合」（rule overfitting）的風險
 
-### Skills Unix 哲學（2026-05-06）
+### AI 大規模開發案例（2026-05-03）
 
-- **每個 skill 只做一件事**：使用 Claude Code Skills 一年後的實踐總結：skill 設計越精簡（遵循 Unix 哲學「每個 skill 只做一件事、功能過多就拆分」），模型自動選用正確 skill 的準確率越高；skill 功能過多導致觸發歧義，模型選錯工具，是 skill catalog 設計的核心反模式
+- **91k 行 ERP 案例**：聲稱單人使用 Claude Code 29 天完成 91,000 行 ERP 系統；若屬實將是 AI 輔助開發生產力的標誌性案例，社群正關注技術深度與長期維護性的後續驗證
+- **確定度量化門檻**：強制 Claude 在確定度達 95% 才能動手的工作流設計，對高風險任務（生產部署、資料庫操作）可有效降低誤操作率；95% 為本次社群討論提出的具體數值
 
-### Agentic 工作流的組織協調挑戰（2026-05-06）
+### AI 程式碼一致性問題（2026-05-03）
 
-- **PR review 成為多人 multi-agent 的新瓶頸**：多個開發者並行使用 Claude Code 後，PR review 數量過多、內容混亂、缺乏共同脈絡，成為新瓶頸；主張「協調必須發生在 IDE 之前」——agentic 工作流的下一個挑戰是組織協調層面（類似 agentic Slack）而非技術層面（IDE 插件）
-- **工作流形態演化預測**：當前的「單人 agentic IDE」模式將演化為「多 agent 協調平台」，需要有共同 context 的跨人跨 agent 協調機制
+- **命名漂移現象**：AI 工具對同一功能反覆產出不同命名（`getUsers` / `fetchUserList` / `loadAllUsers`），在長期維護的大型代碼庫中積累顯著技術債
+- **工程解法**：透過自建 OSS 工具強制 Claude Code 等 AI 工具在代碼生成時遵守既定命名與風格規範，是「AI 代碼非決定性」問題的具體對策
 
-### Wire Trace 揭示的架構侷限（2026-05-07）
+### 記憶體治理與行為漂移防範（2026-05-02）
 
-- **13,000 字基礎提示詞**：研究者透過 wire trace 截獲 Claude Code 完整系統提示（約 13,000 字），MCP 插件（如 Figma）會大幅額外佔用 context window，插件越多 context 越快耗盡；企業部署需評估 MCP 數量對 context 品質的影響
-- **Auto 模式安全邊界為提示詞層**：wire trace 顯示 Claude Code「Auto 模式」的權限控制僅是提示詞層面的機制，並非底層沙箱強制約束——安全邊界仰賴 prompt 而非系統隔離；企業級安全評估不能假設 Auto 模式提供底層沙箱保護，需在架構層補充額外隔離機制
+- **未版本控制的記憶會導致行為偏移**：研究顯示未經版本控制的 Claude Code 代理記憶會隨專案規模增長產生可量測的「行為偏移」（anti-drift），表現為指令遵從性下降、行為不一致性增加
+- **記憶審計框架**：解決方案包含定期審計 agent 記憶、版本控制記憶文件（如納入 git）、定期 prune 過期或衝突的記憶條目
 
-### Skill Atrophy 反思與對策（2026-05-07）
+### 規格驅動開發（2026-05-02）
 
-- **「理解是租來的，不是賺來的」**：開發者公開坦誠使用 Claude Code 一週內可出三個功能，但三天後看不懂自己的程式碼；「AI 加速開發 + 理解外包」的副作用引發大量開發者共鳴，技能退化（skill atrophy）問題浮出水面
-- **36 個記憶檔案對策**：使用 Claude Code 60 天後整理出 36 個結構化記憶檔（per-project 持久記憶），根本解決 Agent 每次重啟都要重新說明背景的問題，對長期維護專案尤為實用
-- **recap 工具主動對抗 skill atrophy**：掃描過去 N 天的 Claude Code 與 Codex 對話，找出開發者遭遇陌生概念的片段，自動產出概念說明摘要，幫助開發者在 AI 加速開發中主動補強知識盲點
+- **Spec-Driven Development vs Vibe Coding**：呼應 Karpathy「從 Vibe Coding 到代理工程」演講，強調人類必須主導規格設計並與代理協作制定計畫；嚴謹的規格文件（spec）應取代依賴模型自由發揮的模糊工作方式
+- **與 CLAUDE.md 最佳實踐一致**：規格驅動開發本質上是將「規格設計的責任留在人類手中」，與 CLAUDE.md 精簡+規則導向的原則相互呼應
 
-### 120 提示詞模式實證研究（2026-05-08）
+### 封閉技能生態批判（2026-05-01）
 
-- **研究規模與方法**：系統性整理並實測 120 種提示詞模式，資料來源涵蓋 Discord、GitHub、Twitter 及個人使用三個月，是目前社群最大規模的實證型 prompt 效果驗證
-- **驗證標準**：以可量測的輸出差異為判斷依據而非主觀感受；相比 Caveman 基準測試（24 題），此研究規模與方法論更嚴謹，結果有助於建立社群 prompt engineering 共識
+- **Anthropic 將新功能鎖在付費雲端**：社群批評 Ultraplan、Ultrareview、Cloud Security 等新功能鎖在付費雲端而非開放技能生態，使開放與封閉技能形成分裂
+- **「無法檢視的 prompt 就無法組合」**：社群擔憂封閉技能阻礙生態建設，降低開發者對工具行為的可預測性與可延伸性
 
-### Token 用量極端案例（2026-05-08）
+### 多 LLM 協作架構（持續更新，最近：2026-05-14）
 
-- **3.77 億 token / 月（雙工具並用實測）**：開發者同時使用 Claude Code 與 OpenAI Codex 兩個月，單月消耗高達 3.77 億 token，引發對 token 效率管理與實際成本的關注
-- **多工具並用策略**：不選邊站、同時使用 Claude Code + Codex 的策略，與 Claudy（多供應商設定檔切換）的設計需求相呼應；對重度開發者而言訂閱方案的 token 成本優勢更加凸顯
+- **角色分工模型**：Claude Opus 擔任「首席工程師」持有否決權，Gemini Pro 負責「策略判斷」，人類保留最終資金決策權；270+ 條分歧記錄日誌顯示模型間存在真實且可記錄的意見差異
+- **異質模型互補**：Claude 與 Gemini 在同一工作流中協作的案例顯示，不同模型在不同決策層次（工程執行 vs 策略判斷）各有優勢，「單一最佳模型」假設受到挑戰
+- **否決機制設計**：賦予 AI agent 否決權的架構需要明確的優先序（人類 > Claude > Gemini），並記錄分歧以供後續分析
+- **成本導向的 multi-LLM 混合架構**（2026-05-14）：Opus 4.7 作為 orchestrator + DeepSeek V4 作為 worker 的混合策略，是訂閱費用調整後的具體因應方案；「高能力決策層 + 低成本執行層」模式預計成為 6/15 後的主流架構選擇
 
-### 整合模式選擇框架（2026-05-08）
+### effort 等級與模型行為（日期未記錄）
 
-- **三種模式系統比較**：社群深度比較 Claude Code 三種整合部署模式：
-  1. **編輯器嵌入**（Cursor / Windsurf）：緊密 UX 但受廠商管控，IDE 升級可能破壞工作流
-  2. **終端機原生**（Claude Code CLI）：全功能但無 IDE context 感知，適合重度 agent 長跑工作流
-  3. **橋接方案**（VS Code extension + CLI 橋接）：嘗試兼顧兩者但增加複雜度
-- **選擇依據**：任務類型（互動補全 vs 長跑 agent）、IDE 依賴程度、對廠商管控的接受度；無單一最佳選擇，只有最適合特定工作流的配置
+- **effort 提升 ≠ 拒絕率提升**：系統性測試（CVP Run 5，Opus 4.6）顯示 medium → high effort 主要影響回答深度（29–47% 增長），拒絕率增長僅 11%
+- **Opus vs Sonnet 穩定性差異**：HN 社群數據顯示 Sonnet 在 context 不完整時非預期失誤率達 20–35%；Opus 在不完整情境下明顯更穩定
+- **Usage Policy 與 effort 無關**：Opus 4.7 的隨機 Usage Policy 拒絕問題（見 [[entities/opus-4-7]]）與 effort 等級無關，屬獨立 bug
 
-### Boris Cherny 反「vibe coding」與技術術語演化（2026-05-08）
+### 工具生態痛點（日期未記錄）
 
-- **術語疲勞與主張**：Claude Code 創始人 Boris Cherny 在「Code with Claude」大會公開表示厭倦「vibe coding」一詞，正尋找替代描述，同時宣稱「寫程式問題已被解決」（coding is solved），2026 年自己從未手寫一行程式
-- **社群兩極反應**：Business Insider、HN、YouTube 多平台討論，有人認同 AI 輔助開發的效率躍升，也有人直接回應「Claude Code 太不穩定、已放棄使用」
-- **術語演化意涵**：從「vibe coding」（感覺驅動）到「spec-driven development」（規格驅動）的術語轉移，反映社群對 AI 開發方法論的共識正在收斂；見 [[entities/boris-cherny]]
-
-### HTML 取代 Markdown 作為 Claude Code 輸出格式（2026-05-09）
-
-- **HN 187 則討論**：主張以 HTML 取代 Markdown 作為 Claude Code 主要交付格式的論點在 Hacker News 引發 187 則討論，是近期 Claude Code 工作流議題的最高單篇互動度
-- **效能論述**：HTML 在視覺呈現與資訊密度上有顯著優勢，可利用 CSS 樣式呈現結構化資訊、鏈接、列表，比純文字 Markdown 更易於後處理與自動化
-- **反駁意見**：社群指出 HTML 文件難以讓人類協同編輯，對需要人機共同作者的文件場景可能反而是阻礙；Markdown 的簡潔性在版本控制與 diff 比較中有不可替代的優勢
-- **適用場景邊界**：社群反駁指出 HTML 難以人機協同編輯，隱含 HTML 更適合不需人工後續編輯的輸出；「純機器消費」為推論，非社群原文說法
-
-### Claude Code 架構深度解析（dev.to 系列）（2026-05-10）
-
-- **系列文章第一章**：分析 Claude Code 工程架構，指出大多數人誤以為 Claude Code 只是「能寫程式的聊天框」，底層工程設計遠比表面複雜
-- **社群知識深化趨勢**：此系列代表社群對 Claude Code 從「使用工具」到「理解工具原理」的知識深化，與 CLAUDE.md 被發現作為 candidate-context（`<system-reminder>` 包裹）的架構揭示同步出現，顯示社群正在系統性解構 Claude Code 內部架構
-
-### 三層疊加式 AI Code Review（2026-05-10）
-
-- **多層防護必要性**：作者發現所有 PR 通過單一 AI reviewer 後仍上線 3 個 bug，轉而測試三層疊加式 AI code review 流程；對依賴單一 AI reviewer 作為最後防線的團隊是有用的警示
-- **與社群 4-agent Code Review 工作流的關係**：此文件測試的是「多層次（multi-layer）」而非「多代理（multi-agent）」review，關注深度層次分工 vs 角色分工，兩種方向互補
-
-### Judge Gate：語意級 Agent 品質驗證（2026-05-11）
-
-- **普遍失敗模式**：自主編程代理在「測試通過、linter 無誤」後即宣告任務完成，但實際功能可能仍不完整；測試框架只能驗證語法正確性，無法判斷語義完整性
-- **Judge Gate 概念**：在現有測試層之上增加「judge gate」——語意層的額外驗證步驟，以另一個 LLM 或人工審核確認功能實際完成，而非僅依賴傳統測試框架的結構性驗證
-- **意義**：是對「測試通過 = 功能完成」這個 AI agent 常見假設的系統性挑戰，對全自動化 CI/CD 流程中的品質保證設計有直接影響
-
-### Context 管理是大型專案 Claude Code 的核心瓶頸（2026-05-12）
-
-- **主流認知更新**：在大型專案使用 Claude Code 的最大瓶頸被確認是 Context 管理，而非程式碼生成品質——LLM 的 attention 機制在缺乏完整系統全貌時，會生成「看起來正確但邏輯有誤」的程式碼
-- **根本原因**：Transformer attention 機制在 context 不完整時容易聚焦在局部符合的片段，忽略全域一致性；這不是「Claude Code 不夠聰明」，而是 attention 架構的基本特性
-- **應對策略**（社群整理）：
-  - 在任務開始前系統性注入架構概覽文件（非僅 CLAUDE.md）
-  - 使用 graphify、Semble 等工具建立結構化 codebase 索引，讓 Claude 讀摘要而非原始檔案
-  - 分拆大型任務，確保每個子任務的 context 足夠聚焦
-  - 在每個 session 開始時重新確認 context 完整性（見 CLAUDE.md 記憶驗證兩招，2026-05-11）
-
-### AI 生成程式碼安全審查必要性（2026-05-13）
-
-- **90% AI 生成應用存在安全漏洞**：48 個應用程式掃描結果（44% 驗證缺口、33% RLS bypass、25% BOLA/IDOR）是目前最具說服力的具體數據，直接挑戰「AI 快速開發即可上線」假設
-- **開發流程含義**：Claude Code 開發者應將安全審查（如 Snyk + Claude Code 整合，2026-05-10）納入標準 PR 流程；AI 生成程式碼不比人工撰寫更安全，快速開發的速度優勢可能掩蓋安全問題
-- **與 Claude Security 的關係**：此研究為 Anthropic 的 Claude Security 公開 Beta（2026-05-06）和社群工具 Trent（架構層安全評估）提供了需求支撐；見 [[entities/claude-security]]、[[topics/ai-agent-safety]]
-
-### Harness vs 模型退步辯論（2026-05-16）
-
-- **「兩個月的退步感來自 harness 設定，而非模型能力下降」**：dev.to 文章分析長達兩個月的「Claude Code 變差了」社群抱怨潮，主張問題根源在 harness（腳手架工具鏈）的設定與用法——CLAUDE.md 腐爛、hooks 設定失效、context 管理退化，這些問題隨專案時間積累，被感知為「模型退步」，但實為 harness 維護問題
-- **與既有認知框架的一致性**：此論點與 2026-05-10 CLAUDE.md candidate-context 揭示（指令被忽略的根源在 harness 架構）、2026-05-07 skill atrophy 討論（AI 加速導致 harness 設計知識退化）形成一致框架：「問題通常在工具鏈配置，不在模型」
-
-### Agentic RAG 與 Eval Harness 結合（2026-05-16）
-
-- **BM25 + 向量搜尋降低 token 消耗 10 倍**：開發者將工程類 PDF 轉為 Markdown 存入 Obsidian vault，以 BM25 + 語義搜尋讓 Claude 只讀相關段落，將每次問答 token 消耗從約 50,000 降至約 5,000（10 倍節省）
-- **Eval harness 驗證 Claude 是否幻覺**：更值得關注的是開發者同時建立了評估框架，主動驗證 Claude 回答是否存在幻覺，是社群中少數將「驗證機制」系統性納入 AI 工作流的案例；與 Judge Gate（2026-05-11）的語意層驗證概念相呼應——「不能只靠 AI 說它對就算對」
-- **意義**：RAG 降耗已成社群共識，此案例的亮點是「評估閉環」設計，為 AI 知識庫工作流提供了更可靠的品質保證路徑
+- **發現性差**：skills 與 MCP 伺服器散落各處，品質參差，缺乏集中發現機制
+- **主題模式**：Claude Code `auto` 主題僅啟動時偵測一次，不即時同步系統外觀（issue #2990）
+- **Session log 路徑**：`~/.claude/projects/` 儲存 JSONL 格式 session log，可供自製工具讀取分析
+- **Session 歷史保留**：預設 30 天自動刪除 session `.jsonl`；可執行 `npx agentinit agent set claude cleanupPeriodDays 365` 延長保留期
 
 ---
 
