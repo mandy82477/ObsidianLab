@@ -132,14 +132,16 @@
 
 工具類型的分布揭示開發者最在意的問題。以下是從工具密度歸納的主要痛點與深層原因。
 
-| 痛點主題 | 代表工具 | 本質問題 |
-|---------|---------|---------|
-| Token 成本不透明 | Tokenyst、CostHawk、Throttle Meter | 自主 agent 讓帳單不可預測；6/15 信用池改制後惡化 |
-| 跨 session 記憶歸零 | ltm、Memex、draft CLI、Memtrace | 無官方標準，每個新 session 從零開始 |
-| 輸出品質不可信 | Groundtruth、EvanFlow、Relay plugin | 信任邊界未建立，需在流程層強制插入驗證點 |
-| 多 agent 協調混亂 | Omar、Claude Squad、HiveTerm | 官方管理能力跟不上社群實際並行需求 |
-| CLAUDE.md 規則失效 | Writ、Caliber、Patina | 規則被忽略、過多規則耗 token、跨工具無標準 |
-| 多模型鎖定防禦 | Dragoman、Claudy、claudely | 6/15 定價後對供應商依賴的集體防禦反應 |
+**狀態說明：** 🔥 持續升溫（近 14 天有新工具） / 🌙 冷卻觀望（無新工具但未解決） / ✅ 官方解決 / ⚡ 社群收斂（最佳實踐穩定，工具潮退）
+
+| 痛點主題 | 代表工具 | 本質問題 | 狀態 | 近期工具 |
+|---------|---------|---------|------|---------|
+| Token 成本不透明 | Tokenyst、CostHawk、TokenShield、PrismoDev | 自主 agent 讓帳單不可預測；6/15 信用池改制後惡化 | 🔥 持續升溫 | 2026-05-20 |
+| 跨 session 記憶歸零 | ltm、Memex、draft CLI、LockedIn、Claude Soul | 無官方標準，每個新 session 從零開始 | 🔥 持續升溫 | 2026-05-19 |
+| 多 agent 協調混亂 | agent-baton、cdesktop、AnyFrame、HiveTerm | 官方 Managed Agents 已部分解決，但社群仍補缺口 | 🔥 持續升溫 | 2026-05-19 |
+| CLAUDE.md 規則失效 | Writ、Caliber、Patina | 規則被忽略、過多規則耗 token、跨工具無標準 | 🌙 冷卻觀望 | 2026-05-12 |
+| 多模型鎖定防禦 | Dragoman、Claudy、claudely | 6/15 定價後對供應商依賴的集體防禦反應 | 🌙 冷卻觀望 | 2026-05-13 |
+| 輸出品質不可信 | Groundtruth、EvanFlow、Relay plugin | 信任邊界未建立，需在流程層強制插入驗證點 | 🌙 冷卻觀望 | 2026-04-27 |
 
 ### CLAUDE.md 失效的四個原因
 
