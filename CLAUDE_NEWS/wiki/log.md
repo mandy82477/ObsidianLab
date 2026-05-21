@@ -5,6 +5,57 @@ Append-only 紀錄。每次 ingest、query 或 lint 都在此追加一條。
 
 ---
 
+## 2026-05-21 Lint
+
+- 修正矛盾：無
+- 補連結：無（project-deal.md 已於前次 session 補上連結，確認非孤立）
+- 狀態更新：無（所有 ongoing/monitoring 頁面均在 14 天閾值內）
+- 遷移至 entities：無
+- 新增 entities：無
+- 呈現品質：
+  - `entities/opus-4-7.md` ⚠️ 已修復：「Claude Code 高 Token 模式」條目誤置於 ## 相關議題，已移至 ## 社群觀點
+  - `topics/official-community-gap.md` ⚠️ 已修復：移除 LLM 操作指令「每次 ingest 後評估…」（移至 CLAUDE.md 規則）
+  - `topics/ai-agent-safety.md` ⚠️ 已修復：合併 ## 技術彙整（新增）至主要 ## 技術彙整，消除重複標題
+- 超長頁面（> 500 行）：`topics/community-tech-patterns.md`（682 行）— 使用者選擇稍後處理（📋 待辦）
+- CLAUDE.md 健檢：
+  - 行數：352 行（原 406 行，本次簡化後；閾值 150 行）
+  - 矛盾：無
+  - 引用驗證：`**靈感來源：**` 欄位在 community-tech-patterns.md 未找到 → 已修正規則說明（patterns.md 用主題段落格式，不需補此欄位）
+  - 遵守率：呈現品質審查 0/3（log 未含標記）→ 已修正：新增 log.md 呈現品質欄位規定
+  - 過期規則（> 60 天）：無（最舊規則 [加入: 2026-04-25] = 26 天）
+  - 簡化：已執行（壓縮「快速上手」+ 「聚合器 Pipeline 架構」章節，節省 54 行）
+- overview.md：已更新（2026-05-15 → 2026-05-21，涵蓋 Stainless 收購、deeplink RCE、.env SQLite 漏洞、Claude Design 上線）
+
+---
+
+## 2026-05-21 Ingest | news/2026-05-21.md
+
+- 來源日報：`news/2026-05-21.md`（35 則，含 v2.1.146、sandbox bypass #2、Opus 退化、vibe-skill、SEO poisoning）
+- 更新頁面：
+  - `entities/claude-code.md`：新增 v2.1.146（/code-review 更名、auto mode AskUserQuestion）+ sandbox bypass #2 null byte + Opus 4.6 extended thinking 移除
+  - `topics/ai-agent-safety.md`：新增 2026-05-21（sandbox bypass #2 + SEO poisoning EclecticIQ）
+  - `topics/code-quality-decline.md`：新增 2026-05-21（Opus 3 週結構化記錄）
+  - `topics/community-tech-tools.md`：新增 5 工具（atrium、clarp、vibe-skill、Claude Orchestra、the-knowledge-guy）+ 痛點洞察更新
+  - `topics/community-tech-discussions.md`：HTML vs Markdown 熱度升至 🔥🔥🔥🔥🔥，模式改為 🌊延燒
+  - `entities/pricing.md`：新增 2026-05-21（clarp、vibe-skill、atrium 等 6/15 應對方案）
+  - `topics/competitor-landscape.md`：新增 2026-05-21（vibe-skill 多 LLM 分流 + DeepSeek harness 招募）
+  - `topics/community-tech-patterns.md`：新增 2026-05-21 時序（vibe-skill、Claude Orchestra、atrium、the-knowledge-guy）
+  - `wiki/feature-radar.md`：新增 /code-review 指令（v2.1.146）；HTML 熱度升至 🔥🔥🔥🔥🔥
+- 呈現品質：
+  - `entities/claude-code.md` ✅ 通過
+  - `topics/ai-agent-safety.md` ✅ 通過
+  - `topics/code-quality-decline.md` ✅ 通過
+  - `topics/community-tech-tools.md` ✅ 通過
+  - `topics/community-tech-discussions.md` ✅ 通過
+  - `entities/pricing.md` ✅ 通過
+  - `topics/competitor-landscape.md` ✅ 通過
+  - `topics/community-tech-patterns.md` ✅ 通過
+  - `wiki/feature-radar.md` ✅ 通過
+- 新增 entities：無
+- feature-radar 更新：已更新（/code-review 新增；HTML 熱度調升）
+
+---
+
 ## 2026-05-20 Schema 升級 | community-tech-tools 表格重構
 
 - 變更：`topics/community-tech-tools.md` 工具表格 schema 調整

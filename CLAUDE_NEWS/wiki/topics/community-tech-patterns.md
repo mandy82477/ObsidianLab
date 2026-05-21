@@ -2,7 +2,7 @@
 
 **狀態：** ongoing
 **開始日期：** 2026-04-25
-**最後更新：** 2026-05-19
+**最後更新：** 2026-05-21
 
 ---
 
@@ -400,6 +400,12 @@
 - [[news/2026-05-16]]
 
 ## 時序
+
+### 2026-05-21
+- **vibe-skill 委派撰碼模式（Claude 規劃 + Mistral 執行）**：開發者開源 vibe-skill，讓 Claude 負責規劃、任務分解與 diff 審查，實際撰碼委派給 Mistral Vibe；10 天 57M tokens 節省、成本降逾九成是「多模型角色分工」模式迄今最具數字說服力的實作，預示 Claude Code 生態向「Claude as orchestrator」演進
+- **Claude Orchestra skill 管理框架**：社群工具 Claude Orchestra 提供多個 skill 的統一管理與版本控制框架，顯示 skill 生態從「個人使用」走向「工程化管理」的成熟跡象
+- **atrium 可恢復瓦片式工作區**：macOS 應用 atrium 將 terminal、browser、task、notes 整合於可恢復的瓦片工作區，解決 session 崩潰後狀態遺失問題，是「工作流持久化」模式在桌面層的實作
+- **the-knowledge-guy 知識圖譜 MCP**：開源 MCP 伺服器提供結構化知識注入，補強 /compact 後語意記憶遺失問題
 
 ### 2026-05-20
 - **engramx Skill Pack v4.0.0 token 優化實測（89.1% 減少）**：開發者在 87 個檔案（163K token）的專案中，透過 engramx Skill Pack v4.0.0 將 Claude Code 每次啟動需讀取的 token 從 163,000 降至 17,722（減少 89.1%），是目前社群最具體的「解決 session 失憶」量化案例

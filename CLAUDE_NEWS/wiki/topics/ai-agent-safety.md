@@ -2,7 +2,7 @@
 
 **狀態：** ongoing
 **開始日期：** 2026-04-27
-**最後更新：** 2026-05-20
+**最後更新：** 2026-05-21
 
 ---
 
@@ -141,10 +141,6 @@
 - **Effort 等級不影響操作謹慎度**：研究顯示 effort 等級僅影響回答深度，不改變安全邊界；agent 操作層的風控需在工作流架構層處理，不能依賴 effort 提升
 - **Claude Opus 高自主性**：本次事件使用 Opus 模型，其高自主性在缺乏約束時可能帶來更高風險
 
----
-
-## 技術彙整（新增）
-
 ### Claude Code .env Secrets 本機 SQLite 明文存儲（2026-05-19 新增）
 
 - **揭露來源**：安全工具 Sieve（macOS App Store）在提醒 Claude Code / Cursor 用戶時揭示此問題
@@ -206,6 +202,10 @@
 - [Anthropic's definition of safety is too narrow](https://jonathannen.com/anthropic-safety-too-narrow/) — Jonathan Nen
 
 ## 時序
+
+### 2026-05-21
+- **[安全漏洞] 沙箱第二個獨立繞過漏洞（Null Byte 注入）**：研究者揭露 Claude Code 網路沙箱的第二個獨立漏洞（與 CVE-2025-66479 完全不同機制）：在 hostname 中插入 null byte（`\x00`），使策略層認為目標符合白名單（如 `*.google.com`），而底層 resolver 實際連線至被封鎖的外部主機，可導致用戶憑證與原始碼外洩；PoC 已公開；兩個漏洞均自 2025-10-20 沙箱 GA 起持續存在，Claude 自身被問及時也確認漏洞真實性（The Register 報導增添諷刺色彩）；受影響版本覆蓋 v2.0.2 至今，建議追蹤官方修補公告
+- **[SEO 投毒] 假冒 Claude Code + Gemini 下載頁面投放 Infostealer**：EclecticIQ 揭露新型 SEO 投毒攻擊，駭客冒充 Claude Code 與 Gemini 的官方下載頁面，在搜尋結果中植入假連結，引導用戶下載 infostealer 惡意軟體；與 2026-05-12 的假冒安裝包攻擊形成持續的供應鏈攻擊模式，AI 工具已成攻擊目標主流；唯一安全下載路徑為官方 GitHub Releases
 
 ### 2026-05-20
 - **[安全漏洞] Claude Code RCE via 惡意 Deeplink — 廣泛媒體報導**：CyberSecurityNews 發布詳細技術報導，確認攻擊者可利用惡意 Deeplink 在受害者端執行任意指令；此為針對 Claude Code 的第三個公開 RCE 類漏洞，攻擊面已從安裝路徑（假冒安裝包）轉向執行時期協議處理（deeplink）；官方修補狀態仍未確認，建議避免開啟不明來源 deeplink

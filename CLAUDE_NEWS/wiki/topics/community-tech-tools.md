@@ -125,6 +125,11 @@
 | **claude-anyteam** | 整合工具 | ⚡ | — | 讓 Codex/Gemini 加入 Claude Code Agent Teams |
 | **Linear+Lanes MCP** | 整合工具 | ⚡ | — | issue-to-code 一鍵流程，Claude Code 直接讀取 Linear 待辦票 |
 | **WezTerm 主題同步** | 環境配置 | ⚡ | — | Lua 事件鉤子實現 dark/light 即時同步（issue #2990 暫行方案） |
+| [**atrium**](https://getatrium.dev) | 工作區管理 | ⏳ 觀望中 | 2026-05-21 | macOS 可恢復瓦片式工作區管理器（terminal/browser/task/notes 面板），session 崩潰不再遺失；可規避 6/15 API 計量鎖定 |
+| [**clarp**](https://www.reddit.com/r/ClaudeAI/comments/1tj2exk/claude_p_is_moving_to_metered_pricing_on_june_15/) | 成本工具 | ⚡ | 2026-05-21 | `claude -p` drop-in 替代品，本地 PTY + 唯讀 API 代理，規避 6/15 計量計費，多數專案只需更換 binary 名稱 |
+| [**vibe-skill**](https://www.reddit.com/r/ClaudeAI/comments/1tjfyh0/i_used_claude_code_to_build_while_delegating/) | 成本工具 | ⚡ | 2026-05-21 | Claude 負責規劃 + diff 審查，實際撰碼委派 Mistral Vibe；10 天實測節省 57M tokens，成本降逾 90% |
+| [**Claude Orchestra**](https://www.reddit.com/r/ClaudeAI/comments/1tjj24s/i_had_500_claude_code_skills_installed_and_no/) | Skills 管理 | ⏳ 觀望中 | 2026-05-21 | 將 500+ skills/agents/MCP servers 組織成主題式 orchestras（BUILD/DESIGN/RESEARCH 等），解決技能爆炸管理問題，開源 |
+| [**the-knowledge-guy**](https://www.reddit.com/r/ClaudeAI/comments/1tjh00m/theknowledgeguy_turn_your_bookshelf_into_a_tutor/) | Skills | ⏳ 觀望中 | 2026-05-21 | 11 種閱讀模式（跨書合成問答、互動課程含測驗、整書摘要等），將個人書庫轉為即時查詢的知識導師 |
 
 ---
 
@@ -140,7 +145,7 @@
 | 跨 session 記憶歸零 | ltm、Memex、draft CLI、LockedIn、Claude Soul | 無官方標準，每個新 session 從零開始 | 🔥 持續升溫 | 2026-05-19 |
 | 多 agent 協調混亂 | agent-baton、cdesktop、AnyFrame、HiveTerm | 官方 Managed Agents 已部分解決，但社群仍補缺口 | 🔥 持續升溫 | 2026-05-19 |
 | CLAUDE.md 規則失效 | Writ、Caliber、Patina | 規則被忽略、過多規則耗 token、跨工具無標準 | 🌙 冷卻觀望 | 2026-05-12 |
-| 多模型鎖定防禦 | Dragoman、Claudy、claudely | 6/15 定價後對供應商依賴的集體防禦反應 | 🌙 冷卻觀望 | 2026-05-13 |
+| 多模型鎖定防禦 | Dragoman、Claudy、claudely、clarp、vibe-skill | 6/15 定價後對供應商依賴的集體防禦反應 | 🔥 持續升溫 | 2026-05-21 |
 | 輸出品質不可信 | Groundtruth、EvanFlow、Relay plugin | 信任邊界未建立，需在流程層強制插入驗證點 | 🌙 冷卻觀望 | 2026-04-27 |
 
 ### CLAUDE.md 失效的四個原因
