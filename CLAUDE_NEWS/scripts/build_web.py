@@ -182,7 +182,7 @@ SENTIMENT_RE = re.compile(r"`情緒：(.+?)`")
 # star stories start with "⭐ **[Title](url)**" — strip any leading emoji/chars before **
 STORY_RE = re.compile(r"\*\*\[(.+?)\]\((.+?)\)\*\*")
 SOURCE_RE = re.compile(r"^`(.+?)`\s*·\s*(.+?)(?:\s*UTC)?(?:\s*·\s*`情緒：(.+?)`)?$")
-FOCUS_RE = re.compile(r"^-\s+\*\*(.+?)\*\*\s+(.*)")
+FOCUS_RE = re.compile(r"^(?:-\s+)?\*\*(.+?)\*\*\s+(.*)")
 SOURCE_TABLE_RE = re.compile(r"^\|\s*(.+?)\s*\|\s*(✅|❌)\s*\|\s*(\d+)\s*\|")
 
 
@@ -236,7 +236,7 @@ def parse_digest(f: Path) -> dict:
 
         # section header
         for emoji, key in SECTION_EMOJI.items():
-            if re.match(rf"^#+\s+{re.escape(emoji)}", line):
+            if re.match(rf"^(?:#+\s+)?{re.escape(emoji)}\s+(?!\*\*\[)", line):
                 flush_story()
                 current_section = key
                 break

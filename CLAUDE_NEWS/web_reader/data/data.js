@@ -296,8 +296,8 @@ window.WIKI_DATA = {
     {
       "date": "2026-05-21",
       "articleCount": 35,
-      "preview": "",
-      "topCount": 0
+      "preview": "Anthropic Claude Code sandbox bypass allows second data exfiltration exploit",
+      "topCount": 4
     },
     {
       "date": "2026-05-20",
