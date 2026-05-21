@@ -90,6 +90,33 @@ git -C REPO_ROOT push
 
 ---
 
+## Step 6：寫入 task_scheduler.log
+
+整個 pipeline 結束後，**無論成功或失敗**，都必須 append 執行記錄至：
+
+```
+REPO_ROOT\src\logs\task_scheduler.log
+```
+
+格式（依各步驟結果填入 OK / FAILED / SKIPPED）：
+
+```
+[DATE TIME] === Manual pipeline start (via /news-pipeline in Claude session) ===
+[DATE TIME] Aggregator OK
+[DATE TIME] Wiki ingest OK
+[DATE TIME] Wiki push done
+[DATE TIME] Building web reader...
+[DATE TIME] Web push done
+[DATE TIME] === Pipeline complete (manual) ===
+```
+
+- Step 1 失敗時，寫 `Aggregator FAILED - stopping`，之後不繼續
+- Step 2 失敗時，寫 `Wiki ingest FAILED`
+- Step 4 失敗時，寫 `build_web FAILED - skipping web push`
+- 時間戳使用系統當前時間（`Get-Date` 或 `date` 指令取得），格式 `[週X YYYY/MM/DD HH:MM:SS.SS]`
+
+---
+
 ## 完成摘要
 
 完成後輸出：
@@ -101,6 +128,7 @@ git -C REPO_ROOT push
 | Step 3 Wiki 推送 | ✅ / ⏭️ 無變更 / ❌ |
 | Step 4 Web 建置 | ✅ / ❌ |
 | Step 5 Web 推送 | ✅ / ❌ |
+| Step 6 Log 寫入 | ✅ / ❌ |
 | 目標日期 | TARGET_DATE |
 
 ## 注意事項
@@ -109,4 +137,5 @@ git -C REPO_ROOT push
 - Step 1 失敗時停止整個 pipeline
 - Step 2（wiki ingest）失敗時記錄並繼續 Step 4
 - Step 4 失敗時跳過 Step 5
+- **Step 6 log 寫入必須執行**，即使前面步驟失敗也不能跳過
 - 繁體中文輸出
