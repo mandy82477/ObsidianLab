@@ -2,7 +2,7 @@
 
 **狀態：** ongoing
 **開始日期：** 2026-05-01
-**最後更新：** 2026-05-19
+**最後更新：** 2026-05-22
 
 ---
 
@@ -10,12 +10,13 @@
 
 大型組織採用 Claude Code 後，成本結構挑戰迅速浮現。Uber 四個月耗盡全年 AI 預算（Forbes 報導）是目前最具代表性的公開案例，揭示企業在缺乏細粒度使用量控管工具的情況下，AI 工具成本極易失控。此議題已從開發者社群的個人抱怨升級至 Forbes、Business Insider 等主流財經媒體的報導層級，成為企業 CTO 層級必須正視的採購決策問題。
 
-| 指標 | 現況（2026-05-18）|
+| 指標 | 現況（2026-05-22）|
 |------|------|
-| 媒體層級 | 主流財經媒體（Forbes、The Atlantic） |
-| 企業案例數 | 4 個公開案例（Uber、Microsoft、Amazon、iCapital）|
+| 媒體層級 | 主流財經媒體（Forbes、MakeUseOf、Sky News） |
+| 企業案例數 | 4 個公開企業案例 + 個人 $6,000 事件廣傳 |
 | Anthropic 企業工具完備度 | ⚠️ 缺乏細粒度預算管控 |
-| 社群因應工具 | 持續爆發（agent-baton、engram、CostHawk 等）|
+| 社群因應工具 | 持續爆發（engramx、agent-estimate、CostHawk 等）|
+| 社群共識 | Karpathy 加入 Anthropic 後提倡「最小必要 context」原則成為費用控管共識 |
 
 ---
 
@@ -36,7 +37,7 @@
 - **即時消費警報與自動暫停機制**
 - **API 費率 vs 訂閱方案的混合計費管理**
 
-社群工具（agent-baton、engram、CostHawk、Tokenyst）是目前這些需求的唯一解法。
+社群工具（agent-baton、engram、engramx、CostHawk、Tokenyst、agent-estimate）是目前這些需求的唯一解法。
 
 ### 企業成本因應策略（社群整理）
 
@@ -68,6 +69,11 @@
 - **來源**：內部公告（2026-05-05）
 - **情況**：同時向全體員工部署 Claude Code + Codex，不押注單一供應商
 - **意義**：「單一 AI 工具標配」模式受挑戰；多供應商策略可能成為大型企業標準做法
+
+### 個人開發者 — $6,000 徹夜運行事件（2026-05-22 廣傳）
+- **來源**：MakeUseOf / Google News（2026-05-22）
+- **情況**：用戶讓 Claude Code 徹夜無人監督運行，產生 $6,000 帳單
+- **意義**：個人層面最具衝擊性的費用失控案例，廣泛流傳後觸發更多費用控管工具湧現（engramx、agent-estimate）；也促使 Karpathy（剛加入 Anthropic）提倡「不讓 agent 讀超過必要內容」成為社群費用控管共識原則
 
 ### iCapital — 金融服務採用
 - **來源**：企業公告（2026-05-01）
@@ -102,8 +108,15 @@
 - [[news/2026-05-16]]
 - [[news/2026-05-18]]
 - [[news/2026-05-19]]
+- [[news/2026-05-22]]
 
 ## 時序
+
+### 2026-05-22
+- **[$6,000 徹夜運行事件廣傳]**：MakeUseOf 報導個人開發者讓 Claude Code 徹夜無人監督運行產生 $6,000 帳單，成為近期單次費用失控案例的最高紀錄，大幅提升社群費用意識
+- **[Karpathy 加入 Anthropic，提倡最小 context 原則]**：Andrej Karpathy 剛加入 Anthropic 後發表「CLAUDE.md 四條規則」，其中最受關注的原則為「不讓 agent 讀超過必要內容」（最小必要 context），被 engramx 等工具作者直接引用，正成為費用控管的社群共識；見 [[entities/andrej-karpathy]]
+- **[engramx 作為 context 過濾層]**：作者因單次 session 重讀整個 repo 導致帳單暴增，開發 engramx 作為 context 過濾層，直接降低每次啟動需讀取的 token 量；已有 Skill Pack v4.0.0 實測記錄（89.1% token 減少）
+- **[agent-estimate：以 agent 速度估算任務時間]**：工具 agent-estimate 以 PERT 方法論搭配 agent 速度乘數（XS–XL 任務分類），解決因訓練資料基於人類速度導致的任務時間估算偏差，間接輔助預算規劃
 
 ### 2026-05-19
 - **[dev.to 深度揭露] Microsoft 六個月測試後棄用：開發者愛它，財務殺了它**：dev.to 文章詳述 Microsoft Experiences + Devices 部門的六個月內部測試：開發者普遍認為 Claude Code 優於 GitHub Copilot CLI，但財務決策層以成本為由單方面終止；此案例成為「使用者滿意度與預算決策結構性落差」的標準引用案例，在 dev.to #claudecode 社群引發廣泛討論

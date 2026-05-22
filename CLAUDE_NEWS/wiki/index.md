@@ -2,7 +2,7 @@
 
 LLM 查詢此 wiki 時，**先讀這個檔案**找相關頁面，再讀具體頁面取得詳細資訊。
 
-**最後更新：** 2026-05-21 | **頁面數：** 27
+**最後更新：** 2026-05-22 | **頁面數：** 28
 
 ---
 
@@ -31,6 +31,7 @@ LLM 查詢此 wiki 時，**先讀這個檔案**找相關頁面，再讀具體頁
 | [[entities/stainless]] | product | acquired | Anthropic 以 ~$300M 收購，官方 SDK + MCP 伺服器生成商，MCP 生態基礎設施控制點 |
 | [[entities/boris-cherny]] | person | active | Claude Code 創始人，「Loops 是未來」設計哲學、「coding is solved」論戰、第三方工具邊界聲明 |
 | [[entities/cat-wu]] | person | active | Claude Code 產品負責人，「AI 下一步是主動性（proactivity）」論述 |
+| [[entities/andrej-karpathy]] | person | active（待核實）| 近期加入 Anthropic，CLAUDE.md 四條規則、「最小必要 context」費用控管原則 |
 
 ---
 

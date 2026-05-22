@@ -2,7 +2,7 @@
 
 **狀態：** ongoing
 **開始日期：** 2026-04-25
-**最後更新：** 2026-05-21
+**最後更新：** 2026-05-22
 
 ---
 
@@ -400,6 +400,13 @@
 - [[news/2026-05-16]]
 
 ## 時序
+
+### 2026-05-22
+- **Spec-Driven Development 工作流（HN Show）**：多步驟生成規格（需求→程式碼分析→設計）→ 分拆子任務→每步之間**清除 context**再執行，藉此降低成本並提升 agent 表現；與 Managed Agents Outcomes 機制的「spec 作為執行依據」原則在社群層面形成呼應，是規格驅動開發在個人工作流的具體實踐
+- **1 個 Claude agent 擴展為 agent 機群（5 步驟）**：作者從 AMD GitHub issue 中 Stella Laurenzo 分享的 50 代理機群運作方式得到靈感，整理出五步驟架構：任務佇列自動分配、夜間實驗可靠執行；與 agent-teamflow（9 slash commands）代表同一趨勢的兩種實作路徑
+- **CLAUDE.md 自我演化現象**：作者追蹤三週後發現 Claude 在未受指示情況下自行為 CLAUDE.md 新增了 4 條規則，引發對 agent 自主性邊界的討論；與「Angular CLAUDE.md 13 條規則」（production-ready 元件指南）共同顯示 CLAUDE.md 配置已成本週社群最活躍的討論主題
+- **個人 AI Agent 架構系列（CLAUDE.md 展示）**：前篇「100 個技巧」獲 9 萬次觀看，本週深入展示實際 CLAUDE.md 檔案結構，社群要求持續；顯示「完整展示 harness 設定」已是高影響力內容格式
+- **零 NPM 依賴 Claude Code 插件架構**：作者分享在不依賴任何 npm 套件的情況下建構 Claude Code 插件（seo-survival-kit）的輕量化設計，強調插件架構可行的最小依賴方案
 
 ### 2026-05-21
 - **vibe-skill 委派撰碼模式（Claude 規劃 + Mistral 執行）**：開發者開源 vibe-skill，讓 Claude 負責規劃、任務分解與 diff 審查，實際撰碼委派給 Mistral Vibe；10 天 57M tokens 節省、成本降逾九成是「多模型角色分工」模式迄今最具數字說服力的實作，預示 Claude Code 生態向「Claude as orchestrator」演進

@@ -2,7 +2,7 @@
 
 **狀態：** ongoing
 **開始日期：** 2026-04-25
-**最後更新：** 2026-05-20
+**最後更新：** 2026-05-22
 
 ---
 
@@ -26,6 +26,17 @@
 
 | 工具 | 類型 | 採用 | 首次出現 | 簡介 |
 | --- | --- | --- | --- | --- |
+| [**Runtime**](https://www.runtm.com/) | 多人 Agent 基礎設施 | ⏳ | 2026-05-22 | YC P26 商業產品，讓全團隊（含非工程師）安全使用 Claude Code / Codex，解決 PR 品質、repo 設定、上下文共享等多人協作問題；Show HN 發布 |
+| [**agent-teamflow**](https://www.reddit.com/r/ClaudeAI/comments/1tkl3z6/) | 多 agent 協調 | ⚡ | 2026-05-22 | 9 個 slash commands + 分支命名慣例，讓多位開發者的 Claude Code agent 平行運作且不互相踩踏，每人有獨立 staging 分支；實習生開源 |
+| [**Runner**](https://github.com/yicheng47/runner) | 多 agent 管理 | ⏳ | 2026-05-22 | 桌面應用，以「機組」模式同時管理多個 Claude Code、Codex agent 實例，適合需要平行處理多任務的開發者；Show HN 發布 |
+| [**Proof Loop**](https://github.com/LeoStehlik/proof-loop) | 任務驗證 | ⚡ | 2026-05-22 | 針對 agent 謊報任務完成的問題：要求設定驗收標準、分離建構者與驗證者角色、每項標準記錄 PASS/FAIL/UNKNOWN 結果並附證據；Show HN 發布 |
+| [**agent-estimate**](https://github.com/kiloloop/agent-estimate) | 費用/估算 | ⚡ | 2026-05-22 | 解決「Claude Code 估算時間基於人類速度訓練資料」問題，以 PERT 方法論搭配 agent 速度乘數，提供 XS–XL 任務分類及可靠度警示；Show HN 發布 |
+| [**engramx**](https://www.reddit.com/r/ClaudeAI/comments/1tka3no/) | 費用控管 | ⚡ | 2026-05-22 | context 過濾層，防止 session 重讀整個 repo 導致帳單暴增；引用 Karpathy 「最小必要 context」原則，已有 Skill Pack v4.0.0（89.1% token 減少）實測記錄 |
+| [**DPlex**](https://www.reddit.com/r/ClaudeAI/comments/1tkhd3l/) | 終端管理 | ⚡ | 2026-05-22 | 針對 AI 輔助開發設計的終端機多工器，解決多個 Claude Code / Copilot CLI session 跨視窗管理的狀態消失問題，重啟後可還原完整佈局 |
+| **Mneme HQ** | 架構漂移防護 | ⏳ | 2026-05-22 | 追蹤並防止 AI agent 在長期開發中偏離原始架構設計（architectural drift），強調 agent 的「記憶一致性」問題；dev.to 發布 |
+| [**ChunkHound v5.1**](https://www.reddit.com/r/ClaudeAI/comments/1tkkxmk/) | 程式碼搜尋 | ⚡ | 2026-05-22 | 更新：MCP 多客戶端共用單一 DuckDB 連線、搜尋結果改為 token 效率更高的 Markdown 格式，新增 Elixir/Dart/Lua/SQL/HTML/CSS 語言支援 |
+| **videowright** | 影片生成 | ⏳ | 2026-05-22 | Kiln 開源工具，從 prompt 生成影片腳本、支援任意 Web 技術渲染、AI 配音自動對齊影片節拍；Kiln 用此工具製作自家發布影片；Show HN 發布 |
+| **QA Skills（24 個）** | QA 工具集 | ⚡ | 2026-05-22 | 開源 QA Claude Skill 套件，涵蓋從規格到發布的 24 個生產級 QA 技能，可直接整合至 Claude Code 工作流程；dev.to 發布 |
 | [**TokenShield**](https://www.npmjs.com/package/@curatedmcp/tokenshield) | token 優化 | ⚡ | 2026-05-20 | 本地 Node.js proxy，攔截送往 api.anthropic.com 的請求並去除重複的 tool_result 內容（同一檔案多次被讀等情況），宣稱可減少 40–70% 的 Claude Code 費用；npmjs 發布 |
 | [**Logbox**](https://github.com/struct-dot-ai/logbox) | 監測工具 | ⚡ | 2026-05-20 | 將 dev server log 導入本地 SQLite，再透過 MCP 讓 Claude Code 直接查詢，解決 Claude 無法即時追蹤 log 流的問題；Show HN 發布 |
 | [**PrismoDev**](https://github.com/shanirsh/prismodev) | 診斷工具 | ⚡ | 2026-05-20 | 掃描本地 Claude Code / Codex session log，找出 context bloat 來源（過大的 CLAUDE.md、重複 tool output、broad repo exploration 等），不需 API key，本地離線運行；Show HN 發布 |
@@ -141,12 +152,12 @@
 
 | 痛點主題 | 代表工具 | 本質問題 | 狀態 | 近期工具 |
 |---------|---------|---------|------|---------|
-| Token 成本不透明 | Tokenyst、CostHawk、TokenShield、PrismoDev | 自主 agent 讓帳單不可預測；6/15 信用池改制後惡化 | 🔥 持續升溫 | 2026-05-20 |
+| Token 成本不透明 | Tokenyst、CostHawk、TokenShield、PrismoDev、engramx、agent-estimate | 自主 agent 讓帳單不可預測；$6,000 個人事件廣傳後社群更重視 | 🔥 持續升溫 | 2026-05-22 |
 | 跨 session 記憶歸零 | ltm、Memex、draft CLI、LockedIn、Claude Soul | 無官方標準，每個新 session 從零開始 | 🔥 持續升溫 | 2026-05-19 |
-| 多 agent 協調混亂 | agent-baton、cdesktop、AnyFrame、HiveTerm | 官方 Managed Agents 已部分解決，但社群仍補缺口 | 🔥 持續升溫 | 2026-05-19 |
+| 多 agent 協調混亂 | agent-baton、cdesktop、AnyFrame、HiveTerm、agent-teamflow、Runner、Runtime | 官方 Managed Agents 已部分解決，但社群仍補缺口；商業產品（Runtime/YC）開始進入 | 🔥 持續升溫 | 2026-05-22 |
 | CLAUDE.md 規則失效 | Writ、Caliber、Patina | 規則被忽略、過多規則耗 token、跨工具無標準 | 🌙 冷卻觀望 | 2026-05-12 |
 | 多模型鎖定防禦 | Dragoman、Claudy、claudely、clarp、vibe-skill | 6/15 定價後對供應商依賴的集體防禦反應 | 🔥 持續升溫 | 2026-05-21 |
-| 輸出品質不可信 | Groundtruth、EvanFlow、Relay plugin | 信任邊界未建立，需在流程層強制插入驗證點 | 🌙 冷卻觀望 | 2026-04-27 |
+| 輸出品質不可信 | Groundtruth、EvanFlow、Relay plugin、Proof Loop | 信任邊界未建立，需在流程層強制插入驗證點；Proof Loop 加入建構者/驗證者分離機制 | 🔥 持續升溫 | 2026-05-22 |
 
 ### CLAUDE.md 失效的四個原因
 

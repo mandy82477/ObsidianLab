@@ -2,7 +2,7 @@
 
 **狀態：** ongoing
 **開始日期：** 2026-04
-**最後更新：** 2026-05-21
+**最後更新：** 2026-05-22
 
 ---
 
@@ -48,9 +48,16 @@ Claude Code 已成為 AI 輔助編碼的標竿產品，但競爭正快速升溫�
 ### Cursor / Windsurf
 - **狀態**：Active（IDE 整合型，與 Claude Code CLI-first 定位有別）
 
-### DeepSeek Clone 生態
-- **代表**：DeepClaude（聲稱降低 17 倍成本）、DeepSeek-based Claude Code clone（8,700 Stars）
-- **意義**：低成本替代生態正在 Claude Code 功能認可 × 定價反彈的雙重壓力下加速形成
+### DeepSeek 🔴
+- **狀態**：正式宣布建構 Claude Code 競品（2026-05-22）
+- **策略**：「Beijing Wants the Whole Stack」——DeepSeek 不只是低成本替代生態，而是公開宣稱要打造從模型到開發工具的完整技術棧
+- **既有基礎**：DeepClaude（聲稱降低 17 倍成本）、DeepSeek-based Claude Code clone（8,700 Stars）
+- **意義**：Claude Code 類產品已成為國家層面 AI 競爭的戰場；DeepSeek 轉向正面競爭標誌低成本替代生態進入下一階段
+
+### Alibaba Qwen3.7-Max
+- **狀態**：宣稱支援 Claude Code harness（2026-05-22）
+- **特點**：聲稱可持續自主運行 35 小時，直接瞄準 Claude Code 的長時間自主執行場景
+- **意義**：競品開始直接以「相容 Claude Code harness」作為賣點，顯示 Claude Code 已建立足夠影響力讓競品主動相容
 
 ---
 
@@ -96,6 +103,10 @@ Claude Code 已成為 AI 輔助編碼的標竿產品，但競爭正快速升溫�
 
 ### 2026-05-19
 - **[dev.to 深度揭露] Microsoft 內部測試全貌：開發者愛它，財務殺了它**：「Microsoft Just Killed Claude Code Internally. Their Own Devs Loved It.」一文詳述 Experiences + Devices 部門六個月測試結果——開發者普遍認為 Claude Code 優於自家工具，但財務層以成本終止採購；此案例在 dev.to #claudecode 社群引發廣泛討論，成為「使用者滿意度 vs 企業採購決策」結構性落差的標準案例；與 [[topics/enterprise-cost-management]] 的成本壓力分析直接呼應
+
+### 2026-05-22
+- **DeepSeek 正式宣布建構自有 Claude Code 競品**：Decrypt 報導 DeepSeek 公開宣稱目標是「建立涵蓋模型到開發工具的完整技術棧」，戰略層級從低成本替代品升格為全棧競爭者；Anthropic 面臨的不再只是功能競爭，而是產品生態的整棧複製
+- **Qwen3.7-Max 宣稱支援 Claude Code harness，35 小時自主運行**：阿里巴巴 Qwen3.7-Max 聲稱可持續自主運行 35 小時並支援 Claude Code 等外部 harness，意味著競品開始主動定位為「Claude Code 相容」工具，而非建立自己的生態
 
 ### 2026-05-21
 - **vibe-skill：Claude 規劃 + Mistral 執行，成本降逾九成**：開發者開源 vibe-skill，讓 Claude 負責高層規劃與 diff 審查，實際撰碼委派給 Mistral Vibe；10 天實測節省 57M tokens，成本降逾九成；是 6/15 計費壓力下「多 LLM 成本分流」策略的最具體落地案例，顯示 Anthropic 正以失去執行層 token 份額為代價換取規劃層地位

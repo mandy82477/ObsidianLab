@@ -3,7 +3,7 @@
 **類型：** feature
 **狀態：** active（正式發布）
 **首次出現：** 2026-04-28
-**最後更新：** 2026-05-19
+**最後更新：** 2026-05-22
 
 ---
 
@@ -167,6 +167,7 @@ while (!['completed', 'failed'].includes(task.status)) {
 
 | 日期 | 事件 |
 |------|------|
+| 2026-05-22 | **自架沙箱完整參考文件發布**（via Reddit r/ClaudeAI 報告 v2.1.145 新增）：完整文件涵蓋 worker 輪詢機制、環境金鑰管理、webhook 喚醒設定、監控方案及客戶自管安全責任；企業可在完全自有基礎設施上部署受管代理，標誌 Claude Code 企業化部署從「支援」走向「完整文件化」 |
 | 2026-05-19 | 新增**自架沙箱（self-hosted sandboxes）**與 **MCP 隧道（MCP tunnels）**：企業客戶可在自有基礎設施執行 agent 工作流，私有 MCP 伺服器無需公開即可連接 Claude Code；the-decoder.com 報導 |
 | 2026-05-18 | InfoQ 報導「Code With Claude Announces Managed Agents, Proactive Workflows, Capability Curve」，Anthropic 正式公告 **Proactive Workflows** 與 **Capability Curve** 兩項新能力：Proactive Workflows 讓 Agent 可主動（而非被動等待觸發）排程並執行任務，與 Cat Wu 「AI 的下一步是主動性（proactivity）」論述一致；Capability Curve 提供 Agent 能力曲線追蹤機制，協助用戶評估 Agent 在不同任務類型的能力進展 |
 | 2026-05-16 | dev.to 深度文章分析 Managed Agents 三項功能的技術機制：聚焦 Dreaming 機制——Agent 在非活躍期間如何透過 Outcomes 與 Orchestration 進行自我優化，副標「How Agents Self-Improve While You Sleep」；是 Code with Claude 大會功能的首篇深度技術解析，對關注 agent 長期自主執行行為的開發者有參考價值 |

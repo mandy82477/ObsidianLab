@@ -5,6 +5,33 @@ Append-only 紀錄。每次 ingest、query 或 lint 都在此追加一條。
 
 ---
 
+## 2026-05-22 Ingest | news/2026-05-22.md
+
+- 來源日報：`news/2026-05-22.md`（36 則，含 v2.1.148、Managed Agents 自架沙箱文件、DeepSeek 全棧競品、$6,000 帳單事件、Karpathy 加入 Anthropic、多個新工具）
+- 更新頁面：
+  - `entities/claude-code.md`：新增 v2.1.148 版本表、更新 現況 最新版本、新增 2026-05-22 歷史記錄
+  - `entities/managed-agents.md`：新增 2026-05-22 自架沙箱完整文件發布歷史記錄
+  - `topics/competitor-landscape.md`：DeepSeek Clone 區塊升級為 DeepSeek 正式競品條目；新增 Alibaba Qwen3.7-Max；新增 2026-05-22 時序
+  - `topics/community-tech-tools.md`：新增 11 個工具（Runtime、agent-teamflow、Runner、Proof Loop、agent-estimate、engramx、DPlex、Mneme HQ、ChunkHound v5.1、videowright、QA Skills）；更新痛點洞察表
+  - `topics/community-tech-patterns.md`：新增 2026-05-22 時序（Spec-Driven Dev、agent fleet 5 步驟、CLAUDE.md 自我演化、Angular 13 規則、零 NPM 插件）
+  - `topics/community-tech-discussions.md`：新增 3 個熱門討論（LLMs 虛假忙碌、逐行審查文化、CLAUDE.md 自我演化）；新增 2 個技術彙整條目
+  - `topics/enterprise-cost-management.md`：新增 $6,000 個人事件案例；新增 Karpathy 最小 context 原則；新增 2026-05-22 時序
+  - `wiki/feature-radar.md`：自架沙箱熱度升至 🔥🔥🔥🔥（文件完整發布）
+- 新增 entities：`entities/andrej-karpathy.md`（Karpathy 加入 Anthropic，待官方核實）
+- feature-radar 更新：自架沙箱完整文件發布，熱度升至 🔥🔥🔥🔥
+- 呈現品質：
+  - `entities/claude-code.md` ✅ 通過
+  - `entities/managed-agents.md` ✅ 通過
+  - `topics/competitor-landscape.md` ✅ 通過
+  - `topics/community-tech-tools.md` ✅ 通過
+  - `topics/community-tech-patterns.md` ✅ 通過
+  - `topics/community-tech-discussions.md` ✅ 通過
+  - `topics/enterprise-cost-management.md` ✅ 通過
+  - `wiki/feature-radar.md` ✅ 通過
+  - `entities/andrej-karpathy.md` ✅ 通過
+
+---
+
 ## 2026-05-21 Lint
 
 - 修正矛盾：無

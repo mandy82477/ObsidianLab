@@ -3,18 +3,19 @@
 **類型：** product
 **狀態：** active
 **首次出現：** 2025（正式推出）
-**最後更新：** 2026-05-20
+**最後更新：** 2026-05-22
 
 ---
 
 ## 現況
 
-Claude Code 是 Anthropic 的 AI 編碼 CLI 工具，支援 agentic 工作流程、MCP Server 整合、Hooks 機制與多代理協作框架（Managed Agents）。截至 2026-05-14，GitHub Stars 達 121,000+，是增長最受開發者關注的 AI 編碼助理之一。最新版本為 **v2.1.146**，`/simplify` 正式更名為 `/code-review`（新增強度參數），auto mode 不再抑制 `AskUserQuestion`，核心能力已從純程式碼助理擴展為具備全桌面自動化、多代理管理與 AI 安全審查的完整 agent 開發平台。Microsoft 正陸續取消內部授權，轉推 GitHub Copilot CLI（見 [[topics/competitor-landscape]]）；GitHub 已推出新 Copilot 應用明確對標 Claude Code；Ramp AI Index 數據顯示 Anthropic 企業採用率首次超越 OpenAI（34.4% vs 32.3%）。
+Claude Code 是 Anthropic 的 AI 編碼 CLI 工具，支援 agentic 工作流程、MCP Server 整合、Hooks 機制與多代理協作框架（Managed Agents）。截至 2026-05-14，GitHub Stars 達 121,000+，是增長最受開發者關注的 AI 編碼助理之一。最新版本為 **v2.1.148**（緊急修復 v2.1.147 的 Bash exit code 127 回歸問題），核心能力已從純程式碼助理擴展為具備全桌面自動化、多代理管理與 AI 安全審查的完整 agent 開發平台。Microsoft 正陸續取消內部授權，轉推 GitHub Copilot CLI（見 [[topics/competitor-landscape]]）；GitHub 已推出新 Copilot 應用明確對標 Claude Code；Ramp AI Index 數據顯示 Anthropic 企業採用率首次超越 OpenAI（34.4% vs 32.3%）。
 
 ### 最新版本
 
 | 版本 | 日期 | 重點 |
 |------|------|------|
+| **v2.1.148** | 2026-05-22 | 緊急修復 v2.1.147 引入的回歸問題：Bash 工具對部分用戶每次指令都回傳 exit code 127，導致 shell 命令無法正常執行 |
 | **v2.1.146** | 2026-05-21 | `/simplify` 正式更名為 `/code-review`，新增可選強度參數（`/code-review high`）；auto mode 不再抑制 `AskUserQuestion`（skill 或用戶明確觸發時仍可向使用者提問）|
 | **v2.1.145** | 2026-05-20 | `claude agents --json` 指令：將目前存活的 Claude session 以 JSON 格式列出，便於與 tmux-resurrect、status bar、session picker 等工具整合；新增 `agent_id` 及 `parent_agent_id` 屬性，支援多 agent 層級識別 |
 | **v2.1.144** | 2026-05-19 | `/resume` 擴展支援背景 session：`claude --bg` 啟動的 session 現可在 `/resume` 列表中與互動式 session 並列顯示（標記為 `bg`），加入 elapsed duration 計時顯示 |
@@ -275,6 +276,7 @@ Token 用量追蹤、session 費用分析與效能漂移偵測工具。
 
 | 日期 | 事件 |
 |------|------|
+| 2026-05-22 | **v2.1.148**：緊急修復 v2.1.147 回歸問題（Bash 工具 exit code 127）；Managed Agents 自架沙箱完整參考文件發布（涵蓋 worker 輪詢、環境金鑰、webhook 喚醒、監控、客戶安全責任）；Runtime（YC P26）推出讓全團隊安全使用 Claude Code 的基礎設施；DeepSeek 宣布建構自有 Claude Code 競品（整機棧控制戰略）；Qwen3.7-Max 聲稱可持續自主運行 35 小時並支援 Claude Code harness；費用失控輿情升溫（$6,000 徹夜運行廣傳，Karpathy 「最小必要 context」原則成社群共識）；Sky News 專訪 Claude Code 創作者談 AI 與工程師職位；見 [[topics/competitor-landscape]]、[[topics/enterprise-cost-management]] |
 | 2026-05-21 | **v2.1.146**：`/simplify` 正式更名為 `/code-review`，新增可選強度等級（`/code-review high`）；auto mode 不再抑制 `AskUserQuestion`，skill 或用戶明確觸發時仍可向使用者提問 |
 | 2026-05-21 | Claude Code 沙箱第二個獨立繞過漏洞揭露（null byte 注入繞過 hostname 白名單），PoC 已公開；兩個漏洞均自 2025-10-20 沙箱 GA 起持續存在；Opus 4.6 extended thinking 在 Claude Code 中被靜默移除（桌面版仍可用，未公告）；見 [[topics/ai-agent-safety]] |
 | 2026-05-19 | **v2.1.144**：`/resume` 擴展支援背景 session——`claude --bg` 啟動的 session 現可在 `/resume` 列表與互動式 session 並列（標記 `bg`），加入 elapsed duration 計時 |
