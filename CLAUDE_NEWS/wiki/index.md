@@ -2,7 +2,7 @@
 
 LLM 查詢此 wiki 時，**先讀這個檔案**找相關頁面，再讀具體頁面取得詳細資訊。
 
-**最後更新：** 2026-05-22 | **頁面數：** 28
+**最後更新：** 2026-05-23 | **頁面數：** 31
 
 ---
 
@@ -32,6 +32,7 @@ LLM 查詢此 wiki 時，**先讀這個檔案**找相關頁面，再讀具體頁
 | [[entities/boris-cherny]] | person | active | Claude Code 創始人，「Loops 是未來」設計哲學、「coding is solved」論戰、第三方工具邊界聲明 |
 | [[entities/cat-wu]] | person | active | Claude Code 產品負責人，「AI 下一步是主動性（proactivity）」論述 |
 | [[entities/andrej-karpathy]] | person | active（待核實）| 近期加入 Anthropic，CLAUDE.md 四條規則、「最小必要 context」費用控管原則 |
+| [[entities/opencode]] | product | active（快速成長）| Claude Code 主要開源替代品，157K 開發者分流，OpenCode-power-pack 移植官方 11 個 skills |
 
 ---
 
@@ -49,6 +50,7 @@ LLM 查詢此 wiki 時，**先讀這個檔案**找相關頁面，再讀具體頁
 | [[topics/anthropic-government-policy]] | monitoring | Anthropic 政府與軍事政策：五角大廈排除事件、安全護欄堅持、白宮重啟談判（11 天無新進展）             |
 | [[topics/official-community-gap]]      | ongoing    | 官方功能 vs 社群痛點缺口矩陣：哪些痛點官方正在解決、哪些結構性缺席                            |
 | [[topics/enterprise-cost-management]]  | ongoing    | 企業規模採用 Claude 的成本結構挑戰：Uber/Microsoft 案例、缺失工具、因應策略                            |
+| [[topics/community-tech-timeline]]     | ongoing    | 社群技術應用趨勢完整時序（2026-04-25 至今），從 community-tech-patterns 拆分                         |
 
 ---
 

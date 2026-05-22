@@ -17,6 +17,7 @@ argument-hint: [YYYY-MM-DD]
 ### 2. 載入 wiki 現況
 
 同時讀取：
+- `wiki/CLAUDE.md` — 載入 wiki 詳細格式規則與品質標準（必須在修改任何頁面前讀取）
 - `wiki/index.md` — 取得所有現有頁面清單
 - `wiki/log.md` — 確認最近是否已處理過同一份日報（避免重複 ingest）
 

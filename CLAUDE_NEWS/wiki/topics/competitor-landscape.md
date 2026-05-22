@@ -34,7 +34,7 @@ Claude Code 已成為 AI 輔助編碼的標竿產品，但競爭正快速升溫�
 - **下載數**：8,610 萬次（週增 +1,397%）vs Claude Code 720 萬次（-38%）
 - **互通**：社群工具 `claude-anyteam` 已讓 Codex 加入 Claude Code Agent Teams
 
-### OpenCode
+### OpenCode（[[entities/opencode]]）
 - **狀態**：Active（開源替代，快速成長）
 - **規模**：157,000 名開發者轉向（The New Stack，2026-05-12）
 - **定位**：開源替代 Claude Code；XDA 評測認為功能與體驗相當
@@ -62,6 +62,8 @@ Claude Code 已成為 AI 輔助編碼的標竿產品，但競爭正快速升溫�
 ---
 
 ## 技術彙整
+
+- **Google 投資與競爭並存**：Google 是 Anthropic 最大外部投資方（$400 億），同時開發競品，詳見 [[entities/google-investment]]
 
 - **多 LLM 混合架構**：Opus 4.7 作 orchestrator + DeepSeek V4 Pro 承擔大量 token 輸出，是 Max20 方案下最大化性價比的主流策略
 - **claude-anyteam**：讓 OpenAI Codex CLI 加入 Claude Code Agent Teams，實現跨模型協作

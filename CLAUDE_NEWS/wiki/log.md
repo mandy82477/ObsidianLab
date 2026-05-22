@@ -671,3 +671,34 @@ Append-only 紀錄。每次 ingest、query 或 lint 都在此追加一條。
 - 更新頁面：`topics/community-tech-tools.md` — 新增 `## 痛點洞察` 區塊，含痛點主題表格、CLAUDE.md 失效四原因、AI 輔助開發副作用分析；參考來源新增 official-community-gap 連結
 - 更新：`index.md`（頁數 24→25，新增 official-community-gap 條目）
 - Web reader：wiki 首頁新增「官方 vs 社群缺口分析」卡片
+
+
+---
+
+## 2026-05-23 Lint
+
+- 修正矛盾：
+  - `topics/code-quality-decline.md`：最後更新欄位未從 2026-05-09 更新至 2026-05-21（2026-05-21 ingest 遺漏）→ 已修正
+  - `topics/anthropic-government-policy.md`：監測狀態文字「11 天無新進展」→「21 天無新進展」→ 已修正；最後更新更新至 2026-05-22
+- 補連結：
+  - `entities/google-investment` 孤立（無其他頁面連結）→ 已在 `topics/competitor-landscape.md` 技術彙整補入 wikilink
+  - `entities/andrej-karpathy`（本次 ingest 新建）→ 已在 `topics/community-tech-discussions.md` 相關實體補入 wikilink
+- 狀態更新：無（anthology-government-policy 狀態維持 monitoring，21 天仍在追蹤）
+- 遷移至 entities：無
+- 新增 entities：`entities/opencode.md`（OpenCode 開源替代，27 次提及、10 個檔案）；已在 competitor-landscape.md 補入 wikilink
+- 呈現品質：
+  - 超長頁面 `topics/community-tech-patterns.md`（695 行）✅ 拆分完成：
+    - 保留 `community-tech-patterns.md`（403 行）：摘要、模式概覽、技術彙整、結論、相關實體
+    - 新建 `topics/community-tech-timeline.md`（~310 行）：2026-04-25 至 2026-05-22 完整時序
+    - 兩頁互相補上 wikilink；patterns.md 補入 `[[news/2026-05-22]]` 參考來源
+  - 其餘頁面：✅ 通過（各頁面於 ingest 時已執行品質審查）
+- 超長頁面（> 500 行）：community-tech-patterns.md（695 行）→ 已拆分（見呈現品質）
+- CLAUDE.md 健檢：
+  - 行數：99 行（原 353 行，拆分後；閾值 150 行）✅ 大幅精簡
+  - 拆分：wiki 規則（~270 行）移至新建 `wiki/CLAUDE.md`；技能檔案更新載入點
+  - 矛盾：無
+  - 引用驗證：所有 CLAUDE.md 引用的欄位/結構均已遷移至 wiki/CLAUDE.md，保持有效
+  - 遵守率：✅ 全部通過（見 2026-05-22 Ingest 呈現品質欄）
+  - 過期規則（> 60 天）：無（最舊規則 [加入: 2026-04-25] = 28 天）
+  - 簡化：已執行（wiki 規則全部移至 wiki/CLAUDE.md；skills 更新 Step 1/2 明確載入）
+- overview.md：已更新（2026-05-21 → 2026-05-22，涵蓋 DeepSeek 全棧競品、$6K 費用事件、Karpathy 加入、Managed Agents 文件完整化）

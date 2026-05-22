@@ -259,6 +259,7 @@
 ## 相關實體
 
 - [[entities/boris-cherny]]（Loops 哲學、「coding is solved」論戰）
+- [[entities/andrej-karpathy]]（CLAUDE.md 維護討論中被引用；最小必要 context 原則）
 - [[entities/claude-code]]
 - [[entities/claude-security]]（AI 生成程式碼安全漏洞支撐需求）
 - [[topics/community-tech-patterns]]（具體工具與工作流應用）

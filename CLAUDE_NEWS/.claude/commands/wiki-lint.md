@@ -11,6 +11,7 @@ description: 每週執行 wiki 品質檢查，修正矛盾/孤立/過期頁面�
 ### 1. 載入 wiki 全貌
 
 同時讀取：
+- `wiki/CLAUDE.md` — 載入 wiki 詳細格式規則與品質標準（必須在修改任何頁面前讀取）
 - `wiki/index.md` — 取得所有頁面清單
 - `wiki/log.md` — 了解最近的 ingest 紀錄與活動
 
