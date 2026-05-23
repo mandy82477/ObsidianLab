@@ -42,7 +42,7 @@ _PROMPT = """\
 def filter_relevant(items: list[FeedItem], min_score: int = 3) -> list[FeedItem]:
     """Return only items with LLM relevance score >= min_score.
 
-    Tries: API key → keep all (fallback).
+    Tries: API key → claude CLI → keep all (fallback).
     """
     if not items:
         return items
@@ -54,7 +54,10 @@ def filter_relevant(items: list[FeedItem], min_score: int = 3) -> list[FeedItem]
         try:
             raw = _call_api(items, api_key)
         except Exception as e:
-            logger.warning("Relevance filter API failed (%s) — keeping all items", e)
+            logger.warning("Relevance filter API failed (%s) — trying claude CLI", e)
+
+    if raw is None:
+        raw = _call_claude_cli(items)
 
     if raw is None:
         logger.warning("Relevance filter unavailable — keeping all %d items", len(items))
@@ -92,6 +95,38 @@ def _call_api(items: list[FeedItem], api_key: str) -> str:
     )
     return message.content[0].text.strip()
 
+
+def _call_claude_cli(items: list[FeedItem]) -> str | None:
+    import shutil
+    import subprocess
+    import sys
+
+    if not shutil.which("claude"):
+        logger.warning("claude CLI not found in PATH — skipping relevance filter")
+        return None
+
+    prompt = _PROMPT.format(count=len(items), items_text=_format_for_filter(items))
+    full_prompt = f"{_SYSTEM}\n\n{prompt}"
+    use_shell = sys.platform == "win32"
+    try:
+        result = subprocess.run(
+            ["claude", "-p"],
+            input=full_prompt.encode("utf-8"),
+            capture_output=True,
+            timeout=120,
+            shell=use_shell,
+        )
+        stdout = result.stdout.decode("utf-8", errors="replace")
+        stderr = result.stderr.decode("utf-8", errors="replace")
+        if result.returncode == 0 and stdout.strip():
+            logger.info("claude CLI filter succeeded")
+            return stdout.strip()
+        logger.warning("claude CLI filter exited %d: %s", result.returncode, stderr[:200])
+    except subprocess.TimeoutExpired:
+        logger.warning("claude CLI filter timed out")
+    except Exception as e:
+        logger.warning("claude CLI filter failed: %s", e)
+    return None
 
 
 def _format_for_filter(items: list[FeedItem]) -> str:
