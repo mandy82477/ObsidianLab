@@ -263,27 +263,27 @@
     {
       "tag": "[社群趨勢]",
       "text": "Claude Code 周邊工具生態系今日爆發式成長：多代理協調、任務驗證、費用控制、終端機管理等工具集中湧現，開發社群正在自發建立 Claude Code 的「基礎設施層」。",
-      "ref_url": ""
+      "ref_urls": []
     },
     {
       "tag": "[風險警示]",
       "text": "有用戶因 Claude Code 徹夜無人看管運行，產生 6,000 美元帳單，費用控制議題再次引發廣泛討論，多個對應工具（engramx、agent-estimate）應運而生。",
-      "ref_url": ""
+      "ref_urls": []
     },
     {
       "tag": "[持續追蹤]",
       "text": "DeepSeek 據報正在建立自己的 Claude Code 對標產品，北京意圖掌控完整 AI 開發工具鏈，中美 AI 工具競爭格局持續演變。",
-      "ref_url": ""
+      "ref_urls": []
     },
     {
       "tag": "[新工具]",
       "text": "Managed Agents 新增自架沙盒（self-hosted sandboxes）文件，Claude Code v2.1.148 修復 Bash 工具回傳錯誤代碼的重大回歸問題。",
-      "ref_url": ""
+      "ref_urls": []
     },
     {
       "tag": "[社群趨勢]",
       "text": "CLAUDE.md 配置文化持續發酵：Angular 最佳實踐、自動演化規則、個人 AI Agent 架構系列文接連發表，成為本週社群最活躍的討論主題。",
-      "ref_url": ""
+      "ref_urls": []
     }
   ],
   "sourceStatus": [

@@ -255,27 +255,27 @@
     {
       "tag": "[重大事件]",
       "text": "Claude Code v2.1.143 正式釋出，新增 plugin 依賴關係強制執行機制，是工具鏈管理的重要基礎建設更新。",
-      "ref_url": ""
+      "ref_urls": []
     },
     {
       "tag": "[持續追蹤]",
       "text": "6/15 Agent SDK 計費調整持續發酵，已有第三方平台公開說明因應策略，訂閱用戶對 Max 方案實際用量上限的疑慮未消。",
-      "ref_url": ""
+      "ref_urls": []
     },
     {
       "tag": "[社群趨勢]",
       "text": "Claude Code 成本控管同日出現多篇社群教學與討論，顯示開發者對 API 費用的焦慮已成今週最顯著集體情緒。",
-      "ref_url": ""
+      "ref_urls": []
     },
     {
       "tag": "[重大事件]",
       "text": "GitHub Copilot 正面迎戰 Claude Code 與 Codex，AI 編程工具市場競爭加劇。",
-      "ref_url": ""
+      "ref_urls": []
     },
     {
       "tag": "[重大事件]",
       "text": "Anthropic 據報正尋找「下一個 Claude Code 等級的突破性產品」，顯示內部對持續創新的高度重視。",
-      "ref_url": ""
+      "ref_urls": []
     }
   ],
   "sourceStatus": [

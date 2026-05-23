@@ -223,27 +223,27 @@
     {
       "tag": "[重大事件]",
       "text": "Claude Code \"OpenClaw\" 事件暴露 AI 工具的信任危機：工具在使用者不知情的情況下掃描 repo 內容並改變計費行為，Anthropic 應儘速公開說明觸發條件是否屬於預期設計，否則恐進一步侵蝕開發者信任。",
-      "ref_url": ""
+      "ref_urls": []
     },
     {
       "tag": "[重大事件]",
       "text": "白宮介入 Mythos 模型存取管控，AI 模型授權管制正式進入執行層次，Anthropic 與美國政府之間的政策角力料將持續，對 Mythos 商業化時程影響深遠。",
-      "ref_url": ""
+      "ref_urls": []
     },
     {
       "tag": "[持續追蹤]",
       "text": "Anthropic 估值逼近 $9,000 億美元，新一輪 $500 億融資若在兩週內落定，將再度刷新 AI 新創紀錄；但市場預期與實際商業模式之間的落差，是後續最值得觀察的風險指標。",
-      "ref_url": ""
+      "ref_urls": []
     },
     {
       "tag": "[新工具]",
       "text": "Claude Security 公開測試版上線，Anthropic 首次以獨立資安產品形式與傳統 SAST 工具廠商正面競爭，其情境化評估角度具差異化潛力，後續生態整合深度值得追蹤。",
-      "ref_url": ""
+      "ref_urls": []
     },
     {
       "tag": "[社群趨勢]",
       "text": "帳單透明度問題多點同步爆發（OpenClaw 觸發異常計費、環境變數導致 API 計費、訂閱到期餘額消失、長 context 快取隱性成本），顯示計費透明度與訂閱機制設計是當前 Claude 社群最大痛點，Anthropic 面臨系統性改善壓力。",
-      "ref_url": ""
+      "ref_urls": []
     }
   ],
   "sourceStatus": [

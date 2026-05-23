@@ -207,27 +207,27 @@
     {
       "tag": "重大事件",
       "text": "Amazon 正式向全體企業員工推出 Claude Code 與 OpenAI Codex，超越原有內部工具 Kiro，標誌 AI 編碼工具已進入大型企業標配部署階段。",
-      "ref_url": ""
+      "ref_urls": []
     },
     {
       "tag": "持續追蹤",
       "text": "Anthropic 在 4 月初悄悄縮短 Claude Code 的預設提示快取窗口，多名開發者反映 token 配額消耗異常加速，但官方未發出任何公告，透明度引發不滿。",
-      "ref_url": ""
+      "ref_urls": []
     },
     {
       "tag": "社群趨勢",
       "text": "OpenAI Codex 在 4/30 正式發布後單週下載量暴增 1397%，首次超越 Claude Code，是自後者崛起以來最明顯的競爭壓力訊號。",
-      "ref_url": ""
+      "ref_urls": []
     },
     {
       "tag": "新工具",
       "text": "DeepClaude 本週在 dev.to 引發大量討論，透過將 Claude Code 後端指向 DeepSeek，聲稱降低 17 倍費用，但社群對其必要性存在質疑。",
-      "ref_url": ""
+      "ref_urls": []
     },
     {
       "tag": "社群趨勢",
       "text": "Claude Code 生態工具持續爆發：記憶管理（Ctx、Memex、Claude-Find）、多 session 協作（Claude Relay）、diff 問答（Askdiff）同步湧現，顯示開發者社群正積極填補原生功能缺口。",
-      "ref_url": ""
+      "ref_urls": []
     }
   ],
   "sourceStatus": [

@@ -239,7 +239,7 @@
     // build focus URL → tag map (for badge injection on matching stories)
     const focusUrlMap = {};
     (d.focus || []).forEach(f => {
-      if (f.ref_url) focusUrlMap[f.ref_url] = f.tag;
+      (f.ref_urls || (f.ref_url ? [f.ref_url] : [])).forEach(u => { focusUrlMap[u] = f.tag; });
     });
 
     // sections

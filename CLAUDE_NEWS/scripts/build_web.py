@@ -262,10 +262,9 @@ def parse_digest(f: Path) -> dict:
                 m = FOCUS_RE.match(line)
                 if m:
                     tag, text_raw = m.group(1).strip(), m.group(2).strip()
-                    ref_m = FOCUS_REF_RE.search(text_raw)
-                    ref_url = ref_m.group(1) if ref_m else ""
+                    ref_urls = FOCUS_REF_RE.findall(text_raw)   # list of all URLs
                     text = FOCUS_REF_RE.sub("", text_raw).strip()
-                    result["focus"].append({"tag": tag, "text": text, "ref_url": ref_url})
+                    result["focus"].append({"tag": tag, "text": text, "ref_urls": ref_urls})
                 continue
 
             # story title line: **[Title](url)** (may be preceded by ⭐ or other chars)

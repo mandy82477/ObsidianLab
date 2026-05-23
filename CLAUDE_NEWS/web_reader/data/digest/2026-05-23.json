@@ -207,27 +207,31 @@
     {
       "tag": "[重大事件]",
       "text": "Microsoft 宣布取消大量 Claude Code 授權，改推 GitHub Copilot CLI，數千名內部工程師受影響——這是迄今規模最大的企業轉出案例，值得追蹤後續市占影響。",
-      "ref_url": "https://www.theverge.com/tech/930447/microsoft-claude-code-discontinued-notepad"
+      "ref_urls": [
+        "https://www.theverge.com/tech/930447/microsoft-claude-code-discontinued-notepad"
+      ]
     },
     {
       "tag": "[風險警示]",
       "text": "Claude Code 存在可被遠端利用的 RCE 漏洞（startsWith 解析缺陷），已確認 Cursor 與 Continue.dev 也有相同 bug pattern，任何使用這類工具的開發者都應留意沙箱設定。",
-      "ref_url": "https://vechron.com/2026/05/i-reproduced-a-claude-code-rce-the-bug-pattern-is-everywhere/"
+      "ref_urls": [
+        "https://vechron.com/2026/05/i-reproduced-a-claude-code-rce-the-bug-pattern-is-everywhere/"
+      ]
     },
     {
       "tag": "[重大事件]",
       "text": "Project Glasswing 更新：Claude Mythos Preview 與約 50 個合作夥伴合作，一個月內找出逾 10,000 個高危/嚴重漏洞，但驗證與修補速度已成新瓶頸。",
-      "ref_url": ""
+      "ref_urls": []
     },
     {
       "tag": "[新工具]",
       "text": "多款 Claude Code 生態工具同步亮相：Superset（平行 agent IDE, YC P26）、OpenRig（多 agent 拓樸管理）、VIR（session 記憶萃取至 MCP）皆在今日引起關注。",
-      "ref_url": ""
+      "ref_urls": []
     },
     {
       "tag": "[持續追蹤]",
       "text": "Anthropic 傳即將完成 $300 億融資輪（Bloomberg），同時 claude-opus-4 / claude-sonnet-4 別名將於 **6/15 正式退役**，使用舊別名的生產服務需立即排程遷移。",
-      "ref_url": ""
+      "ref_urls": []
     }
   ],
   "sourceStatus": [],

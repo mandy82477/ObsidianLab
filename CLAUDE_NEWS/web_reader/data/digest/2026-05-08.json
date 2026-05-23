@@ -158,27 +158,27 @@
     {
       "tag": "[風險警示]",
       "text": "Claude Code 爆出 CVE-2026-39861（CVSS 7.7）沙箱逃逸漏洞，同時 Anthropic 對「一鍵 RCE」問題的公開回應被社群解讀為責怪使用者，商譽面臨挑戰，安全性疑慮正集中引爆。",
-      "ref_url": ""
+      "ref_urls": []
     },
     {
       "tag": "[重大事件]",
       "text": "Anthropic 與 SpaceX 達成計算資源合作，借助 Colossus 220,000 GPU 叢集後隨即宣佈提升 Claude Code 使用配額，算力瓶頸鬆動訊號明確。",
-      "ref_url": ""
+      "ref_urls": []
     },
     {
       "tag": "[持續追蹤]",
       "text": "Claude Sonnet 4.8 相關資訊外洩，Anthropic 下一波模型更新動向值得持續觀察。",
-      "ref_url": ""
+      "ref_urls": []
     },
     {
       "tag": "[社群趨勢]",
       "text": "Claude Code 創始人 Boris Cherny 公開宣稱「寫程式問題已被解決」並表示厭倦「vibe coding」一詞，在社群引發大量討論與質疑。",
-      "ref_url": ""
+      "ref_urls": []
     },
     {
       "tag": "[新工具]",
       "text": "社群工具集中爆發：BrowserCode（WebAssembly 瀏覽器版）、Claudy（Rust 多模型管理）、DataMoat（工作記錄加密保存）、4-agent 程式碼審查工作流同日亮相。",
-      "ref_url": ""
+      "ref_urls": []
     }
   ],
   "sourceStatus": [
