@@ -41,6 +41,11 @@ def parse_args() -> argparse.Namespace:
         metavar="YYYY-MM-DD",
         help="Backfill date: fetch news for exactly this day (default: today)",
     )
+    p.add_argument(
+        "--gather-only",
+        action="store_true",
+        help="Fetch, dedup, enrich, filter — then write gathered_items.json and exit (no LLM digest)",
+    )
     return p.parse_args()
 
 
@@ -112,6 +117,34 @@ def main() -> None:
 
     filtered = filter_relevant(enriched)
     logger.info("After relevance filter: %d items", len(filtered))
+
+    if args.gather_only:
+        # Write gathered items to JSON for Claude session to analyse
+        import json as _json
+        from datetime import datetime as _dt
+        out = {
+            "date": target_date.isoformat(),
+            "article_count": len(filtered),
+            "source_status": source_status,
+            "items": [
+                {
+                    "title":     it.title,
+                    "url":       it.url,
+                    "source":    it.source,
+                    "published": it.published.strftime("%m/%d %H:%M UTC") if it.published else "",
+                    "score":     it.score,
+                    "summary":   it.summary or "",
+                    "category":  it.category,
+                }
+                for it in filtered
+            ],
+        }
+        gather_path = LOG_DIR.parent / "gathered_items.json"
+        gather_path.write_text(_json.dumps(out, ensure_ascii=False, indent=2), encoding="utf-8")
+        logger.info("--gather-only: wrote %d items to %s", len(filtered), gather_path)
+        elapsed = time.time() - start
+        logger.info("=== Gather complete: %d items / %d sources / %.1fs ===", len(filtered), len(sources), elapsed)
+        return
 
     digest_path, is_fallback = render(filtered, target_date, source_status)
     logger.info("Digest written: %s", digest_path)

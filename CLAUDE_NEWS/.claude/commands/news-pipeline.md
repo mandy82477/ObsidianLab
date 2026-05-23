@@ -18,18 +18,69 @@ PYTHON    = C:\Users\Mandy\AppData\Local\Programs\Python\Python313\python.exe
 
 ---
 
-## Step 1：新聞聚合器
+## Step 1a：新聞抓取（Python，不呼叫 LLM）
 
 用 Bash 執行：
 
 ```
 cd REPO_ROOT\src
-PYTHON -m news_aggregator.main [--date TARGET_DATE]
+PYTHON -m news_aggregator.main --gather-only [--date TARGET_DATE]
 ```
 
 - 若有 `$ARGUMENTS`，加上 `--date $ARGUMENTS`
-- 成功後應看到 `news/TARGET_DATE.md` 被寫出並 git push
+- 成功後寫出 `src/gathered_items.json`（含 items、date、source_status）
 - 若失敗（exit code 非 0），停止並回報錯誤，不繼續後續步驟
+
+---
+
+## Step 1b：生成日報（Claude 直接在 session 執行）
+
+1. 讀取 `src/gathered_items.json`
+2. 依照以下 prompt 格式，**直接**用繁體中文生成日報 Markdown（不呼叫任何外部 API）：
+
+**System：**
+> 你是一位專注於 AI 技術的中文科技記者，擅長用繁體中文撰寫清晰、客觀的技術新聞摘要。
+
+**輸出結構（五個區塊，無內容則省略）：**
+
+```
+# Claude Code & Anthropic 每日新聞摘要
+
+**日期：** TARGET_DATE | **來源：** X/6 | **文章數：** N | **更新時間：** YYYY-MM-DD HH:MM UTC
+
+---
+
+### 📌 今日聚焦
+3–5 點導讀，格式：**[標籤]** 說明（標籤：重大事件/持續追蹤/新工具/社群趨勢/風險警示）
+
+### ⭐ 重點話題
+跨多來源出現或引起大量討論的項目
+
+### 🔧 技術更新
+僅 category=official 的條目
+
+### 💬 技術熱度討論
+僅 category=community 的條目，每條末加 情緒：😊/😤/😐/🤔
+
+### 💰 付費方案動態
+定價、配額、Token 費用相關
+```
+
+**每條排版格式：**
+```
+**[原文標題](url)**
+一到兩句繁體中文說明核心重點與為何值得關注。
+`來源名稱` · MM/DD HH:MM UTC
+```
+
+3. 生成完成後，寫入 `news/TARGET_DATE.md`（完整 Markdown）
+4. 用 Bash git push：
+```
+git -C REPO_ROOT add news/TARGET_DATE.md
+git -C REPO_ROOT commit -m "news: daily digest TARGET_DATE"
+git -C REPO_ROOT push
+```
+- 若失敗，停止並回報錯誤，不繼續後續步驟
 
 ---
 
