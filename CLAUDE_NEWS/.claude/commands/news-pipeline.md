@@ -57,6 +57,17 @@ PYTHON -m news_aggregator.main --gather-only [--date TARGET_DATE]
 ### 📌 今日聚焦
 3–5 點導讀，格式：**[標籤]** 說明（標籤：重大事件/持續追蹤/新工具/社群趨勢/風險警示）
 
+**每一條聚焦項目，若有對應的參考新聞，必須在說明文字末尾加上 `（ref: URL）`，URL 為 gathered_items.json 中該新聞的原始 url 欄位值。**
+- 若該聚焦項目對應單一新聞 → 直接取那條新聞的 url
+- 若該聚焦項目彙整多則新聞 → 取其中最具代表性（得分最高或來源最權威）的那條 url
+- 若確實找不到對應新聞（例如是推論或背景說明）→ 可省略 ref
+
+範例：
+```
+- **[重大事件]** Claude 發布 Sonnet 4，context window 翻倍——對長文件工作流的衝擊最大。（ref: https://www.anthropic.com/news/claude-sonnet-4）
+- **[新工具]** Superset（YC P26）開源上線，底層以 git worktree 做多 agent 隔離，受社群熱議。（ref: https://github.com/superset-sh/superset）
+```
+
 ### ⭐ 重點話題
 跨多來源出現或引起大量討論的項目
 
