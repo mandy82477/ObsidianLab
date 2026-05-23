@@ -3,18 +3,19 @@
 **類型：** product
 **狀態：** active
 **首次出現：** 2025（正式推出）
-**最後更新：** 2026-05-22
+**最後更新：** 2026-05-23
 
 ---
 
 ## 現況
 
-Claude Code 是 Anthropic 的 AI 編碼 CLI 工具，支援 agentic 工作流程、MCP Server 整合、Hooks 機制與多代理協作框架（Managed Agents）。截至 2026-05-14，GitHub Stars 達 121,000+，是增長最受開發者關注的 AI 編碼助理之一。最新版本為 **v2.1.148**（緊急修復 v2.1.147 的 Bash exit code 127 回歸問題），核心能力已從純程式碼助理擴展為具備全桌面自動化、多代理管理與 AI 安全審查的完整 agent 開發平台。Microsoft 正陸續取消內部授權，轉推 GitHub Copilot CLI（見 [[topics/competitor-landscape]]）；GitHub 已推出新 Copilot 應用明確對標 Claude Code；Ramp AI Index 數據顯示 Anthropic 企業採用率首次超越 OpenAI（34.4% vs 32.3%）。
+Claude Code 是 Anthropic 的 AI 編碼 CLI 工具，支援 agentic 工作流程、MCP Server 整合、Hooks 機制與多代理協作框架（Managed Agents）。截至 2026-05-14，GitHub Stars 達 121,000+，是增長最受開發者關注的 AI 編碼助理之一。最新版本為 **v2.1.150**（內部基礎設施改善，無使用者端功能變更），核心能力已從純程式碼助理擴展為具備全桌面自動化、多代理管理與 AI 安全審查的完整 agent 開發平台。Microsoft 正陸續取消內部授權，轉推 GitHub Copilot CLI（見 [[topics/competitor-landscape]]）；GitHub 已推出新 Copilot 應用明確對標 Claude Code；Ramp AI Index 數據顯示 Anthropic 企業採用率首次超越 OpenAI（34.4% vs 32.3%）。
 
 ### 最新版本
 
 | 版本 | 日期 | 重點 |
 |------|------|------|
+| **v2.1.150** | 2026-05-23 | 內部基礎設施改善，無使用者端可見功能變更 |
 | **v2.1.148** | 2026-05-22 | 緊急修復 v2.1.147 引入的回歸問題：Bash 工具對部分用戶每次指令都回傳 exit code 127，導致 shell 命令無法正常執行 |
 | **v2.1.146** | 2026-05-21 | `/simplify` 正式更名為 `/code-review`，新增可選強度參數（`/code-review high`）；auto mode 不再抑制 `AskUserQuestion`（skill 或用戶明確觸發時仍可向使用者提問）|
 | **v2.1.145** | 2026-05-20 | `claude agents --json` 指令：將目前存活的 Claude session 以 JSON 格式列出，便於與 tmux-resurrect、status bar、session picker 等工具整合；新增 `agent_id` 及 `parent_agent_id` 屬性，支援多 agent 層級識別 |
@@ -52,6 +53,8 @@ Claude Code 是 Anthropic 的 AI 編碼 CLI 工具，支援 agentic 工作流程
 > ⚠️ **安裝安全警示**：Google 搜尋廣告曾出現仿冒官方安裝包（植入 Trojan:Win32/Kepavll!rfn），假冒包透過 IElevator 機制竊取瀏覽器 Cookie 與機密憑證，多家資安媒體同步報導。**務必僅從官方來源安裝：`github.com/anthropics/claude-code`**
 
 **開發者須知**
+- **⚠️ Opus 4 / Sonnet 4 別名退役（2026-06-15）**：`claude-opus-4-20250514` 與 `claude-sonnet-4-20250514` 將於 6/15 正式退役，使用舊別名的生產環境程式碼將開始回傳錯誤，需在 **2026-06-14 前遷移至新版模型 ID**；見 [[entities/pricing]]
+- **⚠️ Claude Code RCE 漏洞（2026-05-23）**：startsWith 解析缺陷可被利用觸發 RCE，已確認 Cursor 與 Continue.dev 存在相同漏洞；更新至最新版本並啟用 OS 層級沙箱；見 [[topics/ai-agent-safety]]
 - **CLAUDE.md 為 candidate-context**（2026-05-10 社群發現）：逆向工程發現 CLAUDE.md 以 `<system-reminder>` 包裹並附帶「may or may not be relevant」提示，直接解釋長期「指令被忽略」問題；Anthropic 尚未正式回應
 - **Claude Security 公開 Beta**（2026-05-06）：AI 驅動安全審查直接整合於 Claude Code 工作流，無需另行安裝；見 [[entities/claude-security]]
 - **Amazon 全體企業員工部署**（2026-05-05）：與 OpenAI Codex 並行雙品牌部署，大型企業標配開始

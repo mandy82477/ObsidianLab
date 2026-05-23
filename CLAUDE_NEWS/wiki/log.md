@@ -720,3 +720,33 @@ Append-only 紀錄。每次 ingest、query 或 lint 都在此追加一條。
   - community-tech-discussions.md 技術彙整：✅
   - pricing.md、openclaw.md、stainless.md、claude-security.md、andrej-karpathy.md：✅
   - 其餘單一/少量日期頁面（bugcrawl、project-deal、claude-design、cat-wu、mythos 主題性分段）：✅ 無排序問題
+
+---
+
+## 2026-05-23 Ingest | news/2026-05-23.md
+
+- 來源日報：`news/2026-05-23.md`（74 則；含 Claude Code RCE CVE-2026-39861、Microsoft 企業授權取消、Project Glasswing 10K+ 漏洞、Opus 4/Sonnet 4 退役 6/15、新工具 Superset/OpenRig/VIR/CoreMem/tokenflex.ing/Shortcuts Playground、$30B 融資、多人協調困境討論）
+- 更新頁面：
+  - `entities/claude-code.md`：新增 v2.1.150（基礎設施改善）；新增 RCE 警示與 Opus 4/Sonnet 4 退役 6/15 至 開發者須知；更新 現況 最新版本
+  - `topics/ai-agent-safety.md`：新增 Claude Code RCE 跨工具傳播（2026-05-23）；新增 Mythos Exploit 開發評估報告（2026-05-23）；更新 最後更新
+  - `topics/enterprise-cost-management.md`：新增 2026-05-23 時序（tokenflex.ing $30,983、API 帳單 3x、Microsoft 授權取消確認）
+  - `topics/competitor-landscape.md`：新增 2026-05-23 時序（Business Insider Claude 贏新創、Microsoft 確認、RCE 跨工具傳播）
+  - `topics/community-tech-tools.md`：新增 6 工具（Superset、OpenRig、VIR、CoreMem、tokenflex.ing、Shortcuts Playground）；更新 痛點洞察 表（跨 session 記憶歸零項目新增 VIR/CoreMem）
+  - `topics/community-tech-discussions.md`：LLMs 虛假忙碌 模式改為 🌊延燒；新增 Solo 爽、團隊亂 熱門討論（2026-05-23）；新增對應技術彙整條目
+  - `entities/mythos.md`：新增 Project Glasswing 一個月更新（10K+ 漏洞，修補速度成新瓶頸）；新增 Mythos Exploit 開發能力評估（exploit primitives + 端對端攻擊鏈）；更新 最後更新
+  - `entities/pricing.md`：新增 2026-05-23 模型別名退役警示（Opus 4/Sonnet 4 June 15）；更新 最後更新
+  - `topics/community-tech-patterns.md`：新增 Git Worktrees 作為多 Agent 隔離原語（2026-05-23）；新增 Framework-Specific CLAUDE.md 設計（2026-05-23）；更新 最後更新
+  - `wiki/feature-radar.md`：v2.1.150 為基礎設施改善，無新使用者功能；更新 最後更新
+- 新增 entities：無
+- feature-radar 更新：本日無新功能（v2.1.150 infra-only）
+- 呈現品質：
+  - `entities/claude-code.md` ✅ 通過
+  - `topics/ai-agent-safety.md` ✅ 通過
+  - `topics/enterprise-cost-management.md` ✅ 通過
+  - `topics/competitor-landscape.md` ✅ 通過
+  - `topics/community-tech-tools.md` ✅ 通過
+  - `topics/community-tech-discussions.md` ✅ 通過
+  - `entities/mythos.md` ✅ 通過
+  - `entities/pricing.md` ✅ 通過
+  - `topics/community-tech-patterns.md` ✅ 通過
+  - `wiki/feature-radar.md` ✅ 通過

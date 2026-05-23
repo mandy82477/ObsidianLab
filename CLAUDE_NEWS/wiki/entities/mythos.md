@@ -3,7 +3,7 @@
 **類型：** model
 **狀態：** 限制存取（非公開）
 **首次出現：** 2026-04（限定夥伴 Preview）
-**最後更新：** 2026-05-08
+**最後更新：** 2026-05-23
 
 ---
 
@@ -65,6 +65,17 @@ IEEE Spectrum 進一步報導，Mythos Preview 的高度自主程式設計能力
 ## Project Glasswing：AI 資安威脅研究
 
 Anthropic 的「Project Glasswing」聚焦 AI 資安威脅，Mizuho 分析師認為此計畫將帶動 CrowdStrike 等資安股上漲，顯示 AI 安全議題（Mythos 能力揭露為背景）正從技術討論延伸至資本市場判斷。
+
+### Project Glasswing 一個月更新（2026-05-23）
+
+Anthropic 發布 Glasswing 第一個月進展報告：與約 50 個合作夥伴合作，Claude Mythos Preview 已在全球最重要的開源軟體中找出超過 **10,000 個高/嚴重等級漏洞**，較先前揭露的「七週 2,000+」大幅加速。核心發現：漏洞發現速度已非瓶頸，**驗證、揭露與修補速度**才是新瓶頸——AI 找漏洞的速度已超越人類修補速度，需要新的協調機制。
+
+### Mythos Exploit 開發能力評估（2026-05-23）
+
+Anthropic 安全團隊（Newton Cheng、Keane Lucas 等）同步發布 Mythos Preview 的 exploit 開發能力評估報告，確認：
+- Mythos 不僅能找到複雜漏洞，還能將漏洞轉化為 **exploit primitive**
+- 能進一步將多個 primitive **組合成端對端完整攻擊鏈**
+- 這是 Anthropic 選擇謹慎推出而非公開發布的核心依據——公開後可能讓攻擊武器化自動化成為現實
 
 ---
 

@@ -2,7 +2,7 @@
 
 **狀態：** ongoing
 **開始日期：** 2026-04-25
-**最後更新：** 2026-05-22
+**最後更新：** 2026-05-23
 
 ---
 
@@ -351,6 +351,21 @@
 - **VPS 雙代理持續運作**：兩個 Claude Code 代理在 VPS 的 tmux session 中持續運作，自動開 PR 並發布 Discord 狀態更新，代理間可相互協調；架構概念類似「Claude Code 版 docker-compose」
 - **OS 用戶隔離爆炸半徑**：每個代理使用獨立 OS 用戶，比容器化更輕量但仍能有效限制單一代理失控時的影響範圍，是 agent 架構設計的實踐案例
 
+### Git Worktrees 作為多 Agent 隔離原語（2026-05-23）
+
+- **獨立工作樹隔離**：每個 Claude Code agent 運行在各自的 git worktree 中，擁有獨立的工作目錄、staged changes 和本地狀態，確保並行 agent 之間完全不互相干擾
+- **比 OS 用戶更輕量**：相比雙代理 VPS 架構使用獨立 OS 用戶隔離（2026-05-03），git worktree 不需要 OS 層面的帳號管理，是更輕量的隔離原語，特別適合 CI/CD 或本機多任務場景
+- **Superset 框架的底層機制**：社群工具 Superset（2026-05-23 首見）使用 git worktree 自動為每個並行 Claude Code 實例分配獨立工作區，將此模式工具化；與 FleetView 的概念類似，但聚焦在 worktree 而非 session 可見性
+- **爆炸半徑最小化**：即使某個 agent 在本地 worktree 做了破壞性操作（例如誤刪文件），不影響主 branch 與其他 worktree；合併前可 review 全部 diff，強制加入人工審查節點
+- **適用場景**：同時跑多個 feature branch、平行測試不同實作方案、CI 環境中不同 PR 的並行驗證
+
+### Framework-Specific CLAUDE.md 設計（2026-05-23）
+
+- **框架防呆規則**：「CLAUDE.md for Svelte: 13 Rules」展示了針對單一框架（Svelte）客製化 CLAUDE.md 的方法論——明確列出「禁止使用 React 思維」（禁 JSX、禁 useState、禁 useEffect）的負面規則，防止 Claude Code 將訓練資料中 React 佔比過高的偏好帶入 Svelte 開發
+- **負面規則的力量**：相比「請使用 Svelte 的 reactive statements」，「不要使用 useState」更能有效阻止 Claude Code 回退至 React 慣例；這延伸了「精簡 CLAUDE.md」（2026-04-25）的討論——精簡不只是少寫，而是寫對類型的規則
+- **框架差異放大問題**：框架差距越大（例如 React → Svelte），模型產生慣性錯誤的頻率越高；框架特定 CLAUDE.md 的必要性與框架獨特性正相關
+- **可複用範本化**：13 條規則格式結構化，社群可以複製並依自己的框架（Vue、Solid、HTMX）調整——這是 CLAUDE.md 最佳實踐從個人做法走向社群共享範本的跡象
+
 ---
 
 ## 目前結論
@@ -400,4 +415,5 @@
 - [[news/2026-05-17]]
 - [[news/2026-05-16]]
 - [[news/2026-05-22]]
+- [[news/2026-05-23]]
 

@@ -4,7 +4,7 @@
 僅收錄官方 changelog、release note 或官方公告來源；社群工具見 [[topics/community-tech-tools]]。
 每次 ingest 後由 LLM 維護：新增功能、更新熱度、補充社群回饋。
 
-**最後更新：** 2026-05-22（含 5/22 ingest 更新；Managed Agents 自架沙箱文件完整發布）
+**最後更新：** 2026-05-23（含 5/23 ingest 更新；v2.1.150 為基礎設施改善，無新使用者功能；本日無新功能條目新增）
 
 ---
 

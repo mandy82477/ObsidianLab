@@ -26,6 +26,12 @@
 
 | 工具 | 類型 | 採用 | 首次出現 | 簡介 |
 | --- | --- | --- | --- | --- |
+| [**Superset**](https://github.com/superset-sh/superset) | 多 Agent IDE | ⚡ | 2026-05-23 | YC P26 開源 agentic IDE，可同時平行運行 Claude Code、Codex、OpenCode 等，底層以 git worktree 隔離各 agent 工作區，解決多 agent 並行的 terminal 混亂問題；Show HN 發布 |
+| [**OpenRig**](https://www.openrig.dev/) | 多 Agent 控制平面 | ⏳ | 2026-05-23 | 儲存與重建 Claude Code + Codex 等多 agent 拓樸（topologies），支援協調、宣告式 workflow 與 workspace 管理，減少手動重建 agent 組合的重複勞動；Show HN 發布 |
+| [**VIR**](https://www.reddit.com/r/ClaudeAI/comments/1tlcai2/) | 記憶/知識工具 | ⚡ | 2026-05-23 | 背景讀取 `~/.claude/projects` 所有 JSONL session 檔，分類萃取知識（pattern/gotcha/decision/tool），寫入 Obsidian vault 並透過 MCP 讓 Claude Code 存取，解決 session 記憶歸零問題 |
+| [**CoreMem**](https://coremem.app) | 記憶/context 工具 | ⚡ | 2026-05-23 | 集中管理跨 agent、跨 session 的 context（專案細節、寫作風格、技術偏好），可透過 URL、Chrome extension、MCP、VS Code plugin 讓任何 AI 工具存取 |
+| [**tokenflex.ing**](https://www.indiehackers.com/post/i-used-30-983-of-ai-tokens-last-month-in-claude-code-on-200-mo-plan-3337a369a6) | 監測工具 | ⏳ | 2026-05-23 | 公開 token 使用量排行榜，比較 Claude Code / Codex / Cursor / OpenCode 等工具的月度用量；類似 GitHub profile 但針對 AI token 消耗，讓不可見的費用變得可見 |
+| [**Shortcuts Playground**](https://www.macstories.net/stories/introducing-shortcuts-playground/) | Skills | ⚡ | 2026-05-23 | Claude Code / Codex 開源 plugin，用自然語言描述即可生成 Apple Shortcuts；MacStories 出品，完整文件化，直接指向 plugin repo 即可安裝；Show HN 發布 |
 | [**Runtime**](https://www.runtm.com/) | 多人 Agent 基礎設施 | ⏳ | 2026-05-22 | YC P26 商業產品，讓全團隊（含非工程師）安全使用 Claude Code / Codex，解決 PR 品質、repo 設定、上下文共享等多人協作問題；Show HN 發布 |
 | [**agent-teamflow**](https://www.reddit.com/r/ClaudeAI/comments/1tkl3z6/) | 多 agent 協調 | ⚡ | 2026-05-22 | 9 個 slash commands + 分支命名慣例，讓多位開發者的 Claude Code agent 平行運作且不互相踩踏，每人有獨立 staging 分支；實習生開源 |
 | [**Runner**](https://github.com/yicheng47/runner) | 多 agent 管理 | ⏳ | 2026-05-22 | 桌面應用，以「機組」模式同時管理多個 Claude Code、Codex agent 實例，適合需要平行處理多任務的開發者；Show HN 發布 |
@@ -153,7 +159,7 @@
 | 痛點主題 | 代表工具 | 本質問題 | 狀態 | 近期工具 |
 |---------|---------|---------|------|---------|
 | Token 成本不透明 | Tokenyst、CostHawk、TokenShield、PrismoDev、engramx、agent-estimate | 自主 agent 讓帳單不可預測；$6,000 個人事件廣傳後社群更重視 | 🔥 持續升溫 | 2026-05-22 |
-| 跨 session 記憶歸零 | ltm、Memex、draft CLI、LockedIn、Claude Soul | 無官方標準，每個新 session 從零開始 | 🔥 持續升溫 | 2026-05-19 |
+| 跨 session 記憶歸零 | ltm、Memex、draft CLI、LockedIn、VIR、CoreMem | 無官方標準，每個新 session 從零開始 | 🔥 持續升溫 | 2026-05-23 |
 | 多 agent 協調混亂 | agent-baton、cdesktop、AnyFrame、HiveTerm、agent-teamflow、Runner、Runtime | 官方 Managed Agents 已部分解決，但社群仍補缺口；商業產品（Runtime/YC）開始進入 | 🔥 持續升溫 | 2026-05-22 |
 | CLAUDE.md 規則失效 | Writ、Caliber、Patina | 規則被忽略、過多規則耗 token、跨工具無標準 | 🌙 冷卻觀望 | 2026-05-12 |
 | 多模型鎖定防禦 | Dragoman、Claudy、claudely、clarp、vibe-skill | 6/15 定價後對供應商依賴的集體防禦反應 | 🔥 持續升溫 | 2026-05-21 |

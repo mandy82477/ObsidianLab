@@ -3,7 +3,6 @@
 **狀態：** ongoing
 **開始日期：** 2026-04
 **最後更新：** 2026-05-23
-
 ---
 
 ## 摘要
@@ -102,6 +101,11 @@ Claude Code 已成為 AI 輔助編碼的標竿產品，但競爭正快速升溫�
 ## 時序
 
 #### 企業競爭白熱化（2026-05-12 至 2026-05-22）
+
+### 2026-05-23
+- **[Business Insider] 新創圈 Claude Code 已勝出，Cursor 正在消退**：Business Insider 報導顯示在新創生態中 Claude Code 已取得明確主導地位，Cursor 份額持續下滑——與 Microsoft 棄用 Claude Code 同日，形成「大型企業因成本退出 vs 新創因效果採用」的市場分層對比
+- **Microsoft 棄用 Claude Code 多媒體確認（HN 330 分）**：The Verge 深度報導獲 330 分 HN 討論，成為本週 Claude Code 最具影響力的企業新聞；核心邏輯：「太受歡迎 → 規模成本過高 → 強制切換 Copilot CLI」——這是大型企業 AI 工具採購的新型成本反饋機制
+- **Claude Code RCE 漏洞確認：同類 bug 在 Cursor、Continue.dev 也存在**：安全研究人員確認 Claude Code 的 startsWith 解析漏洞同樣存在於 Cursor、Continue.dev，顯示競品之間的功能移植也在移植安全缺陷；見 [[topics/ai-agent-safety]]
 
 ### 2026-05-22
 - **DeepSeek 正式宣布建構自有 Claude Code 競品**：Decrypt 報導 DeepSeek 公開宣稱目標是「建立涵蓋模型到開發工具的完整技術棧」，戰略層級從低成本替代品升格為全棧競爭者；Anthropic 面臨的不再只是功能競爭，而是產品生態的整棧複製

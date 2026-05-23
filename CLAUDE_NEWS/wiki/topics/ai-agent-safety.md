@@ -2,7 +2,7 @@
 
 **狀態：** ongoing
 **開始日期：** 2026-04-27
-**最後更新：** 2026-05-21
+**最後更新：** 2026-05-23
 
 ---
 
@@ -13,6 +13,21 @@
 ---
 
 ## 技術彙整
+
+### Claude Code RCE 漏洞復現與跨工具傳播（2026-05-23 新增）
+
+- **漏洞機制**：研究人員 joernchen 發現並公開 Claude Code 的 RCE（遠端代碼執行）漏洞，核心缺陷為 `startsWith` 字串解析邏輯不當，攻擊者可藉此取得系統控制權；此漏洞已被獨立研究人員成功復現
+- **跨工具傳播**：復現者同步確認 Cursor 與 Continue.dev 存在完全相同的 `startsWith` 解析缺陷，顯示 AI coding agent 工具生態在快速複製功能實作的同時也複製了安全缺陷
+- **社群回應**：主流觀點認為應以「瀏覽器或 PDF Reader」的威脅模型對待 AI agent 產品——假設輸入不可信、全路徑沙箱化、不僅依賴字串驗證
+- **媒體關注**：DevOps.com 同步報導（「Attackers Can Exploit a Claude Code RCE Flaw to Take Command of System」），達資安媒體層級曝光
+- **防護建議**：更新至最新版 Claude Code；所有 agent 部署環境強制啟用 OS 層級沙箱（見 Sandboxing 官方文件）；不可假設 agent 所接收的輸入已經安全
+
+### Claude Mythos Exploit 開發評估報告（2026-05-23 新增）
+
+- **報告內容**：Anthropic 安全團隊（Newton Cheng 等）發布 Mythos Preview exploit 開發能力評估，確認 Mythos 不僅能發現複雜漏洞，還能將漏洞轉化為 exploit primitive，並將多個 primitive 組合成端對端完整攻擊鏈
+- **能力里程碑（推論）**：此與先前的漏洞「發現」能力不同——能自主組合完整攻擊鏈代表攻擊自動化已從「偵測」升級至「交付可用武器」；這是 Anthropic 選擇謹慎推出 Glasswing 的核心依據（推論）
+- **Project Glasswing 規模更新**：截至 2026-05-22 報告，Glasswing 與約 50 個合作夥伴合作，一個月內在全球最重要的開源軟體中找出 **10,000+ 個高/嚴重等級漏洞**，最大瓶頸已從「發現」轉為「驗證、揭露與修補」——AI 找漏洞的速度已超越人類修補速度
+- **與 false positive 問題的反差**：同日社群報告 Claude Code 對 OSS 安全治理檔案（CodeQL、CODEOWNERS）有過多 false positive 封鎖，形成反差：外部安全研究能力極強，內部安全政策有失準情況
 
 ### AI 生成程式碼大規模安全漏洞評測（2026-05-13 新增）
 
