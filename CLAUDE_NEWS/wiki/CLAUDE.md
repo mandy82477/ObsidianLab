@@ -214,12 +214,21 @@ wiki/
 
 ### community-tech-tools 工具新增規則 `[加入: 2026-05-20]`
 
+**入選門檻（滿足以下任一條件才可收錄）：**
+- HN score ≥ 30，或 HN 評論數 ≥ 5
+- Show HN 投稿（自動入選，無論分數）
+- 同一天被至少 2 個獨立來源報導
+
+**排除條件（滿足其一即不收錄，優先於入選條件）：**
+- 無公開 repo、無 demo、無可用連結（純商業廣告性工具）
+- 只出現在媒體新聞報導中，gathered_items.json 中 source 為 Google News 且無 HN/Reddit 對應討論
+
 新增工具至 `topics/community-tech-tools.md` 時，必須遵守以下格式：
 
 **表格欄位：** `| 工具 | 類型 | 採用 | 首次出現 | 簡介 |`
 - **工具欄**：若在日報中找到 URL（GitHub / HN / Reddit 等），格式為 `[**ToolName**](url)`；若無 URL，格式為 `**ToolName**`
 - **首次出現**：填入日報日期（YYYY-MM-DD）；若無法確認則填 `—`
-- **採用初始值**：新工具預設 `⏳ 觀望中`；Show HN / Reddit 正面反應明顯者填 `⚡`
+- **採用初始值**：新工具預設 `⏳ 觀望中`；Show HN / Reddit 正面反應明顯者（score ≥ 100 或評論 ≥ 20）填 `⚡`
 - **URL 取得方式**：直接從當天日報原文中擷取（日報中的 Markdown 連結包含原始 URL）
 
 **每次 ingest 後同步更新 `## 痛點洞察` 表格：**
