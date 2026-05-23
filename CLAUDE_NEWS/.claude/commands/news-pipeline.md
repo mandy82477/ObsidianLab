@@ -10,8 +10,10 @@ argument-hint: [YYYY-MM-DD]
 ## 設定
 
 ```
-REPO_ROOT = C:\Users\Mandy\CLAUDE_OBSIDIAN\ObsidianLab\CLAUDE_NEWS
-PYTHON    = C:\Users\Mandy\AppData\Local\Programs\Python\Python313\python.exe
+REPO_ROOT    = C:\Users\Mandy\CLAUDE_OBSIDIAN\ObsidianLab\CLAUDE_NEWS
+PYTHON       = C:\Users\Mandy\AppData\Local\Programs\Python\Python313\python.exe
+DIGEST_MODEL = claude-haiku-4-5-20251001   ← Step 1b 日報生成（結構化任務，Haiku 足夠）
+INGEST_MODEL = claude-sonnet-4-6           ← Step 2 Wiki Ingest（複雜判斷，需要 Sonnet）
 ```
 
 若有提供 `$ARGUMENTS`，目標日期為 `$ARGUMENTS`；否則取系統今天日期（YYYY-MM-DD）。
@@ -34,6 +36,8 @@ PYTHON -m news_aggregator.main --gather-only [--date TARGET_DATE]
 ---
 
 ## Step 1b：生成日報（Claude 直接在 session 執行）
+
+**執行前先切換模型：** `/model claude-haiku-4-5-20251001`
 
 1. 讀取 `src/gathered_items.json`
 2. 依照以下 prompt 格式，**直接**用繁體中文生成日報 Markdown（不呼叫任何外部 API）：
@@ -85,6 +89,8 @@ git -C REPO_ROOT push
 ---
 
 ## Step 2：Wiki Ingest
+
+**執行前先切換模型：** `/model claude-sonnet-4-6`
 
 執行完整 wiki ingest 流程（直接在本 session 執行，不呼叫 `claude -p`）：
 
@@ -181,6 +187,12 @@ REPO_ROOT\src\logs\task_scheduler.log
 | Step 5 Web 推送 | ✅ / ❌ |
 | Step 6 Log 寫入 | ✅ / ❌ |
 | 目標日期 | TARGET_DATE |
+
+## 模型還原
+
+Step 2 完成後，用 `/model claude-sonnet-4-6` 確認模型維持在 Sonnet（後續步驟無 LLM 需求，但保持一致）。
+
+---
 
 ## 注意事項
 
