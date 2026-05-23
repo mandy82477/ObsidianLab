@@ -943,37 +943,7 @@ code {
   font-weight: var(--fw-regular);
 }
 
-/* 4 category chips — promoted from chips to four-pillar pattern */
-.about__categories {
-  display: grid; grid-template-columns: repeat(4, 1fr);
-  gap: 0; margin-bottom: 48px;
-  border-top: 1px solid var(--ink-1);
-  border-bottom: 1px solid var(--ink-1);
-  padding: 28px 0;
-}
-.about__cat {
-  background: transparent; border: 0;
-  border-right: 1px solid var(--border-1);
-  border-radius: 0; padding: 0 24px;
-  text-align: left; text-decoration: none;
-  transition: background 200ms;
-  color: inherit;
-}
-.about__cat:last-child { border-right: 0; padding-right: 0; }
-.about__cat:first-child { padding-left: 0; }
-.about__cat:hover { background: var(--ochre-wash); border-color: var(--border-1); }
-.about__cat-title {
-  font-family: var(--font-cjk); font-size: 22px;
-  font-weight: var(--fw-medium); color: var(--ink-1);
-  margin-bottom: 12px; letter-spacing: 0.02em;
-}
-.about__cat-sub {
-  font-family: var(--font-mono); font-size: 11px;
-  font-weight: var(--fw-medium); color: var(--ink-3);
-  letter-spacing: 0.18em; text-transform: uppercase;
-}
-.about__cat--warn .about__cat-title { color: var(--warn); }
-.about__cat--warn .about__cat-sub { color: var(--warn); }
+/* 4 category chips — styles defined below with roman numerals */
 
 /* Main 2-col layout */
 .about__main { display: grid; grid-template-columns: 1fr 320px; gap: 36px; align-items: start; }
