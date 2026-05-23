@@ -39,10 +39,11 @@ _PROMPT = """\
 """
 
 
-def filter_relevant(items: list[FeedItem], min_score: int = 3) -> list[FeedItem]:
+def filter_relevant(items: list[FeedItem], min_score: int = 3, allow_cli: bool = True) -> list[FeedItem]:
     """Return only items with LLM relevance score >= min_score.
 
-    Tries: API key → claude CLI → keep all (fallback).
+    Tries: API key → claude CLI (only if allow_cli=True) → keep all (fallback).
+    Set allow_cli=False when called from skills/commands to prevent claude -p invocation.
     """
     if not items:
         return items
@@ -56,7 +57,7 @@ def filter_relevant(items: list[FeedItem], min_score: int = 3) -> list[FeedItem]
         except Exception as e:
             logger.warning("Relevance filter API failed (%s) — trying claude CLI", e)
 
-    if raw is None:
+    if raw is None and allow_cli:
         raw = _call_claude_cli(items)
 
     if raw is None:

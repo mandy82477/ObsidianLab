@@ -23,6 +23,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
   1. `claude -p`（**僅限 `run_news.bat` 排程器**，不可出現在任何 skill 或 command 中）
   2. Claude session 直接執行（skills / commands 的唯一合法路徑）
 - **Skills（`.claude/skills/`）和 Commands（`.claude/commands/`）中嚴禁出現 `claude -p`**，包括任何形式的子程序呼叫、shell 執行、或間接觸發
+- **Skills / Commands 呼叫到的 Python script 或其他腳本，也不得在其呼叫鏈中觸發 `claude -p`**（例如：command 呼叫 `main.py --gather-only`，則 `--gather-only` 路徑上的所有模組都不得呼叫 `claude -p`）
 - 不可新增任何「有 API key 才能運作」的功能或 fallback
 - 若提出需要 API key 的方案，必須同時提供不需要 key 的替代做法
 
