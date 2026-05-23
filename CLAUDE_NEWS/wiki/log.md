@@ -5,6 +5,29 @@ Append-only 紀錄。每次 ingest、query 或 lint 都在此追加一條。
 
 ---
 
+## 2026-05-23 工具目錄清理 | community-tech-tools 品質審查
+
+- 背景：依新制入選門檻（HN score ≥ 30 或評論 ≥ 5 / Show HN 自動入選 / 2+ 獨立來源）重新審查全部工具
+- 移除 12 個不符標準的條目：
+  - `lipstyk` — 無日期、無 URL、無可追蹤來源
+  - `claude-anyteam` — 無日期、無 URL、無可追蹤來源
+  - `Linear+Lanes MCP` — 無日期、無 URL、無可追蹤來源
+  - `WezTerm 主題同步` — 無日期、無 URL（純設定技巧，非獨立工具）
+  - `shipcheck` — 2026-05-17 日報無此工具記錄
+  - `cv-claw` — 任何日報均無此工具記錄
+  - `HiveTerm` — 僅出現在 2026-05-12 今日聚焦摘要，無專文、無 URL
+  - `Mneme HQ` — 僅 dev.to 發布，無 HN/Reddit 討論
+  - `QA Skills（24 個）` — 僅 dev.to 發布，無 HN/Reddit 討論
+  - `Code Quest` — 無公開 URL，無 HN/Reddit 討論
+  - `AI 命名一致性 OSS` — 僅 dev.to 發布，無 HN/Reddit 討論
+  - `unitmux` — 僅 dev.to 發布，無 HN/Reddit 討論
+- 同步更新：
+  - `痛點洞察` 表格移除 HiveTerm 引用
+  - `AI 輔助開發的長期副作用` 移除 `AI 命名一致性` 工具引用（保留概念描述）
+- 總工具數：~108（移除後）
+
+---
+
 ## 2026-05-22 Ingest | news/2026-05-22.md
 
 - 來源日報：`news/2026-05-22.md`（36 則，含 v2.1.148、Managed Agents 自架沙箱文件、DeepSeek 全棧競品、$6,000 帳單事件、Karpathy 加入 Anthropic、多個新工具）
