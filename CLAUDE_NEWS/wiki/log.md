@@ -702,3 +702,21 @@ Append-only 紀錄。每次 ingest、query 或 lint 都在此追加一條。
   - 過期規則（> 60 天）：無（最舊規則 [加入: 2026-04-25] = 28 天）
   - 簡化：已執行（wiki 規則全部移至 wiki/CLAUDE.md；skills 更新 Step 1/2 明確載入）
 - overview.md：已更新（2026-05-21 → 2026-05-22，涵蓋 DeepSeek 全棧競品、$6K 費用事件、Karpathy 加入、Managed Agents 文件完整化）
+
+## 2026-05-23 時序整體修復
+
+- **觸發原因：** 使用者反映「WIKI頁面時序混亂，請整體檢查」
+- **掃描範圍：** 全部 entities/（16頁）+ topics/（11頁）
+- **已修復（共 6 頁）：**
+  - `topics/competitor-landscape.md`：2026-05-22 + 2026-05-21 誤排在 2026-05-19 後面 → 已修正為最新在前；section header 日期範圍同步更新
+  - `entities/google-investment.md`：時序區塊 2026-05-01 誤排在 2026-04-27 後面 → 已調整為最新在前
+  - `entities/boris-cherny.md`：公開言論區塊日期錯亂（2026-05-05→05-06→05-13→05-08…）→ 統一改為最新在前
+  - `topics/community-tech-tools.md`：四處錯亂：May-21（5條）、May-16（2條）誤放表格末尾；Apr-30（5條）排在 Apr-29 後；Apr-28（2條）排在 Apr-27 後 → 全部移至正確位置
+  - `topics/community-tech-discussions.md`：熱門討論表格多處日期錯亂（05-20×3 排在 05-09 後、05-13 排在 05-08 前等）→ 統一按日期最新在前重排；並恢復誤刪的 Boris "coding is solved" 05-08 延燒條目
+- **確認無誤（✅ 正確順序）：**
+  - enterprise-cost-management.md、code-quality-decline.md、ai-agent-safety.md、managed-agents.md：✅
+  - community-tech-timeline.md：✅（2026-05-22 在頂，往下遞減）
+  - claude-code.md 版本歷史 + 歷史記錄：✅
+  - community-tech-discussions.md 技術彙整：✅
+  - pricing.md、openclaw.md、stainless.md、claude-security.md、andrej-karpathy.md：✅
+  - 其餘單一/少量日期頁面（bugcrawl、project-deal、claude-design、cat-wu、mythos 主題性分段）：✅ 無排序問題

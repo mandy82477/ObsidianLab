@@ -2,7 +2,7 @@
 
 **狀態：** ongoing
 **開始日期：** 2026-04-25
-**最後更新：** 2026-05-22
+**最後更新：** 2026-05-23
 
 ---
 
@@ -37,6 +37,11 @@
 | [**ChunkHound v5.1**](https://www.reddit.com/r/ClaudeAI/comments/1tkkxmk/) | 程式碼搜尋 | ⚡ | 2026-05-22 | 更新：MCP 多客戶端共用單一 DuckDB 連線、搜尋結果改為 token 效率更高的 Markdown 格式，新增 Elixir/Dart/Lua/SQL/HTML/CSS 語言支援 |
 | **videowright** | 影片生成 | ⏳ | 2026-05-22 | Kiln 開源工具，從 prompt 生成影片腳本、支援任意 Web 技術渲染、AI 配音自動對齊影片節拍；Kiln 用此工具製作自家發布影片；Show HN 發布 |
 | **QA Skills（24 個）** | QA 工具集 | ⚡ | 2026-05-22 | 開源 QA Claude Skill 套件，涵蓋從規格到發布的 24 個生產級 QA 技能，可直接整合至 Claude Code 工作流程；dev.to 發布 |
+| [**atrium**](https://getatrium.dev) | 工作區管理 | ⏳ 觀望中 | 2026-05-21 | macOS 可恢復瓦片式工作區管理器（terminal/browser/task/notes 面板），session 崩潰不再遺失；可規避 6/15 API 計量鎖定 |
+| [**clarp**](https://www.reddit.com/r/ClaudeAI/comments/1tj2exk/claude_p_is_moving_to_metered_pricing_on_june_15/) | 成本工具 | ⚡ | 2026-05-21 | `claude -p` drop-in 替代品，本地 PTY + 唯讀 API 代理，規避 6/15 計量計費，多數專案只需更換 binary 名稱 |
+| [**vibe-skill**](https://www.reddit.com/r/ClaudeAI/comments/1tjfyh0/i_used_claude_code_to_build_while_delegating/) | 成本工具 | ⚡ | 2026-05-21 | Claude 負責規劃 + diff 審查，實際撰碼委派 Mistral Vibe；10 天實測節省 57M tokens，成本降逾 90% |
+| [**Claude Orchestra**](https://www.reddit.com/r/ClaudeAI/comments/1tjj24s/i_had_500_claude_code_skills_installed_and_no/) | Skills 管理 | ⏳ 觀望中 | 2026-05-21 | 將 500+ skills/agents/MCP servers 組織成主題式 orchestras（BUILD/DESIGN/RESEARCH 等），解決技能爆炸管理問題，開源 |
+| [**the-knowledge-guy**](https://www.reddit.com/r/ClaudeAI/comments/1tjh00m/theknowledgeguy_turn_your_bookshelf_into_a_tutor/) | Skills | ⏳ 觀望中 | 2026-05-21 | 11 種閱讀模式（跨書合成問答、互動課程含測驗、整書摘要等），將個人書庫轉為即時查詢的知識導師 |
 | [**TokenShield**](https://www.npmjs.com/package/@curatedmcp/tokenshield) | token 優化 | ⚡ | 2026-05-20 | 本地 Node.js proxy，攔截送往 api.anthropic.com 的請求並去除重複的 tool_result 內容（同一檔案多次被讀等情況），宣稱可減少 40–70% 的 Claude Code 費用；npmjs 發布 |
 | [**Logbox**](https://github.com/struct-dot-ai/logbox) | 監測工具 | ⚡ | 2026-05-20 | 將 dev server log 導入本地 SQLite，再透過 MCP 讓 Claude Code 直接查詢，解決 Claude 無法即時追蹤 log 流的問題；Show HN 發布 |
 | [**PrismoDev**](https://github.com/shanirsh/prismodev) | 診斷工具 | ⚡ | 2026-05-20 | 掃描本地 Claude Code / Codex session log，找出 context bloat 來源（過大的 CLAUDE.md、重複 tool output、broad repo exploration 等），不需 API key，本地離線運行；Show HN 發布 |
@@ -54,6 +59,8 @@
 | **cv-claw** | Skill 工具 | ⚡ | 2026-05-17 | Claude Skill 驅動的履歷生成器，HTML 為模板格式、JSON 為資料層，模板與內容完全分離架構；受 X 貼文啟發開發，Show HN 發布 |
 | **shipcheck** | 監測/安全工具 | ⚡ | 2026-05-17 | 離線讀取 Claude Code / Cursor session log，輸出費用分解、檔案修改熱圖與安全掃描；特別偵測 `@anthropic-ai/sdk` 常被誤寫為 `@anthropic/sdk` 的 package hallucination 問題，不到一秒完成 |
 | [**Gonfire**](https://news.ycombinator.com/item?id=48169029) | 評估工具 | ⏳ | 2026-05-17 | Show HN 工具，直接分析應徵者的 Claude Code session log 以評估解題思維過程，取代傳統白板題；呼應「AI 工程師面試改用 case study 取代 leetcode」的社群趨勢 |
+| [**CostHawk 排行榜**](https://costhawk.ai/leaderboard) | 監測工具 | ⚡ | 2026-05-16 | 公開 token 消耗排行榜，比較 Claude Code / Codex / Cursor 用戶用量，不儲存 prompt |
+| **Code Quest** | Web UI | ⚡ | 2026-05-16 | Claude Code 網頁互動模式 UI，針對 6/15 計費調整設計，最大化訂閱利用效率 |
 | [**Dragoman**](https://github.com/asakin/dragoman) | 路由工具 | ⚡ | 2026-05-13 | 多模型路由 CLI，依問題類型自動路由至 Perplexity/Gemini/Ollama，支援 4 模型並行 + Claude 彙整 |
 | [**Cocall.ai**](https://www.reddit.com/r/ClaudeAI/comments/1tbz13b/) | MCP 工具 | ⚡ | 2026-05-13 | AI 代理撥打外線電話，遇不確定問題自動暫停詢問使用者再繼續，全雙工語音，支援 IVR 導航 |
 | [**Agent FM**](https://github.com/agentfm-ai/agent-fm) | 監測工具 | ⏳ | 2026-05-12 | 以「廣播」形式聽覺化呈現 Claude Code + Codex Agent 執行狀態，本地開源 MIT |
@@ -110,15 +117,17 @@
 | **Patina** | 維護工具 | ⚡ | 2026-05-04 | CLAUDE.md retro loop 維護 CLI，防止 AI harness 配置「腐化」（MIT，已上 npm） |
 | **Memtrace** | 記憶工具 | ⏳ | 2026-05-04 | 為 codebase 建立時間感知持久表示層，讓 agent 追蹤哪些地方改動及原因 |
 | **Pilot Shell** | 工作流 | ⚡ | 2026-05-04 | /spec（TDD）、/fix（複雜度偵測自動中止）、/prd（需求文件）三指令工程紀律框架 |
-| **Cockpit** | 工具 | ⏳ | 2026-04-29 | 開源 Web UI，讓 Claude Code 不再限於終端機 |
-| **Harness** | 工作流 | ✅ | 2026-04-29 | 多 Git worktree 並行管理多個 Claude Code agent，補 cmux/Conductor 不足 |
-| **CodeThis** | MCP 工具 | ⚡ | 2026-04-29 | MCP 原生 paste bin，AI 可直接建立語法高亮程式碼分享貼文 |
-| **Claude Exporter** | 工具 | ⚡ | 2026-04-29 | Chrome 擴充功能，對話匯出 PDF/Word/Notion，填補持久化需求 |
 | **Throttle Meter** | 監測工具 | ⚡ | 2026-04-30 | macOS menubar 用量計，即時顯示 5h 滾動窗口與週配額 |
 | **Brifly** | 工作流 | ⚡ | 2026-04-30 | Claude Code 跨 session 持久記憶層，支援多人協作 |
 | **Mneme** | 架構工具 | ⚡ | 2026-04-30 | repo-native ADR 注入，CI 攔截違反架構的 PR |
 | **Nimbalyst** | 協作工具 | ⚡ | 2026-04-30 | 多 agent 視覺化工作台，WYSIWYG diff 逐一審核各 Agent 修改 |
 | **Trent** | 安全工具 | ⚡ | 2026-04-30 | Claude Code 內嵌架構層安全評估，補足 CVE 掃描對業務邏輯的盲點 |
+| **Cockpit** | 工具 | ⏳ | 2026-04-29 | 開源 Web UI，讓 Claude Code 不再限於終端機 |
+| **Harness** | 工作流 | ✅ | 2026-04-29 | 多 Git worktree 並行管理多個 Claude Code agent，補 cmux/Conductor 不足 |
+| **CodeThis** | MCP 工具 | ⚡ | 2026-04-29 | MCP 原生 paste bin，AI 可直接建立語法高亮程式碼分享貼文 |
+| **Claude Exporter** | 工具 | ⚡ | 2026-04-29 | Chrome 擴充功能，對話匯出 PDF/Word/Notion，填補持久化需求 |
+| **Jupyter MCP server** | 整合工具 | ⚡ | 2026-04-28 | 取代內建 NotebookEdit，支援完整 kernel 互動與輸出讀取 |
+| **PullMD** | MCP 工具 | ⚡ | 2026-04-28 | 網頁抓取時先轉 Markdown，避免 token 浪費（有效內容僅佔 HTML 約 20%） |
 | **Groundtruth** | 工作流 | ⚡ | 2026-04-27 | Stop Hook，強制 Claude 提供可驗證執行證明才能宣告完成 |
 | **EvanFlow** | 工作流 | ⚡ | 2026-04-27 | TDD 驅動迴圈，16 技能 + 2 子代理人，每步人工確認，不自動 commit |
 | **Relay plugin** | 工作流 | ⚡ | 2026-04-27 | 強制 Claude Code 先對齊問題本質再動手，Plan Mode 提問升級 |
@@ -126,21 +135,12 @@
 | **Rapunzel** | 終端工具 | ⚡ | 2026-04-27 | 樹狀標籤頁多代理瀏覽器，支援 Claude Code / Codex / Gemini |
 | **OpenCode-power-pack** | 整合工具 | ⚡ | 2026-04-27 | 11 個 Claude Code 官方技能移植至 OpenCode，打破工具綁定 |
 | **modularity plugin** | 架構工具 | ⏳ | 2026-04-27 | Balanced Coupling 模型分析模組化，防 AI 加速技術債累積 |
-| **Jupyter MCP server** | 整合工具 | ⚡ | 2026-04-28 | 取代內建 NotebookEdit，支援完整 kernel 互動與輸出讀取 |
-| **PullMD** | MCP 工具 | ⚡ | 2026-04-28 | 網頁抓取時先轉 Markdown，避免 token 浪費（有效內容僅佔 HTML 約 20%） |
 | [**Claude Squad**](https://www.reddit.com/r/ClaudeAI/comments/1svmpkv/) | 協作工具 | ✅ | 2026-04-26 | 多人多 agent 並行開發，orchestrator 分派任務並合併分支 |
 | [**mux0**](https://mux0.com/) | 終端工具 | ✅ | 2026-04-26 | 開源 macOS 終端，側邊欄即時顯示多 agent 狀態 |
-| [**CostHawk 排行榜**](https://costhawk.ai/leaderboard) | 監測工具 | ⚡ | 2026-05-16 | 公開 token 消耗排行榜，比較 Claude Code / Codex / Cursor 用戶用量，不儲存 prompt |
-| **Code Quest** | Web UI | ⚡ | 2026-05-16 | Claude Code 網頁互動模式 UI，針對 6/15 計費調整設計，最大化訂閱利用效率 |
 | **lipstyk** | 品質工具 | ⚡ | — | 靜態分析 AI 生成程式碼特有模式 |
 | **claude-anyteam** | 整合工具 | ⚡ | — | 讓 Codex/Gemini 加入 Claude Code Agent Teams |
 | **Linear+Lanes MCP** | 整合工具 | ⚡ | — | issue-to-code 一鍵流程，Claude Code 直接讀取 Linear 待辦票 |
 | **WezTerm 主題同步** | 環境配置 | ⚡ | — | Lua 事件鉤子實現 dark/light 即時同步（issue #2990 暫行方案） |
-| [**atrium**](https://getatrium.dev) | 工作區管理 | ⏳ 觀望中 | 2026-05-21 | macOS 可恢復瓦片式工作區管理器（terminal/browser/task/notes 面板），session 崩潰不再遺失；可規避 6/15 API 計量鎖定 |
-| [**clarp**](https://www.reddit.com/r/ClaudeAI/comments/1tj2exk/claude_p_is_moving_to_metered_pricing_on_june_15/) | 成本工具 | ⚡ | 2026-05-21 | `claude -p` drop-in 替代品，本地 PTY + 唯讀 API 代理，規避 6/15 計量計費，多數專案只需更換 binary 名稱 |
-| [**vibe-skill**](https://www.reddit.com/r/ClaudeAI/comments/1tjfyh0/i_used_claude_code_to_build_while_delegating/) | 成本工具 | ⚡ | 2026-05-21 | Claude 負責規劃 + diff 審查，實際撰碼委派 Mistral Vibe；10 天實測節省 57M tokens，成本降逾 90% |
-| [**Claude Orchestra**](https://www.reddit.com/r/ClaudeAI/comments/1tjj24s/i_had_500_claude_code_skills_installed_and_no/) | Skills 管理 | ⏳ 觀望中 | 2026-05-21 | 將 500+ skills/agents/MCP servers 組織成主題式 orchestras（BUILD/DESIGN/RESEARCH 等），解決技能爆炸管理問題，開源 |
-| [**the-knowledge-guy**](https://www.reddit.com/r/ClaudeAI/comments/1tjh00m/theknowledgeguy_turn_your_bookshelf_into_a_tutor/) | Skills | ⏳ 觀望中 | 2026-05-21 | 11 種閱讀模式（跨書合成問答、互動課程含測驗、整書摘要等），將個人書庫轉為即時查詢的知識導師 |
 
 ---
 

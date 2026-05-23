@@ -2,7 +2,7 @@
 
 **狀態：** ongoing
 **開始日期：** 2026-04
-**最後更新：** 2026-05-22
+**最後更新：** 2026-05-23
 
 ---
 
@@ -101,10 +101,7 @@ Claude Code 已成為 AI 輔助編碼的標竿產品，但競爭正快速升溫�
 
 ## 時序
 
-#### 企業競爭白熱化（2026-05-12 至 2026-05-19）
-
-### 2026-05-19
-- **[dev.to 深度揭露] Microsoft 內部測試全貌：開發者愛它，財務殺了它**：「Microsoft Just Killed Claude Code Internally. Their Own Devs Loved It.」一文詳述 Experiences + Devices 部門六個月測試結果——開發者普遍認為 Claude Code 優於自家工具，但財務層以成本終止採購；此案例在 dev.to #claudecode 社群引發廣泛討論，成為「使用者滿意度 vs 企業採購決策」結構性落差的標準案例；與 [[topics/enterprise-cost-management]] 的成本壓力分析直接呼應
+#### 企業競爭白熱化（2026-05-12 至 2026-05-22）
 
 ### 2026-05-22
 - **DeepSeek 正式宣布建構自有 Claude Code 競品**：Decrypt 報導 DeepSeek 公開宣稱目標是「建立涵蓋模型到開發工具的完整技術棧」，戰略層級從低成本替代品升格為全棧競爭者；Anthropic 面臨的不再只是功能競爭，而是產品生態的整棧複製
@@ -113,6 +110,9 @@ Claude Code 已成為 AI 輔助編碼的標竿產品，但競爭正快速升溫�
 ### 2026-05-21
 - **vibe-skill：Claude 規劃 + Mistral 執行，成本降逾九成**：開發者開源 vibe-skill，讓 Claude 負責高層規劃與 diff 審查，實際撰碼委派給 Mistral Vibe；10 天實測節省 57M tokens，成本降逾九成；是 6/15 計費壓力下「多 LLM 成本分流」策略的最具體落地案例，顯示 Anthropic 正以失去執行層 token 份額為代價換取規劃層地位
 - **DeepSeek Agent Harness R&D 招募**：DeepSeek 公開招募 Agent Harness 工程師，顯示其正在建立針對 Claude Code 場景的持續對標測試基礎建設；與 vibe-skill 等「以 DeepSeek 替代 Claude 執行層」工具生態形成呼應
+
+### 2026-05-19
+- **[dev.to 深度揭露] Microsoft 內部測試全貌：開發者愛它，財務殺了它**：「Microsoft Just Killed Claude Code Internally. Their Own Devs Loved It.」一文詳述 Experiences + Devices 部門六個月測試結果——開發者普遍認為 Claude Code 優於自家工具，但財務層以成本終止採購；此案例在 dev.to #claudecode 社群引發廣泛討論，成為「使用者滿意度 vs 企業採購決策」結構性落差的標準案例；與 [[topics/enterprise-cost-management]] 的成本壓力分析直接呼應
 
 ### 2026-05-18
 - **Microsoft 遷移獲主流媒體確認**：Developer Tech News 正式報導「Microsoft moves engineers from Claude Code to GitHub Copilot CLI」，確認 2026-05-15 記錄的事件，在企業採購圈引發廣泛討論
