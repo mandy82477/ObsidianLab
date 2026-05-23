@@ -882,6 +882,17 @@ ${metaRows.length ? `<div class="detail__meta">${metaHtml}</div>` : ''}
     // render today on load
     renderLatestDigest();
     rendered.today = true;
+
+    // dynamically update ABOUT "last ingest" from digestIndex
+    const digestIdx = window.WIKI_DATA && window.WIKI_DATA.digestIndex;
+    if (digestIdx && digestIdx.length > 0) {
+      const latest = digestIdx[0];
+      const dateFmt = latest.date.replace(/-/g, '·'); // "2026·05·22"
+      const lastEl  = $('.about__prov-last');
+      const subEl   = $('.about__prov-lastsub');
+      if (lastEl) lastEl.innerHTML = `<em>${dateFmt}</em>`;
+      if (subEl)  subEl.textContent = `${latest.articleCount} articles · 6/6 sources · score ≥ 3`;
+    }
   });
 
 })();
