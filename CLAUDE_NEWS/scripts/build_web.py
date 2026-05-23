@@ -182,7 +182,8 @@ SENTIMENT_RE = re.compile(r"`情緒：(.+?)`")
 # star stories start with "⭐ **[Title](url)**" — strip any leading emoji/chars before **
 STORY_RE = re.compile(r"\*\*\[(.+?)\]\((.+?)\)\*\*")
 SOURCE_RE = re.compile(r"^`(.+?)`\s*·\s*(.+?)(?:\s*UTC)?(?:\s*·\s*`情緒：(.+?)`)?$")
-FOCUS_RE = re.compile(r"^(?:-\s+)?\*\*(.+?)\*\*\s+(.*)")
+FOCUS_RE    = re.compile(r"^(?:-\s+)?\*\*(.+?)\*\*\s+(.*)")
+FOCUS_REF_RE = re.compile(r"（ref:\s*(https?://\S+?)）")
 SOURCE_TABLE_RE = re.compile(r"^\|\s*(.+?)\s*\|\s*(✅|❌)\s*\|\s*(\d+)\s*\|")
 
 
@@ -260,8 +261,11 @@ def parse_digest(f: Path) -> dict:
             if current_section == "focus":
                 m = FOCUS_RE.match(line)
                 if m:
-                    tag, text = m.group(1).strip(), m.group(2).strip()
-                    result["focus"].append({"tag": tag, "text": text})
+                    tag, text_raw = m.group(1).strip(), m.group(2).strip()
+                    ref_m = FOCUS_REF_RE.search(text_raw)
+                    ref_url = ref_m.group(1) if ref_m else ""
+                    text = FOCUS_REF_RE.sub("", text_raw).strip()
+                    result["focus"].append({"tag": tag, "text": text, "ref_url": ref_url})
                 continue
 
             # story title line: **[Title](url)** (may be preceded by ⭐ or other chars)

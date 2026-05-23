@@ -179,10 +179,13 @@
   }
 
   // ── Story HTML ───────────────────────────────────────────────────────────────
-  function storyHtml(s, star = false) {
+  function storyHtml(s, star = false, focusTag = '') {
     const cls = star ? 'story story--star' : 'story';
+    const focusBadge = focusTag
+      ? `<span class="focus-tag focus-tag--${focusTagCls(focusTag)} story__focus-badge">${esc(focusTag)}</span>`
+      : '';
     return `<div class="${cls}">
-  <div class="story__title"><a href="${esc(s.url)}" target="_blank" rel="noopener">${esc(s.title)}</a></div>
+  <div class="story__title"><a href="${esc(s.url)}" target="_blank" rel="noopener">${esc(s.title)}</a>${focusBadge}</div>
   ${s.body ? `<div class="story__body">${esc(s.body)}</div>` : ''}
   <div class="sourceline">
     ${s.source ? `<code>${esc(s.source)}</code>` : ''}
@@ -233,6 +236,12 @@
       parts.push('</ul></div>');
     }
 
+    // build focus URL → tag map (for badge injection on matching stories)
+    const focusUrlMap = {};
+    (d.focus || []).forEach(f => {
+      if (f.ref_url) focusUrlMap[f.ref_url] = f.tag;
+    });
+
     // sections
     const sections = [
       { key: 'topStories',  emoji: '⭐', label: '重點話題',   en: 'headlines',         star: true  },
@@ -246,7 +255,7 @@
       const spaced = label.split('').join(' ');
       parts.push(`<div class="section">
 <div class="section__h"><span class="section__h-label">${spaced}</span><span class="section__h-en">${en}</span><span class="section__h-count">${d[key].length} items</span></div>`);
-      d[key].forEach(s => parts.push(storyHtml(s, star)));
+      d[key].forEach(s => parts.push(storyHtml(s, star, focusUrlMap[s.url] || '')));
       parts.push('</div>');
     });
 

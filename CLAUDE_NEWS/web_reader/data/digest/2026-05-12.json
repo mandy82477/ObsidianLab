@@ -254,23 +254,28 @@
   "focus": [
     {
       "tag": "[重大事件]",
-      "text": "Claude Code v2.1.139 同時推出 Agent View 與 `/goal` 指令：前者提供統一面板管理所有並行 Agent 工作階段，後者讓 Claude 自動持續執行直到完成條件成立，是 Claude Code 邁向真正非同步工作流程的關鍵里程碑，值得所有重度用戶立即升級。"
+      "text": "Claude Code v2.1.139 同時推出 Agent View 與 `/goal` 指令：前者提供統一面板管理所有並行 Agent 工作階段，後者讓 Claude 自動持續執行直到完成條件成立，是 Claude Code 邁向真正非同步工作流程的關鍵里程碑，值得所有重度用戶立即升級。",
+      "ref_url": ""
     },
     {
       "tag": "[風險警示]",
-      "text": "假冒 Claude Code 安裝包惡意攻擊事件遭多家資安媒體集中披露，攻擊者透過偽裝官方安裝程式的惡意軟體竊取開發者瀏覽器 Cookie 與機密憑證，請務必僅從 GitHub 官方來源安裝。"
+      "text": "假冒 Claude Code 安裝包惡意攻擊事件遭多家資安媒體集中披露，攻擊者透過偽裝官方安裝程式的惡意軟體竊取開發者瀏覽器 Cookie 與機密憑證，請務必僅從 GitHub 官方來源安裝。",
+      "ref_url": ""
     },
     {
       "tag": "[社群趨勢]",
-      "text": "逾 15.7 萬名開發者轉向開源替代方案 OpenCode 以對沖對 Anthropic 的依賴，即便 Code with Claude 大會宣佈倍增速率限制與 Opus 配額，社群對單一供應商鎖定的顧慮仍未消散。"
+      "text": "逾 15.7 萬名開發者轉向開源替代方案 OpenCode 以對沖對 Anthropic 的依賴，即便 Code with Claude 大會宣佈倍增速率限制與 Opus 配額，社群對單一供應商鎖定的顧慮仍未消散。",
+      "ref_url": ""
     },
     {
       "tag": "[新工具]",
-      "text": "社群在同一天湧現多款 Claude Code 周邊工具：可在瀏覽器內完整執行的 BrowserCode、多 Agent 工作站 HiveTerm、規則強制執行外掛 Writ、以及支援 Codex 的 macOS 用量追蹤器 Usage4Claude 3.0.0，生態系擴張明顯提速。"
+      "text": "社群在同一天湧現多款 Claude Code 周邊工具：可在瀏覽器內完整執行的 BrowserCode、多 Agent 工作站 HiveTerm、規則強制執行外掛 Writ、以及支援 Codex 的 macOS 用量追蹤器 Usage4Claude 3.0.0，生態系擴張明顯提速。",
+      "ref_url": ""
     },
     {
       "tag": "[持續追蹤]",
-      "text": "Claude AI 在三天內發生第二次服務中斷，同時有用戶回報 Claude Code Ultra Review 實際費用遠超官方標示（每次審查 $100–$140 vs. 宣傳的 $5–$20），Anthropic 的服務穩定性與定價透明度值得持續關注。"
+      "text": "Claude AI 在三天內發生第二次服務中斷，同時有用戶回報 Claude Code Ultra Review 實際費用遠超官方標示（每次審查 $100–$140 vs. 宣傳的 $5–$20），Anthropic 的服務穩定性與定價透明度值得持續關注。",
+      "ref_url": ""
     }
   ],
   "sourceStatus": [

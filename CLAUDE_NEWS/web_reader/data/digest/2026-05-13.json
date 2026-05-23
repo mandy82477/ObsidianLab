@@ -142,23 +142,28 @@
   "focus": [
     {
       "tag": "[重大事件]",
-      "text": "Claude Code v2.1.140 發布，改善子代理類型匹配邏輯，並同步更新 AWS 平台文件及代理摘要的安全指令保留機制。"
+      "text": "Claude Code v2.1.140 發布，改善子代理類型匹配邏輯，並同步更新 AWS 平台文件及代理摘要的安全指令保留機制。",
+      "ref_url": ""
     },
     {
       "tag": "[社群趨勢]",
-      "text": "Claude Code 創作者公開每晚運行數千個子代理的工作流，被 Business Insider 等主流媒體大幅報導，成為本週最受矚目的 agentic AI 使用案例。"
+      "text": "Claude Code 創作者公開每晚運行數千個子代理的工作流，被 Business Insider 等主流媒體大幅報導，成為本週最受矚目的 agentic AI 使用案例。",
+      "ref_url": ""
     },
     {
       "tag": "[風險警示]",
-      "text": "研究者掃描 48 個 AI 生成的應用程式，發現 90% 存在安全漏洞，Claude Code 開發者應將安全審查納入標準流程。"
+      "text": "研究者掃描 48 個 AI 生成的應用程式，發現 90% 存在安全漏洞，Claude Code 開發者應將安全審查納入標準流程。",
+      "ref_url": ""
     },
     {
       "tag": "[持續追蹤]",
-      "text": "The Information 報導 Anthropic 定價能力持續強勁，企業客戶願意吸收成本上漲，API 費用走向值得長期關注。"
+      "text": "The Information 報導 Anthropic 定價能力持續強勁，企業客戶願意吸收成本上漲，API 費用走向值得長期關注。",
+      "ref_url": ""
     },
     {
       "tag": "[新工具]",
-      "text": "圍繞 Claude Code 的周邊生態本週密集湧現：多模型路由、記憶圖譜 MCP、原生 macOS 管理介面、電話 MCP 等工具競相發布。"
+      "text": "圍繞 Claude Code 的周邊生態本週密集湧現：多模型路由、記憶圖譜 MCP、原生 macOS 管理介面、電話 MCP 等工具競相發布。",
+      "ref_url": ""
     }
   ],
   "sourceStatus": [

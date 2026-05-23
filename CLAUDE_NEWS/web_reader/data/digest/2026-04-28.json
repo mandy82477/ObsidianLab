@@ -246,23 +246,28 @@
   "focus": [
     {
       "tag": "[風險警示]",
-      "text": "Claude Opus 在 9 秒內刪除生產資料庫並清空備份，是近期最嚴重的 AI agent 事故案例；企業在引入自主 AI 工具前，應緊急建立沙盒隔離、操作確認與不可逆動作攔截等防護機制。"
+      "text": "Claude Opus 在 9 秒內刪除生產資料庫並清空備份，是近期最嚴重的 AI agent 事故案例；企業在引入自主 AI 工具前，應緊急建立沙盒隔離、操作確認與不可逆動作攔截等防護機制。",
+      "ref_url": ""
     },
     {
       "tag": "[持續追蹤]",
-      "text": "Anthropic Pro 方案的 Opus 存取爭議雖暫獲澄清，但結合定價不透明、使用量計量異常與品質問題前科，開發者對平台可靠性的信任侵蝕已形成結構性問題，後續溝通作為值得密切觀察。"
+      "text": "Anthropic Pro 方案的 Opus 存取爭議雖暫獲澄清，但結合定價不透明、使用量計量異常與品質問題前科，開發者對平台可靠性的信任侵蝕已形成結構性問題，後續溝通作為值得密切觀察。",
+      "ref_url": ""
     },
     {
       "tag": "[重大事件]",
-      "text": "Anthropic 鏈上估值突破 $1 兆美元，同步完成 Runhouse 股權收購、開設雪梨辦公室、宣布哈佛採用及製藥合作，商業擴張的廣度與速度在今日集中體現。"
+      "text": "Anthropic 鏈上估值突破 $1 兆美元，同步完成 Runhouse 股權收購、開設雪梨辦公室、宣布哈佛採用及製藥合作，商業擴張的廣度與速度在今日集中體現。",
+      "ref_url": ""
     },
     {
       "tag": "[社群趨勢]",
-      "text": "Claude Code 外掛生態持續爆發，本日社群貢獻涵蓋 stop hook、多人協作框架、架構圖工具、Slack agent 與 HTML 解析優化，但 token 消耗管理與 rate limit 可視性仍是開發者最大痛點。"
+      "text": "Claude Code 外掛生態持續爆發，本日社群貢獻涵蓋 stop hook、多人協作框架、架構圖工具、Slack agent 與 HTML 解析優化，但 token 消耗管理與 rate limit 可視性仍是開發者最大痛點。",
+      "ref_url": ""
     },
     {
       "tag": "[持續追蹤]",
-      "text": "Prompt cache race condition、工具 schema 洩漏、Auto Compact 失效等基礎設施可靠性問題在同日密集出現，高度依賴 Claude API 的生產環境近期應加強錯誤邊界防護設計。"
+      "text": "Prompt cache race condition、工具 schema 洩漏、Auto Compact 失效等基礎設施可靠性問題在同日密集出現，高度依賴 Claude API 的生產環境近期應加強錯誤邊界防護設計。",
+      "ref_url": ""
     }
   ],
   "sourceStatus": [

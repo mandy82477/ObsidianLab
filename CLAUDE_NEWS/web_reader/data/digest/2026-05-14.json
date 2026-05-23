@@ -214,23 +214,28 @@
   "focus": [
     {
       "tag": "[重大事件]",
-      "text": "Anthropic 宣布 6 月 15 日起，`claude -p`、Agent SDK、Claude Code GitHub Actions 及第三方 Agent SDK 用量將從訂閱方案中剝離，改為按 API 費率計費的獨立信用池。此舉引發開發者強烈反彈，多人宣告取消訂閱。"
+      "text": "Anthropic 宣布 6 月 15 日起，`claude -p`、Agent SDK、Claude Code GitHub Actions 及第三方 Agent SDK 用量將從訂閱方案中剝離，改為按 API 費率計費的獨立信用池。此舉引發開發者強烈反彈，多人宣告取消訂閱。",
+      "ref_url": ""
     },
     {
       "tag": "[風險警示]",
-      "text": "仰賴 `claude -p` 進行後台自動化的開發者衝擊最大：有用戶計算後發現原來的用量換算成 API 費率需 $1,000/月，是原方案的 10 倍以上。6/15 前務必盤點所有 programmatic 用量。"
+      "text": "仰賴 `claude -p` 進行後台自動化的開發者衝擊最大：有用戶計算後發現原來的用量換算成 API 費率需 $1,000/月，是原方案的 10 倍以上。6/15 前務必盤點所有 programmatic 用量。",
+      "ref_url": ""
     },
     {
       "tag": "[持續追蹤]",
-      "text": "Anthropic 同步宣布臨時將週用量上限提高 50%（至 7 月 13 日），並已有社群開發者推出繞過新限制的 `claude-pee` wrapper，政策博弈持續中。"
+      "text": "Anthropic 同步宣布臨時將週用量上限提高 50%（至 7 月 13 日），並已有社群開發者推出繞過新限制的 `claude-pee` wrapper，政策博弈持續中。",
+      "ref_url": ""
     },
     {
       "tag": "[新工具]",
-      "text": "Claude Code 官方文件新增 `/goal`、`/loop`、`/batch`、`/background` 四個自主執行指令，讓 Claude 不再每輪等待用戶確認，標誌著產品定位正式轉向 agent 開發平台。"
+      "text": "Claude Code 官方文件新增 `/goal`、`/loop`、`/batch`、`/background` 四個自主執行指令，讓 Claude 不再每輪等待用戶確認，標誌著產品定位正式轉向 agent 開發平台。",
+      "ref_url": ""
     },
     {
       "tag": "[社群趨勢]",
-      "text": "工具生態持續爆發：Token 成本分析器、ESP32-S3 實體監控面板、Grafana dashboard 密集出現，訂閱費用敏感度上升推動了可觀測性工具的需求。"
+      "text": "工具生態持續爆發：Token 成本分析器、ESP32-S3 實體監控面板、Grafana dashboard 密集出現，訂閱費用敏感度上升推動了可觀測性工具的需求。",
+      "ref_url": ""
     }
   ],
   "sourceStatus": [

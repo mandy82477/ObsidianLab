@@ -126,23 +126,28 @@
   "focus": [
     {
       "tag": "[重大事件]",
-      "text": "Anthropic 傳出以超過 9,000 億美元估值洽談新一輪融資，超越 OpenAI，是 AI 產業估值史上的重要里程碑，後續資金結構與用途值得密切追蹤。"
+      "text": "Anthropic 傳出以超過 9,000 億美元估值洽談新一輪融資，超越 OpenAI，是 AI 產業估值史上的重要里程碑，後續資金結構與用途值得密切追蹤。",
+      "ref_url": ""
     },
     {
       "tag": "[重大事件]",
-      "text": "白宮反對 Anthropic 擴大 Mythos 計畫，政府監管力道對 AI 頭部企業的實質干預正在成形，可能影響 Anthropic 的技術路線與商業布局。"
+      "text": "白宮反對 Anthropic 擴大 Mythos 計畫，政府監管力道對 AI 頭部企業的實質干預正在成形，可能影響 Anthropic 的技術路線與商業布局。",
+      "ref_url": ""
     },
     {
       "tag": "[風險警示]",
-      "text": "Claude Code Token 費用預估翻倍、Max 方案出現服務中斷、使用中頻繁被打斷——三則訊號並存，企業用戶在擴大部署前應重新審視成本與穩定性風險。"
+      "text": "Claude Code Token 費用預估翻倍、Max 方案出現服務中斷、使用中頻繁被打斷——三則訊號並存，企業用戶在擴大部署前應重新審視成本與穩定性風險。",
+      "ref_url": ""
     },
     {
       "tag": "[新工具]",
-      "text": "單日湧現 Cockpit（Web UI）、Harness（多 agent 並行）、CodeThis（MCP paste bin）、Claude Exporter 四款社群工具，Claude Code 生態的開發者參與度持續活躍。"
+      "text": "單日湧現 Cockpit（Web UI）、Harness（多 agent 並行）、CodeThis（MCP paste bin）、Claude Exporter 四款社群工具，Claude Code 生態的開發者參與度持續活躍。",
+      "ref_url": ""
     },
     {
       "tag": "[社群趨勢]",
-      "text": "Caveman 外掛基準測試揭示「兩字 prompt 足以媲美複雜外掛」，提醒開發者工具選用應以實測為準，避免為形式複雜度買單。"
+      "text": "Caveman 外掛基準測試揭示「兩字 prompt 足以媲美複雜外掛」，提醒開發者工具選用應以實測為準，避免為形式複雜度買單。",
+      "ref_url": ""
     }
   ],
   "sourceStatus": [

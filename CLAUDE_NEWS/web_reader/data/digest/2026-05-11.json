@@ -158,23 +158,28 @@
   "focus": [
     {
       "tag": "[重大事件]",
-      "text": "Anthropic 本週正式推出 Claude Managed Agents，多代理人協作從社群自組架構走向官方托管服務，multi-agent 工作流程的官方與社群方案邊界開始重新定義。"
+      "text": "Anthropic 本週正式推出 Claude Managed Agents，多代理人協作從社群自組架構走向官方托管服務，multi-agent 工作流程的官方與社群方案邊界開始重新定義。",
+      "ref_url": ""
     },
     {
       "tag": "[新工具]",
-      "text": "Claude Code 插件生態密集爆發：PR review、codebase 代理就緒評估、每日工作回顧、YouTube 影片篩選等工具相繼問世，社群正快速補全官方功能的空白。"
+      "text": "Claude Code 插件生態密集爆發：PR review、codebase 代理就緒評估、每日工作回顧、YouTube 影片篩選等工具相繼問世，社群正快速補全官方功能的空白。",
+      "ref_url": ""
     },
     {
       "tag": "[持續追蹤]",
-      "text": "Claude Opus 4.7 提示詞行為出現明顯轉變，對 4.6 有效的通用指令在新版下表現下滑，所有現有 prompt 工程實踐需重新審視。"
+      "text": "Claude Opus 4.7 提示詞行為出現明顯轉變，對 4.6 有效的通用指令在新版下表現下滑，所有現有 prompt 工程實踐需重新審視。",
+      "ref_url": ""
     },
     {
       "tag": "[社群趨勢]",
-      "text": "Claude Code 費用管理成為本週最熱議焦點：有開發者 30 天花費 $514，也有用戶 Pro 方案顯示 0% 使用量卻被額外收費，配額透明度問題浮上檯面。"
+      "text": "Claude Code 費用管理成為本週最熱議焦點：有開發者 30 天花費 $514，也有用戶 Pro 方案顯示 0% 使用量卻被額外收費，配額透明度問題浮上檯面。",
+      "ref_url": ""
     },
     {
       "tag": "[社群趨勢]",
-      "text": "「AI agent 測試通過但功能實際未完成」的 judge gate 問題引起開發者廣泛共鳴，自主編程代理的語意級品質驗證成為新一輪討論焦點。"
+      "text": "「AI agent 測試通過但功能實際未完成」的 judge gate 問題引起開發者廣泛共鳴，自主編程代理的語意級品質驗證成為新一輪討論焦點。",
+      "ref_url": ""
     }
   ],
   "sourceStatus": [

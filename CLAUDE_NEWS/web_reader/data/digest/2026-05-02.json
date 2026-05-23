@@ -198,23 +198,28 @@
   "focus": [
     {
       "tag": "[重大事件]",
-      "text": "Uber 四個月燒完整年 AI 預算，根源是 Claude Code 使用率爆炸——95% 工程師每月使用 AI 工具，70% 提交代碼來自 AI，此案例正成為業界討論 AI 工具成本管控的標誌性參考。"
+      "text": "Uber 四個月燒完整年 AI 預算，根源是 Claude Code 使用率爆炸——95% 工程師每月使用 AI 工具，70% 提交代碼來自 AI，此案例正成為業界討論 AI 工具成本管控的標誌性參考。",
+      "ref_url": ""
     },
     {
       "tag": "[重大事件]",
-      "text": "Anthropic 開放 Claude Security 公開測試版，專注代碼安全審計，標誌著 Anthropic 正式將 Claude 推入 DevSecOps 企業賽道。"
+      "text": "Anthropic 開放 Claude Security 公開測試版，專注代碼安全審計，標誌著 Anthropic 正式將 Claude 推入 DevSecOps 企業賽道。",
+      "ref_url": ""
     },
     {
       "tag": "[風險警示]",
-      "text": "AWS Bedrock 無預警將部分帳號的 Claude Opus 4.7 配額歸零，事件再次暴露雲端平台對前沿模型存取管理透明度不足的系統性風險。"
+      "text": "AWS Bedrock 無預警將部分帳號的 Claude Opus 4.7 配額歸零，事件再次暴露雲端平台對前沿模型存取管理透明度不足的系統性風險。",
+      "ref_url": ""
     },
     {
       "tag": "[持續追蹤]",
-      "text": "Anthropic 於 4 月 4 日悄悄修改使用條款，禁止 Claude Pro/Max 訂閱額度透過 OpenClaw 等第三方框架調用，大量開發者工作流被迫中斷，社群反彈持續延燒。"
+      "text": "Anthropic 於 4 月 4 日悄悄修改使用條款，禁止 Claude Pro/Max 訂閱額度透過 OpenClaw 等第三方框架調用，大量開發者工作流被迫中斷，社群反彈持續延燒。",
+      "ref_url": ""
     },
     {
       "tag": "[社群趨勢]",
-      "text": "Claude Code 周邊工具生態單日出現多個新項目（TUI 多代理管理、記憶體審計框架、token 路由插件），開發者自建工作流與「AI 代理管理 AI 代理」趨勢持續加溫。"
+      "text": "Claude Code 周邊工具生態單日出現多個新項目（TUI 多代理管理、記憶體審計框架、token 路由插件），開發者自建工作流與「AI 代理管理 AI 代理」趨勢持續加溫。",
+      "ref_url": ""
     }
   ],
   "sourceStatus": [

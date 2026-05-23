@@ -22,7 +22,7 @@ window.WIKI_DATA = {
       "pill": "active",
       "firstSeen": "2026-04-23（事後報告發布）",
       "startDate": "",
-      "lastUpdated": "2026-05-13",
+      "lastUpdated": "2026-05-23",
       "summary": "Boris Cherny 是 Anthropic Claude Code 的創始人與負責人（Head of Claude Code），是 Claude Code 產品方向最主要的公開代言人。他以高頻率的公開聲明、哲學宣言與工程分享，持續引發開發者社群廣泛討論，被視為 Anthropic 技術文化的外部窗口。 ---"
     },
     {
@@ -94,7 +94,7 @@ window.WIKI_DATA = {
       "pill": "gray",
       "firstSeen": "2026-04-24",
       "startDate": "",
-      "lastUpdated": "2026-05-02",
+      "lastUpdated": "2026-05-23",
       "summary": "2026-04-24，Google 宣布以現金與運算資源形式向 Anthropic 投資最高 **400 億美元**，初期承諾 100 億，其餘 300 億視績效目標達成情況追加。此次投資估值 Anthropic 為 **3,500 億美元**，是 AI 領域迄今規模最大的單筆投資之一。 Bloomberg、TechC…"
     },
     {
@@ -132,6 +132,18 @@ window.WIKI_DATA = {
       "startDate": "",
       "lastUpdated": "2026-05-14",
       "summary": "OpenClaw 是一款第三方 Claude agentic 工具，設計用途為擴展 Claude 訂閱方案的自動化用量。歷經 2026-04-25 配額禁令後，Anthropic 於 2026-05-14 宣布恢復允許 OpenClaw 等第三方工具使用，但代價是：**這些用量全數脫離訂閱方案，改為按完整 API 費率…"
+    },
+    {
+      "id": "opencode",
+      "pageType": "entity",
+      "name": "OpenCode",
+      "entityType": "product",
+      "status": "active（快速成長）",
+      "pill": "active",
+      "firstSeen": "2026-04-27",
+      "startDate": "",
+      "lastUpdated": "2026-05-22",
+      "summary": "OpenCode 是 Claude Code 的主要開源替代品，截至 2026-05-12 已吸引 **157,000 名開發者**轉向（The New Stack 報導）。功能與體驗被 XDA 評測認為與 Claude Code 相當，且完全開源免費。即便 Anthropic 宣布倍增速率限制，對 vendor lo…"
     },
     {
       "id": "opus-4-7",
@@ -200,11 +212,11 @@ window.WIKI_DATA = {
       "pageType": "topic",
       "name": "Anthropic 政府與軍事政策",
       "entityType": "",
-      "status": "monitoring（11 天無新進展，白宮談判狀態不明）",
+      "status": "monitoring（21 天無新進展，白宮談判狀態不明）",
       "pill": "warn",
       "firstSeen": "",
       "startDate": "2026-05-01",
-      "lastUpdated": "2026-05-13（lint 狀態更新）",
+      "lastUpdated": "2026-05-22（lint 狀態文字更新）",
       "summary": "2026-05-01，Anthropic 因堅持在軍事用途中納入安全護欄，被排除在美國國防部與 7 家 AI 公司的機密網路部署協議之外。此事件標誌著 Anthropic 的安全優先立場首次與聯邦政府大規模部署需求發生直接衝突，並引發白宮重啟談判。 ---"
     },
     {
@@ -216,7 +228,7 @@ window.WIKI_DATA = {
       "pill": "warn",
       "firstSeen": "",
       "startDate": "2026-03（推測）",
-      "lastUpdated": "2026-05-09",
+      "lastUpdated": "2026-05-21",
       "summary": "Claude Code 在 2026 年 3 月至 4 月間出現長達約一個月的效能明顯退步，引發大量開發者不滿。2026-04-24，Anthropic 首次正式承認此問題，說明原因為**工程疏失**（engineering missteps），並非刻意的模型行為調整。 ---"
     },
     {
@@ -228,7 +240,7 @@ window.WIKI_DATA = {
       "pill": "active",
       "firstSeen": "",
       "startDate": "2026-04-25",
-      "lastUpdated": "2026-05-22",
+      "lastUpdated": "2026-05-23",
       "summary": "追蹤 Claude Code 社群中活躍的概念辯論、設計哲學、實證研究與技術反思。與 [[topics/community-tech-patterns]] 追蹤具體工具和工作流不同，本頁聚焦思想碰撞：什麼哲學正在成形、什麼假設受到挑戰、什麼共識正在收斂。每次 ingest 從「💬 技術熱度討論」區塊萃取有討論價值的觀點…"
     },
     {
@@ -244,6 +256,18 @@ window.WIKI_DATA = {
       "summary": "追蹤 Claude Code 社群在實際開發中累積的**工作流與應用模式**。每次 ingest 從「💬 技術熱度討論」區塊萃取具體可執行的技術發現，持續累積形成社群最佳實踐知識庫。 工具目錄（活躍度 / 採用狀態）見 [[topics/community-tech-tools]]。概念辯論、設計哲學與技術反思見 [[…"
     },
     {
+      "id": "community-tech-timeline",
+      "pageType": "topic",
+      "name": "社群技術應用趨勢 — 時序記錄",
+      "entityType": "",
+      "status": "ongoing",
+      "pill": "active",
+      "firstSeen": "",
+      "startDate": "2026-04-25",
+      "lastUpdated": "2026-05-22",
+      "summary": ""
+    },
+    {
       "id": "community-tech-tools",
       "pageType": "topic",
       "name": "社群工具目錄",
@@ -252,7 +276,7 @@ window.WIKI_DATA = {
       "pill": "active",
       "firstSeen": "",
       "startDate": "2026-04-25",
-      "lastUpdated": "2026-05-22",
+      "lastUpdated": "2026-05-23",
       "summary": "追蹤 Claude Code 社群發布的工具、插件與 skill 專案。每次 ingest 從日報萃取新工具並更新採用狀態。 工作流模式與技術做法見 [[topics/community-tech-patterns]]。概念辯論見 [[topics/community-tech-discussions]]。官方功能見 …"
     },
     {
@@ -264,7 +288,7 @@ window.WIKI_DATA = {
       "pill": "active",
       "firstSeen": "",
       "startDate": "2026-04",
-      "lastUpdated": "2026-05-22",
+      "lastUpdated": "2026-05-23",
       "summary": "Claude Code 已成為 AI 輔助編碼的標竿產品，但競爭正快速升溫。2026-05 是關鍵轉折月：OpenAI Codex 下載量單週爆增 1,397%、OpenCode 吸走 15.7 萬開發者、Microsoft 取消數千名員工授權改推 Copilot CLI——分流訊號同步出現。另一方面，Anthropi…"
     },
     {

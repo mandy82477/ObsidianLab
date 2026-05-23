@@ -214,23 +214,28 @@
   "focus": [
     {
       "tag": "[付費方案動態]",
-      "text": "Anthropic 宣布 6 月 15 日起將 Agent SDK 與 `claude -p` 用量從訂閱配額獨立拆分，建立月額信用池，社群負評逾六成，直接衝擊所有基於 Agent SDK 建構的第三方工具開發者。"
+      "text": "Anthropic 宣布 6 月 15 日起將 Agent SDK 與 `claude -p` 用量從訂閱配額獨立拆分，建立月額信用池，社群負評逾六成，直接衝擊所有基於 Agent SDK 建構的第三方工具開發者。",
+      "ref_url": ""
     },
     {
       "tag": "[重大事件]",
-      "text": "Microsoft 正在取消內部 Claude Code 授權，數千名開發者將改用 GitHub Copilot CLI，儘管 Claude Code 在 Microsoft 內部過去六個月極受歡迎——兩家公司企業市場競爭正式浮上檯面。"
+      "text": "Microsoft 正在取消內部 Claude Code 授權，數千名開發者將改用 GitHub Copilot CLI，儘管 Claude Code 在 Microsoft 內部過去六個月極受歡迎——兩家公司企業市場競爭正式浮上檯面。",
+      "ref_url": ""
     },
     {
       "tag": "[持續追蹤]",
-      "text": "Ramp AI Index 數據顯示 Anthropic 企業採用率首次超越 OpenAI（34.4% vs 32.3%），主要驅動力為 Claude Code 快速擴散，但市場競爭仍高度動盪。"
+      "text": "Ramp AI Index 數據顯示 Anthropic 企業採用率首次超越 OpenAI（34.4% vs 32.3%），主要驅動力為 Claude Code 快速擴散，但市場競爭仍高度動盪。",
+      "ref_url": ""
     },
     {
       "tag": "[新工具]",
-      "text": "Claude Code v2.1.142 釋出，`claude agents` 新增 8 個旗標，大幅提升 Agent 執行時的細粒度控制能力。"
+      "text": "Claude Code v2.1.142 釋出，`claude agents` 新增 8 個旗標，大幅提升 Agent 執行時的細粒度控制能力。",
+      "ref_url": ""
     },
     {
       "tag": "[社群趨勢]",
-      "text": "本週社群湧現大量記憶管理、安全防護與 Token 節省工具，顯示重度使用者開始主動為長期工作流程建立系統性防護機制。"
+      "text": "本週社群湧現大量記憶管理、安全防護與 Token 節省工具，顯示重度使用者開始主動為長期工作流程建立系統性防護機制。",
+      "ref_url": ""
     }
   ],
   "sourceStatus": [
