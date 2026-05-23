@@ -15,10 +15,22 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ---
 
+## 環境限制（開發前必讀）
+
+**此專案沒有 `ANTHROPIC_API_KEY`，開發時不得假設其存在。**
+
+- 所有需要 LLM 的功能，必須走以下其中一條路：
+  1. `claude -p`（`run_news.bat` 排程器專用）
+  2. Claude session 直接執行（`/news-pipeline` 等互動指令）
+- 不可新增任何「有 API key 才能運作」的功能或 fallback
+- 若提出需要 API key 的方案，必須同時提供不需要 key 的替代做法
+
+---
+
 ## 快速上手（首次設定）
 
 1. `pip install -r src/requirements_news.txt`
-2. 在 repo 根目錄建立 `.env`，填入 `ANTHROPIC_API_KEY`（必要）、`GITHUB_TOKEN`（建議）、Reddit 金鑰（可選）
+2. 在 repo 根目錄建立 `.env`，填入 `GITHUB_TOKEN`（建議）、Reddit 金鑰（可選）
 3. 執行 `cd src && python -m news_aggregator.main`，確認 `news/YYYY-MM-DD.md` 被寫出並 git push
 4. 設定 Windows 工作排程器，每日 08:00 執行 `src/run_news.bat`（日誌：`src/logs/task_scheduler.log`）
 
