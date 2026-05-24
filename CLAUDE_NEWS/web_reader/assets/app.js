@@ -726,9 +726,10 @@ ${metaRows.length ? `<div class="detail__meta">${metaHtml}</div>` : ''}
       const adoptCell = cells[2] ? cells[2].textContent.trim() : '';
       const typeCell  = cells[1] ? cells[1].textContent.trim() : '';
       let show = false;
-      if (key === 'adopted')       show = adoptCell.includes('✅');
-      else if (key === 'niche')    show = adoptCell.includes('⚡');
-      else if (key === 'watching') show = adoptCell.includes('⏳');
+      if (key === 'adopted')        show = adoptCell.includes('✅');
+      else if (key === 'niche')     show = adoptCell.includes('⚡');
+      else if (key === 'watching')  show = adoptCell.includes('⏳');
+      else if (key === 'skeptical') show = adoptCell.includes('⚠️');
       else show = typeCell === key;
       row.style.display = show ? '' : 'none';
     });
@@ -737,7 +738,14 @@ ${metaRows.length ? `<div class="detail__meta">${metaHtml}</div>` : ''}
   function injectToolsInsights(container) {
     const body = container.querySelector('.detail__body');
     if (!body) return;
-    const table = body.querySelector('table');
+    // Find the tools table specifically (first-column header = '工具')
+    let table = null;
+    body.querySelectorAll('table').forEach(t => {
+      if (!table) {
+        const firstTh = t.querySelector('thead th');
+        if (firstTh && firstTh.textContent.trim() === '工具') table = t;
+      }
+    });
     if (!table) return;
     const rows = Array.from(table.querySelectorAll('tbody tr'));
     if (!rows.length) return;
@@ -762,10 +770,11 @@ ${metaRows.length ? `<div class="detail__meta">${metaHtml}</div>` : ''}
     const total = rows.length;
     const topTypes = Object.entries(typeCount).sort((a, b) => b[1] - a[1]).slice(0, 6);
     const filterBtns = [
-      { key: 'all',     label: `全部 ${total}` },
-      { key: 'adopted', label: `✅ 廣泛採用 ${adopted}` },
-      { key: 'niche',   label: `⚡ 小圈子 ${niche}` },
-      { key: 'watching',label: `⏳ 觀望 ${watching}` },
+      { key: 'all',      label: `全部 ${total}` },
+      { key: 'adopted',  label: `✅ 廣泛採用 ${adopted}` },
+      { key: 'niche',    label: `⚡ 小圈子 ${niche}` },
+      { key: 'watching', label: `⏳ 觀望 ${watching}` },
+      { key: 'skeptical',label: `⚠️ 存疑 ${inactive}` },
     ];
     topTypes.forEach(([t]) => filterBtns.push({ key: t, label: t }));
 
@@ -791,6 +800,13 @@ ${metaRows.length ? `<div class="detail__meta">${metaHtml}</div>` : ''}
 </div>`;
     body.insertAdjacentElement('beforebegin', panel);
     _toolsFilterActive = 'all';
+
+    // Auto-sort by adoption (col 2) descending on load: ✅ → ⚡ → ⏳ → ⚠️
+    const ths = Array.from(table.querySelectorAll('thead th'));
+    if (ths.length > 2) {
+      ths[2].classList.add('sort-asc'); // prime for descending on first call
+      sortTable(table, 2, ths[2], ths);
+    }
   }
 
   // ── Sortable tables ──────────────────────────────────────────────────────────

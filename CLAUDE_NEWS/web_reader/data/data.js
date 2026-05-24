@@ -276,7 +276,7 @@ window.WIKI_DATA = {
       "pill": "active",
       "firstSeen": "",
       "startDate": "2026-04-25",
-      "lastUpdated": "2026-05-23",
+      "lastUpdated": "2026-05-24",
       "summary": "追蹤 Claude Code 社群發布的工具、插件與 skill 專案。每次 ingest 從日報萃取新工具並更新採用狀態。 工作流模式與技術做法見 [[topics/community-tech-patterns]]。概念辯論見 [[topics/community-tech-discussions]]。官方功能見 …"
     },
     {
