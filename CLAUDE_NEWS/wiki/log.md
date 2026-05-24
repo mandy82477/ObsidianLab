@@ -5,6 +5,22 @@ Append-only 紀錄。每次 ingest、query 或 lint 都在此追加一條。
 
 ---
 
+## 2026-05-24 Ingest | news/2026-05-24.md
+
+- 來源日報：`news/2026-05-24.md`（51 則，6 來源；Glasswing CVD 儀表板、小企業 Skills、Mythos string leak、JSONL session 知識化、cache miss 量化）
+- 更新頁面：
+  - `entities/mythos.md`：新增 CVD 儀表板正式上線（red.anthropic.com/2026/cvd/，281 專案/1,596 漏洞/97 修補）；新增 Mythos 準備登陸 Claude Code 與 Claude Security（app 字串洩露）；更新最後更新 2026-05-24
+  - `entities/claude-security.md`：新增 2026-05-24 歷史記錄（Mythos string leak）；更新最後更新 2026-05-24
+  - `topics/community-tech-tools.md`：新增 4 個工具（CC-Wiki、Fleet、aco-system、Claude Code CLI Web Terminal）；更新痛點洞察表（多 agent 協調更新至 05-24）；總工具數：110
+  - `topics/community-tech-discussions.md`：新增 3 條熱門討論（cache miss 12.5x、686 skills 導航、JSONL session 知識化）；新增對應技術彙整段落；更新時序與參考來源
+  - `topics/enterprise-cost-management.md`：更新現況表（加入 cache miss 12.5x 量化數據）；更新最後更新 2026-05-24
+  - `feature-radar.md`：新增「小企業 Skills」條目（31 個官方 Skills，🔥🔥🔥 推薦）；更新最後更新 2026-05-24
+- 呈現品質：✅ 通過（所有更新頁面前段清晰，關鍵數字可獨立閱讀）
+- feature-radar 更新：已新增小企業 Skills 條目
+- 本日新增工具：CC-Wiki / Fleet / aco-system / Claude Code CLI Web Terminal（共 4 個）
+
+---
+
 ## 2026-05-24 工具目錄全面重構 | community-tech-tools
 
 - 工具資格審查（依 2026-05-20 入選規則逐一評估全部 109 筆）：

@@ -24,7 +24,7 @@
 |---------|---------|---------|------|---------|
 | Token 成本不透明 | Tokenyst、CostHawk、TokenShield、PrismoDev、engramx、agent-estimate | 自主 agent 讓帳單不可預測；$6,000 個人事件廣傳後社群更重視 | 🔥 持續升溫 | 2026-05-22 |
 | 跨 session 記憶歸零 | ltm、Memex、draft CLI、LockedIn、VIR、CoreMem | 無官方標準，每個新 session 從零開始 | 🔥 持續升溫 | 2026-05-23 |
-| 多 agent 協調混亂 | agent-baton、cdesktop、AnyFrame、agent-teamflow、Runner、Runtime | 官方 Managed Agents 已部分解決，但社群仍補缺口；商業產品（Runtime/YC）開始進入 | 🔥 持續升溫 | 2026-05-22 |
+| 多 agent 協調混亂 | agent-baton、cdesktop、AnyFrame、agent-teamflow、Runner、Runtime、Fleet | 官方 Managed Agents 已部分解決，但社群仍補缺口；商業產品（Runtime/YC）開始進入 | 🔥 持續升溫 | 2026-05-24 |
 | CLAUDE.md 規則失效 | Writ、Caliber、Patina | 規則被忽略、過多規則耗 token、跨工具無標準 | 🌙 冷卻觀望 | 2026-05-12 |
 | 多模型鎖定防禦 | Dragoman、Claudy、claudely、clarp、vibe-skill | 6/15 定價後對供應商依賴的集體防禦反應 | 🔥 持續升溫 | 2026-05-21 |
 | 輸出品質不可信 | Groundtruth、EvanFlow、Relay plugin、Proof Loop | 信任邊界未建立，需在流程層強制插入驗證點；Proof Loop 加入建構者/驗證者分離機制 | 🔥 持續升溫 | 2026-05-22 |
@@ -63,6 +63,10 @@
 
 | 工具 | 類型 | 採用 | 首次出現 | 簡介 |
 | --- | --- | --- | --- | --- |
+| [**CC-Wiki**](https://github.com/tejpalv/cc-wiki) | 搜尋/診斷 | ⏳ | 2026-05-24 | 將本機 `~/.claude/sessions` JSONL 轉為 arXiv 風格可分享知識庫（Skill + Quartz 靜態網站），解決 session 學習無法跨對話保留或分享給團隊的問題；Show HN 發布 |
+| [**Fleet**](https://github.com/sermakarevich/fleet) | 多 Agent | ⏳ | 2026-05-24 | 集中式 beads DB + Python supervisor 架構，讓多個 `claude -p` 任務自動認領、並行執行與狀態追蹤；受 AMD 同時管理 50+ session 需求啟發；Show HN 發布 |
+| [**aco-system**](https://github.com/aniketkarne/aco-system) | 工作流 | ⏳ | 2026-05-24 | 完整公司 OS，自動化全流程：需求拆分→前置驗證→撰碼→開 PR→review→測試，人工只需最後 approve；用戶實測完成 Stripe webhook 整合 |
+| [**Claude Code CLI Web Terminal**](https://github.com/HalfLucid/Claude-Code-Cli-WebTerminal) | IDE/終端 | ⏳ | 2026-05-24 | WebSocket + 持久多標籤 session，在瀏覽器執行 Claude Code CLI；解決手機透過 Tailscale + Termius 不穩定的痛點；Windows 開源工具 |
 | [**Superset**](https://github.com/superset-sh/superset) | 多 Agent | ⚡ | 2026-05-23 | YC P26 開源 agentic IDE，可同時平行運行 Claude Code、Codex、OpenCode 等，底層以 git worktree 隔離各 agent 工作區，解決多 agent 並行的 terminal 混亂問題；Show HN 發布 |
 | [**OpenRig**](https://www.openrig.dev/) | 多 Agent | ⏳ | 2026-05-23 | 儲存與重建 Claude Code + Codex 等多 agent 拓樸（topologies），支援協調、宣告式 workflow 與 workspace 管理，減少手動重建 agent 組合的重複勞動；Show HN 發布 |
 | [**VIR**](https://www.reddit.com/r/ClaudeAI/comments/1tlcai2/) | 記憶工具 | ⚡ | 2026-05-23 | 背景讀取 `~/.claude/projects` 所有 JSONL session 檔，分類萃取知識（pattern/gotcha/decision/tool），寫入 Obsidian vault 並透過 MCP 讓 Claude Code 存取，解決 session 記憶歸零問題 |

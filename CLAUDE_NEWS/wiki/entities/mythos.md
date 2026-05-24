@@ -3,7 +3,7 @@
 **類型：** model
 **狀態：** 限制存取（非公開）
 **首次出現：** 2026-04（限定夥伴 Preview）
-**最後更新：** 2026-05-23
+**最後更新：** 2026-05-24
 
 ---
 
@@ -97,6 +97,23 @@ TechCrunch 報導，Sam Altman 在公開批評 Anthropic 限制 Mythos 存取範
 
 ---
 
+## CVD 儀表板正式上線 + Mythos 擴展訊號（2026-05-24）
+
+### Anthropic CVD 儀表板公開（2026-05-24）
+
+Anthropic 正式發布「協調漏洞揭露（Coordinated Vulnerability Disclosure）」追蹤儀表板（https://red.anthropic.com/2026/cvd/），公開 Mythos Preview 在 Project Glasswing 計畫中的完整披露紀錄。截至 2026-05-22：
+- **281 個開源專案**的漏洞已揭露給維護者
+- 共 **1,596 筆漏洞**記錄在案
+- 其中 **97 筆已完成修補**
+
+此儀表板代表 Anthropic 首次將 Mythos 資安能力的應用成果以**可追蹤、可驗證**的公開格式呈現，解決了此前社群對透明度的質疑（見 Transparency Hub 爭議段落）。
+
+### Mythos 準備登陸 Claude Code 與 Claude Security（2026-05-24）
+
+社群發現 Claude Code 與 Claude Security 的 app 字串洩露關鍵訊息：「**Access to the Claude Mythos model in Claude Code and Claude Security**」，顯示 Anthropic 正積極準備將 Mythos 部署至旗下兩個主要開發工具。Anthropic 官方聲明「一般用戶不保證獲得存取」，暗示初期仍將採用限制性推出策略，可能以企業或安全合作夥伴為優先對象。
+
+---
+
 ## 參考來源
 
 - [[news/2026-04-25]]
@@ -106,5 +123,6 @@ TechCrunch 報導，Sam Altman 在公開批評 Anthropic 限制 Mythos 存取範
 - [[news/2026-04-30]]
 - [[news/2026-05-02]]
 - [[news/2026-05-08]]
+- [[news/2026-05-24]]
 - [What Anthropic's Mythos Means for the Future of Cybersecurity](https://spectrum.ieee.org/ai-cybersecurity-mythos) — IEEE Spectrum
 - [Anthropic's Argument for Mythos SWE-bench improvement contains a fatal error](https://www.philosophicalhacker.com/post/anthropic-error/) — The Philosophical Hacker

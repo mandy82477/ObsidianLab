@@ -2,7 +2,7 @@
 
 LLM 查詢此 wiki 時，**先讀這個檔案**找相關頁面，再讀具體頁面取得詳細資訊。
 
-**最後更新：** 2026-05-23 | **頁面數：** 31
+**最後更新：** 2026-05-24 | **頁面數：** 31
 
 ---
 
@@ -20,7 +20,7 @@ LLM 查詢此 wiki 時，**先讀這個檔案**找相關頁面，再讀具體頁
 | [[entities/claude-code]] | product | active | Claude Code CLI 主頁：功能、已知問題、社群工具 |
 | [[entities/opus-4-7]] | model | active（爭議）| Opus 4.7 發布細節、思考深度爭議、cache 問題 |
 | [[entities/pricing]] | policy | 持續調整 | 訂閱方案、近期政策變動、token 成本注意事項 |
-| [[entities/mythos]] | model | 限制存取 | 高能力安全模型，七週發現 2,000+ 漏洞 |
+| [[entities/mythos]] | model | 限制存取 | 高能力安全模型，CVD 儀表板公開 281 專案 1,596 漏洞；即將登陸 Claude Code & Security |
 | [[entities/bugcrawl]] | feature | 測試中 | Anthropic 測試中的 Claude Code 漏洞偵測工具 |
 | [[entities/project-deal]] | feature | 實驗中 | Anthropic Claude 代理人自主交易談判實驗，Opus vs Haiku 差異顯著 |
 | [[entities/claude-design]] | feature | active（初期）| Anthropic AI 設計工具，首日社群反映幻覺多、風格偏移、Claude Code 整合差 |
@@ -43,7 +43,7 @@ LLM 查詢此 wiki 時，**先讀這個檔案**找相關頁面，再讀具體頁
 | [[topics/code-quality-decline]]        | monitoring | Claude Code 效能退步事件，Anthropic 已承認工程疏失                           |
 | [[topics/google-investment]]           | resolved   | ⚠️ 已遷移至 [[entities/google-investment]]                         |
 | [[topics/competitor-landscape]]        | ongoing    | Google 祕密開發競品 + OpenCode 157K 分流 + DeepSeek clone 低成本替代生態      |
-| [[topics/community-tech-tools]]        | ongoing    | 社群工具目錄：80+ 工具的活躍度、採用狀態追蹤                                       |
+| [[topics/community-tech-tools]]        | ongoing    | 社群工具目錄：110 工具的活躍度、採用狀態追蹤                                       |
 | [[topics/community-tech-patterns]]     | ongoing    | 社群技術模式：multi-agent、skills 設計、工作流最佳實踐                           |
 | [[topics/community-tech-discussions]]  | ongoing    | 社群技術討論趨勢：設計哲學辯論、實證研究、架構反思（HTML vs MD、Skill Atrophy 等）          |
 | [[topics/ai-agent-safety]]             | ongoing    | AI agent 安全：假冒安裝包 + AI 生成程式碼 90% 漏洞 + CVE-2026-39861 + 資料庫刪除事件 |

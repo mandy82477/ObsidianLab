@@ -2,7 +2,7 @@
 
 **狀態：** ongoing
 **開始日期：** 2026-04-25
-**最後更新：** 2026-05-23
+**最後更新：** 2026-05-24
 
 ---
 
@@ -20,6 +20,9 @@
 
 | 討論主題 | 首見 | 熱度 | 模式 | 核心論點 | 衍生 |
 |---------|------|------|------|---------|------|
+| Cache miss 成本衝擊（12.5 倍） | 2026-05-24 | 🔥🔥🔥 | ☄️閃現 | Cache miss 比 cache hit 貴 12.5 倍（write 1.25×、read 0.1×）；列出 session 中 5 種常見觸發 cache 失效的操作（工具輸出順序改變、系統 prompt 修改等），對長 session 用戶成本衝擊顯著 | — |
+| 686 Skills 向量索引導航實測 | 2026-05-24 | 🔥🔥 | ☄️閃現 | 作者將 686 個技能建立向量索引，實測「progressive disclosure」機制：Claude 啟動時只讀技能名稱+短描述，命中後按需載入完整內容；7 個命中中 5 個精準、2 個誤觸，假陽性率在可接受範圍 | — |
+| Claude Code JSONL Session 知識資產 | 2026-05-24 | 🔥🔥🔥 | ☄️閃現 | 用戶揭示 `~/.claude/projects/` 儲存所有 session 完整 JSONL（57MB、1,026 sessions、76,000 turns），並開源 SQLite+FTS5 時序索引工具；社群意識到每次對話都在本機留下完整可查詢記錄，是未被充分利用的知識資產 | CC-Wiki |
 | Solo 爽、團隊亂：Claude Code 多人協調困境 | 2026-05-23 | 🔥🔥🔥 | ☄️閃現 | 工程師分享：個人使用 Claude Code 效率極高，但團隊環境中各人 CLAUDE.md 各異、決策不同步，導致同一服務混入兩種錯誤處理模式；揭示 AI 工具在團隊規模下的標準化缺失問題，與 Runtime 等工具的存在動機直接呼應 | — |
 | LLMs 製造虛假忙碌？ | 2026-05-22 | 🔥🔥🔥 | 🌊延燒 | 質疑 LLM 是否在製造「效率幻覺」：spec/PRD/測試計劃/程式碼的流水線，每個產出物仍需人工逐一核查，燒掉的 token 數等同「員工績效」；對 AI 效率宣稱提出最直接的挑戰 | — |
 | CLAUDE.md 自我演化 | 2026-05-22 | 🔥🔥 | ☄️閃現 | 作者在未指示情況下發現 Claude 自行為 CLAUDE.md 新增 4 條規則；引發對 agent 自主性邊界的思考 | — |
@@ -58,6 +61,33 @@
 ---
 
 ## 技術彙整
+
+### Cache Miss 成本衝擊：12.5 倍的隱性費用（2026-05-24）
+
+- **來源：** "Cache miss in Claude Code costs 12.5x more than a cache hit"（Reddit / r/ClaudeAI）
+- **核心論點：** 基於 Anthropic 官方文件精確計算：prompt cache write 費率 1.25×、read 0.1×，未命中快取的成本是命中的 **12.5 倍**；此前社群只知「有快取比較便宜」，但此篇首次以具體倍數量化差異，讓成本管理有了明確的基準
+- **五種觸發 Cache 失效的操作：**
+  1. 工具輸出順序改變（tool_result 順序不同）
+  2. 系統 prompt 被修改
+  3. 插入新訊息後舊訊息的相對位置改變
+  4. `/compact` 觸發 context 重組
+  5. 模型切換（不同模型的 cache 不互通）
+- **策略影響：** 此討論直接呼應 ScheduleWakeup / loop 設計哲學——避免不必要的系統 prompt 修改、保持工具輸出順序穩定，是降低長 session 成本的關鍵；與 MCP context bloat（2026-05-19）合看，cache miss + context 膨脹是兩大隱性成本來源
+
+### 686 Skills 向量索引實測：Progressive Disclosure（2026-05-24）
+
+- **來源：** "How does a Claude Code agent navigate hundreds of skills?"（Reddit / r/ClaudeAI）
+- **核心論點：** 作者建立 686 個技能的向量索引，實測 Claude Code 的「progressive disclosure」機制運作原理：**啟動時只讀技能名稱+短描述**（節省大量 context），命中後再按需載入完整內容
+- **實測結果：** 7 個命中案例中 5 個精準（71%）、2 個誤觸（29%），作者認為假陽性率在可接受範圍內
+- **設計含義：** 此實測印證了 ECC 獨奏得主開源 stack 的「按需載入」設計哲學（見 2026-05-24 社群趨勢），也說明 skill 命名的重要性——模糊的名稱導致 progressive disclosure 第一階段就命中錯誤
+
+### Claude Code JSONL Session 作為本機知識資產（2026-05-24）
+
+- **來源：** "Claude Code has been writing every session to..."（Reddit / r/ClaudeAI）
+- **核心論點：** 用戶揭示 `~/.claude/projects/` 儲存所有 session 的完整 JSONL 記錄——57MB 資料、1,026 個 session、76,000 turns——是多數用戶從未意識到的本機知識寶庫；進而開源 **SQLite + FTS5 時序索引工具**，讓每筆過去的決策都可語意搜尋
+- **衍生工具：** CC-Wiki（見 [[topics/community-tech-tools]]）以 Skill + Quartz 靜態網站形式，將 session 知識轉為 arXiv 風格可分享知識庫；兩者共同代表「session JSONL 知識化」的社群新共識
+- **隱私意涵：** JSONL 記錄完整對話，包括貼入的程式碼、API 回應等；用戶應注意本機儲存的敏感資料範圍，特別是在共用機器環境下
+- **與 VIR 的關係：** VIR（2026-05-23）同樣讀取 session JSONL 並萃取知識，兩者相輔相成
 
 ### Solo 爽、團隊亂：Claude Code 多人協調困境（2026-05-23）
 
@@ -301,6 +331,7 @@
 - [[news/2026-05-15]]
 - [[news/2026-05-16]]
 - [[news/2026-05-17]]
+- [[news/2026-05-24]]
 
 ## 時序
 
@@ -308,6 +339,7 @@
 
 | 日期 | 討論事件 |
 |------|---------|
+| 2026-05-24 | Cache miss 12.5 倍成本首次量化（Reddit）；686 skills 向量索引實測 progressive disclosure 機制（Reddit）；JSONL session 知識化討論（57MB/1026 sessions，Reddit + CC-Wiki 工具）|
 | 2026-05-19 | MCP context bloat 首次量化（9 伺服器 = 38k tokens 冷啟動，Reddit）；Claude 靜默隱藏 bug 三次連發（dev.to，10 條強制根因分析規則）；AI 工具靜默失敗五種模式記錄（dev.to，「工具回報完成但未真正完成」最新案例）；1000 小時工作流心得——明確人工介入節點設計 |
 | 2026-05-17 | HN：CLAUDE.md / AGENTS.md 維護效益辯論（Karpathy 公開設定，但規則仍常被忽略）；Claude Skills 靜默覆蓋指令 + 子代理派生（Reddit + dev.to 雙篇）；Anthropic 4 種官方 context 工具最佳實踐廣泛流傳；Anthropic Generator-Evaluator 多 agent 架構實踐（12 輪對抗迭代） |
 | 2026-05-16 | 「Claude Code 沒有變差，harness 變差了」辯論（dev.to）：harness 設定退化被誤感知為模型退步；Agentic RAG + eval harness 防幻覺（50K→5K token，Obsidian vault）；非工程師台灣創業者六個月獨自用 Claude Code 開發 MCP 伺服器心得 |

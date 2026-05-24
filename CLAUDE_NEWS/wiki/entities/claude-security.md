@@ -3,7 +3,7 @@
 **類型：** product
 **狀態：** public beta（公開測試版）
 **首次出現：** 2026-04-30
-**最後更新：** 2026-05-13
+**最後更新：** 2026-05-24
 
 > 功能熱度 🔥🔥🔥 | 試用價值 ⚡ 有條件推薦 | 詳見 [[feature-radar]]
 
@@ -50,6 +50,7 @@ Claude Security 於 2026-04-30 宣布推出公開測試版，並於 2026-05-01 �
 
 | 日期 | 事件 |
 |------|------|
+| 2026-05-24 | 社群發現 app 字串洩露「Access to the Claude Mythos model in Claude Code and Claude Security」，顯示 Anthropic 計畫將更強大的 Mythos 模型整合至 Claude Security；Anthropic 聲明一般用戶不保證獲得存取 |
 | 2026-05-06 | dev.to 發布「Claude Code Security Public Beta: What Developers Need to Know (2026)」深度介紹文章，媒體報導量持續擴大；確認開發者現可在 Claude Code 工作流中直接使用，無需另行安裝工具 |
 | 2026-05-01 | Claude Security 正式向全部 Enterprise 客戶開放；社群討論「推理式驗證」為核心差異 |
 | 2026-04-30 | Claude Security 公開測試版正式推出，多家資安媒體同步報導 |
