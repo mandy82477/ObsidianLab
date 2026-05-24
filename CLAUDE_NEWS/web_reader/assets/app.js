@@ -723,13 +723,12 @@ ${metaRows.length ? `<div class="detail__meta">${metaHtml}</div>` : ''}
     rows.forEach(row => {
       if (key === 'all') { row.style.display = ''; return; }
       const cells = row.cells;
-      const actCell  = cells[2] ? cells[2].textContent.trim() : '';
-      const adoptCell = cells[3] ? cells[3].textContent.trim() : '';
+      const adoptCell = cells[2] ? cells[2].textContent.trim() : '';
       const typeCell  = cells[1] ? cells[1].textContent.trim() : '';
       let show = false;
-      if (key === 'active')   show = actCell.includes('🟢');
-      else if (key === 'adopted') show = adoptCell.includes('✅');
-      else if (key === 'niche')   show = adoptCell.includes('⚡');
+      if (key === 'adopted')       show = adoptCell.includes('✅');
+      else if (key === 'niche')    show = adoptCell.includes('⚡');
+      else if (key === 'watching') show = adoptCell.includes('⏳');
       else show = typeCell === key;
       row.style.display = show ? '' : 'none';
     });
@@ -747,18 +746,16 @@ ${metaRows.length ? `<div class="detail__meta">${metaHtml}</div>` : ''}
     let adopted = 0, niche = 0, watching = 0;
     const typeCount = {};
 
+    // Schema: 工具 | 類型 | 採用(✅⚡⏳⚠️❌) | 首次出現 | 簡介
     rows.forEach(row => {
       const cells = row.cells;
-      if (cells.length < 4) return;
-      const act   = cells[2].textContent.trim();
-      const adopt = cells[3].textContent.trim();
+      if (cells.length < 3) return;
+      const adopt = cells[2].textContent.trim();
       const type  = cells[1].textContent.trim();
-      if (act.includes('🟢')) active++;
-      else if (act.includes('🟡')) cooling++;
-      else if (act.includes('🔴')) inactive++;
       if (adopt.includes('✅')) adopted++;
       else if (adopt.includes('⚡')) niche++;
       else if (adopt.includes('⏳')) watching++;
+      else if (adopt.includes('⚠️')) inactive++;
       if (type) typeCount[type] = (typeCount[type] || 0) + 1;
     });
 
@@ -766,9 +763,9 @@ ${metaRows.length ? `<div class="detail__meta">${metaHtml}</div>` : ''}
     const topTypes = Object.entries(typeCount).sort((a, b) => b[1] - a[1]).slice(0, 6);
     const filterBtns = [
       { key: 'all',     label: `全部 ${total}` },
-      { key: 'active',  label: `🟢 活躍 ${active}` },
       { key: 'adopted', label: `✅ 廣泛採用 ${adopted}` },
       { key: 'niche',   label: `⚡ 小圈子 ${niche}` },
+      { key: 'watching',label: `⏳ 觀望 ${watching}` },
     ];
     topTypes.forEach(([t]) => filterBtns.push({ key: t, label: t }));
 
@@ -783,15 +780,10 @@ ${metaRows.length ? `<div class="detail__meta">${metaHtml}</div>` : ''}
   </div>
   <div class="tools-insights__divider"></div>
   <div class="tools-insights__stat">
-    <span class="tools-insights__activity">🟢 活躍 <b>${active}</b></span>
-    <span class="tools-insights__activity">🟡 冷卻 <b>${cooling}</b></span>
-    <span class="tools-insights__activity">🔴 沉寂 <b>${inactive}</b></span>
-  </div>
-  <div class="tools-insights__divider"></div>
-  <div class="tools-insights__stat">
-    <span class="tools-insights__adopt">✅ 廣泛 <b>${adopted}</b></span>
+    <span class="tools-insights__adopt">✅ 廣泛採用 <b>${adopted}</b></span>
     <span class="tools-insights__adopt">⚡ 小圈子 <b>${niche}</b></span>
     <span class="tools-insights__adopt">⏳ 觀望 <b>${watching}</b></span>
+    <span class="tools-insights__adopt">⚠️ 存疑 <b>${inactive}</b></span>
   </div>
 </div>
 <div class="tools-insights__filter-bar">
