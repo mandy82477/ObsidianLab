@@ -4,7 +4,7 @@
 僅收錄官方 changelog、release note 或官方公告來源；社群工具見 [[topics/community-tech-tools]]。
 每次 ingest 後由 LLM 維護：新增功能、更新熱度、補充社群回饋。
 
-**最後更新：** 2026-05-24（含 5/24 ingest 更新；新增小企業 Skills 官方發布條目）
+**最後更新：** 2026-05-25（含 5/25 ingest 更新；本日無新使用者端功能，Exploit Eval 論文與 2028 情境研究為安全/政策出版物）
 
 ---
 

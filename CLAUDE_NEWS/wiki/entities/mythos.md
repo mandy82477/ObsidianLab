@@ -3,7 +3,7 @@
 **類型：** model
 **狀態：** 限制存取（非公開）
 **首次出現：** 2026-04（限定夥伴 Preview）
-**最後更新：** 2026-05-24
+**最後更新：** 2026-05-25
 
 ---
 
@@ -97,6 +97,22 @@ TechCrunch 報導，Sam Altman 在公開批評 Anthropic 限制 Mythos 存取範
 
 ---
 
+## Exploit 能力官方論文 + 公開化路線 + 議會層級安全警報（2026-05-25）
+
+### 官方 Exploit 評估論文正式發布
+Anthropic 安全團隊在官方安全部落格（https://red.anthropic.com/2026/exploit-evals/）發布完整論文版本，首次詳述評估方法論：Mythos Preview 的 exploit 開發能力是相較前代的質的飛躍——不僅能找到複雜零日漏洞，更能將漏洞組合成**端對端完整攻擊鏈**，這是此前任何 LLM 模型尚未達到的能力層次。此為 Project Glasswing 謹慎部署決策的技術核心文件。
+
+### Politico：議會閉門簡報揭露 + 英國 AI 安全研究所測試數據（2026-05-25）
+Politico 引述美國國會閉門簡報資訊：
+- **美國眾議員 Lou Correa（D-Calif.，眾議院國土安全委員會）** 在簡報後表示，Mythos 能輕易入侵其銀行帳戶
+- **英國 AI 安全研究所（UK AISI）** 分別測試 Mythos 和 GPT-5.5：Mythos 能在 **6/10 次**嘗試中完全接管企業網路；GPT-5.5 為 3/10 次
+- 此為迄今公開的最具體、來源最可信的 Mythos 網路攻擊能力量化數據
+
+### The Register：Anthropic 準備向公眾釋出 Mythos 等級模型（2026-05-25）
+The Register 報導，Anthropic 正準備將 Mythos 等級能力公開釋出，細節待確認。此訊號與 2026-05-24 的 app 字串洩露（「Access to the Claude Mythos model in Claude Code and Claude Security」）相互印證，Mythos 的公開化時間表正在加速。
+
+---
+
 ## CVD 儀表板正式上線 + Mythos 擴展訊號（2026-05-24）
 
 ### Anthropic CVD 儀表板公開（2026-05-24）
@@ -124,5 +140,6 @@ Anthropic 正式發布「協調漏洞揭露（Coordinated Vulnerability Disclosu
 - [[news/2026-05-02]]
 - [[news/2026-05-08]]
 - [[news/2026-05-24]]
+- [[news/2026-05-25]]
 - [What Anthropic's Mythos Means for the Future of Cybersecurity](https://spectrum.ieee.org/ai-cybersecurity-mythos) — IEEE Spectrum
 - [Anthropic's Argument for Mythos SWE-bench improvement contains a fatal error](https://www.philosophicalhacker.com/post/anthropic-error/) — The Philosophical Hacker

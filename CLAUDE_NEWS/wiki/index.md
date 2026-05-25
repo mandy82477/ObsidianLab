@@ -2,7 +2,7 @@
 
 LLM 查詢此 wiki 時，**先讀這個檔案**找相關頁面，再讀具體頁面取得詳細資訊。
 
-**最後更新：** 2026-05-24 | **頁面數：** 31
+**最後更新：** 2026-05-25 | **頁面數：** 31
 
 ---
 
@@ -20,7 +20,7 @@ LLM 查詢此 wiki 時，**先讀這個檔案**找相關頁面，再讀具體頁
 | [[entities/claude-code]] | product | active | Claude Code CLI 主頁：功能、已知問題、社群工具 |
 | [[entities/opus-4-7]] | model | active（爭議）| Opus 4.7 發布細節、思考深度爭議、cache 問題 |
 | [[entities/pricing]] | policy | 持續調整 | 訂閱方案、近期政策變動、token 成本注意事項 |
-| [[entities/mythos]] | model | 限制存取 | 高能力安全模型，CVD 儀表板公開 281 專案 1,596 漏洞；即將登陸 Claude Code & Security |
+| [[entities/mythos]] | model | 限制存取→公開化中 | 高能力安全模型；官方 Exploit Eval 論文確認 end-to-end 攻擊鏈；UK AISI 6/10 企業網絡接管；Anthropic 準備向公眾釋出 |
 | [[entities/bugcrawl]] | feature | 測試中 | Anthropic 測試中的 Claude Code 漏洞偵測工具 |
 | [[entities/project-deal]] | feature | 實驗中 | Anthropic Claude 代理人自主交易談判實驗，Opus vs Haiku 差異顯著 |
 | [[entities/claude-design]] | feature | active（初期）| Anthropic AI 設計工具，首日社群反映幻覺多、風格偏移、Claude Code 整合差 |
@@ -43,10 +43,10 @@ LLM 查詢此 wiki 時，**先讀這個檔案**找相關頁面，再讀具體頁
 | [[topics/code-quality-decline]]        | monitoring | Claude Code 效能退步事件，Anthropic 已承認工程疏失                           |
 | [[topics/google-investment]]           | resolved   | ⚠️ 已遷移至 [[entities/google-investment]]                         |
 | [[topics/competitor-landscape]]        | ongoing    | Google 祕密開發競品 + OpenCode 157K 分流 + DeepSeek clone 低成本替代生態      |
-| [[topics/community-tech-tools]]        | ongoing    | 社群工具目錄：110 工具的活躍度、採用狀態追蹤                                       |
+| [[topics/community-tech-tools]]        | ongoing    | 社群工具目錄：112 工具的活躍度、採用狀態追蹤                                       |
 | [[topics/community-tech-patterns]]     | ongoing    | 社群技術模式：multi-agent、skills 設計、工作流最佳實踐                           |
 | [[topics/community-tech-discussions]]  | ongoing    | 社群技術討論趨勢：設計哲學辯論、實證研究、架構反思（HTML vs MD、Skill Atrophy 等）          |
-| [[topics/ai-agent-safety]]             | ongoing    | AI agent 安全：假冒安裝包 + AI 生成程式碼 90% 漏洞 + CVE-2026-39861 + 資料庫刪除事件 |
+| [[topics/ai-agent-safety]]             | ongoing    | AI agent 安全：Claude Code v2.1.150 遠端系統提示注入披露（GrowthBook 60s 更新）+ 假冒安裝包 + 資料庫刪除事件 |
 | [[topics/anthropic-government-policy]] | monitoring | Anthropic 政府與軍事政策：五角大廈排除事件、安全護欄堅持、白宮重啟談判（11 天無新進展）             |
 | [[topics/official-community-gap]]      | ongoing    | 官方功能 vs 社群痛點缺口矩陣：哪些痛點官方正在解決、哪些結構性缺席                            |
 | [[topics/enterprise-cost-management]]  | ongoing    | 企業規模採用 Claude 的成本結構挑戰：Uber/Microsoft 案例、缺失工具、因應策略                            |

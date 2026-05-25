@@ -3,7 +3,7 @@
 **類型：** product
 **狀態：** active
 **首次出現：** 2025（正式推出）
-**最後更新：** 2026-05-23
+**最後更新：** 2026-05-25
 
 ---
 
@@ -15,7 +15,7 @@ Claude Code 是 Anthropic 的 AI 編碼 CLI 工具，支援 agentic 工作流程
 
 | 版本 | 日期 | 重點 |
 |------|------|------|
-| **v2.1.150** | 2026-05-23 | 內部基礎設施改善，無使用者端可見功能變更 |
+| **v2.1.150** | 2026-05-23 | 內部基礎設施改善，無使用者端可見功能變更；**⚠️ 安全爭議**：社群研究者發現此版啟動時呼叫 `api.anthropic.com/api/claude_cli/bootstrap` 並快取系統提示片段至磁碟，GrowthBook 功能旗標 `tengu_heron_brook` 每 60 秒動態重整，回傳字串直接注入擁有 shell 存取的系統提示（見 [[topics/ai-agent-safety]]） |
 | **v2.1.148** | 2026-05-22 | 緊急修復 v2.1.147 引入的回歸問題：Bash 工具對部分用戶每次指令都回傳 exit code 127，導致 shell 命令無法正常執行 |
 | **v2.1.146** | 2026-05-21 | `/simplify` 正式更名為 `/code-review`，新增可選強度參數（`/code-review high`）；auto mode 不再抑制 `AskUserQuestion`（skill 或用戶明確觸發時仍可向使用者提問）|
 | **v2.1.145** | 2026-05-20 | `claude agents --json` 指令：將目前存活的 Claude session 以 JSON 格式列出，便於與 tmux-resurrect、status bar、session picker 等工具整合；新增 `agent_id` 及 `parent_agent_id` 屬性，支援多 agent 層級識別 |

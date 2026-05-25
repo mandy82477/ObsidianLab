@@ -5,6 +5,23 @@ Append-only 紀錄。每次 ingest、query 或 lint 都在此追加一條。
 
 ---
 
+## 2026-05-25 Ingest | news/2026-05-25.md
+
+- 來源日報：`news/2026-05-25.md`（70 則，6 來源；Claude Code v2.1.150 遠端注入披露、Mythos Exploit Eval 論文正式發布、Microsoft 宣布 6/30 完全停用 Claude Code、MCP 帳單 73% 來自工具調用）
+- 更新頁面：
+  - `entities/mythos.md`：新增 Exploit Eval 論文正式發布（red.anthropic.com/2026/exploit-evals/）；UK AISI 6/10 企業網絡接管測試數據；Politico 議會閉門簡報；The Register 公開化路線確認；更新最後更新 2026-05-25
+  - `entities/claude-code.md`：更新 v2.1.150 版本歷史，加入遠端系統提示注入爭議（Bootstrap API + GrowthBook tengu_heron_brook flag）；更新最後更新 2026-05-25
+  - `topics/ai-agent-safety.md`：新增 Claude Code v2.1.150 遠端系統提示注入機制披露（Bootstrap API + GrowthBook 60s 更新）至技術彙整；更新最後更新 2026-05-25
+  - `topics/enterprise-cost-management.md`：Microsoft 章節更新為「完全停用（6 月 30 日）」；新增 MCP 工具調用 73% 隱性成本案例；更新最後更新 2026-05-25
+  - `topics/community-tech-tools.md`：新增 2 個工具（archmcp、Smriti）；總工具數：112；更新最後更新 2026-05-25
+  - `topics/community-tech-discussions.md`：新增 4 條熱門討論（遠端注入、Yabby、MCP 帳單 73%、TDD 60% 違規）；新增 4 個技術彙整段落；更新最後更新 2026-05-25
+  - `feature-radar.md`：本日無新使用者端功能；更新最後更新 2026-05-25
+- 呈現品質：✅ 通過（所有更新頁面前段清晰，關鍵數字可獨立閱讀）
+- feature-radar 更新：本日無新功能條目新增
+- 本日新增工具：archmcp / Smriti（共 2 個，累積 112 個）
+
+---
+
 ## 2026-05-24 Ingest | news/2026-05-24.md
 
 - 來源日報：`news/2026-05-24.md`（51 則，6 來源；Glasswing CVD 儀表板、小企業 Skills、Mythos string leak、JSONL session 知識化、cache miss 量化）

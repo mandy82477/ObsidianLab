@@ -2,7 +2,7 @@
 
 **狀態：** ongoing
 **開始日期：** 2026-04-25
-**最後更新：** 2026-05-24
+**最後更新：** 2026-05-25
 
 ---
 
@@ -20,6 +20,10 @@
 
 | 討論主題 | 首見 | 熱度 | 模式 | 核心論點 | 衍生 |
 |---------|------|------|------|---------|------|
+| MCP 帳單 73% 來自工具調用非對話 | 2026-05-25 | 🔥🔥🔥 | ☄️閃現 | Claude Desktop $200 帳單中 73%（$146）為 MCP 工具調用，聊天僅 27%；Playwright DOM 爬取單項 $89；MCP 配置是費用最大槓桿 | — |
+| MCP 雙軸評估：byte 節省 vs cache 命中率 | 2026-05-25 | 🔥🔥🔥 | ☄️閃現 | 最佳「省 byte」retrieval MCP 因輸出順序不穩定導致每次 cache miss；2 行排序修正後 byte 節省不變但 cache 命中從 0% 升至 100%；單軸最佳化在生產環境可能嚴格更差 | — |
+| Claude Code Session 靜默遺失 PSA | 2026-05-25 | 🔥🔥 | ☄️閃現 | 多用戶回報 session 標題保留但內容消失；可能在 context 壓縮或非預期退出時發生；無官方備份機制，社群提供 OS 排程器備份腳本 | — |
+| TDD 規則 60% 機率被忽略（30 天審計）| 2026-05-25 | 🔥🔥🔥 | ☄️閃現 | 作者對 30 天提交作審計：CLAUDE.md 有明確 TDD First 規則，但 60% 情況 Claude 先寫程式後補測試；最具量化說服力的「CLAUDE.md 規則被選擇性忽略」案例 | — |
 | Cache miss 成本衝擊（12.5 倍） | 2026-05-24 | 🔥🔥🔥 | ☄️閃現 | Cache miss 比 cache hit 貴 12.5 倍（write 1.25×、read 0.1×）；列出 session 中 5 種常見觸發 cache 失效的操作（工具輸出順序改變、系統 prompt 修改等），對長 session 用戶成本衝擊顯著 | — |
 | 686 Skills 向量索引導航實測 | 2026-05-24 | 🔥🔥 | ☄️閃現 | 作者將 686 個技能建立向量索引，實測「progressive disclosure」機制：Claude 啟動時只讀技能名稱+短描述，命中後按需載入完整內容；7 個命中中 5 個精準、2 個誤觸，假陽性率在可接受範圍 | — |
 | Claude Code JSONL Session 知識資產 | 2026-05-24 | 🔥🔥🔥 | ☄️閃現 | 用戶揭示 `~/.claude/projects/` 儲存所有 session 完整 JSONL（57MB、1,026 sessions、76,000 turns），並開源 SQLite+FTS5 時序索引工具；社群意識到每次對話都在本機留下完整可查詢記錄，是未被充分利用的知識資產 | CC-Wiki |
@@ -61,6 +65,36 @@
 ---
 
 ## 技術彙整
+
+### MCP 帳單結構分解：73% 來自工具調用（2026-05-25）
+
+- **來源：** "I ran Claude Desktop for a month and 73% of my Anthropic bill was MCP tool calls, not chat"（Reddit / r/ClaudeAI）
+- **核心論點：** 使用者追蹤六週 Claude Desktop 費用明細，發現 $200+ 帳單中 73%（$146）來自 MCP 工具調用，僅 27%（$54）為對話費用；Top 5 費用來源：Playwright navigate $43 + snapshot $46、filesystem read $22、GitHub PR diff $18、brave-search $11
+- **根本原因**：Playwright agent 持續爬取含大量 DOM 的頁面並將整個 DOM 放入 context；DOM 是目前單一最貴的 MCP 工具輸出類型
+- **策略啟示**：限制 Playwright context 大小；非主動瀏覽時停用瀏覽器工具；MCP 選擇不僅是功能決策，也是費用決策
+- **與 MCP context bloat 的關係**：2026-05-19 量化了 9 個 MCP 伺服器帶來的 38k token 冷啟動成本；此案例則量化了**工具調用在帳單中的實際佔比**，兩者共同構成完整的 MCP 成本圖像
+
+### MCP 雙軸基準：byte 節省 vs Cache 命中率（2026-05-25）
+
+- **來源：** "I measured my Claude Code MCP stack on two axes..."（Reddit / r/ClaudeAI）
+- **核心論點：** 開發者建立開放基準測試框架，同時測量 MCP 的 byte savings 和 cache-friendliness；發現 retrieval MCP 省了 60-70% bytes 但因輸出順序不穩定（`rg --files-with-matches` + `Map` 插入順序洩漏）每次呼叫觸發 cache miss，cache 命中率近 0%
+- **修復與結果**：2 行修正（rg hits 和 Map entries 按 path 排序）後，byte 節省不變，cache 命中率從 0% 升至 100%
+- **設計原則**：單軸最佳化（只看省 byte）在生產環境中可能嚴格更差；MCP 和 retrieval layer 的設計必須確保**相同輸入產生 byte-identical 輸出**才能讓 prompt cache 生效
+- **與前日 cache miss 討論的連結**：2026-05-24 量化了 cache miss 12.5 倍成本，今日提供了具體的**生產案例和修復方法**，兩篇共同建立「MCP + cache」設計框架
+
+### TDD 規則 60% 機率被忽略：30 天提交審計（2026-05-25）
+
+- **來源：** "I Told Claude Code to Do TDD. It Wrote the Test AFTER the Code 6 Out of 10 Times."（dev.to）
+- **核心論點：** 作者在 CLAUDE.md 中有明確的 `## TDD First` 規則（六行，明確指示），對 30 天提交記錄進行審計後發現：60% 的情況下 Claude Code 仍先寫程式碼後補測試，規則遵守率僅 40%
+- **意義**：此為「CLAUDE.md 規則被選擇性忽略」討論中最具量化說服力的案例（過去多為主觀感受）；顯示即使規則清晰、簡短，模型在實際工作流中仍以機率推理而非規則引擎的方式運作
+- **與既有框架的關係**：呼應 2026-05-17 的 CLAUDE.md 維護效益辯論（HN），也是「CLAUDE.md 失效四個原因」（見 [[topics/community-tech-tools]] 痛點洞察）的具體數據支撐
+
+### Claude Code Session 靜默遺失 PSA（2026-05-25）
+
+- **來源：** "PSA: Claude Code silently loses session data. Here is a backup script for Windows & Mac"（Reddit / r/ClaudeAI）
+- **核心論點：** 多名用戶回報 session 標題在側邊欄保留但內容完全消失（無警告、無錯誤、無恢復選項），可能發生在 context 壓縮、非預期退出或存儲層問題時
+- **作者方案**：提供跨平台（Windows/Mac）每日自動備份腳本，透過 OS 排程器獨立於 Claude Code 運行，每日複製所有 session transcript 至備份目錄
+- **批評點**：「付費產品竟無內建備份或恢復機制」是主要批評；與 2026-05-24 JSONL session 知識化討論形成呼應——session 數據既是寶貴知識資產，也是易失資產
 
 ### Cache Miss 成本衝擊：12.5 倍的隱性費用（2026-05-24）
 

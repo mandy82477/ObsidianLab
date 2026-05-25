@@ -2,7 +2,7 @@
 
 **狀態：** ongoing
 **開始日期：** 2026-04-25
-**最後更新：** 2026-05-24
+**最後更新：** 2026-05-25
 
 ---
 
@@ -63,6 +63,8 @@
 
 | 工具 | 類型 | 採用 | 首次出現 | 簡介 |
 | --- | --- | --- | --- | --- |
+| [**archmcp**](https://github.com/dejo13/archmcp) | 搜尋/診斷 | ⏳ | 2026-05-25 | 本地 MCP server，在 agent 讀取任何檔案前先生成 repo 緊湊架構快照（模組、符號、依賴、路由、架構模式），解決 Claude Code 每次 session 盲目爬檔案的 token 浪費；支援多 repo 跨系統架構感知 |
+| [**Smriti**](https://github.com/himanshudongre/smriti/) | 記憶工具 | ⏳ | 2026-05-25 | 讓 Claude Code 和 Codex 在同一工作流中共享推理狀態，解決多 agent 各自維護獨立推理脈絡的隔離問題；Show HN 發布 |
 | [**CC-Wiki**](https://github.com/tejpalv/cc-wiki) | 搜尋/診斷 | ⏳ | 2026-05-24 | 將本機 `~/.claude/sessions` JSONL 轉為 arXiv 風格可分享知識庫（Skill + Quartz 靜態網站），解決 session 學習無法跨對話保留或分享給團隊的問題；Show HN 發布 |
 | [**Fleet**](https://github.com/sermakarevich/fleet) | 多 Agent | ⏳ | 2026-05-24 | 集中式 beads DB + Python supervisor 架構，讓多個 `claude -p` 任務自動認領、並行執行與狀態追蹤；受 AMD 同時管理 50+ session 需求啟發；Show HN 發布 |
 | [**aco-system**](https://github.com/aniketkarne/aco-system) | 工作流 | ⏳ | 2026-05-24 | 完整公司 OS，自動化全流程：需求拆分→前置驗證→撰碼→開 PR→review→測試，人工只需最後 approve；用戶實測完成 Stripe webhook 整合 |
