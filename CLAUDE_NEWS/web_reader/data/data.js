@@ -304,6 +304,18 @@ window.WIKI_DATA = {
       "summary": "大型組織採用 Claude Code 後，成本結構挑戰迅速浮現。Uber 四個月耗盡全年 AI 預算（Forbes 報導）是目前最具代表性的公開案例，揭示企業在缺乏細粒度使用量控管工具的情況下，AI 工具成本極易失控。此議題已從開發者社群的個人抱怨升級至 Forbes、Business Insider 等主流財經媒體的…"
     },
     {
+      "id": "enterprise-tool-tracker",
+      "pageType": "topic",
+      "name": "大型企業 AI 編碼工具使用追蹤",
+      "entityType": "",
+      "status": "ongoing",
+      "pill": "active",
+      "firstSeen": "",
+      "startDate": "2026-05-26",
+      "lastUpdated": "2026-05-26",
+      "summary": "追蹤各大型企業目前正在使用的 AI 編碼工具，以及工具選擇的變化軌跡。資料來源為公開報導與內部消息洩露，僅記錄有明確來源佐證的事實。 ---"
+    },
+    {
       "id": "google-investment",
       "pageType": "topic",
       "name": "Google 投資 Anthropic 400 億美元",

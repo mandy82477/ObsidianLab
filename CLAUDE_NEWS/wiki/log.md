@@ -5,6 +5,15 @@ Append-only 紀錄。每次 ingest、query 或 lint 都在此追加一條。
 
 ---
 
+## 2026-05-26 手動建頁 | enterprise-tool-tracker
+
+- 新增頁面：`topics/enterprise-tool-tracker.md`（大型企業 AI 編碼工具使用追蹤）
+- 初始資料：10 家企業、4 個工具、含市場分層觀察
+- 加入 `wiki/CLAUDE.md` 觸發規則（企業工具採用新聞 → 自動更新此頁）
+- 更新 `wiki/index.md`（頁面數 31→32）
+
+---
+
 ## 2026-05-25 Ingest | news/2026-05-25.md
 
 - 來源日報：`news/2026-05-25.md`（70 則，6 來源；Claude Code v2.1.150 遠端注入披露、Mythos Exploit Eval 論文正式發布、Microsoft 宣布 6/30 完全停用 Claude Code、MCP 帳單 73% 來自工具調用）
