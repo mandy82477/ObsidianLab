@@ -10,7 +10,8 @@
       "source": "Hacker News",
       "time": "05/06 16:17",
       "sentiment": "",
-      "body": "Anthropic 與 SpaceX 達成協議，取得其孟菲斯資料中心的全部運算資源；即日起 Claude Code Pro/Max 用戶五小時視窗速率上限翻倍、取消尖峰時段降速，API Tier 4+ 用戶速率限制同步提升。**為何是重點：** 這是 Anthropic 首次透過外部基礎設施合作大幅鬆綁使用限制，對持續跑 agent 任務的重度開發者意義重大；Dario Amodei 在大會現場宣布，太空運算基礎設施的戰略布局也值得長期追蹤。"
+      "body": "Anthropic 與 SpaceX 達成協議，取得其孟菲斯資料中心的全部運算資源；即日起 Claude Code Pro/Max 用戶五小時視窗速率上限翻倍、取消尖峰時段降速，API Tier 4+ 用戶速率限制同步提升。**為何是重點：** 這是 Anthropic 首次透過外部基礎設施合作大幅鬆綁使用限制，對持續跑 agent 任務的重度開發者意義重大；Dario Amodei 在大會現場宣布，太空運算基礎設施的戰略布局也值得長期追蹤。",
+      "focusTags": []
     },
     {
       "title": "Claude Managed Agents can engage in a \"dreaming\" process to preserve memories",
@@ -18,7 +19,8 @@
       "source": "Hacker News",
       "time": "05/06 16:21",
       "sentiment": "",
-      "body": "Anthropic 推出 Managed Agents「Dreaming」功能：Agent 在任務間隙自動整理近期事件、萃取值得長期保留的資訊存入記憶，類似人類睡眠時的記憶鞏固機制，目前限 Claude Platform Managed Agents 研究預覽版。**為何是重點：** 這是 Anthropic 首次在官方架構層面解決長跑 Agent 的記憶持久性問題，搭配 20 路並行與 Outcomes 規格驗證，代表 Agent 框架正式邁向生產級可靠性設計。"
+      "body": "Anthropic 推出 Managed Agents「Dreaming」功能：Agent 在任務間隙自動整理近期事件、萃取值得長期保留的資訊存入記憶，類似人類睡眠時的記憶鞏固機制，目前限 Claude Platform Managed Agents 研究預覽版。**為何是重點：** 這是 Anthropic 首次在官方架構層面解決長跑 Agent 的記憶持久性問題，搭配 20 路並行與 Outcomes 規格驗證，代表 Agent 框架正式邁向生產級可靠性設計。",
+      "focusTags": []
     },
     {
       "title": "Claude Code wire trace reveals 13,000 words base prompt",
@@ -26,7 +28,8 @@
       "source": "Hacker News",
       "time": "05/06 21:46",
       "sentiment": "",
-      "body": "研究者透過 wire trace 截獲 Claude Code 的完整系統提示，發現基礎提示長達約 13,000 字；Figma 等 MCP 插件會大幅佔用 context window，而「Auto 模式」的權限控制僅是提示詞層面的機制，並非底層沙箱強制約束。**為何是重點：** 這揭示了目前 agentic 工具的架構侷限——安全邊界仰賴提示詞而非系統隔離，且插件越多 context 越快耗盡，對企業級安全評估具有重要參考價值。"
+      "body": "研究者透過 wire trace 截獲 Claude Code 的完整系統提示，發現基礎提示長達約 13,000 字；Figma 等 MCP 插件會大幅佔用 context window，而「Auto 模式」的權限控制僅是提示詞層面的機制，並非底層沙箱強制約束。**為何是重點：** 這揭示了目前 agentic 工具的架構侷限——安全邊界仰賴提示詞而非系統隔離，且插件越多 context 越快耗盡，對企業級安全評估具有重要參考價值。",
+      "focusTags": []
     }
   ],
   "techUpdates": [
@@ -36,7 +39,8 @@
       "source": "GitHub / anthropics/claude-code",
       "time": "05/06 22:08",
       "sentiment": "",
-      "body": "新增 `CLAUDE_CODE_SESSION_ID` 環境變數至 Bash 工具子行程，讓 hooks 可追蹤當前工作階段；另新增 `CLAUDE_CODE_DISABLE_ALTERNATE_SCREEN` 選項，供需要控制終端顯示行為的環境使用。"
+      "body": "新增 `CLAUDE_CODE_SESSION_ID` 環境變數至 Bash 工具子行程，讓 hooks 可追蹤當前工作階段；另新增 `CLAUDE_CODE_DISABLE_ALTERNATE_SCREEN` 選項，供需要控制終端顯示行為的環境使用。",
+      "focusTags": []
     },
     {
       "title": "anthropics/anthropic-sdk-python v0.100.0",
@@ -44,7 +48,8 @@
       "source": "GitHub / anthropics/anthropic-sdk-python",
       "time": "05/06 15:07",
       "sentiment": "",
-      "body": "Python SDK 抵達 v0.100.0 里程碑，核心更新為加入 Managed Agents 多路並行支援，與 TypeScript SDK v0.95.0 同日發布，方便 Python 生態整合新 Agent 功能。"
+      "body": "Python SDK 抵達 v0.100.0 里程碑，核心更新為加入 Managed Agents 多路並行支援，與 TypeScript SDK v0.95.0 同日發布，方便 Python 生態整合新 Agent 功能。",
+      "focusTags": []
     },
     {
       "title": "anthropics/anthropic-sdk-typescript sdk-v0.95.0",
@@ -52,7 +57,8 @@
       "source": "GitHub / anthropics/anthropic-sdk-typescript",
       "time": "05/06 15:07",
       "sentiment": "",
-      "body": "新增對 Managed Agents 的 API 支援，與 Python SDK 同步更新，讓 TypeScript 開發者可直接透過 SDK 操作新的 Agent 架構與並行功能。"
+      "body": "新增對 Managed Agents 的 API 支援，與 Python SDK 同步更新，讓 TypeScript 開發者可直接透過 SDK 操作新的 Agent 架構與並行功能。",
+      "focusTags": []
     },
     {
       "title": "Claude Managed Agents Just Got Dreams, 20-Way Parallelism, and Self-Checking Loops",
@@ -60,7 +66,8 @@
       "source": "dev.to / #claudecode",
       "time": "05/06 23:19",
       "sentiment": "",
-      "body": "完整彙整 Managed Agents 新功能：Dreaming 記憶整合、最高 20 路子代理並行、自我檢查迴圈（Self-Checking Loops）確保輸出品質，以及 Outcomes 規格載入機制讓代理行為可預測且可驗證。"
+      "body": "完整彙整 Managed Agents 新功能：Dreaming 記憶整合、最高 20 路子代理並行、自我檢查迴圈（Self-Checking Loops）確保輸出品質，以及 Outcomes 規格載入機制讓代理行為可預測且可驗證。",
+      "focusTags": []
     },
     {
       "title": "Anthropic Just Made Specs Load-Bearing",
@@ -68,7 +75,8 @@
       "source": "dev.to / #anthropic",
       "time": "05/06 11:26",
       "sentiment": "",
-      "body": "Managed Agents 的 Outcomes 功能將規格文件（spec）提升為執行時的強制依據，Agent 需在完成後自我驗證輸出是否符合預定目標，代表 AI 代理設計從「盡力而為」走向「可驗證達標」的範式轉變。"
+      "body": "Managed Agents 的 Outcomes 功能將規格文件（spec）提升為執行時的強制依據，Agent 需在完成後自我驗證輸出是否符合預定目標，代表 AI 代理設計從「盡力而為」走向「可驗證達標」的範式轉變。",
+      "focusTags": []
     },
     {
       "title": "Claude Code with Bedrock broken again",
@@ -76,7 +84,8 @@
       "source": "Hacker News",
       "time": "05/06 16:26",
       "sentiment": "",
-      "body": "多名用戶回報 Claude Code 透過 AWS Bedrock 接入時功能異常，社群指出 Bedrock 與 Anthropic 直接服務的新功能同步速度慣常落後，新功能發布後的相容性落差問題持續存在。"
+      "body": "多名用戶回報 Claude Code 透過 AWS Bedrock 接入時功能異常，社群指出 Bedrock 與 Anthropic 直接服務的新功能同步速度慣常落後，新功能發布後的相容性落差問題持續存在。",
+      "focusTags": []
     }
   ],
   "discussions": [
@@ -86,7 +95,8 @@
       "source": "Reddit / r/ClaudeAI",
       "time": "05/06 23:17",
       "sentiment": "🤔 褒貶不一",
-      "body": "作者坦誠：用 Claude Code 一週內可出三個功能，但三天後就看不懂自己的程式碼——「理解是租來的，不是賺來的」。這篇貼文引發大量開發者共鳴，觸及 AI 輔助開發中技能退化（skill atrophy）的核心隱憂。"
+      "body": "作者坦誠：用 Claude Code 一週內可出三個功能，但三天後就看不懂自己的程式碼——「理解是租來的，不是賺來的」。這篇貼文引發大量開發者共鳴，觸及 AI 輔助開發中技能退化（skill atrophy）的核心隱憂。",
+      "focusTags": []
     },
     {
       "title": "Unauthorized Usage",
@@ -94,7 +104,8 @@
       "source": "Reddit / r/ClaudeAI",
       "time": "05/06 18:48",
       "sentiment": "😤 負面",
-      "body": "用戶回報在撤銷 Claude Code 存取授權後，仍發現 session 紀錄持續出現於使用量儀表板，涉及 `user:file_upload`、`user:ccr_inference` 等 scope，解除安裝並清除憑證後問題依然存在，且 Anthropic 客服兩週未回應。"
+      "body": "用戶回報在撤銷 Claude Code 存取授權後，仍發現 session 紀錄持續出現於使用量儀表板，涉及 `user:file_upload`、`user:ccr_inference` 等 scope，解除安裝並清除憑證後問題依然存在，且 Anthropic 客服兩週未回應。",
+      "focusTags": []
     },
     {
       "title": "BrowserCode: Run Claude Code in the browser via WebAssembly, with mobile support",
@@ -102,7 +113,8 @@
       "source": "Reddit / r/ClaudeAI",
       "time": "05/07 03:18",
       "sentiment": "😊 正面",
-      "body": "開發者將 Claude Code 移植至瀏覽器，透過 WebAssembly 運行並支援行動裝置，讓無法安裝 CLI 的環境（如 iPad、公司鎖定設備）也能使用 Claude Code 的核心功能。"
+      "body": "開發者將 Claude Code 移植至瀏覽器，透過 WebAssembly 運行並支援行動裝置，讓無法安裝 CLI 的環境（如 iPad、公司鎖定設備）也能使用 Claude Code 的核心功能。",
+      "focusTags": []
     },
     {
       "title": "I made a Claude Code plugin that lets two terminals phone each other — /qu asks, /ans answers",
@@ -110,7 +122,8 @@
       "source": "Reddit / r/ClaudeAI",
       "time": "05/07 01:40",
       "sentiment": "😊 正面",
-      "body": "作者實作跨 session 通訊插件：新終端輸入 `/qu` 撥出，舊終端輸入 `/ans` 接聽，兩個 Claude Code 工作階段可直接交換問答，解決跨 session 知識無法共享的痛點。"
+      "body": "作者實作跨 session 通訊插件：新終端輸入 `/qu` 撥出，舊終端輸入 `/ans` 接聽，兩個 Claude Code 工作階段可直接交換問答，解決跨 session 知識無法共享的痛點。",
+      "focusTags": []
     },
     {
       "title": "Claude Code Memory Pattern: How I Stopped Repetitive Questions Forever",
@@ -118,7 +131,8 @@
       "source": "dev.to / #claudecode",
       "time": "05/07 03:32",
       "sentiment": "😊 正面",
-      "body": "開發者分享使用 Claude Code 60 天後整理出的 36 個記憶檔案系統，透過結構化的 per-project 持久記憶，根本解決 Agent 每次重啟都要重新說明背景的問題，對長期維護專案尤為實用。"
+      "body": "開發者分享使用 Claude Code 60 天後整理出的 36 個記憶檔案系統，透過結構化的 per-project 持久記憶，根本解決 Agent 每次重啟都要重新說明背景的問題，對長期維護專案尤為實用。",
+      "focusTags": []
     },
     {
       "title": "Claude Code reads your git log as a first debugging step",
@@ -126,7 +140,8 @@
       "source": "Reddit / r/ClaudeAI",
       "time": "05/07 02:39",
       "sentiment": "😊 正面",
-      "body": "作者觀察到 Claude Code 除錯時會自動讀取 git log，因此改以描述性 commit message 取代 \"wip\"、\"fixed stuff\"，讓 Agent 在幾秒內縮小問題範圍，並分享搭配 worktree 的多 session 協作技巧。"
+      "body": "作者觀察到 Claude Code 除錯時會自動讀取 git log，因此改以描述性 commit message 取代 \"wip\"、\"fixed stuff\"，讓 Agent 在幾秒內縮小問題範圍，並分享搭配 worktree 的多 session 協作技巧。",
+      "focusTags": []
     },
     {
       "title": "Composing Claude Code Skills",
@@ -134,7 +149,8 @@
       "source": "Hacker News",
       "time": "05/06 10:50",
       "sentiment": "😊 正面",
-      "body": "資深使用者近一年的 Skills 組合心得：遵循 Unix 單一職責原則、每個 skill 只做一件事，Claude 的自動觸發準確度顯著提升；過度耦合的 skill 反而讓模型難以判斷何時使用，這是踩坑後的反向工程建議。"
+      "body": "資深使用者近一年的 Skills 組合心得：遵循 Unix 單一職責原則、每個 skill 只做一件事，Claude 的自動觸發準確度顯著提升；過度耦合的 skill 反而讓模型難以判斷何時使用，這是踩坑後的反向工程建議。",
+      "focusTags": []
     },
     {
       "title": "Show HN: Kstack – Skill pack for monitoring/troubleshooting K8s in Claude Code",
@@ -142,7 +158,8 @@
       "source": "Hacker News",
       "time": "05/07 05:24",
       "sentiment": "😊 正面",
-      "body": "將 Kubernetes 常見除錯任務打包成 Claude Code skill 組（`/investigate`、`/audit-security`、`/audit-outdated`），讓直接在 Claude Code 內監控與排查 K8s 叢集問題成為可能，開發者尋求社群回饋。"
+      "body": "將 Kubernetes 常見除錯任務打包成 Claude Code skill 組（`/investigate`、`/audit-security`、`/audit-outdated`），讓直接在 Claude Code 內監控與排查 K8s 叢集問題成為可能，開發者尋求社群回饋。",
+      "focusTags": []
     },
     {
       "title": "Claude Code Routines let you schedule agent tasks to run automatically",
@@ -150,7 +167,8 @@
       "source": "Reddit / r/ClaudeAI",
       "time": "05/07 00:47",
       "sentiment": "😊 正面",
-      "body": "分享使用 Claude Code Routines 的實際工作流：每晚自動摘要當天 commit、每週掃描過期依賴、每日彙整錯誤日誌趨勢——與傳統 cron job 的核心差異在於 Agent 能對結果進行推理，而非只執行固定指令。"
+      "body": "分享使用 Claude Code Routines 的實際工作流：每晚自動摘要當天 commit、每週掃描過期依賴、每日彙整錯誤日誌趨勢——與傳統 cron job 的核心差異在於 Agent 能對結果進行推理，而非只執行固定指令。",
+      "focusTags": []
     },
     {
       "title": "Replacing Claude with DeepSeek V4 in Claude Code: 30-Day, 100M-Token Cost & Quality Test",
@@ -158,7 +176,8 @@
       "source": "dev.to / #claudecode",
       "time": "05/07 02:56",
       "sentiment": "🤔 褒貶不一",
-      "body": "作者進行 30 天實測，在 Claude Code 框架中以 DeepSeek V4 取代 Claude Opus 4，對比 1 億 token 的成本與品質差異，為追求降低費用的開發者提供具體量化數據，但內容尚待社群進一步驗證。"
+      "body": "作者進行 30 天實測，在 Claude Code 框架中以 DeepSeek V4 取代 Claude Opus 4，對比 1 億 token 的成本與品質差異，為追求降低費用的開發者提供具體量化數據，但內容尚待社群進一步驗證。",
+      "focusTags": []
     },
     {
       "title": "Why I Switched Fully from Cursor (After 6 Months) to Claude Code",
@@ -166,7 +185,8 @@
       "source": "dev.to / #claudecode",
       "time": "05/07 02:42",
       "sentiment": "😊 正面",
-      "body": "作者在多個實際產品中同時使用 Cursor 與 Claude Code 超過六個月，最終全面轉換，月費高峰超過 60 美元，分享促使決策的具體使用體驗與比較結論。"
+      "body": "作者在多個實際產品中同時使用 Cursor 與 Claude Code 超過六個月，最終全面轉換，月費高峰超過 60 美元，分享促使決策的具體使用體驗與比較結論。",
+      "focusTags": []
     },
     {
       "title": "Show HN: Daily knowledge-point briefing from your coding-agent sessions",
@@ -174,7 +194,8 @@
       "source": "Hacker News",
       "time": "05/06 16:14",
       "sentiment": "😊 正面",
-      "body": "工具 \"recap\" 掃描過去 N 天的 Claude Code 與 Codex 對話紀錄，找出開發者遭遇陌生概念的片段，自動產出概念說明摘要，協助對抗因 AI 加速開發而導致的技能退化（skill atrophy）問題。"
+      "body": "工具 \"recap\" 掃描過去 N 天的 Claude Code 與 Codex 對話紀錄，找出開發者遭遇陌生概念的片段，自動產出概念說明摘要，協助對抗因 AI 加速開發而導致的技能退化（skill atrophy）問題。",
+      "focusTags": []
     },
     {
       "title": "CLAUDE.md for Rust: 13 Rules That Make AI Write Safe, Idiomatic Systems Code",
@@ -182,7 +203,8 @@
       "source": "dev.to / #claudeai",
       "time": "05/07 00:25",
       "sentiment": "😊 正面",
-      "body": "整理 13 條針對 Rust 開發的 CLAUDE.md 規則，引導 Claude Code 避免 `Arc<Mutex<HashMap>>` 的過度使用與 `.unwrap()` 濫用，改以慣用的安全 Rust 模式撰寫系統層程式碼。"
+      "body": "整理 13 條針對 Rust 開發的 CLAUDE.md 規則，引導 Claude Code 避免 `Arc<Mutex<HashMap>>` 的過度使用與 `.unwrap()` 濫用，改以慣用的安全 Rust 模式撰寫系統層程式碼。",
+      "focusTags": []
     },
     {
       "title": "MCP Code Execution: Build Token-Efficient AI Agents",
@@ -190,7 +212,8 @@
       "source": "dev.to / #anthropic",
       "time": "05/06 20:14",
       "sentiment": "😐 中性",
-      "body": "探討 MCP 伺服器過多導致 context window 在第一條用戶訊息前就半滿的問題，提出以 MCP code execution 取代靜態工具列表的方案，兼顧能力擴展與 token 效率，適合正在評估 MCP 架構規模的團隊參考。"
+      "body": "探討 MCP 伺服器過多導致 context window 在第一條用戶訊息前就半滿的問題，提出以 MCP code execution 取代靜態工具列表的方案，兼顧能力擴展與 token 效率，適合正在評估 MCP 架構規模的團隊參考。",
+      "focusTags": []
     },
     {
       "title": "Creating an animated manga with GPT Image 2.0 and Claude Code",
@@ -198,7 +221,8 @@
       "source": "Hacker News",
       "time": "05/06 15:56",
       "sentiment": "😊 正面",
-      "body": "開發者請 Claude Code 協助生成少年漫畫頁面並加入鏡頭移動動畫：偵測格格邊界、依序揭露、鏡頭平移縮放，展示 Claude Code 搭配 GPT Images 2.0 完成多步驟創意管道的能力。"
+      "body": "開發者請 Claude Code 協助生成少年漫畫頁面並加入鏡頭移動動畫：偵測格格邊界、依序揭露、鏡頭平移縮放，展示 Claude Code 搭配 GPT Images 2.0 完成多步驟創意管道的能力。",
+      "focusTags": []
     }
   ],
   "billing": [
@@ -208,7 +232,8 @@
       "source": "Anthropic 官方",
       "time": "05/06",
       "sentiment": "",
-      "body": "即日起三項變更全數生效：① Claude Code Pro/Max 訂閱者的五小時視窗速率上限翻倍；② 取消 Pro/Max 用戶的 Claude Code 尖峰時段降速機制；③ API Tier 4 及以上用戶的速率限制提升。此舉直接回應開發者長期對使用上限的抱怨，Dario Amodei 在大會現場親自宣布。"
+      "body": "即日起三項變更全數生效：① Claude Code Pro/Max 訂閱者的五小時視窗速率上限翻倍；② 取消 Pro/Max 用戶的 Claude Code 尖峰時段降速機制；③ API Tier 4 及以上用戶的速率限制提升。此舉直接回應開發者長期對使用上限的抱怨，Dario Amodei 在大會現場親自宣布。",
+      "focusTags": []
     },
     {
       "title": "Did Anthropic just greatly increase the weekly limits?",
@@ -216,7 +241,8 @@
       "source": "Reddit / r/ClaudeAI",
       "time": "05/07 02:25",
       "sentiment": "",
-      "body": "部分 Max 5x 用戶發現週配額使用量從 40% 驟降至 3%，且重置日期未變，懷疑 Anthropic 同步悄悄調高了週使用上限；官方公告僅明確提及五小時視窗的調整，週限制的異動目前尚未獲官方確認。"
+      "body": "部分 Max 5x 用戶發現週配額使用量從 40% 驟降至 3%，且重置日期未變，懷疑 Anthropic 同步悄悄調高了週使用上限；官方公告僅明確提及五小時視窗的調整，週限制的異動目前尚未獲官方確認。",
+      "focusTags": []
     }
   ],
   "focus": [

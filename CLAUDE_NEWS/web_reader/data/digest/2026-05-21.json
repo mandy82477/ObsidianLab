@@ -10,7 +10,8 @@
       "source": "Hacker News",
       "time": "05/20 17:36",
       "sentiment": "",
-      "body": "研究者揭露 Claude Code 網路沙箱的第二個獨立漏洞：攻擊者可在 hostname 中插入 null byte（`\\x00`），使策略層認為目標符合白名單（如 `*.google.com`），而底層 resolver 實際連線至被封鎖的外部主機，導致憑證與原始碼外洩風險。這是繼 CVE-2025-66479 後同一沙箱機制的第二次繞過，且兩個漏洞均自沙箱 GA 起持續存在。"
+      "body": "研究者揭露 Claude Code 網路沙箱的第二個獨立漏洞：攻擊者可在 hostname 中插入 null byte（`\\x00`），使策略層認為目標符合白名單（如 `*.google.com`），而底層 resolver 實際連線至被封鎖的外部主機，導致憑證與原始碼外洩風險。這是繼 CVE-2025-66479 後同一沙箱機制的第二次繞過，且兩個漏洞均自沙箱 GA 起持續存在。",
+      "focusTags": []
     },
     {
       "title": "Anthropic Is Splitting Claude Code's Billing — What It Means for Dev Teams Using Agents",
@@ -18,7 +19,8 @@
       "source": "dev.to",
       "time": "05/20 18:22",
       "sentiment": "",
-      "body": "6 月 15 日起，`claude -p` 與 Agent SDK 將從訂閱方案中分拆，改為獨立計量計費，對依賴 print mode 自動化工作流程的開發團隊衝擊最大。社群已有用戶自行開發 clarp（drop-in 替代品）與委派至 Mistral/DeepSeek 的混合方案來規避新定價。"
+      "body": "6 月 15 日起，`claude -p` 與 Agent SDK 將從訂閱方案中分拆，改為獨立計量計費，對依賴 print mode 自動化工作流程的開發團隊衝擊最大。社群已有用戶自行開發 clarp（drop-in 替代品）與委派至 Mistral/DeepSeek 的混合方案來規避新定價。",
+      "focusTags": []
     },
     {
       "title": "The Unreasonable Effectiveness of HTML",
@@ -26,7 +28,8 @@
       "source": "Hacker News",
       "time": "05/21 05:45",
       "sentiment": "",
-      "body": "Anthropic 官方部落格發文，由 Claude Code 團隊成員說明為何他們在 agent 輸出中偏好 HTML 而非 Markdown：HTML 在結構化表格、折疊區塊、互動元素方面遠勝純文字，且可直接在瀏覽器分享，不依賴特定 Markdown 渲染環境。此文直接引爆社群對「HTML vs Markdown」的新一輪辯論。"
+      "body": "Anthropic 官方部落格發文，由 Claude Code 團隊成員說明為何他們在 agent 輸出中偏好 HTML 而非 Markdown：HTML 在結構化表格、折疊區塊、互動元素方面遠勝純文字，且可直接在瀏覽器分享，不依賴特定 Markdown 渲染環境。此文直接引爆社群對「HTML vs Markdown」的新一輪辯論。",
+      "focusTags": []
     },
     {
       "title": "Opus 4.6/4.7 regression is real and getting worse — 3 weeks of documented failures on a complex project",
@@ -34,7 +37,8 @@
       "source": "Reddit / r/ClaudeAI",
       "time": "05/21 05:03",
       "sentiment": "",
-      "body": "用戶以三週結構化 session log（含 metacognitive 欄位）記錄 Opus 4.7／Sonnet 4.6 在複雜本地 AI 記憶體專案（Qdrant + Neo4j + Graphiti）上的持續失敗，並發現其他競品模型成功捕捉到 Claude 遺漏的錯誤，此為目前最具文件支撐的退化投訴之一。"
+      "body": "用戶以三週結構化 session log（含 metacognitive 欄位）記錄 Opus 4.7／Sonnet 4.6 在複雜本地 AI 記憶體專案（Qdrant + Neo4j + Graphiti）上的持續失敗，並發現其他競品模型成功捕捉到 Claude 遺漏的錯誤，此為目前最具文件支撐的退化投訴之一。",
+      "focusTags": []
     }
   ],
   "techUpdates": [
@@ -44,7 +48,8 @@
       "source": "GitHub / anthropics/claude-code",
       "time": "05/21 01:51",
       "sentiment": "",
-      "body": "本次版本將 `/simplify` 指令正式更名為 `/code-review`，並新增可選的強度等級（例如 `/code-review high`）；另一項重要調整是 auto mode 不再抑制 `AskUserQuestion`，意味著當用戶或 skill 明確觸發時，auto mode 下仍可向使用者提問。"
+      "body": "本次版本將 `/simplify` 指令正式更名為 `/code-review`，並新增可選的強度等級（例如 `/code-review high`）；另一項重要調整是 auto mode 不再抑制 `AskUserQuestion`，意味著當用戶或 skill 明確觸發時，auto mode 下仍可向使用者提問。",
+      "focusTags": []
     }
   ],
   "discussions": [
@@ -54,7 +59,8 @@
       "source": "Hacker News",
       "time": "05/21 02:04",
       "sentiment": "😐 中性",
-      "body": "DeepSeek 正招募「Agent Harness R&D Engineer」，明確提出「Model + Harness = Agent」公式，要在 frontier 模型之上建構完整的工具鏈、記憶體、agent loop 與 MCP 整合，直接對標 Claude Code 的定位。"
+      "body": "DeepSeek 正招募「Agent Harness R&D Engineer」，明確提出「Model + Harness = Agent」公式，要在 frontier 模型之上建構完整的工具鏈、記憶體、agent loop 與 MCP 整合，直接對標 Claude Code 的定位。",
+      "focusTags": []
     },
     {
       "title": "Been running Claude Code on Bun Rust port for a few days, can't tell difference",
@@ -62,7 +68,8 @@
       "source": "Hacker News",
       "time": "05/21 09:52",
       "sentiment": "😊 正面",
-      "body": "Bun 作者 Jarred Sumner 分享在 Bun 的 Rust 移植版本上執行 Claude Code 數天，使用體驗與原版無異，暗示 Claude Code 的 runtime 相依性較低。"
+      "body": "Bun 作者 Jarred Sumner 分享在 Bun 的 Rust 移植版本上執行 Claude Code 數天，使用體驗與原版無異，暗示 Claude Code 的 runtime 相依性較低。",
+      "focusTags": []
     },
     {
       "title": "Show HN: My custom Statusline for Claude Code (Python wrapper around claudeline)",
@@ -70,7 +77,8 @@
       "source": "Hacker News",
       "time": "05/21 00:47",
       "sentiment": "😊 正面",
-      "body": "開發者分享自製的 Python 狀態列包裝器，在 claudeline 基礎上新增真實 1M context 使用百分比、自訂 context window 警示閾值，並直接讀取 transcript jsonl 計算 session 時長與 token 消耗。"
+      "body": "開發者分享自製的 Python 狀態列包裝器，在 claudeline 基礎上新增真實 1M context 使用百分比、自訂 context window 警示閾值，並直接讀取 transcript jsonl 計算 session 時長與 token 消耗。",
+      "focusTags": []
     },
     {
       "title": "Claude Code, now powered by Gemini 3.5 Flash, GPT-5.5, Grok 4.3, and more",
@@ -78,7 +86,8 @@
       "source": "Hacker News",
       "time": "05/20 17:22",
       "sentiment": "😐 中性",
-      "body": "第三方工具 dechained.ai 宣稱可讓 Claude Code 介面切換至 Gemini、GPT 等其他模型後端，以一個端點繞過供應商 rate limit 與定價，支援 BYOK。標題略有誤導性，實為模型路由代理服務。"
+      "body": "第三方工具 dechained.ai 宣稱可讓 Claude Code 介面切換至 Gemini、GPT 等其他模型後端，以一個端點繞過供應商 rate limit 與定價，支援 BYOK。標題略有誤導性，實為模型路由代理服務。",
+      "focusTags": []
     },
     {
       "title": "Show HN: atrium – a resumable, tiling workspace manager for Claude Code, Codex",
@@ -86,7 +95,8 @@
       "source": "Hacker News",
       "time": "05/20 14:44",
       "sentiment": "😊 正面",
-      "body": "macOS 桌面應用，為 Claude Code 等 CLI AI 工具提供可恢復的瓦片式工作區管理，包含 terminal、browser、task、notes 等異質面板，動機來自電腦崩潰後 session 遺失問題，也在 6 月計費變更前設計以避免 API 計量鎖定。"
+      "body": "macOS 桌面應用，為 Claude Code 等 CLI AI 工具提供可恢復的瓦片式工作區管理，包含 terminal、browser、task、notes 等異質面板，動機來自電腦崩潰後 session 遺失問題，也在 6 月計費變更前設計以避免 API 計量鎖定。",
+      "focusTags": []
     },
     {
       "title": "Show HN: I Made a Claude Skill for SDD",
@@ -94,7 +104,8 @@
       "source": "Hacker News",
       "time": "05/21 12:49",
       "sentiment": "😊 正面",
-      "body": "開發者在公司僅提供單一 Claude 訂閱的環境下，自行用 Claude Code 建立 SDD（Spec-Driven Development）skill，並完整配置 CI、Python 測試（67 項靜態斷言 + 15 項行為測試），以開源方式分享。"
+      "body": "開發者在公司僅提供單一 Claude 訂閱的環境下，自行用 Claude Code 建立 SDD（Spec-Driven Development）skill，並完整配置 CI、Python 測試（67 項靜態斷言 + 15 項行為測試），以開源方式分享。",
+      "focusTags": []
     },
     {
       "title": "Underrated Claude Code commands (from a long-time terminal user and senior dev)",
@@ -102,7 +113,8 @@
       "source": "Reddit / r/ClaudeAI",
       "time": "05/21 05:47",
       "sentiment": "😊 正面",
-      "body": "資深開發者連續兩週在 Reddit 分享冷門指令（本次聚焦 `/context` 視覺化 context 佔用），引發大量用戶交流，顯示 Claude Code 許多內建功能仍未被廣泛發現。"
+      "body": "資深開發者連續兩週在 Reddit 分享冷門指令（本次聚焦 `/context` 視覺化 context 佔用），引發大量用戶交流，顯示 Claude Code 許多內建功能仍未被廣泛發現。",
+      "focusTags": []
     },
     {
       "title": "I had 500+ Claude Code skills installed and no idea what any of them did — so I built a free system to organize them all.",
@@ -110,7 +122,8 @@
       "source": "Reddit / r/ClaudeAI",
       "time": "05/21 04:30",
       "sentiment": "😊 正面",
-      "body": "開發者開源「Claude Orchestra」，將大量 skills、agents、MCP servers 組織成主題化的「orchestras」（BUILD / DESIGN / RESEARCH 等），解決技能爆炸後難以管理的痛點。"
+      "body": "開發者開源「Claude Orchestra」，將大量 skills、agents、MCP servers 組織成主題化的「orchestras」（BUILD / DESIGN / RESEARCH 等），解決技能爆炸後難以管理的痛點。",
+      "focusTags": []
     },
     {
       "title": "I realized I was only using half of what Claude Code has to offer",
@@ -118,7 +131,8 @@
       "source": "dev.to",
       "time": "05/21 03:07",
       "sentiment": "😊 正面",
-      "body": "Claude MAX 用戶分享深度使用心得，指出大多數人只用到 Claude Code 基本對話功能，未善用 hooks、skills、parallel subagents 等進階特性。"
+      "body": "Claude MAX 用戶分享深度使用心得，指出大多數人只用到 Claude Code 基本對話功能，未善用 hooks、skills、parallel subagents 等進階特性。",
+      "focusTags": []
     },
     {
       "title": "the-knowledge-guy: turn your bookshelf into a tutor you can ask, walk through, and skim - using Claude Code skills",
@@ -126,7 +140,8 @@
       "source": "Reddit / r/ClaudeAI",
       "time": "05/21 03:00",
       "sentiment": "😊 正面",
-      "body": "Claude Code skill，提供 11 種閱讀模式（跨書合成問答、互動課程含測驗、整書摘要、書目對比等），將個人書庫轉為可即時查詢的知識導師。"
+      "body": "Claude Code skill，提供 11 種閱讀模式（跨書合成問答、互動課程含測驗、整書摘要、書目對比等），將個人書庫轉為可即時查詢的知識導師。",
+      "focusTags": []
     },
     {
       "title": "I used Claude Code to build while delegating coding to Mistral/DeepSeek - 10 days, 57M tokens saved, over 90% costs savings",
@@ -134,7 +149,8 @@
       "source": "Reddit / r/ClaudeAI",
       "time": "05/21 02:06",
       "sentiment": "😊 正面",
-      "body": "開發者開源 vibe-skill，讓 Claude 負責規劃與 diff 審查，將實際撰碼任務委派給 Mistral Vibe，10 天實測節省 57M tokens、成本降逾九成，Claude 品質的規劃輸出基本保留。"
+      "body": "開發者開源 vibe-skill，讓 Claude 負責規劃與 diff 審查，將實際撰碼任務委派給 Mistral Vibe，10 天實測節省 57M tokens、成本降逾九成，Claude 品質的規劃輸出基本保留。",
+      "focusTags": []
     },
     {
       "title": "Claude Max usage draining automatically without using Claude Code",
@@ -142,7 +158,8 @@
       "source": "Reddit / r/ClaudeAI",
       "time": "05/21 02:27",
       "sentiment": "😤 負面",
-      "body": "用戶反映 Claude Max 配額在未主動使用任何介面的情況下持續耗盡，authorization token 列表出現從未建立的「Claude Code」未知 session，即使撤銷所有 session 後問題仍持續，疑似鬼魅 session 或背景 token 消耗。"
+      "body": "用戶反映 Claude Max 配額在未主動使用任何介面的情況下持續耗盡，authorization token 列表出現從未建立的「Claude Code」未知 session，即使撤銷所有 session 後問題仍持續，疑似鬼魅 session 或背景 token 消耗。",
+      "focusTags": []
     },
     {
       "title": "Adding existing sessions into new Agent View feature?",
@@ -150,7 +167,8 @@
       "source": "Reddit / r/ClaudeAI",
       "time": "05/21 01:18",
       "sentiment": "🤔 褒貶不一",
-      "body": "用戶詢問如何將現有 `/resume` session 加入新的 Agent View 面板，目前操作流程不直覺，社群尚在摸索多 session 並行管理的最佳實踐。"
+      "body": "用戶詢問如何將現有 `/resume` session 加入新的 Agent View 面板，目前操作流程不直覺，社群尚在摸索多 session 並行管理的最佳實踐。",
+      "focusTags": []
     },
     {
       "title": "SEO poisoning campaign leverages Gemini and Claude Code impersonation to deliver infostealer",
@@ -158,7 +176,8 @@
       "source": "Google News / EclecticIQ Blog",
       "time": "05/21 01:07",
       "sentiment": "😤 負面",
-      "body": "EclecticIQ 揭露 SEO 投毒攻擊，駭客冒充 Gemini 與 Claude Code 的官方下載頁面，在搜尋結果中植入假連結，引導用戶下載 infostealer 惡意軟體，提醒用戶僅從官方來源下載 AI 工具。"
+      "body": "EclecticIQ 揭露 SEO 投毒攻擊，駭客冒充 Gemini 與 Claude Code 的官方下載頁面，在搜尋結果中植入假連結，引導用戶下載 infostealer 惡意軟體，提醒用戶僅從官方來源下載 AI 工具。",
+      "focusTags": []
     },
     {
       "title": "CLAUDE.md for NestJS: 13 Rules That Make AI Write Modular, Production-Ready TypeScript",
@@ -166,7 +185,8 @@
       "source": "dev.to",
       "time": "05/20 22:58",
       "sentiment": "😊 正面",
-      "body": "開發者整理 13 條 CLAUDE.md 規則，規範 Claude 在 NestJS 專案中的模組化、依賴注入、decorator 使用習慣，解決 Claude 在多種合法寫法間難以自動選擇的問題。"
+      "body": "開發者整理 13 條 CLAUDE.md 規則，規範 Claude 在 NestJS 專案中的模組化、依賴注入、decorator 使用習慣，解決 Claude 在多種合法寫法間難以自動選擇的問題。",
+      "focusTags": []
     },
     {
       "title": "Anthropic's skills guide as an interactive walkthrough skill",
@@ -174,7 +194,8 @@
       "source": "Reddit / r/ClaudeAI",
       "time": "05/20 22:57",
       "sentiment": "😊 正面",
-      "body": "開發者將 Anthropic 官方 skill 建置指南（PDF）轉為可對話的引導式 skill，安裝後說「帶我建立一個 skill」即可開始 15–20 分鐘的互動教學流程。"
+      "body": "開發者將 Anthropic 官方 skill 建置指南（PDF）轉為可對話的引導式 skill，安裝後說「帶我建立一個 skill」即可開始 15–20 分鐘的互動教學流程。",
+      "focusTags": []
     },
     {
       "title": "Three Rough Edges of Running Claude Code + Telegram MCP on Windows: A 200-Line Toolkit",
@@ -182,7 +203,8 @@
       "source": "dev.to",
       "time": "05/20 22:30",
       "sentiment": "🤔 褒貶不一",
-      "body": "開發者每天透過 Telegram 操控 Claude Code，整理 Windows 環境下整合 MCP 的三個主要痛點與對應的 200 行工具包解法。"
+      "body": "開發者每天透過 Telegram 操控 Claude Code，整理 Windows 環境下整合 MCP 的三個主要痛點與對應的 200 行工具包解法。",
+      "focusTags": []
     },
     {
       "title": "Anthropic's MCP tunnels and self-hosted sandboxes: keeping agents inside your perimeter",
@@ -190,7 +212,8 @@
       "source": "dev.to",
       "time": "05/20 14:10",
       "sentiment": "😊 正面",
-      "body": "Anthropic 悄悄推出 MCP tunnels 與 self-hosted sandbox 兩項基礎設施功能，目標是讓企業 agent 在不出內部網路的情況下運作，著重安全隔離而非模型能力提升。"
+      "body": "Anthropic 悄悄推出 MCP tunnels 與 self-hosted sandbox 兩項基礎設施功能，目標是讓企業 agent 在不出內部網路的情況下運作，著重安全隔離而非模型能力提升。",
+      "focusTags": []
     },
     {
       "title": "Claude Code Hooks: Security Gates for Agent Workflows",
@@ -198,7 +221,8 @@
       "source": "dev.to",
       "time": "05/20 16:10",
       "sentiment": "😊 正面",
-      "body": "教學文章說明如何利用 Claude Code hooks 將安全規則從「模型記憶」改為「確定性腳本執行」，例如禁止危險 shell 指令或在每次編輯後自動格式化，使 agent 行為可被稽核與驗證。"
+      "body": "教學文章說明如何利用 Claude Code hooks 將安全規則從「模型記憶」改為「確定性腳本執行」，例如禁止危險 shell 指令或在每次編輯後自動格式化，使 agent 行為可被稽核與驗證。",
+      "focusTags": []
     },
     {
       "title": "I spawned 25 Claude Code subagents in one night. Here's what I learned.",
@@ -206,7 +230,8 @@
       "source": "dev.to",
       "time": "05/20 15:23",
       "sentiment": "😊 正面",
-      "body": "開發者在 24 小時、$1,000 預算內同時啟動約 25 個 Claude Code subagent，平行建構 37 個 Apify Actors 並推送上線，分享大規模平行 agent 的實戰心得與陷阱。"
+      "body": "開發者在 24 小時、$1,000 預算內同時啟動約 25 個 Claude Code subagent，平行建構 37 個 Apify Actors 並推送上線，分享大規模平行 agent 的實戰心得與陷阱。",
+      "focusTags": []
     },
     {
       "title": "Claude -p is moving to metered pricing on June 15, so I built a drop-in-ish replacement that runs through interactive Claude Code",
@@ -214,7 +239,8 @@
       "source": "Reddit / r/ClaudeAI",
       "time": "05/20 15:12",
       "sentiment": "😊 正面",
-      "body": "開發者開源 clarp，在本地啟動隱藏 PTY 的 Claude Code 互動 CLI，並透過唯讀代理攔截 Anthropic API 串流，重建 `claude -p` 行為，多數專案只需改一個 binary 名稱即可遷移。"
+      "body": "開發者開源 clarp，在本地啟動隱藏 PTY 的 Claude Code 互動 CLI，並透過唯讀代理攔截 Anthropic API 串流，重建 `claude -p` 行為，多數專案只需改一個 binary 名稱即可遷移。",
+      "focusTags": []
     },
     {
       "title": "Anthropic silently removed extended thinking on claude code opus 4.6",
@@ -222,7 +248,8 @@
       "source": "Reddit / r/ClaudeAI",
       "time": "05/20 18:08",
       "sentiment": "😤 負面",
-      "body": "用戶發現 Anthropic 在未公告的情況下移除 Claude Code 中 Opus 4.6 的 extended thinking 功能（桌面版仍可用），社群正討論是否能透過自訂 skill 部分模擬此行為。"
+      "body": "用戶發現 Anthropic 在未公告的情況下移除 Claude Code 中 Opus 4.6 的 extended thinking 功能（桌面版仍可用），社群正討論是否能透過自訂 skill 部分模擬此行為。",
+      "focusTags": []
     },
     {
       "title": "I built a Claude Code skill that scores your legacy Java code 1–100 and modernizes it to Java 21",
@@ -230,7 +257,8 @@
       "source": "dev.to",
       "time": "05/20 16:59",
       "sentiment": "😊 正面",
-      "body": "Claude Code skill，針對 Java 8 遺留程式碼提供 1–100 評分並自動升級至 Java 21 現代語法（records、sealed classes、pattern matching 等），鎖定銀行與金融業的老舊系統遷移需求。"
+      "body": "Claude Code skill，針對 Java 8 遺留程式碼提供 1–100 評分並自動升級至 Java 21 現代語法（records、sealed classes、pattern matching 等），鎖定銀行與金融業的老舊系統遷移需求。",
+      "focusTags": []
     },
     {
       "title": "anyone getting a safeguard refusal error on basic message for claude code?",
@@ -238,7 +266,8 @@
       "source": "Reddit / r/ClaudeAI",
       "time": "05/20 15:54",
       "sentiment": "😤 負面",
-      "body": "用戶回報 Claude Code 對基本訊息觸發 safeguard 拒絕錯誤，已有 GitHub issue（#60366）確認此問題，為突發性服務異常。"
+      "body": "用戶回報 Claude Code 對基本訊息觸發 safeguard 拒絕錯誤，已有 GitHub issue（#60366）確認此問題，為突發性服務異常。",
+      "focusTags": []
     },
     {
       "title": "Claude Code 98% Harness: Four Competing Teams Built Same Agent Harness, Pointing to Real AI Moat",
@@ -246,7 +275,8 @@
       "source": "Google News / Tech Times",
       "time": "05/21 04:58",
       "sentiment": "🤔 褒貶不一",
-      "body": "報導指出四個獨立團隊在不知情的情況下各自建構出高度相似的 agent harness，顯示 Claude Code 的 harness 架構代表一種自然收斂的設計正解，而非 Anthropic 獨有的護城河。"
+      "body": "報導指出四個獨立團隊在不知情的情況下各自建構出高度相似的 agent harness，顯示 Claude Code 的 harness 架構代表一種自然收斂的設計正解，而非 Anthropic 獨有的護城河。",
+      "focusTags": []
     },
     {
       "title": "Even Claude agrees: hole in its sandbox was real and dangerous",
@@ -254,7 +284,8 @@
       "source": "Google News / The Register",
       "time": "05/20 12:34",
       "sentiment": "😤 負面",
-      "body": "The Register 報導沙箱漏洞事件，並指出 Claude 自身被問及時也承認漏洞的真實性與危險程度，為此次安全事件增添諷刺色彩。"
+      "body": "The Register 報導沙箱漏洞事件，並指出 Claude 自身被問及時也承認漏洞的真實性與危險程度，為此次安全事件增添諷刺色彩。",
+      "focusTags": []
     },
     {
       "title": "Claude Code's Network Sandbox Vulnerability Exposes User Credentials and Source Code",
@@ -262,7 +293,8 @@
       "source": "Google News / CyberSecurityNews",
       "time": "05/20 19:22",
       "sentiment": "😤 負面",
-      "body": "資安媒體跟進報導沙箱漏洞，強調用戶憑證與原始碼面臨外洩風險，呼籲企業用戶在官方修補前審慎評估 Claude Code 的沙箱隔離假設。"
+      "body": "資安媒體跟進報導沙箱漏洞，強調用戶憑證與原始碼面臨外洩風險，呼籲企業用戶在官方修補前審慎評估 Claude Code 的沙箱隔離假設。",
+      "focusTags": []
     }
   ],
   "billing": [
@@ -272,7 +304,8 @@
       "source": "dev.to",
       "time": "05/20 18:22",
       "sentiment": "",
-      "body": "6 月 15 日起，`claude -p`（print mode）與 Agent SDK 呼叫將從現有訂閱方案中分拆，改為獨立的計量計費，對大量依賴自動化 pipeline 的開發團隊影響最大；個人互動使用者影響相對有限。"
+      "body": "6 月 15 日起，`claude -p`（print mode）與 Agent SDK 呼叫將從現有訂閱方案中分拆，改為獨立的計量計費，對大量依賴自動化 pipeline 的開發團隊影響最大；個人互動使用者影響相對有限。",
+      "focusTags": []
     },
     {
       "title": "Claude Max usage draining automatically without using Claude Code",
@@ -280,7 +313,8 @@
       "source": "Reddit / r/ClaudeAI",
       "time": "05/21 02:27",
       "sentiment": "",
-      "body": "多名 Claude Max 用戶反映在未主動使用任何介面的情況下，訂閱配額持續被消耗，且出現未授權的「Claude Code」session token，撤銷 session 後問題仍未解決，疑為帳號安全或系統異常問題，建議受影響用戶聯繫 Anthropic 支援。"
+      "body": "多名 Claude Max 用戶反映在未主動使用任何介面的情況下，訂閱配額持續被消耗，且出現未授權的「Claude Code」session token，撤銷 session 後問題仍未解決，疑為帳號安全或系統異常問題，建議受影響用戶聯繫 Anthropic 支援。",
+      "focusTags": []
     }
   ],
   "focus": [

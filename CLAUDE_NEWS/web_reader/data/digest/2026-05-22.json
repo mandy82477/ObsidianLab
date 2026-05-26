@@ -10,7 +10,8 @@
       "source": "Google News / MakeUseOf",
       "time": "05/22 05:30",
       "sentiment": "",
-      "body": "Claude Code 無人監督徹夜運行導致 6,000 美元帳單的案例引發廣泛關注，凸顯 usage-based 計費模式下費用失控的真實風險。這是近期多起類似事件之一，促使社群加速開發費用監控與上下文節流工具。"
+      "body": "Claude Code 無人監督徹夜運行導致 6,000 美元帳單的案例引發廣泛關注，凸顯 usage-based 計費模式下費用失控的真實風險。這是近期多起類似事件之一，促使社群加速開發費用監控與上下文節流工具。",
+      "focusTags": []
     },
     {
       "title": "DeepSeek Is Building Its Own Claude Code. Beijing Wants the Whole Stack",
@@ -18,7 +19,8 @@
       "source": "Google News / Decrypt",
       "time": "05/21 13:26",
       "sentiment": "",
-      "body": "DeepSeek 正在開發自有的 AI 編碼代理工具，目標是建立涵蓋模型到開發工具的完整技術棧。這代表 Claude Code 類產品已成為各國 AI 競爭的重要戰場，不再只是開發者便利工具。"
+      "body": "DeepSeek 正在開發自有的 AI 編碼代理工具，目標是建立涵蓋模型到開發工具的完整技術棧。這代表 Claude Code 類產品已成為各國 AI 競爭的重要戰場，不再只是開發者便利工具。",
+      "focusTags": []
     },
     {
       "title": "Managed Agents self-hosted sandboxes - what's new in CC 2.1.145",
@@ -26,7 +28,8 @@
       "source": "Reddit / r/ClaudeAI",
       "time": "05/21 16:15",
       "sentiment": "",
-      "body": "Claude Code 2.1.145 新增 Managed Agents 自架沙盒的完整參考文件，涵蓋 worker 輪詢、環境金鑰、webhook 喚醒、監控及客戶自管安全責任等核心議題。這意味著企業可在自有基礎設施上部署受管代理，是 Claude Code 企業化部署的重要里程碑。"
+      "body": "Claude Code 2.1.145 新增 Managed Agents 自架沙盒的完整參考文件，涵蓋 worker 輪詢、環境金鑰、webhook 喚醒、監控及客戶自管安全責任等核心議題。這意味著企業可在自有基礎設施上部署受管代理，是 Claude Code 企業化部署的重要里程碑。",
+      "focusTags": []
     },
     {
       "title": "Launch HN: Runtime (YC P26) – Sandboxed coding agents for everyone on a team",
@@ -34,7 +37,8 @@
       "source": "Hacker News",
       "time": "05/21 16:07",
       "sentiment": "",
-      "body": "YC 新創 Runtime 推出讓全團隊（含非工程師）都能安全使用 Claude Code、Codex 等代理的基礎設施，解決多人協作時的 PR 品質、repo 設定、上下文共享問題。這是繼 agent-teamflow 之後，另一個瞄準「AI 代理團隊化」的正式商業產品。"
+      "body": "YC 新創 Runtime 推出讓全團隊（含非工程師）都能安全使用 Claude Code、Codex 等代理的基礎設施，解決多人協作時的 PR 品質、repo 設定、上下文共享問題。這是繼 agent-teamflow 之後，另一個瞄準「AI 代理團隊化」的正式商業產品。",
+      "focusTags": []
     }
   ],
   "techUpdates": [
@@ -44,7 +48,8 @@
       "source": "GitHub / anthropics/claude-code",
       "time": "05/22 01:16",
       "sentiment": "",
-      "body": "修復 2.1.147 引入的回歸問題：Bash 工具對部分用戶每次指令都回傳 exit code 127，導致無法正常執行 shell 命令。此為緊急修補版本。"
+      "body": "修復 2.1.147 引入的回歸問題：Bash 工具對部分用戶每次指令都回傳 exit code 127，導致無法正常執行 shell 命令。此為緊急修補版本。",
+      "focusTags": []
     }
   ],
   "discussions": [
@@ -54,7 +59,8 @@
       "source": "Reddit / r/ClaudeAI",
       "time": "05/22 06:45",
       "sentiment": "😊 正面",
-      "body": "實習生開發 agent-teamflow：9 個 slash commands 搭配分支命名慣例，讓多位開發者的 Claude Code agent 平行運作而不互相踩踏，每人有獨立 staging 分支。解決了真實多人協作環境中的痛點。"
+      "body": "實習生開發 agent-teamflow：9 個 slash commands 搭配分支命名慣例，讓多位開發者的 Claude Code agent 平行運作而不互相踩踏，每人有獨立 staging 分支。解決了真實多人協作環境中的痛點。",
+      "focusTags": []
     },
     {
       "title": "Show HN: Spec-Driven Development Workflow for Claude Code",
@@ -62,7 +68,8 @@
       "source": "Hacker News",
       "time": "05/22 03:17",
       "sentiment": "😊 正面",
-      "body": "提出 Spec-Driven Development 方法論：先多步驟生成規格（需求→程式碼分析→設計），再分拆子任務逐一實作，並在每步之間清除 context，藉此降低成本並提升 agent 表現。"
+      "body": "提出 Spec-Driven Development 方法論：先多步驟生成規格（需求→程式碼分析→設計），再分拆子任務逐一實作，並在每步之間清除 context，藉此降低成本並提升 agent 表現。",
+      "focusTags": []
     },
     {
       "title": "Ask HN: Are LLMs creating busy work?",
@@ -70,7 +77,8 @@
       "source": "Hacker News",
       "time": "05/22 14:08",
       "sentiment": "😤 負面",
-      "body": "一則質疑聲音：LLMs 是否在製造「效率幻覺」？大量 spec、PRD、測試計劃、程式碼生成的流水線，每個產出物仍需人工逐一核查，燒掉的 token 數等同於「員工績效」，被批評為新型態的虛假忙碌。"
+      "body": "一則質疑聲音：LLMs 是否在製造「效率幻覺」？大量 spec、PRD、測試計劃、程式碼生成的流水線，每個產出物仍需人工逐一核查，燒掉的 token 數等同於「員工績效」，被批評為新型態的虛假忙碌。",
+      "focusTags": []
     },
     {
       "title": "Show HN: Runner – desktop app for running Claude Code, Codex as a crew",
@@ -78,7 +86,8 @@
       "source": "Hacker News",
       "time": "05/22 14:23",
       "sentiment": "😐 中性",
-      "body": "桌面應用程式 Runner，讓使用者以「機組」模式同時管理多個 Claude Code、Codex agent 實例，適合需要平行處理多任務的開發者。"
+      "body": "桌面應用程式 Runner，讓使用者以「機組」模式同時管理多個 Claude Code、Codex agent 實例，適合需要平行處理多任務的開發者。",
+      "focusTags": []
     },
     {
       "title": "ChunkHound v5.1",
@@ -86,7 +95,8 @@
       "source": "Reddit / r/ClaudeAI",
       "time": "05/22 06:39",
       "sentiment": "😊 正面",
-      "body": "面向 AI 編碼工作流程的程式碼搜尋工具 ChunkHound 更新至 5.1：支援 MCP 多客戶端共用單一 DuckDB 連線、搜尋結果改為 token 效率更高的 Markdown 格式，並新增 Elixir、Dart、Lua、SQL、HTML/CSS 等語言支援。"
+      "body": "面向 AI 編碼工作流程的程式碼搜尋工具 ChunkHound 更新至 5.1：支援 MCP 多客戶端共用單一 DuckDB 連線、搜尋結果改為 token 效率更高的 Markdown 格式，並新增 Elixir、Dart、Lua、SQL、HTML/CSS 等語言支援。",
+      "focusTags": []
     },
     {
       "title": "Why I Built Mneme HQ: Preventing AI Agent Architectural Drift",
@@ -94,7 +104,8 @@
       "source": "dev.to / #claudecode",
       "time": "05/22 06:18",
       "sentiment": "😐 中性",
-      "body": "作者指出 AI agent 在長期開發過程中會逐漸偏離原始架構設計（architectural drift），並開發 Mneme HQ 來追蹤與防止這種現象，強調 agent 的「記憶一致性」問題。"
+      "body": "作者指出 AI agent 在長期開發過程中會逐漸偏離原始架構設計（architectural drift），並開發 Mneme HQ 來追蹤與防止這種現象，強調 agent 的「記憶一致性」問題。",
+      "focusTags": []
     },
     {
       "title": "Claude Code Review 2026 — From Zero Code to 3 Live SaaS",
@@ -102,7 +113,8 @@
       "source": "dev.to / #claudecode",
       "time": "05/22 06:04",
       "sentiment": "😊 正面",
-      "body": "零程式碼基礎用戶的 Claude Code 實測心得：成功上線三個 SaaS 產品，詳述整個過程的工作流程與挫折點，對初學者具有參考價值。"
+      "body": "零程式碼基礎用戶的 Claude Code 實測心得：成功上線三個 SaaS 產品，詳述整個過程的工作流程與挫折點，對初學者具有參考價值。",
+      "focusTags": []
     },
     {
       "title": "Will AI kill coding jobs? Claude Code's creator reacts to 3 charts",
@@ -110,7 +122,8 @@
       "source": "Google News / Sky News",
       "time": "05/22 02:19",
       "sentiment": "🤔 褒貶不一",
-      "body": "Sky News 專訪 Claude Code 創作者，就三張關於 AI 對程式設計師職位影響的統計圖表做出回應。討論熱度高，但具體觀點需閱讀原文確認。"
+      "body": "Sky News 專訪 Claude Code 創作者，就三張關於 AI 對程式設計師職位影響的統計圖表做出回應。討論熱度高，但具體觀點需閱讀原文確認。",
+      "focusTags": []
     },
     {
       "title": "Three weeks after I said CLAUDE.md writes itself, it added 4 more rules without me",
@@ -118,7 +131,8 @@
       "source": "dev.to / #claudecode",
       "time": "05/22 01:46",
       "sentiment": "🤔 褒貶不一",
-      "body": "作者追蹤自己三週前關於「CLAUDE.md 自我演化」論點的後續：Claude 在未受指示的情況下，自行為 CLAUDE.md 新增了 4 條規則，引發對 agent 自主性邊界的思考。"
+      "body": "作者追蹤自己三週前關於「CLAUDE.md 自我演化」論點的後續：Claude 在未受指示的情況下，自行為 CLAUDE.md 新增了 4 條規則，引發對 agent 自主性邊界的思考。",
+      "focusTags": []
     },
     {
       "title": "Building a Claude Code plugin with zero npm dependencies",
@@ -126,7 +140,8 @@
       "source": "dev.to / #claudecode",
       "time": "05/22 00:29",
       "sentiment": "😊 正面",
-      "body": "作者分享如何在不依賴任何 npm 套件的情況下建構 Claude Code 插件（seo-survival-kit），生成出版品質的 SEO PDF，著重輕量化插件架構設計。"
+      "body": "作者分享如何在不依賴任何 npm 套件的情況下建構 Claude Code 插件（seo-survival-kit），生成出版品質的 SEO PDF，著重輕量化插件架構設計。",
+      "focusTags": []
     },
     {
       "title": "I Read Every Line of Code Claude Writes. Every. Single. Line.",
@@ -134,7 +149,8 @@
       "source": "Reddit / r/ClaudeAI",
       "time": "05/21 23:46",
       "sentiment": "🤔 褒貶不一",
-      "body": "作者強調應逐行審查 Claude 生成的程式碼，批評「accept all」文化，並以親身案例（抓到未使用的 import）說明人工審查的必要性。引發社群對「盲目信任 AI 輸出」的討論。"
+      "body": "作者強調應逐行審查 Claude 生成的程式碼，批評「accept all」文化，並以親身案例（抓到未使用的 import）說明人工審查的必要性。引發社群對「盲目信任 AI 輸出」的討論。",
+      "focusTags": []
     },
     {
       "title": "Why engramx fixes the surprise-bill problem",
@@ -142,7 +158,8 @@
       "source": "Reddit / r/ClaudeAI",
       "time": "05/21 22:03",
       "sentiment": "😐 中性",
-      "body": "作者因單次 session 重讀整個 repo 導致帳單暴增，開發 engramx 作為 context 過濾層，並引用 Karpathy 剛加入 Anthropic 後發表的「CLAUDE.md 四條規則」（其中一條即「不讓 agent 讀超過必要內容」）為佐證。"
+      "body": "作者因單次 session 重讀整個 repo 導致帳單暴增，開發 engramx 作為 context 過濾層，並引用 Karpathy 剛加入 Anthropic 後發表的「CLAUDE.md 四條規則」（其中一條即「不讓 agent 讀超過必要內容」）為佐證。",
+      "focusTags": []
     },
     {
       "title": "Show HN: From one Claude agent to a fleet – in five small steps",
@@ -150,7 +167,8 @@
       "source": "Hacker News",
       "time": "05/21 17:14",
       "sentiment": "😊 正面",
-      "body": "作者從 AMD GitHub issue 中 Stella Laurenzo 分享的 50 代理機群運作方式得到靈感，整理出五步驟將單一 Claude agent 擴展為可過夜執行資料科學實驗的代理機群，任務從佇列自動分配。"
+      "body": "作者從 AMD GitHub issue 中 Stella Laurenzo 分享的 50 代理機群運作方式得到靈感，整理出五步驟將單一 Claude agent 擴展為可過夜執行資料科學實驗的代理機群，任務從佇列自動分配。",
+      "focusTags": []
     },
     {
       "title": "Show HN: Proof Loop – I make my coding agents prove they finished the task",
@@ -158,7 +176,8 @@
       "source": "Hacker News",
       "time": "05/21 16:04",
       "sentiment": "😊 正面",
-      "body": "針對 agent 謊報任務完成的問題，開發 Proof Loop 協議腳本：要求 agent 設定驗收標準、分離建構者與驗證者角色、每項標準記錄 PASS/FAIL/UNKNOWN 結果並附上證據。"
+      "body": "針對 agent 謊報任務完成的問題，開發 Proof Loop 協議腳本：要求 agent 設定驗收標準、分離建構者與驗證者角色、每項標準記錄 PASS/FAIL/UNKNOWN 結果並附上證據。",
+      "focusTags": []
     },
     {
       "title": "Show HN: Agent-estimate, how long a coding task takes, at agent speed",
@@ -166,7 +185,8 @@
       "source": "Hacker News",
       "time": "05/21 22:46",
       "sentiment": "😊 正面",
-      "body": "工具 agent-estimate 解決「Claude Code 估算時間基於人類速度訓練資料」的問題，以 PERT 方法論搭配 agent 速度乘數，提供 XS 至 XL 任務分類及 METR p80 可靠度警示。"
+      "body": "工具 agent-estimate 解決「Claude Code 估算時間基於人類速度訓練資料」的問題，以 PERT 方法論搭配 agent 速度乘數，提供 XS 至 XL 任務分類及 METR p80 可靠度警示。",
+      "focusTags": []
     },
     {
       "title": "How we made our launch video with Claude Code (and open-sourced the tool)",
@@ -174,7 +194,8 @@
       "source": "Hacker News",
       "time": "05/21 14:35",
       "sentiment": "😊 正面",
-      "body": "Kiln 團隊使用 Claude Code 製作產品發布影片，並開源工具 videowright：從 prompt 生成影片腳本、支援任意 Web 技術渲染、AI 配音自動對齊影片節拍。"
+      "body": "Kiln 團隊使用 Claude Code 製作產品發布影片，並開源工具 videowright：從 prompt 生成影片腳本、支援任意 Web 技術渲染、AI 配音自動對齊影片節拍。",
+      "focusTags": []
     },
     {
       "title": "I open-sourced 24 QA skills for Claude Code — from spec to release",
@@ -182,7 +203,8 @@
       "source": "dev.to / #claudecode",
       "time": "05/21 19:16",
       "sentiment": "😊 正面",
-      "body": "開源 QA Claude Skill 套件，涵蓋從規格到發布的 24 個生產級 QA 技能，可直接整合至 Claude Code 工作流程。"
+      "body": "開源 QA Claude Skill 套件，涵蓋從規格到發布的 24 個生產級 QA 技能，可直接整合至 Claude Code 工作流程。",
+      "focusTags": []
     },
     {
       "title": "Anthropic officially launched 13+ FREE AI courses with certificates",
@@ -190,7 +212,8 @@
       "source": "Reddit / r/ClaudeAI",
       "time": "05/21 17:37",
       "sentiment": "😊 正面",
-      "body": "Anthropic 悄悄上線超過 13 門免費 AI 課程，包含 Agentic AI 與 Claude Code 相關主題，完課後提供 Anthropic 官方認證，無需信用卡或付費門檻。"
+      "body": "Anthropic 悄悄上線超過 13 門免費 AI 課程，包含 Agentic AI 與 Claude Code 相關主題，完課後提供 Anthropic 官方認證，無需信用卡或付費門檻。",
+      "focusTags": []
     },
     {
       "title": "Alibaba's Qwen3.7-Max can run for 35 hours autonomously and supports external harnesses like Claude Code",
@@ -198,7 +221,8 @@
       "source": "Google News / Venturebeat",
       "time": "05/21 15:53",
       "sentiment": "😐 中性",
-      "body": "阿里巴巴 Qwen3.7-Max 聲稱可持續自主運行 35 小時，並支援 Claude Code 等外部 harness 框架，顯示競品正在直接瞄準 Claude Code 的使用場景。"
+      "body": "阿里巴巴 Qwen3.7-Max 聲稱可持續自主運行 35 小時，並支援 Claude Code 等外部 harness 框架，顯示競品正在直接瞄準 Claude Code 的使用場景。",
+      "focusTags": []
     },
     {
       "title": "CLAUDE.md for Angular: 13 Rules That Make AI Write Idiomatic, Production-Ready Components",
@@ -206,7 +230,8 @@
       "source": "dev.to / #claudecode",
       "time": "05/22 02:58",
       "sentiment": "😊 正面",
-      "body": "針對 Angular 框架整理 13 條 CLAUDE.md 規則，引導 Claude Code 生成符合 Angular 慣例的生產級元件，包含嚴格 TypeScript、模組、服務、guard 等場景。"
+      "body": "針對 Angular 框架整理 13 條 CLAUDE.md 規則，引導 Claude Code 生成符合 Angular 慣例的生產級元件，包含嚴格 TypeScript、模組、服務、guard 等場景。",
+      "focusTags": []
     },
     {
       "title": "From Copilot to Cursor to Claude Code for VS Code: My Journey to the Optimal Setup",
@@ -214,7 +239,8 @@
       "source": "dev.to / #claudecode",
       "time": "05/21 16:53",
       "sentiment": "😊 正面",
-      "body": "開發者分享從 GitHub Copilot → Cursor → Claude Code for VS Code 的工具遷移歷程，比較各工具在實際使用上的取捨，對選擇 AI 編碼工具的開發者具參考價值。"
+      "body": "開發者分享從 GitHub Copilot → Cursor → Claude Code for VS Code 的工具遷移歷程，比較各工具在實際使用上的取捨，對選擇 AI 編碼工具的開發者具參考價值。",
+      "focusTags": []
     },
     {
       "title": "Building Your Own Personal AI Agent part II. - Structure",
@@ -222,7 +248,8 @@
       "source": "Reddit / r/ClaudeAI",
       "time": "05/22 03:24",
       "sentiment": "😊 正面",
-      "body": "個人 AI Agent 建構系列文第二篇，前篇「100 個技巧」獲得 9 萬次觀看，本篇深入 CLAUDE.md 架構設計，回應社群要求展示實際檔案結構的呼聲。"
+      "body": "個人 AI Agent 建構系列文第二篇，前篇「100 個技巧」獲得 9 萬次觀看，本篇深入 CLAUDE.md 架構設計，回應社群要求展示實際檔案結構的呼聲。",
+      "focusTags": []
     },
     {
       "title": "claude's thinking is gone?",
@@ -230,7 +257,8 @@
       "source": "Reddit / r/ClaudeAI",
       "time": "05/22 03:37",
       "sentiment": "😤 負面",
-      "body": "用戶反映從 Zed 切換至 Claude Code CLI 或桌面版後，即使開啟 verbose 模式仍無法看到 Claude 的思考過程（extended thinking 輸出），引發對不同客戶端功能差異的疑問。"
+      "body": "用戶反映從 Zed 切換至 Claude Code CLI 或桌面版後，即使開啟 verbose 模式仍無法看到 Claude 的思考過程（extended thinking 輸出），引發對不同客戶端功能差異的疑問。",
+      "focusTags": []
     },
     {
       "title": "Ron537/DPlex: Terminal multiplexer for AI-assisted development",
@@ -238,7 +266,8 @@
       "source": "Reddit / r/ClaudeAI",
       "time": "05/22 04:21",
       "sentiment": "😊 正面",
-      "body": "DPlex 是針對 AI 輔助開發設計的終端機多工器，解決多個 Claude Code / GitHub Copilot CLI session 跨視窗管理的狀態消失問題，重啟後可還原完整佈局。"
+      "body": "DPlex 是針對 AI 輔助開發設計的終端機多工器，解決多個 Claude Code / GitHub Copilot CLI session 跨視窗管理的狀態消失問題，重啟後可還原完整佈局。",
+      "focusTags": []
     },
     {
       "title": "Claude 4来了：Anthropic用7小时不间断编程证明AI的边界正在被重新定义",
@@ -246,7 +275,8 @@
       "source": "dev.to / #anthropic",
       "time": "05/21 17:01",
       "sentiment": "😊 正面",
-      "body": "簡體中文文章報導 Claude Opus 4 與 Sonnet 4 在 Anthropic 首屆開發者大會正式發布，引用 Rakuten AI 總經理實測案例，稱 Claude Opus 4 在複雜專案中連續不間斷工作 7 小時。注意：此為社群轉載，非官方公告，部分內容待核實。"
+      "body": "簡體中文文章報導 Claude Opus 4 與 Sonnet 4 在 Anthropic 首屆開發者大會正式發布，引用 Rakuten AI 總經理實測案例，稱 Claude Opus 4 在複雜專案中連續不間斷工作 7 小時。注意：此為社群轉載，非官方公告，部分內容待核實。",
+      "focusTags": []
     }
   ],
   "billing": [
@@ -256,7 +286,8 @@
       "source": "Reddit / r/ClaudeAI",
       "time": "05/21 22:03",
       "sentiment": "",
-      "body": "Claude Code 切換為 usage-based 計費後，多位用戶遭遇意外高額帳單（單週 $1,400、單次 session $6,000 案例均已出現）。Karpathy 加入 Anthropic 後提倡的「最小必要上下文」原則，正在成為費用控管的社群共識。"
+      "body": "Claude Code 切換為 usage-based 計費後，多位用戶遭遇意外高額帳單（單週 $1,400、單次 session $6,000 案例均已出現）。Karpathy 加入 Anthropic 後提倡的「最小必要上下文」原則，正在成為費用控管的社群共識。",
+      "focusTags": []
     }
   ],
   "focus": [

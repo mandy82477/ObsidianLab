@@ -11,7 +11,8 @@
       "source": "GitHub / anthropics/claude-code",
       "time": "05/07 23:49",
       "sentiment": "",
-      "body": "新增 `worktree.baseRef` 設定（`fresh` | `head`），讓使用者可控制 `--worktree`、`EnterWorktree` 及代理隔離工作樹要從 `origin/<default>` 分支還是本地 `HEAD` 建立，提供更靈活的多工作樹管理策略。"
+      "body": "新增 `worktree.baseRef` 設定（`fresh` | `head`），讓使用者可控制 `--worktree`、`EnterWorktree` 及代理隔離工作樹要從 `origin/<default>` 分支還是本地 `HEAD` 建立，提供更靈活的多工作樹管理策略。",
+      "focusTags": []
     },
     {
       "title": "Claude Sonnet 4.8 Leaks Reveal About Anthropic's Next AI Release",
@@ -19,7 +20,8 @@
       "source": "Google News / Geeky Gadgets",
       "time": "05/07 11:17",
       "sentiment": "",
-      "body": "Geeky Gadgets 報導有關 Claude Sonnet 4.8 的外洩資訊，暗示 Anthropic 下一代 Sonnet 版本可能即將到來；目前尚無官方確認，詳細規格有待查證，建議持觀察態度。"
+      "body": "Geeky Gadgets 報導有關 Claude Sonnet 4.8 的外洩資訊，暗示 Anthropic 下一代 Sonnet 版本可能即將到來；目前尚無官方確認，詳細規格有待查證，建議持觀察態度。",
+      "focusTags": []
     },
     {
       "title": "Show HN: BrowserCode – Run Claude Code in the Browser via WebAssembly",
@@ -27,7 +29,8 @@
       "source": "Hacker News",
       "time": "05/07 14:10",
       "sentiment": "",
-      "body": "BrowserCode 第二版預覽釋出，基於 WebAssembly 技術讓 Claude Code 等 TUI 代理工具完全在瀏覽器中執行，支援 Node.js、Python、git、bash，並新增初步行動裝置支援，以 Apache 2.0 授權開源，無需本機安裝環境。"
+      "body": "BrowserCode 第二版預覽釋出，基於 WebAssembly 技術讓 Claude Code 等 TUI 代理工具完全在瀏覽器中執行，支援 Node.js、Python、git、bash，並新增初步行動裝置支援，以 Apache 2.0 授權開源，無需本機安裝環境。",
+      "focusTags": []
     },
     {
       "title": "How to Check If Your Claude Code Installation Is Affected by CVE-2026-39861 (CVSS 7.7)",
@@ -35,7 +38,8 @@
       "source": "dev.to / #claudecode",
       "time": "05/07 18:32",
       "sentiment": "",
-      "body": "詳細的漏洞自查指南，說明如何確認 Claude Code 是否受 CVE-2026-39861（symlink 沙箱逃逸）影響；漏洞已在 v2.1.64 修補，所有使用舊版本的使用者應立即升級。"
+      "body": "詳細的漏洞自查指南，說明如何確認 Claude Code 是否受 CVE-2026-39861（symlink 沙箱逃逸）影響；漏洞已在 v2.1.64 修補，所有使用舊版本的使用者應立即升級。",
+      "focusTags": []
     },
     {
       "title": "OpticOdds launches as first odds data API available via MCP for Claude Desktop",
@@ -43,7 +47,8 @@
       "source": "Google News / Yogonet",
       "time": "05/08 01:01",
       "sentiment": "",
-      "body": "OpticOdds 宣佈成為首個透過 MCP（Model Context Protocol）向 Claude Desktop 提供即時運動賠率資料的 API 服務，是 MCP 生態系從開發工具向垂直產業延伸的一個具體案例。"
+      "body": "OpticOdds 宣佈成為首個透過 MCP（Model Context Protocol）向 Claude Desktop 提供即時運動賠率資料的 API 服務，是 MCP 生態系從開發工具向垂直產業延伸的一個具體案例。",
+      "focusTags": []
     }
   ],
   "discussions": [
@@ -53,7 +58,8 @@
       "source": "Reddit / r/ClaudeAI",
       "time": "05/08 01:52",
       "sentiment": "😊 正面",
-      "body": "開發者分享自建本機持久化記憶層的架構設計，透過 MCP 整合實現 39ms 快速檢索，解決每次對話從零開始以及 wiki 成長後大量消耗 token 的痛點，完整架構說明獲社群廣泛關注。"
+      "body": "開發者分享自建本機持久化記憶層的架構設計，透過 MCP 整合實現 39ms 快速檢索，解決每次對話從零開始以及 wiki 成長後大量消耗 token 的痛點，完整架構說明獲社群廣泛關注。",
+      "focusTags": []
     },
     {
       "title": "Claudy: A Rust-based Power-Tool for Claude Code",
@@ -61,7 +67,8 @@
       "source": "Reddit / r/ClaudeAI",
       "time": "05/08 01:49",
       "sentiment": "😊 正面",
-      "body": "以 Rust 撰寫的 Claude Code 擴充工具，支援多供應商（Anthropic、Gemini、Codex 等）設定檔一鍵切換、本地代理 MCP 橋接及 token 用量分析，解決原生 CLI 在多模型環境配置上的繁瑣問題。"
+      "body": "以 Rust 撰寫的 Claude Code 擴充工具，支援多供應商（Anthropic、Gemini、Codex 等）設定檔一鍵切換、本地代理 MCP 橋接及 token 用量分析，解決原生 CLI 在多模型環境配置上的繁瑣問題。",
+      "focusTags": []
     },
     {
       "title": "Show HN: Transform Claude/Codex/Cursor sessions into high-value data assets",
@@ -69,7 +76,8 @@
       "source": "Hacker News",
       "time": "05/07 13:40",
       "sentiment": "😊 正面",
-      "body": "DataMoat 以 AES-256-GCM 加密將 AI 代理工作記錄保存為本機私有資產，支援搜尋、重用與移交，vault 金鑰及記錄資料完全留在使用者機器上，適合有資料安全顧慮的企業開發者。"
+      "body": "DataMoat 以 AES-256-GCM 加密將 AI 代理工作記錄保存為本機私有資產，支援搜尋、重用與移交，vault 金鑰及記錄資料完全留在使用者機器上，適合有資料安全顧慮的企業開發者。",
+      "focusTags": []
     },
     {
       "title": "Open-sourced a 4-agent code review workflow. Wrap it as an MCP and your Claude Code calls it instead of CodeRabbit.",
@@ -77,7 +85,8 @@
       "source": "Reddit / r/ClaudeAI",
       "time": "05/08 00:34",
       "sentiment": "😊 正面",
-      "body": "開源的 4 代理程式碼審查工作流：一位架構師代理（僅負責協調、不直接產出意見）加三位來自不同模型廠商的專家代理，最終審查意見必須有具體證據支撐，可包裝為 MCP 伺服器供 Claude Code 呼叫，以 MIT 授權釋出。"
+      "body": "開源的 4 代理程式碼審查工作流：一位架構師代理（僅負責協調、不直接產出意見）加三位來自不同模型廠商的專家代理，最終審查意見必須有具體證據支撐，可包裝為 MCP 伺服器供 Claude Code 呼叫，以 MIT 授權釋出。",
+      "focusTags": []
     },
     {
       "title": "I spent 3 months testing 120 prompt patterns so you don't have to",
@@ -85,7 +94,8 @@
       "source": "Reddit / r/ClaudeAI",
       "time": "05/08 00:49",
       "sentiment": "😊 正面",
-      "body": "使用者系統性整理並實測 120 種提示詞模式，資料來源涵蓋 Discord、GitHub、Twitter 及個人使用，強調以可量測的輸出差異為判斷依據而非主觀感受，是少見的實證型 Claude Code 使用心得。"
+      "body": "使用者系統性整理並實測 120 種提示詞模式，資料來源涵蓋 Discord、GitHub、Twitter 及個人使用，強調以可量測的輸出差異為判斷依據而非主觀感受，是少見的實證型 Claude Code 使用心得。",
+      "focusTags": []
     },
     {
       "title": "After the Skill Vault: 3 More Hidden Token Sinks in Claude Code",
@@ -93,7 +103,8 @@
       "source": "dev.to / #claudecode",
       "time": "05/07 16:48",
       "sentiment": "😐 中性",
-      "body": "繼 Skill Vault 模式後，作者進一步揭露三個隱藏的 token 消耗來源，對想要精準控制使用成本的開發者而言是實用的優化補充。"
+      "body": "繼 Skill Vault 模式後，作者進一步揭露三個隱藏的 token 消耗來源，對想要精準控制使用成本的開發者而言是實用的優化補充。",
+      "focusTags": []
     },
     {
       "title": "Claude in the editor vs terminal vs bridge.",
@@ -101,7 +112,8 @@
       "source": "Reddit / r/ClaudeAI",
       "time": "05/07 21:41",
       "sentiment": "😐 中性",
-      "body": "深入比較 Claude Code 三種整合模式的優劣：編輯器嵌入（Cursor/Windsurf，緊密 UX 但受廠商管控）、終端機原生（全功能但無 IDE 上下文）、橋接方案，對於選擇開發工作流的工程師有參考價值。"
+      "body": "深入比較 Claude Code 三種整合模式的優劣：編輯器嵌入（Cursor/Windsurf，緊密 UX 但受廠商管控）、終端機原生（全功能但無 IDE 上下文）、橋接方案，對於選擇開發工作流的工程師有參考價值。",
+      "focusTags": []
     },
     {
       "title": "I used Claude Code + Codex for 2 months and hit 3.77 billion tokens in a single month",
@@ -109,7 +121,8 @@
       "source": "dev.to / #claudecode",
       "time": "05/08 01:24",
       "sentiment": "🤔 褒貶不一",
-      "body": "開發者同時使用 Claude Code 與 OpenAI Codex 兩個月，揭露單月消耗高達 37.7 億 token 的驚人用量，引發社群對 token 效率管理與實際開發成本的關注討論。"
+      "body": "開發者同時使用 Claude Code 與 OpenAI Codex 兩個月，揭露單月消耗高達 37.7 億 token 的驚人用量，引發社群對 token 效率管理與實際開發成本的關注討論。",
+      "focusTags": []
     },
     {
       "title": "Anthropic's Boris Cherny: Why Coding Is Solved, and What Comes Next [video]",
@@ -117,7 +130,8 @@
       "source": "Hacker News",
       "time": "05/07 15:11",
       "sentiment": "🤔 褒貶不一",
-      "body": "Boris Cherny 在 AI Ascent 2026 演講中表示自己 2026 年從未手寫一行程式、每天從手機發出數十個 PR；社群反應兩極，有人認同 AI 輔助開發的效率躍升，也有人直接回應「Claude Code 太不穩定，已放棄使用」。"
+      "body": "Boris Cherny 在 AI Ascent 2026 演講中表示自己 2026 年從未手寫一行程式、每天從手機發出數十個 PR；社群反應兩極，有人認同 AI 輔助開發的效率躍升，也有人直接回應「Claude Code 太不穩定，已放棄使用」。",
+      "focusTags": []
     },
     {
       "title": "Claude Cowork has not been working for the past week — Linux sandbox fails to start",
@@ -125,7 +139,8 @@
       "source": "Reddit / r/ClaudeAI",
       "time": "05/07 22:28",
       "sentiment": "😤 負面",
-      "body": "使用者回報 Claude Cowork 的 Linux 沙箱持續無法啟動，在多台電腦重新安裝後問題依然存在，Anthropic 狀態頁面卻顯示一切正常，疑似為帳號層級的隱性故障，目前尚未獲得官方回應。"
+      "body": "使用者回報 Claude Cowork 的 Linux 沙箱持續無法啟動，在多台電腦重新安裝後問題依然存在，Anthropic 狀態頁面卻顯示一切正常，疑似為帳號層級的隱性故障，目前尚未獲得官方回應。",
+      "focusTags": []
     },
     {
       "title": "This Claude Code project really turned out great!",
@@ -133,7 +148,8 @@
       "source": "Reddit / r/ClaudeAI",
       "time": "05/08 01:49",
       "sentiment": "😊 正面",
-      "body": "有 26 年技術資歷的開發者分享 Claude Code 重燃了他的開發熱情，已用 Claude Code 完成包含 allintrainer.com 在內的多個專案，在近期安全負面消息的背景下，這則真實正面使用心得格外引人共鳴。"
+      "body": "有 26 年技術資歷的開發者分享 Claude Code 重燃了他的開發熱情，已用 Claude Code 完成包含 allintrainer.com 在內的多個專案，在近期安全負面消息的背景下，這則真實正面使用心得格外引人共鳴。",
+      "focusTags": []
     },
     {
       "title": "Show HN: My Collection of UX / AI Design Claude Code Skills",
@@ -141,7 +157,8 @@
       "source": "Hacker News",
       "time": "05/07 16:19",
       "sentiment": "😊 正面",
-      "body": "開發者整理了一批以 Nielsen 和 Shape of AI 等 UX 原則為基礎的 Claude Code 技能集，供設計導向的工程師重複使用，減少每次重查設計規範的時間成本。"
+      "body": "開發者整理了一批以 Nielsen 和 Shape of AI 等 UX 原則為基礎的 Claude Code 技能集，供設計導向的工程師重複使用，減少每次重查設計規範的時間成本。",
+      "focusTags": []
     }
   ],
   "billing": [
@@ -151,7 +168,8 @@
       "source": "Google News / Pulse 2.0",
       "time": "05/07 12:08",
       "sentiment": "",
-      "body": "Anthropic 正式宣佈在與 SpaceX 達成算力合作後提升 Claude Code 使用配額，借助 Colossus 叢集 220,000 顆 GPU 的資源，長期被用戶詬病的使用限制問題首次出現明確的政策回應，是近期訂閱用戶最直接的好消息。"
+      "body": "Anthropic 正式宣佈在與 SpaceX 達成算力合作後提升 Claude Code 使用配額，借助 Colossus 叢集 220,000 顆 GPU 的資源，長期被用戶詬病的使用限制問題首次出現明確的政策回應，是近期訂閱用戶最直接的好消息。",
+      "focusTags": []
     }
   ],
   "focus": [

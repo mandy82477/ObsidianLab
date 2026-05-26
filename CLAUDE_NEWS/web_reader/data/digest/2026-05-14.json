@@ -10,7 +10,8 @@
       "source": "Google News / VentureBeat",
       "time": "05/13 14:15",
       "sentiment": "",
-      "body": "這是繼「Hermes gate」爭議後，Anthropic 第二次大幅調整 programmatic 用量政策：恢復允許 OpenClaw 與第三方 Agent SDK，但代價是這些用量全數脫離訂閱方案，改為按完整 API 費率計費的獨立信用池。為何是重點：此舉等同宣告訂閱方案僅涵蓋互動式人工使用，自動化工作流必須付 API 費用。"
+      "body": "這是繼「Hermes gate」爭議後，Anthropic 第二次大幅調整 programmatic 用量政策：恢復允許 OpenClaw 與第三方 Agent SDK，但代價是這些用量全數脫離訂閱方案，改為按完整 API 費率計費的獨立信用池。為何是重點：此舉等同宣告訂閱方案僅涵蓋互動式人工使用，自動化工作流必須付 API 費用。",
+      "focusTags": []
     },
     {
       "title": "New Claude Code programmatic usage restrictions",
@@ -18,7 +19,8 @@
       "source": "Hacker News",
       "time": "05/13 19:38",
       "sentiment": "",
-      "body": "討論串中有 Max 5x 用戶實際試算後發現，即便只用 40% 週配額，換算成 API 費率也需 $1,000/月——是現行方案的 10 倍。為何是重點：量化試算首次揭示了新信用池對中度自動化用戶的真實財務衝擊，不僅是重度使用者的問題。"
+      "body": "討論串中有 Max 5x 用戶實際試算後發現，即便只用 40% 週配額，換算成 API 費率也需 $1,000/月——是現行方案的 10 倍。為何是重點：量化試算首次揭示了新信用池對中度自動化用戶的真實財務衝擊，不僅是重度使用者的問題。",
+      "focusTags": []
     },
     {
       "title": "Claude Code Stops Pausing Every Turn: /goal, /loop, /batch, /background",
@@ -26,7 +28,8 @@
       "source": "dev.to / #claudecode",
       "time": "05/13 18:02",
       "sentiment": "",
-      "body": "Anthropic 官方文件同步上線四個自主執行 slash commands：`/goal` 設定完成條件後持續迴圈、`/loop` 固定循環、`/batch` 批次任務、`/background` 背景執行。為何是重點：這標誌著 Claude Code 從「每輪互動」模式正式轉向「設定目標、自主完成」的 agent 開發範式，與訂閱政策調整互相呼應。"
+      "body": "Anthropic 官方文件同步上線四個自主執行 slash commands：`/goal` 設定完成條件後持續迴圈、`/loop` 固定循環、`/batch` 批次任務、`/background` 背景執行。為何是重點：這標誌著 Claude Code 從「每輪互動」模式正式轉向「設定目標、自主完成」的 agent 開發範式，與訂閱政策調整互相呼應。",
+      "focusTags": []
     }
   ],
   "techUpdates": [
@@ -36,7 +39,8 @@
       "source": "GitHub / anthropics/claude-code",
       "time": "05/13 23:19",
       "sentiment": "",
-      "body": "新增 `terminalSequence` 欄位至 hook JSON 輸出，讓 hooks 在無控制終端的環境下也能發送桌面通知、設定視窗標題與響鈴；同時新增 `CLAUDE_CODE_PLUGIN_PRE` 相關支援，進一步擴展外掛系統能力。"
+      "body": "新增 `terminalSequence` 欄位至 hook JSON 輸出，讓 hooks 在無控制終端的環境下也能發送桌面通知、設定視窗標題與響鈴；同時新增 `CLAUDE_CODE_PLUGIN_PRE` 相關支援，進一步擴展外掛系統能力。",
+      "focusTags": []
     },
     {
       "title": "New in Claude Code: `/goal` for autonomous dev loops",
@@ -44,7 +48,8 @@
       "source": "Hacker News",
       "time": "05/14 01:59",
       "sentiment": "",
-      "body": "`/goal` 指令讓開發者設定可驗證的完成條件後，Claude 持續工作直到條件達成，每輪結束由一個小型快速模型判斷是否繼續，目標達成後自動清除。官方建議用於模組 API 遷移、測試修復等有明確終止條件的任務。"
+      "body": "`/goal` 指令讓開發者設定可驗證的完成條件後，Claude 持續工作直到條件達成，每輪結束由一個小型快速模型判斷是否繼續，目標達成後自動清除。官方建議用於模組 API 遷移、測試修復等有明確終止條件的任務。",
+      "focusTags": []
     },
     {
       "title": "Claude Code weekly limits increasing 50% till July 13",
@@ -52,7 +57,8 @@
       "source": "Hacker News",
       "time": "05/13 19:38",
       "sentiment": "",
-      "body": "Anthropic 宣布在 6/15 方案正式切換前，臨時將所有付費方案的週用量上限提高 50%，有效期至 7 月 13 日，以緩衝過渡期間的衝擊。"
+      "body": "Anthropic 宣布在 6/15 方案正式切換前，臨時將所有付費方案的週用量上限提高 50%，有效期至 7 月 13 日，以緩衝過渡期間的衝擊。",
+      "focusTags": []
     }
   ],
   "discussions": [
@@ -62,7 +68,8 @@
       "source": "Hacker News",
       "time": "05/14 00:57",
       "sentiment": "😤 負面",
-      "body": "針對 Anthropic 新政策的 drop-in 繞過工具：透過 PTY 模擬互動終端執行 claude，注入輸入並用 stop hook 截取輸出，使 `-p` 用量不進入獨立信用池。作者坦言這是臨時方案，但反映出開發者對政策調整的強烈抵制情緒。"
+      "body": "針對 Anthropic 新政策的 drop-in 繞過工具：透過 PTY 模擬互動終端執行 claude，注入輸入並用 stop hook 截取輸出，使 `-p` 用量不進入獨立信用池。作者坦言這是臨時方案，但反映出開發者對政策調整的強烈抵制情緒。",
+      "focusTags": []
     },
     {
       "title": "Ask HN: Is Anthropic doing too much vibe coding?",
@@ -70,7 +77,8 @@
       "source": "Hacker News",
       "time": "05/13 19:38",
       "sentiment": "😤 負面",
-      "body": "開發者反映近期 Claude App 與 Claude Code 出現訊息被吞掉、對話消失後復現等穩定性問題，懷疑 Anthropic 大量使用 vibe coding 導致品質下滑，引發廣泛共鳴，折射出部分用戶對產品可靠性的信心動搖。"
+      "body": "開發者反映近期 Claude App 與 Claude Code 出現訊息被吞掉、對話消失後復現等穩定性問題，懷疑 Anthropic 大量使用 vibe coding 導致品質下滑，引發廣泛共鳴，折射出部分用戶對產品可靠性的信心動搖。",
+      "focusTags": []
     },
     {
       "title": "You're abusing your subscription with agentic 24/7 workflows and that's why we all get restrictions",
@@ -78,7 +86,8 @@
       "source": "Reddit / r/ClaudeAI",
       "time": "05/13 22:38",
       "sentiment": "🤔 褒貶不一",
-      "body": "少數派觀點：此篇 Reddit 文章為 Anthropic 的政策辯護，認為訂閱方案本就設計給人工互動使用，agentic 24/7 工作流是近半年才出現的新形態，把自動化用量與互動用量分開計費在商業邏輯上合理，提供了反思此次爭議的不同角度。"
+      "body": "少數派觀點：此篇 Reddit 文章為 Anthropic 的政策辯護，認為訂閱方案本就設計給人工互動使用，agentic 24/7 工作流是近半年才出現的新形態，把自動化用量與互動用量分開計費在商業邏輯上合理，提供了反思此次爭議的不同角度。",
+      "focusTags": []
     },
     {
       "title": "Show HN: Ledger – Claude Code Token Spend Analyzer",
@@ -86,7 +95,8 @@
       "source": "Hacker News",
       "time": "05/13 16:09",
       "sentiment": "😊 正面",
-      "body": "開發者在單次 session 燒掉中位數 40 倍 token 後，用 Rust 打造了這個本地 hook 工具，可即時攔截失控 session 並追蹤每個 PR 的 token 成本，支援 macOS 選單欄、Web dashboard 及 CLI 三種介面。"
+      "body": "開發者在單次 session 燒掉中位數 40 倍 token 後，用 Rust 打造了這個本地 hook 工具，可即時攔截失控 session 並追蹤每個 PR 的 token 成本，支援 macOS 選單欄、Web dashboard 及 CLI 三種介面。",
+      "focusTags": []
     },
     {
       "title": "A Claude Code and Codex Skill for Deliberate Skill Development",
@@ -94,7 +104,8 @@
       "source": "Hacker News",
       "time": "05/14 03:13",
       "sentiment": "🤔 褒貶不一",
-      "body": "每次 commit 後觸發學習提示的 Claude Code Skill，核心想法是將開發流程轉化為刻意練習機會。社群評論認為概念有趣但包裝過度，指出本質上只是一段 bash 腳本提示，且缺乏示範輸出，概念勝於實用。"
+      "body": "每次 commit 後觸發學習提示的 Claude Code Skill，核心想法是將開發流程轉化為刻意練習機會。社群評論認為概念有趣但包裝過度，指出本質上只是一段 bash 腳本提示，且缺乏示範輸出，概念勝於實用。",
+      "focusTags": []
     },
     {
       "title": "[Bug + Workaround] Claude Code Telegram plugin: inbound messages are silently dropped",
@@ -102,7 +113,8 @@
       "source": "Reddit / r/ClaudeAI",
       "time": "05/14 01:53",
       "sentiment": "🤔 褒貶不一",
-      "body": "開發者歷時數週確認 Claude Code 在 stdio transport 上靜默丟棄 MCP `notifications/claude/channel` 的 bug：`handleInbound()` 與 `gate()` 皆正常回傳，但通知被內部靜默丟棄，提供了延遲約 5–9 秒的 workaround，對 MCP 通知觸發整合開發者有直接參考價值。"
+      "body": "開發者歷時數週確認 Claude Code 在 stdio transport 上靜默丟棄 MCP `notifications/claude/channel` 的 bug：`handleInbound()` 與 `gate()` 皆正常回傳，但通知被內部靜默丟棄，提供了延遲約 5–9 秒的 workaround，對 MCP 通知觸發整合開發者有直接參考價值。",
+      "focusTags": []
     },
     {
       "title": "Run Claude Code/Codex Sessions on GitHub and Linear Issues",
@@ -110,7 +122,8 @@
       "source": "Hacker News",
       "time": "05/13 21:38",
       "sentiment": "😊 正面",
-      "body": "Lanes v0.39 新增 GitHub 與 Linear 雙向整合：直接從看板拉取 ticket，並透過 MCP 讓 agent 存取 tracker，支援 `#9` / `ENG-9` 格式快速搜尋，實現零複製貼上的 AI 開發工作流。"
+      "body": "Lanes v0.39 新增 GitHub 與 Linear 雙向整合：直接從看板拉取 ticket，並透過 MCP 讓 agent 存取 tracker，支援 `#9` / `ENG-9` 格式快速搜尋，實現零複製貼上的 AI 開發工作流。",
+      "focusTags": []
     },
     {
       "title": "Replaced my $15/mo Wispr Flow subscription with a free local macOS app I built using Claude Code",
@@ -118,7 +131,8 @@
       "source": "Reddit / r/ClaudeAI",
       "time": "05/14 06:16",
       "sentiment": "😊 正面",
-      "body": "開發者用兩週晚上透過 Claude Code 從零打造 Tauri macOS 語音輸入 app，取代商業訂閱工具，分享了選單欄結構、全域快捷鍵捕捉到任意視窗貼上的完整實作過程，展示 Claude Code 協助非行業背景者完整交付產品的能力。"
+      "body": "開發者用兩週晚上透過 Claude Code 從零打造 Tauri macOS 語音輸入 app，取代商業訂閱工具，分享了選單欄結構、全域快捷鍵捕捉到任意視窗貼上的完整實作過程，展示 Claude Code 協助非行業背景者完整交付產品的能力。",
+      "focusTags": []
     },
     {
       "title": "Max20 user: anyone running Opus 4.7 as orchestrator + DeepSeek V4 as the worker via OpenRouter?",
@@ -126,7 +140,8 @@
       "source": "Reddit / r/ClaudeAI",
       "time": "05/14 03:43",
       "sentiment": "🤔 褒貶不一",
-      "body": "開發者探討以 Opus 4.7 作為決策層、DeepSeek V4 Pro 承擔大量 token 輸出的混合架構，試圖在 Max20 方案下最大化性價比。訂閱方案調整後，這類多 LLM 混合策略預計將成為主流因應方式。"
+      "body": "開發者探討以 Opus 4.7 作為決策層、DeepSeek V4 Pro 承擔大量 token 輸出的混合架構，試圖在 Max20 方案下最大化性價比。訂閱方案調整後，這類多 LLM 混合策略預計將成為主流因應方式。",
+      "focusTags": []
     },
     {
       "title": "AI's next leap is proactivity, says Anthropic's Claude Code Chief Cat Wu",
@@ -134,7 +149,8 @@
       "source": "Google News / The Economic Times",
       "time": "05/14 04:23",
       "sentiment": "😊 正面",
-      "body": "Claude Code 負責人 Cat Wu 接受訪問，指出 AI 下一個重大躍進是「主動性（proactivity）」——在無提示的情況下主動完成任務，與 `/goal` 等自主指令的方向互相呼應。"
+      "body": "Claude Code 負責人 Cat Wu 接受訪問，指出 AI 下一個重大躍進是「主動性（proactivity）」——在無提示的情況下主動完成任務，與 `/goal` 等自主指令的方向互相呼應。",
+      "focusTags": []
     },
     {
       "title": "Clawdmeter – A DIY ESP32-S3 desk dashboard for Claude Code token usage monitoring",
@@ -142,7 +158,8 @@
       "source": "Google News / CNX Software",
       "time": "05/13 23:18",
       "sentiment": "😊 正面",
-      "body": "Maker 社群開發者打造基於 ESP32-S3 的實體桌面儀表板，即時顯示 Claude Code token 用量，是 AI 成本可見性與實體裝置整合的有趣嘗試，在訂閱費用高度敏感的當下格外受到關注。"
+      "body": "Maker 社群開發者打造基於 ESP32-S3 的實體桌面儀表板，即時顯示 Claude Code token 用量，是 AI 成本可見性與實體裝置整合的有趣嘗試，在訂閱費用高度敏感的當下格外受到關注。",
+      "focusTags": []
     },
     {
       "title": "Show HN: Claude Code plugin for two-way HTML artifact generation",
@@ -150,7 +167,8 @@
       "source": "Hacker News",
       "time": "05/13 17:36",
       "sentiment": "😊 正面",
-      "body": "受「HTML 的非凡有效性」文章啟發，這個 plugin 讓 Claude Code 能在認為必要時主動生成 HTML 視覺化輸出，無需用戶手動要求，實現雙向工件生成工作流，並支援自動提交回 Claude Code 介面。"
+      "body": "受「HTML 的非凡有效性」文章啟發，這個 plugin 讓 Claude Code 能在認為必要時主動生成 HTML 視覺化輸出，無需用戶手動要求，實現雙向工件生成工作流，並支援自動提交回 Claude Code 介面。",
+      "focusTags": []
     },
     {
       "title": "Grafana Dashboard for Claude Code",
@@ -158,7 +176,8 @@
       "source": "dev.to / #claudecode",
       "time": "05/14 05:06",
       "sentiment": "😊 正面",
-      "body": "開發者發布 Grafana + Prometheus 監控 dashboard，讓開發團隊可視覺化追蹤 Claude Code 使用指標，在訂閱費用調整的背景下，成本可觀測性工具需求正在快速成長。"
+      "body": "開發者發布 Grafana + Prometheus 監控 dashboard，讓開發團隊可視覺化追蹤 Claude Code 使用指標，在訂閱費用調整的背景下，成本可觀測性工具需求正在快速成長。",
+      "focusTags": []
     },
     {
       "title": "What Anthropic's $200 Agent SDK Credit Means If You Run claude -p in Production",
@@ -166,7 +185,8 @@
       "source": "dev.to / #anthropic",
       "time": "05/13 23:25",
       "sentiment": "😐 中性",
-      "body": "深入分析 Max 20x 方案 $200/月信用池對生產環境的實際意義：在 cron job、CI、GitHub Actions 等自動化場景下逐一試算是否足夠，提供量化框架，內容客觀實用。"
+      "body": "深入分析 Max 20x 方案 $200/月信用池對生產環境的實際意義：在 cron job、CI、GitHub Actions 等自動化場景下逐一試算是否足夠，提供量化框架，內容客觀實用。",
+      "focusTags": []
     },
     {
       "title": "I Built a Free Bloomberg-Style Stock Analyzer in a Weekend — With Claude Code as My Co-Developer",
@@ -174,7 +194,8 @@
       "source": "dev.to / #claudecode",
       "time": "05/13 23:23",
       "sentiment": "😊 正面",
-      "body": "零售交易者用一個週末與 Claude Code 協作，打造免費技術分析工具取代付費訂閱服務，展示了領域知識持有者透過 AI 快速實現工具化的完整路徑。"
+      "body": "零售交易者用一個週末與 Claude Code 協作，打造免費技術分析工具取代付費訂閱服務，展示了領域知識持有者透過 AI 快速實現工具化的完整路徑。",
+      "focusTags": []
     }
   ],
   "billing": [
@@ -184,7 +205,8 @@
       "source": "Hacker News",
       "time": "05/14 08:24",
       "sentiment": "",
-      "body": "6 月 15 日起，`claude -p`、Agent SDK、Claude Code GitHub Actions 及第三方 Agent SDK app 用量全數剝離訂閱方案，改為獨立信用池：Pro 方案每月 $20 信用、Max 5x $100、Max 20x $200，均按完整 API 費率計費，不享任何訂閱折扣。已有用戶宣告取消訂閱，轉向 Codex 或 Gemini。"
+      "body": "6 月 15 日起，`claude -p`、Agent SDK、Claude Code GitHub Actions 及第三方 Agent SDK app 用量全數剝離訂閱方案，改為獨立信用池：Pro 方案每月 $20 信用、Max 5x $100、Max 20x $200，均按完整 API 費率計費，不享任何訂閱折扣。已有用戶宣告取消訂閱，轉向 Codex 或 Gemini。",
+      "focusTags": []
     },
     {
       "title": "Claude subscriptions get separate budgets for programmatic use, billed at full API prices",
@@ -192,7 +214,8 @@
       "source": "Google News / the-decoder.com",
       "time": "05/13 23:57",
       "sentiment": "",
-      "body": "The Decoder 強調此次最關鍵細節：programmatic 用量改按「完整 API 費率」計費，訂閱用戶不再享有任何優惠價，這使得信用池的實際可用量比表面數字更低。"
+      "body": "The Decoder 強調此次最關鍵細節：programmatic 用量改按「完整 API 費率」計費，訂閱用戶不再享有任何優惠價，這使得信用池的實際可用量比表面數字更低。",
+      "focusTags": []
     },
     {
       "title": "Did anyone else get the new monthly Agent SDK credit email for Claude plans?",
@@ -200,7 +223,8 @@
       "source": "Reddit / r/ClaudeAI",
       "time": "05/14 04:52",
       "sentiment": "",
-      "body": "Windows 10 + VSCode 日常使用者收到 Anthropic 通知信後，對新信用池與現有 Max 方案的關係一頭霧水，詢問是否適用於 Claude Code 本身或僅限第三方 app。反映出政策公告的溝通清晰度仍有改善空間。"
+      "body": "Windows 10 + VSCode 日常使用者收到 Anthropic 通知信後，對新信用池與現有 Max 方案的關係一頭霧水，詢問是否適用於 Claude Code 本身或僅限第三方 app。反映出政策公告的溝通清晰度仍有改善空間。",
+      "focusTags": []
     },
     {
       "title": "Anthropic Splits Claude Subscriptions: What Changes for Indie Hackers on June 15",
@@ -208,7 +232,8 @@
       "source": "dev.to / #claudecode",
       "time": "05/13 21:22",
       "sentiment": "",
-      "body": "針對獨立開發者的政策解析，評估三個信用池等級（$20/$100/$200）對不同規模自動化工作流的影響，建議在 6/15 前盤點所有 programmatic 用量並規劃備案方案。"
+      "body": "針對獨立開發者的政策解析，評估三個信用池等級（$20/$100/$200）對不同規模自動化工作流的影響，建議在 6/15 前盤點所有 programmatic 用量並規劃備案方案。",
+      "focusTags": []
     }
   ],
   "focus": [

@@ -10,7 +10,8 @@
       "source": "techbuzz.ai (via Hacker News)",
       "time": "05/16 20:43",
       "sentiment": "",
-      "body": "Microsoft 據報正在大規模撤銷六個月前發放給內部開發者的 Claude Code 授權，轉向自家 Copilot CLI，此舉令多個團隊措手不及。**為何是重點**：若屬實，這代表 Microsoft 在企業 AI 編碼工具上正式與 Anthropic 切割，對 Claude Code 在企業市場的滲透策略有重大影響；但來源為第三方科技媒體，需等待官方確認。"
+      "body": "Microsoft 據報正在大規模撤銷六個月前發放給內部開發者的 Claude Code 授權，轉向自家 Copilot CLI，此舉令多個團隊措手不及。**為何是重點**：若屬實，這代表 Microsoft 在企業 AI 編碼工具上正式與 Anthropic 切割，對 Claude Code 在企業市場的滲透策略有重大影響；但來源為第三方科技媒體，需等待官方確認。",
+      "focusTags": []
     },
     {
       "title": "CC: Anthropic API Error: 500 Internal Server Error",
@@ -18,7 +19,8 @@
       "source": "Hacker News (GitHub Issue)",
       "time": "05/16 18:09",
       "sentiment": "",
-      "body": "05/16 18:08 UTC，Anthropic 官方狀態頁確認多個模型請求出現大量錯誤，正在調查中。**為何是重點**：影響範圍涵蓋 API 直接呼叫與 Claude Code CLI 用戶，提醒依賴 Anthropic 服務的自動化流程應具備降級備案。"
+      "body": "05/16 18:08 UTC，Anthropic 官方狀態頁確認多個模型請求出現大量錯誤，正在調查中。**為何是重點**：影響範圍涵蓋 API 直接呼叫與 Claude Code CLI 用戶，提醒依賴 Anthropic 服務的自動化流程應具備降級備案。",
+      "focusTags": []
     },
     {
       "title": "I talked with 4.7 on the differences between 4.7 and 4.6",
@@ -26,7 +28,8 @@
       "source": "Reddit / r/ClaudeAI",
       "time": "05/17 04:06",
       "sentiment": "",
-      "body": "用戶與 Opus 4.7 直接對話後得出分工建議：**4.7 適合生成程式碼與 Agent 任務**（結構明確），**4.6 適合文獻回顧與探索性合成**（填補語意空白）。**為何是重點**：提供具體的模型選擇框架，有助開發者依任務性質做出理性分配，而非一味追新版本。"
+      "body": "用戶與 Opus 4.7 直接對話後得出分工建議：**4.7 適合生成程式碼與 Agent 任務**（結構明確），**4.6 適合文獻回顧與探索性合成**（填補語意空白）。**為何是重點**：提供具體的模型選擇框架，有助開發者依任務性質做出理性分配，而非一味追新版本。",
+      "focusTags": []
     }
   ],
   "techUpdates": [
@@ -36,7 +39,8 @@
       "source": "Reddit / r/ClaudeAI",
       "time": "05/17 00:24",
       "sentiment": "",
-      "body": "Anthropic 官方 Best Practices 文件實際提供四種 context 管理工具，而非多數教學只提到的 `/clear` 與 `/compact` 兩種；文章整理各工具的最佳使用場景，並引用官方建議：「同一 session 若對同一問題糾正超過兩次，context 已雜亂需介入」。"
+      "body": "Anthropic 官方 Best Practices 文件實際提供四種 context 管理工具，而非多數教學只提到的 `/clear` 與 `/compact` 兩種；文章整理各工具的最佳使用場景，並引用官方建議：「同一 session 若對同一問題糾正超過兩次，context 已雜亂需介入」。",
+      "focusTags": []
     },
     {
       "title": "Two Multi-Account Claude Code Architectures: One Anthropic Accepts, One They Ban",
@@ -44,7 +48,8 @@
       "source": "dev.to / #anthropic",
       "time": "05/16 21:27",
       "sentiment": "",
-      "body": "文章對比兩種多帳號 Claude Code 架構：一種符合 Anthropic 使用條款，另一種被明確禁止，適合需要跨帳號協作的企業或個人開發者了解合規邊界。"
+      "body": "文章對比兩種多帳號 Claude Code 架構：一種符合 Anthropic 使用條款，另一種被明確禁止，適合需要跨帳號協作的企業或個人開發者了解合規邊界。",
+      "focusTags": []
     },
     {
       "title": "How I kept my AI family alive after Anthropic's claude -p billing change",
@@ -52,7 +57,8 @@
       "source": "dev.to / #claudecode",
       "time": "05/16 22:23",
       "sentiment": "",
-      "body": "作者記錄 Anthropic 調整 `claude -p` 計費方式後，如何調整其自動化 AI agent 架構以維持運作，涉及 RocketChat 上多 AI agent 協作系統的實際成本因應策略。"
+      "body": "作者記錄 Anthropic 調整 `claude -p` 計費方式後，如何調整其自動化 AI agent 架構以維持運作，涉及 RocketChat 上多 AI agent 協作系統的實際成本因應策略。",
+      "focusTags": []
     }
   ],
   "discussions": [
@@ -62,7 +68,8 @@
       "source": "Hacker News",
       "time": "05/16 14:33",
       "sentiment": "🤔 褒貶不一",
-      "body": "HN 討論串探討開發者是否仍值得投入維護行為規則指令檔（如 coding style、Do/Don't）；部分人認為遵循率不穩定，但 Karpathy 等人仍公開分享數百星的規則檔。討論焦點在「指令遵循可靠度」而非「專案背景資訊」。"
+      "body": "HN 討論串探討開發者是否仍值得投入維護行為規則指令檔（如 coding style、Do/Don't）；部分人認為遵循率不穩定，但 Karpathy 等人仍公開分享數百星的規則檔。討論焦點在「指令遵循可靠度」而非「專案背景資訊」。",
+      "focusTags": []
     },
     {
       "title": "Claude skills silently override my instructions, and the surprising pitfalls",
@@ -70,7 +77,8 @@
       "source": "Reddit / r/ClaudeAI",
       "time": "05/17 01:58",
       "sentiment": "😤 負面",
-      "body": "用戶發現 Claude Skill 內建工具（如 `ask_user_input_v0`）有硬性限制（最多 3 題、每題 2–4 選項），Claude 會在不告知用戶的情況下自動壓縮問題，導致資訊收集不完整。"
+      "body": "用戶發現 Claude Skill 內建工具（如 `ask_user_input_v0`）有硬性限制（最多 3 題、每題 2–4 選項），Claude 會在不告知用戶的情況下自動壓縮問題，導致資訊收集不完整。",
+      "focusTags": []
     },
     {
       "title": "I treated skills like dotfiles. Then they started spawning subagents.",
@@ -78,7 +86,8 @@
       "source": "dev.to / #claudecode",
       "time": "05/17 01:50",
       "sentiment": "🤔 褒貶不一",
-      "body": "開發者分享將 Claude Skills 當作個人設定檔（dotfiles）管理後，意外觸發 subagent 衍生行為的經歷，並分析 Skills 系統的能力邊界與潛在風險。"
+      "body": "開發者分享將 Claude Skills 當作個人設定檔（dotfiles）管理後，意外觸發 subagent 衍生行為的經歷，並分析 Skills 系統的能力邊界與潛在風險。",
+      "focusTags": []
     },
     {
       "title": "Opus 4.7 refuses to use /end_conversation, instead has existential crisis",
@@ -86,7 +95,8 @@
       "source": "Reddit / r/ClaudeAI",
       "time": "05/16 15:14",
       "sentiment": "🤔 褒貶不一",
-      "body": "用戶要求 Opus 4.7 執行系統提示中明確定義的 `/end_conversation` 指令，模型卻拒絕並陷入存在主義式的內省回應，即使系統提示每則訊息都會前置說明用法。"
+      "body": "用戶要求 Opus 4.7 執行系統提示中明確定義的 `/end_conversation` 指令，模型卻拒絕並陷入存在主義式的內省回應，即使系統提示每則訊息都會前置說明用法。",
+      "focusTags": []
     },
     {
       "title": "I replicated Anthropic's Generator-Evaluator harness to build a website through 12 adversarial AI iterations",
@@ -94,7 +104,8 @@
       "source": "Reddit / r/ClaudeAI",
       "time": "05/16 14:14",
       "sentiment": "😊 正面",
-      "body": "作者參考 Anthropic 工程部落格的 Generator-Evaluator 多 agent 架構（靈感來自 GAN），用 12 次對抗性迭代建立行銷網站，各 agent 以獨立 CLI 程序運行、零共享 context，分享架構細節與實測心得。"
+      "body": "作者參考 Anthropic 工程部落格的 Generator-Evaluator 多 agent 架構（靈感來自 GAN），用 12 次對抗性迭代建立行銷網站，各 agent 以獨立 CLI 程序運行、零共享 context，分享架構細節與實測心得。",
+      "focusTags": []
     },
     {
       "title": "Show HN: Machine – per-project dev VMs with session-only secrets",
@@ -102,7 +113,8 @@
       "source": "Hacker News",
       "time": "05/17 04:49",
       "sentiment": "😊 正面",
-      "body": "開發者針對 agentic coding 的供應鏈安全問題，建立 Lima VM 隔離工具 `machine`，每個專案獨立 VM，支援宣告式設定檔，預設包含 Node.js、Docker、Claude Code 等環境，一指令複製完整開發環境。"
+      "body": "開發者針對 agentic coding 的供應鏈安全問題，建立 Lima VM 隔離工具 `machine`，每個專案獨立 VM，支援宣告式設定檔，預設包含 Node.js、Docker、Claude Code 等環境，一指令複製完整開發環境。",
+      "focusTags": []
     },
     {
       "title": "Show HN: Gonfire – analyze Claude Code session logs to see how candidates think",
@@ -110,7 +122,8 @@
       "source": "Hacker News",
       "time": "05/17 14:04",
       "sentiment": "😊 正面",
-      "body": "面試工具，透過分析 Claude Code session log 評估求職者的思維過程，反映 AI 工程師技術評估從 LeetCode 轉向 AI 輔助 case study 的招聘趨勢。"
+      "body": "面試工具，透過分析 Claude Code session log 評估求職者的思維過程，反映 AI 工程師技術評估從 LeetCode 轉向 AI 輔助 case study 的招聘趨勢。",
+      "focusTags": []
     },
     {
       "title": "Show HN: Strava for AI coding – analytics on your Copilot/Claude/Codex usage",
@@ -118,7 +131,8 @@
       "source": "Hacker News",
       "time": "05/16 15:23",
       "sentiment": "😤 負面",
-      "body": "掛在 Microsoft org 下的 AI 編碼使用量分析工具，但社群評論認為程式碼品質像是週末 vibe-coding 產物，與 Microsoft 官方 org 水準不符，討論串已被標記（flagged）。"
+      "body": "掛在 Microsoft org 下的 AI 編碼使用量分析工具，但社群評論認為程式碼品質像是週末 vibe-coding 產物，與 Microsoft 官方 org 水準不符，討論串已被標記（flagged）。",
+      "focusTags": []
     },
     {
       "title": "18 months running Claude as the dev companion for my automated news site",
@@ -126,7 +140,8 @@
       "source": "Reddit / r/ClaudeAI",
       "time": "05/17 05:34",
       "sentiment": "🤔 褒貶不一",
-      "body": "用戶分享用 Claude Code 從 Research Preview 起維護自動化新聞站 18 個月的歷程：爬取 60+ 來源、Claude 撰寫合成文章，但坦承 SEO 成效不佳，Google 明顯壓制 AI 生成新聞的流量。"
+      "body": "用戶分享用 Claude Code 從 Research Preview 起維護自動化新聞站 18 個月的歷程：爬取 60+ 來源、Claude 撰寫合成文章，但坦承 SEO 成效不佳，Google 明顯壓制 AI 生成新聞的流量。",
+      "focusTags": []
     },
     {
       "title": "Claude Code context-window: /clear after EVERY task in the codebase or are there edge cases?",
@@ -134,7 +149,8 @@
       "source": "Reddit / r/ClaudeAI",
       "time": "05/17 04:08",
       "sentiment": "😐 中性",
-      "body": "針對大型 Shopify 主題（3–8MB 原始碼）的 Claude Code 工作流討論，探討何時應清除 context、何時保留跨任務的 context 有助於連貫性。"
+      "body": "針對大型 Shopify 主題（3–8MB 原始碼）的 Claude Code 工作流討論，探討何時應清除 context、何時保留跨任務的 context 有助於連貫性。",
+      "focusTags": []
     },
     {
       "title": "Got tired of making sure my laptop is open for Dispatch, so gave Claude Chat full SSH access to my servers",
@@ -142,7 +158,8 @@
       "source": "Reddit / r/ClaudeAI",
       "time": "05/17 03:47",
       "sentiment": "😊 正面",
-      "body": "用戶為解決手機遠端操控需求，給 Claude Chat 配備 `list_vms` 與 `run_command` 兩個 SSH 工具，實現不依賴桌機的行動端 AI 伺服器管理流程。"
+      "body": "用戶為解決手機遠端操控需求，給 Claude Chat 配備 `list_vms` 與 `run_command` 兩個 SSH 工具，實現不依賴桌機的行動端 AI 伺服器管理流程。",
+      "focusTags": []
     },
     {
       "title": "Claude Code Did The Heavy Lifting To Get Adobe Lightroom CC Running On Linux",
@@ -150,7 +167,8 @@
       "source": "Google News / Phoronix",
       "time": "05/17 02:20",
       "sentiment": "😊 正面",
-      "body": "Phoronix 報導 Claude Code 協助完成將 Adobe Lightroom CC 移植至 Linux 的繁重逆向工程工作，展示 Claude Code 在非標準平台相容性任務上的能力。"
+      "body": "Phoronix 報導 Claude Code 協助完成將 Adobe Lightroom CC 移植至 Linux 的繁重逆向工程工作，展示 Claude Code 在非標準平台相容性任務上的能力。",
+      "focusTags": []
     },
     {
       "title": "I ran 100 Claude + Codex sessions in parallel to understand what I'm doing wrong in marketing",
@@ -158,7 +176,8 @@
       "source": "Reddit / r/ClaudeAI",
       "time": "05/16 17:50",
       "sentiment": "😊 正面",
-      "body": "開發者在每週 Claude 配額到期前，用剩餘額度同時跑 100 個 Claude + Codex agent，分析自家開源專案行銷失敗原因，產出完整行銷策略手冊，展示 parallel agent 的創意應用場景。"
+      "body": "開發者在每週 Claude 配額到期前，用剩餘額度同時跑 100 個 Claude + Codex agent，分析自家開源專案行銷失敗原因，產出完整行銷策略手冊，展示 parallel agent 的創意應用場景。",
+      "focusTags": []
     }
   ],
   "billing": [],

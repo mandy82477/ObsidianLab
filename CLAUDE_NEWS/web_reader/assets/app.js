@@ -180,9 +180,11 @@
 
   // ── Story HTML ───────────────────────────────────────────────────────────────
   function storyHtml(s, star = false, focusTag = '') {
+    // JS-side URL match (focusTag) takes priority; fall back to Python-computed focusTags
+    const effectiveTag = focusTag || (s.focusTags && s.focusTags[0]) || '';
     const cls = star ? 'story story--star' : 'story';
-    const focusBadge = focusTag
-      ? `<span class="focus-tag focus-tag--${focusTagCls(focusTag)} story__focus-badge">${esc(focusTag)}</span>`
+    const focusBadge = effectiveTag
+      ? `<span class="focus-tag focus-tag--${focusTagCls(effectiveTag)} story__focus-badge">${esc(effectiveTag)}</span>`
       : '';
     return `<div class="${cls}">
   <div class="story__title"><a href="${esc(s.url)}" target="_blank" rel="noopener">${esc(s.title)}</a>${focusBadge}</div>

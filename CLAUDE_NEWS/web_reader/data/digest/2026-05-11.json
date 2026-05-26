@@ -10,7 +10,8 @@
       "source": "Reddit / r/ClaudeAI",
       "time": "05/10 21:56",
       "sentiment": "",
-      "body": "Anthropic 本週正式推出 Managed Agents，提供多代理人協作、強化工具鏈與雲端托管升級；一位已自建 multi-agent 系統 70 天的開發者分享實戰架構：以 Opus 作為決策層、OpenCode 作為工程師層、多個研究代理並行，強調「任務簡報的撰寫品質」才是多代理系統成敗的核心。**為何是重點：** 這是 Anthropic 將 multi-agent 能力從 API 推向托管服務的里程碑，後續值得觀察官方方案與社群自組架構的功能差距如何演變。"
+      "body": "Anthropic 本週正式推出 Managed Agents，提供多代理人協作、強化工具鏈與雲端托管升級；一位已自建 multi-agent 系統 70 天的開發者分享實戰架構：以 Opus 作為決策層、OpenCode 作為工程師層、多個研究代理並行，強調「任務簡報的撰寫品質」才是多代理系統成敗的核心。**為何是重點：** 這是 Anthropic 將 multi-agent 能力從 API 推向托管服務的里程碑，後續值得觀察官方方案與社群自組架構的功能差距如何演變。",
+      "focusTags": []
     },
     {
       "title": "Show HN: adamsreview – better multi-agent PR reviews for Claude Code",
@@ -18,7 +19,8 @@
       "source": "Hacker News",
       "time": "05/11 02:06",
       "sentiment": "",
-      "body": "此 Claude Code 插件以平行子代理、多階段驗證與 JSON 持久狀態執行 PR review，作者聲稱在自測中比 Claude 內建 /review、/ultrareview、CodeRabbit 及 Greptile 捕捉到更多真實 bug，同時誤報率更低，並支援與 Codex CLI 組成 ensemble review。**為何是重點：** 在官方 PR review 工具已存在的情況下，社群以多代理架構做出差異化，顯示 Claude Code 插件生態正走向深度定制，也間接壓力測試官方工具的品質上限。"
+      "body": "此 Claude Code 插件以平行子代理、多階段驗證與 JSON 持久狀態執行 PR review，作者聲稱在自測中比 Claude 內建 /review、/ultrareview、CodeRabbit 及 Greptile 捕捉到更多真實 bug，同時誤報率更低，並支援與 Codex CLI 組成 ensemble review。**為何是重點：** 在官方 PR review 工具已存在的情況下，社群以多代理架構做出差異化，顯示 Claude Code 插件生態正走向深度定制，也間接壓力測試官方工具的品質上限。",
+      "focusTags": []
     },
     {
       "title": "I read 31 pages of Anthropic prompting guidance so you don't have to — here's what actually changes with Claude 4.7",
@@ -26,7 +28,8 @@
       "source": "dev.to / #anthropic",
       "time": "05/10 14:56",
       "sentiment": "",
-      "body": "作者精讀 Anthropic 官方 31 頁提示詞指南後指出：Claude Opus 4.7 對指令的解讀更趨字面，4.6 時代的模糊通用提示（如「review this contract」）在新版本下表現明顯下降，需要更明確的指令設計才能維持輸出品質。**為何是重點：** 模型行為的世代性轉變直接影響所有現有 prompt 工程實踐，使用者若未察覺調整需求，可能誤將模型行為退化歸因於其他原因。"
+      "body": "作者精讀 Anthropic 官方 31 頁提示詞指南後指出：Claude Opus 4.7 對指令的解讀更趨字面，4.6 時代的模糊通用提示（如「review this contract」）在新版本下表現明顯下降，需要更明確的指令設計才能維持輸出品質。**為何是重點：** 模型行為的世代性轉變直接影響所有現有 prompt 工程實踐，使用者若未察覺調整需求，可能誤將模型行為退化歸因於其他原因。",
+      "focusTags": []
     }
   ],
   "techUpdates": [
@@ -36,7 +39,8 @@
       "source": "Hacker News",
       "time": "05/10 13:42",
       "sentiment": "",
-      "body": "一套針對學術研究場景設計的 Claude Code 技能包，包含蘇格拉底式反思模式（State-Challenge-Reflect），可作為結構化筆記與論點壓力測試的輔助框架；社群對此看法分歧，有人質疑缺乏明顯驗證機制（稱之為「skill spam」），也有人認為骨架式引導方式切實有用。"
+      "body": "一套針對學術研究場景設計的 Claude Code 技能包，包含蘇格拉底式反思模式（State-Challenge-Reflect），可作為結構化筆記與論點壓力測試的輔助框架；社群對此看法分歧，有人質疑缺乏明顯驗證機制（稱之為「skill spam」），也有人認為骨架式引導方式切實有用。",
+      "focusTags": []
     },
     {
       "title": "Show HN: Make your codebase agent ready",
@@ -44,7 +48,8 @@
       "source": "Hacker News",
       "time": "05/10 10:27",
       "sentiment": "",
-      "body": "Agentize 提供一套 Claude Code 技能，用於評估並提升程式碼庫的「代理人就緒度」，協助開發者系統性地整備專案結構以適應 AI 自動化工作流程。"
+      "body": "Agentize 提供一套 Claude Code 技能，用於評估並提升程式碼庫的「代理人就緒度」，協助開發者系統性地整備專案結構以適應 AI 自動化工作流程。",
+      "focusTags": []
     },
     {
       "title": "Claude Code auto daily /weekly recap notes",
@@ -52,7 +57,8 @@
       "source": "Hacker News",
       "time": "05/10 21:34",
       "sentiment": "",
-      "body": "vibe-log-cli 是一個 Claude Code 插件，可自動產生每日與每週開發工作摘要，讓開發者無需手動整理工作紀錄，適合長期在 vibe coding 模式下工作的用戶。"
+      "body": "vibe-log-cli 是一個 Claude Code 插件，可自動產生每日與每週開發工作摘要，讓開發者無需手動整理工作紀錄，適合長期在 vibe coding 模式下工作的用戶。",
+      "focusTags": []
     },
     {
       "title": "Six days, six seconds: a CI test against semantic-layer drift on an AI agent",
@@ -60,7 +66,8 @@
       "source": "dev.to / #claudecode",
       "time": "05/11 02:00",
       "sentiment": "",
-      "body": "作者分享如何用一個僅需六秒的 CI 測試偵測 AI agent 的語意層漂移（semantic drift）問題，防止代理在多日執行中悄悄偏離預期行為，為 AI agent 的持續整合品質守門提供具體可行的方法。"
+      "body": "作者分享如何用一個僅需六秒的 CI 測試偵測 AI agent 的語意層漂移（semantic drift）問題，防止代理在多日執行中悄悄偏離預期行為，為 AI agent 的持續整合品質守門提供具體可行的方法。",
+      "focusTags": []
     },
     {
       "title": "AGENTS.md as a Cross-Tool Plugin Brief: A Case Study from kobiton/automate",
@@ -68,7 +75,8 @@
       "source": "dev.to / #claudecode",
       "time": "05/10 20:43",
       "sentiment": "",
-      "body": "Kobiton 分享如何在跨工具環境中以 AGENTS.md 作為統一的插件簡報文件，讓不同 AI 工具共享相同的代理人配置說明，降低跨工具整合的設定重複成本。"
+      "body": "Kobiton 分享如何在跨工具環境中以 AGENTS.md 作為統一的插件簡報文件，讓不同 AI 工具共享相同的代理人配置說明，降低跨工具整合的設定重複成本。",
+      "focusTags": []
     },
     {
       "title": "The judge gate: why a passing validator isn't a finished feature",
@@ -76,7 +84,8 @@
       "source": "dev.to / #claudecode",
       "time": "05/10 18:38",
       "sentiment": "",
-      "body": "文章點出自主編程代理的普遍失敗模式：當測試通過、linter 無誤時代理即宣告任務完成，但實際功能可能仍不完整；作者提出「judge gate」概念作為語意級的額外驗證層，補足純語法與測試框架的結構性盲點。"
+      "body": "文章點出自主編程代理的普遍失敗模式：當測試通過、linter 無誤時代理即宣告任務完成，但實際功能可能仍不完整；作者提出「judge gate」概念作為語意級的額外驗證層，補足純語法與測試框架的結構性盲點。",
+      "focusTags": []
     }
   ],
   "discussions": [
@@ -86,7 +95,8 @@
       "source": "Reddit / r/ClaudeAI",
       "time": "05/11 02:24",
       "sentiment": "😊 正面",
-      "body": "作者分享兩個快速驗證 Claude 是否確實套用記憶規則的技巧：一是在記憶中埋入「金絲雀規則」（如要求 Claude 在每則回應前加上特定奇特前綴），二是直接詢問 Claude 目前載入的專案設定內容；對依賴 CLAUDE.md 或記憶系統的自動化工作流程，這兩招提供實用的一致性快速檢查。"
+      "body": "作者分享兩個快速驗證 Claude 是否確實套用記憶規則的技巧：一是在記憶中埋入「金絲雀規則」（如要求 Claude 在每則回應前加上特定奇特前綴），二是直接詢問 Claude 目前載入的專案設定內容；對依賴 CLAUDE.md 或記憶系統的自動化工作流程，這兩招提供實用的一致性快速檢查。",
+      "focusTags": []
     },
     {
       "title": "8 Advanced Claude Code Tips I've Discovered After Heavy Daily Use (Cost saving, Context, Custom Commands)",
@@ -94,7 +104,8 @@
       "source": "Reddit / r/ClaudeAI",
       "time": "05/10 23:38",
       "sentiment": "😊 正面",
-      "body": "開發者分享從大量實際使用中累積的 8 個進階技巧，涵蓋自動化 git 工作流程、控制 context token 消耗、建立自訂指令等節省成本的方法，內容來自親身操作經驗而非理論整理。"
+      "body": "開發者分享從大量實際使用中累積的 8 個進階技巧，涵蓋自動化 git 工作流程、控制 context token 消耗、建立自訂指令等節省成本的方法，內容來自親身操作經驗而非理論整理。",
+      "focusTags": []
     },
     {
       "title": "Claude Code Desktop vs Claude Cowork",
@@ -102,7 +113,8 @@
       "source": "Reddit / r/ClaudeAI",
       "time": "05/11 00:00",
       "sentiment": "🤔 褒貶不一",
-      "body": "用戶對 Claude Code 桌面版與 Claude Cowork 的定位感到困惑：原本 Cowork 被定位為 Claude Code 的友善 UI，但桌面版推出後兩者功能高度重疊，用戶呼籲 Anthropic 明確釐清兩款產品的差異與適用場景。"
+      "body": "用戶對 Claude Code 桌面版與 Claude Cowork 的定位感到困惑：原本 Cowork 被定位為 Claude Code 的友善 UI，但桌面版推出後兩者功能高度重疊，用戶呼籲 Anthropic 明確釐清兩款產品的差異與適用場景。",
+      "focusTags": []
     },
     {
       "title": "CLAUDE.md for Indie Hackers in 2026: What to Include, What to Skip",
@@ -110,7 +122,8 @@
       "source": "dev.to / #claudecode",
       "time": "05/10 21:34",
       "sentiment": "😐 中性",
-      "body": "針對獨立開發者的 CLAUDE.md 設定實用指南，說明在 2026 年現況下哪些配置真正對 Claude 行為有效、哪些已過時或多餘，協助開發者精簡並提升專案設定文件的實際效用。"
+      "body": "針對獨立開發者的 CLAUDE.md 設定實用指南，說明在 2026 年現況下哪些配置真正對 Claude 行為有效、哪些已過時或多餘，協助開發者精簡並提升專案設定文件的實際效用。",
+      "focusTags": []
     },
     {
       "title": "What Makes an Agent Skill Worth Buying? Lessons From 40+ Listings",
@@ -118,7 +131,8 @@
       "source": "dev.to / #claudeai",
       "time": "05/10 21:14",
       "sentiment": "😐 中性",
-      "body": "ClawMart（AI agent 應用商店）作者分析逾 40 個技能上架後的心得，整理出讓 agent skill 真正值得購買的關鍵特質，對技能開發者與選購者均有參考價值，但部分結論帶有商業動機，宜交叉驗證。"
+      "body": "ClawMart（AI agent 應用商店）作者分析逾 40 個技能上架後的心得，整理出讓 agent skill 真正值得購買的關鍵特質，對技能開發者與選購者均有參考價值，但部分結論帶有商業動機，宜交叉驗證。",
+      "focusTags": []
     },
     {
       "title": "Claude Skill for YouTube: Free Watch-or-Skip Verdicts",
@@ -126,7 +140,8 @@
       "source": "dev.to / #claudecode",
       "time": "05/10 13:55",
       "sentiment": "😊 正面",
-      "body": "作者開發了一個 Claude 技能，可分析 YouTube 影片內容並輸出「值得看 / 跳過」的判斷，協助用戶在實際觀看前快速篩選，降低資訊消費成本。"
+      "body": "作者開發了一個 Claude 技能，可分析 YouTube 影片內容並輸出「值得看 / 跳過」的判斷，協助用戶在實際觀看前快速篩選，降低資訊消費成本。",
+      "focusTags": []
     }
   ],
   "billing": [
@@ -136,7 +151,8 @@
       "source": "Reddit / r/ClaudeAI",
       "time": "05/11 01:13",
       "sentiment": "",
-      "body": "用戶反映在 Pro 方案使用量顯示 0% 的情況下，Claude Code 僅執行 2–3 個簡單提示後即被收取 $3.37 額外費用，並收到「需啟用 extra usage 才能使用 1M context」的錯誤訊息；顯示 Pro 方案與 API 計費模式之間的邊界對用戶仍不夠透明。"
+      "body": "用戶反映在 Pro 方案使用量顯示 0% 的情況下，Claude Code 僅執行 2–3 個簡單提示後即被收取 $3.37 額外費用，並收到「需啟用 extra usage 才能使用 1M context」的錯誤訊息；顯示 Pro 方案與 API 計費模式之間的邊界對用戶仍不夠透明。",
+      "focusTags": []
     },
     {
       "title": "I spent $514 on Claude Code in 30 days. Here's what I learned.",
@@ -144,7 +160,8 @@
       "source": "dev.to / #claudecode",
       "time": "05/10 13:25",
       "sentiment": "",
-      "body": "作者記錄 50 個工作階段、30 天共花費 $514 使用 Claude Code 的詳細數據分析，探討各類情境的成本結構與高消耗來源，是目前社群中少見的長期實際費用追蹤案例，可作為評估 ROI 的參考基準。"
+      "body": "作者記錄 50 個工作階段、30 天共花費 $514 使用 Claude Code 的詳細數據分析，探討各類情境的成本結構與高消耗來源，是目前社群中少見的長期實際費用追蹤案例，可作為評估 ROI 的參考基準。",
+      "focusTags": []
     },
     {
       "title": "Claude Code quota management: a complete guide (2026)",
@@ -152,7 +169,8 @@
       "source": "dev.to / #claudecode",
       "time": "05/10 13:18",
       "sentiment": "",
-      "body": "同作者撰寫的配額管理完整指南，說明如何追蹤、監控並主動控制 Claude Code 使用量，避免在不知情的情況下超出預算；與上篇實際花費報告形成互補，適合計劃長期使用 Claude Code 的開發者作為設定參考。"
+      "body": "同作者撰寫的配額管理完整指南，說明如何追蹤、監控並主動控制 Claude Code 使用量，避免在不知情的情況下超出預算；與上篇實際花費報告形成互補，適合計劃長期使用 Claude Code 的開發者作為設定參考。",
+      "focusTags": []
     }
   ],
   "focus": [

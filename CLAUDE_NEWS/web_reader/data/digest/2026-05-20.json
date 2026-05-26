@@ -10,7 +10,8 @@
       "source": "Hacker News",
       "time": "05/20 03:28",
       "sentiment": "",
-      "body": "Anthropic 收購 Stainless 後立即關閉其服務，造成原本依賴 Stainless 自動生成 SDK 的法律 AI、OpenAI、Google 等公司面臨今年 9 月起 SDK 無人維護的困境，HN 討論串正在尋求替代方案，影響範圍廣泛，值得追蹤。"
+      "body": "Anthropic 收購 Stainless 後立即關閉其服務，造成原本依賴 Stainless 自動生成 SDK 的法律 AI、OpenAI、Google 等公司面臨今年 9 月起 SDK 無人維護的困境，HN 討論串正在尋求替代方案，影響範圍廣泛，值得追蹤。",
+      "focusTags": []
     },
     {
       "title": "Claude Code RCE Flaw Lets Attackers Execute Commands via Malicious Deeplinks",
@@ -18,7 +19,8 @@
       "source": "Google News / CyberSecurityNews",
       "time": "05/19 21:43",
       "sentiment": "",
-      "body": "安全研究人員揭露 Claude Code 存在遠端程式碼執行（RCE）漏洞，攻擊者可利用惡意 Deeplink 觸發任意指令執行，屬高嚴重性安全問題，所有 Claude Code 使用者應密切關注官方修補更新。"
+      "body": "安全研究人員揭露 Claude Code 存在遠端程式碼執行（RCE）漏洞，攻擊者可利用惡意 Deeplink 觸發任意指令執行，屬高嚴重性安全問題，所有 Claude Code 使用者應密切關注官方修補更新。",
+      "focusTags": []
     },
     {
       "title": "Using Claude Code: The unreasonable effectiveness of HTML",
@@ -26,7 +28,8 @@
       "source": "Hacker News",
       "time": "05/20 05:26",
       "sentiment": "",
-      "body": "Anthropic 官方 Blog 由 Claude Code 團隊成員撰文，主張用 HTML 取代 Markdown 作為 AI agent 輸出格式，理由是 HTML 表達能力更強、可直接在瀏覽器分享，且 Claude 已能高品質生成；此文代表官方對輸出格式的策略轉向，值得開發者提前適應。"
+      "body": "Anthropic 官方 Blog 由 Claude Code 團隊成員撰文，主張用 HTML 取代 Markdown 作為 AI agent 輸出格式，理由是 HTML 表達能力更強、可直接在瀏覽器分享，且 Claude 已能高品質生成；此文代表官方對輸出格式的策略轉向，值得開發者提前適應。",
+      "focusTags": []
     },
     {
       "title": "Is Claude Code going to cost $100/month? Probably not–it's all confusing",
@@ -34,7 +37,8 @@
       "source": "Hacker News",
       "time": "05/19 23:11",
       "sentiment": "",
-      "body": "Simon Willison 深入分析 Anthropic 定價頁悄悄修改又還原的事件：Claude Code 曾短暫在定價頁顯示為 Max 方案（$100–$200/月）專屬功能，引發大量誤解後已撤回，但整個溝通過程混亂，訂閱策略透明度仍是待解問題。"
+      "body": "Simon Willison 深入分析 Anthropic 定價頁悄悄修改又還原的事件：Claude Code 曾短暫在定價頁顯示為 Max 方案（$100–$200/月）專屬功能，引發大量誤解後已撤回，但整個溝通過程混亂，訂閱策略透明度仍是待解問題。",
+      "focusTags": []
     }
   ],
   "techUpdates": [
@@ -44,7 +48,8 @@
       "source": "GitHub / anthropics/claude-code",
       "time": "05/19 21:31",
       "sentiment": "",
-      "body": "新增 `claude agents --json` 指令，可將目前存活的 Claude session 以 JSON 格式列出，方便與 tmux-resurrect、status bar、session picker 等工具整合；同時新增 `agent_id` 及 `parent_agent_id` 屬性，支援多 agent 層級識別。"
+      "body": "新增 `claude agents --json` 指令，可將目前存活的 Claude session 以 JSON 格式列出，方便與 tmux-resurrect、status bar、session picker 等工具整合；同時新增 `agent_id` 及 `parent_agent_id` 屬性，支援多 agent 層級識別。",
+      "focusTags": []
     },
     {
       "title": "anthropics/anthropic-sdk-python v0.103.1",
@@ -52,7 +57,8 @@
       "source": "GitHub / anthropics/anthropic-sdk-python",
       "time": "05/19 15:43",
       "sentiment": "",
-      "body": "Bug fix 版本：修正 runner 在遇到 `SessionTool` 相關 tool call 時的處理錯誤。"
+      "body": "Bug fix 版本：修正 runner 在遇到 `SessionTool` 相關 tool call 時的處理錯誤。",
+      "focusTags": []
     },
     {
       "title": "anthropics/anthropic-sdk-typescript sdk-v0.97.1",
@@ -60,7 +66,8 @@
       "source": "GitHub / anthropics/anthropic-sdk-typescript",
       "time": "05/19 15:40",
       "sentiment": "",
-      "body": "對應 Python SDK 同步修正，修復 runner 對特定 tool call 的跳過邏輯錯誤。"
+      "body": "對應 Python SDK 同步修正，修復 runner 對特定 tool call 的跳過邏輯錯誤。",
+      "focusTags": []
     }
   ],
   "discussions": [
@@ -70,7 +77,8 @@
       "source": "Hacker News",
       "time": "05/19 15:18",
       "sentiment": "😤 負面",
-      "body": "作者協助朋友將舊 PHP 應用移植至 Rails，首次體驗 Claude Code，發現初次登入即遭 IP 封鎖，疑似因網站設有 robots.txt 擋住 Anthropic 爬蟲所致；文章記錄了一個新手真實的碰壁過程，對可用性問題有直接批評。"
+      "body": "作者協助朋友將舊 PHP 應用移植至 Rails，首次體驗 Claude Code，發現初次登入即遭 IP 封鎖，疑似因網站設有 robots.txt 擋住 Anthropic 爬蟲所致；文章記錄了一個新手真實的碰壁過程，對可用性問題有直接批評。",
+      "focusTags": []
     },
     {
       "title": "Claude Code may now request webcam access to assure user is present",
@@ -78,7 +86,8 @@
       "source": "Hacker News",
       "time": "05/19 12:25",
       "sentiment": "😤 負面",
-      "body": "有報告指出 Claude Code 可能要求開啟鏡頭確認使用者在場，引發「無鏡頭用戶或企業安全環境怎麼辦」的強烈疑慮；討論串中情緒偏向不安，尚待 Anthropic 官方澄清。"
+      "body": "有報告指出 Claude Code 可能要求開啟鏡頭確認使用者在場，引發「無鏡頭用戶或企業安全環境怎麼辦」的強烈疑慮；討論串中情緒偏向不安，尚待 Anthropic 官方澄清。",
+      "focusTags": []
     },
     {
       "title": "Anthropic is killing stainless, so we built our own SDK/MCP generator",
@@ -86,7 +95,8 @@
       "source": "Hacker News",
       "time": "05/19 22:02",
       "sentiment": "😐 中性",
-      "body": "有團隊在 Stainless 關閉消息傳出後迅速推出自製替代品 Ironic，可從 OpenAPI spec 生成 SDK 及 MCP server；社群指出難點在於 API 語意改變但 spec 未同步更新時的契約測試，討論具體且務實。"
+      "body": "有團隊在 Stainless 關閉消息傳出後迅速推出自製替代品 Ironic，可從 OpenAPI spec 生成 SDK 及 MCP server；社群指出難點在於 API 語意改變但 spec 未同步更新時的契約測試，討論具體且務實。",
+      "focusTags": []
     },
     {
       "title": "Show HN: I built a native macOS Markdown viewer 100% with AI coding agents",
@@ -94,7 +104,8 @@
       "source": "Hacker News",
       "time": "05/19 21:57",
       "sentiment": "😊 正面",
-      "body": "開發者 100% 用 AI coding agent 完成一款原生 macOS Markdown 閱覽器，支援 Obsidian 延伸語法、Mermaid、數學公式，以 Tauri 2（Rust + webview）打造，無 Electron 依賴；亮點在於展示 AI agent 獨立完成完整商業品質 app 的可行性。"
+      "body": "開發者 100% 用 AI coding agent 完成一款原生 macOS Markdown 閱覽器，支援 Obsidian 延伸語法、Mermaid、數學公式，以 Tauri 2（Rust + webview）打造，無 Electron 依賴；亮點在於展示 AI agent 獨立完成完整商業品質 app 的可行性。",
+      "focusTags": []
     },
     {
       "title": "Show HN: Logbox – let Claude monitor your dev logs",
@@ -102,7 +113,8 @@
       "source": "Hacker News",
       "time": "05/19 19:03",
       "sentiment": "😊 正面",
-      "body": "開源工具 logbox 將 dev server log 導入本地 SQLite，再透過 MCP 讓 Claude Code 直接查詢，解決 Claude 無法即時追蹤 log 流的問題，適合需要自動化驗證迴圈的開發場景。"
+      "body": "開源工具 logbox 將 dev server log 導入本地 SQLite，再透過 MCP 讓 Claude Code 直接查詢，解決 Claude 無法即時追蹤 log 流的問題，適合需要自動化驗證迴圈的開發場景。",
+      "focusTags": []
     },
     {
       "title": "Show HN: claude-autopilot, autonomous dev pipeline with multi-model review",
@@ -110,7 +122,8 @@
       "source": "Hacker News",
       "time": "05/19 23:35",
       "sentiment": "🤔 褒貶不一",
-      "body": "claude-autopilot 是一套多模型自動化開發 pipeline，宣稱每週可處理數十萬甚至百萬行程式碼的 gross churn，支援 Rails、Alembic、Django 等多框架；數字引人注目，但作者也坦承這是 gross 而非 net 產出，社群反應謹慎。"
+      "body": "claude-autopilot 是一套多模型自動化開發 pipeline，宣稱每週可處理數十萬甚至百萬行程式碼的 gross churn，支援 Rails、Alembic、Django 等多框架；數字引人注目，但作者也坦承這是 gross 而非 net 產出，社群反應謹慎。",
+      "focusTags": []
     },
     {
       "title": "Claude Opus 4.7 Thoughts",
@@ -118,7 +131,8 @@
       "source": "Reddit / r/ClaudeAI",
       "time": "05/20 05:03",
       "sentiment": "🤔 褒貶不一",
-      "body": "用戶分享實測心得：Opus 4.7 在 Claude Code 搭配 max effort 模式下表現亮眼，但在一般對話（chat）中即便開啟 adaptive thinking，仍覺得不如 4.6 Extended 精準，且有假設與幻覺問題，引發其他用戶跟進討論。"
+      "body": "用戶分享實測心得：Opus 4.7 在 Claude Code 搭配 max effort 模式下表現亮眼，但在一般對話（chat）中即便開啟 adaptive thinking，仍覺得不如 4.6 Extended 精準，且有假設與幻覺問題，引發其他用戶跟進討論。",
+      "focusTags": []
     },
     {
       "title": "I Asked 3 Claude Code Sub-agents to Review the Same PR. They Disagreed on 41% of the Comments.",
@@ -126,7 +140,8 @@
       "source": "dev.to / #claudecode",
       "time": "05/20 05:00",
       "sentiment": "🤔 褒貶不一",
-      "body": "作者讓三個 Claude Code sub-agent 審查同一個 PR，發現 41% 的評論彼此不一致，揭示多 agent code review 的可靠性問題；對於把 multi-agent 當作「免費升級」的假設提出了實證挑戰。"
+      "body": "作者讓三個 Claude Code sub-agent 審查同一個 PR，發現 41% 的評論彼此不一致，揭示多 agent code review 的可靠性問題；對於把 multi-agent 當作「免費升級」的假設提出了實證挑戰。",
+      "focusTags": []
     },
     {
       "title": "How much of your Claude bill is retries plus bad model routing? Mine's 14% this month",
@@ -134,7 +149,8 @@
       "source": "Reddit / r/ClaudeAI",
       "time": "05/20 04:25",
       "sentiment": "😤 負面",
-      "body": "Claude Max 用戶分析發現，即使是固定費率方案，重試（retry tax）與路由浪費（一行小修改卻送給 Opus）合計佔用了 14% 的配額等效費用，提醒其他用戶審視自己的使用模式。"
+      "body": "Claude Max 用戶分析發現，即使是固定費率方案，重試（retry tax）與路由浪費（一行小修改卻送給 Opus）合計佔用了 14% 的配額等效費用，提醒其他用戶審視自己的使用模式。",
+      "focusTags": []
     },
     {
       "title": "TIL you can ship a Claude Code skill inside a GitHub repo so anyone who clones it gets architectural guardrails baked in",
@@ -142,7 +158,8 @@
       "source": "Reddit / r/ClaudeAI",
       "time": "05/20 02:59",
       "sentiment": "😊 正面",
-      "body": "開發者分享在 repo 內嵌入 `.claude/skills/` 目錄的實踐：將架構契約、腳手架決策樹、硬性限制寫入 Markdown skill 文件，任何人 clone 後 Claude Code 會自動載入，達到架構護欄的效果，社群反應正面。"
+      "body": "開發者分享在 repo 內嵌入 `.claude/skills/` 目錄的實踐：將架構契約、腳手架決策樹、硬性限制寫入 Markdown skill 文件，任何人 clone 後 Claude Code 會自動載入，達到架構護欄的效果，社群反應正面。",
+      "focusTags": []
     },
     {
       "title": "Why Claude Code forgets your stack and how to fix it",
@@ -150,7 +167,8 @@
       "source": "Reddit / r/ClaudeAI",
       "time": "05/20 00:13",
       "sentiment": "😊 正面",
-      "body": "作者在 87 個檔案（163K token）的專案中，透過 engramx Skill Pack v4.0.0 將 Claude Code 每次啟動需讀取的 token 從 163,000 降至 17,722（減少 89.1%），提供了解決「session 失憶」問題的具體量化方法。"
+      "body": "作者在 87 個檔案（163K token）的專案中，透過 engramx Skill Pack v4.0.0 將 Claude Code 每次啟動需讀取的 token 從 163,000 降至 17,722（減少 89.1%），提供了解決「session 失憶」問題的具體量化方法。",
+      "focusTags": []
     },
     {
       "title": "How a one-person studio writes 35 Claude Code agents that don't fight each other",
@@ -158,7 +176,8 @@
       "source": "dev.to / #claudecode",
       "time": "05/19 23:27",
       "sentiment": "😊 正面",
-      "body": "單人工作室分享管理 35 個 Claude Code agent 協作的實踐，重點在於如何避免 agent 互相衝突並維持 quality gate 流程正常運作，對多 agent 架構設計有實戰參考價值。"
+      "body": "單人工作室分享管理 35 個 Claude Code agent 協作的實踐，重點在於如何避免 agent 互相衝突並維持 quality gate 流程正常運作，對多 agent 架構設計有實戰參考價值。",
+      "focusTags": []
     },
     {
       "title": "Show HN: TokenShield – Local proxy that dedupes Claude Code conversation traffic",
@@ -166,7 +185,8 @@
       "source": "Hacker News",
       "time": "05/19 18:34",
       "sentiment": "😊 正面",
-      "body": "TokenShield 是本地 Node.js proxy，攔截送往 api.anthropic.com 的請求並去除重複的 tool_result 內容（同一 `auth.ts` 在 25 回合 session 中被讀 5 次等情況），宣稱可減少 40–70% 的 Claude Code 費用。"
+      "body": "TokenShield 是本地 Node.js proxy，攔截送往 api.anthropic.com 的請求並去除重複的 tool_result 內容（同一 `auth.ts` 在 25 回合 session 中被讀 5 次等情況），宣稱可減少 40–70% 的 Claude Code 費用。",
+      "focusTags": []
     },
     {
       "title": "Show HN: PrismoDev – local CLI for finding token waste in Claude Code/Codex",
@@ -174,7 +194,8 @@
       "source": "Hacker News",
       "time": "05/19 21:39",
       "sentiment": "😊 正面",
-      "body": "PrismoDev 掃描本地 Claude Code / Codex session log，找出 context bloat 來源（過大的 CLAUDE.md、重複 tool output、broad repo exploration 等），不需 API key，在本地離線運行，定位 token 浪費的診斷工具。"
+      "body": "PrismoDev 掃描本地 Claude Code / Codex session log，找出 context bloat 來源（過大的 CLAUDE.md、重複 tool output、broad repo exploration 等），不需 API key，在本地離線運行，定位 token 浪費的診斷工具。",
+      "focusTags": []
     },
     {
       "title": "no business model for claude skill creators right now",
@@ -182,7 +203,8 @@
       "source": "Reddit / r/ClaudeAI",
       "time": "05/19 15:35",
       "sentiment": "😤 負面",
-      "body": "開發者指出 Anthropic 雖建立了 skill runtime，但完全缺乏創作者變現機制；有人願意付費使用他的 skill，卻只能免費開源送出，認為 Anthropic 停在了「好的執行環境」卻沒有打造 creator economy 層，呼籲平台支援商業化路徑。"
+      "body": "開發者指出 Anthropic 雖建立了 skill runtime，但完全缺乏創作者變現機制；有人願意付費使用他的 skill，卻只能免費開源送出，認為 Anthropic 停在了「好的執行環境」卻沒有打造 creator economy 層，呼籲平台支援商業化路徑。",
+      "focusTags": []
     },
     {
       "title": "Anthropic Acquires Stainless: The SDK Layer Is Now Part of the Platform",
@@ -190,7 +212,8 @@
       "source": "dev.to / #anthropic",
       "time": "05/19 13:49",
       "sentiment": "🤔 褒貶不一",
-      "body": "分析文章指出 Anthropic 收購 Stainless 代表 SDK 生成層正式納入平台版圖，而非僅是技術收購；認為這對 Anthropic 的開發者工具策略具有長期意義，值得觀察後續 SDK 自動化能力的整合方向。"
+      "body": "分析文章指出 Anthropic 收購 Stainless 代表 SDK 生成層正式納入平台版圖，而非僅是技術收購；認為這對 Anthropic 的開發者工具策略具有長期意義，值得觀察後續 SDK 自動化能力的整合方向。",
+      "focusTags": []
     },
     {
       "title": "Anthropic Bought an SDK Factory and Hired Karpathy in the Same Week. Here Is What That Combination Means for a Solo Developer.",
@@ -198,7 +221,8 @@
       "source": "dev.to / #anthropic",
       "time": "05/19 16:43",
       "sentiment": "😊 正面",
-      "body": "作者將 Stainless 收購與 Karpathy 加入 Anthropic 並列分析，認為兩者合併代表 Anthropic 在同一週完成了「SDK 自動化基礎設施」與「頂級 AI 教育者」的雙重補強，對獨立開發者的生態系影響值得持續關注。"
+      "body": "作者將 Stainless 收購與 Karpathy 加入 Anthropic 並列分析，認為兩者合併代表 Anthropic 在同一週完成了「SDK 自動化基礎設施」與「頂級 AI 教育者」的雙重補強，對獨立開發者的生態系影響值得持續關注。",
+      "focusTags": []
     },
     {
       "title": "How I Use Claude Code — Don't Organize, Delegate, Just Vibe",
@@ -206,7 +230,8 @@
       "source": "dev.to / #claudecode",
       "time": "05/20 03:15",
       "sentiment": "😊 正面",
-      "body": "作者分享一種「不整理、全委派、跟著直覺走」的 Claude Code 使用哲學，強調放手讓 AI 決策而非過度掌控細節；同一文章同時以中、葡、韓、義、法、西、德文版本發布，顯示此使用心得引發跨語言社群的共鳴。"
+      "body": "作者分享一種「不整理、全委派、跟著直覺走」的 Claude Code 使用哲學，強調放手讓 AI 決策而非過度掌控細節；同一文章同時以中、葡、韓、義、法、西、德文版本發布，顯示此使用心得引發跨語言社群的共鳴。",
+      "focusTags": []
     },
     {
       "title": "If you're NOT having usage or drift issues, have you turned off auto-memory?",
@@ -214,7 +239,8 @@
       "source": "Reddit / r/ClaudeAI",
       "time": "05/19 12:16",
       "sentiment": "🤔 褒貶不一",
-      "body": "作者提出假說：部分用戶反映 Opus 被「砍弱」或 session 變笨，可能與 Claude Code 自 v2.1.59 起預設開啟的 auto-memory 功能有關（在 `~/.claude/projects/*/memory/` 靜默建立 .md 檔），呼籲社群協助驗證這個隱性變數。"
+      "body": "作者提出假說：部分用戶反映 Opus 被「砍弱」或 session 變笨，可能與 Claude Code 自 v2.1.59 起預設開啟的 auto-memory 功能有關（在 `~/.claude/projects/*/memory/` 靜默建立 .md 檔），呼籲社群協助驗證這個隱性變數。",
+      "focusTags": []
     },
     {
       "title": "Creator of Anthropic's Claude Code says non-technical people are starting to code - CNBC",
@@ -222,7 +248,8 @@
       "source": "Google News / CNBC",
       "time": "05/20 00:40",
       "sentiment": "😊 正面",
-      "body": "Claude Code 創始人接受 CNBC 採訪，表示非技術背景用戶已開始使用 Claude Code 進行程式開發，代表 AI coding 工具的受眾正在快速擴大，主流化趨勢值得關注。"
+      "body": "Claude Code 創始人接受 CNBC 採訪，表示非技術背景用戶已開始使用 Claude Code 進行程式開發，代表 AI coding 工具的受眾正在快速擴大，主流化趨勢值得關注。",
+      "focusTags": []
     }
   ],
   "billing": [
@@ -232,7 +259,8 @@
       "source": "Hacker News",
       "time": "05/19 23:11",
       "sentiment": "",
-      "body": "Anthropic 定價頁在毫無公告的情況下短暫顯示 Claude Code 為 Max 方案（$100–$200/月）專屬，引發社群恐慌後已撤回；Simon Willison 認為問題根源在於 Anthropic 的定價溝通策略缺乏透明度，建議用戶持續追蹤官方 Choosing a Plan 頁面。"
+      "body": "Anthropic 定價頁在毫無公告的情況下短暫顯示 Claude Code 為 Max 方案（$100–$200/月）專屬，引發社群恐慌後已撤回；Simon Willison 認為問題根源在於 Anthropic 的定價溝通策略缺乏透明度，建議用戶持續追蹤官方 Choosing a Plan 頁面。",
+      "focusTags": []
     },
     {
       "title": "How much of your Claude bill is retries plus bad model routing? Mine's 14% this month",
@@ -240,7 +268,8 @@
       "source": "Reddit / r/ClaudeAI",
       "time": "05/20 04:25",
       "sentiment": "",
-      "body": "Claude Max 訂閱用戶透過 CodeBurn 工具發現，即使在固定費率方案下，重試費用與錯誤模型路由（如一行修改卻調用 Opus）合計造成 14% 的配額等效浪費，提醒用戶即使不按量計費也需注意使用效率。"
+      "body": "Claude Max 訂閱用戶透過 CodeBurn 工具發現，即使在固定費率方案下，重試費用與錯誤模型路由（如一行修改卻調用 Opus）合計造成 14% 的配額等效浪費，提醒用戶即使不按量計費也需注意使用效率。",
+      "focusTags": []
     }
   ],
   "focus": [

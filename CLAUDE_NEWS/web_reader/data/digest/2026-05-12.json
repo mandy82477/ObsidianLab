@@ -10,7 +10,8 @@
       "source": "Anthropic Blog",
       "time": "05/11 21:15",
       "sentiment": "",
-      "body": "Anthropic 官方正式推出 Agent View，開發者可在單一介面看到所有並行 Claude Code 工作階段的即時狀態（執行中 / 等待輸入 / 已完成），徹底取代過去需要手動管理多個終端機視窗的痛苦工作流程。搭配同版本推出的 `/goal` 指令，Claude 可在無需人工介入的情況下持續執行到條件滿足為止，代表 Claude Code 正式具備 fire-and-forget 自動化能力。"
+      "body": "Anthropic 官方正式推出 Agent View，開發者可在單一介面看到所有並行 Claude Code 工作階段的即時狀態（執行中 / 等待輸入 / 已完成），徹底取代過去需要手動管理多個終端機視窗的痛苦工作流程。搭配同版本推出的 `/goal` 指令，Claude 可在無需人工介入的情況下持續執行到條件滿足為止，代表 Claude Code 正式具備 fire-and-forget 自動化能力。",
+      "focusTags": []
     },
     {
       "title": "Developers Warned As Fake Claude Code Installer Attacks Confirmed",
@@ -18,7 +19,8 @@
       "source": "Google News / Yahoo Tech",
       "time": "05/12 04:51",
       "sentiment": "",
-      "body": "Yahoo Tech、CSO Online、The Register 等多家資安媒體同步披露偽裝成 Claude Code 安裝包的惡意軟體攻擊，攻擊者利用 IElevator 機制竊取瀏覽器 Cookie 與開發者機密資料。此類供應鏈型社交工程攻擊針對性強，使用 Claude Code 的開發者應立即確認安裝來源並審查系統安全。"
+      "body": "Yahoo Tech、CSO Online、The Register 等多家資安媒體同步披露偽裝成 Claude Code 安裝包的惡意軟體攻擊，攻擊者利用 IElevator 機制竊取瀏覽器 Cookie 與開發者機密資料。此類供應鏈型社交工程攻擊針對性強，使用 Claude Code 的開發者應立即確認安裝來源並審查系統安全。",
+      "focusTags": []
     },
     {
       "title": "Why 157,000 developers are hedging against Anthropic with OpenCode",
@@ -26,7 +28,8 @@
       "source": "Hacker News",
       "time": "05/11 18:15",
       "sentiment": "",
-      "body": "The New Stack 分析 Code with Claude 大會後，大量開發者仍選擇轉向開源的 OpenCode 作為備案，即便 Anthropic 當天宣佈倍增 Pro / Max / Team / Enterprise 速率限制、移除尖峰時段降速，以及簽下 SpaceX Colossus 1 資料中心（22 萬張 Nvidia GPU）的算力協議。文章指出，開發者對平台鎖定的結構性顧慮並未因單次發布消失。"
+      "body": "The New Stack 分析 Code with Claude 大會後，大量開發者仍選擇轉向開源的 OpenCode 作為備案，即便 Anthropic 當天宣佈倍增 Pro / Max / Team / Enterprise 速率限制、移除尖峰時段降速，以及簽下 SpaceX Colossus 1 資料中心（22 萬張 Nvidia GPU）的算力協議。文章指出，開發者對平台鎖定的結構性顧慮並未因單次發布消失。",
+      "focusTags": []
     }
   ],
   "techUpdates": [
@@ -36,7 +39,8 @@
       "source": "GitHub / anthropics/claude-code",
       "time": "05/11 18:43",
       "sentiment": "",
-      "body": "本版本為本日最重要技術發布：新增 Agent View（Research Preview），執行 `claude agents` 即可檢視所有工作階段；同時推出 `/goal` 指令，設定完成條件後 Claude 將自動跨多輪執行直到條件達成，是 104 項變更的重量級版本。"
+      "body": "本版本為本日最重要技術發布：新增 Agent View（Research Preview），執行 `claude agents` 即可檢視所有工作階段；同時推出 `/goal` 指令，設定完成條件後 Claude 將自動跨多輪執行直到條件達成，是 104 項變更的重量級版本。",
+      "focusTags": []
     },
     {
       "title": "Keep Claude working toward a goal – Claude Code Docs",
@@ -44,7 +48,8 @@
       "source": "Hacker News",
       "time": "05/12 06:28",
       "sentiment": "",
-      "body": "官方文件正式說明 `/goal` 指令運作機制：用戶設定可驗證的完成條件後，每輪執行結束由一個小型快速模型判斷條件是否成立，未達成則自動開始下一輪，適用於模組遷移、測試全通過等有明確終態的長時間任務。"
+      "body": "官方文件正式說明 `/goal` 指令運作機制：用戶設定可驗證的完成條件後，每輪執行結束由一個小型快速模型判斷條件是否成立，未達成則自動開始下一輪，適用於模組遷移、測試全通過等有明確終態的長時間任務。",
+      "focusTags": []
     },
     {
       "title": "New Signadot skill lets Claude Code, Codex and Cursor validate changes in live Kubernetes environments",
@@ -52,7 +57,8 @@
       "source": "Google News / SiliconANGLE",
       "time": "05/12 05:00",
       "sentiment": "",
-      "body": "Signadot 推出新技能，讓 Claude Code、Codex 與 Cursor 等 AI 編程工具可直接在真實 Kubernetes 環境中驗證程式碼變更，將 AI 輔助開發延伸至生產環境測試階段。"
+      "body": "Signadot 推出新技能，讓 Claude Code、Codex 與 Cursor 等 AI 編程工具可直接在真實 Kubernetes 環境中驗證程式碼變更，將 AI 輔助開發延伸至生產環境測試階段。",
+      "focusTags": []
     },
     {
       "title": "UiPath opens its platform to every coding agent – here's why Claude Code and Codex go first",
@@ -60,7 +66,8 @@
       "source": "Google News / diginomica",
       "time": "05/12 04:43",
       "sentiment": "",
-      "body": "RPA 龍頭 UiPath 宣布開放平台給所有 AI 編程 Agent，並優先整合 Claude Code 與 OpenAI Codex，顯示企業自動化市場正將 AI 編程工具視為核心組件而非附加功能。"
+      "body": "RPA 龍頭 UiPath 宣布開放平台給所有 AI 編程 Agent，並優先整合 Claude Code 與 OpenAI Codex，顯示企業自動化市場正將 AI 編程工具視為核心組件而非附加功能。",
+      "focusTags": []
     },
     {
       "title": "Show HN: BrowserCode – Run Claude Code in the Browser via WebAssembly",
@@ -68,7 +75,8 @@
       "source": "Hacker News",
       "time": "05/11 14:30",
       "sentiment": "",
-      "body": "開源專案 BrowserCode 利用 WebAssembly 在瀏覽器中完整執行 Claude Code CLI，所有資料與運算均留在本地，透過 Origin Private File System API 實現跨工作階段持久化，無需安裝任何本地依賴。"
+      "body": "開源專案 BrowserCode 利用 WebAssembly 在瀏覽器中完整執行 Claude Code CLI，所有資料與運算均留在本地，透過 Origin Private File System API 實現跨工作階段持久化，無需安裝任何本地依賴。",
+      "focusTags": []
     },
     {
       "title": "Anthropic adds Agent View to Claude Code CLI interface",
@@ -76,7 +84,8 @@
       "source": "Google News / TestingCatalog AI News",
       "time": "05/11 13:20",
       "sentiment": "",
-      "body": "TestingCatalog 報導 Anthropic 於 Claude Code CLI 介面加入 Agent View，允許開發者在單一視圖管理多個並行 Agent 工作階段，是本日最受媒體廣泛引用的技術更新。"
+      "body": "TestingCatalog 報導 Anthropic 於 Claude Code CLI 介面加入 Agent View，允許開發者在單一視圖管理多個並行 Agent 工作階段，是本日最受媒體廣泛引用的技術更新。",
+      "focusTags": []
     }
   ],
   "discussions": [
@@ -86,7 +95,8 @@
       "source": "Hacker News",
       "time": "05/11 13:03",
       "sentiment": "🤔 褒貶不一",
-      "body": "研究團隊讓 Claude Code 完全掌控硬體工具，在無任何人工撰寫程式碼的情況下，自主重現 Espressif ESP32 SoC 的 Secure Boot 硬體故障注入攻擊（Fault Injection），作者稱這是目前首個公開記錄的 AI 驅動 Fault Injection 攻擊。研究展示了 AI 在硬體安全漏洞探索領域的顛覆性潛力，同時也引發對自主攻擊工具的隱憂。"
+      "body": "研究團隊讓 Claude Code 完全掌控硬體工具，在無任何人工撰寫程式碼的情況下，自主重現 Espressif ESP32 SoC 的 Secure Boot 硬體故障注入攻擊（Fault Injection），作者稱這是目前首個公開記錄的 AI 驅動 Fault Injection 攻擊。研究展示了 AI 在硬體安全漏洞探索領域的顛覆性潛力，同時也引發對自主攻擊工具的隱憂。",
+      "focusTags": []
     },
     {
       "title": "I use Claude Code on large projects",
@@ -94,7 +104,8 @@
       "source": "Hacker News",
       "time": "05/11 13:58",
       "sentiment": "😊 正面",
-      "body": "作者深入分析在大型專案使用 Claude Code 的最大瓶頸：不是程式碼品質，而是 Context 管理——LLM 的 attention 機制讓它在缺乏完整系統全貌時會生成「看起來正確但邏輯有誤」的程式碼，文章提供具體的 Context 注入策略供開發者參考。"
+      "body": "作者深入分析在大型專案使用 Claude Code 的最大瓶頸：不是程式碼品質，而是 Context 管理——LLM 的 attention 機制讓它在缺乏完整系統全貌時會生成「看起來正確但邏輯有誤」的程式碼，文章提供具體的 Context 注入策略供開發者參考。",
+      "focusTags": []
     },
     {
       "title": "Claude Code and Blender MCP",
@@ -102,7 +113,8 @@
       "source": "Hacker News",
       "time": "05/12 05:13",
       "sentiment": "😊 正面",
-      "body": "開發者分享從非官方 Blender MCP 插件遷移至 Blender 官方 MCP Add-on（Blender 5.1）搭配 Claude Code 的完整流程，肯定官方插件長期維護前景更有保障。"
+      "body": "開發者分享從非官方 Blender MCP 插件遷移至 Blender 官方 MCP Add-on（Blender 5.1）搭配 Claude Code 的完整流程，肯定官方插件長期維護前景更有保障。",
+      "focusTags": []
     },
     {
       "title": "The Unholy Trinity: Nix Shells, SSH Config, and Claude Code",
@@ -110,7 +122,8 @@
       "source": "Hacker News",
       "time": "05/11 13:57",
       "sentiment": "😊 正面",
-      "body": "開發者探討讓 Claude Code 直接存取 Nix Shell 環境與 SSH 設定後，AI 輔助開發的真正乘數效應在於「讓它能觸碰什麼」，而非提示詞技巧，並提供具體基礎設施配置建議。"
+      "body": "開發者探討讓 Claude Code 直接存取 Nix Shell 環境與 SSH 設定後，AI 輔助開發的真正乘數效應在於「讓它能觸碰什麼」，而非提示詞技巧，並提供具體基礎設施配置建議。",
+      "focusTags": []
     },
     {
       "title": "Show HN: Agent FM – local, open-source radio for Claude Code and Codex agents",
@@ -118,7 +131,8 @@
       "source": "Hacker News",
       "time": "05/12 06:21",
       "sentiment": "😐 中性",
-      "body": "Agent FM 是一款本地開源工具，以「廣播」形式呈現 Claude Code 與 Codex Agent 的執行狀態，提供聽覺化的工作進度回饋，討論中對概念創意表示興趣。"
+      "body": "Agent FM 是一款本地開源工具，以「廣播」形式呈現 Claude Code 與 Codex Agent 的執行狀態，提供聽覺化的工作進度回饋，討論中對概念創意表示興趣。",
+      "focusTags": []
     },
     {
       "title": "What do you NOT like about Cursor / VSCode / Claude Code desktop / Codex / etc.?",
@@ -126,7 +140,8 @@
       "source": "Hacker News",
       "time": "05/11 23:22",
       "sentiment": "😤 負面",
-      "body": "HN 開發者集思廣益列出現有 AI 編程工具的痛點：缺乏 worktree 支援、無法查看 PR 審核狀態、不支援遠端沙盒等，背後是一位開發者正在打造跨供應商整合式工作站的需求調研。"
+      "body": "HN 開發者集思廣益列出現有 AI 編程工具的痛點：缺乏 worktree 支援、無法查看 PR 審核狀態、不支援遠端沙盒等，背後是一位開發者正在打造跨供應商整合式工作站的需求調研。",
+      "focusTags": []
     },
     {
       "title": "Most agent-memory tools are markdown you keep grooming. I wanted something that travels between models and machines, so I built a protocol.",
@@ -134,7 +149,8 @@
       "source": "Reddit / r/ClaudeAI",
       "time": "05/12 04:49",
       "sentiment": "🤔 褒貶不一",
-      "body": "開發者指出現有 Agent 記憶方案（含 CLAUDE.md）的根本缺陷：無法跨編輯器、跨機器、跨模型攜帶，因此打造了基於 JSON 協定（Core Memory Packet）的 `ltm` 工具，實現供應商中立的持久化 Agent 記憶。"
+      "body": "開發者指出現有 Agent 記憶方案（含 CLAUDE.md）的根本缺陷：無法跨編輯器、跨機器、跨模型攜帶，因此打造了基於 JSON 協定（Core Memory Packet）的 `ltm` 工具，實現供應商中立的持久化 Agent 記憶。",
+      "focusTags": []
     },
     {
       "title": "I built a Claude Code plugin that actually enforces your rules instead of hoping the model follows them",
@@ -142,7 +158,8 @@
       "source": "Reddit / r/ClaudeAI",
       "time": "05/12 04:27",
       "sentiment": "😊 正面",
-      "body": "開發者分享 Writ 外掛：透過五階段 Neo4j 知識圖譜 Pipeline，自動擷取與當前任務相關的規則集，解決 Claude Code 常忽略 CLAUDE.md 規則、同時避免無關規則佔用 token 的雙重問題。"
+      "body": "開發者分享 Writ 外掛：透過五階段 Neo4j 知識圖譜 Pipeline，自動擷取與當前任務相關的規則集，解決 Claude Code 常忽略 CLAUDE.md 規則、同時避免無關規則佔用 token 的雙重問題。",
+      "focusTags": []
     },
     {
       "title": "Claude Code's checkpoint commits are polluting my git history. How are you handling this?",
@@ -150,7 +167,8 @@
       "source": "Reddit / r/ClaudeAI",
       "time": "05/12 03:47",
       "sentiment": "😤 負面",
-      "body": "用戶抱怨 Claude Code 自動建立的 checkpoint commit 大量污染 git 歷史，搭配 worktree 使用時問題更加嚴重（每個子 Agent 各自建立分支並獨立 checkpoint），討論串聚集多種清理方案。"
+      "body": "用戶抱怨 Claude Code 自動建立的 checkpoint commit 大量污染 git 歷史，搭配 worktree 使用時問題更加嚴重（每個子 Agent 各自建立分支並獨立 checkpoint），討論串聚集多種清理方案。",
+      "focusTags": []
     },
     {
       "title": "Why I added a second Claude chat whose only job is to disagree with my first Claude chat",
@@ -158,7 +176,8 @@
       "source": "Reddit / r/ClaudeAI",
       "time": "05/12 04:02",
       "sentiment": "😊 正面",
-      "body": "開發者追蹤六個生產專案後發現 Claude Code 面對模糊規格時的系統性偏差，設計出「對抗性審查」工作流程：一個 Claude 負責起草任務 kickoff，第二個 Claude 扮演批評者事先挑毛病，顯著降低執行後的靜默失敗率。"
+      "body": "開發者追蹤六個生產專案後發現 Claude Code 面對模糊規格時的系統性偏差，設計出「對抗性審查」工作流程：一個 Claude 負責起草任務 kickoff，第二個 Claude 扮演批評者事先挑毛病，顯著降低執行後的靜默失敗率。",
+      "focusTags": []
     },
     {
       "title": "Claude Code just shipped a \"run until done\" mode. Upgrade to v2.1.139 for /goal.",
@@ -166,7 +185,8 @@
       "source": "Reddit / r/ClaudeAI",
       "time": "05/11 23:08",
       "sentiment": "😊 正面",
-      "body": "Reddit 社群對 v2.1.139 的 `/goal` 指令反應熱烈，有用戶形容這是「Claude Code 首個真正的 fire-and-forget 循環」，此版本包含 104 項變更，討論氛圍正面。"
+      "body": "Reddit 社群對 v2.1.139 的 `/goal` 指令反應熱烈，有用戶形容這是「Claude Code 首個真正的 fire-and-forget 循環」，此版本包含 104 項變更，討論氛圍正面。",
+      "focusTags": []
     },
     {
       "title": "Can we acknowledge that Anthropic watches open sourcers and copies them?",
@@ -174,7 +194,8 @@
       "source": "Reddit / r/ClaudeAI",
       "time": "05/12 03:19",
       "sentiment": "😤 負面",
-      "body": "用戶指控 Anthropic 長期觀察開源社群工具後直接內建類似功能（以 Openclaw 的多項功能、持久記憶體、`/goal` 指令為例），且未給予原作者任何信用，引發社群對科技公司與開源開發者關係的廣泛討論。"
+      "body": "用戶指控 Anthropic 長期觀察開源社群工具後直接內建類似功能（以 Openclaw 的多項功能、持久記憶體、`/goal` 指令為例），且未給予原作者任何信用，引發社群對科技公司與開源開發者關係的廣泛討論。",
+      "focusTags": []
     },
     {
       "title": "Someone sent me this Google Analytics screenshot claiming it was built with Claude Code, 47K active users in a single day. Is this legit?",
@@ -182,7 +203,8 @@
       "source": "Reddit / r/ClaudeAI",
       "time": "05/12 05:27",
       "sentiment": "🤔 褒貶不一",
-      "body": "一張顯示單日 47,901 名活躍用戶的 GA 截圖在社群流傳，聲稱整個專案由 Claude Code 獨立打造，引發真偽討論並延伸至 Claude Code 構建可規模化產品的可行性辯論。"
+      "body": "一張顯示單日 47,901 名活躍用戶的 GA 截圖在社群流傳，聲稱整個專案由 Claude Code 獨立打造，引發真偽討論並延伸至 Claude Code 構建可規模化產品的可行性辯論。",
+      "focusTags": []
     },
     {
       "title": "Usage4Claude 3.0.0: open source macOS menu bar usage tracker for Claude, now with Codex support",
@@ -190,7 +212,8 @@
       "source": "Reddit / r/ClaudeAI",
       "time": "05/12 04:11",
       "sentiment": "😊 正面",
-      "body": "開源 macOS 選單列工具 Usage4Claude 升版至 3.0.0，新增 Codex 用量追蹤支援，認證資料儲存於本地 Keychain，社群反應正面。"
+      "body": "開源 macOS 選單列工具 Usage4Claude 升版至 3.0.0，新增 Codex 用量追蹤支援，認證資料儲存於本地 Keychain，社群反應正面。",
+      "focusTags": []
     },
     {
       "title": "Claude Code Agent View Just Launched: What It Does and How to Use It",
@@ -198,7 +221,8 @@
       "source": "dev.to / #claudecode",
       "time": "05/11 20:55",
       "sentiment": "😊 正面",
-      "body": "devtoolpicks 整理 Agent View 功能說明與操作指引，適合想快速了解新功能實際用法的開發者參考。"
+      "body": "devtoolpicks 整理 Agent View 功能說明與操作指引，適合想快速了解新功能實際用法的開發者參考。",
+      "focusTags": []
     },
     {
       "title": "i built a checkpoint system for claude code cli – here's how",
@@ -206,7 +230,8 @@
       "source": "dev.to / #claudecode",
       "time": "05/12 04:20",
       "sentiment": "😊 正面",
-      "body": "開發者自製 checkpoint 系統，解決 Claude Code CLI 工作階段中缺乏狀態追蹤與還原點的問題，適合長時間重構任務使用。"
+      "body": "開發者自製 checkpoint 系統，解決 Claude Code CLI 工作階段中缺乏狀態追蹤與還原點的問題，適合長時間重構任務使用。",
+      "focusTags": []
     },
     {
       "title": "Five MCP Servers Before Claude Code Writes a Single Line",
@@ -214,7 +239,8 @@
       "source": "dev.to / #claudecode",
       "time": "05/11 16:19",
       "sentiment": "😊 正面",
-      "body": "作者分享在讓 Claude Code 開始寫程式之前，預先掛載五個 MCP Server 的工作流程策略，提升 AI 輔助的整體品質，適合已有 MCP 基礎的開發者參考。"
+      "body": "作者分享在讓 Claude Code 開始寫程式之前，預先掛載五個 MCP Server 的工作流程策略，提升 AI 輔助的整體品質，適合已有 MCP 基礎的開發者參考。",
+      "focusTags": []
     },
     {
       "title": "Claude down: Claude AI suffers outage for second time in 3 days",
@@ -222,7 +248,8 @@
       "source": "Google News / MSN",
       "time": "05/11 12:23",
       "sentiment": "😤 負面",
-      "body": "Claude AI 三天內再度發生服務中斷，根據 Anthropic 公開回應，此次事件與前次為獨立事故，但連續中斷已引發使用者對服務可靠性的質疑，尤其在 Code with Claude 大會剛結束的時間節點更顯敏感。"
+      "body": "Claude AI 三天內再度發生服務中斷，根據 Anthropic 公開回應，此次事件與前次為獨立事故，但連續中斷已引發使用者對服務可靠性的質疑，尤其在 Code with Claude 大會剛結束的時間節點更顯敏感。",
+      "focusTags": []
     }
   ],
   "billing": [
@@ -232,7 +259,8 @@
       "source": "Reddit / r/ClaudeAI",
       "time": "05/12 02:30",
       "sentiment": "",
-      "body": "用戶解析自身 Claude Max 5x（$100/月）的 JSONL 使用紀錄並套用 Anthropic 公開定價：正常月份 API 等值費用約 $159，但高峰月份（密集使用 Claude Code）達 $6,600，顯示訂閱制對重度用戶的節省效益極為顯著，也引發對「什麼時候升級方案划算」的社群討論。"
+      "body": "用戶解析自身 Claude Max 5x（$100/月）的 JSONL 使用紀錄並套用 Anthropic 公開定價：正常月份 API 等值費用約 $159，但高峰月份（密集使用 Claude Code）達 $6,600，顯示訂閱制對重度用戶的節省效益極為顯著，也引發對「什麼時候升級方案划算」的社群討論。",
+      "focusTags": []
     },
     {
       "title": "Claude Code Ultra Review",
@@ -240,7 +268,8 @@
       "source": "Reddit / r/ClaudeAI",
       "time": "05/12 03:22",
       "sentiment": "",
-      "body": "用戶實測 Claude Code Ultra Review 功能，實際費用為每次 $100–$140（適用約 50–100 個檔案的 PR），與官方介面顯示的 $5–$20 估算相差數倍；用戶認為程式碼審查品質尚可，但費用透明度問題引發批評。"
+      "body": "用戶實測 Claude Code Ultra Review 功能，實際費用為每次 $100–$140（適用約 50–100 個檔案的 PR），與官方介面顯示的 $5–$20 估算相差數倍；用戶認為程式碼審查品質尚可，但費用透明度問題引發批評。",
+      "focusTags": []
     },
     {
       "title": "Have you guys tried buying from third party website?",
@@ -248,7 +277,8 @@
       "source": "Reddit / r/ClaudeAI",
       "time": "05/12 03:22",
       "sentiment": "",
-      "body": "用戶分享以第三方平台每月 $100 使用 Claude Code Max x20 方案（等同官方更高階配置）約兩個月的經驗，並詢問帳號被封禁的風險；此類替代購買行為涉及服務條款爭議，社群回應謹慎。"
+      "body": "用戶分享以第三方平台每月 $100 使用 Claude Code Max x20 方案（等同官方更高階配置）約兩個月的經驗，並詢問帳號被封禁的風險；此類替代購買行為涉及服務條款爭議，社群回應謹慎。",
+      "focusTags": []
     }
   ],
   "focus": [

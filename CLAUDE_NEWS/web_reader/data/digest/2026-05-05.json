@@ -10,7 +10,8 @@
       "source": "Hacker News",
       "time": "05/05 06:09",
       "sentiment": "",
-      "body": "Amazon 軟體開發體驗 VP Jim Haughwout 在內部公告中宣布，Claude Code 與 OpenAI Codex 即刻向全體企業員工開放，此舉源於員工對現有 AI 工具的強烈訴求。Amazon 同時是 Anthropic 與 OpenAI 的大規模投資方，這次雙品牌並行採用格外罕見，反映出企業端並不打算只押注單一供應商。"
+      "body": "Amazon 軟體開發體驗 VP Jim Haughwout 在內部公告中宣布，Claude Code 與 OpenAI Codex 即刻向全體企業員工開放，此舉源於員工對現有 AI 工具的強烈訴求。Amazon 同時是 Anthropic 與 OpenAI 的大規模投資方，這次雙品牌並行採用格外罕見，反映出企業端並不打算只押注單一供應商。",
+      "focusTags": []
     },
     {
       "title": "Anthropic quietly nerfed Claude Code's 1-hour cache",
@@ -18,7 +19,8 @@
       "source": "Hacker News",
       "time": "05/05 05:23",
       "sentiment": "",
-      "body": "報導指出 Anthropic 在 4 月初悄悄將 Claude Code 的預設提示快取窗口從 1 小時縮短，實質上在不調整名目訂閱費的情況下提高了用戶的 token 消耗速度。此改動未見任何官方公告，訂閱用戶若近期配額消耗加快，此為最可能的原因。"
+      "body": "報導指出 Anthropic 在 4 月初悄悄將 Claude Code 的預設提示快取窗口從 1 小時縮短，實質上在不調整名目訂閱費的情況下提高了用戶的 token 消耗速度。此改動未見任何官方公告，訂閱用戶若近期配額消耗加快，此為最可能的原因。",
+      "focusTags": []
     },
     {
       "title": "OpenAI Codex Surpasses Claude Code in Downloads Following April 30 Inflection",
@@ -26,7 +28,8 @@
       "source": "Hacker News",
       "time": "05/04 20:45",
       "sentiment": "",
-      "body": "TickerTrends 資料顯示，截至 5/3 當週 Codex 下載量達 8610 萬次（週增 1397%），Claude Code 則下滑 38% 至 720 萬次。轉折點是 OpenAI 在 4/30 發布 Codex v0.128.0，新增持久化 `/goal` 工作流，支援跨步驟任務規劃，這是市場份額競爭的重大轉折，需持續追蹤後續走勢。"
+      "body": "TickerTrends 資料顯示，截至 5/3 當週 Codex 下載量達 8610 萬次（週增 1397%），Claude Code 則下滑 38% 至 720 萬次。轉折點是 OpenAI 在 4/30 發布 Codex v0.128.0，新增持久化 `/goal` 工作流，支援跨步驟任務規劃，這是市場份額競爭的重大轉折，需持續追蹤後續走勢。",
+      "focusTags": []
     },
     {
       "title": "DeepClaude Slashes Claude Code Costs 17x With DeepSeek Brain",
@@ -34,7 +37,8 @@
       "source": "dev.to",
       "time": "05/04 22:48",
       "sentiment": "",
-      "body": "DeepClaude 是一個將 Claude Code 後端替換為 DeepSeek V4 Pro 的輕量工具，開發者聲稱在保留完整 agent loop 功能的前提下，成本降低 17 倍。本週在 dev.to 衍生出數篇相關比較文章，但也有社群成員指出 DeepSeek 官方文件已提供直接整合方式，工具的附加價值有待驗證。"
+      "body": "DeepClaude 是一個將 Claude Code 後端替換為 DeepSeek V4 Pro 的輕量工具，開發者聲稱在保留完整 agent loop 功能的前提下，成本降低 17 倍。本週在 dev.to 衍生出數篇相關比較文章，但也有社群成員指出 DeepSeek 官方文件已提供直接整合方式，工具的附加價值有待驗證。",
+      "focusTags": []
     }
   ],
   "techUpdates": [
@@ -44,7 +48,8 @@
       "source": "GitHub / anthropics/claude-code",
       "time": "05/04 23:01",
       "sentiment": "",
-      "body": "本次版本新增三項功能：`/color`（不帶參數）可隨機選取工作階段顯示顏色；`/mcp` 命令現在會顯示各已連線伺服器的工具數量，並標記以 0 工具連線的伺服器；`--plugin-dir` 行為亦有調整。"
+      "body": "本次版本新增三項功能：`/color`（不帶參數）可隨機選取工作階段顯示顏色；`/mcp` 命令現在會顯示各已連線伺服器的工具數量，並標記以 0 工具連線的伺服器；`--plugin-dir` 行為亦有調整。",
+      "focusTags": []
     },
     {
       "title": "SprintiQ – open-source sprint planning for Claude Code",
@@ -52,7 +57,8 @@
       "source": "Hacker News",
       "time": "05/04 22:52",
       "sentiment": "",
-      "body": "SprintiQ 是一個開源 sprint 規劃工具，專為 Claude Code 設計，使用 Supabase 與 Anthropic API 自行部署約需 10–15 分鐘，雲端版可至 sprintiq.ai 試用。社群對「AI agent 是否需要做 sprint planning」有所爭議，此工具的定位是否必要仍有討論空間。"
+      "body": "SprintiQ 是一個開源 sprint 規劃工具，專為 Claude Code 設計，使用 Supabase 與 Anthropic API 自行部署約需 10–15 分鐘，雲端版可至 sprintiq.ai 試用。社群對「AI agent 是否需要做 sprint planning」有所爭議，此工具的定位是否必要仍有討論空間。",
+      "focusTags": []
     },
     {
       "title": "Show HN: Claude Relay – local Claude Code sessions message each other",
@@ -60,7 +66,8 @@
       "source": "Hacker News",
       "time": "05/05 09:19",
       "sentiment": "",
-      "body": "Claude Relay 是一個 plugin，讓同時開啟的多個本地 Claude Code session（例如前端、後端、infra）可以互相傳訊查詢，省去人工在 session 間複製貼上的繁瑣流程；開發者直言「我才是那個慢的環節」。"
+      "body": "Claude Relay 是一個 plugin，讓同時開啟的多個本地 Claude Code session（例如前端、後端、infra）可以互相傳訊查詢，省去人工在 session 間複製貼上的繁瑣流程；開發者直言「我才是那個慢的環節」。",
+      "focusTags": []
     },
     {
       "title": "Show HN: Memex, Claude memory via local RAG (MCP, offline embeddings)",
@@ -68,7 +75,8 @@
       "source": "Hacker News",
       "time": "05/05 09:02",
       "sentiment": "",
-      "body": "Memex 透過本地 RAG 與離線 embedding 為 Claude 提供跨對話持久記憶，所有資料留存本機，不需上傳雲端或額外 API 金鑰，以 MCP 方式接入。"
+      "body": "Memex 透過本地 RAG 與離線 embedding 為 Claude 提供跨對話持久記憶，所有資料留存本機，不需上傳雲端或額外 API 金鑰，以 MCP 方式接入。",
+      "focusTags": []
     },
     {
       "title": "Show HN: Claude-Find – Pull Deep Memory from Across Your Claude Code Sessions",
@@ -76,7 +84,8 @@
       "source": "Hacker News",
       "time": "05/04 18:00",
       "sentiment": "",
-      "body": "Claude-Find 解決了 `/resume` 功能只能依第一條訊息或自訂名稱篩選的痛點，讓每月累積數百個 session 的重度用戶可以用語義搜尋快速定位過去的決策脈絡，注入現有 session。"
+      "body": "Claude-Find 解決了 `/resume` 功能只能依第一條訊息或自訂名稱篩選的痛點，讓每月累積數百個 session 的重度用戶可以用語義搜尋快速定位過去的決策脈絡，注入現有 session。",
+      "focusTags": []
     },
     {
       "title": "Show HN: Askdiff – Ask the Claude session that wrote your code in a diff viewer",
@@ -84,7 +93,8 @@
       "source": "Hacker News",
       "time": "05/05 13:09",
       "sentiment": "",
-      "body": "Askdiff 在 GitHub PR 風格的 diff 介面中，讓開發者可以直接對生成程式碼的同一個 Claude Code session 提問（點擊行號即可），串流取得原始決策理由，解決 code review 時來回切換 context 的痛點。"
+      "body": "Askdiff 在 GitHub PR 風格的 diff 介面中，讓開發者可以直接對生成程式碼的同一個 Claude Code session 提問（點擊行號即可），串流取得原始決策理由，解決 code review 時來回切換 context 的痛點。",
+      "focusTags": []
     },
     {
       "title": "Show HN: Rudel – Claude Code / Codex sessions reveals 9 types of AI coder",
@@ -92,7 +102,8 @@
       "source": "Hacker News",
       "time": "05/04 14:22",
       "sentiment": "",
-      "body": "Rudel 分析了 2 萬筆以上的 Claude Code/Codex session metadata，從一致性、強度、repo 廣度、成本密度等維度萃取出 9 種 AI 程式設計師原型，以 Spotify Wrapped 風格的互動卡片呈現；資料顯示 4% session 使用了 skills，26% 在早期就被放棄。"
+      "body": "Rudel 分析了 2 萬筆以上的 Claude Code/Codex session metadata，從一致性、強度、repo 廣度、成本密度等維度萃取出 9 種 AI 程式設計師原型，以 Spotify Wrapped 風格的互動卡片呈現；資料顯示 4% session 使用了 skills，26% 在早期就被放棄。",
+      "focusTags": []
     }
   ],
   "discussions": [
@@ -102,7 +113,8 @@
       "source": "Reddit / r/ClaudeAI",
       "time": "05/05 02:16",
       "sentiment": "😊 正面",
-      "body": "Claude Code 創始人 Boris Cherny 在 podcast 中分享他已 100% 用 Claude Code 取代手動編碼，並提出「Loops（迴圈執行）是 AI 編碼的未來」，而非單次對話補全。這場對談為 Claude Code 的設計哲學提供了第一手視角。"
+      "body": "Claude Code 創始人 Boris Cherny 在 podcast 中分享他已 100% 用 Claude Code 取代手動編碼，並提出「Loops（迴圈執行）是 AI 編碼的未來」，而非單次對話補全。這場對談為 Claude Code 的設計哲學提供了第一手視角。",
+      "focusTags": []
     },
     {
       "title": "Show HN: My coworker and I planning with our Claude Codes in the same chat room",
@@ -110,7 +122,8 @@
       "source": "Hacker News",
       "time": "05/04 16:33",
       "sentiment": "😊 正面",
-      "body": "兩位開發者各自執行本地 Claude Code session，並將兩個 session 接入同一個 P2P 加密聊天室，讓 AI 代理互相協商前後端規劃細節，人類僅負責監督與介入。社群對這種「非正式多 agent 協作」工作流評價相當正面。"
+      "body": "兩位開發者各自執行本地 Claude Code session，並將兩個 session 接入同一個 P2P 加密聊天室，讓 AI 代理互相協商前後端規劃細節，人類僅負責監督與介入。社群對這種「非正式多 agent 協作」工作流評價相當正面。",
+      "focusTags": []
     },
     {
       "title": "CLAUDE.md for Multi-Agent Claude Code: 11 Rules to Stop Your Agents Conflicting",
@@ -118,7 +131,8 @@
       "source": "dev.to",
       "time": "05/04 18:20",
       "sentiment": "😊 正面",
-      "body": "針對多個並行 Claude Code session 可能產生的衝突，文章整理出 11 條 CLAUDE.md 最佳實踐，對已經採用多 agent 工作流的開發者而言是即戰力指南。"
+      "body": "針對多個並行 Claude Code session 可能產生的衝突，文章整理出 11 條 CLAUDE.md 最佳實踐，對已經採用多 agent 工作流的開發者而言是即戰力指南。",
+      "focusTags": []
     },
     {
       "title": "Practical Ways to Reduce Claude Code Token Usage",
@@ -126,7 +140,8 @@
       "source": "Hacker News",
       "time": "05/04 20:32",
       "sentiment": "😐 中性",
-      "body": "文章指出 Claude Code 的高 token 成本主要來自膨脹的 context（歷史訊息、已讀檔案、工具輸出、CLAUDE.md 等），而非單次 prompt 長度，並提供 7 個實際可用的降耗策略。"
+      "body": "文章指出 Claude Code 的高 token 成本主要來自膨脹的 context（歷史訊息、已讀檔案、工具輸出、CLAUDE.md 等），而非單次 prompt 長度，並提供 7 個實際可用的降耗策略。",
+      "focusTags": []
     },
     {
       "title": "Caveman Review: The Claude Code Skill That Cuts 65% of Tokens",
@@ -134,7 +149,8 @@
       "source": "dev.to",
       "time": "05/05 03:11",
       "sentiment": "😊 正面",
-      "body": "評測一個宣稱可削減 65% token 使用量的 Claude Code skill（Caveman），作者實測後認為效果顯著，但節省幅度取決於使用情境；對訂閱配額告急的用戶具參考價值。"
+      "body": "評測一個宣稱可削減 65% token 使用量的 Claude Code skill（Caveman），作者實測後認為效果顯著，但節省幅度取決於使用情境；對訂閱配額告急的用戶具參考價值。",
+      "focusTags": []
     },
     {
       "title": "Claude Opus 4.7 Is a Regression: Why Developers Are Switching Back to 4.6",
@@ -142,7 +158,8 @@
       "source": "dev.to",
       "time": "05/04 21:33",
       "sentiment": "😤 負面",
-      "body": "部分開發者聲稱 Claude Opus 4.7 在實際編碼任務中表現不如 4.6，並已回退舊版本。此類「新模型退步」的討論在社群中週期性出現，具體差異高度依賴使用情境，標題有一定程度的誇大，建議自行實測後再做判斷。"
+      "body": "部分開發者聲稱 Claude Opus 4.7 在實際編碼任務中表現不如 4.6，並已回退舊版本。此類「新模型退步」的討論在社群中週期性出現，具體差異高度依賴使用情境，標題有一定程度的誇大，建議自行實測後再做判斷。",
+      "focusTags": []
     },
     {
       "title": "I built a Claude Code skill that automates LinkedIn engagement",
@@ -150,7 +167,8 @@
       "source": "Reddit / r/ClaudeAI",
       "time": "05/05 05:02",
       "sentiment": "😊 正面",
-      "body": "開發者分享了一個結合聲音剖析（由 15 題問卷生成 markdown 語氣檔案）、Notion 審核佇列與 Playwright 自動發布的 LinkedIn 留言自動化 skill；用途雖是個人需求，但「含 human-in-the-loop 的 skill 架構」本身具有較高的移植參考價值。"
+      "body": "開發者分享了一個結合聲音剖析（由 15 題問卷生成 markdown 語氣檔案）、Notion 審核佇列與 Playwright 自動發布的 LinkedIn 留言自動化 skill；用途雖是個人需求，但「含 human-in-the-loop 的 skill 架構」本身具有較高的移植參考價值。",
+      "focusTags": []
     },
     {
       "title": "`@playwright/cli` Is Not `npx playwright test` — And That Difference Is Costing Your AI Agent Thousands of Tokens",
@@ -158,7 +176,8 @@
       "source": "dev.to",
       "time": "05/04 23:26",
       "sentiment": "😐 中性",
-      "body": "文章揭示 `@playwright/cli` 與 `npx playwright test` 在 AI agent 環境下的行為差異，可能導致大量不必要的 token 消耗，對在 CI/CD 流程中使用 Claude Code 做自動化測試的工程師是值得留意的細節。"
+      "body": "文章揭示 `@playwright/cli` 與 `npx playwright test` 在 AI agent 環境下的行為差異，可能導致大量不必要的 token 消耗，對在 CI/CD 流程中使用 Claude Code 做自動化測試的工程師是值得留意的細節。",
+      "focusTags": []
     },
     {
       "title": "I wish Claude Projects would have the same read/write ability as Claude Code",
@@ -166,7 +185,8 @@
       "source": "Reddit / r/ClaudeAI",
       "time": "05/04 17:20",
       "sentiment": "🤔 褒貶不一",
-      "body": "用戶分享以 markdown 檔案維護「第二大腦」的工作流，在嘗試 Claude Projects 語音功能後，希望 Projects 能獲得 Claude Code 的檔案讀寫能力。此討論凸顯了 Claude 兩個產品線之間仍存在功能落差，訴求具有代表性。"
+      "body": "用戶分享以 markdown 檔案維護「第二大腦」的工作流，在嘗試 Claude Projects 語音功能後，希望 Projects 能獲得 Claude Code 的檔案讀寫能力。此討論凸顯了 Claude 兩個產品線之間仍存在功能落差，訴求具有代表性。",
+      "focusTags": []
     },
     {
       "title": "Ollama 20$ vs (Claude Code or Codex) 20$ subscription",
@@ -174,7 +194,8 @@
       "source": "Reddit / r/LocalLLaMA",
       "time": "05/05 01:29",
       "sentiment": "🤔 褒貶不一",
-      "body": "Reddit 討論串探討相同預算下 Ollama 本地模型與 Claude Code/Codex 訂閱的取捨，原始 po 主表示 Claude Code $20 方案的配額對「簡單任務」也不夠用，本地端無限制使用對輕量用戶更有吸引力；社群回應兩極，取決於任務複雜度。"
+      "body": "Reddit 討論串探討相同預算下 Ollama 本地模型與 Claude Code/Codex 訂閱的取捨，原始 po 主表示 Claude Code $20 方案的配額對「簡單任務」也不夠用，本地端無限制使用對輕量用戶更有吸引力；社群回應兩極，取決於任務複雜度。",
+      "focusTags": []
     },
     {
       "title": "DeepClaude vs Claude Code vs Codex Pro: 2026 Cost Stack",
@@ -182,7 +203,8 @@
       "source": "dev.to",
       "time": "05/04 21:31",
       "sentiment": "😐 中性",
-      "body": "比較 DeepClaude（以 DeepSeek 替代後端）、Claude Code 與 Codex Pro 的 2026 年費用結構，為有成本壓力的開發者提供選擇參考，可搭配重點話題中的 DeepClaude 介紹一起閱讀。"
+      "body": "比較 DeepClaude（以 DeepSeek 替代後端）、Claude Code 與 Codex Pro 的 2026 年費用結構，為有成本壓力的開發者提供選擇參考，可搭配重點話題中的 DeepClaude 介紹一起閱讀。",
+      "focusTags": []
     }
   ],
   "billing": [
@@ -192,7 +214,8 @@
       "source": "Hacker News",
       "time": "05/05 05:23",
       "sentiment": "",
-      "body": "Anthropic 悄悄縮短 Claude Code 的提示快取窗口，實質上在不調整訂閱定價的情況下提高了用戶的有效 token 消耗成本。此變動未經任何公告，訂閱用戶應留意近期配額使用情況是否明顯偏高。"
+      "body": "Anthropic 悄悄縮短 Claude Code 的提示快取窗口，實質上在不調整訂閱定價的情況下提高了用戶的有效 token 消耗成本。此變動未經任何公告，訂閱用戶應留意近期配額使用情況是否明顯偏高。",
+      "focusTags": []
     },
     {
       "title": "DeepClaude: Run Claude Code on DeepSeek for 90% Less",
@@ -200,7 +223,8 @@
       "source": "dev.to",
       "time": "05/04 21:26",
       "sentiment": "",
-      "body": "DeepClaude 透過四行 shell 腳本將 Claude Code 的 API 請求導向 DeepSeek，聲稱可節省 90% 費用。社群指出 DeepSeek 官方已在文件中提供 Claude Code 直接整合說明，此工具的附加價值主要在於降低配置門檻。"
+      "body": "DeepClaude 透過四行 shell 腳本將 Claude Code 的 API 請求導向 DeepSeek，聲稱可節省 90% 費用。社群指出 DeepSeek 官方已在文件中提供 Claude Code 直接整合說明，此工具的附加價值主要在於降低配置門檻。",
+      "focusTags": []
     }
   ],
   "focus": [

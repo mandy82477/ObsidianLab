@@ -10,7 +10,10 @@
       "source": "Hacker News",
       "time": "05/24 17:34",
       "sentiment": "",
-      "body": "研究者在升級至 v2.1.150 後發現：Claude Code 在啟動時呼叫 Anthropic 端點取得並快取系統提示片段，GrowthBook 功能旗標每 60 秒動態重整，回傳內容直接注入擁有 shell 存取的 LLM 系統提示；研究者慣例每次升級都由 Claude 自行解析 binary 找潛在問題提示，此機制為新發現。"
+      "body": "研究者在升級至 v2.1.150 後發現：Claude Code 在啟動時呼叫 Anthropic 端點取得並快取系統提示片段，GrowthBook 功能旗標每 60 秒動態重整，回傳內容直接注入擁有 shell 存取的 LLM 系統提示；研究者慣例每次升級都由 Claude 自行解析 binary 找潛在問題提示，此機制為新發現。",
+      "focusTags": [
+        "[風險警示]"
+      ]
     },
     {
       "title": "Anthropic 官方 Exploit 評估報告 + Mythos 公開化訊號",
@@ -18,7 +21,10 @@
       "source": "Hacker News / The Register / Politico",
       "time": "05/24",
       "sentiment": "",
-      "body": "Anthropic 安全團隊發布正式評估：Mythos Preview 能在端對端攻擊鏈上超越前代模型；The Register 同日報導 Anthropic 正準備向公眾釋出 Mythos 等級能力；Politico 引述閉門國會簡報——英國 AI 安全研究所測試數據首次公開，衝擊力遠超過去「能發現漏洞」的摘要敘述。"
+      "body": "Anthropic 安全團隊發布正式評估：Mythos Preview 能在端對端攻擊鏈上超越前代模型；The Register 同日報導 Anthropic 正準備向公眾釋出 Mythos 等級能力；Politico 引述閉門國會簡報——英國 AI 安全研究所測試數據首次公開，衝擊力遠超過去「能發現漏洞」的摘要敘述。",
+      "focusTags": [
+        "[重大事件]"
+      ]
     },
     {
       "title": "MCP 成本雙軸量化：byte 節省 vs cache 命中率",
@@ -26,7 +32,10 @@
       "source": "Reddit / r/ClaudeAI",
       "time": "05/25 03:27",
       "sentiment": "",
-      "body": "開發者建立開放基準測試，以 byte savings 和 cache-friendliness 雙軸評估 MCP stack；發現單軸最佳化可能導致生產環境嚴格更差的結果——retrieval MCP 省了 60–70% bytes 但輸出順序不穩定，導致每次呼叫 cache miss；2 行排序修正後 byte 節省不變但 cache 命中從 0% 升至 100%；與前日 cache miss 12.5 倍量化形成完整雙篇。"
+      "body": "開發者建立開放基準測試，以 byte savings 和 cache-friendliness 雙軸評估 MCP stack；發現單軸最佳化可能導致生產環境嚴格更差的結果——retrieval MCP 省了 60–70% bytes 但輸出順序不穩定，導致每次呼叫 cache miss；2 行排序修正後 byte 節省不變但 cache 命中從 0% 升至 100%；與前日 cache miss 12.5 倍量化形成完整雙篇。",
+      "focusTags": [
+        "[社群趨勢]"
+      ]
     }
   ],
   "techUpdates": [
@@ -36,7 +45,10 @@
       "source": "Anthropic Security Blog",
       "time": "05/24 18:52",
       "sentiment": "",
-      "body": "Anthropic 安全團隊（Newton Cheng、Keane Lucas 等）正式發布 Mythos Preview 的 exploit 開發能力評估論文，超出「找漏洞」層次，確認能將 primitive 組合成完整端對端攻擊鏈；此為 Project Glasswing 謹慎部署決策的技術核心依據，也是業界目前公開的最強 AI exploit 能力評估文件。"
+      "body": "Anthropic 安全團隊（Newton Cheng、Keane Lucas 等）正式發布 Mythos Preview 的 exploit 開發能力評估論文，超出「找漏洞」層次，確認能將 primitive 組合成完整端對端攻擊鏈；此為 Project Glasswing 謹慎部署決策的技術核心依據，也是業界目前公開的最強 AI exploit 能力評估文件。",
+      "focusTags": [
+        "[重大事件]"
+      ]
     },
     {
       "title": "Anthropic 研究：2028 AI 全球領導力兩種情境",
@@ -44,7 +56,10 @@
       "source": "Anthropic Research",
       "time": "05/24 13:27",
       "sentiment": "",
-      "body": "Anthropic 發布政策研究報告，描述兩種 2028 年 AI 全球格局情境：美國領先維持自由秩序 vs. 中共取得優勢帶來威權主義擴張；強調晶片供應鏈是決定因素，呼籲立法者採取行動。"
+      "body": "Anthropic 發布政策研究報告，描述兩種 2028 年 AI 全球格局情境：美國領先維持自由秩序 vs. 中共取得優勢帶來威權主義擴張；強調晶片供應鏈是決定因素，呼籲立法者採取行動。",
+      "focusTags": [
+        "[重大事件]"
+      ]
     }
   ],
   "discussions": [
@@ -54,7 +69,10 @@
       "source": "Hacker News",
       "time": "05/24 17:34 UTC 情緒：😤",
       "sentiment": "",
-      "body": "研究者披露 Claude Code 的兩個網路端點注入機制（bootstrap API + GrowthBook 60 秒刷新），社群討論隱私與安全含義：Anthropic 技術上可在任何時間為任何用戶的 session 插入任意指令，控制範圍包括 shell 存取權限。"
+      "body": "研究者披露 Claude Code 的兩個網路端點注入機制（bootstrap API + GrowthBook 60 秒刷新），社群討論隱私與安全含義：Anthropic 技術上可在任何時間為任何用戶的 session 插入任意指令，控制範圍包括 shell 存取權限。",
+      "focusTags": [
+        "[風險警示]"
+      ]
     },
     {
       "title": "Mac 喚醒詞 + 多代理語音系統「Yabby」",
@@ -62,7 +80,8 @@
       "source": "Reddit / r/ClaudeAI",
       "time": "05/25 03:37 UTC 情緒：😊",
       "sentiment": "",
-      "body": "開發者為 Claude Code 設計喚醒詞「Yabby」+ WebRTC 語音迴圈，兩週後演變為：lead agent 拆解任務 → 招募 manager + sub-agent 並行執行 → 完成後觸發自動 review（5 秒 debounce），每次 agent 操作前顯示計劃確認視窗，是語音啟動多代理架構的早期完整案例。"
+      "body": "開發者為 Claude Code 設計喚醒詞「Yabby」+ WebRTC 語音迴圈，兩週後演變為：lead agent 拆解任務 → 招募 manager + sub-agent 並行執行 → 完成後觸發自動 review（5 秒 debounce），每次 agent 操作前顯示計劃確認視窗，是語音啟動多代理架構的早期完整案例。",
+      "focusTags": []
     },
     {
       "title": "archmcp：讓 Claude 從架構快照而非盲目爬檔案開始",
@@ -70,7 +89,8 @@
       "source": "Reddit / r/ClaudeAI",
       "time": "05/25 03:37 UTC 情緒：😊",
       "sentiment": "",
-      "body": "本地 MCP server，在 agent 讀取任何檔案前先生成 repo 的緊湊架構快照（模組、符號、依賴、路由、架構模式），解決 Claude Code 每次 session 重新探索 codebase 的 token 浪費問題；支援多 repo 跨系統架構感知。（ref: https://github.com/dejo13...）"
+      "body": "本地 MCP server，在 agent 讀取任何檔案前先生成 repo 的緊湊架構快照（模組、符號、依賴、路由、架構模式），解決 Claude Code 每次 session 重新探索 codebase 的 token 浪費問題；支援多 repo 跨系統架構感知。（ref: https://github.com/dejo13...）",
+      "focusTags": []
     },
     {
       "title": "Show HN: Smriti — Claude Code 和 Codex 的共享推理狀態",
@@ -78,7 +98,8 @@
       "source": "Hacker News",
       "time": "05/25 14:28 UTC 情緒：🤔",
       "sentiment": "",
-      "body": "Show HN 工具，讓 Claude Code 和 Codex 在同一工作流中共享推理狀態，解決多 agent 各自維護獨立推理脈絡的隔離問題；定位類似 VIR 的跨工具記憶橋接。"
+      "body": "Show HN 工具，讓 Claude Code 和 Codex 在同一工作流中共享推理狀態，解決多 agent 各自維護獨立推理脈絡的隔離問題；定位類似 VIR 的跨工具記憶橋接。",
+      "focusTags": []
     },
     {
       "title": "Claude Code Session 靜默遺失 PSA：Windows/Mac 備份腳本",
@@ -86,7 +107,8 @@
       "source": "Reddit / r/ClaudeAI",
       "time": "05/25 03:30 UTC 情緒：😤",
       "sentiment": "",
-      "body": "多名用戶回報 session 標題保留但內容消失（可能在 context 壓縮或非預期退出時發生），作者提供每日自動備份腳本（OS 排程器獨立運行，複製所有 session transcript），「付費產品竟無備份機制」是社群普遍批評點。"
+      "body": "多名用戶回報 session 標題保留但內容消失（可能在 context 壓縮或非預期退出時發生），作者提供每日自動備份腳本（OS 排程器獨立運行，複製所有 session transcript），「付費產品竟無備份機制」是社群普遍批評點。",
+      "focusTags": []
     },
     {
       "title": "我告訴 Claude Code 要做 TDD，但 60% 機率它先寫程式再補測試",
@@ -94,7 +116,8 @@
       "source": "dev.to",
       "time": "05/25 03:00 UTC 情緒：😤",
       "sentiment": "",
-      "body": "作者對 30 天提交紀錄進行審計：CLAUDE.md 有六行明確的 `## TDD First` 規則，但統計後 Claude 有 60% 情況仍先寫程式後補測試；呼應「CLAUDE.md 規則被選擇性忽略」的持續痛點，也是最具量化說服力的案例之一。"
+      "body": "作者對 30 天提交紀錄進行審計：CLAUDE.md 有六行明確的 `## TDD First` 規則，但統計後 Claude 有 60% 情況仍先寫程式後補測試；呼應「CLAUDE.md 規則被選擇性忽略」的持續痛點，也是最具量化說服力的案例之一。",
+      "focusTags": []
     },
     {
       "title": "Kimi K2.6 vs Claude Opus 4.7：不熟悉基礎設施整合測試",
@@ -102,7 +125,8 @@
       "source": "Reddit / r/ClaudeAI",
       "time": "05/25 05:37 UTC 情緒：🤔",
       "sentiment": "",
-      "body": "作者以「構建 AI Fix Runner，在遠端沙盒執行測試並修補」為任務（Tensorlake API 較新，測推理能力非語法補全），Claude Opus 4.7 透過 Claude Code、Kimi K2.6 透過 OpenCode + OpenRouter 執行；重點測對不熟悉整合路徑的推理能力。"
+      "body": "作者以「構建 AI Fix Runner，在遠端沙盒執行測試並修補」為任務（Tensorlake API 較新，測推理能力非語法補全），Claude Opus 4.7 透過 Claude Code、Kimi K2.6 透過 OpenCode + OpenRouter 執行；重點測對不熟悉整合路徑的推理能力。",
+      "focusTags": []
     },
     {
       "title": "Claude Code 作為動態圖形引擎：Remotion JSX 工作流",
@@ -110,7 +134,8 @@
       "source": "Reddit / r/ClaudeAI",
       "time": "05/25 05:52 UTC 情緒：😊",
       "sentiment": "",
-      "body": "用戶利用 Remotion（React for video）架構，讓 Claude Code 生成所有動態圖形 JSX 元件（下方字幕、片頭、overlay），剪輯時間減半；元件可跨影片重複使用，視覺風格達到一致性，是 Claude Code 非程式開發場景的完整應用案例。"
+      "body": "用戶利用 Remotion（React for video）架構，讓 Claude Code 生成所有動態圖形 JSX 元件（下方字幕、片頭、overlay），剪輯時間減半；元件可跨影片重複使用，視覺風格達到一致性，是 Claude Code 非程式開發場景的完整應用案例。",
+      "focusTags": []
     },
     {
       "title": "Anthropic 探索 Microsoft Maia 晶片用於雲端算力",
@@ -118,7 +143,8 @@
       "source": "Google News / Cloud Computing News",
       "time": "05/25 04:02 UTC 情緒：🤔",
       "sentiment": "",
-      "body": "Anthropic 據報正測試微軟自研 Maia AI 晶片，顯示其算力來源策略已超越單一 AWS 依賴；在 AI 晶片競爭加劇背景下，此舉也是 Anthropic 為 IPO 準備多元化供應鏈的訊號。"
+      "body": "Anthropic 據報正測試微軟自研 Maia AI 晶片，顯示其算力來源策略已超越單一 AWS 依賴；在 AI 晶片競爭加劇背景下，此舉也是 Anthropic 為 IPO 準備多元化供應鏈的訊號。",
+      "focusTags": []
     },
     {
       "title": "Anthropic 積極招募文案寫作者",
@@ -126,7 +152,8 @@
       "source": "Google News / Forbes",
       "time": "05/25 02:30 UTC 情緒：🤔",
       "sentiment": "",
-      "body": "Forbes 報導 Anthropic 反向操作——以「AI 替代文案寫作者」論述盛行之際反而大量招募人類文案，指出 AI 輔助創作仍需資深人類編輯把控品牌聲音與法律合規；折射 Anthropic 仍重視人機協作。"
+      "body": "Forbes 報導 Anthropic 反向操作——以「AI 替代文案寫作者」論述盛行之際反而大量招募人類文案，指出 AI 輔助創作仍需資深人類編輯把控品牌聲音與法律合規；折射 Anthropic 仍重視人機協作。",
+      "focusTags": []
     }
   ],
   "billing": [
@@ -136,7 +163,10 @@
       "source": "Google News / Cybernews",
       "time": "05/25 04:14",
       "sentiment": "",
-      "body": "Cybernews 報導，Microsoft 將在 2026-06-30 正式停用 Claude Code 企業授權，原因是在短短數月內耗盡全年 AI 預算；成為繼 Uber 後第二個有具名的企業 Claude Code 成本失控案例，並說明為何成本管控工具需求如此迫切。"
+      "body": "Cybernews 報導，Microsoft 將在 2026-06-30 正式停用 Claude Code 企業授權，原因是在短短數月內耗盡全年 AI 預算；成為繼 Uber 後第二個有具名的企業 Claude Code 成本失控案例，並說明為何成本管控工具需求如此迫切。",
+      "focusTags": [
+        "[風險警示]"
+      ]
     },
     {
       "title": "KPMG × Anthropic：企業 AI 服務合作",
@@ -144,7 +174,8 @@
       "source": "Google News / Vietnam Investment Review",
       "time": "05/24 17:00",
       "sentiment": "",
-      "body": "KPMG 宣布與 Anthropic 戰略合作，以 Claude 重新定義客戶服務，是繼 Tenable + Claude Compliance API 之後的另一個大型企業整合案例；顯示 Anthropic 企業合作版圖快速擴張。"
+      "body": "KPMG 宣布與 Anthropic 戰略合作，以 Claude 重新定義客戶服務，是繼 Tenable + Claude Compliance API 之後的另一個大型企業整合案例；顯示 Anthropic 企業合作版圖快速擴張。",
+      "focusTags": []
     },
     {
       "title": "Tenable + Claude Compliance API：企業 AI 使用量治理",
@@ -152,7 +183,8 @@
       "source": "Google News / Express Computer",
       "time": "05/25 01:46",
       "sentiment": "",
-      "body": "Tenable 宣布與 Claude Compliance API 戰略整合，提供企業 AI 使用量的可見性與治理機制，針對企業 AI 採用後「用了多少、用在哪裡、是否合規」的管控需求。"
+      "body": "Tenable 宣布與 Claude Compliance API 戰略整合，提供企業 AI 使用量的可見性與治理機制，針對企業 AI 採用後「用了多少、用在哪裡、是否合規」的管控需求。",
+      "focusTags": []
     }
   ],
   "focus": [

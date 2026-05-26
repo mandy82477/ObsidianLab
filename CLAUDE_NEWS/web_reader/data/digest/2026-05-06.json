@@ -10,7 +10,8 @@
       "source": "GitHub / anthropics/claude-code",
       "time": "05/06 07:47",
       "sentiment": "",
-      "body": "v2.1.128/129 自動推送後，Windows 用戶因 `createRequire` polyfill 的 hardcoded build path 導致 extension 完全無法啟動，Mantle endpoint 認證亦同時失效；v2.1.131 已修復兩項問題。值得關注的是：regression 在自動推送後數小時內即引發 Reddit 大量回報，顯示 Claude Code 用戶密度之高，問題能被近即時追蹤。"
+      "body": "v2.1.128/129 自動推送後，Windows 用戶因 `createRequire` polyfill 的 hardcoded build path 導致 extension 完全無法啟動，Mantle endpoint 認證亦同時失效；v2.1.131 已修復兩項問題。值得關注的是：regression 在自動推送後數小時內即引發 Reddit 大量回報，顯示 Claude Code 用戶密度之高，問題能被近即時追蹤。",
+      "focusTags": []
     },
     {
       "title": "I ran the math on dropping GitHub Copilot for direct Anthropic API after the 27x markup",
@@ -18,7 +19,8 @@
       "source": "Reddit / r/ClaudeAI",
       "time": "05/06 05:58",
       "sentiment": "",
-      "body": "GitHub Copilot Pro+ 對 Opus 採 27 倍加價後，作者實測自身用量（$39/月 Copilot + 另購 Claude Pro），詳細計算直接使用 Anthropic API 的成本差異，為猶豫是否轉換的開發者提供可對照的試算框架，留言串引發廣泛討論。"
+      "body": "GitHub Copilot Pro+ 對 Opus 採 27 倍加價後，作者實測自身用量（$39/月 Copilot + 另購 Claude Pro），詳細計算直接使用 Anthropic API 的成本差異，為猶豫是否轉換的開發者提供可對照的試算框架，留言串引發廣泛討論。",
+      "focusTags": []
     },
     {
       "title": "DeepSeek Claude Code Clone Hits 8,700 GitHub Stars as Developer Goes Viral",
@@ -26,7 +28,8 @@
       "source": "Google News / Pandaily",
       "time": "05/06 03:02",
       "sentiment": "",
-      "body": "以 DeepSeek 為基礎打造的 Claude Code clone 迅速累積 8,700 顆 Star，同期出現聲稱可降低 17 倍成本的 DeepClaude 開源方案。社群對 Claude Code 功能的認可與對其定價的反彈，正同步催生開源替代生態，值得持續觀察 Anthropic 的回應策略。"
+      "body": "以 DeepSeek 為基礎打造的 Claude Code clone 迅速累積 8,700 顆 Star，同期出現聲稱可降低 17 倍成本的 DeepClaude 開源方案。社群對 Claude Code 功能的認可與對其定價的反彈，正同步催生開源替代生態，值得持續觀察 Anthropic 的回應策略。",
+      "focusTags": []
     },
     {
       "title": "Is the future agentic Slack, not agentic IDE?",
@@ -34,7 +37,8 @@
       "source": "Reddit / r/ClaudeAI",
       "time": "05/06 06:35",
       "sentiment": "",
-      "body": "作者從多人團隊實際經驗指出：多個開發者並行使用 Claude Code 後，PR review 已成為新瓶頸——數量過多、內容混亂、缺乏共同脈絡。文章主張協調必須發生在 IDE 之前，引發關於「agentic 工作流未來形態」的深度討論，是目前少見從組織維度切入的分析。"
+      "body": "作者從多人團隊實際經驗指出：多個開發者並行使用 Claude Code 後，PR review 已成為新瓶頸——數量過多、內容混亂、缺乏共同脈絡。文章主張協調必須發生在 IDE 之前，引發關於「agentic 工作流未來形態」的深度討論，是目前少見從組織維度切入的分析。",
+      "focusTags": []
     }
   ],
   "techUpdates": [
@@ -44,7 +48,8 @@
       "source": "GitHub / anthropics/anthropic-sdk-python",
       "time": "05/05 16:02",
       "sentiment": "",
-      "body": "新增 client 層的 workspace 定向功能，讓同一 SDK 實例可針對指定 workspace 發出請求，適合需要在多工作區環境精細控制的企業用戶。"
+      "body": "新增 client 層的 workspace 定向功能，讓同一 SDK 實例可針對指定 workspace 發出請求，適合需要在多工作區環境精細控制的企業用戶。",
+      "focusTags": []
     },
     {
       "title": "anthropics/anthropic-sdk-typescript sdk-v0.94.0",
@@ -52,7 +57,8 @@
       "source": "GitHub / anthropics/anthropic-sdk-typescript",
       "time": "05/05 16:02",
       "sentiment": "",
-      "body": "TypeScript SDK 同步發布 workspace 定向功能，與 Python SDK v0.99.0 同日推出，雙線維持功能同步節奏。"
+      "body": "TypeScript SDK 同步發布 workspace 定向功能，與 Python SDK v0.99.0 同日推出，雙線維持功能同步節奏。",
+      "focusTags": []
     },
     {
       "title": "Anthropic Claude Code Security Public Beta: What Developers Need to Know (2026)",
@@ -60,7 +66,8 @@
       "source": "dev.to / #claudecode",
       "time": "05/06 04:21",
       "sentiment": "",
-      "body": "Anthropic 將 Claude Code 內建的 AI 程式碼漏洞掃描工具 Claude Security 從封閉預覽移至公開 Beta，開發者現可在 Claude Code 工作流中直接使用 AI 驅動的安全審查功能，無需另行安裝工具。"
+      "body": "Anthropic 將 Claude Code 內建的 AI 程式碼漏洞掃描工具 Claude Security 從封閉預覽移至公開 Beta，開發者現可在 Claude Code 工作流中直接使用 AI 驅動的安全審查功能，無需另行安裝工具。",
+      "focusTags": []
     }
   ],
   "discussions": [
@@ -70,7 +77,8 @@
       "source": "Hacker News",
       "time": "05/05 14:13",
       "sentiment": "😊 正面",
-      "body": "開源桌面工具，讓每個 Claude Code agent 擁有獨立的 git worktree、session 與終端機，實現「多分支同時執行、無衝突切換」的 speculative parallelism 工作流。社群討論顯示已有開發者自行實踐類似做法數月，工具化需求確實存在。"
+      "body": "開源桌面工具，讓每個 Claude Code agent 擁有獨立的 git worktree、session 與終端機，實現「多分支同時執行、無衝突切換」的 speculative parallelism 工作流。社群討論顯示已有開發者自行實踐類似做法數月，工具化需求確實存在。",
+      "focusTags": []
     },
     {
       "title": "My Claude Code Setup: Pure CLI, Pure Unix, Zero IDE",
@@ -78,7 +86,8 @@
       "source": "Hacker News",
       "time": "05/06 05:00",
       "sentiment": "😊 正面",
-      "body": "作者分享在 Raspberry Pi 5 上以 tmux + SSH 全天候運行 Claude Code 的極簡設定，可從手機、平板、筆電任意設備無縫接入，展示 Claude Code 作為純 CLI 工具的最大靈活性與可攜性。"
+      "body": "作者分享在 Raspberry Pi 5 上以 tmux + SSH 全天候運行 Claude Code 的極簡設定，可從手機、平板、筆電任意設備無縫接入，展示 Claude Code 作為純 CLI 工具的最大靈活性與可攜性。",
+      "focusTags": []
     },
     {
       "title": "Show HN: Claude-smart – Make Claude Code self-improve from every session",
@@ -86,7 +95,8 @@
       "source": "Hacker News",
       "time": "05/05 15:00",
       "sentiment": "🤔 褒貶不一",
-      "body": "開源 Claude Code 外掛，主張現有記憶體方案只存事實、無法捕捉用戶糾正，透過將糾正泛化為跨專案通用規則來解決「同樣錯誤一犯再犯」的問題，聲稱 context footprint 遠低於 claude-mem。"
+      "body": "開源 Claude Code 外掛，主張現有記憶體方案只存事實、無法捕捉用戶糾正，透過將糾正泛化為跨專案通用規則來解決「同樣錯誤一犯再犯」的問題，聲稱 context footprint 遠低於 claude-mem。",
+      "focusTags": []
     },
     {
       "title": "Composing Claude Code Skills",
@@ -94,7 +104,8 @@
       "source": "Hacker News",
       "time": "05/06 10:50",
       "sentiment": "😊 正面",
-      "body": "作者分享使用 Claude Code Skills 一年的心得：遵循 Unix 哲學「每個 skill 只做一件事、功能過多就拆分」後，模型自動選用正確 skill 的準確率明顯提升，是 skill catalog 設計的實務經驗整理。"
+      "body": "作者分享使用 Claude Code Skills 一年的心得：遵循 Unix 哲學「每個 skill 只做一件事、功能過多就拆分」後，模型自動選用正確 skill 的準確率明顯提升，是 skill catalog 設計的實務經驗整理。",
+      "focusTags": []
     },
     {
       "title": "Claude Code Hooks: The feature that stops Claude from deciding things are optional",
@@ -102,7 +113,8 @@
       "source": "Reddit / r/ClaudeAI",
       "time": "05/06 06:23",
       "sentiment": "😊 正面",
-      "body": "深度介紹 Hooks 機制：透過在 PostToolUse 等工作流節點觸發 shell 指令，強制執行 Claude 可能「自行判斷可略過」的步驟（如格式化、commit），解決代理「自以為完成」的常見痛點。"
+      "body": "深度介紹 Hooks 機制：透過在 PostToolUse 等工作流節點觸發 shell 指令，強制執行 Claude 可能「自行判斷可略過」的步驟（如格式化、commit），解決代理「自以為完成」的常見痛點。",
+      "focusTags": []
     },
     {
       "title": "6 Agent Patterns From Claude Code's Leaked Source",
@@ -110,7 +122,8 @@
       "source": "dev.to / #claudecode",
       "time": "05/06 06:00",
       "sentiment": "🤔 褒貶不一",
-      "body": "基於 3 月 31 日 Anthropic 意外公開的 Claude Code 完整 TypeScript 原始碼（約 1,900 個檔案，已撤除但已廣泛流傳），整理出 6 個值得開發者參考的 agent 設計模式。"
+      "body": "基於 3 月 31 日 Anthropic 意外公開的 Claude Code 完整 TypeScript 原始碼（約 1,900 個檔案，已撤除但已廣泛流傳），整理出 6 個值得開發者參考的 agent 設計模式。",
+      "focusTags": []
     },
     {
       "title": "Starting with Claude Code - my new open-source project: Git for AI Agents",
@@ -118,7 +131,8 @@
       "source": "Reddit / r/ClaudeAI",
       "time": "05/06 05:16",
       "sentiment": "🤔 褒貶不一",
-      "body": "作者針對 AI 驅動開發中 git 的核心痛點（無法追蹤「為何改動」、rewind 機制不可靠）開發專為 AI Agent 設計的版本控制替代方案，屬早期開源專案，概念方向有討論價值。"
+      "body": "作者針對 AI 驅動開發中 git 的核心痛點（無法追蹤「為何改動」、rewind 機制不可靠）開發專為 AI Agent 設計的版本控制替代方案，屬早期開源專案，概念方向有討論價值。",
+      "focusTags": []
     },
     {
       "title": "Self-improving team context for coding agents (Dreamer)",
@@ -126,7 +140,8 @@
       "source": "Reddit / r/ClaudeAI",
       "time": "05/06 05:11",
       "sentiment": "😊 正面",
-      "body": "開源專案 Dreamer 透過 MCP server 讓 agent 提交短期記憶，再由排程工作整合進長期記憶並更新 AGENTS.md 與 skills，靈感來自 Claude 的 dream mode，但支援任意 coding agent。"
+      "body": "開源專案 Dreamer 透過 MCP server 讓 agent 提交短期記憶，再由排程工作整合進長期記憶並更新 AGENTS.md 與 skills，靈感來自 Claude 的 dream mode，但支援任意 coding agent。",
+      "focusTags": []
     },
     {
       "title": "Claude Code as an MCP Hub: What We Learned",
@@ -134,7 +149,8 @@
       "source": "dev.to / #claudecode",
       "time": "05/05 22:13",
       "sentiment": "😊 正面",
-      "body": "分享將 Claude Code 作為 n8n、瀏覽器 LLM 介面等多個自動化平台的 MCP 協調中心的實務經驗，適合需要整合多個自動化工具並統一透過 Claude Code 控制的開發者參考。"
+      "body": "分享將 Claude Code 作為 n8n、瀏覽器 LLM 介面等多個自動化平台的 MCP 協調中心的實務經驗，適合需要整合多個自動化工具並統一透過 Claude Code 控制的開發者參考。",
+      "focusTags": []
     },
     {
       "title": "CLAUDE.md 語言最佳實踐系列（Rails / Kotlin / Flutter / Scala / C++）",
@@ -142,7 +158,8 @@
       "source": "dev.to / #claudeai, #claudecode",
       "time": "05/05–05/06",
       "sentiment": "😊 正面",
-      "body": "dev.to 作者 olivia_craft 密集發布五篇 CLAUDE.md 規則集，涵蓋 Rails（防止 legacy 模式）、Kotlin（coroutine 安全）、Flutter/Dart（防脆弱行動端程式碼）、Scala（慣用函數式）、Modern C++（防 1998 風格）。另有 natevoss 發布 [CLI bug 除錯後整理的 4 條規則](https://dev.to/natevoss/4-rules-i-added-to-my-claudemd-after-a-week-of-weird-cli-bugs-p6c)。社群正在各語言生態快速建立 AI 導向的開發規範。"
+      "body": "dev.to 作者 olivia_craft 密集發布五篇 CLAUDE.md 規則集，涵蓋 Rails（防止 legacy 模式）、Kotlin（coroutine 安全）、Flutter/Dart（防脆弱行動端程式碼）、Scala（慣用函數式）、Modern C++（防 1998 風格）。另有 natevoss 發布 [CLI bug 除錯後整理的 4 條規則](https://dev.to/natevoss/4-rules-i-added-to-my-claudemd-after-a-week-of-weird-cli-bugs-p6c)。社群正在各語言生態快速建立 AI 導向的開發規範。",
+      "focusTags": []
     },
     {
       "title": "Anthropic's Boris Cherny once again reminds 'software engineering' is dead",
@@ -150,7 +167,8 @@
       "source": "Google News / The Times of India",
       "time": "05/06 02:03",
       "sentiment": "🤔 褒貶不一",
-      "body": "Anthropic 工程師 Boris Cherny 再次公開表示「軟體工程已死」，Anthropic 內部已無傳統軟體工程師職位，持續引發業界對 AI 代理時代開發者角色轉變的廣泛論戰。"
+      "body": "Anthropic 工程師 Boris Cherny 再次公開表示「軟體工程已死」，Anthropic 內部已無傳統軟體工程師職位，持續引發業界對 AI 代理時代開發者角色轉變的廣泛論戰。",
+      "focusTags": []
     },
     {
       "title": "Anthropic's Claude Code hits 121K GitHub stars: why developers are skipping the IDE",
@@ -158,7 +176,8 @@
       "source": "Google News / Augment Code",
       "time": "05/05 15:11",
       "sentiment": "😊 正面",
-      "body": "Claude Code 累積 121,000 GitHub Stars，分析文章探討為何愈來愈多開發者跳過傳統 IDE、直接選用 CLI 工具，是目前 AI coding assistant 中增長最具話題性的案例。"
+      "body": "Claude Code 累積 121,000 GitHub Stars，分析文章探討為何愈來愈多開發者跳過傳統 IDE、直接選用 CLI 工具，是目前 AI coding assistant 中增長最具話題性的案例。",
+      "focusTags": []
     }
   ],
   "billing": [
@@ -168,7 +187,8 @@
       "source": "dev.to / #claudecode",
       "time": "05/06 05:41",
       "sentiment": "",
-      "body": "作者發現 Claude Code 預設將絕大多數 token 消耗在 Opus，而這些任務 Haiku 即可處理。分享調整模型路由設定的方法，有效降低 API 費用，適合 CLAUDE.md 已優化但帳單仍偏高的重度用戶。"
+      "body": "作者發現 Claude Code 預設將絕大多數 token 消耗在 Opus，而這些任務 Haiku 即可處理。分享調整模型路由設定的方法，有效降低 API 費用，適合 CLAUDE.md 已優化但帳單仍偏高的重度用戶。",
+      "focusTags": []
     },
     {
       "title": "A year consulting with teams running Claude Code: every single one hits the same bill-spike pattern",
@@ -176,7 +196,8 @@
       "source": "Reddit / r/ClaudeAI",
       "time": "05/06 04:17",
       "sentiment": "",
-      "body": "顧問分享跨多個新創團隊的帳單爆衝共同模式（agent 卡在 yarn.lock 衝突導致無限迴圈，當天帳單衝到 400 英鎊），並開源本地 proxy 工具，在花費達上限時硬性中止 API 呼叫，適合無法承受工具迴圈風險的小型團隊。"
+      "body": "顧問分享跨多個新創團隊的帳單爆衝共同模式（agent 卡在 yarn.lock 衝突導致無限迴圈，當天帳單衝到 400 英鎊），並開源本地 proxy 工具，在花費達上限時硬性中止 API 呼叫，適合無法承受工具迴圈風險的小型團隊。",
+      "focusTags": []
     },
     {
       "title": "For the first time in 3–4 weeks I have usage left two days before reset",
@@ -184,7 +205,8 @@
       "source": "Reddit / r/ClaudeAI",
       "time": "05/05 19:30",
       "sentiment": "",
-      "body": "用戶分享上週因 agent/daemon 產生無效 API 呼叫迴圈而額外支出約 $500，修復後才首次在重置前出現剩餘用量。真實案例佐證工具迴圈的帳單風險並非誇大。"
+      "body": "用戶分享上週因 agent/daemon 產生無效 API 呼叫迴圈而額外支出約 $500，修復後才首次在重置前出現剩餘用量。真實案例佐證工具迴圈的帳單風險並非誇大。",
+      "focusTags": []
     }
   ],
   "focus": [

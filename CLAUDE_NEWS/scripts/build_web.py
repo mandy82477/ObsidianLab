@@ -298,6 +298,24 @@ def parse_digest(f: Path) -> dict:
     elif result["techUpdates"]:
         result["preview"] = result["techUpdates"][0]["title"]
 
+    # ── Post-process: assign focusTags to each story ─────────────────────────
+    # Google News RSS URLs have unstable base64 tails; normalize to first 100 chars.
+    def _norm(url: str) -> str:
+        u = url.rstrip("/")
+        return u[:100] if "news.google.com" in u else u
+
+    url_tag: dict[str, str] = {}
+    for f in result["focus"]:
+        for u in (f.get("ref_urls") or []):
+            url_tag[u] = f["tag"]
+            url_tag[_norm(u)] = f["tag"]
+
+    for sec in ("topStories", "techUpdates", "discussions", "billing"):
+        for s in result[sec]:
+            su = s.get("url", "")
+            tag = url_tag.get(su) or url_tag.get(_norm(su)) or ""
+            s["focusTags"] = [tag] if tag else []
+
     return result
 
 

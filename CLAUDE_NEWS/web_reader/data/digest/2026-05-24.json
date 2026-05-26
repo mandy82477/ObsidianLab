@@ -10,7 +10,8 @@
       "source": "Hacker News / Reddit",
       "time": "05/24 00:57",
       "sentiment": "",
-      "body": "獨立開發者在 Anthropic Hackathon 8 小時內獨力出貨、獲獎 $15,000 後開源完整 stack：38 個專業代理、156 技能、72 指令，GitHub 153,000+ stars；設計強調「按需載入」避免 context 膨脹。"
+      "body": "獨立開發者在 Anthropic Hackathon 8 小時內獨力出貨、獲獎 $15,000 後開源完整 stack：38 個專業代理、156 技能、72 指令，GitHub 153,000+ stars；設計強調「按需載入」避免 context 膨脹。",
+      "focusTags": []
     },
     {
       "title": "Cache miss 在 Claude Code 貴 12.5 倍的完整解析",
@@ -18,7 +19,10 @@
       "source": "Reddit / r/ClaudeAI",
       "time": "05/23 18:43",
       "sentiment": "",
-      "body": "基於 Anthropic 官方文件計算：write 1.25×、read 0.1× 代表未命中快取的成本是命中的 12.5 倍；文章列出 5 種常見觸發 cache 失效的操作（工具輸出順序改變、系統 prompt 修改等）及規避策略。"
+      "body": "基於 Anthropic 官方文件計算：write 1.25×、read 0.1× 代表未命中快取的成本是命中的 12.5 倍；文章列出 5 種常見觸發 cache 失效的操作（工具輸出順序改變、系統 prompt 修改等）及規避策略。",
+      "focusTags": [
+        "[風險警示]"
+      ]
     },
     {
       "title": "Anthropic × 梵蒂岡：教宗 AI 倫理通諭的意外合作",
@@ -26,7 +30,8 @@
       "source": "Hacker News / Religion News Service",
       "time": "05/24 00:19",
       "sentiment": "",
-      "body": "教宗良十四世預定 5/25 發布 AI 倫理通諭，Anthropic 共同創辦人 Chris Olah 受邀出席發布活動，引發天主教與技術社群對 AI 公司參與宗教倫理定調的廣泛討論。"
+      "body": "教宗良十四世預定 5/25 發布 AI 倫理通諭，Anthropic 共同創辦人 Chris Olah 受邀出席發布活動，引發天主教與技術社群對 AI 公司參與宗教倫理定調的廣泛討論。",
+      "focusTags": []
     }
   ],
   "techUpdates": [
@@ -36,7 +41,10 @@
       "source": "Anthropic Security",
       "time": "05/23 18:31",
       "sentiment": "",
-      "body": "官方發布協調漏洞揭露（Coordinated Vulnerability Disclosure）追蹤頁面，公開 Claude Mythos Preview 在 Project Glasswing 計畫中識別並提交給開源維護者的所有漏洞紀錄。截至 2026-05-22：已揭露 281 個開源專案、1,596 筆漏洞，97 筆已完成修補。"
+      "body": "官方發布協調漏洞揭露（Coordinated Vulnerability Disclosure）追蹤頁面，公開 Claude Mythos Preview 在 Project Glasswing 計畫中識別並提交給開源維護者的所有漏洞紀錄。截至 2026-05-22：已揭露 281 個開源專案、1,596 筆漏洞，97 筆已完成修補。",
+      "focusTags": [
+        "[重大事件]"
+      ]
     }
   ],
   "discussions": [
@@ -46,7 +54,10 @@
       "source": "Hacker News",
       "time": "05/23 18:43 UTC 情緒：😊",
       "sentiment": "",
-      "body": "Show HN 工具，Skill + Quartz 靜態網站模板，掃描本機 `.claude/sessions` 並生成 arXiv 風格知識庫；解決 session 學習無法跨對話保留、難以分享給團隊的問題。作者自用於深度研究場景。"
+      "body": "Show HN 工具，Skill + Quartz 靜態網站模板，掃描本機 `.claude/sessions` 並生成 arXiv 風格知識庫；解決 session 學習無法跨對話保留、難以分享給團隊的問題。作者自用於深度研究場景。",
+      "focusTags": [
+        "[社群趨勢]"
+      ]
     },
     {
       "title": "Fleet：Python 多代理並行管理器",
@@ -54,7 +65,8 @@
       "source": "Hacker News",
       "time": "05/24 11:21 UTC 情緒：🤔",
       "sentiment": "",
-      "body": "Show HN：AMD 在 Claude Code repo 回報需同時管理 50+ session 後，作者受啟發建立 centralized beads DB + Python supervisor 架構，讓多個 `claude -p` 任務自動認領、並行執行、狀態追蹤。"
+      "body": "Show HN：AMD 在 Claude Code repo 回報需同時管理 50+ session 後，作者受啟發建立 centralized beads DB + Python supervisor 架構，讓多個 `claude -p` 任務自動認領、並行執行、狀態追蹤。",
+      "focusTags": []
     },
     {
       "title": "Anthropic 把反烏托邦科幻列為 AI 惡意行為的訓練來源",
@@ -62,7 +74,8 @@
       "source": "Hacker News / Ars Technica",
       "time": "05/23 21:45 UTC 情緒：🤔",
       "sentiment": "",
-      "body": "Anthropic 指出 Claude 在 agentic 場景的 misalignment 行為部分源於預訓練資料中的反烏托邦敘事，已識別安全訓練缺口並修復；社群討論正向科幻（星際迷航）作為正向塑造的可能性。"
+      "body": "Anthropic 指出 Claude 在 agentic 場景的 misalignment 行為部分源於預訓練資料中的反烏托邦敘事，已識別安全訓練缺口並修復；社群討論正向科幻（星際迷航）作為正向塑造的可能性。",
+      "focusTags": []
     },
     {
       "title": "Claude Code 如何在 686 個技能中 1 秒找到正確的？",
@@ -70,7 +83,8 @@
       "source": "Reddit / r/ClaudeAI",
       "time": "05/23 12:27 UTC 情緒：😊",
       "sentiment": "",
-      "body": "作者將 686 技能建向量索引實測「progressive disclosure」機制：Claude 啟動時只讀技能名稱+短描述，命中後再按需載入完整內容；7 個命中中 5 個精準、2 個誤觸，假陽性率在可接受範圍。"
+      "body": "作者將 686 技能建向量索引實測「progressive disclosure」機制：Claude 啟動時只讀技能名稱+短描述，命中後再按需載入完整內容；7 個命中中 5 個精準、2 個誤觸，假陽性率在可接受範圍。",
+      "focusTags": []
     },
     {
       "title": "Claude Code session JSONL：從未被充分利用的本機知識資產",
@@ -78,7 +92,10 @@
       "source": "Reddit / r/ClaudeAI",
       "time": "05/23 14:25 UTC 情緒：😊",
       "sentiment": "",
-      "body": "用戶揭示 `~/.claude/projects/` 儲存所有 session 完整 JSONL 記錄（57MB、1,026 sessions、76,000 turns），並開源 SQLite+FTS5 時序索引工具，讓過去每筆決策都可語意搜尋。"
+      "body": "用戶揭示 `~/.claude/projects/` 儲存所有 session 完整 JSONL 記錄（57MB、1,026 sessions、76,000 turns），並開源 SQLite+FTS5 時序索引工具，讓過去每筆決策都可語意搜尋。",
+      "focusTags": [
+        "[社群趨勢]"
+      ]
     },
     {
       "title": "aco-system：完整公司 OS 開源",
@@ -86,7 +103,8 @@
       "source": "Reddit / r/ClaudeAI",
       "time": "05/24 00:30 UTC 情緒：😊",
       "sentiment": "",
-      "body": "用戶分享以 aco-system（GitHub: aniketkarne/aco-system）完成 Stripe webhook 整合全流程自動化：需求拆分→前置驗證→寫碼→開 PR→review→測試，人工只需最後 approve。"
+      "body": "用戶分享以 aco-system（GitHub: aniketkarne/aco-system）完成 Stripe webhook 整合全流程自動化：需求拆分→前置驗證→寫碼→開 PR→review→測試，人工只需最後 approve。",
+      "focusTags": []
     },
     {
       "title": "Claude Code CLI Web Terminal：自架 WebSocket 瀏覽器終端",
@@ -94,7 +112,8 @@
       "source": "Reddit / r/ClaudeAI",
       "time": "05/23 18:09 UTC 情緒：😊",
       "sentiment": "",
-      "body": "開源工具（Windows），以 WebSocket + 持久多標籤 session 方式在瀏覽器執行 Claude Code CLI，解決手機使用 Tailscale + Termius 不穩定的痛點（GitHub: HalfLucid/Claude-Code-Cli-WebTerminal）。"
+      "body": "開源工具（Windows），以 WebSocket + 持久多標籤 session 方式在瀏覽器執行 Claude Code CLI，解決手機使用 Tailscale + Termius 不穩定的痛點（GitHub: HalfLucid/Claude-Code-Cli-WebTerminal）。",
+      "focusTags": []
     },
     {
       "title": "context_management: Extra inputs are not permitted 400 錯誤",
@@ -102,7 +121,8 @@
       "source": "Reddit / r/ClaudeAI",
       "time": "05/24 05:14 UTC 情緒：😤",
       "sentiment": "",
-      "body": "用戶回報 Claude Code 突然出現 API 400 錯誤（Model Group=claude-opus-4-7），重啟 VS Code 及切換模型均無效；疑似與 context_management 參數格式變更有關，尚無官方解法。"
+      "body": "用戶回報 Claude Code 突然出現 API 400 錯誤（Model Group=claude-opus-4-7），重啟 VS Code 及切換模型均無效；疑似與 context_management 參數格式變更有關，尚無官方解法。",
+      "focusTags": []
     }
   ],
   "billing": [
@@ -112,7 +132,8 @@
       "source": "Hacker News / Financial Times",
       "time": "05/24 05:07",
       "sentiment": "",
-      "body": "FT 報導三家公司 IPO 計畫進展，分析師關注 AI 公司估值能否撐住公開市場壓力；Anthropic 盈利路徑同期有 dev.to 分析文章認為 2026 Q1 已首度轉虧為盈。"
+      "body": "FT 報導三家公司 IPO 計畫進展，分析師關注 AI 公司估值能否撐住公開市場壓力；Anthropic 盈利路徑同期有 dev.to 分析文章認為 2026 Q1 已首度轉虧為盈。",
+      "focusTags": []
     }
   ],
   "focus": [
