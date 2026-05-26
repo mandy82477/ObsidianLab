@@ -1,8 +1,8 @@
 # Anthropic 政府與軍事政策
 
-**狀態：** monitoring（21 天無新進展，白宮談判狀態不明）
+**狀態：** monitoring
 **開始日期：** 2026-05-01
-**最後更新：** 2026-05-22（lint 狀態文字更新）
+**最後更新：** 2026-05-26
 
 ---
 
@@ -20,6 +20,17 @@
 - **排除原因**：Anthropic 堅持軍事用途須納入**安全護欄（safety guardrails）**，雙方對軍事應用的安全管控存在根本分歧
 - **後續進展**：白宮在 Anthropic 宣布多項技術突破後已重啟談判，顯示技術能力仍是政府合作的核心籌碼
 - **關聯事件**：Mythos 的高能力與 Anthropic 對安全護欄的堅持，可能是影響談判框架的背景因素；見 [[entities/mythos]]
+
+### 梵蒂岡教宗封論：Anthropic 的倫理對話路線（2026-05-26）
+
+教宗良十四世（Pope Leo XIV）發布首份 AI 主題封論《Magnifica Humanitas》，Anthropic 共同創辦人 **Chris Olah** 受邀出席梵蒂岡揭幕演講，成為唯一受邀的 AI 公司代表：
+
+- 封論立場：呼籲對 AI 進行嚴格監管；批判「權力文化」（culture of power）驅動的 AI 競賽；要求 AI 開發者以公共利益為先而非以利潤為先
+- Chris Olah 演講主旨：AI 發展必須由大科技公司以外的力量引導；強調透明度與廣泛社會對話
+- 媒體覆蓋：AP News、Reuters、NYT、WashPost、NDTV、Fast Company 等主流媒體大篇幅報導（HN score 81）
+- 政策意涵：Anthropic 明確選擇梵蒂岡路線（國際倫理框架）而非白宮路線（政府合約）；Anthropic 「安全優先、倫理優先」的品牌定位在全球宗教社群中得到背書
+
+此事件是繼五角大廈排除事件後，Anthropic 在「政府合作路線 vs 倫理對話路線」上選擇的另一次明確訊號。
 
 ### Anthropic 安全立場的政策含義
 
@@ -45,9 +56,15 @@
 ## 參考來源
 
 - [[news/2026-05-02]]
+- [[news/2026-05-26]]
 - [Reuters 報導](https://www.reuters.com/business/retail-consumer/pentagon-reaches-agreements-with-leading-ai-companies-2026-05-01/)
+- [Chris Olah Vatican Remarks](https://www.anthropic.com/news/chris-olah-pope-leo-encyclical) — Anthropic Blog
+- [AP News：Pope calls for robust regulation of AI](https://apnews.com/article/pope-ai-tech-trump-vatican-anthropic-d92d0108730d146baa46da041b8523da)
 
 ## 時序
+
+### 2026-05-26
+- **[重大事件] 梵蒂岡封論揭幕**：Chris Olah 出席教宗良十四世《Magnifica Humanitas》封論發布活動，Anthropic 成為唯一受邀 AI 公司；封論呼籲嚴格監管、以公共利益優先；AP News、Reuters、NYT、WashPost 等主流媒體全面報導
 
 ### 2026-05-01
 - **[重大事件] 五角大廈協議排除 Anthropic**：國防部與 7 家 AI 公司簽署機密網路部署協議，Anthropic 因堅持安全護欄要求被排除

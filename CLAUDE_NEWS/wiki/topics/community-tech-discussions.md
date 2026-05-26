@@ -2,7 +2,7 @@
 
 **狀態：** ongoing
 **開始日期：** 2026-04-25
-**最後更新：** 2026-05-25
+**最後更新：** 2026-05-26
 
 ---
 
@@ -20,6 +20,10 @@
 
 | 討論主題 | 首見 | 熱度 | 模式 | 核心論點 | 衍生 |
 |---------|------|------|------|---------|------|
+| Claude Code 效能衰退量化（OpenTelemetry） | 2026-05-26 | 🔥🔥 | ☄️閃現 | 提出以 token 輸出品質（lines of code / commits / PRs）而非 token 消耗量為效能指標，並以 OpenTelemetry 建立可量化追蹤框架；回應社群普遍「感覺越來越差但無法量化」痛點 | — |
+| 交換平靜換取速度（Trading Peace for Pace） | 2026-05-26 | 🔥🔥 | ☄️閃現 | Claude Code 讓開發節奏加速，但深度專注感消失；情緒獎勵從「寫出好程式」轉移為「讓工具正確執行」；「量越多才感覺有產出」是新的心理陷阱；與 Skill Atrophy 議題呼應但角度不同（前者談能力退化，此篇談情緒代價） | — |
+| 軟體工廠時機辯論（Software Factories） | 2026-05-26 | 🔥🔥 | ☄️閃現 | HN 討論：大型公司（Stripe/Ramp/Uber/Spotify）已有自建 background agent 基礎設施，但工具成熟度不足（30%+ 失敗率被點名）；社群對「現在是否太早建軟體工廠」意見分歧 | — |
+| 非技術人員 Vibecoding 丟給工程師 Review | 2026-05-26 | 🔥 | ☄️閃現 | HN 討論：非技術人員用 Claude Code 自行 vibe-code 功能後要求工程師協助 review 與 commit，引發「工程師角色是否會退化為 AI slop 修復者」的職場邊界討論 | — |
 | MCP 帳單 73% 來自工具調用非對話 | 2026-05-25 | 🔥🔥🔥 | ☄️閃現 | Claude Desktop $200 帳單中 73%（$146）為 MCP 工具調用，聊天僅 27%；Playwright DOM 爬取單項 $89；MCP 配置是費用最大槓桿 | — |
 | MCP 雙軸評估：byte 節省 vs cache 命中率 | 2026-05-25 | 🔥🔥🔥 | ☄️閃現 | 最佳「省 byte」retrieval MCP 因輸出順序不穩定導致每次 cache miss；2 行排序修正後 byte 節省不變但 cache 命中從 0% 升至 100%；單軸最佳化在生產環境可能嚴格更差 | — |
 | Claude Code Session 靜默遺失 PSA | 2026-05-25 | 🔥🔥 | ☄️閃現 | 多用戶回報 session 標題保留但內容消失；可能在 context 壓縮或非預期退出時發生；無官方備份機制，社群提供 OS 排程器備份腳本 | — |
@@ -65,6 +69,20 @@
 ---
 
 ## 技術彙整
+
+### Claude Code 效能衰退量化：OpenTelemetry 方法論（2026-05-26）
+
+- **來源：** "Is Claude Code Getting Worse? How to Measure Degradation with OpenTelemetry"（SigNoz 部落格，Hacker News score 5）
+- **核心論點：** 多數團隊追蹤 token 消耗但不追蹤輸出品質；真正重要的指標是「每個 token 實際產出了什麼」——lines of code written、commits created、PRs merged；提出以 OpenTelemetry 建立 agent loop 的可量化品質追蹤框架
+- **設計建議**：將 span 附加在 agent 每個決策點上（tool call → model response → code change），並以 git diff 統計輸出品質而非只看 latency 或 cost
+- **關聯討論**：與 code-quality-decline 議題（[[topics/code-quality-decline]]）直接關聯；是社群首次提出系統性量化方法論，而非純主觀感受
+
+### 交換平靜換取速度：Claude Code 工作流的情緒代價（2026-05-26）
+
+- **來源：** "Trading Peace for Pace: A Few Weeks with Claude Code"（ronaknathani.com，Hacker News score 4）
+- **核心論點：** Claude Code 讓開發節奏加速（productivity 提升不可否認），但深度專注感（flow state）消失；情緒獎勵從「寫出好程式」轉移至「讓工具正確執行」；「需要更多量才感覺有產出」是新的心理陷阱；以更多 context switching 換取更快迭代
+- **與 Skill Atrophy 的區別**：Skill Atrophy 討論的是技術能力退化（能否獨立解題）；此篇聚焦的是情緒體驗退化（深度工作的滿足感消失）——兩個獨立維度，均值得關注
+- **收斂結論**：（推論）此現象在工具成熟後可能部分緩解，但當前處於「學習如何駕馭工具」的陣痛期，適應性差異因人而異
 
 ### MCP 帳單結構分解：73% 來自工具調用（2026-05-25）
 

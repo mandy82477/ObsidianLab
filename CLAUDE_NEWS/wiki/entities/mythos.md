@@ -1,9 +1,9 @@
 # Claude Mythos
 
 **類型：** model
-**狀態：** 限制存取（非公開）
+**狀態：** 公開化中（透過 Claude Code 釋出）
 **首次出現：** 2026-04（限定夥伴 Preview）
-**最後更新：** 2026-05-25
+**最後更新：** 2026-05-26
 
 ---
 
@@ -97,6 +97,27 @@ TechCrunch 報導，Sam Altman 在公開批評 Anthropic 限制 Mythos 存取範
 
 ---
 
+## 公開釋出確認 + 10K–23K 漏洞媒體密集報導（2026-05-26）
+
+多家媒體同日密集報導兩條並行消息：
+
+### 漏洞數字更新：10K – 23K
+- **Help Net Security**：Anthropic Claude Mythos 已識別超過 10,000 個軟體漏洞
+- **eWeek**：Mythos flags 23,000 個潛在開源安全缺陷（較 Help Net 數字更廣義，含低嚴重等級）
+- **PYMNTS.com**："Anthropic Says Mythos Has Uncovered More Than 10K Vulnerabilities"
+- **Techzine Global**："Mythos finds 10,000 critical software flaws"
+- 數字分歧（10K vs 23K）可能源自篩選門檻不同（高/嚴重等級 vs 所有等級）
+
+### 公開釋出路線確認（多來源交叉驗證）
+- **The Register**：Anthropic to release Mythos-class models to the public（透過 Claude Code 釋出）
+- **Gotrade**："Anthropic Opens Mythos in Claude Code as Agent Debate Sharpens"
+- **CyberSecurityNews**："Anthropic's Restricted Claude Mythos Moves Toward Public Release via Claude Code and Security"
+- 三個獨立媒體來源同日確認釋出路線，與 2026-05-24 app 字串洩露和 2026-05-25 The Register 先行報導完全吻合
+
+**狀態更新：** Mythos 已由「限制存取（非公開）」正式進入「公開化中」階段，時間表加速中。
+
+---
+
 ## Exploit 能力官方論文 + 公開化路線 + 議會層級安全警報（2026-05-25）
 
 ### 官方 Exploit 評估論文正式發布
@@ -141,5 +162,6 @@ Anthropic 正式發布「協調漏洞揭露（Coordinated Vulnerability Disclosu
 - [[news/2026-05-08]]
 - [[news/2026-05-24]]
 - [[news/2026-05-25]]
+- [[news/2026-05-26]]
 - [What Anthropic's Mythos Means for the Future of Cybersecurity](https://spectrum.ieee.org/ai-cybersecurity-mythos) — IEEE Spectrum
 - [Anthropic's Argument for Mythos SWE-bench improvement contains a fatal error](https://www.philosophicalhacker.com/post/anthropic-error/) — The Philosophical Hacker

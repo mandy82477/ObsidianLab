@@ -2,7 +2,7 @@
 
 **狀態：** ongoing
 **開始日期：** 2026-04-25
-**最後更新：** 2026-05-25
+**最後更新：** 2026-05-26
 
 ---
 
@@ -22,9 +22,9 @@
 
 | 痛點主題 | 代表工具 | 本質問題 | 狀態 | 近期工具 |
 |---------|---------|---------|------|---------|
-| Token 成本不透明 | Tokenyst、CostHawk、TokenShield、PrismoDev、engramx、agent-estimate | 自主 agent 讓帳單不可預測；$6,000 個人事件廣傳後社群更重視 | 🔥 持續升溫 | 2026-05-22 |
+| Token 成本不透明 | Tokenyst、CostHawk、TokenShield、PrismoDev、engramx、agent-estimate、AI Agent Token Cost Calculator | 自主 agent 讓帳單不可預測；$6,000 個人事件廣傳後社群更重視 | 🔥 持續升溫 | 2026-05-26 |
 | 跨 session 記憶歸零 | ltm、Memex、draft CLI、LockedIn、VIR、CoreMem | 無官方標準，每個新 session 從零開始 | 🔥 持續升溫 | 2026-05-23 |
-| 多 agent 協調混亂 | agent-baton、cdesktop、AnyFrame、agent-teamflow、Runner、Runtime、Fleet | 官方 Managed Agents 已部分解決，但社群仍補缺口；商業產品（Runtime/YC）開始進入 | 🔥 持續升溫 | 2026-05-24 |
+| 多 agent 協調混亂 | agent-baton、cdesktop、AnyFrame、agent-teamflow、Runner、Runtime、Fleet、AWO | 官方 Managed Agents 已部分解決，但社群仍補缺口；AWO 提供 git worktree 隔離方案 | 🔥 持續升溫 | 2026-05-26 |
 | CLAUDE.md 規則失效 | Writ、Caliber、Patina | 規則被忽略、過多規則耗 token、跨工具無標準 | 🌙 冷卻觀望 | 2026-05-12 |
 | 多模型鎖定防禦 | Dragoman、Claudy、claudely、clarp、vibe-skill | 6/15 定價後對供應商依賴的集體防禦反應 | 🔥 持續升溫 | 2026-05-21 |
 | 輸出品質不可信 | Groundtruth、EvanFlow、Relay plugin、Proof Loop | 信任邊界未建立，需在流程層強制插入驗證點；Proof Loop 加入建構者/驗證者分離機制 | 🔥 持續升溫 | 2026-05-22 |
@@ -63,6 +63,11 @@
 
 | 工具 | 類型 | 採用 | 首次出現 | 簡介 |
 | --- | --- | --- | --- | --- |
+| [**skills-for-humanity**](https://github.com/human-avatar/skills-for-humanity) | Skills | ⏳ | 2026-05-26 | 171 個結構化推理技能庫，專為 Claude Code 工作流設計；Show HN score 10 |
+| [**PrismCat**](https://github.com/paopaoandlingyia/PrismCat) | 搜尋/診斷 | ⏳ | 2026-05-26 | 本地透明 LLM API 代理 + 調試控制台，解決 LangChain 等 SDK 靜默注入 prompt 無法調試的問題；subdomain routing，無需改 /etc/hosts；Show HN |
+| [**Agent Launch**](https://news.ycombinator.com/item?id=48278148) | 工作流 | ⏳ | 2026-05-26 | 統一 CLI（`agl`）一行指令啟動 Codex/Claude Code/Cursor Agent/OpenCode/Antigravity，統一 agent/prompt/mode/model 等參數；Show HN |
+| [**AWO**](https://github.com/ystepanoff/awo) | 多 Agent | ⏳ | 2026-05-26 | 在隔離 Git worktrees 中並行運行 Claude 和 Codex，避免 agent 間互相干擾；Show HN |
+| [**AI Agent Token Cost Calculator**](https://tinyopsstudio.com/ai-agent-token-cost-calculator) | 費用監測 | ⏳ | 2026-05-26 | 輸入 token 量/運行頻率/廢棄率估算月度費用，量化清理無效 token 的 ROI；Show HN |
 | [**archmcp**](https://github.com/dejo13/archmcp) | 搜尋/診斷 | ⏳ | 2026-05-25 | 本地 MCP server，在 agent 讀取任何檔案前先生成 repo 緊湊架構快照（模組、符號、依賴、路由、架構模式），解決 Claude Code 每次 session 盲目爬檔案的 token 浪費；支援多 repo 跨系統架構感知 |
 | [**Smriti**](https://github.com/himanshudongre/smriti/) | 記憶工具 | ⏳ | 2026-05-25 | 讓 Claude Code 和 Codex 在同一工作流中共享推理狀態，解決多 agent 各自維護獨立推理脈絡的隔離問題；Show HN 發布 |
 | [**CC-Wiki**](https://github.com/tejpalv/cc-wiki) | 搜尋/診斷 | ⏳ | 2026-05-24 | 將本機 `~/.claude/sessions` JSONL 轉為 arXiv 風格可分享知識庫（Skill + Quartz 靜態網站），解決 session 學習無法跨對話保留或分享給團隊的問題；Show HN 發布 |

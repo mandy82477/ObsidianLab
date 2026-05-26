@@ -5,6 +5,24 @@ Append-only 紀錄。每次 ingest、query 或 lint 都在此追加一條。
 
 ---
 
+## 2026-05-26 Ingest | news/2026-05-26.md
+
+- 來源日報：`news/2026-05-26.md`（83 則，6 來源；Pope Leo XIV 封論梵蒂岡事件、Mythos 公開釋出確認、Notion 整合三大 AI 編碼工具、企業安全整合 28 項、MCP 優化工具湧現）
+- 更新頁面：
+  - `entities/mythos.md`：狀態更新為「公開化中」；新增 05/26 媒體密集報導（Help Net Security 10K / eWeek 23K / PYMNTS / Techzine）與 The Register + Gotrade + CyberSecurityNews 三方確認公開釋出；更新最後更新 2026-05-26
+  - `entities/claude-security.md`：新增 05/26 Varonis Claude Compliance API 整合（AI 治理 + 資料存取合規）、Forcepoint 延伸至 Claude Enterprise、Anthropic 28 項企業安全整合；更新最後更新 2026-05-26
+  - `topics/community-tech-tools.md`：新增 5 個工具（skills-for-humanity、PrismCat、Agent Launch、AWO、AI Agent Token Cost Calculator）；更新痛點洞察表（Token 成本不透明、多 agent 協調混亂）；總工具數：117；更新最後更新 2026-05-26
+  - `topics/community-tech-discussions.md`：新增 4 條熱門討論（Claude Code 效能衰退量化、Trading Peace for Pace、軟體工廠時機辯論、非技術 Vibecoding）；新增 2 個技術彙整段落（OpenTelemetry 量化、Trading Peace 情緒代價）；更新最後更新 2026-05-26
+  - `topics/anthropic-government-policy.md`：新增梵蒂岡封論事件（Chris Olah 出席 Magnifica Humanitas 揭幕）；更新時序；狀態改為 monitoring；更新最後更新 2026-05-26
+  - `feature-radar.md`：本日無新使用者端功能；BioMysteryBench 為研究評測發布；更新最後更新 2026-05-26
+- 新增頁面：
+  - `entities/chris-olah.md`：Anthropic 共同創辦人、梵蒂岡演講事件、可解釋性研究背景
+- 呈現品質：✅ 通過（所有更新頁面前段清晰，關鍵資訊可獨立閱讀）
+- feature-radar 更新：本日無新功能條目新增
+- 本日新增工具：skills-for-humanity / PrismCat / Agent Launch / AWO / AI Agent Token Cost Calculator（共 5 個，累積 117 個）
+
+---
+
 ## 2026-05-26 手動建頁 | enterprise-tool-tracker
 
 - 新增頁面：`topics/enterprise-tool-tracker.md`（大型企業 AI 編碼工具使用追蹤）
