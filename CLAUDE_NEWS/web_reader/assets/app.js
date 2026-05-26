@@ -448,6 +448,65 @@
     container.innerHTML = parts.join('\n');
   }
 
+  // ── Enterprise tracker matrix renderer ───────────────────────────────────────
+  const ET_STATUS = {
+    active:    { bg: 'et-active',    icon: '✅', label: '使用中' },
+    warning:   { bg: 'et-warning',   icon: '⚠️', label: '縮減中' },
+    switching: { bg: 'et-switching', icon: '🔄', label: '切換中' },
+    exited:    { bg: 'et-exited',    icon: '❌', label: '已退出' },
+    unknown:   { bg: 'et-unknown',   icon: '❓', label: '未確認' },
+  };
+
+  function renderEnterpriseMatrix(tracker) {
+    const { enterprises, tools, matrix } = tracker;
+    if (!enterprises?.length || !tools?.length) return '';
+
+    // shorten tool names for column headers
+    const shortTool = t => t.replace('（API）','').replace('（API）','').replace(' CLI','').replace('Anthropic ','');
+
+    const thead = `<tr>
+      <th class="et-th-ent">企業</th>
+      <th class="et-th-size">規模</th>
+      ${tools.map(t => `<th class="et-th-tool" title="${esc(t)}">${esc(shortTool(t))}</th>`).join('')}
+    </tr>`;
+
+    const tbody = enterprises.map(({ name, size }) => {
+      const cells = tools.map(tool => {
+        const cell = (matrix[name] || {})[tool];
+        if (!cell) return `<td class="et-cell et-empty">—</td>`;
+        const s = ET_STATUS[cell.statusKey] || ET_STATUS.unknown;
+        const dateStr = cell.eventDate
+          ? `<span class="et-date">${cell.eventDate.slice(5)}</span>`  // MM-DD
+          : '';
+        const tooltip = [cell.note, cell.confirmedDate ? `確認: ${cell.confirmedDate}` : ''].filter(Boolean).join(' · ');
+        return `<td class="et-cell ${s.bg}" title="${esc(tooltip)}">
+          <span class="et-icon">${s.icon}</span>${dateStr}
+        </td>`;
+      }).join('');
+      const sizeClass = size === '頂尖' ? 'et-size--top' : '';
+      return `<tr>
+        <td class="et-ent">${esc(name)}</td>
+        <td class="et-size ${sizeClass}">${esc(size)}</td>
+        ${cells}
+      </tr>`;
+    }).join('');
+
+    const legend = Object.values(ET_STATUS).map(s =>
+      `<span class="et-legend-item"><span class="${s.bg} et-legend-dot"></span>${s.label}</span>`
+    ).join('');
+
+    return `<div class="et-wrap">
+  <div class="et-legend">${legend}</div>
+  <div class="et-scroll">
+    <table class="et-matrix">
+      <thead>${thead}</thead>
+      <tbody>${tbody}</tbody>
+    </table>
+  </div>
+  <p class="et-hint">hover 格子查看備註 · 日期欄為狀態生效時間點</p>
+</div>`;
+  }
+
   // ── Open wiki entity/topic as full page ──────────────────────────────────────
   window.openWikiPage = async function (id, type) {
     detailReturnView = 'wiki';
@@ -517,6 +576,12 @@
     const _pt = item.pageType || type;
     const typeLabel = _pt === 'entity' ? '實體' : _pt === 'radar' ? '熱度雷達' : '議題';
 
+    // ── Enterprise tracker: inject matrix above markdown body ─────────────
+    let trackerHtml = '';
+    if (id === 'enterprise-tool-tracker' && item.enterpriseTracker) {
+      trackerHtml = renderEnterpriseMatrix(item.enterpriseTracker);
+    }
+
     $('#detail-content').innerHTML = `
 <div class="detail__type-row">
   ${item.status ? `<span class="pill pill--${item.pill}">${esc(item.status)}</span>` : ''}
@@ -524,6 +589,7 @@
 </div>
 <h1 class="detail__h1">${esc(item.name)}</h1>
 ${metaRows.length ? `<div class="detail__meta">${metaHtml}</div>` : ''}
+${trackerHtml}
 <div class="detail__body">${bodyHtml}</div>`;
     makeTablesSortable($('#detail-content'));
     if (id === 'community-tech-tools') injectToolsInsights($('#detail-content'));

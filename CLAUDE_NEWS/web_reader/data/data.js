@@ -313,7 +313,242 @@ window.WIKI_DATA = {
       "firstSeen": "",
       "startDate": "2026-05-26",
       "lastUpdated": "2026-05-26",
-      "summary": "追蹤各大型企業目前正在使用的 AI 編碼工具，以及工具選擇的變化軌跡。資料來源為公開報導與內部消息洩露，僅記錄有明確來源佐證的事實。 ---"
+      "summary": "追蹤各大型企業目前正在使用的 AI 編碼工具，以及工具選擇的變化軌跡。資料來源為公開報導與內部消息洩露，僅記錄有明確來源佐證的事實。 ---",
+      "enterpriseTracker": {
+        "enterprises": [
+          {
+            "name": "Microsoft",
+            "size": "頂尖"
+          },
+          {
+            "name": "Amazon",
+            "size": "頂尖"
+          },
+          {
+            "name": "Uber",
+            "size": "頂尖"
+          },
+          {
+            "name": "Apple",
+            "size": "頂尖"
+          },
+          {
+            "name": "KPMG",
+            "size": "大型"
+          },
+          {
+            "name": "iCapital",
+            "size": "大型"
+          },
+          {
+            "name": "UiPath",
+            "size": "大型"
+          },
+          {
+            "name": "哈佛 FAS",
+            "size": "大型"
+          }
+        ],
+        "tools": [
+          "GitHub Copilot CLI",
+          "Claude Code",
+          "OpenAI Codex",
+          "Claude（API）",
+          "Claude",
+          "Anthropic API",
+          "Claude Code + Codex"
+        ],
+        "matrix": {
+          "Microsoft": {
+            "GitHub Copilot CLI": {
+              "status": "✅",
+              "statusKey": "active",
+              "eventDate": "2026-05-15",
+              "note": "從 Claude Code 切換後採用",
+              "confirmedDate": "2026-05-25"
+            },
+            "Claude Code": {
+              "status": "❌",
+              "statusKey": "exited",
+              "eventDate": "2026-06-30",
+              "note": "數月燒完全年 AI 預算，6/30 正式停用",
+              "confirmedDate": "2026-05-25"
+            }
+          },
+          "Amazon": {
+            "Claude Code": {
+              "status": "✅",
+              "statusKey": "active",
+              "eventDate": "2026-05-05",
+              "note": "雙軌並行，不押注單一供應商",
+              "confirmedDate": "2026-05-05"
+            },
+            "OpenAI Codex": {
+              "status": "✅",
+              "statusKey": "active",
+              "eventDate": "2026-05-05",
+              "note": "雙軌並行，與 Claude Code 同時部署",
+              "confirmedDate": "2026-05-05"
+            }
+          },
+          "Uber": {
+            "Claude Code": {
+              "status": "⚠️",
+              "statusKey": "warning",
+              "eventDate": "2026-05-01",
+              "note": "4 個月燒完全年 AI 預算，Uber CTO 承認成本失控",
+              "confirmedDate": "2026-05-18"
+            }
+          },
+          "Apple": {
+            "Claude（API）": {
+              "status": "✅",
+              "statusKey": "active",
+              "eventDate": "",
+              "note": "外洩文件確認內部採用，非 Claude Code",
+              "confirmedDate": "2026-05-01"
+            }
+          },
+          "KPMG": {
+            "Claude": {
+              "status": "✅",
+              "statusKey": "active",
+              "eventDate": "2026-05-25",
+              "note": "戰略合作，重新定義客戶服務",
+              "confirmedDate": "2026-05-25"
+            }
+          },
+          "iCapital": {
+            "Anthropic API": {
+              "status": "✅",
+              "statusKey": "active",
+              "eventDate": "2026-05-01",
+              "note": "替代資產平台，為客戶建立 AI 工具",
+              "confirmedDate": "2026-05-01"
+            }
+          },
+          "UiPath": {
+            "Claude Code + Codex": {
+              "status": "✅",
+              "statusKey": "active",
+              "eventDate": "2026-05-12",
+              "note": "RPA 平台同時整合兩套工具",
+              "confirmedDate": "2026-05-12"
+            }
+          },
+          "哈佛 FAS": {
+            "Claude": {
+              "status": "✅",
+              "statusKey": "active",
+              "eventDate": "2026-04-28",
+              "note": "取代 ChatGPT Edu，學術授權",
+              "confirmedDate": "2026-04-28"
+            }
+          }
+        },
+        "rows": [
+          {
+            "enterprise": "Microsoft",
+            "size": "頂尖",
+            "tool": "GitHub Copilot CLI",
+            "status": "✅",
+            "statusKey": "active",
+            "eventDate": "2026-05-15",
+            "note": "從 Claude Code 切換後採用",
+            "confirmedDate": "2026-05-25"
+          },
+          {
+            "enterprise": "Microsoft",
+            "size": "頂尖",
+            "tool": "Claude Code",
+            "status": "❌",
+            "statusKey": "exited",
+            "eventDate": "2026-06-30",
+            "note": "數月燒完全年 AI 預算，6/30 正式停用",
+            "confirmedDate": "2026-05-25"
+          },
+          {
+            "enterprise": "Amazon",
+            "size": "頂尖",
+            "tool": "Claude Code",
+            "status": "✅",
+            "statusKey": "active",
+            "eventDate": "2026-05-05",
+            "note": "雙軌並行，不押注單一供應商",
+            "confirmedDate": "2026-05-05"
+          },
+          {
+            "enterprise": "Amazon",
+            "size": "頂尖",
+            "tool": "OpenAI Codex",
+            "status": "✅",
+            "statusKey": "active",
+            "eventDate": "2026-05-05",
+            "note": "雙軌並行，與 Claude Code 同時部署",
+            "confirmedDate": "2026-05-05"
+          },
+          {
+            "enterprise": "Uber",
+            "size": "頂尖",
+            "tool": "Claude Code",
+            "status": "⚠️",
+            "statusKey": "warning",
+            "eventDate": "2026-05-01",
+            "note": "4 個月燒完全年 AI 預算，Uber CTO 承認成本失控",
+            "confirmedDate": "2026-05-18"
+          },
+          {
+            "enterprise": "Apple",
+            "size": "頂尖",
+            "tool": "Claude（API）",
+            "status": "✅",
+            "statusKey": "active",
+            "eventDate": "",
+            "note": "外洩文件確認內部採用，非 Claude Code",
+            "confirmedDate": "2026-05-01"
+          },
+          {
+            "enterprise": "KPMG",
+            "size": "大型",
+            "tool": "Claude",
+            "status": "✅",
+            "statusKey": "active",
+            "eventDate": "2026-05-25",
+            "note": "戰略合作，重新定義客戶服務",
+            "confirmedDate": "2026-05-25"
+          },
+          {
+            "enterprise": "iCapital",
+            "size": "大型",
+            "tool": "Anthropic API",
+            "status": "✅",
+            "statusKey": "active",
+            "eventDate": "2026-05-01",
+            "note": "替代資產平台，為客戶建立 AI 工具",
+            "confirmedDate": "2026-05-01"
+          },
+          {
+            "enterprise": "UiPath",
+            "size": "大型",
+            "tool": "Claude Code + Codex",
+            "status": "✅",
+            "statusKey": "active",
+            "eventDate": "2026-05-12",
+            "note": "RPA 平台同時整合兩套工具",
+            "confirmedDate": "2026-05-12"
+          },
+          {
+            "enterprise": "哈佛 FAS",
+            "size": "大型",
+            "tool": "Claude",
+            "status": "✅",
+            "statusKey": "active",
+            "eventDate": "2026-04-28",
+            "note": "取代 ChatGPT Edu，學術授權",
+            "confirmedDate": "2026-04-28"
+          }
+        ]
+      }
     },
     {
       "id": "google-investment",

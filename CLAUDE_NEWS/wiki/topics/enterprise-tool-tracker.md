@@ -13,19 +13,21 @@
 ## 企業工具使用現況
 
 > 狀態說明：✅ 使用中 ／ ⚠️ 縮減中 ／ 🔄 切換中 ／ ❌ 已退出 ／ ❓ 未確認
+> 事件日期：狀態實際生效的時間點（❌ 為退出日、🔄 為切換日、✅ 為採用日）
+> 確認日期：媒體報導或消息來源的日期
 
-| 企業 | 規模 | AI 編碼工具 | 狀態 | 備註 | 最後確認 |
-|------|------|-----------|------|------|---------|
-| Microsoft | 頂尖 | GitHub Copilot CLI | ✅ | 從 Claude Code 切換；6/30 完全停用 Claude Code | 2026-05-25 |
-| Microsoft | 頂尖 | Claude Code | ❌ | 數月燒完全年 AI 預算，6/30 正式停用 | 2026-05-25 |
-| Amazon | 頂尖 | Claude Code | ✅ | 雙軌並行，不押注單一供應商 | 2026-05-05 |
-| Amazon | 頂尖 | OpenAI Codex | ✅ | 雙軌並行，與 Claude Code 同時部署 | 2026-05-05 |
-| Uber | 頂尖 | Claude Code | ⚠️ | 4 個月燒完全年 AI 預算，Uber CTO 承認成本失控 | 2026-05-18 |
-| Apple | 頂尖 | Claude（API） | ✅ | 外洩文件確認內部採用，非 Claude Code | 2026-05-01 |
-| KPMG | 大型 | Claude | ✅ | 戰略合作，重新定義客戶服務 | 2026-05-25 |
-| iCapital | 大型 | Anthropic API | ✅ | 替代資產平台，為客戶建立 AI 工具 | 2026-05-01 |
-| UiPath | 大型 | Claude Code + Codex | ✅ | RPA 平台同時整合兩套工具 | 2026-05-12 |
-| 哈佛 FAS | 大型 | Claude | ✅ | 取代 ChatGPT Edu，學術授權 | 2026-04-28 |
+| 企業 | 規模 | AI 編碼工具 | 狀態 | 事件日期 | 備註 | 確認日期 |
+|------|------|-----------|------|---------|------|---------|
+| Microsoft | 頂尖 | GitHub Copilot CLI | ✅ | 2026-05-15 | 從 Claude Code 切換後採用 | 2026-05-25 |
+| Microsoft | 頂尖 | Claude Code | ❌ | 2026-06-30 | 數月燒完全年 AI 預算，6/30 正式停用 | 2026-05-25 |
+| Amazon | 頂尖 | Claude Code | ✅ | 2026-05-05 | 雙軌並行，不押注單一供應商 | 2026-05-05 |
+| Amazon | 頂尖 | OpenAI Codex | ✅ | 2026-05-05 | 雙軌並行，與 Claude Code 同時部署 | 2026-05-05 |
+| Uber | 頂尖 | Claude Code | ⚠️ | 2026-05-01 | 4 個月燒完全年 AI 預算，Uber CTO 承認成本失控 | 2026-05-18 |
+| Apple | 頂尖 | Claude（API） | ✅ | — | 外洩文件確認內部採用，非 Claude Code | 2026-05-01 |
+| KPMG | 大型 | Claude | ✅ | 2026-05-25 | 戰略合作，重新定義客戶服務 | 2026-05-25 |
+| iCapital | 大型 | Anthropic API | ✅ | 2026-05-01 | 替代資產平台，為客戶建立 AI 工具 | 2026-05-01 |
+| UiPath | 大型 | Claude Code + Codex | ✅ | 2026-05-12 | RPA 平台同時整合兩套工具 | 2026-05-12 |
+| 哈佛 FAS | 大型 | Claude | ✅ | 2026-04-28 | 取代 ChatGPT Edu，學術授權 | 2026-04-28 |
 
 ---
 

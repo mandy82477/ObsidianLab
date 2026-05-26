@@ -95,6 +95,73 @@ def strip_llm_sections(md: str) -> str:
     return re.sub(r'\n## [^\n]*給 LLM[^\n]*\n[\s\S]*', '', md)
 
 
+def parse_enterprise_tracker(f: Path) -> dict | None:
+    """Parse enterprise-tool-tracker.md table → structured matrix JSON."""
+    if not f.exists():
+        return None
+    raw = f.read_text(encoding="utf-8")
+
+    STATUS_MAP = {"✅": "active", "⚠️": "warning", "🔄": "switching", "❌": "exited", "❓": "unknown"}
+
+    rows: list[dict] = []
+    in_table = False
+
+    for line in raw.splitlines():
+        line = line.strip()
+        if not line.startswith("|"):
+            in_table = False
+            continue
+        if "企業" in line and "AI 編碼工具" in line:
+            in_table = True
+            continue
+        if not in_table:
+            continue
+        if re.match(r"^\|[-: |]+\|$", line):
+            continue
+        cells = [c.strip() for c in line.split("|")[1:-1]]
+        if len(cells) < 7:
+            continue
+        enterprise, size, tool, status_raw, event_date, note, confirmed_date = (cells + [""] * 7)[:7]
+        status_key = next((v for k, v in STATUS_MAP.items() if k in status_raw), "unknown")
+        rows.append({
+            "enterprise": enterprise,
+            "size": size,
+            "tool": tool,
+            "status": status_raw,
+            "statusKey": status_key,
+            "eventDate": "" if event_date in ("—", "-", "") else event_date,
+            "note": note,
+            "confirmedDate": confirmed_date,
+        })
+
+    # Unique enterprises + tools (insertion order)
+    enterprises: dict[str, str] = {}   # name → size
+    tools: list[str] = []
+    for r in rows:
+        enterprises.setdefault(r["enterprise"], r["size"])
+        if r["tool"] not in tools:
+            tools.append(r["tool"])
+
+    # Matrix: enterprise → tool → cell
+    matrix: dict[str, dict] = {}
+    for r in rows:
+        matrix.setdefault(r["enterprise"], {})
+        matrix[r["enterprise"]][r["tool"]] = {
+            "status": r["status"],
+            "statusKey": r["statusKey"],
+            "eventDate": r["eventDate"],
+            "note": r["note"],
+            "confirmedDate": r["confirmedDate"],
+        }
+
+    return {
+        "enterprises": [{"name": k, "size": v} for k, v in enterprises.items()],
+        "tools": tools,
+        "matrix": matrix,
+        "rows": rows,
+    }
+
+
 def parse_radar(f: Path) -> dict:
     raw = f.read_text(encoding="utf-8")
     lines = raw.splitlines()
@@ -358,6 +425,15 @@ def build():
             radar = parse_radar(WIKI_RADAR)
         except Exception as e:
             print(f"  [warn] feature-radar: {e}")
+
+    # ── Enrich enterprise-tool-tracker with matrix data ──────────────────────
+    tracker_md = ROOT / "wiki" / "topics" / "enterprise-tool-tracker.md"
+    tracker_data = parse_enterprise_tracker(tracker_md)
+    if tracker_data:
+        for t in topics:
+            if t["id"] == "enterprise-tool-tracker":
+                t["enterpriseTracker"] = tracker_data
+                break
 
     # ── Write per-wiki JSON files (full content including markdown) ──────────
     OUT_WIKI_DIR.mkdir(parents=True, exist_ok=True)
