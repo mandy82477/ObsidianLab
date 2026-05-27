@@ -341,6 +341,10 @@ window.WIKI_DATA = {
             "size": "頂尖"
           },
           {
+            "name": "UiPath",
+            "size": "大型"
+          },
+          {
             "name": "Apple",
             "size": "頂尖"
           },
@@ -353,37 +357,30 @@ window.WIKI_DATA = {
             "size": "大型"
           },
           {
-            "name": "UiPath",
-            "size": "大型"
-          },
-          {
             "name": "哈佛 FAS",
             "size": "大型"
           }
         ],
         "tools": [
-          "GitHub Copilot CLI",
           "Claude Code",
+          "GitHub Copilot",
           "OpenAI Codex",
-          "Claude（API）",
-          "Claude",
-          "Anthropic API",
-          "Claude Code + Codex"
+          "Claude API"
         ],
         "matrix": {
           "Microsoft": {
-            "GitHub Copilot CLI": {
-              "status": "✅",
-              "statusKey": "active",
-              "eventDate": "2026-05-15",
-              "note": "從 Claude Code 切換後採用",
-              "confirmedDate": "2026-05-25"
-            },
             "Claude Code": {
               "status": "❌",
               "statusKey": "exited",
               "eventDate": "2026-06-30",
               "note": "數月燒完全年 AI 預算，6/30 正式停用",
+              "confirmedDate": "2026-05-25"
+            },
+            "GitHub Copilot": {
+              "status": "✅",
+              "statusKey": "active",
+              "eventDate": "2026-05-15",
+              "note": "從 Claude Code 切換後採用",
               "confirmedDate": "2026-05-25"
             }
           },
@@ -399,7 +396,7 @@ window.WIKI_DATA = {
               "status": "✅",
               "statusKey": "active",
               "eventDate": "2026-05-05",
-              "note": "雙軌並行，與 Claude Code 同時部署",
+              "note": "與 Claude Code 同時部署",
               "confirmedDate": "2026-05-05"
             }
           },
@@ -408,12 +405,28 @@ window.WIKI_DATA = {
               "status": "⚠️",
               "statusKey": "warning",
               "eventDate": "2026-05-01",
-              "note": "4 個月燒完全年 AI 預算，Uber CTO 承認成本失控",
+              "note": "4 個月燒完全年 AI 預算，CTO 承認成本失控",
               "confirmedDate": "2026-05-18"
             }
           },
+          "UiPath": {
+            "Claude Code": {
+              "status": "✅",
+              "statusKey": "active",
+              "eventDate": "2026-05-12",
+              "note": "RPA 平台雙工具整合",
+              "confirmedDate": "2026-05-12"
+            },
+            "OpenAI Codex": {
+              "status": "✅",
+              "statusKey": "active",
+              "eventDate": "2026-05-12",
+              "note": "與 Claude Code 同時部署",
+              "confirmedDate": "2026-05-12"
+            }
+          },
           "Apple": {
-            "Claude（API）": {
+            "Claude API": {
               "status": "✅",
               "statusKey": "active",
               "eventDate": "",
@@ -422,7 +435,7 @@ window.WIKI_DATA = {
             }
           },
           "KPMG": {
-            "Claude": {
+            "Claude API": {
               "status": "✅",
               "statusKey": "active",
               "eventDate": "2026-05-25",
@@ -431,7 +444,7 @@ window.WIKI_DATA = {
             }
           },
           "iCapital": {
-            "Anthropic API": {
+            "Claude API": {
               "status": "✅",
               "statusKey": "active",
               "eventDate": "2026-05-01",
@@ -439,17 +452,8 @@ window.WIKI_DATA = {
               "confirmedDate": "2026-05-01"
             }
           },
-          "UiPath": {
-            "Claude Code + Codex": {
-              "status": "✅",
-              "statusKey": "active",
-              "eventDate": "2026-05-12",
-              "note": "RPA 平台同時整合兩套工具",
-              "confirmedDate": "2026-05-12"
-            }
-          },
           "哈佛 FAS": {
-            "Claude": {
+            "Claude API": {
               "status": "✅",
               "statusKey": "active",
               "eventDate": "2026-04-28",
@@ -462,21 +466,21 @@ window.WIKI_DATA = {
           {
             "enterprise": "Microsoft",
             "size": "頂尖",
-            "tool": "GitHub Copilot CLI",
-            "status": "✅",
-            "statusKey": "active",
-            "eventDate": "2026-05-15",
-            "note": "從 Claude Code 切換後採用",
-            "confirmedDate": "2026-05-25"
-          },
-          {
-            "enterprise": "Microsoft",
-            "size": "頂尖",
             "tool": "Claude Code",
             "status": "❌",
             "statusKey": "exited",
             "eventDate": "2026-06-30",
             "note": "數月燒完全年 AI 預算，6/30 正式停用",
+            "confirmedDate": "2026-05-25"
+          },
+          {
+            "enterprise": "Microsoft",
+            "size": "頂尖",
+            "tool": "GitHub Copilot",
+            "status": "✅",
+            "statusKey": "active",
+            "eventDate": "2026-05-15",
+            "note": "從 Claude Code 切換後採用",
             "confirmedDate": "2026-05-25"
           },
           {
@@ -496,7 +500,7 @@ window.WIKI_DATA = {
             "status": "✅",
             "statusKey": "active",
             "eventDate": "2026-05-05",
-            "note": "雙軌並行，與 Claude Code 同時部署",
+            "note": "與 Claude Code 同時部署",
             "confirmedDate": "2026-05-05"
           },
           {
@@ -506,13 +510,33 @@ window.WIKI_DATA = {
             "status": "⚠️",
             "statusKey": "warning",
             "eventDate": "2026-05-01",
-            "note": "4 個月燒完全年 AI 預算，Uber CTO 承認成本失控",
+            "note": "4 個月燒完全年 AI 預算，CTO 承認成本失控",
             "confirmedDate": "2026-05-18"
+          },
+          {
+            "enterprise": "UiPath",
+            "size": "大型",
+            "tool": "Claude Code",
+            "status": "✅",
+            "statusKey": "active",
+            "eventDate": "2026-05-12",
+            "note": "RPA 平台雙工具整合",
+            "confirmedDate": "2026-05-12"
+          },
+          {
+            "enterprise": "UiPath",
+            "size": "大型",
+            "tool": "OpenAI Codex",
+            "status": "✅",
+            "statusKey": "active",
+            "eventDate": "2026-05-12",
+            "note": "與 Claude Code 同時部署",
+            "confirmedDate": "2026-05-12"
           },
           {
             "enterprise": "Apple",
             "size": "頂尖",
-            "tool": "Claude（API）",
+            "tool": "Claude API",
             "status": "✅",
             "statusKey": "active",
             "eventDate": "",
@@ -522,7 +546,7 @@ window.WIKI_DATA = {
           {
             "enterprise": "KPMG",
             "size": "大型",
-            "tool": "Claude",
+            "tool": "Claude API",
             "status": "✅",
             "statusKey": "active",
             "eventDate": "2026-05-25",
@@ -532,7 +556,7 @@ window.WIKI_DATA = {
           {
             "enterprise": "iCapital",
             "size": "大型",
-            "tool": "Anthropic API",
+            "tool": "Claude API",
             "status": "✅",
             "statusKey": "active",
             "eventDate": "2026-05-01",
@@ -540,19 +564,9 @@ window.WIKI_DATA = {
             "confirmedDate": "2026-05-01"
           },
           {
-            "enterprise": "UiPath",
-            "size": "大型",
-            "tool": "Claude Code + Codex",
-            "status": "✅",
-            "statusKey": "active",
-            "eventDate": "2026-05-12",
-            "note": "RPA 平台同時整合兩套工具",
-            "confirmedDate": "2026-05-12"
-          },
-          {
             "enterprise": "哈佛 FAS",
             "size": "大型",
-            "tool": "Claude",
+            "tool": "Claude API",
             "status": "✅",
             "statusKey": "active",
             "eventDate": "2026-04-28",

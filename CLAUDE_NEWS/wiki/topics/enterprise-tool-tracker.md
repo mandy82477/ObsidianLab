@@ -18,26 +18,29 @@
 
 | 企業 | 規模 | AI 編碼工具 | 狀態 | 事件日期 | 備註 | 確認日期 |
 |------|------|-----------|------|---------|------|---------|
-| Microsoft | 頂尖 | GitHub Copilot CLI | ✅ | 2026-05-15 | 從 Claude Code 切換後採用 | 2026-05-25 |
 | Microsoft | 頂尖 | Claude Code | ❌ | 2026-06-30 | 數月燒完全年 AI 預算，6/30 正式停用 | 2026-05-25 |
+| Microsoft | 頂尖 | GitHub Copilot | ✅ | 2026-05-15 | 從 Claude Code 切換後採用 | 2026-05-25 |
 | Amazon | 頂尖 | Claude Code | ✅ | 2026-05-05 | 雙軌並行，不押注單一供應商 | 2026-05-05 |
-| Amazon | 頂尖 | OpenAI Codex | ✅ | 2026-05-05 | 雙軌並行，與 Claude Code 同時部署 | 2026-05-05 |
-| Uber | 頂尖 | Claude Code | ⚠️ | 2026-05-01 | 4 個月燒完全年 AI 預算，Uber CTO 承認成本失控 | 2026-05-18 |
-| Apple | 頂尖 | Claude（API） | ✅ | — | 外洩文件確認內部採用，非 Claude Code | 2026-05-01 |
-| KPMG | 大型 | Claude | ✅ | 2026-05-25 | 戰略合作，重新定義客戶服務 | 2026-05-25 |
-| iCapital | 大型 | Anthropic API | ✅ | 2026-05-01 | 替代資產平台，為客戶建立 AI 工具 | 2026-05-01 |
-| UiPath | 大型 | Claude Code + Codex | ✅ | 2026-05-12 | RPA 平台同時整合兩套工具 | 2026-05-12 |
-| 哈佛 FAS | 大型 | Claude | ✅ | 2026-04-28 | 取代 ChatGPT Edu，學術授權 | 2026-04-28 |
+| Amazon | 頂尖 | OpenAI Codex | ✅ | 2026-05-05 | 與 Claude Code 同時部署 | 2026-05-05 |
+| Uber | 頂尖 | Claude Code | ⚠️ | 2026-05-01 | 4 個月燒完全年 AI 預算，CTO 承認成本失控 | 2026-05-18 |
+| UiPath | 大型 | Claude Code | ✅ | 2026-05-12 | RPA 平台雙工具整合 | 2026-05-12 |
+| UiPath | 大型 | OpenAI Codex | ✅ | 2026-05-12 | 與 Claude Code 同時部署 | 2026-05-12 |
+| Apple | 頂尖 | Claude API | ✅ | — | 外洩文件確認內部採用，非 Claude Code | 2026-05-01 |
+| KPMG | 大型 | Claude API | ✅ | 2026-05-25 | 戰略合作，重新定義客戶服務 | 2026-05-25 |
+| iCapital | 大型 | Claude API | ✅ | 2026-05-01 | 替代資產平台，為客戶建立 AI 工具 | 2026-05-01 |
+| 哈佛 FAS | 大型 | Claude API | ✅ | 2026-04-28 | 取代 ChatGPT Edu，學術授權 | 2026-04-28 |
 
 ---
 
 ## 工具競爭態勢（企業視角）
 
+> **說明：** Claude Code = Anthropic 的 CLI 編碼工具；Claude API = Anthropic API 整合（企業自建應用）
+
 | 工具 | 企業採用數 | 趨勢 | 主要阻力 |
 |------|----------|------|---------|
-| Claude Code | 3（Amazon、Uber、UiPath） | ⚠️ 成本壓力浮現 | 缺乏企業層級預算管控 |
-| Claude（API） | 4（Apple、KPMG、iCapital、哈佛） | 🟢 持續擴張 | — |
-| GitHub Copilot CLI | 1（Microsoft） | 🟢 Microsoft 背書 | 生態鎖定 |
+| Claude Code | 3 使用中（Amazon、Uber、UiPath）+ 1 退出（Microsoft） | ⚠️ 成本壓力浮現 | 缺乏企業層級預算管控 |
+| Claude API | 4（Apple、KPMG、iCapital、哈佛） | 🟢 持續擴張 | — |
+| GitHub Copilot | 1（Microsoft） | 🟢 Microsoft 背書 | 生態鎖定 |
 | OpenAI Codex | 2（Amazon、UiPath） | 🟢 快速成長 | — |
 
 ---
@@ -45,8 +48,10 @@
 ## 市場分層觀察
 
 - **頂尖企業（>10 萬員工）**：成本是最大決策因子。Microsoft 退出、Uber 警戒，Amazon 雙軌分散風險
-- **大型企業（1–10 萬員工）**：以 API 整合為主（KPMG、iCapital），不直接讓工程師用 Claude Code
+- **大型企業（1–10 萬員工）**：分兩類——工程工具（UiPath 同時用 Claude Code + Codex）與 API 整合（KPMG、iCapital、哈佛 用 Claude API 自建應用）
 - **新創圈**：Business Insider（2026-05-23）確認 Claude Code 已取得主導地位，Cursor 份額下滑
+
+> **Claude Code vs Claude API 的本質差異：** Claude Code 是工程師日常編碼工具（CLI），成本隨使用量線性成長，大量使用時易失控；Claude API 是企業自建 AI 應用的基礎，成本可透過產品設計控制。同樣是採用 Anthropic，風險結構完全不同。
 
 ---
 
