@@ -2,7 +2,7 @@
 
 **狀態：** ongoing
 **開始日期：** 2026-04-25
-**最後更新：** 2026-05-26
+**最後更新：** 2026-05-27
 
 ---
 
@@ -22,9 +22,9 @@
 
 | 痛點主題 | 代表工具 | 本質問題 | 狀態 | 近期工具 |
 |---------|---------|---------|------|---------|
-| Token 成本不透明 | Tokenyst、CostHawk、TokenShield、PrismoDev、engramx、agent-estimate、AI Agent Token Cost Calculator | 自主 agent 讓帳單不可預測；$6,000 個人事件廣傳後社群更重視 | 🔥 持續升溫 | 2026-05-26 |
-| 跨 session 記憶歸零 | ltm、Memex、draft CLI、LockedIn、VIR、CoreMem | 無官方標準，每個新 session 從零開始 | 🔥 持續升溫 | 2026-05-23 |
-| 多 agent 協調混亂 | agent-baton、cdesktop、AnyFrame、agent-teamflow、Runner、Runtime、Fleet、AWO | 官方 Managed Agents 已部分解決，但社群仍補缺口；AWO 提供 git worktree 隔離方案 | 🔥 持續升溫 | 2026-05-26 |
+| Token 成本不透明 | Tokenyst、CostHawk、TokenShield、PrismoDev、engramx、agent-estimate、AI Agent Token Cost Calculator、Claude Usage Tray | 自主 agent 讓帳單不可預測；$6,000 個人事件廣傳後社群更重視 | 🔥 持續升溫 | 2026-05-27 |
+| 跨 session 記憶歸零 | ltm、Memex、draft CLI、LockedIn、VIR、CoreMem、claude-handoff-revive、timeglass.ai | 無官方標準，每個新 session 從零開始 | 🔥 持續升溫 | 2026-05-27 |
+| 多 agent 協調混亂 | agent-baton、cdesktop、AnyFrame、agent-teamflow、Runner、Runtime、Fleet、AWO、claude-workflow-composer | 官方 Managed Agents 已部分解決，但社群仍補缺口；AWO 提供 git worktree 隔離方案 | 🔥 持續升溫 | 2026-05-27 |
 | CLAUDE.md 規則失效 | Writ、Caliber、Patina | 規則被忽略、過多規則耗 token、跨工具無標準 | 🌙 冷卻觀望 | 2026-05-12 |
 | 多模型鎖定防禦 | Dragoman、Claudy、claudely、clarp、vibe-skill | 6/15 定價後對供應商依賴的集體防禦反應 | 🔥 持續升溫 | 2026-05-21 |
 | 輸出品質不可信 | Groundtruth、EvanFlow、Relay plugin、Proof Loop | 信任邊界未建立，需在流程層強制插入驗證點；Proof Loop 加入建構者/驗證者分離機制 | 🔥 持續升溫 | 2026-05-22 |
@@ -63,6 +63,15 @@
 
 | 工具 | 類型 | 採用 | 首次出現 | 簡介 |
 | --- | --- | --- | --- | --- |
+| [**Minicor**](https://www.minicor.com/) | 工作流 | ⚡ | 2026-05-27 | YC P26 新創，AI 公司整合無 API 桌面系統（Windows RPA）的可擴展基礎設施；HN score 98 |
+| [**claude-handoff-revive**](https://github.com/sofumel/claude-handoff-revive) | 工作流 | ⏳ | 2026-05-27 | Claude Code Session 無縫接手技能，新 session 不需重建大量 context；Show HN score 3 |
+| [**STAX IDE**](https://staxide.com) | IDE/終端 | ⏳ | 2026-05-27 | macOS 應用，以可縮放畫布（zoomable canvas）管理多個 Claude Code/Codex shell，視覺化並行工作流；Show HN score 2 |
+| [**claude-workflow-composer**](https://github.com/fayzan123/claude-workflow-composer) | 工作流 | ⏳ | 2026-05-27 | 視覺化多代理人工作流設計工具（`npx claude-cwc`），為不熟悉 CLI 編排的開發者提供圖形介面；Show HN score 2 |
+| [**Vibeshub**](https://vibeshub.ai/) | 協作 | ⏳ | 2026-05-27 | Claude Code Plugin，自動上傳 transcript 並在 PR 附上可讀連結，讓 code reviewer 看到 AI 協作完整脈絡；Show HN score 2 |
+| [**timeglass.ai**](https://timeglass.ai) | 記憶工具 | ⏳ | 2026-05-27 | 讓 Codex/Claude 對所有事件保留精確記憶（MCP 補強），超越標準 MCP 記憶能力；Show HN score 16 |
+| [**KittyHTML**](https://www.npmjs.com/package/kittyhtml) | IDE/終端 | ⏳ | 2026-05-27 | Node.js 套件，將 `claude -p` 輸出的 HTML 直接在 Kitty 終端渲染為內嵌圖像，無需瀏覽器；Show HN score 1 |
+| [**Claude Usage Tray**](https://github.com/apexlocal-jz/claude-usage-tray) | 費用監測 | ⏳ | 2026-05-27 | Windows 系統列工具，即時顯示 Claude Code 使用率與 rate limit 狀態；Show HN score 1 |
+| [**ADHDStack**](https://adhdstack.github.io/) | 工作流 | ⏳ | 2026-05-27 | 讓 Claude 以 N 條隔離認知分支展開思考（不同框架視角），再由獨立評審收斂最佳解，解決 LLM 過早收斂問題；Show HN score 4 |
 | [**skills-for-humanity**](https://github.com/human-avatar/skills-for-humanity) | Skills | ⏳ | 2026-05-26 | 171 個結構化推理技能庫，專為 Claude Code 工作流設計；Show HN score 10 |
 | [**PrismCat**](https://github.com/paopaoandlingyia/PrismCat) | 搜尋/診斷 | ⏳ | 2026-05-26 | 本地透明 LLM API 代理 + 調試控制台，解決 LangChain 等 SDK 靜默注入 prompt 無法調試的問題；subdomain routing，無需改 /etc/hosts；Show HN |
 | [**Agent Launch**](https://news.ycombinator.com/item?id=48278148) | 工作流 | ⏳ | 2026-05-26 | 統一 CLI（`agl`）一行指令啟動 Codex/Claude Code/Cursor Agent/OpenCode/Antigravity，統一 agent/prompt/mode/model 等參數；Show HN |

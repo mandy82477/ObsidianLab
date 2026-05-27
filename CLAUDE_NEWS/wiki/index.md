@@ -2,7 +2,7 @@
 
 LLM 查詢此 wiki 時，**先讀這個檔案**找相關頁面，再讀具體頁面取得詳細資訊。
 
-**最後更新：** 2026-05-26 | **頁面數：** 33
+**最後更新：** 2026-05-27 | **頁面數：** 33
 
 ---
 
@@ -44,7 +44,7 @@ LLM 查詢此 wiki 時，**先讀這個檔案**找相關頁面，再讀具體頁
 | [[topics/code-quality-decline]]        | monitoring | Claude Code 效能退步事件，Anthropic 已承認工程疏失                           |
 | [[topics/google-investment]]           | resolved   | ⚠️ 已遷移至 [[entities/google-investment]]                         |
 | [[topics/competitor-landscape]]        | ongoing    | Google 祕密開發競品 + OpenCode 157K 分流 + DeepSeek clone 低成本替代生態      |
-| [[topics/community-tech-tools]]        | ongoing    | 社群工具目錄：117 工具的活躍度、採用狀態追蹤                                       |
+| [[topics/community-tech-tools]]        | ongoing    | 社群工具目錄：126 工具的活躍度、採用狀態追蹤                                       |
 | [[topics/community-tech-patterns]]     | ongoing    | 社群技術模式：multi-agent、skills 設計、工作流最佳實踐                           |
 | [[topics/community-tech-discussions]]  | ongoing    | 社群技術討論趨勢：設計哲學辯論、實證研究、架構反思（HTML vs MD、Skill Atrophy 等）          |
 | [[topics/ai-agent-safety]]             | ongoing    | AI agent 安全：Claude Code v2.1.150 遠端系統提示注入披露（GrowthBook 60s 更新）+ 假冒安裝包 + 資料庫刪除事件 |

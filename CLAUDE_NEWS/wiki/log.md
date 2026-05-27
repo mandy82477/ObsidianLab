@@ -5,6 +5,23 @@ Append-only 紀錄。每次 ingest、query 或 lint 都在此追加一條。
 
 ---
 
+## 2026-05-27 Ingest | news/2026-05-27.md
+
+- 來源日報：`news/2026-05-27.md`（86 則，6 來源；Claude Code v2.1.152 Coordinator 模式、Anthropic 韓國首爾辦公室、富士通戰略合作、Uber COO 25% 生產力確認、Bloomberg 企業不安報導、Boris Cherny Platformer 專訪）
+- 更新頁面：
+  - `entities/claude-code.md`：新增 v2.1.152（Coordinator 模式 + `/code-review --fix` + Worker 代理人指令 +4,566 tokens）；版本歷史新增 2026-05-27 條目；更新最後更新 2026-05-27
+  - `entities/boris-cherny.md`：新增「軟體工程師的終結」Platformer 專訪（2026-05-27）；更新最後更新 2026-05-27
+  - `entities/mythos.md`：新增印度政府測試 Mythos 政府網路安全計畫（首個主權政府採用案例）；更新最後更新 2026-05-27
+  - `topics/enterprise-tool-tracker.md`：Uber 備註更新（COO 確認 25% 生產力）；新增 Fujitsu、Travelport、Nimble Gravity 三個企業條目；Claude API 採用數 4→7；新增 2026-05-27 時序；更新最後更新 2026-05-27
+  - `topics/community-tech-tools.md`：新增 9 個工具（Minicor、claude-handoff-revive、STAX IDE、claude-workflow-composer、Vibeshub、timeglass.ai、KittyHTML、Claude Usage Tray、ADHDStack）；更新 3 個痛點洞察近期工具至 2026-05-27；更新最後更新 2026-05-27
+  - `feature-radar.md`：新增 Coordinator 模式 + `/code-review --fix`（v2.1.152，熱度 🔥🔥🔥🔥，試用價值 ✅）；全覽表新增條目；更新最後更新 2026-05-27
+- 新增頁面：無
+- 呈現品質：✅ 通過（所有更新頁面前段清晰，關鍵資訊可獨立閱讀）
+- feature-radar 更新：新增 Coordinator 模式 + `/code-review --fix` 功能條目
+- 本日新增工具：Minicor / claude-handoff-revive / STAX IDE / claude-workflow-composer / Vibeshub / timeglass.ai / KittyHTML / Claude Usage Tray / ADHDStack（共 9 個，累積 126 個）
+
+---
+
 ## 2026-05-26 Ingest | news/2026-05-26.md
 
 - 來源日報：`news/2026-05-26.md`（83 則，6 來源；Pope Leo XIV 封論梵蒂岡事件、Mythos 公開釋出確認、Notion 整合三大 AI 編碼工具、企業安全整合 28 項、MCP 優化工具湧現）

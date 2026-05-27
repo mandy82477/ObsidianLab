@@ -2,7 +2,7 @@
 
 **狀態：** ongoing
 **開始日期：** 2026-05-26
-**最後更新：** 2026-05-26
+**最後更新：** 2026-05-27
 
 ## 摘要
 
@@ -22,7 +22,10 @@
 | Microsoft | 頂尖 | GitHub Copilot | ✅ | 2026-05-15 | 從 Claude Code 切換後採用 | 2026-05-25 |
 | Amazon | 頂尖 | Claude Code | ✅ | 2026-05-05 | 雙軌並行，不押注單一供應商 | 2026-05-05 |
 | Amazon | 頂尖 | OpenAI Codex | ✅ | 2026-05-05 | 與 Claude Code 同時部署 | 2026-05-05 |
-| Uber | 頂尖 | Claude Code | ⚠️ | 2026-05-01 | 4 個月燒完全年 AI 預算，CTO 承認成本失控 | 2026-05-18 |
+| Uber | 頂尖 | Claude Code | ⚠️ | 2026-05-01 | 4 個月燒完全年 AI 預算，CTO 承認成本失控；COO 5/27 確認帶來 25% 生產力提升 | 2026-05-27 |
+| Fujitsu | 頂尖 | Claude API | ✅ | 2026-05-26 | 富士通與 Anthropic 簽署全球戰略合作協議，強化日本市場企業 AI 部署 | 2026-05-27 |
+| Travelport | 大型 | Claude API | ✅ | 2026-05-27 | 與 Cognizant 三方合作，建構旅遊 AI 對話訂票系統 | 2026-05-27 |
+| Nimble Gravity | 中型 | Claude API | ✅ | 2026-05-27 | 成立 Applied Anthropic Practice，專攻銀行、保險、金融服務業 AI 諮詢 | 2026-05-27 |
 | UiPath | 大型 | Claude Code | ✅ | 2026-05-12 | RPA 平台雙工具整合 | 2026-05-12 |
 | UiPath | 大型 | OpenAI Codex | ✅ | 2026-05-12 | 與 Claude Code 同時部署 | 2026-05-12 |
 | Apple | 頂尖 | Claude API | ✅ | — | 外洩文件確認內部採用，非 Claude Code | 2026-05-01 |
@@ -39,7 +42,7 @@
 | 工具 | 企業採用數 | 趨勢 | 主要阻力 |
 |------|----------|------|---------|
 | Claude Code | 3 使用中（Amazon、Uber、UiPath）+ 1 退出（Microsoft） | ⚠️ 成本壓力浮現 | 缺乏企業層級預算管控 |
-| Claude API | 4（Apple、KPMG、iCapital、哈佛） | 🟢 持續擴張 | — |
+| Claude API | 7（Apple、KPMG、iCapital、哈佛、Fujitsu、Travelport、Nimble Gravity） | 🟢 持續擴張 | — |
 | GitHub Copilot | 1（Microsoft） | 🟢 Microsoft 背書 | 生態鎖定 |
 | OpenAI Codex | 2（Amazon、UiPath） | 🟢 快速成長 | — |
 
@@ -48,7 +51,7 @@
 ## 市場分層觀察
 
 - **頂尖企業（>10 萬員工）**：成本是最大決策因子。Microsoft 退出、Uber 警戒，Amazon 雙軌分散風險
-- **大型企業（1–10 萬員工）**：分兩類——工程工具（UiPath 同時用 Claude Code + Codex）與 API 整合（KPMG、iCapital、哈佛 用 Claude API 自建應用）
+- **大型企業（1–10 萬員工）**：分兩類——工程工具（UiPath 同時用 Claude Code + Codex）與 API 整合（KPMG、iCapital、哈佛、Travelport、Nimble Gravity 用 Claude API 自建應用）
 - **新創圈**：Business Insider（2026-05-23）確認 Claude Code 已取得主導地位，Cursor 份額下滑
 
 > **Claude Code vs Claude API 的本質差異：** Claude Code 是工程師日常編碼工具（CLI），成本隨使用量線性成長，大量使用時易失控；Claude API 是企業自建 AI 應用的基礎，成本可透過產品設計控制。同樣是採用 Anthropic，風險結構完全不同。
@@ -56,6 +59,12 @@
 ---
 
 ## 時序
+
+### 2026-05-27
+- **Uber COO 確認 25% 生產力提升**：Andrew Macdonald 公開表示 Claude Code + ChatGPT 帶來 25% 生產力提升，但成本問題持續（Times of India）
+- **富士通與 Anthropic 簽署戰略合作**：全球範圍企業 AI 部署協議（Yahoo Finance、CX Today、Fujitsu Global）
+- **Travelport + Cognizant + Anthropic**：三方合作建構旅遊 AI 對話訂票系統（PR Newswire）
+- **Nimble Gravity 成立 Applied Anthropic Practice**：專攻銀行、保險、金融服務業 AI 諮詢（PR Newswire）
 
 ### 2026-05-25
 - **Microsoft 宣布 6/30 完全停用 Claude Code**：Cybernews 報導，原因是數月內燒完整年 AI 預算
@@ -83,6 +92,7 @@
 
 ## 參考來源
 
+- [[news/2026-05-27]]
 - [[news/2026-05-25]]
 - [[news/2026-05-18]]
 - [[news/2026-05-15]]

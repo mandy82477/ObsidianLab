@@ -4,7 +4,7 @@
 僅收錄官方 changelog、release note 或官方公告來源；社群工具見 [[topics/community-tech-tools]]。
 每次 ingest 後由 LLM 維護：新增功能、更新熱度、補充社群回饋。
 
-**最後更新：** 2026-05-26（含 5/26 ingest 更新；本日無新使用者端功能；BioMysteryBench 為 Anthropic 研究評測發布，非使用者端功能；Mythos 公開釋出路線確認但無具體 release date）
+**最後更新：** 2026-05-27（含 5/27 ingest 更新；Claude Code v2.1.152 Coordinator 模式與 `/code-review --fix` 正式發布；Anthropic TypeScript SDK v0.99.0 支援自訂檔案大小）
 
 ---
 
@@ -29,6 +29,7 @@
 
 | 功能 | 發布日期 | 熱度 | 試用價值 | 狀態 |
 |------|----------|------|----------|------|
+| Coordinator 模式 + `/code-review --fix`（v2.1.152） | 2026-05-27 | 🔥🔥🔥🔥 | ✅ 推薦 | 正式發布 |
 | 小企業 Skills（31 個官方 Skills） | 2026-05-24 | 🔥🔥🔥 | ✅ 推薦 | 正式發布 |
 | `/code-review`（原 `/simplify`，v2.1.146） | 2026-05-21 | 🔥🔥 | ✅ 推薦 | 正式發布 |
 | HTML 輸出格式（官方背書） | 2026-05-20 | 🔥🔥🔥🔥🔥 | ⚡ 有條件推薦 | 官方建議（非新功能，策略轉向）|
@@ -57,6 +58,25 @@
 ---
 
 ## 🆕 最新功能（2026-05）
+
+### Coordinator 模式 + `/code-review --fix`（v2.1.152）
+**發布：** 2026-05-27（v2.1.152） | **熱度：** 🔥🔥🔥🔥 | **試用價值：** ✅ 推薦 | **狀態：** 正式發布
+
+**是什麼：** Claude Code v2.1.152 帶來兩大架構性更新：① **`/code-review --fix`**：審查完成後直接將建議套用至工作樹（修正錯誤、優化可重用性與效率，自動跳過誤報）；② **Coordinator 模式**：全新多 worker 代理人協調層，支援任務委派、結果合成、lifecycle 管理、跨 session peer 協調與獨立驗證委派結果。社群分析顯示系統提示增加 +4,566 tokens，標誌 Claude Code 正式進入多代理人編排層。
+
+**為何熱：** Coordinator 模式是 Claude Code 從「單一 agent」走向「代理人工廠（agent factory）」的關鍵里程碑；`/code-review --fix` 打通了「發現問題→修復問題」的最後一哩路，不再需要手動查看 review 結果。HN 社群社群詳細分析了 +4,566 tokens 的新增內容。
+
+**快速上手：**
+```bash
+/code-review --fix         # 審查並直接套用修復建議至工作樹
+/code-review --fix high    # 高強度審查後自動修復
+# Coordinator 模式：在 CLAUDE.md 指定 coordinator-mode agent role
+# 讓 Coordinator agent 委派任務至多個 worker agents 並彙整結果
+```
+
+**注意事項：** +4,566 tokens 的系統提示增加會提高每次呼叫成本；Coordinator 模式適合大型任務拆分，但需明確設計 worker 邊界以避免重工。
+
+---
 
 ### 小企業 Skills（31 個官方 Skills）
 **發布：** 2026-05-24（官方正式發布） | **熱度：** 🔥🔥🔥 | **試用價值：** ✅ 推薦 | **狀態：** 正式發布
