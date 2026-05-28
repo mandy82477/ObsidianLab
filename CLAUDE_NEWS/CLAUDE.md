@@ -84,17 +84,9 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 Pipeline：`sources/*.py → dedup.py → enricher.py → filter.py → analyzer.py → digest.py → git_push.py`
 
-**日報 `news/YYYY-MM-DD.md` 的五個區塊**（wiki ingest 時參考）：
-
-| 區塊 | 內容 |
-|------|------|
-| 📌 今日聚焦 | 3–5 點條列總結（置頂），標籤：重大事件 / 持續追蹤 / 新工具 / 社群趨勢 / 風險警示 |
-| ⭐ 重點話題 | 跨多來源同時出現或引發大量討論的項目（2–5 則） |
-| 🔧 技術更新 | 模型發布、功能更新、API/SDK 變更、官方公告 |
-| 💬 技術熱度討論 | 社群討論、工具分享、開發者心得，附情緒標籤 |
-| 💰 付費方案動態 | 定價、配額、Token 費用 |
-
 新增來源：繼承 `BaseSource`，實作 `fetch() -> list[FeedItem]`，在 `main.py` 的 `sources` 列表加入即可。
+
+日報五個區塊格式、wiki 頁面模板、呈現品質標準：見 **`.claude/rules/wiki-ingest.md`**（ingest / lint 時載入）。
 
 ---
 
