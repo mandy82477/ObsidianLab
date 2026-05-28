@@ -5,6 +5,23 @@ Append-only 紀錄。每次 ingest、query 或 lint 都在此追加一條。
 
 ---
 
+## 2026-05-28 Ingest | news/2026-05-28.md
+
+- 來源日報：`news/2026-05-28.md`（75 則，6 來源；Simon Willison HN 970 PMF 論述、Anthropic 米蘭辦公室、Claude Code v2.1.153、Cisco LLM Security Leaderboard Anthropic 8/10、企業預算壓力密集信號、SpaceX Colossus 6 個月短期租約澄清、ChatGPT-5.5 DeepSWE 超越 Opus 4.7）
+- 更新頁面：
+  - `entities/claude-code.md`：新增 v2.1.153（skipLfs + npm 版本通知）至最新版本表格與版本歷史；更新最後更新 2026-05-28
+  - `entities/claude-security.md`：新增 2026-05-28 Cisco LLM Security Leaderboard（Anthropic 8/10）；更新參考來源；更新最後更新 2026-05-28
+  - `topics/community-tech-tools.md`：新增 6 個工具（NotifAI、Workplane、CCW、harmont-cli、Zorilla、token-xray）；更新 Token 成本不透明痛點至 2026-05-28；更新最後更新 2026-05-28
+  - `topics/enterprise-cost-management.md`：新增 2026-05-28 時序（Benzinga/CFO.com 預算放緩、Reddit Uber 分析、$200 方案 17× 補貼）；更新最後更新 2026-05-28
+  - `topics/community-tech-discussions.md`：熱門討論新增 Simon Willison PMF（HN 970，🔥🔥🔥🔥🔥 ☄️閃現）；技術彙整新增 PMF 條目；更新最後更新 2026-05-28
+  - `feature-radar.md`：全覽表新增 v2.1.153 skipLfs 條目（🔥 ⚡）；更新最後更新 2026-05-28
+- 新增頁面：無
+- 呈現品質：✅ 通過（所有更新頁面摘要清晰，關鍵資訊前置）
+- feature-radar 更新：v2.1.153 加入全覽表（低熱度，實用性 ⚡ 有條件推薦）
+- 本日新增工具：NotifAI / Workplane / CCW / harmont-cli / Zorilla / token-xray（共 6 個，累積 132 個）
+
+---
+
 ## 2026-05-27 Ingest | news/2026-05-27.md
 
 - 來源日報：`news/2026-05-27.md`（86 則，6 來源；Claude Code v2.1.152 Coordinator 模式、Anthropic 韓國首爾辦公室、富士通戰略合作、Uber COO 25% 生產力確認、Bloomberg 企業不安報導、Boris Cherny Platformer 專訪）

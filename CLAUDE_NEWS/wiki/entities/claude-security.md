@@ -3,7 +3,7 @@
 **類型：** product
 **狀態：** public beta（公開測試版）
 **首次出現：** 2026-04-30
-**最後更新：** 2026-05-26
+**最後更新：** 2026-05-28
 
 > 功能熱度 🔥🔥🔥 | 試用價值 ⚡ 有條件推薦 | 詳見 [[feature-radar]]
 
@@ -45,11 +45,13 @@ Claude Security 於 2026-04-30 宣布推出公開測試版，並於 2026-05-01 �
 ## 參考來源
 
 - [[news/2026-04-30]]
+- [[news/2026-05-28]]
 
 ## 歷史記錄
 
 | 日期 | 事件 |
 |------|------|
+| 2026-05-28 | **Cisco LLM Security Leaderboard 首次發布**：Anthropic 模型佔前十名 8 個席位（8/10），成為企業採購 AI 工具時最強的第三方安全背書；調查同時顯示 83% 企業計畫部署 agentic AI，但僅 29% 認為已具備足夠安全管控能力——此數字直接推動 Claude Security 產品採購需求；來源：Cisco / The Deep View（HN score 3） |
 | 2026-05-26 | Anthropic 宣布 28 項企業安全整合（Anthropic + 28 security vendors），Varonis 將 Claude Compliance API 整合至 Atlas 企業安全平台（AI 治理 + 資料存取合規追蹤）；Forcepoint 將統一 AI 與資料安全防護延伸至 Claude Enterprise（Stopping Risk Before Agents Act 定位）；企業安全生態迅速擴張 |
 | 2026-05-24 | 社群發現 app 字串洩露「Access to the Claude Mythos model in Claude Code and Claude Security」，顯示 Anthropic 計畫將更強大的 Mythos 模型整合至 Claude Security；Anthropic 聲明一般用戶不保證獲得存取 |
 | 2026-05-06 | dev.to 發布「Claude Code Security Public Beta: What Developers Need to Know (2026)」深度介紹文章，媒體報導量持續擴大；確認開發者現可在 Claude Code 工作流中直接使用，無需另行安裝工具 |

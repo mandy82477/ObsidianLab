@@ -2,7 +2,7 @@
 
 **狀態：** ongoing
 **開始日期：** 2026-04-25
-**最後更新：** 2026-05-27
+**最後更新：** 2026-05-28
 
 ---
 
@@ -22,7 +22,7 @@
 
 | 痛點主題 | 代表工具 | 本質問題 | 狀態 | 近期工具 |
 |---------|---------|---------|------|---------|
-| Token 成本不透明 | Tokenyst、CostHawk、TokenShield、PrismoDev、engramx、agent-estimate、AI Agent Token Cost Calculator、Claude Usage Tray | 自主 agent 讓帳單不可預測；$6,000 個人事件廣傳後社群更重視 | 🔥 持續升溫 | 2026-05-27 |
+| Token 成本不透明 | Tokenyst、CostHawk、TokenShield、PrismoDev、engramx、agent-estimate、AI Agent Token Cost Calculator、Claude Usage Tray、token-xray | 自主 agent 讓帳單不可預測；$200 方案 17× 補貼分析與 $6,000 個人事件廣傳後社群費用意識持續升溫 | 🔥 持續升溫 | 2026-05-28 |
 | 跨 session 記憶歸零 | ltm、Memex、draft CLI、LockedIn、VIR、CoreMem、claude-handoff-revive、timeglass.ai | 無官方標準，每個新 session 從零開始 | 🔥 持續升溫 | 2026-05-27 |
 | 多 agent 協調混亂 | agent-baton、cdesktop、AnyFrame、agent-teamflow、Runner、Runtime、Fleet、AWO、claude-workflow-composer | 官方 Managed Agents 已部分解決，但社群仍補缺口；AWO 提供 git worktree 隔離方案 | 🔥 持續升溫 | 2026-05-27 |
 | CLAUDE.md 規則失效 | Writ、Caliber、Patina | 規則被忽略、過多規則耗 token、跨工具無標準 | 🌙 冷卻觀望 | 2026-05-12 |
@@ -63,6 +63,12 @@
 
 | 工具 | 類型 | 採用 | 首次出現 | 簡介 |
 | --- | --- | --- | --- | --- |
+| [**NotifAI**](https://notifai.net/) | 工作流 | ⏳ | 2026-05-28 | 讓用戶從手機、平板或瀏覽器遠端批准 Claude Code 等 AI 工具的敏感操作，支援 E2E 加密，適配 Claude Code、Copilot CLI、Gemini CLI；Show HN score 3 |
+| [**Workplane**](https://workplane.co) | 協作 | ⏳ | 2026-05-28 | 瀏覽器協作工作空間，HTML/Markdown 直接渲染、版本自動控制、可分享連結；MCP 相容，Claude Desktop、Claude Code、OpenClaw 均可存取共享資料夾；Show HN score 5 |
+| [**CCW**](https://news.ycombinator.com/item?id=48306730) | 工作流 | ⏳ | 2026-05-28 | Spec-Driven Development workflow 產生器，依需求客製化線性 SDD 工作流插件（含行銷研究等非程式碼場景），已在 Google Poland 等公司展示；Show HN score 5 |
+| [**harmont-cli（Hm）**](https://github.com/harmont-dev/harmont-cli) | 工作流 | ⏳ | 2026-05-28 | 用 Python DSL 打造無 YAML 的 CI/CD 系統，解決 GHA 無狀態慢、Jenkins 不可水平擴展的問題，Claude agent 工作流 CI/CD 痛點具象化；Show HN score 11 |
+| [**Zorilla**](https://www.zoril.la/) | 其他 | ⏳ | 2026-05-28 | 瀏覽器 3D 遊戲 remixer，用英文描述即可即時修改 Three.js 世界；同時展示 Claude API 驅動「每日決策簡報」自動化工作流；Show HN score 3 |
+| [**coral-ai / token-xray**](https://github.com/Coral-Bricks-AI/coral-ai/tree/main/claude-code-token-xray) | 費用監測 | ⏳ | 2026-05-28 | 分析工具計算 Claude Code Max $200/月相當於 raw API 成本的 17 分之一，量化 Anthropic 補貼規模；Show HN score 9 |
 | [**Minicor**](https://www.minicor.com/) | 工作流 | ⚡ | 2026-05-27 | YC P26 新創，AI 公司整合無 API 桌面系統（Windows RPA）的可擴展基礎設施；HN score 98 |
 | [**claude-handoff-revive**](https://github.com/sofumel/claude-handoff-revive) | 工作流 | ⏳ | 2026-05-27 | Claude Code Session 無縫接手技能，新 session 不需重建大量 context；Show HN score 3 |
 | [**STAX IDE**](https://staxide.com) | IDE/終端 | ⏳ | 2026-05-27 | macOS 應用，以可縮放畫布（zoomable canvas）管理多個 Claude Code/Codex shell，視覺化並行工作流；Show HN score 2 |

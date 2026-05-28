@@ -3,7 +3,7 @@
 **類型：** product
 **狀態：** active
 **首次出現：** 2025（正式推出）
-**最後更新：** 2026-05-27
+**最後更新：** 2026-05-28
 
 ---
 
@@ -15,6 +15,7 @@ Claude Code 是 Anthropic 的 AI 編碼 CLI 工具，支援 agentic 工作流程
 
 | 版本 | 日期 | 重點 |
 |------|------|------|
+| **v2.1.153** | 2026-05-28 | ① **`skipLfs` 選項**：加入 github/git plugin 市集來源，clone 與 update 時可跳過 Git LFS 大型檔案下載，降低大型 repo 的頻寬與時間成本；② **npm 版本通知**：偵測到全域安裝版本過期時顯示一次性升級提示，改善版本管理體驗 |
 | **v2.1.152** | 2026-05-27 | ① `/code-review --fix`：審查完成後直接將建議套用至工作樹（修正錯誤、優化可重用性與效率，跳過誤報）；② **Coordinator 模式**：全新多 worker 代理人協調層，支援任務委派、結果合成、lifecycle 管理、跨 session peer 協調、獨立驗證委派結果（+4,566 系統提示 tokens）；③ **Worker 代理人指令**：範圍執行、並行分支安全處理、強制回報要求 |
 | **v2.1.150** | 2026-05-23 | 內部基礎設施改善，無使用者端可見功能變更；**⚠️ 安全爭議**：社群研究者發現此版啟動時呼叫 `api.anthropic.com/api/claude_cli/bootstrap` 並快取系統提示片段至磁碟，GrowthBook 功能旗標 `tengu_heron_brook` 每 60 秒動態重整，回傳字串直接注入擁有 shell 存取的系統提示（見 [[topics/ai-agent-safety]]） |
 | **v2.1.148** | 2026-05-22 | 緊急修復 v2.1.147 引入的回歸問題：Bash 工具對部分用戶每次指令都回傳 exit code 127，導致 shell 命令無法正常執行 |
@@ -280,6 +281,7 @@ Token 用量追蹤、session 費用分析與效能漂移偵測工具。
 
 | 日期 | 事件 |
 |------|------|
+| 2026-05-28 | **v2.1.153**：`skipLfs` 選項加入 github/git plugin，clone/update 可跳過 Git LFS 下載；npm 全域安裝版本過期時顯示一次性升級通知；Cisco LLM Security Leaderboard 發布，Anthropic 佔前十名 8 席；Simon Willison 發布 HN 970 分析文（Anthropic/OpenAI 已達 PMF）；Anthropic 宣布開設米蘭辦公室（歐洲第六據點）；企業預算壓力信號：Benzinga/CFO.com 報導 AI 編碼工具成長放緩；ChatGPT-5.5 在 DeepSWE 污染免疫基準超越 Opus 4.7 |
 | 2026-05-27 | **v2.1.152**：`/code-review --fix` 可直接將審查結果套用至工作樹；**Coordinator 模式**正式加入，多 worker 代理人協調層支援任務委派、結果合成、lifecycle 管理、跨 session peer 協調與獨立驗證（+4,566 系統提示 tokens）；Uber COO 公開確認 Claude Code + ChatGPT 帶來 25% 生產力提升；富士通與 Anthropic 簽署戰略合作；Platformer 刊出 Boris Cherny 專訪（「軟體工程師的終結」） |
 | 2026-05-22 | **v2.1.148**：緊急修復 v2.1.147 回歸問題（Bash 工具 exit code 127）；Managed Agents 自架沙箱完整參考文件發布（涵蓋 worker 輪詢、環境金鑰、webhook 喚醒、監控、客戶安全責任）；Runtime（YC P26）推出讓全團隊安全使用 Claude Code 的基礎設施；DeepSeek 宣布建構自有 Claude Code 競品（整機棧控制戰略）；Qwen3.7-Max 聲稱可持續自主運行 35 小時並支援 Claude Code harness；費用失控輿情升溫（$6,000 徹夜運行廣傳，Karpathy 「最小必要 context」原則成社群共識）；Sky News 專訪 Claude Code 創作者談 AI 與工程師職位；見 [[topics/competitor-landscape]]、[[topics/enterprise-cost-management]] |
 | 2026-05-21 | **v2.1.146**：`/simplify` 正式更名為 `/code-review`，新增可選強度等級（`/code-review high`）；auto mode 不再抑制 `AskUserQuestion`，skill 或用戶明確觸發時仍可向使用者提問 |

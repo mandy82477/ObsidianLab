@@ -4,7 +4,7 @@
 僅收錄官方 changelog、release note 或官方公告來源；社群工具見 [[topics/community-tech-tools]]。
 每次 ingest 後由 LLM 維護：新增功能、更新熱度、補充社群回饋。
 
-**最後更新：** 2026-05-27（含 5/27 ingest 更新；Claude Code v2.1.152 Coordinator 模式與 `/code-review --fix` 正式發布；Anthropic TypeScript SDK v0.99.0 支援自訂檔案大小）
+**最後更新：** 2026-05-28（含 5/28 ingest 更新；Claude Code v2.1.153 skipLfs 選項與 npm 版本通知；Cisco LLM Security Leaderboard Anthropic 8/10；Simon Willison HN 970 PMF 論述）
 
 ---
 
@@ -29,6 +29,7 @@
 
 | 功能 | 發布日期 | 熱度 | 試用價值 | 狀態 |
 |------|----------|------|----------|------|
+| `skipLfs` 選項 + npm 版本通知（v2.1.153） | 2026-05-28 | 🔥 | ⚡ 有條件推薦 | 正式發布 |
 | Coordinator 模式 + `/code-review --fix`（v2.1.152） | 2026-05-27 | 🔥🔥🔥🔥 | ✅ 推薦 | 正式發布 |
 | 小企業 Skills（31 個官方 Skills） | 2026-05-24 | 🔥🔥🔥 | ✅ 推薦 | 正式發布 |
 | `/code-review`（原 `/simplify`，v2.1.146） | 2026-05-21 | 🔥🔥 | ✅ 推薦 | 正式發布 |

@@ -2,7 +2,7 @@
 
 **狀態：** ongoing
 **開始日期：** 2026-04-25
-**最後更新：** 2026-05-26
+**最後更新：** 2026-05-28
 
 ---
 
@@ -20,6 +20,7 @@
 
 | 討論主題 | 首見 | 熱度 | 模式 | 核心論點 | 衍生 |
 |---------|------|------|------|---------|------|
+| Anthropic / OpenAI 已達 PMF（Simon Willison） | 2026-05-28 | 🔥🔥🔥🔥🔥 | ☄️閃現 | 企業 API 採購已規模化部署；Anthropic 首次盈利季傳言、訂閱用量爆發、企業帳單驚訝感是 PMF 已到達的信號；被社群視為對 AI 商業化趨勢最具說服力的近期論述（HN score 970） | — |
 | Claude Code 效能衰退量化（OpenTelemetry） | 2026-05-26 | 🔥🔥 | ☄️閃現 | 提出以 token 輸出品質（lines of code / commits / PRs）而非 token 消耗量為效能指標，並以 OpenTelemetry 建立可量化追蹤框架；回應社群普遍「感覺越來越差但無法量化」痛點 | — |
 | 交換平靜換取速度（Trading Peace for Pace） | 2026-05-26 | 🔥🔥 | ☄️閃現 | Claude Code 讓開發節奏加速，但深度專注感消失；情緒獎勵從「寫出好程式」轉移為「讓工具正確執行」；「量越多才感覺有產出」是新的心理陷阱；與 Skill Atrophy 議題呼應但角度不同（前者談能力退化，此篇談情緒代價） | — |
 | 軟體工廠時機辯論（Software Factories） | 2026-05-26 | 🔥🔥 | ☄️閃現 | HN 討論：大型公司（Stripe/Ramp/Uber/Spotify）已有自建 background agent 基礎設施，但工具成熟度不足（30%+ 失敗率被點名）；社群對「現在是否太早建軟體工廠」意見分歧 | — |
@@ -69,6 +70,14 @@
 ---
 
 ## 技術彙整
+
+### Anthropic / OpenAI 已達 Product-Market Fit（2026-05-28）
+
+- **來源：** "I think Anthropic and OpenAI have found product-market fit"（Simon Willison，simonwillison.net；Hacker News score 970）
+- **核心論點：** 企業客戶正以 API 原始價格規模化付費（而非試用）；Anthropic 首次盈利季傳言、訂閱用量爆發、企業 AI 帳單讓 CFO 驚訝，均是 PMF 已到達的信號；與競品相較，Anthropic 的差異化在於代碼生成品質與 Claude Code 生態
+- **關鍵回響：**
+  - 📝 支持：Benzinga「AI 編碼工具成長放緩=預算耗盡非產品問題」同步驗證
+  - 📝 補充：CFO.com 揭露 Claude 定價讓 CFO 難以預測季度 AI 支出，從財務角度佐證 PMF 到達後的採購規模化現象
 
 ### Claude Code 效能衰退量化：OpenTelemetry 方法論（2026-05-26）
 
