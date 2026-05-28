@@ -57,6 +57,9 @@
 - **Skills / Commands 呼叫到的 Python script，也不得在其呼叫鏈中觸發 `claude -p`**
 - 不可新增任何「有 API key 才能運作」的功能或 fallback
 
+**新增功能或修改 pipeline 時的判斷標準：**
+> 這個改動，在完全沒有 `ANTHROPIC_API_KEY` 的環境下也能正確運作嗎？若否，重新設計。
+
 ---
 
 ## Skills
@@ -66,6 +69,9 @@
 | `/news-pipeline` | 完整 pipeline：抓新聞 → 生成日報 → wiki ingest → 建置 web → 全部 push | `.claude/commands/news-pipeline.md` |
 | `/wiki-ingest` | 讀取日報，更新 wiki entities / topics / feature-radar | `.claude/commands/wiki-ingest.md` |
 | `/wiki-lint` | 每週品質檢查：矛盾頁面、孤立頁面、過期議題、CLAUDE.md 健檢 | `.claude/commands/wiki-lint.md` |
+
+**新增 skill 時的判斷標準：**
+> 這個任務是否需要跨多個步驟、值得重複執行，且有明確的輸入與完成條件？若否，用對話即可，不需要新 skill。
 
 ---
 
@@ -80,3 +86,6 @@
 - `news/` 為唯讀原始資料，不可修改
 - `log.md` 只能 append，不可修改既有條目
 - 繁體中文為主；英文術語保留英文
+
+**新增 wiki 頁面時的判斷標準：**
+> 這個主題已有足夠的具體資訊（名稱 + 狀態 + 至少一個事件）嗎？若今日首見，先附記在相關頁面的歷史記錄，明天再評估是否建頁。
