@@ -29,51 +29,19 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ---
 
-## 快速上手（首次設定）
-
-1. `pip install -r src/requirements_news.txt`
-2. 在 repo 根目錄建立 `.env`，填入 `GITHUB_TOKEN`（建議）、Reddit 金鑰（可選）
-3. 執行 `cd src && python -m news_aggregator.main`，確認 `news/YYYY-MM-DD.md` 被寫出並 git push
-4. 設定 Windows 工作排程器，每日 08:00 執行 `src/run_news.bat`（日誌：`src/logs/task_scheduler.log`）
-
----
-
 ## 每日自動化流程
 
-`run_news.bat` 每天自動執行完整流程（含 `claude -p` wiki ingest）。`/news-pipeline` 為互動式等效指令，wiki ingest 由 Claude 直接在 session 內執行（不走 `claude -p`，不產生 6/15 後的額外計費）。
+`/news-pipeline` 為互動式執行指令，wiki ingest 由 Claude 直接在 session 內執行（**不走 `claude -p`**，不產生 6/15 後的額外計費）。
 
 ```
-每天 08:00（Windows 排程器，run_news.bat）
-  ├─ Step 1  Python 聚合器 → news/YYYY-MM-DD.md + seen_urls.json → git push
-  ├─ Step 2  claude -p "/wiki-ingest" → 更新 wiki/entities/、wiki/topics/、wiki/log.md、wiki/index.md
-  ├─ Step 3  git add wiki/ → commit "wiki: auto-ingest YYYY-MM-DD" → git push
-  └─ Step 4  python scripts/build_web.py → 更新 web_reader/data/data.js → commit "web: rebuild YYYY-MM-DD" → git push
+自動（Windows 排程器，run_news.bat，每天 08:00）
+  ├─ Step 1  Python 聚合器 → news/YYYY-MM-DD.md → git push
+  ├─ Step 2  claude -p "/wiki-ingest" → 更新 wiki/
+  ├─ Step 3  git push wiki/
+  └─ Step 4  build_web.py → git push web_reader/
 
-手動（互動式 Claude Code，/news-pipeline）
-  └─ 同上 5 步，但 Step 2 由 Claude 直接執行（不走 claude -p）
-
-每週（手動）
-  └─ 告訴 Claude：「執行 wiki lint 並更新 overview.md」
-```
-
-### 手動觸發 Wiki Ingest
-
-若需要補跑（例如排程失敗、或日報重新抓取後想更新 wiki）：
-
-```
-/wiki-ingest
-```
-
-或指定日期：
-
-```
-請根據 news/2026-04-27.md 執行每日 ingest，更新 wiki。
-```
-
-### 每週 Wiki Lint 指令範例
-
-```
-請執行 wiki lint：找出矛盾頁面、孤立頁面、過期 ongoing 議題，並更新 wiki/overview.md。
+手動（/news-pipeline）
+  └─ 同上，但 Step 2 由 Claude 直接在 session 執行
 ```
 
 ---
