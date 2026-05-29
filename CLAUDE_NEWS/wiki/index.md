@@ -2,7 +2,7 @@
 
 LLM 查詢此 wiki 時，**先讀這個檔案**找相關頁面，再讀具體頁面取得詳細資訊。
 
-**最後更新：** 2026-05-28 | **頁面數：** 33
+**最後更新：** 2026-05-28 | **頁面數：** 34
 
 ---
 
@@ -53,6 +53,7 @@ LLM 查詢此 wiki 時，**先讀這個檔案**找相關頁面，再讀具體頁
 | [[topics/enterprise-cost-management]]  | ongoing    | 企業規模採用 Claude 的成本結構挑戰：Uber/Microsoft 案例、缺失工具、因應策略                            |
 | [[topics/enterprise-tool-tracker]]     | ongoing    | 大型企業 AI 編碼工具使用追蹤：Microsoft/Amazon/Uber/Apple 等企業當前工具選擇與變化軌跡                  |
 | [[topics/community-tech-timeline]]     | ongoing    | 社群技術應用趨勢完整時序（2026-04-25 至今），從 community-tech-patterns 拆分                         |
+| [[topics/anthropic-business]]          | ongoing    | Anthropic 商業健康度：企業採用率 34.4%、17 倍訂閱補貼、PMF 觀察、Microsoft 退出風險 |
 
 ---
 

@@ -106,14 +106,14 @@ git -C REPO_ROOT push
 執行完整 wiki ingest 流程（直接在本 session 執行，不呼叫 `claude -p`）：
 
 1. 讀取 `news/TARGET_DATE.md`
-2. 讀取 `wiki/index.md` + `wiki/log.md`，確認未重複 ingest
+2. 同時讀取：`wiki/CLAUDE.md`（目錄結構與限制）、`.claude/rules/wiki-ingest.md`（格式模板與品質標準）、`wiki/index.md` + `wiki/log.md`（確認未重複 ingest）
 3. 比對日報內容，找受影響的既有頁面
 4. 更新相關 entities/ 和 topics/ 頁面
 5. 判斷是否需建立新頁面（entities/ 或 topics/）
 6. 更新 `wiki/feature-radar.md`
 7. Append 至 `wiki/log.md`
 8. 更新 `wiki/index.md`
-9. 執行呈現品質審查（見 CLAUDE.md）
+9. 執行呈現品質審查（見 `.claude/rules/wiki-ingest.md`「Wiki 頁面呈現品質標準」）
 10. 輸出 Step 9 核對清單
 
 - Step 2 失敗時記錄但繼續 Step 4（web build 不依賴 wiki）

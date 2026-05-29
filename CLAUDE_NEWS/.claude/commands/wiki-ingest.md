@@ -44,11 +44,11 @@ argument-hint: [YYYY-MM-DD]
   - 只新增尚未記錄的條目，不重複
 - 同步更新「最後更新」欄位為今日日期
 
-格式規範見 `CLAUDE.md`。
+格式規範見 `.claude/rules/wiki-ingest.md`。
 
 ### 4b. 呈現品質審查（每個修改或新建的頁面均需執行）
 
-依照 `CLAUDE.md` 中的「Wiki 頁面呈現品質標準」，對本次 ingest 所有異動頁面逐一審查：
+依照 `.claude/rules/wiki-ingest.md` 中的「Wiki 頁面呈現品質標準」，對本次 ingest 所有異動頁面逐一審查：
 
 **必須修復（本次完成前不得跳過）：**
 - `## 現況` / `## 摘要` 的前 160 字能讓不熟悉背景的讀者獨立理解頁面主題
@@ -77,11 +77,11 @@ argument-hint: [YYYY-MM-DD]
 
 **注意**：新事物第一天不可能滿足「昨天也出現」的條件，因此全新議題永遠從 entity 或「暫記」開始，隔日確認持續後才升格為 topic。
 
-頁面格式嚴格遵守 CLAUDE.md 中的模板。
+頁面格式嚴格遵守 `.claude/rules/wiki-ingest.md` 中的模板。
 
 ### 6. 更新 feature-radar.md
 
-依 CLAUDE.md 中的規則更新 `wiki/feature-radar.md`：
+依 `.claude/rules/wiki-ingest.md` 中的規則更新 `wiki/feature-radar.md`：
 - 日報出現新的官方功能 → 在「最新功能」區塊新增條目 + 更新全覽表
 - 已追蹤功能再次出現 → 熱度 +1 格（上限 🔥🔥🔥🔥🔥）
 - 出現多個正面使用案例 → 試用價值升級

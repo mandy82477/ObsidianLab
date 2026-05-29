@@ -5,6 +5,17 @@ Append-only 紀錄。每次 ingest、query 或 lint 都在此追加一條。
 
 ---
 
+## 2026-05-28 Query | 建立 topics/anthropic-business.md
+
+- 新增頁面：`topics/anthropic-business.md`（Anthropic 商業健康度）
+  - 內容範圍：企業採用率（34.4% Ramp AI Index）、PMF 觀察（Simon Willison HN 970）、財務信號（17 倍訂閱補貼）、商業風險（Microsoft 退出）、戰略合作（富士通/KPMG）
+  - 來源整合自：news/2026-05-28、news/2026-05-27、news/2026-05-25、news/2026-05-23、news/2026-05-15、news/2026-05-13
+- 更新頁面：
+  - `topics/community-tech-discussions.md`：Simon Willison PMF 條目 `衍生` 欄補上 `[[topics/anthropic-business]]`
+  - `wiki/index.md`：新增 topics/anthropic-business，頁面數 33→34
+
+---
+
 ## 2026-05-28 Ingest | news/2026-05-28.md
 
 - 來源日報：`news/2026-05-28.md`（75 則，6 來源；Simon Willison HN 970 PMF 論述、Anthropic 米蘭辦公室、Claude Code v2.1.153、Cisco LLM Security Leaderboard Anthropic 8/10、企業預算壓力密集信號、SpaceX Colossus 6 個月短期租約澄清、ChatGPT-5.5 DeepSWE 超越 Opus 4.7）

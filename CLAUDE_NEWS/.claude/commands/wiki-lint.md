@@ -42,12 +42,12 @@ topics/ 中狀態為 `resolved` 的頁面。
 
 #### 3e. 呈現品質審查
 
-對所有頁面逐一執行 CLAUDE.md「Wiki 頁面呈現品質標準」的完整掃描：
+對所有頁面逐一執行 `.claude/rules/wiki-ingest.md`「Wiki 頁面呈現品質標準」的完整掃描：
 
 **必須修復項目：**
 - `## 現況` / `## 摘要` 的前 160 字是否能讓不熟悉背景的讀者獨立理解？→ 若不行，改寫摘要
 - 最重要的事實是否在頁面前 1/3？→ 若否，移動關鍵區塊至前段
-- 頁面正文是否混入面向 LLM 的操作指令？→ 若有，移至 CLAUDE.md 或刪除
+- 頁面正文是否混入面向 LLM 的操作指令？→ 若有，移至 `.claude/rules/wiki-ingest.md` 或刪除
 
 **警示觸發重構：**
 - 頁面超過 200 行 → 事件流按主題分組，壓縮重複細節
@@ -113,7 +113,7 @@ topics/ 中狀態為 `resolved` 的頁面。
 
 ### 6. CLAUDE.md 健檢
 
-讀取 `CLAUDE.md`，依序執行五項檢查：
+讀取 `wiki/CLAUDE.md` 及 `.claude/rules/wiki-ingest.md`（已在 Step 1 載入，可直接檢查），依序執行五項檢查：
 
 #### 6a. 規則矛盾偵測
 
@@ -144,7 +144,7 @@ topics/ 中狀態為 `resolved` 的頁面。
 | `近期工具` 欄 | `topics/community-tech-tools.md` | grep `近期工具` |
 | `## 技術彙整` 區塊 | `topics/community-tech-discussions.md` | grep `## 技術彙整` |
 | `熱門討論` 表格 | `topics/community-tech-discussions.md` | grep `熱門討論` |
-| `**靈感來源：**` 欄位 | `topics/community-tech-patterns.md` | grep `靈感來源` |
+| `衍生` 欄 | `topics/community-tech-discussions.md` | grep `衍生` |
 | `全覽表` 區塊 | `wiki/feature-radar.md` | grep `全覽表` |
 
 輸出格式：
@@ -181,7 +181,7 @@ topics/ 中狀態為 `resolved` 的頁面。
 
 #### 6d. 規則年齡審查
 
-CLAUDE.md 中的 `###` 規則區塊若帶有 `[加入: YYYY-MM-DD]` 標記，計算距今天數。
+`.claude/rules/wiki-ingest.md` 中的 `##` 規則區塊若帶有 `[加入: YYYY-MM-DD]` 標記，計算距今天數。
 
 - **距今 > 60 天**的規則：逐一列出，確認規則描述的行為是否仍與現狀吻合（例如：規則提及的欄位、工作流是否已改版）
 - **距今 ≤ 60 天**：記錄「在閾值內，無需審查」
@@ -197,14 +197,17 @@ CLAUDE.md 中的 `###` 規則區塊若帶有 `[加入: YYYY-MM-DD]` 標記，計
 
 #### 6e. 長度與簡化評估
 
-統計 `CLAUDE.md` 總行數。
+分別統計 `wiki/CLAUDE.md` 及 `.claude/rules/wiki-ingest.md` 總行數。
 
-- **若超過 150 行**：列出各章節行數佔比，找出可能重複、過時或可合併的段落，向使用者提出簡化建議（**不自行修改**，等待確認）
-- **若未超過 150 行**：記錄「CLAUDE.md 目前 XX 行，未超過閾值」，不做建議
+- **`.claude/rules/wiki-ingest.md` 若超過 250 行**：列出各章節行數佔比，找出可能重複、過時或可合併的段落，向使用者提出簡化建議（**不自行修改**，等待確認）
+- **`wiki/CLAUDE.md` 若超過 80 行**：同上，提出簡化建議
+- 兩者均在閾值內：記錄行數，不做建議
 
 輸出格式：
 ```
-📋 CLAUDE.md 健檢：XXX 行（閾值 150 行）
+📋 規則檔健檢：
+  wiki/CLAUDE.md：XX 行（閾值 80 行）→ ✅ / ⚠️
+  .claude/rules/wiki-ingest.md：XX 行（閾值 250 行）→ ✅ / ⚠️
 [若超過] 建議簡化段落：
   - [章節名]（約 XX 行）：[說明為何可簡化]
   …
@@ -225,8 +228,9 @@ CLAUDE.md 中的 `###` 規則區塊若帶有 `[加入: YYYY-MM-DD]` 標記，計
 - 新增 entities：（列出，若無則寫「無」）
 - 呈現品質：（列出修復或待辦的頁面，若全數通過則寫「全部通過」）
 - 超長頁面（> 500 行）：（列出頁面名稱與行數，及處理結果：已拆分 / 使用者稍後處理 / 無）
-- CLAUDE.md 健檢：
-  - 行數：XX 行（閾值 150 行）
+- 規則檔健檢：
+  - wiki/CLAUDE.md：XX 行（閾值 80 行）
+  - .claude/rules/wiki-ingest.md：XX 行（閾值 250 行）
   - 矛盾：（列出，若無則寫「無」）
   - 引用驗證：（列出失效引用，若無則寫「全部通過」）
   - 遵守率：（列出 < 2/3 的規則，若全部通過則寫「全部通過」）
