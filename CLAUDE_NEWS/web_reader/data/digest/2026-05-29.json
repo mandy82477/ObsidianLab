@@ -1,0 +1,268 @@
+{
+  "date": "2026-05-29",
+  "generatedAt": "2026-05-29 23:22 UTC",
+  "articleCount": 97,
+  "sourceCount": "6/6 | **文章數：** 97 | **更新時間：** 2026-05-29 23:22 UTC",
+  "topStories": [],
+  "techUpdates": [
+    {
+      "title": "[anthropics/claude-code] v2.1.156",
+      "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.156",
+      "source": "GitHub / anthropics/claude-code",
+      "time": "05/29 01:42",
+      "sentiment": "",
+      "body": "修復使用 Opus 4.8 時 thinking blocks 被修改導致 API 400 錯誤的問題——這也是本日 Reddit 上廣泛回報的 bug。",
+      "focusTags": []
+    },
+    {
+      "title": "[anthropics/anthropic-sdk-python] v0.105.2",
+      "url": "https://github.com/anthropics/anthropic-sdk-python/releases/tag/v0.105.2",
+      "source": "GitHub / anthropics/anthropic-sdk-python",
+      "time": "05/29 00:20",
+      "sentiment": "",
+      "body": "小版本更新，完整 changelog 詳見 GitHub。",
+      "focusTags": []
+    },
+    {
+      "title": "[anthropics/anthropic-sdk-typescript] sdk-v0.100.1",
+      "url": "https://github.com/anthropics/anthropic-sdk-typescript/releases/tag/sdk-v0.100.1",
+      "source": "GitHub / anthropics/anthropic-sdk-typescript",
+      "time": "05/29 00:08",
+      "sentiment": "",
+      "body": "修復 streaming 相關 bug。",
+      "focusTags": []
+    },
+    {
+      "title": "Claude Opus 4.8",
+      "url": "https://www.anthropic.com/news/claude-opus-4-8",
+      "source": "Hacker News",
+      "time": "05/28 16:49",
+      "sentiment": "",
+      "body": "正式推出 Opus 4.8：SWE-bench Pro 69.2%、1M token context window、同價格發售。新增 Dynamic Workflows（最多 1,000 子代理）、Fast Mode（2.5× 速度、降至前代 1/3 費用）、使用者可調節任務努力程度。",
+      "focusTags": [
+        "[重大事件]"
+      ]
+    },
+    {
+      "title": "Dynamic Workflows in Claude Code",
+      "url": "https://claude.com/blog/introducing-dynamic-workflows-in-claude-code",
+      "source": "Hacker News",
+      "time": "05/28 16:52",
+      "sentiment": "",
+      "body": "Research Preview：Claude Code 動態撰寫 orchestration scripts，一個 session 啟動數十到百個平行子代理，完成超大規模工作。現限 Max 方案。",
+      "focusTags": [
+        "[重大事件]"
+      ]
+    },
+    {
+      "title": "Coding Agents in Social Sciences",
+      "url": "https://www.anthropic.com/research/coding-agents-social-sciences",
+      "source": "Hacker News",
+      "time": "05/28 13:45",
+      "sentiment": "",
+      "body": "Anthropic 發布 1,260 位社會科學家調查：81% 使用過 AI chatbot，但僅 20% 採用 coding agents；使用者論文與計畫申請量明顯高於同儕，但存在顯著的性別與機構差距。",
+      "focusTags": []
+    }
+  ],
+  "discussions": [
+    {
+      "title": "Claude Code – Everything You Can Configure That the Docs Don't Tell You",
+      "url": "https://buildingbetter.tech/p/i-read-the-claude-code-source-code",
+      "source": "Hacker News",
+      "time": "05/29 02:13 UTC 情緒：🤔",
+      "sentiment": "",
+      "body": "作者深入 claude-code node_modules，挖出 YOLO Classifier（可用自然語言設定 auto-approve 規則）、persistent agent memory、hook 指令改寫欄位等數十個未文件化設定，全部提供 copy-paste 範例。",
+      "focusTags": [
+        "[新工具]"
+      ]
+    },
+    {
+      "title": "Claude Code Degraded Before Opus 4.8 Release",
+      "url": "https://marginlab.ai/blog/claude-code-degraded-before-opus-4-8/",
+      "source": "Hacker News",
+      "time": "05/29 12:43 UTC 情緒：😤",
+      "sentiment": "",
+      "body": "SWE-bench-Pro 每日追蹤發現：Opus 4.7 在 Opus 4.8 發布前一週統計顯著下降，發布後立即恢復。作者指出這類靜默的日常效能變化是 launch benchmark 無法捕捉的盲點。",
+      "focusTags": [
+        "[社群趨勢]"
+      ]
+    },
+    {
+      "title": "Show HN: AISlop – CLI for catching AI generated code smells",
+      "url": "https://github.com/scanaislop/aislop",
+      "source": "Hacker News",
+      "time": "05/29 13:37 UTC 情緒：😊",
+      "sentiment": "",
+      "body": "偵測 AI 生成的 code smells（空 catch block、無用注釋、重複 helper、dead code 等），可掛載到 Claude Code hooks，每次 tool call 後自動掃描。",
+      "focusTags": [
+        "[新工具]"
+      ]
+    },
+    {
+      "title": "Show HN: Ktx – Open-source executable context layer for data agents",
+      "url": "https://github.com/Kaelio/ktx",
+      "source": "Hacker News",
+      "time": "05/28 15:05 UTC 情緒：🤔",
+      "sentiment": "",
+      "body": "解決 AI 代理在 data warehouse 中生成「valid 但 incorrect SQL」的問題，提供可執行的 context 層讓代理了解 deprecated columns、隱性業務規則。",
+      "focusTags": [
+        "[新工具]"
+      ]
+    },
+    {
+      "title": "Show HN: Headroom – Reduce Claude Code token usage ~50%",
+      "url": "https://extraheadroom.com/",
+      "source": "Hacker News",
+      "time": "05/29 11:59 UTC 情緒：😊",
+      "sentiment": "",
+      "body": "Mac Menu Bar app，在本機靜默優化 Claude Code prompt 輸入（修剪 bloat、壓縮文件），號稱省下 50% token，60 DAU 已累計省下約 $35k。",
+      "focusTags": [
+        "[新工具]"
+      ]
+    },
+    {
+      "title": "Python utility package for building Claude Code hooks",
+      "url": "https://github.com/RasmusGodske/claude-hook-utils",
+      "source": "Hacker News",
+      "time": "05/29 04:18 UTC 情緒：🤔",
+      "sentiment": "",
+      "body": "提供 Claude Code hook 開發工具包，HN 討論重點在 deny-with-reason 機制：回傳拒絕原因給 Claude context 可大幅縮短 retry 循環。",
+      "focusTags": []
+    },
+    {
+      "title": "Show HN: Claude Code AskUserQuestion for subagents/teams/workflows",
+      "url": "https://news.ycombinator.com/item?id=48320233",
+      "source": "Hacker News",
+      "time": "05/29 07:38 UTC 情緒：🤔",
+      "sentiment": "",
+      "body": "修復 Claude Code subagents 中無法使用 AskUserQuestion 的限制，以 SQLite + MCP 實作跨 session 阻塞式問答，支援 CLI 或 web 介面作答。",
+      "focusTags": []
+    },
+    {
+      "title": "4.8 Is A Dumpster Fire",
+      "url": "https://www.reddit.com/r/ClaudeAI/comments/1tr3y72/48_is_a_dumpster_fire/",
+      "source": "Reddit / r/ClaudeAI",
+      "time": "05/29 06:40 UTC 情緒：😤",
+      "sentiment": "",
+      "body": "Reddit 社群批評 Opus 4.8 比 4.7 差，使用 \"pecl scripts\" 做簡單文件修改、obsessive tool use 傾向；另有 thinking blocks 400 錯誤需要 /exit + resume 才能解決。",
+      "focusTags": [
+        "[社群趨勢]"
+      ]
+    },
+    {
+      "title": "After months of \"better prompts,\" what actually 10x'd my Claude Code was treating it like an OS",
+      "url": "https://www.reddit.com/r/ClaudeAI/comments/1tr2337/after_months_of_better_prompts_what_actually_10xd/",
+      "source": "Reddit / r/ClaudeAI",
+      "time": "05/29 05:34 UTC 情緒：😊",
+      "sentiment": "",
+      "body": "作者分享：把 Claude Code 理解為有五個層次的「OS」而非 chatbot 是關鍵突破，提示工程不是瓶頸。",
+      "focusTags": []
+    },
+    {
+      "title": "Ask HN: What happened with Eureka Labs, Karpathy's startup?",
+      "url": "https://news.ycombinator.com/item?id=48320822",
+      "source": "Hacker News",
+      "time": "05/29 09:07 UTC 情緒：🤔",
+      "sentiment": "",
+      "body": "HN 用戶注意到 Karpathy 的 Eureka Labs GitHub org 停止活動，他已從 LinkedIn 移除相關資訊並正式加入 Anthropic。",
+      "focusTags": [
+        "[持續追蹤]"
+      ]
+    },
+    {
+      "title": "Spent 1,156,308,524 input tokens in May",
+      "url": "https://www.reddit.com/r/ClaudeAI/comments/1tqx8q5/spent_1156308524_input_tokens_in_may_sharing_what/",
+      "source": "Reddit / r/ClaudeAI",
+      "time": "05/29 02:09 UTC 情緒：🤔",
+      "sentiment": "",
+      "body": "Reddit 用戶分享單月消耗超過 11 億輸入 tokens 的使用心得與成本管理實踐，引發廣泛討論。",
+      "focusTags": []
+    },
+    {
+      "title": "Ask HN: Does Claude Code remove the need for front-end frameworks?",
+      "url": "https://news.ycombinator.com/item?id=48315680",
+      "source": "Hacker News",
+      "time": "05/28 21:22 UTC 情緒：😐",
+      "sentiment": "",
+      "body": "開發者分享：使用 Claude Code 後傾向改用純 HTML/CSS/JS 而非 React，認為框架選擇成為「實作細節」而非核心決策。",
+      "focusTags": []
+    }
+  ],
+  "billing": [
+    {
+      "title": "Client Accidentally Burns $500 Million on Claude AI in One Month",
+      "url": "https://news.google.com/rss/articles/CBMiqgFBVV95cUxQOXR1M1VnRWg1dDZRYnR1bkFsRFBDWUpQTTRvalJ4MnhCOXg3NGJGd1Y0UzJvYzFaOThwaXVPZng4aUwtVzVxTmlIZmtDaFhnSU9qVTE4Tmp3bkc4bnVPYXcwdXVuZVBYX01RcXU3aFdtX01jZXhiU2ViajF4Xzk1WFBnRHY2d3Z1dG5weXVVYmVEbEg3djNocllOLTRJSXpzdHA0UGZCMVg0Zw",
+      "source": "Google News / Yahoo Finance",
+      "time": "05/29 02:54",
+      "sentiment": "",
+      "body": "報導某企業客戶單月意外消耗 $500M Claude AI 費用，成本控制意識進一步提升；同期 Headroom 等 token 優化工具快速受到關注。",
+      "focusTags": []
+    },
+    {
+      "title": "Anthropic Fast Mode for Opus 4.8 降價 3 倍",
+      "url": "https://www.anthropic.com/news/claude-opus-4-8",
+      "source": "Hacker News",
+      "time": "05/28 16:49",
+      "sentiment": "",
+      "body": "Opus 4.8 Fast Mode（2.5× 速度）費用降至前代的 1/3，Max 方案用戶可大幅降低高速推論的成本。",
+      "focusTags": [
+        "[重大事件]"
+      ]
+    },
+    {
+      "title": "Adapting Your Claude Code Workflow by Subscription: Pro, Max $100, Max $200",
+      "url": "https://dev.to/ohugonnot/adapting-your-claude-code-workflow-by-subscription-pro-max-100-max-200-2534",
+      "source": "dev.to / #claudecode",
+      "time": "05/29 01:00",
+      "sentiment": "",
+      "body": "分析不同訂閱方案下的最佳 Claude Code 使用策略，指出 Max $200 用戶不應一律開 Opus 最大努力模式。",
+      "focusTags": []
+    }
+  ],
+  "focus": [
+    {
+      "tag": "[重大事件]",
+      "text": "Claude Opus 4.8 正式發布，SWE-bench Pro 達 69.2%，1M token context window，同步推出 Dynamic Workflows（最多 1,000 個平行子代理）；Fast Mode 降價至前代的 1/3，提供最高 2.5× 速度。",
+      "ref_urls": [
+        "https://www.anthropic.com/news/claude-opus-4-8",
+        "https://claude.com/blog/introducing-dynamic-workflows-in-claude-code"
+      ]
+    },
+    {
+      "tag": "[重大事件]",
+      "text": "Anthropic 完成 $65B Series H 融資，估值 $965B，超越 OpenAI 成全球最大 AI 新創；本月營收年化突破 $47B，Samsung、SK Hynix 同步入股，Apollo/Blackstone 另安排 $36B 晶片債務融資。",
+      "ref_urls": [
+        "https://www.anthropic.com/news/series-h",
+        "https://www.reuters.com/business/anthropic-raises-65-billion-now-valued-965-billion-2026-05-28/"
+      ]
+    },
+    {
+      "tag": "[持續追蹤]",
+      "text": "Claude Mythos 系列模型預計數週內向公眾推出（Reuters 確認），Andrej Karpathy 正式加入 Anthropic，Eureka Labs 停止活動。",
+      "ref_urls": [
+        "https://www.reuters.com/business/anthropic-roll-out-claude-mythos-coming-weeks-launches-opus-48-2026-05-28/",
+        "https://news.ycombinator.com/item?id=48320822"
+      ]
+    },
+    {
+      "tag": "[社群趨勢]",
+      "text": "社群發現 Opus 4.8 升級前一週 Claude Code 在 SWE-bench-Pro 有統計顯著下降，升級後立即恢復；多人反映 4.8 引入奇怪的 \"pecl scripts\" 行為與 \"thinking blocks cannot be modified\" 400 錯誤。",
+      "ref_urls": [
+        "https://marginlab.ai/blog/claude-code-degraded-before-opus-4-8/",
+        "https://www.reddit.com/r/ClaudeAI/comments/1tr3y72/48_is_a_dumpster_fire/"
+      ]
+    },
+    {
+      "tag": "[新工具]",
+      "text": "Claude Code source code 深度挖掘揭露大量未文件化設定（YOLO Classifier、persistent agent memory、hook 指令改寫）；AISlop（偵測 AI code smells）、Headroom（降低 50% token 消耗）、ktx（data agent 可執行 context 層）同步亮相。",
+      "ref_urls": [
+        "https://buildingbetter.tech/p/i-read-the-claude-code-source-code",
+        "https://github.com/scanaislop/aislop",
+        "https://extraheadroom.com/",
+        "https://github.com/Kaelio/ktx"
+      ]
+    }
+  ],
+  "sourceStatus": [],
+  "preview": "[anthropics/claude-code] v2.1.156"
+}
