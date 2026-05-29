@@ -2,7 +2,7 @@
 
 **狀態：** monitoring（官方已說明，待驗證恢復）
 **開始日期：** 2026-03（推測）
-**最後更新：** 2026-05-21
+**最後更新：** 2026-05-29
 
 ---
 
@@ -60,6 +60,12 @@ Claude Code 在 2026 年 3 月至 4 月間出現長達約一個月的效能明�
 - [Anthropic's definition of safety is too narrow](https://jonathannen.com/anthropic-safety-too-narrow/)
 
 ## 時序（最新在上）
+
+### 2026-05-29
+
+- **Opus 4.7 升版前一週效能下降（MarginLab SWE-bench-Pro 追蹤）**：MarginLab 每日對 Claude Code 執行 SWE-bench-Pro 追蹤，發現 Opus 4.7 在 Opus 4.8 發布前**連續五天**呈現統計顯著的 pass rate 下降，發布後立即恢復。此為「靜默的日常效能變化」模式的又一次文件化案例——launch benchmark 只呈現發布當下數字，無法捕捉前後的漸進變化（來源：https://marginlab.ai/blog/claude-code-degraded-before-opus-4-8/）
+- **thinking blocks 400 錯誤**：Opus 4.8 升版後，多名用戶回報 `API Error: 400 thinking or redacted_thinking blocks cannot be modified` 錯誤；v2.1.156 已修復，workaround 為 `/exit` 後 resume session（見 [[entities/claude-code]]）
+- **4.8 行為退步投訴**：部分用戶反映 Opus 4.8 比 4.7 更差——obsessive tool use，傾向以 "pecl scripts" 處理簡單文件操作（來源：Reddit r/ClaudeAI）
 
 ### 2026-05-21
 - **Opus 退化三週結構化記錄**：用戶以三週結構化 session log（含 metacognitive 欄位）記錄 Opus 4.7 / Sonnet 4.6 在複雜本地 AI 記憶體專案（Qdrant + Neo4j + Graphiti）上的持續失敗，並記錄到競品模型成功捕捉 Claude 遺漏的錯誤；是目前 r/ClaudeAI 最具文件支撐的退化投訴案例，Anthropic 未回應

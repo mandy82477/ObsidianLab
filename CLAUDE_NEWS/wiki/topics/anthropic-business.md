@@ -2,18 +2,20 @@
 
 **狀態：** ongoing
 **開始日期：** 2026-05-28
-**最後更新：** 2026-05-28
+**最後更新：** 2026-05-29
 
 ---
 
 ## 摘要
 
-Anthropic 在技術聲譽與企業採用率上持續上升（企業採用率 34.4% 首超 OpenAI 32.3%，Ramp AI Index 2026-05-15），但財務可持續性尚未得到公開驗證。核心矛盾是：**開發者高度認可產品價值，但企業財務決策層正因成本失控而退出**（Microsoft、Uber 案例）。Simon Willison 的 PMF 分析（HN 970 分）代表社群首次以「產品已達市場驗證」的角度評估 Anthropic，但 PMF ≠ 獲利，財務健康度仍不透明。
+Anthropic 在技術聲譽與企業採用率上持續上升（企業採用率 34.4% 首超 OpenAI 32.3%，Ramp AI Index 2026-05-15），並於 2026-05-28 完成 $65B Series H 融資，估值 $965B，超越 OpenAI 成全球最大 AI 新創。核心矛盾從「PMF vs 獲利」正在演變為「超高估值 vs 補貼可持續性」。Simon Willison 追蹤顯示：年初至今年化營收從 $9B 五個月成長至 $47B。
 
-| 指標 | 現況（2026-05-28）|
+| 指標 | 現況（2026-05-29）|
 |------|------|
 | 企業採用率 | 34.4%（首超 OpenAI 32.3%）— Ramp AI Index 2026-05-15 |
-| 估值 | ~$615 億（最後融資輪）|
+| 估值 | $965B（Series H，2026-05-28）|
+| 年化營收（ARR）| $47B（2026-05 月初；Simon Willison 追蹤）|
+| 融資規模 | $65B（Series H，史上最大單輪 AI 融資）|
 | 獲利狀況 | 未公開；收入快速成長但支出龐大 |
 | 定價策略自主性 | 強勢（The Information 2026-05-13：企業客戶即使面對漲價仍持續採用）|
 | 主要商業風險 | 大型企業因成本失控退出（Microsoft 6/30）|
@@ -78,6 +80,8 @@ Simon Willison（知名開發者博主）發表文章，認為 Anthropic 與 Ope
 
 | 合作方 | 類型 | 日期 | 意義 |
 |--------|------|------|------|
+| Samsung + SK Hynix | 戰略投資 | 2026-05-28 | Series H 同步入股，韓國半導體廠加碼 AI 生態 |
+| Apollo + Blackstone | 晶片債務融資 | 2026-05-29 | 安排 $36B 債務融資用於 AI 晶片採購 |
 | 富士通 | 全球戰略合作 | 2026-05-26 | 日本市場企業部署 |
 | KPMG | 諮詢服務整合 | 2026-05-25 | 專業服務業滲透 |
 | Google（投資）| $400 億美元 | 2024 | 見 [[entities/google-investment]] |
@@ -103,6 +107,11 @@ Simon Willison（知名開發者博主）發表文章，認為 Anthropic 與 Ope
 - [[news/2026-05-13]]（The Information：定價強勢期）
 
 ## 時序
+
+### 2026-05-29
+- **[$65B Series H 融資完成]** 估值 $965B，超越 OpenAI 成全球最大 AI 新創；由 Altimeter Capital、Dragoneer、Greenoaks、Sequoia 領投；Samsung、SK Hynix 同步入股；Apollo/Blackstone 另安排 $36B 晶片債務融資
+- **[ARR $47B 揭露]** Anthropic 公告本月年化營收突破 $47B——Simon Willison 整理時間線：$9B（2025 年底）→ $12B（2/2026）→ $30B（4/2026）→ $47B（5/2026），五個月五倍增長
+- **[市值超越 OpenAI]** 多家媒體（NYT、Guardian、WSJ）確認 Anthropic 估值首次超越 OpenAI，標誌 AI 產業格局重大轉變
 
 ### 2026-05-28
 - **[PMF 觀察]** Simon Willison 發文認為 Anthropic / OpenAI 已達 PMF，HN 970 分；社群討論聚焦在「PMF 是否等於可持續商業模式」

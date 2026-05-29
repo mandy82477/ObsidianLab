@@ -2,7 +2,7 @@
 
 LLM 查詢此 wiki 時，**先讀這個檔案**找相關頁面，再讀具體頁面取得詳細資訊。
 
-**最後更新：** 2026-05-28 | **頁面數：** 34
+**最後更新：** 2026-05-29 | **頁面數：** 35
 
 ---
 
@@ -18,6 +18,7 @@ LLM 查詢此 wiki 時，**先讀這個檔案**找相關頁面，再讀具體頁
 | 頁面 | 類型 | 狀態 | 摘要 |
 |------|------|------|------|
 | [[entities/claude-code]] | product | active | Claude Code CLI 主頁：功能、已知問題、社群工具 |
+| [[entities/opus-4-8]] | model | active | Opus 4.8：SWE-bench Pro 69.2%、1M context、Dynamic Workflows（1,000 子代理）、Fast Mode 1/3 費用 |
 | [[entities/opus-4-7]] | model | active（爭議）| Opus 4.7 發布細節、思考深度爭議、cache 問題 |
 | [[entities/pricing]] | policy | 持續調整 | 訂閱方案、近期政策變動、token 成本注意事項 |
 | [[entities/mythos]] | model | 公開化中 | 高能力安全模型；10K–23K 漏洞（三媒體確認）；The Register/Gotrade/CyberSecurityNews 三方確認透過 Claude Code 公開釋出 |

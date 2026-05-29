@@ -4,7 +4,7 @@
 僅收錄官方 changelog、release note 或官方公告來源；社群工具見 [[topics/community-tech-tools]]。
 每次 ingest 後由 LLM 維護：新增功能、更新熱度、補充社群回饋。
 
-**最後更新：** 2026-05-28（含 5/28 ingest 更新；Claude Code v2.1.153 skipLfs 選項與 npm 版本通知；Cisco LLM Security Leaderboard Anthropic 8/10；Simon Willison HN 970 PMF 論述）
+**最後更新：** 2026-05-29（含 5/29 ingest 更新；Claude Opus 4.8 + Dynamic Workflows Research Preview + Fast Mode 降價；Claude Code v2.1.156 修復 thinking blocks 400 錯誤）
 
 ---
 
@@ -29,6 +29,9 @@
 
 | 功能 | 發布日期 | 熱度 | 試用價值 | 狀態 |
 |------|----------|------|----------|------|
+| Claude Opus 4.8（SWE-bench Pro 69.2%、1M context、Fast Mode 1/3 費用） | 2026-05-28 | 🔥🔥🔥🔥🔥 | ⚡ 有條件推薦 | 正式發布 |
+| Dynamic Workflows（最多 1,000 平行子代理） | 2026-05-28 | 🔥🔥🔥🔥 | ⏳ 觀望 | Research Preview（限 Max）|
+| Claude Code v2.1.156（修復 Opus 4.8 thinking blocks 400 錯誤） | 2026-05-29 | 🔥🔥 | ✅ 推薦 | 正式發布 |
 | `skipLfs` 選項 + npm 版本通知（v2.1.153） | 2026-05-28 | 🔥 | ⚡ 有條件推薦 | 正式發布 |
 | Coordinator 模式 + `/code-review --fix`（v2.1.152） | 2026-05-27 | 🔥🔥🔥🔥 | ✅ 推薦 | 正式發布 |
 | 小企業 Skills（31 個官方 Skills） | 2026-05-24 | 🔥🔥🔥 | ✅ 推薦 | 正式發布 |
@@ -59,6 +62,27 @@
 ---
 
 ## 🆕 最新功能（2026-05）
+
+### Claude Opus 4.8 + Dynamic Workflows + Fast Mode
+**發布：** 2026-05-28 | **熱度：** 🔥🔥🔥🔥🔥 | **試用價值：** ⚡ 有條件推薦 | **狀態：** 正式發布（Dynamic Workflows 為 Research Preview）
+
+**是什麼：** Anthropic 最大規模旗艦更新：① **Opus 4.8**：SWE-bench Pro 69.2%、1M token context window、同價格發售；② **Dynamic Workflows**：Claude Code 可動態撰寫 orchestration scripts，最多啟動 **1,000 個平行子代理**（Research Preview，限 Max 方案）；③ **Fast Mode 降價**：2.5× 速度的 Fast Mode 費用降至前代的 **1/3**；④ **使用者可控努力程度**：claude.ai 用戶可自行調節 Claude 任務投入強度。
+
+**為何熱：** HN 1662 分——Opus 4.8 是 Anthropic 2026 年最受關注的發布。Dynamic Workflows 被視為 Claude Code 工作流的架構性突破：「Work you'd normally plan in quarters now finishes in days」（官方）。Fast Mode 降價解除了 Max 方案用戶的高速推論成本限制。
+
+**快速上手：**
+```bash
+# Dynamic Workflows（Max 方案，Claude Code CLI）
+claude code "Hunt all N+1 query bugs across the entire service"
+# 系統自動生成並執行 orchestration script，啟動並行子代理
+
+# Fast Mode：在 Claude Code settings 啟用 fast mode
+# 或在 claude.ai 對話框選擇「快速」選項
+```
+
+**注意事項：** Dynamic Workflows 為 Research Preview，限 Max 方案；初期社群反映 Opus 4.8 有 "pecl scripts" 行為退步；thinking blocks 400 錯誤已由 v2.1.156 修復。見 [[entities/opus-4-8]]、[[topics/code-quality-decline]]。
+
+---
 
 ### Coordinator 模式 + `/code-review --fix`（v2.1.152）
 **發布：** 2026-05-27（v2.1.152） | **熱度：** 🔥🔥🔥🔥 | **試用價值：** ✅ 推薦 | **狀態：** 正式發布

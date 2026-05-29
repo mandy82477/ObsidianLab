@@ -2,7 +2,7 @@
 
 **狀態：** ongoing
 **開始日期：** 2026-04-25
-**最後更新：** 2026-05-28
+**最後更新：** 2026-05-29
 
 ---
 
@@ -63,6 +63,10 @@
 
 | 工具 | 類型 | 採用 | 首次出現 | 簡介 |
 | --- | --- | --- | --- | --- |
+| [**AISlop**](https://github.com/scanaislop/aislop) | 品質保障 | ⏳ | 2026-05-29 | CLI 掛載 Claude Code hooks，每次 tool call 後自動掃描 AI 生成的 code smells（空 catch block、重複 helper、dead code 等）；Show HN score 61 |
+| [**ktx**](https://github.com/Kaelio/ktx) | Data Agent | ⏳ | 2026-05-29 | Data agent 可執行 context 層，解決 AI 在 data warehouse 生成「valid 但 incorrect SQL」問題；提供 deprecated columns、業務規則等隱性知識；Show HN score 79 |
+| [**Headroom**](https://extraheadroom.com/) | 成本優化 | ⏳ | 2026-05-29 | Mac Menu Bar app，本機靜默優化 Claude Code prompt（修剪 bloat、壓縮文件），降低 ~50% token 消耗；60 DAU 已累積省下約 $35k；Show HN score 2 |
+| [**OpenHive**](https://openhivemind.vercel.app/) | Agent 記憶 | ⏳ | 2026-05-29 | 跨 session AI 代理共享解決方案知識庫；pgvector 語義搜尋 + 自動去重，解決每次 context window 重新解題問題；Show HN score 4 |
 | [**NotifAI**](https://notifai.net/) | 工作流 | ⏳ | 2026-05-28 | 讓用戶從手機、平板或瀏覽器遠端批准 Claude Code 等 AI 工具的敏感操作，支援 E2E 加密，適配 Claude Code、Copilot CLI、Gemini CLI；Show HN score 3 |
 | [**Workplane**](https://workplane.co) | 協作 | ⏳ | 2026-05-28 | 瀏覽器協作工作空間，HTML/Markdown 直接渲染、版本自動控制、可分享連結；MCP 相容，Claude Desktop、Claude Code、OpenClaw 均可存取共享資料夾；Show HN score 5 |
 | [**CCW**](https://news.ycombinator.com/item?id=48306730) | 工作流 | ⏳ | 2026-05-28 | Spec-Driven Development workflow 產生器，依需求客製化線性 SDD 工作流插件（含行銷研究等非程式碼場景），已在 Google Poland 等公司展示；Show HN score 5 |

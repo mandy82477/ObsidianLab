@@ -3,15 +3,13 @@
 **類型：** person
 **狀態：** active
 **首次出現：** 2026-05-17（CLAUDE.md 維護討論中被引用）
-**最後更新：** 2026-05-22
+**最後更新：** 2026-05-29
 
 ---
 
 ## 現況
 
-Andrej Karpathy 為知名 AI 研究者，近期加入 Anthropic。以 OpenAI 聯合創始人/研究總監及 Tesla AI/Autopilot 負責人身份廣為人知。加入 Anthropic 後，公開分享其「CLAUDE.md 四條規則」，其中強調「不讓 agent 讀超過必要內容（最小必要 context）」原則——此原則在 $6,000 徹夜帳單事件廣傳後，成為社群費用控管的重要共識依據，被 engramx 等工具作者直接引用。
-
-> ⚠️ 注意：「加入 Anthropic」的資訊來源為 Reddit 社群引用（engramx 文章，2026-05-21），非 Anthropic 官方聲明。標記為待核實。
+Andrej Karpathy 為知名 AI 研究者，已確認加入 Anthropic。以 OpenAI 聯合創始人/研究總監及 Tesla AI/Autopilot 負責人身份廣為人知。加入 Anthropic 後，公開分享其「CLAUDE.md 四條規則」，其中強調「不讓 agent 讀超過必要內容（最小必要 context）」原則——此原則在 $6,000 徹夜帳單事件廣傳後，成為社群費用控管的重要共識依據，被 engramx 等工具作者直接引用。另，Karpathy 創立的 Eureka Labs（AI 教育新創）已確認停止活動，GitHub org 停更、LinkedIn 資訊移除。
 
 ---
 
@@ -44,5 +42,6 @@ Andrej Karpathy 為知名 AI 研究者，近期加入 Anthropic。以 OpenAI 聯
 
 | 日期 | 事件 |
 |------|------|
-| 2026-05-22 | engramx 作者在 Reddit 引用「Karpathy 剛加入 Anthropic 後發表的 CLAUDE.md 四條規則」；最小必要 context 原則成為費用控管社群共識依據（待核實官方確認）|
+| 2026-05-29 | HN 社群討論確認 Karpathy 已正式加入 Anthropic，Eureka Labs（AI 教育新創）GitHub org 停更、LinkedIn 資訊移除，推測已解散 |
+| 2026-05-22 | engramx 作者在 Reddit 引用「Karpathy 剛加入 Anthropic 後發表的 CLAUDE.md 四條規則」；最小必要 context 原則成為費用控管社群共識依據 |
 | 2026-05-17 | HN 討論 CLAUDE.md 維護效益時提及「Karpathy 等知名開發者積極公開自己的設定」|

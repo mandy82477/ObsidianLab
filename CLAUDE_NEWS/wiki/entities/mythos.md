@@ -3,7 +3,7 @@
 **類型：** model
 **狀態：** 公開化中（透過 Claude Code 釋出）
 **首次出現：** 2026-04（限定夥伴 Preview）
-**最後更新：** 2026-05-27
+**最後更新：** 2026-05-29
 
 ---
 
@@ -157,8 +157,15 @@ Anthropic 正式發布「協調漏洞揭露（Coordinated Vulnerability Disclosu
 
 ---
 
+## 2026-05-29 更新
+
+Reuters 再次確認：Anthropic to roll out **Claude Mythos in coming weeks**（數週內面向公眾推出），與 v2.1.156 / Opus 4.8 同日報導，但細節尚未公開。公開化時間表進一步加速。（來源：https://www.reuters.com/business/anthropic-roll-out-claude-mythos-coming-weeks-launches-opus-48-2026-05-28/）
+
+---
+
 ## 參考來源
 
+- [[news/2026-05-29]]
 - [[news/2026-05-27]]
 - [[news/2026-04-25]]
 - [[news/2026-04-27]]

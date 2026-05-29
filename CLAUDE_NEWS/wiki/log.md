@@ -5,6 +5,36 @@ Append-only 紀錄。每次 ingest、query 或 lint 都在此追加一條。
 
 ---
 
+## 2026-05-29 Ingest | news/2026-05-29.md
+
+- 來源日報：`news/2026-05-29.md`（97 則，6 來源；Claude Opus 4.8 發布 HN 1662、$65B Series H 融資 $965B 估值、Dynamic Workflows Research Preview、Claude Code v2.1.156 修復 thinking blocks 400 錯誤、Andrej Karpathy 確認加入 Anthropic + Eureka Labs 解散、MarginLab SWE-bench-Pro 追蹤發現升版前效能下降）
+- 更新頁面：
+  - `entities/claude-code.md`：新增 v2.1.156（修復 Opus 4.8 thinking blocks 400 錯誤）；更新最後更新 2026-05-29
+  - `entities/opus-4-8.md`：**新建頁面**，Opus 4.8 完整發布細節、Dynamic Workflows、Fast Mode、社群初期反映
+  - `entities/mythos.md`：新增 2026-05-29 Reuters 確認「Mythos 數週內公開推出」；更新最後更新 2026-05-29
+  - `entities/andrej-karpathy.md`：確認加入 Anthropic（移除待核實標注）；補充 Eureka Labs 解散；新增 2026-05-29 歷史記錄；更新最後更新 2026-05-29
+  - `topics/anthropic-business.md`：更新摘要與指標表（估值 $965B、ARR $47B、$65B Series H）；戰略合作新增 Samsung/SK Hynix、Apollo/Blackstone；新增 2026-05-29 時序；更新最後更新 2026-05-29
+  - `topics/code-quality-decline.md`：新增 2026-05-29 時序（MarginLab 升版前效能下降、thinking blocks 400 錯誤、4.8 行為退步投訴）；更新最後更新 2026-05-29
+  - `feature-radar.md`：全覽表新增 Opus 4.8（🔥🔥🔥🔥🔥 ⚡）、Dynamic Workflows（🔥🔥🔥🔥 ⏳）、v2.1.156（🔥🔥 ✅）；最新功能新增 Opus 4.8 + Dynamic Workflows + Fast Mode 完整條目；更新最後更新 2026-05-29
+  - `topics/community-tech-tools.md`：新增 4 個工具（AISlop / ktx / Headroom / OpenHive）；更新最後更新 2026-05-29
+  - `wiki/index.md`：新增 entities/opus-4-8；頁面數 34→35；更新最後更新 2026-05-29
+- 新增頁面：`entities/opus-4-8.md`（1 個）
+- 呈現品質審查：
+  | 頁面 | 結果 |
+  |------|------|
+  | entities/opus-4-8.md | ✅ 通過（新建，摘要清晰，熱度表緊接摘要）|
+  | entities/claude-code.md | ✅ 通過（版本更新，格式一致）|
+  | entities/mythos.md | ✅ 通過（新增段落，不影響現有結構）|
+  | entities/andrej-karpathy.md | ✅ 通過（狀態更新，歷史記錄補充）|
+  | topics/anthropic-business.md | ✅ 通過（指標表更新，時序 prepend）|
+  | topics/code-quality-decline.md | ✅ 通過（時序 prepend）|
+  | feature-radar.md | ✅ 通過（新功能置頂，格式一致）|
+  | topics/community-tech-tools.md | ✅ 通過（4 工具插入表頭）|
+- 本日新增工具：AISlop / ktx / Headroom / OpenHive（共 4 個，累積 136 個）
+- feature-radar 更新：Opus 4.8（🔥🔥🔥🔥🔥 ⚡）、Dynamic Workflows（🔥🔥🔥🔥 ⏳ Research Preview）、v2.1.156（🔥🔥 ✅）
+
+---
+
 ## 2026-05-28 Query | 建立 topics/anthropic-business.md
 
 - 新增頁面：`topics/anthropic-business.md`（Anthropic 商業健康度）

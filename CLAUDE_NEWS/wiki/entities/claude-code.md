@@ -3,18 +3,19 @@
 **類型：** product
 **狀態：** active
 **首次出現：** 2025（正式推出）
-**最後更新：** 2026-05-28
+**最後更新：** 2026-05-29
 
 ---
 
 ## 現況
 
-Claude Code 是 Anthropic 的 AI 編碼 CLI 工具，支援 agentic 工作流程、MCP Server 整合、Hooks 機制與多代理協作框架（Managed Agents）。截至 2026-05-14，GitHub Stars 達 121,000+，是增長最受開發者關注的 AI 編碼助理之一。最新版本為 **v2.1.150**（內部基礎設施改善，無使用者端功能變更），核心能力已從純程式碼助理擴展為具備全桌面自動化、多代理管理與 AI 安全審查的完整 agent 開發平台。Microsoft 正陸續取消內部授權，轉推 GitHub Copilot CLI（見 [[topics/competitor-landscape]]）；GitHub 已推出新 Copilot 應用明確對標 Claude Code；Ramp AI Index 數據顯示 Anthropic 企業採用率首次超越 OpenAI（34.4% vs 32.3%）。
+Claude Code 是 Anthropic 的 AI 編碼 CLI 工具，支援 agentic 工作流程、MCP Server 整合、Hooks 機制與多代理協作框架（Managed Agents）。截至 2026-05-14，GitHub Stars 達 121,000+，是增長最受開發者關注的 AI 編碼助理之一。最新版本為 **v2.1.156**（修復 Opus 4.8 thinking blocks 400 錯誤），核心能力已從純程式碼助理擴展為具備全桌面自動化、多代理管理與 AI 安全審查的完整 agent 開發平台。Microsoft 正陸續取消內部授權，轉推 GitHub Copilot CLI（見 [[topics/competitor-landscape]]）；GitHub 已推出新 Copilot 應用明確對標 Claude Code；Ramp AI Index 數據顯示 Anthropic 企業採用率首次超越 OpenAI（34.4% vs 32.3%）。
 
 ### 最新版本
 
 | 版本 | 日期 | 重點 |
 |------|------|------|
+| **v2.1.156** | 2026-05-29 | 修復使用 Opus 4.8 時 thinking blocks 被修改導致 API 400 錯誤的問題 |
 | **v2.1.153** | 2026-05-28 | ① **`skipLfs` 選項**：加入 github/git plugin 市集來源，clone 與 update 時可跳過 Git LFS 大型檔案下載，降低大型 repo 的頻寬與時間成本；② **npm 版本通知**：偵測到全域安裝版本過期時顯示一次性升級提示，改善版本管理體驗 |
 | **v2.1.152** | 2026-05-27 | ① `/code-review --fix`：審查完成後直接將建議套用至工作樹（修正錯誤、優化可重用性與效率，跳過誤報）；② **Coordinator 模式**：全新多 worker 代理人協調層，支援任務委派、結果合成、lifecycle 管理、跨 session peer 協調、獨立驗證委派結果（+4,566 系統提示 tokens）；③ **Worker 代理人指令**：範圍執行、並行分支安全處理、強制回報要求 |
 | **v2.1.150** | 2026-05-23 | 內部基礎設施改善，無使用者端可見功能變更；**⚠️ 安全爭議**：社群研究者發現此版啟動時呼叫 `api.anthropic.com/api/claude_cli/bootstrap` 並快取系統提示片段至磁碟，GrowthBook 功能旗標 `tengu_heron_brook` 每 60 秒動態重整，回傳字串直接注入擁有 shell 存取的系統提示（見 [[topics/ai-agent-safety]]） |
