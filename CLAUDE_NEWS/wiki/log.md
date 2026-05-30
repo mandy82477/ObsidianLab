@@ -5,6 +5,35 @@ Append-only 紀錄。每次 ingest、query 或 lint 都在此追加一條。
 
 ---
 
+## 2026-05-30 Ingest | news/2026-05-30.md
+
+- 來源日報：`news/2026-05-30.md`（76 則，6 來源；v2.1.158 Auto mode 擴展 Bedrock/Vertex/Foundry、UltraCode 1.7M token bug、Anthropic 削減未授權平台清單、Mythos exploit eval 正式發布、Wired Chris Olah 長文）
+- 更新頁面：
+  - `entities/claude-code.md`：新增 v2.1.158（Auto mode on Bedrock/Vertex/Foundry）；更新最後更新 2026-05-30
+  - `entities/opus-4-8.md`：新增 UltraCode 1.7M token bug、Qwen distillation 爭議、德語品質退步；更新歷史記錄；更新最後更新 2026-05-30
+  - `entities/mythos.md`：新增 2026-05-30 exploit eval 正式發布（red.anthropic.com）；更新最後更新 2026-05-30
+  - `entities/chris-olah.md`：新增 Wired 長文《The Vatican's Man Inside Anthropic》段落；更新最後更新 2026-05-30
+  - `topics/anthropic-business.md`：新增 2026-05-30 時序（Anthropic 削減未授權平台清單）；更新最後更新 2026-05-30
+  - `topics/community-tech-tools.md`：新增 3 個工具（claude-handoff-guard / cartographer-skill / dotpi）；更新最後更新 2026-05-30
+  - `topics/community-tech-discussions.md`：熱門討論新增 3 條（UltraCode bug / Qwen 爭議 / AI 社會模擬）；技術彙整新增 2 個段落；更新最後更新 2026-05-30
+  - `feature-radar.md`：全覽表新增 v2.1.158（🔥🔥 ✅）；Dynamic Workflows 降級為 ❌（UltraCode bug）；更新最後更新 2026-05-30
+- 新增頁面：無
+- 呈現品質審查：
+  | 頁面 | 結果 |
+  |------|------|
+  | entities/claude-code.md | ✅ 通過（版本更新，格式一致）|
+  | entities/opus-4-8.md | ✅ 通過（負面清單補充，結構清晰）|
+  | entities/mythos.md | ✅ 通過（新增段落，不影響現有結構）|
+  | entities/chris-olah.md | ✅ 通過（新增段落，獨立可讀）|
+  | topics/anthropic-business.md | ✅ 通過（時序 prepend，摘要無需更新）|
+  | topics/community-tech-tools.md | ✅ 通過（3 工具插入表頭）|
+  | topics/community-tech-discussions.md | ✅ 通過（熱門討論 prepend，技術彙整 prepend）|
+  | feature-radar.md | ✅ 通過（全覽表更新，試用價值降級有說明）|
+- 本日新增工具：claude-handoff-guard / cartographer-skill / dotpi（共 3 個，累積 139 個）
+- feature-radar 更新：v2.1.158（🔥🔥 ✅）、Dynamic Workflows 降級（❌ UltraCode bug）
+
+---
+
 ## 2026-05-29 Ingest | news/2026-05-29.md
 
 - 來源日報：`news/2026-05-29.md`（97 則，6 來源；Claude Opus 4.8 發布 HN 1662、$65B Series H 融資 $965B 估值、Dynamic Workflows Research Preview、Claude Code v2.1.156 修復 thinking blocks 400 錯誤、Andrej Karpathy 確認加入 Anthropic + Eureka Labs 解散、MarginLab SWE-bench-Pro 追蹤發現升版前效能下降）

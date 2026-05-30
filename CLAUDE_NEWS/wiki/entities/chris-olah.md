@@ -3,7 +3,7 @@
 **類型：** person
 **狀態：** active
 **首次出現：** 2026-05-26
-**最後更新：** 2026-05-26
+**最後更新：** 2026-05-30
 
 ---
 
@@ -26,6 +26,14 @@ Chris Olah 是 Anthropic 的共同創辦人之一，也是 AI 可解釋性（int
 演講全文由 Anthropic 官方發布：https://www.anthropic.com/news/chris-olah-pope-leo-encyclical
 
 媒體覆蓋：AP News、Reuters、NYT、WashPost、NDTV、Fast Company 等（HN score 81，全球主流報導）
+
+## Wired 長文：The Vatican's Man Inside Anthropic（2026-05-29）
+
+Wired 發表深度側寫，聚焦 Olah 在梵蒂岡事件中的角色與內心矛盾：自稱無神論者、接受 Thiel Fellowship、同時出現在教宗封論揭幕現場。文章揭露 Olah 的個人信念結構——「選擇這份工作是出於讓人類未來更美好的欲望」，並探討 Anthropic 在 AI 倫理對話中的定位是否存在「Vatican-washing」之嫌（Guardian 同日提出相似質疑）。
+
+- **Wired**：《[The Vatican's Man Inside Anthropic](https://www.wired.com/story/the-vaticans-man-inside-anthropic/)》
+- **The Guardian**：質疑 Anthropic 與梵蒂岡合作是否為「Vatican-washing」
+- **Fortune**：分析 Anthropic 與教宗的合作框架，標題「The Pope and Anthropic agree: AI Companies cannot govern this alone」
 
 ---
 

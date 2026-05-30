@@ -77,6 +77,9 @@ claude.ai 用戶現可調節 Claude 在任務上投入的努力程度，不再�
 - Reddit 部分用戶反映 4.8 引入奇怪的 "pecl scripts" 行為，強制使用自訂工具做簡單文件修改
 - "thinking blocks cannot be modified" 400 錯誤：v2.1.156 已修復（[[entities/claude-code]]）
 - MarginLab SWE-bench-Pro 追蹤發現：Opus 4.7 在 4.8 發布前一週有統計顯著下降，發布後立即恢復（見 [[topics/code-quality-decline]]）
+- **UltraCode 嚴重 bug（2026-05-30）**：Dynamic Workflows 用戶回報 1.7M tokens 消耗後零輸出；8 個子代理陷入退化迴圈（結果未快取、多次重新部署）；Anthropic 無退款機制；建議生產環境設定嚴格 token 上限
+- **德語品質退步（2026-05-29–30）**：德語用戶反映文法異常、Max Thinking 模式過慢；整體感覺不及 Opus 4.6 穩定（Reddit）
+- **Qwen distillation 爭議（2026-05-29–30）**：社群截圖流傳 Opus 4.8 自稱 Alibaba Qwen；主流判斷為 proxy 詐騙服務而非真實 distillation（HN score 20）
 
 ---
 
@@ -111,4 +114,5 @@ claude.ai 用戶現可調節 Claude 在任務上投入的努力程度，不再�
 | 日期 | 事件 |
 |------|------|
 | 2026-05-28 | 正式發布，HN 1662 分；Dynamic Workflows Research Preview 同步推出；Fast Mode 降至前代 1/3 費用 |
+| 2026-05-30 | UltraCode 嚴重 bug 揭露：1.7M tokens 消耗無輸出，Anthropic 無退款；Qwen distillation 爭議（社群主流否定）；德語品質投訴；v2.1.158 Auto mode 擴展至 Bedrock/Vertex/Foundry |
 | 2026-05-29 | v2.1.156 修復 thinking blocks 400 錯誤；社群混合反映（行為退步投訴 + 大型任務好評）|

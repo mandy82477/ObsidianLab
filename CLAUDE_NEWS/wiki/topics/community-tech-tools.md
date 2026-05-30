@@ -2,7 +2,7 @@
 
 **狀態：** ongoing
 **開始日期：** 2026-04-25
-**最後更新：** 2026-05-29
+**最後更新：** 2026-05-30
 
 ---
 
@@ -63,6 +63,9 @@
 
 | 工具 | 類型 | 採用 | 首次出現 | 簡介 |
 | --- | --- | --- | --- | --- |
+| [**claude-handoff-guard**](https://github.com/joshduffy/claude-handoff-guard) | 多 agent 協調 | ⏳ | 2026-05-30 | 防止並行 Claude Code session 互相覆蓋 handoff 狀態；Show HN score 2 |
+| [**cartographer-skill**](https://github.com/spinchange/cartographer-skill/blob/main/skills/cartographer/SKILL.md) | Skill | ⏳ | 2026-05-30 | 基於 Peter Naur「Programming as Theory Building」（1985），要求 agent 寫程式前先建立問題理論；Show HN score 2 |
+| [**dotpi**](https://github.com/njbrake/dotpi) | 模型訓練 | ⏳ | 2026-05-30 | 用 Claude Code 觀察並蒸餾出替代模型（DeepSeek V4 Flash），為訂閱制消失做備案；Show HN score 3 |
 | [**AISlop**](https://github.com/scanaislop/aislop) | 品質保障 | ⏳ | 2026-05-29 | CLI 掛載 Claude Code hooks，每次 tool call 後自動掃描 AI 生成的 code smells（空 catch block、重複 helper、dead code 等）；Show HN score 61 |
 | [**ktx**](https://github.com/Kaelio/ktx) | Data Agent | ⏳ | 2026-05-29 | Data agent 可執行 context 層，解決 AI 在 data warehouse 生成「valid 但 incorrect SQL」問題；提供 deprecated columns、業務規則等隱性知識；Show HN score 79 |
 | [**Headroom**](https://extraheadroom.com/) | 成本優化 | ⏳ | 2026-05-29 | Mac Menu Bar app，本機靜默優化 Claude Code prompt（修剪 bloat、壓縮文件），降低 ~50% token 消耗；60 DAU 已累積省下約 $35k；Show HN score 2 |

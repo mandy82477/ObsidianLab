@@ -3,7 +3,7 @@
 **類型：** model
 **狀態：** 公開化中（透過 Claude Code 釋出）
 **首次出現：** 2026-04（限定夥伴 Preview）
-**最後更新：** 2026-05-29
+**最後更新：** 2026-05-30
 
 ---
 
@@ -154,6 +154,12 @@ Anthropic 正式發布「協調漏洞揭露（Coordinated Vulnerability Disclosu
 ### Mythos 準備登陸 Claude Code 與 Claude Security（2026-05-24）
 
 社群發現 Claude Code 與 Claude Security 的 app 字串洩露關鍵訊息：「**Access to the Claude Mythos model in Claude Code and Claude Security**」，顯示 Anthropic 正積極準備將 Mythos 部署至旗下兩個主要開發工具。Anthropic 官方聲明「一般用戶不保證獲得存取」，暗示初期仍將採用限制性推出策略，可能以企業或安全合作夥伴為優先對象。
+
+---
+
+## 2026-05-30 更新
+
+Anthropic 官方 red team 在 red.anthropic.com 發布《Measuring LLMs' ability to develop exploits》，公開確認 **Mythos Preview 的漏洞開發能力是「step-change」**，超越所有現有前沿模型：能尋找複雜漏洞、將漏洞轉為 exploit 原語，並將原語組合成完整端對端攻擊鏈。這是 Project Glasswing 謹慎限制 Mythos 存取的正式技術說明。（來源：https://red.anthropic.com/2026/exploit-evals/）
 
 ---
 

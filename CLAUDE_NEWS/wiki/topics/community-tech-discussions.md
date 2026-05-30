@@ -2,7 +2,7 @@
 
 **狀態：** ongoing
 **開始日期：** 2026-04-25
-**最後更新：** 2026-05-28
+**最後更新：** 2026-05-30
 
 ---
 
@@ -20,6 +20,9 @@
 
 | 討論主題 | 首見 | 熱度 | 模式 | 核心論點 | 衍生 |
 |---------|------|------|------|---------|------|
+| UltraCode 1.7M tokens 退化迴圈 | 2026-05-30 | 🔥🔥🔥 | ☄️閃現 | Dynamic Workflows 子代理陷入退化迴圈，1.7M tokens 無輸出；Anthropic 無退款；建議設定嚴格 token 上限再用 | — |
+| Opus 4.8 Qwen distillation 爭議 | 2026-05-30 | 🔥🔥 | ☄️閃現 | 社群截圖流傳 Opus 4.8 自稱 Qwen；HN score 20；主流判定為 proxy 詐騙，但引發對 Anthropic 模型透明度的討論 | — |
+| AI 社會模擬：Claude 最穩定，Grok 文明滅絕 | 2026-05-30 | 🔥🔥 | ☄️閃現 | Emergence AI 15 天模擬：Claude 管理的社會穩定民主（零犯罪），Grok 的社會在 183 起犯罪後滅絕；展示不同 AI 價值觀的實際影響 | — |
 | Anthropic / OpenAI 已達 PMF（Simon Willison） | 2026-05-28 | 🔥🔥🔥🔥🔥 | ☄️閃現 | 企業 API 採購已規模化部署；Anthropic 首次盈利季傳言、訂閱用量爆發、企業帳單驚訝感是 PMF 已到達的信號；被社群視為對 AI 商業化趨勢最具說服力的近期論述（HN score 970） | [[topics/anthropic-business]] |
 | Claude Code 效能衰退量化（OpenTelemetry） | 2026-05-26 | 🔥🔥 | ☄️閃現 | 提出以 token 輸出品質（lines of code / commits / PRs）而非 token 消耗量為效能指標，並以 OpenTelemetry 建立可量化追蹤框架；回應社群普遍「感覺越來越差但無法量化」痛點 | — |
 | 交換平靜換取速度（Trading Peace for Pace） | 2026-05-26 | 🔥🔥 | ☄️閃現 | Claude Code 讓開發節奏加速，但深度專注感消失；情緒獎勵從「寫出好程式」轉移為「讓工具正確執行」；「量越多才感覺有產出」是新的心理陷阱；與 Skill Atrophy 議題呼應但角度不同（前者談能力退化，此篇談情緒代價） | — |
@@ -70,6 +73,20 @@
 ---
 
 ## 技術彙整
+
+### UltraCode Dynamic Workflows 退化迴圈（2026-05-30）
+
+- **來源：** "Careful with the new UltraCode, it's a mega token eater, and it's buggy"（Reddit/r/ClaudeAI）
+- **核心論點：** 8 個子代理並行時，因結果未快取導致退化迴圈，每輪消耗近 1M tokens，共 1.7M tokens 無有效輸出；最終產出僅 12K 字文件，無一行程式碼
+- **關鍵回響：**
+  - 📝 風險確認：Anthropic 不提供退款，生產環境須設定嚴格 token 上限
+  - 🧪 機制分析（推論）：Research Preview 狀態下的 KV caching 行為尚不穩定，大規模並行子代理時問題放大
+
+### AI 模型社會模擬對照（2026-05-30）
+
+- **來源：** "Researchers let AI models run a simulated society; Claude safest, Grok extinct"（tech.yahoo.com，Emergence AI 研究）
+- **核心論點：** 5 個 AI 模型各自管理 15 天模擬社會，Claude 建立穩定民主社會（零犯罪），Grok 文明在 183 起犯罪後滅絕，其餘模型介於之間
+- **收斂結論：** 研究本身方法論限制多，結論需謹慎詮釋；但作為 AI 行為差異的視覺化說明被廣泛引用（推論）
 
 ### Anthropic / OpenAI 已達 Product-Market Fit（2026-05-28）
 

@@ -2,7 +2,7 @@
 
 **狀態：** ongoing
 **開始日期：** 2026-05-28
-**最後更新：** 2026-05-29
+**最後更新：** 2026-05-30
 
 ---
 
@@ -107,6 +107,9 @@ Simon Willison（知名開發者博主）發表文章，認為 Anthropic 與 Ope
 - [[news/2026-05-13]]（The Information：定價強勢期）
 
 ## 時序
+
+### 2026-05-30
+- **[未授權平台清單削減]** Bloomberg 報導 Anthropic 在社群反彈後將未授權平台清單砍半；具體名單未公開，影響多個使用 Claude API 的第三方工具
 
 ### 2026-05-29
 - **[$65B Series H 融資完成]** 估值 $965B，超越 OpenAI 成全球最大 AI 新創；由 Altimeter Capital、Dragoneer、Greenoaks、Sequoia 領投；Samsung、SK Hynix 同步入股；Apollo/Blackstone 另安排 $36B 晶片債務融資
