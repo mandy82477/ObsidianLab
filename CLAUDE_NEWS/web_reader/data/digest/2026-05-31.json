@@ -1,0 +1,283 @@
+{
+  "date": "2026-05-31",
+  "generatedAt": "2026-05-31 19:37 UTC",
+  "articleCount": 50,
+  "sourceCount": "5/6 | **文章數：** 50 | **更新時間：** 2026-05-31 19:37 UTC",
+  "topStories": [
+    {
+      "title": "Anthropic Is Now Worth More Than OpenAI",
+      "url": "https://news.google.com/rss/articles/CBMiekFVX3lxTE56a2Mxc3p2aDVPYmJpdGRkVHVKYzV6ZjBIUVdKejk2OFdoYktIMkRnbGFhUDBLOWpiVm50NGV1eFBGQms2VXdBRGwyOHY1ZHlCY2xzMk5DWExiUWRReVNib0QtNXNlU3gyT0FCTGJfSV8yOGc4ZDhjaUF3?oc=5",
+      "source": "Google News / Gizmodo",
+      "time": "05/30 13:11",
+      "sentiment": "",
+      "body": "Anthropic $650 億 Series H 融資後估值達 $9,650 億美元，正式超越 OpenAI 成為全球最高估值私人 AI 公司，投資者包括 Altimeter Capital、Dragoneer、Greenoaks 與 Sequoia Capital，距 $1 兆估值僅一步之遙。",
+      "focusTags": []
+    },
+    {
+      "title": "We contain Claude across products",
+      "url": "https://www.anthropic.com/engineering/how-we-contain-claude",
+      "source": "Hacker News",
+      "time": "05/31 05:17",
+      "sentiment": "",
+      "body": "Anthropic 工程部落格首次公開 Claude 內部部署的風險管理哲學：十二個月前不可能授予 Claude 足以影響 Anthropic 服務的存取權，如今已成常態。文章以「爆炸半徑」框架說明如何在 agent 能力擴張的同時控制失控風險，是理解 Anthropic 內部 agentic 思維的第一手資料。",
+      "focusTags": [
+        "[重大事件]"
+      ]
+    },
+    {
+      "title": "Claude Code Source Deep Dive - Part VI: Multi-Agent System & Part VII: Context Compression",
+      "url": "https://www.reddit.com/r/ClaudeAI/comments/1tse583/claude_code_source_deep_dive_part_vi_multiagent/",
+      "source": "Reddit / r/ClaudeAI",
+      "time": "05/30 14:56",
+      "sentiment": "",
+      "body": "系列分析深入解析 Claude Code 的多代理協調系統與 `/compact` 上下文壓縮機制的內部實作，基於 51.2 萬行洩漏原始碼，是目前最完整的架構解析，對理解 agent loop 設計具重要參考價值。",
+      "focusTags": [
+        "[社群趨勢]"
+      ]
+    },
+    {
+      "title": "Show HN: Use Kimi and OpenAI Subscriptions in Claude Code",
+      "url": "https://github.com/raine/claude-code-proxy",
+      "source": "Hacker News",
+      "time": "05/30 19:23",
+      "sentiment": "",
+      "body": "開源 proxy 工具，讓開發者在 Claude Code 中使用 Kimi 或 OpenAI 的訂閱額度作為後端，是繼 DeepClaude 之後的新型低成本替代方案。",
+      "focusTags": []
+    }
+  ],
+  "techUpdates": [
+    {
+      "title": "We contain Claude across products — Anthropic Engineering",
+      "url": "https://www.anthropic.com/engineering/how-we-contain-claude",
+      "source": "Hacker News",
+      "time": "05/31 05:17",
+      "sentiment": "",
+      "body": "Anthropic 公開內部 agent 風險管理框架：隨著 Claude 能力增長，不部署的機會成本遠大於部署風險，核心策略是降低失敗機率（而非縮小爆炸半徑）。對所有在生產環境部署 agent 的工程師具直接參考價值。",
+      "focusTags": [
+        "[重大事件]"
+      ]
+    },
+    {
+      "title": "Opus 4.8 ships Dynamic Workflows — hundreds of parallel subagents per session",
+      "url": "https://dev.to/layzerzero105/opus-48-ships-dynamic-workflows-hundreds-of-parallel-subagents-per-session-read-this-before-you-4178",
+      "source": "dev.to / #claudecode",
+      "time": "05/30 16:21",
+      "sentiment": "",
+      "body": "Opus 4.8 Dynamic Workflows 技術分析：單 session 支援數百個平行子代理，適合批量任務、資料分析等場景，但生產部署前需評估成本爆衝與錯誤傳播風險。",
+      "focusTags": [
+        "[新工具]"
+      ]
+    },
+    {
+      "title": "Lite-Harness – Self-Hosted Cursor Agents (Use Claude Code/OpenCode)",
+      "url": "https://github.com/LiteLLM-Labs/lite-harness",
+      "source": "Hacker News",
+      "time": "05/30 23:51",
+      "sentiment": "",
+      "body": "自架 agent harness 伺服器 Dockerfile，開箱即用提供 memory、durable sessions、cron 排程與 vault，支援 Claude Code 與 OpenCode，適合希望掌控 agent 基礎設施的開發者。",
+      "focusTags": []
+    },
+    {
+      "title": "Arch-Decision – A multi-agent architecture tool for Claude Code",
+      "url": "https://github.com/jsingh6/arch-decision",
+      "source": "Hacker News",
+      "time": "05/30 22:45",
+      "sentiment": "",
+      "body": "多代理架構決策工具，協助 Claude Code 使用者在開發前梳理架構選擇與決策記錄，是 ADR + multi-agent 設計思路的工具化實踐。",
+      "focusTags": []
+    },
+    {
+      "title": "Collection of Claude Code Skills",
+      "url": "https://github.com/glebis/claude-skills",
+      "source": "Hacker News",
+      "time": "05/30 14:52",
+      "sentiment": "",
+      "body": "社群整理的 Claude Code Skills 集合，涵蓋多種常見開發場景，是尋找現成 skill 範本的入口資源。",
+      "focusTags": []
+    }
+  ],
+  "discussions": [
+    {
+      "title": "Opus 4.8 + Thinking is draining context windows 40–60x faster",
+      "url": "https://www.reddit.com/r/ClaudeAI/comments/1tshmz6/opus_48_thinking_is_draining_context_windows/",
+      "source": "Reddit / r/ClaudeAI",
+      "time": "05/30 17:38",
+      "sentiment": "😤 負面",
+      "body": "開發者實測 Opus 4.8 Thinking 模式每輪寫入最高 90 萬 cache tokens，遠高於 4.7 的 1.4–3.4 萬，context window 快速耗盡成為重度使用者的主要痛點，工作流設計需因應調整。",
+      "focusTags": [
+        "[風險警示]"
+      ]
+    },
+    {
+      "title": "Asked Claude Code for a \"deep search\" in ultracode mode — it spun up ~70 agents across a 4-phase pipeline on its own",
+      "url": "https://www.reddit.com/r/ClaudeAI/comments/1tsqezk/asked_claude_code_for_a_deep_search_in_ultracode/",
+      "source": "Reddit / r/ClaudeAI",
+      "time": "05/31 01:20",
+      "sentiment": "🤔 褒貶不一",
+      "body": "用戶分享在 ultracode 模式下請 Claude Code 執行深度搜尋，系統自動生成約 70 個 agent 跑四階段 pipeline，展示 Dynamic Workflows 的實際規模，但也引發對自動擴展可控性的討論。",
+      "focusTags": [
+        "[新工具]"
+      ]
+    },
+    {
+      "title": "I Built 9 Production AI Agents With Claude Code — Here Is the Complete Workflow",
+      "url": "https://dev.to/akaranjkar08/i-built-9-production-ai-agents-with-claude-code-here-is-the-complete-workflow-2j3d",
+      "source": "dev.to / #claudecode",
+      "time": "05/30 13:11",
+      "sentiment": "😊 正面",
+      "body": "開發者分享 14 週內用 Claude Code 建置並上線 9 個生產 agent（SEO 研究 pipeline、每日數據報告等）的完整工作流，定位 Claude Code 為完整 agent runtime 而非單純編碼助手。",
+      "focusTags": []
+    },
+    {
+      "title": "Claude Code: I Had 10 Plugins Active at Once — Here's What It Actually Costs",
+      "url": "https://dev.to/ohugonnot/claude-code-i-had-10-plugins-active-at-once-heres-what-it-actually-costs-2ckn",
+      "source": "dev.to / #claudecode",
+      "time": "05/31 01:00",
+      "sentiment": "😤 負面",
+      "body": "作者同時啟用 10 個 plugin 後信用耗盡，詳細拆解各 plugin 的實際 token 成本，對 MCP context bloat（9 伺服器 = 38k tokens 冷啟動）問題提供最新真實案例。",
+      "focusTags": []
+    },
+    {
+      "title": "The real reason coding agents fail in real repos — and it's not the model",
+      "url": "https://www.reddit.com/r/ClaudeAI/comments/1tsnoxr/the_real_reason_coding_agents_fail_in_real_repos/",
+      "source": "Reddit / r/ClaudeAI",
+      "time": "05/30 22:45",
+      "sentiment": "🤔 褒貶不一",
+      "body": "作者指出 coding agent 在真實 repo 中失敗的主因是「repo context 失敗」而非模型能力不足：agent 不知道先讀什麼、不了解驗證邏輯，是架構與 context 設計問題。",
+      "focusTags": []
+    },
+    {
+      "title": "I spent a year building agent memory on knowledge graphs. Here are my 5 mistakes",
+      "url": "https://news.ycombinator.com/item?id=48337689",
+      "source": "Hacker News",
+      "time": "05/30 16:04",
+      "sentiment": "😊 正面",
+      "body": "開發者分享一年以知識圖譜建構 agent memory 的五大錯誤：先用框架（LangGraph/CrewAI）、過度設計 ontology、把 memory 當 retrieval 問題而非 data modeling 問題等，是 agent memory 架構的實戰反思。",
+      "focusTags": []
+    },
+    {
+      "title": "Doesn't Claude Code need automatic model switching for better budget and cost management?",
+      "url": "https://www.reddit.com/r/ClaudeAI/comments/1tsqimt/doesnt_claude_code_need_automatic_model_switching/",
+      "source": "Reddit / r/ClaudeAI",
+      "time": "05/31 01:26",
+      "sentiment": "😐 中性",
+      "body": "社群討論 Claude Code 缺乏自動模型路由的問題：依任務複雜度在 Haiku/Sonnet/Opus 間自動切換是合理需求，但目前仍需手動操作，開發者呼籲官方納入功能。",
+      "focusTags": []
+    },
+    {
+      "title": "System prompts are too blunt. The 3-level \"Progressive Disclosure\" Anthropic uses for Agent Skills",
+      "url": "https://www.reddit.com/r/ClaudeAI/comments/1tsok8r/system_prompts_are_too_blunt_the_3level/",
+      "source": "Reddit / r/ClaudeAI",
+      "time": "05/30 23:33",
+      "sentiment": "😊 正面",
+      "body": "介紹 Anthropic 官方 Skills 設計指南中的「漸進式揭露」三層架構：啟動時只讀技能名稱+簡述，命中後按需載入完整內容，是 token 效率與觸發準確度的平衡設計。",
+      "focusTags": []
+    },
+    {
+      "title": "Why I Run Claude Code Plugins for Brand Voice Enforcement",
+      "url": "https://dev.to/raxxostudios/why-i-run-claude-code-plugins-for-brand-voice-enforcement-m8k",
+      "source": "dev.to / #claudecode",
+      "time": "05/30 16:02",
+      "sentiment": "😊 正面",
+      "body": "作者分享用 Claude Code Plugin + Hook 在發布前自動檢查品牌語調（em-dash、禁用詞彙），說明 Plugin 透過 hook 自動執行 vs. Skill 需手動觸發的本質差異。",
+      "focusTags": []
+    },
+    {
+      "title": "Escaping Tutorial Hell: Can I use Claude as a \"Strict Mentor\" instead of a code generator?",
+      "url": "https://www.reddit.com/r/ClaudeAI/comments/1tssdny/escaping_tutorial_hell_can_i_use_claude_as_a/",
+      "source": "Reddit / r/ClaudeAI",
+      "time": "05/31 03:09",
+      "sentiment": "😊 正面",
+      "body": "開發者嘗試將 Claude 配置為「嚴格導師」而非程式碼生成器，強迫自己理解每行程式碼的「為什麼」，是對抗 Skill Atrophy 的另一種實踐路徑。",
+      "focusTags": []
+    },
+    {
+      "title": "Anthropic study finds men use AI coding agents more than twice as often as women in social science research",
+      "url": "https://news.google.com/rss/articles/CBMizAFBVV95cUxObGhXNHh0azVRYm04SU5aOGJFZXY0VnZMWlRHTXpwTm5Od1RLT0NGTGxpb3VOUF9uUjIwS01BN3VZZkdzVDJpZXRWbk9tMGM0VjB1dmw1Q2JWZFJPTzY2endiX09tTFVGeHBlaUd0OU",
+      "source": "Google News / the-decoder.com",
+      "time": "05/31 01:44",
+      "sentiment": "😐 中性",
+      "body": "Anthropic 研究發現在社會科學研究場景中，男性使用 AI 編碼 agent 的頻率超過女性兩倍以上，揭示 AI 工具普及過程中的使用差異，值得關注其對 AI 生態的長期影響。",
+      "focusTags": []
+    },
+    {
+      "title": "Feedback honeypot in Claude Code has evolved",
+      "url": "https://www.reddit.com/r/ClaudeAI/comments/1tsezf0/feedback_honeypot_in_claude_code_has_evolved/",
+      "source": "Reddit / r/ClaudeAI",
+      "time": "05/30 15:33",
+      "sentiment": "😤 負面",
+      "body": "用戶揭露 Anthropic T&C 中即使全域關閉模型訓練，提供「回饋」的動作仍會觸發訓練資料授權；Claude Code 的回饋機制被稱為「honeypot」，引發隱私與資料使用的討論。",
+      "focusTags": []
+    },
+    {
+      "title": "How I use claude to plan and Build my client projects as a software engineer",
+      "url": "https://www.reddit.com/r/ClaudeAI/comments/1tsq6us/how_i_use_claude_to_plan_and_build_my_client/",
+      "source": "Reddit / r/ClaudeAI",
+      "time": "05/31 01:07",
+      "sentiment": "😊 正面",
+      "body": "軟體工程師分享一個月內以 AI 工作流接下客戶專案並獲得 3,000 歐元收入的實際流程，採用規劃先行（非 vibe coding）策略，對探索 AI 接案可行性的開發者具參考價值。",
+      "focusTags": []
+    }
+  ],
+  "billing": [
+    {
+      "title": "Anthropic's $965B Valuation Changes the AI Search Math",
+      "url": "https://dev.to/searchless_ai/anthropics-965b-valuation-changes-the-ai-search-math-gg2",
+      "source": "dev.to / #anthropic",
+      "time": "05/31 00:09",
+      "sentiment": "",
+      "body": "分析 Anthropic $9,650 億估值對 AI 搜尋競爭格局的影響：估值飆升反映市場對 Claude 生態（尤其是 Claude Code）商業化潛力的高度認可，三方競爭（Anthropic/OpenAI/Google）格局重塑。",
+      "focusTags": []
+    },
+    {
+      "title": "Anthropic Walks a Fine Line Between Responsibility and Innovation",
+      "url": "https://news.google.com/rss/articles/CBMivAFBVV95cUxOUlpIeVNWeENyOXRPeHVUUUNkV3duNVVYa3J2d0hIX2MtOGdBUTROd0RJMW1FUU9qSVFTTzM1eTF1TEFhWFQwOU8tTEJGcHo4VW9wTHB3Q3RlMjI5YmtpUkpmZFRZcEt0bFBwUUhPV1VnVWNCbDdrSDJNdzJwODZ6M0V6bjYwR3FIRV9XZlJ3M3J5MUt6NHhTM1V6cFc1UHJ4OGU1a2VQMTdwRXNsQk1EZjl6M3RvbW80RjRiaw?oc=5",
+      "source": "Google News / Bloomberg.com",
+      "time": "05/30 16:01",
+      "sentiment": "",
+      "body": "Bloomberg 分析 Anthropic 在商業擴張與安全責任之間的平衡難題：估值接近兆元的同時，外界對其「responsible scaling」承諾能否持續兌現的質疑也在升溫。",
+      "focusTags": []
+    }
+  ],
+  "focus": [
+    {
+      "tag": "[重大事件]",
+      "text": "Anthropic 完成 Series H 融資 $650 億美元，估值飆升至 $9,650 億美元，正式超越 OpenAI 成為全球最高估值私人 AI 新創，距兆元市值僅一步之遙。",
+      "ref_urls": [
+        "https://qazinform.com/news/anthropic-surpasses-openai-to-become-worlds-most-valuable-ai-startup",
+        "https://www.reddit.com/r/ClaudeAI/comments/1tscc9q/anthropics_valuation_surges_to_965_billion/"
+      ]
+    },
+    {
+      "tag": "[重大事件]",
+      "text": "Anthropic 工程部落格發布《We contain Claude across products》，首次公開說明如何在內部給予 Claude 足以影響關鍵服務的存取權限，並以「爆炸半徑」框架管控風險——agent 能力越強，不部署的機會成本也越大。",
+      "ref_urls": [
+        "https://www.anthropic.com/engineering/how-we-contain-claude"
+      ]
+    },
+    {
+      "tag": "[新工具]",
+      "text": "Opus 4.8 Dynamic Workflows 正式可用：單 session 可啟動數百個平行子代理，社群已實測「ultracode 模式」自動生成 70 個 agent 跑 4 階段 pipeline，但生產部署前需審慎評估成本與穩定性。",
+      "ref_urls": [
+        "https://dev.to/layzerzero105/opus-48-ships-dynamic-workflows-hundreds-of-parallel-subagents-per-session-read-this-before-you-4178",
+        "https://www.reddit.com/r/ClaudeAI/comments/1tsqezk/asked_claude_code_for_a_deep_search_in_ultracode/"
+      ]
+    },
+    {
+      "tag": "[風險警示]",
+      "text": "Opus 4.8 + Thinking 模式每輪最高寫入 90 萬 cache tokens，比 Opus 4.7 的 1.4–3.4 萬高出 40–60 倍，context window 快速耗盡；重度使用者需重新評估工作流設計。",
+      "ref_urls": [
+        "https://www.reddit.com/r/ClaudeAI/comments/1tshmz6/opus_48_thinking_is_draining_context_windows/"
+      ]
+    },
+    {
+      "tag": "[社群趨勢]",
+      "text": "Claude Code 原始碼深度分析系列更新 Part VI（Multi-Agent System）與 Part VII（Context Compression），源自 51.2 萬行 TypeScript 原始碼洩漏，是目前最完整的 Claude Code 內部架構解析。",
+      "ref_urls": [
+        "https://www.reddit.com/r/ClaudeAI/comments/1tse583/claude_code_source_deep_dive_part_vi_multiagent/"
+      ]
+    }
+  ],
+  "sourceStatus": [],
+  "preview": "Anthropic Is Now Worth More Than OpenAI"
+}
