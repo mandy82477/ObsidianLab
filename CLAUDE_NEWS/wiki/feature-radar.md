@@ -4,7 +4,7 @@
 僅收錄官方 changelog、release note 或官方公告來源；社群工具見 [[topics/community-tech-tools]]。
 每次 ingest 後由 LLM 維護：新增功能、更新熱度、補充社群回饋。
 
-**最後更新：** 2026-05-30（v2.1.158 Auto mode 擴展 Bedrock/Vertex/Foundry；Dynamic Workflows 因 UltraCode 1.7M token bug 降級為 ❌ 暫不推薦）
+**最後更新：** 2026-05-31（Opus 4.8 Thinking 模式 context drain 量化：每輪最高 900K cache tokens，40–60 倍差距確認；ultracode 70 agent 實測成功但需注意費用）
 
 ---
 

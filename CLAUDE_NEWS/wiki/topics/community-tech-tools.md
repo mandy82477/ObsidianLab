@@ -2,7 +2,7 @@
 
 **狀態：** ongoing
 **開始日期：** 2026-04-25
-**最後更新：** 2026-05-30
+**最後更新：** 2026-05-31
 
 ---
 
@@ -63,6 +63,10 @@
 
 | 工具 | 類型 | 採用 | 首次出現 | 簡介 |
 | --- | --- | --- | --- | --- |
+| [**claude-code-proxy**](https://github.com/raine/claude-code-proxy) | 模型路由 | ⏳ | 2026-05-31 | 開源 proxy 工具，讓 Claude Code 使用 Kimi 或 OpenAI 訂閱額度作為後端；繼 DeepClaude 後新型低成本替代方案；HN score 3 |
+| [**Lite-Harness**](https://github.com/LiteLLM-Labs/lite-harness) | 多 agent 協調 | ⏳ | 2026-05-31 | 自架 agent harness 伺服器 Dockerfile，開箱即用提供 memory、durable sessions、cron 排程與 vault；支援 Claude Code 與 OpenCode；HN score 6 |
+| [**Arch-Decision**](https://github.com/jsingh6/arch-decision) | 工作流 | ⏳ | 2026-05-31 | 多代理架構決策工具，協助 Claude Code 使用者在開發前梳理架構選擇與 ADR 記錄；HN score 3 |
+| [**claude-skills**](https://github.com/glebis/claude-skills) | Skills | ⏳ | 2026-05-31 | 社群整理的 Claude Code Skills 集合，涵蓋多種常見開發場景；Show HN 入選；HN score 3 |
 | [**claude-handoff-guard**](https://github.com/joshduffy/claude-handoff-guard) | 多 agent 協調 | ⏳ | 2026-05-30 | 防止並行 Claude Code session 互相覆蓋 handoff 狀態；Show HN score 2 |
 | [**cartographer-skill**](https://github.com/spinchange/cartographer-skill/blob/main/skills/cartographer/SKILL.md) | Skill | ⏳ | 2026-05-30 | 基於 Peter Naur「Programming as Theory Building」（1985），要求 agent 寫程式前先建立問題理論；Show HN score 2 |
 | [**dotpi**](https://github.com/njbrake/dotpi) | 模型訓練 | ⏳ | 2026-05-30 | 用 Claude Code 觀察並蒸餾出替代模型（DeepSeek V4 Flash），為訂閱制消失做備案；Show HN score 3 |

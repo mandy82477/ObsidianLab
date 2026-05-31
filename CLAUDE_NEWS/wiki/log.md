@@ -5,6 +5,28 @@ Append-only 紀錄。每次 ingest、query 或 lint 都在此追加一條。
 
 ---
 
+## 2026-05-31 Ingest | news/2026-05-31.md
+
+- 來源日報：`news/2026-05-31.md`（50 則，5/6 來源；Anthropic $965B Series H 超越 OpenAI、"We contain Claude" 工程部落格、Opus 4.8 Thinking 900K context drain、ultracode 70 agent 實測、Claude Code Source Deep Dive VI & VII）
+- 更新頁面：
+  - `entities/opus-4-8.md`：新增 Thinking 40–60 倍 context drain（900K cache tokens/turn）；ultracode 70 agent 4 階段 pipeline 實測；更新歷史記錄；更新最後更新 2026-05-31
+  - `topics/anthropic-business.md`：新增 2026-05-31 時序（"We contain Claude" 工程部落格 + Bloomberg 責任創新平衡報導）；更新最後更新 2026-05-31
+  - `topics/community-tech-tools.md`：新增 4 個工具（claude-code-proxy / Lite-Harness / Arch-Decision / claude-skills）；更新最後更新 2026-05-31
+  - `topics/community-tech-discussions.md`：熱門討論新增 4 條（Thinking context drain / 自動模型路由需求 / 10 Plugin 成本 / Progressive Disclosure 三層架構）；更新最後更新 2026-05-31
+  - `feature-radar.md`：更新最後更新 2026-05-31（Thinking drain 量化確認）
+  - `wiki/index.md`：更新最後更新 2026-05-31
+- 新增頁面：無
+- 呈現品質審查：
+  | 頁面 | 結果 |
+  |------|------|
+  | entities/opus-4-8.md | ✅ 通過（新增負面紀錄，歷史記錄格式一致）|
+  | topics/anthropic-business.md | ✅ 通過（時序 prepend，結構清晰）|
+  | topics/community-tech-tools.md | ✅ 通過（4 工具插入表頭）|
+  | topics/community-tech-discussions.md | ✅ 通過（熱門討論 prepend，格式符合）|
+  | feature-radar.md | ✅ 通過（僅更新最後更新欄位）|
+
+---
+
 ## 2026-05-30 Ingest | news/2026-05-30.md
 
 - 來源日報：`news/2026-05-30.md`（76 則，6 來源；v2.1.158 Auto mode 擴展 Bedrock/Vertex/Foundry、UltraCode 1.7M token bug、Anthropic 削減未授權平台清單、Mythos exploit eval 正式發布、Wired Chris Olah 長文）

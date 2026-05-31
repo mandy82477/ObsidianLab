@@ -2,7 +2,7 @@
 
 **狀態：** ongoing
 **開始日期：** 2026-04-25
-**最後更新：** 2026-05-30
+**最後更新：** 2026-05-31
 
 ---
 
@@ -20,6 +20,10 @@
 
 | 討論主題 | 首見 | 熱度 | 模式 | 核心論點 | 衍生 |
 |---------|------|------|------|---------|------|
+| Opus 4.8 Thinking 40–60 倍 context drain | 2026-05-31 | 🔥🔥🔥 | ☄️閃現 | 每輪最高 900K cache tokens（4.7 為 14K–34K）；context window 快速耗盡是重度使用者主要痛點；工作流設計需全面重新評估 | — |
+| Claude Code 需要自動模型路由？ | 2026-05-31 | 🔥🔥 | ☄️閃現 | 社群呼籲 Claude Code 支援依任務複雜度自動切換 Haiku/Sonnet/Opus，目前仍需手動操作；與「94% token 流向錯誤模型」痛點直接呼應 | — |
+| 10 個 Plugin 同時啟用的真實成本 | 2026-05-31 | 🔥🔥 | ☄️閃現 | 作者啟用 10 個 plugin 後信用耗盡，詳細拆解各 plugin token 成本；與 MCP context bloat（9 伺服器 = 38k tokens）形成最新佐證 | — |
+| Agent Skills Progressive Disclosure 三層架構 | 2026-05-31 | 🔥🔥 | ☄️閃現 | Anthropic 官方 Skills 設計指南：啟動時只讀技能名稱+簡述，命中後按需載入完整內容；是 token 效率與觸發準確度的官方設計取捨 | — |
 | UltraCode 1.7M tokens 退化迴圈 | 2026-05-30 | 🔥🔥🔥 | ☄️閃現 | Dynamic Workflows 子代理陷入退化迴圈，1.7M tokens 無輸出；Anthropic 無退款；建議設定嚴格 token 上限再用 | — |
 | Opus 4.8 Qwen distillation 爭議 | 2026-05-30 | 🔥🔥 | ☄️閃現 | 社群截圖流傳 Opus 4.8 自稱 Qwen；HN score 20；主流判定為 proxy 詐騙，但引發對 Anthropic 模型透明度的討論 | — |
 | AI 社會模擬：Claude 最穩定，Grok 文明滅絕 | 2026-05-30 | 🔥🔥 | ☄️閃現 | Emergence AI 15 天模擬：Claude 管理的社會穩定民主（零犯罪），Grok 的社會在 183 起犯罪後滅絕；展示不同 AI 價值觀的實際影響 | — |
