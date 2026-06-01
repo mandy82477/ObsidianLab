@@ -2,7 +2,7 @@
 
 **狀態：** monitoring
 **開始日期：** 2026-05-01
-**最後更新：** 2026-05-26
+**最後更新：** 2026-06-01
 
 ---
 
@@ -62,6 +62,10 @@
 - [AP News：Pope calls for robust regulation of AI](https://apnews.com/article/pope-ai-tech-trump-vatican-anthropic-d92d0108730d146baa46da041b8523da)
 
 ## 時序
+
+### 2026-06-01
+- **[Mythos EU 部署]** Anthropic 向 ENISA（歐盟網路安全局）提供 Mythos 存取，為首個獲准的歐洲政府機構；英國銀行遭拒，OpenAI 主動接觸提出替代方案（FT、MLex、BBC）
+- **[政治獻金]** NYT：Anthropic 與 OpenAI 成為 2026 年期中選舉最大 AI 科技獻金方，兩者公開對立
 
 ### 2026-05-26
 - **[重大事件] 梵蒂岡封論揭幕**：Chris Olah 出席教宗良十四世《Magnifica Humanitas》封論發布活動，Anthropic 成為唯一受邀 AI 公司；封論呼籲嚴格監管、以公共利益優先；AP News、Reuters、NYT、WashPost 等主流媒體全面報導

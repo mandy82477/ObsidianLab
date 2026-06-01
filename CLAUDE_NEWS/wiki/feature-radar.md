@@ -4,7 +4,7 @@
 僅收錄官方 changelog、release note 或官方公告來源；社群工具見 [[topics/community-tech-tools]]。
 每次 ingest 後由 LLM 維護：新增功能、更新熱度、補充社群回饋。
 
-**最後更新：** 2026-05-31（Opus 4.8 Thinking 模式 context drain 量化：每輪最高 900K cache tokens，40–60 倍差距確認；ultracode 70 agent 實測成功但需注意費用）
+**最後更新：** 2026-06-01（v2.1.159 基礎設施更新）
 
 ---
 
@@ -29,6 +29,7 @@
 
 | 功能 | 發布日期 | 熱度 | 試用價值 | 狀態 |
 |------|----------|------|----------|------|
+| Claude Code v2.1.159（內部基礎設施更新） | 2026-06-01 | 🔥 | ✅ 推薦 | 正式發布（無使用者端變更）|
 | Claude Code v2.1.158（Auto mode on Bedrock/Vertex/Foundry） | 2026-05-30 | 🔥🔥 | ✅ 推薦 | 正式發布 |
 | Claude Opus 4.8（SWE-bench Pro 69.2%、1M context、Fast Mode 1/3 費用） | 2026-05-28 | 🔥🔥🔥🔥🔥 | ⚡ 有條件推薦 | 正式發布 |
 | Dynamic Workflows（最多 1,000 平行子代理） | 2026-05-28 | 🔥🔥🔥🔥 | ❌ 暫不推薦 | Research Preview（UltraCode 1.7M token bug，無退款）|

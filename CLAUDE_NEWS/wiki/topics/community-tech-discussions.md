@@ -2,7 +2,7 @@
 
 **狀態：** ongoing
 **開始日期：** 2026-04-25
-**最後更新：** 2026-05-31
+**最後更新：** 2026-06-01
 
 ---
 
@@ -24,6 +24,8 @@
 | Claude Code 需要自動模型路由？ | 2026-05-31 | 🔥🔥 | ☄️閃現 | 社群呼籲 Claude Code 支援依任務複雜度自動切換 Haiku/Sonnet/Opus，目前仍需手動操作；與「94% token 流向錯誤模型」痛點直接呼應 | — |
 | 10 個 Plugin 同時啟用的真實成本 | 2026-05-31 | 🔥🔥 | ☄️閃現 | 作者啟用 10 個 plugin 後信用耗盡，詳細拆解各 plugin token 成本；與 MCP context bloat（9 伺服器 = 38k tokens）形成最新佐證 | — |
 | Agent Skills Progressive Disclosure 三層架構 | 2026-05-31 | 🔥🔥 | ☄️閃現 | Anthropic 官方 Skills 設計指南：啟動時只讀技能名稱+簡述，命中後按需載入完整內容；是 token 效率與觸發準確度的官方設計取捨 | — |
+| 客戶用 Claude 取代開發者（DevOps 全面替換）| 2026-06-01 | 🔥🔥🔥 | ☄️閃現 | 開發者被告知「不支持新方向」後遭替換；vibe-coded K8s cluster 導致網站宕機一週；AI 替代工作的真實案例（非假設）| — |
+| AI 成本造就新裁員藉口 | 2026-06-01 | 🔥🔥 | ☄️閃現 | 企業 AI 帳單達百萬美元時，裁員從「貪婪」變成「生存需要」；AI 成本壓力成為大規模裁員的新合理化工具 | — |
 | UltraCode 1.7M tokens 退化迴圈 | 2026-05-30 | 🔥🔥🔥 | ☄️閃現 | Dynamic Workflows 子代理陷入退化迴圈，1.7M tokens 無輸出；Anthropic 無退款；建議設定嚴格 token 上限再用 | — |
 | Opus 4.8 Qwen distillation 爭議 | 2026-05-30 | 🔥🔥 | ☄️閃現 | 社群截圖流傳 Opus 4.8 自稱 Qwen；HN score 20；主流判定為 proxy 詐騙，但引發對 Anthropic 模型透明度的討論 | — |
 | AI 社會模擬：Claude 最穩定，Grok 文明滅絕 | 2026-05-30 | 🔥🔥 | ☄️閃現 | Emergence AI 15 天模擬：Claude 管理的社會穩定民主（零犯罪），Grok 的社會在 183 起犯罪後滅絕；展示不同 AI 價值觀的實際影響 | — |
@@ -77,6 +79,15 @@
 ---
 
 ## 技術彙整
+
+### 客戶用 Claude 全面取代開發者（2026-06-01）
+
+- **來源：** "My client is replacing me with Claude for all DevOps/infra and most feature dev"（Hacker News，HN score 11）
+- **核心論點：** 客戶在未告知的情況下用 Claude vibe-code 了新 K8s cluster 和雲端服務遷移計畫，導致網站斷斷續續宕機超過一週；開發者介入後選擇直接 revert，被告知「不支持新方向」後遭替換
+- **關鍵回響：**
+  - 📝 社群確認：「我在場，我是那個工程師」（第二人確認故事真實性）
+  - 📝 反思：「production outage 被分類為 innovation 時，通常是時候更新 LinkedIn 了」
+- **意義：** 這是首個有多方確認的 AI 完全替代工程師案例，不再是假設情境
 
 ### UltraCode Dynamic Workflows 退化迴圈（2026-05-30）
 

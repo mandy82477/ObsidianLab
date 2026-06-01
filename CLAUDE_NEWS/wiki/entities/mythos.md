@@ -3,7 +3,7 @@
 **類型：** model
 **狀態：** 公開化中（透過 Claude Code 釋出）
 **首次出現：** 2026-04（限定夥伴 Preview）
-**最後更新：** 2026-05-30
+**最後更新：** 2026-06-01
 
 ---
 
@@ -154,6 +154,14 @@ Anthropic 正式發布「協調漏洞揭露（Coordinated Vulnerability Disclosu
 ### Mythos 準備登陸 Claude Code 與 Claude Security（2026-05-24）
 
 社群發現 Claude Code 與 Claude Security 的 app 字串洩露關鍵訊息：「**Access to the Claude Mythos model in Claude Code and Claude Security**」，顯示 Anthropic 正積極準備將 Mythos 部署至旗下兩個主要開發工具。Anthropic 官方聲明「一般用戶不保證獲得存取」，暗示初期仍將採用限制性推出策略，可能以企業或安全合作夥伴為優先對象。
+
+---
+
+## 2026-06-01 更新
+
+**Mythos 地緣政治部署開始。** FT、MLex、Yahoo、BBC 四家媒體同日確認：Anthropic 向歐盟網路安全局（ENISA）提供 Mythos 存取權，成為首個獲准存取的歐洲政府機構。英國銀行同日獲告知遭拒，OpenAI 隨即主動接觸提出替代方案——AI 安全能力開始成為地緣政治談判籌碼。
+
+The Information 同日報導：Mythos 授權費用被企業客戶描述為「Budget Buster」，高安全能力伴隨高授權成本是企業採購的主要障礙。（來源：https://www.ft.com/content/f88d62e3-5b67-4aed-ad69-6f38b62559b3）
 
 ---
 

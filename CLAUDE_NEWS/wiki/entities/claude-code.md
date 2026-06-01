@@ -3,7 +3,7 @@
 **類型：** product
 **狀態：** active
 **首次出現：** 2025（正式推出）
-**最後更新：** 2026-05-30
+**最後更新：** 2026-06-01
 
 ---
 
@@ -15,6 +15,7 @@ Claude Code 是 Anthropic 的 AI 編碼 CLI 工具，支援 agentic 工作流程
 
 | 版本 | 日期 | 重點 |
 |------|------|------|
+| **v2.1.159** | 2026-06-01 | 內部基礎設施改善（無使用者端可見功能變更） |
 | **v2.1.158** | 2026-05-30 | **Auto mode 擴展**：Bedrock、Vertex、Foundry 平台現支援 Opus 4.7 & 4.8 的 Auto mode；透過環境變數 `CLAUDE_CODE_ENABLE_AUTO_MODE=1` 啟用 |
 | **v2.1.156** | 2026-05-29 | 修復使用 Opus 4.8 時 thinking blocks 被修改導致 API 400 錯誤的問題 |
 | **v2.1.153** | 2026-05-28 | ① **`skipLfs` 選項**：加入 github/git plugin 市集來源，clone 與 update 時可跳過 Git LFS 大型檔案下載，降低大型 repo 的頻寬與時間成本；② **npm 版本通知**：偵測到全域安裝版本過期時顯示一次性升級提示，改善版本管理體驗 |

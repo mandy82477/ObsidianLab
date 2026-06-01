@@ -5,6 +5,34 @@ Append-only 紀錄。每次 ingest、query 或 lint 都在此追加一條。
 
 ---
 
+## 2026-06-01 Ingest | news/2026-06-01.md
+
+- 來源日報：`news/2026-06-01.md`（66 則，6 來源；Mythos 開放 ENISA 存取、Anthropic/OpenAI 政治獻金、IPO 競賽、客戶用 Claude 取代開發者、Ouijit/Agents CLI/Agentpack/DashVox 四款新工具）
+- 更新頁面：
+  - `entities/mythos.md`：新增 2026-06-01 EU/ENISA 部署、英國銀行遭拒、The Information 預算殺手報導；更新最後更新 2026-06-01
+  - `entities/claude-code.md`：新增 v2.1.159（基礎設施更新）；更新最後更新 2026-06-01
+  - `topics/anthropic-business.md`：新增 2026-06-01 時序（IPO 競賽 / 估值質疑 / Mythos 商業化）；更新最後更新 2026-06-01
+  - `topics/anthropic-government-policy.md`：新增 2026-06-01 時序（Mythos EU 部署 / 政治獻金）；更新最後更新 2026-06-01
+  - `topics/community-tech-tools.md`：新增 4 個工具（Ouijit / Agents CLI / Agentpack / DashVox）；更新最後更新 2026-06-01
+  - `topics/community-tech-discussions.md`：熱門討論新增 2 條（客戶替換開發者 / AI 成本裁員藉口）；技術彙整新增 1 個段落；更新最後更新 2026-06-01
+  - `feature-radar.md`：全覽表新增 v2.1.159；更新最後更新 2026-06-01
+  - `wiki/index.md`：更新最後更新 2026-06-01
+- 新增頁面：無
+- 呈現品質審查：
+  | 頁面 | 結果 |
+  |------|------|
+  | entities/mythos.md | ✅ 通過（新增段落，獨立可讀）|
+  | entities/claude-code.md | ✅ 通過（版本更新，格式一致）|
+  | topics/anthropic-business.md | ✅ 通過（時序 prepend）|
+  | topics/anthropic-government-policy.md | ✅ 通過（時序 prepend）|
+  | topics/community-tech-tools.md | ✅ 通過（4 工具插入表頭）|
+  | topics/community-tech-discussions.md | ✅ 通過（2 條 prepend，技術彙整 prepend）|
+  | feature-radar.md | ✅ 通過（全覽表更新）|
+- 本日新增工具：Ouijit / Agents CLI / Agentpack / DashVox（共 4 個，累積 143 個）
+- feature-radar 更新：v2.1.159（🔥 ✅）
+
+---
+
 ## 2026-05-31 Ingest | news/2026-05-31.md
 
 - 來源日報：`news/2026-05-31.md`（50 則，5/6 來源；Anthropic $965B Series H 超越 OpenAI、"We contain Claude" 工程部落格、Opus 4.8 Thinking 900K context drain、ultracode 70 agent 實測、Claude Code Source Deep Dive VI & VII）
