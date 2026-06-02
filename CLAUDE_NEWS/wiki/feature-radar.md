@@ -4,7 +4,7 @@
 僅收錄官方 changelog、release note 或官方公告來源；社群工具見 [[topics/community-tech-tools]]。
 每次 ingest 後由 LLM 維護：新增功能、更新熱度、補充社群回饋。
 
-**最後更新：** 2026-06-01（v2.1.159 基礎設施更新）
+**最後更新：** 2026-06-02（v2.1.160 安全修復 + `workflow`→`ultracode` breaking change）
 
 ---
 
@@ -29,6 +29,7 @@
 
 | 功能 | 發布日期 | 熱度 | 試用價值 | 狀態 |
 |------|----------|------|----------|------|
+| Claude Code v2.1.160（shell 安全修復 + `workflow`→`ultracode` rename） | 2026-06-02 | 🔥🔥🔥 | ✅ 推薦 | 正式發布（⚠️ Breaking: `workflow` 更名為 `ultracode`）|
 | Claude Code v2.1.159（內部基礎設施更新） | 2026-06-01 | 🔥 | ✅ 推薦 | 正式發布（無使用者端變更）|
 | Claude Code v2.1.158（Auto mode on Bedrock/Vertex/Foundry） | 2026-05-30 | 🔥🔥 | ✅ 推薦 | 正式發布 |
 | Claude Opus 4.8（SWE-bench Pro 69.2%、1M context、Fast Mode 1/3 費用） | 2026-05-28 | 🔥🔥🔥🔥🔥 | ⚡ 有條件推薦 | 正式發布 |

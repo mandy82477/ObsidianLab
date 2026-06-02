@@ -3,7 +3,7 @@
 **類型：** model
 **狀態：** 公開化中（透過 Claude Code 釋出）
 **首次出現：** 2026-04（限定夥伴 Preview）
-**最後更新：** 2026-06-01
+**最後更新：** 2026-06-02
 
 ---
 
@@ -154,6 +154,14 @@ Anthropic 正式發布「協調漏洞揭露（Coordinated Vulnerability Disclosu
 ### Mythos 準備登陸 Claude Code 與 Claude Security（2026-05-24）
 
 社群發現 Claude Code 與 Claude Security 的 app 字串洩露關鍵訊息：「**Access to the Claude Mythos model in Claude Code and Claude Security**」，顯示 Anthropic 正積極準備將 Mythos 部署至旗下兩個主要開發工具。Anthropic 官方聲明「一般用戶不保證獲得存取」，暗示初期仍將採用限制性推出策略，可能以企業或安全合作夥伴為優先對象。
+
+---
+
+## 2026-06-02 更新
+
+**Project Glasswing 大幅擴展。** Anthropic 官方宣布將 Glasswing 夥伴從 50 個擴展至 **150 個新組織**（共 200 個），覆蓋 15+ 國家；現有夥伴已發現超過 **10,000 個高危安全漏洞**。Anthropic 同時承諾：**6–12 個月內推出 Mythos 等級模型的公開版本**，並維持受控存取的安全標準。（來源：https://www.anthropic.com/news/expanding-project-glasswing）
+
+同日：Opus 4.8 在 ARC-AGI-3 基準測試成為新 SOTA，得分 1.5%（扣除 $10K 費用後）——是「難以作弊」設計下的邊界能力測試。
 
 ---
 

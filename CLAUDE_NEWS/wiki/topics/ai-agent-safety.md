@@ -2,7 +2,7 @@
 
 **狀態：** ongoing
 **開始日期：** 2026-04-27
-**最後更新：** 2026-05-25
+**最後更新：** 2026-06-02
 
 ---
 
@@ -226,6 +226,11 @@
 - [Anthropic's definition of safety is too narrow](https://jonathannen.com/anthropic-safety-too-narrow/) — Jonathan Nen
 
 ## 時序
+
+### 2026-06-02
+- **[供應鏈攻擊] 637 npm 套件植入 Claude Code SessionStart Hook**：2026-05-19 攻擊（39 分鐘內 323 套件受害）的完整分析發布；惡意程式具體利用 Claude Code hooks 機制，在每次 Claude Code 啟動時執行任意指令；是 Claude Code hooks 系統首次出現在真實供應鏈攻擊中（dev.to 報告）
+- **[安全修復] v2.1.160 shell startup file 寫入提示**：修復 Claude Code 可在未提示的情況下寫入 `.zshenv`、`.zlogin`、`.bash_login`、`~/.config/git/` 的安全漏洞；先前版本可能導致惡意指令在 shell 啟動時自動執行
+- **[安全漏洞] Claude Code Flaw Exposes Repositories**：Let's Data Science 報導 Claude Code 存在可暴露 repository 的安全漏洞，細節尚待確認
 
 ### 2026-05-21
 - **[安全漏洞] 沙箱第二個獨立繞過漏洞（Null Byte 注入）**：研究者揭露 Claude Code 網路沙箱的第二個獨立漏洞（與 CVE-2025-66479 完全不同機制）：在 hostname 中插入 null byte（`\x00`），使策略層認為目標符合白名單（如 `*.google.com`），而底層 resolver 實際連線至被封鎖的外部主機，可導致用戶憑證與原始碼外洩；PoC 已公開；兩個漏洞均自 2025-10-20 沙箱 GA 起持續存在，Claude 自身被問及時也確認漏洞真實性（The Register 報導增添諷刺色彩）；受影響版本覆蓋 v2.0.2 至今，建議追蹤官方修補公告

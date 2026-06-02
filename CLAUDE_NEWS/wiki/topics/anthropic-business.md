@@ -2,7 +2,7 @@
 
 **狀態：** ongoing
 **開始日期：** 2026-05-28
-**最後更新：** 2026-06-01
+**最後更新：** 2026-06-02
 
 ---
 
@@ -111,6 +111,12 @@ Simon Willison（知名開發者博主）發表文章，認為 Anthropic 與 Ope
 ### 2026-05-31
 - **[內部 Agent 風險管理哲學公開]** Anthropic 工程部落格發布《We contain Claude across products》：12 個月前不可能授予 Claude 影響關鍵服務的存取權，如今已成常態；文章以「爆炸半徑」框架說明隨 agent 能力增長，不部署的機會成本已超過部署風險；是 Anthropic 內部 agentic 思維的第一手揭露（HN 收錄）
 - **[Bloomberg 責任與創新平衡報導]** Bloomberg 分析 Anthropic 在商業擴張與安全責任之間的平衡難題：估值接近兆元的同時，外界對「responsible scaling」承諾能否持續兌現的質疑同步升溫
+
+### 2026-06-02
+- **[IPO 里程碑]** Anthropic 正式向 SEC 提交 S-1 草稿（機密申請），進入 IPO 法定程序；估值預期逼近 $1 兆；Economist、NYT、Reuters、FT、WSJ 等同步密集報導（HN 509/547）
+- **[宕機巧合]** IPO 宣布同日，Claude 遭遇全球宕機（capacity constraints），The Register 以諷刺標題報導
+- **[企業反彈]** Axios：IPO 前 Anthropic 面臨企業 AI 支出反彈；Michael Burry 公開稱 Anthropic 不值 $1 兆（HN 104）
+- **[新合作]** Snowflake 與 Anthropic 宣布合作，加速企業 AI 採用；Interactive Brokers 整合 Claude 推出 AI 交易功能
 
 ### 2026-06-01
 - **[IPO 競賽]** WSJ 分析 Anthropic vs OpenAI IPO 競賽的戰略意義；NYT 報導兩者成為 2026 年期中選舉最大 AI 科技獻金方，公開對立

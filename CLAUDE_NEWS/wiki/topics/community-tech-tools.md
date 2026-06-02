@@ -2,7 +2,7 @@
 
 **狀態：** ongoing
 **開始日期：** 2026-04-25
-**最後更新：** 2026-06-01
+**最後更新：** 2026-06-02
 
 ---
 
@@ -67,6 +67,10 @@
 | [**Lite-Harness**](https://github.com/LiteLLM-Labs/lite-harness) | 多 agent 協調 | ⏳ | 2026-05-31 | 自架 agent harness 伺服器 Dockerfile，開箱即用提供 memory、durable sessions、cron 排程與 vault；支援 Claude Code 與 OpenCode；HN score 6 |
 | [**Arch-Decision**](https://github.com/jsingh6/arch-decision) | 工作流 | ⏳ | 2026-05-31 | 多代理架構決策工具，協助 Claude Code 使用者在開發前梳理架構選擇與 ADR 記錄；HN score 3 |
 | [**claude-skills**](https://github.com/glebis/claude-skills) | Skills | ⏳ | 2026-05-31 | 社群整理的 Claude Code Skills 集合，涵蓋多種常見開發場景；Show HN 入選；HN score 3 |
+| [**DepsGuard**](https://github.com/arnica/depsguard) | 安全 | ⏳ | 2026-06-02 | 一行指令硬化 npm/pnpm/yarn/bun/uv 安全配置（release cooldown、停用 install scripts）；回應供應鏈攻擊趨勢；Show HN score 35 |
+| [**NUA**](https://trynua.dev/) | 測試/品質 | ⏳ | 2026-06-02 | 測試「產品正確性」而非「技術正確性」的 agent；解決 background Claude loop 產出「測試通過但意圖不符」的痛點；Show HN score 8 |
+| [**Tok**](https://github.com/samjoch/tok) | Token 計數 | ⏳ | 2026-06-02 | Claude Code token 計數工具，不需 ANTHROPIC_API_KEY；Show HN score 4 |
+| [**Circus Chief**](https://github.com/ferrislucas/Circus-Chief) | Agent 管理 | ⏳ | 2026-06-02 | 瀏覽器管理 Claude Code/Codex/Gemini sessions，針對小螢幕優化；支援 agent 自主操作 UI 與排程；Show HN score 3 |
 | [**Ouijit**](https://ouijit.com/) | 任務管理 | ⏳ | 2026-06-01 | 任務看板 + terminal session 管理器，支援 Claude Code/Codex/Pi；lifecycle hooks；Show HN score 10 |
 | [**Agents CLI**](https://agents-cli.sh) | Agent 管理 | ⏳ | 2026-06-01 | 以訂閱費率執行 Claude Code + Codex 等多種 agent（不消耗 API tokens）；含 teams CLI + secrets CLI；Show HN score 6 |
 | [**Agentpack**](https://nexo.sh/posts/agentpack/) | Config 管理 | ⏳ | 2026-06-01 | 建立臨時 staging config，不污染全域設定；支援 Claude Code/Codex/Cursor/OpenCode；Show HN score 4 |

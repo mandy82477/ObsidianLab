@@ -2,7 +2,7 @@
 
 **狀態：** ongoing
 **開始日期：** 2026-05-26
-**最後更新：** 2026-05-27
+**最後更新：** 2026-06-02
 
 ## 摘要
 
@@ -59,6 +59,10 @@
 ---
 
 ## 時序
+
+### 2026-06-02
+- **Microsoft 退出確認（多媒體）**：Times of India、Space Daily 再次確認 Microsoft Experiences + Devices 部門 6/30 停用 Claude Code，引導數千工程師轉用 GitHub Copilot；IPO 宣布前夕成為最具代表性的企業退出案例
+- **Uber 燒完整年預算**：Space Daily 確認 Uber 四個月燒完 2026 整年 AI 工具預算（Claude Code + Cursor）；與 COO 5/27 確認的 25% 生產力提升形成「效果好但成本更好」的矛盾敘事
 
 ### 2026-05-27
 - **Uber COO 確認 25% 生產力提升**：Andrew Macdonald 公開表示 Claude Code + ChatGPT 帶來 25% 生產力提升，但成本問題持續（Times of India）
