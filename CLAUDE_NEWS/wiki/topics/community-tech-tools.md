@@ -2,7 +2,7 @@
 
 **狀態：** ongoing
 **開始日期：** 2026-04-25
-**最後更新：** 2026-06-02
+**最後更新：** 2026-06-03
 
 ---
 
@@ -67,6 +67,12 @@
 | [**Lite-Harness**](https://github.com/LiteLLM-Labs/lite-harness) | 多 agent 協調 | ⏳ | 2026-05-31 | 自架 agent harness 伺服器 Dockerfile，開箱即用提供 memory、durable sessions、cron 排程與 vault；支援 Claude Code 與 OpenCode；HN score 6 |
 | [**Arch-Decision**](https://github.com/jsingh6/arch-decision) | 工作流 | ⏳ | 2026-05-31 | 多代理架構決策工具，協助 Claude Code 使用者在開發前梳理架構選擇與 ADR 記錄；HN score 3 |
 | [**claude-skills**](https://github.com/glebis/claude-skills) | Skills | ⏳ | 2026-05-31 | 社群整理的 Claude Code Skills 集合，涵蓋多種常見開發場景；Show HN 入選；HN score 3 |
+| [**Claudinho**](https://www.claudinho.xyz/) | Skill 探索 | ⏳ | 2026-06-03 | Claude Skills 探索與安裝介面，解決技能難以發現的問題；Show HN score 7 |
+| [**100cc**](https://github.com/yujqiao/100cc) | 教學/輕量 | ⏳ | 2026-06-03 | 100 行程式碼實作 Claude agent，適合理解 ReAct/Agent loop 基礎；Show HN score 10 |
+| [**Lovie MCP**](https://www.lovie.co/formation/ai-operator) | 法律/商業 | ⏳ | 2026-06-03 | 透過 MCP 在 IDE 中直接辦理 LLC/C-Corp 登記、EIN 申請；Show HN score 8 |
+| [**Chatcode**](https://chatcode.dev/) | 遠端控制 | ⏳ | 2026-06-03 | 瀏覽器 + Telegram 遠端控制 Claude Code；支援持久 session；Show HN score 2 |
+| [**LiteHarness**](https://github.com/LiteLLM-Labs/lite-harness) | Agent SDK | ⏳ | 2026-06-03 | 統一 SDK 呼叫 Claude Agent/OpenAI Agents/Pi AI；一個 query() 切換不同 harness；Show HN score 2 |
+| [**deep-review**](https://github.com/Farfield-Dev/deep-review) | 程式碼審查 | ⏳ | 2026-06-03 | Claude Code plugin 支援 deep multi-agent code reviews；Show HN score 2 |
 | [**DepsGuard**](https://github.com/arnica/depsguard) | 安全 | ⏳ | 2026-06-02 | 一行指令硬化 npm/pnpm/yarn/bun/uv 安全配置（release cooldown、停用 install scripts）；回應供應鏈攻擊趨勢；Show HN score 35 |
 | [**NUA**](https://trynua.dev/) | 測試/品質 | ⏳ | 2026-06-02 | 測試「產品正確性」而非「技術正確性」的 agent；解決 background Claude loop 產出「測試通過但意圖不符」的痛點；Show HN score 8 |
 | [**Tok**](https://github.com/samjoch/tok) | Token 計數 | ⏳ | 2026-06-02 | Claude Code token 計數工具，不需 ANTHROPIC_API_KEY；Show HN score 4 |

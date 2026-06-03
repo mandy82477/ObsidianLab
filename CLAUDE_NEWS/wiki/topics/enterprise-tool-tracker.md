@@ -2,7 +2,7 @@
 
 **狀態：** ongoing
 **開始日期：** 2026-05-26
-**最後更新：** 2026-06-02
+**最後更新：** 2026-06-03
 
 ## 摘要
 
@@ -59,6 +59,9 @@
 ---
 
 ## 時序
+
+### 2026-06-03
+- **Uber 用量上限確認（Bloomberg 獨家）**：Bloomberg 報導 Uber 已正式對 Claude Code 等 AI 工具設定用量上限；是首個明確執行用量管控的大型具名企業
 
 ### 2026-06-02
 - **Microsoft 退出確認（多媒體）**：Times of India、Space Daily 再次確認 Microsoft Experiences + Devices 部門 6/30 停用 Claude Code，引導數千工程師轉用 GitHub Copilot；IPO 宣布前夕成為最具代表性的企業退出案例

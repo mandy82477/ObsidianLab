@@ -3,7 +3,7 @@
 **類型：** model
 **狀態：** 公開化中（透過 Claude Code 釋出）
 **首次出現：** 2026-04（限定夥伴 Preview）
-**最後更新：** 2026-06-02
+**最後更新：** 2026-06-03
 
 ---
 
@@ -154,6 +154,16 @@ Anthropic 正式發布「協調漏洞揭露（Coordinated Vulnerability Disclosu
 ### Mythos 準備登陸 Claude Code 與 Claude Security（2026-05-24）
 
 社群發現 Claude Code 與 Claude Security 的 app 字串洩露關鍵訊息：「**Access to the Claude Mythos model in Claude Code and Claude Security**」，顯示 Anthropic 正積極準備將 Mythos 部署至旗下兩個主要開發工具。Anthropic 官方聲明「一般用戶不保證獲得存取」，暗示初期仍將採用限制性推出策略，可能以企業或安全合作夥伴為優先對象。
+
+---
+
+## 2026-06-03 更新
+
+**Glasswing 首批實測反饋與 Daniela Amodei 聲明。**
+
+Project Glasswing 第一批夥伴在 HN（score 176）分享一手使用體驗：Mythos 的掃描結果包含「數百乃至數千個假陽性或次要問題」，真正值得關注的漏洞被淹沒；管理層把每個警示都當緊急事項處理，對工程團隊造成疲勞——AI 安全掃描在企業環境的訊噪比是核心挑戰。
+
+同日，Anthropic 總裁 Daniela Amodei 首度公開表示 Mythos「非常擅長網路戰」，在 $965B IPO 申請背景下引發對商業化壓力的討論。
 
 ---
 

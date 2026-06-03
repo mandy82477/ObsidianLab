@@ -5,6 +5,34 @@ Append-only 紀錄。每次 ingest、query 或 lint 都在此追加一條。
 
 ---
 
+## 2026-06-03 Ingest | news/2026-06-03.md
+
+- 來源日報：`news/2026-06-03.md`（76 則，6 來源；Services Track + Partner Hub 發布、Glasswing 假陽性首批反饋、Uber 用量上限確認、v2.1.161 OTEL 改善、CLAUDE.md 團隊一致性問題、Claudinho/100cc/Lovie 等 6 款新工具）
+- 更新頁面：
+  - `entities/claude-code.md`：新增 v2.1.161（OTEL metrics 標籤、claude agents 改善）；更新最後更新 2026-06-03
+  - `entities/mythos.md`：新增 2026-06-03 Glasswing 假陽性反饋（HN 176 一手帳號）、Daniela Amodei「很擅長網路戰」聲明；更新最後更新 2026-06-03
+  - `topics/anthropic-business.md`：新增 2026-06-03 時序（Services Track、Harvard Law 治理論文、Uber 用量管制）；更新最後更新 2026-06-03
+  - `topics/enterprise-tool-tracker.md`：新增 2026-06-03 時序（Bloomberg 確認 Uber 用量上限）；更新最後更新 2026-06-03
+  - `topics/community-tech-tools.md`：新增 6 個工具（Claudinho / 100cc / Lovie MCP / Chatcode / LiteHarness / deep-review）；更新最後更新 2026-06-03
+  - `topics/community-tech-discussions.md`：熱門討論新增 3 條（Agent Loop 1400 行 / 排程 agent 靜默失敗 / 5 個矛盾 CLAUDE.md）；更新最後更新 2026-06-03
+  - `feature-radar.md`：新增 v2.1.161（🔥🔥 ✅）；更新最後更新 2026-06-03
+  - `wiki/index.md`：更新最後更新 2026-06-03
+- 新增頁面：無
+- 呈現品質審查：
+  | 頁面 | 結果 |
+  |------|------|
+  | entities/claude-code.md | ✅ 通過（版本更新，格式一致）|
+  | entities/mythos.md | ✅ 通過（新增段落，可獨立閱讀）|
+  | topics/anthropic-business.md | ✅ 通過（時序 prepend，摘要清晰）|
+  | topics/enterprise-tool-tracker.md | ✅ 通過（時序 prepend）|
+  | topics/community-tech-tools.md | ✅ 通過（6 工具插入表頭）|
+  | topics/community-tech-discussions.md | ✅ 通過（3 條 prepend）|
+  | feature-radar.md | ✅ 通過（全覽表更新）|
+- 本日新增工具：Claudinho / 100cc / Lovie MCP / Chatcode / LiteHarness / deep-review（共 6 個，累積 153 個）
+- feature-radar 更新：v2.1.161（🔥🔥 ✅ 企業可觀測性）
+
+---
+
 ## 2026-06-02 Ingest | news/2026-06-02.md
 
 - 來源日報：`news/2026-06-02.md`（101 則，6 來源；Anthropic IPO S-1 提交、Project Glasswing 擴展至 150 組織、IPO 同日宕機、637 npm 供應鏈攻擊植入 Claude Code hook、v2.1.160 安全修復 + breaking change）

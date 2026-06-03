@@ -2,7 +2,7 @@
 
 **狀態：** ongoing
 **開始日期：** 2026-05-28
-**最後更新：** 2026-06-02
+**最後更新：** 2026-06-03
 
 ---
 
@@ -111,6 +111,11 @@ Simon Willison（知名開發者博主）發表文章，認為 Anthropic 與 Ope
 ### 2026-05-31
 - **[內部 Agent 風險管理哲學公開]** Anthropic 工程部落格發布《We contain Claude across products》：12 個月前不可能授予 Claude 影響關鍵服務的存取權，如今已成常態；文章以「爆炸半徑」框架說明隨 agent 能力增長，不部署的機會成本已超過部署風險；是 Anthropic 內部 agentic 思維的第一手揭露（HN 收錄）
 - **[Bloomberg 責任與創新平衡報導]** Bloomberg 分析 Anthropic 在商業擴張與安全責任之間的平衡難題：估值接近兆元的同時，外界對「responsible scaling」承諾能否持續兌現的質疑同步升溫
+
+### 2026-06-03
+- **[生態擴張]** Claude Partner Network Services Track + Partner Hub 正式發布；$1 億美元合作夥伴培訓投資；40,000+ 公司申請加入、10,000 名顧問完成認證；Grant Thornton 為英國員工導入 Claude
+- **[治理質疑]** Harvard Law 論文：Anthropic IPO 正在「出售可被 Wall Street 否決的安全使命」；公益公司架構在上市後面臨股東壓力風險
+- **[Uber 用量管制]** Bloomberg 確認 Uber 已對 Claude Code 實施用量上限；是首個公開確認對 AI 工具實施用量管控的大型企業
 
 ### 2026-06-02
 - **[IPO 里程碑]** Anthropic 正式向 SEC 提交 S-1 草稿（機密申請），進入 IPO 法定程序；估值預期逼近 $1 兆；Economist、NYT、Reuters、FT、WSJ 等同步密集報導（HN 509/547）
