@@ -1,0 +1,178 @@
+{
+  "date": "2026-06-03",
+  "generatedAt": "2026-06-03 23:07 UTC",
+  "articleCount": 76,
+  "sourceCount": "6/6 | **文章數：** 76 | **更新時間：** 2026-06-03 23:07 UTC",
+  "topStories": [],
+  "techUpdates": [
+    {
+      "title": "[anthropics/claude-code] v2.1.161",
+      "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.161",
+      "source": "GitHub / anthropics/claude-code",
+      "time": "06/02 21:58",
+      "sentiment": "",
+      "body": "① `OTEL_RESOURCE_ATTRIBUTES` 值現在會作為 metric datapoints 的標籤，支援以 team 或 repo 等自訂維度切片使用數據；② `claude agents` 列表顯示改善；提升企業可觀測性。",
+      "focusTags": []
+    },
+    {
+      "title": "Introducing Services Track and Partner Hub — Claude Partner Network",
+      "url": "https://www.anthropic.com/news/services-track-partner-hub",
+      "source": "Anthropic Blog",
+      "time": "06/03 15:07",
+      "sentiment": "",
+      "body": "Services Track 為企業整合商提供結構化培訓路徑；Partner Hub 集中管理合作夥伴資源；$1 億美元投資涵蓋培訓、技術支援、聯合行銷——IPO 前夕加速企業生態建立。",
+      "focusTags": [
+        "[重大事件]"
+      ]
+    }
+  ],
+  "discussions": [
+    {
+      "title": "Expanding Project Glasswing — First-Hand Account",
+      "url": "https://www.anthropic.com/news/expanding-project-glasswing",
+      "source": "Hacker News",
+      "time": "06/02 13:15",
+      "sentiment": "",
+      "body": "HN score 176：Glasswing 首批夥伴反映 Mythos 產出大量假陽性，真正問題被淹沒；管理層把每個警示都當成「全公司停下來修」的優先事項，造成工程團隊疲勞——揭示 AI 安全掃描在企業落地的實際挑戰。情緒：🤔",
+      "focusTags": [
+        "[重大事件]"
+      ]
+    },
+    {
+      "title": "Why Claude Code's Agent Loop Is Over 1,400 Lines",
+      "url": "https://internals.laxmena.com/p/why-claude-codes-agent-loop-is-over",
+      "source": "Hacker News",
+      "time": "06/03 14:47",
+      "sentiment": "",
+      "body": "深度分析 Claude Code 核心 query.ts 的 while(true) 迴圈：九種條件可讓迴圈在不詢問用戶的情況下持續執行，大多數條件與任務是否完成無關；基於 v2.1.88 source maps 分析。情緒：🤔",
+      "focusTags": []
+    },
+    {
+      "title": "I Cron-Scheduled 7 AI Agents. 2 Silently Failed for 18 Days.",
+      "url": "https://dev.to/kenimo49/i-cron-scheduled-7-ai-agents-2-silently-failed-for-18-days-tracing-wouldnt-have-caught-it-24fa",
+      "source": "dev.to / #claudecode",
+      "time": "06/03 05:00",
+      "sentiment": "",
+      "body": "7 個排程 agent 中有 2 個第一天就停止執行，18 天後才被發現；標準 tracing 無法捕捉此類靜默失敗——autonomous agent 的可靠性監控缺口。情緒：😤",
+      "focusTags": [
+        "[社群趨勢]"
+      ]
+    },
+    {
+      "title": "Show HN: Claudinho — Find and Install Claude Skills",
+      "url": "https://www.claudinho.xyz/",
+      "source": "Hacker News",
+      "time": "06/02 17:07",
+      "sentiment": "",
+      "body": "為非技術用戶打造的 Claude Skills 探索與安裝介面；解決「技能難以發現、難以評估價值」的問題；HN score 7。情緒：😊",
+      "focusTags": []
+    },
+    {
+      "title": "Show HN: 100cc — Roll Your Own Claude in 100 Lines",
+      "url": "https://github.com/yujqiao/100cc",
+      "source": "Hacker News",
+      "time": "06/02 18:35",
+      "sentiment": "",
+      "body": "100 行程式碼實作的 Claude agent；適合理解 ReAct/Agent loop 基礎概念；Show HN score 10。情緒：😊",
+      "focusTags": []
+    },
+    {
+      "title": "Show HN: Lovie MCP — Form LLC/C-Corp from Claude/Cursor",
+      "url": "https://www.lovie.co/formation/ai-operator",
+      "source": "Hacker News",
+      "time": "06/02 17:01",
+      "sentiment": "",
+      "body": "透過 MCP 在 IDE 中直接辦理公司登記（LLC 或 C-Corp）、EIN 申請、代理人服務；$29/月；Show HN score 8。情緒：😊",
+      "focusTags": []
+    },
+    {
+      "title": "Claude Opus 4.8 tool call corruption in Japanese environments",
+      "url": "https://dev.to/edhiblemeer/claude-code-opus-48-silently-corrupts-all-tool-calls-an-unfixed-bug-easy-to-trigger-in-e33",
+      "source": "dev.to / #claudecode",
+      "time": "06/03 06:47",
+      "sentiment": "",
+      "body": "長時間 session 後 Opus 4.8 靜默破壞所有 tool call；在日語環境特別容易觸發；尚未修復——Opus 4.8 的質量問題持續浮現。情緒：😤",
+      "focusTags": []
+    },
+    {
+      "title": "Changed my mind on Opus 4.8 after three days",
+      "url": "https://www.reddit.com/r/ClaudeAI/comments/1tva8wx/changed_my_mind_on_opus_48_after_three_days_i/",
+      "source": "Reddit / r/ClaudeAI",
+      "time": "06/02 17:10",
+      "sentiment": "",
+      "body": "用戶三天後回心轉意：初期感覺冗長學術，調整 prompting 後改觀；認為許多「變差」的抱怨其實是 prompting 適應問題。情緒：😊",
+      "focusTags": []
+    },
+    {
+      "title": "Your Team Has 5 CLAUDE.md Files and They All Say Different Things",
+      "url": "https://dev.to/olivia_craft/your-team-has-5-claudemd-files-and-they-all-say-different-things-18gg",
+      "source": "dev.to / #claudecode",
+      "time": "06/02 23:36",
+      "sentiment": "",
+      "body": "5 人團隊有 5 個互相矛盾的 CLAUDE.md：各自寫各自的規則、用詞微差導致 Claude 行為不一致——團隊 CLAUDE.md 標準化是下一個工程問題。情緒：🤔",
+      "focusTags": []
+    }
+  ],
+  "billing": [
+    {
+      "title": "Uber Caps Usage of AI Tools Like Claude Code to Cut Costs",
+      "url": "https://www.bloomberg.com/news/articles/2026-06-02/uber-caps-usage-of-ai-tools-like-claude-code-to-cut-costs",
+      "source": "Hacker News",
+      "time": "06/02 17:12",
+      "sentiment": "",
+      "body": "Bloomberg 獨家確認：Uber 對 Claude Code 等 AI 工具實施使用量上限；繼燒光整年預算、實施 cap 後，成為首個公開確認對 AI 工具實施用量管控的大型企業。",
+      "focusTags": [
+        "[持續追蹤]"
+      ]
+    },
+    {
+      "title": "Anthropic faces AI spending backlash before IPO",
+      "url": "https://news.google.com/rss/articles/CBMihAFBVV95cUxQdnh1ZHJQYzIzTGNjNVNuZDQ4bHYtNFBKMHBteTE0ZmhYcG92MXFtSTk2dkZBOWVNYnpmaU5BNzY4N0VSa0dlNDNzWExPNVNtZUxwT0hGMmUtZ29NbFRFbllJTDd6VmxBR1NadmRIMkxLWFZaQ2ExOEZFQkNoMTZ1YTZWcFo",
+      "source": "Google News / Axios",
+      "time": "06/02 13:53",
+      "sentiment": "",
+      "body": "Axios：Anthropic IPO 前面臨企業 AI 支出反彈；Uber 上限管制 + Microsoft 退出 + Harvard Law 治理質疑同步出現，構成最複雜的 IPO 前景背景。",
+      "focusTags": []
+    }
+  ],
+  "focus": [
+    {
+      "tag": "[重大事件]",
+      "text": "Anthropic 推出 Claude Partner Network「服務軌道」（Services Track）與合作夥伴中心，配套 $1 億美元合作夥伴培訓投資；自 3 月以來超過 40,000 家公司申請加入、10,000 名顧問完成認證——IPO 前夕的企業生態布局加速。",
+      "ref_urls": [
+        "https://www.anthropic.com/news/services-track-partner-hub"
+      ]
+    },
+    {
+      "tag": "[重大事件]",
+      "text": "Project Glasswing 社群首批實測回饋浮現（HN score 176）：一手帳號指出 Mythos 產出「數百乃至數千個假陽性或次要問題」，對真正重要漏洞的比例低；高層卻把每個問題都當緊急事項處理——揭示 Glasswing 在企業部署中的訊噪比挑戰。",
+      "ref_urls": [
+        "https://www.anthropic.com/news/expanding-project-glasswing"
+      ]
+    },
+    {
+      "tag": "[重大事件]",
+      "text": "Anthropic 總裁 Daniela Amodei 首度公開談論 Mythos 的網路戰能力：「非常擅長網路戰」——在 $965B IPO 申請背景下的聲明，引發對 Anthropic 安全承諾與商業化壓力之間張力的廣泛討論。",
+      "ref_urls": [
+        "https://www.reddit.com/r/ClaudeAI/comments/1tvbmec/very_good_at_cyber_warfare_anthropic_president/"
+      ]
+    },
+    {
+      "tag": "[持續追蹤]",
+      "text": "Bloomberg 確認：Uber 已對 Claude Code 等 AI 工具實施使用上限以控制成本；Harvard Law 論文同日發布：Anthropic IPO 正在「出售可被 Wall Street 否決的安全使命」——IPO 後的治理結構是最大隱憂。",
+      "ref_urls": [
+        "https://www.bloomberg.com/news/articles/2026-06-02/uber-caps-usage-of-ai-tools-like-claude-code-to-cut-costs",
+        "https://fortune.com/2026/06/01/openais-guardian-ben-jerrys-ice-cream-anthropic/"
+      ]
+    },
+    {
+      "tag": "[社群趨勢]",
+      "text": "兩大 CLAUDE.md 問題同日引爆：① 7 個排程 AI agent，2 個靜默失敗 18 天未被察覺；② 5 人團隊有 5 個互相矛盾的 CLAUDE.md——多 agent 可靠性與團隊一致性正成為下一波痛點。",
+      "ref_urls": [
+        "https://dev.to/kenimo49/i-cron-scheduled-7-ai-agents-2-silently-failed-for-18-days-tracing-wouldnt-have-caught-it-24fa"
+      ]
+    }
+  ],
+  "sourceStatus": [],
+  "preview": "[anthropics/claude-code] v2.1.161"
+}
