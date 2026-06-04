@@ -3,7 +3,7 @@
 **類型：** product
 **狀態：** active
 **首次出現：** 2025（正式推出）
-**最後更新：** 2026-06-03
+**最後更新：** 2026-06-04
 
 ---
 
@@ -15,6 +15,7 @@ Claude Code 是 Anthropic 的 AI 編碼 CLI 工具，支援 agentic 工作流程
 
 | 版本 | 日期 | 重點 |
 |------|------|------|
+| **v2.1.162** | 2026-06-04 | ① `claude agents --json` 新增 `waitingFor` 欄位顯示 agent 被阻塞的原因（如 permission prompt）；② `--tools` 明確列出 Grep/Glob 時提供目錄遍歷能力，無需 Bash 工具 |
 | **v2.1.161** | 2026-06-03 | ① `OTEL_RESOURCE_ATTRIBUTES` 值作為 metric datapoints 標籤，支援以 team/repo 等自訂維度切片使用數據；② `claude agents` 列表顯示改善 |
 | **v2.1.160** | 2026-06-02 | ① **安全修復**：寫入 shell startup files（`.zshenv`、`.zlogin`、`.bash_login`）及 `~/.config/git/` 前新增提示，防止未預期命令執行；② **⚠️ Breaking Change**：`/effort` 的 `workflow` 觸發詞更名為 `ultracode`，所有硬編碼 `workflow` 的腳本式 prompt 即時失效 |
 | **v2.1.159** | 2026-06-01 | 內部基礎設施改善（無使用者端可見功能變更） |

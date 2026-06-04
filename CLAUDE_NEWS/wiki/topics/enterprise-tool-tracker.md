@@ -2,7 +2,7 @@
 
 **狀態：** ongoing
 **開始日期：** 2026-05-26
-**最後更新：** 2026-06-03
+**最後更新：** 2026-06-04
 
 ## 摘要
 
@@ -59,6 +59,9 @@
 ---
 
 ## 時序
+
+### 2026-06-04
+- **Microsoft AI 主管批 Anthropic 太貴（Bloomberg）**：Kevin Scott（Microsoft AI 主管）公開表示 Anthropic 定價過高；是繼 6/30 退出決定後，Microsoft 官方對 Anthropic 定價的首次直接點名
 
 ### 2026-06-03
 - **Uber 用量上限確認（Bloomberg 獨家）**：Bloomberg 報導 Uber 已正式對 Claude Code 等 AI 工具設定用量上限；是首個明確執行用量管控的大型具名企業

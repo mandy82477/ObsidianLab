@@ -2,7 +2,7 @@
 
 **狀態：** ongoing
 **開始日期：** 2026-04-27
-**最後更新：** 2026-06-02
+**最後更新：** 2026-06-04
 
 ---
 
@@ -226,6 +226,11 @@
 - [Anthropic's definition of safety is too narrow](https://jonathannen.com/anthropic-safety-too-narrow/) — Jonathan Nen
 
 ## 時序
+
+### 2026-06-04
+- **[安全工程] "The ways we contain Claude across products"**（HN 173）：Anthropic 首次系統性公開內部 AI 安全工程架構；涵蓋細粒度 token 權限、沙箱隔離、工具調用審計；強調安全措施降低失敗概率，但「爆炸半徑」隨能力擴張；是目前 Anthropic 最透明的安全部署文件
+- **[威脅報告] AI-enabled 網路威脅 MITRE ATT&CK 對應**：分析 832 個惡意帳號（2025-03~2026-03），與 Verizon 2026 DBIR 合作發布；AI 顯著降低憑證竊取、橫向移動等攻擊技術門檻
+- **[政策聲明] AI CEO 聯署生物武器防範信**：Dario Amodei、Sam Altman、Demis Hassabis、Mustafa Suleyman 聯署，呼籲立法要求合成 DNA/RNA 銷售商篩查客戶訂單防止生物武器開發（Wired）
 
 ### 2026-06-02
 - **[供應鏈攻擊] 637 npm 套件植入 Claude Code SessionStart Hook**：2026-05-19 攻擊（39 分鐘內 323 套件受害）的完整分析發布；惡意程式具體利用 Claude Code hooks 機制，在每次 Claude Code 啟動時執行任意指令；是 Claude Code hooks 系統首次出現在真實供應鏈攻擊中（dev.to 報告）

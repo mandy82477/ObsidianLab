@@ -3,7 +3,7 @@
 **類型：** model
 **狀態：** 公開化中（透過 Claude Code 釋出）
 **首次出現：** 2026-04（限定夥伴 Preview）
-**最後更新：** 2026-06-03
+**最後更新：** 2026-06-04
 
 ---
 
@@ -154,6 +154,12 @@ Anthropic 正式發布「協調漏洞揭露（Coordinated Vulnerability Disclosu
 ### Mythos 準備登陸 Claude Code 與 Claude Security（2026-05-24）
 
 社群發現 Claude Code 與 Claude Security 的 app 字串洩露關鍵訊息：「**Access to the Claude Mythos model in Claude Code and Claude Security**」，顯示 Anthropic 正積極準備將 Mythos 部署至旗下兩個主要開發工具。Anthropic 官方聲明「一般用戶不保證獲得存取」，暗示初期仍將採用限制性推出策略，可能以企業或安全合作夥伴為優先對象。
+
+---
+
+## 2026-06-04 更新
+
+**ICE（美國移民海關執法局）加入 Project Glasswing。** 繼 ENISA（歐盟）之後，美國聯邦執法機構正式加入，顯示 Glasswing 的政府合作夥伴在地理與機構類型上持續擴展。
 
 ---
 

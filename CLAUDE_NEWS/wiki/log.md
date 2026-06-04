@@ -5,6 +5,36 @@ Append-only 紀錄。每次 ingest、query 或 lint 都在此追加一條。
 
 ---
 
+## 2026-06-04 Ingest | news/2026-06-04.md
+
+- 來源日報：`news/2026-06-04.md`（70 則，6 來源；"We contain Claude" 工程博文 HN 173、v2.1.162 waitingFor 可見性、Microsoft AI 主管批 Anthropic 太貴、AI 網路威脅 MITRE 報告、生物武器聯署信、Boxes.dev/agent-browser-shield/Ano 等 5 款新工具）
+- 更新頁面：
+  - `entities/claude-code.md`：新增 v2.1.162（waitingFor、--tools Grep/Glob）；更新最後更新 2026-06-04
+  - `entities/mythos.md`：新增 ICE 加入 Glasswing；更新最後更新 2026-06-04
+  - `topics/anthropic-business.md`：新增 2026-06-04 時序（盈利質疑、Microsoft 嫌貴、流量增長）；更新最後更新 2026-06-04
+  - `topics/enterprise-tool-tracker.md`：新增 2026-06-04 時序（Microsoft AI 主管批 Anthropic 定價）；更新最後更新 2026-06-04
+  - `topics/ai-agent-safety.md`：新增 2026-06-04 時序（"contain Claude" 工程博文、MITRE ATT&CK 報告、生物武器聯署信）；更新最後更新 2026-06-04
+  - `topics/community-tech-tools.md`：新增 5 個工具（Boxes.dev / agent-browser-shield / Ano / Nori-skillsets / AI Gauge）；更新最後更新 2026-06-04
+  - `topics/community-tech-discussions.md`：熱門討論新增 2 條（Skills 18% overhead / "contain Claude" HN 173）；更新最後更新 2026-06-04
+  - `feature-radar.md`：新增 v2.1.162（🔥🔥 ✅）；更新最後更新 2026-06-04
+  - `wiki/index.md`：更新最後更新 2026-06-04
+- 新增頁面：無
+- 呈現品質審查：
+  | 頁面 | 結果 |
+  |------|------|
+  | entities/claude-code.md | ✅ 通過 |
+  | entities/mythos.md | ✅ 通過 |
+  | topics/anthropic-business.md | ✅ 通過 |
+  | topics/enterprise-tool-tracker.md | ✅ 通過 |
+  | topics/ai-agent-safety.md | ✅ 通過（時序 prepend）|
+  | topics/community-tech-tools.md | ✅ 通過（5 工具插入表頭）|
+  | topics/community-tech-discussions.md | ✅ 通過（2 條 prepend）|
+  | feature-radar.md | ✅ 通過 |
+- 本日新增工具：Boxes.dev / agent-browser-shield / Ano / Nori-skillsets / AI Gauge（共 5 個，累積 158 個）
+- feature-radar 更新：v2.1.162（🔥🔥 ✅ agent 監控可見性）
+
+---
+
 ## 2026-06-03 Ingest | news/2026-06-03.md
 
 - 來源日報：`news/2026-06-03.md`（76 則，6 來源；Services Track + Partner Hub 發布、Glasswing 假陽性首批反饋、Uber 用量上限確認、v2.1.161 OTEL 改善、CLAUDE.md 團隊一致性問題、Claudinho/100cc/Lovie 等 6 款新工具）

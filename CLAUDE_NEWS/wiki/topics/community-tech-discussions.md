@@ -2,7 +2,7 @@
 
 **狀態：** ongoing
 **開始日期：** 2026-04-25
-**最後更新：** 2026-06-03
+**最後更新：** 2026-06-04
 
 ---
 
@@ -24,6 +24,8 @@
 | Claude Code 需要自動模型路由？ | 2026-05-31 | 🔥🔥 | ☄️閃現 | 社群呼籲 Claude Code 支援依任務複雜度自動切換 Haiku/Sonnet/Opus，目前仍需手動操作；與「94% token 流向錯誤模型」痛點直接呼應 | — |
 | 10 個 Plugin 同時啟用的真實成本 | 2026-05-31 | 🔥🔥 | ☄️閃現 | 作者啟用 10 個 plugin 後信用耗盡，詳細拆解各 plugin token 成本；與 MCP context bloat（9 伺服器 = 38k tokens）形成最新佐證 | — |
 | Agent Skills Progressive Disclosure 三層架構 | 2026-05-31 | 🔥🔥 | ☄️閃現 | Anthropic 官方 Skills 設計指南：啟動時只讀技能名稱+簡述，命中後按需載入完整內容；是 token 效率與觸發準確度的官方設計取捨 | — |
+| Skills 即使未觸發仍消耗 18% tokens | 2026-06-04 | 🔥🔥🔥 | ☄️閃現 | 7 小時測量：5 個 skill 帶來 18% token overhead，無論是否觸發；推翻「skill 是免費升級」假設，skill 是固定租金 | — |
+| Anthropic 如何限制 Claude 討論（HN 173）| 2026-06-04 | 🔥🔥🔥🔥 | ☄️閃現 | 「12 個月前不可能的存取權限現在是常規」——Anthropic 安全工程透明度首次達此深度；細粒度 token 權限、沙箱、審計三層架構 | — |
 | Claude Code Agent Loop 1,400 行的理由 | 2026-06-03 | 🔥🔥🔥 | ☄️閃現 | 分析 query.ts 的 while(true) 迴圈：9 種條件可在不詢問用戶的情況下持續執行，大多數與任務完成無關；揭示「loop 不是因為任務繼續而繼續」的設計邏輯 | — |
 | 7 個 Cron Agent，2 個靜默失敗 18 天 | 2026-06-03 | 🔥🔥 | ☄️閃現 | 排程 agent 的靜默失敗無法被標準 tracing 捕捉；autonomous agent 可靠性監控缺口首次有具體數字佐證 | — |
 | 5 人團隊有 5 個互相矛盾的 CLAUDE.md | 2026-06-03 | 🔥🔥 | ☄️閃現 | 每人寫自己的規則導致 Claude 行為不一致；團隊 CLAUDE.md 標準化成下一個工程問題 | — |

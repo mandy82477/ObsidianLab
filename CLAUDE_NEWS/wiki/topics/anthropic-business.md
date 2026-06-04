@@ -2,7 +2,7 @@
 
 **狀態：** ongoing
 **開始日期：** 2026-05-28
-**最後更新：** 2026-06-03
+**最後更新：** 2026-06-04
 
 ---
 
@@ -111,6 +111,11 @@ Simon Willison（知名開發者博主）發表文章，認為 Anthropic 與 Ope
 ### 2026-05-31
 - **[內部 Agent 風險管理哲學公開]** Anthropic 工程部落格發布《We contain Claude across products》：12 個月前不可能授予 Claude 影響關鍵服務的存取權，如今已成常態；文章以「爆炸半徑」框架說明隨 agent 能力增長，不部署的機會成本已超過部署風險；是 Anthropic 內部 agentic 思維的第一手揭露（HN 收錄）
 - **[Bloomberg 責任與創新平衡報導]** Bloomberg 分析 Anthropic 在商業擴張與安全責任之間的平衡難題：估值接近兆元的同時，外界對「responsible scaling」承諾能否持續兌現的質疑同步升溫
+
+### 2026-06-04
+- **[盈利質疑]** Ed Zitron 指出 Anthropic「首次盈利」係 SpaceX 臨時算力折扣所致，非真實獲利能力；IPO 前夕財務工程爭議持續
+- **[定價壓力]** Microsoft AI 主管公開批評 Anthropic 定價太貴（Bloomberg）；SCMP：更多美國企業轉向 DeepSeek 因 Anthropic/OpenAI 太貴
+- **[流量信號]** Claude 推薦流量 4 個月增長 386%（101,574 個網站研究）；GitHub Copilot token 計費後用戶遷移 Claude Code（部分首月帳單 $750）
 
 ### 2026-06-03
 - **[生態擴張]** Claude Partner Network Services Track + Partner Hub 正式發布；$1 億美元合作夥伴培訓投資；40,000+ 公司申請加入、10,000 名顧問完成認證；Grant Thornton 為英國員工導入 Claude
