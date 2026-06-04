@@ -1,0 +1,171 @@
+{
+  "date": "2026-06-04",
+  "generatedAt": "2026-06-04 23:11 UTC",
+  "articleCount": 70,
+  "sourceCount": "6/6 | **文章數：** 70 | **更新時間：** 2026-06-04 23:11 UTC",
+  "topStories": [],
+  "techUpdates": [
+    {
+      "title": "[anthropics/claude-code] v2.1.162",
+      "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.162",
+      "source": "GitHub / anthropics/claude-code",
+      "time": "06/03 21:31",
+      "sentiment": "",
+      "body": "① `claude agents --json` 新增 `waitingFor` 欄位，顯示等待中的 session 被什麼阻塞（如 permission prompt）；② `--tools` 明確列出 Grep/Glob 後，提供目錄遍歷能力，無需 Bash 工具——agent 監控可見性與工具控制顯著改善。",
+      "focusTags": []
+    },
+    {
+      "title": "What we learned mapping a year's worth of AI-enabled cyber threats",
+      "url": "https://www.anthropic.com/news/AI-enabled-cyber-threats-mitre-attack",
+      "source": "Anthropic / Hacker News",
+      "time": "06/03 19:16",
+      "sentiment": "",
+      "body": "Anthropic + Verizon DBIR 合作分析 832 個惡意帳號：AI 使攻擊者降低了「縱向移動」和「憑證竊取」的技術門檻；Claude 已被用於真實網路攻擊的自動化，是目前最詳盡的 AI 網路攻擊趨勢分析。",
+      "focusTags": [
+        "[重大事件]"
+      ]
+    }
+  ],
+  "discussions": [
+    {
+      "title": "The ways we contain Claude across products",
+      "url": "https://www.anthropic.com/engineering/how-we-contain-claude",
+      "source": "Hacker News",
+      "time": "06/04 00:27",
+      "sentiment": "",
+      "body": "HN score 173：Anthropic 首次系統性說明內部 AI 安全工程；12 個月前不可能做的事現在是日常，背後是層層安全機制而非盲目信任模型——對所有在生產環境部署 Claude 的工程師有極高參考價值。情緒：🤔",
+      "focusTags": [
+        "[重大事件]"
+      ]
+    },
+    {
+      "title": "Launch HN: Hyper (YC P26) – Company brain for agentic development",
+      "url": "https://news.ycombinator.com/item?id=48387095",
+      "source": "Hacker News",
+      "time": "06/03 17:39",
+      "sentiment": "",
+      "body": "YC P26 新創：MCP 解決了「把資訊放到 agent 前面」，但 session 死後洞察消失；Hyper 建立持久的公司知識庫，讓所有 agent 跨 session 共享 context；HN score 75。情緒：😊",
+      "focusTags": []
+    },
+    {
+      "title": "Show HN: Boxes.dev — cloud-only agentic dev environment",
+      "url": "https://boxes.dev",
+      "source": "Hacker News",
+      "time": "06/04 14:38",
+      "sentiment": "",
+      "body": "每個 Claude Code/Codex agent 都有自己的雲端主機，徹底解決 localhost 並行限制；手機直接使用（非 SSH）；Show HN score 7。情緒：😊",
+      "focusTags": []
+    },
+    {
+      "title": "Show HN: agent-browser-shield — protect AI agents from dark patterns",
+      "url": "https://github.com/pixiebrix/agent-browser-shield",
+      "source": "Hacker News",
+      "time": "06/03 16:23",
+      "sentiment": "",
+      "body": "瀏覽器擴充保護 AI agent 免受網頁暗黑模式（假庫存警告、誘導點擊）操縱；解決「prompting 無效因為 AI 已被污染的 context」問題；Show HN score 7。情緒：😊",
+      "focusTags": []
+    },
+    {
+      "title": "Claude Code Skills Cost Tokens Even When They Don't Fire",
+      "url": "https://dev.to/kenimo49/claude-code-skills-cost-tokens-even-when-they-dont-fire-i-measured-5-skills-across-7-hours-the-8jo",
+      "source": "dev.to / #claudecode",
+      "time": "06/04 05:00",
+      "sentiment": "",
+      "body": "7 小時測量 5 個 skills：不觸發的 skill 仍佔 token 消耗的 **18%**；「Skills 是免費升級」的假設被數據推翻——skill 是租金，不是免費功能。情緒：😤",
+      "focusTags": []
+    },
+    {
+      "title": "Show HN: Ano — team chat with code agent as built-in assistant",
+      "url": "https://ano.chat",
+      "source": "Hacker News",
+      "time": "06/03 14:13",
+      "sentiment": "",
+      "body": "本地優先的輕量 Slack 替代品，以 Claude Code 作為內建 assistant 處理未讀摘要、工具連接（GitHub、Posthog）；Show HN score 6。情緒：😊",
+      "focusTags": []
+    },
+    {
+      "title": "Claude vs Codex comparison",
+      "url": "https://news.ycombinator.com/item?id=48388550",
+      "source": "Hacker News",
+      "time": "06/03 19:18",
+      "sentiment": "",
+      "body": "長期 Claude Code 用戶的切換體驗：4.7/4.8 後明顯退步（遺漏約 25% 需求）；通過比較 Codex 發現輸出品質差距；HN score 5。情緒：😤",
+      "focusTags": []
+    },
+    {
+      "title": "More US firms turn to DeepSeek over pricey Silicon Valley AI",
+      "url": "https://news.google.com/rss/articles/CBMiugFBVV95cUxOZGxDU3ltdm5xUmJPZWxWb3BmRHpaYURjM0NEQmtpc0c0SzlrbnZVdjdzS2xsTHdmRS1tRlZFdnNVMW44WmlfRTgzZTJ4S2llNXBfeUo1cXZ6bTg0cUNINXVldXE5V2pudnc2V1RybU",
+      "source": "Google News / South China Morning Post",
+      "time": "06/03 23:00",
+      "sentiment": "",
+      "body": "SCMP：越來越多美國企業轉向 DeepSeek，理由是 Anthropic/OpenAI 價格過高；在 Microsoft 批評 Anthropic 定價的同日出現，成本壓力是結構性趨勢。情緒：😐",
+      "focusTags": []
+    }
+  ],
+  "billing": [
+    {
+      "title": "Microsoft's AI Chief Says Anthropic Models Are Too Expensive",
+      "url": "https://news.google.com/rss/articles/CBMipgFBVV95cUxOX1Z5SnN2TXZiQXh3YWd5TXBiRmhmMFlCMlV1TTRnR0lxSzhfdEhGYmVSbmEzVGRJVHNPRHQ0MF8yU3g3VXIyY2lrLXlZRlNoRVBvU2ktUnBETUJrRzNnS04yRVdVRkRyX1IycTlrb0RtV1FzclN3RWNYT0JCNTFyNWRqWWNIMWZXYjNKcnRxS3V5ZzlOVkwxQ3c5TkJQbWpTUy1PLUdR",
+      "source": "Google News / Bloomberg.com",
+      "time": "06/04 07:08",
+      "sentiment": "",
+      "body": "Bloomberg：Microsoft AI 主管公開點名 Anthropic 定價問題；緊接 6/30 退出 Claude Code 授權後，是 Microsoft 官方對 Anthropic 定價策略最直接的公開批評。",
+      "focusTags": [
+        "[重大事件]"
+      ]
+    },
+    {
+      "title": "Switch from GitHub Copilot to Claude Code: Migration Guide 2026",
+      "url": "https://dev.to/akaranjkar08/switch-from-github-copilot-to-claude-code-migration-guide-2026-28nk",
+      "source": "dev.to / #claudecode",
+      "time": "06/04 06:38",
+      "sentiment": "",
+      "body": "GitHub Copilot 6/1 改為 token 計費後，部分用戶首個帳單週期達 $750/月；文章對比遷移 Claude Code 的步驟與成本差異。",
+      "focusTags": [
+        "[社群趨勢]"
+      ]
+    }
+  ],
+  "focus": [
+    {
+      "tag": "[重大事件]",
+      "text": "Anthropic 發布工程博文《The ways we contain Claude across products》（HN score 173）：揭示 Anthropic 如何在高存取權限的內部部署中系統性降低 Claude 的「爆炸半徑」——從細粒度權限、沙箱隔離到模型訓練的多層防禦架構，是 Anthropic 迄今最詳盡的 AI 安全工程公開說明。",
+      "ref_urls": [
+        "https://www.anthropic.com/engineering/how-we-contain-claude"
+      ]
+    },
+    {
+      "tag": "[重大事件]",
+      "text": "Microsoft AI 主管公開表示 Anthropic 模型定價太昂貴（Bloomberg）；同日 S&P 500 指數規則調整討論引發 HN 社群討論：指數規則修改可能強制被動投資者在 IPO 時買入 Anthropic 股票而無法事先定價。",
+      "ref_urls": [
+        "https://news.google.com/rss/articles/CBMipgFBVV95cUxOX1Z5SnN2TXZiQXh3YWd5TXBiRmhmMFlCMlV1TTRnR0lxSzhfdEhGYmVSbmEzVGRJVHNPRHQ0MF8yU3g3VXIyY2lrLXlZRlNoRVBvU2ktUnBETUJrRzNnS04yRVdVRkRyX1IycTlrb0RtV1FzclN3RWNYT0JCNTFyNWRqWWNIMWZXYjNKcnRxS3V5ZzlOVkwxQ3c5TkJQbWpTUy1PLUdR",
+        "https://news.ycombinator.com/item?id=48390573"
+      ]
+    },
+    {
+      "tag": "[重大事件]",
+      "text": "Anthropic 發布 AI 網路威脅 MITRE ATT&CK 對應報告（與 Verizon DBIR 合作）：分析 832 個因惡意網路活動被封禁的帳號（2025-03 到 2026-03），揭示 AI 如何改變網路攻擊模式；同日 Anthropic、OpenAI、Google DeepMind、Microsoft AI CEO 聯署信呼籲國會立法防止 AI 輔助生物武器開發。",
+      "ref_urls": [
+        "https://www.anthropic.com/news/AI-enabled-cyber-threats-mitre-attack",
+        "https://www.wired.com/story/openai-anthropic-letter-ai-biological-weapons/"
+      ]
+    },
+    {
+      "tag": "[風險警示]",
+      "text": "Anthropic 盈利聲明受質疑（Ed Zitron，HN score 8）：所謂「首次盈利」僅因 SpaceX 給予臨時算力折扣，製造出兩個月的盈利期；IPO 前夕的財務工程質疑對估值論述構成壓力。",
+      "ref_urls": [
+        "https://www.youtube.com/watch?v=zbKDmkJPVvI"
+      ]
+    },
+    {
+      "tag": "[社群趨勢]",
+      "text": "Claude 的推薦流量 4 個月增長 386%（101,574 個網站研究）；GitHub Copilot 轉為 token 計費後部分用戶單月費用衝至 $750，掀起遷移 Claude Code 浪潮。",
+      "ref_urls": [
+        "https://www.reddit.com/r/ClaudeAI/comments/1twhqty/claudes_referral_traffic_grew_386_in_4_monthsbut/",
+        "https://dev.to/akaranjkar08/switch-from-github-copilot-to-claude-code-migration-guide-2026-28nk"
+      ]
+    }
+  ],
+  "sourceStatus": [],
+  "preview": "[anthropics/claude-code] v2.1.162"
+}
