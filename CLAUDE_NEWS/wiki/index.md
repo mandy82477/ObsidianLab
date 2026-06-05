@@ -2,7 +2,7 @@
 
 LLM 查詢此 wiki 時，**先讀這個檔案**找相關頁面，再讀具體頁面取得詳細資訊。
 
-**最後更新：** 2026-06-04 | **頁面數：** 35
+**最後更新：** 2026-06-05 | **頁面數：** 36
 
 ---
 
@@ -55,6 +55,7 @@ LLM 查詢此 wiki 時，**先讀這個檔案**找相關頁面，再讀具體頁
 | [[topics/enterprise-tool-tracker]]     | ongoing    | 大型企業 AI 編碼工具使用追蹤：Microsoft/Amazon/Uber/Apple 等企業當前工具選擇與變化軌跡                  |
 | [[topics/community-tech-timeline]]     | ongoing    | 社群技術應用趨勢完整時序（2026-04-25 至今），從 community-tech-patterns 拆分                         |
 | [[topics/anthropic-business]]          | ongoing    | Anthropic 商業健康度：企業採用率 34.4%、17 倍訂閱補貼、PMF 觀察、Microsoft 退出風險 |
+| [[topics/recursive-self-improvement]]  | ongoing    | AI 遞歸自我改進與全球暫停呼籲：Claude 已寫 80-90% Anthropic 程式碼、工程師代碼產出 8×、全球 AI 煞車踏板呼籲 |
 
 ---
 

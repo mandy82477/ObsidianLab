@@ -2,7 +2,7 @@
 
 **狀態：** ongoing
 **開始日期：** 2026-04-25
-**最後更新：** 2026-06-04
+**最後更新：** 2026-06-05
 
 ---
 
@@ -67,6 +67,9 @@
 | [**Lite-Harness**](https://github.com/LiteLLM-Labs/lite-harness) | 多 agent 協調 | ⏳ | 2026-05-31 | 自架 agent harness 伺服器 Dockerfile，開箱即用提供 memory、durable sessions、cron 排程與 vault；支援 Claude Code 與 OpenCode；HN score 6 |
 | [**Arch-Decision**](https://github.com/jsingh6/arch-decision) | 工作流 | ⏳ | 2026-05-31 | 多代理架構決策工具，協助 Claude Code 使用者在開發前梳理架構選擇與 ADR 記錄；HN score 3 |
 | [**claude-skills**](https://github.com/glebis/claude-skills) | Skills | ⏳ | 2026-05-31 | 社群整理的 Claude Code Skills 集合，涵蓋多種常見開發場景；Show HN 入選；HN score 3 |
+| [**FirstDraft**](https://firstdraft.run) | CI/自動化 | ⏳ | 2026-06-05 | AI workers 自動監看 Jira、認領任務、push branch、開 draft PR；支援 Claude Code + Codex；Show HN score 3 |
+| [**Claude-o-meter**](https://github.com/joshcarter/claude-o-meter) | 用量監控 | ⏳ | 2026-06-05 | 仿 1980s Corvette 儀錶的 token 燃燒率顯示；紅線 = 剛好在 5 小時結束時耗盡 tokens；Show HN score 2 |
+| [**Resume**](https://pennyroyaltea.github.io/resume/) | Session 管理 | ⏳ | 2026-06-05 | CLI 管理 Claude Code + Codex sessions；支援 session 篩選與切換；Show HN score 2 |
 | [**Boxes.dev**](https://boxes.dev) | 雲端 IDE | ⏳ | 2026-06-04 | 每個 Claude Code/Codex agent 都有獨立雲端主機，徹底解決 localhost 並行限制；支援手機直接使用；Show HN score 7 |
 | [**agent-browser-shield**](https://github.com/pixiebrix/agent-browser-shield) | 安全/防護 | ⏳ | 2026-06-04 | 瀏覽器擴充保護 AI agent 免受網頁暗黑模式（假庫存、誘導點擊）操縱；Show HN score 7 |
 | [**Ano**](https://ano.chat) | 團隊溝通 | ⏳ | 2026-06-04 | 輕量 Slack 替代品，以 Claude Code 為內建 assistant；本地優先；Show HN score 6 |

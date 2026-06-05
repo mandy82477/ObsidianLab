@@ -2,7 +2,7 @@
 
 **狀態：** ongoing
 **開始日期：** 2026-04-27
-**最後更新：** 2026-06-04
+**最後更新：** 2026-06-05
 
 ---
 
@@ -226,6 +226,11 @@
 - [Anthropic's definition of safety is too narrow](https://jonathannen.com/anthropic-safety-too-narrow/) — Jonathan Nen
 
 ## 時序
+
+### 2026-06-05
+- **[遞歸自我改進報告]** Anthropic Institute《When AI Builds Itself》（HN 477）：AI 已在加速 AI 開發，工程師代碼產出 8×；見 [[topics/recursive-self-improvement]]
+- **[開源防禦框架]** Anthropic 開源 `defending-code-reference-harness`（HN 471）：AI 驅動漏洞發現參考架構，10K input tokens/min per agent
+- **[MCP 安全問題]** CSO Online：Claude Code 的 MCP 安全問題——企業尚未完全評估 MCP 攻擊面擴大
 
 ### 2026-06-04
 - **[安全工程] "The ways we contain Claude across products"**（HN 173）：Anthropic 首次系統性公開內部 AI 安全工程架構；涵蓋細粒度 token 權限、沙箱隔離、工具調用審計；強調安全措施降低失敗概率，但「爆炸半徑」隨能力擴張；是目前 Anthropic 最透明的安全部署文件

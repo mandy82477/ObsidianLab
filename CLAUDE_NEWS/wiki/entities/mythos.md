@@ -3,7 +3,7 @@
 **類型：** model
 **狀態：** 公開化中（透過 Claude Code 釋出）
 **首次出現：** 2026-04（限定夥伴 Preview）
-**最後更新：** 2026-06-04
+**最後更新：** 2026-06-05
 
 ---
 
@@ -154,6 +154,14 @@ Anthropic 正式發布「協調漏洞揭露（Coordinated Vulnerability Disclosu
 ### Mythos 準備登陸 Claude Code 與 Claude Security（2026-05-24）
 
 社群發現 Claude Code 與 Claude Security 的 app 字串洩露關鍵訊息：「**Access to the Claude Mythos model in Claude Code and Claude Security**」，顯示 Anthropic 正積極準備將 Mythos 部署至旗下兩個主要開發工具。Anthropic 官方聲明「一般用戶不保證獲得存取」，暗示初期仍將採用限制性推出策略，可能以企業或安全合作夥伴為優先對象。
+
+---
+
+## 2026-06-05 更新
+
+**NSA 使用 Mythos 發動網路攻擊（FT 獨家，HN 89）。** Financial Times 報導美國 NSA 正在使用 Anthropic Mythos 發動進攻性網路攻擊，是 Glasswing「防禦」框架兩用性的首次公開確認。同日 Anthropic 開源 `defending-code-reference-harness`（HN 471）作為防禦工具，呈現「同源攻防」格局。
+
+同日：Anthropic AI 發現 Zcash（ZEC）Orchard pool 存在無限偽造漏洞（自 2022 年存在），ZEC 價格在漏洞細節披露後暴跌 30%——是 Mythos 級別漏洞發現能力的最新公開案例。
 
 ---
 

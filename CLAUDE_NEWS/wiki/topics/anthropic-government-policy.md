@@ -2,7 +2,7 @@
 
 **狀態：** monitoring
 **開始日期：** 2026-05-01
-**最後更新：** 2026-06-01
+**最後更新：** 2026-06-05
 
 ---
 
@@ -62,6 +62,12 @@
 - [AP News：Pope calls for robust regulation of AI](https://apnews.com/article/pope-ai-tech-trump-vatican-anthropic-d92d0108730d146baa46da041b8523da)
 
 ## 時序
+
+### 2026-06-05
+- **[NSA 攻擊使用 Mythos]** FT 獨家（HN 89）：NSA 正在使用 Anthropic Mythos 發動進攻性網路攻擊——Glasswing「防禦」框架的兩用性首次公開確認
+- **[白宮緩和]** Reuters：白宮與 Anthropic（曾被列「安全風險」）在 IPO 前緩和緊張關係
+- **[Hegseth 確認]** Politico：Hegseth（美國防部長）再次確認 Anthropic 的安全風險認定，壓力未完全解除
+- **[遞歸自我改進呼籲]** Anthropic 呼籲全球 AI 暫停，Jack Clark 稱需要「brake pedal」；見 [[topics/recursive-self-improvement]]
 
 ### 2026-06-01
 - **[Mythos EU 部署]** Anthropic 向 ENISA（歐盟網路安全局）提供 Mythos 存取，為首個獲准的歐洲政府機構；英國銀行遭拒，OpenAI 主動接觸提出替代方案（FT、MLex、BBC）

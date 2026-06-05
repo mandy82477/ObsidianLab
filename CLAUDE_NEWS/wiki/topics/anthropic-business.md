@@ -2,7 +2,7 @@
 
 **狀態：** ongoing
 **開始日期：** 2026-05-28
-**最後更新：** 2026-06-04
+**最後更新：** 2026-06-05
 
 ---
 
@@ -111,6 +111,11 @@ Simon Willison（知名開發者博主）發表文章，認為 Anthropic 與 Ope
 ### 2026-05-31
 - **[內部 Agent 風險管理哲學公開]** Anthropic 工程部落格發布《We contain Claude across products》：12 個月前不可能授予 Claude 影響關鍵服務的存取權，如今已成常態；文章以「爆炸半徑」框架說明隨 agent 能力增長，不部署的機會成本已超過部署風險；是 Anthropic 內部 agentic 思維的第一手揭露（HN 收錄）
 - **[Bloomberg 責任與創新平衡報導]** Bloomberg 分析 Anthropic 在商業擴張與安全責任之間的平衡難題：估值接近兆元的同時，外界對「responsible scaling」承諾能否持續兌現的質疑同步升溫
+
+### 2026-06-05
+- **[遞歸自我改進報告]** Claude 現在負責 Anthropic 80-90% 生產程式碼；工程師代碼交付量 8× 提升；Anthropic 呼籲全球 AI 暫停——同時在 IPO 路上，被社群廣泛質疑
+- **[白宮緩和]** Reuters：白宮與被列「安全風險」的 Anthropic 在 IPO 前正在緩和緊張關係
+- **[Daniela Amodei]** TechCrunch：Daniela Amodei IPO 前「對 AI 回報的質疑不以為意」
 
 ### 2026-06-04
 - **[盈利質疑]** Ed Zitron 指出 Anthropic「首次盈利」係 SpaceX 臨時算力折扣所致，非真實獲利能力；IPO 前夕財務工程爭議持續

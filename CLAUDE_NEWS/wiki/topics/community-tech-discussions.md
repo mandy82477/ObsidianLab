@@ -2,7 +2,7 @@
 
 **狀態：** ongoing
 **開始日期：** 2026-04-25
-**最後更新：** 2026-06-04
+**最後更新：** 2026-06-05
 
 ---
 
@@ -24,6 +24,7 @@
 | Claude Code 需要自動模型路由？ | 2026-05-31 | 🔥🔥 | ☄️閃現 | 社群呼籲 Claude Code 支援依任務複雜度自動切換 Haiku/Sonnet/Opus，目前仍需手動操作；與「94% token 流向錯誤模型」痛點直接呼應 | — |
 | 10 個 Plugin 同時啟用的真實成本 | 2026-05-31 | 🔥🔥 | ☄️閃現 | 作者啟用 10 個 plugin 後信用耗盡，詳細拆解各 plugin token 成本；與 MCP context bloat（9 伺服器 = 38k tokens）形成最新佐證 | — |
 | Agent Skills Progressive Disclosure 三層架構 | 2026-05-31 | 🔥🔥 | ☄️閃現 | Anthropic 官方 Skills 設計指南：啟動時只讀技能名稱+簡述，命中後按需載入完整內容；是 token 效率與觸發準確度的官方設計取捨 | — |
+| Anthropic 邊呼籲 AI 暫停邊衝 IPO（遞歸自我改進報告）| 2026-06-05 | 🔥🔥🔥🔥🔥 | ☄️閃現 | Claude 寫 80-90% Anthropic 程式碼；工程師代碼產出 8×；呼籲全球暫停機制——同時 IPO 估值 $965B；「既當裁判又當球員」批評廣泛 | [[topics/recursive-self-improvement]] |
 | Skills 即使未觸發仍消耗 18% tokens | 2026-06-04 | 🔥🔥🔥 | ☄️閃現 | 7 小時測量：5 個 skill 帶來 18% token overhead，無論是否觸發；推翻「skill 是免費升級」假設，skill 是固定租金 | — |
 | Anthropic 如何限制 Claude 討論（HN 173）| 2026-06-04 | 🔥🔥🔥🔥 | ☄️閃現 | 「12 個月前不可能的存取權限現在是常規」——Anthropic 安全工程透明度首次達此深度；細粒度 token 權限、沙箱、審計三層架構 | — |
 | Claude Code Agent Loop 1,400 行的理由 | 2026-06-03 | 🔥🔥🔥 | ☄️閃現 | 分析 query.ts 的 while(true) 迴圈：9 種條件可在不詢問用戶的情況下持續執行，大多數與任務完成無關；揭示「loop 不是因為任務繼續而繼續」的設計邏輯 | — |

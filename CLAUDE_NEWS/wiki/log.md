@@ -5,6 +5,36 @@ Append-only 紀錄。每次 ingest、query 或 lint 都在此追加一條。
 
 ---
 
+## 2026-06-05 Ingest | news/2026-06-05.md
+
+- 來源日報：`news/2026-06-05.md`（88 則，6 來源；遞歸自我改進報告 HN 477、NSA 使用 Mythos 攻擊（FT）、全球 AI 暫停呼籲全媒體覆蓋、Zcash 漏洞 ZEC-30%、v2.1.165、Skills 官方指南、FirstDraft/Claude-o-meter/Resume 3 工具）
+- 更新頁面：
+  - `entities/claude-code.md`：新增 v2.1.165；更新最後更新 2026-06-05
+  - `entities/mythos.md`：新增 NSA Mythos 攻擊（FT）、Zcash 漏洞 ZEC-30%、開源防禦框架；更新最後更新 2026-06-05
+  - `topics/anthropic-business.md`：新增 2026-06-05 時序（遞歸自我改進、白宮緩和、Daniela Amodei）；更新最後更新 2026-06-05
+  - `topics/anthropic-government-policy.md`：新增 2026-06-05 時序（NSA Mythos 攻擊、白宮緩和、Hegseth 確認、暫停呼籲）；更新最後更新 2026-06-05
+  - `topics/ai-agent-safety.md`：新增 2026-06-05 時序（遞歸自我改進報告、開源防禦框架、MCP 安全問題）；更新最後更新 2026-06-05
+  - `topics/community-tech-tools.md`：新增 3 個工具（FirstDraft / Claude-o-meter / Resume）；更新最後更新 2026-06-05
+  - `topics/community-tech-discussions.md`：熱門討論 prepend（遞歸自我改進 + IPO 矛盾，🔥🔥🔥🔥🔥）；更新最後更新 2026-06-05
+  - `feature-radar.md`：新增 v2.1.165（🔥 ✅）；更新最後更新 2026-06-05
+  - `wiki/index.md`：新增 topics/recursive-self-improvement；頁面數 35→36；更新最後更新 2026-06-05
+- 新增頁面：`topics/recursive-self-improvement.md`（AI 遞歸自我改進與全球暫停呼籲）
+- 呈現品質審查：
+  | 頁面 | 結果 |
+  |------|------|
+  | topics/recursive-self-improvement.md | ✅ 通過（新建，摘要清晰，指標表緊接摘要）|
+  | entities/mythos.md | ✅ 通過（新增段落，獨立可讀）|
+  | topics/anthropic-business.md | ✅ 通過（時序 prepend）|
+  | topics/anthropic-government-policy.md | ✅ 通過（時序 prepend）|
+  | topics/ai-agent-safety.md | ✅ 通過（時序 prepend）|
+  | topics/community-tech-tools.md | ✅ 通過（3 工具插入表頭）|
+  | topics/community-tech-discussions.md | ✅ 通過（1 條 prepend）|
+  | feature-radar.md | ✅ 通過（全覽表更新）|
+- 本日新增工具：FirstDraft / Claude-o-meter / Resume（共 3 個，累積 161 個）
+- feature-radar 更新：v2.1.165（🔥 ✅）
+
+---
+
 ## 2026-06-04 Ingest | news/2026-06-04.md
 
 - 來源日報：`news/2026-06-04.md`（70 則，6 來源；"We contain Claude" 工程博文 HN 173、v2.1.162 waitingFor 可見性、Microsoft AI 主管批 Anthropic 太貴、AI 網路威脅 MITRE 報告、生物武器聯署信、Boxes.dev/agent-browser-shield/Ano 等 5 款新工具）
