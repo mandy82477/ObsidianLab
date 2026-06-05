@@ -1,0 +1,162 @@
+{
+  "date": "2026-06-05",
+  "generatedAt": "2026-06-05 21:48 UTC",
+  "articleCount": 88,
+  "sourceCount": "6/6 | **文章數：** 88 | **更新時間：** 2026-06-05 21:48 UTC",
+  "topStories": [],
+  "techUpdates": [
+    {
+      "title": "[anthropics/claude-code] v2.1.165",
+      "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.165",
+      "source": "GitHub / anthropics/claude-code",
+      "time": "06/05 05:45",
+      "sentiment": "",
+      "body": "Bug fixes and reliability improvements（無具體功能說明）。",
+      "focusTags": []
+    },
+    {
+      "title": "Anthropic open-sources defending-code-reference-harness",
+      "url": "https://github.com/anthropics/defending-code-reference-harness",
+      "source": "GitHub / anthropics / Hacker News",
+      "time": "06/04 20:11",
+      "sentiment": "",
+      "body": "AI 驅動漏洞發現的開源框架；以 10K uncached tokens/min + 2K output tokens/min per agent 為基準；支援平行擴展；HN 471 分——背景是 NSA Mythos 攻擊報導同日發布。",
+      "focusTags": [
+        "[重大事件]"
+      ]
+    },
+    {
+      "title": "Lessons from building Claude Code: How we use skills",
+      "url": "https://claude.com/blog/lessons-from-building-claude-code-how-we-use-skills",
+      "source": "claude.com Blog / Hacker News",
+      "time": "06/05 00:09",
+      "sentiment": "",
+      "body": "Anthropic 內部數百個 Skills 的第一手心得：什麼類型的 skill 值得做、如何結構化（文件、腳本、資源）、何時與他人分享；是目前最權威的官方 Skills 設計指南。",
+      "focusTags": [
+        "[重大事件]"
+      ]
+    }
+  ],
+  "discussions": [
+    {
+      "title": "When AI Builds Itself: Anthropic's recursive self-improvement report",
+      "url": "https://www.anthropic.com/institute/recursive-self-improvement",
+      "source": "Hacker News",
+      "time": "06/04 16:20",
+      "sentiment": "",
+      "body": "HN 477：Claude 已寫 Anthropic 80-90% 程式碼；「12 個月前不可能的事今天是常規」；呼籲全球協調暫停機制——社群批評：Anthropic 同時在 IPO 路上喊暫停，是競爭策略還是真誠警告？情緒：🤔",
+      "focusTags": [
+        "[重大事件]"
+      ]
+    },
+    {
+      "title": "NSA using Anthropic's Mythos for cyber attacks",
+      "url": "https://www.ft.com/content/d02d91b3-2636-454e-9442-dc7e69f51815",
+      "source": "Hacker News",
+      "time": "06/04 20:33",
+      "sentiment": "",
+      "body": "FT 獨家，HN 89：NSA 用 Mythos 發動網路攻擊——正式確認 Glasswing 框架的「防禦用途」背後也有進攻方；Anthropic 的安全使命定位面臨最直接的質疑。情緒：😐",
+      "focusTags": [
+        "[重大事件]"
+      ]
+    },
+    {
+      "title": "Show HN: Lessons learned from running Claude Code swarms at scale",
+      "url": "https://news.ycombinator.com/item?id=48407998",
+      "source": "Hacker News",
+      "time": "06/05 04:34",
+      "sentiment": "",
+      "body": "HN 7：10-15 個並行 agent 的實戰心得——限制消耗得極快，需要深入理解哪些限制先到；Python orchestrator + 集中 SQLite DB + 自訂 UI；實用的大規模 agent 管理分享。情緒：😊",
+      "focusTags": []
+    },
+    {
+      "title": "Migrating Svelte 4 to 5 with Claude Code in a day",
+      "url": "https://www.atolio.com/blog/svelte-4-to-5-migration-with-claude-code",
+      "source": "Hacker News",
+      "time": "06/04 15:19",
+      "sentiment": "",
+      "body": "HN 4：數千個文件的框架遷移，人工花幾個月準備詳盡 prompt，讓 Claude Code 在週五下午跑 6 小時完成；QA 只發現一個 bug——「思考在前，AI 出力」的代表案例。情緒：😊",
+      "focusTags": []
+    },
+    {
+      "title": "Claude Code MCP security problem",
+      "url": "https://news.google.com/rss/articles/CBMixgFBVV95cUxOQktBZGE1U1VQU0ZpY1ozLWk0b1ByeTJEakdlc0ZmVjZ0UjdCcm9IWi1mSGJ3SlVsdFNyUko2Z2RDb2Q1VF92TFY3ZGh5ZGZRSHdmN2xDN2ltZ1BaNE5nQzQ0MFo0a1Z1VXYxaXU1bEFlclY1MUlkX01sOHp3M29hSGExUnpKUWc4NXdaQlhaYk5QNUxpQXRjcFI0NEMwRnJhQmN6VVJRUkZVaGlLX1VrZWtKYTA0RUdyQXdQc05VZ1ZjS0tmS2c",
+      "source": "Google News / csoonline.com",
+      "time": "06/05 01:03",
+      "sentiment": "",
+      "body": "CSO Online：Claude Code 的 MCP 安全問題——開發者正在使用但企業還未完全評估 MCP 帶來的攻擊面擴大；與 Glasswing/NSA 報導同日出現。情緒：😤",
+      "focusTags": []
+    },
+    {
+      "title": "Show HN: FirstDraft — AI workers that claim Jira tickets and open PRs",
+      "url": "https://firstdraft.run",
+      "source": "Hacker News",
+      "time": "06/04 19:04",
+      "sentiment": "",
+      "body": "HN 3：Claude Code/Codex 自動監看 Jira board、認領任務、push branch、開 draft PR；建構者用 FirstDraft 建構 FirstDraft——適合小型重複性 bug 票。情緒：😊",
+      "focusTags": []
+    }
+  ],
+  "billing": [
+    {
+      "title": "Claude Agent SDK Cost Tracking — what to do before June 15, 2026",
+      "url": "https://dev.to/muhammad_moeed/claude-agent-sdk-cost-tracking-what-to-do-before-june-15-2026-2dl9",
+      "source": "dev.to / #anthropic",
+      "time": "06/05 03:40",
+      "sentiment": "",
+      "body": "6/15 起 `claude -p`、GitHub Actions、第三方 agent 從訂閱池移至獨立信用計費（$20 初始信用）；文章整理如何事前追蹤 agent SDK 成本。",
+      "focusTags": []
+    },
+    {
+      "title": "AI startup saves $30K/month from OpenAI/Anthropic pricing quirk",
+      "url": "https://news.google.com/rss/articles/CBMiowFBVV95cUxQdUc0NlRnUVZVdVpQZzhjQjZGZi1DZzQ4TXVJNDFEVkJfcjl4MGtHTjluZDlBd1JJV3d5NXctZFBJNGdwWWs1djFiS01Uc1hZQllIbmx6ZGViWkZXNzR4YUp2cGVaQ0tNVGxmb2R0T3gtX0dXNVpIdmtRTEFzQmVCRWtORUI5WHhCVWMxbEpKUmlXdUQtZ0pmeVY0MVpEZFB3UlhF",
+      "source": "Google News / Business Insider",
+      "time": "06/05 01:00",
+      "sentiment": "",
+      "body": "Business Insider：某 AI 新創利用 OpenAI/Anthropic 定價機制的「quirk」每月節省 $3 萬；揭示 API 計費設計中存在可優化的結構空間。",
+      "focusTags": []
+    }
+  ],
+  "focus": [
+    {
+      "tag": "[重大事件]",
+      "text": "Anthropic Institute 發布《When AI Builds Itself》報告（HN 477）：AI 正在加速其自身的開發——Anthropic 工程師平均每人可交付的程式碼量已提升 8 倍；報告首次披露 Claude 現在負責 Anthropic 超過 **80-90% 的生產程式碼**；並呼籲業界在「遞歸自我改進」成真之前建立全球協調的暫停機制（「煞車踏板」）。",
+      "ref_urls": [
+        "https://www.anthropic.com/institute/recursive-self-improvement"
+      ]
+    },
+    {
+      "tag": "[重大事件]",
+      "text": "FT 獨家報導：**美國 NSA 正在使用 Anthropic 的 Mythos 發動網路攻擊**（HN 89）——這是 Glasswing「防禦」框架背後真正的兩用性首次公開確認；同日 Anthropic 開源防禦框架 `defending-code-reference-harness`（HN 471），聲稱用於漏洞發現。",
+      "ref_urls": [
+        "https://www.ft.com/content/d02d91b3-2636-454e-9442-dc7e69f51815",
+        "https://github.com/anthropics/defending-code-reference-harness"
+      ]
+    },
+    {
+      "tag": "[重大事件]",
+      "text": "Anthropic 的全球 AI 暫停呼籲引發全媒體覆蓋：WSJ、NYT、BBC、Bloomberg、CNN、Reuters、ABC、Telegraph、France 24 等全球媒體同步報導；Jack Clark 稱需要「煞車踏板」——同日 Reuters 報導白宮與 Anthropic 的緊張關係在 IPO 前正在緩和。",
+      "ref_urls": [
+        "https://www.wsj.com/tech/ai/anthropic-urges-global-pause-in-ai-development-flags-self-improvement-risk-99cefb73",
+        "https://news.google.com/rss/articles/CBMi2wFBVV95cUxNbzBTUlhlNzdLejQ4LTZzMlJpZXBQalFXanV0NThyYnNTVEI2SWRHRUpqN2ZxVHc2MTBuYVJUN1RLc25xY3QxN0szY1BhWDFDLTZrQjhjOWpTR0xRN0NnYmJWLVBWSTFvXzUyTmZISFpMMFpTWkVOUFhDRnZobWpRWFJWa3RNdTRaaEE1ODRpdkd4RXZxRTd2UnlPT3lCX0paNmlzZnZLRE14R2U0TlR4dlBXMjJyX1FSbjJOWkFfejcxMXJ3VmZiOVNiNGtGNUhYZVJYN0RWdnZZVFE"
+      ]
+    },
+    {
+      "tag": "[風險警示]",
+      "text": "Anthropic AI 發現 Zcash（ZEC）Orchard pool 存在無限偽造漏洞（2022 年起存在），ZEC 價格暴跌 30%；同日 Politico 報導 Hegseth（美國國防部長）再次確認 Anthropic 的安全風險認定——一邊是 NSA 用 Mythos 攻擊，一邊是官方安全風險標籤。",
+      "ref_urls": [
+        "https://www.tradingview.com/news/cointelegraph:52f56f35b094b:0-zec-drops-30-after-anthropic-ai-finds-zcash-counterfeit-vulnerability/",
+        "https://news.google.com/rss/articles/CBMingFBVV95cUxNT3U4QV84NjlESFlKcjBJNkJWeEwyZ3BURV9Yc0R2VGY1NzdManhGbUkySmFpR0RQTE5OMDVQZU43dDI0VGVralJ1N0w4UkkzMFBad2daN1dSbXN5bm9NTXJqd0lCY3RuY1kyZnVKMDVwbzhFajZ2cmdSblVOelRUaVprSmxpVUJ1ZC14c2luMW9wVWNaTzRZUE5hRDJnUQ"
+      ]
+    },
+    {
+      "tag": "[重大事件]",
+      "text": "Anthropic 官方發布《Lessons from building Claude Code: How we use skills》（claude.com blog）：Anthropic 內部數百個 Skills 的實戰心得——什麼值得做成 skill、如何結構化、何時分享；是目前最權威的 Claude Code Skills 設計指南。",
+      "ref_urls": [
+        "https://claude.com/blog/lessons-from-building-claude-code-how-we-use-skills"
+      ]
+    }
+  ],
+  "sourceStatus": [],
+  "preview": "[anthropics/claude-code] v2.1.165"
+}
