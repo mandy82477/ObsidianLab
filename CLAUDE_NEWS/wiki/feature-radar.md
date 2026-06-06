@@ -4,7 +4,7 @@
 僅收錄官方 changelog、release note 或官方公告來源；社群工具見 [[topics/community-tech-tools]]。
 每次 ingest 後由 LLM 維護：新增功能、更新熱度、補充社群回饋。
 
-**最後更新：** 2026-06-06（v2.1.167 bug fixes；Python SDK v0.106.0 標記 Opus 4.1 棄用）
+**最後更新：** 2026-06-06（Python SDK v0.106.0 標記 Opus 4.1 棄用）
 
 ---
 
@@ -29,17 +29,13 @@
 
 | 功能 | 發布日期 | 熱度 | 試用價值 | 狀態 |
 |------|----------|------|----------|------|
-| Claude Code v2.1.167（Bug fixes + reliability） | 2026-06-06 | 🔥 | ✅ 推薦 | 正式發布（無具體功能說明）|
 | Python SDK v0.106.0（Claude Opus 4.1 標記棄用） | 2026-06-06 | 🔥 | ✅ 推薦 | 正式發布（開發者應遷移至新版模型 ID）|
-| Claude Code v2.1.165（Bug fixes + reliability） | 2026-06-05 | 🔥 | ✅ 推薦 | 正式發布（無具體功能說明）|
 | Claude Code v2.1.162（`waitingFor` 可見性 + `--tools` Grep/Glob 目錄遍歷） | 2026-06-04 | 🔥🔥 | ✅ 推薦 | 正式發布（agent 監控可見性顯著改善）|
 | Claude Code v2.1.161（OTEL metrics 標籤 + claude agents 改善） | 2026-06-03 | 🔥🔥 | ✅ 推薦 | 正式發布（企業可觀測性提升）|
 | Claude Code v2.1.160（shell 安全修復 + `workflow`→`ultracode` rename） | 2026-06-02 | 🔥🔥🔥 | ✅ 推薦 | 正式發布（⚠️ Breaking: `workflow` 更名為 `ultracode`）|
-| Claude Code v2.1.159（內部基礎設施更新） | 2026-06-01 | 🔥 | ✅ 推薦 | 正式發布（無使用者端變更）|
 | Claude Code v2.1.158（Auto mode on Bedrock/Vertex/Foundry） | 2026-05-30 | 🔥🔥 | ✅ 推薦 | 正式發布 |
 | Claude Opus 4.8（SWE-bench Pro 69.2%、1M context、Fast Mode 1/3 費用） | 2026-05-28 | 🔥🔥🔥🔥🔥 | ⚡ 有條件推薦 | 正式發布 |
 | Dynamic Workflows（最多 1,000 平行子代理） | 2026-05-28 | 🔥🔥🔥🔥 | ❌ 暫不推薦 | Research Preview（UltraCode 1.7M token bug，無退款）|
-| Claude Code v2.1.156（修復 Opus 4.8 thinking blocks 400 錯誤） | 2026-05-29 | 🔥🔥 | ✅ 推薦 | 正式發布 |
 | `skipLfs` 選項 + npm 版本通知（v2.1.153） | 2026-05-28 | 🔥 | ⚡ 有條件推薦 | 正式發布 |
 | Coordinator 模式 + `/code-review --fix`（v2.1.152） | 2026-05-27 | 🔥🔥🔥🔥 | ✅ 推薦 | 正式發布 |
 | 小企業 Skills（31 個官方 Skills） | 2026-05-24 | 🔥🔥🔥 | ✅ 推薦 | 正式發布 |
