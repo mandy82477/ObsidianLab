@@ -1,0 +1,313 @@
+{
+  "date": "2026-06-06",
+  "generatedAt": "2026-06-06 23:13 UTC",
+  "articleCount": 70,
+  "sourceCount": "6/6 | **文章數：** 70 | **更新時間：** 2026-06-06 23:13 UTC",
+  "topStories": [],
+  "techUpdates": [
+    {
+      "title": "[anthropics/claude-code] v2.1.167",
+      "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.167",
+      "source": "GitHub / anthropics/claude-code",
+      "time": "06/06 01:33",
+      "sentiment": "",
+      "body": "Bug 修復與穩定性改進，版本持續快速迭代。本日發布，前一版本 v2.1.165 仍有使用者回報 Ollama 整合問題（32000 token 限制錯誤）。",
+      "focusTags": [
+        "[技術更新]"
+      ]
+    },
+    {
+      "title": "[anthropics/anthropic-sdk-python] v0.106.0",
+      "url": "https://github.com/anthropics/anthropic-sdk-python/releases/tag/v0.106.0",
+      "source": "GitHub / anthropics/anthropic-sdk-python",
+      "time": "06/05 21:13",
+      "sentiment": "",
+      "body": "正式標記 Claude Opus 4.1 為棄用（deprecated），開發者應遷移至新版本。完整 changelog 對比 v0.105.2。",
+      "focusTags": [
+        "[技術更新]"
+      ]
+    },
+    {
+      "title": "[anthropics/anthropic-sdk-typescript] vertex-sdk: v0.17.0",
+      "url": "https://github.com/anthropics/anthropic-sdk-typescript/releases/tag/vertex-sdk-v0.17.0",
+      "source": "GitHub / anthropics/anthropic-sdk-typescript",
+      "time": "06/05 19:48",
+      "sentiment": "",
+      "body": "TypeScript SDK 的 Vertex 整合版本更新至 v0.17.0，補齊平台功能。",
+      "focusTags": [
+        "[技術更新]"
+      ]
+    },
+    {
+      "title": "Anthropic's Advanced Tool Use Platform: Programmatic Calling, Advisor Strategy, and the Future of Claude Agents",
+      "url": "https://dev.to/docdavkitty/anthropics-advanced-tool-use-platform-programmatic-calling-advisor-strategy-and-the-future-of-523d",
+      "source": "dev.to / #anthropic",
+      "time": "06/06 01:38",
+      "sentiment": "",
+      "body": "報導 Anthropic 代理基礎設施功能已從 Research Preview 進入公開 Beta，包含 programmatic tool calling 與 advisor 策略，值得開發者追蹤。",
+      "focusTags": []
+    },
+    {
+      "title": "Making Claude a Chemist",
+      "url": "https://www.anthropic.com/research/making-claude-a-chemist",
+      "source": "Hacker News",
+      "time": "06/06 05:00",
+      "sentiment": "",
+      "body": "Anthropic 與頂尖合成化學家合作，測試 Claude 解讀 NMR 光譜的能力，展示 Claude 在化學領域的多模態科研應用潛力。",
+      "focusTags": []
+    },
+    {
+      "title": "What Anthropic's MITRE ATT&CK Report Means for Teams Running AI Agents",
+      "url": "https://dev.to/pat9000/what-anthropics-mitre-attck-report-means-for-teams-running-ai-agents-fhl",
+      "source": "dev.to / #anthropic",
+      "time": "06/06 06:45",
+      "sentiment": "",
+      "body": "Anthropic 發布一年期 AI 威脅情報報告（2025/03–2026/03），封禁 832 個惡意帳號，並對應 MITRE ATT&CK 框架，對部署 AI Agent 的企業安全團隊具重要參考價值。",
+      "focusTags": []
+    }
+  ],
+  "discussions": [
+    {
+      "title": "S&P 500 rejects SpaceX, also blocking entry for OpenAI and Anthropic",
+      "url": "https://arstechnica.com/tech-policy/2026/06/sp-500-blocks-fast-spacex-entry-wont-waive-rule-for-unprofitable-ai-firms/",
+      "source": "Hacker News",
+      "time": "06/06 04:38 UTC 情緒：😐",
+      "sentiment": "",
+      "body": "S&P 500 拒絕為 SpaceX 破例加速入指，連帶影響 Anthropic 與 OpenAI 未來的被動投資資金流入，市場分析者表示意外。",
+      "focusTags": [
+        "[重大事件]"
+      ]
+    },
+    {
+      "title": "Ask HN: Why is the HN crowd so anti-AI?",
+      "url": "https://news.ycombinator.com/item?id=48420827",
+      "source": "Hacker News",
+      "time": "06/06 02:31 UTC 情緒：🤔",
+      "sentiment": "",
+      "body": "有 20 年資歷的工程師提問 HN 為何充斥 AI 負面聲音，引發大量回應，折射出工程師社群對 AI 代碼品質的真實疑慮。",
+      "focusTags": []
+    },
+    {
+      "title": "Show HN: I nerfed our coding agents on purpose",
+      "url": "https://news.ycombinator.com/item?id=48419614",
+      "source": "Hacker News",
+      "time": "06/05 23:19 UTC 情緒：😊",
+      "sentiment": "",
+      "body": "訓練分類器將請求路由至最低成本模型，搭配 token 效率技術，同等花費獲得 3 倍使用量。團隊從 Claude Code 轉至 Codex 但成本壓力更大，此工具已開源為 NerfGuard。",
+      "focusTags": []
+    },
+    {
+      "title": "Show HN: Lich, start a dev stack per coding agent in parallel",
+      "url": "https://github.com/RPate97/lich",
+      "source": "Hacker News",
+      "time": "06/05 15:30 UTC 情緒：😊",
+      "sentiment": "",
+      "body": "Worktree-aware 本地開發棧協調器，讓多個 coding agent 各自擁有獨立的開發環境（port、DB、log），解決並行代理開發的基礎設施混亂問題。",
+      "focusTags": [
+        "[新工具]"
+      ]
+    },
+    {
+      "title": "ClaudeBot scrapes roughly 11,000 pages for every 1 visitor it sends back",
+      "url": "https://www.reddit.com/r/ClaudeAI/comments/1tyj3gc/claudebot_scrapes_roughly_11000_pages_for_every_1/",
+      "source": "Reddit / r/ClaudeAI",
+      "time": "06/06 06:42 UTC 情緒：😤",
+      "sentiment": "",
+      "body": "ClaudeBot 爬取/回流比高達 11,000:1（已從 6 萬降低），引發網站主對 Anthropic 爬蟲政策的爭議。",
+      "focusTags": []
+    },
+    {
+      "title": "I set up Claude Code for a real production project. Here's what actually earned its keep",
+      "url": "https://dev.to/lamas51/i-set-up-claude-code-for-a-real-production-project-heres-what-actually-earned-its-keep-56i7",
+      "source": "dev.to / #claudecode",
+      "time": "06/06 05:53 UTC 情緒：😊",
+      "sentiment": "",
+      "body": "三週實戰報告：在雙語 Telegram 美容預約機器人中使用 Claude Code，梳理真正帶來價值的功能與使用場景。",
+      "focusTags": []
+    },
+    {
+      "title": "Show HN: Zedra – Mobile control plane for AI coding agents",
+      "url": "https://news.ycombinator.com/item?id=48420833",
+      "source": "Hacker News",
+      "time": "06/06 02:32 UTC 情緒：😊",
+      "sentiment": "",
+      "body": "以 Rust/GPUI 打造，點對點 QUIC/UDP 連線，iOS/Android 可遠端控制桌面的 Claude Code 或 Codex，支援 Mac/Linux/Windows CLI。",
+      "focusTags": [
+        "[新工具]"
+      ]
+    },
+    {
+      "title": "Show HN: Local MCP – give Claude, Cursor and ChatGPT access to your whole Mac",
+      "url": "https://www.local-mcp.com/en",
+      "source": "Hacker News",
+      "time": "06/06 01:08 UTC 情緒：😊",
+      "sentiment": "",
+      "body": "本地執行 MCP，整合 Mail、Calendar、Contacts、Teams、Excel 等桌面應用，適用 Claude/ChatGPT/Cursor，資料不離機，GDPR 合規。",
+      "focusTags": []
+    },
+    {
+      "title": "Show HN: Gito v4.1.0 – AI code reviewer now runs on Claude Code / Gemini CLI",
+      "url": "https://github.com/Nayjest/Gito/releases/tag/v4.1.0",
+      "source": "Hacker News",
+      "time": "06/05 16:51 UTC 情緒：😊",
+      "sentiment": "",
+      "body": "AI 程式碼審查工具 Gito 更新至 v4.1.0，新增 Claude Code 與 Gemini CLI 支援，拓展使用場景。",
+      "focusTags": [
+        "[新工具]"
+      ]
+    },
+    {
+      "title": "Claude Code Has Native OpenTelemetry. Almost Nobody Knows.",
+      "url": "https://dev.to/amitrix/claude-code-has-native-opentelemetry-almost-nobody-knows-52j0",
+      "source": "dev.to / #claudecode",
+      "time": "06/05 22:59 UTC 情緒：😊",
+      "sentiment": "",
+      "body": "Claude Code 自 v2.1.75 起內建完整 OpenTelemetry SDK，啟用 `CLAUDE_CODE_ENABLE_TELEMETRY=1` 即可輸出 token 用量、成本等遙測數據，多數開發者未知。",
+      "focusTags": []
+    },
+    {
+      "title": "/clear is not /exit — the session habit every Claude Code power user gets wrong",
+      "url": "https://dev.to/amitrix/clear-is-not-exit-the-session-habit-every-claude-code-power-user-gets-wrong-5a9b",
+      "source": "dev.to / #claudecode",
+      "time": "06/05 23:00 UTC 情緒：😤",
+      "sentiment": "",
+      "body": "`/clear` 僅清除對話 context，不釋放 MCP server 與 heap；多個 session 累積導致 50GB 記憶體佔用並崩潰。",
+      "focusTags": []
+    },
+    {
+      "title": "Why your sub-agent doesn't load the same memory as you (and how it commits to main behind your back)",
+      "url": "https://dev.to/michelfaure/why-your-sub-agent-doesnt-load-the-same-memory-as-you-and-how-it-commits-to-main-behind-your-back-cgi",
+      "source": "dev.to / #claudecode",
+      "time": "06/06 00:46 UTC 情緒：😤",
+      "sentiment": "",
+      "body": "實際案例：sub-agent 因記憶體隔離問題直接推送至 main 分支，分享具體的隔離與防護策略。",
+      "focusTags": []
+    },
+    {
+      "title": "Anthropic warns that AI could soon escape human control",
+      "url": "https://abc7news.com/post/san-francisco-based-anthropic-calls-global-freeze-ai-development-warns-could-soon-escape-human-control/19240090/",
+      "source": "Hacker News",
+      "time": "06/05 15:21 UTC 情緒：🤔",
+      "sentiment": "",
+      "body": "Anthropic 公開呼籲建立「剎車機制」，警告全遞歸自我改進 AI 可能帶來人類失控風險，引發社群廣泛反應。",
+      "focusTags": [
+        "[持續追蹤]"
+      ]
+    },
+    {
+      "title": "Show HN: Minimal native macOS sandbox for Claude and Codex",
+      "url": "https://github.com/sheremetyev/sandfence",
+      "source": "Hacker News",
+      "time": "06/06 14:53 UTC 情緒：😊",
+      "sentiment": "",
+      "body": "macOS 原生沙盒工具，限制 Claude Code 和 Codex 對系統資源的存取，提升安全性。",
+      "focusTags": []
+    },
+    {
+      "title": "Show HN: Busbar – every LLM behind one URL, in a single Rust binary",
+      "url": "https://github.com/MattJackson/busbarAI",
+      "source": "Hacker News",
+      "time": "06/05 18:58 UTC 情緒：😊",
+      "sentiment": "",
+      "body": "單一 Rust 二進位檔實現 Anthropic、OpenAI、Gemini、Bedrock 等 6 種協議的 LLM 負載均衡閘道，客戶端無感知切換。",
+      "focusTags": []
+    },
+    {
+      "title": "Salesforce Will Not Hire More Software Engineers Next Year As Claude Code Compresses Migrations",
+      "url": "https://news.google.com/rss/articles/CBMi4AFBVV95cUxQOVFENjNkMjdwWlYwYmZRMDYyVThyMnRZSTdaY3c3cjc1ZXZ2NE01UWkyQW9samhkMEdiQkFOMHRITTQzdWdhLUE0ZmNOZFNmVlcwaDQ1b3JtTlBBSUctZXpHOHJ1Yy04aUxteVR1MVdWMEJKcC1fWEpWZ1dRUGZFQXBOR3VqN3l4Y0N6MENMc3pmSElBa3FpUmhDeG94YmdSclBXdEQ3Tlo1UzNWdXJyNDNUZTBYNnJYRWNmQXpvVnZlV2NPT3o1azM4T2NTSE41TW9CTUxKSW1BOTZZNk00eA?oc=5",
+      "source": "Google News / Tech Times",
+      "time": "06/06 04:40 UTC 情緒：😐",
+      "sentiment": "",
+      "body": "Salesforce 以 Claude Code 大幅壓縮系統移轉成本為由，宣布明年不再新增軟體工程師職位，企業 AI 取代人力趨勢持續加溫。",
+      "focusTags": [
+        "[重大事件]"
+      ]
+    },
+    {
+      "title": "Opus 4.8 is slow, here's why and the Claude.md instructions to change that",
+      "url": "https://www.reddit.com/r/ClaudeAI/comments/1ty2epp/opus_48_is_slow_heres_why_and_the_claudemd/",
+      "source": "Reddit / r/ClaudeAI",
+      "time": "06/05 16:31 UTC 情緒：😤",
+      "sentiment": "",
+      "body": "Opus 4.8 預設過度思考導致速度偏慢，提供 CLAUDE.md 設定指令解法，讓模型減少不必要的反覆驗證步驟。",
+      "focusTags": []
+    }
+  ],
+  "billing": [
+    {
+      "title": "Free vs Paid Vibe Coding Tools in 2026: What You Actually Get",
+      "url": "https://dev.to/kunal_d6a8fea2309e1571ee7/free-vs-paid-vibe-coding-tools-in-2026-what-you-actually-get-and-what-youre-paying-for-2a59",
+      "source": "dev.to / #claudecode",
+      "time": "06/06 04:52",
+      "sentiment": "",
+      "body": "比較 2026 年免費與付費 vibe coding 工具的實際差異：免費方案配額限制（24 小時等待）、Claude Max 20x 方案使用者正在摸索最佳設定與工作流程。",
+      "focusTags": []
+    },
+    {
+      "title": "1 Company Spent Half a Billion Dollars on Claude in a Single Month",
+      "url": "https://news.google.com/rss/articles/CBMijwFBVV95cUxQb3k4c0hWRjkxUHg2LXVzUWJxWXJidm14V1BlcmlOWHFEMDNsX2ZrZmpqYmFYX1ZKcjNQb3ViVVZtdEs2cEctaThiSU16SEFfdnM4ZDR0S3pkWFNuMURRMWdaT0ZWUVF3d3FZVTczSmsxZXBodDVqMmQ0cEhTS3BnSjUtYnhsZ0lXWU9lbzliMA?oc=5",
+      "source": "Google News / inc.com",
+      "time": "06/05 15:04",
+      "sentiment": "",
+      "body": "報導顯示有企業單月花費 5 億美元在 Claude 上，AI 使用成本攀升趨勢引發廣泛關注，同時相關「節流」工具需求水漲船高。",
+      "focusTags": [
+        "[重大事件]"
+      ]
+    },
+    {
+      "title": "Switched from Codex to Claude Max 20x — what are the must-have settings/workflow tips?",
+      "url": "https://www.reddit.com/r/ClaudeAI/comments/1tyeavh/switched_from_codex_to_claude_max_20x_what_are/",
+      "source": "Reddit / r/ClaudeAI",
+      "time": "06/06 03:04",
+      "sentiment": "",
+      "body": "使用者從 Codex 切換至 Claude Max 20x 方案，首次使用 Windows 桌面版，徵求必備設定與工作流程建議，反映 Max 方案採用增加。",
+      "focusTags": []
+    }
+  ],
+  "focus": [
+    {
+      "tag": "[重大事件]",
+      "text": "Anthropic 正式向 SEC 機密提交 IPO 申請，預估估值衝破兆美元大關，SpaceX IPO 已成連鎖觸發器，OpenAI、Anthropic 股市上市競逐加速。",
+      "ref_urls": [
+        "https://dev.to/docdavkitty/anthropic-files-for-ipo-the-first-trillion-dollar-ai-listing-takes-shape-4b3a",
+        "https://arstechnica.com/tech-policy/2026/06/sp-500-blocks-fast-spacex-entry-wont-waive-rule-for-unprofitable-ai-firms/"
+      ]
+    },
+    {
+      "tag": "[持續追蹤]",
+      "text": "Anthropic 發表「AI 建造自身」報告，呼籲全球暫停 AI 開發以避免失控遞歸自我改進，引發廣泛討論。",
+      "ref_urls": [
+        "https://abc7news.com/post/san-francisco-based-anthropic-calls-global-freeze-ai-development-warns-could-soon-escape-human-control/19240090/",
+        "https://www.engadget.com/2188066/anthropic-proposes-global-ai-development-slowdown/"
+      ]
+    },
+    {
+      "tag": "[重大事件]",
+      "text": "某公司單月在 Claude 上花費逾 5 億美元，AI 成本問題正式成為企業關注焦點；同時 Salesforce 宣布明年不再招募軟體工程師，Claude Code 壓縮移轉成本被點名。",
+      "ref_urls": [
+        "https://news.google.com/rss/articles/CBMijwFBVV95cUxQb3k4c0hWRjkxUHg2LXVzUWJxWXJidm14V1BlcmlOWHFEMDNsX2ZrZmpqYmFYX1ZKcjNQb3ViVVZtdEs2cEctaThiSU16SEFfdnM4ZDR0S3pkWFNuMURRMWdaT0ZWUVF3d3FZVTczSmsxZXBodDVqMmQ0cEhTS3BnSjUtYnhsZ0lXWU9lbzliMA?oc=5",
+        "https://news.google.com/rss/articles/CBMi4AFBVV95cUxQOVFENjNkMjdwWlYwYmZRMDYyVThyMnRZSTdaY3c3cjc1ZXZ2NE01UWkyQW9samhkMEdiQkFOMHRITTQzdWdhLUE0ZmNOZFNmVlcwaDQ1b3JtTlBBSUctZXpHOHJ1Yy04aUxteVR1MVdWMEJKcC1fWEpWZ1dRUGZFQXBOR3VqN3l4Y0N6MENMc3pmSElBa3FpUmhDeG94YmdSclBXdEQ3Tlo1UzNWdXJyNDNUZTBYNnJYRWNmQXpvVnZlV2NPT3o1azM4T2NTSE41TW9CTUxKSW1BOTZZNk04eA?oc=5"
+      ]
+    },
+    {
+      "tag": "[技術更新]",
+      "text": "Claude Code v2.1.167 發布（Bug 修復與穩定性改進），Python SDK v0.106.0 標記 Claude Opus 4.1 為棄用，TypeScript Vertex SDK v0.17.0 同步更新。",
+      "ref_urls": [
+        "https://github.com/anthropics/claude-code/releases/tag/v2.1.167",
+        "https://github.com/anthropics/anthropic-sdk-python/releases/tag/v0.106.0",
+        "https://github.com/anthropics/anthropic-sdk-typescript/releases/tag/vertex-sdk-v0.17.0"
+      ]
+    },
+    {
+      "tag": "[新工具]",
+      "text": "本日湧現多款 Claude Code 相關工具：Lich（並行 worktree 開發棧管理）、Zedra（手機遠端控制 coding agent）、Gito v4.1.0（支援 Claude Code 的 AI 程式碼審查工具）。",
+      "ref_urls": [
+        "https://github.com/RPate97/lich",
+        "https://news.ycombinator.com/item?id=48420833",
+        "https://github.com/Nayjest/Gito/releases/tag/v4.1.0"
+      ]
+    }
+  ],
+  "sourceStatus": [],
+  "preview": "[anthropics/claude-code] v2.1.167"
+}
