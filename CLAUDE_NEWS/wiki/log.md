@@ -5,6 +5,36 @@ Append-only 紀錄。每次 ingest、query 或 lint 都在此追加一條。
 
 ---
 
+## 2026-06-06 Ingest | news/2026-06-06.md
+
+- 來源日報：`news/2026-06-06.md`（70 則，6 來源；S&P 500 拒絕 SpaceX 破例（HN 935）、Anthropic IPO 進展與 Salesforce 停招工程師、遞歸自我改進全球媒體延燒 Day 2、v2.1.167、Python SDK v0.106.0 棄用 Opus 4.1、7 款新工具、ClaudeBot 爬蟲爭議、OpenTelemetry 揭露）
+- 更新頁面：
+  - `entities/claude-code.md`：新增 v2.1.167；更新最新版本與現況描述；更新最後更新 2026-06-06
+  - `topics/anthropic-business.md`：新增 2026-06-06 時序（S&P 500 拒絕/Salesforce 停招/5 億帳單/AI 成本工具熱潮）；更新最後更新 2026-06-06
+  - `topics/recursive-self-improvement.md`：新增 2026-06-06 時序（The Intercept 投資者批評、媒體持續延燒）；更新最後更新 2026-06-06
+  - `topics/enterprise-tool-tracker.md`：新增 Salesforce 企業列；新增 2026-06-06 時序；更新最後更新 2026-06-06
+  - `topics/community-tech-tools.md`：新增 7 個工具（Lich / Zedra / Gito v4.1.0 / Local MCP / Busbar / Lazarus / Sandfence）；更新最後更新 2026-06-06
+  - `topics/community-tech-discussions.md`：熱門討論 prepend 5 條（HN 反 AI 情緒 / AI 成本優化 / Sub-agent 記憶 / OpenTelemetry 揭露 / /clear vs /exit）；技術彙整新增 3 條；更新最後更新 2026-06-06
+  - `topics/ai-agent-safety.md`：新增 2026-06-06 時序（MITRE 後續分析、ClaudeBot 爬蟲爭議）；更新最後更新 2026-06-06
+  - `feature-radar.md`：新增 v2.1.167（🔥 ✅）、Python SDK v0.106.0 棄用 Opus 4.1（🔥 ✅）；更新最後更新 2026-06-06
+  - `wiki/index.md`：更新頁面數與最後更新 2026-06-06
+- 新增頁面：無（今日事件均為既有頁面延伸）
+- 呈現品質審查：
+  | 頁面 | 結果 |
+  |------|------|
+  | entities/claude-code.md | ✅ 通過（版本表更新，現況描述最新）|
+  | topics/anthropic-business.md | ✅ 通過（時序 prepend）|
+  | topics/recursive-self-improvement.md | ✅ 通過（時序 prepend）|
+  | topics/enterprise-tool-tracker.md | ✅ 通過（Salesforce 列新增，時序 prepend）|
+  | topics/community-tech-tools.md | ✅ 通過（7 工具插入表頭）|
+  | topics/community-tech-discussions.md | ✅ 通過（5 條 prepend + 3 條技術彙整）|
+  | topics/ai-agent-safety.md | ✅ 通過（時序 prepend）|
+  | feature-radar.md | ✅ 通過（全覽表更新）|
+- 本日新增工具：Lich / Zedra / Gito v4.1.0 / Local MCP / Busbar / Lazarus / Sandfence（共 7 個，累積 168 個）
+- feature-radar 更新：v2.1.167（🔥 ✅）、Python SDK v0.106.0 棄用 Opus 4.1（🔥 ✅）
+
+---
+
 ## 2026-06-05 Ingest | news/2026-06-05.md
 
 - 來源日報：`news/2026-06-05.md`（88 則，6 來源；遞歸自我改進報告 HN 477、NSA 使用 Mythos 攻擊（FT）、全球 AI 暫停呼籲全媒體覆蓋、Zcash 漏洞 ZEC-30%、v2.1.165、Skills 官方指南、FirstDraft/Claude-o-meter/Resume 3 工具）

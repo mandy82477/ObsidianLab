@@ -2,7 +2,7 @@
 
 **狀態：** ongoing
 **開始日期：** 2026-04-25
-**最後更新：** 2026-06-05
+**最後更新：** 2026-06-06
 
 ---
 
@@ -20,6 +20,11 @@
 
 | 討論主題 | 首見 | 熱度 | 模式 | 核心論點 | 衍生 |
 |---------|------|------|------|---------|------|
+| HN 反 AI 情緒解讀（Ask HN HN 223）| 2026-06-06 | 🔥🔥 | ☄️閃現 | 20 年資歷工程師提問 HN 為何充斥 AI 負面聲音；引發「代碼品質 vs 交付速度」的深度辯論；折射出工程師社群對 AI 代碼品質的真實疑慮 | — |
+| AI Coding 成本優化：故意降低 Agent 效能（HN 25）| 2026-06-06 | 🔥🔥 | ☄️閃現 | NerfGuard 訓練分類器路由至最低成本模型 + token 效率技術，同等花費獲得 3 倍使用量；揭示從 Claude Code 切換 Codex 後成本更高的反直覺現象 | Lich、NerfGuard |
+| Sub-agent 記憶隔離與靜默推送主分支 | 2026-06-06 | 🔥🔥 | ☄️閃現 | Sub-agent 因記憶隔離，在不知情情況下直接推送至 main 分支；提供具體隔離策略與 CLAUDE.md 防護設計，是多 agent 環境中的新型安全警示 | — |
+| Claude Code 原生 OpenTelemetry（幾乎無人知道）| 2026-06-06 | 🔥🔥 | ☄️閃現 | Claude Code 自 v2.1.75 起內建完整 OpenTelemetry SDK；`CLAUDE_CODE_ENABLE_TELEMETRY=1` 即可輸出 token 用量、成本；大多數開發者未知，是被低估的可觀測性工具 | — |
+| /clear vs /exit 的致命誤解 | 2026-06-06 | 🔥🔥 | ☄️閃現 | `/clear` 不釋放 MCP server 與 heap；多個 session 積累導致 50GB 記憶體佔用並崩潰；是 Claude Code 操作習慣中最常見的誤區之一 | — |
 | Opus 4.8 Thinking 40–60 倍 context drain | 2026-05-31 | 🔥🔥🔥 | ☄️閃現 | 每輪最高 900K cache tokens（4.7 為 14K–34K）；context window 快速耗盡是重度使用者主要痛點；工作流設計需全面重新評估 | — |
 | Claude Code 需要自動模型路由？ | 2026-05-31 | 🔥🔥 | ☄️閃現 | 社群呼籲 Claude Code 支援依任務複雜度自動切換 Haiku/Sonnet/Opus，目前仍需手動操作；與「94% token 流向錯誤模型」痛點直接呼應 | — |
 | 10 個 Plugin 同時啟用的真實成本 | 2026-05-31 | 🔥🔥 | ☄️閃現 | 作者啟用 10 個 plugin 後信用耗盡，詳細拆解各 plugin token 成本；與 MCP context bloat（9 伺服器 = 38k tokens）形成最新佐證 | — |
@@ -87,6 +92,24 @@
 ---
 
 ## 技術彙整
+
+### Claude Code 原生 OpenTelemetry 揭露（2026-06-06）
+
+- **來源：** "Claude Code Has Native OpenTelemetry. Almost Nobody Knows."（dev.to/amitrix）
+- **核心論點：** Claude Code 自 v2.1.75 起已內建完整 OpenTelemetry SDK，僅需設定一個環境變數 `CLAUDE_CODE_ENABLE_TELEMETRY=1` 即可輸出 token 用量、成本、工具呼叫等遙測數據；絕大多數開發者不知道此功能存在
+- **意義：** 提供了客觀量化 Claude Code 成本的內建路徑，但多數人仍仰賴第三方工具（如 AI Gauge、Claude Usage Tray）
+
+### Sub-agent 記憶隔離與靜默主分支推送（2026-06-06）
+
+- **來源：** "Why your sub-agent doesn't load the same memory as you"（dev.to/michelfaure）
+- **核心論點：** Sub-agent 不繼承主 agent 的 CLAUDE.md 記憶設定，導致其在獨立記憶 context 下直接推送至 main 分支；提供具體防護策略（gitconfig safeguard、明確 CLAUDE.md 繼承設定）
+- **收斂結論：** multi-agent 環境下，每個 agent 的 CLAUDE.md 範圍需明確定義，不能假設繼承行為
+
+### /clear vs /exit 操作誤區（2026-06-06）
+
+- **來源：** "/clear is not /exit"（dev.to/amitrix）
+- **核心論點：** `/clear` 只清除對話 context，不釋放 MCP server 連線、heap 記憶體與背景程序；8 個 session 積累後出現 50GB resident memory 並觸發崩潰
+- **收斂結論：** 長時間工作流應使用 `/exit` 或重啟 Claude Code 程序，而非 `/clear`
 
 ### 客戶用 Claude 全面取代開發者（2026-06-01）
 

@@ -4,7 +4,7 @@
 僅收錄官方 changelog、release note 或官方公告來源；社群工具見 [[topics/community-tech-tools]]。
 每次 ingest 後由 LLM 維護：新增功能、更新熱度、補充社群回饋。
 
-**最後更新：** 2026-06-05（v2.1.165 bug fixes）
+**最後更新：** 2026-06-06（v2.1.167 bug fixes；Python SDK v0.106.0 標記 Opus 4.1 棄用）
 
 ---
 
@@ -29,6 +29,8 @@
 
 | 功能 | 發布日期 | 熱度 | 試用價值 | 狀態 |
 |------|----------|------|----------|------|
+| Claude Code v2.1.167（Bug fixes + reliability） | 2026-06-06 | 🔥 | ✅ 推薦 | 正式發布（無具體功能說明）|
+| Python SDK v0.106.0（Claude Opus 4.1 標記棄用） | 2026-06-06 | 🔥 | ✅ 推薦 | 正式發布（開發者應遷移至新版模型 ID）|
 | Claude Code v2.1.165（Bug fixes + reliability） | 2026-06-05 | 🔥 | ✅ 推薦 | 正式發布（無具體功能說明）|
 | Claude Code v2.1.162（`waitingFor` 可見性 + `--tools` Grep/Glob 目錄遍歷） | 2026-06-04 | 🔥🔥 | ✅ 推薦 | 正式發布（agent 監控可見性顯著改善）|
 | Claude Code v2.1.161（OTEL metrics 標籤 + claude agents 改善） | 2026-06-03 | 🔥🔥 | ✅ 推薦 | 正式發布（企業可觀測性提升）|

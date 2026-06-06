@@ -2,7 +2,7 @@
 
 **狀態：** ongoing
 **開始日期：** 2026-05-28
-**最後更新：** 2026-06-05
+**最後更新：** 2026-06-06
 
 ---
 
@@ -111,6 +111,12 @@ Simon Willison（知名開發者博主）發表文章，認為 Anthropic 與 Ope
 ### 2026-05-31
 - **[內部 Agent 風險管理哲學公開]** Anthropic 工程部落格發布《We contain Claude across products》：12 個月前不可能授予 Claude 影響關鍵服務的存取權，如今已成常態；文章以「爆炸半徑」框架說明隨 agent 能力增長，不部署的機會成本已超過部署風險；是 Anthropic 內部 agentic 思維的第一手揭露（HN 收錄）
 - **[Bloomberg 責任與創新平衡報導]** Bloomberg 分析 Anthropic 在商業擴張與安全責任之間的平衡難題：估值接近兆元的同時，外界對「responsible scaling」承諾能否持續兌現的質疑同步升溫
+
+### 2026-06-06
+- **[S&P 500 拒絕 SpaceX 破例，連帶 Anthropic]** S&P 500 拒絕為 SpaceX 豁免「獲利要求」，同樣適用於 Anthropic 與 OpenAI；IPO 後被動資金流入路徑受限（HN 935 分）
+- **[企業 AI 消費記錄]** 報導顯示某公司單月花費逾 5 億美元在 Claude 上，是 AI 帳單規模的新里程碑
+- **[Salesforce 停招工程師]** Salesforce 宣布 2027 年不再新增軟體工程師名額，直接點名 Claude Code 壓縮系統移轉成本為主因
+- **[AI 成本解決方案熱潮]** 「NerfGuard」等工具以 3 倍效率提升同等花費，顯示企業開始主動應對 AI 帳單問題
 
 ### 2026-06-05
 - **[遞歸自我改進報告]** Claude 現在負責 Anthropic 80-90% 生產程式碼；工程師代碼交付量 8× 提升；Anthropic 呼籲全球 AI 暫停——同時在 IPO 路上，被社群廣泛質疑

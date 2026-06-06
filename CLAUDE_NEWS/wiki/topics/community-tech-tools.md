@@ -2,7 +2,7 @@
 
 **狀態：** ongoing
 **開始日期：** 2026-04-25
-**最後更新：** 2026-06-05
+**最後更新：** 2026-06-06
 
 ---
 
@@ -63,6 +63,13 @@
 
 | 工具 | 類型 | 採用 | 首次出現 | 簡介 |
 | --- | --- | --- | --- | --- |
+| [**Sandfence**](https://github.com/sheremetyev/sandfence) | 安全/沙箱 | ⏳ | 2026-06-06 | macOS 原生沙箱工具，限制 Claude Code 與 Codex 對系統資源的存取；Show HN score 1 |
+| [**Lazarus**](https://github.com/ExpressGradient/lazarus) | Agent SDK | ⏳ | 2026-06-06 | 長任務 coding agent，以單一 Python runtime 為唯一工具，模型自行撰寫 Python 執行所有操作（inspect/read/edit/test）；針對 FrontierSWE benchmark 設計；HN score 1 |
+| [**Busbar**](https://github.com/MattJackson/busbarAI) | 模型路由 | ⏳ | 2026-06-06 | 單一 Rust 二進位 LLM gateway，整合 Anthropic/OpenAI/Gemini/Bedrock/Cohere 6 種協議，客戶端無感知負載均衡；Show HN score 1 |
+| [**Local MCP**](https://www.local-mcp.com/en) | 整合工具 | ⏳ | 2026-06-06 | 本地 MCP server，整合 Mail/Calendar/Contacts/Teams/Outlook/Excel 等桌面應用；支援 Claude/ChatGPT/Cursor，GDPR/CCPA 合規；Show HN score 2 |
+| [**Zedra**](https://github.com/tanlethanh/zedra) | 遠端控制 | ⏳ | 2026-06-06 | Rust/GPUI 打造的手機控制面板，透過 P2P QUIC/UDP 遠端控制桌面 Claude Code/Codex，支援 iOS/Android 及 Mac/Linux/Windows CLI；Show HN score 2 |
+| [**Lich**](https://github.com/RPate97/lich) | 多 Agent | ⏳ | 2026-06-06 | Worktree-aware 本地開發棧協調器，讓每個 coding agent 各自擁有獨立環境（port、DB、log），解決並行代理開發基礎設施衝突；Show HN score 6 |
+| [**Gito v4.1.0**](https://github.com/Nayjest/Gito/releases/tag/v4.1.0) | 程式碼審查 | ⏳ | 2026-06-06 | AI 程式碼審查工具，新增 Claude Code 與 Gemini CLI 支援；Show HN score 2 |
 | [**claude-code-proxy**](https://github.com/raine/claude-code-proxy) | 模型路由 | ⏳ | 2026-05-31 | 開源 proxy 工具，讓 Claude Code 使用 Kimi 或 OpenAI 訂閱額度作為後端；繼 DeepClaude 後新型低成本替代方案；HN score 3 |
 | [**Lite-Harness**](https://github.com/LiteLLM-Labs/lite-harness) | 多 agent 協調 | ⏳ | 2026-05-31 | 自架 agent harness 伺服器 Dockerfile，開箱即用提供 memory、durable sessions、cron 排程與 vault；支援 Claude Code 與 OpenCode；HN score 6 |
 | [**Arch-Decision**](https://github.com/jsingh6/arch-decision) | 工作流 | ⏳ | 2026-05-31 | 多代理架構決策工具，協助 Claude Code 使用者在開發前梳理架構選擇與 ADR 記錄；HN score 3 |

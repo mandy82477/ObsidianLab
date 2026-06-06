@@ -2,7 +2,7 @@
 
 **狀態：** ongoing
 **開始日期：** 2026-04-27
-**最後更新：** 2026-06-05
+**最後更新：** 2026-06-06
 
 ---
 
@@ -226,6 +226,10 @@
 - [Anthropic's definition of safety is too narrow](https://jonathannen.com/anthropic-safety-too-narrow/) — Jonathan Nen
 
 ## 時序
+
+### 2026-06-06
+- **[威脅情報] Anthropic MITRE ATT&CK 年度報告後續分析**（dev.to/pat9000）：分析 832 個封禁帳號（2025/03–2026/03）的攻擊行為，對應 MITRE ATT&CK 框架；指出 AI 顯著降低憑證竊取、橫向移動、初始存取等攻擊技術門檻；企業運行 AI Agent 的安全團隊需重新評估威脅模型
+- **[ClaudeBot 爬蟲爭議]** Reddit：ClaudeBot 爬取/回流比 11,000:1（已從 6 萬降低）；網站主批評 Anthropic 爬蟲過度消耗頻寬、幾乎不回流流量
 
 ### 2026-06-05
 - **[遞歸自我改進報告]** Anthropic Institute《When AI Builds Itself》（HN 477）：AI 已在加速 AI 開發，工程師代碼產出 8×；見 [[topics/recursive-self-improvement]]

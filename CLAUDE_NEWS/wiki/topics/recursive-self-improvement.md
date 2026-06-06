@@ -2,7 +2,7 @@
 
 **狀態：** ongoing
 **開始日期：** 2026-06-04
-**最後更新：** 2026-06-05
+**最後更新：** 2026-06-06
 
 ---
 
@@ -53,6 +53,11 @@
 - [[entities/mythos]]（能力擴張的具體案例）
 
 ## 時序
+
+### 2026-06-06（持續延燒）
+- ABC News、Engadget 再次報導 Anthropic「AI 煞車踏板」呼籲
+- The Intercept 批評 Anthropic 的主要投資人結構（沙烏地阿拉伯、美國政府相關基金）與「反威權 AI」立場存在根本矛盾
+- 社群討論聚焦「Anthropic 同時做 IPO 又呼籲暫停」的雙重標準
 
 ### 2026-06-05（媒體爆發日）
 - WSJ、NYT、BBC、Bloomberg、CNN、Reuters、Telegraph、France 24、ABC、Engadget、SiliconAngle 等全球主流媒體同步報導
