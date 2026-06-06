@@ -49,7 +49,7 @@ description: 驗證所有 commands / rules / CLAUDE.md 修改後，相關指令�
 |-------|------------|---------|
 | `wiki-ingest.md` | `wiki/CLAUDE.md` + `.claude/rules/wiki-ingest.md` | Step 2 的讀取清單 |
 | `wiki-lint.md` | `wiki/CLAUDE.md` + `.claude/rules/wiki-ingest.md` | Step 1 的讀取清單 |
-| `news-pipeline.md` | `wiki/CLAUDE.md` + `.claude/rules/wiki-ingest.md` | Step 2 的讀取清單 |
+| `news-pipeline-steps.md` | `wiki/CLAUDE.md` + `.claude/rules/wiki-ingest.md` | Step 2 的讀取清單 |
 
 「明確載入」的意思：**在步驟文字中直接列出這兩個檔案路徑**，不可只靠「見 CLAUDE.md」或「自動載入」等隱含指示。
 
@@ -71,7 +71,7 @@ description: 驗證所有 commands / rules / CLAUDE.md 修改後，相關指令�
 - [ ] Step 6d 指向 `.claude/rules/wiki-ingest.md` 中的 `[加入:]` 標記
 - [ ] Step 6e 分別檢查 `wiki/CLAUDE.md`（閾值 80 行）和 `.claude/rules/wiki-ingest.md`（閾值 250 行）
 
-**news-pipeline.md**
+**news-pipeline-steps.md**
 - [ ] Step 2 明確讀取 `wiki/CLAUDE.md` + `.claude/rules/wiki-ingest.md`
 - [ ] Step 2 item 9 引用 `.claude/rules/wiki-ingest.md`「Wiki 頁面呈現品質標準」
 - [ ] Step 6 log 寫入步驟存在

@@ -5,6 +5,33 @@ Append-only 紀錄。每次 ingest、query 或 lint 都在此追加一條。
 
 ---
 
+## 2026-06-07 Lint
+
+- 修正矛盾：無
+- 補連結：`entities/chris-olah` — 在 `topics/anthropic-government-policy.md` 第 26 行補上 `[[entities/chris-olah|Chris Olah]]` wikilink（原為孤立頁面，僅 index.md 連結）
+- 狀態更新：
+  - `topics/community-tech-timeline`：ongoing → monitoring（最後更新 2026-05-22，15 天無新進展）
+  - `topics/official-community-gap`：ongoing → monitoring（最後更新 2026-05-21，16 天無新進展）
+  - `topics/competitor-landscape`：ongoing → monitoring（最後更新 2026-05-23，15 天無新進展）
+  - `topics/community-tech-patterns`：ongoing → monitoring（最後更新 2026-05-23，15 天無新進展）
+- 遷移至 entities：無（`topics/google-investment` 已在先前 lint 完成遷移）
+- 新增 entities：無（Daniela Amodei 出現 2 個 wiki 頁，未達 3 頁閾值）
+- 呈現品質：全部通過（讀取各頁摘要，結構清晰，關鍵資訊前置）
+- 超長頁面（> 500 行）：`feature-radar.md`（520 行）— 使用者選擇稍後處理
+- 規則檔健檢：
+  - `wiki/CLAUDE.md`：46 行（閾值 80 行）✅
+  - `.claude/rules/wiki-ingest.md`：244 行（閾值 250 行）✅
+  - 矛盾：無
+  - 引用驗證：全部通過（首次出現 / ## 痛點洞察 / 近期工具 / ## 技術彙整 / 熱門討論 / 衍生 / 全覽表 ×7）
+  - ⚠️ 附記：`review-commands.md` Check 1c 中 `靈感來源` 錨點在 `community-tech-patterns.md` 不存在，屬 review-commands 問題，不影響 wiki-ingest 規則
+  - 遵守率：全部通過（呈現品質 3/3 / feature-radar 3/3 / 新工具更新 3/3 / log 格式 3/3）
+  - 過期規則（> 60 天）：無（最舊規則 2026-04-25，距今 43 天）
+  - 簡化：跳過（兩者均在閾值內）
+- `overview.md`：全面重寫（最後更新 2026-05-22 → 2026-06-07；新增 Opus 4.8、NSA Mythos、遞歸自我改進、168 工具等重大更新）
+- `index.md`：更新 4 個 topics 狀態（monitoring）+ community-tech-tools 工具數（132→168）+ 最後更新日期
+
+---
+
 ## 2026-06-06 Ingest | news/2026-06-06.md
 
 - 來源日報：`news/2026-06-06.md`（70 則，6 來源；S&P 500 拒絕 SpaceX 破例（HN 935）、Anthropic IPO 進展與 Salesforce 停招工程師、遞歸自我改進全球媒體延燒 Day 2、v2.1.167、Python SDK v0.106.0 棄用 Opus 4.1、7 款新工具、ClaudeBot 爬蟲爭議、OpenTelemetry 揭露）

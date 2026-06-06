@@ -50,12 +50,17 @@
 
 **此專案沒有 `ANTHROPIC_API_KEY`，開發時不得假設其存在。**
 
-- 所有需要 LLM 的功能，必須走以下其中一條路：
-  1. `claude -p`（**僅限 `run_news.bat` 排程器**，不可出現在任何 skill 或 command 中）
-  2. Claude session 直接執行（skills / commands 的唯一合法路徑）
-- **Skills / Commands 中嚴禁出現 `claude -p`**，包括任何形式的子程序呼叫、shell 執行、或間接觸發
-- **Skills / Commands 呼叫到的 Python script，也不得在其呼叫鏈中觸發 `claude -p`**
+### 🚫 開發禁止使用 `claude -p`
+
+`claude -p` **僅允許出現在 `run_news.bat` 排程器中**，任何其他情境一律禁止：
+
+- Skills / Commands 中嚴禁出現 `claude -p`（含子程序呼叫、shell 執行、間接觸發）
+- Skills / Commands 呼叫的 Python script，呼叫鏈中也不得觸發 `claude -p`
 - 不可新增任何「有 API key 才能運作」的功能或 fallback
+
+**合法的 LLM 呼叫路徑：**
+1. `claude -p` — 僅限 `run_news.bat` 排程器
+2. Claude session 直接執行 — skills / commands 的唯一合法路徑
 
 **新增功能或修改 pipeline 時的判斷標準：**
 > 這個改動，在完全沒有 `ANTHROPIC_API_KEY` 的環境下也能正確運作嗎？若否，重新設計。

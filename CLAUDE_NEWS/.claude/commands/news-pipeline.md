@@ -5,211 +5,41 @@ argument-hint: [YYYY-MM-DD]
 
 # News Pipeline
 
-執行完整每日自動化流程。若提供日期參數（`$ARGUMENTS`），以補跑模式執行該日期；否則以今天為目標。
+執行完整每日自動化流程，**以 background Agent 執行，節省主 session context**。
 
-## 設定
-
-```
-REPO_ROOT    = C:\Users\Mandy\CLAUDE_OBSIDIAN\ObsidianLab\CLAUDE_NEWS
-PYTHON       = C:\Users\Mandy\AppData\Local\Programs\Python\Python313\python.exe
-DIGEST_MODEL = claude-haiku-4-5-20251001   ← Step 1b 日報生成（結構化任務，Haiku 足夠）
-INGEST_MODEL = claude-sonnet-4-6           ← Step 2 Wiki Ingest（複雜判斷，需要 Sonnet）
-```
-
-若有提供 `$ARGUMENTS`，目標日期為 `$ARGUMENTS`；否則取系統今天日期（YYYY-MM-DD）。
+若提供日期參數（`$ARGUMENTS`），以補跑模式執行；否則以今天為目標。
 
 ---
 
-## Step 1a：新聞抓取（Python，不呼叫 LLM）
+## 呼叫此 Skill 時：Spawn Background Agent
 
-用 Bash 執行：
+使用 **Agent tool** 帶以下參數，然後主 session 無需等待，可繼續其他工作：
+
+| 參數 | 值 |
+|------|---|
+| description | `News pipeline {TARGET_DATE}` |
+| run_in_background | `true` |
+| model | `sonnet` |
+
+**prompt**（`{TARGET_DATE}` 替換為今日日期或 `$ARGUMENTS`，格式 YYYY-MM-DD）：
 
 ```
-cd REPO_ROOT\src
-PYTHON -m news_aggregator.main --gather-only [--date TARGET_DATE]
+你是 Claude News Pipeline Agent。
+
+設定：
+- REPO_ROOT   = C:\Users\Mandy\CLAUDE_OBSIDIAN\ObsidianLab\CLAUDE_NEWS
+- PYTHON      = C:\Users\Mandy\AppData\Local\Programs\Python\Python313\python.exe
+- TARGET_DATE = {TARGET_DATE}
+
+步驟：
+1. 讀取 `C:\Users\Mandy\CLAUDE_OBSIDIAN\ObsidianLab\CLAUDE_NEWS\.claude\commands\news-pipeline-steps.md`，取得完整執行規範
+2. 從 Step 1a 開始依序執行所有步驟直到 Step 6
+
+規範：直接在本 agent session 執行，不再 spawn 子 agent。使用繁體中文輸出。
 ```
 
-- 若有 `$ARGUMENTS`，加上 `--date $ARGUMENTS`
-- 成功後寫出 `src/gathered_items.json`（含 items、date、source_status）
-- 若失敗（exit code 非 0），停止並回報錯誤，不繼續後續步驟
+Agent 完成後自動通知主 session。
 
 ---
 
-## Step 1b：生成日報（Claude 直接在 session 執行）
-
-**執行前先切換模型：** `/model claude-haiku-4-5-20251001`
-
-1. 讀取 `src/gathered_items.json`
-2. 依照以下 prompt 格式，**直接**用繁體中文生成日報 Markdown（不呼叫任何外部 API）：
-
-**System：**
-> 你是一位專注於 AI 技術的中文科技記者，擅長用繁體中文撰寫清晰、客觀的技術新聞摘要。
-
-**輸出結構（五個區塊，無內容則省略）：**
-
-```
-# Claude Code & Anthropic 每日新聞摘要
-
-**日期：** TARGET_DATE | **來源：** X/6 | **文章數：** N | **更新時間：** YYYY-MM-DD HH:MM UTC
-
----
-
-### 📌 今日聚焦
-3–5 點導讀，格式：**[標籤]** 說明（標籤：重大事件/持續追蹤/新工具/社群趨勢/風險警示）
-
-**每一條聚焦項目，凡有對應的參考新聞，必須在說明文字末尾加上 `（ref: URL）`，URL 為 gathered_items.json 中該新聞的原始 url 欄位值。每條新聞各加一個 ref，可在同一行加多個。**
-- 若該聚焦項目對應單一新聞 → 加一個 `（ref: URL）`
-- 若該聚焦項目彙整多則新聞 → 每條新聞各加一個 `（ref: URL）`，全部列在同一行末尾
-- 若確實找不到對應新聞（例如是推論或背景說明）→ 可省略 ref
-
-範例：
-```
-- **[重大事件]** Claude 發布 Sonnet 4，context window 翻倍——對長文件工作流的衝擊最大。（ref: https://www.anthropic.com/news/claude-sonnet-4）
-- **[新工具]** Superset、OpenRig、VIR 三款工具同步亮相，分別解決 agent 隔離、拓樸管理、session 記憶問題。（ref: https://github.com/superset-sh/superset）（ref: https://github.com/openrig/openrig）（ref: https://github.com/vir-mcp/vir）
-```
-
-### ⭐ 重點話題
-跨多來源出現或引起大量討論的項目
-
-### 🔧 技術更新
-僅 category=official 的條目
-
-### 💬 技術熱度討論
-僅 category=community 的條目，每條末加 情緒：😊/😤/😐/🤔
-
-### 💰 付費方案動態
-定價、配額、Token 費用相關
-```
-
-**每條排版格式：**
-```
-**[原文標題](url)**
-一到兩句繁體中文說明核心重點與為何值得關注。
-`來源名稱` · MM/DD HH:MM UTC
-```
-
-3. 生成完成後，寫入 `news/TARGET_DATE.md`（完整 Markdown）
-4. 用 Bash git push：
-```
-git -C REPO_ROOT add news/TARGET_DATE.md
-git -C REPO_ROOT commit -m "news: daily digest TARGET_DATE"
-git -C REPO_ROOT push
-```
-- 若失敗，停止並回報錯誤，不繼續後續步驟
-
----
-
-## Step 2：Wiki Ingest
-
-**執行前先切換模型：** `/model claude-sonnet-4-6`
-
-執行完整 wiki ingest 流程（直接在本 session 執行，不呼叫 `claude -p`）：
-
-1. 讀取 `news/TARGET_DATE.md`
-2. 同時讀取：`wiki/CLAUDE.md`（目錄結構與限制）、`.claude/rules/wiki-ingest.md`（格式模板與品質標準）、`wiki/index.md` + `wiki/log.md`（確認未重複 ingest）
-3. 比對日報內容，找受影響的既有頁面
-4. 更新相關 entities/ 和 topics/ 頁面
-5. 判斷是否需建立新頁面（entities/ 或 topics/）
-6. 更新 `wiki/feature-radar.md`
-7. Append 至 `wiki/log.md`
-8. 更新 `wiki/index.md`
-9. 執行呈現品質審查（見 `.claude/rules/wiki-ingest.md`「Wiki 頁面呈現品質標準」）
-10. 輸出 Step 9 核對清單
-
-- Step 2 失敗時記錄但繼續 Step 4（web build 不依賴 wiki）
-
----
-
-## Step 3：推送 Wiki 變更
-
-用 Bash 執行：
-
-```
-git -C REPO_ROOT add wiki/
-git -C REPO_ROOT commit -m "wiki: auto-ingest TARGET_DATE"
-git -C REPO_ROOT push
-```
-
-- 若 wiki 無任何變更，跳過 commit，繼續 Step 4
-
----
-
-## Step 4：建置 Web Reader
-
-用 Bash 執行：
-
-```
-PYTHON REPO_ROOT\scripts\build_web.py
-```
-
-- 成功後繼續；若失敗，回報錯誤並跳過推送
-
----
-
-## Step 5：推送 Web 變更
-
-用 Bash 執行：
-
-```
-git -C REPO_ROOT add web_reader/
-git -C REPO_ROOT commit -m "web: rebuild TARGET_DATE"
-git -C REPO_ROOT push
-```
-
----
-
-## Step 6：寫入 task_scheduler.log
-
-整個 pipeline 結束後，**無論成功或失敗**，都必須 append 執行記錄至：
-
-```
-REPO_ROOT\src\logs\task_scheduler.log
-```
-
-格式（依各步驟結果填入 OK / FAILED / SKIPPED）：
-
-```
-[DATE TIME] === Manual pipeline start (via /news-pipeline in Claude session) ===
-[DATE TIME] Aggregator OK
-[DATE TIME] Wiki ingest OK
-[DATE TIME] Wiki push done
-[DATE TIME] Building web reader...
-[DATE TIME] Web push done
-[DATE TIME] === Pipeline complete (manual) ===
-```
-
-- Step 1 失敗時，寫 `Aggregator FAILED - stopping`，之後不繼續
-- Step 2 失敗時，寫 `Wiki ingest FAILED`
-- Step 4 失敗時，寫 `build_web FAILED - skipping web push`
-- 時間戳使用系統當前時間（`Get-Date` 或 `date` 指令取得），格式 `[週X YYYY/MM/DD HH:MM:SS.SS]`
-
----
-
-## 完成摘要
-
-完成後輸出：
-
-| 步驟 | 結果 |
-|------|------|
-| Step 1 新聞聚合 | ✅ / ❌ |
-| Step 2 Wiki Ingest | ✅ / ❌ |
-| Step 3 Wiki 推送 | ✅ / ⏭️ 無變更 / ❌ |
-| Step 4 Web 建置 | ✅ / ❌ |
-| Step 5 Web 推送 | ✅ / ❌ |
-| Step 6 Log 寫入 | ✅ / ❌ |
-| 目標日期 | TARGET_DATE |
-
-## 模型還原
-
-Step 2 完成後，用 `/model claude-sonnet-4-6` 確認模型維持在 Sonnet（後續步驟無 LLM 需求，但保持一致）。
-
----
-
-## 注意事項
-
-- 所有 Bash 指令使用絕對路徑，不依賴 PATH 環境變數
-- Step 1 失敗時停止整個 pipeline
-- Step 2（wiki ingest）失敗時記錄並繼續 Step 4
-- Step 4 失敗時跳過 Step 5
-- **Step 6 log 寫入必須執行**，即使前面步驟失敗也不能跳過
-- 繁體中文輸出
+完整步驟規範：`.claude/commands/news-pipeline-steps.md`

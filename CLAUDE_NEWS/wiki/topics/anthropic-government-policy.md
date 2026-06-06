@@ -23,7 +23,7 @@
 
 ### 梵蒂岡教宗封論：Anthropic 的倫理對話路線（2026-05-26）
 
-教宗良十四世（Pope Leo XIV）發布首份 AI 主題封論《Magnifica Humanitas》，Anthropic 共同創辦人 **Chris Olah** 受邀出席梵蒂岡揭幕演講，成為唯一受邀的 AI 公司代表：
+教宗良十四世（Pope Leo XIV）發布首份 AI 主題封論《Magnifica Humanitas》，Anthropic 共同創辦人 **[[entities/chris-olah|Chris Olah]]** 受邀出席梵蒂岡揭幕演講，成為唯一受邀的 AI 公司代表：
 
 - 封論立場：呼籲對 AI 進行嚴格監管；批判「權力文化」（culture of power）驅動的 AI 競賽；要求 AI 開發者以公共利益為先而非以利潤為先
 - Chris Olah 演講主旨：AI 發展必須由大科技公司以外的力量引導；強調透明度與廣泛社會對話
