@@ -2,7 +2,7 @@
 
 **狀態：** ongoing
 **開始日期：** 2026-04-25
-**最後更新：** 2026-06-06
+**最後更新：** 2026-06-07
 
 ---
 
@@ -20,6 +20,10 @@
 
 | 討論主題 | 首見 | 熱度 | 模式 | 核心論點 | 衍生 |
 |---------|------|------|------|---------|------|
+| AI 設計工作流：Claude Code > Figma（HN 201）| 2026-06-07 | 🔥🔥🔥 | ☄️閃現 | Jane Street 設計師：用 Claude Code 直接生成可互動原型比 Figma 更快，AI 在「不熟悉領域」（OCaml/Bonsai）價值最大；設計師工作流正在被 coding agent 改寫 | — |
+| 本地 coding agent 的安全代價：YOLO 模式 | 2026-06-07 | 🔥🔥 | ☄️閃現 | 作者在 YOLO 模式（`--dangerously-skip-permissions`）下使用 Claude Code，分析 easy+powerful+secure 三者只能得其二的困境；「某天 Claude 會 rm -rf 我整台電腦」——agent 本地執行的安全邊界問題首次以第一人稱記述 | — |
+| AI 公司財務永續性：花 $1000 賺 $100？| 2026-06-07 | 🔥🔥 | ☄️閃現 | 分析指出 Anthropic/OpenAI 定價可能遠低於實際成本，AI 商業模式長期永續性受質疑；同時批評 Anthropic 的「When AI builds itself」行銷語言迴避核心風險 | — |
+| API key 計費陷阱：Max 方案被 API 帳戶覆蓋 | 2026-06-07 | 🔥🔥 | ☄️閃現 | PSA：設有 `ANTHROPIC_API_KEY` 的專案，Claude Code 所有呼叫將走 API 計費而非 Max 訂閱，可能造成意外帳單；Hacker News 高票回報，是高頻踩坑問題 | — |
 | HN 反 AI 情緒解讀（Ask HN HN 223）| 2026-06-06 | 🔥🔥 | ☄️閃現 | 20 年資歷工程師提問 HN 為何充斥 AI 負面聲音；引發「代碼品質 vs 交付速度」的深度辯論；折射出工程師社群對 AI 代碼品質的真實疑慮 | — |
 | AI Coding 成本優化：故意降低 Agent 效能（HN 25）| 2026-06-06 | 🔥🔥 | ☄️閃現 | NerfGuard 訓練分類器路由至最低成本模型 + token 效率技術，同等花費獲得 3 倍使用量；揭示從 Claude Code 切換 Codex 後成本更高的反直覺現象 | Lich、NerfGuard |
 | Sub-agent 記憶隔離與靜默推送主分支 | 2026-06-06 | 🔥🔥 | ☄️閃現 | Sub-agent 因記憶隔離，在不知情情況下直接推送至 main 分支；提供具體隔離策略與 CLAUDE.md 防護設計，是多 agent 環境中的新型安全警示 | — |
@@ -92,6 +96,21 @@
 ---
 
 ## 技術彙整
+
+### AI 設計工作流革命：Claude Code 取代 Figma（2026-06-07）
+
+- **來源：** "I design with Claude more than Figma now"（blog.janestreet.com，Jane Street 設計師；HN score 201）
+- **核心論點：** Jane Street 設計師分享：Claude Code 可直接生成可互動原型，跳過 Figma mockup → spec doc → review 的繁瑣流程；AI 在「使用者不熟悉的領域」（OCaml、Bonsai）提供最高價值，而非取代已熟悉的技能
+- **關鍵回響：**
+  - 📝 支持：HN 社群廣泛認同「AI 在不熟悉領域的補足效果最強」論點
+  - 📝 反駁：部分設計師指出互動原型仍需精確的 UX 決策，Claude 可能生成視覺上可行但 UX 有問題的設計
+- **收斂結論：** coding agent 對「非技術人員進入技術領域」的加速效果，比「技術人員加速已熟悉任務」更顯著（推論）
+
+### CLAUDE.md 規則靜默失效的五種模式（2026-06-07）
+
+- **來源：** "5 ways your CLAUDE.md rules quietly fail"（dev.to/mjmirza）
+- **核心論點：** CLAUDE.md 規則常見靜默失效場景：規則過於模糊（Claude 選擇性詮釋）、規則互相衝突、context 截斷（長 session 後半規則被忽略）、子任務中規則範圍不繼承、規則表達與 Claude 偏好行為抵觸
+- **意義：** 補強既有「TDD 規則 60% 機率被忽略」等案例，提供更系統性的失效分類框架
 
 ### Claude Code 原生 OpenTelemetry 揭露（2026-06-06）
 

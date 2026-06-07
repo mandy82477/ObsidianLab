@@ -2,7 +2,7 @@
 
 **狀態：** ongoing
 **開始日期：** 2026-04-25
-**最後更新：** 2026-06-06
+**最後更新：** 2026-06-07
 
 ---
 
@@ -63,6 +63,10 @@
 
 | 工具 | 類型 | 採用 | 首次出現 | 簡介 |
 | --- | --- | --- | --- | --- |
+| [**LimitPing**](https://github.com/wavever/CCLimitPing) | Rate limit 管理 | ⏳ | 2026-06-07 | 讓 Claude Code 與 Codex 的 rate limit 視窗保持連續，防止因斷線導致配額浪費；Show HN score 1 |
+| [**Kite Markdown**](https://www.kitemarkdown.com/) | 閱讀工具 | ⏳ | 2026-06-07 | Mac 原生 Markdown 閱讀器，QuickLook 整合，特別為大量閱讀 AI 生成 .md 檔案設計，一次性購買無訂閱；Show HN score 2 |
+| [**Lathe**](https://github.com/devenjarvis/lathe) | 學習工具 | ⏳ | 2026-06-07 | 用 LLM 輔助學習新領域而非代勞，生成帶有 source 引用、side-notes 與習題的互動式教學，強制用戶親手輸入程式碼；Show HN score 2 |
+| [**Ccgs**](https://github.com/ingram-technologies/claude-git-sessions) | Session 管理 | ⏳ | 2026-06-07 | 透過 Git orphan branch 在團隊間分享 Claude Code session，智慧重寫絕對路徑，支援跨裝置 `--resume` 接續工作；Show HN score 6 |
 | [**Sandfence**](https://github.com/sheremetyev/sandfence) | 安全/沙箱 | ⏳ | 2026-06-06 | macOS 原生沙箱工具，限制 Claude Code 與 Codex 對系統資源的存取；Show HN score 1 |
 | [**Lazarus**](https://github.com/ExpressGradient/lazarus) | Agent SDK | ⏳ | 2026-06-06 | 長任務 coding agent，以單一 Python runtime 為唯一工具，模型自行撰寫 Python 執行所有操作（inspect/read/edit/test）；針對 FrontierSWE benchmark 設計；HN score 1 |
 | [**Busbar**](https://github.com/MattJackson/busbarAI) | 模型路由 | ⏳ | 2026-06-06 | 單一 Rust 二進位 LLM gateway，整合 Anthropic/OpenAI/Gemini/Bedrock/Cohere 6 種協議，客戶端無感知負載均衡；Show HN score 1 |

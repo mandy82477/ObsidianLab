@@ -2,7 +2,7 @@
 
 **狀態：** ongoing
 **開始日期：** 2026-04-27
-**最後更新：** 2026-06-06
+**最後更新：** 2026-06-07
 
 ---
 
@@ -226,6 +226,10 @@
 - [Anthropic's definition of safety is too narrow](https://jonathannen.com/anthropic-safety-too-narrow/) — Jonathan Nen
 
 ## 時序
+
+### 2026-06-07
+- **[本地 Agent 安全] "YOLO 模式"風險第一人稱記述**（12gramsofcarbon.com；HN score 4）：作者坦承使用 `--dangerously-skip-permissions` 跳過所有確認提示，分析本地 coding agent 三難困境（easy+powerful+secure 只能得其二）；「某天 Claude 會 rm -rf 我整台電腦」是對 agent 自主執行安全邊界最直接的個人表述；社群討論焦點從「是否應該」轉移至「如何安全地」使用自主模式
+- **[Sandfence 沙箱工具]** Show HN：macOS 原生沙箱工具為 Claude Code 和 Codex 提供最小化系統資源隔離，是對 YOLO 模式安全疑慮的工具層回應
 
 ### 2026-06-06
 - **[威脅情報] Anthropic MITRE ATT&CK 年度報告後續分析**（dev.to/pat9000）：分析 832 個封禁帳號（2025/03–2026/03）的攻擊行為，對應 MITRE ATT&CK 框架；指出 AI 顯著降低憑證竊取、橫向移動、初始存取等攻擊技術門檻；企業運行 AI Agent 的安全團隊需重新評估威脅模型

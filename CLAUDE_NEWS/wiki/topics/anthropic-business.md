@@ -2,7 +2,7 @@
 
 **狀態：** ongoing
 **開始日期：** 2026-05-28
-**最後更新：** 2026-06-06
+**最後更新：** 2026-06-07
 
 ---
 
@@ -111,6 +111,11 @@ Simon Willison（知名開發者博主）發表文章，認為 Anthropic 與 Ope
 ### 2026-05-31
 - **[內部 Agent 風險管理哲學公開]** Anthropic 工程部落格發布《We contain Claude across products》：12 個月前不可能授予 Claude 影響關鍵服務的存取權，如今已成常態；文章以「爆炸半徑」框架說明隨 agent 能力增長，不部署的機會成本已超過部署風險；是 Anthropic 內部 agentic 思維的第一手揭露（HN 收錄）
 - **[Bloomberg 責任與創新平衡報導]** Bloomberg 分析 Anthropic 在商業擴張與安全責任之間的平衡難題：估值接近兆元的同時，外界對「responsible scaling」承諾能否持續兌現的質疑同步升溫
+
+### 2026-06-07
+- **[AI 財務永續性質疑]** ea.rna.nl 分析（HN score 45）：Anthropic/OpenAI 每收 $100 可能花費超過 $1,000，AI 商業模式長期財務永續性受系統性質疑；同時批評 Anthropic「When AI builds itself」部落格以行銷語言遮蓋核心財務風險
+- **[Anthropic IPO 潛力受益股]** The Motley Fool：分析 Anthropic IPO 對 5 檔 AI 相關股票的連帶利好，市場對 Anthropic 上市的關注度持續升溫
+- **[Anthropic Linux Desktop 需求]** HN score 66：社群呼籲 Anthropic 提供官方 Linux 版 Claude Desktop，反映 Linux 開發者社群對 Anthropic 官方支援的需求缺口
 
 ### 2026-06-06
 - **[S&P 500 拒絕 SpaceX 破例，連帶 Anthropic]** S&P 500 拒絕為 SpaceX 豁免「獲利要求」，同樣適用於 Anthropic 與 OpenAI；IPO 後被動資金流入路徑受限（HN 935 分）

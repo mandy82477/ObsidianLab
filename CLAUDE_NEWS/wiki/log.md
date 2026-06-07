@@ -5,6 +5,31 @@ Append-only 紀錄。每次 ingest、query 或 lint 都在此追加一條。
 
 ---
 
+## 2026-06-07 Ingest | news/2026-06-07.md
+
+- 來源日報：`news/2026-06-07.md`（56 則，6 來源；Jane Street 設計工作流革命 HN 201、YOLO 模式安全第一人稱記述、AI 財務永續性質疑 HN 45、Linux Desktop 需求 HN 66、Ccgs session 分享工具 HN 6、API billing 陷阱、SDK v0.107.0/v0.102.0 Managed Agents 小幅更新、v2.1.168 bug fix）
+- 更新頁面：
+  - `entities/claude-code.md`：新增 v2.1.168；更新最新版本描述；更新最後更新 2026-06-07
+  - `topics/community-tech-tools.md`：新增 4 個工具（Ccgs / Lathe / LimitPing / Kite Markdown）；更新最後更新 2026-06-07
+  - `topics/community-tech-discussions.md`：熱門討論 prepend 4 條（AI 設計工作流革命 / YOLO 模式安全 / AI 財務永續性 / API billing 陷阱）；技術彙整新增 2 條；更新最後更新 2026-06-07
+  - `topics/ai-agent-safety.md`：新增 2026-06-07 時序（YOLO 模式記述 + Sandfence 工具回應）；更新最後更新 2026-06-07
+  - `topics/anthropic-business.md`：新增 2026-06-07 時序（AI 財務永續性質疑 / IPO 潛力股 / Linux Desktop 需求）；更新最後更新 2026-06-07
+  - `wiki/index.md`：更新社群工具數（168→172）+ 最後更新日期
+- 新增頁面：無（今日事件均為既有頁面延伸）
+- feature-radar 更新：無（v2.1.168 純 bug fix；SDK 更新無具體功能說明，不符合收錄標準）
+- 升格檢查（discussions → patterns）：無符合升格條件的 🌊延燒 討論（現有延燒項目均已有 patterns 對應或未達多人複現共識）
+- 本日新增工具：Ccgs / Lathe / LimitPing / Kite Markdown（共 4 個，累積 172 個）
+- 呈現品質審查：
+  | 頁面 | 結果 |
+  |------|------|
+  | entities/claude-code.md | ✅ 通過（版本表更新，現況描述最新）|
+  | topics/community-tech-tools.md | ✅ 通過（4 工具插入表頭）|
+  | topics/community-tech-discussions.md | ✅ 通過（4 條 prepend + 2 條技術彙整）|
+  | topics/ai-agent-safety.md | ✅ 通過（時序 prepend）|
+  | topics/anthropic-business.md | ✅ 通過（時序 prepend）|
+
+---
+
 ## 2026-06-07 Lint
 
 - 修正矛盾：無
