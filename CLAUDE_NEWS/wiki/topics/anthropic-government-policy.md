@@ -2,7 +2,7 @@
 
 **狀態：** monitoring
 **開始日期：** 2026-05-01
-**最後更新：** 2026-06-05
+**最後更新：** 2026-06-09
 
 ---
 
@@ -62,6 +62,9 @@
 - [AP News：Pope calls for robust regulation of AI](https://apnews.com/article/pope-ai-tech-trump-vatican-anthropic-d92d0108730d146baa46da041b8523da)
 
 ## 時序
+
+### 2026-06-08
+- **[五角大廈替換 Claude] 因「太安全」尋求替代**（Tech Times；Tech Times 報導）：五角大廈官員積極尋找可替代 Claude 的 AI 模型，原因是 Claude 的安全護欄在戰場場景中限制過多。此為 2026-05-01 五角大廈排除事件的後續，顯示分歧未解決。
 
 ### 2026-06-05
 - **[NSA 攻擊使用 Mythos]** FT 獨家（HN 89）：NSA 正在使用 Anthropic Mythos 發動進攻性網路攻擊——Glasswing「防禦」框架的兩用性首次公開確認

@@ -5,6 +5,36 @@ Append-only 紀錄。每次 ingest、query 或 lint 都在此追加一條。
 
 ---
 
+## 2026-06-09 Ingest | news/2026-06-09.md
+
+- 來源日報：`news/2026-06-09.md`（73 則，6 來源；MCP 安全漏洞雙連擊、npm 供應鏈攻擊、Claude Code 131K stars、Mythos 進 NSA/Dragos OT、Google Colab CLI 整合、CLAUDE.md 最佳實踐社群分享、多款 Show HN 工具）
+- 更新頁面：
+  - `entities/claude-code.md`：更新 GitHub Stars（121K→131K）；新增 anthropic-sdk-python v0.107.1 版本記錄；更新最後更新 2026-06-09
+  - `entities/mythos.md`：新增 2026-06-08 時序（Dragos OT 應用 + Pentagon 替換 Claude 報導）；更新最後更新 2026-06-09
+  - `topics/ai-agent-safety.md`：新增 2026-06-08 時序（npm @redhat-cloud-services 後門 + CI/CD secrets 洩漏 + MCP OAuth Token 劫持）；更新最後更新 2026-06-09
+  - `topics/anthropic-government-policy.md`：新增 2026-06-08 時序（Pentagon 因「太安全」尋替代）；更新最後更新 2026-06-09
+  - `topics/anthropic-business.md`：新增 2026-06-08 時序（WashPost 最有影響力、Dario 文化論述、Saudi Velents 加入 Partner Network、Ed Zitron IPO 反對）；更新最後更新 2026-06-09
+  - `topics/community-tech-tools.md`：新增 8 個工具（xword-pipeline / Agam / ARouter / Copilot Vulnerability Harness / Maggy / dbmachine / makememe / Lobsteady）；更新最後更新 2026-06-09
+  - `topics/community-tech-discussions.md`：熱門討論 prepend 3 條（CLAUDE.md 最高 ROI / meta-hook / 1M Context vs Prompt Caching）；技術彙整新增 3 條；更新最後更新 2026-06-09
+  - `wiki/feature-radar.md`：新增 Google Colab CLI 整合（🔥🔥）+ Python SDK v0.107.1（🔥）；更新最後更新 2026-06-09
+- 新增頁面：無（今日事件均為既有頁面延伸）
+- feature-radar 更新：Google Colab CLI 整合（有具體使用者端功能變更，符合收錄標準）；Python SDK v0.107.1（foundry bug fix，收錄為 🔥 ✅）
+- 升格檢查（discussions → patterns）：無符合升格條件的 🌊延燒 討論（所有延燒項目均已有 patterns 對應或未達可複用步驟共識）
+- 本日新增工具：xword-pipeline / Agam / ARouter / Copilot Vulnerability Harness / Maggy / dbmachine / makememe / Lobsteady（共 8 個，累積 180 個）
+- 呈現品質審查：
+  | 頁面 | 結果 |
+  |------|------|
+  | entities/claude-code.md | ✅ 通過（stars 更新 + 版本記錄新增）|
+  | entities/mythos.md | ✅ 通過（時序 prepend）|
+  | topics/ai-agent-safety.md | ✅ 通過（3 條安全事件時序 prepend）|
+  | topics/anthropic-government-policy.md | ✅ 通過（時序 prepend）|
+  | topics/anthropic-business.md | ✅ 通過（時序 prepend，4 條新事件）|
+  | topics/community-tech-tools.md | ✅ 通過（8 工具插入表頭）|
+  | topics/community-tech-discussions.md | ✅ 通過（3 條 prepend + 3 條技術彙整）|
+  | wiki/feature-radar.md | ✅ 通過（2 條新增至全覽表）|
+
+---
+
 ## 2026-06-07 Ingest | news/2026-06-07.md
 
 - 來源日報：`news/2026-06-07.md`（56 則，6 來源；Jane Street 設計工作流革命 HN 201、YOLO 模式安全第一人稱記述、AI 財務永續性質疑 HN 45、Linux Desktop 需求 HN 66、Ccgs session 分享工具 HN 6、API billing 陷阱、SDK v0.107.0/v0.102.0 Managed Agents 小幅更新、v2.1.168 bug fix）

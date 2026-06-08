@@ -2,7 +2,7 @@
 
 **狀態：** ongoing
 **開始日期：** 2026-04-25
-**最後更新：** 2026-06-07
+**最後更新：** 2026-06-09
 
 ---
 
@@ -63,6 +63,14 @@
 
 | 工具 | 類型 | 採用 | 首次出現 | 簡介 |
 | --- | --- | --- | --- | --- |
+| [**xword-pipeline**](https://github.com/ekorbia/xword-pipeline) | 創意生成 | ⏳ | 2026-06-09 | Rust fill-engine + Claude clue-writer 生成 NYT 風格填字遊戲；含 QA 審查步驟；Show HN score 3 |
+| [**Agam**](https://github.com/CrypticCortex/agam) | 記憶管理 | ⏳ | 2026-06-09 | Activation-based（非向量檢索）Claude Code 長期記憶架構；實驗性；Show HN 入選 |
+| [**ARouter**](https://github.com/sricola/arouter) | 模型路由 | ⏳ | 2026-06-09 | OpenAI/Anthropic drop-in proxy，支援成本降低與 failover；社群建議說明與 LiteLLM 差異；Show HN score 2 |
+| [**Copilot Vulnerability Harness**](https://github.com/davidreis97/defending-code-reference-harness-copilot) | 安全/漏洞發現 | ⏳ | 2026-06-09 | Anthropic `defending-code-reference-harness` 的 GitHub Copilot CLI 移植版；無 Claude Code 也能執行自主漏洞發現；HN score 1 |
+| [**Maggy**](https://www.reddit.com/r/ClaudeAI/comments/1tzqg8i/what_started_as_a_claude_code_scaffolding_repo_is/) | Agent SDK | ⏳ | 2026-06-09 | 由 Claude Code scaffolding repo 演進的全功能開源 AI harness |
+| [**dbmachine**](https://github.com/kenm47/dbmachine) | 全棧框架 | ⏳ | 2026-06-09 | Claude 作為後端與前端，僅保留 DB 與 plumbing；「local Supabase with Claude as interface」概念；Show HN 入選 |
+| [**makememe**](https://github.com/dhruvmehra/makememe) | 創意工具 | ⏳ | 2026-06-09 | Claude Code meme 生成 CLI，可觸發於 CI 結果或 release；Show HN score 1 |
+| [**Lobsteady**](https://lobsteady.com) | 訂閱代理 | ⏳ | 2026-06-09 | $20/月固定費用，讓 Claude Pro/Max 訂閱在 Slack/Discord/Telegram 使用；代理訂閱流量，避免 API 帳單；Show HN score 1 |
 | [**LimitPing**](https://github.com/wavever/CCLimitPing) | Rate limit 管理 | ⏳ | 2026-06-07 | 讓 Claude Code 與 Codex 的 rate limit 視窗保持連續，防止因斷線導致配額浪費；Show HN score 1 |
 | [**Kite Markdown**](https://www.kitemarkdown.com/) | 閱讀工具 | ⏳ | 2026-06-07 | Mac 原生 Markdown 閱讀器，QuickLook 整合，特別為大量閱讀 AI 生成 .md 檔案設計，一次性購買無訂閱；Show HN score 2 |
 | [**Lathe**](https://github.com/devenjarvis/lathe) | 學習工具 | ⏳ | 2026-06-07 | 用 LLM 輔助學習新領域而非代勞，生成帶有 source 引用、side-notes 與習題的互動式教學，強制用戶親手輸入程式碼；Show HN score 2 |

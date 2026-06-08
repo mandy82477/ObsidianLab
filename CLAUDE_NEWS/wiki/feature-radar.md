@@ -4,7 +4,7 @@
 僅收錄官方 changelog、release note 或官方公告來源；社群工具見 [[topics/community-tech-tools]]。
 每次 ingest 後由 LLM 維護：新增功能、更新熱度、補充社群回饋。
 
-**最後更新：** 2026-06-07（還原 Proactive Workflows / Capability Curve；bug fix 版本條目已於前次移除）
+**最後更新：** 2026-06-09（新增 Google Colab CLI 整合；anthopric-sdk-python v0.107.1 修復）
 
 ---
 
@@ -29,6 +29,8 @@
 
 | 功能 | 發布日期 | 熱度 | 試用價值 | 狀態 |
 |------|----------|------|----------|------|
+| Google Colab CLI 整合 Claude Code / Codex | 2026-06-08 | 🔥🔥 | ✅ 推薦 | 正式發布（降低 Colab 使用 AI coding agent 門檻）|
+| Python SDK v0.107.1（foundry x-api-key header 修復） | 2026-06-07 | 🔥 | ✅ 推薦 | 正式發布（Bedrock Foundry 使用者應升級）|
 | Python SDK v0.106.0（Claude Opus 4.1 標記棄用） | 2026-06-06 | 🔥 | ✅ 推薦 | 正式發布（開發者應遷移至新版模型 ID）|
 | Claude Code v2.1.162（`waitingFor` 可見性 + `--tools` Grep/Glob 目錄遍歷） | 2026-06-04 | 🔥🔥 | ✅ 推薦 | 正式發布（agent 監控可見性顯著改善）|
 | Claude Code v2.1.161（OTEL metrics 標籤 + claude agents 改善） | 2026-06-03 | 🔥🔥 | ✅ 推薦 | 正式發布（企業可觀測性提升）|

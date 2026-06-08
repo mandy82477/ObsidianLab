@@ -2,7 +2,7 @@
 
 **狀態：** ongoing
 **開始日期：** 2026-04-27
-**最後更新：** 2026-06-07
+**最後更新：** 2026-06-09
 
 ---
 
@@ -226,6 +226,11 @@
 - [Anthropic's definition of safety is too narrow](https://jonathannen.com/anthropic-safety-too-narrow/) — Jonathan Nen
 
 ## 時序
+
+### 2026-06-08
+- **[npm 供應鏈攻擊] `@redhat-cloud-services` 32 個套件後門**（Reddit / r/ClaudeAI）：惡意後門植入 `@redhat-cloud-services` 相關 32 個 npm 套件，117,000 次/週下載量受影響；惡意程式在安裝時竊取 npm credentials；Claude Code 開發者若安裝受影響版本，憑證可能已外洩；建議立即執行 `npm audit`、輪換相關 API 金鑰。此攻擊延續 2026-06-02 Claude Code SessionStart Hook 攻擊向量，顯示 Claude 生態圈已成供應鏈攻擊持續目標。
+- **[MCP 安全漏洞] Claude Code GitHub Action 洩漏 CI/CD Secrets**（CyberSecurityNews；Microsoft 警告）：Microsoft 發出安全公告，特定配置下 Claude Code GitHub Action 可能洩漏 CI/CD workflow secrets（如 `${{ secrets.* }}`）；建議開發者審查所有 workflow 文件的 secrets 處理方式，避免在 agent 可見的 context 中直接傳遞敏感值。
+- **[MCP 安全漏洞] MCP 流量劫持可竊取 OAuth Token**（CyberSecurityNews）：攻擊者可透過 MITM 攻擊劫持 Claude Code MCP 流量，在握手階段竊取 OAuth Token；對使用 MCP 整合（如 Slack、GitHub、Jira）的開發者構成認證安全風險；建議啟用 MCP 連線的 TLS 驗證。
 
 ### 2026-06-07
 - **[本地 Agent 安全] "YOLO 模式"風險第一人稱記述**（12gramsofcarbon.com；HN score 4）：作者坦承使用 `--dangerously-skip-permissions` 跳過所有確認提示，分析本地 coding agent 三難困境（easy+powerful+secure 只能得其二）；「某天 Claude 會 rm -rf 我整台電腦」是對 agent 自主執行安全邊界最直接的個人表述；社群討論焦點從「是否應該」轉移至「如何安全地」使用自主模式

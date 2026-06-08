@@ -2,7 +2,7 @@
 
 **狀態：** ongoing
 **開始日期：** 2026-05-28
-**最後更新：** 2026-06-07
+**最後更新：** 2026-06-09
 
 ---
 
@@ -107,6 +107,12 @@ Simon Willison（知名開發者博主）發表文章，認為 Anthropic 與 Ope
 - [[news/2026-05-13]]（The Information：定價強勢期）
 
 ## 時序
+
+### 2026-06-08
+- **[Anthropic 最有影響力公司]** 《華盛頓郵報》評論文章稱 Anthropic 可能是「全球最有影響力的公司」，引發廣泛轉發討論；凸顯 Anthropic 在 AI 治理、軍事應用與商業擴張多條線並進的同時，影響力已超越純商業範疇
+- **[Dario Amodei 公司文化論述]** Fortune 報導 Dario Amodei 明確表示：在 AI 競賽中「文化而非產品」才是決勝關鍵，本人花費 40% 時間在公司文化建設
+- **[Saudi 新創 Velents 加入 Claude Partner Network]** Saudi Arabia 新創公司 Velents 成為首家加入 Anthropic Claude Partner Network 的阿拉伯企業，顯示 Anthropic 夥伴網絡向中東市場擴張
+- **[Ed Zitron：Anthropic/OpenAI 不應上市]** 科技評論人 Ed Zitron 在 YouTube 影片中主張 Anthropic 與 OpenAI 不應被允許 IPO，YouTube 平台反應待觀察
 
 ### 2026-05-31
 - **[內部 Agent 風險管理哲學公開]** Anthropic 工程部落格發布《We contain Claude across products》：12 個月前不可能授予 Claude 影響關鍵服務的存取權，如今已成常態；文章以「爆炸半徑」框架說明隨 agent 能力增長，不部署的機會成本已超過部署風險；是 Anthropic 內部 agentic 思維的第一手揭露（HN 收錄）

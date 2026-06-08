@@ -2,7 +2,7 @@
 
 **狀態：** ongoing
 **開始日期：** 2026-04-25
-**最後更新：** 2026-06-07
+**最後更新：** 2026-06-09
 
 ---
 
@@ -20,6 +20,9 @@
 
 | 討論主題 | 首見 | 熱度 | 模式 | 核心論點 | 衍生 |
 |---------|------|------|------|---------|------|
+| CLAUDE.md 是最高 ROI 設置步驟（SaaS 創辦人實證）| 2026-06-09 | 🔥🔥 | ☄️閃現 | SaaS 創辦人（ARR $4.2M）實驗：加入 CLAUDE.md 後代碼品質立即提升，稱為「最高 ROI 的單一設置步驟」；強調架構概述與命名規範是核心內容 | — |
+| Agent 自主提交的人工監控：meta-hook 概念 | 2026-06-09 | 🔥🔥 | ☄️閃現 | 作者提出「meta-hook」：在 Claude Code agent 連續提交 N 個 commit 後自動暫停，要求人工確認；對應 Sub-agent 靜默推送主分支安全議題的工具層解法 | — |
+| Token 成本控制：1M Context Window vs Prompt Caching | 2026-06-09 | 🔥🔥 | ☄️閃現 | 技術對比：1M context 適合一次性深度任務，prompt caching 適合重複呼叫固定文件；費用差 10 倍；建議先評估查詢模式再選策略 | — |
 | AI 設計工作流：Claude Code > Figma（HN 201）| 2026-06-07 | 🔥🔥🔥 | ☄️閃現 | Jane Street 設計師：用 Claude Code 直接生成可互動原型比 Figma 更快，AI 在「不熟悉領域」（OCaml/Bonsai）價值最大；設計師工作流正在被 coding agent 改寫 | — |
 | 本地 coding agent 的安全代價：YOLO 模式 | 2026-06-07 | 🔥🔥 | ☄️閃現 | 作者在 YOLO 模式（`--dangerously-skip-permissions`）下使用 Claude Code，分析 easy+powerful+secure 三者只能得其二的困境；「某天 Claude 會 rm -rf 我整台電腦」——agent 本地執行的安全邊界問題首次以第一人稱記述 | — |
 | AI 公司財務永續性：花 $1000 賺 $100？| 2026-06-07 | 🔥🔥 | ☄️閃現 | 分析指出 Anthropic/OpenAI 定價可能遠低於實際成本，AI 商業模式長期永續性受質疑；同時批評 Anthropic 的「When AI builds itself」行銷語言迴避核心風險 | — |
@@ -96,6 +99,27 @@
 ---
 
 ## 技術彙整
+
+### CLAUDE.md 是最高 ROI 設置步驟（2026-06-09）
+
+- **來源：** Reddit / r/ClaudeAI（SaaS 創辦人，ARR $4.2M）
+- **核心論點：** 在 codebase 根目錄加入含架構概覽、命名規範、檔案結構的 CLAUDE.md，代碼品質立即提升，稱為「最高 ROI 的單一設置步驟」
+- **關鍵回響：**
+  - 📝 支持：多位回覆者分享類似經驗，強調 context 品質比 prompt 技巧更重要
+- **收斂結論：** 尚無收斂，但與既有「CLAUDE.md 失效四模式」討論形成對話——品質在乎的是初始設置，而非持續維護的精細度
+
+### Agent 自主提交的人工監控：meta-hook 概念（2026-06-09）
+
+- **來源：** "After 5 commits without you, your agent has left the loop: the meta-hook idea"（dev.to/michelfaure）
+- **核心論點：** Claude Code agent 連續提交 N 個 commit 後自動暫停，要求人工確認；避免 agent 在無監督下偏離預期方向
+- **快速上手：** 在 `.claude/hooks/` 設定 post-commit hook，計數器達閾值時退出 agent loop
+- **收斂結論：** 尚無廣泛採用數據，但邏輯與「7 個 Cron Agent，2 個靜默失敗 18 天」討論呼應——autonomous agent 的可靠性需要明確的人工觸發點
+
+### Token 成本：1M Context Window vs Prompt Caching（2026-06-09）
+
+- **來源：** dev.to/raxxostudios + dev.to/ferhatatagun 系列文
+- **核心論點：** 1M context 每次查詢支付全額成本，適合一次性深度分析；prompt caching 重複 token 成本降至 1/10，適合固定文件重複查詢；費用差異 10 倍
+- **關鍵結論：** 決策框架——先問「我的查詢模式是 one-shot 還是 repeated-against-fixed-docs」，再選策略
 
 ### AI 設計工作流革命：Claude Code 取代 Figma（2026-06-07）
 

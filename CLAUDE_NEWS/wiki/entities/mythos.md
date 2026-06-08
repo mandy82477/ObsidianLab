@@ -3,7 +3,7 @@
 **類型：** model
 **狀態：** 公開化中（透過 Claude Code 釋出）
 **首次出現：** 2026-04（限定夥伴 Preview）
-**最後更新：** 2026-06-06
+**最後更新：** 2026-06-09
 
 ---
 
@@ -74,6 +74,9 @@ Anthropic 的官方 AI 資安能力研究計畫，Mythos Preview 為核心工具
 ---
 
 ## 時序
+
+### 2026-06-08
+Dragos（工業網路安全公司）將 Mythos Preview 應用於 OT（營運技術）安全軟體漏洞挖掘，為 Mythos 在企業安全場景的落地新案例。Pentagon 因 Claude「太安全」而尋求替代 AI 方案的報導再次被廣泛引述，Tech Times 報導五角大廈積極評估替代品。
 
 ### 2026-06-05
 NSA 使用 Mythos 發動進攻性網路攻擊（FT 獨家，HN 89）。Anthropic 同日開源 `defending-code-reference-harness` 作為防禦工具，呈現「同源攻防」格局。另：Anthropic AI 發現 Zcash Orchard pool 無限偽造漏洞（2022 年起即存在），ZEC 價格暴跌 30%。
