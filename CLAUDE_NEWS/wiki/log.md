@@ -5,6 +5,25 @@ Append-only 紀錄。每次 ingest、query 或 lint 都在此追加一條。
 
 ---
 
+## 2026-06-08 Ingest | news/2026-06-08.md
+
+- 來源日報：`news/2026-06-08.md`（74 則，6 來源；npm 惡意套件 + MCP OAuth 劫持安全警報、Mythos NSA 軍事應用、Google Colab CLI Claude Code 整合、CLAUDE.md 最高 ROI、agent harness 降本 40%、ZoomInfo 企業採用、Levi AlphaEvolve 低成本複現等）
+- 說明：本日大部分事件已在前次 2026-06-09 Ingest 中依日報 news/2026-06-09.md 完成更新（npm 攻擊、MCP漏洞、Mythos、CLAUDE.md ROI、meta-hook、1M context 等）。本次補充今日新抓取日報中的差異條目。
+- 更新頁面：
+  - `topics/enterprise-tool-tracker.md`：新增 ZoomInfo（GTM.AI Claude 整合）企業列；Claude API 採用數 7→8；新增 2026-06-08 時序；更新最後更新 2026-06-08
+  - `topics/community-tech-tools.md`：新增 2 個工具（Levi / Claude Code Status Line）；插入表頭；工具總數 180→182
+- 新增頁面：無
+- feature-radar 更新：無（本日新增工具均非官方功能，已在前次 ingest 完成）
+- 升格檢查（discussions → patterns）：無（前次 ingest 已確認無符合升格條件的 🌊延燒 討論）
+- 本日新增工具：Levi / Claude Code Status Line（共 2 個，累積 182 個）
+- 呈現品質審查：
+  | 頁面 | 結果 |
+  |------|------|
+  | topics/enterprise-tool-tracker.md | ✅ 通過（ZoomInfo 列新增，時序 prepend，關鍵資訊前置）|
+  | topics/community-tech-tools.md | ✅ 通過（2 工具插入表頭）|
+
+---
+
 ## 2026-06-09 Ingest | news/2026-06-09.md
 
 - 來源日報：`news/2026-06-09.md`（73 則，6 來源；MCP 安全漏洞雙連擊、npm 供應鏈攻擊、Claude Code 131K stars、Mythos 進 NSA/Dragos OT、Google Colab CLI 整合、CLAUDE.md 最佳實踐社群分享、多款 Show HN 工具）

@@ -63,6 +63,8 @@
 
 | 工具 | 類型 | 採用 | 首次出現 | 簡介 |
 | --- | --- | --- | --- | --- |
+| [**Levi**](https://ttanv.github.io/levi/) | Agent 框架 | ⏳ | 2026-06-08 | 開源 AlphaEvolve 複現系統；支援 Claude Code / Codex，成本比現有開源框架低達 35 倍；Show HN score 2 |
+| [**Claude Code Status Line**](https://www.aimhuge.com/blog/claude-code-status-line) | IDE/終端 | ⏳ | 2026-06-08 | Claude Code status bar 顯示 ctx 使用率、rate-limit 倒數（燃盡計時）、模型選擇與 git branch；HN score 7 |
 | [**xword-pipeline**](https://github.com/ekorbia/xword-pipeline) | 創意生成 | ⏳ | 2026-06-09 | Rust fill-engine + Claude clue-writer 生成 NYT 風格填字遊戲；含 QA 審查步驟；Show HN score 3 |
 | [**Agam**](https://github.com/CrypticCortex/agam) | 記憶管理 | ⏳ | 2026-06-09 | Activation-based（非向量檢索）Claude Code 長期記憶架構；實驗性；Show HN 入選 |
 | [**ARouter**](https://github.com/sricola/arouter) | 模型路由 | ⏳ | 2026-06-09 | OpenAI/Anthropic drop-in proxy，支援成本降低與 failover；社群建議說明與 LiteLLM 差異；Show HN score 2 |
