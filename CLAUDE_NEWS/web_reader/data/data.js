@@ -348,10 +348,14 @@ window.WIKI_DATA = {
       "pill": "active",
       "firstSeen": "",
       "startDate": "2026-05-26",
-      "lastUpdated": "2026-06-06",
+      "lastUpdated": "2026-06-08",
       "summary": "追蹤各大型企業目前正在使用的 AI 編碼工具，以及工具選擇的變化軌跡。資料來源為公開報導與內部消息洩露，僅記錄有明確來源佐證的事實。 ---",
       "enterpriseTracker": {
         "enterprises": [
+          {
+            "name": "ZoomInfo",
+            "size": "大型"
+          },
           {
             "name": "Salesforce",
             "size": "頂尖"
@@ -402,12 +406,21 @@ window.WIKI_DATA = {
           }
         ],
         "tools": [
+          "Claude API",
           "Claude Code",
           "GitHub Copilot",
-          "OpenAI Codex",
-          "Claude API"
+          "OpenAI Codex"
         ],
         "matrix": {
+          "ZoomInfo": {
+            "Claude API": {
+              "status": "✅",
+              "statusKey": "active",
+              "eventDate": "2026-06-07",
+              "note": "透過 GTM.AI 平台整合 Claude，建構 GTM Context Graph 企業銷售情報系統",
+              "confirmedDate": "2026-06-08"
+            }
+          },
           "Salesforce": {
             "Claude Code": {
               "status": "✅",
@@ -539,6 +552,16 @@ window.WIKI_DATA = {
           }
         },
         "rows": [
+          {
+            "enterprise": "ZoomInfo",
+            "size": "大型",
+            "tool": "Claude API",
+            "status": "✅",
+            "statusKey": "active",
+            "eventDate": "2026-06-07",
+            "note": "透過 GTM.AI 平台整合 Claude，建構 GTM Context Graph 企業銷售情報系統",
+            "confirmedDate": "2026-06-08"
+          },
           {
             "enterprise": "Salesforce",
             "size": "頂尖",
@@ -735,6 +758,12 @@ window.WIKI_DATA = {
       "articleCount": 73,
       "preview": "Microsoft Warns Claude Code GitHub Action Could Leak CI/CD Workflow Secrets",
       "topCount": 4
+    },
+    {
+      "date": "2026-06-08",
+      "articleCount": 74,
+      "preview": "Anthropic Mythos 軍事應用與安全爭議",
+      "topCount": 3
     },
     {
       "date": "2026-06-07",

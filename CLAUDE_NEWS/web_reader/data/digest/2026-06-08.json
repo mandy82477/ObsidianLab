@@ -1,0 +1,308 @@
+{
+  "date": "2026-06-08",
+  "generatedAt": "2026-06-08 23:25 UTC",
+  "articleCount": 74,
+  "sourceCount": "6/6 | **文章數：** 74 | **更新時間：** 2026-06-08 23:25 UTC",
+  "topStories": [
+    {
+      "title": "Anthropic Mythos 軍事應用與安全爭議",
+      "url": "https://news.google.com/rss/articles/CBMiiwFBVV95cUxQSV9MNmprVUs3QXl0ZjR4TW8yYTYwNU1CMThhTThJQ1FuTVZpbVdWamtvMzlCVGpNS0NtcTFQUnB3R0FSSUdwNWlwdVBoM1drTnhRanJQYUpaaWlkcXJydXpWUmhZeE1uUEZKbVRLbS0zU2JiVG5vdVBoSnJTVHZOT1dKS1Bhek5IenpR?oc=5",
+      "source": "Google News / TechRepublic, Industrial Cyber",
+      "time": "06/08 05:28",
+      "sentiment": "",
+      "body": "Mythos 進入 NSA 攻勢網路作戰，Dragos 用於 OT 安全漏洞挖掘；同時 TechRepublic 報導 Pentagon 因 Claude「太安全」尋找替代方案，Anthropic vs 五角大廈的模型用途邊界爭議成為本週最受關注議題之一。",
+      "focusTags": [
+        "[重大事件]"
+      ]
+    },
+    {
+      "title": "Claude Code 安全漏洞雙重警報",
+      "url": "https://www.reddit.com/r/ClaudeAI/comments/1u05t5e/an_active_attack_is_planting_backdoors_inside/",
+      "source": "Reddit / r/ClaudeAI, CyberSecurityNews",
+      "time": "06/08 03:59",
+      "sentiment": "",
+      "body": "同日爆出兩起安全事件：①32 個 npm 套件後門供應鏈攻擊，影響使用 Claude Code 的開發環境；②研究揭露 Claude Code MCP 流量可被劫持竊取 OAuth Token。社群建議立即稽核 npm 依賴樹並檢查 MCP 連線來源。",
+      "focusTags": [
+        "[風險警示]"
+      ]
+    },
+    {
+      "title": "Claude Code 生產力最佳化討論浪潮",
+      "url": "https://www.reddit.com/r/ClaudeAI/comments/1u089t4/set_up_a_claudemd_for_our_codebase_the_code/",
+      "source": "Reddit / r/ClaudeAI, dev.to",
+      "time": "06/08 05:41",
+      "sentiment": "",
+      "body": "多篇高品質實戰文章同步發布：CLAUDE.md 最高 ROI 設定、agent harness 重構降本 40%、prompt caching vs 1M context window 選擇策略、meta-hook 防止 agent 自律走偏。這批文章形成今日最強的技術學習聚合。",
+      "focusTags": [
+        "[社群趨勢]"
+      ]
+    }
+  ],
+  "techUpdates": [
+    {
+      "title": "[anthropics/anthropic-sdk-python] v0.107.1",
+      "url": "https://github.com/anthropics/anthropic-sdk-python/releases/tag/v0.107.1",
+      "source": "GitHub / anthropics/anthropic-sdk-python",
+      "time": "06/07 17:18",
+      "sentiment": "",
+      "body": "修復 foundry 整合中 `x-api-key` header 未正確傳送的問題，屬 bug fix 版本。若使用 Anthropic Foundry 端點請更新至此版本。",
+      "focusTags": []
+    }
+  ],
+  "discussions": [
+    {
+      "title": "Show HN: I put my Claude Code rate-limit burndown in the status line",
+      "url": "https://www.aimhuge.com/blog/claude-code-status-line",
+      "source": "Hacker News",
+      "time": "06/08 03:48 UTC 情緒：😊",
+      "sentiment": "",
+      "body": "開發者在 Claude Code status line 顯示 ctx 使用率、rate-limit 倒數、模型選擇與 git branch，讓「還有多少跑道」一目了然。實作細節詳盡，可直接複製。",
+      "focusTags": [
+        "[新工具]"
+      ]
+    },
+    {
+      "title": "set up a CLAUDE.md for our codebase. the code quality improved immediately",
+      "url": "https://www.reddit.com/r/ClaudeAI/comments/1u089t4/set_up_a_claudemd_for_our_codebase_the_code/",
+      "source": "Reddit / r/ClaudeAI",
+      "time": "06/08 05:41 UTC 情緒：😊",
+      "sentiment": "",
+      "body": "$4.2M ARR 的 SaaS 創辦人分享：加入包含架構概覽、命名規則、檔案結構的 CLAUDE.md 後，Claude Code 程式碼品質立即提升，稱其為「最高 ROI 的單一設定步驟」。",
+      "focusTags": [
+        "[社群趨勢]"
+      ]
+    },
+    {
+      "title": "I Rebuilt My AI Agent From a 600-Line Script Into a Harness. Token Cost Dropped 40%.",
+      "url": "https://dev.to/kenimo49/i-rebuilt-my-ai-agent-from-a-600-line-script-into-a-harness-token-cost-dropped-40-2n0f",
+      "source": "dev.to / #claudecode",
+      "time": "06/08 05:00 UTC 情緒：😊",
+      "sentiment": "",
+      "body": "將 monolith agent 重構為模組化 harness 的完整記錄，核心心得：避免一次性注入所有上下文，改為依需求載入，API 成本下降 40%。",
+      "focusTags": [
+        "[社群趨勢]"
+      ]
+    },
+    {
+      "title": "Show HN: Levi – run AlphaEvolve on your Claude Code for dirt cheap",
+      "url": "https://ttanv.github.io/levi/",
+      "source": "Hacker News",
+      "time": "06/08 15:12 UTC 情緒：🤔",
+      "sentiment": "",
+      "body": "開源 AlphaEvolve 複現系統，號稱比現有開源框架便宜最多 35 倍，支援在 Claude Code 或 Codex 上執行，作者主要以 QWEN-30B 測試。",
+      "focusTags": [
+        "[新工具]"
+      ]
+    },
+    {
+      "title": "Show HN: Agam – Activation-based memory for Claude Code, not retrieval",
+      "url": "https://github.com/CrypticCortex/agam",
+      "source": "Hacker News",
+      "time": "06/08 04:00 UTC 情緒：🤔",
+      "sentiment": "",
+      "body": "提出以 activation（啟動模式）而非傳統向量檢索作為 Claude Code 記憶體機制，已被 HN 標記 flagged，但概念值得觀察。",
+      "focusTags": [
+        "[新工具]"
+      ]
+    },
+    {
+      "title": "Show HN: ARouter – drop-in OpenAI/Anthropic proxy that cuts cost and fails over",
+      "url": "https://github.com/sricola/arouter",
+      "source": "Hacker News",
+      "time": "06/08 01:49 UTC 情緒：🤔",
+      "sentiment": "",
+      "body": "透明代理層，自動在 OpenAI 和 Anthropic 之間路由以降低成本並提供 failover，HN 評論建議與 LiteLLM 比較差異。",
+      "focusTags": [
+        "[新工具]"
+      ]
+    },
+    {
+      "title": "Show HN: GitHub Copilot port of Anthropic's AI vulnerability discovery harness",
+      "url": "https://github.com/davidreis97/defending-code-reference-harness-copilot",
+      "source": "Hacker News",
+      "time": "06/08 14:05 UTC 情緒：😊",
+      "sentiment": "",
+      "body": "將 Anthropic 官方 `defending-code-reference-harness`（自主漏洞發現工具）移植至 GitHub Copilot CLI，為使用 Copilot 的開發者提供安全代理能力，PORTING-PLAN.md 詳述設計決策。",
+      "focusTags": []
+    },
+    {
+      "title": "After 5 commits without you, your agent has left the loop: the meta-hook idea",
+      "url": "https://dev.to/michelfaure/after-5-commits-without-you-your-agent-has-left-the-loop-the-meta-hook-idea-3044",
+      "source": "dev.to / #claudecode",
+      "time": "06/08 03:20 UTC 情緒：😤",
+      "sentiment": "",
+      "body": "提出「meta-hook」概念：在 agent 每 N 次 commit 後強制暫停並等待人工確認，防止自律 agent 在無監督狀態下偏離意圖。實際案例：作者某次讓 agent 自行完成 9 個 commit。",
+      "focusTags": []
+    },
+    {
+      "title": "The 1M Context Window vs Prompt Caching: When to Use Which",
+      "url": "https://dev.to/raxxostudios/the-1m-context-window-vs-prompt-caching-when-to-use-which-571o",
+      "source": "dev.to / #claudecode",
+      "time": "06/07 16:10 UTC 情緒：😊",
+      "sentiment": "",
+      "body": "決策框架：一次性深度分析用 1M context；對固定文件的重複呼叫改用 prompt caching（成本降至 1/10）。明確提供選擇準則。",
+      "focusTags": []
+    },
+    {
+      "title": "An active attack is planting backdoors inside Claude Code right now",
+      "url": "https://www.reddit.com/r/ClaudeAI/comments/1u05t5e/an_active_attack_is_planting_backdoors_inside/",
+      "source": "Reddit / r/ClaudeAI",
+      "time": "06/08 03:59 UTC 情緒：😤",
+      "sentiment": "",
+      "body": "32 個 `@redhat-cloud-services` npm 套件遭植入惡意程式，每週 117,000 次下載量受影響；若安裝受影響版本，npm credentials 可能已洩漏。建議立即執行 `npm audit` 並更換相關憑證。",
+      "focusTags": [
+        "[風險警示]"
+      ]
+    },
+    {
+      "title": "Hackers Can Hijack Claude Code MCP Traffic to Steal OAuth Tokens",
+      "url": "https://news.google.com/rss/articles/CBMibkFVX3lxTE5hZUhBeUFpUkc3c3VLeE03Vmxub3JlekNzS0JNMkxZR1djZ0dQdEY5cy0tOUFURHNBNVFTS0FwTlRzNmlqSWtnZHpLd2ZuLVVxdEt4dlZsb0kzNFA0eFlVUmVwSVdSTEpaSWVXMnFn0gFzQVVfeXFMUEZjU2F1a0QtUkhSMmwxZ1Uxd1hzT29yWE00bjB5SmtKME9tXzZSSXJtZ1lmTkFFN0xydm5EZmp2cExaZFo2NEZtdGQzYUVUUmpSbWZTTFgxdkpTY21LdlNGcDFsczhMZ2h4UzdFeHZweTZMNA?oc=5",
+      "source": "Google News / CyberSecurityNews",
+      "time": "06/07 20:13 UTC 情緒：😤",
+      "sentiment": "",
+      "body": "研究揭露 Claude Code MCP 流量可被中間人攻擊劫持，進而竊取 OAuth Token，影響所有使用 MCP 整合第三方服務的開發者。",
+      "focusTags": [
+        "[風險警示]"
+      ]
+    },
+    {
+      "title": "Google Colab CLI opens runtimes to Claude Code and Codex",
+      "url": "https://news.google.com/rss/articles/CBMiiwFBVV95cUxNOXBrYkdMV2FEdnltWkJuV1ZiSnBqWmc0alp1ZGEzcTRZdWhuYkhLRTBoOUxfTVFrMmtNT2IxUTZBYW5zM1ZhYTRNdXNZWXhoLTdCUEtyQWJYb3F5cVBQNjZsdzJqdXJqbTZCQVhsbmF0bnA1ZEF6ZWxydm1MUDJObDBKTnVIOUdYb1FJ?oc=5",
+      "source": "Google News / Help Net Security",
+      "time": "06/07 21:00 UTC 情緒：😊",
+      "sentiment": "",
+      "body": "Google Colab CLI 現已支援 Claude Code 和 Codex，讓開發者能直接在 Colab GPU runtime 執行 agentic 工作流，無需本地環境設定。",
+      "focusTags": [
+        "[持續追蹤]"
+      ]
+    },
+    {
+      "title": "Anthropic CEO Dario Amodei says culture will win the AI race – spends 40% on it",
+      "url": "https://news.google.com/rss/articles/CBMipwFBVV95cUxQZ1djTjV1SG00WXBZNW9zZ0RESGh0SGJmcTNPeDI3MnJMbG4yLXpSajA3V0VZWWpzMFl2cG1mbWxBaDJfQVZ0WC16UGZxd1JpOWVPZmpVSk9HXzZta2VSSkxKSmo5RTBsMXQ1T1FKWmxSXzJQNEZ6bktsal9XdkpNbmZJOTNNYUZYWlp5OFE0c1AxUTdHa0lFM0hVY2lzMUR0UVBaS1lGdw?oc=5",
+      "source": "Google News / Fortune",
+      "time": "06/07 22:48 UTC 情緒：🤔",
+      "sentiment": "",
+      "body": "Dario Amodei 接受 Fortune 訪問，強調企業文化而非產品本身將決定 AI 競賽勝負，他個人有 40% 時間花在文化建設上。",
+      "focusTags": []
+    },
+    {
+      "title": "ZoomInfo Enables Claude With GTM.AI GTM Context Graph",
+      "url": "https://news.google.com/rss/articles/CBMimgFBVV95cUxQQmJXVVlXUDhybUpHdVlxUURzWkR1emNYRkZfT1g3UHhWc1RsTEZacjUzXzBLd3BoX2Y5d2hYcEoyd0lJZTk5cElXaElkeU1LSFl2RUNBLUtqUkRUSlJlZ2VscFZFZ3Qta0RCeEVza3MtYV8yYTkwSVM1SVc3eHRSeW9EdWNvUWtpTGZlMXNaQ1dTb3RpYW80X3F3?oc=5",
+      "source": "Google News / Let's Data Science",
+      "time": "06/07 22:31 UTC 情緒：😐",
+      "sentiment": "",
+      "body": "ZoomInfo 將 Claude 整合進其 GTM.AI 平台的 Context Graph，作為企業銷售情報工具，屬企業採用案例。",
+      "focusTags": []
+    },
+    {
+      "title": "Dragos applies Claude Mythos Preview to uncover vulnerabilities in OT security software",
+      "url": "https://news.google.com/rss/articles/CBMivAFBVV95cUxPVzdFVk1LcEY1Qzc1OTVKWUxNYUNuUFFtLTdYNElMMmFhNGFYMjFNTmhQXy16M1NVQVBSODFhTExUVEhsQkF6RlBJNGxpa21QdUVVenJPeHZuUDV2eHoyWGFXcHZia0ZVbE5WUWdqWnNMQ2g3ak04cWVoRGFtdW1KSnpIX0RobGZXYTdmMjJseDBOVktzS0FwSXBtSTVwVWVWVmpNdHVHLUtCTHBGcGdTRk9WN2JFVGZIREtOTw?oc=5",
+      "source": "Google News / Industrial Cyber",
+      "time": "06/08 01:43 UTC 情緒：😊",
+      "sentiment": "",
+      "body": "工業安全公司 Dragos 使用 Claude Mythos Preview 在 OT（操作技術）安全軟體中發現漏洞，是 Mythos 在 ICS/SCADA 領域的具體落地應用。",
+      "focusTags": []
+    },
+    {
+      "title": "Claude Cowork's new usage limits are insane",
+      "url": "https://www.reddit.com/r/ClaudeAI/comments/1u06eyb/claude_coworks_new_usage_limits_are_insane/",
+      "source": "Reddit / r/ClaudeAI",
+      "time": "06/08 04:26 UTC 情緒：😊",
+      "sentiment": "",
+      "body": "Claude Cowork 推出雙倍使用量活動至 7 月，且意外地 Claude Code 也適用折扣，社群驚喜發現此優惠組合。",
+      "focusTags": []
+    },
+    {
+      "title": "MCP that lets you run and manage Claude Code sessions from Claude.ai chat",
+      "url": "https://www.reddit.com/r/ClaudeAI/comments/1u09qaq/mcp_that_lets_you_run_and_manage_claude_code/",
+      "source": "Reddit / r/ClaudeAI",
+      "time": "06/08 06:35 UTC 情緒：😊",
+      "sentiment": "",
+      "body": "有人分享可從 Claude.ai chat 介面直接啟動和管理 Claude Code session 的 MCP 工具，讓「在哪裡腦力激盪就在哪裡執行」成為可能。",
+      "focusTags": []
+    },
+    {
+      "title": "Show HN: LimitPing – Keep Claude Code and Codex rate-limit windows continuous",
+      "url": "https://github.com/wavever/CCLimitPing",
+      "source": "Hacker News",
+      "time": "06/07 13:26 UTC 情緒：🤔",
+      "sentiment": "",
+      "body": "保持 Claude Code rate-limit 計時窗口連續不中斷的工具，確保開發流程不因 rate-limit 重置而中斷。",
+      "focusTags": []
+    }
+  ],
+  "billing": [
+    {
+      "title": "Claude Code on Slack/Discord/Telegram for flat $20/mo – no API bills",
+      "url": "https://lobsteady.com",
+      "source": "Hacker News",
+      "time": "06/07 21:11",
+      "sentiment": "",
+      "body": "Lobsteady 提供讓 Claude Code 在 Telegram、Discord、Slack 以每月固定 $20 運行的方案，基於用戶自有 Claude Pro/Max 訂閱，不另收 API 費用；服務架設在專屬 VPS，24/7 在線。",
+      "focusTags": []
+    },
+    {
+      "title": "Claude Cowork's new usage limits are insane",
+      "url": "https://www.reddit.com/r/ClaudeAI/comments/1u06eyb/claude_coworks_new_usage_limits_are_insane/",
+      "source": "Reddit / r/ClaudeAI",
+      "time": "06/08 04:26",
+      "sentiment": "",
+      "body": "Cowork 雙倍使用量活動至 7 月，且 Claude Code 使用量折扣意外同樣適用，實際成本效益大幅提升。",
+      "focusTags": []
+    },
+    {
+      "title": "Prompt caching is the cheapest Claude optimization. Nobody measures it.",
+      "url": "https://dev.to/ferhatatagun/prompt-caching-is-the-cheapest-claude-optimization-nobody-measures-it-1nga",
+      "source": "dev.to / #anthropic",
+      "time": "06/08 03:27",
+      "sentiment": "",
+      "body": "實測資料：多數團隊為可快取的重複 context 付全價，改用 prompt caching 後成本降至 1/10。強調「測量」是優化的前提，大多數團隊未追蹤快取命中率。",
+      "focusTags": []
+    }
+  ],
+  "focus": [
+    {
+      "tag": "[風險警示]",
+      "text": "npm 惡意套件攻擊鏈擴及 Claude Code 使用者：32 個 `@redhat-cloud-services` 套件遭植入後門，若已安裝受影響版本，npm 憑證可能已洩漏；同時有研究揭露 Claude Code MCP 流量可被劫持以竊取 OAuth Token。立即審查依賴並輪換憑證。",
+      "ref_urls": [
+        "https://www.reddit.com/r/ClaudeAI/comments/1u05t5e/an_active_attack_is_planting_backdoors_inside/",
+        "https://news.google.com/rss/articles/CBMibkFVX3lxTE5hZUhBeUFpUkc3c3VLeE03Vmxub3JlekNzS0JNMkxZR1djZ0dQdEY5cy0tOUFURHNBNVFTS0FwTlRzNmlqSWtnZHpLd2ZuLVVxdEt4dlZsb0kzNFA0eFlVUmVwSVdSTEpaSWVXMnFn0gFzQVVfeXFMUEZjU2F1a0QtUkhSMmwxZ1Uxd1hzT29yWE00bjB5SmtKME9tXzZSSXJtZ1lmTkFFN0xydm5EZmp2cExaZFo2NEZtdGQzYUVUUmpSbWZTTFgxdkpTY21LdlNGcDFsczhMZ2h4UzdFeHZweTZMNA?oc=5"
+      ]
+    },
+    {
+      "tag": "[重大事件]",
+      "text": "Anthropic Mythos 進入 NSA 攻勢網路作戰規劃，Washington Post 評析 Anthropic 或為當前全球最強大公司；Anthropic vs Pentagon「太安全」爭議持續延燒。",
+      "ref_urls": [
+        "https://news.google.com/rss/articles/CBMiiwFBVV95cUxQSV9MNmprVUs3QXl0ZjR4TW8yYTYwNU1CMThhTThJQ1FuTVZpbVdWamtvMzlCVGpNS0NtcTFQUnB3R0FSSUdwNWlwdVBoM1drTnhRanJQYUpaaWlkcXJydXpWUmhZeE1uUEZKbVRLbS0zU2JiVG5vdVBoSnJTVHZOT1dKS1Bhek5IenpR?oc=5",
+        "https://news.google.com/rss/articles/CBMiiAFBVV95cUxQcGJoWnZyOTFkUXNFSXlVRVFrcTdLeUh5QzFMS0V3TTZoUWdmYnI1QjB2ejc4Zk80OGRtQzhkTnlyRy1NVTRJczc2R3VhSXBHUmhHLW5wZnFuNW9VUUFNX2NXbWlPREZtUVRFcEZUWjhQYWFKS2YxUnczdDBhQmdCd1VmXzktNWdN?oc=5"
+      ]
+    },
+    {
+      "tag": "[新工具]",
+      "text": "Claude Code 周邊工具爆發：rate-limit 燃盡計時器、AlphaEvolve 低成本複現（Levi）、activation-based 記憶體（Agam）、OpenAI/Anthropic 代理路由器（ARouter）同步亮相。",
+      "ref_urls": [
+        "https://www.aimhuge.com/blog/claude-code-status-line",
+        "https://ttanv.github.io/levi/",
+        "https://github.com/CrypticCortex/agam",
+        "https://github.com/sricola/arouter"
+      ]
+    },
+    {
+      "tag": "[社群趨勢]",
+      "text": "CLAUDE.md 被稱為「單一最高 ROI 設定步驟」，SaaS 創辦人實測加入後程式碼品質立即提升；同時有開發者公開將 agent 從 600 行腳本重構為 harness 後 token 成本下降 40%。",
+      "ref_urls": [
+        "https://www.reddit.com/r/ClaudeAI/comments/1u089t4/set_up_a_claudemd_for_our_codebase_the_code/",
+        "https://dev.to/kenimo49/i-rebuilt-my-ai-agent-from-a-600-line-script-into-a-harness-token-cost-dropped-40-2n0f"
+      ]
+    },
+    {
+      "tag": "[持續追蹤]",
+      "text": "Google Colab CLI 正式支援 Claude Code 與 Codex，開發者可直接在 Colab 雲端 runtime 執行 agentic 工作流。",
+      "ref_urls": [
+        "https://news.google.com/rss/articles/CBMiiwFBVV95cUxNOXBrYkdMV2FEdnltWkJuV1ZiSnBqWmc0alp1ZGEzcTRZdWhuYkhLRTBoOUxfTVFrMmtNT2IxUTZBYW5zM1ZhYTRNdXNZWXhoLTdCUEtyQWJYb3F5cVBQNjZsdzJqdXJqbTZCQVhsbmF0bnA1ZEF6ZWxydm1MUDJObDBKTnVIOUdYb1FJ?oc=5"
+      ]
+    }
+  ],
+  "sourceStatus": [],
+  "preview": "Anthropic Mythos 軍事應用與安全爭議"
+}
