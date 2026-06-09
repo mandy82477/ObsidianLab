@@ -9,12 +9,13 @@
 
 ## 現況
 
-Claude Code 是 Anthropic 的 AI 編碼 CLI 工具，支援 agentic 工作流程、MCP Server 整合、Hooks 機制與多代理協作框架（Managed Agents）。截至 2026-06-08，GitHub Stars 達 **131,000+**，持續增長且成為 SaaS 創辦人與非技術開發者廣泛採用的平台。最新版本為 **v2.1.168**（Bug fixes and reliability improvements），核心能力已從純程式碼助理擴展為具備全桌面自動化、多代理管理與 AI 安全審查的完整 agent 開發平台。Microsoft 正陸續取消內部授權，轉推 GitHub Copilot CLI（見 [[topics/competitor-landscape]]）；GitHub 已推出新 Copilot 應用明確對標 Claude Code；Ramp AI Index 數據顯示 Anthropic 企業採用率首次超越 OpenAI（34.4% vs 32.3%）。
+Claude Code 是 Anthropic 的 AI 編碼 CLI 工具，支援 agentic 工作流程、MCP Server 整合、Hooks 機制與多代理協作框架（Managed Agents）。截至 2026-06-08，GitHub Stars 達 **131,000+**，持續增長且成為 SaaS 創辦人與非技術開發者廣泛採用的平台。最新版本為 **v2.1.169**（`--safe-mode` 除錯旗標），核心能力已從純程式碼助理擴展為具備全桌面自動化、多代理管理與 AI 安全審查的完整 agent 開發平台。Microsoft 正陸續取消內部授權，轉推 GitHub Copilot CLI（見 [[topics/competitor-landscape]]）；GitHub 已推出新 Copilot 應用明確對標 Claude Code；Ramp AI Index 數據顯示 Anthropic 企業採用率首次超越 OpenAI（34.4% vs 32.3%）。
 
 ### 最新版本
 
 | 版本 | 日期 | 重點 |
 |------|------|------|
+| **v2.1.169** | 2026-06-08 | 新增 `--safe-mode` 旗標（及 `CLAUDE_CODE_SAFE_MODE` 環境變數）：啟動時停用所有客製化設定（CLAUDE.md、plugins、skills、hooks、MCP servers），適合排除問題時隔離干擾來源 |
 | **v2.1.168** | 2026-06-07 | Bug fixes and reliability improvements |
 | **anthropic-sdk-python v0.107.1** | 2026-06-07 | 修復 foundry 模式下 x-api-key header 未正確送出的問題 |
 | **v2.1.167** | 2026-06-06 | Bug fixes and reliability improvements |

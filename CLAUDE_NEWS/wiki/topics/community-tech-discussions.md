@@ -2,7 +2,7 @@
 
 **狀態：** ongoing
 **開始日期：** 2026-04-25
-**最後更新：** 2026-06-09
+**最後更新：** 2026-06-09（新增 6/15 計費切割討論 + MCP 過多假退化事件 + Deep Research token 暴增）
 
 ---
 
@@ -20,6 +20,9 @@
 
 | 討論主題 | 首見 | 熱度 | 模式 | 核心論點 | 衍生 |
 |---------|------|------|------|---------|------|
+| 6/15 Agent SDK 計費切割：`claude -p` 從訂閱剝離 | 2026-06-08 | 🔥🔥🔥🔥🔥 | 🌊延燒 | Anthropic 說明中心確認：6/15 起 `claude -p`/Agent SDK 移入獨立月度預算（Pro $20/$100/$200），超額依 API 費率；CI/CD pipeline 開發者受最大影響，需主動設定 usage credits | — |
+| MCP 過多導致工具選擇混亂（Opus 4.7 假退化事件） | 2026-06-09 | 🔥🔥🔥 | ☄️閃現 | 開發者積累 6+ MCP servers 後 Claude 工具選擇開始錯誤（問 PR 跑 Notion）；模型沒變差，是 MCP 使工具清單過長干擾選擇；解法：移除未用 MCP，保持最小掛載數 | — |
+| Deep Research 並行任務燒盡 Max 配額（540 萬 token） | 2026-06-09 | 🔥🔥 | ☄️閃現 | 非技術用戶同時啟動兩個 Deep Research 任務，消耗 540 萬 token 觸發 5 小時封鎖；Deep Research 並行運行可致 token 使用量指數暴增，Max 訂閱也不免疫 | — |
 | CLAUDE.md 是最高 ROI 設置步驟（SaaS 創辦人實證）| 2026-06-09 | 🔥🔥 | ☄️閃現 | SaaS 創辦人（ARR $4.2M）實驗：加入 CLAUDE.md 後代碼品質立即提升，稱為「最高 ROI 的單一設置步驟」；強調架構概述與命名規範是核心內容 | — |
 | Agent 自主提交的人工監控：meta-hook 概念 | 2026-06-09 | 🔥🔥 | ☄️閃現 | 作者提出「meta-hook」：在 Claude Code agent 連續提交 N 個 commit 後自動暫停，要求人工確認；對應 Sub-agent 靜默推送主分支安全議題的工具層解法 | — |
 | Token 成本控制：1M Context Window vs Prompt Caching | 2026-06-09 | 🔥🔥 | ☄️閃現 | 技術對比：1M context 適合一次性深度任務，prompt caching 適合重複呼叫固定文件；費用差 10 倍；建議先評估查詢模式再選策略 | — |
@@ -99,6 +102,20 @@
 ---
 
 ## 技術彙整
+
+### 6/15 Agent SDK 計費切割：`claude -p` 從訂閱剝離（2026-06-08）
+
+- **來源：** "June 15: your Pro plan stops subsidizing agent runs"（Reddit / r/ClaudeAI）
+- **核心論點：** 2026-06-15 起 `claude -p`（headless）與 Agent SDK 使用從訂閱月配額剝離，移入獨立月度預算（Pro $20、Max 5x $100、Max 20x $200）；超額後依 API 定價計費，需主動啟用「usage credits」否則請求停止
+- **適用場景差異：** 互動式終端使用（人工操作 Claude Code session）→ 不受影響；CI/GitHub Actions/cron 腳本中的 `claude -p` → 受影響最大
+- **策略建議：** 6/15 前確認 usage credits 設定；評估哪些腳本用量超過月預算；考慮將高用量程式化任務直接走 API 計費
+
+### MCP 過多導致工具選擇混亂（Opus 4.7 假退化事件）（2026-06-09）
+
+- **來源：** "Spent a whole weekend convinced Opus 4.7 had gotten worse. It was my MCP setup the entire time."（Reddit / r/ClaudeAI）
+- **核心論點：** 開發者積累 6 個以上 MCP server 後，Claude 工具選擇開始系統性錯誤（問 PR 跑 Notion、問 ticket 跑 Slack）；模型沒有退步，是 MCP 過多使工具清單超出 Claude 高效選擇的範圍
+- **解法：** 移除未使用的 MCP server；保持同時掛載 MCP 數量最小化；按任務動態載入而非常態全開
+- **與既有討論連結：** 呼應「10 個 Plugin 同時啟用的真實成本」（2026-05-31）與「MCP context bloat 量化」（2026-05-19），此次提供了工具選擇錯誤的具體行為案例，三篇共同建立完整的 MCP 過載模型
 
 ### CLAUDE.md 是最高 ROI 設置步驟（2026-06-09）
 

@@ -26,7 +26,7 @@
 | 跨 session 記憶歸零 | ltm、Memex、draft CLI、LockedIn、VIR、CoreMem、claude-handoff-revive、timeglass.ai | 無官方標準，每個新 session 從零開始 | 🔥 持續升溫 | 2026-05-27 |
 | 多 agent 協調混亂 | agent-baton、cdesktop、AnyFrame、agent-teamflow、Runner、Runtime、Fleet、AWO、claude-workflow-composer | 官方 Managed Agents 已部分解決，但社群仍補缺口；AWO 提供 git worktree 隔離方案 | 🔥 持續升溫 | 2026-05-27 |
 | CLAUDE.md 規則失效 | Writ、Caliber、Patina | 規則被忽略、過多規則耗 token、跨工具無標準 | 🌙 冷卻觀望 | 2026-05-12 |
-| 多模型鎖定防禦 | Dragoman、Claudy、claudely、clarp、vibe-skill | 6/15 定價後對供應商依賴的集體防禦反應 | 🔥 持續升溫 | 2026-05-21 |
+| 多模型鎖定防禦 | Dragoman、Claudy、claudely、clarp、vibe-skill、Rayline | 6/15 計費切割後供應商依賴防禦反應加速；Rayline 新增 subagent 層級模型路由 | 🔥 持續升溫 | 2026-06-09 |
 | 輸出品質不可信 | Groundtruth、EvanFlow、Relay plugin、Proof Loop | 信任邊界未建立，需在流程層強制插入驗證點；Proof Loop 加入建構者/驗證者分離機制 | 🔥 持續升溫 | 2026-05-22 |
 
 ### CLAUDE.md 失效的四個原因
@@ -63,6 +63,13 @@
 
 | 工具 | 類型 | 採用 | 首次出現 | 簡介 |
 | --- | --- | --- | --- | --- |
+| [**Rayline**](https://rayline.ai/) | 模型路由 | ⏳ | 2026-06-09 | Claude Code 相容 LLM gateway，攔截內部路由；主 agent 跑 Opus、subagent 路由至便宜模型或本地模型；確定性設定（非 LLM 決策）；Show HN score 11 |
+| [**Guardian Runtime**](https://github.com/ashp15205/guardian-runtime) | 安全工具 | ⏳ | 2026-06-09 | 本地 FinOps + 安全 proxy（localhost:8080），提供 API 硬性預算上限（防 retry 暴衝）、API key/PII 洩漏即時偵測、Terse Mode（宣稱降低輸出 token 成本 40–70%）；支援 OpenAI/Anthropic/Gemini；Show HN |
+| [**CapaKit**](https://capakit.com/) | 安全工具 | ⏳ | 2026-06-09 | Sandbox AI coding agent 完整生命週期（建置到執行），監控 build 階段依賴安裝行為，防止 secrets baked into config 與 npm install 惡意腳本；Show HN score 4 |
+| [**Storytime**](https://1ps0.info/storytime/) | 工作流 | ⏳ | 2026-06-09 | Claude Code continuity 工具：`/storytime` 指令產生增量文件集合，保存 domain lens 與上下文跨 session 延續；作者日常驅動工具；Show HN score 1 |
+| [**cc-bridge**](https://github.com/Incultnitollc/claude-code-live-bridge) | 多 Agent | ⏳ | 2026-06-09 | 兩個 Claude Code 視窗透過單一 JSONL 檔案即時互通；Show HN score 2（[flagged]）|
+| [**RunAPI**](https://runapi.ai/) | 整合工具 | ⏳ | 2026-06-09 | 一個 API key 存取 AI video/image/music/LLM；提供 MCP server + CLI skills，可直接在 Claude Code 整合 Kling/Suno/Flux/Gemini/DeepSeek；Show HN score 3 |
+| [**Intuned**](https://intunedhq.com) | 工作流 | ⏳ | 2026-06-09 | YC S22；AI agent 驅動的瀏覽器自動化平台，automation 以程式碼執行，agent 自動維護（healing）；Launch HN score 110 |
 | [**Levi**](https://ttanv.github.io/levi/) | Agent 框架 | ⏳ | 2026-06-08 | 開源 AlphaEvolve 複現系統；支援 Claude Code / Codex，成本比現有開源框架低達 35 倍；Show HN score 2 |
 | [**Claude Code Status Line**](https://www.aimhuge.com/blog/claude-code-status-line) | IDE/終端 | ⏳ | 2026-06-08 | Claude Code status bar 顯示 ctx 使用率、rate-limit 倒數（燃盡計時）、模型選擇與 git branch；HN score 7 |
 | [**xword-pipeline**](https://github.com/ekorbia/xword-pipeline) | 創意生成 | ⏳ | 2026-06-09 | Rust fill-engine + Claude clue-writer 生成 NYT 風格填字遊戲；含 QA 審查步驟；Show HN score 3 |

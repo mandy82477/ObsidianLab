@@ -2,7 +2,7 @@
 
 **狀態：** ongoing
 **開始日期：** 2026-05-26
-**最後更新：** 2026-06-08
+**最後更新：** 2026-06-09
 
 ## 摘要
 
@@ -18,6 +18,9 @@
 
 | 企業 | 規模 | AI 編碼工具 | 狀態 | 事件日期 | 備註 | 確認日期 |
 |------|------|-----------|------|---------|------|---------|
+| LG Group | 頂尖 | Claude API | ✅ | 2026-06-09 | LG 集團旗下全體關聯企業宣布採用 Anthropic Claude，韓國大型財閥全面入局企業 AI | 2026-06-09 |
+| Rubrik | 大型 | Claude Code | ✅ | 2026-06-09 | 推出 Agent Cloud for Claude Code，將數據保護平台轉型為 AI agent；全球 GSI 同步入夥 | 2026-06-09 |
+| AppFolio | 大型 | Claude API | ✅ | 2026-06-09 | Realm-X 套件接入 Claude，agent-to-agent 架構直接觸發房地產績效管理流程 | 2026-06-09 |
 | ZoomInfo | 大型 | Claude API | ✅ | 2026-06-07 | 透過 GTM.AI 平台整合 Claude，建構 GTM Context Graph 企業銷售情報系統 | 2026-06-08 |
 | Salesforce | 頂尖 | Claude Code | ✅ | — | 宣布 2027 年起不新增軟體工程師，直接點名 Claude Code 壓縮系統移轉成本 | 2026-06-06 |
 | Microsoft | 頂尖 | Claude Code | ❌ | 2026-06-30 | 數月燒完全年 AI 預算，6/30 正式停用 | 2026-05-25 |
@@ -43,8 +46,8 @@
 
 | 工具 | 企業採用數 | 趨勢 | 主要阻力 |
 |------|----------|------|---------|
-| Claude Code | 3 使用中（Amazon、Uber、UiPath）+ 1 退出（Microsoft） | ⚠️ 成本壓力浮現 | 缺乏企業層級預算管控 |
-| Claude API | 8（Apple、KPMG、iCapital、哈佛、Fujitsu、Travelport、Nimble Gravity、ZoomInfo） | 🟢 持續擴張 | — |
+| Claude Code | 4 使用中（Amazon、Uber、UiPath、Rubrik）+ 1 退出（Microsoft） | ⚠️ 成本壓力浮現 | 缺乏企業層級預算管控 |
+| Claude API | 11（Apple、KPMG、iCapital、哈佛、Fujitsu、Travelport、Nimble Gravity、ZoomInfo、LG Group、AppFolio、Salesforce Claude API） | 🟢 快速擴張 | — |
 | GitHub Copilot | 1（Microsoft） | 🟢 Microsoft 背書 | 生態鎖定 |
 | OpenAI Codex | 2（Amazon、UiPath） | 🟢 快速成長 | — |
 
@@ -61,6 +64,11 @@
 ---
 
 ## 時序
+
+### 2026-06-09
+- **LG Group 全面採用 Claude**：LG 集團旗下各關聯企業宣布採用 Anthropic Claude，為亞太市場最大單一財閥入局（thelec.net）
+- **Rubrik Agent Cloud for Claude Code**：Rubrik 推出 Agent Cloud，將數據保護平台轉型為 AI agent，讓 Claude Code 可直接調用 Rubrik 的備份與恢復能力；全球系統整合商（Cognizant、Wipro、Deloitte 等）加入合作夥伴計畫（Business Wire、Yahoo Finance）
+- **AppFolio + Claude A2A 整合**：房地產管理平台 AppFolio 連接 Realm-X 套件至 Claude，建立 agent-to-agent 連接讓 Claude 直接執行房地產績效管理動作（Business Insider）
 
 ### 2026-06-08
 - **ZoomInfo 整合 Claude 至 GTM.AI 平台**：ZoomInfo 透過 GTM Context Graph 將 Claude 嵌入其企業銷售情報平台，作為 go-to-market AI 系統的核心推理引擎（Let's Data Science）

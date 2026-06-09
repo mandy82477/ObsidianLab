@@ -2,7 +2,7 @@
 
 **狀態：** ongoing
 **開始日期：** 2026-05-28
-**最後更新：** 2026-06-09
+**最後更新：** 2026-06-09（IPO 競賽 + Apollo/Blackstone 晶片融資 + LG 集團採用 + Rubrik Agent Cloud + Geoffrey Hinton 批評）
 
 ---
 
@@ -107,6 +107,15 @@ Simon Willison（知名開發者博主）發表文章，認為 Anthropic 與 Ope
 - [[news/2026-05-13]]（The Information：定價強勢期）
 
 ## 時序
+
+### 2026-06-09
+- **[Anthropic + OpenAI 同週 IPO 秘密申請]** OpenAI 宣布已機密遞交 IPO 申請，緊隨 Anthropic 上週相同動作；兩者估值均接近兆元，加上 SpaceX 同期 IPO，形成 2026 年最大規模 AI 資本市場競賽（Wired、BBC、TechCrunch、Forbes 多家媒體）
+- **[Apollo + Blackstone $35B 晶片融資]** Apollo 與 Blackstone 為 Anthropic 籌組 350 億美元晶片融資協議，為 AI 基礎設施建設提供長期資本，是繼 Series H 後最大單筆融資動作（FT）
+- **[LG 集團全面採用 Claude]** LG 集團旗下各關聯企業宣布全面採用 Anthropic Claude，顯示韓國大型財閥積極布局企業 AI 解決方案；日韓市場企業採用加速（thelec.net）
+- **[Rubrik Agent Cloud for Claude Code 發布]** Rubrik 將其數據保護平台接入 Claude Code，推出 Agent Cloud 企業方案；全球系統整合商（GSI）同步加入合作夥伴計畫，是 Anthropic 企業生態快速擴張的具體例證（Business Wire、Yahoo Finance）
+- **[AppFolio Realm-X 接入 Claude]** 房地產管理平台 AppFolio 將 Realm-X AI 套件接入 Claude，建構 agent-to-agent 架構讓 Claude 直接觸發績效管理流程，展示 A2A 協議在垂直行業的實際落地
+- **[Claude 寫 80%+ Anthropic 生產程式碼（5 月數據確認）]** dev.to 整理 Anthropic 6 月 4 日報告數據：5 月份超過 80% 合入 Anthropic 生產程式碼庫的程式碼由 Claude 撰寫，AI 自我改進里程碑提前達成；同時 Fiverr 數據顯示 Claude Code 專才需求暴增 938%（Quiver Quantitative）
+- **[Geoffrey Hinton 批評 Anthropic 偏離安全使命]** AI 教父 Geoffrey Hinton 公開表示 Anthropic 已偏離其安全優先使命，引發廣泛關注（NBC News）；另：Claude Code 創始人（Boris Cherny）接受 Fortune 專訪，主張 AI 開發成本應與開發者工資而非 API 費用比較
 
 ### 2026-06-08
 - **[Anthropic 最有影響力公司]** 《華盛頓郵報》評論文章稱 Anthropic 可能是「全球最有影響力的公司」，引發廣泛轉發討論；凸顯 Anthropic 在 AI 治理、軍事應用與商業擴張多條線並進的同時，影響力已超越純商業範疇

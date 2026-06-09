@@ -75,6 +75,9 @@ Anthropic 的官方 AI 資安能力研究計畫，Mythos Preview 為核心工具
 
 ## 時序
 
+### 2026-06-09
+多方消息確認 Mythos 公開版即將發布：Alex Heath（Sources newsletter）報導 Anthropic 計畫推出附強化護欄的公開版本，預期在 agentic / 長期任務領域能力大幅提升，但 cyber 攻擊能力較 Project Glasswing 預覽版受限。Reddit 社群同步爆料版本名稱可能為「Claude Fable 5」（未經官方確認）。此外，Anthropic 研究「Measuring LLMs' impact on N-day exploits」揭示 LLM 已顯著降低 N-day 漏洞利用門檻。
+
 ### 2026-06-08
 Dragos（工業網路安全公司）將 Mythos Preview 應用於 OT（營運技術）安全軟體漏洞挖掘，為 Mythos 在企業安全場景的落地新案例。Pentagon 因 Claude「太安全」而尋求替代 AI 方案的報導再次被廣泛引述，Tech Times 報導五角大廈積極評估替代品。
 

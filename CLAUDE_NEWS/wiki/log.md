@@ -5,6 +5,40 @@ Append-only 紀錄。每次 ingest、query 或 lint 都在此追加一條。
 
 ---
 
+## 2026-06-09 Ingest（更新版）| news/2026-06-09.md（85 則）
+
+- 來源日報：`news/2026-06-09.md`（85 則，6 來源；Mythos 公開版傳出、6/15 Agent SDK 計費切割、Anthropic/OpenAI IPO 雙雄競賽、Apollo/Blackstone $35B 晶片融資、LG 集團採用、Rubrik Agent Cloud、Claude 80%+ 生產碼確認、Fiverr 938% 需求暴增、Geoffrey Hinton 批評、Claude Code v2.1.169 `--safe-mode`）
+- 更新頁面：
+  - `entities/claude-code.md`：新增 v2.1.169 版本記錄（`--safe-mode` 旗標）；現況描述更新最新版本；最後更新維持 2026-06-09
+  - `entities/mythos.md`：新增 2026-06-09 時序（公開版傳出 + N-day 研究發布）；最後更新維持 2026-06-09
+  - `topics/anthropic-business.md`：新增 2026-06-09 時序（IPO 競賽 + $35B 融資 + LG + Rubrik + AppFolio + Claude 80% + Geoffrey Hinton 批評）；最後更新更新
+  - `topics/recursive-self-improvement.md`：新增 2026-06-09 時序（5 月數據確認 80%+ + Fiverr 938% + 品牌曝光分析）；最後更新 2026-06-09
+  - `topics/enterprise-tool-tracker.md`：新增 LG Group / Rubrik / AppFolio 三列；Claude Code 採用數 3→4，Claude API 採用數 8→11；新增 2026-06-09 時序；最後更新 2026-06-09
+  - `topics/anthropic-government-policy.md`：新增 2026-06-09 時序（Trump 否認黑名單報復）；最後更新維持 2026-06-09
+  - `topics/community-tech-tools.md`：新增 7 個工具（Rayline / Guardian Runtime / CapaKit / Storytime / cc-bridge / RunAPI / Intuned）；痛點洞察更新多模型鎖定防禦痛點；最後更新 2026-06-09
+  - `topics/community-tech-discussions.md`：熱門討論 prepend 3 條（6/15 計費切割 / MCP 假退化 / Deep Research token 暴增）；技術彙整新增 2 條（6/15 計費 + MCP 過載）；最後更新 2026-06-09
+  - `wiki/feature-radar.md`：新增 2 條（`--safe-mode` + Agent SDK 6/15 計費切割 Breaking Change）；最後更新 2026-06-09
+  - `entities/pricing.md`：最後更新 2026-06-09（6/15 計費切割確認）
+- 新增頁面：無（今日事件均為既有頁面延伸）
+- feature-radar 更新：`--safe-mode`（新旗標，✅ 收錄）；Agent SDK 6/15 計費切割（Breaking Change，✅ 收錄）
+- 升格檢查（discussions → patterns）：🌊延燒 項目中 6/15 計費（首見 1 天）、MCP 假退化（首見今日）均未達升格門檻；其他延燒項目為哲學討論，無具體可複用工作流步驟。**無升格**
+- 本日新增工具：Rayline / Guardian Runtime / CapaKit / Storytime / cc-bridge / RunAPI / Intuned（共 7 個，累積 189 個）
+- 呈現品質審查：
+  | 頁面 | 結果 |
+  |------|------|
+  | entities/claude-code.md | ✅ 通過（版本表頂端新增 v2.1.169，現況描述同步更新）|
+  | entities/mythos.md | ✅ 通過（時序 prepend，公開版傳出事件記錄完整）|
+  | topics/anthropic-business.md | ✅ 通過（2026-06-09 時序 prepend，7 條新事件）|
+  | topics/recursive-self-improvement.md | ✅ 通過（2026-06-09 時序 prepend）|
+  | topics/enterprise-tool-tracker.md | ✅ 通過（3 新企業列 + 競爭態勢更新 + 時序 prepend）|
+  | topics/anthropic-government-policy.md | ✅ 通過（時序 prepend）|
+  | topics/community-tech-tools.md | ✅ 通過（7 工具插入表頭 + 痛點洞察更新）|
+  | topics/community-tech-discussions.md | ✅ 通過（3 條 prepend + 2 條技術彙整）|
+  | wiki/feature-radar.md | ✅ 通過（2 條新增至全覽表）|
+  | entities/pricing.md | ✅ 通過（最後更新日期更新）|
+
+---
+
 ## 2026-06-08 Ingest | news/2026-06-08.md
 
 - 來源日報：`news/2026-06-08.md`（74 則，6 來源；npm 惡意套件 + MCP OAuth 劫持安全警報、Mythos NSA 軍事應用、Google Colab CLI Claude Code 整合、CLAUDE.md 最高 ROI、agent harness 降本 40%、ZoomInfo 企業採用、Levi AlphaEvolve 低成本複現等）

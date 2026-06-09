@@ -4,7 +4,7 @@
 僅收錄官方 changelog、release note 或官方公告來源；社群工具見 [[topics/community-tech-tools]]。
 每次 ingest 後由 LLM 維護：新增功能、更新熱度、補充社群回饋。
 
-**最後更新：** 2026-06-09（新增 Google Colab CLI 整合；anthopric-sdk-python v0.107.1 修復）
+**最後更新：** 2026-06-09（新增 --safe-mode 旗標；Agent SDK 6/15 計費切割 Breaking Change；Google Colab CLI）
 
 ---
 
@@ -29,6 +29,8 @@
 
 | 功能 | 發布日期 | 熱度 | 試用價值 | 狀態 |
 |------|----------|------|----------|------|
+| Claude Code v2.1.169 `--safe-mode` 旗標 | 2026-06-08 | 🔥🔥 | ✅ 推薦 | 正式發布（停用所有客製化設定，MCP/hooks/skills/CLAUDE.md；故障排除利器）|
+| Agent SDK / `claude -p` 計費軌道切割（2026-06-15 生效） | 2026-06-15 | 🔥🔥🔥🔥🔥 | ⚠️ 必讀 | Breaking Change（Pro $20/Max 5x $100/Max 20x $200 程式化月預算；超額依 API 費率）|
 | Google Colab CLI 整合 Claude Code / Codex | 2026-06-08 | 🔥🔥 | ✅ 推薦 | 正式發布（降低 Colab 使用 AI coding agent 門檻）|
 | Python SDK v0.107.1（foundry x-api-key header 修復） | 2026-06-07 | 🔥 | ✅ 推薦 | 正式發布（Bedrock Foundry 使用者應升級）|
 | Python SDK v0.106.0（Claude Opus 4.1 標記棄用） | 2026-06-06 | 🔥 | ✅ 推薦 | 正式發布（開發者應遷移至新版模型 ID）|

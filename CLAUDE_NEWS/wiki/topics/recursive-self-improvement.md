@@ -2,7 +2,7 @@
 
 **狀態：** ongoing
 **開始日期：** 2026-06-04
-**最後更新：** 2026-06-06
+**最後更新：** 2026-06-09
 
 ---
 
@@ -53,6 +53,11 @@
 - [[entities/mythos]]（能力擴張的具體案例）
 
 ## 時序
+
+### 2026-06-09（媒體跟進）
+- dev.to 多篇文章整理 Anthropic 6/4 報告數據：5 月份超過 80% 生產程式碼由 Claude 撰寫（非 80-90% 區間，是確認的下限）
+- Fiverr 數據顯示 Claude Code 專才需求暴增 938%，AI 自我改進帶動的市場需求轉型已外溢至人才市場（Quiver Quantitative、Yahoo Finance Singapore）
+- Anthropic 研究「AI builds AI 8x faster」的品牌曝光度分析顯示此里程碑正在成為 Anthropic 核心行銷敘事
 
 ### 2026-06-06（持續延燒）
 - ABC News、Engadget 再次報導 Anthropic「AI 煞車踏板」呼籲
