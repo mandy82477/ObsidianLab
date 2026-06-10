@@ -2,7 +2,7 @@
 
 **狀態：** ongoing
 **開始日期：** 2026-04-27
-**最後更新：** 2026-06-09
+**最後更新：** 2026-06-10
 
 ---
 
@@ -226,6 +226,12 @@
 - [Anthropic's definition of safety is too narrow](https://jonathannen.com/anthropic-safety-too-narrow/) — Jonathan Nen
 
 ## 時序
+
+### 2026-06-10
+- **[供應鏈攻擊升級] Claude Code 攻擊規模：294,842 secrets 竊取 / 6,943 台機器**（Reddit / r/ClaudeAI）：持續供應鏈攻擊更新：已從 6,943 台機器竊取 294,842 個 secrets（API keys、憑證），攻擊從 VS Code 擴散至 Python 生態，並利用 Claude Code 本身作為攻擊媒介。一個橫向移動攻擊組織持續運作數個月，每波更快更隱蔽。Fable 5 的高網路攻擊能力被點名為潛在威脅升高因素。**建議立即行動**：審計所有 API keys、啟用 MCP server 流量監控、更新至最新版 Claude Code。
+- **[新工具：claude-quota / agent-pd / claudefeed / guardian-runtime]**（HN Show 多篇）：Fable 5 發布後同日出現多個監控/安全工具（詳見 [[topics/community-tech-tools]]）。
+- **[JFrog Claude Code 插件]**（多媒體報導）：JFrog 正式發布 Claude Code 企業級軟體供應鏈治理插件，提供依賴漏洞掃描與安全治理，Anthropic 官方合作夥伴關係確認。
+- **[Claude Code 安全漏洞報告]** DevOps.com：「AI 工具深入開發工作流後的系統性風險」分析 Claude Code 安全漏洞事件，說明 AI coding tool 整合的廣泛攻擊面。
 
 ### 2026-06-08
 - **[npm 供應鏈攻擊] `@redhat-cloud-services` 32 個套件後門**（Reddit / r/ClaudeAI）：惡意後門植入 `@redhat-cloud-services` 相關 32 個 npm 套件，117,000 次/週下載量受影響；惡意程式在安裝時竊取 npm credentials；Claude Code 開發者若安裝受影響版本，憑證可能已外洩；建議立即執行 `npm audit`、輪換相關 API 金鑰。此攻擊延續 2026-06-02 Claude Code SessionStart Hook 攻擊向量，顯示 Claude 生態圈已成供應鏈攻擊持續目標。

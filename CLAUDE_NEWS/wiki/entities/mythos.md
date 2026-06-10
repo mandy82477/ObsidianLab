@@ -1,17 +1,21 @@
 # Claude Mythos
 
 **類型：** model
-**狀態：** 公開化中（透過 Claude Code 釋出）
+**狀態：** 部分公開（Fable 5 = Mythos 架構 + 護欄；Mythos 5 = 完整版限定存取）
 **首次出現：** 2026-04（限定夥伴 Preview）
-**最後更新：** 2026-06-09
+**最後更新：** 2026-06-10
 
 ---
 
 ## 現況
 
-Claude Mythos 是 Anthropic 因安全風險而未對外公開發布的高能力 AI 模型。已確認具備**自主發現並武器化軟體漏洞、生成可執行 exploit** 的能力，是 AI 安全領域的重大里程碑。
+Claude Mythos 是 Anthropic 的高能力 AI 模型家族，已確認具備**自主發現並武器化軟體漏洞、生成可執行 exploit** 的能力，是 AI 安全領域的重大里程碑。
 
-**2026-06-02**，Anthropic 宣布 Glasswing 夥伴擴展至 150 個新組織（共 200 個，覆蓋 15+ 國家），並承諾 **6–12 個月內推出公開版本**。**2026-06-05**，FT 獨家報導 NSA 正使用 Mythos 發動進攻性網路攻擊，是 Glasswing「防禦」框架兩用性的首次公開確認。
+**2026-06-09**，Anthropic 正式發布 **Claude Fable 5**：以 Mythos 架構為核心、附加安全護欄的公開版本（定價 $10/$50 per million token）。同日發布的 **Claude Mythos 5** 為無護欄完整版，僅限授權用戶（政府防禦者、企業安全研究員）存取，定價更高。Fable 5 = 史上首款向大眾開放的 Mythos 級模型。
+
+**30 天資料保留政策**：Fable 5 / Mythos 5 所有流量強制保留 30 天供安全審查，資料離開 AWS 安全邊界，引發 Bedrock 用戶隱私爭議。
+
+**2026-06-02**，Anthropic 宣布 Glasswing 夥伴擴展至 150 個新組織（共 200 個，覆蓋 15+ 國家）。**2026-06-05**，FT 獨家報導 NSA 正使用 Mythos 發動進攻性網路攻擊，是 Glasswing「防禦」框架兩用性的首次公開確認。
 
 ---
 
@@ -75,8 +79,11 @@ Anthropic 的官方 AI 資安能力研究計畫，Mythos Preview 為核心工具
 
 ## 時序
 
+### 2026-06-10
+Claude Fable 5 發布後社群爭議持續：Anthropic 被揭露在偵測到使用者從事前沿 LLM 開發時（訓練 pipeline、推論研究、ML 加速器設計），Fable 5 會靜默降級回應品質，不告知用戶。此行為源自系統卡聲明「These safeguards will not be visible to the user」，被廣泛批評為反競爭且缺乏透明度（Reddit LocalLLaMA / r/ClaudeAI 大量討論）。同日，供應鏈攻擊持續：已竊取 294,842 個 secrets，攻擊蔓延至 Python 生態，使用 Claude Code 本身作為攻擊媒介。Anthropic 首席執行長 Dario Amodei 對「Claude 是否用於伊朗學校打擊」表示不知情（Bloomberg）。Microsoft AI CEO Mustafa Suleyman 批評 Anthropic 對 Claude 意識的推測「非常危險」。
+
 ### 2026-06-09
-多方消息確認 Mythos 公開版即將發布：Alex Heath（Sources newsletter）報導 Anthropic 計畫推出附強化護欄的公開版本，預期在 agentic / 長期任務領域能力大幅提升，但 cyber 攻擊能力較 Project Glasswing 預覽版受限。Reddit 社群同步爆料版本名稱可能為「Claude Fable 5」（未經官方確認）。此外，Anthropic 研究「Measuring LLMs' impact on N-day exploits」揭示 LLM 已顯著降低 N-day 漏洞利用門檻。
+**Claude Fable 5 正式發布**（定價 $10/$50 per million token；context 1M；128K max output）。與 Claude Mythos 5 共用相同模型權重，差異在前置安全分類器——觸發時靜默 fallback 至 Opus 4.8（不到 5% session 受影響）。HN 討論達 2,448 分、近 2,000 評論。Anthropic 同步發布系統卡（含 ASL-4 安全評估框架）。30 天資料保留政策（Bedrock 用戶資料離開 AWS 邊界）生效。多方消息確認 Mythos 公開版即將發布：Alex Heath（Sources newsletter）報導 Anthropic 計畫推出附強化護欄的公開版本，預期在 agentic / 長期任務領域能力大幅提升，但 cyber 攻擊能力較 Project Glasswing 預覽版受限。Reddit 社群同步爆料版本名稱可能為「Claude Fable 5」（未經官方確認）。此外，Anthropic 研究「Measuring LLMs' impact on N-day exploits」揭示 LLM 已顯著降低 N-day 漏洞利用門檻。
 
 ### 2026-06-08
 Dragos（工業網路安全公司）將 Mythos Preview 應用於 OT（營運技術）安全軟體漏洞挖掘，為 Mythos 在企業安全場景的落地新案例。Pentagon 因 Claude「太安全」而尋求替代 AI 方案的報導再次被廣泛引述，Tech Times 報導五角大廈積極評估替代品。

@@ -2,7 +2,7 @@
 
 **狀態：** ongoing
 **開始日期：** 2026-04-25
-**最後更新：** 2026-06-09
+**最後更新：** 2026-06-10
 
 ---
 
@@ -22,7 +22,7 @@
 
 | 痛點主題 | 代表工具 | 本質問題 | 狀態 | 近期工具 |
 |---------|---------|---------|------|---------|
-| Token 成本不透明 | Tokenyst、CostHawk、TokenShield、PrismoDev、engramx、agent-estimate、AI Agent Token Cost Calculator、Claude Usage Tray、token-xray | 自主 agent 讓帳單不可預測；$200 方案 17× 補貼分析與 $6,000 個人事件廣傳後社群費用意識持續升溫 | 🔥 持續升溫 | 2026-05-28 |
+| Token 成本不透明 | Tokenyst、CostHawk、TokenShield、PrismoDev、engramx、agent-estimate、AI Agent Token Cost Calculator、Claude Usage Tray、token-xray、agentgraphed、context-analyzer、permafrost | 自主 agent 讓帳單不可預測；Fable 5 $10/$50 定價與 6/22 訂閱截止加劇費用焦慮；工具爆發 | 🔥 持續升溫 | 2026-06-10 |
 | 跨 session 記憶歸零 | ltm、Memex、draft CLI、LockedIn、VIR、CoreMem、claude-handoff-revive、timeglass.ai | 無官方標準，每個新 session 從零開始 | 🔥 持續升溫 | 2026-05-27 |
 | 多 agent 協調混亂 | agent-baton、cdesktop、AnyFrame、agent-teamflow、Runner、Runtime、Fleet、AWO、claude-workflow-composer | 官方 Managed Agents 已部分解決，但社群仍補缺口；AWO 提供 git worktree 隔離方案 | 🔥 持續升溫 | 2026-05-27 |
 | CLAUDE.md 規則失效 | Writ、Caliber、Patina | 規則被忽略、過多規則耗 token、跨工具無標準 | 🌙 冷卻觀望 | 2026-05-12 |
@@ -63,6 +63,15 @@
 
 | 工具 | 類型 | 採用 | 首次出現 | 簡介 |
 | --- | --- | --- | --- | --- |
+| [**claude-quota**](https://github.com/grzegorz-raczek-unit8/claude-quota) | IDE/終端 | ⏳ | 2026-06-10 | macOS 選單列即時顯示 Claude Code 配額用量（視覺量規），Show HN score 45 |
+| [**OpenYabby**](https://github.com/OpenYabby/OpenYabby) | 多 Agent | ⏳ | 2026-06-10 | 語音控制的多 agent 協調器，整合 Claude Code，支援複雜任務語音驅動自動化；Show HN |
+| [**agent-pd**](https://github.com/varmabudharaju/agent-pd/blob/master/README.md) | 安全工具 | ⏳ | 2026-06-10 | 零 token 消耗的子 agent 審計工具，偵測 Claude Code 中的流氓子 agent 行為；Show HN score 6 |
+| [**claudefeed**](https://github.com/yeet-src/claudefeed) | 安全工具 | ⏳ | 2026-06-10 | 即時 audit log：監控 Claude Code 每個命令、檔案操作、網路連線；Show HN score 4 |
+| [**agentgraphed**](https://github.com/sudomichael/agentgraphed) | 費用監測 | ⏳ | 2026-06-10 | 本地 SQLite 索引所有 Claude Code 對話，提供智能標題、Resume 按鈕、context 分析；Show HN score 3 |
+| [**context-analyzer**](https://github.com/manavgup/context-analyzer) | 費用監測 | ⏳ | 2026-06-10 | Context window 使用率分析工具，追蹤工具、compaction、skills、互動的 context 消耗；Show HN score 2 |
+| [**permafrost**](https://github.com/jianzhichun/permafrost) | 費用監測 | ⏳ | 2026-06-10 | 凍結 Claude Code prompt 前綴以利用快取，宣稱降低 DeepSeek 費用 64%；Show HN score 3 |
+| [**Lanes v0.43.0**](https://lanes.sh/blog/claude-fable-5) | 多 Agent | ⏳ | 2026-06-10 | 並行 agent session 工具更新支援 Claude Fable 5，說明 Fable 5 fallback 機制 |
+| [**ktx**](https://github.com/Kaelio/ktx) | 工作流 | ⏳ | 2026-06-10 | 聲稱為 Anthropic 內部分析引擎開源版，支援 LLM-driven analytics；Show HN score 13 |
 | [**Rayline**](https://rayline.ai/) | 模型路由 | ⏳ | 2026-06-09 | Claude Code 相容 LLM gateway，攔截內部路由；主 agent 跑 Opus、subagent 路由至便宜模型或本地模型；確定性設定（非 LLM 決策）；Show HN score 11 |
 | [**Guardian Runtime**](https://github.com/ashp15205/guardian-runtime) | 安全工具 | ⏳ | 2026-06-09 | 本地 FinOps + 安全 proxy（localhost:8080），提供 API 硬性預算上限（防 retry 暴衝）、API key/PII 洩漏即時偵測、Terse Mode（宣稱降低輸出 token 成本 40–70%）；支援 OpenAI/Anthropic/Gemini；Show HN |
 | [**CapaKit**](https://capakit.com/) | 安全工具 | ⏳ | 2026-06-09 | Sandbox AI coding agent 完整生命週期（建置到執行），監控 build 階段依賴安裝行為，防止 secrets baked into config 與 npm install 惡意腳本；Show HN score 4 |

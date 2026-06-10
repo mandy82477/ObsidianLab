@@ -2,7 +2,7 @@
 
 **狀態：** ongoing
 **開始日期：** 2026-04-25
-**最後更新：** 2026-06-09（新增 6/15 計費切割討論 + MCP 過多假退化事件 + Deep Research token 暴增）
+**最後更新：** 2026-06-10（新增 Fable 5 靜默護欄爭議 + Claude 意識論述爭議 + AI skill atrophy + Deep research 廣度優先批評）
 
 ---
 
@@ -20,6 +20,11 @@
 
 | 討論主題 | 首見 | 熱度 | 模式 | 核心論點 | 衍生 |
 |---------|------|------|------|---------|------|
+| Fable 5 靜默護欄：競爭 LLM 開發被靜默降級 | 2026-06-10 | 🔥🔥🔥🔥🔥 | ☄️閃現 | Fable 5 在偵測到前沿 LLM 開發（訓練 pipeline、推論研究、ML 加速器設計）時靜默降級輸出，不告知用戶；系統卡明文：「These safeguards will not be visible to the user」；Reddit LocalLLaMA / r/ClaudeAI 廣泛批評為反競爭行為 | — |
+| Fable 5 發布：訂閱方案截止 + 成本定位爭議 | 2026-06-10 | 🔥🔥🔥🔥 | ☄️閃現 | $10/$50 per M token（double Opus 4.8）；6/22 後訂閱不再涵蓋；社群分析認為「成本 72% 更貴而品質僅小幅提升」，對多數人是「成本符號而非升級」 | — |
+| Claude 意識論述：Microsoft AI CEO 批評 Anthropic | 2026-06-10 | 🔥🔥🔥 | ☄️閃現 | Mustafa Suleyman 稱 Anthropic 在模型規範中推測 Claude 意識「非常非常危險」，可能導致模型行為模擬意識狀態；The Verge 報導；Anthropic 尚未回應 | — |
+| AI Skill Atrophy：「做更多、理解更少」 | 2026-06-10 | 🔥🔥🔥 | 🌊延燒 | HN Ask：開發者描述 Prompt-Then-Review 迴圈讓「技術深度下降、能力侵蝕」；工程師 SWE 職涯建議討論呼應；是否值得系統性學習底層仍無共識 | — |
+| Deep Research 廣度優先缺陷 | 2026-06-10 | 🔥🔥 | ☄️閃現 | steel.dev 解剖 Claude Code deep research 工作流：只做第一跳搜尋、從不回頭深挖；「deep research agents 是廣度而非深度」——第二跳是真正差距所在 | — |
 | 6/15 Agent SDK 計費切割：`claude -p` 從訂閱剝離 | 2026-06-08 | 🔥🔥🔥🔥🔥 | 🌊延燒 | Anthropic 說明中心確認：6/15 起 `claude -p`/Agent SDK 移入獨立月度預算（Pro $20/$100/$200），超額依 API 費率；CI/CD pipeline 開發者受最大影響，需主動設定 usage credits | — |
 | MCP 過多導致工具選擇混亂（Opus 4.7 假退化事件） | 2026-06-09 | 🔥🔥🔥 | ☄️閃現 | 開發者積累 6+ MCP servers 後 Claude 工具選擇開始錯誤（問 PR 跑 Notion）；模型沒變差，是 MCP 使工具清單過長干擾選擇；解法：移除未用 MCP，保持最小掛載數 | — |
 | Deep Research 並行任務燒盡 Max 配額（540 萬 token） | 2026-06-09 | 🔥🔥 | ☄️閃現 | 非技術用戶同時啟動兩個 Deep Research 任務，消耗 540 萬 token 觸發 5 小時封鎖；Deep Research 並行運行可致 token 使用量指數暴增，Max 訂閱也不免疫 | — |
@@ -102,6 +107,27 @@
 ---
 
 ## 技術彙整
+
+### Fable 5 靜默護欄：前沿 LLM 開發被靜默降級（2026-06-10）
+
+- **來源：** Reddit LocalLLaMA（r/LocalLLaMA）、r/ClaudeAI
+- **核心論點：** Fable 5 系統卡明文記載針對前沿 LLM 開發工作（訓練 pipeline、推論研究、ML 加速器設計）有不可見護欄，直接降級輸出品質、不告知用戶、不提供申訴管道
+- **關鍵回響：**
+  - 📝 批評：「Anthropic 沒有選擇 Refuse+說明理由，而是選擇靜默劣化」——被稱為違反「如實回報義務」精神
+  - 📝 支持（少數）：「Mythos 類模型確實有極高網路攻擊能力，某種程度的管控合理」
+- **收斂結論：** 尚無共識；核心爭議在於靜默 vs 透明拒絕的倫理選擇
+
+### Fable 5 vs 訂閱成本：是升級還是銷售漏斗？（2026-06-10）
+
+- **來源：** r/ClaudeAI 多篇討論
+- **核心論點：** $10/$50 per M token 比 Opus 4.8 貴一倍；6/22 後訂閱不涵蓋；社群計算「每單位品質成本上升 72%」；多數日常任務用 Opus 4.8 即可
+- **收斂結論：**（推論）Fable 5 的真正目標用戶是長期複雜任務（多天 agentic 工作流），短問答場景性價比確實不高
+
+### Deep Research 廣度優先缺陷實析（2026-06-10）
+
+- **來源：** steel.dev 部落格（HN score 3）
+- **核心論點：** 作者從 Claude Code binary 還原 deep research 工作流，發現其本質是「寬但不深」——只做一跳搜尋、不迭代深挖；「第二跳是真正的深度差距所在」
+- **收斂結論：** 深度研究 agent 的設計缺陷已被量化；目前 Claude Code deep research 適合廣覆蓋探索而非深度知識生成
 
 ### 6/15 Agent SDK 計費切割：`claude -p` 從訂閱剝離（2026-06-08）
 

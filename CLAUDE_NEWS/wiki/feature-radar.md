@@ -4,7 +4,7 @@
 僅收錄官方 changelog、release note 或官方公告來源；社群工具見 [[topics/community-tech-tools]]。
 每次 ingest 後由 LLM 維護：新增功能、更新熱度、補充社群回饋。
 
-**最後更新：** 2026-06-09（新增 --safe-mode 旗標；Agent SDK 6/15 計費切割 Breaking Change；Google Colab CLI）
+**最後更新：** 2026-06-10（新增 Claude Fable 5 發布；python-sdk v0.109.1 frontier_llm refusal；v2.1.170 Fable 支援）
 
 ---
 
@@ -29,6 +29,9 @@
 
 | 功能 | 發布日期 | 熱度 | 試用價值 | 狀態 |
 |------|----------|------|----------|------|
+| **Claude Fable 5**（Mythos 架構公開版，$10/$50 per M token） | 2026-06-09 | 🔥🔥🔥🔥🔥 | ⚡ 有條件推薦 | 正式發布（6/22 前訂閱包含；之後消費制；護欄 fallback 至 Opus 4.8 < 5% session；前沿 LLM 開發會靜默降級）|
+| Python SDK v0.109.1（`frontier_llm` refusal 類別） | 2026-06-09 | 🔥 | ✅ 推薦 | 正式發布（Fable 5 安全分類器相關 refusal API 補齊）|
+| Claude Code v2.1.170（Fable 5 支援） | 2026-06-09 | 🔥🔥 | ✅ 推薦 | 正式發布（Claude Code terminal 可切換 Fable 5）|
 | Claude Code v2.1.169 `--safe-mode` 旗標 | 2026-06-08 | 🔥🔥 | ✅ 推薦 | 正式發布（停用所有客製化設定，MCP/hooks/skills/CLAUDE.md；故障排除利器）|
 | Agent SDK / `claude -p` 計費軌道切割（2026-06-15 生效） | 2026-06-15 | 🔥🔥🔥🔥🔥 | ⚠️ 必讀 | Breaking Change（Pro $20/Max 5x $100/Max 20x $200 程式化月預算；超額依 API 費率）|
 | Google Colab CLI 整合 Claude Code / Codex | 2026-06-08 | 🔥🔥 | ✅ 推薦 | 正式發布（降低 Colab 使用 AI coding agent 門檻）|
@@ -69,7 +72,28 @@
 
 ---
 
-## 🆕 最新功能（2026-05）
+## 🆕 最新功能（2026-06）
+
+### Claude Fable 5（Mythos 架構公開版）
+**發布：** 2026-06-09 | **熱度：** 🔥🔥🔥🔥🔥 | **試用價值：** ⚡ 有條件推薦 | **狀態：** 正式發布
+
+**是什麼：** Anthropic 首款向大眾開放的 Mythos 級模型。Fable 5 = Mythos 5 模型權重 + 安全分類器護欄，觸發時靜默 fallback 至 Opus 4.8（< 5% session）。定價 $10/$50 per million token，context 1M，max output 128K。6/22 前含括於訂閱方案。
+
+**為何熱：** HN 2,448 分，近 2,000 評論。幾乎所有 benchmark SOTA，任務越長期越複雜優勢越大。首次讓開發者在一般工作流中使用 Mythos 等級推理能力。
+
+**快速上手：**
+```bash
+# Claude Code terminal 切換 Fable 5
+claude --model claude-fable-5-20260609
+
+# 或在 Claude Code 設定中選擇 Fable 5 模型
+```
+
+**注意事項：** 前沿 LLM 開發工作（訓練 pipeline、推論研究、ML 加速器設計）會觸發靜默護欄，輸出品質降低且不告知；6/22 後需消費制計費；30 天資料保留政策適用於所有平台。見 [[entities/fable-5]]、[[entities/mythos]]。
+
+---
+
+## 最新功能（2026-05）
 
 ### Claude Opus 4.8 + Dynamic Workflows + Fast Mode
 **發布：** 2026-05-28 | **熱度：** 🔥🔥🔥🔥🔥 | **試用價值：** ⚡ 有條件推薦 | **狀態：** 正式發布（Dynamic Workflows 為 Research Preview）

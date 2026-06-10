@@ -3,6 +3,35 @@
 Append-only 紀錄。每次 ingest、query 或 lint 都在此追加一條。
 格式：`## [YYYY-MM-DD] 類型 | 說明`
 
+## 2026-06-10 Ingest | news/2026-06-10.md（99 則）
+
+- 來源日報：`news/2026-06-10.md`（99 則，6 來源；Claude Fable 5 正式發布 + 30 天資料保留政策 + Fable 靜默護欄爭議 + 供應鏈攻擊升級 + 訂閱縮水 + Vercel Anthropic 佔 65% 支出）
+- 更新頁面：
+  - `entities/mythos.md`：狀態更新（部分公開）；現況增加 Fable 5 / 30 天保留 / 靜默護欄說明；新增 2026-06-10 與 2026-06-09 時序；最後更新 2026-06-10
+  - `entities/claude-code.md`：新增 v2.1.170（Fable 5 支援）版本記錄；現況最新版本更新；最後更新 2026-06-10
+  - `entities/pricing.md`：新增 2026-06-09 Fable 5 定價政策紀錄；最後更新 2026-06-10
+  - `topics/anthropic-business.md`：新增 2026-06-10 時序（Fable 5 發布 + Vercel 資料 + Rockefeller + NC 財務長 + 批評性評論）；最後更新 2026-06-10
+  - `topics/ai-agent-safety.md`：新增 2026-06-10 時序（供應鏈攻擊升級至 294,842 secrets + JFrog 插件 + 安全工具爆發）；最後更新 2026-06-10
+  - `topics/community-tech-tools.md`：新增 9 個工具（claude-quota / OpenYabby / agent-pd / claudefeed / agentgraphed / context-analyzer / permafrost / Lanes v0.43.0 / ktx）；痛點洞察更新；最後更新 2026-06-10
+  - `topics/community-tech-discussions.md`：熱門討論 prepend 5 條（Fable 靜默護欄 / Fable 成本爭議 / Claude 意識論述 / AI Skill Atrophy / Deep Research 缺陷）；技術彙整新增 3 條；最後更新 2026-06-10
+  - `wiki/feature-radar.md`：新增 Claude Fable 5 詳細條目 + 全覽表 3 條更新；最後更新 2026-06-10
+- 新增頁面：`entities/fable-5.md`（Claude Fable 5 實體頁；首次出現 2026-06-09；包含熱度表格、使用指南、爭議）
+- feature-radar 更新：Claude Fable 5（🔥🔥🔥🔥🔥，⚡ 有條件推薦，✅ 收錄）；Python SDK v0.109.1（🔥，✅ 收錄）；Claude Code v2.1.170（🔥🔥，✅ 收錄）
+- 升格檢查（discussions → patterns）：6/15 計費切割（首見 2 天）、AI Skill Atrophy（首見今日）均未達升格門檻。**無升格**。
+- 本日新增工具：claude-quota / OpenYabby / agent-pd / claudefeed / agentgraphed / context-analyzer / permafrost / Lanes v0.43.0 / ktx（共 9 個，累積 198 個）
+- 呈現品質審查：
+  | 頁面 | 結果 |
+  |------|------|
+  | entities/fable-5.md（新建）| ✅ 通過（摘要可獨立閱讀；熱度表格緊接摘要；含使用指南與爭議）|
+  | entities/mythos.md | ✅ 通過（狀態更新；現況重新整理；Fable 5 事件前置）|
+  | entities/claude-code.md | ✅ 通過（v2.1.170 版本表頂端新增）|
+  | entities/pricing.md | ✅ 通過（Fable 5 定價紀錄新增在最前）|
+  | topics/anthropic-business.md | ✅ 通過（時序 prepend）|
+  | topics/ai-agent-safety.md | ✅ 通過（時序 prepend，供應鏈攻擊升級完整記錄）|
+  | topics/community-tech-tools.md | ✅ 通過（工具表頂端新增，痛點洞察更新）|
+  | topics/community-tech-discussions.md | ✅ 通過（熱門討論 prepend，技術彙整 prepend）|
+  | wiki/feature-radar.md | ✅ 通過（新增最新功能區塊，Fable 5 詳細條目）|
+
 ---
 
 ## 2026-06-09 Ingest（更新版）| news/2026-06-09.md（85 則）

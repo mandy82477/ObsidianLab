@@ -2,7 +2,7 @@
 
 **狀態：** ongoing
 **開始日期：** 2026-05-28
-**最後更新：** 2026-06-09（IPO 競賽 + Apollo/Blackstone 晶片融資 + LG 集團採用 + Rubrik Agent Cloud + Geoffrey Hinton 批評）
+**最後更新：** 2026-06-10（Fable 5 正式發布 + Rockefeller 財富管理平台 + NC 財務長投資偏好 Anthropic + Vercel 資料 Anthropic 佔 65% AI 支出）
 
 ---
 
@@ -107,6 +107,13 @@ Simon Willison（知名開發者博主）發表文章，認為 Anthropic 與 Ope
 - [[news/2026-05-13]]（The Information：定價強勢期）
 
 ## 時序
+
+### 2026-06-10
+- **[Fable 5 正式發布]** Claude Fable 5（Mythos 架構公開版，$10/$50 per M token）正式發布，6/22 前含括訂閱；HN 2,448 分；SOTA 幾乎所有 benchmark；是 Anthropic 最受關注的 2026 年旗艦發布
+- **[Vercel 資料：Anthropic 佔高風險使用 70-80% 支出]** Vercel AI Gateway 5 月資料：Anthropic 整體支出份額 65%，高風險使用（AI app 生成、後台 agent、編碼 agent）佔 70-80%；DeepSeek token 量從 < 1% 跳至 17% 但支出僅 1%
+- **[Rockefeller 資本採用 Claude 建財富管理平台]** Rockefeller Capital Management 宣布採用 Anthropic Claude 建構 AI 財富管理平台，金融服務佈局繼續擴大
+- **[北卡羅萊納州財務長偏好 Anthropic]** 北卡州財務長跳過 SpaceX 投資，選擇 OpenAI 與 Anthropic，理由是估值合理；機構資本繼續流入
+- **[「Anthropic 兌現了所有它負擔得起的承諾」]** techtrenches.dev 評論文章尖銳批評：「負責任 AI 公司」定位是市場策略，Fable 5 發布（最危險的模型）+ IPO 申請 + 呼籲 AI 暫停，三者同時發生
 
 ### 2026-06-09
 - **[Anthropic + OpenAI 同週 IPO 秘密申請]** OpenAI 宣布已機密遞交 IPO 申請，緊隨 Anthropic 上週相同動作；兩者估值均接近兆元，加上 SpaceX 同期 IPO，形成 2026 年最大規模 AI 資本市場競賽（Wired、BBC、TechCrunch、Forbes 多家媒體）
