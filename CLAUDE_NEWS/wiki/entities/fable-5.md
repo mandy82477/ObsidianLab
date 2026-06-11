@@ -3,7 +3,7 @@
 **類型：** model
 **狀態：** active（正式發布，6/22 前含括於訂閱方案）
 **首次出現：** 2026-06-09
-**最後更新：** 2026-06-10
+**最後更新：** 2026-06-11
 
 ---
 
@@ -60,15 +60,19 @@ claude --model claude-fable-5-20260609
 
 ## 爭議
 
-- **靜默降級競爭 LLM 開發**：Fable 5 在偵測到前沿 LLM 開發工作時靜默降級，系統卡承認「These safeguards will not be visible to the user」，Reddit LocalLLaMA 大量批評為反競爭行為
+- **靜默降級競爭 LLM 開發（已部分撤回）**：Fable 5 初版在偵測到前沿 LLM 開發工作時靜默降級，系統卡承認「These safeguards will not be visible to the user」；2026-06-11 Anthropic 道歉撤回，改為「可見防護」——觸發時用戶將明確得知
+- **資安研究者護欄過激**：Fable 5 安全分類器過度敏感，連讀取資安部落格、分析 GitHub profile 等無害操作也被攔截；IBM X-Force 知名研究員 Valentina Palmiotti 公開批評（TechCrunch，HN score 512）
+- **Jailbreak 已公開**：Pliny（@elder_plinius）與 0xSufi 已公開 Fable 5 護欄繞過 PoC，使用多步驟攻擊組合（請求拆解重組、敘事框架包裝、長 context 操作）
+- **Microsoft 內部禁用**：Microsoft 法務/合規部門要求員工不得使用 Fable 5（Times of India、PYMNTS 報導，與 Fable 5 數據保留政策相關）
+- **Fable 5 成本高昂**：$200/月 Max 用戶一次 code review 可消耗 45% 週配額；社群回報消耗量個體差異極大
 - **30 天資料保留**：Bedrock 用戶數據強制離開 AWS 安全邊界，企業隱私顧慮
-- **護欄過強**：用戶反映在合法安全修復工作中也頻繁觸發護欄（如修復自身 app 的資料庫漏洞）
 - **「失去靈魂」討論**：部分用戶認為 Fable 5 相比 Opus 4.6 更工具性、減少人本關懷深度
 
 ## 參考來源
 
 - [[news/2026-06-09]]
 - [[news/2026-06-10]]
+- [[news/2026-06-11]]
 - [Anthropic 官方公告](https://www.anthropic.com/news/claude-fable-5-mythos-5)
 - [System Card PDF](https://www-cdn.anthropic.com/d00db56fa754a1b115b6dd7cb2e3c342ee809620.pdf)
 - [資料保留政策](https://support.claude.com/en/articles/15425996-data-retention-practices-for-mythos-class-models)
@@ -77,6 +81,9 @@ claude --model claude-fable-5-20260609
 
 ### 2026-06-09
 正式發布。HN score 2,448，近 2,000 評論。6/22 前含括於訂閱方案。
+
+### 2026-06-11
+政策撤回事件：Anthropic 就隱性 LLM 研究限制政策道歉，承認「做了錯誤的取捨」，改為可見防護措施（Wired 報導）。多個 Jailbreak PoC 公開流傳（Pliny、0xSufi）。資安研究者護欄過激爭議持續延燒（HN 512 分）。Microsoft 內部律師建議禁用（Times of India、PYMNTS）。OpenAI 考慮降價應對 Anthropic 競爭（WSJ/CNBC）。TCS 宣布與 Anthropic 建立 Global Premier Partnership，5 萬員工使用 Claude。Claude Corps 公益計畫發布。
 
 ### 2026-06-10
 發布後第一天社群討論爆發：靜默降級爭議、30 天資料保留爭議、供應鏈攻擊威脅升高、Microsoft AI CEO 批評 Anthropic 意識論述、多個工具社群跟進（Lanes v0.43.0 加入 Fable 5 支援）。

@@ -2,7 +2,7 @@
 
 **狀態：** monitoring
 **開始日期：** 2026-05-01
-**最後更新：** 2026-06-09
+**最後更新：** 2026-06-11
 
 ---
 
@@ -62,6 +62,10 @@
 - [AP News：Pope calls for robust regulation of AI](https://apnews.com/article/pope-ai-tech-trump-vatican-anthropic-d92d0108730d146baa46da041b8523da)
 
 ## 時序
+
+### 2026-06-11
+- **[Dario Amodei 呼籲政府監管模型發布]** Bloomberg 報導 Anthropic CEO Dario Amodei 接受採訪表示政府應有權阻止危險 AI 模型發布；社群注意到此立場明顯針對中國競爭者（百度、阿里、DeepSeek），被批評為「監管套利」；Anthropic 同時呼籲不應妨礙州級 AI 法律（Reuters，r/ClaudeAI）
+- **[Anthropic 呼籲美國不阻止州 AI 法律]** Reuters 報導 Anthropic 向美國國會呼籲：若無聯邦標準，不應阻止各州 AI 法規；強調需要強制性安全測試要求
 
 ### 2026-06-09
 - **[Trump 政府否認 Anthropic 黑名單報復]** Reuters：川普政府否認 Anthropic AI 黑名單一事存在非法報復，此聲明背景是 Anthropic IPO 申請期間政府合約受阻的持續爭議，外界對政府 AI 採購政策透明度的質疑未見消散

@@ -2,7 +2,7 @@
 
 **狀態：** ongoing
 **開始日期：** 2026-05-28
-**最後更新：** 2026-06-10（Fable 5 正式發布 + Rockefeller 財富管理平台 + NC 財務長投資偏好 Anthropic + Vercel 資料 Anthropic 佔 65% AI 支出）
+**最後更新：** 2026-06-11（TCS Global Premier Partnership 5 萬員工 + OpenAI 預期 Anthropic 降價擬先發制人降價 + Claude Corps 公益計畫 + Anthropic CEO 主張政府應可阻止危險模型）
 
 ---
 
@@ -107,6 +107,14 @@ Simon Willison（知名開發者博主）發表文章，認為 Anthropic 與 Ope
 - [[news/2026-05-13]]（The Information：定價強勢期）
 
 ## 時序
+
+### 2026-06-11
+- **[TCS Global Premier Partnership]** TCS（Tata Consultancy Services）宣布與 Anthropic 建立 Global Premier Partnership，向 5 萬名員工推廣 Claude；同時取得 Mythos Preview（Project Glasswing）存取資格，是目前已知最大單一企業員工 Claude 部署案例（MoneyControl、TechCrunch、Reuters）
+- **[OpenAI 考慮降價應戰 Anthropic]** WSJ 報導 OpenAI 正考慮「大幅削減 token 費用」，明確指出是「預期 Anthropic 即將降價」所致；AI 定價戰進入新階段（CNBC，HN score 69）
+- **[Claude Corps 公益計畫]** Anthropic 發布 Claude Corps：招募 1,000 名職涯初期人才，教導有效使用 Claude，派遣至全美非營利組織服務一年，全薪支付；定位兼顧 AI 普惠與就業轉型問題
+- **[Dario Amodei 主張政府應可阻止危險 AI 模型]** Bloomberg 報導 Dario Amodei 主張政府應具備阻止危險 AI 模型發布的能力；社群解讀此言論主要針對中國競爭者（HN score 7）
+- **[Dario Amodei 只有一位直屬下屬]** Bloomberg 報導 Dario Amodei 的直屬下屬只有一人，引發對 Anthropic 組織架構的討論
+- **[Fable 5 隱性限制政策撤回道歉]** Anthropic 就 Fable 5 隱性 LLM 研究限制政策道歉，改為可見防護措施；Wired 報導，社群回應正面但資安研究者護欄過激問題仍未解決
 
 ### 2026-06-10
 - **[Fable 5 正式發布]** Claude Fable 5（Mythos 架構公開版，$10/$50 per M token）正式發布，6/22 前含括訂閱；HN 2,448 分；SOTA 幾乎所有 benchmark；是 Anthropic 最受關注的 2026 年旗艦發布

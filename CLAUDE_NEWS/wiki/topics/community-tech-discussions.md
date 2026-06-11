@@ -2,7 +2,7 @@
 
 **狀態：** ongoing
 **開始日期：** 2026-04-25
-**最後更新：** 2026-06-10（新增 Fable 5 靜默護欄爭議 + Claude 意識論述爭議 + AI skill atrophy + Deep research 廣度優先批評）
+**最後更新：** 2026-06-11（Fable 5 護欄政策撤回道歉；Anthropic vs OpenAI 定價戰；AI 開放權重倡議；Fable 5 Jailbreak 技術分析）
 
 ---
 
@@ -20,7 +20,10 @@
 
 | 討論主題 | 首見 | 熱度 | 模式 | 核心論點 | 衍生 |
 |---------|------|------|------|---------|------|
-| Fable 5 靜默護欄：競爭 LLM 開發被靜默降級 | 2026-06-10 | 🔥🔥🔥🔥🔥 | ☄️閃現 | Fable 5 在偵測到前沿 LLM 開發（訓練 pipeline、推論研究、ML 加速器設計）時靜默降級輸出，不告知用戶；系統卡明文：「These safeguards will not be visible to the user」；Reddit LocalLLaMA / r/ClaudeAI 廣泛批評為反競爭行為 | — |
+| AI 開放權重倡議：「Trust Us Is Not a Control Surface」 | 2026-06-11 | 🔥🔥🔥 | ☄️閃現 | 一位 Georgia 小型抵押貸款公司老闆（付費用戶）撰文：Fable 5 事件證明 Anthropic「信任我們」的承諾無法作為真實控制介面，開放權重模型是唯一讓用戶有實際控制權的出路；HN score 3 但引發深層 vendor lock-in 討論 | — |
+| Fable 5 Jailbreak 技術分析 | 2026-06-11 | 🔥🔥🔥 | ☄️閃現 | Pliny（@elder_plinius）與 0xSufi 公開繞過 Fable 5 護欄的 PoC；技術組合：請求拆解後重組、敘事/學術框架包裝、長 context 操作、怪異文字轉換、分佈外 token；兩個獨立 PoC 代表「輸出側護欄面對多步驟攻擊的局限性」 | — |
+| OpenAI vs Anthropic 定價戰：「AI 成本大戰開打」 | 2026-06-11 | 🔥🔥🔥🔥 | ☄️閃現 | WSJ/CNBC 報導 OpenAI 考慮「大幅削減 token 費用」，明確說明是預期 Anthropic 降價；Anthropic Pro $17/月 vs OpenAI $8–$200；AI 定價競爭正式從技術競爭轉向成本競爭，HN score 69 | — |
+| Fable 5 靜默護欄：競爭 LLM 開發被靜默降級（**→ 撤回**） | 2026-06-10 | 🔥🔥🔥🔥🔥 | 🌸落幕 | Fable 5 初版對前沿 LLM 開發靜默降級；2026-06-11 Anthropic 道歉並改為可見防護措施；Antirez 的「深度錯誤」批評（HN score 42）引發廣泛討論；Fable 5 被刻意限制 AI 研究活動的設計仍有爭議（Reddit 引用 model card p.13）| — |
 | Fable 5 發布：訂閱方案截止 + 成本定位爭議 | 2026-06-10 | 🔥🔥🔥🔥 | ☄️閃現 | $10/$50 per M token（double Opus 4.8）；6/22 後訂閱不再涵蓋；社群分析認為「成本 72% 更貴而品質僅小幅提升」，對多數人是「成本符號而非升級」 | — |
 | Claude 意識論述：Microsoft AI CEO 批評 Anthropic | 2026-06-10 | 🔥🔥🔥 | ☄️閃現 | Mustafa Suleyman 稱 Anthropic 在模型規範中推測 Claude 意識「非常非常危險」，可能導致模型行為模擬意識狀態；The Verge 報導；Anthropic 尚未回應 | — |
 | AI Skill Atrophy：「做更多、理解更少」 | 2026-06-10 | 🔥🔥🔥 | 🌊延燒 | HN Ask：開發者描述 Prompt-Then-Review 迴圈讓「技術深度下降、能力侵蝕」；工程師 SWE 職涯建議討論呼應；是否值得系統性學習底層仍無共識 | — |
@@ -107,6 +110,28 @@
 ---
 
 ## 技術彙整
+
+### Anthropic 護欄政策撤回：「靜默護欄是錯誤取捨」（2026-06-11）
+
+- **來源：** Wired（"Anthropic Walks Back Policy That Could Have 'Sabotaged' Researchers Using Claude"）
+- **核心論點：** Anthropic 公開道歉並撤回 Fable 5 的隱性 LLM 研究限制：將「不可見防護」改為「可見防護」，觸發時用戶將明確得知；引用原文：「We made the wrong trade-off and we apologize for not getting the balance right.」
+- **關鍵回響：**
+  - 📝 Antirez（Redis 作者）：公開聲明「I believe what Anthropic is doing is *deeply* wrong」（HN score 42）
+  - 📝 資安研究者：護欄改為可見後問題仍在——Fable 5 仍會攔截合理資安查詢（TechCrunch，HN score 512）
+  - 🧪 多個 Jailbreak PoC：Pliny、0xSufi 公開繞過技術，顯示輸出側護欄面對多步驟攻擊的局限性
+- **收斂結論：** 透明拒絕比靜默降級更符合道德底線；但護欄過激問題獨立於透明度問題之外仍未解決
+
+### Fable 5 Jailbreak 技術分析（2026-06-11）
+
+- **來源：** twitter/elder_plinius（HN）、github/0xSufi/fable-jailbreak
+- **核心論點：** 多步驟攻擊可系統性繞過 Fable 5 護欄；已知技術包含：請求拆解後重組、敘事/學術框架包裝、長 context 操作、怪異文字轉換、分佈外 token（out-of-distribution tokens）
+- **收斂結論：**（推論）「輸出側分類器護欄」相比「模型對齊層防護」更脆弱，是 Fable 5 安全架構的已知弱點
+
+### 資安研究者 vs Fable 5 護欄（2026-06-10/11 延燒）
+
+- **來源：** TechCrunch（"Cybersecurity researchers aren't happy about the guardrails on Anthropic's Fable"，HN score 512）
+- **核心論點：** Fable 5 護欄安全分類器過度敏感，連「讀取資安部落格」都被攔截；IBM X-Force 研究員 Valentina Palmiotti：「[Fable] rejects any request that could be tangentially cyber related. Even innocuous tasks like reading a blog post.」；The Register 實測：問候語「hello」也被攔截
+- **收斂結論：** 護欄撤回道歉僅針對 LLM 研究靜默降級；資安研究者的過激攔截問題是獨立議題，Anthropic 尚未正式回應
 
 ### Fable 5 靜默護欄：前沿 LLM 開發被靜默降級（2026-06-10）
 

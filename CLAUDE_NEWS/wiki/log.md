@@ -3,6 +3,35 @@
 Append-only 紀錄。每次 ingest、query 或 lint 都在此追加一條。
 格式：`## [YYYY-MM-DD] 類型 | 說明`
 
+## 2026-06-11 Ingest | news/2026-06-11.md（93 則）
+
+- 來源日報：`news/2026-06-11.md`（93 則，6 來源；Fable 5 護欄政策撤回道歉 + Claude Corps 公益計畫 + TCS 5 萬員工部署 + Fable 5 Jailbreak 公開 + OpenAI 降價戰 + v2.1.173 發布）
+- 更新頁面：
+  - `entities/fable-5.md`：新增 2026-06-11 時序（政策撤回道歉、Jailbreak PoC、Microsoft 禁用、TCS 部署、Claude Corps）；爭議區塊重寫（靜默護欄改為「已部分撤回」，新增資安過激攔截、Jailbreak、Microsoft 禁用、成本高昂）；參考來源新增 news/2026-06-11；最後更新 2026-06-11
+  - `entities/claude-code.md`：新增 v2.1.173 版本記錄（Fable 5 `[1m]` 後綴修復、誤報沙盒錯誤修正）；現況最新版本更新；最後更新 2026-06-11
+  - `topics/community-tech-tools.md`：新增 6 個工具（Claumon / Foyer / ShellShot / Workplane / 5dive / Vaportrail）；痛點洞察 Token 成本不透明新增 Claumon；最後更新 2026-06-11
+  - `topics/community-tech-discussions.md`：熱門討論 prepend 3 條（Anthropic 護欄政策撤回、Fable 5 Jailbreak、OpenAI vs Anthropic 定價戰）；Fable 5 靜默護欄改模式 🌸落幕；技術彙整新增 3 條（護欄政策撤回、Jailbreak 技術、資安護欄過激）；最後更新 2026-06-11
+  - `topics/anthropic-business.md`：新增 2026-06-11 時序（TCS Partnership / OpenAI 降價 / Claude Corps / Dario 監管主張 / 政策撤回）；最後更新 2026-06-11
+  - `topics/anthropic-government-policy.md`：新增 2026-06-11 時序（Dario 主張政府可阻止 AI 模型 / 州 AI 法律立場）；最後更新 2026-06-11
+  - `topics/enterprise-tool-tracker.md`：新增 TCS 企業列（5 萬員工）；Claude API 採用數 11→12；新增 2026-06-11 時序；最後更新 2026-06-11
+  - `wiki/feature-radar.md`：全覽表新增 Claude Corps（🔥🔥，⏳）和 v2.1.173（🔥，✅）；Fable 5 備注更新（護欄政策 6/11 修改）；最後更新 2026-06-11
+- 新增頁面：無
+- 升格檢查（discussions → patterns）：AI Skill Atrophy（首見 2026-06-10，第 2 天）未達升格門檻。OpenAI vs Anthropic 定價戰（今日首見）未達升格門檻。**無升格**。
+- 本日新增工具：Claumon / Foyer / ShellShot / Workplane / 5dive / Vaportrail（共 6 個，累積 204 個）
+- 呈現品質審查：
+  | 頁面 | 結果 |
+  |------|------|
+  | entities/fable-5.md | ✅ 通過（摘要可獨立閱讀；爭議區塊完整更新反映政策撤回；時序 prepend）|
+  | entities/claude-code.md | ✅ 通過（v2.1.173 版本表頂端新增）|
+  | topics/community-tech-tools.md | ✅ 通過（6 個新工具頂端新增；痛點洞察更新）|
+  | topics/community-tech-discussions.md | ✅ 通過（熱門討論 prepend；技術彙整 prepend；靜默護欄改落幕）|
+  | topics/anthropic-business.md | ✅ 通過（時序 prepend）|
+  | topics/anthropic-government-policy.md | ✅ 通過（時序 prepend）|
+  | topics/enterprise-tool-tracker.md | ✅ 通過（TCS 新增；採用數更新）|
+  | wiki/feature-radar.md | ✅ 通過（全覽表新增；Fable 5 備注更新）|
+
+---
+
 ## 2026-06-10 Ingest | news/2026-06-10.md（99 則）
 
 - 來源日報：`news/2026-06-10.md`（99 則，6 來源；Claude Fable 5 正式發布 + 30 天資料保留政策 + Fable 靜默護欄爭議 + 供應鏈攻擊升級 + 訂閱縮水 + Vercel Anthropic 佔 65% 支出）

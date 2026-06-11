@@ -2,7 +2,7 @@
 
 **狀態：** ongoing
 **開始日期：** 2026-04-25
-**最後更新：** 2026-06-10
+**最後更新：** 2026-06-11
 
 ---
 
@@ -22,7 +22,7 @@
 
 | 痛點主題 | 代表工具 | 本質問題 | 狀態 | 近期工具 |
 |---------|---------|---------|------|---------|
-| Token 成本不透明 | Tokenyst、CostHawk、TokenShield、PrismoDev、engramx、agent-estimate、AI Agent Token Cost Calculator、Claude Usage Tray、token-xray、agentgraphed、context-analyzer、permafrost | 自主 agent 讓帳單不可預測；Fable 5 $10/$50 定價與 6/22 訂閱截止加劇費用焦慮；工具爆發 | 🔥 持續升溫 | 2026-06-10 |
+| Token 成本不透明 | Tokenyst、CostHawk、TokenShield、PrismoDev、engramx、agent-estimate、AI Agent Token Cost Calculator、Claude Usage Tray、token-xray、agentgraphed、context-analyzer、permafrost、Claumon | 自主 agent 讓帳單不可預測；Fable 5 $10/$50 定價與 6/22 訂閱截止加劇費用焦慮；工具爆發 | 🔥 持續升溫 | 2026-06-11 |
 | 跨 session 記憶歸零 | ltm、Memex、draft CLI、LockedIn、VIR、CoreMem、claude-handoff-revive、timeglass.ai | 無官方標準，每個新 session 從零開始 | 🔥 持續升溫 | 2026-05-27 |
 | 多 agent 協調混亂 | agent-baton、cdesktop、AnyFrame、agent-teamflow、Runner、Runtime、Fleet、AWO、claude-workflow-composer | 官方 Managed Agents 已部分解決，但社群仍補缺口；AWO 提供 git worktree 隔離方案 | 🔥 持續升溫 | 2026-05-27 |
 | CLAUDE.md 規則失效 | Writ、Caliber、Patina | 規則被忽略、過多規則耗 token、跨工具無標準 | 🌙 冷卻觀望 | 2026-05-12 |
@@ -63,6 +63,12 @@
 
 | 工具 | 類型 | 採用 | 首次出現 | 簡介 |
 | --- | --- | --- | --- | --- |
+| [**Claumon**](https://github.com/fabioconcina/claumon) | 費用監測 | ⏳ | 2026-06-11 | Gamma process 統計模型預測 Claude Code 用量上限，提供精確可信區間；Go 語言單一二進位，無依賴；HN score 4 |
+| [**Foyer**](https://github.com/get-foyer/foyer) | 學習工具 | ⏳ | 2026-06-11 | Claude Code 執行等待期間顯示 agents 正在處理的相關學習內容；早期 MVP；Show HN score 6 |
+| [**ShellShot**](https://github.com/APIANT/shellshot) | IDE/終端 | ⏳ | 2026-06-11 | 熱鍵截圖並加注送入 Claude Code CLI；支援 iPad-to-Mac 無線傳輸；圖片針對 token 效率最佳化；Show HN score 2 |
+| [**Workplane**](https://workplane.co) | 整合工具 | ⏳ | 2026-06-11 | 將 Claude/Codex 輸出的 .md 和 .html 檔轉為可共享連結；MCP Apps 整合 Claude Desktop；無需安裝或登入；Show HN score 4 |
+| [**5dive**](https://github.com/5dive-com/5dive) | 多 Agent | ⏳ | 2026-06-11 | 從 Telegram 管理和驅動多個 Claude Code agents；Show HN（已被 flagged）|
+| [**Vaportrail**](https://github.com/B33BMO/vaportrail) | 工作流 | ⏳ | 2026-06-11 | Claude Code、Codex 和 OpenCode 的執行記錄工具；已新增 Gemini CLI 和 Aider 支援；Show HN（已被 flagged）|
 | [**claude-quota**](https://github.com/grzegorz-raczek-unit8/claude-quota) | IDE/終端 | ⏳ | 2026-06-10 | macOS 選單列即時顯示 Claude Code 配額用量（視覺量規），Show HN score 45 |
 | [**OpenYabby**](https://github.com/OpenYabby/OpenYabby) | 多 Agent | ⏳ | 2026-06-10 | 語音控制的多 agent 協調器，整合 Claude Code，支援複雜任務語音驅動自動化；Show HN |
 | [**agent-pd**](https://github.com/varmabudharaju/agent-pd/blob/master/README.md) | 安全工具 | ⏳ | 2026-06-10 | 零 token 消耗的子 agent 審計工具，偵測 Claude Code 中的流氓子 agent 行為；Show HN score 6 |
