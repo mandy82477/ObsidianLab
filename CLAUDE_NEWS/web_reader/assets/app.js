@@ -720,8 +720,9 @@ ${trackerHtml}
     results.innerHTML = scored.map(({ item, score }, i) => {
       const pageType  = item.type || item.pageType || 'entity';
       const isRadar   = pageType === 'radar';
-      const typeCls   = (pageType === 'topic') ? 'topic' : 'entity';
-      const typeLabel = isRadar ? '雷達' : (pageType === 'topic' ? '議題' : '實體');
+      const isDigest  = pageType === 'digest';
+      const typeCls   = (pageType === 'topic' || isDigest) ? 'topic' : 'entity';
+      const typeLabel = isDigest ? '日報' : (isRadar ? '雷達' : (pageType === 'topic' ? '議題' : '實體'));
 
       // For name/summary hits show summary; for content hits show match context
       let snippetHtml = '';
@@ -734,6 +735,9 @@ ${trackerHtml}
 
       const pill   = item.pill   || 'gray';
       const status = item.status || '';
+      const pillHtml = status
+        ? `<span class="search-result__pill"><span class="pill pill--${pill}">${esc(shortStatus(status))}</span></span>`
+        : '';
       return `<div class="search-result" data-idx="${i}" data-id="${esc(item.id)}" data-pagetype="${esc(pageType)}"
                    onclick="pickSearch('${esc(item.id)}','${esc(pageType)}')">
   <span class="search-result__type search-result__type--${typeCls}">${typeLabel}</span>
@@ -741,7 +745,7 @@ ${trackerHtml}
     <div class="search-result__name">${highlight(item.name || item.id, q)}</div>
     ${snippetHtml}
   </div>
-  <span class="search-result__pill"><span class="pill pill--${pill}">${esc(shortStatus(status))}</span></span>
+  ${pillHtml}
 </div>`;
     }).join('');
   }
@@ -762,6 +766,7 @@ ${trackerHtml}
 
   window.pickSearch = function (id, pageType) {
     closeSearch();
+    if (pageType === 'digest') { openDigestPage(id); return; }
     openWikiPage(id, pageType);
   };
 

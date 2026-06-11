@@ -480,13 +480,15 @@ def build():
         fp.write("// Digest content is loaded on-demand from data/digest/{date}.json\n")
         fp.write("// Wiki content is loaded on-demand from data/wiki/{id}.json\n")
 
-    # Update cache-busting version in index.html
+    # Update cache-busting version in index.html (data.js + app.js + design.css)
     ver = str(int(time.time()))
     index = ROOT / "web_reader" / "index.html"
     if index.exists():
         html = index.read_text(encoding="utf-8")
         import re as _re
         html = _re.sub(r'data/data\.js(\?v=\d+)?', f'data/data.js?v={ver}', html)
+        html = _re.sub(r'assets/app\.js(\?v=\d+)?', f'assets/app.js?v={ver}', html)
+        html = _re.sub(r'assets/design\.css(\?v=\d+)?', f'assets/design.css?v={ver}', html)
         index.write_text(html, encoding="utf-8")
 
     # ── Write search index (full plain text, stripped of markdown syntax) ────────
@@ -506,6 +508,21 @@ def build():
             "name":    radar["name"],
             "summary": radar["summary"],
             "text":    strip_markdown_to_text(radar.get("markdown", "")),
+        })
+    # Digests: index 今日聚焦 text + all story titles (compact, ~1-2 KB/day)
+    for date_str, d in digest_all.items():
+        focus_txt = "；".join(f["text"] for f in d.get("focus", []))
+        titles = "；".join(
+            s["title"]
+            for sec in ("topStories", "techUpdates", "discussions", "billing")
+            for s in d.get(sec, [])
+        )
+        search_index.append({
+            "id":      date_str,
+            "type":    "digest",
+            "name":    f"日報 {date_str}",
+            "summary": (d.get("preview") or "")[:90],
+            "text":    f"{focus_txt}；{titles}",
         })
     with OUT_SEARCH_INDEX.open("w", encoding="utf-8") as fp:
         json.dump(search_index, fp, ensure_ascii=False, separators=(",", ":"))
