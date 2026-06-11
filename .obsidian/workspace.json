@@ -11,14 +11,14 @@
             "id": "c84f80fd58a47c6e",
             "type": "leaf",
             "state": {
-              "type": "markdown",
+              "type": "split-diff-view",
               "state": {
-                "file": "CLAUDE_NEWS/wiki/entities/bugcrawl.md",
-                "mode": "source",
-                "source": false
+                "aFile": "CLAUDE_NEWS/news/2026-05-17.md",
+                "bFile": "CLAUDE_NEWS/news/2026-05-17.md",
+                "aRef": ""
               },
-              "icon": "lucide-file",
-              "title": "bugcrawl"
+              "icon": "diff",
+              "title": "Diff: 2026-05-17  (Working Tree)"
             }
           }
         ]
@@ -180,8 +180,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 200,
-    "collapsed": true
+    "width": 543.5
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -200,42 +199,42 @@
   },
   "active": "c84f80fd58a47c6e",
   "lastOpenFiles": [
-    "CLAUDE_NEWS/web_reader/assets/design.css.tmp.21076.1777704915603",
-    "CLAUDE_NEWS/web_reader/assets/design.css.tmp.21076.1777704887789",
-    "CLAUDE_NEWS/web_reader/data/data.js",
-    "CLAUDE_NEWS/web_reader/index.html",
-    "CLAUDE_NEWS/web_reader/assets/app.js",
-    "CLAUDE_NEWS/web_reader/assets/design.css",
-    "CLAUDE_NEWS/scripts/build_web.py",
-    "CLAUDE_NEWS/web_reader/data",
-    "CLAUDE_NEWS/web_reader/assets",
-    "CLAUDE_NEWS/web_reader",
-    "CLAUDE_NEWS/scripts",
-    "CLAUDE_NEWS/wiki/entities/claude-security.md",
+    "CLAUDE_NEWS/web_reader/data/digest/2026-06-06.json",
+    "CLAUDE_NEWS/web_reader/data/digest/2026-06-07.json",
+    "CLAUDE_NEWS/wiki/log.md.tmp.32432.a764834fed6e",
+    "CLAUDE_NEWS/wiki/index.md.tmp.32432.27b8c16c444a",
+    "CLAUDE_NEWS/wiki/index.md.tmp.32432.f0d8bff34b4f",
+    "CLAUDE_NEWS/wiki/topics/anthropic-business.md.tmp.32432.97d619d06b3f",
+    "CLAUDE_NEWS/wiki/topics/ai-agent-safety.md.tmp.32432.206041930f83",
+    "CLAUDE_NEWS/wiki/entities/claude-code.md.tmp.32432.9add2e099d96",
+    "CLAUDE_NEWS/wiki/entities/claude-code.md.tmp.32432.c8c76e2a5d0b",
+    "CLAUDE_NEWS/news/2026-06-07.md",
+    "CLAUDE_NEWS/news/2026-06-07.md.tmp.32432.a722d31e361d",
+    "CLAUDE_NEWS/wiki/feature-radar.md.tmp.8092.ccc2a0f8af00",
+    "CLAUDE_NEWS/news/2026-06-06.md",
+    "CLAUDE_NEWS/wiki/entities/opus-4-8.md",
+    "CLAUDE_NEWS/wiki/topics/community-tech-patterns.md",
+    "CLAUDE_NEWS/CLAUDE.md",
+    "CLAUDE_NEWS/wiki/topics/anthropic-business.md",
+    "CLAUDE_NEWS/README.md",
+    "CLAUDE_NEWS/wiki/CLAUDE.md",
+    "CLAUDE_NEWS/wiki/overview.md",
+    "CLAUDE_NEWS/news/2026-05-28.md",
+    "CLAUDE_NEWS/news/2026-05-17.md",
+    "CLAUDE_NEWS/wiki/log.md",
+    "CLAUDE_NEWS/wiki/index.md",
+    "CLAUDE_NEWS/wiki/feature-radar.md",
+    "CLAUDE_NEWS/wiki/topics/official-community-gap.md",
+    "CLAUDE_NEWS/news/2026-05-21.md",
+    "CLAUDE_NEWS/news/2026-05-23.md",
+    "CLAUDE_NEWS/wiki/topics/community-tech-discussions.md",
     "CLAUDE_NEWS/wiki/entities/bugcrawl.md",
+    "CLAUDE_NEWS/wiki/entities/claude-security.md",
     "CLAUDE_NEWS/wiki/entities/opus-4-7.md",
     "CLAUDE_NEWS/wiki/entities/project-deal.md",
     "CLAUDE_NEWS/wiki/topics/ai-agent-safety.md",
-    "CLAUDE_NEWS/wiki/topics/community-tech-patterns.md",
     "CLAUDE_NEWS/wiki/topics/google-investment.md",
     "CLAUDE_NEWS/news/2026-04-30.md",
-    "CLAUDE_NEWS/news/2026-04-29.md",
-    "CLAUDE_NEWS/wiki/log.md",
-    "CLAUDE_NEWS/CLAUDE.md",
-    "CLAUDE_NEWS/wiki/topics/competitor-landscape.md",
-    "CLAUDE_NEWS/wiki/entities/claude-design.md",
-    "CLAUDE_NEWS/wiki/index.md",
-    "CLAUDE_NEWS/wiki/topics/code-quality-decline.md",
-    "CLAUDE_NEWS/wiki/entities/claude-code.md",
-    "CLAUDE_NEWS/wiki/entities/mythos.md",
-    "CLAUDE_NEWS/wiki/entities/pricing.md",
-    "CLAUDE_NEWS/news/2026-04-28.md",
-    "CLAUDE_NEWS/src/DesignDocument/Design Diagram.md",
-    "CLAUDE_NEWS/news/2026-04-25.md",
-    "CLAUDE_NEWS/wiki/overview.md",
-    "CLAUDE_NEWS/news/2026-04-27.md",
-    "未命名.md",
-    "未命名.canvas",
-    "CLAUDE_NEWS/news/2026-04-26.md"
+    "未命名.canvas"
   ]
 }
