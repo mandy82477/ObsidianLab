@@ -1,6 +1,7 @@
 # AI 編碼工具競品動態
 
 **狀態：** monitoring
+**領域：** 💼 商業
 **開始日期：** 2026-04
 **最後更新：** 2026-06-07
 ---
@@ -83,7 +84,7 @@ Claude Code 已成為 AI 輔助編碼的標竿產品，但競爭正快速升溫�
 ## 相關實體
 
 - [[entities/claude-code]]
-- [[topics/google-investment]]
+- [[entities/google-investment]]
 - [[topics/anthropic-government-policy]]
 - [[topics/enterprise-cost-management]]
 

@@ -2,6 +2,7 @@
 
 **類型：** policy
 **狀態：** active（持續調整中）
+**領域：** 💼 商業
 **最後更新：** 2026-06-10（Claude Fable 5 定價 $10/$50 per million token；6/22 後訂閱方案不再涵蓋 Fable 5）
 
 ---

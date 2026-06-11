@@ -1,7 +1,8 @@
 # Claude Mythos
 
 **類型：** model
-**狀態：** 部分公開（Fable 5 = Mythos 架構 + 護欄；Mythos 5 = 完整版限定存取）
+**狀態：** active（部分公開：Fable 5 = Mythos 架構 + 護欄；Mythos 5 = 完整版限定存取）
+**領域：** 🤖 模型
 **首次出現：** 2026-04（限定夥伴 Preview）
 **最後更新：** 2026-06-10
 

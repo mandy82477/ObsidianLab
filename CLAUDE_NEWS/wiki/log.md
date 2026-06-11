@@ -3,6 +3,15 @@
 Append-only 紀錄。每次 ingest、query 或 lint 都在此追加一條。
 格式：`## [YYYY-MM-DD] 類型 | 說明`
 
+## 2026-06-11 Maintenance（分類強化）
+
+- 狀態詞彙標準化：6 頁（project-deal, bugcrawl, mythos, openclaw, claude-security, stainless）
+- 領域欄位：全部 entities/topics 頁面新增 **領域：**（6 分類）
+- 刪除 redirect stub：topics/google-investment（入站連結已改指 entities 版）
+- 規則固化：.claude/rules/wiki-ingest.md 新增「命名與分類規則」、移除重複的「日報格式」區塊
+- Web Reader：STATUS_MAP 對齊新詞彙、領域篩選 chips
+- 註：本次為純 metadata 維護，未更動各頁「最後更新」欄位
+
 ## 2026-06-11 Ingest | news/2026-06-11.md（93 則）
 
 - 來源日報：`news/2026-06-11.md`（93 則，6 來源；Fable 5 護欄政策撤回道歉 + Claude Corps 公益計畫 + TCS 5 萬員工部署 + Fable 5 Jailbreak 公開 + OpenAI 降價戰 + v2.1.173 發布）

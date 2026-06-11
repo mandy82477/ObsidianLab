@@ -1,6 +1,7 @@
 # Anthropic 商業健康度
 
 **狀態：** ongoing
+**領域：** 💼 商業
 **開始日期：** 2026-05-28
 **最後更新：** 2026-06-11（TCS Global Premier Partnership 5 萬員工 + OpenAI 預期 Anthropic 降價擬先發制人降價 + Claude Corps 公益計畫 + Anthropic CEO 主張政府應可阻止危險模型）
 
