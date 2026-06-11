@@ -114,6 +114,19 @@
     renderTopicRows();
   };
 
+  // ── Domain filter ────────────────────────────────────────────────────────────
+  let activeDomain = 'all';
+
+  window.setDomainFilter = function (domain) {
+    activeDomain = domain;
+    // Update chip active state
+    document.querySelectorAll('.domain-chip').forEach(btn => {
+      btn.classList.toggle('domain-chip--active', btn.dataset.domain === domain);
+    });
+    renderEntityRows();
+    renderTopicRows();
+  };
+
   // ── Theme toggle ────────────────────────────────────────────────────────────
   window.toggleTheme = function () {
     const root = document.documentElement;
@@ -301,7 +314,8 @@
     const container = $('#wiki-entities');
     if (!container || !data.entities?.length) return;
     const sorted = sortItems(data.entities, entitySort.key, entitySort.dir);
-    container.innerHTML = sorted.map(e => `
+    const filtered = activeDomain === 'all' ? sorted : sorted.filter(e => e.domain === activeDomain);
+    container.innerHTML = filtered.map(e => `
 <div class="entity-row" onclick="openWikiPage('${esc(e.id)}','entity')">
   <div class="entity-row__name"><span class="bracket">[[</span>${esc(e.id)}<span class="bracket">]]</span></div>
   <div class="entity-row__type">${esc(e.entityType)}</div>
@@ -316,7 +330,8 @@
     const container = $('#wiki-topics');
     if (!container || !data.topics?.length) return;
     const sorted = sortItems(data.topics, topicSort.key, topicSort.dir);
-    container.innerHTML = sorted.map(t => `
+    const filtered = activeDomain === 'all' ? sorted : sorted.filter(t => t.domain === activeDomain);
+    container.innerHTML = filtered.map(t => `
 <div class="entity-row entity-row--topic" onclick="openWikiPage('${esc(t.id)}','topic')">
   <div class="entity-row__name"><span class="bracket">[[</span>${esc(t.id)}<span class="bracket">]]</span></div>
   <div><span class="pill pill--${t.pill}">${esc(shortStatus(t.status))}</span></div>

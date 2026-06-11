@@ -5,18 +5,6 @@
 
 ---
 
-## 日報格式（news/YYYY-MM-DD.md 的五個區塊）
-
-| 區塊 | 內容 |
-|------|------|
-| 📌 今日聚焦 | 3–5 點條列總結，標籤：重大事件 / 持續追蹤 / 新工具 / 社群趨勢 / 風險警示 |
-| ⭐ 重點話題 | 跨多來源同時出現或引發大量討論的項目（2–5 則） |
-| 🔧 技術更新 | 模型發布、功能更新、API/SDK 變更、官方公告 |
-| 💬 技術熱度討論 | 社群討論、工具分享、開發者心得，附情緒標籤 |
-| 💰 付費方案動態 | 定價、配額、Token 費用 |
-
----
-
 ## 決策框架：新建頁面類型
 
 - **具體事物**（模型/工具/人物/產品）有足夠描述 → 當天建 entities/ 頁
@@ -33,7 +21,8 @@
 # 實體名稱
 
 **類型：** model / feature / person / product / policy / event
-**狀態：** active / deprecated / rumoured / resolved
+**狀態：** active / beta / deprecated / acquired / resolved（格式：主值（補充說明））
+**領域：** 🤖 模型 / 🛠️ 工具/功能 / 👤 人物 / 💼 商業 / 🏛️ 政策/安全 / 🌐 社群
 **首次出現：** YYYY-MM-DD
 **最後更新：** YYYY-MM-DD
 
@@ -242,3 +231,13 @@
 3. 同一次 ingest 中多個無關頁面的更新，在單一訊息中平行發出多個 Edit 呼叫
 
 典型大型頁面：`community-tech-patterns.md`、`community-tech-timeline.md`、`claude-code.md`
+
+---
+
+## 命名與分類規則 `[加入: 2026-06-11]`
+
+**entities 狀態**主值限定五項（格式：`主值（補充說明）`）：`active`（運作中）/ `beta`（測試/預覽）/ `deprecated`（已棄用）/ `acquired`（已收購）/ `resolved`（已完成事件）。**topics 狀態**維持：`ongoing / monitoring / resolved`。
+
+**領域欄位**：所有 entities/ 與 topics/ 頁面標頭（`**狀態：**` 行之後）必填 `**領域：**`，六選一：🤖 模型 / 🛠️ 工具/功能 / 👤 人物 / 💼 商業 / 🏛️ 政策/安全 / 🌐 社群。`wiki/index.md` 對應欄位須同步。
+
+**新 topics slug 命名規約**（既有頁面不溯及）：社群類 `community-*`、企業類 `enterprise-*`、Anthropic 官方 `anthropic-*`、安全政策 `safety-*`。

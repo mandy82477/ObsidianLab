@@ -56,24 +56,20 @@ def strip_markdown_to_text(md: str) -> str:
 # ── Status → CSS pill class ──────────────────────────────────────────────────
 
 STATUS_MAP = {
-    "active": "active",
-    "ongoing": "active",
-    "monitoring": "warn",
-    "deprecated": "danger",
-    "rumoured": "info",
-    "resolved": "gray",
-    "秘密開發中": "warn",
-    "公開測試版": "active",
-    "active": "active",
+    "active":      "active",
+    "ongoing":     "active",
+    "beta":        "info",
+    "monitoring":  "warn",
+    "deprecated":  "danger",
+    "acquired":    "gray",
+    "resolved":    "gray",
 }
 
 
 def pill_class(status: str) -> str:
-    s = status.strip().lower()
-    for k, v in STATUS_MAP.items():
-        if k.lower() in s:
-            return v
-    return "gray"
+    # 只取「（」之前的主值再匹配，忽略括號內的補充說明
+    s = re.split(r"[（(]", status.strip())[0].strip().lower()
+    return STATUS_MAP.get(s, "gray")
 
 
 # ── Wiki page parser ─────────────────────────────────────────────────────────
@@ -82,6 +78,7 @@ META_RE = {
     "entityType": re.compile(r"\*\*類型[：:]\*\*\s*(.+)"),
     "type":       re.compile(r"\*\*類型[：:]\*\*\s*(.+)"),
     "status":     re.compile(r"\*\*狀態[：:]\*\*\s*(.+)"),
+    "domain":     re.compile(r"\*\*領域[：:]\*\*\s*(.+)"),
     "firstSeen":  re.compile(r"\*\*首次出現[：:]\*\*\s*(.+)"),
     "startDate":  re.compile(r"\*\*開始日期[：:]\*\*\s*(.+)"),
     "lastUpdated":re.compile(r"\*\*最後更新[：:]\*\*\s*(.+)"),
@@ -202,6 +199,7 @@ def parse_wiki(f: Path, page_type: str) -> dict:
         "name": name,
         "entityType": "",
         "status": "",
+        "domain": "",
         "pill": "gray",
         "firstSeen": "",
         "startDate": "",

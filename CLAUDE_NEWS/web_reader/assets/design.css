@@ -582,6 +582,19 @@ code {
 .wiki__section-header .wiki__section-h { margin: 0; padding: 0; border: none; }
 .wiki__note { font-family: var(--font-mono); font-size: 12px; color: var(--ink-3); margin-top: 18px; }
 
+/* Domain filter chips */
+.domain-chips { display: flex; flex-wrap: wrap; gap: 6px; margin: 0 0 18px; }
+.domain-chip {
+  font-family: var(--font-mono); font-size: 12px;
+  padding: 4px 10px; border-radius: 99px;
+  border: 1px solid var(--border-2);
+  background: var(--bg-0); color: var(--ink-2);
+  cursor: pointer; transition: background 0.15s, color 0.15s, border-color 0.15s;
+  white-space: nowrap;
+}
+.domain-chip:hover { background: var(--bg-1); border-color: var(--border-strong); color: var(--ink-1); }
+.domain-chip--active { background: var(--accent); border-color: var(--accent); color: #fff; }
+
 /* Pinned cards (radar + gap) — hairline editorial chips */
 .pinned-cards { display: flex; flex-direction: row; gap: 14px; margin-bottom: 8px; }
 .radar-card, .gap-card { flex: 1; }
