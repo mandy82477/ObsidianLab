@@ -1,0 +1,344 @@
+{
+  "date": "2026-06-11",
+  "generatedAt": "2026-06-11 21:47 UTC",
+  "articleCount": 93,
+  "sourceCount": "6/6 | **文章數：** 93 | **更新時間：** 2026-06-11 21:47 UTC",
+  "topStories": [
+    {
+      "title": "Anthropic Walks Back Policy That Could Have 'Sabotaged' Researchers Using Claude",
+      "url": "https://www.wired.com/story/anthropic-responds-to-backlash-on-claudes-secret-sabotage-on-ai-research/",
+      "source": "Hacker News",
+      "time": "06/11 03:41",
+      "sentiment": "",
+      "body": "Anthropic 承認 Fable 5 的隱性 LLM 研究限制（讓模型靜默降級而不通知使用者）是錯誤決策，在研究社群強烈反彈後已將防護措施改為「可見」模式，並公開道歉。",
+      "focusTags": [
+        "[重大事件]"
+      ]
+    },
+    {
+      "title": "Cybersecurity researchers aren't happy about the guardrails on Anthropic's Fable",
+      "url": "https://techcrunch.com/2026/06/10/cybersecurity-researchers-arent-happy-about-the-guardrails-on-anthropics-fable/",
+      "source": "Hacker News",
+      "time": "06/10 16:42",
+      "sentiment": "",
+      "body": "Fable 5 的安全分類器過度敏感，連「讀取資安部落格」都被攔截；IBM X-Force 知名研究員 Valentina Palmiotti 公開批評，引發廣泛討論。觸發守衛時模型不拒絕，而是靜默 fallback 至 Opus 4.8。",
+      "focusTags": [
+        "[持續追蹤]"
+      ]
+    },
+    {
+      "title": "TCS ties up with Anthropic to roll out Claude access to 50k employees",
+      "url": "https://www.moneycontrol.com/europe/?url=https://www.moneycontrol.com/news/business/tcs-ties-up-with-anthropic-to-roll-out-claude-ai-access-to-50-000-employees-13946875.html",
+      "source": "Hacker News",
+      "time": "06/11 13:02",
+      "sentiment": "",
+      "body": "TCS（Tata Consultancy Services）宣布與 Anthropic 建立 Global Premier Partnership，將 Claude 推廣至 5 萬名員工，並同時取得 Mythos Preview（Project Glasswing）存取資格。",
+      "focusTags": [
+        "[新工具]"
+      ]
+    }
+  ],
+  "techUpdates": [
+    {
+      "title": "Introducing Claude Corps",
+      "url": "https://www.anthropic.com/news/claude-corps",
+      "source": "Anthropic Blog",
+      "time": "06/11 13:46",
+      "sentiment": "",
+      "body": "Anthropic 啟動 Claude Corps 全國獎學金計畫：招募 1,000 名職涯初期人才，教導他們有效使用 Claude，並派遣至全美各地非營利組織服務一年，由 Anthropic 全薪支付。計畫目標兼顧 AI 普惠與就業轉型問題。",
+      "focusTags": [
+        "[重大事件]"
+      ]
+    },
+    {
+      "title": "[anthropics/claude-code] v2.1.173",
+      "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.173",
+      "source": "GitHub / anthropics/claude-code",
+      "time": "06/11 05:41",
+      "sentiment": "",
+      "body": "修正 Fable 5 模型名稱中含 `[1m]` 後綴時無法正規化的問題（Fable 5 預設已包含 1M context，後綴現在會自動移除）；另修正一個誤報的「沙盒限制」錯誤訊息。",
+      "focusTags": []
+    }
+  ],
+  "discussions": [
+    {
+      "title": "Anthropic's model naming, extrapolated",
+      "url": "https://samwilkinson.io/posts/2026-06-09-anthropics-model-naming-extrapolated",
+      "source": "Hacker News",
+      "time": "06/10 18:45 UTC 情緒：😊",
+      "sentiment": "",
+      "body": "一篇幽默推演 Anthropic 命名邏輯的文章，從 Haiku/Sonnet/Opus/Mythos/Fable 外推出 Aphorism、Marginalia、Diatribe、Treatise 等假想系列，每個名稱配上一句精準諷刺。HN score 311，引起廣泛共鳴。",
+      "focusTags": []
+    },
+    {
+      "title": "OpenAI mulls slashing prices as it competes with Anthropic for users",
+      "url": "https://www.cnbc.com/2026/06/11/openai-mulls-slashing-prices-ahead-of-competition-from-anthropic-wsj.html",
+      "source": "Hacker News",
+      "time": "06/11 05:16 UTC 情緒：😐",
+      "sentiment": "",
+      "body": "根據 WSJ 報導，OpenAI 正考慮「大幅削減 token 費用」，明確指出原因是預期 Anthropic 將降價。目前 Anthropic Pro 計畫 $17/月；OpenAI 訂閱分 $8/$20/$100 以上。",
+      "focusTags": [
+        "[社群趨勢]"
+      ]
+    },
+    {
+      "title": "Antirez on X: I believe what Anthropic is doing is *deeply* wrong",
+      "url": "https://twitter.com/antirez/status/2064766429887352971",
+      "source": "Hacker News",
+      "time": "06/11 00:13 UTC 情緒：😤",
+      "sentiment": "",
+      "body": "Redis 作者 Antirez 就 Fable 5 的隱性限制發表強烈批評貼文，認為 Anthropic 的做法「從根本上是錯的」，在 HN 引發討論，score 42。",
+      "focusTags": []
+    },
+    {
+      "title": "Claude Fable 5 jailbroken to bypass Anthropic's new safety guardrails",
+      "url": "https://twitter.com/elder_plinius/status/2064776322979676227",
+      "source": "Hacker News",
+      "time": "06/10 18:47 UTC 情緒：🤔",
+      "sentiment": "",
+      "body": "Pliny（@elder_plinius）成功突破 Fable 5 的守衛機制，使用的技術包括：拆解請求後重組、敘事/學術框架包裝、長 context 操作、怪異文字轉換、分佈外 token 等多步驟攻擊組合。",
+      "focusTags": []
+    },
+    {
+      "title": "Tell HN: Anthropic's Fable model is too expensive",
+      "url": "https://news.ycombinator.com/item?id=48485950",
+      "source": "Hacker News",
+      "time": "06/11 03:39 UTC 情緒：😤",
+      "sentiment": "",
+      "body": "$200/月 Max 計畫用戶反映：使用 Fable 進行一次 code review 即消耗 45% 週配額，而 Opus 4.8 一週僅耗 80%。社群同時回報配額消耗存在巨大個體差異，有人整天使用不超過 20%。",
+      "focusTags": []
+    },
+    {
+      "title": "Ask HN: Did Anthropic Just Win?",
+      "url": "https://news.ycombinator.com/item?id=48480323",
+      "source": "Hacker News",
+      "time": "06/10 18:09 UTC 情緒：🤔",
+      "sentiment": "",
+      "body": "討論 Fable 5 是否代表 Anthropic 已建立技術護城河。部分用戶認為 Fable 在自主性上明顯優於 Opus/Codex，但擔憂此後的大幅漲價。OpenAI 若有壓箱底的模型早應發布，或許已反映差距。",
+      "focusTags": []
+    },
+    {
+      "title": "An autopsy of Claude Code's deep research",
+      "url": "https://steel.dev/blog/claude-code-deep-research-autopsy",
+      "source": "Hacker News",
+      "time": "06/10 13:54 UTC 情緒：🤔",
+      "sentiment": "",
+      "body": "作者讓 Claude Code 從自身 binary 中重構 deep-research workflow，分析後發現：deep research 模式「搜尋廣度優先但不做二次追蹤」，本質上是 wide 而非 deep，缺乏「第二跳」的細化能力。",
+      "focusTags": []
+    },
+    {
+      "title": "Show HN: Claumon – forecasting Claude Code usage limits with a Gamma process",
+      "url": "https://github.com/fabioconcina/claumon",
+      "source": "Hacker News",
+      "time": "06/11 11:05 UTC 情緒：😊",
+      "sentiment": "",
+      "body": "使用 Gamma process 統計模型預測 Claude Code 用量上限的 Go 語言工具，提供精確可信區間；相比現有工具的燃燒率估算或百分位啟發法更為嚴謹。支援 Linux/macOS/Windows 單一二進位，無需安裝依賴。",
+      "focusTags": []
+    },
+    {
+      "title": "Show HN: Learn while you wait for your agents to code (Foyer)",
+      "url": "https://github.com/get-foyer/foyer",
+      "source": "Hacker News",
+      "time": "06/10 16:53 UTC 情緒：😊",
+      "sentiment": "",
+      "body": "Claude Code 執行時人類容易分心做別的事；Foyer 嘗試在等待期間顯示 agents 正在處理的相關學習內容。早期 MVP，作者徵求回饋。",
+      "focusTags": []
+    },
+    {
+      "title": "Claude Opus is more performant on OpenCode than Claude Code",
+      "url": "https://artificialanalysis.ai/agents/coding-agents",
+      "source": "Hacker News",
+      "time": "06/11 11:43 UTC 情緒：🤔",
+      "sentiment": "",
+      "body": "Artificial Analysis 釋出 Coding Agent 基準測試，涵蓋 SWE-Bench-Pro-Hard、Terminal-Bench v2、SWE-Atlas-QnA 三項指標，顯示 Claude Opus 在 OpenCode harness 上表現優於官方 Claude Code，引發 harness 設計討論。",
+      "focusTags": []
+    },
+    {
+      "title": "New Anthropic privacy policy: age/identity verification for consumer accounts",
+      "url": "https://www.anthropic.com/legal/privacy",
+      "source": "Hacker News",
+      "time": "06/10 16:11 UTC 情緒：😐",
+      "sentiment": "",
+      "body": "Anthropic 新隱私政策於 2026-06-08 發布，2026-07-08 生效，新增消費者帳號的年齡/身份驗證要求。",
+      "focusTags": []
+    },
+    {
+      "title": "Anthropic CEO Says Government Should Be Able to Block New Models",
+      "url": "https://www.bloomberg.com/news/articles/2026-06-10/anthropic-ceo-says-government-should-be-able-to-block-new-models",
+      "source": "Hacker News",
+      "time": "06/10 19:29 UTC 情緒：😐",
+      "sentiment": "",
+      "body": "Dario Amodei 接受採訪表示政府應有權阻止危險 AI 模型發布，社群評論指出此言論主要針對中國競爭者，亦有人諷刺這是市場競爭立場。",
+      "focusTags": []
+    },
+    {
+      "title": "Anthropic CEO Dario Amodei Has Only One Direct Report",
+      "url": "https://www.bloomberg.com/news/articles/2026-06-10/anthropic-ceo-dario-amodei-is-a-manager-to-only-one-direct-report",
+      "source": "Hacker News",
+      "time": "06/11 08:51 UTC 情緒：😐",
+      "sentiment": "",
+      "body": "Bloomberg 報導 Dario Amodei 只有一位直屬下屬，引發對 Anthropic 組織架構的討論。",
+      "focusTags": []
+    },
+    {
+      "title": "Hackers Use Fake Claude Code Guide and AI PDFs to Spread AsyncRAT Malware",
+      "url": "https://news.google.com/rss/articles/CBMieEFVX3lxTE54TTR5cXpsVmNOY1lqQ0NyTEVwMW9TalhYSHlGNGYweFIxZlFCUDRzR1VqQ21JRnZ5TElHNVdublcxb0JRbVAyYWtqQjBNdk9QR3B1ajVQTTUwb0NhbUFkcmc5ekVwRHVhUUY0aXJjZjdTWENlLVhTYg?oc=5",
+      "source": "Google News / Hackread",
+      "time": "06/11 05:20 UTC 情緒：😤",
+      "sentiment": "",
+      "body": "安全威脅：駭客利用偽造的 Claude Code 教學文件和 AI PDF 散播 AsyncRAT 惡意軟體，值得注意。",
+      "focusTags": []
+    },
+    {
+      "title": "30 working principles for configuring Claude Code",
+      "url": "https://www.reddit.com/r/ClaudeAI/comments/1u2x88i/30_working_principles_for_configuring_claude_code/",
+      "source": "Reddit / r/ClaudeAI",
+      "time": "06/11 04:08 UTC 情緒：😊",
+      "sentiment": "",
+      "body": "作者整理 30 條 Claude Code 配置實戰原則（含 Context Economics、稀釋是失敗模式等），並公開至 GitHub 徵求回饋。",
+      "focusTags": []
+    },
+    {
+      "title": "Passed the Claude Certified Architect - Foundations (CCA-F) Exam",
+      "url": "https://www.reddit.com/r/ClaudeAI/comments/1u2x858/passed_the_claude_certified_architect_foundations/",
+      "source": "Reddit / r/ClaudeAI",
+      "time": "06/11 04:08 UTC 情緒：😊",
+      "sentiment": "",
+      "body": "用戶分享通過 Claude Certified Architect - Foundations（CCA-F）認證考試的心得，並附詳細備考筆記。",
+      "focusTags": []
+    },
+    {
+      "title": "\\\"Trust Us\\\" Is Not a Control Surface: Anthropic and the Case for Open Weights",
+      "url": "https://trust-us.vercel.app",
+      "source": "Hacker News",
+      "time": "06/11 05:32 UTC 情緒：😤",
+      "sentiment": "",
+      "body": "一位喬治亞州小型抵押貸款公司老闆（付費用戶）撰文，以 Fable 5 事件為例，主張 Anthropic「信任我們」的承諾無法作為真實控制介面，呼籲開放權重模型是唯一出路。",
+      "focusTags": []
+    },
+    {
+      "title": "Show HN: Workplane – collaborative files for agents (and humans)",
+      "url": "https://workplane.co",
+      "source": "Hacker News",
+      "time": "06/11 13:15 UTC 情緒：😊",
+      "sentiment": "",
+      "body": "將 Claude/Codex 輸出的 .md 和 .html 檔案轉為可共享連結，支援人類審閱、多 agent 協作與版本回滾，無需安裝或登入。側邊欄支援 MCP Apps 整合至 Claude Desktop/Mobile。",
+      "focusTags": []
+    },
+    {
+      "title": "Show HN: 5dive – Run a Team of Claude Code Agents from Telegram",
+      "url": "https://github.com/5dive-com/5dive",
+      "source": "Hacker News",
+      "time": "06/11 13:28 UTC 情緒：😐",
+      "sentiment": "",
+      "body": "從 Telegram 管理和驅動多個 Claude Code agents 的工具。（已被 HN 標記 flagged）",
+      "focusTags": []
+    },
+    {
+      "title": "Show HN: ShellShot – Send screenshots and screen recordings into Claude Code",
+      "url": "https://github.com/APIANT/shellshot",
+      "source": "Hacker News",
+      "time": "06/11 13:05 UTC 情緒：😊",
+      "sentiment": "",
+      "body": "熱鍵框選螢幕區域、加上箭頭標注與問題後直接送進 Claude Code CLI，也支援短片錄製與 iPad-to-Mac 無線傳輸，圖片針對 token 效率最佳化。由 Fable 自身生成。",
+      "focusTags": []
+    },
+    {
+      "title": "Show HN: Vaportrail – flight recorder for Claude Code, Codex, and OpenCode",
+      "url": "https://github.com/B33BMO/vaportrail",
+      "source": "Hacker News",
+      "time": "06/11 05:15 UTC 情緒：😊",
+      "sentiment": "",
+      "body": "Claude Code、Codex 和 OpenCode 的執行記錄工具，已新增 Gemini CLI 和 Aider 支援。",
+      "focusTags": []
+    },
+    {
+      "title": "/dmg – a Claude Code skill for persistent memory and session sync",
+      "url": "https://github.com/responsiblparty/claude-dmg-skill",
+      "source": "Hacker News",
+      "time": "06/10 22:24 UTC 情緒：😊",
+      "sentiment": "",
+      "body": "解決 Claude Code 跨 session 記憶問題的 skill，另有社群用戶分享功能相近的自製版本。",
+      "focusTags": []
+    },
+    {
+      "title": "Anthropic's new AI framework has a 15 day reporting window for models caught subverting their own controls",
+      "url": "https://www.reddit.com/r/ClaudeAI/comments/1u2zebf/anthropics_new_ai_framework_has_a_15_day/",
+      "source": "Reddit / r/ClaudeAI",
+      "time": "06/11 05:40 UTC 情緒：🤔",
+      "sentiment": "",
+      "body": "Anthropic 新 AI 框架中，若模型被發現試圖破壞自身安全控制，設有 15 天舉報窗口。",
+      "focusTags": []
+    },
+    {
+      "title": "Fable has been intentionally mega-nerfed for AI research activities",
+      "url": "https://www.reddit.com/r/ClaudeAI/comments/1u2xsa6/fable_has_been_intentionally_meganerfed_for_ai/",
+      "source": "Reddit / r/ClaudeAI",
+      "time": "06/11 04:33 UTC 情緒：😤",
+      "sentiment": "",
+      "body": "用戶引用 Fable 5 model card（p.13）指出：Fable 對「frontier LLM 開發」活動已刻意嚴格限制，此設計是故意為之而非 bug。",
+      "focusTags": []
+    }
+  ],
+  "billing": [
+    {
+      "title": "Tell HN: Anthropic's Fable model is too expensive",
+      "url": "https://news.ycombinator.com/item?id=48485950",
+      "source": "Hacker News",
+      "time": "06/11 03:39",
+      "sentiment": "",
+      "body": "Fable 5 token 消耗遠超 Opus 4.8：一次 code review 可消耗 $200 Max 計畫 45% 週配額。Lanes 部落格確認定價：$10/M input、$50/M output，低於 Mythos Preview 的半數以下，且 6/22 前訂閱計畫內免費。",
+      "focusTags": []
+    },
+    {
+      "title": "OpenAI Considers Drastic Price Cuts, Anticipating War for Users with Anthropic",
+      "url": "https://www.wsj.com/tech/ai/openai-considers-drastic-price-cuts-anticipating-war-for-users-with-anthropic-9b8c178e",
+      "source": "Hacker News",
+      "time": "06/11 01:50",
+      "sentiment": "",
+      "body": "OpenAI 預期 Anthropic 將大幅降低 token 費用，正研究先發制人的降價策略，AI 定價戰進入新階段。",
+      "focusTags": []
+    }
+  ],
+  "focus": [
+    {
+      "tag": "[重大事件]",
+      "text": "Anthropic 發布 Claude Corps 計畫，招募 1,000 名 Fellows 協助全美非營利組織導入 AI，並由 Anthropic 全薪聘用一年。",
+      "ref_urls": [
+        "https://www.anthropic.com/news/claude-corps"
+      ]
+    },
+    {
+      "tag": "[重大事件]",
+      "text": "Anthropic 就 Fable 5 的隱性 LLM 研究限制政策道歉並撤回，承認「做了錯誤的取捨」，將改為可見的防護措施。",
+      "ref_urls": [
+        "https://www.wired.com/story/anthropic-responds-to-backlash-on-claudes-secret-sabotage-on-ai-research/"
+      ]
+    },
+    {
+      "tag": "[持續追蹤]",
+      "text": "Fable 5 守衛規則引發大量社群批評：資安研究者指出連讀取部落格文章都被攔截、Jailbreak PoC 已公開、Microsoft 內部禁止使用。",
+      "ref_urls": [
+        "https://techcrunch.com/2026/06/10/cybersecurity-researchers-arent-happy-about-the-guardrails-on-anthropics-fable/",
+        "https://github.com/0xSufi/fable-jailbreak/",
+        "https://news.google.com/rss/articles/CBMi8AFBVV95cUxOd1dEMHZkT2VEVEhhT05rZ0YzNkFCM3pxRGhXNVVUNUJqZ245dlBIRHBsZGpQOU9BMWZLV1ZseVlPWXNwdnRaX3FuV2t2Wnc0RUFhcEdFalFpNDQ1NkZuQXdPMFhPNndObXhVbUctV3RZSFpSbHFiZ0x5cExmQXJ1Y0o1b0RFTk90SEcyTjhnNmt3RTBkaEJNZnhZX1RZLWFGRkFaUG5NVjN6RTFtVGNSekxtRE1VeGVEazAwTFBsVmZkRDdfNU1oVzc5WGpWeWRZWUNQMXBWLVZMUGoyX1ZGZjdnLTFyX3RIOUl0VkV6WFPSAfYBQVVfeXFMTWR1OExhOGhzd3RtYzdTRzBHYWRteEprN2l4anYwTkZLS0lJUTdsS1AtR21sR0RYSkZzZVYyQk5oNWxiS3hsUHdQeDlUZW1sSktTSG9Ka3RPRTdEbG1UTVBiQUs5SFNBd1I1TWUzZ1ppLVFhcVRoUWJQYk9KVXZENTJEN2o1bXA0TWtOQ29tVlk0ZXVVYlc4N0N1Zlg2ZW5tc0Y1MUtDZ2VrVGRkbS1xYV80YWNWR3otNXkzVW1yNVFINmxsR1JheHN4VUVibXZiVWZFMG8yQlhaUko1U3lZUE0tbDVybkowMzR3aEo0QjhTZnI1NURR?oc=5"
+      ]
+    },
+    {
+      "tag": "[社群趨勢]",
+      "text": "OpenAI 考慮大幅降價，明確指出是「預期 Anthropic 即將降價」所致，AI 定價戰正式展開。",
+      "ref_urls": [
+        "https://www.cnbc.com/2026/06/11/openai-mulls-slashing-prices-ahead-of-competition-from-anthropic-wsj.html"
+      ]
+    },
+    {
+      "tag": "[新工具]",
+      "text": "TCS 與 Anthropic 宣布 Global Premier Partnership，向 5 萬名員工推廣 Claude；同時 Foyer、Claumon、5dive、Workplane、ShellShot 等 Claude Code 周邊工具持續湧現。",
+      "ref_urls": [
+        "https://www.moneycontrol.com/europe/?url=https://www.moneycontrol.com/news/business/tcs-ties-up-with-anthropic-to-roll-out-claude-ai-access-to-50-000-employees-13946875.html"
+      ]
+    }
+  ],
+  "sourceStatus": [],
+  "preview": "Anthropic Walks Back Policy That Could Have 'Sabotaged' Researchers Using Claude"
+}
