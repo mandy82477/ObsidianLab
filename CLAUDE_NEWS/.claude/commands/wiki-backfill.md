@@ -7,6 +7,8 @@ argument-hint: YYYY-MM-DD [YYYY-MM-DD]
 
 補跑一個或多個過去日期的 wiki ingest。
 
+**使用時機：僅當日報（`news/YYYY-MM-DD.md`）已存在、只需補 wiki 時使用。若日報也缺，改用 `/news-pipeline YYYY-MM-DD`（會重抓新聞 + 生成日報 + ingest + web 建置）。**
+
 ## 使用方式
 
 - 單一日期：`/wiki-backfill 2026-05-10`

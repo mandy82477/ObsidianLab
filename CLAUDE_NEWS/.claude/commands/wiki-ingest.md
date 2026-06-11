@@ -7,6 +7,8 @@ argument-hint: [YYYY-MM-DD]
 
 讀取今日日報，更新 wiki 知識庫。每天在新聞聚合器跑完後執行。
 
+> ⚠️ 本檔的 ingest 步驟在 `.claude/commands/news-pipeline-steps.md` Step 2 有精簡複本，修改任一方時必須同步另一方。
+
 ## 步驟
 
 ### 1. 確認今日日報
@@ -45,6 +47,15 @@ argument-hint: [YYYY-MM-DD]
 - 同步更新「最後更新」欄位為今日日期
 
 格式規範見 `.claude/rules/wiki-ingest.md`。
+
+### 4a. 升格檢查（discussions → patterns）
+
+- 讀取 `topics/community-tech-discussions.md` 的「熱門討論」表格
+- 找出 `模式` 欄為 🌊延燒 的主題（連續 3 天以上）
+- 對每個 🌊延燒 主題判斷：**這個討論是否已形成「可複用的工作流建議」？**
+  - ✅ 升格條件：社群已有多人複現 + 有具體可執行步驟（做法 A 比做法 B 好，理由是 X）
+  - ❌ 不升格：只有觀察或爭議、沒有共識、或 patterns.md 已有對應條目
+- 若升格：在 `topics/community-tech-patterns.md` 的「技術彙整」對應類別下新增條目；同步在 discussions.md 該討論列的 `衍生` 欄填入 `→ patterns`
 
 ### 4b. 呈現品質審查（每個修改或新建的頁面均需執行）
 

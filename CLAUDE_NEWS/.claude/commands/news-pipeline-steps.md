@@ -96,7 +96,7 @@ git -C REPO_ROOT push
 
 ## Step 2：Wiki Ingest
 
-執行完整 wiki ingest 流程：
+執行完整 wiki ingest 流程（本步驟為 `.claude/commands/wiki-ingest.md` 的精簡複本，修改任一方時必須同步另一方）：
 
 1. 讀取 `news/TARGET_DATE.md`
 2. 同時讀取：`wiki/CLAUDE.md`（目錄結構與限制）、`.claude/rules/wiki-ingest.md`（格式模板與品質標準）、`wiki/index.md` + `wiki/log.md`（確認未重複 ingest）
