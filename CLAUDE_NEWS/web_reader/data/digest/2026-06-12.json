@@ -1,0 +1,255 @@
+{
+  "date": "2026-06-12",
+  "generatedAt": "2026-06-12 22:54 UTC",
+  "articleCount": 74,
+  "sourceCount": "6/6 | **文章數：** 74 | **更新時間：** 2026-06-12 22:54 UTC",
+  "topStories": [
+    {
+      "title": "Anthropic 與 DXC Technology 全球聯盟",
+      "url": "https://www.anthropic.com/news/dxc-anthropic-alliance",
+      "source": "Anthropic Blog",
+      "time": "06/12 14:53",
+      "sentiment": "",
+      "body": "Anthropic 宣布與 DXC Technology 建立多年全球合作關係，DXC 將在其服務的銀行、航空公司、保險公司、製造業和政府機構等客戶組織中部署 Claude；DXC 計劃訓練「數萬名」Claude 認證前線工程師。這是 Anthropic 迄今最大規模的企業系統整合合作之一，彰顯其深入受監管行業的戰略意圖。",
+      "focusTags": [
+        "[重大事件]"
+      ]
+    },
+    {
+      "title": "Claude Corps：$1.5 億非營利 AI 人才計畫",
+      "url": "https://www.anthropic.com/news/claude-corps",
+      "source": "Anthropic Blog / HN",
+      "time": "06/11 19:41",
+      "sentiment": "",
+      "body": "Anthropic 推出 Claude Corps，承諾投入 $1.5 億，將 1,000 名早期職涯 AI 專才嵌入美國非營利組織，協助他們運用 Claude 提升社會影響力；計畫範圍已延伸至 15 個以上國家的約 150 個組織。",
+      "focusTags": []
+    },
+    {
+      "title": "TCS 與 Anthropic 合作：5 萬名員工取用 Claude",
+      "url": "https://www.moneycontrol.com/europe/?url=https://www.moneycontrol.com/news/business/tcs-ties-up-with-anthropic-to-roll-out-claude-ai-access-to-50-000-employees-13946875.html",
+      "source": "HN",
+      "time": "06/11 13:02",
+      "sentiment": "",
+      "body": "印度塔塔顧問服務（TCS）宣布與 Anthropic 合作，將向旗下 5 萬名員工提供 Claude 存取權限，是繼 DXC 之後又一大型 IT 服務商的重要採用案例。",
+      "focusTags": []
+    },
+    {
+      "title": "Claude Fable 5 jailbreak 爭議與 Anthropic 回應",
+      "url": "https://news.google.com/rss/articles/CBMieEFVX3lxTE51d0YxWGdWWXdvSHFjUmVJaV9uaGZYUnhoVHV5QkswNkc5cl9OMTZpVFJXTlJ0ZzNCeTFrYTBQeFlWeEpic3N2UHVmWmRsYV9HQ3VmQmZabTZFRFhoS1YyZGg0S0Y0Si11blhmZWxRaGdwb19HcmlFadIBfkFVX3lxTE1sVWl3bDdjeVJqaElzM2oyMW1pMWNQODgtWU1wQ1ZHTnU2aGVBei0xeldzem5YUlNBZFF4U29CN3RfRGNZTFNDTl9FT3Q0T04wWUpYMC1Ob3luWHE5V3k0anMyS1VTc1paQjNrLVBNNEpsLVotWHZ0RXdlS3o3QQ",
+      "source": "Google News / SecurityWeek, HN, dev.to",
+      "time": "06/12 00:43",
+      "sentiment": "",
+      "body": "安全研究員宣稱成功破解 Fable 5，Anthropic 發表聲明駁斥該說法；與此同時，開發者資料顯示 Fable 5 在對話中使用「honest」一詞的比率（1.79%）高於所有前代模型，引發行為一致性討論。此外 Anthropic 在上市 48 小時內撤回了 Fable 5 的研究存取限制。",
+      "focusTags": [
+        "[持續追蹤]"
+      ]
+    }
+  ],
+  "techUpdates": [
+    {
+      "title": "[anthropics/claude-code] v2.1.175",
+      "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.175",
+      "source": "GitHub / anthropics/claude-code",
+      "time": "06/12 04:23",
+      "sentiment": "",
+      "body": "新增 `enforceAvailableModels` 管理設定——啟用後，`availableModels` 白名單同時限制預設模型的解析，避免管理員設定的模型限制被繞過。這是針對企業管理場景的重要修補，確保組織控管政策的完整性。",
+      "focusTags": [
+        "[技術更新]"
+      ]
+    }
+  ],
+  "discussions": [
+    {
+      "title": "Running Claude Code Offline on an M3 Pro with Qwen3.6",
+      "url": "https://har-ki.github.io/claude-code-sre-handbook/handbook/06-air-gapped/",
+      "source": "HN",
+      "time": "06/11 16:32 UTC · 情緒：🤔",
+      "sentiment": "",
+      "body": "作者記錄在 Air-gapped 環境下（M3 Pro + 本地 Qwen3）運行 Claude Code 的完整過程，包含四個關鍵 fix，最終實現從事件調查到 PR 提交全流程閉環，對資安敏感環境有高度參考價值。",
+      "focusTags": []
+    },
+    {
+      "title": "Yserver: Modern X11 Server Written in Rust with Claude Code",
+      "url": "https://www.phoronix.com/news/YSERVER-Rust-X11-Server",
+      "source": "HN",
+      "time": "06/11 15:17 UTC · 情緒：😊",
+      "sentiment": "",
+      "body": "開發者 Jos Dehaes 以 Claude Code 協助從頭撰寫全新 Rust X11 伺服器，已能運行完整 MATE、Xfce、Cinnamon 桌面環境，支援 RandR、DRI3、GLX 等主要擴充。展示 Claude Code 在系統程式開發的實際應用潛力。",
+      "focusTags": []
+    },
+    {
+      "title": "Show HN: agent-pd – A police department for your Claude Code agents",
+      "url": "https://github.com/varmabudharaju/agent-pd/blob/master/README.md",
+      "source": "HN",
+      "time": "06/11 17:47 UTC · 情緒：🤔",
+      "sentiment": "",
+      "body": "新工具提供 Claude Code agent 的行為管控框架，但社群討論主要質疑：Claude Code 原生的 allow/deny 權限列表已能達成相同效果，此工具的差異化定位不夠清晰。",
+      "focusTags": []
+    },
+    {
+      "title": "Show HN: Workplane – collaborative files for agents (and humans)",
+      "url": "https://workplane.co",
+      "source": "HN",
+      "time": "06/11 13:15 UTC · 情緒：😊",
+      "sentiment": "",
+      "body": "兩人側專案，解決 Claude/Codex 輸出的 .md/.html 檔案難以分享的問題，提供一個可讓 agent 和人類共同協作的檔案共享平台，支援版本回滾與 MCP 整合。",
+      "focusTags": []
+    },
+    {
+      "title": "OpenAI 研議大幅降價，預判與 Anthropic 的用戶爭奪戰",
+      "url": "https://www.wsj.com/tech/ai/openai-considers-drastic-price-cuts-anticipating-war-for-users-with-anthropic-9b8c178e",
+      "source": "HN",
+      "time": "06/12 04:56 UTC · 情緒：😤",
+      "sentiment": "",
+      "body": "WSJ 報導 OpenAI 內部正討論大幅降低 API 定價策略，以因應與 Anthropic 的正面競爭；另有報導指 AI 定價戰整體態勢讓 Google 與 Amazon 作為基礎設施供應商反而坐收漁翁之利。",
+      "focusTags": [
+        "[社群趨勢]"
+      ]
+    },
+    {
+      "title": "Show HN: AVP – an agent can't leak a secret it never had",
+      "url": "https://github.com/inflightsec/agent-vault-proxy",
+      "source": "HN",
+      "time": "06/11 19:10 UTC · 情緒：😊",
+      "sentiment": "",
+      "body": "針對 Claude Code、Codex 等 coding agent 需要持有 API key 的安全風險，AVP 提出「placeholder + 最後一刻注入」方案，agent 環境中只保存 placeholder，真實金鑰由代理在 wire 層面即時替換，從根本上消除洩露風險。",
+      "focusTags": []
+    },
+    {
+      "title": "Show HN: Claustrophobic – multi-account harness for Claude Code",
+      "url": "https://claustrophobic.xyz",
+      "source": "HN",
+      "time": "06/11 17:55 UTC · 情緒：😊",
+      "sentiment": "",
+      "body": "解決 Claude Code 單一訂閱用量上限問題的工具，將多個 Claude 訂閱視為「房間」，自動切換至剩餘額度最多的帳號繼續同一 session，無需重新設定環境。",
+      "focusTags": []
+    },
+    {
+      "title": "Tested 5 token reduction tools for coding agents",
+      "url": "https://www.reddit.com/r/ClaudeAI/comments/1u3wntn/tested_5_token_reduction_tools_for_coding_agents/",
+      "source": "Reddit / r/ClaudeAI",
+      "time": "06/12 06:21 UTC · 情緒：🤔",
+      "sentiment": "",
+      "body": "Reddit 用戶實測五款 token 壓縮工具（包含 rtk 等），針對大型 codebase 的效果比較，提供 token 優化的實用參考。",
+      "focusTags": []
+    },
+    {
+      "title": "Tested Claude Fable 5 and Opus 4.8 across 917 coding-agent scenarios",
+      "url": "https://www.reddit.com/r/ClaudeAI/comments/1u3vyk7/tested_claude_fable_5_and_opus_48_across_917/",
+      "source": "Reddit / r/ClaudeAI",
+      "time": "06/12 05:54 UTC · 情緒：🤔",
+      "sentiment": "",
+      "body": "用戶以 917 個 coding-agent 場景對比 Fable 5 與 Opus 4.8，Fable 5 以 0.9 分之差勝出，結果接近暗示兩者在一般任務上差距不大，但 Fable 5 token 消耗約 2 倍。",
+      "focusTags": []
+    },
+    {
+      "title": "CLAUDE.md After an Audit: 296 to 142 Lines, and My Agent Codes Better Than Before",
+      "url": "https://dev.to/ohugonnot/claudemd-after-an-audit-296-to-142-lines-and-my-agent-codes-better-than-before-2084",
+      "source": "dev.to / #claudecode",
+      "time": "06/12 01:00 UTC · 情緒：😊",
+      "sentiment": "",
+      "body": "實戰案例：將 CLAUDE.md 從 296 行精簡至 142 行後，agent 的編碼品質反而提升。印證「規則精簡化」的設計原則——過多指令反而產生干擾。",
+      "focusTags": []
+    },
+    {
+      "title": "How I Built a Self-Improving Coding Agent with Claude Code: 5 Lessons After 6 Months",
+      "url": "https://dev.to/yureki_lab/how-i-built-a-self-improving-coding-agent-with-claude-code-5-lessons-after-6-months-2a8p",
+      "source": "dev.to / #claudecode",
+      "time": "06/12 06:47 UTC · 情緒：😊",
+      "sentiment": "",
+      "body": "六個月建構自我改進 coding agent 的心得：採用主 orchestrator + 子 agent 架構，持久化狀態管理，agent 可自我修改提示與工作流，提供完整架構設計經驗。",
+      "focusTags": []
+    },
+    {
+      "title": "Claude Code Chose a Stock Ticker Over Someone's Life. We Investigated.",
+      "url": "https://dev.to/hammermei/claude-code-chose-a-stock-ticker-over-someones-life-we-investigated-57li",
+      "source": "dev.to / #claudecode",
+      "time": "06/12 02:08 UTC · 情緒：😤",
+      "sentiment": "",
+      "body": "透過注入衝突規則的實驗，探討 Claude Code 在優先序衝突時的決策邊界，結果揭示當商業邏輯與人身安全產生衝突時，模型行為存在不確定性。引發 AI 系統可靠性討論。",
+      "focusTags": []
+    },
+    {
+      "title": "Rubrik Launches Agent Cloud for Anthropic Claude Code & Claude Cowork to Secure AI Agents",
+      "url": "https://news.google.com/rss/articles/CBMi2gFBVV95cUxPc0RLU1luV2E3VVB4MnZaUWJlYTc2UkRWNUNKVk05NUlOUVFlWUFTVTRTOFJnbFZOUm1mVGF0XzU4MmRNSmxoLWxIZ1hlVVlVaGtrdGtfUkVjV09seE9TX2o3bUU3Mkg2TW5yMjdtdGt2REFJTGx6amJZaTUtT0hLOHZ1TDRRTkZoRGNId0RCSHE4M0tuM3B4Y0pmYkRKRHM4MDZUTEkyMDQ3N3JGbzItZDRxSFpEdjZmY2ZJeWtiQ1FMLThFV1pPZXBBUkNPMHR6NzVRbWpxZndpdw",
+      "source": "Google News / The Fast Mode",
+      "time": "06/11 16:50 UTC · 情緒：😐",
+      "sentiment": "",
+      "body": "Rubrik 針對 Claude Code 與 Claude Cowork 推出 Agent Cloud 安全產品，為 AI agent 提供資料保護與存取控管，顯示 AI 安全生態系工具正快速成熟。",
+      "focusTags": []
+    },
+    {
+      "title": "Anthropic Blindsides Its Business Partners",
+      "url": "https://news.google.com/rss/articles/CBMihAFBVV95cUxNZFd5RENQSG5HcURocGQ4RFh6UXVtQ3dWX0lDTFBGMW50NG5UUTFJdDVwdHVwNGd4dHFBcEI1eEE3T3lDa2YxSGdkVlRTZnVwc2c4WnVQeERIN195SzFHRm1UMWFsTm9BQktPUnh3b3VzNDJnUFdmVWVfUUpJU0VWV3NUWjE",
+      "source": "Google News / The Information",
+      "time": "06/11 13:23 UTC · 情緒：😤",
+      "sentiment": "",
+      "body": "The Information 報導指 Anthropic 在產品與合作安排上的快速調整令部分商業合作夥伴措手不及，折射出快速迭代與合作穩定性之間的張力。",
+      "focusTags": []
+    }
+  ],
+  "billing": [
+    {
+      "title": "Claude Code agentic API rate limits in June 2026：新信用額度分離機制",
+      "url": "https://dev.to/jovan_chan_9500711396d4e6/claude-code-agentic-api-rate-limits-in-june-2026-what-the-new-credit-separation-means-for-solo-1kal",
+      "source": "dev.to / #claudecode",
+      "time": "06/11 23:01",
+      "sentiment": "",
+      "body": "深入分析 2026 年 6 月 Claude Code 的 agentic API 速率限制更新：新的信用額度分離設計對個人開發者和團隊的影響，以及如何最佳化使用上限。對有頻繁 agentic 使用需求的訂閱用戶具參考價值。",
+      "focusTags": []
+    },
+    {
+      "title": "OpenAI Wants a Price War With Anthropic",
+      "url": "https://www.wsj.com/tech/ai/openai-considers-drastic-price-cuts-anticipating-war-for-users-with-anthropic-9b8c178e",
+      "source": "HN / WSJ",
+      "time": "06/12 04:56",
+      "sentiment": "",
+      "body": "WSJ 獨家：OpenAI 正積極評估大規模降價策略以先發制人，將競爭重心從技術轉移至成本。若成真，可能倒逼 Anthropic 跟進調整定價，對訂閱與 API 用戶都有潛在影響。",
+      "focusTags": [
+        "[社群趨勢]"
+      ]
+    }
+  ],
+  "focus": [
+    {
+      "tag": "[重大事件]",
+      "text": "Anthropic 宣布與 DXC Technology 展開多年全球聯盟，DXC 將訓練數萬名 Claude 認證工程師，把 Claude 導入全球最大銀行、航空公司、政府機構等受嚴格合規監管的系統。",
+      "ref_urls": [
+        "https://www.anthropic.com/news/dxc-anthropic-alliance"
+      ]
+    },
+    {
+      "tag": "[重大事件]",
+      "text": "Anthropic 宣布 $1.5 億「Claude Corps」非營利獎學金計畫，將 1,000 名早期職涯 AI 專才派駐美國非營利組織，將 AI 能力帶入公益部門。",
+      "ref_urls": [
+        "https://qz.com/anthropic-claude-corps-fellowship-nonprofits-150-million-061126",
+        "https://dev.to/mdpulok443/anthropic-launches-150-million-claude-corps-to-place-1000-ai-fellows-in-us-nonprofits-3j1g"
+      ]
+    },
+    {
+      "tag": "[技術更新]",
+      "text": "Claude Code v2.1.175 新增 `enforceAvailableModels` 管理設定，允許企業管理員鎖定可用模型白名單並同步限制預設模型，強化組織控管能力。",
+      "ref_urls": [
+        "https://github.com/anthropics/claude-code/releases/tag/v2.1.175"
+      ]
+    },
+    {
+      "tag": "[持續追蹤]",
+      "text": "Claude Fable 5 jailbreak 事件持續發酵：有人聲稱破解成功，Anthropic 官方出面駁斥，同時社群測試顯示其「honest」字眼使用率為各代最高，引發討論。",
+      "ref_urls": [
+        "https://twitter.com/elder_plinius/status/2064776322979676227",
+        "https://news.google.com/rss/articles/CBMieEFVX3lxTE51d0YxWGdWWXdvSHFjUmVJaV9uaGZYUnhoVHV5QkswNkc5cl9OMTZpVFJXTlJ0ZzNCeTFrYTBQeFlWeEpic3N2UHVmWmRsYV9HQ3VmQmZabTZFRFhoS1YyZGg0S0Y0Si11blhmZWxRaGdwb19HcmlFadIBfkFVX3lxTE1sVWl3bDdjeVJqaElzM2oyMW1pMWNQODgtWU1wQ1ZHTnU2aGVBei0xeldzem5YUlNBZFF4U29CN3RfRGNZTFNDTl9FT3Q0T04wWUpYMC1Ob3luWHE5V3k0anMyS1VTc1paQjNrLVBNNEpsLVotWHZ0RXdlS3o3QQ"
+      ]
+    },
+    {
+      "tag": "[社群趨勢]",
+      "text": "AI 定價戰升溫：OpenAI 據報正研議大幅降價以應對 Anthropic 競爭，分析師認為 Google、Amazon 反而受益；AI 基礎設施競爭白熱化。",
+      "ref_urls": [
+        "https://www.wsj.com/tech/ai/openai-considers-drastic-price-cuts-anticipating-war-for-users-with-anthropic-9b8c178e",
+        "https://www.wsj.com/tech/ai/the-ai-price-war-is-here-piling-pressure-on-openai-and-anthropic-86e1d21b"
+      ]
+    }
+  ],
+  "sourceStatus": [],
+  "preview": "Anthropic 與 DXC Technology 全球聯盟"
+}
