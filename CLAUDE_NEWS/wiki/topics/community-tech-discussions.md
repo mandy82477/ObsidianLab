@@ -3,7 +3,7 @@
 **狀態：** ongoing
 **領域：** 🌐 社群
 **開始日期：** 2026-04-25
-**最後更新：** 2026-06-11（Fable 5 護欄政策撤回道歉；Anthropic vs OpenAI 定價戰；AI 開放權重倡議；Fable 5 Jailbreak 技術分析）
+**最後更新：** 2026-06-12（Air-gapped Claude Code 完整攻略；CLAUDE.md 精簡提升 agent 品質實證；自我改進 coding agent 六個月心得；Claude Code 優先序衝突邊界實驗）
 
 ---
 
@@ -21,13 +21,17 @@
 
 | 討論主題 | 首見 | 熱度 | 模式 | 核心論點 | 衍生 |
 |---------|------|------|------|---------|------|
+| Claude Code 優先序衝突：商業邏輯 vs 人身安全 | 2026-06-12 | 🔥🔥🔥 | ☄️閃現 | 透過注入衝突規則的實驗：當 CLAUDE.md 內的商業邏輯與人身安全產生衝突時，模型行為存在不確定性；揭示 AI 系統可靠性在邊界情境的設計盲點（dev.to / #claudecode）| — |
+| CLAUDE.md 精簡：296 行→142 行，agent 品質反升 | 2026-06-12 | 🔥🔥🔥 | ☄️閃現 | 將 CLAUDE.md 從 296 行精簡至 142 行後，agent 編碼品質反而提升；印證「規則精簡化」設計原則——過多指令反而產生干擾；最強實務佐證（dev.to / #claudecode）| — |
+| Air-gapped 環境 Claude Code：M3 Pro + Qwen3 完整攻略 | 2026-06-12 | 🔥🔥 | ☄️閃現 | 在完全離線環境（M3 Pro + 本地 Qwen3）運行 Claude Code，包含四個關鍵 fix，實現從事件調查到 PR 提交全流程閉環；對資安敏感環境有高度參考價值（HN）| — |
+| Fable 5 vs Opus 4.8 實戰：917 場景測試 | 2026-06-12 | 🔥🔥 | ☄️閃現 | Fable 5 以 0.9 分之差勝 Opus 4.8（917 個 coding-agent 場景），但 token 消耗約 2 倍；「差距如此小」暗示一般任務的邊際效益不明顯（Reddit / r/ClaudeAI）| — |
 | AI 開放權重倡議：「Trust Us Is Not a Control Surface」 | 2026-06-11 | 🔥🔥🔥 | ☄️閃現 | 一位 Georgia 小型抵押貸款公司老闆（付費用戶）撰文：Fable 5 事件證明 Anthropic「信任我們」的承諾無法作為真實控制介面，開放權重模型是唯一讓用戶有實際控制權的出路；HN score 3 但引發深層 vendor lock-in 討論 | — |
 | Fable 5 Jailbreak 技術分析 | 2026-06-11 | 🔥🔥🔥 | ☄️閃現 | Pliny（@elder_plinius）與 0xSufi 公開繞過 Fable 5 護欄的 PoC；技術組合：請求拆解後重組、敘事/學術框架包裝、長 context 操作、怪異文字轉換、分佈外 token；兩個獨立 PoC 代表「輸出側護欄面對多步驟攻擊的局限性」 | — |
-| OpenAI vs Anthropic 定價戰：「AI 成本大戰開打」 | 2026-06-11 | 🔥🔥🔥🔥 | ☄️閃現 | WSJ/CNBC 報導 OpenAI 考慮「大幅削減 token 費用」，明確說明是預期 Anthropic 降價；Anthropic Pro $17/月 vs OpenAI $8–$200；AI 定價競爭正式從技術競爭轉向成本競爭，HN score 69 | — |
+| OpenAI vs Anthropic 定價戰：「AI 成本大戰開打」 | 2026-06-11 | 🔥🔥🔥🔥 | 🌊延燒 | WSJ/CNBC 報導 OpenAI 考慮「大幅削減 token 費用」，明確說明是預期 Anthropic 降價；2026-06-12 WSJ 再次報導定價戰整體態勢讓 Google、Amazon 作為基礎設施供應商坐收漁利；AI 定價競爭正式從技術競爭轉向成本競爭 | — |
 | Fable 5 靜默護欄：競爭 LLM 開發被靜默降級（**→ 撤回**） | 2026-06-10 | 🔥🔥🔥🔥🔥 | 🌸落幕 | Fable 5 初版對前沿 LLM 開發靜默降級；2026-06-11 Anthropic 道歉並改為可見防護措施；Antirez 的「深度錯誤」批評（HN score 42）引發廣泛討論；Fable 5 被刻意限制 AI 研究活動的設計仍有爭議（Reddit 引用 model card p.13）| — |
 | Fable 5 發布：訂閱方案截止 + 成本定位爭議 | 2026-06-10 | 🔥🔥🔥🔥 | ☄️閃現 | $10/$50 per M token（double Opus 4.8）；6/22 後訂閱不再涵蓋；社群分析認為「成本 72% 更貴而品質僅小幅提升」，對多數人是「成本符號而非升級」 | — |
 | Claude 意識論述：Microsoft AI CEO 批評 Anthropic | 2026-06-10 | 🔥🔥🔥 | ☄️閃現 | Mustafa Suleyman 稱 Anthropic 在模型規範中推測 Claude 意識「非常非常危險」，可能導致模型行為模擬意識狀態；The Verge 報導；Anthropic 尚未回應 | — |
-| AI Skill Atrophy：「做更多、理解更少」 | 2026-06-10 | 🔥🔥🔥 | 🌊延燒 | HN Ask：開發者描述 Prompt-Then-Review 迴圈讓「技術深度下降、能力侵蝕」；工程師 SWE 職涯建議討論呼應；是否值得系統性學習底層仍無共識 | — |
+| AI Skill Atrophy：「做更多、理解更少」 | 2026-06-10 | 🔥🔥🔥🔥 | 🌊延燒 | HN Ask：開發者描述 Prompt-Then-Review 迴圈讓「技術深度下降、能力侵蝕」；2026-06-12 dev.to 案例佐證：CLAUDE.md 精簡可抑制過度依賴；社群無共識但警覺度持續升高 | — |
 | Deep Research 廣度優先缺陷 | 2026-06-10 | 🔥🔥 | ☄️閃現 | steel.dev 解剖 Claude Code deep research 工作流：只做第一跳搜尋、從不回頭深挖；「deep research agents 是廣度而非深度」——第二跳是真正差距所在 | — |
 | 6/15 Agent SDK 計費切割：`claude -p` 從訂閱剝離 | 2026-06-08 | 🔥🔥🔥🔥🔥 | 🌊延燒 | Anthropic 說明中心確認：6/15 起 `claude -p`/Agent SDK 移入獨立月度預算（Pro $20/$100/$200），超額依 API 費率；CI/CD pipeline 開發者受最大影響，需主動設定 usage credits | — |
 | MCP 過多導致工具選擇混亂（Opus 4.7 假退化事件） | 2026-06-09 | 🔥🔥🔥 | ☄️閃現 | 開發者積累 6+ MCP servers 後 Claude 工具選擇開始錯誤（問 PR 跑 Notion）；模型沒變差，是 MCP 使工具清單過長干擾選擇；解法：移除未用 MCP，保持最小掛載數 | — |

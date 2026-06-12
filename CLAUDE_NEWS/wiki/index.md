@@ -2,7 +2,7 @@
 
 LLM 查詢此 wiki 時，**先讀這個檔案**找相關頁面，再讀具體頁面取得詳細資訊。
 
-**最後更新：** 2026-06-11（更新 fable-5、claude-code、community-tech-tools、community-tech-discussions、anthropic-business、anthropic-government-policy、enterprise-tool-tracker、feature-radar） | **頁面數：** 37
+**最後更新：** 2026-06-12（更新 fable-5、claude-code、community-tech-tools、community-tech-discussions、anthropic-business、enterprise-tool-tracker、feature-radar；DXC Technology 新增至 enterprise-tool-tracker） | **頁面數：** 37
 
 ---
 
@@ -35,7 +35,7 @@ LLM 查詢此 wiki 時，**先讀這個檔案**找相關頁面，再讀具體頁
 | [[entities/andrej-karpathy]] | person | 👤 人物 | active（待核實）| 近期加入 Anthropic，CLAUDE.md 四條規則、「最小必要 context」費用控管原則 |
 | [[entities/chris-olah]] | person | 👤 人物 | active | Anthropic 共同創辦人、AI 可解釋性研究先驅；2026-05-26 梵蒂岡封論揭幕演講 |
 | [[entities/opencode]] | product | 🛠️ 工具/功能 | active（快速成長）| Claude Code 主要開源替代品，157K 開發者分流，OpenCode-power-pack 移植官方 11 個 skills |
-| [[entities/fable-5]] | model | 🤖 模型 | active（正式發布）| Claude Fable 5：首款 Mythos 級公開模型，$10/$50 per M token，6/22 前含括訂閱；護欄政策 6/11 部分修改（LLM 研究限制改為可見）|
+| [[entities/fable-5]] | model | 🤖 模型 | active（正式發布）| Claude Fable 5：首款 Mythos 級公開模型，$10/$50 per M token，6/22 前含括訂閱；護欄政策 6/11 部分修改；6/12 Jailbreak 爭議持續、Anthropic 駁斥；917 場景測試 Fable 5 以 0.9 分小勝 Opus 4.8 |
 
 ---
 

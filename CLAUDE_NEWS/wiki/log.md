@@ -3,6 +3,36 @@
 Append-only 紀錄。每次 ingest、query 或 lint 都在此追加一條。
 格式：`## [YYYY-MM-DD] 類型 | 說明`
 
+## 2026-06-12 Ingest | news/2026-06-12.md（74 則）
+
+- 來源日報：`news/2026-06-12.md`（74 則，6 來源；DXC Technology 全球聯盟 + Claude Corps $1.5 億確認 + Fable 5 Jailbreak 爭議 + v2.1.175 enforceAvailableModels + AI 定價戰升溫 + Anthropic 盲目打擊合作夥伴報導）
+- 更新頁面：
+  - `entities/fable-5.md`：新增 2026-06-12 時序（Jailbreak 持續爭議、Anthropic 駁斥、「honest」字眼分析、917 場景測試）；參考來源新增 news/2026-06-12；最後更新 2026-06-12
+  - `entities/claude-code.md`：新增 v2.1.175 版本記錄（`enforceAvailableModels` 管理設定）；最後更新 2026-06-12
+  - `topics/anthropic-business.md`：新增 2026-06-12 時序（DXC 全球聯盟、Claude Corps $1.5 億確認、AI 定價戰升溫、Anthropic 盲目打擊合作夥伴）；戰略合作表格新增 DXC Technology；最後更新 2026-06-12
+  - `topics/enterprise-tool-tracker.md`：新增 DXC Technology 企業列；Claude API 採用數 12→13；新增 2026-06-12 時序；最後更新 2026-06-12
+  - `topics/community-tech-tools.md`：新增 3 個工具（AVP、Claustrophobic、Workplane 更新）；Token 成本不透明痛點新增 Claustrophobic；最後更新 2026-06-12
+  - `topics/community-tech-discussions.md`：熱門討論 prepend 4 條（優先序衝突邊界實驗、CLAUDE.md 精簡實證、Air-gapped 攻略、917 場景測試）；AI Skill Atrophy 升格至 🔥🔥🔥🔥；OpenAI vs Anthropic 定價戰模式改為 🌊延燒（第 2 天）；最後更新 2026-06-12
+  - `wiki/feature-radar.md`：全覽表新增 v2.1.175（🔥🔥，✅）；新增 v2.1.175 完整條目；最後更新 2026-06-12
+- 新增頁面：無
+- 升格檢查（discussions → patterns）：
+  - AI Skill Atrophy（首見 2026-06-10，第 3 天，🌊延燒）— 判斷：社群警覺度升高但仍無可複用的「做法 A 比 B 好」建議，**不升格**
+  - OpenAI vs Anthropic 定價戰（首見 2026-06-11，第 2 天）— 未達 3 天門檻，**不升格**
+  - **無升格**
+- 本日新增工具：AVP（agent-vault-proxy）/ Claustrophobic（共 2 個，累積 206 個）
+- 呈現品質審查：
+  | 頁面 | 結果 |
+  |------|------|
+  | entities/fable-5.md | ✅ 通過（摘要可獨立閱讀；Jailbreak 持續爭議更新至歷史記錄；917 場景測試資訊新增）|
+  | entities/claude-code.md | ✅ 通過（v2.1.175 版本表頂端新增，含明確功能說明）|
+  | topics/anthropic-business.md | ✅ 通過（DXC 時序 prepend；戰略合作表格更新）|
+  | topics/enterprise-tool-tracker.md | ✅ 通過（DXC 新增；採用數更新）|
+  | topics/community-tech-tools.md | ✅ 通過（3 個工具頂端新增；痛點洞察更新）|
+  | topics/community-tech-discussions.md | ✅ 通過（4 條新討論 prepend；模式更新正確）|
+  | wiki/feature-radar.md | ✅ 通過（v2.1.175 條目新增含快速上手；全覽表更新）|
+
+---
+
 ## 2026-06-11 Maintenance（分類強化）
 
 - 狀態詞彙標準化：6 頁（project-deal, bugcrawl, mythos, openclaw, claude-security, stainless）

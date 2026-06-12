@@ -3,7 +3,7 @@
 **狀態：** ongoing
 **領域：** 🌐 社群
 **開始日期：** 2026-04-25
-**最後更新：** 2026-06-11
+**最後更新：** 2026-06-12
 
 ---
 
@@ -23,7 +23,7 @@
 
 | 痛點主題 | 代表工具 | 本質問題 | 狀態 | 近期工具 |
 |---------|---------|---------|------|---------|
-| Token 成本不透明 | Tokenyst、CostHawk、TokenShield、PrismoDev、engramx、agent-estimate、AI Agent Token Cost Calculator、Claude Usage Tray、token-xray、agentgraphed、context-analyzer、permafrost、Claumon | 自主 agent 讓帳單不可預測；Fable 5 $10/$50 定價與 6/22 訂閱截止加劇費用焦慮；工具爆發 | 🔥 持續升溫 | 2026-06-11 |
+| Token 成本不透明 | Tokenyst、CostHawk、TokenShield、PrismoDev、engramx、agent-estimate、AI Agent Token Cost Calculator、Claude Usage Tray、token-xray、agentgraphed、context-analyzer、permafrost、Claumon、Claustrophobic | 自主 agent 讓帳單不可預測；多帳號切換工具 Claustrophobic 新增；Fable 5 $10/$50 定價與 6/22 訂閱截止加劇費用焦慮；工具爆發 | 🔥 持續升溫 | 2026-06-12 |
 | 跨 session 記憶歸零 | ltm、Memex、draft CLI、LockedIn、VIR、CoreMem、claude-handoff-revive、timeglass.ai | 無官方標準，每個新 session 從零開始 | 🔥 持續升溫 | 2026-05-27 |
 | 多 agent 協調混亂 | agent-baton、cdesktop、AnyFrame、agent-teamflow、Runner、Runtime、Fleet、AWO、claude-workflow-composer | 官方 Managed Agents 已部分解決，但社群仍補缺口；AWO 提供 git worktree 隔離方案 | 🔥 持續升溫 | 2026-05-27 |
 | CLAUDE.md 規則失效 | Writ、Caliber、Patina | 規則被忽略、過多規則耗 token、跨工具無標準 | 🌙 冷卻觀望 | 2026-05-12 |
@@ -64,6 +64,9 @@
 
 | 工具 | 類型 | 採用 | 首次出現 | 簡介 |
 | --- | --- | --- | --- | --- |
+| [**AVP（Agent Vault Proxy）**](https://github.com/inflightsec/agent-vault-proxy) | 安全工具 | ⚡ | 2026-06-12 | 解決 coding agent 持有 API key 的安全風險；placeholder + 最後一刻注入方案，agent 環境中只保存 placeholder，真實金鑰由代理在 wire 層面即時替換；從根本上消除洩露風險；HN Show HN |
+| [**Claustrophobic**](https://claustrophobic.xyz) | 費用監測 | ⏳ | 2026-06-12 | 解決 Claude Code 單一訂閱用量上限問題，將多個 Claude 訂閱視為「房間」，自動切換至剩餘額度最多的帳號繼續同一 session；Show HN score（觀望中）|
+| [**Workplane**](https://workplane.co) | 整合工具 | ⚡ | 2026-06-12 | 解決 Claude/Codex 輸出的 .md/.html 檔案難以分享問題；可讓 agent 和人類共同協作，支援版本回滾與 MCP 整合；HN Show HN score；更新為「確認有 Show HN 熱度」|
 | [**Claumon**](https://github.com/fabioconcina/claumon) | 費用監測 | ⏳ | 2026-06-11 | Gamma process 統計模型預測 Claude Code 用量上限，提供精確可信區間；Go 語言單一二進位，無依賴；HN score 4 |
 | [**Foyer**](https://github.com/get-foyer/foyer) | 學習工具 | ⏳ | 2026-06-11 | Claude Code 執行等待期間顯示 agents 正在處理的相關學習內容；早期 MVP；Show HN score 6 |
 | [**ShellShot**](https://github.com/APIANT/shellshot) | IDE/終端 | ⏳ | 2026-06-11 | 熱鍵截圖並加注送入 Claude Code CLI；支援 iPad-to-Mac 無線傳輸；圖片針對 token 效率最佳化；Show HN score 2 |

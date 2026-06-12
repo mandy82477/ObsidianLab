@@ -4,7 +4,7 @@
 **狀態：** active（正式發布，6/22 前含括於訂閱方案）
 **領域：** 🤖 模型
 **首次出現：** 2026-06-09
-**最後更新：** 2026-06-11
+**最後更新：** 2026-06-12
 
 ---
 
@@ -74,6 +74,7 @@ claude --model claude-fable-5-20260609
 - [[news/2026-06-09]]
 - [[news/2026-06-10]]
 - [[news/2026-06-11]]
+- [[news/2026-06-12]]
 - [Anthropic 官方公告](https://www.anthropic.com/news/claude-fable-5-mythos-5)
 - [System Card PDF](https://www-cdn.anthropic.com/d00db56fa754a1b115b6dd7cb2e3c342ee809620.pdf)
 - [資料保留政策](https://support.claude.com/en/articles/15425996-data-retention-practices-for-mythos-class-models)
@@ -82,6 +83,9 @@ claude --model claude-fable-5-20260609
 
 ### 2026-06-09
 正式發布。HN score 2,448，近 2,000 評論。6/22 前含括於訂閱方案。
+
+### 2026-06-12
+Jailbreak 持續爭議：有人再次聲稱破解成功，Anthropic 官方出面駁斥該說法。社群測試數據顯示 Fable 5 在對話中使用「honest」一詞比率（1.79%）為各代模型最高，引發對模型行為與誠實性設計的討論。Anthropic 在上市 48 小時內撤回了 Fable 5 的研究存取限制（前一日政策）。917 個 coding-agent 場景測試：Fable 5 以 0.9 分之差略勝 Opus 4.8，但 token 消耗約 2 倍（Reddit r/ClaudeAI）。
 
 ### 2026-06-11
 政策撤回事件：Anthropic 就隱性 LLM 研究限制政策道歉，承認「做了錯誤的取捨」，改為可見防護措施（Wired 報導）。多個 Jailbreak PoC 公開流傳（Pliny、0xSufi）。資安研究者護欄過激爭議持續延燒（HN 512 分）。Microsoft 內部律師建議禁用（Times of India、PYMNTS）。OpenAI 考慮降價應對 Anthropic 競爭（WSJ/CNBC）。TCS 宣布與 Anthropic 建立 Global Premier Partnership，5 萬員工使用 Claude。Claude Corps 公益計畫發布。

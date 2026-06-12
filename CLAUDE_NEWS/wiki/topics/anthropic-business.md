@@ -3,7 +3,7 @@
 **狀態：** ongoing
 **領域：** 💼 商業
 **開始日期：** 2026-05-28
-**最後更新：** 2026-06-11（TCS Global Premier Partnership 5 萬員工 + OpenAI 預期 Anthropic 降價擬先發制人降價 + Claude Corps 公益計畫 + Anthropic CEO 主張政府應可阻止危險模型）
+**最後更新：** 2026-06-12（DXC Technology 全球聯盟 + Claude Corps 官方博客確認 $1.5 億 + AI 定價戰升溫 + Anthropic 被指快速調整致合作夥伴措手不及）
 
 ---
 
@@ -81,6 +81,7 @@ Simon Willison（知名開發者博主）發表文章，認為 Anthropic 與 Ope
 
 | 合作方 | 類型 | 日期 | 意義 |
 |--------|------|------|------|
+| DXC Technology | 多年全球聯盟 | 2026-06-12 | 訓練數萬名 Claude 認證工程師；覆蓋銀行、航空、政府等受嚴格監管行業 |
 | Samsung + SK Hynix | 戰略投資 | 2026-05-28 | Series H 同步入股，韓國半導體廠加碼 AI 生態 |
 | Apollo + Blackstone | 晶片債務融資 | 2026-05-29 | 安排 $36B 債務融資用於 AI 晶片採購 |
 | 富士通 | 全球戰略合作 | 2026-05-26 | 日本市場企業部署 |
@@ -108,6 +109,12 @@ Simon Willison（知名開發者博主）發表文章，認為 Anthropic 與 Ope
 - [[news/2026-05-13]]（The Information：定價強勢期）
 
 ## 時序
+
+### 2026-06-12
+- **[DXC Technology 全球聯盟]** Anthropic 宣布與 DXC Technology 建立多年全球合作關係，DXC 計劃訓練「數萬名」Claude 認證前線工程師；合作目標為銀行、航空公司、保險公司、製造業和政府機構等受嚴格合規監管的企業；是 Anthropic 迄今最大規模的企業系統整合合作之一（Anthropic Blog）
+- **[Claude Corps 官方確認 $1.5 億]** Anthropic 官方博客確認 Claude Corps 計畫金額為 $1.5 億，1,000 名早期職涯 AI 專才嵌入美國非營利組織，計畫範圍延伸至 15 個以上國家約 150 個組織（Anthropic Blog、QZ）
+- **[AI 定價戰升溫]** WSJ 分析：OpenAI 正研議大幅降價以應對 Anthropic 競爭；分析師認為 Google、Amazon 作為基礎設施供應商反而受益（WSJ x2）
+- **[Anthropic 盲目打擊合作夥伴]** The Information 報導：Anthropic 在產品與合作安排上的快速調整令部分商業合作夥伴措手不及，顯示快速迭代與合作穩定性之間的結構性張力（The Information）
 
 ### 2026-06-11
 - **[TCS Global Premier Partnership]** TCS（Tata Consultancy Services）宣布與 Anthropic 建立 Global Premier Partnership，向 5 萬名員工推廣 Claude；同時取得 Mythos Preview（Project Glasswing）存取資格，是目前已知最大單一企業員工 Claude 部署案例（MoneyControl、TechCrunch、Reuters）

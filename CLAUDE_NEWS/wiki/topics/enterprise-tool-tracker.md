@@ -3,7 +3,7 @@
 **狀態：** ongoing
 **領域：** 💼 商業
 **開始日期：** 2026-05-26
-**最後更新：** 2026-06-11
+**最後更新：** 2026-06-12
 
 ## 摘要
 
@@ -19,6 +19,7 @@
 
 | 企業 | 規模 | AI 編碼工具 | 狀態 | 事件日期 | 備註 | 確認日期 |
 |------|------|-----------|------|---------|------|---------|
+| DXC Technology | 頂尖 | Claude API | ✅ | 2026-06-12 | 多年全球聯盟；訓練數萬名 Claude 認證工程師；覆蓋銀行、航空、保險、政府等受嚴格合規監管行業 | 2026-06-12 |
 | TCS（Tata Consultancy Services） | 頂尖 | Claude API | ✅ | 2026-06-11 | Global Premier Partnership；5 萬員工部署 Claude；同取得 Mythos Preview（Project Glasswing）存取 | 2026-06-11 |
 | LG Group | 頂尖 | Claude API | ✅ | 2026-06-09 | LG 集團旗下全體關聯企業宣布採用 Anthropic Claude，韓國大型財閥全面入局企業 AI | 2026-06-09 |
 | Rubrik | 大型 | Claude Code | ✅ | 2026-06-09 | 推出 Agent Cloud for Claude Code，將數據保護平台轉型為 AI agent；全球 GSI 同步入夥 | 2026-06-09 |
@@ -49,7 +50,7 @@
 | 工具 | 企業採用數 | 趨勢 | 主要阻力 |
 |------|----------|------|---------|
 | Claude Code | 4 使用中（Amazon、Uber、UiPath、Rubrik）+ 1 退出（Microsoft） | ⚠️ 成本壓力浮現 | 缺乏企業層級預算管控 |
-| Claude API | 12（Apple、KPMG、iCapital、哈佛、Fujitsu、Travelport、Nimble Gravity、ZoomInfo、LG Group、AppFolio、Salesforce Claude API、TCS） | 🟢 快速擴張 | — |
+| Claude API | 13（Apple、KPMG、iCapital、哈佛、Fujitsu、Travelport、Nimble Gravity、ZoomInfo、LG Group、AppFolio、Salesforce Claude API、TCS、DXC Technology） | 🟢 快速擴張 | — |
 | GitHub Copilot | 1（Microsoft） | 🟢 Microsoft 背書 | 生態鎖定 |
 | OpenAI Codex | 2（Amazon、UiPath） | 🟢 快速成長 | — |
 
@@ -66,6 +67,9 @@
 ---
 
 ## 時序
+
+### 2026-06-12
+- **DXC Technology 全球聯盟**：Anthropic 宣布與 DXC Technology 建立多年全球合作關係，DXC 將訓練「數萬名」Claude 認證前線工程師，把 Claude 導入其服務的銀行、航空公司、保險公司、製造業和政府機構；是 Anthropic 迄今最大規模的企業系統整合合作（Anthropic Blog）
 
 ### 2026-06-11
 - **TCS Global Premier Partnership**：TCS（Tata Consultancy Services）與 Anthropic 宣布 Global Premier Partnership，向 5 萬名員工推廣 Claude；TCS 同時取得 Project Glasswing Mythos Preview 存取資格；是已知最大單一企業員工 Claude 部署案例（MoneyControl、TechCrunch、Reuters）
