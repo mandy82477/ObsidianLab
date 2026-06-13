@@ -4,18 +4,19 @@
 **狀態：** active
 **領域：** 🛠️ 工具/功能
 **首次出現：** 2025（正式推出）
-**最後更新：** 2026-06-12
+**最後更新：** 2026-06-13
 
 ---
 
 ## 現況
 
-Claude Code 是 Anthropic 的 AI 編碼 CLI 工具，支援 agentic 工作流程、MCP Server 整合、Hooks 機制與多代理協作框架（Managed Agents）。截至 2026-06-08，GitHub Stars 達 **131,000+**，持續增長且成為 SaaS 創辦人與非技術開發者廣泛採用的平台。最新版本為 **v2.1.173**（Fable 5 模型名稱正規化修復），核心能力已從純程式碼助理擴展為具備全桌面自動化、多代理管理與 AI 安全審查的完整 agent 開發平台。Microsoft 正陸續取消內部授權，轉推 GitHub Copilot CLI（見 [[topics/competitor-landscape]]）；GitHub 已推出新 Copilot 應用明確對標 Claude Code；Ramp AI Index 數據顯示 Anthropic 企業採用率首次超越 OpenAI（34.4% vs 32.3%）。
+Claude Code 是 Anthropic 的 AI 編碼 CLI 工具，支援 agentic 工作流程、MCP Server 整合、Hooks 機制與多代理協作框架（Managed Agents）。截至 2026-06-08，GitHub Stars 達 **131,000+**，持續增長且成為 SaaS 創辦人與非技術開發者廣泛採用的平台。最新版本為 **v2.1.177**，核心能力已從純程式碼助理擴展為具備全桌面自動化、多代理管理與 AI 安全審查的完整 agent 開發平台。Microsoft 正陸續取消內部授權，轉推 GitHub Copilot CLI（見 [[topics/competitor-landscape]]）；GitHub 已推出新 Copilot 應用明確對標 Claude Code；Ramp AI Index 數據顯示 Anthropic 企業採用率首次超越 OpenAI（34.4% vs 32.3%）。
 
 ### 最新版本
 
 | 版本 | 日期 | 重點 |
 |------|------|------|
+| **v2.1.177** | 2026-06-13 | Bug fixes and reliability improvements |
 | **v2.1.175** | 2026-06-12 | 新增 `enforceAvailableModels` 管理設定：啟用後，`availableModels` 白名單同時限制預設模型的解析，避免管理員設定的模型限制被繞過；針對企業管理場景的重要強化 |
 | **v2.1.173** | 2026-06-11 | 修正 Fable 5 模型名稱含 `[1m]` 後綴時無法正規化的問題（Fable 5 預設含 1M context，後綴自動移除）；修正誤報「沙盒限制」錯誤訊息 |
 | **v2.1.170** | 2026-06-09 | 引入 Claude Fable 5 支援，Fable 5 發布當日更新，使用者可在 Claude Code terminal 切換至 Fable 5 |

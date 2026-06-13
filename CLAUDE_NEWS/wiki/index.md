@@ -2,7 +2,7 @@
 
 LLM 查詢此 wiki 時，**先讀這個檔案**找相關頁面，再讀具體頁面取得詳細資訊。
 
-**最後更新：** 2026-06-13（Lint：新增 dario-amodei entity；feature-radar 拆分封存；overview 全面更新） | **頁面數：** 39
+**最後更新：** 2026-06-13（Ingest：Fable 5 / Mythos 5 美國政府出口管制強制下線；anthropic-government-policy 更新；community-tech-discussions 3 條新討論；bulk-delete-claude-chat 工具入選；v2.1.177 版本記錄） | **頁面數：** 39
 
 ---
 
@@ -37,7 +37,7 @@ LLM 查詢此 wiki 時，**先讀這個檔案**找相關頁面，再讀具體頁
 | [[entities/dario-amodei]] | person | 👤 人物 | active | Anthropic CEO：政府監管立場、企業文化論述、Code with Claude 大會現場宣布速率政策 |
 | [[entities/chris-olah]] | person | 👤 人物 | active | Anthropic 共同創辦人、AI 可解釋性研究先驅；2026-05-26 梵蒂岡封論揭幕演講 |
 | [[entities/opencode]] | product | 🛠️ 工具/功能 | active（快速成長）| Claude Code 主要開源替代品，157K 開發者分流，OpenCode-power-pack 移植官方 11 個 skills |
-| [[entities/fable-5]] | model | 🤖 模型 | active（正式發布）| Claude Fable 5：首款 Mythos 級公開模型，$10/$50 per M token，6/22 前含括訂閱；護欄政策 6/11 部分修改；6/12 Jailbreak 爭議持續、Anthropic 駁斥；917 場景測試 Fable 5 以 0.9 分小勝 Opus 4.8 |
+| [[entities/fable-5]] | model | 🤖 模型 | active（6/13 因美國政府出口管制指令暫停全球存取）| Claude Fable 5：首款 Mythos 級公開模型，$10/$50 per M token；6/13 因美國政府出口管制指令對所有外籍人士暫停存取；護欄政策 6/11 部分修改；6/12 Jailbreak 爭議持續、Anthropic 駁斥 |
 
 ---
 

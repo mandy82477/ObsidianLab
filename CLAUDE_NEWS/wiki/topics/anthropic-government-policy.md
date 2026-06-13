@@ -3,7 +3,7 @@
 **狀態：** monitoring
 **領域：** 🏛️ 政策/安全
 **開始日期：** 2026-05-01
-**最後更新：** 2026-06-11
+**最後更新：** 2026-06-13
 
 ---
 
@@ -63,6 +63,11 @@
 - [AP News：Pope calls for robust regulation of AI](https://apnews.com/article/pope-ai-tech-trump-vatican-anthropic-d92d0108730d146baa46da041b8523da)
 
 ## 時序
+
+### 2026-06-13
+- **[重大事件] 美國政府出口管制：Fable 5 / Mythos 5 對所有外籍人士停用** Trump 政府引用「國家安全授權」發布出口管制指令，要求 Anthropic 停用 Fable 5 與 Mythos 5 對所有外籍人士（包含美國境內外籍員工）的存取；Anthropic 當日 5:21pm ET 收到指令，為確保合規對全體用戶停用兩款模型，其他模型不受影響；指令未提供具體國家安全顧慮說明（Anthropic 官方聲明；Axios、Reuters、NYT、BBC、TechCrunch、WIRED、The Guardian 等主流媒體全面報導，HN score 2,662）。
+- **[分析] 安全論述反噬（TechCrunch）**：Anthropic 對 Fable 5「最危險模型」的安全定性論述，反而為政府援引出口管制提供了現成理由；社群熱議「Anthropic 主張只有自己有資格決定誰能用 Mythos 模型，政府隨即接管了這個決定」。
+- **[地緣政治影響]** Zoho 創辦人 Sridhar Vembu 稱此事件為「全球化已死」的象徵；India 用戶（Anthropic 第二大市場，6.6% 流量）因最具技術價值的模型下線而首當其衝；Anthropic 的「安全論述可供政府援引」邏輯，未來可能影響其他前沿模型的存取政策。
 
 ### 2026-06-11
 - **[Dario Amodei 呼籲政府監管模型發布]** Bloomberg 報導 Anthropic CEO Dario Amodei 接受採訪表示政府應有權阻止危險 AI 模型發布；社群注意到此立場明顯針對中國競爭者（百度、阿里、DeepSeek），被批評為「監管套利」；Anthropic 同時呼籲不應妨礙州級 AI 法律（Reuters，r/ClaudeAI）

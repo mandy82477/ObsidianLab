@@ -3,6 +3,35 @@
 Append-only 紀錄。每次 ingest、query 或 lint 都在此追加一條。
 格式：`## [YYYY-MM-DD] 類型 | 說明`
 
+## 2026-06-13 Ingest | news/2026-06-13.md（80 則）
+
+- 來源日報：`news/2026-06-13.md`（80 則，6 來源；Fable 5 / Mythos 5 美國政府出口管制強制下線 + 政府論述弔詭反噬 + v2.1.177 + N-day 漏洞研究 + billing change harness 崩潰）
+- 更新頁面：
+  - `entities/fable-5.md`：狀態更新（暫停全球存取）；現況段落補充 2026-06-13 重大事件；新增 2026-06-13 時序（政府出口管制指令、安全論述反噬、社群弔詭分析、Fable 5 下線前 72 小時成果展示）；參考來源新增 news/2026-06-13；最後更新 2026-06-13
+  - `entities/claude-code.md`：版本表頂端新增 v2.1.177（Bug fixes and reliability improvements）；最新版本更新；最後更新 2026-06-13
+  - `topics/anthropic-government-policy.md`：新增 2026-06-13 時序（出口管制指令、安全論述反噬分析、地緣政治影響）；最後更新 2026-06-13
+  - `topics/community-tech-discussions.md`：熱門討論 prepend 3 條（六個月 harness 崩潰、Fable 5 規劃品質求解、AI 代碼審查三方一致率 22%）；最後更新 2026-06-13
+  - `topics/community-tech-tools.md`：新增 1 個工具（bulk-delete-claude-chat，HN score 56）；最後更新 2026-06-13
+  - `wiki/index.md`：fable-5 摘要更新（反映 6/13 暫停存取）；最後更新欄更新
+- 新增頁面：無（Fable 5 下線事件已整合進 entities/fable-5 和 topics/anthropic-government-policy）
+- 升格檢查（discussions → patterns）：
+  - OpenAI vs Anthropic 定價戰（首見 2026-06-11，第 3 天，🌊延燒）— 今日日報無新的定價戰內容，維持 🌊延燒，**不升格**
+  - AI Skill Atrophy（首見 2026-06-10，第 4 天，🌊延燒）— 今日日報無直接相關，社群仍無可複用共識，**不升格**
+  - 6/15 計費切割（首見 2026-06-08，第 6 天，🌊延燒）— 明日生效，今日 harness 崩潰討論更像結果反應而非工作流模式，**不升格**
+  - **無升格**
+- feature-radar 更新：v2.1.177 為 Bug fixes only，無使用者端功能，**不收錄**（依版本更新收錄判斷規則）；N-day 漏洞研究為安全研究報告非功能發布，**不收錄**
+- 本日新增工具：bulk-delete-claude-chat（1 個，累積 207 個）
+- 呈現品質審查：
+  | 頁面 | 結果 |
+  |------|------|
+  | entities/fable-5.md | ✅ 通過（現況段落前置重大事件說明；狀態反映暫停；時序 prepend）|
+  | entities/claude-code.md | ✅ 通過（v2.1.177 版本表頂端新增，含功能說明）|
+  | topics/anthropic-government-policy.md | ✅ 通過（2026-06-13 時序 prepend；三個面向分析完整）|
+  | topics/community-tech-discussions.md | ✅ 通過（3 條新討論 prepend；最後更新日期正確）|
+  | topics/community-tech-tools.md | ✅ 通過（1 個新工具頂端新增；入選標準符合）|
+
+---
+
 ## 2026-06-13 Lint
 
 - 修正矛盾：無

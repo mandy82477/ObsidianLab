@@ -1,16 +1,18 @@
 # Claude Fable 5
 
 **類型：** model
-**狀態：** active（正式發布，6/22 前含括於訂閱方案）
+**狀態：** active（正式發布；Fable 5 / Mythos 5 因美國政府出口管制指令暫停全球存取）
 **領域：** 🤖 模型
 **首次出現：** 2026-06-09
-**最後更新：** 2026-06-12
+**最後更新：** 2026-06-13
 
 ---
 
 ## 現況
 
 Claude Fable 5 是 Anthropic 於 2026-06-09 發布的旗艦模型，為**史上首款向大眾開放的 Mythos 級模型**。Fable 5 與 Claude Mythos 5 共用相同的模型權重，差異在於 Fable 5 前置安全分類器——觸發時靜默 fallback 至 Claude Opus 4.8（Anthropic 稱不到 5% 的 session 受影響）。
+
+**2026-06-13 重大事件**：美國政府以「國家安全出口管制」為由，下令 Anthropic 對所有外籍人士（含境外及境內外籍員工）停用 Fable 5 與 Mythos 5。Anthropic 於當日 5:21pm ET 收到指令，為確保合規對全體用戶停用兩款模型，其他模型不受影響。路透社、NYT、BBC、TechCrunch、WIRED 等主流媒體全面報導。
 
 **核心定位**：任務越複雜越長期，Fable 5 的優勢越明顯。在軟體工程、知識工作、視覺、科學研究等幾乎所有 benchmark 達到 SOTA。
 
@@ -75,11 +77,15 @@ claude --model claude-fable-5-20260609
 - [[news/2026-06-10]]
 - [[news/2026-06-11]]
 - [[news/2026-06-12]]
+- [[news/2026-06-13]]
 - [Anthropic 官方公告](https://www.anthropic.com/news/claude-fable-5-mythos-5)
 - [System Card PDF](https://www-cdn.anthropic.com/d00db56fa754a1b115b6dd7cb2e3c342ee809620.pdf)
 - [資料保留政策](https://support.claude.com/en/articles/15425996-data-retention-practices-for-mythos-class-models)
 
 ## 歷史記錄
+
+### 2026-06-13
+**美國政府出口管制指令**：Trump 政府以「國家安全授權」發布出口管制指令，要求 Anthropic 停用 Fable 5 與 Mythos 5 對所有外籍人士的存取，包含美國境內外籍員工。Anthropic 於下午 5:21pm ET 收到指令，為確保合規對全體用戶停用兩款模型——即使這代表美國用戶也無法繼續使用。指令未提供具體國家安全顧慮說明。TechCrunch 分析：Anthropic 對 Fable 5「太危險」的安全論述，反而成為政府援引的理由，是「AI 安全敘事的意外後果」。社群熱議 Anthropic 安全立場與政府干預之間的弔詭關係（Reddit 用戶整理時序：Anthropic 主張自己有資格決定誰能用最強模型，政府隨即接管了這個決定）。Fable 5 在下線前的 72 小時窗口期，開發者展示了大量編碼成果：單次對話生成 2,319 行遊戲、10 小時打造多人棋藝平台、Go decimal 函式庫效能超越市場最快工具 35%。
 
 ### 2026-06-09
 正式發布。HN score 2,448，近 2,000 評論。6/22 前含括於訂閱方案。

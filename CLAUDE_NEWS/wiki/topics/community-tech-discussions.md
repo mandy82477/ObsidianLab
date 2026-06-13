@@ -3,7 +3,7 @@
 **狀態：** ongoing
 **領域：** 🌐 社群
 **開始日期：** 2026-04-25
-**最後更新：** 2026-06-12（Air-gapped Claude Code 完整攻略；CLAUDE.md 精簡提升 agent 品質實證；自我改進 coding agent 六個月心得；Claude Code 優先序衝突邊界實驗）
+**最後更新：** 2026-06-13（Fable 5 強制下線後遺症：六個月 harness 崩潰；Fable 5 規劃品質無法在 Opus 4.8 複現；AI 代碼審查工具三方僅 22% 共識）
 
 ---
 
@@ -21,6 +21,9 @@
 
 | 討論主題 | 首見 | 熱度 | 模式 | 核心論點 | 衍生 |
 |---------|------|------|------|---------|------|
+| 六個月 Claude Code Harness，被官方功能取代後 6/15 計費再補刀 | 2026-06-13 | 🔥🔥🔥 | ☄️閃現 | 開發者花六個月建 multi-agent orchestration harness，Claude Code 官方陸續出 Agent View、Teams、Workflows 後幾乎全部取代；再加上 6/15 計費規則改變（互動式 Claude Code 訂閱制，但原商業模式依賴「互動模式不計 token」），整體商業設計崩潰；揭示 Claude Code 生態中「搶先建 plumbing 的風險」（Reddit r/ClaudeAI；dev.to） | — |
+| Fable 5 規劃品質不可在 Opus 4.8 複現（求 prompt 解法） | 2026-06-13 | 🔥🔥 | ☄️閃現 | 用戶分享 Fable 5 在複雜功能規劃上的卓越表現（自動分解任務、捕捉邊界案例、帶 /run /verify 驗證步驟），Fable 5 下線後切 Opus 4.8 但規劃品質明顯落差；社群討論 prompt 技巧、effort level 選擇（xhigh vs max）與 ultracode 效益（Reddit r/ClaudeAI） | — |
+| AI 代碼審查三方（Copilot + CodeRabbit + Claude Sub-agents）同 30 PR，一致率僅 22% | 2026-06-13 | 🔥🔥 | ☄️閃現 | 兩個月對比實驗：三套 AI 代碼審查工具同時跑 30 個相同 PR，相互同意的比例只有 22%，顯示 AI 代碼審查意見分歧極大；進一步質疑 AI 審查是否提供可靠的「第二意見」（dev.to / #claudecode） | — |
 | Claude Code 優先序衝突：商業邏輯 vs 人身安全 | 2026-06-12 | 🔥🔥🔥 | ☄️閃現 | 透過注入衝突規則的實驗：當 CLAUDE.md 內的商業邏輯與人身安全產生衝突時，模型行為存在不確定性；揭示 AI 系統可靠性在邊界情境的設計盲點（dev.to / #claudecode）| — |
 | CLAUDE.md 精簡：296 行→142 行，agent 品質反升 | 2026-06-12 | 🔥🔥🔥 | ☄️閃現 | 將 CLAUDE.md 從 296 行精簡至 142 行後，agent 編碼品質反而提升；印證「規則精簡化」設計原則——過多指令反而產生干擾；最強實務佐證（dev.to / #claudecode）| — |
 | Air-gapped 環境 Claude Code：M3 Pro + Qwen3 完整攻略 | 2026-06-12 | 🔥🔥 | ☄️閃現 | 在完全離線環境（M3 Pro + 本地 Qwen3）運行 Claude Code，包含四個關鍵 fix，實現從事件調查到 PR 提交全流程閉環；對資安敏感環境有高度參考價值（HN）| — |
