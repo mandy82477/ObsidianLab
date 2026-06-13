@@ -3,6 +3,29 @@
 Append-only 紀錄。每次 ingest、query 或 lint 都在此追加一條。
 格式：`## [YYYY-MM-DD] 類型 | 說明`
 
+## 2026-06-13 Lint
+
+- 修正矛盾：無
+- 補連結：chris-olah 確認非孤立（anthropic-government-policy.md:27 已有 wikilink 別名格式）
+- 狀態更新：無（enterprise-cost-management 已於 2026-06-12 由 Lint 改為 monitoring）
+- 遷移至 entities：無
+- 新增 entities：`entities/dario-amodei.md`（Anthropic CEO；出現 7 頁 9 次，超過 3 頁門檻）；已在 topics/anthropic-business.md 相關實體補入 wikilink
+- 呈現品質：全部通過（近期 ingest 已覆蓋所有更新頁面）
+- 超長頁面（> 500 行）：
+  - `wiki/feature-radar.md`（565 行）→ ✅ 已拆分：2026-05 功能條目移至 `wiki/feature-radar-archive-2026-05.md`（主檔降至 140 行）
+  - `topics/community-tech-discussions.md`（597 行）→ 📋 待辦：使用者選擇稍後以主題合併方式處理 🌙靜候 條目（非按月封存）
+- 規則檔健檢：
+  - wiki/CLAUDE.md：46 行（閾值 80 行）✅
+  - .claude/rules/wiki-ingest.md：243 行（閾值 250 行）✅
+  - 矛盾：無
+  - 引用驗證：全部通過（7 個錨點：首次出現、痛點洞察、近期工具、技術彙整、熱門討論、衍生、全覽表）
+  - 遵守率：全部通過（近 3 次 ingest 呈現品質審查 3/3、feature-radar 更新 3/3）
+  - 過期規則（> 60 天）：無（最舊 2026-04-25，49 天）
+  - 簡化：跳過（兩檔均在閾值內）
+- overview.md：已更新（Fable 5 發布、6/15 計費明日生效、TCS 5 萬員工、AI 定價戰、IPO 機密申請）
+
+---
+
 ## 2026-06-12 Ingest | news/2026-06-12.md（74 則）
 
 - 來源日報：`news/2026-06-12.md`（74 則，6 來源；DXC Technology 全球聯盟 + Claude Corps $1.5 億確認 + Fable 5 Jailbreak 爭議 + v2.1.175 enforceAvailableModels + AI 定價戰升溫 + Anthropic 盲目打擊合作夥伴報導）

@@ -2,7 +2,7 @@
 
 LLM 查詢此 wiki 時，**先讀這個檔案**找相關頁面，再讀具體頁面取得詳細資訊。
 
-**最後更新：** 2026-06-12（更新 fable-5、claude-code、community-tech-tools、community-tech-discussions、anthropic-business、enterprise-tool-tracker、feature-radar；DXC Technology 新增至 enterprise-tool-tracker） | **頁面數：** 37
+**最後更新：** 2026-06-13（Lint：新增 dario-amodei entity；feature-radar 拆分封存；overview 全面更新） | **頁面數：** 39
 
 ---
 
@@ -10,6 +10,7 @@ LLM 查詢此 wiki 時，**先讀這個檔案**找相關頁面，再讀具體頁
 
 - [[overview]] — 當前 Claude / Anthropic 生態系整體局勢（每週更新）
 - [[feature-radar]] — 新功能熱度追蹤、試用推薦與快速上手（每次 ingest 更新）
+- [[feature-radar-archive-2026-05]] — 2026-05 功能詳細條目封存
 
 ---
 
@@ -33,6 +34,7 @@ LLM 查詢此 wiki 時，**先讀這個檔案**找相關頁面，再讀具體頁
 | [[entities/boris-cherny]] | person | 👤 人物 | active | Claude Code 創始人，「Loops 是未來」設計哲學、「coding is solved」論戰、第三方工具邊界聲明 |
 | [[entities/cat-wu]] | person | 👤 人物 | active | Claude Code 產品負責人，「AI 下一步是主動性（proactivity）」論述 |
 | [[entities/andrej-karpathy]] | person | 👤 人物 | active（待核實）| 近期加入 Anthropic，CLAUDE.md 四條規則、「最小必要 context」費用控管原則 |
+| [[entities/dario-amodei]] | person | 👤 人物 | active | Anthropic CEO：政府監管立場、企業文化論述、Code with Claude 大會現場宣布速率政策 |
 | [[entities/chris-olah]] | person | 👤 人物 | active | Anthropic 共同創辦人、AI 可解釋性研究先驅；2026-05-26 梵蒂岡封論揭幕演講 |
 | [[entities/opencode]] | product | 🛠️ 工具/功能 | active（快速成長）| Claude Code 主要開源替代品，157K 開發者分流，OpenCode-power-pack 移植官方 11 個 skills |
 | [[entities/fable-5]] | model | 🤖 模型 | active（正式發布）| Claude Fable 5：首款 Mythos 級公開模型，$10/$50 per M token，6/22 前含括訂閱；護欄政策 6/11 部分修改；6/12 Jailbreak 爭議持續、Anthropic 駁斥；917 場景測試 Fable 5 以 0.9 分小勝 Opus 4.8 |
@@ -51,7 +53,7 @@ LLM 查詢此 wiki 時，**先讀這個檔案**找相關頁面，再讀具體頁
 | [[topics/ai-agent-safety]] | 🏛️ 政策/安全 | ongoing | AI agent 安全：Claude Code v2.1.150 遠端系統提示注入披露（GrowthBook 60s 更新）+ 假冒安裝包 + 資料庫刪除事件 |
 | [[topics/anthropic-government-policy]] | 🏛️ 政策/安全 | monitoring | Anthropic 政府與軍事政策：五角大廈排除事件、安全護欄堅持、白宮重啟談判 |
 | [[topics/official-community-gap]] | 🛠️ 工具/功能 | monitoring | 官方功能 vs 社群痛點缺口矩陣：哪些痛點官方正在解決、哪些結構性缺席 |
-| [[topics/enterprise-cost-management]] | 💼 商業 | ongoing | 企業規模採用 Claude 的成本結構挑戰：Uber/Microsoft 案例、缺失工具、因應策略 |
+| [[topics/enterprise-cost-management]] | 💼 商業 | monitoring | 企業規模採用 Claude 的成本結構挑戰：Uber/Microsoft 案例、缺失工具、因應策略 |
 | [[topics/enterprise-tool-tracker]] | 💼 商業 | ongoing | 大型企業 AI 編碼工具使用追蹤：Microsoft/Amazon/Uber/Apple 等企業當前工具選擇與變化軌跡 |
 | [[topics/community-tech-timeline]] | 🌐 社群 | monitoring | 社群技術應用趨勢完整時序（2026-04-25 至今），從 community-tech-patterns 拆分 |
 | [[topics/anthropic-business]] | 💼 商業 | ongoing | Anthropic 商業健康度：企業採用率 34.4%、17 倍訂閱補貼、PMF 觀察、Microsoft 退出風險 |

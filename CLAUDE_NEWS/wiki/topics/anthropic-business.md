@@ -93,6 +93,7 @@ Simon Willison（知名開發者博主）發表文章，認為 Anthropic 與 Ope
 
 ## 相關實體
 
+- [[entities/dario-amodei]]（Anthropic CEO，政策立場與公開言論）
 - [[entities/pricing]]（計費架構與費率細節）
 - [[topics/enterprise-cost-management]]（企業成本挑戰）
 - [[topics/enterprise-tool-tracker]]（企業工具選擇追蹤）
