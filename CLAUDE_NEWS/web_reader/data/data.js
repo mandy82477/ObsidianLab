@@ -76,7 +76,7 @@ window.WIKI_DATA = {
       "pill": "active",
       "firstSeen": "2025（正式推出）",
       "startDate": "",
-      "lastUpdated": "2026-06-12",
+      "lastUpdated": "2026-06-13",
       "summary": "Claude Code 是 Anthropic 的 AI 編碼 CLI 工具，支援 agentic 工作流程、MCP Server 整合、Hooks 機制與多代理協作框架（Managed Agents）。截至 2026-06-08，GitHub Stars 達 **131,000+**，持續增長且成為 SaaS 創辦人…"
     },
     {
@@ -123,12 +123,12 @@ window.WIKI_DATA = {
       "pageType": "entity",
       "name": "Claude Fable 5",
       "entityType": "model",
-      "status": "active（正式發布，6/22 前含括於訂閱方案）",
+      "status": "active（正式發布；Fable 5 / Mythos 5 因美國政府出口管制指令暫停全球存取）",
       "domain": "🤖 模型",
       "pill": "active",
       "firstSeen": "2026-06-09",
       "startDate": "",
-      "lastUpdated": "2026-06-12",
+      "lastUpdated": "2026-06-13",
       "summary": "Claude Fable 5 是 Anthropic 於 2026-06-09 發布的旗艦模型，為**史上首款向大眾開放的 Mythos 級模型**。Fable 5 與 Claude Mythos 5 共用相同的模型權重，差異在於 Fable 5 前置安全分類器——觸發時靜默 fallback 至 Claude Opu…"
     },
     {
@@ -299,7 +299,7 @@ window.WIKI_DATA = {
       "pill": "warn",
       "firstSeen": "",
       "startDate": "2026-05-01",
-      "lastUpdated": "2026-06-11",
+      "lastUpdated": "2026-06-13",
       "summary": "2026-05-01，Anthropic 因堅持在軍事用途中納入安全護欄，被排除在美國國防部與 7 家 AI 公司的機密網路部署協議之外。此事件標誌著 Anthropic 的安全優先立場首次與聯邦政府大規模部署需求發生直接衝突，並引發白宮重啟談判。 ---"
     },
     {
@@ -325,7 +325,7 @@ window.WIKI_DATA = {
       "pill": "active",
       "firstSeen": "",
       "startDate": "2026-04-25",
-      "lastUpdated": "2026-06-12（Air-gapped Claude Code 完整攻略；CLAUDE.md 精簡提升 agent 品質實證；自我改進 coding agent 六個月心得；Claude Code 優先序衝突邊界實驗）",
+      "lastUpdated": "2026-06-13（Fable 5 強制下線後遺症：六個月 harness 崩潰；Fable 5 規劃品質無法在 Opus 4.8 複現；AI 代碼審查工具三方僅 22% 共識）",
       "summary": "追蹤 Claude Code 社群中活躍的概念辯論、設計哲學、實證研究與技術反思。與 [[topics/community-tech-patterns]] 追蹤具體工具和工作流不同，本頁聚焦思想碰撞：什麼哲學正在成形、什麼假設受到挑戰、什麼共識正在收斂。每次 ingest 從「💬 技術熱度討論」區塊萃取有討論價值的觀點…"
     },
     {
@@ -364,7 +364,7 @@ window.WIKI_DATA = {
       "pill": "active",
       "firstSeen": "",
       "startDate": "2026-04-25",
-      "lastUpdated": "2026-06-12",
+      "lastUpdated": "2026-06-13",
       "summary": "追蹤 Claude Code 社群發布的工具、插件與 skill 專案。每次 ingest 從日報萃取新工具並更新採用狀態。 工作流模式與技術做法見 [[topics/community-tech-patterns]]。概念辯論見 [[topics/community-tech-discussions]]。官方功能見 …"
     },
     {
@@ -913,6 +913,12 @@ window.WIKI_DATA = {
     }
   ],
   "digestIndex": [
+    {
+      "date": "2026-06-13",
+      "articleCount": 80,
+      "preview": "Statement on US government directive to suspend access to Fable 5 and Mythos 5",
+      "topCount": 6
+    },
     {
       "date": "2026-06-12",
       "articleCount": 74,

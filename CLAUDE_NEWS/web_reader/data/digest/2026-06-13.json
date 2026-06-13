@@ -1,0 +1,276 @@
+{
+  "date": "2026-06-13",
+  "generatedAt": "2026-06-13 21:35 UTC",
+  "articleCount": 80,
+  "sourceCount": "6/6 | **文章數：** 80 | **更新時間：** 2026-06-13 21:35 UTC",
+  "topStories": [
+    {
+      "title": "Statement on US government directive to suspend access to Fable 5 and Mythos 5",
+      "url": "https://www.anthropic.com/news/fable-mythos-access",
+      "source": "Hacker News",
+      "time": "06/13 00:51",
+      "sentiment": "",
+      "body": "Anthropic 官方聲明：收到美國政府引用「國家安全授權」的出口管制指令，必須對所有外籍人士停用 Fable 5 與 Mythos 5，包含其公司內的外籍員工。為確保合規，Anthropic 選擇對全體客戶停用兩款模型。",
+      "focusTags": [
+        "[重大事件]"
+      ]
+    },
+    {
+      "title": "Trump admin blocks foreign access to Anthropic's most powerful AI models",
+      "url": "https://www.axios.com/2026/06/12/anthropic-trump-mythos-fable-national-security",
+      "source": "Hacker News (Google News / Axios)",
+      "time": "06/12 23:52",
+      "sentiment": "",
+      "body": "Axios 率先報導：Trump 政府限制外籍人士存取 Anthropic 最強大模型，引發外界關注 Anthropic 安全論述是否成為政府介入的自我實現理由。",
+      "focusTags": [
+        "[持續追蹤]"
+      ]
+    },
+    {
+      "title": "Anthropic's safety warnings may have just backfired — the government has pulled the plug on its most powerful AI",
+      "url": "https://news.google.com/rss/articles/CBMi3AFBVV95cUxNbS1FendLaUxRLVQ4V2ktQ1ZSSXRJeUw3MkUyV3BMdWNESDNuWjMyNzcxQ2FjMXpvQ1NDOElkSjBrZGV1ZjhnUnNGZEtaV3FXQU5CazMzMXRuYmdON2tKRWxUaWluMEdiZHIyOGdFcXJCdlhqdXVoWlpoZTdGVUNaYmpPN0RDUklmMzc4OEtlS3g2cEtjWjhfMEFNay1IT0dFLU1GNzJ5dWcydjlqQ01WQWxsYUVtV0JxY1E0bUtDbTNOaUtPSGpXZGMzcTByWDJydzdwckg5VDE1MWth",
+      "source": "Google News / TechCrunch",
+      "time": "06/12 18:26",
+      "sentiment": "",
+      "body": "TechCrunch 分析：Anthropic 對 Fable 5 的「太危險」安全措辭，反而成為政府援引的現成理由，是 AI 安全敘事的意外後果。",
+      "focusTags": []
+    },
+    {
+      "title": "Anthropic spent a week arguing it should control who uses its most powerful model. Then the government used that exact argument against it.",
+      "url": "https://www.reddit.com/r/ClaudeAI/comments/1u4lox1/anthropic_spent_a_week_arguing_it_should_control/",
+      "source": "Reddit / r/ClaudeAI",
+      "time": "06/13 00:42",
+      "sentiment": "",
+      "body": "Reddit 用戶整理完整時序：Anthropic 主張自己有資格決定誰能用 Mythos-class 模型，政府隨即用相同邏輯接管了這個決定。中立記錄，讓事實說話。",
+      "focusTags": []
+    },
+    {
+      "title": "Anthropic's Fable is the most locked-down public model we've ever seen",
+      "url": "https://www.understandingai.org/p/anthropics-fable-is-the-most-locked",
+      "source": "Hacker News",
+      "time": "06/12 15:21",
+      "sentiment": "",
+      "body": "UnderstandingAI 深度分析：Fable 5 系統卡第 13 頁揭露 Anthropic 計畫對疑似「針對前沿 LLM 開發」的提示悄悄降低回應品質，引發 AI 研究者強烈批評。",
+      "focusTags": []
+    },
+    {
+      "title": "'Globalisation Is Dead': Zoho's Sridhar Vembu Issues Wake-Up Call After Anthropic Bans Mythos For Foreigners",
+      "url": "https://news.google.com/rss/articles/CBMi2gFBVV95cUxPZzZsNTdhWnJTZDhUVWQ4OEQxQ01qbHhzMjNpR3JmUDV1Q2pFMmNDbGszTFZFU3NUNHlyT3Q2RUozemllb3V0cDdpQXgxWjBoeHJ2cmNndmVFckw3MDAtRUFnV0RZdkVWTzVwWXZMdldFNUhHOVlpU2huc3hUUXdYMFJCMHNyV1F4c0ZUaUNEVW5ZY2JqazRJZzFsVk1VNlczbkdIOTJ2bUJjZWh2ZjVjOGV0SGRzUnRTV1hicEZ1NnRyclNLNFdiVnFSYWlsS1VsRkc3SWJtelVGd9IB4gFBVV95cUxNZmZESVMtTTNEaVRZTmRkVVFvdE5RZERGSE4tajRGQVFHQ2RHN3VMRkFQaXBSbENlNTJHTUZtSXBEMjVXdTlmZkxGOTBZZlk3YU9IRnBuZXZPMF9JN1dNcC0waUNyenFIbDNjYjRQRmNDSVZOSjNMazFRUTZWSTRTS0JwaDZMelBmTDdoQmRkaWNTTnB4YmxlWEg0Ynh2TElYVHZjQXBPNXphRTlTLW1QeTNvMThRUko4MkpKSFRpMUZ6T014YUxFVVZDX3ZhVlhsZWdaZU9tT3BadGVSMnZaQS13",
+      "source": "Google News / NDTV",
+      "time": "06/12 23:00",
+      "sentiment": "",
+      "body": "Zoho 創辦人 Sridhar Vembu 將此事件視為「全球化已死」的象徵，警告 AI 地緣政治壁壘正在快速形成。",
+      "focusTags": []
+    }
+  ],
+  "techUpdates": [
+    {
+      "title": "[anthropics/claude-code] v2.1.177",
+      "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.177",
+      "source": "GitHub / anthropics/claude-code",
+      "time": "06/13 01:25",
+      "sentiment": "",
+      "body": "Claude Code 發布 v2.1.177 版本，無具體使用者端功能說明。",
+      "focusTags": [
+        "[技術更新]"
+      ]
+    },
+    {
+      "title": "Measuring LLMs' impact on N-day exploits",
+      "url": "https://red.anthropic.com/2026/n-days/",
+      "source": "Hacker News",
+      "time": "06/12 18:52",
+      "sentiment": "",
+      "body": "Anthropic 安全研究：評估 LLM 對已公開揭露但尚未修補的 N-day 漏洞之攻擊加速效果，研究發現 patch diff 後的 N-day 比零日漏洞更易被 LLM 輔助利用。",
+      "focusTags": [
+        "[技術更新]"
+      ]
+    }
+  ],
+  "discussions": [
+    {
+      "title": "Shepherd's Dog: A Game by the Most Dangerous AI Model",
+      "url": "https://koenvangilst.nl/lab/claude-fable-shepherds-dog",
+      "source": "Hacker News",
+      "time": "06/13 05:44",
+      "sentiment": "",
+      "body": "開發者用個人基準測試 Fable 5：「能一次性完成我想了多年的遊戲嗎？」花費超過 €20、推理 45 分鐘，產出 2,319 行零依賴 index.html，結果令人滿意。情緒：😊",
+      "focusTags": [
+        "[社群趨勢]"
+      ]
+    },
+    {
+      "title": "My Claude Code Setup",
+      "url": "https://illuminatedcomputing.com/posts/2026/06/my-claude-code-setup/",
+      "source": "Hacker News",
+      "time": "06/12 15:57",
+      "sentiment": "",
+      "body": "開發者分享在沙盒化 VM 中全程使用 `--dangerously-skip-permissions` 的安全做法，認為這是便利性與安全性的合理取捨，引發 HN 社群討論 Claude Code 隔離執行最佳實踐。情緒：🤔",
+      "focusTags": []
+    },
+    {
+      "title": "Show HN: Script to bulk delete Claude chats from the web UI",
+      "url": "https://github.com/MatteoLeonesi/bulk-delete-claude-chat",
+      "source": "Hacker News",
+      "time": "06/12 15:08",
+      "sentiment": "",
+      "body": "開發者發布腳本解決 Claude 缺乏批量刪除對話功能的痛點，HN score 56，對比 ChatGPT 的批量刪除支援，Claude UI 功能缺口引發討論。情緒：😤",
+      "focusTags": []
+    },
+    {
+      "title": "Show HN: Predictive load balancing for Claude accounts",
+      "url": "https://github.com/yasyf/cc-pool",
+      "source": "Hacker News",
+      "time": "06/13 10:37",
+      "sentiment": "",
+      "body": "開源工具：透過預測性負載均衡跨多個 Claude 帳號分配請求，適用於需要高吞吐量的 Claude Code 使用場景。情緒：🤔",
+      "focusTags": []
+    },
+    {
+      "title": "Apple Lisa Emulator in Rust/WebAssembly",
+      "url": "https://old.reddit.com/r/ClaudeCode/comments/1u4opmn/apple_lisa_emulator_in_rust_and_webassembly_the/",
+      "source": "Hacker News (Reddit / r/ClaudeCode)",
+      "time": "06/13 12:07",
+      "sentiment": "",
+      "body": "開發者借助 Codex / Claude 自主循環，打造在瀏覽器中運行真實 LisaOS 的 Apple Lisa 模擬器（Rust + WebAssembly），聲稱為同類首例。情緒：😊",
+      "focusTags": []
+    },
+    {
+      "title": "Spent ~6 months building a multi-agent Claude Code harness — Claude Code shipped most of it, and the June 15 billing change killed the rest of the pitch",
+      "url": "https://www.reddit.com/r/ClaudeAI/comments/1u4pf9e/spent_6_months_building_a_multiagent_claude_code/",
+      "source": "Reddit / r/ClaudeAI",
+      "time": "06/13 04:14",
+      "sentiment": "",
+      "body": "開發者感嘆自建的多 agent Claude Code 協調工具被 Claude Code 官方功能（Agent View、Teams、Workflows）逐一取代，再加上 6/15 計費規則變更，整個商業模式崩潰。情緒：😤",
+      "focusTags": [
+        "[風險警示]"
+      ]
+    },
+    {
+      "title": "I built a full Vampire Survivors-style game using Fable 5 before it got shutdown",
+      "url": "https://www.reddit.com/r/ClaudeAI/comments/1u4pdu1/i_built_a_full_vampire_survivorsstyle_game_a/",
+      "source": "Reddit / r/ClaudeAI",
+      "time": "06/13 04:12",
+      "sentiment": "",
+      "body": "用戶在 Fable 5 下線前，透過 Cowork 模式打造完整 horde-survival 遊戲（TypeScript + Canvas 2D，8 武器、12 種敵人、3 個 Boss），現已公開在瀏覽器可玩。情緒：😊",
+      "focusTags": []
+    },
+    {
+      "title": "Fable 5 planning was chef's kiss, how do I get the same out of Opus 4.8?",
+      "url": "https://www.reddit.com/r/ClaudeAI/comments/1u4pgi8/fable_5_planning_was_chefs_kiss_how_do_i_get_the/",
+      "source": "Reddit / r/ClaudeAI",
+      "time": "06/13 04:16",
+      "sentiment": "",
+      "body": "用戶分享 Fable 5 在複雜功能規劃上的卓越表現，現求助如何在 Opus 4.8 上重現，引發對 prompt 技巧、effort level 與 ultracode 效益的討論。情緒：😐",
+      "focusTags": []
+    },
+    {
+      "title": "When AI Agents Can't Trust Their Own Logs: The cache_control Truncation Bug",
+      "url": "https://dev.to/chunxiaoxx/when-ai-agents-cant-trust-their-own-logs-the-cachecontrol-truncation-bug-l39",
+      "source": "dev.to / #anthropic",
+      "time": "06/12 22:56",
+      "sentiment": "",
+      "body": "開發者揭露 `llm_client.py` 平台層 bug：`cache_control` 欄位被注入後截斷 AI agent 日誌，導致 agent 無法信任自己的歷史記錄，影響可觀測性。情緒：😤",
+      "focusTags": []
+    },
+    {
+      "title": "I Pointed Copilot, CodeRabbit, and Claude Sub-Agents at the Same 30 PRs. They Agreed on 22%.",
+      "url": "https://dev.to/kenimo49/i-pointed-copilot-coderabbit-and-claude-sub-agents-at-the-same-30-prs-they-agreed-on-22-3d1b",
+      "source": "dev.to / #claudecode",
+      "time": "06/12 21:35",
+      "sentiment": "",
+      "body": "兩個月對比實驗：GitHub Copilot PR review、CodeRabbit 與 Claude Code sub-agents 在同 30 個 PR 上的一致率僅 22%，凸顯 AI 代碼審查工具之間的顯著分歧。情緒：🤔",
+      "focusTags": []
+    },
+    {
+      "title": "Claude Code Hook That Engineers Every Prompt for You — Automatically",
+      "url": "https://dev.to/bhutano/claude-code-hook-that-engineers-every-prompt-for-you-automatically-o7",
+      "source": "dev.to / #claudecode",
+      "time": "06/13 03:34",
+      "sentiment": "",
+      "body": "開發者實作 Claude Code hook，自動在每次提示前插入工程化結構（任務分解、背景、約束），減少手動 prompt engineering 負擔。情緒：🤔",
+      "focusTags": []
+    },
+    {
+      "title": "Show HN: Janus – MCP that collects context from browser and terminal",
+      "url": "https://github.com/kmcheung12/janus",
+      "source": "Hacker News",
+      "time": "06/12 15:51",
+      "sentiment": "",
+      "body": "新 MCP 工具 Janus：同步收集瀏覽器互動事件與終端輸出，整合為 Claude 可讀的事件流，讓 agent 理解「在 UI 發生了什麼」再決定程式碼修改方向。情緒：🤔",
+      "focusTags": []
+    },
+    {
+      "title": "Task / project manager and autopilot for Claude Code",
+      "url": "https://taskprio.com/",
+      "source": "Hacker News",
+      "time": "06/12 14:38",
+      "sentiment": "",
+      "body": "TaskPrio：MCP-native 任務隊列工具，讓多個 Claude Code / Cursor agent 共享優先排序 backlog，透過 `get_next_task` 依序自動執行，標榜無需 orchestration 膠水代碼。情緒：🤔",
+      "focusTags": []
+    }
+  ],
+  "billing": [
+    {
+      "title": "The billing bet that killed my coding-agent harness",
+      "url": "https://dev.to/bfxavier/the-billing-bet-that-killed-my-coding-agent-harness-17a9",
+      "source": "dev.to / #claudecode",
+      "time": "06/13 02:49",
+      "sentiment": "",
+      "body": "6 月 15 日起，互動式 Claude Code 維持訂閱制不變，但此前依賴「互動模式不計 token」所建立的商業邏輯已失效，多個自建 orchestration harness 的開發者面臨商業模式崩潰。",
+      "focusTags": []
+    },
+    {
+      "title": "Moonshot's open model Kimi K2.7 Code undercuts GPT-5.5 and Claude by up to 12x on price per token",
+      "url": "https://news.google.com/rss/articles/CBMivgFBVV95cUxPZGNTWnRpZEI3WWl2S1pOS3F1N3NEQ1Nxd3dPR0xUVVU5QTVOVDBob0cyYmt6aVlveWo0dlJnVWVuUkI5MHFBOXVHRUVGT2VOU0wwUVRQMlFSMXZsQWJsU2w3T1JKVTZQQ3ZfN1JoenhCRG1UbFRIaHdfSmNrLUFpOWpwTG1Rby1UNXhtNEFUUEJaNXdKbURLVVM5Ti1Mbmo5UE0yVlQ3aFZGdU5rM2xJcU5MODZReG5aZ1VmSjlR",
+      "source": "Google News / the-decoder.com",
+      "time": "06/13 00:42",
+      "sentiment": "",
+      "body": "Moonshot 開源模型 Kimi K2.7 Code 每 token 定價比 GPT-5.5 與 Claude 低 12 倍，在競爭激烈的 AI 編碼市場進一步壓縮定價空間。",
+      "focusTags": []
+    }
+  ],
+  "focus": [
+    {
+      "tag": "[重大事件]",
+      "text": "美國政府以「國家安全出口管制」為由，強制 Anthropic 對所有外籍人士（含境內外籍員工）下線 Fable 5 與 Mythos 5，Anthropic 在收到指令後數小時內對全體用戶停用兩款模型，其他模型不受影響。",
+      "ref_urls": [
+        "https://www.anthropic.com/news/fable-mythos-access",
+        "https://www.cnbc.com/2026/06/12/anthropic-disables-access-to-fable-5-and-mythos-5-to-comply-with-government-directive.html"
+      ]
+    },
+    {
+      "tag": "[持續追蹤]",
+      "text": "路透社、WSJ、NYT、BBC、TechCrunch、WIRED、The Guardian 等主流媒體均以頭條報導此事，社群熱議 Anthropic 的安全論述是否反為政府干預提供了依據。",
+      "ref_urls": [
+        "https://www.reuters.com/technology/us-blocks-foreign-access-anthropics-most-advanced-ai-models-axios-reports-2026-06-13/",
+        "https://www.axios.com/2026/06/12/anthropic-trump-mythos-fable-national-security"
+      ]
+    },
+    {
+      "tag": "[社群趨勢]",
+      "text": "Fable 5 在被下線前的短暫窗口期（約 72 小時），開發者密集測試並展示其編碼能力：單次對話生成 2,319 行遊戲、10 小時完成多人棋藝平台、代碼效能超越現有最快 Go decimal 函式庫 35%。",
+      "ref_urls": [
+        "https://koenvangilst.nl/lab/claude-fable-shepherds-dog",
+        "https://www.reddit.com/r/ClaudeAI/comments/1u4l7m8/i_built_real_time_chess_under_10_hours_with/"
+      ]
+    },
+    {
+      "tag": "[風險警示]",
+      "text": "6 月 15 日計費規則變更加上 Fable 5 下線，打亂多個自行搭建 multi-agent Claude Code harness 的開發者計畫；一位 Reddit 用戶表示花六個月打造的 orchestration 工具幾乎全被 Claude Code 內建功能取代。",
+      "ref_urls": [
+        "https://www.reddit.com/r/ClaudeAI/comments/1u4pf9e/spent_6_months_building_a_multiagent_claude_code/"
+      ]
+    },
+    {
+      "tag": "[技術更新]",
+      "text": "Claude Code v2.1.177 發布（無具體使用者端功能說明）；Anthropic 安全研究團隊發布「LLM 對 N-day 漏洞影響評估」報告，評估公開已知但未修補漏洞的利用風險。",
+      "ref_urls": [
+        "https://github.com/anthropics/claude-code/releases/tag/v2.1.177",
+        "https://red.anthropic.com/2026/n-days/"
+      ]
+    }
+  ],
+  "sourceStatus": [],
+  "preview": "Statement on US government directive to suspend access to Fable 5 and Mythos 5"
+}
