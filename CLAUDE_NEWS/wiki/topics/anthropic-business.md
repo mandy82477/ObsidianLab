@@ -3,7 +3,7 @@
 **狀態：** ongoing
 **領域：** 💼 商業
 **開始日期：** 2026-05-28
-**最後更新：** 2026-06-12（DXC Technology 全球聯盟 + Claude Corps 官方博客確認 $1.5 億 + AI 定價戰升溫 + Anthropic 被指快速調整致合作夥伴措手不及）
+**最後更新：** 2026-06-15（自 [[feature-radar]] 改投：補記 Making Claude a Chemist 科學研究拓展信號）
 
 ---
 
@@ -110,6 +110,9 @@ Simon Willison（知名開發者博主）發表文章，認為 Anthropic 與 Ope
 - [[news/2026-05-13]]（The Information：定價強勢期）
 
 ## 時序
+
+### 2026-06-14
+- **[Making Claude a Chemist：產品邊界拓展]** Anthropic 發布首篇化學研究合作成果，化學家 David Kamber 展示 Claude 解析 NMR（核磁共振）光譜能力；同步推出「Anthropic Science」電子報。標誌 Anthropic 從「AI 編碼助手」向「AI 科學研究工具」拓展產品邊界（HN score 70）。〔自 [[feature-radar]] 改投：研究成果非使用者可直接取用的功能，無公開 API〕
 
 ### 2026-06-12
 - **[DXC Technology 全球聯盟]** Anthropic 宣布與 DXC Technology 建立多年全球合作關係，DXC 計劃訓練「數萬名」Claude 認證前線工程師；合作目標為銀行、航空公司、保險公司、製造業和政府機構等受嚴格合規監管的企業；是 Anthropic 迄今最大規模的企業系統整合合作之一（Anthropic Blog）

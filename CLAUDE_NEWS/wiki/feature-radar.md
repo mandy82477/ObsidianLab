@@ -4,7 +4,7 @@
 僅收錄官方 changelog、release note 或官方公告來源；社群工具見 [[topics/community-tech-tools]]。
 每次 ingest 後由 LLM 維護：新增功能、更新熱度、補充社群回饋。
 
-**最後更新：** 2026-06-14（Making Claude a Chemist：Anthropic 科學研究合作里程碑；Agent SDK 計費切割明日生效提醒）
+**最後更新：** 2026-06-15（准入定義守門上線：移除研究／公益／計費／策略表態等非功能條目，改投對應頁面）
 
 ---
 
@@ -29,15 +29,12 @@
 
 | 功能 | 發布日期 | 熱度 | 試用價值 | 狀態 |
 |------|----------|------|----------|------|
-| **Anthropic 化學研究合作：Claude NMR 光譜分析**（Making Claude a Chemist） | 2026-06-14 | 🔥🔥 | ⏳ 觀望 | 研究里程碑（Anthropic 與世界級化學家合作；NMR 光譜分析為首項成果；Anthropic Science 電子報同步發布）|
 | **Claude Code v2.1.175**（`enforceAvailableModels` 企業管控） | 2026-06-12 | 🔥🔥 | ✅ 推薦 | 正式發布（企業管理員可鎖定可用模型白名單並同步限制預設模型，防繞過）|
-| **Claude Corps**（非營利 AI 教育公益計畫） | 2026-06-11 | 🔥🔥 | ⏳ 觀望 | 公告（1,000 名 Fellows，一年全薪，派遣至美國非營利組織）|
 | **Claude Code v2.1.173**（Fable 5 模型名稱修復） | 2026-06-11 | 🔥 | ✅ 推薦 | 正式發布（`[1m]` 後綴自動移除；誤報沙盒錯誤修正）|
 | **Claude Fable 5**（Mythos 架構公開版，$10/$50 per M token） | 2026-06-09 | 🔥🔥🔥🔥🔥 | ⚡ 有條件推薦 | 正式發布（6/22 前訂閱包含；之後消費制；護欄 fallback 至 Opus 4.8 < 5% session；護欄政策 6/11 部分修改：LLM 研究限制改為可見；資安研究護欄仍過激）|
 | Python SDK v0.109.1（`frontier_llm` refusal 類別） | 2026-06-09 | 🔥 | ✅ 推薦 | 正式發布（Fable 5 安全分類器相關 refusal API 補齊）|
 | Claude Code v2.1.170（Fable 5 支援） | 2026-06-09 | 🔥🔥 | ✅ 推薦 | 正式發布（Claude Code terminal 可切換 Fable 5）|
 | Claude Code v2.1.169 `--safe-mode` 旗標 | 2026-06-08 | 🔥🔥 | ✅ 推薦 | 正式發布（停用所有客製化設定，MCP/hooks/skills/CLAUDE.md；故障排除利器）|
-| Agent SDK / `claude -p` 計費軌道切割（2026-06-15 生效） | 2026-06-15 | 🔥🔥🔥🔥🔥 | ⚠️ 必讀 | Breaking Change（Pro $20/Max 5x $100/Max 20x $200 程式化月預算；超額依 API 費率）|
 | Google Colab CLI 整合 Claude Code / Codex | 2026-06-08 | 🔥🔥 | ✅ 推薦 | 正式發布（降低 Colab 使用 AI coding agent 門檻）|
 | Python SDK v0.107.1（foundry x-api-key header 修復） | 2026-06-07 | 🔥 | ✅ 推薦 | 正式發布（Bedrock Foundry 使用者應升級）|
 | Python SDK v0.106.0（Claude Opus 4.1 標記棄用） | 2026-06-06 | 🔥 | ✅ 推薦 | 正式發布（開發者應遷移至新版模型 ID）|
@@ -51,7 +48,6 @@
 | Coordinator 模式 + `/code-review --fix`（v2.1.152） | 2026-05-27 | 🔥🔥🔥🔥 | ✅ 推薦 | 正式發布 |
 | 小企業 Skills（31 個官方 Skills） | 2026-05-24 | 🔥🔥🔥 | ✅ 推薦 | 正式發布 |
 | `/code-review`（原 `/simplify`，v2.1.146） | 2026-05-21 | 🔥🔥 | ✅ 推薦 | 正式發布 |
-| HTML 輸出格式（官方背書） | 2026-05-20 | 🔥🔥🔥🔥🔥 | ⚡ 有條件推薦 | 官方建議（非新功能，策略轉向）|
 | `claude agents --json`（v2.1.145） | 2026-05-20 | 🔥🔥 | ✅ 推薦 | 正式發布 |
 | 自架沙箱 + MCP 隧道（完整文件） | 2026-05-22 | 🔥🔥🔥🔥 | ⚡ 有條件推薦 | 公開測試（文件完整）|
 | `/resume` 背景 session 擴展（v2.1.144） | 2026-05-19 | 🔥 | ✅ 推薦 | 正式發布 |
@@ -77,17 +73,6 @@
 ---
 
 ## 🆕 最新功能（2026-06）
-
-### Anthropic 化學研究合作（Making Claude a Chemist）
-**發布：** 2026-06-14 | **熱度：** 🔥🔥 | **試用價值：** ⏳ 觀望 | **狀態：** 研究里程碑
-
-**是什麼：** Anthropic 公開首篇化學研究合作成果，由 Anthropic 化學家 David Kamber 展示 Claude 解析 NMR（核磁共振）光譜的實際能力。化學家日常需在分子手繪圖、儀器讀數、資料庫查詢字串與專利標注之間切換，Claude 須具備跨多種表示法的流暢度。同步發布「Anthropic Science」電子報，預計涵蓋 AI 輔助科學發現、實際工作流與各科學領域田野筆記。
-
-**為何熱：** HN score 70，為今日最高分技術文章。標誌 Anthropic 正式從「AI 編碼助手」拓展至「AI 科學研究工具」定位，化學作為高度技術密集領域是試金石。
-
-**注意事項：** 目前以 Anthropic 內部化學家示範為主，尚未有公開 API 或使用者可直接存取的化學分析工具。見 [Anthropic Research Blog](https://www.anthropic.com/research/making-claude-a-chemist)。
-
----
 
 ### Claude Code v2.1.175（`enforceAvailableModels` 企業管控）
 **發布：** 2026-06-12（v2.1.175） | **熱度：** 🔥🔥 | **試用價值：** ✅ 推薦 | **狀態：** 正式發布
