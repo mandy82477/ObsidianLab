@@ -4,7 +4,7 @@
 **狀態：** active（正式發布；Fable 5 / Mythos 5 因美國政府出口管制指令暫停全球存取）
 **領域：** 🤖 模型
 **首次出現：** 2026-06-09
-**最後更新：** 2026-06-13
+**最後更新：** 2026-06-14
 
 ---
 
@@ -78,11 +78,15 @@ claude --model claude-fable-5-20260609
 - [[news/2026-06-11]]
 - [[news/2026-06-12]]
 - [[news/2026-06-13]]
+- [[news/2026-06-14]]
 - [Anthropic 官方公告](https://www.anthropic.com/news/claude-fable-5-mythos-5)
 - [System Card PDF](https://www-cdn.anthropic.com/d00db56fa754a1b115b6dd7cb2e3c342ee809620.pdf)
 - [資料保留政策](https://support.claude.com/en/articles/15425996-data-retention-practices-for-mythos-class-models)
 
 ## 歷史記錄
+
+### 2026-06-14
+**出口管制事件後續：更多細節浮現 + 國際影響擴大**：Axios 揭露 Anthropic 僅有 90 分鐘執行撤架命令（下午 5:21pm ET 收到指令）。The Verge / WSJ 報導：Amazon 安全研究顯示 Fable 5 可透過一系列提示詞生成可用於網路攻擊的資訊，Amazon CEO Andy Jassy 直接向白宮官員通報，成為管制指令的直接觸發原因。Semafor 報導：白宮動機之一是中國關聯組織疑似存取 Mythos 5 的情報。TechCrunch 報導：Politico 分析此事件暴露歐盟 AI 主權弱點，EU 執委會宣布正在評估實際影響；印度科技界（Anthropic 第二大市場）重燃 AI 自主辯論，Anthropic 剛宣布與 TCS 的企業合作隨即受衝擊。社群層面：用戶抱怨 Opus 4.6 在書籍編輯任務上與 Fable 5 差距明顯，尋求替代 prompt 策略。美國戰爭部長 Hegseth 公開就此發表聲明但無法提供具體理由，社群批評「最無能政府」。Forbes 探討 Anthropic 是否需要提供 Fable 5 退款。
 
 ### 2026-06-13
 **美國政府出口管制指令**：Trump 政府以「國家安全授權」發布出口管制指令，要求 Anthropic 停用 Fable 5 與 Mythos 5 對所有外籍人士的存取，包含美國境內外籍員工。Anthropic 於下午 5:21pm ET 收到指令，為確保合規對全體用戶停用兩款模型——即使這代表美國用戶也無法繼續使用。指令未提供具體國家安全顧慮說明。TechCrunch 分析：Anthropic 對 Fable 5「太危險」的安全論述，反而成為政府援引的理由，是「AI 安全敘事的意外後果」。社群熱議 Anthropic 安全立場與政府干預之間的弔詭關係（Reddit 用戶整理時序：Anthropic 主張自己有資格決定誰能用最強模型，政府隨即接管了這個決定）。Fable 5 在下線前的 72 小時窗口期，開發者展示了大量編碼成果：單次對話生成 2,319 行遊戲、10 小時打造多人棋藝平台、Go decimal 函式庫效能超越市場最快工具 35%。

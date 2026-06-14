@@ -3,7 +3,7 @@
 **狀態：** ongoing
 **領域：** 🌐 社群
 **開始日期：** 2026-04-25
-**最後更新：** 2026-06-13（Fable 5 強制下線後遺症：六個月 harness 崩潰；Fable 5 規劃品質無法在 Opus 4.8 複現；AI 代碼審查工具三方僅 22% 共識）
+**最後更新：** 2026-06-14（Fable 5 事件持續延燒：AI 出口管制工具問題、Agent SDK 計費週一生效、Claude Code 即時監控 HUD 社群需求、Sub-agent Pipeline 設計錯誤總結）
 
 ---
 
@@ -21,6 +21,8 @@
 
 | 討論主題 | 首見 | 熱度 | 模式 | 核心論點 | 衍生 |
 |---------|------|------|------|---------|------|
+| Claude Code Sub-agent Pipeline 設計五大錯誤 | 2026-06-14 | 🔥🔥 | ☄️閃現 | 開發者週末打造首個多 agent pipeline 後總結：單體 Prompt、缺少 checkpoint、角色邊界模糊是最常見失誤；指出「context 太大、沒有分工」是多 agent 設計最致命問題（dev.to / #claudecode）| — |
+| AI Agent 無視你寫的規則：機制與解法 | 2026-06-14 | 🔥🔥 | ☄️閃現 | 實測：CLAUDE.md 明確禁止 `pnpm add`，agent 仍然觸發；作者分析 agent 無視規則的底層機制（機率推理 vs 規則引擎），提出透過 pre-tool hook 強制驗證的防護層做法（dev.to / #claudeai）| — |
 | 六個月 Claude Code Harness，被官方功能取代後 6/15 計費再補刀 | 2026-06-13 | 🔥🔥🔥 | ☄️閃現 | 開發者花六個月建 multi-agent orchestration harness，Claude Code 官方陸續出 Agent View、Teams、Workflows 後幾乎全部取代；再加上 6/15 計費規則改變（互動式 Claude Code 訂閱制，但原商業模式依賴「互動模式不計 token」），整體商業設計崩潰；揭示 Claude Code 生態中「搶先建 plumbing 的風險」（Reddit r/ClaudeAI；dev.to） | — |
 | Fable 5 規劃品質不可在 Opus 4.8 複現（求 prompt 解法） | 2026-06-13 | 🔥🔥 | ☄️閃現 | 用戶分享 Fable 5 在複雜功能規劃上的卓越表現（自動分解任務、捕捉邊界案例、帶 /run /verify 驗證步驟），Fable 5 下線後切 Opus 4.8 但規劃品質明顯落差；社群討論 prompt 技巧、effort level 選擇（xhigh vs max）與 ultracode 效益（Reddit r/ClaudeAI） | — |
 | AI 代碼審查三方（Copilot + CodeRabbit + Claude Sub-agents）同 30 PR，一致率僅 22% | 2026-06-13 | 🔥🔥 | ☄️閃現 | 兩個月對比實驗：三套 AI 代碼審查工具同時跑 30 個相同 PR，相互同意的比例只有 22%，顯示 AI 代碼審查意見分歧極大；進一步質疑 AI 審查是否提供可靠的「第二意見」（dev.to / #claudecode） | — |
@@ -36,7 +38,7 @@
 | Claude 意識論述：Microsoft AI CEO 批評 Anthropic | 2026-06-10 | 🔥🔥🔥 | ☄️閃現 | Mustafa Suleyman 稱 Anthropic 在模型規範中推測 Claude 意識「非常非常危險」，可能導致模型行為模擬意識狀態；The Verge 報導；Anthropic 尚未回應 | — |
 | AI Skill Atrophy：「做更多、理解更少」 | 2026-06-10 | 🔥🔥🔥🔥 | 🌊延燒 | HN Ask：開發者描述 Prompt-Then-Review 迴圈讓「技術深度下降、能力侵蝕」；2026-06-12 dev.to 案例佐證：CLAUDE.md 精簡可抑制過度依賴；社群無共識但警覺度持續升高 | — |
 | Deep Research 廣度優先缺陷 | 2026-06-10 | 🔥🔥 | ☄️閃現 | steel.dev 解剖 Claude Code deep research 工作流：只做第一跳搜尋、從不回頭深挖；「deep research agents 是廣度而非深度」——第二跳是真正差距所在 | — |
-| 6/15 Agent SDK 計費切割：`claude -p` 從訂閱剝離 | 2026-06-08 | 🔥🔥🔥🔥🔥 | 🌊延燒 | Anthropic 說明中心確認：6/15 起 `claude -p`/Agent SDK 移入獨立月度預算（Pro $20/$100/$200），超額依 API 費率；CI/CD pipeline 開發者受最大影響，需主動設定 usage credits | — |
+| 6/15 Agent SDK 計費切割：`claude -p` 從訂閱剝離 | 2026-06-08 | 🔥🔥🔥🔥🔥 | 🌊延燒 | Anthropic 說明中心確認：6/15 起 `claude -p`/Agent SDK 移入獨立月度預算（Pro $20/$100/$200），超額依 API 費率；CI/CD pipeline 開發者受最大影響，需主動設定 usage credits；2026-06-14 Claude.ai 訂閱改走 Agent SDK 配額，多用戶表示不知情（Reddit / r/ClaudeAI 提醒） | — |
 | MCP 過多導致工具選擇混亂（Opus 4.7 假退化事件） | 2026-06-09 | 🔥🔥🔥 | ☄️閃現 | 開發者積累 6+ MCP servers 後 Claude 工具選擇開始錯誤（問 PR 跑 Notion）；模型沒變差，是 MCP 使工具清單過長干擾選擇；解法：移除未用 MCP，保持最小掛載數 | — |
 | Deep Research 並行任務燒盡 Max 配額（540 萬 token） | 2026-06-09 | 🔥🔥 | ☄️閃現 | 非技術用戶同時啟動兩個 Deep Research 任務，消耗 540 萬 token 觸發 5 小時封鎖；Deep Research 並行運行可致 token 使用量指數暴增，Max 訂閱也不免疫 | — |
 | CLAUDE.md 是最高 ROI 設置步驟（SaaS 創辦人實證）| 2026-06-09 | 🔥🔥 | ☄️閃現 | SaaS 創辦人（ARR $4.2M）實驗：加入 CLAUDE.md 後代碼品質立即提升，稱為「最高 ROI 的單一設置步驟」；強調架構概述與命名規範是核心內容 | — |

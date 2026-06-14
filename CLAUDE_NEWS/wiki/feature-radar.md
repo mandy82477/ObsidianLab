@@ -4,7 +4,7 @@
 僅收錄官方 changelog、release note 或官方公告來源；社群工具見 [[topics/community-tech-tools]]。
 每次 ingest 後由 LLM 維護：新增功能、更新熱度、補充社群回饋。
 
-**最後更新：** 2026-06-13（Lint：2026-05 功能封存至 [[feature-radar-archive-2026-05]]）
+**最後更新：** 2026-06-14（Making Claude a Chemist：Anthropic 科學研究合作里程碑；Agent SDK 計費切割明日生效提醒）
 
 ---
 
@@ -29,6 +29,7 @@
 
 | 功能 | 發布日期 | 熱度 | 試用價值 | 狀態 |
 |------|----------|------|----------|------|
+| **Anthropic 化學研究合作：Claude NMR 光譜分析**（Making Claude a Chemist） | 2026-06-14 | 🔥🔥 | ⏳ 觀望 | 研究里程碑（Anthropic 與世界級化學家合作；NMR 光譜分析為首項成果；Anthropic Science 電子報同步發布）|
 | **Claude Code v2.1.175**（`enforceAvailableModels` 企業管控） | 2026-06-12 | 🔥🔥 | ✅ 推薦 | 正式發布（企業管理員可鎖定可用模型白名單並同步限制預設模型，防繞過）|
 | **Claude Corps**（非營利 AI 教育公益計畫） | 2026-06-11 | 🔥🔥 | ⏳ 觀望 | 公告（1,000 名 Fellows，一年全薪，派遣至美國非營利組織）|
 | **Claude Code v2.1.173**（Fable 5 模型名稱修復） | 2026-06-11 | 🔥 | ✅ 推薦 | 正式發布（`[1m]` 後綴自動移除；誤報沙盒錯誤修正）|
@@ -76,6 +77,17 @@
 ---
 
 ## 🆕 最新功能（2026-06）
+
+### Anthropic 化學研究合作（Making Claude a Chemist）
+**發布：** 2026-06-14 | **熱度：** 🔥🔥 | **試用價值：** ⏳ 觀望 | **狀態：** 研究里程碑
+
+**是什麼：** Anthropic 公開首篇化學研究合作成果，由 Anthropic 化學家 David Kamber 展示 Claude 解析 NMR（核磁共振）光譜的實際能力。化學家日常需在分子手繪圖、儀器讀數、資料庫查詢字串與專利標注之間切換，Claude 須具備跨多種表示法的流暢度。同步發布「Anthropic Science」電子報，預計涵蓋 AI 輔助科學發現、實際工作流與各科學領域田野筆記。
+
+**為何熱：** HN score 70，為今日最高分技術文章。標誌 Anthropic 正式從「AI 編碼助手」拓展至「AI 科學研究工具」定位，化學作為高度技術密集領域是試金石。
+
+**注意事項：** 目前以 Anthropic 內部化學家示範為主，尚未有公開 API 或使用者可直接存取的化學分析工具。見 [Anthropic Research Blog](https://www.anthropic.com/research/making-claude-a-chemist)。
+
+---
 
 ### Claude Code v2.1.175（`enforceAvailableModels` 企業管控）
 **發布：** 2026-06-12（v2.1.175） | **熱度：** 🔥🔥 | **試用價值：** ✅ 推薦 | **狀態：** 正式發布

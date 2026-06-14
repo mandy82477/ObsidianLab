@@ -3,7 +3,7 @@
 **狀態：** monitoring
 **領域：** 🏛️ 政策/安全
 **開始日期：** 2026-05-01
-**最後更新：** 2026-06-13
+**最後更新：** 2026-06-14
 
 ---
 
@@ -63,6 +63,13 @@
 - [AP News：Pope calls for robust regulation of AI](https://apnews.com/article/pope-ai-tech-trump-vatican-anthropic-d92d0108730d146baa46da041b8523da)
 
 ## 時序
+
+### 2026-06-14
+- **[深挖] Amazon 安全研究是觸發原因**：The Verge / WSJ 報導，Amazon 研究人員透過一連串提示詞讓 Fable 5 產出網路攻擊相關資訊，CEO Andy Jassy 將此情報直接通報白宮官員，成為出口管制指令的直接觸發因素；Amazon 尚未正式回應媒體詢問（The Verge）
+- **[深挖] 90 分鐘執行窗口**：Axios 報導，Anthropic 於下午 5:21pm ET 收到指令，僅有約 90 分鐘完成撤架，顯示指令緊急程度
+- **[情報背景] 中國連結組織存取 Mythos**：Semafor 報導，白宮動機之一是情報顯示中國關聯組織疑似已存取 Mythos 5；Anthropic 維持 Mythos 嚴格存取管控，但指令仍下達
+- **[國際影響] EU 執委會啟動影響評估**：EU 執委會發言人表示正在研究此事件對歐洲用戶及企業的實際影響（Reuters），凸顯 AI 出口管制的跨國政治效應；Politico EU 分析：此事件暴露歐洲對美國 AI 基礎設施的結構性依賴
+- **[國際影響] 印度 AI 自主辯論重燃**：TechCrunch 報導，Anthropic 剛宣布與 TCS 的 Global Premier Partnership（5 萬員工使用 Claude），隨即遭遇模型暫停，讓印度科技界（Anthropic 第二大市場，6.6% 流量）正視對境外 AI 的依賴風險，引發 AI 主權與本土 AI 建設辯論
 
 ### 2026-06-13
 - **[重大事件] 美國政府出口管制：Fable 5 / Mythos 5 對所有外籍人士停用** Trump 政府引用「國家安全授權」發布出口管制指令，要求 Anthropic 停用 Fable 5 與 Mythos 5 對所有外籍人士（包含美國境內外籍員工）的存取；Anthropic 當日 5:21pm ET 收到指令，為確保合規對全體用戶停用兩款模型，其他模型不受影響；指令未提供具體國家安全顧慮說明（Anthropic 官方聲明；Axios、Reuters、NYT、BBC、TechCrunch、WIRED、The Guardian 等主流媒體全面報導，HN score 2,662）。

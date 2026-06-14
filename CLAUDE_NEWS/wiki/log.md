@@ -3,6 +3,31 @@
 Append-only 紀錄。每次 ingest、query 或 lint 都在此追加一條。
 格式：`## [YYYY-MM-DD] 類型 | 說明`
 
+## 2026-06-14 Ingest | news/2026-06-14.md（44 則）
+
+- 來源日報：`news/2026-06-14.md`（44 則，6 來源；Fable 5 出口管制後續細節：Amazon 觸發、90 分鐘窗口、中國連結情報；EU/印度國際影響；Anthropic 化學研究合作；經濟政策框架；Agent SDK 計費切換提醒）
+- 更新頁面：
+  - `entities/fable-5.md`：新增 2026-06-14 時序（Amazon 觸發詳情、90 分鐘執行窗口、中國連結情報、EU/印度國際影響、社群反應）；參考來源新增 news/2026-06-14；最後更新 2026-06-14
+  - `topics/anthropic-government-policy.md`：新增 2026-06-14 時序 5 條（Amazon 研究觸發、90 分鐘窗口、中國連結情報、EU 影響評估、印度 AI 自主辯論）；最後更新 2026-06-14
+  - `topics/community-tech-discussions.md`：prepend 2 條新討論（Sub-agent Pipeline 設計錯誤、AI Agent 無視規則）；更新 6/15 計費切割條目補 6/14 用戶端提醒；最後更新 2026-06-14
+  - `wiki/feature-radar.md`：全覽表新增 Anthropic 化學研究合作；最新功能區塊新增詳細條目；最後更新 2026-06-14
+- 新增頁面：無（Fable 5 出口管制後續整合至既有頁面；化學研究合作為研究里程碑，非功能發布，暫不建 entity）
+- 升格檢查（discussions → patterns）：
+  - OpenAI vs Anthropic 定價戰（首見 2026-06-11，第 4 天，🌊延燒）— 今日無新定價戰內容，**不升格**
+  - AI Skill Atrophy（首見 2026-06-10，第 5 天，🌊延燒）— 今日無直接相關，**不升格**
+  - 6/15 計費切割（首見 2026-06-08，第 7 天，🌊延燒）— 進入最後提醒階段，無可升格工作流共識，**不升格**
+- feature-radar 更新：新增 Anthropic 化學研究合作（🔥🔥，⏳ 觀望，研究里程碑）；Agent SDK 計費切割熱度已達最高🔥🔥🔥🔥🔥，無需調整
+- 本日新增工具：無（Conan macOS HUD 為 Reddit 來源 score=0，不符合入選標準）
+- 呈現品質審查：
+  | 頁面 | 結果 |
+  |------|------|
+  | entities/fable-5.md | ✅ 通過（2026-06-14 時序 prepend；現況段落完整；參考來源已補）|
+  | topics/anthropic-government-policy.md | ✅ 通過（2026-06-14 時序 5 條 prepend；因果鏈完整）|
+  | topics/community-tech-discussions.md | ✅ 通過（2 條新討論 prepend；6/15 計費條目更新；延燒判斷正確）|
+  | wiki/feature-radar.md | ✅ 通過（化學研究合作新增；全覽表同步更新）|
+
+---
+
 ## 2026-06-13 Ingest | news/2026-06-13.md（80 則）
 
 - 來源日報：`news/2026-06-13.md`（80 則，6 來源；Fable 5 / Mythos 5 美國政府出口管制強制下線 + 政府論述弔詭反噬 + v2.1.177 + N-day 漏洞研究 + billing change harness 崩潰）
