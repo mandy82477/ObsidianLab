@@ -4,7 +4,7 @@
 僅收錄官方 changelog、release note 或官方公告來源；社群工具見 [[topics/community-tech-tools]]。
 每次 ingest 後由 LLM 維護：新增功能、更新熱度、補充社群回饋。
 
-**最後更新：** 2026-06-15（准入定義守門上線：移除研究／公益／計費／策略表態等非功能條目，改投對應頁面）
+**最後更新：** 2026-06-15（今日無符合准入定義的新官方功能；Agent SDK 計費切割正式生效但屬計費政策歸 [[entities/pricing]]；Claude Corps 歸 [[topics/anthropic-business]]）
 
 ---
 

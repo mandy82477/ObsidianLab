@@ -3,7 +3,7 @@
 **狀態：** ongoing
 **領域：** 💼 商業
 **開始日期：** 2026-05-28
-**最後更新：** 2026-06-15（自 [[feature-radar]] 改投：補記 Making Claude a Chemist 科學研究拓展信號）
+**最後更新：** 2026-06-15（SpaceX AI 合作報導；FTX 前 Anthropic 股份估值 $75B；B2B SaaS 定價競爭壓力分析；Claude Corps $150M 國際媒體後續報導）
 
 ---
 
@@ -110,6 +110,12 @@ Simon Willison（知名開發者博主）發表文章，認為 Anthropic 與 Ope
 - [[news/2026-05-13]]（The Information：定價強勢期）
 
 ## 時序
+
+### 2026-06-15
+- **[SpaceX AI Megadeal 重塑競爭版圖]** Yahoo Finance 報導 SpaceX 的 AI 大型合作交易（涉及 Google 與 Anthropic），可能重塑 AI 基礎設施供應商的生態版圖；SpaceX 在此前已是 Anthropic 算力合作夥伴（YahooFinance）
+- **[FTX 前 Anthropic 股份估值 $75B]** HN 熱議：FTX 曾持有 Anthropic 稀釋後 7.84% 股份，按最新估值 $965B 計算，原股份市值約 $75B，遠超 FTX 欠款缺口 $8-9B；凸顯 Anthropic 估值飛漲的規模（HN score 41）
+- **[Claude Corps $150M 獲國際媒體廣泛後續報導]** inc.com、NonProfit Times 等媒體跟進 Claude Corps 詳細計畫；1,000 名研究員嵌入 150 家非營利組織，15 個以上國家；AI 公益投資成 Anthropic IPO 前品牌建設重點（inc.com）
+- **[B2B SaaS 廠商定價競爭壓力]** SaaStr 分析：消費者以 $20-200/月訂閱 Claude 即可取得大量 agent 工作，而企業 API 每次呼叫 $1；傳統 B2B SaaS 在 AI 時代面臨根本性定價競爭挑戰（SaaStr）
 
 ### 2026-06-14
 - **[Making Claude a Chemist：產品邊界拓展]** Anthropic 發布首篇化學研究合作成果，化學家 David Kamber 展示 Claude 解析 NMR（核磁共振）光譜能力；同步推出「Anthropic Science」電子報。標誌 Anthropic 從「AI 編碼助手」向「AI 科學研究工具」拓展產品邊界（HN score 70）。〔自 [[feature-radar]] 改投：研究成果非使用者可直接取用的功能，無公開 API〕

@@ -2,7 +2,7 @@
 
 LLM 查詢此 wiki 時，**先讀這個檔案**找相關頁面，再讀具體頁面取得詳細資訊。
 
-**最後更新：** 2026-06-14（Ingest：Fable 5 出口管制後續細節（Amazon 觸發、90 分鐘窗口、中國連結）；EU/印度國際影響更新；Anthropic 化學研究合作里程碑；feature-radar 新增條目） | **頁面數：** 39
+**最後更新：** 2026-06-15（Ingest：Fable 5 出口管制政治風暴深化（個性衝突說、Anthropic 赴 DC 協商、資安領袖呼籲解禁）；Agent SDK 計費切割正式生效；SpaceX AI 合作；4 款新社群工具） | **頁面數：** 39
 
 ---
 
@@ -37,7 +37,7 @@ LLM 查詢此 wiki 時，**先讀這個檔案**找相關頁面，再讀具體頁
 | [[entities/dario-amodei]] | person | 👤 人物 | active | Anthropic CEO：政府監管立場、企業文化論述、Code with Claude 大會現場宣布速率政策 |
 | [[entities/chris-olah]] | person | 👤 人物 | active | Anthropic 共同創辦人、AI 可解釋性研究先驅；2026-05-26 梵蒂岡封論揭幕演講 |
 | [[entities/opencode]] | product | 🛠️ 工具/功能 | active（快速成長）| Claude Code 主要開源替代品，157K 開發者分流，OpenCode-power-pack 移植官方 11 個 skills |
-| [[entities/fable-5]] | model | 🤖 模型 | active（6/13 因美國政府出口管制指令暫停全球存取）| Claude Fable 5：首款 Mythos 級公開模型，$10/$50 per M token；6/14 後續：Amazon 安全研究觸發白宮指令，Anthropic 僅 90 分鐘執行撤架，中國連結組織疑似存取情報；EU/印度國際影響持續擴大 |
+| [[entities/fable-5]] | model | 🤖 模型 | active（6/13 因美國政府出口管制指令暫停全球存取）| Claude Fable 5：首款 Mythos 級公開模型，$10/$50 per M token；6/15 後續：Anthropic 赴 DC 協商，「個性衝突說」浮現，資安領袖呼籲解禁，《經濟學人》批評 Trump 決策 capricious |
 
 ---
 

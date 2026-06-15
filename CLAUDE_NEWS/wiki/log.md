@@ -3,6 +3,35 @@
 Append-only 紀錄。每次 ingest、query 或 lint 都在此追加一條。
 格式：`## [YYYY-MM-DD] 類型 | 說明`
 
+## 2026-06-15 Ingest | news/2026-06-15.md（77 則）
+
+- 來源日報：`news/2026-06-15.md`（77 則，6 來源；主軸：Fable 5 / Mythos 5 出口管制政治風暴深化——個性衝突說、Anthropic 赴 DC 協商；Agent SDK 計費切割正式生效；非技術人員 Claude Code 商業成果社群熱議；多款新社群工具亮相；中國 Zhipu 股價應聲暴漲）
+- 更新頁面：
+  - `entities/fable-5.md`：新增 2026-06-15 時序（「They screwed us」個性衝突說、Stratechery 安全論述分析、Carney 警告、《經濟學人》批評、非技術人員商業成果討論）；參考來源新增 news/2026-06-15；最後更新 2026-06-15
+  - `topics/anthropic-government-policy.md`：新增 2026-06-15 時序 5 條（赴 DC 協商、個性衝突說、Stratechery 分析、盟友震驚與批評、資安領袖呼籲解禁）；最後更新 2026-06-15
+  - `topics/community-tech-discussions.md`：prepend 5 條新討論（生物學護欄矛盾、LLM 工具說明敏感性、agentic 目錄結構、非技術人員商業成果、AI 大型 PR 審查困境）；6/15 計費切割更新為🌸落幕；最後更新 2026-06-15
+  - `topics/community-tech-tools.md`：新增 4 個工具（The Engineer、Canopy、Conan、zero-1）；最後更新 2026-06-15
+  - `topics/anthropic-business.md`：新增 2026-06-15 時序 4 條（SpaceX 合作、FTX 股份估值 $75B、Claude Corps 後續、B2B SaaS 定價壓力）；最後更新 2026-06-15
+  - `entities/pricing.md`：更新最後更新日期，反映計費切割正式生效；最後更新 2026-06-15
+  - `feature-radar.md`：更新最後更新說明（今日無新功能條目）
+- 新增頁面：無（FTX 估值計算為一次性事件；SpaceX 合作暫記 anthropic-business；Zhipu 股價為外部效應暫不建頁）
+- 升格檢查（discussions → patterns）：
+  - OpenAI vs Anthropic 定價戰（第 5 天，🌊延燒）— 今日有計費切割生效和 SaaStr 分析，但無可升格工作流共識，**不升格**
+  - AI Skill Atrophy（第 6 天，🌊延燒）— 今日無直接相關，**不升格**
+- feature-radar 更新：今日無符合准入定義的新官方功能（Agent SDK 計費切割屬計費政策；Claude Corps 屬公益計畫）
+- 本日新增工具：The Engineer（Show HN）、Canopy（Show HN）、Conan（Show HN）、zero-1（Show HN）
+- 呈現品質審查：
+  | 頁面 | 結果 |
+  |------|------|
+  | entities/fable-5.md | ✅ 通過（2026-06-15 時序 prepend；現況段落完整）|
+  | topics/anthropic-government-policy.md | ✅ 通過（2026-06-15 時序 5 條 prepend；因果鏈完整）|
+  | topics/community-tech-discussions.md | ✅ 通過（5 條新討論 prepend；計費切割更新為落幕）|
+  | topics/community-tech-tools.md | ✅ 通過（4 工具新增至表格頂端）|
+  | topics/anthropic-business.md | ✅ 通過（2026-06-15 時序 4 條 prepend）|
+  | entities/pricing.md | ✅ 通過（最後更新日期更新）|
+
+---
+
 ## 2026-06-14 Ingest | news/2026-06-14.md（44 則）
 
 - 來源日報：`news/2026-06-14.md`（44 則，6 來源；Fable 5 出口管制後續細節：Amazon 觸發、90 分鐘窗口、中國連結情報；EU/印度國際影響；Anthropic 化學研究合作；經濟政策框架；Agent SDK 計費切換提醒）

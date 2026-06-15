@@ -3,7 +3,7 @@
 **狀態：** monitoring
 **領域：** 🏛️ 政策/安全
 **開始日期：** 2026-05-01
-**最後更新：** 2026-06-14
+**最後更新：** 2026-06-15
 
 ---
 
@@ -63,6 +63,13 @@
 - [AP News：Pope calls for robust regulation of AI](https://apnews.com/article/pope-ai-tech-trump-vatican-anthropic-d92d0108730d146baa46da041b8523da)
 
 ## 時序
+
+### 2026-06-15
+- **[協商進展] Anthropic 赴華府**：WSJ 報導 Anthropic 已派遣多名員工赴 DC 與白宮官員緊急協商，試圖解除出口管制指令；目前尚無具體復原時程公告（WSJ）
+- **[媒體揭露] 「They screwed us」個性衝突說**：Axios 獨家：Anthropic 內部消息稱此事件根源是與白宮特定官員的人際衝突（personality clash），而非單純政策分歧；員工用「They screwed us」描述關係破裂（Axios）
+- **[輿論分析] Stratechery：安全論述是雙面刃**：Ben Thompson 長文分析（HN 128 分）：Anthropic 多年強調「Fable / Mythos 最危險模型」的安全論述，在此次出口管制中被政府直接援引作為正當性基礎；「當你主動讓政府相信你的模型很危險，政府就有理由管制它」（Stratechery）
+- **[國際輿論] 盟友震驚與政策批評**：加拿大總理 Carney 公開批評此事件顯示「依賴大型 AI 模型」的地緣政治脆弱性（Bloomberg）；《經濟學人》評 Trump 封鎖決策「capricious and chaotic」（反覆無常且混亂）；EU 執委會持續評估影響；中國 AI 股 Zhipu 應聲暴漲 33%（CNBC）
+- **[網路安全界回應] 資安領袖呼籲解禁**：多名網路安全領導人公開呼籲美國政府解除對 Anthropic 安全模型的管制，強調禁令損害美國本身的資安能力（Reuters）
 
 ### 2026-06-14
 - **[深挖] Amazon 安全研究是觸發原因**：The Verge / WSJ 報導，Amazon 研究人員透過一連串提示詞讓 Fable 5 產出網路攻擊相關資訊，CEO Andy Jassy 將此情報直接通報白宮官員，成為出口管制指令的直接觸發因素；Amazon 尚未正式回應媒體詢問（The Verge）

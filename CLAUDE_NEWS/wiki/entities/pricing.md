@@ -3,7 +3,7 @@
 **類型：** policy
 **狀態：** active（持續調整中）
 **領域：** 💼 商業
-**最後更新：** 2026-06-10（Claude Fable 5 定價 $10/$50 per million token；6/22 後訂閱方案不再涵蓋 Fable 5）
+**最後更新：** 2026-06-15（Agent SDK / `claude -p` 計費切割正式生效；Anthropic API 月費點數制傳出；B2B SaaS 廠商面臨 $20-200/月訂閱 vs API $1/call 的定價競爭壓力）
 
 ---
 
