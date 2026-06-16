@@ -4,7 +4,7 @@
 **狀態：** active
 **領域：** 🛠️ 工具/功能
 **首次出現：** 2025（正式推出）
-**最後更新：** 2026-06-13
+**最後更新：** 2026-06-16
 
 ---
 
@@ -16,6 +16,7 @@ Claude Code 是 Anthropic 的 AI 編碼 CLI 工具，支援 agentic 工作流程
 
 | 版本 | 日期 | 重點 |
 |------|------|------|
+| **v2.1.178** | 2026-06-15 | 新增 `Tool(param:value)` 語法用於 permission rules，可比對工具輸入參數（支援 `*` 萬用字元）；例如 `Agent(model:opus)` 可封鎖使用 Opus 的子 Agent；Skills 在巢狀子 Agent 中可正常運作 |
 | **v2.1.177** | 2026-06-13 | Bug fixes and reliability improvements |
 | **v2.1.175** | 2026-06-12 | 新增 `enforceAvailableModels` 管理設定：啟用後，`availableModels` 白名單同時限制預設模型的解析，避免管理員設定的模型限制被繞過；針對企業管理場景的重要強化 |
 | **v2.1.173** | 2026-06-11 | 修正 Fable 5 模型名稱含 `[1m]` 後綴時無法正規化的問題（Fable 5 預設含 1M context，後綴自動移除）；修正誤報「沙盒限制」錯誤訊息 |

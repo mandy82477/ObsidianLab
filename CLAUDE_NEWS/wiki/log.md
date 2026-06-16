@@ -3,6 +3,41 @@
 Append-only 紀錄。每次 ingest、query 或 lint 都在此追加一條。
 格式：`## [YYYY-MM-DD] 類型 | 說明`
 
+## 2026-06-16 Ingest | news/2026-06-16.md（84 則）
+
+- 來源日報：`news/2026-06-16.md`（84 則，6 來源；主軸：Fable 5/Mythos 5 出口管制爭議持續（David Sacks vs Anthropic jailbreak 版本衝突；Dario 被控拒絕修復；TechCrunch 反駁管制與 jailbreak 無關）；Agent SDK 計費切割政策暫停；Claude Max 集體訴訟；SpaceX $60B 收購 Cursor；v2.1.178 Tool(param:value) 語法；Agentjacking 攻擊揭露）
+- 更新頁面：
+  - `entities/fable-5.md`：新增 2026-06-16 時序（Sacks X 聲明、TechCrunch 反駁分析、Fable 5 消失後用戶依賴感爆發）；參考來源新增 news/2026-06-16；最後更新 2026-06-16
+  - `topics/anthropic-government-policy.md`：新增 2026-06-16 時序 4 條（週一協商啟動、Sacks vs Anthropic 版本衝突、The Atlantic 評論、資安領袖呼籲解禁）；最後更新 2026-06-16
+  - `entities/pricing.md`：新增 2026-06-16 政策記錄（Agent SDK 計費暫停、Claude Max 訴訟、AI 定價戰）；更新計費架構說明加暫停公告；最後更新 2026-06-16
+  - `entities/claude-code.md`：版本表新增 v2.1.178（Tool(param:value) 語法）；最後更新 2026-06-16
+  - `topics/anthropic-business.md`：新增 2026-06-16 時序 3 條（SpaceX 收購 Cursor、Wipro AI 中心、AI 定價戰）；最後更新 2026-06-16
+  - `topics/community-tech-discussions.md`：prepend 4 條新討論（Agentjacking、PM vibe coding 正式產品爭議、agentic 目錄結構延燒更新、AI 定價比較）；新增 Agentjacking 技術彙整條目；最後更新 2026-06-16
+  - `topics/community-tech-tools.md`：新增 5 個工具（claude_code_vs、Spotlight、Devloop、machine0、HashMeterAi）；最後更新 2026-06-16
+  - `feature-radar.md`：新增 v2.1.178 詳細條目（Tool(param:value) 語法）；全覽表新增 v2.1.178 列；最後更新 2026-06-16
+  - `topics/ai-agent-safety.md`：新增 Agentjacking 技術彙整（Sentry DSN 攻擊機制、攻擊面、防護建議）；最後更新 2026-06-16
+- 新增頁面：無（Claude Max 訴訟整合至 entities/pricing；SpaceX Cursor 收購整合至 topics/anthropic-business；Agentjacking 整合至 topics/ai-agent-safety）
+- 升格檢查（discussions → patterns）：
+  - OpenAI vs Anthropic 定價戰（第 6 天，🌊延燒）— 有更多用戶成本比較，但無可升格工作流共識，**不升格**
+  - AI Skill Atrophy（第 7 天，🌊延燒）— 今日無直接相關，**不升格**
+  - Agentic 目錄結構（第 2 天，🌊延燒更新）— 有更多討論但尚無共識步驟，**不升格**
+- feature-radar 更新：新增 v2.1.178 `Tool(param:value)` 功能條目（🔥🔥，✅ 推薦，正式發布）；Python SDK v0.109.2 / TS SDK v0.104.2 退役模型清理（純維護，無新使用者端功能，不收錄）
+- 本日新增工具：claude_code_vs（Show HN 19）、Spotlight（Show HN 8）、Devloop（Show HN 3）、machine0（Show HN 88）、HashMeterAi（Show HN 3）
+- 呈現品質審查：
+  | 頁面 | 結果 |
+  |------|------|
+  | entities/fable-5.md | ✅ 通過（2026-06-16 時序 prepend；現況段落完整）|
+  | topics/anthropic-government-policy.md | ✅ 通過（2026-06-16 時序 4 條 prepend）|
+  | entities/pricing.md | ✅ 通過（政策暫停公告置頂；2026-06-16 政策記錄新增）|
+  | entities/claude-code.md | ✅ 通過（v2.1.178 版本表新增）|
+  | topics/anthropic-business.md | ✅ 通過（2026-06-16 時序 3 條 prepend）|
+  | topics/community-tech-discussions.md | ✅ 通過（4 條新討論 prepend；Agentjacking 技術彙整新增）|
+  | topics/community-tech-tools.md | ✅ 通過（5 工具新增至表格頂端）|
+  | feature-radar.md | ✅ 通過（v2.1.178 詳細條目新增；全覽表同步更新）|
+  | topics/ai-agent-safety.md | ✅ 通過（Agentjacking 技術彙整新增置頂）|
+
+---
+
 ## 2026-06-15 Ingest | news/2026-06-15.md（77 則）
 
 - 來源日報：`news/2026-06-15.md`（77 則，6 來源；主軸：Fable 5 / Mythos 5 出口管制政治風暴深化——個性衝突說、Anthropic 赴 DC 協商；Agent SDK 計費切割正式生效；非技術人員 Claude Code 商業成果社群熱議；多款新社群工具亮相；中國 Zhipu 股價應聲暴漲）

@@ -4,7 +4,7 @@
 僅收錄官方 changelog、release note 或官方公告來源；社群工具見 [[topics/community-tech-tools]]。
 每次 ingest 後由 LLM 維護：新增功能、更新熱度、補充社群回饋。
 
-**最後更新：** 2026-06-15（今日無符合准入定義的新官方功能；Agent SDK 計費切割正式生效但屬計費政策歸 [[entities/pricing]]；Claude Corps 歸 [[topics/anthropic-business]]）
+**最後更新：** 2026-06-16（v2.1.178 新增 Tool(param:value) permission rules 語法；SDK 退役模型清理）
 
 ---
 
@@ -29,9 +29,10 @@
 
 | 功能 | 發布日期 | 熱度 | 試用價值 | 狀態 |
 |------|----------|------|----------|------|
+| **Claude Code v2.1.178**（`Tool(param:value)` permission 語法 + 巢狀 Skills） | 2026-06-15 | 🔥🔥 | ✅ 推薦 | 正式發布（`Tool(param:value)` 語法可比對工具輸入參數；`Agent(model:opus)` 可封鎖 Opus 子 Agent；Skills 在巢狀子 Agent 中正常運作）|
 | **Claude Code v2.1.175**（`enforceAvailableModels` 企業管控） | 2026-06-12 | 🔥🔥 | ✅ 推薦 | 正式發布（企業管理員可鎖定可用模型白名單並同步限制預設模型，防繞過）|
 | **Claude Code v2.1.173**（Fable 5 模型名稱修復） | 2026-06-11 | 🔥 | ✅ 推薦 | 正式發布（`[1m]` 後綴自動移除；誤報沙盒錯誤修正）|
-| **Claude Fable 5**（Mythos 架構公開版，$10/$50 per M token） | 2026-06-09 | 🔥🔥🔥🔥🔥 | ⚡ 有條件推薦 | 正式發布（6/22 前訂閱包含；之後消費制；護欄 fallback 至 Opus 4.8 < 5% session；護欄政策 6/11 部分修改：LLM 研究限制改為可見；資安研究護欄仍過激）|
+| **Claude Fable 5**（Mythos 架構公開版，$10/$50 per M token） | 2026-06-09 | 🔥🔥🔥🔥🔥 | ❌ 暫不可用 | ⚠️ 出口管制停用（2026-06-13 美國政府指令，全球停止存取；其他模型不受影響；見 [[entities/fable-5]]）|
 | Python SDK v0.109.1（`frontier_llm` refusal 類別） | 2026-06-09 | 🔥 | ✅ 推薦 | 正式發布（Fable 5 安全分類器相關 refusal API 補齊）|
 | Claude Code v2.1.170（Fable 5 支援） | 2026-06-09 | 🔥🔥 | ✅ 推薦 | 正式發布（Claude Code terminal 可切換 Fable 5）|
 | Claude Code v2.1.169 `--safe-mode` 旗標 | 2026-06-08 | 🔥🔥 | ✅ 推薦 | 正式發布（停用所有客製化設定，MCP/hooks/skills/CLAUDE.md；故障排除利器）|
@@ -74,6 +75,27 @@
 
 ## 🆕 最新功能（2026-06）
 
+### Claude Code v2.1.178（`Tool(param:value)` permission rules 語法）
+**發布：** 2026-06-15（v2.1.178） | **熱度：** 🔥🔥 | **試用價值：** ✅ 推薦 | **狀態：** 正式發布
+
+**是什麼：** 新增 `Tool(param:value)` 語法用於 permission rules，允許比對工具的輸入參數（支援 `*` 萬用字元）。例如 `Agent(model:opus)` 可封鎖使用 Opus 模型的子 Agent 啟動。Skills 現在可在巢狀子 Agent 環境中正常運作。
+
+**為何熱：** 解決多 Agent 環境中精細化權限控管的缺口——過去只能針對整個工具，現在可以針對工具的特定參數值設置允許/封鎖規則，大幅提升 Agent 安全管控粒度。
+
+**快速上手：**
+```
+# 在 settings.json 的 permissions 中使用
+# 封鎖使用 Opus 的子 Agent（避免費用過高）
+"deny": ["Agent(model:opus)"]
+
+# 只允許特定工具執行特定參數
+"allow": ["Bash(command:git*)"]
+```
+
+**注意事項：** `*` 為萬用字元，可比對任意值；此功能主要適用於有多 Agent 編排或費用控管需求的開發者。
+
+---
+
 ### Claude Code v2.1.175（`enforceAvailableModels` 企業管控）
 **發布：** 2026-06-12（v2.1.175） | **熱度：** 🔥🔥 | **試用價值：** ✅ 推薦 | **狀態：** 正式發布
 
@@ -95,21 +117,15 @@
 ---
 
 ### Claude Fable 5（Mythos 架構公開版）
-**發布：** 2026-06-09 | **熱度：** 🔥🔥🔥🔥🔥 | **試用價值：** ⚡ 有條件推薦 | **狀態：** 正式發布
+**發布：** 2026-06-09 | **熱度：** 🔥🔥🔥🔥🔥 | **試用價值：** ❌ 暫不可用 | **狀態：** ⚠️ 出口管制停用
 
-**是什麼：** Anthropic 首款向大眾開放的 Mythos 級模型。Fable 5 = Mythos 5 模型權重 + 安全分類器護欄，觸發時靜默 fallback 至 Opus 4.8（< 5% session）。定價 $10/$50 per million token，context 1M，max output 128K。6/22 前含括於訂閱方案。
+> **2026-06-13 更新：** 美國政府出口管制指令，Anthropic 於當日 5:21pm ET 對全體用戶停用 Fable 5 與 Mythos 5。其他模型（Opus 4.8、Sonnet 4.6 等）不受影響。復原時程未公告。詳見 [[entities/fable-5]] 與 [[topics/anthropic-government-policy]]。
+
+**是什麼：** Anthropic 首款向大眾開放的 Mythos 級模型。Fable 5 = Mythos 5 模型權重 + 安全分類器護欄，觸發時靜默 fallback 至 Opus 4.8（< 5% session）。定價 $10/$50 per million token，context 1M，max output 128K。
 
 **為何熱：** HN 2,448 分，近 2,000 評論。幾乎所有 benchmark SOTA，任務越長期越複雜優勢越大。首次讓開發者在一般工作流中使用 Mythos 等級推理能力。
 
-**快速上手：**
-```bash
-# Claude Code terminal 切換 Fable 5
-claude --model claude-fable-5-20260609
-
-# 或在 Claude Code 設定中選擇 Fable 5 模型
-```
-
-**注意事項：** 前沿 LLM 開發工作（訓練 pipeline、推論研究、ML 加速器設計）會觸發靜默護欄，輸出品質降低且不告知；6/22 後需消費制計費；30 天資料保留政策適用於所有平台。見 [[entities/fable-5]]、[[entities/mythos]]。
+**注意事項：** 目前無法使用。復原後請參考 [[entities/fable-5]] 確認最新狀態再切換。
 
 ---
 

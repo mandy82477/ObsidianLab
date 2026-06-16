@@ -3,7 +3,7 @@
 **狀態：** ongoing
 **領域：** 🌐 社群
 **開始日期：** 2026-04-25
-**最後更新：** 2026-06-15
+**最後更新：** 2026-06-16
 
 ---
 
@@ -64,6 +64,11 @@
 
 | 工具 | 類型 | 採用 | 首次出現 | 簡介 |
 | --- | --- | --- | --- | --- |
+| [**claude_code_vs**](https://github.com/firish/claude_code_vs) | IDE/終端 | ⏳ | 2026-06-16 | Visual Studio（非 VS Code）官方 Claude Code 整合空白，社群開發者自建；支援原生 diff 查看器（accept/reject）、自動共享 C#/C++ 編譯錯誤；Show HN score 19 |
+| [**Spotlight**](https://www.backplanes.com/) | 監控工具 | ⏳ | 2026-06-16 | 即時顯示 Claude Code 與 Codex 執行狀態，靈感來自作者遭遇 `rm -rf root`、誤部署至 prod 等意外；Show HN score 8 |
+| [**Devloop**](https://devloop.sh) | 工作流 | ⏳ | 2026-06-16 | 讓 Codex 實作、Claude Code 對抗性審查（或反過來），循環直到所有驗收標準通過；解決「同模型家族無法客觀審查自身輸出」；macOS；Show HN score 3 |
+| [**machine0**](https://machine0.io) | 整合工具 | ⏳ | 2026-06-16 | 一鍵建立、配置、快照持久化 NixOS/Ubuntu VM（CLI 操作）；對 NixOS-as-code 有一流支援；適合 Claude Code 雲端開發環境；Show HN score 88 |
+| [**HashMeterAi**](https://github.com/Hash-7777/HashMeterAi) | 費用監測 | ⏳ | 2026-06-16 | 本地優先 AI token 使用量儀表板，涵蓋 Claude Code、Codex、Kimi、Qwen CLI 等，統一監控並提供成就系統；Show HN score 3 |
 | [**The Engineer**](https://github.com/FarzamMohammadi/the-engineer) | Agent 框架 | ⏳ | 2026-06-15 | 從 GitHub Issue 到 Merged PR 全流程 agent，整合 Claude Code / OpenCode / Codex；解決 AI coding 工具缺乏「端對端軟體工程」能力的痛點；Show HN score 7 |
 | [**Canopy**](https://github.com/juliensimon/canopy) | 多 Agent | ⏳ | 2026-06-15 | macOS 平行沙盒 Claude Code session，多個 worktree 同時執行不互相干擾；Show HN（[flagged]）|
 | [**Conan**](https://www.conan.sh/) | 監控工具 | ⏳ | 2026-06-15 | macOS 原生 live HUD，即時顯示 Claude Code 的 timeline（每個 tool call）、context window 用量、token 吞吐量；$29 一次性付款；Show HN score 1 |

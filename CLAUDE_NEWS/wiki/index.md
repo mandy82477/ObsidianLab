@@ -2,7 +2,7 @@
 
 LLM 查詢此 wiki 時，**先讀這個檔案**找相關頁面，再讀具體頁面取得詳細資訊。
 
-**最後更新：** 2026-06-15（Ingest：Fable 5 出口管制政治風暴深化（個性衝突說、Anthropic 赴 DC 協商、資安領袖呼籲解禁）；Agent SDK 計費切割正式生效；SpaceX AI 合作；4 款新社群工具） | **頁面數：** 39
+**最後更新：** 2026-06-16（Ingest：Fable 5 出口管制爭議持續（Sacks vs Dario jailbreak 版本衝突、TechCrunch 反駁、白宮協商啟動）；Agent SDK 計費切割政策暫停；Claude Max 集體訴訟；SpaceX $60B 收購 Cursor；v2.1.178 Tool(param:value) 語法；Agentjacking 安全攻擊揭露；5 款新社群工具） | **頁面數：** 39
 
 ---
 
@@ -37,7 +37,7 @@ LLM 查詢此 wiki 時，**先讀這個檔案**找相關頁面，再讀具體頁
 | [[entities/dario-amodei]] | person | 👤 人物 | active | Anthropic CEO：政府監管立場、企業文化論述、Code with Claude 大會現場宣布速率政策 |
 | [[entities/chris-olah]] | person | 👤 人物 | active | Anthropic 共同創辦人、AI 可解釋性研究先驅；2026-05-26 梵蒂岡封論揭幕演講 |
 | [[entities/opencode]] | product | 🛠️ 工具/功能 | active（快速成長）| Claude Code 主要開源替代品，157K 開發者分流，OpenCode-power-pack 移植官方 11 個 skills |
-| [[entities/fable-5]] | model | 🤖 模型 | active（6/13 因美國政府出口管制指令暫停全球存取）| Claude Fable 5：首款 Mythos 級公開模型，$10/$50 per M token；6/15 後續：Anthropic 赴 DC 協商，「個性衝突說」浮現，資安領袖呼籲解禁，《經濟學人》批評 Trump 決策 capricious |
+| [[entities/fable-5]] | model | 🤖 模型 | active（6/13 因美國政府出口管制指令暫停全球存取）| Claude Fable 5：首款 Mythos 級公開模型，$10/$50 per M token；6/16 最新：Sacks 聲稱 Dario 拒絕修復 jailbreak，Anthropic 稱「並不嚴重」；TechCrunch 指出管制本質是出口框架問題而非 jailbreak；白宮週一協商已啟動 |
 
 ---
 

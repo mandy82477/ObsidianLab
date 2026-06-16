@@ -3,7 +3,7 @@
 **狀態：** ongoing
 **領域：** 💼 商業
 **開始日期：** 2026-05-26
-**最後更新：** 2026-06-12
+**最後更新：** 2026-06-15
 
 ## 摘要
 
@@ -31,6 +31,7 @@
 | Amazon | 頂尖 | Claude Code | ✅ | 2026-05-05 | 雙軌並行，不押注單一供應商 | 2026-05-05 |
 | Amazon | 頂尖 | OpenAI Codex | ✅ | 2026-05-05 | 與 Claude Code 同時部署 | 2026-05-05 |
 | Uber | 頂尖 | Claude Code | ⚠️ | 2026-05-01 | 4 個月燒完全年 AI 預算，CTO 承認成本失控；COO 5/27 確認帶來 25% 生產力提升 | 2026-05-27 |
+| Uber | 頂尖 | Cursor | ⚠️ | 2026-05-01 | 與 Claude Code 並行使用；四個月合計燒完整年 AI 預算，為成本失控具名案例之一 | 2026-06-02 |
 | Fujitsu | 頂尖 | Claude API | ✅ | 2026-05-26 | 富士通與 Anthropic 簽署全球戰略合作協議，強化日本市場企業 AI 部署 | 2026-05-27 |
 | Travelport | 大型 | Claude API | ✅ | 2026-05-27 | 與 Cognizant 三方合作，建構旅遊 AI 對話訂票系統 | 2026-05-27 |
 | Nimble Gravity | 中型 | Claude API | ✅ | 2026-05-27 | 成立 Applied Anthropic Practice，專攻銀行、保險、金融服務業 AI 諮詢 | 2026-05-27 |
@@ -53,6 +54,7 @@
 | Claude API | 13（Apple、KPMG、iCapital、哈佛、Fujitsu、Travelport、Nimble Gravity、ZoomInfo、LG Group、AppFolio、Salesforce Claude API、TCS、DXC Technology） | 🟢 快速擴張 | — |
 | GitHub Copilot | 1（Microsoft） | 🟢 Microsoft 背書 | 生態鎖定 |
 | OpenAI Codex | 2（Amazon、UiPath） | 🟢 快速成長 | — |
+| Cursor | 1（Uber） | ⚠️ 新創份額下滑 | 成本管控困難；企業級功能不如 Claude Code |
 
 ---
 

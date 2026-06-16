@@ -3,7 +3,7 @@
 **狀態：** ongoing
 **領域：** 🌐 社群
 **開始日期：** 2026-04-25
-**最後更新：** 2026-06-15（Fable 5 政治風暴持續：Claude 生物學護欄矛盾首次成熱議；AI 代碼審查困境質化討論；agentic 目錄結構最佳實踐；非技術人員 Claude Code 商業成果；LLM 工具說明敏感性實驗）
+**最後更新：** 2026-06-16（Agentjacking 攻擊揭露；Devloop 對抗性代碼/審查循環；PM vibe coding 進入正式產品爭議；agentic 目錄結構繼續延燒；AI 定價戰用戶成本比較）
 
 ---
 
@@ -21,6 +21,10 @@
 
 | 討論主題 | 首見 | 熱度 | 模式 | 核心論點 | 衍生 |
 |---------|------|------|------|---------|------|
+| Agentjacking：Sentry 假錯誤報告劫持 Claude Code 執行惡意代碼 | 2026-06-16 | 🔥🔥🔥 | ☄️閃現 | Tenet Security 研究員揭露：攻擊者向 Sentry 公開 DSN 端點傳送偽造錯誤報告，在「Resolution」欄位藏入惡意指令；開發者請 Claude Code 修復錯誤時，Agent 以開發者自身權限執行攻擊者代碼，無需任何憑證或惡意軟體（Next Web）| — |
+| PM vibe coding 進入正式產品：工程師如何應對？ | 2026-06-16 | 🔥🔥 | ☄️閃現 | Series A 新創 PM 開始用 Claude Code 向正式產品提 PR，無工程背景但有一年 vibe coding 經驗；HN 討論：沙盒可以，但整合真實系統的複雜度才是真正挑戰；多數建議需要工程師做 code review 把關（HN score 5）| — |
+| Agentic 專案目錄結構：/specs 人類信號隔離 | 2026-06-15 | 🔥🔥 | 🌊延燒 | 工程師提出：以 `/specs`（純人類信號）為核心的 agentic 目錄組織，嚴格管控 context window 輸入品質；「AI 生成內容再餵回 AI 造成 entropy 噪音」是大型 agentic 系統設計的新課題（HN score 3/7）| — |
+| AI 定價戰用戶實證：Claude vs DeepSeek 成本比較 | 2026-06-16 | 🔥🔥 | ☄️閃現 | WSJ 評論區出現用戶一手比較：工作用 Claude 月花 $500-1000+，個人用 $20 Deepseek 重度使用超過 2 週，用途差異「可忽略」；引發對高端 LLM 差異化價值的討論（HN score 22）| — |
 | Anthropic 安全論述的副作用：Claude 生物學護欄邏輯矛盾 | 2026-06-15 | 🔥🔥 | ☄️閃現 | 生物研究者抱怨：基本免疫學問題被過度攔截，但用 Claude Code 串接 RFdiffusion、AlphaFold 設計蛋白質卻完全不被限制；指出「文字 prompt 危險，但實際工具鏈執行無限制」的護欄設計根本矛盾（HN score 8）| — |
 | LLM 工具說明敏感性實驗：一句話讓 Gemini 準確度崩潰 | 2026-06-15 | 🔥🔥 | ☄️閃現 | 跨 6 個模型實驗：修改 tool description 中一個句子，Gemini 跳過必要計算器（93%→20%），GPT-4o-mini 無感；揭示不同模型對 tool 說明語義的敏感度差異極大，多模型 agent pipeline 設計需考量此變數（Reddit r/ClaudeAI）| — |
 | Agentic 專案目錄結構：/specs 人類信號隔離 | 2026-06-15 | 🔥 | ☄️閃現 | 工程師提出：以 `/specs`（純人類信號）為核心的 agentic 目錄組織，嚴格管控 context window 輸入品質；「AI 生成內容再餵回 AI 造成 entropy 噪音」是大型 agentic 系統設計的新課題（HN score 3）| — |
@@ -125,6 +129,14 @@
 ---
 
 ## 技術彙整
+
+### Agentjacking：Sentry DSN 假錯誤劫持 Claude Code（2026-06-16）
+
+- **來源：** Agentjacking: Fake error reports hijack Claude Code and Cursor into running code（The Next Web，Tenet Security 研究）
+- **核心論點：** 攻擊者利用 Sentry 公開 DSN 端點（無需任何憑證），向其 POST 偽造錯誤報告，在「Resolution」欄位藏入惡意指令；開發者請 Claude Code 修復錯誤時，Agent 以開發者自身權限執行攻擊者代碼
+- **關鍵回響：**
+  - 📝 支持：攻擊面極廣，Sentry DSN 普遍公開在前端 JS 中，任何人都可利用
+  - 🧪 跟進建議：在 MCP 伺服器層加入輸入驗證；不讓 Agent 讀取未信任的錯誤報告內容
 
 ### Anthropic 護欄政策撤回：「靜默護欄是錯誤取捨」（2026-06-11）
 

@@ -3,7 +3,7 @@
 **狀態：** monitoring
 **領域：** 🏛️ 政策/安全
 **開始日期：** 2026-05-01
-**最後更新：** 2026-06-15
+**最後更新：** 2026-06-16
 
 ---
 
@@ -63,6 +63,12 @@
 - [AP News：Pope calls for robust regulation of AI](https://apnews.com/article/pope-ai-tech-trump-vatican-anthropic-d92d0108730d146baa46da041b8523da)
 
 ## 時序
+
+### 2026-06-16
+- **[協商進展] 週一協商已啟動**：CNBC 報導 Anthropic 高層本週一前往華盛頓與 Trump 政府官員進行緊急會談，試圖解決 Fable 5/Mythos 5 出口管制爭議；雙方就 jailbreak 是否嚴重（Anthropic 稱「不嚴重」，Sacks 稱「應修復」）存在分歧（CNBC）
+- **[媒體揭露] Sacks 版本 vs TechCrunch 分析**：David Sacks（White House AI czar）在 X 上聲稱政府提前警告 Fable 5 被 jailbreak 且 Dario 拒絕修復；TechCrunch 深度分析指出出口管制從一開始就不是 jailbreak 問題，而是更廣泛的出口管制框架與「外籍人士」定義問題（TechCrunch, Tom's Hardware）
+- **[媒體評論] The Atlantic：White House 對 Anthropic 的戰爭持續升溫**：《The Atlantic》評論此爭端的長期政治化走向，指出 Trump 政府的行動可能導致美國在 AI 競賽中失去優勢；多家主流媒體（Vox、LA Times、NBC News、Politico）同步深度報導事件背景與政策影響（The Atlantic）
+- **[社群反應] 網路安全領袖持續呼籲解禁**：AP News 報導多名資安高層公開呼籲解除對 Anthropic 模型的出口管制限制，強調此限制損害美國本身的資安能力
 
 ### 2026-06-15
 - **[協商進展] Anthropic 赴華府**：WSJ 報導 Anthropic 已派遣多名員工赴 DC 與白宮官員緊急協商，試圖解除出口管制指令；目前尚無具體復原時程公告（WSJ）

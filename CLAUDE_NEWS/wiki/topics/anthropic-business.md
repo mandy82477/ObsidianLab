@@ -3,7 +3,7 @@
 **狀態：** ongoing
 **領域：** 💼 商業
 **開始日期：** 2026-05-28
-**最後更新：** 2026-06-15（SpaceX AI 合作報導；FTX 前 Anthropic 股份估值 $75B；B2B SaaS 定價競爭壓力分析；Claude Corps $150M 國際媒體後續報導）
+**最後更新：** 2026-06-16（SpaceX 以 $60B 收購 Cursor；Wipro 班加羅爾 Claude AI 中心；AI 定價戰持續升溫）
 
 ---
 
@@ -110,6 +110,11 @@ Simon Willison（知名開發者博主）發表文章，認為 Anthropic 與 Ope
 - [[news/2026-05-13]]（The Information：定價強勢期）
 
 ## 時序
+
+### 2026-06-16
+- **[SpaceX 以 $60B 收購 Cursor]** 多家媒體（9to5Mac、WSLS、Google News 彙整）報導 SpaceX 以 600 億美元收購 AI 編碼工具 Cursor，進軍 AI 開發工具市場，與 Claude Code 和 OpenAI Codex 直接競爭；Cursor 此前一直與 Anthropic 有深度整合關係。此案若屬實將重塑 AI 編碼工具市場格局
+- **[Wipro 班加羅爾 Claude AI 中心]** Reuters 報導印度 IT 巨頭 Wipro 在班加羅爾設立 Anthropic Claude 專屬 AI 中心，顯示 Anthropic 深化亞洲企業市場佈局
+- **[AI 定價戰持續壓迫 OpenAI 與 Anthropic]** WSJ 報導 AI 定價戰加劇，部分開發者比較後轉向 $20/月 Deepseek（用量計費），稱與 $1000+/月 Claude 企業方案在一般任務上的差異「可忽略」；顯示頂端定價的競爭壓力正在加大
 
 ### 2026-06-15
 - **[SpaceX AI Megadeal 重塑競爭版圖]** Yahoo Finance 報導 SpaceX 的 AI 大型合作交易（涉及 Google 與 Anthropic），可能重塑 AI 基礎設施供應商的生態版圖；SpaceX 在此前已是 Anthropic 算力合作夥伴（YahooFinance）
