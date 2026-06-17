@@ -3,7 +3,7 @@
 **狀態：** ongoing
 **領域：** 🌐 社群
 **開始日期：** 2026-04-25
-**最後更新：** 2026-06-16
+**最後更新：** 2026-06-17
 
 ---
 
@@ -23,7 +23,7 @@
 
 | 痛點主題 | 代表工具 | 本質問題 | 狀態 | 近期工具 |
 |---------|---------|---------|------|---------|
-| Token 成本不透明 | Tokenyst、CostHawk、TokenShield、PrismoDev、engramx、agent-estimate、AI Agent Token Cost Calculator、Claude Usage Tray、token-xray、agentgraphed、context-analyzer、permafrost、Claumon、Claustrophobic | 自主 agent 讓帳單不可預測；多帳號切換工具 Claustrophobic 新增；Fable 5 $10/$50 定價與 6/22 訂閱截止加劇費用焦慮；工具爆發 | 🔥 持續升溫 | 2026-06-12 |
+| Token 成本不透明 | Tokenyst、CostHawk、TokenShield、PrismoDev、engramx、agent-estimate、AI Agent Token Cost Calculator、Claude Usage Tray、token-xray、agentgraphed、context-analyzer、permafrost、Claumon、Claustrophobic、AgentPace | 自主 agent 讓帳單不可預測；AgentPace 新增「燃燒速率趨勢」可視化；Fable 5 $10/$50 定價與 6/22 訂閱截止加劇費用焦慮；工具爆發 | 🔥 持續升溫 | 2026-06-17 |
 | 跨 session 記憶歸零 | ltm、Memex、draft CLI、LockedIn、VIR、CoreMem、claude-handoff-revive、timeglass.ai | 無官方標準，每個新 session 從零開始 | 🔥 持續升溫 | 2026-05-27 |
 | 多 agent 協調混亂 | agent-baton、cdesktop、AnyFrame、agent-teamflow、Runner、Runtime、Fleet、AWO、claude-workflow-composer | 官方 Managed Agents 已部分解決，但社群仍補缺口；AWO 提供 git worktree 隔離方案 | 🔥 持續升溫 | 2026-05-27 |
 | CLAUDE.md 規則失效 | Writ、Caliber、Patina | 規則被忽略、過多規則耗 token、跨工具無標準 | 🌙 冷卻觀望 | 2026-05-12 |
@@ -64,6 +64,12 @@
 
 | 工具 | 類型 | 採用 | 首次出現 | 簡介 |
 | --- | --- | --- | --- | --- |
+| [**AgentPace**](https://festudio.net/agentpace/) | 費用監測 | ⏳ | 2026-06-17 | macOS 選單列 app，視覺化 Claude Code 和 Codex 使用趨勢與燃燒速率；幫助規劃剩餘配額，避免提前耗盡；Show HN |
+| [**Mira**](https://github.com/miracodeai/mira) | 工作流 | ⏳ | 2026-06-17 | 開源自架 AI 程式碼審查器；BYOK（Anthropic / OpenAI / 本地 LLM）；平均審查 77 秒（vs Greptile 5 分鐘）；代碼不離開自有基礎設施；Show HN |
+| [**cc-reflection**](https://provi.me/cc-reflection) | 工作流 | ⏳ | 2026-06-17 | 利用 Claude Code EDITOR hook（Ctrl-G）插入 fzf 控制面板，讓 hook 不只是「編輯 prompt」，而是可執行反思種子展開、agent 強化 prompt 等操作的控制中心；HN score 3 |
+| [**Offload**](https://github.com/ToxicPine/offloads) | 多 Agent | ⏳ | 2026-06-17 | 跨裝置任務轉移；`/offload` 前綴讓任務在 Mac Mini / VPS 上執行；含 env key 安全傳輸、gh 登入確認、dev server 安全穿透；支援 OpenCode + OpenRouter；HN score 3 |
+| [**Kevin**](https://github.com/hvardhan878/kevin) | Skills | ⏳ | 2026-06-17 | 模仿《辦公室》Kevin Malone 風格的 Claude Code 外掛，壓縮輸出省 90% 成本、少 93% 程式碼行；`/plugin install kevin@kevin`；HN score 3 |
+| [**AptSelect**](https://aptselect.com) | 整合工具 | ⏳ | 2026-06-17 | 本地優先 LLM 並行測試平台；一次 prompt 同時送 OpenAI、Anthropic、Mistral、Gemini；批次 CSV 評估；手動評分；API key 以 OS keyring 加密；本地 SQLite 儲存；HN score 2 |
 | [**claude_code_vs**](https://github.com/firish/claude_code_vs) | IDE/終端 | ⏳ | 2026-06-16 | Visual Studio（非 VS Code）官方 Claude Code 整合空白，社群開發者自建；支援原生 diff 查看器（accept/reject）、自動共享 C#/C++ 編譯錯誤；Show HN score 19 |
 | [**Spotlight**](https://www.backplanes.com/) | 監控工具 | ⏳ | 2026-06-16 | 即時顯示 Claude Code 與 Codex 執行狀態，靈感來自作者遭遇 `rm -rf root`、誤部署至 prod 等意外；Show HN score 8 |
 | [**Devloop**](https://devloop.sh) | 工作流 | ⏳ | 2026-06-16 | 讓 Codex 實作、Claude Code 對抗性審查（或反過來），循環直到所有驗收標準通過；解決「同模型家族無法客觀審查自身輸出」；macOS；Show HN score 3 |

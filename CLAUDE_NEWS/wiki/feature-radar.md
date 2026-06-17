@@ -4,7 +4,7 @@
 僅收錄官方 changelog、release note 或官方公告來源；社群工具見 [[topics/community-tech-tools]]。
 每次 ingest 後由 LLM 維護：新增功能、更新熱度、補充社群回饋。
 
-**最後更新：** 2026-06-16（v2.1.178 新增 Tool(param:value) permission rules 語法；SDK 退役模型清理）
+**最後更新：** 2026-06-17（v2.1.179 串流修復；全覽表新增）
 
 ---
 
@@ -29,6 +29,7 @@
 
 | 功能 | 發布日期 | 熱度 | 試用價值 | 狀態 |
 |------|----------|------|----------|------|
+| **Claude Code v2.1.179**（串流中斷修復 + spinner 修復 + 滑鼠滾輪修復） | 2026-06-16 | 🔥 | ✅ 推薦 | 正式發布（partial response 保留而非丟失；spinner 不再卡住；滑鼠滾輪正常運作）|
 | **Claude Code v2.1.178**（`Tool(param:value)` permission 語法 + 巢狀 Skills） | 2026-06-15 | 🔥🔥 | ✅ 推薦 | 正式發布（`Tool(param:value)` 語法可比對工具輸入參數；`Agent(model:opus)` 可封鎖 Opus 子 Agent；Skills 在巢狀子 Agent 中正常運作）|
 | **Claude Code v2.1.175**（`enforceAvailableModels` 企業管控） | 2026-06-12 | 🔥🔥 | ✅ 推薦 | 正式發布（企業管理員可鎖定可用模型白名單並同步限制預設模型，防繞過）|
 | **Claude Code v2.1.173**（Fable 5 模型名稱修復） | 2026-06-11 | 🔥 | ✅ 推薦 | 正式發布（`[1m]` 後綴自動移除；誤報沙盒錯誤修正）|
@@ -74,6 +75,15 @@
 ---
 
 ## 🆕 最新功能（2026-06）
+
+### Claude Code v2.1.179（串流中斷修復）
+**發布：** 2026-06-16（v2.1.179） | **熱度：** 🔥 | **試用價值：** ✅ 推薦 | **狀態：** 正式發布
+
+**是什麼：** 三項穩定性修復：① mid-stream connection 中斷時部分回應現在被保留（而非顯示原始錯誤）；② spinner 不再卡在「running tool」；③ 滑鼠滾輪捲動修復。
+
+**注意事項：** 純 bug fix，無新使用者端功能。
+
+---
 
 ### Claude Code v2.1.178（`Tool(param:value)` permission rules 語法）
 **發布：** 2026-06-15（v2.1.178） | **熱度：** 🔥🔥 | **試用價值：** ✅ 推薦 | **狀態：** 正式發布

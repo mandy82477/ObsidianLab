@@ -3,7 +3,7 @@
 **狀態：** ongoing
 **領域：** 💼 商業
 **開始日期：** 2026-05-28
-**最後更新：** 2026-06-16（SpaceX 以 $60B 收購 Cursor；Wipro 班加羅爾 Claude AI 中心；AI 定價戰持續升溫）
+**最後更新：** 2026-06-17（SpaceX 正式完成 Cursor 收購；Anthropic 市佔首超 OpenAI 具體數據；Wipro Applied AI 卓越中心正式揭牌）
 
 ---
 
@@ -110,6 +110,11 @@ Simon Willison（知名開發者博主）發表文章，認為 Anthropic 與 Ope
 - [[news/2026-05-13]]（The Information：定價強勢期）
 
 ## 時序
+
+### 2026-06-17
+- **[SpaceX 正式完成 Cursor 收購]** 9to5Mac 更新報導：SpaceX 於 IPO 後一週正式完成對 Cursor 的收購（$10B 初步協議、$60B 最終規模）。Cursor 是 Claude Code 和 OpenAI Codex 的直接競爭者；收購整合 SpaceX / xAI 生態（9to5Mac）
+- **[Anthropic 企業市佔首超 OpenAI 細節]** TechCrunch 報導：Ramp AI Index 顯示 Anthropic 於 5 月企業支出市佔首度超越 OpenAI，與出口管制爭議同步發生，成為諷刺性對比；美國政府打壓可能反而在國際市場帶來同情紅利（TechCrunch）
+- **[Wipro Applied AI 卓越中心正式揭牌]** Wipro 宣布成立專注於 Claude 模型的 Applied AI Center of Excellence，展示頂級 IT 服務商對 Anthropic 持續的企業合作意願（Wipro 官方、Google News）
 
 ### 2026-06-16
 - **[SpaceX 以 $60B 收購 Cursor]** 多家媒體（9to5Mac、WSLS、Google News 彙整）報導 SpaceX 以 600 億美元收購 AI 編碼工具 Cursor，進軍 AI 開發工具市場，與 Claude Code 和 OpenAI Codex 直接競爭；Cursor 此前一直與 Anthropic 有深度整合關係。此案若屬實將重塑 AI 編碼工具市場格局

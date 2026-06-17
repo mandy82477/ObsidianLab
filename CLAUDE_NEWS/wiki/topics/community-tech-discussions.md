@@ -3,7 +3,7 @@
 **狀態：** ongoing
 **領域：** 🌐 社群
 **開始日期：** 2026-04-25
-**最後更新：** 2026-06-16（Agentjacking 攻擊揭露；Devloop 對抗性代碼/審查循環；PM vibe coding 進入正式產品爭議；agentic 目錄結構繼續延燒；AI 定價戰用戶成本比較）
+**最後更新：** 2026-06-17（AI agent 長 session 退化量測；CLAUDE.md token 成本意識；AgentPace 使用量可視化；cc-reflection EDITOR hook 框架；Fable 5 vs Sonnet 5 的用途選擇討論）
 
 ---
 
@@ -21,6 +21,9 @@
 
 | 討論主題 | 首見 | 熱度 | 模式 | 核心論點 | 衍生 |
 |---------|------|------|------|---------|------|
+| AI agent 長 session 退化量測：先測 context 再怪 MCP | 2026-06-17 | 🔥🔥 | ☄️閃現 | dev.to 開發者記錄 AI 在長 session 中途「變笨」的現象：多 MCP 配置下的退化根因不是工具問題，而是 context window 漸滿後早期約束被稀釋；提出「context 量測優先、再排查工具」的診斷順序（dev.to / #claudecode）| — |
+| CLAUDE.md 是每次 prompt 的固定租金 | 2026-06-17 | 🔥🔥 | ☄️閃現 | dev.to 文章以「租金」比喻 CLAUDE.md：每一條指令在每次訊息都消耗 token，無論是否被使用；作者建議用最小化原則設計 CLAUDE.md，在效果與成本間取平衡（dev.to / #claudecode）| — |
+| Fable 5 下線後 Sonnet 5 可能才是日常主力 | 2026-06-17 | 🔥 | ☄️閃現 | Reddit 討論：Fable 5 對複雜 Claude Code 任務有明顯優勢，但日常工作 Sonnet 5（預期中的次旗艦）可能性價比更高；用戶對下一個可用強力模型方向的討論（Reddit r/ClaudeAI）| — |
 | Agentjacking：Sentry 假錯誤報告劫持 Claude Code 執行惡意代碼 | 2026-06-16 | 🔥🔥🔥 | ☄️閃現 | Tenet Security 研究員揭露：攻擊者向 Sentry 公開 DSN 端點傳送偽造錯誤報告，在「Resolution」欄位藏入惡意指令；開發者請 Claude Code 修復錯誤時，Agent 以開發者自身權限執行攻擊者代碼，無需任何憑證或惡意軟體（Next Web）| — |
 | PM vibe coding 進入正式產品：工程師如何應對？ | 2026-06-16 | 🔥🔥 | ☄️閃現 | Series A 新創 PM 開始用 Claude Code 向正式產品提 PR，無工程背景但有一年 vibe coding 經驗；HN 討論：沙盒可以，但整合真實系統的複雜度才是真正挑戰；多數建議需要工程師做 code review 把關（HN score 5）| — |
 | Agentic 專案目錄結構：/specs 人類信號隔離 | 2026-06-15 | 🔥🔥 | 🌊延燒 | 工程師提出：以 `/specs`（純人類信號）為核心的 agentic 目錄組織，嚴格管控 context window 輸入品質；「AI 生成內容再餵回 AI 造成 entropy 噪音」是大型 agentic 系統設計的新課題（HN score 3/7）| — |

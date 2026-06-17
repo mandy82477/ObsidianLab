@@ -3,7 +3,7 @@
 **狀態：** monitoring
 **領域：** 🏛️ 政策/安全
 **開始日期：** 2026-05-01
-**最後更新：** 2026-06-16
+**最後更新：** 2026-06-17
 
 ---
 
@@ -63,6 +63,12 @@
 - [AP News：Pope calls for robust regulation of AI](https://apnews.com/article/pope-ai-tech-trump-vatican-anthropic-d92d0108730d146baa46da041b8523da)
 
 ## 時序
+
+### 2026-06-17
+- **[談判破裂] G7 無豁免，出口管制持續**：Wired 報導週一 Commerce 部工作組會談結束，出口管制未解除。政府堅持 Fable 5 護欄可被繞過存取 Mythos 的攻擊性能力；Anthropic 否認。NY Post 獨家：Trump 政府明確拒絕 G7 盟友請求豁免（英國首相 Starmer 的 carve-out 要求遭拒），理由是「即便是 G7 盟友，核准任何豁免也將等於開先例」（NY Post、Wired）
+- **[Pentagon] DoD 將三分之二 AI 工作量移出 Anthropic**：CryptoBriefing 報導，五角大廈已將至少三分之二的 AI 用量從 Anthropic 移向競爭對手，源於雙方對「Claude 在軍事場景可接受邊界」的長期分歧，是政府市場最重大的供應商轉移案例（CryptoBriefing）
+- **[媒體揭露] Lutnick 致函全文曝光**：Bloomberg 發布商務部長 Lutnick 的完整致函，揭示政府對 Fable 5 安全疑慮的具體主張（Bloomberg）
+- **[AI 治理] G7 峰會 CEO 出席**：OpenAI、Anthropic、Google 執行長出席 G7 峰會 AI 議題，但出口管制爭議使峰會氛圍複雜；歐洲憂心 Trump「AI kill switch」成真（CNBC、Euronews）
 
 ### 2026-06-16
 - **[協商進展] 週一協商已啟動**：CNBC 報導 Anthropic 高層本週一前往華盛頓與 Trump 政府官員進行緊急會談，試圖解決 Fable 5/Mythos 5 出口管制爭議；雙方就 jailbreak 是否嚴重（Anthropic 稱「不嚴重」，Sacks 稱「應修復」）存在分歧（CNBC）

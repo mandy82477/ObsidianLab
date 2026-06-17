@@ -3,7 +3,7 @@
 **類型：** policy
 **狀態：** active（持續調整中）
 **領域：** 💼 商業
-**最後更新：** 2026-06-16（Agent SDK 計費切割政策暫停；Claude Max 集體訴訟；AI 價格戰壓力分析）
+**最後更新：** 2026-06-17（Agent SDK 計費暫停後 Ars Technica 深度報導；訂閱配額重新確認維持現狀）
 
 ---
 
@@ -79,6 +79,11 @@ Anthropic 將使用場景切分為**兩條獨立計費軌道**：
 ---
 
 ## 重要政策變動紀錄
+
+### 2026-06-17：Ars Technica 深度報導計費暫停始末
+
+- **Ars Technica 詳細報導**：完整梳理 5/13 計費切割公告至 6/16 緊急喊停的事件全貌——背景是重度 Agent SDK 使用者與第三方 app 開發者（Zed、Conductor、T3 Code 等）的強烈反彈；官方 `claude -p` 使用者亦受影響；Ars Technica 指出此決策對依賴 Agent SDK 的第三方 app 開發者商業模式衝擊最大（Ars Technica 2026-06-16）
+- **政策現狀**：Agent SDK、`claude -p`、第三方 app 繼續使用訂閱配額，無需額外信用池；週配額過渡性提高 50%（至 7 月 13 日）仍持續
 
 ### 2026-06-16：Agent SDK 計費政策暫停 + Claude Max 集體訴訟
 

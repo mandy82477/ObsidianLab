@@ -3,6 +3,39 @@
 Append-only 紀錄。每次 ingest、query 或 lint 都在此追加一條。
 格式：`## [YYYY-MM-DD] 類型 | 說明`
 
+## 2026-06-17 Ingest | news/2026-06-17.md（81 則）
+
+- 來源日報：`news/2026-06-17.md`（81 則，6 來源；主軸：Fable 5 / Mythos 出口管制談判破裂（G7 無豁免、Commerce 部工作組無結果；Wired / NY Post / Euronews）；Agent SDK 計費暫停 Ars Technica 深度報導；Pentagon 三分之二 AI 工作量移出 Anthropic；SpaceX 正式完成 Cursor 收購；Claude Code v2.1.179 串流修復；社群工具湧現（AgentPace / Mira / Offload / cc-reflection / Kevin））
+- 更新頁面：
+  - `entities/fable-5.md`：新增 2026-06-17 時序（G7 無豁免、談判再度破裂、Guardian 評論、TechCrunch 銷售諷刺分析）；參考來源新增 news/2026-06-17；最後更新 2026-06-17
+  - `topics/anthropic-government-policy.md`：新增 2026-06-17 時序 4 條（談判破裂、G7 無豁免、Pentagon 轉移工作量、Lutnick 致函全文曝光）；最後更新 2026-06-17
+  - `entities/pricing.md`：新增 2026-06-17 政策記錄（Ars Technica 計費暫停深度報導）；最後更新 2026-06-17
+  - `entities/claude-code.md`：版本表新增 v2.1.179（串流修復、spinner 修復、滑鼠滾輪修復）；最後更新 2026-06-17
+  - `topics/anthropic-business.md`：新增 2026-06-17 時序 3 條（SpaceX 正式完成 Cursor 收購、Anthropic 企業市佔超 OpenAI 細節、Wipro Applied AI 卓越中心揭牌）；最後更新 2026-06-17
+  - `topics/community-tech-discussions.md`：prepend 3 條新討論（AI agent 長 session 退化量測、CLAUDE.md 固定租金、Fable 5 下線後 Sonnet 5 日常主力討論）；最後更新 2026-06-17
+  - `topics/community-tech-tools.md`：新增 6 個工具（AgentPace、Mira、cc-reflection、Offload、Kevin、AptSelect）；痛點洞察表格更新 Token 成本不透明欄；最後更新 2026-06-17
+  - `feature-radar.md`：新增 v2.1.179 條目；全覽表新增 v2.1.179 列；最後更新 2026-06-17
+- 新增頁面：無（Fable 5 出口管制整合至既有頁面；SpaceX Cursor 整合至 topics/anthropic-business）
+- 升格檢查（discussions → patterns）：
+  - Agentic 專案目錄結構（第 3 天，🌊延燒）— 今日無新直接討論，尚無多人複現共識，**不升格**
+  - AI Skill Atrophy（第 8 天，🌊延燒）— 今日無直接相關，**不升格**
+  - OpenAI vs Anthropic 定價戰（第 7 天，🌊延燒）— 有新的 Anthropic 超越 OpenAI 市佔數據，但核心論述未收斂為可執行步驟，**不升格**
+- feature-radar 更新：新增 v2.1.179 串流修復條目（🔥，✅ 推薦，純 bug fix）
+- 本日新增工具：AgentPace（Show HN）、Mira（Show HN）、cc-reflection（HN score 3）、Offload（HN score 3）、Kevin（HN score 3）、AptSelect（HN score 2）
+- 呈現品質審查：
+  | 頁面 | 結果 |
+  |------|------|
+  | entities/fable-5.md | ✅ 通過（2026-06-17 時序 prepend；現況段落完整） |
+  | topics/anthropic-government-policy.md | ✅ 通過（2026-06-17 時序 4 條 prepend） |
+  | entities/pricing.md | ✅ 通過（2026-06-17 政策記錄新增） |
+  | entities/claude-code.md | ✅ 通過（v2.1.179 版本表新增） |
+  | topics/anthropic-business.md | ✅ 通過（2026-06-17 時序 3 條 prepend） |
+  | topics/community-tech-discussions.md | ✅ 通過（3 條新討論 prepend） |
+  | topics/community-tech-tools.md | ✅ 通過（6 工具新增至表格頂端） |
+  | feature-radar.md | ✅ 通過（v2.1.179 條目新增；全覽表同步更新） |
+
+---
+
 ## 2026-06-16 Ingest | news/2026-06-16.md（84 則）
 
 - 來源日報：`news/2026-06-16.md`（84 則，6 來源；主軸：Fable 5/Mythos 5 出口管制爭議持續（David Sacks vs Anthropic jailbreak 版本衝突；Dario 被控拒絕修復；TechCrunch 反駁管制與 jailbreak 無關）；Agent SDK 計費切割政策暫停；Claude Max 集體訴訟；SpaceX $60B 收購 Cursor；v2.1.178 Tool(param:value) 語法；Agentjacking 攻擊揭露）
