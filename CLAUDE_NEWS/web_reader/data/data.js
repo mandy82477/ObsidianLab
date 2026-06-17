@@ -294,13 +294,13 @@ window.WIKI_DATA = {
       "pageType": "topic",
       "name": "Anthropic 政府與軍事政策",
       "entityType": "",
-      "status": "monitoring",
+      "status": "ongoing",
       "domain": "🏛️ 政策/安全",
-      "pill": "warn",
+      "pill": "active",
       "firstSeen": "",
       "startDate": "2026-05-01",
-      "lastUpdated": "2026-06-17",
-      "summary": "2026-05-01，Anthropic 因堅持在軍事用途中納入安全護欄，被排除在美國國防部與 7 家 AI 公司的機密網路部署協議之外。此事件標誌著 Anthropic 的安全優先立場首次與聯邦政府大規模部署需求發生直接衝突，並引發白宮重啟談判。 ---"
+      "lastUpdated": "2026-06-18",
+      "summary": "Anthropic 與美國政府的衝突從 2026 年五月起持續升溫，至今仍未解決。表面上每次摩擦的導火線不同——軍事合約談不攏、Fable 5 護欄爭議、出口管制指令——但根源始終是同一個矛盾：**Anthropic 相信越強的模型越需要護欄；美國政府相信越強的模型越需要無限制存取。** 截至 2026-06-18，F…"
     },
     {
       "id": "code-quality-decline",

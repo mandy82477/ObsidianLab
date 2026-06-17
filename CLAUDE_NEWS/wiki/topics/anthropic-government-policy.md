@@ -1,9 +1,55 @@
 # Anthropic 政府與軍事政策
 
-**狀態：** monitoring
+**狀態：** ongoing
 **領域：** 🏛️ 政策/安全
 **開始日期：** 2026-05-01
-**最後更新：** 2026-06-17
+**最後更新：** 2026-06-18
+
+---
+
+## 摘要
+
+Anthropic 與美國政府的衝突從 2026 年五月起持續升溫，至今仍未解決。表面上每次摩擦的導火線不同——軍事合約談不攏、Fable 5 護欄爭議、出口管制指令——但根源始終是同一個矛盾：**Anthropic 相信越強的模型越需要護欄；美國政府相信越強的模型越需要無限制存取。**
+
+截至 2026-06-18，Fable 5 與 Mythos 5 仍處於全球停用狀態，協商無進展，G7 盟友豁免請求全數遭拒。
+
+---
+
+## 根本矛盾
+
+Anthropic 的整個品牌建立在一個論述上：「我們建造了史上最危險的 AI，所以只有我們有資格決定誰能用它。」這個論述在商業市場是差異化優勢，但在政府關係上是雙面刃——
+
+> 當你成功說服政府相信你的模型很危險，政府就有了干預的正當性。
+
+美國政府的邏輯則相反：最強的工具應該由國家掌控，而不是由一家私人公司的「安全護欄」決定誰能存取。出口管制的指令援引的正是 Anthropic 自己的安全論述。
+
+這不是溝通問題，也不是一兩次談判可以解決的政策分歧——是兩個組織對「誰有資格管理最強 AI 能力」這個問題的根本性對撞。
+
+---
+
+## 三個戰場
+
+### 🪖 軍事合約：護欄 vs 無限制存取
+
+五角大廈想要一個能用在戰場場景的 AI 工具，但 Claude 的安全護欄在這些場景中限制過多。2026-05-01，DoD 與 SpaceX、OpenAI、Google 等 7 家公司簽署機密網路部署協議，Anthropic 被排除。
+
+這不是商業談判失敗，而是 Anthropic 的核心產品主張（護欄不可移除）與軍事需求（護欄是障礙）在結構上不相容。DoD 後來在 6/8 積極尋找替代，6/17 已將三分之二 AI 工作量移出 Anthropic。
+
+### 🚫 出口管制：誰來管最強的模型
+
+Fable 5 發布後，Amazon 安全研究人員發現特定提示詞可讓模型產出網路攻擊相關資訊，AWS CEO Andy Jassy 直接向白宮通報。2026-06-13，Commerce 部長 Lutnick 致函 Anthropic，要求 90 分鐘內對所有外籍人士停用 Fable 5 與 Mythos 5。
+
+政府的論點：Fable 5 護欄可被繞過，存取 Mythos 的攻擊性能力。Anthropic 的立場：技術上不成立，管制沒有根據。雙方核心爭點至今未決，詳見 [[entities/fable-5]] 雙方立場區塊。
+
+### 🌍 策略選擇：Anthropic 換戰場而非退讓
+
+面對政府市場持續碰壁，Anthropic 選擇強化其他方向而非妥協：
+
+- **梵蒂岡路線**（5/26）：Chris Olah 出席教宗封論揭幕，成為唯一受邀 AI 公司，確立國際倫理框架定位
+- **IPO 路線**：650 億估值融資、遞交 IPO 文件，均在出口管制前完成
+- **企業市場**：五月企業市佔首超 OpenAI（Ramp 數據），「被美國政府打壓」在國際市場可能是同情紅利
+
+這條路線的代價是放棄政府/軍事市場的短期機會；換來的是在商業與國際市場更清晰的品牌定位。
 
 ---
 
@@ -24,15 +70,16 @@
 | 2026-06-14 | 🏛️ | 揭露：Amazon 研究觸發直接原因（Andy Jassy 直報白宮） | 確立政府出手的具體事實根據 |
 | 2026-06-13 | 🏛️ | Commerce 部長 Lutnick 發出管制指令，90 分鐘執行窗口 | Fable 5 / Mythos 5 全球下線 |
 | 2026-06-13 | 🏢 | Anthropic 被迫全體下線，發表官方聲明 | 合規但未認同論點 |
-| 2026-06-11 | 🏢 | Dario 公開呼籲政府應有權管制危險模型（Bloomberg） | 被解讀為針對中國競爭者，有「監管套利」批評 |
+| 2026-06-11 | 🏢 | Dario 公開呼籲政府應有權管制危險模型 | 被解讀為針對中國競爭者，有「監管套利」批評 |
 | 2026-06-08 | 🏛️ | 五角大廈積極尋找替代 Claude 的模型（「太安全」） | 顯示分歧未解，政府轉向競品 |
-| 2026-06-05 | 🌐 | FT 爆料 NSA 用 Mythos 發動進攻性網路攻擊 | 政府一邊管制一邊用，邏輯矛盾 |
+| 2026-06-05 | 🌐 | FT：NSA 用 Mythos 發動進攻性網路攻擊 | 政府一邊管制一邊用，邏輯矛盾曝光 |
 | 2026-06-05 | 🏛️ | 白宮在 IPO 前緩和與 Anthropic 緊張關係 | 暫時停火 |
+| 2026-05-26 | 🏢 | Chris Olah 梵蒂岡演講，明確選擇國際倫理路線 | 與白宮路線公開切割 |
 | 2026-05-01 | 🏛️ | 五角大廈排除 Anthropic，與另外 7 家公司簽機密協議 | 政府市場首次重大損失 |
 
 ---
 
-## 目前局勢（截至 2026-06-17）
+## 目前局勢（截至 2026-06-18）
 
 - **管制狀態：** 出口管制維持中，協商無進展
 - **政府底線：** Fable 5 護欄可被繞過存取 Mythos 攻擊能力；G7 盟友不豁免
@@ -41,50 +88,9 @@
 
 ---
 
-## 摘要
-
-2026-05-01，Anthropic 因堅持在軍事用途中納入安全護欄，被排除在美國國防部與 7 家 AI 公司的機密網路部署協議之外。此事件標誌著 Anthropic 的安全優先立場首次與聯邦政府大規模部署需求發生直接衝突，並在 2026-06-13 升級為全面出口管制。
-
----
-
-## 技術彙整
-
-### 五角大廈排除 Anthropic 事件
-
-- **協議範圍**：美國國防部與 SpaceX、OpenAI、Google、Microsoft、NVIDIA、AWS、Reflection 共 7 家公司簽署 AI 機密網路部署協議
-- **排除原因**：Anthropic 堅持軍事用途須納入**安全護欄（safety guardrails）**，雙方對軍事應用的安全管控存在根本分歧
-- **後續進展**：白宮在 Anthropic 宣布多項技術突破後已重啟談判，顯示技術能力仍是政府合作的核心籌碼
-- **關聯事件**：Mythos 的高能力與 Anthropic 對安全護欄的堅持，可能是影響談判框架的背景因素；見 [[entities/mythos]]
-
-### 梵蒂岡教宗封論：Anthropic 的倫理對話路線（2026-05-26）
-
-教宗良十四世（Pope Leo XIV）發布首份 AI 主題封論《Magnifica Humanitas》，Anthropic 共同創辦人 **[[entities/chris-olah|Chris Olah]]** 受邀出席梵蒂岡揭幕演講，成為唯一受邀的 AI 公司代表：
-
-- 封論立場：呼籲對 AI 進行嚴格監管；批判「權力文化」（culture of power）驅動的 AI 競賽；要求 AI 開發者以公共利益為先而非以利潤為先
-- Chris Olah 演講主旨：AI 發展必須由大科技公司以外的力量引導；強調透明度與廣泛社會對話
-- 媒體覆蓋：AP News、Reuters、NYT、WashPost、NDTV、Fast Company 等主流媒體大篇幅報導（HN score 81）
-- 政策意涵：Anthropic 明確選擇梵蒂岡路線（國際倫理框架）而非白宮路線（政府合約）；Anthropic 「安全優先、倫理優先」的品牌定位在全球宗教社群中得到背書
-
-此事件是繼五角大廈排除事件後，Anthropic 在「政府合作路線 vs 倫理對話路線」上選擇的另一次明確訊號。
-
-### Anthropic 安全立場的政策含義
-
-- 此事件是繼白宮反對擴大 Mythos 存取（2026-04-29）之後，Anthropic 與聯邦政府的第二次重大政策摩擦
-- 兩次事件顯示：Anthropic 的安全優先立場同時引發「政府想要更多存取但被拒」（Mythos）與「政府合作因護欄要求而破局」（五角大廈）兩種相反方向的張力
-- 相比之下，OpenAI、Google、Microsoft 的商業優先取向使其更易達成政府合作
-
----
-
-## 目前結論
-
-- ⚠️ Anthropic 安全優先立場對政府市場有實質代價：短期損失大型政府合約機會
-- 🔄 白宮重啟談判顯示 Anthropic 的技術能力仍具足夠吸引力
-- 📊 此局面可能長期塑造 Anthropic 的市場定位：企業/科研市場優先，政府/軍事市場需更多談判
-
----
-
 ## 相關實體
 
+- [[entities/fable-5]]（出口管制事件主頁，含雙方立場詳細論點）
 - [[entities/mythos]]（政府關係的前置事件）
 - [[topics/competitor-landscape]]（排除事件改變 Anthropic 與競品在政府市場的相對地位）
 
@@ -92,9 +98,11 @@
 
 - [[news/2026-05-02]]
 - [[news/2026-05-26]]
+- [[news/2026-06-13]]
+- [[news/2026-06-17]]
 - [Reuters 報導](https://www.reuters.com/business/retail-consumer/pentagon-reaches-agreements-with-leading-ai-companies-2026-05-01/)
+- [Bloomberg：Lutnick 致函全文](https://www.bloomberg.com/news/articles/2026-06-16/read-the-lutnick-letter-that-led-anthropic-to-disable-mythos)
 - [Chris Olah Vatican Remarks](https://www.anthropic.com/news/chris-olah-pope-leo-encyclical) — Anthropic Blog
-- [AP News：Pope calls for robust regulation of AI](https://apnews.com/article/pope-ai-tech-trump-vatican-anthropic-d92d0108730d146baa46da041b8523da)
 
 ## 時序
 
