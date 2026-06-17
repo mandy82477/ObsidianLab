@@ -58,6 +58,7 @@ claude --model claude-fable-5-20260609
 
 - [[entities/mythos]] — Mythos 模型家族完整歷史
 - [[entities/pricing]] — Fable 5 定價與訂閱方案變動
+- [[topics/anthropic-government-policy]] — Anthropic vs 美國政府攻防完整時序
 - [[topics/anthropic-business]] — Anthropic IPO 背景與商業策略
 - [[topics/ai-agent-safety]] — Claude Code 供應鏈攻擊事件
 
@@ -70,6 +71,41 @@ claude --model claude-fable-5-20260609
 - **Fable 5 成本高昂**：$200/月 Max 用戶一次 code review 可消耗 45% 週配額；社群回報消耗量個體差異極大
 - **30 天資料保留**：Bedrock 用戶數據強制離開 AWS 安全邊界，企業隱私顧慮
 - **「失去靈魂」討論**：部分用戶認為 Fable 5 相比 Opus 4.6 更工具性、減少人本關懷深度
+
+## 出口管制：雙方立場
+
+### 美國政府立場
+
+**主張核心：** Fable 5 護欄可被繞過，進而存取 Mythos 5 的攻擊性網路安全能力，構成國家安全威脅。
+
+| 論點 | 說明 |
+|------|------|
+| 護欄不可靠 | Commerce 部長 Lutnick 致函（Bloomberg 6/16 全文刊出）：Fable 5 護欄無法有效阻止取得 Mythos 的網路攻擊能力 |
+| 中國情報威脅 | Semafor：中國關聯組織疑似存取 Mythos 5，為管制動機之一 |
+| Amazon 直報 | AWS CEO Andy Jassy 向白宮通報安全研究結果（可透過提示詞生成可用攻擊資訊），成為直接觸發原因 |
+| Dario 拒修 jailbreak | Trump 顧問 David Sacks：政府曾提前警告，但 Dario Amodei 拒絕修復也拒絕下架 |
+| G7 不豁免 | 英國首相 Starmer 提出 carve-out 請求，Trump 政府明確拒絕，盟友一視同仁 |
+
+**立場底線：** 出口管制架構問題，不限於 jailbreak 是否嚴重；Fable 5 本身即屬管制標的。
+
+---
+
+### Anthropic 立場
+
+**主張核心：** 政府論點在技術上不成立；Anthropic 是在法律壓力下被迫合規，並非認同管制理由。
+
+| 論點 | 說明 |
+|------|------|
+| 否認護欄失效 | 持續否認 Fable 5 可繞過護欄存取 Mythos 攻擊能力，認為政府主張技術上不成立 |
+| jailbreak 不嚴重 | 官方回應 Sacks：被提前警告的 jailbreak「並不嚴重」，不構成下架理由 |
+| 安全論述反噬 | TechCrunch 分析（Anthropic 自己也承認的弔詭）：Anthropic 對 Fable 5「太危險」的安全論述，成為政府援引的正當性依據 |
+| 被迫全面下線 | 90 分鐘內關閉全球存取（含美國用戶），是為確保合規，不代表接受管制邏輯 |
+| 積極協商 | 派遣多名高層赴華府，持續與 Commerce 部工作組談判；Axios 爆料主因涉及人際衝突（personality clash） |
+| 商業損失 | DoD 已將三分之二 AI 工作量轉向競爭對手；TCS 企業合作受衝擊 |
+
+**立場底線：** 管制是政治決定，不是技術必要性；Anthropic 正尋求解除或豁免，同時主張己方安全架構足夠可靠。
+
+---
 
 ## 參考來源
 
