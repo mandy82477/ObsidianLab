@@ -115,7 +115,7 @@ def main() -> None:
     enriched = enrich(deduped)
     logger.info("Enrichment done: %d items", len(enriched))
 
-    filtered = filter_relevant(enriched, allow_cli=not args.gather_only)
+    filtered = filter_relevant(enriched)
     logger.info("After relevance filter: %d items", len(filtered))
 
     if args.gather_only:

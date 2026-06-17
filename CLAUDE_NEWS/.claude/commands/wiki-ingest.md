@@ -24,6 +24,19 @@ argument-hint: [YYYY-MM-DD]
 - `wiki/index.md` — 取得所有現有頁面清單
 - `wiki/log.md` — 確認最近是否已處理過同一份日報（避免重複 ingest）
 
+### 2.5 觸發掃描（先問後寫）
+
+**規則：** 每個追蹤頁面在 `.claude/rules/wiki-ingest.md` 中定義了自己的收錄標準。讀完日報後，逐一問以下觸發問句——答「是」者列入本次更新清單；後續步驟只執行清單內的頁面，不得遺漏、也不得任意擴充。
+
+| 追蹤頁面 | 觸發問句 |
+|---------|---------|
+| `feature-radar.md` | 日報出現使用者可操作的官方功能嗎？（先過「准入定義」章節） |
+| `enterprise-tool-tracker.md` | 日報出現具名企業 + AI 工具的組合嗎？ |
+| `community-tech-tools.md` | 日報出現符合入選門檻的開發者工具嗎？ |
+| `community-tech-discussions.md` | 日報出現值得追蹤的技術爭議或社群討論嗎？ |
+
+觸發掃描結果（命中 / 未命中）在 Step 9 核對清單中輸出。
+
 ### 3. 判斷受影響的頁面
 
 比對日報內容與 index.md 中的實體和議題，找出：
@@ -121,6 +134,7 @@ argument-hint: [YYYY-MM-DD]
 
 **在宣告完成之前，逐項確認以下所有項目。若有任何一項未完成，繼續執行直到全部完成。**
 
+- [ ] 觸發掃描（Step 2.5）結果已列出，命中的追蹤頁面均已更新
 - [ ] 所有受影響的 entities/ 頁面已更新（現況 + 歷史記錄）
 - [ ] 所有受影響的 topics/ 頁面已更新（摘要 + 技術彙整 + 時序）
 - [ ] feature-radar.md 已更新（熱度、試用價值）
@@ -140,6 +154,7 @@ argument-hint: [YYYY-MM-DD]
 | 新增頁面 | （列出或「無」）|
 | feature-radar 變動 | （列出功能名稱與熱度變化，或「無」）|
 | 今日主要方向 | （一句話摘要）|
+| 觸發掃描結果 | feature-radar ✅/⏭️ ｜ enterprise-tool-tracker ✅/⏭️ ｜ community-tech-tools ✅/⏭️ ｜ community-tech-discussions ✅/⏭️ |
 | 呈現品質審查 | （每個頁面：✅ 通過 / ⚠️ 已修復 xxx / 📋 待辦 xxx）|
 
 ## 注意事項

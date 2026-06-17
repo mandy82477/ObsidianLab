@@ -79,17 +79,11 @@ _USER_TEMPLATE = """\
 
 
 def analyze(items: list[FeedItem]) -> tuple[str, str]:
-    """Call Claude to produce a Chinese natural-language digest body.
+    """Call Claude API to produce a Chinese natural-language digest body.
 
     Returns (body, method) where method is one of:
       "Anthropic API (claude-haiku-4-5)"
-      "claude CLI (Claude.ai Pro)"
       "fallback (純文字列表)"
-
-    Priority:
-    1. ANTHROPIC_API_KEY in env → direct SDK call
-    2. `claude` CLI available → subprocess call (Claude.ai Pro subscription)
-    3. Plain fallback list
     """
     if not items:
         return "## 今日無新增資訊\n\n> 所有來源在過去 26 小時內未發現相關新內容。\n", "—"
@@ -99,7 +93,6 @@ def analyze(items: list[FeedItem]) -> tuple[str, str]:
         items_text=_format_items(items),
     )
 
-    # ── Path 1: direct API key ────────────────────────────────────────────
     api_key = os.environ.get("ANTHROPIC_API_KEY")
     if api_key:
         try:
@@ -113,49 +106,10 @@ def analyze(items: list[FeedItem]) -> tuple[str, str]:
             )
             return message.content[0].text, "Anthropic API (claude-haiku-4-5-20251001)"
         except Exception as e:
-            logger.warning("Claude API (key) failed (%s) — trying claude CLI", e)
+            logger.warning("Claude API (key) failed (%s) — using plain fallback", e)
 
-    # ── Path 2: claude CLI (Claude.ai Pro subscription) ───────────────────
-    result = _call_claude_cli(prompt)
-    if result:
-        return result, "claude CLI (Claude.ai Pro)"
-
-    # ── Path 3: plain fallback ────────────────────────────────────────────
-    logger.warning("All Claude paths failed — using plain fallback digest")
+    logger.warning("No ANTHROPIC_API_KEY — using plain fallback digest")
     return _fallback_body(items), "fallback (純文字列表)"
-
-
-def _call_claude_cli(prompt: str) -> str | None:
-    import shutil
-    import subprocess
-    import sys
-
-    if not shutil.which("claude"):
-        logger.warning("claude CLI not found in PATH")
-        return None
-
-    full_prompt = f"{_SYSTEM}\n\n{prompt}"
-    # Pass prompt via stdin to avoid Windows command-line length limits
-    use_shell = sys.platform == "win32"
-    try:
-        result = subprocess.run(
-            ["claude", "-p"],
-            input=full_prompt.encode("utf-8"),
-            capture_output=True,
-            timeout=600,
-            shell=use_shell,
-        )
-        stdout = result.stdout.decode("utf-8", errors="replace")
-        stderr = result.stderr.decode("utf-8", errors="replace")
-        if result.returncode == 0 and stdout.strip():
-            logger.info("claude CLI analysis succeeded")
-            return stdout.strip()
-        logger.warning("claude CLI exited %d: %s", result.returncode, stderr[:200])
-    except subprocess.TimeoutExpired:
-        logger.warning("claude CLI timed out after 600s")
-    except Exception as e:
-        logger.warning("claude CLI failed: %s", e)
-    return None
 
 
 def _format_items(items: list[FeedItem]) -> str:

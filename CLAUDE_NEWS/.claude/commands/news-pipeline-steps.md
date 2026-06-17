@@ -100,6 +100,7 @@ git -C REPO_ROOT push
 
 1. 讀取 `news/TARGET_DATE.md`
 2. 同時讀取：`wiki/CLAUDE.md`（目錄結構與限制）、`.claude/rules/wiki-ingest.md`（格式模板與品質標準）、`wiki/index.md` + `wiki/log.md`（確認未重複 ingest）
+2.5. **觸發掃描（先問後寫）**：逐一問每個追蹤頁面的觸發問句，命中者列入本次更新清單（詳見 `wiki-ingest.md` Step 2.5）
 3. 比對日報內容，找受影響的既有頁面
 4. 更新相關 entities/ 和 topics/ 頁面
 4a. **升格檢查（discussions → patterns）**：

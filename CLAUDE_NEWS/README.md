@@ -20,8 +20,7 @@ scripts/        ← 建置工具（build_web.py）
 
 1. `pip install -r src/requirements_news.txt`
 2. 在 repo 根目錄建立 `.env`，填入 `GITHUB_TOKEN`（建議）、Reddit 金鑰（可選）
-3. 執行 `cd src && python -m news_aggregator.main`，確認 `news/YYYY-MM-DD.md` 被寫出並 git push
-4. 設定 Windows 工作排程器，每日 08:00 執行 `src/run_news.bat`（日誌：`src/logs/task_scheduler.log`）
+3. 執行 `/news-pipeline` 確認完整 pipeline 可正常運作（日誌：`src/logs/task_scheduler.log`）
 
 ---
 
@@ -39,6 +38,5 @@ scripts/        ← 建置工具（build_web.py）
 ## 環境需求
 
 - Python 3.13+
-- Windows（排程器用 `run_news.bat`）
 - Claude Code（互動式 pipeline）
 - GitHub Token（避免 API rate limit）
