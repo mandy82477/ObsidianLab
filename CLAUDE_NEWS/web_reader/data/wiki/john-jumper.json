@@ -1,0 +1,14 @@
+{
+  "id": "john-jumper",
+  "pageType": "entity",
+  "name": "John Jumper",
+  "entityType": "person",
+  "status": "active（待核實）",
+  "domain": "👤 人物",
+  "pill": "active",
+  "firstSeen": "2026-06-20",
+  "startDate": "",
+  "lastUpdated": "2026-06-20",
+  "summary": "John Jumper 是 2024 年諾貝爾化學獎得主，因 AlphaFold 蛋白質結構預測研究與 Demis Hassabis 共同獲獎。他曾任職 Google DeepMind，並於 2026 年 6 月宣布加入 Anthropic（待核實）。社群觀察到 Google DeepMind 近期有兩位知名研究者相繼…",
+  "markdown": "# John Jumper\n\n**類型：** person\n**狀態：** active（待核實）\n**領域：** 👤 人物\n**首次出現：** 2026-06-20\n**最後更新：** 2026-06-20\n\n---\n\n## 現況\n\nJohn Jumper 是 2024 年諾貝爾化學獎得主，因 AlphaFold 蛋白質結構預測研究與 Demis Hassabis 共同獲獎。他曾任職 Google DeepMind，並於 2026 年 6 月宣布加入 Anthropic（待核實）。社群觀察到 Google DeepMind 近期有兩位知名研究者相繼出走，認為並非巧合，顯示 Anthropic 正積極吸引頂尖科學人才。\n\n---\n\n## 核心研究背景\n\nJohn Jumper 以 AlphaFold 系列模型的開發著稱，AlphaFold 2 解決了困擾生物學界數十年的蛋白質結構預測問題，被視為計算生物學的里程碑成就。2024 年諾貝爾化學獎一半授予 Demis Hassabis 與 John Jumper，肯定其在蛋白質結構預測領域的根本性貢獻。\n\n---\n\n## 相關實體\n\n- [[topics/anthropic-business]]（人才招募、與 DeepMind 人才競爭）\n\n---\n\n## 參考來源\n\n- [[news/2026-06-20]]\n- [HN 討論](https://twitter.com/i/status/2068001285173834106)（HN score: 4，原始消息來自 Twitter，待核實）\n\n---\n\n## 歷史記錄\n\n- 2026-06-19：宣布加入 Anthropic（待核實），原任職 Google DeepMind；同期另有一位 DeepMind 知名研究者出走，社群觀察認為並非巧合\n"
+}
