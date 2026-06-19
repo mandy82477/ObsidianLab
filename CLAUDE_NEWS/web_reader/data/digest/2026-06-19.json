@@ -1,0 +1,251 @@
+{
+  "date": "2026-06-19",
+  "generatedAt": "2026-06-19 16:32 UTC",
+  "articleCount": 77,
+  "sourceCount": "6/6 | **文章數：** 77 | **更新時間：** 2026-06-19 16:32 UTC",
+  "topStories": [
+    {
+      "title": "Wired] [The Korean telecom giant at the center of Anthropic's Mythos controversy",
+      "url": "https://www.wired.com/story/sk-telecom-anthropic-mythos-export-controls/",
+      "source": "Hacker News",
+      "time": "06/18 12:44",
+      "sentiment": "",
+      "body": "深度調查：SK Telecom 獲得 Claude Mythos 模型存取權，美方擔憂其與中國的潛在關聯；Amazon 隨後向白宮揭露 Fable 5 的越獄漏洞，兩件事疊加加速了出口管制的決定。",
+      "focusTags": [
+        "[重大事件]"
+      ]
+    },
+    {
+      "title": "Politico] [White House talks with Anthropic shift to setting AI security rules",
+      "url": "https://www.politico.com/news/2026/06/18/white-house-talks-with-anthropic-shift-to-setting-ai-security-rules-00967758",
+      "source": "Hacker News",
+      "time": "06/19 04:54",
+      "sentiment": "",
+      "body": "談判焦點已從 Fable 5 解禁轉向建立更廣泛的 AI 安全規範框架，意味著這場爭議可能影響整個 AI 監管走向。",
+      "focusTags": []
+    },
+    {
+      "title": "Fortune] [The week that changed AI: Inside Trump's Anthropic crackdown",
+      "url": "https://news.google.com/rss/articles/CBMitAFBVV95cUxQZlM3Y055NnRLQzc4OVZ5am1fSldMSEc5VTJZS2pNQll6VjEtRjRKS2JrSDRNbzBXcHJXbUtVZzljaVd2WFVSNVhaamlkbWVCbUc4VHdtcXp2Z1F5UkdyZFdQY05WQkt5WTZ1TlZOQV91VldOcDM1UHBpQ0U5aEpuRmJEdWoxZm9pU2c0QjFsZk5QNHpXeS1DakE2N3JITDZvRDVfTDJHc21GZHJjdFd3ZVpIOUQ?oc=5",
+      "source": "Google News / Fortune",
+      "time": "06/18 16:22",
+      "sentiment": "",
+      "body": "Fortune 深度還原「改變 AI 格局的一週」：Amazon CEO Andy Jassy 的一通電話如何引爆這場危機的來龍去脈。",
+      "focusTags": []
+    },
+    {
+      "title": "Claude.com] [Claude Code now supports artifacts",
+      "url": "https://claude.com/blog/artifacts-in-claude-code",
+      "source": "Hacker News",
+      "time": "06/18 18:17",
+      "sentiment": "",
+      "body": "官方公告：Claude Code Artifacts 正式上線，可將 coding session 轉為可分享的互動網頁，支援 PR walkthrough、系統架構說明、儀表板等格式，session 進行中自動更新。",
+      "focusTags": [
+        "[新工具]"
+      ]
+    },
+    {
+      "title": "Anthropic] [Project Fetch: Phase Two",
+      "url": "https://www.anthropic.com/research/project-fetch-phase-two",
+      "source": "Hacker News",
+      "time": "06/18 16:55",
+      "sentiment": "",
+      "body": "Anthropic 紅隊研究：讓非機器人專家員工使用 Claude Opus 4.1 控制機器狗（四足機器人），對比純人工組顯著提升任務完成速度與品質，驗證 Claude 在具身 AI 場景的實用性。",
+      "focusTags": []
+    }
+  ],
+  "techUpdates": [
+    {
+      "title": "[anthropics/claude-code] v2.1.183",
+      "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.183",
+      "source": "GitHub / anthropics/claude-code",
+      "time": "06/19 01:20",
+      "sentiment": "",
+      "body": "Auto mode 安全性強化：未明確要求時封鎖 `git reset --hard`、`git checkout -- .`、`git clean -fd`、`git stash drop` 等破壞性 Git 指令，避免意外資料遺失。",
+      "focusTags": [
+        "[重大事件]"
+      ]
+    },
+    {
+      "title": "[anthropics/anthropic-sdk-python] v0.111.0",
+      "url": "https://github.com/anthropics/anthropic-sdk-python/releases/tag/v0.111.0",
+      "source": "GitHub / anthropics/anthropic-sdk-python",
+      "time": "06/18 17:31",
+      "sentiment": "",
+      "body": "新增 helpers：支援 refusal-fallback middleware，改善 SDK 層對拒絕回應的處理流程。",
+      "focusTags": []
+    },
+    {
+      "title": "[anthropics/anthropic-sdk-typescript] vertex-sdk: v0.18.0",
+      "url": "https://github.com/anthropics/anthropic-sdk-typescript/releases/tag/vertex-sdk-v0.18.0",
+      "source": "GitHub / anthropics/anthropic-sdk-typescript",
+      "time": "06/18 17:18",
+      "sentiment": "",
+      "body": "Vertex AI SDK TypeScript 版本更新，持續擴充 Google Cloud 整合能力。",
+      "focusTags": []
+    }
+  ],
+  "discussions": [
+    {
+      "title": "Ask HN: Do you find vibe coding / agentic engineering to be fulfilling?",
+      "url": "https://news.ycombinator.com/item?id=48588648",
+      "source": "Hacker News",
+      "time": "06/18 17:27 UTC 情緒：🤔",
+      "sentiment": "",
+      "body": "開發者分享使用 Claude Code 的「失落感」：能快速產出軟體，但缺乏親手建造的成就感；討論如何重新找回 builder zone。",
+      "focusTags": []
+    },
+    {
+      "title": "LLM biased against accessible code (Claude Code issue #56079)",
+      "url": "https://www.aaron-gustafson.com/notebook/2026-06-17-llm-biased-against-accessible-code/",
+      "source": "Hacker News",
+      "time": "06/18 16:01 UTC 情緒：😤",
+      "sentiment": "",
+      "body": "Bug 回報：即使 CLAUDE.md 明定 WCAG 2.2 AA 為硬性要求，Claude Code 仍將無障礙修復視為可選項目，顯示模型存在價值觀優先序問題，而非技術能力不足。",
+      "focusTags": []
+    },
+    {
+      "title": "JPMorgan Chase cuts off Anthropic access for its Hong Kong staff",
+      "url": "https://www.ft.com/content/de83d303-6a03-456b-bfb9-7b11dd502ab3",
+      "source": "Hacker News",
+      "time": "06/18 06:43 UTC 情緒：😤",
+      "sentiment": "",
+      "body": "因 Mythos / Fable 5 出口管制令，JPMorgan Chase 切斷香港員工的 Anthropic 服務存取，為首批明確採取行動的企業案例之一。",
+      "focusTags": []
+    },
+    {
+      "title": "How I cut my token usage in half and more (OSS, benchmarks included)",
+      "url": "https://www.reddit.com/r/ClaudeAI/comments/1u9rys0/how_i_cut_my_token_usage_in_half_and_more_oss/",
+      "source": "Reddit / r/ClaudeAI",
+      "time": "06/18 20:22 UTC 情緒：😊",
+      "sentiment": "",
+      "body": "開源工具 Repowise 作者分享實測：透過精準控制 context 品質，在 Claude Code 上達成 50%+ token 節省，附基準測試數據。",
+      "focusTags": []
+    },
+    {
+      "title": "Fixing Claude Code's amnesia without hoarding everything in memory",
+      "url": "https://www.reddit.com/r/ClaudeAI/comments/1u9vk5m/fixing_claude_codes_amnesia_without_hoarding/",
+      "source": "Reddit / r/ClaudeAI",
+      "time": "06/18 23:42 UTC 情緒：🤔",
+      "sentiment": "",
+      "body": "社群分享 Claude Code session 記憶管理技巧：在不堆積所有內容進 memory 的前提下解決遺忘問題的工作流設計。",
+      "focusTags": []
+    },
+    {
+      "title": "What It Took to Actually Govern Claude Code Across Our Engineering Team",
+      "url": "https://dev.to/sahajmeet_kaur_/what-it-took-to-actually-govern-claude-code-across-our-engineering-team-4jp6",
+      "source": "dev.to / #claudecode",
+      "time": "06/18 11:01 UTC 情緒：😤",
+      "sentiment": "",
+      "body": "工程團隊治理實踐：2026 年初兩個 CVE 顯示 clone 一個 repo 就可能導致 API key 洩漏；文中分享跨團隊治理 Claude Code 的具體做法。",
+      "focusTags": []
+    },
+    {
+      "title": "I lost a week to the bugs my AI created while fixing one",
+      "url": "https://dev.to/mjmirza/i-lost-a-week-to-the-bugs-my-ai-created-while-fixing-one-50mk",
+      "source": "dev.to / #claudecode",
+      "time": "06/18 21:42 UTC 情緒：😤",
+      "sentiment": "",
+      "body": "開發者親歷：請 AI agent 修一個 bug，結果引入更多問題，前後耗費一週清理；關於 agentic coding 的範疇管理挑戰。",
+      "focusTags": []
+    },
+    {
+      "title": "Show HN: Pagecast – Publish Markdown/HTML Reports to Cloudflare Pages",
+      "url": "https://github.com/Amal-David/pagecast",
+      "source": "Hacker News",
+      "time": "06/18 19:42 UTC 情緒：😊",
+      "sentiment": "",
+      "body": "開源 CLI 工具：一鍵將 Claude Code / Codex 產出的 HTML / Markdown 報告發布到 Cloudflare Pages，可作為 Claude Artifacts 的自架替代方案。",
+      "focusTags": []
+    },
+    {
+      "title": "Show HN: AI Commander – TeamViewer for AI Agents, No VPN or SSH",
+      "url": "https://aicommander.dev/",
+      "source": "Hacker News",
+      "time": "06/18 19:24 UTC 情緒：😊",
+      "sentiment": "",
+      "body": "無需 VPN / SSH 的遠端 AI agent 控制工具，支援 Claude Code、Codex 等；提供 Windows tray / Mac menu bar / Linux CLI 各平台 app。",
+      "focusTags": []
+    },
+    {
+      "title": "New AI optimization framework beats Claude Code and Codex by 2.5x on the same compute budget",
+      "url": "https://news.google.com/rss/articles/CBMiygFBVV95cUxOaWVIREg5UjNuVFhzWUYzbm5CWDROdGUtYk50YnI4TVIzR1RQcFN4MGVTY29BSlJRY1Bhbjc5ZW5OR3NPV3M5Q1FkRVhrZmFuaWRBdmlPY3RWbzdjSTJZUDZ1dzdHa2RCTEZaVzdpSWxicVNONUpGMnZkOU13UnFHcDZHd1VqWDh1VUtxR0hJcUVON1l1NVB4OThIaG94UmEtV2ZUSjFkdUJEai0wUFBBY2tsN0RSUGpZWmFMdkdLUWIwb0hIemEyTlRB?oc=5",
+      "source": "Google News / VentureBeat",
+      "time": "06/18 10:13 UTC 情緒：🤔",
+      "sentiment": "",
+      "body": "新優化框架聲稱在同等算力下，代碼生成任務比 Claude Code 和 Codex 快 2.5 倍，VentureBeat 報導但細節待查驗。",
+      "focusTags": []
+    }
+  ],
+  "billing": [
+    {
+      "title": "The Cheap Era of Always-On Claude Agents Is Quietly Ending",
+      "url": "https://news.google.com/rss/articles/CBMihwFBVV95cUxNZktNMjBmdHBvRnc5ODZjbFlTNjV1TWJsaWFKX1BsdzU5UENwUEEtbkk1MkdMMm1QLURpaEx3ZklpbzZBbEVsRmdaSlR5VUtvMURFYTJjTGF6dTlBU0x4WHpJa2NjUm93NXp2RjlxXzlJbW85NEtZb0JXVkRvR0R0M3BrTkJzbGM?oc=5",
+      "source": "Google News / Unite.AI",
+      "time": "06/18 16:17",
+      "sentiment": "",
+      "body": "Unite.AI 分析：「低成本常駐 Claude Agent 時代正悄悄落幕」，隨使用量攀升，企業代理架構的 token 成本壓力日益顯著。",
+      "focusTags": []
+    },
+    {
+      "title": "Why It's So Hard for Older B2B Leaders to Compete in AI",
+      "url": "https://news.google.com/rss/articles/CBMi5gFBVV95cUxPcWNWaHItQzJlZ0U2NXVkZTdzd18yTUJDb2RoZzN2clJ4YjNORFBFZE9IWm9TS2E5Rmh6cVRhRUVlZThuQm01elAtTWlfa05ETnlmRnplZmprWnJESjZKZzR2M0xGWmpPQmdWMlNtZFV4anFmMEhYRjFmVjJacWRmYXdPOG9xLW1aSVZTb0VJazFrcjhqMU92ajJhc255ekFMSVZMblNnMjBiMGFVcmFmenpqUGtGSktMYnU5S25KQ3Ftd2Q4OEFPZF9ndlAxaURmYXhhR19KMTJyR2VaVENhMmNaSE5GQQ?oc=5",
+      "source": "Google News / saastr.com",
+      "time": "06/18 14:33",
+      "sentiment": "",
+      "body": "SaaStr 評論：消費者每月花 $20–$200 就能在 Claude 上完成大量工作，但企業 API 每次好的輸出要付 $1，B2B SaaS 廠商面臨結構性競爭壓力。",
+      "focusTags": []
+    },
+    {
+      "title": "Show HN: I built a free API cost calculator after a $340 surprise invoice",
+      "url": "https://apicalculators.com/",
+      "source": "Hacker News",
+      "time": "06/18 21:26",
+      "sentiment": "",
+      "body": "開源 API 費用計算器：開發者因忽略 system prompt token 而收到 $340 意外帳單，因此建了涵蓋 GPT-5.5、Claude Sonnet 4.6、Gemini 3.5 Flash 等 16 種計算器。",
+      "focusTags": []
+    }
+  ],
+  "focus": [
+    {
+      "tag": "[重大事件]",
+      "text": "Anthropic Mythos / Fable 5 出口管制持續發酵：SK Telecom 涉嫌中國連結是觸發點，Amazon 研究人員向白宮舉報 Fable 5 越獄漏洞，局勢仍在演進。",
+      "ref_urls": [
+        "https://www.wired.com/story/sk-telecom-anthropic-mythos-export-controls/",
+        "https://www.wired.com/story/the-white-house-wants-anthropic-to-block-all-jailbreaks-that-may-not-be-possible/"
+      ]
+    },
+    {
+      "tag": "[持續追蹤]",
+      "text": "Anthropic 國際總監 Chris Ciauri 在首爾召開記者會，表示「非常有信心數日內模型將重新開放」，惟白宮要求徹底阻絕所有越獄才能解禁。",
+      "ref_urls": [
+        "https://news.ycombinator.com/item?id=48589194",
+        "https://www.koreajoongangdaily.com/business/anthropic-confident-of-reenabling-mythos-fable-5-access-in-coming-days-executive/12727522"
+      ]
+    },
+    {
+      "tag": "[重大事件]",
+      "text": "Claude Code v2.1.183 發布：強化 auto mode 安全性，`git reset --hard`、`git checkout -- .`、`git clean -fd`、`git stash drop` 等破壞性指令在未明確要求時將自動封鎖。",
+      "ref_urls": [
+        "https://github.com/anthropics/claude-code/releases/tag/v2.1.183"
+      ]
+    },
+    {
+      "tag": "[新工具]",
+      "text": "Claude Code 正式支援 Artifacts：AI session 進行中可即時產生可分享的互動網頁（PR walkthrough、儀表板、release checklist），供團隊協作瀏覽。",
+      "ref_urls": [
+        "https://claude.com/blog/artifacts-in-claude-code"
+      ]
+    },
+    {
+      "tag": "[社群趨勢]",
+      "text": "SpaceX 據報以 600 億美元收購 Cursor，社群熱議此舉對 Claude Code vs Cursor 競爭格局的影響；Atlassian 推出 Claude Agent for Jira 企業整合。",
+      "ref_urls": [
+        "https://dev.to/patilanupam/cursor-vs-claude-code-elon-musks-big-ai-bet-4o02",
+        "https://news.google.com/rss/articles/CBMic0FVX3lxTE81RWxLeDdZZ0h3RHB4RU5ISFZYVjROTldWdnloRmloOXVNUXNvU0Eyc2xhQjVjNDNMclRDSTNhbUxlNlFMSzZnb0JiTWFRTE9iTU5CUF9YZHNBZURRaHZCQWd4SG1XWUpxdmV2eEVKOTBKTjg?oc=5"
+      ]
+    }
+  ],
+  "sourceStatus": [],
+  "preview": "Wired] [The Korean telecom giant at the center of Anthropic's Mythos controversy"
+}
