@@ -31,8 +31,11 @@
 
 | 討論主題 | 首見 | 熱度 | 模式 | 核心論點 | 衍生 |
 |---------|------|------|------|---------|------|
-| Vibe coding / agentic 工程的成就感缺失 | 2026-06-18 | 🔥🔥 | 🌊延燒 | HN Ask：使用 Claude Code 等 AI 工具是否還能帶來「心流感」？部分認為快速推進想法更有成就感；另一派感嘆「成品不像自己做的，任何人照著 prompt 都能複製」；反映 AI 時代技藝本質的認同困惑（HN score 8）；2026-06-19 討論持續延燒 | — |
-| Claude Code 無障礙偏差：把 WCAG 要求當作可選項 | 2026-06-18 | 🔥🔥 | ☄️閃現 | 開發者揭露（Claude Code issue #56079）：即使 CLAUDE.md 明確要求 WCAG 2.2 AA，Claude Code 仍將無障礙修復視為「可選取捨」而非需求；這不是知識問題而是優先順序偏差——模型在追求速度時將無障礙「降級」，與人類工程師的相同偏見如出一轍（Aaron Gustafson blog）| — |
+| Loop Engineering 哲學完整文章：「我不再 prompt Claude，我寫 loop」 | 2026-06-20 | 🔥 | 🌊延燒 | Boris Cherny 名言的完整拆解文章（techstackups.com）：PR review、測試、push 等動作如何抽象為 loop；代表 AI 輔助開發進入「設計 loop」時代（HN score 4）；延伸自 2026-06-19 Boris Cherny loop 哲學討論 | — |
+| Context Rot 修復五法 | 2026-06-20 | 🔥🔥 | 🌊延燒 | Reddit r/ClaudeAI 熱帖：解決「Claude 越用越笨」五個方法——裁剪 tool output、壓縮歷史、分 session 隔離任務、重置前保存摘要、停止添加無關 context 改裁剪 tool output；核心論點：Claude Code 是 context 工程工具，「變笨」幾乎都是 context 腐蝕而非模型退步（Reddit r/ClaudeAI） | — |
+| MCP 預設 tool search：Claude Code 唯一自動工具發現的 agent | 2026-06-20 | 🔥 | ☄️閃現 | Reddit 討論：Claude Code 是唯一預設開啟 tool search 的 agent，讓 MCP 工具自動可發現；此設計是對「MCP 已死」論述的有力反駁，降低多工具協同的設定門檻（Reddit r/ClaudeAI） | — |
+| Vibe coding / agentic 工程的成就感缺失 | 2026-06-18 | 🔥🔥 | 🌊延燒 | HN Ask：使用 Claude Code 等 AI 工具是否還能帶來「心流感」？部分認為快速推進想法更有成就感；另一派感嘆「成品不像自己做的，任何人照著 prompt 都能複製」；反映 AI 時代技藝本質的認同困惑（HN score 8）；2026-06-19 討論持續延燒；2026-06-20 繼續延燒 | — |
+| Claude Code 無障礙偏差：把 WCAG 要求當作可選項 | 2026-06-18 | 🔥🔥 | 🌊延燒 | 開發者揭露（Claude Code issue #56079）：即使 CLAUDE.md 明確要求 WCAG 2.2 AA，Claude Code 仍將無障礙修復視為「可選取捨」而非需求；這不是知識問題而是優先順序偏差——模型在追求速度時將無障礙「降級」，與人類工程師的相同偏見如出一轍（Aaron Gustafson blog）；2026-06-20 仍在追蹤中 | — |
 | Claude Code 長 session 初清醒、後脆弱 | 2026-06-18 | 🔥🔥 | ☄️閃現 | Reddit 社群觀察：長 session 中 Claude Code 表現前後明顯落差——初期思路清晰精準，後期出錯率升高並忽略細節；推測與 context window 累積後早期約束被稀釋有關，是 agent long-run 可靠性的共同痛點（Reddit r/ClaudeAI）| — |
 | AI agent 長 session 退化量測：先測 context 再怪 MCP | 2026-06-17 | 🔥🔥 | ☄️閃現 | dev.to 開發者記錄 AI 在長 session 中途「變笨」的現象：多 MCP 配置下的退化根因不是工具問題，而是 context window 漸滿後早期約束被稀釋；提出「context 量測優先、再排查工具」的診斷順序（dev.to / #claudecode）| — |
 | CLAUDE.md 是每次 prompt 的固定租金 | 2026-06-17 | 🔥🔥 | ☄️閃現 | dev.to 文章以「租金」比喻 CLAUDE.md：每一條指令在每次訊息都消耗 token，無論是否被使用；作者建議用最小化原則設計 CLAUDE.md，在效果與成本間取平衡（dev.to / #claudecode）| — |
@@ -145,6 +148,15 @@
 ---
 
 ## 技術彙整
+
+### Context Rot 修復五法（2026-06-20）
+
+- **來源：** "Follow-up: it got dumber" is usually context rot, not model degradation（Reddit r/ClaudeAI）
+- **核心論點：** 「Claude 越用越笨」幾乎都是 context 腐蝕（context rot）造成，而非模型本身退步；修復重點在於管理 context 品質，而非換模型或重試
+- **關鍵回響：**
+  - 五個具體修復方法：① 裁剪 tool output（停止讓所有工具輸出直接塞進 context）② 壓縮對話歷史（摘要替代原文）③ 分 session 隔離任務（不同任務不混 session）④ 重置前保存關鍵摘要 ⑤ 不是「加更多 context」而是「裁剪現有 context」
+  - 延伸：dev.to 同日有實踐案例——停止添加 context 改裁剪 tool output 後，3 小時任務不再中途失憶（dev.to/kenimo49）
+- **收斂結論：** Claude Code 是 context 工程工具；context 管理能力與模型能力同等重要
 
 ### Claude Code session 記憶管理：不堆積仍解決遺忘問題（2026-06-19）
 

@@ -27,6 +27,7 @@ Claude Code 是 Anthropic 的 AI 編碼 CLI 工具，支援 agentic 工作流程
 
 | 版本 | 日期 | 重點 |
 |------|------|------|
+| **MCP Enterprise Authorization** | 2026-06-19 | **企業 SSO 正式版**（stable）：支援 Okta、Anthropic、VS Code 零設定 SSO 整合，企業可集中管理 Claude Code 授權；見 [[feature-radar]] |
 | **v2.1.183** | 2026-06-19 | **Auto mode 安全性強化**：破壞性 Git 指令（`git reset --hard`、`git checkout -- .`、`git clean -fd`、`git stash drop`）在 Auto mode 下若非明確要求，一律自動封鎖，防止非預期資料遺失 |
 | **Claude Code Artifacts** | 2026-06-18 | 正式推出 Artifacts 功能：工作階段可將進度即時輸出為可共享互動網頁（PR 摘要、儀表板、系統說明文件、釋出清單），隨 session 進行自動更新，團隊成員可直接瀏覽，無需安裝工具 |
 | **anthropic-sdk-python v0.111.0** | 2026-06-18 | helpers 模組新增 refusal-fallback 中間件模式，在模型拒絕回應時可優雅降級處理 |

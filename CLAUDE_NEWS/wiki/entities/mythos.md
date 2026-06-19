@@ -84,6 +84,12 @@ Anthropic 的官方 AI 資安能力研究計畫，Mythos Preview 為核心工具
 
 ## 時序
 
+### 2026-06-20
+**全球媒體持續報導 + 境外付費帳號停用**：
+- **國際媒體全面跟進**：Al Jazeera、DW.com、SiliconANGLE、dev.to 同步報導 Fable 5 / Mythos 出口禁令，核心敘事從「美國技術管制」擴大至「盟友間地緣政治緊張」與「AI Kill-Switch」爭議
+- **境外付費用戶帳號停用**：確認有非美國 Claude 付費訂閱用戶在管制期間帳號遭停用，Mythos 可及性衝擊擴大至一般訂閱層
+- **解禁預期**：承接 Ciauri 2026-06-18 首爾記者會「數日內恢復」聲明，後續見 [[entities/fable-5]]
+
 ### 2026-06-19
 **Wired 深度調查確認多重管制動機 + 解禁聲明 + 早期用戶豁免**：
 - **SK Telecom 中國關聯確認為根本動機**（Wired HN score 110）：Anthropic 先前授予 SK Telecom 對 Mythos（非 Fable 5）的存取權，美方對 SK Telecom 中國關聯的疑慮是出口管制啟動的真正起點；後 Amazon 研究人員向白宮舉報 Fable 5 越獄漏洞，兩件事疊加加速管制動作，澄清「jailbreak 是唯一原因」的既有說法

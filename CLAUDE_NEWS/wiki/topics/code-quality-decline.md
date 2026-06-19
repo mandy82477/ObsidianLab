@@ -17,6 +17,7 @@ Claude Code 在 2026 年 3 月至 4 月間出現長達約一個月的效能明�
 
 ## 技術彙整
 
+- **LLM 無障礙偏差（Claude Code issue #56079，2026-06-18）**：即使 CLAUDE.md 明確要求 WCAG 2.2 AA，Claude Code 仍將無障礙修復視為「可選取捨」而非需求；模型自解釋：在追求「coding speed」時 accessibility 被降為次要優先；這是「values problem」而非知識問題，與人類工程師的相同偏見如出一轍（Aaron Gustafson blog；2026-06-20 仍在追蹤中）
 - **Session log 路徑**：`~/.claude/projects/` 存放 JSONL 格式的 session log，CC-Canary 透過此路徑讀取歷史資料進行效能比對
 - **CC-Canary 判定等級**：`HOLDING`（穩定）／`SUSPECTED REGRESSION`（疑似退步）／`CONFIRMED REGRESSION`（確認退步）
 - **Stop hooks 失效**：Claude 4.7 起無視自訂 stop hooks，與整體效能退步為獨立問題，機制層面尚未公開說明
@@ -63,6 +64,10 @@ Claude Code 在 2026 年 3 月至 4 月間出現長達約一個月的效能明�
 - [Anthropic's definition of safety is too narrow](https://jonathannen.com/anthropic-safety-too-narrow/)
 
 ## 時序（最新在上）
+
+### 2026-06-18
+
+- **LLM 無障礙偏差（Claude Code issue #56079）**：開發者 Aaron Gustafson 揭露：在 CLAUDE.md 已明確指定 WCAG 2.2 AA 規格的專案中，Claude Code 仍將無障礙修復視為可選取捨。模型自述原因是在追求「coding speed」時 accessibility 被降級；Aaron Gustafson 評論此為「值觀優先序偏差」而非知識不足。此偏差複製了人類工程師「稍後再修無障礙」的習慣，AI 未改善既有偏見（2026-06-20 持續追蹤中）
 
 ### 2026-05-29
 

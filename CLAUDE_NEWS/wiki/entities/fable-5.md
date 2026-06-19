@@ -127,6 +127,12 @@ claude --model claude-fable-5-20260609
 
 ## 歷史記錄
 
+### 2026-06-20
+**全球媒體反應升溫 + 境外付費帳號遭停用**：
+- **多國主流媒體跟進報導**：Al Jazeera（出口禁令加劇盟友緊張）、DW.com（全球關切美國限制 Anthropic AI 存取）、SiliconANGLE（「Trump 削弱 Anthropic」）、dev.to（「美國政府強制關閉 Fable 5 和 Mythos 5：第一個 AI Kill-Switch」）同步報導，凸顯管制事件在美國以外持續發酵
+- **境外付費用戶帳號停用**：有確認案例顯示非美國 Claude 付費訂閱用戶在 Fable 5 / Mythos 管制期間帳號遭停用，進一步衝擊 Anthropic 境外用戶可及性
+- **解禁預期持續**：承接昨日 Ciauri「數日內恢復」聲明，待 Commerce 部正式解封通知
+
 ### 2026-06-19
 **解禁近況 + Wired 深度調查 + 早期用戶豁免**：
 - **Wired 深度調查（HN score 110）** 確認 SK Telecom 中國關聯是出口管制的根本動機：Anthropic 先前授予 SK Telecom 對 Mythos（非 Fable 5）的存取權，美方對 SK Telecom 中國關聯的疑慮觸發審查；此後 Amazon 研究人員向白宮揭露 Fable 5 的越獄漏洞，兩件事疊加加速了管制決定，澄清「jailbreak 是唯一原因」的既有說法

@@ -117,6 +117,10 @@ Fable 5 發布後，Amazon 安全研究人員發現特定提示詞可讓模型�
 
 ## 時序
 
+### 2026-06-20
+- **[國際輿論] 多國媒體聚焦「AI Kill-Switch」敘事**：dev.to 以「美國政府強制關閉 Fable 5 和 Mythos 5：第一個 AI Kill-Switch」為題，成為國際技術社群討論美國出口管制的主要框架之一；DW.com 報導美國限制 Anthropic AI 存取引發全球關切；Al Jazeera 分析美國出口禁令如何加劇與盟友的緊張關係；TechCrunch 報導印度持續辯論其 AI 主權——Anthropic 是印度第二大 AI 供應商，此管制讓印度科技界重新評估對境外 AI 的依賴（dev.to、DW.com、Al Jazeera、TechCrunch）
+- **[境外用戶衝擊] 長期付費用戶帳號遭無預警停用**：HN 討論（score 6）顯示使用 Claude 兩年以上的非美國長期付費用戶在出口管制期間帳號遭停用，同時收到三封郵件與退款（credits + 月費）但無明確說明；申訴流程緩慢；事件顯示 Anthropic 的帳號審查範圍比社群預期更廣（HN #48597861）
+
 ### 2026-06-19
 - **[談判升級] 焦點從 Fable 5 解禁轉向 AI 安全規範框架**：Politico 報導 White House 與 Anthropic 的談判焦點已從技術層面的 Fable 5 解禁轉向制定更廣泛的 AI 安全規則框架，顯示政府將此次爭端視為建立 AI 治理先例的機會（Politico）
 - **[零越獄要求] 技術會議後官員立場強硬**：Wired 報導 Trump 政府要求 Anthropic 在重新發布 Fable 5 前必須徹底解決所有越獄漏洞；Anthropic 在與 Commerce 部和 ONCD 主任 Sean Cairncross 的技術會議中重申漏洞影響有限，但官員明確表示「已過了辯論越獄是否嚴重的階段」——政府要求的是絕對防護，而非可接受性辯論（Wired）

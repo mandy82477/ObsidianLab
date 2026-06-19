@@ -79,6 +79,9 @@ Claude Code 是工程師日常編碼工具（CLI），成本隨使用量線性�
 
 ## 時序
 
+### 2026-06-20
+- **JPMorgan Chase 香港封鎖 Anthropic — 跟進報導確認**：Private Banker International 跟進報導（Google News 2026-06-19）再次確認 JPMorgan Chase 香港員工被封鎖使用 Anthropic AI 模型，原因為美國出口管制；FT 首報（2026-06-18）後跨媒體跟進，顯示此事件在金融服務業引發廣泛關注
+
 ### 2026-06-19
 - **Atlassian Claude Agent for Jira 推出**：Atlassian 正式推出 Claude Agent for Jira 企業整合，將 Claude 嵌入全球最大專案管理工具（Google News 2026-06-18）
 - **JFrog Governed Claude Code Integration 上線**：DevOps 平台 JFrog 推出企業級安全管控的 Claude Code 整合，可追蹤使用情況並設定治理策略（simplywall.st 2026-06-18）

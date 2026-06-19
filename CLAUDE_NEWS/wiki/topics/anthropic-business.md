@@ -112,6 +112,11 @@ Simon Willison（知名開發者博主）發表文章，認為 Anthropic 與 Ope
 
 ## 時序
 
+### 2026-06-20
+- **[出口管制商業衝擊] JPMorgan Chase 香港封鎖 Anthropic 存取（補充報導）**：Google News / Private Banker International 跟進報導（2026-06-19），確認 JPMorgan Chase 已封鎖香港員工使用 Anthropic AI 模型，直接原因為美國出口管制；此為出口管制對具名頂尖金融機構造成直接服務中斷的最新確認，顯示管制效果已滲透至企業端日常操作層（見 [[topics/enterprise-tool-tracker]]）
+- **[成本時代轉折] Always-on agent 低成本蜜月期結束**：Unite.AI 分析指出持續運行 Claude agent 的低成本時代正悄然結束，API 計費結構隨企業規模擴大發生質變；與此同時，HackerNoon 發布 multi-step agent 混用 Sonnet/Haiku 可削減 90% 成本的實戰指南，顯示企業正積極尋找規模化部署的成本解法（見 [[topics/enterprise-cost-management]]）
+- **[IPO] dev.to 分析：Anthropic 可能加入 $3.7 兆 AI IPO 浪潮**：dev.to 分析文章提及 Anthropic 可能在 AI IPO 浪潮同月上市；此為分析推測，**非 Anthropic 官方確認**（dev.to 2026-06-19）
+
 ### 2026-06-19
 - **[企業整合] Atlassian 正式推出 Claude Agent for Jira**：Atlassian 官方宣布推出 Claude Agent for Jira 企業整合，將 Claude 嵌入 Jira 工作流，是 Anthropic 生態進入全球最大專案管理工具的里程碑（Google News 2026-06-18）
 - **[企業整合] JFrog 推出受管理的 Claude Code 整合**：DevOps 平台 JFrog 推出 Governed Claude Code Integration，提供企業級安全管控的 Claude Code 部署方案，分析師評估對 JFrog 股東的正面意義（simplywall.st 2026-06-18）

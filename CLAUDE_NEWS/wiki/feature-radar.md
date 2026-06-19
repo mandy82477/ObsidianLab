@@ -4,7 +4,7 @@
 僅收錄官方 changelog、release note 或官方公告來源；社群工具見 [[topics/community-tech-tools]]。
 每次 ingest 後由 LLM 維護：新增功能、更新熱度、補充社群回饋。
 
-**最後更新：** 2026-06-19
+**最後更新：** 2026-06-20
 
 ---
 
@@ -29,8 +29,9 @@
 
 | 功能 | 發布日期 | 熱度 | 試用價值 | 狀態 |
 |------|----------|------|----------|------|
-| **Claude Code v2.1.183**（auto mode 破壞性 Git 指令自動封鎖） | 2026-06-19 | 🔥🔥 | ✅ 推薦 | 正式發布（`git reset --hard`、`git checkout -- .`、`git clean -fd`、`git stash drop` 在未明確要求時自動封鎖）|
-| **Claude Code Artifacts**（工作階段即時輸出可共享互動網頁） | 2026-06-18 | 🔥🔥🔥🔥 | ⚡ 有條件推薦 | 正式發布（PR 摘要、儀表板、系統說明文件等；隨 session 自動更新；企業場景；社群工具 Pagecast 跟進）|
+| **MCP Enterprise Authorization**（Okta / VS Code 零設定 SSO） | 2026-06-19 | 🔥🔥 | ⚡ 有條件推薦 | 正式發布（stable）：支援 Okta、Anthropic、VS Code 零設定 SSO 整合，企業授權管理升為生產可用 |
+| **Claude Code v2.1.183**（auto mode 破壞性 Git 指令自動封鎖） | 2026-06-19 | 🔥🔥🔥 | ✅ 推薦 | 正式發布（`git reset --hard`、`git checkout -- .`、`git clean -fd`、`git stash drop` 在未明確要求時自動封鎖）|
+| **Claude Code Artifacts**（工作階段即時輸出可共享互動網頁） | 2026-06-18 | 🔥🔥🔥🔥🔥 | ⚡ 有條件推薦 | 正式發布（PR 摘要、儀表板、系統說明文件等；隨 session 自動更新；企業場景；SD Times、Tech Times、DevOps.com 同日跟進）|
 | **Python SDK v0.111.0**（helpers refusal-fallback 中間件） | 2026-06-18 | 🔥 | ✅ 推薦 | 正式發布（模型拒絕回應時可優雅降級）|
 | **TS Vertex SDK v0.18.0**（新功能更新） | 2026-06-18 | 🔥 | ✅ 推薦 | 正式發布 |
 | **Claude Code v2.1.179**（串流中斷修復 + spinner 修復 + 滑鼠滾輪修復） | 2026-06-16 | 🔥 | ✅ 推薦 | 正式發布（partial response 保留而非丟失；spinner 不再卡住；滑鼠滾輪正常運作）|
@@ -80,12 +81,29 @@
 
 ## 🆕 最新功能（2026-06）
 
+### MCP Enterprise Authorization（企業 SSO 正式版）
+**發布：** 2026-06-19 | **熱度：** 🔥🔥 | **試用價值：** ⚡ 有條件推薦 | **狀態：** GA（stable）
+
+**是什麼：** MCP Enterprise Authorization 升為 stable，讓企業可透過 Okta、Anthropic 或 VS Code 整合啟用零設定 SSO，統一管理 Claude Code 的授權登入流程，無需個別設定每個開發者的認證憑證。
+
+**為何熱：** 解決企業內多人共用 Claude Code 時，授權管理分散的痛點；VS Code 零設定整合降低了企業 IT 部署門檻。Tech Times 於 2026-06-19 報導確認升為 stable。
+
+**快速上手：**
+```
+# 透過 VS Code 整合（零設定）：開啟 VS Code Claude Code 擴充套件，依 SSO 登入流程授權
+# Okta 整合：在企業 Okta 儀表板設定 MCP 應用，員工透過 SSO 登入即可取得存取權
+```
+
+**注意事項：** 企業場景優先，適合需要集中管理 Claude Code 授權的 IT 管理員；個人開發者仍使用 Anthropic 帳號直接登入。
+
+---
+
 ### Claude Code Artifacts（工作階段即時共享頁面）
-**發布：** 2026-06-18 | **熱度：** 🔥🔥🔥 | **試用價值：** ⚡ 有條件推薦 | **狀態：** 正式發布
+**發布：** 2026-06-18 | **熱度：** 🔥🔥🔥🔥🔥 | **試用價值：** ⚡ 有條件推薦 | **狀態：** 正式發布
 
 **是什麼：** Claude Code 可將工作階段進度即時輸出為可共享的互動網頁（Artifacts）。支援類型：PR 走查頁面、系統說明文件、儀表板、釋出清單。Artifact 隨工作階段進行自動更新，任何人可直接在瀏覽器開啟，無需安裝工具。
 
-**為何熱：** 解決了「Claude 在本地端工作，但結果難以與非工程師成員共享」的痛點。多家科技媒體（VentureBeat、The Decoder、Crypto Briefing 等）同步報導，企業文件協作場景接受度高。
+**為何熱：** 解決了「Claude 在本地端工作，但結果難以與非工程師成員共享」的痛點。初日即有多家科技媒體（VentureBeat、The Decoder、Crypto Briefing 等）同步報導；2026-06-19 SD Times、Tech Times、DevOps.com 再次同日跟進確認，企業文件協作場景接受度高。
 
 **快速上手：**
 在 Claude Code 工作階段中，執行工作後觸發 Artifacts 輸出——具體指令見官方部落格：

@@ -3,7 +3,7 @@
 **狀態：** monitoring
 **領域：** 🌐 社群
 **開始日期：** 2026-04-25
-**最後更新：** 2026-06-19
+**最後更新：** 2026-06-20
 
 ---
 
@@ -38,10 +38,23 @@
 
 ## 技術彙整
 
-### Loop Engineering：條件觸發的 Claude 執行設計（2026-06-19）
+### Context 裁剪 Tool Output 策略（2026-06-20）
+
+- **核心模式：** 解決 Claude Code 長 session 退化的關鍵不是「加更多 context」，而是主動裁剪 tool output，防止 context 腐蝕（context rot）
+- **實作方向：**
+  - 限制工具輸出長度（截斷或摘要化 tool 回應，而非全量塞入 context）
+  - 分 session 隔離不同任務，避免無關 context 跨任務污染
+  - 任務重置前先保存關鍵摘要，再開新 session
+  - 壓縮對話歷史：以摘要替代原始對話流
+- **解決的問題：** 「Claude 越用越笨」現象；3 小時以上任務中途失憶、計劃漂移
+- **適用場景：** 長 session 的 agentic 任務、多工具協同工作流、CI/CD 自動化 agent
+- **注意：** 與 spec-driven development 結合效果更好——先有規格文件，再讓 agent 在精簡 context 下執行（dev.to/kenimo49；Reddit r/ClaudeAI）
+
+### Loop Engineering：條件觸發的 Claude 執行設計（2026-06-19，更新 2026-06-20）
 
 - **核心模式：** 不讓 Claude 持續輪詢，而是設計「只在有實際工作時才觸發」的執行迴圈；解決 agent idle 時浪費 token 與上下文的問題
 - **實作方向：** 在 loop 入口加入工作偵測條件（如佇列非空、事件觸發、diff 存在），條件不成立時 agent 直接 sleep 或退出，不進入 Claude 呼叫
+- **具體工作流抽象（2026-06-20 補充）：** Boris Cherny 名言「我不再 prompt Claude，我寫 loop 讓 loop 去 prompt」的完整拆解——PR review、測試、push 等可拆解為觸發條件 + 執行步驟 + 結果驗證三段 loop；「設計 loop」取代「設計 prompt」是哲學升級（techstackups.com guide）
 - **適用場景：** CI/CD 監聽型 agent、PR review bot、定時輪詢類任務；不適合需即時響應的互動式 session
 - **與既有模式的關係：** 延伸自 Boris Cherny「Loops 是未來」論述，但強調「有意義的迴圈」而非無條件輪轉（Reddit r/ClaudeAI）
 

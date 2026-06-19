@@ -3,6 +3,44 @@
 Append-only 紀錄。每次 ingest、query 或 lint 都在此追加一條。
 格式：`## [YYYY-MM-DD] 類型 | 說明`
 
+## 2026-06-20 Ingest | news/2026-06-20.md（72 則）
+
+- 來源日報：`news/2026-06-20.md`（72 則，6 來源；主軸：Fable 5 / Mythos 出口管制持續（Ciauri 首爾記者會「數日內恢復」、白宮轉向制定 AI 安全規則、各國媒體跟進、境外付費用戶帳號停用）；OALABS 揭露攻擊者使用 Claude + Codex 入侵 14 家企業；JPMorgan 封鎖香港員工 Anthropic 存取；Claude Code Artifacts 正式發布（三家媒體跟進，feature-radar 升至 🔥🔥🔥🔥🔥）；MCP Enterprise Authorization 正式版（stable，Okta/VS Code SSO）；John Jumper 諾貝爾獎得主加入 Anthropic（待核實）；Boris Cherny Loop Engineering 哲學文章；context rot 修復五法；多 agent 協調困境社群討論）
+- 更新頁面：
+  - `entities/claude-code.md`：版本表新增 MCP Enterprise Authorization 條目
+  - `entities/fable-5.md`：歷史記錄 prepend 2026-06-20（多國媒體跟進、境外帳號停用事件）
+  - `entities/mythos.md`：時序 prepend 2026-06-20（國際媒體報導、Mythos 側影響）
+  - `entities/boris-cherny.md`：歷史記錄 prepend 2026-06-20；核心論述新增 Loop Engineering 哲學引用
+  - `topics/anthropic-government-policy.md`：時序 prepend 2026-06-20（各國媒體 Kill-Switch 敘事、境外帳號停用）
+  - `topics/ai-agent-safety.md`：技術彙整 prepend OALABS Claude + Codex 入侵 14 家企業；時序 prepend 2026-06-20
+  - `topics/enterprise-tool-tracker.md`：時序 prepend 2026-06-20（JPMorgan 香港跟進報導）
+  - `topics/enterprise-cost-management.md`：時序 prepend 2026-06-20（成本轉折分析、90% 削減策略）
+  - `topics/anthropic-business.md`：時序 prepend 2026-06-20（JPMorgan 跟進、成本轉折、IPO 傳聞標注）
+  - `topics/community-tech-discussions.md`：熱門討論表格新增 3 條（Loop Engineering、Context Rot 修復、MCP tool search）；技術彙整 prepend Context Rot 修復五法
+  - `topics/community-tech-patterns.md`：技術彙整 prepend Context 裁剪 Tool Output 策略；補充 Loop Engineering 模式
+  - `topics/code-quality-decline.md`：技術彙整 prepend LLM 無障礙偏差 issue #56079；時序 prepend 2026-06-18
+  - `wiki/feature-radar.md`：全覽表新增 MCP Enterprise Authorization；Claude Code Artifacts 熱度升至 🔥🔥🔥🔥🔥；v2.1.183 熱度升至 🔥🔥🔥
+  - `wiki/index.md`：新增 john-jumper 頁面條目
+- 新增頁面：`wiki/entities/john-jumper.md`（諾貝爾化學獎得主，加入 Anthropic 待核實）
+- feature-radar 更新：新增 MCP Enterprise Authorization（🔥🔥，⚡）；Artifacts 🔥🔥🔥🔥 → 🔥🔥🔥🔥🔥；v2.1.183 🔥🔥 → 🔥🔥🔥
+- index.md 狀態變更：無（新增 john-jumper 頁面）
+- 呈現品質審查：
+  | 頁面 | 結果 |
+  |------|------|
+  | anthropic-government-policy.md | ✅ 通過 |
+  | ai-agent-safety.md | ✅ 通過（新增 AI agent 進攻性濫用分類）|
+  | enterprise-cost-management.md | ✅ 通過 |
+  | enterprise-tool-tracker.md | ✅ 通過 |
+  | anthropic-business.md | ✅ 通過 |
+  | community-tech-discussions.md | ✅ 通過 |
+  | community-tech-patterns.md | ✅ 通過 |
+  | code-quality-decline.md | ✅ 通過 |
+  | feature-radar.md | ✅ 通過 |
+  | john-jumper.md | ✅ 通過（待核實標記正確套用）|
+  | boris-cherny.md | ✅ 通過 |
+  | fable-5.md | ✅ 通過 |
+  | mythos.md | ✅ 通過 |
+
 ## 2026-06-19 Ingest | news/2026-06-19.md（77 則）
 
 - 來源日報：`news/2026-06-19.md`（77 則，6 來源；主軸：Fable 5 / Mythos 出口管制持續（SK Telecom 中國關聯確認為根本動機 HN score 110、Amazon 研究員越獄漏洞舉報、Ciauri 首爾記者會「數日內恢復」、白宮談判轉向設定 AI 安全規則、國會議員施壓）；Claude Code v2.1.183 auto mode 破壞性 Git 指令封鎖；企業整合（Atlassian Claude Agent for Jira、JFrog Governed Claude Code）；SpaceX $60B Cursor 收購影響競爭格局；社群工具爆發（Pagecast / AI Commander / BeamWeaver / Pi Extension / Everything Claude Code microVM / Sqim / Prompt Foundry）；技術討論（Vibe coding 成就感缺失延燒、Loop Engineering、記憶管理技巧、無障礙偏差 issue）；LLM 無障礙偏差 issue #56079（WCAG 2.2 AA 規格被忽視）；Claude Code CVE 治理實踐報告）
