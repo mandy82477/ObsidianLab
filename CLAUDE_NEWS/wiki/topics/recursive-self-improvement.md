@@ -9,6 +9,8 @@
 
 ## 摘要
 
+⚠️ 本頁時序最新止於 2026-06-09，後續事件待補。
+
 2026-06-04，Anthropic Institute 發布《When AI Builds Itself: Our progress toward recursive self-improvement》報告（HN 477），首次系統性披露 AI 加速自身開發的進展：Anthropic 工程師平均每人可交付的程式碼量已提升 8 倍，Claude 現在負責 Anthropic 超過 **80-90% 的生產程式碼**。
 
 報告同時呼籲業界在遞歸自我改進成真之前建立全球協調的暫停機制（「煞車踏板」），引發 WSJ、NYT、BBC、Bloomberg、CNN、Reuters 等全球主流媒體同步報導。Jack Clark（Anthropic 政策主管）稱需要「brake pedal」。
@@ -21,6 +23,12 @@
 | Claude 佔 Anthropic 程式碼比例 | 80–90% |
 | HN 討論熱度 | 477 分 |
 | 媒體覆蓋 | WSJ、NYT、BBC、Bloomberg、CNN、Reuters、Telegraph、France 24、ABC 等 |
+
+---
+
+## 目前結論
+
+議題剛開始，尚無任何機構同意協調暫停。Anthropic 的報告是目前最詳盡的「AI 自我加速」公開數據，但呼籲機制的可行性存疑。
 
 ---
 
@@ -37,12 +45,6 @@
 - **全球協調暫停**（非單方面停止）：需要各大 AI 實驗室協調
 - **觸發條件：** 特定能力閾值，非時間節點
 - **批評聲音：** 「Anthropic 不是在暫停自己的開發，為何期待別人暫停？」（HN 討論）
-
----
-
-## 目前結論
-
-議題剛開始，尚無任何機構同意協調暫停。Anthropic 的報告是目前最詳盡的「AI 自我加速」公開數據，但呼籲機制的可行性存疑。
 
 ---
 

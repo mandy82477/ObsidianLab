@@ -4,14 +4,20 @@
 
 ## 專案目標
 
-每日聚焦 Claude Code 與 Anthropic 核心動態，從官方更新到社群實測，一站掌握技術情報。所有條目經 LLM 評分過濾、繁中摘要、再沉澱進 wiki，**給需要穩定訊號而非即時噪音的工程師**。
+每日聚焦 Claude Code 與 Anthropic 核心動態，從官方更新到社群實測，一站掌握技術情報。所有條目經 LLM 評分過濾、繁中摘要、再沉澱進 wiki。
+
+### 目標讀者
+
+- **Claude Code 重度使用者**：想第一時間知道有什麼壞了、值不值得升版，不用自己刷 HN。
+- **AI 系統開發者**：在建 agent 或工作流，想知道社群驗證了什麼、踩過哪些坑。
+- **Anthropic 生態追蹤者**：關注政策、融資、合作動態，一站掌握生態走向。
 
 ### 蒐集範圍
 
 | 類型 | 內容 |
 |------|------|
 | **官方核心** | GitHub Changelog、SDK / API 迭代、定價結構變化、Anthropic 公告 |
-| **社群實測** | 開發者真實回饋、Bug 回報、替代方案（HN / Reddit） |
+| **社群實測** | 工程師驗證過的工作流模式、agent 設計、Bug 回報與替代方案（HN / Reddit） |
 | **生態動態** | 融資、大型企業合作（AWS / Google）、政策趨勢、周邊工具 |
 
 ### 不收錄
@@ -83,7 +89,9 @@
 ## Wiki 規則入口
 
 - **`wiki/CLAUDE.md`**（進入 wiki/ 自動載入）：目錄結構、基本限制、搜尋策略
-- **`.claude/rules/wiki-ingest.md`**（ingest / lint 時載入）：頁面格式模板、欄位規則、品質標準
+- **`.claude/rules/wiki-ingest.md`**（ingest / lint 時載入）：分類標準與派工流程（主編指南）
+- **`.claude/rules/wiki-ingest-format.md`**（建立新頁面時載入）：頁面格式模板、欄位規則、品質標準
+- **`.claude/rules/wiki-ingest-[category].md`**（各記者載入）：模型 / 功能 / 商業 / 安全政策 / 社群 / 人物 各類別的負責頁面與更新規則
 
 ### 🚫 Wiki 關鍵限制
 

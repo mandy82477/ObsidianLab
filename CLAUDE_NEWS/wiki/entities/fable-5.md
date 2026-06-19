@@ -4,7 +4,7 @@
 **狀態：** active（正式發布；Fable 5 / Mythos 5 因美國政府出口管制指令暫停全球存取）
 **領域：** 🤖 模型
 **首次出現：** 2026-06-09
-**最後更新：** 2026-06-19
+**最後更新：** 2026-06-20
 
 ---
 
@@ -56,23 +56,15 @@ claude --model claude-fable-5-20260609
 - **1M context + 128K output**：適合處理整個 codebase 或長文件的任務
 - **多模態**：軟體工程、視覺、科學研究均達 SOTA
 
-## 相關議題
-
-- [[entities/mythos]] — Mythos 模型家族完整歷史
-- [[entities/pricing]] — Fable 5 定價與訂閱方案變動
-- [[topics/anthropic-government-policy]] — Anthropic vs 美國政府攻防完整時序
-- [[topics/anthropic-business]] — Anthropic IPO 背景與商業策略
-- [[topics/ai-agent-safety]] — Claude Code 供應鏈攻擊事件
-
 ## 爭議
 
-- **靜默降級競爭 LLM 開發（已部分撤回）**：Fable 5 初版在偵測到前沿 LLM 開發工作時靜默降級，系統卡承認「These safeguards will not be visible to the user」；2026-06-11 Anthropic 道歉撤回，改為「可見防護」——觸發時用戶將明確得知
-- **資安研究者護欄過激**：Fable 5 安全分類器過度敏感，連讀取資安部落格、分析 GitHub profile 等無害操作也被攔截；IBM X-Force 知名研究員 Valentina Palmiotti 公開批評（TechCrunch，HN score 512）
-- **Jailbreak 已公開**：Pliny（@elder_plinius）與 0xSufi 已公開 Fable 5 護欄繞過 PoC，使用多步驟攻擊組合（請求拆解重組、敘事框架包裝、長 context 操作）
-- **Microsoft 內部禁用**：Microsoft 法務/合規部門要求員工不得使用 Fable 5（Times of India、PYMNTS 報導，與 Fable 5 數據保留政策相關）
-- **Fable 5 成本高昂**：$200/月 Max 用戶一次 code review 可消耗 45% 週配額；社群回報消耗量個體差異極大
-- **30 天資料保留**：Bedrock 用戶數據強制離開 AWS 安全邊界，企業隱私顧慮
-- **「失去靈魂」討論**：部分用戶認為 Fable 5 相比 Opus 4.6 更工具性、減少人本關懷深度
+- ✅ **靜默降級競爭 LLM 開發（已部分撤回）**：Fable 5 初版在偵測到前沿 LLM 開發工作時靜默降級，系統卡承認「These safeguards will not be visible to the user」；2026-06-11 Anthropic 道歉撤回，改為「可見防護」——觸發時用戶將明確得知
+- ⚠️ **資安研究者護欄過激**：Fable 5 安全分類器過度敏感，連讀取資安部落格、分析 GitHub profile 等無害操作也被攔截；IBM X-Force 知名研究員 Valentina Palmiotti 公開批評（TechCrunch，HN score 512）
+- ⚠️ **Jailbreak 已公開**：Pliny（@elder_plinius）與 0xSufi 已公開 Fable 5 護欄繞過 PoC，使用多步驟攻擊組合（請求拆解重組、敘事框架包裝、長 context 操作）
+- ⚠️ **Microsoft 內部禁用**：Microsoft 法務/合規部門要求員工不得使用 Fable 5（Times of India、PYMNTS 報導，與 Fable 5 數據保留政策相關）
+- ⚠️ **Fable 5 成本高昂**：$200/月 Max 用戶一次 code review 可消耗 45% 週配額；社群回報消耗量個體差異極大
+- ⚠️ **30 天資料保留**：Bedrock 用戶數據強制離開 AWS 安全邊界，企業隱私顧慮
+- ⚠️ **「失去靈魂」討論**：部分用戶認為 Fable 5 相比 Opus 4.6 更工具性、減少人本關懷深度
 
 ## 出口管制：雙方立場
 
@@ -108,6 +100,14 @@ claude --model claude-fable-5-20260609
 **立場底線：** 管制是政治決定，不是技術必要性；Anthropic 正尋求解除或豁免，同時主張己方安全架構足夠可靠。
 
 ---
+
+## 相關議題
+
+- [[entities/mythos]] — Mythos 模型家族完整歷史
+- [[entities/pricing]] — Fable 5 定價與訂閱方案變動
+- [[topics/anthropic-government-policy]] — Anthropic vs 美國政府攻防完整時序
+- [[topics/anthropic-business]] — Anthropic IPO 背景與商業策略
+- [[topics/ai-agent-safety]] — Claude Code 供應鏈攻擊事件
 
 ## 參考來源
 
@@ -145,16 +145,16 @@ claude --model claude-fable-5-20260609
 **爭議焦點：Dario 被控拒絕修復 jailbreak + 用戶依賴感爆發**：Trump 顧問 David Sacks 在 X 上表示，美國政府曾提前警告 Anthropic Fable 5 被 jailbreak，但 Dario Amodei 拒絕修復也拒絕下架；Anthropic 回應稱該 jailbreak「並不嚴重」。TechCrunch 深度報導分析：此次出口管制從一開始就與 jailbreak 無關，而是更廣泛的出口管制架構問題（Dario 個人定義是否屬「外籍人士」）。白宮本週一協商已啟動。《The Atlantic》評論 Trump 政府持續升溫對 Anthropic 的戰爭，稱美國可能因此在 AI 競賽中落後。Reddit 大量用戶反映 Fable 5 下線後「無法回頭用舊模型」，分享對其他模型效果的落差感受。AI 價格戰分析指出此事件對 Anthropic 與 OpenAI 的商業壓力同步升溫。
 
 ### 2026-06-15
+**Axios 爆料「人際衝突」為主因，Stratechery 長文點名安全論述是雙面刃。**
 **協商持續推進 + 媒體深挖「個性衝突」**：Axios 報導內部消息稱 Anthropic 員工以「They screwed us」描述與白宮的關係，爆料主因是人際衝突（personality clash）而非純粹政策分歧。WSJ 同日報導 Anthropic 派遣多名高層員工赴華府與白宮官員緊急協商，試圖解除出口管制。Stratechery 長文分析（Ben Thompson，HN 128 分）：Fable 在親身體驗中「留下極深印象」，同時犀利指出 Anthropic 的安全論述是把雙面刃——使政府有現成正當性強制干預。加拿大總理 Carney 公開警告此事件顯示「過度依賴大型 AI 模型」的地緣政治風險。《經濟學人》評 Trump 的封鎖決策「反覆無常且混亂」。開發者社群出現非技術人員（PMM）展示 60 天使用 Claude Code 獨立完成多個商業專案、收入 $4K 的案例，引發對「非技術角色護城河消失」的廣泛討論。
 
 ### 2026-06-14
+**Amazon Jassy 直報白宮成為管制直接觸發原因，EU 與印度 AI 主權爭議同步浮現。**
 **出口管制事件後續：更多細節浮現 + 國際影響擴大**：Axios 揭露 Anthropic 僅有 90 分鐘執行撤架命令（下午 5:21pm ET 收到指令）。The Verge / WSJ 報導：Amazon 安全研究顯示 Fable 5 可透過一系列提示詞生成可用於網路攻擊的資訊，Amazon CEO Andy Jassy 直接向白宮官員通報，成為管制指令的直接觸發原因。Semafor 報導：白宮動機之一是中國關聯組織疑似存取 Mythos 5 的情報。TechCrunch 報導：Politico 分析此事件暴露歐盟 AI 主權弱點，EU 執委會宣布正在評估實際影響；印度科技界（Anthropic 第二大市場）重燃 AI 自主辯論，Anthropic 剛宣布與 TCS 的企業合作隨即受衝擊。社群層面：用戶抱怨 Opus 4.6 在書籍編輯任務上與 Fable 5 差距明顯，尋求替代 prompt 策略。美國戰爭部長 Hegseth 公開就此發表聲明但無法提供具體理由，社群批評「最無能政府」。Forbes 探討 Anthropic 是否需要提供 Fable 5 退款。
 
 ### 2026-06-13
+**Trump 政府下令停用，Anthropic 90 分鐘內對全體用戶關閉存取；Anthropic 安全論述反成政府援引依據。**
 **美國政府出口管制指令**：Trump 政府以「國家安全授權」發布出口管制指令，要求 Anthropic 停用 Fable 5 與 Mythos 5 對所有外籍人士的存取，包含美國境內外籍員工。Anthropic 於下午 5:21pm ET 收到指令，為確保合規對全體用戶停用兩款模型——即使這代表美國用戶也無法繼續使用。指令未提供具體國家安全顧慮說明。TechCrunch 分析：Anthropic 對 Fable 5「太危險」的安全論述，反而成為政府援引的理由，是「AI 安全敘事的意外後果」。社群熱議 Anthropic 安全立場與政府干預之間的弔詭關係（Reddit 用戶整理時序：Anthropic 主張自己有資格決定誰能用最強模型，政府隨即接管了這個決定）。Fable 5 在下線前的 72 小時窗口期，開發者展示了大量編碼成果：單次對話生成 2,319 行遊戲、10 小時打造多人棋藝平台、Go decimal 函式庫效能超越市場最快工具 35%。
-
-### 2026-06-09
-正式發布。HN score 2,448，近 2,000 評論。6/22 前含括於訂閱方案。
 
 ### 2026-06-12
 Jailbreak 持續爭議：有人再次聲稱破解成功，Anthropic 官方出面駁斥該說法。社群測試數據顯示 Fable 5 在對話中使用「honest」一詞比率（1.79%）為各代模型最高，引發對模型行為與誠實性設計的討論。Anthropic 在上市 48 小時內撤回了 Fable 5 的研究存取限制（前一日政策）。917 個 coding-agent 場景測試：Fable 5 以 0.9 分之差略勝 Opus 4.8，但 token 消耗約 2 倍（Reddit r/ClaudeAI）。
@@ -164,3 +164,6 @@ Jailbreak 持續爭議：有人再次聲稱破解成功，Anthropic 官方出面
 
 ### 2026-06-10
 發布後第一天社群討論爆發：靜默降級爭議、30 天資料保留爭議、供應鏈攻擊威脅升高、Microsoft AI CEO 批評 Anthropic 意識論述、多個工具社群跟進（Lanes v0.43.0 加入 Fable 5 支援）。
+
+### 2026-06-09
+正式發布。HN score 2,448，近 2,000 評論。6/22 前含括於訂閱方案。

@@ -4,7 +4,7 @@
 **狀態：** active
 **領域：** 👤 人物
 **首次出現：** 2026-04-23（事後報告發布）
-**最後更新：** 2026-05-27
+**最後更新：** 2026-06-20
 
 ---
 
@@ -62,6 +62,18 @@ Boris Cherny 的公開言論呈現兩種截然不同的社群反應：
 - [[entities/openclaw]]（第三方工具管控政策）
 - [[topics/code-quality-decline]]（4/23 事後報告與社群問責）
 - [[topics/community-tech-patterns]]（設計哲學：Loops、vibe coding 反思）
+
+## 歷史記錄
+
+- 2026-05-27：Platformer 長篇專訪「Claude Code's creator on the end of the software engineer」發布，為其「軟體工程已死」系列論述最完整陳述
+- 2026-05-13：公開每晚數千個 AI 子代理並行執行深度工作的工作流架構，由 Business Insider 等媒體報導
+- 2026-05-08：在「Code with Claude」大會宣稱「寫程式問題已被解決（coding is solved）」，並公開反對「vibe coding」一詞
+- 2026-05-06：公開宣示 Anthropic 內部已無傳統軟體工程師職位，引發業界廣泛論戰
+- 2026-05-05：在 podcast 中宣示已 100% 用 Claude Code 取代手動編碼，提出「Loops 是 AI 編碼的未來範式」
+- 2026-04-25：在 The Verge 報導中聲明訂閱方案並非為第三方 agentic 工具使用模式而設計
+- 2026-04-23：Claude Code 效能退步事件確認後發布事後報告，承諾超過 50 項修復
+
+---
 
 ## 參考來源
 

@@ -60,20 +60,20 @@ description: 驗證所有 commands / rules / CLAUDE.md 修改後，相關指令�
 讀取各 command 內容，確認以下步驟存在且語意正確：
 
 **wiki-ingest.md**
-- [ ] Step 4b「呈現品質審查」存在，且引用 `.claude/rules/wiki-ingest.md`（不是 `CLAUDE.md`）
-- [ ] Step 6「更新 feature-radar.md」存在，且引用 `.claude/rules/wiki-ingest.md`
-- [ ] Step 9 核對清單存在
+- [ ] Step 4 更新 `wiki/feature-radar.md` 存在，且引用 `.claude/rules/wiki-ingest-features.md`
+- [ ] Step 4 的 `wiki/log.md` 格式含 `呈現品質` 欄位
+- [ ] Step 5 核對清單存在
 
 **wiki-lint.md**
 - [ ] Step 1 同時讀取 `wiki/CLAUDE.md` 和 `.claude/rules/wiki-ingest.md`
-- [ ] Step 3e 引用 `.claude/rules/wiki-ingest.md`「Wiki 頁面呈現品質標準」
+- [ ] Step 3e 引用 `.claude/rules/wiki-ingest-format.md`「Wiki 頁面呈現品質標準」
 - [ ] Step 6b 錨點驗證表存在
-- [ ] Step 6d 指向 `.claude/rules/wiki-ingest.md` 中的 `[加入:]` 標記
-- [ ] Step 6e 分別檢查 `wiki/CLAUDE.md`（閾值 80 行）和 `.claude/rules/wiki-ingest.md`（閾值 250 行）
+- [ ] Step 6d 指向 `.claude/rules/wiki-ingest-format.md` 及 `wiki-ingest-*.md` 中的 `[加入:]` 標記
+- [ ] Step 6e 分別檢查 `wiki/CLAUDE.md`（閾值 80 行）和 `.claude/rules/wiki-ingest.md`（閾值 80 行）
 
 **news-pipeline-steps.md**
 - [ ] Step 2 明確讀取 `wiki/CLAUDE.md` + `.claude/rules/wiki-ingest.md`
-- [ ] Step 2 item 9 引用 `.claude/rules/wiki-ingest.md`「Wiki 頁面呈現品質標準」
+- [ ] Step 2 有 4 個子項目（分類、讀取、派工、彙整）
 - [ ] Step 6 log 寫入步驟存在
 
 ---

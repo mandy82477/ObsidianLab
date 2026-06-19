@@ -98,24 +98,10 @@ git -C REPO_ROOT push
 
 執行完整 wiki ingest 流程（本步驟為 `.claude/commands/wiki-ingest.md` 的精簡複本，修改任一方時必須同步另一方）：
 
-1. 讀取 `news/TARGET_DATE.md`
-2. 同時讀取：`wiki/CLAUDE.md`（目錄結構與限制）、`.claude/rules/wiki-ingest.md`（格式模板與品質標準）、`wiki/index.md` + `wiki/log.md`（確認未重複 ingest）
-2.5. **觸發掃描（先問後寫）**：逐一問每個追蹤頁面的觸發問句，命中者列入本次更新清單（詳見 `wiki-ingest.md` Step 2.5）
-3. 比對日報內容，找受影響的既有頁面
-4. 更新相關 entities/ 和 topics/ 頁面
-4a. **升格檢查（discussions → patterns）**：
-    - 讀取 `topics/community-tech-discussions.md` 的「熱門討論」表格
-    - 找出 `模式` 欄為 🌊延燒 的主題（連續 3 天以上）
-    - 對每個 🌊延燒 主題判斷：**這個討論是否已形成「可複用的工作流建議」？**
-      - ✅ 升格條件：社群已有多人複現 + 有具體可執行步驟（做法 A 比做法 B 好，理由是 X）
-      - ❌ 不升格：只有觀察或爭議、沒有共識、或 patterns.md 已有對應條目
-    - 若升格：在 `topics/community-tech-patterns.md` 的「技術彙整」對應類別下新增條目；同步在 discussions.md 該討論列的 `衍生` 欄填入 `→ patterns`
-5. 判斷是否需建立新頁面（entities/ 或 topics/）
-6. 更新 `wiki/feature-radar.md`
-7. Append 至 `wiki/log.md`
-8. 更新 `wiki/index.md`
-9. 執行呈現品質審查（見 `.claude/rules/wiki-ingest.md`「Wiki 頁面呈現品質標準」）
-10. 輸出 Step 9 核對清單
+1. 讀取 `news/TARGET_DATE.md`；同時讀取 `wiki/CLAUDE.md`、`.claude/rules/wiki-ingest.md`（主編指南）、`wiki/index.md`、`wiki/log.md`
+2. **分類（主編）**：依 `.claude/rules/wiki-ingest.md` 分類表為每則條目標記類別（模型 / 功能 / 商業 / 安全政策 / 社群 / 人物）
+3. **派工（Agent tool）**：對每個有條目的類別呼叫 Agent tool（有多類別時同一訊息並行發出）；各記者讀取 `.claude/rules/wiki-ingest-[category].md`，更新負責頁面；需建新頁面時讀 `.claude/rules/wiki-ingest-format.md`；完成後回傳標準回報格式（詳見 `.claude/commands/wiki-ingest.md` Step 3）
+4. **彙整共用檔案（主編）**：依所有記者回報，更新 `wiki/feature-radar.md`、`wiki/index.md`（狀態變更 + 新頁面）、`wiki/log.md`（append）；若有重大事件，更新 `wiki/overview.md`
 
 - Step 2 失敗時記錄但繼續 Step 4（web build 不依賴 wiki）
 

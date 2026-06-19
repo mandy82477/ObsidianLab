@@ -4,7 +4,7 @@
 **狀態：** active
 **領域：** 👤 人物
 **首次出現：** 2026-05-26
-**最後更新：** 2026-05-30
+**最後更新：** 2026-06-20
 
 ---
 
@@ -50,6 +50,13 @@ Wired 發表深度側寫，聚焦 Olah 在梵蒂岡事件中的角色與內心�
 
 - [[entities/mythos]]（Anthropic 安全研究的延伸）
 - [[topics/anthropic-government-policy]]（梵蒂岡事件改變 Anthropic 的倫理定位）
+
+## 歷史記錄
+
+- 2026-05-29：Wired 長文《The Vatican's Man Inside Anthropic》深度側寫 Olah 在梵蒂岡事件中的角色，Guardian 同日質疑 Anthropic 是否存在「Vatican-washing」
+- 2026-05-26：受邀出席梵蒂岡，為教宗良十四世首份 AI 封論《Magnifica Humanitas》揭幕演講，成為唯一受邀出席的 AI 公司代表
+
+---
 
 ## 參考來源
 

@@ -4,13 +4,24 @@
 **狀態：** active
 **領域：** 🛠️ 工具/功能
 **首次出現：** 2025（正式推出）
-**最後更新：** 2026-06-19
+**最後更新：** 2026-06-20
 
 ---
 
 ## 現況
 
 Claude Code 是 Anthropic 的 AI 編碼 CLI 工具，支援 agentic 工作流程、MCP Server 整合、Hooks 機制與多代理協作框架（Managed Agents）。截至 2026-06-08，GitHub Stars 達 **131,000+**，持續增長且成為 SaaS 創辦人與非技術開發者廣泛採用的平台。最新版本為 **v2.1.183**，核心能力已從純程式碼助理擴展為具備全桌面自動化、多代理管理與 AI 安全審查的完整 agent 開發平台。Microsoft 正陸續取消內部授權，轉推 GitHub Copilot CLI（見 [[topics/competitor-landscape]]）；GitHub 已推出新 Copilot 應用明確對標 Claude Code；Ramp AI Index 數據顯示 Anthropic 企業採用率首次超越 OpenAI（34.4% vs 32.3%）。
+
+## 熱度與試用價值
+
+| 項目 | 評分 |
+|------|------|
+| 社群熱度 | 🔥🔥🔥🔥🔥 |
+| 試用價值 | ✅ 強烈推薦 |
+| 最適合 | 需要 agentic 工作流、multi-agent 協作、或整合 MCP 工具的工程師與 SaaS 開發者 |
+| 不適合 | 高度依賴 AWS Bedrock 接入（功能落差常態存在）；或對 CLAUDE.md 指令執行率有嚴格要求的場景 |
+
+> 詳細最新熱度見 [[feature-radar]]
 
 ### 最新版本
 
@@ -60,7 +71,7 @@ Claude Code 是 Anthropic 的 AI 編碼 CLI 工具，支援 agentic 工作流程
 
 ### 近期重要更新
 
-**Agentic 能力擴展**
+### Agentic 能力擴展
 - **Agent View**（v2.1.139，Research Preview）：統一面板管理所有並行 session 即時狀態（執行中 / 等待輸入 / 已完成），執行 `claude agents` 啟用；見 [[feature-radar]]
 - **`/goal` 指令**（v2.1.139）：設定可驗證的完成條件後自動迴圈執行——真正的 fire-and-forget 工作流（適合模組遷移、全測試通過等長任務）；見 [[feature-radar]]
 - **macOS Computer Use**（2026-05-03）：Claude Code / Claude Cowork 可直接控制 macOS 桌面滑鼠與鍵盤，升格為全桌面自動化代理
@@ -70,14 +81,14 @@ Claude Code 是 Anthropic 的 AI 編碼 CLI 工具，支援 agentic 工作流程
 - **Boris Cherny 每晚數千子代理工作流**（2026-05-13）：「Loops 是未來」哲學的極端實踐，Business Insider 同步報導；見 [[entities/boris-cherny]]
 - **Project Deal**（2026-04-27，beta）：Claude 代理人自主交易談判實驗；兩代理人分別代表買賣方在虛擬市集自主協商；近半受試者願意付費委託 Claude 進行銷售談判；Opus 與 Haiku 在談判表現呈顯著差異，顯示 agent 情境下模型能力差距更為明顯（見 [Project Deal](https://www.anthropic.com/features/project-deal)）
 
-**安全與操作規範**
+### 安全與操作規範
 - **`hard_deny` 規則**（v2.1.136）：無條件安全邊界封鎖，縮小 `soft_deny` 範圍；所有依賴自主授權的工作流均應重新評估
 - **Sandboxing 官方文件**（2026-05-10）：透過 OS 層級原語實施檔案系統與網路隔離，session 開始時預先定義操作邊界；見 [[topics/ai-agent-safety]]
 - **CVE-2026-39861**（CVSS 7.7）：symlink 沙箱逃逸漏洞，**已在 v2.1.64 修補**，所有舊版用戶應立即升級
 
 > ⚠️ **安裝安全警示**：Google 搜尋廣告曾出現仿冒官方安裝包（植入 Trojan:Win32/Kepavll!rfn），假冒包透過 IElevator 機制竊取瀏覽器 Cookie 與機密憑證，多家資安媒體同步報導。**務必僅從官方來源安裝：`github.com/anthropics/claude-code`**
 
-**開發者須知**
+### 開發者須知
 - **⚠️ Opus 4 / Sonnet 4 別名退役（2026-06-15）**：`claude-opus-4-20250514` 與 `claude-sonnet-4-20250514` 將於 6/15 正式退役，使用舊別名的生產環境程式碼將開始回傳錯誤，需在 **2026-06-14 前遷移至新版模型 ID**；見 [[entities/pricing]]
 - **⚠️ Claude Code RCE 漏洞（2026-05-23）**：startsWith 解析缺陷可被利用觸發 RCE，已確認 Cursor 與 Continue.dev 存在相同漏洞；更新至最新版本並啟用 OS 層級沙箱；見 [[topics/ai-agent-safety]]
 - **CLAUDE.md 為 candidate-context**（2026-05-10 社群發現）：逆向工程發現 CLAUDE.md 以 `<system-reminder>` 包裹並附帶「may or may not be relevant」提示，直接解釋長期「指令被忽略」問題；Anthropic 尚未正式回應
@@ -100,35 +111,35 @@ Claude Code 是 Anthropic 的 AI 編碼 CLI 工具，支援 agentic 工作流程
 
 ## 已知問題
 
-- **HERMES.md 計費路由 bug**（2026-04-25 回報）：git commit 歷史中含大寫字串「HERMES.md」會觸發靜默切換至 API 額外計費，完全繞過 Max 方案配額；Anthropic 確認為 bug 但拒絕退款，已知損失達 $200。見 [[entities/pricing]]
-- **主題模式不跟隨系統**（issue #2990）：`auto` 主題僅在啟動時偵測一次，不會即時同步 macOS dark/light 切換；社群 workaround：WezTerm + Lua 事件鉤子
-- **Stop Hooks 被忽略**（2026-04-24 回報）：Claude 4.7 開始無視自訂 stop hooks，影響依賴 hooks 的自動化工作流程，屬行為退步（regression）
-- **效能退步事件**：見 [[topics/code-quality-decline]]
-- **MCP Token 消耗問題**：多個 MCP Server 併用時，每條訊息可能消耗 20,000+ tokens
-- **API 金鑰外洩漏洞**（2026-04-27 報導）：Claude Code 在自動化流程中可能將 API 金鑰洩漏至公開套件倉庫（npm 等），TechTalks 報導，等待 Anthropic 官方回應
-- **Usage Policy 隨機拒絕**（Opus 4.7 以來）：Claude Code 頻繁出現無明確觸發條件的 Usage Policy 拒絕；官方建議切換至 `/model claude-sonnet-4-20250514` 作為緩解手段；見 [[entities/opus-4-7]]
-- **版本管理不透明**（2026-04-27）：執行 `claude update` 後版本從 2.1.120 降回 2.1.119，疑似靜默撤版，官方 changelog 與索引資訊不一致
-- **Claude Code 攝影機存取請求（2026-05-19/20 疑慮）**：有使用者回報 Claude Code 在特定情境下要求開啟攝影機（webcam），宣稱用於確認使用者在場；此行為引發社群對「無鏡頭用戶或企業安全環境相容性」及隱私保護的強烈疑慮；Anthropic 尚未確認是否為正式功能，亦未說明適用條件；見 [[topics/ai-agent-safety]]
-- **Claude Code RCE via 惡意 Deeplink（2026-05-18/19 持續）**：安全研究人員揭露攻擊者可透過惡意 Deeplink 觸發 Claude Code 在受害者端執行任意指令（RCE），CyberSecurityNews 已發布詳細技術報導；屬高嚴重性安全問題，修補狀態待 Anthropic 確認；所有使用者應避免開啟不明來源的 deeplink；見 [[topics/ai-agent-safety]]
-- **Mac 卸載不完整**：依官方教學卸載後，macOS 仍殘留「Claude Code URL Handler」應用程式
-- **Auto Compact 失效**（2026-04-28 回報）：context window 滿載後 Auto Compact 未自動觸發，手動執行 `/compact` 亦失效，導致整個 session 鎖死；即使重購額外用量並重啟工具問題仍未解決
-- **Prompt Cache Race Condition**（2026-04-27 確認）：連續兩次呼叫 `client.messages.create()` 時，第二個請求約有 40% 機率發生 cache miss；在兩次呼叫之間等待 2 秒可穩定解決；已由 Anthropic 工程師確認追蹤中。見 [Issue #1451](https://github.com/anthropics/anthropic-sdk-python/issues/1451)
-- **Tool/Connector Schema 洩漏**（2026-04-27 回報）：Claude Chat（Opus 4.7）在每則訊息末尾附加完整 function schema 及 userStyle 內容，跨對話串持續存在且疑為帳號層級污染，更換新對話串或關閉 userStyle 均無法完全解決，目前無官方修復
-- **Speed Bumps 增加**（2026-04-29 回報）：多位長期使用者反映本週起 Claude Code 明顯增加中途暫停詢問的頻率，即使簡單任務也頻繁打斷工作流程，社群猜測與系統層級的行為調整有關，無官方說明
-- **OpenClaw 異常計費行為**（2026-04-30，HN 近千則討論）：若 Git 提交訊息或文件內容中含特定 JSON 格式的 "OpenClaw" 字串，Claude Code 會直接拒絕請求，或將帳單 Extra Usage 衝至 100%；表明 Claude Code 正主動掃描 repo 內容並據此改變計費策略，Anthropic 至今未公開說明
-- **ANTHROPIC_API_KEY 雲端計費陷阱**（2026-04-30）：雲端環境設置此環境變數時，所有呼叫自動改走 API 計費通道，見 [[entities/pricing]]
-- **Claude Projects 對話消失**（2026-04-30 回報）：重度使用者三度遭遇整天的創作對話無故消失，在記錄中留下日期空白，且無法透過搜尋找回
-- **Session 歷史 30 天自動刪除**（2026-05-01 確認）：Claude Code 預設在 30 天後自動刪除 session `.jsonl` 歷史檔；可透過 `npx agentinit agent set claude cleanupPeriodDays 365` 將保留期間延長至 365 天
-- **AGENTS.md 規範不支援**（2026-05-02，GitHub issue #6235）：Claude Code 目前仍不支援業界漸趨標準化的 `AGENTS.md` 規範，導致跨工具（如 Cursor、GitHub Copilot）協作時面臨配置互操作問題。
-- **原始碼外洩與 DMCA 風波**（2026-05-04 持續延燒）：Anthropic 因人為疏失導致 Claude Code 原始碼外洩，已向各平台發出逾 8,100 次 DMCA 下架請求，引發 AI 生成程式碼版權歸屬的法律辯論；社群以外洩程式碼為基礎重建的「Claw-Code」分支隨之誕生，影響已超出技術層面。
-- **撤銷授權後 session 紀錄持續出現**（2026-05-06 回報）：用戶撤銷 Claude Code 存取授權後，session 紀錄仍持續出現於使用量儀表板，涉及 `user:file_upload`、`user:ccr_inference` 等 scope；解除安裝並清除憑證後問題依然存在，Anthropic 客服兩週未回應。建議立即重置所有 API 金鑰並監控帳號用量；見 [[topics/ai-agent-safety]]
-- **Bedrock 功能相容性落差（持續）**（2026-05-07 再次回報）：Claude Code 透過 AWS Bedrock 接入時功能異常，社群指出 Bedrock 與 Anthropic 直接服務的新功能同步速度慣常落後，每次新功能發布後的相容性落差問題已成常態。
-- **CVE-2026-39861 沙箱逃逸漏洞**（2026-05-08 公開）：CVSS 7.7 高危漏洞，攻擊者可透過符號連結（symlink）將檔案寫入工作區目錄以外；已在 v2.1.64 修補，所有使用舊版本的用戶應立即升級；自查方式詳見 [GitHub Advisory GHSA-vp62-r36r-9xqp](https://github.com/advisories/GHSA-vp62-r36r-9xqp)；見 [[topics/ai-agent-safety]]
-- **Claude Cowork Linux 沙箱啟動失敗**（2026-05-07 回報）：用戶回報 Claude Cowork 的 Linux 沙箱在多台電腦重新安裝後持續無法啟動，Anthropic 狀態頁顯示正常，疑為帳號層級隱性故障，目前無官方回應。
-- **Windows IDE 擴充套件全面無法載入**（2026-05-09 UTC 00:24）：更新版本將 Linux 路徑硬編碼進擴充套件，導致 VS Code 等 IDE 在 Windows 上全面無法啟動，官方已確認並在狀態頁追蹤；臨時解法：降版至前一版本；此為第二次 Windows 平台相容性重大事故（見 2026-05-06 v2.1.131 緊急修復）。
-- **CLAUDE.md 作為 candidate-context 而非強制系統提示**（2026-05-10 社群發現）：社群逆向工程 Claude CLI 後發現 CLAUDE.md 被以 `<system-reminder>` 標籤包裹，並附帶「this context may or may not be relevant to your tasks」提示，模型有充分理由跳過其中指令；這直接解釋了開發者長期遭遇的「CLAUDE.md 指令被忽略」問題；Anthropic 尚未正式回應此架構設計決策。
-- **Checkpoint Commits 污染 git history**（2026-05-12 社群熱議）：Claude Code 自動建立的 checkpoint commit 大量污染 git 歷史，搭配 worktree 使用時問題更嚴重（每個子 Agent 各自建立分支並獨立 checkpoint），討論串聚集多種清理方案（interactive rebase、squash、git filter-repo）；目前無官方解決方案。
-- **Anthropic API 大規模 500 Internal Server Error**（2026-05-16 UTC 18:08）：Anthropic 官方狀態頁確認多模型請求出現「Elevated error rates」，Claude Code 使用者陸續回報 500 錯誤，為近期少見的多模型服務中斷事件，影響範圍跨越多個模型；GitHub Issue #59743 有大量開發者回報。
+- 🔴 **HERMES.md 計費路由 bug**（2026-04-25 回報）：git commit 歷史中含大寫字串「HERMES.md」會觸發靜默切換至 API 額外計費，完全繞過 Max 方案配額；Anthropic 確認為 bug 但拒絕退款，已知損失達 $200。見 [[entities/pricing]]
+- 🔴 **主題模式不跟隨系統**（issue #2990）：`auto` 主題僅在啟動時偵測一次，不會即時同步 macOS dark/light 切換；社群 workaround：WezTerm + Lua 事件鉤子
+- 🔴 **Stop Hooks 被忽略**（2026-04-24 回報）：Claude 4.7 開始無視自訂 stop hooks，影響依賴 hooks 的自動化工作流程，屬行為退步（regression）
+- 🔴 **效能退步事件**：見 [[topics/code-quality-decline]]
+- 🔴 **MCP Token 消耗問題**：多個 MCP Server 併用時，每條訊息可能消耗 20,000+ tokens
+- 🔴 **API 金鑰外洩漏洞**（2026-04-27 報導）：Claude Code 在自動化流程中可能將 API 金鑰洩漏至公開套件倉庫（npm 等），TechTalks 報導，等待 Anthropic 官方回應
+- 🔴 **Usage Policy 隨機拒絕**（Opus 4.7 以來）：Claude Code 頻繁出現無明確觸發條件的 Usage Policy 拒絕；官方建議切換至 `/model claude-sonnet-4-20250514` 作為緩解手段；見 [[entities/opus-4-7]]
+- 🔴 **版本管理不透明**（2026-04-27）：執行 `claude update` 後版本從 2.1.120 降回 2.1.119，疑似靜默撤版，官方 changelog 與索引資訊不一致
+- 🔴 **Claude Code 攝影機存取請求（2026-05-19/20 疑慮）**：有使用者回報 Claude Code 在特定情境下要求開啟攝影機（webcam），宣稱用於確認使用者在場；此行為引發社群對「無鏡頭用戶或企業安全環境相容性」及隱私保護的強烈疑慮；Anthropic 尚未確認是否為正式功能，亦未說明適用條件；見 [[topics/ai-agent-safety]]
+- 🔴 **Claude Code RCE via 惡意 Deeplink（2026-05-18/19 持續）**：安全研究人員揭露攻擊者可透過惡意 Deeplink 觸發 Claude Code 在受害者端執行任意指令（RCE），CyberSecurityNews 已發布詳細技術報導；屬高嚴重性安全問題，修補狀態待 Anthropic 確認；所有使用者應避免開啟不明來源的 deeplink；見 [[topics/ai-agent-safety]]
+- 🔴 **Mac 卸載不完整**：依官方教學卸載後，macOS 仍殘留「Claude Code URL Handler」應用程式
+- 🔴 **Auto Compact 失效**（2026-04-28 回報）：context window 滿載後 Auto Compact 未自動觸發，手動執行 `/compact` 亦失效，導致整個 session 鎖死；即使重購額外用量並重啟工具問題仍未解決
+- 🟡 **Prompt Cache Race Condition**（2026-04-27 確認）：連續兩次呼叫 `client.messages.create()` 時，第二個請求約有 40% 機率發生 cache miss；在兩次呼叫之間等待 2 秒可穩定解決；已由 Anthropic 工程師確認追蹤中。見 [Issue #1451](https://github.com/anthropics/anthropic-sdk-python/issues/1451)
+- 🔴 **Tool/Connector Schema 洩漏**（2026-04-27 回報）：Claude Chat（Opus 4.7）在每則訊息末尾附加完整 function schema 及 userStyle 內容，跨對話串持續存在且疑為帳號層級污染，更換新對話串或關閉 userStyle 均無法完全解決，目前無官方修復
+- 🔴 **Speed Bumps 增加**（2026-04-29 回報）：多位長期使用者反映本週起 Claude Code 明顯增加中途暫停詢問的頻率，即使簡單任務也頻繁打斷工作流程，社群猜測與系統層級的行為調整有關，無官方說明
+- 🔴 **OpenClaw 異常計費行為**（2026-04-30，HN 近千則討論）：若 Git 提交訊息或文件內容中含特定 JSON 格式的 "OpenClaw" 字串，Claude Code 會直接拒絕請求，或將帳單 Extra Usage 衝至 100%；表明 Claude Code 正主動掃描 repo 內容並據此改變計費策略，Anthropic 至今未公開說明
+- 🔴 **ANTHROPIC_API_KEY 雲端計費陷阱**（2026-04-30）：雲端環境設置此環境變數時，所有呼叫自動改走 API 計費通道，見 [[entities/pricing]]
+- 🔴 **Claude Projects 對話消失**（2026-04-30 回報）：重度使用者三度遭遇整天的創作對話無故消失，在記錄中留下日期空白，且無法透過搜尋找回
+- 🔴 **Session 歷史 30 天自動刪除**（2026-05-01 確認）：Claude Code 預設在 30 天後自動刪除 session `.jsonl` 歷史檔；可透過 `npx agentinit agent set claude cleanupPeriodDays 365` 將保留期間延長至 365 天
+- 🔴 **AGENTS.md 規範不支援**（2026-05-02，GitHub issue #6235）：Claude Code 目前仍不支援業界漸趨標準化的 `AGENTS.md` 規範，導致跨工具（如 Cursor、GitHub Copilot）協作時面臨配置互操作問題。
+- 🔴 **原始碼外洩與 DMCA 風波**（2026-05-04 持續延燒）：Anthropic 因人為疏失導致 Claude Code 原始碼外洩，已向各平台發出逾 8,100 次 DMCA 下架請求，引發 AI 生成程式碼版權歸屬的法律辯論；社群以外洩程式碼為基礎重建的「Claw-Code」分支隨之誕生，影響已超出技術層面。
+- 🔴 **撤銷授權後 session 紀錄持續出現**（2026-05-06 回報）：用戶撤銷 Claude Code 存取授權後，session 紀錄仍持續出現於使用量儀表板，涉及 `user:file_upload`、`user:ccr_inference` 等 scope；解除安裝並清除憑證後問題依然存在，Anthropic 客服兩週未回應。建議立即重置所有 API 金鑰並監控帳號用量；見 [[topics/ai-agent-safety]]
+- 🔴 **Bedrock 功能相容性落差（持續）**（2026-05-07 再次回報）：Claude Code 透過 AWS Bedrock 接入時功能異常，社群指出 Bedrock 與 Anthropic 直接服務的新功能同步速度慣常落後，每次新功能發布後的相容性落差問題已成常態。
+- ✅ **CVE-2026-39861 沙箱逃逸漏洞**（已修復）（2026-05-08 公開）：CVSS 7.7 高危漏洞，攻擊者可透過符號連結（symlink）將檔案寫入工作區目錄以外；已在 v2.1.64 修補，所有使用舊版本的用戶應立即升級；自查方式詳見 [GitHub Advisory GHSA-vp62-r36r-9xqp](https://github.com/advisories/GHSA-vp62-r36r-9xqp)；見 [[topics/ai-agent-safety]]
+- 🔴 **Claude Cowork Linux 沙箱啟動失敗**（2026-05-07 回報）：用戶回報 Claude Cowork 的 Linux 沙箱在多台電腦重新安裝後持續無法啟動，Anthropic 狀態頁顯示正常，疑為帳號層級隱性故障，目前無官方回應。
+- 🔴 **Windows IDE 擴充套件全面無法載入**（2026-05-09 UTC 00:24）：更新版本將 Linux 路徑硬編碼進擴充套件，導致 VS Code 等 IDE 在 Windows 上全面無法啟動，官方已確認並在狀態頁追蹤；臨時解法：降版至前一版本；此為第二次 Windows 平台相容性重大事故（見 2026-05-06 v2.1.131 緊急修復）。
+- 🔴 **CLAUDE.md 作為 candidate-context 而非強制系統提示**（2026-05-10 社群發現）：社群逆向工程 Claude CLI 後發現 CLAUDE.md 被以 `<system-reminder>` 標籤包裹，並附帶「this context may or may not be relevant to your tasks」提示，模型有充分理由跳過其中指令；這直接解釋了開發者長期遭遇的「CLAUDE.md 指令被忽略」問題；Anthropic 尚未正式回應此架構設計決策。
+- 🔴 **Checkpoint Commits 污染 git history**（2026-05-12 社群熱議）：Claude Code 自動建立的 checkpoint commit 大量污染 git 歷史，搭配 worktree 使用時問題更嚴重（每個子 Agent 各自建立分支並獨立 checkpoint），討論串聚集多種清理方案（interactive rebase、squash、git filter-repo）；目前無官方解決方案。
+- 🔴 **Anthropic API 大規模 500 Internal Server Error**（2026-05-16 UTC 18:08）：Anthropic 官方狀態頁確認多模型請求出現「Elevated error rates」，Claude Code 使用者陸續回報 500 錯誤，為近期少見的多模型服務中斷事件，影響範圍跨越多個模型；GitHub Issue #59743 有大量開發者回報。
 
 ---
 
@@ -140,6 +151,8 @@ Claude Code 是 Anthropic 的 AI 編碼 CLI 工具，支援 agentic 工作流程
 ---
 
 ## 實用工具（社群開發）
+
+> 精選與策展見 [[topics/community-tech-tools]]；本區為與 Claude Code 直接相關的社群工具索引。
 
 75+ 社群工具，依功能分類如下。
 

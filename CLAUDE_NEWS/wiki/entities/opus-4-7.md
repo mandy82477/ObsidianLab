@@ -1,40 +1,55 @@
-﻿# Claude Opus 4.7
+# Claude Opus 4.7
 
 **類型：** model
 **狀態：** active（爭議中）
 **領域：** 🤖 模型
 **首次出現：** 2026-04-24
-**最後更新：** 2026-05-21
+**最後更新：** 2026-06-20
 
 ---
 
 ## 現況
 
-Claude Opus 4.7 於 2026-04-24 正式發布，是目前 Anthropic 最高階的公開模型。伴隨發布的還有 Rate Limits API（管理員可程式化查詢速率限制）與 Managed Agents Memory Beta（在 `managed-agents-2026-04-01` 請求標頭下啟用）。
+**當前狀態：** 已被 Opus 4.8 / Fable 5 取代，現為第三階旗艦；agentic coding 場景仍有口碑，一般對話評價分歧。
+
+Claude Opus 4.7 於 2026-04-24 正式發布，已相繼被 Opus 4.8（2026-05-28）與 Fable 5（2026-06-09）取代，現為第三階旗艦，不再是 Anthropic 最高階公開模型。伴隨發布的還有 Rate Limits API（管理員可程式化查詢速率限制）與 Managed Agents Memory Beta（在 `managed-agents-2026-04-01` 請求標頭下啟用）。
 
 然而，該模型在社群中引發大量爭議，主要集中在定價策略與自適應思考深度的問題。
 
 ---
 
+## 熱度與試用價值
+
+| 項目 | 評分 |
+|------|------|
+| 社群熱度 | 🔥🔥🔥 |
+| 試用價值 | ⚡ 有條件推薦 |
+| 最適合 | Claude Code max-effort agentic coding、有明確結構的多步驟 agent 工作流 |
+| 不適合 | 一般對話 Q&A、需可控思考深度的任務、探索性非結構化文本任務 |
+
+> 詳細最新熱度見 [[feature-radar]]
+
+---
+
 ## 已知問題與爭議
 
-### 思考深度不可控
+### 思考深度不可控（仍存在）
 Opus 4.7 由模型自行決定思考深度，而非由使用者控制。社群反映在需要深度推理的問題上，模型有時給出淺薄回應。這與使用者對「旗艦模型」的期待存在落差。
 
-### 定價門檻提高
+### 定價門檻提高（仍存在）
 - 使用 Claude Code 存取 Opus 模型的**額外用量**現需 **Pro 以上方案**才能啟用
 - 見 [[entities/pricing]]
 
-### Usage Policy 隨機觸發拒絕（2026-04-26 以來）
+### Usage Policy 隨機觸發拒絕（2026-04-26 以來）（仍存在）
 Hacker News 多名用戶反映自 Opus 4.7 版本以來，Claude Code 頻繁出現隨機觸發 Usage Policy 拒絕的錯誤，無明確觸發條件。官方暫時建議切換至 `/model claude-sonnet-4-20250514` 作為緩解手段；根本原因尚未公開說明。
 
-### Prompt Cache 問題
+### Prompt Cache 問題（仍存在）
 從其他模型切換至 Opus 4.7 時，整個 prompt cache 會被清除，對大型專案造成顯著的 token 成本增加。另有 Race Condition 問題：連續兩次 API 呼叫第二個請求約有 40% cache miss 機率，等待 2 秒可緩解（見 [[entities/claude-code]] 已知問題）。
 
-### 生物/生技問題過度拒絕（2026-04-28 回報）
+### 生物/生技問題過度拒絕（2026-04-28 回報）（仍存在）
 使用者向 Opus 詢問抗原腸道傳遞的**學術問題**時，遭平台以「違反使用政策」直接拒絕；批評者認為此類過度保守的過濾機制正在妨礙合法科學研究，且錯誤判定標準不透明。
 
-### 效能退步與參數規模爭議（2026-04-30）
+### 效能退步與參數規模爭議（2026-04-30）（仍存在）
 重度 Max 20x 訂戶發文直言 Opus 4.7 **嚴重退步**，主要問題是過度「後設化」——每個回覆都像在撰寫論文，無法直接回答問題。配合學術研究（arxiv 2604.24827）對模型參數量的估算：
 - **Opus 4.7 估算：約 4T 參數**（疑似少於 Opus 4.6 的 5.3T）
 - 若屬實，Opus 4.7 在參數規模上實為「降規」，與「旗艦模型」定位相悖
@@ -42,14 +57,14 @@ Hacker News 多名用戶反映自 Opus 4.7 版本以來，Claude Code 頻繁出�
 
 > ⚠️ **待確認**：arxiv 2604.24827 的參數估算方法需要獨立驗證。
 
-### 開發者回退 4.6 事件（2026-05-05 討論浮現）
+### 開發者回退 4.6 事件（2026-05-05 討論浮現）（仍存在）
 
 dev.to 文章《Claude Opus 4.7 Is a Regression》在社群引發討論，部分開發者聲稱 Opus 4.7 在實際編碼任務中表現不如 4.6，已主動回退舊版本。分析：
 - 此類「新模型退步」週期性出現，與 2026-04-30 的「後設化退步」批評相互呼應
 - 原文標題具一定誇大成分，具體差異高度依賴使用情境（尤其是 vibe coding vs 研究型任務）
 - 結合 2026-05-01 的 4.5→4.7 躍升感知討論，形成一致的社群觀察：Opus 4.7 升版感受因任務類型差異明顯
 
-### Opus 4.7 提示詞行為世代性轉變（2026-05-11 社群發現）
+### Opus 4.7 提示詞行為世代性轉變（2026-05-11 社群發現）（仍存在）
 
 一篇精讀 Anthropic 官方 31 頁提示詞指南的文章指出：Claude Opus 4.7 對指令的解讀**更趨字面（literal）**，4.6 時代有效的模糊通用提示（如「review this contract」、「analyze this code」）在 4.7 下表現明顯下滑，需要更明確的指令設計才能維持輸出品質。此轉變屬**世代性行為差異**，非 bug，而是刻意設計調整：
 - 通用、隱含語境的提示在 4.7 的效果較 4.6 下降
@@ -57,16 +72,16 @@ dev.to 文章《Claude Opus 4.7 Is a Regression》在社群引發討論，部分
 - 依賴 4.6 era 提示的所有現有 prompt 工程實踐需系統性重新審視
 - Anthropic 官方 31 頁提示詞指南（2026 年版）是最權威的參考依據
 
-### Fortify 安全掃描修復失敗（2026-05-02 以來）
+### Fortify 安全掃描修復失敗（2026-05-02 以來）（仍存在）
 多名使用者以 Opus 4.7 Max effort 搭配 VSCode 嘗試修復 Fortify 安全掃描的高/嚴重等級漏洞時多次失敗，尤其輸入驗證類問題成功率極低。社群正向 Anthropic 徵求有效 prompt 策略，顯示 Opus 4.7 在安全漏洞自動修復這類需要高精確度的任務上存在可靠性問題。
 
-### Tool/Connector Schema 洩漏（2026-04-27）
+### Tool/Connector Schema 洩漏（2026-04-27）（仍存在）
 Claude Chat（Opus 4.7）在每則訊息末尾附加完整的 function schema 及 userStyle 內容，屬帳號層級污染，目前無官方修復（見 [[entities/claude-code]] 已知問題）。
 
-### Opus 存取「圍牆內圍牆」事件（2026-04-28，已修正）
+### Opus 存取「圍牆內圍牆」事件（2026-04-28，已修復）
 Anthropic 未事先公告即要求 Pro 用戶另購 Extra Usage 才能使用 Opus，事後已澄清 Pro 用戶仍可存取。見 [[entities/pricing]]。
 
-### Transparency Hub 缺席
+### Transparency Hub 缺席（仍存在）
 社群發現 Anthropic 未將 Opus 4.7 與 Mythos Preview 納入透明度中心（Transparency Hub），引發對資訊公開一致性的質疑。
 
 ---
@@ -88,6 +103,8 @@ HN 討論（2026-04-27）顯示社群對 Sonnet 與 Opus 實際差距看法分�
 Reddit 討論（2026-04-28）有開發者分享從 Opus 切換至 Sonnet 4.6 的實測對比：以 30% 月預算完成相當於前週 73% 預算的工作量，且程式碼品質更佳；關鍵在於調整 agent 工作流程設計，而非單純換模型。另有研究顯示 Opus 4.7 在三種 effort 等級（medium / high / xhigh）下拒絕姿態完全一致，**effort 僅影響回答深度，不影響安全邊界**（見 [[topics/community-tech-patterns]]）。
 
 ---
+
+## 使用場景共識
 
 ### Claude Code 高 Token 模式 vs 一般對話體驗分歧（2026-05-20 社群回報）
 
@@ -121,6 +138,7 @@ Reddit r/ClaudeAI 實測分享：Opus 4.7 在 **Claude Code 搭配 max effort �
 ## 相關議題
 
 - [[topics/code-quality-decline]]
+- [[entities/pricing]]
 
 ## 參考來源
 

@@ -9,7 +9,7 @@
 
 ## 摘要
 
-追蹤 Claude Code 社群在實際開發中累積的**工作流與應用模式**。每次 ingest 從「💬 技術熱度討論」區塊萃取具體可執行的技術發現，持續累積形成社群最佳實踐知識庫。
+追蹤 Claude Code 社群在實際開發中累積的**工作流與應用模式**。本頁收錄的模式類型包括 Multi-agent 架構、Skills 設計、CLAUDE.md 管理、Hooks 與自動化、模型使用策略、Token 成本優化、記憶與知識管理、Plugin/MCP 整合等，持續累積形成社群最佳實踐知識庫。
 
 工具目錄（活躍度 / 採用狀態）見 [[topics/community-tech-tools]]。概念辯論、設計哲學與技術反思見 [[topics/community-tech-discussions]]。
 

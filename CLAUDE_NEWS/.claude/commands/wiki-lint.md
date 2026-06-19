@@ -12,95 +12,97 @@ description: 每週執行 wiki 品質檢查，修正矛盾/孤立/過期頁面�
 
 同時讀取：
 - `wiki/CLAUDE.md` — wiki 目錄結構與基本限制
-- `.claude/rules/wiki-ingest.md` — 頁面格式模板、欄位規則、品質標準（必須在修改任何頁面前讀取）
+- `.claude/rules/wiki-ingest.md` — 分類標準與派工流程（主編指南）
+- `.claude/rules/wiki-ingest-format.md` — 頁面格式模板、欄位規則、品質標準
 - `wiki/index.md` — 取得所有頁面清單
 - `wiki/log.md` — 了解最近的 ingest 紀錄與活動
 
-### 2. 讀取所有頁面
+### 2. 並行派工（六位記者同時執行）
 
-逐一讀取 `wiki/entities/` 和 `wiki/topics/` 下的所有頁面，建立整體理解後再進行檢查。
+對每個類別呼叫 Agent tool，在**同一訊息中並行發出全部六個呼叫**。
 
-### 3. 執行四項檢查並修正
+| 類別 | subagent_type | 負責頁面範圍 |
+|------|--------------|------------|
+| 模型 | `wiki-reporter-models` | `wiki/entities/fable-5.md`, `opus-4-8.md`, `opus-4-7.md`, `mythos.md`, `pricing.md` |
+| 功能 | `wiki-reporter-features` | `wiki/entities/claude-code.md`, `bugcrawl.md`, `managed-agents.md`, `openclaw.md`, `claude-design.md`, `claude-security.md`, `wiki/topics/official-community-gap.md`, `wiki/feature-radar.md` |
+| 商業 | `wiki-reporter-commercial` | `wiki/topics/anthropic-business.md`, `enterprise-tool-tracker.md`, `enterprise-cost-management.md`, `competitor-landscape.md`, `wiki/entities/pricing.md` |
+| 安全政策 | `wiki-reporter-safety-policy` | `wiki/topics/anthropic-government-policy.md`, `ai-agent-safety.md`, `recursive-self-improvement.md` |
+| 社群 | `wiki-reporter-community` | `wiki/topics/community-tech-tools.md`, `community-tech-patterns.md`, `community-tech-discussions.md`, `community-tech-timeline.md`, `code-quality-decline.md` |
+| 人物 | `wiki-reporter-people` | `wiki/entities/boris-cherny.md`, `cat-wu.md`, `andrej-karpathy.md`, `dario-amodei.md`, `chris-olah.md` 及其他人物頁 |
 
-#### 3a. 矛盾頁面
-兩頁對同一事件的描述相互矛盾（例如日期不同、結論相反）。
-→ 以日報原文為準，修正錯誤的一方，並在兩頁都加上互相引用的連結。
+> **社群記者額外任務：** `community-tech-tools.md` 已脫離每日 ingest，是 **lint 專用策展頁**。除 3a–3f 品質檢查外，須額外依 `.claude/rules/wiki-ingest-community.md` 的「策展規則」與「精選層提拔規則」執行：讀取近 7–14 天 `news/*.md` 萃取達標新工具、汰除過氣條目、提拔精選層、同步痛點洞察。派工 prompt 須附上「今日日期」供記者計算 news/ 範圍。
 
-#### 3b. 孤立頁面
-頁面存在於 index.md，但沒有任何其他頁面以 wikilink 連結到它。
-→ 在語意相關的頁面中補上 `[[path/to/page]]` 連結。
+每個 Agent 呼叫的 prompt：
 
-#### 3c. 過期議題
-topics/ 頁面狀態為 `ongoing`，但「最後更新」距今超過 14 天，且近期 log.md 沒有相關更新。
-→ 若議題確已結束，將狀態改為 `resolved`，並填寫「目前結論」。
-→ 若議題仍在進行但只是沒有新消息，將狀態改為 `monitoring`。
+```
+今日日期：[YYYY-MM-DD]
+任務：對你負責的頁面執行 wiki lint 檢查並修正問題。
 
-#### 3d. 已解決議題遷移
-topics/ 中狀態為 `resolved` 的頁面。
-→ 移動至 `wiki/entities/` 作為歷史記錄（保留完整內容，類型標為 `event`）。
-→ 更新 index.md 中的路徑。
+讀取 `.claude/rules/wiki-ingest-format.md`，然後對每個頁面依序執行：
 
-#### 3e. 呈現品質審查
+**3a 矛盾偵測**
+同一事件的描述若與其他已知頁面矛盾（日期不同、結論相反）→ 以日報原文為準修正，兩頁互加 wikilink。
 
-對所有頁面逐一執行 `.claude/rules/wiki-ingest.md`「Wiki 頁面呈現品質標準」的完整掃描：
+**3b 孤立頁面**
+用 Grep 搜尋此頁面 slug 是否在 wiki/ 目錄其他檔案中有 wikilink 引用。
+若完全孤立（無任何頁面以 `[[...]]` 連結到它）→ 在語意相關的頁面補上 wikilink。
 
-**必須修復項目：**
-- `## 現況` / `## 摘要` 的前 160 字是否能讓不熟悉背景的讀者獨立理解？→ 若不行，改寫摘要
-- 最重要的事實是否在頁面前 1/3？→ 若否，移動關鍵區塊至前段
-- 頁面正文是否混入面向 LLM 的操作指令？→ 若有，移至 `.claude/rules/wiki-ingest.md` 或刪除
+**3c 過期議題**
+topics/ 頁面狀態為 `ongoing`，且「最後更新」距今超過 14 天，且 log.md 近期無相關更新。
+→ 議題確已結束：狀態改 `resolved`，填寫「目前結論」
+→ 仍在進行但無新消息：狀態改 `monitoring`
 
-**警示觸發重構：**
-- 頁面超過 200 行 → 事件流按主題分組，壓縮重複細節
-- 連續 8 個以上 `### YYYY-MM-DD` 無主題分組 → 合併為主題段落
-- 方案比較/功能對照以段落表達 → 改為表格
+**3d 已解決議題遷移**
+topics/ 狀態為 `resolved` → 移動至 `wiki/entities/`（類型標 `event`），更新內容，並在原 topics/ 路徑留一行重定向提示。
 
-每頁輸出審查結果：✅ 通過 / ⚠️ 已修復（說明） / 📋 待辦（說明問題）
+**3e 呈現品質審查**
+依 `.claude/rules/wiki-ingest-format.md`「Wiki 頁面呈現品質標準」掃描：
+必須修復：摘要可獨立閱讀、關鍵資訊前置、無 LLM 專屬指令
+警示觸發：頁面 > 200 行、連續 8+ 個無分組日期條目、方案比較未用表格
 
-#### 3f. 超長頁面拆分評估（> 500 行）
+**3f 超長頁面回報（> 500 行）**
+自行分析：內容性質分佈、建議拆分邊界與新頁面命名。
+**不自行拆分**——將分析結果回報給主 session，由主 session 詢問使用者確認。
 
-讀取所有頁面時記錄行數。**若任何頁面超過 500 行**，執行以下流程：
+完成後依標準格式回報。
+```
 
-**① 自行 Review（在詢問使用者前先分析）**
+記者回報格式（標準化）：
 
-對超長頁面逐一分析，判斷：
-- 頁面內是否混有兩種以上不同性質的內容（例：具體工具 vs 概念討論、當前事件 vs 歷史記錄、技術細節 vs 社群趨勢）
-- 各性質的內容各佔多少比例（行數估算）
-- 若拆分，最自然的邊界在哪裡（以哪個 H2 區塊作為切割點）
-- 拆分後各子頁面的命名建議（entities/ 或 topics/，以及 slug 名稱）
+```
+## [類別] Lint 回報
+修正矛盾：[list or 無]
+補孤立連結：[list or 無]
+狀態更新：[page: ongoing→monitoring/resolved or 無]
+遷移至 entities：[list or 無]
+呈現品質：[每頁 ✅/⚠️已修復/📋待辦]
+超長頁面（> 500 行）：[頁面名稱 + 行數 + 建議方案 or 無]
+index.md 狀態變更：[page: 舊狀態→新狀態 or 無]
+```
 
-**② 向使用者報告並詢問分類**
+### 3. 處理超長頁面（需使用者確認）
 
-以下列格式提出報告，**完整暫停並等待使用者確認後再繼續**：
+收齊所有記者回報後，彙整 3f 的超長頁面清單。若有任何頁面需拆分，以下列格式呈現並**等待使用者確認**：
 
 ```
 📄 [頁面名稱]（XXX 行）需要拆分評估
 
-我的分析：
-- 內容 A（約 XX 行）：[描述這部分的性質與主題]
-- 內容 B（約 XX 行）：[描述這部分的性質與主題]
-（若有更多類型繼續列出）
+記者分析：
+- 內容 A（約 XX 行）：[描述]
+- 內容 B（約 XX 行）：[描述]
 
-建議拆分方案：
-- [新頁面 A]：topics/xxx.md 或 entities/xxx.md — [保留哪些區塊]
-- [新頁面 B]：topics/yyy.md 或 entities/yyy.md — [保留哪些區塊]
+建議方案：
+- [新頁面 A]：entities/xxx.md 或 topics/xxx.md
+- [新頁面 B]：entities/yyy.md 或 topics/yyy.md
 
-❓ 請確認：
-1. 是否同意拆分？（是 / 否 / 稍後處理）
-2. 分類是否正確？（可直接修改上方建議）
-3. 新頁面命名是否OK？
+❓ 請確認：是否同意拆分？分類是否正確？命名是否OK？
 ```
 
-**③ 根據使用者回應執行**
-
-- 使用者確認 → 執行拆分，更新 index.md 與 log.md，原頁面保留重定向提示
-- 使用者修改分類 → 依修改後的方案執行
-- 使用者說「否」或「稍後」→ 在 log.md 記錄「📋 待辦：[頁面名] 超過 500 行，使用者選擇稍後處理」，繼續下一步
-
-**注意：必須收到使用者明確回應才能繼續 lint 流程，不可自行決定拆分方案。**
+根據使用者回應執行拆分或記錄為待辦。
 
 ### 4. 建議並建立新實體頁
 
-掃描所有頁面，找出被提及 3 次以上但尚無專頁的名稱（模型、功能、人物、產品）。
+掃描所有頁面（可用 Grep），找出被提及 3 次以上但尚無專頁的名稱（模型、功能、人物、產品）。
 → 建立對應的 entities/ 頁面，填入目前已知資訊。
 → 在來源頁面補上 wikilink。
 
@@ -113,16 +115,13 @@ topics/ 中狀態為 `resolved` 的頁面。
 
 ### 6. CLAUDE.md 健檢
 
-讀取 `wiki/CLAUDE.md` 及 `.claude/rules/wiki-ingest.md`（已在 Step 1 載入，可直接檢查），依序執行五項檢查：
+讀取 `wiki/CLAUDE.md`、`.claude/rules/wiki-ingest.md`、`.claude/rules/wiki-ingest-format.md`（已在 Step 1 載入，可直接檢查），依序執行五項檢查：
 
 #### 6a. 規則矛盾偵測
 
-逐段掃描所有規則，找出以下矛盾類型：
-- 同一行為在不同章節有相反的指示（例：A 章說「永遠做 X」，B 章說「不要做 X」）
-- 同一情境在不同規則有衝突的觸發條件
-- 新舊規則因多次累積修改而語意重疊或互相否定
+逐段掃描，找出同一行為在不同章節有相反指示、同一情境觸發條件衝突、新舊規則語意重疊或互相否定。
 
-→ 對每個矛盾，輸出：
+→ 輸出：
 ```
 ⚠️ 矛盾：[規則 A 位置] vs [規則 B 位置]
   A 說：「…」
@@ -133,9 +132,7 @@ topics/ 中狀態為 `resolved` 的頁面。
 
 #### 6b. 規則引用驗證
 
-規則中常提及特定檔案的欄位名稱、區塊標題、格式字串。若這些結構已被改名或移除，規則就默默失效。
-
-逐一 grep 以下錨點，確認其仍存在於對應檔案中：
+逐一 grep 以下錨點，確認仍存在於對應檔案中：
 
 | 規則描述中的引用 | 應存在於 | 驗證方式 |
 |---------------|---------|---------|
@@ -147,70 +144,64 @@ topics/ 中狀態為 `resolved` 的頁面。
 | `衍生` 欄 | `topics/community-tech-discussions.md` | grep `衍生` |
 | `全覽表` 區塊 | `wiki/feature-radar.md` | grep `全覽表` |
 
-輸出格式：
+輸出：
 ```
 📎 引用驗證：
   ✅ `首次出現` 欄確認存在
-  ✅ `## 技術彙整` 確認存在
-  ⚠️ `**靈感來源：**` 未找到 → 規則可能過時，建議確認 community-tech-patterns.md 格式
-  …
+  ⚠️ `XXX` 未找到 → 規則可能過時
 ```
 → 發現 ⚠️ 時向使用者說明，**不自行刪除規則**。
 
 #### 6c. 規則遵守率抽樣
 
-讀取 `wiki/log.md` 最近 3 筆 Ingest 條目，對照以下關鍵規則確認是否照做：
+讀取 `wiki/log.md` 最近 3 筆 Ingest 條目，對照：
 
-| 規則 | 驗證方式 | 合格標準 |
-|------|---------|---------|
-| 每次 ingest 必須執行呈現品質審查 | log 條目含 ✅/⚠️/📋 標記 | 3/3 |
-| 每次 ingest 必須更新 feature-radar.md | log 條目提及 feature-radar | 3/3（若當日無新功能可標「本日無新功能」） |
-| 新工具加入時須更新 痛點洞察 近期工具欄 | log 提及 community-tech-tools 且當日有新工具時 | 出現工具的 ingest 須提及 |
-| log.md 格式正確（含來源日報、更新頁面、摘要欄位） | 檢查最近 3 筆格式完整性 | 3/3 |
+| 規則 | 合格標準 |
+|------|---------|
+| 每次 ingest 執行呈現品質審查 | log 含 ✅/⚠️/📋 標記，3/3 |
+| 每次 ingest 更新 feature-radar.md | log 提及 feature-radar，3/3 |
+| 新工具加入時更新痛點洞察近期工具欄 | 出現工具的 ingest 須提及 |
+| log.md 格式正確（來源日報、更新頁面、摘要欄位） | 3/3 |
 
-輸出格式：
+輸出：
 ```
 🔍 遵守率抽樣（近 3 次 ingest）：
   ✅ 呈現品質審查 — 3/3
-  ⚠️ 痛點洞察 近期工具更新 — 1/3（2 次有新工具但未提及更新）
-  ✅ feature-radar 更新記錄 — 3/3
-  ✅ log.md 格式完整 — 3/3
-→ 待改進：[列出問題規則與建議]
+  ⚠️ 近期工具更新 — 1/3
 ```
-→ 遵守率 < 2/3 的規則：說明原因（規則過嚴 / 執行疏漏 / 規則不清晰），**向使用者確認是否調整規則或加強提示**。
+→ 遵守率 < 2/3 的規則：說明原因，**向使用者確認是否調整規則**。
 
 #### 6d. 規則年齡審查
 
-`.claude/rules/wiki-ingest.md` 中的 `##` 規則區塊若帶有 `[加入: YYYY-MM-DD]` 標記，計算距今天數。
+`.claude/rules/wiki-ingest-format.md` 及各記者規則檔（`wiki-ingest-*.md`）中帶有 `[加入: YYYY-MM-DD]` 標記的 `##` 區塊，計算距今天數。
 
-- **距今 > 60 天**的規則：逐一列出，確認規則描述的行為是否仍與現狀吻合（例如：規則提及的欄位、工作流是否已改版）
+- **距今 > 60 天**：逐一確認規則描述的行為是否仍與現狀吻合
 - **距今 ≤ 60 天**：記錄「在閾值內，無需審查」
 
-輸出格式：
+輸出：
 ```
 📅 規則年齡審查（今日 YYYY-MM-DD，閾值 60 天）：
-  ⚠️ entities/ 頁面格式 [加入: 2026-04-25]（距今 XX 天）→ 確認格式仍正確
-  ✅ community-tech-tools 工具新增規則 [加入: 2026-05-20]（距今 XX 天）→ 在閾值內
-  …
+  ⚠️ [規則名稱] [加入: YYYY-MM-DD]（距今 XX 天）→ 確認格式仍正確
+  ✅ [規則名稱]（距今 XX 天）→ 在閾值內
 ```
-→ 列出 ⚠️ 規則後，**向使用者確認是否需要修訂**，不自行修改。
+→ ⚠️ 規則列出後**向使用者確認是否需要修訂**，不自行修改。
 
 #### 6e. 長度與簡化評估
 
-分別統計 `wiki/CLAUDE.md` 及 `.claude/rules/wiki-ingest.md` 總行數。
+分別統計 `wiki/CLAUDE.md`、`.claude/rules/wiki-ingest.md`、`.claude/rules/wiki-ingest-format.md` 及各記者規則檔（`wiki-ingest-*.md`）總行數。
 
-- **`.claude/rules/wiki-ingest.md` 若超過 250 行**：列出各章節行數佔比，找出可能重複、過時或可合併的段落，向使用者提出簡化建議（**不自行修改**，等待確認）
-- **`wiki/CLAUDE.md` 若超過 80 行**：同上，提出簡化建議
-- 兩者均在閾值內：記錄行數，不做建議
+- **`wiki/CLAUDE.md` 若超過 80 行**：提出簡化建議
+- **`.claude/rules/wiki-ingest.md` 若超過 80 行**：提出簡化建議（主編指南應保持精簡）
+- **`.claude/rules/wiki-ingest-format.md` 若超過 200 行**：提出簡化建議
+- **各記者規則檔若超過 100 行**：提出簡化建議
 
-輸出格式：
+輸出：
 ```
 📋 規則檔健檢：
   wiki/CLAUDE.md：XX 行（閾值 80 行）→ ✅ / ⚠️
-  .claude/rules/wiki-ingest.md：XX 行（閾值 250 行）→ ✅ / ⚠️
-[若超過] 建議簡化段落：
-  - [章節名]（約 XX 行）：[說明為何可簡化]
-  …
+  .claude/rules/wiki-ingest.md：XX 行（閾值 80 行）→ ✅ / ⚠️
+  .claude/rules/wiki-ingest-format.md：XX 行（閾值 200 行）→ ✅ / ⚠️
+  .claude/rules/wiki-ingest-[category].md：各 XX 行（閾值 100 行）→ ✅ / ⚠️
 ❓ 是否執行簡化？（是 / 否 / 指定段落）
 ```
 
@@ -230,7 +221,9 @@ topics/ 中狀態為 `resolved` 的頁面。
 - 超長頁面（> 500 行）：（列出頁面名稱與行數，及處理結果：已拆分 / 使用者稍後處理 / 無）
 - 規則檔健檢：
   - wiki/CLAUDE.md：XX 行（閾值 80 行）
-  - .claude/rules/wiki-ingest.md：XX 行（閾值 250 行）
+  - .claude/rules/wiki-ingest.md：XX 行（閾值 80 行）
+  - .claude/rules/wiki-ingest-format.md：XX 行（閾值 200 行）
+  - 各記者規則檔：各 XX 行（閾值 100 行）
   - 矛盾：（列出，若無則寫「無」）
   - 引用驗證：（列出失效引用，若無則寫「全部通過」）
   - 遵守率：（列出 < 2/3 的規則，若全部通過則寫「全部通過」）
@@ -250,3 +243,4 @@ topics/ 中狀態為 `resolved` 的頁面。
 - `log.md` 只能 append，不可修改既有條目
 - `news/` 目錄唯讀，不可修改
 - 遷移頁面時保留原始 topics/ 路徑的重定向提示，避免 broken links
+- 步驟 3f 超長頁面拆分：**必須等待使用者確認才能執行**，記者只負責回報分析

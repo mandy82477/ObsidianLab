@@ -3,7 +3,7 @@
 **狀態：** monitoring
 **領域：** 💼 商業
 **開始日期：** 2026-04
-**最後更新：** 2026-06-19
+**最後更新：** 2026-06-20
 ---
 
 ## 摘要
@@ -20,7 +20,17 @@ Claude Code 已成為 AI 輔助編碼的標竿產品，但競爭正快速升溫�
 
 ---
 
+## 觀察重點
+
+- **投資 vs 競爭的矛盾**：Google 400 億投資 Anthropic 的同時開發競品，Amazon 雙品牌並行部署（Claude Code + Codex）——大型科技公司不押注單一供應商
+- **開源替代加速**：OpenCode 157K、DeepClaude 17x 成本節省——訂閱政策收緊（OpenClaw 禁令、6/15 計費結構）正在為開源方案創造需求
+- **企業成本臨界點**：Microsoft 退訂、Uber 燒光全年預算——企業 AI 工具採購的成本敏感度正在形成新的市場分水嶺
+
+---
+
 ## 主要競品追蹤
+
+> 🔴 = 高威脅 / 重點關注競品
 
 ### Google 未命名競品 🔴
 - **狀態**：秘密開發中
@@ -71,14 +81,6 @@ Claude Code 已成為 AI 輔助編碼的標竿產品，但競爭正快速升溫�
 - **CC-Canary**：效能監測工具，讀取 `~/.claude/projects/` JSONL log（見 [[topics/code-quality-decline]]）
 - **Claude Desktop 第三方 LLM 支援**：Anthropic 悄悄加入 OpenAI、Gemini、本地模型、Bedrock/Vertex 支援，競爭格局從「Claude vs others」走向「Claude 作多模型接入層」
 - **Claude Connectors 擴展**：進入 Adobe、Blender、Ableton、Affinity、Autodesk Fusion 等創意工具，與 Figma 展開競爭
-
----
-
-## 觀察重點
-
-- **投資 vs 競爭的矛盾**：Google 400 億投資 Anthropic 的同時開發競品，Amazon 雙品牌並行部署（Claude Code + Codex）——大型科技公司不押注單一供應商
-- **開源替代加速**：OpenCode 157K、DeepClaude 17x 成本節省——訂閱政策收緊（OpenClaw 禁令、6/15 計費結構）正在為開源方案創造需求
-- **企業成本臨界點**：Microsoft 退訂、Uber 燒光全年預算——企業 AI 工具採購的成本敏感度正在形成新的市場分水嶺
 
 ---
 

@@ -4,7 +4,9 @@
 **狀態：** active
 **領域：** 👤 人物
 **首次出現：** 2026-04-25
-**最後更新：** 2026-06-13
+**最後更新：** 2026-06-20
+
+---
 
 ## 現況
 
@@ -23,7 +25,7 @@ Anthropic 共同創辦人兼執行長（CEO）。與 Chris Olah、Daniela Amodei
 | 2026-05-12 | 宣布 Pro/Max 速率翻倍 + 取消尖峰降速，SpaceX 算力合作首次落地 | Code with Claude 大會現場 |
 | 多次 | 聯署 AI CEO 生物武器防範信（與 Altman、Hassabis、Suleiman 共同發表） | Wired |
 
-## 核心功能
+## 在 Anthropic 的角色與影響
 
 - **Anthropic 創辦人背景：** 前 OpenAI VP of Research，與 Chris Olah 等人共同創立 Anthropic，定位「安全優先」AI 公司
 - **企業代言人：** 代表 Anthropic 接受主流財經媒體採訪，包含 Bloomberg、Fortune、Forbes、NBC News
@@ -45,14 +47,7 @@ Anthropic 共同創辦人兼執行長（CEO）。與 Chris Olah、Daniela Amodei
 
 ## 歷史記錄
 
-### 2026-06-11
-Bloomberg 報導兩則：（1）主張政府應可阻止危險 AI 發布，被解讀為針對中國；（2）直屬下屬僅一人的扁平組織結構引發討論。
-
-### 2026-06-08
-Fortune 訪談引述：「在 AI 競賽中文化而非產品才是決勝點」，本人花 40% 時間建設公司文化。
-
-### 2026-06-06
-Bloomberg 報導：對「Claude 是否被用於伊朗學校打擊」表示不知情。
-
-### 2026-05-12
-Code with Claude 大會現場宣布 Pro/Max 使用速率翻倍 + 取消尖峰時段降速，是 Anthropic 透過 SpaceX 外部算力合作首次鬆綁使用限制。
+- 2026-06-11：Bloomberg 報導兩則：（1）主張政府應可阻止危險 AI 發布，被解讀為針對中國；（2）直屬下屬僅一人的扁平組織結構引發討論。
+- 2026-06-08：Fortune 訪談引述：「在 AI 競賽中文化而非產品才是決勝點」，本人花 40% 時間建設公司文化。
+- 2026-06-06：Bloomberg 報導：對「Claude 是否被用於伊朗學校打擊」表示不知情。
+- 2026-05-12：Code with Claude 大會現場宣布 Pro/Max 使用速率翻倍 + 取消尖峰時段降速，是 Anthropic 透過 SpaceX 外部算力合作首次鬆綁使用限制。

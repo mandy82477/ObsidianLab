@@ -3,15 +3,15 @@
 **狀態：** ongoing
 **領域：** 🌐 社群
 **開始日期：** 2026-04-25
-**最後更新：** 2026-06-19
+**最後更新：** 2026-06-20
 
 ---
 
 ## 摘要
 
-追蹤 Claude Code 社群發布的工具、插件與 skill 專案。每次 ingest 從日報萃取新工具並更新採用狀態。
+追蹤 Claude Code 社群發布的工具、插件與 skill 專案。此頁為 lint 專用，由 /wiki-lint 定期策展；每日 ingest 不更新此頁。日常工作流模式見 [[topics/community-tech-patterns]]，概念辯論見 [[topics/community-tech-discussions]]。
 
-工作流模式與技術做法見 [[topics/community-tech-patterns]]。概念辯論見 [[topics/community-tech-discussions]]。官方功能見 [[feature-radar]]。
+官方功能見 [[feature-radar]]。
 
 ---
 

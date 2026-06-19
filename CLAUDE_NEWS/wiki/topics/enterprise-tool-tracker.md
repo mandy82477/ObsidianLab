@@ -3,11 +3,13 @@
 **狀態：** ongoing
 **領域：** 💼 商業
 **開始日期：** 2026-05-26
-**最後更新：** 2026-06-19
+**最後更新：** 2026-06-20
 
 ## 摘要
 
 追蹤各大型企業目前正在使用的 AI 編碼工具，以及工具選擇的變化軌跡。資料來源為公開報導與內部消息洩露，僅記錄有明確來源佐證的事實。
+
+目前追蹤 14 家企業（頂尖 7 家、大型 7 家），其中 12 家狀態為使用中（✅），1 家退出（❌，Microsoft 停用 Claude Code），1 家因出口管制被迫退出（❌，JPMorgan Chase 香港分行）。整體趨勢：Claude API 企業採用持續擴大，TCS、DXC、LG 等頂尖企業相繼全面入局；Atlassian 與 JFrog 則於 2026-06-18 同日新增採用，顯示企業整合速度加快。出口管制已造成第一起具名金融機構退出事件。
 
 ---
 
@@ -67,7 +69,11 @@
 - **大型企業（1–10 萬員工）**：分兩類——工程工具（UiPath 同時用 Claude Code + Codex）與 API 整合（KPMG、iCapital、哈佛、Travelport、Nimble Gravity 用 Claude API 自建應用）
 - **新創圈**：Business Insider（2026-05-23）確認 Claude Code 已取得主導地位，Cursor 份額下滑
 
-> **Claude Code vs Claude API 的本質差異：** Claude Code 是工程師日常編碼工具（CLI），成本隨使用量線性成長，大量使用時易失控；Claude API 是企業自建 AI 應用的基礎，成本可透過產品設計控制。同樣是採用 Anthropic，風險結構完全不同。
+---
+
+## 對 agent 開發者的選型影響
+
+Claude Code 是工程師日常編碼工具（CLI），成本隨使用量線性成長，大量使用時易失控；Claude API 是企業自建 AI 應用的基礎，成本可透過產品設計控制。同樣是採用 Anthropic，風險結構完全不同。
 
 ---
 
