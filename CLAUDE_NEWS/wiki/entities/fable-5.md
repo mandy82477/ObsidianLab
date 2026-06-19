@@ -4,7 +4,7 @@
 **狀態：** active（正式發布；Fable 5 / Mythos 5 因美國政府出口管制指令暫停全球存取）
 **領域：** 🤖 模型
 **首次出現：** 2026-06-09
-**最後更新：** 2026-06-18
+**最後更新：** 2026-06-19
 
 ---
 
@@ -13,6 +13,8 @@
 Claude Fable 5 是 Anthropic 於 2026-06-09 發布的旗艦模型，為**史上首款向大眾開放的 Mythos 級模型**。Fable 5 與 Claude Mythos 5 共用相同的模型權重，差異在於 Fable 5 前置安全分類器——觸發時靜默 fallback 至 Claude Opus 4.8（Anthropic 稱不到 5% 的 session 受影響）。
 
 **2026-06-13 重大事件**：美國政府以「國家安全出口管制」為由，下令 Anthropic 對所有外籍人士（含境外及境內外籍員工）停用 Fable 5 與 Mythos 5。Anthropic 於當日 5:21pm ET 收到指令，為確保合規對全體用戶停用兩款模型，其他模型不受影響。路透社、NYT、BBC、TechCrunch、WIRED 等主流媒體全面報導。
+
+**2026-06-18–19 解禁進展**：Wired 深度調查（HN score 110）確認出口管制根本動機為 SK Telecom 中國關聯（Anthropic 先前授予 SK Telecom Mythos 存取權），加上 Amazon 研究人員向白宮舉報 Fable 5 越獄漏洞，兩件事疊加加速管制決定。Anthropic 國際總監 Chris Ciauri 在首爾記者會聲明「數日內恢復」，Bloomberg 另報導部分早期用戶仍保有存取權。見 [[entities/mythos]]。
 
 **核心定位**：任務越複雜越長期，Fable 5 的優勢越明顯。在軟體工程、知識工作、視覺、科學研究等幾乎所有 benchmark 達到 SOTA。
 
@@ -124,6 +126,14 @@ claude --model claude-fable-5-20260609
 - [資料保留政策](https://support.claude.com/en/articles/15425996-data-retention-practices-for-mythos-class-models)
 
 ## 歷史記錄
+
+### 2026-06-19
+**解禁近況 + Wired 深度調查 + 早期用戶豁免**：
+- **Wired 深度調查（HN score 110）** 確認 SK Telecom 中國關聯是出口管制的根本動機：Anthropic 先前授予 SK Telecom 對 Mythos（非 Fable 5）的存取權，美方對 SK Telecom 中國關聯的疑慮觸發審查；此後 Amazon 研究人員向白宮揭露 Fable 5 的越獄漏洞，兩件事疊加加速了管制決定，澄清「jailbreak 是唯一原因」的既有說法
+- **Ciauri 首爾記者會**：Anthropic 國際總監 Chris Ciauri 與 Anthropic Korea 代表 Choi Ki-young 在首爾 Conrad 飯店召開記者會，聲明「非常有信心模型將在數日內恢復可用」
+- **Bloomberg**：部分 Mythos 早期用戶在美國政府指令後仍保有存取權（早期用戶豁免）
+- **印度 AI 主權討論**：TechCrunch 報導，Fable 5 / Mythos 停用引發印度 AI 主權辯論，尤其 Anthropic 與 TCS 企業合作宣布同日發生停用事件，凸顯依賴美國技術的地緣政治風險
+- **程式能力評測**：Towards Data Science 發布 Fable 5（Mythos）程式設計能力評測
 
 ### 2026-06-18
 **「數日內解禁」——SK Telecom / China 關聯首次曝光**：Anthropic 國際業務總監 Chris Ciauri 在首爾記者會表示「非常有信心模型將在數日內恢復可用」。同日 Wired 獨家報導揭露出口管制的根本起因：美國政府關切 SK Telecom 與中國的關聯，在 Anthropic 授予 SK Telecom 存取 Mythos（非 Fable 5）後啟動審查；Amazon 研究人員在 Fable 5 中發現的 jailbreak 進一步加速了管制決定。Politico 分析出口管制可能違法，國會議員要求政府說明。Anthropic 已向商務部長 Lutnick 提交解封提案（New York Post）。摩根大通香港分行被迫切斷 Anthropic 存取（Financial Times），是出口管制對具名頂尖企業的首批直接衝擊案例。

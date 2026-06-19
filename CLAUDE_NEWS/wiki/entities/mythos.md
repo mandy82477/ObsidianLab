@@ -4,7 +4,7 @@
 **狀態：** active（部分公開：Fable 5 = Mythos 架構 + 護欄；Mythos 5 = 完整版限定存取）
 **領域：** 🤖 模型
 **首次出現：** 2026-04（限定夥伴 Preview）
-**最後更新：** 2026-06-18
+**最後更新：** 2026-06-19
 
 ---
 
@@ -79,6 +79,13 @@ Anthropic 的官方 AI 資安能力研究計畫，Mythos Preview 為核心工具
 ---
 
 ## 時序
+
+### 2026-06-19
+**Wired 深度調查確認多重管制動機 + 解禁聲明 + 早期用戶豁免**：
+- **SK Telecom 中國關聯確認為根本動機**（Wired HN score 110）：Anthropic 先前授予 SK Telecom 對 Mythos（非 Fable 5）的存取權，美方對 SK Telecom 中國關聯的疑慮是出口管制啟動的真正起點；後 Amazon 研究人員向白宮舉報 Fable 5 越獄漏洞，兩件事疊加加速管制動作，澄清「jailbreak 是唯一原因」的既有說法
+- **Ciauri 首爾記者會**：Anthropic 國際總監宣稱「數日內恢復可用」
+- **Bloomberg**：部分 Mythos 早期用戶在政府指令後仍保有存取權（早期用戶豁免）
+- **Amazon 研究員角色確認**：Amazon 安全研究人員發現 Fable 5 越獄漏洞後直接向白宮通報，是出口管制的直接觸發原因之一（見 2026-06-14 事件記錄）
 
 ### 2026-06-18
 **SK Telecom / China 關聯被揭露為出口管制根本起因**：Wired 獨家報導，美國政府對 Anthropic 啟動 Fable 5 / Mythos 出口管制的真正起點，是政府對 SK Telecom 疑似中國關聯的憂慮——Anthropic 先前已授予 SK Telecom 對 Mythos（非 Fable 5）的存取權，此舉令美方官員警惕；後來 Fable 5 的 jailbreak 問題（Amazon 通報白宮）進一步加速了管制動作。此揭露澄清了「jailbreak 是唯一原因」的既有說法，顯示管制動機具有多重層次（Wired）。

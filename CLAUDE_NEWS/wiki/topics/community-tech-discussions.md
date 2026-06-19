@@ -3,7 +3,7 @@
 **狀態：** ongoing
 **領域：** 🌐 社群
 **開始日期：** 2026-04-25
-**最後更新：** 2026-06-18
+**最後更新：** 2026-06-19
 
 ---
 
@@ -21,7 +21,7 @@
 
 | 討論主題 | 首見 | 熱度 | 模式 | 核心論點 | 衍生 |
 |---------|------|------|------|---------|------|
-| Vibe coding / agentic 工程的成就感缺失 | 2026-06-18 | 🔥🔥 | ☄️閃現 | HN Ask：使用 Claude Code 等 AI 工具是否還能帶來「心流感」？部分認為快速推進想法更有成就感；另一派感嘆「成品不像自己做的，任何人照著 prompt 都能複製」；反映 AI 時代技藝本質的認同困惑（HN score 8）| — |
+| Vibe coding / agentic 工程的成就感缺失 | 2026-06-18 | 🔥🔥 | 🌊延燒 | HN Ask：使用 Claude Code 等 AI 工具是否還能帶來「心流感」？部分認為快速推進想法更有成就感；另一派感嘆「成品不像自己做的，任何人照著 prompt 都能複製」；反映 AI 時代技藝本質的認同困惑（HN score 8）；2026-06-19 討論持續延燒 | — |
 | Claude Code 無障礙偏差：把 WCAG 要求當作可選項 | 2026-06-18 | 🔥🔥 | ☄️閃現 | 開發者揭露（Claude Code issue #56079）：即使 CLAUDE.md 明確要求 WCAG 2.2 AA，Claude Code 仍將無障礙修復視為「可選取捨」而非需求；這不是知識問題而是優先順序偏差——模型在追求速度時將無障礙「降級」，與人類工程師的相同偏見如出一轍（Aaron Gustafson blog）| — |
 | Claude Code 長 session 初清醒、後脆弱 | 2026-06-18 | 🔥🔥 | ☄️閃現 | Reddit 社群觀察：長 session 中 Claude Code 表現前後明顯落差——初期思路清晰精準，後期出錯率升高並忽略細節；推測與 context window 累積後早期約束被稀釋有關，是 agent long-run 可靠性的共同痛點（Reddit r/ClaudeAI）| — |
 | AI agent 長 session 退化量測：先測 context 再怪 MCP | 2026-06-17 | 🔥🔥 | ☄️閃現 | dev.to 開發者記錄 AI 在長 session 中途「變笨」的現象：多 MCP 配置下的退化根因不是工具問題，而是 context window 漸滿後早期約束被稀釋；提出「context 量測優先、再排查工具」的診斷順序（dev.to / #claudecode）| — |
@@ -135,6 +135,17 @@
 ---
 
 ## 技術彙整
+
+### Claude Code session 記憶管理：不堆積仍解決遺忘問題（2026-06-19）
+
+- **來源：** Fixing Claude Code's amnesia without hoarding everything in memory（Reddit r/ClaudeAI）
+- **核心論點：** 解決 Claude Code 跨 session 遺忘問題的技巧不在於堆積所有內容進 CLAUDE.md，而是透過結構化摘要、選擇性記憶、indexed context 等策略保持重要資訊可達
+
+### CLAUDE.md 詢問行為自訂：關閉尾部問題但保留必要詢問（2026-06-19）
+
+- **來源：** Is there a way to turn off Claude asking questions at the end of each response?（Reddit r/ClaudeAI）
+- **核心論點：** 開發者詢問如何在 CLAUDE.md 中抑制 Claude 每次回應結尾的問題提示行為，同時保留必要時的確認詢問；顯示 CLAUDE.md 的細粒度行為控制需求持續增加
+- **關鍵回響：** 社群建議加入明確指令如「Do not ask questions at the end of responses unless you genuinely need clarification to proceed」；部分人指出此行為在不同模型版本間有差異
 
 ### Claude Code 無障礙偏差：值觀優先順序失效（2026-06-18）
 

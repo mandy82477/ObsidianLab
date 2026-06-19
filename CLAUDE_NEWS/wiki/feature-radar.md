@@ -4,7 +4,7 @@
 僅收錄官方 changelog、release note 或官方公告來源；社群工具見 [[topics/community-tech-tools]]。
 每次 ingest 後由 LLM 維護：新增功能、更新熱度、補充社群回饋。
 
-**最後更新：** 2026-06-18
+**最後更新：** 2026-06-19
 
 ---
 
@@ -29,7 +29,8 @@
 
 | 功能 | 發布日期 | 熱度 | 試用價值 | 狀態 |
 |------|----------|------|----------|------|
-| **Claude Code Artifacts**（工作階段即時輸出可共享互動網頁） | 2026-06-18 | 🔥🔥🔥 | ⚡ 有條件推薦 | 正式發布（PR 摘要、儀表板、系統說明文件等；隨 session 自動更新；企業場景）|
+| **Claude Code v2.1.183**（auto mode 破壞性 Git 指令自動封鎖） | 2026-06-19 | 🔥🔥 | ✅ 推薦 | 正式發布（`git reset --hard`、`git checkout -- .`、`git clean -fd`、`git stash drop` 在未明確要求時自動封鎖）|
+| **Claude Code Artifacts**（工作階段即時輸出可共享互動網頁） | 2026-06-18 | 🔥🔥🔥🔥 | ⚡ 有條件推薦 | 正式發布（PR 摘要、儀表板、系統說明文件等；隨 session 自動更新；企業場景；社群工具 Pagecast 跟進）|
 | **Python SDK v0.111.0**（helpers refusal-fallback 中間件） | 2026-06-18 | 🔥 | ✅ 推薦 | 正式發布（模型拒絕回應時可優雅降級）|
 | **TS Vertex SDK v0.18.0**（新功能更新） | 2026-06-18 | 🔥 | ✅ 推薦 | 正式發布 |
 | **Claude Code v2.1.179**（串流中斷修復 + spinner 修復 + 滑鼠滾輪修復） | 2026-06-16 | 🔥 | ✅ 推薦 | 正式發布（partial response 保留而非丟失；spinner 不再卡住；滑鼠滾輪正常運作）|

@@ -3,7 +3,7 @@
 **狀態：** ongoing
 **領域：** 💼 商業
 **開始日期：** 2026-05-28
-**最後更新：** 2026-06-18
+**最後更新：** 2026-06-19
 
 ---
 
@@ -86,6 +86,7 @@ Simon Willison（知名開發者博主）發表文章，認為 Anthropic 與 Ope
 | Apollo + Blackstone | 晶片債務融資 | 2026-05-29 | 安排 $36B 債務融資用於 AI 晶片採購 |
 | 富士通 | 全球戰略合作 | 2026-05-26 | 日本市場企業部署 |
 | KPMG | 諮詢服務整合 | 2026-05-25 | 專業服務業滲透 |
+| Stainless | 收購（$300M+）| 2026-05-18 | 官方 SDK + MCP 伺服器生成商；收購目的是掌控 MCP 生態基礎設施入口（月下載量 9,700 萬次）；服務 2026-09 關閉，OpenAI / Google 等第三方客戶需尋找替代方案（社群替代：Ironic）|
 | Google（投資）| $400 億美元 | 2024 | 見 [[entities/google-investment]] |
 | Amazon（投資）| $40 億美元 | 2023–2024 | 算力 + 生態綁定 |
 
@@ -110,6 +111,11 @@ Simon Willison（知名開發者博主）發表文章，認為 Anthropic 與 Ope
 - [[news/2026-05-13]]（The Information：定價強勢期）
 
 ## 時序
+
+### 2026-06-19
+- **[企業整合] Atlassian 正式推出 Claude Agent for Jira**：Atlassian 官方宣布推出 Claude Agent for Jira 企業整合，將 Claude 嵌入 Jira 工作流，是 Anthropic 生態進入全球最大專案管理工具的里程碑（Google News 2026-06-18）
+- **[企業整合] JFrog 推出受管理的 Claude Code 整合**：DevOps 平台 JFrog 推出 Governed Claude Code Integration，提供企業級安全管控的 Claude Code 部署方案，分析師評估對 JFrog 股東的正面意義（simplywall.st 2026-06-18）
+- **[IPO] Anthropic IPO 傳聞推升舊金山房地產市場**：ABC7 報導 OpenAI 與 Anthropic 的 IPO 預期正帶動舊金山房地產市場升溫，顯示潛在 IPO 財富效應已開始影響實體經濟（ABC7 2026-06-18）
 
 ### 2026-06-18
 - **[出口管制企業衝擊] JPMorgan Chase 香港分行切斷 Anthropic 存取**：Financial Times 報導全球最大銀行之一的香港辦公室因美國出口管制被迫停止使用 Anthropic 服務；是 Fable 5 / Mythos 管制令在頂尖金融企業造成直接衝擊的首個具名案例，也顯示出口管制的跨國企業波及範圍（FT 2026-06-18）

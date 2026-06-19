@@ -1,14 +1,14 @@
-﻿# Claude / Anthropic 生態系概覽
+# Claude / Anthropic 生態系概覽
 
-**最後更新：** 2026-06-13
+**最後更新：** 2026-06-19
 
 ---
 
 ## 當前局勢
 
-2026-06 的核心是 **Fable 5 正式發布** 與 **6/15 計費雙軌制即將生效**。Fable 5（Mythos 架構公開版，$10/$50 per M token）是本年度最大旗艦發布，HN 2,448 分、近 2,000 評論；但同時帶來靜默護欄爭議（前沿 LLM 研究被靜默降級，Anthropic 已道歉並部分撤回）。**明天（6/15）** Agent SDK 計費正式從 Pro/Max 訂閱剝離，`claude -p` 將走獨立費率——企業與自動化工作流必須今天確認預算邊界。
+2026-06 的核心衝突是 **Fable 5 出口管制**：2026-06-13 美國商務部對 Claude Fable 5 / Mythos 5 發出出口管制指令，全球存取中斷至今（7 天）。根本動機已確認：SK Telecom（Anthropic 投資方）的中國關聯被情報機構標記，並由 Amazon 研究員向白宮揭露 Fable 5 越獄漏洞，兩件事疊加觸發管制。Anthropic 國際總監 Ciauri 在首爾記者會（6/18）聲明「數日內恢復可用」，但白宮談判焦點已從 Fable 5 個案轉向建立更廣泛的 AI 安全規則框架。國會議員施壓要求政府解釋，Politico 法律分析指出限制措施可能違法。
 
-Anthropic 商業面持續升溫：$965B 估值 + $65B Series H + TCS 5 萬員工部署（最大已知企業部署）+ IPO 機密申請。同週 OpenAI 也機密申請 IPO，AI 定價戰進入新階段（WSJ 報導 OpenAI 考慮大幅削減 token 費用以對抗 Anthropic 降價預期）。
+6/15 計費切割已生效，Agent SDK / `claude -p` 計費暫停持續中。Claude Code Artifacts（6/18）已正式發布；Claude Code v2.1.183（6/19）強化 auto mode 安全性，封鎖破壞性 Git 指令。
 
 ---
 
@@ -16,12 +16,12 @@ Anthropic 商業面持續升溫：$965B 估值 + $65B Series H + TCS 5 萬員工
 
 | 模型 | 狀態 | 備注 |
 |------|------|------|
-| **Claude Fable 5** | ✅ Active（新旗艦）| Mythos 架構公開版；$10/$50 per M token；6/22 後脫離訂閱；護欄 fallback < 5% session |
+| **Claude Fable 5** | 🔴 全球封鎖中 | 6/13 起出口管制暫停；Anthropic 解封提案提交中；封鎖前 $10/$50 per M token |
+| **Claude Mythos 5** | 🔴 全球封鎖中 | 同上；限授權用戶（政府防禦者、企業安全研究員）|
 | Claude Opus 4.8 | ✅ Active | SWE-bench Pro 69.2%、1M context；Dynamic Workflows Research Preview |
-| Claude Sonnet 4.6 | ✅ Active | 社群 CP 值最佳主力 |
+| Claude Sonnet 4.6 | ✅ Active | Fable 5 下線後社群主力；CP 值最佳 |
 | Claude Haiku 4.5 | ✅ Active | 企業混合架構低成本 worker |
-| Claude Opus 4.7 | ⚠️ Deprecated 路線 | Python SDK v0.106.0 標記棄用 Opus 4.1；社群退化記錄仍在 |
-| Claude Mythos | 🔒 限制存取 | NSA 已用於攻擊；Glasswing 200 組織 / 15+ 國家；6–12 個月內公開 |
+| Claude Mythos（Preview）| 🔒 限制存取 | Glasswing 200 組織 / 15+ 國家；NSA 已用於攻擊性操作 |
 
 ---
 
@@ -29,83 +29,82 @@ Anthropic 商業面持續升溫：$965B 估值 + $65B Series H + TCS 5 萬員工
 
 ### 🔴 高度關注
 
-1. **⚠️ [[entities/pricing]] — 6/15 計費切割（明天生效）**
-   - `claude -p` / Agent SDK 正式脫離 Pro/Max 訂閱，走獨立費率
-   - Pro $20 月預算 → 超額按 API 費率計費；Max 5x $100、Max 20x $200
-   - openclaw 6/15 起恢復，改走信用池費率
+1. **[[topics/anthropic-government-policy]] — Fable 5 出口管制封鎖（第 7 天）**
+   - SK Telecom 中國關聯確認為根本動機（Wired HN score 110，6/19）；Amazon 研究員越獄揭露加速管制
+   - 白宮談判轉向：從 Fable 5 解禁擴展至建立整體 AI 安全規則框架（Politico，6/19）
+   - 國會議員施壓要求政府解釋（WaPo，6/18）；Politico：限制措施可能違法
+   - Ciauri 首爾記者會（6/18）：「數日內恢復」；Bloomberg：部分早期用戶保有存取權
+   - 三個戰場追蹤見 [[topics/anthropic-government-policy]]
 
-2. **[[entities/fable-5]] — Fable 5 護欄爭議**
-   - HN 2,448 分大成功，但靜默護欄（前沿 LLM 研究被降級）引發強烈批評
-   - Anthropic 已道歉，LLM 研究護欄改為可見；資安研究護欄仍過激
-   - 6/22 後從訂閱方案移除，進入消費制
+2. **[[entities/fable-5]] — 出口管制根本原因分析**
+   - 封鎖原因從「護欄爭議」升級為「投資方地緣政治」
+   - 社群主力已切回 Sonnet 4.6；Fable 5 依賴度損失由用戶湧現爆發揭示
 
 3. **[[topics/recursive-self-improvement]] — AI 遞歸自我改進**
-   - Claude 已負責 Anthropic 80-90% 生產程式碼（5 月數據確認）
-   - 全球媒體持續報導；Jack Clark 呼籲全球「煞車踏板」
-   - Geoffrey Hinton 批評 Anthropic 已偏離安全使命
+   - Claude 已負責 Anthropic 80–90% 生產程式碼
+   - Jack Clark 呼籲全球「煞車踏板」；Geoffrey Hinton 批評 Anthropic 偏離安全使命
 
 4. **[[topics/anthropic-business]] — 商業超高速擴張**
-   - TCS 全球夥伴關係：5 萬員工部署 Claude（最大企業案例）
-   - IPO 機密申請（同週 OpenAI）；Apollo + Blackstone $35B 晶片融資
-   - AI 定價戰：OpenAI 考慮大幅降價，直指 Anthropic 競爭壓力
+   - Claude Corps $150M 獲 Forbes 確認（2026-06-18）；SpaceX 完成 Cursor 收購
+   - JPMorgan HK 斷連事件影響企業信心；Andy Jassy AWS 深度整合報導
 
 ### 🟡 持續追蹤
 
 5. **[[topics/ai-agent-safety]] — 安全與可靠性**
-   - Fable 5 Jailbreak 技術分析仍在社群延燒
-   - v2.1.150 遠端系統提示注入披露（GrowthBook 60s 更新機制）
+   - Agentjacking：Sentry DSN 假錯誤報告可劫持 Claude Code（2026-06-16 披露）
+   - v2.1.150 遠端系統提示注入（GrowthBook 60s 動態注入）
 
 6. **[[entities/mythos]] — Mythos 政策化**
-   - NSA 攻擊性使用確認；印度政府採用；Glasswing 200 組織
+   - NSA 攻擊性使用確認；Glasswing 200 組織；出口管制封鎖期間持續運作
 
 7. **[[topics/enterprise-cost-management]] — 費用結構挑戰**（monitoring）
-   - 6/15 生效後企業成本焦慮觀察期
+   - Agent SDK 計費切割政策暫停；Uber / Microsoft 案例持續被引用
 
-8. **[[topics/anthropic-government-policy]] — 政策監測**（monitoring）
-   - [[entities/dario-amodei]] 呼籲政府可阻止危險 AI 模型，主要針對中國競爭者
+8. **[[topics/enterprise-tool-tracker]] — 企業工具變化**（ongoing）
+   - JPMorgan HK 最新退出；Microsoft 退出、Amazon 雙品牌並行
 
 ---
 
-## 近兩週重大事件（2026-05-30 至 2026-06-12）
+## 近兩週重大事件（2026-06-06 至 2026-06-19）
 
 | 日期 | 事件 | 影響 |
 |------|------|------|
-| 06-12 | DXC Technology 全球聯盟 + Claude Corps $1.5 億確認 | 企業生態擴張 🏢 |
-| 06-11 | Claude Corps 正式公告（1,000 Fellows，全薪，派駐非營利）| AI 普惠政策 |
-| 06-11 | Fable 5 護欄道歉 + 部分撤回（LLM 研究限制改可見）| 信任修復 🔧 |
-| 06-09 | **Claude Fable 5 正式發布**（HN 2,448）| 🔥🔥🔥🔥🔥 年度最大旗艦 |
-| 06-09 | Anthropic + OpenAI 同週 IPO 機密申請 | 資本市場競爭 |
-| 06-09 | Apollo + Blackstone $35B 晶片融資 | AI 基礎設施長期資本 |
-| 06-08 | v2.1.169 `--safe-mode` 旗標（停用所有自訂設定）| 故障排除利器 🔧 |
-| 06-07 | Python SDK v0.107.1（Bedrock Foundry 修復）| |
-| 06-06 | Python SDK v0.106.0（Opus 4.1 棄用標記）| 開發者遷移提醒 |
-| 06-05 | NSA 使用 Mythos 進攻性網路攻擊（FT 獨家）| 兩用性公開確認 🔴 |
-| 06-04 | 遞歸自我改進報告 + Jack Clark 呼籲全球暫停 | 全球媒體延燒 🔴 |
-| 06-04 | v2.1.162：`waitingFor` + `--tools` 遍歷 | Agent 監控改善 |
-| 06-02 | v2.1.160 Breaking：`workflow` → `ultracode` | ⚠️ 配置更新 |
-| 05-30 | v2.1.158：Auto mode on Bedrock/Vertex/Foundry | 企業雲擴展 |
+| 06-18 | **Claude Code Artifacts 正式發布** | 🔥🔥🔥 官方新功能 |
+| 06-18 | SK Telecom 中國關聯揭露為出口管制根本動機 | 🔴 地緣政治衝擊 |
+| 06-18 | JPMorgan HK 被迫斷連 Fable 5 / Mythos 5 | 企業連鎖影響 |
+| 06-18 | Claude Corps $150M Forbes 確認 | 💼 商業 |
+| 06-17 | Pentagon 三分之二 AI 工作量移出 Anthropic | 🔴 政府關係惡化 |
+| 06-17 | G7 盟友豁免請求全遭拒；談判再度破裂 | 🔴 外交封鎖 |
+| 06-16 | Agentjacking 攻擊揭露（Sentry DSN）| 🔴 安全警戒 |
+| 06-16 | Agent SDK 計費暫停（社群反彈勝）| ✅ 開發者鬆口氣 |
+| 06-15 | Claude Max 集體訴訟 | ⚖️ 法律風險 |
+| 06-14 | SpaceX 正式完成 Cursor 收購（$60B）| 💼 競品整合 |
+| 06-13 | **Fable 5 / Mythos 5 出口管制封鎖（美）** | 🔴 最大商業衝擊 |
+| 06-12 | DXC Technology 全球聯盟 + Claude Corps $1.5 億確認 | 💼 商業 |
+| 06-09 | **Claude Fable 5 正式發布**（HN 2,448 分）| 🔥🔥🔥🔥🔥 年度旗艦 |
+| 06-09 | Anthropic + OpenAI 同週 IPO 機密申請 | 資本市場 |
 
 ---
 
-## 社群工具生態（截至 2026-06-12）
+## 社群工具生態（截至 2026-06-19）
 
-共追蹤 **206 款社群工具**，見 [[topics/community-tech-tools]]。近期活躍工具：
+共追蹤 **210+ 款社群工具**，見 [[topics/community-tech-tools]]。近期活躍主線：
 
-- 🔥🔥🔥 **費用可觀測性**（Claustrophobic / Tokenyst / tokenflex.ing）— 6/15 計費即將生效，需求緊迫
-- 🔥🔥🔥 **agent 協調**（agent-vault-proxy / Claude Orchestra）— 1,000 子代理時代
-- 🔥🔥 **記憶與 context 管理**（engramx / the-knowledge-guy）— Session 失憶仍是痛點
+- 🔥🔥🔥 **費用可觀測性**（Claustrophobic / token-warden / Tokenyst）— Agent SDK 計費風波後需求居高
+- 🔥🔥🔥 **Agent 協調**（Gorchestra / AI Commander / AgentPace）— 多代理管理需求爆發
+- 🔥🔥 **AI 任務自動化**（job-search / Mira / Offload）— 非技術人員商業成果討論熱
 
-> 功能熱度詳細評分與試用推薦見 **[[feature-radar]]**；2026-05 功能見 **[[feature-radar-archive-2026-05]]**
+> 功能熱度評分與試用推薦見 **[[feature-radar]]**
 
 ---
 
 ## 商業動態
 
-- **估值**：$965B（Series H），超越 OpenAI
-- **最大企業部署**：TCS 5 萬員工（2026-06-11 公告）
-- **競爭**：AI 定價戰升溫；OpenCode 157K 分流穩定；DXC + LG + Rubrik 等企業加入
-- **安全**：Fable 5 護欄爭議持續；Mythos 軍事兩用確認
-- **計費**：6/15 雙軌制明天生效；openclaw 恢復
+- **估值**：$965B（Series H，IPO 機密申請中）
+- **最新企業動態**：JPMorgan HK 斷連、Claude Corps $150M、DXC 全球聯盟
+- **競爭**：Fable 5 下線使 Sonnet 4.6 成主力；OpenCode 157K 分流穩定；AI 定價戰持續
+- **安全**：Agentjacking 披露；Mythos 軍事兩用已確認；出口管制封鎖進行中
+- **計費**：Agent SDK 計費暫停；6/15 Pro/Max 計費基礎結構已切換
 
 ---
 
@@ -113,10 +112,10 @@ Anthropic 商業面持續升溫：$965B 估值 + $65B Series H + TCS 5 萬員工
 
 | 功能 | 熱度 | 推薦 |
 |------|------|------|
-| **Claude Fable 5** | 🔥🔥🔥🔥🔥 | ⚡ 有條件（6/22 前訂閱免費，護欄注意）|
-| 6/15 計費切割 | 🔥🔥🔥🔥🔥 | ⚠️ 必讀（明天生效）|
+| **Claude Code Artifacts** | 🔥🔥🔥 | ⚡ 有條件推薦（適合 PR 摘要、儀表板分享）|
+| v2.1.178 `Tool(param:value)` 語法 | 🔥🔥 | ✅ 推薦（permission rules 精細控制）|
 | Coordinator 模式 + `/code-review --fix` | 🔥🔥🔥🔥 | ✅ 推薦 |
-| `/goal` 指令 | 🔥🔥🔥🔥🔥 | ✅ 立即試用 |
+| `--safe-mode` 旗標 | 🔥🔥 | ✅ 故障排除必備 |
 | `hard_deny` 安全規則 | 🔥🔥🔥 | ✅ 所有用戶建議設定 |
 
 > 完整功能熱度評分與使用指南見 **[[feature-radar]]**
@@ -125,8 +124,8 @@ Anthropic 商業面持續升溫：$965B 估值 + $65B Series H + TCS 5 萬員工
 
 ## 社群情緒指標
 
-- HN 討論熱度：🔥🔥🔥🔥🔥 極高（Fable 5 + 護欄爭議 + 6/15 計費 + IPO）
-- Reddit 情緒：😐 分歧（Fable 5 能力好評 vs 護欄不透明憤怒並存）
-- 開發者工具活躍度：📈 高（206 工具，費用可觀測性、Fable 5 相容性雙主線）
-- 信任指標：→ 下降壓力（護欄道歉有助修復，但仍有資安研究者不滿）
-- 競爭壓力：🔴 高（AI 定價戰白熱化；OpenAI 同週 IPO 申請）
+- HN 討論熱度：🔥🔥🔥🔥 高（出口管制 + Agentjacking + Artifacts 發布）
+- Reddit 情緒：😤 焦慮（Fable 5 下線失落感 + 計費暫停鬆口氣）
+- 開發者工具活躍度：📈 持續高（Agent 協調、費用可觀測性雙主線）
+- 信任指標：↘ 持續下降壓力（出口管制暴露地緣政治脆弱性；Agentjacking 安全警戒）
+- 競爭壓力：🔴 高（Fable 5 下線期間競品乘機搶佔市場）

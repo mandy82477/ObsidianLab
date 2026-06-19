@@ -3,7 +3,7 @@
 **狀態：** ongoing
 **領域：** 🏛️ 政策/安全
 **開始日期：** 2026-05-01
-**最後更新：** 2026-06-18
+**最後更新：** 2026-06-19
 
 ---
 
@@ -59,6 +59,9 @@ Fable 5 發布後，Amazon 安全研究人員發現特定提示詞可讓模型�
 
 | 日期 | 方 | 動作 | 效果 |
 |------|----|------|------|
+| 2026-06-19 | 🏛️ | White House 與 Anthropic 談判焦點轉向制定更廣泛 AI 安全規範框架（Politico） | 從解禁 Fable 5 的技術談判升級為規則制定層級的政策協商 |
+| 2026-06-19 | 🏛️ | Trump 政府要求 Anthropic 在重新發布 Fable 5 前必須徹底阻絕越獄；技術會議後官員稱「已過了辯論階段」（Wired） | Anthropic 在 Commerce 部 / ONCD 技術會議重申漏洞影響有限，但政府要求絕對防護而非風險爭辯 |
+| 2026-06-19 | 🌐 | 國會議員（Washington Post）正式要求政府就 Anthropic 限制措施作出說明 | 立法部門施壓升溫，出口管制的政治代價增加 |
 | 2026-06-18 | 🌐 | Wired 獨家：SK Telecom 中國關聯是出口管制的根本起因 | 揭露政府行動的真實動機，不只是 jailbreak |
 | 2026-06-18 | 🏢 | Chris Ciauri 首爾記者會：「數日內模型恢復可用」 | 首次給出具體時間框架；展示談判進展 |
 | 2026-06-18 | 🏢 | Anthropic 向 Lutnick 提交解封提案（New York Post 獨家） | 談判進入最後階段 |
@@ -84,11 +87,12 @@ Fable 5 發布後，Amazon 安全研究人員發現特定提示詞可讓模型�
 
 ---
 
-## 目前局勢（截至 2026-06-18）
+## 目前局勢（截至 2026-06-19）
 
-- **管制狀態：** 出口管制維持中，但談判出現進展跡象——Anthropic 已提交解封提案，Ciauri 給出「數日內」時間框架
-- **政府底線：** Fable 5 護欄可被繞過存取 Mythos 攻擊能力；SK Telecom / China 關聯是另一根本動機
-- **Anthropic 底線：** 否認技術主張，已主動提出解封方案，積極協商；出口管制可能違法的法律論點增加了政府壓力
+- **管制狀態：** 出口管制維持中；談判已從「是否解禁 Fable 5」上升至「如何制定更廣泛 AI 安全規範框架」，性質從技術協商轉向政策制定
+- **政府底線：** 要求 Anthropic 徹底阻絕所有越獄途徑後才允許 Fable 5 重新發布；官員稱「已過了辯論階段」，表示不接受任何越獄風險的可接受性辯論
+- **Anthropic 底線：** 主張漏洞影響有限，技術上無法做到零越獄；已在 Commerce 部與 ONCD（Sean Cairncross）技術會議中重申立場
+- **政治壓力：** 國會議員透過 Washington Post 正式要求說明，立法部門加入施壓陣線；Politico 違法分析持續增加政府讓步成本
 - **意外效果：** 企業市佔五月首超 OpenAI，但 JPMorgan HK 斷連是首個具名頂尖企業受波及的直接損失案例
 
 ---
@@ -110,6 +114,11 @@ Fable 5 發布後，Amazon 安全研究人員發現特定提示詞可讓模型�
 - [Chris Olah Vatican Remarks](https://www.anthropic.com/news/chris-olah-pope-leo-encyclical) — Anthropic Blog
 
 ## 時序
+
+### 2026-06-19
+- **[談判升級] 焦點從 Fable 5 解禁轉向 AI 安全規範框架**：Politico 報導 White House 與 Anthropic 的談判焦點已從技術層面的 Fable 5 解禁轉向制定更廣泛的 AI 安全規則框架，顯示政府將此次爭端視為建立 AI 治理先例的機會（Politico）
+- **[零越獄要求] 技術會議後官員立場強硬**：Wired 報導 Trump 政府要求 Anthropic 在重新發布 Fable 5 前必須徹底解決所有越獄漏洞；Anthropic 在與 Commerce 部和 ONCD 主任 Sean Cairncross 的技術會議中重申漏洞影響有限，但官員明確表示「已過了辯論越獄是否嚴重的階段」——政府要求的是絕對防護，而非可接受性辯論（Wired）
+- **[國會施壓] 立法部門加入陣線**：多位國會議員透過 Washington Post 正式要求政府就對 Anthropic 的限制措施提出法律說明，立法部門加入施壓增加政治壓力（Washington Post）
 
 ### 2026-06-18
 - **[動機揭露] SK Telecom 中國關聯是根本起因**：Wired 獨家報導：出口管制的真正起點是美國政府對 SK Telecom 疑似中國關聯的憂慮——Anthropic 早先已授予 SK Telecom 存取 Mythos（非 Fable 5），此舉令官員警惕；Fable 5 的 jailbreak 問題進一步加速了政府的行動（Wired）

@@ -1,6 +1,6 @@
 # Wiki 知識庫規則
 
-一般 wiki 查詢時自動載入。**執行 ingest / lint 操作時，必須同時讀取 `.claude/rules/wiki-ingest.md`**（含頁面格式模板、欄位規則、品質標準）。
+一般 wiki 查詢時自動載入。**執行 ingest / lint 操作時，必須同時讀取 `.claude/rules/wiki-ingest.md`**（分類標準與派工流程）。頁面格式模板見 `.claude/rules/wiki-ingest-format.md`。
 
 ---
 

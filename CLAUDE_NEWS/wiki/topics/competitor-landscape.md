@@ -3,7 +3,7 @@
 **狀態：** monitoring
 **領域：** 💼 商業
 **開始日期：** 2026-04
-**最後更新：** 2026-06-07
+**最後更新：** 2026-06-19
 ---
 
 ## 摘要
@@ -47,6 +47,7 @@ Claude Code 已成為 AI 輔助編碼的標竿產品，但競爭正快速升溫�
 
 ### Cursor / Windsurf
 - **狀態**：Active（IDE 整合型，與 Claude Code CLI-first 定位有別）
+- **重大事件**：SpaceX 以 $60B 正式完成收購 Cursor（2026-06-17 確認）；收購整合 SpaceX / xAI 生態，使 Cursor 獲得 SpaceX 資源支撐，直接衝擊 Claude Code vs Cursor 競爭態勢；Cursor 此前與 Anthropic 有深度整合關係，收購後生態歸屬方向待觀察（dev.to、9to5Mac）
 
 ### DeepSeek 🔴
 - **狀態**：正式宣布建構 Claude Code 競品（2026-05-22）
@@ -100,6 +101,9 @@ Claude Code 已成為 AI 輔助編碼的標竿產品，但競爭正快速升溫�
 ---
 
 ## 時序
+
+### 2026-06-19
+- **[SpaceX 完成 $60B Cursor 收購] 競爭格局重塑**：dev.to 分析文章評估 SpaceX 以 600 億美元完成收購 Cursor 對 Claude Code 競爭格局的影響；9to5Mac 確認收購正式完成（IPO 後一週）。Cursor 此前與 Anthropic 有深度整合關係，SpaceX 資源注入後 Cursor 的 Claude 依賴度可能降低，Elon Musk / xAI 生態與 Anthropic 的競爭軸線進一步明確（dev.to 2026-06-18、9to5Mac 2026-06-17）
 
 #### 企業競爭白熱化（2026-05-12 至 2026-05-22）
 

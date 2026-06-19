@@ -3,7 +3,7 @@
 **狀態：** ongoing
 **領域：** 🌐 社群
 **開始日期：** 2026-04-25
-**最後更新：** 2026-06-18
+**最後更新：** 2026-06-19
 
 ---
 
@@ -23,9 +23,9 @@
 
 | 痛點主題 | 代表工具 | 本質問題 | 狀態 | 近期工具 |
 |---------|---------|---------|------|---------|
-| Token 成本不透明 | Tokenyst、CostHawk、TokenShield、PrismoDev、engramx、agent-estimate、AI Agent Token Cost Calculator、Claude Usage Tray、token-xray、agentgraphed、context-analyzer、permafrost、Claumon、Claustrophobic、AgentPace、Parcle、token-warden | 自主 agent 讓帳單不可預測；Parcle 新增 agent 共享記憶層減少重複 context；AgentPace 燃燒速率趨勢可視化 | 🔥 持續升溫 | 2026-06-18 |
+| Token 成本不透明 | Tokenyst、CostHawk、TokenShield、PrismoDev、engramx、agent-estimate、AI Agent Token Cost Calculator、Claude Usage Tray、token-xray、agentgraphed、context-analyzer、permafrost、Claumon、Claustrophobic、AgentPace、Parcle、token-warden、Pi Extension | 自主 agent 讓帳單不可預測；Parcle 新增 agent 共享記憶層減少重複 context；AgentPace 燃燒速率趨勢可視化；Pi Extension 跨工具 AI credits 最大化 | 🔥 持續升溫 | 2026-06-19 |
 | 跨 session 記憶歸零 | ltm、Memex、draft CLI、LockedIn、VIR、CoreMem、claude-handoff-revive、timeglass.ai | 無官方標準，每個新 session 從零開始 | 🔥 持續升溫 | 2026-05-27 |
-| 多 agent 協調混亂 | agent-baton、cdesktop、AnyFrame、agent-teamflow、Runner、Runtime、Fleet、AWO、claude-workflow-composer | 官方 Managed Agents 已部分解決，但社群仍補缺口；AWO 提供 git worktree 隔離方案 | 🔥 持續升溫 | 2026-05-27 |
+| 多 agent 協調混亂 | agent-baton、cdesktop、AnyFrame、agent-teamflow、Runner、Runtime、Fleet、AWO、claude-workflow-composer、BeamWeaver | 官方 Managed Agents 已部分解決，但社群仍補缺口；AWO 提供 git worktree 隔離方案；BeamWeaver 以 Elixir OTP 原生提供 graph workflow 與 checkpoint 機制 | 🔥 持續升溫 | 2026-06-19 |
 | CLAUDE.md 規則失效 | Writ、Caliber、Patina | 規則被忽略、過多規則耗 token、跨工具無標準 | 🌙 冷卻觀望 | 2026-05-12 |
 | 多模型鎖定防禦 | Dragoman、Claudy、claudely、clarp、vibe-skill、Rayline | 6/15 計費切割後供應商依賴防禦反應加速；Rayline 新增 subagent 層級模型路由 | 🔥 持續升溫 | 2026-06-09 |
 | 輸出品質不可信 | Groundtruth、EvanFlow、Relay plugin、Proof Loop | 信任邊界未建立，需在流程層強制插入驗證點；Proof Loop 加入建構者/驗證者分離機制 | 🔥 持續升溫 | 2026-05-22 |
@@ -64,6 +64,11 @@
 
 | 工具 | 類型 | 採用 | 首次出現 | 簡介 |
 | --- | --- | --- | --- | --- |
+| [**Prompt Foundry**](https://marketplace.visualstudio.com/items?itemName=sdevries.prompt-foundry) | context 管理工具 | ⏳ | 2026-06-19 | VS Code / Cursor 擴充套件，透過子 prompt 組合 + MCP server 保持 context 新鮮，解決大型 codebase 中 AI 遵循慣有模式導致 context 失效的問題；Show HN |
+| [**Sqim**](https://www.sqim.dev/) | 行動開發工具 | ⏳ | 2026-06-19 | 支援 Claude Code、Codex 等 coding agent 從 CLI 直接安裝 iOS 建置到 iPhone，無需 VPN；Show HN |
+| [**Everything Claude Code microVM**](https://www.jurniti.com/templates/ecc) | 部署模板 | ⏳ | 2026-06-19 | 一鍵將 @affaan 的 Everything Claude Code 設定（64 agents、261 skills）部署到獨立 microVM，約 3 分鐘內可用；Show HN |
+| [**Pi Extension**](https://github.com/sathish316/pi-omniagent-extensions/) | 成本管理工具 | ⏳ | 2026-06-19 | 跨 Cursor、Codex、Claude Code 最大化 AI credits 的瀏覽器擴充套件，使用 ACP 協定；Show HN |
+| [**BeamWeaver**](https://github.com/caudena/beam_weaver) | Agent 框架 | ⏳ | 2026-06-19 | Elixir 原生 agent 框架（OTP-native），支援 agents/tool calling/graph workflow/checkpoints/retries，內建 Anthropic adapter，含 WeaveScope 可觀測性；Show HN |
 | [**job-search**](https://github.com/agent-data/job-search) | Skills | ⏳ | 2026-06-18 | 開源 Claude Code 插件：學習使用者求職偏好、從 LinkedIn 抓取即時職缺並生成個人化日報，選配每日排程自動執行；Show HN |
 | [**LegalRabbit DOCX**](https://github.com/LegalRabbit-AI/legalrabbit-docx-claude-plugin) | 整合工具 | ⏳ | 2026-06-18 | Cowork/Codex DOCX 插件；透過 docx↔HTML 雙向轉換讓 AI 只操作 HTML，減少 2-5 倍 token 消耗，特別適合法律文件紅線審閱；Show HN |
 | [**AI Commander**](https://aicommander.dev/) | 整合工具 | ⏳ | 2026-06-18 | 讓 Claude Code 等 AI Agent 以 TeamViewer 方式遠端連線並在使用者機器執行 shell 指令，無需開放 SSH 端口或 VPN；支援 Windows/Mac/Linux；Show HN |

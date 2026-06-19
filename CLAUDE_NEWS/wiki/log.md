@@ -3,6 +3,47 @@
 Append-only 紀錄。每次 ingest、query 或 lint 都在此追加一條。
 格式：`## [YYYY-MM-DD] 類型 | 說明`
 
+## 2026-06-19 Ingest | news/2026-06-19.md（77 則）
+
+- 來源日報：`news/2026-06-19.md`（77 則，6 來源；主軸：Fable 5 / Mythos 出口管制持續（SK Telecom 中國關聯確認為根本動機 HN score 110、Amazon 研究員越獄漏洞舉報、Ciauri 首爾記者會「數日內恢復」、白宮談判轉向設定 AI 安全規則、國會議員施壓）；Claude Code v2.1.183 auto mode 破壞性 Git 指令封鎖；企業整合（Atlassian Claude Agent for Jira、JFrog Governed Claude Code）；SpaceX $60B Cursor 收購影響競爭格局；社群工具爆發（Pagecast / AI Commander / BeamWeaver / Pi Extension / Everything Claude Code microVM / Sqim / Prompt Foundry）；技術討論（Vibe coding 成就感缺失延燒、Loop Engineering、記憶管理技巧、無障礙偏差 issue）；LLM 無障礙偏差 issue #56079（WCAG 2.2 AA 規格被忽視）；Claude Code CVE 治理實踐報告）
+- 更新頁面：
+  - `entities/claude-code.md`：版本表 prepend v2.1.183（auto mode 破壞性 Git 指令封鎖）；最後更新 2026-06-19
+  - `entities/fable-5.md`：歷史記錄 prepend 2026-06-19（SK Telecom 中國關聯、Amazon 越獄揭露、Ciauri 解禁聲明、Bloomberg 早期用戶豁免、印度 AI 主權討論）；最後更新 2026-06-19
+  - `entities/mythos.md`：時序 prepend 2026-06-19（SK Telecom 根本動機確認、Amazon 研究員角色）；最後更新 2026-06-19
+  - `topics/anthropic-government-policy.md`：攻防紀錄 prepend 3 行（白宮談判轉向 AI 安全規則、要求徹底阻絕越獄、國會議員施壓 WaPo）；時序 prepend 2026-06-19 3 事件；最後更新 2026-06-19
+  - `topics/ai-agent-safety.md`：技術彙整 prepend 3 條（無障礙偏差 issue #56079、Claude Code CVE 治理報告、Claude Chat 濫用安全通報）；時序 prepend 2026-06-19；最後更新 2026-06-19
+  - `topics/anthropic-business.md`：時序 prepend 2026-06-19（Atlassian Claude Agent for Jira、JFrog Governed Claude Code、Anthropic IPO 傳聞）；最後更新 2026-06-19
+  - `topics/enterprise-tool-tracker.md`：企業表格新增 Atlassian（Claude Agent for Jira，✅）、JFrog（Governed Claude Code，✅）；工具競爭態勢更新；時序 prepend 2026-06-19；最後更新 2026-06-19
+  - `topics/competitor-landscape.md`：Cursor 條目補充 SpaceX $60B 收購細節；時序 prepend 2026-06-19；最後更新 2026-06-19
+  - `topics/community-tech-tools.md`：新增 5 個 Show HN 工具（Prompt Foundry、Sqim、Everything Claude Code microVM、Pi Extension、BeamWeaver）；痛點洞察更新；最後更新 2026-06-19
+  - `topics/community-tech-patterns.md`：新增 3 個模式（Loop Engineering、Self-rewriting CRM、Spec-driven Development CLI）；最後更新 2026-06-19
+  - `topics/community-tech-discussions.md`：Vibe coding 模式從 ☄️閃現 → 🌊延燒；技術彙整 prepend 2 條（記憶管理技巧、CLAUDE.md 詢問行為自訂）；最後更新 2026-06-19
+  - `wiki/feature-radar.md`：全覽表 prepend v2.1.183 條目；Claude Code Artifacts 熱度升至 🔥🔥🔥🔥（Pagecast 工具跟進）；最後更新 2026-06-19
+- 新增頁面：`wiki/entities/chris-ciauri.md`（Anthropic 國際業務總監，首爾記者會解禁聲明）
+- 升格檢查（discussions → patterns）：
+  - Vibe coding 成就感缺失（第 2 天，🌊延燒）— 討論持續，但未出現可複用步驟，**不升格**
+  - LLM 無障礙偏差（第 2 天，🌊延燒）— 技術原因清楚但無 workaround 共識，**不升格**
+- feature-radar 更新：新增 Claude Code v2.1.183（🔥🔥，✅）；Claude Code Artifacts 熱度升 🔥🔥🔥 → 🔥🔥🔥🔥
+- 本日新增工具：Prompt Foundry（Show HN）、Sqim（Show HN）、Everything Claude Code microVM（Show HN score 1）、Pi Extension（Show HN）、BeamWeaver（Show HN）
+- 呈現品質審查：
+  | 頁面 | 結果 |
+  |------|------|
+  | entities/claude-code.md | ✅ 通過 |
+  | entities/fable-5.md | ✅ 通過 |
+  | entities/mythos.md | ✅ 通過 |
+  | topics/anthropic-government-policy.md | ✅ 通過 |
+  | topics/ai-agent-safety.md | ✅ 通過 |
+  | topics/anthropic-business.md | ✅ 通過 |
+  | topics/enterprise-tool-tracker.md | ✅ 通過 |
+  | topics/competitor-landscape.md | ✅ 通過 |
+  | topics/community-tech-tools.md | ✅ 通過 |
+  | topics/community-tech-patterns.md | ✅ 通過 |
+  | topics/community-tech-discussions.md | ✅ 通過 |
+  | wiki/feature-radar.md | ✅ 通過 |
+  | entities/chris-ciauri.md（新建） | ✅ 通過 |
+
+---
+
 ## 2026-06-18 Ingest | news/2026-06-18.md（92 則）
 
 - 來源日報：`news/2026-06-18.md`（92 則，6 來源；主軸：Fable 5 / Mythos 出口管制談判進入最終階段（SK Telecom 中國關聯揭露、Anthropic 提交解封方案、Politico 違法疑慮）；Claude Code Artifacts 官方功能正式發布；JPMorgan HK 被迫斷連；Claude Corps $150M；Agent SDK 計費暫停持續；社群工具爆發（job-search / LegalRabbit DOCX / AI Commander / Gorchestra / Pagecast / Parcle）；Python SDK v0.111.0 refusal-fallback helpers）
@@ -1598,4 +1639,39 @@ Append-only 紀錄。每次 ingest、query 或 lint 都在此追加一條。
   - `entities/mythos.md` ✅ 通過
   - `entities/pricing.md` ✅ 通過
   - `topics/community-tech-patterns.md` ✅ 通過
-  - `wiki/feature-radar.md` ✅ 通過
+
+---
+
+## 2026-06-19 Lint
+
+- 修正矛盾：`wiki/index.md` 中 `topics/anthropic-government-policy` 狀態 `monitoring` → `ongoing`，描述更新為反映出口管制封鎖現況
+- 補連結：無（所有頁面均有來自其他實體/議題頁的入鏈）
+- 狀態更新：`topics/anthropic-government-policy`：monitoring → ongoing（頁面於 6/18 ingest 已改為 ongoing，index.md 今日同步）
+- 遷移至 entities：無（無 resolved 議題）
+- 新增 entities：無
+- 呈現品質：
+  - 所有近期更新頁面（6/16–6/18 ingest 已審查）✅ 全數通過
+  - `wiki/overview.md`：⚠️ 已修復（重寫至 2026-06-19；原版停留在 6/13，仍說「明天生效 6/15 計費」、Fable 5 未封鎖）
+- 超長頁面（> 500 行）：無
+- 規則檔健檢：
+  - `wiki/CLAUDE.md`：51 行（閾值 80 行）✅
+  - `.claude/rules/wiki-ingest.md`：283 行（閾值 250 行）⚠️ 超出 33 行
+    - 最大段落：`feature-radar.md 更新規則`（約 63 行）、`entities/ 格式模板`（36 行）、`topics/ 格式模板`（38 行）
+    - 建議：`feature-radar.md 更新規則` 中的「版本更新收錄判斷」表格可考慮縮減；但格式模板為必要，不建議刪除
+    - 決定：**維持現狀**，待自然演進（使用者未要求立即簡化）
+  - 矛盾：無
+  - 引用驗證：全部通過（首次出現 ✅、痛點洞察 ✅、近期工具 ✅、技術彙整 ✅、熱門討論 ✅、衍生 ✅、全覽表 ✅）
+  - 遵守率（近 3 次 ingest）：呈現品質審查 3/3 ✅、feature-radar 更新 3/3 ✅、社群工具新增更新 3/3 ✅、log.md 格式 3/3 ✅
+  - 過期規則（> 60 天，基準 2026-04-20）：最舊規則 `[加入: 2026-04-25]`（55 天）→ 無規則超過閾值 ✅
+  - 簡化：跳過（33 行超出為可接受範圍，使用者未確認簡化方向）
+- overview.md：已更新（完整重寫，反映 Fable 5 出口管制封鎖為當前首要議題）
+
+---
+
+## 2026-06-19 Wiki 頁面合併
+
+- `entities/project-deal.md` → 合併至 `entities/claude-code.md`（Agentic 能力擴展區塊新增 Project Deal 條目）
+- `entities/stainless.md` → 合併至 `topics/anthropic-business.md`（戰略合作表格新增收購列）
+- 更新入鏈：`topics/community-tech-patterns.md` wikilink 改為純文字引用；`entities/claude-code.md` 歷史紀錄 `[[entities/stainless]]` 改為 `[[topics/anthropic-business]]`
+- 刪除：`entities/project-deal.md`、`entities/stainless.md`
+- `wiki/index.md`：移除兩列，最後更新 2026-06-19

@@ -3,7 +3,7 @@
 **狀態：** ongoing
 **領域：** 💼 商業
 **開始日期：** 2026-05-26
-**最後更新：** 2026-06-18
+**最後更新：** 2026-06-19
 
 ## 摘要
 
@@ -19,6 +19,8 @@
 
 | 企業 | 規模 | AI 編碼工具 | 狀態 | 事件日期 | 備註 | 確認日期 |
 |------|------|-----------|------|---------|------|---------|
+| Atlassian | 大型 | Claude API | ✅ | 2026-06-18 | Claude Agent for Jira 正式推出，企業整合嵌入全球最大專案管理工具 | 2026-06-18 |
+| JFrog | 大型 | Claude Code | ✅ | 2026-06-18 | Governed Claude Code Integration，提供企業級安全管控的 Claude Code 部署方案 | 2026-06-18 |
 | JPMorgan Chase | 頂尖 | Claude API | ❌ | 2026-06-18 | 香港分行因美國出口管制指令被迫停止使用 Anthropic 服務（不含美國本部），是出口管制對頂尖金融機構的直接衝擊 | 2026-06-18 |
 | DXC Technology | 頂尖 | Claude API | ✅ | 2026-06-12 | 多年全球聯盟；訓練數萬名 Claude 認證工程師；覆蓋銀行、航空、保險、政府等受嚴格合規監管行業 | 2026-06-12 |
 | TCS（Tata Consultancy Services） | 頂尖 | Claude API | ✅ | 2026-06-11 | Global Premier Partnership；5 萬員工部署 Claude；同取得 Mythos Preview（Project Glasswing）存取 | 2026-06-11 |
@@ -51,8 +53,8 @@
 
 | 工具 | 企業採用數 | 趨勢 | 主要阻力 |
 |------|----------|------|---------|
-| Claude Code | 4 使用中（Amazon、Uber、UiPath、Rubrik）+ 1 退出（Microsoft） | ⚠️ 成本壓力浮現 | 缺乏企業層級預算管控 |
-| Claude API | 13（Apple、KPMG、iCapital、哈佛、Fujitsu、Travelport、Nimble Gravity、ZoomInfo、LG Group、AppFolio、Salesforce Claude API、TCS、DXC Technology） | 🟢 快速擴張 | — |
+| Claude Code | 5 使用中（Amazon、Uber、UiPath、Rubrik、JFrog）+ 1 退出（Microsoft） | ⚠️ 成本壓力浮現 | 缺乏企業層級預算管控 |
+| Claude API | 15（Apple、KPMG、iCapital、哈佛、Fujitsu、Travelport、Nimble Gravity、ZoomInfo、LG Group、AppFolio、Salesforce Claude API、TCS、DXC Technology、Atlassian、JPMorgan Chase 美國本部） | 🟢 快速擴張 | — |
 | GitHub Copilot | 1（Microsoft） | 🟢 Microsoft 背書 | 生態鎖定 |
 | OpenAI Codex | 2（Amazon、UiPath） | 🟢 快速成長 | — |
 | Cursor | 1（Uber） | ⚠️ 新創份額下滑 | 成本管控困難；企業級功能不如 Claude Code |
@@ -70,6 +72,10 @@
 ---
 
 ## 時序
+
+### 2026-06-19
+- **Atlassian Claude Agent for Jira 推出**：Atlassian 正式推出 Claude Agent for Jira 企業整合，將 Claude 嵌入全球最大專案管理工具（Google News 2026-06-18）
+- **JFrog Governed Claude Code Integration 上線**：DevOps 平台 JFrog 推出企業級安全管控的 Claude Code 整合，可追蹤使用情況並設定治理策略（simplywall.st 2026-06-18）
 
 ### 2026-06-18
 - **JPMorgan Chase 香港切斷 Anthropic 存取**：Financial Times 報導，全球最大銀行之一的香港辦公室因美國出口管制指令被迫停止使用 Anthropic 服務；是出口管制對具名頂尖金融機構的首個直接衝擊案例，顯示法規層面對企業工具使用的外部強制效應（Financial Times）

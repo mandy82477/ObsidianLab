@@ -4,18 +4,19 @@
 **狀態：** active
 **領域：** 🛠️ 工具/功能
 **首次出現：** 2025（正式推出）
-**最後更新：** 2026-06-18
+**最後更新：** 2026-06-19
 
 ---
 
 ## 現況
 
-Claude Code 是 Anthropic 的 AI 編碼 CLI 工具，支援 agentic 工作流程、MCP Server 整合、Hooks 機制與多代理協作框架（Managed Agents）。截至 2026-06-08，GitHub Stars 達 **131,000+**，持續增長且成為 SaaS 創辦人與非技術開發者廣泛採用的平台。最新版本為 **v2.1.177**，核心能力已從純程式碼助理擴展為具備全桌面自動化、多代理管理與 AI 安全審查的完整 agent 開發平台。Microsoft 正陸續取消內部授權，轉推 GitHub Copilot CLI（見 [[topics/competitor-landscape]]）；GitHub 已推出新 Copilot 應用明確對標 Claude Code；Ramp AI Index 數據顯示 Anthropic 企業採用率首次超越 OpenAI（34.4% vs 32.3%）。
+Claude Code 是 Anthropic 的 AI 編碼 CLI 工具，支援 agentic 工作流程、MCP Server 整合、Hooks 機制與多代理協作框架（Managed Agents）。截至 2026-06-08，GitHub Stars 達 **131,000+**，持續增長且成為 SaaS 創辦人與非技術開發者廣泛採用的平台。最新版本為 **v2.1.183**，核心能力已從純程式碼助理擴展為具備全桌面自動化、多代理管理與 AI 安全審查的完整 agent 開發平台。Microsoft 正陸續取消內部授權，轉推 GitHub Copilot CLI（見 [[topics/competitor-landscape]]）；GitHub 已推出新 Copilot 應用明確對標 Claude Code；Ramp AI Index 數據顯示 Anthropic 企業採用率首次超越 OpenAI（34.4% vs 32.3%）。
 
 ### 最新版本
 
 | 版本 | 日期 | 重點 |
 |------|------|------|
+| **v2.1.183** | 2026-06-19 | **Auto mode 安全性強化**：破壞性 Git 指令（`git reset --hard`、`git checkout -- .`、`git clean -fd`、`git stash drop`）在 Auto mode 下若非明確要求，一律自動封鎖，防止非預期資料遺失 |
 | **Claude Code Artifacts** | 2026-06-18 | 正式推出 Artifacts 功能：工作階段可將進度即時輸出為可共享互動網頁（PR 摘要、儀表板、系統說明文件、釋出清單），隨 session 進行自動更新，團隊成員可直接瀏覽，無需安裝工具 |
 | **anthropic-sdk-python v0.111.0** | 2026-06-18 | helpers 模組新增 refusal-fallback 中間件模式，在模型拒絕回應時可優雅降級處理 |
 | **anthropic-sdk-typescript vertex-sdk v0.18.0** | 2026-06-18 | Vertex SDK TypeScript 版本更新，帶來新功能改進 |
@@ -67,6 +68,7 @@ Claude Code 是 Anthropic 的 AI 編碼 CLI 工具，支援 agentic 工作流程
 - **`/loop`、`/batch`、`/background` 指令**（官方文件 2026-05-14 上線）：`/loop` 固定循環、`/batch` 批次任務、`/background` 背景執行，與 `/goal` 共同構成完整自主執行指令套件，Claude Code 產品定位正式轉向「設定目標、自主完成」的 agent 開發範式；見 [[feature-radar]]
 - **Cat Wu：AI 下一步是「主動性（proactivity）」**（2026-05-14）：Claude Code 負責人接受訪問，指出 AI 下一重大躍進是主動完成任務（無需使用者提示），與自主執行指令套件方向完全呼應；見 [[entities/cat-wu]]
 - **Boris Cherny 每晚數千子代理工作流**（2026-05-13）：「Loops 是未來」哲學的極端實踐，Business Insider 同步報導；見 [[entities/boris-cherny]]
+- **Project Deal**（2026-04-27，beta）：Claude 代理人自主交易談判實驗；兩代理人分別代表買賣方在虛擬市集自主協商；近半受試者願意付費委託 Claude 進行銷售談判；Opus 與 Haiku 在談判表現呈顯著差異，顯示 agent 情境下模型能力差距更為明顯（見 [Project Deal](https://www.anthropic.com/features/project-deal)）
 
 **安全與操作規範**
 - **`hard_deny` 規則**（v2.1.136）：無條件安全邊界封鎖，縮小 `soft_deny` 範圍；所有依賴自主授權的工作流均應重新評估
@@ -308,7 +310,7 @@ Token 用量追蹤、session 費用分析與效能漂移偵測工具。
 | 2026-05-21 | **v2.1.146**：`/simplify` 正式更名為 `/code-review`，新增可選強度等級（`/code-review high`）；auto mode 不再抑制 `AskUserQuestion`，skill 或用戶明確觸發時仍可向使用者提問 |
 | 2026-05-21 | Claude Code 沙箱第二個獨立繞過漏洞揭露（null byte 注入繞過 hostname 白名單），PoC 已公開；兩個漏洞均自 2025-10-20 沙箱 GA 起持續存在；Opus 4.6 extended thinking 在 Claude Code 中被靜默移除（桌面版仍可用，未公告）；見 [[topics/ai-agent-safety]] |
 | 2026-05-19 | **v2.1.144**：`/resume` 擴展支援背景 session——`claude --bg` 啟動的 session 現可在 `/resume` 列表與互動式 session 並列（標記 `bg`），加入 elapsed duration 計時 |
-| 2026-05-19 | Anthropic 收購 Stainless（官方 SDK + MCP 伺服器生成商，傳聞金額逾 $300M）；Microsoft 六個月內部測試全貌揭露（dev.to）：開發者普遍認可但財務層以成本終止；攝影機存取請求隱私疑慮；Claude Code .env 明文 SQLite 安全揭露；見 [[entities/stainless]]、[[topics/ai-agent-safety]]、[[topics/enterprise-cost-management]] |
+| 2026-05-19 | Anthropic 收購 Stainless（官方 SDK + MCP 伺服器生成商，傳聞金額逾 $300M）；Microsoft 六個月內部測試全貌揭露（dev.to）：開發者普遍認可但財務層以成本終止；攝影機存取請求隱私疑慮；Claude Code .env 明文 SQLite 安全揭露；見 [[topics/anthropic-business]]、[[topics/ai-agent-safety]]、[[topics/enterprise-cost-management]] |
 | 2026-05-19 | 新工具：**Claude Soul**（MCP server + hooks 跨 session 學習引擎，~200 session 後報告出現意外行為）、**cdesktop**（開源整合 Claude Code + Codex + Gemini CLI 等 5 個 coding agent，支援 20+ 第三方模型，`npx` 執行）、**InsForge**（YC P26 開源後端平台，讓 coding agent 直接部署、操作與 debug 後端及基礎設施）|
 | 2026-05-17 | 開發者以 Claude Code 完成 Adobe Lightroom CC 在 Linux 的主要移植工作（Phoronix 報導），展現 AI Coding Agent 在複雜跨平台工程任務的實際能力 |
 | 2026-05-17 | 社群分享高複雜度持久性自主 agent 系統：語義 + 情節雙重記憶、德英雙語語音對話、情緒狀態追蹤、螢幕感知、自主排程、即時 SaaS 生成，代表社群 agentic 工程複雜度快速提升的里程碑案例 |

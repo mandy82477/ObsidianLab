@@ -3,7 +3,7 @@
 **狀態：** monitoring
 **領域：** 🌐 社群
 **開始日期：** 2026-04-25
-**最後更新：** 2026-06-07
+**最後更新：** 2026-06-19
 
 ---
 
@@ -37,6 +37,27 @@
 ---
 
 ## 技術彙整
+
+### Loop Engineering：條件觸發的 Claude 執行設計（2026-06-19）
+
+- **核心模式：** 不讓 Claude 持續輪詢，而是設計「只在有實際工作時才觸發」的執行迴圈；解決 agent idle 時浪費 token 與上下文的問題
+- **實作方向：** 在 loop 入口加入工作偵測條件（如佇列非空、事件觸發、diff 存在），條件不成立時 agent 直接 sleep 或退出，不進入 Claude 呼叫
+- **適用場景：** CI/CD 監聽型 agent、PR review bot、定時輪詢類任務；不適合需即時響應的互動式 session
+- **與既有模式的關係：** 延伸自 Boris Cherny「Loops 是未來」論述，但強調「有意義的迴圈」而非無條件輪轉（Reddit r/ClaudeAI）
+
+### Self-rewriting CRM：AI agent 驅動的自我重構應用架構（2026-06-19）
+
+- **核心模式：** 應用系統以 AI agent 為改寫引擎，使用者以自然語言描述需求，系統動態重寫自身邏輯而無需傳統開發介入
+- **具體案例：** 開發者建置的 CRM 系統，非開發者可直接描述「希望追蹤客戶最後聯繫日期」等需求，agent 自動生成並整合相應欄位與邏輯
+- **架構要素：** 需要嚴格的 schema validation、rollback 機制、人工確認節點，避免 agent 修改破壞核心業務邏輯
+- **限制與風險：** 適合邊界清晰的 CRUD 類功能擴充；複雜關聯邏輯或安全敏感操作不宜自動重寫（推論）（Reddit r/ClaudeAI）
+
+### Spec-driven Development CLI：規格驅動開發工具鏈（2026-06-19）
+
+- **核心模式：** 透過 CLI 工具強制要求開發者先撰寫規格文件才能執行 AI 代碼生成，以工具層約束取代文化層自律
+- **工具實例：** opsx spec-driven-development-toolkit，整合 Claude Code、OpenCode、Codex，在無規格文件的情況下拒絕執行代碼生成指令
+- **解決的問題：** Boris Cherny「coding is solved」後社群對 vibe coding 的反思——無規格的 AI 代碼容易偏離實際需求並累積技術債
+- **注意：** 對應工具（opsx）已被 HN flagged，社群接受度尚待觀察（GitHub davidpv/opsx-spec-driven-development-toolkit）
 
 ### Multi-agent 工作流
 
@@ -387,7 +408,7 @@
 - [[entities/claude-code]]
 - [[entities/pricing]]（token 消耗與模型選擇策略相關）
 - [[entities/managed-agents]]（官方 Agent 框架：Dreaming 記憶整合、20 路並行、Outcomes 規格驗證）
-- [[entities/project-deal]]（Claude 代理人交易談判實驗，multi-agent 應用的商業探索）
+- **Project Deal**（Claude 代理人交易談判實驗，multi-agent 應用的商業探索；詳見 [[entities/claude-code]]）
 - [[entities/claude-design]]（AI 設計工具，與 Claude Code + Figma MCP 工作流有定位重疊）
 - [[topics/community-tech-discussions]]（概念辯論、設計哲學、實證研究）
 - [[topics/community-tech-timeline]]（2026-04-25 至今完整時序記錄，從本頁拆分）
