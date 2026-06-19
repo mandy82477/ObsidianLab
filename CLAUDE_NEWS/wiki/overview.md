@@ -1,6 +1,6 @@
-# Claude / Anthropic 生態系概覽
+﻿# Claude / Anthropic 生態系概覽
 
-**最後更新：** 2026-06-13（Lint 更新）
+**最後更新：** 2026-06-13
 
 ---
 

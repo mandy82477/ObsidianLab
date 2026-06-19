@@ -1,4 +1,4 @@
-# Claude Opus 4.7
+﻿# Claude Opus 4.7
 
 **類型：** model
 **狀態：** active（爭議中）

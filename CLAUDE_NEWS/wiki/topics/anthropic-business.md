@@ -1,9 +1,9 @@
-# Anthropic 商業健康度
+﻿# Anthropic 商業健康度
 
 **狀態：** ongoing
 **領域：** 💼 商業
 **開始日期：** 2026-05-28
-**最後更新：** 2026-06-18（Claude Corps $150M 媒體追蹤；JPMorgan Hong Kong 出口管制衝擊；Andy Jassy 直報白宮細節；Project Fetch Phase Two）
+**最後更新：** 2026-06-18
 
 ---
 

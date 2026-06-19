@@ -1,4 +1,4 @@
-# Google 投資 Anthropic 400 億美元
+﻿# Google 投資 Anthropic 400 億美元
 
 **類型：** event
 **狀態：** resolved（已完成，後續新輪融資進行中）

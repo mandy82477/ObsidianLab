@@ -4,7 +4,7 @@
 僅收錄官方 changelog、release note 或官方公告來源；社群工具見 [[topics/community-tech-tools]]。
 每次 ingest 後由 LLM 維護：新增功能、更新熱度、補充社群回饋。
 
-**最後更新：** 2026-06-18（Claude Code Artifacts 正式發布；Python SDK v0.111.0 refusal-fallback；Vertex TS SDK v0.18.0）
+**最後更新：** 2026-06-18
 
 ---
 
