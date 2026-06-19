@@ -4,7 +4,7 @@
 僅收錄官方 changelog、release note 或官方公告來源；社群工具見 [[topics/community-tech-tools]]。
 每次 ingest 後由 LLM 維護：新增功能、更新熱度、補充社群回饋。
 
-**最後更新：** 2026-06-17（v2.1.179 串流修復；全覽表新增）
+**最後更新：** 2026-06-18（Claude Code Artifacts 正式發布；Python SDK v0.111.0 refusal-fallback；Vertex TS SDK v0.18.0）
 
 ---
 
@@ -29,6 +29,9 @@
 
 | 功能 | 發布日期 | 熱度 | 試用價值 | 狀態 |
 |------|----------|------|----------|------|
+| **Claude Code Artifacts**（工作階段即時輸出可共享互動網頁） | 2026-06-18 | 🔥🔥🔥 | ⚡ 有條件推薦 | 正式發布（PR 摘要、儀表板、系統說明文件等；隨 session 自動更新；企業場景）|
+| **Python SDK v0.111.0**（helpers refusal-fallback 中間件） | 2026-06-18 | 🔥 | ✅ 推薦 | 正式發布（模型拒絕回應時可優雅降級）|
+| **TS Vertex SDK v0.18.0**（新功能更新） | 2026-06-18 | 🔥 | ✅ 推薦 | 正式發布 |
 | **Claude Code v2.1.179**（串流中斷修復 + spinner 修復 + 滑鼠滾輪修復） | 2026-06-16 | 🔥 | ✅ 推薦 | 正式發布（partial response 保留而非丟失；spinner 不再卡住；滑鼠滾輪正常運作）|
 | **Claude Code v2.1.178**（`Tool(param:value)` permission 語法 + 巢狀 Skills） | 2026-06-15 | 🔥🔥 | ✅ 推薦 | 正式發布（`Tool(param:value)` 語法可比對工具輸入參數；`Agent(model:opus)` 可封鎖 Opus 子 Agent；Skills 在巢狀子 Agent 中正常運作）|
 | **Claude Code v2.1.175**（`enforceAvailableModels` 企業管控） | 2026-06-12 | 🔥🔥 | ✅ 推薦 | 正式發布（企業管理員可鎖定可用模型白名單並同步限制預設模型，防繞過）|
@@ -75,6 +78,24 @@
 ---
 
 ## 🆕 最新功能（2026-06）
+
+### Claude Code Artifacts（工作階段即時共享頁面）
+**發布：** 2026-06-18 | **熱度：** 🔥🔥🔥 | **試用價值：** ⚡ 有條件推薦 | **狀態：** 正式發布
+
+**是什麼：** Claude Code 可將工作階段進度即時輸出為可共享的互動網頁（Artifacts）。支援類型：PR 走查頁面、系統說明文件、儀表板、釋出清單。Artifact 隨工作階段進行自動更新，任何人可直接在瀏覽器開啟，無需安裝工具。
+
+**為何熱：** 解決了「Claude 在本地端工作，但結果難以與非工程師成員共享」的痛點。多家科技媒體（VentureBeat、The Decoder、Crypto Briefing 等）同步報導，企業文件協作場景接受度高。
+
+**快速上手：**
+在 Claude Code 工作階段中，執行工作後觸發 Artifacts 輸出——具體指令見官方部落格：
+```
+# 官方說明
+https://claude.com/blog/artifacts-in-claude-code
+```
+
+**注意事項：** 目前仍為早期功能，適合企業知識共享與專案進度報告場景；個人日常編碼工作流程受益有限。
+
+---
 
 ### Claude Code v2.1.179（串流中斷修復）
 **發布：** 2026-06-16（v2.1.179） | **熱度：** 🔥 | **試用價值：** ✅ 推薦 | **狀態：** 正式發布

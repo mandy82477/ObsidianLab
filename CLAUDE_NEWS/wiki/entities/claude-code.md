@@ -4,7 +4,7 @@
 **狀態：** active
 **領域：** 🛠️ 工具/功能
 **首次出現：** 2025（正式推出）
-**最後更新：** 2026-06-17
+**最後更新：** 2026-06-18
 
 ---
 
@@ -16,6 +16,9 @@ Claude Code 是 Anthropic 的 AI 編碼 CLI 工具，支援 agentic 工作流程
 
 | 版本 | 日期 | 重點 |
 |------|------|------|
+| **Claude Code Artifacts** | 2026-06-18 | 正式推出 Artifacts 功能：工作階段可將進度即時輸出為可共享互動網頁（PR 摘要、儀表板、系統說明文件、釋出清單），隨 session 進行自動更新，團隊成員可直接瀏覽，無需安裝工具 |
+| **anthropic-sdk-python v0.111.0** | 2026-06-18 | helpers 模組新增 refusal-fallback 中間件模式，在模型拒絕回應時可優雅降級處理 |
+| **anthropic-sdk-typescript vertex-sdk v0.18.0** | 2026-06-18 | Vertex SDK TypeScript 版本更新，帶來新功能改進 |
 | **v2.1.179** | 2026-06-16 | 修復串流中斷時部分回應遺失（改為保留而非顯示原始錯誤）；修復 spinner 卡在「running tool」；修復滑鼠滾輪捲動問題 |
 | **v2.1.178** | 2026-06-15 | 新增 `Tool(param:value)` 語法用於 permission rules，可比對工具輸入參數（支援 `*` 萬用字元）；例如 `Agent(model:opus)` 可封鎖使用 Opus 的子 Agent；Skills 在巢狀子 Agent 中可正常運作 |
 | **v2.1.177** | 2026-06-13 | Bug fixes and reliability improvements |

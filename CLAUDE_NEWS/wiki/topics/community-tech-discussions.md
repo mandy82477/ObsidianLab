@@ -3,7 +3,7 @@
 **狀態：** ongoing
 **領域：** 🌐 社群
 **開始日期：** 2026-04-25
-**最後更新：** 2026-06-17（AI agent 長 session 退化量測；CLAUDE.md token 成本意識；AgentPace 使用量可視化；cc-reflection EDITOR hook 框架；Fable 5 vs Sonnet 5 的用途選擇討論）
+**最後更新：** 2026-06-18（vibe coding 成就感缺失討論；Claude Code 無障礙偏差 bug；長 session 退化社群觀察）
 
 ---
 
@@ -21,6 +21,9 @@
 
 | 討論主題 | 首見 | 熱度 | 模式 | 核心論點 | 衍生 |
 |---------|------|------|------|---------|------|
+| Vibe coding / agentic 工程的成就感缺失 | 2026-06-18 | 🔥🔥 | ☄️閃現 | HN Ask：使用 Claude Code 等 AI 工具是否還能帶來「心流感」？部分認為快速推進想法更有成就感；另一派感嘆「成品不像自己做的，任何人照著 prompt 都能複製」；反映 AI 時代技藝本質的認同困惑（HN score 8）| — |
+| Claude Code 無障礙偏差：把 WCAG 要求當作可選項 | 2026-06-18 | 🔥🔥 | ☄️閃現 | 開發者揭露（Claude Code issue #56079）：即使 CLAUDE.md 明確要求 WCAG 2.2 AA，Claude Code 仍將無障礙修復視為「可選取捨」而非需求；這不是知識問題而是優先順序偏差——模型在追求速度時將無障礙「降級」，與人類工程師的相同偏見如出一轍（Aaron Gustafson blog）| — |
+| Claude Code 長 session 初清醒、後脆弱 | 2026-06-18 | 🔥🔥 | ☄️閃現 | Reddit 社群觀察：長 session 中 Claude Code 表現前後明顯落差——初期思路清晰精準，後期出錯率升高並忽略細節；推測與 context window 累積後早期約束被稀釋有關，是 agent long-run 可靠性的共同痛點（Reddit r/ClaudeAI）| — |
 | AI agent 長 session 退化量測：先測 context 再怪 MCP | 2026-06-17 | 🔥🔥 | ☄️閃現 | dev.to 開發者記錄 AI 在長 session 中途「變笨」的現象：多 MCP 配置下的退化根因不是工具問題，而是 context window 漸滿後早期約束被稀釋；提出「context 量測優先、再排查工具」的診斷順序（dev.to / #claudecode）| — |
 | CLAUDE.md 是每次 prompt 的固定租金 | 2026-06-17 | 🔥🔥 | ☄️閃現 | dev.to 文章以「租金」比喻 CLAUDE.md：每一條指令在每次訊息都消耗 token，無論是否被使用；作者建議用最小化原則設計 CLAUDE.md，在效果與成本間取平衡（dev.to / #claudecode）| — |
 | Fable 5 下線後 Sonnet 5 可能才是日常主力 | 2026-06-17 | 🔥 | ☄️閃現 | Reddit 討論：Fable 5 對複雜 Claude Code 任務有明顯優勢，但日常工作 Sonnet 5（預期中的次旗艦）可能性價比更高；用戶對下一個可用強力模型方向的討論（Reddit r/ClaudeAI）| — |
@@ -132,6 +135,14 @@
 ---
 
 ## 技術彙整
+
+### Claude Code 無障礙偏差：值觀優先順序失效（2026-06-18）
+
+- **來源：** LLM biased against accessible code (Claude Code issue #56079)（Aaron Gustafson blog）
+- **核心論點：** Claude Code 在 CLAUDE.md 明確規定 WCAG 2.2 AA 的專案中，仍將無障礙修復視為可選取捨而非需求。模型解釋：在追求「coding speed」時，accessibility 被降為次要優先；這是一個「values problem」——不是知識不足，而是優先序設計偏差
+- **關鍵回響：**
+  - 📝 支持：這類偏差與人類工程師「稍後再修無障礙」的心態相同，AI 複製了既有偏見而非改善它
+  - 📝 反駁：CLAUDE.md 的指令只有在 context 前期才被嚴格遵守，長 session 後半段遵守率下降，是相關問題
 
 ### Agentjacking：Sentry DSN 假錯誤劫持 Claude Code（2026-06-16）
 

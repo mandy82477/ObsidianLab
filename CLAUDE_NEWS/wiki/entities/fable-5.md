@@ -4,7 +4,7 @@
 **狀態：** active（正式發布；Fable 5 / Mythos 5 因美國政府出口管制指令暫停全球存取）
 **領域：** 🤖 模型
 **首次出現：** 2026-06-09
-**最後更新：** 2026-06-17
+**最後更新：** 2026-06-18
 
 ---
 
@@ -118,11 +118,15 @@ claude --model claude-fable-5-20260609
 - [[news/2026-06-15]]
 - [[news/2026-06-16]]
 - [[news/2026-06-17]]
+- [[news/2026-06-18]]
 - [Anthropic 官方公告](https://www.anthropic.com/news/claude-fable-5-mythos-5)
 - [System Card PDF](https://www-cdn.anthropic.com/d00db56fa754a1b115b6dd7cb2e3c342ee809620.pdf)
 - [資料保留政策](https://support.claude.com/en/articles/15425996-data-retention-practices-for-mythos-class-models)
 
 ## 歷史記錄
+
+### 2026-06-18
+**「數日內解禁」——SK Telecom / China 關聯首次曝光**：Anthropic 國際業務總監 Chris Ciauri 在首爾記者會表示「非常有信心模型將在數日內恢復可用」。同日 Wired 獨家報導揭露出口管制的根本起因：美國政府關切 SK Telecom 與中國的關聯，在 Anthropic 授予 SK Telecom 存取 Mythos（非 Fable 5）後啟動審查；Amazon 研究人員在 Fable 5 中發現的 jailbreak 進一步加速了管制決定。Politico 分析出口管制可能違法，國會議員要求政府說明。Anthropic 已向商務部長 Lutnick 提交解封提案（New York Post）。摩根大通香港分行被迫切斷 Anthropic 存取（Financial Times），是出口管制對具名頂尖企業的首批直接衝擊案例。
 
 ### 2026-06-17
 **G7 峰會無豁免，談判再度破裂**：Wired 報導週一 Commerce 部工作組會談結束，出口管制仍未解除。政府持續主張 Fable 5 護欄可被繞過以存取 Mythos 的攻擊性網路安全能力；Anthropic 再次否認此論點屬實。G7 國家（包括英國首相 Starmer 的「carve-out」請求）一概遭拒，Trump 政府明確表示 G7 盟友也不在豁免範圍內（NY Post、Euronews、Politico EU）。TechCrunch 報導：這次最新爭端諷刺地可能對 Anthropic 的銷售有利——五月 Anthropic 企業市佔首度超越 OpenAI（Ramp 數據），650 億美元融資、IPO 申請均在管制前完成。The Guardian 評論：Fable 5 事件是「AI 潘朵拉盒已開」的象徵，出口管制無法真正遏止能力擴散，需要全球集體行動。

@@ -59,6 +59,11 @@ Fable 5 發布後，Amazon 安全研究人員發現特定提示詞可讓模型�
 
 | 日期 | 方 | 動作 | 效果 |
 |------|----|------|------|
+| 2026-06-18 | 🌐 | Wired 獨家：SK Telecom 中國關聯是出口管制的根本起因 | 揭露政府行動的真實動機，不只是 jailbreak |
+| 2026-06-18 | 🏢 | Chris Ciauri 首爾記者會：「數日內模型恢復可用」 | 首次給出具體時間框架；展示談判進展 |
+| 2026-06-18 | 🏢 | Anthropic 向 Lutnick 提交解封提案（New York Post 獨家） | 談判進入最後階段 |
+| 2026-06-18 | 🌐 | Politico：出口管制可能違法；國會議員要求說明 | 法律挑戰雙管齊下，增加政府讓步壓力 |
+| 2026-06-18 | 🌐 | JPMorgan Chase 香港分行切斷 Anthropic 存取（FT） | 出口管制蔓延至頂尖企業，實質商業損失浮現 |
 | 2026-06-17 | 🏛️ | G7 峰會拒絕所有盟友豁免請求（含英國首相 Starmer） | 管制無鬆動跡象 |
 | 2026-06-17 | 🌐 | Bloomberg 公開 Lutnick 致函全文 | 政府論點曝光，可被逐條反駁 |
 | 2026-06-17 | 🌐 | DoD 將三分之二 AI 工作量移出 Anthropic | Anthropic 政府市場大幅縮水 |
@@ -81,10 +86,10 @@ Fable 5 發布後，Amazon 安全研究人員發現特定提示詞可讓模型�
 
 ## 目前局勢（截至 2026-06-18）
 
-- **管制狀態：** 出口管制維持中，協商無進展
-- **政府底線：** Fable 5 護欄可被繞過存取 Mythos 攻擊能力；G7 盟友不豁免
-- **Anthropic 底線：** 否認技術主張，認為管制沒有根據，持續協商
-- **意外效果：** 企業市佔五月首超 OpenAI，「被美國政府打壓」在國際市場可能反而是同情紅利
+- **管制狀態：** 出口管制維持中，但談判出現進展跡象——Anthropic 已提交解封提案，Ciauri 給出「數日內」時間框架
+- **政府底線：** Fable 5 護欄可被繞過存取 Mythos 攻擊能力；SK Telecom / China 關聯是另一根本動機
+- **Anthropic 底線：** 否認技術主張，已主動提出解封方案，積極協商；出口管制可能違法的法律論點增加了政府壓力
+- **意外效果：** 企業市佔五月首超 OpenAI，但 JPMorgan HK 斷連是首個具名頂尖企業受波及的直接損失案例
 
 ---
 
@@ -105,6 +110,12 @@ Fable 5 發布後，Amazon 安全研究人員發現特定提示詞可讓模型�
 - [Chris Olah Vatican Remarks](https://www.anthropic.com/news/chris-olah-pope-leo-encyclical) — Anthropic Blog
 
 ## 時序
+
+### 2026-06-18
+- **[動機揭露] SK Telecom 中國關聯是根本起因**：Wired 獨家報導：出口管制的真正起點是美國政府對 SK Telecom 疑似中國關聯的憂慮——Anthropic 早先已授予 SK Telecom 存取 Mythos（非 Fable 5），此舉令官員警惕；Fable 5 的 jailbreak 問題進一步加速了政府的行動（Wired）
+- **[談判進展] Anthropic 提出解封方案**：Anthropic 管理層 Chris Ciauri 在首爾記者會公開表示「非常有信心，模型將在數日內恢復可用」；公司已向商務部長 Lutnick 提交具體解封提案（Korea JoongAng Daily、New York Post）
+- **[法律挑戰] 出口管制可能違法**：Politico 分析指出 Trump 政府的指令可能缺乏足夠法律授權；多位國會議員發函要求政府說明法律依據（Politico、Washington Post）
+- **[企業衝擊] JPMorgan Chase 香港切斷存取**：全球最大銀行之一的香港辦公室因出口管制被迫停止使用 Anthropic 服務，成為出口管制對頂尖金融機構造成直接影響的首個具名案例（Financial Times）
 
 ### 2026-06-17
 - **[談判破裂] G7 無豁免，出口管制持續**：Wired 報導週一 Commerce 部工作組會談結束，出口管制未解除。政府堅持 Fable 5 護欄可被繞過存取 Mythos 的攻擊性能力；Anthropic 否認。NY Post 獨家：Trump 政府明確拒絕 G7 盟友請求豁免（英國首相 Starmer 的 carve-out 要求遭拒），理由是「即便是 G7 盟友，核准任何豁免也將等於開先例」（NY Post、Wired）

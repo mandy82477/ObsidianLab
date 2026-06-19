@@ -3,7 +3,7 @@
 **狀態：** ongoing
 **領域：** 💼 商業
 **開始日期：** 2026-05-28
-**最後更新：** 2026-06-17（SpaceX 正式完成 Cursor 收購；Anthropic 市佔首超 OpenAI 具體數據；Wipro Applied AI 卓越中心正式揭牌）
+**最後更新：** 2026-06-18（Claude Corps $150M 媒體追蹤；JPMorgan Hong Kong 出口管制衝擊；Andy Jassy 直報白宮細節；Project Fetch Phase Two）
 
 ---
 
@@ -110,6 +110,12 @@ Simon Willison（知名開發者博主）發表文章，認為 Anthropic 與 Ope
 - [[news/2026-05-13]]（The Information：定價強勢期）
 
 ## 時序
+
+### 2026-06-18
+- **[出口管制企業衝擊] JPMorgan Chase 香港分行切斷 Anthropic 存取**：Financial Times 報導全球最大銀行之一的香港辦公室因美國出口管制被迫停止使用 Anthropic 服務；是 Fable 5 / Mythos 管制令在頂尖金融企業造成直接衝擊的首個具名案例，也顯示出口管制的跨國企業波及範圍（FT 2026-06-18）
+- **[Fortune 深度報導] Andy Jassy 電話如何引爆管制風暴**：Fortune 深度報導披露 Amazon CEO Andy Jassy 向白宮通報 Fable 5 安全漏洞的完整過程，揭示科技業內部複雜博弈——同為 Anthropic 投資方的 Amazon 直接觸發了對 Anthropic 的管制（Fortune 2026-06-18）
+- **[研究] Anthropic Project Fetch Phase Two 發布**：Anthropic 研究人員發布 Project Fetch 第二階段報告，Claude Opus 4.1 協助非機器人專家在倉庫實驗中操控四足機器狗，Claude 輔助組明顯優於對照組；展示 Anthropic 在 agentic 機器人控制的研究方向（Anthropic Blog 2026-06-18）
+- **[Claude Corps] $150M、1,000 Fellows Forbes 報導**：Forbes 報導 Anthropic 宣布投入 1.5 億美元設立 Claude Corps，提供 1,000 個 Fellowship 名額，嵌入 150 家非營利組織，覆蓋教育、醫療、就業領域，是 Anthropic 迄今規模最大的公益 AI 計畫，IPO 前強化品牌形象（Forbes 2026-06-18）
 
 ### 2026-06-17
 - **[SpaceX 正式完成 Cursor 收購]** 9to5Mac 更新報導：SpaceX 於 IPO 後一週正式完成對 Cursor 的收購（$10B 初步協議、$60B 最終規模）。Cursor 是 Claude Code 和 OpenAI Codex 的直接競爭者；收購整合 SpaceX / xAI 生態（9to5Mac）

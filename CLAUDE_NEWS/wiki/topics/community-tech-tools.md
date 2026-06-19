@@ -3,7 +3,7 @@
 **狀態：** ongoing
 **領域：** 🌐 社群
 **開始日期：** 2026-04-25
-**最後更新：** 2026-06-17
+**最後更新：** 2026-06-18
 
 ---
 
@@ -23,7 +23,7 @@
 
 | 痛點主題 | 代表工具 | 本質問題 | 狀態 | 近期工具 |
 |---------|---------|---------|------|---------|
-| Token 成本不透明 | Tokenyst、CostHawk、TokenShield、PrismoDev、engramx、agent-estimate、AI Agent Token Cost Calculator、Claude Usage Tray、token-xray、agentgraphed、context-analyzer、permafrost、Claumon、Claustrophobic、AgentPace | 自主 agent 讓帳單不可預測；AgentPace 新增「燃燒速率趨勢」可視化；Fable 5 $10/$50 定價與 6/22 訂閱截止加劇費用焦慮；工具爆發 | 🔥 持續升溫 | 2026-06-17 |
+| Token 成本不透明 | Tokenyst、CostHawk、TokenShield、PrismoDev、engramx、agent-estimate、AI Agent Token Cost Calculator、Claude Usage Tray、token-xray、agentgraphed、context-analyzer、permafrost、Claumon、Claustrophobic、AgentPace、Parcle、token-warden | 自主 agent 讓帳單不可預測；Parcle 新增 agent 共享記憶層減少重複 context；AgentPace 燃燒速率趨勢可視化 | 🔥 持續升溫 | 2026-06-18 |
 | 跨 session 記憶歸零 | ltm、Memex、draft CLI、LockedIn、VIR、CoreMem、claude-handoff-revive、timeglass.ai | 無官方標準，每個新 session 從零開始 | 🔥 持續升溫 | 2026-05-27 |
 | 多 agent 協調混亂 | agent-baton、cdesktop、AnyFrame、agent-teamflow、Runner、Runtime、Fleet、AWO、claude-workflow-composer | 官方 Managed Agents 已部分解決，但社群仍補缺口；AWO 提供 git worktree 隔離方案 | 🔥 持續升溫 | 2026-05-27 |
 | CLAUDE.md 規則失效 | Writ、Caliber、Patina | 規則被忽略、過多規則耗 token、跨工具無標準 | 🌙 冷卻觀望 | 2026-05-12 |
@@ -64,6 +64,13 @@
 
 | 工具 | 類型 | 採用 | 首次出現 | 簡介 |
 | --- | --- | --- | --- | --- |
+| [**job-search**](https://github.com/agent-data/job-search) | Skills | ⏳ | 2026-06-18 | 開源 Claude Code 插件：學習使用者求職偏好、從 LinkedIn 抓取即時職缺並生成個人化日報，選配每日排程自動執行；Show HN |
+| [**LegalRabbit DOCX**](https://github.com/LegalRabbit-AI/legalrabbit-docx-claude-plugin) | 整合工具 | ⏳ | 2026-06-18 | Cowork/Codex DOCX 插件；透過 docx↔HTML 雙向轉換讓 AI 只操作 HTML，減少 2-5 倍 token 消耗，特別適合法律文件紅線審閱；Show HN |
+| [**AI Commander**](https://aicommander.dev/) | 整合工具 | ⏳ | 2026-06-18 | 讓 Claude Code 等 AI Agent 以 TeamViewer 方式遠端連線並在使用者機器執行 shell 指令，無需開放 SSH 端口或 VPN；支援 Windows/Mac/Linux；Show HN |
+| [**Gorchestra**](https://github.com/jgennari/gorchestra) | 多 Agent | ⏳ | 2026-06-18 | 手機遠端控制無限量 Codex / Claude agents；WebServer + SQLite 持久化；支援 Codex 圖片上傳；macOS brew 安裝；Show HN |
+| [**Pagecast**](https://github.com/Amal-David/pagecast) | 整合工具 | ⏳ | 2026-06-18 | Claude Code / Codex 生成的 HTML/Markdown 報告一鍵發布至 Cloudflare Pages，支援穩定 URL、重新發布、watch mode；可替代 Claude Artifacts；Show HN |
+| [**Parcle**](https://parcle.ai/) | 費用監測 | ⏳ | 2026-06-18 | Agent 共享記憶層：索引操作情境，讓 agent 在每個任務取得小範圍相關記憶而非重讀全部 context，宣稱減少 60%+ token 消耗；Show HN |
+| [**token-warden**](https://github.com/vukkt/token-warden) | 費用監測 | ⏳ | 2026-06-18 | Claude Code token 節省插件；HN score 4（flagged）|
 | [**AgentPace**](https://festudio.net/agentpace/) | 費用監測 | ⏳ | 2026-06-17 | macOS 選單列 app，視覺化 Claude Code 和 Codex 使用趨勢與燃燒速率；幫助規劃剩餘配額，避免提前耗盡；Show HN |
 | [**Mira**](https://github.com/miracodeai/mira) | 工作流 | ⏳ | 2026-06-17 | 開源自架 AI 程式碼審查器；BYOK（Anthropic / OpenAI / 本地 LLM）；平均審查 77 秒（vs Greptile 5 分鐘）；代碼不離開自有基礎設施；Show HN |
 | [**cc-reflection**](https://provi.me/cc-reflection) | 工作流 | ⏳ | 2026-06-17 | 利用 Claude Code EDITOR hook（Ctrl-G）插入 fzf 控制面板，讓 hook 不只是「編輯 prompt」，而是可執行反思種子展開、agent 強化 prompt 等操作的控制中心；HN score 3 |

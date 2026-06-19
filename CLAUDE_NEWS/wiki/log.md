@@ -3,6 +3,43 @@
 Append-only 紀錄。每次 ingest、query 或 lint 都在此追加一條。
 格式：`## [YYYY-MM-DD] 類型 | 說明`
 
+## 2026-06-18 Ingest | news/2026-06-18.md（92 則）
+
+- 來源日報：`news/2026-06-18.md`（92 則，6 來源；主軸：Fable 5 / Mythos 出口管制談判進入最終階段（SK Telecom 中國關聯揭露、Anthropic 提交解封方案、Politico 違法疑慮）；Claude Code Artifacts 官方功能正式發布；JPMorgan HK 被迫斷連；Claude Corps $150M；Agent SDK 計費暫停持續；社群工具爆發（job-search / LegalRabbit DOCX / AI Commander / Gorchestra / Pagecast / Parcle）；Python SDK v0.111.0 refusal-fallback helpers）
+- 更新頁面：
+  - `entities/fable-5.md`：新增 2026-06-18 時序（SK Telecom / China 揭露、Anthropic 解封提案、JPMorgan HK 斷連、Politico 違法疑慮）；參考來源新增 news/2026-06-18；最後更新 2026-06-18
+  - `topics/anthropic-government-policy.md`：攻防記錄 prepend 5 條（SK Telecom 揭露、Ciauri 聲明、解封提案、Politico 違法疑慮、JPMorgan HK）；目前局勢更新；時序新增 2026-06-18 4 條；最後更新 2026-06-18
+  - `entities/claude-code.md`：版本表 prepend Claude Code Artifacts / SDK v0.111.0 / Vertex TS SDK v0.18.0；最後更新 2026-06-18
+  - `entities/pricing.md`：新增 2026-06-18 政策記錄（DevOps.com 計費暫停確認、SaaStr B2B 定價分析、HN 花費調查）；最後更新 2026-06-18
+  - `topics/anthropic-business.md`：新增 2026-06-18 時序 4 條（JPMorgan HK、Andy Jassy 報導、Project Fetch Phase Two、Claude Corps $150M Forbes）；最後更新 2026-06-18
+  - `topics/community-tech-discussions.md`：熱門討論 prepend 3 條（vibe coding 成就感缺失、Claude Code 無障礙偏差、長 session 前後落差）；技術彙整 prepend 無障礙偏差條目；最後更新 2026-06-18
+  - `topics/community-tech-tools.md`：新增 7 個工具（job-search、LegalRabbit DOCX、AI Commander、Gorchestra、Pagecast、Parcle、token-warden）；痛點洞察更新 Token 成本不透明欄；最後更新 2026-06-18
+  - `feature-radar.md`：全覽表 prepend 3 條（Artifacts、Python SDK v0.111.0、TS Vertex v0.18.0）；最新功能 prepend Claude Code Artifacts 詳細條目；最後更新 2026-06-18
+  - `topics/enterprise-tool-tracker.md`：企業表格新增 JPMorgan Chase（❌ 2026-06-18 因出口管制）；時序 prepend 2026-06-18；最後更新 2026-06-18
+  - `entities/mythos.md`：時序 prepend 2026-06-18（SK Telecom / China 關聯揭露）；最後更新 2026-06-18
+- 新增頁面：無（Claude Code Artifacts 整合至 entities/claude-code 版本表和 feature-radar；JPMorgan HK 整合至 enterprise-tool-tracker 和 fable-5 時序）
+- 升格檢查（discussions → patterns）：
+  - OpenAI vs Anthropic 定價戰（第 8 天，🌊延燒）— 今日有新定價分析，但核心論點未收斂為可執行步驟，**不升格**
+  - AI Skill Atrophy（第 9 天，🌊延燒）— 今日無新直接相關，**不升格**
+  - Agentic 專案目錄結構（第 4 天，🌊延燒）— Parcle 補充了記憶層解法，但共識未形成可複用步驟，**不升格**
+- feature-radar 更新：新增 Claude Code Artifacts（🔥🔥🔥，⚡ 有條件推薦）；新增 Python SDK v0.111.0（🔥，✅）；新增 TS Vertex SDK v0.18.0（🔥，✅）
+- 本日新增工具：job-search（Show HN）、LegalRabbit DOCX（Show HN）、AI Commander（Show HN）、Gorchestra（Show HN）、Pagecast（Show HN）、Parcle（Show HN）、token-warden（HN score 4）
+- 呈現品質審查：
+  | 頁面 | 結果 |
+  |------|------|
+  | entities/fable-5.md | ✅ 通過（2026-06-18 時序 prepend；現況已涵蓋 SK Telecom 揭露） |
+  | topics/anthropic-government-policy.md | ✅ 通過（攻防記錄 5 條 prepend；目前局勢更新至最新狀態） |
+  | entities/claude-code.md | ✅ 通過（Artifacts 等 3 條版本表 prepend） |
+  | entities/pricing.md | ✅ 通過（2026-06-18 政策記錄新增） |
+  | topics/anthropic-business.md | ✅ 通過（2026-06-18 時序 4 條 prepend） |
+  | topics/community-tech-discussions.md | ✅ 通過（3 條熱門討論 prepend；技術彙整新增無障礙偏差條目） |
+  | topics/community-tech-tools.md | ✅ 通過（7 工具新增；痛點洞察更新） |
+  | feature-radar.md | ✅ 通過（Artifacts 條目詳細、全覽表同步更新） |
+  | topics/enterprise-tool-tracker.md | ✅ 通過（JPMorgan HK 新增至企業表格和時序） |
+  | entities/mythos.md | ✅ 通過（SK Telecom / China 關聯時序 prepend） |
+
+---
+
 ## 2026-06-17 Ingest | news/2026-06-17.md（81 則）
 
 - 來源日報：`news/2026-06-17.md`（81 則，6 來源；主軸：Fable 5 / Mythos 出口管制談判破裂（G7 無豁免、Commerce 部工作組無結果；Wired / NY Post / Euronews）；Agent SDK 計費暫停 Ars Technica 深度報導；Pentagon 三分之二 AI 工作量移出 Anthropic；SpaceX 正式完成 Cursor 收購；Claude Code v2.1.179 串流修復；社群工具湧現（AgentPace / Mira / Offload / cc-reflection / Kevin））
