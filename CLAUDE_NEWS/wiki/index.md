@@ -5,6 +5,16 @@ LLM 查詢此 wiki 時，**先讀這個檔案**找相關頁面，再讀具體頁
 **最後更新：** 2026-06-20
 ---
 
+## 近期異動
+
+- [[feature-radar]] — 功能全覽重排，新增本週熱門條目（Managed Agents 正式發布、OpenClaw 信用池新計費）
+- [[entities/fable-5]] — 6/13 美國政府出口管制指令暫停全球存取；6/18 SK Telecom 中國關聯被揭露為根本動機，Anthropic 提交解封提案
+- [[topics/anthropic-government-policy]] — Fable 5 出口管制攻防：Anthropic 已提交解封提案，Ciauri 表示「數日內恢復可用」
+- [[entities/john-jumper]] — 2026-06-19 宣布加入 Anthropic（待核實）
+- [[entities/managed-agents]] — Managed Agents 官方框架正式發布：Dreaming 記憶整合、20 路並行子代理、Outcomes 規格驗證
+
+---
+
 ## 概覽
 
 - [[overview]] — 當前 Claude / Anthropic 生態系整體局勢（每週更新）
@@ -41,6 +51,8 @@ LLM 查詢此 wiki 時，**先讀這個檔案**找相關頁面，再讀具體頁
 ---
 
 ## Topics（進行中議題）
+
+> Topics 頁面本身無「類型」欄位，故表格僅三欄（領域 / 狀態 / 摘要），為刻意設計差異（Entities 四欄含類型）。
 
 | 頁面 | 領域 | 狀態 | 摘要 |
 |------|------|------|------|

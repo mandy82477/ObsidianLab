@@ -720,6 +720,22 @@ code {
   color: var(--ink-3); text-align: right;
   letter-spacing: 0.04em;
 }
+.badge-new {
+  font-family: var(--font-mono); font-size: 10px;
+  color: var(--ochre-9); border: 1px solid var(--ochre-7);
+  border-radius: var(--radius-2); padding: 1px 5px;
+  letter-spacing: 0.04em; font-weight: var(--fw-medium);
+  vertical-align: middle; margin-right: 5px;
+}
+
+/* Radar card picks */
+.radar-card__picks { margin-top: 8px; display: flex; flex-wrap: wrap; gap: 5px; }
+.radar-pick {
+  font-family: var(--font-mono); font-size: 10px;
+  color: var(--ink-2); background: var(--bg-1);
+  border: 1px solid var(--border-2); border-radius: var(--radius-2);
+  padding: 2px 7px; white-space: nowrap; letter-spacing: 0.02em;
+}
 
 /* Pills — border + color, no fill */
 .pill {

@@ -25,57 +25,65 @@
 
 ---
 
+## ⭐ 本週推薦
+
+- **/goal 指令**（熱度 🔥🔥🔥🔥🔥）：設定持久目標讓 Claude Code 多輪保持方向，適合需要長期任務追蹤的開發者
+- **/loop・/batch・/background**（熱度 🔥🔥🔥🔥）：平行批量執行與背景工作，適合需要自動化多工的 Claude Code 重度使用者
+- **Coordinator 模式 + /code-review --fix**（熱度 🔥🔥🔥🔥）：自動協調多 Agent 並直接套用程式碼審查修復，適合重視程式碼品質的工程師
+
+---
+
 ## 📋 功能全覽表（2026-04-25 起）
 
 | 功能 | 發布日期 | 熱度 | 試用價值 | 狀態 |
 |------|----------|------|----------|------|
-| **MCP Enterprise Authorization**（Okta / VS Code 零設定 SSO） | 2026-06-19 | 🔥🔥 | ⚡ 有條件推薦 | 正式發布（stable）：支援 Okta、Anthropic、VS Code 零設定 SSO 整合，企業授權管理升為生產可用 |
-| **Claude Code v2.1.183**（auto mode 破壞性 Git 指令自動封鎖） | 2026-06-19 | 🔥🔥🔥 | ✅ 推薦 | 正式發布（`git reset --hard`、`git checkout -- .`、`git clean -fd`、`git stash drop` 在未明確要求時自動封鎖）|
-| **Claude Code Artifacts**（工作階段即時輸出可共享互動網頁） | 2026-06-18 | 🔥🔥🔥🔥🔥 | ⚡ 有條件推薦 | 正式發布（PR 摘要、儀表板、系統說明文件等；隨 session 自動更新；企業場景；SD Times、Tech Times、DevOps.com 同日跟進）|
-| **Python SDK v0.111.0**（helpers refusal-fallback 中間件） | 2026-06-18 | 🔥 | ✅ 推薦 | 正式發布（模型拒絕回應時可優雅降級）|
+| **MCP Enterprise Authorization**（Okta / VS Code 零設定 SSO） | 2026-06-19 | 🔥🔥 | ⚡ 有條件推薦 | 正式發布 |
+| **破壞性 Git 指令自動封鎖**（Claude Code v2.1.183） | 2026-06-19 | 🔥🔥🔥 | ✅ 推薦 | 正式發布 |
+| **Claude Code Artifacts**（工作階段即時輸出可共享互動網頁） | 2026-06-18 | 🔥🔥🔥🔥🔥 | ⚡ 有條件推薦 | 正式發布 |
+| **Python SDK v0.111.0**（helpers refusal-fallback 中間件） | 2026-06-18 | 🔥 | ✅ 推薦 | 正式發布 |
 | **TS Vertex SDK v0.18.0**（新功能更新） | 2026-06-18 | 🔥 | ✅ 推薦 | 正式發布 |
-| **Claude Code v2.1.179**（串流中斷修復 + spinner 修復 + 滑鼠滾輪修復） | 2026-06-16 | 🔥 | ✅ 推薦 | 正式發布（partial response 保留而非丟失；spinner 不再卡住；滑鼠滾輪正常運作）|
-| **Claude Code v2.1.178**（`Tool(param:value)` permission 語法 + 巢狀 Skills） | 2026-06-15 | 🔥🔥 | ✅ 推薦 | 正式發布（`Tool(param:value)` 語法可比對工具輸入參數；`Agent(model:opus)` 可封鎖 Opus 子 Agent；Skills 在巢狀子 Agent 中正常運作）|
-| **Claude Code v2.1.175**（`enforceAvailableModels` 企業管控） | 2026-06-12 | 🔥🔥 | ✅ 推薦 | 正式發布（企業管理員可鎖定可用模型白名單並同步限制預設模型，防繞過）|
-| **Claude Code v2.1.173**（Fable 5 模型名稱修復） | 2026-06-11 | 🔥 | ✅ 推薦 | 正式發布（`[1m]` 後綴自動移除；誤報沙盒錯誤修正）|
-| **Claude Fable 5**（Mythos 架構公開版，$10/$50 per M token） | 2026-06-09 | 🔥🔥🔥🔥🔥 | ❌ 暫不可用 | ⚠️ 出口管制停用（2026-06-13 美國政府指令，全球停止存取；其他模型不受影響；見 [[entities/fable-5]]）|
-| Python SDK v0.109.1（`frontier_llm` refusal 類別） | 2026-06-09 | 🔥 | ✅ 推薦 | 正式發布（Fable 5 安全分類器相關 refusal API 補齊）|
-| Claude Code v2.1.170（Fable 5 支援） | 2026-06-09 | 🔥🔥 | ✅ 推薦 | 正式發布（Claude Code terminal 可切換 Fable 5）|
-| Claude Code v2.1.169 `--safe-mode` 旗標 | 2026-06-08 | 🔥🔥 | ✅ 推薦 | 正式發布（停用所有客製化設定，MCP/hooks/skills/CLAUDE.md；故障排除利器）|
-| Google Colab CLI 整合 Claude Code / Codex | 2026-06-08 | 🔥🔥 | ✅ 推薦 | 正式發布（降低 Colab 使用 AI coding agent 門檻）|
-| Python SDK v0.107.1（foundry x-api-key header 修復） | 2026-06-07 | 🔥 | ✅ 推薦 | 正式發布（Bedrock Foundry 使用者應升級）|
-| Python SDK v0.106.0（Claude Opus 4.1 標記棄用） | 2026-06-06 | 🔥 | ✅ 推薦 | 正式發布（開發者應遷移至新版模型 ID）|
-| Claude Code v2.1.162（`waitingFor` 可見性 + `--tools` Grep/Glob 目錄遍歷） | 2026-06-04 | 🔥🔥 | ✅ 推薦 | 正式發布（agent 監控可見性顯著改善）|
-| Claude Code v2.1.161（OTEL metrics 標籤 + claude agents 改善） | 2026-06-03 | 🔥🔥 | ✅ 推薦 | 正式發布（企業可觀測性提升）|
-| Claude Code v2.1.160（shell 安全修復 + `workflow`→`ultracode` rename） | 2026-06-02 | 🔥🔥🔥 | ✅ 推薦 | 正式發布（⚠️ Breaking: `workflow` 更名為 `ultracode`）|
-| Claude Code v2.1.158（Auto mode on Bedrock/Vertex/Foundry） | 2026-05-30 | 🔥🔥 | ✅ 推薦 | 正式發布 |
-| Claude Opus 4.8（SWE-bench Pro 69.2%、1M context、Fast Mode 1/3 費用） | 2026-05-28 | 🔥🔥🔥🔥🔥 | ⚡ 有條件推薦 | 正式發布 |
-| Dynamic Workflows（最多 1,000 平行子代理） | 2026-05-28 | 🔥🔥🔥🔥 | ❌ 暫不推薦 | Research Preview（UltraCode 1.7M token bug，無退款）|
-| `skipLfs` 選項 + npm 版本通知（v2.1.153） | 2026-05-28 | 🔥 | ⚡ 有條件推薦 | 正式發布 |
-| Coordinator 模式 + `/code-review --fix`（v2.1.152） | 2026-05-27 | 🔥🔥🔥🔥 | ✅ 推薦 | 正式發布 |
-| 小企業 Skills（31 個官方 Skills） | 2026-05-24 | 🔥🔥🔥 | ✅ 推薦 | 正式發布 |
-| `/code-review`（原 `/simplify`，v2.1.146） | 2026-05-21 | 🔥🔥 | ✅ 推薦 | 正式發布 |
-| `claude agents --json`（v2.1.145） | 2026-05-20 | 🔥🔥 | ✅ 推薦 | 正式發布 |
-| 自架沙箱 + MCP 隧道（完整文件） | 2026-05-22 | 🔥🔥🔥🔥 | ⚡ 有條件推薦 | 公開測試（文件完整）|
-| `/resume` 背景 session 擴展（v2.1.144） | 2026-05-19 | 🔥 | ✅ 推薦 | 正式發布 |
-| Proactive Workflows | 2026-05-18 | 🔥🔥🔥 | ⏳ 觀望 | 公告（細節待確認）|
-| Capability Curve | 2026-05-18 | 🔥🔥 | ⏳ 觀望 | 公告（細節待確認）|
-| Plugin 依賴關係強制執行（v2.1.143） | 2026-05-16 | 🔥 | ✅ 推薦 | 正式發布 |
-| `claude agents` 細粒度旗標（v2.1.142） | 2026-05-14 | 🔥🔥 | ⚡ 有條件 | 正式發布 |
-| `/loop`・`/batch`・`/background` | 2026-05-14 | 🔥🔥🔥🔥 | ✅ 推薦 | 正式發布 |
-| `/goal` 指令 | 2026-05-12 | 🔥🔥🔥🔥🔥 | ✅ 推薦 | 正式發布 |
-| Agent View | 2026-05-12 | 🔥🔥🔥 | ⚡ 有條件 | Research Preview |
-| Managed Agents（全套） | 2026-05-11 | 🔥🔥🔥🔥🔥 | ⚡ 有條件 | 正式發布 |
-| macOS Computer Use | 2026-05-03 | 🔥🔥🔥 | ✅ 推薦 | 正式發布 |
-| Claude Code Sandboxing | 2026-05-10 | 🔥🔥🔥 | ⚡ 有條件 | 正式發布 |
-| 操作安全 + `hard_deny` | 2026-05-09 | 🔥🔥🔥 | ✅ 推薦 | 正式發布 |
-| Claude Security（公開 Beta） | 2026-05-06 | 🔥🔥🔥 | ⚡ 有條件推薦 | 公開測試 |
-| Claude Connectors 創意工作 | 2026-05-04 | 🔥🔥 | ⚡ 有條件 | 正式發布 |
-| MCP `alwaysLoad` | 2026-04-28 | 🔥🔥 | ✅ 推薦 | 正式發布 |
-| `worktree.baseRef` 設定 | 2026-05-08 | 🔥 | ⚡ 有條件 | 正式發布 |
-| Claude Design | 2026-04-27 | 🔥🔥 | ❌ 暫不推薦 | 初期（問題多）|
-| Dreaming 記憶整合 | 2026-05-07 | 🔥🔥🔥🔥 | ⏳ 觀望 | Research Preview |
-| Outcomes 規格驗證 | 2026-05-07 | 🔥🔥🔥🔥 | ⚡ 有條件 | 公開測試 |
+| **Claude Code v2.1.179**（串流中斷修復 + spinner 修復 + 滑鼠滾輪修復） | 2026-06-16 | 🔥 | ✅ 推薦 | 正式發布 |
+| **Tool(param:value) permission 語法 + 巢狀 Skills**（v2.1.178） | 2026-06-15 | 🔥🔥 | ✅ 推薦 | 正式發布 |
+| **enforceAvailableModels 企業管控**（Claude Code v2.1.175） | 2026-06-12 | 🔥🔥 | ✅ 推薦 | 正式發布 |
+| **Claude Code v2.1.173**（Fable 5 模型名稱修復） | 2026-06-11 | 🔥 | ✅ 推薦 | 正式發布 |
+| **Claude Fable 5**（Mythos 架構公開版，$10/$50 per M token） | 2026-06-09 | 🔥🔥🔥🔥🔥 | ❌ 暫不可用 | 出口管制停用 |
+| **Python SDK v0.109.1**（`frontier_llm` refusal 類別） | 2026-06-09 | 🔥 | ✅ 推薦 | 正式發布 |
+| **Claude Code v2.1.170**（Fable 5 支援） | 2026-06-09 | 🔥🔥 | ✅ 推薦 | 正式發布 |
+| **Claude Code v2.1.169 `--safe-mode` 旗標** | 2026-06-08 | 🔥🔥 | ✅ 推薦 | 正式發布 |
+| **Google Colab CLI 整合 Claude Code / Codex** | 2026-06-08 | 🔥🔥 | ✅ 推薦 | 正式發布 |
+| **Python SDK v0.107.1**（foundry x-api-key header 修復） | 2026-06-07 | 🔥 | ✅ 推薦 | 正式發布 |
+| **Python SDK v0.106.0**（Claude Opus 4.1 標記棄用） | 2026-06-06 | 🔥 | ✅ 推薦 | 正式發布 |
+| **Claude Code v2.1.162**（`waitingFor` 可見性 + `--tools` Grep/Glob 目錄遍歷） | 2026-06-04 | 🔥🔥 | ✅ 推薦 | 正式發布 |
+| **Claude Code v2.1.161**（OTEL metrics 標籤 + claude agents 改善） | 2026-06-03 | 🔥🔥 | ✅ 推薦 | 正式發布 |
+| **shell 安全修復 + workflow→ultracode rename**（Claude Code v2.1.160，⚠️ Breaking: `workflow` 更名為 `ultracode`） | 2026-06-02 | 🔥🔥🔥 | ✅ 推薦 | 正式發布 |
+| **Claude Code v2.1.158**（Auto mode on Bedrock/Vertex/Foundry） | 2026-05-30 | 🔥🔥 | ✅ 推薦 | 正式發布 |
+| **Claude Opus 4.8**（SWE-bench Pro 69.2%、1M context、Fast Mode 1/3 費用） | 2026-05-28 | 🔥🔥🔥🔥🔥 | ⚡ 有條件推薦 | 正式發布 |
+| **Dynamic Workflows**（最多 1,000 平行子代理，UltraCode 1.7M token bug 無退款） | 2026-05-28 | 🔥🔥🔥🔥 | ❌ 暫不推薦 | Research Preview |
+| **`skipLfs` 選項 + npm 版本通知**（v2.1.153） | 2026-05-28 | 🔥 | ⚡ 有條件推薦 | 正式發布 |
+| **Coordinator 模式 + `/code-review --fix`**（v2.1.152） | 2026-05-27 | 🔥🔥🔥🔥 | ✅ 推薦 | 正式發布 |
+| **小企業 Skills**（31 個官方 Skills） | 2026-05-24 | 🔥🔥🔥 | ✅ 推薦 | 正式發布 |
+| **`/code-review`**（原 `/simplify`，v2.1.146） | 2026-05-21 | 🔥🔥 | ✅ 推薦 | 正式發布 |
+| **`claude agents --json`**（v2.1.145） | 2026-05-20 | 🔥🔥 | ✅ 推薦 | 正式發布 |
+| **自架沙箱 + MCP 隧道**（完整文件） | 2026-05-22 | 🔥🔥🔥🔥 | ⚡ 有條件推薦 | 公開測試 |
+| **`/resume` 背景 session 擴展**（v2.1.144） | 2026-05-19 | 🔥 | ✅ 推薦 | 正式發布 |
+| **Proactive Workflows** | 2026-05-18 | 🔥🔥🔥 | ⏳ 觀望 | 公開測試 |
+| **Capability Curve** | 2026-05-18 | 🔥🔥 | ⏳ 觀望 | 公開測試 |
+| **Plugin 依賴關係強制執行**（v2.1.143） | 2026-05-16 | 🔥 | ✅ 推薦 | 正式發布 |
+| **`claude agents` 細粒度旗標**（v2.1.142） | 2026-05-14 | 🔥🔥 | ⚡ 有條件 | 正式發布 |
+| **`/loop`・`/batch`・`/background`** | 2026-05-14 | 🔥🔥🔥🔥 | ✅ 推薦 | 正式發布 |
+| **`/goal` 指令** | 2026-05-12 | 🔥🔥🔥🔥🔥 | ✅ 推薦 | 正式發布 |
+| **Agent View** | 2026-05-12 | 🔥🔥🔥 | ⚡ 有條件 | Research Preview |
+| **Managed Agents**（全套） | 2026-05-11 | 🔥🔥🔥🔥🔥 | ⚡ 有條件 | 正式發布 |
+| **macOS Computer Use** | 2026-05-03 | 🔥🔥🔥 | ✅ 推薦 | 正式發布 |
+| **Claude Code Sandboxing** | 2026-05-10 | 🔥🔥🔥 | ⚡ 有條件 | 正式發布 |
+| **操作安全 + `hard_deny`** | 2026-05-09 | 🔥🔥🔥 | ✅ 推薦 | 正式發布 |
+| **Claude Security**（公開 Beta） | 2026-05-06 | 🔥🔥🔥 | ⚡ 有條件推薦 | 公開測試 |
+| **Claude Connectors 創意工作** | 2026-05-04 | 🔥🔥 | ⚡ 有條件 | 正式發布 |
+| **MCP `alwaysLoad`** | 2026-04-28 | 🔥🔥 | ✅ 推薦 | 正式發布 |
+| **`worktree.baseRef` 設定** | 2026-05-08 | 🔥 | ⚡ 有條件 | 正式發布 |
+| **Claude Design** | 2026-04-27 | 🔥🔥 | ❌ 暫不推薦 | 正式發布 |
+| **Dreaming 記憶整合** | 2026-05-07 | 🔥🔥🔥🔥 | ⏳ 觀望 | Research Preview |
+| **Outcomes 規格驗證** | 2026-05-07 | 🔥🔥🔥🔥 | ⚡ 有條件 | 公開測試 |
 
 ---
 
@@ -116,16 +124,7 @@ https://claude.com/blog/artifacts-in-claude-code
 
 ---
 
-### Claude Code v2.1.179（串流中斷修復）
-**發布：** 2026-06-16（v2.1.179） | **熱度：** 🔥 | **試用價值：** ✅ 推薦 | **狀態：** 正式發布
-
-**是什麼：** 三項穩定性修復：① mid-stream connection 中斷時部分回應現在被保留（而非顯示原始錯誤）；② spinner 不再卡在「running tool」；③ 滑鼠滾輪捲動修復。
-
-**注意事項：** 純 bug fix，無新使用者端功能。
-
----
-
-### Claude Code v2.1.178（`Tool(param:value)` permission rules 語法）
+### Tool(param:value) permission rules 語法
 **發布：** 2026-06-15（v2.1.178） | **熱度：** 🔥🔥 | **試用價值：** ✅ 推薦 | **狀態：** 正式發布
 
 **是什麼：** 新增 `Tool(param:value)` 語法用於 permission rules，允許比對工具的輸入參數（支援 `*` 萬用字元）。例如 `Agent(model:opus)` 可封鎖使用 Opus 模型的子 Agent 啟動。Skills 現在可在巢狀子 Agent 環境中正常運作。
@@ -146,7 +145,7 @@ https://claude.com/blog/artifacts-in-claude-code
 
 ---
 
-### Claude Code v2.1.175（`enforceAvailableModels` 企業管控）
+### `enforceAvailableModels` 企業管控
 **發布：** 2026-06-12（v2.1.175） | **熱度：** 🔥🔥 | **試用價值：** ✅ 推薦 | **狀態：** 正式發布
 
 **是什麼：** 新增 `enforceAvailableModels` 管理設定——啟用後，`availableModels` 白名單同時限制預設模型的解析，避免管理員設定的模型限制被繞過。針對企業管理場景，確保組織控管政策的完整性。

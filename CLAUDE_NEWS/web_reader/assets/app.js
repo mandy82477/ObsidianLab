@@ -313,6 +313,7 @@
     const data = window.WIKI_DATA || {};
     const container = $('#wiki-entities');
     if (!container || !data.entities?.length) return;
+    const _d = new Date(); const today = `${_d.getFullYear()}-${String(_d.getMonth()+1).padStart(2,'0')}-${String(_d.getDate()).padStart(2,'0')}`;
     const sorted = sortItems(data.entities, entitySort.key, entitySort.dir);
     const filtered = activeDomain === 'all' ? sorted : sorted.filter(e => e.domain === activeDomain);
     container.innerHTML = filtered.map(e => `
@@ -321,7 +322,7 @@
   <div class="entity-row__type">${esc(e.entityType)}</div>
   <div><span class="pill pill--${e.pill}">${esc(shortStatus(e.status))}</span></div>
   <div class="entity-row__summary" title="${esc(e.summary)}">${esc(e.summary)}</div>
-  <div class="entity-row__updated">${esc(e.lastUpdated || e.firstSeen || '')}</div>
+  <div class="entity-row__updated">${e.lastUpdated === today ? '<span class="badge-new">今日</span>' : ''}${esc(e.lastUpdated || e.firstSeen || '')}</div>
 </div>`).join('');
   }
 
@@ -329,6 +330,7 @@
     const data = window.WIKI_DATA || {};
     const container = $('#wiki-topics');
     if (!container || !data.topics?.length) return;
+    const _d = new Date(); const today = `${_d.getFullYear()}-${String(_d.getMonth()+1).padStart(2,'0')}-${String(_d.getDate()).padStart(2,'0')}`;
     const sorted = sortItems(data.topics, topicSort.key, topicSort.dir);
     const filtered = activeDomain === 'all' ? sorted : sorted.filter(t => t.domain === activeDomain);
     container.innerHTML = filtered.map(t => `
@@ -336,14 +338,14 @@
   <div class="entity-row__name"><span class="bracket">[[</span>${esc(t.id)}<span class="bracket">]]</span></div>
   <div><span class="pill pill--${t.pill}">${esc(shortStatus(t.status))}</span></div>
   <div class="entity-row__summary" title="${esc(t.summary)}">${esc(t.summary)}</div>
-  <div class="entity-row__updated">${esc(t.lastUpdated || t.startDate || '')}</div>
+  <div class="entity-row__updated">${t.lastUpdated === today ? '<span class="badge-new">今日</span>' : ''}${esc(t.lastUpdated || t.startDate || '')}</div>
 </div>`).join('');
   }
 
   function renderWiki() {
     const data = window.WIKI_DATA || { entities: [], topics: [] };
     const totalPages = (data.entities?.length || 0) + (data.topics?.length || 0);
-    const today = new Date().toISOString().slice(0, 10);
+    const _d = new Date(); const today = `${_d.getFullYear()}-${String(_d.getMonth()+1).padStart(2,'0')}-${String(_d.getDate()).padStart(2,'0')}`;
 
     const lastUpdated = data.radar?.lastUpdated
       || (data.digestIndex || []).slice().sort((a, b) => b.date.localeCompare(a.date))[0]?.date
@@ -355,6 +357,20 @@
     const radarMeta = $('#radar-card-updated');
     if (radarMeta && data.radar?.lastUpdated) {
       radarMeta.textContent = `最後更新 ${data.radar.lastUpdated}`;
+    }
+
+    // Populate radar card 本週推薦 picks
+    const radarMd = data.radar?.markdown || '';
+    const picksMatch = radarMd.match(/##\s*⭐\s*本週推薦\n([\s\S]*?)(?:\n---|\n##)/);
+    if (picksMatch) {
+      const picks = picksMatch[1].trim().split('\n')
+        .filter(l => l.trim().startsWith('- '))
+        .map(l => l.replace(/^-\s*\*\*([^*]+)\*\*.*$/, '$1').replace(/^-\s*/, '').trim())
+        .filter(Boolean).slice(0, 3);
+      const picksEl = $('#radar-card-picks');
+      if (picksEl && picks.length) {
+        picksEl.innerHTML = picks.map(p => `<span class="radar-pick">${esc(p)}</span>`).join('');
+      }
     }
 
     // Populate gap card last-updated label
