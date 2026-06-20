@@ -239,6 +239,11 @@
   </div>
 </div>`);
 
+    // bulletin — one-line skip signal above focus
+    if (d.bulletin) {
+      parts.push(`<div class="digest-bulletin"><span class="digest-bulletin__label">今日快訊</span><span class="digest-bulletin__text">${esc(d.bulletin)}</span></div>`);
+    }
+
     // focus — first
     if (d.focus?.length) {
       parts.push(`<div class="section section--focus">
@@ -260,8 +265,8 @@
     // sections
     const sections = [
       { key: 'topStories',  emoji: '⭐', label: '重點話題',   en: 'headlines',         star: true  },
-      { key: 'techUpdates', emoji: '🔧', label: '技術更新',   en: 'technical updates', star: false },
-      { key: 'discussions', emoji: '💬', label: '技術熱度討論', en: 'discussion',        star: false },
+      { key: 'techUpdates', emoji: '🔧', label: '官方公告',   en: 'official releases', star: false },
+      { key: 'discussions', emoji: '💬', label: '社群討論', en: 'community',        star: false },
       { key: 'billing',     emoji: '💰', label: '付費方案動態', en: 'pricing & access',  star: false },
     ];
 

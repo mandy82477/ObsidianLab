@@ -240,7 +240,7 @@ def parse_wiki(f: Path, page_type: str) -> dict:
 
 # ── Digest parser ─────────────────────────────────────────────────────────────
 
-SECTION_EMOJI = {"⭐": "topStories", "🔧": "techUpdates", "💬": "discussions",
+SECTION_EMOJI = {"🔔": "bulletin", "⭐": "topStories", "🔧": "techUpdates", "💬": "discussions",
                  "💰": "billing", "📌": "focus"}
 
 SENTIMENT_RE = re.compile(r"`情緒：(.+?)`")
@@ -262,6 +262,7 @@ def parse_digest(f: Path) -> dict:
         "generatedAt": "",
         "articleCount": 0,
         "sourceCount": "",
+        "bulletin": "",
         "topStories": [],
         "techUpdates": [],
         "discussions": [],
@@ -320,6 +321,14 @@ def parse_digest(f: Path) -> dict:
                         "ok": status_icon == "✅",
                         "count": int(count),
                     })
+                continue
+
+            # bulletin — single line of plain text
+            if current_section == "bulletin":
+                stripped = line.strip()
+                if stripped and not stripped.startswith("#") and not stripped.startswith("---"):
+                    if not result["bulletin"]:
+                        result["bulletin"] = stripped
                 continue
 
             # focus items

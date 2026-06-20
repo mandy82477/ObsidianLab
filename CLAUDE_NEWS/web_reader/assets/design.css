@@ -728,6 +728,23 @@ code {
   vertical-align: middle; margin-right: 5px;
 }
 
+/* Digest bulletin (今日快訊) */
+.digest-bulletin {
+  display: flex; align-items: baseline; gap: 10px;
+  padding: 7px 12px; margin-bottom: 16px;
+  border: 1px solid var(--border-2); border-radius: 2px;
+  background: var(--bg-1);
+}
+.digest-bulletin__label {
+  font-family: var(--font-mono); font-size: 10px; font-weight: var(--fw-medium);
+  color: var(--ochre-9); letter-spacing: 0.08em;
+  white-space: nowrap; flex-shrink: 0;
+}
+.digest-bulletin__text {
+  font-family: var(--font-mono); font-size: 12px;
+  color: var(--ink-2); letter-spacing: 0.02em; line-height: 1.5;
+}
+
 /* Radar card picks */
 .radar-card__picks { margin-top: 8px; display: flex; flex-wrap: wrap; gap: 5px; }
 .radar-pick {
