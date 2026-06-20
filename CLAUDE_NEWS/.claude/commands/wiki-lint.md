@@ -30,7 +30,7 @@ description: 每週執行 wiki 品質檢查，修正矛盾/孤立/過期頁面�
 | 社群 | `wiki-reporter-community` | `wiki/topics/community-tech-tools.md`, `community-tech-patterns.md`, `community-tech-discussions.md`, `community-tech-timeline.md`, `code-quality-decline.md` |
 | 人物 | `wiki-reporter-people` | `wiki/entities/boris-cherny.md`, `cat-wu.md`, `andrej-karpathy.md`, `dario-amodei.md`, `chris-olah.md` 及其他人物頁 |
 
-> **社群記者額外任務：** `community-tech-tools.md` 已脫離每日 ingest，是 **lint 專用策展頁**。除 3a–3f 品質檢查外，須額外依 `.claude/rules/wiki-ingest-community.md` 的「策展規則」與「精選層提拔規則」執行：讀取近 7–14 天 `news/*.md` 萃取達標新工具、汰除過氣條目、提拔精選層、同步痛點洞察。派工 prompt 須附上「今日日期」供記者計算 news/ 範圍。
+> **社群記者額外任務：** `community-tech-tools.md` 已脫離每日 ingest，是 **lint 專用策展頁**。除 3a–3f 品質檢查外，須額外依 `.claude/rules/wiki-ingest-community-lint.md` 的「策展規則」與「精選層提拔規則」執行：讀取近 7–14 天 `news/*.md` 萃取達標新工具、汰除過氣條目、提拔精選層、同步痛點洞察。派工 prompt 須附上「今日日期」供記者計算 news/ 範圍。
 
 每個 Agent 呼叫的 prompt：
 

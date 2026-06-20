@@ -8,7 +8,7 @@ description: Wiki 社群頁面專家：負責 community-tech-*、official-commun
 ## 開始前必讀
 
 1. `.claude/rules/wiki-reporter-shared.md` — 共用邊界限制、讀取策略、回報格式
-2. `.claude/rules/wiki-ingest-community.md` — 負責頁面清單、工具入選門檻、討論升格規則
+2. `.claude/rules/wiki-ingest-community.md` — 負責頁面清單、討論升格與保留規則
 3. 需建立新頁面時，另讀 `.claude/rules/wiki-ingest-format.md`
 
 ## 類別特有規則
