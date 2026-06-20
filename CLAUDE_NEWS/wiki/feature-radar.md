@@ -40,22 +40,15 @@
 | **MCP Enterprise Authorization**（Okta / VS Code 零設定 SSO） | 2026-06-19 | 🔥🔥 | ⚡ 有條件推薦 | 正式發布 |
 | **破壞性 Git 指令自動封鎖**（Claude Code v2.1.183） | 2026-06-19 | 🔥🔥🔥 | ✅ 推薦 | 正式發布 |
 | **Claude Code Artifacts**（工作階段即時輸出可共享互動網頁） | 2026-06-18 | 🔥🔥🔥🔥🔥 | ⚡ 有條件推薦 | 正式發布 |
-| **Python SDK v0.111.0**（helpers refusal-fallback 中間件） | 2026-06-18 | 🔥 | ✅ 推薦 | 正式發布 |
-| **TS Vertex SDK v0.18.0**（新功能更新） | 2026-06-18 | 🔥 | ✅ 推薦 | 正式發布 |
-| **Claude Code v2.1.179**（串流中斷修復 + spinner 修復 + 滑鼠滾輪修復） | 2026-06-16 | 🔥 | ✅ 推薦 | 正式發布 |
 | **Tool(param:value) permission 語法 + 巢狀 Skills**（v2.1.178） | 2026-06-15 | 🔥🔥 | ✅ 推薦 | 正式發布 |
 | **enforceAvailableModels 企業管控**（Claude Code v2.1.175） | 2026-06-12 | 🔥🔥 | ✅ 推薦 | 正式發布 |
-| **Claude Code v2.1.173**（Fable 5 模型名稱修復） | 2026-06-11 | 🔥 | ✅ 推薦 | 正式發布 |
 | **Claude Fable 5**（Mythos 架構公開版，$10/$50 per M token） | 2026-06-09 | 🔥🔥🔥🔥🔥 | ❌ 暫不可用 | 出口管制停用 |
-| **Python SDK v0.109.1**（`frontier_llm` refusal 類別） | 2026-06-09 | 🔥 | ✅ 推薦 | 正式發布 |
-| **Claude Code v2.1.170**（Fable 5 支援） | 2026-06-09 | 🔥🔥 | ✅ 推薦 | 正式發布 |
-| **Claude Code v2.1.169 `--safe-mode` 旗標** | 2026-06-08 | 🔥🔥 | ✅ 推薦 | 正式發布 |
+| **`--safe-mode` 旗標**（v2.1.169） | 2026-06-08 | 🔥🔥 | ✅ 推薦 | 正式發布 |
 | **Google Colab CLI 整合 Claude Code / Codex** | 2026-06-08 | 🔥🔥 | ✅ 推薦 | 正式發布 |
-| **Python SDK v0.107.1**（foundry x-api-key header 修復） | 2026-06-07 | 🔥 | ✅ 推薦 | 正式發布 |
-| **Python SDK v0.106.0**（Claude Opus 4.1 標記棄用） | 2026-06-06 | 🔥 | ✅ 推薦 | 正式發布 |
-| **Claude Code v2.1.162**（`waitingFor` 可見性 + `--tools` Grep/Glob 目錄遍歷） | 2026-06-04 | 🔥🔥 | ✅ 推薦 | 正式發布 |
-| **Claude Code v2.1.161**（OTEL metrics 標籤 + claude agents 改善） | 2026-06-03 | 🔥🔥 | ✅ 推薦 | 正式發布 |
-| **shell 安全修復 + workflow→ultracode rename**（Claude Code v2.1.160，⚠️ Breaking: `workflow` 更名為 `ultracode`） | 2026-06-02 | 🔥🔥🔥 | ✅ 推薦 | 正式發布 |
+| **Claude Opus 4.1 SDK 棄用**（Python SDK v0.106.0） | 2026-06-06 | 🔥 | ✅ 推薦 | 正式發布 |
+| **`waitingFor` 可見性 + `--tools` 目錄遍歷**（v2.1.162） | 2026-06-04 | 🔥🔥 | ✅ 推薦 | 正式發布 |
+| **OTEL metrics + claude agents 改善**（v2.1.161） | 2026-06-03 | 🔥🔥 | ✅ 推薦 | 正式發布 |
+| **workflow → ultracode 重命名**（⚠️ Breaking Change, v2.1.160） | 2026-06-02 | 🔥🔥🔥 | ✅ 推薦 | 正式發布 |
 | **Claude Code v2.1.158**（Auto mode on Bedrock/Vertex/Foundry） | 2026-05-30 | 🔥🔥 | ✅ 推薦 | 正式發布 |
 | **Claude Opus 4.8**（SWE-bench Pro 69.2%、1M context、Fast Mode 1/3 費用） | 2026-05-28 | 🔥🔥🔥🔥🔥 | ⚡ 有條件推薦 | 正式發布 |
 | **Dynamic Workflows**（最多 1,000 平行子代理，UltraCode 1.7M token bug 無退款） | 2026-05-28 | 🔥🔥🔥🔥 | ❌ 暫不推薦 | Research Preview |
