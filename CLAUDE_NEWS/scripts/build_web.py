@@ -81,7 +81,8 @@ META_RE = {
     "domain":     re.compile(r"\*\*領域[：:]\*\*\s*(.+)"),
     "firstSeen":  re.compile(r"\*\*首次出現[：:]\*\*\s*(.+)"),
     "startDate":  re.compile(r"\*\*開始日期[：:]\*\*\s*(.+)"),
-    "lastUpdated":re.compile(r"\*\*最後更新[：:]\*\*\s*(.+)"),
+    "lastUpdated":    re.compile(r"\*\*最後更新[：:]\*\*\s*(.+)"),
+    "lastNewsUpdate": re.compile(r"\*\*最後新聞更新[：:]\*\*\s*(.+)"),
 }
 
 SUMMARY_HEADERS = ["## 現況", "## 摘要"]
@@ -204,6 +205,7 @@ def parse_wiki(f: Path, page_type: str) -> dict:
         "firstSeen": "",
         "startDate": "",
         "lastUpdated": "",
+        "lastNewsUpdate": "",
         "summary": "",
         "markdown": raw,
     }
