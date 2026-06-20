@@ -101,7 +101,7 @@ git -C REPO_ROOT push
 1. 讀取 `news/TARGET_DATE.md`；同時讀取 `wiki/CLAUDE.md`、`.claude/rules/wiki-ingest.md`（主編指南）、`wiki/index.md`、`wiki/log.md`
 2. **分類（主編）**：依 `.claude/rules/wiki-ingest.md` 分類表為每則條目標記類別（模型 / 功能 / 商業 / 安全政策 / 社群 / 人物）
 3. **派工（Agent tool）**：對每個有條目的類別呼叫 Agent tool（有多類別時同一訊息並行發出）；各記者讀取 `.claude/rules/wiki-ingest-[category].md`，更新負責頁面；需建新頁面時讀 `.claude/rules/wiki-ingest-format.md`；完成後回傳標準回報格式（詳見 `.claude/commands/wiki-ingest.md` Step 3）
-4. **彙整共用檔案（主編）**：依所有記者回報，更新 `wiki/feature-radar.md`、`wiki/index.md`（狀態變更 + 新頁面）、`wiki/log.md`（append）；若有重大事件，更新 `wiki/overview.md`
+4. **彙整共用檔案（主編）**：依所有記者回報，更新 `wiki/feature-radar.md`（含依 `.claude/rules/wiki-ingest-features.md`「本週推薦自動更新規則」覆寫 `## ⭐ 本週推薦`）、`wiki/index.md`（狀態變更 + 新頁面）、`wiki/log.md`（append）；若有重大事件，更新 `wiki/overview.md`
 
 - Step 2 失敗時記錄但繼續 Step 4（web build 不依賴 wiki）
 
