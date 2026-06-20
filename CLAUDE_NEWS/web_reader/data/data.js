@@ -351,7 +351,7 @@ window.WIKI_DATA = {
       "startDate": "2026-04-25",
       "lastUpdated": "2026-06-20",
       "lastNewsUpdate": "",
-      "summary": "追蹤 Claude Code 社群中活躍的概念辯論、設計哲學、實證研究與技術反思。與 [[topics/community-tech-patterns]] 追蹤具體工具和工作流不同，本頁聚焦思想碰撞：什麼哲學正在成形、什麼假設受到挑戰、什麼共識正在收斂。目前活躍討論涵蓋 vibe coding 成就感缺失、Claude…"
+      "summary": "追蹤 Claude Code 社群中活躍的概念辯論、設計哲學、實證研究與技術反思。與 [[topics/community-tech-patterns]] 追蹤具體工具和工作流不同，本頁聚焦思想碰撞：什麼哲學正在成形、什麼假設受到挑戰、什麼共識正在收斂。頁面結構：**🔥 本週熱點**（當前最熱的持續議題）→ **🌊 長…"
     },
     {
       "id": "community-tech-patterns",

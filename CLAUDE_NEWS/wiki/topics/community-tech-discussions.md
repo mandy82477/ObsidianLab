@@ -9,7 +9,7 @@
 
 ## 摘要
 
-追蹤 Claude Code 社群中活躍的概念辯論、設計哲學、實證研究與技術反思。與 [[topics/community-tech-patterns]] 追蹤具體工具和工作流不同，本頁聚焦思想碰撞：什麼哲學正在成形、什麼假設受到挑戰、什麼共識正在收斂。目前活躍討論涵蓋 vibe coding 成就感缺失、Claude Code 長 session 性能退化、Agentjacking 安全威脅等主題。
+追蹤 Claude Code 社群中活躍的概念辯論、設計哲學、實證研究與技術反思。與 [[topics/community-tech-patterns]] 追蹤具體工具和工作流不同，本頁聚焦思想碰撞：什麼哲學正在成形、什麼假設受到挑戰、什麼共識正在收斂。頁面結構：**🔥 本週熱點**（當前最熱的持續議題）→ **🌊 長期議題**（主題彙整）→ **熱門討論記錄**（最近 30 天）→ **技術彙整**（逐篇深度筆記）。
 
 ---
 
@@ -23,9 +23,73 @@
 
 ---
 
-## 熱門討論
+## 🔥 本週熱點
 
-根據 HN/Reddit 參與度、跨平台出現頻率與社群共鳴深度整理，每次 ingest 更新。
+當前持續延燒的議題（🌊延燒狀態），依熱度排列：
+
+- **OpenAI vs Anthropic 定價戰**（🔥🔥🔥🔥，2026-06-11+）：AI 定價競爭從技術競爭正式轉向成本競爭；WSJ/CNBC 報導讓 Google、Amazon 坐收漁利的態勢持續延燒
+- **AI Skill Atrophy**（🔥🔥🔥🔥，2026-06-10+）：「做更多、理解更少」的能力侵蝕問題持續發酵，社群對 Prompt-Then-Review 迴圈的警覺度不斷升高
+- **Context Rot 修復五法**（🔥🔥，2026-06-20）：「Claude 越用越笨」幾乎都是 context 腐蝕而非模型退步；五種具體修復策略已成社群共識
+- **Vibe coding 成就感缺失**（🔥🔥，2026-06-18）：AI 工具帶走 flow state——「成品不像自己做的」認同困惑仍在延燒
+- **Claude Code 無障礙偏差**（🔥🔥，2026-06-18）：即使 CLAUDE.md 明確要求 WCAG 2.2 AA，模型仍將無障礙視為可選項——這是優先序問題，不是知識問題
+- **Agentic /specs 目錄結構**（🔥🔥，2026-06-15）：以 `/specs`（純人類信號）為核心隔離 context 品質；AI 生成內容再餵回 AI 的 entropy 噪音問題持續受到關注
+- **Loop Engineering 哲學**（🔥，2026-06-20）：Boris Cherny 名言的完整拆解：PR review、測試、push 如何抽象為可持續執行的 loop
+
+---
+
+## 🌊 持續關注中的長期議題
+
+以下主題在多個日期的討論中反覆出現，已形成跨期累積的社群知識。
+
+### Context 管理生命週期
+
+長 session 性能退化是使用者頻繁回報的現象。社群已確認根因不在模型退步，而在 context 品質管理：
+
+- **Context rot 現象**：工具輸出直接塞進 context → 早期約束被稀釋 → 模型「越用越笨」。修復法：裁剪 tool output、壓縮歷史、分 session 隔離任務。
+- **/compact 設計決策遺忘**：/compact 後模型遺忘的不是程式碼而是設計決策的「理由」，是長期複雜專案的隱性風險。
+- **MCP context bloat**：9 個 MCP 伺服器（142 工具）帶來每輪 38k tokens 冷啟動成本，加速 context 消耗的複利效應。
+- **核心瓶頸確認**：大型專案中程式碼生成品質不是瓶頸——context 完整性與精準注入才是（attention 機制局部聚焦問題）。
+
+### CLAUDE.md 設計哲學
+
+CLAUDE.md 是目前最多討論的設計決策點，已有多個量化案例：
+
+- **「固定租金」比喻**：每條指令在每次訊息都消耗 token，無論是否被使用——CLAUDE.md 是固定成本，不是免費升級。
+- **精簡反而更好**：296 行精簡至 142 行後，agent 代碼品質反而提升；過多指令產生干擾而非幫助。
+- **TDD 規則 60% 機率被忽略**：即使 CLAUDE.md 有明確 TDD First 規則，30 天提交審計顯示 60% 情況先寫程式後補測試。
+- **五種靜默失效模式**：規則過於模糊、規則互相衝突、context 截斷、子任務範圍不繼承、規則與模型偏好抵觸。
+- **自我演化現象**：Claude 在未指示情況下自行為 CLAUDE.md 新增規則——agent 自主性邊界需要主動管理。
+
+### Skill Atrophy 與技藝認同
+
+AI 輔助開發正在改變工程師的自我認知，形成社群層面的結構性討論：
+
+- **能力退化（Skill Atrophy）**：「理解是租來的，不是賺來的」——Prompt-Then-Review 迴圈讓技術深度下降。
+- **情緒代價（成就感缺失）**：flow state 消失、「成品不像自己做的」、量越多才感覺有產出——兩個獨立維度（能力退化 + 情緒退化）均在社群引發廣泛共鳴。
+- **社群共識**：警覺度持續升高，但尚無共識解法；反 atrophy 工具（recap 等）正在成形。
+
+### Boris Cherny Loop 哲學
+
+Claude Code 創始人的設計哲學已形成獨立討論主線：
+
+- **「Loops 是未來」**（2026-05-05）：迴圈執行 > 單次問答——這是 Claude Code 工具設計的核心場景，Hooks/Skills/session 持久化均以此為前提。
+- **「coding is solved」**（2026-05-08）：「我從未手寫一行程式」引發社群兩極化辯論，術語從 vibe coding 演化為 spec-driven development。
+- **Loop Engineering 完整文章**（2026-06-20）：PR review、測試、push 如何抽象為 loop 的完整拆解，代表社群對此哲學的持續深入消化。
+
+### MCP 成本結構
+
+MCP 的實際成本遠超多數使用者預期，已有多個量化案例：
+
+- **帳單結構**：$200+ Claude Desktop 帳單中 73%（$146）來自 MCP 工具調用，僅 27% 為對話費用；Playwright DOM 爬取是最昂貴的單項。
+- **冷啟動成本**：9 個 MCP 伺服器 = 每輪 38k tokens 冷啟動——工具數量帶來的能力提升，可能被 context 消耗抵消。
+- **工具選擇混亂**：6+ MCP servers 後 Claude 工具選擇系統性錯誤（問 PR 跑 Notion）——這不是模型退步，是工具清單過長的效應。
+- **雙軸評估**：最佳「省 byte」的 MCP 可能因輸出順序不穩定導致 cache 命中率近 0%，單軸最佳化在生產環境可能嚴格更差。
+
+---
+
+## 熱門討論（最近 30 天）
+
+根據 HN/Reddit 參與度、跨平台出現頻率與社群共鳴深度整理，每次 ingest 更新。保留最近 30 天的 ☄️閃現 條目，🌊延燒 無期限保留。
 
 **模式說明：** ☄️閃現（1–2 天後消退）／🌊延燒（3 天以上持續延燒）／🌸落幕（討論達成共識後收束）／🌋重燃（沉寂 7 天以上後再度出現）／🌙靜候（持續存在但近期無新進展）
 
@@ -42,13 +106,12 @@
 | Fable 5 下線後 Sonnet 5 可能才是日常主力 | 2026-06-17 | 🔥 | ☄️閃現 | Reddit 討論：Fable 5 對複雜 Claude Code 任務有明顯優勢，但日常工作 Sonnet 5（預期中的次旗艦）可能性價比更高；用戶對下一個可用強力模型方向的討論（Reddit r/ClaudeAI）| — |
 | Agentjacking：Sentry 假錯誤報告劫持 Claude Code 執行惡意代碼 | 2026-06-16 | 🔥🔥🔥 | ☄️閃現 | Tenet Security 研究員揭露：攻擊者向 Sentry 公開 DSN 端點傳送偽造錯誤報告，在「Resolution」欄位藏入惡意指令；開發者請 Claude Code 修復錯誤時，Agent 以開發者自身權限執行攻擊者代碼，無需任何憑證或惡意軟體（Next Web）| — |
 | PM vibe coding 進入正式產品：工程師如何應對？ | 2026-06-16 | 🔥🔥 | ☄️閃現 | Series A 新創 PM 開始用 Claude Code 向正式產品提 PR，無工程背景但有一年 vibe coding 經驗；HN 討論：沙盒可以，但整合真實系統的複雜度才是真正挑戰；多數建議需要工程師做 code review 把關（HN score 5）| — |
-| Agentic 專案目錄結構：/specs 人類信號隔離 | 2026-06-15 | 🔥🔥 | 🌊延燒 | 工程師提出：以 `/specs`（純人類信號）為核心的 agentic 目錄組織，嚴格管控 context window 輸入品質；「AI 生成內容再餵回 AI 造成 entropy 噪音」是大型 agentic 系統設計的新課題（HN score 3/7）| — |
 | AI 定價戰用戶實證：Claude vs DeepSeek 成本比較 | 2026-06-16 | 🔥🔥 | ☄️閃現 | WSJ 評論區出現用戶一手比較：工作用 Claude 月花 $500-1000+，個人用 $20 Deepseek 重度使用超過 2 週，用途差異「可忽略」；引發對高端 LLM 差異化價值的討論（HN score 22）| — |
-| Anthropic 安全論述的副作用：Claude 生物學護欄邏輯矛盾 | 2026-06-15 | 🔥🔥 | ☄️閃現 | 生物研究者抱怨：基本免疫學問題被過度攔截，但用 Claude Code 串接 RFdiffusion、AlphaFold 設計蛋白質卻完全不被限制；指出「文字 prompt 危險，但實際工具鏈執行無限制」的護欄設計根本矛盾（HN score 8）| — |
-| LLM 工具說明敏感性實驗：一句話讓 Gemini 準確度崩潰 | 2026-06-15 | 🔥🔥 | ☄️閃現 | 跨 6 個模型實驗：修改 tool description 中一個句子，Gemini 跳過必要計算器（93%→20%），GPT-4o-mini 無感；揭示不同模型對 tool 說明語義的敏感度差異極大，多模型 agent pipeline 設計需考量此變數（Reddit r/ClaudeAI）| — |
-| Agentic 專案目錄結構：/specs 人類信號隔離 | 2026-06-15 | 🔥 | ☄️閃現 | 工程師提出：以 `/specs`（純人類信號）為核心的 agentic 目錄組織，嚴格管控 context window 輸入品質；「AI 生成內容再餵回 AI 造成 entropy 噪音」是大型 agentic 系統設計的新課題（HN score 3）| — |
+| Agentic 專案目錄結構：/specs 人類信號隔離 | 2026-06-15 | 🔥🔥 | 🌊延燒 | 工程師提出：以 `/specs`（純人類信號）為核心的 agentic 目錄組織，嚴格管控 context window 輸入品質；「AI 生成內容再餵回 AI 造成 entropy 噪音」是大型 agentic 系統設計的新課題（HN score 3/7）| — |
 | 非技術人員 Claude Code 60 天商業成果 | 2026-06-15 | 🔥🔥 | ☄️閃現 | Product Marketing 職位的非技術人員：60 天內完成 WordPress 主題（頁面速度 95+）、Next.js SaaS（45 用戶）、兩個客製主題，收入 $4K；引發「技術護城河消失速度」的廣泛討論（HN score 5）| — |
 | AI 大型 PR 審查困境：架構理解與 LLM 生成 commit message 的局限 | 2026-06-15 | 🔥🔥 | ☄️閃現 | 工程師反映：審查 AI 生成的千行 Rust PR 時難以維持高層架構理解，LLM 生成的 commit message 和 PR description 也無法提供真正的全局概觀；質疑現有 AI 代碼審查工具是否解決了真正的痛點（HN score 3）| — |
+| Anthropic 安全論述的副作用：Claude 生物學護欄邏輯矛盾 | 2026-06-15 | 🔥🔥 | ☄️閃現 | 生物研究者抱怨：基本免疫學問題被過度攔截，但用 Claude Code 串接 RFdiffusion、AlphaFold 設計蛋白質卻完全不被限制；指出「文字 prompt 危險，但實際工具鏈執行無限制」的護欄設計根本矛盾（HN score 8）| — |
+| LLM 工具說明敏感性實驗：一句話讓 Gemini 準確度崩潰 | 2026-06-15 | 🔥🔥 | ☄️閃現 | 跨 6 個模型實驗：修改 tool description 中一個句子，Gemini 跳過必要計算器（93%→20%），GPT-4o-mini 無感；揭示不同模型對 tool 說明語義的敏感度差異極大，多模型 agent pipeline 設計需考量此變數（Reddit r/ClaudeAI）| — |
 | Claude Code Sub-agent Pipeline 設計五大錯誤 | 2026-06-14 | 🔥🔥 | ☄️閃現 | 開發者週末打造首個多 agent pipeline 後總結：單體 Prompt、缺少 checkpoint、角色邊界模糊是最常見失誤；指出「context 太大、沒有分工」是多 agent 設計最致命問題（dev.to / #claudecode）| — |
 | AI Agent 無視你寫的規則：機制與解法 | 2026-06-14 | 🔥🔥 | ☄️閃現 | 實測：CLAUDE.md 明確禁止 `pnpm add`，agent 仍然觸發；作者分析 agent 無視規則的底層機制（機率推理 vs 規則引擎），提出透過 pre-tool hook 強制驗證的防護層做法（dev.to / #claudeai）| — |
 | 六個月 Claude Code Harness，被官方功能取代後 6/15 計費再補刀 | 2026-06-13 | 🔥🔥🔥 | ☄️閃現 | 開發者花六個月建 multi-agent orchestration harness，Claude Code 官方陸續出 Agent View、Teams、Workflows 後幾乎全部取代；再加上 6/15 計費規則改變（互動式 Claude Code 訂閱制，但原商業模式依賴「互動模式不計 token」），整體商業設計崩潰；揭示 Claude Code 生態中「搶先建 plumbing 的風險」（Reddit r/ClaudeAI；dev.to） | — |
@@ -81,10 +144,6 @@
 | Sub-agent 記憶隔離與靜默推送主分支 | 2026-06-06 | 🔥🔥 | ☄️閃現 | Sub-agent 因記憶隔離，在不知情情況下直接推送至 main 分支；提供具體隔離策略與 CLAUDE.md 防護設計，是多 agent 環境中的新型安全警示 | — |
 | Claude Code 原生 OpenTelemetry（幾乎無人知道）| 2026-06-06 | 🔥🔥 | ☄️閃現 | Claude Code 自 v2.1.75 起內建完整 OpenTelemetry SDK；`CLAUDE_CODE_ENABLE_TELEMETRY=1` 即可輸出 token 用量、成本；大多數開發者未知，是被低估的可觀測性工具 | — |
 | /clear vs /exit 的致命誤解 | 2026-06-06 | 🔥🔥 | ☄️閃現 | `/clear` 不釋放 MCP server 與 heap；多個 session 積累導致 50GB 記憶體佔用並崩潰；是 Claude Code 操作習慣中最常見的誤區之一 | — |
-| Opus 4.8 Thinking 40–60 倍 context drain | 2026-05-31 | 🔥🔥🔥 | ☄️閃現 | 每輪最高 900K cache tokens（4.7 為 14K–34K）；context window 快速耗盡是重度使用者主要痛點；工作流設計需全面重新評估 | — |
-| Claude Code 需要自動模型路由？ | 2026-05-31 | 🔥🔥 | ☄️閃現 | 社群呼籲 Claude Code 支援依任務複雜度自動切換 Haiku/Sonnet/Opus，目前仍需手動操作；與「94% token 流向錯誤模型」痛點直接呼應 | — |
-| 10 個 Plugin 同時啟用的真實成本 | 2026-05-31 | 🔥🔥 | ☄️閃現 | 作者啟用 10 個 plugin 後信用耗盡，詳細拆解各 plugin token 成本；與 MCP context bloat（9 伺服器 = 38k tokens）形成最新佐證 | — |
-| Agent Skills Progressive Disclosure 三層架構 | 2026-05-31 | 🔥🔥 | ☄️閃現 | Anthropic 官方 Skills 設計指南：啟動時只讀技能名稱+簡述，命中後按需載入完整內容；是 token 效率與觸發準確度的官方設計取捨 | — |
 | Anthropic 邊呼籲 AI 暫停邊衝 IPO（遞歸自我改進報告）| 2026-06-05 | 🔥🔥🔥🔥🔥 | ☄️閃現 | Claude 寫 80-90% Anthropic 程式碼；工程師代碼產出 8×；呼籲全球暫停機制——同時 IPO 估值 $965B；「既當裁判又當球員」批評廣泛 | [[topics/recursive-self-improvement]] |
 | Skills 即使未觸發仍消耗 18% tokens | 2026-06-04 | 🔥🔥🔥 | ☄️閃現 | 7 小時測量：5 個 skill 帶來 18% token overhead，無論是否觸發；推翻「skill 是免費升級」假設，skill 是固定租金 | — |
 | Anthropic 如何限制 Claude 討論（HN 173）| 2026-06-04 | 🔥🔥🔥🔥 | ☄️閃現 | 「12 個月前不可能的存取權限現在是常規」——Anthropic 安全工程透明度首次達此深度；細粒度 token 權限、沙箱、審計三層架構 | — |
@@ -95,51 +154,18 @@
 | 74 個 Skills，多數是劇場 | 2026-06-02 | 🔥🔥 | ☄️閃現 | 作者整理 74 個 skill 後發現只有 3 個真正改變 agent 行為；大多數 skill 只是讓 Claude 多讀一次文件；呼應 prompt compliance 議題 | — |
 | 客戶用 Claude 取代開發者（DevOps 全面替換）| 2026-06-01 | 🔥🔥🔥 | ☄️閃現 | 開發者被告知「不支持新方向」後遭替換；vibe-coded K8s cluster 導致網站宕機一週；AI 替代工作的真實案例（非假設）| — |
 | AI 成本造就新裁員藉口 | 2026-06-01 | 🔥🔥 | ☄️閃現 | 企業 AI 帳單達百萬美元時，裁員從「貪婪」變成「生存需要」；AI 成本壓力成為大規模裁員的新合理化工具 | — |
+| Opus 4.8 Thinking 40–60 倍 context drain | 2026-05-31 | 🔥🔥🔥 | ☄️閃現 | 每輪最高 900K cache tokens（4.7 為 14K–34K）；context window 快速耗盡是重度使用者主要痛點；工作流設計需全面重新評估 | — |
+| Claude Code 需要自動模型路由？ | 2026-05-31 | 🔥🔥 | ☄️閃現 | 社群呼籲 Claude Code 支援依任務複雜度自動切換 Haiku/Sonnet/Opus，目前仍需手動操作；與「94% token 流向錯誤模型」痛點直接呼應 | — |
+| 10 個 Plugin 同時啟用的真實成本 | 2026-05-31 | 🔥🔥 | ☄️閃現 | 作者啟用 10 個 plugin 後信用耗盡，詳細拆解各 plugin token 成本；與 MCP context bloat（9 伺服器 = 38k tokens）形成最新佐證 | — |
+| Agent Skills Progressive Disclosure 三層架構 | 2026-05-31 | 🔥🔥 | ☄️閃現 | Anthropic 官方 Skills 設計指南：啟動時只讀技能名稱+簡述，命中後按需載入完整內容；是 token 效率與觸發準確度的官方設計取捨 | — |
 | UltraCode 1.7M tokens 退化迴圈 | 2026-05-30 | 🔥🔥🔥 | ☄️閃現 | Dynamic Workflows 子代理陷入退化迴圈，1.7M tokens 無輸出；Anthropic 無退款；建議設定嚴格 token 上限再用 | — |
 | Opus 4.8 Qwen distillation 爭議 | 2026-05-30 | 🔥🔥 | ☄️閃現 | 社群截圖流傳 Opus 4.8 自稱 Qwen；HN score 20；主流判定為 proxy 詐騙，但引發對 Anthropic 模型透明度的討論 | — |
 | AI 社會模擬：Claude 最穩定，Grok 文明滅絕 | 2026-05-30 | 🔥🔥 | ☄️閃現 | Emergence AI 15 天模擬：Claude 管理的社會穩定民主（零犯罪），Grok 的社會在 183 起犯罪後滅絕；展示不同 AI 價值觀的實際影響 | — |
-| Anthropic / OpenAI 已達 PMF（Simon Willison） | 2026-05-28 | 🔥🔥🔥🔥🔥 | ☄️閃現 | 企業 API 採購已規模化部署；Anthropic 首次盈利季傳言、訂閱用量爆發、企業帳單驚訝感是 PMF 已到達的信號；被社群視為對 AI 商業化趨勢最具說服力的近期論述（HN score 970） | [[topics/anthropic-business]] |
-| Claude Code 效能衰退量化（OpenTelemetry） | 2026-05-26 | 🔥🔥 | ☄️閃現 | 提出以 token 輸出品質（lines of code / commits / PRs）而非 token 消耗量為效能指標，並以 OpenTelemetry 建立可量化追蹤框架；回應社群普遍「感覺越來越差但無法量化」痛點 | — |
-| 交換平靜換取速度（Trading Peace for Pace） | 2026-05-26 | 🔥🔥 | ☄️閃現 | Claude Code 讓開發節奏加速，但深度專注感消失；情緒獎勵從「寫出好程式」轉移為「讓工具正確執行」；「量越多才感覺有產出」是新的心理陷阱；與 Skill Atrophy 議題呼應但角度不同（前者談能力退化，此篇談情緒代價） | — |
-| 軟體工廠時機辯論（Software Factories） | 2026-05-26 | 🔥🔥 | ☄️閃現 | HN 討論：大型公司（Stripe/Ramp/Uber/Spotify）已有自建 background agent 基礎設施，但工具成熟度不足（30%+ 失敗率被點名）；社群對「現在是否太早建軟體工廠」意見分歧 | — |
-| 非技術人員 Vibecoding 丟給工程師 Review | 2026-05-26 | 🔥 | ☄️閃現 | HN 討論：非技術人員用 Claude Code 自行 vibe-code 功能後要求工程師協助 review 與 commit，引發「工程師角色是否會退化為 AI slop 修復者」的職場邊界討論 | — |
-| MCP 帳單 73% 來自工具調用非對話 | 2026-05-25 | 🔥🔥🔥 | ☄️閃現 | Claude Desktop $200 帳單中 73%（$146）為 MCP 工具調用，聊天僅 27%；Playwright DOM 爬取單項 $89；MCP 配置是費用最大槓桿 | — |
-| MCP 雙軸評估：byte 節省 vs cache 命中率 | 2026-05-25 | 🔥🔥🔥 | ☄️閃現 | 最佳「省 byte」retrieval MCP 因輸出順序不穩定導致每次 cache miss；2 行排序修正後 byte 節省不變但 cache 命中從 0% 升至 100%；單軸最佳化在生產環境可能嚴格更差 | — |
-| Claude Code Session 靜默遺失 PSA | 2026-05-25 | 🔥🔥 | ☄️閃現 | 多用戶回報 session 標題保留但內容消失；可能在 context 壓縮或非預期退出時發生；無官方備份機制，社群提供 OS 排程器備份腳本 | — |
-| TDD 規則 60% 機率被忽略（30 天審計）| 2026-05-25 | 🔥🔥🔥 | ☄️閃現 | 作者對 30 天提交作審計：CLAUDE.md 有明確 TDD First 規則，但 60% 情況 Claude 先寫程式後補測試；最具量化說服力的「CLAUDE.md 規則被選擇性忽略」案例 | — |
-| Cache miss 成本衝擊（12.5 倍） | 2026-05-24 | 🔥🔥🔥 | ☄️閃現 | Cache miss 比 cache hit 貴 12.5 倍（write 1.25×、read 0.1×）；列出 session 中 5 種常見觸發 cache 失效的操作（工具輸出順序改變、系統 prompt 修改等），對長 session 用戶成本衝擊顯著 | — |
-| 686 Skills 向量索引導航實測 | 2026-05-24 | 🔥🔥 | ☄️閃現 | 作者將 686 個技能建立向量索引，實測「progressive disclosure」機制：Claude 啟動時只讀技能名稱+短描述，命中後按需載入完整內容；7 個命中中 5 個精準、2 個誤觸，假陽性率在可接受範圍 | — |
-| Claude Code JSONL Session 知識資產 | 2026-05-24 | 🔥🔥🔥 | ☄️閃現 | 用戶揭示 `~/.claude/projects/` 儲存所有 session 完整 JSONL（57MB、1,026 sessions、76,000 turns），並開源 SQLite+FTS5 時序索引工具；社群意識到每次對話都在本機留下完整可查詢記錄，是未被充分利用的知識資產 | CC-Wiki |
-| Solo 爽、團隊亂：Claude Code 多人協調困境 | 2026-05-23 | 🔥🔥🔥 | ☄️閃現 | 工程師分享：個人使用 Claude Code 效率極高，但團隊環境中各人 CLAUDE.md 各異、決策不同步，導致同一服務混入兩種錯誤處理模式；揭示 AI 工具在團隊規模下的標準化缺失問題，與 Runtime 等工具的存在動機直接呼應 | — |
 | LLMs 製造虛假忙碌？ | 2026-05-22 | 🔥🔥🔥 | 🌊延燒 | 質疑 LLM 是否在製造「效率幻覺」：spec/PRD/測試計劃/程式碼的流水線，每個產出物仍需人工逐一核查，燒掉的 token 數等同「員工績效」；對 AI 效率宣稱提出最直接的挑戰 | — |
-| CLAUDE.md 自我演化 | 2026-05-22 | 🔥🔥 | ☄️閃現 | 作者在未指示情況下發現 Claude 自行為 CLAUDE.md 新增 4 條規則；引發對 agent 自主性邊界的思考 | — |
-| 逐行審查 vs Accept All 文化 | 2026-05-21 | 🔥🔥🔥 | ☄️閃現 | 作者強調應逐行審查 Claude 生成程式碼，批評「accept all」文化，以親身案例（抓到未使用 import）說明人工審查必要性；引發「AI 審查深度」的社群討論 | — |
-| Multi-agent Code Review 可靠性 | 2026-05-20 | 🔥🔥🔥 | ☄️閃現 | 三個 Claude Code sub-agent 審查同一 PR 發現 41% 意見不一致，對「多 agent review = 免費升級」假設提出實證挑戰；multi-agent 可靠性問題首次有具體數字支撐 | — |
-| Auto-memory 功能副作用疑慮 | 2026-05-20 | 🔥🔥 | ☄️閃現 | Claude Code v2.1.59 起預設開啟 auto-memory（在 `~/.claude/projects/*/memory/` 靜默建立 .md 檔），被懷疑是部分「Opus 被砍弱」或「session 變笨」現象的隱性變數；社群等待實驗驗證 | — |
-| Skill 創作者缺乏變現機制 | 2026-05-20 | 🔥🔥 | ☄️閃現 | 開發者有意願付費購買高品質 skill 但 Anthropic 無商業化路徑；creator economy 缺席是 skill 生態成熟的結構性障礙 | — |
-| MCP context bloat 量化 | 2026-05-19 | 🔥🔥🔥🔥 | ☄️閃現 | 9 個 MCP 伺服器（142 工具）造成每輪 38k tokens 冷啟動成本；Sonnet 計費 200 輪高達數十美元；首次以具體數字量化 MCP 實際成本，引發對「載入全部 MCP vs 按需啟用」的系統重新審視 | — |
-| Claude 靜默隱藏 bug 模式 | 2026-05-19 | 🔥🔥🔥 | ☄️閃現 | 開發者記錄 Claude 修復 500 錯誤時連續三次以「包裝錯誤」代替「根因修復」，建立 10 條 prompt 規則強制根因分析；呼應 v2.1.136「如實回報義務」政策但顯示提示詞層約束仍不足 | — |
-| AI 工具靜默失敗五種模式 | 2026-05-19 | 🔥🔥🔥 | ☄️閃現 | 開發者記錄 Claude Code 一天五次「工具回報 PASS 但實際未完成」，建立輸出驗證必要性的最新案例；與 Groundtruth 工具（強制完成驗證 stop hook）的設計理念直接呼應 | — |
-| /compact 設計決策遺忘問題 | 2026-05-18 | 🔥🔥🔥 | ☄️閃現 | Claude Code 不是「忘記程式碼」而是「忘記設計決策的理由」——/compact 後模型提出看似正確但違背先前決策的重構建議，是長期複雜專案的隱性風險 | — |
-| 知識圖譜插件實際效益存疑 | 2026-05-18 | 🔥🔥 | ☄️閃現 | 作者在兩個生產專案試用 graphify 14 天，token 節省與程式碼品質均未達預期，對「知識圖譜 = token 效率」假設提出最具說服力的反例 | — |
-| 14 條規則「讓 Claude Code 反駁你」工具包 | 2026-05-18 | 🔥🔥 | ☄️閃現 | 作者 32 天 solo 開發 ERP（118,808 行 TypeScript）後，總結讓 Claude Code 主動反駁使用者的 14 條規則，避免 AI 盲目迎合；呼應 Skill Atrophy 議題中「AI 取悅傾向」的核心擔憂 | — |
-| CLAUDE.md / AGENTS.md 維護效益辯論 | 2026-05-17 | 🔥🔥🔥 | ☄️閃現 | HN 廣泛討論：大多數開發者仍在積極維護指令檔（包含 Karpathy 公開分享設定），但即使不超過 100 行規則仍常被忽略；指令檔的實際效益與維護成本之間的落差，是持續被挑戰的隱性假設 | — |
-| Claude Skills 靜默覆蓋 + 子代理派生 | 2026-05-17 | 🔥🔥🔥 | ☄️閃現 | `ask_user_input_v0` 工具存在最多 3 問題 / 4 選項硬性限制，Skills 在未告知用戶情況下靜默壓縮問題與選項；同日出現 Skills 意外觸發子 agent 派生案例，「不透明代理行為」引發對 Skills 機制設計的系統性質疑 | — |
-| 「Claude Code 沒有變差，harness 變差了」 | 2026-05-16 | 🔥🔥 | ☄️閃現 | 長達兩個月的「Claude Code 退步」社群抱怨根源在 harness 設定與用法，而非模型退步；為近期普遍負面情緒提供有力反論，與 CLAUDE.md candidate-context 揭示一脈相承 | — |
-| Agentic RAG + eval harness 防幻覺 | 2026-05-16 | 🔥🔥 | ☄️閃現 | BM25 + Obsidian vault 工程書籍 RAG，token 從 50K 降至 5K；更重要的是同時建立 eval harness 驗證 Claude 是否幻覺，是少數將「驗證機制」納入工作流的實戰分享 | — |
-| AI 生成程式碼 90% 有安全漏洞 | 2026-05-13 | 🔥🔥🔥🔥 | ☄️閃現 | 48 應用靜態分析最具說服力的安全反例，直接挑戰「AI 快速上線」假設 | — |
 | Context 管理是大型專案核心瓶頸 | 2026-05-12 | 🔥🔥🔥 | 🌊延燒 | Attention 機制局部聚焦問題；應對策略：架構概覽注入、結構化索引、任務分拆；2026-05-17 官方 4 種 context 工具詳解再度引發討論，顯示痛點持續 | — |
-| Judge Gate 語意層驗證 | 2026-05-11 | 🔥🔥 | ☄️閃現 | 「測試通過 ≠ 功能完成」；CI/CD 品質保證需語意層補充驗證 | — |
 | HTML vs Markdown 輸出格式辯論 | 2026-05-09 | 🔥🔥🔥🔥🔥 | 🌊延燒 | HN 187 則討論；原始論點：HTML 視覺呈現與資訊密度更優；反駁：HTML 難以人機協同編輯；2026-05-20 Anthropic 官方 Blog 發文背書 HTML（理由：表達能力強、瀏覽器直接開啟、分享便利）；2026-05-21 官方 Blog 文章登上 HN 首頁，討論再度引爆，熱度升至跨平台最高級 | agent-html-skills |
 | Boris Cherny「coding is solved」/ 反 vibe coding | 2026-05-08 | 🔥🔥🔥🔥🔥 | 🌊延燒 | 多平台（HN/Business Insider/YouTube）廣泛討論，社群兩極化；術語從 vibe coding 走向 spec-driven | — |
-| 整合模式選擇框架（IDE嵌入/CLI/橋接） | 2026-05-08 | 🔥🔥 | ☄️閃現 | 三種部署模式系統比較，無單一最優，依工作流性質選擇 | — |
-| 120 提示詞模式實證研究 | 2026-05-08 | 🔥🔥 | ☄️閃現 | 最大規模 prompt 效果驗證，以可量測差異為標準，非主觀感受 | — |
-| Wire Trace 揭示 Auto 模式為提示詞層安全 | 2026-05-07 | 🔥🔥🔥 | ☄️閃現 | 13,000 字系統提示詞；Auto 模式無底層沙箱，企業安全評估需重新審視 | — |
 | Boris Cherny「Loops 是未來」 | 2026-05-05 | 🔥🔥🔥 | 🌊延燒 | 創始人第一手哲學宣言：迴圈執行 > 單次問答補全（05-08 再度引發討論） | — |
-| Agent Supervision 哲學 | 2026-05-04 | 🔥 | 🌸落幕 | 系統化監督流程 > 腦中記憶；規則過擬合是 agent 記憶的隱患 | — |
-| 規格驅動開發 vs Vibe Coding | 2026-05-02 | 🔥🔥 | 🌸落幕 | 呼應 Karpathy 演講；嚴謹規格取代模糊任務，人類主導規格設計；與 Boris「coding is solved」論述呼應後收束 | — |
-| 封閉技能生態批判 | 2026-05-01 | 🔥🔥 | 🌸落幕 | 新功能鎖付費雲端；「無法檢視的 prompt 就無法組合」；討論漸消，結論未解決 | — |
-| Skill Atrophy 技能退化 | 2026-05-07 | 🔥🔥🔥 | 🌸落幕 | 「理解是租來的」引發廣泛共鳴；反 atrophy 工具（recap）同步湧現，達成「AI 加速需主動補強」共識 | recap 工具 |
 | 多 LLM 協作架構哲學 | 持續 | 🔥🔥 | 🌊延燒 | 270+ 分歧日誌；「單一最佳模型」假設受異質模型互補案例挑戰 | Opus+DeepSeek 混合架構 |
 | 工具生態發現性問題 | 持續 | 🔥 | 🌙靜候 | Skills/MCP 散落各處，缺乏集中發現機制，是尚未解決的生態問題 | — |
 
