@@ -3,6 +3,27 @@
 Append-only 紀錄。每次 ingest、query 或 lint 都在此追加一條。
 格式：`## [YYYY-MM-DD] 類型 | 說明`
 
+## 2026-06-20 Ingest（補跑）| news/2026-06-20.md（23 則）
+
+- 來源日報：`news/2026-06-20.md`（23 則，5 來源；主軸：中國 AI Z.ai 創辦人聲稱追上 Fable 5 等級模型比 Q1 更早（HN score 10）；Politico 深度報導 Anthropic 出口管制政治處境；Claude Code 根目錄掃描 SSH 私鑰隱私爭議（HN）；Fable 5 在 AWS Bedrock 需分享推論資料（InfoQ）；AlphaFold 共同創造者 John Jumper 加入 Anthropic 社群分析文；Claude Design 工作流整合討論；Token 節省實戰（82% 降低、工具鏈是真正殺手）；CLAUDE.md 規則上限策略）
+- 更新頁面：
+  - `topics/anthropic-government-policy.md`：攻防紀錄新增 Politico 政治處境報導；時序 2026-06-20 補入；最後新聞更新 2026-06-20
+  - `topics/ai-agent-safety.md`：技術彙整新增 Claude Code 根目錄掃描暴露 SSH 私鑰、Bedrock Fable 5 推論資料共享；時序 2026-06-20 補入；最後新聞更新 2026-06-20
+  - `entities/john-jumper.md`：更新現況措辭（「傳出」取代「宣布」）；歷史記錄補入 dev.to 社群分析文；狀態維持 active（待核實）；最後新聞更新 2026-06-20
+  - `topics/community-tech-discussions.md`：熱門討論表格新增 5 條（Claude Design handoff、Markdown KB ingest、工具鏈 Token 殺手、CLAUDE.md 規則上限、terminal-first 設計哲學）；技術彙整 prepend 2 條；最後新聞更新 2026-06-20
+  - `topics/community-tech-patterns.md`：技術彙整 prepend CLAUDE.md 規則上限模式；最後新聞更新 2026-06-20
+- 新增頁面：無
+- feature-radar 更新：無（本輪無新官方功能）
+- index.md 狀態變更：無
+- 呈現品質審查：
+  | 頁面 | 結果 |
+  |------|------|
+  | anthropic-government-policy.md | ✅ 通過 |
+  | ai-agent-safety.md | 📋 已記錄待辦（頁面 420+ 行超警戒線，建議 /wiki-lint 時重構時序） |
+  | john-jumper.md | ✅ 通過 |
+  | community-tech-discussions.md | ✅ 通過 |
+  | community-tech-patterns.md | ✅ 通過 |
+
 ## 2026-06-20 Ingest | news/2026-06-20.md（72 則）
 
 - 來源日報：`news/2026-06-20.md`（72 則，6 來源；主軸：Fable 5 / Mythos 出口管制持續（Ciauri 首爾記者會「數日內恢復」、白宮轉向制定 AI 安全規則、各國媒體跟進、境外付費用戶帳號停用）；OALABS 揭露攻擊者使用 Claude + Codex 入侵 14 家企業；JPMorgan 封鎖香港員工 Anthropic 存取；Claude Code Artifacts 正式發布（三家媒體跟進，feature-radar 升至 🔥🔥🔥🔥🔥）；MCP Enterprise Authorization 正式版（stable，Okta/VS Code SSO）；John Jumper 諾貝爾獎得主加入 Anthropic（待核實）；Boris Cherny Loop Engineering 哲學文章；context rot 修復五法；多 agent 協調困境社群討論）

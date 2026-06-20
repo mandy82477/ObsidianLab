@@ -95,6 +95,11 @@ MCP 的實際成本遠超多數使用者預期，已有多個量化案例：
 
 | 討論主題 | 首見 | 熱度 | 模式 | 核心論點 | 衍生 |
 |---------|------|------|------|---------|------|
+| 工具鏈才是 Token 殺手：82% 降耗實測與文件無辜論 | 2026-06-20 | 🔥 | ☄️閃現 | dev.to/kanfu-panda 兩篇互補文章：① 透過工具鏈優化將 token 用量降低 82%（附真實數據）；② 反直覺論點：燒 token 的不是文件而是工具設定——未精修的工具配置每次呼叫都帶入冗餘 context；提供可驗證的優化路徑（dev.to / #claudecode） | — |
+| CLAUDE.md 規則總量上限：每新規則必刪舊規則 | 2026-06-20 | 🔥 | ☄️閃現 | dev.to 作者分享：將 CLAUDE.md 規則數量設定硬上限，每新增一條必須刪除一條舊規則；設計原則：防止設定熵增（configuration entropy），保持 agent 指令集精簡有效，呼應「296→142 行品質反升」的社群實證（dev.to / #claudecode） | — |
+| Claude Design → Claude Code VSCode 交接最佳實踐 | 2026-06-20 | 🔥 | ☄️閃現 | Reddit 討論：設計稿從 Claude Design 交接給 Claude Code 的最佳工作流，聚焦 VSCode 整合；社群分享元件規格輸出格式、design token 對應策略，以及設計意圖如何在 context 傳遞不失真（Reddit r/ClaudeAI） | — |
+| Claude Code 終端機優先設計哲學 | 2026-06-20 | 🔥 | ☄️閃現 | Reddit 討論：為何 Claude Code 以終端機為主要介面而非 GUI？社群從工程哲學（Unix 管道、composability）、開發者文化、以及「程式即介面」的 agentic 設計觀點出發，分享各自對這個設計決策的解讀（Reddit r/ClaudeAI） | — |
+| Markdown 知識庫 ingest 語意保全：Claude Code 實踐分享 | 2026-06-20 | 🔥 | ☄️閃現 | Reddit 討論：使用 Claude Code 進行 Markdown 知識庫 ingestion 時，如何避免語意結構被破壞（semantic garbage）；討論涉及分塊策略、metadata 保留、結構標記保護等實作技巧（Reddit r/ClaudeAI） | — |
 | Loop Engineering 哲學完整文章：「我不再 prompt Claude，我寫 loop」 | 2026-06-20 | 🔥 | 🌊延燒 | Boris Cherny 名言的完整拆解文章（techstackups.com）：PR review、測試、push 等動作如何抽象為 loop；代表 AI 輔助開發進入「設計 loop」時代（HN score 4）；延伸自 2026-06-19 Boris Cherny loop 哲學討論 | — |
 | Context Rot 修復五法 | 2026-06-20 | 🔥🔥 | 🌊延燒 | Reddit r/ClaudeAI 熱帖：解決「Claude 越用越笨」五個方法——裁剪 tool output、壓縮歷史、分 session 隔離任務、重置前保存摘要、停止添加無關 context 改裁剪 tool output；核心論點：Claude Code 是 context 工程工具，「變笨」幾乎都是 context 腐蝕而非模型退步（Reddit r/ClaudeAI） | — |
 | MCP 預設 tool search：Claude Code 唯一自動工具發現的 agent | 2026-06-20 | 🔥 | ☄️閃現 | Reddit 討論：Claude Code 是唯一預設開啟 tool search 的 agent，讓 MCP 工具自動可發現；此設計是對「MCP 已死」論述的有力反駁，降低多工具協同的設定門檻（Reddit r/ClaudeAI） | — |
@@ -174,6 +179,24 @@ MCP 的實際成本遠超多數使用者預期，已有多個量化案例：
 ---
 
 ## 技術彙整
+
+### 工具鏈 Token 優化：82% 降耗實測與文件無辜論（2026-06-20）
+
+- **來源：** "AI coding getting pricier? I cut my tokens by 82% (with real data)"；"Your docs aren't burning your tokens — your tooling is"（dev.to/kanfu-panda）
+- **核心論點：** 工具鏈配置是 token 消耗的主因，而非文件本身；透過精修工具設定可將用量降低 82%，且有真實數據佐證
+- **關鍵回響：**
+  - 📝 支持：每次工具呼叫都會帶入工具本身的定義與 schema，未精修的工具配置形成「固定租金」，與 CLAUDE.md 每行指令的 token overhead 問題同構
+  - 🧪 跟進實測：dev.to/kanfu-panda 附有實測數據比較，具體方法包括精簡工具 schema、移除冗餘工具描述、按任務動態掛載工具
+- **收斂結論：** token 優化應從工具配置而非文件結構切入（推論）；「加文件 = 燒更多 token」是常見誤解，工具本身的 schema 才是隱性成本主體
+
+### CLAUDE.md 規則熵增防治：每新增一條必刪一條（2026-06-20）
+
+- **來源：** "I capped my Claude Code setup so every new rule kills an old one"（dev.to/mjmirza）
+- **核心論點：** 對 CLAUDE.md 設定規則總量上限，每新增一條規則強制刪除一條舊規則；防止設定熵增（configuration entropy），保持 agent 指令集精簡有效
+- **關鍵回響：**
+  - 📝 支持：與「296→142 行品質反升」的社群實證一致（2026-06-12 條目）；規則越多，遵守率越低——這是已有社群共識的現象
+  - 📝 反駁：無法預設每條規則等值，強制 1:1 替換可能刪掉高價值規則
+- **收斂結論：** 規則總量管理比規則品質管理更容易執行；「上限思維」作為防熵手段有可操作性，但選擇刪除哪條仍需判斷力
 
 ### Context Rot 修復五法（2026-06-20）
 
