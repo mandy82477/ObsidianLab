@@ -192,9 +192,9 @@ window.WIKI_DATA = {
       "firstSeen": "2026-06-20",
       "startDate": "",
       "lastUpdated": "2026-06-20",
-      "lastNewsUpdate": "",
-      "summary": "John Jumper 是 2024 年諾貝爾化學獎得主，因 AlphaFold 蛋白質結構預測研究與 Demis Hassabis 共同獲獎。他曾任職 Google DeepMind，並於 2026 年 6 月宣布加入 Anthropic（待核實）。社群觀察到 Google DeepMind 近期有兩位知名研究者相繼…",
-      "latestHeadline": "宣布加入 Anthropic（待核實），原任職 Google DeepMind；同期另有一位 DeepMind 知名研究者出走，社群觀察認為並非巧合"
+      "lastNewsUpdate": "2026-06-20",
+      "summary": "John Jumper 是 2024 年諾貝爾化學獎得主，因 AlphaFold 蛋白質結構預測研究與 Demis Hassabis 共同獲獎。他曾任職 Google DeepMind，並於 2026 年 6 月傳出加入 Anthropic（待核實，尚無 Anthropic 官方確認）。社群分析認為此舉是 Anthro…",
+      "latestHeadline": "dev.to 分析文出現，社群將此次招募定性為 Anthropic 向科學計算領域擴展的「前沿實驗室人才訊號」，強調與 Google DeepMind 的人才競爭格局"
     },
     {
       "id": "managed-agents",
@@ -314,7 +314,7 @@ window.WIKI_DATA = {
       "firstSeen": "",
       "startDate": "2026-04-27",
       "lastUpdated": "2026-06-20",
-      "lastNewsUpdate": "",
+      "lastNewsUpdate": "2026-06-20",
       "summary": "隨著 AI agent 被賦予更高自主性與系統操作權限，安全事故與防護工具同步出現。本頁追蹤 Claude Code 與相關 AI agent 的安全事件，涵蓋：CVE 漏洞披露（沙箱逃逸、遠端代碼執行）、提示注入與 Agentjacking 攻擊、惡意套件與供應鏈污染、以及 AI agent 不當執行造成的資料損毀事…",
       "latestHeadline": "[進攻性 AI 操作] OALABS：攻擊者以 Claude + Codex 入侵 14 家企業：OALABS 從蜜罐伺服器取得逾 1,000 個攻擊 agent session 日誌，記錄攻擊者如何使用 Claude Code 與 Codex 執行 N-Day exploit 開發、Bitcoin 錢包竊取、存取憑證"
     },
@@ -344,9 +344,9 @@ window.WIKI_DATA = {
       "firstSeen": "",
       "startDate": "2026-05-01",
       "lastUpdated": "2026-06-20",
-      "lastNewsUpdate": "",
+      "lastNewsUpdate": "2026-06-20",
       "summary": "Anthropic 與美國政府的衝突從 2026 年五月起持續升溫，至今仍未解決。表面上每次摩擦的導火線不同——軍事合約談不攏、Fable 5 護欄爭議、出口管制指令——但根源始終是同一個矛盾：**Anthropic 相信越強的模型越需要護欄；美國政府相信越強的模型越需要無限制存取。** 截至 2026-06-18，F…",
-      "latestHeadline": "[國際輿論] 多國媒體聚焦「AI Kill-Switch」敘事：dev.to 以「美國政府強制關閉 Fable 5 和 Mythos 5：第一個 AI Kill-Switch」為題，成為國際技術社群討論美國出口管制的主要框架之一；DW.com 報導美國限制 Anthropic AI 存取引發全球關切；Al Jazeer"
+      "latestHeadline": "[政治分析] Politico 深度報導：Anthropic 出口管制背後的政治處境：Politico 揭露 Anthropic 在美國出口管制政策中如何平衡政策倡議與商業利益；報導指出 Anthropic 的政治策略被內部與外部觀察者批評為「politically naive」（政治上天真）；深度剖析 Dario A"
     },
     {
       "id": "code-quality-decline",
@@ -1068,9 +1068,9 @@ window.WIKI_DATA = {
   "digestIndex": [
     {
       "date": "2026-06-20",
-      "articleCount": 72,
-      "preview": "Anthropic Claude Code Artifacts - claude.com",
-      "topCount": 5
+      "articleCount": 23,
+      "preview": "",
+      "topCount": 0
     },
     {
       "date": "2026-06-19",
