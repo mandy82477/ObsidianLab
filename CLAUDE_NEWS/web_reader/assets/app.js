@@ -364,20 +364,6 @@
       radarMeta.textContent = `最後更新 ${data.radar.lastUpdated}`;
     }
 
-    // Populate radar card 本週推薦 picks
-    const radarMd = data.radar?.markdown || '';
-    const picksMatch = radarMd.match(/##\s*⭐\s*本週推薦\n([\s\S]*?)(?:\n---|\n##)/);
-    if (picksMatch) {
-      const picks = picksMatch[1].trim().split('\n')
-        .filter(l => l.trim().startsWith('- '))
-        .map(l => l.replace(/^-\s*\*\*([^*]+)\*\*.*$/, '$1').replace(/^-\s*/, '').trim())
-        .filter(Boolean).slice(0, 3);
-      const picksEl = $('#radar-card-picks');
-      if (picksEl && picks.length) {
-        picksEl.innerHTML = picks.map(p => `<span class="radar-pick">${esc(p)}</span>`).join('');
-      }
-    }
-
     // Populate gap card last-updated label
     const gapMeta = $('#gap-card-updated');
     if (gapMeta) {

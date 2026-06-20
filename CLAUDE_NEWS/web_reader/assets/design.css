@@ -745,14 +745,6 @@ code {
   color: var(--ink-2); letter-spacing: 0.02em; line-height: 1.5;
 }
 
-/* Radar card picks */
-.radar-card__picks { margin-top: 8px; display: flex; flex-wrap: wrap; gap: 5px; }
-.radar-pick {
-  font-family: var(--font-mono); font-size: 10px;
-  color: var(--ink-2); background: var(--bg-1);
-  border: 1px solid var(--border-2); border-radius: var(--radius-2);
-  padding: 2px 7px; white-space: nowrap; letter-spacing: 0.02em;
-}
 
 /* Pills — border + color, no fill */
 .pill {
