@@ -13,7 +13,8 @@ window.WIKI_DATA = {
       "startDate": "",
       "lastUpdated": "2026-06-20",
       "lastNewsUpdate": "",
-      "summary": "Andrej Karpathy 為知名 AI 研究者，已加入 Anthropic（待核實，來源：HN 討論）。以 OpenAI 聯合創始人/研究總監及 Tesla AI/Autopilot 負責人身份廣為人知。加入 Anthropic 後，公開分享其「CLAUDE.md 四條規則」，其中強調「不讓 agent 讀超過必…"
+      "summary": "Andrej Karpathy 為知名 AI 研究者，已加入 Anthropic（待核實，來源：HN 討論）。以 OpenAI 聯合創始人/研究總監及 Tesla AI/Autopilot 負責人身份廣為人知。加入 Anthropic 後，公開分享其「CLAUDE.md 四條規則」，其中強調「不讓 agent 讀超過必…",
+      "latestHeadline": "HN 社群討論確認 Karpathy 已正式加入 Anthropic，Eureka Labs GitHub org 停更、LinkedIn 資訊移除，推測已解散（待核實）"
     },
     {
       "id": "boris-cherny",
@@ -27,7 +28,8 @@ window.WIKI_DATA = {
       "startDate": "",
       "lastUpdated": "2026-06-20",
       "lastNewsUpdate": "",
-      "summary": "Boris Cherny 是 Anthropic Claude Code 的創始人與負責人（Head of Claude Code），是 Claude Code 產品方向最主要的公開代言人。他以高頻率的公開聲明、哲學宣言與工程分享，持續引發開發者社群廣泛討論，被視為 Anthropic 技術文化的外部窗口。 ---"
+      "summary": "Boris Cherny 是 Anthropic Claude Code 的創始人與負責人（Head of Claude Code），是 Claude Code 產品方向最主要的公開代言人。他以高頻率的公開聲明、哲學宣言與工程分享，持續引發開發者社群廣泛討論，被視為 Anthropic 技術文化的外部窗口。 ---",
+      "latestHeadline": "techstackups.com 採訪引用 Loop 工程哲學名言「我不再 prompt Claude，我寫 loop 讓 loop 去 prompt Claude；我的工作是寫 loop」，被視為繼「coding is solved」後的第二個重要設計哲學表態"
     },
     {
       "id": "bugcrawl",
@@ -41,7 +43,8 @@ window.WIKI_DATA = {
       "startDate": "",
       "lastUpdated": "2026-06-20",
       "lastNewsUpdate": "",
-      "summary": "Bugcrawl 是 Anthropic 正在測試的新工具，專為 Claude Code 提供自動化漏洞偵測功能，強化 AI 輔助開發流程中的程式品質把關。目前尚未正式公開，資訊來源為 Google News / TestingCatalog 報導。截至 2026-06-19，無後續公開資訊，仍處於內部測試階段。 與 …"
+      "summary": "Bugcrawl 是 Anthropic 正在測試的新工具，專為 Claude Code 提供自動化漏洞偵測功能，強化 AI 輔助開發流程中的程式品質把關。目前尚未正式公開，資訊來源為 Google News / TestingCatalog 報導。截至 2026-06-19，無後續公開資訊，仍處於內部測試階段。 與 …",
+      "latestHeadline": "首次被媒體報導（TestingCatalog），確認 Anthropic 正在測試此工具"
     },
     {
       "id": "cat-wu",
@@ -55,7 +58,8 @@ window.WIKI_DATA = {
       "startDate": "",
       "lastUpdated": "2026-06-20",
       "lastNewsUpdate": "",
-      "summary": "Cat Wu 是 Anthropic Claude Code 產品負責人（Head of Claude Code Products），與創始人 Boris Cherny（見 [[entities/boris-cherny]]）共同主導 Claude Code 的產品方向。2026-05-14，她在公開訪問中提出 AI …"
+      "summary": "Cat Wu 是 Anthropic Claude Code 產品負責人（Head of Claude Code Products），與創始人 Boris Cherny（見 [[entities/boris-cherny]]）共同主導 Claude Code 的產品方向。2026-05-14，她在公開訪問中提出 AI …",
+      "latestHeadline": "公開訪問中提出「AI 主動性（proactivity）是下一個重大躍進」，闡述 Claude Code 從互動工具轉向自主代理平台的產品定位"
     },
     {
       "id": "chris-ciauri",
@@ -69,7 +73,8 @@ window.WIKI_DATA = {
       "startDate": "",
       "lastUpdated": "2026-06-20",
       "lastNewsUpdate": "",
-      "summary": "Anthropic 國際業務總監（Managing Director of International），主導 Anthropic 在亞太地區的業務拓展。Fable 5 與 Mythos 因美國出口管制政策於 2026 年中受限，導致亞太地區包括韓國用戶無法存取，此次首爾記者會是 Anthropic 首次在亞太地區就此…"
+      "summary": "Anthropic 國際業務總監（Managing Director of International），主導 Anthropic 在亞太地區的業務拓展。Fable 5 與 Mythos 因美國出口管制政策於 2026 年中受限，導致亞太地區包括韓國用戶無法存取，此次首爾記者會是 Anthropic 首次在亞太地區就此…",
+      "latestHeadline": "在首爾 Conrad 飯店召開記者會，宣布對 Fable 5 / Mythos 解禁「數日內」的信心（待核實）；同場出席者包括 Anthropic Korea 代表 Choi Ki-young"
     },
     {
       "id": "chris-olah",
@@ -83,7 +88,8 @@ window.WIKI_DATA = {
       "startDate": "",
       "lastUpdated": "2026-06-20",
       "lastNewsUpdate": "",
-      "summary": "Chris Olah 是 Anthropic 的共同創辦人之一，也是 AI 可解釋性（interpretability）研究領域的重要先驅。他以「神經網路電路」研究著名，強調透過理解 AI 內部機制來確保安全性，是 Anthropic 技術文化中「理解先於能力」立場的核心人物。 2026-05-26，Chris Ola…"
+      "summary": "Chris Olah 是 Anthropic 的共同創辦人之一，也是 AI 可解釋性（interpretability）研究領域的重要先驅。他以「神經網路電路」研究著名，強調透過理解 AI 內部機制來確保安全性，是 Anthropic 技術文化中「理解先於能力」立場的核心人物。 2026-05-26，Chris Ola…",
+      "latestHeadline": "Wired 長文《The Vatican's Man Inside Anthropic》深度側寫 Olah 在梵蒂岡事件中的角色，Guardian 同日質疑 Anthropic 是否存在「Vatican-washing」"
     },
     {
       "id": "claude-code",
@@ -97,7 +103,8 @@ window.WIKI_DATA = {
       "startDate": "",
       "lastUpdated": "2026-06-20",
       "lastNewsUpdate": "",
-      "summary": "Claude Code 是 Anthropic 的 AI 編碼 CLI 工具，支援 agentic 工作流程、MCP Server 整合、Hooks 機制與多代理協作框架（Managed Agents）。截至 2026-06-08，GitHub Stars 達 **131,000+**，持續增長且成為 SaaS 創辦人…"
+      "summary": "Claude Code 是 Anthropic 的 AI 編碼 CLI 工具，支援 agentic 工作流程、MCP Server 整合、Hooks 機制與多代理協作框架（Managed Agents）。截至 2026-06-08，GitHub Stars 達 **131,000+**，持續增長且成為 SaaS 創辦人…",
+      "latestHeadline": ""
     },
     {
       "id": "claude-design",
@@ -111,7 +118,8 @@ window.WIKI_DATA = {
       "startDate": "",
       "lastUpdated": "2026-06-20",
       "lastNewsUpdate": "",
-      "summary": "Claude Design 是 Anthropic 推出的 AI 設計工具功能，旨在讓 Claude 具備輔助 UI／視覺設計的能力。目前處於初期階段，社群評價以負面為主——幻覺嚴重、工具錯誤頻繁，且輸出設計風格過度貼近 Anthropic 自家品牌，忽略用戶提供的設計素材。截至 2026-06-20，無後續公開更新，…"
+      "summary": "Claude Design 是 Anthropic 推出的 AI 設計工具功能，旨在讓 Claude 具備輔助 UI／視覺設計的能力。目前處於初期階段，社群評價以負面為主——幻覺嚴重、工具錯誤頻繁，且輸出設計風格過度貼近 Anthropic 自家品牌，忽略用戶提供的設計素材。截至 2026-06-20，無後續公開更新，…",
+      "latestHeadline": "有開發者透過讓 Claude Design 洩漏部分指引，成功反向工程其系統提示詞，並以近似版本公開分享，顯示提示工程邏輯可被複製至其他 LLM 或 Claude Code 環境，降低了其差異化壁壘"
     },
     {
       "id": "claude-security",
@@ -125,7 +133,8 @@ window.WIKI_DATA = {
       "startDate": "",
       "lastUpdated": "2026-06-20",
       "lastNewsUpdate": "",
-      "summary": "Claude Security 於 2026-04-30 宣布推出公開測試版，並於 2026-05-01 正式向**全部 Enterprise 客戶**開放。ZDNET、SecurityWeek、SiliconANGLE、CRN、Pulse 2.0 等多家媒體報導。這是 Anthropic 首次以**獨立資安產品形式*…"
+      "summary": "Claude Security 於 2026-04-30 宣布推出公開測試版，並於 2026-05-01 正式向**全部 Enterprise 客戶**開放。ZDNET、SecurityWeek、SiliconANGLE、CRN、Pulse 2.0 等多家媒體報導。這是 Anthropic 首次以**獨立資安產品形式*…",
+      "latestHeadline": ""
     },
     {
       "id": "dario-amodei",
@@ -139,7 +148,8 @@ window.WIKI_DATA = {
       "startDate": "",
       "lastUpdated": "2026-06-20",
       "lastNewsUpdate": "",
-      "summary": "Anthropic 共同創辦人兼執行長（CEO）。與 Chris Olah、Daniela Amodei 等人從 OpenAI 出走後創立 Anthropic。主導公司整體策略與安全定位，在 AI 治理、政府政策、企業文化三條線高度活躍。 2026 年上半年公開言論集中在：（1）呼籲政府有權阻止危險 AI 模型發布（尤…"
+      "summary": "Anthropic 共同創辦人兼執行長（CEO）。與 Chris Olah、Daniela Amodei 等人從 OpenAI 出走後創立 Anthropic。主導公司整體策略與安全定位，在 AI 治理、政府政策、企業文化三條線高度活躍。 2026 年上半年公開言論集中在：（1）呼籲政府有權阻止危險 AI 模型發布（尤…",
+      "latestHeadline": "Bloomberg 報導兩則：（1）主張政府應可阻止危險 AI 發布，被解讀為針對中國；（2）直屬下屬僅一人的扁平組織結構引發討論。"
     },
     {
       "id": "fable-5",
@@ -153,7 +163,8 @@ window.WIKI_DATA = {
       "startDate": "",
       "lastUpdated": "2026-06-20",
       "lastNewsUpdate": "",
-      "summary": "Claude Fable 5 是 Anthropic 於 2026-06-09 發布的旗艦模型，為**史上首款向大眾開放的 Mythos 級模型**。Fable 5 與 Claude Mythos 5 共用相同的模型權重，差異在於 Fable 5 前置安全分類器——觸發時靜默 fallback 至 Claude Opu…"
+      "summary": "Claude Fable 5 是 Anthropic 於 2026-06-09 發布的旗艦模型，為**史上首款向大眾開放的 Mythos 級模型**。Fable 5 與 Claude Mythos 5 共用相同的模型權重，差異在於 Fable 5 前置安全分類器——觸發時靜默 fallback 至 Claude Opu…",
+      "latestHeadline": "多國主流媒體跟進報導：Al Jazeera（出口禁令加劇盟友緊張）、DW.com（全球關切美國限制 Anthropic AI 存取）、SiliconANGLE（「Trump 削弱 Anthropic」）、dev.to（「美國政府強制關閉 Fable 5 和 Mythos 5：第一個 AI Kill-Switch」）同步"
     },
     {
       "id": "google-investment",
@@ -167,7 +178,8 @@ window.WIKI_DATA = {
       "startDate": "",
       "lastUpdated": "2026-05-23",
       "lastNewsUpdate": "",
-      "summary": "2026-04-24，Google 宣布以現金與運算資源形式向 Anthropic 投資最高 **400 億美元**，初期承諾 100 億，其餘 300 億視績效目標達成情況追加。此次投資估值 Anthropic 為 **3,500 億美元**，是 AI 領域迄今規模最大的單筆投資之一。 Bloomberg、TechC…"
+      "summary": "2026-04-24，Google 宣布以現金與運算資源形式向 Anthropic 投資最高 **400 億美元**，初期承諾 100 億，其餘 300 億視績效目標達成情況追加。此次投資估值 Anthropic 為 **3,500 億美元**，是 AI 領域迄今規模最大的單筆投資之一。 Bloomberg、TechC…",
+      "latestHeadline": "Data Center Knowledge 報導：Google 與 Anthropic 的算力合作已達到 gigawatt 等級的預購規模，反映 AI 基礎建設的資本投入正進一步集中，Anthropic 對自身長期算力需求的預判已超越一般規模"
     },
     {
       "id": "john-jumper",
@@ -181,7 +193,8 @@ window.WIKI_DATA = {
       "startDate": "",
       "lastUpdated": "2026-06-20",
       "lastNewsUpdate": "",
-      "summary": "John Jumper 是 2024 年諾貝爾化學獎得主，因 AlphaFold 蛋白質結構預測研究與 Demis Hassabis 共同獲獎。他曾任職 Google DeepMind，並於 2026 年 6 月宣布加入 Anthropic（待核實）。社群觀察到 Google DeepMind 近期有兩位知名研究者相繼…"
+      "summary": "John Jumper 是 2024 年諾貝爾化學獎得主，因 AlphaFold 蛋白質結構預測研究與 Demis Hassabis 共同獲獎。他曾任職 Google DeepMind，並於 2026 年 6 月宣布加入 Anthropic（待核實）。社群觀察到 Google DeepMind 近期有兩位知名研究者相繼…",
+      "latestHeadline": "宣布加入 Anthropic（待核實），原任職 Google DeepMind；同期另有一位 DeepMind 知名研究者出走，社群觀察認為並非巧合"
     },
     {
       "id": "managed-agents",
@@ -195,7 +208,8 @@ window.WIKI_DATA = {
       "startDate": "",
       "lastUpdated": "2026-05-22",
       "lastNewsUpdate": "",
-      "summary": "Anthropic Managed Agents 是 Claude Platform 上的官方 Agent 框架，提供持久記憶、多路並行執行與可驗證輸出等功能。2026-04-28 首次加入跨會話記憶功能（正式公告）；2026-04-30 推出公開測試版，Anthropic 定位為「agentic AI 的 AWS」。…"
+      "summary": "Anthropic Managed Agents 是 Claude Platform 上的官方 Agent 框架，提供持久記憶、多路並行執行與可驗證輸出等功能。2026-04-28 首次加入跨會話記憶功能（正式公告）；2026-04-30 推出公開測試版，Anthropic 定位為「agentic AI 的 AWS」。…",
+      "latestHeadline": ""
     },
     {
       "id": "mythos",
@@ -209,7 +223,8 @@ window.WIKI_DATA = {
       "startDate": "",
       "lastUpdated": "2026-06-20",
       "lastNewsUpdate": "",
-      "summary": "**⚠️ 目前（2026-06-13 起）因出口管制停用，見 [[entities/fable-5]] 解禁進展。** Claude Mythos 是 Anthropic 的高能力 AI 模型家族，已確認具備**自主發現並武器化軟體漏洞、生成可執行 exploit** 的能力，是 AI 安全領域的重大里程碑。 **20…"
+      "summary": "**⚠️ 目前（2026-06-13 起）因出口管制停用，見 [[entities/fable-5]] 解禁進展。** Claude Mythos 是 Anthropic 的高能力 AI 模型家族，已確認具備**自主發現並武器化軟體漏洞、生成可執行 exploit** 的能力，是 AI 安全領域的重大里程碑。 **20…",
+      "latestHeadline": "國際媒體全面跟進：Al Jazeera、DW.com、SiliconANGLE、dev.to 同步報導 Fable 5 / Mythos 出口禁令，核心敘事從「美國技術管制」擴大至「盟友間地緣政治緊張」與「AI Kill-Switch」爭議"
     },
     {
       "id": "openclaw",
@@ -223,7 +238,8 @@ window.WIKI_DATA = {
       "startDate": "",
       "lastUpdated": "2026-05-14",
       "lastNewsUpdate": "",
-      "summary": "OpenClaw 是一款第三方 Claude agentic 工具，設計用途為擴展 Claude 訂閱方案的自動化用量。歷經 2026-04-25 配額禁令後，Anthropic 於 2026-05-14 宣布恢復允許 OpenClaw 等第三方工具使用，但代價是：**這些用量全數脫離訂閱方案，改為按完整 API 費率…"
+      "summary": "OpenClaw 是一款第三方 Claude agentic 工具，設計用途為擴展 Claude 訂閱方案的自動化用量。歷經 2026-04-25 配額禁令後，Anthropic 於 2026-05-14 宣布恢復允許 OpenClaw 等第三方工具使用，但代價是：**這些用量全數脫離訂閱方案，改為按完整 API 費率…",
+      "latestHeadline": ""
     },
     {
       "id": "opencode",
@@ -237,7 +253,8 @@ window.WIKI_DATA = {
       "startDate": "",
       "lastUpdated": "2026-06-20",
       "lastNewsUpdate": "",
-      "summary": "OpenCode 是 Claude Code 的主要開源替代品，截至 2026-05-12 已吸引 **157,000 名開發者**轉向（The New Stack 報導）。功能與體驗被 XDA 評測認為與 Claude Code 相當，且完全開源免費。即便 Anthropic 宣布倍增速率限制，對 vendor lo…"
+      "summary": "OpenCode 是 Claude Code 的主要開源替代品，截至 2026-05-12 已吸引 **157,000 名開發者**轉向（The New Stack 報導）。功能與體驗被 XDA 評測認為與 Claude Code 相當，且完全開源免費。即便 Anthropic 宣布倍增速率限制，對 vendor lo…",
+      "latestHeadline": ""
     },
     {
       "id": "opus-4-7",
@@ -251,7 +268,8 @@ window.WIKI_DATA = {
       "startDate": "",
       "lastUpdated": "2026-06-20",
       "lastNewsUpdate": "",
-      "summary": "**當前狀態：** 已被 Opus 4.8 / Fable 5 取代，現為第三階旗艦；agentic coding 場景仍有口碑，一般對話評價分歧。 Claude Opus 4.7 於 2026-04-24 正式發布，已相繼被 Opus 4.8（2026-05-28）與 Fable 5（2026-06-09）取代，現為…"
+      "summary": "**當前狀態：** 已被 Opus 4.8 / Fable 5 取代，現為第三階旗艦；agentic coding 場景仍有口碑，一般對話評價分歧。 Claude Opus 4.7 於 2026-04-24 正式發布，已相繼被 Opus 4.8（2026-05-28）與 Fable 5（2026-06-09）取代，現為…",
+      "latestHeadline": ""
     },
     {
       "id": "opus-4-8",
@@ -265,7 +283,8 @@ window.WIKI_DATA = {
       "startDate": "",
       "lastUpdated": "2026-06-20",
       "lastNewsUpdate": "",
-      "summary": "Claude Opus 4.8 於 2026-05-28 正式發布，同步推出 Dynamic Workflows（Research Preview）與 Fast Mode 降價，是 2026 年以來 Anthropic 發布規模最大的旗艦更新。**2026-06-09 Claude Fable 5 發布後，Opus 4…"
+      "summary": "Claude Opus 4.8 於 2026-05-28 正式發布，同步推出 Dynamic Workflows（Research Preview）與 Fast Mode 降價，是 2026 年以來 Anthropic 發布規模最大的旗艦更新。**2026-06-09 Claude Fable 5 發布後，Opus 4…",
+      "latestHeadline": ""
     },
     {
       "id": "pricing",
@@ -279,7 +298,8 @@ window.WIKI_DATA = {
       "startDate": "",
       "lastUpdated": "2026-06-20",
       "lastNewsUpdate": "",
-      "summary": "Anthropic 訂閱計費政策持續演變。原定 2026-06-15 實施的「程式化用量（Agent SDK、`claude -p`）脫離訂閱、改按 API 費率計費」政策，於 **2026-06-16 宣布暫停**，重新推行時間未定。目前所有付費方案用量仍維持原訂閱配額制。核心爭點：Anthropic 訂閱方案設計以…"
+      "summary": "Anthropic 訂閱計費政策持續演變。原定 2026-06-15 實施的「程式化用量（Agent SDK、`claude -p`）脫離訂閱、改按 API 費率計費」政策，於 **2026-06-16 宣布暫停**，重新推行時間未定。目前所有付費方案用量仍維持原訂閱配額制。核心爭點：Anthropic 訂閱方案設計以…",
+      "latestHeadline": ""
     }
   ],
   "topics": [
@@ -295,7 +315,8 @@ window.WIKI_DATA = {
       "startDate": "2026-04-27",
       "lastUpdated": "2026-06-20",
       "lastNewsUpdate": "",
-      "summary": "隨著 AI agent 被賦予更高自主性與系統操作權限，安全事故與防護工具同步出現。本頁追蹤 Claude Code 與相關 AI agent 的安全事件，涵蓋：CVE 漏洞披露（沙箱逃逸、遠端代碼執行）、提示注入與 Agentjacking 攻擊、惡意套件與供應鏈污染、以及 AI agent 不當執行造成的資料損毀事…"
+      "summary": "隨著 AI agent 被賦予更高自主性與系統操作權限，安全事故與防護工具同步出現。本頁追蹤 Claude Code 與相關 AI agent 的安全事件，涵蓋：CVE 漏洞披露（沙箱逃逸、遠端代碼執行）、提示注入與 Agentjacking 攻擊、惡意套件與供應鏈污染、以及 AI agent 不當執行造成的資料損毀事…",
+      "latestHeadline": "[進攻性 AI 操作] OALABS：攻擊者以 Claude + Codex 入侵 14 家企業：OALABS 從蜜罐伺服器取得逾 1,000 個攻擊 agent session 日誌，記錄攻擊者如何使用 Claude Code 與 Codex 執行 N-Day exploit 開發、Bitcoin 錢包竊取、存取憑證"
     },
     {
       "id": "anthropic-business",
@@ -309,7 +330,8 @@ window.WIKI_DATA = {
       "startDate": "2026-05-28",
       "lastUpdated": "2026-06-20",
       "lastNewsUpdate": "",
-      "summary": "Anthropic 在技術聲譽與企業採用率上持續上升（企業採用率 34.4% 首超 OpenAI 32.3%，Ramp AI Index 2026-05-15），並於 2026-05-28 完成 $65B Series H 融資，估值 $965B，超越 OpenAI 成全球最大 AI 新創。核心矛盾從「PMF vs 獲…"
+      "summary": "Anthropic 在技術聲譽與企業採用率上持續上升（企業採用率 34.4% 首超 OpenAI 32.3%，Ramp AI Index 2026-05-15），並於 2026-05-28 完成 $65B Series H 融資，估值 $965B，超越 OpenAI 成全球最大 AI 新創。核心矛盾從「PMF vs 獲…",
+      "latestHeadline": "[出口管制商業衝擊] JPMorgan Chase 香港封鎖 Anthropic 存取（補充報導）：Google News / Private Banker International 跟進報導（2026-06-19），確認 JPMorgan Chase 已封鎖香港員工使用 Anthropic AI 模型，直接原因為美"
     },
     {
       "id": "anthropic-government-policy",
@@ -323,7 +345,8 @@ window.WIKI_DATA = {
       "startDate": "2026-05-01",
       "lastUpdated": "2026-06-20",
       "lastNewsUpdate": "",
-      "summary": "Anthropic 與美國政府的衝突從 2026 年五月起持續升溫，至今仍未解決。表面上每次摩擦的導火線不同——軍事合約談不攏、Fable 5 護欄爭議、出口管制指令——但根源始終是同一個矛盾：**Anthropic 相信越強的模型越需要護欄；美國政府相信越強的模型越需要無限制存取。** 截至 2026-06-18，F…"
+      "summary": "Anthropic 與美國政府的衝突從 2026 年五月起持續升溫，至今仍未解決。表面上每次摩擦的導火線不同——軍事合約談不攏、Fable 5 護欄爭議、出口管制指令——但根源始終是同一個矛盾：**Anthropic 相信越強的模型越需要護欄；美國政府相信越強的模型越需要無限制存取。** 截至 2026-06-18，F…",
+      "latestHeadline": "[國際輿論] 多國媒體聚焦「AI Kill-Switch」敘事：dev.to 以「美國政府強制關閉 Fable 5 和 Mythos 5：第一個 AI Kill-Switch」為題，成為國際技術社群討論美國出口管制的主要框架之一；DW.com 報導美國限制 Anthropic AI 存取引發全球關切；Al Jazeer"
     },
     {
       "id": "code-quality-decline",
@@ -337,7 +360,8 @@ window.WIKI_DATA = {
       "startDate": "2026-03（推測）",
       "lastUpdated": "2026-06-20",
       "lastNewsUpdate": "",
-      "summary": "**當前狀態：** 官方已說明原因，恢復情況待驗證；最後更新 2026-05-29，後續進展待補。⚠️ 本頁約三週未更新。 Claude Code 在 2026 年 3 月至 4 月間出現長達約一個月的效能明顯退步，引發大量開發者不滿。2026-04-24，Anthropic 首次正式承認此問題，說明原因為**工程疏失…"
+      "summary": "**當前狀態：** 官方已說明原因，恢復情況待驗證；最後更新 2026-05-29，後續進展待補。⚠️ 本頁約三週未更新。 Claude Code 在 2026 年 3 月至 4 月間出現長達約一個月的效能明顯退步，引發大量開發者不滿。2026-04-24，Anthropic 首次正式承認此問題，說明原因為**工程疏失…",
+      "latestHeadline": ""
     },
     {
       "id": "community-tech-discussions",
@@ -351,7 +375,8 @@ window.WIKI_DATA = {
       "startDate": "2026-04-25",
       "lastUpdated": "2026-06-20",
       "lastNewsUpdate": "",
-      "summary": "追蹤 Claude Code 社群中活躍的概念辯論、設計哲學、實證研究與技術反思。與 [[topics/community-tech-patterns]] 追蹤具體工具和工作流不同，本頁聚焦思想碰撞：什麼哲學正在成形、什麼假設受到挑戰、什麼共識正在收斂。頁面結構：**🔥 本週熱點**（當前最熱的持續議題）→ **🌊 長…"
+      "summary": "追蹤 Claude Code 社群中活躍的概念辯論、設計哲學、實證研究與技術反思。與 [[topics/community-tech-patterns]] 追蹤具體工具和工作流不同，本頁聚焦思想碰撞：什麼哲學正在成形、什麼假設受到挑戰、什麼共識正在收斂。頁面結構：**🔥 本週熱點**（當前最熱的持續議題）→ **🌊 長…",
+      "latestHeadline": ""
     },
     {
       "id": "community-tech-patterns",
@@ -365,7 +390,8 @@ window.WIKI_DATA = {
       "startDate": "2026-04-25",
       "lastUpdated": "2026-06-20",
       "lastNewsUpdate": "",
-      "summary": "追蹤 Claude Code 社群在實際開發中累積的**工作流與應用模式**。本頁收錄的模式類型包括 Multi-agent 架構、Skills 設計、CLAUDE.md 管理、Hooks 與自動化、模型使用策略、Token 成本優化、記憶與知識管理、Plugin/MCP 整合等，持續累積形成社群最佳實踐知識庫。 工具…"
+      "summary": "追蹤 Claude Code 社群在實際開發中累積的**工作流與應用模式**。本頁收錄的模式類型包括 Multi-agent 架構、Skills 設計、CLAUDE.md 管理、Hooks 與自動化、模型使用策略、Token 成本優化、記憶與知識管理、Plugin/MCP 整合等，持續累積形成社群最佳實踐知識庫。 工具…",
+      "latestHeadline": ""
     },
     {
       "id": "community-tech-timeline",
@@ -379,7 +405,8 @@ window.WIKI_DATA = {
       "startDate": "2026-04-25",
       "lastUpdated": "2026-06-20",
       "lastNewsUpdate": "",
-      "summary": "**此頁為歷史記錄，2026-05-22 後的時序整合至 [[topics/community-tech-patterns]]。** 本頁記錄 Claude Code 社群技術應用趨勢的時序演進，追蹤範圍從 2026 年 4 月下旬至今，最新條目為 2026 年 5 月下旬。與 [[topics/community-t…"
+      "summary": "**此頁為歷史記錄，2026-05-22 後的時序整合至 [[topics/community-tech-patterns]]。** 本頁記錄 Claude Code 社群技術應用趨勢的時序演進，追蹤範圍從 2026 年 4 月下旬至今，最新條目為 2026 年 5 月下旬。與 [[topics/community-t…",
+      "latestHeadline": "Spec-Driven Development 工作流（HN Show）：多步驟生成規格（需求→程式碼分析→設計）→ 分拆子任務→每步之間清除 context再執行，藉此降低成本並提升 agent 表現；與 Managed Agents Outcomes 機制的「spec 作為執行依據」原則在社群層面形成呼應，是規格驅"
     },
     {
       "id": "community-tech-tools",
@@ -393,7 +420,8 @@ window.WIKI_DATA = {
       "startDate": "2026-04-25",
       "lastUpdated": "2026-06-20",
       "lastNewsUpdate": "",
-      "summary": "追蹤 Claude Code 社群發布的工具、插件與 skill 專案。此頁為 lint 專用，由 /wiki-lint 定期策展；每日 ingest 不更新此頁。日常工作流模式見 [[topics/community-tech-patterns]]，概念辯論見 [[topics/community-tech-disc…"
+      "summary": "追蹤 Claude Code 社群發布的工具、插件與 skill 專案。此頁為 lint 專用，由 /wiki-lint 定期策展；每日 ingest 不更新此頁。日常工作流模式見 [[topics/community-tech-patterns]]，概念辯論見 [[topics/community-tech-disc…",
+      "latestHeadline": ""
     },
     {
       "id": "competitor-landscape",
@@ -407,7 +435,8 @@ window.WIKI_DATA = {
       "startDate": "2026-04",
       "lastUpdated": "2026-06-20",
       "lastNewsUpdate": "",
-      "summary": "Claude Code 已成為 AI 輔助編碼的標竿產品，但競爭正快速升溫。2026-05 是關鍵轉折月：OpenAI Codex 下載量單週爆增 1,397%、OpenCode 吸走 15.7 萬開發者、Microsoft 取消數千名員工授權改推 Copilot CLI——分流訊號同步出現。另一方面，Anthropi…"
+      "summary": "Claude Code 已成為 AI 輔助編碼的標竿產品，但競爭正快速升溫。2026-05 是關鍵轉折月：OpenAI Codex 下載量單週爆增 1,397%、OpenCode 吸走 15.7 萬開發者、Microsoft 取消數千名員工授權改推 Copilot CLI——分流訊號同步出現。另一方面，Anthropi…",
+      "latestHeadline": "[SpaceX 完成 $60B Cursor 收購] 競爭格局重塑：dev.to 分析文章評估 SpaceX 以 600 億美元完成收購 Cursor 對 Claude Code 競爭格局的影響；9to5Mac 確認收購正式完成（IPO 後一週）。Cursor 此前與 Anthropic 有深度整合關係，SpaceX "
     },
     {
       "id": "enterprise-cost-management",
@@ -421,7 +450,8 @@ window.WIKI_DATA = {
       "startDate": "2026-05-01",
       "lastUpdated": "2026-06-20",
       "lastNewsUpdate": "",
-      "summary": "大型組織採用 Claude Code 後，成本結構挑戰迅速浮現。Uber 四個月耗盡全年 AI 預算（Forbes 報導）是目前最具代表性的公開案例，揭示企業在缺乏細粒度使用量控管工具的情況下，AI 工具成本極易失控。此議題已從開發者社群的個人抱怨升級至 Forbes、Business Insider 等主流財經媒體的…"
+      "summary": "大型組織採用 Claude Code 後，成本結構挑戰迅速浮現。Uber 四個月耗盡全年 AI 預算（Forbes 報導）是目前最具代表性的公開案例，揭示企業在缺乏細粒度使用量控管工具的情況下，AI 工具成本極易失控。此議題已從開發者社群的個人抱怨升級至 Forbes、Business Insider 等主流財經媒體的…",
+      "latestHeadline": "[成本結構分析] Always-on Claude agent 低成本時代正在結束：Unite.AI 分析指出持續運行 Claude agent 的低成本蜜月期已悄然結束，隨 API 用量計費調整與企業規模化擴大，成本結構正發生質變；顯示過去以訂閱額度消耗為主的計費模式，已逐步向實際 API 用量靠攏（Unite.AI"
     },
     {
       "id": "enterprise-tool-tracker",
@@ -436,6 +466,7 @@ window.WIKI_DATA = {
       "lastUpdated": "2026-06-20",
       "lastNewsUpdate": "",
       "summary": "追蹤各大型企業目前正在使用的 AI 編碼工具，以及工具選擇的變化軌跡。資料來源為公開報導與內部消息洩露，僅記錄有明確來源佐證的事實。 目前追蹤 14 家企業（頂尖 7 家、大型 7 家），其中 12 家狀態為使用中（✅），1 家退出（❌，Microsoft 停用 Claude Code），1 家因出口管制被迫退出（❌，…",
+      "latestHeadline": "JPMorgan Chase 香港封鎖 Anthropic — 跟進報導確認：Private Banker International 跟進報導（Google News 2026-06-19）再次確認 JPMorgan Chase 香港員工被封鎖使用 Anthropic AI 模型，原因為美國出口管制；FT 首報（20",
       "enterpriseTracker": {
         "enterprises": [
           {
@@ -1015,7 +1046,8 @@ window.WIKI_DATA = {
       "startDate": "2026-05-17",
       "lastUpdated": "2026-06-19",
       "lastNewsUpdate": "",
-      "summary": "比對社群工具所反映的開發者痛點，與 Anthropic 官方功能路線之間的覆蓋情況。識別哪些痛點官方正在積極解決、哪些被忽略或結構性缺席。 截至 2026-06-19，矩陣涵蓋 9 個核心痛點：多 agent 協調與安全隔離已獲高度官方對應；輸出品質驗證與平台可及性（Artifacts 部分覆蓋）屬部分對應；跨 ses…"
+      "summary": "比對社群工具所反映的開發者痛點，與 Anthropic 官方功能路線之間的覆蓋情況。識別哪些痛點官方正在積極解決、哪些被忽略或結構性缺席。 截至 2026-06-19，矩陣涵蓋 9 個核心痛點：多 agent 協調與安全隔離已獲高度官方對應；輸出品質驗證與平台可及性（Artifacts 部分覆蓋）屬部分對應；跨 ses…",
+      "latestHeadline": "Claude Code Artifacts 部分填補「平台可及性」缺口：工作階段進度可輸出為可共享互動網頁，解決輸出共享問題，但輸入操作（行動/瀏覽器指派任務）仍無解；矩陣狀態從 ❌ 升為 ⚡"
     },
     {
       "id": "recursive-self-improvement",
@@ -1029,7 +1061,8 @@ window.WIKI_DATA = {
       "startDate": "2026-06-04",
       "lastUpdated": "2026-06-09",
       "lastNewsUpdate": "",
-      "summary": "⚠️ 本頁時序最新止於 2026-06-09，後續事件待補。 2026-06-04，Anthropic Institute 發布《When AI Builds Itself: Our progress toward recursive self-improvement》報告（HN 477），首次系統性披露 AI 加速自…"
+      "summary": "⚠️ 本頁時序最新止於 2026-06-09，後續事件待補。 2026-06-04，Anthropic Institute 發布《When AI Builds Itself: Our progress toward recursive self-improvement》報告（HN 477），首次系統性披露 AI 加速自…",
+      "latestHeadline": "dev.to 多篇文章整理 Anthropic 6/4 報告數據：5 月份超過 80% 生產程式碼由 Claude 撰寫（非 80-90% 區間，是確認的下限）"
     }
   ],
   "digestIndex": [

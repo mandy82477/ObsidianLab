@@ -326,7 +326,7 @@
   <div class="entity-row__name"><span class="bracket">[[</span>${esc(e.id)}<span class="bracket">]]</span></div>
   <div class="entity-row__type">${esc(e.entityType)}</div>
   <div><span class="pill pill--${e.pill}">${esc(shortStatus(e.status))}</span></div>
-  <div class="entity-row__summary" title="${esc(e.summary)}">${esc(e.summary)}</div>
+  <div class="entity-row__summary">${esc(e.latestHeadline || '')}</div>
   <div class="entity-row__updated">${e.lastNewsUpdate === today ? '<span class="badge-new">今日</span>' : ''}${esc(e.lastUpdated || e.firstSeen || '')}</div>
 </div>`).join('');
   }
@@ -342,7 +342,7 @@
 <div class="entity-row entity-row--topic" onclick="openWikiPage('${esc(t.id)}','topic')">
   <div class="entity-row__name"><span class="bracket">[[</span>${esc(t.id)}<span class="bracket">]]</span></div>
   <div><span class="pill pill--${t.pill}">${esc(shortStatus(t.status))}</span></div>
-  <div class="entity-row__summary" title="${esc(t.summary)}">${esc(t.summary)}</div>
+  <div class="entity-row__summary">${esc(t.latestHeadline || '')}</div>
   <div class="entity-row__updated">${t.lastNewsUpdate === today ? '<span class="badge-new">今日</span>' : ''}${esc(t.lastUpdated || t.startDate || '')}</div>
 </div>`).join('');
   }

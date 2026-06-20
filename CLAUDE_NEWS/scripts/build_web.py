@@ -88,6 +88,36 @@ META_RE = {
 SUMMARY_HEADERS = ["## 現況", "## 摘要"]
 
 
+def latest_headline(raw: str) -> str:
+    """Extract the most recent update headline from wiki markdown."""
+    def clean_line(ls: str) -> str:
+        text = re.sub(r'^-\s*', '', ls)           # strip leading "- "
+        text = re.sub(r'^\*{0,2}\d{4}-\d{2}-\d{2}\*{0,2}\s*.?\s*', '', text)  # strip date (bold or plain) + any colon
+        text = re.sub(r'^\*\*\[[^\]]*\]\*\*\s*', '', text)       # strip **[tag]**
+        text = re.sub(r'\*{1,3}([^*\n]+)\*{1,3}', r'\1', text)  # strip bold/italic
+        return text.strip()[:160]
+
+    # Pattern 1: ## 歷史記錄 — "- YYYY-MM-DD：text"
+    hist_m = re.search(r'##\s*歷史記錄\s*\n([\s\S]*?)(?:\n##|\n---|\Z)', raw)
+    if hist_m:
+        for line in hist_m.group(1).splitlines():
+            ls = line.strip()
+            if ls.startswith('- '):
+                result = clean_line(ls)
+                if result:
+                    return result
+    # Pattern 2: ## 時序 — "### YYYY-MM-DD\n- **[tag] description**"
+    time_m = re.search(r'##\s*時序\s*\n([\s\S]*?)(?:\n##|\Z)', raw)
+    if time_m:
+        for line in time_m.group(1).splitlines():
+            ls = line.strip()
+            if ls.startswith('- '):
+                result = clean_line(ls)
+                if result:
+                    return result
+    return ''
+
+
 def strip_llm_sections(md: str) -> str:
     """Remove any H2 section whose title contains '給 LLM' (and everything after it)."""
     return re.sub(r'\n## [^\n]*給 LLM[^\n]*\n[\s\S]*', '', md)
@@ -207,6 +237,7 @@ def parse_wiki(f: Path, page_type: str) -> dict:
         "lastUpdated": "",
         "lastNewsUpdate": "",
         "summary": "",
+        "latestHeadline": "",
         "markdown": raw,
     }
 
@@ -235,6 +266,7 @@ def parse_wiki(f: Path, page_type: str) -> dict:
     # first 160 chars of summary
     raw_summary = " ".join(summary_lines)
     meta["summary"] = raw_summary[:160] + ("…" if len(raw_summary) > 160 else "")
+    meta["latestHeadline"] = latest_headline(raw)
     meta["pill"] = pill_class(meta["status"])
 
     return meta
