@@ -101,8 +101,8 @@ window.WIKI_DATA = {
       "pill": "active",
       "firstSeen": "2025（正式推出）",
       "startDate": "",
-      "lastUpdated": "2026-06-20",
-      "lastNewsUpdate": "",
+      "lastUpdated": "2026-06-21",
+      "lastNewsUpdate": "2026-06-21",
       "summary": "Claude Code 是 Anthropic 的 AI 編碼 CLI 工具，支援 agentic 工作流程、MCP Server 整合、Hooks 機制與多代理協作框架（Managed Agents）。截至 2026-06-08，GitHub Stars 達 **131,000+**，持續增長且成為 SaaS 創辦人…",
       "latestHeadline": ""
     },
@@ -146,10 +146,10 @@ window.WIKI_DATA = {
       "pill": "active",
       "firstSeen": "2026-04-25",
       "startDate": "",
-      "lastUpdated": "2026-06-20",
-      "lastNewsUpdate": "",
+      "lastUpdated": "2026-06-21",
+      "lastNewsUpdate": "2026-06-21",
       "summary": "Anthropic 共同創辦人兼執行長（CEO）。與 Chris Olah、Daniela Amodei 等人從 OpenAI 出走後創立 Anthropic。主導公司整體策略與安全定位，在 AI 治理、政府政策、企業文化三條線高度活躍。 2026 年上半年公開言論集中在：（1）呼籲政府有權阻止危險 AI 模型發布（尤…",
-      "latestHeadline": "Bloomberg 報導兩則：（1）主張政府應可阻止危險 AI 發布，被解讀為針對中國；（2）直屬下屬僅一人的扁平組織結構引發討論。"
+      "latestHeadline": "Times of India 採訪談離開 OpenAI：「最終別人會來判斷誰是對的。」"
     },
     {
       "id": "fable-5",
@@ -186,15 +186,15 @@ window.WIKI_DATA = {
       "pageType": "entity",
       "name": "John Jumper",
       "entityType": "person",
-      "status": "active（待核實）",
+      "status": "active",
       "domain": "👤 人物",
       "pill": "active",
       "firstSeen": "2026-06-20",
       "startDate": "",
-      "lastUpdated": "2026-06-20",
-      "lastNewsUpdate": "2026-06-20",
-      "summary": "John Jumper 是 2024 年諾貝爾化學獎得主，因 AlphaFold 蛋白質結構預測研究與 Demis Hassabis 共同獲獎。他曾任職 Google DeepMind，並於 2026 年 6 月傳出加入 Anthropic（待核實，尚無 Anthropic 官方確認）。社群分析認為此舉是 Anthro…",
-      "latestHeadline": "dev.to 分析文出現，社群將此次招募定性為 Anthropic 向科學計算領域擴展的「前沿實驗室人才訊號」，強調與 Google DeepMind 的人才競爭格局"
+      "lastUpdated": "2026-06-21",
+      "lastNewsUpdate": "2026-06-21",
+      "summary": "John Jumper 是 2024 年諾貝爾化學獎得主，因 AlphaFold 蛋白質結構預測研究與 Demis Hassabis 共同獲獎。Reuters 於 2026-06-19 正式確認他已離開 Google DeepMind、加入 Anthropic（HN score 77）。社群分析認為此舉是 Anthro…",
+      "latestHeadline": "Reuters 正式確認離開 Google DeepMind 加入 Anthropic（HN score 77）"
     },
     {
       "id": "managed-agents",
@@ -296,7 +296,7 @@ window.WIKI_DATA = {
       "pill": "active",
       "firstSeen": "2026-04-25",
       "startDate": "",
-      "lastUpdated": "2026-06-20",
+      "lastUpdated": "2026-06-21",
       "lastNewsUpdate": "",
       "summary": "Anthropic 訂閱計費政策持續演變。原定 2026-06-15 實施的「程式化用量（Agent SDK、`claude -p`）脫離訂閱、改按 API 費率計費」政策，於 **2026-06-16 宣布暫停**，重新推行時間未定。目前所有付費方案用量仍維持原訂閱配額制。核心爭點：Anthropic 訂閱方案設計以…",
       "latestHeadline": ""
@@ -328,10 +328,10 @@ window.WIKI_DATA = {
       "pill": "active",
       "firstSeen": "",
       "startDate": "2026-05-28",
-      "lastUpdated": "2026-06-20",
+      "lastUpdated": "2026-06-21",
       "lastNewsUpdate": "",
       "summary": "Anthropic 在技術聲譽與企業採用率上持續上升（企業採用率 34.4% 首超 OpenAI 32.3%，Ramp AI Index 2026-05-15），並於 2026-05-28 完成 $65B Series H 融資，估值 $965B，超越 OpenAI 成全球最大 AI 新創。核心矛盾從「PMF vs 獲…",
-      "latestHeadline": "[出口管制商業衝擊] JPMorgan Chase 香港封鎖 Anthropic 存取（補充報導）：Google News / Private Banker International 跟進報導（2026-06-19），確認 JPMorgan Chase 已封鎖香港員工使用 Anthropic AI 模型，直接原因為美"
+      "latestHeadline": "[Microsoft 退出] Microsoft 宣布在 Fable 5 封鎖期間逐步停止內部使用 Claude Code：MSN / Google News 報導，Microsoft 宣布將逐步停止讓內部工程師使用 Claude Code，自家 Codex 為主要替代方案；出口管制造成的服務不確定性疊加成本壓力，加速"
     },
     {
       "id": "anthropic-government-policy",
@@ -343,10 +343,10 @@ window.WIKI_DATA = {
       "pill": "active",
       "firstSeen": "",
       "startDate": "2026-05-01",
-      "lastUpdated": "2026-06-20",
-      "lastNewsUpdate": "2026-06-20",
-      "summary": "Anthropic 與美國政府的衝突從 2026 年五月起持續升溫，至今仍未解決。表面上每次摩擦的導火線不同——軍事合約談不攏、Fable 5 護欄爭議、出口管制指令——但根源始終是同一個矛盾：**Anthropic 相信越強的模型越需要護欄；美國政府相信越強的模型越需要無限制存取。** 截至 2026-06-18，F…",
-      "latestHeadline": "[政治分析] Politico 深度報導：Anthropic 出口管制背後的政治處境：Politico 揭露 Anthropic 在美國出口管制政策中如何平衡政策倡議與商業利益；報導指出 Anthropic 的政治策略被內部與外部觀察者批評為「politically naive」（政治上天真）；深度剖析 Dario A"
+      "lastUpdated": "2026-06-21",
+      "lastNewsUpdate": "2026-06-21",
+      "summary": "Anthropic 與美國政府的衝突從 2026 年五月起持續升溫，至今仍未解決。表面上每次摩擦的導火線不同——軍事合約談不攏、Fable 5 護欄爭議、出口管制指令——但根源始終是同一個矛盾：**Anthropic 相信越強的模型越需要護欄；美國政府相信越強的模型越需要無限制存取。** 截至 2026-06-21（封…",
+      "latestHeadline": "[Trump 鬆口] G7 後首度暗示放寬管制：Trump 在 Axios 採訪中稱 Anthropic「行為非常負責任」，為 Fable 5 封鎖啟動以來最明顯的政府態度轉變；暗示可能放寬 Fable 5 與 Mythos 出口管制限制。但現行管制令仍在效力，外國公民存取最強模型仍需美方審批；Fable 5 封鎖進入"
     },
     {
       "id": "code-quality-decline",
@@ -373,7 +373,7 @@ window.WIKI_DATA = {
       "pill": "active",
       "firstSeen": "",
       "startDate": "2026-04-25",
-      "lastUpdated": "2026-06-20",
+      "lastUpdated": "2026-06-21",
       "lastNewsUpdate": "",
       "summary": "追蹤 Claude Code 社群中活躍的概念辯論、設計哲學、實證研究與技術反思。與 [[topics/community-tech-patterns]] 追蹤具體工具和工作流不同，本頁聚焦思想碰撞：什麼哲學正在成形、什麼假設受到挑戰、什麼共識正在收斂。頁面結構：**🔥 本週熱點**（當前最熱的持續議題）→ **🌊 長…",
       "latestHeadline": ""
@@ -388,7 +388,7 @@ window.WIKI_DATA = {
       "pill": "warn",
       "firstSeen": "",
       "startDate": "2026-04-25",
-      "lastUpdated": "2026-06-20",
+      "lastUpdated": "2026-06-21",
       "lastNewsUpdate": "",
       "summary": "追蹤 Claude Code 社群在實際開發中累積的**工作流與應用模式**。本頁收錄的模式類型包括 Multi-agent 架構、Skills 設計、CLAUDE.md 管理、Hooks 與自動化、模型使用策略、Token 成本優化、記憶與知識管理、Plugin/MCP 整合等，持續累積形成社群最佳實踐知識庫。 工具…",
       "latestHeadline": ""
@@ -463,10 +463,10 @@ window.WIKI_DATA = {
       "pill": "active",
       "firstSeen": "",
       "startDate": "2026-05-26",
-      "lastUpdated": "2026-06-20",
+      "lastUpdated": "2026-06-21",
       "lastNewsUpdate": "",
       "summary": "追蹤各大型企業目前正在使用的 AI 編碼工具，以及工具選擇的變化軌跡。資料來源為公開報導與內部消息洩露，僅記錄有明確來源佐證的事實。 目前追蹤 14 家企業（頂尖 7 家、大型 7 家），其中 12 家狀態為使用中（✅），1 家退出（❌，Microsoft 停用 Claude Code），1 家因出口管制被迫退出（❌，…",
-      "latestHeadline": "JPMorgan Chase 香港封鎖 Anthropic — 跟進報導確認：Private Banker International 跟進報導（Google News 2026-06-19）再次確認 JPMorgan Chase 香港員工被封鎖使用 Anthropic AI 模型，原因為美國出口管制；FT 首報（20",
+      "latestHeadline": "Microsoft 宣布逐步停止內部使用 Claude Code：時間點正值 Fable 5 封鎖期間，Microsoft 宣布將逐步停止讓內部工程師使用 Claude Code；自家 Codex 被認為是主要替代方案；此前已有 6/30 退出計畫，今日確認退出進度加快（MSN / Google News 2026-0",
       "enterpriseTracker": {
         "enterprises": [
           {
@@ -656,9 +656,9 @@ window.WIKI_DATA = {
             "Claude Code": {
               "status": "❌",
               "statusKey": "exited",
-              "eventDate": "2026-06-30",
-              "note": "數月燒完全年 AI 預算，6/30 正式停用",
-              "confirmedDate": "2026-05-25"
+              "eventDate": "2026-06-21",
+              "note": "Fable 5 封鎖期間宣布逐步停止讓內部工程師使用 Claude Code；自家 Codex 可能為替代方案；原預計 6/30 正式停用",
+              "confirmedDate": "2026-06-21"
             },
             "GitHub Copilot": {
               "status": "✅",
@@ -887,9 +887,9 @@ window.WIKI_DATA = {
             "tool": "Claude Code",
             "status": "❌",
             "statusKey": "exited",
-            "eventDate": "2026-06-30",
-            "note": "數月燒完全年 AI 預算，6/30 正式停用",
-            "confirmedDate": "2026-05-25"
+            "eventDate": "2026-06-21",
+            "note": "Fable 5 封鎖期間宣布逐步停止讓內部工程師使用 Claude Code；自家 Codex 可能為替代方案；原預計 6/30 正式停用",
+            "confirmedDate": "2026-06-21"
           },
           {
             "enterprise": "Microsoft",
@@ -1066,6 +1066,12 @@ window.WIKI_DATA = {
     }
   ],
   "digestIndex": [
+    {
+      "date": "2026-06-21",
+      "articleCount": 54,
+      "preview": "[anthropics/claude-code] v2.1.185",
+      "topCount": 0
+    },
     {
       "date": "2026-06-20",
       "articleCount": 23,
