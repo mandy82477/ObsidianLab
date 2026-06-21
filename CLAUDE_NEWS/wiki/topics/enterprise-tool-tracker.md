@@ -3,13 +3,13 @@
 **狀態：** ongoing
 **領域：** 💼 商業
 **開始日期：** 2026-05-26
-**最後更新：** 2026-06-20
+**最後更新：** 2026-06-21
 
 ## 摘要
 
 追蹤各大型企業目前正在使用的 AI 編碼工具，以及工具選擇的變化軌跡。資料來源為公開報導與內部消息洩露，僅記錄有明確來源佐證的事實。
 
-目前追蹤 14 家企業（頂尖 7 家、大型 7 家），其中 12 家狀態為使用中（✅），1 家退出（❌，Microsoft 停用 Claude Code），1 家因出口管制被迫退出（❌，JPMorgan Chase 香港分行）。整體趨勢：Claude API 企業採用持續擴大，TCS、DXC、LG 等頂尖企業相繼全面入局；Atlassian 與 JFrog 則於 2026-06-18 同日新增採用，顯示企業整合速度加快。出口管制已造成第一起具名金融機構退出事件。
+目前追蹤 14 家企業（頂尖 7 家、大型 7 家），其中 12 家狀態為使用中（✅），1 家退出（❌，Microsoft 停用 Claude Code），1 家因出口管制被迫退出（❌，JPMorgan Chase 香港分行）。整體趨勢：Claude API 企業採用持續擴大，TCS、DXC、LG 等頂尖企業相繼全面入局；Atlassian 與 JFrog 則於 2026-06-18 同日新增採用。2026-06-21 Microsoft 確認在 Fable 5 封鎖期間加速退出 Claude Code，Codex 為主要替代方案；出口管制 + 成本壓力雙重因素持續影響頂尖企業工具選擇。
 
 ---
 
@@ -31,7 +31,7 @@
 | AppFolio | 大型 | Claude API | ✅ | 2026-06-09 | Realm-X 套件接入 Claude，agent-to-agent 架構直接觸發房地產績效管理流程 | 2026-06-09 |
 | ZoomInfo | 大型 | Claude API | ✅ | 2026-06-07 | 透過 GTM.AI 平台整合 Claude，建構 GTM Context Graph 企業銷售情報系統 | 2026-06-08 |
 | Salesforce | 頂尖 | Claude Code | ✅ | — | 宣布 2027 年起不新增軟體工程師，直接點名 Claude Code 壓縮系統移轉成本 | 2026-06-06 |
-| Microsoft | 頂尖 | Claude Code | ❌ | 2026-06-30 | 數月燒完全年 AI 預算，6/30 正式停用 | 2026-05-25 |
+| Microsoft | 頂尖 | Claude Code | ❌ | 2026-06-21 | Fable 5 封鎖期間宣布逐步停止讓內部工程師使用 Claude Code；自家 Codex 可能為替代方案；原預計 6/30 正式停用 | 2026-06-21 |
 | Microsoft | 頂尖 | GitHub Copilot | ✅ | 2026-05-15 | 從 Claude Code 切換後採用 | 2026-05-25 |
 | Amazon | 頂尖 | Claude Code | ✅ | 2026-05-05 | 雙軌並行，不押注單一供應商 | 2026-05-05 |
 | Amazon | 頂尖 | OpenAI Codex | ✅ | 2026-05-05 | 與 Claude Code 同時部署 | 2026-05-05 |
@@ -55,7 +55,7 @@
 
 | 工具 | 企業採用數 | 趨勢 | 主要阻力 |
 |------|----------|------|---------|
-| Claude Code | 5 使用中（Amazon、Uber、UiPath、Rubrik、JFrog）+ 1 退出（Microsoft） | ⚠️ 成本壓力浮現 | 缺乏企業層級預算管控 |
+| Claude Code | 5 使用中（Amazon、Uber、UiPath、Rubrik、JFrog）+ 1 退出（Microsoft） | ⚠️ 成本壓力 + Fable 5 封鎖衝擊 | 缺乏企業層級預算管控；Fable 5 出口管制加速部分企業評估替代方案 |
 | Claude API | 15（Apple、KPMG、iCapital、哈佛、Fujitsu、Travelport、Nimble Gravity、ZoomInfo、LG Group、AppFolio、Salesforce Claude API、TCS、DXC Technology、Atlassian、JPMorgan Chase 美國本部） | 🟢 快速擴張 | — |
 | GitHub Copilot | 1（Microsoft） | 🟢 Microsoft 背書 | 生態鎖定 |
 | OpenAI Codex | 2（Amazon、UiPath） | 🟢 快速成長 | — |
@@ -78,6 +78,9 @@ Claude Code 是工程師日常編碼工具（CLI），成本隨使用量線性�
 ---
 
 ## 時序
+
+### 2026-06-21
+- **Microsoft 宣布逐步停止內部使用 Claude Code**：時間點正值 Fable 5 封鎖期間，Microsoft 宣布將逐步停止讓內部工程師使用 Claude Code；自家 Codex 被認為是主要替代方案；此前已有 6/30 退出計畫，今日確認退出進度加快（MSN / Google News 2026-06-21）
 
 ### 2026-06-20
 - **JPMorgan Chase 香港封鎖 Anthropic — 跟進報導確認**：Private Banker International 跟進報導（Google News 2026-06-19）再次確認 JPMorgan Chase 香港員工被封鎖使用 Anthropic AI 模型，原因為美國出口管制；FT 首報（2026-06-18）後跨媒體跟進，顯示此事件在金融服務業引發廣泛關注

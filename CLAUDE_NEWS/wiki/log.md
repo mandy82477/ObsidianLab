@@ -3,6 +3,36 @@
 Append-only 紀錄。每次 ingest、query 或 lint 都在此追加一條。
 格式：`## [YYYY-MM-DD] 類型 | 說明`
 
+## 2026-06-21 Ingest | news/2026-06-21.md（54 則）
+
+- 來源日報：`news/2026-06-21.md`（54 則，5/6 來源正常；Reddit 部分 429 但仍有 10 筆）
+- 主軸：Trump G7 後不再視 Anthropic 為國安威脅（暗示鬆綁 Fable 5 / Mythos）；David Sacks 揭露 Mythos 越獄漏洞為白宮信任缺口根因；FT 分析 Anthropic 安全倡導話術反效果；John Jumper 加入 Anthropic（Reuters 正式確認）；Microsoft 宣布逐步停止內部工程師使用 Claude Code；Claude Code v2.1.185 stream-stall 改善；Project Fetch Phase Two（機器狗實驗）；多款社群工具亮相（Forq / Pulse / Maccha / cc-fleet）
+- 更新頁面：
+  - `topics/anthropic-government-policy.md`：攻防紀錄 prepend 3 條（Trump 鬆口、Sacks 信任缺口、FT 分析）；目前局勢更新至 2026-06-21 封鎖第 9 天；時序 prepend 2026-06-21 區塊；最後新聞更新 2026-06-21
+  - `topics/enterprise-tool-tracker.md`：Microsoft 狀態更新為 ⚠️ 縮減中（Fable 5 封鎖期間逐步退出）；競爭態勢表更新；時序 prepend 2026-06-21；最後新聞更新 2026-06-21
+  - `topics/anthropic-business.md`：時序 prepend 2026-06-21（Microsoft 加速退出、Fable 5 Bedrock 資料共享阻力）；最後新聞更新 2026-06-21
+  - `entities/pricing.md`：Fable 5 Bedrock provider data sharing 細節補入；最後新聞更新 2026-06-21
+  - `entities/john-jumper.md`：狀態從 active（待核實）改為 active（Reuters 確認）；歷史記錄 prepend 2026-06-21 Reuters 確認條目；最後新聞更新 2026-06-21
+  - `entities/dario-amodei.md`：歷史記錄 prepend 2026-06-21 Times of India 採訪條目；最後新聞更新 2026-06-21
+  - `entities/claude-code.md`：版本表 + 版本歷史新增 v2.1.185（stream-stall 改善）；最後新聞更新 2026-06-21
+  - `topics/community-tech-patterns.md`：技術彙整 prepend 3 條（平行 Agent 模式、Agent Loop 事件驅動、MCP Server 信任邊界審查）；最後新聞更新 2026-06-21
+  - `topics/community-tech-discussions.md`：熱門討論表格 prepend 3 條（Claude Code 確定性、平行 agent 效能、工具選擇比較）；技術彙整 prepend Project Fetch Phase Two；移除 3 條過期 ☄️閃現（> 21 天）；最後新聞更新 2026-06-21
+- 新增頁面：無
+- feature-radar 更新：無（v2.1.185 屬 reliability，七種指令方法屬說明文件，均不進 feature-radar）
+- index.md 狀態變更：john-jumper: active（待核實）→ active
+- 呈現品質審查：
+  | 頁面 | 結果 |
+  |------|------|
+  | anthropic-government-policy.md | ⚠️ 已修復（摘要末句過期，已改寫為反映最新 2026-06-21 狀態） |
+  | enterprise-tool-tracker.md | ✅ 通過 |
+  | anthropic-business.md | ✅ 通過 |
+  | pricing.md | ✅ 通過 |
+  | john-jumper.md | ✅ 通過 |
+  | dario-amodei.md | ✅ 通過 |
+  | claude-code.md | ⚠️ 已修復（補入最後新聞更新欄位） |
+  | community-tech-patterns.md | ✅ 通過 |
+  | community-tech-discussions.md | ✅ 通過 |
+
 ## 2026-06-20 Ingest（補跑）| news/2026-06-20.md（23 則）
 
 - 來源日報：`news/2026-06-20.md`（23 則，5 來源；主軸：中國 AI Z.ai 創辦人聲稱追上 Fable 5 等級模型比 Q1 更早（HN score 10）；Politico 深度報導 Anthropic 出口管制政治處境；Claude Code 根目錄掃描 SSH 私鑰隱私爭議（HN）；Fable 5 在 AWS Bedrock 需分享推論資料（InfoQ）；AlphaFold 共同創造者 John Jumper 加入 Anthropic 社群分析文；Claude Design 工作流整合討論；Token 節省實戰（82% 降低、工具鏈是真正殺手）；CLAUDE.md 規則上限策略）

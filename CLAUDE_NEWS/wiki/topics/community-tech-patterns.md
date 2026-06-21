@@ -3,7 +3,7 @@
 **狀態：** monitoring
 **領域：** 🌐 社群
 **開始日期：** 2026-04-25
-**最後更新：** 2026-06-20
+**最後更新：** 2026-06-21
 
 ---
 
@@ -37,6 +37,43 @@
 ---
 
 ## 技術彙整
+
+### 平行 Agent 模式：串行 vs 並行工作流效能差距（2026-06-21）
+
+- **核心模式：** 將 agent 工作流從串行（一次做一件事）重構為並行（同時執行多個獨立子任務），可顯著提升整體吞吐量並縮短等待時間
+- **實作方向：**
+  - 識別任務相依圖（DAG），找出可平行執行的分支（如：同時搜尋多個資料來源、同時執行多份測試）
+  - 使用 Sub-agent 或 Multi-agent 架構分派平行工作，各 agent 擁有獨立 context 避免干擾
+  - Orchestrator agent 負責合併各子 agent 結果，並處理衝突與整合邏輯
+- **解決的問題：** LLM 在串行工作流中的「等待」成本高昂——一個 agent 等待 API 回應或 IO 操作時，整個流程停滯；並行化可將等待時間轉為有效工作
+- **適用場景：** 多資料來源研究任務、並行測試執行、獨立模組同步開發；不適合強相依的線性任務（後一步需要前一步輸出）
+- **注意事項：** 並行 sub-agent 各自消耗 token；需估算並行成本是否優於串行節省的時間；cc-fleet 模式（廉價模型執行、Opus 設計）可降低並行成本
+- **來源：** dev.to/kanfu-panda（2026-06-21）；cc-fleet（HN score 3）
+
+### Agent Loop 事件驅動：以觸發條件取代 sleep 輪詢（2026-06-21）
+
+- **核心模式：** Agent loop 不應無條件 sleep 等待，而應改用事件驅動（event-driven）設計——只在有實際工作時才喚醒 agent，避免 5 分鐘以上的定期 sleep 帶來的 token 浪費與 context 過期問題
+- **實作方向：**
+  - 以佇列（queue）、webhook、檔案監聽或 diff 偵測作為喚醒條件，取代 `sleep(300)`
+  - 若條件不成立，agent 直接退出或等待訊號，不進入 Claude 呼叫
+  - 搭配 Stop Hook 設計明確的完成條件，防止 loop 無限運行
+- **解決的問題：** `sleep 5 分鐘` 後喚醒仍需重建 context，且消耗 token 確認「是否有工作」；長期 idle 的 agent 累積大量「確認無工作」的 token 費用
+- **適用場景：** PR review bot、CI/CD 監聽型 agent、定時輪詢類自動化任務；不適合需即時互動的對話型 session
+- **與既有模式的關係：** 延伸自 Loop Engineering 模式（2026-06-19），強調「觸發條件設計」是 loop 品質的關鍵
+- **來源：** dev.to/mjmirza "Stop Sleeping Your Agent Loop"（2026-06-21）
+
+### MCP Server 信任邊界審查：連接 MCP 即擴大攻擊面（2026-06-21）
+
+- **核心模式：** 連接 MCP Server 給 agent 賦予「手」的同時，也給陌生人開了一扇門；每個 MCP 連接都需要明確的信任評估，而非預設信任
+- **實作方向：**
+  - 最小掛載原則：只掛載當前任務需要的 MCP，任務結束後移除
+  - 審查 MCP Server 來源：優先使用官方或有公開稽核的 server；自建 server 需限制執行範圍
+  - 隔離敏感操作：涉及檔案系統、網路請求、程式碼執行的 MCP，需明確限制 agent 可觸發的操作範圍
+  - 搭配 Pre-tool Hook 驗證：在 MCP 工具呼叫前執行安全檢查（參考 Hooks 強制執行機制模式）
+- **解決的問題：** MCP 連接帶來的攻擊面包括：惡意 MCP server 注入指令、MCP tool 被提示注入利用（如 Agentjacking/Sentry DSN 攻擊向量）、意外觸發高風險操作
+- **適用場景：** 所有使用 MCP 工具的 Claude Code 工作流，尤其是有網路請求或系統寫入權限的情境
+- **注意事項：** MCP context bloat（9 個 server = 38k token 冷啟動）是效能問題；信任邊界是安全問題——兩者都要分別處理
+- **來源：** dev.to/rapls "Connecting an MCP server gives your agent hands..."（2026-06-21）
 
 ### CLAUDE.md 規則總量上限：每新規則必刪一條（2026-06-20）
 

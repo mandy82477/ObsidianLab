@@ -2,16 +2,16 @@
 
 LLM 查詢此 wiki 時，**先讀這個檔案**找相關頁面，再讀具體頁面取得詳細資訊。
 
-**最後更新：** 2026-06-20
+**最後更新：** 2026-06-21
 ---
 
 ## 近期異動
 
-- [[feature-radar]] — 功能全覽重排，新增本週熱門條目（Managed Agents 正式發布、OpenClaw 信用池新計費）
-- [[entities/fable-5]] — 6/13 美國政府出口管制指令暫停全球存取；6/18 SK Telecom 中國關聯被揭露為根本動機，Anthropic 提交解封提案
-- [[topics/anthropic-government-policy]] — Fable 5 出口管制攻防：Anthropic 已提交解封提案，Ciauri 表示「數日內恢復可用」
-- [[entities/john-jumper]] — 2026-06-19 宣布加入 Anthropic（待核實）
-- [[entities/managed-agents]] — Managed Agents 官方框架正式發布：Dreaming 記憶整合、20 路並行子代理、Outcomes 規格驗證
+- [[entities/john-jumper]] — Reuters 正式確認加入 Anthropic，狀態從「待核實」升為 active
+- [[topics/anthropic-government-policy]] — Trump G7 後鬆口不再視 Anthropic 為國安威脅；David Sacks 揭露白宮信任缺口根本原因（Mythos 漏洞 + 越獄）；封鎖第 9 天
+- [[topics/enterprise-tool-tracker]] — Microsoft 宣布逐步停止內部工程師使用 Claude Code，狀態更新為 ⚠️ 縮減中
+- [[topics/community-tech-discussions]] — Project Fetch Phase Two 技術彙整；新增 Claude Code 確定性技術、平行 agent 效能、工具選擇比較三條討論
+- [[entities/claude-code]] — 版本表新增 v2.1.185（stream-stall 改善）
 
 ---
 
@@ -40,7 +40,7 @@ LLM 查詢此 wiki 時，**先讀這個檔案**找相關頁面，再讀具體頁
 | [[entities/managed-agents]] | feature | 🛠️ 工具/功能 | active（正式發布）| Managed Agents 官方框架：Dreaming 記憶整合、20 路並行子代理、Outcomes 規格驗證 |
 | [[entities/boris-cherny]] | person | 👤 人物 | active | Claude Code 創始人，「Loops 是未來」設計哲學、「coding is solved」論戰、第三方工具邊界聲明 |
 | [[entities/chris-ciauri]] | person | 👤 人物 | active | Anthropic 國際業務總監；首爾記者會宣布 Fable 5 / Mythos 解禁信心（2026-06-18）|
-| [[entities/john-jumper]] | person | 👤 人物 | active（待核實）| 諾貝爾化學獎得主（AlphaFold），2026-06-19 宣布加入 Anthropic（待核實）|
+| [[entities/john-jumper]] | person | 👤 人物 | active | 諾貝爾化學獎得主（AlphaFold），2026-06-19 離開 Google DeepMind 加入 Anthropic（Reuters 確認）|
 | [[entities/cat-wu]] | person | 👤 人物 | active | Claude Code 產品負責人，「AI 下一步是主動性（proactivity）」論述 |
 | [[entities/andrej-karpathy]] | person | 👤 人物 | active（待核實）| 近期加入 Anthropic，CLAUDE.md 四條規則、「最小必要 context」費用控管原則 |
 | [[entities/dario-amodei]] | person | 👤 人物 | active | Anthropic CEO：政府監管立場、企業文化論述、Code with Claude 大會現場宣布速率政策 |

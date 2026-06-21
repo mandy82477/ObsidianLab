@@ -3,7 +3,7 @@
 **狀態：** ongoing
 **領域：** 💼 商業
 **開始日期：** 2026-05-28
-**最後更新：** 2026-06-20
+**最後更新：** 2026-06-21
 
 ---
 
@@ -111,6 +111,10 @@ Simon Willison（知名開發者博主）發表文章，認為 Anthropic 與 Ope
 - [[news/2026-05-13]]（The Information：定價強勢期）
 
 ## 時序
+
+### 2026-06-21
+- **[Microsoft 退出] Microsoft 宣布在 Fable 5 封鎖期間逐步停止內部使用 Claude Code**：MSN / Google News 報導，Microsoft 宣布將逐步停止讓內部工程師使用 Claude Code，自家 Codex 為主要替代方案；出口管制造成的服務不確定性疊加成本壓力，加速頂尖科技企業的工具替換評估（見 [[topics/enterprise-tool-tracker]]）
+- **[Fable 5 Bedrock 合規風險] AWS Bedrock 強制 provider data sharing 影響金融醫療採購**：dev.to 報導 AWS Bedrock 的 Claude Fable 5 model card 顯示客戶須同意啟用 `anthropic.model-invocation-logging`（provider data sharing），資料離開 AWS 安全邊界並由 Anthropic 存取；此條件對有嚴格資料合規要求的金融、醫療企業構成直接採購障礙，可能延緩 Fable 5 在受監管行業的企業滲透（dev.to 2026-06-21）
 
 ### 2026-06-20
 - **[出口管制商業衝擊] JPMorgan Chase 香港封鎖 Anthropic 存取（補充報導）**：Google News / Private Banker International 跟進報導（2026-06-19），確認 JPMorgan Chase 已封鎖香港員工使用 Anthropic AI 模型，直接原因為美國出口管制；此為出口管制對具名頂尖金融機構造成直接服務中斷的最新確認，顯示管制效果已滲透至企業端日常操作層（見 [[topics/enterprise-tool-tracker]]）

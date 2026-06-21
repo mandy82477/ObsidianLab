@@ -4,13 +4,14 @@
 **狀態：** active
 **領域：** 🛠️ 工具/功能
 **首次出現：** 2025（正式推出）
-**最後更新：** 2026-06-20
+**最後更新：** 2026-06-21
+**最後新聞更新：** 2026-06-21
 
 ---
 
 ## 現況
 
-Claude Code 是 Anthropic 的 AI 編碼 CLI 工具，支援 agentic 工作流程、MCP Server 整合、Hooks 機制與多代理協作框架（Managed Agents）。截至 2026-06-08，GitHub Stars 達 **131,000+**，持續增長且成為 SaaS 創辦人與非技術開發者廣泛採用的平台。最新版本為 **v2.1.183**，核心能力已從純程式碼助理擴展為具備全桌面自動化、多代理管理與 AI 安全審查的完整 agent 開發平台。Microsoft 正陸續取消內部授權，轉推 GitHub Copilot CLI（見 [[topics/competitor-landscape]]）；GitHub 已推出新 Copilot 應用明確對標 Claude Code；Ramp AI Index 數據顯示 Anthropic 企業採用率首次超越 OpenAI（34.4% vs 32.3%）。
+Claude Code 是 Anthropic 的 AI 編碼 CLI 工具，支援 agentic 工作流程、MCP Server 整合、Hooks 機制與多代理協作框架（Managed Agents）。截至 2026-06-08，GitHub Stars 達 **131,000+**，持續增長且成為 SaaS 創辦人與非技術開發者廣泛採用的平台。最新版本為 **v2.1.185**，核心能力已從純程式碼助理擴展為具備全桌面自動化、多代理管理與 AI 安全審查的完整 agent 開發平台。Microsoft 正陸續取消內部授權，轉推 GitHub Copilot CLI（見 [[topics/competitor-landscape]]）；GitHub 已推出新 Copilot 應用明確對標 Claude Code；Ramp AI Index 數據顯示 Anthropic 企業採用率首次超越 OpenAI（34.4% vs 32.3%）。
 
 ## 熱度與試用價值
 
@@ -27,6 +28,7 @@ Claude Code 是 Anthropic 的 AI 編碼 CLI 工具，支援 agentic 工作流程
 
 | 版本 | 日期 | 重點 |
 |------|------|------|
+| **v2.1.185** | 2026-06-21 | Stream-stall reliability 改善：等待提示文字從「No response from API · Retrying in …」改為「Waiting for API response · will retry in …」；觸發門檻從 10 秒延長至 20 秒，減少短暫延遲時的干擾提示 |
 | **MCP Enterprise Authorization** | 2026-06-19 | **企業 SSO 正式版**（stable）：支援 Okta、Anthropic、VS Code 零設定 SSO 整合，企業可集中管理 Claude Code 授權；見 [[feature-radar]] |
 | **v2.1.183** | 2026-06-19 | **Auto mode 安全性強化**：破壞性 Git 指令（`git reset --hard`、`git checkout -- .`、`git clean -fd`、`git stash drop`）在 Auto mode 下若非明確要求，一律自動封鎖，防止非預期資料遺失 |
 | **Claude Code Artifacts** | 2026-06-18 | 正式推出 Artifacts 功能：工作階段可將進度即時輸出為可共享互動網頁（PR 摘要、儀表板、系統說明文件、釋出清單），隨 session 進行自動更新，團隊成員可直接瀏覽，無需安裝工具 |
@@ -318,6 +320,7 @@ Token 用量追蹤、session 費用分析與效能漂移偵測工具。
 
 | 日期 | 事件 |
 |------|------|
+| 2026-06-21 | **v2.1.185**：stream-stall 提示文字改為「Waiting for API response · will retry in …」，觸發門檻延長至 20 秒（原 10 秒），reliability 改善；Anthropic 官方博客發布「七種 Claude Code 控制層」決策框架（CLAUDE.md、rules、skills、subagents、hooks、output styles、system prompt append），HN score 4 |
 | 2026-05-28 | **v2.1.153**：`skipLfs` 選項加入 github/git plugin，clone/update 可跳過 Git LFS 下載；npm 全域安裝版本過期時顯示一次性升級通知；Cisco LLM Security Leaderboard 發布，Anthropic 佔前十名 8 席；Simon Willison 發布 HN 970 分析文（Anthropic/OpenAI 已達 PMF）；Anthropic 宣布開設米蘭辦公室（歐洲第六據點）；企業預算壓力信號：Benzinga/CFO.com 報導 AI 編碼工具成長放緩；ChatGPT-5.5 在 DeepSWE 污染免疫基準超越 Opus 4.7 |
 | 2026-05-27 | **v2.1.152**：`/code-review --fix` 可直接將審查結果套用至工作樹；**Coordinator 模式**正式加入，多 worker 代理人協調層支援任務委派、結果合成、lifecycle 管理、跨 session peer 協調與獨立驗證（+4,566 系統提示 tokens）；Uber COO 公開確認 Claude Code + ChatGPT 帶來 25% 生產力提升；富士通與 Anthropic 簽署戰略合作；Platformer 刊出 Boris Cherny 專訪（「軟體工程師的終結」） |
 | 2026-05-22 | **v2.1.148**：緊急修復 v2.1.147 回歸問題（Bash 工具 exit code 127）；Managed Agents 自架沙箱完整參考文件發布（涵蓋 worker 輪詢、環境金鑰、webhook 喚醒、監控、客戶安全責任）；Runtime（YC P26）推出讓全團隊安全使用 Claude Code 的基礎設施；DeepSeek 宣布建構自有 Claude Code 競品（整機棧控制戰略）；Qwen3.7-Max 聲稱可持續自主運行 35 小時並支援 Claude Code harness；費用失控輿情升溫（$6,000 徹夜運行廣傳，Karpathy 「最小必要 context」原則成社群共識）；Sky News 專訪 Claude Code 創作者談 AI 與工程師職位；見 [[topics/competitor-landscape]]、[[topics/enterprise-cost-management]] |

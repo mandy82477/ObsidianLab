@@ -3,7 +3,7 @@
 **狀態：** ongoing
 **領域：** 🌐 社群
 **開始日期：** 2026-04-25
-**最後更新：** 2026-06-20
+**最後更新：** 2026-06-21
 
 ---
 
@@ -95,6 +95,9 @@ MCP 的實際成本遠超多數使用者預期，已有多個量化案例：
 
 | 討論主題 | 首見 | 熱度 | 模式 | 核心論點 | 衍生 |
 |---------|------|------|------|---------|------|
+| Claude Code 確定性技術：如何讓 LLM 輸出可重現 | 2026-06-21 | 🔥 | ☄️閃現 | Ask HN 討論（score 4）：如何讓 LLM 輸出在同一場景下可重現；社群建議包括：寫可重用腳本（而非一次性 prompt）、版本鎖定（固定模型版本）、PRNG seed 概念引入工作流；核心結論：確定性來自「流程可重用性」而非「輸出固定性」（HN） | — |
+| 平行 agent vs 串行效能：不是模型笨，是你讓它排隊 | 2026-06-21 | 🔥 | ☄️閃現 | dev.to 文章（AI 串行 vs 並行工作模式）：AI agent 慢的根因往往不是模型能力，而是串行設計讓 agent 一次只做一件事；並行化獨立子任務可大幅縮短等待時間；附具體重構範例（dev.to） | — |
+| Claude Code vs Codex 工具選擇：OMP + Opus 4.8 成主流 | 2026-06-21 | 🔥 | ☄️閃現 | Ask HN（score 5）：開發者分享工具選擇現狀；OMP（OpenCode/Meta-Prompt）+ Opus 4.8 配置廣泛使用；meta-harness 使用趨向成熟；Fable 5 封鎖期間 Codex 5.5 多數任務勝出，但 Opus 4.8 在部分任務仍有優勢；社群整體轉向「依任務路由模型」而非單一工具（HN） | — |
 | 工具鏈才是 Token 殺手：82% 降耗實測與文件無辜論 | 2026-06-20 | 🔥 | ☄️閃現 | dev.to/kanfu-panda 兩篇互補文章：① 透過工具鏈優化將 token 用量降低 82%（附真實數據）；② 反直覺論點：燒 token 的不是文件而是工具設定——未精修的工具配置每次呼叫都帶入冗餘 context；提供可驗證的優化路徑（dev.to / #claudecode） | — |
 | CLAUDE.md 規則總量上限：每新規則必刪舊規則 | 2026-06-20 | 🔥 | ☄️閃現 | dev.to 作者分享：將 CLAUDE.md 規則數量設定硬上限，每新增一條必須刪除一條舊規則；設計原則：防止設定熵增（configuration entropy），保持 agent 指令集精簡有效，呼應「296→142 行品質反升」的社群實證（dev.to / #claudecode） | — |
 | Claude Design → Claude Code VSCode 交接最佳實踐 | 2026-06-20 | 🔥 | ☄️閃現 | Reddit 討論：設計稿從 Claude Design 交接給 Claude Code 的最佳工作流，聚焦 VSCode 整合；社群分享元件規格輸出格式、design token 對應策略，以及設計意圖如何在 context 傳遞不失真（Reddit r/ClaudeAI） | — |
@@ -163,9 +166,6 @@ MCP 的實際成本遠超多數使用者預期，已有多個量化案例：
 | Claude Code 需要自動模型路由？ | 2026-05-31 | 🔥🔥 | ☄️閃現 | 社群呼籲 Claude Code 支援依任務複雜度自動切換 Haiku/Sonnet/Opus，目前仍需手動操作；與「94% token 流向錯誤模型」痛點直接呼應 | — |
 | 10 個 Plugin 同時啟用的真實成本 | 2026-05-31 | 🔥🔥 | ☄️閃現 | 作者啟用 10 個 plugin 後信用耗盡，詳細拆解各 plugin token 成本；與 MCP context bloat（9 伺服器 = 38k tokens）形成最新佐證 | — |
 | Agent Skills Progressive Disclosure 三層架構 | 2026-05-31 | 🔥🔥 | ☄️閃現 | Anthropic 官方 Skills 設計指南：啟動時只讀技能名稱+簡述，命中後按需載入完整內容；是 token 效率與觸發準確度的官方設計取捨 | — |
-| UltraCode 1.7M tokens 退化迴圈 | 2026-05-30 | 🔥🔥🔥 | ☄️閃現 | Dynamic Workflows 子代理陷入退化迴圈，1.7M tokens 無輸出；Anthropic 無退款；建議設定嚴格 token 上限再用 | — |
-| Opus 4.8 Qwen distillation 爭議 | 2026-05-30 | 🔥🔥 | ☄️閃現 | 社群截圖流傳 Opus 4.8 自稱 Qwen；HN score 20；主流判定為 proxy 詐騙，但引發對 Anthropic 模型透明度的討論 | — |
-| AI 社會模擬：Claude 最穩定，Grok 文明滅絕 | 2026-05-30 | 🔥🔥 | ☄️閃現 | Emergence AI 15 天模擬：Claude 管理的社會穩定民主（零犯罪），Grok 的社會在 183 起犯罪後滅絕；展示不同 AI 價值觀的實際影響 | — |
 | LLMs 製造虛假忙碌？ | 2026-05-22 | 🔥🔥🔥 | 🌊延燒 | 質疑 LLM 是否在製造「效率幻覺」：spec/PRD/測試計劃/程式碼的流水線，每個產出物仍需人工逐一核查，燒掉的 token 數等同「員工績效」；對 AI 效率宣稱提出最直接的挑戰 | — |
 | Context 管理是大型專案核心瓶頸 | 2026-05-12 | 🔥🔥🔥 | 🌊延燒 | Attention 機制局部聚焦問題；應對策略：架構概覽注入、結構化索引、任務分拆；2026-05-17 官方 4 種 context 工具詳解再度引發討論，顯示痛點持續 | — |
 | HTML vs Markdown 輸出格式辯論 | 2026-05-09 | 🔥🔥🔥🔥🔥 | 🌊延燒 | HN 187 則討論；原始論點：HTML 視覺呈現與資訊密度更優；反駁：HTML 難以人機協同編輯；2026-05-20 Anthropic 官方 Blog 發文背書 HTML（理由：表達能力強、瀏覽器直接開啟、分享便利）；2026-05-21 官方 Blog 文章登上 HN 首頁，討論再度引爆，熱度升至跨平台最高級 | agent-html-skills |
@@ -179,6 +179,16 @@ MCP 的實際成本遠超多數使用者預期，已有多個量化案例：
 ---
 
 ## 技術彙整
+
+### Project Fetch Phase Two：Claude Opus 4.1 協助非機器人專家完成機器狗任務（2026-06-21）
+
+- **來源：** "Project Fetch: Phase Two"（anthropic.com/research/project-fetch-phase-two，Anthropic Frontier Red Team，HN score 62）
+- **核心論點：** Anthropic 官方 Red Team 報告：Claude Opus 4.1 作為協助工具，讓完全沒有機器人背景的非專家（non-roboticists）完成機器狗操控任務；有 Claude 協助的團隊顯著優於對照組（無 AI 協助）
+- **關鍵回響：**
+  - 📝 支持：HN score 62 顯示社群對此報告高度關注；這是 Anthropic 官方首次公開人機協作任務能力強化的量化數據
+  - 📝 重要背景：此為 Red Team 報告，測試目的是評估 Claude 在物理世界任務增強上的「雙重用途」潛力——同一能力既可民用輔助，也可能被用於攻擊性用途
+  - 🧪 設計含義：研究揭示 AI 協助可大幅降低技術門檻，非專家在有 Claude 輔助下可完成通常需要機器人工程背景的任務
+- **收斂結論：** AI 協助顯著縮小了技術能力的門檻差距（推論）；報告本身是雙重用途研究，社群討論圍繞「能力增強有益 vs 攻擊性應用風險」兩軸展開
 
 ### 工具鏈 Token 優化：82% 降耗實測與文件無辜論（2026-06-20）
 
