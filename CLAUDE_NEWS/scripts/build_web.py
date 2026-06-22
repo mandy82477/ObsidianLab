@@ -282,7 +282,7 @@ SENTIMENT_RE = re.compile(r"`情緒：(.+?)`")
 STORY_RE = re.compile(r"\*\*\[(.+?)\]\((.+?)\)\*\*")
 SOURCE_RE = re.compile(r"^`(.+?)`\s*·\s*(.+?)(?:\s*UTC)?(?:\s*·\s*`情緒：(.+?)`)?$")
 FOCUS_RE    = re.compile(r"^(?:-\s+)?\*\*(.+?)\*\*\s+(.*)")
-FOCUS_REF_RE = re.compile(r"（ref:\s*(https?://\S+?)）")
+FOCUS_REF_RE = re.compile(r"（ref:\s*(https?://[^\s（）)]+)[）)]")
 SOURCE_TABLE_RE = re.compile(r"^\|\s*(.+?)\s*\|\s*(✅|❌)\s*\|\s*(\d+)\s*\|")
 
 

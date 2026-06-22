@@ -12,7 +12,9 @@
       "time": "06/22 05:08",
       "sentiment": "",
       "body": "Anthropic 與 Micron 宣布戰略合作協議，共同建置下一代 AI 記憶體基礎設施；消息一出，Micron 股價上漲 5.5%，反映市場對 AI 算力需求升溫的期待。",
-      "focusTags": []
+      "focusTags": [
+        "[重大事件]"
+      ]
     },
     {
       "title": "Fable 5 國安威脅標籤解除",
@@ -236,8 +238,9 @@
   "focus": [
     {
       "tag": "[重大事件]",
-      "text": "Anthropic 與 Micron 宣布戰略合作協議，共同擴展下一代 AI 基礎設施，Micron 股價應聲上漲 5.5%。（ref: https://news.google.com/rss/articles/CBMiiAJBVV95cUxOMlgtNGxIZmxGLU5DZnRQWjh2OWlYX1hTYmdYNWNhMzlzVFRiOEdpQmRMNUNtemZvbkMxS0pidU9EdGdWd292MDIzYllORXdzU1JDODJQZE5YdW9LSzFtaXNnVnVNYnU2NU0xN3FDZVNfV18yaTNFQlF5MlFITWlXVGxnamdoR3ZHb0dUMFFKMk9BdHdYc0pvRE9RcEhhNE42aWx6ZnNSeVlNWjJHWWFVNTNOcTk1ZmU1R3FNVDB5U0hQRXVwMGk0Z0tPMTZpLTd5MFhXWGtLNHpzZ21ZWE1aZGd2SVllbDdPX21pcVFxSmc1N3otUnhZYTBnVG0zT3FvUk8zbWM0al8?oc=5)",
+      "text": "Anthropic 與 Micron 宣布戰略合作協議，共同擴展下一代 AI 基礎設施，Micron 股價應聲上漲 5.5%。",
       "ref_urls": [
+        "https://news.google.com/rss/articles/CBMiiAJBVV95cUxOMlgtNGxIZmxGLU5DZnRQWjh2OWlYX1hTYmdYNWNhMzlzVFRiOEdpQmRMNUNtemZvbkMxS0pidU9EdGdWd292MDIzYllORXdzU1JDODJQZE5YdW9LSzFtaXNnVnVNYnU2NU0xN3FDZVNfV18yaTNFQlF5MlFITWlXVGxnamdoR3ZHb0dUMFFKMk9BdHdYc0pvRE9RcEhhNE42aWx6ZnNSeVlNWjJHWWFVNTNOcTk1ZmU1R3FNVDB5U0hQRXVwMGk0Z0tPMTZpLTd5MFhXWGtLNHpzZ21ZWE1aZGd2SVllbDdPX21pcVFxSmc1N3otUnhZYTBnVG0zT3FvUk8zbWM0al8?oc=5",
         "https://news.google.com/rss/articles/CBMiwgFBVV95cUxNbHY0cFhVTGtoRnNma1QwOS1WVHREc1pROVEyVXc0SnZoQWtMYmRXaE5XM3laeUxRZFBvY0F6QWNwRVYxT2c1T05rRERyS3FSQllGS3RVbDVTMklTU3JRU2Z6Qkd5eDFORXFaRDIydjVKNVpTRXRBcFYyVTFnMjg3UngwdmUwN2VWLTQtTGJZZFdwQVBpU19kZFlvSTQ1VS1TZlM5WVl2NGh5UXVESVRrVHBQcUpLaUdYUVoyS2R5ekdTUQ?oc=5"
       ]
     },
