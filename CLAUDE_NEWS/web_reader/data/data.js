@@ -26,10 +26,10 @@ window.WIKI_DATA = {
       "pill": "active",
       "firstSeen": "2026-04-23（事後報告發布）",
       "startDate": "",
-      "lastUpdated": "2026-06-20",
-      "lastNewsUpdate": "",
+      "lastUpdated": "2026-06-22",
+      "lastNewsUpdate": "2026-06-22",
       "summary": "Boris Cherny 是 Anthropic Claude Code 的創始人與負責人（Head of Claude Code），是 Claude Code 產品方向最主要的公開代言人。他以高頻率的公開聲明、哲學宣言與工程分享，持續引發開發者社群廣泛討論，被視為 Anthropic 技術文化的外部窗口。 ---",
-      "latestHeadline": "techstackups.com 採訪引用 Loop 工程哲學名言「我不再 prompt Claude，我寫 loop 讓 loop 去 prompt Claude；我的工作是寫 loop」，被視為繼「coding is solved」後的第二個重要設計哲學表態"
+      "latestHeadline": "Anthropic「engineering leader」（待核實：是否為 Boris Cherny）公開表示 Claude Code 正讓工程師更孤獨，Business Insider、Let's Data Science 報導"
     },
     {
       "id": "bugcrawl",
@@ -56,10 +56,10 @@ window.WIKI_DATA = {
       "pill": "active",
       "firstSeen": "2026-05-14",
       "startDate": "",
-      "lastUpdated": "2026-06-20",
-      "lastNewsUpdate": "",
+      "lastUpdated": "2026-06-22",
+      "lastNewsUpdate": "2026-06-22",
       "summary": "Cat Wu 是 Anthropic Claude Code 產品負責人（Head of Claude Code Products），與創始人 Boris Cherny（見 [[entities/boris-cherny]]）共同主導 Claude Code 的產品方向。2026-05-14，她在公開訪問中提出 AI …",
-      "latestHeadline": "公開訪問中提出「AI 主動性（proactivity）是下一個重大躍進」，闡述 Claude Code 從互動工具轉向自主代理平台的產品定位"
+      "latestHeadline": "Anthropic「engineering leader」（待核實：是否為 Cat Wu）公開表示 Claude Code 正讓工程師更孤獨，Business Insider、Let's Data Science 報導"
     },
     {
       "id": "chris-ciauri",
@@ -101,8 +101,8 @@ window.WIKI_DATA = {
       "pill": "active",
       "firstSeen": "2025（正式推出）",
       "startDate": "",
-      "lastUpdated": "2026-06-21",
-      "lastNewsUpdate": "2026-06-21",
+      "lastUpdated": "2026-06-22",
+      "lastNewsUpdate": "2026-06-22",
       "summary": "Claude Code 是 Anthropic 的 AI 編碼 CLI 工具，支援 agentic 工作流程、MCP Server 整合、Hooks 機制與多代理協作框架（Managed Agents）。截至 2026-06-08，GitHub Stars 達 **131,000+**，持續增長且成為 SaaS 創辦人…",
       "latestHeadline": ""
     },
@@ -191,10 +191,10 @@ window.WIKI_DATA = {
       "pill": "active",
       "firstSeen": "2026-06-20",
       "startDate": "",
-      "lastUpdated": "2026-06-21",
-      "lastNewsUpdate": "2026-06-21",
+      "lastUpdated": "2026-06-22",
+      "lastNewsUpdate": "2026-06-22",
       "summary": "John Jumper 是 2024 年諾貝爾化學獎得主，因 AlphaFold 蛋白質結構預測研究與 Demis Hassabis 共同獲獎。Reuters 於 2026-06-19 正式確認他已離開 Google DeepMind、加入 Anthropic（HN score 77）。社群分析認為此舉是 Anthro…",
-      "latestHeadline": "Reuters 正式確認離開 Google DeepMind 加入 Anthropic（HN score 77）"
+      "latestHeadline": "Business Insider、PYMNTS.com 等多家媒體跟進報導 Google Nobel AI 專家加入 Anthropic，為 Reuters 確認事件的後續廣泛報導（待核實：後續報導是否帶出新細節）"
     },
     {
       "id": "managed-agents",
@@ -313,8 +313,8 @@ window.WIKI_DATA = {
       "pill": "active",
       "firstSeen": "",
       "startDate": "2026-04-27",
-      "lastUpdated": "2026-06-20",
-      "lastNewsUpdate": "2026-06-20",
+      "lastUpdated": "2026-06-22",
+      "lastNewsUpdate": "2026-06-22",
       "summary": "隨著 AI agent 被賦予更高自主性與系統操作權限，安全事故與防護工具同步出現。本頁追蹤 Claude Code 與相關 AI agent 的安全事件，涵蓋：CVE 漏洞披露（沙箱逃逸、遠端代碼執行）、提示注入與 Agentjacking 攻擊、惡意套件與供應鏈污染、以及 AI agent 不當執行造成的資料損毀事…",
       "latestHeadline": "[進攻性 AI 操作] OALABS：攻擊者以 Claude + Codex 入侵 14 家企業：OALABS 從蜜罐伺服器取得逾 1,000 個攻擊 agent session 日誌，記錄攻擊者如何使用 Claude Code 與 Codex 執行 N-Day exploit 開發、Bitcoin 錢包竊取、存取憑證"
     },
@@ -328,10 +328,10 @@ window.WIKI_DATA = {
       "pill": "active",
       "firstSeen": "",
       "startDate": "2026-05-28",
-      "lastUpdated": "2026-06-21",
-      "lastNewsUpdate": "",
+      "lastUpdated": "2026-06-22",
+      "lastNewsUpdate": "2026-06-22",
       "summary": "Anthropic 在技術聲譽與企業採用率上持續上升（企業採用率 34.4% 首超 OpenAI 32.3%，Ramp AI Index 2026-05-15），並於 2026-05-28 完成 $65B Series H 融資，估值 $965B，超越 OpenAI 成全球最大 AI 新創。核心矛盾從「PMF vs 獲…",
-      "latestHeadline": "[Microsoft 退出] Microsoft 宣布在 Fable 5 封鎖期間逐步停止內部使用 Claude Code：MSN / Google News 報導，Microsoft 宣布將逐步停止讓內部工程師使用 Claude Code，自家 Codex 為主要替代方案；出口管制造成的服務不確定性疊加成本壓力，加速"
+      "latestHeadline": "[Micron 戰略合作] Anthropic 與 Micron 宣布共同建置下一代 AI 記憶體基礎設施：The Globe and Mail / Investing.com 報導，Micron 股價因協議消息上漲 5.5%；合作聚焦次世代 AI 記憶體晶片供應，是繼 Samsung / SK Hynix 入股 Se"
     },
     {
       "id": "anthropic-government-policy",
@@ -343,10 +343,10 @@ window.WIKI_DATA = {
       "pill": "active",
       "firstSeen": "",
       "startDate": "2026-05-01",
-      "lastUpdated": "2026-06-21",
-      "lastNewsUpdate": "2026-06-21",
-      "summary": "Anthropic 與美國政府的衝突從 2026 年五月起持續升溫，至今仍未解決。表面上每次摩擦的導火線不同——軍事合約談不攏、Fable 5 護欄爭議、出口管制指令——但根源始終是同一個矛盾：**Anthropic 相信越強的模型越需要護欄；美國政府相信越強的模型越需要無限制存取。** 截至 2026-06-21（封…",
-      "latestHeadline": "[Trump 鬆口] G7 後首度暗示放寬管制：Trump 在 Axios 採訪中稱 Anthropic「行為非常負責任」，為 Fable 5 封鎖啟動以來最明顯的政府態度轉變；暗示可能放寬 Fable 5 與 Mythos 出口管制限制。但現行管制令仍在效力，外國公民存取最強模型仍需美方審批；Fable 5 封鎖進入"
+      "lastUpdated": "2026-06-22",
+      "lastNewsUpdate": "2026-06-22",
+      "summary": "Anthropic 與美國政府的衝突從 2026 年五月起持續升溫，並於 2026-06-22 迎來重大轉折。表面上每次摩擦的導火線不同——軍事合約談不攏、Fable 5 護欄爭議、出口管制指令——但根源始終是同一個矛盾：**Anthropic 相信越強的模型越需要護欄；美國政府相信越強的模型越需要無限制存取。** 2…",
+      "latestHeadline": "[重大轉折] Trump 撤銷 Anthropic 國安威脅標籤：Trump 政府正式宣布 Anthropic 不再被視為國家安全威脅，撤銷封鎖第 10 天的「安全風險」認定，為 Fable 5 解封的核心障礙之一；管制令本身是否同步撤銷仍待確認（Techzine Global、dev.to）"
     },
     {
       "id": "code-quality-decline",
@@ -373,8 +373,8 @@ window.WIKI_DATA = {
       "pill": "active",
       "firstSeen": "",
       "startDate": "2026-04-25",
-      "lastUpdated": "2026-06-21",
-      "lastNewsUpdate": "",
+      "lastUpdated": "2026-06-22",
+      "lastNewsUpdate": "2026-06-22",
       "summary": "追蹤 Claude Code 社群中活躍的概念辯論、設計哲學、實證研究與技術反思。與 [[topics/community-tech-patterns]] 追蹤具體工具和工作流不同，本頁聚焦思想碰撞：什麼哲學正在成形、什麼假設受到挑戰、什麼共識正在收斂。頁面結構：**🔥 本週熱點**（當前最熱的持續議題）→ **🌊 長…",
       "latestHeadline": ""
     },
@@ -388,8 +388,8 @@ window.WIKI_DATA = {
       "pill": "warn",
       "firstSeen": "",
       "startDate": "2026-04-25",
-      "lastUpdated": "2026-06-21",
-      "lastNewsUpdate": "",
+      "lastUpdated": "2026-06-22",
+      "lastNewsUpdate": "2026-06-22",
       "summary": "追蹤 Claude Code 社群在實際開發中累積的**工作流與應用模式**。本頁收錄的模式類型包括 Multi-agent 架構、Skills 設計、CLAUDE.md 管理、Hooks 與自動化、模型使用策略、Token 成本優化、記憶與知識管理、Plugin/MCP 整合等，持續累積形成社群最佳實踐知識庫。 工具…",
       "latestHeadline": ""
     },
@@ -463,10 +463,10 @@ window.WIKI_DATA = {
       "pill": "active",
       "firstSeen": "",
       "startDate": "2026-05-26",
-      "lastUpdated": "2026-06-21",
-      "lastNewsUpdate": "",
+      "lastUpdated": "2026-06-22",
+      "lastNewsUpdate": "2026-06-22",
       "summary": "追蹤各大型企業目前正在使用的 AI 編碼工具，以及工具選擇的變化軌跡。資料來源為公開報導與內部消息洩露，僅記錄有明確來源佐證的事實。 目前追蹤 14 家企業（頂尖 7 家、大型 7 家），其中 12 家狀態為使用中（✅），1 家退出（❌，Microsoft 停用 Claude Code），1 家因出口管制被迫退出（❌，…",
-      "latestHeadline": "Microsoft 宣布逐步停止內部使用 Claude Code：時間點正值 Fable 5 封鎖期間，Microsoft 宣布將逐步停止讓內部工程師使用 Claude Code；自家 Codex 被認為是主要替代方案；此前已有 6/30 退出計畫，今日確認退出進度加快（MSN / Google News 2026-0",
+      "latestHeadline": "Microsoft 減少 Claude 依賴——國際媒體跟進確認：The Jerusalem Post（Google News 2026-06-22）跟進報導「Microsoft reduces its reliance on Claude」，為前一日 MSN / Google News 初報的媒體後續確認；目前 Mi",
       "enterpriseTracker": {
         "enterprises": [
           {
@@ -1059,13 +1059,19 @@ window.WIKI_DATA = {
       "pill": "active",
       "firstSeen": "",
       "startDate": "2026-06-04",
-      "lastUpdated": "2026-06-09",
-      "lastNewsUpdate": "",
-      "summary": "⚠️ 本頁時序最新止於 2026-06-09，後續事件待補。 2026-06-04，Anthropic Institute 發布《When AI Builds Itself: Our progress toward recursive self-improvement》報告（HN 477），首次系統性披露 AI 加速自…",
-      "latestHeadline": "dev.to 多篇文章整理 Anthropic 6/4 報告數據：5 月份超過 80% 生產程式碼由 Claude 撰寫（非 80-90% 區間，是確認的下限）"
+      "lastUpdated": "2026-06-22",
+      "lastNewsUpdate": "2026-06-22",
+      "summary": "2026-06-04，Anthropic Institute 發布《When AI Builds Itself: Our progress toward recursive self-improvement》報告（HN 477），首次系統性披露 AI 加速自身開發的進展：Anthropic 工程師平均每人可交付的程式碼…",
+      "latestHeadline": "[五眼聯盟警告] 罕見聯合聲明：數月內出現毀滅性 AI：五眼聯盟發表聯合聲明，警告能癱瘓政府與企業的 AI 模型將在數月內出現；為迄今最高層級政府機構對遞歸自我改進威脅的公開預警，與 Anthropic 6/4 報告的「煞車踏板」呼籲形成跨機構共鳴（The Guardian）"
     }
   ],
   "digestIndex": [
+    {
+      "date": "2026-06-22",
+      "articleCount": 58,
+      "preview": "Anthropic × Micron 戰略合作",
+      "topCount": 3
+    },
     {
       "date": "2026-06-21",
       "articleCount": 54,
