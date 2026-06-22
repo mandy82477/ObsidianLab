@@ -4,7 +4,8 @@
 **狀態：** active（爭議中）
 **領域：** 🤖 模型
 **首次出現：** 2026-04-24
-**最後更新：** 2026-06-20
+**最後更新：** 2026-06-23
+**最後新聞更新：** 2026-06-23
 
 ---
 
@@ -32,6 +33,9 @@ Claude Opus 4.7 於 2026-04-24 正式發布，已相繼被 Opus 4.8（2026-05-28
 ---
 
 ## 已知問題與爭議
+
+### 529 Overloaded 大規模中斷（2026-06-21~22）
+Anthropic 官方確認 Opus 4.7（及 Opus 4.8、4.6、Sonnet 4.6）於 2026-06-21 至 22 間出現 elevated error rates（HTTP 529 Overloaded）；另有全球約 90 分鐘完整中斷。Max Plan 用戶反映自上週起錯誤持續激增，尤以 coding tasks 與 Claude Code 受影響最重。此為 Opus 4.7 仍在線期間受影響的大規模服務事件（[cybersecuritynews.com](https://cybersecuritynews.com/anthropic-claude-ai-outage/)）。
 
 ### 思考深度不可控（仍存在）
 Opus 4.7 由模型自行決定思考深度，而非由使用者控制。社群反映在需要深度推理的問題上，模型有時給出淺薄回應。這與使用者對「旗艦模型」的期待存在落差。

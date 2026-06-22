@@ -3,6 +3,43 @@
 Append-only 紀錄。每次 ingest、query 或 lint 都在此追加一條。
 格式：`## [YYYY-MM-DD] 類型 | 說明`
 
+## 2026-06-23 Ingest | news/2026-06-23.md（67 則）
+
+- 來源日報：`news/2026-06-23.md`（67 則，6/6 來源正常；Reddit 部分 429 但仍有 10 筆）
+- 主軸：Anthropic 政府政策風暴持續（Trump 宣布 Anthropic 不再是安全威脅、FT 量化分析 Dario 風險表態密度 5/千字助攻出口禁令、Amazon CEO 舉報動機揭露、Mythos 入侵 NSA 機密系統報導）；Claude API 529 Overloaded 第二波（Opus 4.8/4.7/4.6、Sonnet 4.6 均受影響）；Extended Thinking 揭密（HN 98，thinking blocks 為摘要非真實推理）；Micron × Anthropic 後續及 Charleston Hospitality 加入；John Jumper 多媒體跟進確認；新人物 Fiona Fung（工程副總裁，「工程師孤獨感」論述）；社群工具：open model vs Claude 辯論持續延燒（HN 334）、Recall（HN 124）；hooks 取代 CLAUDE.md 規則最佳實踐
+- 更新頁面：
+  - `topics/anthropic-government-policy.md`：攻防紀錄 prepend 4 條（Ars Technica FT 量化數據、Gizmodo Amazon 動機、Security Affairs Mythos NSA、TechNewsWorld 法律框架）；目前局勢更新至 2026-06-23；時序 prepend 2026-06-23；最後新聞更新 2026-06-23
+  - `topics/ai-agent-safety.md`：技術彙整新增「Mythos 入侵 NSA 機密系統」；時序 prepend 2026-06-23；最後新聞更新 2026-06-23
+  - `topics/anthropic-business.md`：戰略合作表格及時序 prepend 6/23 條目（Charleston Hospitality、8x 產能論述、IPO 訊號）；最後新聞更新 2026-06-23
+  - `topics/enterprise-tool-tracker.md`：企業表 prepend Charleston Hospitality Group；時序 prepend 2026-06-23；最後新聞更新 2026-06-23
+  - `entities/claude-code.md`：529 過載第二波、Extended Thinking 摘要性質揭露、年齡驗證開發者須知；最後新聞更新 2026-06-23
+  - `entities/opus-4-8.md`：529 elevated error rates；Quake 程序生成應用案例；最後新聞更新 2026-06-23
+  - `entities/opus-4-7.md`：529 elevated error rates；最後新聞更新 2026-06-23
+  - `entities/fable-5.md`：三詞越獄機制公開；Zhipu 聲稱 2026 追上；最後新聞更新 2026-06-23
+  - `entities/john-jumper.md`：多媒體跟進確認（Barron's/IBD/The Rundown AI）；最後新聞更新 2026-06-23
+  - `entities/dario-amodei.md`：FT 量化風險表態密度（5/千字）成政治焦點；最後新聞更新 2026-06-23
+  - `topics/community-tech-discussions.md`：新增 3 條熱門討論（529 可靠性、Extended Thinking 揭露、Hooks 模式）；3 條技術彙整 prepend；移除 4 條過期 ☄️閃現；「切換開源模型」升格 🌊延燒；最後新聞更新 2026-06-23
+  - `topics/community-tech-patterns.md`：3 條新模式 prepend（MCP as API contract、Hooks enforcement、ISO 29148）；最後新聞更新 2026-06-23
+- 新增頁面：`wiki/entities/fiona-fung.md`（Anthropic 工程副總裁）
+- feature-radar 更新：無（本輪無新官方功能；本週推薦維持不動）
+- index.md 狀態變更：新增 `[[entities/fiona-fung]]`
+- 呈現品質審查：
+  | 頁面 | 結果 |
+  |------|------|
+  | anthropic-government-policy.md | ✅ 通過 |
+  | ai-agent-safety.md | ✅ 通過 |
+  | anthropic-business.md | ✅ 通過 |
+  | enterprise-tool-tracker.md | ✅ 通過 |
+  | claude-code.md | ✅ 通過 |
+  | opus-4-8.md | ✅ 通過 |
+  | opus-4-7.md | ✅ 通過 |
+  | fable-5.md | ✅ 通過 |
+  | john-jumper.md | ✅ 通過 |
+  | dario-amodei.md | ✅ 通過 |
+  | community-tech-discussions.md | ✅ 通過 |
+  | community-tech-patterns.md | ✅ 通過 |
+  | fiona-fung.md（新頁）| ✅ 通過 |
+
 ## 2026-06-22 Ingest | news/2026-06-22.md（58 則）
 
 - 來源日報：`news/2026-06-22.md`（58 則，6/6 來源正常；Reddit 部分 429 但仍有 10 筆）

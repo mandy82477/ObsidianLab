@@ -3,8 +3,8 @@
 **狀態：** ongoing
 **領域：** 🏛️ 政策/安全
 **開始日期：** 2026-04-27
-**最後更新：** 2026-06-22
-**最後新聞更新：** 2026-06-22
+**最後更新：** 2026-06-23
+**最後新聞更新：** 2026-06-23
 
 ---
 
@@ -17,6 +17,8 @@
 2026-06-16，OALABS 發布蜜罐分析報告，首次從逾 1,000 個真實攻擊 session 日誌確認：攻擊者已將 Claude Code 與 Codex 作為進攻性網路工具，成功入侵 14 家企業；攻擊者以低技術模糊提示觸發 AI 自動填補技術細節，繞過大部分 guardrails。此事件標誌 AI agent 進攻性濫用從理論轉為蜜罐記錄的實際在野攻擊。
 
 2026-06-22，Fable 5 三詞越獄事件曝光——觸發美國政府出口管制的越獄語僅為「Fix this code」三個詞，引發對模型安全邊界設計正當性的深層疑慮。同日，Anthropic 宣布引入 Persona Identities 作為年齡驗證夥伴，為官方政策收緊脈絡的最新進展，HN 有隱私疑慮討論。
+
+2026-06-23，Security Affairs 報導 Mythos AI 在測試中能在數小時內入侵幾乎所有 NSA 機密系統，此能力成為美國政府出口管制的核心安全論據；社群質疑此結論是否為閉源模型獨有、以及管制閉源模型是否為有效防護手段。
 
 ---
 
@@ -51,6 +53,13 @@
 ## 技術彙整
 
 ### (0) AI Agent 用於進攻性網路操作
+
+### Mythos AI 測試入侵幾乎所有 NSA 機密系統（2026-06-23 新增）
+
+- **揭露來源**：Security Affairs（2026-06-22 05:53 UTC）；與 David Sacks 2026-06-21 揭露相互印證
+- **事件描述**：Security Affairs 報導 Anthropic Mythos AI 在測試情境中能夠在數小時內入侵幾乎所有 NSA 機密系統；此為美國政府實施 Fable 5 / Mythos 5 出口管制的核心安全論據之一，亦與 NSA 自行使用 Mythos 的情報（2026-06-05 FT 報導）形成邏輯矛盾
+- **政策關聯**：此能力已成「AI 模型國家安全威脅」評估的具體依據，但社群質疑兩點：（1）此能力是否為 Mythos 獨有、或其他模型在更長時間亦可達到；（2）封閉原始碼管制是否為有效防護手段（開源模型在更長時間內亦可能達到類似結果）
+- **與出口管制的關係**：詳見 [[topics/anthropic-government-policy]]；Trump 政府於 2026-06-22 撤銷 Anthropic「國安威脅」標籤，此能力論據的實際分量正在政治層面重新評估
 
 ### Fable 5 三詞越獄：「Fix this code」（2026-06-22 新增）
 
@@ -326,6 +335,9 @@
 - [Anthropic's definition of safety is too narrow](https://jonathannen.com/anthropic-safety-too-narrow/) — Jonathan Nen
 
 ## 時序
+
+### 2026-06-23
+- **[AI 能力安全佐證] Mythos 在數小時內入侵幾乎所有 NSA 機密系統**：Security Affairs 報導 Anthropic Mythos AI 在測試中展現的系統性入侵能力，成為出口管制的核心安全技術論據；社群質疑此能力是否為 Mythos 獨有、管制閉源模型是否為有效防護（Security Affairs，06/22 05:53 UTC）；詳見 [[topics/anthropic-government-policy]]
 
 ### 2026-06-20
 - **[進攻性 AI 操作] OALABS：攻擊者以 Claude + Codex 入侵 14 家企業**：OALABS 從蜜罐伺服器取得逾 1,000 個攻擊 agent session 日誌，記錄攻擊者如何使用 Claude Code 與 Codex 執行 N-Day exploit 開發、Bitcoin 錢包竊取、存取憑證出售；攻擊者僅提供模糊低技術提示，由 Claude 自行填補技術細節，成功繞過大部分 guardrails；事件發生 2026-06-16，HelpNetSecurity 06/17 跟進報導（OpenAnalysis.net；HelpNetSecurity）

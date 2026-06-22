@@ -3,14 +3,14 @@
 **狀態：** ongoing
 **領域：** 💼 商業
 **開始日期：** 2026-05-26
-**最後更新：** 2026-06-22
-**最後新聞更新：** 2026-06-22
+**最後更新：** 2026-06-23
+**最後新聞更新：** 2026-06-23
 
 ## 摘要
 
 追蹤各大型企業目前正在使用的 AI 編碼工具，以及工具選擇的變化軌跡。資料來源為公開報導與內部消息洩露，僅記錄有明確來源佐證的事實。
 
-目前追蹤 14 家企業（頂尖 7 家、大型 7 家），其中 12 家狀態為使用中（✅），1 家退出（❌，Microsoft 停用 Claude Code），1 家因出口管制被迫退出（❌，JPMorgan Chase 香港分行）。整體趨勢：Claude API 企業採用持續擴大，TCS、DXC、LG 等頂尖企業相繼全面入局；Atlassian 與 JFrog 則於 2026-06-18 同日新增採用。2026-06-21 Microsoft 確認在 Fable 5 封鎖期間加速退出 Claude Code，2026-06-22 The Jerusalem Post 跟進確認 Microsoft 正系統性降低對 Claude 依賴，GitHub Copilot 為主要替代方案；出口管制 + 成本壓力雙重因素持續影響頂尖企業工具選擇。
+目前追蹤 15 家企業（頂尖 7 家、大型 7 家、中型 1 家），其中 13 家狀態為使用中（✅），1 家退出（❌，Microsoft 停用 Claude Code），1 家因出口管制被迫退出（❌，JPMorgan Chase 香港分行）。整體趨勢：Claude API 企業採用持續擴大，TCS、DXC、LG 等頂尖企業相繼全面入局；Atlassian 與 JFrog 則於 2026-06-18 同日新增採用。2026-06-21 Microsoft 確認在 Fable 5 封鎖期間加速退出 Claude Code，2026-06-22 The Jerusalem Post 跟進確認 Microsoft 正系統性降低對 Claude 依賴，GitHub Copilot 為主要替代方案。2026-06-22 新增餐旅業具名案例 Charleston Hospitality Group；出口管制 + 成本壓力雙重因素持續影響頂尖企業工具選擇。
 
 ---
 
@@ -22,6 +22,7 @@
 
 | 企業 | 規模 | AI 編碼工具 | 狀態 | 事件日期 | 備註 | 確認日期 |
 |------|------|-----------|------|---------|------|---------|
+| Charleston Hospitality Group | 中型 | Claude API | ✅ | 2026-06-22 | 加入 Anthropic Claude 企業 AI 網路；餐旅業具名採用案例 | 2026-06-22 |
 | Atlassian | 大型 | Claude API | ✅ | 2026-06-18 | Claude Agent for Jira 正式推出，企業整合嵌入全球最大專案管理工具 | 2026-06-18 |
 | JFrog | 大型 | Claude Code | ✅ | 2026-06-18 | Governed Claude Code Integration，提供企業級安全管控的 Claude Code 部署方案 | 2026-06-18 |
 | JPMorgan Chase | 頂尖 | Claude API | ❌ | 2026-06-18 | 香港分行因美國出口管制指令被迫停止使用 Anthropic 服務（不含美國本部），是出口管制對頂尖金融機構的直接衝擊 | 2026-06-18 |
@@ -57,7 +58,7 @@
 | 工具 | 企業採用數 | 趨勢 | 主要阻力 |
 |------|----------|------|---------|
 | Claude Code | 5 使用中（Amazon、Uber、UiPath、Rubrik、JFrog）+ 1 退出（Microsoft） | ⚠️ 成本壓力 + Fable 5 封鎖衝擊 | 缺乏企業層級預算管控；Fable 5 出口管制加速部分企業評估替代方案 |
-| Claude API | 15（Apple、KPMG、iCapital、哈佛、Fujitsu、Travelport、Nimble Gravity、ZoomInfo、LG Group、AppFolio、Salesforce Claude API、TCS、DXC Technology、Atlassian、JPMorgan Chase 美國本部） | 🟢 快速擴張 | — |
+| Claude API | 16（Apple、KPMG、iCapital、哈佛、Fujitsu、Travelport、Nimble Gravity、ZoomInfo、LG Group、AppFolio、Salesforce Claude API、TCS、DXC Technology、Atlassian、JPMorgan Chase 美國本部、Charleston Hospitality Group） | 🟢 快速擴張 | — |
 | GitHub Copilot | 1（Microsoft） | 🟢 Microsoft 背書 | 生態鎖定 |
 | OpenAI Codex | 2（Amazon、UiPath） | 🟢 快速成長 | — |
 | Cursor | 1（Uber） | ⚠️ 新創份額下滑 | 成本管控困難；企業級功能不如 Claude Code |
@@ -79,6 +80,9 @@ Claude Code 是工程師日常編碼工具（CLI），成本隨使用量線性�
 ---
 
 ## 時序
+
+### 2026-06-23
+- **Charleston Hospitality Group 加入 Anthropic Claude AI 網路**：SCBiz 報導（2026-06-22），南卡羅萊納州餐旅集團正式加入 Anthropic Claude 企業 AI 網路，為餐旅業首個具名採用案例，新增為中型企業追蹤對象
 
 ### 2026-06-22
 - **Microsoft 減少 Claude 依賴——國際媒體跟進確認**：The Jerusalem Post（Google News 2026-06-22）跟進報導「Microsoft reduces its reliance on Claude」，為前一日 MSN / Google News 初報的媒體後續確認；目前 Microsoft Claude Code 狀態 ❌ 已退出（事件日期 2026-06-21），GitHub Copilot 為主要替代方案

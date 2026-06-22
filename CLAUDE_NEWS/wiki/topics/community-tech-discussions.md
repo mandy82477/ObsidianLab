@@ -3,8 +3,8 @@
 **狀態：** ongoing
 **領域：** 🌐 社群
 **開始日期：** 2026-04-25
-**最後更新：** 2026-06-22
-**最後新聞更新：** 2026-06-22
+**最後更新：** 2026-06-23
+**最後新聞更新：** 2026-06-23
 
 ---
 
@@ -97,7 +97,10 @@ MCP 的實際成本遠超多數使用者預期，已有多個量化案例：
 
 | 討論主題 | 首見 | 熱度 | 模式 | 核心論點 | 衍生 |
 |---------|------|------|------|---------|------|
-| 切換到開源模型的代價接近零：閉源護城河瓦解論 | 2026-06-22 | 🔥🔥🔥🔥 | ☄️閃現 | Andrew Marble 文章（HN score 309，最高熱度）：類比 Linux 轉移，今日切換到開源 LLM 的代價已接近零；論點：閉源模型護城河正在瓦解，平台依賴風險超過便利性收益；引發 Recall、ANMA 等工具作者呼應「本地主控」的設計方向（HN） | Recall |
+| Extended Thinking 為摘要而非真實推理：AI 透明度強烈討論 | 2026-06-23 | 🔥🔥🔥 | ☄️閃現 | Patrick McCanna 文章（HN score 98）：揭露 Claude Code 的 thinking blocks 實為事後摘要，非即時真實推理過程；Matt Green 等人跟進分析 signature block；引發 AI 輸出透明度、「思考」定義的廣泛辯論（HN） | — |
+| Hooks 取代 CLAUDE.md 規則：強制遵守率大幅提升 | 2026-06-23 | 🔥🔥 | ☄️閃現 | Reddit r/ClaudeAI 討論：用戶分享改用 hooks 取代 CLAUDE.md 純文字規則後，規則遵守率顯著提升；具體案例：hooks 確保「never run the deploy script」、migration 資料夾保護、formatter 強制執行等真正被執行（Reddit r/ClaudeAI） | Hooks 強制執行取代 CLAUDE.md 規則 |
+| 529 Overloaded：Max Plan 用戶大規模服務中斷 | 2026-06-23 | 🔥🔥 | ☄️閃現 | Ask HN（score 8）：Max Plan 用戶集中反映 529 錯誤，工作流中斷；有用戶分享帳號被鎖事件；引發社群對 Anthropic 服務可靠性的質疑，高付費用戶對 SLA 期望與實際落差形成張力（HN） | — |
+| 切換到開源模型的代價接近零：閉源護城河瓦解論 | 2026-06-22 | 🔥🔥🔥🔥 | 🌊延燒 | Andrew Marble 文章（HN score 334，最高熱度）：類比 Linux 轉移，今日切換到開源 LLM 的代價已接近零；論點：閉源模型護城河正在瓦解，平台依賴風險超過便利性收益；引發 Recall、ANMA 等工具作者呼應「本地主控」的設計方向（HN）；2026-06-23 持續延燒，熱度維持最高 | Recall |
 | Claude 短 session 工作模式：Recall 工具解痛點 | 2026-06-22 | 🔥🔥 | ☄️閃現 | Show HN（score 123）：開源工具 Recall 解決 Claude Code 跨 session 上下文丟失痛點；HN 討論中工程師分享「主動縮短 session 長度 + 明確轉移摘要」的工作模式，而非試圖讓 context 無限延伸；與 Context Rot 修復五法形成方法論對應（HN） | — |
 | Claude Code 確定性技術：如何讓 LLM 輸出可重現 | 2026-06-21 | 🔥 | ☄️閃現 | Ask HN 討論（score 4）：如何讓 LLM 輸出在同一場景下可重現；社群建議包括：寫可重用腳本（而非一次性 prompt）、版本鎖定（固定模型版本）、PRNG seed 概念引入工作流；核心結論：確定性來自「流程可重用性」而非「輸出固定性」（HN） | — |
 | 平行 agent vs 串行效能：不是模型笨，是你讓它排隊 | 2026-06-21 | 🔥 | ☄️閃現 | dev.to 文章（AI 串行 vs 並行工作模式）：AI agent 慢的根因往往不是模型能力，而是串行設計讓 agent 一次只做一件事；並行化獨立子任務可大幅縮短等待時間；附具體重構範例（dev.to） | — |
@@ -164,10 +167,6 @@ MCP 的實際成本遠超多數使用者預期，已有多個量化案例：
 | 5 人團隊有 5 個互相矛盾的 CLAUDE.md | 2026-06-03 | 🔥🔥 | ☄️閃現 | 每人寫自己的規則導致 Claude 行為不一致；團隊 CLAUDE.md 標準化成下一個工程問題 | — |
 | AI 工具被用於求職信垃圾郵件 | 2026-06-02 | 🔥🔥🔥🔥🔥 | ☄️閃現 | 失業者收到 AI 生成的虛假求職推銷信；HN score 627；揭露 AI coding 工具被濫用於大規模「量型求職行銷」的人道代價 | — |
 | 74 個 Skills，多數是劇場 | 2026-06-02 | 🔥🔥 | ☄️閃現 | 作者整理 74 個 skill 後發現只有 3 個真正改變 agent 行為；大多數 skill 只是讓 Claude 多讀一次文件；呼應 prompt compliance 議題 | — |
-| Opus 4.8 Thinking 40–60 倍 context drain | 2026-05-31 | 🔥🔥🔥 | ☄️閃現 | 每輪最高 900K cache tokens（4.7 為 14K–34K）；context window 快速耗盡是重度使用者主要痛點；工作流設計需全面重新評估 | — |
-| Claude Code 需要自動模型路由？ | 2026-05-31 | 🔥🔥 | ☄️閃現 | 社群呼籲 Claude Code 支援依任務複雜度自動切換 Haiku/Sonnet/Opus，目前仍需手動操作；與「94% token 流向錯誤模型」痛點直接呼應 | — |
-| 10 個 Plugin 同時啟用的真實成本 | 2026-05-31 | 🔥🔥 | ☄️閃現 | 作者啟用 10 個 plugin 後信用耗盡，詳細拆解各 plugin token 成本；與 MCP context bloat（9 伺服器 = 38k tokens）形成最新佐證 | — |
-| Agent Skills Progressive Disclosure 三層架構 | 2026-05-31 | 🔥🔥 | ☄️閃現 | Anthropic 官方 Skills 設計指南：啟動時只讀技能名稱+簡述，命中後按需載入完整內容；是 token 效率與觸發準確度的官方設計取捨 | — |
 | LLMs 製造虛假忙碌？ | 2026-05-22 | 🔥🔥🔥 | 🌊延燒 | 質疑 LLM 是否在製造「效率幻覺」：spec/PRD/測試計劃/程式碼的流水線，每個產出物仍需人工逐一核查，燒掉的 token 數等同「員工績效」；對 AI 效率宣稱提出最直接的挑戰 | — |
 | Context 管理是大型專案核心瓶頸 | 2026-05-12 | 🔥🔥🔥 | 🌊延燒 | Attention 機制局部聚焦問題；應對策略：架構概覽注入、結構化索引、任務分拆；2026-05-17 官方 4 種 context 工具詳解再度引發討論，顯示痛點持續 | — |
 | HTML vs Markdown 輸出格式辯論 | 2026-05-09 | 🔥🔥🔥🔥🔥 | 🌊延燒 | HN 187 則討論；原始論點：HTML 視覺呈現與資訊密度更優；反駁：HTML 難以人機協同編輯；2026-05-20 Anthropic 官方 Blog 發文背書 HTML（理由：表達能力強、瀏覽器直接開啟、分享便利）；2026-05-21 官方 Blog 文章登上 HN 首頁，討論再度引爆，熱度升至跨平台最高級 | agent-html-skills |
@@ -181,6 +180,34 @@ MCP 的實際成本遠超多數使用者預期，已有多個量化案例：
 ---
 
 ## 技術彙整
+
+### Hooks 取代 CLAUDE.md 規則：強制遵守率大幅提升（2026-06-23）
+
+- **來源：** "I stopped writing rules in CLAUDE.md and started writing hooks"（Reddit r/ClaudeAI，06-22）
+- **核心論點：** 將 CLAUDE.md 中的文字規則改為 hooks 後，規則遵守率顯著提升；原因是 CLAUDE.md 是建議層（LLM 機率性遵守），而 hooks 是強制執行層（程序性保證）；實際案例包括 deploy 保護、migration 資料夾防誤改、formatter 強制執行
+- **關鍵回響：**
+  - 📝 支持：ANMA 架構邊界合約（0/20 違規量化驗證）提供工具層佐證；與 Hooks 強制執行 > CLAUDE.md 建議的社群共識一致
+  - 📝 補充：hooks 需要更多初始設定成本，對一次性任務不划算；最適合高重複性、高一致性要求的工作流
+- **收斂結論：** 對於「必須執行」的規則，hooks 是比 CLAUDE.md 更可靠的強制機制；CLAUDE.md 適合描述偏好與上下文，hooks 適合描述不可違背的邊界（推論）
+
+### 529 Overloaded：Max Plan 用戶大規模服務中斷（2026-06-23）
+
+- **來源：** "Ask HN: Are you being '529 Overloaded' by Anthropic too?"（HN，06-22，score 8）
+- **核心論點：** Max Plan 付費用戶集中遭遇 529 過載錯誤，工作流中斷；有用戶分享帳號被鎖的具體遭遇；引發社群對 Anthropic 服務可靠性的質疑，核心問題是「高價訂閱是否應有更穩定的 SLA」
+- **關鍵回響：**
+  - 📝 支持：與 Recall 工具（解決 session 丟失）呼應，社群對平台可靠性的結構性疑慮持續累積
+  - 📝 背景：與「切換開源模型代價接近零」同期，強化了部分用戶對閉源平台依賴風險的警覺
+- **收斂結論：** 尚無共識；Anthropic 未正式回應；服務中斷事件直接強化了開源替代的說服力（推論）
+
+### Extended Thinking 為摘要而非真實推理：AI 透明度辯論（2026-06-23）
+
+- **來源：** "The text in Claude Code's extended thinking output is not authentic"（patrickmccanna.net，HN score 98，06-22）
+- **核心論點：** Claude Code 的 thinking blocks 所顯示的文字不是即時真實推理過程，而是事後摘要（post-hoc summary）；Patrick McCanna 透過分析發現 thinking output 的生成模式與真實 stream-of-thought 不符；Matt Green 等研究者跟進分析 signature block 結構
+- **關鍵回響：**
+  - 📝 支持：Matt Green（cryptographer）跟進分析 signature block，確認存在摘要性質的結構（待完整發表）
+  - 📝 反駁：部分社群認為「摘要 vs 真實思考」的區分在工程層面無實際影響，輸出結果才是評估重點
+  - 📝 意涵：如果 thinking blocks 是摘要，則「讓用戶看到模型推理過程」的透明度承諾需要重新定義
+- **收斂結論：** 討論尚在進行中，無共識；「extended thinking 輸出是否構成透明度」仍是開放問題；Anthropic 尚未公開回應此具體指控（推論：此議題未來可能成為 AI 透明度標準討論的重要案例）
 
 ### 開源 LLM 平台遷移代價接近零：閉源護城河瓦解論（2026-06-22）
 

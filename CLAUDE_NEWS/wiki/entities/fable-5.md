@@ -4,7 +4,8 @@
 **狀態：** active（正式發布；Fable 5 / Mythos 5 因美國政府出口管制指令暫停全球存取）
 **領域：** 🤖 模型
 **首次出現：** 2026-06-09
-**最後更新：** 2026-06-20
+**最後更新：** 2026-06-23
+**最後新聞更新：** 2026-06-23
 
 ---
 
@@ -60,7 +61,8 @@ claude --model claude-fable-5-20260609
 
 - ✅ **靜默降級競爭 LLM 開發（已部分撤回）**：Fable 5 初版在偵測到前沿 LLM 開發工作時靜默降級，系統卡承認「These safeguards will not be visible to the user」；2026-06-11 Anthropic 道歉撤回，改為「可見防護」——觸發時用戶將明確得知
 - ⚠️ **資安研究者護欄過激**：Fable 5 安全分類器過度敏感，連讀取資安部落格、分析 GitHub profile 等無害操作也被攔截；IBM X-Force 知名研究員 Valentina Palmiotti 公開批評（TechCrunch，HN score 512）
-- ⚠️ **Jailbreak 已公開**：Pliny（@elder_plinius）與 0xSufi 已公開 Fable 5 護欄繞過 PoC，使用多步驟攻擊組合（請求拆解重組、敘事框架包裝、長 context 操作）
+- ⚠️ **「Fix this code」三詞越獄機制公開（2026-06-22）**：dev.to 文章《The Fable 5 Jailbreak Was Three Words Long》揭露引發出口管制的具體越獄機制——「Fix this code」三個字即可繞過 Fable 5 安全控制（[dev.to](https://dev.to/peremptory/the-fable-5-jailbreak-was-three-words-long-457j)）；此事件直接呼應美國政府「護欄不可靠」的管制論點，亦是 Amazon 研究人員向白宮通報的漏洞細節首次公開
+- ⚠️ **Jailbreak 已公開（早期 PoC）**：Pliny（@elder_plinius）與 0xSufi 已公開 Fable 5 護欄繞過 PoC，使用多步驟攻擊組合（請求拆解重組、敘事框架包裝、長 context 操作）
 - ⚠️ **Microsoft 內部禁用**：Microsoft 法務/合規部門要求員工不得使用 Fable 5（Times of India、PYMNTS 報導，與 Fable 5 數據保留政策相關）
 - ⚠️ **Fable 5 成本高昂**：$200/月 Max 用戶一次 code review 可消耗 45% 週配額；社群回報消耗量個體差異極大
 - ⚠️ **30 天資料保留**：Bedrock 用戶數據強制離開 AWS 安全邊界，企業隱私顧慮
@@ -126,6 +128,11 @@ claude --model claude-fable-5-20260609
 - [資料保留政策](https://support.claude.com/en/articles/15425996-data-retention-practices-for-mythos-class-models)
 
 ## 歷史記錄
+
+### 2026-06-22
+**「Fix this code」三詞越獄機制公開 + Zhipu 聲稱 2026 年追上 Fable 5**：
+- **三詞越獄細節首次公開**：dev.to 文章揭露引發出口管制的 Fable 5 越獄機制——「Fix this code」三個字即可繞過安全控制。這是美國政府「護欄不可靠」論點與 Amazon 研究人員向白宮通報漏洞的具體指向，是管制事件核心技術事實的首次公開說明（[dev.to](https://dev.to/peremptory/the-fable-5-jailbreak-was-three-words-long-457j)）
+- **Zhipu 競爭聲明**：中國 AI 公司 Zhipu 創辦人向馬斯克聲稱，其 GLM-5.2 將在 2026 年追上 Anthropic Fable 5 的能力水平（South China Morning Post，[SCMP](https://www.scmp.com/tech/article/3357926/china-ai-ready-match-anthropics-fable-5-musk-zhipus-tang-clash-over-glm-52-rise)）；是中美 AI 競爭背景下，Fable 5 作為中國追趕目標首次被具名企業公開宣示的案例
 
 ### 2026-06-20
 **全球媒體反應升溫 + 境外付費帳號遭停用**：

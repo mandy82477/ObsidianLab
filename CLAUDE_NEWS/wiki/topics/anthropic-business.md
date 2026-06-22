@@ -3,8 +3,8 @@
 **狀態：** ongoing
 **領域：** 💼 商業
 **開始日期：** 2026-05-28
-**最後更新：** 2026-06-22
-**最後新聞更新：** 2026-06-22
+**最後更新：** 2026-06-23
+**最後新聞更新：** 2026-06-23
 
 ---
 
@@ -82,7 +82,8 @@ Simon Willison（知名開發者博主）發表文章，認為 Anthropic 與 Ope
 
 | 合作方 | 類型 | 日期 | 意義 |
 |--------|------|------|------|
-| Micron Technology | 戰略合作 | 2026-06-22 | 共同建置下一代 AI 記憶體基礎設施；Micron 股價上漲 5.5%，為記憶體晶片供應鏈合作 |
+| Charleston Hospitality Group | 企業客戶 | 2026-06-22 | 加入 Anthropic Claude 企業 AI 網路，為餐旅業具名採用案例 |
+| Micron Technology | 戰略合作 | 2026-06-22 | Micron 部署 Claude 加速 AI 工廠（AI Factory）建置；Anthropic 獲多年成長軌跡資金支持；Micron 股價上漲 5.5% |
 | DXC Technology | 多年全球聯盟 | 2026-06-12 | 訓練數萬名 Claude 認證工程師；覆蓋銀行、航空、政府等受嚴格監管行業 |
 | Samsung + SK Hynix | 戰略投資 | 2026-05-28 | Series H 同步入股，韓國半導體廠加碼 AI 生態 |
 | Apollo + Blackstone | 晶片債務融資 | 2026-05-29 | 安排 $36B 債務融資用於 AI 晶片採購 |
@@ -113,6 +114,13 @@ Simon Willison（知名開發者博主）發表文章，認為 Anthropic 與 Ope
 - [[news/2026-05-13]]（The Information：定價強勢期）
 
 ## 時序
+
+### 2026-06-23
+- **[Micron 合作細節補充] Micron 部署 Claude 加速 AI Factory 建置，Anthropic 獲多年資金支持**：WCCFTech / Yahoo Finance / Investing.com 三媒體報導，Micron 已實際部署 Claude 加速「AI 工廠」（AI Factory）建置流程，並非僅簽署框架協議；Anthropic 方面獲得多年成長軌跡資金支持（multi-year backing），Micron 股價因消息先行上漲 5.5%（WCCFTech 2026-06-22）
+- **[封鎖中國財務揭露] Anthropic 自揭封鎖中國損失數億美元收入**：TweakTown 報導，Anthropic 公開量化出口管制財務代價：配合美國政策封鎖中國市場後，損失數億美元收入；繼 6/22 出口管制財務揭露條目後的進一步確認，強調 Anthropic 正積極利用這筆「合規代價」在政策論述中爭取籌碼（TweakTown 2026-06-22；見 [[topics/anthropic-government-policy]]）
+- **[企業採用] Charleston Hospitality Group 加入 Anthropic Claude 企業 AI 網路**：SCBiz 報導，南卡羅萊納州餐旅集團 Charleston Hospitality Group 正式加入 Anthropic Claude AI 網路，為餐旅業的具名採用案例（SCBiz 2026-06-22；見 [[topics/enterprise-tool-tracker]]）
+- **[生產力論述] Anthropic 技術專家：coding 已非瓶頸，工程師每季 ship 程式碼量 8 倍成長**：24/7 Wall St. 報導，Anthropic 技術專家表示 AI 讓工程師每季 ship 的程式碼量成長 8 倍，coding 本身已非工程瓶頸，新挑戰在其他環節（如架構決策、測試策略）；Business Insider 另有報導指出工程師孤獨感問題正成為副作用（24/7 Wall St. 2026-06-22）
+- **[IPO 訊號] OpenAI 與 Anthropic 員工面對 IPO 暴富挑戰**：Business Insider 報導，隨 IPO 接近，員工正準備應對突如其來的財富管理問題；此報導隱含 Anthropic IPO 時程已相當明確，與 6/19 IPO 舊金山房地產效應報導同向（Business Insider 2026-06-22）
 
 ### 2026-06-22
 - **[Micron 戰略合作] Anthropic 與 Micron 宣布共同建置下一代 AI 記憶體基礎設施**：The Globe and Mail / Investing.com 報導，Micron 股價因協議消息上漲 5.5%；合作聚焦次世代 AI 記憶體晶片供應，是繼 Samsung / SK Hynix 入股 Series H 後 Anthropic 在半導體記憶體供應鏈上的進一步佈局（Google News 2026-06-22）

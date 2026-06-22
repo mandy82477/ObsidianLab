@@ -4,8 +4,8 @@
 **狀態：** active
 **領域：** 🛠️ 工具/功能
 **首次出現：** 2025（正式推出）
-**最後更新：** 2026-06-22
-**最後新聞更新：** 2026-06-22
+**最後更新：** 2026-06-23
+**最後新聞更新：** 2026-06-23
 
 ---
 
@@ -92,6 +92,10 @@ Claude Code 是 Anthropic 的 AI 編碼 CLI 工具，支援 agentic 工作流程
 > ⚠️ **安裝安全警示**：Google 搜尋廣告曾出現仿冒官方安裝包（植入 Trojan:Win32/Kepavll!rfn），假冒包透過 IElevator 機制竊取瀏覽器 Cookie 與機密憑證，多家資安媒體同步報導。**務必僅從官方來源安裝：`github.com/anthropics/claude-code`**
 
 ### 開發者須知
+- **Extended Thinking 輸出為加密摘要，非原始推理（2026-06-22）**：session log 中的 thinking blocks 文字是推理的摘要版本，真實推理過程被 Anthropic 加密後存在 600 字元 signature 中，用戶端無法解密。需做審計追蹤或對推理過程有完整性要求的工程師，應避免以 thinking blocks 內容作為事實依據（見「已知問題」）
+- **年齡驗證政策（Persona Identity Verification，2026-06-22）**：Anthropic 在特定使用情境下導入 Persona 第三方身分驗證，以落實年齡管控、使用政策與法規遵循。此政策非新的可呼叫功能，屬於平台使用條款異動，不影響 CLI 操作；進 feature-radar 判斷：不收錄（平台政策非使用者可操作功能）
+- **CLI 權限客製化避免手動確認（2026-06-22）**：長工作流中可透過 `settings.json` 的 `allowedTools` 與 Permission Rules 設定白名單，減少 Claude Code 在 agentic 模式下不斷彈出手動確認。`Tool(param:value)` 語法（v2.1.178）支援比對工具輸入參數，搭配 `--dangerously-skip-permissions` 旗標可完全自動化非互動批次流程（見 [教學](https://dev.to/kapoormanish/stop-clicking-approve-how-to-customize-claude-code-cli-permissions-pnh)）
+- **四種儲存格式各有用途（2026-06-22 整理）**：Claude Code 儲存層包含 CLAUDE.md（專案指令）、session storage（當次對話上下文）、project state（持久狀態）、Memories（跨 session 記憶）；建議將專案持久狀態存於 repo，確保重開 session 後一致性（見 [說明](https://dev.to/arthurpro/anthropics-storage-layer-quartet-and-what-each-format-is-actually-for-4nd7)）
 - **⚠️ Opus 4 / Sonnet 4 別名退役（2026-06-15）**：`claude-opus-4-20250514` 與 `claude-sonnet-4-20250514` 將於 6/15 正式退役，使用舊別名的生產環境程式碼將開始回傳錯誤，需在 **2026-06-14 前遷移至新版模型 ID**；見 [[entities/pricing]]
 - **⚠️ Claude Code RCE 漏洞（2026-05-23）**：startsWith 解析缺陷可被利用觸發 RCE，已確認 Cursor 與 Continue.dev 存在相同漏洞；更新至最新版本並啟用 OS 層級沙箱；見 [[topics/ai-agent-safety]]
 - **CLAUDE.md 為 candidate-context**（2026-05-10 社群發現）：逆向工程發現 CLAUDE.md 以 `<system-reminder>` 包裹並附帶「may or may not be relevant」提示，直接解釋長期「指令被忽略」問題；Anthropic 尚未正式回應
@@ -114,7 +118,8 @@ Claude Code 是 Anthropic 的 AI 編碼 CLI 工具，支援 agentic 工作流程
 
 ## 已知問題
 
-- 🔴 **Claude API / Claude Code 529 過載（2026-06-21 全球中斷）**：Anthropic 確認 Claude API 與 Claude Code 的 Opus 及 Sonnet 模型發生部分服務中斷，Max plan 用戶反映第一條 prompt 即觸發 529 Overloaded 錯誤，影響持續約 90 分鐘後於 UTC 19:34 恢復服務；為近期最廣泛的服務中斷事件之一，CyberSecurityNews 等多家媒體追蹤報導
+- 🔴 **Extended Thinking「思考內容」實為摘要，非真實推理（2026-06-22 社群揭露）**：工程師 Patrick McCanna 分析 Claude Code session log 後發現，`thinking blocks` 呈現的文字為摘要，而非模型的真實推理過程。真實推理被 Anthropic 以加密方式存於 600 字元 signature 中，API 僅回傳摘要；完整思考內容需要企業級協議才可取用，Anthropic 持有解密金鑰。需依賴 thinking blocks 進行審計追蹤的工程師應特別注意此限制（HN score 98，見 [原文](https://patrickmccanna.net/the-text-in-claude-codes-extended-thinking-output-is-not-authentic/)）
+- 🔴 **Claude API / Claude Code 529 過載（2026-06-21 至 06-22 多波中斷）**：Anthropic 確認 Claude API 與 Claude Code 的 Opus 及 Sonnet 模型發生部分服務中斷，Max plan 用戶反映第一條 prompt 即觸發 529 Overloaded 錯誤，影響持續約 90 分鐘後於 UTC 19:34 恢復服務；06-22 又發生新一波激增，確認受影響模型：Opus 4.8、Opus 4.7、Opus 4.6、Sonnet 4.6；CyberSecurityNews 等多家媒體追蹤報導（見 [HN 討論](https://news.ycombinator.com/item?id=48624168)）
 - 🔴 **記憶過多導致品質退步（2026-06-22 回報）**：用戶反映兩個進行中專案的 Claude Code 品質近期大幅退步，疑似 context 中累積過多歷史記憶導致干擾；見 [[topics/code-quality-decline]]
 - 🔴 **HERMES.md 計費路由 bug**（2026-04-25 回報）：git commit 歷史中含大寫字串「HERMES.md」會觸發靜默切換至 API 額外計費，完全繞過 Max 方案配額；Anthropic 確認為 bug 但拒絕退款，已知損失達 $200。見 [[entities/pricing]]
 - 🔴 **主題模式不跟隨系統**（issue #2990）：`auto` 主題僅在啟動時偵測一次，不會即時同步 macOS dark/light 切換；社群 workaround：WezTerm + Lua 事件鉤子

@@ -3,8 +3,8 @@
 **狀態：** monitoring
 **領域：** 🌐 社群
 **開始日期：** 2026-04-25
-**最後更新：** 2026-06-22
-**最後新聞更新：** 2026-06-22
+**最後更新：** 2026-06-23
+**最後新聞更新：** 2026-06-23
 
 ---
 
@@ -23,7 +23,7 @@
 | **Multi-agent 架構** | Claude Squad、Speculative Parallelism | ✅ 成熟 | orchestrator 分派 + 獨立 git worktree，防答案塌縮 |
 | **Skills 設計** | 知識框架化、流程 skill 化 | ✅ 成熟 | description 自動觸發，將書籍/流程封裝為可複用 skill |
 | **CLAUDE.md 管理** | 精簡規則策略、Self-improving Rules、防腐爛機制 | ✅ 成熟 | 以「規則」非「建議」撰寫，CI 攔截違反架構 PR |
-| **Hooks 與自動化** | PostToolUse 稽核、Git Hooks 品質門、/goal Fire-and-Forget | ✅ 成熟 | 強制執行 > CLAUDE.md 建議；Stop Hook 要求可驗證完成證明 |
+| **Hooks 與自動化** | PostToolUse 稽核、Git Hooks 品質門、/goal Fire-and-Forget、deploy/migration 保護 | ✅ 成熟 | 強制執行 > CLAUDE.md 建議；Stop Hook 要求可驗證完成證明；CLAUDE.md 做偏好、Hooks 做邊界 |
 | **模型使用策略** | 分層模型（Sonnet + Opus）、多模型路由 | ⚡ 活躍 | 依任務複雜度路由，節省 60% 用量；Dragoman 自動路由 |
 | **Token / 成本優化** | Prompt 精簡、MCP Code Execution、Token Bloat 對策 | ⚡ 活躍 | HTML→Markdown 降 80% token；npx vs CLI 路徑差異陷阱 |
 | **記憶與知識管理** | ltm Core Memory Packet、本機圖資料庫、NanoBrain | ⚡ 活躍 | 跨 session / 跨工具持久記憶；Leiden 圖譜減少 71 倍 token |
@@ -32,13 +32,54 @@
 | **Agent 版本控制** | re_gent、Checkpoint Commits、ADR 注入 | ⏳ 新興 | /compact 後決策追溯；git history 作為 agent 共享 context |
 | **安全架構** | CLAUDE.md for K8s、語意層漂移 CI 測試、Trent 內嵌評估 | ⏳ 新興 | AI 加速開發下的系統性安全防線；CI 攔截語義退化 |
 | **跨環境 Agent 記憶** | Core Memory Packet、Agent 持續運作架構 | ⏳ 新興 | 跨編輯器 / 跨機器 / 跨模型的供應商中立記憶協定 |
-| **架構邊界合約** | ANMA YAML contracts、Hooks 強制驗證 | ⏳ 新興 | 用合約定義 AI 不可越過的架構規則；使便宜模型也能守規 |
+| **架構邊界合約** | ANMA YAML contracts、Hooks 強制驗證、ISO 29148 規格驅動 | ⏳ 新興 | 用合約與工業標準定義 AI 不可越過的架構規則；使便宜模型也能守規 |
 
 > 成熟度：✅ 成熟（社群廣泛實踐）/ ⚡ 活躍（持續演進中）/ ⏳ 新興（近期出現，尚在探索）
 
 ---
 
 ## 技術彙整
+
+### MCP 作為「AI 時代 API Contract」：重新定義工具連接標準（2026-06-23）
+
+- **核心模式：** 將 MCP Server 的角色從「工具連接管道」升級為「AI 時代的 API contract」——MCP 不只是讓 AI 用工具，更是定義 AI 與外部系統的介面邊界與契約關係
+- **實作方向：**
+  - 200 行 Go 實作 MCP server 的可行性驗證：最小實作即可提供清晰的工具邊界定義
+  - 將每個 MCP endpoint 視為獨立的合約（輸入格式、輸出格式、副作用範圍），而非任意可呼叫的函式
+  - MCP 文件即合約文件：tool description 不只是說明，而是 AI agent 行為的邊界定義
+- **解決的問題：** 傳統「給 AI 一堆工具」的設計缺少邊界意識；API contract 思維使 AI 工具整合從「能用就好」升級至「有約束的可驗證整合」
+- **與既有模式的關係：** 延伸並呼應 ANMA 架構邊界合約的「合約優先」設計思路；兩者都強調明確定義 AI 不可越過的邊界
+- **適用場景：** 需要清晰 AI-系統介面定義的企業級整合；構建給多個 agent 共用的服務層
+- **注意事項：** HN score 2，社群曝光度低；「API contract」的觀念轉換需要團隊具備 API 設計思維
+- **來源：** "I Built an MCP Server in 200 Lines of Go"（medium.com/dev-genius，HN score 2，06-22）
+
+### Hooks 強制執行取代 CLAUDE.md 規則：從建議層到強制層（2026-06-23）
+
+- **核心模式：** 將「必須執行」的規則從 CLAUDE.md 文字建議層，遷移至 hooks 程序強制層；CLAUDE.md 保留偏好、風格與上下文描述，hooks 接管不可違背的操作邊界
+- **實作方向：**
+  - 識別 CLAUDE.md 中哪些規則是「LLM 偶爾遵守」（適合保留在 CLAUDE.md），哪些是「必須 100% 執行」（遷移至 hooks）
+  - 具體 hooks 遷移案例：
+    - deploy 腳本保護：PreToolUse hook 攔截部署命令
+    - migration 資料夾防寫：文件系統操作前驗證路徑
+    - formatter 強制：PostToolUse hook 在代碼寫入後自動執行
+  - 使用 hook exit code 精細控制：Block（拒絕）/ Modify（修改後放行）/ Allow（放行）
+- **解決的問題：** CLAUDE.md 規則的機率性遵守；規則越多、遵守率越低的「規則熵增」問題（參考 CLAUDE.md 精簡 296→142 行品質反升實證）
+- **量化佐證：** ANMA 使用 hooks + contracts 達到 0/20 架構違規（vs 無約束時 13/19 違規）
+- **設計分層（推論）：** CLAUDE.md = 知識與偏好（LLM 自主判斷）；Hooks = 邊界強制（程序保證）
+- **來源：** "I stopped writing rules in CLAUDE.md and started writing hooks"（Reddit r/ClaudeAI，06-22）；ANMA（github.com/anma-labs/anma，HN score 3，06-22）
+
+### ISO/IEC/IEEE 29148 規格驅動 Claude Code：工業標準引導 AI 生成（2026-06-23）
+
+- **核心模式：** 在向 Claude Code 描述任務前，先以 ISO/IEC/IEEE 29148 工業軟體需求規格標準撰寫需求文件，以可驗證性（Verifiability）、完整性（Completeness）、一致性（Consistency）三個標準檢查需求，再讓 Claude Code 依規格生成代碼
+- **實作方向：**
+  - 採用 SRS（Software Requirements Specification）結構：功能需求（FR）、非功能需求（NFR）、約束條件（Constraints）
+  - 每條需求可寫成「The system shall [action] [condition] [measurable criteria]」格式，確保可驗證性
+  - 以規格文件作為 CLAUDE.md 的補充輸入，或在 prompt 前貼入關鍵規格段落
+- **解決的問題：** AI 生成代碼的「需求品質不穩定」——模糊需求導致 AI 自行填補假設，大型任務中累積失真
+- **與既有模式的關係：** 屬於 Spec-driven Development 模式族群；比 Boris Cherny 的「規格是人類信號」更進一步，提供具體的工業標準格式作為規格撰寫框架
+- **代價：** 規格撰寫本身有學習曲線；ISO 29148 文件格式對非技術 PM 門檻較高（推論）
+- **適用場景：** 大型任務、跨 session 長期開發、需求明確但複雜的企業級功能
+- **來源：** "How I use ISO/IEC/IEEE 29148 aligned specs to build with ClaudeCode"（Reddit r/ClaudeAI，06-22）
 
 ### ANMA 架構邊界合約：讓便宜模型也能守規的強制機制（2026-06-22）
 

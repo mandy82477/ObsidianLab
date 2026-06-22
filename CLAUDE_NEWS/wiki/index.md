@@ -2,20 +2,23 @@
 
 LLM 查詢此 wiki 時，**先讀這個檔案**找相關頁面，再讀具體頁面取得詳細資訊。
 
-**最後更新：** 2026-06-22
+**最後更新：** 2026-06-23
 ---
 
 ## 近期異動
 
-- [[topics/anthropic-government-policy]] — Trump 正式宣布 Anthropic 不再是國安威脅（第 10 天）；Fable 5 三詞越獄披露（「Fix this code」）；Five Eyes 警告聲明
-- [[topics/anthropic-business]] — Micron × Anthropic 戰略合作（Micron 股價 +5.5%）；Anthropic 揭露封鎖中國損失數億美元
-- [[topics/enterprise-tool-tracker]] — Microsoft 減少 Claude 依賴後續確認報導
-- [[topics/ai-agent-safety]] — Fable 5 三詞越獄事件；Persona 年齡驗證政策上線
-- [[topics/recursive-self-improvement]] — Five Eyes 罕見聯合聲明：數月內 AI 可癱瘓政府與企業
-- [[topics/community-tech-discussions]] — 新增「切換開源 LLM 代價近零」（HN 309）等討論
-- [[topics/community-tech-patterns]] — ANMA 架構邊界合約（量化驗證：0/20 違規）；Staff Engineer 工作流 Skill 化模式
-- [[entities/claude-code]] — 新增 529 過載事件（2026-06-21 確認的 90 分鐘中斷）
-- [[entities/boris-cherny]] / [[entities/cat-wu]] — 「Claude Code 讓工程師更孤獨」論述（待核實發言人）
+- [[topics/anthropic-government-policy]] — Trump 宣布 Anthropic 不再是安全威脅；FT 分析 Anthropic 風險表態密度助攻出口禁令；Amazon CEO 舉報動機揭露；Mythos 入侵 NSA 機密系統報導
+- [[topics/anthropic-business]] — Charleston Hospitality Group 加入 Claude 網路；8x 工程師產能論述；IPO 訊號補充
+- [[topics/enterprise-tool-tracker]] — Charleston Hospitality Group 新增企業列
+- [[topics/ai-agent-safety]] — Mythos AI 測試入侵幾乎所有 NSA 機密系統（Security Affairs 報導）
+- [[topics/community-tech-discussions]] — 新增「529 Overloaded 可靠性質疑」、「Extended Thinking 摘要揭露」、「Hooks 取代 CLAUDE.md 規則」等討論
+- [[topics/community-tech-patterns]] — 新增 Hooks enforcement pattern、MCP as API contract、ISO 29148 規格引導
+- [[entities/claude-code]] — 529 過載第二波更新；Extended Thinking 摘要性質揭露；年齡驗證開發者須知
+- [[entities/opus-4-8]] / [[entities/opus-4-7]] — 529 elevated error rates 記錄
+- [[entities/fable-5]] — 三詞越獄機制公開；Zhipu 聲稱 2026 追上
+- [[entities/john-jumper]] — 多媒體跟進確認（Barron's/IBD/The Rundown AI）
+- [[entities/dario-amodei]] — FT 量化風險表態密度（5/千字）成政治焦點
+- [[entities/fiona-fung]] — 新增頁面（Anthropic 工程副總裁，「Claude Code 讓工程師更孤獨」）
 
 ---
 
@@ -47,6 +50,7 @@ LLM 查詢此 wiki 時，**先讀這個檔案**找相關頁面，再讀具體頁
 | [[entities/john-jumper]] | person | 👤 人物 | active | 諾貝爾化學獎得主（AlphaFold），2026-06-19 離開 Google DeepMind 加入 Anthropic（Reuters 確認）|
 | [[entities/cat-wu]] | person | 👤 人物 | active | Claude Code 產品負責人，「AI 下一步是主動性（proactivity）」論述 |
 | [[entities/andrej-karpathy]] | person | 👤 人物 | active（待核實）| 近期加入 Anthropic，CLAUDE.md 四條規則、「最小必要 context」費用控管原則 |
+| [[entities/fiona-fung]] | person | 👤 人物 | active | Anthropic 工程副總裁；「Claude Code 讓工程師更孤獨；coding 不再是瓶頸」論述（2026-06-22） |
 | [[entities/dario-amodei]] | person | 👤 人物 | active | Anthropic CEO：政府監管立場、企業文化論述、Code with Claude 大會現場宣布速率政策 |
 | [[entities/chris-olah]] | person | 👤 人物 | active | Anthropic 共同創辦人、AI 可解釋性研究先驅；2026-05-26 梵蒂岡封論揭幕演講 |
 | [[entities/opencode]] | product | 🛠️ 工具/功能 | active（快速成長）| Claude Code 主要開源替代品，157K 開發者分流，OpenCode-power-pack 移植官方 11 個 skills |
