@@ -3,13 +3,14 @@
 **狀態：** ongoing
 **領域：** 💼 商業
 **開始日期：** 2026-05-26
-**最後更新：** 2026-06-21
+**最後更新：** 2026-06-22
+**最後新聞更新：** 2026-06-22
 
 ## 摘要
 
 追蹤各大型企業目前正在使用的 AI 編碼工具，以及工具選擇的變化軌跡。資料來源為公開報導與內部消息洩露，僅記錄有明確來源佐證的事實。
 
-目前追蹤 14 家企業（頂尖 7 家、大型 7 家），其中 12 家狀態為使用中（✅），1 家退出（❌，Microsoft 停用 Claude Code），1 家因出口管制被迫退出（❌，JPMorgan Chase 香港分行）。整體趨勢：Claude API 企業採用持續擴大，TCS、DXC、LG 等頂尖企業相繼全面入局；Atlassian 與 JFrog 則於 2026-06-18 同日新增採用。2026-06-21 Microsoft 確認在 Fable 5 封鎖期間加速退出 Claude Code，Codex 為主要替代方案；出口管制 + 成本壓力雙重因素持續影響頂尖企業工具選擇。
+目前追蹤 14 家企業（頂尖 7 家、大型 7 家），其中 12 家狀態為使用中（✅），1 家退出（❌，Microsoft 停用 Claude Code），1 家因出口管制被迫退出（❌，JPMorgan Chase 香港分行）。整體趨勢：Claude API 企業採用持續擴大，TCS、DXC、LG 等頂尖企業相繼全面入局；Atlassian 與 JFrog 則於 2026-06-18 同日新增採用。2026-06-21 Microsoft 確認在 Fable 5 封鎖期間加速退出 Claude Code，2026-06-22 The Jerusalem Post 跟進確認 Microsoft 正系統性降低對 Claude 依賴，GitHub Copilot 為主要替代方案；出口管制 + 成本壓力雙重因素持續影響頂尖企業工具選擇。
 
 ---
 
@@ -78,6 +79,9 @@ Claude Code 是工程師日常編碼工具（CLI），成本隨使用量線性�
 ---
 
 ## 時序
+
+### 2026-06-22
+- **Microsoft 減少 Claude 依賴——國際媒體跟進確認**：The Jerusalem Post（Google News 2026-06-22）跟進報導「Microsoft reduces its reliance on Claude」，為前一日 MSN / Google News 初報的媒體後續確認；目前 Microsoft Claude Code 狀態 ❌ 已退出（事件日期 2026-06-21），GitHub Copilot 為主要替代方案
 
 ### 2026-06-21
 - **Microsoft 宣布逐步停止內部使用 Claude Code**：時間點正值 Fable 5 封鎖期間，Microsoft 宣布將逐步停止讓內部工程師使用 Claude Code；自家 Codex 被認為是主要替代方案；此前已有 6/30 退出計畫，今日確認退出進度加快（MSN / Google News 2026-06-21）

@@ -2,16 +2,20 @@
 
 LLM 查詢此 wiki 時，**先讀這個檔案**找相關頁面，再讀具體頁面取得詳細資訊。
 
-**最後更新：** 2026-06-21
+**最後更新：** 2026-06-22
 ---
 
 ## 近期異動
 
-- [[entities/john-jumper]] — Reuters 正式確認加入 Anthropic，狀態從「待核實」升為 active
-- [[topics/anthropic-government-policy]] — Trump G7 後鬆口不再視 Anthropic 為國安威脅；David Sacks 揭露白宮信任缺口根本原因（Mythos 漏洞 + 越獄）；封鎖第 9 天
-- [[topics/enterprise-tool-tracker]] — Microsoft 宣布逐步停止內部工程師使用 Claude Code，狀態更新為 ⚠️ 縮減中
-- [[topics/community-tech-discussions]] — Project Fetch Phase Two 技術彙整；新增 Claude Code 確定性技術、平行 agent 效能、工具選擇比較三條討論
-- [[entities/claude-code]] — 版本表新增 v2.1.185（stream-stall 改善）
+- [[topics/anthropic-government-policy]] — Trump 正式宣布 Anthropic 不再是國安威脅（第 10 天）；Fable 5 三詞越獄披露（「Fix this code」）；Five Eyes 警告聲明
+- [[topics/anthropic-business]] — Micron × Anthropic 戰略合作（Micron 股價 +5.5%）；Anthropic 揭露封鎖中國損失數億美元
+- [[topics/enterprise-tool-tracker]] — Microsoft 減少 Claude 依賴後續確認報導
+- [[topics/ai-agent-safety]] — Fable 5 三詞越獄事件；Persona 年齡驗證政策上線
+- [[topics/recursive-self-improvement]] — Five Eyes 罕見聯合聲明：數月內 AI 可癱瘓政府與企業
+- [[topics/community-tech-discussions]] — 新增「切換開源 LLM 代價近零」（HN 309）等討論
+- [[topics/community-tech-patterns]] — ANMA 架構邊界合約（量化驗證：0/20 違規）；Staff Engineer 工作流 Skill 化模式
+- [[entities/claude-code]] — 新增 529 過載事件（2026-06-21 確認的 90 分鐘中斷）
+- [[entities/boris-cherny]] / [[entities/cat-wu]] — 「Claude Code 讓工程師更孤獨」論述（待核實發言人）
 
 ---
 

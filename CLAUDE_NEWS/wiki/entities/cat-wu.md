@@ -4,7 +4,8 @@
 **狀態：** active
 **領域：** 👤 人物
 **首次出現：** 2026-05-14
-**最後更新：** 2026-06-20
+**最後更新：** 2026-06-22
+**最後新聞更新：** 2026-06-22
 
 ---
 
@@ -25,6 +26,12 @@ Cat Wu 是 Anthropic Claude Code 產品負責人（Head of Claude Code Products�
 ---
 
 ## 公開言論
+
+### 「Claude Code 讓工程師更孤獨」論述（2026-06-22）（待核實）
+
+Business Insider、Let's Data Science 報導 Anthropic 工程領導人（engineering leader）公開表示 Claude Code 正在讓工程師感到更孤獨（"making programmers lonelier"）。由於報導中使用「engineering leader」而非具名，**目前無法確認發言人是 Cat Wu（Head of Claude Code Products）或 Boris Cherny（Head of Claude Code）**，兩人皆是 Claude Code 的主要公開論述者。見 [[entities/boris-cherny]]（同步標記待核實）。
+
+---
 
 ### 「AI 下一步是主動性（Proactivity）」（2026-05-14）
 
@@ -49,7 +56,9 @@ Cat Wu 接受公開訪問，指出：
 
 - [[news/2026-05-14]]
 - [[news/2026-05-15]]
+- [[news/2026-06-22]]
 
 ## 歷史記錄
 
+- 2026-06-22：Anthropic「engineering leader」（待核實：是否為 Cat Wu）公開表示 Claude Code 正讓工程師更孤獨，Business Insider、Let's Data Science 報導
 - 2026-05-14：公開訪問中提出「AI 主動性（proactivity）是下一個重大躍進」，闡述 Claude Code 從互動工具轉向自主代理平台的產品定位

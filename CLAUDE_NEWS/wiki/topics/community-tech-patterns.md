@@ -3,7 +3,8 @@
 **狀態：** monitoring
 **領域：** 🌐 社群
 **開始日期：** 2026-04-25
-**最後更新：** 2026-06-21
+**最後更新：** 2026-06-22
+**最後新聞更新：** 2026-06-22
 
 ---
 
@@ -31,12 +32,37 @@
 | **Agent 版本控制** | re_gent、Checkpoint Commits、ADR 注入 | ⏳ 新興 | /compact 後決策追溯；git history 作為 agent 共享 context |
 | **安全架構** | CLAUDE.md for K8s、語意層漂移 CI 測試、Trent 內嵌評估 | ⏳ 新興 | AI 加速開發下的系統性安全防線；CI 攔截語義退化 |
 | **跨環境 Agent 記憶** | Core Memory Packet、Agent 持續運作架構 | ⏳ 新興 | 跨編輯器 / 跨機器 / 跨模型的供應商中立記憶協定 |
+| **架構邊界合約** | ANMA YAML contracts、Hooks 強制驗證 | ⏳ 新興 | 用合約定義 AI 不可越過的架構規則；使便宜模型也能守規 |
 
 > 成熟度：✅ 成熟（社群廣泛實踐）/ ⚡ 活躍（持續演進中）/ ⏳ 新興（近期出現，尚在探索）
 
 ---
 
 ## 技術彙整
+
+### ANMA 架構邊界合約：讓便宜模型也能守規的強制機制（2026-06-22）
+
+- **核心模式：** 以 YAML 合約（contracts）明確定義架構邊界，搭配 CLAUDE.md 與 Hooks 強制驗證；使 Haiku 4.5 等低成本模型在嚴格規則下也能正確運作，無需昂貴旗艦模型
+- **實作方向：**
+  - 在 `.anma/contracts/` 下定義 YAML 格式的架構規則（如「禁止直接呼叫資料庫、必須透過 Repository 層」）
+  - 將合約規則注入 CLAUDE.md，使 AI 知曉邊界
+  - 以 Pre-tool Hook 或 PostToolUse Hook 攔截違規行為，阻止代碼寫入
+- **量化數據：** 無 ANMA 時 13/19 測試案例違反架構規則；有 ANMA 後 0/20 違規（來源測試）
+- **解決的問題：** AI coding agent 在追求速度時系統性地繞過架構約束；CLAUDE.md 建議層無法阻止 agent 的快捷路徑行為
+- **適用場景：** 有明確分層架構（Clean Architecture、DDD）的企業級專案；需要讓成本較低的模型參與生產代碼生成的場景
+- **注意事項：** HN score 3，社群接受度尚早期；YAML 合約需與實際架構同步維護，否則成為新型設定負債
+- **來源：** Show HN: ANMA, boundary contracts for cheaper AI coding agents（github.com/anma-labs/anma，HN score 3，06-22）
+
+### Staff Engineer 工作流 Skill 化：確定性高於靈活性（2026-06-22）
+
+- **核心模式：** 將資深工程師的完整工具鏈偏好（工具選擇、環境設定、部署流程）封裝為 Claude Code skills，使每次執行行為可預測，而非依賴 prompt 每次重新描述
+- **具體案例：** staffengineer.dev 將 OrbStack（容器）、Doppler（密鑰管理）、DigitalOcean（部署）完整工作流封裝為 skills；執行一致性高於 prompt-based 靈活性
+- **設計原則：**
+  - Skill 的目標是「確定性」而非「靈活性」——確定性高的重複流程最適合封裝
+  - 工具偏好（用哪個工具）比操作步驟（怎麼用）更需要封裝，因為 AI 在工具選擇上最容易偏離
+  - 封裝 setup 類 skill（環境初始化、依賴安裝）ROI 最高，因為最常被 AI 搞錯
+- **與既有模式的關係：** 延伸自 Skills 設計模式中的「流程替代 README」，強調工具鏈一致性而非知識框架化
+- **來源：** Show HN: Claude Code skills that encode a staff engineer's setup, not prompts（staffengineer.dev，HN score 2，06-22）
 
 ### 平行 Agent 模式：串行 vs 並行工作流效能差距（2026-06-21）
 

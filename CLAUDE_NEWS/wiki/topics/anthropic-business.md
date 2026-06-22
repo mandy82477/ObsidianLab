@@ -3,7 +3,8 @@
 **狀態：** ongoing
 **領域：** 💼 商業
 **開始日期：** 2026-05-28
-**最後更新：** 2026-06-21
+**最後更新：** 2026-06-22
+**最後新聞更新：** 2026-06-22
 
 ---
 
@@ -81,6 +82,7 @@ Simon Willison（知名開發者博主）發表文章，認為 Anthropic 與 Ope
 
 | 合作方 | 類型 | 日期 | 意義 |
 |--------|------|------|------|
+| Micron Technology | 戰略合作 | 2026-06-22 | 共同建置下一代 AI 記憶體基礎設施；Micron 股價上漲 5.5%，為記憶體晶片供應鏈合作 |
 | DXC Technology | 多年全球聯盟 | 2026-06-12 | 訓練數萬名 Claude 認證工程師；覆蓋銀行、航空、政府等受嚴格監管行業 |
 | Samsung + SK Hynix | 戰略投資 | 2026-05-28 | Series H 同步入股，韓國半導體廠加碼 AI 生態 |
 | Apollo + Blackstone | 晶片債務融資 | 2026-05-29 | 安排 $36B 債務融資用於 AI 晶片採購 |
@@ -111,6 +113,11 @@ Simon Willison（知名開發者博主）發表文章，認為 Anthropic 與 Ope
 - [[news/2026-05-13]]（The Information：定價強勢期）
 
 ## 時序
+
+### 2026-06-22
+- **[Micron 戰略合作] Anthropic 與 Micron 宣布共同建置下一代 AI 記憶體基礎設施**：The Globe and Mail / Investing.com 報導，Micron 股價因協議消息上漲 5.5%；合作聚焦次世代 AI 記憶體晶片供應，是繼 Samsung / SK Hynix 入股 Series H 後 Anthropic 在半導體記憶體供應鏈上的進一步佈局（Google News 2026-06-22）
+- **[出口管制財務揭露] Anthropic 公開表示封鎖中國市場損失數億美元**：TweakTown 報導，Anthropic 首次公開量化出口管制的財務代價，數億美元收入損失；此揭露出現於 AI 管制政策辯論高峰期，與「Anthropic Case Tests Limits of AI Regulation」（TechNewsWorld 2026-06-22）同步，顯示 Anthropic 正積極介入政策論述（見 [[topics/anthropic-government-policy]]）
+- **[Microsoft 依賴降低] 後續報導確認 Microsoft 持續減少對 Claude 依賴**：The Jerusalem Post 跟進報導（Google News 2026-06-22）確認 Microsoft 正在系統性降低對 Claude 的依賴程度，6/21 enterprise-tool-tracker 記錄的 Microsoft 退出進度得到額外媒體確認（見 [[topics/enterprise-tool-tracker]]）
 
 ### 2026-06-21
 - **[Microsoft 退出] Microsoft 宣布在 Fable 5 封鎖期間逐步停止內部使用 Claude Code**：MSN / Google News 報導，Microsoft 宣布將逐步停止讓內部工程師使用 Claude Code，自家 Codex 為主要替代方案；出口管制造成的服務不確定性疊加成本壓力，加速頂尖科技企業的工具替換評估（見 [[topics/enterprise-tool-tracker]]）

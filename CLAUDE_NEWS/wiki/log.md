@@ -3,6 +3,40 @@
 Append-only 紀錄。每次 ingest、query 或 lint 都在此追加一條。
 格式：`## [YYYY-MM-DD] 類型 | 說明`
 
+## 2026-06-22 Ingest | news/2026-06-22.md（58 則）
+
+- 來源日報：`news/2026-06-22.md`（58 則，6/6 來源正常；Reddit 部分 429 但仍有 10 筆）
+- 主軸：Trump 正式宣布 Anthropic 不再是國安威脅（封鎖第 10 天、Fable 5 解封條件趨近）；Fable 5 三詞越獄曝光（「Fix this code」，引發安全邊界設計質疑）；Micron × Anthropic 戰略合作（下一代 AI 記憶體基礎設施，Micron 股價 +5.5%）；Anthropic 揭露封鎖中國損失數億美元；Five Eyes 罕見聯合聲明警告數月內 AI 可癱瘓政府與企業；Claude API 529 全球中斷（90 分鐘，已恢復）；Anthropic 引入 Persona 年齡驗證；Google Nobel AI 專家（John Jumper 後續跟進報導）；「Claude Code 讓工程師更孤獨」論述（待核實發言人）；HN 熱門工具：Recall（score 123）、切換開源 LLM 論（score 309）
+- 更新頁面：
+  - `topics/anthropic-government-policy.md`：攻防紀錄 prepend 4 條（Trump 國安威脅標籤解除、Fable 5 三詞越獄、Five Eyes 聲明、Persona 年齡驗證）；目前局勢更新至封鎖第 10 天；時序 prepend 2026-06-22；最後新聞更新 2026-06-22
+  - `topics/ai-agent-safety.md`：Fable 5 三詞越獄插入安全漏洞分類；Persona 年齡驗證插入政策合規分類；最後新聞更新 2026-06-22
+  - `topics/recursive-self-improvement.md`：補充 Five Eyes 聲明；目前結論更新；時序 prepend 2026-06-22；最後新聞更新 2026-06-22
+  - `topics/anthropic-business.md`：戰略合作表格 prepend Micron 合作；時序 prepend 2026-06-22（含 Micron 合作、中國封鎖財務揭露、Microsoft 後續確認）；最後新聞更新 2026-06-22
+  - `topics/enterprise-tool-tracker.md`：Microsoft 縮減中後續確認；時序 prepend 2026-06-22；最後新聞更新 2026-06-22
+  - `entities/claude-code.md`：已知問題 prepend 529 過載事件（2026-06-21 確認）；最後新聞更新 2026-06-22
+  - `topics/community-tech-discussions.md`：熱門討論表格 prepend 2 條（切換開源 LLM 論 HN 309、Recall 本地記憶 HN 123）；技術彙整 prepend 2 條；移除 2 條過期 ☄️閃現（首見 2026-06-01，> 21 天）；最後新聞更新 2026-06-22
+  - `topics/community-tech-patterns.md`：技術彙整 prepend ANMA 架構邊界合約、Staff Engineer 工作流 Skill 化；最後新聞更新 2026-06-22
+  - `entities/boris-cherny.md`：公開言論補充「讓工程師更孤獨」論述（待核實）；最後新聞更新 2026-06-22
+  - `entities/cat-wu.md`：公開言論補充「讓工程師更孤獨」論述（待核實）；補充最後新聞更新欄位；最後新聞更新 2026-06-22
+  - `entities/john-jumper.md`：補充 2026-06-22 後續報導跟進（PYMNTS.com 等媒體確認）；最後新聞更新 2026-06-22
+- 新增頁面：無
+- feature-radar 更新：無（本輪無新官方功能；529 中斷為 reliability，不進 feature-radar）
+- index.md 狀態變更：無
+- 呈現品質審查：
+  | 頁面 | 結果 |
+  |------|------|
+  | anthropic-government-policy.md | ✅ 通過 |
+  | ai-agent-safety.md | ✅ 通過 |
+  | recursive-self-improvement.md | ⚠️ 已修復（移除過期警告標記，補充今日新聞，目前結論改條列格式） |
+  | anthropic-business.md | ✅ 通過 |
+  | enterprise-tool-tracker.md | ✅ 通過 |
+  | claude-code.md | ✅ 通過 |
+  | community-tech-discussions.md | ✅ 通過 |
+  | community-tech-patterns.md | ✅ 通過 |
+  | boris-cherny.md | ✅ 通過 |
+  | cat-wu.md | ✅ 通過（補充最後新聞更新欄位） |
+  | john-jumper.md | ✅ 通過 |
+
 ## 2026-06-21 Ingest | news/2026-06-21.md（54 則）
 
 - 來源日報：`news/2026-06-21.md`（54 則，5/6 來源正常；Reddit 部分 429 但仍有 10 筆）

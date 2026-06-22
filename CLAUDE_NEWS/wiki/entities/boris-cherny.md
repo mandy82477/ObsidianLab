@@ -4,7 +4,8 @@
 **狀態：** active
 **領域：** 👤 人物
 **首次出現：** 2026-04-23（事後報告發布）
-**最後更新：** 2026-06-20
+**最後更新：** 2026-06-22
+**最後新聞更新：** 2026-06-22
 
 ---
 
@@ -15,6 +16,12 @@ Boris Cherny 是 Anthropic Claude Code 的創始人與負責人（Head of Claude
 ---
 
 ## 公開言論與主張
+
+### 「Claude Code 讓工程師更孤獨」論述（2026-06-22）（待核實）
+
+Business Insider、Let's Data Science 報導 Anthropic 工程領導人（engineering leader）公開表示 Claude Code 正在讓工程師感到更孤獨（"making programmers lonelier"）。由於報導中使用「engineering leader」而非具名，**目前無法確認發言人是 Boris Cherny（Head of Claude Code）或 Cat Wu（Head of Claude Code Products）**，兩人皆是 Claude Code 的主要公開論述者。見 [[entities/cat-wu]]（同步標記待核實）。
+
+---
 
 ### 「軟體工程師的終結」——Platformer 專訪（2026-05-27）
 Platformer 刊出 Boris Cherny 長篇專訪，標題「Claude Code's creator on the end of the software engineer」，從他的視角論述 AI 如何根本性地改變軟體工程師的角色。這是他繼「coding is solved」（2026-05-08）與「軟體工程已死」（2026-05-06）後最完整的公開論述。社群熱議程度與他過去的宣言相當，引發開發者身份認同的再次討論。
@@ -68,6 +75,7 @@ Boris Cherny 的公開言論呈現兩種截然不同的社群反應：
 
 ## 歷史記錄
 
+- 2026-06-22：Anthropic「engineering leader」（待核實：是否為 Boris Cherny）公開表示 Claude Code 正讓工程師更孤獨，Business Insider、Let's Data Science 報導
 - 2026-06-20：techstackups.com 採訪引用 Loop 工程哲學名言「我不再 prompt Claude，我寫 loop 讓 loop 去 prompt Claude；我的工作是寫 loop」，被視為繼「coding is solved」後的第二個重要設計哲學表態
 - 2026-05-27：Platformer 長篇專訪「Claude Code's creator on the end of the software engineer」發布，為其「軟體工程已死」系列論述最完整陳述
 - 2026-05-13：公開每晚數千個 AI 子代理並行執行深度工作的工作流架構，由 Business Insider 等媒體報導
@@ -90,3 +98,4 @@ Boris Cherny 的公開言論呈現兩種截然不同的社群反應：
 - [[news/2026-05-08]]
 - [[news/2026-05-13]]
 - [[news/2026-05-27]]
+- [[news/2026-06-22]]

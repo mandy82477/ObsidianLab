@@ -4,8 +4,8 @@
 **狀態：** active
 **領域：** 👤 人物
 **首次出現：** 2026-06-20
-**最後更新：** 2026-06-21
-**最後新聞更新：** 2026-06-21
+**最後更新：** 2026-06-22
+**最後新聞更新：** 2026-06-22
 
 ---
 
@@ -37,6 +37,7 @@ John Jumper 以 AlphaFold 系列模型的開發著稱，AlphaFold 2 解決了困
 
 ## 歷史記錄
 
+- 2026-06-22：Business Insider、PYMNTS.com 等多家媒體跟進報導 Google Nobel AI 專家加入 Anthropic，為 Reuters 確認事件的後續廣泛報導（待核實：後續報導是否帶出新細節）
 - 2026-06-21：Reuters 正式確認離開 Google DeepMind 加入 Anthropic（HN score 77）
 - 2026-06-20：dev.to 分析文出現，社群將此次招募定性為 Anthropic 向科學計算領域擴展的「前沿實驗室人才訊號」，強調與 Google DeepMind 的人才競爭格局
 - 2026-06-19：傳出加入 Anthropic（待核實），原任職 Google DeepMind；同期另有一位 DeepMind 知名研究者出走，社群觀察認為並非巧合

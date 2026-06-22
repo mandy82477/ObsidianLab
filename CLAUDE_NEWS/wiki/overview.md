@@ -1,14 +1,14 @@
 # Claude / Anthropic 生態系概覽
 
-**最後更新：** 2026-06-19
+**最後更新：** 2026-06-22
 
 ---
 
 ## 當前局勢
 
-2026-06 的核心衝突是 **Fable 5 出口管制**：2026-06-13 美國商務部對 Claude Fable 5 / Mythos 5 發出出口管制指令，全球存取中斷至今（7 天）。根本動機已確認：SK Telecom（Anthropic 投資方）的中國關聯被情報機構標記，並由 Amazon 研究員向白宮揭露 Fable 5 越獄漏洞，兩件事疊加觸發管制。Anthropic 國際總監 Ciauri 在首爾記者會（6/18）聲明「數日內恢復可用」，但白宮談判焦點已從 Fable 5 個案轉向建立更廣泛的 AI 安全規則框架。國會議員施壓要求政府解釋，Politico 法律分析指出限制措施可能違法。
+2026-06-22 迎來雙重轉折：**Trump 政府正式宣布 Anthropic 不再是國家安全威脅**，意味 Fable 5 封鎖（第 10 天）的最大政治障礙之一已移除；同日 **Anthropic 與 Micron 宣布戰略合作**，共同建置下一代 AI 記憶體基礎設施（Micron 股價 +5.5%）。然而，Fable 5 三詞越獄事件（「Fix this code」導致模型被下架的觸發語）同步曝光，顯示安全邊界設計仍存在隱患。Five Eyes 聯合聲明警告 AI 模型數月內可能威脅政府與企業，全球 AI 治理壓力持續升溫。
 
-6/15 計費切割已生效，Agent SDK / `claude -p` 計費暫停持續中。Claude Code Artifacts（6/18）已正式發布；Claude Code v2.1.183（6/19）強化 auto mode 安全性，封鎖破壞性 Git 指令。
+商業面，Anthropic 公開揭露封鎖中國市場損失數億美元收入；Microsoft 減少 Claude 依賴的動態持續，但 Micron 戰略合作提供了新的基礎設施結盟訊號。Claude API 529 全球中斷（6/21，90 分鐘）已恢復，Anthropic 引入 Persona 年齡驗證作為平台完整性管控措施。
 
 ---
 
@@ -29,11 +29,11 @@
 
 ### 🔴 高度關注
 
-1. **[[topics/anthropic-government-policy]] — Fable 5 出口管制封鎖（第 7 天）**
-   - SK Telecom 中國關聯確認為根本動機（Wired HN score 110，6/19）；Amazon 研究員越獄揭露加速管制
-   - 白宮談判轉向：從 Fable 5 解禁擴展至建立整體 AI 安全規則框架（Politico，6/19）
-   - 國會議員施壓要求政府解釋（WaPo，6/18）；Politico：限制措施可能違法
-   - Ciauri 首爾記者會（6/18）：「數日內恢復」；Bloomberg：部分早期用戶保有存取權
+1. **[[topics/anthropic-government-policy]] — Fable 5 出口管制封鎖（第 10 天）**
+   - 2026-06-22：Trump 正式宣布 Anthropic 不再是國安威脅（政治障礙之一已移除）
+   - 同日曝光：Fable 5 越獄觸發語僅三個詞「Fix this code」，安全邊界疑慮未消
+   - SK Telecom 中國關聯確認為根本動機；Amazon 研究員越獄揭露加速管制
+   - 白宮談判轉向：從 Fable 5 解禁擴展至建立整體 AI 安全規則框架
    - 三個戰場追蹤見 [[topics/anthropic-government-policy]]
 
 2. **[[entities/fable-5]] — 出口管制根本原因分析**
