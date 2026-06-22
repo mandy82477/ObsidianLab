@@ -1,3 +1,4 @@
+import dataclasses
 import logging
 from concurrent.futures import ThreadPoolExecutor, as_completed
 from datetime import datetime, timedelta, timezone
@@ -18,6 +19,35 @@ QUERIES = [
     "Claude API",
     "MCP server Anthropic",
 ]
+
+_URL_RESOLVE_WORKERS = 8
+_URL_RESOLVE_TIMEOUT = 10
+
+
+def _resolve_google_url(url: str) -> str:
+    """Resolve a Google News RSS redirect URL to the actual article URL."""
+    if "news.google.com" not in url:
+        return url
+    try:
+        from googlenewsdecoder import new_decoderv1
+        result = new_decoderv1(url, interval=0)
+        if result.get("status") and result.get("decoded_url"):
+            return result["decoded_url"]
+    except Exception as e:
+        logger.debug("URL resolve failed for %s: %s", url[:60], e)
+    return url
+
+
+def _resolve_items(items: list[FeedItem]) -> list[FeedItem]:
+    """Resolve Google News URLs in parallel, fall back to original on failure."""
+    def resolve_one(item: FeedItem) -> FeedItem:
+        resolved = _resolve_google_url(item.url)
+        if resolved != item.url:
+            return dataclasses.replace(item, url=resolved)
+        return item
+
+    with ThreadPoolExecutor(max_workers=_URL_RESOLVE_WORKERS) as pool:
+        return list(pool.map(resolve_one, items))
 
 
 def _fetch_google_query(query: str, cutoff: datetime) -> list[FeedItem]:
@@ -64,7 +94,10 @@ class GoogleNews(BaseSource):
                 futures = [pool.submit(_fetch_google_query, q, cutoff) for q in QUERIES]
                 for fut in as_completed(futures):
                     items.extend(fut.result())
-            return items
+            resolved = _resolve_items(items)
+            ok = sum(1 for a, b in zip(items, resolved) if a.url != b.url)
+            logger.info("GoogleNews: resolved %d/%d URLs", ok, len(items))
+            return resolved
         except Exception as e:
             logger.warning("GoogleNews.fetch failed: %s", e)
             return []
