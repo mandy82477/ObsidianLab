@@ -103,8 +103,8 @@ window.WIKI_DATA = {
       "startDate": "",
       "lastUpdated": "2026-06-23",
       "lastNewsUpdate": "2026-06-23",
-      "summary": "Claude Code 是 Anthropic 的 AI 編碼 CLI 工具，支援 agentic 工作流程、MCP Server 整合、Hooks 機制與多代理協作框架（Managed Agents）。截至 2026-06-08，GitHub Stars 達 **131,000+**，持續增長且成為 SaaS 創辦人…",
-      "latestHeadline": ""
+      "summary": "最新版本 **v2.1.185**（2026-06-21）改善 stream-stall reliability，API 529 過載事件於 2026-06-21 至 06-22 連續兩波影響 Opus/Sonnet 模型，Max plan 用戶首條 prompt 即觸發 Overloaded 錯誤。Claude Co…",
+      "latestHeadline": "v2.1.185：stream-stall 提示文字改為「Waiting for API response · will retry in …」，觸發門檻延長至 20 秒（原 10 秒），reliability 改善；Anthropic 官方博客發布「七種 Claude Code 控制層」決策框架（CLAUDE.md、"
     },
     {
       "id": "claude-design",
@@ -134,7 +134,7 @@ window.WIKI_DATA = {
       "lastUpdated": "2026-06-20",
       "lastNewsUpdate": "",
       "summary": "Claude Security 於 2026-04-30 宣布推出公開測試版，並於 2026-05-01 正式向**全部 Enterprise 客戶**開放。ZDNET、SecurityWeek、SiliconANGLE、CRN、Pulse 2.0 等多家媒體報導。這是 Anthropic 首次以**獨立資安產品形式*…",
-      "latestHeadline": ""
+      "latestHeadline": "Cisco LLM Security Leaderboard 首次發布：Anthropic 模型佔前十名 8 個席位（8/10），成為企業採購 AI 工具時最強的第三方安全背書；調查同時顯示 83% 企業計畫部署 agentic AI，但僅 29% 認為已具備足夠安全管控能力——此數字直接推動 Claude Secur"
     },
     {
       "id": "dario-amodei",
@@ -224,7 +224,7 @@ window.WIKI_DATA = {
       "lastUpdated": "2026-05-22",
       "lastNewsUpdate": "",
       "summary": "Anthropic Managed Agents 是 Claude Platform 上的官方 Agent 框架，提供持久記憶、多路並行執行與可驗證輸出等功能。2026-04-28 首次加入跨會話記憶功能（正式公告）；2026-04-30 推出公開測試版，Anthropic 定位為「agentic AI 的 AWS」。…",
-      "latestHeadline": ""
+      "latestHeadline": "自架沙箱完整參考文件發布（via Reddit r/ClaudeAI 報告 v2.1.145 新增）：完整文件涵蓋 worker 輪詢機制、環境金鑰管理、webhook 喚醒設定、監控方案及客戶自管安全責任；企業可在完全自有基礎設施上部署受管代理，標誌 Claude Code 企業化部署從「支援」走向「完整文件化」"
     },
     {
       "id": "mythos",
@@ -254,7 +254,7 @@ window.WIKI_DATA = {
       "lastUpdated": "2026-05-14",
       "lastNewsUpdate": "",
       "summary": "OpenClaw 是一款第三方 Claude agentic 工具，設計用途為擴展 Claude 訂閱方案的自動化用量。歷經 2026-04-25 配額禁令後，Anthropic 於 2026-05-14 宣布恢復允許 OpenClaw 等第三方工具使用，但代價是：**這些用量全數脫離訂閱方案，改為按完整 API 費率…",
-      "latestHeadline": ""
+      "latestHeadline": "OpenClaw 是一款第三方 Claude agentic 工具，設計用途為擴展 Claude 訂閱方案的自動化用量。歷經 2026-04-25 配額禁令後，Anthropic 於 2026-05-14 宣布恢復允許 OpenClaw 等第三方工具使用，但代價是：這些用量全數脫離訂閱方案，改為按完整 API 費率計費"
     },
     {
       "id": "opencode",
@@ -269,7 +269,7 @@ window.WIKI_DATA = {
       "lastUpdated": "2026-06-20",
       "lastNewsUpdate": "",
       "summary": "OpenCode 是 Claude Code 的主要開源替代品，截至 2026-05-12 已吸引 **157,000 名開發者**轉向（The New Stack 報導）。功能與體驗被 XDA 評測認為與 Claude Code 相當，且完全開源免費。即便 Anthropic 宣布倍增速率限制，對 vendor lo…",
-      "latestHeadline": ""
+      "latestHeadline": "XDA 評為可行替代方案；`OpenCode-power-pack` 移植官方 11 個 skills；DeepSeek 宣布建構自有競品，顯示開源 Claude Code 競品格局持續擴大"
     },
     {
       "id": "opus-4-7",
@@ -284,7 +284,7 @@ window.WIKI_DATA = {
       "lastUpdated": "2026-06-23",
       "lastNewsUpdate": "2026-06-23",
       "summary": "**當前狀態：** 已被 Opus 4.8 / Fable 5 取代，現為第三階旗艦；agentic coding 場景仍有口碑，一般對話評價分歧。 Claude Opus 4.7 於 2026-04-24 正式發布，已相繼被 Opus 4.8（2026-05-28）與 Fable 5（2026-06-09）取代，現為…",
-      "latestHeadline": ""
+      "latestHeadline": "當前狀態： 已被 Opus 4.8 / Fable 5 取代，現為第三階旗艦；agentic coding 場景仍有口碑，一般對話評價分歧。"
     },
     {
       "id": "opus-4-8",
@@ -299,7 +299,7 @@ window.WIKI_DATA = {
       "lastUpdated": "2026-06-23",
       "lastNewsUpdate": "2026-06-23",
       "summary": "Claude Opus 4.8 於 2026-05-28 正式發布，同步推出 Dynamic Workflows（Research Preview）與 Fast Mode 降價，是 2026 年以來 Anthropic 發布規模最大的旗艦更新。**2026-06-09 Claude Fable 5 發布後，Opus 4…",
-      "latestHeadline": ""
+      "latestHeadline": "529 Overloaded 事件：Anthropic 官方確認 Opus 4.8 出現 elevated error rates（HTTP 529）；另有全球 90 分鐘中斷，Max Plan 用戶反映自上週起錯誤激增（[cybersecuritynews.com](https://cybersecuritynews"
     },
     {
       "id": "pricing",
@@ -314,7 +314,7 @@ window.WIKI_DATA = {
       "lastUpdated": "2026-06-21",
       "lastNewsUpdate": "",
       "summary": "Anthropic 訂閱計費政策持續演變。原定 2026-06-15 實施的「程式化用量（Agent SDK、`claude -p`）脫離訂閱、改按 API 費率計費」政策，於 **2026-06-16 宣布暫停**，重新推行時間未定。目前所有付費方案用量仍維持原訂閱配額制。核心爭點：Anthropic 訂閱方案設計以…",
-      "latestHeadline": ""
+      "latestHeadline": "Anthropic 訂閱計費政策持續演變。原定 2026-06-15 實施的「程式化用量（Agent SDK、`claude -p`）脫離訂閱、改按 API 費率計費」政策，於 2026-06-16 宣布暫停，重新推行時間未定。目前所有付費方案用量仍維持原訂閱配額制。核心爭點：Anthropic 訂閱方案設計以人工互動"
     }
   ],
   "topics": [
@@ -376,7 +376,7 @@ window.WIKI_DATA = {
       "lastUpdated": "2026-06-20",
       "lastNewsUpdate": "",
       "summary": "**當前狀態：** 官方已說明原因，恢復情況待驗證；最後更新 2026-05-29，後續進展待補。⚠️ 本頁約三週未更新。 Claude Code 在 2026 年 3 月至 4 月間出現長達約一個月的效能明顯退步，引發大量開發者不滿。2026-04-24，Anthropic 首次正式承認此問題，說明原因為**工程疏失…",
-      "latestHeadline": ""
+      "latestHeadline": "當前狀態： 官方已說明原因，恢復情況待驗證；最後更新 2026-05-29，後續進展待補。⚠️ 本頁約三週未更新。"
     },
     {
       "id": "community-tech-discussions",
@@ -391,7 +391,7 @@ window.WIKI_DATA = {
       "lastUpdated": "2026-06-23",
       "lastNewsUpdate": "2026-06-23",
       "summary": "追蹤 Claude Code 社群中活躍的概念辯論、設計哲學、實證研究與技術反思。與 [[topics/community-tech-patterns]] 追蹤具體工具和工作流不同，本頁聚焦思想碰撞：什麼哲學正在成形、什麼假設受到挑戰、什麼共識正在收斂。頁面結構：**🔥 本週熱點**（當前最熱的持續議題）→ **🌊 長…",
-      "latestHeadline": ""
+      "latestHeadline": "追蹤 Claude Code 社群中活躍的概念辯論、設計哲學、實證研究與技術反思。與  追蹤具體工具和工作流不同，本頁聚焦思想碰撞：什麼哲學正在成形、什麼假設受到挑戰、什麼共識正在收斂。頁面結構：🔥 本週熱點（當前最熱的持續議題）→ 🌊 長期議題（主題彙整）→ 熱門討論記錄（最近 30 天）→ 技術彙整（逐篇深度筆記）"
     },
     {
       "id": "community-tech-patterns",
@@ -406,7 +406,7 @@ window.WIKI_DATA = {
       "lastUpdated": "2026-06-23",
       "lastNewsUpdate": "2026-06-23",
       "summary": "追蹤 Claude Code 社群在實際開發中累積的**工作流與應用模式**。本頁收錄的模式類型包括 Multi-agent 架構、Skills 設計、CLAUDE.md 管理、Hooks 與自動化、模型使用策略、Token 成本優化、記憶與知識管理、Plugin/MCP 整合等，持續累積形成社群最佳實踐知識庫。 工具…",
-      "latestHeadline": ""
+      "latestHeadline": "追蹤 Claude Code 社群在實際開發中累積的工作流與應用模式。本頁收錄的模式類型包括 Multi-agent 架構、Skills 設計、CLAUDE.md 管理、Hooks 與自動化、模型使用策略、Token 成本優化、記憶與知識管理、Plugin/MCP 整合等，持續累積形成社群最佳實踐知識庫。"
     },
     {
       "id": "community-tech-timeline",
@@ -436,7 +436,7 @@ window.WIKI_DATA = {
       "lastUpdated": "2026-06-20",
       "lastNewsUpdate": "",
       "summary": "追蹤 Claude Code 社群發布的工具、插件與 skill 專案。此頁為 lint 專用，由 /wiki-lint 定期策展；每日 ingest 不更新此頁。日常工作流模式見 [[topics/community-tech-patterns]]，概念辯論見 [[topics/community-tech-disc…",
-      "latestHeadline": ""
+      "latestHeadline": "追蹤 Claude Code 社群發布的工具、插件與 skill 專案。此頁為 lint 專用，由 /wiki-lint 定期策展；每日 ingest 不更新此頁。日常工作流模式見 ，概念辯論見 。"
     },
     {
       "id": "competitor-landscape",

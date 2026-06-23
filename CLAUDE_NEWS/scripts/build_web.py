@@ -115,6 +115,29 @@ def latest_headline(raw: str) -> str:
                 result = clean_line(ls)
                 if result:
                     return result
+    # Pattern 3: ## 歷史記錄 table — "| YYYY-MM-DD | description |"
+    hist_table_m = re.search(r'##\s*歷史記錄\s*\n([\s\S]*?)(?:\n##|\Z)', raw)
+    if hist_table_m:
+        for line in hist_table_m.group(1).splitlines():
+            ls = line.strip()
+            if not ls.startswith('|') or '|---' in ls or '日期' in ls:
+                continue
+            cols = [c.strip() for c in ls.strip('|').split('|')]
+            if len(cols) >= 2 and re.match(r'\d{4}-\d{2}-\d{2}', cols[0]):
+                text = re.sub(r'\*{1,3}([^*\n]+)\*{1,3}', r'\1', cols[1]).strip()
+                if text:
+                    return text[:160]
+    # Pattern 4: ## 現況 — first non-empty content line (strip bold markers)
+    summary_m = re.search(r'##\s*(?:現況|摘要)\s*\n([\s\S]*?)(?:\n##|\Z)', raw)
+    if summary_m:
+        for line in summary_m.group(1).splitlines():
+            ls = line.strip()
+            if not ls or ls.startswith('#') or ls.startswith('---') or ls.startswith('|'):
+                continue
+            text = re.sub(r'\*{1,3}([^*\n]+)\*{1,3}', r'\1', ls).strip()
+            text = re.sub(r'\[\[.*?\]\]', '', text).strip()
+            if text:
+                return text[:160]
     return ''
 
 

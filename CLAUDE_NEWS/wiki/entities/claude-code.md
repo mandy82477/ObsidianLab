@@ -11,7 +11,7 @@
 
 ## 現況
 
-Claude Code 是 Anthropic 的 AI 編碼 CLI 工具，支援 agentic 工作流程、MCP Server 整合、Hooks 機制與多代理協作框架（Managed Agents）。截至 2026-06-08，GitHub Stars 達 **131,000+**，持續增長且成為 SaaS 創辦人與非技術開發者廣泛採用的平台。最新版本為 **v2.1.185**，核心能力已從純程式碼助理擴展為具備全桌面自動化、多代理管理與 AI 安全審查的完整 agent 開發平台。Microsoft 正陸續取消內部授權，轉推 GitHub Copilot CLI（見 [[topics/competitor-landscape]]）；GitHub 已推出新 Copilot 應用明確對標 Claude Code；Ramp AI Index 數據顯示 Anthropic 企業採用率首次超越 OpenAI（34.4% vs 32.3%）。
+最新版本 **v2.1.185**（2026-06-21）改善 stream-stall reliability，API 529 過載事件於 2026-06-21 至 06-22 連續兩波影響 Opus/Sonnet 模型，Max plan 用戶首條 prompt 即觸發 Overloaded 錯誤。Claude Code 是 Anthropic 的 AI 編碼 CLI 工具，核心能力已從程式碼助理擴展為具備全桌面自動化、多代理管理（Managed Agents）、MCP Server 整合、Hooks 機制與 AI 安全審查的完整 agent 開發平台；GitHub Stars 達 **131,000+**。Microsoft 正陸續取消內部授權轉推 GitHub Copilot CLI（見 [[topics/competitor-landscape]]）；Ramp AI Index 數據顯示 Anthropic 企業採用率首次超越 OpenAI（34.4% vs 32.3%）。
 
 ## 熱度與試用價值
 
@@ -93,7 +93,7 @@ Claude Code 是 Anthropic 的 AI 編碼 CLI 工具，支援 agentic 工作流程
 
 ### 開發者須知
 - **Extended Thinking 輸出為加密摘要，非原始推理（2026-06-22）**：session log 中的 thinking blocks 文字是推理的摘要版本，真實推理過程被 Anthropic 加密後存在 600 字元 signature 中，用戶端無法解密。需做審計追蹤或對推理過程有完整性要求的工程師，應避免以 thinking blocks 內容作為事實依據（見「已知問題」）
-- **年齡驗證政策（Persona Identity Verification，2026-06-22）**：Anthropic 在特定使用情境下導入 Persona 第三方身分驗證，以落實年齡管控、使用政策與法規遵循。此政策非新的可呼叫功能，屬於平台使用條款異動，不影響 CLI 操作；進 feature-radar 判斷：不收錄（平台政策非使用者可操作功能）
+- **年齡驗證政策（Persona Identity Verification，2026-06-22）**：Anthropic 在特定使用情境下導入 Persona 第三方身分驗證，以落實年齡管控、使用政策與法規遵循。此政策屬平台使用條款異動，不影響 CLI 操作
 - **CLI 權限客製化避免手動確認（2026-06-22）**：長工作流中可透過 `settings.json` 的 `allowedTools` 與 Permission Rules 設定白名單，減少 Claude Code 在 agentic 模式下不斷彈出手動確認。`Tool(param:value)` 語法（v2.1.178）支援比對工具輸入參數，搭配 `--dangerously-skip-permissions` 旗標可完全自動化非互動批次流程（見 [教學](https://dev.to/kapoormanish/stop-clicking-approve-how-to-customize-claude-code-cli-permissions-pnh)）
 - **四種儲存格式各有用途（2026-06-22 整理）**：Claude Code 儲存層包含 CLAUDE.md（專案指令）、session storage（當次對話上下文）、project state（持久狀態）、Memories（跨 session 記憶）；建議將專案持久狀態存於 repo，確保重開 session 後一致性（見 [說明](https://dev.to/arthurpro/anthropics-storage-layer-quartet-and-what-each-format-is-actually-for-4nd7)）
 - **⚠️ Opus 4 / Sonnet 4 別名退役（2026-06-15）**：`claude-opus-4-20250514` 與 `claude-sonnet-4-20250514` 將於 6/15 正式退役，使用舊別名的生產環境程式碼將開始回傳錯誤，需在 **2026-06-14 前遷移至新版模型 ID**；見 [[entities/pricing]]
@@ -323,7 +323,7 @@ Token 用量追蹤、session 費用分析與效能漂移偵測工具。
 - [[news/2026-05-14]]
 - [[news/2026-05-13]]
 
-## 版本歷史
+## 歷史記錄
 
 | 日期 | 事件 |
 |------|------|
