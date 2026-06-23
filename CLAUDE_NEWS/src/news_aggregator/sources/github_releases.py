@@ -43,8 +43,8 @@ class GitHubReleases(BaseSource):
                         params={"per_page": 5},
                     )
                     remaining = int(resp.headers.get("X-RateLimit-Remaining", 999))
-                    if remaining <= 10:
-                        logger.warning("GitHub rate limit low (%d remaining), skipping further calls", remaining)
+                    if remaining <= 2:
+                        logger.warning("GitHub rate limit critical (%d remaining), skipping further official repos", remaining)
                         break
                     resp.raise_for_status()
                     for rel in resp.json():

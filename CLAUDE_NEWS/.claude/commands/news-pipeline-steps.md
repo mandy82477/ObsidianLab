@@ -67,7 +67,7 @@ PYTHON -m news_aggregator.main --gather-only [--date TARGET_DATE]
 跨多來源出現或引起大量討論的項目
 
 ### 🔧 技術更新
-僅 category=official 的條目
+僅 category=official 的條目（GitHub release、Anthropic Blog）。**若今日無任何 official 條目，完全省略此區塊，不可用 community 條目填充。**
 
 ### 💬 技術熱度討論
 僅 category=community 的條目，每條末加 情緒：😊/😤/😐/🤔
