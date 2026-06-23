@@ -7,6 +7,9 @@
 **最後更新：** 2026-06-23
 **最後新聞更新：** 2026-06-23
 
+> **最新版本動態**（2026-06-22）
+> v2.1.186 新增 `claude mcp login/logout` CLI 指令直接認證 MCP Server；同日社群揭露 Extended Thinking 透明度問題（HN score 312）：thinking blocks 完整思考過程由 Anthropic 加密，企業審計追蹤承諾受影響。
+
 ---
 
 ## 現況
