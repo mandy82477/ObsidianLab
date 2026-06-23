@@ -4,13 +4,16 @@
 **狀態：** active（部分公開：Fable 5 = Mythos 架構 + 護欄；Mythos 5 = 完整版限定存取）
 **領域：** 🤖 模型
 **首次出現：** 2026-04（限定夥伴 Preview）
-**最後更新：** 2026-06-20
+**最後更新：** 2026-06-23
+**最後新聞更新：** 2026-06-23
 
 ---
 
 ## 現況
 
 **⚠️ 目前（2026-06-13 起）因出口管制停用，見 [[entities/fable-5]] 解禁進展。**
+
+**2026-06-23 新增確認**：Sen. Mark Warner（參議院情報委員會副主席）引述 NSA 局長 Gen. Joshua Rudd 的陳述，Mythos 在政府紅隊測試中「數小時內突破 NSA 幾乎所有機密系統」，是迄今對 Mythos 網路攻擊能力最高級別、最具體的官方公開陳述，直接為出口管制提供核心論據。
 
 Claude Mythos 是 Anthropic 的高能力 AI 模型家族，已確認具備**自主發現並武器化軟體漏洞、生成可執行 exploit** 的能力，是 AI 安全領域的重大里程碑。
 
@@ -83,6 +86,14 @@ Anthropic 的官方 AI 資安能力研究計畫，Mythos Preview 為核心工具
 ---
 
 ## 時序
+
+### 2026-06-23
+**Tom's Hardware：Mythos 紅隊測試數小時內突破 NSA 幾乎所有機密系統 + MIT Technology Review 三點分析**：
+- **Tom's Hardware 報導**：Sen. Mark Warner（參議院情報委員會副主席）引述 NSA 局長 Gen. Joshua Rudd 的陳述，確認 Mythos 在紅隊測試中「數小時內突破 NSA 幾乎所有機密系統」。這是迄今最高層級、最具體的政府官員公開陳述，直接解釋出口管制的安全理由，也與 Tom's Hardware 同名報導互相呼應（[Tom's Hardware](https://www.tomshardware.com/tech-industry/artificial-intelligence/anthropics-powerful-mythos-ai-reportedly-breached-almost-all-nsa-classified-systems-within-a-few-hours-during-red-team-test-report-sheds-more-light-on-the-u-s-governments-sudden-ban-on-the-flagship-models)）
+- **MIT Technology Review 三大觀察點**（[MIT Tech Review](https://www.technologyreview.com/2026/06/22/1139424/three-things-to-watch-amid-anthropics-latest-feud-with-the-government/)，2026-06-22）：
+  1. **AI 安全定義爭議**：「安全」的定義在 Anthropic（對用戶無害）與政府（對國家安全無害）之間存在根本分歧，是出口管制衝突的深層矛盾
+  2. **主權問題**：各國政府越來越關注對本國 AI 基礎設施的主權控制權
+  3. **中國競爭窗口**：出口管制期間，Zhipu GLM-5.2 等中國模型加速填補被封鎖市場，管制可能適得其反地擴大中國 AI 的影響力
 
 ### 2026-06-20
 **全球媒體持續報導 + 境外付費帳號停用**：

@@ -8,6 +8,14 @@
 
 ---
 
+## ⭐ 本週推薦
+
+- **/goal 指令**（熱度 🔥🔥🔥🔥🔥）：設定持久目標讓 Claude Code 多輪保持方向，適合需要長期任務追蹤的開發者
+- **Claude Code Artifacts**（熱度 🔥🔥🔥🔥🔥）：工作階段即時輸出可共享互動網頁，適合需要向非工程師成員展示進度的開發者
+- **破壞性 Git 指令自動封鎖**（熱度 🔥🔥🔥）：防止 Claude Code 執行 `git reset --hard` 等危險指令，適合重視倉庫安全的所有開發者
+
+---
+
 ## 評分說明
 
 | 指標 | 說明 |
@@ -25,18 +33,11 @@
 
 ---
 
-## ⭐ 本週推薦
-
-- **/goal 指令**（熱度 🔥🔥🔥🔥🔥）：設定持久目標讓 Claude Code 多輪保持方向，適合需要長期任務追蹤的開發者
-- **/loop・/batch・/background**（熱度 🔥🔥🔥🔥）：平行批量執行與背景工作，適合需要自動化多工的 Claude Code 重度使用者
-- **Coordinator 模式 + /code-review --fix**（熱度 🔥🔥🔥🔥）：自動協調多 Agent 並直接套用程式碼審查修復，適合重視程式碼品質的工程師
-
----
-
 ## 📋 功能全覽表（2026-04-25 起）
 
 | 功能 | 發布日期 | 熱度 | 試用價值 | 狀態 |
 |------|----------|------|----------|------|
+| **MCP CLI 認證指令**（`claude mcp login/logout`，v2.1.186） | 2026-06-22 | 🔥🔥 | ⚡ 有條件推薦 | 正式發布 |
 | **MCP Enterprise Authorization**（Okta / VS Code 零設定 SSO） | 2026-06-19 | 🔥🔥 | ⚡ 有條件推薦 | 正式發布 |
 | **破壞性 Git 指令自動封鎖**（Claude Code v2.1.183） | 2026-06-19 | 🔥🔥🔥 | ✅ 推薦 | 正式發布 |
 | **Claude Code Artifacts**（工作階段即時輸出可共享互動網頁） | 2026-06-18 | 🔥🔥🔥🔥🔥 | ⚡ 有條件推薦 | 正式發布 |
@@ -81,6 +82,25 @@
 ---
 
 ## 🆕 最新功能（2026-06）
+
+### MCP CLI 認證指令（mcp login / logout）
+**發布：** 2026-06-22（v2.1.186）| **熱度：** 🔥🔥 | **試用價值：** ⚡ 有條件推薦 | **狀態：** 正式發布
+
+**是什麼：** 新增 `claude mcp login <name>` 與 `claude mcp logout <name>` 兩個 CLI 指令，讓使用者可從命令列直接完成 MCP Server 認證，無需進入互動式 `/mcp` 選單。支援 `--no-browser` 旗標，可透過 stdin 重導向進行認證，適合 headless / CI 環境。
+
+**為何熱：** 解決 headless 環境中無法透過互動選單認證 MCP 的痛點，對自動化部署與 CI 工作流有直接幫助。
+
+**快速上手：**
+```
+claude mcp login <server-name>
+# headless 環境
+claude mcp login <server-name> --no-browser
+claude mcp logout <server-name>
+```
+
+**注意事項：** 僅適用 v2.1.186 以上版本；適合 headless 環境、CI/CD 管線的 MCP 認證場景。
+
+---
 
 ### MCP Enterprise Authorization（企業 SSO 正式版）
 **發布：** 2026-06-19 | **熱度：** 🔥🔥 | **試用價值：** ⚡ 有條件推薦 | **狀態：** GA（stable）

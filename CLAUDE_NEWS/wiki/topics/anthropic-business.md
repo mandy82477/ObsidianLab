@@ -83,7 +83,7 @@ Simon Willison（知名開發者博主）發表文章，認為 Anthropic 與 Ope
 | 合作方 | 類型 | 日期 | 意義 |
 |--------|------|------|------|
 | Charleston Hospitality Group | 企業客戶 | 2026-06-22 | 加入 Anthropic Claude 企業 AI 網路，為餐旅業具名採用案例 |
-| Micron Technology | 戰略合作 | 2026-06-22 | Micron 部署 Claude 加速 AI 工廠（AI Factory）建置；Anthropic 獲多年成長軌跡資金支持；Micron 股價上漲 5.5% |
+| Micron Technology | 戰略合作 + 投資 | 2026-06-22 | 多年 AI 記憶體與供應協議（Memory、Storage、AI 架構三層涵蓋）；Micron 同步對 Anthropic 進行投資；Micron 股價創歷史新高（Reuters 2026-06-22，blocksandfiles 2026-06-23）|
 | DXC Technology | 多年全球聯盟 | 2026-06-12 | 訓練數萬名 Claude 認證工程師；覆蓋銀行、航空、政府等受嚴格監管行業 |
 | Samsung + SK Hynix | 戰略投資 | 2026-05-28 | Series H 同步入股，韓國半導體廠加碼 AI 生態 |
 | Apollo + Blackstone | 晶片債務融資 | 2026-05-29 | 安排 $36B 債務融資用於 AI 晶片採購 |
@@ -116,6 +116,8 @@ Simon Willison（知名開發者博主）發表文章，認為 Anthropic 與 Ope
 ## 時序
 
 ### 2026-06-23
+- **[Micron 多年戰略協議確認] Micron × Anthropic 多媒體確認：多年 AI 記憶體供應協議 + 投資，Micron 股價創歷史新高**：Reuters（2026-06-22）首報協議；Benzinga 確認涵蓋 Memory、Storage、AI 架構三層，且 Micron 同步對 Anthropic 進行投資；qz.com（2026-06-23）報導 Micron 股價創歷史新高；blocksandfiles（2026-06-23）標題確認「Micron invests in Anthropic and grants it a supply deal」；Techzine Global（2026-06-23）及 simplywall.st 定性為「多年 AI 記憶體與供應協議」（Reuters https://www.reuters.com/business/micron-anthropic-sign-ai-infrastructure-supply-agreement-2026-06-22/；Benzinga https://www.benzinga.com/markets/tech/26/06/60034685/micron-and-anthropic-strike-strategic-ai-partnership-spanning-memory-storage-and-claude）
+- **[生態融資信號] Menlo Ventures 完成 30 億美元募資，為其史上最大單筆融資**：Anthropic 早期投資人 Menlo Ventures 於 2026-06-23 宣布完成 $3B 新基金，為該基金史上最大單輪，反映 AI 生態投資人對 Anthropic 生態信心（Bloomberg 2026-06-23 https://www.bloomberg.com/news/articles/2026-06-23/anthropic-backer-menlo-ventures-lands-3-billion-in-its-largest-ever-haul）
 - **[Micron 合作細節補充] Micron 部署 Claude 加速 AI Factory 建置，Anthropic 獲多年資金支持**：WCCFTech / Yahoo Finance / Investing.com 三媒體報導，Micron 已實際部署 Claude 加速「AI 工廠」（AI Factory）建置流程，並非僅簽署框架協議；Anthropic 方面獲得多年成長軌跡資金支持（multi-year backing），Micron 股價因消息先行上漲 5.5%（WCCFTech 2026-06-22）
 - **[封鎖中國財務揭露] Anthropic 自揭封鎖中國損失數億美元收入**：TweakTown 報導，Anthropic 公開量化出口管制財務代價：配合美國政策封鎖中國市場後，損失數億美元收入；繼 6/22 出口管制財務揭露條目後的進一步確認，強調 Anthropic 正積極利用這筆「合規代價」在政策論述中爭取籌碼（TweakTown 2026-06-22；見 [[topics/anthropic-government-policy]]）
 - **[企業採用] Charleston Hospitality Group 加入 Anthropic Claude 企業 AI 網路**：SCBiz 報導，南卡羅萊納州餐旅集團 Charleston Hospitality Group 正式加入 Anthropic Claude AI 網路，為餐旅業的具名採用案例（SCBiz 2026-06-22；見 [[topics/enterprise-tool-tracker]]）

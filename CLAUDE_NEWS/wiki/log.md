@@ -3,6 +3,40 @@
 Append-only 紀錄。每次 ingest、query 或 lint 都在此追加一條。
 格式：`## [YYYY-MM-DD] 類型 | 說明`
 
+## 2026-06-23 Ingest | news/2026-06-23.md（65 則）第二次執行
+
+- 來源日報：`news/2026-06-23.md`（65 則，6/6 來源正常；Reddit 部分 429 但仍有 10 筆）
+- 主軸：Fable/Mythos 出口管制持續（Five Eyes 聯合聲明、NSA 紅隊測試 Sen. Warner 確認、Zhipu GLM-5.2 趁機接觸被封鎖用戶、歐洲高管警告）；Micron × Anthropic 多年戰略協議正式確認（記憶體/儲存/AI 架構，Micron 股價創歷史新高）；Menlo Ventures $3B 史上最大募資；Claude Code v2.1.186 新增 `mcp login/logout` CLI 指令（headless 認證）；Extended Thinking 透明度爭議（HN 312，加密簽名而非實際推理）；帳號封禁政策不透明（HN 55）；AgentJacking Sentry MCP 攻擊向量（Tenet Security）；Anthropic 計畫 7 月起要求身份識別/臉部掃描；John Jumper 多媒體確認（Barron's / SEJ）；Boris Cherny ROI vs 實驗論述；社群：Claude Code 使用現況分析（2,500 repos）、AI agent O(N²) 記憶體問題、cc-fleet/Aharness 新工具
+- 更新頁面：
+  - `entities/fable-5.md`：Five Eyes 聲明、Zhipu 市場動作、Fortune 歐洲警告、HN Fable 回歸弱訊號
+  - `entities/mythos.md`：NSA 紅隊測試 Tom's Hardware 報導；MIT Tech Review 三爭點；補充「最後新聞更新」欄位
+  - `entities/claude-code.md`：v2.1.186 版本表新增；mcp login/logout 歷史記錄
+  - `topics/anthropic-government-policy.md`：身份驗證/臉部掃描政策；帳號封禁 HN 討論；目前局勢更新
+  - `topics/ai-agent-safety.md`：AgentJacking Sentry MCP 條目升級（Tenet Security 亮相，Codex 列入）
+  - `topics/anthropic-business.md`：Micron 協議補充（投資確認、三層涵蓋）；Menlo Ventures $3B；時序 prepend
+  - `topics/enterprise-cost-management.md`：企業帳單優化趨勢（節省超 50%）；時序 prepend
+  - `topics/community-tech-discussions.md`：Extended Thinking 透明度（HN 312，升為 🌊延燒）；帳號封禁（HN 55，新增）；移除過期 🌸落幕 條目
+  - `topics/community-tech-patterns.md`：cc-fleet、Aharness、Compact Memory 三個新工作流模式
+  - `entities/john-jumper.md`：Barron's / SEJ 跟進確認；Google 股價影響背景
+  - `entities/boris-cherny.md`：ROI vs 實驗平衡論述（Business Insider）；歷史記錄 prepend
+- 新增頁面：無
+- feature-radar 更新：新增「MCP CLI 認證指令」條目；本週推薦更新（/goal、Artifacts、破壞性 Git 封鎖）
+- index.md 狀態變更：無（無新頁面）
+- 呈現品質審查：
+  | 頁面 | 結果 |
+  |------|------|
+  | fable-5.md | ✅ 通過 |
+  | mythos.md | ⚠️ 已修復（補充缺少的「最後新聞更新」欄位） |
+  | claude-code.md | ✅ 通過 |
+  | anthropic-government-policy.md | ✅ 通過 |
+  | ai-agent-safety.md | ✅ 通過 |
+  | anthropic-business.md | ✅ 通過 |
+  | enterprise-cost-management.md | ✅ 通過 |
+  | community-tech-discussions.md | ✅ 通過 |
+  | community-tech-patterns.md | ✅ 通過 |
+  | john-jumper.md | ✅ 通過 |
+  | boris-cherny.md | ✅ 通過 |
+
 ## 2026-06-23 Ingest | news/2026-06-23.md（67 則）
 
 - 來源日報：`news/2026-06-23.md`（67 則，6/6 來源正常；Reddit 部分 429 但仍有 10 筆）

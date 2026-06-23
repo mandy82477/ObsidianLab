@@ -3,7 +3,8 @@
 **狀態：** monitoring
 **領域：** 💼 商業
 **開始日期：** 2026-05-01
-**最後更新：** 2026-06-20
+**最後更新：** 2026-06-23
+**最後新聞更新：** 2026-06-23
 
 ---
 
@@ -121,6 +122,9 @@
 - [[news/2026-05-22]]
 
 ## 時序
+
+### 2026-06-23
+- **[帳單優化趨勢] 企業客戶透過 prompt 優化、快取策略、模型路由大幅削減 AI 帳單，部分節省超過 50%**：The Information（2026-06-23）報導，企業客戶正系統性採用 prompt 精簡、快取命中優化、多模型路由等手段，大幅降低對 Anthropic 與 OpenAI 的支出，部分案例節省幅度超過 50%；這與企業成本因應策略表格中的「multi-step agent 混用 Sonnet/Haiku」（削減 90%）方向一致，顯示成本優化已從社群討論升至主流財媒報導層級（The Information 2026-06-23 https://www.theinformation.com/articles/ai-customers-lowering-anthropic-openai-bills）
 
 ### 2026-06-20
 - **[成本結構分析] Always-on Claude agent 低成本時代正在結束**：Unite.AI 分析指出持續運行 Claude agent 的低成本蜜月期已悄然結束，隨 API 用量計費調整與企業規模化擴大，成本結構正發生質變；顯示過去以訂閱額度消耗為主的計費模式，已逐步向實際 API 用量靠攏（Unite.AI 2026-06-18）

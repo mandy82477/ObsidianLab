@@ -40,6 +40,43 @@
 
 ## 技術彙整
 
+### cc-fleet：Claude Code 作為 Orchestrator 驅動異質 LLM Worker（2026-06-23）
+
+- **核心模式：** 讓 Claude Code 作為 orchestrator，統一調度其他 LLM（非 Claude）作為 worker 執行子任務；使跨模型分工在單一 Claude Code 會話中可行，無需切換工具
+- **實作方向：**
+  - Claude Code 持有任務分解與路由邏輯，依子任務特性將工作委派給不同 LLM worker
+  - Worker LLM 可為成本較低或特化模型（如本地模型、開源模型）
+  - Claude Code 保留最終彙整、驗證與決策職責
+- **解決的問題：** 單一 LLM 在所有子任務上均使用旗艦模型，造成不必要的成本；無法在 Claude Code 工作流中利用異質模型的能力差異
+- **與既有模式的關係：** 延伸多 LLM 協作架構哲學（270+ 分歧日誌實證）；與 cc-fleet 做法呼應「依任務路由模型」社群方向
+- **注意事項：** HN score 1，社群驗證度極低；Worker LLM 的品質控制與錯誤處理需額外設計；跨模型 prompt 格式相容性需測試
+- **來源：** cc-fleet（github.com/ethanhq/cc-fleet，HN score 1，06-23）
+
+### Aharness：有限狀態機強制 Agent 工作流狀態轉換（2026-06-23）
+
+- **核心模式：** 以有限狀態機（FSM）定義 AI agent 工作流，強制狀態轉換路徑，防止 process drift；agent 只能依照預定義的狀態圖移動，不可跳過或自行繞過中間狀態
+- **實作方向：**
+  - 以 TypeScript 定義狀態節點、轉換條件與觸發動作
+  - 每個狀態對應明確的 AI agent 動作集合，狀態之外的動作被拒絕
+  - 轉換條件可設為同步驗證（確認前一步驟完成）或非同步事件驅動
+- **解決的問題：** AI agent 在多步驟工作流中「漂移」——跳步、重複、或在無明確終止條件時無限循環；長 session 中 agent 逐漸偏離初始設計路徑
+- **與既有模式的關係：** 與 ANMA 架構邊界合約互補——ANMA 約束代碼生成邊界，Aharness 約束執行流程邊界；比 Loop Engineering 哲學更進一步，從「設計 loop」進化到「強制 loop 路徑」
+- **注意事項：** HN score 4，社群曝光度早期；FSM 定義本身需維護成本；過度複雜的狀態圖可能成為新型設定負債
+- **來源：** Aharness（github.com/Alfredvc/aharness，HN score 4，06-23）
+
+### Compact Memory：解決 AI Agent O(N²) Context Token 浪費（2026-06-23）
+
+- **核心模式：** 以「緊湊記憶（compact memory）」取代每輪重送完整 transcript 的傳統做法；只保留當前任務所需的語意摘要，剔除冗餘歷史，將多輪 agent 的額外 context token 消耗從 O(N²) 降至接近 O(N)
+- **量化數據：** dev.to 基準測試：多數 AI agent 每輪重送完整 transcript，在多輪任務造成 62.8%–85.9% 額外 context token；compact memory 方案可顯著削減此開銷（附可執行 benchmark）
+- **實作方向：**
+  - 每輪 agent 行動後，提取並壓縮關鍵狀態（已完成步驟、待辦項目、關鍵決策）為摘要
+  - 下一輪以摘要取代完整歷史作為 context 輸入
+  - 保留「最近 N 輪」原始內容以維持短期連貫性，更早的歷史則壓縮
+- **解決的問題：** 傳統 agent loop 設計將全量 transcript 傳遞，隨輪數增加 token 成本呈平方增長；大型多輪任務中成本不可控
+- **與既有模式的關係：** 呼應 Context Rot 修復五法中的「壓縮歷史」策略；比 /compact 指令更系統化，可程式化控制壓縮時機與粒度
+- **注意事項：** 摘要過於激進可能造成語意失真，需設計摘要品質驗證機制；benchmark 為社群個人測試，大規模驗證待確認
+- **來源：** "The Hidden O(N²) Tax in AI Agent Loops: Measured with a Benchmark You Can Run"（dev.to/saihmadmin，06-23）
+
 ### MCP 作為「AI 時代 API Contract」：重新定義工具連接標準（2026-06-23）
 
 - **核心模式：** 將 MCP Server 的角色從「工具連接管道」升級為「AI 時代的 API contract」——MCP 不只是讓 AI 用工具，更是定義 AI 與外部系統的介面邊界與契約關係

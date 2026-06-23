@@ -17,6 +17,8 @@ Claude Fable 5 是 Anthropic 於 2026-06-09 發布的旗艦模型，為**史上�
 
 **2026-06-18–19 解禁進展**：Wired 深度調查（HN score 110）確認出口管制根本動機為 SK Telecom 中國關聯（Anthropic 先前授予 SK Telecom Mythos 存取權），加上 Amazon 研究人員向白宮舉報 Fable 5 越獄漏洞，兩件事疊加加速管制決定。Anthropic 國際總監 Chris Ciauri 在首爾記者會聲明「數日內恢復」，Bloomberg 另報導部分早期用戶仍保有存取權。見 [[entities/mythos]]。
 
+**2026-06-23 最新**：Five Eyes 情報聯盟（英美澳加紐）發表聯合聲明點名前沿 AI 模型網路安全威脅，Fable 5 在出口管制脈絡下首度被五眼機構聯合提及。中國 Zhipu GLM-5.2 主動接觸被封鎖用戶群，填補市場空白。HN 有使用者回報 Claude Code 啟動 Fable 5 subagent 且自我識別為 Fable（訊號弱，score 4，尚待確認）。
+
 **核心定位**：任務越複雜越長期，Fable 5 的優勢越明顯。在軟體工程、知識工作、視覺、科學研究等幾乎所有 benchmark 達到 SOTA。
 
 | 指標 | 數值 |
@@ -128,6 +130,13 @@ claude --model claude-fable-5-20260609
 - [資料保留政策](https://support.claude.com/en/articles/15425996-data-retention-practices-for-mythos-class-models)
 
 ## 歷史記錄
+
+### 2026-06-23
+**Five Eyes 聯合聲明 + Zhipu GLM-5.2 接觸被封鎖用戶 + HN 社群問「Fable 回來了嗎？」**：
+- **Five Eyes 情報聯盟聲明**：英美澳加紐五眼情報機構發表聯合聲明，警告「足以顛覆政府的 AI 模型距今僅數月」，Fable 5 等前沿模型帶來的網路安全威脅首次被五眼機構聯合點名（[The Guardian](https://www.theguardian.com/technology/2026/jun/22/anthropic-claude-fable-ai-model-artificial-intelligence-national-security)，2026-06-22）
+- **Zhipu GLM-5.2 趁機接觸被封鎖用戶**：Anthropic 出口管制後，中國 AI 公司 Zhipu 的 GLM-5.2 主動接觸遭 Fable 5 封鎖的用戶群，試圖填補存取空白（[SCMP](https://www.scmp.com/tech/article/3358067/how-anthropics-fable-5-shutdown-could-help-chinas-zhipu-glm-52-gain-ground)）；此為繼 6/22 Zhipu 競爭聲明後，中方市場動作的具體落地
+- **Fortune 歐洲高管警告**：Fortune 報導歐洲企業高管對 Fable 5 出口管制深感焦慮，原話：「This is the least crazy AI is ever going to be」，暗示前沿 AI 能力擴張不會停止，監管只是拖延
+- **HN：「Fable 回來了嗎？」（score 4）**：有使用者在 Hacker News 發帖回報，Claude Code 在工作流中啟動了一個 Fable 5 subagent 且未報錯，且該 subagent 自我識別為 Fable（[HN](https://news.ycombinator.com/item?id=48629948)）；訊號微弱（score 4），尚無法確認是部分解禁、快取問題或邊緣豁免案例
 
 ### 2026-06-22
 **「Fix this code」三詞越獄機制公開 + Zhipu 聲稱 2026 年追上 Fable 5**：

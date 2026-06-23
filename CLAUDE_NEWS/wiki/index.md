@@ -7,18 +7,18 @@ LLM 查詢此 wiki 時，**先讀這個檔案**找相關頁面，再讀具體頁
 
 ## 近期異動
 
-- [[topics/anthropic-government-policy]] — Trump 宣布 Anthropic 不再是安全威脅；FT 分析 Anthropic 風險表態密度助攻出口禁令；Amazon CEO 舉報動機揭露；Mythos 入侵 NSA 機密系統報導
-- [[topics/anthropic-business]] — Charleston Hospitality Group 加入 Claude 網路；8x 工程師產能論述；IPO 訊號補充
-- [[topics/enterprise-tool-tracker]] — Charleston Hospitality Group 新增企業列
-- [[topics/ai-agent-safety]] — Mythos AI 測試入侵幾乎所有 NSA 機密系統（Security Affairs 報導）
-- [[topics/community-tech-discussions]] — 新增「529 Overloaded 可靠性質疑」、「Extended Thinking 摘要揭露」、「Hooks 取代 CLAUDE.md 規則」等討論
-- [[topics/community-tech-patterns]] — 新增 Hooks enforcement pattern、MCP as API contract、ISO 29148 規格引導
-- [[entities/claude-code]] — 529 過載第二波更新；Extended Thinking 摘要性質揭露；年齡驗證開發者須知
-- [[entities/opus-4-8]] / [[entities/opus-4-7]] — 529 elevated error rates 記錄
-- [[entities/fable-5]] — 三詞越獄機制公開；Zhipu 聲稱 2026 追上
-- [[entities/john-jumper]] — 多媒體跟進確認（Barron's/IBD/The Rundown AI）
-- [[entities/dario-amodei]] — FT 量化風險表態密度（5/千字）成政治焦點
-- [[entities/fiona-fung]] — 新增頁面（Anthropic 工程副總裁，「Claude Code 讓工程師更孤獨」）
+- [[entities/fable-5]] — Five Eyes 聯合聲明警告；Zhipu GLM-5.2 趁機接觸被封鎖用戶；Fable 5 subagent HN 弱訊號
+- [[entities/mythos]] — Tom's Hardware 確認 NSA 紅隊測試（Sen. Warner 引述）；MIT Tech Review 三爭點分析
+- [[entities/claude-code]] — v2.1.186：新增 `claude mcp login/logout` CLI 指令
+- [[topics/anthropic-government-policy]] — 五Eyes 聯合聲明；Anthropic 身份驗證/臉部掃描政策；帳號封禁 HN 討論
+- [[topics/ai-agent-safety]] — AgentJacking Sentry MCP 攻擊（Tenet Security 披露）條目升級
+- [[topics/anthropic-business]] — Micron × Anthropic 多年戰略協議（記憶體/儲存/AI 架構）；Menlo Ventures $3B 史上最大募資
+- [[topics/enterprise-cost-management]] — 企業 AI 帳單優化趨勢（節省超 50%）
+- [[topics/community-tech-discussions]] — Extended Thinking 透明度（HN 312）；帳號封禁機制（HN 55）
+- [[topics/community-tech-patterns]] — cc-fleet、Aharness、Compact Memory 三個新工作流模式
+- [[entities/john-jumper]] — Barron's / SEJ 多媒體確認；Google 因此股價下跌
+- [[entities/boris-cherny]] — ROI vs 實驗平衡論述（Business Insider 2026-06-23）
+- [[feature-radar]] — 新增 MCP CLI 認證指令條目；本週推薦更新
 
 ---
 

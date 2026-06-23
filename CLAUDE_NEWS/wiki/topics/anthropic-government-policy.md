@@ -26,6 +26,7 @@ Anthropic 與美國政府的衝突從 2026 年五月起持續升溫，並於 202
 - **量化雙面刃：** Ars Technica 引用 FT 研究數據——Anthropic 每千字有 5 字涉風險/法規，是 OpenAI（0.6/千字）的 8 倍多；「頻繁的風險表態間接促成禁令」的批評獲得具體量化佐證
 - **Amazon 利益衝突：** Gizmodo 分析揭示 Amazon CEO 舉報 Anthropic 的政治動機；「最大投資方同時充當舉報者」的角色矛盾在媒體層面成為政治焦點
 - **意外效果持續：** 企業市佔五月首超 OpenAI，JPMorgan HK 斷連案例仍有效；Anthropic 呼籲 AI 開發暫停的立場引發外界關注與質疑
+- **身份管控收緊：** Anthropic 計畫對部分 Free/Pro/Max 訂閱用戶要求身份證明與臉部掃描（最快 7 月），觸發條件未公開；帳號封禁申訴機制缺失（HN score 55），對國際用戶影響加劇
 
 ---
 
@@ -77,6 +78,7 @@ Fable 5 發布後，Amazon 安全研究人員發現特定提示詞可讓模型�
 
 | 日期 | 方 | 動作 | 效果 |
 |------|----|------|------|
+| 2026-06-22 | 🏢 | Anthropic 計畫對部分 Free/Pro/Max 訂閱用戶要求身份證明與臉部掃描，最快 7 月上路；觸發條件與覆蓋範圍未公開說明（PYMNTS.com） | 用戶隱私疑慮升溫；與 Persona Identities 合作（年齡驗證）同期，加深對 Anthropic 擴大身份管控力道的觀察 |
 | 2026-06-22 | 🌐 | Ars Technica 引用 FT 研究數據：Anthropic 每千字有 5 字與風險/法規相關，是 OpenAI（0.6/千字）的 8 倍；批評者指出頻繁的風險表態間接促成出口禁令（Ars Technica） | 「Anthropic 自己說話說進禁令」的具體量化數據首次曝光，強化雙面刃論述；Dario 公開聲明立場成政治焦點 |
 | 2026-06-22 | 🌐 | Gizmodo 分析 Amazon CEO Andy Jassy 向 Trump 舉報 Anthropic 的政治動機，揭示科技巨頭之間的競爭與政治操縱（Gizmodo） | 揭示 Amazon 舉報背後的商業競爭動機，質疑 AWS 作為 Anthropic 投資方同時充當舉報者的利益衝突 |
 | 2026-06-22 | 🌐 | Security Affairs 報導 Anthropic Mythos AI 在測試中能在數小時內入侵幾乎所有 NSA 機密系統，成為出口管制的核心安全論據（Security Affairs） | 為政府出口管制提供具體技術佐證；社群仍質疑此能力是否為 Mythos 獨有、或開源模型在更長時間也能做到 |
@@ -136,6 +138,9 @@ Fable 5 發布後，Amazon 安全研究人員發現特定提示詞可讓模型�
 ## 時序
 
 ### 2026-06-23
+- **[三大爭點] MIT Technology Review：Anthropic vs 政府對峙的三個觀察重點**：MIT Tech Review 分析 Anthropic 出口管制對峙已引發三個核心爭點：（1）AI 安全定義之爭——誰有資格定義「危險」；（2）AI 主權問題——政府管制私人公司最強模型的正當性；（3）中國競爭框架——出口管制如何影響美國 AI 領先地位論述；此分析將爭端框架從雙方角力提升至結構性政策議題（MIT Technology Review，06/22）
+- **[身份驗證政策] Anthropic 計畫對部分用戶要求身份證明與臉部掃描**：PYMNTS.com 報導 Anthropic 計畫對 Free/Pro/Max 訂閱用戶要求身份證明（ID）與臉部掃描，最快 7 月上路；觸發條件與覆蓋範圍未公開說明；此政策與 Persona Identities 年齡驗證合作同期，加深外界對 Anthropic 擴大身份管控力道的疑慮（PYMNTS.com，06/22）
+- **[用戶申訴] 帳號封禁：VPN 封鎖後重申又遭同一信用卡連坐（HN score 55）**：HN 熱議案例（score 55）顯示用戶因 VPN 被封後停用 VPN、重新申請，卻再度因同一信用卡被封禁；Anthropic 支援僅回覆制式信件，缺乏實質申訴機制；對國際用戶影響尤大，暗示 Anthropic 的帳號審查已從 IP 層擴展至支付方式層（HN，06/22）
 - **[量化分析] FT 研究：Anthropic 每千字 5 字涉風險/法規，是 OpenAI 的 8 倍**：Ars Technica 報導並分析 FT 研究數據——Anthropic 2026 年公開溝通中每千字有 5 字與風險或法規相關，遠超 OpenAI（0.6 字/千字）；批評者據此指出 Anthropic 頻繁的風險表態間接為政府出口禁令提供正當性依據；Dario Amodei 的公開聲明立場成為政治焦點，強化「安全論述雙面刃」的具體量化佐證（Ars Technica，06/22 14:32 UTC）
 - **[政治分析] Amazon CEO 舉報動機：競爭還是安全？**：Gizmodo 分析 Amazon CEO Andy Jassy 向 Trump 舉報 Anthropic 的深層動機；在 Amazon 同為 Anthropic 最大投資方（40 億美元）的情況下，舉報行為揭示科技巨頭之間的競爭博弈與政治操縱；「投資方同時充當舉報者」的利益衝突引發廣泛質疑（Gizmodo，06/22 07:15 UTC）
 - **[安全技術佐證] Mythos 在數小時內入侵幾乎所有 NSA 機密系統**：Security Affairs 報導 Anthropic Mythos AI 在測試中能夠在數小時內入侵幾乎所有 NSA 機密系統；此為政府實施出口管制的核心安全論據之一，與 David Sacks 2026-06-21 的揭露一致；社群仍質疑此能力是否為 Mythos 獨有（Security Affairs，06/22 05:53 UTC）

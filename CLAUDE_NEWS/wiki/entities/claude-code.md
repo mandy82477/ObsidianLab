@@ -28,6 +28,7 @@
 
 | 版本 | 日期 | 重點 |
 |------|------|------|
+| **v2.1.186** | 2026-06-22 | 新增 `claude mcp login <name>` 與 `claude mcp logout <name>` CLI 指令：可從命令列直接認證 MCP Server，無需進入互動式 `/mcp` 選單；支援 `--no-browser` 旗標，透過 stdin 重導向認證，適合 headless / CI 環境 |
 | **v2.1.185** | 2026-06-21 | Stream-stall reliability 改善：等待提示文字從「No response from API · Retrying in …」改為「Waiting for API response · will retry in …」；觸發門檻從 10 秒延長至 20 秒，減少短暫延遲時的干擾提示 |
 | **MCP Enterprise Authorization** | 2026-06-19 | **企業 SSO 正式版**（stable）：支援 Okta、Anthropic、VS Code 零設定 SSO 整合，企業可集中管理 Claude Code 授權；見 [[feature-radar]] |
 | **v2.1.183** | 2026-06-19 | **Auto mode 安全性強化**：破壞性 Git 指令（`git reset --hard`、`git checkout -- .`、`git clean -fd`、`git stash drop`）在 Auto mode 下若非明確要求，一律自動封鎖，防止非預期資料遺失 |
@@ -327,6 +328,7 @@ Token 用量追蹤、session 費用分析與效能漂移偵測工具。
 
 | 日期 | 事件 |
 |------|------|
+| 2026-06-22 | **v2.1.186**：新增 `claude mcp login <name>` 與 `claude mcp logout <name>` CLI 指令，可直接從命令列認證 MCP Server，無需進入 `/mcp` 互動選單；`--no-browser` 旗標支援 headless 環境透過 stdin 完成認證；**Extended Thinking 透明度問題社群揭露**（HN score 312）：工程師 Patrick McCanna 分析 session log 發現 thinking blocks 只含推理摘要，完整思考過程由 Anthropic 加密於 600 字元 signature，用戶端無法自行解密，企業審計追蹤承諾受影響（見「已知問題」）|
 | 2026-06-21 | **v2.1.185**：stream-stall 提示文字改為「Waiting for API response · will retry in …」，觸發門檻延長至 20 秒（原 10 秒），reliability 改善；Anthropic 官方博客發布「七種 Claude Code 控制層」決策框架（CLAUDE.md、rules、skills、subagents、hooks、output styles、system prompt append），HN score 4 |
 | 2026-05-28 | **v2.1.153**：`skipLfs` 選項加入 github/git plugin，clone/update 可跳過 Git LFS 下載；npm 全域安裝版本過期時顯示一次性升級通知；Cisco LLM Security Leaderboard 發布，Anthropic 佔前十名 8 席；Simon Willison 發布 HN 970 分析文（Anthropic/OpenAI 已達 PMF）；Anthropic 宣布開設米蘭辦公室（歐洲第六據點）；企業預算壓力信號：Benzinga/CFO.com 報導 AI 編碼工具成長放緩；ChatGPT-5.5 在 DeepSWE 污染免疫基準超越 Opus 4.7 |
 | 2026-05-27 | **v2.1.152**：`/code-review --fix` 可直接將審查結果套用至工作樹；**Coordinator 模式**正式加入，多 worker 代理人協調層支援任務委派、結果合成、lifecycle 管理、跨 session peer 協調與獨立驗證（+4,566 系統提示 tokens）；Uber COO 公開確認 Claude Code + ChatGPT 帶來 25% 生產力提升；富士通與 Anthropic 簽署戰略合作；Platformer 刊出 Boris Cherny 專訪（「軟體工程師的終結」） |

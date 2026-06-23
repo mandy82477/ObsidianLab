@@ -37,7 +37,7 @@ John Jumper 以 AlphaFold 系列模型的開發著稱，AlphaFold 2 解決了困
 
 ## 歷史記錄
 
-- 2026-06-23：Barron's、IBD、The Rundown AI 多媒體跟進確認加入 Anthropic，報導指 Alphabet 股價因此下跌
+- 2026-06-23：Barron's、IBD、The Rundown AI、Search Engine Journal 等財經與科技媒體多媒體跟進確認加入 Anthropic，報導指 Alphabet 股價因此下跌；Search Engine Journal 指出 Google 同期失去兩位頂尖 AI 研究員（一至 OpenAI、一至 Anthropic）
 - 2026-06-22：Business Insider、PYMNTS.com 等多家媒體跟進報導 Google Nobel AI 專家加入 Anthropic，為 Reuters 確認事件的後續廣泛報導（待核實：後續報導是否帶出新細節）
 - 2026-06-21：Reuters 正式確認離開 Google DeepMind 加入 Anthropic（HN score 77）
 - 2026-06-20：dev.to 分析文出現，社群將此次招募定性為 Anthropic 向科學計算領域擴展的「前沿實驗室人才訊號」，強調與 Google DeepMind 的人才競爭格局

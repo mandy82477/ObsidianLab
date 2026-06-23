@@ -4,8 +4,8 @@
 **狀態：** active
 **領域：** 👤 人物
 **首次出現：** 2026-04-23（事後報告發布）
-**最後更新：** 2026-06-22
-**最後新聞更新：** 2026-06-22
+**最後更新：** 2026-06-23
+**最後新聞更新：** 2026-06-23
 
 ---
 
@@ -16,6 +16,14 @@ Boris Cherny 是 Anthropic Claude Code 的創始人與負責人（Head of Claude
 ---
 
 ## 公開言論與主張
+
+### AI ROI 與實驗平衡論述（2026-06-23）
+
+Business Insider 報導 Boris Cherny 對企業 AI 投資策略的立場：支持企業聚焦 AI ROI 是正確方向，但同時主張企業仍需保留實驗空間，不應將預算完全鎖定在 ROI 導向的評估框架。這是他繼「coding is solved」系列宣言後，首次針對企業採購與投資邏輯公開發聲，定位在協助企業領導人理解 AI 工具投資的雙軌思維。
+
+- 來源：[Business Insider，2026-06-23](https://www.businessinsider.com/boris-cherny-anthropic-token-cost-roi-ai-2026-6)
+
+---
 
 ### 「Claude Code 讓工程師更孤獨」論述（2026-06-22）（待核實）
 
@@ -75,6 +83,7 @@ Boris Cherny 的公開言論呈現兩種截然不同的社群反應：
 
 ## 歷史記錄
 
+- 2026-06-23：Business Insider 報導其對企業 AI 投資的立場：支持 ROI 導向，但反對完全不留實驗預算
 - 2026-06-22：Anthropic「engineering leader」（待核實：是否為 Boris Cherny）公開表示 Claude Code 正讓工程師更孤獨，Business Insider、Let's Data Science 報導
 - 2026-06-20：techstackups.com 採訪引用 Loop 工程哲學名言「我不再 prompt Claude，我寫 loop 讓 loop 去 prompt Claude；我的工作是寫 loop」，被視為繼「coding is solved」後的第二個重要設計哲學表態
 - 2026-05-27：Platformer 長篇專訪「Claude Code's creator on the end of the software engineer」發布，為其「軟體工程已死」系列論述最完整陳述
@@ -99,3 +108,4 @@ Boris Cherny 的公開言論呈現兩種截然不同的社群反應：
 - [[news/2026-05-13]]
 - [[news/2026-05-27]]
 - [[news/2026-06-22]]
+- [[news/2026-06-23]]

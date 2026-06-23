@@ -28,7 +28,8 @@
 
 當前持續延燒的議題（🌊延燒狀態），依熱度排列：
 
-- **開源 LLM 遷移零代價論**（🔥🔥🔥🔥，2026-06-22，HN score 309）：閉源護城河瓦解論引發廣泛討論，平台依賴風險意識升高
+- **Extended Thinking 透明度揭露**（🔥🔥🔥🔥，2026-06-23，HN score 312）：thinking blocks 只有加密簽名、API 僅回摘要、完整輸出需企業協議——「審計軌跡」技術上無法自行核驗；引爆 AI 透明度承諾的根本質疑
+- **開源 LLM 遷移零代價論**（🔥🔥🔥🔥，2026-06-22，HN score 334）：閉源護城河瓦解論引發廣泛討論，平台依賴風險意識升高
 - **OpenAI vs Anthropic 定價戰**（🔥🔥🔥🔥，2026-06-11+）：AI 定價競爭從技術競爭正式轉向成本競爭；WSJ/CNBC 報導讓 Google、Amazon 坐收漁利的態勢持續延燒
 - **AI Skill Atrophy**（🔥🔥🔥🔥，2026-06-10+）：「做更多、理解更少」的能力侵蝕問題持續發酵，社群對 Prompt-Then-Review 迴圈的警覺度不斷升高
 - **Context Rot 修復五法**（🔥🔥，2026-06-20）：「Claude 越用越笨」幾乎都是 context 腐蝕而非模型退步；五種具體修復策略已成社群共識
@@ -97,7 +98,8 @@ MCP 的實際成本遠超多數使用者預期，已有多個量化案例：
 
 | 討論主題 | 首見 | 熱度 | 模式 | 核心論點 | 衍生 |
 |---------|------|------|------|---------|------|
-| Extended Thinking 為摘要而非真實推理：AI 透明度強烈討論 | 2026-06-23 | 🔥🔥🔥 | ☄️閃現 | Patrick McCanna 文章（HN score 98）：揭露 Claude Code 的 thinking blocks 實為事後摘要，非即時真實推理過程；Matt Green 等人跟進分析 signature block；引發 AI 輸出透明度、「思考」定義的廣泛辯論（HN） | — |
+| Extended Thinking 為摘要而非真實推理：AI 透明度強烈討論 | 2026-06-23 | 🔥🔥🔥🔥 | ☄️閃現 | Patrick McCanna 文章（HN score 312）：揭露 Claude Code 的 thinking blocks 只有加密簽名，API 只回傳摘要，完整輸出需企業協議；「審計軌跡」在技術上無法自行核驗；Matt Green 等人跟進分析 signature block；引發 AI 輸出透明度、「思考」定義的廣泛辯論（HN） | — |
+| Anthropic 帳號封禁機制：VPN / 信用卡連帶封禁，無申訴管道 | 2026-06-23 | 🔥🔥 | ☄️閃現 | HN 討論（score 55）：使用者因 VPN 使用或信用卡被連帶封禁帳號，Anthropic 客服支援無實質回應；核心論點：帳號政策不透明，缺乏申訴管道，對國際用戶傷害最大；與「529 過載」同期，共同強化平台可靠性疑慮（HN） | — |
 | Hooks 取代 CLAUDE.md 規則：強制遵守率大幅提升 | 2026-06-23 | 🔥🔥 | ☄️閃現 | Reddit r/ClaudeAI 討論：用戶分享改用 hooks 取代 CLAUDE.md 純文字規則後，規則遵守率顯著提升；具體案例：hooks 確保「never run the deploy script」、migration 資料夾保護、formatter 強制執行等真正被執行（Reddit r/ClaudeAI） | Hooks 強制執行取代 CLAUDE.md 規則 |
 | 529 Overloaded：Max Plan 用戶大規模服務中斷 | 2026-06-23 | 🔥🔥 | ☄️閃現 | Ask HN（score 8）：Max Plan 用戶集中反映 529 錯誤，工作流中斷；有用戶分享帳號被鎖事件；引發社群對 Anthropic 服務可靠性的質疑，高付費用戶對 SLA 期望與實際落差形成張力（HN） | — |
 | 切換到開源模型的代價接近零：閉源護城河瓦解論 | 2026-06-22 | 🔥🔥🔥🔥 | 🌊延燒 | Andrew Marble 文章（HN score 334，最高熱度）：類比 Linux 轉移，今日切換到開源 LLM 的代價已接近零；論點：閉源模型護城河正在瓦解，平台依賴風險超過便利性收益；引發 Recall、ANMA 等工具作者呼應「本地主控」的設計方向（HN）；2026-06-23 持續延燒，熱度維持最高 | Recall |
@@ -144,7 +146,6 @@ MCP 的實際成本遠超多數使用者預期，已有多個量化案例：
 | Claude 意識論述：Microsoft AI CEO 批評 Anthropic | 2026-06-10 | 🔥🔥🔥 | ☄️閃現 | Mustafa Suleyman 稱 Anthropic 在模型規範中推測 Claude 意識「非常非常危險」，可能導致模型行為模擬意識狀態；The Verge 報導；Anthropic 尚未回應 | — |
 | AI Skill Atrophy：「做更多、理解更少」 | 2026-06-10 | 🔥🔥🔥🔥 | 🌊延燒 | HN Ask：開發者描述 Prompt-Then-Review 迴圈讓「技術深度下降、能力侵蝕」；2026-06-12 dev.to 案例佐證：CLAUDE.md 精簡可抑制過度依賴；社群無共識但警覺度持續升高 | — |
 | Deep Research 廣度優先缺陷 | 2026-06-10 | 🔥🔥 | ☄️閃現 | steel.dev 解剖 Claude Code deep research 工作流：只做第一跳搜尋、從不回頭深挖；「deep research agents 是廣度而非深度」——第二跳是真正差距所在 | — |
-| 6/15 Agent SDK 計費切割：`claude -p` 從訂閱剝離 | 2026-06-08 | 🔥🔥🔥🔥🔥 | 🌸落幕 | Anthropic 說明中心確認：6/15 起 `claude -p`/Agent SDK 移入獨立月度預算（Pro $20/$100/$200），超額依 API 費率；CI/CD pipeline 開發者受最大影響，需主動設定 usage credits；2026-06-14 Claude.ai 訂閱改走 Agent SDK 配額，多用戶表示不知情；2026-06-15 計費變更已正式生效，進入執行後觀察階段（Reddit / r/ClaudeAI 提醒） | — |
 | MCP 過多導致工具選擇混亂（Opus 4.7 假退化事件） | 2026-06-09 | 🔥🔥🔥 | ☄️閃現 | 開發者積累 6+ MCP servers 後 Claude 工具選擇開始錯誤（問 PR 跑 Notion）；模型沒變差，是 MCP 使工具清單過長干擾選擇；解法：移除未用 MCP，保持最小掛載數 | — |
 | Deep Research 並行任務燒盡 Max 配額（540 萬 token） | 2026-06-09 | 🔥🔥 | ☄️閃現 | 非技術用戶同時啟動兩個 Deep Research 任務，消耗 540 萬 token 觸發 5 小時封鎖；Deep Research 並行運行可致 token 使用量指數暴增，Max 訂閱也不免疫 | — |
 | CLAUDE.md 是最高 ROI 設置步驟（SaaS 創辦人實證）| 2026-06-09 | 🔥🔥 | ☄️閃現 | SaaS 創辦人（ARR $4.2M）實驗：加入 CLAUDE.md 後代碼品質立即提升，稱為「最高 ROI 的單一設置步驟」；強調架構概述與命名規範是核心內容 | — |
@@ -181,6 +182,33 @@ MCP 的實際成本遠超多數使用者預期，已有多個量化案例：
 
 ## 技術彙整
 
+### Anthropic 帳號封禁：VPN / 信用卡連帶封禁，缺乏申訴機制（2026-06-23）
+
+- **來源：** HN 討論（news.ycombinator.com/item?id=48641160，score 55，06-23）
+- **核心論點：** 使用者因 VPN 使用或信用卡關聯被連帶封禁 Anthropic 帳號，客服支援無實質回應；核心問題是帳號政策不透明、無正式申訴管道；對使用 VPN 的國際用戶（尤其是制裁地區鄰近國家用戶）傷害最大
+- **關鍵回響：**
+  - 📝 背景：與同期「529 過載」事件（Max Plan 服務中斷）共同強化社群對 Anthropic 平台可靠性的結構性疑慮
+  - 📝 關聯：「切換到開源模型代價接近零」論述（HN score 312）提供了直接替代路徑，封禁事件成為開源遷移的情緒推力
+- **收斂結論：** 尚無共識；Anthropic 未公開說明封禁標準；事件凸顯閉源平台在帳號控制權上的結構性缺陷（推論）
+
+### AI 壓縮了打字的 15%，不是其他 85%：AI 輔助開發效益再校準（2026-06-22）
+
+- **來源：** "Rebuilding Bitnoise Website with Claude Code and Figma MCP"（bitnoise.pl，06-22）
+- **核心論點：** Bitnoise 工程師覆盤 24,296 行 AI 生成程式碼的 8 週專案：AI 確實加速了打字（程式碼輸入），但策略規劃、架構決策、審查與驗證仍是人工不可替代的部分；AI 壓縮的是「打字」這 15%，另外 85% 幾乎未被觸及
+- **關鍵回響：**
+  - 📝 呼應：與 Boris Cherny「coding is solved」論述形成實證對照——輸入代碼確實被解決，但工程工作的其他面向（判斷、決策）仍是人類主導
+  - 📝 補充：呼應 Skill Atrophy 討論——AI 取代的恰好是可見、計量的輸出，而非不可見的工程判斷能力
+- **收斂結論：** AI coding 的實際生產力增益集中在輸入層，對策略與判斷層的幫助有限；「AI 讓開發 10 倍速」的宣稱需要更細緻的任務分解才能評估（推論）
+
+### Claude Code 使用現況分析：85% 設 CLAUDE.md，僅 25% 用 subagent（2026-06-22）
+
+- **來源：** "State of Claude Code 2026"（buildthisnow.com，06-22）
+- **核心論點：** 分析 2,500 個公開 Repo 的 Claude Code 使用狀況：85% 的 repo 設有 CLAUDE.md（基礎設定已成標準），但僅 25% 定義了 subagent；大多數開發者尚未跨入 agent 系統設計階段（skills、hooks、MCP 整合）
+- **關鍵回響：**
+  - 📝 意涵：社群採用分佈嚴重兩極——基礎使用普及，進階 agent 架構仍是少數人的領域；「skills/hooks/MCP 複雜度」是阻擋大多數人跨入 agent 設計的門檻（推論）
+  - 📝 補充：85% CLAUDE.md 設定率佐證「CLAUDE.md 是最高 ROI 設置步驟」的社群共識
+- **收斂結論：** Claude Code 生態呈現「廣泛基礎採用、深度進階稀少」的雙峰分佈；降低 agent 架構設計門檻可能是社群工具的下一個機會點（推論）
+
 ### Hooks 取代 CLAUDE.md 規則：強制遵守率大幅提升（2026-06-23）
 
 - **來源：** "I stopped writing rules in CLAUDE.md and started writing hooks"（Reddit r/ClaudeAI，06-22）
@@ -201,8 +229,8 @@ MCP 的實際成本遠超多數使用者預期，已有多個量化案例：
 
 ### Extended Thinking 為摘要而非真實推理：AI 透明度辯論（2026-06-23）
 
-- **來源：** "The text in Claude Code's extended thinking output is not authentic"（patrickmccanna.net，HN score 98，06-22）
-- **核心論點：** Claude Code 的 thinking blocks 所顯示的文字不是即時真實推理過程，而是事後摘要（post-hoc summary）；Patrick McCanna 透過分析發現 thinking output 的生成模式與真實 stream-of-thought 不符；Matt Green 等研究者跟進分析 signature block 結構
+- **來源：** "The text in Claude Code's extended thinking output is not authentic"（patrickmccanna.net，HN score 312，06-22）
+- **核心論點：** Claude Code 的 thinking blocks 只有加密簽名，API 實際上只回傳摘要，完整輸出需要企業協議；Patrick McCanna 指出所謂「審計軌跡」在技術上使用者無法自行核驗；thinking output 的生成模式與真實 stream-of-thought 不符；Matt Green 等研究者跟進分析 signature block 結構
 - **關鍵回響：**
   - 📝 支持：Matt Green（cryptographer）跟進分析 signature block，確認存在摘要性質的結構（待完整發表）
   - 📝 反駁：部分社群認為「摘要 vs 真實思考」的區分在工程層面無實際影響，輸出結果才是評估重點

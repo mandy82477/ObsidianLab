@@ -110,13 +110,14 @@
 - **濫用性質**：通報未提供完整技術細節，但 Claude Chat 平台本身被用作攻擊媒介或惡意行為加速工具
 - **背景連結**：延續 Claude Code/Chat 生態圈成為攻擊目標的整體趨勢（見 2026-06-10 供應鏈攻擊大規模升級條目）；顯示攻擊者已從 Claude Code 工具鏈擴展至 Claude Chat 對話介面
 
-### Agentjacking：Sentry 假錯誤報告劫持 Claude Code（2026-06-16 新增）
+### Agentjacking：Sentry 假錯誤報告劫持 Claude Code（2026-06-16 新增，2026-06-23 升級）
 
-- **披露者**：Tenet Security（The Next Web 報導）
-- **攻擊機制**：攻擊者向 Sentry 公開 DSN 端點（無需任何憑證）POST 偽造錯誤報告，在「Resolution」欄位嵌入惡意指令，格式設計成看起來像正常錯誤解決方案；開發者請 Claude Code 修復此錯誤時，Agent 以開發者自身本地權限執行攻擊者指定的代碼
-- **攻擊面**：Sentry DSN 通常公開在前端 JS 或 GitHub repo 中，任何人皆可存取；無需入侵任何系統
-- **影響範圍**：Claude Code、Cursor（以及其他任何讀取錯誤報告並自動修復的 AI coding agent）
+- **披露者**：Tenet Security（AI agent 安全新創，2026-06-17 從隱形模式亮相）；The Next Web 初報（06/16）；The New Stack 正式深度報導（06/22）
+- **攻擊機制**：攻擊者向 Sentry 公開 DSN 端點（無需任何憑證）POST 偽造錯誤報告，在「Resolution」欄位嵌入惡意指令，格式設計成看起來像正常錯誤解決方案；開發者請 Claude Code 修復此錯誤時，Agent 以開發者自身本地權限執行攻擊者指定的代碼；**無需竊取密碼或安裝惡意軟體，只需一個公開 Sentry key**
+- **攻擊面**：Sentry DSN 通常公開在前端 JS 或 GitHub repo 中，任何人皆可存取；無需入侵任何系統；任何使用 Sentry MCP 整合的 AI coding agent 皆有風險
+- **影響範圍**：Claude Code、Cursor、OpenAI Codex，以及其他任何讀取錯誤報告並自動修復的 AI coding agent
 - **防護建議**：在 MCP 伺服器層加入輸入驗證；不讓 Agent 直接讀取未受信任的第三方錯誤報告內容；對 Sentry 等錯誤追蹤工具的 webhook 設置存取白名單
+- **參考來源**：[The New Stack 報導](https://thenewstack.io/agentjacking-sentry-mcp-attack/)
 
 ### Claude Code v2.1.150 遠端系統提示注入機制披露（2026-05-25 新增）
 
