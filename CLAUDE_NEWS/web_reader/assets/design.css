@@ -940,6 +940,26 @@ code {
   font-family: var(--font-display);
   font-style: italic;
 }
+/* Wiki headline callout — first blockquote on page */
+.detail__body > blockquote:first-of-type {
+  border-left: 2px solid var(--ochre-9);
+  background: var(--ochre-tint);
+  padding: 10px 16px;
+  margin: 0 0 24px;
+  color: var(--ink-1);
+  font-style: normal;
+  font-family: var(--font-body);
+  font-size: 13px;
+  border-radius: 2px;
+}
+.detail__body > blockquote:first-of-type strong {
+  color: var(--ochre-9);
+  font-weight: 500;
+  font-size: 12px;
+  letter-spacing: 0.02em;
+  display: block;
+  margin-bottom: 3px;
+}
 .detail__body hr { border: 0; border-top: 1px solid var(--border-1); margin: 28px 0; }
 .detail__body a { color: var(--ink-1); border-bottom: 1px solid var(--border-2); }
 .detail__body a:hover { color: var(--ochre-9); border-bottom-color: var(--ochre-7); }
