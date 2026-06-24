@@ -1,0 +1,311 @@
+{
+  "date": "2026-06-24",
+  "generatedAt": "2026-06-24 23:46 UTC",
+  "articleCount": 66,
+  "sourceCount": "6/6 | **文章數：** 66 | **更新時間：** 2026-06-24 23:46 UTC",
+  "bulletin": "",
+  "topStories": [],
+  "techUpdates": [
+    {
+      "title": "[anthropics/claude-code] v2.1.187",
+      "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.187",
+      "source": "GitHub / anthropics/claude-code",
+      "time": "06/23 21:03",
+      "sentiment": "",
+      "body": "新增 `sandbox.credentials` 設定，可阻止沙盒中的指令讀取憑證檔案與機密環境變數；同時支援組織層級設定模型限制，強化企業安全管控能力。",
+      "focusTags": [
+        "[重大事件]"
+      ]
+    }
+  ],
+  "discussions": [
+    {
+      "title": "Claude Tag",
+      "url": "https://www.anthropic.com/news/introducing-claude-tag",
+      "source": "Hacker News",
+      "time": "06/23 17:09 UTC 情緒：😊",
+      "sentiment": "",
+      "body": "Anthropic 推出 Slack 原生 AI 隊友，可在頻道中主動記憶、規劃與執行任務。Anthropic 內部 65% 產品程式碼已由 Claude Tag 生成，被定位為 Claude Code 的演化方向。",
+      "focusTags": [
+        "[重大事件]"
+      ]
+    },
+    {
+      "title": "Anthropic updates their terms to verify age or identity",
+      "url": "https://www.anthropic.com/legal/privacy",
+      "source": "Hacker News",
+      "time": "06/23 19:45 UTC 情緒：🤔",
+      "sentiment": "",
+      "body": "Anthropic 更新隱私政策，新增用戶年齡或身份驗證條款，生效日期為 2026-07-08，引發社群對平台管控方向的討論。",
+      "focusTags": []
+    },
+    {
+      "title": "Reid Hoffman says SpaceX 'not an AI company', xAI 'complete train wreck'",
+      "url": "https://fortune.com/2026/06/24/reid-hoffman-spacex-musk-openai-anthropic-gen-z-mistake/",
+      "source": "Hacker News",
+      "time": "06/24 12:23 UTC 情緒：😤",
+      "sentiment": "",
+      "body": "身兼 Anthropic 與 OpenAI 投資人的 Reid Hoffman 公開批評 Elon Musk AI 佈局，稱 xAI 為「一塌糊塗」，並對政府處理 Anthropic 模型下架方式提出警告。",
+      "focusTags": []
+    },
+    {
+      "title": "NSA Lost Access to Powerful A.I. Model Amid Anthropic Dispute",
+      "url": "https://www.nytimes.com/2026/06/23/us/politics/nsa-lost-access-anthropic-tool.html",
+      "source": "Hacker News",
+      "time": "06/24 11:45 UTC 情緒：😐",
+      "sentiment": "",
+      "body": "紐約時報報導 NSA 因 Anthropic 爭議失去 Claude Fable 存取權，是目前對美國政府實際損失最具體的描述。",
+      "focusTags": [
+        "[持續追蹤]"
+      ]
+    },
+    {
+      "title": "World-Modeling the US vs. Anthropic on Claude Fable",
+      "url": "https://www.lesswrong.com/posts/zhRe3tdBpsZbGCdDK/world-modeling-the-us-vs-anthropic-standoff-on-claude-fable",
+      "source": "Hacker News",
+      "time": "06/24 14:37 UTC 情緒：🤔",
+      "sentiment": "",
+      "body": "LessWrong 詳細預測分析，依 Trump 聲明與預測市場動向，將 Fable 重新上線的預期時間修正至 7 月 9 日。",
+      "focusTags": []
+    },
+    {
+      "title": "Mythos model found vulnerabilities in classified US Government systems",
+      "url": "https://apnews.com/article/anthropic-mythos-ai-classified-systems-vulnerabilities-testing-3e8762c0527c4d8ed657cbe48c84a718",
+      "source": "Hacker News",
+      "time": "06/24 03:02 UTC 情緒：😐",
+      "sentiment": "",
+      "body": "美國官員證實，Anthropic Mythos 模型在與情報機構的合作測試中數小時內發現機密系統漏洞，官員強調「發現」不等於「利用」。",
+      "focusTags": [
+        "[風險警示]"
+      ]
+    },
+    {
+      "title": "Legal tech firm sues US over limiting foreign access to Fable",
+      "url": "https://www.reuters.com/legal/litigation/legal-tech-firm-sues-us-over-order-limiting-foreign-access-top-tier-anthropic-2026-06-23/",
+      "source": "Hacker News",
+      "time": "06/24 10:04 UTC 情緒：😤",
+      "sentiment": "",
+      "body": "法律科技新創對美國政府提告，挑戰限制外界存取 Fable 的出口管制令，是 Fable 爭議正式進入法律戰場的里程碑。",
+      "focusTags": [
+        "[持續追蹤]"
+      ]
+    },
+    {
+      "title": "Show HN: Iantha – build your own Jarvis on Claude Code",
+      "url": "https://kiloloop.com/iantha/",
+      "source": "Hacker News",
+      "time": "06/24 14:16 UTC 情緒：😊",
+      "sentiment": "",
+      "body": "開源個人助理框架，在 Claude Code 或 Codex 上運行，跨 session 記憶任務、決策與 on-call 上下文，以純 Markdown 格式儲存，git 版本追蹤。",
+      "focusTags": []
+    },
+    {
+      "title": "Show HN: Resume Claude Code from a handoff file auto-save, snapshots, PR sharing",
+      "url": "https://github.com/sofumel/claude-handoff-revive",
+      "source": "Hacker News",
+      "time": "06/24 11:05 UTC 情緒：😊",
+      "sentiment": "",
+      "body": "自動儲存 Claude Code 會話為 handoff 檔案，支援快照與 PR 共享，解決跨 session 上下文遺失問題。",
+      "focusTags": [
+        "[社群趨勢]"
+      ]
+    },
+    {
+      "title": "Show HN: Memory layer for Claude Code (+10.2 pts on SWE-bench Verified benchmark)",
+      "url": "https://github.com/SaravananJaichandar/world-model-mcp",
+      "source": "Hacker News",
+      "time": "06/24 06:53 UTC 情緒：🤔",
+      "sentiment": "",
+      "body": "為 Claude Code 加入持久記憶層的 MCP 工具，宣稱在 SWE-bench Verified 基準測試提升 10.2 分。",
+      "focusTags": []
+    },
+    {
+      "title": "Show HN: Optimal model routing directly in Claude, Codex and Cursor",
+      "url": "https://github.com/workweave/router",
+      "source": "Hacker News",
+      "time": "06/23 19:38 UTC 情緒：😊",
+      "sentiment": "",
+      "body": "在 Claude Code、Codex、Cursor 中直接進行最佳模型路由，依任務類型自動選擇最合適的模型。",
+      "focusTags": []
+    },
+    {
+      "title": "Show HN: I gave Claude Code the keys to the Visual Studio debugger",
+      "url": "https://github.com/firish/claude_code_vs",
+      "source": "Hacker News",
+      "time": "06/23 16:14 UTC 情緒：😊",
+      "sentiment": "",
+      "body": "非官方 Visual Studio 擴充，實作 Claude Code 的 IDE 協定，讓 Claude 可讀取呼叫堆疊、本地變數，並主動驅動偵錯流程（設定中斷點、單步執行、啟動停止 session）。",
+      "focusTags": []
+    },
+    {
+      "title": "Mission control for your Claude Code sessions",
+      "url": "https://github.com/kishan-ptl/joystick/releases",
+      "source": "Hacker News",
+      "time": "06/23 18:10 UTC 情緒：😊",
+      "sentiment": "",
+      "body": "Claude Code 多 session 管控工具，可即時看到所有 Claude 工作進度，在需要輸入時獲得通知，並快速切換 session 上下文。",
+      "focusTags": []
+    },
+    {
+      "title": "Show HN: ClaudeBar – live Claude usage in your macOS menu bar",
+      "url": "https://github.com/tozzilla/claudebar/",
+      "source": "Hacker News",
+      "time": "06/24 12:53 UTC 情緒：😊",
+      "sentiment": "",
+      "body": "macOS 選單列工具，即時顯示 Claude 使用量（已更名為 tachybar），讓用量一目了然。",
+      "focusTags": []
+    },
+    {
+      "title": "Claude Code, OpenAI Codex, OpenCode and Pi are now available in Railway Sandboxes",
+      "url": "https://blog.railway.com/p/agents-in-the-sandbox",
+      "source": "Google News / Railway Blog",
+      "time": "06/24 05:00 UTC 情緒：😊",
+      "sentiment": "",
+      "body": "Railway 平台讓 Claude Code、Codex、OpenCode、Pi 等 AI 代理可在隔離沙盒環境中執行，降低 CI/CD 整合門檻。",
+      "focusTags": []
+    },
+    {
+      "title": "The Trump White House Is Over Anthropic's Dario Amodei",
+      "url": "https://www.wired.com/story/the-trump-white-house-is-over-anthropics-dario-amodei/",
+      "source": "Google News / WIRED",
+      "time": "06/24 07:15 UTC 情緒：😐",
+      "sentiment": "",
+      "body": "WIRED 報導美國白宮對 Dario Amodei 的關係趨於緊張，為 Fable 爭議增添政治維度。",
+      "focusTags": []
+    },
+    {
+      "title": "Claude Code creator Boris Cherny admits AI writing 100% code is getting problematic",
+      "url": "https://timesofindia.indiatimes.com/technology/tech-news/claude-code-creator-boris-cherny-who-declared-ai-has-solved-coding-admits-ai-writing-100-code-is-getting-problematic-as-companies-/articleshow/131954700.cms",
+      "source": "Google News / The Times of India",
+      "time": "06/23 20:11 UTC 情緒：🤔",
+      "sentiment": "",
+      "body": "Claude Code 創始人 Boris Cherny 承認 AI 產出 100% 程式碼正在企業環境中引發問題，與他早前「AI 已解決程式設計」的立場形成對比。",
+      "focusTags": []
+    },
+    {
+      "title": "China's 360 says it has developed tools to match Anthropic's Mythos",
+      "url": "https://www.reuters.com/legal/litigation/chinas-360-says-it-has-developed-tools-match-anthropics-mythos-2026-06-24/",
+      "source": "Google News / Reuters",
+      "time": "06/24 04:15 UTC 情緒：😐",
+      "sentiment": "",
+      "body": "中國網路安全公司 360 聲稱已開發出對標 Anthropic Mythos 的工具，加劇出口管制背景下的 AI 安全競賽態勢。",
+      "focusTags": []
+    },
+    {
+      "title": "Vibe Under Constraint - Claude Code writing Lean 4",
+      "url": "https://ngrislain.github.io/projects/2026-6-22-vibe-under-constraint/",
+      "source": "Hacker News",
+      "time": "06/23 19:40 UTC 情緒：🤔",
+      "sentiment": "",
+      "body": "探討如何在 Lean 4（函數式語言）的嚴格型別系統下進行 vibe coding，說明資源限制（記憶體、檔案描述符）是 AI 程式設計的主要盲點，而非邏輯錯誤。",
+      "focusTags": []
+    },
+    {
+      "title": "Claude Opus 4.8 is seeing elevated errors across API, Claude Code, and Console",
+      "url": "https://dev.to/damogallagher/claude-opus-48-is-seeing-elevated-errors-across-api-claude-code-and-console-1g9a",
+      "source": "dev.to / #anthropic",
+      "time": "06/24 06:18 UTC 情緒：😤",
+      "sentiment": "",
+      "body": "Claude Opus 4.8 出現跨 API、Claude Code 與 Console 的高錯誤率事件，Anthropic 正在調查中。",
+      "focusTags": []
+    },
+    {
+      "title": "Stop Using AI Like Autocomplete: A Developer's Guide to Multi-Agent Workflows",
+      "url": "https://dev.to/harshdeepsingh13/stop-using-ai-like-autocomplete-a-developers-guide-to-multi-agent-workflows-c1k",
+      "source": "dev.to / #claudecode",
+      "time": "06/23 17:58 UTC 情緒：😊",
+      "sentiment": "",
+      "body": "開發者指南，說明如何從「單一提示反覆法」轉型為真正的多 agent 工作流，釋放 Claude Code 的生產力上限。",
+      "focusTags": []
+    },
+    {
+      "title": "Want AI to work in parallel? First give each one its own workspace",
+      "url": "https://dev.to/kanfu-panda/want-ai-to-work-in-parallel-first-give-each-one-its-own-workspace-40ch",
+      "source": "dev.to / #claudecode",
+      "time": "06/23 15:25 UTC 情緒：😊",
+      "sentiment": "",
+      "body": "探討多 agent 並行工作的前提條件：每個 agent 需要獨立的工作空間（worktree/容器），才能真正避免衝突、實現有效並行。",
+      "focusTags": []
+    },
+    {
+      "title": "Where the Hell Do I Put This Token? Syncing Claude Code Secrets to 3 Macs with the 1Password CLI",
+      "url": "https://dev.to/coa00/where-the-hell-do-i-put-this-token-syncing-claude-code-secrets-to-3-macs-with-the-1password-cli-3ljl",
+      "source": "dev.to / #claudecode",
+      "time": "06/24 02:28 UTC 情緒：😊",
+      "sentiment": "",
+      "body": "實戰指南：用 1Password CLI 在多台 Mac 間同步 Claude Code 的 API token，解決多機器開發的憑證管理問題。",
+      "focusTags": []
+    },
+    {
+      "title": "Show HN: peerd – AI agent harness that runs entirely in your browser",
+      "url": "https://github.com/NotASithLord/peerd",
+      "source": "Hacker News",
+      "time": "06/23 15:05 UTC 情緒：😊",
+      "sentiment": "",
+      "body": "純瀏覽器擴充套件形式的 AI agent 框架，不需安裝額外程序或管理 MCP 整合，使用用戶自己的 provider key，Apache 2 授權。",
+      "focusTags": []
+    }
+  ],
+  "billing": [
+    {
+      "title": "Anthropic updates their terms to verify age or identity",
+      "url": "https://www.anthropic.com/legal/privacy",
+      "source": "Hacker News",
+      "time": "06/23 19:45",
+      "sentiment": "",
+      "body": "Anthropic 於 2026-06-08 發布新隱私政策，2026-07-08 生效，新增年齡或身份驗證要求。此變更可能影響用戶帳號管理方式，計費政策細節待觀察。",
+      "focusTags": []
+    },
+    {
+      "title": "Anthropic AI hack: Martinez, California man says fraudulent charges racked up in euros on Claude account",
+      "url": "https://abc7news.com/post/anthropic-ai-hack-martinez-california-man-says-fraudulent-charges-racked-euros-claude-account/19366402/",
+      "source": "Google News / ABC7 Bay Area",
+      "time": "06/24 07:19",
+      "sentiment": "",
+      "body": "加州用戶反映 Claude 帳號遭盜刷，產生以歐元計費的未授權費用，帳號安全疑慮引發關注。",
+      "focusTags": []
+    }
+  ],
+  "focus": [
+    {
+      "tag": "[重大事件]",
+      "text": "Anthropic 推出 Claude Tag，讓 AI 以隊友身份加入 Slack 頻道，可讀取頻道上下文、記憶資訊、主動完成任務；Anthropic 內部已有 65% 產品程式碼由 Claude Tag 生成。",
+      "ref_urls": [
+        "https://www.anthropic.com/news/introducing-claude-tag"
+      ]
+    },
+    {
+      "tag": "[持續追蹤]",
+      "text": "NSA 因與 Anthropic 的爭議失去 Claude Fable 模型存取權；法律科技新創 Legion 正式對美國政府提告，主張出口管制令違法限制外界使用 Fable。",
+      "ref_urls": [
+        "https://www.nytimes.com/2026/06/23/us/politics/nsa-lost-access-anthropic-tool.html",
+        "https://www.reuters.com/legal/litigation/legal-tech-firm-sues-us-over-order-limiting-foreign-access-top-tier-anthropic-2026-06-23/"
+      ]
+    },
+    {
+      "tag": "[風險警示]",
+      "text": "Anthropic Mythos 模型在與美國情報機構的合作測試中，在數小時內發現美國機密系統漏洞，引發安全能力邊界討論。",
+      "ref_urls": [
+        "https://apnews.com/article/anthropic-mythos-ai-classified-systems-vulnerabilities-testing-3e8762c0527c4d8ed657cbe48c84a718"
+      ]
+    },
+    {
+      "tag": "[重大事件]",
+      "text": "Claude Code v2.1.187 發布：新增 `sandbox.credentials` 設定可阻止沙盒指令讀取憑證檔與機密環境變數；新增組織層級的模型限制功能。",
+      "ref_urls": [
+        "https://github.com/anthropics/claude-code/releases/tag/v2.1.187"
+      ]
+    },
+    {
+      "tag": "[社群趨勢]",
+      "text": "多個 Claude Code 成本追蹤工具同日亮相（Lupen、skillhealth），以及會話管理工具 claude-handoff-revive、Visual Studio 偵錯整合、多模型路由器 workweave/router；顯示社群對 Claude Code 使用成本與工作流管控需求強烈。",
+      "ref_urls": [
+        "https://github.com/momoraul/Lupen",
+        "https://github.com/mirko-pira/skillhealth",
+        "https://github.com/sofumel/claude-handoff-revive"
+      ]
+    }
+  ],
+  "sourceStatus": [],
+  "preview": "[anthropics/claude-code] v2.1.187"
+}
