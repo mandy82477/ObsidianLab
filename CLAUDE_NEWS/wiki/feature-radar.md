@@ -4,7 +4,7 @@
 僅收錄官方 changelog、release note 或官方公告來源；社群工具見 [[topics/community-tech-tools]]。
 每次 ingest 後由 LLM 維護：新增功能、更新熱度、補充社群回饋。
 
-**最後更新：** 2026-06-23
+**最後更新：** 2026-06-24
 
 ---
 
@@ -37,6 +37,8 @@
 
 | 功能 | 發布日期 | 熱度 | 試用價值 | 狀態 |
 |------|----------|------|----------|------|
+| **Claude Tag**（Slack-native AI 協作工具，65% Anthropic 程式碼由其生成） | 2026-06-24 | 🔥🔥🔥 | ⚡ 有條件推薦 | 正式發布 |
+| **sandbox.credentials + 組織模型限制**（Claude Code v2.1.187） | 2026-06-24 | 🔥🔥🔥 | ⚡ 有條件推薦 | 正式發布 |
 | **MCP CLI 認證指令**（`claude mcp login/logout`，v2.1.186） | 2026-06-22 | 🔥🔥 | ⚡ 有條件推薦 | 正式發布 |
 | **MCP Enterprise Authorization**（Okta / VS Code 零設定 SSO） | 2026-06-19 | 🔥🔥 | ⚡ 有條件推薦 | 正式發布 |
 | **破壞性 Git 指令自動封鎖**（Claude Code v2.1.183） | 2026-06-19 | 🔥🔥🔥 | ✅ 推薦 | 正式發布 |
@@ -82,6 +84,43 @@
 ---
 
 ## 🆕 最新功能（2026-06）
+
+### Claude Tag（Slack-native AI 隊友）
+**發布：** 2026-06-24（正式發布）| **熱度：** 🔥🔥🔥 | **試用價值：** ⚡ 有條件推薦 | **狀態：** 正式發布
+
+**是什麼：** Anthropic 推出 Slack-native AI 協作工具，讓 Claude 以隊友身份加入頻道，可讀取頻道上下文、跨 session 記憶、主動規劃並在未來時間點完成任務，並可連接程式碼庫、工具與資料。
+
+**為何熱：** Anthropic 官方公告揭露內部已有 65% 產品程式碼由 Claude Tag 生成；進入 HN 今日熱門討論（情緒 😊）；定位為 Claude Code 向 Slack 生態的延伸，代表 Anthropic 正式進入 AI 常駐協作工具賽道。
+
+**快速上手：**
+```
+申請頁面：https://www.anthropic.com/news/introducing-claude-tag
+將 Claude Tag 加入 Slack workspace → 邀請至頻道 → @Claude Tag 開始指派任務
+```
+
+**注意事項：** 需要 Slack workspace 管理員授權安裝；Claude 可讀取頻道歷史訊息，使用前需評估組織資料隱私政策。
+
+---
+
+### Claude Code v2.1.187 — sandbox.credentials + 組織模型限制
+**發布：** 2026-06-24（v2.1.187）| **熱度：** 🔥🔥🔥 | **試用價值：** ⚡ 有條件推薦 | **狀態：** 正式發布
+
+**是什麼：** 新增 `sandbox.credentials` 設定可阻止沙盒指令讀取憑證檔案與機密環境變數；同時加入組織層級的模型限制功能，企業管理員可統一管控可用模型清單。
+
+**為何熱：** 兩項功能均直指企業安全管控痛點——沙盒憑證隔離回應社群長期對 AI agent 洩漏 API 金鑰的疑慮；組織模型限制補強了 v2.1.175 引入的 `enforceAvailableModels`。
+
+**快速上手：**
+```json
+{
+  "sandbox": {
+    "credentials": false
+  }
+}
+```
+
+**注意事項：** 設為 `false` 後沙盒內指令無法存取任何憑證環境變數，需確認沙盒工作流不依賴憑證傳遞；組織模型限制需企業管理員帳號設定。
+
+---
 
 ### MCP CLI 認證指令（mcp login / logout）
 **發布：** 2026-06-22（v2.1.186）| **熱度：** 🔥🔥 | **試用價值：** ⚡ 有條件推薦 | **狀態：** 正式發布

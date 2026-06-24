@@ -3,11 +3,11 @@
 **狀態：** ongoing
 **領域：** 🏛️ 政策/安全
 **開始日期：** 2026-04-27
-**最後更新：** 2026-06-23
-**最後新聞更新：** 2026-06-23
+**最後更新：** 2026-06-24
+**最後新聞更新：** 2026-06-24
 
-> **最新安全事件**（2026-06-23）
-> Security Affairs 報導 Anthropic Mythos AI 在測試中能在數小時內入侵幾乎所有 NSA 機密系統，成為美國政府出口管制的核心安全論據；社群質疑此能力是否為閉源模型獨有、管制閉源模型是否為有效防護手段。
+> **最新安全事件**（2026-06-24）
+> AP News 報導 Anthropic Mythos 在與美國情報機構的合作測試中，數小時內發現美國機密系統漏洞；美國官員明確強調「發現」不等於「利用」；The Atlantic 同期探討 Claude 在軍事場景下的倫理邊界問題。
 
 ---
 
@@ -22,6 +22,8 @@
 2026-06-22，Fable 5 三詞越獄事件曝光——觸發美國政府出口管制的越獄語僅為「Fix this code」三個詞，引發對模型安全邊界設計正當性的深層疑慮。同日，Anthropic 宣布引入 Persona Identities 作為年齡驗證夥伴，為官方政策收緊脈絡的最新進展，HN 有隱私疑慮討論。
 
 2026-06-23，Security Affairs 報導 Mythos AI 在測試中能在數小時內入侵幾乎所有 NSA 機密系統，此能力成為美國政府出口管制的核心安全論據；社群質疑此結論是否為閉源模型獨有、以及管制閉源模型是否為有效防護手段。
+
+2026-06-24，AP News 報導 Mythos 在與美國情報機構的正式合作測試中發現機密系統漏洞，美國官員強調「發現不等於利用」；The Atlantic 同期探討 Claude 在軍事場景下的倫理邊界問題，指出 AI 公司、政府、軍方三方對「可接受使用範圍」的定義存在根本分歧。
 
 ---
 
@@ -56,6 +58,13 @@
 ## 技術彙整
 
 ### (0) AI Agent 用於進攻性網路操作
+
+### Mythos 情報機構合作測試：發現漏洞、官員強調未利用（2026-06-24 新增）
+
+- **揭露來源**：AP News（2026-06-24；https://apnews.com/article/anthropic-mythos-ai-classified-systems-vulnerabilities-testing-3e8762c0527c4d8ed657cbe48c84a718）
+- **事件描述**：AP News 報導 Anthropic Mythos 在與美國情報機構的正式合作測試中，於數小時內發現多個美國機密系統漏洞；美國官員明確強調「發現」（discovery）不等於「利用」（exploitation），測試屬於授權防禦性評估範疇
+- **與前序報導的差異**：此條目為授權合作測試角度，與 2026-06-22 Security Affairs「入侵」敘事框架不同；官方「發現不等於利用」的區別主張，為 Mythos 能力論述提供了另一詮釋維度，亦暗示政府與 Anthropic 存在某種程度的合作關係（而非純粹對立）
+- **政策意義**：若測試為授權合作，NSA 同時失去存取權（2026-06-23 NYT）的情況更顯矛盾；「政府一邊和 Anthropic 合作測試、一邊實施出口管制」的雙重性在此條目中最為清晰
 
 ### Mythos AI 測試入侵幾乎所有 NSA 機密系統（2026-06-23 新增）
 
@@ -339,6 +348,10 @@
 - [Anthropic's definition of safety is too narrow](https://jonathannen.com/anthropic-safety-too-narrow/) — Jonathan Nen
 
 ## 時序
+
+### 2026-06-24
+- **[授權測試] Mythos 情報機構合作測試發現機密系統漏洞**：AP News 報導 Anthropic Mythos 在與美國情報機構的正式合作測試中，數小時內發現美國機密系統漏洞；美國官員明確區分「發現」與「利用」，強調屬授權防禦評估；此條目與 2026-06-22 Security Affairs「入侵」框架構成互補詮釋，「政府一邊合作測試一邊實施出口管制」的矛盾在此最為清晰（AP News，2026-06-24；https://apnews.com/article/anthropic-mythos-ai-classified-systems-vulnerabilities-testing-3e8762c0527c4d8ed657cbe48c84a718）
+- **[軍事倫理] The Atlantic：Claude 在軍事場景的倫理邊界問題**：The Atlantic 探討 Claude 在軍事應用場景下的倫理邊界，指出 AI 公司、政府、軍方三方對「可接受使用範圍」的定義存在根本分歧；此分析為 Anthropic 政府衝突提供倫理框架視角，亦與 [[topics/anthropic-government-policy]] 的軍事合約戰場相互呼應（The Atlantic，2026-06-24）
 
 ### 2026-06-23
 - **[AI 能力安全佐證] Mythos 在數小時內入侵幾乎所有 NSA 機密系統**：Security Affairs 報導 Anthropic Mythos AI 在測試中展現的系統性入侵能力，成為出口管制的核心安全技術論據；社群質疑此能力是否為 Mythos 獨有、管制閉源模型是否為有效防護（Security Affairs，06/22 05:53 UTC）；詳見 [[topics/anthropic-government-policy]]

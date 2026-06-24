@@ -4,11 +4,11 @@
 **狀態：** active（正式發布；Fable 5 / Mythos 5 因美國政府出口管制指令暫停全球存取）
 **領域：** 🤖 模型
 **首次出現：** 2026-06-09
-**最後更新：** 2026-06-23
-**最後新聞更新：** 2026-06-23
+**最後更新：** 2026-06-24
+**最後新聞更新：** 2026-06-24
 
-> **最新管制進展**（2026-06-23）
-> Five Eyes 情報聯盟聯合聲明首度點名 Fable 5，同日中國 Zhipu GLM-5.2 主動接觸被封鎖用戶群填補市場空白；Claude Code 啟動 Fable 5 subagent 的個案回報訊號弱，尚待確認。
+> **最新管制進展**（2026-06-24）
+> NSA 因與 Anthropic 的管制爭議失去 Claude Fable 模型存取權（NYT）；法律科技新創 Legion 對美國政府提告，主張出口管制令違法；LessWrong 詳細預測分析將 Fable 重新上線時間修正至 7 月 9 日。
 
 ---
 
@@ -133,6 +133,12 @@ claude --model claude-fable-5-20260609
 - [資料保留政策](https://support.claude.com/en/articles/15425996-data-retention-practices-for-mythos-class-models)
 
 ## 歷史記錄
+
+### 2026-06-24
+**NSA 失去 Fable 存取權 + Legion 提告 + LessWrong 預測 7/9 解封**：
+- **NSA 失去存取權**：NYT 報導，NSA 因與 Anthropic 的出口管制爭議失去 Claude Fable 模型的存取權（[NYT](https://www.nytimes.com/2026/06/23/us/politics/nsa-lost-access-anthropic-tool.html)）；此為首次有具名情報機構因管制爭議而被正式切斷存取的報導，直接強化政府對 Anthropic 的施壓態勢
+- **Legion 法律科技新創提告**：Reuters 報導，法律科技新創 Legion 正式對美國政府提告，主張出口管制令違法限制外界使用 Fable（[Reuters](https://www.reuters.com/legal/litigation/legal-tech-firm-sues-us-over-order-limiting-foreign-access-top-tier-anthropic-2026-06-23/)）；是繼 Politico 法律分析後，首件具名企業以訴訟形式挑戰出口管制的案例
+- **LessWrong 預測分析**：LessWrong 發布詳細世界模型分析，將 Fable 重新上線的預期時間修正至 **7 月 9 日**（[LessWrong](https://www.lesswrong.com/posts/zhRe3tdBpsZbGCdDK/world-modeling-the-us-vs-anthropic-standoff-on-claude-fable)）；分析涵蓋雙方談判動態、法律障礙與市場壓力因素
 
 ### 2026-06-23
 **Five Eyes 聯合聲明 + Zhipu GLM-5.2 接觸被封鎖用戶 + HN 社群問「Fable 回來了嗎？」**：

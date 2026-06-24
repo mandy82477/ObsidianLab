@@ -4,11 +4,11 @@
 **狀態：** active（部分公開：Fable 5 = Mythos 架構 + 護欄；Mythos 5 = 完整版限定存取）
 **領域：** 🤖 模型
 **首次出現：** 2026-04（限定夥伴 Preview）
-**最後更新：** 2026-06-23
-**最後新聞更新：** 2026-06-23
+**最後更新：** 2026-06-24
+**最後新聞更新：** 2026-06-24
 
-> **最新能力確認**（2026-06-23）
-> Sen. Mark Warner 引述 NSA 局長陳述，確認 Mythos 在政府紅隊測試中「數小時內突破 NSA 幾乎所有機密系統」，為迄今最高層級的官方公開陳述，直接為出口管制提供核心論據。
+> **最新能力確認**（2026-06-24）
+> AP News 報導：Anthropic Mythos 在與美國情報機構的合作測試中，數小時內發現美國機密系統漏洞；官員強調「發現」不等於「利用」。中國網路安全公司 360 聲稱已開發出對標 Mythos 的工具（Reuters）。
 
 ---
 
@@ -89,6 +89,11 @@ Anthropic 的官方 AI 資安能力研究計畫，Mythos Preview 為核心工具
 ---
 
 ## 時序
+
+### 2026-06-24
+**AP News：情報機構合作測試發現機密系統漏洞 + 中國 360 聲稱對標工具**：
+- **AP News 報導 — 情報機構合作測試**：Anthropic Mythos 在與美國情報機構的授權合作測試中，數小時內發現美國機密系統漏洞；美國官員特別強調「發現」（find）不等於「利用」（exploit），試圖區隔能力確認與惡意使用（[AP News](https://apnews.com/article/anthropic-mythos-ai-classified-systems-vulnerabilities-testing-3e8762c0527c4d8ed657cbe48c84a718)）。此報導與 2026-06-23 Tom's Hardware 引述的 NSA 紅隊測試訊息相互印證，但強調這屬授權合作而非入侵事件
+- **中國 360 聲稱對標工具**：Reuters 報導，中國網路安全公司 360 聲稱已開發出對標 Anthropic Mythos 的工具（[Reuters](https://www.reuters.com/legal/litigation/chinas-360-says-it-has-developed-tools-match-anthropics-mythos-2026-06-24/)）；此為繼 Zhipu GLM-5.2 聲明後，第二家中國公司公開宣稱追平 Mythos 的案例，中美 AI 網路安全能力競爭態勢進一步升溫
 
 ### 2026-06-23
 **Tom's Hardware：Mythos 紅隊測試數小時內突破 NSA 幾乎所有機密系統 + MIT Technology Review 三點分析**：

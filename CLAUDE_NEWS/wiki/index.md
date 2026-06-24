@@ -2,23 +2,24 @@
 
 LLM 查詢此 wiki 時，**先讀這個檔案**找相關頁面，再讀具體頁面取得詳細資訊。
 
-**最後更新：** 2026-06-23
+**最後更新：** 2026-06-24
 ---
 
 ## 近期異動
 
-- [[entities/fable-5]] — Five Eyes 聯合聲明警告；Zhipu GLM-5.2 趁機接觸被封鎖用戶；Fable 5 subagent HN 弱訊號
-- [[entities/mythos]] — Tom's Hardware 確認 NSA 紅隊測試（Sen. Warner 引述）；MIT Tech Review 三爭點分析
-- [[entities/claude-code]] — v2.1.186：新增 `claude mcp login/logout` CLI 指令
-- [[topics/anthropic-government-policy]] — 五Eyes 聯合聲明；Anthropic 身份驗證/臉部掃描政策；帳號封禁 HN 討論
-- [[topics/ai-agent-safety]] — AgentJacking Sentry MCP 攻擊（Tenet Security 披露）條目升級
-- [[topics/anthropic-business]] — Micron × Anthropic 多年戰略協議（記憶體/儲存/AI 架構）；Menlo Ventures $3B 史上最大募資
-- [[topics/enterprise-cost-management]] — 企業 AI 帳單優化趨勢（節省超 50%）
-- [[topics/community-tech-discussions]] — Extended Thinking 透明度（HN 312）；帳號封禁機制（HN 55）
-- [[topics/community-tech-patterns]] — cc-fleet、Aharness、Compact Memory 三個新工作流模式
-- [[entities/john-jumper]] — Barron's / SEJ 多媒體確認；Google 因此股價下跌
-- [[entities/boris-cherny]] — ROI vs 實驗平衡論述（Business Insider 2026-06-23）
-- [[feature-radar]] — 新增 MCP CLI 認證指令條目；本週推薦更新
+- [[entities/claude-tag]] — 新建：Slack-native AI 協作工具正式發布，Anthropic 內部 65% 程式碼由其生成
+- [[entities/fable-5]] — NSA 失去存取權；Legion 提告美國政府；LessWrong 預測 7/9 重新上線
+- [[entities/mythos]] — AP News 確認情報機構合作測試數小時內發現機密系統漏洞；中國 360 宣稱對標
+- [[entities/opus-4-8]] — 跨 API / Claude Code / Console 高錯誤率事件，Anthropic 調查中
+- [[entities/claude-code]] — v2.1.187：sandbox.credentials + 組織層級模型限制
+- [[topics/anthropic-government-policy]] — NSA 失去 Fable 存取、Legion 提告、白宮 vs Amodei 關係緊張、中國 360 競品
+- [[topics/ai-agent-safety]] — Mythos 情報機構測試：發現機密系統漏洞（官員強調未利用）
+- [[topics/anthropic-business]] — Railway 整合 Claude Code 沙盒；NSA 事件商業影響
+- [[topics/competitor-landscape]] — Reid Hoffman 批評 xAI；360 對標 Mythos
+- [[entities/pricing]] — 隱私政策更新（7/8 生效，身份驗證）；加州帳號歐元盜刷
+- [[entities/boris-cherny]] — 承認 AI 寫 100% 程式碼「正在變得有問題」，立場轉變
+- [[entities/dario-amodei]] — 白宮對 Amodei 關係趨緊（WIRED 報導）
+- [[feature-radar]] — 新增 Claude Tag、v2.1.187 條目
 
 ---
 
@@ -54,7 +55,8 @@ LLM 查詢此 wiki 時，**先讀這個檔案**找相關頁面，再讀具體頁
 | [[entities/dario-amodei]] | person | 👤 人物 | active | Anthropic CEO：政府監管立場、企業文化論述、Code with Claude 大會現場宣布速率政策 |
 | [[entities/chris-olah]] | person | 👤 人物 | active | Anthropic 共同創辦人、AI 可解釋性研究先驅；2026-05-26 梵蒂岡封論揭幕演講 |
 | [[entities/opencode]] | product | 🛠️ 工具/功能 | active（快速成長）| Claude Code 主要開源替代品，157K 開發者分流，OpenCode-power-pack 移植官方 11 個 skills |
-| [[entities/fable-5]] | model | 🤖 模型 | active（6/13 因美國政府出口管制指令暫停全球存取）| Claude Fable 5：首款 Mythos 級公開模型，$10/$50 per M token；6/18 最新：SK Telecom 中國關聯被揭露為根本動機；Anthropic 提交解封提案；Ciauri：「數日內恢復可用」 |
+| [[entities/claude-tag]] | feature | 🛠️ 工具/功能 | active | Claude Tag：Slack-native AI 協作工具，可讀取頻道上下文、跨 session 記憶、主動完成任務；Anthropic 內部 65% 程式碼由其生成 |
+| [[entities/fable-5]] | model | 🤖 模型 | active（6/13 因美國政府出口管制指令暫停全球存取）| Claude Fable 5：首款 Mythos 級公開模型，$10/$50 per M token；6/24：NSA 失去存取、Legion 提告、LessWrong 預測 7/9 重新上線 |
 
 ---
 

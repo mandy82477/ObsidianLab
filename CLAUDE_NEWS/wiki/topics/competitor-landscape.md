@@ -3,10 +3,10 @@
 **狀態：** monitoring
 **領域：** 💼 商業
 **開始日期：** 2026-04
-**最後更新：** 2026-06-23
+**最後更新：** 2026-06-24
 
-> **最新競品動態**（2026-06-19）
-> SpaceX 完成 $600 億美元收購 Cursor，因 Cursor 與 Anthropic 有深度整合關係，SpaceX / xAI 資源注入後 Claude 依賴度可能降低，Elon Musk 生態與 Anthropic 的競爭軸線進一步明確。
+> **最新競品動態**（2026-06-24）
+> Reid Hoffman（身兼 Anthropic + OpenAI 投資人）公開批評 Elon Musk，稱 xAI 為「一塌糊塗」，並警告政府處理 Anthropic 模型下架方式；中國安全公司 360 聲稱開發對標 Anthropic Mythos 的工具。
 
 ---
 
@@ -107,6 +107,10 @@ Claude Code 已成為 AI 輔助編碼的標竿產品，但競爭正快速升溫�
 ---
 
 ## 時序
+
+### 2026-06-24
+- **[投資人表態] Reid Hoffman 批評 Elon Musk，稱 xAI「一塌糊塗」**：Reid Hoffman（身兼 Anthropic 與 OpenAI 投資人）在 Fortune 專訪中公開批評 Elon Musk，稱 xAI 為「一塌糊塗（a mess）」，並警告政府處理 Anthropic 模型下架的方式；此表態明確劃清 Anthropic 與 xAI 生態的投資人立場分野（Fortune https://fortune.com/2026/06/24/reid-hoffman-spacex-musk-openai-anthropic-gen-z-mistake/）
+- **[中國競品] 360 聲稱開發對標 Anthropic Mythos 的安全工具**：中國網路安全公司 360 聲稱已開發出對標 Anthropic Mythos 的工具，顯示 Anthropic 的安全產品線已吸引中國廠商直接定位競爭（Reuters 2026-06-24）
 
 ### 2026-06-19
 - **[SpaceX 完成 $60B Cursor 收購] 競爭格局重塑**：dev.to 分析文章評估 SpaceX 以 600 億美元完成收購 Cursor 對 Claude Code 競爭格局的影響；9to5Mac 確認收購正式完成（IPO 後一週）。Cursor 此前與 Anthropic 有深度整合關係，SpaceX 資源注入後 Cursor 的 Claude 依賴度可能降低，Elon Musk / xAI 生態與 Anthropic 的競爭軸線進一步明確（dev.to 2026-06-18、9to5Mac 2026-06-17）

@@ -3,11 +3,11 @@
 **狀態：** ongoing
 **領域：** 💼 商業
 **開始日期：** 2026-05-28
-**最後更新：** 2026-06-23
-**最後新聞更新：** 2026-06-23
+**最後更新：** 2026-06-24
+**最後新聞更新：** 2026-06-24
 
-> **最新戰略合作**（2026-06-23）
-> Anthropic 與 Micron 達成多年 AI 記憶體供應協議並獲投資，Micron 股價創歷史新高；Anthropic 支持機構 Menlo Ventures 同日完成史上最大 $30 億美元募資，顯示 AI 生態投資信心持續加溫。
+> **最新戰略合作**（2026-06-24）
+> Railway 平台整合 Claude Code、Codex、OpenCode、Pi 可在隔離沙盒環境中執行；同日 NSA 因與 Anthropic 爭議失去 Claude Fable 存取權，白宮與 Dario Amodei 關係趨於緊張，法律科技新創 Legion 對美國政府提告主張出口管制令違法。
 
 ---
 
@@ -85,6 +85,7 @@ Simon Willison（知名開發者博主）發表文章，認為 Anthropic 與 Ope
 
 | 合作方 | 類型 | 日期 | 意義 |
 |--------|------|------|------|
+| Railway | SDK 夥伴 | 2026-06-24 | 平台整合 Claude Code、Codex、OpenCode、Pi，可在隔離沙盒環境中執行（blog.railway.com）|
 | Charleston Hospitality Group | 企業客戶 | 2026-06-22 | 加入 Anthropic Claude 企業 AI 網路，為餐旅業具名採用案例 |
 | Micron Technology | 戰略合作 + 投資 | 2026-06-22 | 多年 AI 記憶體與供應協議（Memory、Storage、AI 架構三層涵蓋）；Micron 同步對 Anthropic 進行投資；Micron 股價創歷史新高（Reuters 2026-06-22，blocksandfiles 2026-06-23）|
 | DXC Technology | 多年全球聯盟 | 2026-06-12 | 訓練數萬名 Claude 認證工程師；覆蓋銀行、航空、政府等受嚴格監管行業 |
@@ -117,6 +118,12 @@ Simon Willison（知名開發者博主）發表文章，認為 Anthropic 與 Ope
 - [[news/2026-05-13]]（The Information：定價強勢期）
 
 ## 時序
+
+### 2026-06-24
+- **[政府關係惡化] NSA 失去 Claude Fable 模型存取權**：NYT 報導 NSA 因與 Anthropic 爭議失去 Claude Fable 模型存取，顯示政府採購與 Anthropic 政策立場間的裂痕浮現（NYT 2026-06-24；見 [[topics/anthropic-government-policy]]）
+- **[法律衝突] Legion 對美國政府提告，主張出口管制令違法**：法律科技新創 Legion 正式對美國政府提起訴訟，主張針對 Anthropic 模型的出口管制令違法（Reuters 2026-06-24；見 [[topics/anthropic-government-policy]]）
+- **[政治關係] 白宮與 Dario Amodei 關係趨於緊張**：WIRED 報導白宮對 Dario Amodei 的關係日趨緊張，顯示 Anthropic 在華盛頓的政策倡議空間收窄（WIRED https://www.wired.com/story/the-trump-white-house-is-over-anthropics-dario-amodei/）
+- **[平台整合] Railway 整合 Claude Code 等 AI 編碼工具，提供沙盒執行環境**：Railway 平台宣布整合 Claude Code、Codex、OpenCode、Pi，可在隔離沙盒環境中執行，是雲端平台將多款 AI 編碼工具統一納入的具體案例（blog.railway.com 2026-06-24）
 
 ### 2026-06-23
 - **[Micron 多年戰略協議確認] Micron × Anthropic 多媒體確認：多年 AI 記憶體供應協議 + 投資，Micron 股價創歷史新高**：Reuters（2026-06-22）首報協議；Benzinga 確認涵蓋 Memory、Storage、AI 架構三層，且 Micron 同步對 Anthropic 進行投資；qz.com（2026-06-23）報導 Micron 股價創歷史新高；blocksandfiles（2026-06-23）標題確認「Micron invests in Anthropic and grants it a supply deal」；Techzine Global（2026-06-23）及 simplywall.st 定性為「多年 AI 記憶體與供應協議」（Reuters https://www.reuters.com/business/micron-anthropic-sign-ai-infrastructure-supply-agreement-2026-06-22/；Benzinga https://www.benzinga.com/markets/tech/26/06/60034685/micron-and-anthropic-strike-strategic-ai-partnership-spanning-memory-storage-and-claude）

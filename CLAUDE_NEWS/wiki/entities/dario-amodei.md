@@ -4,11 +4,11 @@
 **狀態：** active
 **領域：** 👤 人物
 **首次出現：** 2026-04-25
-**最後更新：** 2026-06-23
-**最後新聞更新：** 2026-06-23
+**最後更新：** 2026-06-24
+**最後新聞更新：** 2026-06-24
 
-> **最新政策立場**（2026-06-23）
-> Ars Technica 援引 FT 分析：Dario 公開聲明中風險/法規字詞密度達每千字 5 字，為 Sam Altman 的 8 倍，批評者指其高頻風險表態間接為美國 AI 出口禁令提供論據。
+> **最新政策立場**（2026-06-24）
+> WIRED 報導：白宮與 Dario Amodei 的關係趨於緊張，此為 Fable 出口管制爭議持續發酵下的政治維度，顯示 Anthropic 與現任行政當局的關係正在惡化。
 
 ---
 
@@ -24,6 +24,7 @@ Anthropic 共同創辦人兼執行長（CEO）。與 Chris Olah、Daniela Amodei
 
 | 日期 | 立場 | 來源 |
 |------|------|------|
+| 2026-06-24 | 白宮與 Dario Amodei 的關係趨於緊張，與 Fable 出口管制爭議政治維度相關 | WIRED |
 | 2026-06-22 | FT 分析：風險/法規字詞密度每千字 5 字（vs Altman 0.6 字），被批評者指間接助攻出口禁令 | Ars Technica |
 | 2026-06-11 | 政府應具備阻止危險 AI 模型發布的能力，主要針對中國競爭者 | Bloomberg |
 | 2026-06-11 | 直屬下屬僅一人，組織架構扁平 | Bloomberg |
@@ -48,12 +49,14 @@ Anthropic 共同創辦人兼執行長（CEO）。與 Chris Olah、Daniela Amodei
 
 ## 參考來源
 
+- [WIRED，2026-06-24](https://www.wired.com/story/the-trump-white-house-is-over-anthropics-dario-amodei/)：白宮關係緊張
 - Bloomberg 訪談（2026-06-11）：政府監管 + 組織架構
 - Fortune 訪談（2026-06-08）：企業文化論述
 - Code with Claude 大會（2026-05-12）：速率政策現場宣布
 
 ## 歷史記錄
 
+- 2026-06-24：WIRED 報導白宮與 Dario Amodei 的關係趨於緊張，為 Fable 出口管制爭議持續發酵下的政治維度，顯示 Anthropic 與現任行政當局關係惡化
 - 2026-06-23：Ars Technica 援引 FT 分析：Dario 公開聲明中風險/法規相關字詞密度達每千字 5 字，為 OpenAI Sam Altman（0.6 字）的 8 倍多；批評者認為此頻繁表態間接助攻美國政府 AI 出口禁令
 - 2026-06-21：Times of India 採訪談離開 OpenAI：「最終別人會來判斷誰是對的。」
 - 2026-06-11：Bloomberg 報導兩則：（1）主張政府應可阻止危險 AI 發布，被解讀為針對中國；（2）直屬下屬僅一人的扁平組織結構引發討論。

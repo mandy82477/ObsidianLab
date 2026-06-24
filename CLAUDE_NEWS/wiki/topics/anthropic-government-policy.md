@@ -3,11 +3,11 @@
 **狀態：** ongoing
 **領域：** 🏛️ 政策/安全
 **開始日期：** 2026-05-01
-**最後更新：** 2026-06-23
-**最後新聞更新：** 2026-06-23
+**最後更新：** 2026-06-24
+**最後新聞更新：** 2026-06-24
 
-> **最新攻防紀錄**（2026-06-22）
-> Trump 政府正式撤銷 Anthropic「國家安全威脅」標籤，Fable 5 解封核心障礙之一解除；同日曝光的三詞越獄（「Fix this code」）引發社群對管制正當性的廣泛質疑。
+> **最新攻防紀錄**（2026-06-24）
+> NSA 因與 Anthropic 的爭議正式失去 Claude Fable 模型存取權；法律科技新創 Legion 對美國政府提告主張出口管制令違法；白宮與 Dario Amodei 關係趨於緊張；LessWrong 社群模型預測 Fable 重新上線約 7 月 9 日；中國網路安全公司 360 聲稱開發出對標 Mythos 的工具。
 
 ---
 
@@ -19,9 +19,12 @@ Anthropic 與美國政府的衝突從 2026 年五月起持續升溫，並於 202
 
 ---
 
-## 目前局勢（截至 2026-06-23）
+## 目前局勢（截至 2026-06-24）
 
-- **管制狀態：** Fable 5 封鎖進入第 10 天；Trump 政府正式宣布撤銷 Anthropic「國安威脅」標籤，解封障礙之一移除，但 Fable 5 出口管制令本身是否正式撤銷待確認
+- **管制狀態：** Fable 5 封鎖持續；NSA 已正式失去 Claude Fable 模型存取權，顯示衝突已在機構層面留下實質代價；LessWrong 社群預測模型重新上線時間約 7 月 9 日
+- **法律戰線開啟：** 法律科技新創 Legion 正式對美國政府提告，主張 Fable 出口管制令違法（Reuters 2026-06-23），與國會議員施壓形成法律 + 立法雙路夾擊；為首起正式司法挑戰
+- **白宮關係惡化：** WIRED 報導（2026-06-24）白宮與 Dario Amodei 的關係趨於緊張，為 6/22 撤銷「國安威脅」標籤後的意外逆轉訊號；顯示政府對 Anthropic 的態度並未如 6/21–22 轉折所暗示的那樣走向穩定修復
+- **中國競爭格局：** 中國網路安全公司 360 聲稱已開發出對標 Mythos 的工具（Reuters 2026-06-24），若屬實將削弱美國出口管制的預期戰略效果——管制閉源模型本身的有效性爭議再度升溫
 - **政府態度大轉彎：** 從 6/21 Trump 稱 Anthropic「行為非常負責任」，到 6/22 正式撤銷安全威脅標籤，為管制啟動以來最具體的政策解除動作；路徑仍有不確定性，模型是否立即恢復外國公民存取尚不明確
 - **越獄正當性危機：** 導致政府出手的 Fable 5 越獄觸發語曝光僅為三個詞「Fix this code」，社群廣泛質疑政府以如此輕微的越獄為由實施全球封鎖的正當性；詳見 [[topics/ai-agent-safety]]
 - **五眼聯盟升溫：** 五眼聯盟（美、英、加、澳、紐）罕見聯合聲明，警告能癱瘓政府與企業的 AI 模型將在數月內出現，使 AI 安全議題從雙邊衝突升級為多邊安全框架討論
@@ -61,6 +64,8 @@ Fable 5 發布後，Amazon 安全研究人員發現特定提示詞可讓模型�
 
 2026-06-23，Ars Technica 引用 FT 研究指出 Anthropic 每千字有 5 字與風險/法規相關（OpenAI 僅 0.6 字），批評者指此為「Anthropic 把自己說進禁令」的量化佐證；Amazon CEO 舉報的政治動機亦遭 Gizmodo 等媒體質疑利益衝突。詳見 [[entities/fable-5]] 雙方立場區塊。
 
+2026-06-23，法律科技新創 Legion 正式對美國政府提告，主張出口管制令違法（Reuters），為首起針對此次管制的司法挑戰。2026-06-24，中國網路安全公司 360 聲稱開發出對標 Mythos 的工具（Reuters），進一步挑戰「管制閉源模型有效防護」的政策前提。
+
 ### 🌍 策略選擇：Anthropic 換戰場而非退讓
 
 面對政府市場持續碰壁，Anthropic 選擇強化其他方向而非妥協：
@@ -81,6 +86,10 @@ Fable 5 發布後，Amazon 安全研究人員發現特定提示詞可讓模型�
 
 | 日期 | 方 | 動作 | 效果 |
 |------|----|------|------|
+| 2026-06-24 | 🌐 | 中國網路安全公司 360 聲稱開發出對標 Mythos 的工具（Reuters） | 若屬實，削弱出口管制的戰略防護效果；「管制閉源模型是否有效」爭議再度升溫 |
+| 2026-06-24 | 🌐 | WIRED：白宮與 Dario Amodei 關係趨於緊張，Trump 政府與 Anthropic 的互動進入新的不確定期（WIRED） | 6/22 撤銷「國安威脅」標籤後的意外逆轉訊號；關係修復路徑仍不穩定 |
+| 2026-06-23 | 🌐 | 法律科技新創 Legion 正式對美國政府提告，主張 Fable 出口管制令違法（Reuters） | 首起針對此次出口管制的正式司法挑戰；與國會議員施壓形成法律 + 立法雙路夾擊 |
+| 2026-06-23 | 🏛️ | NSA 因與 Anthropic 的爭議失去 Claude Fable 模型存取權（NYT） | 衝突在機構層面留下實質代價；NSA 此前曾自行使用 Mythos，形成「一邊管制一邊用」的邏輯矛盾 |
 | 2026-06-22 | 🏢 | Anthropic 計畫對部分 Free/Pro/Max 訂閱用戶要求身份證明與臉部掃描，最快 7 月上路；觸發條件與覆蓋範圍未公開說明（PYMNTS.com） | 用戶隱私疑慮升溫；與 Persona Identities 合作（年齡驗證）同期，加深對 Anthropic 擴大身份管控力道的觀察 |
 | 2026-06-22 | 🌐 | Ars Technica 引用 FT 研究數據：Anthropic 每千字有 5 字與風險/法規相關，是 OpenAI（0.6/千字）的 8 倍；批評者指出頻繁的風險表態間接促成出口禁令（Ars Technica） | 「Anthropic 自己說話說進禁令」的具體量化數據首次曝光，強化雙面刃論述；Dario 公開聲明立場成政治焦點 |
 | 2026-06-22 | 🌐 | Gizmodo 分析 Amazon CEO Andy Jassy 向 Trump 舉報 Anthropic 的政治動機，揭示科技巨頭之間的競爭與政治操縱（Gizmodo） | 揭示 Amazon 舉報背後的商業競爭動機，質疑 AWS 作為 Anthropic 投資方同時充當舉報者的利益衝突 |
@@ -139,6 +148,13 @@ Fable 5 發布後，Amazon 安全研究人員發現特定提示詞可讓模型�
 - [Chris Olah Vatican Remarks](https://www.anthropic.com/news/chris-olah-pope-leo-encyclical) — Anthropic Blog
 
 ## 時序
+
+### 2026-06-24
+- **[NSA 制裁] NSA 失去 Claude Fable 模型存取權**：NYT 報導 NSA 因與 Anthropic 的持續爭議，正式失去 Claude Fable 模型的存取資格；此前 FT（06/05）曾報導 NSA 自行使用 Mythos 進行進攻性網路操作，「一邊管制一邊用」的邏輯矛盾至今未解（NYT，2026-06-23；https://www.nytimes.com/2026/06/23/us/politics/nsa-lost-access-anthropic-tool.html）
+- **[司法挑戰] Legion 正式對美國政府提告**：法律科技新創 Legion 在聯邦法院對美國政府提起訴訟，主張 Fable 出口管制令缺乏法律授權、違反既有貿易法規；此為首起針對此次出口管制的正式司法挑戰，與 Politico 早先「可能違法」分析形成呼應（Reuters，2026-06-23；https://www.reuters.com/legal/litigation/legal-tech-firm-sues-us-over-order-limiting-foreign-access-top-tier-anthropic-2026-06-23/）
+- **[白宮關係] 白宮與 Dario 關係趨緊**：WIRED 報導 Trump 政府對 Dario Amodei 的關係趨於緊張，意味 6/22 撤銷「國安威脅」標籤後並未帶來關係修復，政府與 Anthropic 的互動進入新的不確定期（WIRED，2026-06-24；https://www.wired.com/story/the-trump-white-house-is-over-anthropics-dario-amodei/）
+- **[重啟預測] LessWrong 社群模型：7 月 9 日重新上線**：LessWrong 世界模型貼文彙整多方資訊後預測 Fable 重新上線時間約 7 月 9 日；此為社群預測而非官方聲明，但為目前最具體的時間預期（LessWrong；https://www.lesswrong.com/posts/zhRe3tdBpsZbGCdDK/world-modeling-the-us-vs-anthropic-standoff-on-claude-fable）
+- **[競爭格局] 中國 360 聲稱對標 Mythos**：中國網路安全公司奇虎 360 向媒體聲稱已開發出對標 Anthropic Mythos 能力的工具（Reuters，2026-06-24）；若屬實，出口管制限制閉源 AI 的戰略效果將大幅縮水，進一步削弱政府管制論點的技術前提
 
 ### 2026-06-23
 - **[三大爭點] MIT Technology Review：Anthropic vs 政府對峙的三個觀察重點**：MIT Tech Review 分析 Anthropic 出口管制對峙已引發三個核心爭點：（1）AI 安全定義之爭——誰有資格定義「危險」；（2）AI 主權問題——政府管制私人公司最強模型的正當性；（3）中國競爭框架——出口管制如何影響美國 AI 領先地位論述；此分析將爭端框架從雙方角力提升至結構性政策議題（MIT Technology Review，06/22）

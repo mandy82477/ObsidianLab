@@ -3,11 +3,11 @@
 **狀態：** monitoring
 **領域：** 🌐 社群
 **開始日期：** 2026-04-25
-**最後更新：** 2026-06-23
-**最後新聞更新：** 2026-06-23
+**最後更新：** 2026-06-24
+**最後新聞更新：** 2026-06-24
 
-> **最新工作流模式**（2026-06-23）
-> cc-fleet 工具示範讓 Claude Code 作為 orchestrator 統一調度異質 LLM worker，實現跨模型分工；同日 Aharness 以有限狀態機強制 agent 工作流狀態轉換，兩者共同推進「Claude 作為路由中樞」的社群模式方向。
+> **最新工作流模式**（2026-06-24）
+> 社群發布多篇 multi-agent 工作流轉型指南，核心共識：並行 agent 的根本前提是每個 agent 擁有獨立工作空間（worktree/容器）；Lean 4 嚴格型別系統下的 vibe coding 實測補充：AI 主要盲點是資源限制而非邏輯錯誤，型別約束可填補此缺口。
 
 ---
 
@@ -42,6 +42,18 @@
 ---
 
 ## 技術彙整
+
+### Multi-agent 工作流轉型指南：從「單一提示反覆法」到真正並行工作流（2026-06-24）
+
+- **核心模式：** 多 agent 並行工作的根本前提是每個 agent 擁有獨立的工作空間（worktree 或容器），否則代理間互相覆蓋導致工作流崩潰
+- **實作方向：**
+  - 為每個並行 agent 分配獨立 git worktree 或容器，避免共享工作目錄
+  - 從「單一提示 → 等待 → 調整」的線性迴圈，重構為「任務分解 → 並行派發 → 彙整驗證」的多 agent 流程
+  - 任務邊界定義先於 agent 派發：各 agent 的輸入/輸出契約需明確，避免介面漂移
+- **解決的問題：** 「用 AI 當 autocomplete」的舊範式在複雜任務中的瓶頸；AI agent 排隊等待造成的效能損耗
+- **補充發現（Vibe coding under constraint）：** 在 Lean 4 嚴格型別系統下進行 vibe coding 的實測顯示，AI 的主要盲點是資源限制（記憶體、檔案描述符），而非邏輯錯誤——型別系統的強制約束反而填補了 AI 的邏輯漏洞
+- **注意事項：** 工作空間隔離帶來額外的協調成本；需設計跨 agent 的結果彙整機制
+- **來源：** ["Stop Using AI Like Autocomplete: A Developer's Guide to Multi-Agent Workflows"](https://dev.to/harshdeepsingh13/stop-using-ai-like-autocomplete-a-developers-guide-to-multi-agent-workflows-c1k)（dev.to）；["Want AI to Work in Parallel? First Give Each One Its Own Workspace"](https://dev.to/kanfu-panda/want-ai-to-work-in-parallel-first-give-each-one-its-own-workspace-40ch)（dev.to）；["Vibe Coding under Constraint"](https://ngrislain.github.io/projects/2026-6-22-vibe-under-constraint/)（HN）
 
 ### cc-fleet：Claude Code 作為 Orchestrator 驅動異質 LLM Worker（2026-06-23）
 

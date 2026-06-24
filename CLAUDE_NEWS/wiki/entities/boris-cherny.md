@@ -4,11 +4,11 @@
 **狀態：** active
 **領域：** 👤 人物
 **首次出現：** 2026-04-23（事後報告發布）
-**最後更新：** 2026-06-23
-**最後新聞更新：** 2026-06-23
+**最後更新：** 2026-06-24
+**最後新聞更新：** 2026-06-24
 
-> **最新設計哲學聲明**（2026-06-23）
-> Business Insider 報導 Boris Cherny 對企業 AI 投資的立場：支持 ROI 導向評估，但主張企業仍需保留實驗預算空間，不應將投資框架完全鎖定在 ROI 指標。
+> **最新設計哲學聲明**（2026-06-24）
+> Times of India 報導：Boris Cherny 承認「AI 寫 100% 程式碼正在變得有問題」，與他早前「AI 已解決程式設計問題」的立場形成明顯對比，此聲明呼應企業端出現的過度依賴反彈聲浪。
 
 ---
 
@@ -19,6 +19,14 @@ Boris Cherny 是 Anthropic Claude Code 的創始人與負責人（Head of Claude
 ---
 
 ## 公開言論與主張
+
+### 「AI 寫 100% 程式碼正在變得有問題」立場轉變（2026-06-24）
+
+Times of India 報導 Boris Cherny 承認「AI 寫 100% 程式碼正在變得有問題（is getting problematic）」，這與他此前在「Code with Claude」大會宣稱「AI 已解決程式設計問題（coding is solved）」的立場形成明顯對比。此聲明與企業端近期出現的 AI 過度依賴反彈聲浪相呼應，顯示 Claude Code 創始人自身的公開立場已出現調整。
+
+- 來源：[Times of India，2026-06-23](https://timesofindia.indiatimes.com/technology/tech-news/claude-code-creator-boris-cherny-who-declared-ai-has-solved-coding-admits-ai-writing-100-code-is-getting-problematic-as-companies-/articleshow/131954700.cms)
+
+---
 
 ### AI ROI 與實驗平衡論述（2026-06-23）
 
@@ -86,6 +94,7 @@ Boris Cherny 的公開言論呈現兩種截然不同的社群反應：
 
 ## 歷史記錄
 
+- 2026-06-24：Times of India 報導其承認「AI 寫 100% 程式碼正在變得有問題」，與早前「coding is solved」立場形成對比，呼應企業端過度依賴反彈聲浪
 - 2026-06-23：Business Insider 報導其對企業 AI 投資的立場：支持 ROI 導向，但反對完全不留實驗預算
 - 2026-06-22：Anthropic「engineering leader」（待核實：是否為 Boris Cherny）公開表示 Claude Code 正讓工程師更孤獨，Business Insider、Let's Data Science 報導
 - 2026-06-20：techstackups.com 採訪引用 Loop 工程哲學名言「我不再 prompt Claude，我寫 loop 讓 loop 去 prompt Claude；我的工作是寫 loop」，被視為繼「coding is solved」後的第二個重要設計哲學表態
@@ -112,3 +121,4 @@ Boris Cherny 的公開言論呈現兩種截然不同的社群反應：
 - [[news/2026-05-27]]
 - [[news/2026-06-22]]
 - [[news/2026-06-23]]
+- [[news/2026-06-24]]

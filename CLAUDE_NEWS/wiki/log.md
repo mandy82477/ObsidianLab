@@ -3,6 +3,31 @@
 Append-only 紀錄。每次 ingest、query 或 lint 都在此追加一條。
 格式：`## [YYYY-MM-DD] 類型 | 說明`
 
+## 2026-06-24 Ingest | news/2026-06-24.md（66 則）
+
+- 來源日報：`news/2026-06-24.md`（66 則，6/6 來源全數正常）
+- 更新頁面：
+  - `wiki/entities/fable-5.md`：NSA 失去存取、Legion 提告、LessWrong 7/9 預測
+  - `wiki/entities/mythos.md`：AP News 情報機構合作測試確認 + 360 對標聲明
+  - `wiki/entities/opus-4-8.md`：跨 API/Claude Code/Console 高錯誤率事件
+  - `wiki/entities/claude-code.md`：v2.1.187（sandbox.credentials + 組織模型限制）
+  - `wiki/entities/claude-tag.md`：新建（Slack-native AI 協作工具）
+  - `wiki/topics/anthropic-business.md`：NSA/Legion 事件、白宮緊張、Railway 沙盒整合
+  - `wiki/topics/competitor-landscape.md`：Reid Hoffman 批評 xAI、360 對標 Mythos
+  - `wiki/entities/pricing.md`：隱私政策更新（7/8 生效）、加州帳號歐元盜刷
+  - `wiki/topics/anthropic-government-policy.md`：NSA 失去存取、Legion 提告、白宮關係緊張、360 競品、LessWrong 預測
+  - `wiki/topics/ai-agent-safety.md`：Mythos 情報機構測試發現漏洞
+  - `wiki/topics/community-tech-discussions.md`：Boris Cherny 立場轉變、多工具 HN 討論、過期條目清理
+  - `wiki/topics/community-tech-patterns.md`：multi-agent 工作流指南、Lean 4 vibe coding 限制
+  - `wiki/entities/boris-cherny.md`：承認 AI 100% 程式碼有問題（立場轉變）
+  - `wiki/entities/dario-amodei.md`：白宮關係緊張（WIRED）
+  - `wiki/feature-radar.md`：新增 Claude Tag、v2.1.187 條目；最後更新 2026-06-24
+  - `wiki/index.md`：新增 claude-tag.md；近期異動更新
+  - `wiki/overview.md`：當前局勢、模型現況、進行中議題、重大事件表更新
+- feature-radar 新增：Claude Tag（🔥🔥🔥 / ⚡）、Claude Code v2.1.187 sandbox.credentials（🔥🔥🔥 / ⚡）
+- 新增頁面：`wiki/entities/claude-tag.md`
+- 呈現品質審查：✅ 全部通過（14 頁）
+
 ## 2026-05-22 Ingest | news/2026-05-22.md（2 則，fallback 補錄）
 
 - 來源日報：`news/2026-05-22.md`（2 則，fallback 純文字；RSS 對過去日期抓取量少）

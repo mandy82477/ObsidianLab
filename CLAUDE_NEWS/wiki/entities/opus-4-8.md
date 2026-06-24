@@ -4,11 +4,11 @@
 **狀態：** active
 **領域：** 🤖 模型
 **首次出現：** 2026-05-28
-**最後更新：** 2026-06-23
-**最後新聞更新：** 2026-06-23
+**最後更新：** 2026-06-24
+**最後新聞更新：** 2026-06-24
 
-> **最新服務狀態**（2026-06-22）
-> Anthropic 官方確認 Opus 4.8 出現 HTTP 529 elevated error rates 及全球約 90 分鐘中斷，Max Plan 用戶反映自上週起 coding tasks 錯誤持續激增。
+> **最新服務狀態**（2026-06-24）
+> Claude Opus 4.8 出現跨 API、Claude Code 與 Console 的高錯誤率事件（elevated errors），Anthropic 正在調查中（dev.to）。
 
 ---
 
@@ -79,6 +79,7 @@ claude.ai 用戶現可調節 Claude 在任務上投入的努力程度，不再�
 - Fast Mode 降價受到廣泛歡迎
 
 ### 負面（待觀察）
+- ⚠️ **跨平台高錯誤率事件（2026-06-24）**：Claude Opus 4.8 出現跨 API、Claude Code 與 Console 的高錯誤率，Anthropic 正在調查中（[dev.to](https://dev.to/damogallagher/claude-opus-48-is-seeing-elevated-errors-across-api-claude-code-and-console-1g9a)）；影響範圍較 6/22 更廣
 - ⚠️ **529 Overloaded 大規模事件（2026-06-21~22）**：Anthropic 官方確認 Opus 4.8（及 4.7、4.6、Sonnet 4.6）出現 elevated error rates；另有全球約 90 分鐘中斷；Max Plan 用戶反映自 06/21 起錯誤持續激增，coding tasks 與 Claude Code 受影響尤重（[cybersecuritynews.com](https://cybersecuritynews.com/anthropic-claude-ai-outage/)）
 - ⚠️ Reddit 部分用戶反映 4.8 引入奇怪的 "pecl scripts" 行為，強制使用自訂工具做簡單文件修改
 - ✅ "thinking blocks cannot be modified" 400 錯誤：v2.1.156 已修復（[[entities/claude-code]]）
@@ -119,6 +120,7 @@ claude.ai 用戶現可調節 Claude 在任務上投入的努力程度，不再�
 
 | 日期 | 事件 |
 |------|------|
+| 2026-06-24 | **跨平台高錯誤率事件**：Claude Opus 4.8 出現跨 API、Claude Code 與 Console 三個平台的高錯誤率（elevated errors），Anthropic 正在調查中（[dev.to](https://dev.to/damogallagher/claude-opus-48-is-seeing-elevated-errors-across-api-claude-code-and-console-1g9a)）；範圍較 6/22 事件更廣，影響 Claude Code 工作流用戶 |
 | 2026-06-22 | **529 Overloaded 事件**：Anthropic 官方確認 Opus 4.8 出現 elevated error rates（HTTP 529）；另有全球 90 分鐘中斷，Max Plan 用戶反映自上週起錯誤激增（[cybersecuritynews.com](https://cybersecuritynews.com/anthropic-claude-ai-outage/)、HN score 可見） |
 | 2026-06-22 | **Quake 瀏覽器版程序生成關卡**：開發者以 GitHub Copilot + Claude Opus 4.8 配合 id Software 原始碼編譯 WebAssembly 版本，加入程序生成關卡支援（[leereilly.net](https://leereilly.net/quakelike/)）；HN score 3 |
 | 2026-05-31 | Thinking 模式 context drain 量化：每輪最高 900K cache tokens（4.7 為 14K–34K，40–60 倍差距）；ultracode 70 agent 4 階段 pipeline 實測；引發費用可控性討論 |
