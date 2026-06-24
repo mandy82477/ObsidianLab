@@ -3,6 +3,17 @@
 Append-only 紀錄。每次 ingest、query 或 lint 都在此追加一條。
 格式：`## [YYYY-MM-DD] 類型 | 說明`
 
+## 2026-05-22 Ingest | news/2026-05-22.md（2 則，fallback 補錄）
+
+- 來源日報：`news/2026-05-22.md`（2 則，fallback 純文字；RSS 對過去日期抓取量少）
+- 更新頁面：
+  - `wiki/topics/competitor-landscape.md`：新增 2026-05-22 The Verge 報導（HN 493 分，Microsoft 取消授權最高曝光節點）
+  - `wiki/topics/community-tech-discussions.md`：新增 Spec-Driven Development 技術彙整條目（HN 20 分，補錄至 ## 技術彙整）
+- 呈現品質：`competitor-landscape.md` ✅ 通過 | `community-tech-discussions.md` ✅ 通過
+- 備注：analyzer 無 ANTHROPIC_API_KEY，日報為純文字 fallback；wiki ingest 依 HN 分數手動判斷重要性
+
+---
+
 ## 2026-06-23 Ingest | news/2026-06-23.md（65 則）第二次執行
 
 - 來源日報：`news/2026-06-23.md`（65 則，6/6 來源正常；Reddit 部分 429 但仍有 10 筆）

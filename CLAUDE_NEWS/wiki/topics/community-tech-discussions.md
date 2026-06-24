@@ -185,6 +185,12 @@ MCP 的實際成本遠超多數使用者預期，已有多個量化案例：
 
 ## 技術彙整
 
+### 規格驅動工作流：兩個維度任務分解讓 Coding Agent 效能最大化（2026-05-22）
+
+- **來源：** [Show HN: Spec-Driven Development Workflow for Claude Code](https://news.ycombinator.com/item?id=48231575)（HN score 20，2026-05-22）
+- **核心論點：** 開發者分享透過「兩個維度的任務分解」強化 Claude Code coding agent 效能的工作流——橫軸為功能邊界拆分（spec 層），縱軸為實作步驟序列（task 層）；兩維度交叉定義每個 agent 任務範圍，讓 agent 有足夠上下文但不因過廣 context 而失焦
+- **收斂結論：** 延伸自 2026-05-02 的規格驅動開發脈絡，本次分享提供了更具操作性的「雙維度分解」框架；HN 熱度低（20 分），社群反應仍在觀察中（推論：方法論本身紮實，但尚無大量實測佐證）
+
 ### Anthropic 帳號封禁：VPN / 信用卡連帶封禁，缺乏申訴機制（2026-06-23）
 
 - **來源：** HN 討論（news.ycombinator.com/item?id=48641160，score 55，06-23）

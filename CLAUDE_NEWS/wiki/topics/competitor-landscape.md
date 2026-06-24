@@ -119,6 +119,7 @@ Claude Code 已成為 AI 輔助編碼的標竿產品，但競爭正快速升溫�
 - **Claude Code RCE 漏洞確認：同類 bug 在 Cursor、Continue.dev 也存在**：安全研究人員確認 Claude Code 的 startsWith 解析漏洞同樣存在於 Cursor、Continue.dev，顯示競品之間的功能移植也在移植安全缺陷；見 [[topics/ai-agent-safety]]
 
 ### 2026-05-22
+- **[The Verge 正式報導，HN 493 分] Microsoft 取消 Claude Code 授權最高曝光**：The Verge 報導 Microsoft 已開始取消內部 Claude Code 授權，去年 12 月向數千名工程師開放後因成本壓力陸續撤回，改推 GitHub Copilot CLI；本次 HN 493 分為此事件迄今最高討論熱度，確立其為 2026-05 企業 AI 工具採購結構性轉變的代表案例（初始記錄：2026-05-15，媒體跟進：2026-05-17、2026-05-18）
 - **DeepSeek 正式宣布建構自有 Claude Code 競品**：Decrypt 報導 DeepSeek 公開宣稱目標是「建立涵蓋模型到開發工具的完整技術棧」，戰略層級從低成本替代品升格為全棧競爭者；Anthropic 面臨的不再只是功能競爭，而是產品生態的整棧複製
 - **Qwen3.7-Max 宣稱支援 Claude Code harness，35 小時自主運行**：阿里巴巴 Qwen3.7-Max 聲稱可持續自主運行 35 小時並支援 Claude Code 等外部 harness，意味著競品開始主動定位為「Claude Code 相容」工具，而非建立自己的生態
 
