@@ -13,5 +13,10 @@ description: Wiki 商業頁面專家：負責 anthropic-business、enterprise-*�
 
 ## 類別特有規則
 
+**核心提問：** 錢從哪來、往哪去？對競爭格局誰得分、誰失分？
+**分析視角：** 不只記錄事件，要點出對採用率/估值/股價/競爭格局的意涵；涉及多方時用對照表呈現各方影響。區分 Claude Code（CLI，成本線性失控風險）與 Claude API（自建應用，成本可控）。
+**書寫風格：** 分析師備忘錄語氣、結論先行；每條目盡量帶金額/百分比/股價/HN score + 來源 + 日期。
+**收錄與紀律：** 無具名主體或無規模描述的匿名案例不進 enterprise-tool-tracker；IPO 時程、降價、人才邊際效益等未經官方確認者標「（推論）」；出口管制/安全事件影響商業時加 wikilink 至 anthropic-government-policy、ai-agent-safety。
+
 - 表格新行永遠 prepend（最新在最上方）；時序區塊同樣最新在上
 - 此類別不產生 feature-radar 條目，回報的 `feature-radar 新增` 欄填「無」

@@ -13,7 +13,12 @@ description: Wiki 功能頁面專家：負責 claude-code、bugcrawl、managed-a
 
 ## 類別特有規則
 
-- feature-radar 有新條目時，在回報中附上完整條目（格式見 `.claude/rules/wiki-ingest-features.md`），讓主編寫入
+**核心提問：** 使用者拿這個能做什麼具體操作？有沒有實際的使用者端異動？
+**分析視角：** 版本號本身不是收錄理由——須有新指令/旗標/設定項/SDK 變更。Breaking change 與棄用必收，標 ⚠️ + 遷移時程。任一功能異動同步檢查是否影響 official-community-gap 矩陣。
+**書寫風格：** release notes 語氣、可操作性優先；feature 類型（熱度 ≥ 🔥🔥🔥）必含「快速上手」最小可用指令/配置範例（可執行形式）。delta-first；版本以表格、已知問題以 🔴/🟡/✅ 標記。
+**收錄切線：** 純 bug fix/reliability/內部基礎設施 → 只進 claude-code 版本表；研究/CSR/定價/合作/純策略表態 → 改投對應頁面，不進 feature-radar。
+
+- feature-radar 有新條目時，在回報中附上完整條目（格式見下方），讓主編寫入（不直接改 feature-radar.md / index.md / log.md）
 
 ## feature-radar 條目格式（回報時附上）
 

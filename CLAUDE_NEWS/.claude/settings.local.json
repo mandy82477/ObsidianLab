@@ -43,7 +43,16 @@
       "PowerShell(Add-Content *)",
       "Bash(where claude *)",
       "PowerShell(Get-ChildItem *)",
-      "PowerShell(Get-ChildItem \"C:\\\\Users\\\\Mandy\\\\AppData\\\\Local\\\\Packages\\\\Claude_pzs8sxrjxfjjc\" -Recurse -ErrorAction SilentlyContinue | Where-Object { $_.Name -match \"\\\\.exe$\" } | Select-Object FullName)"
+      "PowerShell(Get-ChildItem \"C:\\\\Users\\\\Mandy\\\\AppData\\\\Local\\\\Packages\\\\Claude_pzs8sxrjxfjjc\" -Recurse -ErrorAction SilentlyContinue | Where-Object { $_.Name -match \"\\\\.exe$\" } | Select-Object FullName)",
+      "Bash(git -C \"C:/Users/Mandy/CLAUDE_OBSIDIAN/ObsidianLab/CLAUDE_NEWS\" status --short news/)",
+      "Bash(git -C \"C:/Users/Mandy/CLAUDE_OBSIDIAN/ObsidianLab/CLAUDE_NEWS\" add wiki/)",
+      "Bash(git -C \"C:/Users/Mandy/CLAUDE_OBSIDIAN/ObsidianLab/CLAUDE_NEWS\" commit -m \"wiki: auto-ingest 2026-05-22\")",
+      "Bash(git -C \"C:/Users/Mandy/CLAUDE_OBSIDIAN/ObsidianLab/CLAUDE_NEWS\" push)",
+      "Bash(git -C \"C:\\\\Users\\\\Mandy\\\\CLAUDE_OBSIDIAN\\\\ObsidianLab\\\\CLAUDE_NEWS\" add news/2026-06-24.md)",
+      "Bash(git -C \"C:\\\\Users\\\\Mandy\\\\CLAUDE_OBSIDIAN\\\\ObsidianLab\\\\CLAUDE_NEWS\" commit -m \"news: daily digest 2026-06-24\")",
+      "Bash(git -C \"C:\\\\Users\\\\Mandy\\\\CLAUDE_OBSIDIAN\\\\ObsidianLab\\\\CLAUDE_NEWS\" commit -m \"wiki: auto-ingest 2026-06-24\")",
+      "Bash(C:\\\\Users\\\\Mandy\\\\AppData\\\\Local\\\\Programs\\\\Python\\\\Python313\\\\python.exe \"C:\\\\Users\\\\Mandy\\\\CLAUDE_OBSIDIAN\\\\ObsidianLab\\\\CLAUDE_NEWS\\\\scripts\\\\build_web.py\")",
+      "PowerShell(& \"C:\\\\Users\\\\Mandy\\\\AppData\\\\Local\\\\Programs\\\\Python\\\\Python313\\\\python.exe\" \"C:\\\\Users\\\\Mandy\\\\CLAUDE_OBSIDIAN\\\\ObsidianLab\\\\CLAUDE_NEWS\\\\scripts\\\\build_web.py\" 2>&1)"
     ]
   },
   "hooks": {
