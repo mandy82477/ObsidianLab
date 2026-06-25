@@ -1,0 +1,49 @@
+# AI 實驗室人才流動
+
+**狀態：** ongoing
+**領域：** 💼 商業
+**開始日期：** 2026-06-19
+**最後更新：** 2026-06-25
+**最後新聞更新：** 2026-06-25
+
+## 摘要
+
+2026-06-24，Google DeepMind 再失兩名頂尖研究員——Jonas Adler（AI 編碼）與 Alexander Pritzel（訓練）確認加入 Anthropic，Bloomberg 標題直指這是繼諾貝爾獎得主 John Jumper（6/19）後的「再一波」（two more）。同日 The Information 報導 Google 正重組 AI 編碼突擊隊以追趕 Anthropic——**流失的方向（AI coding）正是 Google 落後的方向**，是這波人才戰最值得注意的一點。
+
+本頁追蹤 AI 前沿實驗室之間的人才流動，重點放在**對各公司的影響**，而非單一公司視角。整體格局：人才明顯由 Google DeepMind 淨流出，Anthropic 為主要承接方，OpenAI 亦有斬獲。
+
+## 對各公司的影響
+
+| 公司 | 角色 | 具體影響 | 評估 |
+|------|------|---------|------|
+| **Google DeepMind** | 淨流失方 | 一週內連失 Jumper（科學/生物）、Adler（AI 編碼）、Pritzel（訓練），另有一名研究員轉投 OpenAI；被迫重組 AI 編碼突擊隊 | 🔴 傷在痛點：流失方向與其落後領域（coding）重疊，複利式傷害（推論）|
+| **Anthropic** | 主要承接方 | 補強科學計算（Jumper）、AI 編碼（Adler）、模型訓練（Pritzel）、安全/經濟（FT 經濟學家）等多方向縱深 | 🟢 訊號 > 實質：對模型能力直接拉抬有限（Claude 已寫 80–90% 程式碼），真正價值在招募飛輪與動能訊號（推論）|
+| **OpenAI** | 次要承接方 | 獲得一名 Google 頂尖研究員（6/23 SEJ 報導，姓名未具名）| 🟡 同步受惠於 Google 人才外流，規模小於 Anthropic |
+
+**關鍵判讀（推論）：**
+- 人才流向是「市場相信前沿在哪裡」的領先指標；連續多波頂尖人才選 Anthropic，本身會自我強化（好的人吸引更好的人）。
+- 但對 Anthropic 發展，近期真正的變數是政策與地緣風險（[[topics/anthropic-government-policy]] Fable 出口管制、[[topics/anthropic-business]] 阿里巴巴蒸餾攻擊指控），人才流入屬錦上添花，量級遠小於這些風險。
+- 人才流動為**雙向洗牌**（Google 同期亦失人至 OpenAI），非單向崩塌。
+
+## 時序
+
+### 2026-06-25
+- FT 報導 Anthropic 新聘一位對「人類長期存亡」有爭議觀點的經濟學家，引發 AI 安全社群討論。（ref: https://www.ft.com/content/bb04671c-4377-4231-96ef-0f8e57ed5d1b）
+- The Information：Google 重組 AI 編碼突擊隊以追趕 Anthropic。（ref: https://www.theinformation.com/articles/google-revamps-new-ai-coding-strike-team-amid-struggle-catch-anthropic）
+
+### 2026-06-24
+- Bloomberg：Google DeepMind 確認再失兩名研究員至 Anthropic——Jonas Adler（AI 編碼）、Alexander Pritzel（訓練）。（ref: https://www.bloomberg.com/news/articles/2026-06-24/google-poised-to-lose-two-more-high-profile-ai-staffers-to-anthropic）
+
+### 2026-06-23
+- Barron's / SEJ：Google 同週失去兩名頂尖 AI 研究員，分別轉投 OpenAI 與 Anthropic；Alphabet 股價受影響。（ref: https://www.barrons.com/articles/alphabet-stock-jumper-deepmind-anthropic-3242f738）（ref: https://www.searchenginejournal.com/google-loses-two-top-ai-researchers-to-openai-anthropic/580201/）
+
+### 2026-06-19
+- Reuters：AlphaFold 共同創造者、2024 諾貝爾化學獎得主 John Jumper 離開 Google DeepMind 加入 Anthropic，被視為 Anthropic 向科學計算擴展的人才訊號；社群評「DeepMind 這週被掏空了」。繼 Noam Shazeer 之後再添頂尖人才。（ref: https://www.reuters.com/technology/us-scientist-john-jumper-leave-google-deepmind-anthropic-2026-06-19/）
+
+## 相關實體
+
+- [[entities/john-jumper]] — 諾貝爾獎得主，DeepMind → Anthropic（6/19）
+- [[entities/andrej-karpathy]] — 近期加入 Anthropic（待核實）
+- [[topics/competitor-landscape]] — Google / OpenAI 競品格局
+- [[topics/anthropic-business]] — Anthropic 商業與人才動態
+- [[topics/recursive-self-improvement]] — Claude 已寫 80–90% Anthropic 程式碼，人才邊際效益的背景

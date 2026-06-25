@@ -19,6 +19,7 @@ LLM 查詢此 wiki 時，**先讀這個檔案**找相關頁面，再讀具體頁
 - [[topics/community-tech-patterns]] — 新增 6 個工作流模式（Hook 任務守門、repo convention 注入、adversarial reviewer、multi-model pipeline 等）
 - [[topics/community-tech-discussions]] — 新增 3 個熱門討論（阿里巴巴蒸餾攻擊倫理、Anthropic 工程師孤獨感、HTML vs Markdown 格式選擇）
 - [[feature-radar]] — 新增 /rewind 指令、SDK client.system.message 兩個條目
+- [[topics/ai-talent-flow]] — 新建：跨公司 AI 人才流動追蹤，三家影響分析（DeepMind 流失、Anthropic/OpenAI 承接）
 
 ---
 
@@ -79,3 +80,4 @@ LLM 查詢此 wiki 時，**先讀這個檔案**找相關頁面，再讀具體頁
 | [[topics/community-tech-timeline]] | 🌐 社群 | monitoring | 社群技術應用趨勢完整時序（2026-04-25 至今），從 community-tech-patterns 拆分 |
 | [[topics/anthropic-business]] | 💼 商業 | ongoing | Anthropic 商業健康度：企業採用率 34.4%、17 倍訂閱補貼、PMF 觀察、Microsoft 退出風險 |
 | [[topics/recursive-self-improvement]] | 🏛️ 政策/安全 | ongoing | AI 遞歸自我改進與全球暫停呼籲：Claude 已寫 80-90% Anthropic 程式碼、工程師代碼產出 8×、全球 AI 煞車踏板呼籲 |
+| [[topics/ai-talent-flow]] | 💼 商業 | ongoing | AI 實驗室人才流動與對各公司影響：DeepMind 淨流失（Jumper/Adler/Pritzel）、Anthropic 主要承接、OpenAI 次要承接 |

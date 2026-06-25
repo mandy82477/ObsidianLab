@@ -364,6 +364,21 @@ window.WIKI_DATA = {
       "latestHeadline": "[授權測試] Mythos 情報機構合作測試發現機密系統漏洞：AP News 報導 Anthropic Mythos 在與美國情報機構的正式合作測試中，數小時內發現美國機密系統漏洞；美國官員明確區分「發現」與「利用」，強調屬授權防禦評估；此條目與 2026-06-22 Security Affairs「入侵」框架構成互"
     },
     {
+      "id": "ai-talent-flow",
+      "pageType": "topic",
+      "name": "AI 實驗室人才流動",
+      "entityType": "",
+      "status": "ongoing",
+      "domain": "💼 商業",
+      "pill": "active",
+      "firstSeen": "",
+      "startDate": "2026-06-19",
+      "lastUpdated": "2026-06-25",
+      "lastNewsUpdate": "2026-06-25",
+      "summary": "2026-06-24，Google DeepMind 再失兩名頂尖研究員——Jonas Adler（AI 編碼）與 Alexander Pritzel（訓練）確認加入 Anthropic，Bloomberg 標題直指這是繼諾貝爾獎得主 John Jumper（6/19）後的「再一波」（two more）。同日 The …",
+      "latestHeadline": "FT 報導 Anthropic 新聘一位對「人類長期存亡」有爭議觀點的經濟學家，引發 AI 安全社群討論。（ref: https://www.ft.com/content/bb04671c-4377-4231-96ef-0f8e57ed5d1b）"
+    },
+    {
       "id": "anthropic-business",
       "pageType": "topic",
       "name": "﻿# Anthropic 商業健康度",

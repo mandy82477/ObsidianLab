@@ -3,6 +3,14 @@
 Append-only 紀錄。每次 ingest、query 或 lint 都在此追加一條。
 格式：`## [YYYY-MM-DD] 類型 | 說明`
 
+## 2026-06-25 Manual | 新建 topics/ai-talent-flow.md
+
+- 觸發：使用者要求整理「AI 人才流動對各公司的影響」（跨公司視角，非 Anthropic 單一中心）
+- 新增頁面：`wiki/topics/ai-talent-flow.md`（狀態 ongoing，領域 💼 商業）
+- 資料來源：news/2026-06-19 ~ 06-25 既有日報（Jumper、Adler、Pritzel、Google→OpenAI、FT 經濟學家）
+- 核心區塊：「對各公司的影響」三家對照表（Google DeepMind 淨流失 / Anthropic 主要承接 / OpenAI 次要承接）
+- 同步：index.md 新增 topic 列 + 近期異動；推論均標注「（推論）」
+
 ## 2026-06-25 Ingest | news/2026-06-25.md（74 則）
 
 - 來源日報：`news/2026-06-25.md`（74 則，6/6 來源；Reddit 429 rate limit 部分條目，仍有 15 筆）
