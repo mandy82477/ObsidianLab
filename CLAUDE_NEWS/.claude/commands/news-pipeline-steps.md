@@ -84,13 +84,12 @@ PYTHON -m news_aggregator.main --gather-only [--date TARGET_DATE]
 ```
 
 3. 生成完成後，寫入 `news/TARGET_DATE.md`（完整 Markdown）
-4. 用 Bash git push：
+4. 用 Bash git 暫存並 commit（**先不 push**，本次所有變更於 Step 5 統一推送，避免多次 push 觸發 Pages 部署並發競爭）：
 ```
 git -C REPO_ROOT add news/TARGET_DATE.md
 git -C REPO_ROOT commit -m "news: daily digest TARGET_DATE"
-git -C REPO_ROOT push
 ```
-- 若失敗，停止並回報錯誤，不繼續後續步驟
+- 若 commit 失敗，停止並回報錯誤，不繼續後續步驟
 
 ---
 
@@ -107,14 +106,13 @@ git -C REPO_ROOT push
 
 ---
 
-## Step 3：推送 Wiki 變更
+## Step 3：Commit Wiki 變更（不 push）
 
-用 Bash 執行：
+用 Bash 執行（**先不 push**，於 Step 5 統一推送）：
 
 ```
 git -C REPO_ROOT add wiki/
 git -C REPO_ROOT commit -m "wiki: auto-ingest TARGET_DATE"
-git -C REPO_ROOT push
 ```
 
 - 若 wiki 無任何變更，跳過 commit，繼續 Step 4
@@ -133,15 +131,21 @@ PYTHON REPO_ROOT\scripts\build_web.py
 
 ---
 
-## Step 5：推送 Web 變更
+## Step 5：Commit Web 並統一推送（單一 push）
 
-用 Bash 執行：
+先 commit web 變更，再用**單一 git push** 一次推送本次所有 commit（news + wiki + web）。
+
+**為何單一 push：** 每次 `git push` 都會觸發一個 GitHub Pages 部署。分多次 push 時，多個部署會互相搶佔（concurrency race），最後關鍵的 web 部署可能被取消或失敗，導致線上停留舊版而 pipeline 無從得知。一次推送 = 一個部署 = 無 race。
 
 ```
 git -C REPO_ROOT add web_reader/
 git -C REPO_ROOT commit -m "web: rebuild TARGET_DATE"
+# 統一推送本次所有 commit（一次 push 只觸發一個 Pages 部署）
 git -C REPO_ROOT push
 ```
+
+- 若 web build 無變更，仍須執行 `git -C REPO_ROOT push` 推送先前的 news / wiki commit
+- 若 push 失敗，回報錯誤並在 Step 6 log 記錄 `Push FAILED`
 
 ---
 
@@ -159,15 +163,15 @@ REPO_ROOT\src\logs\task_scheduler.log
 [DATE TIME] === Agent pipeline start (TARGET_DATE) ===
 [DATE TIME] Aggregator OK
 [DATE TIME] Wiki ingest OK
-[DATE TIME] Wiki push done
 [DATE TIME] Building web reader...
-[DATE TIME] Web push done
+[DATE TIME] Single push done (news + wiki + web)
 [DATE TIME] === Pipeline complete (agent) ===
 ```
 
 - Step 1 失敗時，寫 `Aggregator FAILED - stopping`，之後不繼續
 - Step 2 失敗時，寫 `Wiki ingest FAILED`
-- Step 4 失敗時，寫 `build_web FAILED - skipping web push`
+- Step 4 失敗時，寫 `build_web FAILED - pushing news/wiki only`
+- Step 5 push 失敗時，寫 `Push FAILED`
 - 時間戳使用系統當前時間（`Get-Date` 或 `date` 指令取得），格式 `[週X YYYY/MM/DD HH:MM:SS.SS]`
 
 ---
@@ -180,9 +184,9 @@ REPO_ROOT\src\logs\task_scheduler.log
 |------|------|
 | Step 1 新聞聚合 | ✅ / ❌ |
 | Step 2 Wiki Ingest | ✅ / ❌ |
-| Step 3 Wiki 推送 | ✅ / ⏭️ 無變更 / ❌ |
+| Step 3 Wiki Commit | ✅ / ⏭️ 無變更 / ❌ |
 | Step 4 Web 建置 | ✅ / ❌ |
-| Step 5 Web 推送 | ✅ / ❌ |
+| Step 5 統一推送（news+wiki+web） | ✅ / ❌ |
 | Step 6 Log 寫入 | ✅ / ❌ |
 | 目標日期 | TARGET_DATE |
 
@@ -193,6 +197,7 @@ REPO_ROOT\src\logs\task_scheduler.log
 - 所有 Bash 指令使用絕對路徑，不依賴 PATH 環境變數
 - Step 1 失敗時停止整個 pipeline
 - Step 2（wiki ingest）失敗時記錄並繼續 Step 4
-- Step 4 失敗時跳過 Step 5
+- Step 4（web build）失敗時跳過 web commit，但仍須執行 Step 5 的統一 push（推送已完成的 news / wiki commit）
+- **所有 git push 集中在 Step 5 一次完成**；中途步驟（1b、3）一律只 commit 不 push，避免 Pages 部署並發競爭
 - **Step 6 log 寫入必須執行**，即使前面步驟失敗也不能跳過
 - 繁體中文輸出
