@@ -1,0 +1,213 @@
+{
+  "date": "2026-06-25",
+  "generatedAt": "2026-06-25 22:50 UTC",
+  "articleCount": 74,
+  "sourceCount": "6/6 | **文章數：** 74 | **更新時間：** 2026-06-25 22:50 UTC",
+  "bulletin": "",
+  "topStories": [],
+  "techUpdates": [
+    {
+      "title": "[anthropics/claude-code] v2.1.191",
+      "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.191",
+      "source": "GitHub / anthropics/claude-code",
+      "time": "06/24 21:58",
+      "sentiment": "",
+      "body": "新增 `/rewind` 指令，支援從 `/clear` 執行前的任一節點恢復對話；同步修正 streaming 回應時捲軸自動跳至底部的 UX 問題，提升長輸出閱讀體驗。",
+      "focusTags": [
+        "[新工具]"
+      ]
+    },
+    {
+      "title": "[anthropics/anthropic-sdk-typescript] sdk: v0.106.0",
+      "url": "https://github.com/anthropics/anthropic-sdk-typescript/releases/tag/sdk-v0.106.0",
+      "source": "GitHub / anthropics/anthropic-sdk-typescript",
+      "time": "06/24 18:48",
+      "sentiment": "",
+      "body": "新增 `system.message` 支援，完整 changelog 可見官方 GitHub compare 頁面。",
+      "focusTags": [
+        "[新工具]"
+      ]
+    },
+    {
+      "title": "[anthropics/anthropic-sdk-python] v0.112.0",
+      "url": "https://github.com/anthropics/anthropic-sdk-python/releases/tag/v0.112.0",
+      "source": "GitHub / anthropics/anthropic-sdk-python",
+      "time": "06/24 18:45",
+      "sentiment": "",
+      "body": "新增 `system.message` 支援，與 TypeScript SDK 同版次對齊，維持跨語言一致性。",
+      "focusTags": [
+        "[新工具]"
+      ]
+    }
+  ],
+  "discussions": [
+    {
+      "title": "Anthropic says Alibaba illicitly extracted Claude AI model capabilities",
+      "url": "https://www.reuters.com/world/china/anthropic-says-alibaba-illicitly-extracted-claude-ai-model-capabilities-2026-06-24/",
+      "source": "Hacker News",
+      "time": "06/24 19:48 UTC 😤",
+      "sentiment": "",
+      "body": "HN score 605 的高熱討論。多數評論批評「蒸餾攻擊」的定性，認為援引公開資料訓練不應定性為攻擊，部分人指出 Anthropic 自身也在使用公開資料訓練模型。",
+      "focusTags": [
+        "[重大事件]"
+      ]
+    },
+    {
+      "title": "Did anyone else notice 4.7 burns way more tokens than 4.6? I measured it",
+      "url": "https://www.reddit.com/r/ClaudeAI/comments/1ufanmj/did_anyone_else_notice_47_burns_way_more_tokens/",
+      "source": "Reddit / r/ClaudeAI",
+      "time": "06/25 05:51 UTC 🤔",
+      "sentiment": "",
+      "body": "使用者實測 Opus 4.7 的 token 消耗明顯高於 4.6，在相同工作量下產生更多輸出。討論涉及 extended thinking 的隱性成本與用量控制策略。",
+      "focusTags": []
+    },
+    {
+      "title": "I made a Claude Code hook that ensures the WHOLE task is done",
+      "url": "https://www.reddit.com/r/ClaudeAI/comments/1uf9ubb/i_made_a_claude_code_hook_that_ensures_the_whole/",
+      "source": "Reddit / r/ClaudeAI",
+      "time": "06/25 05:20 UTC 😊",
+      "sentiment": "",
+      "body": "作者分享 pre-completion hook，防止 Claude Code 使用模糊語句（\"separate fix\"、\"if it bites\"）提前結束任務，據稱每日觸發數十次，有實際使用數據。",
+      "focusTags": []
+    },
+    {
+      "title": "I run Claude, Codex, and ChatGPT in a single pipeline",
+      "url": "https://www.reddit.com/r/ClaudeAI/comments/1uf9n1r/i_run_claude_codex_and_chatgpt_in_a_single/",
+      "source": "Reddit / r/ClaudeAI",
+      "time": "06/25 05:12 UTC 🔧",
+      "sentiment": "",
+      "body": "作者分享三模型協作架構：Claude Code 負責架構規劃、Codex 自主建構功能、ChatGPT 處理快速網路查詢與 prompt 迭代，並說明模型間交接的具體技巧。",
+      "focusTags": []
+    },
+    {
+      "title": "Claude Code vs Cursor vs Copilot for Real Production Work (2026)",
+      "url": "https://dev.to/umesh_malik/claude-code-vs-cursor-vs-copilot-for-real-production-work-2026-3ne6",
+      "source": "dev.to / #claudecode",
+      "time": "06/25 02:08 UTC 😊",
+      "sentiment": "",
+      "body": "工程師 2026 年實戰比較：Copilot 適合保持流暢編碼節奏、Cursor 適合 IDE 內的 agentic 編輯、Claude Code 適合全任務自主執行與 CI 整合，推薦按場景混用。",
+      "focusTags": []
+    },
+    {
+      "title": "Is Claude Code Auto Mode Reliable in Production?",
+      "url": "https://dev.to/umesh_malik/is-claude-code-auto-mode-reliable-in-production-a-field-report-5c04",
+      "source": "dev.to / #claudecode",
+      "time": "06/25 02:08 UTC 😐",
+      "sentiment": "",
+      "body": "實測報告：Auto Mode 在有 guardrail 的環境下可以生產級使用，但仍需閱讀 diff。作者連跑一週，給出「夠可靠但需人工把關」的結論。",
+      "focusTags": []
+    },
+    {
+      "title": "Made a Claude Code plugin that learns your repo's conventions",
+      "url": "https://www.reddit.com/r/ClaudeAI/comments/1uf9u9d/made_a_claude_code_plugin_that_learns_your_repos/",
+      "source": "Reddit / r/ClaudeAI",
+      "time": "06/25 05:20 UTC 😊",
+      "sentiment": "",
+      "body": "開發者分享能自動萃取 repo coding convention 並在每次編輯前注入 context 的 plugin（支援 TS/Ruby/Python），解決 Claude Code 不熟悉特定 codebase 慣例的痛點。",
+      "focusTags": []
+    },
+    {
+      "title": "Anthropic Lead: HTML Increasingly Better Than Markdown at Keeping Humans Engaged",
+      "url": "https://www.infoq.com/news/2026/06/anthropic-html-markdown-agent/",
+      "source": "Google News / infoq.com",
+      "time": "06/24 15:11 UTC 🤔",
+      "sentiment": "",
+      "body": "Anthropic 內部人員公開表態：在 agentic loop 中，HTML 輸出比 Markdown 更能維持人類的注意力與互動，暗示未來 Claude 回應格式可能進一步向 HTML 靠攏。",
+      "focusTags": []
+    },
+    {
+      "title": "Claude writes 80% of the code, yet Anthropic engineers are feeling increasingly isolated",
+      "url": "https://eu.36kr.com/en/p/3867737936548872",
+      "source": "Google News / 36Kr",
+      "time": "06/24 18:04 UTC 😤",
+      "sentiment": "",
+      "body": "36Kr 報導 Anthropic 內部工程文化矛盾：Claude 已負責 80% 程式碼撰寫，但部分工程師感到與開發過程脫節、職業認同感下降。",
+      "focusTags": []
+    },
+    {
+      "title": "EU Held Talks With White House on Anthropic After Mythos Cutoff",
+      "url": "https://www.bloomberg.com/news/articles/2026-06-25/eu-held-talks-with-white-house-on-anthropic-after-mythos-cutoff",
+      "source": "Google News / Bloomberg",
+      "time": "06/25 04:51 UTC 🤔",
+      "sentiment": "",
+      "body": "Bloomberg 報導歐盟已就 Mythos 模型出口管制與白宮展開直接對話，顯示此事件已從美國內政升級為跨大西洋科技外交議題。",
+      "focusTags": [
+        "[持續追蹤]"
+      ]
+    },
+    {
+      "title": "I Let Claude Code Run a Month of My Business Books",
+      "url": "https://dev.to/kenimo49/i-let-claude-code-run-a-month-of-my-business-books-it-reconciled-200-transactions-and-513d",
+      "source": "dev.to / #claudecode",
+      "time": "06/25 05:00 UTC 😊",
+      "sentiment": "",
+      "body": "實測：Claude Code 對 200 筆會計交易進行月結，僅錯誤分類 11 筆（誤差 5.5%），對小型企業主可減少大量手動對帳時間。",
+      "focusTags": []
+    },
+    {
+      "title": "Anthropic has hired an economist with interesting views on human survival",
+      "url": "https://www.ft.com/content/bb04671c-4377-4231-96ef-0f8e57ed5d1b",
+      "source": "Google News / Financial Times",
+      "time": "06/25 04:50 UTC 🤔",
+      "sentiment": "",
+      "body": "FT 報導 Anthropic 新聘一位對「人類長期存亡」有爭議觀點的經濟學家，引發 AI 安全社群對公司思想多樣性與 AI existential risk 立場的討論。",
+      "focusTags": []
+    }
+  ],
+  "billing": [
+    {
+      "title": "Claude Code Usage Limit Hit Too Fast: Why + 7 Fixes (2026)",
+      "url": "https://dev.to/owen_fox/claude-code-usage-limit-hit-too-fast-why-7-fixes-2026-1bfc",
+      "source": "dev.to / #claudecode",
+      "time": "06/24 23:28",
+      "sentiment": "",
+      "body": "技術分析：Opus 消耗為 Sonnet 的數倍，sub-agent 會增加 7 倍 token 用量，MCP 吃掉 33% context。文章提供 `/usage` 指令查看用量及 7 種節流策略，適合用量達限的 Max 訂閱者參考。",
+      "focusTags": []
+    }
+  ],
+  "focus": [
+    {
+      "tag": "[重大事件]",
+      "text": "Anthropic 正式指控阿里巴巴使用約 25,000 個假帳號、執行 2,880 萬次 Claude 對話，進行史上最大規模 AI 模型蒸餾攻擊，導致阿里巴巴股價單日下跌逾 33%，事件引發 US-China AI 競爭激烈討論。",
+      "ref_urls": [
+        "https://www.reuters.com/world/china/anthropic-says-alibaba-illicitly-extracted-claude-ai-model-capabilities-2026-06-24/",
+        "https://dev.to/tekmag/anthropic-vs-alibaba-the-largest-known-ai-model-distillation-attack-288-million-claude-25ol"
+      ]
+    },
+    {
+      "tag": "[持續追蹤]",
+      "text": "Claude Fable 5 出口管制局勢持續：白宮轉由 Anthropic 聯合創辦人 Tom Brown 接手與 Trump 政府談判，據報 Dario Amodei 已退出相關會議；EU 亦介入與白宮就 Mythos 管制展開對話，預測市場最新中位數解封日期為 7 月 9 日。",
+      "ref_urls": [
+        "https://www.wired.com/story/the-trump-white-house-is-over-anthropics-dario-amodei/",
+        "https://www.bloomberg.com/news/articles/2026-06-25/eu-held-talks-with-white-house-on-anthropic-after-mythos-cutoff",
+        "https://www.lesswrong.com/posts/zhRe3tdBpsZbGCdDK/world-modeling-the-us-vs-anthropic-standoff-on-claude-fable"
+      ]
+    },
+    {
+      "tag": "[重大事件]",
+      "text": "Google DeepMind 人才持續流向 Anthropic：Jonas Adler（AI 編碼）與 Alexander Pritzel（訓練）確認加入，Google 同步重組 AI 編碼部隊應對競爭壓力。",
+      "ref_urls": [
+        "https://www.bloomberg.com/news/articles/2026-06-24/google-poised-to-lose-two-more-high-profile-ai-staffers-to-anthropic",
+        "https://www.theinformation.com/articles/google-revamps-new-ai-coding-strike-team-amid-struggle-catch-anthropic"
+      ]
+    },
+    {
+      "tag": "[新工具]",
+      "text": "Claude Code v2.1.191 正式釋出，新增 `/rewind` 指令可從 `/clear` 前的對話節點恢復，並修正 streaming 時捲軸跳回底部的問題；TypeScript SDK v0.106.0 與 Python SDK v0.112.0 同步更新，新增 `system.message` 支援。",
+      "ref_urls": [
+        "https://github.com/anthropics/claude-code/releases/tag/v2.1.191",
+        "https://github.com/anthropics/anthropic-sdk-typescript/releases/tag/sdk-v0.106.0",
+        "https://github.com/anthropics/anthropic-sdk-python/releases/tag/v0.112.0"
+      ]
+    },
+    {
+      "tag": "[社群趨勢]",
+      "text": "Notion 正式整合 Claude Agents 與 Cursor 作為外部 agent，進入工作區協作流程，為 Claude 在企業生產力工具的落地提供新路徑。",
+      "ref_urls": [
+        "https://letsdatascience.com/news/notion-integrates-claude-agents-into-workspaces-f0ad6afb"
+      ]
+    }
+  ],
+  "sourceStatus": [],
+  "preview": "[anthropics/claude-code] v2.1.191"
+}
