@@ -2,24 +2,23 @@
 
 LLM 查詢此 wiki 時，**先讀這個檔案**找相關頁面，再讀具體頁面取得詳細資訊。
 
-**最後更新：** 2026-06-24
+**最後更新：** 2026-06-25
 ---
 
 ## 近期異動
 
-- [[entities/claude-tag]] — 新建：Slack-native AI 協作工具正式發布，Anthropic 內部 65% 程式碼由其生成
-- [[entities/fable-5]] — NSA 失去存取權；Legion 提告美國政府；LessWrong 預測 7/9 重新上線
-- [[entities/mythos]] — AP News 確認情報機構合作測試數小時內發現機密系統漏洞；中國 360 宣稱對標
-- [[entities/opus-4-8]] — 跨 API / Claude Code / Console 高錯誤率事件，Anthropic 調查中
-- [[entities/claude-code]] — v2.1.187：sandbox.credentials + 組織層級模型限制
-- [[topics/anthropic-government-policy]] — NSA 失去 Fable 存取、Legion 提告、白宮 vs Amodei 關係緊張、中國 360 競品
-- [[topics/ai-agent-safety]] — Mythos 情報機構測試：發現機密系統漏洞（官員強調未利用）
-- [[topics/anthropic-business]] — Railway 整合 Claude Code 沙盒；NSA 事件商業影響
-- [[topics/competitor-landscape]] — Reid Hoffman 批評 xAI；360 對標 Mythos
-- [[entities/pricing]] — 隱私政策更新（7/8 生效，身份驗證）；加州帳號歐元盜刷
-- [[entities/boris-cherny]] — 承認 AI 寫 100% 程式碼「正在變得有問題」，立場轉變
-- [[entities/dario-amodei]] — 白宮對 Amodei 關係趨緊（WIRED 報導）
-- [[feature-radar]] — 新增 Claude Tag、v2.1.187 條目
+- [[entities/claude-code]] — v2.1.191：/rewind 指令（從 /clear 前節點恢復 context）+ streaming 捲軸修正
+- [[entities/tom-brown]] — 新建：Anthropic 聯合創辦人，接管 Fable 5 與白宮的出口管制談判
+- [[entities/dario-amodei]] — 退出 Fable 5 白宮談判，由 Tom Brown 接管
+- [[entities/opus-4-8]] — 第三方評測：vs Gemini 3.5 Flash，35.4 對 34.8 略輸（指令遵循失誤）
+- [[entities/opus-4-7]] — 使用者實測：4.7 比 4.6 在相同工作量下消耗更多 token
+- [[topics/anthropic-government-policy]] — Tom Brown 接管談判；EU 介入白宮對話；LessWrong 預測修正至 7/9
+- [[topics/anthropic-business]] — 阿里巴巴蒸餾攻擊指控（28.8M 對話，25K 假帳號）；Google 研究員加入；Notion 整合 Claude Agents
+- [[topics/competitor-landscape]] — 阿里巴巴蒸餾攻擊；Google 重組 AI 編碼部隊；Alphabet 股價下跌
+- [[topics/enterprise-tool-tracker]] — Notion 整合 Claude Agents 與 Cursor 作為外部 agent
+- [[topics/community-tech-patterns]] — 新增 6 個工作流模式（Hook 任務守門、repo convention 注入、adversarial reviewer、multi-model pipeline 等）
+- [[topics/community-tech-discussions]] — 新增 3 個熱門討論（阿里巴巴蒸餾攻擊倫理、Anthropic 工程師孤獨感、HTML vs Markdown 格式選擇）
+- [[feature-radar]] — 新增 /rewind 指令、SDK client.system.message 兩個條目
 
 ---
 
@@ -52,6 +51,7 @@ LLM 查詢此 wiki 時，**先讀這個檔案**找相關頁面，再讀具體頁
 | [[entities/cat-wu]] | person | 👤 人物 | active | Claude Code 產品負責人，「AI 下一步是主動性（proactivity）」論述 |
 | [[entities/andrej-karpathy]] | person | 👤 人物 | active（待核實）| 近期加入 Anthropic，CLAUDE.md 四條規則、「最小必要 context」費用控管原則 |
 | [[entities/fiona-fung]] | person | 👤 人物 | active | Anthropic 工程副總裁；「Claude Code 讓工程師更孤獨；coding 不再是瓶頸」論述（2026-06-22） |
+| [[entities/tom-brown]] | person | 👤 人物 | active（待核實）| Anthropic 聯合創辦人；2026-06-25 接管 Fable 5 出口管制與白宮談判 |
 | [[entities/dario-amodei]] | person | 👤 人物 | active | Anthropic CEO：政府監管立場、企業文化論述、Code with Claude 大會現場宣布速率政策 |
 | [[entities/chris-olah]] | person | 👤 人物 | active | Anthropic 共同創辦人、AI 可解釋性研究先驅；2026-05-26 梵蒂岡封論揭幕演講 |
 | [[entities/opencode]] | product | 🛠️ 工具/功能 | active（快速成長）| Claude Code 主要開源替代品，157K 開發者分流，OpenCode-power-pack 移植官方 11 個 skills |

@@ -3,10 +3,10 @@
 **狀態：** monitoring
 **領域：** 💼 商業
 **開始日期：** 2026-04
-**最後更新：** 2026-06-24
+**最後更新：** 2026-06-25
 
-> **最新競品動態**（2026-06-24）
-> Reid Hoffman（身兼 Anthropic + OpenAI 投資人）公開批評 Elon Musk，稱 xAI 為「一塌糊塗」，並警告政府處理 Anthropic 模型下架方式；中國安全公司 360 聲稱開發對標 Anthropic Mythos 的工具。
+> **最新競品動態**（2026-06-25）
+> Anthropic 正式指控阿里巴巴大規模模型蒸餾攻擊；Google 重組 AI 編碼 strike team 應對 Anthropic 競爭壓力，同時 Alphabet 股價因 DeepMind 人才出走持續下滑。
 
 ---
 
@@ -69,10 +69,11 @@ Claude Code 已成為 AI 輔助編碼的標竿產品，但競爭正快速升溫�
 - **既有基礎**：DeepClaude（聲稱降低 17 倍成本）、DeepSeek-based Claude Code clone（8,700 Stars）
 - **意義**：Claude Code 類產品已成為國家層面 AI 競爭的戰場；DeepSeek 轉向正面競爭標誌低成本替代生態進入下一階段
 
-### Alibaba Qwen3.7-Max
-- **狀態**：宣稱支援 Claude Code harness（2026-05-22）
-- **特點**：聲稱可持續自主運行 35 小時，直接瞄準 Claude Code 的長時間自主執行場景
-- **意義**：競品開始直接以「相容 Claude Code harness」作為賣點，顯示 Claude Code 已建立足夠影響力讓競品主動相容
+### Alibaba Qwen3.7-Max / Alibaba 蒸餾攻擊
+- **狀態**：遭 Anthropic 法律指控（2026-06-25）
+- **特點**：Qwen3.7-Max 聲稱可持續自主運行 35 小時，直接瞄準 Claude Code 的長時間自主執行場景
+- **重大事件**（2026-06-25）：Anthropic 正式指控阿里巴巴使用約 25,000 個假帳號、執行 2,880 萬次 Claude 對話，進行大規模 AI 模型蒸餾攻擊，竊取 Claude 能力輸入自家模型；阿里巴巴股價單日下跌逾 33%；Reuters、Bloomberg、WSJ、BBC、FT 多家媒體同步報導
+- **意義**：競品行為從「公開宣稱相容」升級至「非法蒸餾」層面，Anthropic 首次採取法律手段直接對中國科技巨頭提出正式指控，開創 AI 能力保護的新型法律戰場
 
 ---
 
@@ -107,6 +108,11 @@ Claude Code 已成為 AI 輔助編碼的標竿產品，但競爭正快速升溫�
 ---
 
 ## 時序
+
+### 2026-06-25
+- **[重大法律事件] Anthropic 正式指控阿里巴巴 AI 模型蒸餾攻擊，阿里股價單日跌逾 33%**：Anthropic 指控阿里巴巴使用約 25,000 個假帳號、執行 2,880 萬次 Claude 對話，系統性竊取 Claude 模型能力用於訓練自家模型；是 AI 產業首起具名大規模模型蒸餾攻擊指控，Reuters、Bloomberg、WSJ、BBC、FT、CNBC、QZ 多媒體同步報導，HN score 605（Reuters https://www.reuters.com/world/china/anthropic-says-alibaba-illicitly-extracted-claude-ai-model-capabilities-2026-06-24/）
+- **[人才競爭] Google 失去 AI 編碼研究員至 Anthropic，同步重組 AI 編碼 strike team**：Jonas Adler（AI 編碼）與 Alexander Pritzel（AI 訓練）確認離開 Google 加入 Anthropic；Google 因應競爭壓力重組 AI 編碼精銳團隊；The Information 獨家報導 Google 內部重建計畫（Bloomberg https://www.bloomberg.com/news/articles/2026-06-24/google-poised-to-lose-two-more-high-profile-ai-staffers-to-anthropic；The Information https://www.theinformation.com/articles/google-revamps-new-ai-coding-strike-team-amid-struggle-catch-anthropic）
+- **[Alphabet 市值壓力] Alphabet 股價因 DeepMind 人才持續出走 Anthropic 而下滑**：CNBC 報導 Alphabet 股價受 AI 人才流失影響持續下跌，DeepMind 研究員轉向 Anthropic 的趨勢帶來資本市場壓力（CNBC https://www.cnbc.com/video/2026/06/24/alphabet-shares-slide-as-ai-talent-departs-deepmind-for-anthropic.html）
 
 ### 2026-06-24
 - **[投資人表態] Reid Hoffman 批評 Elon Musk，稱 xAI「一塌糊塗」**：Reid Hoffman（身兼 Anthropic 與 OpenAI 投資人）在 Fortune 專訪中公開批評 Elon Musk，稱 xAI 為「一塌糊塗（a mess）」，並警告政府處理 Anthropic 模型下架的方式；此表態明確劃清 Anthropic 與 xAI 生態的投資人立場分野（Fortune https://fortune.com/2026/06/24/reid-hoffman-spacex-musk-openai-anthropic-gen-z-mistake/）

@@ -4,7 +4,7 @@
 僅收錄官方 changelog、release note 或官方公告來源；社群工具見 [[topics/community-tech-tools]]。
 每次 ingest 後由 LLM 維護：新增功能、更新熱度、補充社群回饋。
 
-**最後更新：** 2026-06-24
+**最後更新：** 2026-06-25
 
 ---
 
@@ -37,6 +37,8 @@
 
 | 功能 | 發布日期 | 熱度 | 試用價值 | 狀態 |
 |------|----------|------|----------|------|
+| **`/rewind` 指令**（Claude Code，從 `/clear` 前節點恢復 context） | 2026-06-25 | 🔥🔥🔥 | ⚡ 有條件推薦 | 正式發布 |
+| **SDK `client.system.message`**（TypeScript v0.106.0 / Python v0.112.0） | 2026-06-25 | 🔥🔥 | ⚡ 有條件推薦 | 正式發布 |
 | **Claude Tag**（Slack-native AI 協作工具，65% Anthropic 程式碼由其生成） | 2026-06-24 | 🔥🔥🔥 | ⚡ 有條件推薦 | 正式發布 |
 | **sandbox.credentials + 組織模型限制**（Claude Code v2.1.187） | 2026-06-24 | 🔥🔥🔥 | ⚡ 有條件推薦 | 正式發布 |
 | **MCP CLI 認證指令**（`claude mcp login/logout`，v2.1.186） | 2026-06-22 | 🔥🔥 | ⚡ 有條件推薦 | 正式發布 |
@@ -84,6 +86,41 @@
 ---
 
 ## 🆕 最新功能（2026-06）
+
+### /rewind 指令（Claude Code）
+**發布：** 2026-06-25（v2.1.191）| **熱度：** 🔥🔥🔥 | **試用價值：** ⚡ 有條件推薦 | **狀態：** 正式發布
+
+**是什麼：** 在 Claude Code session 中，從 `/clear` 執行前的任一對話節點恢復 context，無需重新描述需求。
+
+**為何熱：** 解決「誤下 `/clear` 失去所有對話背景」的常見痛點，讓長工作階段的上下文管理更具容錯性。
+
+**快速上手：**
+```
+/rewind
+```
+選擇要恢復的歷史節點後，對話 context 回到該時間點。
+
+**注意事項：** 僅能回溯至同一 session 內的歷史節點，不跨 session。
+
+---
+
+### SDK client.system.message（TypeScript / Python）
+**發布：** 2026-06-25（TS v0.106.0 / Python v0.112.0）| **熱度：** 🔥🔥 | **試用價值：** ⚡ 有條件推薦 | **狀態：** 正式發布
+
+**是什麼：** Anthropic SDK 的 `client` 物件新增 `system.message` 支援，開發者可在 client 層統一注入系統訊息，無需每次呼叫時手動傳遞。
+
+**為何熱：** 簡化多輪對話或 agentic loop 中系統提示的管理，TS 與 Python 雙 SDK 同步發布，減少重複程式碼。
+
+**快速上手：**
+```python
+# Python v0.112.0 / TypeScript v0.106.0
+client = anthropic.Anthropic()
+# 透過 client.system.message 統一注入系統訊息
+```
+
+**注意事項：** TS v0.106.0 與 Python v0.112.0 同日發布，功能對齊；具體 API 介面細節見官方 changelog。
+
+---
 
 ### Claude Tag（Slack-native AI 隊友）
 **發布：** 2026-06-24（正式發布）| **熱度：** 🔥🔥🔥 | **試用價值：** ⚡ 有條件推薦 | **狀態：** 正式發布

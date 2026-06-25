@@ -4,8 +4,8 @@
 **狀態：** active
 **領域：** 🤖 模型
 **首次出現：** 2026-05-28
-**最後更新：** 2026-06-24
-**最後新聞更新：** 2026-06-24
+**最後更新：** 2026-06-25
+**最後新聞更新：** 2026-06-25
 
 > **最新服務狀態**（2026-06-24）
 > Claude Opus 4.8 出現跨 API、Claude Code 與 Console 的高錯誤率事件（elevated errors），Anthropic 正在調查中（dev.to）。
@@ -79,6 +79,7 @@ claude.ai 用戶現可調節 Claude 在任務上投入的努力程度，不再�
 - Fast Mode 降價受到廣泛歡迎
 
 ### 負面（待觀察）
+- ⚠️ **第三方對比評測失利（2026-06-24）**：RuntimeWire 對 Opus 4.8 與 Gemini 3.5 Flash 進行評測，最終分數 35.4 對 34.8 由 Gemini 略勝；Gemini 在四項任務贏三項。Claude 的失分主因是 messy-orders-to-json 任務中輸出含 Markdown code fence，違反 JSON-only 指令；分析師指出此為指令遵循失誤，非能力差距，HN score 3（低討論量，參考價值有限）
 - ⚠️ **跨平台高錯誤率事件（2026-06-24）**：Claude Opus 4.8 出現跨 API、Claude Code 與 Console 的高錯誤率，Anthropic 正在調查中（[dev.to](https://dev.to/damogallagher/claude-opus-48-is-seeing-elevated-errors-across-api-claude-code-and-console-1g9a)）；影響範圍較 6/22 更廣
 - ⚠️ **529 Overloaded 大規模事件（2026-06-21~22）**：Anthropic 官方確認 Opus 4.8（及 4.7、4.6、Sonnet 4.6）出現 elevated error rates；另有全球約 90 分鐘中斷；Max Plan 用戶反映自 06/21 起錯誤持續激增，coding tasks 與 Claude Code 受影響尤重（[cybersecuritynews.com](https://cybersecuritynews.com/anthropic-claude-ai-outage/)）
 - ⚠️ Reddit 部分用戶反映 4.8 引入奇怪的 "pecl scripts" 行為，強制使用自訂工具做簡單文件修改
@@ -120,6 +121,7 @@ claude.ai 用戶現可調節 Claude 在任務上投入的努力程度，不再�
 
 | 日期 | 事件 |
 |------|------|
+| 2026-06-24 | **第三方評測：Gemini 3.5 Flash 35.4 vs Opus 4.8 34.8 略勝**：RuntimeWire 對比評測中 Gemini 在四項任務贏三項；Claude 在 messy-orders-to-json 任務因輸出 Markdown code fence（違反 JSON-only 指令）失分；分析師評論失分屬指令遵循失誤，非能力差距（[runtimewire.com](https://runtimewire.com/article/head-to-head-anthropic-claude-opus-4-8-vs-google-gemini-3-5-flash)，HN score 3） |
 | 2026-06-24 | **跨平台高錯誤率事件**：Claude Opus 4.8 出現跨 API、Claude Code 與 Console 三個平台的高錯誤率（elevated errors），Anthropic 正在調查中（[dev.to](https://dev.to/damogallagher/claude-opus-48-is-seeing-elevated-errors-across-api-claude-code-and-console-1g9a)）；範圍較 6/22 事件更廣，影響 Claude Code 工作流用戶 |
 | 2026-06-22 | **529 Overloaded 事件**：Anthropic 官方確認 Opus 4.8 出現 elevated error rates（HTTP 529）；另有全球 90 分鐘中斷，Max Plan 用戶反映自上週起錯誤激增（[cybersecuritynews.com](https://cybersecuritynews.com/anthropic-claude-ai-outage/)、HN score 可見） |
 | 2026-06-22 | **Quake 瀏覽器版程序生成關卡**：開發者以 GitHub Copilot + Claude Opus 4.8 配合 id Software 原始碼編譯 WebAssembly 版本，加入程序生成關卡支援（[leereilly.net](https://leereilly.net/quakelike/)）；HN score 3 |

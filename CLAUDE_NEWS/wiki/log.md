@@ -3,6 +3,27 @@
 Append-only 紀錄。每次 ingest、query 或 lint 都在此追加一條。
 格式：`## [YYYY-MM-DD] 類型 | 說明`
 
+## 2026-06-25 Ingest | news/2026-06-25.md（74 則）
+
+- 來源日報：`news/2026-06-25.md`（74 則，6/6 來源；Reddit 429 rate limit 部分條目，仍有 15 筆）
+- 更新頁面：
+  - `wiki/entities/claude-code.md`：v2.1.191（/rewind 指令 + streaming 捲軸修正）
+  - `wiki/entities/opus-4-8.md`：第三方評測 vs Gemini 3.5 Flash（35.4 對 34.8，略輸）
+  - `wiki/entities/opus-4-7.md`：使用者實測 4.7 比 4.6 消耗更多 token
+  - `wiki/entities/dario-amodei.md`：退出 Fable 5 白宮談判，由 Tom Brown 接管
+  - `wiki/entities/tom-brown.md`：新建（聯合創辦人，接管 Fable 5 談判，待核實）
+  - `wiki/topics/anthropic-government-policy.md`：Tom Brown 接管、EU 介入白宮對話、LessWrong 預測修正至 7/9
+  - `wiki/topics/anthropic-business.md`：阿里巴巴蒸餾攻擊指控（28.8M/25K 假帳號）、Google 研究員加入、Notion 整合、Intercept 公益合作、全球數據中心計畫、爭議性經濟學家聘雇
+  - `wiki/topics/competitor-landscape.md`：阿里巴巴蒸餾攻擊、Google 重組 AI 編碼部隊、Alphabet 股價
+  - `wiki/topics/enterprise-tool-tracker.md`：Notion 整合 Claude Agents 與 Cursor
+  - `wiki/topics/community-tech-patterns.md`：6 個新工作流模式（Hook 任務守門、repo convention 注入、adversarial reviewer、multi-model pipeline、Claude Code 商業自動化、開發前問清楚）
+  - `wiki/topics/community-tech-discussions.md`：3 個新熱門討論（阿里巴巴蒸餾倫理、工程師孤獨感、HTML vs Markdown）；移除過期 🌸落幕條目
+  - `wiki/feature-radar.md`：新增 /rewind 指令（🔥🔥🔥 / ⚡）、SDK client.system.message（🔥🔥 / ⚡）
+  - `wiki/index.md`：新增 tom-brown.md；近期異動更新
+- feature-radar 新增：/rewind 指令（Claude Code v2.1.191）、SDK client.system.message（TS v0.106.0 / Python v0.112.0）
+- 新增頁面：`wiki/entities/tom-brown.md`
+- 呈現品質審查：✅ 全部通過（12 頁）；community-tech-discussions.md ⚠️ 已修復（移除過期條目）
+
 ## 2026-06-24 Ingest | news/2026-06-24.md（66 則）
 
 - 來源日報：`news/2026-06-24.md`（66 則，6/6 來源全數正常）

@@ -3,11 +3,11 @@
 **狀態：** monitoring
 **領域：** 🌐 社群
 **開始日期：** 2026-04-25
-**最後更新：** 2026-06-24
-**最後新聞更新：** 2026-06-24
+**最後更新：** 2026-06-25
+**最後新聞更新：** 2026-06-25
 
-> **最新工作流模式**（2026-06-24）
-> 社群發布多篇 multi-agent 工作流轉型指南，核心共識：並行 agent 的根本前提是每個 agent 擁有獨立工作空間（worktree/容器）；Lean 4 嚴格型別系統下的 vibe coding 實測補充：AI 主要盲點是資源限制而非邏輯錯誤，型別約束可填補此缺口。
+> **最新工作流模式**（2026-06-25）
+> 五個新模式同日出現：pre-completion hook 防止 Claude Code 模糊結束任務；repo 慣例注入 plugin 解決 codebase 陌生問題；三模型協作架構（Claude + Codex + ChatGPT）明確分工；Adversarial Claude Reviewer 對抗性審查迴圈；以及「先 interview 再寫 code」任務前需求確認模式。
 
 ---
 
@@ -26,12 +26,12 @@
 | **Multi-agent 架構** | Claude Squad、Speculative Parallelism | ✅ 成熟 | orchestrator 分派 + 獨立 git worktree，防答案塌縮 |
 | **Skills 設計** | 知識框架化、流程 skill 化 | ✅ 成熟 | description 自動觸發，將書籍/流程封裝為可複用 skill |
 | **CLAUDE.md 管理** | 精簡規則策略、Self-improving Rules、防腐爛機制 | ✅ 成熟 | 以「規則」非「建議」撰寫，CI 攔截違反架構 PR |
-| **Hooks 與自動化** | PostToolUse 稽核、Git Hooks 品質門、/goal Fire-and-Forget、deploy/migration 保護 | ✅ 成熟 | 強制執行 > CLAUDE.md 建議；Stop Hook 要求可驗證完成證明；CLAUDE.md 做偏好、Hooks 做邊界 |
+| **Hooks 與自動化** | PostToolUse 稽核、Git Hooks 品質門、/goal Fire-and-Forget、deploy/migration 保護、Pre-completion Hook | ✅ 成熟 | 強制執行 > CLAUDE.md 建議；Stop Hook 要求可驗證完成證明；CLAUDE.md 做偏好、Hooks 做邊界；Pre-completion Hook 防模糊結束 |
 | **模型使用策略** | 分層模型（Sonnet + Opus）、多模型路由 | ⚡ 活躍 | 依任務複雜度路由，節省 60% 用量；Dragoman 自動路由 |
 | **Token / 成本優化** | Prompt 精簡、MCP Code Execution、Token Bloat 對策 | ⚡ 活躍 | HTML→Markdown 降 80% token；npx vs CLI 路徑差異陷阱 |
 | **記憶與知識管理** | ltm Core Memory Packet、本機圖資料庫、NanoBrain | ⚡ 活躍 | 跨 session / 跨工具持久記憶；Leiden 圖譜減少 71 倍 token |
 | **Plugin / MCP 整合** | Plugin 反模式整理、Claude Code 作為 MCP 協調中心 | ⚡ 活躍 | 避免不必要 context 載入；Claude Code 主導 MCP 工具鏈協作 |
-| **多代理 PR Review** | 4-agent Code Review、對抗性審查工作流 | ⚡ 活躍 | 架構師代理協調 + 多廠商模型交叉審查，超越單模型 review |
+| **多代理 PR Review** | 4-agent Code Review、對抗性審查工作流、Adversarial Reviewer | ⚡ 活躍 | 架構師代理協調 + 多廠商模型交叉審查；對抗性審查者讀取真實 codebase 前移至計畫階段 |
 | **Agent 版本控制** | re_gent、Checkpoint Commits、ADR 注入 | ⏳ 新興 | /compact 後決策追溯；git history 作為 agent 共享 context |
 | **安全架構** | CLAUDE.md for K8s、語意層漂移 CI 測試、Trent 內嵌評估 | ⏳ 新興 | AI 加速開發下的系統性安全防線；CI 攔截語義退化 |
 | **跨環境 Agent 記憶** | Core Memory Packet、Agent 持續運作架構 | ⏳ 新興 | 跨編輯器 / 跨機器 / 跨模型的供應商中立記憶協定 |
@@ -42,6 +42,84 @@
 ---
 
 ## 技術彙整
+
+### 任務開始前先 Interview：讓 Claude Code 問問題再動手（2026-06-25）
+
+- **核心模式：** 在正式開始任何 agentic coding 任務前，強制 Claude Code 先向使用者提問澄清需求，確認方向後才開始執行；避免「方向錯誤」這個 agentic coding 中最昂貴的失誤
+- **實作方向：**
+  - 在 CLAUDE.md 或任務 prompt 的開頭指示 Claude：「在開始任何實作之前，先問我 3–5 個關鍵問題」
+  - 問題應覆蓋：目標邊界、技術偏好、現有限制、成功條件
+  - 收到完整回答後再啟動 agentic 工作流
+- **解決的問題：** Agentic coding 的最大成本不是 token，而是方向錯誤後的回滾重來；早期澄清可大幅縮短無效執行時間
+- **設計分層（推論）：** 此模式是「規格驅動開發」的最小化實作——對話式 spec 收集取代書面文件，適合輕量任務
+- **注意事項：** 過度提問會拖慢節奏；適用於需求模糊或跨多檔案變更的任務，簡單單一任務不必強制執行
+- **來源：** ["I Made Claude Code Interview Me Before Writing Code"](https://dev.to/florian_ilia/i-made-claude-code-interview-me-before-it-writes-any-code-2p7f)（dev.to，Florian Ilia，06-25）
+
+### Adversarial Claude Reviewer：對抗性審查迴圈讀取真實 codebase（2026-06-25）
+
+- **核心模式：** 在 multi-agent loop 中設置一個「對抗性審查者」Claude 實例，專職質疑與反駁實作計畫；審查者實際讀取 codebase 再提出反駁，而非基於抽象描述做樂觀假設
+- **實作方向：**
+  - Agent A（實作者）提出實作計畫
+  - Agent B（審查者）讀取真實 codebase，針對計畫提出具體反例、邊界案例與風險點
+  - 計畫須通過審查者的挑戰後，實作者才開始執行
+  - 可設定輪數（例如 2 輪反覆）後由 orchestrator 裁定
+- **解決的問題：** LLM 在計畫審查階段天生過度樂觀（affirmative bias）；單一 Claude 實例自審自批無法有效揭露問題；審查者閱讀真實 codebase 是關鍵——基於描述的審查容易被「對齊」而失去對抗性
+- **與既有模式的關係：** 延伸「多代理 PR Review」模式，將對抗性角色前移至計畫階段而非程式碼完成後；與 Aharness（FSM 強制流程）結合可使對抗輪次強制執行
+- **注意事項：** 審查者提示詞設計是核心難點；過於激進的審查者會拒絕所有計畫；需要校準「挑戰強度」
+- **來源：** ["I Built a Multi-agent Loop Where an Adversarial Claude Reviewer Reads Your Actual Codebase Before Approving Plans"](https://dev.to/execute25/i-built-a-multi-agent-loop-where-an-adversarial-claude-reviewer-reads-your-actual-codebase-before-2d8n)（dev.to，06-24）
+
+### Pre-completion Hook：防止 Claude Code 以模糊語句提前結束任務（2026-06-25）
+
+- **核心模式：** 設置 pre-completion hook，偵測 Claude Code 輸出中的模糊結束語句（如「say the word」、「separate fix」、「if it ever bites」），攔截並要求真正完成任務後再結束
+- **量化數據：** 作者報告每日實際觸發數十次，顯示此類模糊結束行為在日常使用中頻率極高
+- **實作方向：**
+  - 設定 Stop Hook（或 pre-completion hook）掃描最後一輪 Claude 輸出
+  - 維護模糊結束語句的 pattern list（「if this ever becomes a problem」、「a separate task」、「let me know if」等）
+  - 偵測到 pattern 時，返回 non-zero exit code，強制 Claude 繼續執行而非結束
+  - 可搭配 Stop Hook 要求可驗證完成證明（測試通過、檔案存在等）
+- **解決的問題：** Claude Code 的「提前結束」anti-pattern——用「讓我知道如果…」代替真正解決問題；在長任務中尤其常見，因為 Claude 在接近 context limit 時傾向「延後處理」
+- **與既有模式的關係：** 呼應「Hooks 強制執行取代 CLAUDE.md 規則」的核心原則；是 Stop Hook 強制完成驗證的具體實作案例
+- **注意事項：** 需持續維護 pattern list；部分「延後」可能確實合理（真正範疇外的問題），需設計豁免機制
+- **來源：** ["I Made a Claude Code Hook That Ensures the Whole Task Is Completed"](https://www.reddit.com/r/ClaudeAI/comments/1uf9ubb/i_made_a_claude_code_hook_that_ensures_the_whole/)（Reddit r/ClaudeAI，06-25）
+
+### Repo 慣例注入 Plugin：讓 Claude Code 在編輯前自動了解 codebase 風格（2026-06-25）
+
+- **核心模式：** Plugin 靜態分析 repo，萃取 coding convention（import 庫選擇、命名風格、檔案結構），並在每次編輯操作前自動注入相關 context，讓 Claude Code 從「陌生」變「熟悉」
+- **支援語言：** TypeScript、Ruby、Python（已確認）
+- **實作方向：**
+  - Plugin 分析 repo 現有程式碼，提取一致性規則（例如：此 repo 使用 `axios` 而非 `fetch`；目錄結構模式）
+  - 在 Claude Code 每次 Edit/Write 工具呼叫前，注入對應的 context snippet
+  - 可設定「慣例置信度閾值」，只注入有足夠樣本支撐的規則
+- **解決的問題：** Claude Code 在不熟悉的 codebase 中常選錯 library、命名不一致、忽略既有模式；CLAUDE.md 手動維護負擔高且容易過時；此 plugin 讓慣例提取自動化
+- **與既有模式的關係：** 補充「Plugin / MCP 整合」類別，是 CLAUDE.md 管理的自動化替代方案；與「Repo-context injection」思路一致，但更細粒度
+- **注意事項：** 靜態分析可能誤判過渡期程式碼（既有程式碼中的 legacy 模式）；注入過多 context 反而增加 token 成本
+- **來源：** ["Made a Claude Code Plugin That Learns Your Repo's Coding Conventions"](https://www.reddit.com/r/ClaudeAI/comments/1uf9u9d/made_a_claude_code_plugin_that_learns_your_repos/)（Reddit r/ClaudeAI，06-25）
+
+### Multi-model Pipeline：Claude + Codex + ChatGPT 三角色明確分工（2026-06-25）
+
+- **核心模式：** 三模型各司其職：Claude Code 負責架構規劃與複雜推理；Codex 自主建功能（autonomous feature building）；ChatGPT 處理快速網路查詢（quick web lookup）；模型間有明確交接協定
+- **實作方向：**
+  - 定義每個模型的「職責範圍」與「移交條件」（handoff trigger）
+  - Claude Code 作為 orchestrator，決定哪些子任務交給 Codex 或 ChatGPT
+  - 交接時傳遞結構化的任務摘要（非完整 context），控制 token 成本
+  - 建立統一的輸出格式，讓各模型產出可直接被下游消費
+- **解決的問題：** 單一模型在所有任務上均衡表現的假設失效；不同模型在不同任務上有能力差異，混用可提升整體效能並降低成本
+- **與既有模式的關係：** 延伸「多 LLM 協作架構哲學」（270+ 分歧日誌）與「cc-fleet orchestrator 模式」；本案例提供三模型的具體角色定義，比既有討論更具操作性
+- **注意事項：** 多模型 pipeline 的測試與除錯複雜度顯著高於單模型；跨廠商模型的 prompt 格式差異需要逐一適配；成本追蹤需跨平台整合
+- **來源：** ["I Run Claude, Codex, and ChatGPT in a Single Pipeline"](https://www.reddit.com/r/ClaudeAI/comments/1uf9n1r/i_run_claude_codex_and_chatgpt_in_a_single/)（Reddit r/ClaudeAI，06-25）
+
+### Iantha：純 Markdown + Git 的跨 session 記憶 assistant（2026-06-24）
+
+- **核心模式：** 開源 assistant，在對話過程中自動提取時間性任務（temporal tasks）並在跨 Claude Code session 間持久保存記憶；完全使用 Markdown + git 存儲，不依賴第三方服務或向量資料庫
+- **實作方向：**
+  - Iantha 在對話中識別「時間性任務」（需要在未來記住的事項）
+  - 將提取的任務與上下文寫入 Markdown 檔案，以 git commit 作為版本紀錄
+  - 新 session 開始時，自動讀取相關 Markdown 作為 context 注入
+  - 儲存格式人類可讀，可直接編輯
+- **解決的問題：** Claude Code session 結束後記憶歸零的結構性問題；不依賴第三方服務保持資料主控權；純 Markdown 格式便於版本控制與跨工具使用
+- **與既有模式的關係：** 屬於「跨環境 Agent 記憶」類別，與 ltm Core Memory Packet 的「可攜帶記憶格式」思路一致；本方案強調最簡化依賴（no vector DB、no external service）
+- **注意事項：** HN score 6，社群驗證度仍低；「時間性任務」的自動識別準確度待實測；git 存儲對高頻寫入場景可能有 commit noise 問題
+- **來源：** [Iantha](https://kiloloop.com/iantha/)（HN Show，score 6，06-24）
 
 ### Multi-agent 工作流轉型指南：從「單一提示反覆法」到真正並行工作流（2026-06-24）
 

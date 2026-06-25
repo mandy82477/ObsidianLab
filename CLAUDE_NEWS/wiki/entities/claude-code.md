@@ -4,17 +4,17 @@
 **狀態：** active
 **領域：** 🛠️ 工具/功能
 **首次出現：** 2025（正式推出）
-**最後更新：** 2026-06-24
-**最後新聞更新：** 2026-06-24
+**最後更新：** 2026-06-25
+**最後新聞更新：** 2026-06-25
 
-> **最新版本動態**（2026-06-24）
-> v2.1.187 新增 `sandbox.credentials` 設定（可阻止沙盒指令讀取憑證檔案與機密環境變數）及組織層級模型限制功能，強化企業安全管控。
+> **最新版本動態**（2026-06-25）
+> v2.1.191 新增 `/rewind` 指令，可從 `/clear` 執行前的任一對話節點恢復，並修正 streaming 時捲軸自動跳至底部的 UX 問題。
 
 ---
 
 ## 現況
 
-最新版本 **v2.1.187**（2026-06-24）新增 `sandbox.credentials` 設定可阻止沙盒指令讀取憑證檔案與機密環境變數，並加入組織層級模型限制功能，強化企業安全管控。API 529 過載事件於 2026-06-21 至 06-22 連續兩波影響 Opus/Sonnet 模型，Max plan 用戶首條 prompt 即觸發 Overloaded 錯誤。Claude Code 是 Anthropic 的 AI 編碼 CLI 工具，核心能力已從程式碼助理擴展為具備全桌面自動化、多代理管理（Managed Agents）、MCP Server 整合、Hooks 機制與 AI 安全審查的完整 agent 開發平台；GitHub Stars 達 **131,000+**。Microsoft 正陸續取消內部授權轉推 GitHub Copilot CLI（見 [[topics/competitor-landscape]]）；Ramp AI Index 數據顯示 Anthropic 企業採用率首次超越 OpenAI（34.4% vs 32.3%）。
+最新版本 **v2.1.191**（2026-06-25）新增 `/rewind` 指令，使用者可從 `/clear` 執行前的任一對話節點恢復上下文，無需重新描述需求；並修正 streaming 過程中捲軸自動跳至底部的干擾行為。API 529 過載事件於 2026-06-21 至 06-22 連續兩波影響 Opus/Sonnet 模型，Max plan 用戶首條 prompt 即觸發 Overloaded 錯誤。Claude Code 是 Anthropic 的 AI 編碼 CLI 工具，核心能力已從程式碼助理擴展為具備全桌面自動化、多代理管理（Managed Agents）、MCP Server 整合、Hooks 機制與 AI 安全審查的完整 agent 開發平台；GitHub Stars 達 **131,000+**。Microsoft 正陸續取消內部授權轉推 GitHub Copilot CLI（見 [[topics/competitor-landscape]]）；Ramp AI Index 數據顯示 Anthropic 企業採用率首次超越 OpenAI（34.4% vs 32.3%）。
 
 ## 熱度與試用價值
 
@@ -31,6 +31,9 @@
 
 | 版本 | 日期 | 重點 |
 |------|------|------|
+| **v2.1.191** | 2026-06-25 | 新增 `/rewind` 指令：支援從 `/clear` 執行前的任一對話節點恢復，讓使用者在誤清 context 後可無縫回到任意歷史節點繼續對話；修正 streaming 時捲軸自動跳至底部的 UX 問題 |
+| **anthropic-sdk-typescript v0.106.0** | 2026-06-25 | `client` 新增 `system.message` 支援，開發者可透過 client 層直接注入系統訊息 |
+| **anthropic-sdk-python v0.112.0** | 2026-06-25 | `client` 新增 `system.message` 支援，與 TypeScript SDK v0.106.0 功能對齊 |
 | **v2.1.187** | 2026-06-24 | 新增 `sandbox.credentials` 設定：可阻止沙盒指令讀取憑證檔案與機密環境變數，防止沙盒內指令洩漏 AWS 金鑰、API token 等敏感資訊；新增組織層級模型限制功能，企業管理員可統一管控可用模型清單，強化企業安全管控 |
 | **v2.1.186** | 2026-06-22 | 新增 `claude mcp login <name>` 與 `claude mcp logout <name>` CLI 指令：可從命令列直接認證 MCP Server，無需進入互動式 `/mcp` 選單；支援 `--no-browser` 旗標，透過 stdin 重導向認證，適合 headless / CI 環境 |
 | **v2.1.185** | 2026-06-21 | Stream-stall reliability 改善：等待提示文字從「No response from API · Retrying in …」改為「Waiting for API response · will retry in …」；觸發門檻從 10 秒延長至 20 秒，減少短暫延遲時的干擾提示 |
@@ -332,6 +335,7 @@ Token 用量追蹤、session 費用分析與效能漂移偵測工具。
 
 | 日期 | 事件 |
 |------|------|
+| 2026-06-25 | **v2.1.191**：新增 `/rewind` 指令，可從 `/clear` 執行前任一對話節點恢復，無需重新輸入指令背景；修正 streaming 捲軸自動跳底部問題（UX 改善）；TypeScript SDK v0.106.0 與 Python SDK v0.112.0 同日發布，新增 `client.system.message` 支援 |
 | 2026-06-24 | **v2.1.187**：新增 `sandbox.credentials` 設定，可阻止沙盒指令讀取憑證檔案與機密環境變數（AWS 金鑰、API token 等），防止沙盒內惡意指令竊取敏感資訊；新增組織層級模型限制功能，企業管理員可統一管控可用模型清單 |
 | 2026-06-22 | **v2.1.186**：新增 `claude mcp login <name>` 與 `claude mcp logout <name>` CLI 指令，可直接從命令列認證 MCP Server，無需進入 `/mcp` 互動選單；`--no-browser` 旗標支援 headless 環境透過 stdin 完成認證；**Extended Thinking 透明度問題社群揭露**（HN score 312）：工程師 Patrick McCanna 分析 session log 發現 thinking blocks 只含推理摘要，完整思考過程由 Anthropic 加密於 600 字元 signature，用戶端無法自行解密，企業審計追蹤承諾受影響（見「已知問題」）|
 | 2026-06-21 | **v2.1.185**：stream-stall 提示文字改為「Waiting for API response · will retry in …」，觸發門檻延長至 20 秒（原 10 秒），reliability 改善；Anthropic 官方博客發布「七種 Claude Code 控制層」決策框架（CLAUDE.md、rules、skills、subagents、hooks、output styles、system prompt append），HN score 4 |
