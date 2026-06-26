@@ -1,0 +1,235 @@
+{
+  "date": "2026-06-26",
+  "generatedAt": "2026-06-26 22:15 UTC",
+  "articleCount": 63,
+  "sourceCount": "6/6 | **文章數：** 63 | **更新時間：** 2026-06-26 22:15 UTC",
+  "bulletin": "",
+  "topStories": [],
+  "techUpdates": [
+    {
+      "title": "[anthropics/claude-code] v2.1.193",
+      "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.193",
+      "source": "GitHub / anthropics/claude-code",
+      "time": "06/25 21:45",
+      "sentiment": "",
+      "body": "新增 `autoMode.classifyAllShell` 設定，將所有 Bash/PowerShell 指令（而非只有任意程式碼執行模式）路由至 auto-mode 分類器；同時新增 auto-mode 相關改進。",
+      "focusTags": [
+        "[技術更新]"
+      ]
+    }
+  ],
+  "discussions": [
+    {
+      "title": "Anthropic 官方研究：Claude Code 40 萬場 Session 使用模式分析",
+      "url": "https://www.anthropic.com/research/claude-code-expertise",
+      "source": "Hacker News",
+      "time": "06/26 04:19 UTC 😊",
+      "sentiment": "",
+      "body": "Anthropic 公開大規模分析：人類負責規劃、Claude 負責執行；領域專業越高，Claude 效能越強；各職業成功率幾乎相同。研究也顯示個人隱私保護下的分析方法論。",
+      "focusTags": [
+        "[社群趨勢]"
+      ]
+    },
+    {
+      "title": "Show HN: OpenKnowledge – AI 優先的 Obsidian/Notion 開源替代品（HN score: 313）",
+      "url": "https://github.com/inkeep/open-knowledge",
+      "source": "Hacker News",
+      "time": "06/25 16:04 UTC 😊",
+      "sentiment": "",
+      "body": "支援 Claude、Codex、Cursor 原生整合的 WYSIWYG Markdown 編輯器，含 MacOS 應用程式與 Web UI+CLI，完全免費本地端開源。",
+      "focusTags": []
+    },
+    {
+      "title": "DeepSeek Flash 如何顛覆 Agent 產品經濟學",
+      "url": "https://www.rtrvr.ai/blog/code-as-plan-deepseek-flash-text-only-browser-agent",
+      "source": "Hacker News",
+      "time": "06/25 22:56 UTC 😤",
+      "sentiment": "",
+      "body": "作者指出 Anthropic 等大型模型廠商以較高 API 定價補貼自家 agent 服務，而 DeepSeek V4 Flash 打破此格局，成本降低逾 100 倍且已開源，推動 Microsoft 等廠商切換。",
+      "focusTags": []
+    },
+    {
+      "title": "2026 年終端 Agent 比較：Goose、Claude Code、OpenCode 與 Pi",
+      "url": "https://outofcontext.dev/blog/goose-claude-code-opencode-pi/",
+      "source": "Hacker News",
+      "time": "06/26 07:12 UTC 🤔",
+      "sentiment": "",
+      "body": "技術文件導向的比較分析：Claude Code 是專有平台產品；其餘三者為開源但方向各異，goose 為基金會治理通用型，OpenCode 具備 IDE 級程式碼智慧，Pi 為輕量可擴充核心。",
+      "focusTags": []
+    },
+    {
+      "title": "Show HN: Verity – Claude Code 的自癒式 Review Gate",
+      "url": "https://verity.md",
+      "source": "Hacker News",
+      "time": "06/26 12:27 UTC 😊",
+      "sentiment": "",
+      "body": "對抗性、自癒式程式碼審查閘道，每次執行修復程式碼確保安全乾淨才能繼續，內建記憶讓下次 agent 起點更優，目前免費 beta 測試中。",
+      "focusTags": []
+    },
+    {
+      "title": "Show HN: Git-lazy-mount — 不需完整 clone 的 repo 掛載工具",
+      "url": "https://github.com/mohsen1/git-lazy-mount",
+      "source": "Hacker News",
+      "time": "06/26 11:30 UTC 😊",
+      "sentiment": "",
+      "body": "Google3 風格的懶載入 repo 方案，適合大型 repo 的 AI coding session，只在需要時取回檔案；附帶 sgrep 將 grep 卸載至遠端搜尋引擎，降低 AI session 啟動成本。",
+      "focusTags": []
+    },
+    {
+      "title": "Google AI 人才外流：4 位研究員一週跳槽 Anthropic",
+      "url": "https://dev.to/doremonai/googles-ai-brain-drain-4-top-researchers-leave-for-anthropic-in-one-week-270b-wiped-gemini-35-5ffl",
+      "source": "dev.to / #anthropic",
+      "time": "06/26 00:26 UTC 😤",
+      "sentiment": "",
+      "body": "諾貝爾化學獎得主 John Jumper 帶頭，Google 市值蒸發 2,700 億美元，Gemini 3.5 延期，Anthropic 趁 Mythos 危機期間逆勢吸引頂尖人才。",
+      "focusTags": [
+        "[重大事件]"
+      ]
+    },
+    {
+      "title": "Read-Only Reviewer Agent 設計模式",
+      "url": "https://dev.to/greymothjp/read-only-reviewer-agents-catch-what-your-main-agent-waves-through-3ggc",
+      "source": "dev.to / #claudecode",
+      "time": "06/25 23:51 UTC 😊",
+      "sentiment": "",
+      "body": "主要 agent 寫程式碼，reviewer agent 只能讀取不能編輯。無編輯權限是核心約束，讓 reviewer 保持對立性，能抓出主 agent 放過的問題。",
+      "focusTags": []
+    },
+    {
+      "title": "Pre-loading @-files 悄悄讓 Claude Code Session 退化",
+      "url": "https://www.reddit.com/r/ClaudeAI/comments/1ug70ov/preloading_files_to_be_safe_was_quietly_rotting/",
+      "source": "Reddit / r/ClaudeAI",
+      "time": "06/26 05:34 UTC 🤔",
+      "sentiment": "",
+      "body": "作者發現預先載入所有可能用到的檔案是反模式，切換為即時（just-in-time）取回後效果顯著改善。",
+      "focusTags": []
+    },
+    {
+      "title": "Claude Cowork 即將推出行動版用戶端",
+      "url": "https://www.techzine.eu/news/applications/142493/claude-cowork-to-get-a-mobile-client/",
+      "source": "Google News / Techzine Global",
+      "time": "06/26 01:28 UTC 😊",
+      "sentiment": "",
+      "body": "BleepingComputer 與 Techzine 均報導 Anthropic 正在測試桌機版 Claude Cowork 的行動版本。",
+      "focusTags": []
+    },
+    {
+      "title": "企業 AI 客戶因成本失控撤離 OpenAI 與 Anthropic",
+      "url": "https://qz.com/enterprise-ai-spending-openai-anthropic-roi-pullback-062626",
+      "source": "Google News / qz.com",
+      "time": "06/26 04:52 UTC 😤",
+      "sentiment": "",
+      "body": "qz.com 與 CNBC 雙重報導：企業客戶從大量消耗 token 的策略轉向效率優先，Anthropic 與 OpenAI 面臨企業市場新壓力。",
+      "focusTags": [
+        "[風險警示]"
+      ]
+    },
+    {
+      "title": "Repo 即記憶體，模型即工作者",
+      "url": "https://dev.to/greymothjp/your-repo-is-the-memory-your-model-is-the-worker-3e09",
+      "source": "dev.to / #claudecode",
+      "time": "06/25 23:42 UTC 😊",
+      "sentiment": "",
+      "body": "提出一個框架：模型不保存狀態，repo 才是真正的記憶體。此觀念一旦成立，許多 Claude Code 架構決策自然推導而出。",
+      "focusTags": []
+    },
+    {
+      "title": "在 Claude Code 中批量修 OSS Bug 的方法論",
+      "url": "https://dev.to/greymothjp/i-found-30-mergeable-oss-bugs-in-a-day-they-were-all-the-same-shape-5c86",
+      "source": "dev.to / #claudecode",
+      "time": "06/25 23:42 UTC 😊",
+      "sentiment": "",
+      "body": "一天內向 zod、NestJS、Fastify、Scrapy、Pygments 等知名開源專案提交約 28 個 PR，全為實際行為修復而非文件錯字，核心在於識別「相同形狀的 bug」。",
+      "focusTags": []
+    },
+    {
+      "title": "中國 AI 模型縮小與 Anthropic、OpenAI 的差距",
+      "url": "https://www.nytimes.com/2026/06/25/technology/zai-china-artificial-intelligence-models.html",
+      "source": "Hacker News",
+      "time": "06/25 22:21 UTC 😐",
+      "sentiment": "",
+      "body": "NYT 報導中國 AI 模型競爭力提升，HN 留言聚焦能源政策與政府管制的長期影響。",
+      "focusTags": []
+    },
+    {
+      "title": "Anthropic 的 MITRE ATT&CK 報告對獨立 AI 開發者的意涵",
+      "url": "https://dev.to/pat9000/what-anthropics-mitre-attck-report-means-for-solo-ai-builders-2dlo",
+      "source": "dev.to / #anthropic",
+      "time": "06/25 13:31 UTC 🤔",
+      "sentiment": "",
+      "body": "Anthropic 公開一年份的網路威脅情報，將 832 個遭封鎖帳號對應至 MITRE ATT&CK 框架，對獨立 AI 開發者有實際資安參考價值。",
+      "focusTags": []
+    },
+    {
+      "title": "AI 正在撰寫幾乎所有新創程式碼，帶來新問題",
+      "url": "https://www.businessinsider.com/ai-writing-all-startup-code-thats-creating-a-new-problem-2026-6",
+      "source": "Google News / Business Insider",
+      "time": "06/26 01:01 UTC 😤",
+      "sentiment": "",
+      "body": "Business Insider 報導 AI 生成程式碼在新創公司的普及率急速上升，但技術債、可維護性與程式碼品質問題也隨之浮現。",
+      "focusTags": []
+    }
+  ],
+  "billing": [
+    {
+      "title": "兩個 Max 5x 帳號 vs. 一個 Max 20x 帳號的成本分析",
+      "url": "https://www.reddit.com/r/ClaudeAI/comments/1ug6kjv/two_max_5x_accounts_cost_the_same_as_one_20x_and/",
+      "source": "Reddit / r/ClaudeAI",
+      "time": "06/26 05:15",
+      "sentiment": "",
+      "body": "Reddit 用戶分析：對多數獨立開發者而言，兩個 Max 5x 帳號與一個 Max 20x 帳號費用相同，但可並行執行兩個 Claude Code session，效益更高。",
+      "focusTags": []
+    }
+  ],
+  "focus": [
+    {
+      "tag": "[重大事件]",
+      "text": "Anthropic 指控阿里巴巴發動史上最大規模 AI 蒸餾攻擊，透過 25,000 個假帳號進行 2,880 萬次模型交換，並已致函美國國會參議院。",
+      "ref_urls": [
+        "https://www.cnbc.com/2026/06/24/anthropic-alibaba-distillation-campaign.html",
+        "https://yipzap.com/anthropic-accuses-alibaba-of-largest-ai-distillation-attack-28-8m-fraudulent-exchanges/"
+      ]
+    },
+    {
+      "tag": "[持續追蹤]",
+      "text": "Fable/Mythos 解鎖談判持續進行：特朗普政府改由 Tom Brown 接替 Dario Amodei 與 Anthropic 談判，The Verge 報導 Mythos 危機持續惡化，Bloomberg 警告出口管制可能反而加速中國開源模型崛起。",
+      "ref_urls": [
+        "https://www.wired.com/story/the-trump-white-house-is-over-anthropics-dario-amodei/",
+        "https://www.theverge.com/ai-artificial-intelligence/957327/anthropic-mythos-fable-ai-trump-administration-negotiations",
+        "https://www.bloomberg.com/news/newsletters/2026-06-26/white-house-s-ban-on-anthropic-ai-access-may-boost-china-s-open-source-models"
+      ]
+    },
+    {
+      "tag": "[重大事件]",
+      "text": "Google 四名頂尖研究員一週內相繼跳槽 Anthropic，諾貝爾化學獎得主 John Jumper（6/19 宣布加入）領銜，Google 市值蒸發 2,700 億美元，Gemini 3.5 延期。",
+      "ref_urls": [
+        "https://dev.to/doremonai/googles-ai-brain-drain-4-top-researchers-leave-for-anthropic-in-one-week-270b-wiped-gemini-35-5ffl",
+        "https://dev.to/peremptory/the-nobel-laureate-who-joined-anthropic-mid-crisis-5cfh"
+      ]
+    },
+    {
+      "tag": "[技術更新]",
+      "text": "Claude Code v2.1.193 新增 `autoMode.classifyAllShell` 設定，將所有 Bash/PowerShell 指令路由至 auto-mode 分類器。",
+      "ref_urls": [
+        "https://github.com/anthropics/claude-code/releases/tag/v2.1.193"
+      ]
+    },
+    {
+      "tag": "[社群趨勢]",
+      "text": "Anthropic 官方研究顯示 Claude Code 40 萬個 session 分析：使用者主導規劃決策，Claude 主導執行，各職業成功率與軟體工程師相近；領域專業越高，Claude 每條指令完成的工作量越大。",
+      "ref_urls": [
+        "https://www.anthropic.com/research/claude-code-expertise"
+      ]
+    },
+    {
+      "tag": "[風險警示]",
+      "text": "企業客戶因成本失控開始撤離 OpenAI 和 Anthropic，CNBC 與 qz.com 雙重報導，企業從「token 最大化」轉向效率優先。",
+      "ref_urls": [
+        "https://www.cnbc.com/2026/06/26/openai-anthropic-new-ai-spending-reality-as-users-shift-to-efficiency.html",
+        "https://qz.com/enterprise-ai-spending-openai-anthropic-roi-pullback-062626"
+      ]
+    }
+  ],
+  "sourceStatus": [],
+  "preview": "[anthropics/claude-code] v2.1.193"
+}
