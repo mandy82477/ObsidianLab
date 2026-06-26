@@ -3,11 +3,11 @@
 **狀態：** ongoing
 **領域：** 🌐 社群
 **開始日期：** 2026-04-25
-**最後更新：** 2026-06-25
-**最後新聞更新：** 2026-06-25
+**最後更新：** 2026-06-26
+**最後新聞更新：** 2026-06-26
 
-> **最熱討論**（2026-06-25）
-> 36Kr 報導 Anthropic 工程師在 Claude 寫 80% 程式碼後感到孤獨與脫節，引發社群對「AI 加速 ≠ 工程師滿足感提升」的廣泛討論；同日工具社群爆發多個實踐分享：pre-completion hook、repo 慣例注入、三模型協作、對抗性審查迴圈同日出現，顯示社群正快速工程化 agentic coding 的最佳實踐。
+> **最熱討論**（2026-06-26）
+> 「預先 @-mention 所有檔案是反模式」的 Reddit 討論印證 just-in-time retrieval 已成新共識；DeepSeek Flash 以 100x 成本優勢打破大廠 API 補貼 agent 的封閉經濟，對 Claude 商業生態形成直接衝擊；多篇 dev.to 文章集中梳理 multi-agent 設計原則（read-only reviewer、tool-scoping vs persona）。
 
 ---
 
@@ -104,6 +104,9 @@ MCP 的實際成本遠超多數使用者預期，已有多個量化案例：
 
 | 討論主題 | 首見 | 熱度 | 模式 | 核心論點 | 衍生 |
 |---------|------|------|------|---------|------|
+| Pre-loading @-files 是反模式：即時取回才是正解 | 2026-06-26 | 🔥🔥 | ☄️閃現 | 使用者分享：預先 @-mention 所有可能用到的檔案導致 session context 過重退化；切換為即時取回（just-in-time retrieval）後顯著改善；是「Context Rot 修復五法」的新佐證案例（Reddit r/ClaudeAI） | Just-in-Time @-file Retrieval |
+| DeepSeek Flash 顛覆 Agent 產品經濟學：大廠高價補貼模式受衝擊 | 2026-06-26 | 🔥 | ☄️閃現 | 開發者指出大型模型廠商（含 Anthropic）以高 API 價格補貼自家 agent，DeepSeek V4 Flash 成本降低 100x 且開源，推動 Microsoft 等切換；對 Claude 商業生態的直接衝擊（rtrvr.ai；HN score 9） | — |
+| 終端 Agent 比較 2026：Claude Code 專有、goose 通用、OpenCode IDE 級 | 2026-06-26 | 🔥 | ☄️閃現 | 技術文件導向的四工具比較：Claude Code 作為專有封閉平台、goose 為基金會治理通用型、OpenCode 具 IDE 級程式碼智慧、Pi 為輕量可擴充核心；「各有生態定位」而非勝負高下（outofcontext.dev；HN score 3） | — |
 | Anthropic 工程師孤獨感：Claude 寫 80% 程式碼後的人機脫節 | 2026-06-25 | 🔥🔥 | ☄️閃現 | 36Kr 報導：Anthropic 內部工程師雖然 Claude 代為完成 80% 程式碼，但感到與開發過程脫節（sense of disconnection）；社群討論焦點：高自動化程度是否犧牲了工程師的參與感與成就感；與「vibe coding 成就感缺失」議題形成跨組織佐證（36Kr） | — |
 | Claude Code vs Cursor vs Copilot 2026 工具選擇：三者分工論成形 | 2026-06-25 | 🔥🔥 | ☄️閃現 | 工程師 2026 年實戰比較：Copilot 適合流暢日常編碼（inline flow）、Cursor 適合 IDE 內 agentic 編輯、Claude Code 適合全任務自主執行與 CI pipeline；從「哪個最強」走向「各司其職」的工具定位共識（dev.to） | — |
 | Claude Code 會計自動化：200 筆交易 5.5% 誤差月結實測 | 2026-06-25 | 🔥 | ☄️閃現 | 實測：Claude Code 對 200 筆商業交易進行月結，僅錯誤分類 11 筆（5.5% 誤差率）；引發社群對 agentic coding 在財務類任務的適用性討論；「容忍誤差率」的業務適配問題受到關注（dev.to） | — |
@@ -172,8 +175,6 @@ MCP 的實際成本遠超多數使用者預期，已有多個量化案例：
 | Claude Code 原生 OpenTelemetry（幾乎無人知道）| 2026-06-06 | 🔥🔥 | ☄️閃現 | Claude Code 自 v2.1.75 起內建完整 OpenTelemetry SDK；`CLAUDE_CODE_ENABLE_TELEMETRY=1` 即可輸出 token 用量、成本；大多數開發者未知，是被低估的可觀測性工具 | — |
 | /clear vs /exit 的致命誤解 | 2026-06-06 | 🔥🔥 | ☄️閃現 | `/clear` 不釋放 MCP server 與 heap；多個 session 積累導致 50GB 記憶體佔用並崩潰；是 Claude Code 操作習慣中最常見的誤區之一 | — |
 | Anthropic 邊呼籲 AI 暫停邊衝 IPO（遞歸自我改進報告）| 2026-06-05 | 🔥🔥🔥🔥🔥 | ☄️閃現 | Claude 寫 80-90% Anthropic 程式碼；工程師代碼產出 8×；呼籲全球暫停機制——同時 IPO 估值 $965B；「既當裁判又當球員」批評廣泛 | [[topics/recursive-self-improvement]] |
-| Skills 即使未觸發仍消耗 18% tokens | 2026-06-04 | 🔥🔥🔥 | ☄️閃現 | 7 小時測量：5 個 skill 帶來 18% token overhead，無論是否觸發；推翻「skill 是免費升級」假設，skill 是固定租金 | — |
-| Anthropic 如何限制 Claude 討論（HN 173）| 2026-06-04 | 🔥🔥🔥🔥 | ☄️閃現 | 「12 個月前不可能的存取權限現在是常規」——Anthropic 安全工程透明度首次達此深度；細粒度 token 權限、沙箱、審計三層架構 | — |
 | LLMs 製造虛假忙碌？ | 2026-05-22 | 🔥🔥🔥 | 🌊延燒 | 質疑 LLM 是否在製造「效率幻覺」：spec/PRD/測試計劃/程式碼的流水線，每個產出物仍需人工逐一核查，燒掉的 token 數等同「員工績效」；對 AI 效率宣稱提出最直接的挑戰 | — |
 | Context 管理是大型專案核心瓶頸 | 2026-05-12 | 🔥🔥🔥 | 🌊延燒 | Attention 機制局部聚焦問題；應對策略：架構概覽注入、結構化索引、任務分拆；2026-05-17 官方 4 種 context 工具詳解再度引發討論，顯示痛點持續 | — |
 | HTML vs Markdown 輸出格式辯論 | 2026-05-09 | 🔥🔥🔥🔥🔥 | 🌊延燒 | HN 187 則討論；原始論點：HTML 視覺呈現與資訊密度更優；反駁：HTML 難以人機協同編輯；2026-05-20 Anthropic 官方 Blog 發文背書 HTML（理由：表達能力強、瀏覽器直接開啟、分享便利）；2026-05-21 官方 Blog 文章登上 HN 首頁，討論再度引爆，熱度升至跨平台最高級 | agent-html-skills |
@@ -187,6 +188,24 @@ MCP 的實際成本遠超多數使用者預期，已有多個量化案例：
 ---
 
 ## 技術彙整
+
+### Pre-loading @-files 反模式：即時取回的 Context 管理轉向（2026-06-26）
+
+- **來源：** [Reddit r/ClaudeAI 討論](https://www.reddit.com/r/ClaudeAI/comments/1ug70ov/preloading_files_to_be_safe_was_quietly_rotting/)（Reddit，06-26）
+- **核心論點：** 「預先 @-mention 所有可能用到的檔案以保安全」的直覺做法是反模式，會讓 session context 提前飽和，導致模型行為退化；切換為即時取回（just-in-time retrieval）——只在確實需要時才取回特定檔案——可顯著改善輸出品質
+- **關鍵回響：**
+  - 📝 支持：與「Context Rot 修復五法」（2026-06-20）的「裁剪 tool output、停止添加無關 context」形成同一原則的不同面向
+  - 📝 深化：「Repo-as-Memory」框架（2026-06-26）提供了理論基礎——模型不應被期望「記住」注入的所有內容，repo 才是持久記憶體
+- **收斂結論：** 「context 精準性優於 context 完整性」已成社群共識的一部分；預先載入大量檔案不是謹慎，而是製造噪音（推論）
+
+### DeepSeek Flash 與 Agent 產品經濟學：高 API 價格補貼模式的終結（2026-06-26）
+
+- **來源：** ["DeepSeek Flash Breaks the Agent Economy"](https://www.rtrvr.ai/blog/code-as-plan-deepseek-flash-text-only-browser-agent)（rtrvr.ai，06-26；HN score 9）
+- **核心論點：** 大型模型廠商（含 Anthropic）的商業邏輯隱含「以高 API 價格補貼自家 agent 產品」的閉環，DeepSeek V4 Flash 以 100x 成本優勢打破此格局；Microsoft 等已開始切換，此動態對 Claude 的 API 商業生態形成直接競爭壓力
+- **關鍵回響：**
+  - 📝 背景：延伸「OpenAI vs Anthropic 定價戰」（🌊延燒，2026-06-11+）的討論——競爭壓力源不只來自 OpenAI，還來自開源陣營的成本崩塌
+  - 📝 對立觀點：HN score 9 顯示社群關注度有限；「API 價格補貼 agent」的因果關係為開發者推論，並非廠商正式承認（推論）
+- **收斂結論：** 尚無共識；Agent 經濟學的重構是否如作者所描述的那樣快速展開，需觀察後續切換案例的規模
 
 ### Anthropic 工程師孤獨感：自動化率 80% 後的人機脫節現象（2026-06-25）
 

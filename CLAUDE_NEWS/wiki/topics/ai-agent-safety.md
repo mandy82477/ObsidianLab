@@ -3,11 +3,11 @@
 **狀態：** ongoing
 **領域：** 🏛️ 政策/安全
 **開始日期：** 2026-04-27
-**最後更新：** 2026-06-24
-**最後新聞更新：** 2026-06-24
+**最後更新：** 2026-06-26
+**最後新聞更新：** 2026-06-26
 
-> **最新安全事件**（2026-06-24）
-> AP News 報導 Anthropic Mythos 在與美國情報機構的合作測試中，數小時內發現美國機密系統漏洞；美國官員明確強調「發現」不等於「利用」；The Atlantic 同期探討 Claude 在軍事場景下的倫理邊界問題。
+> **最新安全事件**（2026-06-26）
+> Anthropic 正式指控阿里巴巴透過約 25,000 個假帳號在 4/22–6/5 間發動 2,880 萬次 Claude 模型交換以蒸餾提取 AI 能力，為已知最大規模 AI 蒸餾攻擊（CNBC 2026-06-24）。同日，Anthropic 公開一年份網路威脅情報報告，將 832 個遭封鎖帳號的行為模式對應至 MITRE ATT&CK 框架，為 AI 安全威脅分析提供結構化工具集。
 
 ---
 
@@ -25,10 +25,13 @@
 
 2026-06-24，AP News 報導 Mythos 在與美國情報機構的正式合作測試中發現機密系統漏洞，美國官員強調「發現不等於利用」；The Atlantic 同期探討 Claude 在軍事場景下的倫理邊界問題，指出 AI 公司、政府、軍方三方對「可接受使用範圍」的定義存在根本分歧。
 
+2026-06-26，Anthropic 正式致函美國參議院，指控阿里巴巴透過約 25,000 個假帳號在 2026-04-22 至 2026-06-05 間向 Claude 發動 2,880 萬次模型交換，目的是系統性蒸餾提取 AI 能力，為已知最大規模 AI 蒸餾攻擊事件（CNBC）。此事件揭示「大規模組織性帳號農場」作為蒸餾攻擊向量的成熟度，亦具出口管制政策意涵（見 [[topics/anthropic-government-policy]]）。同日，Anthropic 公開一年份網路威脅情報報告，對 832 個遭封鎖帳號的惡意行為模式進行 MITRE ATT&CK 框架對應分析，為 AI 安全威脅的系統性分類提供官方參照基礎。
+
 ---
 
 ## 目前結論
 
+- 🔴 **大規模組織性 AI 蒸餾攻擊成熟化（2026-06-26）**：Anthropic 指控阿里巴巴透過 25,000 個假帳號發動 2,880 萬次模型交換，顯示帳號農場作為蒸餾攻擊基礎設施已達工業規模；現有 ToS 偵測機制在如此分散的帳號規模下仍被大規模繞過（待阿里巴巴確認，現為單一聲稱）
 - 🔴 **AI Agent 進攻性濫用已達在野攻擊成熟度（2026-06-16）**：OALABS 蜜罐分析首次以 1,000+ session 日誌規模確認攻擊者使用 Claude Code 入侵 14 家企業；「低技術提示 + AI 填補細節 + guardrails 繞過」組合成立，顯示現有護欄設計在主動對抗場景下存在系統性缺口；Anthropic 截至 2026-06-20 尚無公開回應
 - ⚠️ **Claude Code .env SQLite 明文存儲（2026-05-19）**：所有 .env 讀取過的 secret 永久以明文存於本機 SQLite，在 .gitignore 範圍外且標準 scanner 無法偵測；配合攝影機存取要求（同日），Claude Code 的隱私與安全邊界正受到多面向質疑
 - ⚠️ **Claude Code RCE via Deeplink（2026-05-18/19）**：第三個 RCE 類公開漏洞，攻擊者從安裝路徑轉向執行時期協議處理；Claude Code 的攻擊面持續被系統性探索，建議追蹤官方安全公告
@@ -58,6 +61,24 @@
 ## 技術彙整
 
 ### (0) AI Agent 用於進攻性網路操作
+
+### 阿里巴巴大規模 AI 蒸餾攻擊：2,880 萬次模型交換（2026-06-26 新增）
+
+- **揭露來源**：Anthropic 致函美國參議院（2026-06-10），CNBC 報導（2026-06-24；https://www.cnbc.com/2026/06/24/anthropic-alibaba-distillation-campaign.html）
+- **攻擊規模**：攻擊者（Anthropic 指控為阿里巴巴）透過約 25,000 個假帳號，於 2026-04-22 至 2026-06-05 期間向 Claude 發動 2,880 萬次模型交換（model exchanges）；為已知最大規模 AI 蒸餾攻擊
+- **攻擊目的**：系統性蒸餾提取 Claude 的 AI 能力，供訓練阿里巴巴自有模型使用（推論）
+- **攻擊向量**：帳號農場（假帳號大規模創建）作為蒸餾攻擊的基礎設施；每個假帳號分散查詢以規避單帳號頻率偵測
+- **可信度評估**：官方確認（Anthropic 正式致函參議院）；阿里巴巴方面截至報導日尚未公開回應，視為單一聲稱，待對方確認或否認
+- **防護意涵**：現有 ToS 違規偵測機制在 25,000 個帳號的分散攻擊下仍被大規模繞過；顯示「行為模式識別」優於「單帳號頻率限制」作為蒸餾攻擊的防護方向；與 Anthropic MITRE ATT&CK 報告的 832 帳號封鎖規模對比，說明攻擊者仍有大量空間在觸發封鎖前完成提取
+- **政策關聯**：此指控同時強化出口管制必要性論述；詳見 [[topics/anthropic-government-policy]]
+
+### Anthropic MITRE ATT&CK 網路威脅情報報告（2026-06-26 新增）
+
+- **揭露來源**：Anthropic 官方報告（2026-06-26 公開）；dev.to 分析文章（https://dev.to/pat9000/what-anthropics-mitre-attck-report-means-for-solo-ai-builders-2dlo）
+- **報告範圍**：一年份網路威脅情報，分析 832 個遭封鎖帳號的惡意行為模式，對應至 MITRE ATT&CK 企業框架（Enterprise ATT&CK）
+- **意義**：首次由 Anthropic 官方對外公開的大規模惡意使用行為分類報告；將 AI 平台上的攻擊行為納入既有網路安全框架，為 AI 安全威脅的標準化描述提供參照
+- **對獨立開發者的實際意涵**：開發者自建 AI agent 時面臨相同的攻擊面；MITRE ATT&CK 對應表可作為 agent 設計階段的威脅模型基礎
+- **可信度評估**：官方確認（Anthropic 自行發布）；832 帳號為回顧性樣本，不代表當前完整威脅規模
 
 ### Mythos 情報機構合作測試：發現漏洞、官員強調未利用（2026-06-24 新增）
 
@@ -330,6 +351,7 @@
 
 ## 參考來源
 
+- [[news/2026-06-26]]
 - [[news/2026-05-19]]
 - [[news/2026-05-18]]
 - [[news/2026-04-27]]
@@ -348,6 +370,10 @@
 - [Anthropic's definition of safety is too narrow](https://jonathannen.com/anthropic-safety-too-narrow/) — Jonathan Nen
 
 ## 時序
+
+### 2026-06-26
+- **[蒸餾攻擊] 阿里巴巴透過 25,000 假帳號發動 2,880 萬次 Claude 模型交換**：Anthropic 致函美參議院（2026-06-10），正式指控阿里巴巴在 2026-04-22 至 2026-06-05 期間，透過約 25,000 個假帳號系統性發動 2,880 萬次模型交換，目的是蒸餾提取 Claude AI 能力；為已知最大規模 AI 蒸餾攻擊；阿里巴巴截至報導日無公開回應（視為單一聲稱）；政策面詳見 [[topics/anthropic-government-policy]]（CNBC，2026-06-24；https://www.cnbc.com/2026/06/24/anthropic-alibaba-distillation-campaign.html）
+- **[威脅情報] Anthropic 公開 MITRE ATT&CK 網路威脅情報報告**：Anthropic 公開一年份威脅情報分析，對 832 個遭封鎖帳號的惡意行為進行 MITRE ATT&CK 框架對應；首次官方大規模惡意使用行為分類報告，為 AI 安全威脅標準化描述提供參照基礎；分析文章指出獨立 AI 開發者面臨相同的攻擊面，MITRE 對應表可作為 agent 設計階段的威脅模型工具（dev.to；https://dev.to/pat9000/what-anthropics-mitre-attck-report-means-for-solo-ai-builders-2dlo）
 
 ### 2026-06-24
 - **[授權測試] Mythos 情報機構合作測試發現機密系統漏洞**：AP News 報導 Anthropic Mythos 在與美國情報機構的正式合作測試中，數小時內發現美國機密系統漏洞；美國官員明確區分「發現」與「利用」，強調屬授權防禦評估；此條目與 2026-06-22 Security Affairs「入侵」框架構成互補詮釋，「政府一邊合作測試一邊實施出口管制」的矛盾在此最為清晰（AP News，2026-06-24；https://apnews.com/article/anthropic-mythos-ai-classified-systems-vulnerabilities-testing-3e8762c0527c4d8ed657cbe48c84a718）

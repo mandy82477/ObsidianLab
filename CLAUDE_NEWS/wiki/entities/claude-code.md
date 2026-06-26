@@ -4,17 +4,17 @@
 **狀態：** active
 **領域：** 🛠️ 工具/功能
 **首次出現：** 2025（正式推出）
-**最後更新：** 2026-06-25
-**最後新聞更新：** 2026-06-25
+**最後更新：** 2026-06-26
+**最後新聞更新：** 2026-06-26
 
-> **最新版本動態**（2026-06-25）
-> v2.1.191 新增 `/rewind` 指令，可從 `/clear` 執行前的任一對話節點恢復，並修正 streaming 時捲軸自動跳至底部的 UX 問題。
+> **最新版本動態**（2026-06-26）
+> v2.1.193 新增 `autoMode.classifyAllShell` 設定，將所有 Bash/PowerShell 指令路由至 auto-mode 分類器（先前僅任意程式碼執行模式才會路由），以及 auto-mode 相關改進。
 
 ---
 
 ## 現況
 
-最新版本 **v2.1.191**（2026-06-25）新增 `/rewind` 指令，使用者可從 `/clear` 執行前的任一對話節點恢復上下文，無需重新描述需求；並修正 streaming 過程中捲軸自動跳至底部的干擾行為。API 529 過載事件於 2026-06-21 至 06-22 連續兩波影響 Opus/Sonnet 模型，Max plan 用戶首條 prompt 即觸發 Overloaded 錯誤。Claude Code 是 Anthropic 的 AI 編碼 CLI 工具，核心能力已從程式碼助理擴展為具備全桌面自動化、多代理管理（Managed Agents）、MCP Server 整合、Hooks 機制與 AI 安全審查的完整 agent 開發平台；GitHub Stars 達 **131,000+**。Microsoft 正陸續取消內部授權轉推 GitHub Copilot CLI（見 [[topics/competitor-landscape]]）；Ramp AI Index 數據顯示 Anthropic 企業採用率首次超越 OpenAI（34.4% vs 32.3%）。
+最新版本 **v2.1.193**（2026-06-25）新增 `autoMode.classifyAllShell` 設定，可將所有 Bash/PowerShell 指令統一路由至 auto-mode 分類器（先前僅任意程式碼執行模式才會路由）；另包含 auto-mode 相關改進。Anthropic 同步發表基於 2025/10–2026/04 約 40 萬個 session 的分析研究，發現人類主導規劃決策、Claude 主導執行決策，且使用者領域專業越高，Claude 每條指令完成的工作量越大。API 529 過載事件於 2026-06-21 至 06-22 連續兩波影響 Opus/Sonnet 模型，Max plan 用戶首條 prompt 即觸發 Overloaded 錯誤。Claude Code 是 Anthropic 的 AI 編碼 CLI 工具，核心能力已從程式碼助理擴展為具備全桌面自動化、多代理管理（Managed Agents）、MCP Server 整合、Hooks 機制與 AI 安全審查的完整 agent 開發平台；GitHub Stars 達 **131,000+**。Microsoft 正陸續取消內部授權轉推 GitHub Copilot CLI（見 [[topics/competitor-landscape]]）；Ramp AI Index 數據顯示 Anthropic 企業採用率首次超越 OpenAI（34.4% vs 32.3%）。
 
 ## 熱度與試用價值
 
@@ -31,6 +31,7 @@
 
 | 版本 | 日期 | 重點 |
 |------|------|------|
+| **v2.1.193** | 2026-06-25 | 新增 `autoMode.classifyAllShell` 設定：將所有 Bash/PowerShell 指令路由至 auto-mode 分類器（先前僅任意程式碼執行模式才會路由）；auto-mode 相關改進 |
 | **v2.1.191** | 2026-06-25 | 新增 `/rewind` 指令：支援從 `/clear` 執行前的任一對話節點恢復，讓使用者在誤清 context 後可無縫回到任意歷史節點繼續對話；修正 streaming 時捲軸自動跳至底部的 UX 問題 |
 | **anthropic-sdk-typescript v0.106.0** | 2026-06-25 | `client` 新增 `system.message` 支援，開發者可透過 client 層直接注入系統訊息 |
 | **anthropic-sdk-python v0.112.0** | 2026-06-25 | `client` 新增 `system.message` 支援，與 TypeScript SDK v0.106.0 功能對齊 |
@@ -100,6 +101,7 @@
 > ⚠️ **安裝安全警示**：Google 搜尋廣告曾出現仿冒官方安裝包（植入 Trojan:Win32/Kepavll!rfn），假冒包透過 IElevator 機制竊取瀏覽器 Cookie 與機密憑證，多家資安媒體同步報導。**務必僅從官方來源安裝：`github.com/anthropics/claude-code`**
 
 ### 開發者須知
+- **官方研究：Claude Code 40 萬場 session 分析（2026-06-25）**：Anthropic 公開基於 2025/10–2026/04 約 40 萬個 Claude Code session 的分析研究。核心發現：人類主導規劃決策，Claude 主導執行決策；使用者領域專業越高，Claude 每條指令完成的工作量越大；各職業成功率幾乎與軟體工程師相同（見 [研究報告](https://www.anthropic.com/research/claude-code-expertise)）
 - **Extended Thinking 輸出為加密摘要，非原始推理（2026-06-22）**：session log 中的 thinking blocks 文字是推理的摘要版本，真實推理過程被 Anthropic 加密後存在 600 字元 signature 中，用戶端無法解密。需做審計追蹤或對推理過程有完整性要求的工程師，應避免以 thinking blocks 內容作為事實依據（見「已知問題」）
 - **年齡驗證政策（Persona Identity Verification，2026-06-22）**：Anthropic 在特定使用情境下導入 Persona 第三方身分驗證，以落實年齡管控、使用政策與法規遵循。此政策屬平台使用條款異動，不影響 CLI 操作
 - **CLI 權限客製化避免手動確認（2026-06-22）**：長工作流中可透過 `settings.json` 的 `allowedTools` 與 Permission Rules 設定白名單，減少 Claude Code 在 agentic 模式下不斷彈出手動確認。`Tool(param:value)` 語法（v2.1.178）支援比對工具輸入參數，搭配 `--dangerously-skip-permissions` 旗標可完全自動化非互動批次流程（見 [教學](https://dev.to/kapoormanish/stop-clicking-approve-how-to-customize-claude-code-cli-permissions-pnh)）

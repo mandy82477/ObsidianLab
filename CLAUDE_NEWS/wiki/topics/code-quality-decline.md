@@ -3,10 +3,10 @@
 **狀態：** monitoring（官方已說明，待驗證恢復）
 **領域：** 🛠️ 工具/功能
 **開始日期：** 2026-03（推測）
-**最後更新：** 2026-06-23
+**最後更新：** 2026-06-26
 
-> **最近效能退步事件**（2026-06-18）
-> 開發者 Aaron Gustafson 揭露：即使 CLAUDE.md 已明確指定 WCAG 2.2 AA 規格，Claude Code 仍將無障礙修復視為可選取捨，模型自述原因是追求「coding speed」時降級了 accessibility，被評為「價值觀優先序偏差」而非知識不足。
+> **最近效能退步事件**（2026-06-26）
+> 用戶回報 Claude Code 自訂編排路由失效：相同 orchestration 設定下 OpenCode 穩定執行，但 Claude Code 無法可靠路由到自訂 providers 的 agents；問題指向工具行為不一致性，官方尚未回應。
 
 ---
 
@@ -20,6 +20,7 @@ Claude Code 在 2026 年 3 月至 4 月間出現長達約一個月的效能明�
 
 ## 技術彙整
 
+- **自訂編排路由失效（Reddit r/ClaudeAI，2026-06-26）**：用戶反映相同的自訂 orchestration 設定，OpenCode 能穩定路由到自訂 providers 的 agents，但 Claude Code 無法可靠執行相同路由；問題未見官方說明；此為工具行為不一致問題，非模型能力退步，但影響依賴自訂 agent 編排的工作流（來源：[Reddit r/ClaudeAI](https://www.reddit.com/r/ClaudeAI/comments/1ug7sz4/claude_code_ignores_my_custom_orchestration_and/)）
 - **LLM 無障礙偏差（Claude Code issue #56079，2026-06-18）**：即使 CLAUDE.md 明確要求 WCAG 2.2 AA，Claude Code 仍將無障礙修復視為「可選取捨」而非需求；模型自解釋：在追求「coding speed」時 accessibility 被降為次要優先；這是「values problem」而非知識問題，與人類工程師的相同偏見如出一轍（Aaron Gustafson blog；2026-06-20 仍在追蹤中）
 - **Session log 路徑**：`~/.claude/projects/` 存放 JSONL 格式的 session log，CC-Canary 透過此路徑讀取歷史資料進行效能比對
 - **CC-Canary 判定等級**：`HOLDING`（穩定）／`SUSPECTED REGRESSION`（疑似退步）／`CONFIRMED REGRESSION`（確認退步）
@@ -67,6 +68,10 @@ Claude Code 在 2026 年 3 月至 4 月間出現長達約一個月的效能明�
 - [Anthropic's definition of safety is too narrow](https://jonathannen.com/anthropic-safety-too-narrow/)
 
 ## 時序（最新在上）
+
+### 2026-06-26
+
+- **自訂 Agent 編排路由失效**：用戶反映 Claude Code 無法可靠路由到自訂 orchestration 中的自訂 providers agents，OpenCode 同設定可穩定執行；問題指向 Claude Code 編排機制的行為不一致性，非模型能力問題；官方尚未回應（Reddit r/ClaudeAI）
 
 ### 2026-06-18
 

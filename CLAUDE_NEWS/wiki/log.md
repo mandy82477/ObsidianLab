@@ -1934,3 +1934,28 @@ Append-only 紀錄。每次 ingest、query 或 lint 都在此追加一條。
 - 更新入鏈：`topics/community-tech-patterns.md` wikilink 改為純文字引用；`entities/claude-code.md` 歷史紀錄 `[[entities/stainless]]` 改為 `[[topics/anthropic-business]]`
 - 刪除：`entities/project-deal.md`、`entities/stainless.md`
 - `wiki/index.md`：移除兩列，最後更新 2026-06-19
+
+## 2026-06-26 Ingest | news/2026-06-26.md（63 則）
+
+- 來源日報：`news/2026-06-26.md`（63 則，6/6 來源；Reddit 429 rate limit 部分失敗，仍有 10 筆）
+- 更新頁面：
+  - `wiki/entities/claude-code.md`：v2.1.193（autoMode.classifyAllShell）；Anthropic 官方 40 萬 session 研究報告
+  - `wiki/entities/john-jumper.md`：補充 2026-06-26 dev.to 報導；Mythos 危機背景；$2,700 億市值蒸發細節
+  - `wiki/entities/tom-brown.md`：移除聯合創辦人待核實標記；補充 GPT-3 共同作者背景
+  - `wiki/entities/dario-amodei.md`：2026-06-26 WIRED 報導（政府不信任、Tom Brown 接管談判）
+  - `wiki/entities/pricing.md`：Max 5x × 2 vs 20x × 1 方案分析（獨立開發者並行 session 策略）
+  - `wiki/topics/anthropic-government-policy.md`：Tom Brown 接管談判進展；Bloomberg 反效果分析；Alibaba 蒸餾攻擊政策面；攻防紀錄表 prepend 3 行
+  - `wiki/topics/ai-agent-safety.md`：Alibaba 蒸餾攻擊（安全面，28.8M/25K 假帳號，待對方確認）；MITRE ATT&CK 報告（832 帳號映射）
+  - `wiki/topics/anthropic-business.md`：Alibaba 蒸餾攻擊補強細節（信件日期 6/10、收信人 Scott/Warren、攻擊窗口 4/22–6/5）；Claude Cowork 行動版
+  - `wiki/topics/ai-talent-flow.md`：Google 一週 4 位研究員跳槽 Anthropic（John Jumper 領銜）；$2,700 億市值蒸發；Gemini 3.5 延期；對各公司影響表更新
+  - `wiki/topics/enterprise-cost-management.md`：企業 ROI 反撲（tokenmaxxing → 效率優先，qz.com + CNBC）
+  - `wiki/topics/competitor-landscape.md`：DeepSeek V4 Flash 顛覆 agent 定價經濟學（成本 100x 降低）
+  - `wiki/topics/community-tech-patterns.md`：6 個新工作流模式（Read-Only Reviewer、Repo-as-Memory、Just-in-time @-file 載入、批量 OSS bug 修復、20 agent 規模化限制、Personas vs Tool-scoping）
+  - `wiki/topics/community-tech-discussions.md`：3 個新熱門討論（OpenKnowledge、DeepSeek 顛覆 Anthropic 定價、terminal agent 比較）；清理超過 21 天的 ☄️閃現 條目
+  - `wiki/topics/code-quality-decline.md`：Claude Code 自訂編排路由失效（自訂 provider agents 無法可靠路由）
+  - `wiki/topics/official-community-gap.md`：Claude Cowork 行動版進展（平台可及性分析）
+  - `wiki/feature-radar.md`：新增 autoMode.classifyAllShell（🔥🔥 / ⚡）；更新本週推薦（/rewind 取代破壞性 Git 封鎖）
+  - `wiki/index.md`：近期異動更新；tom-brown 移除待核實標記
+- feature-radar 新增：autoMode.classifyAllShell（Claude Code v2.1.193）
+- 新增頁面：無
+- 呈現品質審查：✅ claude-code.md / john-jumper.md / tom-brown.md / dario-amodei.md / anthropic-government-policy.md / ai-agent-safety.md / anthropic-business.md / ai-talent-flow.md / enterprise-cost-management.md / pricing.md / competitor-landscape.md / community-tech-patterns.md / official-community-gap.md；⚠️ community-tech-discussions.md 已修復（移除超過 21 天 ☄️閃現 條目）；code-quality-decline.md ✅

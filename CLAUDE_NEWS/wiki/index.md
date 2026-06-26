@@ -2,24 +2,27 @@
 
 LLM 查詢此 wiki 時，**先讀這個檔案**找相關頁面，再讀具體頁面取得詳細資訊。
 
-**最後更新：** 2026-06-25
+**最後更新：** 2026-06-26
 ---
 
 ## 近期異動
 
-- [[entities/claude-code]] — v2.1.191：/rewind 指令（從 /clear 前節點恢復 context）+ streaming 捲軸修正
-- [[entities/tom-brown]] — 新建：Anthropic 聯合創辦人，接管 Fable 5 與白宮的出口管制談判
-- [[entities/dario-amodei]] — 退出 Fable 5 白宮談判，由 Tom Brown 接管
-- [[entities/opus-4-8]] — 第三方評測：vs Gemini 3.5 Flash，35.4 對 34.8 略輸（指令遵循失誤）
-- [[entities/opus-4-7]] — 使用者實測：4.7 比 4.6 在相同工作量下消耗更多 token
-- [[topics/anthropic-government-policy]] — Tom Brown 接管談判；EU 介入白宮對話；LessWrong 預測修正至 7/9
-- [[topics/anthropic-business]] — 阿里巴巴蒸餾攻擊指控（28.8M 對話，25K 假帳號）；Google 研究員加入；Notion 整合 Claude Agents
-- [[topics/competitor-landscape]] — 阿里巴巴蒸餾攻擊；Google 重組 AI 編碼部隊；Alphabet 股價下跌
-- [[topics/enterprise-tool-tracker]] — Notion 整合 Claude Agents 與 Cursor 作為外部 agent
-- [[topics/community-tech-patterns]] — 新增 6 個工作流模式（Hook 任務守門、repo convention 注入、adversarial reviewer、multi-model pipeline 等）
-- [[topics/community-tech-discussions]] — 新增 3 個熱門討論（阿里巴巴蒸餾攻擊倫理、Anthropic 工程師孤獨感、HTML vs Markdown 格式選擇）
-- [[feature-radar]] — 新增 /rewind 指令、SDK client.system.message 兩個條目
-- [[topics/ai-talent-flow]] — 新建：跨公司 AI 人才流動追蹤，三家影響分析（DeepMind 流失、Anthropic/OpenAI 承接）
+- [[entities/claude-code]] — v2.1.193：autoMode.classifyAllShell 設定；官方研究報告（40 萬 session 分析）
+- [[entities/john-jumper]] — 補充 2026-06-26 細節：Mythos 危機背景、市值蒸發 $2,700 億
+- [[entities/tom-brown]] — 移除聯合創辦人待核實標記，補充 GPT-3 背景
+- [[entities/dario-amodei]] — 2026-06-26：WIRED 報導政府對其「不信任」，Tom Brown 接管談判
+- [[topics/anthropic-government-policy]] — 出口管制攻防：Tom Brown 談判進展、Bloomberg 反效果分析、Alibaba 蒸餾攻擊政策面
+- [[topics/ai-agent-safety]] — Alibaba 蒸餾攻擊（安全面）、MITRE ATT&CK 報告
+- [[topics/anthropic-business]] — Alibaba 蒸餾攻擊補強細節（信件日期 6/10、參議員具名）
+- [[topics/ai-talent-flow]] — Google 一週 4 位研究員跳槽 Anthropic（John Jumper 領銜）、$2,700 億市值蒸發、Gemini 3.5 延期
+- [[topics/enterprise-cost-management]] — 企業 ROI 反撲：tokenmaxxing 轉向效率優先（qz.com + CNBC）
+- [[topics/competitor-landscape]] — DeepSeek V4 Flash 顛覆 agent 定價經濟學
+- [[entities/pricing]] — Max 5x × 2 vs 20x × 1 方案分析（獨立開發者並行 session 策略）
+- [[topics/community-tech-patterns]] — 新增 6 個工作流模式（Read-Only Reviewer、Repo-as-Memory、Just-in-time @-file、批量 OSS bug 修復等）
+- [[topics/community-tech-discussions]] — 新增 3 個熱門討論；清理超過 21 天的 ☄️閃現 條目
+- [[topics/code-quality-decline]] — Claude Code 自訂編排路由失效（自訂 provider agents）
+- [[topics/official-community-gap]] — Claude Cowork 行動版進展
+- [[feature-radar]] — 新增 autoMode.classifyAllShell 條目；更新本週推薦
 
 ---
 
@@ -52,7 +55,7 @@ LLM 查詢此 wiki 時，**先讀這個檔案**找相關頁面，再讀具體頁
 | [[entities/cat-wu]] | person | 👤 人物 | active | Claude Code 產品負責人，「AI 下一步是主動性（proactivity）」論述 |
 | [[entities/andrej-karpathy]] | person | 👤 人物 | active（待核實）| 近期加入 Anthropic，CLAUDE.md 四條規則、「最小必要 context」費用控管原則 |
 | [[entities/fiona-fung]] | person | 👤 人物 | active | Anthropic 工程副總裁；「Claude Code 讓工程師更孤獨；coding 不再是瓶頸」論述（2026-06-22） |
-| [[entities/tom-brown]] | person | 👤 人物 | active（待核實）| Anthropic 聯合創辦人；2026-06-25 接管 Fable 5 出口管制與白宮談判 |
+| [[entities/tom-brown]] | person | 👤 人物 | active | Anthropic 聯合創辦人（GPT-3 共同作者）；2026-06-25 接管 Fable 5 出口管制與白宮談判 |
 | [[entities/dario-amodei]] | person | 👤 人物 | active | Anthropic CEO：政府監管立場、企業文化論述、Code with Claude 大會現場宣布速率政策 |
 | [[entities/chris-olah]] | person | 👤 人物 | active | Anthropic 共同創辦人、AI 可解釋性研究先驅；2026-05-26 梵蒂岡封論揭幕演講 |
 | [[entities/opencode]] | product | 🛠️ 工具/功能 | active（快速成長）| Claude Code 主要開源替代品，157K 開發者分流，OpenCode-power-pack 移植官方 11 個 skills |

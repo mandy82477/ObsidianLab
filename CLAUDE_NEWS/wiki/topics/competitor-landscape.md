@@ -3,10 +3,11 @@
 **狀態：** monitoring
 **領域：** 💼 商業
 **開始日期：** 2026-04
-**最後更新：** 2026-06-25
+**最後更新：** 2026-06-26
+**最後新聞更新：** 2026-06-26
 
-> **最新競品動態**（2026-06-25）
-> Anthropic 正式指控阿里巴巴大規模模型蒸餾攻擊；Google 重組 AI 編碼 strike team 應對 Anthropic 競爭壓力，同時 Alphabet 股價因 DeepMind 人才出走持續下滑。
+> **最新競品動態**（2026-06-26）
+> DeepSeek V4 Flash（成本降低逾 100 倍、開源）打破 Anthropic 以高 API 定價補貼自家 agent 服務的商業邏輯；Microsoft 等廠商已切換至 DeepSeek，Anthropic 的定價護城河受到正面衝擊。
 
 ---
 
@@ -64,9 +65,10 @@ Claude Code 已成為 AI 輔助編碼的標竿產品，但競爭正快速升溫�
 - **重大事件**：SpaceX 以 $60B 正式完成收購 Cursor（2026-06-17 確認）；收購整合 SpaceX / xAI 生態，使 Cursor 獲得 SpaceX 資源支撐，直接衝擊 Claude Code vs Cursor 競爭態勢；Cursor 此前與 Anthropic 有深度整合關係，收購後生態歸屬方向待觀察（dev.to、9to5Mac）
 
 ### DeepSeek 🔴
-- **狀態**：正式宣布建構 Claude Code 競品（2026-05-22）
+- **狀態**：正式宣布建構 Claude Code 競品（2026-05-22）；DeepSeek V4 Flash 顛覆 agent 定價（2026-06-26）
 - **策略**：「Beijing Wants the Whole Stack」——DeepSeek 不只是低成本替代生態，而是公開宣稱要打造從模型到開發工具的完整技術棧
 - **既有基礎**：DeepClaude（聲稱降低 17 倍成本）、DeepSeek-based Claude Code clone（8,700 Stars）
+- **關鍵定價衝擊（2026-06-26）**：DeepSeek V4 Flash（開源，成本較 Claude API 降低逾 100 倍）打破 Anthropic 以較高 API 定價補貼自家 Claude Code 等 agent 服務的商業邏輯；Microsoft 等廠商已實際切換至 DeepSeek 執行層（ref: rtrvr.ai https://www.rtrvr.ai/blog/code-as-plan-deepseek-flash-text-only-browser-agent）。**對 Anthropic 的意涵**：訂閱補貼依賴 API 定價差距維持，DeepSeek Flash 壓縮此空間；若企業持續切換執行層，Anthropic 的 token 份額將流失至競品（推論）
 - **意義**：Claude Code 類產品已成為國家層面 AI 競爭的戰場；DeepSeek 轉向正面競爭標誌低成本替代生態進入下一階段
 
 ### Alibaba Qwen3.7-Max / Alibaba 蒸餾攻擊
@@ -108,6 +110,9 @@ Claude Code 已成為 AI 輔助編碼的標竿產品，但競爭正快速升溫�
 ---
 
 ## 時序
+
+### 2026-06-26
+- **[定價顛覆] DeepSeek V4 Flash 打破 Anthropic agent 服務定價邏輯，Microsoft 等廠商切換**：開發者分析文章指出，Anthropic 商業模式的隱含前提是「以較高 API 定價補貼自家 agent 服務（Claude Code 等）」；DeepSeek V4 Flash（開源、成本降低逾 100 倍）出現後，這個前提被動搖——Microsoft 等廠商已切換至 DeepSeek 作為執行層，Anthropic 面臨執行層 token 份額流失與定價護城河被侵蝕的雙重壓力（rtrvr.ai https://www.rtrvr.ai/blog/code-as-plan-deepseek-flash-text-only-browser-agent）
 
 ### 2026-06-25
 - **[重大法律事件] Anthropic 正式指控阿里巴巴 AI 模型蒸餾攻擊，阿里股價單日跌逾 33%**：Anthropic 指控阿里巴巴使用約 25,000 個假帳號、執行 2,880 萬次 Claude 對話，系統性竊取 Claude 模型能力用於訓練自家模型；是 AI 產業首起具名大規模模型蒸餾攻擊指控，Reuters、Bloomberg、WSJ、BBC、FT、CNBC、QZ 多媒體同步報導，HN score 605（Reuters https://www.reuters.com/world/china/anthropic-says-alibaba-illicitly-extracted-claude-ai-model-capabilities-2026-06-24/）

@@ -4,11 +4,11 @@
 **狀態：** active
 **領域：** 👤 人物
 **首次出現：** 2026-04-25
-**最後更新：** 2026-06-25
-**最後新聞更新：** 2026-06-25
+**最後更新：** 2026-06-26
+**最後新聞更新：** 2026-06-26
 
-> **最新政策立場**（2026-06-25）
-> WIRED 報導：Dario Amodei 已退出與白宮的 Fable 5 出口管制談判，由聯合創辦人 Tom Brown 接管直接對話。白宮人士評價 Dario「行為怪異（being a weirdo）」，指其無法有效與 Trump 政府溝通。
+> **最新政策立場**（2026-06-26）
+> Wired 報導延伸確認：Trump 政府已不再信任 Dario Amodei，改由 Anthropic 聯合創辦人 Tom Brown（GPT-3 共同研發者）接替與政府的 Fable/Mythos 解鎖談判。政府稱 Tom Brown「能實際討論，不怪」，Dario 的安全立場與政策風格持續受到質疑。
 
 ---
 
@@ -24,6 +24,7 @@ Anthropic 共同創辦人兼執行長（CEO）。與 Chris Olah、Daniela Amodei
 
 | 日期 | 立場 | 來源 |
 |------|------|------|
+| 2026-06-26 | Wired 進一步確認：Trump 政府已不再信任 Amodei，Tom Brown（GPT-3 共同研發者）接管 Fable/Mythos 解鎖談判；Dario 政策立場持續受質疑 | WIRED |
 | 2026-06-25 | 退出 Fable 5 出口管制談判，由 Tom Brown 接管；白宮人士評其「行為怪異」無法有效溝通 | WIRED |
 | 2026-06-24 | 白宮與 Dario Amodei 的關係趨於緊張，與 Fable 出口管制爭議政治維度相關 | WIRED |
 | 2026-06-22 | FT 分析：風險/法規字詞密度每千字 5 字（vs Altman 0.6 字），被批評者指間接助攻出口禁令 | Ars Technica |
@@ -46,10 +47,12 @@ Anthropic 共同創辦人兼執行長（CEO）。與 Chris Olah、Daniela Amodei
 - [[topics/anthropic-business]] — 企業策略與商業動態
 - [[topics/recursive-self-improvement]] — 遞歸自我改進公開討論
 - [[entities/chris-olah]] — Anthropic 共同創辦人
+- [[entities/tom-brown]] — 接管政府談判的 Anthropic 聯合創辦人
 - [[entities/fable-5]] — 2026 旗艦模型（個人出席大會宣布相關政策）
 
 ## 參考來源
 
+- [WIRED，2026-06-26](https://www.wired.com/story/the-trump-white-house-is-over-anthropics-dario-amodei/)：Trump 政府不再信任 Amodei，Tom Brown 全面接管政府溝通
 - [WIRED，2026-06-24](https://www.wired.com/story/the-trump-white-house-is-over-anthropics-dario-amodei/)：白宮關係緊張；退出談判由 Tom Brown 接管
 - Bloomberg 訪談（2026-06-11）：政府監管 + 組織架構
 - Fortune 訪談（2026-06-08）：企業文化論述
@@ -57,6 +60,7 @@ Anthropic 共同創辦人兼執行長（CEO）。與 Chris Olah、Daniela Amodei
 
 ## 歷史記錄
 
+- 2026-06-26：Wired 延伸報導確認 Trump 政府已不再信任 Amodei，改由 Tom Brown（GPT-3 共同研發者、Anthropic 聯合創辦人）全面接管政府溝通；Dario 以商業成功推動 AI 安全的政策立場持續受到質疑（來源：WIRED）
 - 2026-06-25：WIRED 報導 Amodei 退出與白宮 Fable 5 出口管制談判，由聯合創辦人 Tom Brown 接管；白宮人士批評其「行為怪異」無法有效與 Trump 政府溝通（來源：WIRED）
 - 2026-06-24：WIRED 報導白宮與 Dario Amodei 的關係趨於緊張，為 Fable 出口管制爭議持續發酵下的政治維度，顯示 Anthropic 與現任行政當局關係惡化
 - 2026-06-23：Ars Technica 援引 FT 分析：Dario 公開聲明中風險/法規相關字詞密度達每千字 5 字，為 OpenAI Sam Altman（0.6 字）的 8 倍多；批評者認為此頻繁表態間接助攻美國政府 AI 出口禁令

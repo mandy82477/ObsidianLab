@@ -4,7 +4,7 @@
 僅收錄官方 changelog、release note 或官方公告來源；社群工具見 [[topics/community-tech-tools]]。
 每次 ingest 後由 LLM 維護：新增功能、更新熱度、補充社群回饋。
 
-**最後更新：** 2026-06-25
+**最後更新：** 2026-06-26
 
 ---
 
@@ -12,7 +12,7 @@
 
 - **/goal 指令**（熱度 🔥🔥🔥🔥🔥）：設定持久目標讓 Claude Code 多輪保持方向，適合需要長期任務追蹤的開發者
 - **Claude Code Artifacts**（熱度 🔥🔥🔥🔥🔥）：工作階段即時輸出可共享互動網頁，適合需要向非工程師成員展示進度的開發者
-- **破壞性 Git 指令自動封鎖**（熱度 🔥🔥🔥）：防止 Claude Code 執行 `git reset --hard` 等危險指令，適合重視倉庫安全的所有開發者
+- **/rewind 指令**（熱度 🔥🔥🔥）：從 `/clear` 前節點恢復 context，適合需要長工作階段容錯管理的開發者
 
 ---
 
@@ -37,6 +37,7 @@
 
 | 功能 | 發布日期 | 熱度 | 試用價值 | 狀態 |
 |------|----------|------|----------|------|
+| **`autoMode.classifyAllShell` 設定**（Claude Code v2.1.193，所有 Bash/PowerShell 路由 auto-mode 分類器） | 2026-06-25 | 🔥🔥 | ⚡ 有條件推薦 | 正式發布 |
 | **`/rewind` 指令**（Claude Code，從 `/clear` 前節點恢復 context） | 2026-06-25 | 🔥🔥🔥 | ⚡ 有條件推薦 | 正式發布 |
 | **SDK `client.system.message`**（TypeScript v0.106.0 / Python v0.112.0） | 2026-06-25 | 🔥🔥 | ⚡ 有條件推薦 | 正式發布 |
 | **Claude Tag**（Slack-native AI 協作工具，65% Anthropic 程式碼由其生成） | 2026-06-24 | 🔥🔥🔥 | ⚡ 有條件推薦 | 正式發布 |
@@ -86,6 +87,27 @@
 ---
 
 ## 🆕 最新功能（2026-06）
+
+### autoMode.classifyAllShell 設定
+**發布：** 2026-06-25（v2.1.193） | **熱度：** 🔥🔥 | **試用價值：** ⚡ 有條件推薦 | **狀態：** 正式發布
+
+**是什麼：** 新增 `autoMode.classifyAllShell` 設定，啟用後所有 Bash/PowerShell 指令都會路由至 auto-mode 分類器，而非只有任意程式碼執行（arbitrary code execution）模式才路由。
+
+**為何熱：** 讓 auto-mode 對 shell 指令有更完整的分類覆蓋，使用 auto-mode 的工程師可獲得更一致的指令路由行為。
+
+**快速上手：**
+```json
+{
+  "autoMode": {
+    "classifyAllShell": true
+  }
+}
+```
+在 `settings.json` 或 `~/.claude/settings.json` 中加入以上設定。
+
+**注意事項：** 僅對使用 auto-mode 的場景有效；若未啟用 auto-mode，此設定無影響。
+
+---
 
 ### /rewind 指令（Claude Code）
 **發布：** 2026-06-25（v2.1.191）| **熱度：** 🔥🔥🔥 | **試用價值：** ⚡ 有條件推薦 | **狀態：** 正式發布

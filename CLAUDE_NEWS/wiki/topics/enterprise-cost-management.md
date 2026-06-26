@@ -3,11 +3,11 @@
 **狀態：** monitoring
 **領域：** 💼 商業
 **開始日期：** 2026-05-01
-**最後更新：** 2026-06-23
-**最後新聞更新：** 2026-06-23
+**最後更新：** 2026-06-26
+**最後新聞更新：** 2026-06-26
 
-> **最新成本挑戰**（2026-06-23）
-> The Information 報導企業客戶系統性採用 prompt 精簡、快取命中優化、多模型路由，部分案例成本削減超過 50%；成本優化議題已從社群討論升至主流財媒報導層級。
+> **最新成本挑戰**（2026-06-26）
+> 企業客戶大規模從「token 最大化（tokenmaxxing）」轉向效率優先，Anthropic 與 OpenAI 同步面臨企業市場 ROI 壓力；qz.com 與 CNBC 同日報導多家企業縮減 AI 支出，「效率優先時代」成新主旋律。
 
 ---
 
@@ -125,6 +125,10 @@
 - [[news/2026-05-22]]
 
 ## 時序
+
+### 2026-06-26
+- **[ROI 反撲] 企業客戶集體轉向效率優先，Anthropic 與 OpenAI 雙雙面臨支出縮減壓力**：qz.com 與 CNBC 同日（2026-06-26）報導，企業從「token 最大化（tokenmaxxing）」策略轉向效率優先，多家企業縮減對 Anthropic 與 OpenAI 的 AI 支出；CNBC 標題明確指出「新 AI 消費現實——用戶轉向效率」（qz.com https://qz.com/enterprise-ai-spending-openai-anthropic-roi-pullback-062626；CNBC https://www.cnbc.com/2026/06/26/openai-anthropic-new-ai-spending-reality-as-users-shift-to-efficiency.html）
+- **分析師觀點**：此波 ROI 反撲與 2026-06-23 The Information 報導的「成本削減超 50%」趨勢一脈相承，顯示企業已從「試用/擴大」週期進入「優化/鞏固」週期。對 Anthropic 而言，壓力不在於技術能力，而在於是否能提供企業層級的成本可見性工具（推論）。
 
 ### 2026-06-23
 - **[帳單優化趨勢] 企業客戶透過 prompt 優化、快取策略、模型路由大幅削減 AI 帳單，部分節省超過 50%**：The Information（2026-06-23）報導，企業客戶正系統性採用 prompt 精簡、快取命中優化、多模型路由等手段，大幅降低對 Anthropic 與 OpenAI 的支出，部分案例節省幅度超過 50%；這與企業成本因應策略表格中的「multi-step agent 混用 Sonnet/Haiku」（削減 90%）方向一致，顯示成本優化已從社群討論升至主流財媒報導層級（The Information 2026-06-23 https://www.theinformation.com/articles/ai-customers-lowering-anthropic-openai-bills）

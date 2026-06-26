@@ -3,12 +3,12 @@
 **狀態：** ongoing
 **領域：** 💼 商業
 **開始日期：** 2026-06-19
-**最後更新：** 2026-06-25
-**最後新聞更新：** 2026-06-25
+**最後更新：** 2026-06-26
+**最後新聞更新：** 2026-06-26
 
 ## 摘要
 
-2026-06-24，Google DeepMind 再失兩名頂尖研究員——Jonas Adler（AI 編碼）與 Alexander Pritzel（訓練）確認加入 Anthropic，Bloomberg 標題直指這是繼諾貝爾獎得主 John Jumper（6/19）後的「再一波」（two more）。同日 The Information 報導 Google 正重組 AI 編碼突擊隊以追趕 Anthropic——**流失的方向（AI coding）正是 Google 落後的方向**，是這波人才戰最值得注意的一點。
+一週內 Google DeepMind 連失 4 位頂尖研究員至 Anthropic，市值蒸發約 $2,700 億美元，Gemini 3.5 延期。最矚目的是 2024 諾貝爾化學獎得主 John Jumper（6/19，蛋白質結構預測，DeepMind 近 9 年），加上 Jonas Adler（AI 編碼）、Alexander Pritzel（訓練）、以及另一名未具名研究員（轉投 OpenAI）。The Information 同日報導 Google 正重組 AI 編碼突擊隊以追趕 Anthropic——**流失的方向（AI coding）正是 Google 落後的方向**，是這波人才戰最值得注意的一點。
 
 本頁追蹤 AI 前沿實驗室之間的人才流動，重點放在**對各公司的影響**，而非單一公司視角。整體格局：人才明顯由 Google DeepMind 淨流出，Anthropic 為主要承接方，OpenAI 亦有斬獲。
 
@@ -16,8 +16,8 @@
 
 | 公司 | 角色 | 具體影響 | 評估 |
 |------|------|---------|------|
-| **Google DeepMind** | 淨流失方 | 一週內連失 Jumper（科學/生物）、Adler（AI 編碼）、Pritzel（訓練），另有一名研究員轉投 OpenAI；被迫重組 AI 編碼突擊隊 | 🔴 傷在痛點：流失方向與其落後領域（coding）重疊，複利式傷害（推論）|
-| **Anthropic** | 主要承接方 | 補強科學計算（Jumper）、AI 編碼（Adler）、模型訓練（Pritzel）、安全/經濟（FT 經濟學家）等多方向縱深 | 🟢 訊號 > 實質：對模型能力直接拉抬有限（Claude 已寫 80–90% 程式碼），真正價值在招募飛輪與動能訊號（推論）|
+| **Google DeepMind** | 淨流失方 | 一週內連失 Jumper（科學/生物）、Adler（AI 編碼）、Pritzel（訓練），另有一名研究員轉投 OpenAI；市值蒸發約 $2,700 億美元；Gemini 3.5 延期；被迫重組 AI 編碼突擊隊 | 🔴 傷在痛點：流失方向與其落後領域（coding）重疊，複利式傷害（推論）；市值衝擊為分析師推論，非官方確認（推論）|
+| **Anthropic** | 主要承接方 | 補強科學計算（Jumper / AlphaFold）、AI 編碼（Adler）、模型訓練（Pritzel）、安全/經濟（FT 經濟學家）等多方向縱深 | 🟢 訊號 > 實質：對模型能力直接拉抬有限（Claude 已寫 80–90% 程式碼），真正價值在招募飛輪與動能訊號（推論）|
 | **OpenAI** | 次要承接方 | 獲得一名 Google 頂尖研究員（6/23 SEJ 報導，姓名未具名）| 🟡 同步受惠於 Google 人才外流，規模小於 Anthropic |
 
 **關鍵判讀（推論）：**
@@ -26,6 +26,9 @@
 - 人才流動為**雙向洗牌**（Google 同期亦失人至 OpenAI），非單向崩塌。
 
 ## 時序
+
+### 2026-06-26
+- dev.to 深度報導：Google AI 人才出走潮一週內 4 位頂尖研究員離職，含諾貝爾獎得主 John Jumper；Google 市值蒸發約 $2,700 億美元（推論，分析師估算）、Gemini 3.5 延期；dev.to 另有報導 Jumper 在「危機中途」加入 Anthropic 的動機分析。（ref: https://dev.to/doremonai/googles-ai-brain-drain-4-top-researchers-leave-for-anthropic-in-one-week-270b-wiped-gemini-35-5ffl；ref: https://dev.to/peremptory/the-nobel-laureate-who-joined-anthropic-mid-crisis-5cfh）
 
 ### 2026-06-25
 - FT 報導 Anthropic 新聘一位對「人類長期存亡」有爭議觀點的經濟學家，引發 AI 安全社群討論。（ref: https://www.ft.com/content/bb04671c-4377-4231-96ef-0f8e57ed5d1b）

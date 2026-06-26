@@ -3,11 +3,11 @@
 **狀態：** monitoring
 **領域：** 🌐 社群
 **開始日期：** 2026-04-25
-**最後更新：** 2026-06-25
-**最後新聞更新：** 2026-06-25
+**最後更新：** 2026-06-26
+**最後新聞更新：** 2026-06-26
 
-> **最新工作流模式**（2026-06-25）
-> 五個新模式同日出現：pre-completion hook 防止 Claude Code 模糊結束任務；repo 慣例注入 plugin 解決 codebase 陌生問題；三模型協作架構（Claude + Codex + ChatGPT）明確分工；Adversarial Claude Reviewer 對抗性審查迴圈；以及「先 interview 再寫 code」任務前需求確認模式。
+> **最新工作流模式**（2026-06-26）
+> 六個新模式集中出現：Read-Only Reviewer Agent 以無編輯權限保持對立性；Repo-as-Memory 框架將「模型是工作者、repo 是記憶體」確立為多種實踐的底層哲學；Just-in-Time @-file 揭露預先加載的反模式；Personas vs Tool-scoping 提供 multi-agent 設計的框架比較；批量 OSS Bug 修復展示「相同形狀 bug」的批量化策略；以及 20 個並行 instance 的崩潰原因分析。
 
 ---
 
@@ -31,8 +31,10 @@
 | **Token / 成本優化** | Prompt 精簡、MCP Code Execution、Token Bloat 對策 | ⚡ 活躍 | HTML→Markdown 降 80% token；npx vs CLI 路徑差異陷阱 |
 | **記憶與知識管理** | ltm Core Memory Packet、本機圖資料庫、NanoBrain | ⚡ 活躍 | 跨 session / 跨工具持久記憶；Leiden 圖譜減少 71 倍 token |
 | **Plugin / MCP 整合** | Plugin 反模式整理、Claude Code 作為 MCP 協調中心 | ⚡ 活躍 | 避免不必要 context 載入；Claude Code 主導 MCP 工具鏈協作 |
-| **多代理 PR Review** | 4-agent Code Review、對抗性審查工作流、Adversarial Reviewer | ⚡ 活躍 | 架構師代理協調 + 多廠商模型交叉審查；對抗性審查者讀取真實 codebase 前移至計畫階段 |
+| **多代理 PR Review** | 4-agent Code Review、對抗性審查工作流、Adversarial Reviewer、Read-Only Reviewer | ⚡ 活躍 | 架構師代理協調 + 多廠商模型交叉審查；對抗性審查者讀取真實 codebase；read-only 權限約束維持對立性 |
 | **Agent 版本控制** | re_gent、Checkpoint Commits、ADR 注入 | ⏳ 新興 | /compact 後決策追溯；git history 作為 agent 共享 context |
+| **Context 管理** | Just-in-Time @-file、Repo-as-Memory、Context Rot 修復 | ⚡ 活躍 | 即時取回優於預先加載；repo 是記憶體、模型是工作者；避免 context 過早飽和 |
+| **Agent 規模化** | 20-instance 崩潰分析、批量 OSS Bug 修復、Personas vs Tool-scoping | ⏳ 新興 | 超過 10 個並行 agent 需獨立 worktree + orchestrator 協調層；工具範圍限制比角色描述更可靠的邊界守護 |
 | **安全架構** | CLAUDE.md for K8s、語意層漂移 CI 測試、Trent 內嵌評估 | ⏳ 新興 | AI 加速開發下的系統性安全防線；CI 攔截語義退化 |
 | **跨環境 Agent 記憶** | Core Memory Packet、Agent 持續運作架構 | ⏳ 新興 | 跨編輯器 / 跨機器 / 跨模型的供應商中立記憶協定 |
 | **架構邊界合約** | ANMA YAML contracts、Hooks 強制驗證、ISO 29148 規格驅動 | ⏳ 新興 | 用合約與工業標準定義 AI 不可越過的架構規則；使便宜模型也能守規 |
@@ -42,6 +44,73 @@
 ---
 
 ## 技術彙整
+
+### Read-Only Reviewer Agent：無編輯權限的對立審查者（2026-06-26）
+
+- **核心模式：** 主 agent 負責撰寫程式碼，reviewer agent 只能讀取、不能編輯；「無編輯權限」是設計的核心約束，保持審查者的對立性，能捕捉主 agent 放過的問題
+- **實作方向：**
+  - 主 agent 完成一個任務單元後，呼叫 reviewer agent 讀取變更
+  - reviewer agent 不持有任何編輯工具（write/edit），強制其只輸出審查意見
+  - 主 agent 收到意見後決定是否採納，維持決策責任歸屬清晰
+- **解決的問題：** 若 reviewer 也能編輯，會傾向直接修改而非提供批評意見；權限約束使「對立性」可持續，避免 reviewer 降格為第二個 implementer
+- **設計分層：** 此模式是「Adversarial Claude Reviewer」（2026-06-25）的權限約束強化版；前者著重讀取真實 codebase，本模式著重工具範圍限制確保對立性
+- **成熟度：** ⏳ 新興
+- **來源：** ["Read-Only Reviewer Agents Catch What Your Main Agent Waves Through"](https://dev.to/greymothjp/read-only-reviewer-agents-catch-what-your-main-agent-waves-through-3ggc)（dev.to，06-26）
+
+### Repo-as-Memory / Stop Using the Model as Your Memory（2026-06-26）
+
+- **核心模式：** 框架提出「模型不保存狀態，repo 才是記憶體；模型是工作者（worker）」——已確定的決策應外化到 repo（CLAUDE.md、spec 檔、ADR），而非依賴模型在對話中記住
+- **實作方向：**
+  - 凡「已決定的事情」（架構選擇、技術約束、命名規則）立即寫入 repo 的指定檔案
+  - 不依賴模型跨 session 記憶既有決策；每個 session 從 repo 注入確定性 context
+  - 將此框架視為 Claude Code 許多架構決策的底層推論依據
+- **解決的問題：** 依賴模型記住已決定的事情，會導致模型在後續 session 重做已解決問題、忽略既有約束；context 腐蝕的根源之一
+- **設計分層（推論）：** 此框架統一解釋了 CLAUDE.md、`/specs` 目錄、ADR 等多種已有模式的共同動機——「repo 即記憶體」是這些實踐背後的底層哲學
+- **成熟度：** ⚡ 活躍
+- **來源：** ["Your Repo Is the Memory, Your Model Is the Worker"](https://dev.to/greymothjp/your-repo-is-the-memory-your-model-is-the-worker-3e09)（dev.to，06-26）；["Stop Using the Model as Your Memory"](https://dev.to/greymothjp/stop-using-the-model-as-your-memory-4nbi)（dev.to，06-26）
+
+### Just-in-Time @-file Retrieval：避免預先加載所有檔案（2026-06-26）
+
+- **核心模式（反模式揭露）：** 預先 @-mention 所有「可能」用到的檔案是反模式，導致 session 上下文過重退化（context rot）；正確做法是「即時取回（just-in-time retrieval）」——只在需要時才取回相關檔案
+- **實作方向：**
+  - 不要在 session 開始時一次性載入所有可能相關的檔案
+  - 讓 Claude 在執行任務過程中根據需要主動請求或取回檔案
+  - 搭配 CLAUDE.md 描述 codebase 結構（目錄索引），而非直接注入所有原始碼
+- **解決的問題：** 預先加載造成 context window 過早飽和，早期注入的約束被後來的內容稀釋；使用者分享切換後顯著改善
+- **成熟度：** ⚡ 活躍
+- **來源：** [Reddit r/ClaudeAI 討論](https://www.reddit.com/r/ClaudeAI/comments/1ug70ov/preloading_files_to_be_safe_was_quietly_rotting/)（06-26）
+
+### Personas vs Tool-Scoping：Multi-Agent 設計選擇（2026-06-26）
+
+- **核心模式：** Multi-agent 設計的兩條路線——角色導向（Personas：CEO / EM / QA 分工）vs 工具範圍限制（Tool-scoping：每個 agent 只掛載其職責所需的工具）；作者選擇後者
+- **實作方向（工具範圍限制）：**
+  - 每個 agent 的工具清單對應其實際責任範圍（reviewer 不掛 write 工具、部署 agent 不掛 codebase 讀取工具）
+  - 工具範圍限制比角色描述更可靠：模型可以忽略「你是 QA」的身份描述，但無法呼叫未掛載的工具
+  - 角色（persona）可作為輔助提示，但邊界守護應依賴工具範圍，不是角色描述
+- **設計分層：** 此選擇與「Read-Only Reviewer Agent」模式形成互補——前者是工具範圍限制的具體應用，本模式提供設計框架層的對比分析
+- **成熟度：** ⏳ 新興
+- **來源：** ["Personas vs. Tool-scoping: Where I Landed Differently from gstack"](https://dev.to/greymothjp/personas-vs-tool-scoping-where-i-landed-differently-from-gstack-gld)（dev.to，06-26）
+
+### 批量 OSS Bug 修復：識別相同形狀的 Bug（2026-06-26）
+
+- **核心模式：** 一天內向多個知名開源專案（zod、NestJS、Fastify、Scrapy、Pygments 等）提交約 28 個 PR，核心技術是「識別相同形狀的 bug」後批量複製修復策略
+- **實作方向：**
+  - 先識別一類 bug 的「形狀」（觸發條件、影響範圍、修復模式）
+  - 使用 Claude Code 跨 repo 套用相同的修復邏輯，一天內完成大量 PR 提交
+  - 適合於標準化的程式庫缺陷（型別處理、邊界條件、錯誤處理路徑等）
+- **解決的問題：** 開源貢獻的高摩擦成本（理解 codebase、修復、測試、提交）可透過「批量化相同形狀修復」大幅攤薄
+- **成熟度：** ⏳ 新興
+- **來源：** ["I Found 30 Mergeable OSS Bugs in a Day: They Were All the Same Shape"](https://dev.to/greymothjp/i-found-30-mergeable-oss-bugs-in-a-day-they-were-all-the-same-shape-5c86)（dev.to，06-26）
+
+### 20 個 Claude Code 並行 Instance 的崩潰原因與對策（2026-06-26）
+
+- **核心模式：** 從 4 個並行 agent 擴展到 20 個時的崩潰分析；主要崩潰原因包括：共享資源競爭（git lock、資料庫連線）、context 洩漏至鄰近 agent、缺乏協調層的任務分派
+- **實作方向：**
+  - 每個 agent 分配獨立 git worktree，完全隔離檔案系統操作
+  - 設計明確的 orchestrator 層負責任務分派與結果彙整，避免 agent 間直接通訊
+  - 從小規模（4 個）漸進擴展，每次倍增時測試協調機制是否持續有效
+- **成熟度：** ⏳ 新興
+- **來源：** ["Why 20 Claude Code Instances Break Down and What to Do"](https://dev.to/jcamarate/why-20-claude-code-instances-break-down-and-what-to-do-2i5j)（dev.to，06-26）
 
 ### 任務開始前先 Interview：讓 Claude Code 問問題再動手（2026-06-25）
 

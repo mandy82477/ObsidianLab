@@ -3,11 +3,11 @@
 **狀態：** ongoing
 **領域：** 💼 商業
 **開始日期：** 2026-05-28
-**最後更新：** 2026-06-25
-**最後新聞更新：** 2026-06-25
+**最後更新：** 2026-06-26
+**最後新聞更新：** 2026-06-26
 
-> **最新戰略合作**（2026-06-25）
-> Anthropic 正式指控阿里巴巴以 25,000 個假帳號、2,880 萬次對話進行大規模模型蒸餾攻擊，阿里股價單日跌逾 33%；Google AI 研究員 Jonas Adler 與 Alexander Pritzel 確認加入 Anthropic；Notion 整合 Claude Agents 與 Cursor 作為外部 agent 進入工作區。
+> **最新動態**（2026-06-26）
+> Anthropic 致函美國參議院銀行委員會（Sen. Tim Scott & Sen. Elizabeth Warren，信件日期 6/10）指控阿里巴巴 4/22–6/5 間透過 ~25,000 個假帳號執行 2,880 萬次蒸餾攻擊（史上最大規模）；CNBC 補充報導細節。另：Anthropic 正測試 Claude Cowork 行動版（BleepingComputer、Techzine 確認）。
 
 ---
 
@@ -119,6 +119,10 @@ Simon Willison（知名開發者博主）發表文章，認為 Anthropic 與 Ope
 - [[news/2026-05-13]]（The Information：定價強勢期）
 
 ## 時序
+
+### 2026-06-26
+- **[阿里蒸餾攻擊補充細節] CNBC 報導揭露信件日期與完整攻擊時間窗口**：CNBC 補充報導確認 Anthropic 致函美國參議院銀行委員會的信件日期為 6/10，指控時間窗口為 4/22–6/5（約 44 天），收信參議員為 Sen. Tim Scott 與 Sen. Elizabeth Warren；yipzap 彙整數據：約 25,000 個假帳號、2,880 萬次交換，確認為 AI 產業記錄中規模最大的模型蒸餾攻擊（CNBC https://www.cnbc.com/2026/06/24/anthropic-alibaba-distillation-campaign.html；yipzap https://yipzap.com/anthropic-accuses-alibaba-of-largest-ai-distillation-attack-28-8m-fraudulent-exchanges/）
+- **[產品擴張] Anthropic 測試 Claude Cowork 行動版**：BleepingComputer 與 Techzine 同步確認 Anthropic 正在測試桌機版 Claude Cowork 的行動端版本；2 家媒體確認，細節待公開（BleepingComputer https://www.bleepingcomputer.com/news/artificial-intelligence/anthropic-is-testing-desktop-like-claude-cowork-for-mobile/；Techzine https://www.techzine.eu/news/applications/142493/claude-cowork-to-get-a-mobile-client/）
 
 ### 2026-06-25
 - **[重大法律衝突] Anthropic 正式指控阿里巴巴大規模 AI 模型蒸餾攻擊**：Anthropic 正式起訴並公開指控阿里巴巴使用約 25,000 個假帳號、執行 2,880 萬次 Claude 對話，進行大規模 AI 模型蒸餾，竊取 Claude 能力輸入自家模型；阿里巴巴股價單日下跌逾 33%；Reuters、Bloomberg、WSJ、BBC、FT、CNBC、UPI、QZ 多家主流媒體同步報導，HN score 605（Reuters https://www.reuters.com/world/china/anthropic-says-alibaba-illicitly-extracted-claude-ai-model-capabilities-2026-06-24/；Bloomberg https://www.bloomberg.com/news/articles/2026-06-24/anthropic-accuses-alibaba-of-illicitly-accessing-its-ai-models）
