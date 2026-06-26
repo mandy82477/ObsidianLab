@@ -3,6 +3,21 @@
 Append-only 紀錄。每次 ingest、query 或 lint 都在此追加一條。
 格式：`## [YYYY-MM-DD] 類型 | 說明`
 
+## 2026-06-26 設計決策 | 記者差異化 + 單一 push 部署修正
+
+兩項本週架構改動（commit `490275b`、`97f8cf2`，皆已過 `/review-commands`）：
+
+**1. Pages 部署改為單一 push（根因修正）**
+- 問題：pipeline 在 Step 1b/3/5 各 push 一次，每次觸發一個 GitHub Pages 部署；6/24 三次 push 相隔過近，部署互相搶佔（concurrency race），最後含 web 資料的關鍵部署失敗，線上停留舊版而 pipeline 無從得知（只確認 git push、不確認部署）。
+- 修正：`news-pipeline-steps.md` 改為中途只 commit、Step 5 一次 push 全部 commit；一次 push 只觸發一個部署，從源頭消除 race。
+- 驗證：6/24（空 commit 補救）→ 6/25 → 6/26 連續三天穩定，6/26 約 2 分鐘上線。診斷方法見 memory `pages-deploy-diagnosis`。
+
+**2. 六記者差異化（核心提問 + 分析視角 + 書寫風格）**
+- 問題：六個 `.claude/agents/wiki-reporter-*.md` 的「類別特有規則」幾乎全空，記者只差在負責頁面與表格格式，分析視角與語氣無差異化。
+- 做法：各記者先自我盤點負責頁面，再由自述提煉「核心提問/分析視角/書寫風格」寫入各自 system prompt。
+- 連帶修正：pricing.md 改商業記者單一主責（原模型/商業雙頭）；ai-talent-flow 補商業更新規則專段；社群 agent 描述移除誤含的 official-community-gap。
+- 驗證：6/26 首跑，商業記者在 ai-talent-flow 自動補上「市值蒸發 $2,700 億（推論）」「Gemini 3.5 延期」等量化商業分析。
+
 ## 2026-06-25 Manual | 新建 topics/ai-talent-flow.md
 
 - 觸發：使用者要求整理「AI 人才流動對各公司的影響」（跨公司視角，非 Anthropic 單一中心）
