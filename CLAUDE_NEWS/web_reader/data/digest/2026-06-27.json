@@ -1,0 +1,171 @@
+{
+  "date": "2026-06-27",
+  "generatedAt": "2026-06-27 21:10 UTC",
+  "articleCount": 55,
+  "sourceCount": "6/6 | **文章數：** 55 | **更新時間：** 2026-06-27 21:10 UTC",
+  "bulletin": "",
+  "topStories": [],
+  "techUpdates": [],
+  "discussions": [
+    {
+      "title": "Show HN: Smart model routing directly in Claude, Codex and Cursor",
+      "url": "https://github.com/workweave/router",
+      "source": "Hacker News",
+      "time": "06/26 16:40 UTC　情緒：🤔",
+      "sentiment": "",
+      "body": "Workweave 開源的模型路由器，作為 Anthropic/OpenAI 相容 endpoint 運作，針對 coding agent 請求自動決策路由。起因是 Opus 4.7 tokenizer 改版後成本大漲，團隊不想在所有任務都用旗艦模型。HN 討論熱烈，有人實測成本降幅達 40%+。",
+      "focusTags": [
+        "[新工具]"
+      ]
+    },
+    {
+      "title": "Enterprise AI customers pulling back from OpenAI and Anthropic as costs mount",
+      "url": "https://qz.com/enterprise-ai-spending-openai-anthropic-roi-pullback-062626",
+      "source": "Hacker News",
+      "time": "06/27 01:10 UTC　情緒：😤",
+      "sentiment": "",
+      "body": "企業端 AI 支出出現撤退訊號：過度整合、ROI 不明確是主因，小型蒸餾模型被認為是更務實的替代方案。HN 評論認為「削減工資帳單」才是企業 AI 投資主邏輯，而非真正的業務轉型。",
+      "focusTags": [
+        "[社群趨勢]"
+      ]
+    },
+    {
+      "title": "Anthropic's Claude is winning over paid consumers, a market owned by ChatGPT",
+      "url": "https://techcrunch.com/2026/06/25/anthropics-claude-is-winning-over-paid-consumers-a-market-owned-by-chatgpt/",
+      "source": "Hacker News",
+      "time": "06/26 13:17 UTC　情緒：😊",
+      "sentiment": "",
+      "body": "TechCrunch 引用 Indagari 大規模信用卡交易分析，顯示 Claude 在付費消費者市場份額快速增長，不再只是開發者工具。數據涵蓋 2025 年至 2026 年 5 月的週度交易趨勢，方向持續向上。",
+      "focusTags": [
+        "[社群趨勢]"
+      ]
+    },
+    {
+      "title": "Agentjacking 2026: How a Fake Sentry Error Hijacks Cursor, Claude Code, and Cline",
+      "url": "https://dev.to/jovan_chan_9500711396d4e6/agentjacking-2026-how-a-fake-sentry-error-hijacks-cursor-claude-code-and-cline-and-the-5a2h",
+      "source": "dev.to",
+      "time": "06/26 23:00 UTC　情緒：😤",
+      "sentiment": "",
+      "body": "安全研究揭露「agentjacking」攻擊手法：偽造 Sentry 錯誤訊息誘導 coding agent 執行惡意代碼，Claude Code / Cursor / Cline 均受影響，文章提供具體防禦設定。",
+      "focusTags": []
+    },
+    {
+      "title": "Show HN: Verity – self-healing review gate for Claude Code",
+      "url": "https://verity.md",
+      "source": "Hacker News",
+      "time": "06/26 12:27 UTC　情緒：🤔",
+      "sentiment": "",
+      "body": "Codacy 開源的 Claude Code 審查閘門工具：每次 agent 執行後自動修復不安全或不乾淨的代碼，並將學習記憶用於下一次 run，聲稱可穩定 agent 成本。目前 beta 免費，`npm install -g @codacy/verity-cli` 即可試用。",
+      "focusTags": []
+    },
+    {
+      "title": "Show HN: TBD, a Mac-native CLI-forward coding agent multiplexer",
+      "url": "https://github.com/cheapsteak/tbd",
+      "source": "Hacker News",
+      "time": "06/26 16:59 UTC　情緒：🤔",
+      "sentiment": "",
+      "body": "受 Conductor / dmux / claude-squad 啟發的 Mac 原生 coding agent 多工管理器，強調「使用者能手動做的，都要能透過 CLI 讓 agent 自動做」，可搭配 agent-channels 實現跨 worktree 通訊。",
+      "focusTags": []
+    },
+    {
+      "title": "Ask HN: Which AI concepts are here to stay, and which will churn?",
+      "url": "https://news.ycombinator.com/item?id=48691972",
+      "source": "Hacker News",
+      "time": "06/26 21:07 UTC　情緒：🤔",
+      "sentiment": "",
+      "body": "HN 社群討論 MCP、Skills、Agentic workflows、CLAUDE.md 等概念的長期生命力。多數人認為 B2B AI 助理節省成本的幅度被高估，AI 的未來在於「背景化、不可見」的整合方式。",
+      "focusTags": []
+    },
+    {
+      "title": "Anthropic Accuses Alibaba Of Running 29 Million Fake Queries to Clone Claude",
+      "url": "https://www.pymnts.com/news/artificial-intelligence/2026/anthropic-accuses-alibaba-of-running-29-million-fake-queries-to-clone-claude/",
+      "source": "Google News",
+      "time": "06/26 14:14 UTC　情緒：😤",
+      "sentiment": "",
+      "body": "Anthropic 正式指控阿里巴巴研究人員進行大規模 model distillation 攻擊，2900 萬次偽裝查詢是目前已公開最大規模的模型竊取指控，法律後續值得關注。",
+      "focusTags": [
+        "[持續追蹤]"
+      ]
+    },
+    {
+      "title": "Anthropic and OpenAI waged a $27M proxy war in a Manhattan congressional race",
+      "url": "https://fortune.com/2026/06/26/anthropic-openai-ny12-proxy-war-no-winners-election-super-pac-donations/",
+      "source": "Google News",
+      "time": "06/26 11:29 UTC　情緒：😐",
+      "sentiment": "",
+      "body": "Anthropic 與 OpenAI 在紐約第 12 選區國會競選中共花費 2700 萬美元支持不同候選人，最終勝選者在得勝後宣布與兩家公司保持距離，科技業政治影響力受到質疑。",
+      "focusTags": []
+    },
+    {
+      "title": "How to Run Claude Code as an Autonomous Agent on a Mac Mini",
+      "url": "https://dev.to/clawlabs/how-to-run-claude-code-as-an-autonomous-agent-on-a-mac-mini-3ld1",
+      "source": "dev.to",
+      "time": "06/27 04:51 UTC　情緒：😊",
+      "sentiment": "",
+      "body": "作者分享在 Mac Mini M4 上部署 Claude Code 全自動 agent 的完整方案：任務排程、文章撰寫、內容發布全流程無人監督，提供架構與注意事項。",
+      "focusTags": []
+    }
+  ],
+  "billing": [
+    {
+      "title": "Is claude code x5 worth it?",
+      "url": "https://www.reddit.com/r/ClaudeAI/comments/1uh0vif/is_claude_code_x5_worth_it/",
+      "source": "Reddit / r/ClaudeAI",
+      "time": "06/27 03:56",
+      "sentiment": "",
+      "body": "Reddit 社群討論 Claude Code Max（5x）訂閱方案的 CP 值，針對非資深使用者是否值得升級有不同意見，主要爭點在於額度用量與 Opus 使用率。",
+      "focusTags": []
+    },
+    {
+      "title": "Anthropic Salaries For H-1B Workers Revealed: Up To Rs 13 Crore Base Pay",
+      "url": "https://www.ndtv.com/feature/anthropic-salaries-for-h-1b-workers-revealed-up-to-rs-13-crore-base-pay-11693692",
+      "source": "Google News",
+      "time": "06/26 18:55",
+      "sentiment": "",
+      "body": "NDTV 報導 Anthropic H-1B 工作簽證申請揭露薪資數據，最高底薪換算達 1300 萬盧比（約 155,000 美元），顯示 Anthropic 持續以高薪吸引頂尖人才。",
+      "focusTags": []
+    }
+  ],
+  "focus": [
+    {
+      "tag": "[重大事件]",
+      "text": "美國政府批准 Anthropic 向 100+ 個美國機構有限釋出 Mythos 5，兩週對峙後重大解封，Fable 5 尚未納入但已接近協議。",
+      "ref_urls": [
+        "https://www.semafor.com/article/06/27/2026/us-releases-powerful-anthropic-model-mythos-to-some-us-companies",
+        "https://www.cnbc.com/2026/06/26/us-government-anthropic-claude-mythos5-ai.html",
+        "https://www.reuters.com/business/us-close-allowing-anthropic-restore-fable-5-model-axios-reports-2026-06-27/"
+      ]
+    },
+    {
+      "tag": "[技術更新]",
+      "text": "Claude Code v2.1.195 釋出：新增 `CLAUDE_CODE_DISABLE_MOUSE_CLICKS` 環境變數可在全螢幕模式下停用滑鼠點擊/拖拉，同步修復帶連字號識別符的 hook matcher 錯誤。",
+      "ref_urls": [
+        "https://github.com/anthropics/claude-code/releases/tag/v2.1.195"
+      ]
+    },
+    {
+      "tag": "[新工具]",
+      "text": "Workweave Router（HN score 181）：直接嵌入 Claude Code / Codex / Cursor 的智能模型路由器，自動判斷任務難度並分配最合適的模型，解決 Opus 4.7 tokenizer 改版後成本暴增問題。",
+      "ref_urls": [
+        "https://github.com/workweave/router"
+      ]
+    },
+    {
+      "tag": "[持續追蹤]",
+      "text": "Anthropic 指控 Alibaba 旗下研究人員向 Claude 發送 2900 萬次假查詢以複製模型行為，為今年最大規模的模型竊取指控。",
+      "ref_urls": [
+        "https://www.pymnts.com/news/artificial-intelligence/2026/anthropic-accuses-alibaba-of-running-29-million-fake-queries-to-clone-claude/"
+      ]
+    },
+    {
+      "tag": "[社群趨勢]",
+      "text": "企業 AI 客戶因成本壓力縮減 OpenAI 與 Anthropic 支出，分散小模型方案成替代選項；同時 TechCrunch 信用卡交易分析數據顯示 Claude 在付費消費者市場已顯著追趕 ChatGPT。",
+      "ref_urls": [
+        "https://qz.com/enterprise-ai-spending-openai-anthropic-roi-pullback-062626",
+        "https://techcrunch.com/2026/06/25/anthropics-claude-is-winning-over-paid-consumers-a-market-owned-by-chatgpt/"
+      ]
+    }
+  ],
+  "sourceStatus": [],
+  "preview": ""
+}
