@@ -349,6 +349,21 @@ window.WIKI_DATA = {
   ],
   "topics": [
     {
+      "id": "ai-agent-safety-archive",
+      "pageType": "topic",
+      "name": "AI Agent 安全與可靠性 — 時序存檔",
+      "entityType": "event",
+      "status": "monitoring",
+      "domain": "🏛️ 政策/安全",
+      "pill": "warn",
+      "firstSeen": "",
+      "startDate": "2026-04-27",
+      "lastUpdated": "2026-06-27",
+      "lastNewsUpdate": "2026-06-27",
+      "summary": "",
+      "latestHeadline": ""
+    },
+    {
       "id": "ai-agent-safety",
       "pageType": "topic",
       "name": "AI Agent 安全與可靠性",
@@ -361,7 +376,7 @@ window.WIKI_DATA = {
       "lastUpdated": "2026-06-27",
       "lastNewsUpdate": "2026-06-27",
       "summary": "隨著 AI agent 被賦予更高自主性與系統操作權限，安全事故與防護工具同步出現。本頁追蹤 Claude Code 與相關 AI agent 的安全事件，涵蓋：CVE 漏洞披露（沙箱逃逸、遠端代碼執行）、提示注入與 Agentjacking 攻擊、惡意套件與供應鏈污染、以及 AI agent 不當執行造成的資料損毀事…",
-      "latestHeadline": "[升級] Agentjacking 2026 防禦設定指南：偽造 Sentry 錯誤劫持 Claude Code / Cursor / Cline：dev.to 文章詳細說明 agentjacking 攻擊機制——攻擊者偽造 Sentry 錯誤訊息誘導 AI coding agent 以開發者本地權限執行惡意代碼，屬提"
+      "latestHeadline": "隨著 AI agent 被賦予更高自主性與系統操作權限，安全事故與防護工具同步出現。本頁追蹤 Claude Code 與相關 AI agent 的安全事件，涵蓋：CVE 漏洞披露（沙箱逃逸、遠端代碼執行）、提示注入與 Agentjacking 攻擊、惡意套件與供應鏈污染、以及 AI agent 不當執行造成的資料損毀事"
     },
     {
       "id": "ai-talent-flow",

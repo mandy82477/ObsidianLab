@@ -3,6 +3,17 @@
 Append-only 紀錄。每次 ingest、query 或 lint 都在此追加一條。
 格式：`## [YYYY-MM-DD] 類型 | 說明`
 
+## 2026-06-27 Lint 後續 | 使用者決策執行
+
+承上次 Lint 待確認項，使用者拍板後執行：
+- **超長頁面**：
+  - ai-agent-safety（502→433 行）：將 2026-05-22 前 16 條時序歸檔至新頁 `topics/ai-agent-safety-archive.md`，主頁加指向提示。✅ 達標
+  - community-tech-discussions（877）/ community-tech-patterns（806）：經查技術彙整條目**全部在 60 天內**（最舊 2026-05-01，57 天），依既有規則無逾期條目可歸檔——長度源於近期高密度討論，非舊 log 堆積。**維持不動**，最早 2026-07-02 起條目陸續跨 60 天門檻可自然歸檔。
+- **community-tech-tools 精選層**：補建「## 值得關注的工具」中間層（13–15 個達標工具按類型分組），三層動線恢復。
+- **過期 ⏳ 汰除**：批次刪除 41 筆 > 30 天無後續的 ⏳ 工具列（git history 留存），同步痛點洞察 3 列。
+- 新增頁面：`topics/ai-agent-safety-archive.md`（index.md 已補列）
+- 待辦（未執行，留紀錄）：6e wiki-ingest-features.md 121>100 行可簡化；6d entities/ 格式模板規則 [加入: 2026-04-25] >60 天（經這次 6 記者實際套用驗證仍吻合現狀，暫無需修訂）
+
 ## 2026-06-27 Lint
 
 - 修正矛盾：
