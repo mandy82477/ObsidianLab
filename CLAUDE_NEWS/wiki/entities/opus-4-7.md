@@ -4,7 +4,7 @@
 **狀態：** active（爭議中）
 **領域：** 🤖 模型
 **首次出現：** 2026-04-24
-**最後更新：** 2026-06-25
+**最後更新：** 2026-06-27
 **最後新聞更新：** 2026-06-25
 
 > **最新服務異常**（2026-06-21～22）
@@ -147,6 +147,8 @@ Reddit r/ClaudeAI 實測分享：Opus 4.7 在 **Claude Code 搭配 max effort �
 
 ## 相關議題
 
+- [[entities/opus-4-8]]（後繼旗艦，已取代 4.7）
+- [[entities/fable-5]]（現任最高階公開模型）
 - [[topics/code-quality-decline]]
 - [[entities/pricing]]
 

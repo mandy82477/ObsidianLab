@@ -4,7 +4,8 @@
 **狀態：** active
 **領域：** 👤 人物
 **首次出現：** 2026-05-26
-**最後更新：** 2026-06-23
+**最後更新：** 2026-06-27
+**最後新聞更新：** 2026-05-29
 
 > **最新研究與公開發言**（2026-05-29）
 > Wired 長文《The Vatican's Man Inside Anthropic》深度側寫 Olah 在梵蒂岡封論事件中的角色；Guardian 同日質疑 Anthropic 此舉是否涉及「Vatican-washing」。

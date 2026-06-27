@@ -1,14 +1,14 @@
 # Claude / Anthropic 生態系概覽
 
-**最後更新：** 2026-06-24
+**最後更新：** 2026-06-27
 
 ---
 
 ## 當前局勢
 
-2026-06-24 出現三條同步惡化的主線：**NSA 正式失去 Claude Fable 存取權**（紐約時報確認），法律科技新創 Legion 同日對美國政府提告挑戰出口管制令合法性，Fable 爭議從政策攻防正式進入法律戰場；**Anthropic Mythos 模型在情報機構合作測試中數小時內發現機密系統漏洞**（AP News 確認，官員強調「發現」不等於「利用」），引發 AI 攻擊性能力邊界的廣泛討論；**白宮對 Dario Amodei 的關係持續惡化**（WIRED 報導），疊加中國 360 聲稱開發出對標 Mythos 的工具，地緣政治張力進一步升溫。LessWrong 最新預測分析將 Fable 重新上線預期時間修正至 7 月 9 日。
+2026-06-27 出口管制僵局出現**首次實質突破**：**Mythos 5 部分解禁**——商務部長 Lutnick 致函 Tom Brown，開放 100+ 美國受信任機構使用（兩週政府對峙後的轉折）；同日 Reuters / Axios 報導美方**接近達成 Fable 5 全面解禁協議**（待核實）。談判由聯合創辦人 **Tom Brown 接管**（Dario Amodei 退出），是局勢回穩的關鍵人事。LessWrong 此前預測的 7/9 重新上線時間點看來偏保守。
 
-產品面，Anthropic 正式推出 **Claude Tag**：Slack-native AI 協作工具，讓 Claude 以隊友身份常駐頻道，Anthropic 內部已有 65% 產品程式碼由其生成。這代表 Claude Code 向「常駐協作」方向的重要延伸。Claude Code 創始人 Boris Cherny 同日承認 AI 寫 100% 程式碼「正在變得有問題」，與企業端反彈聲浪形成共鳴。
+人才面，**Google DeepMind 一週連失 4 名頂尖研究員至 Anthropic**（諾貝爾獎得主 John Jumper 領銜，加 Adler/Pritzel），市值蒸發約 $2,700 億（推論），且流失方向（AI coding）正是 Google 落後處——詳見 [[topics/ai-talent-flow]]。商業面則出現逆風：Anthropic 指控阿里巴巴史上最大 AI 蒸餾攻擊（2,880–2,900 萬次查詢、2.5 萬假帳號），同時企業端 ROI 反撲、tokenmaxxing 轉向效率優先。產品面 Claude Tag（Slack-native 協作）與 Claude Code v2.1.195 持續迭代。
 
 ---
 
@@ -16,9 +16,9 @@
 
 | 模型 | 狀態 | 備注 |
 |------|------|------|
-| **Claude Fable 5** | 🔴 全球封鎖中 | 6/13 起出口管制暫停；Anthropic 解封提案提交中；封鎖前 $10/$50 per M token |
-| **Claude Mythos 5** | 🔴 全球封鎖中 | 同上；限授權用戶（政府防禦者、企業安全研究員）|
-| Claude Opus 4.8 | ⚠️ 高錯誤率 | SWE-bench Pro 69.2%、1M context；6/24 跨 API/Claude Code/Console 高錯誤率，調查中 |
+| **Claude Fable 5** | 🟡 接近解禁 | 6/13 起出口管制暫停；6/27 美方接近全面解禁協議（待核實，Reuters/Axios）；$10/$50 per M token |
+| **Claude Mythos 5** | 🟡 部分解禁 | 6/27 Lutnick 致函 Tom Brown，開放 100+ 美國受信任機構使用（兩週對峙後突破）|
+| Claude Opus 4.8 | ✅ Active | SWE-bench Pro 69.2%、1M context；6/24 高錯誤率事件已平息 |
 | Claude Sonnet 4.6 | ✅ Active | Fable 5 下線後社群主力；CP 值最佳 |
 | Claude Haiku 4.5 | ✅ Active | 企業混合架構低成本 worker |
 | Claude Mythos（Preview）| 🔒 限制存取 | Glasswing 200 組織 / 15+ 國家；NSA 已用於攻擊性操作 |

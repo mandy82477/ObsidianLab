@@ -153,6 +153,9 @@ Fable 5 發布後，Amazon 安全研究人員發現特定提示詞可讓模型�
 
 - [[entities/fable-5]]（出口管制事件主頁，含雙方立場詳細論點）
 - [[entities/mythos]]（政府關係的前置事件）
+- [[entities/dario-amodei]]（原談判負責人，白宮態度轉冷後退出核心談判桌）
+- [[entities/tom-brown]]（接管白宮談判的聯合創辦人，6/27 取得 Mythos 5 部分解封）
+- [[entities/chris-ciauri]]（國際業務總監，首爾記者會公開解封時間框架）
 - [[topics/competitor-landscape]]（排除事件改變 Anthropic 與競品在政府市場的相對地位）
 
 ## 參考來源

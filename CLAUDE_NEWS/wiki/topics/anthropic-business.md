@@ -108,6 +108,7 @@ Simon Willison（知名開發者博主）發表文章，認為 Anthropic 與 Ope
 - [[topics/enterprise-cost-management]]（企業成本挑戰）
 - [[topics/enterprise-tool-tracker]]（企業工具選擇追蹤）
 - [[topics/competitor-landscape]]（市場競爭格局）
+- [[topics/ai-talent-flow]]（AI 實驗室人才流動與承接動態）
 - [[entities/google-investment]]（重大融資歷史）
 
 ## 參考來源
@@ -133,7 +134,7 @@ Simon Willison（知名開發者博主）發表文章，認為 Anthropic 與 Ope
 
 ### 2026-06-25
 - **[重大法律衝突] Anthropic 正式指控阿里巴巴大規模 AI 模型蒸餾攻擊**：Anthropic 正式起訴並公開指控阿里巴巴使用約 25,000 個假帳號、執行 2,880 萬次 Claude 對話，進行大規模 AI 模型蒸餾，竊取 Claude 能力輸入自家模型；阿里巴巴股價單日下跌逾 33%；Reuters、Bloomberg、WSJ、BBC、FT、CNBC、UPI、QZ 多家主流媒體同步報導，HN score 605（Reuters https://www.reuters.com/world/china/anthropic-says-alibaba-illicitly-extracted-claude-ai-model-capabilities-2026-06-24/；Bloomberg https://www.bloomberg.com/news/articles/2026-06-24/anthropic-accuses-alibaba-of-illicitly-accessing-its-ai-models）
-- **[人才搶奪] Google AI 研究員 Jonas Adler 與 Alexander Pritzel 確認加入 Anthropic**：Bloomberg 報導 Google AI 編碼研究員 Jonas Adler 及 AI 訓練研究員 Alexander Pritzel 確認離職加入 Anthropic；Google 同步重組 AI 編碼「strike team」應對競爭壓力；The Information 另報 Google 重建 AI 編碼精銳團隊（Bloomberg https://www.bloomberg.com/news/articles/2026-06-24/google-poised-to-lose-two-more-high-profile-ai-staffers-to-anthropic）
+- **[人才搶奪] Google AI 研究員 Jonas Adler 與 Alexander Pritzel 確認加入 Anthropic**：Bloomberg 報導 Google AI 編碼研究員 Jonas Adler 及 AI 訓練研究員 Alexander Pritzel 確認離職加入 Anthropic；Google 同步重組 AI 編碼「strike team」應對競爭壓力；The Information 另報 Google 重建 AI 編碼精銳團隊（Bloomberg https://www.bloomberg.com/news/articles/2026-06-24/google-poised-to-lose-two-more-high-profile-ai-staffers-to-anthropic；人才流動格局見 [[topics/ai-talent-flow]]）
 - **[全球基礎設施擴張] CNBC 揭露 Anthropic 透過招聘動態呈現下一波全球 AI 數據中心佈局**：CNBC 報導 Anthropic 招聘活動揭示其下一波全球 AI 數據中心建設地點（CNBC https://www.cnbc.com/2026/06/25/anthropic-global-ai-data-center-push.html）
 - **[公益合作] Anthropic 參與支持公益組織 Intercept，目標消滅呼吸道病毒**：Stripe、Anthropic、OpenAI 聯合支持非營利組織 Intercept，目標預算 5 億美元，短期聚焦感冒與流感防治、長期目標消滅呼吸道病毒（MIT Technology Review https://www.technologyreview.com/2026/06/24/1139621/stripe-anthropic-and-openai-are-backing-an-effort-to-stop-respiratory-infections/）
 - **[組織人事] FT 報導 Anthropic 聘雇具爭議性存亡觀點的經濟學家，引發安全社群討論**：FT 報導 Anthropic 聘雇一位對人類存亡議題持具爭議觀點的經濟學家，在 AI 安全社群引起廣泛討論（FT https://www.ft.com/content/bb04671c-4377-4231-96ef-0f8e57ed5d1b）

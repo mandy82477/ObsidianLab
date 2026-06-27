@@ -4,7 +4,7 @@
 **狀態：** active
 **領域：** 👤 人物
 **首次出現：** 2026-04-23（事後報告發布）
-**最後更新：** 2026-06-24
+**最後更新：** 2026-06-27
 **最後新聞更新：** 2026-06-24
 
 > **最新設計哲學聲明**（2026-06-24）
@@ -36,9 +36,9 @@ Business Insider 報導 Boris Cherny 對企業 AI 投資策略的立場：支持
 
 ---
 
-### 「Claude Code 讓工程師更孤獨」論述（2026-06-22）（待核實）
+### 「Claude Code 讓工程師更孤獨」論述歸屬釐清（2026-06-22）
 
-Business Insider、Let's Data Science 報導 Anthropic 工程領導人（engineering leader）公開表示 Claude Code 正在讓工程師感到更孤獨（"making programmers lonelier"）。由於報導中使用「engineering leader」而非具名，**目前無法確認發言人是 Boris Cherny（Head of Claude Code）或 Cat Wu（Head of Claude Code Products）**，兩人皆是 Claude Code 的主要公開論述者。見 [[entities/cat-wu]]（同步標記待核實）。
+2026-06-22 Business Insider「engineering leader 讓工程師更孤獨」一說，後續具名來源確認發言人為 Anthropic 工程副總裁 **Fiona Fung**，**並非 Boris Cherny**。此聲明不歸於本頁，詳見 [[entities/fiona-fung]]。
 
 ---
 
@@ -91,12 +91,13 @@ Boris Cherny 的公開言論呈現兩種截然不同的社群反應：
 - [[entities/openclaw]]（第三方工具管控政策）
 - [[topics/code-quality-decline]]（4/23 事後報告與社群問責）
 - [[topics/community-tech-patterns]]（設計哲學：Loops、vibe coding 反思）
+- [[entities/fiona-fung]]（「工程師更孤獨」論述具名發言人，曾誤列為候選）
 
 ## 歷史記錄
 
 - 2026-06-24：Times of India 報導其承認「AI 寫 100% 程式碼正在變得有問題」，與早前「coding is solved」立場形成對比，呼應企業端過度依賴反彈聲浪
 - 2026-06-23：Business Insider 報導其對企業 AI 投資的立場：支持 ROI 導向，但反對完全不留實驗預算
-- 2026-06-22：Anthropic「engineering leader」（待核實：是否為 Boris Cherny）公開表示 Claude Code 正讓工程師更孤獨，Business Insider、Let's Data Science 報導
+- 2026-06-22：「engineering leader 讓工程師更孤獨」一說，後續具名來源確認發言人為 Anthropic 工程副總裁 Fiona Fung（[[entities/fiona-fung]]），非 Boris Cherny；本頁解除待核實
 - 2026-06-20：techstackups.com 採訪引用 Loop 工程哲學名言「我不再 prompt Claude，我寫 loop 讓 loop 去 prompt Claude；我的工作是寫 loop」，被視為繼「coding is solved」後的第二個重要設計哲學表態
 - 2026-05-27：Platformer 長篇專訪「Claude Code's creator on the end of the software engineer」發布，為其「軟體工程已死」系列論述最完整陳述
 - 2026-05-13：公開每晚數千個 AI 子代理並行執行深度工作的工作流架構，由 Business Insider 等媒體報導

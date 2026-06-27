@@ -3,7 +3,7 @@
 **狀態：** ongoing
 **領域：** 🌐 社群
 **開始日期：** 2026-04-25
-**最後更新：** 2026-06-20
+**最後更新：** 2026-06-27
 
 ---
 
@@ -92,6 +92,9 @@
 | [**Conan**](https://www.conan.sh/) | 監控工具 | ⏳ | 2026-06-15 | macOS 原生 live HUD，即時顯示 Claude Code 的 timeline（每個 tool call）、context window 用量、token 吞吐量；$29 一次性付款；Show HN score 1 |
 | [**zero-1**](https://github.com/thomscoder/zero-1) | 整合工具 | ⏳ | 2026-06-15 | 自然語言生成並即時修改 API endpoints；支援 Claude Code 測試自己生成的程式碼；Show HN score 2 |
 | [**bulk-delete-claude-chat**](https://github.com/MatteoLeonesi/bulk-delete-claude-chat) | UI 工具 | ⚡ | 2026-06-13 | 解決 Claude 網頁版缺乏批量刪除對話功能的痛點；自動捲動、全選、刪除（對比 ChatGPT 已有內建批量刪除）；HN score 56 |
+| [**cc-pool**](https://github.com/yasyf/cc-pool) | 費用監測 | ⏳ | 2026-06-13 | 預測性負載均衡跨多個 Claude 帳號分配請求，適用高吞吐量 Claude Code 場景；Show HN |
+| [**Janus**](https://github.com/kmcheung12/janus) | 整合工具 | ⏳ | 2026-06-13 | MCP 工具，同步收集瀏覽器互動事件與終端輸出整合為事件流，讓 agent 理解 UI 發生了什麼再決定修改方向；Show HN |
+| [**TaskPrio**](https://taskprio.com/) | 任務管理 | ⏳ | 2026-06-13 | MCP-native 任務隊列，讓多個 Claude Code / Cursor agent 共享優先排序 backlog，透過 `get_next_task` 依序自動執行，無需 orchestration 膠水代碼；Show HN |
 | [**AVP（Agent Vault Proxy）**](https://github.com/inflightsec/agent-vault-proxy) | 安全工具 | ⚡ | 2026-06-12 | 解決 coding agent 持有 API key 的安全風險；placeholder + 最後一刻注入方案，agent 環境中只保存 placeholder，真實金鑰由代理在 wire 層面即時替換；從根本上消除洩露風險；HN Show HN |
 | [**Claustrophobic**](https://claustrophobic.xyz) | 費用監測 | ⏳ | 2026-06-12 | 解決 Claude Code 單一訂閱用量上限問題，將多個 Claude 訂閱視為「房間」，自動切換至剩餘額度最多的帳號繼續同一 session；Show HN score（觀望中）|
 | [**Workplane**](https://workplane.co) | 整合工具 | ⚡ | 2026-06-12 | 解決 Claude/Codex 輸出的 .md/.html 檔案難以分享問題；可讓 agent 和人類共同協作，支援版本回滾與 MCP 整合；HN Show HN score；更新為「確認有 Show HN 熱度」|

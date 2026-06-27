@@ -3,7 +3,7 @@
 **狀態：** ongoing
 **領域：** 💼 商業
 **開始日期：** 2026-05-26
-**最後更新：** 2026-06-25
+**最後更新：** 2026-06-27
 **最後新聞更新：** 2026-06-25
 
 > **最新企業採用異動**（2026-06-25）
@@ -13,7 +13,7 @@
 
 追蹤各大型企業目前正在使用的 AI 編碼工具，以及工具選擇的變化軌跡。資料來源為公開報導與內部消息洩露，僅記錄有明確來源佐證的事實。
 
-目前追蹤 16 家企業（頂尖 7 家、大型 8 家、中型 1 家），其中 14 家狀態為使用中（✅），1 家退出（❌，Microsoft 停用 Claude Code），1 家因出口管制被迫退出（❌，JPMorgan Chase 香港分行）。整體趨勢：Claude API 企業採用持續擴大，TCS、DXC、LG 等頂尖企業相繼全面入局；2026-06-25 Notion 正式整合 Claude Agents + Cursor 為協作 SaaS 平台採用新型態。2026-06-21 Microsoft 確認在 Fable 5 封鎖期間加速退出 Claude Code，2026-06-22 The Jerusalem Post 跟進確認 Microsoft 正系統性降低對 Claude 依賴，GitHub Copilot 為主要替代方案。出口管制 + 成本壓力雙重因素持續影響頂尖企業工具選擇。
+目前追蹤 23 家具名企業，其中多數狀態為使用中（✅），2 家退出（❌，Microsoft 停用 Claude Code、JPMorgan Chase 香港分行因出口管制被迫退出），Uber 縮減中（⚠️，成本管控）。整體趨勢：Claude API 企業採用持續擴大，TCS、DXC、LG 等頂尖企業相繼全面入局；2026-06-25 Notion 正式整合 Claude Agents + Cursor 為協作 SaaS 平台採用新型態。2026-06-21 Microsoft 確認在 Fable 5 封鎖期間加速退出 Claude Code，2026-06-22 The Jerusalem Post 跟進確認 Microsoft 正系統性降低對 Claude 依賴，GitHub Copilot 為主要替代方案。出口管制 + 成本壓力雙重因素持續影響頂尖企業工具選擇。
 
 ---
 

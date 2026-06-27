@@ -11,8 +11,8 @@ window.WIKI_DATA = {
       "pill": "active",
       "firstSeen": "2026-05-17（CLAUDE.md 維護討論中被引用）",
       "startDate": "",
-      "lastUpdated": "2026-06-23",
-      "lastNewsUpdate": "",
+      "lastUpdated": "2026-06-27",
+      "lastNewsUpdate": "2026-05-29",
       "summary": "Andrej Karpathy 為知名 AI 研究者，已加入 Anthropic（待核實，來源：HN 討論）。以 OpenAI 聯合創始人/研究總監及 Tesla AI/Autopilot 負責人身份廣為人知。加入 Anthropic 後，公開分享其「CLAUDE.md 四條規則」，其中強調「不讓 agent 讀超過必…",
       "latestHeadline": "HN 社群討論確認 Karpathy 已正式加入 Anthropic，Eureka Labs GitHub org 停更、LinkedIn 資訊移除，推測已解散（待核實）"
     },
@@ -26,7 +26,7 @@ window.WIKI_DATA = {
       "pill": "active",
       "firstSeen": "2026-04-23（事後報告發布）",
       "startDate": "",
-      "lastUpdated": "2026-06-24",
+      "lastUpdated": "2026-06-27",
       "lastNewsUpdate": "2026-06-24",
       "summary": "Boris Cherny 是 Anthropic Claude Code 的創始人與負責人（Head of Claude Code），是 Claude Code 產品方向最主要的公開代言人。他以高頻率的公開聲明、哲學宣言與工程分享，持續引發開發者社群廣泛討論，被視為 Anthropic 技術文化的外部窗口。 ---",
       "latestHeadline": "Times of India 報導其承認「AI 寫 100% 程式碼正在變得有問題」，與早前「coding is solved」立場形成對比，呼應企業端過度依賴反彈聲浪"
@@ -41,9 +41,9 @@ window.WIKI_DATA = {
       "pill": "info",
       "firstSeen": "2026-04-26",
       "startDate": "",
-      "lastUpdated": "2026-06-23",
+      "lastUpdated": "2026-06-27",
       "lastNewsUpdate": "2026-06-20",
-      "summary": "Bugcrawl 是 Anthropic 正在測試的新工具，專為 Claude Code 提供自動化漏洞偵測功能，強化 AI 輔助開發流程中的程式品質把關。目前尚未正式公開，資訊來源為 Google News / TestingCatalog 報導。截至 2026-06-19，無後續公開資訊，仍處於內部測試階段。 與 …",
+      "summary": "截至 2026-06-20 仍無後續公開資訊，Bugcrawl 自 2026-04-26 首度被 TestingCatalog 報導後維持內部測試狀態。此工具由 Anthropic 開發，專為 Claude Code 提供自動化漏洞偵測功能，強化 AI 輔助開發流程中的程式品質把關，目前尚未正式公開、無公開測試邀請。 …",
       "latestHeadline": "首次被媒體報導（TestingCatalog），確認 Anthropic 正在測試此工具"
     },
     {
@@ -56,10 +56,10 @@ window.WIKI_DATA = {
       "pill": "active",
       "firstSeen": "2026-05-14",
       "startDate": "",
-      "lastUpdated": "2026-06-22",
+      "lastUpdated": "2026-06-27",
       "lastNewsUpdate": "2026-06-22",
       "summary": "Cat Wu 是 Anthropic Claude Code 產品負責人（Head of Claude Code Products），與創始人 Boris Cherny（見 [[entities/boris-cherny]]）共同主導 Claude Code 的產品方向。2026-05-14，她在公開訪問中提出 AI …",
-      "latestHeadline": "Anthropic「engineering leader」（待核實：是否為 Cat Wu）公開表示 Claude Code 正讓工程師更孤獨，Business Insider、Let's Data Science 報導"
+      "latestHeadline": "「engineering leader 讓工程師更孤獨」一說，後續具名來源確認發言人為 Anthropic 工程副總裁 Fiona Fung（[[entities/fiona-fung]]），非 Cat Wu；本頁解除待核實"
     },
     {
       "id": "chris-ciauri",
@@ -71,8 +71,8 @@ window.WIKI_DATA = {
       "pill": "active",
       "firstSeen": "2026-06-19",
       "startDate": "",
-      "lastUpdated": "2026-06-20",
-      "lastNewsUpdate": "",
+      "lastUpdated": "2026-06-27",
+      "lastNewsUpdate": "2026-06-18",
       "summary": "Anthropic 國際業務總監（Managing Director of International），主導 Anthropic 在亞太地區的業務拓展。Fable 5 與 Mythos 因美國出口管制政策於 2026 年中受限，導致亞太地區包括韓國用戶無法存取，此次首爾記者會是 Anthropic 首次在亞太地區就此…",
       "latestHeadline": "在首爾 Conrad 飯店召開記者會，宣布對 Fable 5 / Mythos 解禁「數日內」的信心（待核實）；同場出席者包括 Anthropic Korea 代表 Choi Ki-young"
     },
@@ -86,8 +86,8 @@ window.WIKI_DATA = {
       "pill": "active",
       "firstSeen": "2026-05-26",
       "startDate": "",
-      "lastUpdated": "2026-06-23",
-      "lastNewsUpdate": "",
+      "lastUpdated": "2026-06-27",
+      "lastNewsUpdate": "2026-05-29",
       "summary": "Chris Olah 是 Anthropic 的共同創辦人之一，也是 AI 可解釋性（interpretability）研究領域的重要先驅。他以「神經網路電路」研究著名，強調透過理解 AI 內部機制來確保安全性，是 Anthropic 技術文化中「理解先於能力」立場的核心人物。 2026-05-26，Chris Ola…",
       "latestHeadline": "Wired 長文《The Vatican's Man Inside Anthropic》深度側寫 Olah 在梵蒂岡事件中的角色，Guardian 同日質疑 Anthropic 是否存在「Vatican-washing」"
     },
@@ -191,7 +191,7 @@ window.WIKI_DATA = {
       "pill": "active",
       "firstSeen": "2026-06-23",
       "startDate": "",
-      "lastUpdated": "2026-06-23",
+      "lastUpdated": "2026-06-27",
       "lastNewsUpdate": "2026-06-23",
       "summary": "Fiona Fung 是 Anthropic 工程副總裁（VP of Engineering）。2026-06-22，她接受 Business Insider 採訪時指出：Claude Code 正在改變工程師的協作方式——coding 不再是開發瓶頸，但工程師在使用 AI 工具後開始感到孤獨。這是 Anthropic…",
       "latestHeadline": "Business Insider 採訪報導：Claude Code 讓 coding 不再是瓶頸，但工程師開始感到孤獨"
@@ -296,7 +296,7 @@ window.WIKI_DATA = {
       "pill": "active",
       "firstSeen": "2026-04-24",
       "startDate": "",
-      "lastUpdated": "2026-06-25",
+      "lastUpdated": "2026-06-27",
       "lastNewsUpdate": "2026-06-25",
       "summary": "**當前狀態：** 已被 Opus 4.8 / Fable 5 取代，現為第三階旗艦；agentic coding 場景仍有口碑，一般對話評價分歧。 Claude Opus 4.7 於 2026-04-24 正式發布，已相繼被 Opus 4.8（2026-05-28）與 Fable 5（2026-06-09）取代，現為…",
       "latestHeadline": "當前狀態： 已被 Opus 4.8 / Fable 5 取代，現為第三階旗艦；agentic coding 場景仍有口碑，一般對話評價分歧。"
@@ -311,7 +311,7 @@ window.WIKI_DATA = {
       "pill": "active",
       "firstSeen": "2026-05-28",
       "startDate": "",
-      "lastUpdated": "2026-06-25",
+      "lastUpdated": "2026-06-27",
       "lastNewsUpdate": "2026-06-25",
       "summary": "Claude Opus 4.8 於 2026-05-28 正式發布，同步推出 Dynamic Workflows（Research Preview）與 Fast Mode 降價，是 2026 年以來 Anthropic 發布規模最大的旗艦更新。**2026-06-09 Claude Fable 5 發布後，Opus 4…",
       "latestHeadline": "第三方評測：Gemini 3.5 Flash 35.4 vs Opus 4.8 34.8 略勝：RuntimeWire 對比評測中 Gemini 在四項任務贏三項；Claude 在 messy-orders-to-json 任務因輸出 Markdown code fence（違反 JSON-only 指令）失分；分析師"
@@ -418,10 +418,10 @@ window.WIKI_DATA = {
       "pill": "warn",
       "firstSeen": "",
       "startDate": "2026-03（推測）",
-      "lastUpdated": "2026-06-26",
+      "lastUpdated": "2026-06-27",
       "lastNewsUpdate": "",
-      "summary": "**當前狀態：** 官方已說明原因，恢復情況待驗證；最後更新 2026-05-29，後續進展待補。⚠️ 本頁約三週未更新。 Claude Code 在 2026 年 3 月至 4 月間出現長達約一個月的效能明顯退步，引發大量開發者不滿。2026-04-24，Anthropic 首次正式承認此問題，說明原因為**工程疏失…",
-      "latestHeadline": "當前狀態： 官方已說明原因，恢復情況待驗證；最後更新 2026-05-29，後續進展待補。⚠️ 本頁約三週未更新。"
+      "summary": "**當前狀態：** 官方已說明 4 月退步原因為工程疏失，恢復情況待驗證；近期投訴轉向「工具行為不一致」（自訂編排路由失效、無障礙偏差），多屬 context/工具配置層問題而非模型能力退步，官方多未回應。 Claude Code 在 2026 年 3 月至 4 月間出現長達約一個月的效能明顯退步，引發大量開發者不滿。…",
+      "latestHeadline": "當前狀態： 官方已說明 4 月退步原因為工程疏失，恢復情況待驗證；近期投訴轉向「工具行為不一致」（自訂編排路由失效、無障礙偏差），多屬 context/工具配置層問題而非模型能力退步，官方多未回應。"
     },
     {
       "id": "community-tech-discussions",
@@ -478,7 +478,7 @@ window.WIKI_DATA = {
       "pill": "active",
       "firstSeen": "",
       "startDate": "2026-04-25",
-      "lastUpdated": "2026-06-20",
+      "lastUpdated": "2026-06-27",
       "lastNewsUpdate": "",
       "summary": "追蹤 Claude Code 社群發布的工具、插件與 skill 專案。此頁為 lint 專用，由 /wiki-lint 定期策展；每日 ingest 不更新此頁。日常工作流模式見 [[topics/community-tech-patterns]]，概念辯論見 [[topics/community-tech-disc…",
       "latestHeadline": "追蹤 Claude Code 社群發布的工具、插件與 skill 專案。此頁為 lint 專用，由 /wiki-lint 定期策展；每日 ingest 不更新此頁。日常工作流模式見 ，概念辯論見 。"
@@ -523,9 +523,9 @@ window.WIKI_DATA = {
       "pill": "active",
       "firstSeen": "",
       "startDate": "2026-05-26",
-      "lastUpdated": "2026-06-25",
+      "lastUpdated": "2026-06-27",
       "lastNewsUpdate": "2026-06-25",
-      "summary": "追蹤各大型企業目前正在使用的 AI 編碼工具，以及工具選擇的變化軌跡。資料來源為公開報導與內部消息洩露，僅記錄有明確來源佐證的事實。 目前追蹤 16 家企業（頂尖 7 家、大型 8 家、中型 1 家），其中 14 家狀態為使用中（✅），1 家退出（❌，Microsoft 停用 Claude Code），1 家因出口管制…",
+      "summary": "追蹤各大型企業目前正在使用的 AI 編碼工具，以及工具選擇的變化軌跡。資料來源為公開報導與內部消息洩露，僅記錄有明確來源佐證的事實。 目前追蹤 23 家具名企業，其中多數狀態為使用中（✅），2 家退出（❌，Microsoft 停用 Claude Code、JPMorgan Chase 香港分行因出口管制被迫退出），Ub…",
       "latestHeadline": "Notion 整合 Claude Agents 與 Cursor 作為外部 agent：Notion 正式將 Claude Agents 與 Cursor 作為外部 agent 納入工作區協作流程，是協作 SaaS 平台首次將 AI coding agent 整合為原生工作流節點（letsdatascience.com",
       "enterpriseTracker": {
         "enterprises": [

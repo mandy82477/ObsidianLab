@@ -103,6 +103,7 @@ Claude Code 已成為 AI 輔助編碼的標竿產品，但競爭正快速升溫�
 - [[entities/google-investment]]
 - [[topics/anthropic-government-policy]]
 - [[topics/enterprise-cost-management]]
+- [[topics/ai-talent-flow]]（AI 實驗室人才流動對競爭格局的影響）
 
 ## 參考來源
 
@@ -123,6 +124,8 @@ Claude Code 已成為 AI 輔助編碼的標竿產品，但競爭正快速升溫�
 
 ### 2026-06-26
 - **[定價顛覆] DeepSeek V4 Flash 打破 Anthropic agent 服務定價邏輯，Microsoft 等廠商切換**：開發者分析文章指出，Anthropic 商業模式的隱含前提是「以較高 API 定價補貼自家 agent 服務（Claude Code 等）」；DeepSeek V4 Flash（開源、成本降低逾 100 倍）出現後，這個前提被動搖——Microsoft 等廠商已切換至 DeepSeek 作為執行層，Anthropic 面臨執行層 token 份額流失與定價護城河被侵蝕的雙重壓力（rtrvr.ai https://www.rtrvr.ai/blog/code-as-plan-deepseek-flash-text-only-browser-agent）
+
+> 人才流動對競爭格局的影響（誰流失、誰承接、戰力意涵）詳見 [[topics/ai-talent-flow]]。
 
 ### 2026-06-25
 - **[重大法律事件] Anthropic 正式指控阿里巴巴 AI 模型蒸餾攻擊，阿里股價單日跌逾 33%**：Anthropic 指控阿里巴巴使用約 25,000 個假帳號、執行 2,880 萬次 Claude 對話，系統性竊取 Claude 模型能力用於訓練自家模型；是 AI 產業首起具名大規模模型蒸餾攻擊指控，Reuters、Bloomberg、WSJ、BBC、FT、CNBC、QZ 多媒體同步報導，HN score 605（Reuters https://www.reuters.com/world/china/anthropic-says-alibaba-illicitly-extracted-claude-ai-model-capabilities-2026-06-24/）

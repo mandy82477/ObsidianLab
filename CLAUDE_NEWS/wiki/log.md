@@ -3,6 +3,37 @@
 Append-only 紀錄。每次 ingest、query 或 lint 都在此追加一條。
 格式：`## [YYYY-MM-DD] 類型 | 說明`
 
+## 2026-06-27 Lint
+
+- 修正矛盾：
+  - Microsoft 退出日期：enterprise-cost-management「6/30 完全停用」vs enterprise-tool-tracker「6/21 加速退出」→ 統一為「原訂 6/30，6/21 加速退出」並補來源 + wikilink
+  - 「Claude Code 讓工程師更孤獨」歸屬：boris-cherny / cat-wu 標「engineering leader（待核實）」→ 由 fiona-fung 具名來源（Business Insider）確認為 Fiona Fung，三頁互鏈、解除待核實
+  - enterprise-tool-tracker 摘要企業計數 16 → 23（與表格實際筆數一致）
+- 補連結（去孤立）：
+  - ai-talent-flow（新頁）← competitor-landscape、anthropic-business 補雙向
+  - fiona-fung ← boris-cherny、cat-wu
+  - tom-brown / chris-ciauri / dario-amodei ← anthropic-government-policy「相關實體」
+  - opus-4-7 / opus-4-8 → fable-5 補反向 wikilink
+- 狀態更新：boris-cherny、cat-wu 解除待核實；andrej-karpathy、chris-ciauri 維持待核實（無新具名來源）
+- 遷移至 entities：無
+- 新增 entities：無（無被提及 3 次以上且無專頁者）
+- 呈現品質：bugcrawl、code-quality-decline 摘要改 delta-first；andrej-karpathy/chris-olah/chris-ciauri 補「最後新聞更新」欄；其餘全部通過
+- 工具策展（community-tech-tools）：新增 3（cc-pool、Janus、TaskPrio，皆 ⏳）／汰除 0／提拔 0
+- 超長頁面（> 500 行）：📋 待使用者確認 — ai-agent-safety（502）、community-tech-patterns（806）、community-tech-discussions（877）
+- 規則檔健檢：
+  - wiki/CLAUDE.md：50 行（閾值 80）✅
+  - .claude/rules/wiki-ingest.md：68 行（閾值 80）✅
+  - .claude/rules/wiki-ingest-format.md：127 行（閾值 200）✅
+  - 各記者規則檔：models 50 / features 121 ⚠️ / commercial 77 / safety-policy 53 / community 83 / community-lint 42 / people 41（閾值 100）
+  - 矛盾（6a）：無
+  - 引用驗證（6b）：7/7 錨點全部通過
+  - 遵守率（6c）：近 3 次 ingest 品質審查 3/3、feature-radar 3/3 ✅
+  - 過期規則（6d）：1 條 > 60 天 — entities/ 頁面格式模板 [加入: 2026-04-25]（63 天，待確認是否仍吻合現狀）
+  - 簡化（6e）：wiki-ingest-features.md 121 > 100 ⚠️（待確認是否簡化）
+  - 📋 規則 vs 現實落差：community-tech-tools 缺「## 值得關注的工具」精選層（lint 規則要求三層，頁面僅二層）；42 筆 > 30 天 ⏳ 列汰除政策待確認
+- overview.md：已更新（當前局勢改為 Mythos 5 部分解禁 / Fable 接近協議；模型現況表同步）
+- 待確認決策已彙整回報主 session，未自行執行拆分 / 規則修改
+
 ## 2026-06-27 Ingest | news/2026-06-27.md（55 則）
 
 - 來源日報：`news/2026-06-27.md`（55 則，6/6 來源；Reddit 429 rate limit 多數，仍有 10 筆）
