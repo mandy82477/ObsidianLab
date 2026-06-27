@@ -4,17 +4,17 @@
 **狀態：** active
 **領域：** 🛠️ 工具/功能
 **首次出現：** 2025（正式推出）
-**最後更新：** 2026-06-26
-**最後新聞更新：** 2026-06-26
+**最後更新：** 2026-06-27
+**最後新聞更新：** 2026-06-27
 
-> **最新版本動態**（2026-06-26）
-> v2.1.193 新增 `autoMode.classifyAllShell` 設定，將所有 Bash/PowerShell 指令路由至 auto-mode 分類器（先前僅任意程式碼執行模式才會路由），以及 auto-mode 相關改進。
+> **最新版本動態**（2026-06-27）
+> v2.1.195 新增 `CLAUDE_CODE_DISABLE_MOUSE_CLICKS` 環境變數，可在全螢幕模式下停用滑鼠點擊/拖拉/懸停（保留滾輪）；修復 hook matcher 無法匹配帶連字號識別符（如 `c-style-hook`）的 bug。
 
 ---
 
 ## 現況
 
-最新版本 **v2.1.193**（2026-06-25）新增 `autoMode.classifyAllShell` 設定，可將所有 Bash/PowerShell 指令統一路由至 auto-mode 分類器（先前僅任意程式碼執行模式才會路由）；另包含 auto-mode 相關改進。Anthropic 同步發表基於 2025/10–2026/04 約 40 萬個 session 的分析研究，發現人類主導規劃決策、Claude 主導執行決策，且使用者領域專業越高，Claude 每條指令完成的工作量越大。API 529 過載事件於 2026-06-21 至 06-22 連續兩波影響 Opus/Sonnet 模型，Max plan 用戶首條 prompt 即觸發 Overloaded 錯誤。Claude Code 是 Anthropic 的 AI 編碼 CLI 工具，核心能力已從程式碼助理擴展為具備全桌面自動化、多代理管理（Managed Agents）、MCP Server 整合、Hooks 機制與 AI 安全審查的完整 agent 開發平台；GitHub Stars 達 **131,000+**。Microsoft 正陸續取消內部授權轉推 GitHub Copilot CLI（見 [[topics/competitor-landscape]]）；Ramp AI Index 數據顯示 Anthropic 企業採用率首次超越 OpenAI（34.4% vs 32.3%）。
+最新版本 **v2.1.195**（2026-06-26）新增 `CLAUDE_CODE_DISABLE_MOUSE_CLICKS` 環境變數，可在全螢幕模式下停用滑鼠點擊/拖拉/懸停（保留滾輪），並修復 hook matcher 無法匹配帶連字號識別符的 bug。v2.1.193（2026-06-25）新增 `autoMode.classifyAllShell` 設定，可將所有 Bash/PowerShell 指令統一路由至 auto-mode 分類器（先前僅任意程式碼執行模式才會路由）；另包含 auto-mode 相關改進。Anthropic 同步發表基於 2025/10–2026/04 約 40 萬個 session 的分析研究，發現人類主導規劃決策、Claude 主導執行決策，且使用者領域專業越高，Claude 每條指令完成的工作量越大。API 529 過載事件於 2026-06-21 至 06-22 連續兩波影響 Opus/Sonnet 模型，Max plan 用戶首條 prompt 即觸發 Overloaded 錯誤。Claude Code 是 Anthropic 的 AI 編碼 CLI 工具，核心能力已從程式碼助理擴展為具備全桌面自動化、多代理管理（Managed Agents）、MCP Server 整合、Hooks 機制與 AI 安全審查的完整 agent 開發平台；GitHub Stars 達 **131,000+**。Microsoft 正陸續取消內部授權轉推 GitHub Copilot CLI（見 [[topics/competitor-landscape]]）；Ramp AI Index 數據顯示 Anthropic 企業採用率首次超越 OpenAI（34.4% vs 32.3%）。
 
 ## 熱度與試用價值
 
@@ -31,6 +31,7 @@
 
 | 版本 | 日期 | 重點 |
 |------|------|------|
+| **v2.1.195** | 2026-06-26 | 新增 `CLAUDE_CODE_DISABLE_MOUSE_CLICKS` 環境變數：在全螢幕模式下停用滑鼠點擊/拖拉/懸停（保留滾輪），適合需要滑鼠直通終端或避免誤觸的場景；修復 hook matcher 無法匹配帶連字號識別符（如 `c-style-hook`）的 bug |
 | **v2.1.193** | 2026-06-25 | 新增 `autoMode.classifyAllShell` 設定：將所有 Bash/PowerShell 指令路由至 auto-mode 分類器（先前僅任意程式碼執行模式才會路由）；auto-mode 相關改進 |
 | **v2.1.191** | 2026-06-25 | 新增 `/rewind` 指令：支援從 `/clear` 執行前的任一對話節點恢復，讓使用者在誤清 context 後可無縫回到任意歷史節點繼續對話；修正 streaming 時捲軸自動跳至底部的 UX 問題 |
 | **anthropic-sdk-typescript v0.106.0** | 2026-06-25 | `client` 新增 `system.message` 支援，開發者可透過 client 層直接注入系統訊息 |

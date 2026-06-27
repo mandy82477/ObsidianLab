@@ -4,7 +4,7 @@
 僅收錄官方 changelog、release note 或官方公告來源；社群工具見 [[topics/community-tech-tools]]。
 每次 ingest 後由 LLM 維護：新增功能、更新熱度、補充社群回饋。
 
-**最後更新：** 2026-06-26
+**最後更新：** 2026-06-27
 
 ---
 
@@ -37,6 +37,7 @@
 
 | 功能 | 發布日期 | 熱度 | 試用價值 | 狀態 |
 |------|----------|------|----------|------|
+| **`CLAUDE_CODE_DISABLE_MOUSE_CLICKS` 環境變數**（Claude Code v2.1.195，全螢幕模式停用滑鼠點擊/拖拉/懸停） | 2026-06-26 | 🔥🔥 | ⚡ 有條件推薦 | 正式發布 |
 | **`autoMode.classifyAllShell` 設定**（Claude Code v2.1.193，所有 Bash/PowerShell 路由 auto-mode 分類器） | 2026-06-25 | 🔥🔥 | ⚡ 有條件推薦 | 正式發布 |
 | **`/rewind` 指令**（Claude Code，從 `/clear` 前節點恢復 context） | 2026-06-25 | 🔥🔥🔥 | ⚡ 有條件推薦 | 正式發布 |
 | **SDK `client.system.message`**（TypeScript v0.106.0 / Python v0.112.0） | 2026-06-25 | 🔥🔥 | ⚡ 有條件推薦 | 正式發布 |
@@ -87,6 +88,23 @@
 ---
 
 ## 🆕 最新功能（2026-06）
+
+### CLAUDE_CODE_DISABLE_MOUSE_CLICKS 環境變數
+**發布：** 2026-06-26（v2.1.195） | **熱度：** 🔥🔥 | **試用價值：** ⚡ 有條件推薦 | **狀態：** 正式發布
+
+**是什麼：** 設定此環境變數後，Claude Code 全螢幕模式下停用滑鼠點擊、拖拉、懸停事件，但保留滾輪，讓終端滑鼠事件直通底層（如 tmux）。
+
+**為何熱：** 解決 tmux / 多工終端使用者長期痛點：Claude Code 全螢幕 TUI 截奪滑鼠後，外層終端多工軟體的滑鼠操作失效；此環境變數提供乾淨的逃生口。
+
+**快速上手：**
+```bash
+export CLAUDE_CODE_DISABLE_MOUSE_CLICKS=1
+claude
+```
+
+**注意事項：** 僅影響全螢幕模式；滾輪捲動不受影響。適合 tmux / screen / Zellij 重度使用者；純鍵盤工作流無需啟用。
+
+---
 
 ### autoMode.classifyAllShell 設定
 **發布：** 2026-06-25（v2.1.193） | **熱度：** 🔥🔥 | **試用價值：** ⚡ 有條件推薦 | **狀態：** 正式發布

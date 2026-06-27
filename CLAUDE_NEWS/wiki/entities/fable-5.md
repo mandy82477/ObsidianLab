@@ -4,11 +4,11 @@
 **狀態：** active（正式發布；Fable 5 / Mythos 5 因美國政府出口管制指令暫停全球存取）
 **領域：** 🤖 模型
 **首次出現：** 2026-06-09
-**最後更新：** 2026-06-24
-**最後新聞更新：** 2026-06-24
+**最後更新：** 2026-06-27
+**最後新聞更新：** 2026-06-27
 
-> **最新管制進展**（2026-06-24）
-> NSA 因與 Anthropic 的管制爭議失去 Claude Fable 模型存取權（NYT）；法律科技新創 Legion 對美國政府提告，主張出口管制令違法；LessWrong 詳細預測分析將 Fable 重新上線時間修正至 7 月 9 日。
+> **最新管制進展**（2026-06-27）
+> Reuters / Axios 報導美方接近批准 Fable 5 重新上線，尚未正式確認（[Reuters](https://www.reuters.com/business/us-close-allowing-anthropic-restore-fable-5-model-axios-reports-2026-06-27/)）。同日，商務部已先行批准 Mythos 5 向 100+ 美國受信任機構有限釋出，見 [[entities/mythos]]。
 
 ---
 
@@ -20,7 +20,9 @@ Claude Fable 5 是 Anthropic 於 2026-06-09 發布的旗艦模型，為**史上�
 
 **2026-06-18–19 解禁進展**：Wired 深度調查（HN score 110）確認出口管制根本動機為 SK Telecom 中國關聯（Anthropic 先前授予 SK Telecom Mythos 存取權），加上 Amazon 研究人員向白宮舉報 Fable 5 越獄漏洞，兩件事疊加加速管制決定。Anthropic 國際總監 Chris Ciauri 在首爾記者會聲明「數日內恢復」，Bloomberg 另報導部分早期用戶仍保有存取權。見 [[entities/mythos]]。
 
-**2026-06-23 最新**：Five Eyes 情報聯盟（英美澳加紐）發表聯合聲明點名前沿 AI 模型網路安全威脅，Fable 5 在出口管制脈絡下首度被五眼機構聯合提及。中國 Zhipu GLM-5.2 主動接觸被封鎖用戶群，填補市場空白。HN 有使用者回報 Claude Code 啟動 Fable 5 subagent 且自我識別為 Fable（訊號弱，score 4，尚待確認）。
+**2026-06-27 最新（待核實）**：Reuters / Axios 報導美方接近批准 Fable 5 重新上線，尚未正式確認。同日商務部已先行批准 Mythos 5 向 100+ 美國受信任機構有限釋出（Semafor、CNBC）——Mythos 5 部分解禁可能是 Fable 5 全面解禁的前期信號，但兩者為獨立決定。
+
+**2026-06-23**：Five Eyes 情報聯盟（英美澳加紐）發表聯合聲明點名前沿 AI 模型網路安全威脅，Fable 5 在出口管制脈絡下首度被五眼機構聯合提及。中國 Zhipu GLM-5.2 主動接觸被封鎖用戶群，填補市場空白。HN 有使用者回報 Claude Code 啟動 Fable 5 subagent 且自我識別為 Fable（訊號弱，score 4，尚待確認）。
 
 **核心定位**：任務越複雜越長期，Fable 5 的優勢越明顯。在軟體工程、知識工作、視覺、科學研究等幾乎所有 benchmark 達到 SOTA。
 
@@ -133,6 +135,11 @@ claude --model claude-fable-5-20260609
 - [資料保留政策](https://support.claude.com/en/articles/15425996-data-retention-practices-for-mythos-class-models)
 
 ## 歷史記錄
+
+### 2026-06-27
+**接近批准 Fable 5 重新上線（待核實）+ Mythos 5 先行部分解禁**：
+- **Fable 5 接近協議（待核實）**：Reuters / Axios 報導美方接近批准 Fable 5 重新上線，尚未獲得 Anthropic 或商務部官方確認（[Reuters](https://www.reuters.com/business/us-close-allowing-anthropic-restore-fable-5-model-axios-reports-2026-06-27/)）；訊號強度：兩家主流媒體同步報導，但「接近」不等於已批准，應持保留態度
+- **Mythos 5 先行部分解禁**：同日，商務部長 Howard Lutnick 在致 Anthropic 聯合創辦人 Tom Brown 的信中確認，Mythos 5 已獲批向 100+ 美國受信任機構（企業 + 聯邦機構）有限釋出（Semafor、CNBC）；Fable 5 與 Mythos 5 的解禁為獨立決定，不可相互推論
 
 ### 2026-06-24
 **NSA 失去 Fable 存取權 + Legion 提告 + LessWrong 預測 7/9 解封**：

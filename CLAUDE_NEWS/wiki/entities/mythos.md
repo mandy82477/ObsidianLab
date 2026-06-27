@@ -1,22 +1,22 @@
 # Claude Mythos
 
 **類型：** model
-**狀態：** active（部分公開：Fable 5 = Mythos 架構 + 護欄；Mythos 5 = 完整版限定存取）
+**狀態：** active（部分解禁：Mythos 5 = 100+ 美國受信任機構可用；Fable 5 全面解禁談判中）
 **領域：** 🤖 模型
 **首次出現：** 2026-04（限定夥伴 Preview）
-**最後更新：** 2026-06-24
-**最後新聞更新：** 2026-06-24
+**最後更新：** 2026-06-27
+**最後新聞更新：** 2026-06-27
 
-> **最新能力確認**（2026-06-24）
-> AP News 報導：Anthropic Mythos 在與美國情報機構的合作測試中，數小時內發現美國機密系統漏洞；官員強調「發現」不等於「利用」。中國網路安全公司 360 聲稱已開發出對標 Mythos 的工具（Reuters）。
+> **最新進展**（2026-06-27）
+> 美國商務部批准 Anthropic 向 100+ 美國機構（含企業與聯邦機構）有限釋出 Mythos 5，條件為「受信任合作夥伴」並具備適當安全措施。商務部長 Howard Lutnick 在致 Anthropic 聯合創辦人 Tom Brown 的信中正式確認（[Semafor](https://www.semafor.com/article/06/27/2026/us-releases-powerful-anthropic-model-mythos-to-some-us-companies)、[CNBC](https://www.cnbc.com/2026/06/26/us-government-anthropic-claude-mythos5-ai.html)）。
 
 ---
 
 ## 現況
 
-**⚠️ 目前（2026-06-13 起）因出口管制停用，見 [[entities/fable-5]] 解禁進展。**
+**2026-06-27 部分解禁**：美國商務部批准 Anthropic 向 100+ 美國機構（企業 + 聯邦機構）有限釋出 Mythos 5，條件為「受信任合作夥伴」並具備適當安全措施。商務部長 Howard Lutnick 在致 Anthropic 聯合創辦人 Tom Brown 的信中正式確認此決定（Semafor、CNBC）。Fable 5 全面解禁談判仍在進行中，見 [[entities/fable-5]]。
 
-**2026-06-23 新增確認**：Sen. Mark Warner（參議院情報委員會副主席）引述 NSA 局長 Gen. Joshua Rudd 的陳述，Mythos 在政府紅隊測試中「數小時內突破 NSA 幾乎所有機密系統」，是迄今對 Mythos 網路攻擊能力最高級別、最具體的官方公開陳述，直接為出口管制提供核心論據。
+**2026-06-23 確認**：Sen. Mark Warner（參議院情報委員會副主席）引述 NSA 局長 Gen. Joshua Rudd 的陳述，Mythos 在政府紅隊測試中「數小時內突破 NSA 幾乎所有機密系統」，是迄今對 Mythos 網路攻擊能力最高級別、最具體的官方公開陳述，直接為出口管制提供核心論據。
 
 Claude Mythos 是 Anthropic 的高能力 AI 模型家族，已確認具備**自主發現並武器化軟體漏洞、生成可執行 exploit** 的能力，是 AI 安全領域的重大里程碑。
 
@@ -74,6 +74,7 @@ Anthropic 的官方 AI 資安能力研究計畫，Mythos Preview 為核心工具
 | UK AISI 議會閉門簡報 | 2026-05-25 | 眾議員：「能輕易入侵我的銀行帳戶」|
 | ENISA 歐盟獲准存取 | 2026-06-01 | 首個歐洲政府機構；英國銀行同日遭拒 |
 | ICE 加入 Glasswing | 2026-06-04 | 美國聯邦執法機構加入 |
+| Mythos 5 部分解禁（100+ 機構）| 2026-06-27 | 商務部長 Lutnick 致函確認；條件：受信任合作夥伴 + 安全措施 |
 | NSA 用 Mythos 發動攻擊 | 2026-06-05 | 防禦框架「兩用性」首次公開確認（FT 獨家）|
 
 **授權費用**：企業客戶描述為「Budget Buster」，高安全能力伴隨高授權成本（The Information, 2026-06-01）。
@@ -89,6 +90,11 @@ Anthropic 的官方 AI 資安能力研究計畫，Mythos Preview 為核心工具
 ---
 
 ## 時序
+
+### 2026-06-27
+**Mythos 5 部分解禁：美國商務部批准 100+ 機構有限存取**：
+- 美國商務部正式批准 Anthropic 向 100+ 美國機構（含企業與聯邦機構）有限釋出 Mythos 5，前提條件為「受信任合作夥伴」認定，並需具備適當安全措施。商務部長 Howard Lutnick 透過致 Anthropic 聯合創辦人 Tom Brown 的信件正式確認此決定（[Semafor](https://www.semafor.com/article/06/27/2026/us-releases-powerful-anthropic-model-mythos-to-some-us-companies)、[CNBC](https://www.cnbc.com/2026/06/26/us-government-anthropic-claude-mythos5-ai.html)）。
+- 此為 2026-06-13 出口管制令發布後首次官方鬆綁，Mythos 5 的存取範圍從先前少數 Glasswing 夥伴正式擴展至更廣泛的機構層級；Fable 5 全面解禁仍待談判。
 
 ### 2026-06-24
 **AP News：情報機構合作測試發現機密系統漏洞 + 中國 360 聲稱對標工具**：

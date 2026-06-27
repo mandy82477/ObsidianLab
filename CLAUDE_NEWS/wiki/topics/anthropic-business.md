@@ -3,11 +3,11 @@
 **狀態：** ongoing
 **領域：** 💼 商業
 **開始日期：** 2026-05-28
-**最後更新：** 2026-06-26
-**最後新聞更新：** 2026-06-26
+**最後更新：** 2026-06-27
+**最後新聞更新：** 2026-06-27
 
-> **最新動態**（2026-06-26）
-> Anthropic 致函美國參議院銀行委員會（Sen. Tim Scott & Sen. Elizabeth Warren，信件日期 6/10）指控阿里巴巴 4/22–6/5 間透過 ~25,000 個假帳號執行 2,880 萬次蒸餾攻擊（史上最大規模）；CNBC 補充報導細節。另：Anthropic 正測試 Claude Cowork 行動版（BleepingComputer、Techzine 確認）。
+> **最新動態**（2026-06-27）
+> 美國政府批准 Anthropic 向 100+ 美國機構（企業 + 聯邦機構）有限釋出 Mythos 5，為 Anthropic 企業商業化解封重大里程碑（Semafor、CNBC、WSJ、Reuters）。Claude 付費消費者市場快速成長，信用卡交易分析顯示訂閱趨勢持續上升，正追趕 ChatGPT（TechCrunch）。Anthropic 與 OpenAI 合計花費 2700 萬美元支持紐約第 12 選區競選代理戰，勝選者宣布與兩家公司保持距離（Fortune）。
 
 ---
 
@@ -85,6 +85,7 @@ Simon Willison（知名開發者博主）發表文章，認為 Anthropic 與 Ope
 
 | 合作方 | 類型 | 日期 | 意義 |
 |--------|------|------|------|
+| 美國政府（Mythos 5 解禁）| 政府授權 | 2026-06-27 | 批准向 100+ 美國機構有限釋出 Mythos 5，企業與聯邦機構商業化管道開放（Semafor、CNBC、WSJ、Reuters）|
 | Notion | SDK 夥伴 | 2026-06-25 | 正式整合 Claude Agents 與 Cursor 作為外部 agent，進入工作區協作流程（letsdatascience.com）|
 | Railway | SDK 夥伴 | 2026-06-24 | 平台整合 Claude Code、Codex、OpenCode、Pi，可在隔離沙盒環境中執行（blog.railway.com）|
 | Charleston Hospitality Group | 企業客戶 | 2026-06-22 | 加入 Anthropic Claude 企業 AI 網路，為餐旅業具名採用案例 |
@@ -119,6 +120,12 @@ Simon Willison（知名開發者博主）發表文章，認為 Anthropic 與 Ope
 - [[news/2026-05-13]]（The Information：定價強勢期）
 
 ## 時序
+
+### 2026-06-27
+- **[商業解封里程碑] Mythos 5 獲美國政府批准向 100+ 機構有限釋出**：美國政府正式批准 Anthropic 向 100 家以上美國機構（含企業與聯邦機構）有限度釋出 Mythos 5，標誌 Anthropic 最先進旗艦模型的商業化從管制收緊（6/24 NSA 失去存取）轉入選擇性解封新階段；直接擴大企業合作能力，與既有 TCS（5 萬員工）、DXC（數萬認證工程師）等大型合作案協同效應顯著（Semafor、CNBC、WSJ、Reuters）。**對採用率的意涵**：若最先進模型解鎖給聯邦機構，政府採購管道打開（推論）。
+- **[消費者市場] Claude 付費訂閱趨勢持續追趕 ChatGPT**：Indagari 2800 萬美國用戶信用卡交易分析（2025 年至 2026 年 5 月）顯示 Claude 訂閱人數在付費消費者市場快速增長，呈現追趕 ChatGPT 態勢；與 Claude 推薦流量 4 個月成長 386% 的訊號方向一致。**對估值的意涵**：若消費者訂閱成長持續，為 $965B 估值補充基本面支撐（TechCrunch https://techcrunch.com/2026/06/25/anthropics-claude-is-winning-over-paid-consumers-a-market-owned-by-chatgpt/）。
+- **[法律 + 商業] Anthropic 指控阿里巴巴執行 2900 萬次偽裝查詢竊取模型**：PYMNTS.com 補充報導 Anthropic 正式指控細節，確認阿里巴巴研究人員以 2900 萬次偽裝查詢（此前媒體報導 2880 萬次）系統性竊取 Claude 模型行為；商業層面意涵：若競品藉蒸餾攻擊複製 Claude 能力，Anthropic 能力護城河與訓練投資回報受到直接威脅（PYMNTS.com https://www.pymnts.com/news/artificial-intelligence/2026/anthropic-accuses-alibaba-of-running-29-million-fake-queries-to-clone-claude/）
+- **[政治影響力] Anthropic 與 OpenAI 紐約第 12 選區代理戰宣告失敗**：Anthropic 與 OpenAI 合計花費 2700 萬美元支持紐約國會第 12 選區不同候選人，進行事實上的政治代理戰；勝選候選人事後宣布與兩家公司保持距離，顯示 AI 大廠的政治投資遭遇「雙輸」結局。**對政策倡議能力的意涵**：此敗局壓縮 Anthropic 在華盛頓以資本換政策支持的空間，Dario Amodei 與白宮關係緊張已成既定背景（Fortune https://fortune.com/2026/06/26/anthropic-openai-ny12-proxy-war-no-winners-election-super-pac-donations/）
 
 ### 2026-06-26
 - **[阿里蒸餾攻擊補充細節] CNBC 報導揭露信件日期與完整攻擊時間窗口**：CNBC 補充報導確認 Anthropic 致函美國參議院銀行委員會的信件日期為 6/10，指控時間窗口為 4/22–6/5（約 44 天），收信參議員為 Sen. Tim Scott 與 Sen. Elizabeth Warren；yipzap 彙整數據：約 25,000 個假帳號、2,880 萬次交換，確認為 AI 產業記錄中規模最大的模型蒸餾攻擊（CNBC https://www.cnbc.com/2026/06/24/anthropic-alibaba-distillation-campaign.html；yipzap https://yipzap.com/anthropic-accuses-alibaba-of-largest-ai-distillation-attack-28-8m-fraudulent-exchanges/）

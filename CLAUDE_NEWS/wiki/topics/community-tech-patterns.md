@@ -3,11 +3,11 @@
 **狀態：** monitoring
 **領域：** 🌐 社群
 **開始日期：** 2026-04-25
-**最後更新：** 2026-06-26
-**最後新聞更新：** 2026-06-26
+**最後更新：** 2026-06-27
+**最後新聞更新：** 2026-06-27
 
-> **最新工作流模式**（2026-06-26）
-> 六個新模式集中出現：Read-Only Reviewer Agent 以無編輯權限保持對立性；Repo-as-Memory 框架將「模型是工作者、repo 是記憶體」確立為多種實踐的底層哲學；Just-in-Time @-file 揭露預先加載的反模式；Personas vs Tool-scoping 提供 multi-agent 設計的框架比較；批量 OSS Bug 修復展示「相同形狀 bug」的批量化策略；以及 20 個並行 instance 的崩潰原因分析。
+> **最新工作流模式**（2026-06-27）
+> 六個新工具揭示多條模式分支：Workweave Router（HN 181）以請求難度自動路由模型，將「成本感知路由」從手動規則升格為嵌入式自動決策；Git Lazy Mount 以按需 fetch 解決大型 repo 的 AI session VM 資源問題；Mac Mini M4 自主 agent 部署展示無人監督排程任務的完整方案；Verity 自愈審查閘門引入「agent run 後自動修復不安全代碼」的新執行層；TBD 多工管理器強調 CLI 自動化優先 + agent-channels 跨 worktree 通訊。
 
 ---
 
@@ -27,14 +27,14 @@
 | **Skills 設計** | 知識框架化、流程 skill 化 | ✅ 成熟 | description 自動觸發，將書籍/流程封裝為可複用 skill |
 | **CLAUDE.md 管理** | 精簡規則策略、Self-improving Rules、防腐爛機制 | ✅ 成熟 | 以「規則」非「建議」撰寫，CI 攔截違反架構 PR |
 | **Hooks 與自動化** | PostToolUse 稽核、Git Hooks 品質門、/goal Fire-and-Forget、deploy/migration 保護、Pre-completion Hook | ✅ 成熟 | 強制執行 > CLAUDE.md 建議；Stop Hook 要求可驗證完成證明；CLAUDE.md 做偏好、Hooks 做邊界；Pre-completion Hook 防模糊結束 |
-| **模型使用策略** | 分層模型（Sonnet + Opus）、多模型路由 | ⚡ 活躍 | 依任務複雜度路由，節省 60% 用量；Dragoman 自動路由 |
+| **模型使用策略** | 分層模型（Sonnet + Opus）、多模型路由、Workweave Router | ⚡ 活躍 | 依任務複雜度路由，節省 60% 用量；Dragoman / Workweave 自動路由；嵌入 Claude Code / Codex / Cursor 的成本感知路由 |
 | **Token / 成本優化** | Prompt 精簡、MCP Code Execution、Token Bloat 對策 | ⚡ 活躍 | HTML→Markdown 降 80% token；npx vs CLI 路徑差異陷阱 |
 | **記憶與知識管理** | ltm Core Memory Packet、本機圖資料庫、NanoBrain | ⚡ 活躍 | 跨 session / 跨工具持久記憶；Leiden 圖譜減少 71 倍 token |
 | **Plugin / MCP 整合** | Plugin 反模式整理、Claude Code 作為 MCP 協調中心 | ⚡ 活躍 | 避免不必要 context 載入；Claude Code 主導 MCP 工具鏈協作 |
 | **多代理 PR Review** | 4-agent Code Review、對抗性審查工作流、Adversarial Reviewer、Read-Only Reviewer | ⚡ 活躍 | 架構師代理協調 + 多廠商模型交叉審查；對抗性審查者讀取真實 codebase；read-only 權限約束維持對立性 |
 | **Agent 版本控制** | re_gent、Checkpoint Commits、ADR 注入 | ⏳ 新興 | /compact 後決策追溯；git history 作為 agent 共享 context |
 | **Context 管理** | Just-in-Time @-file、Repo-as-Memory、Context Rot 修復 | ⚡ 活躍 | 即時取回優於預先加載；repo 是記憶體、模型是工作者；避免 context 過早飽和 |
-| **Agent 規模化** | 20-instance 崩潰分析、批量 OSS Bug 修復、Personas vs Tool-scoping | ⏳ 新興 | 超過 10 個並行 agent 需獨立 worktree + orchestrator 協調層；工具範圍限制比角色描述更可靠的邊界守護 |
+| **Agent 規模化** | 20-instance 崩潰分析、批量 OSS Bug 修復、Personas vs Tool-scoping、Mac Mini 自主 agent 部署 | ⏳ 新興 | 超過 10 個並行 agent 需獨立 worktree + orchestrator 協調層；工具範圍限制比角色描述更可靠的邊界守護；無人監督排程任務已有完整 Mac Mini M4 方案 |
 | **安全架構** | CLAUDE.md for K8s、語意層漂移 CI 測試、Trent 內嵌評估 | ⏳ 新興 | AI 加速開發下的系統性安全防線；CI 攔截語義退化 |
 | **跨環境 Agent 記憶** | Core Memory Packet、Agent 持續運作架構 | ⏳ 新興 | 跨編輯器 / 跨機器 / 跨模型的供應商中立記憶協定 |
 | **架構邊界合約** | ANMA YAML contracts、Hooks 強制驗證、ISO 29148 規格驅動 | ⏳ 新興 | 用合約與工業標準定義 AI 不可越過的架構規則；使便宜模型也能守規 |
@@ -44,6 +44,43 @@
 ---
 
 ## 技術彙整
+
+### Workweave Router：成本感知嵌入式模型路由（2026-06-27）
+
+- **核心模式：** 在 Claude Code / Codex / Cursor 工作流中嵌入智能路由層，依請求難度自動選擇最佳模型；主要動機是解決 Opus 4.7 成本暴增問題，透過自動降階讓簡單任務走低成本模型（[GitHub](https://github.com/workweave/router)；HN score 181）
+- **訊號強度：** HN 181 為本週社群工具中最高分，有公開 repo，採用訊號明確
+- **與既有模式的差異：** Dragoman（2026-05-13）採用顯式規則路由；Workweave 主打隱式難度評估，無需手動設定路由規則；多模型路由從「手動策略」走向「自動決策」
+- **注意事項：** 路由判斷依據未公開技術細節；「最佳模型」的定義由路由器自身決定，存在黑盒風險（推論）
+
+### Git Lazy Mount：大型 Repo 按需 Fetch 的 AI Session 優化（2026-06-27）
+
+- **核心模式：** 讓 AI coding session 掛載大型 repo 但僅在需要時按需 fetch 檔案，大幅降低 VM 資源用量；附帶 sgrep 工具，繞過 grep 全量抓取問題（[GitHub](https://github.com/mohsen1/git-lazy-mount)；HN score 9）
+- **解決的具體問題：** 大型 monorepo 被完整 clone 進 AI session 的資源消耗問題；grep 在未本地化的 repo 上全量抓取造成的延遲
+- **適用場景：** 超大型 repo（1GB+ 的 monorepo）、需要多個並行 AI session 共享同一 repo 環境、資源受限的 VM 部署
+
+### Mac Mini M4 無人監督自主 Agent 完整部署方案（2026-06-27）
+
+- **核心模式：** 將 Claude Code 配置為全自主 agent 在 Mac Mini M4 上執行無人監督排程任務，涵蓋事件觸發、自動 commit、完整閉環（[dev.to](https://dev.to/clawlabs/how-to-run-claude-code-as-an-autonomous-agent-on-a-mac-mini-3ld1)）
+- **與既有模式的差異：** 既有「Agent 持續運作架構」（2026-05-03）偏向架構設計原則；此方案提供 Mac Mini M4 的具體配置步驟，是首個以消費級硬體為目標的完整無人監督部署指南
+- **適用場景：** 個人或小型團隊的夜間自動化任務、CI 替代方案、定期維護工作流
+
+### Verity：Claude Code Agent Run 後自愈審查閘門（2026-06-27）
+
+- **核心模式：** 在每次 Claude Code agent run 結束後自動執行審查，偵測並修復不安全代碼；具記憶功能，累積已知安全問題的修復模式（[verity.md](https://verity.md)；HN score 4）
+- **定位差異：** 既有「Read-Only Reviewer Agent」（2026-06-26）聚焦代碼品質對立審查；Verity 聚焦安全合規的自動修復，屬「自愈層」而非「審查層」
+- **訊號限制：** HN score 4，採用訊號較弱；「自動修復不安全代碼」的邊界定義與修復準確率未有獨立驗證（推論）
+
+### TBD：CLI 優先 Multi-Agent 多工管理器（2026-06-27）
+
+- **核心模式：** Mac 原生 CLI-forward coding agent 多工管理器，強調 CLI 自動化優先（非 GUI）；支援 agent-channels 機制讓跨 worktree 的 agent 彼此通訊（[GitHub](https://github.com/cheapsteak/tbd)；HN score 4）
+- **與既有模式的差異：** Claude Squad 以 orchestrator 分派任務到獨立 worktree；TBD 的 agent-channels 讓 agent 橫向通訊，不需中央 orchestrator 協調
+- **注意事項：** HN score 4，工具仍早期；agent-channels 跨 worktree 通訊機制尚無其他工具驗證
+
+### Android Remote Control MCP 新版：Claude 控制手機任意 App（2026-06-27）
+
+- **核心模式：** MCP server 讓 Claude 控制 Android 手機上的任意 app；新版新增支援 Claude.ai / Claude Desktop 及 WebView 應用，擴展可控制 app 的範圍（[Reddit](https://www.reddit.com/r/ClaudeAI/comments/1uh03wy/new_release_of_android_remote_control_with_full/)）
+- **適用場景：** 移動端 UI 自動化測試、Android app 操作的 Claude Code 整合、跨平台 agent 工作流
+- **訊號：** Reddit 分享，無 HN 分數；新版本更新有 Reddit 社群回饋
 
 ### Read-Only Reviewer Agent：無編輯權限的對立審查者（2026-06-26）
 
@@ -403,6 +440,7 @@
 - **分層模型**：Sonnet 主力 + Opus 諮詢，節省約 60% 用量（未經獨立驗證）
 - **推理強度 vs 安全邊界**：高推理強度不會放寬安全限制，兩者獨立控制
 - **Context window 縮減**：舊版模型將回退至 200k context，依賴超長 context 的工作流需重新評估
+- **嵌入式成本感知路由**（Workweave Router，2026-06-27）：依請求難度自動路由到最佳模型，無需手動規則；解決 Opus 4.7 成本暴增問題，HN score 181 為近期社群工具最高分之一
 
 ### CLAUDE.md 設計原則
 

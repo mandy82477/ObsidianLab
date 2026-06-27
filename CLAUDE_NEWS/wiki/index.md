@@ -2,27 +2,22 @@
 
 LLM 查詢此 wiki 時，**先讀這個檔案**找相關頁面，再讀具體頁面取得詳細資訊。
 
-**最後更新：** 2026-06-26
+**最後更新：** 2026-06-27
 ---
 
 ## 近期異動
 
-- [[entities/claude-code]] — v2.1.193：autoMode.classifyAllShell 設定；官方研究報告（40 萬 session 分析）
-- [[entities/john-jumper]] — 補充 2026-06-26 細節：Mythos 危機背景、市值蒸發 $2,700 億
-- [[entities/tom-brown]] — 移除聯合創辦人待核實標記，補充 GPT-3 背景
-- [[entities/dario-amodei]] — 2026-06-26：WIRED 報導政府對其「不信任」，Tom Brown 接管談判
-- [[topics/anthropic-government-policy]] — 出口管制攻防：Tom Brown 談判進展、Bloomberg 反效果分析、Alibaba 蒸餾攻擊政策面
-- [[topics/ai-agent-safety]] — Alibaba 蒸餾攻擊（安全面）、MITRE ATT&CK 報告
-- [[topics/anthropic-business]] — Alibaba 蒸餾攻擊補強細節（信件日期 6/10、參議員具名）
-- [[topics/ai-talent-flow]] — Google 一週 4 位研究員跳槽 Anthropic（John Jumper 領銜）、$2,700 億市值蒸發、Gemini 3.5 延期
-- [[topics/enterprise-cost-management]] — 企業 ROI 反撲：tokenmaxxing 轉向效率優先（qz.com + CNBC）
-- [[topics/competitor-landscape]] — DeepSeek V4 Flash 顛覆 agent 定價經濟學
-- [[entities/pricing]] — Max 5x × 2 vs 20x × 1 方案分析（獨立開發者並行 session 策略）
-- [[topics/community-tech-patterns]] — 新增 6 個工作流模式（Read-Only Reviewer、Repo-as-Memory、Just-in-time @-file、批量 OSS bug 修復等）
-- [[topics/community-tech-discussions]] — 新增 3 個熱門討論；清理超過 21 天的 ☄️閃現 條目
-- [[topics/code-quality-decline]] — Claude Code 自訂編排路由失效（自訂 provider agents）
-- [[topics/official-community-gap]] — Claude Cowork 行動版進展
-- [[feature-radar]] — 新增 autoMode.classifyAllShell 條目；更新本週推薦
+- [[entities/mythos]] — Mythos 5 部分解禁：100+ 美國受信任機構可用（Lutnick 致 Tom Brown 信，2026-06-27）
+- [[entities/fable-5]] — 接近批准（待核實）：Reuters/Axios 報導美方接近 Fable 5 協議
+- [[entities/claude-code]] — v2.1.195：CLAUDE_CODE_DISABLE_MOUSE_CLICKS 環境變數；hook matcher 修復
+- [[topics/anthropic-government-policy]] — Mythos 5 解禁、Fable 5 接近協議；攻防紀錄更新
+- [[topics/ai-agent-safety]] — Agentjacking 攻擊：偽造 Sentry 錯誤劫持 Claude Code / Cursor / Cline
+- [[topics/anthropic-business]] — Mythos 5 解禁商業面；Claude 付費消費者成長；Alibaba 2900 萬次竊取指控；Anthropic/OpenAI 選舉代理戰
+- [[topics/enterprise-cost-management]] — 企業縮減 AI 支出，ROI 不明確，小型蒸餾模型替代
+- [[topics/competitor-landscape]] — Zhipu Z.AI 追趕；政治代理戰雙輸
+- [[topics/community-tech-patterns]] — 新增 6 條技術彙整（Workweave Router、Git Lazy Mount、Mac Mini 自主 agent 等）
+- [[topics/community-tech-discussions]] — 新增 AI 概念長期性討論、quota 自動化 gap；清理過期條目
+- [[feature-radar]] — 新增 CLAUDE_CODE_DISABLE_MOUSE_CLICKS 條目
 
 ---
 
@@ -42,7 +37,7 @@ LLM 查詢此 wiki 時，**先讀這個檔案**找相關頁面，再讀具體頁
 | [[entities/opus-4-8]] | model | 🤖 模型 | active | Opus 4.8：SWE-bench Pro 69.2%、1M context、Dynamic Workflows（1,000 子代理）、Fast Mode 1/3 費用 |
 | [[entities/opus-4-7]] | model | 🤖 模型 | active（爭議）| Opus 4.7 發布細節、思考深度爭議、cache 問題 |
 | [[entities/pricing]] | policy | 💼 商業 | active | 訂閱方案、近期政策變動、token 成本注意事項 |
-| [[entities/mythos]] | model | 🤖 模型 | active | 高能力安全模型；10K–23K 漏洞（三媒體確認）；The Register/Gotrade/CyberSecurityNews 三方確認透過 Claude Code 公開釋出 |
+| [[entities/mythos]] | model | 🤖 模型 | active（部分解禁：Mythos 5 = 100+ 美國受信任機構可用；Fable 5 全面解禁談判中） | 高能力安全模型；2026-06-27 部分解禁，100+ 美國受信任機構可用；Fable 5 解禁接近協議（待核實） |
 | [[entities/bugcrawl]] | feature | 🛠️ 工具/功能 | beta | Anthropic 測試中的 Claude Code 漏洞偵測工具 |
 | [[entities/claude-design]] | feature | 🛠️ 工具/功能 | active（初期）| Anthropic AI 設計工具，首日社群反映幻覺多、風格偏移、Claude Code 整合差 |
 | [[entities/claude-security]] | product | 🛠️ 工具/功能 | beta | Claude Security 資安產品，情境化安全評估，整合於 Claude Code 開發環境 |

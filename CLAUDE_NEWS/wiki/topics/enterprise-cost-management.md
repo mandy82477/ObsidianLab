@@ -3,11 +3,11 @@
 **狀態：** monitoring
 **領域：** 💼 商業
 **開始日期：** 2026-05-01
-**最後更新：** 2026-06-26
-**最後新聞更新：** 2026-06-26
+**最後更新：** 2026-06-27
+**最後新聞更新：** 2026-06-27
 
-> **最新成本挑戰**（2026-06-26）
-> 企業客戶大規模從「token 最大化（tokenmaxxing）」轉向效率優先，Anthropic 與 OpenAI 同步面臨企業市場 ROI 壓力；qz.com 與 CNBC 同日報導多家企業縮減 AI 支出，「效率優先時代」成新主旋律。
+> **最新成本挑戰**（2026-06-27）
+> 企業因 ROI 不明確大規模縮減對 Anthropic 與 OpenAI 的 AI 支出，小型蒸餾模型成主流替代選項（qz.com 2026-06-26）；此趨勢已從「帳單優化」升至「戰略性縮減採購」層級，對 Anthropic ARR 成長動能構成結構性壓力。
 
 ---
 
@@ -125,6 +125,9 @@
 - [[news/2026-05-22]]
 
 ## 時序
+
+### 2026-06-27
+- **[戰略縮減] ROI 不明確驅動企業縮減大廠 AI 支出，小型蒸餾模型成替代方案**：qz.com 報導，企業因 AI 投資 ROI 不明確，主動縮減對 Anthropic 與 OpenAI 等大型 AI 供應商的支出，並以小型蒸餾模型（distilled models）作為替代選項；這是從「帳單優化」（如 Prompt 精簡、快取策略）升級至「戰略縮減採購額度」的質性轉變。**對 Anthropic 的意涵**：ARR 從 $9B 快速成長至 $47B 的動能，若企業端出現戰略性縮減而非技術性優化，成長曲線面臨下行壓力（推論）；小型蒸餾模型的崛起與 DeepSeek V4 Flash（成本降低逾 100 倍）的定價衝擊同向共振（qz.com https://qz.com/enterprise-ai-spending-openai-anthropic-roi-pullback-062626）
 
 ### 2026-06-26
 - **[ROI 反撲] 企業客戶集體轉向效率優先，Anthropic 與 OpenAI 雙雙面臨支出縮減壓力**：qz.com 與 CNBC 同日（2026-06-26）報導，企業從「token 最大化（tokenmaxxing）」策略轉向效率優先，多家企業縮減對 Anthropic 與 OpenAI 的 AI 支出；CNBC 標題明確指出「新 AI 消費現實——用戶轉向效率」（qz.com https://qz.com/enterprise-ai-spending-openai-anthropic-roi-pullback-062626；CNBC https://www.cnbc.com/2026/06/26/openai-anthropic-new-ai-spending-reality-as-users-shift-to-efficiency.html）

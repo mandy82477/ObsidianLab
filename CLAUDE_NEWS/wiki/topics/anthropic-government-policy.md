@@ -3,11 +3,11 @@
 **狀態：** ongoing
 **領域：** 🏛️ 政策/安全
 **開始日期：** 2026-05-01
-**最後更新：** 2026-06-26
-**最後新聞更新：** 2026-06-26
+**最後更新：** 2026-06-27
+**最後新聞更新：** 2026-06-27
 
-> **最新攻防紀錄**（2026-06-26）
-> Bloomberg 分析指出限制 Anthropic 頂尖模型的出口管制可能適得其反，反而推升中國開源模型的國際採用；The Verge 報導 Mythos 危機持續惡化，Anthropic 正面臨外交與商業雙重壓力；Anthropic 同時指控阿里巴巴透過 25,000 個假帳號在 4/22–6/5 間發動 2,880 萬次 Claude 模型交換，目的是蒸餾提取 AI 能力，規模為史上最大（模型安全面向見 [[topics/ai-agent-safety]]）。
+> **最新攻防紀錄**（2026-06-27）
+> 美國商務部長 Howard Lutnick 致函 Anthropic 聯合創辦人 Tom Brown，批准 Mythos 5 向 100+ 美國機構（含企業與聯邦機構）有限釋出，要求具備適當安全措施的「受信任合作夥伴」；Fable 5 尚未納入，但 Reuters / Axios 報導美方接近達成 Fable 5 協議（Semafor、CNBC、Reuters）。
 
 ---
 
@@ -19,9 +19,9 @@ Anthropic 與美國政府的衝突從 2026 年五月起持續升溫，並於 202
 
 ---
 
-## 目前局勢（截至 2026-06-26）
+## 目前局勢（截至 2026-06-27）
 
-- **管制狀態：** Fable 5 封鎖持續（NSA 出口管制 6/12 起仍維持，尚未解除）；NSA 已正式失去 Claude Fable 模型存取權；LessWrong 社群預測解封時間已從 7 月 7 日修正至 **7 月 9 日**，反映談判進度略慢；The Verge（2026-06-26）報導 Mythos 危機持續惡化，Anthropic 面臨外交與商業雙重壓力，無明確解封時程
+- **管制狀態（重大更新）：** Mythos 5 已獲部分解封——美國商務部長 Lutnick 致函 Tom Brown，批准 Mythos 5 向 100+ 具備適當安全措施的美國「受信任合作夥伴」（含企業與聯邦機構）有限釋出（Semafor、CNBC，2026-06-27）；Fable 5 尚未納入解封，但 Reuters / Axios 報導美方接近達成 Fable 5 協議；此為兩週前全面出口管制封鎖後的首次重大解封動作
 - **談判主導權易手：** Wired 報導（2026-06-24）Trump 白宮對 Dario Amodei 態度趨冷，已由聯合創辦人 Tom Brown 接管與白宮的談判會議；白宮內部評語：「Tom Brown is not being a weirdo like Dario and can actually engage」；Dario 被逐出核心談判桌，為 Anthropic 內部重大策略調整
 - **EU 介入升格：** 歐盟已就 Mythos 模型出口管制與白宮展開直接對話；事件從美國內政議題升格為跨大西洋科技外交，盟友壓力管道正式開通
 - **出口管制反效論述：** Bloomberg（2026-06-26）分析指出限制 Anthropic 頂尖模型可能適得其反，反而推升中國開源模型在全球的採用率；此論述進一步削弱「出口管制可有效防護技術外洩」的政策前提
@@ -73,6 +73,8 @@ Fable 5 發布後，Amazon 安全研究人員發現特定提示詞可讓模型�
 
 2026-06-26，Bloomberg 分析指出限制 Anthropic 頂尖模型的出口管制可能適得其反——閉源模型遭限制後，中國開源模型的國際採用率可能反而提升，使「管制可有效維護美國 AI 領先地位」的政策邏輯受到挑戰（Bloomberg，2026-06-26；https://www.bloomberg.com/news/newsletters/2026-06-26/white-house-s-ban-on-anthropic-ai-access-may-boost-china-s-open-source-models）。同日，The Verge 報導 Mythos 危機持續惡化，Anthropic 同時面臨外交（EU、盟友）與商業（JPMorgan、DoD）雙重壓力，談判已逾兩週（The Verge，2026-06-26；https://www.theverge.com/ai-artificial-intelligence/957327/anthropic-mythos-fable-ai-trump-administration-negotiations）。
 
+2026-06-27，商務部長 Lutnick 致函 Tom Brown，宣布批准 Mythos 5 向 100+ 美國機構有限釋出，適用對象限定為具備適當安全措施的「受信任合作夥伴」（trusted partners）；Fable 5 尚未納入，但 Reuters / Axios 報導雙方已接近達成 Fable 5 協議（Semafor，https://www.semafor.com/article/06/27/2026/us-releases-powerful-anthropic-model-mythos-to-some-us-companies；CNBC，https://www.cnbc.com/2026/06/26/us-government-anthropic-claude-mythos5-ai.html；Reuters，https://www.reuters.com/business/us-close-allowing-anthropic-restore-fable-5-model-axios-reports-2026-06-27/）。此為 6/13 全面封鎖後的首次重大解封，談判主導權交由 Tom Brown 後取得具體成果。
+
 此外，Anthropic 已於 2026-06-10 致函美參議院，正式指控阿里巴巴透過約 25,000 個假帳號在 2026-04-22 至 2026-06-05 間，向 Claude 發動 2,880 萬次模型交換以蒸餾提取 AI 能力，為已知最大規模 AI 蒸餾攻擊（CNBC，2026-06-24；https://www.cnbc.com/2026/06/24/anthropic-alibaba-distillation-campaign.html）。此事件同時強化出口管制必要性論述（中國行為者已在主動提取受管制模型能力），亦為政府討論 AI 出口管制政策提供具體數據支撐；技術安全面向詳見 [[topics/ai-agent-safety]]。
 
 ### 🌍 策略選擇：Anthropic 換戰場而非退讓
@@ -95,6 +97,7 @@ Fable 5 發布後，Amazon 安全研究人員發現特定提示詞可讓模型�
 
 | 日期 | 方 | 動作 | 效果 |
 |------|----|------|------|
+| 2026-06-27 | 🏛️ | Lutnick 致函 Tom Brown：批准 Mythos 5 向 100+ 美國受信任合作夥伴有限釋出；Fable 5 接近協議（Semafor、CNBC、Reuters） | 6/13 全面封鎖後首次重大解封；Fable 5 尚未納入但談判接近尾聲；Tom Brown 主導談判取得具體成果 |
 | 2026-06-26 | 🌐 | Bloomberg 分析：限制 Anthropic 頂尖模型出口管制可能反推中國開源模型國際採用（Bloomberg） | 出口管制「適得其反」論述獲主流財經媒體背書；削弱管制正當性的戰略效果論據 |
 | 2026-06-26 | 🌐 | The Verge：Mythos 危機持續惡化，Anthropic 面臨外交與商業雙重壓力（The Verge） | 談判已逾兩週仍無明確解封時程；外交壓力（EU 介入）與商業損失（企業客戶 / DoD）雙軌累積 |
 | 2026-06-26 | 🏢 | Anthropic 6/10 致函美參議院：指控阿里巴巴 4/22–6/5 間透過約 25,000 個假帳號發動 2,880 萬次 Claude 模型交換（CNBC） | 史上最大規模已知模型蒸餾攻擊；同時具出口管制政策意涵——外國行為者大規模提取受管制模型能力；模型安全面向見 [[topics/ai-agent-safety]] |
@@ -164,6 +167,10 @@ Fable 5 發布後，Amazon 安全研究人員發現特定提示詞可讓模型�
 - [Chris Olah Vatican Remarks](https://www.anthropic.com/news/chris-olah-pope-leo-encyclical) — Anthropic Blog
 
 ## 時序
+
+### 2026-06-27
+- **[重大解封] Mythos 5 有限釋出：100+ 美國受信任合作夥伴**：美國商務部長 Howard Lutnick 致函 Anthropic 聯合創辦人 Tom Brown，正式批准 Mythos 5 向超過 100 個具備適當安全措施的美國「受信任合作夥伴」（trusted partners，含企業與聯邦機構）有限釋出；此為 2026-06-13 全面封鎖以來的首次重大解封，距封鎖啟動約兩週（Semafor，https://www.semafor.com/article/06/27/2026/us-releases-powerful-anthropic-model-mythos-to-some-us-companies；CNBC，https://www.cnbc.com/2026/06/26/us-government-anthropic-claude-mythos5-ai.html）
+- **[Fable 5 接近協議] Reuters / Axios 報導：雙方已接近達成 Fable 5 解封協議**：Reuters 報導美方接近允許 Anthropic 恢復 Fable 5 模型，談判主導方為 Tom Brown，接近最終協議；條件細節未公開（Reuters，https://www.reuters.com/business/us-close-allowing-anthropic-restore-fable-5-model-axios-reports-2026-06-27/）
 
 ### 2026-06-26
 - **[反效論述] Bloomberg：出口管制可能反推中國開源模型**：Bloomberg 分析指出限制 Anthropic 頂尖模型的出口管制可能適得其反——閉源模型遭限制後，各國開發者被迫轉向中國開源替代方案，反而提升中國模型的國際採用率；論述進一步挑戰「管制閉源模型可有效維護美國 AI 領先地位」的政策邏輯（Bloomberg，2026-06-26；https://www.bloomberg.com/news/newsletters/2026-06-26/white-house-s-ban-on-anthropic-ai-access-may-boost-china-s-open-source-models）

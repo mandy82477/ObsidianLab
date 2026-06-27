@@ -3,11 +3,11 @@
 **狀態：** monitoring
 **領域：** 💼 商業
 **開始日期：** 2026-04
-**最後更新：** 2026-06-26
-**最後新聞更新：** 2026-06-26
+**最後更新：** 2026-06-27
+**最後新聞更新：** 2026-06-27
 
-> **最新競品動態**（2026-06-26）
-> DeepSeek V4 Flash（成本降低逾 100 倍、開源）打破 Anthropic 以高 API 定價補貼自家 agent 服務的商業邏輯；Microsoft 等廠商已切換至 DeepSeek，Anthropic 的定價護城河受到正面衝擊。
+> **最新競品動態**（2026-06-27）
+> 中國 Zhipu 的 Z.AI 開源模型趁 Anthropic 與 OpenAI 受出口管制 / 審查影響期間快速縮小能力差距（CNBC 2026-06-26）。Anthropic 與 OpenAI 在紐約第 12 選區的政治代理戰雙輸，AI 大廠政治影響力受挫。
 
 ---
 
@@ -71,6 +71,12 @@ Claude Code 已成為 AI 輔助編碼的標竿產品，但競爭正快速升溫�
 - **關鍵定價衝擊（2026-06-26）**：DeepSeek V4 Flash（開源，成本較 Claude API 降低逾 100 倍）打破 Anthropic 以較高 API 定價補貼自家 Claude Code 等 agent 服務的商業邏輯；Microsoft 等廠商已實際切換至 DeepSeek 執行層（ref: rtrvr.ai https://www.rtrvr.ai/blog/code-as-plan-deepseek-flash-text-only-browser-agent）。**對 Anthropic 的意涵**：訂閱補貼依賴 API 定價差距維持，DeepSeek Flash 壓縮此空間；若企業持續切換執行層，Anthropic 的 token 份額將流失至競品（推論）
 - **意義**：Claude Code 類產品已成為國家層面 AI 競爭的戰場；DeepSeek 轉向正面競爭標誌低成本替代生態進入下一階段
 
+### Zhipu Z.AI 🔴
+- **狀態**：Active（快速追趕中，2026-06-27 CNBC 確認）
+- **路線**：開源模型，趁 Anthropic / OpenAI 受出口管制與法律 / 政治審查影響期間快速縮小能力差距
+- **策略**：以開源路線滲透出口管制無法觸及的市場，類似 DeepSeek 以「免費壁壘」繞開競爭管制
+- **意義**：管制空窗期是中國廠商能力追趕的加速器；Anthropic 若無法有效解封中國及受管制市場，Zhipu 等廠商受惠（CNBC https://www.cnbc.com/2026/06/26/china-zhipu-z-ai-open-source-anthropic-openai.html）
+
 ### Alibaba Qwen3.7-Max / Alibaba 蒸餾攻擊
 - **狀態**：遭 Anthropic 法律指控（2026-06-25）
 - **特點**：Qwen3.7-Max 聲稱可持續自主運行 35 小時，直接瞄準 Claude Code 的長時間自主執行場景
@@ -110,6 +116,10 @@ Claude Code 已成為 AI 輔助編碼的標竿產品，但競爭正快速升溫�
 ---
 
 ## 時序
+
+### 2026-06-27
+- **[中國競品加速] Zhipu Z.AI 趁出口管制空窗快速追趕 Anthropic 與 OpenAI**：CNBC 報導，中國 Zhipu 的開源模型 Z.AI 在 Anthropic 與 OpenAI 因出口管制（Anthropic Mythos 封鎖）與法律 / 政治審查拖累期間，快速縮小能力差距；Zhipu 採開源路線擴大市場滲透，策略類似 DeepSeek 以「免費的壁壘」繞開管制影響。**對競爭格局的意涵**：若管制持續壓制 Anthropic 在中國及部分市場的可用性，中國廠商的能力追趕視窗直接擴大（CNBC https://www.cnbc.com/2026/06/26/china-zhipu-z-ai-open-source-anthropic-openai.html）
+- **[政治代理戰雙輸] Anthropic 與 OpenAI 合計耗費 2700 萬美元支持紐約 12 選區，勝選者宣布與兩家保持距離**：Fortune 報導 Anthropic 與 OpenAI 在紐約第 12 選區支持不同候選人，形成政治代理戰；最終勝選候選人宣布與兩家公司保持距離，顯示 AI 大廠的政治投資換取政策支持的邏輯在本次選舉中完全失效。**對競爭格局的意涵**：在政治影響力層面 Anthropic 與 OpenAI 平局（雙輸），第三方（勝選者）主動切割削弱後續遊說能量（Fortune https://fortune.com/2026/06/26/anthropic-openai-ny12-proxy-war-no-winners-election-super-pac-donations/）
 
 ### 2026-06-26
 - **[定價顛覆] DeepSeek V4 Flash 打破 Anthropic agent 服務定價邏輯，Microsoft 等廠商切換**：開發者分析文章指出，Anthropic 商業模式的隱含前提是「以較高 API 定價補貼自家 agent 服務（Claude Code 等）」；DeepSeek V4 Flash（開源、成本降低逾 100 倍）出現後，這個前提被動搖——Microsoft 等廠商已切換至 DeepSeek 作為執行層，Anthropic 面臨執行層 token 份額流失與定價護城河被侵蝕的雙重壓力（rtrvr.ai https://www.rtrvr.ai/blog/code-as-plan-deepseek-flash-text-only-browser-agent）

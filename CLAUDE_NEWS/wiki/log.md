@@ -3,6 +3,27 @@
 Append-only 紀錄。每次 ingest、query 或 lint 都在此追加一條。
 格式：`## [YYYY-MM-DD] 類型 | 說明`
 
+## 2026-06-27 Ingest | news/2026-06-27.md（55 則）
+
+- 來源日報：`news/2026-06-27.md`（55 則，6/6 來源；Reddit 429 rate limit 多數，仍有 10 筆）
+- 核心事件：Mythos 5 部分解禁（100+ 美國受信任機構）、Fable 5 接近協議（待核實）、Alibaba 2900 萬假查詢指控
+- 更新頁面：
+  - `wiki/entities/mythos.md`：部分解禁（Lutnick 致 Tom Brown 信確認，100+ 美國機構可用）
+  - `wiki/entities/fable-5.md`：接近協議（待核實），來源 Reuters/Axios
+  - `wiki/entities/claude-code.md`：v2.1.195（CLAUDE_CODE_DISABLE_MOUSE_CLICKS + hook matcher 修復）
+  - `wiki/topics/anthropic-government-policy.md`：Mythos 5 解禁、Fable 5 接近協議；攻防紀錄、三個戰場、時序更新
+  - `wiki/topics/ai-agent-safety.md`：Agentjacking 攻擊（偽造 Sentry 錯誤劫持 Claude Code/Cursor/Cline）
+  - `wiki/topics/anthropic-business.md`：Mythos 5 解禁商業面、消費者付費成長（Indagari）、Alibaba 2900 萬次補強、Anthropic/OpenAI 選舉代理戰（$27M）
+  - `wiki/topics/enterprise-cost-management.md`：企業縮減 AI 支出（ROI 不明確）、小型蒸餾模型替代趨勢
+  - `wiki/topics/competitor-landscape.md`：Zhipu Z.AI 快速追趕、選舉代理戰雙輸
+  - `wiki/topics/community-tech-patterns.md`：6 條新技術彙整（Workweave Router 智能路由、Git Lazy Mount、Mac Mini 自主 agent、Verity 自愈閘門、TBD 多工管理器、Android Remote Control MCP 新版）
+  - `wiki/topics/community-tech-discussions.md`：AI 概念長期性討論（MCP/Skills/Agentic workflows）、quota 自動化 gap；清理過期 ☄️閃現 條目
+  - `wiki/feature-radar.md`：新增 CLAUDE_CODE_DISABLE_MOUSE_CLICKS 條目（🔥🔥 / ⚡）
+  - `wiki/index.md`：近期異動 + mythos 狀態更新
+- feature-radar 新增：CLAUDE_CODE_DISABLE_MOUSE_CLICKS 環境變數（v2.1.195）
+- 新增頁面：無
+- 呈現品質審查：✅ 全部通過（11 頁）
+
 ## 2026-06-26 設計決策 | 記者差異化 + 單一 push 部署修正
 
 兩項本週架構改動（commit `490275b`、`97f8cf2`，皆已過 `/review-commands`）：

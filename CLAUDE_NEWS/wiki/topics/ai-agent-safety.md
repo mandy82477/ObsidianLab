@@ -3,11 +3,11 @@
 **狀態：** ongoing
 **領域：** 🏛️ 政策/安全
 **開始日期：** 2026-04-27
-**最後更新：** 2026-06-26
-**最後新聞更新：** 2026-06-26
+**最後更新：** 2026-06-27
+**最後新聞更新：** 2026-06-27
 
-> **最新安全事件**（2026-06-26）
-> Anthropic 正式指控阿里巴巴透過約 25,000 個假帳號在 4/22–6/5 間發動 2,880 萬次 Claude 模型交換以蒸餾提取 AI 能力，為已知最大規模 AI 蒸餾攻擊（CNBC 2026-06-24）。同日，Anthropic 公開一年份網路威脅情報報告，將 832 個遭封鎖帳號的行為模式對應至 MITRE ATT&CK 框架，為 AI 安全威脅分析提供結構化工具集。
+> **最新安全事件**（2026-06-27）
+> 安全研究揭露「agentjacking」手法升級版防禦指南：偽造 Sentry 錯誤訊息誘導 Claude Code / Cursor / Cline 等 coding agent 執行惡意代碼；作者提供具體 settings 配置可大幅降低暴露風險（dev.to，2026-06-27）。
 
 ---
 
@@ -143,14 +143,14 @@
 - **濫用性質**：通報未提供完整技術細節，但 Claude Chat 平台本身被用作攻擊媒介或惡意行為加速工具
 - **背景連結**：延續 Claude Code/Chat 生態圈成為攻擊目標的整體趨勢（見 2026-06-10 供應鏈攻擊大規模升級條目）；顯示攻擊者已從 Claude Code 工具鏈擴展至 Claude Chat 對話介面
 
-### Agentjacking：Sentry 假錯誤報告劫持 Claude Code（2026-06-16 新增，2026-06-23 升級）
+### Agentjacking：Sentry 假錯誤報告劫持 Claude Code（2026-06-16 新增，2026-06-23 升級，2026-06-27 防禦指南更新）
 
-- **披露者**：Tenet Security（AI agent 安全新創，2026-06-17 從隱形模式亮相）；The Next Web 初報（06/16）；The New Stack 正式深度報導（06/22）
+- **披露者**：Tenet Security（AI agent 安全新創，2026-06-17 從隱形模式亮相）；The Next Web 初報（06/16）；The New Stack 正式深度報導（06/22）；dev.to 防禦設定指南（06/27，https://dev.to/jovan_chan_9500711396d4e6/agentjacking-2026-how-a-fake-sentry-error-hijacks-cursor-claude-code-and-cline-and-the-5a2h）
 - **攻擊機制**：攻擊者向 Sentry 公開 DSN 端點（無需任何憑證）POST 偽造錯誤報告，在「Resolution」欄位嵌入惡意指令，格式設計成看起來像正常錯誤解決方案；開發者請 Claude Code 修復此錯誤時，Agent 以開發者自身本地權限執行攻擊者指定的代碼；**無需竊取密碼或安裝惡意軟體，只需一個公開 Sentry key**
-- **攻擊面**：Sentry DSN 通常公開在前端 JS 或 GitHub repo 中，任何人皆可存取；無需入侵任何系統；任何使用 Sentry MCP 整合的 AI coding agent 皆有風險
-- **影響範圍**：Claude Code、Cursor、OpenAI Codex，以及其他任何讀取錯誤報告並自動修復的 AI coding agent
-- **防護建議**：在 MCP 伺服器層加入輸入驗證；不讓 Agent 直接讀取未受信任的第三方錯誤報告內容；對 Sentry 等錯誤追蹤工具的 webhook 設置存取白名單
-- **參考來源**：[The New Stack 報導](https://thenewstack.io/agentjacking-sentry-mcp-attack/)
+- **攻擊面**：Sentry DSN 通常公開在前端 JS 或 GitHub repo 中，任何人皆可存取；無需入侵任何系統；任何使用 Sentry MCP 整合的 AI coding agent 皆有風險；屬於提示注入的新型態變種，透過工具整合的 error message 管道進行
+- **影響範圍**：Claude Code、Cursor、Cline、OpenAI Codex，以及其他任何讀取錯誤報告並自動修復的 AI coding agent
+- **防護建議（2026-06-27 更新）**：dev.to 作者提供具體 agent settings 配置可大幅降低暴露面（見原文連結）；在 MCP 伺服器層加入輸入驗證；不讓 Agent 直接讀取未受信任的第三方錯誤報告內容；對 Sentry 等錯誤追蹤工具的 webhook 設置存取白名單
+- **參考來源**：[The New Stack 報導](https://thenewstack.io/agentjacking-sentry-mcp-attack/)；[dev.to 防禦設定指南](https://dev.to/jovan_chan_9500711396d4e6/agentjacking-2026-how-a-fake-sentry-error-hijacks-cursor-claude-code-and-cline-and-the-5a2h)
 
 ### Claude Code v2.1.150 遠端系統提示注入機制披露（2026-05-25 新增）
 
@@ -370,6 +370,9 @@
 - [Anthropic's definition of safety is too narrow](https://jonathannen.com/anthropic-safety-too-narrow/) — Jonathan Nen
 
 ## 時序
+
+### 2026-06-27
+- **[升級] Agentjacking 2026 防禦設定指南：偽造 Sentry 錯誤劫持 Claude Code / Cursor / Cline**：dev.to 文章詳細說明 agentjacking 攻擊機制——攻擊者偽造 Sentry 錯誤訊息誘導 AI coding agent 以開發者本地權限執行惡意代碼，屬提示注入新型態變種（透過工具整合的 error message 管道）；文章提供具體 agent settings 配置可大幅降低暴露面；影響 Claude Code、Cursor、Cline 等（dev.to，https://dev.to/jovan_chan_9500711396d4e6/agentjacking-2026-how-a-fake-sentry-error-hijacks-cursor-claude-code-and-cline-and-the-5a2h）
 
 ### 2026-06-26
 - **[蒸餾攻擊] 阿里巴巴透過 25,000 假帳號發動 2,880 萬次 Claude 模型交換**：Anthropic 致函美參議院（2026-06-10），正式指控阿里巴巴在 2026-04-22 至 2026-06-05 期間，透過約 25,000 個假帳號系統性發動 2,880 萬次模型交換，目的是蒸餾提取 Claude AI 能力；為已知最大規模 AI 蒸餾攻擊；阿里巴巴截至報導日無公開回應（視為單一聲稱）；政策面詳見 [[topics/anthropic-government-policy]]（CNBC，2026-06-24；https://www.cnbc.com/2026/06/24/anthropic-alibaba-distillation-campaign.html）
