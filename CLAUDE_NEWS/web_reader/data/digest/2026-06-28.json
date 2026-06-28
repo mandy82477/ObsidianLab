@@ -1,0 +1,206 @@
+{
+  "date": "2026-06-28",
+  "generatedAt": "2026-06-28 22:58 UTC",
+  "articleCount": 48,
+  "sourceCount": "6/6 | **文章數：** 48 | **更新時間：** 2026-06-28 22:58 UTC",
+  "bulletin": "",
+  "topStories": [],
+  "techUpdates": [],
+  "discussions": [
+    {
+      "title": "Adrafinil – 讓 Mac 蓋蓋不斷電繼續跑 agent",
+      "url": "https://github.com/kageroumado/adrafinil",
+      "source": "Hacker News",
+      "time": "06/27 20:34 UTC 情緒：😊",
+      "sentiment": "",
+      "body": "針對社群廣泛抱怨的「MacBook 半開蓋問題」，以 `pmset disablesleep 1` 搭配 Claude Code hooks 偵測 agent 活躍狀態，只在必要時啟動，避免忘記關閉造成意外耗電。",
+      "focusTags": [
+        "[新工具]"
+      ]
+    },
+    {
+      "title": "Mozart 指控阿里巴巴竊取 Claude 能力",
+      "url": "https://arstechnica.com/tech-policy/2026/06/anthropic-claims-alibaba-defied-trump-to-attack-claude-and-steal-capabilities/",
+      "source": "Hacker News",
+      "time": "06/27 16:16 UTC 情緒：😤",
+      "sentiment": "",
+      "body": "Anthropic 向國會提交機密信函，指出 Alibaba 及旗下 AI 實驗室 Qwen 透過 2.5 萬個帳號、2,880 萬次交換對 Claude 進行能力竊取；此舉直接關係 Anthropic 對中國市場的法律與安全策略。",
+      "focusTags": [
+        "[持續追蹤]"
+      ]
+    },
+    {
+      "title": "奧地利遊說歐盟邀請 Anthropic 落腳",
+      "url": "https://www.bloomberg.com/news/articles/2026-06-28/austria-lobbies-eu-to-host-anthropic-after-us-access-curbs",
+      "source": "Hacker News",
+      "time": "06/28 13:34 UTC 情緒：🤔",
+      "sentiment": "",
+      "body": "美國出口管制導致歐洲廠商被切斷 Mythos/Fable 5 存取，奧地利趁機爭取 Anthropic 歐洲研究中心；HN 討論聚焦「Dario 是美國愛國者，可能性不高」。",
+      "focusTags": [
+        "[重大事件]"
+      ]
+    },
+    {
+      "title": "亞洲 AI 新創推出 Mythos 競品",
+      "url": "https://techcrunch.com/2026/06/27/asian-ai-startups-launch-mythos-like-models-as-anthropics-export-ban-drags-on/",
+      "source": "Hacker News",
+      "time": "06/27 13:10 UTC 情緒：🤔",
+      "sentiment": "",
+      "body": "中國 360 的 Tulongfeng 和日本 Sakana AI 的 Fugu 均號稱可與 Mythos 比肩；Fugu 另支援 multi-agent 透過 API 協調其他模型，顯示封鎖加速競品崛起。",
+      "focusTags": []
+    },
+    {
+      "title": "Mozilla 0din 揭露 Claude Code 惡意 Repo 攻擊向量",
+      "url": "https://www.tomshardware.com/tech-industry/cyber-security/ai-coding-agents-can-be-tricked-into-installing-malware-via-clean-github-repositories-mozillas-0din-team-shows-how-claude-code-can-be-exploited-by-its-own-helpfulness",
+      "source": "Google News / Tom's Hardware",
+      "time": "06/28 03:30 UTC 情緒：😤",
+      "sentiment": "",
+      "body": "乾淨 GitHub Repo 內藏隱性提示注入指令，誘導 Claude Code 安裝惡意依賴；「AI 樂於助人」被武器化成攻擊面。開發者應提高對未知 Repo 的信任門檻。",
+      "focusTags": [
+        "[風險警示]"
+      ]
+    },
+    {
+      "title": "Legion LegalTech 起訴美國政府",
+      "url": "https://thenextweb.com/news/legion-legaltech-sues-us-anthropic-access",
+      "source": "Hacker News",
+      "time": "06/27 15:52 UTC 情緒：😤",
+      "sentiment": "",
+      "body": "法律科技公司向哥倫比亞特區聯邦法院提起訴訟，主張出口管制令對其業務造成「即時、不可挽回、存亡攸關的」損害，要求法院撤銷 BIS 令。",
+      "focusTags": []
+    },
+    {
+      "title": "AgentWatch – 在請求抵達模型前攔截 runaway agent",
+      "url": "https://agent-watch.dev/",
+      "source": "Hacker News",
+      "time": "06/28 11:09 UTC 情緒：😊",
+      "sentiment": "",
+      "body": "代理層架在 OpenAI / Anthropic / Gemini 等多個 LLM 前方，執行預算限制與無限迴圈偵測；2 行程式碼更換 base URL 即可接入，附不可竄改審計軌跡，針對企業場景。",
+      "focusTags": [
+        "[新工具]"
+      ]
+    },
+    {
+      "title": "Claudete – 原生 macOS 多 Claude Code 實例管理器",
+      "url": "https://claudete.co",
+      "source": "Hacker News",
+      "time": "06/28 09:46 UTC 情緒：😊",
+      "sentiment": "",
+      "body": "解決 Mac 重開機後 Claude Code sessions 中斷問題；提供 flexible grid、1–5 欄切換，針對同時運行多個 agent 的使用者設計。",
+      "focusTags": [
+        "[新工具]"
+      ]
+    },
+    {
+      "title": "Boris Cherny 的 13 個 Claude Code 使用技巧",
+      "url": "https://howborisusesclaudecode.com",
+      "source": "Hacker News",
+      "time": "06/27 17:10 UTC 情緒：😊",
+      "sentiment": "",
+      "body": "Claude Code 創始人使用「出奇平凡」的 setup：5 個 git checkout 分支並行於本地終端機，另開 5-10 個 claude.ai/code 會話，以 `&` 背景化與 `--teleport` 跨環境切換。",
+      "focusTags": []
+    },
+    {
+      "title": "China's AI cybersecurity match—WSJ",
+      "url": "https://www.wsj.com/tech/ai/chinese-ai-anthropic-mythos-cybersecurity-574b02c2",
+      "source": "Hacker News",
+      "time": "06/28 01:52 UTC 情緒：😐",
+      "sentiment": "",
+      "body": "WSJ 報導中國已追平 Anthropic 在網路安全 AI 的能力，從根本質疑 Mythos 出口管制的戰略效果。",
+      "focusTags": []
+    },
+    {
+      "title": "headless Claude Code agent 的 401 陷阱",
+      "url": "https://dev.to/drickon/the-token-is-valid-but-your-headless-claude-code-agent-just-401d-forever-48ip",
+      "source": "dev.to / #claudecode",
+      "time": "06/28 01:03 UTC 情緒：🤔",
+      "sentiment": "",
+      "body": "靜態 OAuth token 在直接 API 呼叫返回 200 的同一瞬間，長時間運行的 Claude Code 實例可能持續回傳 401——原因是 token 刷新機制的時序問題；提供 workaround 指南。",
+      "focusTags": []
+    },
+    {
+      "title": "OKF for Claude Code – 結構化跨 session 記憶",
+      "url": "https://dev.to/scaccogatto/okf-for-claude-code-structured-portable-memory-your-agent-and-team-can-read-4ocn",
+      "source": "dev.to / #claudecode",
+      "time": "06/28 04:44 UTC 情緒：😊",
+      "sentiment": "",
+      "body": "標準化「物件鍵格式」讓 agent 跨 session 保持可攜記憶，適合團隊共用同一個 Claude Code 工作流時的知識傳遞。",
+      "focusTags": []
+    },
+    {
+      "title": "ai-whisper – 雙 agent 協作中繼",
+      "url": "https://ai-creed.dev/projects/ai-whisper/",
+      "source": "Hacker News",
+      "time": "06/27 15:07 UTC 情緒：😊",
+      "sentiment": "",
+      "body": "Claude + Codex（或其他組合）共享「baton」輪流持有執行權，evaluator 在每輪完成後把關品質；支援 spec-driven-development、複雜 bug 修復等結構化工作流。",
+      "focusTags": [
+        "[新工具]"
+      ]
+    },
+    {
+      "title": "Claude Code 完成音效 – 改變工作流的小技巧",
+      "url": "https://dev.to/anand_rathnas_d5b608cc3de/i-made-claude-code-ding-when-its-done-and-it-changed-my-workflow-5e35",
+      "source": "dev.to / #claudecode",
+      "time": "06/27 17:49 UTC 情緒：😊",
+      "sentiment": "",
+      "body": "透過 `stop` hook 加入音效通知，讓開發者在 agent 完成後立即知道可以繼續操作，減少來回切換頻率；屬於 Claude Code hooks 的基礎應用案例。",
+      "focusTags": []
+    },
+    {
+      "title": "Anthropic 估值衝歷史最高 – 相關上市股曝光",
+      "url": "https://www.fool.com/investing/2026/06/28/anthropic-become-valuable-software-stock-ai/",
+      "source": "Google News / The Motley Fool",
+      "time": "06/28 06:49 UTC 情緒：🤔",
+      "sentiment": "",
+      "body": "Motley Fool 分析 Anthropic 有望成為史上最高估值軟體公司，並列出具有曝險的上市代理股票；出口管制與阿里巴巴案同時成為估值不確定因子。",
+      "focusTags": []
+    }
+  ],
+  "billing": [],
+  "focus": [
+    {
+      "tag": "[重大事件]",
+      "text": "美國商務部部分解禁 Mythos 5：允許超過 100 間特定美國政府機構與企業使用，含其非美籍員工。Fable 5 也傳出即將回歸。",
+      "ref_urls": [
+        "https://techcrunch.com/2026/06/26/trump-admin-releases-anthropic-mythos-to-be-used-by-more-than-100-us-companies-agencies/",
+        "https://www.axios.com/2026/06/27/anthropic-fable-5-return-soon"
+      ]
+    },
+    {
+      "tag": "[持續追蹤]",
+      "text": "Anthropic 指控阿里巴巴以 2.5 萬個帳號發動史上最大規模「能力竊取」攻擊，在 4 月 22 日至 6 月 5 日間產生逾 2,880 萬次交換；Fortune 追問此案對 Anthropic 上市的影響，凸顯前沿 AI 護城河的脆弱性。",
+      "ref_urls": [
+        "https://arstechnica.com/tech-policy/2026/06/anthropic-claims-alibaba-defied-trump-to-attack-claude-and-steal-capabilities/",
+        "https://fortune.com/2026/06/28/anthropic-alibaba-fight-raises-ipo-question-frontier-ai-moat-defensible/"
+      ]
+    },
+    {
+      "tag": "[重大事件]",
+      "text": "奧地利遊說歐盟邀請 Anthropic 在歐洲設立據點，背景是美國出口管制讓歐洲廠商被迫尋求 AI 主權替代方案。",
+      "ref_urls": [
+        "https://www.bloomberg.com/news/articles/2026-06-28/austria-lobbies-eu-to-host-anthropic-after-us-access-curbs",
+        "https://www.reuters.com/business/austria-lobbies-eu-host-anthropic-ai-after-us-curbs-bloomberg-news-reports-2026-06-28/"
+      ]
+    },
+    {
+      "tag": "[風險警示]",
+      "text": "Mozilla 0din 團隊揭露 Claude Code 可被「乾淨」的 GitHub Repo 欺騙安裝惡意軟體；提示注入利用 AI agent 的「樂於助人」天性。",
+      "ref_urls": [
+        "https://www.tomshardware.com/tech-industry/cyber-security/ai-coding-agents-can-be-tricked-into-installing-malware-via-clean-github-repositories-mozillas-0din-team-shows-how-claude-code-can-be-exploited-by-its-own-helpfulness"
+      ]
+    },
+    {
+      "tag": "[新工具]",
+      "text": "社群湧現大量 Claude Code 生態周邊工具：Adrafinil（lid-closed Mac agent 保活）、AgentWatch（runaway agent 預算控制）、Claudete（多 Claude Code 實例管理 macOS app）、ai-whisper（雙 agent 協作中繼）本週同步亮相。",
+      "ref_urls": [
+        "https://github.com/kageroumado/adrafinil",
+        "https://agent-watch.dev/",
+        "https://claudete.co",
+        "https://ai-creed.dev/projects/ai-whisper/"
+      ]
+    }
+  ],
+  "sourceStatus": [],
+  "preview": ""
+}

@@ -26,10 +26,10 @@ window.WIKI_DATA = {
       "pill": "active",
       "firstSeen": "2026-04-23（事後報告發布）",
       "startDate": "",
-      "lastUpdated": "2026-06-27",
-      "lastNewsUpdate": "2026-06-24",
+      "lastUpdated": "2026-06-28",
+      "lastNewsUpdate": "2026-06-28",
       "summary": "Boris Cherny 是 Anthropic Claude Code 的創始人與負責人（Head of Claude Code），是 Claude Code 產品方向最主要的公開代言人。他以高頻率的公開聲明、哲學宣言與工程分享，持續引發開發者社群廣泛討論，被視為 Anthropic 技術文化的外部窗口。 ---",
-      "latestHeadline": "Times of India 報導其承認「AI 寫 100% 程式碼正在變得有問題」，與早前「coding is solved」立場形成對比，呼應企業端過度依賴反彈聲浪"
+      "latestHeadline": "在 howborisusesclaudecode.com 公開 13 個日常 Claude Code 使用技巧，涵蓋 5 個並行實例搭配獨立 git checkout、`--teleport` 跨環境切換、iPhone 啟動電腦接力等；強調「surprisingly vanilla」setup（Hacker News，"
     },
     {
       "id": "bugcrawl",
@@ -176,10 +176,10 @@ window.WIKI_DATA = {
       "pill": "active",
       "firstSeen": "2026-06-09",
       "startDate": "",
-      "lastUpdated": "2026-06-27",
-      "lastNewsUpdate": "2026-06-27",
+      "lastUpdated": "2026-06-28",
+      "lastNewsUpdate": "2026-06-28",
       "summary": "Claude Fable 5 是 Anthropic 於 2026-06-09 發布的旗艦模型，為**史上首款向大眾開放的 Mythos 級模型**。Fable 5 與 Claude Mythos 5 共用相同的模型權重，差異在於 Fable 5 前置安全分類器——觸發時靜默 fallback 至 Claude Opu…",
-      "latestHeadline": "Fable 5 接近協議（待核實）：Reuters / Axios 報導美方接近批准 Fable 5 重新上線，尚未獲得 Anthropic 或商務部官方確認（[Reuters](https://www.reuters.com/business/us-close-allowing-anthropic-restore-f"
+      "latestHeadline": "Axios 報導 Fable 5 on track（待核實）（HN score 4）：Axios 報導 Fable 5 正走向全面回歸一般市場，美方協議接近完成；TechCrunch 同步補充「Fable 5 on track to return soon」（[Axios](https://www.axios.com/"
     },
     {
       "id": "fiona-fung",
@@ -251,10 +251,10 @@ window.WIKI_DATA = {
       "pill": "active",
       "firstSeen": "2026-04（限定夥伴 Preview）",
       "startDate": "",
-      "lastUpdated": "2026-06-27",
-      "lastNewsUpdate": "2026-06-27",
-      "summary": "**2026-06-27 部分解禁**：美國商務部批准 Anthropic 向 100+ 美國機構（企業 + 聯邦機構）有限釋出 Mythos 5，條件為「受信任合作夥伴」並具備適當安全措施。商務部長 Howard Lutnick 在致 Anthropic 聯合創辦人 Tom Brown 的信中正式確認此決定（Sema…",
-      "latestHeadline": "美國商務部正式批准 Anthropic 向 100+ 美國機構（含企業與聯邦機構）有限釋出 Mythos 5，前提條件為「受信任合作夥伴」認定，並需具備適當安全措施。商務部長 Howard Lutnick 透過致 Anthropic 聯合創辦人 Tom Brown 的信件正式確認此決定（[Semafor](https:"
+      "lastUpdated": "2026-06-28",
+      "lastNewsUpdate": "2026-06-28",
+      "summary": "**2026-06-28 競品聲稱對標**：日本 Sakana AI 發布 Fugu，聲稱可與 Fable 5 / Mythos Preview 比肩，支援 multi-agent API；WSJ 報導中國已在網路安全 AI 上追上 Anthropic（Tulongfeng 為代表案例）。上述聲明均尚無獨立 bench…",
+      "latestHeadline": "TechCrunch 補充細節（HN n/a）：補充 Lutnick 致信收件人為 Anthropic chief compute officer Tom Brown（非此前部分媒體所述的聯合創辦人），確認 100+ 受信任機構範圍含其非美籍員工，是兩週禁令後的差異化部分鬆綁（[TechCrunch](https://"
     },
     {
       "id": "openclaw",
@@ -373,8 +373,8 @@ window.WIKI_DATA = {
       "pill": "active",
       "firstSeen": "",
       "startDate": "2026-04-27",
-      "lastUpdated": "2026-06-27",
-      "lastNewsUpdate": "2026-06-27",
+      "lastUpdated": "2026-06-28",
+      "lastNewsUpdate": "2026-06-28",
       "summary": "隨著 AI agent 被賦予更高自主性與系統操作權限，安全事故與防護工具同步出現。本頁追蹤 Claude Code 與相關 AI agent 的安全事件，涵蓋：CVE 漏洞披露（沙箱逃逸、遠端代碼執行）、提示注入與 Agentjacking 攻擊、惡意套件與供應鏈污染、以及 AI agent 不當執行造成的資料損毀事…",
       "latestHeadline": "隨著 AI agent 被賦予更高自主性與系統操作權限，安全事故與防護工具同步出現。本頁追蹤 Claude Code 與相關 AI agent 的安全事件，涵蓋：CVE 漏洞披露（沙箱逃逸、遠端代碼執行）、提示注入與 Agentjacking 攻擊、惡意套件與供應鏈污染、以及 AI agent 不當執行造成的資料損毀事"
     },
@@ -403,10 +403,10 @@ window.WIKI_DATA = {
       "pill": "active",
       "firstSeen": "",
       "startDate": "2026-05-28",
-      "lastUpdated": "2026-06-27",
-      "lastNewsUpdate": "2026-06-27",
+      "lastUpdated": "2026-06-28",
+      "lastNewsUpdate": "2026-06-28",
       "summary": "Anthropic 在技術聲譽與企業採用率上持續上升（企業採用率 34.4% 首超 OpenAI 32.3%，Ramp AI Index 2026-05-15），並於 2026-05-28 完成 $65B Series H 融資，估值 $965B，超越 OpenAI 成全球最大 AI 新創。核心矛盾從「PMF vs 獲…",
-      "latestHeadline": "[商業解封里程碑] Mythos 5 獲美國政府批准向 100+ 機構有限釋出：美國政府正式批准 Anthropic 向 100 家以上美國機構（含企業與聯邦機構）有限度釋出 Mythos 5，標誌 Anthropic 最先進旗艦模型的商業化從管制收緊（6/24 NSA 失去存取）轉入選擇性解封新階段；直接擴大企業合作"
+      "latestHeadline": "[IPO 估值壓力] Fortune：Alibaba 蒸餾攻擊引發「前沿 AI 護城河是否可防禦」疑問，直衝 IPO 估值：Fortune 分析文章指出 Alibaba 2,880 萬次能力竊取事件的核心問題——若 Claude 能力可被大規模蒸餾複製，Anthropic 超高估值的競爭壁壘支撐力有多強？Motley "
     },
     {
       "id": "anthropic-government-policy",
@@ -418,10 +418,10 @@ window.WIKI_DATA = {
       "pill": "active",
       "firstSeen": "",
       "startDate": "2026-05-01",
-      "lastUpdated": "2026-06-27",
-      "lastNewsUpdate": "2026-06-27",
+      "lastUpdated": "2026-06-28",
+      "lastNewsUpdate": "2026-06-28",
       "summary": "Anthropic 與美國政府的衝突從 2026 年五月起持續升溫，並於 2026-06-22 迎來重大轉折。表面上每次摩擦的導火線不同——軍事合約談不攏、Fable 5 護欄爭議、出口管制指令——但根源始終是同一個矛盾：**Anthropic 相信越強的模型越需要護欄；美國政府相信越強的模型越需要無限制存取。** 2…",
-      "latestHeadline": "[重大解封] Mythos 5 有限釋出：100+ 美國受信任合作夥伴：美國商務部長 Howard Lutnick 致函 Anthropic 聯合創辦人 Tom Brown，正式批准 Mythos 5 向超過 100 個具備適當安全措施的美國「受信任合作夥伴」（trusted partners，含企業與聯邦機構）有限釋"
+      "latestHeadline": "[管制反效論述升溫] WSJ：中國 AI 已在網路安全領域追上 Anthropic：WSJ 報導中國 AI 在網路安全應用領域的能力已追上 Anthropic，從根本質疑 Mythos 出口管制的戰略有效性——若競爭對手已在關鍵應用場景達到同等水準，封鎖頂尖模型所能防護的技術代差實際效用存疑；此論點與 Bloomber"
     },
     {
       "id": "code-quality-decline",
@@ -448,8 +448,8 @@ window.WIKI_DATA = {
       "pill": "active",
       "firstSeen": "",
       "startDate": "2026-04-25",
-      "lastUpdated": "2026-06-27",
-      "lastNewsUpdate": "2026-06-27",
+      "lastUpdated": "2026-06-28",
+      "lastNewsUpdate": "2026-06-28",
       "summary": "追蹤 Claude Code 社群中活躍的概念辯論、設計哲學、實證研究與技術反思。與 [[topics/community-tech-patterns]] 追蹤具體工具和工作流不同，本頁聚焦思想碰撞：什麼哲學正在成形、什麼假設受到挑戰、什麼共識正在收斂。頁面結構：**🔥 本週熱點**（當前最熱的持續議題）→ **🌊 長…",
       "latestHeadline": "追蹤 Claude Code 社群中活躍的概念辯論、設計哲學、實證研究與技術反思。與  追蹤具體工具和工作流不同，本頁聚焦思想碰撞：什麼哲學正在成形、什麼假設受到挑戰、什麼共識正在收斂。頁面結構：🔥 本週熱點（當前最熱的持續議題）→ 🌊 長期議題（主題彙整）→ 熱門討論記錄（最近 30 天）→ 技術彙整（逐篇深度筆記）"
     },
@@ -463,8 +463,8 @@ window.WIKI_DATA = {
       "pill": "warn",
       "firstSeen": "",
       "startDate": "2026-04-25",
-      "lastUpdated": "2026-06-27",
-      "lastNewsUpdate": "2026-06-27",
+      "lastUpdated": "2026-06-28",
+      "lastNewsUpdate": "2026-06-28",
       "summary": "追蹤 Claude Code 社群在實際開發中累積的**工作流與應用模式**。本頁收錄的模式類型包括 Multi-agent 架構、Skills 設計、CLAUDE.md 管理、Hooks 與自動化、模型使用策略、Token 成本優化、記憶與知識管理、Plugin/MCP 整合等，持續累積形成社群最佳實踐知識庫。 工具…",
       "latestHeadline": "追蹤 Claude Code 社群在實際開發中累積的工作流與應用模式。本頁收錄的模式類型包括 Multi-agent 架構、Skills 設計、CLAUDE.md 管理、Hooks 與自動化、模型使用策略、Token 成本優化、記憶與知識管理、Plugin/MCP 整合等，持續累積形成社群最佳實踐知識庫。"
     },
@@ -508,10 +508,10 @@ window.WIKI_DATA = {
       "pill": "warn",
       "firstSeen": "",
       "startDate": "2026-04",
-      "lastUpdated": "2026-06-27",
-      "lastNewsUpdate": "2026-06-27",
+      "lastUpdated": "2026-06-28",
+      "lastNewsUpdate": "2026-06-28",
       "summary": "Claude Code 已成為 AI 輔助編碼的標竿產品，但競爭正快速升溫。2026-05 是關鍵轉折月：OpenAI Codex 下載量單週爆增 1,397%、OpenCode 吸走 15.7 萬開發者、Microsoft 取消數千名員工授權改推 Copilot CLI——分流訊號同步出現。另一方面，Anthropi…",
-      "latestHeadline": "[中國競品加速] Zhipu Z.AI 趁出口管制空窗快速追趕 Anthropic 與 OpenAI：CNBC 報導，中國 Zhipu 的開源模型 Z.AI 在 Anthropic 與 OpenAI 因出口管制（Anthropic Mythos 封鎖）與法律 / 政治審查拖累期間，快速縮小能力差距；Zhipu 採開源路"
+      "latestHeadline": "[亞洲競品湧現] 中國 360 Tulongfeng + 日本 Sakana AI Fugu 雙雙宣稱對標 Mythos 5：TechCrunch（HN score 256）報導，趁 Anthropic 出口管制延宕期間，中國 360 發布 Tulongfeng（網路安全 AI）、日本 Sakana AI 發布 Fug"
     },
     {
       "id": "enterprise-cost-management",
@@ -1188,6 +1188,12 @@ window.WIKI_DATA = {
     }
   ],
   "digestIndex": [
+    {
+      "date": "2026-06-28",
+      "articleCount": 48,
+      "preview": "",
+      "topCount": 0
+    },
     {
       "date": "2026-06-27",
       "articleCount": 55,
