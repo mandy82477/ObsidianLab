@@ -3,6 +3,25 @@
 Append-only 紀錄。每次 ingest、query 或 lint 都在此追加一條。
 格式：`## [YYYY-MM-DD] 類型 | 說明`
 
+## 2026-06-28 Ingest | news/2026-06-28.md（48 則）
+
+- 來源日報：`news/2026-06-28.md`（48 則，6/6 來源；Reddit 429 rate limit 部分失敗；全部為 community 類別，無 official 條目）
+- 核心事件：Mozilla 0din 揭露 Claude Code 提示注入漏洞、Mythos 5 擴大解禁（100+ 機構）、Alibaba 竊取指控 Fortune IPO 分析、Legion LegalTech 起訴、奧地利遊說 EU、中國競品（Tulongfeng/Fugu）追趕
+- 更新頁面：
+  - `wiki/topics/ai-agent-safety.md`：Mozilla 0din 提示注入攻擊（乾淨 GitHub Repo 向量）
+  - `wiki/topics/anthropic-government-policy.md`：Mythos 5 擴大解禁、Fable 5 接近回歸（待核實）、Legion LegalTech 起訴、奧地利遊說歐盟；攻防紀錄 +4 條
+  - `wiki/topics/anthropic-business.md`：Fortune IPO 護城河疑問、Motley Fool 估值分析、奧地利談判槓桿
+  - `wiki/topics/competitor-landscape.md`：中國 360 Tulongfeng、Sakana AI Fugu、WSJ 中國追平網路安全 AI
+  - `wiki/entities/mythos.md`：競品聲明（Tulongfeng/Fugu 待核實）、Lutnick 批准最新細節
+  - `wiki/entities/fable-5.md`：Axios/TechCrunch 2026-06-28 全面回歸接近報導（待核實）
+  - `wiki/entities/boris-cherny.md`：13 個日常使用技巧（howborisusesclaudecode.com）
+  - `wiki/topics/community-tech-discussions.md`：新增 Adrafinil（HN 113）、Boris Cherny 工作流、OAuth 401 陷阱；清理 5 條過期 ☄️閃現
+  - `wiki/topics/community-tech-patterns.md`：新增 OKF 跨 session 記憶、stop hook 音效、ccgram v4.3.0、Adrafinil 保活模式 4 條新模式
+- feature-radar 新增：無（今日無 official 條目）
+- index.md 狀態變更：無
+- 新增頁面：無
+- 呈現品質審查：所有更新頁面均 ✅ 通過（記者回報確認）
+
 ## 2026-06-27 Lint 後續 | 使用者決策執行
 
 承上次 Lint 待確認項，使用者拍板後執行：
@@ -2037,3 +2056,37 @@ Append-only 紀錄。每次 ingest、query 或 lint 都在此追加一條。
 - feature-radar 新增：autoMode.classifyAllShell（Claude Code v2.1.193）
 - 新增頁面：無
 - 呈現品質審查：✅ claude-code.md / john-jumper.md / tom-brown.md / dario-amodei.md / anthropic-government-policy.md / ai-agent-safety.md / anthropic-business.md / ai-talent-flow.md / enterprise-cost-management.md / pricing.md / competitor-landscape.md / community-tech-patterns.md / official-community-gap.md；⚠️ community-tech-discussions.md 已修復（移除超過 21 天 ☄️閃現 條目）；code-quality-decline.md ✅
+
+## 2026-06-28 手動修正 | community-tech-discussions 收錄規則細化
+
+**背景：** 審查 discussions.md 評分機制時發現無收錄門檻，低信號（HN 3）與高信號（HN 300+）混放，且有條目熱度符號與實際信號強度不符。
+
+**規則修正（`.claude/rules/wiki-ingest-community.md`，新增「community-tech-discussions 收錄門檻」）：**
+- 確立**三個合法訊號來源**（滿足其一即可收錄）：社群碰撞（HN ≥ 10 / Reddit 有互動 / 跨 2 來源）、重要人士具名表態、重要媒體深度報導
+- **誠實標註原則（強制）：** 熱度符號錨定真實信號強度——🔥🔥 以上隱含「社群共鳴」，無社群討論的單一報導不得標 🔥🔥 以上，須標 🔥 + 註「（媒體報導，待社群接力）」
+- 設計演進：初版「僅限 HN/Reddit、排除媒體」過窄（哲學討論多來自 HN，且會擋掉 36Kr 內部第一手報導）→ 定版改為「來源可多元 + 熱度須誠實」兩件事分開處理
+
+**discussions.md 實際清理：**
+- 移除 4 筆低信號條目（表格列 + 技術彙整）：AI 概念哪些會留存（HN 3）、Claude Code 確定性技術（HN 4）、Trust Us Is Not a Control Surface（HN 3，原誤標 🔥🔥🔥）、Boris Cherny 立場轉變（已在 `entities/boris-cherny.md` 完整記錄）
+- 保留並修正 1 筆：Anthropic 工程師孤獨感（36Kr）→ 熱度由 🔥🔥 改 🔥，加註「媒體報導，待社群接力」，與「Vibe coding 成就感缺失」（HN）互連為跨組織佐證
+- 同步更新頂部「最熱討論」callout、🔥 本週熱點 區塊；最後更新 2026-06-28
+- 呈現品質審查：✅ community-tech-discussions.md
+
+## 2026-06-28 手動修正 | community-tech-patterns 信號軸校正
+
+**背景：** 審查 patterns.md 時發現原本想用 HN score 策展，但 patterns 價值在「技術本身」而非「熱度」——信號強度（多少人注意到）≠ 技術力（技術好不好）。差點因 HN 3 砍掉 ANMA，但 ANMA 自帶 0/20 vs 13/19 硬數據，是全頁證據最硬的條目之一。
+
+**改用「自帶可驗證證據強度」軸重新盤點 26 條 dated 條目：**
+- **A 層（自帶量化/可複現證據）：** ANMA、Compact Memory、Hooks 強制執行、批量 OSS Bug、對抗性審查——維持原狀，量化數據本身即最佳標註
+- **B 層（機制自洽、可操作、合第一性原理，無量化但站得住）：** 16 條——全部保留，不標註
+- **C 層（純經驗談，無機制驗證）：** 3 條——加誠實標註
+
+**實際改動（僅 C 層 3 條加「訊號：單一經驗談，無機制驗證，待社群佐證」）：**
+- 任務開始前先 Interview（機制平庸 + 純心得）
+- Self-rewriting CRM（單一軼事，限制標「推論」）
+- Spec-driven Development CLI（對應工具 opsx 已被 HN flagged）
+
+**撤回前一輪對 greymothjp 群、ANMA 的降級提議——用證據軸看它們站得住，不因低 HN 降級。**
+
+**方法論定論：** patterns 不該用 HN score 策展（那是 tools/discussions 的邏輯）；正確軸是「機制是否自洽 + 有無可驗證證據」，標註用「未驗證」把判斷權交還讀者，而非替技術判生死。
+- 呈現品質審查：✅ community-tech-patterns.md（C 層 3 條標註，A/B 層維持原狀）

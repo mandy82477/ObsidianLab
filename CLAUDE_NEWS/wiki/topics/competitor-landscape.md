@@ -3,11 +3,11 @@
 **狀態：** monitoring
 **領域：** 💼 商業
 **開始日期：** 2026-04
-**最後更新：** 2026-06-27
-**最後新聞更新：** 2026-06-27
+**最後更新：** 2026-06-28
+**最後新聞更新：** 2026-06-28
 
-> **最新競品動態**（2026-06-27）
-> 中國 Zhipu 的 Z.AI 開源模型趁 Anthropic 與 OpenAI 受出口管制 / 審查影響期間快速縮小能力差距（CNBC 2026-06-26）。Anthropic 與 OpenAI 在紐約第 12 選區的政治代理戰雙輸，AI 大廠政治影響力受挫。
+> **最新競品動態**（2026-06-28）
+> 中國 360 發布 Tulongfeng、日本 Sakana AI 發布 Fugu，均宣稱能力對標 Mythos / Fable 5（TechCrunch HN 256）。WSJ 報導中國已在網路安全 AI 追平 Anthropic，質疑出口管制戰略效果。Wired 揭露中國用戶長期通過 VPN 繞過 Anthropic 地理限制，實質封鎖效果存疑。
 
 ---
 
@@ -77,6 +77,23 @@ Claude Code 已成為 AI 輔助編碼的標竿產品，但競爭正快速升溫�
 - **策略**：以開源路線滲透出口管制無法觸及的市場，類似 DeepSeek 以「免費壁壘」繞開競爭管制
 - **意義**：管制空窗期是中國廠商能力追趕的加速器；Anthropic 若無法有效解封中國及受管制市場，Zhipu 等廠商受惠（CNBC https://www.cnbc.com/2026/06/26/china-zhipu-z-ai-open-source-anthropic-openai.html）
 
+### 中國 360 Tulongfeng 🔴
+- **狀態**：Active（2026-06-28 發布，宣稱對標 Mythos 5）
+- **定位**：網路安全 AI，360 為中國頭部網路安全公司
+- **發布**：TechCrunch（HN score 256）報導，與 Sakana AI Fugu 同批出現
+- **意義**：WSJ 同步報導「中國已在網路安全 AI 追平 Anthropic」，直接質疑 Anthropic Mythos 的差異化定位（TechCrunch https://techcrunch.com/2026/06/27/asian-ai-startups-launch-mythos-like-models-as-anthropics-export-ban-drags-on/；WSJ https://www.wsj.com/tech/ai/chinese-ai-anthropic-mythos-cybersecurity-574b02c2）
+
+### Sakana AI Fugu
+- **狀態**：Active（2026-06-28 發布）
+- **背景**：日本 AI 研究公司，由前 Google Brain 研究員創立
+- **定位**：宣稱能力對標 Fable 5，趁 Anthropic 出口管制封鎖亞太市場空窗期推出
+- **意義**：亞洲競品從「學術跟進」升為「正面宣稱對標」，與 Mythos 解禁時程形成直接競爭壓力（TechCrunch https://techcrunch.com/2026/06/27/asian-ai-startups-launch-mythos-like-models-as-anthropics-export-ban-drags-on/）
+
+### 中國用戶 VPN 繞過限制（地理管制實效）
+- **狀態**：Active（長期現象，Wired 2026-06-28 確認）
+- **現象**：中國用戶長期通過 VPN 等方式繞過 Anthropic 地理限制，實質封鎖效果存疑
+- **意義**：若管制無法實質阻隔中國用戶使用 Claude，「管制犧牲收入」的代價真實，「管制保護能力」的效果可疑（Wired https://www.wired.com/story/how-people-in-china-keep-outsmarting-anthropics-geolocation-restrictions/）
+
 ### Alibaba Qwen3.7-Max / Alibaba 蒸餾攻擊
 - **狀態**：遭 Anthropic 法律指控（2026-06-25）
 - **特點**：Qwen3.7-Max 聲稱可持續自主運行 35 小時，直接瞄準 Claude Code 的長時間自主執行場景
@@ -117,6 +134,10 @@ Claude Code 已成為 AI 輔助編碼的標竿產品，但競爭正快速升溫�
 ---
 
 ## 時序
+
+### 2026-06-28
+- **[亞洲競品湧現] 中國 360 Tulongfeng + 日本 Sakana AI Fugu 雙雙宣稱對標 Mythos 5**：TechCrunch（HN score 256）報導，趁 Anthropic 出口管制延宕期間，中國 360 發布 Tulongfeng（網路安全 AI）、日本 Sakana AI 發布 Fugu，均宣稱能力可比肩 Mythos / Fable 5。WSJ（HN 12）同步報導「中國已在網路安全 AI 追平 Anthropic」，直接質疑 Anthropic 在此細分領域的差異化護城河。**對競爭格局的意涵**：Anthropic 出口管制造成的服務真空，正系統性被亞洲競品填補；若 Mythos 解禁速度慢於競品追趕速度，市場份額流失難以逆轉（推論）（TechCrunch https://techcrunch.com/2026/06/27/asian-ai-startups-launch-mythos-like-models-as-anthropics-export-ban-drags-on/；WSJ https://www.wsj.com/tech/ai/chinese-ai-anthropic-mythos-cybersecurity-574b02c2；Reuters https://www.reuters.com）
+- **[管制實效存疑] Wired：中國用戶長期通過 VPN 繞過 Anthropic 地理限制**：Wired 深度報導揭露，Anthropic 地理封鎖機制長期被 VPN 及其他技術手段繞過，中國用戶持續使用 Claude。**對競爭格局與管制政策的意涵**：若中國用戶仍可使用 Claude，能力蒸餾的實質保護效果有限；而「封鎖中國損失數億美元收入」的說法在此框架下顯得矛盾——部分收入可能仍在流入（推論）（Wired https://www.wired.com/story/how-people-in-china-keep-outsmarting-anthropics-geolocation-restrictions/）
 
 ### 2026-06-27
 - **[中國競品加速] Zhipu Z.AI 趁出口管制空窗快速追趕 Anthropic 與 OpenAI**：CNBC 報導，中國 Zhipu 的開源模型 Z.AI 在 Anthropic 與 OpenAI 因出口管制（Anthropic Mythos 封鎖）與法律 / 政治審查拖累期間，快速縮小能力差距；Zhipu 採開源路線擴大市場滲透，策略類似 DeepSeek 以「免費的壁壘」繞開管制影響。**對競爭格局的意涵**：若管制持續壓制 Anthropic 在中國及部分市場的可用性，中國廠商的能力追趕視窗直接擴大（CNBC https://www.cnbc.com/2026/06/26/china-zhipu-z-ai-open-source-anthropic-openai.html）

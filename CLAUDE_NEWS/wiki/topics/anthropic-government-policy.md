@@ -3,11 +3,11 @@
 **狀態：** ongoing
 **領域：** 🏛️ 政策/安全
 **開始日期：** 2026-05-01
-**最後更新：** 2026-06-27
-**最後新聞更新：** 2026-06-27
+**最後更新：** 2026-06-28
+**最後新聞更新：** 2026-06-28
 
-> **最新攻防紀錄**（2026-06-27）
-> 美國商務部長 Howard Lutnick 致函 Anthropic 聯合創辦人 Tom Brown，批准 Mythos 5 向 100+ 美國機構（含企業與聯邦機構）有限釋出，要求具備適當安全措施的「受信任合作夥伴」；Fable 5 尚未納入，但 Reuters / Axios 報導美方接近達成 Fable 5 協議（Semafor、CNBC、Reuters）。
+> **最新攻防紀錄**（2026-06-28）
+> WSJ 報導中國 AI 已在網路安全領域追上 Anthropic，從根本質疑 Mythos 出口管制的戰略效果；同日 Axios 報導 Fable 5 正走向全面回歸、美方協議接近完成（待核實）；Sakana AI 亦發布 Fugu，聲稱與 Fable 5 / Mythos Preview 比肩，競品景觀持續擴張。
 
 ---
 
@@ -19,15 +19,15 @@ Anthropic 與美國政府的衝突從 2026 年五月起持續升溫，並於 202
 
 ---
 
-## 目前局勢（截至 2026-06-27）
+## 目前局勢（截至 2026-06-28）
 
-- **管制狀態（重大更新）：** Mythos 5 已獲部分解封——美國商務部長 Lutnick 致函 Tom Brown，批准 Mythos 5 向 100+ 具備適當安全措施的美國「受信任合作夥伴」（含企業與聯邦機構）有限釋出（Semafor、CNBC，2026-06-27）；Fable 5 尚未納入解封，但 Reuters / Axios 報導美方接近達成 Fable 5 協議；此為兩週前全面出口管制封鎖後的首次重大解封動作
+- **管制狀態（最新）：** Mythos 5 已獲部分解封——美國商務部長 Lutnick 致函 Tom Brown，批准 Mythos 5 向 100+ 具備適當安全措施的美國「受信任合作夥伴」（含企業與聯邦機構）有限釋出（Semafor、CNBC，2026-06-27）；Fable 5 尚未納入解封，但 Reuters / Axios 報導美方接近達成 Fable 5 協議；此為兩週前全面出口管制封鎖後的首次重大解封動作
 - **談判主導權易手：** Wired 報導（2026-06-24）Trump 白宮對 Dario Amodei 態度趨冷，已由聯合創辦人 Tom Brown 接管與白宮的談判會議；白宮內部評語：「Tom Brown is not being a weirdo like Dario and can actually engage」；Dario 被逐出核心談判桌，為 Anthropic 內部重大策略調整
 - **EU 介入升格：** 歐盟已就 Mythos 模型出口管制與白宮展開直接對話；事件從美國內政議題升格為跨大西洋科技外交，盟友壓力管道正式開通
 - **出口管制反效論述：** Bloomberg（2026-06-26）分析指出限制 Anthropic 頂尖模型可能適得其反，反而推升中國開源模型在全球的採用率；此論述進一步削弱「出口管制可有效防護技術外洩」的政策前提
 - **阿里巴巴蒸餾攻擊：** Anthropic 6/10 已致函美參議院，指控阿里巴巴透過約 25,000 個假帳號在 4/22–6/5 間發動 2,880 萬次 Claude 模型交換，目的是蒸餾提取 AI 能力，規模為史上最大；此事件同時強化出口管制政策的必要性論述，亦揭示護欄設計在大規模組織性蒸餾攻擊下的侷限（技術面詳見 [[topics/ai-agent-safety]]）
 - **法律戰線開啟：** 法律科技新創 Legion 正式對美國政府提告，主張 Fable 出口管制令違法（Reuters 2026-06-23），與國會議員施壓形成法律 + 立法雙路夾擊；為首起正式司法挑戰
-- **中國競爭格局：** 中國網路安全公司 360 聲稱已開發出對標 Mythos 的工具（Reuters 2026-06-24），若屬實將削弱美國出口管制的預期戰略效果——管制閉源模型本身的有效性爭議再度升溫
+- **競品競爭格局惡化（2026-06-28 更新）：** 中國 360（Tulongfeng）與日本 Sakana AI（Fugu）在 Anthropic 封鎖期間同步推出聲稱比肩 Fable 5 / Mythos 的競品；WSJ（2026-06-28）更直接報導中國 AI 已在網路安全領域追上 Anthropic；出口管制的戰略防護效果從「效果存疑」升級為「主流財經媒體直接否定」
 - **政府態度大轉彎：** 從 6/21 Trump 稱 Anthropic「行為非常負責任」，到 6/22 正式撤銷安全威脅標籤，為管制啟動以來最具體的政策解除動作；路徑仍有不確定性，模型是否立即恢復外國公民存取尚不明確
 - **越獄正當性危機：** 導致政府出手的 Fable 5 越獄觸發語曝光僅為三個詞「Fix this code」，社群廣泛質疑政府以如此輕微的越獄為由實施全球封鎖的正當性；詳見 [[topics/ai-agent-safety]]
 - **五眼聯盟升溫：** 五眼聯盟（美、英、加、澳、紐）罕見聯合聲明，警告能癱瘓政府與企業的 AI 模型將在數月內出現，使 AI 安全議題從雙邊衝突升級為多邊安全框架討論
@@ -75,6 +75,8 @@ Fable 5 發布後，Amazon 安全研究人員發現特定提示詞可讓模型�
 
 2026-06-27，商務部長 Lutnick 致函 Tom Brown，宣布批准 Mythos 5 向 100+ 美國機構有限釋出，適用對象限定為具備適當安全措施的「受信任合作夥伴」（trusted partners）；Fable 5 尚未納入，但 Reuters / Axios 報導雙方已接近達成 Fable 5 協議（Semafor，https://www.semafor.com/article/06/27/2026/us-releases-powerful-anthropic-model-mythos-to-some-us-companies；CNBC，https://www.cnbc.com/2026/06/26/us-government-anthropic-claude-mythos5-ai.html；Reuters，https://www.reuters.com/business/us-close-allowing-anthropic-restore-fable-5-model-axios-reports-2026-06-27/）。此為 6/13 全面封鎖後的首次重大解封，談判主導權交由 Tom Brown 後取得具體成果。
 
+2026-06-28，WSJ 報導中國 AI 已在網路安全領域追上 Anthropic（WSJ，2026-06-28；https://www.wsj.com/tech/ai/chinese-ai-anthropic-mythos-cybersecurity-574b02c2），與日本 Sakana AI 發布 Fugu（TechCrunch，HN score 256）共同顯示封鎖期間競品已完成部分能力追趕；Legion LegalTech 亦向哥倫比亞特區聯邦法院補充提訴申請緊急禁制令，要求撤銷 BIS 原始指令（The Next Web，2026-06-27）；Axios 同日報導 Fable 5 全面回歸協議接近完成（待核實）。
+
 此外，Anthropic 已於 2026-06-10 致函美參議院，正式指控阿里巴巴透過約 25,000 個假帳號在 2026-04-22 至 2026-06-05 間，向 Claude 發動 2,880 萬次模型交換以蒸餾提取 AI 能力，為已知最大規模 AI 蒸餾攻擊（CNBC，2026-06-24；https://www.cnbc.com/2026/06/24/anthropic-alibaba-distillation-campaign.html）。此事件同時強化出口管制必要性論述（中國行為者已在主動提取受管制模型能力），亦為政府討論 AI 出口管制政策提供具體數據支撐；技術安全面向詳見 [[topics/ai-agent-safety]]。
 
 ### 🌍 策略選擇：Anthropic 換戰場而非退讓
@@ -97,6 +99,10 @@ Fable 5 發布後，Amazon 安全研究人員發現特定提示詞可讓模型�
 
 | 日期 | 方 | 動作 | 效果 |
 |------|----|------|------|
+| 2026-06-28 | 🌐 | WSJ 報導中國 AI 已在網路安全領域追上 Anthropic，根本質疑 Mythos 出口管制戰略效果（WSJ） | 管制正當性再度受挑戰；「封閉頂尖模型能維持 AI 領先地位」的政策假設在主流財經媒體遭直接否定 |
+| 2026-06-28 | 🌐 | Sakana AI 發布 Fugu，聲稱與 Fable 5 / Mythos Preview 比肩，支援 multi-agent API 協調；中國 360 Tulongfeng 同期推出（TechCrunch、Reuters） | 亞洲競品雙線同步出現，管制期間競品窗口效應加速兌現；Anthropic 競爭格局惡化 |
+| 2026-06-28 | 🌐 | Axios 報導 Fable 5 正走向全面回歸，美方協議接近完成；HN 評論指大量媒體曝光對 Anthropic 有利（Axios，待核實） | （待核實）若屬實為出口管制爭端進入收尾階段的訊號；HN 社群認為此事整體對 Anthropic 有利，競品追趕反而證明封鎖無效 |
+| 2026-06-28 | 🌐 | Legion LegalTech 向哥倫比亞特區聯邦法院提訴，要求撤銷 BIS 原始指令並申請禁制令（The Next Web） | 司法挑戰細節升級：不只要求宣告無效，並申請緊急禁制令阻止繼續執行；對政府管制時程構成法律壓力 |
 | 2026-06-27 | 🏛️ | Lutnick 致函 Tom Brown：批准 Mythos 5 向 100+ 美國受信任合作夥伴有限釋出；Fable 5 接近協議（Semafor、CNBC、Reuters） | 6/13 全面封鎖後首次重大解封；Fable 5 尚未納入但談判接近尾聲；Tom Brown 主導談判取得具體成果 |
 | 2026-06-26 | 🌐 | Bloomberg 分析：限制 Anthropic 頂尖模型出口管制可能反推中國開源模型國際採用（Bloomberg） | 出口管制「適得其反」論述獲主流財經媒體背書；削弱管制正當性的戰略效果論據 |
 | 2026-06-26 | 🌐 | The Verge：Mythos 危機持續惡化，Anthropic 面臨外交與商業雙重壓力（The Verge） | 談判已逾兩週仍無明確解封時程；外交壓力（EU 介入）與商業損失（企業客戶 / DoD）雙軌累積 |
@@ -160,6 +166,7 @@ Fable 5 發布後，Amazon 安全研究人員發現特定提示詞可讓模型�
 
 ## 參考來源
 
+- [[news/2026-06-28]]
 - [[news/2026-06-26]]
 - [[news/2026-05-02]]
 - [[news/2026-05-26]]
@@ -170,6 +177,12 @@ Fable 5 發布後，Amazon 安全研究人員發現特定提示詞可讓模型�
 - [Chris Olah Vatican Remarks](https://www.anthropic.com/news/chris-olah-pope-leo-encyclical) — Anthropic Blog
 
 ## 時序
+
+### 2026-06-28
+- **[管制反效論述升溫] WSJ：中國 AI 已在網路安全領域追上 Anthropic**：WSJ 報導中國 AI 在網路安全應用領域的能力已追上 Anthropic，從根本質疑 Mythos 出口管制的戰略有效性——若競爭對手已在關鍵應用場景達到同等水準，封鎖頂尖模型所能防護的技術代差實際效用存疑；此論點與 Bloomberg（06/26）「管制反推中國開源模型」論述形成互補，共同構成「出口管制戰略效果失靈」的主流財經媒體共識（WSJ，2026-06-28；https://www.wsj.com/tech/ai/chinese-ai-anthropic-mythos-cybersecurity-574b02c2）
+- **[競品擴張] Sakana AI 與中國 360 同期推出 Mythos 競品**：日本 Sakana AI 發布 Fugu，聲稱能與 Fable 5 / Mythos Preview 比肩並支援 multi-agent API 協調；中國奇虎 360 Tulongfeng 亦於同期推出；兩款競品在 Anthropic 出口管制期間同步公開，印證 HN 社群「封鎖反而讓競品加速追趕」的論點（TechCrunch，2026-06-27，HN score 256；https://techcrunch.com/2026/06/27/asian-ai-startups-launch-mythos-like-models-as-anthropics-export-ban-drags-on/；Reuters，2026-06-28；https://reuters.com/...）
+- **[解封進展] Axios：Fable 5 正走向全面回歸（待核實）**：Axios 報導 Fable 5 正走向全面回歸，美方協議接近完成；HN 評論指出整體事件對 Anthropic 有利（大量媒體曝光、競品急追反而證明封鎖無效）；條件與時程細節未公開（Axios，2026-06-28；https://www.axios.com/2026/06/27/anthropic-fable-5-return-soon；**待核實**）
+- **[司法挑戰升級] Legion LegalTech 申請禁制令**：法律科技公司 Legion LegalTech Corp 向哥倫比亞特區聯邦法院提起訴訟，主張 BIS（Bureau of Industry and Security）原始指令對其業務造成「即時、不可挽回、存亡攸關的」損害，要求法院撤銷 BIS 原始指令，並預計申請禁制令阻止繼續執行；為 2026-06-23 Reuters 報導的司法挑戰補充具體法院、主張與禁制令申請細節（The Next Web，2026-06-27；https://thenextweb.com/news/legion-legaltech-sues-us-anthropic-access）
 
 ### 2026-06-27
 - **[重大解封] Mythos 5 有限釋出：100+ 美國受信任合作夥伴**：美國商務部長 Howard Lutnick 致函 Anthropic 聯合創辦人 Tom Brown，正式批准 Mythos 5 向超過 100 個具備適當安全措施的美國「受信任合作夥伴」（trusted partners，含企業與聯邦機構）有限釋出；此為 2026-06-13 全面封鎖以來的首次重大解封，距封鎖啟動約兩週（Semafor，https://www.semafor.com/article/06/27/2026/us-releases-powerful-anthropic-model-mythos-to-some-us-companies；CNBC，https://www.cnbc.com/2026/06/26/us-government-anthropic-claude-mythos5-ai.html）

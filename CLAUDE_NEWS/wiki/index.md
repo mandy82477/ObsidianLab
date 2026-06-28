@@ -2,23 +2,20 @@
 
 LLM 查詢此 wiki 時，**先讀這個檔案**找相關頁面，再讀具體頁面取得詳細資訊。
 
-**最後更新：** 2026-06-27
+**最後更新：** 2026-06-28
 ---
 
 ## 近期異動
 
-- [[entities/mythos]] — Mythos 5 部分解禁：100+ 美國受信任機構可用（Lutnick 致 Tom Brown 信，2026-06-27）
-- [[entities/fable-5]] — 接近批准（待核實）：Reuters/Axios 報導美方接近 Fable 5 協議
-- [[entities/claude-code]] — v2.1.195：CLAUDE_CODE_DISABLE_MOUSE_CLICKS 環境變數；hook matcher 修復
-- [[topics/anthropic-government-policy]] — Mythos 5 解禁、Fable 5 接近協議；攻防紀錄更新
-- [[topics/ai-agent-safety]] — Agentjacking 攻擊：偽造 Sentry 錯誤劫持 Claude Code / Cursor / Cline
-- [[topics/anthropic-business]] — Mythos 5 解禁商業面；Claude 付費消費者成長；Alibaba 2900 萬次竊取指控；Anthropic/OpenAI 選舉代理戰
-- [[topics/enterprise-cost-management]] — 企業縮減 AI 支出，ROI 不明確，小型蒸餾模型替代
-- [[topics/competitor-landscape]] — Zhipu Z.AI 追趕；政治代理戰雙輸
-- [[topics/community-tech-patterns]] — 新增 6 條技術彙整（Workweave Router、Git Lazy Mount、Mac Mini 自主 agent 等）
-- [[topics/community-tech-discussions]] — 新增 AI 概念長期性討論、quota 自動化 gap；清理過期條目
-- [[feature-radar]] — 新增 CLAUDE_CODE_DISABLE_MOUSE_CLICKS 條目
-- [[topics/ai-agent-safety-archive]] — 新建：lint 將 ai-agent-safety 5/22 前舊時序歸檔（502→433 行）
+- [[entities/mythos]] — Mythos 5 解禁擴大：2026-06-28 更新競品聲明（Tulongfeng/Fugu）與 Lutnick 批准最新細節
+- [[entities/fable-5]] — 2026-06-28：Axios 報導全面回歸即將到來（待核實，HN score 4）
+- [[topics/anthropic-government-policy]] — 2026-06-28：Legion 起訴、奧地利遊說 EU、Fable 5 接近協議、Mythos 5 擴大解禁；攻防紀錄更新
+- [[topics/ai-agent-safety]] — 2026-06-28：Mozilla 0din 揭露「乾淨 GitHub Repo」提示注入攻擊向量，Claude Code agent 被惡意軟體誘導
+- [[topics/anthropic-business]] — 2026-06-28：Fortune IPO 護城河疑問、Alibaba 竊取估值影響、Mythos 100+ 機構解禁商業意義
+- [[topics/competitor-landscape]] — 2026-06-28：中國 360 Tulongfeng + Sakana AI Fugu 宣稱比肩 Mythos；WSJ 報導中國已追平網路安全 AI
+- [[entities/boris-cherny]] — 2026-06-28：分享 13 個 Claude Code 日常使用技巧（5 終端機 + 5-10 Web session、--teleport）
+- [[topics/community-tech-discussions]] — 2026-06-28：新增 Adrafinil（HN 113）、Boris Cherny 工作流、OAuth 401 陷阱討論；清理過期條目
+- [[topics/community-tech-patterns]] — 2026-06-28：新增 OKF 跨 session 記憶、stop hook 音效、ccgram v4.3.0、Adrafinil 保活模式
 
 ---
 

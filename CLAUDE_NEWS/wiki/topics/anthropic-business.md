@@ -3,11 +3,11 @@
 **狀態：** ongoing
 **領域：** 💼 商業
 **開始日期：** 2026-05-28
-**最後更新：** 2026-06-27
-**最後新聞更新：** 2026-06-27
+**最後更新：** 2026-06-28
+**最後新聞更新：** 2026-06-28
 
-> **最新動態**（2026-06-27）
-> 美國政府批准 Anthropic 向 100+ 美國機構（企業 + 聯邦機構）有限釋出 Mythos 5，為 Anthropic 企業商業化解封重大里程碑（Semafor、CNBC、WSJ、Reuters）。Claude 付費消費者市場快速成長，信用卡交易分析顯示訂閱趨勢持續上升，正追趕 ChatGPT（TechCrunch）。Anthropic 與 OpenAI 合計花費 2700 萬美元支持紐約第 12 選區競選代理戰，勝選者宣布與兩家公司保持距離（Fortune）。
+> **最新動態**（2026-06-28）
+> Fortune 分析 Alibaba 2,880 萬次蒸餾攻擊對 Anthropic IPO 估值的衝擊，核心疑問：前沿 AI 護城河是否可防禦？Motley Fool 同步列出 Anthropic 可能成為史上最高估值軟體公司的投資曝險。商務部長 Howard Lutnick 批准擴大 Mythos 5 存取至 100+ 美國機構（TechCrunch），企業收入管道再開；奧地利趁美國出口管制缺口向歐盟遊說爭取 Anthropic 落腳歐洲（Bloomberg），HN score 40。
 
 ---
 
@@ -85,6 +85,8 @@ Simon Willison（知名開發者博主）發表文章，認為 Anthropic 與 Ope
 
 | 合作方 | 類型 | 日期 | 意義 |
 |--------|------|------|------|
+| 美國政府（Mythos 5 解禁擴大）| 政府授權 | 2026-06-28 | 商務長 Howard Lutnick 批准擴大至 100+ 美國機構（企業 + 政府），含非美籍員工；出口管制後最大鬆綁，核心企業收入管道恢復（TechCrunch）|
+| 奧地利 / 歐盟遊說 | 地緣擴張洽談 | 2026-06-28 | 美國出口管制切斷歐洲機構存取後，奧地利向歐盟遊說爭取 Anthropic 設立歐洲研究中心；HN 評論：Dario 為美國愛國者可能性不高（Bloomberg HN 40、Reuters）|
 | 美國政府（Mythos 5 解禁）| 政府授權 | 2026-06-27 | 批准向 100+ 美國機構有限釋出 Mythos 5，企業與聯邦機構商業化管道開放（Semafor、CNBC、WSJ、Reuters）|
 | Notion | SDK 夥伴 | 2026-06-25 | 正式整合 Claude Agents 與 Cursor 作為外部 agent，進入工作區協作流程（letsdatascience.com）|
 | Railway | SDK 夥伴 | 2026-06-24 | 平台整合 Claude Code、Codex、OpenCode、Pi，可在隔離沙盒環境中執行（blog.railway.com）|
@@ -121,6 +123,11 @@ Simon Willison（知名開發者博主）發表文章，認為 Anthropic 與 Ope
 - [[news/2026-05-13]]（The Information：定價強勢期）
 
 ## 時序
+
+### 2026-06-28
+- **[IPO 估值壓力] Fortune：Alibaba 蒸餾攻擊引發「前沿 AI 護城河是否可防禦」疑問，直衝 IPO 估值**：Fortune 分析文章指出 Alibaba 2,880 萬次能力竊取事件的核心問題——若 Claude 能力可被大規模蒸餾複製，Anthropic 超高估值的競爭壁壘支撐力有多強？Motley Fool 同步以 Anthropic 可能成為史上最高估值軟體公司為框架，列出相關曝險股票。**對 IPO 的意涵**：護城河疑問若在機構投資人中擴散，S-1 路演面臨更高舉證壓力（Fortune https://fortune.com/2026/06/28/anthropic-alibaba-fight-raises-ipo-question-frontier-ai-moat-defensible/；Motley Fool https://www.fool.com/investing/2026/06/28/anthropic-become-valuable-software-stock-ai/）
+- **[出口管制最大鬆綁] Mythos 5 解禁擴大：商務長 Lutnick 批准 100+ 美國機構存取**：TechCrunch 報導，商務部長 Howard Lutnick 批准超過 100 家美國政府機構與企業（含非美籍員工）可存取 Mythos 5，為 Anthropic 出口管制期間最大商業解封；核心意義在於企業核心收入管道恢復，企業客戶得以重新正常部署最前沿模型（TechCrunch https://techcrunch.com/2026/06/26/trump-admin-releases-anthropic-mythos-to-be-used-by-more-than-100-us-companies-agencies/）
+- **[地緣擴張機會] 奧地利遊說歐盟爭取 Anthropic 設立歐洲研究中心**：Bloomberg（HN 40）與 Reuters 同步報導，美國出口管制切斷歐洲機構存取 Mythos / Fable 5 後，奧地利趁機向歐盟提案爭取 Anthropic 在歐洲設立研究中心。HN 評論指 Dario Amodei 為美國愛國者、成事機率不高；另有評論呼籲歐盟應自主研發前沿 AI。**對商業的意涵**：即便 Anthropic 不遷移，此地緣壓力可作為政策議題向美國政府換取更大解禁空間（推論）（Bloomberg https://www.bloomberg.com/news/articles/2026-06-28/austria-lobbies-eu-to-host-anthropic-after-us-access-curbs）
 
 ### 2026-06-27
 - **[商業解封里程碑] Mythos 5 獲美國政府批准向 100+ 機構有限釋出**：美國政府正式批准 Anthropic 向 100 家以上美國機構（含企業與聯邦機構）有限度釋出 Mythos 5，標誌 Anthropic 最先進旗艦模型的商業化從管制收緊（6/24 NSA 失去存取）轉入選擇性解封新階段；直接擴大企業合作能力，與既有 TCS（5 萬員工）、DXC（數萬認證工程師）等大型合作案協同效應顯著（Semafor、CNBC、WSJ、Reuters）。**對採用率的意涵**：若最先進模型解鎖給聯邦機構，政府採購管道打開（推論）。

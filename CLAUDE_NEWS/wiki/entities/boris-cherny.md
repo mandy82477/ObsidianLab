@@ -4,11 +4,11 @@
 **狀態：** active
 **領域：** 👤 人物
 **首次出現：** 2026-04-23（事後報告發布）
-**最後更新：** 2026-06-27
-**最後新聞更新：** 2026-06-24
+**最後更新：** 2026-06-28
+**最後新聞更新：** 2026-06-28
 
-> **最新設計哲學聲明**（2026-06-24）
-> Times of India 報導：Boris Cherny 承認「AI 寫 100% 程式碼正在變得有問題」，與他早前「AI 已解決程式設計問題」的立場形成明顯對比，此聲明呼應企業端出現的過度依賴反彈聲浪。
+> **最新工作流分享**（2026-06-28）
+> Boris Cherny 在 howborisusesclaudecode.com 公開分享 13 個日常 Claude Code 使用技巧，包括同時開 5 個獨立 git checkout 搭配 5 個 Claude Code 實例、以 `--teleport` 旗標跨本地/Web 環境切換、從 iPhone 啟動 session 下午電腦接力等。他強調這是「surprisingly vanilla」setup，Claude Code 開箱即用無需特殊配置。
 
 ---
 
@@ -19,6 +19,23 @@ Boris Cherny 是 Anthropic Claude Code 的創始人與負責人（Head of Claude
 ---
 
 ## 公開言論與主張
+
+### 13 個日常 Claude Code 使用技巧（2026-06-28）
+
+Boris Cherny 在 [howborisusesclaudecode.com](https://howborisusesclaudecode.com) 公開分享個人日常 setup，具體技巧包括：
+
+- 同時開 5 個 Claude Code 實例，各自對應同一 repo 的 5 個獨立 git checkout
+- 另開 5–10 個 claude.ai/code 瀏覽器 session 並行操作
+- 使用 `&` 指令將 session 背景化
+- 使用 `--teleport` 旗標在本地環境與 Web 環境之間切換
+- 從 iPhone 早上啟動 session，下午在桌機接力繼續
+- 依賴系統通知提醒何時需要介入輸入
+
+他特別強調此 setup 是「surprisingly vanilla」——Claude Code 開箱即用，無需特殊魔改配置。此次分享被 Hacker News 收錄（06/27 17:10 UTC，score 5），是其個人工作流從「哲學宣言」轉向「操作實踐」的一次具體展示。
+
+- 來源：[howborisusesclaudecode.com](https://howborisusesclaudecode.com)（Hacker News 2026-06-27）
+
+---
 
 ### 「AI 寫 100% 程式碼正在變得有問題」立場轉變（2026-06-24）
 
@@ -95,6 +112,7 @@ Boris Cherny 的公開言論呈現兩種截然不同的社群反應：
 
 ## 歷史記錄
 
+- 2026-06-28：在 howborisusesclaudecode.com 公開 13 個日常 Claude Code 使用技巧，涵蓋 5 個並行實例搭配獨立 git checkout、`--teleport` 跨環境切換、iPhone 啟動電腦接力等；強調「surprisingly vanilla」setup（Hacker News，score 5）
 - 2026-06-24：Times of India 報導其承認「AI 寫 100% 程式碼正在變得有問題」，與早前「coding is solved」立場形成對比，呼應企業端過度依賴反彈聲浪
 - 2026-06-23：Business Insider 報導其對企業 AI 投資的立場：支持 ROI 導向，但反對完全不留實驗預算
 - 2026-06-22：「engineering leader 讓工程師更孤獨」一說，後續具名來源確認發言人為 Anthropic 工程副總裁 Fiona Fung（[[entities/fiona-fung]]），非 Boris Cherny；本頁解除待核實
@@ -123,3 +141,4 @@ Boris Cherny 的公開言論呈現兩種截然不同的社群反應：
 - [[news/2026-06-22]]
 - [[news/2026-06-23]]
 - [[news/2026-06-24]]
+- [[news/2026-06-28]]

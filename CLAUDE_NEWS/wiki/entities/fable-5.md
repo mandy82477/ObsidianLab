@@ -4,11 +4,11 @@
 **狀態：** active（正式發布；Fable 5 / Mythos 5 因美國政府出口管制指令暫停全球存取）
 **領域：** 🤖 模型
 **首次出現：** 2026-06-09
-**最後更新：** 2026-06-27
-**最後新聞更新：** 2026-06-27
+**最後更新：** 2026-06-28
+**最後新聞更新：** 2026-06-28
 
-> **最新管制進展**（2026-06-27）
-> Reuters / Axios 報導美方接近批准 Fable 5 重新上線，尚未正式確認（[Reuters](https://www.reuters.com/business/us-close-allowing-anthropic-restore-fable-5-model-axios-reports-2026-06-27/)）。同日，商務部已先行批准 Mythos 5 向 100+ 美國受信任機構有限釋出，見 [[entities/mythos]]。
+> **最新管制進展**（2026-06-28）
+> Axios（HN score 4）報導 Fable 5 正走向全面回歸一般市場，美方協議接近完成；TechCrunch 補充「Fable 5 on track to return soon」（待核實，尚無官方確認）。HN 評論普遍認為整體事件對 Anthropic 有利——媒體曝光強化品牌效應，競品（Tulongfeng / Fugu）急追反而佐證封鎖無效（[Axios](https://www.axios.com/2026/06/27/anthropic-fable-5-return-soon)）。
 
 ---
 
@@ -19,6 +19,8 @@ Claude Fable 5 是 Anthropic 於 2026-06-09 發布的旗艦模型，為**史上�
 **2026-06-13 重大事件**：美國政府以「國家安全出口管制」為由，下令 Anthropic 對所有外籍人士（含境外及境內外籍員工）停用 Fable 5 與 Mythos 5。Anthropic 於當日 5:21pm ET 收到指令，為確保合規對全體用戶停用兩款模型，其他模型不受影響。路透社、NYT、BBC、TechCrunch、WIRED 等主流媒體全面報導。
 
 **2026-06-18–19 解禁進展**：Wired 深度調查（HN score 110）確認出口管制根本動機為 SK Telecom 中國關聯（Anthropic 先前授予 SK Telecom Mythos 存取權），加上 Amazon 研究人員向白宮舉報 Fable 5 越獄漏洞，兩件事疊加加速管制決定。Anthropic 國際總監 Chris Ciauri 在首爾記者會聲明「數日內恢復」，Bloomberg 另報導部分早期用戶仍保有存取權。見 [[entities/mythos]]。
+
+**2026-06-28 最新（待核實）**：Axios 報導 Fable 5 正走向全面回歸一般市場，美方協議接近完成（HN score 4，訊號弱）；TechCrunch 補充「Fable 5 on track to return soon」。HN 評論認為整體事件對 Anthropic 有利：媒體曝光提升品牌聲量，競品（Tulongfeng / Fugu）急追反而佐證封鎖無效。尚無官方確認。
 
 **2026-06-27 最新（待核實）**：Reuters / Axios 報導美方接近批准 Fable 5 重新上線，尚未正式確認。同日商務部已先行批准 Mythos 5 向 100+ 美國受信任機構有限釋出（Semafor、CNBC）——Mythos 5 部分解禁可能是 Fable 5 全面解禁的前期信號，但兩者為獨立決定。
 
@@ -135,6 +137,11 @@ claude --model claude-fable-5-20260609
 - [資料保留政策](https://support.claude.com/en/articles/15425996-data-retention-practices-for-mythos-class-models)
 
 ## 歷史記錄
+
+### 2026-06-28
+**Fable 5 協議接近完成（待核實）+ 競品效應分析**：
+- **Axios 報導 Fable 5 on track（待核實）**（HN score 4）：Axios 報導 Fable 5 正走向全面回歸一般市場，美方協議接近完成；TechCrunch 同步補充「Fable 5 on track to return soon」（[Axios](https://www.axios.com/2026/06/27/anthropic-fable-5-return-soon)）。訊號弱（HN score 4），「接近完成」不等於已批准，尚待官方確認
+- **HN 社群反應：競品急追佐證封鎖無效**：HN 評論普遍認為 Tulongfeng / Fugu 等競品急追 Mythos / Fable 5 的聲明，反而對 Anthropic 有利——強化「封鎖只讓競爭對手有時間填補市場」論點，媒體密集報導同時提升 Anthropic 品牌效應
 
 ### 2026-06-27
 **接近批准 Fable 5 重新上線（待核實）+ Mythos 5 先行部分解禁**：

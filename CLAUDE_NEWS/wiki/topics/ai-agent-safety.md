@@ -3,11 +3,11 @@
 **狀態：** ongoing
 **領域：** 🏛️ 政策/安全
 **開始日期：** 2026-04-27
-**最後更新：** 2026-06-27
-**最後新聞更新：** 2026-06-27
+**最後更新：** 2026-06-28
+**最後新聞更新：** 2026-06-28
 
-> **最新安全事件**（2026-06-27）
-> 安全研究揭露「agentjacking」手法升級版防禦指南：偽造 Sentry 錯誤訊息誘導 Claude Code / Cursor / Cline 等 coding agent 執行惡意代碼；作者提供具體 settings 配置可大幅降低暴露風險（dev.to，2026-06-27）。
+> **最新安全事件**（2026-06-28）
+> Mozilla 0din 安全團隊展示如何透過「乾淨」的 GitHub Repo 誘騙 Claude Code 安裝惡意軟體，利用隱性提示注入指令武器化 Claude Code 的「樂於助人」天性（Tom's Hardware，2026-06-28）。
 
 ---
 
@@ -31,6 +31,7 @@
 
 ## 目前結論
 
+- 🔴 **乾淨 GitHub Repo 成提示注入新向量（2026-06-28）**：Mozilla 0din 展示攻擊者可利用外觀無害的 repo 嵌入隱性指令，Claude Code 在正常工作流程中自動執行惡意軟體；此向量無需入侵現有 repo、無需使用者主動互動，任何「開啟外部 repo」的工作流均為潛在暴露點；Anthropic 尚無公開回應
 - 🔴 **大規模組織性 AI 蒸餾攻擊成熟化（2026-06-26）**：Anthropic 指控阿里巴巴透過 25,000 個假帳號發動 2,880 萬次模型交換，顯示帳號農場作為蒸餾攻擊基礎設施已達工業規模；現有 ToS 偵測機制在如此分散的帳號規模下仍被大規模繞過（待阿里巴巴確認，現為單一聲稱）
 - 🔴 **AI Agent 進攻性濫用已達在野攻擊成熟度（2026-06-16）**：OALABS 蜜罐分析首次以 1,000+ session 日誌規模確認攻擊者使用 Claude Code 入侵 14 家企業；「低技術提示 + AI 填補細節 + guardrails 繞過」組合成立，顯示現有護欄設計在主動對抗場景下存在系統性缺口；Anthropic 截至 2026-06-20 尚無公開回應
 - ⚠️ **Claude Code .env SQLite 明文存儲（2026-05-19）**：所有 .env 讀取過的 secret 永久以明文存於本機 SQLite，在 .gitignore 範圍外且標準 scanner 無法偵測；配合攝影機存取要求（同日），Claude Code 的隱私與安全邊界正受到多面向質疑
@@ -59,6 +60,16 @@
 ---
 
 ## 技術彙整
+
+### Mozilla 0din 揭露：乾淨 GitHub Repo 作為提示注入向量（2026-06-28 新增）
+
+- **揭露來源**：Mozilla 0din 安全團隊；Tom's Hardware 報導（2026-06-28；https://www.tomshardware.com/tech-industry/cyber-security/ai-coding-agents-can-be-tricked-into-installing-malware-via-clean-github-repositories-mozillas-0din-team-shows-how-claude-code-can-be-exploited-by-its-own-helpfulness）
+- **攻擊機制**：攻擊者建立外觀「乾淨」（無明顯惡意內容）的 GitHub Repo，在其中嵌入隱性提示注入指令（如 README、配置檔、程式碼注釋中的隱藏指令）；當 Claude Code 處理此 repo 的任務時，隱性指令被解釋為 agent 指示，觸發惡意軟體下載或執行
+- **武器化機制**：攻擊手法利用 Claude Code 對使用者意圖「盡力配合」的設計天性——模型傾向將 repo 內容視為可信指令來源，未能區分「使用者意圖」與「repo 中嵌入的攻擊指令」
+- **攻擊面特徵**：不需要入侵現有知名 repo（可全新建立乾淨 repo）；不需要欺騙使用者主動點擊惡意連結（只需讓 Claude Code 開啟此 repo）；攻擊在正常工作流程（如 clone、review、整合第三方套件）中自動觸發
+- **與既有攻擊向量比較**：Agentjacking（2026-06-16）透過工具錯誤管道注入；假冒安裝包（2026-05-12）在安裝路徑截獲；此攻擊向量將攻擊面延伸至 repo 本體，代表「任何包含外部 repo 的工作流」均為潛在暴露點
+- **可信度評估**：Mozilla 0din 為 Mozilla Foundation 的安全研究團隊，為第三方確認來源；Anthropic 截至報導日尚無公開回應
+- **防護意涵**：Claude Code 處理不熟悉 repo 時，應啟用額外人工審閱步驟；不應讓 Claude Code 自動執行 clone repo 後的後續指令（如自動安裝相依套件），需加確認節點
 
 ### (0) AI Agent 用於進攻性網路操作
 
@@ -351,6 +362,7 @@
 
 ## 參考來源
 
+- [[news/2026-06-28]]
 - [[news/2026-06-26]]
 - [[news/2026-05-19]]
 - [[news/2026-05-18]]
@@ -372,6 +384,9 @@
 ## 時序
 
 > 更早期時序見 [[topics/ai-agent-safety-archive]]
+
+### 2026-06-28
+- **[提示注入] Mozilla 0din 團隊揭露：乾淨 GitHub Repo 誘騙 Claude Code 安裝惡意軟體**：Mozilla 0din 安全團隊展示一種新型提示注入攻擊——攻擊者建立外觀「乾淨」的 GitHub Repo，在其中嵌入隱性提示注入指令，誘騙 Claude Code 在正常任務執行過程中自動安裝惡意軟體；攻擊手法利用 Claude Code 的「樂於助人」天性，屬於供應鏈層面的提示注入新型態；攻擊向量與 Agentjacking（工具錯誤管道注入）性質不同，此為 repo 本體即攻擊媒介（Tom's Hardware，2026-06-28；https://www.tomshardware.com/tech-industry/cyber-security/ai-coding-agents-can-be-tricked-into-installing-malware-via-clean-github-repositories-mozillas-0din-team-shows-how-claude-code-can-be-exploited-by-its-own-helpfulness）
 
 ### 2026-06-27
 - **[升級] Agentjacking 2026 防禦設定指南：偽造 Sentry 錯誤劫持 Claude Code / Cursor / Cline**：dev.to 文章詳細說明 agentjacking 攻擊機制——攻擊者偽造 Sentry 錯誤訊息誘導 AI coding agent 以開發者本地權限執行惡意代碼，屬提示注入新型態變種（透過工具整合的 error message 管道）；文章提供具體 agent settings 配置可大幅降低暴露面；影響 Claude Code、Cursor、Cline 等（dev.to，https://dev.to/jovan_chan_9500711396d4e6/agentjacking-2026-how-a-fake-sentry-error-hijacks-cursor-claude-code-and-cline-and-the-5a2h）
