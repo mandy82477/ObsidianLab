@@ -3,11 +3,11 @@
 **狀態：** monitoring
 **領域：** 💼 商業
 **開始日期：** 2026-04
-**最後更新：** 2026-06-28
-**最後新聞更新：** 2026-06-28
+**最後更新：** 2026-06-29
+**最後新聞更新：** 2026-06-29
 
-> **最新競品動態**（2026-06-28）
-> 中國 360 發布 Tulongfeng、日本 Sakana AI 發布 Fugu，均宣稱能力對標 Mythos / Fable 5（TechCrunch HN 256）。WSJ 報導中國已在網路安全 AI 追平 Anthropic，質疑出口管制戰略效果。Wired 揭露中國用戶長期通過 VPN 繞過 Anthropic 地理限制，實質封鎖效果存疑。
+> **最新競品動態**（2026-06-29）
+> AI 新創 Lindy CEO 將 100% 流量從 Claude 切換至 DeepSeek，每月省下數百萬美元——這是「DeepSeek 性價比勝出」在具名 API 客戶層的最大規模實例（CNBC 2026-06-26/29，HN score 3）。4 位 Google 資深研究員轉投 Anthropic，Gemini 3.5 Pro 據報延期至七月（推論，dev.to 報導，未經 Google 官方確認）。
 
 ---
 
@@ -65,11 +65,12 @@ Claude Code 已成為 AI 輔助編碼的標竿產品，但競爭正快速升溫�
 - **重大事件**：SpaceX 以 $60B 正式完成收購 Cursor（2026-06-17 確認）；收購整合 SpaceX / xAI 生態，使 Cursor 獲得 SpaceX 資源支撐，直接衝擊 Claude Code vs Cursor 競爭態勢；Cursor 此前與 Anthropic 有深度整合關係，收購後生態歸屬方向待觀察（dev.to、9to5Mac）
 
 ### DeepSeek 🔴
-- **狀態**：正式宣布建構 Claude Code 競品（2026-05-22）；DeepSeek V4 Flash 顛覆 agent 定價（2026-06-26）
+- **狀態**：正式宣布建構 Claude Code 競品（2026-05-22）；DeepSeek V4 Flash 顛覆 agent 定價（2026-06-26）；Lindy 100% 切換案例（2026-06-29）
 - **策略**：「Beijing Wants the Whole Stack」——DeepSeek 不只是低成本替代生態，而是公開宣稱要打造從模型到開發工具的完整技術棧
 - **既有基礎**：DeepClaude（聲稱降低 17 倍成本）、DeepSeek-based Claude Code clone（8,700 Stars）
 - **關鍵定價衝擊（2026-06-26）**：DeepSeek V4 Flash（開源，成本較 Claude API 降低逾 100 倍）打破 Anthropic 以較高 API 定價補貼自家 Claude Code 等 agent 服務的商業邏輯；Microsoft 等廠商已實際切換至 DeepSeek 執行層（ref: rtrvr.ai https://www.rtrvr.ai/blog/code-as-plan-deepseek-flash-text-only-browser-agent）。**對 Anthropic 的意涵**：訂閱補貼依賴 API 定價差距維持，DeepSeek Flash 壓縮此空間；若企業持續切換執行層，Anthropic 的 token 份額將流失至競品（推論）
-- **意義**：Claude Code 類產品已成為國家層面 AI 競爭的戰場；DeepSeek 轉向正面競爭標誌低成本替代生態進入下一階段
+- **具名客戶承接（2026-06-29）**：AI 新創 Lindy CEO 公開宣告 100% 流量從 Claude 切至 DeepSeek，每月省下數百萬美元；是 DeepSeek 在 API 應用層承接 Anthropic 客戶的最大規模具名案例（CNBC https://www.cnbc.com/2026/06/26/openai-anthropic-new-ai-spending-reality-as-users-shift-to-efficiency.html）
+- **意義**：Claude Code 類產品已成為國家層面 AI 競爭的戰場；DeepSeek 轉向正面競爭標誌低成本替代生態進入下一階段；具名 API 客戶切換案例的累積正在成為可量化的市場份額流失訊號
 
 ### Zhipu Z.AI 🔴
 - **狀態**：Active（快速追趕中，2026-06-27 CNBC 確認）
@@ -134,6 +135,10 @@ Claude Code 已成為 AI 輔助編碼的標竿產品，但競爭正快速升溫�
 ---
 
 ## 時序
+
+### 2026-06-29
+- **[DeepSeek 具名勝出] Lindy CEO：100% 流量從 Claude 切至 DeepSeek，每月省下數百萬美元**：CNBC 報導 AI 新創 Lindy CEO Flo Crivello 公開宣告完成全量切換，是「最省錢 > 最強模型」論述中迄今最具代表性的具名 API 客戶案例。Lindy 服務屬高吞吐量自動化工作流，API 費率差異直接轉化為此量級的成本節省。**對競爭格局的意涵**：此類 API 應用層客戶的價格敏感度高，一旦競品達「夠用」門檻，成本成為決策主因；若此模式擴散，DeepSeek 在 API 客戶市場的份額將持續成長、侵蝕 Anthropic API 收入（推論）（CNBC https://www.cnbc.com/2026/06/26/openai-anthropic-new-ai-spending-reality-as-users-shift-to-efficiency.html；詳見 [[topics/enterprise-cost-management]]）
+- **[人才格局] 4 位 Google 資深研究員轉投 Anthropic，Gemini 3.5 Pro 據報延期至七月**：dev.to 報導（推論，未經 Google 官方確認）Google 資深研究員持續出走至 Anthropic，同期 Gemini 3.5 Pro 延期至七月；AI 研究人才集中流向 Anthropic 的趨勢延續，Google 在模型能力追趕上面臨人才與時程的雙重壓力（詳見 [[topics/ai-talent-flow]]）（dev.to https://dev.to/doremonai/gemini-35-pro-delayed-to-july-4-senior-google-researchers-defect-to-anthropic-47he）
 
 ### 2026-06-28
 - **[亞洲競品湧現] 中國 360 Tulongfeng + 日本 Sakana AI Fugu 雙雙宣稱對標 Mythos 5**：TechCrunch（HN score 256）報導，趁 Anthropic 出口管制延宕期間，中國 360 發布 Tulongfeng（網路安全 AI）、日本 Sakana AI 發布 Fugu，均宣稱能力可比肩 Mythos / Fable 5。WSJ（HN 12）同步報導「中國已在網路安全 AI 追平 Anthropic」，直接質疑 Anthropic 在此細分領域的差異化護城河。**對競爭格局的意涵**：Anthropic 出口管制造成的服務真空，正系統性被亞洲競品填補；若 Mythos 解禁速度慢於競品追趕速度，市場份額流失難以逆轉（推論）（TechCrunch https://techcrunch.com/2026/06/27/asian-ai-startups-launch-mythos-like-models-as-anthropics-export-ban-drags-on/；WSJ https://www.wsj.com/tech/ai/chinese-ai-anthropic-mythos-cybersecurity-574b02c2；Reuters https://www.reuters.com）

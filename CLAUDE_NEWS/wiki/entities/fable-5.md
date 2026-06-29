@@ -4,11 +4,11 @@
 **狀態：** active（正式發布；Fable 5 / Mythos 5 因美國政府出口管制指令暫停全球存取）
 **領域：** 🤖 模型
 **首次出現：** 2026-06-09
-**最後更新：** 2026-06-28
-**最後新聞更新：** 2026-06-28
+**最後更新：** 2026-06-29
+**最後新聞更新：** 2026-06-29
 
-> **最新管制進展**（2026-06-28）
-> Axios（HN score 4）報導 Fable 5 正走向全面回歸一般市場，美方協議接近完成；TechCrunch 補充「Fable 5 on track to return soon」（待核實，尚無官方確認）。HN 評論普遍認為整體事件對 Anthropic 有利——媒體曝光強化品牌效應，競品（Tulongfeng / Fugu）急追反而佐證封鎖無效（[Axios](https://www.axios.com/2026/06/27/anthropic-fable-5-return-soon)）。
+> **最新管制進展**（2026-06-29）
+> Anthropic 正式獲得美國政府許可，可向特定信任合作夥伴恢復 Mythos 存取；Axios 進一步報導 Fable 5「can return as soon as this week」，Washington 立場明顯軟化（[qz.com](https://qz.com/anthropic-mythos-5-clearance-trusted-partners-commerce-062926)、[Axios](https://www.axios.com/2026/06/27/anthropic-fable-5-return-soon)）。官方尚未宣布具體日期，待正式公告確認。
 
 ---
 
@@ -137,6 +137,14 @@ claude --model claude-fable-5-20260609
 - [資料保留政策](https://support.claude.com/en/articles/15425996-data-retention-practices-for-mythos-class-models)
 
 ## 歷史記錄
+
+### 2026-06-29
+**美國政府正式許可恢復 Mythos 存取 + Fable 5 可能本週回歸（待核實）**：
+- **政府正式許可（qz.com）**：Anthropic 獲得美國政府許可，可向特定信任合作夥伴恢復 Mythos 存取，Fable 5 全面回歸在望（[qz.com](https://qz.com/anthropic-mythos-5-clearance-trusted-partners-commerce-062926)）；這是繼 6/27 Mythos 5 部分解禁後，政府立場進一步鬆動的具體信號
+- **Axios：Fable 5 可能本週回歸（待核實）**（HN score 8）：Axios 報導 Fable 5「on track to return soon, possibly this week」，Washington 軟化立場（[Axios](https://www.axios.com/2026/06/27/anthropic-fable-5-return-soon)）；HN score 8 訊號偏弱，「possibly this week」為消息人士說法，尚無官方確認
+- **Washington 軟化立場（Yellow.com）**：Google News 報導確認談判進展，與 qz.com / Axios 方向一致（[Yellow.com](https://yellow.com/news/claude-fable-5-return)）
+- **社群回顧：音樂影片展示**（Reddit，score 不詳）：用戶分享在 Fable 5 下架前使用其製作音樂影片的體驗，展示視頻編輯與創意能力，說明即使在管制期間社群仍持續記錄 Fable 5 的多模態使用案例（[Reddit r/ClaudeAI](https://www.reddit.com/r/ClaudeAI/comments/1uipova/)）
+- **工程師實測：新版 Claude 燒更多 token 但每任務成本更低**（HN score 5）：signoz.io 工程師儀器化實測顯示，新版 Claude 模型 token 使用量顯著高於舊版，但每個成功解決任務的實際成本反而下降；分析強調評測指標需同時考量 token 用量與任務完成率，而非僅看成本或速度（[signoz.io](https://signoz.io/blog/claude-code-model-comparison/)）；HN score 5 訊號弱，結論「待驗證」
 
 ### 2026-06-28
 **Fable 5 協議接近完成（待核實）+ 競品效應分析**：

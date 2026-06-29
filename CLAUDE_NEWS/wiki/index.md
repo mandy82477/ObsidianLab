@@ -2,20 +2,19 @@
 
 LLM 查詢此 wiki 時，**先讀這個檔案**找相關頁面，再讀具體頁面取得詳細資訊。
 
-**最後更新：** 2026-06-28
+**最後更新：** 2026-06-29
 ---
 
 ## 近期異動
 
-- [[entities/mythos]] — Mythos 5 解禁擴大：2026-06-28 更新競品聲明（Tulongfeng/Fugu）與 Lutnick 批准最新細節
-- [[entities/fable-5]] — 2026-06-28：Axios 報導全面回歸即將到來（待核實，HN score 4）
-- [[topics/anthropic-government-policy]] — 2026-06-28：Legion 起訴、奧地利遊說 EU、Fable 5 接近協議、Mythos 5 擴大解禁；攻防紀錄更新
-- [[topics/ai-agent-safety]] — 2026-06-28：Mozilla 0din 揭露「乾淨 GitHub Repo」提示注入攻擊向量，Claude Code agent 被惡意軟體誘導
-- [[topics/anthropic-business]] — 2026-06-28：Fortune IPO 護城河疑問、Alibaba 竊取估值影響、Mythos 100+ 機構解禁商業意義
-- [[topics/competitor-landscape]] — 2026-06-28：中國 360 Tulongfeng + Sakana AI Fugu 宣稱比肩 Mythos；WSJ 報導中國已追平網路安全 AI
-- [[entities/boris-cherny]] — 2026-06-28：分享 13 個 Claude Code 日常使用技巧（5 終端機 + 5-10 Web session、--teleport）
-- [[topics/community-tech-discussions]] — 2026-06-28：新增 Adrafinil（HN 113）、Boris Cherny 工作流、OAuth 401 陷阱討論；清理過期條目
-- [[topics/community-tech-patterns]] — 2026-06-28：新增 OKF 跨 session 記憶、stop hook 音效、ccgram v4.3.0、Adrafinil 保活模式
+- [[entities/fable-5]] — 2026-06-29：美方正式批准向特定信任夥伴恢復 Mythos 存取，Axios 報導 Fable 5「可能本週回歸」
+- [[entities/mythos]] — 2026-06-29：美國政府批准向特定信任合作夥伴恢復存取，出口管制進一步鬆動
+- [[topics/anthropic-government-policy]] — 2026-06-29：美方批准恢復 Mythos、Newsom 加州政府協議、Alibaba 2880 萬次查詢揭露參議院、親 AI 陣營分裂
+- [[topics/ai-agent-safety]] — 2026-06-29：the-decoder 報導 Claude Code 未驗證執行 GitHub repo 隱藏惡意程式，攻擊者可取得完整控制權
+- [[topics/anthropic-business]] — 2026-06-29：Newsom 加州政府協議、奧地利遊說 EU、Micron 合作評估、Claude Code 改變組織結構（需更多 PM）
+- [[topics/enterprise-cost-management]] — 2026-06-29：Lindy 將 100% 流量從 Claude 切換至 DeepSeek，每月省數百萬美元
+- [[topics/ai-talent-flow]] — 2026-06-29：4 名 Google 資深研究員轉投 Anthropic（待核實姓名）
+- [[topics/community-tech-discussions]] — 2026-06-29：MRI 第二意見分析（HN 476）、多 agent 協調、模型成本效益討論
 
 ---
 
@@ -35,7 +34,7 @@ LLM 查詢此 wiki 時，**先讀這個檔案**找相關頁面，再讀具體頁
 | [[entities/opus-4-8]] | model | 🤖 模型 | active | Opus 4.8：SWE-bench Pro 69.2%、1M context、Dynamic Workflows（1,000 子代理）、Fast Mode 1/3 費用 |
 | [[entities/opus-4-7]] | model | 🤖 模型 | active（爭議）| Opus 4.7 發布細節、思考深度爭議、cache 問題 |
 | [[entities/pricing]] | policy | 💼 商業 | active | 訂閱方案、近期政策變動、token 成本注意事項 |
-| [[entities/mythos]] | model | 🤖 模型 | active（部分解禁：Mythos 5 = 100+ 美國受信任機構可用；Fable 5 全面解禁談判中） | 高能力安全模型；2026-06-27 部分解禁，100+ 美國受信任機構可用；Fable 5 解禁接近協議（待核實） |
+| [[entities/mythos]] | model | 🤖 模型 | active（解禁擴大：6/29 美方批准向特定信任合作夥伴恢復存取；Fable 5 回歸在望） | 高能力安全模型；2026-06-29 美方批准向特定信任夥伴恢復 Mythos 存取，出口管制持續鬆動 |
 | [[entities/bugcrawl]] | feature | 🛠️ 工具/功能 | beta | Anthropic 測試中的 Claude Code 漏洞偵測工具 |
 | [[entities/claude-design]] | feature | 🛠️ 工具/功能 | active（初期）| Anthropic AI 設計工具，首日社群反映幻覺多、風格偏移、Claude Code 整合差 |
 | [[entities/claude-security]] | product | 🛠️ 工具/功能 | beta | Claude Security 資安產品，情境化安全評估，整合於 Claude Code 開發環境 |

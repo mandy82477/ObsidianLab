@@ -4,17 +4,19 @@
 **狀態：** active（部分解禁：Mythos 5 = 100+ 美國受信任機構可用；Fable 5 全面解禁談判中）
 **領域：** 🤖 模型
 **首次出現：** 2026-04（限定夥伴 Preview）
-**最後更新：** 2026-06-28
-**最後新聞更新：** 2026-06-28
+**最後更新：** 2026-06-29
+**最後新聞更新：** 2026-06-29
 
-> **最新進展**（2026-06-28）
-> Mythos 5 部分解禁獲 TechCrunch 和 Mashable 後續確認：商務部長 Howard Lutnick 通知 Anthropic chief compute officer Tom Brown，100+ 美國政府機構與企業（含其非美籍員工）可存取 Mythos 5，兩週禁令後的差異化部分鬆綁（[TechCrunch](https://techcrunch.com/2026/06/26/trump-admin-releases-anthropic-mythos-to-be-used-by-more-than-100-us-companies-agencies/)、[Mashable](https://mashable.com/tech/claude-mythos-5-reinstated-by-us-government)）。同日，日本 Sakana AI 發布 Fugu 聲稱可與 Fable 5/Mythos Preview 比肩，WSJ 指中國已在網路安全 AI 上追平 Anthropic。
+> **最新進展**（2026-06-29）
+> Anthropic 正式獲得美國政府許可，可向特定信任合作夥伴恢復 Mythos 存取（[qz.com](https://qz.com/anthropic-mythos-5-clearance-trusted-partners-commerce-062926)）；此為 6/27 Mythos 5 部分解禁後的進一步確認，Fable 5 全面解禁談判同步推進。競品聲稱方面，中國 Z.Ai 與 360（6/24）相繼宣稱已開發出可與 Mythos 匹敵的網路安全 AI，均尚無獨立 benchmark 驗證。
 
 ---
 
 ## 現況
 
-**2026-06-28 競品聲稱對標**：日本 Sakana AI 發布 Fugu，聲稱可與 Fable 5 / Mythos Preview 比肩，支援 multi-agent API；WSJ 報導中國已在網路安全 AI 上追上 Anthropic（Tulongfeng 為代表案例）。上述聲明均尚無獨立 benchmark 驗證，保留「待核實」判斷。TechCrunch 與 Mashable 後續確認 Mythos 5 部分解禁細節，指收件人為 Anthropic chief compute officer Tom Brown，存取範圍含非美籍員工（[TechCrunch](https://techcrunch.com/2026/06/26/trump-admin-releases-anthropic-mythos-to-be-used-by-more-than-100-us-companies-agencies/)）。
+**2026-06-29 最新**：Anthropic 正式獲得美國政府許可，可向特定信任合作夥伴恢復 Mythos 存取（qz.com），是繼 6/27 部分解禁後的進一步政策落實。中國 Z.Ai 聲稱已開發出可與 Mythos 匹敵的網路安全 AI（Reuters，HN score 8），繼 360（6/24）後第二家公開宣稱，均「待核實」，無獨立 benchmark 驗證。
+
+**2026-06-28 競品聲稱對標**：日本 Sakana AI 發布 Fugu，聲稱可與 Fable 5 / Mythos Preview 比肩，支援 multi-agent API；WSJ 報導中國已在網路安全 AI 上追上 Anthropic（Tulongfeng 為代表案例）。上述聲明均尚無獨立 benchmark 驗證，保留「待核實」判斷。TechCrunch 與 Mashable 後續確認 Mythos 5 部分解禁細節，指收件人為 Anthropic chief compute officer Tom Brown，存取範圍含非美籍員工（[TechCrunch](https://techcrunch.com/2026/06/26/trump-admin-releases-anthropic-mythos-to-be-used-by-more-than-100-us-companies-updates/)）。
 
 **2026-06-27 部分解禁**：美國商務部批准 Anthropic 向 100+ 美國機構（企業 + 聯邦機構）有限釋出 Mythos 5，條件為「受信任合作夥伴」並具備適當安全措施。商務部長 Howard Lutnick 在致 Anthropic chief compute officer Tom Brown 的信中正式確認此決定（Semafor、CNBC）。Fable 5 全面解禁談判仍在進行中，見 [[entities/fable-5]]。
 
@@ -92,6 +94,11 @@ Anthropic 的官方 AI 資安能力研究計畫，Mythos Preview 為核心工具
 ---
 
 ## 時序
+
+### 2026-06-29
+**美國政府正式許可恢復 Mythos 存取（信任合作夥伴）+ 中國 Z.Ai 聲稱對標**：
+- **政府許可進一步確認**：qz.com 報導 Anthropic 正式獲得美國政府許可，可向特定信任合作夥伴恢復 Mythos 存取（[qz.com](https://qz.com/anthropic-mythos-5-clearance-trusted-partners-commerce-062926)）；此為繼 6/27 商務部長 Lutnick 致函後，政府鬆綁政策的進一步落實，Fable 5 全面解禁談判同步推進中
+- **中國 Z.Ai 聲稱對標 Mythos（待核實）**：Reuters 報導（[Reuters](https://www.reuters.com/legal/litigation/chinas-360-says-it-has-developed-tools-match-anthropics-mythos-2026-06-24/)，HN score 8）中國 Z.Ai 與 360 聲稱已開發出可與 Mythos 匹敵的網路安全 AI 模型；Z.Ai 為新出現的宣稱方（360 已見於 6/24 條目）；兩家公司均未提供獨立 benchmark 驗證，標「待核實」
 
 ### 2026-06-28
 **TechCrunch / Mashable 後續確認 Mythos 5 部分解禁 + 競品聲稱對標（Sakana Fugu / WSJ）**：

@@ -4,15 +4,15 @@
 僅收錄官方 changelog、release note 或官方公告來源；社群工具見 [[topics/community-tech-tools]]。
 每次 ingest 後由 LLM 維護：新增功能、更新熱度、補充社群回饋。
 
-**最後更新：** 2026-06-27
+**最後更新：** 2026-06-29
 
 ---
 
 ## ⭐ 本週推薦
 
-- **/goal 指令**（熱度 🔥🔥🔥🔥🔥）：設定持久目標讓 Claude Code 多輪保持方向，適合需要長期任務追蹤的開發者
 - **Claude Code Artifacts**（熱度 🔥🔥🔥🔥🔥）：工作階段即時輸出可共享互動網頁，適合需要向非工程師成員展示進度的開發者
-- **/rewind 指令**（熱度 🔥🔥🔥）：從 `/clear` 前節點恢復 context，適合需要長工作階段容錯管理的開發者
+- **Managed Agents**（熱度 🔥🔥🔥🔥🔥）：官方多代理框架（Dreaming 記憶、20 路並行、Outcomes 驗證），適合需要編排複雜 agentic 工作流的開發者
+- **Coordinator 模式 + `/code-review --fix`**（熱度 🔥🔥🔥🔥）：協調多代理並自動修復審查問題，適合追求自動化程式碼品質把關的團隊
 
 ---
 
@@ -49,7 +49,7 @@
 | **Claude Code Artifacts**（工作階段即時輸出可共享互動網頁） | 2026-06-18 | 🔥🔥🔥🔥🔥 | ⚡ 有條件推薦 | 正式發布 |
 | **Tool(param:value) permission 語法 + 巢狀 Skills**（v2.1.178） | 2026-06-15 | 🔥🔥 | ✅ 推薦 | 正式發布 |
 | **enforceAvailableModels 企業管控**（Claude Code v2.1.175） | 2026-06-12 | 🔥🔥 | ✅ 推薦 | 正式發布 |
-| **Claude Fable 5**（Mythos 架構公開版，$10/$50 per M token） | 2026-06-09 | 🔥🔥🔥🔥🔥 | ❌ 暫不可用 | 出口管制停用 |
+| **Claude Fable 5**（Mythos 架構公開版，$10/$50 per M token） | 2026-06-09 | 🔥🔥🔥🔥🔥 | ❌ 暫不可用 | 出口管制停用（6/29 美方批准向特定夥伴恢復 Mythos，回歸在望） |
 | **`--safe-mode` 旗標**（v2.1.169） | 2026-06-08 | 🔥🔥 | ✅ 推薦 | 正式發布 |
 | **Google Colab CLI 整合 Claude Code / Codex** | 2026-06-08 | 🔥🔥 | ✅ 推薦 | 正式發布 |
 | **Claude Opus 4.1 SDK 棄用**（Python SDK v0.106.0） | 2026-06-06 | 🔥 | ✅ 推薦 | 正式發布 |
@@ -295,9 +295,10 @@ https://claude.com/blog/artifacts-in-claude-code
 ---
 
 ### Claude Fable 5（Mythos 架構公開版）
-**發布：** 2026-06-09 | **熱度：** 🔥🔥🔥🔥🔥 | **試用價值：** ❌ 暫不可用 | **狀態：** ⚠️ 出口管制停用
+**發布：** 2026-06-09 | **熱度：** 🔥🔥🔥🔥🔥 | **試用價值：** ❌ 暫不可用 | **狀態：** ⚠️ 出口管制停用（回歸在望）
 
-> **2026-06-13 更新：** 美國政府出口管制指令，Anthropic 於當日 5:21pm ET 對全體用戶停用 Fable 5 與 Mythos 5。其他模型（Opus 4.8、Sonnet 4.6 等）不受影響。復原時程未公告。詳見 [[entities/fable-5]] 與 [[topics/anthropic-government-policy]]。
+> **2026-06-29 更新：** Anthropic 正式獲美國政府許可，可向特定信任合作夥伴恢復 Mythos 存取（[qz.com](https://qz.com/anthropic-mythos-5-clearance-trusted-partners-commerce-062926)）；Axios 報導 Fable 5「可能本週內回歸」。官方尚未公告具體開放日期，待正式確認。詳見 [[entities/fable-5]] 與 [[topics/anthropic-government-policy]]。
+> **2026-06-13 更新：** 美國政府出口管制指令，Anthropic 於當日 5:21pm ET 對全體用戶停用 Fable 5 與 Mythos 5。其他模型（Opus 4.8、Sonnet 4.6 等）不受影響。
 
 **是什麼：** Anthropic 首款向大眾開放的 Mythos 級模型。Fable 5 = Mythos 5 模型權重 + 安全分類器護欄，觸發時靜默 fallback 至 Opus 4.8（< 5% session）。定價 $10/$50 per million token，context 1M，max output 128K。
 

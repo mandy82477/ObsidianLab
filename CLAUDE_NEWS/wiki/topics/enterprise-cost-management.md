@@ -3,11 +3,11 @@
 **狀態：** monitoring
 **領域：** 💼 商業
 **開始日期：** 2026-05-01
-**最後更新：** 2026-06-27
-**最後新聞更新：** 2026-06-27
+**最後更新：** 2026-06-29
+**最後新聞更新：** 2026-06-29
 
-> **最新成本挑戰**（2026-06-27）
-> 企業因 ROI 不明確大規模縮減對 Anthropic 與 OpenAI 的 AI 支出，小型蒸餾模型成主流替代選項（qz.com 2026-06-26）；此趨勢已從「帳單優化」升至「戰略性縮減採購」層級，對 Anthropic ARR 成長動能構成結構性壓力。
+> **最新成本挑戰**（2026-06-29）
+> AI 新創 Lindy CEO（Flo Crivello）公開揭露：將 100% 流量從 Claude 切換至 DeepSeek，每月省下數百萬美元；這是「最省錢 > 最強模型」趨勢中迄今規模最大、最具名的單一案例。CNBC 同步報導 AI 企業整體消費模式從「最強模型」向「效率最高模型」轉移加速（CNBC 2026-06-29）。
 
 ---
 
@@ -87,6 +87,13 @@
 - **情況**：用戶讓 Claude Code 徹夜無人監督運行，產生 $6,000 帳單
 - **意義**：個人層面最具衝擊性的費用失控案例，廣泛流傳後觸發更多費用控管工具湧現（engramx、agent-estimate）；也促使 Karpathy（剛加入 Anthropic）提倡「不讓 agent 讀超過必要內容」成為社群費用控管共識原則
 
+### Lindy — 100% 流量從 Claude 切換至 DeepSeek（2026-06-29 新增）
+- **來源**：CNBC（2026-06-26/29），HN score 3
+- **情況**：AI 新創 Lindy 的 CEO Flo Crivello 公開宣告，將 Lindy 平台 100% 流量從 Claude 切換至 DeepSeek，每月節省數百萬美元；Lindy 是具名的 AI 應用層新創，流量規模足以驅動此量級的費用差異
+- **成本驅動**：Lindy 服務屬高吞吐量 API 呼叫場景（自動化工作流），Claude API 費率相對於 DeepSeek 形成顯著成本差距
+- **意義**：這是「最省錢 > 最強模型」趨勢中迄今最具名、規模最大的單一案例。Lindy 本身是 Anthropic Claude API 的直接付費客戶，此切換代表 Anthropic 在應用層失去具名大型客戶；與 Microsoft 退出案例（成本失控 → 轉向）路徑相似，但驅動力不同（成本比較選擇，非預算耗盡危機）
+- **競品得益方**：DeepSeek（見 [[topics/competitor-landscape]]）
+
 ### iCapital — 金融服務採用
 - **來源**：企業公告（2026-05-01）
 - **情況**：另類資產平台採用 Anthropic 技術為客戶建立 AI 工具
@@ -96,6 +103,7 @@
 
 ## 目前結論
 
+- 💸 **「最省錢 > 最強模型」的邏輯切換加速（2026-06-29）**：Lindy CEO 宣告 100% 流量切至 DeepSeek、每月省下數百萬美元，是此趨勢最具代表性的具名案例。與 Microsoft 退出（成本失控）不同，Lindy 是主動的成本優化選擇，代表「能力夠用」已達門檻後，API 單價成為決策主因。對 Anthropic 而言，API 客戶的價格敏感度比 Claude Code 訂閱用戶高，此類切換直接侵蝕 API 收入（推論）
 - ⚠️ **「使用者滿意度 vs 預算決策」結構性落差（2026-05-19）**：Microsoft 六個月內部測試案例（dev.to 深度揭露）顯示開發者普遍認可 Claude Code 超越自家工具，但財務決策層以成本終止；此模式可能在其他企業重演，代表 Anthropic 需要同時說服工程師（使用者）和 CFO（採購決策者）
 - ⚠️ **Anthropic 企業工具缺口明確**：缺乏細粒度預算管控是目前最大的企業採用障礙，Uber 案例讓此問題進入 CTO 層級討論
 - 📈 **Anthropic 企業採用率仍在成長**：Ramp AI Index（2026-05-15）顯示 Anthropic 企業採用率 34.4% 首次超越 OpenAI 32.3%，Claude Code 是主驅動力
@@ -125,6 +133,9 @@
 - [[news/2026-05-22]]
 
 ## 時序
+
+### 2026-06-29
+- **[具名切換] Lindy CEO：100% 流量從 Claude 切至 DeepSeek，每月省下數百萬美元**：CNBC 報導 AI 新創 Lindy 的 CEO Flo Crivello 公開宣告完成全量切換；此案例是「最省錢 > 最強模型」趨勢中最具名、金額揭露最明確的案例，正式將 AI 消費選擇的框架從「哪個最強」改寫為「哪個最划算」。**對 Anthropic 的意涵**：應用層客戶若大量以此邏輯切換，Anthropic ARR 來源從 API 端（Claude Code 是線性成本，API 客戶才是穩定收入）面臨侵蝕（推論）；Claude Code 訂閱成本固定，此壓力主要在 API 客群（CNBC https://www.cnbc.com/2026/06/26/openai-anthropic-new-ai-spending-reality-as-users-shift-to-efficiency.html）
 
 ### 2026-06-27
 - **[戰略縮減] ROI 不明確驅動企業縮減大廠 AI 支出，小型蒸餾模型成替代方案**：qz.com 報導，企業因 AI 投資 ROI 不明確，主動縮減對 Anthropic 與 OpenAI 等大型 AI 供應商的支出，並以小型蒸餾模型（distilled models）作為替代選項；這是從「帳單優化」（如 Prompt 精簡、快取策略）升級至「戰略縮減採購額度」的質性轉變。**對 Anthropic 的意涵**：ARR 從 $9B 快速成長至 $47B 的動能，若企業端出現戰略性縮減而非技術性優化，成長曲線面臨下行壓力（推論）；小型蒸餾模型的崛起與 DeepSeek V4 Flash（成本降低逾 100 倍）的定價衝擊同向共振（qz.com https://qz.com/enterprise-ai-spending-openai-anthropic-roi-pullback-062626）

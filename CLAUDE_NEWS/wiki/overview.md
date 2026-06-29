@@ -1,12 +1,14 @@
 # Claude / Anthropic 生態系概覽
 
-**最後更新：** 2026-06-27
+**最後更新：** 2026-06-29
 
 ---
 
 ## 當前局勢
 
-2026-06-27 出口管制僵局出現**首次實質突破**：**Mythos 5 部分解禁**——商務部長 Lutnick 致函 Tom Brown，開放 100+ 美國受信任機構使用（兩週政府對峙後的轉折）；同日 Reuters / Axios 報導美方**接近達成 Fable 5 全面解禁協議**（待核實）。談判由聯合創辦人 **Tom Brown 接管**（Dario Amodei 退出），是局勢回穩的關鍵人事。LessWrong 此前預測的 7/9 重新上線時間點看來偏保守。
+2026-06-29 出口管制持續解凍：Anthropic **正式獲美國政府許可，可向特定信任合作夥伴恢復 Mythos 存取**（qz.com），Axios 報導 **Fable 5「可能本週回歸」**——延續 6/27 Mythos 5 部分解禁（Lutnick 致函 Tom Brown 開放 100+ 美國受信任機構）的轉折。同日 **加州州長 Newsom 與 Anthropic 簽署政府使用協議**，政府市場版圖在聯邦（解禁）+ 州（加州採用）雙層同步擴張。談判由聯合創辦人 **Tom Brown 接管**（Dario Amodei 退出），是局勢回穩的關鍵人事。
+
+商業端逆風同步浮現：AI 新創 **Lindy 將 100% 流量從 Claude 切換至 DeepSeek**，每月省下數百萬美元，凸顯 API 應用層對價格的高度敏感；**Alibaba Qwen 關聯運營商 2,880 萬次查詢事件正式進入美國參議院記錄**，將 AI 數據竊取問題推上立法議程。安全面，the-decoder 報導 **Claude Code 未驗證即執行 GitHub repo 隱藏惡意程式**，攻擊者可取得完整系統控制權，信任邊界缺失定性升級。
 
 人才面，**Google DeepMind 一週連失 4 名頂尖研究員至 Anthropic**（諾貝爾獎得主 John Jumper 領銜，加 Adler/Pritzel），市值蒸發約 $2,700 億（推論），且流失方向（AI coding）正是 Google 落後處——詳見 [[topics/ai-talent-flow]]。商業面則出現逆風：Anthropic 指控阿里巴巴史上最大 AI 蒸餾攻擊（2,880–2,900 萬次查詢、2.5 萬假帳號），同時企業端 ROI 反撲、tokenmaxxing 轉向效率優先。產品面 Claude Tag（Slack-native 協作）與 Claude Code v2.1.195 持續迭代。
 
@@ -16,8 +18,8 @@
 
 | 模型 | 狀態 | 備注 |
 |------|------|------|
-| **Claude Fable 5** | 🟡 接近解禁 | 6/13 起出口管制暫停；6/27 美方接近全面解禁協議（待核實，Reuters/Axios）；$10/$50 per M token |
-| **Claude Mythos 5** | 🟡 部分解禁 | 6/27 Lutnick 致函 Tom Brown，開放 100+ 美國受信任機構使用（兩週對峙後突破）|
+| **Claude Fable 5** | 🟡 回歸在望 | 6/13 起出口管制暫停；6/29 Axios 報導「可能本週回歸」；$10/$50 per M token |
+| **Claude Mythos 5** | 🟢 解禁擴大 | 6/29 美方批准向特定信任合作夥伴恢復存取（延續 6/27 開放 100+ 美國受信任機構）|
 | Claude Opus 4.8 | ✅ Active | SWE-bench Pro 69.2%、1M context；6/24 高錯誤率事件已平息 |
 | Claude Sonnet 4.6 | ✅ Active | Fable 5 下線後社群主力；CP 值最佳 |
 | Claude Haiku 4.5 | ✅ Active | 企業混合架構低成本 worker |

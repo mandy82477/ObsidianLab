@@ -3,11 +3,11 @@
 **狀態：** ongoing
 **領域：** 🏛️ 政策/安全
 **開始日期：** 2026-04-27
-**最後更新：** 2026-06-28
-**最後新聞更新：** 2026-06-28
+**最後更新：** 2026-06-29
+**最後新聞更新：** 2026-06-29
 
-> **最新安全事件**（2026-06-28）
-> Mozilla 0din 安全團隊展示如何透過「乾淨」的 GitHub Repo 誘騙 Claude Code 安裝惡意軟體，利用隱性提示注入指令武器化 Claude Code 的「樂於助人」天性（Tom's Hardware，2026-06-28）。
+> **最新安全事件**（2026-06-29）
+> The Decoder 報導：Claude Code 會直接執行 GitHub repo 中的隱藏惡意程式，未做任何驗證即賦予攻擊者完整系統控制權；此為對 Mozilla 0din 揭露（2026-06-28）的後續主流媒體報導，確認攻擊者可取得 full control（The Decoder，2026-06-29）。
 
 ---
 
@@ -31,7 +31,7 @@
 
 ## 目前結論
 
-- 🔴 **乾淨 GitHub Repo 成提示注入新向量（2026-06-28）**：Mozilla 0din 展示攻擊者可利用外觀無害的 repo 嵌入隱性指令，Claude Code 在正常工作流程中自動執行惡意軟體；此向量無需入侵現有 repo、無需使用者主動互動，任何「開啟外部 repo」的工作流均為潛在暴露點；Anthropic 尚無公開回應
+- 🔴 **乾淨 GitHub Repo 執行隱藏惡意程式，賦予攻擊者完整系統控制（2026-06-29 升級）**：Mozilla 0din 揭露（2026-06-28）後，The Decoder（2026-06-29）進一步確認 Claude Code 直接執行 GitHub repo 中隱藏惡意程式時，攻擊者可取得完整系統控制權（full system control）；未做任何驗證即執行，屬設計層面的信任邊界缺失；此向量無需入侵現有 repo、無需使用者主動互動，任何「開啟外部 repo」的工作流均為潛在暴露點；Anthropic 截至 2026-06-29 尚無公開回應
 - 🔴 **大規模組織性 AI 蒸餾攻擊成熟化（2026-06-26）**：Anthropic 指控阿里巴巴透過 25,000 個假帳號發動 2,880 萬次模型交換，顯示帳號農場作為蒸餾攻擊基礎設施已達工業規模；現有 ToS 偵測機制在如此分散的帳號規模下仍被大規模繞過（待阿里巴巴確認，現為單一聲稱）
 - 🔴 **AI Agent 進攻性濫用已達在野攻擊成熟度（2026-06-16）**：OALABS 蜜罐分析首次以 1,000+ session 日誌規模確認攻擊者使用 Claude Code 入侵 14 家企業；「低技術提示 + AI 填補細節 + guardrails 繞過」組合成立，顯示現有護欄設計在主動對抗場景下存在系統性缺口；Anthropic 截至 2026-06-20 尚無公開回應
 - ⚠️ **Claude Code .env SQLite 明文存儲（2026-05-19）**：所有 .env 讀取過的 secret 永久以明文存於本機 SQLite，在 .gitignore 範圍外且標準 scanner 無法偵測；配合攝影機存取要求（同日），Claude Code 的隱私與安全邊界正受到多面向質疑
@@ -60,6 +60,14 @@
 ---
 
 ## 技術彙整
+
+### Claude Code 無驗證執行 GitHub 隱藏惡意程式（2026-06-29 升級）
+
+- **揭露來源**：The Decoder（2026-06-29；https://the-decoder.com/claude-code-runs-a-github-repos-hidden-malware-without-verification-giving-attackers-full-control/）；為 Mozilla 0din（2026-06-28，下方條目）的後續主流媒體報導
+- **核心定性升級**：The Decoder 的報導框架從「提示注入攻擊」升格為「無驗證直接執行」的設計層缺失——攻擊者取得的是完整系統控制權（full system control），而非單次惡意指令執行；此定性意味著修補路徑需在 Claude Code 執行前引入驗證機制，而非只防範特定提示注入技術
+- **攻擊效果**：攻擊者利用 Claude Code 的執行環境取得宿主系統完整控制，包含任意指令執行、資料存取、橫向移動等能力
+- **可信度評估**：The Decoder 為第三方科技媒體確認；Mozilla 0din 為安全研究來源；Anthropic 截至 2026-06-29 無公開回應，修補狀態未知
+- **與 Mozilla 0din 揭露的關係**：同一攻擊向量的兩個角度——Mozilla 0din 描述攻擊技術機制，The Decoder 確認最終攻擊效果（full control）；合併閱讀可形成完整威脅模型
 
 ### Mozilla 0din 揭露：乾淨 GitHub Repo 作為提示注入向量（2026-06-28 新增）
 
@@ -384,6 +392,10 @@
 ## 時序
 
 > 更早期時序見 [[topics/ai-agent-safety-archive]]
+
+### 2026-06-29
+- **[升級] Claude Code 執行 GitHub 隱藏惡意程式：攻擊者取得完整系統控制**：The Decoder 報導確認 Claude Code 會在未驗證的情況下直接執行 GitHub repo 中隱藏的惡意程式，攻擊者由此取得完整系統控制權（full system control）；為 Mozilla 0din 揭露（2026-06-28）後的主流媒體跟進報導，將此漏洞定性為「無驗證直接執行」的設計層問題，而非僅「提示注入」的攻擊技巧問題；Anthropic 仍無公開回應（The Decoder，2026-06-29；https://the-decoder.com/claude-code-runs-a-github-repos-hidden-malware-without-verification-giving-attackers-full-control/）
+- **[社群實踐] MCP Server 5 分鐘安全審查清單**：開發者分享停止盲目安裝 MCP server 後的 5 分鐘審查清單，涵蓋 repo 來源驗證、依賴項掃描、執行權限評估等環節；呼籲開發者重視 MCP 安裝的供應鏈安全風險；與盲目 clone GitHub repo 的風險屬同一攻擊面（dev.to，2026-06-29；https://dev.to/enjoy_kumawat/i-stopped-installing-mcp-servers-blind-heres-my-5-minute-vetting-checklist-30ph）
 
 ### 2026-06-28
 - **[提示注入] Mozilla 0din 團隊揭露：乾淨 GitHub Repo 誘騙 Claude Code 安裝惡意軟體**：Mozilla 0din 安全團隊展示一種新型提示注入攻擊——攻擊者建立外觀「乾淨」的 GitHub Repo，在其中嵌入隱性提示注入指令，誘騙 Claude Code 在正常任務執行過程中自動安裝惡意軟體；攻擊手法利用 Claude Code 的「樂於助人」天性，屬於供應鏈層面的提示注入新型態；攻擊向量與 Agentjacking（工具錯誤管道注入）性質不同，此為 repo 本體即攻擊媒介（Tom's Hardware，2026-06-28；https://www.tomshardware.com/tech-industry/cyber-security/ai-coding-agents-can-be-tricked-into-installing-malware-via-clean-github-repositories-mozillas-0din-team-shows-how-claude-code-can-be-exploited-by-its-own-helpfulness）

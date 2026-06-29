@@ -2090,3 +2090,49 @@ Append-only 紀錄。每次 ingest、query 或 lint 都在此追加一條。
 
 **方法論定論：** patterns 不該用 HN score 策展（那是 tools/discussions 的邏輯）；正確軸是「機制是否自洽 + 有無可驗證證據」，標註用「未驗證」把判斷權交還讀者，而非替技術判生死。
 - 呈現品質審查：✅ community-tech-patterns.md（C 層 3 條標註，A/B 層維持原狀）
+
+---
+
+## 2026-06-29 每日 ingest
+
+**日報：** [[news/2026-06-29]]（67 條 / 6 來源）
+
+**分類派工：** 模型、功能、商業、安全政策、社群、人物 六記者並行。
+
+### 記者回報摘要
+
+**模型記者**（fable-5、mythos）：
+- Fable 5：美方批准向特定信任夥伴恢復 Mythos 存取，Axios 報導「可能本週回歸」；狀態註記更新；中國 Z.Ai/360 宣稱比肩 Mythos、Grok 4.5 競品、模型成本效益實測併入相關記錄
+- Mythos：出口管制鬆動，特定信任合作夥伴獲准恢復存取
+
+**功能記者**（claude-code）：
+- Claude Tag、Gmail MCP、Claude Compliance API、/goal、session/context 管理均為既有功能或社群討論；無新 feature-radar 條目；Gmail MCP 黑暗設計模式爭議記入 claude-code.md
+
+**商業記者**（anthropic-business、enterprise-cost-management、ai-talent-flow、competitor-landscape）：
+- Newsom × Anthropic 加州政府協議（政府客戶新維度）
+- Lindy 100% 流量切換 DeepSeek，每月省數百萬美元（API 客戶流失具名化）
+- Alibaba 2,880 萬次查詢進入參議院記錄
+- 4 名 Google 研究員轉投 Anthropic + Gemini 3.5 延期（推論，dev.to）
+- 奧地利遊說 EU、Micron 合作評估
+
+**安全政策記者**（ai-agent-safety、anthropic-government-policy）：
+- Claude Code 未驗證執行 GitHub 隱藏惡意程式，攻擊者取得完整系統控制（信任邊界缺失定性升級）
+- Mythos 出口管制鬆動、Alibaba 參議院揭露、奧地利遊說 EU、親 AI 陣營分裂、反托拉斯視角
+- MCP server 5 分鐘安全審查清單
+
+**社群記者**（community-tech-discussions 等）：
+- MRI 第二意見分析（HN 476，社群熱議）、多 agent 協調、模型 token 成本效益討論
+- 社群工具：AgentWatch、Reference MCP、Brain.md、Caliper、agent-swarm、Argus、Shikhu、claude-annotate
+
+**人物記者**：
+- 4 名 Google 研究員轉投 Anthropic 但未具名（門檻未達），不新建人物頁面
+
+### 主編彙整
+
+- **feature-radar.md**：Fable 5 條目與區塊更新（6/29 恢復進展）；本週推薦改版（Artifacts / Managed Agents / Coordinator 模式，輪替超期的 /goal）；最後更新 6/29
+- **index.md**：近期異動覆寫；mythos/fable-5 狀態註記更新；最後更新 6/29
+- **overview.md**：當前局勢改寫（出口管制解凍 + Newsom 協議 + Lindy 切換 + Alibaba 參議院 + Claude Code 安全事件）；模型表 Fable 5/Mythos 狀態更新；最後更新 6/29
+- **log.md**：本條目
+
+### 呈現品質審查
+所有更新頁面記者自審 ✅ 通過。

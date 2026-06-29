@@ -4,8 +4,8 @@
 **狀態：** active
 **領域：** 🛠️ 工具/功能
 **首次出現：** 2025（正式推出）
-**最後更新：** 2026-06-27
-**最後新聞更新：** 2026-06-27
+**最後更新：** 2026-06-29
+**最後新聞更新：** 2026-06-29
 
 > **最新版本動態**（2026-06-27）
 > v2.1.195 新增 `CLAUDE_CODE_DISABLE_MOUSE_CLICKS` 環境變數，可在全螢幕模式下停用滑鼠點擊/拖拉/懸停（保留滾輪）；修復 hook matcher 無法匹配帶連字號識別符（如 `c-style-hook`）的 bug。
@@ -129,6 +129,7 @@
 
 ## 已知問題
 
+- 🟡 **Gmail MCP connector 黑暗設計模式批評（2026-06-28 HN 討論）**：Anthropic 推出的 Claude Gmail MCP 整合（官方 Google connector，Pro/Max/Team/Enterprise beta 可用）被社群批評授權頁面採用「黑暗設計模式」，介面設計被認為誤導用戶授予比預期更廣泛的 Google 帳號存取權限；目前 HN score 僅 3，為早期批評訊號，Anthropic 尚未回應。參見 [官方文件](https://claude.com/docs/connectors/google/gmail)
 - 🔴 **Extended Thinking「思考內容」實為摘要，非真實推理（2026-06-22 社群揭露）**：工程師 Patrick McCanna 分析 Claude Code session log 後發現，`thinking blocks` 呈現的文字為摘要，而非模型的真實推理過程。真實推理被 Anthropic 以加密方式存於 600 字元 signature 中，API 僅回傳摘要；完整思考內容需要企業級協議才可取用，Anthropic 持有解密金鑰。需依賴 thinking blocks 進行審計追蹤的工程師應特別注意此限制（HN score 98，見 [原文](https://patrickmccanna.net/the-text-in-claude-codes-extended-thinking-output-is-not-authentic/)）
 - 🔴 **Claude API / Claude Code 529 過載（2026-06-21 至 06-22 多波中斷）**：Anthropic 確認 Claude API 與 Claude Code 的 Opus 及 Sonnet 模型發生部分服務中斷，Max plan 用戶反映第一條 prompt 即觸發 529 Overloaded 錯誤，影響持續約 90 分鐘後於 UTC 19:34 恢復服務；06-22 又發生新一波激增，確認受影響模型：Opus 4.8、Opus 4.7、Opus 4.6、Sonnet 4.6；CyberSecurityNews 等多家媒體追蹤報導（見 [HN 討論](https://news.ycombinator.com/item?id=48624168)）
 - 🔴 **記憶過多導致品質退步（2026-06-22 回報）**：用戶反映兩個進行中專案的 Claude Code 品質近期大幅退步，疑似 context 中累積過多歷史記憶導致干擾；見 [[topics/code-quality-decline]]

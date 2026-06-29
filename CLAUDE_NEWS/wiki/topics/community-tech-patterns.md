@@ -3,11 +3,11 @@
 **狀態：** monitoring
 **領域：** 🌐 社群
 **開始日期：** 2026-04-25
-**最後更新：** 2026-06-28
-**最後新聞更新：** 2026-06-28
+**最後更新：** 2026-06-29
+**最後新聞更新：** 2026-06-29
 
-> **最新工作流模式**（2026-06-28）
-> 四個新模式圍繞「agent 生命週期感知」展開：Adrafinil（HN 113）將 hooks 升格為環境感知條件觸發器——偵測 agent 活躍狀態再決定系統副作用；Stop hook 音效通知是同一主題的最小化版本（agent 結束通知）；ccgram v4.3.0 提供 Telegram 遠端控制；OKF 格式標準化跨 session 知識傳遞供團隊共用。
+> **最新工作流模式**（2026-06-29）
+> 三個新模式：beads 高層工作規劃 + Claude Code 執行的兩層架構（Reddit）；Caliper pass@k 可靠性測試——解決「跑一次成功 ≠ 可靠」問題；AgentWatch 在請求層攔截並強制預算上限，防止 runaway agent 失控燒費用。
 
 ---
 
@@ -38,12 +38,50 @@
 | **安全架構** | CLAUDE.md for K8s、語意層漂移 CI 測試、Trent 內嵌評估 | ⏳ 新興 | AI 加速開發下的系統性安全防線；CI 攔截語義退化 |
 | **跨環境 Agent 記憶** | Core Memory Packet、Agent 持續運作架構 | ⏳ 新興 | 跨編輯器 / 跨機器 / 跨模型的供應商中立記憶協定 |
 | **架構邊界合約** | ANMA YAML contracts、Hooks 強制驗證、ISO 29148 規格驅動 | ⏳ 新興 | 用合約與工業標準定義 AI 不可越過的架構規則；使便宜模型也能守規 |
+| **可靠性測試** | Caliper pass@k 指標測試 | ⏳ 新興 | 以多次執行的通過率衡量 skill 可靠性，而非單次成功；用 YAML 定義成功條件，本地輕量執行 |
+| **Agent 預算控制** | AgentWatch runtime budget enforcement | ⏳ 新興 | 在 LLM 請求到達模型前攔截，強制執行費用或 token 上限；僅需修改 base URL，無 SDK 依賴 |
 
 > 成熟度：✅ 成熟（社群廣泛實踐）/ ⚡ 活躍（持續演進中）/ ⏳ 新興（近期出現，尚在探索）
 
 ---
 
 ## 技術彙整
+
+### AgentWatch：請求攔截層的 Runtime Budget Enforcement（2026-06-29）
+
+- **核心模式：** 在 LLM 請求到達模型前攔截並強制執行預算限制（token 數或費用上限）；超過預算則拒絕請求或回傳錯誤，防止 runaway agent 持續消耗資源（[agent-watch.dev](https://agent-watch.dev/)；HN Show HN score 7）
+- **實作方向：** 修改 base URL 指向 AgentWatch proxy；支援 OpenAI、Anthropic、Gemini API；無 SDK 依賴，不需修改應用程式碼；可設定每個 session 或全局的費用/token 上限
+- **解決的問題：** Agent 失控（runaway）是多 agent 架構的已知風險——循環呼叫、錯誤重試、無終止條件均可導致費用暴增；此方案在請求層設置硬邊界，比應用層 guard 更可靠
+- **與既有模式的差異：** 既有 budget 控制策略（Token 成本優化、模型路由）著重「用更少 token 完成任務」；AgentWatch 著重「超過上限直接截斷」——是防禦性邊界，不是優化策略
+- **注意事項：** 截斷中途任務可能導致 partial state；需配合 checkpoint 機制設計才能安全使用（推論）；HN score 7，有公開網站，尚無社群大規模驗證
+- **成熟度：** ⏳ 新興
+- **訊號強度：** HN Show HN score 7，有公開網站
+
+### Caliper：pass@k 指標的 Skill 可靠性測試方法（2026-06-29）
+
+- **核心模式：** 以 pass@k（執行 k 次，至少成功 1 次的比率）衡量 Claude Code / Codex skills 的可靠性，而非單次執行成功率；用 YAML 定義任務的成功條件，本地輕量執行（[GitHub](https://github.com/edonadei/caliper)；HN Show HN score 3）
+- **實作方向：** 以 YAML 格式描述 skill 的輸入、預期輸出、成功判定條件；執行多次取通過率；pass@k 越高代表 skill 的可靠性越高
+- **解決的問題：** 「跑一次成功 ≠ 可靠」——非確定性 LLM 輸出在生產環境需要統計意義上的可靠性評估，而非單次 demo
+- **與既有模式的差異：** 既有測試模式（Judge Gate、語意漂移 CI）著重「正確性驗證」；pass@k 著重「穩定性分布」——後者更適合用來選擇 skill 設計方案
+- **成熟度：** ⏳ 新興
+- **訊號強度：** HN Show HN score 3，有公開 repo，概念清晰可直接採用
+
+### beads + Claude Code 兩層工作規劃架構（2026-06-29）
+
+- **核心模式：** 以 beads（或類似高層規劃工具）進行任務分解和工作規劃，再搭配 Claude Code 執行具體開發工作；規劃層（人類或工具）處理「做什麼」，執行層（Claude Code）處理「怎麼做」（[Reddit r/ClaudeAI](https://www.reddit.com/r/ClaudeAI/comments/1uiri45/nice_workflow_in_claude_code/)）
+- **解決的問題：** 直接讓 Claude Code 處理高層規劃，容易在方向性決策上偏移或遺漏邊界案例；分層後規劃層保持人類主導，執行層充分利用 Claude Code 的自動化能力
+- **設計分層：** 與「任務開始前先 Interview」模式（2026-06-25）互補：beads 在外部規劃，Interview 模式在 session 內部澄清；beads 的外部規劃輸出可作為 Claude Code session 的高品質初始 context 注入
+- **注意事項：** beads 工具本身的採用訊號有限；核心模式（規劃/執行分層）概念已在社群多處出現（/specs 目錄、Agentic 目錄結構等），beads 是此模式的一種實作選擇
+- **成熟度：** ⏳ 新興（模式概念有效；具體工具組合待更多驗證）
+- **來源：** [Reddit r/ClaudeAI 討論](https://www.reddit.com/r/ClaudeAI/comments/1uiri45/nice_workflow_in_claude_code/)
+
+### Agent Context 上限主動管理：56KB 問題與即時截斷策略（2026-06-29）
+
+- **核心模式：** 主動為 agent 設定 context 讀取上限，避免「為回答單一問題讀取 56KB 文件」的低效行為；核心做法是在 task 設計時明確約束 agent 可讀取的最大 context 量（[dev.to](https://dev.to/enjoy_kumawat/my-ai-agent-read-56-kb-to-answer-one-question-i-made-it-stop-34g5)）
+- **實作方向：** 在工具設計或 hook 層設定讀取上限（行數、字元數）；搭配索引 / 摘要層讓 agent 先查索引再決定是否全讀；明確在 CLAUDE.md 或 skill 描述中指定「不需要讀取整個檔案」的場景
+- **解決的問題：** Agent 為確保「完整性」傾向讀取整個文件，但大量場景只需讀取相關片段；過度讀取既消耗 token 又降低 context 訊噪比
+- **與既有模式的差異：** Just-in-Time @-file（2026-06-26）著重「何時取回」；本模式著重「取回多少」——兩者結合形成完整的 context 精準注入策略
+- **成熟度：** ⏳ 新興
 
 ### Hooks 環境感知條件觸發：依 Agent 活躍狀態驅動系統副作用（2026-06-28）
 

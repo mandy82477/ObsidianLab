@@ -3,11 +3,11 @@
 **狀態：** ongoing
 **領域：** 💼 商業
 **開始日期：** 2026-05-28
-**最後更新：** 2026-06-28
-**最後新聞更新：** 2026-06-28
+**最後更新：** 2026-06-29
+**最後新聞更新：** 2026-06-29
 
-> **最新動態**（2026-06-28）
-> Fortune 分析 Alibaba 2,880 萬次蒸餾攻擊對 Anthropic IPO 估值的衝擊，核心疑問：前沿 AI 護城河是否可防禦？Motley Fool 同步列出 Anthropic 可能成為史上最高估值軟體公司的投資曝險。商務部長 Howard Lutnick 批准擴大 Mythos 5 存取至 100+ 美國機構（TechCrunch），企業收入管道再開；奧地利趁美國出口管制缺口向歐盟遊說爭取 Anthropic 落腳歐洲（Bloomberg），HN score 40。
+> **最新動態**（2026-06-29）
+> 加州州長 Newsom 與 Anthropic 正式簽署協議，Claude 進入州政府應用，為迄今最具代表性的美國地方政府採用案例（Politico 2026-06-29）。Anthropic 向美國參議院揭露 Alibaba 相關運營商 4/22–6/5 間發出 2,880 萬次未授權查詢，被定性為大規模數據竊取（dev.to 2026-06-29）。資安公司 Tenable 宣布與 Claude Compliance API 策略整合，企業合規應用版圖擴大。
 
 ---
 
@@ -85,6 +85,8 @@ Simon Willison（知名開發者博主）發表文章，認為 Anthropic 與 Ope
 
 | 合作方 | 類型 | 日期 | 意義 |
 |--------|------|------|------|
+| 加州州政府（Newsom 協議）| 政府客戶 | 2026-06-29 | 加州州長 Newsom 與 Anthropic 正式簽署協議，Claude 進入加州州政府應用；為迄今最明確的美國地方政府採用案例，政府客戶版圖從聯邦延伸至州層級（Politico https://www.politico.com/news/2026/06/29/exclusive-newsom-anthropic-ink-deal-to-expand-government-use-00979584）|
+| Tenable | SDK 夥伴 | 2026-06-29 | 資安公司 Tenable 與 Claude Compliance API 策略整合，為 Claude 進入企業合規與資安市場的具名案例（TahawulTech https://www.tahawultech.com/industry/technology/tenable-announces-strategic-integration-with-the-claude-compliance-api/）|
 | 美國政府（Mythos 5 解禁擴大）| 政府授權 | 2026-06-28 | 商務長 Howard Lutnick 批准擴大至 100+ 美國機構（企業 + 政府），含非美籍員工；出口管制後最大鬆綁，核心企業收入管道恢復（TechCrunch）|
 | 奧地利 / 歐盟遊說 | 地緣擴張洽談 | 2026-06-28 | 美國出口管制切斷歐洲機構存取後，奧地利向歐盟遊說爭取 Anthropic 設立歐洲研究中心；HN 評論：Dario 為美國愛國者可能性不高（Bloomberg HN 40、Reuters）|
 | 美國政府（Mythos 5 解禁）| 政府授權 | 2026-06-27 | 批准向 100+ 美國機構有限釋出 Mythos 5，企業與聯邦機構商業化管道開放（Semafor、CNBC、WSJ、Reuters）|
@@ -123,6 +125,12 @@ Simon Willison（知名開發者博主）發表文章，認為 Anthropic 與 Ope
 - [[news/2026-05-13]]（The Information：定價強勢期）
 
 ## 時序
+
+### 2026-06-29
+- **[政府客戶里程碑] 加州州長 Newsom 與 Anthropic 簽署協議，Claude 正式進入州政府應用**：Politico 獨家報導（2026-06-29），加州州長 Gavin Newsom 與 Anthropic 簽署協議，擴大政府使用 AI 範圍，Claude 正式進入加州州政府應用。這是 Anthropic 繼聯邦機構（Mythos 5 解禁）後，在美國地方政府層級最具代表性的採用案例。**對商業的意涵**：加州為美國最大州政府，此協議作為標竿案例，可加速其他州政府採購 Claude；政府客戶版圖從聯邦軍事/情報延伸至地方行政的新維度（推論）（Politico https://www.politico.com/news/2026/06/29/exclusive-newsom-anthropic-ink-deal-to-expand-government-use-00979584）
+- **[法律擴大] Anthropic 向美國參議院揭露 Alibaba 相關運營商 4/22–6/5 間 2,880 萬次未授權查詢**：dev.to 報導，Anthropic 正式向美國參議院陳述，與阿里巴巴 Qwen 實驗室有關的運營商在 4/22–6/5（約 44 天）期間對 Claude 發出 2,880 萬次查詢，被認定為未授權大規模數據蒐集。此揭露補充 6/25 起訴細節，將法律行動從民事起訴擴展至參議院政治層面，直接推動立法對 AI 數據竊取行為的監管（dev.to https://dev.to/peremptory/anthropic-told-the-senate-that-alibaba-queried-claude-288-million-times-5epd）
+- **[合規市場] Tenable 宣布與 Claude Compliance API 策略整合**：資安公司 Tenable 宣布與 Claude Compliance API 策略整合，為 Anthropic 企業合規應用的具名案例；Tenable 客群為企業資安合規決策者，是 Claude 進入傳統企業資安採購鏈的訊號（TahawulTech https://www.tahawultech.com/industry/technology/tenable-announces-strategic-integration-with-the-claude-compliance-api/）
+- **[AI 記憶體市場] Yahoo Finance 分析 Micron × Anthropic 合作對 AI 記憶體競爭格局的意涵**：Yahoo Finance 分析指出 Micron 透過與 Anthropic 的多年協議，試圖鞏固在 AI 記憶體市場的競爭地位，對照競品 Samsung / SK Hynix（Series H 同步投資方）形成三方卡位格局；Micron 投資 + 供應協議的雙重綁定強化其作為 Anthropic 首選硬體合作夥伴的地位（Yahoo Finance https://finance.yahoo.com/technology/ai/articles/micron-mu-deal-anthropic-cement-102250038.html）
 
 ### 2026-06-28
 - **[IPO 估值壓力] Fortune：Alibaba 蒸餾攻擊引發「前沿 AI 護城河是否可防禦」疑問，直衝 IPO 估值**：Fortune 分析文章指出 Alibaba 2,880 萬次能力竊取事件的核心問題——若 Claude 能力可被大規模蒸餾複製，Anthropic 超高估值的競爭壁壘支撐力有多強？Motley Fool 同步以 Anthropic 可能成為史上最高估值軟體公司為框架，列出相關曝險股票。**對 IPO 的意涵**：護城河疑問若在機構投資人中擴散，S-1 路演面臨更高舉證壓力（Fortune https://fortune.com/2026/06/28/anthropic-alibaba-fight-raises-ipo-question-frontier-ai-moat-defensible/；Motley Fool https://www.fool.com/investing/2026/06/28/anthropic-become-valuable-software-stock-ai/）
