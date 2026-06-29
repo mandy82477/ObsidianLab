@@ -81,7 +81,7 @@ Claude Code 創始人的設計哲學已形成獨立討論主線：
 - **「Loops 是未來」**（2026-05-05）：迴圈執行 > 單次問答——這是 Claude Code 工具設計的核心場景，Hooks/Skills/session 持久化均以此為前提。
 - **「coding is solved」**（2026-05-08）：「我從未手寫一行程式」引發社群兩極化辯論，術語從 vibe coding 演化為 spec-driven development。
 - **Loop Engineering 完整文章**（2026-06-20）：PR review、測試、push 如何抽象為 loop 的完整拆解，代表社群對此哲學的持續深入消化。
-- **立場收縮：企業環境 100% AI 代碼引發問題**（2026-06-24）：Boris Cherny 公開承認 AI 全量代碼在企業場景的問題，首度為「coding is solved」論述設下邊界；社群關注此信號對 vibe coding 推廣方向的影響。
+- **立場收縮**（2026-06-24）：Boris Cherny 公開承認 AI 全量代碼在企業場景引發問題，首度為「coding is solved」論述設下邊界（Times of India 單一報導，無社群延燒；完整記錄見 [[entities/boris-cherny]]）。
 
 ### MCP 成本結構
 

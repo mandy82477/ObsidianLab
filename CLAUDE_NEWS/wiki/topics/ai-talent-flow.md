@@ -7,7 +7,7 @@
 **最後新聞更新：** 2026-06-29
 
 > **最新動態**（2026-06-29）
-> 兩週內 Google DeepMind 連失 4–5 位頂尖研究員至 Anthropic（含諾貝爾化學獎得主 John Jumper），市值蒸發約 $2,700 億（推論）；最值得注意的是流失方向（AI coding）正是 Google 自己落後的領域。
+> 兩週內 Google DeepMind 連失 4–5 位頂尖研究員至 Anthropic（含諾貝爾化學獎得主 John Jumper），市值蒸發約 $2,700 億（推論）；最值得注意的是流失方向（AI coding）正是 Google 自己落後的領域（推論）。
 
 ## 摘要
 

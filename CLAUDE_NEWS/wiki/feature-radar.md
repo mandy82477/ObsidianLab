@@ -41,7 +41,7 @@
 | **`autoMode.classifyAllShell` 設定**（Claude Code v2.1.193，所有 Bash/PowerShell 路由 auto-mode 分類器） | 2026-06-25 | 🔥🔥 | ⚡ 有條件推薦 | 正式發布 |
 | **`/rewind` 指令**（Claude Code，從 `/clear` 前節點恢復 context） | 2026-06-25 | 🔥🔥🔥 | ⚡ 有條件推薦 | 正式發布 |
 | **SDK `client.system.message`**（TypeScript v0.106.0 / Python v0.112.0） | 2026-06-25 | 🔥🔥 | ⚡ 有條件推薦 | 正式發布 |
-| **Claude Tag**（Slack-native AI 協作工具，65% Anthropic 程式碼由其生成） | 2026-06-24 | 🔥🔥🔥 | ⚡ 有條件推薦 | 正式發布 |
+| **Claude Tag**（Slack-native AI 協作工具，65% Anthropic 程式碼由其生成） | 2026-06-24 | 🔥🔥 | ⚡ 有條件推薦 | 正式發布 |
 | **sandbox.credentials + 組織模型限制**（Claude Code v2.1.187） | 2026-06-24 | 🔥🔥🔥 | ⚡ 有條件推薦 | 正式發布 |
 | **MCP CLI 認證指令**（`claude mcp login/logout`，v2.1.186） | 2026-06-22 | 🔥🔥 | ⚡ 有條件推薦 | 正式發布 |
 | **MCP Enterprise Authorization**（Okta / VS Code 零設定 SSO） | 2026-06-19 | 🔥🔥 | ⚡ 有條件推薦 | 正式發布 |

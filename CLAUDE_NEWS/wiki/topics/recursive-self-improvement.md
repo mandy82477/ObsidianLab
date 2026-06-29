@@ -3,7 +3,7 @@
 **狀態：** ongoing
 **領域：** 🏛️ 政策/安全
 **開始日期：** 2026-06-04
-**最後更新：** 2026-06-23
+**最後更新：** 2026-06-29
 **最後新聞更新：** 2026-06-22
 
 > **最新監管進展**（2026-06-22）
@@ -13,7 +13,7 @@
 
 ## 摘要
 
-2026-06-04，Anthropic Institute 發布《When AI Builds Itself: Our progress toward recursive self-improvement》報告（HN 477），首次系統性披露 AI 加速自身開發的進展：Anthropic 工程師平均每人可交付的程式碼量已提升 8 倍，Claude 現在負責 Anthropic 超過 **80-90% 的生產程式碼**。
+2026-06-04，Anthropic Institute 發布《When AI Builds Itself: Our progress toward recursive self-improvement》報告（HN 477），首次系統性披露 AI 加速自身開發的進展：Anthropic 工程師平均每人可交付的程式碼量已提升 8 倍，Claude 現在負責 Anthropic **≥80% 的生產程式碼**（官方確認下限，部分報導稱 80–90%）。
 
 報告同時呼籲業界在遞歸自我改進成真之前建立全球協調的暫停機制（「煞車踏板」），引發 WSJ、NYT、BBC、Bloomberg、CNN、Reuters 等全球主流媒體同步報導。Jack Clark（Anthropic 政策主管）稱需要「brake pedal」。
 

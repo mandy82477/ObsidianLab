@@ -2161,3 +2161,26 @@ Append-only 紀錄。每次 ingest、query 或 lint 都在此追加一條。
 **動作：** 砍掉整個「實用工具（社群開發）」區塊，換成一行指向 [[topics/community-tech-tools]] 的指標。claude-code.md 回歸「產品本體權威頁」純粹定位（版本、狀態、核心功能、已知問題、agentic 能力、開發者須知）。
 
 **結果：** 439 → 317 行。屬結構性去冗餘，非新聞性修改，僅更新「最後更新」（本已為 2026-06-29），不動「最後新聞更新」。
+
+## 2026-06-29 品質修正 | 六記者 dry-run 審查後修補（A+B+部分C）
+
+**背景：** 派 6 個 wiki 記者對全部 entities/topics 做 dry-run 品質審查（檢查本週 review 出的 6 類問題：頭條缺失、熱度虛抬、單一來源偽裝、低信號混入、跨頁冗餘、過長混雜）。記者只讀不改、leaf agent 無殭屍風險。以下為據回報執行的高信心修正：
+
+**A 類（本輪自身瑕疵）：**
+- discussions L84 Boris Cherny 立場轉變殘留（漏清）→ 改為誠實標註版「Times of India 單一報導，無社群延燒」+ wikilink boris-cherny
+- ai-talent-flow 頭條「正是 Google 落後的領域」漏標 →補（推論）
+
+**B 類（快速修正）：**
+- code-quality-decline 補「最後新聞更新：2026-06-26」欄
+- claude-code v2.1.195 日期統一（頭條 06-27 → 06-26，與內文/版本表一致）；最後新聞更新 06-29 → 06-26（內文最新內容為 06-26，無 06-29 新聞）
+- dario-amodei FT 字詞密度事件日期統一（歷史記錄 06-23 → 06-22，與摘要/表格一致）
+- boris-cherny「公開言論」時序錯亂修正（Loop Engineering 06-20 移至 06-22 與 05-27 之間，回復嚴格倒序）
+- recursive-self-improvement 摘要數字統一（「80-90%」→「≥80%（官方確認下限，部分報導稱 80–90%）」）
+
+**C 類（熱度，部分執行）：**
+- feature-radar Claude Tag 🔥🔥🔥 → 🔥🔥（單一公告+單日 HN，不足 🔥🔥🔥）
+- **刻意跳過**：社群記者建議的「patterns 5 條單一 dev.to 來源補未驗證標註」——與本日確立的「patterns 用證據軸不用信號軸」決策衝突，B 層機制自洽條目不標，維持原狀
+
+**D 類（結構性，留待 /wiki-lint）：** ai-agent-safety 460 行→archive 分流；anthropic-business 304 / pricing 308 行時序整併；claude-code 已知問題↔歷史記錄去重；fable-5/mythos 現況↔歷史雙寫 + 定價歸 pricing；discussions 888 行拆分評估；跨頁冗餘（Lindy/阿里巴巴/Microsoft/Mythos NSA）；opus-4-8/4-7 熱度滿格殘留重估。
+
+**方法論收穫：** 總體審查品質來自「視角重疊」而非單一記者無誤——人物記者抓到社群記者（discussions 主責人）漏掉的 L84 殘留。另記者會套既定 rubric 但不知本 session 新決策（社群記者退回信號軸），故下次審查應把當前判準寫進派工 prompt。

@@ -4,7 +4,7 @@
 **狀態：** active
 **領域：** 👤 人物
 **首次出現：** 2026-04-23（事後報告發布）
-**最後更新：** 2026-06-28
+**最後更新：** 2026-06-29
 **最後新聞更新：** 2026-06-28
 
 > **最新工作流分享**（2026-06-28）
@@ -59,6 +59,11 @@ Business Insider 報導 Boris Cherny 對企業 AI 投資策略的立場：支持
 
 ---
 
+### Loop Engineering 哲學引用（2026-06-20）
+techstackups.com 技術文章引用 Boris Cherny 採訪中的論述：「我不再 prompt Claude，我寫 loop 讓 loop 去 prompt Claude；我的工作是寫 loop。」此聲明被視為他繼「coding is solved」後的第二個重要設計哲學表態，進一步將 **工程師角色重新定義為「寫迴圈的人」而非「寫 prompt 的人」**。這也是 2026-05-05「Loops 是未來」哲學的延伸具體化，從範式宣言進化為操作層面的自我定位描述。注意：此引用來自採訪轉述，而非 Boris 直接發文。
+
+---
+
 ### 「軟體工程師的終結」——Platformer 專訪（2026-05-27）
 Platformer 刊出 Boris Cherny 長篇專訪，標題「Claude Code's creator on the end of the software engineer」，從他的視角論述 AI 如何根本性地改變軟體工程師的角色。這是他繼「coding is solved」（2026-05-08）與「軟體工程已死」（2026-05-06）後最完整的公開論述。社群熱議程度與他過去的宣言相當，引發開發者身份認同的再次討論。
 
@@ -70,9 +75,6 @@ Platformer 刊出 Boris Cherny 長篇專訪，標題「Claude Code's creator on 
 
 ### 「軟體工程已死」（2026-05-06）
 再次公開宣示 Anthropic 內部已無傳統軟體工程師職位，引發業界廣泛論戰，Times of India 等媒體跟進報導，開發者身份認同議題持續發酵。
-
-### Loop Engineering 哲學引用（2026-06-20）
-techstackups.com 技術文章引用 Boris Cherny 採訪中的論述：「我不再 prompt Claude，我寫 loop 讓 loop 去 prompt Claude；我的工作是寫 loop。」此聲明被視為他繼「coding is solved」後的第二個重要設計哲學表態，進一步將 **工程師角色重新定義為「寫迴圈的人」而非「寫 prompt 的人」**。這也是 2026-05-05「Loops 是未來」哲學的延伸具體化，從範式宣言進化為操作層面的自我定位描述。注意：此引用來自採訪轉述，而非 Boris 直接發文。
 
 ### 「Loops 是未來」（2026-05-05）
 在 podcast 中宣示已 100% 用 Claude Code 取代手動編碼，並提出 **Loops（迴圈執行）是 AI 編碼的未來範式**，而非單次 prompt 補全。這是 Claude Code 設計哲學的第一手公開陳述，解釋了 Claude Code 為何以 Hooks、Skills、session 持久化為核心設計——目標是讓 agent 能在無人監督下持續迴圈執行。
