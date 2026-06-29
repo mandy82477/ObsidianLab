@@ -6,6 +6,9 @@
 **最後更新：** 2026-06-29
 **最後新聞更新：** 2026-06-29
 
+> **最新動態**（2026-06-29）
+> 兩週內 Google DeepMind 連失 4–5 位頂尖研究員至 Anthropic（含諾貝爾化學獎得主 John Jumper），市值蒸發約 $2,700 億（推論）；最值得注意的是流失方向（AI coding）正是 Google 自己落後的領域。
+
 ## 摘要
 
 截至 2026-06-29，一週至兩週內 Google DeepMind 連失至少 4–5 位頂尖研究員至 Anthropic，市值蒸發約 $2,700 億美元（推論，分析師估算），Gemini 3.5 Pro 延期至七月（推論，dev.to 報導，未經 Google 官方確認）。最矚目的是 2024 諾貝爾化學獎得主 John Jumper（6/19，蛋白質結構預測，DeepMind 近 9 年），加上 Jonas Adler（AI 編碼）、Alexander Pritzel（訓練），以及另外 2 位資深研究員（6/28 dev.to 報導）、一名未具名研究員轉投 OpenAI。The Information 同期報導 Google 正重組 AI 編碼突擊隊以追趕 Anthropic——**流失的方向（AI coding）正是 Google 落後的方向**，是這波人才戰最值得注意的一點。

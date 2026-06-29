@@ -66,6 +66,7 @@ LLM 查詢此 wiki 時，**先讀這個檔案**找相關頁面，再讀具體頁
 | [[topics/competitor-landscape]] | 💼 商業 | monitoring | Google 祕密開發競品 + OpenCode 157K 分流 + DeepSeek clone 低成本替代生態 |
 | [[topics/community-tech-tools]] | 🌐 社群 | ongoing | 社群工具目錄：189 工具的活躍度、採用狀態追蹤 |
 | [[topics/community-tech-patterns]] | 🌐 社群 | monitoring | 社群技術模式：multi-agent、skills 設計、工作流最佳實踐 |
+| [[topics/community-pattern-trends]] | 🌐 社群 | ongoing | 社群 Pattern 宏觀趨勢：5 條成形趨勢的熱度曲線 + 對現有設計的啟示（週更） |
 | [[topics/community-tech-discussions]] | 🌐 社群 | ongoing | 社群技術討論趨勢：設計哲學辯論、實證研究、架構反思（HTML vs MD、Skill Atrophy 等） |
 | [[topics/ai-agent-safety]] | 🏛️ 政策/安全 | ongoing | AI agent 安全：Claude Code v2.1.150 遠端系統提示注入披露（GrowthBook 60s 更新）+ 假冒安裝包 + 資料庫刪除事件 |
 | [[topics/ai-agent-safety-archive]] | 🏛️ 政策/安全 | monitoring | AI Agent 安全時序歷史存檔（2026-05-22 以前）；主頁 [[topics/ai-agent-safety]] 瘦身分流 |

@@ -2136,3 +2136,28 @@ Append-only 紀錄。每次 ingest、query 或 lint 都在此追加一條。
 
 ### 呈現品質審查
 所有更新頁面記者自審 ✅ 通過。
+
+## 2026-06-29 新增頁面 | community-pattern-trends.md（社群 Pattern 宏觀趨勢）
+
+**背景：** 使用者反映 patterns.md 條目太多、有點亂，需要高一階的「趨勢觀察」層。確立：萃取宏觀趨勢、週更（/wiki-lint 維護，不進每日 ingest）、每條趨勢含「對現有設計的啟示」欄位（使用者最在意——工程師看到趨勢該回頭重思自己的設計）。
+
+**設計決策：**
+- 新建獨立頁，而非塞進 patterns.md（已 ~660 行）或覆蓋 timeline（timeline 是寶貴歷史流水帳，演進起點素材）
+- 視覺化（時間軸泳道圖）按需另生，不在頁面維持（使用者決定）
+- 每條趨勢含：熱度曲線（📈加溫/▬穩定/↗醞釀）、演進時間軸（每節點掛注意力熱度 🔥）、代表模式（連回 patterns.md）、對現有設計的啟示
+- 熱度錨點區分：演進節點用「注意力熱度」（HN/跨平台）；代表模式用「技術力證據」（A/B 層）
+- 趨勢判定門檻：≥ 3 獨立來源 + 跨 ≥ 14 天 + 至少 1 條代表模式達 A/B 層證據
+
+**內容：** 5 條成形趨勢（強制層取代建議層、Multi-agent 隔離、Context 主權、模型路由自動化、對抗性設計）+ 1 條醞釀（spec-driven 規格先行）。
+
+**連結：** index.md 新增列；patterns.md / timeline.md 摘要加 wikilink 指向新頁（de-orphan）。
+
+**待辦：** 趨勢判定門檻與週更維護流程尚未寫進 `.claude/rules/wiki-ingest-community-lint.md`，下次處理規則檔時補上並跑 /review-commands。
+
+## 2026-06-29 瘦身 | entities/claude-code.md 移除冗餘工具索引
+
+**背景：** claude-code.md 達 439 行，「實用工具（社群開發）」區塊（75+ 工具、約 122 行）與 [[topics/community-tech-tools]] 平行維護兩份工具清單。community-tech-tools 改三層結構後其「工具目錄」層已是完整清單，且有 lint 策展規則維護；claude-code 這份無人依規則策展，只會越長越舊。
+
+**動作：** 砍掉整個「實用工具（社群開發）」區塊，換成一行指向 [[topics/community-tech-tools]] 的指標。claude-code.md 回歸「產品本體權威頁」純粹定位（版本、狀態、核心功能、已知問題、agentic 能力、開發者須知）。
+
+**結果：** 439 → 317 行。屬結構性去冗餘，非新聞性修改，僅更新「最後更新」（本已為 2026-06-29），不動「最後新聞更新」。
