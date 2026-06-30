@@ -1,6 +1,6 @@
 # Wiki Ingest — 社群記者 Lint 指南
 
-`/wiki-lint` 時由社群記者載入，處理兩項任務：`community-tech-tools.md` 策展 + `community-tech-patterns.md` 模式淘汰審查。每日 ingest 不需讀此檔。
+`/wiki-lint` 時由社群記者載入，處理三項任務：`community-tech-tools.md` 策展 + `community-tech-patterns.md` 模式淘汰審查 + `community-pattern-trends.md` 趨勢頁週更。每日 ingest 不需讀此檔。
 
 ---
 
@@ -69,6 +69,34 @@
 ```
 
 **回報後等待使用者確認，再執行實際修改。**
+
+---
+
+## community-pattern-trends 趨勢頁週更 `[加入: 2026-06-29]`
+
+每次 `/wiki-lint` 時更新 `wiki/topics/community-pattern-trends.md`（週更，非每日）。
+
+**趨勢成立門檻（同時滿足）：**
+- ≥ 3 個獨立來源（不同社群帳號、不同媒體、不同工具）
+- 首次出現距今 ≥ 14 天
+- 至少 1 條 A 層（量化/可重現）或 B 層（機制完整）證據
+
+**更新步驟：**
+1. 讀取近 14 天 `news/*.md`，對照 `community-tech-patterns.md` 現有模式，偵測：
+   - 現有趨勢有新節點加入（補充 `#### YYYY-MM-DD` 節點）
+   - 趨勢成熟度升級（升格 📈 → stable 或標記進入 plateau）
+   - 新趨勢達成立門檻（新增趨勢區塊）
+   - 趨勢沉寂超過 30 天且無新節點（標記為「↘ 淡出」）
+2. 每條趨勢的 `**對現有設計的啟示：**` 欄位若有新節點，同步更新啟示文字
+3. 更新頁面 `**最後更新：**` 日期
+
+**不更新情況：** 若近 14 天無新模式節點、無趨勢成熟度變化，保持頁面不動（不必要地更新日期會誤導讀者）。
+
+**格式（新節點）：**
+```markdown
+#### YYYY-MM-DD
+[一行說明新增的模式或事件，附 pattern 名稱]（🔥/🔥🔥/🔥🔥🔥）
+```
 
 ---
 
