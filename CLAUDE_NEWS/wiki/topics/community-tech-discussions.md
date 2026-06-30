@@ -3,11 +3,11 @@
 **狀態：** ongoing
 **領域：** 🌐 社群
 **開始日期：** 2026-04-25
-**最後更新：** 2026-06-29
-**最後新聞更新：** 2026-06-29
+**最後更新：** 2026-06-30
+**最後新聞更新：** 2026-06-30
 
-> **最熱討論**（2026-06-29）
-> AI 醫療判讀邊界（HN 476）：工程師用 Opus 4.8 分析 MRI 影像報告作為第二意見，引爆社群對 AI 醫療可信度、責任歸屬、「誰算專業意見」的廣泛辯論——本週最熱。
+> **最熱討論**（2026-06-30）
+> Anthropic 中國代理偵測爭議（HN 13）：Claude Code 被指在 /proc 中寫入代理偵測資料，Reddit/HN 社群廣泛討論是否構成「spyware」；Anthropic 尚未正式回應。AI 醫療判讀邊界（HN 476）仍是上週最高分，本週延燒中。
 
 ---
 
@@ -102,6 +102,9 @@ MCP 的實際成本遠超多數使用者預期，已有多個量化案例：
 
 | 討論主題 | 首見 | 熱度 | 模式 | 核心論點 | 衍生 |
 |---------|------|------|------|---------|------|
+| Anthropic 中國代理偵測：Claude Code 被指嵌入 spyware | 2026-06-30 | 🔥🔥 | ☄️閃現 | Reddit r/ClaudeAI 帖（HN score 13）：用戶指控 Anthropic 在 Claude Code 中嵌入代理偵測機制，在 /proc 中寫入偵測資料以識別中國 IP 並限制功能；社群兩極化：部分人視為合理出口管制合規，部分人視為侵犯隱私的 spyware；Anthropic 截至報導時尚未正式回應；[Reddit 原帖](https://old.reddit.com/r/ClaudeAI/comments/1ujila1/anthropic_embedded_spyware_in_claude_code_and/)（Reddit + HN） | — |
+| AI 時代人才論：維持「腦力努力」比聰明更重要 | 2026-06-30 | 🔥 | ☄️閃現 | The Atlantic 分析（HN score 4）：AI 時代得益者不是最聰明的人，而是願意維持主動腦力投入的人；ActivTrak 研究：採用 AI 的工作者 email/訊息使用量翻倍、業務軟體使用量增加 94%；UC Berkeley Haas 研究：使用 AI 的工作者開始接受以前不會接的任務——AI 不是讓人更懶，而是讓人承接更多；[文章](https://www.theatlantic.com/ideas/2026/06/ai-open-ai-anthropic/687689/)（The Atlantic；媒體報導，待社群接力） | — |
+| Explore subagent 鎖定 Haiku：除錯能力受限提醒 | 2026-06-30 | 🔥 | ☄️閃現 | Reddit 使用者（06-30）發現 Claude Code 原生 Explore subagent 被鎖定使用 Haiku，除錯任務能力受到明顯限制；同時分享完整 subagent 類型清單供社群對照選擇；[Reddit 原帖](https://www.reddit.com/r/ClaudeAI/comments/1ujpz0t/caution_when_using_native_subagent_explore_for/)（Reddit r/ClaudeAI；無社群延燒） | — |
 | AI 醫療判讀邊界：Opus 4.8 分析 MRI 作第二意見 | 2026-06-29 | 🔥🔥🔥🔥 | ☄️閃現 | 工程師公開用 Opus 4.8 分析 MRI 影像報告（HN score 476）；引爆社群對 AI 醫療可信度、責任歸屬、「誰算專業意見」的廣泛辯論；正反兩派：「第二意見有其價值」vs「模型幻覺在醫療場景代價不同」；[文章](https://antoine.fi/mri-analysis-using-claude-code-opus)（HN） | — |
 | Claude Code 讓工程師 3 倍產能、但企業缺 PM | 2026-06-29 | 🔥 | ☄️閃現 | VentureBeat 報導：Claude Code 讓工程師產能 3 倍增，企業卻缺乏 PM 承接快速膨脹的開發量；AI 工具正在改變組織結構，技術執行力超過產品思考力成為瓶頸（VentureBeat，HN score 4；媒體報導，待社群接力） | — |
 | Adrafinil：Hooks 感知 agent 活躍狀態再決定是否保活 MacBook | 2026-06-28 | 🔥🔥 | ☄️閃現 | Show HN（score 113）：針對「工程師半開蓋走動」問題，用 Claude Code hooks 偵測 agent 工作中才喚醒螢幕；與 caffeinate 的差異在於「智慧條件觸發」而非強制常開；[GitHub](https://github.com/kageroumado/adrafinil)（HN） | Adrafinil |
@@ -179,6 +182,24 @@ MCP 的實際成本遠超多數使用者預期，已有多個量化案例：
 ---
 
 ## 技術彙整
+
+### Anthropic 中國代理偵測爭議：出口管制合規 vs 隱私侵犯（2026-06-30）
+
+- **來源：** [Anthropic embedded spyware in Claude Code](https://old.reddit.com/r/ClaudeAI/comments/1ujila1/anthropic_embedded_spyware_in_claude_code_and/)（Reddit r/ClaudeAI；HN score 13，06-30）
+- **核心論點：** 用戶指控 Claude Code 嵌入代理偵測機制，在 /proc 中寫入資料以識別中國 IP，並據此限制功能存取；核心爭議：這是合理的出口管制合規（美國法律要求），還是在使用者未知情的情況下收集系統資料的 spyware 行為
+- **關鍵回響：**
+  - 📝 支持（合規視角）：美國對中國 AI 技術的出口管制現實存在，Anthropic 需要在法律框架內運營；代理偵測是標準合規手段
+  - 📝 反駁（隱私視角）：在 /proc 中寫入資料未在 TOS 中明確披露；「spyware」定義爭議——未告知的系統行為無論動機如何都構成隱私問題
+  - 📝 技術面：HN 討論中有人試圖重現並確認相關行為，但技術細節尚有爭議
+- **收斂結論：** 尚無共識；Anthropic 截至報導時未正式回應；此議題的核心矛盾是「政府要求的合規透明度 vs 使用者知情權」——不是純技術問題（推論）
+- **與政策頁的關係：** 技術實作爭議記錄於此；政策與政府互動層面見 [[topics/anthropic-government-policy]]
+
+### AI 時代人才論：「維持腦力努力」比聰明更重要（2026-06-30）
+
+- **來源：** [People Who Will Thrive in the AI Age](https://www.theatlantic.com/ideas/2026/06/ai-open-ai-anthropic/687689/)（The Atlantic，HN score 4，06-30）
+- **核心論點：** AI 時代的贏家不是最聰明的人，而是願意持續主動投入腦力的人——AI 不是讓工作者更輕鬆，而是讓他們接受更多任務；ActivTrak 研究顯示採用 AI 後 email/訊息使用量翻倍、業務軟體使用量增加 94%；UC Berkeley Haas 研究：AI 使用者開始接受以前因能力不足而拒接的任務
+- **與 AI Skill Atrophy 討論的關係：** Skill Atrophy 議題（2026-06-10）強調 AI 導致能力退化；The Atlantic 論點提供對立面：「主動努力者」的生產力上限被 AI 提升，不是下降——兩者可能描述的是同一現象的不同人群（推論）
+- **訊號強度：** HN score 4，The Atlantic 媒體報導（媒體報導，待社群接力）
 
 ### AI 醫療判讀邊界：Opus 4.8 分析 MRI 引發的責任與可信度辯論（2026-06-29）
 

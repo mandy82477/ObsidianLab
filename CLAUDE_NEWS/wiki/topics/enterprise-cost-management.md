@@ -3,11 +3,11 @@
 **狀態：** monitoring
 **領域：** 💼 商業
 **開始日期：** 2026-05-01
-**最後更新：** 2026-06-29
-**最後新聞更新：** 2026-06-29
+**最後更新：** 2026-06-30
+**最後新聞更新：** 2026-06-30
 
-> **最新成本挑戰**（2026-06-29）
-> AI 新創 Lindy CEO（Flo Crivello）公開揭露：將 100% 流量從 Claude 切換至 DeepSeek，每月省下數百萬美元；這是「最省錢 > 最強模型」趨勢中迄今規模最大、最具名的單一案例。CNBC 同步報導 AI 企業整體消費模式從「最強模型」向「效率最高模型」轉移加速（CNBC 2026-06-29）。
+> **最新成本挑戰**（2026-06-30）
+> 404 Media 報導企業為壓制 AI 成本，強制 Claude Code 等工具以極簡語言（「穴居人」模式）回應，OpenAI、Nvidia、GitHub 開發者均部署此類插件。Accenture 研究揭示大量 token 流向非核心任務（如 PDF 轉 PowerPoint），企業成本優化從「減少呼叫次數」演變為「壓縮每次回應 token 量」（404 Media 2026-06-30）。
 
 ---
 
@@ -133,6 +133,9 @@
 - [[news/2026-05-22]]
 
 ## 時序
+
+### 2026-06-30
+- **[回應語言壓縮策略] 企業強制 Claude Code 以「穴居人」極簡語言回應，壓縮每次 token 耗量**：404 Media 報導（HN score 3），OpenAI、Nvidia、GitHub 等公司開發者均在使用所謂「穴居人插件」（caveman plugin），強制 Claude Code 與 OpenAI Codex 以極度精簡語言作答，目標是在不減少工作量的前提下壓低每次呼叫的 token 數量。Accenture 研究同步揭示，大量企業 token 耗用流向 PDF 轉 PowerPoint 等非核心任務，而非直接生產性工作。**對成本格局的意涵**：此策略代表企業成本優化從「減少 API 呼叫次數」（上一波 Opus+Sonnet 分層策略）演化至「壓縮每次呼叫的回應 token 量」的第二波，意味著即使在技術能力不降級的前提下，客戶也在主動降低 Anthropic 的 per-call 收入（推論）；長期若此類插件廣泛流行，API 計費模式面臨更大下行壓力（404 Media https://www.404media.co/companies-are-making-claude-and-codex-talk-like-cavemen-to-stop-ais-soaring-costs/）
 
 ### 2026-06-29
 - **[具名切換] Lindy CEO：100% 流量從 Claude 切至 DeepSeek，每月省下數百萬美元**：CNBC 報導 AI 新創 Lindy 的 CEO Flo Crivello 公開宣告完成全量切換；此案例是「最省錢 > 最強模型」趨勢中最具名、金額揭露最明確的案例，正式將 AI 消費選擇的框架從「哪個最強」改寫為「哪個最划算」。**對 Anthropic 的意涵**：應用層客戶若大量以此邏輯切換，Anthropic ARR 來源從 API 端（Claude Code 是線性成本，API 客戶才是穩定收入）面臨侵蝕（推論）；Claude Code 訂閱成本固定，此壓力主要在 API 客群（CNBC https://www.cnbc.com/2026/06/26/openai-anthropic-new-ai-spending-reality-as-users-shift-to-efficiency.html）

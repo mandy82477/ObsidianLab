@@ -2184,3 +2184,21 @@ Append-only 紀錄。每次 ingest、query 或 lint 都在此追加一條。
 **D 類（結構性，留待 /wiki-lint）：** ai-agent-safety 460 行→archive 分流；anthropic-business 304 / pricing 308 行時序整併；claude-code 已知問題↔歷史記錄去重；fable-5/mythos 現況↔歷史雙寫 + 定價歸 pricing；discussions 888 行拆分評估；跨頁冗餘（Lindy/阿里巴巴/Microsoft/Mythos NSA）；opus-4-8/4-7 熱度滿格殘留重估。
 
 **方法論收穫：** 總體審查品質來自「視角重疊」而非單一記者無誤——人物記者抓到社群記者（discussions 主責人）漏掉的 L84 殘留。另記者會套既定 rubric 但不知本 session 新決策（社群記者退回信號軸），故下次審查應把當前判準寫進派工 prompt。
+
+## 2026-06-30 Ingest | news/2026-06-30.md（46 則）
+
+- 來源日報：`news/2026-06-30.md`（46 則，6/6 來源；Reddit 429 rate limit 部分失敗）
+- 核心事件：Claude Code v2.1.91 起嵌入中國代理偵測程式碼（重大隱私爭議，逆向工程發現，待 Anthropic 確認）、v2.1.196 Org Default Model 正式發布、v2.1.197 洩露 Sonnet 5 選項、Mozilla prompt injection 完整接管多媒體確認、Anthropic 拒配合 Trump 政府付出代價（Fortune 深度報導）、Globant/DataArt/Okta/Rubrik 四項企業合作同日宣布
+- 更新頁面：
+  - `wiki/entities/claude-code.md`：v2.1.196 Org Default Model、v2.1.197 Sonnet 5 選項、transcript 自動刪除 Bug、36Kr 背景任務升級預告（待核實）、Explore subagent 鎖定 Haiku 的限制說明
+  - `wiki/topics/official-community-gap.md`：多模型路由狀態更新（❌ → ⚡）
+  - `wiki/topics/ai-agent-safety.md`：Claude Code 中國代理偵測程式碼（新 🔴 項目，待確認）、Mozilla prompt injection 多媒體四方確認
+  - `wiki/topics/anthropic-government-policy.md`：Fortune 深度報導、CNBC 出口管制反效分析、SF Examiner 專家質疑；攻防紀錄 +3 條
+  - `wiki/topics/anthropic-business.md`：Globant AI Pods、DataArt Partner Network、Okta XAA/MCP/Glasswing、Rubrik Claude Code 安全層四項合作；時序 2026-06-30 區塊
+  - `wiki/entities/pricing.md`：社群集體反映配額再次縮減（訂閱用戶，Anthropic 無官方公告）
+  - `wiki/topics/enterprise-cost-management.md`：「穴居人插件」趨勢條目，OpenAI/Nvidia/GitHub 開發者採用
+  - `wiki/topics/community-tech-patterns.md`：新增工作流模式
+- feature-radar 新增：Org Default Model（v2.1.196）— 🔥🔥 / ⚡ 有條件推薦
+- index.md 狀態變更：無（新功能條目加入全覽表）
+- 新增頁面：無
+- 呈現品質審查：所有更新頁面均 ✅ 通過（記者回報確認）

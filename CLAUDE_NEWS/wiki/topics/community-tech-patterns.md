@@ -3,11 +3,11 @@
 **狀態：** monitoring
 **領域：** 🌐 社群
 **開始日期：** 2026-04-25
-**最後更新：** 2026-06-29
-**最後新聞更新：** 2026-06-29
+**最後更新：** 2026-06-30
+**最後新聞更新：** 2026-06-30
 
-> **最新工作流模式**（2026-06-29）
-> 三個新模式：beads 高層工作規劃 + Claude Code 執行的兩層架構（Reddit）；Caliper pass@k 可靠性測試——解決「跑一次成功 ≠ 可靠」問題；AgentWatch 在請求層攔截並強制預算上限，防止 runaway agent 失控燒費用。
+> **最新工作流模式**（2026-06-30）
+> 五個新模式：DoorDash 開源確定性框架 Agentic Orchestrator（需求釐清→設計→多階段規劃→實作→審查，含人工閘門）；Loop exit condition 設計模式——「如何停下」比「如何跑起來」更難；Agent 記憶損壞防護——結構化 Markdown 編輯器取代危險的 regex；Cross-repo blast radius 可視化；MCP server 長 session 三大失效模式與穩健化策略。
 
 ---
 
@@ -40,12 +40,68 @@
 | **架構邊界合約** | ANMA YAML contracts、Hooks 強制驗證、ISO 29148 規格驅動 | ⏳ 新興 | 用合約與工業標準定義 AI 不可越過的架構規則；使便宜模型也能守規 |
 | **可靠性測試** | Caliper pass@k 指標測試 | ⏳ 新興 | 以多次執行的通過率衡量 skill 可靠性，而非單次成功；用 YAML 定義成功條件，本地輕量執行 |
 | **Agent 預算控制** | AgentWatch runtime budget enforcement | ⏳ 新興 | 在 LLM 請求到達模型前攔截，強制執行費用或 token 上限；僅需修改 base URL，無 SDK 依賴 |
+| **確定性 Agent 框架** | Agentic Orchestrator 混合架構 | ⏳ 新興 | 確定性框架（需求→研究→設計→規劃→實作→審查）+ 非確定性 agent；人工審查閘門在關鍵節點中斷；Go TUI 介面可視化長時間任務 |
+| **Agent Loop 終止條件** | Loop exit condition 設計模式 | ⏳ 新興 | 「如何停下」比「如何跑起來」更難；設計顯式終止條件（計數器、狀態機、人工確認）防止無限循環 |
+| **Agent 記憶保護** | 結構化 Markdown 編輯器取代 regex | ⏳ 新興 | agent 用 regex 修改記憶檔案易損壞結構；以結構化 AST 編輯器操作 Markdown，防止非預期覆寫 |
+| **跨 Repo 依賴可視化** | Cross-repo blast radius 分析 | ⏳ 新興 | Claude Code 讀完整 clone、Cursor 讀相似度索引，兩者皆不看依賴圖；串接 cross-repo blast radius 分析以補盲點 |
+| **MCP 長 Session 穩健化** | MCP server 失效模式防護 | ⏳ 新興 | 長 session 三大失效模式：連線中斷、工具超時、上下文失憶；對應策略：心跳檢查、超時重試、session 狀態快照 |
 
 > 成熟度：✅ 成熟（社群廣泛實踐）/ ⚡ 活躍（持續演進中）/ ⏳ 新興（近期出現，尚在探索）
 
 ---
 
 ## 技術彙整
+
+### Agentic Orchestrator：確定性框架 + 非確定性 Agent 混合架構（2026-06-30）
+
+- **核心模式：** DoorDash 開源的長時間 coding agent 編排 TUI（Go 語言），將 agent 工作流切分為確定性階段（需求釐清 → 研究 → 設計 → 多階段規劃 → 實作 → 審查），每個階段由人工審查閘門控制是否繼續；非確定性的 LLM 只在每個階段內部執行（[GitHub doordash-oss/agentic-orchestrator](https://github.com/doordash-oss/agentic-orchestrator)；HN Show HN score 13，06-30）
+- **解決的問題：** 長時間 agent 任務缺乏可見性和可控性；agent 自主執行 8 小時的「黑盒感」讓工程師難以信任輸出——可視化各階段進度並在關鍵節點插入人工決策點，降低大型任務失控風險
+- **設計亮點：** 明確分離「確定性工作流編排（框架）」與「非確定性 LLM 執行（agent）」——框架掌管任務順序與人工閘門，agent 掌管每個階段的具體執行；一個使用者報告 8 小時連續使用無問題
+- **與既有模式的差異：** 既有 multi-agent 框架（Aharness、ANMA）著重 agent 間的協調與邊界合約；Agentic Orchestrator 著重「人機混合審查的 stage gate」——人類在框架中是一等公民而非觀察者
+- **成熟度：** ⏳ 新興
+- **訊號強度：** HN Show HN score 13，DoorDash 工程團隊出品，有完整 Go 實作
+
+### Loop Exit Condition：Agent 循環終止設計模式（2026-06-30）
+
+- **核心模式：** 明確設計 agent loop 的終止條件——「如何停下」是長時間 agent 工作流中最容易被忽視、最難正確設計的部分；終止條件設計不良是 runaway agent 的主要根因（[Reddit r/ClaudeAI](https://www.reddit.com/r/ClaudeAI/comments/1ujqht2/running_claude_in_a_loop_is_the_easy_part_getting/)，06-30）
+- **解決的問題：** 「跑起來容易，停下難」——社群普遍能讓 agent 進入循環，但終止邏輯複雜：成功條件、失敗條件、最大重試次數、人工介入觸發點，每一個設計錯誤都可能導致無限循環或過早終止
+- **已知終止條件設計方向：**
+  - 計數器：最大迴圈次數上限（防 runaway）
+  - 狀態機：定義合法的終止狀態（success/failure/timeout）
+  - 人工確認閘門：關鍵決策前要求人工確認
+  - 自評估：agent 在每輪結束後評估「任務是否完成」（需防幻覺——agent 容易錯誤自評為完成）
+- **與 AgentWatch 的關係：** AgentWatch 是預算層的強制截斷（runtime enforcement）；Loop exit condition 是業務邏輯層的合法終止設計——兩者互補，都是 runaway agent 防護的必要元件
+- **成熟度：** ⏳ 新興（概念廣泛共識，但系統化最佳實踐尚未收斂）
+- **訊號強度：** Reddit r/ClaudeAI 社群討論，無具體工具但有廣泛共鳴
+
+### 結構化 Markdown 編輯器：防止 Agent 記憶損壞的架構模式（2026-06-30）
+
+- **核心模式：** agent 需要修改 Markdown 記憶檔案時，改用結構化編輯器（AST 層操作）取代 regex 字串替換；regex 在 Markdown 結構複雜時（嵌套清單、代碼塊、YAML front matter）容易造成非預期覆寫或格式損壞（[Reddit r/ClaudeAI](https://www.reddit.com/r/ClaudeAI/comments/1ujqbwy/my_agent_kept_destroying_its_own_memory_file_with/)；另提供 hosted 無本地磁碟版本，06-30）
+- **解決的問題：** 開發者發現 agent 使用 regex 修改記憶檔案，在處理嵌套結構時反覆破壞檔案格式；損壞的記憶檔案導致後續 session 無法正確讀取跨 session 知識，造成 cascade failure
+- **實作方向：** 使用 Markdown AST（如 remark/unified 生態）定位並修改特定節點，保留周圍結構；也可使用 section-level 操作（定位標題、替換整個 section 內容）取代字元層 regex
+- **與既有記憶架構的關係：** OKF（物件鍵格式）著重記憶內容的格式標準化；此模式著重記憶操作的安全性——是記憶管理的防禦性基礎設施
+- **成熟度：** ⏳ 新興
+- **訊號強度：** Reddit r/ClaudeAI，開發者開源解決方案並提供 hosted 版本
+
+### Cross-repo Blast Radius 分析：補足 Claude Code 與 Cursor 的依賴圖盲點（2026-06-30）
+
+- **核心模式：** Claude Code 讀取完整 clone、Cursor 讀取相似度索引，但兩者都無法看到跨 repo 的依賴圖（blast radius）；透過串接外部依賴圖工具，分析一個變更會影響多少下游 repo 或服務（[dev.to](https://dev.to/danielwe/claude-code-reads-your-clone-cursor-reads-similarity-neither-sees-the-graph-487i)，06-30）
+- **解決的問題：** AI 編碼工具在單一 repo 內表現良好，但跨 repo 依賴可視性差——修改一個共用函式庫時，無法知道有哪些下游服務會受影響（blast radius 不透明）
+- **實作方向：** 在 Claude Code session 開始前，先執行 blast radius 分析（如 `nx graph`、Gradle dependency tree、自建依賴圖），將結果注入 context；讓 agent 在執行前知道「修改這個函式會影響 N 個服務」
+- **注意事項：** 依賴圖的維護成本高，需定期更新才能反映真實依賴狀態（推論）；此方案不改變 Claude Code 本身，是 pre-session context 注入策略
+- **成熟度：** ⏳ 新興
+- **訊號強度：** dev.to 文章，有具體技術分析，但無 HN/Reddit 討論驗證
+
+### MCP Server 長 Session 失效模式與穩健化策略（2026-06-30）
+
+- **核心模式：** MCP server 在長時間 session 中有三大常見失效模式，各需對應穩健化策略（[dev.to](https://dev.to/ursula_harrell_32416a7c42/building-reliable-claude-code-workflows-with-mcp-servers-pon)，06-30）
+- **三大失效模式：**
+  - **連線中斷（Connection Drop）：** MCP server 在長 session 中無聲斷線，Claude Code 繼續呼叫已失效工具得到靜默失敗；對應：心跳檢查 + 自動重連
+  - **工具超時（Tool Timeout）：** 慢速工具（如資料庫查詢、外部 API）在 agent loop 中累積延遲；對應：設定超時閾值 + 重試策略
+  - **上下文失憶（Context Amnesia）：** 長 session 後 MCP server 的 stateful context 與 Claude 的理解出現分歧；對應：在關鍵節點快照 session 狀態，必要時重置 server
+- **與既有 MCP 討論的差異：** 既有討論（MCP 成本結構、工具選擇混亂）著重「工具過多」的靜態問題；此模式著重「長時間運行」的動態穩定性問題——是 agent pipeline 生產化的必要考量
+- **成熟度：** ⏳ 新興
+- **訊號強度：** dev.to 文章，有系統性分析框架，尚無大規模社群驗證
 
 ### AgentWatch：請求攔截層的 Runtime Budget Enforcement（2026-06-29）
 

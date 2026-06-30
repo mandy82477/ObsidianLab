@@ -2,19 +2,20 @@
 
 LLM 查詢此 wiki 時，**先讀這個檔案**找相關頁面，再讀具體頁面取得詳細資訊。
 
-**最後更新：** 2026-06-29
+**最後更新：** 2026-06-30
 ---
 
 ## 近期異動
 
-- [[entities/fable-5]] — 2026-06-29：美方正式批准向特定信任夥伴恢復 Mythos 存取，Axios 報導 Fable 5「可能本週回歸」
-- [[entities/mythos]] — 2026-06-29：美國政府批准向特定信任合作夥伴恢復存取，出口管制進一步鬆動
-- [[topics/anthropic-government-policy]] — 2026-06-29：美方批准恢復 Mythos、Newsom 加州政府協議、Alibaba 2880 萬次查詢揭露參議院、親 AI 陣營分裂
-- [[topics/ai-agent-safety]] — 2026-06-29：the-decoder 報導 Claude Code 未驗證執行 GitHub repo 隱藏惡意程式，攻擊者可取得完整控制權
-- [[topics/anthropic-business]] — 2026-06-29：Newsom 加州政府協議、奧地利遊說 EU、Micron 合作評估、Claude Code 改變組織結構（需更多 PM）
-- [[topics/enterprise-cost-management]] — 2026-06-29：Lindy 將 100% 流量從 Claude 切換至 DeepSeek，每月省數百萬美元
-- [[topics/ai-talent-flow]] — 2026-06-29：4 名 Google 資深研究員轉投 Anthropic（待核實姓名）
-- [[topics/community-tech-discussions]] — 2026-06-29：MRI 第二意見分析（HN 476）、多 agent 協調、模型成本效益討論
+- [[entities/claude-code]] — 2026-06-30：v2.1.196 Org Default Model、v2.1.197 Sonnet 5 現身 /model、transcript 自動刪除 Bug、背景任務升級預告
+- [[topics/ai-agent-safety]] — 2026-06-30：Claude Code v2.1.91 起嵌入中國代理偵測程式碼（重大隱私爭議，待確認）、Mozilla prompt injection 多媒體確認
+- [[topics/anthropic-government-policy]] — 2026-06-30：Fortune 深度報導 Anthropic 拒配合 Trump 政府付代價、CNBC 出口管制反效、SF Examiner 專家質疑特定封禁
+- [[topics/anthropic-business]] — 2026-06-30：Globant/DataArt/Okta/Rubrik 四項合作同日宣布、加州政府合作（6/29）
+- [[entities/pricing]] — 2026-06-30：社群集體反映配額再次縮減
+- [[topics/enterprise-cost-management]] — 2026-06-30：「穴居人插件」趨勢，企業強制 LLM 極簡回應以壓制 token 費用
+- [[topics/community-tech-patterns]] — 2026-06-30：新增社群工作流模式
+- [[topics/official-community-gap]] — 2026-06-30：多模型路由狀態更新
+- [[feature-radar]] — 2026-06-30：新增 Org Default Model（v2.1.196）
 
 ---
 

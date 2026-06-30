@@ -3,11 +3,11 @@
 **狀態：** ongoing
 **領域：** 💼 商業
 **開始日期：** 2026-05-28
-**最後更新：** 2026-06-29
-**最後新聞更新：** 2026-06-29
+**最後更新：** 2026-06-30
+**最後新聞更新：** 2026-06-30
 
-> **最新動態**（2026-06-29）
-> 加州州長 Newsom 與 Anthropic 正式簽署協議，Claude 進入州政府應用，為迄今最具代表性的美國地方政府採用案例（Politico 2026-06-29）。Anthropic 向美國參議院揭露 Alibaba 相關運營商 4/22–6/5 間發出 2,880 萬次未授權查詢，被定性為大規模數據竊取（dev.to 2026-06-29）。資安公司 Tenable 宣布與 Claude Compliance API 策略整合，企業合規應用版圖擴大。
+> **最新動態**（2026-06-30）
+> 單日四項戰略合作同步宣布：Globant（NYSE: GLOB，全球 IT 服務）與 Anthropic 結盟推出 Claude 驅動的 AI Pods；DataArt 加入 Claude Partner Network 精選服務合作夥伴；Okta 與 Anthropic 在 XAA 跨應用 agent 認證、MCP 及 Glasswing 安全框架展開合作；Rubrik（NYSE: RBRK）發布 Claude Code 專用 AI agent 與安全層。加州政府合作（2026-06-29）另見下方時序。
 
 ---
 
@@ -85,6 +85,10 @@ Simon Willison（知名開發者博主）發表文章，認為 Anthropic 與 Ope
 
 | 合作方 | 類型 | 日期 | 意義 |
 |--------|------|------|------|
+| Rubrik（NYSE: RBRK）| SDK 夥伴 | 2026-06-30 | 網路安全公司 Rubrik 發布 Claude Code 專用 AI agent 與安全層，強化企業環境安全防護；2026-06-09 已有 Agent Cloud 前例，本次為 Claude Code 專屬深化（Techzine https://www.techzine.eu/news/security/142561/rubrik-introduces-ai-agent-and-security-layer-for-claude-code/）|
+| Okta | SDK 夥伴 | 2026-06-30 | Okta 與 Anthropic 在 XAA（跨應用 agent 認證）、MCP 協定整合及 Glasswing 安全框架展開合作，為 agentic 工作流提供身份驗證基礎建設；XAA 是 agentic AI 安全採購的新興標準，Okta 借此鞏固身份管理市場地位（Cyber Magazine https://cybermagazine.com/news/how-okta-anthropic-are-partnering-on-xaa-mcp-glasswing）|
+| DataArt | SDK 夥伴 | 2026-06-30 | 全球軟體工程服務公司 DataArt 加入 Anthropic Claude Partner Network，成為服務軌道精選（Select）合作夥伴；Partner Network 持續擴張，服務型整合商密度增加（National Law Review https://natlawreview.com/press-releases/dataart-joins-anthropics-claude-partner-network-select-partner-services）|
+| Globant（NYSE: GLOB）| 企業客戶 | 2026-06-30 | 全球 IT 與軟體服務公司 Globant 與 Anthropic 結盟，推出 Claude 驅動的 AI Pods，重新定義企業 AI 交付模式；Globant 為上市公司（NYSE: GLOB），覆蓋全球多個行業客戶，是 Anthropic 進入 IT 服務交付市場的重要節點（PR Newswire https://www.prnewswire.com/news-releases/globant-announces-an-alliance-with-anthropic-to-redefine-enterprise-ai-delivery-with-claude-powered-ai-pods-302813858.html）|
 | 加州州政府（Newsom 協議）| 政府客戶 | 2026-06-29 | 加州州長 Newsom 與 Anthropic 正式簽署協議，Claude 進入加州州政府應用；為迄今最明確的美國地方政府採用案例，政府客戶版圖從聯邦延伸至州層級（Politico https://www.politico.com/news/2026/06/29/exclusive-newsom-anthropic-ink-deal-to-expand-government-use-00979584）|
 | Tenable | SDK 夥伴 | 2026-06-29 | 資安公司 Tenable 與 Claude Compliance API 策略整合，為 Claude 進入企業合規與資安市場的具名案例（TahawulTech https://www.tahawultech.com/industry/technology/tenable-announces-strategic-integration-with-the-claude-compliance-api/）|
 | 美國政府（Mythos 5 解禁擴大）| 政府授權 | 2026-06-28 | 商務長 Howard Lutnick 批准擴大至 100+ 美國機構（企業 + 政府），含非美籍員工；出口管制後最大鬆綁，核心企業收入管道恢復（TechCrunch）|
@@ -125,6 +129,10 @@ Simon Willison（知名開發者博主）發表文章，認為 Anthropic 與 Ope
 - [[news/2026-05-13]]（The Information：定價強勢期）
 
 ## 時序
+
+### 2026-06-30
+- **[Partner Network 密集擴張] 單日四項合作宣布：Globant AI Pods、DataArt 精選服務夥伴、Okta XAA 安全整合、Rubrik Claude Code 安全層**：PR Newswire 報導 Globant（NYSE: GLOB）與 Anthropic 結盟，推出 Claude 驅動的 AI Pods 企業交付框架；National Law Review 確認 DataArt 加入 Claude Partner Network 服務軌道精選夥伴；Cyber Magazine 報導 Okta 與 Anthropic 在 XAA（跨應用 agent 認證）、MCP 及 Glasswing 安全框架合作，為 agentic 工作流建立身份驗證基礎建設；Techzine Global 報導 Rubrik（NYSE: RBRK）發布 Claude Code 專用 AI agent 與安全層。**對商業的意涵**：Partner Network 單日密集擴張顯示 Anthropic 生態系統化攻略 IT 服務、身份管理、資安三個企業 AI 採購決策環節，有助於將 Claude 鎖入企業採購鏈上游（推論）。
+- **[配額縮減爭議] 社群集體反映 Anthropic 再次縮減 Claude Code 使用配額**：Reddit r/ClaudeCode 出現集體反映配額縮減的討論串，訂閱用戶不滿情緒高漲；詳見 [[entities/pricing]]。
 
 ### 2026-06-29
 - **[政府客戶里程碑] 加州州長 Newsom 與 Anthropic 簽署協議，Claude 正式進入州政府應用**：Politico 獨家報導（2026-06-29），加州州長 Gavin Newsom 與 Anthropic 簽署協議，擴大政府使用 AI 範圍，Claude 正式進入加州州政府應用。這是 Anthropic 繼聯邦機構（Mythos 5 解禁）後，在美國地方政府層級最具代表性的採用案例。**對商業的意涵**：加州為美國最大州政府，此協議作為標竿案例，可加速其他州政府採購 Claude；政府客戶版圖從聯邦軍事/情報延伸至地方行政的新維度（推論）（Politico https://www.politico.com/news/2026/06/29/exclusive-newsom-anthropic-ink-deal-to-expand-government-use-00979584）

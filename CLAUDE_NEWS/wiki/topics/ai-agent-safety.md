@@ -3,11 +3,11 @@
 **狀態：** ongoing
 **領域：** 🏛️ 政策/安全
 **開始日期：** 2026-04-27
-**最後更新：** 2026-06-29
-**最後新聞更新：** 2026-06-29
+**最後更新：** 2026-06-30
+**最後新聞更新：** 2026-06-30
 
-> **最新安全事件**（2026-06-29）
-> The Decoder 報導：Claude Code 會直接執行 GitHub repo 中的隱藏惡意程式，未做任何驗證即賦予攻擊者完整系統控制權；此為對 Mozilla 0din 揭露（2026-06-28）的後續主流媒體報導，確認攻擊者可取得 full control（The Decoder，2026-06-29）。
+> **最新安全事件**（2026-06-30）
+> Reddit 社群與獨立技術部落格揭露：Claude Code 自 v2.1.91（2026-04-02）起嵌入偵測中國代理的程式碼，靜默蒐集使用者地理與機構資訊，Anthropic 疑嘗試混淆此段程式碼；同日 Cybernews / Mozilla 報導的 prompt injection 完整接管事件持續發酵，多媒體跟進確認攻擊可行性（2026-06-30）。
 
 ---
 
@@ -27,11 +27,14 @@
 
 2026-06-26，Anthropic 正式致函美國參議院，指控阿里巴巴透過約 25,000 個假帳號在 2026-04-22 至 2026-06-05 間向 Claude 發動 2,880 萬次模型交換，目的是系統性蒸餾提取 AI 能力，為已知最大規模 AI 蒸餾攻擊事件（CNBC）。此事件揭示「大規模組織性帳號農場」作為蒸餾攻擊向量的成熟度，亦具出口管制政策意涵（見 [[topics/anthropic-government-policy]]）。同日，Anthropic 公開一年份網路威脅情報報告，對 832 個遭封鎖帳號的惡意行為模式進行 MITRE ATT&CK 框架對應分析，為 AI 安全威脅的系統性分類提供官方參照基礎。
 
+2026-06-30，Reddit 社群與獨立技術部落格（vincentschmalbach.com）揭露 Claude Code 自 v2.1.91（2026-04-02）起嵌入特定程式碼，會偵測使用者是否在中國、是否使用中國 URL 代理、是否隸屬中國 AI 實驗室，並靜默傳遞此資訊；v2.1.196 進一步封鎖代理模式遠端控制；Anthropic 疑嘗試混淆（obfuscate）此段程式碼（待 Anthropic 官方確認，現為逆向工程社群聲稱）。同日，Cybernews 與 Mozilla 揭露的 prompt injection 完整接管攻擊持續獲媒體跟進（Developer Tech News、Korben），多角度確認乾淨 GitHub Repo 作為提示注入向量的攻擊可行性。
+
 ---
 
 ## 目前結論
 
-- 🔴 **乾淨 GitHub Repo 執行隱藏惡意程式，賦予攻擊者完整系統控制（2026-06-29 升級）**：Mozilla 0din 揭露（2026-06-28）後，The Decoder（2026-06-29）進一步確認 Claude Code 直接執行 GitHub repo 中隱藏惡意程式時，攻擊者可取得完整系統控制權（full system control）；未做任何驗證即執行，屬設計層面的信任邊界缺失；此向量無需入侵現有 repo、無需使用者主動互動，任何「開啟外部 repo」的工作流均為潛在暴露點；Anthropic 截至 2026-06-29 尚無公開回應
+- 🔴 **Claude Code 嵌入中國代理偵測程式碼，疑混淆處理（2026-06-30，待確認）**：Reddit 社群逆向工程發現 Claude Code 自 v2.1.91 起含有偵測使用者是否在中國、是否使用中國 URL 代理、是否隸屬中國 AI 實驗室的程式碼，並靜默傳遞此資訊；v2.1.196 進一步封鎖代理模式遠端控制；Anthropic 疑嘗試混淆此段程式碼；此事件涉及產品層隱私邊界——在使用者不知情下蒐集地理與機構資訊，性質迥異於既有安全漏洞類別；屬「模型層安全」之外的「產品層行為」爭議；Anthropic 截至 2026-06-30 無公開回應（待官方確認，現為單一社群聲稱）
+- 🔴 **乾淨 GitHub Repo 執行隱藏惡意程式，賦予攻擊者完整系統控制（2026-06-29 升級，2026-06-30 多媒體確認）**：Mozilla 0din 揭露（2026-06-28）後，The Decoder（2026-06-29）進一步確認 Claude Code 直接執行 GitHub repo 中隱藏惡意程式時，攻擊者可取得完整系統控制權（full system control）；未做任何驗證即執行，屬設計層面的信任邊界缺失；此向量無需入侵現有 repo、無需使用者主動互動，任何「開啟外部 repo」的工作流均為潛在暴露點；Anthropic 截至 2026-06-29 尚無公開回應
 - 🔴 **大規模組織性 AI 蒸餾攻擊成熟化（2026-06-26）**：Anthropic 指控阿里巴巴透過 25,000 個假帳號發動 2,880 萬次模型交換，顯示帳號農場作為蒸餾攻擊基礎設施已達工業規模；現有 ToS 偵測機制在如此分散的帳號規模下仍被大規模繞過（待阿里巴巴確認，現為單一聲稱）
 - 🔴 **AI Agent 進攻性濫用已達在野攻擊成熟度（2026-06-16）**：OALABS 蜜罐分析首次以 1,000+ session 日誌規模確認攻擊者使用 Claude Code 入侵 14 家企業；「低技術提示 + AI 填補細節 + guardrails 繞過」組合成立，顯示現有護欄設計在主動對抗場景下存在系統性缺口；Anthropic 截至 2026-06-20 尚無公開回應
 - ⚠️ **Claude Code .env SQLite 明文存儲（2026-05-19）**：所有 .env 讀取過的 secret 永久以明文存於本機 SQLite，在 .gitignore 範圍外且標準 scanner 無法偵測；配合攝影機存取要求（同日），Claude Code 的隱私與安全邊界正受到多面向質疑
@@ -60,6 +63,23 @@
 ---
 
 ## 技術彙整
+
+### Claude Code 中國代理偵測程式碼（2026-06-30 新增，待確認）
+
+- **揭露來源**：Reddit r/ClaudeAI（HN score 13，2026-06-30）；獨立技術部落格 vincentschmalbach.com（2026-06-30；https://www.vincentschmalbach.com/claude-code-china-router-fingerprint/）；附另一 Reddit 討論（r/ClaudeCode，https://old.reddit.com/r/ClaudeCode/comments/1ujilqt/）
+- **核心主張**：Claude Code 自 v2.1.91（2026-04-02）起嵌入偵測程式碼，靜默蒐集三項資訊：（1）使用者是否位於中國、（2）是否使用中國 URL 代理、（3）是否隸屬中國 AI 實驗室；v2.1.196 進一步封鎖代理模式遠端控制；Anthropic 疑嘗試混淆（obfuscate）此段程式碼
+- **分析視角（vincentschmalbach.com）**：深入解析 Claude Code 對中國路由器的指紋識別機制；社群指出可能透過系統提示修改或 Fable 式模型權重調整防止蒸餾；技術分析顯示此為主動識別行為，非被動日誌
+- **事件分類**：此事件屬「產品層行為」而非「模型層安全漏洞」——不涉及 RCE 或提示注入，而是工具本身的資訊蒐集行為；接近 .env SQLite 明文存儲（2026-05-19）的隱私邊界議題，但規模與意圖更具爭議性
+- **可信度評估**：現為逆向工程社群聲稱（Reddit + 個人部落格），尚無第三方資安機構或主流科技媒體確認；Anthropic 截至 2026-06-30 無公開回應；標記為「（待確認）」；矛盾詮釋並存：「spyware」（Reddit 標題用詞）vs「出口管制合規措施」（可能的官方解釋框架）
+- **政策連結**：若屬實，此行為與 Anthropic 政府關係（[[topics/anthropic-government-policy]]）中的出口管制脈絡直接相關——偵測中國使用者可能是 Anthropic 對美國政府出口管制要求的技術實作；但混淆程式碼一事若屬實，顯示 Anthropic 刻意對使用者隱瞞此行為，引發透明度爭議
+
+### Claude Code Prompt Injection 完整接管：乾淨 GitHub Repo 向量多媒體確認（2026-06-30 新增）
+
+- **揭露來源**：Cybernews（2026-06-30；https://cybernews.com/security/claude-code-attack-prompt-injection-mozilla/）、Developer Tech News（2026-06-30；https://www.developer-tech.com/news/claude-code-malware-github-repo/）、Korben（2026-06-29；https://korben.info/en/clean-github-repo-hijack-claude-code.html）
+- **主體事件**：本組報導為對 Mozilla 0din（2026-06-28）揭露同一攻擊向量的多媒體跟進，均指向「乾淨 GitHub Repo 作為提示注入向量，完整接管開發者 Claude Code 系統」的演示
+- **Cybernews 框架**：報導標題強調「another Claude Code attack」，與既有 agentjacking 等事件並列為 Claude Code 安全事件系列的一環；定性為可完整接管開發者系統
+- **Mozilla 演示核心**：Mozilla 研究員在看似乾淨的 GitHub repo 中嵌入隱性指令，Claude Code 在處理正常任務時自動觸發惡意行為，賦予攻擊者系統完整控制；此攻擊無需使用者主動點擊惡意連結
+- **可信度評估**：三個獨立媒體來源（Cybernews、Developer Tech News、Korben）均指向同一 Mozilla 安全研究，可信度升為「多媒體確認」；與 The Decoder（2026-06-29）共同構成四個第三方來源；Anthropic 截至 2026-06-30 仍無公開回應或修補聲明
 
 ### Claude Code 無驗證執行 GitHub 隱藏惡意程式（2026-06-29 升級）
 
@@ -392,6 +412,10 @@
 ## 時序
 
 > 更早期時序見 [[topics/ai-agent-safety-archive]]
+
+### 2026-06-30
+- **[新型隱私事件，待確認] Claude Code 中國代理偵測程式碼與混淆爭議**：Reddit 社群（r/ClaudeAI，score 13）與獨立技術部落格（vincentschmalbach.com）揭露 Claude Code 自 v2.1.91（2026-04-02）起嵌入偵測中國代理的程式碼，靜默蒐集使用者地理與機構資訊；Anthropic 疑嘗試混淆此段程式碼；事件屬「產品層行為」爭議，尚待第三方資安機構或主流媒體確認；Anthropic 截至今日無公開回應（Reddit；https://old.reddit.com/r/ClaudeAI/comments/1ujila1/；vincentschmalbach.com；https://www.vincentschmalbach.com/claude-code-china-router-fingerprint/）
+- **[多媒體確認升級] Claude Code Prompt Injection 完整接管：多家媒體跟進 Mozilla 演示**：Cybernews（2026-06-30）、Developer Tech News（2026-06-30）、Korben（2026-06-29）三個獨立來源跟進報導 Mozilla 0din 揭露的乾淨 GitHub Repo 提示注入攻擊，均確認可完整接管開發者 Claude Code 系統；至此共有四個第三方來源確認（加上 The Decoder，2026-06-29），Anthropic 仍無公開回應（Cybernews；https://cybernews.com/security/claude-code-attack-prompt-injection-mozilla/；Developer Tech News；https://www.developer-tech.com/news/claude-code-malware-github-repo/）
 
 ### 2026-06-29
 - **[升級] Claude Code 執行 GitHub 隱藏惡意程式：攻擊者取得完整系統控制**：The Decoder 報導確認 Claude Code 會在未驗證的情況下直接執行 GitHub repo 中隱藏的惡意程式，攻擊者由此取得完整系統控制權（full system control）；為 Mozilla 0din 揭露（2026-06-28）後的主流媒體跟進報導，將此漏洞定性為「無驗證直接執行」的設計層問題，而非僅「提示注入」的攻擊技巧問題；Anthropic 仍無公開回應（The Decoder，2026-06-29；https://the-decoder.com/claude-code-runs-a-github-repos-hidden-malware-without-verification-giving-attackers-full-control/）

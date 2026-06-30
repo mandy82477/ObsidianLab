@@ -4,7 +4,7 @@
 僅收錄官方 changelog、release note 或官方公告來源；社群工具見 [[topics/community-tech-tools]]。
 每次 ingest 後由 LLM 維護：新增功能、更新熱度、補充社群回饋。
 
-**最後更新：** 2026-06-29
+**最後更新：** 2026-06-30
 
 ---
 
@@ -37,6 +37,7 @@
 
 | 功能 | 發布日期 | 熱度 | 試用價值 | 狀態 |
 |------|----------|------|----------|------|
+| **Org Default Model**（Claude Code v2.1.196，管理員設定組織預設模型，使用者 `/model` 顯示「Org default」） | 2026-06-29 | 🔥🔥 | ⚡ 有條件推薦 | 正式發布 |
 | **`CLAUDE_CODE_DISABLE_MOUSE_CLICKS` 環境變數**（Claude Code v2.1.195，全螢幕模式停用滑鼠點擊/拖拉/懸停） | 2026-06-26 | 🔥🔥 | ⚡ 有條件推薦 | 正式發布 |
 | **`autoMode.classifyAllShell` 設定**（Claude Code v2.1.193，所有 Bash/PowerShell 路由 auto-mode 分類器） | 2026-06-25 | 🔥🔥 | ⚡ 有條件推薦 | 正式發布 |
 | **`/rewind` 指令**（Claude Code，從 `/clear` 前節點恢復 context） | 2026-06-25 | 🔥🔥🔥 | ⚡ 有條件推薦 | 正式發布 |
@@ -88,6 +89,24 @@
 ---
 
 ## 🆕 最新功能（2026-06）
+
+### Org Default Model
+**發布：** 2026-06-29（v2.1.196） | **熱度：** 🔥🔥 | **試用價值：** ⚡ 有條件推薦 | **狀態：** 正式發布
+
+**是什麼：** 企業管理員在 org console 設定組織預設模型後，使用者在 `/model` 選單看到「Org default」（或角色層級的「Role default」）選項，實現組織內模型版本統一管控。
+
+**為何熱：** 解決企業規模部署中模型版本不一致問題；配合 v2.1.175 的 `enforceAvailableModels` 可形成完整的企業模型管控鏈（限制可用模型 → 設定預設模型）。
+
+**快速上手：**
+```
+# 管理員在 org console 設定後，使用者執行：
+/model
+# 選單出現「Org default」或「Role default」選項
+```
+
+**注意事項：** 需要 org console 管理員權限才能設定；個人帳號或 Team 以下方案未確認是否支援；同日 v2.1.197 的 `/model` 已出現 Sonnet 5 選項（尚無法選用，正式發布在即）。
+
+---
 
 ### CLAUDE_CODE_DISABLE_MOUSE_CLICKS 環境變數
 **發布：** 2026-06-26（v2.1.195） | **熱度：** 🔥🔥 | **試用價值：** ⚡ 有條件推薦 | **狀態：** 正式發布
