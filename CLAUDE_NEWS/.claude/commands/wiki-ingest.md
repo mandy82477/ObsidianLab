@@ -47,6 +47,8 @@ argument-hint: [YYYY-MM-DD]
 
 **對每個有條目的類別，呼叫 Agent tool**。有多個類別時，在同一訊息中同時發出所有 Agent 呼叫（並行執行）。
 
+> ⚠️ **記者 agent 必須以 foreground（同步）方式啟動，不可設 `run_in_background: true`。** 背景記者的完成通知無法回到派工 agent，會造成永久等待。
+
 | 類別 | subagent_type |
 |------|--------------|
 | 模型 | `wiki-reporter-models` |

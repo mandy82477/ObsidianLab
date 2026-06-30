@@ -41,12 +41,16 @@ def deduplicate(items: list[FeedItem]) -> list[FeedItem]:
         norm = _normalize_url(item.url)
         if norm in seen_urls:
             existing = seen_urls[norm]
+            merged_count = existing.source_count + 1
             # Keep the one with higher score; tiebreak by source priority
             if item.score > existing.score or (
                 item.score == existing.score and _source_rank(item) < _source_rank(existing)
             ):
+                item.source_count = merged_count
                 seen_urls[norm] = item
                 result = [item if i is existing else i for i in result]
+            else:
+                existing.source_count = merged_count
         else:
             seen_urls[norm] = item
             result.append(item)
@@ -58,11 +62,15 @@ def deduplicate(items: list[FeedItem]) -> list[FeedItem]:
         for idx, kept in enumerate(final):
             ratio = difflib.SequenceMatcher(None, item.title.lower(), kept.title.lower()).ratio()
             if ratio > 0.85:
+                merged_count = item.source_count + kept.source_count
                 # Replace kept if current has better score/priority
                 if item.score > kept.score or (
                     item.score == kept.score and _source_rank(item) < _source_rank(kept)
                 ):
+                    item.source_count = merged_count
                     final[idx] = item
+                else:
+                    kept.source_count = merged_count
                 duplicate = True
                 break
         if not duplicate:

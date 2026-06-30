@@ -4,14 +4,19 @@
 **狀態：** active
 **領域：** 👤 人物
 **首次出現：** 2026-06-23
-**最後更新：** 2026-06-27
+**最後更新：** 2026-06-30
 **最後新聞更新：** 2026-06-23
+
+> **最新論述**（2026-06-22）
+> Business Insider 採訪確認 Fiona Fung 為「Claude Code 讓工程師更孤獨」論述的具名發言人，澄清此說法初期誤報為 Boris Cherny 或 Cat Wu。
 
 ---
 
 ## 現況
 
-Fiona Fung 是 Anthropic 工程副總裁（VP of Engineering）。2026-06-22，她接受 Business Insider 採訪時指出：Claude Code 正在改變工程師的協作方式——coding 不再是開發瓶頸，但工程師在使用 AI 工具後開始感到孤獨。這是 Anthropic 工程領導層少見的公開論述，點出 AI 編碼工具帶來的社會性副作用。
+2026-06-22，Fiona Fung 接受 Business Insider 採訪時指出：Claude Code 使 coding 不再是開發瓶頸，但工程師在使用 AI 工具後開始感到孤獨。這是 Anthropic 工程領導層少見的公開論述，點出 AI 編碼工具帶來的社會性副作用。
+
+Fiona Fung 是 Anthropic 工程副總裁（VP of Engineering）。
 
 > **歸屬釐清：** 此「工程師更孤獨」論述初期報導僅稱「engineering leader」，一度於 [[entities/boris-cherny]] 與 [[entities/cat-wu]] 標記待核實；具名 Business Insider 來源確認發言人為 Fiona Fung，兩頁待核實已解除。
 

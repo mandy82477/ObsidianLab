@@ -14,6 +14,8 @@
 
 ## 現況
 
+2026-06-28，Boris Cherny 在 howborisusesclaudecode.com 公開個人日常 setup，展示同時開 5 個並行 Claude Code 實例的工作流，並強調「surprisingly vanilla」——無需特殊魔改即可完成。2026-06-24，他承認「AI 寫 100% 程式碼正在變得有問題」，與早先「coding is solved」立場形成對比，顯示其公開立場已出現調整。
+
 Boris Cherny 是 Anthropic Claude Code 的創始人與負責人（Head of Claude Code），是 Claude Code 產品方向最主要的公開代言人。他以高頻率的公開聲明、哲學宣言與工程分享，持續引發開發者社群廣泛討論，被視為 Anthropic 技術文化的外部窗口。
 
 ---

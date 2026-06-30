@@ -3,7 +3,10 @@
 **狀態：** ongoing
 **領域：** 🌐 社群
 **開始日期：** 2026-04-25
-**最後更新：** 2026-06-27
+**最後更新：** 2026-06-30
+
+> **最新工具動態**（2026-06-30）
+> Workweave Router（HN 181）成本感知模型路由器引爆本週最高熱度，已提拔精選層。本輪新增 10 條工具目錄條目（6/22–6/30），涵蓋 agent 多工管理、費用追蹤、自學習 skill 層等方向。
 
 ---
 
@@ -91,6 +94,12 @@
 | --- | --- | --- |
 | [**mux0**](https://mux0.com/) | ✅ | 開源 macOS 終端，側邊欄即時顯示多 agent 狀態 |
 
+### 模型路由
+
+| 工具 | 採用 | 亮點 |
+| --- | --- | --- |
+| [**Workweave Router**](https://github.com/workweave/router) | ⚡（HN 181）| 嵌入 Claude Code / Codex / Cursor 的成本感知自動路由，依任務難度降階選模型，實測成本降 40%+ |
+
 ### 環境 / 部署
 
 | 工具 | 採用 | 亮點 |
@@ -120,6 +129,16 @@
 
 | 工具 | 類型 | 採用 | 首次出現 | 簡介 |
 | --- | --- | --- | --- | --- |
+| [**autoharness**](https://github.com/tigerless-labs/autoharness) | Skills | ⏳ | 2026-06-30 | 自學習、自維護的 Claude Code skill 層，旨在讓 agent 能持續優化自身工作流程；Show HN |
+| [**second-opinion**](https://github.com/kmcheung12/second-opinion) | 多 Agent | ⏳ | 2026-06-30 | Claude Code skill，在 session 中途向其他模型（Claude、opencode）諮詢第二意見，自動整合相關 context 並支援追問；支援 claude-to-claude、claude-to-opencode、opencode-to-claude 呼叫；Show HN |
+| [**Statuslin.es**](https://statuslin.es) | 社群資源 | ⏳ | 2026-06-30 | 社群自建 Claude Code status line 分享網站，所有 status line 在真實容器中渲染截圖驗證，可瀏覽與提交自訂狀態列設定；Show HN score 13 |
+| [**Claudete**](https://claudete.co) | 多 Agent | ⏳ | 2026-06-28 | macOS 原生多 Claude Code 實例管理器；解決重開機後 session 中斷問題，提供 flexible grid、1–5 欄切換，針對同時運行多個 agent 的使用者設計；Show HN |
+| [**ai-whisper**](https://ai-creed.dev/projects/ai-whisper/) | 多 Agent | ⏳ | 2026-06-28 | 雙 agent（Claude + Codex 或其他組合）共享「baton」輪流持有執行權，evaluator 在每輪完成後把關品質；支援 spec-driven-development、複雜 bug 修復等結構化工作流；Show HN |
+| [**Adrafinil**](https://github.com/kageroumado/adrafinil) | 工作流 | ⏳ | 2026-06-28 | Mac 半開蓋保活工具，用 Claude Code hooks 偵測 agent 活躍狀態才觸發 `pmset disablesleep 1`，agent 完成後自動釋放；智慧條件觸發，非強制常開；Show HN score 113 |
+| [**AgentWatch**](https://agent-watch.dev/) | 費用監測 | ⏳ | 2026-06-28 | 攔截 LLM 請求層的 runtime budget enforcement，支援 OpenAI / Anthropic / Gemini；修改 base URL 即接入，附不可竄改審計軌跡；防止 runaway agent 費用暴增；Show HN score 7 |
+| [**Workweave Router**](https://github.com/workweave/router) | 模型路由 | ⚡ | 2026-06-27 | 成本感知模型路由器，作為 Anthropic/OpenAI 相容 endpoint 運作，依請求難度自動路由模型；起因 Opus 4.7 tokenizer 改版後成本大漲；實測成本降 40%+；Show HN score 181 |
+| [**Verity**](https://verity.md) | 工作流 | ⏳ | 2026-06-27 | Codacy 開源的自癒式 Claude Code review gate，每次 agent 執行後自動修復不安全或不乾淨的代碼，並將學習記憶用於下一次 run；`npm install -g @codacy/verity-cli`；Show HN |
+| [**TBD**](https://github.com/cheapsteak/tbd) | 多 Agent | ⏳ | 2026-06-27 | Mac 原生 CLI-forward coding agent multiplexer，強調「使用者能手動做的，都要能透過 CLI 讓 agent 自動做」，可搭配 agent-channels 實現跨 worktree 通訊；Show HN |
 | [**Prompt Foundry**](https://marketplace.visualstudio.com/items?itemName=sdevries.prompt-foundry) | context 管理工具 | ⏳ | 2026-06-19 | VS Code / Cursor 擴充套件，透過子 prompt 組合 + MCP server 保持 context 新鮮，解決大型 codebase 中 AI 遵循慣有模式導致 context 失效的問題；Show HN |
 | [**Sqim**](https://www.sqim.dev/) | 行動開發工具 | ⏳ | 2026-06-19 | 支援 Claude Code、Codex 等 coding agent 從 CLI 直接安裝 iOS 建置到 iPhone，無需 VPN；Show HN |
 | [**Everything Claude Code microVM**](https://www.jurniti.com/templates/ecc) | 部署模板 | ⏳ | 2026-06-19 | 一鍵將 @affaan 的 Everything Claude Code 設定（64 agents、261 skills）部署到獨立 microVM，約 3 分鐘內可用；Show HN |

@@ -4,14 +4,16 @@
 **狀態：** active
 **領域：** 👤 人物
 **首次出現：** 2026-06-20
-**最後更新：** 2026-06-26
+**最後更新：** 2026-06-30
 **最後新聞更新：** 2026-06-26
 
 ---
 
 ## 現況
 
-John Jumper 是 2024 年諾貝爾化學獎得主，因 AlphaFold 蛋白質結構預測研究與 Demis Hassabis 共同獲獎。Reuters 於 2026-06-21 正式確認他已離開 Google DeepMind、加入 Anthropic（HN score 77）。加入時點適逢 Anthropic 面臨 Mythos 出口管制危機，並成為一週內出走 Google 加入 Anthropic 的多位頂尖研究員之一。dev.to 報導指此波人才流失連帶造成 Google Alphabet 市值蒸發約 2,700 億美元，Gemini 3.5 亦因相關震盪而延期（推論：市場將其解讀為 Google AI 研究領導力的信心指標）。社群分析認為 Jumper 的加入是 Anthropic 向科學計算與生物 AI 領域擴展的重要人才佈局訊號。
+2026-06-21，Reuters 正式確認 John Jumper 已離開 Google DeepMind、加入 Anthropic（HN score 77）。他成為一週內出走 Google 加入 Anthropic 的多位頂尖研究員之一，dev.to 報導指此波人才流失連帶造成 Google Alphabet 市值蒸發約 2,700 億美元，Gemini 3.5 亦因相關震盪而延期（推論）。社群分析認為 Jumper 的加入是 Anthropic 向科學計算與生物 AI 領域擴展的重要人才佈局訊號。
+
+John Jumper 是 2024 年諾貝爾化學獎得主，因 AlphaFold 蛋白質結構預測研究與 Demis Hassabis 共同獲獎。加入時點適逢 Anthropic 面臨 Mythos 出口管制危機。
 
 ---
 

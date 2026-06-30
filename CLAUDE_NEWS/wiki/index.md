@@ -69,7 +69,7 @@ LLM 查詢此 wiki 時，**先讀這個檔案**找相關頁面，再讀具體頁
 | [[topics/community-tech-patterns]] | 🌐 社群 | monitoring | 社群技術模式：multi-agent、skills 設計、工作流最佳實踐 |
 | [[topics/community-pattern-trends]] | 🌐 社群 | ongoing | 社群 Pattern 宏觀趨勢：5 條成形趨勢的熱度曲線 + 對現有設計的啟示（週更） |
 | [[topics/community-tech-discussions]] | 🌐 社群 | ongoing | 社群技術討論趨勢：設計哲學辯論、實證研究、架構反思（HTML vs MD、Skill Atrophy 等） |
-| [[topics/ai-agent-safety]] | 🏛️ 政策/安全 | ongoing | AI agent 安全：Claude Code v2.1.150 遠端系統提示注入披露（GrowthBook 60s 更新）+ 假冒安裝包 + 資料庫刪除事件 |
+| [[topics/ai-agent-safety]] | 🏛️ 政策/安全 | ongoing | AI agent 安全：中國代理偵測程式碼爭議（v2.1.91+，待確認）+ GitHub Repo prompt injection 多媒體確認 + 假冒安裝包 |
 | [[topics/ai-agent-safety-archive]] | 🏛️ 政策/安全 | monitoring | AI Agent 安全時序歷史存檔（2026-05-22 以前）；主頁 [[topics/ai-agent-safety]] 瘦身分流 |
 | [[topics/anthropic-government-policy]] | 🏛️ 政策/安全 | ongoing | Anthropic 政府政策攻防：Fable 5 出口管制封鎖全球存取（SK Telecom 中國關聯為根本動機）；三個戰場（軍事合約、出口管制、策略選擇）；Anthropic 已提交解封提案 |
 | [[topics/official-community-gap]] | 🛠️ 工具/功能 | monitoring | 官方功能 vs 社群痛點缺口矩陣：哪些痛點官方正在解決、哪些結構性缺席 |

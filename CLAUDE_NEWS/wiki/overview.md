@@ -1,16 +1,20 @@
 # Claude / Anthropic 生態系概覽
 
-**最後更新：** 2026-06-29
+**最後更新：** 2026-06-30
 
 ---
 
 ## 當前局勢
 
-2026-06-29 出口管制持續解凍：Anthropic **正式獲美國政府許可，可向特定信任合作夥伴恢復 Mythos 存取**（qz.com），Axios 報導 **Fable 5「可能本週回歸」**——延續 6/27 Mythos 5 部分解禁（Lutnick 致函 Tom Brown 開放 100+ 美國受信任機構）的轉折。同日 **加州州長 Newsom 與 Anthropic 簽署政府使用協議**，政府市場版圖在聯邦（解禁）+ 州（加州採用）雙層同步擴張。談判由聯合創辦人 **Tom Brown 接管**（Dario Amodei 退出），是局勢回穩的關鍵人事。
+2026-06-30 三條線同步緊張：**政策**、**安全**、**商業**均有重大訊號。
 
-商業端逆風同步浮現：AI 新創 **Lindy 將 100% 流量從 Claude 切換至 DeepSeek**，每月省下數百萬美元，凸顯 API 應用層對價格的高度敏感；**Alibaba Qwen 關聯運營商 2,880 萬次查詢事件正式進入美國參議院記錄**，將 AI 數據竊取問題推上立法議程。安全面，the-decoder 報導 **Claude Code 未驗證即執行 GitHub repo 隱藏惡意程式**，攻擊者可取得完整系統控制權，信任邊界缺失定性升級。
+**政策面**：Fortune 深度報導 Anthropic 拒絕配合 Trump 政府、正在付代價——CNBC 同步披露出口管制已反效（美國盟友同步失去 Fable 5 存取，損害夥伴關係），SF Examiner 專家公開質疑封禁依據。Fable 5 仍處管制，但解凍基礎（Mythos 擴大解禁、加州州長 Newsom 簽署政府使用協議）持續墊高。談判由聯合創辦人 **Tom Brown 接管**。
 
-人才面，**Google DeepMind 一週連失 4 名頂尖研究員至 Anthropic**（諾貝爾獎得主 John Jumper 領銜，加 Adler/Pritzel），市值蒸發約 $2,700 億（推論），且流失方向（AI coding）正是 Google 落後處——詳見 [[topics/ai-talent-flow]]。商業面則出現逆風：Anthropic 指控阿里巴巴史上最大 AI 蒸餾攻擊（2,880–2,900 萬次查詢、2.5 萬假帳號），同時企業端 ROI 反撲、tokenmaxxing 轉向效率優先。產品面 Claude Tag（Slack-native 協作）與 Claude Code v2.1.195 持續迭代。
+**安全面**：Claude Code **v2.1.91 起嵌入中國代理偵測程式碼**的爭議浮出水面（待確認），引發嚴重隱私質疑——若確認，這是近年最重大的用戶端隱私問題。同期 Mozilla prompt injection 多媒體確認亦升級威脅評估（技術已驗證，非假設）。
+
+**商業面**：Anthropic 同日宣布 **Globant / DataArt / Okta / Rubrik 四項企業合作**，加上前日加州政府協議，單週政府 + 企業簽約密度創新高。配額再縮訊號（社群集體反映）則持續對使用者施壓。
+
+產品端 **Claude Code v2.1.196 新增 Org Default Model 功能**（組織可設全域預設模型），v2.1.197 已在 `/model` 選單出現「Sonnet 5」條目——是預告還是誤植，社群持觀望。
 
 ---
 
@@ -52,9 +56,10 @@
 
 ### 🟡 持續追蹤
 
-5. **[[topics/ai-agent-safety]] — 安全與可靠性**
+5. **[[topics/ai-agent-safety]] — 安全與可靠性** 🔴 升溫
+   - **v2.1.91 起中國代理偵測程式碼爭議（待確認）**—— 若屬實是重大隱私事件
+   - Mozilla prompt injection 多媒體確認（GitHub Repo 向量）
    - Agentjacking：Sentry DSN 假錯誤報告可劫持 Claude Code（2026-06-16 披露）
-   - v2.1.150 遠端系統提示注入（GrowthBook 60s 動態注入）
 
 6. **[[entities/mythos]] — Mythos 政策化**
    - NSA 攻擊性使用確認；Glasswing 200 組織；出口管制封鎖期間持續運作
@@ -67,10 +72,19 @@
 
 ---
 
-## 近兩週重大事件（2026-06-10 至 2026-06-24）
+## 近兩週重大事件（2026-06-17 至 2026-06-30）
 
 | 日期 | 事件 | 影響 |
 |------|------|------|
+| 06-30 | **v2.1.197 `/model` 出現 Sonnet 5**（預告或誤植） | 🟡 社群觀望 |
+| 06-30 | **v2.1.91 中國代理偵測程式碼爭議**（待確認） | 🔴 重大隱私疑慮 |
+| 06-30 | Globant / DataArt / Okta / Rubrik 四項合作同日宣布 | 💼 企業擴張 |
+| 06-29 | **加州 Newsom 與 Anthropic 簽署政府使用協議** | 💼 政府市場 |
+| 06-29 | **v2.1.196 Org Default Model**（組織可設全域預設）| 🔥🔥 官方新功能 |
+| 06-29 | Mozilla 0din prompt injection 多媒體確認 | 🔴 安全升級 |
+| 06-29 | Fortune 報導 Anthropic 拒配合 Trump、正在付代價 | 🔴 政策壓力 |
+| 06-28 | **Mythos 5 存取恢復**（特定信任合作夥伴 / qz.com 確認）| 🟢 解封持續 |
+| 06-27 | **Mythos 5 部分解禁**（Lutnick 批准 100+ 美國機構）| 🟢 轉折點 |
 | 06-24 | **Claude Tag 正式發布**（Slack-native AI 隊友） | 🔥🔥🔥 官方新功能 |
 | 06-24 | NSA 失去 Fable 存取；Legion 提告美國政府 | 🔴 法律戰場開啟 |
 | 06-24 | Mythos 情報機構測試：數小時發現機密系統漏洞 | 🔴 安全能力邊界討論 |
@@ -95,9 +109,9 @@
 
 ---
 
-## 社群工具生態（截至 2026-06-19）
+## 社群工具生態（截至 2026-06-30）
 
-共追蹤 **210+ 款社群工具**，見 [[topics/community-tech-tools]]。近期活躍主線：
+共追蹤 **200+ 款社群工具**，見 [[topics/community-tech-tools]]。近期活躍主線：
 
 - 🔥🔥🔥 **費用可觀測性**（Claustrophobic / token-warden / Tokenyst）— Agent SDK 計費風波後需求居高
 - 🔥🔥🔥 **Agent 協調**（Gorchestra / AI Commander / AgentPace）— 多代理管理需求爆發
@@ -110,10 +124,10 @@
 ## 商業動態
 
 - **估值**：$965B（Series H，IPO 機密申請中）
-- **最新企業動態**：JPMorgan HK 斷連、Claude Corps $150M、DXC 全球聯盟
-- **競爭**：Fable 5 下線使 Sonnet 4.6 成主力；OpenCode 157K 分流穩定；AI 定價戰持續
-- **安全**：Agentjacking 披露；Mythos 軍事兩用已確認；出口管制封鎖進行中
-- **計費**：Agent SDK 計費暫停；6/15 Pro/Max 計費基礎結構已切換
+- **最新企業動態**：Globant / DataArt / Okta / Rubrik（6/30）+ 加州政府（6/29）+ JPMorgan HK 斷連 + Claude Corps $150M + DXC 全球聯盟
+- **競爭**：Fable 5 下線使 Sonnet 4.6 成主力；OpenCode 157K 分流穩定；Lindy 切換 DeepSeek 案例凸顯 API 層價格壓力
+- **安全**：v2.1.91 中國代理偵測爭議（待確認）；Mozilla prompt injection 多媒體確認；Mythos 軍事兩用已確認
+- **計費**：配額再縮（社群 6/30 集體反映）；Agent SDK 計費暫停保持原狀
 
 ---
 

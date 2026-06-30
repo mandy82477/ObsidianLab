@@ -2202,3 +2202,55 @@ Append-only 紀錄。每次 ingest、query 或 lint 都在此追加一條。
 - index.md 狀態變更：無（新功能條目加入全覽表）
 - 新增頁面：無
 - 呈現品質審查：所有更新頁面均 ✅ 通過（記者回報確認）
+
+## 2026-06-30 Lint | 商業頁面 3a–3f 品質檢查
+
+- 執行頁面：`topics/anthropic-business.md`、`topics/enterprise-tool-tracker.md`、`topics/enterprise-cost-management.md`、`topics/competitor-landscape.md`、`entities/pricing.md`
+- 3a 矛盾修正：`topics/anthropic-business.md` 第 26、76 行「Microsoft 6/30 停用」與 enterprise-tool-tracker（6/21 加速退出）矛盾 → 已修正為「原訂 6/30，已於 6/21 加速退出」並加 wikilink
+- 3b 孤立頁面：全部 5 頁均有其他頁面引用 → 無孤立問題
+- 3c 過期議題：全部頁面最後更新均在 14 天內 → 無須狀態降級
+- 3d 已解決議題遷移：無 resolved 狀態頁面
+- 3e 呈現品質：
+  - `topics/anthropic-business.md`：⚠️ 已修復（矛盾修正）；📋 待辦：33 個時序節點無主題分組（超閾值 8），建議按主題/月份合併，工作量過大本次跳過
+  - `topics/enterprise-tool-tracker.md`：✅ 通過
+  - `topics/enterprise-cost-management.md`：✅ 通過
+  - `topics/competitor-landscape.md`：⚠️ 已修復（新增 `#### 亞洲競品崛起與定價顛覆（2026-06-19 至 2026-06-29）` 分組標題）
+  - `entities/pricing.md`：✅ 通過（30+ 節點均在 `## 重要政策變動紀錄` 統一標題下，視為已分組）
+- 3f 超長頁面（> 500 行）：無（最長 anthropic-business.md 311 行，pricing.md 313 行，均未超 500）
+
+## 2026-06-30 Lint（全 wiki，六記者並行）
+
+- 修正矛盾：
+  - `entities/fable-5.md`：Tom Brown 職稱補充 chief compute officer（與 mythos.md 一致）
+  - `topics/anthropic-business.md`：Microsoft 退出日期「6/30」→「原訂 6/30，已於 6/21 加速退出」（與 enterprise-tool-tracker 統一）
+  - `entities/claude-security.md`：最後新聞更新日期錯誤（2026-06-20 → 2026-05-28）
+  - `wiki/index.md`：ai-agent-safety 摘要更新為最新事件（中國代理偵測 + Mozilla prompt injection）
+- 補連結（去孤立）：無（全部頁面均有引用）
+- 狀態更新：無
+- 遷移至 entities：無
+- 新增 entities：無（Workweave Router / Globant / DataArt 均未達建頁門檻）
+- 呈現品質（逐記者）：
+  - 模型：fable-5 / opus-4-8 現況改 delta-first ⚠️已修復；opus-4-7 / mythos ✅
+  - 功能：claude-code 近期重要更新補副標題、bugcrawl + claude-design callout 日期更新、claude-security 日期矛盾修正 ⚠️已修復；managed-agents / openclaw / official-community-gap ✅
+  - 商業：anthropic-business 矛盾修正、competitor-landscape 時序分組 ⚠️已修復；enterprise-tool-tracker / enterprise-cost-management / pricing ✅；📋 待辦：anthropic-business 33 個時序節點無主題分組，下次 lint 考慮合併
+  - 安全政策：anthropic-government-policy + ai-agent-safety 摘要改 delta-first ⚠️已修復；recursive-self-improvement ✅；📋 ai-agent-safety 484 行接近門檻，下次 ingest 後重計
+  - 社群：community-tech-tools + community-tech-timeline callout 更新、community-pattern-trends callout 週更 ⚠️已修復；community-tech-patterns / discussions / code-quality-decline ✅；community-tech-tools 新增 10 條（2026-06-22 至 2026-06-30）；Workweave Router 提拔精選層
+  - 人物：9 個人物頁補 callout 或改 delta-first 首句 ⚠️全部已修復；andrej-karpathy / chris-olah 加「截至 YYYY-MM-DD，後續待追蹤」提示
+- community-tech-patterns 淘汰審查：0 條建議淘汰，0 組建議合併，全部保留
+- community-pattern-trends 趨勢週更：新增 3 個趨勢節點（趨勢一 Adrafinil 保活模式、趨勢三 56KB 截斷、趨勢五 Verity 自癒 review gate）；更新趨勢三啟示文字
+- 超長頁面（> 500 行）：community-tech-discussions.md（909 行）、community-tech-patterns.md（811 行）；社群記者評估兩者均有自清機制或可 grep 定位，暫不拆分
+- 規則檔健檢：
+  - wiki/CLAUDE.md：50 行（閾值 80）✅
+  - .claude/rules/wiki-ingest.md：68 行（閾值 80）✅
+  - .claude/rules/wiki-ingest-format.md：135 行（閾值 200）✅
+  - wiki-ingest-features.md：121 行（閾值 100）⚠️（與上次 lint 一致，暫不執行）
+  - wiki-ingest-models.md：50 ✅ / commercial.md：77 ✅ / safety-policy.md：53 ✅ / people.md：41 ✅
+  - wiki-ingest-community.md：105 行（閾值 100）⚠️（略超，新增社群訊號門檻規則所致）
+  - wiki-ingest-community-lint.md：110 行（閾值 100）⚠️（今日新增 patterns 淘汰 + trends 週更兩個區塊所致）
+  - 矛盾（6a）：無
+  - 引用驗證（6b）：7/7 全部通過
+  - 遵守率（6c）：近 3 次 ingest 品質審查 3/3 ✅ / feature-radar 3/3 ✅
+  - 過期規則（6d）：entities/topics 格式模板 [加入: 2026-04-25]（65 天）— 六記者實際套用確認仍吻合現狀，無需修訂
+  - 簡化（6e）：features / community / community-lint 三檔超門檻，本次跳過（功能完整，非冗餘膨脹）
+- Python 熱度訊號修復（源碼層）：base.py 加 source_count 欄位；reddit.py + devto.py 改取 slash_comments 代理訊號；dedup.py 改合併累加 source_count 而非替換；analyzer.py 顯示跨來源數（✦ 跨 N 個獨立來源）
+- overview.md：已更新（當前局勢改三條線；進行中議題 #5 ai-agent-safety 改 delta-first；近兩週事件表加 06-29/06-30；商業動態同步新合作）

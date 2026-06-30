@@ -84,7 +84,7 @@
 | **v2.1.124** | 2026-04-30 | 系統提示新增預算超出提醒機制（+166 tokens）|
 | **v2.1.121** | 2026-04-28 | MCP `alwaysLoad` 選項；`claude plugin prune` |
 
-### 近期重要更新
+### 近期重要更新（2026 Q2 精選）
 
 ### Agentic 能力擴展
 - **Agent View**（v2.1.139，Research Preview）：統一面板管理所有並行 session 即時狀態（執行中 / 等待輸入 / 已完成），執行 `claude agents` 啟用；見 [[feature-radar]]

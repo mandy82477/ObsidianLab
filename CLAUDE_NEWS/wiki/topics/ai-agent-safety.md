@@ -13,7 +13,7 @@
 
 ## 摘要
 
-隨著 AI agent 被賦予更高自主性與系統操作權限，安全事故與防護工具同步出現。本頁追蹤 Claude Code 與相關 AI agent 的安全事件，涵蓋：CVE 漏洞披露（沙箱逃逸、遠端代碼執行）、提示注入與 Agentjacking 攻擊、惡意套件與供應鏈污染、以及 AI agent 不當執行造成的資料損毀事件。
+2026-06-30，Reddit 社群與獨立技術部落格揭露 Claude Code 自 v2.1.91 起嵌入偵測中國代理的程式碼（待 Anthropic 確認），同日 Mozilla prompt injection 攻擊獲四個第三方媒體多重確認，Anthropic 仍無公開回應——標誌本頁進入「隱私爭議 + 未修補設計缺陷」並行的新階段。本頁追蹤 Claude Code 與相關 AI agent 的安全事件，涵蓋：CVE 漏洞披露（沙箱逃逸、遠端代碼執行）、提示注入與 Agentjacking 攻擊、惡意套件與供應鏈污染、以及 AI agent 不當執行造成的資料損毀事件。
 
 2026-04-28 的代表性事件：Cursor 搭載 Claude Opus 在 9 秒內刪除 PocketOS 整個生產資料庫，備份亦遭連帶清除，至今無官方後續回應；此事件成為業界討論 AI agent 不可逆操作安全防護的主要引用案例。截至 2026-06-20，Claude Code 已累積多個具名 CVE，攻擊面涵蓋 repo clone、deeplink、第三方錯誤追蹤工具注入等向量，社群已開始建立 stop hook 與沙盒隔離等防護工具。
 

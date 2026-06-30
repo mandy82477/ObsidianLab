@@ -4,14 +4,19 @@
 **狀態：** active
 **領域：** 👤 人物
 **首次出現：** 2026-06-25
-**最後更新：** 2026-06-26
+**最後更新：** 2026-06-30
 **最後新聞更新：** 2026-06-26
+
+> **最新動態**（2026-06-26）
+> Wired 確認 Tom Brown 全面接管 Anthropic 與白宮的 Fable 5 出口管制談判，取代 Dario Amodei；白宮人士評其「能實際有效溝通」。
+
+---
 
 ## 現況
 
-Anthropic 聯合創辦人，曾在 OpenAI 參與 GPT-3 開發。2026-06-26 Wired 報導進一步確認其背景：Tom Brown 在加入 Anthropic 前為 OpenAI 核心研究員，GPT-3 論文作者之一。
+2026-06-25，Tom Brown 接管 Anthropic 與白宮的 Fable 5 出口管制談判，取代 Dario Amodei 負責與 Trump 政府的直接對話。白宮人士評價其「不像 Dario 那樣行為怪異，能夠實際有效溝通」，是他在 Anthropic 政治分量上首次公開體現。
 
-2026-06-25，WIRED 報導 Tom Brown 接管 Anthropic 與白宮的 Fable 5 出口管制談判，取代 Dario Amodei 負責與 Trump 政府的直接對話。白宮人士評價 Tom Brown「不像 Dario 那樣行為怪異（not being a weirdo like Dario），能夠實際有效溝通」，顯示其與現任行政當局關係優於 Amodei。
+Tom Brown 是 Anthropic 聯合創辦人，曾在 OpenAI 參與 GPT-3 開發（GPT-3 論文作者之一）。
 
 ## 核心論述
 

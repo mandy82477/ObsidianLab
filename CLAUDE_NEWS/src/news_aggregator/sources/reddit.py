@@ -45,7 +45,7 @@ class Reddit(BaseSource):
                         url=entry.get("link", ""),
                         source=f"Reddit / r/{subreddit}",
                         published=pub or datetime.now(tz=timezone.utc),
-                        score=0,
+                        score=int(entry.get("slash_comments", 0)),
                         summary=entry.get("summary", "")[:200],
                         category="community",
                     ))

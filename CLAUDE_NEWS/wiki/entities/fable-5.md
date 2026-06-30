@@ -4,7 +4,7 @@
 **狀態：** active（正式發布；Fable 5 / Mythos 5 因美國政府出口管制指令暫停全球存取）
 **領域：** 🤖 模型
 **首次出現：** 2026-06-09
-**最後更新：** 2026-06-29
+**最後更新：** 2026-06-30
 **最後新聞更新：** 2026-06-29
 
 > **最新管制進展**（2026-06-29）
@@ -13,6 +13,8 @@
 ---
 
 ## 現況
+
+**2026-06-29 最新**：美國政府正式許可 Anthropic 向特定信任合作夥伴恢復 Mythos 存取（qz.com）；Axios 報導 Fable 5「can return as soon as this week」，全面解禁談判接近尾聲，仍待官方確認。
 
 Claude Fable 5 是 Anthropic 於 2026-06-09 發布的旗艦模型，為**史上首款向大眾開放的 Mythos 級模型**。Fable 5 與 Claude Mythos 5 共用相同的模型權重，差異在於 Fable 5 前置安全分類器——觸發時靜默 fallback 至 Claude Opus 4.8（Anthropic 稱不到 5% 的 session 受影響）。
 
@@ -154,7 +156,7 @@ claude --model claude-fable-5-20260609
 ### 2026-06-27
 **接近批准 Fable 5 重新上線（待核實）+ Mythos 5 先行部分解禁**：
 - **Fable 5 接近協議（待核實）**：Reuters / Axios 報導美方接近批准 Fable 5 重新上線，尚未獲得 Anthropic 或商務部官方確認（[Reuters](https://www.reuters.com/business/us-close-allowing-anthropic-restore-fable-5-model-axios-reports-2026-06-27/)）；訊號強度：兩家主流媒體同步報導，但「接近」不等於已批准，應持保留態度
-- **Mythos 5 先行部分解禁**：同日，商務部長 Howard Lutnick 在致 Anthropic 聯合創辦人 Tom Brown 的信中確認，Mythos 5 已獲批向 100+ 美國受信任機構（企業 + 聯邦機構）有限釋出（Semafor、CNBC）；Fable 5 與 Mythos 5 的解禁為獨立決定，不可相互推論
+- **Mythos 5 先行部分解禁**：同日，商務部長 Howard Lutnick 在致 Anthropic 聯合創辦人、chief compute officer Tom Brown 的信中確認，Mythos 5 已獲批向 100+ 美國受信任機構（企業 + 聯邦機構）有限釋出（Semafor、CNBC）；Fable 5 與 Mythos 5 的解禁為獨立決定，不可相互推論
 
 ### 2026-06-24
 **NSA 失去 Fable 存取權 + Legion 提告 + LessWrong 預測 7/9 解封**：

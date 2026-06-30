@@ -136,6 +136,8 @@ Claude Code 已成為 AI 輔助編碼的標竿產品，但競爭正快速升溫�
 
 ## 時序
 
+#### 亞洲競品崛起與定價顛覆（2026-06-19 至 2026-06-29）
+
 ### 2026-06-29
 - **[DeepSeek 具名勝出] Lindy CEO：100% 流量從 Claude 切至 DeepSeek，每月省下數百萬美元**：CNBC 報導 AI 新創 Lindy CEO Flo Crivello 公開宣告完成全量切換，是「最省錢 > 最強模型」論述中迄今最具代表性的具名 API 客戶案例。Lindy 服務屬高吞吐量自動化工作流，API 費率差異直接轉化為此量級的成本節省。**對競爭格局的意涵**：此類 API 應用層客戶的價格敏感度高，一旦競品達「夠用」門檻，成本成為決策主因；若此模式擴散，DeepSeek 在 API 客戶市場的份額將持續成長、侵蝕 Anthropic API 收入（推論）（CNBC https://www.cnbc.com/2026/06/26/openai-anthropic-new-ai-spending-reality-as-users-shift-to-efficiency.html；詳見 [[topics/enterprise-cost-management]]）
 - **[人才格局] 4 位 Google 資深研究員轉投 Anthropic，Gemini 3.5 Pro 據報延期至七月**：dev.to 報導（推論，未經 Google 官方確認）Google 資深研究員持續出走至 Anthropic，同期 Gemini 3.5 Pro 延期至七月；AI 研究人才集中流向 Anthropic 的趨勢延續，Google 在模型能力追趕上面臨人才與時程的雙重壓力（詳見 [[topics/ai-talent-flow]]）（dev.to https://dev.to/doremonai/gemini-35-pro-delayed-to-july-4-senior-google-researchers-defect-to-anthropic-47he）

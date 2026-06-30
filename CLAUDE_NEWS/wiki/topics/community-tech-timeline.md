@@ -3,10 +3,10 @@
 **狀態：** monitoring
 **領域：** 🌐 社群
 **開始日期：** 2026-04-25
-**最後更新：** 2026-06-23
+**最後更新：** 2026-06-30
 
 > **最近時序紀錄**（2026-05-22）
-> 社群本週最活躍主題為 CLAUDE.md 配置：Spec-Driven Development 工作流（每步清除 context）、1 個 agent 擴展為 50 代理機群五步驟架構、以及 Claude 自行為 CLAUDE.md 新增規則的自主性邊界討論同期出現。
+> 此頁為歷史記錄，時序條目最新止於 2026-05-22。最新社群動態請見 [[topics/community-tech-patterns]] 與 [[topics/community-tech-discussions]]。宏觀趨勢綜述見 [[topics/community-pattern-trends]]。
 
 ---
 

@@ -13,6 +13,7 @@ class FeedItem:
     score: int
     summary: str
     category: str  # "official" | "community"
+    source_count: int = 1  # how many independent sources covered this item
 
 
 class BaseSource(ABC):

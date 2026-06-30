@@ -4,7 +4,7 @@
 **狀態：** active
 **領域：** 🤖 模型
 **首次出現：** 2026-05-28
-**最後更新：** 2026-06-27
+**最後更新：** 2026-06-30
 **最後新聞更新：** 2026-06-25
 
 > **最新服務狀態**（2026-06-24）
@@ -13,6 +13,8 @@
 ---
 
 ## 現況
+
+**2026-06-24 最新**：跨 API、Claude Code 與 Console 三個平台出現高錯誤率（elevated errors），Anthropic 正在調查中；同日第三方評測 Gemini 3.5 Flash 以 35.4 對 34.8 略勝，分析指主因為指令遵循失誤而非能力差距。
 
 Claude Opus 4.8 於 2026-05-28 正式發布，同步推出 Dynamic Workflows（Research Preview）與 Fast Mode 降價，是 2026 年以來 Anthropic 發布規模最大的旗艦更新。**2026-06-09 Claude Fable 5 發布後，Opus 4.8 不再是最高階公開模型**，現作為 Fable 5 受出口管制停用期間的 fallback 模型（< 5% session 觸發）。核心指標：SWE-bench Pro 69.2%（1M context window）；Fast Mode 速度為標準的 2.5 倍、費率降至前代的 1/3。
 

@@ -125,6 +125,7 @@ def _format_items(items: list[FeedItem]) -> str:
         pub_str = item.published.strftime("%m/%d %H:%M UTC")
         category_label = "官方" if item.category == "official" else "社群"
         score_part = f" | 討論熱度：{item.score}" if item.score > 0 else ""
+        source_part = f" | ✦ 跨 {item.source_count} 個獨立來源" if item.source_count > 1 else ""
         # Show up to 600 chars of enriched summary, preserving line breaks for readability
         if item.summary:
             summary_text = item.summary[:600].strip()
@@ -134,7 +135,7 @@ def _format_items(items: list[FeedItem]) -> str:
         lines.append(
             f"{i}. [{category_label}] {item.title}\n"
             f"   URL：{item.url}\n"
-            f"   來源：{item.source} | 時間：{pub_str}{score_part}"
+            f"   來源：{item.source} | 時間：{pub_str}{score_part}{source_part}"
             f"{summary_part}"
         )
     return "\n\n".join(lines)
@@ -145,7 +146,8 @@ def _fallback_body(items: list[FeedItem]) -> str:
     for item in items:
         pub_str = item.published.strftime("%m/%d %H:%M UTC")
         score_str = f" — {item.score} 分" if item.score > 0 else ""
-        lines.append(f"- **[{item.title}]({item.url})**{score_str}")
+        source_note = f" ✦ 跨 {item.source_count} 來源" if item.source_count > 1 else ""
+        lines.append(f"- **[{item.title}]({item.url})**{score_str}{source_note}")
         lines.append(f"  *{item.source} · {pub_str}*")
         if item.summary:
             excerpt = item.summary[:150].replace("\n", " ").strip()
