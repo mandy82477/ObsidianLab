@@ -1204,6 +1204,12 @@ window.WIKI_DATA = {
   ],
   "digestIndex": [
     {
+      "date": "2026-07-01",
+      "articleCount": 0,
+      "preview": "",
+      "topCount": 0
+    },
+    {
       "date": "2026-06-30",
       "articleCount": 46,
       "preview": "Companies Are Making Claude, Codex Talk Like Cavemen to Stop AIs Soaring Costs",
