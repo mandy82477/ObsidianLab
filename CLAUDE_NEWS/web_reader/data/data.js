@@ -11,7 +11,7 @@ window.WIKI_DATA = {
       "pill": "active",
       "firstSeen": "2026-05-17（CLAUDE.md 維護討論中被引用）",
       "startDate": "",
-      "lastUpdated": "2026-06-27",
+      "lastUpdated": "2026-06-30",
       "lastNewsUpdate": "2026-05-29",
       "summary": "Andrej Karpathy 為知名 AI 研究者，已加入 Anthropic（待核實，來源：HN 討論）。以 OpenAI 聯合創始人/研究總監及 Tesla AI/Autopilot 負責人身份廣為人知。加入 Anthropic 後，公開分享其「CLAUDE.md 四條規則」，其中強調「不讓 agent 讀超過必…",
       "latestHeadline": "HN 社群討論確認 Karpathy 已正式加入 Anthropic，Eureka Labs GitHub org 停更、LinkedIn 資訊移除，推測已解散（待核實）"
@@ -28,7 +28,7 @@ window.WIKI_DATA = {
       "startDate": "",
       "lastUpdated": "2026-06-29",
       "lastNewsUpdate": "2026-06-28",
-      "summary": "Boris Cherny 是 Anthropic Claude Code 的創始人與負責人（Head of Claude Code），是 Claude Code 產品方向最主要的公開代言人。他以高頻率的公開聲明、哲學宣言與工程分享，持續引發開發者社群廣泛討論，被視為 Anthropic 技術文化的外部窗口。 ---",
+      "summary": "2026-06-28，Boris Cherny 在 howborisusesclaudecode.com 公開個人日常 setup，展示同時開 5 個並行 Claude Code 實例的工作流，並強調「surprisingly vanilla」——無需特殊魔改即可完成。2026-06-24，他承認「AI 寫 100% …",
       "latestHeadline": "在 howborisusesclaudecode.com 公開 13 個日常 Claude Code 使用技巧，涵蓋 5 個並行實例搭配獨立 git checkout、`--teleport` 跨環境切換、iPhone 啟動電腦接力等；強調「surprisingly vanilla」setup（Hacker News，"
     },
     {
@@ -41,7 +41,7 @@ window.WIKI_DATA = {
       "pill": "info",
       "firstSeen": "2026-04-26",
       "startDate": "",
-      "lastUpdated": "2026-06-27",
+      "lastUpdated": "2026-06-30",
       "lastNewsUpdate": "2026-06-20",
       "summary": "截至 2026-06-20 仍無後續公開資訊，Bugcrawl 自 2026-04-26 首度被 TestingCatalog 報導後維持內部測試狀態。此工具由 Anthropic 開發，專為 Claude Code 提供自動化漏洞偵測功能，強化 AI 輔助開發流程中的程式品質把關，目前尚未正式公開、無公開測試邀請。 …",
       "latestHeadline": "首次被媒體報導（TestingCatalog），確認 Anthropic 正在測試此工具"
@@ -56,9 +56,9 @@ window.WIKI_DATA = {
       "pill": "active",
       "firstSeen": "2026-05-14",
       "startDate": "",
-      "lastUpdated": "2026-06-27",
+      "lastUpdated": "2026-06-30",
       "lastNewsUpdate": "2026-06-22",
-      "summary": "Cat Wu 是 Anthropic Claude Code 產品負責人（Head of Claude Code Products），與創始人 Boris Cherny（見 [[entities/boris-cherny]]）共同主導 Claude Code 的產品方向。2026-05-14，她在公開訪問中提出 AI …",
+      "summary": "2026-05-14，Cat Wu 在公開訪問中提出 AI 下一個重大躍進是「**主動性（proactivity）**」——AI 代理應能主動完成任務，而非等待使用者提示。這是 Claude Code 從「互動工具」轉向「自主代理平台」的產品定位宣言，迄今仍是她最後一次公開論述。 Cat Wu 是 Anthropic …",
       "latestHeadline": "「engineering leader 讓工程師更孤獨」一說，後續具名來源確認發言人為 Anthropic 工程副總裁 Fiona Fung（[[entities/fiona-fung]]），非 Cat Wu；本頁解除待核實"
     },
     {
@@ -71,9 +71,9 @@ window.WIKI_DATA = {
       "pill": "active",
       "firstSeen": "2026-06-19",
       "startDate": "",
-      "lastUpdated": "2026-06-27",
+      "lastUpdated": "2026-06-30",
       "lastNewsUpdate": "2026-06-18",
-      "summary": "Anthropic 國際業務總監（Managing Director of International），主導 Anthropic 在亞太地區的業務拓展。Fable 5 與 Mythos 因美國出口管制政策於 2026 年中受限，導致亞太地區包括韓國用戶無法存取，此次首爾記者會是 Anthropic 首次在亞太地區就此…",
+      "summary": "2026-06-18，Chris Ciauri 在首爾 Conrad 飯店召開記者會，公開表態「非常有信心，數日內模型將重新開放」（待核實），針對 Fable 5 / Mythos 出口管制問題給出具體時間框架。這是 Anthropic 首次在亞太地區就此議題公開表態。 Chris Ciauri 是 Anthropic…",
       "latestHeadline": "在首爾 Conrad 飯店召開記者會，宣布對 Fable 5 / Mythos 解禁「數日內」的信心（待核實）；同場出席者包括 Anthropic Korea 代表 Choi Ki-young"
     },
     {
@@ -86,7 +86,7 @@ window.WIKI_DATA = {
       "pill": "active",
       "firstSeen": "2026-05-26",
       "startDate": "",
-      "lastUpdated": "2026-06-27",
+      "lastUpdated": "2026-06-30",
       "lastNewsUpdate": "2026-05-29",
       "summary": "Chris Olah 是 Anthropic 的共同創辦人之一，也是 AI 可解釋性（interpretability）研究領域的重要先驅。他以「神經網路電路」研究著名，強調透過理解 AI 內部機制來確保安全性，是 Anthropic 技術文化中「理解先於能力」立場的核心人物。 2026-05-26，Chris Ola…",
       "latestHeadline": "Wired 長文《The Vatican's Man Inside Anthropic》深度側寫 Olah 在梵蒂岡事件中的角色，Guardian 同日質疑 Anthropic 是否存在「Vatican-washing」"
@@ -116,7 +116,7 @@ window.WIKI_DATA = {
       "pill": "active",
       "firstSeen": "2026-04-27",
       "startDate": "",
-      "lastUpdated": "2026-06-23",
+      "lastUpdated": "2026-06-30",
       "lastNewsUpdate": "2026-06-20",
       "summary": "Claude Design 是 Anthropic 推出的 AI 設計工具功能，旨在讓 Claude 具備輔助 UI／視覺設計的能力。目前處於初期階段，社群評價以負面為主——幻覺嚴重、工具錯誤頻繁，且輸出設計風格過度貼近 Anthropic 自家品牌，忽略用戶提供的設計素材。截至 2026-06-20，無後續公開更新，…",
       "latestHeadline": "有開發者透過讓 Claude Design 洩漏部分指引，成功反向工程其系統提示詞，並以近似版本公開分享，顯示提示工程邏輯可被複製至其他 LLM 或 Claude Code 環境，降低了其差異化壁壘"
@@ -131,8 +131,8 @@ window.WIKI_DATA = {
       "pill": "info",
       "firstSeen": "2026-04-30",
       "startDate": "",
-      "lastUpdated": "2026-06-23",
-      "lastNewsUpdate": "2026-06-20",
+      "lastUpdated": "2026-06-30",
+      "lastNewsUpdate": "2026-05-28",
       "summary": "Claude Security 於 2026-04-30 宣布推出公開測試版，並於 2026-05-01 正式向**全部 Enterprise 客戶**開放。ZDNET、SecurityWeek、SiliconANGLE、CRN、Pulse 2.0 等多家媒體報導。這是 Anthropic 首次以**獨立資安產品形式*…",
       "latestHeadline": "Cisco LLM Security Leaderboard 首次發布：Anthropic 模型佔前十名 8 個席位（8/10），成為企業採購 AI 工具時最強的第三方安全背書；調查同時顯示 83% 企業計畫部署 agentic AI，但僅 29% 認為已具備足夠安全管控能力——此數字直接推動 Claude Secur"
     },
@@ -161,9 +161,9 @@ window.WIKI_DATA = {
       "pill": "active",
       "firstSeen": "2026-04-25",
       "startDate": "",
-      "lastUpdated": "2026-06-29",
+      "lastUpdated": "2026-06-30",
       "lastNewsUpdate": "2026-06-26",
-      "summary": "Anthropic 共同創辦人兼執行長（CEO）。與 Chris Olah、Daniela Amodei 等人從 OpenAI 出走後創立 Anthropic。主導公司整體策略與安全定位，在 AI 治理、政府政策、企業文化三條線高度活躍。 2026 年上半年公開言論集中在：（1）呼籲政府有權阻止危險 AI 模型發布（尤…",
+      "summary": "2026-06-26，Wired 確認 Trump 政府已不再信任 Amodei，由 Tom Brown 全面接管 Fable 5 出口管制談判；白宮人士批評其「行為怪異」。此為他近期最重大的政治處境轉變，顯示 Anthropic 與現任行政當局關係持續惡化。 Dario Amodei 是 Anthropic 共同創辦…",
       "latestHeadline": "Wired 延伸報導確認 Trump 政府已不再信任 Amodei，改由 Tom Brown（GPT-3 共同研發者、Anthropic 聯合創辦人）全面接管政府溝通；Dario 以商業成功推動 AI 安全的政策立場持續受到質疑（來源：WIRED）"
     },
     {
@@ -176,9 +176,9 @@ window.WIKI_DATA = {
       "pill": "active",
       "firstSeen": "2026-06-09",
       "startDate": "",
-      "lastUpdated": "2026-06-29",
+      "lastUpdated": "2026-06-30",
       "lastNewsUpdate": "2026-06-29",
-      "summary": "Claude Fable 5 是 Anthropic 於 2026-06-09 發布的旗艦模型，為**史上首款向大眾開放的 Mythos 級模型**。Fable 5 與 Claude Mythos 5 共用相同的模型權重，差異在於 Fable 5 前置安全分類器——觸發時靜默 fallback 至 Claude Opu…",
+      "summary": "**2026-06-29 最新**：美國政府正式許可 Anthropic 向特定信任合作夥伴恢復 Mythos 存取（qz.com）；Axios 報導 Fable 5「can return as soon as this week」，全面解禁談判接近尾聲，仍待官方確認。 Claude Fable 5 是 Anthrop…",
       "latestHeadline": "政府正式許可（qz.com）：Anthropic 獲得美國政府許可，可向特定信任合作夥伴恢復 Mythos 存取，Fable 5 全面回歸在望（[qz.com](https://qz.com/anthropic-mythos-5-clearance-trusted-partners-commerce-062926)）；"
     },
     {
@@ -191,9 +191,9 @@ window.WIKI_DATA = {
       "pill": "active",
       "firstSeen": "2026-06-23",
       "startDate": "",
-      "lastUpdated": "2026-06-27",
+      "lastUpdated": "2026-06-30",
       "lastNewsUpdate": "2026-06-23",
-      "summary": "Fiona Fung 是 Anthropic 工程副總裁（VP of Engineering）。2026-06-22，她接受 Business Insider 採訪時指出：Claude Code 正在改變工程師的協作方式——coding 不再是開發瓶頸，但工程師在使用 AI 工具後開始感到孤獨。這是 Anthropic…",
+      "summary": "2026-06-22，Fiona Fung 接受 Business Insider 採訪時指出：Claude Code 使 coding 不再是開發瓶頸，但工程師在使用 AI 工具後開始感到孤獨。這是 Anthropic 工程領導層少見的公開論述，點出 AI 編碼工具帶來的社會性副作用。 Fiona Fung 是 An…",
       "latestHeadline": "Business Insider 採訪報導：Claude Code 讓 coding 不再是瓶頸，但工程師開始感到孤獨"
     },
     {
@@ -221,9 +221,9 @@ window.WIKI_DATA = {
       "pill": "active",
       "firstSeen": "2026-06-20",
       "startDate": "",
-      "lastUpdated": "2026-06-26",
+      "lastUpdated": "2026-06-30",
       "lastNewsUpdate": "2026-06-26",
-      "summary": "John Jumper 是 2024 年諾貝爾化學獎得主，因 AlphaFold 蛋白質結構預測研究與 Demis Hassabis 共同獲獎。Reuters 於 2026-06-21 正式確認他已離開 Google DeepMind、加入 Anthropic（HN score 77）。加入時點適逢 Anthropic…",
+      "summary": "2026-06-21，Reuters 正式確認 John Jumper 已離開 Google DeepMind、加入 Anthropic（HN score 77）。他成為一週內出走 Google 加入 Anthropic 的多位頂尖研究員之一，dev.to 報導指此波人才流失連帶造成 Google Alphabet 市…",
       "latestHeadline": "dev.to 多篇報導總結此波 Google AI 人才出走潮，指 Jumper 加入時點適逢 Anthropic Mythos 出口管制危機；一週內 4 位頂尖研究員離開 Google，Google Alphabet 市值蒸發約 2,700 億美元，Gemini 3.5 延期（來源：dev.to）"
     },
     {
@@ -311,9 +311,9 @@ window.WIKI_DATA = {
       "pill": "active",
       "firstSeen": "2026-05-28",
       "startDate": "",
-      "lastUpdated": "2026-06-27",
+      "lastUpdated": "2026-06-30",
       "lastNewsUpdate": "2026-06-25",
-      "summary": "Claude Opus 4.8 於 2026-05-28 正式發布，同步推出 Dynamic Workflows（Research Preview）與 Fast Mode 降價，是 2026 年以來 Anthropic 發布規模最大的旗艦更新。**2026-06-09 Claude Fable 5 發布後，Opus 4…",
+      "summary": "**2026-06-24 最新**：跨 API、Claude Code 與 Console 三個平台出現高錯誤率（elevated errors），Anthropic 正在調查中；同日第三方評測 Gemini 3.5 Flash 以 35.4 對 34.8 略勝，分析指主因為指令遵循失誤而非能力差距。 Claude O…",
       "latestHeadline": "第三方評測：Gemini 3.5 Flash 35.4 vs Opus 4.8 34.8 略勝：RuntimeWire 對比評測中 Gemini 在四項任務贏三項；Claude 在 messy-orders-to-json 任務因輸出 Markdown code fence（違反 JSON-only 指令）失分；分析師"
     },
     {
@@ -341,9 +341,9 @@ window.WIKI_DATA = {
       "pill": "active",
       "firstSeen": "2026-06-25",
       "startDate": "",
-      "lastUpdated": "2026-06-26",
+      "lastUpdated": "2026-06-30",
       "lastNewsUpdate": "2026-06-26",
-      "summary": "Anthropic 聯合創辦人，曾在 OpenAI 參與 GPT-3 開發。2026-06-26 Wired 報導進一步確認其背景：Tom Brown 在加入 Anthropic 前為 OpenAI 核心研究員，GPT-3 論文作者之一。 2026-06-25，WIRED 報導 Tom Brown 接管 Anthrop…",
+      "summary": "2026-06-25，Tom Brown 接管 Anthropic 與白宮的 Fable 5 出口管制談判，取代 Dario Amodei 負責與 Trump 政府的直接對話。白宮人士評價其「不像 Dario 那樣行為怪異，能夠實際有效溝通」，是他在 Anthropic 政治分量上首次公開體現。 Tom Brown 是…",
       "latestHeadline": "Wired 報導補充確認 Tom Brown 為 GPT-3 共同研發者（OpenAI 時期），Anthropic 聯合創辦人身份獲多來源確認（來源：WIRED）"
     }
   ],
@@ -375,8 +375,8 @@ window.WIKI_DATA = {
       "startDate": "2026-04-27",
       "lastUpdated": "2026-06-30",
       "lastNewsUpdate": "2026-06-30",
-      "summary": "隨著 AI agent 被賦予更高自主性與系統操作權限，安全事故與防護工具同步出現。本頁追蹤 Claude Code 與相關 AI agent 的安全事件，涵蓋：CVE 漏洞披露（沙箱逃逸、遠端代碼執行）、提示注入與 Agentjacking 攻擊、惡意套件與供應鏈污染、以及 AI agent 不當執行造成的資料損毀事…",
-      "latestHeadline": "隨著 AI agent 被賦予更高自主性與系統操作權限，安全事故與防護工具同步出現。本頁追蹤 Claude Code 與相關 AI agent 的安全事件，涵蓋：CVE 漏洞披露（沙箱逃逸、遠端代碼執行）、提示注入與 Agentjacking 攻擊、惡意套件與供應鏈污染、以及 AI agent 不當執行造成的資料損毀事"
+      "summary": "2026-06-30，Reddit 社群與獨立技術部落格揭露 Claude Code 自 v2.1.91 起嵌入偵測中國代理的程式碼（待 Anthropic 確認），同日 Mozilla prompt injection 攻擊獲四個第三方媒體多重確認，Anthropic 仍無公開回應——標誌本頁進入「隱私爭議 + 未修…",
+      "latestHeadline": "2026-06-30，Reddit 社群與獨立技術部落格揭露 Claude Code 自 v2.1.91 起嵌入偵測中國代理的程式碼（待 Anthropic 確認），同日 Mozilla prompt injection 攻擊獲四個第三方媒體多重確認，Anthropic 仍無公開回應——標誌本頁進入「隱私爭議 + 未修"
     },
     {
       "id": "ai-talent-flow",
@@ -420,7 +420,7 @@ window.WIKI_DATA = {
       "startDate": "2026-05-01",
       "lastUpdated": "2026-06-30",
       "lastNewsUpdate": "2026-06-30",
-      "summary": "Anthropic 與美國政府的衝突從 2026 年五月起持續升溫，並於 2026-06-22 迎來重大轉折。表面上每次摩擦的導火線不同——軍事合約談不攏、Fable 5 護欄爭議、出口管制指令——但根源始終是同一個矛盾：**Anthropic 相信越強的模型越需要護欄；美國政府相信越強的模型越需要無限制存取。** 2…",
+      "summary": "2026-06-30，Fortune、CNBC、SF Examiner 三篇報導共同標誌媒體敘事轉向：Anthropic 被主流財經媒體定性為「拒絕按 Trump 政府劇本行事並付出代價」，而非「被無辜打壓的受害者」；出口管制反效論述（白宮打壓為中國競品創造窗口）已獲 Bloomberg、WSJ、CNBC 三大財經媒體…",
       "latestHeadline": "[媒體框架轉向] Fortune 深度報導：Anthropic 拒絕配合 Trump 遊戲規則的政治代價：Fortune 深度報導 Anthropic 因拒絕配合 Trump 政府運作邏輯（相較多數科技巨頭的配合態度）而付出實質商業與政治代價；報導框架為「Anthropic 失敗按 Trump 劇本行事」，為主流財經媒"
     },
     {
@@ -448,8 +448,8 @@ window.WIKI_DATA = {
       "pill": "active",
       "firstSeen": "",
       "startDate": "2026-06-29",
-      "lastUpdated": "2026-06-29",
-      "lastNewsUpdate": "2026-06-29",
+      "lastUpdated": "2026-06-30",
+      "lastNewsUpdate": "2026-06-30",
       "summary": "本頁從 [[topics/community-tech-patterns]] 的具體模式中，**萃取出宏觀趨勢**——社群正在往哪些方向收斂，每條趨勢的熱度曲線（加溫 / 穩定 / 醞釀），以及**對現有設計的啟示**：工程師看到這條趨勢，該回頭重新思考自己現有設計的什麼。 - **週更**：本頁只在 `/wiki-l…",
       "latestHeadline": "本頁從  的具體模式中，萃取出宏觀趨勢——社群正在往哪些方向收斂，每條趨勢的熱度曲線（加溫 / 穩定 / 醞釀），以及對現有設計的啟示：工程師看到這條趨勢，該回頭重新思考自己現有設計的什麼。"
     },
@@ -493,7 +493,7 @@ window.WIKI_DATA = {
       "pill": "warn",
       "firstSeen": "",
       "startDate": "2026-04-25",
-      "lastUpdated": "2026-06-23",
+      "lastUpdated": "2026-06-30",
       "lastNewsUpdate": "",
       "summary": "**此頁為歷史記錄，2026-05-22 後的時序整合至 [[topics/community-tech-patterns]]。** 本頁記錄 Claude Code 社群技術應用趨勢的時序演進，追蹤範圍從 2026 年 4 月下旬至今，最新條目為 2026 年 5 月下旬。與 [[topics/community-t…",
       "latestHeadline": "Spec-Driven Development 工作流（HN Show）：多步驟生成規格（需求→程式碼分析→設計）→ 分拆子任務→每步之間清除 context再執行，藉此降低成本並提升 agent 表現；與 Managed Agents Outcomes 機制的「spec 作為執行依據」原則在社群層面形成呼應，是規格驅"
@@ -508,7 +508,7 @@ window.WIKI_DATA = {
       "pill": "active",
       "firstSeen": "",
       "startDate": "2026-04-25",
-      "lastUpdated": "2026-06-27",
+      "lastUpdated": "2026-06-30",
       "lastNewsUpdate": "",
       "summary": "追蹤 Claude Code 社群發布的工具、插件與 skill 專案。此頁為 lint 專用，由 /wiki-lint 定期策展；每日 ingest 不更新此頁。日常工作流模式見 [[topics/community-tech-patterns]]，概念辯論見 [[topics/community-tech-disc…",
       "latestHeadline": "追蹤 Claude Code 社群發布的工具、插件與 skill 專案。此頁為 lint 專用，由 /wiki-lint 定期策展；每日 ingest 不更新此頁。日常工作流模式見 ，概念辯論見 。"
@@ -526,7 +526,7 @@ window.WIKI_DATA = {
       "lastUpdated": "2026-06-29",
       "lastNewsUpdate": "2026-06-29",
       "summary": "Claude Code 已成為 AI 輔助編碼的標竿產品，但競爭正快速升溫。2026-05 是關鍵轉折月：OpenAI Codex 下載量單週爆增 1,397%、OpenCode 吸走 15.7 萬開發者、Microsoft 取消數千名員工授權改推 Copilot CLI——分流訊號同步出現。另一方面，Anthropi…",
-      "latestHeadline": "[DeepSeek 具名勝出] Lindy CEO：100% 流量從 Claude 切至 DeepSeek，每月省下數百萬美元：CNBC 報導 AI 新創 Lindy CEO Flo Crivello 公開宣告完成全量切換，是「最省錢 > 最強模型」論述中迄今最具代表性的具名 API 客戶案例。Lindy 服務屬高吞吐"
+      "latestHeadline": "Claude Code 已成為 AI 輔助編碼的標竿產品，但競爭正快速升溫。2026-05 是關鍵轉折月：OpenAI Codex 下載量單週爆增 1,397%、OpenCode 吸走 15.7 萬開發者、Microsoft 取消數千名員工授權改推 Copilot CLI——分流訊號同步出現。另一方面，Anthropi"
     },
     {
       "id": "enterprise-cost-management",
