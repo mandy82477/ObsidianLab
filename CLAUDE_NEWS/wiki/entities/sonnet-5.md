@@ -16,6 +16,8 @@
 
 Claude Sonnet 5 於 2026-07-01 正式發布，定位為 Anthropic **最 agentic 的 Sonnet 模型**，在 reasoning、tool use、coding、knowledge work 等多個面向均有顯著提升，效能接近 Opus 4.8。
 
+**與 [[entities/fable-5]] 的定位差異**：Fable 5 是目前最高階旗艦（Mythos 級推理能力，適合最複雜的多步驟任務）；Sonnet 5 則是主力平衡選項——以約 60% 的成本換取接近 Opus 4.8 的效能，適合日常 agentic 工作流與成本敏感場景，非追求極致推理深度的定位。
+
 **Claude Code 預設模型**：Claude Code v2.1.197 起已將 Sonnet 5 設為預設模型，取代前一代 Sonnet 版本。
 
 **定價**：促銷定價 $2/$10 per Mtok（input/output）有效期至 2026-08-31。相較 Opus 4.8（$5/$25，估計）成本差距約 60%，社群稱此為「cost reset for AI agents」。
@@ -53,12 +55,14 @@ claude --model claude-sonnet-5-20260701
 
 - **Agentic 定位**：reasoning、tool use、coding、knowledge work 全面提升，是 Anthropic 目前最強 agentic Sonnet
 - **效能 vs Opus 4.8**：社群多篇評測確認在 agentic 任務上效能接近 Opus 4.8，60% 成本差距
-- **Terminal-Bench 2.1（2026-06）**：Sonnet 5 在 leaderboard 有明確排名；#1 仍為外界無法取用的型號（待核實細節）
 - **1M token context**：原生支援，無需外部管理
 - **Claude Code 預設**：v2.1.197 起為 Claude Code 預設模型
 
+**待驗證：** 社群評測提及 Sonnet 5 在 Terminal-Bench 2.1（2026-06）leaderboard 有排名，且「#1 仍為外界無法取用的型號」，但缺乏具體名次數字與來源連結，暫不列為已確認核心能力。
+
 ## 相關議題
 
+- [[entities/fable-5]] — 現任最高階公開模型；Sonnet 5 為次階平衡選項，定位差異見上方「現況」
 - [[entities/opus-4-8]] — Opus 4.8 能力對比（Sonnet 5 效能接近 Opus 4.8）
 - [[entities/pricing]] — 完整定價與促銷方案細節
 - [[entities/claude-code]] — Claude Code v2.1.197 更新

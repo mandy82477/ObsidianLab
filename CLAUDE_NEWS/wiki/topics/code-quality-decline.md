@@ -3,7 +3,7 @@
 **狀態：** monitoring（官方已說明，待驗證恢復）
 **領域：** 🛠️ 工具/功能
 **開始日期：** 2026-03（推測）
-**最後更新：** 2026-06-29
+**最後更新：** 2026-07-01
 **最後新聞更新：** 2026-06-26
 
 > **最近效能退步事件**（2026-06-26）
@@ -13,7 +13,7 @@
 
 ## 摘要
 
-**當前狀態：** 官方已說明 4 月退步原因為工程疏失，恢復情況待驗證；近期投訴轉向「工具行為不一致」（自訂編排路由失效、無障礙偏差），多屬 context/工具配置層問題而非模型能力退步，官方多未回應。
+**當前狀態：** 官方已說明 4 月退步原因為工程疏失，恢復情況待驗證；近期投訴轉向「工具行為不一致」，但性質不一：自訂編排路由失效屬 context/工具配置層問題，無障礙偏差則被開發者定性為模型「values problem」（優先序偏差）而非配置或知識缺口；兩者共同點是均非典型的模型能力退步，官方多未回應。
 
 Claude Code 在 2026 年 3 月至 4 月間出現長達約一個月的效能明顯退步，引發大量開發者不滿。2026-04-24，Anthropic 首次正式承認此問題，說明原因為**工程疏失**（engineering missteps），並非刻意的模型行為調整。
 
@@ -54,6 +54,7 @@ Claude Code 在 2026 年 3 月至 4 月間出現長達約一個月的效能明�
 
 - [[entities/claude-code]]
 - [[entities/opus-4-7]]
+- [[entities/opus-4-8]]
 - [[entities/pricing]]
 
 ## 參考來源
@@ -80,7 +81,7 @@ Claude Code 在 2026 年 3 月至 4 月間出現長達約一個月的效能明�
 
 ### 2026-05-29
 
-- **Opus 4.7 升版前一週效能下降（MarginLab SWE-bench-Pro 追蹤）**：MarginLab 每日對 Claude Code 執行 SWE-bench-Pro 追蹤，發現 Opus 4.7 在 Opus 4.8 發布前**連續五天**呈現統計顯著的 pass rate 下降，發布後立即恢復。此為「靜默的日常效能變化」模式的又一次文件化案例——launch benchmark 只呈現發布當下數字，無法捕捉前後的漸進變化（來源：https://marginlab.ai/blog/claude-code-degraded-before-opus-4-8/）
+- **Opus 4.7 升版前一週效能下降（MarginLab SWE-bench-Pro 追蹤）**：MarginLab 每日對 Claude Code 執行 SWE-bench-Pro 追蹤，發現 Opus 4.7 在 [[entities/opus-4-8|Opus 4.8]] 發布前**連續五天**呈現統計顯著的 pass rate 下降，發布後立即恢復。此為「靜默的日常效能變化」模式的又一次文件化案例——launch benchmark 只呈現發布當下數字，無法捕捉前後的漸進變化（來源：https://marginlab.ai/blog/claude-code-degraded-before-opus-4-8/）
 - **thinking blocks 400 錯誤**：Opus 4.8 升版後，多名用戶回報 `API Error: 400 thinking or redacted_thinking blocks cannot be modified` 錯誤；v2.1.156 已修復，workaround 為 `/exit` 後 resume session（見 [[entities/claude-code]]）
 - **4.8 行為退步投訴**：部分用戶反映 Opus 4.8 比 4.7 更差——obsessive tool use，傾向以 "pecl scripts" 處理簡單文件操作（來源：Reddit r/ClaudeAI）
 

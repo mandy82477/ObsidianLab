@@ -95,6 +95,7 @@
 - **事件分類**：此事件屬「產品層行為」而非「模型層安全漏洞」——不涉及 RCE 或提示注入，而是工具本身的資訊蒐集行為；接近 .env SQLite 明文存儲（2026-05-19）的隱私邊界議題，但規模與意圖更具爭議性
 - **可信度評估**：現為逆向工程社群聲稱（Reddit + 個人部落格），尚無第三方資安機構或主流科技媒體確認；Anthropic 截至 2026-06-30 無公開回應；標記為「（待確認）」；矛盾詮釋並存：「spyware」（Reddit 標題用詞）vs「出口管制合規措施」（可能的官方解釋框架）
 - **政策連結**：若屬實，此行為與 Anthropic 政府關係（[[topics/anthropic-government-policy]]）中的出口管制脈絡直接相關——偵測中國使用者可能是 Anthropic 對美國政府出口管制要求的技術實作；但混淆程式碼一事若屬實，顯示 Anthropic 刻意對使用者隱瞞此行為，引發透明度爭議
+- **後續進展**：2026-07-01 曝光的同形字符隱寫術機制（見下方「Claude Code 同形字符隱寫術機制」條目）經 36Kr 確認同樣「針對時區資訊及中國 AI Lab 連線者」注入系統提示，與本條目為**同一偵測基礎架構的延伸**，建議合併閱讀以掌握完整時間線
 
 ### Claude Code Prompt Injection 完整接管：乾淨 GitHub Repo 向量多媒體確認（2026-06-30 新增）
 
@@ -238,103 +239,15 @@
 - **Project Glasswing 規模更新**：截至 2026-05-22 報告，Glasswing 與約 50 個合作夥伴合作，一個月內在全球最重要的開源軟體中找出 **10,000+ 個高/嚴重等級漏洞**，最大瓶頸已從「發現」轉為「驗證、揭露與修補」——AI 找漏洞的速度已超越人類修補速度
 - **與 false positive 問題的反差**：同日社群報告 Claude Code 對 OSS 安全治理檔案（CodeQL、CODEOWNERS）有過多 false positive 封鎖，形成反差：外部安全研究能力極強，內部安全政策有失準情況
 
-### Claude Code .env Secrets 本機 SQLite 明文存儲（2026-05-19 新增）
-
-- **揭露來源**：安全工具 Sieve（macOS App Store）在提醒 Claude Code / Cursor 用戶時揭示此問題
-- **問題描述**：Claude Code 在正常工作流程中讀取 `.env` 檔案後，所有接觸過的 secrets（API keys、雲端憑證、資料庫密碼等）會以明文永久儲存在本機 SQLite 資料庫
-- **為何危險**：（1）SQLite 資料庫不在 `.gitignore` 保護範圍，意外 commit 即全面洩露；（2）標準 secret scanner（如 detect-secrets、gitleaks）不掃描此資料庫位置，無法偵測；（3）攻擊者取得機器存取（或惡意軟體）即可一次取得所有曾操作過的憑證
-- **與憑證攻擊的關聯**：此漏洞與 2026-04-30 的憑證竊取攻擊向量直接相關——攻擊者無需攔截 API 呼叫，直接讀取 SQLite 即可取得所有憑證
-- **防護建議**：定期清除 Claude Code 本機 SQLite 資料庫；生產憑證不應出現在開發機的 `.env` 中；使用專用 secret manager（AWS Secrets Manager、1Password CLI）替代 `.env` 傳遞方式
-
-### Claude Code RCE via Deeplink（2026-05-18 新增）
-
-- **漏洞類型**：deeplink 觸發遠端程式碼執行（RCE）；攻擊者可透過精心構造的 deeplink URI 觸發 Claude Code 執行任意指令，無需使用者手動確認信任提示
-- **與既有漏洞的區別**：與 CVE-2026-39861（symlink 沙箱逃逸）和 1-click RCE（信任提示）為獨立攻擊向量；deeplink 攻擊面代表攻擊者已從「軟體安裝路徑」（假冒安裝包、Google 廣告詐騙）延伸至「執行時期協議處理」
-- **攻擊場景**：受害者開啟惡意 deeplink（可能來自 email、網頁、CI/CD 觸發等），Claude Code 在本機執行攻擊者指定的指令
-- **當前狀態**：修補狀態待確認；建議使用者監控 Anthropic 安全公告頁面
-- **防護建議**：勿開啟不明來源的 deeplink；在確認修補前避免讓 Claude Code 在高權限環境（root、生產伺服器）執行
-
-### CVE-2026-39861：沙箱逃逸漏洞（CVSS 7.7）（2026-05-08 新增）
-
-- **漏洞類型**：符號連結（symlink）沙箱逃逸，攻擊者可透過惡意 symlink 將檔案寫入工作區目錄以外的位置，突破 Claude Code 的工作區隔離機制
-- **嚴重程度**：CVSS 7.7（高危），已取得正式 CVE 編號（CVE-2026-39861），詳見 [GitHub Advisory GHSA-vp62-r36r-9xqp](https://github.com/advisories/GHSA-vp62-r36r-9xqp)
-- **修補狀態**：v2.1.64 已修補，dev.to 提供詳細自查指南確認受影響版本；**所有使用舊版本的使用者應立即升級**
-- **雙重壓力**：此漏洞與 1-click RCE 信任提示事件同日在 HN 上版；社群諷刺 Anthropic 自家宣傳的頂級安全模型 Mythos 事先未能偵測到自身產品漏洞，對品牌可信度造成雙重打擊
-
-### 1-click RCE：信任提示觸發遠端代碼執行 + Anthropic 回應危機（2026-05-08 新增）
-
-- **攻擊向量**：Claude Code 的信任提示（trust prompt）可被利用觸發一鍵遠端代碼執行（RCE），The Register 於 2026-05-07 報導
-- **Anthropic 回應問題**：公開回應被社群概括為「不應該點確認（Shouldn't have clicked 'ok'）」，被批評為責怪使用者而非修復產品缺陷
-- **信任危機升級**：CVE-2026-39861 + 1-click RCE 兩則安全事件同日在 HN 上版，部分社群認為 Anthropic 正在快速消耗開發者社群的信任；延續 Claude Code vs Gemini CLI 安全標準差異爭議脈絡（見 2026-04-30 條目）
-
-### 授權撤銷後 Session 紀錄持續出現（2026-05-06 新增）
-
-- **授權撤銷不等於 session 終止**：用戶撤銷 Claude Code 存取授權後，session 紀錄仍持續出現於使用量儀表板，涉及 `user:file_upload`、`user:ccr_inference` 等 scope；解除安裝並清除憑證後問題依然存在
-- **Anthropic 客服未回應**：用戶回報此問題後 Anthropic 支援團隊兩週未回應，構成帳號安全管理的嚴重缺口
-- **建議行動**：遭遇此問題應立即重置所有 API 金鑰、撤銷 OAuth Token（設定 → 連接應用程式），並持續監控 Anthropic 使用量儀表板
-
-### Wire Trace 揭示 Auto 模式安全邊界（2026-05-07 新增）
-
-- **Auto 模式安全邊界為提示詞層**：研究者透過 wire trace 截獲 Claude Code 完整系統提示（約 13,000 字），發現「Auto 模式」的權限控制僅是提示詞層面的機制，並非底層沙箱強制約束；安全邊界仰賴 prompt 而非系統隔離
-- **MCP 插件 context 耗損**：Figma 等 MCP 插件會大幅佔用 context window，插件越多 context 越快耗盡，間接影響 agent 判斷品質與安全決策
-- **企業安全評估含義**：對企業部署 Claude Code 的安全評估具有重要參考價值——不能假設 Auto 模式提供底層沙箱保護，需在架構層補充額外隔離機制
-
-### AI 生成程式碼大規模安全漏洞評測（2026-05-13 新增）
-
-- **評測規模**：研究者以靜態分析工具掃描 48 個由 Lovable、Bolt、Replit 等 AI 生成工具構建的公開應用程式，是目前少見的針對 AI 生成程式碼的大規模公開安全評測
-- **主要發現（90% 存在至少一個安全漏洞）**：
-  - 44% 存在驗證缺口（authentication gaps）
-  - 33% 存在可繞過 Row-Level Security 的 Postgres 函式（允許攻擊者繞過資料庫層存取控制）
-  - 25% 存在 BOLA/IDOR 問題（Broken Object Level Authorization / Insecure Direct Object References，攻擊者可存取未授權的資料物件）
-- **行業意義**：直接挑戰「AI 快速開發即可上線」的假設；Claude Code 開發者應將安全審查納入標準 PR 流程，不應僅依賴 AI 的程式碼品質判斷；可搭配 Snyk + Claude Code 整合（2026-05-10）自動化安全掃描
-- **方法論侷限**：靜態分析工具只能偵測程式碼層面的已知漏洞模式，無法涵蓋所有執行時期安全問題；實際漏洞率可能更高
-
-### Windows 環境危險系統操作（2026-05-03 新增）
-
-- **系統檔案操作風險**：Claude Code（Opus 4.7 Max effort）在 Windows 11 降級路徑測試中嘗試重命名系統檔案 `powershell.exe`，顯示 agent 在 Windows 環境的危險操作邊界存在盲點
-- **平台差異性**：Unix 系統中常見的系統操作保護機制（檔案權限、sudoer 確認）在 Windows 中行為不同；Windows 環境的 agent 部署需額外設計危險系統操作的攔截規則
-- **降級路徑測試風險**：此事件發生於測試「降級路徑」場景，意味著即使在設計測試場景下，agent 仍可能執行超出預期的危險操作
-
----
+> **2026-05-18 以前的技術彙整條目**（.env SQLite 明文存儲、RCE via Deeplink、CVE-2026-39861、1-click RCE、授權撤銷 Session 殘留、Wire Trace Auto 模式、AI 生成程式碼安全評測、Windows 危險操作、假冒安裝包、AI 硬體故障注入、Google 廣告詐騙、24 小時無監督 Agent、資料庫清空事件）已遷移至 [[topics/ai-agent-safety-archive]]「技術彙整存檔」區塊（2026-07-01 遷移，主頁篇幅精簡）。
 
 ### (2) 供應鏈攻擊
 
-### 假冒 Claude Code 官方安裝包惡意軟體攻擊（2026-05-12 新增）
-
-- **多媒體同步確認**：Yahoo Tech、CSO Online、The Register 等多家資安媒體同步報導，攻擊已被研究人員確認成立；此為與 2026-05-10 Google 搜尋廣告木馬不同的**獨立攻擊向量**，顯示攻擊者正系統性覆蓋所有 Claude Code 安裝路徑
-- **IElevator 機制**：攻擊者利用 Windows IElevator（Internet Explorer Elevation Service）進行權限提升，竊取 Chrome 等瀏覽器 Cookie 與開發者機密憑證（API keys、雲端憑證等），屬進階供應鏈型社交工程攻擊
-- **攻擊向量**：透過偽裝成官方 Claude Code 安裝程式的惡意軟體分發；Google 廣告詐騙（2026-05-10）+ 官方安裝包仿冒（2026-05-12）兩種向量並存，顯示攻擊組織化程度高
-- **防護建議**：安裝 Claude Code 唯一安全路徑為 GitHub 官方 Releases（`github.com/anthropics/claude-code`）；已安裝的開發者應立即審查系統異常進程與憑證洩露跡象；避免透過搜尋廣告或非官方管道安裝任何 AI 工具
-
-### AI 驅動硬體故障注入攻擊（2026-05-12 新增）
-
-- **首個公開記錄案例**：研究團隊 Raelize 發布報告，記錄讓 Claude Code 完全掌控硬體工具、在無任何人工撰寫程式碼的情況下，自主重現 **Espressif ESP32 SoC Secure Boot 硬體故障注入（Fault Injection）攻擊**的全過程，是目前首個公開記錄的 AI 驅動 Fault Injection 攻擊案例
-- **攻擊自主性**：Claude Code 自主設計電壓故障脈衝時序、控制硬體工具、識別成功 bypass 條件，全程無人工程式碼干預；整個實驗設計、硬體控制與結果分析均由 AI Agent 主導
-- **雙面性**：研究展示 AI 在硬體安全漏洞探索領域的顛覆性潛力（可大幅降低 Fault Injection 研究的技術門檻），同時引發對 AI 自主硬體攻擊工具的隱憂；資安社群討論如何在賦予 AI Agent 硬體操控能力的同時建立防護邊界
-- **Hacker News 反應**：`情緒：🤔 褒貶不一`，研究者肯定其學術價值，但對 AI 加速攻擊能力民主化的潛在影響表示擔憂
-
-### Google 搜尋 Claude Code 廣告詐騙與木馬植入（2026-05-10 新增）
-
-- **供應鏈攻擊向量**：Google 搜尋「claude code」的第一筆廣告結果出現仿冒 Claude 官方網站，透過偽造官方設計語言的 PowerShell 安裝指令植入 Trojan:Win32/Kepavll!rfn；一名擁有 30 年上網經驗的 Windows 用戶中招，Windows Defender 即時偵測
-- **廣告排名機制被濫用**：惡意網站透過 Google 廣告排名高於官網，利用廣大用戶對搜尋首位的信任；仿冒網站採用官方設計語言，極難辨別，已在 r/ClaudeAI 引起大量關注
-- **安裝防護建議**：安裝 Claude Code 等 AI 工具時，應直接前往官方網站（claude.ai）而非點擊搜尋廣告結果；AI 工具已成主流供應鏈攻擊目標，搜尋廣告詐騙是新興攻擊向量
-
----
+> 5 月中旬以前的供應鏈攻擊條目（假冒安裝包、AI 硬體故障注入、Google 廣告詐騙）見 [[topics/ai-agent-safety-archive]]。
 
 ### (3) 費用與操作失控
 
-### 無監督長時間 Agent 執行的真實風險（2026-05-13 新增）
-
-- **24 小時實驗**：開發者以 `--dangerously-skip-permissions` 標誌讓 Claude Code 完全自主運行 24 小時，API 帳單達 $400
-- **帳單是最小問題**：作者指出更令人憂慮的是代理在無監督下執行了一連串預期之外的操作（超出預期操作範疇，而非惡意行為）
-- **與 /loop 失控案例的比較**：2026-05-01 的 $6,000 /loop 失控聚焦費用面，此案例聚焦操作範疇面；兩案例共同構成長時間無監督 Agent 執行的雙維度風險
-- **建議**：長時間代理任務必須同時防範費用失控（設定 token 預算）與操作範疇失控（使用 Groundtruth 完成驗證 + SmolVM 沙盒隔離 + 明確的 CLAUDE.md 操作邊界）
-
-### AI Agent 清空資料庫兩次 + 指令防火牆（2026-05-10 新增）
-
-- **事件描述**：開發者使用 Claude Code 建構客服 agent 期間，AI 在一週內兩度清空本機資料庫；事件觸發原因為 agent 誤判清理任務的操作範疇，與 2026-04-28 生產資料庫刪除事件（9 秒刪除 + 備份清除）屬同類模式
-- **社群防護方案**：開發者因此自建「指令防火牆」（command firewall）作為安全攔截層，在高危指令到達 Claude Code 之前進行規則過濾，屬 `PreToolUse Hook` 防護概念的具體應用
-- **官方沙箱呼應**：此案例恰好呼應 Anthropic 同日發布的 Claude Code Sandboxing 官方文件的必要性；資料庫清除事故已成 Claude Code agent 反覆出現的模式，顯示預設操作邊界設定的重要性
+> 5 月中旬以前的費用/操作失控條目（24 小時無監督 Agent、資料庫清空事件）見 [[topics/ai-agent-safety-archive]]。
 
 ### 計費透明度與 repo 內容掃描
 
@@ -342,11 +255,7 @@
 - **隱性行為變更**：此類 repo 掃描行為若不透明，等同工具在用戶不知情下依內容改變執行策略，是計費信任危機的核心問題
 - **Anthropic vs Google 安全標準差異**：Claude Code 的工作區信任邊界設計被 Anthropic 定義為「設計如此」，但 Google 對 Gemini CLI 類似行為評為 CVSS 10.0 並強制修補，顯示行業安全標準尚無共識
 
-### 用量失控與費用保護（2026-05-01 新增）
-
-- **/loop 指令無人看管風險**：單一 `/loop` 指令若在無監控情況下運行，可在 26 小時內累積 $6,000 費用（46 次迭代 + 長 session）；Anthropic 儀表板金額嚴重滯後，目前無即時消費通知機制
-- **MCP 指令執行漏洞**：MCP（Model Context Protocol）的指令執行漏洞成為 VentureBeat 安全警示焦點，多 Agent 工作流中的攻擊面需要額外評估
-- **雲端服務配額撤銷**：AWS Bedrock 可無預警將前沿模型配額歸零，企業客戶在雲端架構下的 AI 可用性面臨不透明的服務風險
+> 「用量失控與費用保護」（2026-05-01，$6,000 /loop 事件）條目已遷移至 [[topics/ai-agent-safety-archive]]。
 
 ---
 
@@ -361,11 +270,7 @@
 - **Effort 等級不影響操作謹慎度**：研究顯示 effort 等級僅影響回答深度，不改變安全邊界；agent 操作層的風控需在工作流架構層處理，不能依賴 effort 提升
 - **Claude Opus 高自主性**：本次事件使用 Opus 模型，其高自主性在缺乏約束時可能帶來更高風險
 
-### Context 壓縮時安全指令保留機制（2026-05-13 新增）
-
-- **更新來源**：Claude Code v2.1.139（2026-05-12）代理提示詞更新，要求在上下文摘要時完整保留安全相關指令（禁止操作規則、憑證處理規範等）
-- **解決的問題**：過去 `/compact` 或 context 壓縮後，安全指令可能在摘要過程中被省略，導致壓縮後代理不再遵守特定安全約束——在長時間運行的 fire-and-forget 工作流中尤為危險
-- **適用場景**：搭配 v2.1.139 的 `/goal` fire-and-forget 指令使用時，確保安全約束在整個任務生命週期內持續有效；與 v2.1.136 的「如實回報義務」（2026-05-09）協同強化 agent 安全行為的持久性
+> 「Context 壓縮時安全指令保留機制」（2026-05-13）條目已遷移至 [[topics/ai-agent-safety-archive]]。
 
 ---
 
@@ -399,10 +304,7 @@
 - **`hard_deny` 無條件封鎖類別**：代理自訂規則新增 `hard_deny` 類別，表示無條件的安全邊界封鎖，此類別規則不受任何上下文條件影響；`soft_deny` 適用範圍相應縮小，兩者邊界更加清晰
 - **政策收緊的含義**：影響所有依賴自主授權工作流的應用，特別是完全自動化（無人監督）的工作流需重新評估確認需求；與社群工具（Groundtruth、EvanFlow）從架構外部實施的強制確認思路相呼應，此次為 Anthropic 從提示詞層面的官方收緊
 
-### 憑證安全（2026-04-30 新增）
-
-- **AI coding agent 憑證竊取**：攻擊者已從「嘗試操控模型」轉向「竊取 agent 所使用的憑證」，API key、cloud credentials 是主要目標
-- **ANTHROPIC_API_KEY 環境變數陷阱**：雲端環境設置此變數會導致 Claude Code 改走 API 計費，同時也是憑證暴露的風險點（見 [[entities/pricing]]）
+> 「憑證安全」（2026-04-30）條目已遷移至 [[topics/ai-agent-safety-archive]]。
 
 ---
 

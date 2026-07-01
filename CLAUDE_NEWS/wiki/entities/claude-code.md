@@ -88,35 +88,16 @@
 
 ### 近期重要更新（2026 Q2 精選）
 
-### Agentic 能力擴展
-- **Agent View**（v2.1.139，Research Preview）：統一面板管理所有並行 session 即時狀態（執行中 / 等待輸入 / 已完成），執行 `claude agents` 啟用；見 [[feature-radar]]
-- **`/goal` 指令**（v2.1.139）：設定可驗證的完成條件後自動迴圈執行——真正的 fire-and-forget 工作流（適合模組遷移、全測試通過等長任務）；見 [[feature-radar]]
-- **macOS Computer Use**（2026-05-03）：Claude Code / Claude Cowork 可直接控制 macOS 桌面滑鼠與鍵盤，升格為全桌面自動化代理
-- **Managed Agents 正式發布**（2026-05-11）：Dreaming 記憶整合、最高 20 路子代理並行、Outcomes 規格驗證；見 [[entities/managed-agents]]
-- **`/loop`、`/batch`、`/background` 指令**（官方文件 2026-05-14 上線）：`/loop` 固定循環、`/batch` 批次任務、`/background` 背景執行，與 `/goal` 共同構成完整自主執行指令套件，Claude Code 產品定位正式轉向「設定目標、自主完成」的 agent 開發範式；見 [[feature-radar]]
-- **Cat Wu：AI 下一步是「主動性（proactivity）」**（2026-05-14）：Claude Code 負責人接受訪問，指出 AI 下一重大躍進是主動完成任務（無需使用者提示），與自主執行指令套件方向完全呼應；見 [[entities/cat-wu]]
-- **Boris Cherny 每晚數千子代理工作流**（2026-05-13）：「Loops 是未來」哲學的極端實踐，Business Insider 同步報導；見 [[entities/boris-cherny]]
-- **Project Deal**（2026-04-27，beta）：Claude 代理人自主交易談判實驗；兩代理人分別代表買賣方在虛擬市集自主協商；近半受試者願意付費委託 Claude 進行銷售談判；Opus 與 Haiku 在談判表現呈顯著差異，顯示 agent 情境下模型能力差距更為明顯（見 [Project Deal](https://www.anthropic.com/features/project-deal)）
-
-### 安全與操作規範
-- **`hard_deny` 規則**（v2.1.136）：無條件安全邊界封鎖，縮小 `soft_deny` 範圍；所有依賴自主授權的工作流均應重新評估
-- **Sandboxing 官方文件**（2026-05-10）：透過 OS 層級原語實施檔案系統與網路隔離，session 開始時預先定義操作邊界；見 [[topics/ai-agent-safety]]
-- **CVE-2026-39861**（CVSS 7.7）：symlink 沙箱逃逸漏洞，**已在 v2.1.64 修補**，所有舊版用戶應立即升級
+> Agentic 能力擴展（Agent View、`/goal`、Managed Agents、`/loop`/`/batch`/`/background` 等）與安全強化事件（`hard_deny`、Sandboxing、CVE-2026-39861）已完整記錄於下方「歷史記錄」表格與「已知問題」區塊，此處不重複列出，避免同一事實三處維護。相關人物論述見 [[entities/cat-wu]]、[[entities/boris-cherny]]；agent 框架細節見 [[entities/managed-agents]]。
 
 > ⚠️ **安裝安全警示**：Google 搜尋廣告曾出現仿冒官方安裝包（植入 Trojan:Win32/Kepavll!rfn），假冒包透過 IElevator 機制竊取瀏覽器 Cookie 與機密憑證，多家資安媒體同步報導。**務必僅從官方來源安裝：`github.com/anthropics/claude-code`**
 
-### 開發者須知
-- **官方研究：Claude Code 40 萬場 session 分析（2026-06-25）**：Anthropic 公開基於 2025/10–2026/04 約 40 萬個 Claude Code session 的分析研究。核心發現：人類主導規劃決策，Claude 主導執行決策；使用者領域專業越高，Claude 每條指令完成的工作量越大；各職業成功率幾乎與軟體工程師相同（見 [研究報告](https://www.anthropic.com/research/claude-code-expertise)）
+### 開發者須知（評註型提示，非單一事件，不併入歷史記錄）
 - **Extended Thinking 輸出為加密摘要，非原始推理（2026-06-22）**：session log 中的 thinking blocks 文字是推理的摘要版本，真實推理過程被 Anthropic 加密後存在 600 字元 signature 中，用戶端無法解密。需做審計追蹤或對推理過程有完整性要求的工程師，應避免以 thinking blocks 內容作為事實依據（見「已知問題」）
 - **年齡驗證政策（Persona Identity Verification，2026-06-22）**：Anthropic 在特定使用情境下導入 Persona 第三方身分驗證，以落實年齡管控、使用政策與法規遵循。此政策屬平台使用條款異動，不影響 CLI 操作
 - **CLI 權限客製化避免手動確認（2026-06-22）**：長工作流中可透過 `settings.json` 的 `allowedTools` 與 Permission Rules 設定白名單，減少 Claude Code 在 agentic 模式下不斷彈出手動確認。`Tool(param:value)` 語法（v2.1.178）支援比對工具輸入參數，搭配 `--dangerously-skip-permissions` 旗標可完全自動化非互動批次流程（見 [教學](https://dev.to/kapoormanish/stop-clicking-approve-how-to-customize-claude-code-cli-permissions-pnh)）
 - **四種儲存格式各有用途（2026-06-22 整理）**：Claude Code 儲存層包含 CLAUDE.md（專案指令）、session storage（當次對話上下文）、project state（持久狀態）、Memories（跨 session 記憶）；建議將專案持久狀態存於 repo，確保重開 session 後一致性（見 [說明](https://dev.to/arthurpro/anthropics-storage-layer-quartet-and-what-each-format-is-actually-for-4nd7)）
 - **⚠️ Opus 4 / Sonnet 4 別名退役（2026-06-15）**：`claude-opus-4-20250514` 與 `claude-sonnet-4-20250514` 將於 6/15 正式退役，使用舊別名的生產環境程式碼將開始回傳錯誤，需在 **2026-06-14 前遷移至新版模型 ID**；見 [[entities/pricing]]
-- **⚠️ Claude Code RCE 漏洞（2026-05-23）**：startsWith 解析缺陷可被利用觸發 RCE，已確認 Cursor 與 Continue.dev 存在相同漏洞；更新至最新版本並啟用 OS 層級沙箱；見 [[topics/ai-agent-safety]]
-- **CLAUDE.md 為 candidate-context**（2026-05-10 社群發現）：逆向工程發現 CLAUDE.md 以 `<system-reminder>` 包裹並附帶「may or may not be relevant」提示，直接解釋長期「指令被忽略」問題；Anthropic 尚未正式回應
-- **Claude Security 公開 Beta**（2026-05-06）：AI 驅動安全審查直接整合於 Claude Code 工作流，無需另行安裝；見 [[entities/claude-security]]
-- **Amazon 全體企業員工部署**（2026-05-05）：與 OpenAI Codex 並行雙品牌部署，大型企業標配開始
-- **原始碼外洩 DMCA 風波**（2026-05-04）：8,100+ 次下架請求，版權爭議持續，社群分支「Claw-Code」誕生
 
 ---
 

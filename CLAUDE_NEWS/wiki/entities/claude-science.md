@@ -42,6 +42,8 @@ Claude Science 是 Anthropic 於 2026-07-01 發布的科學家專用 AI 工作�
 ## 相關議題
 
 - [[entities/claude-code]]（同為 Anthropic 工具產品線）
+- [[entities/managed-agents]]（研究工作流可能運用 agent 能力）
+- [[topics/anthropic-business]]（Anthropic 宣布將自行開發藥物，屬重大商業策略訊號，見商業頁面追蹤）
 
 ## 參考來源
 

@@ -2276,3 +2276,17 @@ Append-only 紀錄。每次 ingest、query 或 lint 都在此追加一條。
 - feature-radar 新增：Claude Sonnet 5（🔥🔥🔥🔥🔥 / ✅ 強烈推薦）、Claude Science（🔥🔥 / ⚡ 有條件推薦）
 - index.md 狀態變更：fable-5（暫停→解除）、mythos（部分解禁→全面解除）、sonnet-5（新增）、claude-science（新增）
 - 呈現品質審查：全部通過（各記者確認）
+
+## 2026-07-01 使用者發起品質審查 + 修正
+
+使用者派 5 個記者 agent（模型/功能/商業/安全政策/社群）逐一審查各自負責頁面，找出結構性改善空間（非日常 ingest 範圍），確認後套用修正。
+
+- **最高優先修正**：`wiki/feature-radar.md` — Fable 5 狀態矛盾（本週推薦寫「全面解除」但功能全覽表詳細條目仍寫「⚠️ 停用」），已統一為解除狀態
+- **最高優先修正**：`wiki/topics/enterprise-tool-tracker.md` — 落後 5 天未同步，補齊 Rubrik/Okta/Globant/DataArt/加州州政府/Lindy 六筆企業動態
+- 狀態變更：`anthropic-government-policy` ongoing → monitoring（出口管制主線解除，剩餘承諾落實等 5 項變數持續觀察）
+- 結構精簡：`ai-agent-safety.md`（512→414 行，5 月中旬前技術彙整遷移至 archive）、`claude-code.md`（330→310 行，移除 Q2 精選重複子區塊）
+- 新頁面孤立連結修正：`sonnet-5.md` ↔ `opus-4-8.md`、`fable-5.md`；`claude-science.md` → `managed-agents.md`、`anthropic-business.md`
+- 社群工具清理：`community-tech-tools.md` 移除 4 筆逾期 ⏳ 條目、合併 2 組重複列
+- 使用者決定 `community-tech-patterns.md`（834行）、`community-tech-discussions.md`（937行）**維持現狀不拆分**
+- 修正頁面：23 個（entities 10 / topics 13）
+- 記憶更新：新增 feedback memory `feedback_entity_status_crosscheck.md`（改實體狀態需 grep 全檔案）

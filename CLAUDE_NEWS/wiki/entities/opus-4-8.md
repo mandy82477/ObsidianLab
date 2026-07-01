@@ -4,8 +4,8 @@
 **狀態：** active
 **領域：** 🤖 模型
 **首次出現：** 2026-05-28
-**最後更新：** 2026-06-30
-**最後新聞更新：** 2026-06-25
+**最後更新：** 2026-07-01
+**最後新聞更新：** 2026-06-24
 
 > **最新服務狀態**（2026-06-24）
 > Claude Opus 4.8 出現跨 API、Claude Code 與 Console 的高錯誤率事件（elevated errors），Anthropic 正在調查中（dev.to）。
@@ -109,6 +109,7 @@ claude.ai 用戶現可調節 Claude 在任務上投入的努力程度，不再�
 
 ## 相關議題
 - [[entities/fable-5]]（現任最高階公開模型；Opus 4.8 為其護欄觸發時的 fallback）
+- [[entities/sonnet-5]]（2026-07-01 發布，效能接近 Opus 4.8 但成本低約 60%）
 - [[topics/code-quality-decline]]（升版前效能下降事件）
 - [[entities/opus-4-7]]（前代模型）
 - [[topics/anthropic-business]]（同步融資公告背景）

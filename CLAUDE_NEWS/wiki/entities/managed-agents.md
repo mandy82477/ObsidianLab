@@ -14,7 +14,7 @@
 
 ## 現況
 
-Anthropic Managed Agents 是 Claude Platform 上的官方 Agent 框架，提供持久記憶、多路並行執行與可驗證輸出等功能。2026-04-28 首次加入跨會話記憶功能（正式公告）；2026-04-30 推出公開測試版，Anthropic 定位為「agentic AI 的 AWS」。
+Anthropic Managed Agents 是 Claude Platform 上的官方 Agent 框架，提供持久記憶、多路並行執行與可驗證輸出等功能。**框架整體已正式發布（2026-05-11 起），但子功能成熟度不一**：Dreaming、Agent View、Capability Curve 仍是 Research Preview，20 路並行子代理、Outcomes 規格驗證、Proactive Workflows、自架沙箱、MCP 隧道為公開測試，僅 `/goal` 指令已達正式發布（詳見下方「核心功能」表格與 [[feature-radar]] 的逐項熱度標示，避免與此頁「正式發布」的整體狀態混淆）。2026-04-28 首次加入跨會話記憶功能（正式公告）；2026-04-30 推出公開測試版，Anthropic 定位為「agentic AI 的 AWS」。
 
 2026-05-06 在「Code with Claude」開發者大會上宣布重大更新，三項新能力同步推出：
 

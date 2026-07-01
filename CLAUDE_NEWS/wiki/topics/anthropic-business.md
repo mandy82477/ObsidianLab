@@ -38,6 +38,8 @@ Anthropic 的收入來自兩條軌道（2026-06-15 後正式成文化）：
 
 **商業邏輯轉變**：6/15 政策是 Anthropic 從「訂閱補貼一切」走向「人工使用用訂閱，自動化使用按量付費」的明確信號。這讓 Anthropic 的收入結構更接近雲端供應商而非 SaaS 公司。
 
+**2026-07-01 新增：Sonnet 5 促銷定價**：Anthropic 宣布 Claude Sonnet 5 促銷定價 $2/Mtok（輸入）、$10/Mtok（輸出），有效期至 2026-08-31，相較 Opus 4.8 估計省 60% 成本；Claude Code 用戶以此定價使用新預設模型。若預設路由切換至 Sonnet 5，重度使用者月均 API 費用可能顯著降低，有助緩解近期配額縮減引發的訂閱留存壓力（推論）；同日 Fable 5 計費架構亦調整為 7/7 起 usage-based billing。定價細節見 [[entities/pricing]]。
+
 > 更多計費細節見 [[entities/pricing]]
 
 ---
@@ -282,7 +284,7 @@ Simon Willison（知名開發者博主）發表文章，認為 Anthropic 與 Ope
 
 ### 2026-06-05
 - **[遞歸自我改進報告]** Claude 現在負責 Anthropic 80-90% 生產程式碼；工程師代碼交付量 8× 提升；Anthropic 呼籲全球 AI 暫停——同時在 IPO 路上，被社群廣泛質疑
-- **[白宮緩和]** Reuters：白宮與被列「安全風險」的 Anthropic 在 IPO 前正在緩和緊張關係
+- **[白宮關係，已由 06-24 條目取代]** Reuters 當時報導白宮與 Anthropic 在 IPO 前緩和緊張關係；此後關係走向已反轉，見 06-24「白宮與 Dario Amodei 關係趨於緊張」條目
 - **[Daniela Amodei]** TechCrunch：Daniela Amodei IPO 前「對 AI 回報的質疑不以為意」
 
 ### 2026-06-04

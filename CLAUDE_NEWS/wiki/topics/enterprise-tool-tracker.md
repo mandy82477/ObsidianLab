@@ -3,17 +3,17 @@
 **狀態：** ongoing
 **領域：** 💼 商業
 **開始日期：** 2026-05-26
-**最後更新：** 2026-06-27
-**最後新聞更新：** 2026-06-25
+**最後更新：** 2026-07-01
+**最後新聞更新：** 2026-07-01
 
-> **最新企業採用異動**（2026-06-25）
-> Notion 正式整合 Claude Agents 與 Cursor 作為外部 agent，進入工作區協作流程；協作 SaaS 平台開始將 AI agent 納入原生工作流，標誌企業工具採用新型態。
+> **最新企業採用異動**（2026-06-30）
+> 單日新增四項具名企業/機構動態：Rubrik（Claude Code 專用安全層）、Okta（XAA/MCP 安全整合）、Globant（AI Pods 交付框架）、DataArt（Partner Network 精選夥伴），加州州政府（Newsom 協議，06-29）正式採用 Claude；同時 Lindy（AI 新創）100% 流量從 Claude 切至 DeepSeek，為具名 API 客戶流失案例（詳見 [[topics/enterprise-cost-management]]、[[topics/competitor-landscape]]）。
 
 ## 摘要
 
 追蹤各大型企業目前正在使用的 AI 編碼工具，以及工具選擇的變化軌跡。資料來源為公開報導與內部消息洩露，僅記錄有明確來源佐證的事實。
 
-目前追蹤 23 家具名企業，其中多數狀態為使用中（✅），2 家退出（❌，Microsoft 停用 Claude Code、JPMorgan Chase 香港分行因出口管制被迫退出），Uber 縮減中（⚠️，成本管控）。整體趨勢：Claude API 企業採用持續擴大，TCS、DXC、LG 等頂尖企業相繼全面入局；2026-06-25 Notion 正式整合 Claude Agents + Cursor 為協作 SaaS 平台採用新型態。2026-06-21 Microsoft 確認在 Fable 5 封鎖期間加速退出 Claude Code，2026-06-22 The Jerusalem Post 跟進確認 Microsoft 正系統性降低對 Claude 依賴，GitHub Copilot 為主要替代方案。出口管制 + 成本壓力雙重因素持續影響頂尖企業工具選擇。
+目前追蹤 28 家具名企業/機構，其中多數狀態為使用中（✅），3 家退出/切換（❌🔄，Microsoft 停用 Claude Code、JPMorgan Chase 香港分行因出口管制被迫退出、Lindy 100% 切換至 DeepSeek），Uber 縮減中（⚠️，成本管控）。整體趨勢：Claude API 企業與政府採用持續擴大，TCS、DXC、LG 等頂尖企業相繼全面入局；2026-06-29–06-30 單日/隔日湧現 Globant、DataArt、Okta、Rubrik、加州州政府等新一波具名案例，Partner Network 密集擴張（詳見 [[topics/anthropic-business]]）。同期 Lindy 案例顯示 API 客戶對成本敏感度高、可能因競品定價優勢流失。2026-06-21 Microsoft 確認在 Fable 5 封鎖期間加速退出 Claude Code，2026-06-22 The Jerusalem Post 跟進確認 Microsoft 正系統性降低對 Claude 依賴，GitHub Copilot 為主要替代方案。出口管制 + 成本壓力雙重因素持續影響頂尖企業工具選擇。
 
 ---
 
@@ -25,6 +25,12 @@
 
 | 企業 | 規模 | AI 編碼工具 | 狀態 | 事件日期 | 備註 | 確認日期 |
 |------|------|-----------|------|---------|------|---------|
+| Lindy | 中型（AI 新創） | Claude API → DeepSeek | 🔄 | 2026-06-29 | CEO Flo Crivello 公開宣告 100% 流量從 Claude 切換至 DeepSeek，每月省下數百萬美元；「最省錢 > 最強模型」趨勢最具名案例，屬 API 客戶成本敏感度案例（詳見 [[topics/enterprise-cost-management]]、[[topics/competitor-landscape]]） | 2026-06-29 |
+| 加州州政府 | 政府（州級） | Claude API | ✅ | 2026-06-29 | 州長 Newsom 與 Anthropic 正式簽署協議，Claude 進入加州州政府應用；迄今最明確的美國地方政府採用案例（詳見 [[topics/anthropic-business]]） | 2026-06-29 |
+| Globant（NYSE: GLOB） | 頂尖 | Claude API | ✅ | 2026-06-30 | 與 Anthropic 結盟推出 Claude 驅動的 AI Pods，重新定義企業 AI 交付模式；上市公司，覆蓋全球多行業客戶（詳見 [[topics/anthropic-business]]） | 2026-06-30 |
+| DataArt | 大型 | Claude API | ✅ | 2026-06-30 | 加入 Anthropic Claude Partner Network，成為服務軌道精選（Select）合作夥伴（詳見 [[topics/anthropic-business]]） | 2026-06-30 |
+| Okta | 大型 | Claude API | ✅ | 2026-06-30 | 與 Anthropic 在 XAA（跨應用 agent 認證）、MCP 協定整合及 Glasswing 安全框架展開合作，為 agentic 工作流提供身份驗證基礎建設（詳見 [[topics/anthropic-business]]） | 2026-06-30 |
+| Rubrik（NYSE: RBRK） | 大型 | Claude Code | ✅ | 2026-06-30 | 發布 Claude Code 專用 AI agent 與安全層，強化企業環境安全防護；2026-06-09 已有 Agent Cloud 前例，本次為 Claude Code 專屬深化（詳見 [[topics/anthropic-business]]） | 2026-06-30 |
 | Notion | 大型 | Claude Agents + Cursor | ✅ | 2026-06-25 | 正式整合 Claude Agents 與 Cursor 作為外部 agent，進入工作區協作流程；協作 SaaS 平台原生 AI agent 採用案例 | 2026-06-25 |
 | Charleston Hospitality Group | 中型 | Claude API | ✅ | 2026-06-22 | 加入 Anthropic Claude 企業 AI 網路；餐旅業具名採用案例 | 2026-06-22 |
 | Atlassian | 大型 | Claude API | ✅ | 2026-06-18 | Claude Agent for Jira 正式推出，企業整合嵌入全球最大專案管理工具 | 2026-06-18 |
@@ -62,7 +68,7 @@
 | 工具 | 企業採用數 | 趨勢 | 主要阻力 |
 |------|----------|------|---------|
 | Claude Code | 5 使用中（Amazon、Uber、UiPath、Rubrik、JFrog）+ 1 退出（Microsoft） | ⚠️ 成本壓力 + Fable 5 封鎖衝擊 | 缺乏企業層級預算管控；Fable 5 出口管制加速部分企業評估替代方案 |
-| Claude API | 17（Apple、KPMG、iCapital、哈佛、Fujitsu、Travelport、Nimble Gravity、ZoomInfo、LG Group、AppFolio、Salesforce Claude API、TCS、DXC Technology、Atlassian、JPMorgan Chase 美國本部、Charleston Hospitality Group、Notion） | 🟢 快速擴張 | — |
+| Claude API | 22（Apple、KPMG、iCapital、哈佛、Fujitsu、Travelport、Nimble Gravity、ZoomInfo、LG Group、AppFolio、Salesforce Claude API、TCS、DXC Technology、Atlassian、JPMorgan Chase 美國本部、Charleston Hospitality Group、Notion、加州州政府、Globant、DataArt、Okta）+ 1 退出中（Lindy → DeepSeek） | 🟢 快速擴張（政府/合規/服務業縱深加深）；⚠️ 部分 API 客戶因成本敏感轉向競品 | — |
 | GitHub Copilot | 1（Microsoft） | 🟢 Microsoft 背書 | 生態鎖定 |
 | OpenAI Codex | 2（Amazon、UiPath） | 🟢 快速成長 | — |
 | Cursor | 1（Uber） | ⚠️ 新創份額下滑 | 成本管控困難；企業級功能不如 Claude Code |
@@ -84,6 +90,13 @@ Claude Code 是工程師日常編碼工具（CLI），成本隨使用量線性�
 ---
 
 ## 時序
+
+### 2026-06-30
+- **Partner Network 單日四項擴張：Globant AI Pods、DataArt 精選夥伴、Okta XAA 安全整合、Rubrik Claude Code 安全層**：Globant（NYSE: GLOB）與 Anthropic 結盟推出 Claude 驅動的 AI Pods 企業交付框架；DataArt 加入 Claude Partner Network 服務軌道精選夥伴；Okta 與 Anthropic 在 XAA（跨應用 agent 認證）、MCP 及 Glasswing 安全框架合作；Rubrik（NYSE: RBRK）發布 Claude Code 專用 AI agent 與安全層。四案例同日出現，顯示 Anthropic 生態系統化攻略 IT 服務、身份管理、資安三個企業採購決策環節（詳見 [[topics/anthropic-business]]）
+
+### 2026-06-29
+- **加州州政府正式採用 Claude（Newsom 協議）**：加州州長 Gavin Newsom 與 Anthropic 簽署協議，Claude 正式進入加州州政府應用；是 Anthropic 繼聯邦機構（Mythos 5 解禁）後，美國地方政府層級最具代表性的採用案例（Politico，詳見 [[topics/anthropic-business]]）
+- **Lindy 100% 流量從 Claude 切換至 DeepSeek**：AI 新創 Lindy 的 CEO Flo Crivello 公開宣告完成全量切換，每月節省數百萬美元；是「最省錢 > 最強模型」趨勢中最具名、規模最大的具名 API 客戶流失案例，代表 Anthropic 在應用層失去具名大型客戶（CNBC，詳見 [[topics/enterprise-cost-management]]、[[topics/competitor-landscape]]）
 
 ### 2026-06-25
 - **Notion 整合 Claude Agents 與 Cursor 作為外部 agent**：Notion 正式將 Claude Agents 與 Cursor 作為外部 agent 納入工作區協作流程，是協作 SaaS 平台首次將 AI coding agent 整合為原生工作流節點（letsdatascience.com https://letsdatascience.com/news/notion-integrates-claude-agents-into-workspaces-f0ad6afb）
@@ -131,8 +144,7 @@ Claude Code 是工程師日常編碼工具（CLI），成本隨使用量線性�
 - **Uber 用量上限確認（Bloomberg 獨家）**：Bloomberg 報導 Uber 已正式對 Claude Code 等 AI 工具設定用量上限；是首個明確執行用量管控的大型具名企業
 
 ### 2026-06-02
-- **Microsoft 退出確認（多媒體）**：Times of India、Space Daily 再次確認 Microsoft Experiences + Devices 部門 6/30 停用 Claude Code，引導數千工程師轉用 GitHub Copilot；IPO 宣布前夕成為最具代表性的企業退出案例
-- **Uber 燒完整年預算**：Space Daily 確認 Uber 四個月燒完 2026 整年 AI 工具預算（Claude Code + Cursor）；與 COO 5/27 確認的 25% 生產力提升形成「效果好但成本更好」的矛盾敘事
+- **Uber 燒完整年預算**：Space Daily 確認 Uber 四個月燒完 2026 整年 AI 工具預算（Claude Code + Cursor）；與 COO 5/27 確認的 25% 生產力提升形成「效果好但成本更好」的矛盾敘事（Microsoft 退出後續進度已由 06-21/06-22 條目取代，見上方）
 
 ### 2026-05-27
 - **Uber COO 確認 25% 生產力提升**：Andrew Macdonald 公開表示 Claude Code + ChatGPT 帶來 25% 生產力提升，但成本問題持續（Times of India）

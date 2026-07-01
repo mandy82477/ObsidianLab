@@ -14,9 +14,7 @@
 
 ## 現況
 
-**2026-07-01 最新**：美國出口管制正式解除，Fable 5 與 Mythos 5 全球恢復存取（[Anthropic Blog](https://www.anthropic.com/news/redeploying-fable-5)）。解禁條件：Anthropic 與美國政府簽訂協議，承諾主動偵測安全風險、配合標準協議、通報惡意活動。過渡期計費：Pro/Max/Team 方案 7/7 前每週配額維持 50%，7/7 後改依用量計費（定價近期公布）。
-
-**2026-06-29**：美國政府正式許可 Anthropic 向特定信任合作夥伴恢復 Mythos 存取（qz.com）；Axios 報導 Fable 5「can return as soon as this week」，全面解禁談判接近尾聲，已獲確認。
+出口管制已於 2026-07-01 正式解除，Fable 5 全球恢復存取；解禁條件、計費過渡方案細節見下方「歷史記錄 2026-07-01」。
 
 Claude Fable 5 是 Anthropic 於 2026-06-09 發布的旗艦模型，為**史上首款向大眾開放的 Mythos 級模型**。Fable 5 與 Claude Mythos 5 共用相同的模型權重，差異在於 Fable 5 前置安全分類器——觸發時靜默 fallback 至 Claude Opus 4.8（Anthropic 稱不到 5% 的 session 受影響）。
 

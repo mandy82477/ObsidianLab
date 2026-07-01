@@ -4,7 +4,7 @@
 **狀態：** beta（公開測試版）
 **領域：** 🛠️ 工具/功能
 **首次出現：** 2026-04-30
-**最後更新：** 2026-06-30
+**最後更新：** 2026-07-01
 **最後新聞更新：** 2026-05-28
 
 > **最新資安產品動態**（2026-05-28）
@@ -45,7 +45,7 @@ Claude Security 於 2026-04-30 宣布推出公開測試版，並於 2026-05-01 �
 ## 競品關係
 
 - **傳統 SAST 工具**（SonarQube、Checkmarx 等）：僅掃描已知漏洞模式，不理解業務邏輯
-- **Bugcrawl**（Anthropic 內部工具，見 [[entities/bugcrawl]]）：較早期的 Claude Code 漏洞偵測測試工具
+- **Bugcrawl**（Anthropic 內部工具，見 [[entities/bugcrawl]]）：針對開發流程的自動化漏洞偵測工具，仍處未公開測試階段，與 Claude Security 的定位區隔尚未由官方公開說明
 - **Mythos**（見 [[entities/mythos]]）：能力更強的 AI 資安模型，目前未公開；Claude Security 可能使用不同底層能力
 
 ---
