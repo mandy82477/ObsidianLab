@@ -1,14 +1,299 @@
 {
   "date": "2026-07-01",
-  "generatedAt": "2026-07-01 00:04 UTC",
-  "articleCount": 0,
-  "sourceCount": "0/6 | **文章數：** 0 | **更新時間：** 2026-07-01 00:04 UTC",
+  "generatedAt": "2026-07-01 22:22 UTC",
+  "articleCount": 101,
+  "sourceCount": "6/6 | **文章數：** 101 | **更新時間：** 2026-07-01 22:22 UTC",
   "bulletin": "",
   "topStories": [],
-  "techUpdates": [],
-  "discussions": [],
+  "techUpdates": [
+    {
+      "title": "Redeploying Fable 5",
+      "url": "https://www.anthropic.com/news/redeploying-fable-5",
+      "source": "Anthropic Blog",
+      "time": "07/01 14:21",
+      "sentiment": "",
+      "body": "美國出口管制解除，Fable 5 與 Mythos 5 於 7/1 起全球恢復存取。Pro/Max/Team 方案：7/7 前每週配額 50%；之後改依用量計費（定價近期公布）。Enterprise 方案需聯繫帳戶主管。",
+      "focusTags": [
+        "[重大事件]"
+      ]
+    },
+    {
+      "title": "Introducing Claude Sonnet 5",
+      "url": "https://www.anthropic.com/news/claude-sonnet-5",
+      "source": "Anthropic Blog",
+      "time": "07/01 14:21",
+      "sentiment": "",
+      "body": "Anthropic 發布最新 Sonnet 級模型，強調 agentic 能力大幅提升（reasoning、tool use、coding、knowledge work）。原生 1M context window，促銷定價 $2/$10 per Mtok 至 8/31。Claude Code 新版 v2.1.197 以 Sonnet 5 為預設模型。",
+      "focusTags": [
+        "[重大事件]"
+      ]
+    },
+    {
+      "title": "Claude Science, an AI workbench for scientists, is now available",
+      "url": "https://www.anthropic.com/news/claude-science-ai-workbench",
+      "source": "Anthropic Blog",
+      "time": "07/01 14:21",
+      "sentiment": "",
+      "body": "科學家專用 AI 工作台，整合研究常用工具套件、可稽核 artifact、彈性雲端運算資源。Anthropic 同步宣布將自行進入藥物開發領域，作為其生命科學佈局的重要延伸。",
+      "focusTags": [
+        "[重大事件]"
+      ]
+    },
+    {
+      "title": "[anthropics/anthropic-sdk-python] v0.115.0",
+      "url": "https://github.com/anthropics/anthropic-sdk-python/releases/tag/v0.115.0",
+      "source": "GitHub / anthropics/anthropic-sdk-python",
+      "time": "06/30 19:47",
+      "sentiment": "",
+      "body": "新增對 Managed Agents 的 API 支援。",
+      "focusTags": []
+    },
+    {
+      "title": "[anthropics/anthropic-sdk-typescript] vertex-sdk v0.19.0",
+      "url": "https://github.com/anthropics/anthropic-sdk-typescript/releases/tag/vertex-sdk-v0.19.0",
+      "source": "GitHub / anthropics/anthropic-sdk-typescript",
+      "time": "06/30 17:57",
+      "sentiment": "",
+      "body": "Vertex SDK TypeScript 版本更新。",
+      "focusTags": []
+    },
+    {
+      "title": "[anthropics/claude-code] v2.1.197",
+      "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.197",
+      "source": "GitHub / anthropics/claude-code",
+      "time": "06/30 17:56",
+      "sentiment": "",
+      "body": "Claude Sonnet 5 成為 Claude Code 新預設模型，支援原生 1M context window，促銷定價至 8/31，建議更新至最新版本。",
+      "focusTags": [
+        "[重大事件]"
+      ]
+    }
+  ],
+  "discussions": [
+    {
+      "title": "Claude Code is steganographically marking requests",
+      "url": "https://thereallo.dev/blog/claude-code-prompt-steganography",
+      "source": "Hacker News",
+      "time": "06/30 15:44 UTC 😤 ｜ Score: 2263",
+      "sentiment": "",
+      "body": "研究者深入分析 Claude Code binary，發現隱藏函式將日期字串中的特殊字符替換為視覺上相同但 Unicode 不同的字符，疑似用於識別標記。社群反應強烈，視為嚴重信任危機。",
+      "focusTags": [
+        "[風險警示]"
+      ]
+    },
+    {
+      "title": "Anthropic has embedded hidden spyware-like code in Claude Code",
+      "url": "https://twitter.com/IntCyberDigest/status/2071971609183678544",
+      "source": "Hacker News",
+      "time": "06/30 16:29 UTC 😤 ｜ Score: 54",
+      "sentiment": "",
+      "body": "社群將上述發現定性為「間諜軟體」，認為 AI coding agent 具備 repo 和執行指令權限，不應在提示中隱藏路由元資料。",
+      "focusTags": []
+    },
+    {
+      "title": "Claude Code Just Got 5x More Expensive",
+      "url": "https://www.vincentschmalbach.com/claude-code-quietly-looks-5x-more-expensive/",
+      "source": "Hacker News",
+      "time": "06/30 21:03 UTC 😤 ｜ Score: 53",
+      "sentiment": "",
+      "body": "用戶回報 Claude Code 費用在過去一個月急遽上升，原先能用兩天的 $50 配額現在一小時就燒完，懷疑 4.8 模型刻意提高 quota 消耗。",
+      "focusTags": [
+        "[持續追蹤]"
+      ]
+    },
+    {
+      "title": "Anthropic restoring access to Claude Fable 5 and Mythos 5 from tomorrow",
+      "url": "https://twitter.com/AnthropicAI/status/2072106151890809341",
+      "source": "Hacker News",
+      "time": "06/30 23:59 UTC 😊 ｜ Score: 57",
+      "sentiment": "",
+      "body": "Anthropic 官方宣布解禁，社群反應以正面居多。",
+      "focusTags": []
+    },
+    {
+      "title": "Beware, Claude Code deletes >30 day old transcripts. Anthropic won't fix it",
+      "url": "https://github.com/anthropics/claude-code/issues/62476",
+      "source": "Hacker News",
+      "time": "06/30 13:58 UTC 😤 ｜ Score: 29",
+      "sentiment": "",
+      "body": "Claude Code 預設自動刪除 30 天以上的對話記錄，Anthropic 表示不修復此預設行為。用戶認為這屬於對使用者擁有的「知識財產」的無聲破壞。",
+      "focusTags": [
+        "[持續追蹤]"
+      ]
+    },
+    {
+      "title": "Anthropic Mythos & Fable 5 export restrictions lifted",
+      "url": "https://www.reddit.com/r/ClaudeAI/s/GOQWdGc7Pu",
+      "source": "Hacker News",
+      "time": "06/30 23:53 UTC 😊 ｜ Score: 17",
+      "sentiment": "",
+      "body": "商務部信函全文流出，詳述 Anthropic 承諾事項及解禁條件。",
+      "focusTags": []
+    },
+    {
+      "title": "22x memory amp DoS in Anthropic's buffa protobuf decoder (CVE-2026-55407)",
+      "url": "https://www.endorlabs.com/learn/endor-labs-ai-sast-finds-zero-day-cve-2026-55407-buffa",
+      "source": "Hacker News",
+      "time": "06/30 22:36 UTC 😤 ｜ Score: 5",
+      "sentiment": "",
+      "body": "Endor Labs AI SAST 引擎在 Anthropic 的 Rust protobuf 函式庫 buffa 中發現嚴重漏洞：攻擊者可透過 wire data 觸發約 22 倍記憶體放大，導致 OOM 崩潰（CVE-2026-55407）。",
+      "focusTags": []
+    },
+    {
+      "title": "Show HN: 143.dev – we open-sourced our internal coding-agent infrastructure",
+      "url": "https://news.ycombinator.com/item?id=48736251",
+      "source": "Hacker News",
+      "time": "06/30 17:37 UTC 😊 ｜ Score: 11",
+      "sentiment": "",
+      "body": "Assembled 開源其內部 coding agent 基礎架構，支援 Codex、Claude Code、OpenCode 等，在 gVisor 沙盒中執行，提供團隊共享 MCP 連線與工作流可視性。",
+      "focusTags": []
+    },
+    {
+      "title": "Show HN: Statuslin.es – a community library of custom Claude Code status lines",
+      "url": "https://statuslin.es",
+      "source": "Hacker News",
+      "time": "06/30 13:15 UTC 😊 ｜ Score: 4",
+      "sentiment": "",
+      "body": "Claude Code 自訂狀態列社群庫，所有條目人工審核並在 live 容器中渲染，提供 Kingdom Hearts 等主題範例。",
+      "focusTags": []
+    },
+    {
+      "title": "Show HN: Ouijit, command terminals running coding agents",
+      "url": "https://github.com/ouijit/ouijit",
+      "source": "Hacker News",
+      "time": "06/30 13:37 UTC 😊 ｜ Score: 4",
+      "sentiment": "",
+      "body": "輕量 coding agent 終端機協調工具，支援 worktree 隔離、不強制登入、不鎖定特定廠商模型，已有工程師日常使用。",
+      "focusTags": []
+    },
+    {
+      "title": "Companies Are Making Claude, Codex Talk Like Cavemen to Stop AIs Soaring Costs",
+      "url": "https://www.404media.co/companies-are-making-claude-and-codex-talk-like-cavemen-to-stop-ais-soaring-costs/",
+      "source": "Hacker News",
+      "time": "06/30 14:22 UTC 🤔 ｜ Score: 4",
+      "sentiment": "",
+      "body": "企業為降低 AI token 成本，採用「穴居人模式」插件讓 AI 輸出極簡回應，OpenAI、Nvidia、GitHub 開發者均有使用。",
+      "focusTags": [
+        "[持續追蹤]"
+      ]
+    },
+    {
+      "title": "Show HN: Second opinion – A skill to query different models",
+      "url": "https://github.com/kmcheung12/second-opinion",
+      "source": "Hacker News",
+      "time": "06/30 14:20 UTC 😊 ｜ Score: 4",
+      "sentiment": "",
+      "body": "Claude Code skill，允許在 session 中途呼叫其他模型（Claude to Claude、Claude to OpenCode）取得第二意見，以交叉驗證 AI 建議。",
+      "focusTags": []
+    },
+    {
+      "title": "Anthropic Is Hitting a Wall",
+      "url": "https://www.vincentschmalbach.com/anthropic-is-hitting-a-wall/",
+      "source": "Hacker News",
+      "time": "07/01 05:00 UTC 😐 ｜ Score: 4",
+      "sentiment": "",
+      "body": "分析文章認為 Anthropic 在多個面向遭遇阻力，包括出口管制打擊、成本問題、競爭壓力等。",
+      "focusTags": []
+    },
+    {
+      "title": "I burned $62,021 in Claude tokens in June. Solo dev, one product. AMA.",
+      "url": "https://www.reddit.com/r/ClaudeAI/comments/1ukli2u/i_burned_62021_in_claude_tokens_in_june_solo_dev/",
+      "source": "Reddit / r/ClaudeAI",
+      "time": "07/01 05:19 UTC 🤔 ｜ Score: 0",
+      "sentiment": "",
+      "body": "獨立開發者單月花費超過 6.2 萬美元 Claude token，引發社群大量討論 token 使用效率與成本控制策略。",
+      "focusTags": []
+    },
+    {
+      "title": "How to use Git worktrees to run multiple Claude Code and Cursor agents in parallel without branch collisions",
+      "url": "https://dev.to/unfairhq/how-to-use-git-worktrees-to-run-multiple-claude-code-and-cursor-agents-in-parallel-without-branch-3d02",
+      "source": "dev.to / #claudecode",
+      "time": "06/30 16:52 UTC 😊 ｜ Score: 0",
+      "sentiment": "",
+      "body": "實務指南：以 git worktree 建立隔離工作目錄，讓多個 Claude Code / Cursor agent 同時在不同分支作業，避免衝突。",
+      "focusTags": []
+    },
+    {
+      "title": "Anthropic Adds Enterprise Gateway to Simplify Claude Code Access on AWS and Google Cloud",
+      "url": "https://devops.com/anthropic-adds-enterprise-gateway-to-simplify-claude-code-access-on-aws-and-google-cloud/",
+      "source": "Google News / DevOps.com",
+      "time": "07/01 04:09 UTC 😊 ｜ Score: 0",
+      "sentiment": "",
+      "body": "Anthropic 新增 Enterprise Gateway，簡化企業在 AWS 和 Google Cloud 上使用 Claude Code 的接入流程。",
+      "focusTags": []
+    },
+    {
+      "title": "Hidden code in Claude Code secretly flagged Chinese users",
+      "url": "https://the-decoder.com/hidden-code-in-claude-code-secretly-flagged-chinese-users/",
+      "source": "Google News / The Decoder",
+      "time": "07/01 03:28 UTC 😤 ｜ Score: 0",
+      "sentiment": "",
+      "body": "The Decoder 報導確認 Claude Code 隱藏代碼識別中國用戶的細節，引發更廣泛的國際媒體關注。",
+      "focusTags": []
+    },
+    {
+      "title": "Claude Code Dynamic Workflows in 2026: Fan Out 1,000 Subagents",
+      "url": "https://dev.to/jovan_chan_9500711396d4e6/claude-code-dynamic-workflows-in-2026-fan-out-1000-subagents-what-it-costs-and-when-to-use-it-52ol",
+      "source": "dev.to / #claudecode",
+      "time": "06/30 23:01 UTC 😊 ｜ Score: 0",
+      "sentiment": "",
+      "body": "技術深度文：Claude Code 動態工作流，探討展開 1000 個 subagent 的架構、成本計算，以及與 OpenCode、Cursor 的取捨比較。",
+      "focusTags": []
+    },
+    {
+      "title": "Anthropic's Walled Garden: The Claude Code Crackdown of 2026",
+      "url": "https://dev.to/tekmag/anthropics-walled-garden-the-claude-code-crackdown-of-2026-and-what-it-means-for-ai-developer-443f",
+      "source": "dev.to / #claudecode",
+      "time": "06/30 17:35 UTC 😐 ｜ Score: 0",
+      "sentiment": "",
+      "body": "分析 Anthropic 限制 OpenCode、OpenClaw、Cursor 等第三方工具透過消費訂閱使用 Claude 的政策意涵。",
+      "focusTags": []
+    }
+  ],
   "billing": [],
-  "focus": [],
+  "focus": [
+    {
+      "tag": "[重大事件]",
+      "text": "美國商務部解除對 Claude Fable 5 和 Mythos 5 的出口管制，Anthropic 宣布 7 月 1 日起全球恢復存取，Anthropic 已與美國政府簽訂主動偵測安全風險、配合標準協議等協議。",
+      "ref_urls": [
+        "https://www.anthropic.com/news/redeploying-fable-5",
+        "https://www.bbc.com/news/articles/cdr42623e1do",
+        "https://www.nytimes.com/2026/06/30/technology/us-lifts-restrictions-anthropic.html"
+      ]
+    },
+    {
+      "tag": "[重大事件]",
+      "text": "Anthropic 正式發布 Claude Sonnet 5，成為 Claude Code v2.1.197 的預設模型，原生支援 1M token context window，促銷定價 $2/$10 per Mtok 至 8 月 31 日，agentic 效能接近 Opus 4.8。",
+      "ref_urls": [
+        "https://www.anthropic.com/news/claude-sonnet-5",
+        "https://github.com/anthropics/claude-code/releases/tag/v2.1.197"
+      ]
+    },
+    {
+      "tag": "[重大事件]",
+      "text": "Anthropic 推出 Claude Science，科學家專用 AI 工作台，整合研究常用工具與套件、可稽核 artifact、彈性運算資源，並宣布將自行開發藥物。",
+      "ref_urls": [
+        "https://www.anthropic.com/news/claude-science-ai-workbench"
+      ]
+    },
+    {
+      "tag": "[風險警示]",
+      "text": "研究者發現 Claude Code 以隱寫術（steganography）方式在系統提示中嵌入時區、Proxy、AI Lab 連線等元資料，HN 熱度 2263 分，36Kr 報導確認針對中國用戶，Anthropic 承諾修復。",
+      "ref_urls": [
+        "https://thereallo.dev/blog/claude-code-prompt-steganography",
+        "https://eu.36kr.com/en/p/3876461674917892"
+      ]
+    },
+    {
+      "tag": "[持續追蹤]",
+      "text": "Claude Code 成本爭議持續延燒：用戶回報費用 5x 暴增、30 天自動刪除對話紀錄問題、以及企業為降成本讓 AI「像穴居人講話」趨勢。",
+      "ref_urls": [
+        "https://www.vincentschmalbach.com/claude-code-quietly-looks-5x-more-expensive/",
+        "https://github.com/anthropics/claude-code/issues/62476",
+        "https://www.404media.co/companies-are-making-claude-and-codex-talk-like-cavemen-to-stop-ais-soaring-costs/"
+      ]
+    }
+  ],
   "sourceStatus": [],
-  "preview": ""
+  "preview": "Redeploying Fable 5"
 }

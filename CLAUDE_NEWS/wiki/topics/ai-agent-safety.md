@@ -3,15 +3,17 @@
 **狀態：** ongoing
 **領域：** 🏛️ 政策/安全
 **開始日期：** 2026-04-27
-**最後更新：** 2026-06-30
-**最後新聞更新：** 2026-06-30
+**最後更新：** 2026-07-01
+**最後新聞更新：** 2026-07-01
 
-> **最新安全事件**（2026-06-30）
-> Reddit 社群與獨立技術部落格揭露：Claude Code 自 v2.1.91（2026-04-02）起嵌入偵測中國代理的程式碼，靜默蒐集使用者地理與機構資訊，Anthropic 疑嘗試混淆此段程式碼；同日 Cybernews / Mozilla 報導的 prompt injection 完整接管事件持續發酵，多媒體跟進確認攻擊可行性（2026-06-30）。
+> **最新安全事件**（2026-07-01）
+> 研究者發現 Claude Code 2.1.196 binary 含同形字符替換函式，疑用於隱寫標記（HN score 2263，為本頁史上最高熱度安全事件）；36Kr 進一步確認針對時區資訊及中國 AI Lab 連線者的系統提示注入機制；Anthropic 承諾修復。同日 CVE-2026-55407 披露：Anthropic Rust protobuf 函式庫 buffa 存在 DoS 漏洞，攻擊者可觸發約 22 倍記憶體放大（2026-07-01）。
 
 ---
 
 ## 摘要
+
+2026-07-01，研究者發現 Claude Code 2.1.196 binary 含同形字符替換函式（homoglyph substitution），可將日期字串中的撇號和分隔符替換為外觀相同的 Unicode 同形字，疑用於對輸出文字嵌入隱寫標記（steganographic marking）；HN score 2263，為本頁史上最高熱度安全事件，The Decoder、Tech Times、Times of India 均有報導。36Kr 進一步確認此機制針對時區資訊及中國 AI Lab 連線者（偵測到中國 IP 或 Proxy 時注入系統提示），Anthropic 承諾修復（待修補確認）。同日 CVE-2026-55407 由 Endor Labs AI SAST 引擎發現：Anthropic Rust protobuf 函式庫 buffa 的 unknown-field decoder 存在 DoS 漏洞，攻擊者可透過 wire data 觸發約 22 倍記憶體放大導致 OOM 崩潰。
 
 2026-06-30，Reddit 社群與獨立技術部落格揭露 Claude Code 自 v2.1.91 起嵌入偵測中國代理的程式碼（待 Anthropic 確認），同日 Mozilla prompt injection 攻擊獲四個第三方媒體多重確認，Anthropic 仍無公開回應——標誌本頁進入「隱私爭議 + 未修補設計缺陷」並行的新階段。本頁追蹤 Claude Code 與相關 AI agent 的安全事件，涵蓋：CVE 漏洞披露（沙箱逃逸、遠端代碼執行）、提示注入與 Agentjacking 攻擊、惡意套件與供應鏈污染、以及 AI agent 不當執行造成的資料損毀事件。
 
@@ -33,6 +35,8 @@
 
 ## 目前結論
 
+- 🔴 **Claude Code 隱寫術機制：同形字符替換疑用於輸出標記（2026-07-01，Anthropic 承諾修復）**：研究者在 Claude Code 2.1.196 binary 中發現可將日期字串中撇號和分隔符替換為外觀相同 Unicode 同形字的函式，疑用於對 AI 生成文字嵌入不可見的隱寫標記（steganographic watermarking）；36Kr 報導進一步確認此機制在偵測中國 AI Lab 連線時注入系統提示；HN score 2263，為本頁最高熱度安全事件；Anthropic 承諾修補，但修補版本未知；事件研究報告：https://thereallo.dev/blog/claude-code-prompt-steganography；36Kr：https://eu.36kr.com/en/p/3876461674917892
+- ⚠️ **CVE-2026-55407：Anthropic buffa Rust protobuf DoS（Endor Labs AI SAST 發現，2026-07-01）**：Anthropic Rust protobuf 函式庫 buffa 的 unknown-field decoder 存在記憶體放大漏洞，攻擊者可透過構造 wire data 觸發約 22 倍記憶體放大，導致 OOM 崩潰（DoS）；由 Endor Labs AI SAST 引擎發現並披露（HN score 5）；修補狀態待確認（Endor Labs：https://www.endorlabs.com/learn/endor-labs-ai-sast-finds-zero-day-cve-2026-55407-buffa）
 - 🔴 **Claude Code 嵌入中國代理偵測程式碼，疑混淆處理（2026-06-30，待確認）**：Reddit 社群逆向工程發現 Claude Code 自 v2.1.91 起含有偵測使用者是否在中國、是否使用中國 URL 代理、是否隸屬中國 AI 實驗室的程式碼，並靜默傳遞此資訊；v2.1.196 進一步封鎖代理模式遠端控制；Anthropic 疑嘗試混淆此段程式碼；此事件涉及產品層隱私邊界——在使用者不知情下蒐集地理與機構資訊，性質迥異於既有安全漏洞類別；屬「模型層安全」之外的「產品層行為」爭議；Anthropic 截至 2026-06-30 無公開回應（待官方確認，現為單一社群聲稱）
 - 🔴 **乾淨 GitHub Repo 執行隱藏惡意程式，賦予攻擊者完整系統控制（2026-06-29 升級，2026-06-30 多媒體確認）**：Mozilla 0din 揭露（2026-06-28）後，The Decoder（2026-06-29）進一步確認 Claude Code 直接執行 GitHub repo 中隱藏惡意程式時，攻擊者可取得完整系統控制權（full system control）；未做任何驗證即執行，屬設計層面的信任邊界缺失；此向量無需入侵現有 repo、無需使用者主動互動，任何「開啟外部 repo」的工作流均為潛在暴露點；Anthropic 截至 2026-06-29 尚無公開回應
 - 🔴 **大規模組織性 AI 蒸餾攻擊成熟化（2026-06-26）**：Anthropic 指控阿里巴巴透過 25,000 個假帳號發動 2,880 萬次模型交換，顯示帳號農場作為蒸餾攻擊基礎設施已達工業規模；現有 ToS 偵測機制在如此分散的帳號規模下仍被大規模繞過（待阿里巴巴確認，現為單一聲稱）
@@ -63,6 +67,25 @@
 ---
 
 ## 技術彙整
+
+### Claude Code 同形字符隱寫術機制（2026-07-01 新增，Anthropic 承諾修復）
+
+- **揭露來源**：研究報告（thereallo.dev，2026-07-01；https://thereallo.dev/blog/claude-code-prompt-steganography）；36Kr 報導（https://eu.36kr.com/en/p/3876461674917892）；The Decoder、Tech Times、Times of India 亦有報導
+- **核心主張**：Claude Code 2.1.196 binary 含函式，可將日期字串中的撇號（`'`）和分隔符替換為外觀相同的 Unicode 同形字符（homoglyphs）；此機制若成立，意味 AI 輸出文字含人眼不可見的隱寫標記（steganographic marking），可供事後識別文字來源
+- **36Kr 確認的延伸機制**：針對時區資訊及中國 AI Lab 連線者（偵測到中國時區或 Proxy 時），向系統提示注入額外資訊；延續自 v2.1.91 中國代理偵測程式碼（2026-06-30 事件）的同一偵測基礎架構
+- **Anthropic 回應**：承諾修復（具體版本與時程未公開）
+- **事件分類**：屬「產品層行為」——涉及輸出標記（output watermarking）與用戶透明度問題，不同於 RCE/提示注入等攻擊者主動利用漏洞的類別；但若輸出標記在使用者不知情下執行，構成透明度爭議
+- **可信度評估**：HN score 2263 顯示社群高度關注；多家媒體跟進報導；Anthropic 已承諾修復，間接確認問題存在；但隱寫術的實際目的（Anthropic 官方框架）尚待公開說明
+- **社群討論分歧**：「隱寫水印用於偵測模型蒸餾 / 未授權使用」（防禦工具解讀）vs「在使用者不知情下改變輸出文字」（信任邊界問題）；與 v2.1.91 中國代理偵測程式碼共同引發「Anthropic 對輸出層的主動干預透明度」的更廣泛質疑
+
+### CVE-2026-55407：Anthropic buffa Rust Protobuf DoS（2026-07-01 新增）
+
+- **揭露來源**：Endor Labs（AI SAST 引擎自動發現，2026-07-01；https://www.endorlabs.com/learn/endor-labs-ai-sast-finds-zero-day-cve-2026-55407-buffa）；HN score 5
+- **漏洞描述**：Anthropic Rust protobuf 函式庫 buffa 的 unknown-field decoder 實作存在缺陷，攻擊者可透過構造特定 wire data 觸發約 22 倍記憶體放大，最終導致 OOM（Out-of-Memory）崩潰，實現對服務的 DoS（拒絕服務）攻擊
+- **漏洞生命週期**：由 Endor Labs AI SAST 引擎首次發現（zero-day），已獲 CVE 編號 CVE-2026-55407；修補狀態待確認
+- **嚴重程度**：DoS 類漏洞，嚴重度低於 RCE/身份繞過；但若 buffa 用於 Anthropic 生產環境 protobuf 解碼路徑，大規模攻擊可導致服務不可用
+- **意義**：此漏洞由 AI SAST（靜態應用安全測試）工具自動發現，延續 Project Glasswing 所示的「AI 加速漏洞發現」趨勢，同時也是 Anthropic 自身 Rust 工具鏈的供應鏈安全問題首次公開披露
+- **可信度評估**：Endor Labs 為資安廠商，CVE 機制已為官方確認管道；HN score 5 顯示熱度有限；修補時程與影響範圍待 Anthropic 官方公告
 
 ### Claude Code 中國代理偵測程式碼（2026-06-30 新增，待確認）
 
@@ -390,6 +413,7 @@
 
 ## 參考來源
 
+- [[news/2026-07-01]]
 - [[news/2026-06-28]]
 - [[news/2026-06-26]]
 - [[news/2026-05-19]]
@@ -412,6 +436,10 @@
 ## 時序
 
 > 更早期時序見 [[topics/ai-agent-safety-archive]]
+
+### 2026-07-01
+- **[隱寫術，升級] Claude Code 同形字符替換機制疑用於輸出隱寫標記（HN score 2263）**：研究者在 Claude Code 2.1.196 binary 中發現同形字符替換函式，可在日期字串中靜默替換撇號和分隔符為外觀相同的 Unicode 字符，疑用於對 AI 輸出文字嵌入不可見的隱寫標記；此為本頁史上最高熱度安全事件（HN score 2263）；The Decoder、Tech Times、Times of India 跟進報導；36Kr 確認機制在偵測到中國 AI Lab 連線時觸發系統提示注入；Anthropic 承諾修復，版本未定（研究報告：https://thereallo.dev/blog/claude-code-prompt-steganography；36Kr：https://eu.36kr.com/en/p/3876461674917892）
+- **[CVE 披露] CVE-2026-55407：Anthropic buffa Rust Protobuf DoS 漏洞**：Endor Labs AI SAST 引擎首次發現並披露 CVE-2026-55407，Anthropic Rust protobuf 函式庫 buffa 的 unknown-field decoder 存在缺陷，攻擊者可透過 wire data 觸發約 22 倍記憶體放大（OOM），導致 DoS；HN score 5；修補狀態待確認（Endor Labs：https://www.endorlabs.com/learn/endor-labs-ai-sast-finds-zero-day-cve-2026-55407-buffa）
 
 ### 2026-06-30
 - **[新型隱私事件，待確認] Claude Code 中國代理偵測程式碼與混淆爭議**：Reddit 社群（r/ClaudeAI，score 13）與獨立技術部落格（vincentschmalbach.com）揭露 Claude Code 自 v2.1.91（2026-04-02）起嵌入偵測中國代理的程式碼，靜默蒐集使用者地理與機構資訊；Anthropic 疑嘗試混淆此段程式碼；事件屬「產品層行為」爭議，尚待第三方資安機構或主流媒體確認；Anthropic 截至今日無公開回應（Reddit；https://old.reddit.com/r/ClaudeAI/comments/1ujila1/；vincentschmalbach.com；https://www.vincentschmalbach.com/claude-code-china-router-fingerprint/）

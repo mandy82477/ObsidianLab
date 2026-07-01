@@ -1,20 +1,22 @@
 # Claude Fable 5
 
 **類型：** model
-**狀態：** active（正式發布；Fable 5 / Mythos 5 因美國政府出口管制指令暫停全球存取）
+**狀態：** active（正式發布；出口管制已解除，2026-07-01 起全球恢復存取）
 **領域：** 🤖 模型
 **首次出現：** 2026-06-09
-**最後更新：** 2026-06-30
-**最後新聞更新：** 2026-06-29
+**最後更新：** 2026-07-01
+**最後新聞更新：** 2026-07-01
 
-> **最新管制進展**（2026-06-29）
-> Anthropic 正式獲得美國政府許可，可向特定信任合作夥伴恢復 Mythos 存取；Axios 進一步報導 Fable 5「can return as soon as this week」，Washington 立場明顯軟化（[qz.com](https://qz.com/anthropic-mythos-5-clearance-trusted-partners-commerce-062926)、[Axios](https://www.axios.com/2026/06/27/anthropic-fable-5-return-soon)）。官方尚未宣布具體日期，待正式公告確認。
+> **最新進展**（2026-07-01）
+> 美國出口管制正式解除，Fable 5 與 Mythos 5 於 2026-07-01 起全球恢復存取（[Anthropic Blog](https://www.anthropic.com/news/redeploying-fable-5)）。Pro/Max/Team 方案：7/7 前每週配額 50%；之後改依用量計費（定價近期公布）。Anthropic 已與美國政府簽訂協議：主動偵測安全風險、配合標準協議、通報惡意活動。
 
 ---
 
 ## 現況
 
-**2026-06-29 最新**：美國政府正式許可 Anthropic 向特定信任合作夥伴恢復 Mythos 存取（qz.com）；Axios 報導 Fable 5「can return as soon as this week」，全面解禁談判接近尾聲，仍待官方確認。
+**2026-07-01 最新**：美國出口管制正式解除，Fable 5 與 Mythos 5 全球恢復存取（[Anthropic Blog](https://www.anthropic.com/news/redeploying-fable-5)）。解禁條件：Anthropic 與美國政府簽訂協議，承諾主動偵測安全風險、配合標準協議、通報惡意活動。過渡期計費：Pro/Max/Team 方案 7/7 前每週配額維持 50%，7/7 後改依用量計費（定價近期公布）。
+
+**2026-06-29**：美國政府正式許可 Anthropic 向特定信任合作夥伴恢復 Mythos 存取（qz.com）；Axios 報導 Fable 5「can return as soon as this week」，全面解禁談判接近尾聲，已獲確認。
 
 Claude Fable 5 是 Anthropic 於 2026-06-09 發布的旗艦模型，為**史上首款向大眾開放的 Mythos 級模型**。Fable 5 與 Claude Mythos 5 共用相同的模型權重，差異在於 Fable 5 前置安全分類器——觸發時靜默 fallback 至 Claude Opus 4.8（Anthropic 稱不到 5% 的 session 受影響）。
 
@@ -139,6 +141,12 @@ claude --model claude-fable-5-20260609
 - [資料保留政策](https://support.claude.com/en/articles/15425996-data-retention-practices-for-mythos-class-models)
 
 ## 歷史記錄
+
+### 2026-07-01
+**出口管制正式解除，全球恢復存取**：
+- **官方公告（[Anthropic Blog](https://www.anthropic.com/news/redeploying-fable-5)）**：美國出口管制解除，Fable 5 與 Mythos 5 於 2026-07-01 起向全球用戶恢復存取。過渡期計費：Pro/Max/Team 方案 7/7 前維持每週配額 50%；7/7 後改依用量計費，定價近期公布
+- **Anthropic-美國政府協議**：Anthropic 承諾主動偵測安全風險、配合標準協議、通報惡意活動；此協議為 Fable 5 全球解禁的交換條件，標誌管制事件正式落幕
+- **管制事件歷時 18 天**（2026-06-13 至 2026-07-01）
 
 ### 2026-06-29
 **美國政府正式許可恢復 Mythos 存取 + Fable 5 可能本週回歸（待核實）**：

@@ -2,20 +2,21 @@
 
 LLM 查詢此 wiki 時，**先讀這個檔案**找相關頁面，再讀具體頁面取得詳細資訊。
 
-**最後更新：** 2026-06-30
+**最後更新：** 2026-07-01
 ---
 
 ## 近期異動
 
-- [[entities/claude-code]] — 2026-06-30：v2.1.196 Org Default Model、v2.1.197 Sonnet 5 現身 /model、transcript 自動刪除 Bug、背景任務升級預告
-- [[topics/ai-agent-safety]] — 2026-06-30：Claude Code v2.1.91 起嵌入中國代理偵測程式碼（重大隱私爭議，待確認）、Mozilla prompt injection 多媒體確認
-- [[topics/anthropic-government-policy]] — 2026-06-30：Fortune 深度報導 Anthropic 拒配合 Trump 政府付代價、CNBC 出口管制反效、SF Examiner 專家質疑特定封禁
-- [[topics/anthropic-business]] — 2026-06-30：Globant/DataArt/Okta/Rubrik 四項合作同日宣布、加州政府合作（6/29）
-- [[entities/pricing]] — 2026-06-30：社群集體反映配額再次縮減
-- [[topics/enterprise-cost-management]] — 2026-06-30：「穴居人插件」趨勢，企業強制 LLM 極簡回應以壓制 token 費用
-- [[topics/community-tech-patterns]] — 2026-06-30：新增社群工作流模式
-- [[topics/official-community-gap]] — 2026-06-30：多模型路由狀態更新
-- [[feature-radar]] — 2026-06-30：新增 Org Default Model（v2.1.196）
+- [[entities/sonnet-5]] — 2026-07-01：**新頁面**，Claude Code v2.1.197 預設模型，1M context，$2/$10 per Mtok 促銷
+- [[entities/claude-science]] — 2026-07-01：**新頁面**，科學家專用 AI 工作台正式發布
+- [[entities/fable-5]] — 2026-07-01：**出口管制全面解除**，Pro/Max/Team 7/7 前 50% 配額，旗艦模型回歸
+- [[entities/mythos]] — 2026-07-01：出口管制解除，全球恢復存取
+- [[topics/anthropic-government-policy]] — 2026-07-01：Fable 5 / Mythos 5 出口管制全面解除，Anthropic 承諾三項義務（安全偵測/標準制定/惡意通報）
+- [[topics/ai-agent-safety]] — 2026-07-01：Claude Code 隱寫術爭議（HN 2263，同形字符替換，Anthropic 承諾修復）+ CVE-2026-55407 DoS 漏洞
+- [[entities/claude-code]] — 2026-07-01：v2.1.197 Sonnet 5 正式預設，SDK v0.115.0
+- [[entities/pricing]] — 2026-07-01：Sonnet 5 促銷 $2/$10/Mtok（至 8/31）、Fable 5 7/7 後 usage-based billing
+- [[topics/anthropic-business]] — 2026-07-01：Enterprise Gateway、Fable 5 正式協議、Amazon/Broadcom 資本市場連動
+- [[feature-radar]] — 2026-07-01：新增 Sonnet 5（🔥🔥🔥🔥🔥）、Claude Science（🔥🔥）、Fable 5 解禁
 
 ---
 
@@ -31,11 +32,13 @@ LLM 查詢此 wiki 時，**先讀這個檔案**找相關頁面，再讀具體頁
 
 | 頁面 | 類型 | 領域 | 狀態 | 摘要 |
 |------|------|------|------|------|
+| [[entities/sonnet-5]] | model | 🤖 模型 | active | Claude Sonnet 5：Claude Code v2.1.197 預設模型，1M context，$2/$10 per Mtok 促銷至 8/31，agentic 效能接近 Opus 4.8 |
+| [[entities/claude-science]] | product | 🛠️ 工具/功能 | active | Claude Science：科學家專用 AI 工作台，整合研究工具套件、可稽核 artifact、彈性運算資源；Anthropic 宣布自行開發藥物 |
 | [[entities/claude-code]] | product | 🛠️ 工具/功能 | active | Claude Code CLI 主頁：功能、已知問題、社群工具 |
 | [[entities/opus-4-8]] | model | 🤖 模型 | active | Opus 4.8：SWE-bench Pro 69.2%、1M context、Dynamic Workflows（1,000 子代理）、Fast Mode 1/3 費用 |
 | [[entities/opus-4-7]] | model | 🤖 模型 | active（爭議）| Opus 4.7 發布細節、思考深度爭議、cache 問題 |
 | [[entities/pricing]] | policy | 💼 商業 | active | 訂閱方案、近期政策變動、token 成本注意事項 |
-| [[entities/mythos]] | model | 🤖 模型 | active（解禁擴大：6/29 美方批准向特定信任合作夥伴恢復存取；Fable 5 回歸在望） | 高能力安全模型；2026-06-29 美方批准向特定信任夥伴恢復 Mythos 存取，出口管制持續鬆動 |
+| [[entities/mythos]] | model | 🤖 模型 | active（出口管制 2026-07-01 全面解除） | 高能力安全模型；2026-07-01 出口管制解除，全球恢復存取；仍維持軍事用途限制存取 |
 | [[entities/bugcrawl]] | feature | 🛠️ 工具/功能 | beta | Anthropic 測試中的 Claude Code 漏洞偵測工具 |
 | [[entities/claude-design]] | feature | 🛠️ 工具/功能 | active（初期）| Anthropic AI 設計工具，首日社群反映幻覺多、風格偏移、Claude Code 整合差 |
 | [[entities/claude-security]] | product | 🛠️ 工具/功能 | beta | Claude Security 資安產品，情境化安全評估，整合於 Claude Code 開發環境 |
@@ -53,7 +56,7 @@ LLM 查詢此 wiki 時，**先讀這個檔案**找相關頁面，再讀具體頁
 | [[entities/chris-olah]] | person | 👤 人物 | active | Anthropic 共同創辦人、AI 可解釋性研究先驅；2026-05-26 梵蒂岡封論揭幕演講 |
 | [[entities/opencode]] | product | 🛠️ 工具/功能 | active（快速成長）| Claude Code 主要開源替代品，157K 開發者分流，OpenCode-power-pack 移植官方 11 個 skills |
 | [[entities/claude-tag]] | feature | 🛠️ 工具/功能 | active | Claude Tag：Slack-native AI 協作工具，可讀取頻道上下文、跨 session 記憶、主動完成任務；Anthropic 內部 65% 程式碼由其生成 |
-| [[entities/fable-5]] | model | 🤖 模型 | active（6/13 因美國政府出口管制指令暫停全球存取）| Claude Fable 5：首款 Mythos 級公開模型，$10/$50 per M token；6/24：NSA 失去存取、Legion 提告、LessWrong 預測 7/9 重新上線 |
+| [[entities/fable-5]] | model | 🤖 模型 | active（出口管制 2026-07-01 全面解除）| Claude Fable 5：首款 Mythos 級公開模型，$10/$50 per M token；7/1 解禁，Pro/Max/Team 7/7 前享 50% 配額，7/7 後 usage-based billing |
 
 ---
 

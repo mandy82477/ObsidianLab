@@ -4,11 +4,11 @@
 **狀態：** active（正式發布）
 **領域：** 🛠️ 工具/功能
 **首次出現：** 2026-04-28
-**最後更新：** 2026-06-23
-**最後新聞更新：** 2026-05-22
+**最後更新：** 2026-07-01
+**最後新聞更新：** 2026-07-01
 
-> **最新框架更新**（2026-05-22）
-> 自架沙箱完整參考文件正式發布，涵蓋 worker 輪詢機制、環境金鑰管理、webhook 喚醒設定與監控方案，企業可在完全自有基礎設施部署受管代理，標誌企業化部署進入文件化里程碑。
+> **最新 SDK 更新**（2026-07-01）
+> anthropic-sdk-python v0.115.0 新增對 Managed Agents 的 API 支援，Python 開發者現可直接透過官方 SDK 操作 Managed Agents 框架，無需自行實作底層 API 呼叫。
 
 ---
 
@@ -22,7 +22,7 @@ Anthropic Managed Agents 是 Claude Platform 上的官方 Agent 框架，提供�
 - **20 路子代理並行**：最高支援 20 個子代理同時執行，突破過去 Agent Teams 的並行限制
 - **Outcomes 規格驗證**：Agent 完成後自我驗證輸出是否符合預定規格文件（spec），代表 AI 代理設計從「盡力而為」走向「可驗證達標」的範式轉變
 
-Python SDK v0.100.0 與 TypeScript SDK v0.95.0 同步新增 Managed Agents 原生支援（2026-05-06/07）。
+Python SDK v0.100.0 與 TypeScript SDK v0.95.0 同步新增 Managed Agents 原生支援（2026-05-06/07）。2026-07-01，Python SDK v0.115.0 進一步強化 Managed Agents API 支援層，開發者可透過更新版 SDK 直接操作框架。
 
 2026-05-11 週，Managed Agents **正式發布**（從研究預覽升格），Anthropic 定義多代理協作的官方托管服務邊界。一位已自建 multi-agent 系統 70 天的開發者在 Reddit 分享實戰架構：以 Opus 作為決策層、OpenCode 作為工程師層、多個研究代理並行，並指出「**任務簡報的撰寫品質**才是多代理系統成敗的核心」，不依賴官方工具照樣可行；社群開始對官方托管方案與自組架構的功能差距進行系統性比較。
 
@@ -172,6 +172,7 @@ while (!['completed', 'failed'].includes(task.status)) {
 
 | 日期 | 事件 |
 |------|------|
+| 2026-07-01 | **anthropic-sdk-python v0.115.0** 新增 Managed Agents API 支援，Python SDK 正式跟進框架更新，開發者可透過官方 SDK 直接操作 Managed Agents（見 [Release](https://github.com/anthropics/anthropic-sdk-python/releases/tag/v0.115.0)）|
 | 2026-05-22 | **自架沙箱完整參考文件發布**（via Reddit r/ClaudeAI 報告 v2.1.145 新增）：完整文件涵蓋 worker 輪詢機制、環境金鑰管理、webhook 喚醒設定、監控方案及客戶自管安全責任；企業可在完全自有基礎設施上部署受管代理，標誌 Claude Code 企業化部署從「支援」走向「完整文件化」 |
 | 2026-05-19 | 新增**自架沙箱（self-hosted sandboxes）**與 **MCP 隧道（MCP tunnels）**：企業客戶可在自有基礎設施執行 agent 工作流，私有 MCP 伺服器無需公開即可連接 Claude Code；the-decoder.com 報導 |
 | 2026-05-18 | InfoQ 報導「Code With Claude Announces Managed Agents, Proactive Workflows, Capability Curve」，Anthropic 正式公告 **Proactive Workflows** 與 **Capability Curve** 兩項新能力：Proactive Workflows 讓 Agent 可主動（而非被動等待觸發）排程並執行任務，與 Cat Wu 「AI 的下一步是主動性（proactivity）」論述一致；Capability Curve 提供 Agent 能力曲線追蹤機制，協助用戶評估 Agent 在不同任務類型的能力進展 |

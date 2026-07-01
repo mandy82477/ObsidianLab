@@ -4,15 +4,15 @@
 僅收錄官方 changelog、release note 或官方公告來源；社群工具見 [[topics/community-tech-tools]]。
 每次 ingest 後由 LLM 維護：新增功能、更新熱度、補充社群回饋。
 
-**最後更新：** 2026-06-30
+**最後更新：** 2026-07-01
 
 ---
 
 ## ⭐ 本週推薦
 
+- **Claude Sonnet 5（Claude Code 新預設）**（熱度 🔥🔥🔥🔥🔥）：v2.1.197 起自動切換，1M context + 促銷 $2/$10/Mtok，agentic 效能接近 Opus 4.8，適合所有 Claude Code 使用者立即受益
+- **Claude Fable 5（出口管制全面解除）**（熱度 🔥🔥🔥🔥🔥）：2026-07-01 起全球恢復，Pro/Max/Team 用戶 7/7 前享 50% 配額，旗艦模型回歸
 - **Claude Code Artifacts**（熱度 🔥🔥🔥🔥🔥）：工作階段即時輸出可共享互動網頁，適合需要向非工程師成員展示進度的開發者
-- **Managed Agents**（熱度 🔥🔥🔥🔥🔥）：官方多代理框架（Dreaming 記憶、20 路並行、Outcomes 驗證），適合需要編排複雜 agentic 工作流的開發者
-- **Coordinator 模式 + `/code-review --fix`**（熱度 🔥🔥🔥🔥）：協調多代理並自動修復審查問題，適合追求自動化程式碼品質把關的團隊
 
 ---
 
@@ -37,6 +37,8 @@
 
 | 功能 | 發布日期 | 熱度 | 試用價值 | 狀態 |
 |------|----------|------|----------|------|
+| **Claude Sonnet 5**（Claude Code v2.1.197 新預設，1M context，$2/$10 per Mtok 促銷至 8/31） | 2026-07-01 | 🔥🔥🔥🔥🔥 | ✅ 強烈推薦 | 正式發布 |
+| **Claude Science**（科學家專用 AI 工作台，整合研究工具套件、可稽核 artifact、彈性雲端運算） | 2026-07-01 | 🔥🔥 | ⚡ 有條件推薦 | 正式發布 |
 | **Org Default Model**（Claude Code v2.1.196，管理員設定組織預設模型，使用者 `/model` 顯示「Org default」） | 2026-06-29 | 🔥🔥 | ⚡ 有條件推薦 | 正式發布 |
 | **`CLAUDE_CODE_DISABLE_MOUSE_CLICKS` 環境變數**（Claude Code v2.1.195，全螢幕模式停用滑鼠點擊/拖拉/懸停） | 2026-06-26 | 🔥🔥 | ⚡ 有條件推薦 | 正式發布 |
 | **`autoMode.classifyAllShell` 設定**（Claude Code v2.1.193，所有 Bash/PowerShell 路由 auto-mode 分類器） | 2026-06-25 | 🔥🔥 | ⚡ 有條件推薦 | 正式發布 |
@@ -50,7 +52,7 @@
 | **Claude Code Artifacts**（工作階段即時輸出可共享互動網頁） | 2026-06-18 | 🔥🔥🔥🔥🔥 | ⚡ 有條件推薦 | 正式發布 |
 | **Tool(param:value) permission 語法 + 巢狀 Skills**（v2.1.178） | 2026-06-15 | 🔥🔥 | ✅ 推薦 | 正式發布 |
 | **enforceAvailableModels 企業管控**（Claude Code v2.1.175） | 2026-06-12 | 🔥🔥 | ✅ 推薦 | 正式發布 |
-| **Claude Fable 5**（Mythos 架構公開版，$10/$50 per M token） | 2026-06-09 | 🔥🔥🔥🔥🔥 | ❌ 暫不可用 | 出口管制停用（6/29 美方批准向特定夥伴恢復 Mythos，回歸在望） |
+| **Claude Fable 5**（Mythos 架構公開版，$10/$50 per M token） | 2026-06-09 | 🔥🔥🔥🔥🔥 | ✅ 推薦 | 正式發布（出口管制 2026-07-01 全面解除，Pro/Max/Team 7/7 前 50% 配額） |
 | **`--safe-mode` 旗標**（v2.1.169） | 2026-06-08 | 🔥🔥 | ✅ 推薦 | 正式發布 |
 | **Google Colab CLI 整合 Claude Code / Codex** | 2026-06-08 | 🔥🔥 | ✅ 推薦 | 正式發布 |
 | **Claude Opus 4.1 SDK 棄用**（Python SDK v0.106.0） | 2026-06-06 | 🔥 | ✅ 推薦 | 正式發布 |
@@ -85,6 +87,40 @@
 | **Claude Design** | 2026-04-27 | 🔥🔥 | ❌ 暫不推薦 | 正式發布 |
 | **Dreaming 記憶整合** | 2026-05-07 | 🔥🔥🔥🔥 | ⏳ 觀望 | Research Preview |
 | **Outcomes 規格驗證** | 2026-05-07 | 🔥🔥🔥🔥 | ⚡ 有條件 | 公開測試 |
+
+---
+
+## 🆕 最新功能（2026-07）
+
+### Claude Sonnet 5 — Claude Code 新預設模型（1M context）
+**發布：** 2026-07-01（v2.1.197）| **熱度：** 🔥🔥🔥🔥🔥 | **試用價值：** ✅ 強烈推薦 | **狀態：** 正式發布
+
+**是什麼：** Claude Code v2.1.197 將 Claude Sonnet 5 設為預設模型，原生支援 1M token context window，促銷定價 $2/$10 per Mtok 至 2026-08-31，agentic 效能接近 Opus 4.8。
+
+**為何熱：** 影響所有新 session，無需手動切換即享 1M context；社群多篇評測確認 agentic 任務、coding、tool use 已接近 Opus 4.8 水準，而成本僅 60%。
+
+**現在要試嗎：** 升級至最新版本即自動生效，所有使用者均適合立即採用。
+
+**快速上手：**
+```bash
+npm install -g @anthropic-ai/claude-code@latest
+# 新 session 自動使用 Sonnet 5 + 1M context；/model 可確認
+```
+
+**注意事項：** 促銷定價至 2026-08-31，之後定價待官方公告；1M context 仍需注意 token 成本控制。
+
+---
+
+### Claude Science — 科學家專用 AI 工作台
+**發布：** 2026-07-01 | **熱度：** 🔥🔥 | **試用價值：** ⚡ 有條件推薦 | **狀態：** 正式發布
+
+**是什麼：** 科學家專用 AI app，整合研究常用工具套件、可稽核 artifact（支援研究可重現性）與彈性雲端運算資源。
+
+**為何熱：** Anthropic 首次針對科研場景推出獨立 app，並宣布將自行開發藥物，是 AI 進入學術研究工作流的明確訊號。
+
+**現在要試嗎：** 適合學術研究者、生命科學領域；工程開發場景不受直接影響。
+
+**注意事項：** 今日首報，社群反應待觀察；詳見 [[entities/claude-science]]。
 
 ---
 

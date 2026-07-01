@@ -1,20 +1,20 @@
 # Claude / Anthropic 生態系概覽
 
-**最後更新：** 2026-06-30
+**最後更新：** 2026-07-01
 
 ---
 
 ## 當前局勢
 
-2026-06-30 三條線同步緊張：**政策**、**安全**、**商業**均有重大訊號。
+2026-07-01 是 Anthropic 生態今年至今最重大的單日新聞：**出口管制解除 + 新旗艦模型 + 新產品線** 三波齊發，同時伴隨**隱寫術安全爭議**破壞節慶氣氛。
 
-**政策面**：Fortune 深度報導 Anthropic 拒絕配合 Trump 政府、正在付代價——CNBC 同步披露出口管制已反效（美國盟友同步失去 Fable 5 存取，損害夥伴關係），SF Examiner 專家公開質疑封禁依據。Fable 5 仍處管制，但解凍基礎（Mythos 擴大解禁、加州州長 Newsom 簽署政府使用協議）持續墊高。談判由聯合創辦人 **Tom Brown 接管**。
+**解禁**：美國商務部正式解除 Fable 5 / Mythos 5 出口管制，生效日 2026-07-01。Anthropic 簽訂三項義務承諾（主動偵測安全風險、配合制定標準協議、通報惡意活動），換取商業自由。Pro/Max/Team 用戶 7/7 前享 50% 配額，7/7 後改 usage-based billing。封鎖期共 18–19 天，損失仍在評估中。
 
-**安全面**：Claude Code **v2.1.91 起嵌入中國代理偵測程式碼**的爭議浮出水面（待確認），引發嚴重隱私質疑——若確認，這是近年最重大的用戶端隱私問題。同期 Mozilla prompt injection 多媒體確認亦升級威脅評估（技術已驗證，非假設）。
+**模型**：Anthropic 正式發布 **Claude Sonnet 5**，Claude Code v2.1.197 同步設為預設模型。1M token context window、促銷 $2/$10 per Mtok（至 8/31）、agentic 效能接近 Opus 4.8，社群初步評測正面。
 
-**商業面**：Anthropic 同日宣布 **Globant / DataArt / Okta / Rubrik 四項企業合作**，加上前日加州政府協議，單週政府 + 企業簽約密度創新高。配額再縮訊號（社群集體反映）則持續對使用者施壓。
+**產品**：**Claude Science** 正式發布，科學家專用 AI 工作台，整合研究工具套件與可稽核 artifact。Anthropic 同時宣布將自行開發藥物，是公司明確進入生命科學領域的訊號。
 
-產品端 **Claude Code v2.1.196 新增 Org Default Model 功能**（組織可設全域預設模型），v2.1.197 已在 `/model` 選單出現「Sonnet 5」條目——是預告還是誤植，社群持觀望。
+**隱寫術爭議**：安全研究者發現 Claude Code 2.1.196 binary 含同形字符替換函式（撇號 → 同形字），疑似用於識別用途，HN 2263 分。36Kr 確認機制針對時區及中國 AI Lab 連線者。Anthropic 已承諾修復，但 CVE-2026-55407 DoS 漏洞同日披露，安全面不平靜。
 
 ---
 
@@ -22,10 +22,11 @@
 
 | 模型 | 狀態 | 備注 |
 |------|------|------|
-| **Claude Fable 5** | 🟡 回歸在望 | 6/13 起出口管制暫停；6/29 Axios 報導「可能本週回歸」；$10/$50 per M token |
-| **Claude Mythos 5** | 🟢 解禁擴大 | 6/29 美方批准向特定信任合作夥伴恢復存取（延續 6/27 開放 100+ 美國受信任機構）|
+| **Claude Fable 5** | 🟢 全面恢復 | 出口管制 7/1 解除；Pro/Max/Team 7/7 前 50% 配額，7/7 後 usage-based；$10/$50 per M token |
+| **Claude Sonnet 5** | 🟢 新發布（預設）| Claude Code v2.1.197 預設模型；1M context；$2/$10 per Mtok（促銷至 8/31）；agentic 效能接近 Opus 4.8 |
+| **Claude Mythos 5** | 🟢 全面恢復 | 出口管制 7/1 解除；仍維持軍事用途限制 |
 | Claude Opus 4.8 | ✅ Active | SWE-bench Pro 69.2%、1M context；6/24 高錯誤率事件已平息 |
-| Claude Sonnet 4.6 | ✅ Active | Fable 5 下線後社群主力；CP 值最佳 |
+| Claude Sonnet 4.6 | ✅ Active | 仍可選用；CP 值佳 |
 | Claude Haiku 4.5 | ✅ Active | 企業混合架構低成本 worker |
 | Claude Mythos（Preview）| 🔒 限制存取 | Glasswing 200 組織 / 15+ 國家；NSA 已用於攻擊性操作 |
 
@@ -35,16 +36,15 @@
 
 ### 🔴 高度關注
 
-1. **[[topics/anthropic-government-policy]] — Fable 5 出口管制封鎖（第 11 天）**
-   - 2026-06-24：NSA 正式失去 Claude Fable 存取權（NYT 確認）；Legion 對美國政府提告
-   - 白宮對 Dario Amodei 關係趨緊（WIRED）；中國 360 聲稱開發對標 Mythos 工具
-   - LessWrong 預測 Fable 重新上線時間：7 月 9 日
-   - SK Telecom 中國關聯確認為根本動機；談判已擴展至整體 AI 安全規則框架
-   - 三個戰場追蹤見 [[topics/anthropic-government-policy]]
+1. **[[topics/ai-agent-safety]] — Claude Code 隱寫術爭議（HN 2263）**
+   - 2026-07-01：安全研究者發現 Claude Code 2.1.196 binary 含同形字符替換函式（撇號 → 同形字）
+   - 36Kr 確認機制針對時區及中國 AI Lab 連線者；Anthropic 已承諾修復
+   - CVE-2026-55407 DoS 漏洞同日披露
+   - 詳細技術分析見 [[topics/ai-agent-safety]]
 
-2. **[[entities/fable-5]] — 出口管制根本原因分析**
-   - 封鎖原因從「護欄爭議」升級為「投資方地緣政治」
-   - 社群主力已切回 Sonnet 4.6；Fable 5 依賴度損失由用戶湧現爆發揭示
+2. **[[topics/anthropic-government-policy]] — Fable 5 出口管制解除（後解封觀察期）**
+   - 2026-07-01：出口管制全面解除，Anthropic 承諾三項義務
+   - 封鎖期 18–19 天；Legion 提告仍在進行；三個戰場後續追蹤見 [[topics/anthropic-government-policy]]
 
 3. **[[topics/recursive-self-improvement]] — AI 遞歸自我改進**
    - Claude 已負責 Anthropic 80–90% 生產程式碼
@@ -72,11 +72,16 @@
 
 ---
 
-## 近兩週重大事件（2026-06-17 至 2026-06-30）
+## 近兩週重大事件（2026-06-18 至 2026-07-01）
 
 | 日期 | 事件 | 影響 |
 |------|------|------|
-| 06-30 | **v2.1.197 `/model` 出現 Sonnet 5**（預告或誤植） | 🟡 社群觀望 |
+| 07-01 | **Fable 5 / Mythos 5 出口管制全面解除**（Anthropic 承諾三項義務） | 🟢 里程碑解封 |
+| 07-01 | **Claude Sonnet 5 正式發布**（Claude Code v2.1.197 預設，1M context，$2/$10 促銷） | 🔥🔥🔥🔥🔥 新旗艦 |
+| 07-01 | **Claude Science 發布**（科學家 AI 工作台，可稽核 artifact，Anthropic 開發藥物） | 🔥🔥 新產品線 |
+| 07-01 | **Claude Code 隱寫術爭議**（同形字符替換函式，HN 2263，Anthropic 承諾修復） | 🔴 安全 / 隱私 |
+| 07-01 | CVE-2026-55407 DoS 漏洞披露 | 🔴 安全 |
+| 06-30 | **v2.1.197 `/model` 出現 Sonnet 5**（預告） | 🟡 社群觀望 |
 | 06-30 | **v2.1.91 中國代理偵測程式碼爭議**（待確認） | 🔴 重大隱私疑慮 |
 | 06-30 | Globant / DataArt / Okta / Rubrik 四項合作同日宣布 | 💼 企業擴張 |
 | 06-29 | **加州 Newsom 與 Anthropic 簽署政府使用協議** | 💼 政府市場 |
@@ -126,8 +131,8 @@
 - **估值**：$965B（Series H，IPO 機密申請中）
 - **最新企業動態**：Globant / DataArt / Okta / Rubrik（6/30）+ 加州政府（6/29）+ JPMorgan HK 斷連 + Claude Corps $150M + DXC 全球聯盟
 - **競爭**：Fable 5 下線使 Sonnet 4.6 成主力；OpenCode 157K 分流穩定；Lindy 切換 DeepSeek 案例凸顯 API 層價格壓力
-- **安全**：v2.1.91 中國代理偵測爭議（待確認）；Mozilla prompt injection 多媒體確認；Mythos 軍事兩用已確認
-- **計費**：配額再縮（社群 6/30 集體反映）；Agent SDK 計費暫停保持原狀
+- **安全**：Claude Code 隱寫術爭議（同形字符替換，HN 2263，Anthropic 承諾修復）；CVE-2026-55407 DoS 漏洞；Mozilla prompt injection 多媒體確認
+- **計費**：Sonnet 5 促銷 $2/$10/Mtok 至 8/31；Fable 5 7/7 後 usage-based billing（Pro/Max 訂閱不含）；Agent SDK 計費暫停保持原狀
 
 ---
 

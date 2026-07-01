@@ -3,11 +3,11 @@
 **狀態：** ongoing
 **領域：** 💼 商業
 **開始日期：** 2026-05-28
-**最後更新：** 2026-06-30
-**最後新聞更新：** 2026-06-30
+**最後更新：** 2026-07-01
+**最後新聞更新：** 2026-07-01
 
-> **最新動態**（2026-06-30）
-> 單日四項戰略合作同步宣布：Globant（NYSE: GLOB，全球 IT 服務）與 Anthropic 結盟推出 Claude 驅動的 AI Pods；DataArt 加入 Claude Partner Network 精選服務合作夥伴；Okta 與 Anthropic 在 XAA 跨應用 agent 認證、MCP 及 Glasswing 安全框架展開合作；Rubrik（NYSE: RBRK）發布 Claude Code 專用 AI agent 與安全層。加州政府合作（2026-06-29）另見下方時序。
+> **最新動態**（2026-07-01）
+> Anthropic 與美國商務部達成正式協議，承諾主動偵測安全風險、配合標準協議、通報惡意活動，Fable 5 出口管制解除；商務長 Howard Lutnick 社群媒體公開宣布，WSJ、Bloomberg、Reuters、NYT、BBC、CNN 等主要媒體均有報導。同日新增 Enterprise Gateway，簡化企業在 AWS 和 Google Cloud 上部署 Claude Code。Fable 5 解禁推動 Amazon 和 Broadcom 股價上漲（Barron's）。
 
 ---
 
@@ -85,6 +85,8 @@ Simon Willison（知名開發者博主）發表文章，認為 Anthropic 與 Ope
 
 | 合作方 | 類型 | 日期 | 意義 |
 |--------|------|------|------|
+| AWS / Google Cloud（Enterprise Gateway）| 雲端整合 | 2026-07-01 | 新增 Enterprise Gateway，簡化企業在 AWS 和 Google Cloud 上使用 Claude Code；降低雲端企業部署門檻，有助推動 Claude Code 進入大型企業 CI/CD 環境（DevOps.com https://devops.com/anthropic-adds-enterprise-gateway-to-simplify-claude-code-access-on-aws-and-google-cloud/）|
+| 美國商務部（Fable 5 解禁協議）| 政府授權 | 2026-07-01 | Anthropic 與美國商務部達成正式協議：承諾主動偵測安全風險、配合標準協議、通報惡意活動；商務長 Howard Lutnick 社群媒體宣布解禁；WSJ、Bloomberg、Reuters、NYT、BBC、CNN、WashPost、FT 主要媒體均報導；解禁後 Amazon 和 Broadcom 股價上漲（Barron's）。商業意涵：Fable 5 全面解禁打通最高端模型商業管道，比 6/27-6/28 的選擇性解禁更廣泛（推論）|
 | Rubrik（NYSE: RBRK）| SDK 夥伴 | 2026-06-30 | 網路安全公司 Rubrik 發布 Claude Code 專用 AI agent 與安全層，強化企業環境安全防護；2026-06-09 已有 Agent Cloud 前例，本次為 Claude Code 專屬深化（Techzine https://www.techzine.eu/news/security/142561/rubrik-introduces-ai-agent-and-security-layer-for-claude-code/）|
 | Okta | SDK 夥伴 | 2026-06-30 | Okta 與 Anthropic 在 XAA（跨應用 agent 認證）、MCP 協定整合及 Glasswing 安全框架展開合作，為 agentic 工作流提供身份驗證基礎建設；XAA 是 agentic AI 安全採購的新興標準，Okta 借此鞏固身份管理市場地位（Cyber Magazine https://cybermagazine.com/news/how-okta-anthropic-are-partnering-on-xaa-mcp-glasswing）|
 | DataArt | SDK 夥伴 | 2026-06-30 | 全球軟體工程服務公司 DataArt 加入 Anthropic Claude Partner Network，成為服務軌道精選（Select）合作夥伴；Partner Network 持續擴張，服務型整合商密度增加（National Law Review https://natlawreview.com/press-releases/dataart-joins-anthropics-claude-partner-network-select-partner-services）|
@@ -129,6 +131,12 @@ Simon Willison（知名開發者博主）發表文章，認為 Anthropic 與 Ope
 - [[news/2026-05-13]]（The Information：定價強勢期）
 
 ## 時序
+
+### 2026-07-01
+- **[Fable 5 出口管制全面解除 + 商務部正式協議] Anthropic 與美國商務部達成協議，Fable 5 出口管制正式解除**：Anthropic 承諾主動偵測安全風險、配合標準協議、通報惡意活動；商務長 Howard Lutnick 在社群媒體公開宣布解禁；WSJ、Bloomberg、Reuters、NYT、BBC、CNN、WashPost、FT 等主要媒體同步報導。**對商業的意涵**：比 6/27-6/28 選擇性解禁更大範圍的管制解除，Fable 5 最高端模型商業管道全面打通；Amazon 和 Broadcom 股價因此上漲（Barron's https://www.barrons.com/articles/amazon-stock-broadcom-anthropic-fable-mythos-0edab4a7）。商業談判承諾的安全偵測義務若未來落實有難度，可能成為再次管制的基點（推論）。（出口管制政策面見 [[topics/anthropic-government-policy]]）
+- **[企業雲端整合] Anthropic 新增 Enterprise Gateway，簡化企業在 AWS 和 Google Cloud 上使用 Claude Code**：Enterprise Gateway 作為企業部署的標準化入口，降低大型企業在主流雲平台上整合 Claude Code 的門檻。**對採用率的意涵**：AWS 和 Google Cloud 是多數大型企業的主要雲端基礎設施，Gateway 整合可加速企業級 Claude Code 採購決策（推論）（DevOps.com https://devops.com/anthropic-adds-enterprise-gateway-to-simplify-claude-code-access-on-aws-and-google-cloud/）
+- **[生命科學拓展] Anthropic 宣布將自行開發藥物，Claude Science 切入生命科學**：STAT News 報導 Anthropic 宣布以 Claude Science 作為科學工作台，自行進入藥物開發領域。**對商業的意涵**：若 Anthropic 自行開發藥物（非僅提供工具），代表商業版圖從 AI 工具供應商向垂直產業直接參與者延伸，估值邏輯可能轉變；此為今日首見，具體管線規模與合作夥伴未公開，明日再評估是否建頁（STAT News https://www.statnews.com/2026/06/30/anthropic-ai-drug-development/）
+- **[資本市場連動] Fable 5 解禁消息推動 Amazon 和 Broadcom 股價上漲**：Barron's 報導 Fable 5 出口管制解除後，Amazon（AWS 為 Anthropic 主要算力合作夥伴）和 Broadcom（AI 晶片供應商）股價受到正面帶動；顯示 Anthropic 商業前景的改善已直接傳導至生態合作夥伴的資本市場估值（Barron's https://www.barrons.com/articles/amazon-stock-broadcom-anthropic-fable-mythos-0edab4a7）
 
 ### 2026-06-30
 - **[Partner Network 密集擴張] 單日四項合作宣布：Globant AI Pods、DataArt 精選服務夥伴、Okta XAA 安全整合、Rubrik Claude Code 安全層**：PR Newswire 報導 Globant（NYSE: GLOB）與 Anthropic 結盟，推出 Claude 驅動的 AI Pods 企業交付框架；National Law Review 確認 DataArt 加入 Claude Partner Network 服務軌道精選夥伴；Cyber Magazine 報導 Okta 與 Anthropic 在 XAA（跨應用 agent 認證）、MCP 及 Glasswing 安全框架合作，為 agentic 工作流建立身份驗證基礎建設；Techzine Global 報導 Rubrik（NYSE: RBRK）發布 Claude Code 專用 AI agent 與安全層。**對商業的意涵**：Partner Network 單日密集擴張顯示 Anthropic 生態系統化攻略 IT 服務、身份管理、資安三個企業 AI 採購決策環節，有助於將 Claude 鎖入企業採購鏈上游（推論）。

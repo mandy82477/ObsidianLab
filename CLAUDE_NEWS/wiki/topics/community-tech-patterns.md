@@ -3,11 +3,11 @@
 **狀態：** monitoring
 **領域：** 🌐 社群
 **開始日期：** 2026-04-25
-**最後更新：** 2026-06-30
-**最後新聞更新：** 2026-06-30
+**最後更新：** 2026-07-01
+**最後新聞更新：** 2026-07-01
 
-> **最新工作流模式**（2026-06-30）
-> 五個新模式：DoorDash 開源確定性框架 Agentic Orchestrator（需求釐清→設計→多階段規劃→實作→審查，含人工閘門）；Loop exit condition 設計模式——「如何停下」比「如何跑起來」更難；Agent 記憶損壞防護——結構化 Markdown 編輯器取代危險的 regex；Cross-repo blast radius 可視化；MCP server 長 session 三大失效模式與穩健化策略。
+> **最新工作流模式**（2026-07-01）
+> 兩個模式更新：Claude Code 動態工作流與 1000 subagents fan-out 新興模式——dev.to 有具體教學，大規模子代理並行派發正在從理論走向實作；Git worktree 多 agent 並行獲新佐證教學；企業「穴居人模式」降本（OpenAI、Nvidia、GitHub 開發者已採用）獲 404 Media 媒體報導確認，與 Caveman Skill 65% 降耗實測互相印證。
 
 ---
 
@@ -28,7 +28,7 @@
 | **CLAUDE.md 管理** | 精簡規則策略、Self-improving Rules、防腐爛機制 | ✅ 成熟 | 以「規則」非「建議」撰寫，CI 攔截違反架構 PR |
 | **Hooks 與自動化** | PostToolUse 稽核、Git Hooks 品質門、/goal Fire-and-Forget、deploy/migration 保護、Pre-completion Hook、Stop Hook 音效通知、Hooks 環境感知條件觸發（Adrafinil） | ✅ 成熟 | 強制執行 > CLAUDE.md 建議；Stop Hook 要求可驗證完成證明；CLAUDE.md 做偏好、Hooks 做邊界；Pre-completion Hook 防模糊結束；hooks 可感知 agent 活躍狀態驅動環境副作用 |
 | **模型使用策略** | 分層模型（Sonnet + Opus）、多模型路由、Workweave Router | ⚡ 活躍 | 依任務複雜度路由，節省 60% 用量；Dragoman / Workweave 自動路由；嵌入 Claude Code / Codex / Cursor 的成本感知路由 |
-| **Token / 成本優化** | MCP Code Execution、Token Bloat 對策、本機圖資料庫索引 | ⚡ 活躍 | HTML→Markdown 降 80% token；快取不跨 session 是費用主因 |
+| **Token / 成本優化** | MCP Code Execution、Token Bloat 對策、本機圖資料庫索引、穴居人模式（Caveman）企業採用 | ⚡ 活躍 | HTML→Markdown 降 80% token；快取不跨 session 是費用主因；極簡輸出模式（穴居人）企業採用獲 404 Media 確認，OpenAI、Nvidia、GitHub 開發者使用 |
 | **記憶與知識管理** | ltm Core Memory Packet、本機圖資料庫、NanoBrain、OKF（物件鍵格式跨 session 記憶） | ⚡ 活躍 | 跨 session / 跨工具持久記憶；Leiden 圖譜減少 71 倍 token；OKF 標準化 agent 知識格式供團隊共用 |
 | **Plugin / MCP 整合** | Plugin 反模式整理、Claude Code 作為 MCP 協調中心 | ⚡ 活躍 | 避免不必要 context 載入；Claude Code 主導 MCP 工具鏈協作 |
 | **多代理 PR Review** | 4-agent Code Review、對抗性審查（計畫前 + 程式碼後）、Read-Only Reviewer | ⚡ 活躍 | 架構師代理協調 + 多廠商模型交叉審查；對抗性審查者讀取真實 codebase；read-only 權限約束維持對立性 |
@@ -51,6 +51,28 @@
 ---
 
 ## 技術彙整
+
+### Claude Code 動態工作流與 1000 Subagents Fan-out（2026-07-01）
+
+- **核心模式：** 以 Claude Code 為主協調器，動態生成大量 subagent 並行執行子任務（宣稱可達 1000 個子代理級別）；fan-out 模式讓任務分解從靜態預設走向執行時動態派發，協調器根據任務複雜度即時決定分支數量
+- **實作方向：**
+  - 主 agent 先分析任務複雜度，動態決定分支數量與各子任務邊界
+  - 每個 subagent 在獨立 worktree 或容器中執行，防止資源競爭
+  - 協調器負責彙整所有子代理結果並進行一致性驗證
+  - 設計終止條件：子代理失敗閾值、超時機制、人工審查節點
+- **解決的問題：** 靜態多 agent 工作流難以應對動態任務規模；100+ subagent 場景下的協調與成本爆炸
+- **來源：** dev.to（Claude Code 動態工作流教學；07-01）
+- **注意事項：** 1000 子代理為理論上限，實際成本需搭配 AgentWatch 等 budget enforcement 工具；成本爆炸風險高，建議先從 10-20 個 subagent 驗證協調架構
+
+### Git Worktree 多 Agent 並行：新佐證教學（2026-07-01）
+
+- **核心模式：** 此為 git worktree 多 agent 並行模式的新佐證教學（既有模式見 2026-05-23「Git Worktrees 作為多 Agent 隔離原語」與 2026-06-24「Multi-agent 工作流轉型指南」），dev.to 教學文章提供具體步驟，使此模式從「社群實踐」進一步強化為「有文件可循的標準做法」
+- **新增細節：**
+  - 明確的 worktree 創建指令序列（`git worktree add`）與 Claude Code session 綁定方法
+  - 結果彙整策略：各 worktree 完成後的 merge 時機與衝突解決規範
+  - 與動態 fan-out 模式的組合使用：靜態 worktree 預先分配 vs 動態按需創建
+- **成熟度更新：** 多篇獨立教學、工具化（Claude Squad、Superset、Claudette）、企業場景驗證，此模式實際成熟度已達 ✅，模式概覽維持 ✅ 成熟確認
+- **來源：** dev.to（Git worktree 多 agent 並行教學；07-01）
 
 ### Agentic Orchestrator：確定性框架 + 非確定性 Agent 混合架構（2026-06-30）
 
@@ -558,6 +580,7 @@
 
 - **7 個降耗實務技巧**（KDNuggets）：Claude Code 高 token 成本主要來自膨脹的 context（歷史訊息、已讀檔案、工具輸出、CLAUDE.md），而非單次 prompt 長度；降耗應從 context 管理入手，而非壓縮 prompt
 - **Caveman Skill 實測 65% 降耗**：評測一個宣稱可削減 65% token 的 Claude Code skill，作者實測後效果顯著，但節省幅度依使用情境差異較大；對訂閱配額告急的用戶具參考價值，與 4/29 的「兩字 prompt vs 複雜外掛」基準測試形成對照
+- **企業「穴居人模式」採用確認**（2026-07-01，404 Media）：企業透過極簡輸出插件要求 AI 以最少文字回應，OpenAI、Nvidia、GitHub 開發者已採用；將 Caveman 模式從「個人省費技巧」提升至「企業級降本策略」，與 Caveman Skill 65% 實測互相印證；[報導](https://www.404media.co/companies-are-making-claude-and-codex-talk-like-cavemen-to-stop-ais-soaring-costs/)（404 Media；HN score 4）
 
 ### Backend 替換模式（2026-05-04）
 

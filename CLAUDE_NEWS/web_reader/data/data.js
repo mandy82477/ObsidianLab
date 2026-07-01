@@ -101,10 +101,10 @@ window.WIKI_DATA = {
       "pill": "active",
       "firstSeen": "2025（正式推出）",
       "startDate": "",
-      "lastUpdated": "2026-06-30",
-      "lastNewsUpdate": "2026-06-30",
-      "summary": "最新版本 **v2.1.197**（2026-06-30）的 `/model` 選單出現 Sonnet 5 選項，目前無法選用，社群預測正式發布在即。v2.1.196（2026-06-29）新增 org default model 功能：企業管理員在 org console 設定預設模型後，使用者在 `/model` …",
-      "latestHeadline": "v2.1.197：`/model` 選單出現 Sonnet 5 選項（目前無法選用），社群預測正式發布在即"
+      "lastUpdated": "2026-07-01",
+      "lastNewsUpdate": "2026-07-01",
+      "summary": "最新版本 **v2.1.197**（2026-07-01）正式將 Claude Sonnet 5 設為 Claude Code 預設模型，原生支援 1M token context window，促銷定價至 2026-08-31。v2.1.196（2026-06-29）新增 org default model 功能：企…",
+      "latestHeadline": "v2.1.197 Sonnet 5 正式成為預設模型：Claude Code 預設切換至 Claude Sonnet 5，原生支援 1M token context window，促銷定價至 2026-08-31；使用者升版後無需手動切換即享受完整 1M context（見 [Release](https://gith"
     },
     {
       "id": "claude-design",
@@ -120,6 +120,21 @@ window.WIKI_DATA = {
       "lastNewsUpdate": "2026-06-20",
       "summary": "Claude Design 是 Anthropic 推出的 AI 設計工具功能，旨在讓 Claude 具備輔助 UI／視覺設計的能力。目前處於初期階段，社群評價以負面為主——幻覺嚴重、工具錯誤頻繁，且輸出設計風格過度貼近 Anthropic 自家品牌，忽略用戶提供的設計素材。截至 2026-06-20，無後續公開更新，…",
       "latestHeadline": "有開發者透過讓 Claude Design 洩漏部分指引，成功反向工程其系統提示詞，並以近似版本公開分享，顯示提示工程邏輯可被複製至其他 LLM 或 Claude Code 環境，降低了其差異化壁壘"
+    },
+    {
+      "id": "claude-science",
+      "pageType": "entity",
+      "name": "Claude Science",
+      "entityType": "product",
+      "status": "active",
+      "domain": "🛠️ 工具/功能",
+      "pill": "active",
+      "firstSeen": "2026-07-01",
+      "startDate": "",
+      "lastUpdated": "2026-07-01",
+      "lastNewsUpdate": "2026-07-01",
+      "summary": "Claude Science 是 Anthropic 於 2026-07-01 發布的科學家專用 AI 工作台 app。整合研究常用工具套件、可稽核 artifact（Auditable Artifacts）與彈性雲端運算資源，定位為科研人員的端對端 AI 研究平台。使用者可直接存取此 app，無需自行配置底層 API…",
+      "latestHeadline": "正式發布，科學家專用 AI 工作台 app，整合研究工具套件、可稽核 artifact 與彈性雲端運算"
     },
     {
       "id": "claude-security",
@@ -171,15 +186,15 @@ window.WIKI_DATA = {
       "pageType": "entity",
       "name": "Claude Fable 5",
       "entityType": "model",
-      "status": "active（正式發布；Fable 5 / Mythos 5 因美國政府出口管制指令暫停全球存取）",
+      "status": "active（正式發布；出口管制已解除，2026-07-01 起全球恢復存取）",
       "domain": "🤖 模型",
       "pill": "active",
       "firstSeen": "2026-06-09",
       "startDate": "",
-      "lastUpdated": "2026-06-30",
-      "lastNewsUpdate": "2026-06-29",
-      "summary": "**2026-06-29 最新**：美國政府正式許可 Anthropic 向特定信任合作夥伴恢復 Mythos 存取（qz.com）；Axios 報導 Fable 5「can return as soon as this week」，全面解禁談判接近尾聲，仍待官方確認。 Claude Fable 5 是 Anthrop…",
-      "latestHeadline": "政府正式許可（qz.com）：Anthropic 獲得美國政府許可，可向特定信任合作夥伴恢復 Mythos 存取，Fable 5 全面回歸在望（[qz.com](https://qz.com/anthropic-mythos-5-clearance-trusted-partners-commerce-062926)）；"
+      "lastUpdated": "2026-07-01",
+      "lastNewsUpdate": "2026-07-01",
+      "summary": "**2026-07-01 最新**：美國出口管制正式解除，Fable 5 與 Mythos 5 全球恢復存取（[Anthropic Blog](https://www.anthropic.com/news/redeploying-fable-5)）。解禁條件：Anthropic 與美國政府簽訂協議，承諾主動偵測安全風險…",
+      "latestHeadline": "官方公告（[Anthropic Blog](https://www.anthropic.com/news/redeploying-fable-5)）：美國出口管制解除，Fable 5 與 Mythos 5 於 2026-07-01 起向全球用戶恢復存取。過渡期計費：Pro/Max/Team 方案 7/7 前維持每週配額"
     },
     {
       "id": "fiona-fung",
@@ -236,23 +251,23 @@ window.WIKI_DATA = {
       "pill": "active",
       "firstSeen": "2026-04-28",
       "startDate": "",
-      "lastUpdated": "2026-06-23",
-      "lastNewsUpdate": "2026-05-22",
+      "lastUpdated": "2026-07-01",
+      "lastNewsUpdate": "2026-07-01",
       "summary": "Anthropic Managed Agents 是 Claude Platform 上的官方 Agent 框架，提供持久記憶、多路並行執行與可驗證輸出等功能。2026-04-28 首次加入跨會話記憶功能（正式公告）；2026-04-30 推出公開測試版，Anthropic 定位為「agentic AI 的 AWS」。…",
-      "latestHeadline": "自架沙箱完整參考文件發布（via Reddit r/ClaudeAI 報告 v2.1.145 新增）：完整文件涵蓋 worker 輪詢機制、環境金鑰管理、webhook 喚醒設定、監控方案及客戶自管安全責任；企業可在完全自有基礎設施上部署受管代理，標誌 Claude Code 企業化部署從「支援」走向「完整文件化」"
+      "latestHeadline": "anthropic-sdk-python v0.115.0 新增 Managed Agents API 支援，Python SDK 正式跟進框架更新，開發者可透過官方 SDK 直接操作 Managed Agents（見 [Release](https://github.com/anthropics/anthropic-"
     },
     {
       "id": "mythos",
       "pageType": "entity",
       "name": "Claude Mythos",
       "entityType": "model",
-      "status": "active（部分解禁：Mythos 5 = 100+ 美國受信任機構可用；Fable 5 全面解禁談判中）",
+      "status": "active（出口管制解除，2026-07-01 起全球恢復存取）",
       "domain": "🤖 模型",
       "pill": "active",
       "firstSeen": "2026-04（限定夥伴 Preview）",
       "startDate": "",
-      "lastUpdated": "2026-06-29",
-      "lastNewsUpdate": "2026-06-29",
+      "lastUpdated": "2026-07-01",
+      "lastNewsUpdate": "2026-07-01",
       "summary": "**2026-06-29 最新**：Anthropic 正式獲得美國政府許可，可向特定信任合作夥伴恢復 Mythos 存取（qz.com），是繼 6/27 部分解禁後的進一步政策落實。中國 Z.Ai 聲稱已開發出可與 Mythos 匹敵的網路安全 AI（Reuters，HN score 8），繼 360（6/24）後第…",
       "latestHeadline": "政府許可進一步確認：qz.com 報導 Anthropic 正式獲得美國政府許可，可向特定信任合作夥伴恢復 Mythos 存取（[qz.com](https://qz.com/anthropic-mythos-5-clearance-trusted-partners-commerce-062926)）；此為繼 6/27"
     },
@@ -326,10 +341,25 @@ window.WIKI_DATA = {
       "pill": "active",
       "firstSeen": "2026-04-25",
       "startDate": "",
-      "lastUpdated": "2026-06-30",
-      "lastNewsUpdate": "2026-06-30",
+      "lastUpdated": "2026-07-01",
+      "lastNewsUpdate": "2026-07-01",
       "summary": "Anthropic 訂閱計費政策持續演變。原定 2026-06-15 實施的「程式化用量（Agent SDK、`claude -p`）脫離訂閱、改按 API 費率計費」政策，於 **2026-06-16 宣布暫停**，重新推行時間未定。目前所有付費方案用量仍維持原訂閱配額制。核心爭點：Anthropic 訂閱方案設計以…",
       "latestHeadline": "Anthropic 訂閱計費政策持續演變。原定 2026-06-15 實施的「程式化用量（Agent SDK、`claude -p`）脫離訂閱、改按 API 費率計費」政策，於 2026-06-16 宣布暫停，重新推行時間未定。目前所有付費方案用量仍維持原訂閱配額制。核心爭點：Anthropic 訂閱方案設計以人工互動"
+    },
+    {
+      "id": "sonnet-5",
+      "pageType": "entity",
+      "name": "Claude Sonnet 5",
+      "entityType": "model",
+      "status": "active（正式發布）",
+      "domain": "🤖 模型",
+      "pill": "active",
+      "firstSeen": "2026-07-01",
+      "startDate": "",
+      "lastUpdated": "2026-07-01",
+      "lastNewsUpdate": "2026-07-01",
+      "summary": "Claude Sonnet 5 於 2026-07-01 正式發布，定位為 Anthropic **最 agentic 的 Sonnet 模型**，在 reasoning、tool use、coding、knowledge work 等多個面向均有顯著提升，效能接近 Opus 4.8。 **Claude Code 預設…",
+      "latestHeadline": "Claude Sonnet 5 於 2026-07-01 正式發布，定位為 Anthropic 最 agentic 的 Sonnet 模型，在 reasoning、tool use、coding、knowledge work 等多個面向均有顯著提升，效能接近 Opus 4.8。"
     },
     {
       "id": "tom-brown",
@@ -373,10 +403,10 @@ window.WIKI_DATA = {
       "pill": "active",
       "firstSeen": "",
       "startDate": "2026-04-27",
-      "lastUpdated": "2026-06-30",
-      "lastNewsUpdate": "2026-06-30",
-      "summary": "2026-06-30，Reddit 社群與獨立技術部落格揭露 Claude Code 自 v2.1.91 起嵌入偵測中國代理的程式碼（待 Anthropic 確認），同日 Mozilla prompt injection 攻擊獲四個第三方媒體多重確認，Anthropic 仍無公開回應——標誌本頁進入「隱私爭議 + 未修…",
-      "latestHeadline": "2026-06-30，Reddit 社群與獨立技術部落格揭露 Claude Code 自 v2.1.91 起嵌入偵測中國代理的程式碼（待 Anthropic 確認），同日 Mozilla prompt injection 攻擊獲四個第三方媒體多重確認，Anthropic 仍無公開回應——標誌本頁進入「隱私爭議 + 未修"
+      "lastUpdated": "2026-07-01",
+      "lastNewsUpdate": "2026-07-01",
+      "summary": "2026-07-01，研究者發現 Claude Code 2.1.196 binary 含同形字符替換函式（homoglyph substitution），可將日期字串中的撇號和分隔符替換為外觀相同的 Unicode 同形字，疑用於對輸出文字嵌入隱寫標記（steganographic marking）；HN score…",
+      "latestHeadline": "2026-07-01，研究者發現 Claude Code 2.1.196 binary 含同形字符替換函式（homoglyph substitution），可將日期字串中的撇號和分隔符替換為外觀相同的 Unicode 同形字，疑用於對輸出文字嵌入隱寫標記（steganographic marking）；HN score"
     },
     {
       "id": "ai-talent-flow",
@@ -403,10 +433,10 @@ window.WIKI_DATA = {
       "pill": "active",
       "firstSeen": "",
       "startDate": "2026-05-28",
-      "lastUpdated": "2026-06-30",
-      "lastNewsUpdate": "2026-06-30",
+      "lastUpdated": "2026-07-01",
+      "lastNewsUpdate": "2026-07-01",
       "summary": "Anthropic 在技術聲譽與企業採用率上持續上升（企業採用率 34.4% 首超 OpenAI 32.3%，Ramp AI Index 2026-05-15），並於 2026-05-28 完成 $65B Series H 融資，估值 $965B，超越 OpenAI 成全球最大 AI 新創。核心矛盾從「PMF vs 獲…",
-      "latestHeadline": "[Partner Network 密集擴張] 單日四項合作宣布：Globant AI Pods、DataArt 精選服務夥伴、Okta XAA 安全整合、Rubrik Claude Code 安全層：PR Newswire 報導 Globant（NYSE: GLOB）與 Anthropic 結盟，推出 Claude 驅"
+      "latestHeadline": "[Fable 5 出口管制全面解除 + 商務部正式協議] Anthropic 與美國商務部達成協議，Fable 5 出口管制正式解除：Anthropic 承諾主動偵測安全風險、配合標準協議、通報惡意活動；商務長 Howard Lutnick 在社群媒體公開宣布解禁；WSJ、Bloomberg、Reuters、NYT、B"
     },
     {
       "id": "anthropic-government-policy",
@@ -418,10 +448,10 @@ window.WIKI_DATA = {
       "pill": "active",
       "firstSeen": "",
       "startDate": "2026-05-01",
-      "lastUpdated": "2026-06-30",
-      "lastNewsUpdate": "2026-06-30",
+      "lastUpdated": "2026-07-01",
+      "lastNewsUpdate": "2026-07-01",
       "summary": "2026-06-30，Fortune、CNBC、SF Examiner 三篇報導共同標誌媒體敘事轉向：Anthropic 被主流財經媒體定性為「拒絕按 Trump 政府劇本行事並付出代價」，而非「被無辜打壓的受害者」；出口管制反效論述（白宮打壓為中國競品創造窗口）已獲 Bloomberg、WSJ、CNBC 三大財經媒體…",
-      "latestHeadline": "[媒體框架轉向] Fortune 深度報導：Anthropic 拒絕配合 Trump 遊戲規則的政治代價：Fortune 深度報導 Anthropic 因拒絕配合 Trump 政府運作邏輯（相較多數科技巨頭的配合態度）而付出實質商業與政治代價；報導框架為「Anthropic 失敗按 Trump 劇本行事」，為主流財經媒"
+      "latestHeadline": "[重大結局] 商務部長 Lutnick 宣布全面解除 Fable 5 / Mythos 5 出口管制：美國商務部長 Howard Lutnick 宣布解除對 Fable 5 和 Mythos 5 的出口管制，2026-07-01 正式生效；Anthropic 承諾三項義務：（1）主動偵測並解決與模型相關的安全風險、（2"
     },
     {
       "id": "code-quality-decline",
@@ -463,8 +493,8 @@ window.WIKI_DATA = {
       "pill": "active",
       "firstSeen": "",
       "startDate": "2026-04-25",
-      "lastUpdated": "2026-06-30",
-      "lastNewsUpdate": "2026-06-30",
+      "lastUpdated": "2026-07-01",
+      "lastNewsUpdate": "2026-07-01",
       "summary": "追蹤 Claude Code 社群中活躍的概念辯論、設計哲學、實證研究與技術反思。與 [[topics/community-tech-patterns]] 追蹤具體工具和工作流不同，本頁聚焦思想碰撞：什麼哲學正在成形、什麼假設受到挑戰、什麼共識正在收斂。頁面結構：**🔥 本週熱點**（當前最熱的持續議題）→ **🌊 長…",
       "latestHeadline": "追蹤 Claude Code 社群中活躍的概念辯論、設計哲學、實證研究與技術反思。與  追蹤具體工具和工作流不同，本頁聚焦思想碰撞：什麼哲學正在成形、什麼假設受到挑戰、什麼共識正在收斂。頁面結構：🔥 本週熱點（當前最熱的持續議題）→ 🌊 長期議題（主題彙整）→ 熱門討論記錄（最近 30 天）→ 技術彙整（逐篇深度筆記）"
     },
@@ -478,8 +508,8 @@ window.WIKI_DATA = {
       "pill": "warn",
       "firstSeen": "",
       "startDate": "2026-04-25",
-      "lastUpdated": "2026-06-30",
-      "lastNewsUpdate": "2026-06-30",
+      "lastUpdated": "2026-07-01",
+      "lastNewsUpdate": "2026-07-01",
       "summary": "追蹤 Claude Code 社群在實際開發中累積的**工作流與應用模式**。本頁收錄的模式類型包括 Multi-agent 架構、Skills 設計、CLAUDE.md 管理、Hooks 與自動化、模型使用策略、Token 成本優化、記憶與知識管理、Plugin/MCP 整合等，持續累積形成社群最佳實踐知識庫。 工具…",
       "latestHeadline": "追蹤 Claude Code 社群在實際開發中累積的工作流與應用模式。本頁收錄的模式類型包括 Multi-agent 架構、Skills 設計、CLAUDE.md 管理、Hooks 與自動化、模型使用策略、Token 成本優化、記憶與知識管理、Plugin/MCP 整合等，持續累積形成社群最佳實踐知識庫。"
     },
@@ -1205,8 +1235,8 @@ window.WIKI_DATA = {
   "digestIndex": [
     {
       "date": "2026-07-01",
-      "articleCount": 0,
-      "preview": "",
+      "articleCount": 101,
+      "preview": "Redeploying Fable 5",
       "topCount": 0
     },
     {
@@ -1613,8 +1643,8 @@ window.WIKI_DATA = {
     "entityType": "meta",
     "status": "",
     "pill": "warn",
-    "lastUpdated": "2026-06-30",
-    "markdown": "﻿# 官方功能熱度雷達\n\n追蹤 Anthropic 官方發布的 Claude / Claude Code 功能熱度、試用價值與快速上手方式。\n僅收錄官方 changelog、release note 或官方公告來源；社群工具見 [[topics/community-tech-tools]]。\n每次 ingest 後由 LLM 維護：新增功能、更新熱度、補充社群回饋。\n\n**最後更新：** 2026-06-30\n\n---\n\n## ⭐ 本週推薦\n\n- **Claude Code Artifacts**（熱度 🔥🔥🔥🔥🔥）：工作階段即時輸出可共享互動網頁，適合需要向非工程師成員展示進度的開發者\n- **Managed Agents**（熱度 🔥🔥🔥🔥🔥）：官方多代理框架（Dreaming 記憶、20 路並行、Outcomes 驗證），適合需要編排複雜 agentic 工作流的開發者\n- **Coordinator 模式 + `/code-review --fix`**（熱度 🔥🔥🔥🔥）：協調多代理並自動修復審查問題，適合追求自動化程式碼品質把關的團隊\n\n---\n\n## 評分說明\n\n| 指標 | 說明 |\n|------|------|\n| 🔥 熱度 | 1–5 格，依來源數量、討論量、持續天數、社群工具跟進情況綜合評分 |\n| 試用價值 | ✅ 推薦 / ⚡ 有條件推薦 / ⏳ 觀望 / ❌ 暫不推薦 |\n| 狀態 | 正式發布 / Research Preview / 公開測試 / 限制存取 |\n\n**熱度計分基準：**\n- 🔥 — 單次提及，討論有限\n- 🔥🔥 — 2–3 個來源，短期討論\n- 🔥🔥🔥 — 多來源 + 持續 2 天以上，或有社群工具跟進\n- 🔥🔥🔥🔥 — 廣泛討論 + 社群工具爆發 / 大會主角功能\n- 🔥🔥🔥🔥🔥 — 里程碑事件，跨平台持續多日，改變開發者工作流\n\n---\n\n## 📋 功能全覽表（2026-04-25 起）\n\n| 功能 | 發布日期 | 熱度 | 試用價值 | 狀態 |\n|------|----------|------|----------|------|\n| **Org Default Model**（Claude Code v2.1.196，管理員設定組織預設模型，使用者 `/model` 顯示「Org default」） | 2026-06-29 | 🔥🔥 | ⚡ 有條件推薦 | 正式發布 |\n| **`CLAUDE_CODE_DISABLE_MOUSE_CLICKS` 環境變數**（Claude Code v2.1.195，全螢幕模式停用滑鼠點擊/拖拉/懸停） | 2026-06-26 | 🔥🔥 | ⚡ 有條件推薦 | 正式發布 |\n| **`autoMode.classifyAllShell` 設定**（Claude Code v2.1.193，所有 Bash/PowerShell 路由 auto-mode 分類器） | 2026-06-25 | 🔥🔥 | ⚡ 有條件推薦 | 正式發布 |\n| **`/rewind` 指令**（Claude Code，從 `/clear` 前節點恢復 context） | 2026-06-25 | 🔥🔥🔥 | ⚡ 有條件推薦 | 正式發布 |\n| **SDK `client.system.message`**（TypeScript v0.106.0 / Python v0.112.0） | 2026-06-25 | 🔥🔥 | ⚡ 有條件推薦 | 正式發布 |\n| **Claude Tag**（Slack-native AI 協作工具，65% Anthropic 程式碼由其生成） | 2026-06-24 | 🔥🔥 | ⚡ 有條件推薦 | 正式發布 |\n| **sandbox.credentials + 組織模型限制**（Claude Code v2.1.187） | 2026-06-24 | 🔥🔥🔥 | ⚡ 有條件推薦 | 正式發布 |\n| **MCP CLI 認證指令**（`claude mcp login/logout`，v2.1.186） | 2026-06-22 | 🔥🔥 | ⚡ 有條件推薦 | 正式發布 |\n| **MCP Enterprise Authorization**（Okta / VS Code 零設定 SSO） | 2026-06-19 | 🔥🔥 | ⚡ 有條件推薦 | 正式發布 |\n| **破壞性 Git 指令自動封鎖**（Claude Code v2.1.183） | 2026-06-19 | 🔥🔥🔥 | ✅ 推薦 | 正式發布 |\n| **Claude Code Artifacts**（工作階段即時輸出可共享互動網頁） | 2026-06-18 | 🔥🔥🔥🔥🔥 | ⚡ 有條件推薦 | 正式發布 |\n| **Tool(param:value) permission 語法 + 巢狀 Skills**（v2.1.178） | 2026-06-15 | 🔥🔥 | ✅ 推薦 | 正式發布 |\n| **enforceAvailableModels 企業管控**（Claude Code v2.1.175） | 2026-06-12 | 🔥🔥 | ✅ 推薦 | 正式發布 |\n| **Claude Fable 5**（Mythos 架構公開版，$10/$50 per M token） | 2026-06-09 | 🔥🔥🔥🔥🔥 | ❌ 暫不可用 | 出口管制停用（6/29 美方批准向特定夥伴恢復 Mythos，回歸在望） |\n| **`--safe-mode` 旗標**（v2.1.169） | 2026-06-08 | 🔥🔥 | ✅ 推薦 | 正式發布 |\n| **Google Colab CLI 整合 Claude Code / Codex** | 2026-06-08 | 🔥🔥 | ✅ 推薦 | 正式發布 |\n| **Claude Opus 4.1 SDK 棄用**（Python SDK v0.106.0） | 2026-06-06 | 🔥 | ✅ 推薦 | 正式發布 |\n| **`waitingFor` 可見性 + `--tools` 目錄遍歷**（v2.1.162） | 2026-06-04 | 🔥🔥 | ✅ 推薦 | 正式發布 |\n| **OTEL metrics + claude agents 改善**（v2.1.161） | 2026-06-03 | 🔥🔥 | ✅ 推薦 | 正式發布 |\n| **workflow → ultracode 重命名**（⚠️ Breaking Change, v2.1.160） | 2026-06-02 | 🔥🔥🔥 | ✅ 推薦 | 正式發布 |\n| **Claude Code v2.1.158**（Auto mode on Bedrock/Vertex/Foundry） | 2026-05-30 | 🔥🔥 | ✅ 推薦 | 正式發布 |\n| **Claude Opus 4.8**（SWE-bench Pro 69.2%、1M context、Fast Mode 1/3 費用） | 2026-05-28 | 🔥🔥🔥🔥🔥 | ⚡ 有條件推薦 | 正式發布 |\n| **Dynamic Workflows**（最多 1,000 平行子代理，UltraCode 1.7M token bug 無退款） | 2026-05-28 | 🔥🔥🔥🔥 | ❌ 暫不推薦 | Research Preview |\n| **`skipLfs` 選項 + npm 版本通知**（v2.1.153） | 2026-05-28 | 🔥 | ⚡ 有條件推薦 | 正式發布 |\n| **Coordinator 模式 + `/code-review --fix`**（v2.1.152） | 2026-05-27 | 🔥🔥🔥🔥 | ✅ 推薦 | 正式發布 |\n| **小企業 Skills**（31 個官方 Skills） | 2026-05-24 | 🔥🔥🔥 | ✅ 推薦 | 正式發布 |\n| **`/code-review`**（原 `/simplify`，v2.1.146） | 2026-05-21 | 🔥🔥 | ✅ 推薦 | 正式發布 |\n| **`claude agents --json`**（v2.1.145） | 2026-05-20 | 🔥🔥 | ✅ 推薦 | 正式發布 |\n| **自架沙箱 + MCP 隧道**（完整文件） | 2026-05-22 | 🔥🔥🔥🔥 | ⚡ 有條件推薦 | 公開測試 |\n| **`/resume` 背景 session 擴展**（v2.1.144） | 2026-05-19 | 🔥 | ✅ 推薦 | 正式發布 |\n| **Proactive Workflows** | 2026-05-18 | 🔥🔥🔥 | ⏳ 觀望 | 公開測試 |\n| **Capability Curve** | 2026-05-18 | 🔥🔥 | ⏳ 觀望 | 公開測試 |\n| **Plugin 依賴關係強制執行**（v2.1.143） | 2026-05-16 | 🔥 | ✅ 推薦 | 正式發布 |\n| **`claude agents` 細粒度旗標**（v2.1.142） | 2026-05-14 | 🔥🔥 | ⚡ 有條件 | 正式發布 |\n| **`/loop`・`/batch`・`/background`** | 2026-05-14 | 🔥🔥🔥🔥 | ✅ 推薦 | 正式發布 |\n| **`/goal` 指令** | 2026-05-12 | 🔥🔥🔥🔥🔥 | ✅ 推薦 | 正式發布 |\n| **Agent View** | 2026-05-12 | 🔥🔥🔥 | ⚡ 有條件 | Research Preview |\n| **Managed Agents**（全套） | 2026-05-11 | 🔥🔥🔥🔥🔥 | ⚡ 有條件 | 正式發布 |\n| **macOS Computer Use** | 2026-05-03 | 🔥🔥🔥 | ✅ 推薦 | 正式發布 |\n| **Claude Code Sandboxing** | 2026-05-10 | 🔥🔥🔥 | ⚡ 有條件 | 正式發布 |\n| **操作安全 + `hard_deny`** | 2026-05-09 | 🔥🔥🔥 | ✅ 推薦 | 正式發布 |\n| **Claude Security**（公開 Beta） | 2026-05-06 | 🔥🔥🔥 | ⚡ 有條件推薦 | 公開測試 |\n| **Claude Connectors 創意工作** | 2026-05-04 | 🔥🔥 | ⚡ 有條件 | 正式發布 |\n| **MCP `alwaysLoad`** | 2026-04-28 | 🔥🔥 | ✅ 推薦 | 正式發布 |\n| **`worktree.baseRef` 設定** | 2026-05-08 | 🔥 | ⚡ 有條件 | 正式發布 |\n| **Claude Design** | 2026-04-27 | 🔥🔥 | ❌ 暫不推薦 | 正式發布 |\n| **Dreaming 記憶整合** | 2026-05-07 | 🔥🔥🔥🔥 | ⏳ 觀望 | Research Preview |\n| **Outcomes 規格驗證** | 2026-05-07 | 🔥🔥🔥🔥 | ⚡ 有條件 | 公開測試 |\n\n---\n\n## 🆕 最新功能（2026-06）\n\n### Org Default Model\n**發布：** 2026-06-29（v2.1.196） | **熱度：** 🔥🔥 | **試用價值：** ⚡ 有條件推薦 | **狀態：** 正式發布\n\n**是什麼：** 企業管理員在 org console 設定組織預設模型後，使用者在 `/model` 選單看到「Org default」（或角色層級的「Role default」）選項，實現組織內模型版本統一管控。\n\n**為何熱：** 解決企業規模部署中模型版本不一致問題；配合 v2.1.175 的 `enforceAvailableModels` 可形成完整的企業模型管控鏈（限制可用模型 → 設定預設模型）。\n\n**快速上手：**\n```\n# 管理員在 org console 設定後，使用者執行：\n/model\n# 選單出現「Org default」或「Role default」選項\n```\n\n**注意事項：** 需要 org console 管理員權限才能設定；個人帳號或 Team 以下方案未確認是否支援；同日 v2.1.197 的 `/model` 已出現 Sonnet 5 選項（尚無法選用，正式發布在即）。\n\n---\n\n### CLAUDE_CODE_DISABLE_MOUSE_CLICKS 環境變數\n**發布：** 2026-06-26（v2.1.195） | **熱度：** 🔥🔥 | **試用價值：** ⚡ 有條件推薦 | **狀態：** 正式發布\n\n**是什麼：** 設定此環境變數後，Claude Code 全螢幕模式下停用滑鼠點擊、拖拉、懸停事件，但保留滾輪，讓終端滑鼠事件直通底層（如 tmux）。\n\n**為何熱：** 解決 tmux / 多工終端使用者長期痛點：Claude Code 全螢幕 TUI 截奪滑鼠後，外層終端多工軟體的滑鼠操作失效；此環境變數提供乾淨的逃生口。\n\n**快速上手：**\n```bash\nexport CLAUDE_CODE_DISABLE_MOUSE_CLICKS=1\nclaude\n```\n\n**注意事項：** 僅影響全螢幕模式；滾輪捲動不受影響。適合 tmux / screen / Zellij 重度使用者；純鍵盤工作流無需啟用。\n\n---\n\n### autoMode.classifyAllShell 設定\n**發布：** 2026-06-25（v2.1.193） | **熱度：** 🔥🔥 | **試用價值：** ⚡ 有條件推薦 | **狀態：** 正式發布\n\n**是什麼：** 新增 `autoMode.classifyAllShell` 設定，啟用後所有 Bash/PowerShell 指令都會路由至 auto-mode 分類器，而非只有任意程式碼執行（arbitrary code execution）模式才路由。\n\n**為何熱：** 讓 auto-mode 對 shell 指令有更完整的分類覆蓋，使用 auto-mode 的工程師可獲得更一致的指令路由行為。\n\n**快速上手：**\n```json\n{\n  \"autoMode\": {\n    \"classifyAllShell\": true\n  }\n}\n```\n在 `settings.json` 或 `~/.claude/settings.json` 中加入以上設定。\n\n**注意事項：** 僅對使用 auto-mode 的場景有效；若未啟用 auto-mode，此設定無影響。\n\n---\n\n### /rewind 指令（Claude Code）\n**發布：** 2026-06-25（v2.1.191）| **熱度：** 🔥🔥🔥 | **試用價值：** ⚡ 有條件推薦 | **狀態：** 正式發布\n\n**是什麼：** 在 Claude Code session 中，從 `/clear` 執行前的任一對話節點恢復 context，無需重新描述需求。\n\n**為何熱：** 解決「誤下 `/clear` 失去所有對話背景」的常見痛點，讓長工作階段的上下文管理更具容錯性。\n\n**快速上手：**\n```\n/rewind\n```\n選擇要恢復的歷史節點後，對話 context 回到該時間點。\n\n**注意事項：** 僅能回溯至同一 session 內的歷史節點，不跨 session。\n\n---\n\n### SDK client.system.message（TypeScript / Python）\n**發布：** 2026-06-25（TS v0.106.0 / Python v0.112.0）| **熱度：** 🔥🔥 | **試用價值：** ⚡ 有條件推薦 | **狀態：** 正式發布\n\n**是什麼：** Anthropic SDK 的 `client` 物件新增 `system.message` 支援，開發者可在 client 層統一注入系統訊息，無需每次呼叫時手動傳遞。\n\n**為何熱：** 簡化多輪對話或 agentic loop 中系統提示的管理，TS 與 Python 雙 SDK 同步發布，減少重複程式碼。\n\n**快速上手：**\n```python\n# Python v0.112.0 / TypeScript v0.106.0\nclient = anthropic.Anthropic()\n# 透過 client.system.message 統一注入系統訊息\n```\n\n**注意事項：** TS v0.106.0 與 Python v0.112.0 同日發布，功能對齊；具體 API 介面細節見官方 changelog。\n\n---\n\n### Claude Tag（Slack-native AI 隊友）\n**發布：** 2026-06-24（正式發布）| **熱度：** 🔥🔥🔥 | **試用價值：** ⚡ 有條件推薦 | **狀態：** 正式發布\n\n**是什麼：** Anthropic 推出 Slack-native AI 協作工具，讓 Claude 以隊友身份加入頻道，可讀取頻道上下文、跨 session 記憶、主動規劃並在未來時間點完成任務，並可連接程式碼庫、工具與資料。\n\n**為何熱：** Anthropic 官方公告揭露內部已有 65% 產品程式碼由 Claude Tag 生成；進入 HN 今日熱門討論（情緒 😊）；定位為 Claude Code 向 Slack 生態的延伸，代表 Anthropic 正式進入 AI 常駐協作工具賽道。\n\n**快速上手：**\n```\n申請頁面：https://www.anthropic.com/news/introducing-claude-tag\n將 Claude Tag 加入 Slack workspace → 邀請至頻道 → @Claude Tag 開始指派任務\n```\n\n**注意事項：** 需要 Slack workspace 管理員授權安裝；Claude 可讀取頻道歷史訊息，使用前需評估組織資料隱私政策。\n\n---\n\n### Claude Code v2.1.187 — sandbox.credentials + 組織模型限制\n**發布：** 2026-06-24（v2.1.187）| **熱度：** 🔥🔥🔥 | **試用價值：** ⚡ 有條件推薦 | **狀態：** 正式發布\n\n**是什麼：** 新增 `sandbox.credentials` 設定可阻止沙盒指令讀取憑證檔案與機密環境變數；同時加入組織層級的模型限制功能，企業管理員可統一管控可用模型清單。\n\n**為何熱：** 兩項功能均直指企業安全管控痛點——沙盒憑證隔離回應社群長期對 AI agent 洩漏 API 金鑰的疑慮；組織模型限制補強了 v2.1.175 引入的 `enforceAvailableModels`。\n\n**快速上手：**\n```json\n{\n  \"sandbox\": {\n    \"credentials\": false\n  }\n}\n```\n\n**注意事項：** 設為 `false` 後沙盒內指令無法存取任何憑證環境變數，需確認沙盒工作流不依賴憑證傳遞；組織模型限制需企業管理員帳號設定。\n\n---\n\n### MCP CLI 認證指令（mcp login / logout）\n**發布：** 2026-06-22（v2.1.186）| **熱度：** 🔥🔥 | **試用價值：** ⚡ 有條件推薦 | **狀態：** 正式發布\n\n**是什麼：** 新增 `claude mcp login <name>` 與 `claude mcp logout <name>` 兩個 CLI 指令，讓使用者可從命令列直接完成 MCP Server 認證，無需進入互動式 `/mcp` 選單。支援 `--no-browser` 旗標，可透過 stdin 重導向進行認證，適合 headless / CI 環境。\n\n**為何熱：** 解決 headless 環境中無法透過互動選單認證 MCP 的痛點，對自動化部署與 CI 工作流有直接幫助。\n\n**快速上手：**\n```\nclaude mcp login <server-name>\n# headless 環境\nclaude mcp login <server-name> --no-browser\nclaude mcp logout <server-name>\n```\n\n**注意事項：** 僅適用 v2.1.186 以上版本；適合 headless 環境、CI/CD 管線的 MCP 認證場景。\n\n---\n\n### MCP Enterprise Authorization（企業 SSO 正式版）\n**發布：** 2026-06-19 | **熱度：** 🔥🔥 | **試用價值：** ⚡ 有條件推薦 | **狀態：** GA（stable）\n\n**是什麼：** MCP Enterprise Authorization 升為 stable，讓企業可透過 Okta、Anthropic 或 VS Code 整合啟用零設定 SSO，統一管理 Claude Code 的授權登入流程，無需個別設定每個開發者的認證憑證。\n\n**為何熱：** 解決企業內多人共用 Claude Code 時，授權管理分散的痛點；VS Code 零設定整合降低了企業 IT 部署門檻。Tech Times 於 2026-06-19 報導確認升為 stable。\n\n**快速上手：**\n```\n# 透過 VS Code 整合（零設定）：開啟 VS Code Claude Code 擴充套件，依 SSO 登入流程授權\n# Okta 整合：在企業 Okta 儀表板設定 MCP 應用，員工透過 SSO 登入即可取得存取權\n```\n\n**注意事項：** 企業場景優先，適合需要集中管理 Claude Code 授權的 IT 管理員；個人開發者仍使用 Anthropic 帳號直接登入。\n\n---\n\n### Claude Code Artifacts（工作階段即時共享頁面）\n**發布：** 2026-06-18 | **熱度：** 🔥🔥🔥🔥🔥 | **試用價值：** ⚡ 有條件推薦 | **狀態：** 正式發布\n\n**是什麼：** Claude Code 可將工作階段進度即時輸出為可共享的互動網頁（Artifacts）。支援類型：PR 走查頁面、系統說明文件、儀表板、釋出清單。Artifact 隨工作階段進行自動更新，任何人可直接在瀏覽器開啟，無需安裝工具。\n\n**為何熱：** 解決了「Claude 在本地端工作，但結果難以與非工程師成員共享」的痛點。初日即有多家科技媒體（VentureBeat、The Decoder、Crypto Briefing 等）同步報導；2026-06-19 SD Times、Tech Times、DevOps.com 再次同日跟進確認，企業文件協作場景接受度高。\n\n**快速上手：**\n在 Claude Code 工作階段中，執行工作後觸發 Artifacts 輸出——具體指令見官方部落格：\n```\n# 官方說明\nhttps://claude.com/blog/artifacts-in-claude-code\n```\n\n**注意事項：** 目前仍為早期功能，適合企業知識共享與專案進度報告場景；個人日常編碼工作流程受益有限。\n\n---\n\n### Tool(param:value) permission rules 語法\n**發布：** 2026-06-15（v2.1.178） | **熱度：** 🔥🔥 | **試用價值：** ✅ 推薦 | **狀態：** 正式發布\n\n**是什麼：** 新增 `Tool(param:value)` 語法用於 permission rules，允許比對工具的輸入參數（支援 `*` 萬用字元）。例如 `Agent(model:opus)` 可封鎖使用 Opus 模型的子 Agent 啟動。Skills 現在可在巢狀子 Agent 環境中正常運作。\n\n**為何熱：** 解決多 Agent 環境中精細化權限控管的缺口——過去只能針對整個工具，現在可以針對工具的特定參數值設置允許/封鎖規則，大幅提升 Agent 安全管控粒度。\n\n**快速上手：**\n```\n# 在 settings.json 的 permissions 中使用\n# 封鎖使用 Opus 的子 Agent（避免費用過高）\n\"deny\": [\"Agent(model:opus)\"]\n\n# 只允許特定工具執行特定參數\n\"allow\": [\"Bash(command:git*)\"]\n```\n\n**注意事項：** `*` 為萬用字元，可比對任意值；此功能主要適用於有多 Agent 編排或費用控管需求的開發者。\n\n---\n\n### `enforceAvailableModels` 企業管控\n**發布：** 2026-06-12（v2.1.175） | **熱度：** 🔥🔥 | **試用價值：** ✅ 推薦 | **狀態：** 正式發布\n\n**是什麼：** 新增 `enforceAvailableModels` 管理設定——啟用後，`availableModels` 白名單同時限制預設模型的解析，避免管理員設定的模型限制被繞過。針對企業管理場景，確保組織控管政策的完整性。\n\n**為何熱：** 解決企業部署 Claude Code 時的治理缺口：管理員設定了模型白名單，但預設模型解析仍可能繞過限制。對有合規需求的金融、醫療、政府機構部署場景尤其重要。\n\n**快速上手：**\n```json\n// .claude/config.json（企業管理員設定）\n{\n  \"availableModels\": [\"claude-fable-5-20260609\", \"claude-opus-4-8-20260528\"],\n  \"enforceAvailableModels\": true\n}\n```\n\n**注意事項：** 僅影響企業管理員設定的 `availableModels` 白名單；個人開發者無需關注此設定。\n\n---\n\n### Claude Fable 5（Mythos 架構公開版）\n**發布：** 2026-06-09 | **熱度：** 🔥🔥🔥🔥🔥 | **試用價值：** ❌ 暫不可用 | **狀態：** ⚠️ 出口管制停用（回歸在望）\n\n> **2026-06-29 更新：** Anthropic 正式獲美國政府許可，可向特定信任合作夥伴恢復 Mythos 存取（[qz.com](https://qz.com/anthropic-mythos-5-clearance-trusted-partners-commerce-062926)）；Axios 報導 Fable 5「可能本週內回歸」。官方尚未公告具體開放日期，待正式確認。詳見 [[entities/fable-5]] 與 [[topics/anthropic-government-policy]]。\n> **2026-06-13 更新：** 美國政府出口管制指令，Anthropic 於當日 5:21pm ET 對全體用戶停用 Fable 5 與 Mythos 5。其他模型（Opus 4.8、Sonnet 4.6 等）不受影響。\n\n**是什麼：** Anthropic 首款向大眾開放的 Mythos 級模型。Fable 5 = Mythos 5 模型權重 + 安全分類器護欄，觸發時靜默 fallback 至 Opus 4.8（< 5% session）。定價 $10/$50 per million token，context 1M，max output 128K。\n\n**為何熱：** HN 2,448 分，近 2,000 評論。幾乎所有 benchmark SOTA，任務越長期越複雜優勢越大。首次讓開發者在一般工作流中使用 Mythos 等級推理能力。\n\n**注意事項：** 目前無法使用。復原後請參考 [[entities/fable-5]] 確認最新狀態再切換。\n\n---\n\n> 2026-05 功能詳細條目已封存，見 [[feature-radar-archive-2026-05]]\n\n",
+    "lastUpdated": "2026-07-01",
+    "markdown": "﻿# 官方功能熱度雷達\n\n追蹤 Anthropic 官方發布的 Claude / Claude Code 功能熱度、試用價值與快速上手方式。\n僅收錄官方 changelog、release note 或官方公告來源；社群工具見 [[topics/community-tech-tools]]。\n每次 ingest 後由 LLM 維護：新增功能、更新熱度、補充社群回饋。\n\n**最後更新：** 2026-07-01\n\n---\n\n## ⭐ 本週推薦\n\n- **Claude Sonnet 5（Claude Code 新預設）**（熱度 🔥🔥🔥🔥🔥）：v2.1.197 起自動切換，1M context + 促銷 $2/$10/Mtok，agentic 效能接近 Opus 4.8，適合所有 Claude Code 使用者立即受益\n- **Claude Fable 5（出口管制全面解除）**（熱度 🔥🔥🔥🔥🔥）：2026-07-01 起全球恢復，Pro/Max/Team 用戶 7/7 前享 50% 配額，旗艦模型回歸\n- **Claude Code Artifacts**（熱度 🔥🔥🔥🔥🔥）：工作階段即時輸出可共享互動網頁，適合需要向非工程師成員展示進度的開發者\n\n---\n\n## 評分說明\n\n| 指標 | 說明 |\n|------|------|\n| 🔥 熱度 | 1–5 格，依來源數量、討論量、持續天數、社群工具跟進情況綜合評分 |\n| 試用價值 | ✅ 推薦 / ⚡ 有條件推薦 / ⏳ 觀望 / ❌ 暫不推薦 |\n| 狀態 | 正式發布 / Research Preview / 公開測試 / 限制存取 |\n\n**熱度計分基準：**\n- 🔥 — 單次提及，討論有限\n- 🔥🔥 — 2–3 個來源，短期討論\n- 🔥🔥🔥 — 多來源 + 持續 2 天以上，或有社群工具跟進\n- 🔥🔥🔥🔥 — 廣泛討論 + 社群工具爆發 / 大會主角功能\n- 🔥🔥🔥🔥🔥 — 里程碑事件，跨平台持續多日，改變開發者工作流\n\n---\n\n## 📋 功能全覽表（2026-04-25 起）\n\n| 功能 | 發布日期 | 熱度 | 試用價值 | 狀態 |\n|------|----------|------|----------|------|\n| **Claude Sonnet 5**（Claude Code v2.1.197 新預設，1M context，$2/$10 per Mtok 促銷至 8/31） | 2026-07-01 | 🔥🔥🔥🔥🔥 | ✅ 強烈推薦 | 正式發布 |\n| **Claude Science**（科學家專用 AI 工作台，整合研究工具套件、可稽核 artifact、彈性雲端運算） | 2026-07-01 | 🔥🔥 | ⚡ 有條件推薦 | 正式發布 |\n| **Org Default Model**（Claude Code v2.1.196，管理員設定組織預設模型，使用者 `/model` 顯示「Org default」） | 2026-06-29 | 🔥🔥 | ⚡ 有條件推薦 | 正式發布 |\n| **`CLAUDE_CODE_DISABLE_MOUSE_CLICKS` 環境變數**（Claude Code v2.1.195，全螢幕模式停用滑鼠點擊/拖拉/懸停） | 2026-06-26 | 🔥🔥 | ⚡ 有條件推薦 | 正式發布 |\n| **`autoMode.classifyAllShell` 設定**（Claude Code v2.1.193，所有 Bash/PowerShell 路由 auto-mode 分類器） | 2026-06-25 | 🔥🔥 | ⚡ 有條件推薦 | 正式發布 |\n| **`/rewind` 指令**（Claude Code，從 `/clear` 前節點恢復 context） | 2026-06-25 | 🔥🔥🔥 | ⚡ 有條件推薦 | 正式發布 |\n| **SDK `client.system.message`**（TypeScript v0.106.0 / Python v0.112.0） | 2026-06-25 | 🔥🔥 | ⚡ 有條件推薦 | 正式發布 |\n| **Claude Tag**（Slack-native AI 協作工具，65% Anthropic 程式碼由其生成） | 2026-06-24 | 🔥🔥 | ⚡ 有條件推薦 | 正式發布 |\n| **sandbox.credentials + 組織模型限制**（Claude Code v2.1.187） | 2026-06-24 | 🔥🔥🔥 | ⚡ 有條件推薦 | 正式發布 |\n| **MCP CLI 認證指令**（`claude mcp login/logout`，v2.1.186） | 2026-06-22 | 🔥🔥 | ⚡ 有條件推薦 | 正式發布 |\n| **MCP Enterprise Authorization**（Okta / VS Code 零設定 SSO） | 2026-06-19 | 🔥🔥 | ⚡ 有條件推薦 | 正式發布 |\n| **破壞性 Git 指令自動封鎖**（Claude Code v2.1.183） | 2026-06-19 | 🔥🔥🔥 | ✅ 推薦 | 正式發布 |\n| **Claude Code Artifacts**（工作階段即時輸出可共享互動網頁） | 2026-06-18 | 🔥🔥🔥🔥🔥 | ⚡ 有條件推薦 | 正式發布 |\n| **Tool(param:value) permission 語法 + 巢狀 Skills**（v2.1.178） | 2026-06-15 | 🔥🔥 | ✅ 推薦 | 正式發布 |\n| **enforceAvailableModels 企業管控**（Claude Code v2.1.175） | 2026-06-12 | 🔥🔥 | ✅ 推薦 | 正式發布 |\n| **Claude Fable 5**（Mythos 架構公開版，$10/$50 per M token） | 2026-06-09 | 🔥🔥🔥🔥🔥 | ✅ 推薦 | 正式發布（出口管制 2026-07-01 全面解除，Pro/Max/Team 7/7 前 50% 配額） |\n| **`--safe-mode` 旗標**（v2.1.169） | 2026-06-08 | 🔥🔥 | ✅ 推薦 | 正式發布 |\n| **Google Colab CLI 整合 Claude Code / Codex** | 2026-06-08 | 🔥🔥 | ✅ 推薦 | 正式發布 |\n| **Claude Opus 4.1 SDK 棄用**（Python SDK v0.106.0） | 2026-06-06 | 🔥 | ✅ 推薦 | 正式發布 |\n| **`waitingFor` 可見性 + `--tools` 目錄遍歷**（v2.1.162） | 2026-06-04 | 🔥🔥 | ✅ 推薦 | 正式發布 |\n| **OTEL metrics + claude agents 改善**（v2.1.161） | 2026-06-03 | 🔥🔥 | ✅ 推薦 | 正式發布 |\n| **workflow → ultracode 重命名**（⚠️ Breaking Change, v2.1.160） | 2026-06-02 | 🔥🔥🔥 | ✅ 推薦 | 正式發布 |\n| **Claude Code v2.1.158**（Auto mode on Bedrock/Vertex/Foundry） | 2026-05-30 | 🔥🔥 | ✅ 推薦 | 正式發布 |\n| **Claude Opus 4.8**（SWE-bench Pro 69.2%、1M context、Fast Mode 1/3 費用） | 2026-05-28 | 🔥🔥🔥🔥🔥 | ⚡ 有條件推薦 | 正式發布 |\n| **Dynamic Workflows**（最多 1,000 平行子代理，UltraCode 1.7M token bug 無退款） | 2026-05-28 | 🔥🔥🔥🔥 | ❌ 暫不推薦 | Research Preview |\n| **`skipLfs` 選項 + npm 版本通知**（v2.1.153） | 2026-05-28 | 🔥 | ⚡ 有條件推薦 | 正式發布 |\n| **Coordinator 模式 + `/code-review --fix`**（v2.1.152） | 2026-05-27 | 🔥🔥🔥🔥 | ✅ 推薦 | 正式發布 |\n| **小企業 Skills**（31 個官方 Skills） | 2026-05-24 | 🔥🔥🔥 | ✅ 推薦 | 正式發布 |\n| **`/code-review`**（原 `/simplify`，v2.1.146） | 2026-05-21 | 🔥🔥 | ✅ 推薦 | 正式發布 |\n| **`claude agents --json`**（v2.1.145） | 2026-05-20 | 🔥🔥 | ✅ 推薦 | 正式發布 |\n| **自架沙箱 + MCP 隧道**（完整文件） | 2026-05-22 | 🔥🔥🔥🔥 | ⚡ 有條件推薦 | 公開測試 |\n| **`/resume` 背景 session 擴展**（v2.1.144） | 2026-05-19 | 🔥 | ✅ 推薦 | 正式發布 |\n| **Proactive Workflows** | 2026-05-18 | 🔥🔥🔥 | ⏳ 觀望 | 公開測試 |\n| **Capability Curve** | 2026-05-18 | 🔥🔥 | ⏳ 觀望 | 公開測試 |\n| **Plugin 依賴關係強制執行**（v2.1.143） | 2026-05-16 | 🔥 | ✅ 推薦 | 正式發布 |\n| **`claude agents` 細粒度旗標**（v2.1.142） | 2026-05-14 | 🔥🔥 | ⚡ 有條件 | 正式發布 |\n| **`/loop`・`/batch`・`/background`** | 2026-05-14 | 🔥🔥🔥🔥 | ✅ 推薦 | 正式發布 |\n| **`/goal` 指令** | 2026-05-12 | 🔥🔥🔥🔥🔥 | ✅ 推薦 | 正式發布 |\n| **Agent View** | 2026-05-12 | 🔥🔥🔥 | ⚡ 有條件 | Research Preview |\n| **Managed Agents**（全套） | 2026-05-11 | 🔥🔥🔥🔥🔥 | ⚡ 有條件 | 正式發布 |\n| **macOS Computer Use** | 2026-05-03 | 🔥🔥🔥 | ✅ 推薦 | 正式發布 |\n| **Claude Code Sandboxing** | 2026-05-10 | 🔥🔥🔥 | ⚡ 有條件 | 正式發布 |\n| **操作安全 + `hard_deny`** | 2026-05-09 | 🔥🔥🔥 | ✅ 推薦 | 正式發布 |\n| **Claude Security**（公開 Beta） | 2026-05-06 | 🔥🔥🔥 | ⚡ 有條件推薦 | 公開測試 |\n| **Claude Connectors 創意工作** | 2026-05-04 | 🔥🔥 | ⚡ 有條件 | 正式發布 |\n| **MCP `alwaysLoad`** | 2026-04-28 | 🔥🔥 | ✅ 推薦 | 正式發布 |\n| **`worktree.baseRef` 設定** | 2026-05-08 | 🔥 | ⚡ 有條件 | 正式發布 |\n| **Claude Design** | 2026-04-27 | 🔥🔥 | ❌ 暫不推薦 | 正式發布 |\n| **Dreaming 記憶整合** | 2026-05-07 | 🔥🔥🔥🔥 | ⏳ 觀望 | Research Preview |\n| **Outcomes 規格驗證** | 2026-05-07 | 🔥🔥🔥🔥 | ⚡ 有條件 | 公開測試 |\n\n---\n\n## 🆕 最新功能（2026-07）\n\n### Claude Sonnet 5 — Claude Code 新預設模型（1M context）\n**發布：** 2026-07-01（v2.1.197）| **熱度：** 🔥🔥🔥🔥🔥 | **試用價值：** ✅ 強烈推薦 | **狀態：** 正式發布\n\n**是什麼：** Claude Code v2.1.197 將 Claude Sonnet 5 設為預設模型，原生支援 1M token context window，促銷定價 $2/$10 per Mtok 至 2026-08-31，agentic 效能接近 Opus 4.8。\n\n**為何熱：** 影響所有新 session，無需手動切換即享 1M context；社群多篇評測確認 agentic 任務、coding、tool use 已接近 Opus 4.8 水準，而成本僅 60%。\n\n**現在要試嗎：** 升級至最新版本即自動生效，所有使用者均適合立即採用。\n\n**快速上手：**\n```bash\nnpm install -g @anthropic-ai/claude-code@latest\n# 新 session 自動使用 Sonnet 5 + 1M context；/model 可確認\n```\n\n**注意事項：** 促銷定價至 2026-08-31，之後定價待官方公告；1M context 仍需注意 token 成本控制。\n\n---\n\n### Claude Science — 科學家專用 AI 工作台\n**發布：** 2026-07-01 | **熱度：** 🔥🔥 | **試用價值：** ⚡ 有條件推薦 | **狀態：** 正式發布\n\n**是什麼：** 科學家專用 AI app，整合研究常用工具套件、可稽核 artifact（支援研究可重現性）與彈性雲端運算資源。\n\n**為何熱：** Anthropic 首次針對科研場景推出獨立 app，並宣布將自行開發藥物，是 AI 進入學術研究工作流的明確訊號。\n\n**現在要試嗎：** 適合學術研究者、生命科學領域；工程開發場景不受直接影響。\n\n**注意事項：** 今日首報，社群反應待觀察；詳見 [[entities/claude-science]]。\n\n---\n\n## 🆕 最新功能（2026-06）\n\n### Org Default Model\n**發布：** 2026-06-29（v2.1.196） | **熱度：** 🔥🔥 | **試用價值：** ⚡ 有條件推薦 | **狀態：** 正式發布\n\n**是什麼：** 企業管理員在 org console 設定組織預設模型後，使用者在 `/model` 選單看到「Org default」（或角色層級的「Role default」）選項，實現組織內模型版本統一管控。\n\n**為何熱：** 解決企業規模部署中模型版本不一致問題；配合 v2.1.175 的 `enforceAvailableModels` 可形成完整的企業模型管控鏈（限制可用模型 → 設定預設模型）。\n\n**快速上手：**\n```\n# 管理員在 org console 設定後，使用者執行：\n/model\n# 選單出現「Org default」或「Role default」選項\n```\n\n**注意事項：** 需要 org console 管理員權限才能設定；個人帳號或 Team 以下方案未確認是否支援；同日 v2.1.197 的 `/model` 已出現 Sonnet 5 選項（尚無法選用，正式發布在即）。\n\n---\n\n### CLAUDE_CODE_DISABLE_MOUSE_CLICKS 環境變數\n**發布：** 2026-06-26（v2.1.195） | **熱度：** 🔥🔥 | **試用價值：** ⚡ 有條件推薦 | **狀態：** 正式發布\n\n**是什麼：** 設定此環境變數後，Claude Code 全螢幕模式下停用滑鼠點擊、拖拉、懸停事件，但保留滾輪，讓終端滑鼠事件直通底層（如 tmux）。\n\n**為何熱：** 解決 tmux / 多工終端使用者長期痛點：Claude Code 全螢幕 TUI 截奪滑鼠後，外層終端多工軟體的滑鼠操作失效；此環境變數提供乾淨的逃生口。\n\n**快速上手：**\n```bash\nexport CLAUDE_CODE_DISABLE_MOUSE_CLICKS=1\nclaude\n```\n\n**注意事項：** 僅影響全螢幕模式；滾輪捲動不受影響。適合 tmux / screen / Zellij 重度使用者；純鍵盤工作流無需啟用。\n\n---\n\n### autoMode.classifyAllShell 設定\n**發布：** 2026-06-25（v2.1.193） | **熱度：** 🔥🔥 | **試用價值：** ⚡ 有條件推薦 | **狀態：** 正式發布\n\n**是什麼：** 新增 `autoMode.classifyAllShell` 設定，啟用後所有 Bash/PowerShell 指令都會路由至 auto-mode 分類器，而非只有任意程式碼執行（arbitrary code execution）模式才路由。\n\n**為何熱：** 讓 auto-mode 對 shell 指令有更完整的分類覆蓋，使用 auto-mode 的工程師可獲得更一致的指令路由行為。\n\n**快速上手：**\n```json\n{\n  \"autoMode\": {\n    \"classifyAllShell\": true\n  }\n}\n```\n在 `settings.json` 或 `~/.claude/settings.json` 中加入以上設定。\n\n**注意事項：** 僅對使用 auto-mode 的場景有效；若未啟用 auto-mode，此設定無影響。\n\n---\n\n### /rewind 指令（Claude Code）\n**發布：** 2026-06-25（v2.1.191）| **熱度：** 🔥🔥🔥 | **試用價值：** ⚡ 有條件推薦 | **狀態：** 正式發布\n\n**是什麼：** 在 Claude Code session 中，從 `/clear` 執行前的任一對話節點恢復 context，無需重新描述需求。\n\n**為何熱：** 解決「誤下 `/clear` 失去所有對話背景」的常見痛點，讓長工作階段的上下文管理更具容錯性。\n\n**快速上手：**\n```\n/rewind\n```\n選擇要恢復的歷史節點後，對話 context 回到該時間點。\n\n**注意事項：** 僅能回溯至同一 session 內的歷史節點，不跨 session。\n\n---\n\n### SDK client.system.message（TypeScript / Python）\n**發布：** 2026-06-25（TS v0.106.0 / Python v0.112.0）| **熱度：** 🔥🔥 | **試用價值：** ⚡ 有條件推薦 | **狀態：** 正式發布\n\n**是什麼：** Anthropic SDK 的 `client` 物件新增 `system.message` 支援，開發者可在 client 層統一注入系統訊息，無需每次呼叫時手動傳遞。\n\n**為何熱：** 簡化多輪對話或 agentic loop 中系統提示的管理，TS 與 Python 雙 SDK 同步發布，減少重複程式碼。\n\n**快速上手：**\n```python\n# Python v0.112.0 / TypeScript v0.106.0\nclient = anthropic.Anthropic()\n# 透過 client.system.message 統一注入系統訊息\n```\n\n**注意事項：** TS v0.106.0 與 Python v0.112.0 同日發布，功能對齊；具體 API 介面細節見官方 changelog。\n\n---\n\n### Claude Tag（Slack-native AI 隊友）\n**發布：** 2026-06-24（正式發布）| **熱度：** 🔥🔥🔥 | **試用價值：** ⚡ 有條件推薦 | **狀態：** 正式發布\n\n**是什麼：** Anthropic 推出 Slack-native AI 協作工具，讓 Claude 以隊友身份加入頻道，可讀取頻道上下文、跨 session 記憶、主動規劃並在未來時間點完成任務，並可連接程式碼庫、工具與資料。\n\n**為何熱：** Anthropic 官方公告揭露內部已有 65% 產品程式碼由 Claude Tag 生成；進入 HN 今日熱門討論（情緒 😊）；定位為 Claude Code 向 Slack 生態的延伸，代表 Anthropic 正式進入 AI 常駐協作工具賽道。\n\n**快速上手：**\n```\n申請頁面：https://www.anthropic.com/news/introducing-claude-tag\n將 Claude Tag 加入 Slack workspace → 邀請至頻道 → @Claude Tag 開始指派任務\n```\n\n**注意事項：** 需要 Slack workspace 管理員授權安裝；Claude 可讀取頻道歷史訊息，使用前需評估組織資料隱私政策。\n\n---\n\n### Claude Code v2.1.187 — sandbox.credentials + 組織模型限制\n**發布：** 2026-06-24（v2.1.187）| **熱度：** 🔥🔥🔥 | **試用價值：** ⚡ 有條件推薦 | **狀態：** 正式發布\n\n**是什麼：** 新增 `sandbox.credentials` 設定可阻止沙盒指令讀取憑證檔案與機密環境變數；同時加入組織層級的模型限制功能，企業管理員可統一管控可用模型清單。\n\n**為何熱：** 兩項功能均直指企業安全管控痛點——沙盒憑證隔離回應社群長期對 AI agent 洩漏 API 金鑰的疑慮；組織模型限制補強了 v2.1.175 引入的 `enforceAvailableModels`。\n\n**快速上手：**\n```json\n{\n  \"sandbox\": {\n    \"credentials\": false\n  }\n}\n```\n\n**注意事項：** 設為 `false` 後沙盒內指令無法存取任何憑證環境變數，需確認沙盒工作流不依賴憑證傳遞；組織模型限制需企業管理員帳號設定。\n\n---\n\n### MCP CLI 認證指令（mcp login / logout）\n**發布：** 2026-06-22（v2.1.186）| **熱度：** 🔥🔥 | **試用價值：** ⚡ 有條件推薦 | **狀態：** 正式發布\n\n**是什麼：** 新增 `claude mcp login <name>` 與 `claude mcp logout <name>` 兩個 CLI 指令，讓使用者可從命令列直接完成 MCP Server 認證，無需進入互動式 `/mcp` 選單。支援 `--no-browser` 旗標，可透過 stdin 重導向進行認證，適合 headless / CI 環境。\n\n**為何熱：** 解決 headless 環境中無法透過互動選單認證 MCP 的痛點，對自動化部署與 CI 工作流有直接幫助。\n\n**快速上手：**\n```\nclaude mcp login <server-name>\n# headless 環境\nclaude mcp login <server-name> --no-browser\nclaude mcp logout <server-name>\n```\n\n**注意事項：** 僅適用 v2.1.186 以上版本；適合 headless 環境、CI/CD 管線的 MCP 認證場景。\n\n---\n\n### MCP Enterprise Authorization（企業 SSO 正式版）\n**發布：** 2026-06-19 | **熱度：** 🔥🔥 | **試用價值：** ⚡ 有條件推薦 | **狀態：** GA（stable）\n\n**是什麼：** MCP Enterprise Authorization 升為 stable，讓企業可透過 Okta、Anthropic 或 VS Code 整合啟用零設定 SSO，統一管理 Claude Code 的授權登入流程，無需個別設定每個開發者的認證憑證。\n\n**為何熱：** 解決企業內多人共用 Claude Code 時，授權管理分散的痛點；VS Code 零設定整合降低了企業 IT 部署門檻。Tech Times 於 2026-06-19 報導確認升為 stable。\n\n**快速上手：**\n```\n# 透過 VS Code 整合（零設定）：開啟 VS Code Claude Code 擴充套件，依 SSO 登入流程授權\n# Okta 整合：在企業 Okta 儀表板設定 MCP 應用，員工透過 SSO 登入即可取得存取權\n```\n\n**注意事項：** 企業場景優先，適合需要集中管理 Claude Code 授權的 IT 管理員；個人開發者仍使用 Anthropic 帳號直接登入。\n\n---\n\n### Claude Code Artifacts（工作階段即時共享頁面）\n**發布：** 2026-06-18 | **熱度：** 🔥🔥🔥🔥🔥 | **試用價值：** ⚡ 有條件推薦 | **狀態：** 正式發布\n\n**是什麼：** Claude Code 可將工作階段進度即時輸出為可共享的互動網頁（Artifacts）。支援類型：PR 走查頁面、系統說明文件、儀表板、釋出清單。Artifact 隨工作階段進行自動更新，任何人可直接在瀏覽器開啟，無需安裝工具。\n\n**為何熱：** 解決了「Claude 在本地端工作，但結果難以與非工程師成員共享」的痛點。初日即有多家科技媒體（VentureBeat、The Decoder、Crypto Briefing 等）同步報導；2026-06-19 SD Times、Tech Times、DevOps.com 再次同日跟進確認，企業文件協作場景接受度高。\n\n**快速上手：**\n在 Claude Code 工作階段中，執行工作後觸發 Artifacts 輸出——具體指令見官方部落格：\n```\n# 官方說明\nhttps://claude.com/blog/artifacts-in-claude-code\n```\n\n**注意事項：** 目前仍為早期功能，適合企業知識共享與專案進度報告場景；個人日常編碼工作流程受益有限。\n\n---\n\n### Tool(param:value) permission rules 語法\n**發布：** 2026-06-15（v2.1.178） | **熱度：** 🔥🔥 | **試用價值：** ✅ 推薦 | **狀態：** 正式發布\n\n**是什麼：** 新增 `Tool(param:value)` 語法用於 permission rules，允許比對工具的輸入參數（支援 `*` 萬用字元）。例如 `Agent(model:opus)` 可封鎖使用 Opus 模型的子 Agent 啟動。Skills 現在可在巢狀子 Agent 環境中正常運作。\n\n**為何熱：** 解決多 Agent 環境中精細化權限控管的缺口——過去只能針對整個工具，現在可以針對工具的特定參數值設置允許/封鎖規則，大幅提升 Agent 安全管控粒度。\n\n**快速上手：**\n```\n# 在 settings.json 的 permissions 中使用\n# 封鎖使用 Opus 的子 Agent（避免費用過高）\n\"deny\": [\"Agent(model:opus)\"]\n\n# 只允許特定工具執行特定參數\n\"allow\": [\"Bash(command:git*)\"]\n```\n\n**注意事項：** `*` 為萬用字元，可比對任意值；此功能主要適用於有多 Agent 編排或費用控管需求的開發者。\n\n---\n\n### `enforceAvailableModels` 企業管控\n**發布：** 2026-06-12（v2.1.175） | **熱度：** 🔥🔥 | **試用價值：** ✅ 推薦 | **狀態：** 正式發布\n\n**是什麼：** 新增 `enforceAvailableModels` 管理設定——啟用後，`availableModels` 白名單同時限制預設模型的解析，避免管理員設定的模型限制被繞過。針對企業管理場景，確保組織控管政策的完整性。\n\n**為何熱：** 解決企業部署 Claude Code 時的治理缺口：管理員設定了模型白名單，但預設模型解析仍可能繞過限制。對有合規需求的金融、醫療、政府機構部署場景尤其重要。\n\n**快速上手：**\n```json\n// .claude/config.json（企業管理員設定）\n{\n  \"availableModels\": [\"claude-fable-5-20260609\", \"claude-opus-4-8-20260528\"],\n  \"enforceAvailableModels\": true\n}\n```\n\n**注意事項：** 僅影響企業管理員設定的 `availableModels` 白名單；個人開發者無需關注此設定。\n\n---\n\n### Claude Fable 5（Mythos 架構公開版）\n**發布：** 2026-06-09 | **熱度：** 🔥🔥🔥🔥🔥 | **試用價值：** ❌ 暫不可用 | **狀態：** ⚠️ 出口管制停用（回歸在望）\n\n> **2026-06-29 更新：** Anthropic 正式獲美國政府許可，可向特定信任合作夥伴恢復 Mythos 存取（[qz.com](https://qz.com/anthropic-mythos-5-clearance-trusted-partners-commerce-062926)）；Axios 報導 Fable 5「可能本週內回歸」。官方尚未公告具體開放日期，待正式確認。詳見 [[entities/fable-5]] 與 [[topics/anthropic-government-policy]]。\n> **2026-06-13 更新：** 美國政府出口管制指令，Anthropic 於當日 5:21pm ET 對全體用戶停用 Fable 5 與 Mythos 5。其他模型（Opus 4.8、Sonnet 4.6 等）不受影響。\n\n**是什麼：** Anthropic 首款向大眾開放的 Mythos 級模型。Fable 5 = Mythos 5 模型權重 + 安全分類器護欄，觸發時靜默 fallback 至 Opus 4.8（< 5% session）。定價 $10/$50 per million token，context 1M，max output 128K。\n\n**為何熱：** HN 2,448 分，近 2,000 評論。幾乎所有 benchmark SOTA，任務越長期越複雜優勢越大。首次讓開發者在一般工作流中使用 Mythos 等級推理能力。\n\n**注意事項：** 目前無法使用。復原後請參考 [[entities/fable-5]] 確認最新狀態再切換。\n\n---\n\n> 2026-05 功能詳細條目已封存，見 [[feature-radar-archive-2026-05]]\n\n",
     "summary": "追蹤 Claude / Claude Code 每個新發布功能的社群熱度、試用價值與快速上手方式。"
   }
 };

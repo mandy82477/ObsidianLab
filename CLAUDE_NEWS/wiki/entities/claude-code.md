@@ -4,17 +4,17 @@
 **狀態：** active
 **領域：** 🛠️ 工具/功能
 **首次出現：** 2025（正式推出）
-**最後更新：** 2026-06-30
-**最後新聞更新：** 2026-06-30
+**最後更新：** 2026-07-01
+**最後新聞更新：** 2026-07-01
 
-> **最新版本動態**（2026-06-30）
-> v2.1.197 的 `/model` 選單出現 Sonnet 5 選項（目前無法選用，社群預測正式發布在即）；v2.1.196 新增 org default model 功能，管理員在 org console 設定後，使用者在 `/model` 中可看到「Org default」或「Role default」選項。
+> **最新版本動態**（2026-07-01）
+> Claude Code v2.1.197 正式將 **Claude Sonnet 5** 設為預設模型，原生支援 **1M token context window**，促銷定價至 2026-08-31。此為重大使用者端異動：無需手動切換模型，Claude Code 所有新 session 即使用 Sonnet 5 與 1M context。
 
 ---
 
 ## 現況
 
-最新版本 **v2.1.197**（2026-06-30）的 `/model` 選單出現 Sonnet 5 選項，目前無法選用，社群預測正式發布在即。v2.1.196（2026-06-29）新增 org default model 功能：企業管理員在 org console 設定預設模型後，使用者在 `/model` 中看到「Org default」或「Role default」選項。v2.1.195（2026-06-26）新增 `CLAUDE_CODE_DISABLE_MOUSE_CLICKS` 環境變數，可在全螢幕模式下停用滑鼠點擊/拖拉/懸停（保留滾輪），並修復 hook matcher 無法匹配帶連字號識別符的 bug。v2.1.193（2026-06-25）新增 `autoMode.classifyAllShell` 設定，可將所有 Bash/PowerShell 指令統一路由至 auto-mode 分類器（先前僅任意程式碼執行模式才會路由）；另包含 auto-mode 相關改進。Anthropic 同步發表基於 2025/10–2026/04 約 40 萬個 session 的分析研究，發現人類主導規劃決策、Claude 主導執行決策，且使用者領域專業越高，Claude 每條指令完成的工作量越大。API 529 過載事件於 2026-06-21 至 06-22 連續兩波影響 Opus/Sonnet 模型，Max plan 用戶首條 prompt 即觸發 Overloaded 錯誤。Claude Code 是 Anthropic 的 AI 編碼 CLI 工具，核心能力已從程式碼助理擴展為具備全桌面自動化、多代理管理（Managed Agents）、MCP Server 整合、Hooks 機制與 AI 安全審查的完整 agent 開發平台；GitHub Stars 達 **131,000+**。Microsoft 正陸續取消內部授權轉推 GitHub Copilot CLI（見 [[topics/competitor-landscape]]）；Ramp AI Index 數據顯示 Anthropic 企業採用率首次超越 OpenAI（34.4% vs 32.3%）。
+最新版本 **v2.1.197**（2026-07-01）正式將 Claude Sonnet 5 設為 Claude Code 預設模型，原生支援 1M token context window，促銷定價至 2026-08-31。v2.1.196（2026-06-29）新增 org default model 功能：企業管理員在 org console 設定預設模型後，使用者在 `/model` 中看到「Org default」或「Role default」選項。v2.1.195（2026-06-26）新增 `CLAUDE_CODE_DISABLE_MOUSE_CLICKS` 環境變數，可在全螢幕模式下停用滑鼠點擊/拖拉/懸停（保留滾輪），並修復 hook matcher 無法匹配帶連字號識別符的 bug。v2.1.193（2026-06-25）新增 `autoMode.classifyAllShell` 設定，可將所有 Bash/PowerShell 指令統一路由至 auto-mode 分類器（先前僅任意程式碼執行模式才會路由）；另包含 auto-mode 相關改進。Anthropic 同步發表基於 2025/10–2026/04 約 40 萬個 session 的分析研究，發現人類主導規劃決策、Claude 主導執行決策，且使用者領域專業越高，Claude 每條指令完成的工作量越大。API 529 過載事件於 2026-06-21 至 06-22 連續兩波影響 Opus/Sonnet 模型，Max plan 用戶首條 prompt 即觸發 Overloaded 錯誤。Claude Code 是 Anthropic 的 AI 編碼 CLI 工具，核心能力已從程式碼助理擴展為具備全桌面自動化、多代理管理（Managed Agents）、MCP Server 整合、Hooks 機制與 AI 安全審查的完整 agent 開發平台；GitHub Stars 達 **131,000+**。Microsoft 正陸續取消內部授權轉推 GitHub Copilot CLI（見 [[topics/competitor-landscape]]）；Ramp AI Index 數據顯示 Anthropic 企業採用率首次超越 OpenAI（34.4% vs 32.3%）。
 
 ## 熱度與試用價值
 
@@ -31,7 +31,9 @@
 
 | 版本 | 日期 | 重點 |
 |------|------|------|
-| **v2.1.197** | 2026-06-30 | `/model` 選單出現 Sonnet 5 選項（目前無法選用）；社群在 Reddit 回報此訊號，預測正式發布在即（見 [討論](https://www.reddit.com/r/ClaudeAI/comments/1ujpq1d/claude_code_21197_has_sonnet_5_in_model_list/)）|
+| **anthropic-sdk-python v0.115.0** | 2026-07-01 | 新增對 Managed Agents 的 API 支援（見 [[entities/managed-agents]]）|
+| **anthropic-sdk-typescript vertex-sdk v0.19.0** | 2026-07-01 | Vertex SDK TypeScript 版本更新 |
+| **v2.1.197** | 2026-07-01 | **Claude Sonnet 5 成為新預設模型**，原生支援 **1M token context window**，促銷定價至 2026-08-31；使用者無需手動切換，所有新 session 即享 1M context（見 [Release](https://github.com/anthropics/claude-code/releases/tag/v2.1.197)）|
 | **v2.1.196** | 2026-06-29 | 新增 **org default model** 功能：企業管理員在 org console 設定預設模型後，使用者在 `/model` 選單可看到「Org default」或「Role default」選項，統一組織內模型使用（見 [Release](https://github.com/anthropics/claude-code/releases/tag/v2.1.196)）|
 | **v2.1.195** | 2026-06-26 | 新增 `CLAUDE_CODE_DISABLE_MOUSE_CLICKS` 環境變數：在全螢幕模式下停用滑鼠點擊/拖拉/懸停（保留滾輪），適合需要滑鼠直通終端或避免誤觸的場景；修復 hook matcher 無法匹配帶連字號識別符（如 `c-style-hook`）的 bug |
 | **v2.1.193** | 2026-06-25 | 新增 `autoMode.classifyAllShell` 設定：將所有 Bash/PowerShell 指令路由至 auto-mode 分類器（先前僅任意程式碼執行模式才會路由）；auto-mode 相關改進 |
@@ -220,7 +222,10 @@
 
 | 日期 | 事件 |
 |------|------|
-| 2026-06-30 | **v2.1.197**：`/model` 選單出現 Sonnet 5 選項（目前無法選用），社群預測正式發布在即 |
+| 2026-07-01 | **v2.1.197 Sonnet 5 正式成為預設模型**：Claude Code 預設切換至 Claude Sonnet 5，原生支援 1M token context window，促銷定價至 2026-08-31；使用者升版後無需手動切換即享受完整 1M context（見 [Release](https://github.com/anthropics/claude-code/releases/tag/v2.1.197)）|
+| 2026-07-01 | **Enterprise Gateway 發布**：Anthropic 新增 Enterprise Gateway，簡化企業在 AWS 和 Google Cloud 上接入 Claude Code 的流程，降低大型組織的部署門檻（見 [DevOps.com 報導](https://devops.com/anthropic-adds-enterprise-gateway-to-simplify-claude-code-access-on-aws-and-google-cloud/)）|
+| 2026-07-01 | **anthropic-sdk-python v0.115.0**：新增 Managed Agents API 支援，Python 開發者可透過 SDK 直接操作 Managed Agents 框架（見 [[entities/managed-agents]]）|
+| 2026-06-30 | **v2.1.197**（初報）：`/model` 選單出現 Sonnet 5 選項（當時無法選用），社群預測正式發布在即；07-01 官方確認正式切換 |
 | 2026-06-30 | **Explore subagent 鎖定 Haiku 分析**：社群深入分析內建 subagent 類型，發現 Explore subagent 固定使用 Haiku 模型，除錯場景可能因模型能力不足導致問題（見 [[已知問題]]）|
 | 2026-06-30 | **Session 30天自動刪除：Anthropic 拒絕修復**：官方在 GitHub issue #62476 明確表示不修復此行為，社群建議透過 CLAUDE.md + `.claude/changelog` 手動保留記錄 |
 | 2026-06-30 | **36Kr 報導背景任務升級**（待核實）：36Kr 報導 Claude Code 下一重大升級方向為讓系統在背景完成所有任務、同時使用者繼續對話互動；官方尚未正式公告 |

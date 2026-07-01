@@ -3,11 +3,11 @@
 **狀態：** ongoing
 **領域：** 🌐 社群
 **開始日期：** 2026-04-25
-**最後更新：** 2026-06-30
-**最後新聞更新：** 2026-06-30
+**最後更新：** 2026-07-01
+**最後新聞更新：** 2026-07-01
 
-> **最熱討論**（2026-06-30）
-> Anthropic 中國代理偵測爭議（HN 13）：Claude Code 被指在 /proc 中寫入代理偵測資料，Reddit/HN 社群廣泛討論是否構成「spyware」；Anthropic 尚未正式回應。AI 醫療判讀邊界（HN 476）仍是上週最高分，本週延燒中。
+> **最熱討論**（2026-07-01）
+> Claude Code 隱寫術事件（HN 2263）：研究者發現 Claude Code binary 以同形字符將時區等元資料隱寫進輸出文字，社群強烈反應，視為信任危機；Anthropic 尚未正式回應。Claude Code 成本暴漲（HN 53）：用戶回報費用 5x 暴增，Reddit 有開發者單月花費 $62,021，跨平台持續延燒。
 
 ---
 
@@ -102,6 +102,10 @@ MCP 的實際成本遠超多數使用者預期，已有多個量化案例：
 
 | 討論主題 | 首見 | 熱度 | 模式 | 核心論點 | 衍生 |
 |---------|------|------|------|---------|------|
+| Claude Code 隱寫術：binary 以同形字符隱寫元資料 | 2026-07-01 | 🔥🔥🔥🔥 | ☄️閃現 | 研究者發現 Claude Code binary 以同形字符（homoglyph）將時區等系統元資料隱寫進模型輸出；HN score 2263，跨平台廣泛報導，社群強烈反應視為信任危機；引發「Anthropic has embedded hidden spyware-like code」衍生討論（HN score 54）；Anthropic 尚未正式回應；[原始研究](https://thereallo.dev/blog/claude-code-prompt-steganography)（HN + 跨平台） | — |
+| Claude Code 成本 5x 暴漲：獨立開發者單月花費 $62,021 | 2026-07-01 | 🔥🔥🔥 | ☄️閃現 | 用戶大規模回報費用無預警 5x 暴增；Reddit 出現獨立開發者單月花費 $62,021 的具名案例；社群懷疑與近期 token 計費方式或 agent 模式變更有關；多平台多用戶回報使此為成本信任議題；[原始文章](https://www.vincentschmalbach.com/claude-code-quietly-looks-5x-more-expensive/)（HN score 53） | — |
+| Claude Code 30 天自動刪除對話記錄：Anthropic 表示不修復 | 2026-07-01 | 🔥🔥 | ☄️閃現 | Claude Code 預設 30 天後自動刪除 session `.jsonl`；GitHub issue #62476 提出後 Anthropic 官方表示此為預設行為且不計畫修復；社群認為這是對用戶知識財產的無聲破壞，現有 workaround：`npx agentinit agent set claude cleanupPeriodDays 365`；[GitHub issue](https://github.com/anthropics/claude-code/issues/62476)（HN score 29） | — |
+| 企業「穴居人模式」降本：OpenAI、Nvidia、GitHub 開發者採用 | 2026-07-01 | 🔥 | ☄️閃現 | 企業透過極簡輸出插件要求 AI 以最少文字回應（「穴居人說話」風格），大幅降低 token 消耗；404 Media 報導 OpenAI、Nvidia、GitHub 開發者已採用；與社群早期 Caveman Skill 65% 降耗實測互相印證；[報導](https://www.404media.co/companies-are-making-claude-and-codex-talk-like-cavemen-to-stop-ais-soaring-costs/)（404 Media；HN score 4；媒體報導，待社群接力） | 穴居人模式 |
 | Anthropic 中國代理偵測：Claude Code 被指嵌入 spyware | 2026-06-30 | 🔥🔥 | ☄️閃現 | Reddit r/ClaudeAI 帖（HN score 13）：用戶指控 Anthropic 在 Claude Code 中嵌入代理偵測機制，在 /proc 中寫入偵測資料以識別中國 IP 並限制功能；社群兩極化：部分人視為合理出口管制合規，部分人視為侵犯隱私的 spyware；Anthropic 截至報導時尚未正式回應；[Reddit 原帖](https://old.reddit.com/r/ClaudeAI/comments/1ujila1/anthropic_embedded_spyware_in_claude_code_and/)（Reddit + HN） | — |
 | AI 時代人才論：維持「腦力努力」比聰明更重要 | 2026-06-30 | 🔥 | ☄️閃現 | The Atlantic 分析（HN score 4）：AI 時代得益者不是最聰明的人，而是願意維持主動腦力投入的人；ActivTrak 研究：採用 AI 的工作者 email/訊息使用量翻倍、業務軟體使用量增加 94%；UC Berkeley Haas 研究：使用 AI 的工作者開始接受以前不會接的任務——AI 不是讓人更懶，而是讓人承接更多；[文章](https://www.theatlantic.com/ideas/2026/06/ai-open-ai-anthropic/687689/)（The Atlantic；媒體報導，待社群接力） | — |
 | Explore subagent 鎖定 Haiku：除錯能力受限提醒 | 2026-06-30 | 🔥 | ☄️閃現 | Reddit 使用者（06-30）發現 Claude Code 原生 Explore subagent 被鎖定使用 Haiku，除錯任務能力受到明顯限制；同時分享完整 subagent 類型清單供社群對照選擇；[Reddit 原帖](https://www.reddit.com/r/ClaudeAI/comments/1ujpz0t/caution_when_using_native_subagent_explore_for/)（Reddit r/ClaudeAI；無社群延燒） | — |
@@ -160,15 +164,7 @@ MCP 的實際成本遠超多數使用者預期，已有多個量化案例：
 | Fable 5 vs Opus 4.8 實戰：917 場景測試 | 2026-06-12 | 🔥🔥 | ☄️閃現 | Fable 5 以 0.9 分之差勝 Opus 4.8（917 個 coding-agent 場景），但 token 消耗約 2 倍；「差距如此小」暗示一般任務的邊際效益不明顯（Reddit / r/ClaudeAI）| — |
 | Fable 5 Jailbreak 技術分析 | 2026-06-11 | 🔥🔥🔥 | ☄️閃現 | Pliny（@elder_plinius）與 0xSufi 公開繞過 Fable 5 護欄的 PoC；技術組合：請求拆解後重組、敘事/學術框架包裝、長 context 操作、怪異文字轉換、分佈外 token；兩個獨立 PoC 代表「輸出側護欄面對多步驟攻擊的局限性」 | — |
 | OpenAI vs Anthropic 定價戰：「AI 成本大戰開打」 | 2026-06-11 | 🔥🔥🔥🔥 | 🌊延燒 | WSJ/CNBC 報導 OpenAI 考慮「大幅削減 token 費用」，明確說明是預期 Anthropic 降價；2026-06-12 WSJ 再次報導定價戰整體態勢讓 Google、Amazon 作為基礎設施供應商坐收漁利；AI 定價競爭正式從技術競爭轉向成本競爭 | — |
-| Fable 5 發布：訂閱方案截止 + 成本定位爭議 | 2026-06-10 | 🔥🔥🔥🔥 | ☄️閃現 | $10/$50 per M token（double Opus 4.8）；6/22 後訂閱不再涵蓋；社群分析認為「成本 72% 更貴而品質僅小幅提升」，對多數人是「成本符號而非升級」 | — |
-| Claude 意識論述：Microsoft AI CEO 批評 Anthropic | 2026-06-10 | 🔥🔥🔥 | ☄️閃現 | Mustafa Suleyman 稱 Anthropic 在模型規範中推測 Claude 意識「非常非常危險」，可能導致模型行為模擬意識狀態；The Verge 報導；Anthropic 尚未回應 | — |
 | AI Skill Atrophy：「做更多、理解更少」 | 2026-06-10 | 🔥🔥🔥🔥 | 🌊延燒 | HN Ask：開發者描述 Prompt-Then-Review 迴圈讓「技術深度下降、能力侵蝕」；2026-06-12 dev.to 案例佐證：CLAUDE.md 精簡可抑制過度依賴；社群無共識但警覺度持續升高 | — |
-| Deep Research 廣度優先缺陷 | 2026-06-10 | 🔥🔥 | ☄️閃現 | steel.dev 解剖 Claude Code deep research 工作流：只做第一跳搜尋、從不回頭深挖；「deep research agents 是廣度而非深度」——第二跳是真正差距所在 | — |
-| MCP 過多導致工具選擇混亂（Opus 4.7 假退化事件） | 2026-06-09 | 🔥🔥🔥 | ☄️閃現 | 開發者積累 6+ MCP servers 後 Claude 工具選擇開始錯誤（問 PR 跑 Notion）；模型沒變差，是 MCP 使工具清單過長干擾選擇；解法：移除未用 MCP，保持最小掛載數 | — |
-| Deep Research 並行任務燒盡 Max 配額（540 萬 token） | 2026-06-09 | 🔥🔥 | ☄️閃現 | 非技術用戶同時啟動兩個 Deep Research 任務，消耗 540 萬 token 觸發 5 小時封鎖；Deep Research 並行運行可致 token 使用量指數暴增，Max 訂閱也不免疫 | — |
-| CLAUDE.md 是最高 ROI 設置步驟（SaaS 創辦人實證）| 2026-06-09 | 🔥🔥 | ☄️閃現 | SaaS 創辦人（ARR $4.2M）實驗：加入 CLAUDE.md 後代碼品質立即提升，稱為「最高 ROI 的單一設置步驟」；強調架構概述與命名規範是核心內容 | — |
-| Agent 自主提交的人工監控：meta-hook 概念 | 2026-06-09 | 🔥🔥 | ☄️閃現 | 作者提出「meta-hook」：在 Claude Code agent 連續提交 N 個 commit 後自動暫停，要求人工確認；對應 Sub-agent 靜默推送主分支安全議題的工具層解法 | — |
-| Token 成本控制：1M Context Window vs Prompt Caching | 2026-06-09 | 🔥🔥 | ☄️閃現 | 技術對比：1M context 適合一次性深度任務，prompt caching 適合重複呼叫固定文件；費用差 10 倍；建議先評估查詢模式再選策略 | — |
 | LLMs 製造虛假忙碌？ | 2026-05-22 | 🔥🔥🔥 | 🌊延燒 | 質疑 LLM 是否在製造「效率幻覺」：spec/PRD/測試計劃/程式碼的流水線，每個產出物仍需人工逐一核查，燒掉的 token 數等同「員工績效」；對 AI 效率宣稱提出最直接的挑戰 | — |
 | Context 管理是大型專案核心瓶頸 | 2026-05-12 | 🔥🔥🔥 | 🌊延燒 | Attention 機制局部聚焦問題；應對策略：架構概覽注入、結構化索引、任務分拆；2026-05-17 官方 4 種 context 工具詳解再度引發討論，顯示痛點持續 | — |
 | HTML vs Markdown 輸出格式辯論 | 2026-05-09 | 🔥🔥🔥🔥🔥 | 🌊延燒 | HN 187 則討論；原始論點：HTML 視覺呈現與資訊密度更優；反駁：HTML 難以人機協同編輯；2026-05-20 Anthropic 官方 Blog 發文背書 HTML（理由：表達能力強、瀏覽器直接開啟、分享便利）；2026-05-21 官方 Blog 文章登上 HN 首頁，討論再度引爆，熱度升至跨平台最高級 | agent-html-skills |
@@ -182,6 +178,38 @@ MCP 的實際成本遠超多數使用者預期，已有多個量化案例：
 ---
 
 ## 技術彙整
+
+### Claude Code 隱寫術：同形字符隱寫元資料的信任危機（2026-07-01）
+
+- **來源：** [Claude Code & Prompt Steganography](https://thereallo.dev/blog/claude-code-prompt-steganography)（thereallo.dev；HN score 2263，07-01）
+- **核心論點：** 研究者發現 Claude Code binary 使用同形字符（Unicode 視覺相似字符）將時區等系統元資料隱寫進模型輸出文字；使用者無法從視覺上分辨，但資料已嵌入輸出流；社群將此視為信任危機——模型的輸出不僅是回答，還承載了系統不可見的元資料標記
+- **關鍵回響：**
+  - 📝 支持（技術驗證）：多位 HN 用戶確認可重現；獨立衍生討論「Anthropic has embedded hidden spyware-like code」（HN score 54）將此定性為間諜行為
+  - 📝 反駁（技術解讀）：部分人認為這是追蹤輸出來源的合法 watermarking 機制，非惡意；應區分「標記輸出」與「監控使用者」
+  - 📝 法律面：涉及版權、AI 輸出識別、監管合規等多維度問題
+- **收斂結論：** 尚無共識；Anthropic 截至報導時未正式回應；核心問題是「AI 輸出嵌入不可見元資料，是否應向使用者告知？」（推論）
+- **訊號強度：** HN 2263 是本季最高分社群事件之一，跨平台廣泛報導
+
+### Claude Code 成本 5x 暴漲：計費透明度與信任危機（2026-07-01）
+
+- **來源：** [Claude Code Quietly Looks 5x More Expensive](https://www.vincentschmalbach.com/claude-code-quietly-looks-5x-more-expensive/)（vincentschmalbach.com；HN score 53，07-01）
+- **核心論點：** 多個用戶回報 Claude Code 費用在無重大使用習慣改變的情況下暴增約 5 倍；Reddit 出現獨立開發者單月花費 $62,021 的具名案例；社群懷疑與近期 agent 模式的 token 計費方式變更有關，或 subagent 呼叫計費細節未透明揭示
+- **關鍵回響：**
+  - 📝 量化案例：$62,021 單月費用的開發者回報引發廣泛討論，是典型的「無上限計費意識缺乏」問題
+  - 📝 工具側回應：社群分享 AgentWatch（runtime budget enforcement）、token 用量監控等工具作為防護手段
+  - 📝 系統性問題：複數 subagent 的計費串聯、MCP 工具調用累積成本，缺乏即時費用上限機制
+- **收斂結論：** 計費透明度不足是結構性問題；「多付了錢但不知道為什麼」的模式在 multi-agent 場景下特別危險；AgentWatch 等工具是社群自救方案（推論）
+- **關聯：** 與「企業穴居人模式」（2026-07-01）、「Token 大量降耗策略」（2026-05-05）形成降本方法論脈絡
+
+### Claude Code 30 天 Session 自動刪除：使用者知識財產議題（2026-07-01）
+
+- **來源：** [GitHub issue #62476](https://github.com/anthropics/claude-code/issues/62476)（Anthropic/claude-code；HN score 29，07-01）
+- **核心論點：** Claude Code 預設 30 天後刪除 session `.jsonl` 記錄；GitHub issue 提出後 Anthropic 官方明確表示此為設計預設行為且不計畫修復；社群批評此決策：session 記錄包含問題解決脈絡、架構決策歷史等「使用者的知識財產」，靜默刪除違反使用者對工具的期待
+- **關鍵回響：**
+  - 📝 使用者立場：「我的對話歷史是我的資產，不是 Anthropic 可單方決定刪除的資料」
+  - 📝 Anthropic 立場：預設行為、儲存成本考量；提供延長設定選項
+- **Workaround：** `npx agentinit agent set claude cleanupPeriodDays 365`（延長至 365 天）；或手動備份 `~/.claude/projects/` 下的 JSONL 檔案
+- **與既有討論的關係：** session 歷史保留問題在 2026-05 的 patterns 技術彙整中已有記錄（無法修復預設值）；今日 Anthropic 官方明確「不修復」的回應使此問題從「痛點」升格為「政策爭議」
 
 ### Anthropic 中國代理偵測爭議：出口管制合規 vs 隱私侵犯（2026-06-30）
 

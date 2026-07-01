@@ -3,11 +3,11 @@
 **狀態：** ongoing
 **領域：** 🏛️ 政策/安全
 **開始日期：** 2026-05-01
-**最後更新：** 2026-06-30
-**最後新聞更新：** 2026-06-30
+**最後更新：** 2026-07-01
+**最後新聞更新：** 2026-07-01
 
-> **最新攻防紀錄**（2026-06-30）
-> Fortune 深度報導 Anthropic 因拒絕配合 Trump 政府遊戲規則（相較科技巨頭的配合態度）而付出實質代價；CNBC 分析白宮 AI 打壓為中國模型廠商創造追趕機會、出口管制實際效果持續受質疑；SF Examiner 報導 AI 專家支持 AI 監管但質疑 Anthropic 遭受的特定封禁方式（2026-06-30）。
+> **最新攻防紀錄**（2026-07-01）
+> 美國商務部長 Howard Lutnick 宣布解除 Fable 5 和 Mythos 5 的出口管制，2026-07-01 正式生效。Anthropic 承諾主動偵測安全風險、與政府密切合作制定協議與標準、並通報惡意活動；官方公告見 anthropic.com/news/redeploying-fable-5。NYT、BBC、CNN、Reuters、WSJ、FT、WashPost、The Guardian 全面報導（2026-07-01）。
 
 ---
 
@@ -19,9 +19,9 @@
 
 ---
 
-## 目前局勢（截至 2026-06-30）
+## 目前局勢（截至 2026-07-01）
 
-- **管制狀態（最新）：** Mythos 5 已獲部分解封，並獲美國政府進一步許可向特定信任合作夥伴恢復存取（qz.com，2026-06-29）；此為 6/27 Lutnick 致函 Tom Brown 批准 100+ 受信任合作夥伴有限釋出後的持續推進；Fable 5 尚未納入解封，但談判仍在進行
+- **管制狀態（最新）：** Fable 5 和 Mythos 5 出口管制全面解除，2026-07-01 正式生效（宣布：2026-06-30）；商務部長 Howard Lutnick 宣布此決定，Anthropic 承諾：（1）主動偵測並解決與模型相關的安全風險、（2）與美國政府密切合作制定協議和標準、（3）通報任何惡意活動；Reddit 流出商務部完整信函；官方公告：https://www.anthropic.com/news/redeploying-fable-5（NYT；https://www.nytimes.com/2026/06/30/technology/us-lifts-restrictions-anthropic.html；BBC；https://www.bbc.com/news/articles/cdr42623e1do）
 - **談判主導權易手：** Wired 報導（2026-06-24）Trump 白宮對 Dario Amodei 態度趨冷，已由聯合創辦人 Tom Brown 接管與白宮的談判會議；白宮內部評語：「Tom Brown is not being a weirdo like Dario and can actually engage」；Dario 被逐出核心談判桌，為 Anthropic 內部重大策略調整
 - **EU 介入升格：** 歐盟已就 Mythos 模型出口管制與白宮展開直接對話；事件從美國內政議題升格為跨大西洋科技外交，盟友壓力管道正式開通
 - **出口管制反效論述：** Bloomberg（2026-06-26）分析指出限制 Anthropic 頂尖模型可能適得其反，反而推升中國開源模型在全球的採用率；此論述進一步削弱「出口管制可有效防護技術外洩」的政策前提
@@ -78,7 +78,9 @@ Fable 5 發布後，Amazon 安全研究人員發現特定提示詞可讓模型�
 
 2026-06-28，WSJ 報導中國 AI 已在網路安全領域追上 Anthropic（WSJ，2026-06-28；https://www.wsj.com/tech/ai/chinese-ai-anthropic-mythos-cybersecurity-574b02c2），與日本 Sakana AI 發布 Fugu（TechCrunch，HN score 256）共同顯示封鎖期間競品已完成部分能力追趕；Legion LegalTech 亦向哥倫比亞特區聯邦法院補充提訴申請緊急禁制令，要求撤銷 BIS 原始指令（The Next Web，2026-06-27）；Axios 同日報導 Fable 5 全面回歸協議接近完成（待核實）。
 
-2026-06-29，Anthropic 獲美國政府進一步許可，可向特定信任合作夥伴恢復 Mythos 存取（qz.com，2026-06-29；https://qz.com/anthropic-mythos-5-clearance-trusted-partners-commerce-062926）；管制鬆動趨勢延續 6/27 Lutnick 信函後的走向。同日，奧地利向歐盟提案邀請 Anthropic 設立歐盟據點（Bloomberg，2026-06-28，HN score 114；https://www.bloomberg.com/news/articles/2026-06-28/austria-lobbies-eu-to-host-anthropic-after-us-access-curbs），顯示 6/12 起美國限制 Mythos 出口至歐洲後，歐洲各國開始競相爭取 Anthropic 的地理落地；此為「美國出口管制倒逼歐洲爭搶 AI 據點」的首個具名國家遊說案例。Wired 報導中國用戶如何持續突破 Anthropic 地理限制存取 Claude（HN score 5），顯示出口管制的技術阻斷效果有限（Wired，2026-06-28）。此外，The National Interest 評論 Mythos 事件不應成為鞏固少數公司 AI 權力的契機，呼籲防止 AI 權力過度集中（The National Interest，2026-06-29）。Axios 報導 Trump 行政的 AI 模型發布延遲政策引發科技界廣泛反彈，親 AI 陣營出現分裂（Axios，2026-06-29；https://www.axios.com/2026/06/29/trump-ai-model-release-delays-tech-backlash）。
+2026-06-29，Anthropic 獲美國政府進一步許可，可向特定信任合作夥伴恢復 Mythos 存取（qz.com，2026-06-29；https://qz.com/anthropic-mythos-5-clearance-trusted-partners-commerce-062926）；管制鬆動趨勢延續 6/27 Lutnick 信函後的走向。
+
+2026-07-01，商務部長 Lutnick 宣布全面解除 Fable 5 和 Mythos 5 出口管制，正式生效；Anthropic 承諾三項義務換取解封（偵測安全風險 / 合作制定標準 / 通報惡意活動）；封鎖期 18–19 天，為 2026-06-13 全面封鎖以來的最終結局（NYT、BBC、CNN、Reuters、WSJ、FT、WashPost、The Guardian，2026-06-30/07-01；Anthropic 官方公告：https://www.anthropic.com/news/redeploying-fable-5）。同日，奧地利向歐盟提案邀請 Anthropic 設立歐盟據點（Bloomberg，2026-06-28，HN score 114；https://www.bloomberg.com/news/articles/2026-06-28/austria-lobbies-eu-to-host-anthropic-after-us-access-curbs），顯示 6/12 起美國限制 Mythos 出口至歐洲後，歐洲各國開始競相爭取 Anthropic 的地理落地；此為「美國出口管制倒逼歐洲爭搶 AI 據點」的首個具名國家遊說案例。Wired 報導中國用戶如何持續突破 Anthropic 地理限制存取 Claude（HN score 5），顯示出口管制的技術阻斷效果有限（Wired，2026-06-28）。此外，The National Interest 評論 Mythos 事件不應成為鞏固少數公司 AI 權力的契機，呼籲防止 AI 權力過度集中（The National Interest，2026-06-29）。Axios 報導 Trump 行政的 AI 模型發布延遲政策引發科技界廣泛反彈，親 AI 陣營出現分裂（Axios，2026-06-29；https://www.axios.com/2026/06/29/trump-ai-model-release-delays-tech-backlash）。
 
 此外，Anthropic 已於 2026-06-10 致函美參議院，正式指控阿里巴巴透過約 25,000 個假帳號在 2026-04-22 至 2026-06-05 間，向 Claude 發動 2,880 萬次模型交換以蒸餾提取 AI 能力，為已知最大規模 AI 蒸餾攻擊（CNBC，2026-06-24；https://www.cnbc.com/2026/06/24/anthropic-alibaba-distillation-campaign.html）。此事件同時強化出口管制必要性論述（中國行為者已在主動提取受管制模型能力），亦為政府討論 AI 出口管制政策提供具體數據支撐；技術安全面向詳見 [[topics/ai-agent-safety]]。
 
@@ -104,6 +106,7 @@ Fable 5 發布後，Amazon 安全研究人員發現特定提示詞可讓模型�
 
 | 日期 | 方 | 動作 | 效果 |
 |------|----|------|------|
+| 2026-07-01 | 🏛️ | 商務部長 Lutnick 宣布解除 Fable 5 / Mythos 5 全部出口管制，2026-07-01 生效；Anthropic 承諾三項義務（偵測安全風險 / 合作制定標準 / 通報惡意活動）（NYT、BBC、CNN、Reuters、WSJ、FT、WashPost、The Guardian） | 6/13 全面封鎖以來最重大結局；封鎖期 18 天；Reddit 流出商務部完整信函；「Anthropic 承諾換解封」成為先例，三項承諾將成未來 AI 出口管制談判的參照框架 |
 | 2026-06-30 | 🌐 | Fortune 深度報導：Anthropic 因拒絕配合 Trump 政府遊戲規則而付出代價，與其他配合科技巨頭形成對比（Fortune） | 主流財經媒體首次系統性定性 Anthropic 政治失算的商業代價；「拒絕配合玩法」vs「低頭獲利」的策略選擇成為媒體焦點 |
 | 2026-06-30 | 🌐 | CNBC：白宮 AI 打壓為中國模型廠商創造追趕機會，出口管制政策實際效果受質疑（CNBC） | 出口管制「反效」論述進入 CNBC 等主流財經媒體；與 WSJ（06/28）、Bloomberg（06/26）形成三大財經媒體共同質疑管制效果的共識 |
 | 2026-06-30 | 🌐 | SF Examiner：AI 專家普遍認為需要 AI 監管，但對 Anthropic 遭受的特定封禁方式提出質疑（SF Examiner） | AI 專家社群質疑管制方式正當性；「需要監管但不應如此針對性」的論述為 Anthropic 提供外部中立聲音背書 |
@@ -179,6 +182,7 @@ Fable 5 發布後，Amazon 安全研究人員發現特定提示詞可讓模型�
 
 ## 參考來源
 
+- [[news/2026-07-01]]
 - [[news/2026-06-30]]
 - [[news/2026-06-29]]
 - [[news/2026-06-28]]
@@ -192,6 +196,11 @@ Fable 5 發布後，Amazon 安全研究人員發現特定提示詞可讓模型�
 - [Chris Olah Vatican Remarks](https://www.anthropic.com/news/chris-olah-pope-leo-encyclical) — Anthropic Blog
 
 ## 時序
+
+### 2026-07-01
+- **[重大結局] 商務部長 Lutnick 宣布全面解除 Fable 5 / Mythos 5 出口管制**：美國商務部長 Howard Lutnick 宣布解除對 Fable 5 和 Mythos 5 的出口管制，2026-07-01 正式生效；Anthropic 承諾三項義務：（1）主動偵測並解決與模型相關的安全風險、（2）與美國政府密切合作制定 AI 協議和標準、（3）通報任何惡意活動；Anthropic 官方公告見 https://www.anthropic.com/news/redeploying-fable-5；Reddit 流出商務部完整信函內容（NYT，2026-06-30，https://www.nytimes.com/2026/06/30/technology/us-lifts-restrictions-anthropic.html；BBC，https://www.bbc.com/news/articles/cdr42623e1do；CNN、Reuters、WSJ、FT、WashPost、The Guardian 同步報導）
+  - **封鎖解除背景**：出口管制於 2026-06-12 生效，理由為模型可能被用於嚴重網路攻擊；封鎖期共 18–19 天；談判由 Tom Brown 主導（6/24 後接管），此解封為 6/27 Mythos 5 有限解封、6/29 進一步許可後的最終完成
+  - **三項承諾的意義**：Anthropic 此次承諾框架（安全偵測 + 標準制定合作 + 惡意活動通報）為「私人 AI 公司換取模型存取特權的政府協議」建立首例；未來可能成為其他前沿模型出口管制談判的參照框架
 
 ### 2026-06-30
 - **[媒體框架轉向] Fortune 深度報導：Anthropic 拒絕配合 Trump 遊戲規則的政治代價**：Fortune 深度報導 Anthropic 因拒絕配合 Trump 政府運作邏輯（相較多數科技巨頭的配合態度）而付出實質商業與政治代價；報導框架為「Anthropic 失敗按 Trump 劇本行事」，為主流財經媒體首次系統性定性此事件為 Anthropic 策略失算；與 Stratechery（06/15）、FT（06/21）等先前評論共同構成「自身安全倡導導致政治孤立」敘事框架的主流媒體確認（Fortune，2026-06-30；https://fortune.com/2026/06/30/anthropic-clash-with-u-s-government-shows-its-failure-to-play-by-trump-administration-playbook/）

@@ -2254,3 +2254,25 @@ Append-only 紀錄。每次 ingest、query 或 lint 都在此追加一條。
   - 簡化（6e）：features / community / community-lint 三檔超門檻，本次跳過（功能完整，非冗餘膨脹）
 - Python 熱度訊號修復（源碼層）：base.py 加 source_count 欄位；reddit.py + devto.py 改取 slash_comments 代理訊號；dedup.py 改合併累加 source_count 而非替換；analyzer.py 顯示跨來源數（✦ 跨 N 個獨立來源）
 - overview.md：已更新（當前局勢改三條線；進行中議題 #5 ai-agent-safety 改 delta-first；近兩週事件表加 06-29/06-30；商業動態同步新合作）
+
+## 2026-07-01 Ingest | 101 篇文章，重大事件日
+
+- 來源日報：`news/2026-07-01.md`（101 篇 / 6 來源）
+- 更新頁面：
+  - `entities/fable-5.md`（出口管制 7/1 全面解除，歷史記錄更新）
+  - `entities/mythos.md`（出口管制解除，全球恢復）
+  - `entities/claude-code.md`（v2.1.197 Sonnet 5 預設，SDK v0.115.0，版本表更新）
+  - `entities/managed-agents.md`（Python SDK v0.115.0，callout 更新）
+  - `entities/pricing.md`（Sonnet 5 促銷 $2/$10/Mtok，Fable 5 usage-based billing）
+  - `topics/anthropic-business.md`（Enterprise Gateway、Fable 5 協議解禁、Claude Science 附記）
+  - `topics/anthropic-government-policy.md`（攻防紀錄表與時序更新，解封分析）
+  - `topics/ai-agent-safety.md`（隱寫術爭議 HN 2263、CVE-2026-55407 DoS 漏洞）
+  - `topics/community-tech-discussions.md`（4 條新討論：隱寫術 / 成本暴漲 / 30 天刪除 / 穴居人採用）
+  - `topics/community-tech-patterns.md`（1000 subagent fan-out、Git worktree 教學、穴居人成本模式）
+  - `wiki/feature-radar.md`（新增 Sonnet 5 🔥🔥🔥🔥🔥、Claude Science 🔥🔥，Fable 5 解禁更新）
+  - `wiki/index.md`（新增 sonnet-5、claude-science，Fable 5/Mythos 狀態更新）
+  - `wiki/overview.md`（當前局勢全面改寫，模型表更新，07-01 事件列入）
+- 新增頁面：`entities/sonnet-5.md`、`entities/claude-science.md`
+- feature-radar 新增：Claude Sonnet 5（🔥🔥🔥🔥🔥 / ✅ 強烈推薦）、Claude Science（🔥🔥 / ⚡ 有條件推薦）
+- index.md 狀態變更：fable-5（暫停→解除）、mythos（部分解禁→全面解除）、sonnet-5（新增）、claude-science（新增）
+- 呈現品質審查：全部通過（各記者確認）

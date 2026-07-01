@@ -1,14 +1,14 @@
 # Claude Mythos
 
 **類型：** model
-**狀態：** active（部分解禁：Mythos 5 = 100+ 美國受信任機構可用；Fable 5 全面解禁談判中）
+**狀態：** active（出口管制解除，2026-07-01 起全球恢復存取）
 **領域：** 🤖 模型
 **首次出現：** 2026-04（限定夥伴 Preview）
-**最後更新：** 2026-06-29
-**最後新聞更新：** 2026-06-29
+**最後更新：** 2026-07-01
+**最後新聞更新：** 2026-07-01
 
-> **最新進展**（2026-06-29）
-> Anthropic 正式獲得美國政府許可，可向特定信任合作夥伴恢復 Mythos 存取（[qz.com](https://qz.com/anthropic-mythos-5-clearance-trusted-partners-commerce-062926)）；此為 6/27 Mythos 5 部分解禁後的進一步確認，Fable 5 全面解禁談判同步推進。競品聲稱方面，中國 Z.Ai 與 360（6/24）相繼宣稱已開發出可與 Mythos 匹敵的網路安全 AI，均尚無獨立 benchmark 驗證。
+> **最新進展**（2026-07-01）
+> 美國出口管制正式解除，Fable 5 與 Mythos 5 於 2026-07-01 起全球恢復存取（[Anthropic Blog](https://www.anthropic.com/news/redeploying-fable-5)）。Anthropic 已與美國政府簽訂協議：主動偵測安全風險、配合標準協議、通報惡意活動。管制事件歷時 18 天（2026-06-13 至 2026-07-01）。
 
 ---
 
