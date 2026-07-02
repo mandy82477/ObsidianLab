@@ -1,0 +1,54 @@
+{
+  "date": "2026-07-02",
+  "generatedAt": "2026-07-02 22:27 UTC",
+  "articleCount": 50,
+  "sourceCount": "6/6 | **文章數：** 50 | **更新時間：** 2026-07-02 22:27 UTC",
+  "bulletin": "",
+  "topStories": [],
+  "techUpdates": [],
+  "discussions": [],
+  "billing": [],
+  "focus": [
+    {
+      "tag": "[重大事件]",
+      "text": "Fable 5（含 Mythos 5）在遭美國商務部祭出 19 天出口管制禁令後，於昨日（7/1）恢復全球部署；Anthropic 這次加上更嚴格的資安/程式碼分類器，遇到高風險 coding 請求會 fallback 到 Opus 4.8。",
+      "ref_urls": [
+        "https://www.reddit.com/r/ClaudeAI/comments/1uliwhc/anthropic_just_redeployed_fable_5_globally_here/",
+        "https://www.hstoday.us/subject-matter-areas/cybersecurity/commerce-lifts-export-restrictions-on-anthropic-ai-models/",
+        "https://www.wsj.com/tech/ai/the-anthropic-fable-ban-is-over-the-battle-over-how-to-tame-ai-has-just-begun-e93f51d6"
+      ]
+    },
+    {
+      "tag": "[風險警示]",
+      "text": "Reddit 上出現指控稱 Claude Code 自 2.1.91 版起會偷偷偵測使用者是否透過代理連線、是否位於中國或關聯中國 AI 實驗室，並將此資訊隱藏於 system prompt 中回傳，同時疑似在二進位檔中刻意混淆該段程式碼；文章標題直指「embedded spyware」，目前僅為單方指控，尚待社群/官方進一步查證。",
+      "ref_urls": [
+        "https://old.reddit.com/r/ClaudeAI/comments/1ujila1/anthropic_embedded_spyware_in_claude_code_and/"
+      ]
+    },
+    {
+      "tag": "[持續追蹤]",
+      "text": "有分析文章指出 Anthropic 在 Sonnet 5 表現不如預期後，修改了官方對比圖表，引發 HN 討論 Anthropic 資料呈現的可信度。",
+      "ref_urls": [
+        "https://www.vincentschmalbach.com/anthropic-changed-sonnet-5-chart-after-it-made-sonnet-look-bad/"
+      ]
+    },
+    {
+      "tag": "[生態動態]",
+      "text": "The Information 報導 Anthropic 正與三星洽談客製 AI 晶片代工；同時 Palantir CEO Alex Karp 公開批評 Anthropic／OpenAI「竊取客戶 IP、其 token 價值偏低」，引發社群對防務市場競爭的討論。",
+      "ref_urls": [
+        "https://www.theinformation.com/articles/anthropic-talks-samsung-manufacture-custom-ai-chip",
+        "https://twitter.com/Ric_RTP/status/2072403984304984202"
+      ]
+    },
+    {
+      "tag": "[社群趨勢]",
+      "text": "多篇貼文圍繞 Fable 5 使用心得（化學問答受限、資安審查誤判自身請求、7/7 訂閱到期前的效率最大化策略）與 Claude Code 日常工作流變化（AskUserQuestion 逾時自動作答、hooks 環境燈號提示、AFK 模式）展開。",
+      "ref_urls": [
+        "https://dev.to/tecnomanu/i-tried-fable-5-for-a-security-review-and-it-flagged-my-own-request-2pbn",
+        "https://www.reddit.com/r/ClaudeAI/comments/1ulh0ic/claude_code_started_to_use_timeout_on/"
+      ]
+    }
+  ],
+  "sourceStatus": [],
+  "preview": ""
+}

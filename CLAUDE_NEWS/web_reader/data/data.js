@@ -191,10 +191,10 @@ window.WIKI_DATA = {
       "pill": "active",
       "firstSeen": "2026-06-09",
       "startDate": "",
-      "lastUpdated": "2026-07-01",
-      "lastNewsUpdate": "2026-07-01",
-      "summary": "出口管制已於 2026-07-01 正式解除，Fable 5 全球恢復存取；解禁條件、計費過渡方案細節見下方「歷史記錄 2026-07-01」。 Claude Fable 5 是 Anthropic 於 2026-06-09 發布的旗艦模型，為**史上首款向大眾開放的 Mythos 級模型**。Fable 5 與 Cl…",
-      "latestHeadline": "官方公告（[Anthropic Blog](https://www.anthropic.com/news/redeploying-fable-5)）：美國出口管制解除，Fable 5 與 Mythos 5 於 2026-07-01 起向全球用戶恢復存取。過渡期計費：Pro/Max/Team 方案 7/7 前維持每週配額"
+      "lastUpdated": "2026-07-02",
+      "lastNewsUpdate": "2026-07-02",
+      "summary": "出口管制已於 2026-07-01 正式解除，Fable 5 全球恢復存取；解禁條件、計費過渡方案細節見下方「歷史記錄 2026-07-01」。Redeploy 同步導入「Defense in Depth」新安全機制，細節與早期實測反饋見「歷史記錄 2026-07-02」。 Claude Fable 5 是 Anthr…",
+      "latestHeadline": "新安全機制：Reddit 貼文整理 Fable 5 全球 redeploy（7/1）隨附的「Defense in Depth」措施——新增更嚴格的資安/程式碼請求分類器，一旦判定為高風險 coding/debug 請求，自動靜默 fallback 至 Opus 4.8 執行，不使用 Fable 5（[Reddit r/"
     },
     {
       "id": "fiona-fung",
@@ -341,8 +341,8 @@ window.WIKI_DATA = {
       "pill": "active",
       "firstSeen": "2026-04-25",
       "startDate": "",
-      "lastUpdated": "2026-07-01",
-      "lastNewsUpdate": "2026-07-01",
+      "lastUpdated": "2026-07-02",
+      "lastNewsUpdate": "2026-07-02",
       "summary": "Anthropic 訂閱計費政策持續演變。原定 2026-06-15 實施的「程式化用量（Agent SDK、`claude -p`）脫離訂閱、改按 API 費率計費」政策，於 **2026-06-16 宣布暫停**，重新推行時間未定。目前所有付費方案用量仍維持原訂閱配額制。核心爭點：Anthropic 訂閱方案設計以…",
       "latestHeadline": "Anthropic 訂閱計費政策持續演變。原定 2026-06-15 實施的「程式化用量（Agent SDK、`claude -p`）脫離訂閱、改按 API 費率計費」政策，於 2026-06-16 宣布暫停，重新推行時間未定。目前所有付費方案用量仍維持原訂閱配額制。核心爭點：Anthropic 訂閱方案設計以人工互動"
     },
@@ -356,10 +356,10 @@ window.WIKI_DATA = {
       "pill": "active",
       "firstSeen": "2026-07-01",
       "startDate": "",
-      "lastUpdated": "2026-07-01",
-      "lastNewsUpdate": "2026-07-01",
+      "lastUpdated": "2026-07-02",
+      "lastNewsUpdate": "2026-07-02",
       "summary": "Claude Sonnet 5 於 2026-07-01 正式發布，定位為 Anthropic **最 agentic 的 Sonnet 模型**，在 reasoning、tool use、coding、knowledge work 等多個面向均有顯著提升，效能接近 Opus 4.8。 **與 [[entities/f…",
-      "latestHeadline": "Claude Sonnet 5 於 2026-07-01 正式發布，定位為 Anthropic 最 agentic 的 Sonnet 模型，在 reasoning、tool use、coding、knowledge work 等多個面向均有顯著提升，效能接近 Opus 4.8。"
+      "latestHeadline": "官方圖表修改爭議（待核實）：HN 文章指控 Anthropic 修改官方 Sonnet 5 對比圖表，原版本讓 Sonnet 5 表現不佳（[vincentschmalbach.com](https://www.vincentschmalbach.com/anthropic-changed-sonnet-5-chart"
     },
     {
       "id": "tom-brown",
@@ -403,8 +403,8 @@ window.WIKI_DATA = {
       "pill": "active",
       "firstSeen": "",
       "startDate": "2026-04-27",
-      "lastUpdated": "2026-07-01",
-      "lastNewsUpdate": "2026-07-01",
+      "lastUpdated": "2026-07-02",
+      "lastNewsUpdate": "2026-07-02",
       "summary": "2026-07-01，研究者發現 Claude Code 2.1.196 binary 含同形字符替換函式（homoglyph substitution），可將日期字串中的撇號和分隔符替換為外觀相同的 Unicode 同形字，疑用於對輸出文字嵌入隱寫標記（steganographic marking）；HN score…",
       "latestHeadline": "2026-07-01，研究者發現 Claude Code 2.1.196 binary 含同形字符替換函式（homoglyph substitution），可將日期字串中的撇號和分隔符替換為外觀相同的 Unicode 同形字，疑用於對輸出文字嵌入隱寫標記（steganographic marking）；HN score"
     },
@@ -433,10 +433,10 @@ window.WIKI_DATA = {
       "pill": "active",
       "firstSeen": "",
       "startDate": "2026-05-28",
-      "lastUpdated": "2026-07-01",
-      "lastNewsUpdate": "2026-07-01",
+      "lastUpdated": "2026-07-02",
+      "lastNewsUpdate": "2026-07-02",
       "summary": "Anthropic 在技術聲譽與企業採用率上持續上升（企業採用率 34.4% 首超 OpenAI 32.3%，Ramp AI Index 2026-05-15），並於 2026-05-28 完成 $65B Series H 融資，估值 $965B，超越 OpenAI 成全球最大 AI 新創。核心矛盾從「PMF vs 獲…",
-      "latestHeadline": "[Fable 5 出口管制全面解除 + 商務部正式協議] Anthropic 與美國商務部達成協議，Fable 5 出口管制正式解除：Anthropic 承諾主動偵測安全風險、配合標準協議、通報惡意活動；商務長 Howard Lutnick 在社群媒體公開宣布解禁；WSJ、Bloomberg、Reuters、NYT、B"
+      "latestHeadline": "[晶片代工洽談，初步報導] The Information 報導 Anthropic 正與三星洽談代工客製 AI 晶片：僅有標題可見，尚無代工規模、金額、時程等細節。對商業的意涵：若屬實，代表 Anthropic 在既有 Google TPU、Amazon Trainium 算力路線外，進一步尋求自研晶片供應鏈，長期可"
     },
     {
       "id": "anthropic-government-policy",
@@ -448,8 +448,8 @@ window.WIKI_DATA = {
       "pill": "warn",
       "firstSeen": "",
       "startDate": "2026-05-01",
-      "lastUpdated": "2026-07-01",
-      "lastNewsUpdate": "2026-07-01",
+      "lastUpdated": "2026-07-02",
+      "lastNewsUpdate": "2026-07-02",
       "summary": "**出口管制已於 2026-07-01 全面解除。** 美國商務部長 Howard Lutnick 宣布解除 Fable 5 和 Mythos 5 的出口管制，正式生效；Anthropic 承諾三項義務換取解封（主動偵測安全風險、與政府合作制定協議與標準、通報惡意活動）；封鎖期共 18–19 天（2026-06-13 …",
       "latestHeadline": "出口管制已於 2026-07-01 全面解除。 美國商務部長 Howard Lutnick 宣布解除 Fable 5 和 Mythos 5 的出口管制，正式生效；Anthropic 承諾三項義務換取解封（主動偵測安全風險、與政府合作制定協議與標準、通報惡意活動）；封鎖期共 18–19 天（2026-06-13 全面封鎖"
     },
@@ -493,8 +493,8 @@ window.WIKI_DATA = {
       "pill": "active",
       "firstSeen": "",
       "startDate": "2026-04-25",
-      "lastUpdated": "2026-07-01",
-      "lastNewsUpdate": "2026-07-01",
+      "lastUpdated": "2026-07-02",
+      "lastNewsUpdate": "2026-07-02",
       "summary": "追蹤 Claude Code 社群中活躍的概念辯論、設計哲學、實證研究與技術反思。與 [[topics/community-tech-patterns]] 追蹤具體工具和工作流不同，本頁聚焦思想碰撞：什麼哲學正在成形、什麼假設受到挑戰、什麼共識正在收斂。頁面結構：**🔥 本週熱點**（當前最熱的持續議題）→ **🌊 長…",
       "latestHeadline": "追蹤 Claude Code 社群中活躍的概念辯論、設計哲學、實證研究與技術反思。與  追蹤具體工具和工作流不同，本頁聚焦思想碰撞：什麼哲學正在成形、什麼假設受到挑戰、什麼共識正在收斂。頁面結構：🔥 本週熱點（當前最熱的持續議題）→ 🌊 長期議題（主題彙整）→ 熱門討論記錄（最近 30 天）→ 技術彙整（逐篇深度筆記）"
     },
@@ -508,8 +508,8 @@ window.WIKI_DATA = {
       "pill": "warn",
       "firstSeen": "",
       "startDate": "2026-04-25",
-      "lastUpdated": "2026-07-01",
-      "lastNewsUpdate": "2026-07-01",
+      "lastUpdated": "2026-07-02",
+      "lastNewsUpdate": "2026-07-02",
       "summary": "追蹤 Claude Code 社群在實際開發中累積的**工作流與應用模式**。本頁收錄的模式類型包括 Multi-agent 架構、Skills 設計、CLAUDE.md 管理、Hooks 與自動化、模型使用策略、Token 成本優化、記憶與知識管理、Plugin/MCP 整合等，持續累積形成社群最佳實踐知識庫。 工具…",
       "latestHeadline": "追蹤 Claude Code 社群在實際開發中累積的工作流與應用模式。本頁收錄的模式類型包括 Multi-agent 架構、Skills 設計、CLAUDE.md 管理、Hooks 與自動化、模型使用策略、Token 成本優化、記憶與知識管理、Plugin/MCP 整合等，持續累積形成社群最佳實踐知識庫。"
     },
@@ -553,10 +553,10 @@ window.WIKI_DATA = {
       "pill": "warn",
       "firstSeen": "",
       "startDate": "2026-04",
-      "lastUpdated": "2026-07-01",
-      "lastNewsUpdate": "2026-06-29",
+      "lastUpdated": "2026-07-02",
+      "lastNewsUpdate": "2026-07-02",
       "summary": "Claude Code 已成為 AI 輔助編碼的標竿產品，但競爭正快速升溫。2026-05 是關鍵轉折月：OpenAI Codex 下載量單週爆增 1,397%、OpenCode 吸走 15.7 萬開發者、Microsoft 取消數千名員工授權改推 Copilot CLI——分流訊號同步出現。另一方面，Anthropi…",
-      "latestHeadline": "Claude Code 已成為 AI 輔助編碼的標竿產品，但競爭正快速升溫。2026-05 是關鍵轉折月：OpenAI Codex 下載量單週爆增 1,397%、OpenCode 吸走 15.7 萬開發者、Microsoft 取消數千名員工授權改推 Copilot CLI——分流訊號同步出現。另一方面，Anthropi"
+      "latestHeadline": "[國防/企業數據平台商表態] Palantir CEO Alex Karp 公開批評 Anthropic 與 OpenAI「竊取客戶 IP，token 價值偏低」：HN 討論串（score 16）猜測此番言論時間點恰逢 Fable/Mythos 重新發布同日，且與 OpenAI 開始更直接與 Palantir 競爭國防"
     },
     {
       "id": "enterprise-cost-management",
@@ -1372,6 +1372,12 @@ window.WIKI_DATA = {
     }
   ],
   "digestIndex": [
+    {
+      "date": "2026-07-02",
+      "articleCount": 50,
+      "preview": "",
+      "topCount": 0
+    },
     {
       "date": "2026-07-01",
       "articleCount": 101,
