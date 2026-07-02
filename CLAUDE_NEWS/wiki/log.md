@@ -2328,3 +2328,9 @@ Append-only 紀錄。每次 ingest、query 或 lint 都在此追加一條。
   - H1 改名：patterns「社群實戰模式庫」、pattern-trends「社群趨勢觀察（週更）」；index 狀態欄砍字
 - 使用者跳過：official-community-gap H1（使用者確認 callout 已足夠，維持原樣）
 - 共通問題：「現況被時序侵蝕」與「指標表凍結」為流程病，已補進 `.claude/rules/wiki-ingest-format.md`（必修規則 + 警示各一條）；技術彙整月份分組制寫入 `.claude/rules/wiki-ingest-community.md`
+
+## 2026-07-02 日報格式修復 + 新增模型選型對照頁
+
+- **日報格式修復**：當日 pipeline 生成的日報條目偏離規格（bullet 式標題而非 `**[標題](url)**`），導致 web reader 解析出空區塊、讀者只見今日聚焦。已依 gathered_items.json 重生 `news/2026-07-02.md`（自檢 11 個連結標題；重點話題 2 / 討論 6 / 付費 3；無 official 條目故省略 🔧）；流程面在 `.claude/commands/news-pipeline-steps.md` Step 1b 加入格式強制警告與 3a 格式自檢（grep 連結標題數 ≥ 5）
+- **新增頁面**：`wiki/topics/model-comparison.md` — 模型選型對照（快速選型表 + 情境推薦 + benchmark 對照），回應「個別模型頁難聚焦」的讀者需求；`.claude/rules/wiki-ingest-models.md` 新增選型對照同步規則與 sonnet-5 負責頁面
+- index.md：新增 model-comparison 列與近期異動

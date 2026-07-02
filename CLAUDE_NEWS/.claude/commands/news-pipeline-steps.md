@@ -76,14 +76,23 @@ PYTHON -m news_aggregator.main --gather-only [--date TARGET_DATE]
 定價、配額、Token 費用相關
 ```
 
-**每條排版格式：**
+**每條排版格式（⚠️ 嚴格遵守，web reader 解析器依賴此格式）：**
 ```
 **[原文標題](url)**
 一到兩句繁體中文說明核心重點與為何值得關注。
 `來源名稱` · MM/DD HH:MM UTC
 ```
+- 標題行必須是 `**[標題](url)**`（方括號連結），**不可**寫成 `- **標題**：內文` 的 bullet 形式
+- 來源行必須是 `` `來源` · 時間 `` 獨立一行
+- 違反此格式時 web reader 會解析出空區塊，讀者只看得到今日聚焦
 
 3. 生成完成後，寫入 `news/TARGET_DATE.md`（完整 Markdown）
+
+3a. **格式自檢（強制）**：寫入後執行下列指令，若輸出為 0 表示條目格式錯誤，必須依「每條排版格式」重寫再檢：
+```
+grep -cE '^\*\*\[.+\]\(https?://' news/TARGET_DATE.md
+```
+（今日聚焦以外的每個區塊各條目都應貢獻一個匹配；正常日報此數值 ≥ 5）
 4. 用 Bash git 暫存並 commit（**先不 push**，本次所有變更於 Step 5 統一推送，避免多次 push 觸發 Pages 部署並發競爭）：
 ```
 git -C REPO_ROOT add news/TARGET_DATE.md

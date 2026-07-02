@@ -4,10 +4,118 @@
   "articleCount": 50,
   "sourceCount": "6/6 | **文章數：** 50 | **更新時間：** 2026-07-02 22:27 UTC",
   "bulletin": "",
-  "topStories": [],
+  "topStories": [
+    {
+      "title": "Anthropic just redeployed Fable 5 globally. Here is everything that changed (and why your coding prompts might get rerouted to Opus 4.8).",
+      "url": "https://www.reddit.com/r/ClaudeAI/comments/1uliwhc/anthropic_just_redeployed_fable_5_globally_here/",
+      "source": "Reddit / r/ClaudeAI",
+      "time": "07/02 05:52",
+      "sentiment": "",
+      "body": "Fable 5／Mythos 5 於 6/9 發布、6/12 因研究人員繞過防護寫出漏洞利用程式碼觸發國安出口管制而下架，7/1 正式恢復全球存取。這次 Anthropic 部署了針對資安與程式碼請求更嚴格的安全分類器：一旦判定使用者的 coding 請求具潛在風險，會自動路由到 Opus 4.8 而非 Fable 5。多位使用者反映在做安全審查等工作時遭誤判攔截。",
+      "focusTags": [
+        "[重大事件]"
+      ]
+    },
+    {
+      "title": "Anthropic embedded spyware in Claude Code – and attempted to hide it from you",
+      "url": "https://old.reddit.com/r/ClaudeAI/comments/1ujila1/anthropic_embedded_spyware_in_claude_code_and/",
+      "source": "Hacker News（轉載自 r/ClaudeAI）",
+      "time": "07/02 11:29",
+      "sentiment": "",
+      "body": "一則 Reddit 貼文（經 Hacker News 轉載）詳細描述作者透過逆向工程 Claude Code 二進位檔，發現自 2.1.91 版起程式會檢查使用者是否透過代理連線、代理是否指向中國網域、是否關聯中國 AI 實驗室，並將判斷結果隱藏地寫入 system prompt 回傳伺服器，作者並指控 Anthropic 刻意混淆該段程式碼以規避發現。文章同時提到 2.1.196 版起代理模式下 remote control 功能被停用。此為社群單方技術調查，尚無 Anthropic 官方回應，建議持續追蹤後續查證與官方說法。",
+      "focusTags": [
+        "[風險警示]"
+      ]
+    }
+  ],
   "techUpdates": [],
-  "discussions": [],
-  "billing": [],
+  "discussions": [
+    {
+      "title": "Claude Code started to use timeout on AskUserQestion tool. Does that bother you?",
+      "url": "https://www.reddit.com/r/ClaudeAI/comments/1ulh0ic/claude_code_started_to_use_timeout_on/",
+      "source": "Reddit / r/ClaudeAI",
+      "time": "07/02 04:34",
+      "sentiment": "😤 負面",
+      "body": "使用者發現若未在時限內回答，Claude Code 會自動代答並繼續執行（60 秒逾時），此變更早已存在（對應 GitHub issue #30740）但今日才被多人注意到，部分使用者認為破壞了原本「決策分岔點詢問」的體驗。",
+      "focusTags": [
+        "[社群趨勢]"
+      ]
+    },
+    {
+      "title": "Anthropic testing on my live, paid for product?",
+      "url": "https://www.reddit.com/r/ClaudeAI/comments/1ulg0ip/anthropic_testing_on_my_live_paid_for_product/",
+      "source": "Reddit / r/ClaudeAI",
+      "time": "07/02 03:49",
+      "sentiment": "😤 負面",
+      "body": "一則貼文貼出 Claude Code 疑似回傳的內部「Flagging note」提示文字，暗示工具結果被動態插入未公開的系統訊息，使用者質疑此舉侵犯付費產品的透明度。",
+      "focusTags": []
+    },
+    {
+      "title": "Something important was lost between Sonnet 4.6 and Sonnet 5 and it's not about intelligence",
+      "url": "https://www.reddit.com/r/ClaudeAI/comments/1ulf5xc/something_important_was_lost_between_sonnet_46/",
+      "source": "Reddit / r/ClaudeAI",
+      "time": "07/02 03:06",
+      "sentiment": "😐 中性",
+      "body": "多位使用者反映 Sonnet 5 雖然智力提升，但互動時失去 Sonnet 4.6 原有的語氣與節奏感，形容為「不再有自己的角色」。",
+      "focusTags": []
+    },
+    {
+      "title": "New record?",
+      "url": "https://www.reddit.com/r/ClaudeAI/comments/1ulhy0e/new_record/",
+      "source": "Reddit / r/ClaudeAI",
+      "time": "07/02 05:13",
+      "sentiment": "😊 正面",
+      "body": "使用者分享用 subagent 拆分工作，使單一 Claude Code session 累積用量達 3.9 億 tokens，凸顯 subagent 架構讓長任務不再受限於 200K context window。",
+      "focusTags": []
+    },
+    {
+      "title": "I'm opening VSCode less and less every day",
+      "url": "https://news.ycombinator.com/item?id=48754232",
+      "source": "Hacker News",
+      "time": "07/01 22:56",
+      "sentiment": "🤔 思考",
+      "body": "一篇 HN 高分文章描述作者因 Claude Desktop app 的 diff 檢視體驗優於 VS Code AI 擴充套件，逐漸減少直接開啟編輯器寫程式碼，引發對「開發者是否還需要親自寫程式碼」的反思討論。",
+      "focusTags": []
+    },
+    {
+      "title": "the \"thinking...\" pause is training me to tab away and i think its quietly wrecking my focus",
+      "url": "https://www.reddit.com/r/ClaudeAI/comments/1ulfyyn/the_thinking_pause_is_training_me_to_tab_away_and/",
+      "source": "Reddit / r/ClaudeAI",
+      "time": "07/02 03:47",
+      "sentiment": "🤔 思考",
+      "body": "使用者反映 Claude 的思考停頓會誘使自己切換分頁分心，進而打斷心流，並分享用紙本筆記本手寫下一步作為因應。",
+      "focusTags": []
+    }
+  ],
+  "billing": [
+    {
+      "title": "Maximizing Efficiency with Fable until the July 7th Deadline",
+      "url": "https://www.reddit.com/r/ClaudeAI/comments/1uli8as/maximizing_efficiency_with_fable_until_the_july/",
+      "source": "Reddit / r/ClaudeAI",
+      "time": "07/02 05:25",
+      "sentiment": "",
+      "body": "Reddit 貼文提醒 Fable 5 透過訂閱方案的存取權限將於 7/7 到期，作者分享如何在期限前用 Fable 搭配 Opus subagent 分工以最大化其訂閱內的 token 使用效率。",
+      "focusTags": []
+    },
+    {
+      "title": "Claude truly has the worst customer support out of nearly all tech companies",
+      "url": "https://www.reddit.com/r/ClaudeAI/comments/1uliph2/claude_truly_has_the_worst_customer_support_out/",
+      "source": "Reddit / r/ClaudeAI",
+      "time": "07/02 05:44",
+      "sentiment": "",
+      "body": "一名長期 Max 用戶反映將方案從 $100/月升級到 $200/月時，介面誤導使其先額外購買 $200 的 credits，事後聯繫不到客服退款管道，一個多月仍未解決，凸顯 Anthropic 客服流程的痛點。",
+      "focusTags": []
+    },
+    {
+      "title": "Partnership levels Select vs Preferred",
+      "url": "https://www.reddit.com/r/ClaudeAI/comments/1ulj6r4/partnership_levels_select_vs_preferred/",
+      "source": "Reddit / r/ClaudeAI",
+      "time": "07/02 06:03",
+      "sentiment": "",
+      "body": "使用者詢問 Anthropic 企業認證的 Select 與 Preferred 合作層級差異，反映此分級資訊目前對外不夠透明。",
+      "focusTags": []
+    }
+  ],
   "focus": [
     {
       "tag": "[重大事件]",
@@ -50,5 +158,5 @@
     }
   ],
   "sourceStatus": [],
-  "preview": ""
+  "preview": "Anthropic just redeployed Fable 5 globally. Here is everything that changed (and why your coding prompts might get rerouted to Opus 4.8)."
 }

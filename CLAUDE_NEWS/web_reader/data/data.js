@@ -1341,6 +1341,21 @@ window.WIKI_DATA = {
       }
     },
     {
+      "id": "model-comparison",
+      "pageType": "topic",
+      "name": "Claude 模型選型對照",
+      "entityType": "",
+      "status": "ongoing",
+      "domain": "",
+      "pill": "active",
+      "firstSeen": "",
+      "startDate": "2026-07-02",
+      "lastUpdated": "2026-07-02",
+      "lastNewsUpdate": "2026-07-02",
+      "summary": "本頁回答一個問題：**「我該用哪個 Claude 模型？」** 各模型的深度資訊（爭議、時序、已知問題）在各自的 entities 頁；本頁只做橫向對照與情境推薦，模型陣容變化時同步更新。",
+      "latestHeadline": "本頁回答一個問題：「我該用哪個 Claude 模型？」 各模型的深度資訊（爭議、時序、已知問題）在各自的 entities 頁；本頁只做橫向對照與情境推薦，模型陣容變化時同步更新。"
+    },
+    {
       "id": "official-community-gap",
       "pageType": "topic",
       "name": "官方功能 vs 社群痛點缺口分析",
@@ -1375,8 +1390,8 @@ window.WIKI_DATA = {
     {
       "date": "2026-07-02",
       "articleCount": 50,
-      "preview": "",
-      "topCount": 0
+      "preview": "Anthropic just redeployed Fable 5 globally. Here is everything that changed (and why your coding prompts might get rerouted to Opus 4.8).",
+      "topCount": 2
     },
     {
       "date": "2026-07-01",

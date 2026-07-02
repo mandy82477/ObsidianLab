@@ -12,6 +12,8 @@
 | `wiki/entities/opus-4-8.md` | Opus 4.8 能力更新、評測新資料 |
 | `wiki/entities/opus-4-7.md` | Opus 4.7 後續、思考深度議題 |
 | `wiki/entities/mythos.md` | Mythos 漏洞更新、安全模型動態 |
+| `wiki/entities/sonnet-5.md` | Sonnet 5 動態、評測、預設模型變化 |
+| `wiki/topics/model-comparison.md` | 任一模型發布/下線/狀態/定價/預設變更（見下方同步規則）|
 
 > `wiki/entities/pricing.md` 由**商業記者主責**（見 `.claude/rules/wiki-ingest-commercial.md`）。模型記者遇模型定價時，將定價細節留給商業記者，僅在模型頁記能力並加 wikilink 至 pricing。
 
@@ -28,6 +30,8 @@
 **版本號：** 模型版本號視為元資訊（`entities/` 標頭），不另建頁面。若版本迭代有重大能力差異，加入 `## 歷史記錄` 條目。
 
 **定價歸屬：** 模型本身（能力、評測）進模型頁；定價細節進 `wiki/entities/pricing.md`（**商業記者主責**，模型記者不直接維護該頁）。同一事件有兩面向時，模型記者記能力面、商業記者記定價面，互相加 wikilink。
+
+**選型對照同步 `[加入: 2026-07-02]`：** `wiki/topics/model-comparison.md` 是「我該用哪個模型」的單一入口。任一模型發布/下線/狀態/定價/Claude Code 預設變更時，除更新該模型頁外，**必須同步更新對照頁的快速選型表與情境推薦**；深度細節仍留在各模型頁，對照頁只放一行式結論。此項納入回報的「同步自查」欄。
 
 ---
 
