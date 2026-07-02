@@ -352,8 +352,11 @@
     const totalPages = (data.entities?.length || 0) + (data.topics?.length || 0);
     const _d = new Date(); const today = `${_d.getFullYear()}-${String(_d.getMonth()+1).padStart(2,'0')}-${String(_d.getDate()).padStart(2,'0')}`;
 
-    const lastUpdated = data.radar?.lastUpdated
-      || (data.digestIndex || []).slice().sort((a, b) => b.date.localeCompare(a.date))[0]?.date
+    // Prefer the latest daily digest date — that reflects actual pipeline freshness.
+    // feature-radar's own lastUpdated is a fallback only (radar page may go untouched
+    // on days with no new feature, which would otherwise show a stale date here).
+    const lastUpdated = (data.digestIndex || []).slice().sort((a, b) => b.date.localeCompare(a.date))[0]?.date
+      || data.radar?.lastUpdated
       || today;
     const subEl = $('#wiki-sub');
     if (subEl) subEl.textContent = `最後更新：${lastUpdated} · 共 ${totalPages} 個頁面`;
