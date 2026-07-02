@@ -3,6 +3,26 @@
 Append-only 紀錄。每次 ingest、query 或 lint 都在此追加一條。
 格式：`## [YYYY-MM-DD] 類型 | 說明`
 
+## 2026-07-02 Ingest | news/2026-07-02.md（50 則）
+
+- 來源日報：`news/2026-07-02.md`（50 則，6/6 來源；GitHub 因 rate limit 回傳 0 筆但來源本身正常；Reddit RSS 部分 429 仍取得 20 則；全部為 community 類別，無 official 條目）
+- 核心事件：Fable 5 redeploy 隨附「Defense in Depth」新安全分類器（高風險 coding 請求 fallback 至 Opus 4.8，首日已有誤判負面實測）、Claude Code 中國代理偵測爭議升級為「embedded spyware」指控（版本號 2.1.91、混淆手法、system prompt 隱藏機制，社群單方指控待查證）、Sonnet 5 官方對比圖表修改爭議、Anthropic-Samsung 客製晶片洽談（初步報導）、Palantir CEO Karp 批評 Anthropic/OpenAI「竊取客戶 IP」
+- 更新頁面：
+  - `wiki/entities/fable-5.md`：Defense in Depth 機制、化學問答/資安審查誤判實測
+  - `wiki/entities/sonnet-5.md`：對比圖表爭議、Sonnet 4.6→5 個性流失社群回饋
+  - `wiki/entities/pricing.md`：Max 方案升級誤扣費/客服退款爭議案例
+  - `wiki/topics/ai-agent-safety.md`：中國代理偵測爭議升級（技術細節補充，維持「待查證」標註）
+  - `wiki/topics/anthropic-government-policy.md`：Fable 5 Defense in Depth 作為出口管制解除後承諾首次具體落實
+  - `wiki/topics/anthropic-business.md`：Anthropic-Samsung 晶片洽談、Blackstone 基金報導（皆標「初步報導，細節待補」）、Palantir Karp 批評事件
+  - `wiki/topics/competitor-landscape.md`：Palantir Karp 批評 + 分析師調升評等
+  - `wiki/topics/community-tech-discussions.md`：新增 VS Code 使用率下降、AskUserQuestion 60 秒逾時、390M tokens 紀錄、thinking 停頓分心、Anthropic testing on live product 等 5 條中熱度討論
+  - `wiki/topics/community-tech-patterns.md`：新增氛圍狀態燈（hooks 驅動實體 LED）模式
+- feature-radar 新增：無（今日無 official 條目，Fable 5/Sonnet 5 既有熱度已達上限，本週推薦未變）
+- index.md 狀態變更：無（近期異動區塊已更新）
+- 新增頁面：無
+- 呈現品質審查：所有更新頁面記者回報均 ✅ 通過
+- 備註：社群記者 agent 在完成 community-tech-discussions.md / community-tech-patterns.md 實際編輯後，兩次收尾回覆退化為觀察性文字而非標準回報格式，經主編兩次 SendMessage 催促後確認编輯已完整落地（git diff 驗證），內容品質正常
+
 ## 2026-06-28 Ingest | news/2026-06-28.md（48 則）
 
 - 來源日報：`news/2026-06-28.md`（48 則，6/6 來源；Reddit 429 rate limit 部分失敗；全部為 community 類別，無 official 條目）

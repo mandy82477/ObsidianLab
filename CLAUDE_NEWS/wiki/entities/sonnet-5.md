@@ -4,11 +4,11 @@
 **狀態：** active（正式發布）
 **領域：** 🤖 模型
 **首次出現：** 2026-07-01
-**最後更新：** 2026-07-01
-**最後新聞更新：** 2026-07-01
+**最後更新：** 2026-07-02
+**最後新聞更新：** 2026-07-02
 
-> **最新動態**（2026-07-01）
-> Claude Sonnet 5 正式發布，定位為最 agentic 的 Sonnet 模型（[Anthropic Blog](https://www.anthropic.com/news/claude-sonnet-5)）。效能接近 Opus 4.8，促銷定價 $2/$10 per Mtok 至 2026-08-31。Claude Code v2.1.197 已將 Sonnet 5 設為預設模型，社群稱之為「cost reset for AI agents」。
+> **最新動態**（2026-07-02）
+> 發布次日出現兩則爭議性回饋（皆屬主觀/分析性質，非量化評測）：HN 一篇分析文章指 Anthropic 修改了官方對比圖表（原版本讓 Sonnet 5 表現不佳），引發資料呈現可信度討論（score 3，訊號弱）；同時 Reddit 多位使用者反映 Sonnet 5 雖智力提升，但互動個性/語氣不如 Sonnet 4.6。
 
 ---
 
@@ -60,6 +60,11 @@ claude --model claude-sonnet-5-20260701
 
 **待驗證：** 社群評測提及 Sonnet 5 在 Terminal-Bench 2.1（2026-06）leaderboard 有排名，且「#1 仍為外界無法取用的型號」，但缺乏具體名次數字與來源連結，暫不列為已確認核心能力。
 
+## 爭議
+
+- ⚠️ **官方對比圖表遭質疑修改（2026-07-02，待核實）**：分析文章指出 Anthropic 修改了官方 Sonnet 5 對比圖表，該圖表原版本呈現 Sonnet 5 表現較差（[vincentschmalbach.com](https://www.vincentschmalbach.com/anthropic-changed-sonnet-5-chart-after-it-made-sonnet-look-bad/)，HN score 3）；HN score 3 訊號極弱，且原文未提供修改前後圖表對照的完整存檔連結，暫列「待核實」，不寫成定論
+- ⚠️ **個性/語氣不如 Sonnet 4.6（主觀回饋）**：Reddit 多位使用者反映 Sonnet 5 智力提升但互動個性流失——Sonnet 4.6 原本較有個性、懂得對話節奏、簡短回應精準，Sonnet 5 感覺更像通用「help」助手而非有特色的對話夥伴（[Reddit r/ClaudeAI](https://www.reddit.com/r/ClaudeAI/comments/1ulf5xc/something_important_was_lost_between_sonnet_46/)）；屬主觀體驗回饋，非量化評測，與 Fable 5「失去靈魂」討論（見 [[entities/fable-5]] 爭議區）呈現類似的世代模型「個性 vs 能力」取捨模式（推論）
+
 ## 相關議題
 
 - [[entities/fable-5]] — 現任最高階公開模型；Sonnet 5 為次階平衡選項，定位差異見上方「現況」
@@ -73,6 +78,11 @@ claude --model claude-sonnet-5-20260701
 - [[news/2026-07-01]]
 
 ## 歷史記錄
+
+### 2026-07-02
+**發布次日爭議：圖表可信度質疑 + 個性流失回饋**：
+- **官方圖表修改爭議（待核實）**：HN 文章指控 Anthropic 修改官方 Sonnet 5 對比圖表，原版本讓 Sonnet 5 表現不佳（[vincentschmalbach.com](https://www.vincentschmalbach.com/anthropic-changed-sonnet-5-chart-after-it-made-sonnet-look-bad/)），HN score 3 訊號弱，尚待更多獨立來源佐證
+- **個性流失回饋**：Reddit 多位使用者反映 Sonnet 5 相較 Sonnet 4.6 智力提升但互動個性/語氣弱化，感覺更通用化（[Reddit](https://www.reddit.com/r/ClaudeAI/comments/1ulf5xc/something_important_was_lost_between_sonnet_46/)），屬主觀體驗，非量化評測
 
 ### 2026-07-01
 **正式發布**：Claude Sonnet 5 正式上線，定位最 agentic Sonnet。效能接近 Opus 4.8，促銷定價 $2/$10 per Mtok 至 2026-08-31。Claude Code v2.1.197 設為預設模型。Terminal-Bench 2.1（2026-06）有明確排名；社群稱「cost reset for AI agents」（多篇社群評測，待具體 benchmark 連結補充）。

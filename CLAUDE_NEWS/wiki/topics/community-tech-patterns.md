@@ -3,11 +3,11 @@
 **狀態：** monitoring
 **領域：** 🌐 社群
 **開始日期：** 2026-04-25
-**最後更新：** 2026-07-01
-**最後新聞更新：** 2026-07-01
+**最後更新：** 2026-07-02
+**最後新聞更新：** 2026-07-02
 
-> **最新工作流模式**（2026-07-01）
-> 兩個模式更新：Claude Code 動態工作流與 1000 subagents fan-out 新興模式——dev.to 有具體教學，大規模子代理並行派發正在從理論走向實作；Git worktree 多 agent 並行獲新佐證教學；企業「穴居人模式」降本（OpenAI、Nvidia、GitHub 開發者已採用）獲 404 Media 媒體報導確認，與 Caveman Skill 65% 降耗實測互相印證。
+> **最新工作流模式**（2026-07-02）
+> 新增「氛圍狀態燈」：ESP32 + WS2812 LED 燈條搭配 hooks，將 agent 狀態（執行中/需輸入/完成/失敗）以實體燈光顏色呈現，屬 hooks 驅動環境副作用子類別的新案例（與既有 Adrafinil 螢幕喚醒模式並列）。07-01 更新：Claude Code 動態工作流與 1000 subagents fan-out 新興模式、Git worktree 多 agent 並行新佐證教學、企業「穴居人模式」降本獲媒體確認。
 
 ---
 
@@ -26,7 +26,7 @@
 | **Multi-agent 架構** | Claude Squad、Speculative Parallelism | ✅ 成熟 | orchestrator 分派 + 獨立 git worktree，防答案塌縮 |
 | **Skills 設計** | 知識框架化、流程 skill 化 | ✅ 成熟 | description 自動觸發，將書籍/流程封裝為可複用 skill |
 | **CLAUDE.md 管理** | 精簡規則策略、Self-improving Rules、防腐爛機制 | ✅ 成熟 | 以「規則」非「建議」撰寫，CI 攔截違反架構 PR |
-| **Hooks 與自動化** | PostToolUse 稽核、Git Hooks 品質門、/goal Fire-and-Forget、deploy/migration 保護、Pre-completion Hook、Stop Hook 音效通知、Hooks 環境感知條件觸發（Adrafinil） | ✅ 成熟 | 強制執行 > CLAUDE.md 建議；Stop Hook 要求可驗證完成證明；CLAUDE.md 做偏好、Hooks 做邊界；Pre-completion Hook 防模糊結束；hooks 可感知 agent 活躍狀態驅動環境副作用 |
+| **Hooks 與自動化** | PostToolUse 稽核、Git Hooks 品質門、/goal Fire-and-Forget、deploy/migration 保護、Pre-completion Hook、Stop Hook 音效通知、Hooks 環境感知條件觸發（Adrafinil、氛圍狀態燈） | ✅ 成熟 | 強制執行 > CLAUDE.md 建議；Stop Hook 要求可驗證完成證明；CLAUDE.md 做偏好、Hooks 做邊界；Pre-completion Hook 防模糊結束；hooks 可感知 agent 活躍狀態驅動環境副作用（螢幕喚醒、實體燈光顏色） |
 | **模型使用策略** | 分層模型（Sonnet + Opus）、多模型路由、Workweave Router | ⚡ 活躍 | 依任務複雜度路由，節省 60% 用量；Dragoman / Workweave 自動路由；嵌入 Claude Code / Codex / Cursor 的成本感知路由 |
 | **Token / 成本優化** | MCP Code Execution、Token Bloat 對策、本機圖資料庫索引、穴居人模式（Caveman）企業採用 | ⚡ 活躍 | HTML→Markdown 降 80% token；快取不跨 session 是費用主因；極簡輸出模式（穴居人）企業採用獲 404 Media 確認，OpenAI、Nvidia、GitHub 開發者使用 |
 | **記憶與知識管理** | ltm Core Memory Packet、本機圖資料庫、NanoBrain、OKF（物件鍵格式跨 session 記憶） | ⚡ 活躍 | 跨 session / 跨工具持久記憶；Leiden 圖譜減少 71 倍 token；OKF 標準化 agent 知識格式供團隊共用 |
@@ -51,6 +51,15 @@
 ---
 
 ## 技術彙整
+
+### 氛圍狀態燈：Hooks 驅動實體 LED 燈號提示 Agent 狀態（2026-07-02）
+
+- **核心模式：** 用 ESP32 + WS2812 LED 燈條（跑 WLED 韌體，約 $10 材料成本）搭配 Claude Code hooks，在 session 各階段觸發燈光顏色變化，將 agent 狀態從螢幕通知延伸為實體環境訊號
+- **狀態對應：** 藍色＝執行中、琥珀色呼吸＝需要輸入/授權、綠色＝完成、紅色＝失敗
+- **解決的問題：** 長時間背景執行 agent 時容易忘記回頭查看是否卡在等待輸入，實體燈光比螢幕通知更不容易被忽略，尤其適合多視窗/多螢幕工作環境
+- **與既有模式的關係：** 與 Adrafinil（hooks 感知 agent 活躍狀態決定是否保活螢幕）同屬「hooks 驅動環境副作用」子類別，差異在於 Adrafinil 作用於電腦本身（喚醒/休眠），此模式作用於外部實體裝置（LED）
+- **來源：** [Reddit r/ClaudeAI](https://www.reddit.com/r/ClaudeAI/comments/1ulgtcq/made_a_10_desk_light_that_tells_me_when_fable_is/)（07-02）
+- **成熟度：** ⏳ 新興（單一實作案例，硬體門檻使複製率偏低，但機制簡單可推廣至其他通知媒介如 Home Assistant／智慧燈泡 API）
 
 ### Claude Code 動態工作流與 1000 Subagents Fan-out（2026-07-01）
 

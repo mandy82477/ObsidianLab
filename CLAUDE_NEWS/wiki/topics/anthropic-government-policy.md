@@ -3,11 +3,11 @@
 **狀態：** monitoring（出口管制主線已解除，剩餘承諾落實與衍生支線持續觀察）
 **領域：** 🏛️ 政策/安全
 **開始日期：** 2026-05-01
-**最後更新：** 2026-07-01
-**最後新聞更新：** 2026-07-01
+**最後更新：** 2026-07-02
+**最後新聞更新：** 2026-07-02
 
-> **最新攻防紀錄**（2026-07-01）
-> 美國商務部長 Howard Lutnick 宣布解除 Fable 5 和 Mythos 5 的出口管制，2026-07-01 正式生效。Anthropic 承諾主動偵測安全風險、與政府密切合作制定協議與標準、並通報惡意活動；官方公告見 anthropic.com/news/redeploying-fable-5。NYT、BBC、CNN、Reuters、WSJ、FT、WashPost、The Guardian 全面報導（2026-07-01）。
+> **最新攻防紀錄**（2026-07-02）
+> Anthropic 於 7/1 正式恢復 Fable 5 全球存取後，Reddit 揭露此次重新部署新增「Defense in Depth」安全措施：新的資安/程式碼分類器專門攔截 cybersecurity 與 coding 高風險請求，判定為高風險時自動 fallback 至 Opus 4.8 執行；WSJ 分析指出禁令解除只是「如何馴服 AI」戰役的開始，非爭議終點；使用者實測已出現分類器誤判合法安全審查請求的負面案例。
 
 ---
 
@@ -21,15 +21,16 @@
 
 ---
 
-## 目前局勢（截至 2026-07-01）
+## 目前局勢（截至 2026-07-02）
 
 **出口管制主線已結案，以下為解除後仍待觀察的剩餘變數：**
-1. **三項承諾如何落實**——Anthropic 承諾的「主動偵測安全風險 / 合作制定標準 / 通報惡意活動」目前僅為宣示，尚無具體執行機制或查核方式公開
+1. **三項承諾如何落實**——Reddit（2026-07-02）揭露首個具體落實動作：新增「Defense in Depth」資安/程式碼分類器，對高風險 cybersecurity/coding 請求自動 fallback 至 Opus 4.8；「主動偵測安全風險」承諾首次有可觀察的技術實作，但分類器已出現誤判合法請求案例（dev.to 實測）
 2. **歐洲據點爭奪**——奧地利已向歐盟提案邀請 Anthropic 設立歐盟據點（2026-06-28），出口管制解除是否降低此動能待觀察
 3. **阿里巴巴蒸餾攻擊指控**——尚未有阿里巴巴官方回應或第三方確認，屬未結案的單一聲稱
 4. **Legion 司法挑戰**——法律訴訟已提交禁制令申請，管制解除是否使訴訟失去標的、或轉為求償仍待確認
 5. **NSA 存取權**——NSA 因爭議失去 Fable 存取權（6/23），管制解除是否恢復此存取尚未見報導
 
+- **Defense in Depth 落地（2026-07-02 新增）：** Anthropic 於 7/1 全球重新部署 Fable 5 後，新增「深度防禦」機制：部署更嚴格的資安/程式碼分類器專門偵測 cybersecurity 與 coding 高風險請求，判定為潛在高風險時自動 fallback 至 Opus 4.8 執行，而非直接拒絕或放行（Reddit r/ClaudeAI，2026-07-02；https://www.reddit.com/r/ClaudeAI/comments/1uliwhc/anthropic_just_redeployed_fable_5_globally_here/）；WSJ 分析文章同日指出解封只是「如何馴服 AI」戰役的開始（WSJ，2026-07-02；https://www.wsj.com/tech/ai/the-anthropic-fable-ban-is-over-the-battle-over-how-to-tame-ai-has-just-begun-e93f51d6）；使用者實測（dev.to，2026-07-02）反映新分類器誤判合法資安審查請求，為「深度防禦」機制上線首日即出現的負面案例
 - **管制狀態（最新，主線結局）：** Fable 5 和 Mythos 5 出口管制全面解除，2026-07-01 正式生效（宣布：2026-06-30）；商務部長 Howard Lutnick 宣布此決定，Anthropic 承諾：（1）主動偵測並解決與模型相關的安全風險、（2）與美國政府密切合作制定協議和標準、（3）通報任何惡意活動；Reddit 流出商務部完整信函；官方公告：https://www.anthropic.com/news/redeploying-fable-5（NYT；https://www.nytimes.com/2026/06/30/technology/us-lifts-restrictions-anthropic.html；BBC；https://www.bbc.com/news/articles/cdr42623e1do）
 - **談判主導權易手：** Wired 報導（2026-06-24）Trump 白宮對 Dario Amodei 態度趨冷，已由聯合創辦人 Tom Brown 接管與白宮的談判會議；白宮內部評語：「Tom Brown is not being a weirdo like Dario and can actually engage」；Dario 被逐出核心談判桌，為 Anthropic 內部重大策略調整
 - **EU 介入升格：** 歐盟已就 Mythos 模型出口管制與白宮展開直接對話；事件從美國內政議題升格為跨大西洋科技外交，盟友壓力管道正式開通
@@ -115,6 +116,7 @@ Fable 5 發布後，Amazon 安全研究人員發現特定提示詞可讓模型�
 
 | 日期 | 方 | 動作 | 效果 |
 |------|----|------|------|
+| 2026-07-02 | 🏢 | Anthropic 為 7/1 重新部署的 Fable 5 新增「Defense in Depth」機制：新資安/程式碼分類器對高風險 cybersecurity/coding 請求自動 fallback 至 Opus 4.8（Reddit r/ClaudeAI）；WSJ 分析：解封只是「馴服 AI」戰役的開始（WSJ） | 「主動偵測安全風險」承諾首次有可觀察的技術落實；但使用者實測（dev.to）已出現分類器誤判合法請求案例，顯示落實品質仍待觀察 |
 | 2026-07-01 | 🏛️ | 商務部長 Lutnick 宣布解除 Fable 5 / Mythos 5 全部出口管制，2026-07-01 生效；Anthropic 承諾三項義務（偵測安全風險 / 合作制定標準 / 通報惡意活動）（NYT、BBC、CNN、Reuters、WSJ、FT、WashPost、The Guardian） | 6/13 全面封鎖以來最重大結局；封鎖期 18 天；Reddit 流出商務部完整信函；「Anthropic 承諾換解封」成為先例，三項承諾將成未來 AI 出口管制談判的參照框架 |
 | 2026-06-30 | 🌐 | Fortune 深度報導：Anthropic 因拒絕配合 Trump 政府遊戲規則而付出代價，與其他配合科技巨頭形成對比（Fortune） | 主流財經媒體首次系統性定性 Anthropic 政治失算的商業代價；「拒絕配合玩法」vs「低頭獲利」的策略選擇成為媒體焦點 |
 | 2026-06-30 | 🌐 | CNBC：白宮 AI 打壓為中國模型廠商創造追趕機會，出口管制政策實際效果受質疑（CNBC） | 出口管制「反效」論述進入 CNBC 等主流財經媒體；與 WSJ（06/28）、Bloomberg（06/26）形成三大財經媒體共同質疑管制效果的共識 |
@@ -191,6 +193,7 @@ Fable 5 發布後，Amazon 安全研究人員發現特定提示詞可讓模型�
 
 ## 參考來源
 
+- [[news/2026-07-02]]
 - [[news/2026-07-01]]
 - [[news/2026-06-30]]
 - [[news/2026-06-29]]
@@ -207,6 +210,11 @@ Fable 5 發布後，Amazon 安全研究人員發現特定提示詞可讓模型�
 ## 時序
 
 > 2026-06-27 至 2026-07-01（解封主線最後階段）逐日事件已與上方「## 攻防紀錄」表格內容重複，此處不再重複全文，僅列出表格未涵蓋的補充細節；完整逐日敘述請查表格。
+
+### 2026-07-02（解封後續：Defense in Depth 落地）
+- **[三項承諾首次落實] 新資安分類器 + Opus 4.8 fallback**：Anthropic 為 7/1 重新部署的 Fable 5 新增「Defense in Depth」機制——新的資安/程式碼分類器專門偵測 cybersecurity 與 coding 高風險請求，判定為潛在高風險時自動 fallback 至 Opus 4.8 執行；為 7/1 解封承諾（主動偵測安全風險）首次出現具體技術實作（Reddit r/ClaudeAI，2026-07-02；https://www.reddit.com/r/ClaudeAI/comments/1uliwhc/anthropic_just_redeployed_fable_5_globally_here/；補充來源：Homeland Security Today，2026-07-01，https://www.hstoday.us/subject-matter-areas/cybersecurity/commerce-lifts-export-restrictions-on-anthropic-ai-models/）
+- **[媒體框架延續] WSJ：禁令解除是戰役的開始，不是結束**：WSJ 分析文章指出 Fable 禁令雖已解除，但「如何馴服 AI」的更大戰役才剛開始，呼應 6/30 Fortune/CNBC 媒體框架轉向的延續（WSJ，2026-07-02；https://www.wsj.com/tech/ai/the-anthropic-fable-ban-is-over-the-battle-over-how-to-tame-ai-has-just-begun-e93f51d6）
+- **[負面實測] 分類器誤判合法安全審查請求**：使用者以 Fable 5 做資安審查（security review）任務，被新分類器誤判並攔截，為「深度防禦」機制上線後首個公開的誤判案例，顯示新機制精確度尚待觀察（dev.to，2026-07-02；https://dev.to/tecnomanu/i-tried-fable-5-for-a-security-review-and-it-flagged-my-own-request-2pbn）
 
 ### 2026-07-01（重大結局，詳見攻防紀錄表格）
 - **封鎖解除背景補充**：出口管制於 2026-06-12 生效，理由為模型可能被用於嚴重網路攻擊；封鎖期共 18–19 天

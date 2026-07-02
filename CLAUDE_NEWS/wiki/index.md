@@ -2,21 +2,32 @@
 
 LLM 查詢此 wiki 時，**先讀這個檔案**找相關頁面，再讀具體頁面取得詳細資訊。
 
-**最後更新：** 2026-07-01
+**最後更新：** 2026-07-02
 ---
 
 ## 近期異動
 
-- [[entities/sonnet-5]] — 2026-07-01：**新頁面**，Claude Code v2.1.197 預設模型，1M context，$2/$10 per Mtok 促銷
-- [[entities/claude-science]] — 2026-07-01：**新頁面**，科學家專用 AI 工作台正式發布
-- [[entities/fable-5]] — 2026-07-01：**出口管制全面解除**，Pro/Max/Team 7/7 前 50% 配額，旗艦模型回歸
-- [[entities/mythos]] — 2026-07-01：出口管制解除，全球恢復存取
-- [[topics/anthropic-government-policy]] — 2026-07-01：Fable 5 / Mythos 5 出口管制全面解除，Anthropic 承諾三項義務（安全偵測/標準制定/惡意通報）
-- [[topics/ai-agent-safety]] — 2026-07-01：Claude Code 隱寫術爭議（HN 2263，同形字符替換，Anthropic 承諾修復）+ CVE-2026-55407 DoS 漏洞
-- [[entities/claude-code]] — 2026-07-01：v2.1.197 Sonnet 5 正式預設，SDK v0.115.0
-- [[entities/pricing]] — 2026-07-01：Sonnet 5 促銷 $2/$10/Mtok（至 8/31）、Fable 5 7/7 後 usage-based billing
-- [[topics/anthropic-business]] — 2026-07-01：Enterprise Gateway、Fable 5 正式協議、Amazon/Broadcom 資本市場連動
-- [[feature-radar]] — 2026-07-01：新增 Sonnet 5（🔥🔥🔥🔥🔥）、Claude Science（🔥🔥）、Fable 5 解禁
+- [[entities/fable-5]] — 2026-07-02：redeploy 隨附「Defense in Depth」新安全分類器，高風險 coding 請求 fallback 至 Opus 4.8；首日已有誤判負面實測
+- [[entities/sonnet-5]] — 2026-07-02：官方對比圖表修改爭議（HN 討論可信度）+ 社群反映對 Sonnet 4.6 個性流失的主觀回饋
+- [[topics/ai-agent-safety]] — 2026-07-02：中國代理偵測爭議升級為「embedded spyware」指控（版本號 2.1.91、混淆手法、system prompt 隱藏機制細節），社群單方指控待查證
+- [[topics/anthropic-government-policy]] — 2026-07-02：Fable 5「Defense in Depth」機制作為出口管制解除後承諾的首次具體落實
+- [[topics/anthropic-business]] — 2026-07-02：Anthropic-Samsung 客製晶片洽談（初步報導）、Blackstone 基金強勁月表現（初步報導）
+- [[topics/competitor-landscape]] — 2026-07-02：Palantir CEO Karp 公開批評 Anthropic/OpenAI「竊取客戶 IP」，分析師調升 Palantir 評等
+- [[entities/pricing]] — 2026-07-02：Max 方案升級誤扣費/客服退款爭議案例
+- [[topics/community-tech-discussions]] — 2026-07-02：VS Code 使用率下降、AskUserQuestion 60 秒逾時、390M tokens 紀錄、thinking 停頓分心等中熱度討論
+- [[topics/community-tech-patterns]] — 2026-07-02：氛圍狀態燈（hooks 驅動實體 LED 燈號提示 agent 狀態）新模式
+
+### 2026-07-01
+- [[entities/sonnet-5]]：**新頁面**，Claude Code v2.1.197 預設模型，1M context，$2/$10 per Mtok 促銷
+- [[entities/claude-science]]：**新頁面**，科學家專用 AI 工作台正式發布
+- [[entities/fable-5]]：**出口管制全面解除**，Pro/Max/Team 7/7 前 50% 配額，旗艦模型回歸
+- [[entities/mythos]]：出口管制解除，全球恢復存取
+- [[topics/anthropic-government-policy]]：Fable 5 / Mythos 5 出口管制全面解除，Anthropic 承諾三項義務（安全偵測/標準制定/惡意通報）
+- [[topics/ai-agent-safety]]：Claude Code 隱寫術爭議（HN 2263，同形字符替換，Anthropic 承諾修復）+ CVE-2026-55407 DoS 漏洞
+- [[entities/claude-code]]：v2.1.197 Sonnet 5 正式預設，SDK v0.115.0
+- [[entities/pricing]]：Sonnet 5 促銷 $2/$10/Mtok（至 8/31）、Fable 5 7/7 後 usage-based billing
+- [[topics/anthropic-business]]：Enterprise Gateway、Fable 5 正式協議、Amazon/Broadcom 資本市場連動
+- [[feature-radar]]：新增 Sonnet 5（🔥🔥🔥🔥🔥）、Claude Science（🔥🔥）、Fable 5 解禁
 
 ---
 

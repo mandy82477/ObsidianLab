@@ -3,11 +3,11 @@
 **狀態：** ongoing
 **領域：** 🏛️ 政策/安全
 **開始日期：** 2026-04-27
-**最後更新：** 2026-07-01
-**最後新聞更新：** 2026-07-01
+**最後更新：** 2026-07-02
+**最後新聞更新：** 2026-07-02
 
-> **最新安全事件**（2026-07-01）
-> 研究者發現 Claude Code 2.1.196 binary 含同形字符替換函式，疑用於隱寫標記（HN score 2263，為本頁史上最高熱度安全事件）；36Kr 進一步確認針對時區資訊及中國 AI Lab 連線者的系統提示注入機制；Anthropic 承諾修復。同日 CVE-2026-55407 披露：Anthropic Rust protobuf 函式庫 buffa 存在 DoS 漏洞，攻擊者可觸發約 22 倍記憶體放大（2026-07-01）。
+> **最新安全事件**（2026-07-02）
+> Hacker News（轉載 old.reddit.com/r/ClaudeAI，score 7）刊出社群逆向工程指控，稱 Claude Code 自 2.1.91 版（2026-04-02）起即含地緣位置偵測程式碼——偵測使用者是否位於中國、代理是否指向中國網域、是否關聯中國 AI 實驗室，並以「隱形修改 system prompt」方式回傳判斷結果，作者稱 Anthropic 在 binary 中刻意混淆此段程式碼。此為 2026-06-30 中國代理偵測事件的技術細節延伸（新增版本號、混淆手法、system prompt 隱藏機制），**仍屬社群單方指控，Anthropic 尚無官方回應，第三方資安機構亦未驗證，標記「待查證」**。
 
 ---
 
@@ -31,13 +31,15 @@
 
 2026-06-30，Reddit 社群與獨立技術部落格（vincentschmalbach.com）揭露 Claude Code 自 v2.1.91（2026-04-02）起嵌入特定程式碼，會偵測使用者是否在中國、是否使用中國 URL 代理、是否隸屬中國 AI 實驗室，並靜默傳遞此資訊；v2.1.196 進一步封鎖代理模式遠端控制；Anthropic 疑嘗試混淆（obfuscate）此段程式碼（待 Anthropic 官方確認，現為逆向工程社群聲稱）。同日，Cybernews 與 Mozilla 揭露的 prompt injection 完整接管攻擊持續獲媒體跟進（Developer Tech News、Korben），多角度確認乾淨 GitHub Repo 作為提示注入向量的攻擊可行性。
 
+2026-07-02，Hacker News 轉載社群逆向工程指控（標題直指「embedded spyware」），為 6/30 中國代理偵測事件補上更具體的技術細節：明確版本號 2.1.91、混淆手法、以及透過「隱形修改 system prompt」回傳偵測結果的具體機制；作者原透過代理混用多家模型做細緻 context 管理，因發現 2.1.196 版起 Anthropic 在偵測到代理啟用時停用 remote control 功能，觸發逆向工程調查。**此為社群單方技術指控，尚無 Anthropic 官方回應或第三方資安機構驗證，不可視為既定事實。**
+
 ---
 
 ## 目前結論
 
 - 🔴 **Claude Code 隱寫術機制：同形字符替換疑用於輸出標記（2026-07-01，Anthropic 承諾修復）**：研究者在 Claude Code 2.1.196 binary 中發現可將日期字串中撇號和分隔符替換為外觀相同 Unicode 同形字的函式，疑用於對 AI 生成文字嵌入不可見的隱寫標記（steganographic watermarking）；36Kr 報導進一步確認此機制在偵測中國 AI Lab 連線時注入系統提示；HN score 2263，為本頁最高熱度安全事件；Anthropic 承諾修補，但修補版本未知；事件研究報告：https://thereallo.dev/blog/claude-code-prompt-steganography；36Kr：https://eu.36kr.com/en/p/3876461674917892
 - ⚠️ **CVE-2026-55407：Anthropic buffa Rust protobuf DoS（Endor Labs AI SAST 發現，2026-07-01）**：Anthropic Rust protobuf 函式庫 buffa 的 unknown-field decoder 存在記憶體放大漏洞，攻擊者可透過構造 wire data 觸發約 22 倍記憶體放大，導致 OOM 崩潰（DoS）；由 Endor Labs AI SAST 引擎發現並披露（HN score 5）；修補狀態待確認（Endor Labs：https://www.endorlabs.com/learn/endor-labs-ai-sast-finds-zero-day-cve-2026-55407-buffa）
-- 🔴 **Claude Code 嵌入中國代理偵測程式碼，疑混淆處理（2026-06-30，待確認）**：Reddit 社群逆向工程發現 Claude Code 自 v2.1.91 起含有偵測使用者是否在中國、是否使用中國 URL 代理、是否隸屬中國 AI 實驗室的程式碼，並靜默傳遞此資訊；v2.1.196 進一步封鎖代理模式遠端控制；Anthropic 疑嘗試混淆此段程式碼；此事件涉及產品層隱私邊界——在使用者不知情下蒐集地理與機構資訊，性質迥異於既有安全漏洞類別；屬「模型層安全」之外的「產品層行為」爭議；Anthropic 截至 2026-06-30 無公開回應（待官方確認，現為單一社群聲稱）
+- 🔴 **Claude Code 嵌入中國代理偵測程式碼，社群指控「embedded spyware」並疑混淆處理（2026-06-30 首見，2026-07-02 技術細節延伸，待確認）**：Reddit 社群逆向工程發現 Claude Code 自 v2.1.91（2026-04-02）起含有偵測使用者是否在中國、是否使用中國 URL 代理、是否隸屬中國 AI 實驗室的程式碼，並透過「隱形修改 system prompt」方式靜默傳遞此資訊；v2.1.196 進一步封鎖代理模式遠端控制；作者稱 Anthropic 在 binary 中刻意混淆此段程式碼；HN 轉載標題直指「embedded spyware and attempted to hide it」；此事件涉及產品層隱私邊界——在使用者不知情下蒐集地理與機構資訊，性質迥異於既有安全漏洞類別；屬「模型層安全」之外的「產品層行為」爭議；**Anthropic 截至 2026-07-02 仍無公開回應，第三方資安機構亦未驗證，屬社群單方指控（待官方確認 / 待查證）**
 - 🔴 **乾淨 GitHub Repo 執行隱藏惡意程式，賦予攻擊者完整系統控制（2026-06-29 升級，2026-06-30 多媒體確認）**：Mozilla 0din 揭露（2026-06-28）後，The Decoder（2026-06-29）進一步確認 Claude Code 直接執行 GitHub repo 中隱藏惡意程式時，攻擊者可取得完整系統控制權（full system control）；未做任何驗證即執行，屬設計層面的信任邊界缺失；此向量無需入侵現有 repo、無需使用者主動互動，任何「開啟外部 repo」的工作流均為潛在暴露點；Anthropic 截至 2026-06-29 尚無公開回應
 - 🔴 **大規模組織性 AI 蒸餾攻擊成熟化（2026-06-26）**：Anthropic 指控阿里巴巴透過 25,000 個假帳號發動 2,880 萬次模型交換，顯示帳號農場作為蒸餾攻擊基礎設施已達工業規模；現有 ToS 偵測機制在如此分散的帳號規模下仍被大規模繞過（待阿里巴巴確認，現為單一聲稱）
 - 🔴 **AI Agent 進攻性濫用已達在野攻擊成熟度（2026-06-16）**：OALABS 蜜罐分析首次以 1,000+ session 日誌規模確認攻擊者使用 Claude Code 入侵 14 家企業；「低技術提示 + AI 填補細節 + guardrails 繞過」組合成立，顯示現有護欄設計在主動對抗場景下存在系統性缺口；Anthropic 截至 2026-06-20 尚無公開回應
@@ -87,13 +89,15 @@
 - **意義**：此漏洞由 AI SAST（靜態應用安全測試）工具自動發現，延續 Project Glasswing 所示的「AI 加速漏洞發現」趨勢，同時也是 Anthropic 自身 Rust 工具鏈的供應鏈安全問題首次公開披露
 - **可信度評估**：Endor Labs 為資安廠商，CVE 機制已為官方確認管道；HN score 5 顯示熱度有限；修補時程與影響範圍待 Anthropic 官方公告
 
-### Claude Code 中國代理偵測程式碼（2026-06-30 新增，待確認）
+### Claude Code 中國代理偵測程式碼（2026-06-30 新增，2026-07-02 技術細節延伸，待確認）
 
-- **揭露來源**：Reddit r/ClaudeAI（HN score 13，2026-06-30）；獨立技術部落格 vincentschmalbach.com（2026-06-30；https://www.vincentschmalbach.com/claude-code-china-router-fingerprint/）；附另一 Reddit 討論（r/ClaudeCode，https://old.reddit.com/r/ClaudeCode/comments/1ujilqt/）
+- **揭露來源**：Reddit r/ClaudeAI（HN score 13，2026-06-30）；獨立技術部落格 vincentschmalbach.com（2026-06-30；https://www.vincentschmalbach.com/claude-code-china-router-fingerprint/）；附另一 Reddit 討論（r/ClaudeCode，https://old.reddit.com/r/ClaudeCode/comments/1ujilqt/）；**2026-07-02 延伸**：Hacker News 轉載 old.reddit.com/r/ClaudeAI 貼文，標題「Anthropic embedded spyware in Claude Code – and attempted to hide it from you」（HN score 7；https://old.reddit.com/r/ClaudeAI/comments/1ujila1/anthropic_embedded_spyware_in_claude_code_and/）
 - **核心主張**：Claude Code 自 v2.1.91（2026-04-02）起嵌入偵測程式碼，靜默蒐集三項資訊：（1）使用者是否位於中國、（2）是否使用中國 URL 代理、（3）是否隸屬中國 AI 實驗室；v2.1.196 進一步封鎖代理模式遠端控制；Anthropic 疑嘗試混淆（obfuscate）此段程式碼
+- **2026-07-02 新增技術細節**：作者透過逆向工程 Claude Code 二進位檔進一步指出，程式碼檢測到代理連線後會以「隱形修改 system prompt」（covertly modifying the system prompt）的方式，將上述三項判斷結果回傳；此為 6/30 vincentschmalbach.com 分析（聚焦路由器指紋識別）之外，首次有貼文明確描述資訊回傳的具體機制（system prompt 層級注入）
+- **2026-07-02 觸發背景**：作者原本透過代理混用 GPT 與 Claude models 做細緻 context 管理；今日（7/2）發現 2.1.196 版起，Anthropic 在偵測到代理啟用時停用 remote control 功能，因而觸發作者深入逆向工程調查，進而發現上述地緣位置偵測與混淆程式碼
 - **分析視角（vincentschmalbach.com）**：深入解析 Claude Code 對中國路由器的指紋識別機制；社群指出可能透過系統提示修改或 Fable 式模型權重調整防止蒸餾；技術分析顯示此為主動識別行為，非被動日誌
 - **事件分類**：此事件屬「產品層行為」而非「模型層安全漏洞」——不涉及 RCE 或提示注入，而是工具本身的資訊蒐集行為；接近 .env SQLite 明文存儲（2026-05-19）的隱私邊界議題，但規模與意圖更具爭議性
-- **可信度評估**：現為逆向工程社群聲稱（Reddit + 個人部落格），尚無第三方資安機構或主流科技媒體確認；Anthropic 截至 2026-06-30 無公開回應；標記為「（待確認）」；矛盾詮釋並存：「spyware」（Reddit 標題用詞）vs「出口管制合規措施」（可能的官方解釋框架）
+- **可信度評估**：現為逆向工程社群聲稱（Reddit + 個人部落格 + HN 轉載），尚無第三方資安機構或主流科技媒體確認；Anthropic 截至 2026-07-02 仍無公開回應；標記為「（待查證）」；矛盾詮釋並存：「embedded spyware」（HN/Reddit 標題用詞，指控刻意隱瞞）vs「出口管制合規措施」（可能的官方解釋框架，若屬實則混淆行為仍構成透明度爭議）
 - **政策連結**：若屬實，此行為與 Anthropic 政府關係（[[topics/anthropic-government-policy]]）中的出口管制脈絡直接相關——偵測中國使用者可能是 Anthropic 對美國政府出口管制要求的技術實作；但混淆程式碼一事若屬實，顯示 Anthropic 刻意對使用者隱瞞此行為，引發透明度爭議
 - **後續進展**：2026-07-01 曝光的同形字符隱寫術機制（見下方「Claude Code 同形字符隱寫術機制」條目）經 36Kr 確認同樣「針對時區資訊及中國 AI Lab 連線者」注入系統提示，與本條目為**同一偵測基礎架構的延伸**，建議合併閱讀以掌握完整時間線
 
@@ -315,6 +319,7 @@
 
 ## 參考來源
 
+- [[news/2026-07-02]]
 - [[news/2026-07-01]]
 - [[news/2026-06-28]]
 - [[news/2026-06-26]]

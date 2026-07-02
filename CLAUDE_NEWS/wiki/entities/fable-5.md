@@ -4,17 +4,17 @@
 **狀態：** active（正式發布；出口管制已解除，2026-07-01 起全球恢復存取）
 **領域：** 🤖 模型
 **首次出現：** 2026-06-09
-**最後更新：** 2026-07-01
-**最後新聞更新：** 2026-07-01
+**最後更新：** 2026-07-02
+**最後新聞更新：** 2026-07-02
 
-> **最新進展**（2026-07-01）
-> 美國出口管制正式解除，Fable 5 與 Mythos 5 於 2026-07-01 起全球恢復存取（[Anthropic Blog](https://www.anthropic.com/news/redeploying-fable-5)）。Pro/Max/Team 方案：7/7 前每週配額 50%；之後改依用量計費（定價近期公布）。Anthropic 已與美國政府簽訂協議：主動偵測安全風險、配合標準協議、通報惡意活動。
+> **最新進展**（2026-07-02）
+> Reddit 揭露 Fable 5 redeploy 隨附「Defense in Depth」新安全措施：更嚴格的資安/程式碼請求分類器，判定高風險時自動 fallback 至 Opus 4.8。首日已有負面實測（資安審查請求被誤判攔截、化學提問被拒），與 6/11「已部分撤回」的隱性降級爭議性質不同——這次分類器行為公開可見，但誤判範圍疑似超出 coding/cybersecurity。
 
 ---
 
 ## 現況
 
-出口管制已於 2026-07-01 正式解除，Fable 5 全球恢復存取；解禁條件、計費過渡方案細節見下方「歷史記錄 2026-07-01」。
+出口管制已於 2026-07-01 正式解除，Fable 5 全球恢復存取；解禁條件、計費過渡方案細節見下方「歷史記錄 2026-07-01」。Redeploy 同步導入「Defense in Depth」新安全機制，細節與早期實測反饋見「歷史記錄 2026-07-02」。
 
 Claude Fable 5 是 Anthropic 於 2026-06-09 發布的旗艦模型，為**史上首款向大眾開放的 Mythos 級模型**。Fable 5 與 Claude Mythos 5 共用相同的模型權重，差異在於 Fable 5 前置安全分類器——觸發時靜默 fallback 至 Claude Opus 4.8（Anthropic 稱不到 5% 的 session 受影響）。
 
@@ -78,6 +78,7 @@ claude --model claude-fable-5-20260609
 - ⚠️ **Fable 5 成本高昂**：$200/月 Max 用戶一次 code review 可消耗 45% 週配額；社群回報消耗量個體差異極大
 - ⚠️ **30 天資料保留**：Bedrock 用戶數據強制離開 AWS 安全邊界，企業隱私顧慮
 - ⚠️ **「失去靈魂」討論**：部分用戶認為 Fable 5 相比 Opus 4.6 更工具性、減少人本關懷深度
+- ⚠️ **「Defense in Depth」分類器誤判（2026-07-02，新）**：redeploy 後新增的資安/程式碼請求分類器出現誤判案例——合法資安審查請求被攔截、化學問題被拒（後者待核實），攔截範圍可能超出原設計的 coding/cybersecurity 場景
 
 ## 出口管制：雙方立場
 
@@ -139,6 +140,13 @@ claude --model claude-fable-5-20260609
 - [資料保留政策](https://support.claude.com/en/articles/15425996-data-retention-practices-for-mythos-class-models)
 
 ## 歷史記錄
+
+### 2026-07-02
+**Redeploy 技術細節：「Defense in Depth」分類器 + 早期實測褒貶不一**：
+- **新安全機制**：Reddit 貼文整理 Fable 5 全球 redeploy（7/1）隨附的「Defense in Depth」措施——新增更嚴格的資安/程式碼請求分類器，一旦判定為高風險 coding/debug 請求，自動靜默 fallback 至 Opus 4.8 執行，不使用 Fable 5（[Reddit r/ClaudeAI](https://www.reddit.com/r/ClaudeAI/comments/1uliwhc/anthropic_just_redeployed_fable_5_globally_here/)）
+- **負面實測：資安審查被誤判**：dev.to 作者實測用 Fable 5 執行合法資安審查工作，遭新分類器誤判為風險請求並攔截，作者形容「flagged my own request」（[dev.to](https://dev.to/tecnomanu/i-tried-fable-5-for-a-security-review-and-it-flagged-my-own-request-2pbn)）；此案例呼應 6/11 IBM X-Force 研究員 Valentina Palmiotti 曾批評的「護欄過激」問題，顯示該爭議在新分類器上仍未解決
+- **範圍疑似擴大：化學提問也被拒**：另一則 Reddit 貼文顯示使用者詢問化學相關問題被 Fable 5 拒絕回答（「I guess not」），若屬實代表新分類器的攔截範圍可能不僅限於 coding/cybersecurity（[Reddit](https://www.reddit.com/r/ClaudeAI/comments/1ulh5he/can_you_ask_fable_anything_chemistry_related/)）；訊號來源單一，且原文未附截圖佐證，暫列「待核實」
+- **與既有爭議的關係**：本次分類器行為為可見防護（用戶知道被 fallback），不同於 6/9 發布時「靜默降級不告知」已撤回的舊爭議；但誤判率與攔截範圍是否合理，仍待更多社群案例累積判斷
 
 ### 2026-07-01
 **出口管制正式解除，全球恢復存取**：

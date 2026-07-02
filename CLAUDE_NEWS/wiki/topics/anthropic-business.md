@@ -3,11 +3,11 @@
 **狀態：** ongoing
 **領域：** 💼 商業
 **開始日期：** 2026-05-28
-**最後更新：** 2026-07-01
-**最後新聞更新：** 2026-07-01
+**最後更新：** 2026-07-02
+**最後新聞更新：** 2026-07-02
 
-> **最新動態**（2026-07-01）
-> Anthropic 與美國商務部達成正式協議，承諾主動偵測安全風險、配合標準協議、通報惡意活動，Fable 5 出口管制解除；商務長 Howard Lutnick 社群媒體公開宣布，WSJ、Bloomberg、Reuters、NYT、BBC、CNN 等主要媒體均有報導。同日新增 Enterprise Gateway，簡化企業在 AWS 和 Google Cloud 上部署 Claude Code。Fable 5 解禁推動 Amazon 和 Broadcom 股價上漲（Barron's）。
+> **最新動態**（2026-07-02）
+> The Information 報導 Anthropic 正與三星洽談代工客製 AI 晶片；Bloomberg 報導 Anthropic 帶動 Blackstone 高淨值客戶基金創最強單月表現（兩則皆僅標題可見，細節待補）。同日 Palantir CEO Alex Karp 公開批評 Anthropic/OpenAI「竊取客戶 IP、token 價值偏低」，分析師同步調升 Palantir 股票評等，凸顯 Anthropic 的 agentic 產品線已被視為對 Palantir 國防/企業業務的直接威脅（見 [[topics/competitor-landscape]]）。7/1 Anthropic 與美國商務部達成正式協議，Fable 5 出口管制全面解除，並新增 Enterprise Gateway 簡化企業在 AWS/Google Cloud 部署 Claude Code。
 
 ---
 
@@ -87,6 +87,8 @@ Simon Willison（知名開發者博主）發表文章，認為 Anthropic 與 Ope
 
 | 合作方 | 類型 | 日期 | 意義 |
 |--------|------|------|------|
+| Samsung | 晶片代工洽談（初步報導） | 2026-07-02 | The Information 報導 Anthropic 正與三星洽談代工客製 AI 晶片；僅有標題可見，尚無代工規模、金額、時程等細節，需視為初步報導待補（The Information https://www.theinformation.com/articles/anthropic-talks-samsung-manufacture-custom-ai-chip）。若屬實將是繼 Google TPU、Amazon Trainium 路線後，Anthropic 進一步自研晶片供應鏈的訊號（推論）|
+| Blackstone（私募基金）| 投資人效應（初步報導） | 2026-07-02 | Bloomberg 報導 Anthropic 帶動 Blackstone 面向高淨值客戶的基金創下最強單月表現；僅標題可見，未知是否涉及 Anthropic 股權部位或估值認列方式，需視為初步報導待補（Bloomberg https://www.bloomberg.com/news/articles/2026-07-02/anthropic-drives-strongest-month-for-blackstone-fund-for-wealthy）。與 Series H 估值 $965B 及 Apollo+Blackstone $36B 晶片債務融資（見下表）同屬 Anthropic 對私募資本市場的外溢效應（推論）|
 | AWS / Google Cloud（Enterprise Gateway）| 雲端整合 | 2026-07-01 | 新增 Enterprise Gateway，簡化企業在 AWS 和 Google Cloud 上使用 Claude Code；降低雲端企業部署門檻，有助推動 Claude Code 進入大型企業 CI/CD 環境（DevOps.com https://devops.com/anthropic-adds-enterprise-gateway-to-simplify-claude-code-access-on-aws-and-google-cloud/）|
 | 美國商務部（Fable 5 解禁協議）| 政府授權 | 2026-07-01 | Anthropic 與美國商務部達成正式協議：承諾主動偵測安全風險、配合標準協議、通報惡意活動；商務長 Howard Lutnick 社群媒體宣布解禁；WSJ、Bloomberg、Reuters、NYT、BBC、CNN、WashPost、FT 主要媒體均報導；解禁後 Amazon 和 Broadcom 股價上漲（Barron's）。商業意涵：Fable 5 全面解禁打通最高端模型商業管道，比 6/27-6/28 的選擇性解禁更廣泛（推論）|
 | Rubrik（NYSE: RBRK）| SDK 夥伴 | 2026-06-30 | 網路安全公司 Rubrik 發布 Claude Code 專用 AI agent 與安全層，強化企業環境安全防護；2026-06-09 已有 Agent Cloud 前例，本次為 Claude Code 專屬深化（Techzine https://www.techzine.eu/news/security/142561/rubrik-introduces-ai-agent-and-security-layer-for-claude-code/）|
@@ -133,6 +135,11 @@ Simon Willison（知名開發者博主）發表文章，認為 Anthropic 與 Ope
 - [[news/2026-05-13]]（The Information：定價強勢期）
 
 ## 時序
+
+### 2026-07-02
+- **[晶片代工洽談，初步報導] The Information 報導 Anthropic 正與三星洽談代工客製 AI 晶片**：僅有標題可見，尚無代工規模、金額、時程等細節。**對商業的意涵**：若屬實，代表 Anthropic 在既有 Google TPU、Amazon Trainium 算力路線外，進一步尋求自研晶片供應鏈，長期可能降低對外部雲端算力供應商的議價依賴（推論，細節待補）（The Information https://www.theinformation.com/articles/anthropic-talks-samsung-manufacture-custom-ai-chip）
+- **[私募資本外溢效應，初步報導] Bloomberg 報導 Anthropic 帶動 Blackstone 面向高淨值客戶基金創下最強單月表現**：僅標題可見，未知是否涉及 Anthropic 股權部位直接認列或間接產業信心效應。**對商業的意涵**：與 Series H $965B 估值及既有 Apollo+Blackstone $36B 晶片債務融資合作一併觀察，顯示 Anthropic 對私募資本市場的外溢效應持續（推論，細節待補）（Bloomberg https://www.bloomberg.com/news/articles/2026-07-02/anthropic-drives-strongest-month-for-blackstone-fund-for-wealthy）
+- **[競品陣營表態] Palantir CEO Alex Karp 公開批評 Anthropic 與 OpenAI「竊取客戶 IP，token 價值偏低」**：HN 討論串（score 16）猜測此番言論與 Fable/Mythos 重新發布同日、OpenAI 開始更直接與 Palantir 競爭國防業務有關；同日 Investor's Business Daily 報導分析師調升 Palantir 股票評等，背景涉及與 Anthropic/OpenAI 在國防/企業市場的競爭關係。**對競爭格局的意涵**：Palantir 作為國防/企業數據平台商，其 CEO 公開表態顯示 Anthropic/OpenAI 的 agentic 產品線正被視為對 Palantir 核心業務的直接威脅，而非單純基礎設施夥伴；分析師調升評等顯示市場並未因此看空 Palantir（詳見 [[topics/competitor-landscape]]）（HN https://twitter.com/Ric_RTP/status/2072403984304984202；Investor's Business Daily https://www.investors.com/news/technology/palantir-stock-upgrade-buy-valuation-anthropic-openai/）
 
 ### 2026-07-01
 - **[Fable 5 出口管制全面解除 + 商務部正式協議] Anthropic 與美國商務部達成協議，Fable 5 出口管制正式解除**：Anthropic 承諾主動偵測安全風險、配合標準協議、通報惡意活動；商務長 Howard Lutnick 在社群媒體公開宣布解禁；WSJ、Bloomberg、Reuters、NYT、BBC、CNN、WashPost、FT 等主要媒體同步報導。**對商業的意涵**：比 6/27-6/28 選擇性解禁更大範圍的管制解除，Fable 5 最高端模型商業管道全面打通；Amazon 和 Broadcom 股價因此上漲（Barron's https://www.barrons.com/articles/amazon-stock-broadcom-anthropic-fable-mythos-0edab4a7）。商業談判承諾的安全偵測義務若未來落實有難度，可能成為再次管制的基點（推論）。（出口管制政策面見 [[topics/anthropic-government-policy]]）

@@ -4,11 +4,11 @@
 **狀態：** active（持續調整中）
 **領域：** 💼 商業
 **首次出現：** 2026-04-25
-**最後更新：** 2026-07-01
-**最後新聞更新：** 2026-07-01
+**最後更新：** 2026-07-02
+**最後新聞更新：** 2026-07-02
 
-> **最新計費政策異動**（2026-07-01）
-> Anthropic 宣布 Claude Sonnet 5 促銷定價：$2/Mtok 輸入、$10/Mtok 輸出，有效期至 2026-08-31；Claude Code 用戶以此定價使用新預設模型，相較 Opus 4.8 估計省 60% 成本。Fable 5 計費架構同步調整：Pro/Max/Team 2026-07-07 起由每週 50% 配額含括改為 usage-based billing；Enterprise 需聯繫帳戶主管。
+> **最新計費政策異動**（2026-07-02）
+> Reddit 熱門貼文揭露長期 Max 用戶 5 月底升級方案時遭介面誤導誤購 credits、退款客服管道一個多月未回應，直指「Claude 客服是幾乎所有科技公司中最差的」；同日另有用戶詢問企業 Select/Preferred 合作層級差異，反映分級資訊對外不透明。7/1 Anthropic 宣布 Claude Sonnet 5 促銷定價（$2/Mtok 輸入、$10/Mtok 輸出，至 2026-08-31），Fable 5 計費架構同步調整為 7/7 起 usage-based billing。
 
 ## 現況
 
@@ -92,6 +92,11 @@ Anthropic 將使用場景切分為**兩條獨立計費軌道**：
 ---
 
 ## 重要政策變動紀錄
+
+### 2026-07-02：Max 升級誤扣費案例 + 客服/退款流程爭議
+
+- **長期 Max 用戶反映升級介面誤導、退款無門**：Reddit r/ClaudeAI（score 未標，07/02 05:44 UTC）一則熱門貼文指出，長期 Max 用戶 5 月底將方案從 $100/月升級到 $200/月時，介面誤導其誤購 $200 credits（而非升級訂閱本身），事後找不到有效退款客服管道，一個多月問題未解決，貼文標題直指「Claude 客服是幾乎所有科技公司中最差的」。**對留存的意涵**：這是繼 [[topics/code-quality-decline]] 用戶退款訴求、6/16 Max 集體訴訟（見上方 6/16 條目）之後，另一起具體指向「客服/退款流程缺失」而非「模型能力」的留存風險案例；升級付費流程的 UX 缺陷若造成非自願扣費，可能加劇既有集體訴訟的輿論壓力（推論）（Reddit https://www.reddit.com/r/ClaudeAI/comments/1uliph2/claude_truly_has_the_worst_customer_support_out/）
+- **企業合作層級（Select vs Preferred）資訊不透明**：同日 Reddit r/ClaudeAI 另有使用者詢問 Anthropic 企業認證 Select 與 Preferred 合作層級的具體差異（純提問，無官方或社群解答內容）；此分級用語亦見於 [[topics/anthropic-business]] 6/30 DataArt「精選（Select）合作夥伴」條目，但兩層級的權益/門檻差異目前無公開資料，待補充（Reddit https://www.reddit.com/r/ClaudeAI/comments/1ulj6r4/partnership_levels_select_vs_preferred/）
 
 ### 2026-07-01：Claude Sonnet 5 促銷定價 + Fable 5 計費架構調整
 

@@ -3,11 +3,11 @@
 **狀態：** monitoring
 **領域：** 💼 商業
 **開始日期：** 2026-04
-**最後更新：** 2026-07-01
-**最後新聞更新：** 2026-06-29
+**最後更新：** 2026-07-02
+**最後新聞更新：** 2026-07-02
 
-> **最新競品動態**（2026-06-29）
-> AI 新創 Lindy CEO 將 100% 流量從 Claude 切換至 DeepSeek，每月省下數百萬美元——這是「DeepSeek 性價比勝出」在具名 API 客戶層的最大規模實例（CNBC 2026-06-26/29，HN score 3）。4 位 Google 資深研究員轉投 Anthropic，Gemini 3.5 Pro 據報延期至七月（推論，dev.to 報導，未經 Google 官方確認）。
+> **最新競品動態**（2026-07-02）
+> Palantir CEO Alex Karp 公開批評 Anthropic 與 OpenAI「竊取客戶 IP，token 價值偏低」（HN score 16），討論串猜測與 Fable/Mythos 重新發布同日、OpenAI 更直接競爭 Palantir 國防業務有關；同日分析師調升 Palantir 股票評等，反映市場並未因 Anthropic/OpenAI 的 agentic 攻勢看空 Palantir。此前 6/29：AI 新創 Lindy CEO 將 100% 流量從 Claude 切換至 DeepSeek，每月省下數百萬美元——「DeepSeek 性價比勝出」在具名 API 客戶層的最大規模實例（CNBC，HN score 3）。
 
 ---
 
@@ -135,6 +135,9 @@ Claude Code 已成為 AI 輔助編碼的標竿產品，但競爭正快速升溫�
 ---
 
 ## 時序
+
+### 2026-07-02
+- **[國防/企業數據平台商表態] Palantir CEO Alex Karp 公開批評 Anthropic 與 OpenAI「竊取客戶 IP，token 價值偏低」**：HN 討論串（score 16）猜測此番言論時間點恰逢 Fable/Mythos 重新發布同日，且與 OpenAI 開始更直接與 Palantir 競爭國防業務有關。同日 Investor's Business Daily 報導分析師調升 Palantir 股票評等，背景涉及與 Anthropic/OpenAI 在國防/企業市場的競爭關係。**對競爭格局的意涵**：Palantir 作為企業數據整合與國防 AI 平台商，其 CEO 公開表態顯示 Anthropic/OpenAI 的 agentic 產品線正被其視為對核心業務的直接威脅而非單純基礎設施合作夥伴；分析師調升評等顯示市場評估 Palantir 在此競爭下仍具韌性（推論）（HN https://twitter.com/Ric_RTP/status/2072403984304984202；Investor's Business Daily https://www.investors.com/news/technology/palantir-stock-upgrade-buy-valuation-anthropic-openai/；詳見 [[topics/anthropic-business]]）
 
 #### 亞洲競品崛起與定價顛覆（2026-06-19 至 2026-06-29）
 

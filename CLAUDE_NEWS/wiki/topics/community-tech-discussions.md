@@ -3,11 +3,11 @@
 **狀態：** ongoing
 **領域：** 🌐 社群
 **開始日期：** 2026-04-25
-**最後更新：** 2026-07-01
-**最後新聞更新：** 2026-07-01
+**最後更新：** 2026-07-02
+**最後新聞更新：** 2026-07-02
 
-> **最熱討論**（2026-07-01）
-> Claude Code 隱寫術事件（HN 2263）：研究者發現 Claude Code binary 以同形字符將時區等元資料隱寫進輸出文字，社群強烈反應，視為信任危機；Anthropic 尚未正式回應。Claude Code 成本暴漲（HN 53）：用戶回報費用 5x 暴增，Reddit 有開發者單月花費 $62,021，跨平台持續延燒。
+> **最熱討論**（2026-07-02）
+> Claude Code 隱寫術事件（HN 2263，07-01）：研究者發現 Claude Code binary 以同形字符將時區等元資料隱寫進輸出文字，社群強烈反應，視為信任危機；Anthropic 尚未正式回應。Claude Code 成本暴漲（HN 53，07-01）：用戶回報費用 5x 暴增，Reddit 有開發者單月花費 $62,021，跨平台持續延燒。07-02 新增多則中等熱度討論：VS Code 使用率下降（HN 18）、AskUserQuestion 60 秒逾時爭議、390M tokens session 紀錄、thinking 停頓分心問題，均為單日單來源，尚未形成跨平台延燒。
 
 ---
 
@@ -102,6 +102,11 @@ MCP 的實際成本遠超多數使用者預期，已有多個量化案例：
 
 | 討論主題 | 首見 | 熱度 | 模式 | 核心論點 | 衍生 |
 |---------|------|------|------|---------|------|
+| VS Code 使用率下降：Claude Desktop diff 體驗取代編輯器 | 2026-07-02 | 🔥 | ☄️閃現 | HN 文章（score 18）：資深開發者描述隨 Claude Desktop app diff 檢視體驗優化，逐漸減少直接開啟 VS Code 寫程式碼，只在需要仔細審查時切回編輯器；引發「開發者是否還需要親自寫程式碼、多數時間其實在讀程式碼」的反思討論；[原文](https://news.ycombinator.com/item?id=48754232)（HN） | — |
+| Anthropic 疑似在付費正式環境動態插入未公開系統訊息 | 2026-07-02 | 🔥 | ☄️閃現 | Reddit 貼文（HN 轉載）貼出 Claude Code 疑似回傳的內部「Flagging note」提示文字（如偵測到 pom.xml 被修改，附帶「不要告訴使用者」等隱藏指示），質疑工具結果被動態插入未公開系統訊息，侵犯付費產品透明度；單一貼文，尚無其他來源交叉驗證；[Reddit 原帖](https://www.reddit.com/r/ClaudeAI/comments/1ulg0ip/anthropic_testing_on_my_live_paid_for_product/)（Reddit r/ClaudeAI；無社群延燒） | — |
+| Claude Code AskUserQuestion 60 秒逾時自動代答引發體驗爭議 | 2026-07-02 | 🔥 | ☄️閃現 | Reddit 貼文指出 Claude Code 互動詢問（AskUserQuestion）新增 60 秒逾時，逾時未答會自動代答繼續執行；此變更早已存在（[GitHub issue #30740](https://github.com/anthropics/claude-code/issues/30740)）但今日才被大量注意到；部分使用者認為此舉破壞了「決策分岔點詢問」的體驗品質；[Reddit 原帖](https://www.reddit.com/r/ClaudeAI/comments/1ulh0ic/claude_code_started_to_use_timeout_on/)（Reddit r/ClaudeAI） | — |
+| 390M tokens 單一 session 紀錄：subagent 拆分突破 context 限制 | 2026-07-02 | 🔥 | ☄️閃現 | 使用者分享用 subagent 拆分工作方式，讓單一 Claude Code session 累積使用量達 3.9 億 tokens，凸顯 subagent 架構讓長任務不再受限於 200K context window；花費數週時間，6 月的 context reset 機制也有幫助；[Reddit 原帖](https://www.reddit.com/r/ClaudeAI/comments/1ulhy0e/new_record/)（Reddit r/ClaudeAI） | — |
+| 「thinking...」等待時間誘導分心，質疑破壞心流 | 2026-07-02 | 🔥 | ☄️閃現 | 使用者反映 Claude 思考停頓時間長度剛好足以誘使自己切換分頁分心，進而打斷心流與思路連貫性；因應方式：在旁邊放紙本筆記本，趁 Claude 思考時手寫下一步驟；[Reddit 原帖](https://www.reddit.com/r/ClaudeAI/comments/1ulfyyn/the_thinking_pause_is_training_me_to_tab_away_and/)（Reddit r/ClaudeAI） | — |
 | Claude Code 隱寫術：binary 以同形字符隱寫元資料 | 2026-07-01 | 🔥🔥🔥🔥 | ☄️閃現 | 研究者發現 Claude Code binary 以同形字符（homoglyph）將時區等系統元資料隱寫進模型輸出；HN score 2263，跨平台廣泛報導，社群強烈反應視為信任危機；引發「Anthropic has embedded hidden spyware-like code」衍生討論（HN score 54）；Anthropic 尚未正式回應；[原始研究](https://thereallo.dev/blog/claude-code-prompt-steganography)（HN + 跨平台） | — |
 | Claude Code 成本 5x 暴漲：獨立開發者單月花費 $62,021 | 2026-07-01 | 🔥🔥🔥 | ☄️閃現 | 用戶大規模回報費用無預警 5x 暴增；Reddit 出現獨立開發者單月花費 $62,021 的具名案例；社群懷疑與近期 token 計費方式或 agent 模式變更有關；多平台多用戶回報使此為成本信任議題；[原始文章](https://www.vincentschmalbach.com/claude-code-quietly-looks-5x-more-expensive/)（HN score 53） | — |
 | Claude Code 30 天自動刪除對話記錄：Anthropic 表示不修復 | 2026-07-01 | 🔥🔥 | ☄️閃現 | Claude Code 預設 30 天後自動刪除 session `.jsonl`；GitHub issue #62476 提出後 Anthropic 官方表示此為預設行為且不計畫修復；社群認為這是對用戶知識財產的無聲破壞，現有 workaround：`npx agentinit agent set claude cleanupPeriodDays 365`；[GitHub issue](https://github.com/anthropics/claude-code/issues/62476)（HN score 29） | — |
@@ -178,6 +183,13 @@ MCP 的實際成本遠超多數使用者預期，已有多個量化案例：
 ---
 
 ## 技術彙整
+
+### VS Code 使用率下降：Claude Desktop diff 體驗取代編輯器工作流（2026-07-02）
+
+- **來源：** [I'm opening VSCode less and less every day](https://news.ycombinator.com/item?id=48754232)（Hacker News，HN score 18，07-02）
+- **核心論點：** 資深開發者描述隨著 Claude Desktop app 的 diff 檢視體驗優化，逐漸減少直接開啟 VS Code 寫程式碼，改為在 Claude app 內看 diff，只在需要仔細審查時才切回編輯器
+- **關鍵回響：** 引發「開發者是否還需要親自寫程式碼、多數時間其實在讀程式碼而非寫程式碼」的討論；與既有「Claude Code 終端機優先設計哲學」（2026-06-20）呼應，顯示介面選擇的重心持續從傳統 IDE 移向 agent 原生介面
+- **收斂結論：** 尚無共識；訊號來自單一 HN 帖，score 18 屬中等關注度，未見大量跟進討論（推論：此為漸進式介面遷移的個人觀察，非明確趨勢轉折點）
 
 ### Claude Code 隱寫術：同形字符隱寫元資料的信任危機（2026-07-01）
 
