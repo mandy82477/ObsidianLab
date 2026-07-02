@@ -78,6 +78,7 @@ argument-hint: [YYYY-MM-DD]
 - 依 `.claude/rules/wiki-ingest-features.md` 的條目格式寫入「最新功能」區塊
 - 同步更新全覽表的熱度與試用價值
 - 依 `.claude/rules/wiki-ingest-features.md`「本週推薦自動更新規則」覆寫 `## ⭐ 本週推薦` section
+- 依 `.claude/rules/wiki-ingest-features.md`「升版風險自動更新規則」更新 `## ⚠️ 升版風險` section
 
 **`wiki/index.md`**
 - 彙整所有記者回報的 `index.md 狀態變更` 欄位，逐一更新
