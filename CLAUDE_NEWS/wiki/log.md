@@ -2310,3 +2310,21 @@ Append-only 紀錄。每次 ingest、query 或 lint 都在此追加一條。
 - 使用者決定 `community-tech-patterns.md`（834行）、`community-tech-discussions.md`（937行）**維持現狀不拆分**
 - 修正頁面：23 個（entities 10 / topics 13）
 - 記憶更新：新增 feedback memory `feedback_entity_status_crosscheck.md`（改實體狀態需 grep 全檔案）
+
+## 2026-07-02 可讀性掃描
+
+- 掃描頁數：41（✅ 30 / ⚠️ 10 / ❌ 1）
+- 已修復：
+  - `topics/ai-agent-safety`（❌→修復：摘要 10 段文字牆壓為 2 段、目前結論 19 條改表格、時序補 06-22 條目）
+  - `topics/anthropic-government-policy`（目前局勢 17 條長 bullet 改「剩餘變數」表格、摘要降至 2 段）
+  - `entities/mythos`（現況收斂 2 段、時序 24 條按管制三階段分組）
+  - `entities/fable-5`（現況刪 5 段過期「最新（待核實）」段落、歷史記錄 20 條按三階段分組）
+  - `entities/managed-agents`（現況 8 段錯亂日期收斂為 2 段，與歷史記錄去重）
+  - `entities/claude-code`（現況 15 行巨型段落拆 4 短段、去重）
+  - `entities/pricing`（政策紀錄 36 條按 5 主題分組，零殘留未分組日期）
+  - `topics/anthropic-business`（06-14 以前時序按 IPO/Partner 主題彙整、指標表標註數據截至 05-29）
+  - `topics/competitor-landscape`、`topics/enterprise-cost-management`（凍結指標表標註「數據截至」）
+  - `topics/community-tech-patterns`、`topics/community-tech-discussions`（技術彙整 89+94 條月份分組，條目零遺失）
+  - H1 改名：patterns「社群實戰模式庫」、pattern-trends「社群趨勢觀察（週更）」；index 狀態欄砍字
+- 使用者跳過：official-community-gap H1（使用者確認 callout 已足夠，維持原樣）
+- 共通問題：「現況被時序侵蝕」與「指標表凍結」為流程病，已補進 `.claude/rules/wiki-ingest-format.md`（必修規則 + 警示各一條）；技術彙整月份分組制寫入 `.claude/rules/wiki-ingest-community.md`

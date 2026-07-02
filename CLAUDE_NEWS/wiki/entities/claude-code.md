@@ -14,7 +14,13 @@
 
 ## 現況
 
-最新版本 **v2.1.197**（2026-07-01）正式將 Claude Sonnet 5 設為 Claude Code 預設模型，原生支援 1M token context window，促銷定價至 2026-08-31。v2.1.196（2026-06-29）新增 org default model 功能：企業管理員在 org console 設定預設模型後，使用者在 `/model` 中看到「Org default」或「Role default」選項。v2.1.195（2026-06-26）新增 `CLAUDE_CODE_DISABLE_MOUSE_CLICKS` 環境變數，可在全螢幕模式下停用滑鼠點擊/拖拉/懸停（保留滾輪），並修復 hook matcher 無法匹配帶連字號識別符的 bug。v2.1.193（2026-06-25）新增 `autoMode.classifyAllShell` 設定，可將所有 Bash/PowerShell 指令統一路由至 auto-mode 分類器（先前僅任意程式碼執行模式才會路由）；另包含 auto-mode 相關改進。Anthropic 同步發表基於 2025/10–2026/04 約 40 萬個 session 的分析研究，發現人類主導規劃決策、Claude 主導執行決策，且使用者領域專業越高，Claude 每條指令完成的工作量越大。API 529 過載事件於 2026-06-21 至 06-22 連續兩波影響 Opus/Sonnet 模型，Max plan 用戶首條 prompt 即觸發 Overloaded 錯誤。Claude Code 是 Anthropic 的 AI 編碼 CLI 工具，核心能力已從程式碼助理擴展為具備全桌面自動化、多代理管理（Managed Agents）、MCP Server 整合、Hooks 機制與 AI 安全審查的完整 agent 開發平台；GitHub Stars 達 **131,000+**。Microsoft 正陸續取消內部授權轉推 GitHub Copilot CLI（見 [[topics/competitor-landscape]]）；Ramp AI Index 數據顯示 Anthropic 企業採用率首次超越 OpenAI（34.4% vs 32.3%）。
+**最新版本動態：** 最新版本 **v2.1.197**（2026-07-01）正式將 Claude Sonnet 5 設為 Claude Code 預設模型，原生支援 1M token context window，促銷定價至 2026-08-31。近期各版本的指令、旗標與設定項異動，詳見下方「最新版本」表格。
+
+**產品定位：** Claude Code 是 Anthropic 的 AI 編碼 CLI 工具，核心能力已從程式碼助理擴展為具備全桌面自動化、多代理管理（Managed Agents）、MCP Server 整合、Hooks 機制與 AI 安全審查的完整 agent 開發平台；GitHub Stars 達 **131,000+**。
+
+**官方使用研究：** Anthropic 發表基於 2025/10–2026/04 約 40 萬個 session 的分析研究，發現人類主導規劃決策、Claude 主導執行決策，且使用者領域專業越高，Claude 每條指令完成的工作量越大。
+
+**市場與競爭：** Microsoft 正陸續取消內部授權轉推 GitHub Copilot CLI（見 [[topics/competitor-landscape]]）；Ramp AI Index 數據顯示 Anthropic 企業採用率首次超越 OpenAI（34.4% vs 32.3%）。
 
 ## 熱度與試用價值
 

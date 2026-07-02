@@ -103,7 +103,7 @@ window.WIKI_DATA = {
       "startDate": "",
       "lastUpdated": "2026-07-02",
       "lastNewsUpdate": "2026-07-01",
-      "summary": "最新版本 **v2.1.197**（2026-07-01）正式將 Claude Sonnet 5 設為 Claude Code 預設模型，原生支援 1M token context window，促銷定價至 2026-08-31。v2.1.196（2026-06-29）新增 org default model 功能：企…",
+      "summary": "**最新版本動態：** 最新版本 **v2.1.197**（2026-07-01）正式將 Claude Sonnet 5 設為 Claude Code 預設模型，原生支援 1M token context window，促銷定價至 2026-08-31。近期各版本的指令、旗標與設定項異動，詳見下方「最新版本」表格。 *…",
       "latestHeadline": "v2.1.197 Sonnet 5 正式成為預設模型：Claude Code 預設切換至 Claude Sonnet 5，原生支援 1M token context window，促銷定價至 2026-08-31；使用者升版後無需手動切換即享受完整 1M context（見 [Release](https://gith"
     },
     {
@@ -193,8 +193,8 @@ window.WIKI_DATA = {
       "startDate": "",
       "lastUpdated": "2026-07-02",
       "lastNewsUpdate": "2026-07-02",
-      "summary": "出口管制已於 2026-07-01 正式解除，Fable 5 全球恢復存取；解禁條件、計費過渡方案細節見下方「歷史記錄 2026-07-01」。Redeploy 同步導入「Defense in Depth」新安全機制，細節與早期實測反饋見「歷史記錄 2026-07-02」。 Claude Fable 5 是 Anthr…",
-      "latestHeadline": "新安全機制：Reddit 貼文整理 Fable 5 全球 redeploy（7/1）隨附的「Defense in Depth」措施——新增更嚴格的資安/程式碼請求分類器，一旦判定為高風險 coding/debug 請求，自動靜默 fallback 至 Opus 4.8 執行，不使用 Fable 5（[Reddit r/"
+      "summary": "Claude Fable 5 是 Anthropic 於 2026-06-09 發布的旗艦模型，為**史上首款向大眾開放的 Mythos 級模型**。Fable 5 與 Claude Mythos 5 共用相同的模型權重，差異在於 Fable 5 前置安全分類器——觸發時 fallback 至 Claude Opus …",
+      "latestHeadline": "Claude Fable 5 是 Anthropic 於 2026-06-09 發布的旗艦模型，為史上首款向大眾開放的 Mythos 級模型。Fable 5 與 Claude Mythos 5 共用相同的模型權重，差異在於 Fable 5 前置安全分類器——觸發時 fallback 至 Claude Opus 4.8（"
     },
     {
       "id": "fiona-fung",
@@ -251,9 +251,9 @@ window.WIKI_DATA = {
       "pill": "active",
       "firstSeen": "2026-04-28",
       "startDate": "",
-      "lastUpdated": "2026-07-01",
+      "lastUpdated": "2026-07-02",
       "lastNewsUpdate": "2026-07-01",
-      "summary": "Anthropic Managed Agents 是 Claude Platform 上的官方 Agent 框架，提供持久記憶、多路並行執行與可驗證輸出等功能。**框架整體已正式發布（2026-05-11 起），但子功能成熟度不一**：Dreaming、Agent View、Capability Curve 仍是 Re…",
+      "summary": "Anthropic Managed Agents 是 Claude Platform 上的官方 Agent 框架，提供持久記憶（含 Dreaming 記憶整合）、20 路並行子代理、Outcomes 規格驗證、Proactive Workflows 與企業自架沙箱等功能，Anthropic 定位為「agentic AI…",
       "latestHeadline": "anthropic-sdk-python v0.115.0 新增 Managed Agents API 支援，Python SDK 正式跟進框架更新，開發者可透過官方 SDK 直接操作 Managed Agents（見 [Release](https://github.com/anthropics/anthropic-"
     },
     {
@@ -266,10 +266,10 @@ window.WIKI_DATA = {
       "pill": "active",
       "firstSeen": "2026-04（限定夥伴 Preview）",
       "startDate": "",
-      "lastUpdated": "2026-07-01",
+      "lastUpdated": "2026-07-02",
       "lastNewsUpdate": "2026-07-01",
-      "summary": "**2026-06-29 最新**：Anthropic 正式獲得美國政府許可，可向特定信任合作夥伴恢復 Mythos 存取（qz.com），是繼 6/27 部分解禁後的進一步政策落實。中國 Z.Ai 聲稱已開發出可與 Mythos 匹敵的網路安全 AI（Reuters，HN score 8），繼 360（6/24）後第…",
-      "latestHeadline": "政府許可進一步確認：qz.com 報導 Anthropic 正式獲得美國政府許可，可向特定信任合作夥伴恢復 Mythos 存取（[qz.com](https://qz.com/anthropic-mythos-5-clearance-trusted-partners-commerce-062926)）；此為繼 6/27"
+      "summary": "Claude Mythos 是 Anthropic 的高能力 AI 模型家族，已確認具備**自主發現並武器化軟體漏洞、生成可執行 exploit** 的能力，是 AI 安全領域的重大里程碑。2026-06-09 起分為兩個版本：**Claude Fable 5**（以 Mythos 架構為核心、附加安全護欄的公開版，史…",
+      "latestHeadline": "Claude Mythos 是 Anthropic 的高能力 AI 模型家族，已確認具備自主發現並武器化軟體漏洞、生成可執行 exploit 的能力，是 AI 安全領域的重大里程碑。2026-06-09 起分為兩個版本：Claude Fable 5（以 Mythos 架構為核心、附加安全護欄的公開版，史上首款向大眾開放"
     },
     {
       "id": "openclaw",
@@ -334,7 +334,7 @@ window.WIKI_DATA = {
     {
       "id": "pricing",
       "pageType": "entity",
-      "name": "﻿# Anthropic 訂閱方案與計費政策",
+      "name": "Anthropic 訂閱方案與計費政策",
       "entityType": "policy",
       "status": "active（持續調整中）",
       "domain": "💼 商業",
@@ -405,8 +405,8 @@ window.WIKI_DATA = {
       "startDate": "2026-04-27",
       "lastUpdated": "2026-07-02",
       "lastNewsUpdate": "2026-07-02",
-      "summary": "2026-07-01，研究者發現 Claude Code 2.1.196 binary 含同形字符替換函式（homoglyph substitution），可將日期字串中的撇號和分隔符替換為外觀相同的 Unicode 同形字，疑用於對輸出文字嵌入隱寫標記（steganographic marking）；HN score…",
-      "latestHeadline": "2026-07-01，研究者發現 Claude Code 2.1.196 binary 含同形字符替換函式（homoglyph substitution），可將日期字串中的撇號和分隔符替換為外觀相同的 Unicode 同形字，疑用於對輸出文字嵌入隱寫標記（steganographic marking）；HN score"
+      "summary": "**最新態勢（2026-07-01／07-02）：** 研究者在 Claude Code 2.1.196 binary 發現同形字符替換函式（homoglyph substitution），疑用於對輸出文字嵌入不可見的隱寫標記；HN score 2263 為本頁史上最高熱度安全事件，36Kr 確認此機制針對時區資訊及中…",
+      "latestHeadline": "最新態勢（2026-07-01／07-02）： 研究者在 Claude Code 2.1.196 binary 發現同形字符替換函式（homoglyph substitution），疑用於對輸出文字嵌入不可見的隱寫標記；HN score 2263 為本頁史上最高熱度安全事件，36Kr 確認此機制針對時區資訊及中國 AI"
     },
     {
       "id": "ai-talent-flow",
@@ -471,7 +471,7 @@ window.WIKI_DATA = {
     {
       "id": "community-pattern-trends",
       "pageType": "topic",
-      "name": "社群 Pattern 宏觀趨勢",
+      "name": "社群趨勢觀察（週更）",
       "entityType": "",
       "status": "ongoing",
       "domain": "🌐 社群",
@@ -501,7 +501,7 @@ window.WIKI_DATA = {
     {
       "id": "community-tech-patterns",
       "pageType": "topic",
-      "name": "社群技術應用趨勢",
+      "name": "社群實戰模式庫",
       "entityType": "",
       "status": "monitoring",
       "domain": "🌐 社群",
@@ -568,7 +568,7 @@ window.WIKI_DATA = {
       "pill": "warn",
       "firstSeen": "",
       "startDate": "2026-05-01",
-      "lastUpdated": "2026-06-30",
+      "lastUpdated": "2026-07-02",
       "lastNewsUpdate": "2026-06-30",
       "summary": "大型組織採用 Claude Code 後，成本結構挑戰迅速浮現。Uber 四個月耗盡全年 AI 預算（Forbes 報導）是目前最具代表性的公開案例，揭示企業在缺乏細粒度使用量控管工具的情況下，AI 工具成本極易失控。此議題已從開發者社群的個人抱怨升級至 Forbes、Business Insider 等主流財經媒體的…",
       "latestHeadline": "[回應語言壓縮策略] 企業強制 Claude Code 以「穴居人」極簡語言回應，壓縮每次 token 耗量：404 Media 報導（HN score 3），OpenAI、Nvidia、GitHub 等公司開發者均在使用所謂「穴居人插件」（caveman plugin），強制 Claude Code 與 OpenAI"
