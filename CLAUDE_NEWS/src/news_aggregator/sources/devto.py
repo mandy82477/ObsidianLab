@@ -46,6 +46,7 @@ class DevTo(BaseSource):
                             source=f"dev.to / #{tag}",
                             published=pub or datetime.now(tz=timezone.utc),
                             score=int(entry.get("slash_comments", 0)),
+                            score_unit="留言",
                             summary=entry.get("summary", "")[:200],
                             category="community",
                         ))

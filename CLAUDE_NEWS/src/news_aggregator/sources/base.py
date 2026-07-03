@@ -14,6 +14,7 @@ class FeedItem:
     summary: str
     category: str  # "official" | "community"
     source_count: int = 1  # how many independent sources covered this item
+    score_unit: str = ""   # what `score` counts: "分" (HN points) | "留言" (comments) | "" (n/a)
 
 
 class BaseSource(ABC):

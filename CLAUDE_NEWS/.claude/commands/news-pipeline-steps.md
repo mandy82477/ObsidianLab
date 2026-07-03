@@ -47,7 +47,7 @@ PYTHON -m news_aggregator.main --gather-only [--date TARGET_DATE]
 ```
 # Claude Code & Anthropic 每日新聞摘要
 
-**日期：** TARGET_DATE | **來源：** X/6 | **文章數：** N | **更新時間：** YYYY-MM-DD HH:MM UTC
+**日期：** TARGET_DATE | **來源：** X/8 | **文章數：** N | **更新時間：** YYYY-MM-DD HH:MM UTC
 
 ---
 
@@ -85,6 +85,7 @@ PYTHON -m news_aggregator.main --gather-only [--date TARGET_DATE]
 - 標題行必須是 `**[標題](url)**`（方括號連結），**不可**寫成 `- **標題**：內文` 的 bullet 形式
 - 來源行必須是 `` `來源` · 時間 `` 獨立一行
 - 違反此格式時 web reader 會解析出空區塊，讀者只看得到今日聚焦
+- `gathered_items.json` 每條含 `score_unit` 欄位（分＝HN points、留言＝評論數），選材比較熱度時注意單位不同不可直接互比
 
 3. 生成完成後，寫入 `news/TARGET_DATE.md`（完整 Markdown）
 

@@ -14,8 +14,10 @@ from news_aggregator.enricher import enrich
 from news_aggregator.filter import filter_relevant
 from news_aggregator.git_push import GitError, commit_and_push
 from news_aggregator.sources.anthropic_blog import AnthropicBlog
+from news_aggregator.sources.anthropic_status import AnthropicStatus
 from news_aggregator.sources.devto import DevTo
 from news_aggregator.sources.github_releases import GitHubReleases
+from news_aggregator.sources.github_issues import GitHubIssues
 from news_aggregator.sources.google_news import GoogleNews
 from news_aggregator.sources.hackernews import HackerNews
 from news_aggregator.sources.reddit import Reddit
@@ -76,7 +78,9 @@ def main() -> None:
 
     sources = [
         ("Anthropic Blog", AnthropicBlog()),
+        ("Anthropic Status", AnthropicStatus()),
         ("GitHub", GitHubReleases()),
+        ("GitHub Issues", GitHubIssues()),
         ("Hacker News", HackerNews()),
         ("Reddit", Reddit()),
         ("Google News", GoogleNews()),
@@ -133,6 +137,7 @@ def main() -> None:
                     "source":    it.source,
                     "published": it.published.strftime("%m/%d %H:%M UTC") if it.published else "",
                     "score":     it.score,
+                    "score_unit": it.score_unit,
                     "summary":   it.summary or "",
                     "category":  it.category,
                 }

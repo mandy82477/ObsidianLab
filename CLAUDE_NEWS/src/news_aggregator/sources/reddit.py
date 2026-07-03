@@ -16,7 +16,7 @@ SUBREDDIT_QUERIES = [
     ("ClaudeAI", "Anthropic"),
     ("artificial", "Claude Code"),
     ("MachineLearning", "Anthropic"),
-    ("LocalLLaMA", "Claude"),
+    ("LocalLLaMA", "Claude Code"),
     ("LocalLLaMA", "Anthropic"),
 ]
 
@@ -46,6 +46,7 @@ class Reddit(BaseSource):
                         source=f"Reddit / r/{subreddit}",
                         published=pub or datetime.now(tz=timezone.utc),
                         score=int(entry.get("slash_comments", 0)),
+                        score_unit="留言",
                         summary=entry.get("summary", "")[:200],
                         category="community",
                     ))

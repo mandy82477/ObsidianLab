@@ -15,8 +15,8 @@ HN_SEARCH_URL = "https://hn.algolia.com/api/v1/search"
 
 # (term, tags, hitsPerPage, min_score)
 _QUERIES = [
-    ("Claude Code", "story",   MAX_ITEMS_PER_SOURCE, 3),
-    ("Anthropic",   "story",   MAX_ITEMS_PER_SOURCE, 3),
+    ("Claude Code", "story",   MAX_ITEMS_PER_SOURCE, 10),
+    ("Anthropic",   "story",   MAX_ITEMS_PER_SOURCE, 10),
     ("claude",      "show_hn", 10,                   1),
     ("anthropic",   "show_hn", 10,                   1),
 ]
@@ -51,6 +51,7 @@ def _fetch_hn_query(term: str, tags: str, hits: int, min_score: int, cutoff: int
                     h.get("created_at_i", time.time()), tz=timezone.utc
                 ),
                 score=score,
+                score_unit="分",
                 summary=f"HN discussion: https://news.ycombinator.com/item?id={obj_id}",
                 category="community",
             ))
