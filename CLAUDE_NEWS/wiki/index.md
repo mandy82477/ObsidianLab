@@ -7,6 +7,8 @@ LLM 查詢此 wiki 時，**先讀這個檔案**找相關頁面，再讀具體頁
 
 ## 近期異動
 
+- [[topics/anthropic-commitments]] — 2026-07-03：**新頁面**，承諾兌現追蹤：「Anthropic 說過要做的事做了嗎」——5 條追蹤中（隱寫術修復 🔴、解禁三承諾 🟡 等）
+- [[feature-radar]] — 2026-07-03：新增「⏰ 倒數中」區塊（7/7 Fable 5 計費轉換、8/31 Sonnet 5 促銷結束）
 - [[topics/model-comparison]] — 2026-07-02：**新頁面**，模型選型對照：快速選型表 + 情境推薦 +（我該用哪個模型的單一入口）
 - [[entities/fable-5]] — 2026-07-02：redeploy 隨附「Defense in Depth」新安全分類器，高風險 coding 請求 fallback 至 Opus 4.8；首日已有誤判負面實測
 - [[entities/sonnet-5]] — 2026-07-02：官方對比圖表修改爭議（HN 討論可信度）+ 社群反映對 Sonnet 4.6 個性流失的主觀回饋
@@ -79,6 +81,7 @@ LLM 查詢此 wiki 時，**先讀這個檔案**找相關頁面，再讀具體頁
 | 頁面 | 領域 | 狀態 | 摘要 |
 |------|------|------|------|
 | [[topics/model-comparison]] | 🤖 模型 | ongoing | 模型選型對照：「我該用哪個模型」單一入口——快速選型表、情境推薦、benchmark 對照（陣容變化時同步更新） |
+| [[topics/anthropic-commitments]] | 🏛️ 政策/安全 | ongoing | 承諾兌現追蹤：「Anthropic 說過要做的事做了嗎」——官方承諾/拒絕建檔，狀態變化時由每日 ingest 更新 |
 | [[topics/code-quality-decline]] | 🛠️ 工具/功能 | monitoring | Claude Code 效能退步事件，Anthropic 已承認工程疏失 |
 | [[topics/competitor-landscape]] | 💼 商業 | monitoring | Google 祕密開發競品 + OpenCode 157K 分流 + DeepSeek clone 低成本替代生態 |
 | [[topics/community-tech-tools]] | 🌐 社群 | ongoing | 社群工具目錄：189 工具的活躍度、採用狀態追蹤 |
