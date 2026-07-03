@@ -86,6 +86,7 @@ PYTHON -m news_aggregator.main --gather-only [--date TARGET_DATE]
 - 來源行必須是 `` `來源` · 時間 `` 獨立一行
 - 違反此格式時 web reader 會解析出空區塊，讀者只看得到今日聚焦
 - `gathered_items.json` 每條含 `score_unit` 欄位（分＝HN points、留言＝評論數），選材比較熱度時注意單位不同不可直接互比
+- `source_count > 1` 表示多個獨立來源報導同一事件，選材時視為重要度加權訊號
 
 3. 生成完成後，寫入 `news/TARGET_DATE.md`（完整 Markdown）
 

@@ -10,6 +10,9 @@ import news_aggregator.config as _cfg
 from news_aggregator.config import LOG_DIR, NEWS_DIR
 from news_aggregator.dedup import deduplicate
 from news_aggregator.digest import render
+from news_aggregator.emitted_cache import (
+    filter_new_or_reignited, load_cache, prune_expired, save_cache,
+)
 from news_aggregator.enricher import enrich
 from news_aggregator.filter import filter_relevant
 from news_aggregator.git_push import GitError, commit_and_push
@@ -53,6 +56,20 @@ def parse_args() -> argparse.Namespace:
     return p.parse_args()
 
 
+def check_gap_lookback(target_date: date, news_dir=NEWS_DIR) -> str | None:
+    """Return reason string if yesterday's digest is missing/empty (gap to cover),
+    else None. Used to auto-extend LOOKBACK_HOURS to 50 on gather-only runs."""
+    yesterday_file = news_dir / f"{(target_date - timedelta(days=1)).isoformat()}.md"
+    if not yesterday_file.exists():
+        return f"昨日日報 {yesterday_file.name} 不存在"
+    try:
+        if "今日無新增資訊" in yesterday_file.read_text(encoding="utf-8"):
+            return f"昨日日報 {yesterday_file.name} 為空（今日無新增資訊）"
+    except Exception:
+        pass
+    return None
+
+
 def main() -> None:
     args = parse_args()
     setup_logging()
@@ -75,6 +92,13 @@ def main() -> None:
     else:
         target_date = date.today()
         logger.info("=== News aggregator run started ===")
+        if args.gather_only:
+            # Gap recovery: if yesterday's digest is missing or empty, extend the
+            # lookback window to cover the hole left by a failed previous run.
+            gap_reason = check_gap_lookback(target_date)
+            if gap_reason and _cfg.LOOKBACK_HOURS < 50:
+                _cfg.LOOKBACK_HOURS = 50
+                logger.info("失敗補撈：%s → LOOKBACK_HOURS 延長為 50h", gap_reason)
 
     NEWS_DIR.mkdir(parents=True, exist_ok=True)
 
@@ -127,6 +151,13 @@ def main() -> None:
     logger.info("After relevance filter: %d items", len(filtered))
 
     if args.gather_only:
+        # Cross-run dedup: drop items already emitted in a previous digest,
+        # unless their score re-ignited (>= 2x and +10 since last emit)
+        emitted = prune_expired(load_cache(), today=target_date)
+        before_cache = len(filtered)
+        filtered, updated_cache = filter_new_or_reignited(filtered, emitted, today=target_date)
+        logger.info("Emitted-cache filter: %d → %d items", before_cache, len(filtered))
+
         # Write gathered items to JSON for Claude session to analyse
         import json as _json
         from datetime import datetime as _dt
@@ -142,6 +173,7 @@ def main() -> None:
                     "published": it.published.strftime("%m/%d %H:%M UTC") if it.published else "",
                     "score":     it.score,
                     "score_unit": it.score_unit,
+                    "source_count": it.source_count,
                     "summary":   it.summary or "",
                     "category":  it.category,
                 }
@@ -151,6 +183,8 @@ def main() -> None:
         gather_path = LOG_DIR.parent / "gathered_items.json"
         gather_path.write_text(_json.dumps(out, ensure_ascii=False, indent=2), encoding="utf-8")
         logger.info("--gather-only: wrote %d items to %s", len(filtered), gather_path)
+        # Persist emitted cache only after the output JSON was written successfully
+        save_cache(updated_cache)
         elapsed = time.time() - start
         logger.info("=== Gather complete: %d items / %d sources / %.1fs ===", len(filtered), len(sources), elapsed)
         return

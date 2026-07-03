@@ -11,60 +11,72 @@ from news_aggregator.sources.base import BaseSource, FeedItem
 
 logger = logging.getLogger(__name__)
 
-NEWS_PAGE = "https://www.anthropic.com/news"
 BASE_URL = "https://www.anthropic.com"
+
+# (listing page URL, link path prefix, source label)
+PAGES = [
+    (f"{BASE_URL}/news", "/news", "Anthropic Blog"),
+    (f"{BASE_URL}/engineering", "/engineering", "Anthropic Engineering"),
+]
 
 
 class AnthropicBlog(BaseSource):
     def fetch(self) -> list[FeedItem]:
-        try:
-            resp = requests.get(
-                NEWS_PAGE,
-                headers={"User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36"},
-                timeout=REQUEST_TIMEOUT,
-            )
-            resp.raise_for_status()
+        cache = _load_cache()
+        now = datetime.now(tz=timezone.utc)
+        items = []
 
-            # Extract /news/slug links and their adjacent titles
-            links = re.findall(r'href="(/news/[a-z0-9_-]+)"', resp.text)
-            unique_links = list(dict.fromkeys(links))
+        for page_url, prefix, source_label in PAGES:
+            try:
+                items.extend(_fetch_page(page_url, prefix, source_label, cache, now))
+            except Exception as e:
+                logger.warning("AnthropicBlog.fetch failed for %s: %s", page_url, e)
 
-            # Load seen-URL cache
-            cache = _load_cache()
-            now = datetime.now(tz=timezone.utc)
-            items = []
+        _save_cache(cache)
+        return items
 
-            for path in unique_links[:MAX_ITEMS_PER_SOURCE]:
-                url = BASE_URL + path
-                if url in cache:
-                    continue  # Already reported in a previous run
-                # Extract title from context
-                idx = resp.text.find(f'"{path}"')
-                title = "(Anthropic News)"
-                if idx >= 0:
-                    m = re.search(r'<h\d[^>]*>([^<]{5,120})</h\d>', resp.text[idx:idx+600])
-                    if m:
-                        title = m.group(1).strip()
 
-                items.append(FeedItem(
-                    title=title,
-                    url=url,
-                    source="Anthropic Blog",
-                    published=now,
-                    score=0,
-                    summary="",
-                    category="official",
-                ))
+def _fetch_page(page_url: str, prefix: str, source_label: str,
+                cache: dict, now: datetime) -> list[FeedItem]:
+    resp = requests.get(
+        page_url,
+        headers={"User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36"},
+        timeout=REQUEST_TIMEOUT,
+    )
+    resp.raise_for_status()
 
-            # Update cache with all seen URLs (not just new ones)
-            for path in unique_links:
-                cache[BASE_URL + path] = now.isoformat()
-            _save_cache(cache)
+    # Extract /news/slug (or /engineering/slug) links and their adjacent titles
+    links = re.findall(rf'href="({re.escape(prefix)}/[a-z0-9_-]+)"', resp.text)
+    unique_links = list(dict.fromkeys(links))
 
-            return items
-        except Exception as e:
-            logger.warning("AnthropicBlog.fetch failed: %s", e)
-            return []
+    items = []
+    for path in unique_links[:MAX_ITEMS_PER_SOURCE]:
+        url = BASE_URL + path
+        if url in cache:
+            continue  # Already reported in a previous run
+        # Extract title from context
+        idx = resp.text.find(f'"{path}"')
+        title = f"({source_label})"
+        if idx >= 0:
+            m = re.search(r'<h\d[^>]*>([^<]{5,120})</h\d>', resp.text[idx:idx + 600])
+            if m:
+                title = m.group(1).strip()
+
+        items.append(FeedItem(
+            title=title,
+            url=url,
+            source=source_label,
+            published=now,
+            score=0,
+            summary="",
+            category="official",
+        ))
+
+    # Update cache with all seen URLs (not just new ones)
+    for path in unique_links:
+        cache[BASE_URL + path] = now.isoformat()
+
+    return items
 
 
 def _load_cache() -> dict:

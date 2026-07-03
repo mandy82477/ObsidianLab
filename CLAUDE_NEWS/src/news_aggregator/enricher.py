@@ -38,6 +38,17 @@ _SKIP_ARTICLE_DOMAINS = frozenset([
     "linkedin.com",
 ])
 
+# Hard-paywalled domains — trafilatura only gets a login wall / teaser, so
+# skip fetching entirely (saves time, avoids junk summaries). Original
+# summary from the feed is kept as-is.
+_PAYWALL_DOMAINS = frozenset([
+    "wsj.com",
+    "theinformation.com",
+    "bloomberg.com",
+    "ft.com",
+    "nytimes.com",
+])
+
 # Shared session with larger connection pool (avoids "pool is full" warnings)
 _session = requests.Session()
 _adapter = HTTPAdapter(pool_connections=10, pool_maxsize=20)
@@ -190,6 +201,10 @@ def _fetch_article(url: str) -> str:
         # Skip domains where extraction is useless or handled separately
         domain = urlparse(url).netloc.lstrip("www.")
         if domain in _SKIP_ARTICLE_DOMAINS:
+            return ""
+        # Skip hard paywalls (apex domain or any subdomain)
+        if any(domain == d or domain.endswith("." + d) for d in _PAYWALL_DOMAINS):
+            logger.debug("paywall domain, skipping article fetch: %s", url)
             return ""
         resp = _session.get(
             url,
