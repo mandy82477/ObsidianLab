@@ -12,6 +12,7 @@ from news_aggregator.sources.base import BaseSource, FeedItem, parse_feed_time
 logger = logging.getLogger(__name__)
 
 SUBREDDIT_QUERIES = [
+    ("ClaudeCode", None),
     ("ClaudeAI", "Claude Code"),
     ("ClaudeAI", "Anthropic"),
     ("artificial", "Claude Code"),
@@ -31,10 +32,14 @@ class Reddit(BaseSource):
             items = []
 
             for subreddit, query in SUBREDDIT_QUERIES:
-                url = (
-                    f"https://www.reddit.com/r/{subreddit}/search.rss"
-                    f"?q={query.replace(' ', '+')}&sort=new&t={reddit_time}&restrict_sr=1"
-                )
+                if query is None:
+                    # Entire subreddit is on-topic: skip search, pull the new feed directly.
+                    url = f"https://www.reddit.com/r/{subreddit}/new.rss"
+                else:
+                    url = (
+                        f"https://www.reddit.com/r/{subreddit}/search.rss"
+                        f"?q={query.replace(' ', '+')}&sort=new&t={reddit_time}&restrict_sr=1"
+                    )
                 fetched = _fetch_rss(url)
                 for entry in fetched[:MAX_ITEMS_PER_SOURCE // 2]:
                     pub = parse_feed_time(entry)

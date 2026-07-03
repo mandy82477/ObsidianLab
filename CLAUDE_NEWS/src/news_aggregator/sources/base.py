@@ -1,4 +1,4 @@
-import time
+import calendar
 from abc import ABC, abstractmethod
 from dataclasses import dataclass
 from datetime import datetime, timezone
@@ -28,7 +28,7 @@ def parse_feed_time(entry) -> datetime | None:
     try:
         t = entry.get("published_parsed") or entry.get("updated_parsed")
         if t:
-            return datetime.fromtimestamp(time.mktime(t), tz=timezone.utc)
+            return datetime.fromtimestamp(calendar.timegm(t), tz=timezone.utc)
     except Exception:
         pass
     return None

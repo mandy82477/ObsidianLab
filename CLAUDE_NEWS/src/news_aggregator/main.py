@@ -15,11 +15,13 @@ from news_aggregator.filter import filter_relevant
 from news_aggregator.git_push import GitError, commit_and_push
 from news_aggregator.sources.anthropic_blog import AnthropicBlog
 from news_aggregator.sources.anthropic_status import AnthropicStatus
+from news_aggregator.sources.api_docs import ApiDocs
 from news_aggregator.sources.devto import DevTo
 from news_aggregator.sources.github_releases import GitHubReleases
 from news_aggregator.sources.github_issues import GitHubIssues
 from news_aggregator.sources.google_news import GoogleNews
 from news_aggregator.sources.hackernews import HackerNews
+from news_aggregator.sources.lobsters import Lobsters
 from news_aggregator.sources.reddit import Reddit
 
 
@@ -85,6 +87,8 @@ def main() -> None:
         ("Reddit", Reddit()),
         ("Google News", GoogleNews()),
         ("dev.to", DevTo()),
+        ("lobste.rs", Lobsters()),
+        ("Claude API Release Notes", ApiDocs()),
     ]
 
     all_items = []

@@ -47,7 +47,7 @@ PYTHON -m news_aggregator.main --gather-only [--date TARGET_DATE]
 ```
 # Claude Code & Anthropic 每日新聞摘要
 
-**日期：** TARGET_DATE | **來源：** X/8 | **文章數：** N | **更新時間：** YYYY-MM-DD HH:MM UTC
+**日期：** TARGET_DATE | **來源：** X/10 | **文章數：** N | **更新時間：** YYYY-MM-DD HH:MM UTC
 
 ---
 
