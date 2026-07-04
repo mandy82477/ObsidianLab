@@ -37,21 +37,23 @@
   }
 
   // ── Sort state ───────────────────────────────────────────────────────────────
-  let entitySort = { key: 'lastUpdated', dir: 'desc' };
-  let topicSort  = { key: 'lastUpdated', dir: 'desc' };
+  let kbSort = { key: 'lastUpdated', dir: 'desc' };
 
-  const ENTITY_SORT_OPTIONS = [
+  const KB_SORT_OPTIONS = [
     { key: 'lastUpdated', label: '最新更新' },
     { key: 'name',        label: '名稱' },
-    { key: 'entityType',  label: '類型' },
+    { key: 'kbType',       label: '型別' },
     { key: 'status',      label: '狀態' },
   ];
-  const TOPIC_SORT_OPTIONS = [
-    { key: 'lastUpdated', label: '最新更新' },
-    { key: 'name',        label: '名稱' },
-    { key: 'startDate',   label: '開始日期' },
-    { key: 'status',      label: '狀態' },
-  ];
+
+  // slugs that are presented as "對照" (comparison/tracker) pages rather than
+  // a plain entity/topic — purely a presentation-layer label, data layer untouched
+  const KB_COMPARISON_SLUGS = ['model-comparison', 'anthropic-commitments', 'feature-radar', 'official-community-gap'];
+
+  const KB_TYPE_LABEL = { entity: '檔案', topic: '議題', comparison: '對照' };
+  function kbTypeOf(item) {
+    return KB_COMPARISON_SLUGS.includes(item.id) ? 'comparison' : item._kbBaseType;
+  }
 
   // Status sort priority (lower = higher priority / shown first in desc)
   const STATUS_PRIORITY = { active:0, ongoing:0, '公開測試版':1, monitoring:1, warn:2, '秘密開發中':2, '測試中（未公開）':2, rumoured:3, resolved:4, deprecated:5 };
@@ -69,6 +71,12 @@
       if (key === 'status') {
         av = statusPriority(a.status);
         bv = statusPriority(b.status);
+      } else if (key === 'kbType') {
+        av = kbTypeOf(a);
+        bv = kbTypeOf(b);
+      } else if (key === 'lastUpdated') {
+        av = a.lastUpdated || a.startDate || a.firstSeen || '';
+        bv = b.lastUpdated || b.startDate || b.firstSeen || '';
       } else {
         av = (a[key] || '').toLowerCase();
         bv = (b[key] || '').toLowerCase();
@@ -92,26 +100,15 @@
       }).join('');
   }
 
-  window.setSortEntity = function (key) {
-    if (entitySort.key === key) {
-      entitySort.dir = entitySort.dir === 'desc' ? 'asc' : 'desc';
+  window.setSortKb = function (key) {
+    if (kbSort.key === key) {
+      kbSort.dir = kbSort.dir === 'desc' ? 'asc' : 'desc';
     } else {
-      entitySort.key = key;
-      entitySort.dir = (key === 'lastUpdated') ? 'desc' : 'asc';
+      kbSort.key = key;
+      kbSort.dir = (key === 'lastUpdated') ? 'desc' : 'asc';
     }
-    buildSortBar('sort-bar-entity', ENTITY_SORT_OPTIONS, entitySort, 'setSortEntity');
-    renderEntityRows();
-  };
-
-  window.setSortTopic = function (key) {
-    if (topicSort.key === key) {
-      topicSort.dir = topicSort.dir === 'desc' ? 'asc' : 'desc';
-    } else {
-      topicSort.key = key;
-      topicSort.dir = (key === 'lastUpdated' || key === 'startDate') ? 'desc' : 'asc';
-    }
-    buildSortBar('sort-bar-topic', TOPIC_SORT_OPTIONS, topicSort, 'setSortTopic');
-    renderTopicRows();
+    buildSortBar('sort-bar-kb', KB_SORT_OPTIONS, kbSort, 'setSortKb');
+    renderKbRows();
   };
 
   // ── Domain filter ────────────────────────────────────────────────────────────
@@ -123,8 +120,7 @@
     document.querySelectorAll('.domain-chip').forEach(btn => {
       btn.classList.toggle('domain-chip--active', btn.dataset.domain === domain);
     });
-    renderEntityRows();
-    renderTopicRows();
+    renderKbRows();
   };
 
   // ── Theme toggle ────────────────────────────────────────────────────────────
@@ -315,37 +311,37 @@
   }
 
   // ── Wiki ─────────────────────────────────────────────────────────────────────
-  function renderEntityRows() {
+  // Merge entities + topics into a single "knowledge base" list. Each item keeps
+  // its original type (_kbBaseType) so openWikiPage routing (entity/topic) is
+  // unaffected — this is purely a presentation-layer merge.
+  function buildKbList() {
     const data = window.WIKI_DATA || {};
-    const container = $('#wiki-entities');
-    if (!container || !data.entities?.length) return;
-    const _d = new Date(); const today = `${_d.getFullYear()}-${String(_d.getMonth()+1).padStart(2,'0')}-${String(_d.getDate()).padStart(2,'0')}`;
-    const sorted = sortItems(data.entities, entitySort.key, entitySort.dir);
-    const filtered = activeDomain === 'all' ? sorted : sorted.filter(e => e.domain === activeDomain);
-    container.innerHTML = filtered.map(e => `
-<div class="entity-row" onclick="openWikiPage('${esc(e.id)}','entity')">
-  <div class="entity-row__name"><span class="bracket">[[</span>${esc(e.id)}<span class="bracket">]]</span></div>
-  <div class="entity-row__type">${esc(e.entityType)}</div>
-  <div><span class="pill pill--${e.pill}">${esc(shortStatus(e.status))}</span></div>
-  <div class="entity-row__summary">${esc(e.latestHeadline || '')}</div>
-  <div class="entity-row__updated">${e.lastNewsUpdate === today ? '<span class="badge-new">今日</span>' : ''}${esc(e.lastUpdated || e.firstSeen || '')}</div>
-</div>`).join('');
+    const entities = (data.entities || []).map(e => ({ ...e, _kbBaseType: 'entity' }));
+    const topics   = (data.topics   || []).map(t => ({ ...t, _kbBaseType: 'topic'  }));
+    return entities.concat(topics);
   }
 
-  function renderTopicRows() {
-    const data = window.WIKI_DATA || {};
-    const container = $('#wiki-topics');
-    if (!container || !data.topics?.length) return;
+  function renderKbRows() {
+    const container = $('#wiki-kb');
+    if (!container) return;
+    const all = buildKbList();
+    if (!all.length) return;
     const _d = new Date(); const today = `${_d.getFullYear()}-${String(_d.getMonth()+1).padStart(2,'0')}-${String(_d.getDate()).padStart(2,'0')}`;
-    const sorted = sortItems(data.topics, topicSort.key, topicSort.dir);
-    const filtered = activeDomain === 'all' ? sorted : sorted.filter(t => t.domain === activeDomain);
-    container.innerHTML = filtered.map(t => `
-<div class="entity-row entity-row--topic" onclick="openWikiPage('${esc(t.id)}','topic')">
-  <div class="entity-row__name"><span class="bracket">[[</span>${esc(t.id)}<span class="bracket">]]</span></div>
-  <div><span class="pill pill--${t.pill}">${esc(shortStatus(t.status))}</span></div>
-  <div class="entity-row__summary">${esc(t.latestHeadline || '')}</div>
-  <div class="entity-row__updated">${t.lastNewsUpdate === today ? '<span class="badge-new">今日</span>' : ''}${esc(t.lastUpdated || t.startDate || '')}</div>
-</div>`).join('');
+    const sorted = sortItems(all, kbSort.key, kbSort.dir);
+    const filtered = activeDomain === 'all' ? sorted : sorted.filter(i => i.domain === activeDomain);
+    container.innerHTML = filtered.map(item => {
+      const kbType = kbTypeOf(item);
+      const typeLabel = KB_TYPE_LABEL[kbType] || '檔案';
+      const rowCls = kbType === 'topic' ? 'entity-row entity-row--topic' : 'entity-row';
+      return `
+<div class="${rowCls}" onclick="openWikiPage('${esc(item.id)}','${item._kbBaseType}')">
+  <div class="entity-row__name"><span class="bracket">[[</span>${esc(item.id)}<span class="bracket">]]</span></div>
+  <div><span class="kb-type-pill kb-type-pill--${kbType}">${esc(typeLabel)}</span></div>
+  <div><span class="pill pill--${item.pill}">${esc(shortStatus(item.status))}</span></div>
+  <div class="entity-row__summary">${esc(item.latestHeadline || '')}</div>
+  <div class="entity-row__updated">${item.lastNewsUpdate === today ? '<span class="badge-new">今日</span>' : ''}${esc(item.lastUpdated || item.startDate || item.firstSeen || '')}</div>
+</div>`;
+    }).join('');
   }
 
   function renderWiki() {
@@ -375,10 +371,22 @@
       if (gapTopic?.lastUpdated) gapMeta.textContent = `最後更新 ${gapTopic.lastUpdated}`;
     }
 
-    buildSortBar('sort-bar-entity', ENTITY_SORT_OPTIONS, entitySort, 'setSortEntity');
-    buildSortBar('sort-bar-topic',  TOPIC_SORT_OPTIONS,  topicSort,  'setSortTopic');
-    renderEntityRows();
-    renderTopicRows();
+    // Populate model-comparison card last-updated label
+    const cmpMeta = $('#comparison-card-updated');
+    if (cmpMeta) {
+      const cmpTopic = (data.topics || []).find(t => t.id === 'model-comparison');
+      if (cmpTopic?.lastUpdated) cmpMeta.textContent = `最後更新 ${cmpTopic.lastUpdated}`;
+    }
+
+    // Populate anthropic-commitments card last-updated label
+    const commitMeta = $('#commitments-card-updated');
+    if (commitMeta) {
+      const commitTopic = (data.topics || []).find(t => t.id === 'anthropic-commitments');
+      if (commitTopic?.lastUpdated) commitMeta.textContent = `最後更新 ${commitTopic.lastUpdated}`;
+    }
+
+    buildSortBar('sort-bar-kb', KB_SORT_OPTIONS, kbSort, 'setSortKb');
+    renderKbRows();
   }
 
   // ── Archive ──────────────────────────────────────────────────────────────────
