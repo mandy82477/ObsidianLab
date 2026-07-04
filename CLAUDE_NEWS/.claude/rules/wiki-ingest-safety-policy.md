@@ -12,6 +12,8 @@
 | `wiki/topics/ai-agent-safety.md` | AI agent 安全事件、漏洞披露、提示注入 |
 | `wiki/topics/recursive-self-improvement.md` | AI 遞歸自我改進、全球監管呼籲 |
 
+> 上表為核心頁面與觸發條件；此外 `wiki/index.md` 中領域為 🏛️ 政策/安全 的所有頁面（含日後新增）皆由本記者負責維護與 lint。
+
 ---
 
 ## anthropic-government-policy 更新規則 `[加入: 2026-06-18]`

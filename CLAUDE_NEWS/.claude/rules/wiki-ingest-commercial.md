@@ -15,6 +15,8 @@
 | `wiki/topics/competitor-landscape.md` | 競品動態、企業工具市佔變化 |
 | `wiki/topics/ai-talent-flow.md` | AI 實驗室間人才流動、對各公司的商業影響（誰流失、誰承接、戰力與市場意涵）|
 
+> 上表為核心頁面與觸發條件；此外 `wiki/index.md` 中領域為 💼 商業 的所有頁面（含日後新增）皆由本記者負責維護與 lint。
+
 ---
 
 ## enterprise-tool-tracker 更新規則 `[加入: 2026-05-26]`

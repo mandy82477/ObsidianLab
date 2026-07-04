@@ -14,6 +14,8 @@
 | `wiki/entities/dario-amodei.md` | Anthropic CEO 公開聲明、政策立場 |
 | `wiki/entities/chris-olah.md` | 可解釋性研究、公開演講 |
 
+> 上表為核心頁面與觸發條件；此外 `wiki/index.md` 中領域為 👤 人物 的所有頁面（含日後新增）皆由本記者負責維護與 lint。
+
 新人物滿足以下條件時建立新頁：被日報提及 2 次以上，或有明確職稱 + 一個具體聲明 / 事件。
 
 ---

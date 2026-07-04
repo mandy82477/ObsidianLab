@@ -21,14 +21,16 @@ description: 每週執行 wiki 品質檢查，修正矛盾/孤立/過期頁面�
 
 對每個類別呼叫 Agent tool，在**同一訊息中並行發出全部六個呼叫**。
 
-| 類別 | subagent_type | 負責頁面範圍 |
-|------|--------------|------------|
-| 模型 | `wiki-reporter-models` | `wiki/entities/fable-5.md`, `opus-4-8.md`, `opus-4-7.md`, `mythos.md`, `pricing.md` |
-| 功能 | `wiki-reporter-features` | `wiki/entities/claude-code.md`, `bugcrawl.md`, `managed-agents.md`, `openclaw.md`, `claude-design.md`, `claude-security.md`, `wiki/topics/official-community-gap.md`, `wiki/feature-radar.md` |
-| 商業 | `wiki-reporter-commercial` | `wiki/topics/anthropic-business.md`, `enterprise-tool-tracker.md`, `enterprise-cost-management.md`, `competitor-landscape.md`, `wiki/entities/pricing.md` |
-| 安全政策 | `wiki-reporter-safety-policy` | `wiki/topics/anthropic-government-policy.md`, `ai-agent-safety.md`, `recursive-self-improvement.md` |
-| 社群 | `wiki-reporter-community` | `wiki/topics/community-tech-tools.md`, `community-tech-patterns.md`, `community-tech-discussions.md`, `community-tech-timeline.md`, `code-quality-decline.md` |
-| 人物 | `wiki-reporter-people` | `wiki/entities/boris-cherny.md`, `cat-wu.md`, `andrej-karpathy.md`, `dario-amodei.md`, `chris-olah.md` 及其他人物頁 |
+| 類別 | subagent_type | 領域 |
+|------|--------------|------|
+| 模型 | `wiki-reporter-models` | 🤖 模型 |
+| 功能 | `wiki-reporter-features` | 🛠️ 工具/功能 |
+| 商業 | `wiki-reporter-commercial` | 💼 商業 |
+| 安全政策 | `wiki-reporter-safety-policy` | 🏛️ 政策/安全 |
+| 社群 | `wiki-reporter-community` | 🌐 社群 |
+| 人物 | `wiki-reporter-people` | 👤 人物 |
+
+> **頁面範圍為動態認領，不是寫死清單：** 每位記者的負責頁面＝`wiki/index.md` 中「領域」欄等於自己那一組的所有 entities/ 與 topics/ 頁面（含近期新增），開工前先讀 index.md 認領清單，再加上自己規則檔（`.claude/rules/wiki-ingest-[category].md`）觸發條件表中列出的頁面。這樣新增頁面不需要回頭改這份派工表。
 
 > **社群記者額外任務：** `community-tech-tools.md` 已脫離每日 ingest，是 **lint 專用策展頁**。除 3a–3f 品質檢查外，須額外依 `.claude/rules/wiki-ingest-community-lint.md` 的「策展規則」與「精選層提拔規則」執行：讀取近 7–14 天 `news/*.md` 萃取達標新工具、汰除過氣條目、提拔精選層、同步痛點洞察。派工 prompt 須附上「今日日期」供記者計算 news/ 範圍。
 
@@ -37,6 +39,8 @@ description: 每週執行 wiki 品質檢查，修正矛盾/孤立/過期頁面�
 ```
 今日日期：[YYYY-MM-DD]
 任務：對你負責的頁面執行 wiki lint 檢查並修正問題。
+
+你的負責頁面＝`wiki/index.md` 中領域為 [對應領域] 的所有頁面（含近期新增），開工前先讀 index.md 認領清單，再加上你規則檔（`.claude/rules/wiki-ingest-[category].md`）觸發條件表中列出的頁面。
 
 讀取 `.claude/rules/wiki-ingest-format.md`，然後對每個頁面依序執行：
 

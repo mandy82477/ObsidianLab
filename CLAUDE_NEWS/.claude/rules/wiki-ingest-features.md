@@ -17,6 +17,8 @@
 | `wiki/topics/official-community-gap.md` | 官方功能 vs 社群痛點缺口變化 |
 | `wiki/feature-radar.md` | 新增/更新功能條目（**須回報主編彙整**，不直接寫入） |
 
+> 上表為核心頁面與觸發條件；此外 `wiki/index.md` 中領域為 🛠️ 工具/功能 的所有頁面（含日後新增）皆由本記者負責維護與 lint。
+
 GitHub Issues 來源的高互動 bug/issue 條目歸功能記者，記入 claude-code.md 已知問題（含 issue 編號與連結）；不進 feature-radar。
 
 ---
