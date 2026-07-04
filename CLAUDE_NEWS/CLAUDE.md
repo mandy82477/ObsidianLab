@@ -82,6 +82,7 @@
 | `/wiki-lint` | 每週品質檢查：矛盾頁面、孤立頁面、過期議題、規則檔健檢 | `.claude/commands/wiki-lint.md` |
 | `/wiki-weekly-review` | 每週判斷值得加碼追蹤的主題（建頁/加開子區塊/升熱度），經確認後執行 | `.claude/commands/wiki-weekly-review.md` |
 | `/wiki-readability` | 低成本可讀性掃描：單一 agent 取樣每頁開頭與結構，回報後經確認修復 | `.claude/commands/wiki-readability.md` |
+| `/pipeline-change-check` | 改版前後品質對照：baseline 記錄基線、compare 對照差異＋舊資料回歸 | `.claude/commands/pipeline-change-check.md` |
 | `/review-commands` | 修改 commands/rules/CLAUDE.md 後強制執行，確認所有指令仍可正確運作 | `.claude/commands/review-commands.md` |
 
 **新增 skill 時的判斷標準：**
