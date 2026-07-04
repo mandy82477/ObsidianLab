@@ -101,7 +101,7 @@ window.WIKI_DATA = {
       "pill": "active",
       "firstSeen": "2025（正式推出）",
       "startDate": "",
-      "lastUpdated": "2026-07-03",
+      "lastUpdated": "2026-07-04",
       "lastNewsUpdate": "2026-07-03",
       "summary": "**最新版本動態：** 最新版本 **v2.1.197**（2026-07-01）正式將 Claude Sonnet 5 設為 Claude Code 預設模型，原生支援 1M token context window，促銷定價至 2026-08-31。近期各版本的指令、旗標與設定項異動，詳見下方「最新版本」表格。 *…",
       "latestHeadline": "v2.1.197 Sonnet 5 正式成為預設模型：Claude Code 預設切換至 Claude Sonnet 5，原生支援 1M token context window，促銷定價至 2026-08-31；使用者升版後無需手動切換即享受完整 1M context（見 [Release](https://gith"
@@ -176,9 +176,9 @@ window.WIKI_DATA = {
       "pill": "active",
       "firstSeen": "2026-04-25",
       "startDate": "",
-      "lastUpdated": "2026-06-30",
+      "lastUpdated": "2026-07-04",
       "lastNewsUpdate": "2026-06-26",
-      "summary": "2026-06-26，Wired 確認 Trump 政府已不再信任 Amodei，由 Tom Brown 全面接管 Fable 5 出口管制談判；白宮人士批評其「行為怪異」。此為他近期最重大的政治處境轉變，顯示 Anthropic 與現任行政當局關係持續惡化。 Dario Amodei 是 Anthropic 共同創辦…",
+      "summary": "2026-06-26，Wired 確認 Trump 政府已不再信任 Amodei，由 Tom Brown 全面接管 Fable 5 出口管制談判；白宮人士批評其「行為怪異」。此為他近期最重大的政治處境轉變，顯示 Anthropic 與現任行政當局關係持續惡化。**後續進展**：Tom Brown 主導的談判已於 202…",
       "latestHeadline": "Wired 延伸報導確認 Trump 政府已不再信任 Amodei，改由 Tom Brown（GPT-3 共同研發者、Anthropic 聯合創辦人）全面接管政府溝通；Dario 以商業成功推動 AI 安全的政策立場持續受到質疑（來源：WIRED）"
     },
     {
@@ -251,7 +251,7 @@ window.WIKI_DATA = {
       "pill": "active",
       "firstSeen": "2026-04-28",
       "startDate": "",
-      "lastUpdated": "2026-07-02",
+      "lastUpdated": "2026-07-04",
       "lastNewsUpdate": "2026-07-01",
       "summary": "Anthropic Managed Agents 是 Claude Platform 上的官方 Agent 框架，提供持久記憶（含 Dreaming 記憶整合）、20 路並行子代理、Outcomes 規格驗證、Proactive Workflows 與企業自架沙箱等功能，Anthropic 定位為「agentic AI…",
       "latestHeadline": "anthropic-sdk-python v0.115.0 新增 Managed Agents API 支援，Python SDK 正式跟進框架更新，開發者可透過官方 SDK 直接操作 Managed Agents（見 [Release](https://github.com/anthropics/anthropic-"
@@ -463,7 +463,7 @@ window.WIKI_DATA = {
       "pill": "warn",
       "firstSeen": "",
       "startDate": "2026-05-01",
-      "lastUpdated": "2026-07-03",
+      "lastUpdated": "2026-07-04",
       "lastNewsUpdate": "2026-07-03",
       "summary": "**出口管制已於 2026-07-01 全面解除。** 美國商務部長 Howard Lutnick 宣布解除 Fable 5 和 Mythos 5 的出口管制，正式生效；Anthropic 承諾三項義務換取解封（主動偵測安全風險、與政府合作制定協議與標準、通報惡意活動）；封鎖期共 18–19 天（2026-06-13 …",
       "latestHeadline": "出口管制已於 2026-07-01 全面解除。 美國商務部長 Howard Lutnick 宣布解除 Fable 5 和 Mythos 5 的出口管制，正式生效；Anthropic 承諾三項義務換取解封（主動偵測安全風險、與政府合作制定協議與標準、通報惡意活動）；封鎖期共 18–19 天（2026-06-13 全面封鎖"
@@ -508,7 +508,7 @@ window.WIKI_DATA = {
       "pill": "active",
       "firstSeen": "",
       "startDate": "2026-04-25",
-      "lastUpdated": "2026-07-03",
+      "lastUpdated": "2026-07-04",
       "lastNewsUpdate": "2026-07-03",
       "summary": "追蹤 Claude Code 社群中活躍的概念辯論、設計哲學、實證研究與技術反思。與 [[topics/community-tech-patterns]] 追蹤具體工具和工作流不同，本頁聚焦思想碰撞：什麼哲學正在成形、什麼假設受到挑戰、什麼共識正在收斂。頁面結構：**🔥 本週熱點**（當前最熱的持續議題）→ **🌊 長…",
       "latestHeadline": "追蹤 Claude Code 社群中活躍的概念辯論、設計哲學、實證研究與技術反思。與  追蹤具體工具和工作流不同，本頁聚焦思想碰撞：什麼哲學正在成形、什麼假設受到挑戰、什麼共識正在收斂。頁面結構：🔥 本週熱點（當前最熱的持續議題）→ 🌊 長期議題（主題彙整）→ 熱門討論記錄（最近 30 天）→ 技術彙整（逐篇深度筆記）"
@@ -553,7 +553,7 @@ window.WIKI_DATA = {
       "pill": "active",
       "firstSeen": "",
       "startDate": "2026-04-25",
-      "lastUpdated": "2026-07-01",
+      "lastUpdated": "2026-07-04",
       "lastNewsUpdate": "",
       "summary": "追蹤 Claude Code 社群發布的工具、插件與 skill 專案。此頁為 lint 專用，由 /wiki-lint 定期策展；每日 ingest 不更新此頁。日常工作流模式見 [[topics/community-tech-patterns]]，概念辯論見 [[topics/community-tech-disc…",
       "latestHeadline": "追蹤 Claude Code 社群發布的工具、插件與 skill 專案。此頁為 lint 專用，由 /wiki-lint 定期策展；每日 ingest 不更新此頁。日常工作流模式見 ，概念辯論見 。"
@@ -663,10 +663,6 @@ window.WIKI_DATA = {
           {
             "name": "LG Group",
             "size": "頂尖"
-          },
-          {
-            "name": "Rubrik",
-            "size": "大型"
           },
           {
             "name": "AppFolio",
@@ -793,9 +789,9 @@ window.WIKI_DATA = {
             "Claude Code": {
               "status": "✅",
               "statusKey": "active",
-              "eventDate": "2026-06-30",
-              "note": "發布 Claude Code 專用 AI agent 與安全層，強化企業環境安全防護；2026-06-09 已有 Agent Cloud 前例，本次為 Claude Code 專屬深化（詳見 [[topics/anthropic-business]]）",
-              "confirmedDate": "2026-06-30"
+              "eventDate": "2026-06-09",
+              "note": "推出 Agent Cloud for Claude Code，將數據保護平台轉型為 AI agent；全球 GSI 同步入夥",
+              "confirmedDate": "2026-06-09"
             }
           },
           "Notion": {
@@ -867,15 +863,6 @@ window.WIKI_DATA = {
               "statusKey": "active",
               "eventDate": "2026-06-09",
               "note": "LG 集團旗下全體關聯企業宣布採用 Anthropic Claude，韓國大型財閥全面入局企業 AI",
-              "confirmedDate": "2026-06-09"
-            }
-          },
-          "Rubrik": {
-            "Claude Code": {
-              "status": "✅",
-              "statusKey": "active",
-              "eventDate": "2026-06-09",
-              "note": "推出 Agent Cloud for Claude Code，將數據保護平台轉型為 AI agent；全球 GSI 同步入夥",
               "confirmedDate": "2026-06-09"
             }
           },
@@ -1186,7 +1173,7 @@ window.WIKI_DATA = {
             "confirmedDate": "2026-06-09"
           },
           {
-            "enterprise": "Rubrik",
+            "enterprise": "Rubrik（NYSE: RBRK）",
             "size": "大型",
             "tool": "Claude Code",
             "status": "✅",
@@ -1388,7 +1375,7 @@ window.WIKI_DATA = {
       "pill": "active",
       "firstSeen": "",
       "startDate": "2026-07-02",
-      "lastUpdated": "2026-07-02",
+      "lastUpdated": "2026-07-04",
       "lastNewsUpdate": "2026-07-02",
       "summary": "本頁回答一個問題：**「我該用哪個 Claude 模型？」** 各模型的深度資訊（爭議、時序、已知問題）在各自的 entities 頁；本頁只做橫向對照與情境推薦，模型陣容變化時同步更新。",
       "latestHeadline": "本頁回答一個問題：「我該用哪個 Claude 模型？」 各模型的深度資訊（爭議、時序、已知問題）在各自的 entities 頁；本頁只做橫向對照與情境推薦，模型陣容變化時同步更新。"
