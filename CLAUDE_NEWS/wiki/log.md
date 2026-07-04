@@ -2387,3 +2387,19 @@ Append-only 紀錄。每次 ingest、query 或 lint 都在此追加一條。
 - **日報格式修復**：當日 pipeline 生成的日報條目偏離規格（bullet 式標題而非 `**[標題](url)**`），導致 web reader 解析出空區塊、讀者只見今日聚焦。已依 gathered_items.json 重生 `news/2026-07-02.md`（自檢 11 個連結標題；重點話題 2 / 討論 6 / 付費 3；無 official 條目故省略 🔧）；流程面在 `.claude/commands/news-pipeline-steps.md` Step 1b 加入格式強制警告與 3a 格式自檢（grep 連結標題數 ≥ 5）
 - **新增頁面**：`wiki/topics/model-comparison.md` — 模型選型對照（快速選型表 + 情境推薦 + benchmark 對照），回應「個別模型頁難聚焦」的讀者需求；`.claude/rules/wiki-ingest-models.md` 新增選型對照同步規則與 sonnet-5 負責頁面
 - index.md：新增 model-comparison 列與近期異動
+
+## 2026-07-04 週度延伸回顧
+
+- 延伸（已執行，2026-07-05 完成）：
+  - fable-5.md 新增「配額與計費過渡（至 7/7）」子區塊（模型）
+  - model-comparison.md 新增「token 消耗／每任務成本」維度，矛盾實測並陳（模型）
+  - claude-code.md 補「隱寫術標記／代理偵測指控」🔴 條目與 #38335 配額 issue（功能）
+  - official-community-gap.md 產品化矩陣新增「跨工具 agent 設定標準（AGENTS.md）」列 ❌（功能）
+  - code-quality-decline.md 新增「Token 消耗異常訊號群」子區塊，三假說分析（社群）
+- 使用者跳過項目：無（六項全數執行）
+- 觀察待辦（本次不動手）：
+  - 「個性流失」議題等第三個模型世代樣本再評估建頁（模型）
+  - 額度焦慮多條 ☄️閃現，下次 ingest/lint 評估合併為 🌊延燒主題（社群）
+  - Alibaba/Anthropic 對「後門風險」正式回應後，重估「中美 AI 工具信任對峙」獨立頁（安全政策）
+  - fable-5.md 達 253 行，下次 lint 執行入口層健檢（不拆分）
+- 商業、人物記者判斷本週無延伸缺口；安全政策記者否決「信任危機」獨立建頁（三頁分工已完整）

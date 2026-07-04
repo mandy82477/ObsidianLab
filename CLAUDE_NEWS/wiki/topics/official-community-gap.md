@@ -3,8 +3,8 @@
 **狀態：** monitoring
 **領域：** 🛠️ 工具/功能
 **開始日期：** 2026-05-17
-**最後更新：** 2026-07-04
-**最後新聞更新：** 2026-06-30
+**最後更新：** 2026-07-05
+**最後新聞更新：** 2026-07-03
 
 > **最新功能缺口**（2026-06-30）
 > v2.1.196 新增 org default model 功能，企業管理員可在 org console 統一設定預設模型。這部分填補「多模型路由/鎖定防禦」缺口的企業控制面，但個人用戶的模型路由靈活性仍無官方解法，矩陣狀態從 ❌ 升為 ⚡ 部分對應。
@@ -33,6 +33,7 @@
 | 成本感知模型路由 | 2026-06-27，Opus 4.7 tokenizer 改版成本大漲後爆發 | Workweave Router（HN 181，實測降 40%+）、Dragoman、Rayline | 無 | ❌ 無官方對應 | feature-radar 全覽表無任何路由/成本最佳化功能；社群工具是唯一解法 |
 | 額度/用量監控 | 2026-05 起持續累積，2026-07-03 因 7/7 計費轉換臨近急遽爆發 | LimitBar、CCLimitPing、claude-needs-input | 無（僅有底層 rate-limit API 供第三方讀取，無官方儀表板/告警 UI） | ❌ 無官方對應 | 同一天（07-03）冒出兩款新工具，缺口迫切性隨計費轉換 deadline 逼近而升高，見 [[feature-radar]] ⏰ 倒數中 |
 | Slack 內 AI 隊友 | 弱社群前驅（Ano 等輕量 Slack + Claude 整合，2026-06-04） | Ano | Claude Tag（2026-06-24，Slack-native，Anthropic 內部 65% 程式碼由其生成） | ✅ 已產品化 | 此列較弱屬「社群發明」框架——官方主導色彩強，社群前驅稀薄，列入僅供對照參考 |
+| 跨工具 agent 設定標準（AGENTS.md） | 2026-05-02 起，[GitHub issue #6235](https://github.com/anthropics/claude-code/issues/6235) 累積數千則 reactions；2026-07-03 再上日報聚焦 | Codex、Amp、Cursor（均已採用 AGENTS.md 標準） | 無 | ❌ 無官方對應 | Claude Code 仍不支援 AGENTS.md，多工具並用者需為 Claude Code 額外維護 CLAUDE.md，造成配置互通痛點 |
 
 ---
 

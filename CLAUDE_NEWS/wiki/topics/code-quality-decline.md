@@ -3,19 +3,42 @@
 **狀態：** monitoring（官方已說明，待驗證恢復）
 **領域：** 🛠️ 工具/功能
 **開始日期：** 2026-03（推測）
-**最後更新：** 2026-07-01
-**最後新聞更新：** 2026-06-26
+**最後更新：** 2026-07-05
+**最後新聞更新：** 2026-07-03
 
-> **最近效能退步事件**（2026-06-26）
-> 用戶回報 Claude Code 自訂編排路由失效：相同 orchestration 設定下 OpenCode 穩定執行，但 Claude Code 無法可靠路由到自訂 providers 的 agents；問題指向工具行為不一致性，官方尚未回應。
+> **最近效能退步事件**（2026-07-03）
+> 06 月下旬起集中出現四個獨立的「token 消耗異常」訊號：HN 熱議「Claude Code 5x 更貴」（score 53）、獨立開發者單月燒 $62,021、GitHub issue #16856 回報 2.1.1 版 token 消耗達 4 倍以上、issue #38335 回報 Max 方案額度自 3/23 起異常消耗且累積大量留言。四者訊號來源獨立但主張方向一致，惟目前無法排除是計費/計量問題而非模型能力退步（詳見下方子區塊）。
 
 ---
 
 ## 摘要
 
-**當前狀態：** 官方已說明 4 月退步原因為工程疏失，恢復情況待驗證；近期投訴轉向「工具行為不一致」，但性質不一：自訂編排路由失效屬 context/工具配置層問題，無障礙偏差則被開發者定性為模型「values problem」（優先序偏差）而非配置或知識缺口；兩者共同點是均非典型的模型能力退步，官方多未回應。
+**當前狀態：** 官方已說明 4 月退步原因為工程疏失，恢復情況待驗證；2026-06 下旬起投訴焦點轉向「token 消耗異常／成本暴增」——四個獨立訊號（HN 熱議、$62,021 具名案例、兩則 GitHub issue）指向同一方向，但目前無法斷定是模型真退步、計費計量問題、或 context/工具配置問題（詳見「Token 消耗異常訊號群」）；此前的「工具行為不一致」投訴（自訂編排路由失效、無障礙偏差）性質也不一，共同點是均非典型的模型能力退步，官方多未回應。
 
 Claude Code 在 2026 年 3 月至 4 月間出現長達約一個月的效能明顯退步，引發大量開發者不滿。2026-04-24，Anthropic 首次正式承認此問題，說明原因為**工程疏失**（engineering missteps），並非刻意的模型行為調整。
+
+---
+
+## Token 消耗異常訊號群（2026-06 下旬起）
+
+**四個獨立訊號：**
+
+| 日期 | 訊號 | 來源 | 強度 |
+|------|------|------|------|
+| 2026-07-01 | 「Claude Code Just Got 5x More Expensive」：用戶回報原先兩天用量的 $50 配額現在一小時燒完 | Vincent Schmalbach blog（[原文](https://www.vincentschmalbach.com/claude-code-quietly-looks-5x-more-expensive/)，HN score 53） | 中高（HN score 53 達對照表中門檻）|
+| 2026-07-01 | 獨立開發者單月燒 $62,021 token 的具名案例 | Reddit r/ClaudeAI（[原文](https://www.reddit.com/r/ClaudeAI/comments/1ukli2u/i_burned_62021_in_claude_tokens_in_june_solo_dev/)）| 個案但引發廣泛討論 |
+| 2026-07-03 | GitHub issue #16856：升級至 2.1.1 版後 token 消耗速度較前版快 4 倍以上 | [GitHub Issues #16856](https://github.com/anthropics/claude-code/issues/16856) | 具體版本號可複現主張 |
+| 2026-07-03 | GitHub issue #38335：Max 方案 session 額度自 3/23 起異常加速消耗，累積大量留言 | [GitHub Issues #38335](https://github.com/anthropics/claude-code/issues/38335) | 高（留言數達對照表高門檻）|
+
+**核心分析：三種假說目前證據各支持什麼**
+
+| 假說 | 支持證據 | 尚無法排除的部分 |
+|------|---------|-----------------|
+| **模型真退步**（同任務需要更多輪次 / token 才能完成）| 若 4.8 或近期模型版本在等量任務上確實需要更多 tool call 或更長 thinking，將直接反映為 token 消耗上升；#16856 明確指向版本號（2.1.1）而非泛稱時間點，較貼近「版本行為改變」框架 | 缺乏官方或第三方在同一 prompt 集合上做版本前後 token 用量對照（benchmark 層級證據）；目前全部是用戶主觀感受 + 帳單金額，非受控實驗（推論）|
+| **計費／計量問題**（token 計數方式改變，而非實際用量增加）| $62,021 案例與「5x 更貴」報導都聚焦帳單/配額消耗速度而非任務品質下降，暗示問題可能出在計量或定價機制，而非模型輸出本身；[[community-tech-discussions]] 技術彙整已記錄社群懷疑「agent 模式的 token 計費方式變更」與「subagent 呼叫計費細節未透明揭示」| Anthropic 未就計費機制是否變更做出官方說明；無法排除只是使用習慣改變（如更多 subagent/parallel session）導致實際消耗上升（推論）|
+| **Context／工具配置問題**（用戶端 orchestration、MCP 工具或 context 管理不當導致的浪費）| #38335 的「Max 方案額度異常消耗」與本頁 2026-06-26「自訂編排路由失效」屬同類型「工具行為不一致」訊號；multi-agent／MCP 工具調用疊加成本是 [[community-tech-discussions]] 已記錄的系統性問題 | 若確為 context 腐蝕或配置問題，理論上應可透過調整 CLAUDE.md／減少 subagent 層級緩解，但目前無用戶回報「調整配置後消耗恢復正常」的驗證案例（推論）|
+
+**目前立場：** 三種假說均有部分支持證據，且互不排斥——例如版本行為改變（假說一）與計費計量未同步調整揭示（假說二）可能同時成立。截至 2026-07-03，Anthropic 尚未對此訊號群做出官方回應。與 [[community-tech-discussions]] 對應的「Claude Code 成本 5x 暴漲」條目互相引用，細節不重複展開。
 
 ---
 
@@ -38,6 +61,7 @@ Claude Code 在 2026 年 3 月至 4 月間出現長達約一個月的效能明�
 - 🔍 社群開發者正逐一驗證 50+ 修復是否落實（2026-05-03 開始，最終結果待觀察）
 - ⚠️ Stop hooks 失效為獨立問題，是否已修復待確認
 - ⚠️ 信任侵蝕已從「效能品質」擴大至「定價透明度、計量準確性、基礎設施可靠性」，形成結構性問題
+- ⚠️ 2026-06 下旬起「token 消耗異常」訊號群（四個獨立來源）出現，尚無法判定模型真退步 vs 計費/計量問題 vs context/工具配置問題，Anthropic 未回應
 - 📊 CC-Canary 可作為持續監測工具
 
 ---
@@ -66,10 +90,18 @@ Claude Code 在 2026 年 3 月至 4 月間出現長達約一個月的效能明�
 - [[news/2026-05-03]]
 - [[news/2026-05-05]]
 - [[news/2026-05-09]]
+- [[news/2026-07-01]]
+- [[news/2026-07-03]]
 - [CC-Canary GitHub](https://github.com/delta-hq/cc-canary)
 - [Anthropic's definition of safety is too narrow](https://jonathannen.com/anthropic-safety-too-narrow/)
 
 ## 時序（最新在上）
+
+### 2026-07-03
+- **Token 消耗異常訊號群成形**：GitHub issue #16856（2.1.1 版 token 消耗達 4 倍以上）與 issue #38335（Max 方案額度自 3/23 起異常消耗，大量留言）同日浮上，與 07-01 的兩則社群訊號（HN「5x 更貴」、$62,021 具名案例）共同構成四個獨立來源的成本異常訊號群；詳見「Token 消耗異常訊號群」子區塊；官方尚未回應（GitHub Issues）
+
+### 2026-07-01
+- **Claude Code 成本暴漲討論爆發**：Vincent Schmalbach 發文「Claude Code Just Got 5x More Expensive」登上 HN（score 53），同日 Reddit 出現獨立開發者單月燒 $62,021 token 的具名案例；社群懷疑與模型切換或計費方式變更有關；詳見 [[community-tech-discussions]] 對應條目
 
 ### 2026-06-26
 

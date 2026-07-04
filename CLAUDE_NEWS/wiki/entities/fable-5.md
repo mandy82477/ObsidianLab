@@ -4,8 +4,8 @@
 **狀態：** active（正式發布；出口管制已解除，2026-07-01 起全球恢復存取）
 **領域：** 🤖 模型
 **首次出現：** 2026-06-09
-**最後更新：** 2026-07-02
-**最後新聞更新：** 2026-07-02
+**最後更新：** 2026-07-05
+**最後新聞更新：** 2026-07-03
 
 > **最新進展**（2026-07-02）
 > Reddit 揭露 Fable 5 redeploy 隨附「Defense in Depth」新安全措施：更嚴格的資安/程式碼請求分類器，判定高風險時自動 fallback 至 Opus 4.8。首日已有負面實測（資安審查請求被誤判攔截、化學提問被拒），與 6/11「已部分撤回」的隱性降級爭議性質不同——這次分類器行為公開可見，但誤判範圍疑似超出 coding/cybersecurity。
@@ -25,6 +25,24 @@ Claude Fable 5 是 Anthropic 於 2026-06-09 發布的旗艦模型，為**史上�
 | Context Window | 1,000,000 token |
 | 最大 Output | 128,000 token |
 | 免費期限 | 訂閱用戶至 2026-06-22 |
+
+## 配額與計費過渡（至 7/7）
+
+**規則：** Pro/Max/Team 方案 7/7 前維持每週配額 50%（含 Fable 5 用量），7/7 後改依用量計費（usage-based billing），定價另行公布；Enterprise 方案需聯繫帳戶主管（[Anthropic Blog](https://www.anthropic.com/news/redeploying-fable-5)，2026-07-01）。定價數字細節見 [[entities/pricing]]。
+
+**配額重置時間因訂閱起始日而異**：Reddit 社群 07-03 釐清，Fable 5 額度重置規則並非統一週期，而是依各用戶訂閱方案的起始時間點各自輪轉（「Fable resets on Monday if you held a plan already」），並非所有人同一天重置（[Reddit r/ClaudeCode](https://www.reddit.com/r/ClaudeCode/comments/1umt5h5/fable_resets_on_monday_if_you_held_a_plan_already/)，2026-07-03）。
+
+**消耗速度落差極大**：同期回報顯示個體使用量差異懸殊——有用戶 2 天內就燒完額度（[Reddit r/ClaudeCode](https://www.reddit.com/r/ClaudeCode/comments/1umtox4/i_burned_through_my_fable_5_usage_in_2_days_so_i/)，07-03），也有用戶反映額度限制大幅衝擊原本仰賴 Fable 處理的大型基因體分析工作流（[Reddit r/ClaudeCode](https://www.reddit.com/r/ClaudeCode/comments/1umtlqh/sad_about_fable_restrictions/)，07-03）。
+
+**社群省額度策略：**
+
+| 策略 | 說明 | 來源 |
+|------|------|------|
+| Fable 主力 + Opus 4.8 subagent 分工 | 7/7 到期前，將部分工作分派給 Opus 4.8 subagent 執行，把 Fable 5 額度保留給真正需要旗艦能力的任務，藉此最大化訂閱內 token 使用效率 | [Reddit r/ClaudeAI](https://www.reddit.com/r/ClaudeAI/comments/1uli8as/maximizing_efficiency_with_fable_until_the_july/)，2026-07-02 |
+| 5 小時額度重置自動接續 | 社群工具 CCLimitPing（Show HN）在 5 小時額度重置的瞬間自動恢復任務，避免人工盯盤 | [GitHub](https://github.com/wavever/CCLimitPing)，2026-07-03 |
+| 用量即時監控 | LimitBar（macOS 選單列 App）即時顯示 Claude 使用額度，方便用戶主動調節任務排程 | [Gumroad](https://mikaweiss6.gumroad.com/l/limitbar)，2026-07-03 |
+
+**與既有成本爭議的關係**：以上省額度行為與 07-01 起延燒的「Claude Code 成本暴漲」爭議（用戶回報 $50 原可用兩天、現在一小時燒完）相互呼應，反映訂閱制配額吃緊下使用者的行為調整；成本爭議完整脈絡見 [[topics/model-comparison]] Benchmark 對照的 token 成本並陳。
 
 ## 熱度與試用價值
 
@@ -130,6 +148,9 @@ claude --model claude-fable-5-20260609
 ## 歷史記錄
 
 ### 解禁後（2026-07-01 起）
+
+#### 2026-07-03
+**配額重置規則釐清 + 消耗速度落差極大（社群策略彙整見「配額與計費過渡」子區塊）**：Reddit 社群釐清 Fable 5 額度重置時間依訂閱起始日而異，非統一週期（[Reddit r/ClaudeCode](https://www.reddit.com/r/ClaudeCode/comments/1umt5h5/fable_resets_on_monday_if_you_held_a_plan_already/)）；同日回報顯示個體消耗速度差異懸殊，2 天內燒完額度、大型基因體分析工作流受衝擊等案例並陳（[Reddit](https://www.reddit.com/r/ClaudeCode/comments/1umtox4/i_burned_through_my_fable_5_usage_in_2_days_so_i/)、[Reddit](https://www.reddit.com/r/ClaudeCode/comments/1umtlqh/sad_about_fable_restrictions/)）。
 
 #### 2026-07-02
 **Redeploy 技術細節：「Defense in Depth」分類器 + 早期實測褒貶不一**：

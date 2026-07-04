@@ -4,7 +4,7 @@
 **狀態：** active
 **領域：** 🛠️ 工具/功能
 **首次出現：** 2025（正式推出）
-**最後更新：** 2026-07-04
+**最後更新：** 2026-07-05
 **最後新聞更新：** 2026-07-03
 
 > **最新版本動態**（2026-07-01）
@@ -125,6 +125,7 @@
 
 ### 🛡️ 安全與隱私
 
+- 🔴 **隱寫術標記／代理偵測指控（2026-06-30 至 07-01，待查證）**：Reddit 貼文（2026-06-30）指控 Claude Code 自 v2.1.91 起嵌入偵測中國代理／地區的隱藏程式碼，並疑似混淆程式碼掩蓋此行為；此為社群單方指控，Anthropic 尚未就此回應或證實。2026-07-01 安全研究者進一步發現 Claude Code 2.1.196 binary 含隱寫術（steganography）機制，將日期字串中的撇號與分隔符替換為外觀相同的同形字符（homoglyphs），HN 熱度達 2263 分，36Kr 報導確認此機制針對時區資訊及中國 AI Lab 連線者注入額外系統提示，與 06-30 事件屬同一偵測基礎架構的延伸；Anthropic 已就隱寫術部分承諾修復（2026-07-01），但截至目前修復版尚未發布。事件完整細節見 [[topics/ai-agent-safety]]；承諾兌現進度見 [[topics/anthropic-commitments]]
 - 🔴 **Claude Code RCE via 惡意 Deeplink（2026-05-18/19 持續）**：安全研究人員揭露攻擊者可透過惡意 Deeplink 觸發 Claude Code 在受害者端執行任意指令（RCE），CyberSecurityNews 已發布詳細技術報導；屬高嚴重性安全問題，修補狀態待 Anthropic 確認；所有使用者應避免開啟不明來源的 deeplink；見 [[topics/ai-agent-safety]]
 - 🔴 **API 金鑰外洩漏洞**（2026-04-27 報導）：Claude Code 在自動化流程中可能將 API 金鑰洩漏至公開套件倉庫（npm 等），TechTalks 報導，等待 Anthropic 官方回應
 - 🔴 **Claude Code 攝影機存取請求（2026-05-19/20 疑慮）**：有使用者回報 Claude Code 在特定情境下要求開啟攝影機（webcam），宣稱用於確認使用者在場；此行為引發社群對「無鏡頭用戶或企業安全環境相容性」及隱私保護的強烈疑慮；Anthropic 尚未確認是否為正式功能，亦未說明適用條件；見 [[topics/ai-agent-safety]]
@@ -135,6 +136,9 @@
 
 ### 💰 計費與配額
 
+> 2026-06 下旬起配額/成本爭議集中爆發，多起獨立回報同時指向額度消耗與計費透明度問題。
+
+- 🔴 **Max 方案額度自 3 月起異常快速耗盡（GitHub issue #38335，2026-07-03 討論度最高）**：使用者回報 Max 方案 session 額度自 2026-03-23 起消耗速度異常加快（CLI 使用情境），是配額爭議中討論度最高的單一 issue；官方尚未回應或說明原因，見 [issue #38335](https://github.com/anthropics/claude-code/issues/38335)
 - 🔴 **HERMES.md 計費路由 bug**（2026-04-25 回報）：git commit 歷史中含大寫字串「HERMES.md」會觸發靜默切換至 API 額外計費，完全繞過 Max 方案配額；Anthropic 確認為 bug 但拒絕退款，已知損失達 $200。見 [[entities/pricing]]
 - 🔴 **OpenClaw 異常計費行為**（2026-04-30，HN 近千則討論）：若 Git 提交訊息或文件內容中含特定 JSON 格式的 "OpenClaw" 字串，Claude Code 會直接拒絕請求，或將帳單 Extra Usage 衝至 100%；表明 Claude Code 正主動掃描 repo 內容並據此改變計費策略，Anthropic 至今未公開說明
 - 🔴 **ANTHROPIC_API_KEY 雲端計費陷阱**（2026-04-30）：雲端環境設置此環境變數時，所有呼叫自動改走 API 計費通道，見 [[entities/pricing]]
