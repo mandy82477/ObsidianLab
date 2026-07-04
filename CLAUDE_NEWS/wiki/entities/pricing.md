@@ -4,14 +4,14 @@
 **狀態：** active（持續調整中）
 **領域：** 💼 商業
 **首次出現：** 2026-04-25
-**最後更新：** 2026-07-03
-**最後新聞更新：** 2026-07-03
+**最後更新：** 2026-07-04
+**最後新聞更新：** 2026-07-04
 
-> **最新計費政策異動**（2026-07-03）
+> **最新計費政策異動**（2026-07-04）
+> Anthropic 推出企業版 Claude 支出控管（spend controls）功能，回應企業 agentic AI 帳單頻繁超支的普遍痛點（Tech Times），是官方首次針對 [[topics/enterprise-cost-management]] 長期呼籲的「部門/團隊層級預算分配與上限設定」缺口推出產品化解法；具體控管粒度（部門層級／per-user／即時警報）尚未公開，待後續報導補充。
+
+> **前次動態**（2026-07-03）
 > GitHub Issues 出現印度盧比（INR）在地化定價需求（留言 204、👍 584），比照 OpenAI／Google 已有的在地計價；純社群 feature request，Anthropic 尚無官方回應。
-
-> **前次動態**（2026-07-02）
-> Reddit 熱門貼文揭露長期 Max 用戶 5 月底升級方案時遭介面誤導誤購 credits、退款客服管道一個多月未回應，直指「Claude 客服是幾乎所有科技公司中最差的」；同日另有用戶詢問企業 Select/Preferred 合作層級差異，反映分級資訊對外不透明。7/1 Anthropic 宣布 Claude Sonnet 5 促銷定價（$2/Mtok 輸入、$10/Mtok 輸出，至 2026-08-31），Fable 5 計費架構同步調整為 7/7 起 usage-based billing。
 
 ## 現況
 
@@ -82,6 +82,10 @@ git commit 歷史出現大寫字串「HERMES.md」會觸發靜默切換至 API �
 來源：[GitHub Issue #53262](https://github.com/anthropics/claude-code/issues/53262)
 
 ### 定價與促銷（模型定價、方案設計）
+
+#### 2026-07-04：企業版 Claude 支出控管（spend controls）功能上線
+
+- **官方推出企業支出控管功能**：Tech Times 報導（07-04），企業導入 agentic AI 後帳單頻繁超出預算成為普遍痛點，Anthropic 針對企業客戶推出 Claude 支出控管功能協助管理成本。**注意**：報導僅描述功能定位，未揭露具體控管粒度（部門/團隊層級預算上限、per-user 報表、即時警報等 [[topics/enterprise-cost-management]] 長期呼籲的功能是否齊備）；是官方首次針對企業成本失控問題推出產品化解法，而非僅靠配額縮減或計費政策調整（推論：對正面臨 Uber 式成本失控的企業客戶構成留存誘因）。詳見 [[topics/anthropic-business]]、[[topics/enterprise-cost-management]]（Tech Times https://www.techtimes.com/articles/319687/20260704/claude-enterprise-spend-controls-arrive-agentic-ai-bills-blow-past-budgets.htm）
 
 #### 2026-07-03：印度盧比定價需求（未滿足需求，官方未回應）
 

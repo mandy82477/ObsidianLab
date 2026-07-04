@@ -2,10 +2,18 @@
 
 LLM 查詢此 wiki 時，**先讀這個檔案**找相關頁面，再讀具體頁面取得詳細資訊。
 
-**最後更新：** 2026-07-04
+**最後更新：** 2026-07-05
 ---
 
 ## 近期異動
+
+- [[entities/claude-code]] — 2026-07-04：已知問題新增額度顯示 84% 卻觸發 limit、Windows Desktop relaunch 失敗（orphaned process file lock）、Cowork virtiofs FUSE 過期檔案、Cowork tab 消失（v1.2581.0）；多帳號管理／Linux build／WSL／Skills 同步等長期功能請求聚集，反映社群對平台相容性期待
+- [[topics/enterprise-tool-tracker]] — 2026-07-04：Alibaba 禁用 Claude Code 事件經 TechCrunch 等多方媒體跟進報導，確認日期更新
+- [[entities/pricing]] — 2026-07-04：新增 Claude Enterprise 支出控管（Spend Controls）功能，因應企業 Agentic AI 帳單超支問題
+- [[topics/enterprise-cost-management]] — 2026-07-04：企業層級成本工具缺口更新，同步 Spend Controls 功能上線
+- [[topics/anthropic-business]] — 2026-07-04：Anthropic-Samsung 客製晶片洽談獲 upi.com 跟進報導（仍維持初步報導標記）；企業支出控管功能戰略合作記錄
+- [[topics/code-quality-decline]] — 2026-07-04：新增 plan mode 逾時自動代答、整體回應變慢投訴延續事件
+- [[topics/community-tech-discussions]] — 2026-07-04：AskUserQuestion 60 秒逾時討論補充延續說明
 
 - **2026-07-04 週度 Lint**：修正 3 處跨頁矛盾（Mythos 5 存取狀態、Rubrik 企業命名不一致、封鎖期天數殘留舊值、Dario Amodei 現況過期敘述）；`community-tech-tools.md` 汰除 25 筆過期 ⏳ 工具、新增額度監控類 2 工具（LimitBar、claude-needs-input）；`community-tech-patterns.md` 修正「200k context」過時描述（已被 Sonnet 5 1M context 取代）；`overview.md` 全文改寫反映信任危機（embedded spyware 指控 + Alibaba 禁用）
 - [[topics/enterprise-tool-tracker]] — 2026-07-03：**Alibaba 禁用 Claude Code**（疑似後門風險，Reuters 報導，多媒體跟進），新增退出列

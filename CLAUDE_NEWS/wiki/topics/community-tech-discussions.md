@@ -3,8 +3,8 @@
 **狀態：** ongoing
 **領域：** 🌐 社群
 **開始日期：** 2026-04-25
-**最後更新：** 2026-07-04
-**最後新聞更新：** 2026-07-03
+**最後更新：** 2026-07-05
+**最後新聞更新：** 2026-07-04
 
 > **最熱討論**（2026-07-03）
 > AskUserQuestion 60 秒逾時爭議升溫為 🌊延燒：GitHub Issue #73125 累積留言 109、👍 375，從單一 Reddit 帖擴大為具名積壓問題。Ask HN 討論「跳脫 prompt-response 迴圈」的 AI 編碼互動模式（score 129）延續 Vibe coding/Loop Engineering 議題但聚焦互動模式設計。r/ClaudeCode 同晚四帖集中反映 Fable 5 額度焦慮情緒，屬情緒共鳴、尚待跨平台驗證。07-01 隱寫術事件（HN 2263）與成本暴漲（HN 53）仍為近期最高熱度議題。
@@ -106,7 +106,7 @@ MCP 的實際成本遠超多數使用者預期，已有多個量化案例：
 | Ask HN：跳脫 Prompt-Response 迴圈的 AI 編碼互動模式 | 2026-07-03 | 🔥🔥🔥 | ☄️閃現 | Ask HN 討論（score 129）：提問是否有人在嘗試 prompt-response 問答迴圈之外、更貼近「心流」的 AI 編碼互動模式；多則回應分享 Claude Code 使用心得與挫折點，代表性比喻包括「不像手寫程式碼那樣進入心流」「像一輛會突然煞車的腳踏車」；與既有「Vibe coding 成就感缺失」（06-18）、「Loop Engineering 哲學」（06-20）形成同一問題意識的延續討論，但聚焦點從「成就感」轉向「互動模式設計本身」；[原文](https://news.ycombinator.com/item?id=48771515)（HN） | — |
 | VS Code 使用率下降：Claude Desktop diff 體驗取代編輯器 | 2026-07-02 | 🔥 | ☄️閃現 | HN 文章（score 18）：資深開發者描述隨 Claude Desktop app diff 檢視體驗優化，逐漸減少直接開啟 VS Code 寫程式碼，只在需要仔細審查時切回編輯器；引發「開發者是否還需要親自寫程式碼、多數時間其實在讀程式碼」的反思討論；[原文](https://news.ycombinator.com/item?id=48754232)（HN） | — |
 | Anthropic 疑似在付費正式環境動態插入未公開系統訊息 | 2026-07-02 | 🔥 | ☄️閃現 | Reddit 貼文（HN 轉載）貼出 Claude Code 疑似回傳的內部「Flagging note」提示文字（如偵測到 pom.xml 被修改，附帶「不要告訴使用者」等隱藏指示），質疑工具結果被動態插入未公開系統訊息，侵犯付費產品透明度；單一貼文，尚無其他來源交叉驗證；[Reddit 原帖](https://www.reddit.com/r/ClaudeAI/comments/1ulg0ip/anthropic_testing_on_my_live_paid_for_product/)（Reddit r/ClaudeAI；無社群延燒） | — |
-| Claude Code AskUserQuestion 60 秒逾時自動代答引發體驗爭議 | 2026-07-02 | 🔥🔥 | 🌊延燒 | Reddit 貼文指出 Claude Code 互動詢問（AskUserQuestion）新增 60 秒逾時，逾時未答會自動代答繼續執行；此變更早已存在（[GitHub issue #30740](https://github.com/anthropics/claude-code/issues/30740)）但今日才被大量注意到；部分使用者認為此舉破壞了「決策分岔點詢問」的體驗品質；[Reddit 原帖](https://www.reddit.com/r/ClaudeAI/comments/1ulh0ic/claude_code_started_to_use_timeout_on/)（Reddit r/ClaudeAI）；07-03 新增 [GitHub Issue #73125](https://github.com/anthropics/claude-code/issues/73125) 具體數據：留言 109、👍 375，顯示此爭議已從單一 Reddit 帖擴大為 GitHub 具名積壓問題，跨平台佐證增強；同日 Show HN 出現終端機變色提示工具（claude-needs-input）明確關聯此逾時痛點 | claude-needs-input |
+| Claude Code AskUserQuestion 60 秒逾時自動代答引發體驗爭議 | 2026-07-02 | 🔥🔥 | 🌊延燒 | Reddit 貼文指出 Claude Code 互動詢問（AskUserQuestion）新增 60 秒逾時，逾時未答會自動代答繼續執行；此變更早已存在（[GitHub issue #30740](https://github.com/anthropics/claude-code/issues/30740)）但今日才被大量注意到；部分使用者認為此舉破壞了「決策分岔點詢問」的體驗品質；[Reddit 原帖](https://www.reddit.com/r/ClaudeAI/comments/1ulh0ic/claude_code_started_to_use_timeout_on/)（Reddit r/ClaudeAI）；07-03 新增 [GitHub Issue #73125](https://github.com/anthropics/claude-code/issues/73125) 具體數據：留言 109、👍 375，顯示此爭議已從單一 Reddit 帖擴大為 GitHub 具名積壓問題，跨平台佐證增強；同日 Show HN 出現終端機變色提示工具（claude-needs-input）明確關聯此逾時痛點；07-04 Reddit r/ClaudeCode 再度出現用戶反映 plan mode 逾時自動代答的抱怨（source_count 2），詳見 [[code-quality-decline]] | claude-needs-input |
 | 390M tokens 單一 session 紀錄：subagent 拆分突破 context 限制 | 2026-07-02 | 🔥 | ☄️閃現 | 使用者分享用 subagent 拆分工作方式，讓單一 Claude Code session 累積使用量達 3.9 億 tokens，凸顯 subagent 架構讓長任務不再受限於 200K context window；花費數週時間，6 月的 context reset 機制也有幫助；[Reddit 原帖](https://www.reddit.com/r/ClaudeAI/comments/1ulhy0e/new_record/)（Reddit r/ClaudeAI） | — |
 | 「thinking...」等待時間誘導分心，質疑破壞心流 | 2026-07-02 | 🔥 | ☄️閃現 | 使用者反映 Claude 思考停頓時間長度剛好足以誘使自己切換分頁分心，進而打斷心流與思路連貫性；因應方式：在旁邊放紙本筆記本，趁 Claude 思考時手寫下一步驟；[Reddit 原帖](https://www.reddit.com/r/ClaudeAI/comments/1ulfyyn/the_thinking_pause_is_training_me_to_tab_away_and/)（Reddit r/ClaudeAI） | — |
 | Claude Code 隱寫術：binary 以同形字符隱寫元資料 | 2026-07-01 | 🔥🔥🔥🔥 | ☄️閃現 | 研究者發現 Claude Code binary 以同形字符（homoglyph）將時區等系統元資料隱寫進模型輸出；HN score 2263，跨平台廣泛報導，社群強烈反應視為信任危機；引發「Anthropic has embedded hidden spyware-like code」衍生討論（HN score 54）；Anthropic 尚未正式回應；[原始研究](https://thereallo.dev/blog/claude-code-prompt-steganography)（HN + 跨平台） | — |

@@ -3,6 +3,20 @@
 Append-only 紀錄。每次 ingest、query 或 lint 都在此追加一條。
 格式：`## [YYYY-MM-DD] 類型 | 說明`
 
+## 2026-07-05 Ingest | news/2026-07-04.md（41 則）
+
+- 來源日報：`news/2026-07-04.md`（41 則，10/10 來源；Reddit 14 則、GitHub Issues 10 則、Google News 11 則、Hacker News 9 則）
+- 分類派工：功能、商業、社群、模型（四類並行 foreground 派工）；安全政策、人物本日無條目
+- 記者回報彙整：
+  - **功能**：`entities/claude-code.md` 已知問題新增 4 條（額度 84% 誤觸發 limit、Windows Desktop relaunch 失敗、Cowork virtiofs FUSE 過期檔案、Cowork tab 消失）+ 多帳號/Linux/WSL/Skills 同步功能請求聚集；v2.1.201 純 reliability 調整不進 feature-radar；跨類別條目「session/cache leakage」已轉知安全政策記者評估（本輪安全政策記者未派工，待下輪或 lint 追蹤）
+  - **商業**：`enterprise-tool-tracker.md` Alibaba 列補確認日期（不新增列，同一事件多媒體擴散）；`pricing.md` 新增 Claude Enterprise Spend Controls；`enterprise-cost-management.md`、`anthropic-business.md` 同步更新；Samsung 晶片洽談維持初步報導標記
+  - **社群**：`code-quality-decline.md` 新增 07-04 時序（plan mode 逾時代答、CLI 變慢投訴延續）；`community-tech-discussions.md` 補充既有 AskUserQuestion 列；15 則 Show HN／Reddit 條目因訊號強度不足（多數 HN score 1-11 分低於低門檻）未收錄，留待 lint 時 community-tech-tools 策展評估
+  - **模型**：thestreet.com 為已記錄事件（Defense in Depth，07-02）的媒體回顧，未更新；GLM 5.2 條目與 Claude 模型本身無直接關聯，未更新
+- feature-radar 新增：無（今日無符合准入定義的新官方功能）；版本行、倒數區塊維持不變（v2.1.201、7/7、8/31 均未變化）
+- index.md 狀態變更：無；近期異動新增 7 筆頁面更新記錄
+- 新增頁面：無
+- 呈現品質審查：四位記者皆回報 ✅ 通過，無待辦
+
 ## 2026-07-04 Lint
 
 - 修正矛盾：
