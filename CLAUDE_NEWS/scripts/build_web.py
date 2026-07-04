@@ -15,6 +15,7 @@ import time
 from pathlib import Path
 
 ROOT = Path(__file__).parent.parent
+WIKI_DIR      = ROOT / "wiki"
 WIKI_ENTITIES = ROOT / "wiki" / "entities"
 WIKI_TOPICS   = ROOT / "wiki" / "topics"
 WIKI_RADAR    = ROOT / "wiki" / "feature-radar.md"
@@ -147,6 +148,46 @@ def latest_headline(raw: str) -> str:
 def strip_llm_sections(md: str) -> str:
     """Remove any H2 section whose title contains '給 LLM' (and everything after it)."""
     return re.sub(r'\n## [^\n]*給 LLM[^\n]*\n[\s\S]*', '', md)
+
+
+# ── Internal wikilink dead-link check ───────────────────────────────────────
+
+WIKILINK_RE = re.compile(r'\[\[([^\]|#]+?)(?:\\?#[^\]|]*)?(?:\\?\|[^\]]*)?\]\]')
+
+
+def _clean_wikilink_target(raw_target: str) -> str:
+    """Strip a trailing markdown-table escape backslash, e.g. 'entities/foo\\' → 'entities/foo'."""
+    return raw_target.rstrip('\\').strip()
+
+
+def check_wikilinks(all_md_files: list[Path]) -> None:
+    """Scan wiki/*.md for [[target]] / [[target|alias]] wikilinks and print a
+    WARN for any target that doesn't resolve to a real page. Never raises —
+    purely advisory, does not interrupt the build."""
+    # 合法 target 集合：entities/topics 檔名（含/不含前綴）、特殊根頁面、news/ 日期頁
+    entity_slugs = {f.stem for f in WIKI_ENTITIES.glob("*.md")}
+    topic_slugs  = {f.stem for f in WIKI_TOPICS.glob("*.md")}
+    root_slugs   = {f.stem for f in WIKI_DIR.glob("*.md")}  # feature-radar, feature-radar-archive-*, index, overview
+    news_dates   = {f.stem for f in NEWS_DIR.glob("*.md")}
+
+    valid_targets = set(root_slugs)
+    valid_targets |= entity_slugs | {f"entities/{s}" for s in entity_slugs}
+    valid_targets |= topic_slugs | {f"topics/{s}" for s in topic_slugs}
+    valid_targets |= {f"news/{d}" for d in news_dates}
+
+    for f in all_md_files:
+        try:
+            raw = f.read_text(encoding="utf-8")
+        except Exception:
+            continue
+        headings = set(re.findall(r'^##\s+(.+?)\s*$', raw, flags=re.MULTILINE))
+        for m in WIKILINK_RE.finditer(raw):
+            target = _clean_wikilink_target(m.group(1))
+            if target in valid_targets:
+                continue
+            if target in headings:
+                continue  # in-page section self-reference (e.g. [[已知問題]])
+            print(f"WARN: {f.relative_to(ROOT)} 含斷鏈 wikilink [[{target}]]")
 
 
 def parse_enterprise_tracker(f: Path) -> dict | None:
@@ -466,6 +507,10 @@ def parse_digest(f: Path) -> dict:
 # ── Build ─────────────────────────────────────────────────────────────────────
 
 def build():
+    # ── Internal wikilink dead-link check (free, runs every build) ───────────
+    all_wiki_md = sorted(WIKI_DIR.glob("*.md")) + sorted(WIKI_ENTITIES.glob("*.md")) + sorted(WIKI_TOPICS.glob("*.md"))
+    check_wikilinks(all_wiki_md)
+
     entities = []
     for f in sorted(WIKI_ENTITIES.glob("*.md")):
         try:
