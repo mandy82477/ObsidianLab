@@ -3,6 +3,38 @@
 Append-only 紀錄。每次 ingest、query 或 lint 都在此追加一條。
 格式：`## [YYYY-MM-DD] 類型 | 說明`
 
+## 2026-07-04 Lint
+
+- 修正矛盾：
+  - Mythos 5 狀態：`topics/model-comparison.md` 快速選型表「仍限軍事用途存取」與 `entities/mythos.md`（7/1 起白名單擴大為授權機構）矛盾 → 統一為「僅限授權機構/安全研究用途，非一般消費市場」
+  - 企業命名：`topics/enterprise-tool-tracker.md` 「Rubrik」與「Rubrik（NYSE: RBRK）」同一企業兩種寫法 → 統一含 ticker 全名
+  - 封鎖期天數：`topics/anthropic-government-policy.md` 攻防紀錄 2026-07-01 列殘留「18 天」舊值，與頁面其他 3 處已更新的「18–19 天」不一致 → 統一為「18–19 天（07-03 MarketScale 確認 19 天）」
+  - Dario Amodei 現況過期：`entities/dario-amodei.md` 頂部 callout 停留在 6/26「白宮不信任」，未反映 Tom Brown 談判已於 7/1 促成解禁 → 補充後續進展並釐清「談判成果」與「個人信任關係」為兩條線
+- 補連結：`topics/official-community-gap.md` ← `entities/claude-code`、`entities/managed-agents`（原單向連結補為雙向）
+- 狀態更新：無（各 topics 頁最後更新均在 14 天內，未觸發 3c 過期判定）
+- 遷移至 entities：無
+- 新增 entities：無（掃描後未發現被提及 3 次以上且無專頁者；近期新人物/產品皆已有專頁）
+- 呈現品質：全部通過或已修復（見六位記者回報），無新增待辦
+- 超長頁面（> 500 行）：📋 待使用者確認
+  - `community-tech-patterns.md`（859 行）：建議將 2026-05 月份技術彙整條目移至新頁 `topics/community-tech-patterns-2026-05.md`（比照 community-tech-timeline 模式），本頁僅留 06-07 月 + 模式概覽表 + 目前結論
+  - `community-tech-discussions.md`（981 行）：既有規則要求 > 60 天技術彙整移至 `community-tech-timeline.md`，但從未執行過完整一輪遷移，累積至今造成持續增長；建議執行一次歷史遷移
+- 規則檔健檢：
+  - wiki/CLAUDE.md：50 行（閾值 80）✅
+  - .claude/rules/wiki-ingest.md：71 行（閾值 80）✅
+  - .claude/rules/wiki-ingest-format.md：138 行（閾值 200）✅
+  - 各記者規則檔：models 55 / features 138 ⚠️ / commercial 78 / safety-policy 54 / community 112 ⚠️ / community-lint 110 ⚠️ / people 42 / wiki-reporter-shared 46（閾值 100）
+  - 矛盾（6a）：無（新增的「互動門檻對照表」與既有 `wiki-ingest.md`/`wiki-ingest-community-lint.md` 門檻描述一致）
+  - 引用驗證（6b）：7/7 錨點全部通過
+  - 遵守率（6c）：近 3 次 ingest 呈現品質審查 3/3、feature-radar 更新提及 3/3 ✅
+  - 過期規則（6d）：1 條 > 60 天 — `wiki-ingest-format.md` entities/topics 頁面格式模板 [加入: 2026-04-25]（70 天）；本輪六記者實際套用驗證仍完全吻合現狀，暫無需修訂
+  - 簡化（6e）：features 138 行、community 112 行、community-lint 110 行均超 100 行閾值 ⚠️（待使用者確認是否簡化）
+  - 來源健康（6f）：📋 待使用者確認 — `sourceStatus` 欄位僅 2026-07-03 起有資料（新來源擴充至 10 個），尚無 3 天基線可判斷「連續 0」；07-03 當日 `lobste.rs`／`Claude API Release Notes`／`Anthropic Blog`／`dev.to` 回傳 count=0，但屬新增/低頻來源非確認故障，建議下次 lint 累積至少 3 天資料後再做正式告警判斷
+- 讀者模擬：
+  - Claude Code 重度使用者「Alibaba 說有後門，該不該擔心？」→ index → enterprise-tool-tracker，2 跳 ✅
+  - AI 系統開發者「AskUserQuestion 60s 逾時社群怎麼看？」→ index → community-tech-discussions，2 跳 ✅
+  - Anthropic 生態追蹤者「出口管制解除、承諾兌現了嗎？」→ index → anthropic-commitments，2 跳 ✅
+- overview.md：已全文改寫（反映信任危機：embedded spyware 指控 + Alibaba 禁用取代舊版 07-01 三喜臨門敘事）
+
 ## 2026-07-03 Ingest（backfill）| news/2026-07-03.md（42 則）
 
 - 來源日報：`news/2026-07-03.md`（42 則，10/10 來源；Reddit RSS 部分 429 仍取得 11 則；GitHub rate limit 提前中止 repo 搜尋但取得 3 則；補跑模式：07-03 pipeline 前日誤跑成 2026-05-19，本次以 `--date 2026-07-03` 回補）

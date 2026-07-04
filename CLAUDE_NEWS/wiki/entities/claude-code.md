@@ -4,7 +4,7 @@
 **狀態：** active
 **領域：** 🛠️ 工具/功能
 **首次出現：** 2025（正式推出）
-**最後更新：** 2026-07-03
+**最後更新：** 2026-07-04
 **最後新聞更新：** 2026-07-03
 
 > **最新版本動態**（2026-07-01）
@@ -200,6 +200,7 @@
 - [[topics/code-quality-decline]]
 - [[topics/competitor-landscape]]
 - [[topics/ai-agent-safety]]
+- [[topics/official-community-gap]]（官方功能路線 vs 社群痛點缺口分析）
 - [[entities/claude-design]]（AI 設計工具，與 Claude Code 整合尚不完善）
 - [[entities/openclaw]]（第三方 agentic 工具，Anthropic 主動管控中）
 - [[entities/boris-cherny]]（Claude Code 創始人）

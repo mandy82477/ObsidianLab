@@ -4,7 +4,7 @@
 **狀態：** active（正式發布）
 **領域：** 🛠️ 工具/功能
 **首次出現：** 2026-04-28
-**最後更新：** 2026-07-02
+**最後更新：** 2026-07-04
 **最後新聞更新：** 2026-07-01
 
 > **最新 SDK 更新**（2026-07-01）
@@ -139,6 +139,7 @@ while (!['completed', 'failed'].includes(task.status)) {
 
 - [[entities/claude-code]]（Managed Agents 整合於 Claude Code 工作流）
 - [[topics/community-tech-patterns]]（社群工具 Dreamer 採用類似理念，早於官方功能出現）
+- [[topics/official-community-gap]]（多 agent 協調痛點對照：官方對應程度已列為「✅ 高度對應」）
 
 ## 參考來源
 

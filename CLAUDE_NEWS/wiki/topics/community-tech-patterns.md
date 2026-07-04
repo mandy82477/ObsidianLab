@@ -535,7 +535,7 @@
 
 - **分層模型**：Sonnet 主力 + Opus 諮詢，節省約 60% 用量（未經獨立驗證）
 - **推理強度 vs 安全邊界**：高推理強度不會放寬安全限制，兩者獨立控制
-- **Context window 縮減**：舊版模型將回退至 200k context，依賴超長 context 的工作流需重新評估
+- ~~**Context window 縮減**：舊版模型將回退至 200k context~~（已被取代：Claude Code v2.1.197 起 Sonnet 5 為預設模型，原生 1M context window，見 [[entities/sonnet-5]]、[[entities/claude-code]]；此條目保留作為歷史記錄，不再適用）
 - **嵌入式成本感知路由**（Workweave Router，2026-06-27）：依請求難度自動路由到最佳模型，無需手動規則；解決 Opus 4.7 成本暴增問題，HN score 181 為近期社群工具最高分之一
 
 #### CLAUDE.md 設計原則

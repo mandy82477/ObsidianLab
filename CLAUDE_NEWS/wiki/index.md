@@ -2,11 +2,12 @@
 
 LLM 查詢此 wiki 時，**先讀這個檔案**找相關頁面，再讀具體頁面取得詳細資訊。
 
-**最後更新：** 2026-07-03
+**最後更新：** 2026-07-04
 ---
 
 ## 近期異動
 
+- **2026-07-04 週度 Lint**：修正 3 處跨頁矛盾（Mythos 5 存取狀態、Rubrik 企業命名不一致、封鎖期天數殘留舊值、Dario Amodei 現況過期敘述）；`community-tech-tools.md` 汰除 25 筆過期 ⏳ 工具、新增額度監控類 2 工具（LimitBar、claude-needs-input）；`community-tech-patterns.md` 修正「200k context」過時描述（已被 Sonnet 5 1M context 取代）；`overview.md` 全文改寫反映信任危機（embedded spyware 指控 + Alibaba 禁用）
 - [[topics/enterprise-tool-tracker]] — 2026-07-03：**Alibaba 禁用 Claude Code**（疑似後門風險，Reuters 報導，多媒體跟進），新增退出列
 - [[topics/anthropic-government-policy]] — 2026-07-03：出口管制解除媒體確認「19 天封鎖期」；FT 報導 Anthropic 封堵中國企業間接存取漏洞（新支線）
 - [[topics/ai-agent-safety]] — 2026-07-03：Alibaba「後門風險」指控（HN 313，單方指控待查證）
