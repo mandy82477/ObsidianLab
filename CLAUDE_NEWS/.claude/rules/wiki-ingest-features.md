@@ -21,6 +21,12 @@ GitHub Issues 來源的高互動 bug/issue 條目歸功能記者，記入 claude
 
 ---
 
+## official-community-gap 產品化矩陣同步 `[加入: 2026-07-04]`
+
+官方發布新功能時，檢查 `wiki/topics/official-community-gap.md` 的「Agent 工作模式產品化追蹤」矩陣是否有對應模式列：有則更新該列「官方對應」與「狀態」欄；無對應列則略過，不強制新增。此檢查納入回報的同步自查欄。
+
+---
+
 ## feature-radar 准入定義 `[加入: 2026-06-15]`
 
 feature-radar 只收**使用者可實際取用、呼叫、設定或執行的官方產物**。收錄前先問：
