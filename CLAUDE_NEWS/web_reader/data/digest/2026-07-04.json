@@ -1,0 +1,362 @@
+{
+  "date": "2026-07-04",
+  "generatedAt": "2026-07-04 23:59 UTC",
+  "articleCount": 41,
+  "sourceCount": "10/10 | **文章數：** 41 | **更新時間：** 2026-07-04 23:59 UTC",
+  "bulletin": "",
+  "topStories": [
+    {
+      "title": "Alibaba reportedly bans employees from using Claude Code",
+      "url": "https://techcrunch.com/2026/07/04/alibaba-reportedly-bans-employees-from-using-claude-code/",
+      "source": "Google News / TechCrunch",
+      "time": "07/04 16:32",
+      "sentiment": "",
+      "body": "TechCrunch 跟進報導 Alibaba 禁止員工在職場使用 Claude Code 的消息，與昨日路透社等媒體的報導相互印證，顯示中國企業對美系 AI 編碼工具的資安疑慮持續發酵。",
+      "focusTags": [
+        "[風險警示]"
+      ]
+    },
+    {
+      "title": "Potential session/cache leakage between workspace instances or consumer accounts",
+      "url": "https://github.com/anthropics/claude-code/issues/74066",
+      "source": "Hacker News",
+      "time": "07/04 14:03",
+      "sentiment": "",
+      "body": "Hacker News 使用者分享曾親歷的 LLM 供應商基礎設施「回應錯置」事故案例，並質疑 Claude Code 是否存在類似 session/cache 洩漏風險，引發對多租戶隔離機制的關注。",
+      "focusTags": [
+        "[持續追蹤]"
+      ]
+    },
+    {
+      "title": "Claude Code CLI is getting harder to use, plus slower and seemingly less capable.",
+      "url": "https://www.reddit.com/r/ClaudeCode/comments/1und5g7/claude_code_cli_is_getting_harder_to_use_plus/",
+      "source": "Reddit / r/ClaudeCode",
+      "time": "07/04 16:18",
+      "sentiment": "",
+      "body": "Reddit 使用者反映近期 Claude Code CLI 出現逾時、選項誤判等體驗問題，該貼文被兩個獨立來源提及，顯示近期效能與可用性抱怨有一定共鳴。",
+      "focusTags": []
+    }
+  ],
+  "techUpdates": [
+    {
+      "title": "[anthropics/claude-code] v2.1.201",
+      "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.201",
+      "source": "GitHub / anthropics/claude-code",
+      "time": "07/03 23:50",
+      "sentiment": "",
+      "body": "Claude Code v2.1.201 發布，Sonnet 5 的 session 不再於對話中途使用 system role 傳送 harness 提醒訊息。",
+      "focusTags": []
+    },
+    {
+      "title": "[Status] Elevated errors across many models",
+      "url": "https://status.claude.com/incidents/c0052w6jxl47",
+      "source": "Anthropic Status",
+      "time": "07/04 00:20",
+      "sentiment": "",
+      "body": "Anthropic Status 顯示多個模型一度發生錯誤率升高事件，已於當日修復並解決。",
+      "focusTags": []
+    }
+  ],
+  "mediaReports": [
+    {
+      "title": "Claude Enterprise Spend Controls Arrive as Agentic AI Bills Blow Past Budgets",
+      "url": "https://www.techtimes.com/articles/319687/20260704/claude-enterprise-spend-controls-arrive-agentic-ai-bills-blow-past-budgets.htm",
+      "source": "Google News / Tech Times",
+      "time": "07/04 16:07",
+      "sentiment": "",
+      "body": "Tech Times 報導企業導入 Agentic AI 後帳單頻繁超支，Anthropic 推出 Claude 企業版支出控管功能協助客戶管理成本。",
+      "focusTags": [
+        "[風險警示]"
+      ]
+    },
+    {
+      "title": "Mycelium Adds Discovery Layer to Claude Code Agents",
+      "url": "https://letsdatascience.com/news/mycelium-adds-discovery-layer-to-claude-code-agents-b167b006",
+      "source": "Google News / Let's Data Science",
+      "time": "07/04 13:35",
+      "sentiment": "",
+      "body": "Let's Data Science 報導 Mycelium 外掛為 Claude Code agent 增加從產品構想到市場驗證的探索層。",
+      "focusTags": []
+    },
+    {
+      "title": "I found a free tool that fixes Claude Code's biggest limitation",
+      "url": "https://www.makeuseof.com/found-free-tool-that-fixes-claude-codes-biggest-limitation/",
+      "source": "Google News / MakeUseOf",
+      "time": "07/04 11:01",
+      "sentiment": "",
+      "body": "MakeUseOf 介紹一款免費工具，聲稱解決 Claude Code 使用上的一大限制。",
+      "focusTags": []
+    },
+    {
+      "title": "I gave Claude Code memory between sessions, and my setup started running itself",
+      "url": "https://www.xda-developers.com/gave-claude-code-memory-between-sessions-setup-started-running-itself/",
+      "source": "Google News / XDA",
+      "time": "07/04 10:00",
+      "sentiment": "",
+      "body": "XDA 作者分享為 Claude Code 建立跨 session 記憶機制後，工作流程逐漸自動化的實測心得。",
+      "focusTags": []
+    },
+    {
+      "title": "Anthropic eyes South Korea's Samsung for custom AI chip",
+      "url": "https://www.upi.com/Top_News/World-News/2026/07/03/Anthropic-Samsung-Electronics/7811783128641/",
+      "source": "Google News / upi.com",
+      "time": "07/04 01:51",
+      "sentiment": "",
+      "body": "UPI 報導 Anthropic 傳出接洽三星電子，探討客製化 AI 晶片合作的可能性。",
+      "focusTags": []
+    },
+    {
+      "title": "Anthropic just landed its biggest win of 2026 so far",
+      "url": "https://www.thestreet.com/technology/anthropic-ipo-fable5-mythos-safety-classifier-block-jailbreak",
+      "source": "Google News / thestreet.com",
+      "time": "07/04 00:33",
+      "sentiment": "",
+      "body": "TheStreet 分析文章回顧 Fable 5 與 Mythos 安全分類器成功攔阻越獄攻擊等進展，稱其為 Anthropic 今年至今最大進展。",
+      "focusTags": []
+    }
+  ],
+  "discussions": [
+    {
+      "title": "[FEATURE] Add the ability to manage multiple Claude accounts within the Claude Desktop app with easy switching between profiles.",
+      "url": "https://github.com/anthropics/claude-code/issues/18435",
+      "source": "GitHub Issues / claude-code",
+      "time": "07/04 04:42",
+      "sentiment": "",
+      "body": "累積 688 個反應的長期功能請求，呼籲 Claude Desktop 支援多帳號設定檔快速切換。情緒：🤔",
+      "focusTags": [
+        "[社群趨勢]"
+      ]
+    },
+    {
+      "title": "[FEATURE] Multi-account switching in Claude Mobile app without shared email",
+      "url": "https://github.com/anthropics/claude-code/issues/36151",
+      "source": "GitHub Issues / claude-code",
+      "time": "07/04 15:38",
+      "sentiment": "",
+      "body": "類似訴求延伸至 Claude Mobile app，累積 521 個反應，反映多帳號管理是跨平台的共同痛點。情緒：🤔",
+      "focusTags": [
+        "[社群趨勢]"
+      ]
+    },
+    {
+      "title": "[BUG] AskUserQuestion: \"No response after 60s — continued without an answer\"",
+      "url": "https://github.com/anthropics/claude-code/issues/73125",
+      "source": "GitHub Issues / claude-code",
+      "time": "07/04 13:46",
+      "sentiment": "",
+      "body": "使用者持續回報 AskUserQuestion 逾時後會自動略過繼續執行，累積 380 個反應，干擾需要人工決策的工作流程。情緒：😤",
+      "focusTags": [
+        "[社群趨勢]"
+      ]
+    },
+    {
+      "title": "You've hit your limit · While usage is still at 84%",
+      "url": "https://github.com/anthropics/claude-code/issues/19673",
+      "source": "GitHub Issues / claude-code",
+      "time": "07/04 02:17",
+      "sentiment": "",
+      "body": "使用者反映額度顯示 84% 尚未用盡卻收到「已達上限」提示，累積 75 個反應，牽涉額度計算邏輯的準確性疑慮。情緒：😤",
+      "focusTags": []
+    },
+    {
+      "title": "[BUG] Claude Code Desktop fails to Relaunch on Windows due to orphaned process file lock",
+      "url": "https://github.com/anthropics/claude-code/issues/42776",
+      "source": "GitHub Issues / claude-code",
+      "time": "07/04 04:46",
+      "sentiment": "",
+      "body": "Windows 版 Desktop app 因孤兒行程檔案鎖定導致無法重新啟動，累積 39 個反應。情緒：😤",
+      "focusTags": []
+    },
+    {
+      "title": "[FEATURE] Official Claude Desktop build for Linux (Ubuntu LTS / Debian)",
+      "url": "https://github.com/anthropics/claude-code/issues/65697",
+      "source": "GitHub Issues / claude-code",
+      "time": "07/04 01:33",
+      "sentiment": "",
+      "body": "長期呼籲官方推出 Linux 版 Desktop app 的請求，累積 651 個反應，顯示 Linux 使用者社群規模不小。情緒：🤔",
+      "focusTags": []
+    },
+    {
+      "title": "[Feature Request] Claude Desktop: Option to execute commands in WSL instead of Windows",
+      "url": "https://github.com/anthropics/claude-code/issues/12506",
+      "source": "GitHub Issues / claude-code",
+      "time": "07/04 11:26",
+      "sentiment": "",
+      "body": "Windows 使用者要求 Desktop app 內建 Claude Code 功能可選擇在 WSL 中執行指令，累積 134 個反應。情緒：😐",
+      "focusTags": []
+    },
+    {
+      "title": "Potential session/cache leakage between workspace instances or consumer accounts",
+      "url": "https://github.com/anthropics/claude-code/issues/74066",
+      "source": "Hacker News",
+      "time": "07/04 14:03",
+      "sentiment": "",
+      "body": "延續 Hacker News 討論，使用者擔憂多租戶環境下可能出現 session 或 cache 交叉污染，呼籲官方正面回應排查機制。情緒：😤",
+      "focusTags": [
+        "[持續追蹤]"
+      ]
+    },
+    {
+      "title": "Show HN: Crew – Let Claude Code agents talk to each other",
+      "url": "https://github.com/0xmmo/crew",
+      "source": "Hacker News",
+      "time": "07/04 05:12",
+      "sentiment": "",
+      "body": "開發者打造 Crew，讓多個並行執行的 Claude Code session 能互相分享狀態、留言溝通，藉此改善多 agent 協作時的資訊斷層。情緒：😊",
+      "focusTags": [
+        "[新工具]"
+      ]
+    },
+    {
+      "title": "Claude Code CLI is getting harder to use, plus slower and seemingly less capable.",
+      "url": "https://www.reddit.com/r/ClaudeCode/comments/1und5g7/claude_code_cli_is_getting_harder_to_use_plus/",
+      "source": "Reddit / r/ClaudeCode",
+      "time": "07/04 16:18",
+      "sentiment": "",
+      "body": "使用者抱怨近期 CLI 在 plan mode 逾時後自動選擇非預期選項，並感覺整體回應變慢、能力下降。情緒：😤",
+      "focusTags": []
+    },
+    {
+      "title": "We need an accounting system for cognitive debt",
+      "url": "https://www.reddit.com/r/ClaudeCode/comments/1uncyk7/we_need_an_accounting_system_for_cognitive_debt/",
+      "source": "Reddit / r/ClaudeCode",
+      "time": "07/04 16:11",
+      "sentiment": "",
+      "body": "社群討論提出為 AI 編碼協作中累積的「認知債務」建立追蹤機制的構想。情緒：🤔",
+      "focusTags": []
+    },
+    {
+      "title": "How Anthropic SWEs use Fable 5?",
+      "url": "https://www.reddit.com/r/ClaudeCode/comments/1unck48/how_anthropic_swes_use_fable_5/",
+      "source": "Reddit / r/ClaudeCode",
+      "time": "07/04 15:54",
+      "sentiment": "",
+      "body": "使用者好奇 Anthropic 內部工程師若擁有無限制的 Fable 5 額度，實際工作模式會是如何。情緒：🤔",
+      "focusTags": []
+    },
+    {
+      "title": "First time I have seen this: my model seemed aware of its context usage ask me for compaction!",
+      "url": "https://www.reddit.com/r/LocalLLaMA/comments/1un9chv/first_time_i_have_seen_this_my_model_seemed_aware/",
+      "source": "Reddit / r/LocalLLaMA",
+      "time": "07/04 13:39",
+      "sentiment": "",
+      "body": "使用者在 Claude Code 搭配 GLM 5.2 的 session 中，觀察到模型主動察覺 context 使用量並要求進行壓縮。情緒：😊",
+      "focusTags": []
+    }
+  ],
+  "billing": [
+    {
+      "title": "Claude Enterprise Spend Controls Arrive as Agentic AI Bills Blow Past Budgets",
+      "url": "https://www.techtimes.com/articles/319687/20260704/claude-enterprise-spend-controls-arrive-agentic-ai-bills-blow-past-budgets.htm",
+      "source": "Google News / Tech Times",
+      "time": "07/04 16:07",
+      "sentiment": "",
+      "body": "Anthropic 針對企業客戶推出 Claude 支出控管功能，回應 Agentic AI 應用普及後帳單頻繁超出預算的問題。",
+      "focusTags": [
+        "[風險警示]"
+      ]
+    },
+    {
+      "title": "You've hit your limit · While usage is still at 84%",
+      "url": "https://github.com/anthropics/claude-code/issues/19673",
+      "source": "GitHub Issues / claude-code",
+      "time": "07/04 02:17",
+      "sentiment": "",
+      "body": "使用者反映額度顯示尚未用盡卻被提示已達上限，牽涉配額計算機制的準確性爭議。",
+      "focusTags": []
+    }
+  ],
+  "focus": [
+    {
+      "tag": "[風險警示]",
+      "text": "TechCrunch 證實 Alibaba 傳出禁止員工在職場使用 Claude Code，延續昨日路透社報導的中國企業資安疑慮態勢。",
+      "ref_urls": [
+        "https://techcrunch.com/2026/07/04/alibaba-reportedly-bans-employees-from-using-claude-code/"
+      ]
+    },
+    {
+      "tag": "[社群趨勢]",
+      "text": "GitHub Issues 湧現多筆高討論度功能請求與 bug 回報，包括帳號切換、AskUserQuestion 逾時、Windows Desktop 重啟失敗等，反映使用者體驗痛點持續累積。",
+      "ref_urls": [
+        "https://github.com/anthropics/claude-code/issues/18435",
+        "https://github.com/anthropics/claude-code/issues/36151",
+        "https://github.com/anthropics/claude-code/issues/73125"
+      ]
+    },
+    {
+      "tag": "[持續追蹤]",
+      "text": "Hacker News 上一則貼文指出曾有實例出現 session/cache 在不同工作區或帳號間錯置，引發對多租戶隔離安全性的討論。",
+      "ref_urls": [
+        "https://github.com/anthropics/claude-code/issues/74066"
+      ]
+    },
+    {
+      "tag": "[新工具]",
+      "text": "社群發布多款圍繞 Claude Code 的周邊工具，包括讓多個 agent 互相溝通的 Crew，以及協助產品開發的 Mycelium。",
+      "ref_urls": [
+        "https://github.com/0xmmo/crew",
+        "https://github.com/haabe/mycelium"
+      ]
+    },
+    {
+      "tag": "[風險警示]",
+      "text": "Tech Times 報導企業級 Agentic AI 帳單超出預算，Anthropic 推出企業 Claude 支出控管功能因應。",
+      "ref_urls": [
+        "https://www.techtimes.com/articles/319687/20260704/claude-enterprise-spend-controls-arrive-agentic-ai-bills-blow-past-budgets.htm"
+      ]
+    }
+  ],
+  "sourceStatus": [
+    {
+      "name": "Anthropic Status",
+      "ok": true,
+      "count": 1
+    },
+    {
+      "name": "Hacker News",
+      "ok": true,
+      "count": 9
+    },
+    {
+      "name": "lobste.rs",
+      "ok": true,
+      "count": 0
+    },
+    {
+      "name": "GitHub Issues",
+      "ok": true,
+      "count": 10
+    },
+    {
+      "name": "Claude API Release Notes",
+      "ok": true,
+      "count": 0
+    },
+    {
+      "name": "dev.to",
+      "ok": true,
+      "count": 0
+    },
+    {
+      "name": "GitHub",
+      "ok": true,
+      "count": 1
+    },
+    {
+      "name": "Google News",
+      "ok": true,
+      "count": 11
+    },
+    {
+      "name": "Anthropic Blog",
+      "ok": true,
+      "count": 0
+    },
+    {
+      "name": "Reddit",
+      "ok": true,
+      "count": 14
+    }
+  ],
+  "preview": "Alibaba reportedly bans employees from using Claude Code"
+}
