@@ -77,6 +77,16 @@ PYTHON -m news_aggregator.main --gather-only [--date TARGET_DATE]
 
 ### 💰 付費方案動態
 定價、配額、Token 費用相關
+
+### 📡 來源狀態
+從 `gathered_items.json` 的 `source_status` 欄位生成表格，格式嚴格如下（web reader 解析器依賴此格式）：
+
+| 來源 | 狀態 | 條數 |
+|------|------|------|
+| Anthropic Blog | ✅ | 0 |
+| Hacker News | ✅ | 13 |
+
+（每個來源一列，依 `source_status` 全部列出；`ok=true` → ✅，`false` → ❌）
 ```
 
 **每條排版格式（⚠️ 嚴格遵守，web reader 解析器依賴此格式）：**
@@ -99,6 +109,13 @@ PYTHON -m news_aggregator.main --gather-only [--date TARGET_DATE]
 grep -cE '^\*\*\[.+\]\(https?://' news/TARGET_DATE.md
 ```
 （今日聚焦以外的每個區塊各條目都應貢獻一個匹配；正常日報此數值 ≥ 5）
+
+3b. **來源狀態表存在性檢查（強制）**：
+```
+grep -c "^| .* | [✅❌] | [0-9]" news/TARGET_DATE.md
+```
+（應 ≥ 8，代表來源狀態表已寫入；若不足，補寫 📡 來源狀態區塊再檢）
+
 4. 用 Bash git 暫存並 commit（**先不 push**，本次所有變更於 Step 5 統一推送，避免多次 push 觸發 Pages 部署並發競爭）：
 ```
 git -C REPO_ROOT add news/TARGET_DATE.md
