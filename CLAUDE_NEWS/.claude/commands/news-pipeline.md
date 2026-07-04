@@ -35,7 +35,7 @@ argument-hint: [YYYY-MM-DD]
 1. 讀取 `C:\Users\Mandy\CLAUDE_OBSIDIAN\ObsidianLab\CLAUDE_NEWS\.claude\commands\news-pipeline-steps.md`，取得完整執行規範
 2. 從 Step 1a 開始依序執行所有步驟直到 Step 6
 
-規範：直接在本 agent session 執行，不再 spawn 子 agent。使用繁體中文輸出。
+規範：pipeline 各步驟直接在本 agent session 執行；**唯一例外是 Step 2 wiki ingest 的記者派工**——依 steps 規範以 Agent tool 並行派出各類記者，且**必須 foreground（不可設 run_in_background: true）**，否則記者完成通知會送到主 session 而非本 agent，pipeline 會卡死在等待。使用繁體中文輸出。
 ```
 
 Agent 完成後自動通知主 session。

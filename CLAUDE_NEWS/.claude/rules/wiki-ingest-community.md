@@ -15,6 +15,8 @@
 
 > `wiki/topics/community-tech-tools.md` 已改為 **lint 專用**，每日 ingest 不更新此頁。策展規則見 `.claude/rules/wiki-ingest-community-lint.md`。
 
+**分流鐵則：** GitHub Issues 條目屬功能記者（claude-code 已知問題）；僅當該 issue 引發跨平台討論（HN/Reddit 也在延燒）才作為 discussions 條目收錄。
+
 ---
 
 ## community-tech-discussions 收錄門檻 `[加入: 2026-06-28]`
@@ -23,7 +25,7 @@
 
 | 訊號來源 | 收錄理由 | 最低門檻 |
 |---------|---------|---------|
-| **社群碰撞** | 多方驗證、正反交鋒 | HN score ≥ 10，或 Reddit 帖有明顯互動，或同議題跨 2 個以上獨立來源 |
+| **社群碰撞** | 多方驗證、正反交鋒 | 達對照表**低**門檻（見 `.claude/rules/wiki-reporter-shared.md` 互動門檻對照表），或同議題跨 2 個以上獨立來源（source_count ≥ 2）|
 | **重要人士具名表態** | 因「誰說的」而有重量（Boris Cherny、Dario、Karpathy 等）| 具名 + 可信來源；同時回報人物記者更新對應 `entities/` 頁 |
 | **重要媒體深度報導** | 因觸及面與報導深度（36Kr、Platformer、WSJ 等）| 報導本身有實質內容，非純轉載標題 |
 
