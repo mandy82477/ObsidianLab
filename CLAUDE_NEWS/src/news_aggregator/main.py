@@ -152,11 +152,18 @@ def main() -> None:
 
     if args.gather_only:
         # Cross-run dedup: drop items already emitted in a previous digest,
-        # unless their score re-ignited (>= 2x and +10 since last emit)
-        emitted = prune_expired(load_cache(), today=target_date)
-        before_cache = len(filtered)
-        filtered, updated_cache = filter_new_or_reignited(filtered, emitted, today=target_date)
-        logger.info("Emitted-cache filter: %d → %d items", before_cache, len(filtered))
+        # unless their score re-ignited (>= 2x and +10 since last emit).
+        # Backfill runs (--date) must NOT touch the cache: they'd wrongly
+        # drop items against a cache built from today's dates, and would
+        # pollute the cache with the backfilled (past) date on save.
+        updated_cache = None
+        if args.gather_only and not args.date:
+            emitted = prune_expired(load_cache(), today=target_date)
+            before_cache = len(filtered)
+            filtered, updated_cache = filter_new_or_reignited(filtered, emitted, today=target_date)
+            logger.info("Emitted-cache filter: %d → %d items", before_cache, len(filtered))
+        else:
+            logger.info("Emitted-cache filter: skipped for backfill (--date %s)", args.date)
 
         # Write gathered items to JSON for Claude session to analyse
         import json as _json
@@ -183,8 +190,10 @@ def main() -> None:
         gather_path = LOG_DIR.parent / "gathered_items.json"
         gather_path.write_text(_json.dumps(out, ensure_ascii=False, indent=2), encoding="utf-8")
         logger.info("--gather-only: wrote %d items to %s", len(filtered), gather_path)
-        # Persist emitted cache only after the output JSON was written successfully
-        save_cache(updated_cache)
+        # Persist emitted cache only after the output JSON was written successfully.
+        # Skipped entirely for backfill runs — see cache-skip comment above.
+        if updated_cache is not None:
+            save_cache(updated_cache)
         elapsed = time.time() - start
         logger.info("=== Gather complete: %d items / %d sources / %.1fs ===", len(filtered), len(sources), elapsed)
         return

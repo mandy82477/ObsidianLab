@@ -53,6 +53,7 @@
       "focusTags": []
     }
   ],
+  "mediaReports": [],
   "discussions": [
     {
       "title": "Configured 9 MCP servers in Claude Code over 4 months. Here's the truth nobody tells you about MCP context bloat.",

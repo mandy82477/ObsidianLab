@@ -91,6 +91,7 @@
       "focusTags": []
     }
   ],
+  "mediaReports": [],
   "discussions": [
     {
       "title": "Claude Code now supports artifacts",

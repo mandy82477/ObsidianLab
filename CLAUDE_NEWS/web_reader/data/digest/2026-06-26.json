@@ -18,6 +18,7 @@
       ]
     }
   ],
+  "mediaReports": [],
   "discussions": [
     {
       "title": "Anthropic 官方研究：Claude Code 40 萬場 Session 使用模式分析",

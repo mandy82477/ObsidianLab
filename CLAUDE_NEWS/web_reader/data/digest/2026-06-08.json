@@ -50,6 +50,7 @@
       "focusTags": []
     }
   ],
+  "mediaReports": [],
   "discussions": [
     {
       "title": "Show HN: I put my Claude Code rate-limit burndown in the status line",

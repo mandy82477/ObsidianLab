@@ -297,8 +297,8 @@ def parse_wiki(f: Path, page_type: str) -> dict:
 
 # ── Digest parser ─────────────────────────────────────────────────────────────
 
-SECTION_EMOJI = {"🔔": "bulletin", "⭐": "topStories", "🔧": "techUpdates", "💬": "discussions",
-                 "💰": "billing", "📌": "focus"}
+SECTION_EMOJI = {"🔔": "bulletin", "⭐": "topStories", "🔧": "techUpdates", "📰": "mediaReports",
+                 "💬": "discussions", "💰": "billing", "📌": "focus"}
 
 SENTIMENT_RE = re.compile(r"`情緒：(.+?)`")
 # star stories start with "⭐ **[Title](url)**" — strip any leading emoji/chars before **
@@ -322,6 +322,7 @@ def parse_digest(f: Path) -> dict:
         "bulletin": "",
         "topStories": [],
         "techUpdates": [],
+        "mediaReports": [],
         "discussions": [],
         "billing": [],
         "focus": [],
@@ -441,7 +442,7 @@ def parse_digest(f: Path) -> dict:
             url_tag[u] = f["tag"]
             url_tag[_norm(u)] = f["tag"]
 
-    for sec in ("topStories", "techUpdates", "discussions", "billing"):
+    for sec in ("topStories", "techUpdates", "mediaReports", "discussions", "billing"):
         for s in result[sec]:
             su = s.get("url", "")
             tag = url_tag.get(su) or url_tag.get(_norm(su)) or ""
@@ -580,7 +581,7 @@ def build():
         focus_txt = "；".join(f["text"] for f in d.get("focus", []))
         titles = "；".join(
             s["title"]
-            for sec in ("topStories", "techUpdates", "discussions", "billing")
+            for sec in ("topStories", "techUpdates", "mediaReports", "discussions", "billing")
             for s in d.get(sec, [])
         )
         search_index.append({

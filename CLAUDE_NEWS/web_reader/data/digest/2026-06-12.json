@@ -59,6 +59,7 @@
       ]
     }
   ],
+  "mediaReports": [],
   "discussions": [
     {
       "title": "Running Claude Code Offline on an M3 Pro with Qwen3.6",

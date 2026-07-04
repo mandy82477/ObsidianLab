@@ -42,7 +42,7 @@ PYTHON -m news_aggregator.main --gather-only [--date TARGET_DATE]
 **System：**
 > 你是一位專注於 AI 技術的中文科技記者，擅長用繁體中文撰寫清晰、客觀的技術新聞摘要。
 
-**輸出結構（五個區塊，無內容則省略）：**
+**輸出結構（六個區塊，無內容則省略）：**
 
 ```
 # Claude Code & Anthropic 每日新聞摘要
@@ -69,6 +69,9 @@ PYTHON -m news_aggregator.main --gather-only [--date TARGET_DATE]
 ### 🔧 技術更新
 僅 category=official 的條目（GitHub release、Anthropic Blog）。**若今日無任何 official 條目，完全省略此區塊，不可用 community 條目填充。**
 
+### 📰 媒體報導
+僅收錄 category=media 的條目（Reuters/WSJ/科技媒體等），不加情緒標籤。
+
 ### 💬 技術熱度討論
 僅 category=community 的條目，每條末加 情緒：😊/😤/😐/🤔
 
@@ -86,6 +89,7 @@ PYTHON -m news_aggregator.main --gather-only [--date TARGET_DATE]
 - 來源行必須是 `` `來源` · 時間 `` 獨立一行
 - 違反此格式時 web reader 會解析出空區塊，讀者只看得到今日聚焦
 - `gathered_items.json` 每條含 `score_unit` 欄位（分＝HN points、留言＝評論數），選材比較熱度時注意單位不同不可直接互比
+- 跨來源比較熱度時的粗略等價量級：HN 30 分 ≈ Reddit 50 讚 ≈ 10 則留言 ≈ dev.to 20 讚；source_count ≥ 2（跨來源報導）視為高於任何單來源分數的訊號
 - `source_count > 1` 表示多個獨立來源報導同一事件，選材時視為重要度加權訊號
 
 3. 生成完成後，寫入 `news/TARGET_DATE.md`（完整 Markdown）

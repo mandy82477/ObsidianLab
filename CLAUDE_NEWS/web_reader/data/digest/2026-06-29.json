@@ -76,6 +76,7 @@
     }
   ],
   "techUpdates": [],
+  "mediaReports": [],
   "discussions": [
     {
       "title": "Claude Code runs a GitHub repo's hidden malware without verification, giving attackers full control",

@@ -52,6 +52,7 @@
       "focusTags": []
     }
   ],
+  "mediaReports": [],
   "discussions": [
     {
       "title": "I built persistent memory for Claude — local stack, MCP integration, 39ms retrieval. Sharing the architecture.",

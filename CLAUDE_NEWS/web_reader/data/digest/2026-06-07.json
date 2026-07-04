@@ -79,6 +79,7 @@
       ]
     }
   ],
+  "mediaReports": [],
   "discussions": [
     {
       "title": "Show HN: Ccgs – Collaborative Claude Code sessions, stored in Git branches",

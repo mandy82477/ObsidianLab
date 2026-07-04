@@ -53,6 +53,7 @@
       "focusTags": []
     }
   ],
+  "mediaReports": [],
   "discussions": [
     {
       "title": "Building DeepSeek's Answer to Claude Code",

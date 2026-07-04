@@ -80,6 +80,7 @@
       "focusTags": []
     }
   ],
+  "mediaReports": [],
   "discussions": [
     {
       "title": "I Gave Claude Code a Microphone via MCP. Now It Asks Me Questions Before Writing Code.",

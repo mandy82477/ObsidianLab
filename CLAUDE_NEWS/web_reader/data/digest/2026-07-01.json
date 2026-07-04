@@ -69,6 +69,7 @@
       ]
     }
   ],
+  "mediaReports": [],
   "discussions": [
     {
       "title": "Claude Code is steganographically marking requests",

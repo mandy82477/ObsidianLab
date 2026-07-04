@@ -80,6 +80,7 @@
       "focusTags": []
     }
   ],
+  "mediaReports": [],
   "discussions": [
     {
       "title": "I benchmarked Claude Code's caveman plugin against \"be brief.\"",

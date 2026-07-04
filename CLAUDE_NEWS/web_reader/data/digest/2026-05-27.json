@@ -84,6 +84,7 @@
       ]
     }
   ],
+  "mediaReports": [],
   "discussions": [
     {
       "title": "Claude Code as a Daily Driver: Claude.md, Skills, Subagents, Plugins, and MCPs",

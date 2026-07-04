@@ -77,7 +77,7 @@ def _fetch_google_query(query: str, cutoff: datetime) -> list[FeedItem]:
                 published=pub or datetime.now(tz=timezone.utc),
                 score=0,
                 summary=entry.get("summary", "")[:200],
-                category="community",
+                category="media",
             ))
         return result
     except Exception as e:

@@ -264,10 +264,11 @@
 
     // sections
     const sections = [
-      { key: 'topStories',  emoji: '⭐', label: '重點話題',   en: 'headlines',         star: true  },
-      { key: 'techUpdates', emoji: '🔧', label: '官方公告',   en: 'official releases', star: false },
-      { key: 'discussions', emoji: '💬', label: '社群討論', en: 'community',        star: false },
-      { key: 'billing',     emoji: '💰', label: '付費方案動態', en: 'pricing & access',  star: false },
+      { key: 'topStories',    emoji: '⭐', label: '重點話題',     en: 'headlines',         star: true  },
+      { key: 'techUpdates',   emoji: '🔧', label: '官方公告',     en: 'official releases', star: false },
+      { key: 'mediaReports',  emoji: '📰', label: '媒體報導',   en: 'media reports',     star: false },
+      { key: 'discussions',   emoji: '💬', label: '社群討論',   en: 'community',        star: false },
+      { key: 'billing',       emoji: '💰', label: '付費方案動態', en: 'pricing & access',  star: false },
     ];
 
     sections.forEach(({ key, emoji, label, en, star }) => {

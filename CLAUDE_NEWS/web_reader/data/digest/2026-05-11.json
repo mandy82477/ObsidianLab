@@ -89,6 +89,7 @@
       "focusTags": []
     }
   ],
+  "mediaReports": [],
   "discussions": [
     {
       "title": "Two dumb tricks that verify Claude applied your memory rules and checked your project context (10 seconds each)",

@@ -43,6 +43,10 @@ def _fetch_hn_query(term: str, tags: str, hits: int, min_score: int, cutoff: int
                 continue
             obj_id = h.get("objectID", "")
             url = h.get("url") or f"https://news.ycombinator.com/item?id={obj_id}"
+            num_comments = h.get("num_comments") or 0
+            summary = f"HN discussion: https://news.ycombinator.com/item?id={obj_id}"
+            if num_comments > 0:
+                summary += f"（HN 討論 {num_comments} 則）"
             result.append(FeedItem(
                 title=h.get("title", "(no title)"),
                 url=url,
@@ -52,7 +56,7 @@ def _fetch_hn_query(term: str, tags: str, hits: int, min_score: int, cutoff: int
                 ),
                 score=score,
                 score_unit="分",
-                summary=f"HN discussion: https://news.ycombinator.com/item?id={obj_id}",
+                summary=summary,
                 category="community",
             ))
         return result

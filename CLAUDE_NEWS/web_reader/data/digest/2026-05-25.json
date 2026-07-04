@@ -63,6 +63,7 @@
       ]
     }
   ],
+  "mediaReports": [],
   "discussions": [
     {
       "title": "Claude Code 遠端注入：v2.1.150 允許 Anthropic 動態修改系統提示",

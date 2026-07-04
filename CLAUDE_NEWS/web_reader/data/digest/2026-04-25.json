@@ -89,6 +89,7 @@
       "focusTags": []
     }
   ],
+  "mediaReports": [],
   "discussions": [
     {
       "title": "CC-Canary: Detect early signs of regressions in Claude Code",
