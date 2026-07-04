@@ -32,7 +32,7 @@ description: 每週執行 wiki 品質檢查，修正矛盾/孤立/過期頁面�
 
 > **頁面範圍為動態認領，不是寫死清單：** 每位記者的負責頁面＝`wiki/index.md` 中「領域」欄等於自己那一組的所有 entities/ 與 topics/ 頁面（含近期新增），開工前先讀 index.md 認領清單，再加上自己規則檔（`.claude/rules/wiki-ingest-[category].md`）觸發條件表中列出的頁面。這樣新增頁面不需要回頭改這份派工表。
 
-> **社群記者額外任務：** `community-tech-tools.md` 已脫離每日 ingest，是 **lint 專用策展頁**。除 3a–3f 品質檢查外，須額外依 `.claude/rules/wiki-ingest-community-lint.md` 的「策展規則」與「精選層提拔規則」執行：讀取近 7–14 天 `news/*.md` 萃取達標新工具、汰除過氣條目、提拔精選層、同步痛點洞察。派工 prompt 須附上「今日日期」供記者計算 news/ 範圍。
+> **社群記者額外任務：** `community-tech-tools.md` 已脫離每日 ingest，是 **lint 專用策展頁**。除 3a–3g 品質檢查外，須額外依 `.claude/rules/wiki-ingest-community-lint.md` 的「策展規則」與「精選層提拔規則」執行：讀取近 7–14 天 `news/*.md` 萃取達標新工具、汰除過氣條目、提拔精選層、同步痛點洞察。派工 prompt 須附上「今日日期」供記者計算 news/ 範圍。
 
 每個 Agent 呼叫的 prompt：
 
@@ -52,7 +52,7 @@ description: 每週執行 wiki 品質檢查，修正矛盾/孤立/過期頁面�
 若完全孤立（無任何頁面以 `[[...]]` 連結到它）→ 在語意相關的頁面補上 wikilink。
 
 **3c 過期議題**
-topics/ 頁面狀態為 `ongoing`，且「最後更新」距今超過 14 天，且 log.md 近期無相關更新。
+topics/ 頁面狀態為 `ongoing`，且「**最後新聞更新**」距今超過 14 天，且 log.md 近期無相關更新。（不可用「最後更新」判斷——lint 與格式修正會 bump 該欄位，導致過期偵測永不觸發。）
 → 議題確已結束：狀態改 `resolved`，填寫「目前結論」
 → 仍在進行但無新消息：狀態改 `monitoring`
 
@@ -185,7 +185,7 @@ index.md 狀態變更：[page: 舊狀態→新狀態 or 無]
 
 #### 6d. 規則年齡審查
 
-`.claude/rules/wiki-ingest-format.md` 及各記者規則檔（`wiki-ingest-*.md`）中帶有 `[加入: YYYY-MM-DD]` 標記的 `##` 區塊，計算距今天數。
+`.claude/rules/wiki-ingest-format.md`、`.claude/rules/wiki-reporter-shared.md` 及各記者規則檔（`wiki-ingest-*.md`）中帶有 `[加入: YYYY-MM-DD]` 標記的 `##` 區塊，計算距今天數。
 
 - **距今 > 60 天**：逐一確認規則描述的行為是否仍與現狀吻合
 - **距今 ≤ 60 天**：記錄「在閾值內，無需審查」
@@ -205,7 +205,7 @@ index.md 狀態變更：[page: 舊狀態→新狀態 or 無]
 - **`wiki/CLAUDE.md` 若超過 80 行**：提出簡化建議
 - **`.claude/rules/wiki-ingest.md` 若超過 80 行**：提出簡化建議（主編指南應保持精簡）
 - **`.claude/rules/wiki-ingest-format.md` 若超過 200 行**：提出簡化建議
-- **各記者規則檔若超過 100 行**：提出簡化建議
+- **各記者規則檔若超過 150 行**：提出簡化建議（採 `.claude/rules/claude-md-edit.md` 全域上限 200 行內的較嚴標準；兩處閾值若再調整必須同步）
 
 輸出：
 ```
@@ -213,7 +213,7 @@ index.md 狀態變更：[page: 舊狀態→新狀態 or 無]
   wiki/CLAUDE.md：XX 行（閾值 80 行）→ ✅ / ⚠️
   .claude/rules/wiki-ingest.md：XX 行（閾值 80 行）→ ✅ / ⚠️
   .claude/rules/wiki-ingest-format.md：XX 行（閾值 200 行）→ ✅ / ⚠️
-  .claude/rules/wiki-ingest-[category].md：各 XX 行（閾值 100 行）→ ✅ / ⚠️
+  .claude/rules/wiki-ingest-[category].md：各 XX 行（閾值 150 行）→ ✅ / ⚠️
 ❓ 是否執行簡化？（是 / 否 / 指定段落）
 ```
 
@@ -304,7 +304,7 @@ python scripts/check_links.py
   - wiki/CLAUDE.md：XX 行（閾值 80 行）
   - .claude/rules/wiki-ingest.md：XX 行（閾值 80 行）
   - .claude/rules/wiki-ingest-format.md：XX 行（閾值 200 行）
-  - 各記者規則檔：各 XX 行（閾值 100 行）
+  - 各記者規則檔：各 XX 行（閾值 150 行）
   - 矛盾：（列出，若無則寫「無」）
   - 引用驗證：（列出失效引用，若無則寫「全部通過」）
   - 遵守率：（列出 < 2/3 的規則，若全部通過則寫「全部通過」）
