@@ -37,14 +37,10 @@
   }
 
   // ── Sort state ───────────────────────────────────────────────────────────────
-  let kbSort = { key: 'lastUpdated', dir: 'desc' };
-
-  const KB_SORT_OPTIONS = [
-    { key: 'lastUpdated', label: '最新更新' },
-    { key: 'name',        label: '名稱' },
-    { key: 'kbType',       label: '型別' },
-    { key: 'status',      label: '狀態' },
-  ];
+  // Knowledge-base list has a single fixed sort: 最後新聞更新 desc (falls back to
+  // lastUpdated when a page has no news-driven update yet). No user-facing sort
+  // options — this is intentionally the only order.
+  const kbSort = { key: 'lastNewsUpdated', dir: 'desc' };
 
   // slugs that are presented as "對照" (comparison/tracker) pages rather than
   // a plain entity/topic — purely a presentation-layer label, data layer untouched
@@ -77,6 +73,9 @@
       } else if (key === 'lastUpdated') {
         av = a.lastUpdated || a.startDate || a.firstSeen || '';
         bv = b.lastUpdated || b.startDate || b.firstSeen || '';
+      } else if (key === 'lastNewsUpdated') {
+        av = a.lastNewsUpdate || a.lastUpdated || a.startDate || a.firstSeen || '';
+        bv = b.lastNewsUpdate || b.lastUpdated || b.startDate || b.firstSeen || '';
       } else {
         av = (a[key] || '').toLowerCase();
         bv = (b[key] || '').toLowerCase();
@@ -88,28 +87,6 @@
       return dir === 'asc' ? cmp : -cmp;
     });
   }
-
-  function buildSortBar(containerId, options, state, onSort) {
-    const bar = $('#' + containerId);
-    if (!bar) return;
-    bar.innerHTML = `<span class="sort-bar__label">排序</span>` +
-      options.map(({ key, label }) => {
-        const active = state.key === key;
-        const arrow  = active ? (state.dir === 'desc' ? ' ↓' : ' ↑') : '';
-        return `<button class="sort-btn${active ? ' is-active' : ''}" onclick="${onSort}('${key}')">${label}${active ? `<span class="sort-btn__arrow">${arrow}</span>` : ''}</button>`;
-      }).join('');
-  }
-
-  window.setSortKb = function (key) {
-    if (kbSort.key === key) {
-      kbSort.dir = kbSort.dir === 'desc' ? 'asc' : 'desc';
-    } else {
-      kbSort.key = key;
-      kbSort.dir = (key === 'lastUpdated') ? 'desc' : 'asc';
-    }
-    buildSortBar('sort-bar-kb', KB_SORT_OPTIONS, kbSort, 'setSortKb');
-    renderKbRows();
-  };
 
   // ── Domain filter ────────────────────────────────────────────────────────────
   let activeDomain = 'all';
@@ -339,7 +316,7 @@
   <div><span class="kb-type-pill kb-type-pill--${kbType}">${esc(typeLabel)}</span></div>
   <div><span class="pill pill--${item.pill}">${esc(shortStatus(item.status))}</span></div>
   <div class="entity-row__summary">${esc(item.latestHeadline || '')}</div>
-  <div class="entity-row__updated">${item.lastNewsUpdate === today ? '<span class="badge-new">今日</span>' : ''}${esc(item.lastUpdated || item.startDate || item.firstSeen || '')}</div>
+  <div class="entity-row__updated">${item.lastNewsUpdate === today ? '<span class="badge-new">今日</span>' : ''}${esc(item.lastNewsUpdate || item.lastUpdated || item.startDate || item.firstSeen || '')}</div>
 </div>`;
     }).join('');
   }
@@ -385,7 +362,6 @@
       if (commitTopic?.lastUpdated) commitMeta.textContent = `最後更新 ${commitTopic.lastUpdated}`;
     }
 
-    buildSortBar('sort-bar-kb', KB_SORT_OPTIONS, kbSort, 'setSortKb');
     renderKbRows();
   }
 

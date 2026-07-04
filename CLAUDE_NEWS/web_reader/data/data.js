@@ -1390,7 +1390,7 @@ window.WIKI_DATA = {
       "pill": "warn",
       "firstSeen": "",
       "startDate": "2026-05-17",
-      "lastUpdated": "2026-06-30",
+      "lastUpdated": "2026-07-04",
       "lastNewsUpdate": "2026-06-30",
       "summary": "比對社群工具所反映的開發者痛點，與 Anthropic 官方功能路線之間的覆蓋情況。識別哪些痛點官方正在積極解決、哪些被忽略或結構性缺席。 截至 2026-06-30，矩陣涵蓋 9 個核心痛點：多 agent 協調與安全隔離已獲高度官方對應；輸出品質驗證、平台可及性（Artifacts 部分覆蓋）、多模型路由/鎖定防禦…",
       "latestHeadline": "org default model（v2.1.196）部分填補「多模型路由」缺口：企業管理員可統一設定 org 預設模型，矩陣狀態從 ❌ 升為 ⚡；個人用戶動態路由需求仍無官方對應"
