@@ -9,6 +9,20 @@ description: 驗證所有 commands / rules / CLAUDE.md 修改後，相關指令�
 
 ---
 
+## 同步配對註冊表
+
+以下配對描述「同一行為在兩處定義」，任一方修改時必須同步檢查另一方是否仍一致。**新增或修改任何配對其中一方時，必須同步檢查另一方；新配對出現時必須登記進此表。**
+
+| 配對 | 必須一致的內容 | 驗證 grep |
+|------|--------------|----------|
+| `.claude/commands/news-pipeline.md` spawn 模板 ↔ `.claude/commands/news-pipeline-steps.md` | 記者派工 foreground 例外（不可設 `run_in_background: true`）；REPO_ROOT / PYTHON 設定值一致 | `grep -n "run_in_background: true\|REPO_ROOT\s*=\|PYTHON\s*=" .claude/commands/news-pipeline.md .claude/commands/news-pipeline-steps.md` |
+| `.claude/commands/news-pipeline-steps.md` Step 2 ↔ `.claude/commands/wiki-ingest.md` | 兩檔皆明文「精簡複本，修改任一方必須同步另一方」 | `grep -n "精簡複本" .claude/commands/news-pipeline-steps.md .claude/commands/wiki-ingest.md` |
+| `.claude/commands/wiki-ingest.md` / `.claude/commands/wiki-lint.md` 派工段 ↔ `.claude/rules/wiki-ingest.md` 類別對應表 | 六類 subagent_type 名稱一致；派工呼叫皆帶 `model: "sonnet"` | `grep -n "wiki-reporter-\|model: \"sonnet\"" .claude/commands/wiki-ingest.md .claude/commands/wiki-lint.md .claude/rules/wiki-ingest.md` |
+| `.claude/rules/wiki-ingest-community.md` ↔ `.claude/rules/wiki-ingest-community-lint.md` | lint-only 規則分離邊界（`community-tech-tools.md` 明文標註「已脫離每日 ingest」/「lint 專用」）| `grep -n "已脫離每日 ingest\|lint 專用\|每日 ingest 不" .claude/rules/wiki-ingest-community.md .claude/rules/wiki-ingest-community-lint.md` |
+| `.claude/rules/wiki-reporter-shared.md` 回報格式 ↔ 各 `.claude/rules/wiki-ingest-[category].md` 回報格式段 | 六份回報格式段皆含「更新頁面 / feature-radar 新增 / index.md 狀態變更 / 新增頁面 / 同步自查」五欄 | `grep -n "更新頁面：\|feature-radar 新增：\|index.md 狀態變更：\|新增頁面：\|同步自查：" .claude/rules/wiki-reporter-shared.md .claude/rules/wiki-ingest-*.md` |
+
+---
+
 ## 每輪執行的三項檢查
 
 ### 檢查 1：路徑引用完整性
@@ -47,7 +61,7 @@ description: 驗證所有 commands / rules / CLAUDE.md 修改後，相關指令�
 
 | Skill | 必須明確載入 | 驗證位置 |
 |-------|------------|---------|
-| `wiki-ingest.md` | `wiki/CLAUDE.md` + `.claude/rules/wiki-ingest.md` | Step 2 的讀取清單 |
+| `wiki-ingest.md` | `wiki/CLAUDE.md` + `.claude/rules/wiki-ingest.md` | Step 1 的讀取清單 |
 | `wiki-lint.md` | `wiki/CLAUDE.md` + `.claude/rules/wiki-ingest.md` | Step 1 的讀取清單 |
 | `news-pipeline-steps.md` | `wiki/CLAUDE.md` + `.claude/rules/wiki-ingest.md` | Step 2 的讀取清單 |
 
@@ -78,11 +92,27 @@ description: 驗證所有 commands / rules / CLAUDE.md 修改後，相關指令�
 
 ---
 
+### 檢查 4：一致性斷言（依同步配對註冊表）
+
+對「同步配對註冊表」每一組配對，執行其驗證 grep，確認雙方輸出語意一致（非僅字面相同，需人工判讀 grep 結果）：
+
+| 配對 | 斷言 |
+|------|------|
+| news-pipeline.md ↔ news-pipeline-steps.md | 兩檔都含 `run_in_background: true` 前綴否定語（「不可設」）與 foreground 字樣；REPO_ROOT、PYTHON 兩檔數值逐字相同 |
+| news-pipeline-steps.md Step 2 ↔ wiki-ingest.md | 兩檔都含「精簡複本」與「同步另一方」語意 |
+| wiki-ingest.md / wiki-lint.md ↔ wiki-ingest.md 類別對應表 | 三處六類 subagent_type 名稱集合相同；派工段都含 `model: "sonnet"` |
+| wiki-ingest-community.md ↔ wiki-ingest-community-lint.md | community.md 明文排除 tools 頁每日更新；community-lint.md 明文承接 tools 頁策展 |
+| wiki-reporter-shared.md ↔ 各 wiki-ingest-[category].md | 六份回報格式段五欄字串（更新頁面/feature-radar 新增/index.md 狀態變更/新增頁面/同步自查）皆出現 |
+
+任一斷言失敗 → 標記 ❌，修正後**從檢查 1 重新開始整輪**。
+
+---
+
 ## 循環規則
 
 ```
 do {
-  執行檢查 1 → 2 → 3
+  執行檢查 1 → 2 → 3 → 4
   if 發現任何 ❌:
     立即修正
     重新從檢查 1 開始
@@ -107,6 +137,7 @@ do {
 | 1c 錨點引用有效 | ✅ 全部有效 / ❌ N 個已修正 |
 | 2 載入鏈完整 | ✅ 3/3 完整 / ❌ N 個已修正 |
 | 3 關鍵步驟存在 | ✅ 全部存在 / ❌ N 個已修正 |
+| 4 一致性斷言（同步配對）| ✅ 5/5 通過 / ❌ N 個已修正 |
 
 迭代次數：X 輪
 本輪修正：（列出修正項目，若無則寫「無」）
