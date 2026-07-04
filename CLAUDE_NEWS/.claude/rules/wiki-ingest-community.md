@@ -17,6 +17,8 @@
 
 **分流鐵則：** GitHub Issues 條目屬功能記者（claude-code 已知問題）；僅當該 issue 引發跨平台討論（HN/Reddit 也在延燒）才作為 discussions 條目收錄。
 
+**產品化矩陣轉知 `[加入: 2026-07-04]`：** 發現新的 agent 工作模式（patterns 頁新增條目）時，在回報中註明「請主編轉知功能記者評估產品化矩陣新增列」；`wiki/topics/official-community-gap.md` 的矩陣由功能記者維護，社群記者不直接寫該頁。
+
 ---
 
 ## community-tech-discussions 收錄門檻 `[加入: 2026-06-28]`
@@ -71,7 +73,7 @@
 | 🌋重燃 | 等同 🌊延燒，無期限 |
 | 🌙靜候 | 永久保留 |
 
-**技術彙整保留：** 對應條目距今 ≤ 60 天。超過 60 天且表格條目已移除者，將 `## 技術彙整` 子區塊移至 `wiki/topics/community-tech-timeline.md` 歷史存檔。
+**技術彙整保留：** 條目長期保留於原頁（月份分組即入口層，見 `.claude/rules/wiki-ingest-format.md`「頁面拆分原則」）；僅已收斂且不再被引用的死案月份，經使用者確認後才可歸檔至 `wiki/topics/community-tech-timeline.md`。
 
 ---
 
