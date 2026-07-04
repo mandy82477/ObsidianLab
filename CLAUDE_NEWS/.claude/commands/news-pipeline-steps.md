@@ -5,7 +5,7 @@ description: News Pipeline Agent 執行規範：Step 1a 至 Step 6 完整步驟�
 # News Pipeline Steps（Agent 執行規範）
 
 此檔案由 `.claude/commands/news-pipeline.md` spawn 的 background Agent 讀取並執行。
-**Agent 直接在本 session 執行所有步驟，不再 spawn 子 agent。**
+**Agent 直接在本 session 執行所有步驟；唯一例外是 Step 2 的記者派工（必須 foreground，見 Step 2 第 3 點），除此之外不 spawn 子 agent。**
 
 ## 設定
 
