@@ -37,10 +37,38 @@
   }
 
   // ── Sort state ───────────────────────────────────────────────────────────────
-  // Knowledge-base list has a single fixed sort: 最後新聞更新 desc (falls back to
-  // lastUpdated when a page has no news-driven update yet). No user-facing sort
-  // options — this is intentionally the only order.
-  const kbSort = { key: 'lastNewsUpdated', dir: 'desc' };
+  // Knowledge-base list defaults to 最新新聞 desc (falls back to lastUpdated /
+  // startDate / firstSeen when a page has no news-driven update yet). Users can
+  // also switch to 名稱 asc via the sort bar.
+  let kbSort = { key: 'lastNewsUpdated', dir: 'desc' };
+
+  const KB_SORT_OPTIONS = [
+    { key: 'lastNewsUpdated', label: '最新新聞' },
+    { key: 'name',            label: '名稱' },
+    { key: 'kbType',          label: '型別' },
+  ];
+
+  function buildSortBar(containerId, options, state, onSort) {
+    const bar = $('#' + containerId);
+    if (!bar) return;
+    bar.innerHTML = `<span class="sort-bar__label">排序</span>` +
+      options.map(({ key, label }) => {
+        const active = state.key === key;
+        const arrow  = active ? (state.dir === 'desc' ? ' ↓' : ' ↑') : '';
+        return `<button class="sort-btn${active ? ' is-active' : ''}" onclick="${onSort}('${key}')">${esc(label)}${active ? `<span class="sort-btn__arrow">${arrow}</span>` : ''}</button>`;
+      }).join('');
+  }
+
+  window.setSortKb = function (key) {
+    if (kbSort.key === key) {
+      kbSort.dir = kbSort.dir === 'desc' ? 'asc' : 'desc';
+    } else {
+      kbSort.key = key;
+      kbSort.dir = (key === 'name' || key === 'kbType') ? 'asc' : 'desc';
+    }
+    buildSortBar('sort-bar-kb', KB_SORT_OPTIONS, kbSort, 'setSortKb');
+    renderKbRows();
+  };
 
   // slugs that are presented as "對照" (comparison/tracker) pages rather than
   // a plain entity/topic — purely a presentation-layer label, data layer untouched
@@ -162,6 +190,40 @@
 
   function shortStatus(s) {
     return (s || '').replace(/[（(][^）)]*[）)]/g, '').trim();
+  }
+
+  // ── Status label 中文化 ──────────────────────────────────────────────────────
+  // 純顯示層對映：資料層（data.js / wiki 檔案）維持英文原值不動。
+  // 取「（」之前的主值查表；查不到表的值原樣顯示。
+  const STATUS_LABEL = {
+    active: '活躍', beta: '測試中', deprecated: '已棄用', acquired: '已收購',
+    resolved: '已結案', ongoing: '進行中', monitoring: '觀察中',
+  };
+
+  // main value only (English, before "（"), lowercased+trimmed for lookup
+  function statusMainKey(s) {
+    return shortStatus(s).toLowerCase();
+  }
+
+  // parenthetical annotation, e.g. "monitoring（官方已說明，待驗證恢復）" → "官方已說明，待驗證恢復"
+  function statusAnnotation(s) {
+    const m = (s || '').match(/[（(]([^）)]*)[）)]/);
+    return m ? m[1].trim() : '';
+  }
+
+  // 列表用：只顯示中文主值（不含補充說明）
+  function statusLabelShort(s) {
+    const key = statusMainKey(s);
+    return STATUS_LABEL[key] || shortStatus(s);
+  }
+
+  // 詳頁用：中文主值（原補充說明），查不到表則原樣顯示完整字串
+  function statusLabelFull(s) {
+    const key = statusMainKey(s);
+    const label = STATUS_LABEL[key];
+    if (!label) return s || '';
+    const anno = statusAnnotation(s);
+    return anno ? `${label}（${anno}）` : label;
   }
 
   // ── Story HTML ───────────────────────────────────────────────────────────────
@@ -314,7 +376,7 @@
 <div class="${rowCls}" onclick="openWikiPage('${esc(item.id)}','${item._kbBaseType}')">
   <div class="entity-row__name"><span class="bracket">[[</span>${esc(item.id)}<span class="bracket">]]</span></div>
   <div><span class="kb-type-pill kb-type-pill--${kbType}">${esc(typeLabel)}</span></div>
-  <div><span class="pill pill--${item.pill}">${esc(shortStatus(item.status))}</span></div>
+  <div><span class="pill pill--${item.pill}">${esc(statusLabelShort(item.status))}</span></div>
   <div class="entity-row__summary">${esc(item.latestHeadline || '')}</div>
   <div class="entity-row__updated">${item.lastNewsUpdate === today ? '<span class="badge-new">今日</span>' : ''}${esc(item.lastNewsUpdate || item.lastUpdated || item.startDate || item.firstSeen || '')}</div>
 </div>`;
@@ -362,6 +424,7 @@
       if (commitTopic?.lastUpdated) commitMeta.textContent = `最後更新 ${commitTopic.lastUpdated}`;
     }
 
+    buildSortBar('sort-bar-kb', KB_SORT_OPTIONS, kbSort, 'setSortKb');
     renderKbRows();
   }
 
@@ -574,7 +637,7 @@
 
     const metaRows = [];
     if (item.entityType) metaRows.push({ label: '類型',     val: item.entityType });
-    if (item.status)     metaRows.push({ label: '狀態',     val: item.status });
+    if (item.status)     metaRows.push({ label: '狀態',     val: statusLabelFull(item.status) });
     if (item.firstSeen)  metaRows.push({ label: '首次出現', val: item.firstSeen });
     if (item.startDate)  metaRows.push({ label: '開始日期', val: item.startDate });
     if (item.lastUpdated)metaRows.push({ label: '最後更新', val: item.lastUpdated });
@@ -594,7 +657,7 @@
 
     $('#detail-content').innerHTML = `
 <div class="detail__type-row">
-  ${item.status ? `<span class="pill pill--${item.pill}">${esc(item.status)}</span>` : ''}
+  ${item.status ? `<span class="pill pill--${item.pill}">${esc(statusLabelFull(item.status))}</span>` : ''}
   <span class="pill pill--gray">${esc(item.entityType || typeLabel)}</span>
 </div>
 <h1 class="detail__h1">${esc(item.name)}</h1>
@@ -731,7 +794,7 @@ ${trackerHtml}
       const pill   = item.pill   || 'gray';
       const status = item.status || '';
       const pillHtml = status
-        ? `<span class="search-result__pill"><span class="pill pill--${pill}">${esc(shortStatus(status))}</span></span>`
+        ? `<span class="search-result__pill"><span class="pill pill--${pill}">${esc(statusLabelShort(status))}</span></span>`
         : '';
       return `<div class="search-result" data-idx="${i}" data-id="${esc(item.id)}" data-pagetype="${esc(pageType)}"
                    onclick="pickSearch('${esc(item.id)}','${esc(pageType)}')">

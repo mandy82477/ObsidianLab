@@ -658,6 +658,27 @@ code {
   transform: translateX(6px); opacity: 1;
 }
 
+/* Sort bar */
+.sort-bar { display: flex; align-items: center; gap: 6px; flex-wrap: wrap; }
+.sort-bar__label {
+  font-family: var(--font-sans); font-size: 12px;
+  color: var(--ink-3); margin-right: 4px; letter-spacing: 0.04em;
+}
+.sort-btn {
+  font-family: var(--font-sans); font-size: 12px;
+  padding: 4px 10px; border-radius: var(--radius-2);
+  border: 1px solid var(--border-2); background: transparent;
+  color: var(--ink-3); cursor: pointer;
+  transition: color 100ms, border-color 100ms, background 100ms;
+  display: inline-flex; align-items: center; gap: 4px;
+  white-space: nowrap;
+}
+.sort-btn:hover { color: var(--ink-2); border-color: var(--border-strong); background: var(--bg-1); }
+.sort-btn.is-active {
+  color: var(--ochre-9); border-color: var(--ochre-7); background: var(--ochre-tint);
+}
+.sort-btn__arrow { font-size: 10px; opacity: 0.8; }
+
 /* Entity table — hairline rows, no card fill */
 .entity-table { display: flex; flex-direction: column; gap: 0; margin-bottom: 8px; }
 .entity-row {

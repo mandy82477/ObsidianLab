@@ -87,6 +87,9 @@ META_RE = {
 
 SUMMARY_HEADERS = ["## 現況", "## 摘要"]
 
+# 六個標準領域值（見 .claude/rules/wiki-ingest-format.md「命名與分類規則」）
+VALID_DOMAINS = {"🤖 模型", "🛠️ 工具/功能", "👤 人物", "💼 商業", "🏛️ 政策/安全", "🌐 社群"}
+
 
 def latest_headline(raw: str) -> str:
     """Extract the most recent update headline from wiki markdown."""
@@ -267,10 +270,13 @@ def parse_wiki(f: Path, page_type: str) -> dict:
     in_summary = False
     summary_lines: list[str] = []
 
-    for line in lines[1:]:
+    for raw_line in lines[1:]:
+        # 根因修復：CRLF 檔案逐行 split 後行尾仍殘留 \r，一併清掉，避免污染解析值
+        line = raw_line.rstrip("\r")
         for field, rx in META_RE.items():
             m = rx.match(line)
             if m:
+                # .strip() 涵蓋 \r 與任何欄位值首尾空白，不只限於本次發現的 domain 欄位
                 val = m.group(1).strip()
                 if field in ("entityType", "type"):
                     meta["entityType"] = val
@@ -291,6 +297,12 @@ def parse_wiki(f: Path, page_type: str) -> dict:
     meta["summary"] = raw_summary[:160] + ("…" if len(raw_summary) > 160 else "")
     meta["latestHeadline"] = latest_headline(raw)
     meta["pill"] = pill_class(meta["status"])
+
+    # ── 防呆：缺少領域欄位、或領域值不在六個標準值內 ──────────────────────────
+    if not meta["domain"]:
+        print(f"  WARN: {page_type}/{f.name} 缺少「領域」欄位")
+    elif meta["domain"] not in VALID_DOMAINS:
+        print(f"  WARN: {page_type}/{f.name} 領域值不在標準六選一內：{meta['domain']!r}")
 
     return meta
 
