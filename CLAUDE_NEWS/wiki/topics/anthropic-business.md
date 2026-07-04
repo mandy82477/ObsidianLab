@@ -3,10 +3,13 @@
 **狀態：** ongoing
 **領域：** 💼 商業
 **開始日期：** 2026-05-28
-**最後更新：** 2026-07-02
-**最後新聞更新：** 2026-07-02
+**最後更新：** 2026-07-03
+**最後新聞更新：** 2026-07-03
 
-> **最新動態**（2026-07-02）
+> **最新動態**（2026-07-03）
+> The Verge 跟進報導確認 Anthropic 藥物開發野心（呼應 7/1 STAT News 首報），生命科學垂直拓展持續受媒體關注；另有 Times of India 分析報導指出 OpenAI、Anthropic、Amazon、Microsoft 等大型科技公司正大規模派遣員工進駐客戶辦公室提供支援，反映企業級 AI 服務落地模式從純軟體交付轉向人力密集型客戶成功模式（推論：可能推升服務成本結構，但也是深化企業客戶黏著度的手段）。
+
+> **前次動態**（2026-07-02）
 > The Information 報導 Anthropic 正與三星洽談代工客製 AI 晶片；Bloomberg 報導 Anthropic 帶動 Blackstone 高淨值客戶基金創最強單月表現（兩則皆僅標題可見，細節待補）。同日 Palantir CEO Alex Karp 公開批評 Anthropic/OpenAI「竊取客戶 IP、token 價值偏低」，分析師同步調升 Palantir 股票評等，凸顯 Anthropic 的 agentic 產品線已被視為對 Palantir 國防/企業業務的直接威脅（見 [[topics/competitor-landscape]]）。7/1 Anthropic 與美國商務部達成正式協議，Fable 5 出口管制全面解除，並新增 Enterprise Gateway 簡化企業在 AWS/Google Cloud 部署 Claude Code。
 
 ---
@@ -137,6 +140,10 @@ Simon Willison（知名開發者博主）發表文章，認為 Anthropic 與 Ope
 - [[news/2026-05-13]]（The Information：定價強勢期）
 
 ## 時序
+
+### 2026-07-03
+- **[生命科學拓展，跟進確認] The Verge 跟進報導 Anthropic 藥物開發野心**：The Verge（07-03 13:56 UTC）報導 Anthropic 正探索將 Claude 應用於藥物開發領域，呼應 7/1 STAT News 首報的「Anthropic 宣布自行開發藥物」。**對商業的意涵**：兩家獨立媒體在 3 天內相繼報導，顯示此議題已從單一消息來源進入主流科技媒體視野；具體管線規模、合作藥廠、時程仍未公開，垂直產業直接參與者定位若成立，可能牽動 Anthropic 估值邏輯從「AI 工具供應商」向「產業參與者」延伸（推論）（The Verge https://www.theverge.com/ai-artificial-intelligence/961311/anthropic-claude-science-ai-drug-development）
+- **[企業服務模式觀察] 大型科技公司大規模派遣員工進駐客戶辦公室，Anthropic 在列**：Times of India 分析報導指出 OpenAI、Anthropic、Amazon、Microsoft 正派遣數千名員工進駐客戶辦公室提供現場支援，反映企業級 AI 服務落地模式從純軟體交付轉向人力密集型客戶成功服務。**對商業的意涵**：此模式可能提高服務毛利率壓力（人力成本），但也是應對「Uber 式」成本失控投訴、強化企業客戶留存與深度整合的手段；與 [[topics/enterprise-cost-management]] 中企業對 AI 工具成本管控的訴求形成一體兩面關係（推論）（Times of India https://timesofindia.indiatimes.com/technology/tech-news/openai-anthropic-amazon-and-now-microsoft-why-some-of-the-biggest-technology-companies-are-sending-thousands-of-their-employees-to-sit-in-customers-offices/articleshow/132155570.cms）
 
 ### 2026-07-02
 - **[晶片代工洽談，初步報導] The Information 報導 Anthropic 正與三星洽談代工客製 AI 晶片**：僅有標題可見，尚無代工規模、金額、時程等細節。**對商業的意涵**：若屬實，代表 Anthropic 在既有 Google TPU、Amazon Trainium 算力路線外，進一步尋求自研晶片供應鏈，長期可能降低對外部雲端算力供應商的議價依賴（推論，細節待補）（The Information https://www.theinformation.com/articles/anthropic-talks-samsung-manufacture-custom-ai-chip）

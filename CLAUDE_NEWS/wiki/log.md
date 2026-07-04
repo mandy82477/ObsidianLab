@@ -3,6 +3,27 @@
 Append-only 紀錄。每次 ingest、query 或 lint 都在此追加一條。
 格式：`## [YYYY-MM-DD] 類型 | 說明`
 
+## 2026-07-03 Ingest（backfill）| news/2026-07-03.md（42 則）
+
+- 來源日報：`news/2026-07-03.md`（42 則，10/10 來源；Reddit RSS 部分 429 仍取得 11 則；GitHub rate limit 提前中止 repo 搜尋但取得 3 則；補跑模式：07-03 pipeline 前日誤跑成 2026-05-19，本次以 `--date 2026-07-03` 回補）
+- 核心事件：美國解除 Fable 5 / Mythos 5 出口管制的媒體確認報導（19 天封鎖期）、Alibaba 以「疑似後門風險」禁用 Claude Code（Reuters，多媒體跟進）、FT 報導 Anthropic 封堵中國企業間接存取漏洞、Claude Code v2.1.201 發布、Reddit 深夜集中出現 Fable 額度焦慮討論串
+- 派工：安全政策 / 商業 / 功能 / 社群 四位記者（模型、人物今日無條目）
+- 更新頁面：
+  - `wiki/topics/anthropic-government-policy.md`：出口管制解除延遲報導確認 19 天封鎖期；FT 封堵漏洞新支線；攻防紀錄更新
+  - `wiki/topics/ai-agent-safety.md`：Alibaba「後門風險」指控（HN 313，標單方指控待查證）
+  - `wiki/topics/enterprise-tool-tracker.md`：Alibaba 新增 ❌ 退出列 + 時序 + 統計
+  - `wiki/topics/anthropic-business.md`：The Verge 藥物開發跟進、大廠員工進駐客戶辦公室模式
+  - `wiki/entities/pricing.md`：印度 INR 定價需求註記（GitHub Issue 👍584，無官方回應）
+  - `wiki/entities/claude-code.md`：版本表 v2.1.201；已知問題新增 AskUserQuestion 60s 逾時（#73125）、v2.1.1 token 暴增（#16856）
+  - `wiki/topics/community-tech-discussions.md`：AskUserQuestion 討論 ☄️→🌊 延燒、Ask HN prompt-response 迴圈反思（HN 129）、Reddit 額度焦慮（🔥🔥 誠實標註）
+  - `wiki/topics/community-tech-patterns.md`：額度監控模式（⏳：CCLimitPing / LimitBar）
+- feature-radar 新增：無（v2.1.201 僅行為調整未達收錄門檻，記入 claude-code 版本表）；升版風險「最新版本」行同步 v2.1.201；⏰ 倒數中無新 deadline；本週推薦不動
+- anthropic-commitments：無「承諾/拒絕/兌現」新事件（Alibaba 為指控非承諾），不動
+- index.md 狀態變更：無；近期異動區更新 8 頁 + enterprise-tool-tracker / anthropic-business / pricing 摘要行更新
+- 新增頁面：無
+- 呈現品質審查：四位記者回報均 ✅ 通過
+- 備註：記者派工誤用 background 模式導致完成通知未回到 pipeline agent，由協調者轉達四份回報後續行（下次派工須 foreground）
+
 ## 2026-07-02 Ingest | news/2026-07-02.md（50 則）
 
 - 來源日報：`news/2026-07-02.md`（50 則，6/6 來源；GitHub 因 rate limit 回傳 0 筆但來源本身正常；Reddit RSS 部分 429 仍取得 20 則；全部為 community 類別，無 official 條目）

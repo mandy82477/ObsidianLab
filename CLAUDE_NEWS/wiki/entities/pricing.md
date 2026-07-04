@@ -4,10 +4,13 @@
 **狀態：** active（持續調整中）
 **領域：** 💼 商業
 **首次出現：** 2026-04-25
-**最後更新：** 2026-07-02
-**最後新聞更新：** 2026-07-02
+**最後更新：** 2026-07-03
+**最後新聞更新：** 2026-07-03
 
-> **最新計費政策異動**（2026-07-02）
+> **最新計費政策異動**（2026-07-03）
+> GitHub Issues 出現印度盧比（INR）在地化定價需求（留言 204、👍 584），比照 OpenAI／Google 已有的在地計價；純社群 feature request，Anthropic 尚無官方回應。
+
+> **前次動態**（2026-07-02）
 > Reddit 熱門貼文揭露長期 Max 用戶 5 月底升級方案時遭介面誤導誤購 credits、退款客服管道一個多月未回應，直指「Claude 客服是幾乎所有科技公司中最差的」；同日另有用戶詢問企業 Select/Preferred 合作層級差異，反映分級資訊對外不透明。7/1 Anthropic 宣布 Claude Sonnet 5 促銷定價（$2/Mtok 輸入、$10/Mtok 輸出，至 2026-08-31），Fable 5 計費架構同步調整為 7/7 起 usage-based billing。
 
 ## 現況
@@ -79,6 +82,10 @@ git commit 歷史出現大寫字串「HERMES.md」會觸發靜默切換至 API �
 來源：[GitHub Issue #53262](https://github.com/anthropics/claude-code/issues/53262)
 
 ### 定價與促銷（模型定價、方案設計）
+
+#### 2026-07-03：印度盧比定價需求（未滿足需求，官方未回應）
+
+- **GitHub Issue 要求 INR 在地化定價方案**：印度用戶在 `anthropic/claude-code` Issue #17432 要求 Anthropic 推出盧比計價方案，比照 OpenAI（ChatGPT）、Google（Gemini）已有的在地化定價；留言數 204、👍 584 reactions，為近期社群需求類 issue 中互動量顯著較高者。**注意**：純社群 feature request，Anthropic 無官方回應或時程承諾；若 Anthropic 未來跟進在地化定價，將直接影響印度市場（全球最大 AI 開發者社群之一）的訂閱轉換率（推論）（GitHub https://github.com/anthropics/claude-code/issues/17432）
 
 #### 2026-07-01：Claude Sonnet 5 促銷定價 + Fable 5 計費架構調整
 

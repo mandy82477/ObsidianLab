@@ -3,17 +3,20 @@
 **狀態：** ongoing
 **領域：** 💼 商業
 **開始日期：** 2026-05-26
-**最後更新：** 2026-07-01
-**最後新聞更新：** 2026-07-01
+**最後更新：** 2026-07-03
+**最後新聞更新：** 2026-07-03
 
-> **最新企業採用異動**（2026-06-30）
+> **最新企業採用異動**（2026-07-03）
+> Alibaba 傳出以「疑似後門風險」為由禁止員工職場使用 Claude Code（Reuters 獨家，HN score 313），是繼 Microsoft（成本）、JPMorgan Chase 香港（出口管制）後第三個具名退出案例，首次出現「安全疑慮」作為企業退出理由；指控本身未經 Anthropic 證實，安全政策面向另見 [[topics/ai-agent-safety]]。
+
+> **前次動態**（2026-06-30）
 > 單日新增四項具名企業/機構動態：Rubrik（Claude Code 專用安全層）、Okta（XAA/MCP 安全整合）、Globant（AI Pods 交付框架）、DataArt（Partner Network 精選夥伴），加州州政府（Newsom 協議，06-29）正式採用 Claude；同時 Lindy（AI 新創）100% 流量從 Claude 切至 DeepSeek，為具名 API 客戶流失案例（詳見 [[topics/enterprise-cost-management]]、[[topics/competitor-landscape]]）。
 
 ## 摘要
 
 追蹤各大型企業目前正在使用的 AI 編碼工具，以及工具選擇的變化軌跡。資料來源為公開報導與內部消息洩露，僅記錄有明確來源佐證的事實。
 
-目前追蹤 28 家具名企業/機構，其中多數狀態為使用中（✅），3 家退出/切換（❌🔄，Microsoft 停用 Claude Code、JPMorgan Chase 香港分行因出口管制被迫退出、Lindy 100% 切換至 DeepSeek），Uber 縮減中（⚠️，成本管控）。整體趨勢：Claude API 企業與政府採用持續擴大，TCS、DXC、LG 等頂尖企業相繼全面入局；2026-06-29–06-30 單日/隔日湧現 Globant、DataArt、Okta、Rubrik、加州州政府等新一波具名案例，Partner Network 密集擴張（詳見 [[topics/anthropic-business]]）。同期 Lindy 案例顯示 API 客戶對成本敏感度高、可能因競品定價優勢流失。2026-06-21 Microsoft 確認在 Fable 5 封鎖期間加速退出 Claude Code，2026-06-22 The Jerusalem Post 跟進確認 Microsoft 正系統性降低對 Claude 依賴，GitHub Copilot 為主要替代方案。出口管制 + 成本壓力雙重因素持續影響頂尖企業工具選擇。
+目前追蹤 29 家具名企業/機構，其中多數狀態為使用中（✅），4 家退出/切換（❌🔄，Microsoft 停用 Claude Code、JPMorgan Chase 香港分行因出口管制被迫退出、Lindy 100% 切換至 DeepSeek、Alibaba 因疑似後門風險禁用 Claude Code），Uber 縮減中（⚠️，成本管控）。整體趨勢：Claude API 企業與政府採用持續擴大，TCS、DXC、LG 等頂尖企業相繼全面入局；2026-06-29–06-30 單日/隔日湧現 Globant、DataArt、Okta、Rubrik、加州州政府等新一波具名案例，Partner Network 密集擴張（詳見 [[topics/anthropic-business]]）。同期 Lindy 案例顯示 API 客戶對成本敏感度高、可能因競品定價優勢流失。2026-06-21 Microsoft 確認在 Fable 5 封鎖期間加速退出 Claude Code，2026-06-22 The Jerusalem Post 跟進確認 Microsoft 正系統性降低對 Claude 依賴，GitHub Copilot 為主要替代方案。出口管制 + 成本壓力雙重因素持續影響頂尖企業工具選擇。
 
 ---
 
@@ -25,6 +28,7 @@
 
 | 企業 | 規模 | AI 編碼工具 | 狀態 | 事件日期 | 備註 | 確認日期 |
 |------|------|-----------|------|---------|------|---------|
+| Alibaba | 頂尖 | Claude Code | ❌ | 2026-07-03 | 傳出以「疑似後門風險」為由禁止員工職場使用 Claude Code；來源指控未經 Anthropic 證實，多家媒體跟進（American Bazaar、Seeking Alpha、Crypto News、WTVB）；首個以「安全疑慮」為由退出的具名企業案例，區別於此前的成本（Microsoft）與出口管制（JPMorgan）兩類退出理由；安全指控本身詳見 [[topics/ai-agent-safety]] | 2026-07-03 |
 | Lindy | 中型（AI 新創） | Claude API → DeepSeek | 🔄 | 2026-06-29 | CEO Flo Crivello 公開宣告 100% 流量從 Claude 切換至 DeepSeek，每月省下數百萬美元；「最省錢 > 最強模型」趨勢最具名案例，屬 API 客戶成本敏感度案例（詳見 [[topics/enterprise-cost-management]]、[[topics/competitor-landscape]]） | 2026-06-29 |
 | 加州州政府 | 政府（州級） | Claude API | ✅ | 2026-06-29 | 州長 Newsom 與 Anthropic 正式簽署協議，Claude 進入加州州政府應用；迄今最明確的美國地方政府採用案例（詳見 [[topics/anthropic-business]]） | 2026-06-29 |
 | Globant（NYSE: GLOB） | 頂尖 | Claude API | ✅ | 2026-06-30 | 與 Anthropic 結盟推出 Claude 驅動的 AI Pods，重新定義企業 AI 交付模式；上市公司，覆蓋全球多行業客戶（詳見 [[topics/anthropic-business]]） | 2026-06-30 |
@@ -67,7 +71,7 @@
 
 | 工具 | 企業採用數 | 趨勢 | 主要阻力 |
 |------|----------|------|---------|
-| Claude Code | 5 使用中（Amazon、Uber、UiPath、Rubrik、JFrog）+ 1 退出（Microsoft） | ⚠️ 成本壓力 + Fable 5 封鎖衝擊 | 缺乏企業層級預算管控；Fable 5 出口管制加速部分企業評估替代方案 |
+| Claude Code | 5 使用中（Amazon、Uber、UiPath、Rubrik、JFrog）+ 2 退出（Microsoft、Alibaba） | ⚠️ 成本壓力 + Fable 5 封鎖衝擊 + 安全疑慮新增退出理由 | 缺乏企業層級預算管控；Fable 5 出口管制加速部分企業評估替代方案；Alibaba 案例顯示「疑似後門」指控也可能成為退出理由（指控未經證實） |
 | Claude API | 22（Apple、KPMG、iCapital、哈佛、Fujitsu、Travelport、Nimble Gravity、ZoomInfo、LG Group、AppFolio、Salesforce Claude API、TCS、DXC Technology、Atlassian、JPMorgan Chase 美國本部、Charleston Hospitality Group、Notion、加州州政府、Globant、DataArt、Okta）+ 1 退出中（Lindy → DeepSeek） | 🟢 快速擴張（政府/合規/服務業縱深加深）；⚠️ 部分 API 客戶因成本敏感轉向競品 | — |
 | GitHub Copilot | 1（Microsoft） | 🟢 Microsoft 背書 | 生態鎖定 |
 | OpenAI Codex | 2（Amazon、UiPath） | 🟢 快速成長 | — |
@@ -90,6 +94,9 @@ Claude Code 是工程師日常編碼工具（CLI），成本隨使用量線性�
 ---
 
 ## 時序
+
+### 2026-07-03
+- **Alibaba 傳出禁止員工職場使用 Claude Code（疑似後門風險）**：Reuters 獨家報導（HN score 313，source_count 5），Alibaba 以「疑似後門風險」為由禁止員工在職場使用 Claude Code；指控來源未經 Anthropic 證實。是繼 Microsoft（成本，06-21）、JPMorgan Chase 香港（出口管制，06-18）後第三個具名企業退出案例，也是首次以「安全疑慮」為退出理由，區別於此前的成本與法規兩類驅動因素；此事件亦與 6/24–6/29 Anthropic 指控阿里巴巴大規模蒸餾攻擊 Claude 模型的爭端同期發生，雙方關係持續緊張（詳見 [[topics/anthropic-business]] 相關時序、安全面向見 [[topics/ai-agent-safety]]）（Reuters https://www.reuters.com/world/china/alibaba-ban-claude-code-workplace-over-alleged-backdoor-risks-source-says-2026-07-03/）
 
 ### 2026-06-30
 - **Partner Network 單日四項擴張：Globant AI Pods、DataArt 精選夥伴、Okta XAA 安全整合、Rubrik Claude Code 安全層**：Globant（NYSE: GLOB）與 Anthropic 結盟推出 Claude 驅動的 AI Pods 企業交付框架；DataArt 加入 Claude Partner Network 服務軌道精選夥伴；Okta 與 Anthropic 在 XAA（跨應用 agent 認證）、MCP 及 Glasswing 安全框架合作；Rubrik（NYSE: RBRK）發布 Claude Code 專用 AI agent 與安全層。四案例同日出現，顯示 Anthropic 生態系統化攻略 IT 服務、身份管理、資安三個企業採購決策環節（詳見 [[topics/anthropic-business]]）

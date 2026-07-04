@@ -1,13 +1,13 @@
 # Anthropic 政府與軍事政策
 
-**狀態：** monitoring（出口管制主線已解除，剩餘承諾落實與衍生支線持續觀察）
+**狀態：** monitoring（出口管制主線已解除，剩餘承諾落實與衍生支線持續觀察；中美 AI 工具政策拉扯新增支線）
 **領域：** 🏛️ 政策/安全
 **開始日期：** 2026-05-01
-**最後更新：** 2026-07-02
-**最後新聞更新：** 2026-07-02
+**最後更新：** 2026-07-03
+**最後新聞更新：** 2026-07-03
 
-> **最新攻防紀錄**（2026-07-02）
-> Anthropic 於 7/1 正式恢復 Fable 5 全球存取後，Reddit 揭露此次重新部署新增「Defense in Depth」安全措施：新的資安/程式碼分類器專門攔截 cybersecurity 與 coding 高風險請求，判定為高風險時自動 fallback 至 Opus 4.8 執行；WSJ 分析指出禁令解除只是「如何馴服 AI」戰役的開始，非爭議終點；使用者實測已出現分類器誤判合法安全審查請求的負面案例。
+> **最新攻防紀錄**（2026-07-03）
+> Alibaba 傳出以「疑似後門風險」為由禁止員工在職場使用 Claude Code（Reuters 獨家，HN score 313，多家媒體跟進）；同日 FT 報導 Anthropic 正收緊政策、封堵中國企業間接存取 Claude 的管道，兩則報導形成中美 AI 工具政策拉扯的呼應。另外，MarketScale 對 7/1 出口管制解除事件的延遲報導確認封鎖期為「19 天」（此前頁面推算為 18–19 天），為既有事件補充來源，非新事件。
 
 ---
 
@@ -19,12 +19,13 @@
 
 ---
 
-## 目前局勢（截至 2026-07-02）
+## 目前局勢（截至 2026-07-03）
 
 **出口管制主線已於 2026-07-01 結案**（結局與逐日過程見「## 攻防紀錄」與「## 時序」）。以下為解除後仍待觀察的剩餘變數：
 
 | 變數 | 現狀 | 下一觀察點 |
 |------|------|-----------|
+| 中美 AI 工具政策拉扯（新增） | 07-03：Alibaba 傳禁止員工在職場使用 Claude Code（疑似後門風險，Reuters）；同日 FT 報導 Anthropic 收緊政策封堵中國企業間接存取管道 | Alibaba 官方是否證實禁令範圍與理由；Anthropic 是否公開說明「後門風險」指控是否成立；企業採用面影響見 [[topics/enterprise-tool-tracker]]；技術面見 [[topics/ai-agent-safety]] |
 | 三項承諾落實 | 首個落實動作：「Defense in Depth」資安/程式碼分類器，高風險 cybersecurity/coding 請求自動 fallback 至 Opus 4.8（2026-07-02）；上線首日即出現誤判合法安全審查請求的負面案例 | 分類器精確度改善；其餘兩項承諾（標準制定合作、惡意活動通報）的可觀察動作 |
 | 歐洲據點爭奪 | 奧地利已向歐盟提案邀請 Anthropic 設立歐盟據點（2026-06-28） | 管制解除是否降低歐洲遊說動能；Anthropic 是否表態 |
 | 阿里巴巴蒸餾指控 | Anthropic 單方指控（6/10 致函參議院），阿里巴巴無回應、無第三方確認 | 阿里巴巴官方回應或國會後續動作；技術面見 [[topics/ai-agent-safety]] |
@@ -100,6 +101,9 @@ Fable 5 發布後，Amazon 安全研究人員發現特定提示詞可讓模型�
 
 | 日期 | 方 | 動作 | 效果 |
 |------|----|------|------|
+| 2026-07-03 | 🌐 | Alibaba 傳出以「疑似後門風險」為由禁止員工職場使用 Claude Code（Reuters 獨家，HN score 313，American Bazaar / Seeking Alpha / Crypto News / WTVB 等跟進） | 中美 AI 工具政策拉扯首個具名企業禁令案例；「後門風險」指控未見 Alibaba 或 Anthropic 官方證實／回應；技術面見 [[topics/ai-agent-safety]]，企業採用面見 [[topics/enterprise-tool-tracker]] |
+| 2026-07-03 | 🏢 | FT 報導 Anthropic 收緊政策，封堵中國企業間接存取 Claude 的管道（Financial Times） | 與同日 Alibaba 禁令形成呼應，顯示中美雙方同步收緊 AI 工具互通管道；延續 6/26 阿里巴巴蒸餾攻擊指控後的政策收緊軌跡 |
+| 2026-07-03 | 🌐 | MarketScale 延遲報導確認 7/1 出口管制解除，封鎖期精確為 19 天（MarketScale） | 對既有 7/1 事件的媒體確認，補充精確天數；非新增事件 |
 | 2026-07-02 | 🏢 | Anthropic 為 7/1 重新部署的 Fable 5 新增「Defense in Depth」機制：新資安/程式碼分類器對高風險 cybersecurity/coding 請求自動 fallback 至 Opus 4.8（Reddit r/ClaudeAI）；WSJ 分析：解封只是「馴服 AI」戰役的開始（WSJ） | 「主動偵測安全風險」承諾首次有可觀察的技術落實；但使用者實測（dev.to）已出現分類器誤判合法請求案例，顯示落實品質仍待觀察 |
 | 2026-07-01 | 🏛️ | 商務部長 Lutnick 宣布解除 Fable 5 / Mythos 5 全部出口管制，2026-07-01 生效；Anthropic 承諾三項義務（偵測安全風險 / 合作制定標準 / 通報惡意活動）（NYT、BBC、CNN、Reuters、WSJ、FT、WashPost、The Guardian） | 6/13 全面封鎖以來最重大結局；封鎖期 18 天；Reddit 流出商務部完整信函；「Anthropic 承諾換解封」成為先例，三項承諾將成未來 AI 出口管制談判的參照框架 |
 | 2026-06-30 | 🌐 | Fortune 深度報導：Anthropic 因拒絕配合 Trump 政府遊戲規則而付出代價，與其他配合科技巨頭形成對比（Fortune） | 主流財經媒體首次系統性定性 Anthropic 政治失算的商業代價；「拒絕配合玩法」vs「低頭獲利」的策略選擇成為媒體焦點 |
@@ -174,9 +178,12 @@ Fable 5 發布後，Amazon 安全研究人員發現特定提示詞可讓模型�
 - [[entities/tom-brown]]（接管白宮談判的聯合創辦人，6/27 取得 Mythos 5 部分解封）
 - [[entities/chris-ciauri]]（國際業務總監，首爾記者會公開解封時間框架）
 - [[topics/competitor-landscape]]（排除事件改變 Anthropic 與競品在政府市場的相對地位）
+- [[topics/enterprise-tool-tracker]]（Alibaba 傳禁用 Claude Code 的企業採用面影響）
+- [[topics/ai-agent-safety]]（Alibaba 後門風險指控的技術面討論）
 
 ## 參考來源
 
+- [[news/2026-07-03]]
 - [[news/2026-07-02]]
 - [[news/2026-07-01]]
 - [[news/2026-06-30]]
@@ -194,6 +201,11 @@ Fable 5 發布後，Amazon 安全研究人員發現特定提示詞可讓模型�
 ## 時序
 
 > 2026-06-27 至 2026-07-01（解封主線最後階段）逐日事件已與上方「## 攻防紀錄」表格內容重複，此處不再重複全文，僅列出表格未涵蓋的補充細節；完整逐日敘述請查表格。
+
+### 2026-07-03（中美 AI 工具政策拉扯新支線）
+- **[企業禁令] Alibaba 傳禁止員工職場使用 Claude Code**：Reuters 獨家報導引用消息人士稱，Alibaba 已以「疑似後門風險」為由禁止員工在職場環境使用 Claude Code；報導未附具體技術證據，Alibaba 與 Anthropic 均未公開證實或回應；HN score 313，American Bazaar、Seeking Alpha、Crypto News、WTVB 等多家媒體跟進轉載（Reuters，2026-07-03；https://www.reuters.com/world/china/alibaba-ban-claude-code-workplace-over-alleged-backdoor-risks-source-says-2026-07-03/）；企業採用面詳見 [[topics/enterprise-tool-tracker]]，「後門風險」指控的技術可信度討論見 [[topics/ai-agent-safety]]
+- **[政策收緊] FT：Anthropic 封堵中國企業間接存取漏洞**：Financial Times 報導 Anthropic 正收緊政策，堵住中國企業過去用以間接存取 Claude 的管道；與同日 Alibaba 禁令消息同步出現，顯示中美雙方各自收緊 AI 工具互通的動作幾乎同時發生（FT，2026-07-03；https://www.ft.com/content/ad033063-60f9-4c0c-8d8a-9193a83e6f60）
+- **[來源補充] 出口管制解除封鎖期確認為 19 天**：MarketScale 對 7/1 出口管制解除事件的延遲報導，確認封鎖期精確為 19 天；為既有事件補充來源與精確天數，非新事件（MarketScale，2026-07-03；https://www.marketscale.com/industries/software-and-technology/us-lifts-export-controls-on-anthropics-claude-fable-5-and-mythos-5-ending-19-day-shutdown）
 
 ### 2026-07-02（解封後續：Defense in Depth 落地）
 - **[三項承諾首次落實] 新資安分類器 + Opus 4.8 fallback**：Anthropic 為 7/1 重新部署的 Fable 5 新增「Defense in Depth」機制——新的資安/程式碼分類器專門偵測 cybersecurity 與 coding 高風險請求，判定為潛在高風險時自動 fallback 至 Opus 4.8 執行；為 7/1 解封承諾（主動偵測安全風險）首次出現具體技術實作（Reddit r/ClaudeAI，2026-07-02；https://www.reddit.com/r/ClaudeAI/comments/1uliwhc/anthropic_just_redeployed_fable_5_globally_here/；補充來源：Homeland Security Today，2026-07-01，https://www.hstoday.us/subject-matter-areas/cybersecurity/commerce-lifts-export-restrictions-on-anthropic-ai-models/）

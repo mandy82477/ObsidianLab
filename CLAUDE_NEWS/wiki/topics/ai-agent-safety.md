@@ -3,17 +3,19 @@
 **狀態：** ongoing
 **領域：** 🏛️ 政策/安全
 **開始日期：** 2026-04-27
-**最後更新：** 2026-07-02
-**最後新聞更新：** 2026-07-02
+**最後更新：** 2026-07-03
+**最後新聞更新：** 2026-07-03
 
-> **最新安全事件**（2026-07-02）
-> Hacker News（轉載 old.reddit.com/r/ClaudeAI，score 7）刊出社群逆向工程指控，稱 Claude Code 自 2.1.91 版（2026-04-02）起即含地緣位置偵測程式碼——偵測使用者是否位於中國、代理是否指向中國網域、是否關聯中國 AI 實驗室，並以「隱形修改 system prompt」方式回傳判斷結果，作者稱 Anthropic 在 binary 中刻意混淆此段程式碼。此為 2026-06-30 中國代理偵測事件的技術細節延伸（新增版本號、混淆手法、system prompt 隱藏機制），**仍屬社群單方指控，Anthropic 尚無官方回應，第三方資安機構亦未驗證，標記「待查證」**。
+> **最新安全事件**（2026-07-03）
+> Reuters 獨家報導（HN score 313，多家媒體跟進）稱 Alibaba 已以「疑似後門風險」為由禁止員工在職場使用 Claude Code；報導未附具體技術證據或 CVE 編號，Alibaba 與 Anthropic 均未公開證實或回應。此為**單一媒體聲稱（企業層級指控），無第三方資安機構驗證，標記「待查證」**，與 2026-06-30 中國代理偵測程式碼指控（同樣待查證）性質相近，但本次指控方向相反——由中國企業指控 Anthropic 產品本身有安全疑慮，而非 Anthropic 偵測中國使用者。企業採用面影響詳見 [[topics/enterprise-tool-tracker]]，中美政策拉扯脈絡見 [[topics/anthropic-government-policy]]。
 
 ---
 
 ## 摘要
 
-**最新態勢（2026-07-01／07-02）：** 研究者在 Claude Code 2.1.196 binary 發現同形字符替換函式（homoglyph substitution），疑用於對輸出文字嵌入不可見的隱寫標記；HN score 2263 為本頁史上最高熱度安全事件，36Kr 確認此機制針對時區資訊及中國 AI Lab 連線者注入系統提示，Anthropic 承諾修復（版本未定）。同日 CVE-2026-55407 披露：Anthropic Rust protobuf 函式庫 buffa 存在約 22 倍記憶體放大的 DoS 漏洞（Endor Labs AI SAST 發現，修補待確認）。07-02，Hacker News 轉載社群逆向工程指控（標題直指「embedded spyware」），為 06-30 中國代理偵測事件補上版本號（v2.1.91 起）、binary 混淆手法與「隱形修改 system prompt」回傳機制等技術細節——**仍屬社群單方指控，Anthropic 無官方回應、第三方資安機構未驗證（待查證）**。加上 Mozilla 0din 揭露的乾淨 GitHub Repo prompt injection 至今未修補（四個第三方媒體確認），本頁已進入「隱私爭議 + 未修補設計缺陷」並行的階段。
+**最新態勢（2026-07-03）：** Reuters 獨家報導 Alibaba 已以「疑似後門風險」為由禁止員工職場使用 Claude Code（HN score 313），為首個由中國企業方向對 Claude Code 提出的具名安全指控，與此前 Anthropic 對中國使用者的偵測行為指控（06-30）形成雙向對峙；報導無具體技術細節或 CVE 編號，屬單一媒體聲稱，Alibaba 與 Anthropic 均未證實或回應，標記「待查證」。
+
+**此前態勢（2026-07-01／07-02）：** 研究者在 Claude Code 2.1.196 binary 發現同形字符替換函式（homoglyph substitution），疑用於對輸出文字嵌入不可見的隱寫標記；HN score 2263 為本頁史上最高熱度安全事件，36Kr 確認此機制針對時區資訊及中國 AI Lab 連線者注入系統提示，Anthropic 承諾修復（版本未定）。同日 CVE-2026-55407 披露：Anthropic Rust protobuf 函式庫 buffa 存在約 22 倍記憶體放大的 DoS 漏洞（Endor Labs AI SAST 發現，修補待確認）。07-02，Hacker News 轉載社群逆向工程指控（標題直指「embedded spyware」），為 06-30 中國代理偵測事件補上版本號（v2.1.91 起）、binary 混淆手法與「隱形修改 system prompt」回傳機制等技術細節——**仍屬社群單方指控，Anthropic 無官方回應、第三方資安機構未驗證（待查證）**。加上 Mozilla 0din 揭露的乾淨 GitHub Repo prompt injection 至今未修補（四個第三方媒體確認），本頁已進入「隱私爭議 + 未修補設計缺陷 + 企業信任對峙」並行的階段。
 
 **議題定義：** 本頁追蹤 Claude Code 與相關 AI agent 的安全事件，涵蓋 CVE 漏洞披露（沙箱逃逸、遠端代碼執行）、提示注入與 Agentjacking 攻擊、惡意套件與供應鏈污染、以及 agent 不當執行造成的資料損毀。代表性案例：Cursor 搭載 Claude Opus 在 9 秒內刪除 PocketOS 整個生產資料庫（2026-04-28），成為業界討論 AI agent 不可逆操作防護的主要引用案例；OALABS 蜜罐分析（2026-06-16）則以逾 1,000 個真實攻擊 session 日誌確認攻擊者已將 Claude Code 作為進攻性工具入侵 14 家企業，標誌濫用從理論轉為在野事實。Claude Code 已累積多個具名 CVE，攻擊面涵蓋 repo clone、deeplink、第三方錯誤追蹤工具注入等向量；社群已建立 stop hook 與沙盒隔離等防護工具（見下方「防護機制建議」）。逐日事件詳見「## 時序」，各事件技術細節見「## 技術彙整」。
 
@@ -25,6 +27,7 @@
 
 | 結論 | 狀態 | 日期 |
 |------|------|------|
+| Alibaba 傳禁用 Claude Code：疑似後門風險指控，無技術細節或第三方驗證 | 🔴 單一媒體聲稱（待查證） | 2026-07-03 |
 | Claude Code 同形字符隱寫術：疑對輸出嵌入不可見標記，36Kr 確認針對中國 AI Lab 連線注入系統提示（HN 2263） | 🔴 Anthropic 承諾修復（版本未定） | 2026-07-01 |
 | CVE-2026-55407：buffa Rust protobuf unknown-field decoder 約 22 倍記憶體放大 DoS | ⚠️ 修補待確認 | 2026-07-01 |
 | 中國代理偵測程式碼：v2.1.91 起偵測中國使用者／代理／AI 實驗室並隱形修改 system prompt 回傳，binary 疑遭混淆 | 🔴 待查證（社群單方指控，官方無回應） | 2026-06-30 |
@@ -57,6 +60,15 @@
 ---
 
 ## 技術彙整
+
+### Alibaba 傳禁用 Claude Code：疑似後門風險指控（2026-07-03 新增，待查證）
+
+- **揭露來源**：Reuters 獨家（2026-07-03；https://www.reuters.com/world/china/alibaba-ban-claude-code-workplace-over-alleged-backdoor-risks-source-says-2026-07-03/）；American Bazaar、Seeking Alpha、Crypto News、WTVB 等媒體跟進轉載；HN score 313
+- **核心主張**：消息人士稱 Alibaba 已在職場環境禁止員工使用 Claude Code，理由為「疑似後門風險」（alleged backdoor risks）
+- **證據狀態**：報導未附具體技術細節、程式碼樣本或 CVE 編號，指控性質與 05-08 CVE-2026-39861（有 CVSS 評分與正式漏洞編號）等已確認漏洞不同，屬企業層級的信任判斷而非公開驗證的技術缺陷
+- **雙向對峙脈絡**：本次為中國企業方向對 Claude Code 提出的安全指控；此前態勢是 Anthropic 被指控在 Claude Code 中嵌入偵測中國使用者的程式碼（06-30，見下方條目）。兩起指控方向相反但均未經第三方驗證，顯示中美雙方在 AI 工具信任議題上互相提出未經證實的技術指控
+- **可信度評估**：Reuters 為具公信力媒體，但本文仍屬「消息人士」二手訊息，Alibaba 與 Anthropic 均未公開證實或否認；標記「待查證」
+- **政策關聯**：與同日 FT 報導「Anthropic 封堵中國企業存取漏洞」形成呼應，屬中美 AI 工具政策拉扯的一部分，詳見 [[topics/anthropic-government-policy]]；企業採用面影響見 [[topics/enterprise-tool-tracker]]（商業記者負責）
 
 ### Claude Code 同形字符隱寫術機制（2026-07-01 新增，Anthropic 承諾修復）
 
@@ -307,6 +319,7 @@
 
 ## 參考來源
 
+- [[news/2026-07-03]]
 - [[news/2026-07-02]]
 - [[news/2026-07-01]]
 - [[news/2026-06-28]]
@@ -331,6 +344,9 @@
 ## 時序
 
 > 更早期時序見 [[topics/ai-agent-safety-archive]]
+
+### 2026-07-03
+- **[企業信任對峙，待查證] Alibaba 傳禁用 Claude Code：疑似後門風險指控**：Reuters 獨家報導（HN score 313）稱 Alibaba 已以「疑似後門風險」為由禁止員工職場使用 Claude Code；報導無具體技術細節或 CVE 編號，Alibaba 與 Anthropic 均未證實或回應；American Bazaar、Seeking Alpha、Crypto News、WTVB 等媒體跟進；與此前 Anthropic 被指控偵測中國使用者的爭議（06-30）方向相反，顯示中美雙方互相提出未經驗證的信任指控（Reuters，2026-07-03；https://www.reuters.com/world/china/alibaba-ban-claude-code-workplace-over-alleged-backdoor-risks-source-says-2026-07-03/）；同日 FT 報導 Anthropic 收緊政策封堵中國企業存取管道，政策脈絡詳見 [[topics/anthropic-government-policy]]
 
 ### 2026-07-01
 - **[隱寫術，升級] Claude Code 同形字符替換機制疑用於輸出隱寫標記（HN score 2263）**：研究者在 Claude Code 2.1.196 binary 中發現同形字符替換函式，可在日期字串中靜默替換撇號和分隔符為外觀相同的 Unicode 字符，疑用於對 AI 輸出文字嵌入不可見的隱寫標記；此為本頁史上最高熱度安全事件（HN score 2263）；The Decoder、Tech Times、Times of India 跟進報導；36Kr 確認機制在偵測到中國 AI Lab 連線時觸發系統提示注入；Anthropic 承諾修復，版本未定（研究報告：https://thereallo.dev/blog/claude-code-prompt-steganography；36Kr：https://eu.36kr.com/en/p/3876461674917892）

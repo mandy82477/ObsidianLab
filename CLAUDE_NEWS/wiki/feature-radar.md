@@ -4,7 +4,7 @@
 僅收錄官方 changelog、release note 或官方公告來源；社群工具見 [[topics/community-tech-tools]]。
 每次 ingest 後由 LLM 維護：新增功能、更新熱度、補充社群回饋。
 
-**最後更新：** 2026-07-02
+**最後更新：** 2026-07-03
 
 ---
 
@@ -18,7 +18,7 @@
 
 ## ⚠️ 升版風險（每次 ingest 更新）
 
-**最新版本：** v2.1.197（2026-07-01，Sonnet 5 預設 + 1M context）
+**最新版本：** v2.1.201（2026-07-03，Sonnet 5 sessions 不再使用 mid-conversation system role 傳遞 harness reminders）
 
 | 風險 | 嚴重度 | 說明 |
 |------|--------|------|

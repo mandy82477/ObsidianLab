@@ -4,8 +4,8 @@
 **狀態：** active
 **領域：** 🛠️ 工具/功能
 **首次出現：** 2025（正式推出）
-**最後更新：** 2026-07-02
-**最後新聞更新：** 2026-07-01
+**最後更新：** 2026-07-03
+**最後新聞更新：** 2026-07-03
 
 > **最新版本動態**（2026-07-01）
 > Claude Code v2.1.197 正式將 **Claude Sonnet 5** 設為預設模型，原生支援 **1M token context window**，促銷定價至 2026-08-31。此為重大使用者端異動：無需手動切換模型，Claude Code 所有新 session 即使用 Sonnet 5 與 1M context。
@@ -37,6 +37,7 @@
 
 | 版本 | 日期 | 重點 |
 |------|------|------|
+| **v2.1.201** | 2026-07-03 | Claude Sonnet 5 session 不再使用對話中途的 system role 插入 harness 提醒訊息（改變 reminder 注入機制的行為調整）；其餘為一般性小幅修正（見 [Release](https://github.com/anthropics/claude-code/releases/tag/v2.1.201)）|
 | **anthropic-sdk-python v0.115.0** | 2026-07-01 | 新增對 Managed Agents 的 API 支援（見 [[entities/managed-agents]]）|
 | **anthropic-sdk-typescript vertex-sdk v0.19.0** | 2026-07-01 | Vertex SDK TypeScript 版本更新 |
 | **v2.1.197** | 2026-07-01 | **Claude Sonnet 5 成為新預設模型**，原生支援 **1M token context window**，促銷定價至 2026-08-31；使用者無需手動切換，所有新 session 即享 1M context（見 [Release](https://github.com/anthropics/claude-code/releases/tag/v2.1.197)）|
@@ -141,6 +142,8 @@
 
 ### 🧠 行為與品質
 
+- 🔴 **AskUserQuestion 60 秒逾時自動代答（GitHub issue #73125，累積留言 109，👍 375）**：互動詢問（AskUserQuestion）逾時 60 秒未回應會自動代答並繼續執行，可能導致決策分岔點被略過而產生非預期結果；此行為早已存在（[issue #30740](https://github.com/anthropics/claude-code/issues/30740)），2026-07-02 因 Reddit 貼文才被社群大量注意到並引發體驗爭議，官方尚無修復或設定可調整逾時時間；討論詳見 [[topics/community-tech-discussions]]
+- 🔴 **升級至 v2.1.1 後 token 消耗異常暴增 4 倍以上（GitHub issue #16856，累積留言 72，👍 77）**：使用者反映升級後 rate 消耗速度明顯加快超過 4 倍，屬重大體驗負評，官方尚未回應或說明原因；升版前建議留意此回報，若已升級可觀察實際 usage 曲線變化
 - 🔴 **Extended Thinking「思考內容」實為摘要，非真實推理（2026-06-22 社群揭露）**：工程師 Patrick McCanna 分析 Claude Code session log 後發現，`thinking blocks` 呈現的文字為摘要，而非模型的真實推理過程。真實推理被 Anthropic 以加密方式存於 600 字元 signature 中，API 僅回傳摘要；完整思考內容需要企業級協議才可取用，Anthropic 持有解密金鑰。需依賴 thinking blocks 進行審計追蹤的工程師應特別注意此限制（HN score 98，見 [原文](https://patrickmccanna.net/the-text-in-claude-codes-extended-thinking-output-is-not-authentic/)）
 - 🟡 **Explore subagent 固定使用 Haiku 模型（2026-06-30 社群分析）**：深入分析 Claude Code 內建 subagent 類型後發現，Explore subagent 被鎖定只能使用 Haiku 模型（見 [Reddit 討論](https://www.reddit.com/r/ClaudeAI/comments/1ujpz0t/caution_when_using_native_subagent_explore_for/)）。在複雜除錯場景中，Haiku 能力可能不足以完成任務，導致誤判或分析遺漏。使用前建議確認任務複雜度是否在 Haiku 能力範圍內；若需更強推理能力，考慮改用其他 subagent 類型或直接指定模型的自訂 agent。
 - 🔴 **記憶過多導致品質退步（2026-06-22 回報）**：用戶反映兩個進行中專案的 Claude Code 品質近期大幅退步，疑似 context 中累積過多歷史記憶導致干擾；見 [[topics/code-quality-decline]]
