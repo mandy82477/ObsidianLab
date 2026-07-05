@@ -4,10 +4,10 @@
 **領域：** 💼 商業
 **開始日期：** 2026-05-26
 **最後更新：** 2026-07-05
-**最後新聞更新：** 2026-07-03
+**最後新聞更新：** 2026-07-05
 
-> **最新企業採用異動**（2026-07-03）
-> Alibaba 傳出以「疑似後門風險」為由禁止員工職場使用 Claude Code（Reuters 獨家，HN score 313），是繼 Microsoft（成本）、JPMorgan Chase 香港（出口管制）後第三個具名退出案例，首次出現「安全疑慮」作為企業退出理由；指控本身未經 Anthropic 證實，安全政策面向另見 [[topics/ai-agent-safety]]。
+> **最新企業採用異動**（2026-07-05）
+> Alibaba 禁令生效日確認為 **2026-07-10**（The Indian Express 跟進報導），是繼 07-03 Reuters 獨家、07-04 TechCrunch 等多媒體擴散後的具體生效時間點確認；禁令以「疑似後門風險」為由，指控本身未經 Anthropic 證實，安全政策面向另見 [[topics/ai-agent-safety]]。
 
 > **前次動態**（2026-06-30）
 > 單日新增四項具名企業/機構動態：Rubrik（Claude Code 專用安全層）、Okta（XAA/MCP 安全整合）、Globant（AI Pods 交付框架）、DataArt（Partner Network 精選夥伴），加州州政府（Newsom 協議，06-29）正式採用 Claude；同時 Lindy（AI 新創）100% 流量從 Claude 切至 DeepSeek，為具名 API 客戶流失案例（詳見 [[topics/enterprise-cost-management]]、[[topics/competitor-landscape]]）。
@@ -30,7 +30,7 @@
 
 | 企業 | 規模 | AI 編碼工具 | 狀態 | 事件日期 | 備註 | 確認日期 |
 |------|------|-----------|------|---------|------|---------|
-| Alibaba | 頂尖 | Claude Code | ❌ | 2026-07-03 | 傳出以「疑似後門風險」為由禁止員工職場使用 Claude Code；來源指控未經 Anthropic 證實，多家媒體跟進（American Bazaar、Seeking Alpha、Crypto News、WTVB、TechCrunch 07-04）；首個以「安全疑慮」為由退出的具名企業案例，區別於此前的成本（Microsoft）與出口管制（JPMorgan）兩類退出理由；安全指控本身詳見 [[topics/ai-agent-safety]] | 2026-07-04 |
+| Alibaba | 頂尖 | Claude Code | ❌ | 2026-07-10 | 傳出以「疑似後門風險」為由禁止員工職場使用 Claude Code，生效日確認為 2026-07-10（The Indian Express 07-05 跟進報導提供具體生效日期）；來源指控未經 Anthropic 證實，多家媒體跟進（American Bazaar、Seeking Alpha、Crypto News、WTVB、TechCrunch 07-04）；首個以「安全疑慮」為由退出的具名企業案例，區別於此前的成本（Microsoft）與出口管制（JPMorgan）兩類退出理由；安全指控本身詳見 [[topics/ai-agent-safety]] | 2026-07-05 |
 | Lindy | 中型（AI 新創） | Claude API → DeepSeek | 🔄 | 2026-06-29 | CEO Flo Crivello 公開宣告 100% 流量從 Claude 切換至 DeepSeek，每月省下數百萬美元；「最省錢 > 最強模型」趨勢最具名案例，屬 API 客戶成本敏感度案例（詳見 [[topics/enterprise-cost-management]]、[[topics/competitor-landscape]]） | 2026-06-29 |
 | 加州州政府 | 政府（州級） | Claude API | ✅ | 2026-06-29 | 州長 Newsom 與 Anthropic 正式簽署協議，Claude 進入加州州政府應用；迄今最明確的美國地方政府採用案例（詳見 [[topics/anthropic-business]]） | 2026-06-29 |
 | Globant（NYSE: GLOB） | 頂尖 | Claude API | ✅ | 2026-06-30 | 與 Anthropic 結盟推出 Claude 驅動的 AI Pods，重新定義企業 AI 交付模式；上市公司，覆蓋全球多行業客戶（詳見 [[topics/anthropic-business]]） | 2026-06-30 |
@@ -96,6 +96,9 @@ Claude Code 是工程師日常編碼工具（CLI），成本隨使用量線性�
 ---
 
 ## 時序
+
+### 2026-07-05
+- **Alibaba 禁令生效日確認為 7/10**：The Indian Express 跟進報導，確認阿里巴巴將於 2026-07-10 起正式禁止員工使用 Claude Code，作為美中 AI 競爭加劇下的因應措施；提供 07-03 Reuters 獨家報導以來首個具體生效日期，此前僅知禁令已宣布但無明確時間點；事件日期欄已由報導日 07-03 更新為生效日 07-10（The Indian Express https://indianexpress.com/article/technology/artificial-intelligence/alibaba-ban-claude-code-us-china-ai-10772429/）
 
 ### 2026-07-03
 - **Alibaba 傳出禁止員工職場使用 Claude Code（疑似後門風險）**：Reuters 獨家報導（HN score 313，source_count 5），Alibaba 以「疑似後門風險」為由禁止員工在職場使用 Claude Code；指控來源未經 Anthropic 證實。是繼 Microsoft（成本，06-21）、JPMorgan Chase 香港（出口管制，06-18）後第三個具名企業退出案例，也是首次以「安全疑慮」為退出理由，區別於此前的成本與法規兩類驅動因素；此事件亦與 6/24–6/29 Anthropic 指控阿里巴巴大規模蒸餾攻擊 Claude 模型的爭端同期發生，雙方關係持續緊張（詳見 [[topics/anthropic-business]] 相關時序、安全面向見 [[topics/ai-agent-safety]]）（Reuters https://www.reuters.com/world/china/alibaba-ban-claude-code-workplace-over-alleged-backdoor-risks-source-says-2026-07-03/）

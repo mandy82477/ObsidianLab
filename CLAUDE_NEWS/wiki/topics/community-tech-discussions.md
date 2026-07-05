@@ -4,10 +4,10 @@
 **領域：** 🌐 社群
 **開始日期：** 2026-04-25
 **最後更新：** 2026-07-05
-**最後新聞更新：** 2026-07-04
+**最後新聞更新：** 2026-07-05
 
-> **最熱討論**（2026-07-03）
-> AskUserQuestion 60 秒逾時爭議升溫為 🌊延燒：GitHub Issue #73125 累積留言 109、👍 375，從單一 Reddit 帖擴大為具名積壓問題。Ask HN 討論「跳脫 prompt-response 迴圈」的 AI 編碼互動模式（score 129）延續 Vibe coding/Loop Engineering 議題但聚焦互動模式設計。r/ClaudeCode 同晚四帖集中反映 Fable 5 額度焦慮情緒，屬情緒共鳴、尚待跨平台驗證。07-01 隱寫術事件（HN 2263）與成本暴漲（HN 53）仍為近期最高熱度議題。
+> **最熱討論**（2026-07-05）
+> AskUserQuestion 60 秒逾時爭議仍是本頁最高熱度的 🌊延燒議題（GitHub Issue #73125 留言 109、👍 375）。07-05 新增兩則低訊號單方指控：Reddit r/LLMDevs 貼文質疑 Claude 疑似執行 prompt injection（HN score 20，單方指控待查證），Microsoft Fast Context 下架原因討論（本地小模型分流節省 50–60% context token 的機制已同步記錄至 [[topics/community-tech-patterns]]）。07-01 隱寫術事件（HN 2263）與成本暴漲（HN 53）仍為近期最高熱度議題。
 
 ---
 
@@ -72,6 +72,7 @@ AI 輔助開發正在改變工程師的自我認知，形成社群層面的結�
 
 - **能力退化（Skill Atrophy）**：「理解是租來的，不是賺來的」——Prompt-Then-Review 迴圈讓技術深度下降。
 - **情緒代價（成就感缺失）**：flow state 消失、「成品不像自己做的」、量越多才感覺有產出——兩個獨立維度（能力退化 + 情緒退化）均在社群引發廣泛共鳴。
+- **審查疲勞的具體案例**（2026-07-05）：Reddit r/ClaudeCode 開發者反思「審查大量 AI 生成程式碼多到忘記自己是開發者」，舉例需反問 Claude 如何寫 debounce function——與既有 Skill Atrophy 論述一致，但聚焦「審查者角色」而非「撰寫者角色」的退化面向；單一貼文、互動數據不明，暫記於此不獨立開列（推論：若後續有跨平台呼應，可能形成「Reviewer Atrophy」子議題）
 - **社群共識**：警覺度持續升高，但尚無共識解法；反 atrophy 工具（recap 等）正在成形。
 
 ### Boris Cherny Loop 哲學
@@ -186,6 +187,26 @@ MCP 的實際成本遠超多數使用者預期，已有多個量化案例：
 ## 技術彙整
 
 ### 2026-07
+
+#### Microsoft Fast Context 無預警下架：本地 LLM 分流節省 Context 的機制與爭議（2026-07-05）
+
+- **來源：** [Why did Microsoft pull Fast Context from public domain?](https://www.reddit.com/r/ClaudeCode/comments/1unz1s5/why_did_microsoft_pull_fast_context_from_public/)（Reddit r/ClaudeCode，07-05；原專案含 arXiv 論文、GitHub repo、自訓練模型）
+- **核心論點：** 使用者重新測試 Microsoft 已下架的 Fast Context 專案——將程式碼探索工作委派給本地小型 LLM（local-Ollama task router）分流，聲稱可節省 50–60% context token，代價是執行時間增加；貼文討論該專案為何被無預警從公開領域下架
+- **關鍵回響：**
+  - 🧪 跟進實測：貼文作者重新測試已下架版本，確認節省幅度數字，但下架原因仍未有官方說明（尚待查證）
+- **收斂結論：** 尚無共識；「本地小模型分流節省 context」的機制本身具參考價值，已同步記錄至 [[topics/community-tech-patterns]] 技術彙整；下架原因（License 爭議／內部政策／效果不如預期）目前僅為社群猜測，無官方回應（推論）
+
+#### Anthropic 疑似對使用者執行 Prompt Injection：單一 Reddit 指控（2026-07-05）
+
+- **來源：** [Just got this response from Claude, what is going on?](https://old.reddit.com/r/LLMDevs/comments/1udpw9h/just_got_this_response_from_claude_what_is_going_on/)（Reddit r/LLMDevs via Hacker News，HN score 20，07-05）
+- **核心論點：** 使用者質疑 Claude 疑似對自己執行了未告知的 prompt injection，貼出疑似證據並引發討論串內正反回應
+- **收斂結論：** 細節與可信度尚待查證，屬單方指控，暫無第二來源交叉驗證或官方回應（推論：與 07-02 已記錄的「Anthropic 疑似動態插入未公開系統訊息」屬同類型「透明度信任」疑慮，但為獨立事件，證據力均弱，暫不合併）
+
+#### Sonnet 5 Orchestrator 實測與 Fable 5／Opus 4.8 免費期彙整帖（2026-07-05，簡記）
+
+- **來源：** [Sonnet 5 Is a Really Good Orchestrator](https://www.reddit.com/r/ClaudeCode/comments/1unzr2u/sonnet_5_is_a_really_good_orchestrator/)；[7 threads 彙整：Fable 5 vs Opus 4.8 免費期心得](https://www.reddit.com/r/ClaudeCode/comments/1unzp07/i_went_through_7_threads_of_people_who_ran_both/)（Reddit r/ClaudeCode，07-05）
+- **核心論點：** 前者回報 Sonnet 5 在 subagent 協調與長流程任務（如 `/implement-sprint`）表現優於前代 Sonnet 4.x，較少中途停下詢問、能自主完成流程並在出錯時自行恢復；後者為二手彙整帖，整理 7 篇討論串中使用者於免費開放期並行測試 Fable 5 與 Opus 4.8 的心得
+- **收斂結論：** Reddit RSS 互動數據顯示 0（抓取限制非真實熱度），內容具體但均為單一/二手來源，暫不足以列入熱門討論表格；先記錄觀察，若後續有獨立來源佐證 Sonnet 5 orchestrator 能力，可補入 [[entities/sonnet-5]]（推論：屬模型記者範疇，已於回報中標記轉知）
 
 #### Ask HN：跳脫 Prompt-Response 迴圈的 AI 編碼互動模式（2026-07-03）
 

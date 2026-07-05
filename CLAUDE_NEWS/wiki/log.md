@@ -3,6 +3,20 @@
 Append-only 紀錄。每次 ingest、query 或 lint 都在此追加一條。
 格式：`## [YYYY-MM-DD] 類型 | 說明`
 
+## 2026-07-05 Ingest | news/2026-07-05.md（29 則）
+
+- 來源日報：`news/2026-07-05.md`（29 則，10/10 來源；GitHub Issues 10 則、Reddit 10 則、Hacker News 6 則、Google News 3 則）
+- 分類派工：功能、商業、社群（三類並行 foreground 派工）；模型、安全政策、人物本日無獨立條目（Sonnet 5/Fable 5/Opus 4.8/Mythos 討論均屬社群一手心得分享，非新模型事實，歸社群記者處理）
+- 記者回報彙整：
+  - **功能**：`entities/claude-code.md` 新增 6 條已知問題（Advisor API 無回應❓、model behavior 三模式❓、Focus escape sequences 洩漏、申訴表單迴圈、MCP/hooks/plugins 需重啟）；#38335（Max 額度異常，793 留言）、#6235（AGENTS.md，5598 讚，全站最高）、#73125（AskUserQuestion 60s，383 讚）累積數字更新；`official-community-gap.md` 同步 AGENTS.md 矩陣列反應數；#26408（sonnet-4-6 問題）內容單薄略過
+  - **商業**：`enterprise-tool-tracker.md` Alibaba 禁令生效日確認為 2026-07-10（不新增列，更新既有列）；`anthropic-business.md` 新增 AFR 澳洲 1.4GW 資料中心採購、MixRoute 支援 Fable 5（生態邊緣，商業影響標記有限）
+  - **社群**：`community-tech-discussions.md` 新增 Microsoft Fast Context 下架爭議討論（本地 LLM 分流節省 context 機制，已同步至 community-tech-patterns 技術彙整）、Anthropic 疑似 prompt injection 單方指控（待查證，誠實標註無社群延燒）；審查疲勞子觀察併入既有 Skill Atrophy 段落；其餘低分 Show HN／Reddit 帖（HN score 1-3、Reddit RSS 抓取限制導致 score 顯示 0）訊號強度不足未收錄
+- feature-radar 新增：無（今日條目均為 GitHub Issues bug/feature request，非官方發布功能，不符准入定義）；版本行、倒數區塊、本週推薦均維持不變（v2.1.201、7/7、8/31）
+- index.md 狀態變更：無；近期異動新增 5 筆頁面更新記錄
+- 新增頁面：無
+- 呈現品質審查：三位記者皆回報 ✅ 通過，無待辦
+- 品質備註：功能／商業／社群三位記者的 Agent 派工初次以背景模式啟動，完成通知未直接送達本 ingest session；經檢查磁碟上的實際修改內容與各記者最終回報訊息確認任務均已正確完成，未重跑，後續派工應留意 foreground 設定生效狀況
+
 ## 2026-07-05 Ingest | news/2026-07-04.md（41 則）
 
 - 來源日報：`news/2026-07-04.md`（41 則，10/10 來源；Reddit 14 則、GitHub Issues 10 則、Google News 11 則、Hacker News 9 則）

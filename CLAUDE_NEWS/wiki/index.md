@@ -7,6 +7,12 @@ LLM 查詢此 wiki 時，**先讀這個檔案**找相關頁面，再讀具體頁
 
 ## 近期異動
 
+- [[entities/claude-code]] — 2026-07-05：已知問題新增 Advisor 觸發時 API 無回應（❓待查證）、model behavior 三種模式回報（❓待查證）、Focus reporting escape sequences 洩漏輸入框、帳號限制申訴表單迴圈、MCP/hooks/plugins 設定需重啟才生效；AGENTS.md 不支援（#6235）累積達 5598 讚為全站已知問題之最；Max 額度異常耗盡（#38335）累積 793 留言持續居冠
+- [[topics/enterprise-tool-tracker]] — 2026-07-05：Alibaba 禁令生效日確認為 **2026-07-10**（The Indian Express 跟進報導）
+- [[topics/anthropic-business]] — 2026-07-05：AFR 報導 Anthropic 計畫採購 1.4GW 澳洲資料中心容量；MixRoute 宣布支援 Fable 5（生態邊緣整合）
+- [[topics/community-tech-discussions]] — 2026-07-05：新增 Microsoft Fast Context 下架爭議討論（本地 LLM 分流節省 context 機制）、Anthropic 疑似 prompt injection 單方指控（待查證）
+- [[topics/official-community-gap]] — 2026-07-05：AGENTS.md 矩陣列同步最新反應數（5598 讚）
+
 - [[entities/claude-code]] — 2026-07-04：已知問題新增額度顯示 84% 卻觸發 limit、Windows Desktop relaunch 失敗（orphaned process file lock）、Cowork virtiofs FUSE 過期檔案、Cowork tab 消失（v1.2581.0）；多帳號管理／Linux build／WSL／Skills 同步等長期功能請求聚集，反映社群對平台相容性期待
 - [[topics/enterprise-tool-tracker]] — 2026-07-04：Alibaba 禁用 Claude Code 事件經 TechCrunch 等多方媒體跟進報導，確認日期更新
 - [[entities/pricing]] — 2026-07-04：新增 Claude Enterprise 支出控管（Spend Controls）功能，因應企業 Agentic AI 帳單超支問題

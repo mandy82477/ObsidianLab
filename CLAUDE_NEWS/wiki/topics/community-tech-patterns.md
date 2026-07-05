@@ -3,11 +3,11 @@
 **狀態：** monitoring
 **領域：** 🌐 社群
 **開始日期：** 2026-04-25
-**最後更新：** 2026-07-03
-**最後新聞更新：** 2026-07-03
+**最後更新：** 2026-07-05
+**最後新聞更新：** 2026-07-05
 
-> **最新工作流模式**（2026-07-03）
-> 新增「額度監控與自動恢復」工具生態：Show HN 同日出現 CCLimitPing（5 小時限制解除瞬間自動 continue）與 LimitBar（macOS 選單列即時顯示用量），呼應同晚 Reddit 額度焦慮情緒串，屬 Token 成本優化子類別的新方向。07-02 更新：「氛圍狀態燈」ESP32 + WS2812 LED 燈條搭配 hooks 呈現 agent 狀態。
+> **最新工作流模式**（2026-07-05）
+> 新增「本地小模型分流節省 context」機制觀察：Microsoft Fast Context 專案（已下架）以 local-Ollama task router 分流程式碼探索工作，聲稱節省 50–60% context token，代價是執行時間增加；原專案下架且無現行可安裝版本，複現性受限，成熟度標記 ⏳ 新興。07-03 更新：「額度監控與自動恢復」工具生態（CCLimitPing、LimitBar）。
 
 ---
 
@@ -53,6 +53,14 @@
 ## 技術彙整
 
 ### 2026-07
+
+#### 本地小模型分流節省 Context：Fast Context Task Router 機制觀察（2026-07-05）
+
+- **核心模式：** 將程式碼探索（code exploration）工作委派給本地執行的小型 LLM（local-Ollama task router）分流處理，僅將篩選後的精簡結果送回主 agent，藉此降低主 context window 的 token 消耗
+- **效果：** 使用者聲稱可節省 50–60% context token，代價是整體執行時間增加（本地小模型推論延遲 + 額外一層路由判斷）
+- **來源：** [Why did Microsoft pull Fast Context from public domain?](https://www.reddit.com/r/ClaudeCode/comments/1unz1s5/why_did_microsoft_pull_fast_context_from_public/)（Reddit r/ClaudeCode，07-05）；原專案（Microsoft）含 arXiv 論文、GitHub repo、自訓練模型，現已從公開領域下架，原因不明
+- **與既有模式的關係：** 與「模型使用策略」類別下的分層模型路由（Dragoman / Workweave Router）同屬「依任務複雜度分流降低成本」思路，差異在於此模式分流對象是 context 探索階段而非整個任務執行；下架爭議與機制本身的社群反思見 [[topics/community-tech-discussions]]
+- **成熟度：** ⏳ 新興（原專案已下架，機制僅存社群二手驗證與轉述，缺乏可直接安裝的現行版本，複現性受限）
 
 #### 額度監控與自動恢復工具生態（2026-07-03）
 
