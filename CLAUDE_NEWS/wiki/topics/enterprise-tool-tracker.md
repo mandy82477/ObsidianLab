@@ -3,7 +3,7 @@
 **狀態：** ongoing
 **領域：** 💼 商業
 **開始日期：** 2026-05-26
-**最後更新：** 2026-07-03
+**最後更新：** 2026-07-05
 **最後新聞更新：** 2026-07-03
 
 > **最新企業採用異動**（2026-07-03）
@@ -13,6 +13,8 @@
 > 單日新增四項具名企業/機構動態：Rubrik（Claude Code 專用安全層）、Okta（XAA/MCP 安全整合）、Globant（AI Pods 交付框架）、DataArt（Partner Network 精選夥伴），加州州政府（Newsom 協議，06-29）正式採用 Claude；同時 Lindy（AI 新創）100% 流量從 Claude 切至 DeepSeek，為具名 API 客戶流失案例（詳見 [[topics/enterprise-cost-management]]、[[topics/competitor-landscape]]）。
 
 ## 摘要
+
+**本月（2026-06）淨變化：** 3 家退出/縮減（Microsoft 成本、JPMorgan Chase 香港出口管制、Alibaba 安全疑慮）+ 1 家 API 客戶切換（Lindy → DeepSeek，成本），對 10+ 家新增/擴大採用（Globant、DataArt、Okta、Rubrik、加州州政府、Notion、Charleston Hospitality、Atlassian、JFrog、TCS、DXC、LG 等）。**淨增長態勢明確，但退出理由正從單一的「成本」擴散為「出口管制」與「安全疑慮」三軌並行**，後兩者不受 Anthropic 內部定價或效能改善控制。
 
 追蹤各大型企業目前正在使用的 AI 編碼工具，以及工具選擇的變化軌跡。資料來源為公開報導與內部消息洩露，僅記錄有明確來源佐證的事實。
 
@@ -71,7 +73,7 @@
 
 | 工具 | 企業採用數 | 趨勢 | 主要阻力 |
 |------|----------|------|---------|
-| Claude Code | 5 使用中（Amazon、Uber、UiPath、Rubrik、JFrog）+ 2 退出（Microsoft、Alibaba） | ⚠️ 成本壓力 + Fable 5 封鎖衝擊 + 安全疑慮新增退出理由 | 缺乏企業層級預算管控；Fable 5 出口管制加速部分企業評估替代方案；Alibaba 案例顯示「疑似後門」指控也可能成為退出理由（指控未經證實） |
+| Claude Code | 5 使用中（Amazon、UiPath、Rubrik、JFrog、Salesforce）+ 1 縮減中（Uber）+ 2 退出（Microsoft、Alibaba） | ⚠️ 成本壓力 + Fable 5 封鎖衝擊 + 安全疑慮新增退出理由 | 缺乏企業層級預算管控；Fable 5 出口管制加速部分企業評估替代方案；Alibaba 案例顯示「疑似後門」指控也可能成為退出理由（指控未經證實） |
 | Claude API | 22（Apple、KPMG、iCapital、哈佛、Fujitsu、Travelport、Nimble Gravity、ZoomInfo、LG Group、AppFolio、Salesforce Claude API、TCS、DXC Technology、Atlassian、JPMorgan Chase 美國本部、Charleston Hospitality Group、Notion、加州州政府、Globant、DataArt、Okta）+ 1 退出中（Lindy → DeepSeek） | 🟢 快速擴張（政府/合規/服務業縱深加深）；⚠️ 部分 API 客戶因成本敏感轉向競品 | — |
 | GitHub Copilot | 1（Microsoft） | 🟢 Microsoft 背書 | 生態鎖定 |
 | OpenAI Codex | 2（Amazon、UiPath） | 🟢 快速成長 | — |
