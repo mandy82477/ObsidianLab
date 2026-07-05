@@ -1,0 +1,253 @@
+{
+  "date": "2026-07-05",
+  "generatedAt": "2026-07-05 12:10 UTC",
+  "articleCount": 29,
+  "sourceCount": "10/10 | **文章數：** 29 | **更新時間：** 2026-07-05 12:10 UTC",
+  "bulletin": "",
+  "topStories": [
+    {
+      "title": "[BUG] Claude Max plan session limits exhausted abnormally fast since March 23, 2026 (CLI usage)",
+      "url": "https://github.com/anthropics/claude-code/issues/38335",
+      "source": "GitHub Issues / claude-code",
+      "time": "07/05 00:58",
+      "sentiment": "",
+      "body": "自 3 月底起持續回報的額度異常耗盡問題，累積 793 則留言、535 個讚反應，是本輪 GitHub Issues 中互動量最大的條目，顯示問題已延燒逾三個月仍未解決。",
+      "focusTags": [
+        "[風險警示]"
+      ]
+    },
+    {
+      "title": "Feature Request: Support AGENTS.md.",
+      "url": "https://github.com/anthropics/claude-code/issues/6235",
+      "source": "GitHub Issues / claude-code",
+      "time": "07/05 11:19",
+      "sentiment": "",
+      "body": "社群要求 Claude Code 支援業界正在集結的 `AGENTS.md` 通用標準，取代目前僅限 Claude Code 使用的 `CLAUDE.md`；5598 個讚反應顯示需求強烈。",
+      "focusTags": [
+        "[持續追蹤]"
+      ]
+    },
+    {
+      "title": "[FEATURE] Support multiple Connector accounts (same connector, different accounts) in Claude and Claude Code on the web (claude.ai/code)",
+      "url": "https://github.com/anthropics/claude-code/issues/27302",
+      "source": "GitHub Issues / claude-code",
+      "time": "07/04 22:32",
+      "sentiment": "",
+      "body": "使用者要求 Claude 網頁版與 Claude Code on the web 支援同一 connector 綁定多個帳號，累積 209 則留言、415 個讚，反映多帳號工作情境的實際需求。",
+      "focusTags": []
+    }
+  ],
+  "techUpdates": [],
+  "mediaReports": [
+    {
+      "title": "Alibaba to ban employees using Claude Code from July 10 as US-China AI rivalry escalates",
+      "url": "https://indianexpress.com/article/technology/artificial-intelligence/alibaba-ban-claude-code-us-china-ai-10772429/",
+      "source": "Google News / The Indian Express",
+      "time": "07/05 09:14",
+      "sentiment": "",
+      "body": "報導指出阿里巴巴將於 7 月 10 日起禁止員工使用 Claude Code，作為美中 AI 競爭加劇下的因應措施之一。",
+      "focusTags": [
+        "[風險警示]"
+      ]
+    },
+    {
+      "title": "Anthropic's plans to buy 1.4GW of Aussie data centre capacity",
+      "url": "https://www.afr.com/street-talk/anthropic-s-plans-to-buy-1-4gw-of-aussie-data-centre-capacity-20260705-p60cpz",
+      "source": "Google News / AFR",
+      "time": "07/05 04:52",
+      "sentiment": "",
+      "body": "AFR 報導 Anthropic 正洽談採購澳洲 1.4GW 資料中心容量，屬其全球運算基礎建設佈局的一環。",
+      "focusTags": [
+        "[重大事件]"
+      ]
+    },
+    {
+      "title": "MixRoute Confirms Claude Fable 5 Support, Giving Developers One-Key Access to Both Fable 5 and GPT-5.6",
+      "url": "https://finance.yahoo.com/technology/ai/articles/mixroute-confirms-claude-fable-5-001400157.html",
+      "source": "Google News / Yahoo Finance",
+      "time": "07/05 00:14",
+      "sentiment": "",
+      "body": "路由服務 MixRoute 宣布支援 Fable 5，讓開發者可用單一金鑰同時存取 Fable 5 與 GPT-5.6，屬第三方生態工具整合動態。",
+      "focusTags": []
+    }
+  ],
+  "discussions": [
+    {
+      "title": "[BUG] AskUserQuestion: \"No response after 60s — continued without an answer\"",
+      "url": "https://github.com/anthropics/claude-code/issues/73125",
+      "source": "GitHub Issues / claude-code",
+      "time": "07/05 07:28",
+      "sentiment": "",
+      "body": "`AskUserQuestion` 工具在 60 秒無回應時會自動略過繼續執行，累積 121 則留言、383 個讚，使用者擔心此行為可能導致未經確認的操作被執行。情緒：😤",
+      "focusTags": []
+    },
+    {
+      "title": "[BUG] No response from API error when Advisor is triggered",
+      "url": "https://github.com/anthropics/claude-code/issues/69238",
+      "source": "GitHub Issues / claude-code",
+      "time": "07/05 06:37",
+      "sentiment": "",
+      "body": "Advisor 功能觸發時偶發「No response from API」錯誤，回報中提及使用 Opus 4.8 進行 advising 時出現此問題。情緒：😤",
+      "focusTags": []
+    },
+    {
+      "title": "Anthropic performing prompt injection on its users",
+      "url": "https://old.reddit.com/r/LLMDevs/comments/1udpw9h/just_got_this_response_from_claude_what_is_going/",
+      "source": "Hacker News",
+      "time": "07/05 01:30",
+      "sentiment": "",
+      "body": "Reddit 上一則貼文質疑 Claude 疑似對使用者執行 prompt injection，引發跨串討論與多方回應，惟細節與可信度尚待查證。情緒：🤔",
+      "focusTags": []
+    },
+    {
+      "title": "Sonnet 5 Is a Really Good Orchestrator",
+      "url": "https://www.reddit.com/r/ClaudeCode/comments/1unzr2u/sonnet_5_is_a_really_good_orchestrator/",
+      "source": "Reddit / r/ClaudeCode",
+      "time": "07/05 11:25",
+      "sentiment": "",
+      "body": "使用者實測回報 Sonnet 5 在 subagent 協調與長流程任務（如 `/implement-sprint`）上的表現優於前代 Sonnet，且不再頻繁中途停下詢問是否繼續。情緒：😊",
+      "focusTags": [
+        "[新工具]"
+      ]
+    },
+    {
+      "title": "I went through 7 threads of people who ran both Fable 5 and Opus 4.8 during the free window. Summary of what they found, with links.",
+      "url": "https://www.reddit.com/r/ClaudeCode/comments/1unzp07/i_went_through_7_threads_of_people_who_ran_both/",
+      "source": "Reddit / r/ClaudeCode",
+      "time": "07/05 11:22",
+      "sentiment": "",
+      "body": "彙整 7 篇討論串中使用者於免費開放期間並行測試 Fable 5 與 Opus 4.8 的心得整理。情緒：😐",
+      "focusTags": [
+        "[新工具]"
+      ]
+    },
+    {
+      "title": "Why did Microsoft pull Fast Context from public domain?",
+      "url": "https://www.reddit.com/r/ClaudeCode/comments/1unz1s5/why_did_microsoft_pull_fast_context_from_public/",
+      "source": "Reddit / r/ClaudeCode",
+      "time": "07/05 10:45",
+      "sentiment": "",
+      "body": "使用者重新測試 Microsoft 已下架的 Fast Context 專案（將探索工作委派給本地小型 LLM 以節省 50-60% context token），並討論其被無預警下架的原因。情緒：🤔",
+      "focusTags": []
+    },
+    {
+      "title": "MCP servers, hooks, and plugins should auto-reload when config changes — no restart needed",
+      "url": "https://github.com/anthropics/claude-code/issues/24057",
+      "source": "GitHub Issues / claude-code",
+      "time": "07/05 01:31",
+      "sentiment": "",
+      "body": "社群呼籲 MCP server、hooks、plugin 設定變更後應自動重載，無需重啟整個 session，累積 30 則留言、15 個讚。情緒：😤",
+      "focusTags": []
+    },
+    {
+      "title": "Show HN: Self-healing review gate and knowledge base for Claude Code (Beta)",
+      "url": "https://verity.md",
+      "source": "Hacker News",
+      "time": "07/05 09:31",
+      "sentiment": "",
+      "body": "Verity.md 提供 Claude Code 的自我修復式審查閘門與知識庫，結合 SAST 掃描與 AI 意圖落差檢查，並可累積決策知識供後續執行參考。情緒：😐",
+      "focusTags": []
+    },
+    {
+      "title": "Show HN: Local MCP – Claude/ChatGPT read your iMessage, Teams, files on-device",
+      "url": "https://www.local-mcp.com/en",
+      "source": "Hacker News",
+      "time": "07/05 02:49",
+      "sentiment": "",
+      "body": "Local MCP 讓 Claude Desktop、Claude Code、Cursor、ChatGPT 透過本機 MCP 存取 Mail、iMessage、Teams、Slack 等本地資料，聲稱桌面/CLI 用戶端資料完全不離開裝置。情緒：😐",
+      "focusTags": []
+    }
+  ],
+  "billing": [],
+  "focus": [
+    {
+      "tag": "[風險警示]",
+      "text": "Claude Max 方案自 3 月 23 日起 session 額度異常快速耗盡的 CLI bug 回報累積至 793 則留言、535 個讚，是今日互動量最高的條目，反映升版/額度異常已是社群長期未解痛點。",
+      "ref_urls": [
+        "https://github.com/anthropics/claude-code/issues/38335"
+      ]
+    },
+    {
+      "tag": "[持續追蹤]",
+      "text": "支援 `AGENTS.md` 統一標準的 feature request 累積 333 則留言、高達 5598 個讚反應，社群持續施壓要求 Claude Code 比照 Codex、Amp、Cursor 支援跨工具通用的 agent 設定檔。",
+      "ref_urls": [
+        "https://github.com/anthropics/claude-code/issues/6235"
+      ]
+    },
+    {
+      "tag": "[風險警示]",
+      "text": "據印度快報報導，阿里巴巴將自 7 月 10 日起禁止員工使用 Claude Code，凸顯美中 AI 競爭加劇下企業工具選用受地緣政治牽動。",
+      "ref_urls": [
+        "https://indianexpress.com/article/technology/artificial-intelligence/alibaba-ban-claude-code-us-china-ai-10772429/"
+      ]
+    },
+    {
+      "tag": "[重大事件]",
+      "text": "AFR 報導 Anthropic 計畫在澳洲採購 1.4GW 資料中心容量，顯示其基礎建設擴張規模持續加大。",
+      "ref_urls": [
+        "https://www.afr.com/street-talk/anthropic-s-plans-to-buy-1-4gw-of-aussie-data-centre-capacity-20260705-p60cpz"
+      ]
+    },
+    {
+      "tag": "[新工具]",
+      "text": "社群關於 Sonnet 5 作為 orchestrator 表現、以及 Fable 5 與 Opus 4.8 免費視窗期間的實測比較討論同步發酵，多篇 Reddit 貼文分享第一手心得。",
+      "ref_urls": [
+        "https://www.reddit.com/r/ClaudeCode/comments/1unzr2u/sonnet_5_is_a_really_good_orchestrator/",
+        "https://www.reddit.com/r/ClaudeCode/comments/1unzp07/i_went_through_7_threads_of_people_who_ran_both/"
+      ]
+    }
+  ],
+  "sourceStatus": [
+    {
+      "name": "Hacker News",
+      "ok": true,
+      "count": 6
+    },
+    {
+      "name": "Anthropic Status",
+      "ok": true,
+      "count": 0
+    },
+    {
+      "name": "lobste.rs",
+      "ok": true,
+      "count": 0
+    },
+    {
+      "name": "GitHub Issues",
+      "ok": true,
+      "count": 10
+    },
+    {
+      "name": "Claude API Release Notes",
+      "ok": true,
+      "count": 0
+    },
+    {
+      "name": "dev.to",
+      "ok": true,
+      "count": 0
+    },
+    {
+      "name": "Google News",
+      "ok": true,
+      "count": 5
+    },
+    {
+      "name": "GitHub",
+      "ok": true,
+      "count": 0
+    },
+    {
+      "name": "Anthropic Blog",
+      "ok": true,
+      "count": 0
+    },
+    {
+      "name": "Reddit",
+      "ok": true,
+      "count": 10
+    }
+  ],
+  "preview": "[BUG] Claude Max plan session limits exhausted abnormally fast since March 23, 2026 (CLI usage)"
+}
