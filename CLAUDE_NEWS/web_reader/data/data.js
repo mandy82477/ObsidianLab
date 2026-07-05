@@ -403,7 +403,7 @@ window.WIKI_DATA = {
       "pill": "active",
       "firstSeen": "",
       "startDate": "2026-04-27",
-      "lastUpdated": "2026-07-03",
+      "lastUpdated": "2026-07-05",
       "lastNewsUpdate": "2026-07-03",
       "summary": "**最新態勢（2026-07-03）：** Reuters 獨家報導 Alibaba 已以「疑似後門風險」為由禁止員工職場使用 Claude Code（HN score 313），為首個由中國企業方向對 Claude Code 提出的具名安全指控，與此前 Anthropic 對中國使用者的偵測行為指控（06-30）形成…",
       "latestHeadline": "最新態勢（2026-07-03）： Reuters 獨家報導 Alibaba 已以「疑似後門風險」為由禁止員工職場使用 Claude Code（HN score 313），為首個由中國企業方向對 Claude Code 提出的具名安全指控，與此前 Anthropic 對中國使用者的偵測行為指控（06-30）形成雙向對峙"
@@ -583,7 +583,7 @@ window.WIKI_DATA = {
       "pill": "warn",
       "firstSeen": "",
       "startDate": "2026-05-01",
-      "lastUpdated": "2026-07-04",
+      "lastUpdated": "2026-07-05",
       "lastNewsUpdate": "2026-07-04",
       "summary": "大型組織採用 Claude Code 後，成本結構挑戰迅速浮現。Uber 四個月耗盡全年 AI 預算（Forbes 報導）是目前最具代表性的公開案例，揭示企業在缺乏細粒度使用量控管工具的情況下，AI 工具成本極易失控。此議題已從開發者社群的個人抱怨升級至 Forbes、Business Insider 等主流財經媒體的…",
       "latestHeadline": "[官方產品化回應] Anthropic 推出企業版 Claude 支出控管（spend controls）功能：Tech Times 報導，企業導入 agentic AI 後帳單頻繁超出預算的痛點持續發酵，Anthropic 針對企業客戶推出支出控管功能協助管理成本。對本頁「企業層級缺失的工具」缺口的意涵：這是本頁自 "

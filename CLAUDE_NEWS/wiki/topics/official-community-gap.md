@@ -31,7 +31,7 @@
 | 跨 session 記憶持久化 | 2026-05-05 起記憶工具浪潮；2026-06-28 OKF 格式 | ltm（Core Memory Packet）、VIR、CoreMem、OKF | Dreaming 記憶整合（2026-05-07，Research Preview） | 🧪 部分產品化 | Dreaming 兩個月後仍為 Research Preview、試用價值「⏳ 觀望」；社群工具（OKF）跨工具跨模型，Dreaming（僅限 Anthropic 生態）無法取代 |
 | 多代理 PR/程式碼審查 | 2026-05-08 4-agent Code Review；2026-05-11 adamsreview | adamsreview、Read-Only Reviewer Agent（2026-06-26）、Mira | `/code-review`（原 `/simplify`，v2.1.146）+ `/code-review --fix`（v2.1.152） | 🧪 部分產品化 | 官方 `/code-review` 已評 ✅ 推薦，但社群「adversarial 多模型審查抓到更多真實 bug」的說法尚無雙方公開對照數據佐證 |
 | 成本感知模型路由 | 2026-06-27，Opus 4.7 tokenizer 改版成本大漲後爆發 | Workweave Router（HN 181，實測降 40%+）、Dragoman、Rayline | 無 | ❌ 無官方對應 | feature-radar 全覽表無任何路由/成本最佳化功能；社群工具是唯一解法 |
-| 額度/用量監控 | 2026-05 起持續累積，2026-07-03 因 7/7 計費轉換臨近急遽爆發 | LimitBar、CCLimitPing、claude-needs-input | 無（僅有底層 rate-limit API 供第三方讀取，無官方儀表板/告警 UI） | ❌ 無官方對應 | 同一天（07-03）冒出兩款新工具，缺口迫切性隨計費轉換 deadline 逼近而升高，見 [[feature-radar]] ⏰ 倒數中 |
+| 額度/用量監控 | 2026-05 起持續累積，2026-07-03 因 7/7 計費轉換臨近急遽爆發 | LimitBar、CCLimitPing、claude-needs-input | 企業版 Spend Controls（2026-07-04 宣布，控管粒度未公開，見 [[topics/enterprise-cost-management]]）；個人用戶仍無官方儀表板/告警 UI | 🧪 部分產品化（僅企業版） | 個人重度使用者缺口依舊，迫切性隨計費轉換 deadline 逼近而升高，見 [[feature-radar]] ⏰ 倒數中 |
 | Slack 內 AI 隊友 | 弱社群前驅（Ano 等輕量 Slack + Claude 整合，2026-06-04） | Ano | Claude Tag（2026-06-24，Slack-native，Anthropic 內部 65% 程式碼由其生成） | ✅ 已產品化 | 此列較弱屬「社群發明」框架——官方主導色彩強，社群前驅稀薄，列入僅供對照參考 |
 | 跨工具 agent 設定標準（AGENTS.md） | 2026-05-02 起，[GitHub issue #6235](https://github.com/anthropics/claude-code/issues/6235) 累積數千則 reactions；2026-07-03 再上日報聚焦 | Codex、Amp、Cursor（均已採用 AGENTS.md 標準） | 無 | ❌ 無官方對應 | Claude Code 仍不支援 AGENTS.md，多工具並用者需為 Claude Code 額外維護 CLAUDE.md，造成配置互通痛點 |
 
