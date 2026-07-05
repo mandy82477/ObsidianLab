@@ -410,20 +410,6 @@
       if (gapTopic?.lastUpdated) gapMeta.textContent = `最後更新 ${gapTopic.lastUpdated}`;
     }
 
-    // Populate model-comparison card last-updated label
-    const cmpMeta = $('#comparison-card-updated');
-    if (cmpMeta) {
-      const cmpTopic = (data.topics || []).find(t => t.id === 'model-comparison');
-      if (cmpTopic?.lastUpdated) cmpMeta.textContent = `最後更新 ${cmpTopic.lastUpdated}`;
-    }
-
-    // Populate anthropic-commitments card last-updated label
-    const commitMeta = $('#commitments-card-updated');
-    if (commitMeta) {
-      const commitTopic = (data.topics || []).find(t => t.id === 'anthropic-commitments');
-      if (commitTopic?.lastUpdated) commitMeta.textContent = `最後更新 ${commitTopic.lastUpdated}`;
-    }
-
     buildSortBar('sort-bar-kb', KB_SORT_OPTIONS, kbSort, 'setSortKb');
     renderKbRows();
   }
