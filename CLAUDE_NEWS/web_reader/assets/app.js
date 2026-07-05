@@ -693,6 +693,121 @@ ${trackerHtml}
   let _searchIdx  = -1;      // keyboard-selected result index
   let _searchCorpus = null;  // null = not yet loaded
 
+  // ── Search log (local-only query footprint) ───────────────────────────────────
+  const SEARCH_LOG_KEY   = 'claude-news-search-log';
+  const SEARCH_LOG_LIMIT = 200;
+  const SEARCH_LOG_DEBOUNCE_MS = 800;
+  let _searchLogTimer = null;
+
+  function todayStr() {
+    const d = new Date();
+    const pad = n => String(n).padStart(2, '0');
+    return `${d.getFullYear()}-${pad(d.getMonth() + 1)}-${pad(d.getDate())}`;
+  }
+
+  function readSearchLog() {
+    try {
+      const raw = localStorage.getItem(SEARCH_LOG_KEY);
+      const arr = raw ? JSON.parse(raw) : [];
+      return Array.isArray(arr) ? arr : [];
+    } catch (e) {
+      return [];
+    }
+  }
+
+  function writeSearchLog(arr) {
+    try {
+      localStorage.setItem(SEARCH_LOG_KEY, JSON.stringify(arr));
+    } catch (e) {
+      // localStorage unavailable (private mode etc.) — silently skip
+    }
+  }
+
+  // Record a finalized query (debounced caller). Dedupes same query+day, updates hits.
+  function logSearchQuery(q, hits) {
+    const query = q.trim();
+    if (!query) return;
+    let log;
+    try {
+      log = readSearchLog();
+    } catch (e) {
+      return;
+    }
+    const d = todayStr();
+    const existingIdx = log.findIndex(entry => entry.q === query && entry.d === d);
+    if (existingIdx >= 0) {
+      log[existingIdx].hits = hits;
+      // move updated entry to front (most recent activity first)
+      const [entry] = log.splice(existingIdx, 1);
+      log.unshift(entry);
+    } else {
+      log.unshift({ q: query, hits, d });
+    }
+    if (log.length > SEARCH_LOG_LIMIT) log = log.slice(0, SEARCH_LOG_LIMIT);
+    writeSearchLog(log);
+  }
+
+  function scheduleSearchLog(q, hits) {
+    if (_searchLogTimer) clearTimeout(_searchLogTimer);
+    _searchLogTimer = setTimeout(() => {
+      logSearchQuery(q, hits);
+      renderZeroHitPanel();
+    }, SEARCH_LOG_DEBOUNCE_MS);
+  }
+
+  function getZeroHitLog() {
+    return readSearchLog().filter(e => e.hits === 0).slice(0, 10);
+  }
+
+  function renderZeroHitPanel() {
+    const wrap = $('#search-zerohit');
+    if (!wrap) return;
+    const items = getZeroHitLog();
+    if (!items.length) { wrap.innerHTML = ''; wrap.classList.remove('is-visible'); return; }
+    wrap.classList.add('is-visible');
+    const rows = items.map(e => {
+      const [, m, day] = (e.d || '').split('-');
+      const md = (m && day) ? `${m}/${day}` : e.d;
+      return `<div class="search-zerohit__row"><span class="search-zerohit__q">${esc(e.q)}</span><span class="search-zerohit__d">${esc(md || '')}</span></div>`;
+    }).join('');
+    wrap.innerHTML = `
+      <button class="search-zerohit__toggle" type="button" onclick="toggleZeroHitPanel()" aria-expanded="false">
+        <svg class="search-zerohit__chev" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 18 6-6-6-6"/></svg>
+        查無結果的搜尋（${items.length}）
+      </button>
+      <div class="search-zerohit__body">
+        <div class="search-zerohit__list">${rows}</div>
+        <div class="search-zerohit__actions">
+          <button class="search-zerohit__btn" type="button" onclick="copyZeroHitLog()">複製清單</button>
+          <button class="search-zerohit__btn" type="button" onclick="clearZeroHitLog()">清除</button>
+        </div>
+      </div>`;
+  }
+
+  window.toggleZeroHitPanel = function () {
+    const wrap = $('#search-zerohit');
+    if (!wrap) return;
+    const open = wrap.classList.toggle('is-open');
+    const btn = wrap.querySelector('.search-zerohit__toggle');
+    if (btn) btn.setAttribute('aria-expanded', String(open));
+  };
+
+  window.copyZeroHitLog = function () {
+    const items = getZeroHitLog();
+    const text = items.map(e => `${e.q} · ${e.d}`).join('\n');
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+      navigator.clipboard.writeText(text).catch(() => {});
+    }
+  };
+
+  window.clearZeroHitLog = function () {
+    try {
+      const log = readSearchLog().filter(e => e.hits !== 0);
+      writeSearchLog(log);
+    } catch (e) { /* ignore */ }
+    renderZeroHitPanel();
+  };
+
   // Load search-index.json once; fallback to metadata-only corpus on error
   async function loadSearchCorpus() {
     if (_searchCorpus) return;
@@ -732,7 +847,11 @@ ${trackerHtml}
     const results = $('#search-results');
     if (!results) return;
     _searchIdx = -1;
-    if (!q.trim()) { results.innerHTML = ''; return; }
+    if (!q.trim()) {
+      results.innerHTML = '';
+      if (_searchLogTimer) { clearTimeout(_searchLogTimer); _searchLogTimer = null; }
+      return;
+    }
 
     if (!_searchCorpus) {
       results.innerHTML = '<div class="search-empty">索引載入中，請稍候再試…</div>';
@@ -755,6 +874,8 @@ ${trackerHtml}
       else if (text.includes(lq))     score = 10;
       return { item, score };
     }).filter(r => r.score > 0).sort((a, b) => b.score - a.score).slice(0, 10);
+
+    scheduleSearchLog(q, scored.length);
 
     if (!scored.length) {
       results.innerHTML = `<div class="search-empty">找不到「${esc(q)}」相關結果</div>`;
@@ -826,6 +947,7 @@ ${trackerHtml}
     _searchIdx = -1;
     // Pre-load search corpus in background (no-op if already loaded)
     loadSearchCorpus();
+    renderZeroHitPanel();
   };
 
   window.closeSearch = function () {

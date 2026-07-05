@@ -1344,6 +1344,41 @@ code {
   font-family: var(--font-mono); font-size: 12px; color: var(--ink-3);
 }
 
+/* ── Search: zero-hit local query log ───────────────────────────── */
+.search-zerohit { display: none; border-top: 1px solid var(--border-2); }
+.search-zerohit.is-visible { display: block; }
+.search-zerohit__toggle {
+  width: 100%; display: flex; align-items: center; gap: 6px;
+  padding: 10px 18px; background: transparent; border: 0; cursor: pointer;
+  font-family: var(--font-sans); font-size: 12px; color: var(--ink-3);
+  text-align: left;
+}
+.search-zerohit__toggle:hover { color: var(--ink-2); }
+.search-zerohit__chev { flex-shrink: 0; transition: transform 120ms ease; }
+.search-zerohit.is-open .search-zerohit__chev { transform: rotate(90deg); }
+.search-zerohit__body { display: none; padding: 0 18px 12px; }
+.search-zerohit.is-open .search-zerohit__body { display: block; }
+.search-zerohit__list {
+  border-top: 1px solid var(--border-2);
+  max-height: 180px; overflow-y: auto;
+}
+.search-zerohit__row {
+  display: flex; align-items: baseline; justify-content: space-between; gap: 12px;
+  padding: 6px 0; border-bottom: 1px solid var(--border-2);
+  font-family: var(--font-sans); font-size: 12px; color: var(--ink-2);
+}
+.search-zerohit__row:last-child { border-bottom: 0; }
+.search-zerohit__q { font-family: var(--font-mono); font-size: 12px; color: var(--ink-1); overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.search-zerohit__d { font-family: var(--font-mono); font-size: 11px; color: var(--ink-4); flex-shrink: 0; }
+.search-zerohit__actions { display: flex; gap: 8px; margin-top: 10px; }
+.search-zerohit__btn {
+  font-family: var(--font-sans); font-size: 12px; color: var(--ink-3);
+  background: transparent; border: 1px solid var(--border-2); border-radius: 2px;
+  padding: 5px 10px; cursor: pointer;
+  transition: color 100ms, border-color 100ms;
+}
+.search-zerohit__btn:hover { color: var(--ochre-9); border-color: var(--ochre-7); }
+
 /* ── Mobile ──────────────────────────────────────────────────── */
 @media (max-width: 880px) {
   .feed__header { grid-template-columns: 1fr; gap: 20px; }
