@@ -19,6 +19,16 @@ TARGET_DATE 由 Agent prompt 傳入。
 
 ---
 
+## Step 0：昨日缺跑檢查
+
+**僅當 TARGET_DATE 為今日時執行**（backfill 模式，即 TARGET_DATE 非今日時跳過本步驟——補跑歷史日期時「昨天」無意義）。
+
+計算 TARGET_DATE 的前一天 YESTERDAY，檢查 `news/YESTERDAY.md` 是否存在：
+- 存在 → 一行帶過，繼續 Step 1a
+- 不存在 → 記錄缺失，於完成摘要表加一列「⚠️ 昨日（YESTERDAY）日報缺失」，並提示使用者可執行 `/news-pipeline` 帶日期參數手動補跑；Step 6 log 寫入 `WARN: yesterday digest missing (YESTERDAY)`。**不自動補跑**（避免排程場景下連鎖跑兩天造成時間不可控）
+
+---
+
 ## Step 1a：新聞抓取（Python，不呼叫 LLM）
 
 用 Bash 執行：
@@ -207,6 +217,7 @@ REPO_ROOT\src\logs\task_scheduler.log
 [DATE TIME] === Pipeline complete (agent) ===
 ```
 
+- Step 0 昨日缺跑時，額外寫一行 `WARN: yesterday digest missing (YESTERDAY)`
 - Step 1 失敗時，寫 `Aggregator FAILED - stopping`，之後不繼續
 - Step 2 失敗時，寫 `Wiki ingest FAILED`
 - Step 4 測試套件失敗時，寫 `Tests FAILED - web build skipped`
@@ -222,6 +233,7 @@ REPO_ROOT\src\logs\task_scheduler.log
 
 | 步驟 | 結果 |
 |------|------|
+| Step 0 昨日缺跑檢查 | ✅ 無缺失 / ⚠️ 昨日（YESTERDAY）日報缺失 / ⏭️ backfill 模式跳過 |
 | Step 1 新聞聚合 | ✅ / ❌ |
 | Step 2 Wiki Ingest | ✅ / ❌ |
 | Step 3 Wiki Commit | ✅ / ⏭️ 無變更 / ❌ |
@@ -235,6 +247,7 @@ REPO_ROOT\src\logs\task_scheduler.log
 ## 注意事項
 
 - 所有 Bash 指令使用絕對路徑，不依賴 PATH 環境變數
+- Step 0 僅在 TARGET_DATE 為今日時執行；backfill 模式（TARGET_DATE 非今日）跳過
 - Step 1 失敗時停止整個 pipeline
 - Step 2（wiki ingest）失敗時記錄並繼續 Step 4
 - Step 4 測試套件（`scripts/run_tests.py`）失敗時跳過 web build 與 web commit，仍須執行 Step 5 的統一 push
