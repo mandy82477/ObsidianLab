@@ -153,7 +153,14 @@ git -C REPO_ROOT commit -m "wiki: auto-ingest TARGET_DATE"
 
 ## Step 4：建置 Web Reader
 
-用 Bash 執行：
+**建置前先跑確定性測試套件（強制）：**
+
+```
+PYTHON REPO_ROOT\scripts\run_tests.py
+```
+
+- 測試失敗（exit code 非 0）→ 視同 Step 4 失敗：跳過 web build 與 web commit，但仍繼續 Step 5（推送已完成的 news / wiki commit）與 Step 6（記錄 log）；Step 6 log 寫 `Tests FAILED - web build skipped`
+- 測試全過（exit code 0）→ 繼續執行：
 
 ```
 PYTHON REPO_ROOT\scripts\build_web.py
@@ -202,7 +209,8 @@ REPO_ROOT\src\logs\task_scheduler.log
 
 - Step 1 失敗時，寫 `Aggregator FAILED - stopping`，之後不繼續
 - Step 2 失敗時，寫 `Wiki ingest FAILED`
-- Step 4 失敗時，寫 `build_web FAILED - pushing news/wiki only`
+- Step 4 測試套件失敗時，寫 `Tests FAILED - web build skipped`
+- Step 4 build_web 失敗時，寫 `build_web FAILED - pushing news/wiki only`
 - Step 5 push 失敗時，寫 `Push FAILED`
 - 時間戳使用系統當前時間（`Get-Date` 或 `date` 指令取得），格式 `[週X YYYY/MM/DD HH:MM:SS.SS]`
 
@@ -229,6 +237,7 @@ REPO_ROOT\src\logs\task_scheduler.log
 - 所有 Bash 指令使用絕對路徑，不依賴 PATH 環境變數
 - Step 1 失敗時停止整個 pipeline
 - Step 2（wiki ingest）失敗時記錄並繼續 Step 4
+- Step 4 測試套件（`scripts/run_tests.py`）失敗時跳過 web build 與 web commit，仍須執行 Step 5 的統一 push
 - Step 4（web build）失敗時跳過 web commit，但仍須執行 Step 5 的統一 push（推送已完成的 news / wiki commit）
 - **所有 git push 集中在 Step 5 一次完成**；中途步驟（1b、3）一律只 commit 不 push，避免 Pages 部署並發競爭
 - **Step 6 log 寫入必須執行**，即使前面步驟失敗也不能跳過
