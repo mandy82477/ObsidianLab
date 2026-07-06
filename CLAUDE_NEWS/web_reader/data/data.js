@@ -341,7 +341,7 @@ window.WIKI_DATA = {
       "pill": "active",
       "firstSeen": "2026-04-25",
       "startDate": "",
-      "lastUpdated": "2026-07-05",
+      "lastUpdated": "2026-07-06",
       "lastNewsUpdate": "2026-07-04",
       "summary": "**2026-07-04 官方推出企業支出控管（spend controls）功能**，回應企業 agentic AI 帳單頻繁超支的普遍痛點，是官方首次針對成本失控問題推出產品化解法（詳見下方時序）。目前所有付費方案用量仍維持原訂閱配額制——原定 2026-06-15 實施的「程式化用量（Agent SDK、`cla…",
       "latestHeadline": "2026-07-04 官方推出企業支出控管（spend controls）功能，回應企業 agentic AI 帳單頻繁超支的普遍痛點，是官方首次針對成本失控問題推出產品化解法（詳見下方時序）。目前所有付費方案用量仍維持原訂閱配額制——原定 2026-06-15 實施的「程式化用量（Agent SDK、`claude "
