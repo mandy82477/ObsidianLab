@@ -9,9 +9,6 @@
 > **最新企業採用異動**（2026-07-06）
 > Meta 傳出限制工程師使用 Claude（來源與規模細節待補，暫標 ❓ 未確認），若確認將是繼 Alibaba（安全疑慮）、Microsoft（成本）、JPMorgan Chase（出口管制）後第四類具名頂尖科技企業縮限案例；同日 The Information 報導部分小型企業改用 Claude 自建工作流取代 Salesforce，屬企業軟體採購行為變化的新訊號。
 
-> **前次動態**（2026-07-05）
-> Alibaba 禁令生效日確認為 **2026-07-10**（The Indian Express 跟進報導），是繼 07-03 Reuters 獨家、07-04 TechCrunch 等多媒體擴散後的具體生效時間點確認；禁令以「疑似後門風險」為由，指控本身未經 Anthropic 證實，安全政策面向另見 [[topics/ai-agent-safety]]。
-
 ## 摘要
 
 **本月（2026-06）淨變化：** 3 家退出/縮減（Microsoft 成本、JPMorgan Chase 香港出口管制、Alibaba 安全疑慮）+ 1 家 API 客戶切換（Lindy → DeepSeek，成本），對 10+ 家新增/擴大採用（Globant、DataArt、Okta、Rubrik、加州州政府、Notion、Charleston Hospitality、Atlassian、JFrog、TCS、DXC、LG 等）。**淨增長態勢明確，但退出理由正從單一的「成本」擴散為「出口管制」與「安全疑慮」三軌並行**，後兩者不受 Anthropic 內部定價或效能改善控制。

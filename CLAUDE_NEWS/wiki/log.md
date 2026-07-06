@@ -1,7 +1,22 @@
 # Wiki 操作日誌
 
-Append-only 紀錄。每次 ingest、query 或 lint 都在此追加一條。
+Append-only 紀錄。每次 ingest、lint，以及**揭露缺陷或促成改動的使用者 query**，都在此追加一條（純資訊性、未促成改動的 query 不記，避免噪音）。
 格式：`## [YYYY-MM-DD] 類型 | 說明`
+
+## 2026-07-06 Query | 日報「大規模錯誤」翻譯加碼 + 頂部「前次動態」callout 堆疊
+
+- **使用者點出：**
+  1. 今日聚焦「多模型大規模錯誤」放大了來源 `Elevated errors`（狀態頁術語＝錯誤率升高，中性/低強度）——把「several models」的**廣度**當成「大規模」的**規模**
+  2. 5 頁頂部保留「前次動態」callout，只想留單一最新（目的僅為看最後更新什麼）
+- **根因：**
+  1. Step 1b 生成日報時，severity 從情境 gestalt（多模型受影響＋[風險警示]標籤）補值，而非錨定原文的字；System prompt 既有的「客觀」擋不住這種感知型放大
+  2. callout 被「prepend、保留歷史」的手感誤套（callout 是全 wiki 唯一該覆寫而非疊加的地方），且一次未攔即自我繁殖為頁面既定結構
+- **處置：**
+  - `.claude/commands/news-pipeline-steps.md` Step 1b：persona「AI 技術」→「Claude 與 Anthropic 生態」（涵蓋商業/政策）；加程度詞測試（每個程度形容詞須能在 `gathered_items.json` 原文找到同等強度依據，否則降回中性）；今日聚焦加「標籤不授權升高語氣」
+  - `.claude/rules/wiki-ingest-format.md`：callout 明訂「**覆寫、不留前次**」
+  - 刪除 5 頁「前次動態」callout：enterprise-tool-tracker / enterprise-cost-management / competitor-landscape / anthropic-business / pricing（僅留最新）
+- **防再犯：** 兩處源頭規則均已修（非只改靜態值）；`/review-commands` 零錯誤通過；memory 新增 query-log 機制本身
+- **注意：** 以上改動尚未 commit/push，web_reader json 仍為舊版，待下次 pipeline 或手動 rebuild 才反映到線上
 
 ## 2026-07-06 Ingest | news/2026-07-06.md（57 則）
 

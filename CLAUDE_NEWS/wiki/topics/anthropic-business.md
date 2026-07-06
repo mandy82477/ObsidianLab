@@ -9,9 +9,6 @@
 > **最新動態**（2026-07-06）
 > Anthropic 與比特幣礦業轉型公司 TeraWulf 簽下**190 億美元、20 年期**肯塔基 AI 基礎設施園區租約（今日最大商業事件，WSJ/CNBC/Barron's 等 6+ 家財經媒體同步報導），消息當日推動 TeraWulf 股價大漲約 17%（Barron's），CoreWeave、IREN 等同業租賃行情同步受比價效應牽動（IREN 股價盤後漲 5%）；同日傳出 Anthropic 正洽談三星代工客製化 AI 晶片，若成真將是繼自建資料中心後另一項硬體自主布局；另有 The Information 報導部分小型企業改用 Claude 自建工作流取代 Salesforce，AiThority 報導 Claude 成為 Google Workspace 內受治理 workflow agent。詳見「戰略合作」表與「時序」。
 
-> **前次動態**（2026-07-05）
-> AFR 報導 Anthropic 計畫在澳洲採購 1.4GW 資料中心容量，為全球運算基礎建設佈局的又一擴張節點，延續近期 Micron 記憶體協議、招聘動態揭露的下一波資料中心佈局等訊號；同日第三方路由服務 MixRoute 宣布支援 Fable 5，開發者可單一金鑰同時存取 Fable 5 與 GPT-5.6，屬生態邊緣整合，商業意涵有限。
-
 ---
 
 ## 摘要

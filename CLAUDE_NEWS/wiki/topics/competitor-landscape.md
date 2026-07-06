@@ -9,9 +9,6 @@
 > **最新競品動態**（2026-07-06）
 > Z.ai 推出免費工具 ZCode，直接對標 Cursor 與 Claude Code——以「免費」正面挑戰 Anthropic 的訂閱/API 雙軌計費模式；同日 Business Insider 實測 Base 44 新模型（base-1）與 Anthropic 建站速度，AI 建站賽道的模型層競爭延伸至實測比較；FT 分析 OpenAI 與 Anthropic 未來若上市（float）可能面對的結構性挑戰，為 IPO 前景添入謹慎論調。
 
-> **前次動態**（2026-07-02）
-> Palantir CEO Alex Karp 公開批評 Anthropic 與 OpenAI「竊取客戶 IP，token 價值偏低」（HN score 16），討論串猜測與 Fable/Mythos 重新發布同日、OpenAI 更直接競爭 Palantir 國防業務有關；同日分析師調升 Palantir 股票評等，反映市場並未因 Anthropic/OpenAI 的 agentic 攻勢看空 Palantir。此前 6/29：AI 新創 Lindy CEO 將 100% 流量從 Claude 切換至 DeepSeek，每月省下數百萬美元——「DeepSeek 性價比勝出」在具名 API 客戶層的最大規模實例（CNBC，HN score 3）。
-
 ---
 
 ## 摘要

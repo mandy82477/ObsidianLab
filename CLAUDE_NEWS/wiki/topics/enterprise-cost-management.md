@@ -9,9 +9,6 @@
 > **最新成本挑戰**（2026-07-04）
 > Anthropic 推出企業版 Claude 支出控管（spend controls）功能，官方首次針對本頁長期記錄的四項成本管控缺口推出產品化解法（Tech Times）；三項（部門/團隊預算分配、per-user 報表、即時警報）暫列🧪部分回應，一項（API/訂閱混合計費管理）仍❌無官方對應，控管粒度尚未公開。完整對照見下方「缺口 vs 官方對應」表（詳見 [[entities/pricing]]、[[topics/anthropic-business]]）。
 
-> **前次動態**（2026-06-30）
-> 404 Media 報導企業為壓制 AI 成本，強制 Claude Code 等工具以極簡語言（「穴居人」模式）回應，OpenAI、Nvidia、GitHub 開發者均部署此類插件。Accenture 研究揭示大量 token 流向非核心任務（如 PDF 轉 PowerPoint），企業成本優化從「減少呼叫次數」演變為「壓縮每次回應 token 量」（404 Media 2026-06-30）。
-
 ---
 
 ## 摘要

@@ -12,6 +12,7 @@ wiki/
 ├── log.md           ← Append-only 時序紀錄
 ├── overview.md      ← 當前局勢綜覽（每週更新）
 ├── feature-radar.md ← 官方功能熱度追蹤（每次 ingest 更新）
+├── reader-notes.md  ← 使用者「記一下」的待辦收件匣（weekly-review 每週消費）
 ├── entities/        ← 模型、功能、人物、產品的持久頁面
 └── topics/          ← 跨日追蹤的進行中議題
 ```
