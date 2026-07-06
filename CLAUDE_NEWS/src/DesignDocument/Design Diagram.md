@@ -1,195 +1,168 @@
-# Design Diagram
+# Design Diagram — 現況架構（維運用）
+
+**最後更新：** 2026-07-05
+**文件定位：** 這份是「**系統現在怎麼運作**」的操作/維運架構圖，給要執行或維護 pipeline 的人看。
+「**系統怎麼演變成現在這樣**」的演進敘事，另見 `docs/architecture-evolution.html`（互動時間軸），兩者分工不重疊。
+
+> ⚠️ **環境鐵則（讀圖前必知）：**
+> - 本專案**沒有 `ANTHROPIC_API_KEY`**，全流程不呼叫任何外部 LLM API。
+> - **`claude -p` 全面禁用**。所有 LLM 工作只在 Claude Code session 內完成（日報生成、wiki ingest 派工）。
+> - 觸發方式是 `/news-pipeline` skill（在 Claude Code 內執行），**不是** `.bat` + Windows 排程呼叫 `claude -p`。
 
 ---
 
-## 全流程總覽（run_news.bat）
+## 全流程總覽（`/news-pipeline`，三段式）
 
-每日 08:00 由 Windows 工作排程器觸發，依序執行三個步驟。
+三段拆分的原因：Step 2 要用 Agent tool 派記者，而「背景 agent 再派 agent」會導致完成通知迷路（巢狀背景的系統性限制），所以 Step 2 必須由呼叫 skill 的 session 親自跑。
 
-``` mermaid
+```mermaid
 flowchart TD
-    BAT["🗓 run_news.bat\n每日 08:00 排程"] --> AGG
+    TRIG["/news-pipeline [YYYY-MM-DD]\n在 Claude Code session 觸發"] --> PA
 
-    AGG["Step 1\nPython 聚合器\nmain.py"] -->|成功| NEWS_OUT
-    AGG -->|失敗 exit 1| STOP(["⛔ 停止"])
+    subgraph PA["Phase A —— 背景 agent（model: sonnet）"]
+        S0["Step 0：昨日缺跑檢查\n（今日模式才跑，backfill 跳過）"]
+        S1A["Step 1a：Python 聚合器\n--gather-only（無 LLM）"]
+        S1B["Step 1b：Claude session 生成日報\n六區塊 + 格式自檢 3a/3b"]
+        S0 --> S1A --> S1B
+    end
 
-    NEWS_OUT["news/YYYY-MM-DD.md\nsrc/news_aggregator/seen_urls.json"] --> PUSH1["git commit & push\ngit_push.py"]
+    PA -->|Step 1a FAILED| STOP["寫 log：Aggregator FAILED\n跳過 B/C，結束"]
+    PA -->|成功，通知本 session| PB
 
-    PUSH1 --> WIKI
+    subgraph PB["Phase B —— 呼叫 session 親自執行（不可委派）"]
+        S2["Step 2：Wiki Ingest\n主編分類 → 六記者 foreground 派工 → 主編彙整"]
+    end
 
-    WIKI["Step 2\nclaude -p '/wiki-ingest'\n--dangerously-skip-permissions"] -->|成功| WIKI_FILES
-    WIKI -->|失敗 exit 非 0| WARN(["⚠ 記錄警告\n跳過 wiki push\nexit 0 繼續"])
+    PB --> PC
 
-    WIKI_FILES["wiki/entities/*.md\nwiki/topics/*.md\nwiki/log.md\nwiki/index.md"] --> PUSH2
+    subgraph PC["Phase C —— 第二個背景 agent（model: sonnet）"]
+        S3["Step 3：commit wiki（不 push）"]
+        S4["Step 4：跑測試套件 → 建置 web reader\n（測試不過則跳過 build，仍推送 news/wiki）"]
+        S5["Step 5：單一 git push\n（一次推送 news+wiki+web，避免 Pages 並發競爭）"]
+        S6["Step 6：append task_scheduler.log\n（無論成敗都寫）"]
+        S3 --> S4 --> S5 --> S6
+    end
 
-    PUSH2["Step 3\ngit add wiki/\ngit commit 'wiki: auto-ingest YYYY-MM-DD'\ngit push"] --> DONE(["✅ 完成"])
+    PC --> DONE(["本 session 彙整 A+B+C，輸出完成摘要"])
 ```
 
 ---
 
-## 聚合器 Pipeline（main.py）
+## 聚合器內部（Step 1a：`main.py --gather-only`，全程無 LLM）
 
-``` mermaid
+```mermaid
 flowchart TD
-    subgraph sources["sources/"]
-        S1[anthropic_blog.py]
-
-        subgraph S2box["github_releases.py"]
-            S2A["官方 Releases\nanthropics/claude-code\nanthropics/anthropic-sdk-*"]
-            S2B["GitHub Repo Search\nclaude-code / claude anthropic\nmcp-server claude\n新建 repo，過去 26h"]
-        end
-
-        subgraph S3box["hackernews.py"]
-            S3A["Story 搜尋\n'Claude Code' / 'Anthropic'\nscore ≥ 3"]
-            S3B["Show HN 搜尋\n'claude' / 'anthropic'\ntags=show_hn, score ≥ 1"]
-        end
-
-        subgraph S4box["reddit.py"]
-            S4A["r/ClaudeAI\nr/artificial\nr/MachineLearning"]
-            S4B["r/LocalLLaMA\n（技術比較 & 真實應用）"]
-        end
-
-        S5[google_news.py\n'Claude Code' / 'Anthropic AI']
+    subgraph SRC["10 個來源（ThreadPoolExecutor 並行抓取）"]
+        direction LR
+        S1["Anthropic Blog\n(/news + /engineering)"]
+        S2["Anthropic Status\n(status RSS)"]
+        S3["GitHub Releases"]
+        S4["GitHub Issues"]
+        S5["Hacker News"]
+        S6["Reddit\n(含 r/ClaudeCode)"]
+        S7["Google News\n(category=media)"]
+        S8["dev.to\n(API + reactions)"]
+        S9["lobste.rs"]
+        S10["Claude API\nRelease Notes"]
     end
 
-    CFG["config.py\nSEARCH_TERMS / LOOKBACK_HOURS=26\nAPI tokens / paths"]
-    CACHE[("seen_urls.json\n跨執行去重快取")]
+    SRC --> DEDUP["dedup.py\nURL 正規化 + 模糊標題去重\n官方來源優先"]
+    DEDUP --> CACHE{"emitted_cache\n14 天 TTL 跨執行去重\n（backfill 模式跳過）"}
+    CACHE -->|新項目 / 達重燃門檻| ENRICH
+    CACHE -->|近期已發過| DROP["略過"]
 
-    S1 & S2box & S3box & S4box & S5 --> DEDUP
+    ENRICH["enricher.py\ntrafilatura 抓原文補 summary\n（paywall 網域跳過）"] --> FILTER
 
-    DEDUP["dedup.py\nURL 正規化去重\n模糊標題去重 threshold=0.85\n官方來源優先"]
-    DEDUP --> ENRICH
-
-    ENRICH["enricher.py\ntrafilatura 抓原文\n補充 summary 欄位（最多 600 字）"]
-    ENRICH --> FILTER
-
-    subgraph FILTER["filter.py — 相關性評分"]
-        F1{ANTHROPIC_API_KEY?}
-        F2["Claude Haiku API\n批次評分 1–5"]
-        F3{claude CLI 可用?}
-        F4["claude -p\n批次評分 1–5"]
-        F5["略過過濾\n保留全部"]
-        F1 -->|有| F2
-        F1 -->|無| F3
-        F3 -->|有| F4
-        F3 -->|無| F5
+    subgraph FILTER["filter.py —— 規則式過濾（無 LLM）"]
+        F1["GNews 標題關鍵字比對"]
+        F2["PR wire 網域黑名單\n(prnewswire / businesswire ...)"]
     end
 
-    FILTER -->|"score ≥ 3"| ANALYZE
+    FILTER --> OUT["gathered_items.json\n（items + date + source_status\n+ score_unit + source_count）"]
+```
 
-    subgraph ANALYZE["analyzer.py — 中文摘要（5 區塊）"]
-        A1{ANTHROPIC_API_KEY?}
-        A2["Claude Haiku API\n寫繁中摘要"]
-        A3{claude CLI 可用?}
-        A4["claude -p\n寫繁中摘要"]
-        A5["fallback\n純文字列表"]
-        A1 -->|有| A2
-        A1 -->|無| A3
-        A3 -->|有| A4
-        A3 -->|無| A5
-    end
+**關鍵欄位：**
+- `score_unit`：分（HN）/ 讚（Reddit、dev.to）/ 留言 —— 跨來源比熱度時單位不同，不可直接比大小
+- `source_count`：同一事件被幾個獨立來源報導，> 1 視為重要度加權
+- `source_status`：每個來源本次抓到幾筆（餵給日報「📡 來源狀態」表 + wiki-lint 6f 來源健康檢查）
 
-    ANALYZE --> DIGEST
+---
 
-    subgraph DIGEST["digest.py — 輸出結構"]
-        D1["⭐ 重點話題"]
-        D2["🔧 技術更新"]
-        D3["💬 技術熱度討論（含情緒標籤）"]
-        D4["💰 付費方案動態"]
-        D5["📌 今日聚焦（3–5 點總結）"]
-    end
+## Wiki Ingest（Step 2：主編 + 六記者，星型派工）
 
-    DIGEST --> MD["news/YYYY-MM-DD.md"]
-    MD --> GIT["git_push.py\ngit add news/YYYY-MM-DD.md\ngit add seen_urls.json\ngit commit & push"]
+```mermaid
+flowchart TD
+    NEWS["讀 news/YYYY-MM-DD.md"] --> CLASSIFY
 
-    CFG -.-> sources
-    CFG -.-> DEDUP
-    CACHE -.-> DEDUP
+    CLASSIFY["主編分類\n每則標記類別（可多類）"] --> DISPATCH
 
-    MAIN["main.py\norchestrator"] -.-> sources & DEDUP & ENRICH & FILTER & ANALYZE & DIGEST & GIT
+    DISPATCH["foreground 派工（model: sonnet）\n六類記者同一訊息並行\n⚠️ 不可 run_in_background\n⚠️ 記者不可再委派子 agent"]
+
+    DISPATCH --> R1 & R2 & R3 & R4 & R5 & R6
+
+    R1["模型記者"]
+    R2["功能記者"]
+    R3["商業記者"]
+    R4["安全政策記者"]
+    R5["社群記者"]
+    R6["人物記者"]
+
+    R1 & R2 & R3 & R4 & R5 & R6 -->|標準回報格式| CONSOLIDATE
+
+    CONSOLIDATE["主編彙整（序列化寫入共用檔）\n收報核對：逐項驗 3a–3g 有明確結果，缺項退回"]
+    CONSOLIDATE --> SHARED["feature-radar.md（本週推薦/升版風險/倒數中）\nindex.md（狀態變更 + 新頁）\nlog.md（append，含品質備註）\noverview.md（重大事件才更新）"]
+```
+
+**頁面歸屬＝動態認領：** 記者的負責頁面由 `index.md` 的「領域」欄位決定，不寫死清單；新頁面自動被對應記者涵蓋。
+
+---
+
+## Wiki Lint（`/wiki-lint`，每週手動，9 步）
+
+```mermaid
+flowchart TD
+    L1["1. 載入 wiki 全貌"] --> L2
+    L2["2. 六記者並行（model: sonnet）\n3a 矛盾 / 3b 孤立 / 3c 過期(用最後新聞更新判)\n3d resolved 收尾 / 3e 呈現品質 / 3f 入口層健檢\n3g 待查證回訪"] --> L3
+    L3["3. 語意分岔／死案候選（需使用者確認）"] --> L4
+    L4["4. 建議新實體頁"] --> L5
+    L5["5. 更新 overview.md"] --> L6
+    L6["6. 規則健檢 6a–6h\n(矛盾/引用/遵守率/年齡/長度/來源健康\n/跨檔語意矛盾/品質指標+成長迴路蒸餾)"] --> L7
+    L7["7. 讀者模擬驗收（3 讀者 3 跳測試）"] --> L8
+    L8["8. append log（含 metrics 趨勢）"] --> L9
+    L9["9. 更新 index.md"]
 ```
 
 ---
 
-## Wiki Ingest Pipeline（/wiki-ingest）
+## 產物與唯讀邊界
 
-由 run_news.bat Step 2 以 `claude -p "/wiki-ingest" --dangerously-skip-permissions` 觸發，也可手動執行。
-
-``` mermaid
-flowchart TD
-    TRIGGER["claude -p '/wiki-ingest'\n由 run_news.bat 觸發\n或手動下指令"] --> READ_NEWS
-
-    READ_NEWS["讀 news/YYYY-MM-DD.md\n（今日日報）"] --> READ_WIKI
-
-    READ_WIKI["同時讀取\nwiki/index.md — 現有頁面目錄\nwiki/log.md — 確認是否已 ingest"]
-
-    READ_WIKI --> CHECK{"今日已 ingest?"}
-    CHECK -->|是| SKIP(["跳過，記錄並結束"])
-    CHECK -->|否| MATCH
-
-    MATCH["比對日報內容 vs index.md\n識別受影響的既有頁面\n識別新實體 / 新議題"]
-
-    MATCH --> UPDATE
-
-    subgraph UPDATE["更新既有頁面（視影響範圍）"]
-        U1["entities/*.md\n插入歷史記錄（最新在上）\n更新現況 / 最後更新欄位"]
-        U2["topics/*.md\n插入時序條目\n累積技術彙整（不重複）"]
-        U3["community-tech-patterns.md\n更新時序 + 熱門應用表格排名"]
+```mermaid
+flowchart LR
+    subgraph WRITE["可寫"]
+        A["news/YYYY-MM-DD.md\n（唯讀原始資料，僅 pipeline 生成當下寫入）"]
+        B["wiki/entities/*.md, topics/*.md"]
+        C["wiki/feature-radar.md, index.md, overview.md, metrics.md"]
+        D["wiki/log.md（append only）"]
+        E["web_reader/data/（build 產物）"]
     end
-
-    UPDATE --> NEW_PAGES{"需要建立新頁面？"}
-
-    NEW_PAGES -->|"新 entity\n被明確描述有具體資訊"| CREATE_E["建立 entities/xxx.md\n（依 CLAUDE.md 模板）"]
-    NEW_PAGES -->|"新 topic\n連續 2 天以上出現"| CREATE_T["建立 topics/xxx.md\n（依 CLAUDE.md 模板）"]
-    NEW_PAGES -->|無| APPEND
-
-    CREATE_E & CREATE_T --> APPEND
-
-    APPEND["Append wiki/log.md\n記錄來源日報、更新頁面、新增頁面、摘要"]
-    APPEND --> IDX["更新 wiki/index.md\n加入新頁面連結、更新頁面數"]
-    IDX --> DONE(["wiki 檔案更新完成\n→ run_news.bat Step 3 git push"])
+    B & C & D --> BUILD["scripts/build_web.py\n（含 wikilink 斷鏈檢查 + 領域欄位防呆）"]
+    A --> BUILD
+    BUILD --> E
 ```
+
+**唯讀/限制：** `news/` 唯讀；`log.md` 只能 append；wiki 檔案只能在 `CLAUDE_NEWS/wiki/`；記者不可碰 `feature-radar.md`/`index.md`/`log.md`（主編統一序列化）。
 
 ---
 
-## Wiki Lint（/wiki-lint）
+## 模組對照（想改哪裡看這裡）
 
-每週手動執行，維護 wiki 品質。
+| 想做的事 | 動哪個檔 |
+|---------|---------|
+| 新增新聞來源 | `src/news_aggregator/sources/` 繼承 `BaseSource`，在 `main.py` sources 列表註冊 |
+| 改過濾規則 | `src/news_aggregator/filter.py`（純規則，無 LLM） |
+| 改日報格式 | `.claude/commands/news-pipeline-steps.md` Step 1b |
+| 改記者職責/規則 | `.claude/rules/wiki-ingest-[category].md` |
+| 改 web 呈現 | `web_reader/`（設計規範見 `.claude/rules/web-reader-design.md`）+ `scripts/build_web.py` |
+| 改任何規則/指令後驗證 | `/review-commands`（跑到零錯誤） |
 
-``` mermaid
-flowchart TD
-
-USER(["使用者下指令\n執行 wiki lint"]) --> IDX
-IDX["讀 wiki/index.md\n取得所有頁面清單"]
-IDX --> LOG
-
-LOG["讀 wiki/log.md\n確認最近更新紀錄"]
-LOG --> READ
-
-READ["逐一讀取\nentities/ 和 topics/ 頁面"]
-READ --> LINT
-
-subgraph LINT["Lint 檢查"]
-    L1["找矛盾頁面\n兩頁描述同一事件但說法不同"]
-    L2["找孤立頁面\n沒有任何其他頁面連結到它"]
-    L3["標記過期議題\nongoing 但長時間無更新"]
-    L4["建議新實體頁\n被多次提及但尚無專頁"]
-end
-
-LINT --> FIX
-
-subgraph FIX["修正與更新"]
-    F1["修正矛盾內容"]
-    F2["為孤立頁面補連結"]
-    F3["將已解決議題\n從 topics/ 移至 entities/"]
-    F4["建立新 entities/ 頁面"]
-end
-
-FIX --> OVERVIEW
-OVERVIEW["更新 wiki/overview.md\n當前局勢綜覽"]
-OVERVIEW --> APPENDLOG
-
-APPENDLOG["Append wiki/log.md\n記錄本次 lint 執行"]
-APPENDLOG --> UPDATEIDX
-UPDATEIDX["更新 wiki/index.md"]
-```
+執行日誌：`src/logs/` | 測試：`scripts/run_tests.py`
