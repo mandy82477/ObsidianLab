@@ -15,8 +15,8 @@ description: 驗證所有 commands / rules / CLAUDE.md 修改後，相關指令�
 
 | 配對 | 必須一致的內容 | 驗證 grep |
 |------|--------------|----------|
-| `.claude/commands/news-pipeline.md` spawn 模板 ↔ `.claude/commands/news-pipeline-steps.md` | 記者派工 foreground 例外（不可設 `run_in_background: true`）；REPO_ROOT / PYTHON 設定值一致 | `grep -n "run_in_background: true\|REPO_ROOT\s*=\|PYTHON\s*=" .claude/commands/news-pipeline.md .claude/commands/news-pipeline-steps.md` |
-| `.claude/commands/news-pipeline-steps.md` Step 2 ↔ `.claude/commands/wiki-ingest.md` | 兩檔皆明文「精簡複本，修改任一方必須同步另一方」 | `grep -n "精簡複本" .claude/commands/news-pipeline-steps.md .claude/commands/wiki-ingest.md` |
+| `.claude/commands/news-pipeline.md`（Phase A + Phase C 兩份 spawn prompt）↔ `.claude/commands/news-pipeline-steps.md` | REPO_ROOT / PYTHON 三處設定值逐字相同；兩檔皆明文 Step 2 不可包進背景 agent | `grep -n "REPO_ROOT\s*=\|PYTHON\s*=" .claude/commands/news-pipeline.md .claude/commands/news-pipeline-steps.md` 及 `grep -n "不可.*背景\|不可再包進" .claude/commands/news-pipeline.md .claude/commands/news-pipeline-steps.md` |
+| `.claude/commands/news-pipeline.md` Phase B ↔ `.claude/commands/wiki-ingest.md` | 兩檔互相參照（news-pipeline.md 提及呼叫 wiki-ingest.md；wiki-ingest.md 提及被 news-pipeline.md Phase B 呼叫），wiki-ingest.md 不再殘留「精簡複本」字樣 | `grep -n "wiki-ingest.md" .claude/commands/news-pipeline.md` 及 `grep -n "news-pipeline.md\|精簡複本" .claude/commands/wiki-ingest.md` |
 | `.claude/commands/wiki-ingest.md` / `.claude/commands/wiki-lint.md` 派工段 ↔ `.claude/rules/wiki-ingest.md` 類別對應表 | 六類 subagent_type 名稱一致；派工呼叫皆帶 `model: "sonnet"` | `grep -n "wiki-reporter-\|model: \"sonnet\"" .claude/commands/wiki-ingest.md .claude/commands/wiki-lint.md .claude/rules/wiki-ingest.md` |
 | `.claude/rules/wiki-ingest-community.md` ↔ `.claude/rules/wiki-ingest-community-lint.md` | lint-only 規則分離邊界（`community-tech-tools.md` 明文標註「已脫離每日 ingest」/「lint 專用」）| `grep -n "已脫離每日 ingest\|lint 專用\|每日 ingest 不" .claude/rules/wiki-ingest-community.md .claude/rules/wiki-ingest-community-lint.md` |
 | `.claude/rules/wiki-reporter-shared.md` 回報格式 ↔ 各 `.claude/rules/wiki-ingest-[category].md` 回報格式段 | 六份回報格式段皆含「更新頁面 / feature-radar 新增 / index.md 狀態變更 / 新增頁面 / 同步自查」五欄 | `grep -n "更新頁面：\|feature-radar 新增：\|index.md 狀態變更：\|新增頁面：\|同步自查：" .claude/rules/wiki-reporter-shared.md .claude/rules/wiki-ingest-*.md` |
@@ -63,7 +63,8 @@ description: 驗證所有 commands / rules / CLAUDE.md 修改後，相關指令�
 |-------|------------|---------|
 | `wiki-ingest.md` | `wiki/CLAUDE.md` + `.claude/rules/wiki-ingest.md` | Step 1 的讀取清單 |
 | `wiki-lint.md` | `wiki/CLAUDE.md` + `.claude/rules/wiki-ingest.md` | Step 1 的讀取清單 |
-| `news-pipeline-steps.md` | `wiki/CLAUDE.md` + `.claude/rules/wiki-ingest.md` | Step 2 的讀取清單 |
+
+> `news-pipeline-steps.md` 不再有此要求：Step 2 已移出該檔，改由 `news-pipeline.md` Phase B 直接呼叫 `wiki-ingest.md` 執行，載入鏈由 `wiki-ingest.md` 一列涵蓋。
 
 「明確載入」的意思：**在步驟文字中直接列出這兩個檔案路徑**，不可只靠「見 CLAUDE.md」或「自動載入」等隱含指示。
 
@@ -85,9 +86,15 @@ description: 驗證所有 commands / rules / CLAUDE.md 修改後，相關指令�
 - [ ] Step 6d 指向 `.claude/rules/wiki-ingest-format.md` 及 `wiki-ingest-*.md` 中的 `[加入:]` 標記
 - [ ] Step 6e 分別檢查 `wiki/CLAUDE.md`（閾值 80 行）和 `.claude/rules/wiki-ingest.md`（閾值 80 行）
 
+**news-pipeline.md**
+- [ ] 明確禁止 `/news-pipeline` 本身被包進背景 agent 呼叫
+- [ ] Phase A / Phase B / Phase C 三段落齊全
+- [ ] Phase B 明確標註「本 session 親自執行，不可委派」
+- [ ] Phase C spawn prompt 含「已知結果」欄位傳入 Phase A / Phase B 結果
+
 **news-pipeline-steps.md**
-- [ ] Step 2 明確讀取 `wiki/CLAUDE.md` + `.claude/rules/wiki-ingest.md`
-- [ ] Step 2 有 4 個子項目（分類、讀取、派工、彙整）
+- [ ] 明確聲明 Step 2 不在本檔案、改由 `news-pipeline.md` Phase B 執行
+- [ ] Phase A 步驟（Step 0/1a/1b）與 Phase C 步驟（Step 3/4/5/6）標題劃分清楚
 - [ ] Step 6 log 寫入步驟存在
 
 ---
@@ -98,8 +105,8 @@ description: 驗證所有 commands / rules / CLAUDE.md 修改後，相關指令�
 
 | 配對 | 斷言 |
 |------|------|
-| news-pipeline.md ↔ news-pipeline-steps.md | 兩檔都含 `run_in_background: true` 前綴否定語（「不可設」）與 foreground 字樣；REPO_ROOT、PYTHON 兩檔數值逐字相同 |
-| news-pipeline-steps.md Step 2 ↔ wiki-ingest.md | 兩檔都含「精簡複本」與「同步另一方」語意 |
+| news-pipeline.md ↔ news-pipeline-steps.md | 兩檔都含「不可包進背景 agent」語意；REPO_ROOT、PYTHON 各處數值逐字相同 |
+| news-pipeline.md Phase B ↔ wiki-ingest.md | news-pipeline.md 提及呼叫 `wiki-ingest.md`；wiki-ingest.md 提及被 `news-pipeline.md` Phase B 呼叫；wiki-ingest.md 無「精簡複本」殘留字樣 |
 | wiki-ingest.md / wiki-lint.md ↔ wiki-ingest.md 類別對應表 | 三處六類 subagent_type 名稱集合相同；派工段都含 `model: "sonnet"` |
 | wiki-ingest-community.md ↔ wiki-ingest-community-lint.md | community.md 明文排除 tools 頁每日更新；community-lint.md 明文承接 tools 頁策展 |
 | wiki-reporter-shared.md ↔ 各 wiki-ingest-[category].md | 六份回報格式段五欄字串（更新頁面/feature-radar 新增/index.md 狀態變更/新增頁面/同步自查）皆出現 |
@@ -135,7 +142,7 @@ do {
 | 1a 裸露 CLAUDE.md 引用 | ✅ 無 / ❌ N 處已修正 |
 | 1b 明確路徑檔案存在 | ✅ 全部存在 / ❌ N 個已修正 |
 | 1c 錨點引用有效 | ✅ 全部有效 / ❌ N 個已修正 |
-| 2 載入鏈完整 | ✅ 3/3 完整 / ❌ N 個已修正 |
+| 2 載入鏈完整 | ✅ 2/2 完整 / ❌ N 個已修正 |
 | 3 關鍵步驟存在 | ✅ 全部存在 / ❌ N 個已修正 |
 | 4 一致性斷言（同步配對）| ✅ 5/5 通過 / ❌ N 個已修正 |
 

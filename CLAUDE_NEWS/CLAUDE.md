@@ -74,16 +74,16 @@
 
 ## Skills
 
-| 指令 | 用途 | 詳細規格 |
-|------|------|---------|
-| `/news-pipeline` | 完整 pipeline：抓新聞 → 生成日報 → wiki ingest → 建置 web → 全部 push | `.claude/commands/news-pipeline.md` |
-| `/wiki-ingest` | 讀取日報，更新 wiki entities / topics / feature-radar | `.claude/commands/wiki-ingest.md` |
-| `/wiki-backfill` | 補跑一或多個過去日期的 wiki ingest，適用於排程失敗或日報重新抓取後 | `.claude/commands/wiki-backfill.md` |
-| `/wiki-lint` | 每週品質檢查：矛盾頁面、孤立頁面、過期議題、規則檔健檢 | `.claude/commands/wiki-lint.md` |
-| `/wiki-weekly-review` | 每週判斷值得加碼追蹤的主題（建頁/加開子區塊/升熱度），經確認後執行 | `.claude/commands/wiki-weekly-review.md` |
-| `/wiki-readability` | 低成本可讀性掃描：單一 agent 取樣每頁開頭與結構，回報後經確認修復 | `.claude/commands/wiki-readability.md` |
-| `/pipeline-change-check` | 改版前後品質對照：baseline 記錄基線、compare 對照差異＋舊資料回歸 | `.claude/commands/pipeline-change-check.md` |
-| `/review-commands` | 修改 commands/rules/CLAUDE.md 後強制執行，確認所有指令仍可正確運作 | `.claude/commands/review-commands.md` |
+| 指令 | 用途 | 何時執行 | 詳細規格 |
+|------|------|---------|---------|
+| `/news-pipeline` | 完整 pipeline：抓新聞 → 生成日報 → wiki ingest → 建置 web → 全部 push | 🟢 每天（平常只跑這個；已含 `/wiki-ingest`）| `.claude/commands/news-pipeline.md` |
+| `/wiki-ingest` | 讀取日報，更新 wiki entities / topics / feature-radar | 通常不單獨跑（pipeline 沒跑完、只想補 wiki 那段時）| `.claude/commands/wiki-ingest.md` |
+| `/wiki-backfill` | 補跑一或多個過去日期的 wiki ingest，適用於排程失敗或日報重新抓取後 | 按需（排程失敗／日報重抓後）| `.claude/commands/wiki-backfill.md` |
+| `/wiki-lint` | 每週品質檢查：矛盾頁面、孤立頁面、過期議題、規則檔健檢 | 🟡 每週 | `.claude/commands/wiki-lint.md` |
+| `/wiki-weekly-review` | 每週判斷值得加碼追蹤的主題（建頁/加開子區塊/升熱度），經確認後執行 | 🟡 每週（每月首次含聚焦校準 30 天回看）| `.claude/commands/wiki-weekly-review.md` |
+| `/wiki-readability` | 低成本可讀性掃描：單一 agent 取樣每頁開頭與結構，回報後經確認修復 | 按需 | `.claude/commands/wiki-readability.md` |
+| `/pipeline-change-check` | 改版前後品質對照：baseline 記錄基線、compare 對照差異＋舊資料回歸 | 改 pipeline／日報格式／收錄門檻**前後**各一次 | `.claude/commands/pipeline-change-check.md` |
+| `/review-commands` | 修改 commands/rules/CLAUDE.md 後強制執行，確認所有指令仍可正確運作 | 改完 commands/rules/CLAUDE.md **後** | `.claude/commands/review-commands.md` |
 
 **新增 skill 時的判斷標準：**
 > 這個任務是否需要跨多個步驟、值得重複執行，且有明確的輸入與完成條件？若否，用對話即可，不需要新 skill。

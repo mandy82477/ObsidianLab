@@ -7,7 +7,7 @@ argument-hint: [YYYY-MM-DD]
 
 讀取今日日報，以多記者架構更新 wiki 知識庫。
 
-> ⚠️ 本檔的 ingest 步驟在 `.claude/commands/news-pipeline-steps.md` Step 2 有精簡複本，修改任一方時必須同步另一方。
+> `/news-pipeline` 的 Step 2 直接呼叫本檔案執行（見 `.claude/commands/news-pipeline.md` Phase B），不再維護獨立副本——修改本檔案的分類、派工或彙整邏輯時，`/news-pipeline` 會自動套用最新版本，不需同步修改其他檔案。
 
 ## 步驟
 
@@ -126,3 +126,4 @@ argument-hint: [YYYY-MM-DD]
 - 所有 wiki 檔案只能建立或修改在 `CLAUDE_NEWS/wiki/` 路徑下
 - `news/` 目錄為唯讀，不可修改日報內容
 - 若日報今日無新內容（來源全部失敗），在 log.md 記錄一筆「無新內容」即可
+- **收件匣提醒**：ingest 完成後檢查 `wiki/reader-notes.md`，若有狀態 ⏳ 且距今 > 14 天的項目，在完成摘要末尾列出提醒（避免使用者「記一下」的想法積壓無人處理）；無則不提

@@ -1,11 +1,12 @@
 ---
-description: News Pipeline Agent 執行規範：Step 1a 至 Step 6 完整步驟。由 news-pipeline.md spawn 的 background Agent 讀取此檔案後執行。
+description: News Pipeline Agent 執行規範：Phase A（Step 0/1a/1b）與 Phase C（Step 3-6）步驟。由 news-pipeline.md spawn 的兩個背景 Agent 分別讀取本檔案執行對應段落；Step 2 不在本檔案，由呼叫 /news-pipeline 的 session 親自執行（見 `.claude/commands/news-pipeline.md` Phase B）。
 ---
 
 # News Pipeline Steps（Agent 執行規範）
 
-此檔案由 `.claude/commands/news-pipeline.md` spawn 的 background Agent 讀取並執行。
-**Agent 直接在本 session 執行所有步驟；唯一例外是 Step 2 的記者派工（必須 foreground，見 Step 2 第 3 點），除此之外不 spawn 子 agent。**
+此檔案由 `.claude/commands/news-pipeline.md` spawn 的兩個背景 Agent 分別讀取：Phase A agent 只執行 Step 0/1a/1b；Phase C agent 只執行 Step 3-6。**兩個 agent 皆不 spawn 子 agent。**
+
+**Step 2（wiki ingest 記者派工）不在本檔案，也不可包進任何背景 agent**——背景 agent 再派 agent 時，記者的完成通知會被系統送到最上層 session 而非派工的背景 agent，導致 pipeline 永久卡死（已實際發生過）。Step 2 改由呼叫 `/news-pipeline` 的 session 親自執行，依 `.claude/commands/wiki-ingest.md` 完整步驟，細節見 `.claude/commands/news-pipeline.md` Phase B。
 
 ## 設定
 
@@ -18,6 +19,8 @@ PYTHON    = C:\Users\Mandy\AppData\Local\Programs\Python\Python313\python.exe
 TARGET_DATE 由 Agent prompt 傳入。
 
 ---
+
+# Phase A 步驟（Step 0 / 1a / 1b）
 
 ## Step 0：昨日缺跑檢查
 
@@ -50,7 +53,8 @@ PYTHON -m news_aggregator.main --gather-only [--date TARGET_DATE]
 2. 依照以下 prompt 格式，**直接**用繁體中文生成日報 Markdown（不呼叫任何外部 API）：
 
 **System：**
-> 你是一位專注於 AI 技術的中文科技記者，擅長用繁體中文撰寫清晰、客觀的技術新聞摘要。
+> 你是一位專注於 Claude 與 Anthropic 生態的中文科技記者，擅長用繁體中文撰寫清晰、客觀的技術新聞摘要。
+> 語氣分寸必須繼承來源，不得加碼：程度與嚴重度形容詞只能在來源原文有對應強度時使用；來源用中性或低強度字眼，摘要就對應保留該強度，寧可保守，不可放大。自我檢查法：你寫的每一個程度形容詞，都要能在 `gathered_items.json` 該則原文的標題或摘要裡找到同等強度的依據；找不到就降回中性描述。
 
 **輸出結構（六個區塊，無內容則省略）：**
 
@@ -63,6 +67,7 @@ PYTHON -m news_aggregator.main --gather-only [--date TARGET_DATE]
 
 ### 📌 今日聚焦
 3–5 點導讀，格式：**[標籤]** 說明（標籤：重大事件/持續追蹤/新工具/社群趨勢/風險警示）
+標籤只描述類別，不授權升高語氣——即使掛 [風險警示]，說明文字的嚴重度仍以來源原文為準。
 
 **每一條聚焦項目，凡有對應的參考新聞，必須在說明文字末尾加上 `（ref: URL）`，URL 為 gathered_items.json 中該新聞的原始 url 欄位值。每條新聞各加一個 ref，可在同一行加多個。**
 - 若該聚焦項目對應單一新聞 → 加一個 `（ref: URL）`
@@ -135,18 +140,13 @@ git -C REPO_ROOT commit -m "news: daily digest TARGET_DATE"
 
 ---
 
-## Step 2：Wiki Ingest
+## Step 2：Wiki Ingest（不在本檔案）
 
-執行完整 wiki ingest 流程（本步驟為 `.claude/commands/wiki-ingest.md` 的精簡複本，修改任一方時必須同步另一方）：
-
-1. 讀取 `news/TARGET_DATE.md`；同時讀取 `wiki/CLAUDE.md`、`.claude/rules/wiki-ingest.md`（主編指南）、`wiki/index.md`、`wiki/log.md`
-2. **分類（主編）**：依 `.claude/rules/wiki-ingest.md` 分類表為每則條目標記類別（模型 / 功能 / 商業 / 安全政策 / 社群 / 人物）
-3. **派工（Agent tool）**：對每個有條目的類別呼叫 Agent tool（有多類別時同一訊息並行發出）；**記者 agent 必須 foreground 啟動（不可設 `run_in_background: true`）**，否則完成通知無法回到本 agent；各記者讀取 `.claude/rules/wiki-ingest-[category].md`，更新負責頁面；需建新頁面時讀 `.claude/rules/wiki-ingest-format.md`；完成後回傳標準回報格式（詳見 `.claude/commands/wiki-ingest.md` Step 3）
-4. **彙整共用檔案（主編）**：依所有記者回報，更新 `wiki/feature-radar.md`（含依 `.claude/rules/wiki-ingest-features.md`「本週推薦自動更新規則」覆寫 `## ⭐ 本週推薦`、「升版風險自動更新規則」更新 `## ⚠️ 升版風險`）、`wiki/index.md`（狀態變更 + 新頁面）、`wiki/log.md`（append）；若有重大事件，更新 `wiki/overview.md`
-
-- Step 2 失敗時記錄但繼續 Step 4（web build 不依賴 wiki）
+Step 2 由呼叫 `/news-pipeline` 的 session 親自執行，完整步驟見 `.claude/commands/wiki-ingest.md`（不在此重複，避免兩份副本失步）。執行方式與失敗處理原則見 `.claude/commands/news-pipeline.md` Phase B：Step 2 失敗時記錄但仍進入 Phase C（web build 不依賴 wiki）。
 
 ---
+
+# Phase C 步驟（Step 3 / 4 / 5 / 6）
 
 ## Step 3：Commit Wiki 變更（不 push）
 
@@ -206,6 +206,10 @@ git -C REPO_ROOT push
 REPO_ROOT\src\logs\task_scheduler.log
 ```
 
+**本步驟由 Phase C agent 執行**，Step 0/1a/1b（Phase A）與 Step 2（Phase B）的結果由呼叫 session 透過 Phase C 的 spawn prompt「已知結果」欄位傳入（見 `.claude/commands/news-pipeline.md` Phase C），Phase C agent 不需重新查證，直接引用即可；Step 3/4/5 的結果則是 Phase C agent 自己執行後得知。
+
+**例外：若 Phase A 的 Step 1a 失敗**，pipeline 不會進入 Phase C（見 Phase B 的失敗處理），此時 Step 6 log 改由呼叫 session 直接 append，格式相同。
+
 格式（依各步驟結果填入 OK / FAILED / SKIPPED）：
 
 ```
@@ -218,7 +222,7 @@ REPO_ROOT\src\logs\task_scheduler.log
 ```
 
 - Step 0 昨日缺跑時，額外寫一行 `WARN: yesterday digest missing (YESTERDAY)`
-- Step 1 失敗時，寫 `Aggregator FAILED - stopping`，之後不繼續
+- Step 1 失敗時，寫 `Aggregator FAILED - stopping`，之後不繼續（此情況下由呼叫 session 直接寫入，見上方例外）
 - Step 2 失敗時，寫 `Wiki ingest FAILED`
 - Step 4 測試套件失敗時，寫 `Tests FAILED - web build skipped`
 - Step 4 build_web 失敗時，寫 `build_web FAILED - pushing news/wiki only`
@@ -248,10 +252,11 @@ REPO_ROOT\src\logs\task_scheduler.log
 
 - 所有 Bash 指令使用絕對路徑，不依賴 PATH 環境變數
 - Step 0 僅在 TARGET_DATE 為今日時執行；backfill 模式（TARGET_DATE 非今日）跳過
-- Step 1 失敗時停止整個 pipeline
-- Step 2（wiki ingest）失敗時記錄並繼續 Step 4
+- Step 1 失敗時停止整個 pipeline（Phase A agent 立即停止，不進入 Phase B / Phase C，Step 6 log 改由呼叫 session 直接寫入）
+- Step 2（wiki ingest，由呼叫 session 親自執行，不在背景 agent 內）失敗時記錄並仍進入 Phase C（Step 4 不依賴 wiki）
 - Step 4 測試套件（`scripts/run_tests.py`）失敗時跳過 web build 與 web commit，仍須執行 Step 5 的統一 push
 - Step 4（web build）失敗時跳過 web commit，但仍須執行 Step 5 的統一 push（推送已完成的 news / wiki commit）
 - **所有 git push 集中在 Step 5 一次完成**；中途步驟（1b、3）一律只 commit 不 push，避免 Pages 部署並發競爭
 - **Step 6 log 寫入必須執行**，即使前面步驟失敗也不能跳過
+- **Phase A、Phase C 兩個背景 agent 皆不可 spawn 子 agent**；唯一會呼叫 Agent tool 派工的 Step 2，已移出本檔案、改由呼叫 session 親自執行
 - 繁體中文輸出
