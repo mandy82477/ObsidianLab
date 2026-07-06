@@ -1,0 +1,546 @@
+{
+  "date": "2026-07-06",
+  "generatedAt": "2026-07-06 22:23 UTC",
+  "articleCount": 57,
+  "sourceCount": "10/10 | **文章數：** 57 | **更新時間：** 2026-07-06 22:23 UTC",
+  "bulletin": "",
+  "topStories": [
+    {
+      "title": "TeraWulf 190 億美元資料中心租約",
+      "url": "https://www.wsj.com/finance/investing/terawulf-signs-19-billion-lease-with-anthropic-for-ai-infrastructure-campus-ef26be27",
+      "source": "WSJ",
+      "time": "07/06 13:07",
+      "sentiment": "",
+      "body": "Anthropic 與比特幣礦業轉型公司 TeraWulf 簽下 20 年期、190 億美元的 AI 基礎設施園區租約，消息一出 TeraWulf 股價應聲大漲，WSJ、CNBC、Barron's、Investor's Business Daily、Yahoo Finance 等至少 6 家財經媒體同步報導，顯示 Anthropic 持續加碼自建算力版圖。",
+      "focusTags": [
+        "[持續追蹤]"
+      ]
+    },
+    {
+      "title": "阿里巴巴、Meta 相繼限制 Claude Code 使用",
+      "url": "https://qz.com/alibaba-ban-claude-code-anthropic-backdoor-070626",
+      "source": "qz.com",
+      "time": "07/06 13:21",
+      "sentiment": "",
+      "body": "阿里巴巴以疑似後門風險為由禁止員工使用 Claude Code，同日 Meta 也被報導限制工程師使用 Anthropic 產品，兩起獨立事件同時出現，凸顯地緣政治與企業資安考量正影響 AI 編碼工具的跨國採用。",
+      "focusTags": [
+        "[風險警示]"
+      ]
+    }
+  ],
+  "techUpdates": [],
+  "mediaReports": [
+    {
+      "title": "TeraWulf jumps on $19 billion data center lease deal with Anthropic",
+      "url": "https://kfgo.com/2026/07/06/terawulf-jumps-on-19-billion-data-center-lease-deal-with-anthropic/",
+      "source": "The Mighty 790 KFGO",
+      "time": "07/06 13:55",
+      "sentiment": "",
+      "body": "TeraWulf 簽下與 Anthropic 的 190 億美元資料中心租約後股價跳漲。",
+      "focusTags": []
+    },
+    {
+      "title": "Anthropic Reportedly Eyes Samsung for Custom AI Chip",
+      "url": "https://www.techrepublic.com/article/news-anthropic-samsung-custom-ai-chip/",
+      "source": "TechRepublic",
+      "time": "07/06 13:48",
+      "sentiment": "",
+      "body": "傳 Anthropic 正洽談三星代工客製化 AI 晶片，若成真將是繼自建資料中心後的另一項硬體自主布局。",
+      "focusTags": []
+    },
+    {
+      "title": "TeraWulf Soars On Signing $19 Billion AI Lease With Anthropic",
+      "url": "https://www.investors.com/news/anthropic-terawulf-ai-data-center-lease-neocloud-coreweave-iren/",
+      "source": "Investor's Business Daily",
+      "time": "07/06 13:45",
+      "sentiment": "",
+      "body": "報導同時點名 CoreWeave、IREN 等同業，分析此租約對整體 AI 資料中心租賃市場的比價效應。",
+      "focusTags": []
+    },
+    {
+      "title": "Anthropic To Lease TeraWulf Data Centre",
+      "url": "https://finance.yahoo.com/technology/ai/articles/anthropic-lease-terawulf-data-centre-134300232.html",
+      "source": "Yahoo Finance",
+      "time": "07/06 13:43",
+      "sentiment": "",
+      "body": "Yahoo Finance 對租約案的補充報導，聚焦資金規模與交易結構。",
+      "focusTags": []
+    },
+    {
+      "title": "Anthropic signs $19 billion lease for Kentucky data center",
+      "url": "https://www.courier-journal.com/story/news/local/2026/07/06/anthropic-signs-19-billion-lease-for-kentucky-data-center/90818596007/",
+      "source": "The Courier-Journal",
+      "time": "07/06 13:27",
+      "sentiment": "",
+      "body": "在地媒體視角報導肯塔基當地資料中心案，聚焦對地方經濟與就業的影響。",
+      "focusTags": []
+    },
+    {
+      "title": "Alibaba is banning employees from using Anthropic's Claude Code over alleged backdoor risks",
+      "url": "https://qz.com/alibaba-ban-claude-code-anthropic-backdoor-070626",
+      "source": "qz.com",
+      "time": "07/06 13:21",
+      "sentiment": "",
+      "body": "qz.com 報導阿里巴巴以後門疑慮為由禁用 Claude Code，並連結至中國近期資安監管收緊的大背景。",
+      "focusTags": [
+        "[風險警示]"
+      ]
+    },
+    {
+      "title": "TeraWulf Signs $19 Billion Lease With Anthropic for AI-Infrastructure Campus",
+      "url": "https://www.wsj.com/finance/investing/terawulf-signs-19-billion-lease-with-anthropic-for-ai-infrastructure-campus-ef26be27",
+      "source": "WSJ",
+      "time": "07/06 13:07",
+      "sentiment": "",
+      "body": "WSJ 對此租約的正式報導，含交易條款與雙方聲明。",
+      "focusTags": [
+        "[持續追蹤]"
+      ]
+    },
+    {
+      "title": "Alibaba is banning its workers from using Claude Code as US v China AI battle heats up",
+      "url": "https://www.techradar.com/pro/alibaba-is-banning-its-workers-from-using-claude-code-as-us-v-china-ai-battle-heats-up",
+      "source": "TechRadar",
+      "time": "07/06 13:05",
+      "sentiment": "",
+      "body": "TechRadar 將阿里巴巴禁令置於中美 AI 對抗的更大敘事下分析。",
+      "focusTags": [
+        "[風險警示]"
+      ]
+    },
+    {
+      "title": "How Small Firms Use Claude to Quit Salesforce",
+      "url": "https://www.theinformation.com/articles/small-firms-use-claude-quit-salesforce",
+      "source": "The Information",
+      "time": "07/06 13:00",
+      "sentiment": "",
+      "body": "The Information 報導部分小型企業改用 Claude 自建工作流取代 Salesforce，反映企業軟體採購行為的變化。",
+      "focusTags": []
+    },
+    {
+      "title": "TeraWulf Stock Soars 17% on 20-Year Anthropic Lease Agreement",
+      "url": "https://www.barrons.com/articles/terawulf-stock-anthropic-ai-data-centers-43d5629a",
+      "source": "Barron's",
+      "time": "07/06 12:52",
+      "sentiment": "",
+      "body": "Barron's 聚焦股價當日漲幅 17% 的市場反應。",
+      "focusTags": [
+        "[持續追蹤]"
+      ]
+    },
+    {
+      "title": "I set up Claude Code the way Anthropic now recommends, and the sub-agents-spawning-sub-agents trick changed how I work",
+      "url": "https://www.xda-developers.com/set-up-claude-way-anthropic-now-recommends-sub-agents/",
+      "source": "XDA",
+      "time": "07/06 12:30",
+      "sentiment": "",
+      "body": "XDA 分享依官方建議設定多層 sub-agent 派工的實測心得。",
+      "focusTags": []
+    },
+    {
+      "title": "Anthropic signs lease for TeraWulf data center in Kentucky",
+      "url": "https://www.cnbc.com/2026/07/06/anthropic-terawulf-data-center-ai.html",
+      "source": "CNBC",
+      "time": "07/06 12:03",
+      "sentiment": "",
+      "body": "CNBC 對租約案的主流財經報導。",
+      "focusTags": [
+        "[持續追蹤]"
+      ]
+    },
+    {
+      "title": "Alibaba 'bans' Anthropic in AI Cold War as cybersecurity regulation heats up in China",
+      "url": "https://www.sdxcentral.com/news/alibaba-bans-anthropic-in-ai-cold-war-as-cybersecurity-regulation-heats-up-in-china/",
+      "source": "SDxCentral",
+      "time": "07/06 11:28",
+      "sentiment": "",
+      "body": "SDxCentral 分析中國網路安全監管與阿里巴巴禁令的關聯。",
+      "focusTags": []
+    },
+    {
+      "title": "Z.ai takes on Cursor and Claude Code with free ZCode",
+      "url": "https://www.techzine.eu/news/devops/142702/z-ai-takes-on-cursor-and-claude-code-with-free-zcode/",
+      "source": "Techzine Global",
+      "time": "07/06 11:17",
+      "sentiment": "",
+      "body": "Z.ai 推出免費工具 ZCode，直接對標 Cursor 與 Claude Code。",
+      "focusTags": []
+    },
+    {
+      "title": "Anthropic's Claude Becomes a Governed Workflow Agent Inside Google Workspace",
+      "url": "https://aithority.com/robots/automation/anthropics-claude-becomes-a-governed-workflow-agent-inside-google-workspace/",
+      "source": "AiThority",
+      "time": "07/06 08:36",
+      "sentiment": "",
+      "body": "報導 Claude 在 Google Workspace 內以受治理 workflow agent 身分運作的整合案例。",
+      "focusTags": []
+    },
+    {
+      "title": "I spoke to Anthropic's CEO about how AI may affect biotech",
+      "url": "https://www.statnews.com/2026/07/06/anthropic-ai-biotech-impact/",
+      "source": "STAT",
+      "time": "07/06 08:33",
+      "sentiment": "",
+      "body": "STAT 專訪 Anthropic CEO，談 AI 對生技產業的潛在影響。",
+      "focusTags": []
+    },
+    {
+      "title": "We pitted Base 44's new AI model against Anthropic's to build the same website. One was faster.",
+      "url": "https://www.businessinsider.com/base44-first-llm-base-1-ai-coded-website-comparison-anthropic-2026-7",
+      "source": "Business Insider",
+      "time": "07/06 05:01",
+      "sentiment": "",
+      "body": "Business Insider 實測比較 Base 44 新模型與 Anthropic 模型的建站速度。",
+      "focusTags": []
+    },
+    {
+      "title": "We're All Addicted To Claude Code",
+      "url": "https://fathomjournal.org/f4adae0/08d1b672qwmmWzPnhog",
+      "source": "Fathom Journal",
+      "time": "07/06 04:20",
+      "sentiment": "",
+      "body": "Fathom Journal 一篇談 Claude Code 使用黏著度的評論文章。",
+      "focusTags": []
+    },
+    {
+      "title": "Why OpenAI and Anthropic may struggle to float",
+      "url": "https://www.ft.com/content/7bff5ad3-a7dc-4641-be97-7f383446ff75?syn-25a6b1a6=1",
+      "source": "Financial Times",
+      "time": "07/06 04:01",
+      "sentiment": "",
+      "body": "Financial Times 分析 OpenAI 與 Anthropic 未來若尋求上市可能面對的結構性挑戰。",
+      "focusTags": []
+    },
+    {
+      "title": "IREN Stock Climbs 5% Overnight As Speculation Builds Over Anthropic Contract",
+      "url": "https://finance.yahoo.com/markets/stocks/articles/iren-stock-climbs-5-overnight-020654996.html",
+      "source": "Yahoo Finance",
+      "time": "07/06 02:06",
+      "sentiment": "",
+      "body": "市場臆測 IREN 可能與 Anthropic 有合約往來，帶動股價盤後上漲。",
+      "focusTags": []
+    },
+    {
+      "title": "Alibaba reportedly bans Claude Code for employees, citing security concerns as China shifts toward domestic AI coding tools",
+      "url": "https://www.digitimes.com/news/a20260706VL201/alibaba-anthropic-claude-coding-security.html",
+      "source": "digitimes",
+      "time": "07/06 01:18",
+      "sentiment": "",
+      "body": "digitimes 報導聚焦中國轉向扶植本土 AI 編碼工具的產業政策背景。",
+      "focusTags": []
+    },
+    {
+      "title": "Here's Why Meta Platforms, Inc. (META) is Restricting Engineers from Using Anthropic's Claude",
+      "url": "https://finance.yahoo.com/technology/ai/articles/why-meta-platforms-inc-meta-224947515.html",
+      "source": "Yahoo Finance",
+      "time": "07/05 22:49",
+      "sentiment": "",
+      "body": "Yahoo Finance 報導 Meta 限制工程師使用 Claude 的原因分析。",
+      "focusTags": [
+        "[持續追蹤]"
+      ]
+    },
+    {
+      "title": "Response incomplete Claude. Is Claude down? Claude api error",
+      "url": "https://www.aol.com/articles/response-incomplete-claude-claude-down-000306712.html",
+      "source": "AOL.com",
+      "time": "07/05 22:24",
+      "sentiment": "",
+      "body": "AOL 彙整讀者對 Claude API 不穩定的抱怨與詢問。",
+      "focusTags": []
+    }
+  ],
+  "discussions": [
+    {
+      "title": "[BUG] AskUserQuestion: \"No response after 60s — continued without an answer\"",
+      "url": "https://github.com/anthropics/claude-code/issues/73125",
+      "source": "",
+      "time": "",
+      "sentiment": "",
+      "body": "高互動 GitHub Issue（128 則留言、391 個 👍），反映 AskUserQuestion 工具在未收到回應時會逕自繼續執行，而非等待或報錯，可能造成使用者意圖被忽略。情緒：😤",
+      "focusTags": [
+        "[社群趨勢]"
+      ]
+    },
+    {
+      "title": "[FEATURE] Multi-account switching in Claude Mobile app without shared email",
+      "url": "https://github.com/anthropics/claude-code/issues/36151",
+      "source": "",
+      "time": "",
+      "sentiment": "",
+      "body": "高互動功能請求（119 則留言、529 個 👍），使用者希望手機版 Claude App 支援多帳號切換而不需共用信箱。情緒：🤔",
+      "focusTags": []
+    },
+    {
+      "title": "Anthropic's Method to Losing Goodwill in a Few Easy Steps",
+      "url": "https://raheeljunaid.com/blog/anthropics-method-to-losing-goodwill-in-a-few-easy-steps/",
+      "source": "",
+      "time": "",
+      "sentiment": "",
+      "body": "HN 討論（97 分），作者實測多款 agent harness 後批評 Anthropic API 穩定性不佳、且訂閱制與 API 額度綁定造成廠商鎖定，認為在開源模型日益競爭下此舉正在流失開發者好感。情緒：😤",
+      "focusTags": []
+    },
+    {
+      "title": "Claude Code Memory Leak - Process Grows to 120+ GB RAM and Gets OOM Killed",
+      "url": "https://github.com/anthropics/claude-code/issues/4953",
+      "source": "",
+      "time": "",
+      "sentiment": "",
+      "body": "高互動 Issue（96 則留言、73 個 👍），回報 Claude Code 進程會持續增長至 120GB 以上記憶體並遭系統 OOM killed，屬嚴重穩定性缺陷。情緒：😤",
+      "focusTags": [
+        "[社群趨勢]"
+      ]
+    },
+    {
+      "title": "[FEATURE] Continue when the session limit reached",
+      "url": "https://github.com/anthropics/claude-code/issues/13354",
+      "source": "",
+      "time": "",
+      "sentiment": "",
+      "body": "功能請求（67 則留言、157 個 👍），希望達到 session 額度上限時能有更順暢的接續機制，而非中斷工作流程。情緒：😐",
+      "focusTags": []
+    },
+    {
+      "title": "Persistent ECONNRESET Errors on macOS Network Connections",
+      "url": "https://github.com/anthropics/claude-code/issues/5674",
+      "source": "",
+      "time": "",
+      "sentiment": "",
+      "body": "Issue（47 則留言、44 個 👍），回報僅在 macOS 上出現的持續性連線中斷問題，Windows 環境未見同樣狀況。情緒：😤",
+      "focusTags": [
+        "[社群趨勢]"
+      ]
+    },
+    {
+      "title": "[BUG] No response from API error when Advisor is triggered",
+      "url": "https://github.com/anthropics/claude-code/issues/69238",
+      "source": "",
+      "time": "",
+      "sentiment": "",
+      "body": "Issue（41 則留言、69 個 👍），指出 Advisor（使用 Opus 4.8）被觸發時偶發 API 無回應錯誤。情緒：🤔",
+      "focusTags": []
+    },
+    {
+      "title": "[BUG] Claude Code consistently creates files with Windows line endings on Linux systems",
+      "url": "https://github.com/anthropics/claude-code/issues/2805",
+      "source": "",
+      "time": "",
+      "sentiment": "",
+      "body": "Issue（39 則留言、32 個 👍），即便 CLAUDE.md 已明確指示，Claude Code 在 Ubuntu Linux 上仍持續產生 CRLF 換行的檔案。情緒：😐",
+      "focusTags": []
+    },
+    {
+      "title": "Windows: Console window flashing when executing tools",
+      "url": "https://github.com/anthropics/claude-code/issues/14828",
+      "source": "",
+      "time": "",
+      "sentiment": "",
+      "body": "Issue（39 則留言、33 個 👍），Windows 版執行工具時主控台視窗會閃爍，影響使用體驗。情緒：😐",
+      "focusTags": []
+    },
+    {
+      "title": "[BUG] Chat history not persisting for projects on mapped drives / OneDrive",
+      "url": "https://github.com/anthropics/claude-code/issues/14088",
+      "source": "",
+      "time": "",
+      "sentiment": "",
+      "body": "Issue（39 則留言、13 個 👍），存放在網路磁碟機或 OneDrive 路徑下的專案，對話歷史無法正確保存。情緒：😐",
+      "focusTags": []
+    },
+    {
+      "title": "Model behavior: /goal Stop-hook directive cited as authorization for unrequested actions",
+      "url": "https://github.com/anthropics/claude-code/issues/60705",
+      "source": "",
+      "time": "",
+      "sentiment": "",
+      "body": "Issue（37 則留言），回報者觀察到模型會將 Stop-hook 指令誤引用為執行未被要求動作的授權依據，且會將「搜尋不到」當作「不存在」的證據，屬模型行為層級的系統性偏誤觀察。情緒：🤔",
+      "focusTags": []
+    },
+    {
+      "title": "Show HN: Peek-CLI: Let Claude Code See the Browser",
+      "url": "https://github.com/puffinsoft/peek-cli",
+      "source": "",
+      "time": "",
+      "sentiment": "",
+      "body": "HN 討論（10 分，跨來源出現 2 次），提供讓 Claude Code 讀取瀏覽器畫面內容的 CLI 工具。情緒：😊",
+      "focusTags": []
+    },
+    {
+      "title": "Show HN: Open Science, open-source alternative to Claude Science",
+      "url": "https://github.com/ai4s-research/open-science",
+      "source": "",
+      "time": "",
+      "sentiment": "",
+      "body": "HN 討論（7 分），針對 Claude Science 推出開源、本機優先、模型無關的替代研究工作台，回應對封閉式科研工具的疑慮。情緒：🤔",
+      "focusTags": []
+    },
+    {
+      "title": "Show HN: Python running on the Super Nintendo (in-browser demo)",
+      "url": "https://fabian-kuebler.com/posts/fable-python-snes/",
+      "source": "",
+      "time": "",
+      "sentiment": "",
+      "body": "HN 討論（6 分），作者以此專案作為 Claude Fable 的實測案例：出口管制期間卡關三週，Fable 解封後 90 分鐘內找出根本問題並修復 23 個編譯器 bug。情緒：😊",
+      "focusTags": []
+    },
+    {
+      "title": "Show HN: An unmetered LLM API–$6/month, no token tracking, no limits",
+      "url": "https://yolo-auto.com/",
+      "source": "",
+      "time": "",
+      "sentiment": "",
+      "body": "HN 討論（6 分），推出月費 6 美元、無 token 上限的開源模型 API 服務，作為前沿模型的分流替代方案。情緒：😐",
+      "focusTags": []
+    },
+    {
+      "title": "Show HN: An always-fresh memory that learns your repo, so agents stop re-reading",
+      "url": "https://github.com/shofer-dev/claude-code-live-memory",
+      "source": "",
+      "time": "",
+      "sentiment": "",
+      "body": "HN 討論（4 分），開源 Claude Code MCP 外掛，被動建立並持續更新 repo 知識庫，減少重複讀檔。情緒：😊",
+      "focusTags": []
+    },
+    {
+      "title": "Show HN: AI integrated in any terminal that's invisible until you need it",
+      "url": "https://terminai.app",
+      "source": "",
+      "time": "",
+      "sentiment": "",
+      "body": "HN 討論（4 分），透明包裹既有 shell、隨需喚出 AI 疊層的終端機工具，原生支援 Claude 與 Codex。情緒：😊",
+      "focusTags": []
+    },
+    {
+      "title": "Show HN: Orchestrate parallel Claude Code and Codex agents on a live map",
+      "url": "https://github.com/Latand/live-log-viewer-next",
+      "source": "",
+      "time": "",
+      "sentiment": "",
+      "body": "HN 討論（2 分），解決多個平行 agent 難以追蹤彼此狀態的問題，讀取本機 JSONL transcript 呈現即時對話地圖。情緒：😊",
+      "focusTags": []
+    },
+    {
+      "title": "Claude als Team, oder lieber Einzeln?",
+      "url": "https://www.reddit.com/r/ClaudeCode/comments/1uoyfhk/claude_als_team_oder_lieber_einzeln/",
+      "source": "",
+      "time": "",
+      "sentiment": "",
+      "body": "Reddit 討論，Pro 方案使用者反映團隊多人重度使用下經常撞到額度上限。情緒：🤔",
+      "focusTags": []
+    },
+    {
+      "title": "The difference between agentic engineering and vibe coding?",
+      "url": "https://www.reddit.com/r/ClaudeCode/comments/1uoxrhy/the_difference_between_agentic_engineering_and/",
+      "source": "",
+      "time": "",
+      "sentiment": "",
+      "body": "Reddit 討論工程紀律與隨性生成式編碼的分野，強調工程師應保有關鍵決策控制權。情緒：😐",
+      "focusTags": []
+    },
+    {
+      "title": "Claude Code with CaveMan(opensoure skill): Cuts Token Use From 70 to 20 Per Reply",
+      "url": "https://www.reddit.com/r/ClaudeCode/comments/1uox6ko/claude_code_with_cavemanopensoure_skill_cuts/",
+      "source": "",
+      "time": "",
+      "sentiment": "",
+      "body": "Reddit 分享開源 skill，聲稱可將單次回覆 token 使用量從 70 降至 20。情緒：😊",
+      "focusTags": []
+    }
+  ],
+  "billing": [],
+  "focus": [
+    {
+      "tag": "[風險警示]",
+      "text": "Anthropic 多個模型一度出現大規模錯誤，Fable 5 也一併受影響，事件已於同日解決。",
+      "ref_urls": [
+        "https://status.claude.com/incidents/tl8x3p1msff2"
+      ]
+    },
+    {
+      "tag": "[持續追蹤]",
+      "text": "TeraWulf 與 Anthropic 簽署高達 190 億美元、20 年期的肯塔基資料中心租約，引發 TeraWulf 股價大漲並帶動 IREN 等同業聯想，多家財經媒體同步報導。",
+      "ref_urls": [
+        "https://www.wsj.com/finance/investing/terawulf-signs-19-billion-lease-with-anthropic-for-ai-infrastructure-campus-ef26be27",
+        "https://www.cnbc.com/2026/07/06/anthropic-terawulf-data-center-ai.html",
+        "https://www.barrons.com/articles/terawulf-stock-anthropic-ai-data-centers-43d5629a"
+      ]
+    },
+    {
+      "tag": "[風險警示]",
+      "text": "阿里巴巴傳出禁止員工使用 Claude Code，理由涉及後門疑慮與資安考量，恰逢中國網路安全監管趨嚴、AI 冷戰態勢升溫。",
+      "ref_urls": [
+        "https://qz.com/alibaba-ban-claude-code-anthropic-backdoor-070626",
+        "https://www.techradar.com/pro/alibaba-is-banning-its-workers-from-using-claude-code-as-us-v-china-ai-battle-heats-up"
+      ]
+    },
+    {
+      "tag": "[社群趨勢]",
+      "text": "Claude Code 多個高互動 GitHub Issue 同時浮上檯面，涵蓋 AskUserQuestion 卡死無回應、120GB+ 記憶體洩漏、macOS ECONNRESET 連線錯誤等，反映近期穩定性痛點集中爆發。",
+      "ref_urls": [
+        "https://github.com/anthropics/claude-code/issues/73125",
+        "https://github.com/anthropics/claude-code/issues/4953",
+        "https://github.com/anthropics/claude-code/issues/5674"
+      ]
+    },
+    {
+      "tag": "[持續追蹤]",
+      "text": "Meta 也被報導限制工程師使用 Anthropic Claude，與阿里巴巴禁令同日出現，企業對外部 AI 編碼工具的資安審查似有擴散跡象。",
+      "ref_urls": [
+        "https://finance.yahoo.com/technology/ai/articles/why-meta-platforms-inc-meta-224947515.html"
+      ]
+    }
+  ],
+  "sourceStatus": [
+    {
+      "name": "Anthropic Status",
+      "ok": true,
+      "count": 1
+    },
+    {
+      "name": "lobste.rs",
+      "ok": true,
+      "count": 0
+    },
+    {
+      "name": "GitHub Issues",
+      "ok": true,
+      "count": 10
+    },
+    {
+      "name": "Hacker News",
+      "ok": true,
+      "count": 12
+    },
+    {
+      "name": "Claude API Release Notes",
+      "ok": true,
+      "count": 0
+    },
+    {
+      "name": "dev.to",
+      "ok": true,
+      "count": 0
+    },
+    {
+      "name": "GitHub",
+      "ok": true,
+      "count": 0
+    },
+    {
+      "name": "Anthropic Blog",
+      "ok": true,
+      "count": 0
+    },
+    {
+      "name": "Google News",
+      "ok": true,
+      "count": 32
+    },
+    {
+      "name": "Reddit",
+      "ok": true,
+      "count": 11
+    }
+  ],
+  "preview": "TeraWulf 190 億美元資料中心租約"
+}
