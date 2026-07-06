@@ -3,10 +3,13 @@
 **狀態：** monitoring
 **領域：** 💼 商業
 **開始日期：** 2026-04
-**最後更新：** 2026-07-05
-**最後新聞更新：** 2026-07-02
+**最後更新：** 2026-07-06
+**最後新聞更新：** 2026-07-06
 
-> **最新競品動態**（2026-07-02）
+> **最新競品動態**（2026-07-06）
+> Z.ai 推出免費工具 ZCode，直接對標 Cursor 與 Claude Code——以「免費」正面挑戰 Anthropic 的訂閱/API 雙軌計費模式；同日 Business Insider 實測 Base 44 新模型（base-1）與 Anthropic 建站速度，AI 建站賽道的模型層競爭延伸至實測比較；FT 分析 OpenAI 與 Anthropic 未來若上市（float）可能面對的結構性挑戰，為 IPO 前景添入謹慎論調。
+
+> **前次動態**（2026-07-02）
 > Palantir CEO Alex Karp 公開批評 Anthropic 與 OpenAI「竊取客戶 IP，token 價值偏低」（HN score 16），討論串猜測與 Fable/Mythos 重新發布同日、OpenAI 更直接競爭 Palantir 國防業務有關；同日分析師調升 Palantir 股票評等，反映市場並未因 Anthropic/OpenAI 的 agentic 攻勢看空 Palantir。此前 6/29：AI 新創 Lindy CEO 將 100% 流量從 Claude 切換至 DeepSeek，每月省下數百萬美元——「DeepSeek 性價比勝出」在具名 API 客戶層的最大規模實例（CNBC，HN score 3）。
 
 ---
@@ -92,10 +95,10 @@ Claude Code 已成為 AI 輔助編碼的標竿產品，但競爭正快速升溫�
 - **意義**：Claude Code 類產品已成為國家層面 AI 競爭的戰場；DeepSeek 轉向正面競爭標誌低成本替代生態進入下一階段；具名 API 客戶切換案例的累積正在成為可量化的市場份額流失訊號
 
 ### Zhipu Z.AI 🔴
-- **狀態**：Active（快速追趕中，2026-06-27 CNBC 確認）
+- **狀態**：Active（快速追趕中，2026-06-27 CNBC 確認；2026-07-06 推出免費工具 ZCode 直接對標 Cursor/Claude Code）
 - **路線**：開源模型，趁 Anthropic / OpenAI 受出口管制與法律 / 政治審查影響期間快速縮小能力差距
-- **策略**：以開源路線滲透出口管制無法觸及的市場，類似 DeepSeek 以「免費壁壘」繞開競爭管制
-- **意義**：管制空窗期是中國廠商能力追趕的加速器；Anthropic 若無法有效解封中國及受管制市場，Zhipu 等廠商受惠（CNBC https://www.cnbc.com/2026/06/26/china-zhipu-z-ai-open-source-anthropic-openai.html）
+- **策略**：以開源路線滲透出口管制無法觸及的市場，類似 DeepSeek 以「免費壁壘」繞開競爭管制；2026-07-06 更進一步推出免費 IDE/CLI 工具 ZCode，正面對標 Cursor 與 Claude Code 的產品層，而非僅停留在底層模型競爭
+- **意義**：管制空窗期是中國廠商能力追趕的加速器；Anthropic 若無法有效解封中國及受管制市場，Zhipu 等廠商受惠；ZCode 以「免費」直接衝擊 Claude Code 的訂閱/API 雙軌計費模式，對價格敏感的個人開發者與新創構成潛在分流壓力（推論）（CNBC https://www.cnbc.com/2026/06/26/china-zhipu-z-ai-open-source-anthropic-openai.html；Techzine Global https://www.techzine.eu/news/devops/142702/z-ai-takes-on-cursor-and-claude-code-with-free-zcode/）
 
 ### 中國 360 Tulongfeng 🔴
 - **狀態**：Active（2026-06-28 發布，宣稱對標 Mythos 5）
@@ -154,6 +157,11 @@ Claude Code 已成為 AI 輔助編碼的標竿產品，但競爭正快速升溫�
 ---
 
 ## 時序
+
+### 2026-07-06
+- **[免費工具正面對標] Z.ai 推出免費 ZCode，直接對標 Cursor 與 Claude Code**：Techzine Global 報導，Zhipu 旗下 Z.ai 推出免費工具 ZCode，明確定位對標 Cursor 與 Claude Code。**對競爭格局的意涵**：繼 06-27 CNBC 報導 Zhipu 開源模型快速追趕後，此次以「免費」IDE/CLI 產品正面切入 Claude Code 的核心用戶場景，是中國廠商從「模型層對標」升級至「產品層免費競爭」的具體案例；對價格敏感的個人開發者與新創構成分流壓力（推論）（Techzine Global https://www.techzine.eu/news/devops/142702/z-ai-takes-on-cursor-and-claude-code-with-free-zcode/）
+- **[建站速度實測比較] Business Insider 實測 Base 44 新模型 vs Anthropic 建站速度**：Business Insider 報導對比 Base 44 新模型（base-1）與 Anthropic 模型的 AI 建站速度，其中一方較快。**對競爭格局的意涵**：AI 建站/一鍵生成網站賽道的模型層競爭延伸至具體實測比較，顯示此垂直應用場景的競品評測已進入主流財經媒體視野（Business Insider https://www.businessinsider.com/base44-first-llm-base-1-ai-coded-website-comparison-anthropic-2026-7）
+- **[IPO 結構性挑戰分析] FT：OpenAI 與 Anthropic 未來若上市可能面對結構性挑戰**：Financial Times 分析文章指出，OpenAI 與 Anthropic 未來若尋求上市（float）可能面臨的結構性挑戰。**對估值的意涵**：與此前 06-28 Fortune「Alibaba 蒸餾攻擊引發護城河可防禦性疑問直衝 IPO 估值」的論調一致，顯示主流財經媒體對兩大 AI 巨頭 IPO 前景的謹慎聲音持續累積（FT https://www.ft.com/content/7bff5ad3-a7dc-4641-be97-7f383446ff75）
 
 ### 2026-07-02
 - **[國防/企業數據平台商表態] Palantir CEO Alex Karp 公開批評 Anthropic 與 OpenAI「竊取客戶 IP，token 價值偏低」**：HN 討論串（score 16）猜測此番言論時間點恰逢 Fable/Mythos 重新發布同日，且與 OpenAI 開始更直接與 Palantir 競爭國防業務有關。同日 Investor's Business Daily 報導分析師調升 Palantir 股票評等，背景涉及與 Anthropic/OpenAI 在國防/企業市場的競爭關係。**對競爭格局的意涵**：Palantir 作為企業數據整合與國防 AI 平台商，其 CEO 公開表態顯示 Anthropic/OpenAI 的 agentic 產品線正被其視為對核心業務的直接威脅而非單純基礎設施合作夥伴；分析師調升評等顯示市場評估 Palantir 在此競爭下仍具韌性（推論）（HN https://twitter.com/Ric_RTP/status/2072403984304984202；Investor's Business Daily https://www.investors.com/news/technology/palantir-stock-upgrade-buy-valuation-anthropic-openai/；詳見 [[topics/anthropic-business]]）

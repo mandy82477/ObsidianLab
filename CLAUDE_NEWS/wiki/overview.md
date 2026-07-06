@@ -1,6 +1,6 @@
 # Claude / Anthropic 生態系概覽
 
-**最後更新：** 2026-07-04
+**最後更新：** 2026-07-06
 
 ---
 
@@ -10,7 +10,9 @@
 
 **解禁落地**：出口管制封鎖期確認為 18–19 天，Anthropic 履行承諾之一——Fable 5 redeploy 隨附「Defense in Depth」新安全分類器，高風險 coding 請求自動 fallback 至 Opus 4.8（首日已有誤判負面實測）。7/7 前 Pro/Max/Team 享 50% 配額，7/7 後轉為 usage-based billing（**倒數中**，詳見 [[feature-radar]]）。
 
-**信任危機（新）**：7/2 Reddit 出現指控稱 Claude Code 自 2.1.91 版起偷偵測使用者是否透過代理連線、是否位於中國，並將判斷結果隱藏於 system prompt 回傳，同時疑似混淆該段程式碼（「embedded spyware」），目前僅單方指控待查證。7/3 Alibaba 以「疑似後門風險」為由禁用 Claude Code（Reuters 報導，多媒體跟進），是首個具名大型企業因安全疑慮（而非成本或授權）退出的案例，FT 同日報導 Anthropic 正封堵中國企業間接存取漏洞。
+**信任危機（擴散中）**：7/2 Reddit 出現指控稱 Claude Code 自 2.1.91 版起偷偵測使用者是否透過代理連線、是否位於中國，並將判斷結果隱藏於 system prompt 回傳，同時疑似混淆該段程式碼（「embedded spyware」），目前僅單方指控待查證。7/3 Alibaba 以「疑似後門風險」為由禁用 Claude Code（Reuters 報導）；**7/6 經 qz.com、TechRadar、SDxCentral、digitimes 多媒體確認為正式禁令，且同日 Meta 亦被報導限制工程師使用 Anthropic Claude**——企業安全審查從單一案例擴散為跨企業趨勢。Alibaba、Meta、Anthropic 三方均未就「後門」技術層面正式回應，「中美 AI 工具信任對峙」獨立頁評估暫緩（未達門檻）。
+
+**基礎設施擴張（新）**：7/6 Anthropic 與比特幣礦業轉型公司 TeraWulf 簽署 **20 年期、190 億美元**肯塔基資料中心租約，WSJ/CNBC/Barron's 等 6+ 家財經媒體同步報導，TeraWulf 股價當日漲約 17%、IREN 因合約臆測盤後漲 5%。這是繼三星客製晶片洽談後另一項算力自主布局的重大訊號。
 
 **模型**：Claude Sonnet 5（7/1 發布，Claude Code 預設，1M context，促銷 $2/$10/Mtok 至 8/31）已有社群「個性流失」的主觀回饋，官方對比圖表修改也引發資料呈現可信度質疑。Mythos 5 政策解禁後定位為「僅限授權機構/安全研究用途，非一般消費市場」。
 
@@ -70,10 +72,14 @@
 
 ---
 
-## 近兩週重大事件（2026-06-21 至 2026-07-03）
+## 近兩週重大事件（2026-06-21 至 2026-07-06）
 
 | 日期 | 事件 | 影響 |
 |------|------|------|
+| 07-06 | **TeraWulf 簽 190 億美元、20 年肯塔基資料中心租約**（WSJ/CNBC/Barron's 等 6+ 家，股價 +17%） | 💼 算力自主布局里程碑 |
+| 07-06 | **Alibaba 禁令多媒體確認 + Meta 同日限用 Claude** | 🔴 企業安全審查擴散 |
+| 07-06 | HN 97 分「Anthropic 好感度流失」文（API 穩定性 + vendor lock-in） | 🟡 開發者信任訊號 |
+| 07-06 | Claude Code 穩定性 issue 集中爆發（120GB 記憶體洩漏、macOS ECONNRESET、AskUserQuestion 逾時） | 🟡 平台可靠性痛點 |
 | 07-03 | **Alibaba 以疑似後門風險禁用 Claude Code**（Reuters，多媒體跟進） | 🔴 首個安全信任驅動的企業退出 |
 | 07-03 | FT：Anthropic 封堵中國企業間接存取漏洞 | 🔴 出口管制執行細節 |
 | 07-03 | 出口管制封鎖期媒體確認為「19 天」 | 🟡 政策落地確認 |
@@ -110,8 +116,9 @@
 
 ## 商業動態
 
-- **信任面**：Alibaba 禁用（疑後門風險）+ embedded spyware 指控，是本週最大變數，可能影響企業採用率
-- **競爭**：Palantir Karp 批評 Anthropic/OpenAI「竊取客戶 IP」；Samsung 客製晶片洽談顯示硬體布局野心
+- **信任面**：Alibaba 禁用（疑後門風險，7/6 多媒體確認）+ Meta 同日限用 + embedded spyware 指控，企業安全審查擴散為本週最大變數，可能影響企業採用率
+- **基礎設施**：7/6 TeraWulf 190 億美元、20 年肯塔基資料中心租約（股價 +17%、IREN 聯想 +5%）；Samsung 客製晶片洽談——算力與硬體自主雙線推進
+- **競爭**：Palantir Karp 批評 Anthropic/OpenAI「竊取客戶 IP」；Z.ai 免費 ZCode 對標 Cursor/Claude Code；FT 分析兩家上市結構性挑戰
 - **安全**：Claude Code 信任危機（2.1.91+ 代理偵測爭議升級為 spyware 指控）；出口管制執行漏洞持續被堵
 - **計費**：Sonnet 5 促銷 $2/$10/Mtok 至 8/31；Fable 5 7/7 起 usage-based billing（倒數中）；Max 方案誤扣費案例浮現
 

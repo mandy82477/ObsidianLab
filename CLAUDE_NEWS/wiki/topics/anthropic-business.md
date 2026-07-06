@@ -3,17 +3,14 @@
 **狀態：** ongoing
 **領域：** 💼 商業
 **開始日期：** 2026-05-28
-**最後更新：** 2026-07-05
-**最後新聞更新：** 2026-07-05
+**最後更新：** 2026-07-06
+**最後新聞更新：** 2026-07-06
 
-> **最新動態**（2026-07-05）
+> **最新動態**（2026-07-06）
+> Anthropic 與比特幣礦業轉型公司 TeraWulf 簽下**190 億美元、20 年期**肯塔基 AI 基礎設施園區租約（今日最大商業事件，WSJ/CNBC/Barron's 等 6+ 家財經媒體同步報導），消息當日推動 TeraWulf 股價大漲約 17%（Barron's），CoreWeave、IREN 等同業租賃行情同步受比價效應牽動（IREN 股價盤後漲 5%）；同日傳出 Anthropic 正洽談三星代工客製化 AI 晶片，若成真將是繼自建資料中心後另一項硬體自主布局；另有 The Information 報導部分小型企業改用 Claude 自建工作流取代 Salesforce，AiThority 報導 Claude 成為 Google Workspace 內受治理 workflow agent。詳見「戰略合作」表與「時序」。
+
+> **前次動態**（2026-07-05）
 > AFR 報導 Anthropic 計畫在澳洲採購 1.4GW 資料中心容量，為全球運算基礎建設佈局的又一擴張節點，延續近期 Micron 記憶體協議、招聘動態揭露的下一波資料中心佈局等訊號；同日第三方路由服務 MixRoute 宣布支援 Fable 5，開發者可單一金鑰同時存取 Fable 5 與 GPT-5.6，屬生態邊緣整合，商業意涵有限。
-
-> **前次動態**（2026-07-04）
-> Anthropic 推出企業版 Claude 支出控管（spend controls）功能，回應企業 agentic AI 帳單頻繁超支的普遍痛點（Tech Times），為 [[topics/enterprise-cost-management]] 長期呼籲的「部門/團隊層級預算管控」缺口首次由官方填補，詳見 [[entities/pricing]]；同日 TechCrunch 跟進報導 Alibaba 禁用 Claude Code 事件（媒體擴散，非新事件，見 [[topics/enterprise-tool-tracker]]）；Samsung 晶片代工洽談另有 upi.com 跟進，但未提供獨立新細節，確定性未升級。
-
-> **前次動態**（2026-07-03）
-> The Verge 跟進報導確認 Anthropic 藥物開發野心（呼應 7/1 STAT News 首報），生命科學垂直拓展持續受媒體關注；另有 Times of India 分析報導指出 OpenAI、Anthropic、Amazon、Microsoft 等大型科技公司正大規模派遣員工進駐客戶辦公室提供支援，反映企業級 AI 服務落地模式從純軟體交付轉向人力密集型客戶成功模式（推論：可能推升服務成本結構，但也是深化企業客戶黏著度的手段）。
 
 ---
 
@@ -95,6 +92,9 @@ Simon Willison（知名開發者博主）發表文章，認為 Anthropic 與 Ope
 
 | 合作方 | 類型 | 日期 | 意義 |
 |--------|------|------|------|
+| TeraWulf（NASDAQ: WULF）| 基礎設施擴張（$19B、20 年租約）| 2026-07-06 | 比特幣礦業轉型公司 TeraWulf 與 Anthropic 簽署 20 年期、190 億美元肯塔基州 AI 基礎設施園區租約，是迄今已知規模最大的具體算力租賃合約之一；消息當日 TeraWulf 股價大漲約 17%（Barron's），CoreWeave、IREN 等同業被同步點名比較，帶動整體 AI 資料中心租賃市場比價效應（IREN 股價盤後漲 5%，市場臆測其亦與 Anthropic 有合約往來）。**對商業的意涵**：延續近期澳洲 1.4GW 採購、Micron 記憶體協議的算力自建佈局，顯示 Anthropic 正將部分算力供給從雲端夥伴（AWS/Google）分散至新興「AI 基礎設施」專營商，鎖定長期產能同時也把比特幣礦業轉型公司拉入 AI 資料中心賽道核心（推論）（WSJ https://www.wsj.com/finance/investing/terawulf-signs-19-billion-lease-with-anthropic-for-ai-infrastructure-campus-ef26be27；CNBC https://www.cnbc.com/2026/07/06/anthropic-terawulf-data-center-ai.html；Barron's https://www.barrons.com/articles/terawulf-stock-anthropic-ai-data-centers-43d5629a）|
+| Samsung | 晶片代工洽談（媒體持續追蹤，確定性未升級）| 2026-07-06 | TechRepublic 跟進報導 Anthropic 正洽談三星代工客製化 AI 晶片，與 07-02 The Information 首報、07-03/07-04 upi.com 跟進方向一致，但同樣未提供代工規模、金額、時程等可查證細節，暫維持「初步報導」定性；若成真，將是繼自建資料中心（TeraWulf、澳洲）後 Anthropic 另一項硬體自主布局（推論）（TechRepublic https://www.techrepublic.com/article/news-anthropic-samsung-custom-ai-chip/）|
+| Google Workspace | 企業客戶（受治理 workflow agent）| 2026-07-06 | AiThority 報導 Claude 在 Google Workspace 內以受治理 workflow agent 身分運作，屬既有 Google 生態整合的具體應用案例深化（AiThority https://aithority.com/robots/automation/anthropics-claude-becomes-a-governed-workflow-agent-inside-google-workspace/）|
 | 澳洲資料中心業者（未具名）| 基礎設施擴張 | 2026-07-05 | AFR 報導 Anthropic 計畫採購 1.4GW 澳洲資料中心容量，延續近期全球算力佈局擴張（Micron 記憶體協議、招聘動態揭露的下一波數據中心地點）；具體業者、金額、時程未公開（AFR https://www.afr.com/street-talk/anthropic-s-plans-to-buy-1-4gw-of-aussie-data-centre-capacity-20260705-p60cpz）|
 | MixRoute（第三方路由）| SDK 夥伴（生態邊緣） | 2026-07-05 | 第三方 API 路由服務 MixRoute 宣布支援 Fable 5，開發者可用單一金鑰同時存取 Fable 5 與 GPT-5.6；屬生態周邊工具整合，非 Anthropic 官方合作，商業影響有限（Yahoo Finance https://finance.yahoo.com/technology/ai/articles/mixroute-confirms-claude-fable-5-001400157.html）|
 | 企業客戶（產品功能）| 支出控管功能上線 | 2026-07-04 | Anthropic 推出企業版 Claude 支出控管（spend controls）功能，協助企業管理 agentic AI 帳單；回應 [[topics/enterprise-cost-management]] 長期呼籲的「部門/團隊層級預算管控」缺口，是官方首次針對此需求推出產品化解法（Tech Times https://www.techtimes.com/articles/319687/20260704/claude-enterprise-spend-controls-arrive-agentic-ai-bills-blow-past-budgets.htm）。定價/計費細節見 [[entities/pricing]] |
@@ -146,6 +146,14 @@ Simon Willison（知名開發者博主）發表文章，認為 Anthropic 與 Ope
 - [[news/2026-05-13]]（The Information：定價強勢期）
 
 ## 時序
+
+### 2026-07-06
+- **[今日最大商業事件] Anthropic 與 TeraWulf 簽署 190 億美元、20 年期肯塔基資料中心租約**：WSJ、CNBC、Barron's、Investor's Business Daily、Yahoo Finance、KFGO、Courier-Journal 等 6+ 家財經媒體同步報導，Anthropic 與比特幣礦業轉型公司 TeraWulf 簽下 20 年期、190 億美元的 AI 基礎設施園區租約（肯塔基州）。**對股價與競爭格局的意涵**：消息一出 TeraWulf 股價當日大漲約 17%（Barron's），報導同時點名 CoreWeave、IREN 等同業，帶動整體 AI 資料中心租賃市場比價效應；IREN 股價盤後亦上漲 5%（市場臆測其與 Anthropic 有合約往來，Yahoo Finance）。此案例顯示 Anthropic 持續加碼自建算力版圖，且透過長約鎖定產能同時把比特幣礦業轉型公司拉入 AI 資料中心賽道（WSJ https://www.wsj.com/finance/investing/terawulf-signs-19-billion-lease-with-anthropic-for-ai-infrastructure-campus-ef26be27；CNBC https://www.cnbc.com/2026/07/06/anthropic-terawulf-data-center-ai.html；Barron's https://www.barrons.com/articles/terawulf-stock-anthropic-ai-data-centers-43d5629a）
+- **[IREN 股價聯動] IREN 股價盤後漲 5%，市場臆測與 Anthropic 有合約往來**：Yahoo Finance 報導，市場臆測 IREN 可能與 Anthropic 有合約往來，帶動股價盤後上漲 5%，與 TeraWulf 案形成比價聯想（Yahoo Finance https://finance.yahoo.com/markets/stocks/articles/iren-stock-climbs-5-overnight-020654996.html）
+- **[晶片代工洽談，媒體持續追蹤] TechRepublic 跟進報導 Anthropic 洽談三星代工客製化 AI 晶片**：與 07-02 首報、07-03/07-04 跟進方向一致，未提供獨立新細節，確定性未升級，仍屬「初步報導」（TechRepublic https://www.techrepublic.com/article/news-anthropic-samsung-custom-ai-chip/）
+- **[企業軟體採購行為變化] 小型企業改用 Claude 自建工作流取代 Salesforce**：The Information 報導部分小型企業改用 Claude 自建工作流取代 Salesforce，反映企業軟體採購行為的變化——低成本自建 agent 工作流可能侵蝕傳統 SaaS 訂閱市場（推論）（The Information https://www.theinformation.com/articles/small-firms-use-claude-quit-salesforce）
+- **[生態整合深化] Claude 成為 Google Workspace 內受治理 workflow agent**：AiThority 報導 Claude 在 Google Workspace 內以受治理 workflow agent 身分運作，屬既有 Google 生態整合案例的具體深化（AiThority https://aithority.com/robots/automation/anthropics-claude-becomes-a-governed-workflow-agent-inside-google-workspace/）
+- **[競品動態，詳見 competitor-landscape] Z.ai 推出免費 ZCode 對標 Cursor/Claude Code；Business Insider 實測 Base 44 vs Anthropic 建站速度；FT 分析 OpenAI/Anthropic IPO 結構性挑戰**：三則競品/資本市場動態詳見 [[topics/competitor-landscape]]
 
 ### 2026-07-05
 - **[基礎設施擴張] AFR 報導 Anthropic 計畫採購 1.4GW 澳洲資料中心容量**：Australian Financial Review 報導 Anthropic 正計畫在澳洲採購 1.4GW 資料中心容量，作為其全球運算基礎建設佈局擴張的一環。**對商業的意涵**：延續近期 Micron 記憶體多年協議、CNBC 揭露的下一波全球數據中心招聘佈局等訊號，顯示 Anthropic 持續在美國本土以外市場加碼算力採購，以支撐模型訓練與推論需求成長；具體供應商、金額、時程尚未公開（推論：規模擴張速度可能反映其對未來需求的積極預期）（AFR https://www.afr.com/street-talk/anthropic-s-plans-to-buy-1-4gw-of-aussie-data-centre-capacity-20260705-p60cpz）

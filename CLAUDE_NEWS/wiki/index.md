@@ -2,10 +2,21 @@
 
 LLM 查詢此 wiki 時，**先讀這個檔案**找相關頁面，再讀具體頁面取得詳細資訊。
 
-**最後更新：** 2026-07-05
+**最後更新：** 2026-07-06
 ---
 
 ## 近期異動
+
+- [[topics/anthropic-business]] — 2026-07-06：**TeraWulf 簽署 190 億美元、20 年期肯塔基資料中心租約**（WSJ/CNBC/Barron's 等 6+ 家財經媒體同步報導，TeraWulf 股價當日漲約 17%，IREN 盤後漲 5% 聯想）；Samsung 客製晶片洽談、Google Workspace 受治理 workflow agent 整合、小型企業轉單 Salesforce 跟進
+- [[topics/anthropic-government-policy]]／[[topics/ai-agent-safety]] — 2026-07-06：Alibaba 禁用 Claude Code 經 qz.com/TechRadar/SDxCentral/digitimes 多媒體確認為正式禁令；同日 Meta 亦被報導限制工程師使用 Claude，企業安全審查似擴散；「中美 AI 工具信任對峙」獨立頁評估——三方仍未就「後門」正式回應，未達建頁門檻
+- [[topics/enterprise-tool-tracker]] — 2026-07-06：新增 Meta 限用列（❓未確認，缺來源連結細節待補）
+- [[entities/claude-code]] — 2026-07-06：已知問題新增 7 則高互動 GitHub Issue——120GB+ 記憶體洩漏 OOM（#4953）、macOS ECONNRESET（#5674）、Linux CRLF 換行（#2805）、Windows 主控台閃爍（#14828）、OneDrive/mapped drive 對話歷史遺失（#14088）、session 額度接續（#13354）、Mobile 多帳號切換（#36151）；AskUserQuestion 60s 逾時（#73125，391 讚）等三則累積數更新
+- [[topics/competitor-landscape]] — 2026-07-06：Z.ai 免費 ZCode 對標 Cursor/Claude Code、Base 44（base-1）vs Anthropic 建站速度實測、FT 分析 OpenAI/Anthropic 上市結構性挑戰
+- [[topics/community-tech-discussions]] — 2026-07-06：HN 97 分「Anthropic 好感度流失」文（API 穩定性 + vendor lock-in 批評，🔥🔥🔥）；額度焦慮系列跨 9 天合併升級為 🌊延燒
+- [[topics/community-tech-patterns]] — 2026-07-06：CaveMan skill（token 70→20）補入穴居人模式；平行 Agent 即時對話地圖（live-log-viewer-next，⏳）補入 Agent 規模化列
+- [[topics/official-community-gap]] — 2026-07-06：產品化矩陣新增「多平行 agent 即時可觀測性／協調地圖」列（❌ 無官方對應；Agent View 僅列表式非 live map）
+- [[entities/fable-5]] — 2026-07-06：Anthropic 多模型一度大規模錯誤 Fable 5 一併受影響（同日解決）；Show HN Python-on-SNES 作為 Fable 實測案例（解封後 90 分鐘修復 23 個編譯器 bug）
+- [[entities/dario-amodei]] — 2026-07-06：接受 STAT 專訪談 AI 對生技產業影響（事件層級記錄，待核實）
 
 - [[entities/claude-code]] — 2026-07-05：已知問題新增 Advisor 觸發時 API 無回應（❓待查證）、model behavior 三種模式回報（❓待查證）、Focus reporting escape sequences 洩漏輸入框、帳號限制申訴表單迴圈、MCP/hooks/plugins 設定需重啟才生效；AGENTS.md 不支援（#6235）累積達 5598 讚為全站已知問題之最；Max 額度異常耗盡（#38335）累積 793 留言持續居冠
 - [[topics/enterprise-tool-tracker]] — 2026-07-05：Alibaba 禁令生效日確認為 **2026-07-10**（The Indian Express 跟進報導）

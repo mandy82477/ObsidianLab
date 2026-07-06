@@ -3,17 +3,17 @@
 **狀態：** ongoing
 **領域：** 🏛️ 政策/安全
 **開始日期：** 2026-04-27
-**最後更新：** 2026-07-05
-**最後新聞更新：** 2026-07-03
+**最後更新：** 2026-07-06
+**最後新聞更新：** 2026-07-06
 
-> **最新安全事件**（2026-07-03）
-> Reuters 獨家報導（HN score 313，多家媒體跟進）稱 Alibaba 已以「疑似後門風險」為由禁止員工在職場使用 Claude Code；報導未附具體技術證據或 CVE 編號，Alibaba 與 Anthropic 均未公開證實或回應。此為**單一媒體聲稱（企業層級指控），無第三方資安機構驗證，標記「待查證」**，與 2026-06-30 中國代理偵測程式碼指控（同樣待查證）性質相近，但本次指控方向相反——由中國企業指控 Anthropic 產品本身有安全疑慮，而非 Anthropic 偵測中國使用者。企業採用面影響詳見 [[topics/enterprise-tool-tracker]]，中美政策拉扯脈絡見 [[topics/anthropic-government-policy]]。
+> **最新安全事件**（2026-07-06）
+> qz.com、TechRadar、SDxCentral、digitimes 等多家媒體同步報導阿里巴巴禁止員工使用 Claude Code（理由涉「疑似後門風險」），為 07-03 Reuters 獨家消息人士報導後的多媒體確認擴散；同日 Yahoo Finance 報導 Meta 亦限制工程師使用 Anthropic Claude（07-05~07-06）。**指控本身仍無具體技術細節、CVE 編號或第三方資安機構驗證，Alibaba、Meta、Anthropic 三方均未就「後門」技術層面正式回應**，故維持「待查證」，但企業層級的審查行動已從單一消息人士報導升級為多媒體確認 + 跨企業（中國/美國）擴散。企業採用面影響詳見 [[topics/enterprise-tool-tracker]]，中美政策拉扯脈絡見 [[topics/anthropic-government-policy]]。
 
 ---
 
 ## 摘要
 
-**最新態勢（2026-07-03）：** Reuters 獨家報導 Alibaba 已以「疑似後門風險」為由禁止員工職場使用 Claude Code（HN score 313），為首個由中國企業方向對 Claude Code 提出的具名安全指控，與此前 Anthropic 對中國使用者的偵測行為指控（06-30）形成雙向對峙；報導無具體技術細節或 CVE 編號，屬單一媒體聲稱，Alibaba 與 Anthropic 均未證實或回應，標記「待查證」。
+**最新態勢（2026-07-06）：** 阿里巴巴禁止員工使用 Claude Code 一事經 qz.com、TechRadar、SDxCentral、digitimes 多家媒體同步報導，確認 07-03 Reuters 獨家消息成真為企業正式禁令；同日 Yahoo Finance 報導 Meta 亦限制工程師使用 Anthropic Claude，顯示企業對外部 AI 編碼工具的資安審查有擴散跡象（中國/美國企業同步出現）。「後門風險」指控本身仍無公開技術證據，三方（Alibaba、Meta、Anthropic）均未正式回應指控是否成立，維持「待查證」。
 
 **此前態勢（2026-07-01／07-02）：** 研究者在 Claude Code 2.1.196 binary 發現同形字符替換函式（homoglyph substitution），疑用於對輸出文字嵌入不可見的隱寫標記；HN score 2263 為本頁史上最高熱度安全事件，36Kr 確認此機制針對時區資訊及中國 AI Lab 連線者注入系統提示，Anthropic 承諾修復（版本未定）。同日 CVE-2026-55407 披露：Anthropic Rust protobuf 函式庫 buffa 存在約 22 倍記憶體放大的 DoS 漏洞（Endor Labs AI SAST 發現，修補待確認）。07-02，Hacker News 轉載社群逆向工程指控（標題直指「embedded spyware」），為 06-30 中國代理偵測事件補上版本號（v2.1.91 起）、binary 混淆手法與「隱形修改 system prompt」回傳機制等技術細節——**仍屬社群單方指控，Anthropic 無官方回應、第三方資安機構未驗證（待查證）**。加上 Mozilla 0din 揭露的乾淨 GitHub Repo prompt injection 至今未修補（四個第三方媒體確認），本頁已進入「隱私爭議 + 未修補設計缺陷 + 企業信任對峙」並行的階段。
 
@@ -29,7 +29,7 @@
 |------------|--------|---------|---------|------|
 | 同形字符隱寫術（疑對輸出嵌入不可見標記，針對中國 AI Lab 連線者注入系統提示） | 2026-07-01 | 所有使用輸出文字的用戶（隱私/透明度層） | 承諾修復（版本未定，見 [[topics/anthropic-commitments]]） | 🟡 官方承諾修復中 |
 | 中國代理偵測程式碼（v2.1.91 起偵測中國使用者/代理/AI 實驗室並隱形修改 system prompt，binary 疑遭混淆） | 2026-06-30 | 疑似全體用戶（地理位置偵測層） | 無回應 | ❓ 待查證（社群單方指控） |
-| Alibaba 傳禁用 Claude Code：疑似後門風險指控 | 2026-07-03 | 企業信任層（無具體技術細節） | 無回應（Alibaba 與 Anthropic 均未證實） | ❓ 待查證（單一媒體聲稱） |
+| Alibaba 禁用 Claude Code（疑似後門風險指控）；Meta 同日限制工程師使用 Claude | 2026-07-03（Alibaba 傳出）／2026-07-06（多媒體確認 + Meta 跟進） | 企業信任層（無具體技術細節） | 無回應（Alibaba、Meta、Anthropic 三方均未就「後門」技術層面證實或否認） | ❓ 待查證（多媒體聲稱，無第三方資安驗證） |
 | 乾淨 GitHub Repo 提示注入可取得完整系統控制（Mozilla 0din） | 2026-06-28 | 任何處理外部 repo 的工作流 | 無回應 | 🔴 未修補 |
 | CVE-2026-55407：buffa Rust protobuf 約 22 倍記憶體放大 DoS | 2026-07-01 | 使用 buffa 解碼路徑的服務 | 修補狀態待確認 | 🔴 未修補 |
 | Agentjacking：偽造 Sentry 錯誤報告劫持 Claude Code / Cursor / Cline | 2026-06-16 | 使用 Sentry MCP 整合的開發者 | 無官方修補，僅社群提供設定緩解（2026-06-27） | 🔴 未修補 |
@@ -45,7 +45,7 @@
 
 | 結論 | 狀態 | 日期 |
 |------|------|------|
-| Alibaba 傳禁用 Claude Code：疑似後門風險指控，無技術細節或第三方驗證 | 🔴 單一媒體聲稱（待查證） | 2026-07-03 |
+| Alibaba 禁用 Claude Code + Meta 限制工程師使用 Claude：疑似後門風險指控，無技術細節或第三方驗證，跨企業擴散 | 🔴 多媒體聲稱（待查證） | 2026-07-06 |
 | Claude Code 同形字符隱寫術：疑對輸出嵌入不可見標記，36Kr 確認針對中國 AI Lab 連線注入系統提示（HN 2263） | 🔴 Anthropic 承諾修復（版本未定） | 2026-07-01 |
 | CVE-2026-55407：buffa Rust protobuf unknown-field decoder 約 22 倍記憶體放大 DoS | ⚠️ 修補待確認 | 2026-07-01 |
 | 中國代理偵測程式碼：v2.1.91 起偵測中國使用者／代理／AI 實驗室並隱形修改 system prompt 回傳，binary 疑遭混淆 | 🔴 待查證（社群單方指控，官方無回應） | 2026-06-30 |
@@ -79,14 +79,17 @@
 
 ## 技術彙整
 
-### Alibaba 傳禁用 Claude Code：疑似後門風險指控（2026-07-03 新增，待查證）
+### Alibaba 禁用 Claude Code + Meta 限制工程師使用 Claude：疑似後門風險指控（2026-07-03 新增，2026-07-06 多媒體確認 + Meta 跟進，待查證）
 
-- **揭露來源**：Reuters 獨家（2026-07-03；https://www.reuters.com/world/china/alibaba-ban-claude-code-workplace-over-alleged-backdoor-risks-source-says-2026-07-03/）；American Bazaar、Seeking Alpha、Crypto News、WTVB 等媒體跟進轉載；HN score 313
-- **核心主張**：消息人士稱 Alibaba 已在職場環境禁止員工使用 Claude Code，理由為「疑似後門風險」（alleged backdoor risks）
-- **證據狀態**：報導未附具體技術細節、程式碼樣本或 CVE 編號，指控性質與 05-08 CVE-2026-39861（有 CVSS 評分與正式漏洞編號）等已確認漏洞不同，屬企業層級的信任判斷而非公開驗證的技術缺陷
+- **揭露來源（07-06 更新）**：qz.com、TechRadar、SDxCentral、digitimes 多家媒體同步報導（2026-07-06）；qz.com「Alibaba is banning employees from using Anthropic's Claude Code over alleged backdoor risks」（https://qz.com/alibaba-ban-claude-code-anthropic-backdoor-070626）；TechRadar「as US v China AI battle heats up」（https://www.techradar.com/pro/alibaba-is-banning-its-workers-from-using-claude-code-as-us-v-china-ai-battle-heats-up）；SDxCentral「Alibaba 'bans' Anthropic in AI Cold War as cybersecurity regulation heats up in China」（https://www.sdxcentral.com/news/alibaba-bans-anthropic-in-ai-cold-war-as-cybersecurity-regulation-heats-up-in-china/）；digitimes 聚焦中國轉向扶植本土 AI 編碼工具的產業政策背景（https://www.digitimes.com/news/a20260706VL201/alibaba-anthropic-claude-coding-security.html）
+- **原始揭露來源（07-03）**：Reuters 獨家（2026-07-03；https://www.reuters.com/world/china/alibaba-ban-claude-code-workplace-over-alleged-backdoor-risks-source-says-2026-07-03/）；American Bazaar、Seeking Alpha、Crypto News、WTVB 等媒體跟進轉載；HN score 313
+- **新增：Meta 同日限制工程師使用 Claude（07-06）**：Yahoo Finance 報導 Meta 亦限制工程師使用 Anthropic Claude（「Here's Why Meta Platforms, Inc. (META) is Restricting Engineers from Using Anthropic's Claude」，2026-07-05~07-06；https://finance.yahoo.com/technology/ai/articles/why-meta-platforms-inc-meta-224947515.html），與阿里巴巴禁令同日出現；Yahoo Finance 報導未說明 Meta 限制理由是否與「後門風險」指控相關，屬獨立限用事件，暫不預設兩者同因
+- **核心主張**：阿里巴巴以「疑似後門風險」（alleged backdoor risks）為由禁止員工使用 Claude Code；07-06 報導已從「消息人士傳出」升級為多家媒體確認的企業正式禁令
+- **證據狀態**：報導始終未附具體技術細節、程式碼樣本或 CVE 編號，指控性質與 05-08 CVE-2026-39861（有 CVSS 評分與正式漏洞編號）等已確認漏洞不同，屬企業層級的信任判斷而非公開驗證的技術缺陷
 - **雙向對峙脈絡**：本次為中國企業方向對 Claude Code 提出的安全指控；此前態勢是 Anthropic 被指控在 Claude Code 中嵌入偵測中國使用者的程式碼（06-30，見下方條目）。兩起指控方向相反但均未經第三方驗證，顯示中美雙方在 AI 工具信任議題上互相提出未經證實的技術指控
-- **可信度評估**：Reuters 為具公信力媒體，但本文仍屬「消息人士」二手訊息，Alibaba 與 Anthropic 均未公開證實或否認；標記「待查證」
-- **政策關聯**：與同日 FT 報導「Anthropic 封堵中國企業存取漏洞」形成呼應，屬中美 AI 工具政策拉扯的一部分，詳見 [[topics/anthropic-government-policy]]；企業採用面影響見 [[topics/enterprise-tool-tracker]]（商業記者負責）
+- **產業政策背景（digitimes，07-06）**：中國網路安全監管趨嚴，同時中國正轉向扶植本土 AI 編碼工具；SDxCentral 將阿里巴巴禁令與此監管趨嚴脈絡並列分析，TechRadar 則將事件置於中美 AI 對抗的更大敘事下
+- **可信度評估**：多家獨立媒體（qz.com、TechRadar、SDxCentral、digitimes）於 07-06 同步報導，確認度高於 07-03 單一 Reuters 消息人士報導；但**「後門」本身的技術指控仍無公開證據，Alibaba 與 Anthropic 均未就技術層面正式回應或否認**，標記維持「待查證」——媒體確認的是「禁令存在」，不是「後門指控成立」
+- **政策關聯**：與 07-03 FT 報導「Anthropic 封堵中國企業存取漏洞」形成呼應，屬中美 AI 工具政策拉扯的一部分，詳見 [[topics/anthropic-government-policy]]；企業採用面影響見 [[topics/enterprise-tool-tracker]]（商業記者負責）
 
 ### Claude Code 同形字符隱寫術機制（2026-07-01 新增，Anthropic 承諾修復）
 
@@ -337,6 +340,7 @@
 
 ## 參考來源
 
+- [[news/2026-07-06]]
 - [[news/2026-07-03]]
 - [[news/2026-07-02]]
 - [[news/2026-07-01]]
@@ -362,6 +366,9 @@
 ## 時序
 
 > 更早期時序見 [[topics/ai-agent-safety-archive]]
+
+### 2026-07-06
+- **[企業信任對峙，多媒體確認] 阿里巴巴禁令經 qz.com/TechRadar/SDxCentral/digitimes 多家媒體同步報導；Meta 同日限制工程師使用 Claude**：qz.com、TechRadar、SDxCentral、digitimes 於今日同步報導阿里巴巴已禁止員工使用 Claude Code（理由涉「疑似後門風險」），為 07-03 Reuters 獨家消息人士報導後的多媒體確認，企業禁令性質確立，但「後門」技術指控本身仍無公開證據；同日 Yahoo Finance 報導 Meta 亦限制工程師使用 Anthropic Claude（未說明是否同因），顯示企業對外部 AI 編碼工具的資安審查有跨企業（中美）擴散跡象（qz.com，https://qz.com/alibaba-ban-claude-code-anthropic-backdoor-070626；TechRadar，https://www.techradar.com/pro/alibaba-is-banning-its-workers-from-using-claude-code-as-us-v-china-ai-battle-heats-up；SDxCentral，https://www.sdxcentral.com/news/alibaba-bans-anthropic-in-ai-cold-war-as-cybersecurity-regulation-heats-up-in-china/；digitimes，https://www.digitimes.com/news/a20260706VL201/alibaba-anthropic-claude-coding-security.html；Yahoo Finance，https://finance.yahoo.com/technology/ai/articles/why-meta-platforms-inc-meta-224947515.html）；Alibaba、Meta、Anthropic 三方均未就「後門」技術層面正式回應，維持「待查證」；政策脈絡見 [[topics/anthropic-government-policy]]，企業採用面見 [[topics/enterprise-tool-tracker]]
 
 ### 2026-07-03
 - **[企業信任對峙，待查證] Alibaba 傳禁用 Claude Code：疑似後門風險指控**：Reuters 獨家報導（HN score 313）稱 Alibaba 已以「疑似後門風險」為由禁止員工職場使用 Claude Code；報導無具體技術細節或 CVE 編號，Alibaba 與 Anthropic 均未證實或回應；American Bazaar、Seeking Alpha、Crypto News、WTVB 等媒體跟進；與此前 Anthropic 被指控偵測中國使用者的爭議（06-30）方向相反，顯示中美雙方互相提出未經驗證的信任指控（Reuters，2026-07-03；https://www.reuters.com/world/china/alibaba-ban-claude-code-workplace-over-alleged-backdoor-risks-source-says-2026-07-03/）；同日 FT 報導 Anthropic 收緊政策封堵中國企業存取管道，政策脈絡詳見 [[topics/anthropic-government-policy]]

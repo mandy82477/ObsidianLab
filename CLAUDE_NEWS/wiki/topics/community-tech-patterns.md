@@ -3,11 +3,11 @@
 **狀態：** monitoring
 **領域：** 🌐 社群
 **開始日期：** 2026-04-25
-**最後更新：** 2026-07-05
-**最後新聞更新：** 2026-07-05
+**最後更新：** 2026-07-06
+**最後新聞更新：** 2026-07-06
 
-> **最新工作流模式**（2026-07-05）
-> 新增「本地小模型分流節省 context」機制觀察：Microsoft Fast Context 專案（已下架）以 local-Ollama task router 分流程式碼探索工作，聲稱節省 50–60% context token，代價是執行時間增加；原專案下架且無現行可安裝版本，複現性受限，成熟度標記 ⏳ 新興。07-03 更新：「額度監控與自動恢復」工具生態（CCLimitPing、LimitBar）。
+> **最新工作流模式**（2026-07-06）
+> 新增兩則模式：① CaveMan Skill 將單次回覆 token 從 70 降至 20，延續「穴居人模式」既有降耗思路的新實作；② 平行 Agent 即時對話地圖，讀取本機 JSONL transcript 呈現多 agent 進度，回應「20-instance 崩潰分析」「1000 Subagents Fan-out」已指出的規模化協調痛點，成熟度均標記 ⏳ 新興（單一低分實作，尚無採用數據）。07-05：本地小模型分流節省 context 機制觀察（Fast Context Task Router，原專案已下架）。
 
 ---
 
@@ -34,7 +34,7 @@
 | **多代理 PR Review** | 4-agent Code Review、對抗性審查（計畫前 + 程式碼後）、Read-Only Reviewer | ⚡ 活躍 | 架構師代理協調 + 多廠商模型交叉審查；對抗性審查者讀取真實 codebase；read-only 權限約束維持對立性 |
 | **Agent 版本控制** | ADR 注入、架構決策文件先於實作 | ⏳ 新興 | 決策文件先於實作，降低代理方向偏移風險 |
 | **Context 管理** | Just-in-Time @-file、Repo-as-Memory、Context Rot 修復 | ⚡ 活躍 | 即時取回優於預先加載；repo 是記憶體、模型是工作者；避免 context 過早飽和 |
-| **Agent 規模化** | 20-instance 崩潰分析、批量 OSS Bug 修復、Personas vs Tool-scoping、Mac Mini 自主 agent 部署、TBD（HN 4，agent-channels 跨 worktree 通訊） | ⏳ 新興 | 超過 10 個並行 agent 需獨立 worktree + orchestrator 協調層；工具範圍限制比角色描述更可靠的邊界守護；無人監督排程任務已有完整 Mac Mini M4 方案 |
+| **Agent 規模化** | 20-instance 崩潰分析、批量 OSS Bug 修復、Personas vs Tool-scoping、Mac Mini 自主 agent 部署、TBD（HN 4，agent-channels 跨 worktree 通訊）、live-log-viewer-next（平行 agent 即時對話地圖） | ⏳ 新興 | 超過 10 個並行 agent 需獨立 worktree + orchestrator 協調層；工具範圍限制比角色描述更可靠的邊界守護；無人監督排程任務已有完整 Mac Mini M4 方案；可觀測性層開始補足「多 agent 進度難追蹤」的協調盲點 |
 | **安全架構** | CLAUDE.md for K8s、語意層漂移 CI 測試、Trent 內嵌評估 | ⏳ 新興 | AI 加速開發下的系統性安全防線；CI 攔截語義退化 |
 | **跨環境 Agent 記憶** | Core Memory Packet、Agent 持續運作架構 | ⏳ 新興 | 跨編輯器 / 跨機器 / 跨模型的供應商中立記憶協定 |
 | **架構邊界合約** | ANMA YAML contracts、Hooks 強制驗證、ISO 29148 規格驅動 | ⏳ 新興 | 用合約與工業標準定義 AI 不可越過的架構規則；使便宜模型也能守規 |
@@ -53,6 +53,21 @@
 ## 技術彙整
 
 ### 2026-07
+
+#### CaveMan Skill：單次回覆 Token 從 70 降至 20 的極簡輸出模式新實作（2026-07-06）
+
+- **核心模式：** 開源 Claude Code skill「CaveMan」透過強制模型以極簡風格回應，聲稱可將單次回覆 token 使用量從約 70 降至約 20（降幅約 71%），延續「穴居人模式」（極簡輸出降低 token 消耗）的既有思路
+- **與既有模式的關係：** 與 2026-05-05 已記錄的「Caveman Skill 實測 65% 降耗」、2026-07-01「企業穴居人模式採用確認」（404 Media：OpenAI、Nvidia、GitHub 開發者採用）同屬同一模式家族的新實作版本；顯示極簡輸出降耗已從單一實測案例演變為社群持續產出的多個獨立實作
+- **來源：** [Claude Code with CaveMan (opensource skill) cuts token usage per response from 70 to 20](https://www.reddit.com/r/ClaudeCode/comments/1uox6ko/claude_code_with_cavemanopensoure_skill_cuts/)（Reddit r/ClaudeCode，07-06）
+- **成熟度：** ⚡ 活躍（沿用「穴居人模式」既有活躍分類；具體降幅為單一作者自述，未見第三方獨立複現數據）
+
+#### 平行 Agent 即時對話地圖：讀取本機 JSONL Transcript 的可觀測性工具（2026-07-06）
+
+- **核心模式：** 讀取 Claude Code / Codex 在本機留下的 JSONL transcript 檔案，即時解析並以視覺化「地圖」呈現多個平行 agent 的當前狀態與對話進度，解決「開了多個平行 agent 後不知道彼此進度」的協調痛點
+- **解決的問題：** 呼應既有「20-instance 崩潰分析」（2026-06-26）與「1000 Subagents Fan-out」（2026-07-01）已指出的規模化痛點——當平行 agent 數量增加，人工逐一切換視窗確認進度的成本迅速上升；此工具提供集中式可觀測層，補足官方尚未內建的多 agent 協調可視化
+- **與既有模式的關係：** 與「Agent 規模化」類別下既有子模式互補：既有模式聚焦「如何讓多 agent 穩定運作」（worktree 隔離、budget enforcement），此模式聚焦「運作中如何被人類即時看懂」；與 Grafana + Prometheus 企業監控（費用/用量導向）不同層次，此工具聚焦單機開發者的即時對話狀態，不涉及計費指標
+- **來源：** [Show HN: Orchestrate parallel Claude Code and Codex agents on a live map](https://github.com/Latand/live-log-viewer-next)（Hacker News Show HN，score 2）
+- **成熟度：** ⏳ 新興（單一低分 Show HN 專案，尚無採用數據；概念本身回應了規模化章節已反覆出現的真實痛點，值得後續觀察是否有更成熟工具跟進）
 
 #### 本地小模型分流節省 Context：Fast Context Task Router 機制觀察（2026-07-05）
 

@@ -3,6 +3,24 @@
 Append-only 紀錄。每次 ingest、query 或 lint 都在此追加一條。
 格式：`## [YYYY-MM-DD] 類型 | 說明`
 
+## 2026-07-06 Ingest | news/2026-07-06.md（57 則）
+
+- 來源日報：`news/2026-07-06.md`（57 則，10/10 來源；Google News 32 則、Hacker News 12 則、GitHub Issues 10 則、Reddit 11 則、Anthropic Status 1 則）
+- 分類派工：模型、功能、商業、安全政策、社群、人物（六類全數並行 foreground 派工）
+- 記者回報彙整：
+  - **模型**：`entities/fable-5.md` 新增「Anthropic 多模型一度大規模錯誤、Fable 5 一併受影響（同日解決）」與 Show HN Python-on-SNES 實測案例（解封後 90 分鐘修復 23 個編譯器 bug）；狀態維持 active，無 feature-radar
+  - **功能**：`entities/claude-code.md` 新增 7 條高互動 GitHub Issue（#4953 120GB+ 記憶體洩漏 OOM、#5674 macOS ECONNRESET、#2805 Linux CRLF、#14828 Windows 主控台閃爍、#14088 OneDrive/mapped drive 對話歷史遺失、#13354 session 額度接續、#36151 Mobile 多帳號切換）+ 三則累積數更新（#73125 391 讚、#69238、#60705）；平台相容性組頭 11→13、計費配額組頭 6→7；均非 regression 故不動升版風險列。**主編轉知處理**：`official-community-gap.md` 產品化矩陣新增「多平行 agent 即時可觀測性／協調地圖」列（❌ 無官方對應，Agent View 僅列表式非 live map）
+  - **商業**：`anthropic-business.md` 新增 **TeraWulf 190 億美元/20 年肯塔基資料中心租約**（6+ 家財經媒體、股價 +17%、IREN +5% 聯想）、Samsung 晶片洽談、Google Workspace 受治理 agent、小型企業轉單 Salesforce；`competitor-landscape.md` 新增 Z.ai ZCode、Base 44 vs Anthropic 建站實測、FT 上市結構性挑戰；`enterprise-tool-tracker.md` 新增 Meta 限用列（❓未確認，缺來源細節）；今日無定價數字變動，pricing.md 未動
+  - **安全政策**：`ai-agent-safety.md`、`anthropic-government-policy.md` 更新 Alibaba 禁令多媒體確認（單一媒體→多媒體聲稱）+ Meta 同日限用；「中美 AI 工具信任對峙」獨立頁評估——三方未就「後門」正式回應，未達門檻，暫緩建頁並於 government-policy 時序明文記錄評估結論
+  - **社群**：`community-tech-discussions.md` 新增 HN 97 分「Anthropic 好感度流失」文（API 穩定性 + vendor lock-in，🔥🔥🔥）；額度焦慮系列跨 9 天（06-27→07-03→07-06）合併升級 ☄️閃現→🌊延燒；`community-tech-patterns.md` 新增 CaveMan skill（token 70→20）、平行 Agent 即時對話地圖（live-log-viewer-next，⏳）；低分 Show HN（Peek-CLI/Open Science/live-memory/terminai）未達門檻未收錄
+- feature-radar 新增：無（今日條目為 GitHub Issues、企業/基礎設施商業事件、社群討論，均不符官方新功能准入定義）；版本行（v2.1.201）、倒數區塊（7/7 Fable 5 配額過渡、8/31 Sonnet 5 促銷）、本週推薦均維持不變，僅同步最後更新日期
+- anthropic-commitments：本日無「官方承諾修復/政策/拒絕/兌現」事件，未動此頁
+- overview.md：更新「當前局勢」——信任危機擴散（Alibaba 多媒體確認 + Meta 同日限用）、新增「基礎設施擴張」段落（TeraWulf 租約）；近兩週重大事件表 prepend 4 筆 07-06 事件；商業動態段落同步
+- index.md 狀態變更：無；近期異動新增 9 筆頁面更新記錄
+- 新增頁面：無
+- 摘要：今日雙主軸——TeraWulf 190 億美元資料中心租約（算力自主里程碑）+ 企業安全審查擴散（Alibaba 多媒體確認 + Meta 跟進）；Claude Code 穩定性 issue 集中爆發
+- 呈現品質：全部通過（六記者 + 主編轉知；ai-agent-safety.md、anthropic-business.md、enterprise-tool-tracker.md 三頁記者主動修復摘要/callout 超段問題）
+
 ## 2026-07-05 Ingest | news/2026-07-05.md（29 則）
 
 - 來源日報：`news/2026-07-05.md`（29 則，10/10 來源；GitHub Issues 10 則、Reddit 10 則、Hacker News 6 則、Google News 3 則）

@@ -3,14 +3,14 @@
 **狀態：** ongoing
 **領域：** 💼 商業
 **開始日期：** 2026-05-26
-**最後更新：** 2026-07-05
-**最後新聞更新：** 2026-07-05
+**最後更新：** 2026-07-06
+**最後新聞更新：** 2026-07-06
 
-> **最新企業採用異動**（2026-07-05）
+> **最新企業採用異動**（2026-07-06）
+> Meta 傳出限制工程師使用 Claude（來源與規模細節待補，暫標 ❓ 未確認），若確認將是繼 Alibaba（安全疑慮）、Microsoft（成本）、JPMorgan Chase（出口管制）後第四類具名頂尖科技企業縮限案例；同日 The Information 報導部分小型企業改用 Claude 自建工作流取代 Salesforce，屬企業軟體採購行為變化的新訊號。
+
+> **前次動態**（2026-07-05）
 > Alibaba 禁令生效日確認為 **2026-07-10**（The Indian Express 跟進報導），是繼 07-03 Reuters 獨家、07-04 TechCrunch 等多媒體擴散後的具體生效時間點確認；禁令以「疑似後門風險」為由，指控本身未經 Anthropic 證實，安全政策面向另見 [[topics/ai-agent-safety]]。
-
-> **前次動態**（2026-06-30）
-> 單日新增四項具名企業/機構動態：Rubrik（Claude Code 專用安全層）、Okta（XAA/MCP 安全整合）、Globant（AI Pods 交付框架）、DataArt（Partner Network 精選夥伴），加州州政府（Newsom 協議，06-29）正式採用 Claude；同時 Lindy（AI 新創）100% 流量從 Claude 切至 DeepSeek，為具名 API 客戶流失案例（詳見 [[topics/enterprise-cost-management]]、[[topics/competitor-landscape]]）。
 
 ## 摘要
 
@@ -30,6 +30,7 @@
 
 | 企業 | 規模 | AI 編碼工具 | 狀態 | 事件日期 | 備註 | 確認日期 |
 |------|------|-----------|------|---------|------|---------|
+| Meta | 頂尖 | Claude | ❓ | — | 傳出限制工程師使用 Claude，原文節錄未提供具體來源連結、規模範圍或生效日期，暫標未確認，待後續媒體報導補充細節後確認狀態 | 2026-07-06 |
 | Alibaba | 頂尖 | Claude Code | ❌ | 2026-07-10 | 傳出以「疑似後門風險」為由禁止員工職場使用 Claude Code，生效日確認為 2026-07-10（The Indian Express 07-05 跟進報導提供具體生效日期）；來源指控未經 Anthropic 證實，多家媒體跟進（American Bazaar、Seeking Alpha、Crypto News、WTVB、TechCrunch 07-04）；首個以「安全疑慮」為由退出的具名企業案例，區別於此前的成本（Microsoft）與出口管制（JPMorgan）兩類退出理由；安全指控本身詳見 [[topics/ai-agent-safety]] | 2026-07-05 |
 | Lindy | 中型（AI 新創） | Claude API → DeepSeek | 🔄 | 2026-06-29 | CEO Flo Crivello 公開宣告 100% 流量從 Claude 切換至 DeepSeek，每月省下數百萬美元；「最省錢 > 最強模型」趨勢最具名案例，屬 API 客戶成本敏感度案例（詳見 [[topics/enterprise-cost-management]]、[[topics/competitor-landscape]]） | 2026-06-29 |
 | 加州州政府 | 政府（州級） | Claude API | ✅ | 2026-06-29 | 州長 Newsom 與 Anthropic 正式簽署協議，Claude 進入加州州政府應用；迄今最明確的美國地方政府採用案例（詳見 [[topics/anthropic-business]]） | 2026-06-29 |
@@ -96,6 +97,10 @@ Claude Code 是工程師日常編碼工具（CLI），成本隨使用量線性�
 ---
 
 ## 時序
+
+### 2026-07-06
+- **Meta 傳出限制工程師使用 Claude（未確認）**：日報補充提及 Meta 限制工程師使用 Claude，惟未提供具體來源連結、規模範圍或生效日期，暫列為 ❓ 未確認狀態，待後續獨立媒體報導確認後更新（若確認屬實，將是繼 Alibaba 安全疑慮、Microsoft 成本、JPMorgan Chase 出口管制後第四種退出/縮限驅動因素的具名頂尖科技企業案例）
+- **小型企業改用 Claude 自建工作流取代 Salesforce**：The Information 報導部分小型企業改用 Claude 自建工作流取代 Salesforce，反映企業軟體採購行為變化；報導未點名具體企業或提供規模數字，暫不單獨列入使用現況表，僅記錄為採購行為觀察（The Information https://www.theinformation.com/articles/small-firms-use-claude-quit-salesforce）
 
 ### 2026-07-05
 - **Alibaba 禁令生效日確認為 7/10**：The Indian Express 跟進報導，確認阿里巴巴將於 2026-07-10 起正式禁止員工使用 Claude Code，作為美中 AI 競爭加劇下的因應措施；提供 07-03 Reuters 獨家報導以來首個具體生效日期，此前僅知禁令已宣布但無明確時間點；事件日期欄已由報導日 07-03 更新為生效日 07-10（The Indian Express https://indianexpress.com/article/technology/artificial-intelligence/alibaba-ban-claude-code-us-china-ai-10772429/）

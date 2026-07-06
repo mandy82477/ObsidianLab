@@ -4,11 +4,11 @@
 **狀態：** active（正式發布；出口管制已解除，2026-07-01 起全球恢復存取）
 **領域：** 🤖 模型
 **首次出現：** 2026-06-09
-**最後更新：** 2026-07-05
-**最後新聞更新：** 2026-07-03
+**最後更新：** 2026-07-06
+**最後新聞更新：** 2026-07-06
 
-> **最新進展**（2026-07-02）
-> Reddit 揭露 Fable 5 redeploy 隨附「Defense in Depth」新安全措施：更嚴格的資安/程式碼請求分類器，判定高風險時自動 fallback 至 Opus 4.8。首日已有負面實測（資安審查請求被誤判攔截、化學提問被拒），與 6/11「已部分撤回」的隱性降級爭議性質不同——這次分類器行為公開可見，但誤判範圍疑似超出 coding/cybersecurity。
+> **最新進展**（2026-07-06）
+> Anthropic 多個模型一度發生大規模錯誤，Fable 5 亦受影響，事件於同日解決（[Anthropic Status](https://status.claude.com/incidents/tl8x3p1msff2)）。另有 HN 實測案例（Show HN，6 分）佐證解封後能力：作者在出口管制期間卡關三週的 Super Nintendo Python 移植專案，Fable 5 解封後 90 分鐘內找出根本問題並修復 23 個編譯器 bug（[fabian-kuebler.com](https://fabian-kuebler.com/posts/fable-python-snes/)）。
 
 ---
 
@@ -148,6 +148,11 @@ claude --model claude-fable-5-20260609
 ## 歷史記錄
 
 ### 解禁後（2026-07-01 起）
+
+#### 2026-07-06
+**Anthropic 多模型大規模錯誤事件（同日解決）+ HN 實測佐證解封後能力**：
+- **服務中斷**：Anthropic Status 通報多個模型一度出現大規模錯誤，Fable 5 也一併受影響，事件於同日解決，無需採取行動（[Anthropic Status](https://status.claude.com/incidents/tl8x3p1msff2)）；同期 AOL 彙整讀者對 Claude API 不穩定的抱怨與詢問（Response incomplete Claude / Is Claude down / Claude api error，07-05 22:24 UTC），屬服務穩定性面向，非出口管制或護欄爭議重演
+- **Show HN 實測：Python 移植 Super Nintendo（6 分）**：作者以此專案作為 Fable 5 的實測案例——出口管制期間（6/13–7/1）專案卡關三週，Fable 5 解封後 90 分鐘內找出根本問題並修復 23 個編譯器 bug（[fabian-kuebler.com](https://fabian-kuebler.com/posts/fable-python-snes/)）；訊號雖弱（HN 6 分），但具體佐證解封後 Fable 5 在複雜除錯任務上的實際生產力
 
 #### 2026-07-03
 **配額重置規則釐清 + 消耗速度落差極大（社群策略彙整見「配額與計費過渡」子區塊）**：Reddit 社群釐清 Fable 5 額度重置時間依訂閱起始日而異，非統一週期（[Reddit r/ClaudeCode](https://www.reddit.com/r/ClaudeCode/comments/1umt5h5/fable_resets_on_monday_if_you_held_a_plan_already/)）；同日回報顯示個體消耗速度差異懸殊，2 天內燒完額度、大型基因體分析工作流受衝擊等案例並陳（[Reddit](https://www.reddit.com/r/ClaudeCode/comments/1umtox4/i_burned_through_my_fable_5_usage_in_2_days_so_i/)、[Reddit](https://www.reddit.com/r/ClaudeCode/comments/1umtlqh/sad_about_fable_restrictions/)）。
