@@ -2,10 +2,18 @@
 
 LLM 查詢此 wiki 時，**先讀這個檔案**找相關頁面，再讀具體頁面取得詳細資訊。
 
-**最後更新：** 2026-07-06
+**最後更新：** 2026-07-07
 ---
 
 ## 近期異動
+
+- [[topics/ai-agent-safety]]／[[topics/anthropic-commitments]] — 2026-07-07：**「隱藏追蹤器」事件轉折**——Anthropic 定調先前被指控的 hidden tracker 為內部「實驗」、非惡意（Malwarebytes/Axios/The Neuron）；commitments spyware 回應狀態 ❓→🟡（官方單方說法，社群接受度待觀察）
+- [[topics/enterprise-tool-tracker]]／[[topics/anthropic-government-policy]] — 2026-07-07：Alibaba 禁令三媒體（PYMNTS/Benzinga/BeInCrypto）再確認，補「**改用內部工具 Qoder**」細節（生效日 07-10）
+- [[topics/enterprise-tool-tracker]] — 2026-07-07：新增 **Alberta 省政府**（加拿大）具名採用——2025 起用 Claude Code、20 小時掃 4.66 億行程式碼完成資安審查
+- [[entities/claude-code]]／[[feature-radar]] — 2026-07-07：**v2.1.202** `/config` 新增「Dynamic workflow size」設定（🔥🔥，feature-radar 新條目）；已知問題新增 3 條（終端機複製縮排 #18170、每輪工具呼叫限制回歸 #33969、Cowork 缺 RTL #38005）
+- [[topics/competitor-landscape]] — 2026-07-07：CNBC 中國本土模型成本驅動採用上升；DeepSeek 推開源 agent 工具「Deep Code」對標 Claude Code
+- [[entities/teresa-carlson]] — 2026-07-07：**新頁面**，前 Microsoft/AWS 高管加入 Anthropic 主導公部門業務（待核實）
+- [[entities/pricing]] — 2026-07-07：印度 INR 定價需求互動數更新（594 反應/205 留言，仍無官方回應）
 
 - [[topics/anthropic-business]] — 2026-07-06：**TeraWulf 簽署 190 億美元、20 年期肯塔基資料中心租約**（WSJ/CNBC/Barron's 等 6+ 家財經媒體同步報導，TeraWulf 股價當日漲約 17%，IREN 盤後漲 5% 聯想）；Samsung 客製晶片洽談、Google Workspace 受治理 workflow agent 整合、小型企業轉單 Salesforce 跟進
 - [[topics/anthropic-government-policy]]／[[topics/ai-agent-safety]] — 2026-07-06：Alibaba 禁用 Claude Code 經 qz.com/TechRadar/SDxCentral/digitimes 多媒體確認為正式禁令；同日 Meta 亦被報導限制工程師使用 Claude，企業安全審查似擴散；「中美 AI 工具信任對峙」獨立頁評估——三方仍未就「後門」正式回應，未達建頁門檻
@@ -101,6 +109,7 @@ LLM 查詢此 wiki 時，**先讀這個檔案**找相關頁面，再讀具體頁
 | [[entities/fiona-fung]] | person | 👤 人物 | active | Anthropic 工程副總裁；「Claude Code 讓工程師更孤獨；coding 不再是瓶頸」論述（2026-06-22） |
 | [[entities/tom-brown]] | person | 👤 人物 | active | Anthropic 聯合創辦人（GPT-3 共同作者）；2026-06-25 接管 Fable 5 出口管制與白宮談判 |
 | [[entities/dario-amodei]] | person | 👤 人物 | active | Anthropic CEO：政府監管立場、企業文化論述、Code with Claude 大會現場宣布速率政策 |
+| [[entities/teresa-carlson]] | person | 👤 人物 | active（待核實）| 前 Microsoft、AWS 高管；2026-07-07 加入 Anthropic 主導公部門（public sector）業務（FedScoop）|
 | [[entities/chris-olah]] | person | 👤 人物 | active | Anthropic 共同創辦人、AI 可解釋性研究先驅；2026-05-26 梵蒂岡封論揭幕演講 |
 | [[entities/opencode]] | product | 🛠️ 工具/功能 | active（快速成長）| Claude Code 主要開源替代品，157K 開發者分流，OpenCode-power-pack 移植官方 11 個 skills |
 | [[entities/claude-tag]] | feature | 🛠️ 工具/功能 | active | Claude Tag：Slack-native AI 協作工具，可讀取頻道上下文、跨 session 記憶、主動完成任務；Anthropic 內部 65% 程式碼由其生成 |

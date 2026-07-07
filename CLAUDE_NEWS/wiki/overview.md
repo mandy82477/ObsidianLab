@@ -1,6 +1,6 @@
 # Claude / Anthropic 生態系概覽
 
-**最後更新：** 2026-07-06
+**最後更新：** 2026-07-07
 
 ---
 
@@ -10,7 +10,7 @@
 
 **解禁落地**：出口管制封鎖期確認為 18–19 天，Anthropic 履行承諾之一——Fable 5 redeploy 隨附「Defense in Depth」新安全分類器，高風險 coding 請求自動 fallback 至 Opus 4.8（首日已有誤判負面實測）。7/7 前 Pro/Max/Team 享 50% 配額，7/7 後轉為 usage-based billing（**倒數中**，詳見 [[feature-radar]]）。
 
-**信任危機（擴散中）**：7/2 Reddit 出現指控稱 Claude Code 自 2.1.91 版起偷偵測使用者是否透過代理連線、是否位於中國，並將判斷結果隱藏於 system prompt 回傳，同時疑似混淆該段程式碼（「embedded spyware」），目前僅單方指控待查證。7/3 Alibaba 以「疑似後門風險」為由禁用 Claude Code（Reuters 報導）；**7/6 經 qz.com、TechRadar、SDxCentral、digitimes 多媒體確認為正式禁令，且同日 Meta 亦被報導限制工程師使用 Anthropic Claude**——企業安全審查從單一案例擴散為跨企業趨勢。Alibaba、Meta、Anthropic 三方均未就「後門」技術層面正式回應，「中美 AI 工具信任對峙」獨立頁評估暫緩（未達門檻）。
+**信任危機（Anthropic 首次回應）**：7/2 Reddit 指控 Claude Code 自 2.1.91 版起偷偵測使用者是否透過代理連線、是否位於中國，並將判斷隱藏於 system prompt（「embedded spyware」）。**7/7 Anthropic 正式回應，定調該隱藏追蹤器為內部『實驗』、非惡意設計**（Malwarebytes、Axios、The Neuron 報導），是此前單方指控的首次官方定性——惟屬官方單方說法，社群接受度與追蹤機制是否移除仍待觀察（[[topics/anthropic-commitments]] spyware 回應狀態 ❓→🟡）。企業面：7/3 起 Alibaba 以資安疑慮禁用 Claude Code，**7/7 三媒體（PYMNTS/Benzinga/BeInCrypto）再確認並補『改用內部工具 Qoder』細節**（生效 07-10）；同期 Meta 傳限制工程師使用（未確認）。「中美 AI 工具信任對峙」獨立頁評估仍暫緩（未達門檻）。
 
 **基礎設施擴張（新）**：7/6 Anthropic 與比特幣礦業轉型公司 TeraWulf 簽署 **20 年期、190 億美元**肯塔基資料中心租約，WSJ/CNBC/Barron's 等 6+ 家財經媒體同步報導，TeraWulf 股價當日漲約 17%、IREN 因合約臆測盤後漲 5%。這是繼三星客製晶片洽談後另一項算力自主布局的重大訊號。
 
@@ -72,10 +72,13 @@
 
 ---
 
-## 近兩週重大事件（2026-06-21 至 2026-07-06）
+## 近兩週重大事件（2026-06-21 至 2026-07-07）
 
 | 日期 | 事件 | 影響 |
 |------|------|------|
+| 07-07 | **Anthropic 定調「隱藏追蹤器」為內部實驗、非惡意**（Malwarebytes/Axios/The Neuron） | 🔴→🟡 spyware 指控首次官方回應 |
+| 07-07 | Alibaba 禁令三媒體再確認，補「改用 Qoder」細節；Alberta 省政府具名採用（20hr 掃 4.66 億行） | 💼 企業版圖一退一進 |
+| 07-07 | Claude Code v2.1.202：`/config` 新增 Dynamic workflow size 設定 | 🛠️ 官方新設定 |
 | 07-06 | **TeraWulf 簽 190 億美元、20 年肯塔基資料中心租約**（WSJ/CNBC/Barron's 等 6+ 家，股價 +17%） | 💼 算力自主布局里程碑 |
 | 07-06 | **Alibaba 禁令多媒體確認 + Meta 同日限用 Claude** | 🔴 企業安全審查擴散 |
 | 07-06 | HN 97 分「Anthropic 好感度流失」文（API 穩定性 + vendor lock-in） | 🟡 開發者信任訊號 |

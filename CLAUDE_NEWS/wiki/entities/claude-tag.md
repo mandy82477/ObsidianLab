@@ -4,10 +4,12 @@
 **狀態：** active
 **領域：** 🛠️ 工具/功能
 **首次出現：** 2026-06-24
-**最後更新：** 2026-06-24
-**最後新聞更新：** 2026-06-24
+**最後更新：** 2026-07-07
+**最後新聞更新：** 2026-07-07
 
 ## 現況
+
+**最新動態：** Anthropic Status 於 2026-07-07 確認 Claude Tag 的 GitHub 操作一度出現錯誤率升高，官方已展開調查（[事故頁](https://status.claude.com/incidents/d23j8s7t8rx2)），細節見下方「穩定性事件」。
 
 Claude Tag 是 Anthropic 於 2026-06-24 正式發布的 Slack-native AI 協作工具，讓 AI 以隊友身份加入 Slack 頻道，可讀取頻道上下文、記憶資訊、主動完成任務，並連接程式碼庫、工具與資料。Anthropic 內部已有 **65% 產品程式碼**由 Claude Tag 生成，定位為 Claude Code 向「更主動、更團隊協作」方向的延伸。
 
@@ -29,6 +31,10 @@ Claude Tag 是 Anthropic 於 2026-06-24 正式發布的 Slack-native AI 協作�
 - **主動任務完成**：可在頻道中主動執行任務，而非僅被動回覆
 - **工具 / 資料連接**：可連接程式碼庫、內部工具與外部資料源
 
+## 穩定性事件
+
+- 🔴 **調查中**｜**GitHub 操作錯誤率一度升高**（2026-07-07）：Anthropic Status 頁面確認 Claude Tag 的 GitHub 操作一度出現錯誤率升高，官方已展開調查，尚未公布根因或修復時程；見 [事故頁](https://status.claude.com/incidents/d23j8s7t8rx2)
+
 ## 使用指南
 
 使用者可透過 Anthropic 官方發布頁面申請使用：
@@ -47,3 +53,4 @@ Anthropic 官方公告：https://www.anthropic.com/news/introducing-claude-tag
 | 日期 | 事件 |
 |------|------|
 | 2026-06-24 | Anthropic 正式發布 Claude Tag，進入今日 HN 熱門討論（情緒 😊）；Anthropic 內部 65% 產品程式碼由 Claude Tag 生成（官方公告數據） |
+| 2026-07-07 | GitHub 操作錯誤率一度升高，Anthropic Status 頁面確認並展開調查 |

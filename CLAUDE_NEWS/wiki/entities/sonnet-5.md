@@ -4,8 +4,8 @@
 **狀態：** active（正式發布）
 **領域：** 🤖 模型
 **首次出現：** 2026-07-01
-**最後更新：** 2026-07-02
-**最後新聞更新：** 2026-07-02
+**最後更新：** 2026-07-07
+**最後新聞更新：** 2026-07-07
 
 > **最新動態**（2026-07-02）
 > 發布次日出現兩則爭議性回饋（皆屬主觀/分析性質，非量化評測）：HN 一篇分析文章指 Anthropic 修改了官方對比圖表（原版本讓 Sonnet 5 表現不佳），引發資料呈現可信度討論（score 3，訊號弱）；同時 Reddit 多位使用者反映 Sonnet 5 雖智力提升，但互動個性/語氣不如 Sonnet 4.6。
@@ -86,3 +86,6 @@ claude --model claude-sonnet-5-20260701
 
 ### 2026-07-01
 **正式發布**：Claude Sonnet 5 正式上線，定位最 agentic Sonnet。效能接近 Opus 4.8，促銷定價 $2/$10 per Mtok 至 2026-08-31。Claude Code v2.1.197 設為預設模型。Terminal-Bench 2.1（2026-06）有明確排名；社群稱「cost reset for AI agents」（多篇社群評測，待具體 benchmark 連結補充）。
+
+### 2026-07-07
+**錯誤率一度升高（同日解決）**：Anthropic Status 通報 Claude Sonnet 5 錯誤率升高（Elevated errors），事件於 07:37 UTC 解決，無需採取行動（[Anthropic Status](https://status.claude.com/incidents/hh9hj15mxkrx)）。屬穩定性事件，非能力或定價變化。

@@ -4,8 +4,8 @@
 **狀態：** active（持續調整中）
 **領域：** 💼 商業
 **首次出現：** 2026-04-25
-**最後更新：** 2026-07-06
-**最後新聞更新：** 2026-07-04
+**最後更新：** 2026-07-07
+**最後新聞更新：** 2026-07-07
 
 > **最新計費政策異動**（2026-07-04）
 > Anthropic 推出企業版 Claude 支出控管（spend controls）功能，回應企業 agentic AI 帳單頻繁超支的普遍痛點（Tech Times），是官方首次針對 [[topics/enterprise-cost-management]] 長期呼籲的「部門/團隊層級預算分配與上限設定」缺口推出產品化解法；具體控管粒度（部門層級／per-user／即時警報）尚未公開，待後續報導補充。
@@ -127,7 +127,7 @@ git commit 歷史出現大寫字串「HERMES.md」會觸發靜默切換至 API �
 
 #### 2026-07-03：印度盧比定價需求（未滿足需求，官方未回應）
 
-- **GitHub Issue 要求 INR 在地化定價方案**：印度用戶在 `anthropic/claude-code` Issue #17432 要求 Anthropic 推出盧比計價方案，比照 OpenAI（ChatGPT）、Google（Gemini）已有的在地化定價；留言數 204、👍 584 reactions，為近期社群需求類 issue 中互動量顯著較高者。**注意**：純社群 feature request，Anthropic 無官方回應或時程承諾；若 Anthropic 未來跟進在地化定價，將直接影響印度市場（全球最大 AI 開發者社群之一）的訂閱轉換率（推論）（GitHub https://github.com/anthropics/claude-code/issues/17432）
+- **GitHub Issue 要求 INR 在地化定價方案（持續發酵，互動量攀升）**：印度用戶在 `anthropic/claude-code` Issue #17432 要求 Anthropic 推出盧比計價方案，比照 OpenAI（ChatGPT）、Google（Gemini）已有的在地化定價。互動量持續攀升：留言數由 204 增至 **205**、reactions 由 👍584 增至 **594**（2026-07-07 查證），為近期社群需求類 issue 中互動量顯著較高者之一。**注意**：純社群 feature request，Anthropic 至今（07-07）仍無官方回應或時程承諾；若 Anthropic 未來跟進在地化定價，將直接影響印度市場（全球最大 AI 開發者社群之一）的訂閱轉換率（推論）（GitHub https://github.com/anthropics/claude-code/issues/17432）
 
 #### 2026-07-01：Claude Sonnet 5 促銷定價 + Fable 5 計費架構調整
 

@@ -3,11 +3,11 @@
 **狀態：** monitoring
 **領域：** 💼 商業
 **開始日期：** 2026-04
-**最後更新：** 2026-07-06
-**最後新聞更新：** 2026-07-06
+**最後更新：** 2026-07-07
+**最後新聞更新：** 2026-07-07
 
-> **最新競品動態**（2026-07-06）
-> Z.ai 推出免費工具 ZCode，直接對標 Cursor 與 Claude Code——以「免費」正面挑戰 Anthropic 的訂閱/API 雙軌計費模式；同日 Business Insider 實測 Base 44 新模型（base-1）與 Anthropic 建站速度，AI 建站賽道的模型層競爭延伸至實測比較；FT 分析 OpenAI 與 Anthropic 未來若上市（float）可能面對的結構性挑戰，為 IPO 前景添入謹慎論調。
+> **最新競品動態**（2026-07-07）
+> CNBC 報導，在 OpenAI、Anthropic 使用成本上升的背景下，中國本土 AI 模型在美國企業端採用率上升——是繼 DeepSeek（Lindy 案例）、Zhipu Z.ai 之後，「成本驅動企業轉向中國模型」趨勢首次獲主流財經媒體以總體視角確認；同日 DeepSeek 生態系推出開源 agent 工具「Deep Code」，被視為直接對標 Claude Code 的新競品。
 
 ---
 
@@ -84,12 +84,13 @@ Claude Code 已成為 AI 輔助編碼的標竿產品，但競爭正快速升溫�
 - **重大事件**：SpaceX 以 $60B 正式完成收購 Cursor（2026-06-17 確認）；收購整合 SpaceX / xAI 生態，使 Cursor 獲得 SpaceX 資源支撐，直接衝擊 Claude Code vs Cursor 競爭態勢；Cursor 此前與 Anthropic 有深度整合關係，收購後生態歸屬方向待觀察（dev.to、9to5Mac）
 
 ### DeepSeek 🔴
-- **狀態**：正式宣布建構 Claude Code 競品（2026-05-22）；DeepSeek V4 Flash 顛覆 agent 定價（2026-06-26）；Lindy 100% 切換案例（2026-06-29）
+- **狀態**：正式宣布建構 Claude Code 競品（2026-05-22）；DeepSeek V4 Flash 顛覆 agent 定價（2026-06-26）；Lindy 100% 切換案例（2026-06-29）；推出開源 agent 工具「Deep Code」直接對標 Claude Code（2026-07-07）
 - **策略**：「Beijing Wants the Whole Stack」——DeepSeek 不只是低成本替代生態，而是公開宣稱要打造從模型到開發工具的完整技術棧
 - **既有基礎**：DeepClaude（聲稱降低 17 倍成本）、DeepSeek-based Claude Code clone（8,700 Stars）
 - **關鍵定價衝擊（2026-06-26）**：DeepSeek V4 Flash（開源，成本較 Claude API 降低逾 100 倍）打破 Anthropic 以較高 API 定價補貼自家 Claude Code 等 agent 服務的商業邏輯；Microsoft 等廠商已實際切換至 DeepSeek 執行層（ref: rtrvr.ai https://www.rtrvr.ai/blog/code-as-plan-deepseek-flash-text-only-browser-agent）。**對 Anthropic 的意涵**：訂閱補貼依賴 API 定價差距維持，DeepSeek Flash 壓縮此空間；若企業持續切換執行層，Anthropic 的 token 份額將流失至競品（推論）
 - **具名客戶承接（2026-06-29）**：AI 新創 Lindy CEO 公開宣告 100% 流量從 Claude 切至 DeepSeek，每月省下數百萬美元；是 DeepSeek 在 API 應用層承接 Anthropic 客戶的最大規模具名案例（CNBC https://www.cnbc.com/2026/06/26/openai-anthropic-new-ai-spending-reality-as-users-shift-to-efficiency.html）
 - **意義**：Claude Code 類產品已成為國家層面 AI 競爭的戰場；DeepSeek 轉向正面競爭標誌低成本替代生態進入下一階段；具名 API 客戶切換案例的累積正在成為可量化的市場份額流失訊號
+- **產品層再進一步（2026-07-07）**：DeepSeek 生態系推出開源程式設計 agent 工具「Deep Code」，被 finance.biggo.com 視為直接對標 Claude Code 的競品；與 Zhipu Z.ai 的 ZCode（07-06，免費）同週出現，顯示中國廠商正從「模型層對標」與「執行層替代」，加速擴展至「產品層開源工具」的第三條戰線（finance.biggo.com https://finance.biggo.com/news/a6f1bde2-c3a4-4aa4-93e9-911f6bce01e5）
 
 ### Zhipu Z.AI 🔴
 - **狀態**：Active（快速追趕中，2026-06-27 CNBC 確認；2026-07-06 推出免費工具 ZCode 直接對標 Cursor/Claude Code）
@@ -154,6 +155,10 @@ Claude Code 已成為 AI 輔助編碼的標竿產品，但競爭正快速升溫�
 ---
 
 ## 時序
+
+### 2026-07-07
+- **[總體視角確認成本驅動轉向] CNBC：中國本土模型因 OpenAI/Anthropic 成本上升，在美企擴大採用**：CNBC 報導，在 OpenAI、Anthropic 使用成本持續上升情況下，中國本土 AI 模型在美國企業端的採用率上升。**對競爭格局的意涵**：此前 DeepSeek（Lindy 案例，06-29）、Zhipu Z.ai（06-27、07-06 ZCode）均為個案或單一廠商視角，本次 CNBC 以總體趨勢視角確認「成本驅動企業轉向中國模型」已成一般性現象，而非孤立案例；對 Anthropic 而言意味著訂閱/API 雙軌定價的護城河持續受壓（CNBC https://www.cnbc.com/2026/07/07/chinese-ai-models-costs-us-openai-anthropic.html）
+- **[產品層新競品] DeepSeek 生態推出開源 agent 工具 Deep Code，對標 Claude Code**：finance.biggo.com 報導，DeepSeek 生態系推出開源程式設計 agent 工具「Deep Code」，被視為 Claude Code 競品。**對競爭格局的意涵**：與 07-06 Zhipu ZCode（免費）同週出現，顯示中國廠商正將競爭延伸至「開源 agent 工具」產品層，而非僅止於底層模型定價競爭（finance.biggo.com https://finance.biggo.com/news/a6f1bde2-c3a4-4aa4-93e9-911f6bce01e5）
 
 ### 2026-07-06
 - **[免費工具正面對標] Z.ai 推出免費 ZCode，直接對標 Cursor 與 Claude Code**：Techzine Global 報導，Zhipu 旗下 Z.ai 推出免費工具 ZCode，明確定位對標 Cursor 與 Claude Code。**對競爭格局的意涵**：繼 06-27 CNBC 報導 Zhipu 開源模型快速追趕後，此次以「免費」IDE/CLI 產品正面切入 Claude Code 的核心用戶場景，是中國廠商從「模型層對標」升級至「產品層免費競爭」的具體案例；對價格敏感的個人開發者與新創構成分流壓力（推論）（Techzine Global https://www.techzine.eu/news/devops/142702/z-ai-takes-on-cursor-and-claude-code-with-free-zcode/）

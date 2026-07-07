@@ -4,29 +4,29 @@
 僅收錄官方 changelog、release note 或官方公告來源；社群工具見 [[topics/community-tech-tools]]。
 每次 ingest 後由 LLM 維護：新增功能、更新熱度、補充社群回饋。
 
-**最後更新：** 2026-07-06
+**最後更新：** 2026-07-07
 
 ---
 
 ## ⭐ 本週推薦
 
 - **Claude Sonnet 5（Claude Code 新預設）**（熱度 🔥🔥🔥🔥🔥）：v2.1.197 起自動切換，1M context + 促銷 $2/$10/Mtok，agentic 效能接近 Opus 4.8，適合所有 Claude Code 使用者立即受益
-- **Claude Fable 5（出口管制全面解除）**（熱度 🔥🔥🔥🔥🔥）：2026-07-01 起全球恢復，Pro/Max/Team 用戶 7/7 前享 50% 配額，旗艦模型回歸
+- **Claude Fable 5（出口管制全面解除）**（熱度 🔥🔥🔥🔥🔥）：2026-07-01 起全球恢復，旗艦模型回歸；7/7 起 Fable 5 用量轉 usage-based billing（不再含在訂閱配額內）
 - **Claude Code Artifacts**（熱度 🔥🔥🔥🔥🔥）：工作階段即時輸出可共享互動網頁，適合需要向非工程師成員展示進度的開發者
 
 ---
 
 ## ⚠️ 升版風險（每次 ingest 更新）
 
-**最新版本：** v2.1.201（2026-07-03，Sonnet 5 sessions 不再使用 mid-conversation system role 傳遞 harness reminders）
+**最新版本：** v2.1.202（2026-07-07，`/config` 新增「Dynamic workflow size」設定）
 
 | 風險 | 嚴重度 | 說明 |
 |------|--------|------|
-| 隱寫術／代理偵測爭議 | 🔴 | v2.1.196 binary 含同形字符替換函式（HN 2263），07-02 升級為「embedded spyware」指控（單方指控待查證）；Anthropic 承諾修復但**修復版尚未發布** |
+| 隱寫術／代理偵測爭議 | 🟡 | v2.1.196 binary 含同形字符替換函式（HN 2263），07-02 升為「embedded spyware」指控；**07-07 Anthropic 定調該隱藏追蹤器為內部「實驗」、非惡意**（官方單方說法，社群接受度與是否移除待觀察）|
 | Fable 5 Defense in Depth 誤判 | 🟡 | 解禁後新安全分類器將高風險 coding 請求 fallback 至 Opus 4.8，首日已有誤判實測案例 |
 | 成本感知變化 | 🟡 | 07-01 起社群回報費用顯示疑似 5x 暴增（計算方式爭議中）；搭配 Sonnet 5 促銷價實際費用需自行核對 |
 
-**建議：** 想用 Sonnet 5 + 1M context 可升 v2.1.197；對隱私敏感（尤其涉中國區網路環境）者，建議等隱寫術修復版發布再升。
+**建議：** 想用 Sonnet 5 + 1M context 可升 v2.1.197 以上；隱寫術爭議 Anthropic 已回應定調「實驗」但社群未驗證，對隱私敏感（尤其涉中國區網路環境）者仍建議留意後續。
 
 ---
 
@@ -34,8 +34,10 @@
 
 | 截止日 | 事件 | 到期後 | 你該做的決定 |
 |--------|------|--------|------------|
-| **2026-07-07** | Fable 5 訂閱配額過渡期結束 | Pro/Max/Team 使用 Fable 5 改為 usage-based billing（不含在訂閱內） | 重度 Fable 5 使用者：評估 7/7 前完成大型任務，或預估之後的按量成本 |
+| **2026-07-13** | 週配額 +50% 過渡期到期（原為緩衝 6/15 政策）| 是否延續未見公告，週用量上限可能回落 | 重度使用者：留意 7/13 後配額是否縮回，提前安排大型任務 |
 | **2026-08-31** | Sonnet 5 促銷價 $2/$10 per Mtok 結束 | 正式定價未公布，成本可能上升 | 依賴 Sonnet 5 的自動化流程：8 月底前關注正式定價公告 |
+
+> 已生效：**Fable 5 訂閱配額過渡期已於 2026-07-07 結束**，Pro/Max/Team 使用 Fable 5 轉 usage-based billing（詳見 [[entities/pricing]]）。
 
 ---
 
@@ -60,6 +62,7 @@
 
 | 功能 | 發布日期 | 熱度 | 試用價值 | 狀態 |
 |------|----------|------|----------|------|
+| **`/config` Dynamic workflow size**（v2.1.202，調整動態工作流 agent 規模 小/中/大，建議性引導值） | 2026-07-07 | 🔥🔥 | ⚡ 有條件推薦 | 正式發布 |
 | **Claude Sonnet 5**（Claude Code v2.1.197 新預設，1M context，$2/$10 per Mtok 促銷至 8/31） | 2026-07-01 | 🔥🔥🔥🔥🔥 | ✅ 強烈推薦 | 正式發布 |
 | **Claude Science**（科學家專用 AI 工作台，整合研究工具套件、可稽核 artifact、彈性雲端運算） | 2026-07-01 | 🔥🔥 | ⚡ 有條件推薦 | 正式發布 |
 | **Org Default Model**（Claude Code v2.1.196，管理員設定組織預設模型，使用者 `/model` 顯示「Org default」） | 2026-06-29 | 🔥🔥 | ⚡ 有條件推薦 | 正式發布 |
@@ -114,6 +117,24 @@
 ---
 
 ## 🆕 最新功能（2026-07）
+
+### Claude Code v2.1.202——/config 新增「Dynamic workflow size」設定
+**發布：** 2026-07-07（v2.1.202） | **熱度：** 🔥🔥 | **試用價值：** ⚡ 有條件推薦 | **狀態：** 正式發布
+
+**是什麼：** `/config` 新增「Dynamic workflow size」設定，可調整 Dynamic Workflows（`ultracode`）動態工作流的 agent 數量規模（小/中/大），屬建議性引導值而非硬上限。
+
+**為何熱：** Dynamic Workflows 本身（2026-05-28 Research Preview，最多 1,000 平行子代理）因 UltraCode 1.7M token bug 無退款而被標「❌ 暫不推薦」；此次更新讓使用者可自行控制規模以降低失控成本風險，但未解決核心退款爭議，故熱度中等。
+
+**快速上手：**
+```
+claude
+/config
+# 選擇 Dynamic workflow size → 小 / 中 / 大
+```
+
+**注意事項：** 為建議性引導值，非硬性上限，實際 agent 數量仍可能超出設定；核心的 token 消耗與退款爭議尚未解決，大規模場景建議先參考本頁 Dynamic Workflows 條目的既有風險說明。
+
+---
 
 ### Claude Sonnet 5 — Claude Code 新預設模型（1M context）
 **發布：** 2026-07-01（v2.1.197）| **熱度：** 🔥🔥🔥🔥🔥 | **試用價值：** ✅ 強烈推薦 | **狀態：** 正式發布

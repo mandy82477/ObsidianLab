@@ -4,11 +4,11 @@
 **狀態：** active（正式發布；出口管制已解除，2026-07-01 起全球恢復存取）
 **領域：** 🤖 模型
 **首次出現：** 2026-06-09
-**最後更新：** 2026-07-06
+**最後更新：** 2026-07-07
 **最後新聞更新：** 2026-07-06
 
 > **最新進展**（2026-07-06）
-> Anthropic 多個模型一度發生大規模錯誤，Fable 5 亦受影響，事件於同日解決（[Anthropic Status](https://status.claude.com/incidents/tl8x3p1msff2)）。另有 HN 實測案例（Show HN，6 分）佐證解封後能力：作者在出口管制期間卡關三週的 Super Nintendo Python 移植專案，Fable 5 解封後 90 分鐘內找出根本問題並修復 23 個編譯器 bug（[fabian-kuebler.com](https://fabian-kuebler.com/posts/fable-python-snes/)）。
+> Anthropic 多個模型一度發生錯誤率升高，Fable 5 亦受影響，事件於同日解決（[Anthropic Status](https://status.claude.com/incidents/tl8x3p1msff2)）。另有 HN 實測案例（Show HN，6 分）佐證解封後能力：作者在出口管制期間卡關三週的 Super Nintendo Python 移植專案，Fable 5 解封後 90 分鐘內找出根本問題並修復 23 個編譯器 bug（[fabian-kuebler.com](https://fabian-kuebler.com/posts/fable-python-snes/)）。
 
 ---
 
@@ -150,8 +150,8 @@ claude --model claude-fable-5-20260609
 ### 解禁後（2026-07-01 起）
 
 #### 2026-07-06
-**Anthropic 多模型大規模錯誤事件（同日解決）+ HN 實測佐證解封後能力**：
-- **服務中斷**：Anthropic Status 通報多個模型一度出現大規模錯誤，Fable 5 也一併受影響，事件於同日解決，無需採取行動（[Anthropic Status](https://status.claude.com/incidents/tl8x3p1msff2)）；同期 AOL 彙整讀者對 Claude API 不穩定的抱怨與詢問（Response incomplete Claude / Is Claude down / Claude api error，07-05 22:24 UTC），屬服務穩定性面向，非出口管制或護欄爭議重演
+**Anthropic 多模型錯誤率升高事件（同日解決）+ HN 實測佐證解封後能力**：
+- **服務中斷**：Anthropic Status 通報多個模型一度出現錯誤率升高，Fable 5 也一併受影響，事件於同日解決，無需採取行動（[Anthropic Status](https://status.claude.com/incidents/tl8x3p1msff2)）；同期 AOL 彙整讀者對 Claude API 不穩定的抱怨與詢問（Response incomplete Claude / Is Claude down / Claude api error，07-05 22:24 UTC），屬服務穩定性面向，非出口管制或護欄爭議重演
 - **Show HN 實測：Python 移植 Super Nintendo（6 分）**：作者以此專案作為 Fable 5 的實測案例——出口管制期間（6/13–7/1）專案卡關三週，Fable 5 解封後 90 分鐘內找出根本問題並修復 23 個編譯器 bug（[fabian-kuebler.com](https://fabian-kuebler.com/posts/fable-python-snes/)）；訊號雖弱（HN 6 分），但具體佐證解封後 Fable 5 在複雜除錯任務上的實際生產力
 
 #### 2026-07-03

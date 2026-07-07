@@ -3,6 +3,25 @@
 Append-only 紀錄。每次 ingest、lint，以及**揭露缺陷或促成改動的使用者 query**，都在此追加一條（純資訊性、未促成改動的 query 不記，避免噪音）。
 格式：`## [YYYY-MM-DD] 類型 | 說明`
 
+## 2026-07-07 Ingest | news/2026-07-07.md（42 則）
+
+- 來源日報：`news/2026-07-07.md`（42 則，10/10 來源；Google News 20、GitHub Issues 10、HN 5、Reddit 10、Anthropic Status 2、Anthropic Blog 1、GitHub 1）
+- 分類派工：模型、功能、商業、安全政策、社群、人物（六類全數並行 foreground）
+- 記者回報彙整：
+  - **模型**：`sonnet-5.md` 輕量新增（錯誤率升高、同日解決）；fable-5／model-comparison 不動。主編另**修正 fable-5 昨日殘留「大規模錯誤」→「錯誤率升高」**（把新 Step 1b 守則回頭套用到既有內容）
+  - **功能**：`claude-code.md` 新增 v2.1.202 版本列 + 3 條已知問題（#18170 複製夾帶縮排、#33969 每輪工具呼叫限制回歸、#38005 缺 RTL）+ 6 條累積數更新；`claude-tag.md` 穩定性事件；`official-community-gap` 產品化矩陣同步 v2.1.202 與 InstantVideos 多模型 pipeline；**feature-radar 新增 v2.1.202「Dynamic workflow size」**（🔥🔥）
+  - **商業**：`enterprise-tool-tracker` Alibaba 補「改用 Qoder」+ 新增 Alberta 省政府（20hr 掃 4.66 億行）；`pricing` INR 需求互動數更新（594/205）；`competitor-landscape` 新增 CNBC 中國模型成本趨勢 + DeepSeek「Deep Code」
+  - **安全政策**：**隱藏追蹤器定調「實驗」**——ai-agent-safety／anthropic-government-policy／anthropic-commitments 三頁一致更新（spyware 指控 ❓→🟡，措辭「官方單方說法、社群接受度待觀察」）；Radware 第三方防護生態記入
+  - **社群**：`community-tech-patterns` 新增 InstantVideos 多模型短片 pipeline；Reddit 五則低互動未達門檻不收
+  - **人物**：新增 `entities/teresa-carlson.md`（前 Microsoft/AWS 高管主導公部門，待核實）
+- feature-radar：新增 v2.1.202；升版風險「隱寫術」列 🔴→🟡（Anthropic 定調實驗）；倒數中移除已生效的 7/7 Fable 過渡、新增 7/13 週配額到期；最新版本行 → v2.1.202
+- index.md 狀態變更：新增 `entities/teresa-carlson`（active 待核實）；近期異動新增 7 筆
+- 新增頁面：`wiki/entities/teresa-carlson.md`
+- overview：當前局勢「信任危機」更新為 Anthropic 首次回應；近兩週事件表 prepend 3 筆 07-07
+- 摘要：主軸——隱藏追蹤器獲 Anthropic 定調「實驗」（信任危機首次官方回應）；Alibaba→Qoder + Alberta 省政府（企業一退一進）；v2.1.202 新設定
+- 呈現品質：全部通過（六記者 + 主編；多頁記者主動修復 callout/摘要超段）
+- 驗證：**新 Step 1b 程度詞守則首次上線即生效**——兩則 Status「Elevated errors」正確譯為「錯誤率升高」未加碼；並回頭修正 fable-5 昨日殘留
+
 ## 2026-07-06 Query | 日報「大規模錯誤」翻譯加碼 + 頂部「前次動態」callout 堆疊
 
 - **使用者點出：**

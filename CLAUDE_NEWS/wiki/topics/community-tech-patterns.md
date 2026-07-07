@@ -3,11 +3,11 @@
 **狀態：** monitoring
 **領域：** 🌐 社群
 **開始日期：** 2026-04-25
-**最後更新：** 2026-07-06
-**最後新聞更新：** 2026-07-06
+**最後更新：** 2026-07-07
+**最後新聞更新：** 2026-07-07
 
-> **最新工作流模式**（2026-07-06）
-> 新增兩則模式：① CaveMan Skill 將單次回覆 token 從 70 降至 20，延續「穴居人模式」既有降耗思路的新實作；② 平行 Agent 即時對話地圖，讀取本機 JSONL transcript 呈現多 agent 進度，回應「20-instance 崩潰分析」「1000 Subagents Fan-out」已指出的規模化協調痛點，成熟度均標記 ⏳ 新興（單一低分實作，尚無採用數據）。07-05：本地小模型分流節省 context 機制觀察（Fast Context Task Router，原專案已下架）。
+> **最新工作流模式**（2026-07-07）
+> 新增 InstantVideos：Claude + GLM-5.2 + Nano Banana 2 Lite + ffmpeg 組成的多模型短影音自動化 pipeline，30 秒產出一支短片（HN 23 分，跨 2 來源），將多模型路由思路從編碼任務延伸至內容生成領域，成熟度 ⏳ 新興。07-06：新增兩則模式：① CaveMan Skill 將單次回覆 token 從 70 降至 20，延續「穴居人模式」既有降耗思路的新實作；② 平行 Agent 即時對話地圖，讀取本機 JSONL transcript 呈現多 agent 進度，回應「20-instance 崩潰分析」「1000 Subagents Fan-out」已指出的規模化協調痛點，成熟度均標記 ⏳ 新興（單一低分實作，尚無採用數據）。07-05：本地小模型分流節省 context 機制觀察（Fast Context Task Router，原專案已下架）。
 
 ---
 
@@ -27,7 +27,7 @@
 | **Skills 設計** | 知識框架化、流程 skill 化 | ✅ 成熟 | description 自動觸發，將書籍/流程封裝為可複用 skill |
 | **CLAUDE.md 管理** | 精簡規則策略、Self-improving Rules、防腐爛機制 | ✅ 成熟 | 以「規則」非「建議」撰寫，CI 攔截違反架構 PR |
 | **Hooks 與自動化** | PostToolUse 稽核、Git Hooks 品質門、/goal Fire-and-Forget、deploy/migration 保護、Pre-completion Hook、Stop Hook 音效通知、Hooks 環境感知條件觸發（Adrafinil、氛圍狀態燈） | ✅ 成熟 | 強制執行 > CLAUDE.md 建議；Stop Hook 要求可驗證完成證明；CLAUDE.md 做偏好、Hooks 做邊界；Pre-completion Hook 防模糊結束；hooks 可感知 agent 活躍狀態驅動環境副作用（螢幕喚醒、實體燈光顏色） |
-| **模型使用策略** | 分層模型（Sonnet + Opus）、多模型路由、Workweave Router | ⚡ 活躍 | 依任務複雜度路由，節省 60% 用量；Dragoman / Workweave 自動路由；嵌入 Claude Code / Codex / Cursor 的成本感知路由 |
+| **模型使用策略** | 分層模型（Sonnet + Opus）、多模型路由、Workweave Router、跨模態內容生成分工（InstantVideos） | ⚡ 活躍 | 依任務複雜度路由，節省 60% 用量；Dragoman / Workweave 自動路由；嵌入 Claude Code / Codex / Cursor 的成本感知路由；InstantVideos 將分工路由思路延伸至內容生成（文字/圖像/影音各交專門模型） |
 | **Token / 成本優化** | MCP Code Execution、Token Bloat 對策、本機圖資料庫索引、穴居人模式（Caveman）企業採用 | ⚡ 活躍 | HTML→Markdown 降 80% token；快取不跨 session 是費用主因；極簡輸出模式（穴居人）企業採用獲 404 Media 確認，OpenAI、Nvidia、GitHub 開發者使用 |
 | **記憶與知識管理** | ltm Core Memory Packet、本機圖資料庫、NanoBrain、OKF（物件鍵格式跨 session 記憶） | ⚡ 活躍 | 跨 session / 跨工具持久記憶；Leiden 圖譜減少 71 倍 token；OKF 標準化 agent 知識格式供團隊共用 |
 | **Plugin / MCP 整合** | Plugin 反模式整理、Claude Code 作為 MCP 協調中心 | ⚡ 活躍 | 避免不必要 context 載入；Claude Code 主導 MCP 工具鏈協作 |
@@ -53,6 +53,13 @@
 ## 技術彙整
 
 ### 2026-07
+
+#### InstantVideos：Claude + GLM-5.2 + Nano Banana 2 Lite + ffmpeg 多模型短影音自動化 pipeline（2026-07-07）
+
+- **核心模式：** 開發者以 Claude（腳本/協調邏輯）搭配 GLM-5.2（文案/對話生成）、Nano Banana 2 Lite（圖像/畫面素材生成）與 ffmpeg（影片合成輸出）組成端到端自動化短影音生成與發布 pipeline，宣稱 30 秒內可產出一支短片
+- **與既有模式的關係：** 屬「模型使用策略」類別下的多模型路由思路在**內容生成領域**的新應用——既有 Dragoman / Workweave Router 聚焦編碼任務的成本路由，此案例改為依「任務類型」（文字/圖像/影音合成）分派給各自最擅長的專門模型，而非單一模型包辦全流程；反映多模型編排正從程式碼領域擴散至內容生產領域
+- **來源：** [Show HN: InstantVideos](https://instantvideos.org/)（Hacker News Show HN，23 分，跨 2 個獨立來源提及）
+- **成熟度：** ⏳ 新興（單一 Show HN 專案，尚無採用數據；多模型分工生成內容的具體組合方式值得後續觀察是否有其他工具跟進類似「依內容類型路由至專門模型」的架構）
 
 #### CaveMan Skill：單次回覆 Token 從 70 降至 20 的極簡輸出模式新實作（2026-07-06）
 

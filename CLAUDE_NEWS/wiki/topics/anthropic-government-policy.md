@@ -3,11 +3,11 @@
 **狀態：** monitoring（出口管制主線已解除，剩餘承諾落實與衍生支線持續觀察；中美 AI 工具政策拉扯新增支線）
 **領域：** 🏛️ 政策/安全
 **開始日期：** 2026-05-01
-**最後更新：** 2026-07-06
-**最後新聞更新：** 2026-07-06
+**最後更新：** 2026-07-07
+**最後新聞更新：** 2026-07-07
 
-> **最新攻防紀錄**（2026-07-06）
-> 阿里巴巴禁止員工使用 Claude Code 一事經 qz.com、TechRadar、SDxCentral、digitimes 多家媒體同步報導（07-03 Reuters 獨家消息人士報導的多媒體確認），SDxCentral 將此事定性為「AI 冷戰」下中國網路安全監管趨嚴的一環，digitimes 聚焦中國轉向扶植本土 AI 編碼工具的產業政策背景；同日 Yahoo Finance 報導 Meta 亦限制工程師使用 Anthropic Claude，企業對外部 AI 編碼工具的資安審查呈現跨企業（中國/美國）擴散跡象。「後門風險」指控本身仍無公開技術證據，Alibaba、Meta、Anthropic 三方均未正式回應，維持「待核實」。
+> **最新攻防紀錄**（2026-07-07）
+> Anthropic 首度正式回應先前「embedded spyware」單方指控（v2.1.91+ 中國代理偵測），Malwarebytes 報導官方定調此為內部「實驗」，非惡意設計；「實驗」為官方單方說法，社群接受度待觀察，技術面詳見 [[topics/ai-agent-safety]]。同時阿里巴巴禁用 Claude 事件經 PYMNTS、Benzinga、BeInCrypto 三獨立媒體確認並補新細節：員工被指示改用內部工具 Qoder。
 
 ---
 
@@ -19,13 +19,14 @@
 
 ---
 
-## 目前局勢（截至 2026-07-06）
+## 目前局勢（截至 2026-07-07）
 
 **出口管制主線已於 2026-07-01 結案**（結局與逐日過程見「## 攻防紀錄」與「## 時序」）。以下為解除後仍待觀察的剩餘變數：
 
 | 變數 | 現狀 | 下一觀察點 |
 |------|------|-----------|
-| 中美 AI 工具政策拉扯 | 07-06：阿里巴巴禁令經 qz.com/TechRadar/SDxCentral/digitimes 多媒體確認（07-03 Reuters 消息人士報導的擴散）；同日 Meta 亦限制工程師使用 Claude（Yahoo Finance）。「後門風險」指控仍無公開技術證據 | Alibaba/Meta 官方是否證實禁令範圍與理由；Anthropic 是否公開說明「後門風險」指控是否成立；企業採用面影響見 [[topics/enterprise-tool-tracker]]；技術面見 [[topics/ai-agent-safety]] |
+| 中美 AI 工具政策拉扯 | 07-07：阿里巴巴禁令經 PYMNTS/Benzinga/BeInCrypto 再確認，補新細節（改用內部工具 Qoder）；07-06：qz.com/TechRadar/SDxCentral/digitimes 多媒體確認、Meta 亦限制工程師使用 Claude。「後門風險」指控仍無公開技術證據，三方均未正式回應 | Alibaba/Meta 官方是否證實禁令範圍與理由；Anthropic 是否公開說明「後門風險」指控是否成立；企業採用面影響見 [[topics/enterprise-tool-tracker]]；技術面見 [[topics/ai-agent-safety]] |
+| 「embedded spyware」指控官方回應 | 07-07：Anthropic 首度回應，Malwarebytes 報導定調為內部「實驗」，非惡意設計；社群接受度待觀察 | 社群（原指控發起者）是否接受此說法；是否有第三方資安機構驗證「實驗」定性；技術面見 [[topics/ai-agent-safety]] |
 | 三項承諾落實 | 首個落實動作：「Defense in Depth」資安/程式碼分類器，高風險 cybersecurity/coding 請求自動 fallback 至 Opus 4.8（2026-07-02）；上線首日即出現誤判合法安全審查請求的負面案例 | 分類器精確度改善；其餘兩項承諾（標準制定合作、惡意活動通報）的可觀察動作 |
 | 歐洲據點爭奪 | 奧地利已向歐盟提案邀請 Anthropic 設立歐盟據點（2026-06-28） | 管制解除是否降低歐洲遊說動能；Anthropic 是否表態 |
 | 阿里巴巴蒸餾指控 | Anthropic 單方指控（6/10 致函參議院），阿里巴巴無回應、無第三方確認 | 阿里巴巴官方回應或國會後續動作；技術面見 [[topics/ai-agent-safety]] |
@@ -101,6 +102,8 @@ Fable 5 發布後，Amazon 安全研究人員發現特定提示詞可讓模型�
 
 | 日期 | 方 | 動作 | 效果 |
 |------|----|------|------|
+| 2026-07-07 | 🏢 | Anthropic 首度正式回應「embedded spyware」指控（v2.1.91+ 中國代理偵測），Malwarebytes 報導官方定調為內部「實驗」，非惡意設計；The Neuron／Axios 另報導 Anthropic 說明「隱藏工作空間」機制 | 社群單方指控（06-30 起追蹤）首次獲官方正式回應；「實驗」為官方單方說法，社群接受度待觀察，不構成爭議終結；技術面見 [[topics/ai-agent-safety]] |
+| 2026-07-07 | 🌐 | 阿里巴巴禁用 Claude Code 事件經 PYMNTS、Benzinga、BeInCrypto 三獨立媒體再確認，補新細節：員工被指示改用內部工具 Qoder | 企業禁令性質持續獲多媒體確認；「後門風險」技術指控本身仍無公開證據，三方均未正式回應；企業採用面見 [[topics/enterprise-tool-tracker]] |
 | 2026-07-06 | 🌐 | 阿里巴巴禁用 Claude Code 一事經 qz.com、TechRadar、SDxCentral、digitimes 多家媒體同步報導，確認為企業正式禁令；同日 Meta 亦被報導限制工程師使用 Anthropic Claude（Yahoo Finance） | 07-03 Reuters 消息人士報導的多媒體確認；企業資安審查行動擴散至美國企業（Meta），「後門風險」技術指控仍無公開證據，三方均未正式回應；技術面見 [[topics/ai-agent-safety]]，企業採用面見 [[topics/enterprise-tool-tracker]] |
 | 2026-07-03 | 🌐 | Alibaba 傳出以「疑似後門風險」為由禁止員工職場使用 Claude Code（Reuters 獨家，HN score 313，American Bazaar / Seeking Alpha / Crypto News / WTVB 等跟進） | 中美 AI 工具政策拉扯首個具名企業禁令案例；「後門風險」指控未見 Alibaba 或 Anthropic 官方證實／回應；技術面見 [[topics/ai-agent-safety]]，企業採用面見 [[topics/enterprise-tool-tracker]] |
 | 2026-07-03 | 🏢 | FT 報導 Anthropic 收緊政策，封堵中國企業間接存取 Claude 的管道（Financial Times） | 與同日 Alibaba 禁令形成呼應，顯示中美雙方同步收緊 AI 工具互通管道；延續 6/26 阿里巴巴蒸餾攻擊指控後的政策收緊軌跡 |
@@ -184,6 +187,7 @@ Fable 5 發布後，Amazon 安全研究人員發現特定提示詞可讓模型�
 
 ## 參考來源
 
+- [[news/2026-07-07]]
 - [[news/2026-07-06]]
 - [[news/2026-07-03]]
 - [[news/2026-07-02]]
@@ -203,6 +207,10 @@ Fable 5 發布後，Amazon 安全研究人員發現特定提示詞可讓模型�
 ## 時序
 
 > 2026-06-27 至 2026-07-01（解封主線最後階段）逐日事件已與上方「## 攻防紀錄」表格內容重複，此處不再重複全文，僅列出表格未涵蓋的補充細節；完整逐日敘述請查表格。
+
+### 2026-07-07（官方回應 spyware 指控 + 阿里巴巴禁令補細節）
+- **[官方回應] Anthropic 定調「embedded spyware」指控為內部「實驗」**：Malwarebytes 報導 Anthropic 首度正式回應 06-30 起追蹤的「embedded spyware」單方指控（v2.1.91+ 中國代理偵測），稱先前被指控的「隱藏追蹤器」屬內部**實驗**性質，非惡意設計；The Neuron、Axios 另報導 Anthropic 說明 Claude 存在「隱藏工作空間」機制。**「實驗」為官方單方說法，社群是否接受尚待觀察**（Malwarebytes，https://www.malwarebytes.com/blog/news/2026/07/claude-codes-hidden-tracker-was-an-experiment-says-anthropic；The Neuron，https://www.theneurondaily.com/p/anthropic-found-claude-s-hidden-workspace；Axios，https://www.axios.com/2026/07/06/anthropic-claude-ai-conscious）；技術面完整細節見 [[topics/ai-agent-safety]]
+- **[企業禁令補細節] 阿里巴巴禁用 Claude 改用內部工具 Qoder**：PYMNTS、Benzinga、BeInCrypto 三獨立媒體再確認阿里巴巴禁令，並補充明確替代工具細節——員工被指示改用內部工具 Qoder；「後門風險」技術指控本身仍無公開證據，三方均未正式回應（PYMNTS，https://www.pymnts.com/news/artificial-intelligence/2026/alibaba-blocks-staff-from-using-anthropic-ai-amid-security-concerns/；Benzinga，https://www.benzinga.com/markets/tech/26/07/60297708/alibaba-reportedly-bans-anthropics-claude-for-employees-citing-security-risks-directs-them-to-use-qoder-instead；BeInCrypto，https://beincrypto.com/alibaba-bans-anthropic-claude-code/）；企業採用面見 [[topics/enterprise-tool-tracker]]
 
 ### 2026-07-06（中美 AI 工具信任對峙：多媒體確認 + Meta 跟進）
 - **[企業禁令多媒體確認] 阿里巴巴禁令經 qz.com/TechRadar/SDxCentral/digitimes 同步報導**：qz.com、TechRadar、SDxCentral、digitimes 於今日同步報導阿里巴巴已禁止員工使用 Claude Code，理由涉「疑似後門風險」；為 07-03 Reuters 獨家消息人士報導後的多媒體確認，企業禁令性質確立，但「後門」技術指控本身仍無公開證據。SDxCentral 將此事定性為「AI 冷戰」下中國網路安全監管趨嚴的一環；digitimes 聚焦中國轉向扶植本土 AI 編碼工具的產業政策背景；TechRadar 將事件置於中美 AI 對抗的更大敘事下（qz.com，2026-07-06，https://qz.com/alibaba-ban-claude-code-anthropic-backdoor-070626；TechRadar，https://www.techradar.com/pro/alibaba-is-banning-its-workers-from-using-claude-code-as-us-v-china-ai-battle-heats-up；SDxCentral，https://www.sdxcentral.com/news/alibaba-bans-anthropic-in-ai-cold-war-as-cybersecurity-regulation-heats-up-in-china/；digitimes，https://www.digitimes.com/news/a20260706VL201/alibaba-anthropic-claude-coding-security.html）；技術面詳見 [[topics/ai-agent-safety]]，企業採用面見 [[topics/enterprise-tool-tracker]]

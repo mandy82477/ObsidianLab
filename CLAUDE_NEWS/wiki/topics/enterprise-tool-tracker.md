@@ -3,11 +3,11 @@
 **狀態：** ongoing
 **領域：** 💼 商業
 **開始日期：** 2026-05-26
-**最後更新：** 2026-07-06
-**最後新聞更新：** 2026-07-06
+**最後更新：** 2026-07-07
+**最後新聞更新：** 2026-07-07
 
-> **最新企業採用異動**（2026-07-06）
-> Meta 傳出限制工程師使用 Claude（來源與規模細節待補，暫標 ❓ 未確認），若確認將是繼 Alibaba（安全疑慮）、Microsoft（成本）、JPMorgan Chase（出口管制）後第四類具名頂尖科技企業縮限案例；同日 The Information 報導部分小型企業改用 Claude 自建工作流取代 Salesforce，屬企業軟體採購行為變化的新訊號。
+> **最新企業採用異動**（2026-07-07）
+> 三獨立媒體（PYMNTS、Benzinga、BeInCrypto）確認阿里巴巴以資安疑慮禁用 Claude，並**明確改用內部工具 Qoder**（此前僅知禁令與生效日，今補上替代方案細節）；同日 Anthropic Blog 揭露加拿大 Alberta 省政府自 2025 年起使用 Claude Code 於 20 小時內掃描 4.66 億行程式碼完成資安審查，為具名政府採用新增一筆。
 
 ## 摘要
 
@@ -15,7 +15,7 @@
 
 追蹤各大型企業目前正在使用的 AI 編碼工具，以及工具選擇的變化軌跡。資料來源為公開報導與內部消息洩露，僅記錄有明確來源佐證的事實。
 
-目前追蹤 29 家具名企業/機構，其中多數狀態為使用中（✅），4 家退出/切換（❌🔄，Microsoft 停用 Claude Code、JPMorgan Chase 香港分行因出口管制被迫退出、Lindy 100% 切換至 DeepSeek、Alibaba 因疑似後門風險禁用 Claude Code），Uber 縮減中（⚠️，成本管控）。整體趨勢：Claude API 企業與政府採用持續擴大，TCS、DXC、LG 等頂尖企業相繼全面入局；2026-06-29–06-30 單日/隔日湧現 Globant、DataArt、Okta、Rubrik、加州州政府等新一波具名案例，Partner Network 密集擴張（詳見 [[topics/anthropic-business]]）。同期 Lindy 案例顯示 API 客戶對成本敏感度高、可能因競品定價優勢流失。2026-06-21 Microsoft 確認在 Fable 5 封鎖期間加速退出 Claude Code，2026-06-22 The Jerusalem Post 跟進確認 Microsoft 正系統性降低對 Claude 依賴，GitHub Copilot 為主要替代方案。出口管制 + 成本壓力雙重因素持續影響頂尖企業工具選擇。
+目前追蹤 30 家具名企業/機構，其中多數狀態為使用中（✅），4 家退出/切換（❌🔄，Microsoft 停用 Claude Code、JPMorgan Chase 香港分行因出口管制被迫退出、Lindy 100% 切換至 DeepSeek、Alibaba 因資安疑慮禁用 Claude Code 並明確改用內部工具 Qoder），Uber 縮減中（⚠️，成本管控）。新增 Alberta 省政府（加拿大）具名政府採用案例，20 小時掃描 4.66 億行程式碼完成資安審查，是繼加州州政府後另一個地方政府層級具體成效案例。整體趨勢：Claude API 企業與政府採用持續擴大，TCS、DXC、LG 等頂尖企業相繼全面入局；2026-06-29–06-30 單日/隔日湧現 Globant、DataArt、Okta、Rubrik、加州州政府等新一波具名案例，Partner Network 密集擴張（詳見 [[topics/anthropic-business]]）。同期 Lindy 案例顯示 API 客戶對成本敏感度高、可能因競品定價優勢流失。2026-06-21 Microsoft 確認在 Fable 5 封鎖期間加速退出 Claude Code，2026-06-22 The Jerusalem Post 跟進確認 Microsoft 正系統性降低對 Claude 依賴，GitHub Copilot 為主要替代方案。出口管制 + 成本壓力雙重因素持續影響頂尖企業工具選擇。
 
 ---
 
@@ -27,8 +27,9 @@
 
 | 企業 | 規模 | AI 編碼工具 | 狀態 | 事件日期 | 備註 | 確認日期 |
 |------|------|-----------|------|---------|------|---------|
+| Alberta 省政府（加拿大） | 政府（省級） | Claude Code | ✅ | 2025 | 加拿大 Alberta 省技術與創新部門自 2025 年起使用 Claude Code（含 Opus、Sonnet 模型）審查系統；20 小時內掃描 4.66 億行程式碼，完成資安漏洞盤點與修補、建立新工具；Anthropic Blog 官方案例研究，為具名政府採用新增一筆（Digital Watch Observatory 跟進） | 2026-07-07 |
 | Meta | 頂尖 | Claude | ❓ | — | 傳出限制工程師使用 Claude，原文節錄未提供具體來源連結、規模範圍或生效日期，暫標未確認，待後續媒體報導補充細節後確認狀態 | 2026-07-06 |
-| Alibaba | 頂尖 | Claude Code | ❌ | 2026-07-10 | 傳出以「疑似後門風險」為由禁止員工職場使用 Claude Code，生效日確認為 2026-07-10（The Indian Express 07-05 跟進報導提供具體生效日期）；來源指控未經 Anthropic 證實，多家媒體跟進（American Bazaar、Seeking Alpha、Crypto News、WTVB、TechCrunch 07-04）；首個以「安全疑慮」為由退出的具名企業案例，區別於此前的成本（Microsoft）與出口管制（JPMorgan）兩類退出理由；安全指控本身詳見 [[topics/ai-agent-safety]] | 2026-07-05 |
+| Alibaba | 頂尖 | Claude Code → Qoder（內部工具） | ❌ | 2026-07-10 | 傳出以「疑似後門風險」/ 資安疑慮為由禁止員工職場使用 Claude Code，生效日確認為 2026-07-10（The Indian Express 07-05 跟進報導提供具體生效日期）；PYMNTS、Benzinga、BeInCrypto 三獨立媒體（07-07）確認**明確改用內部工具 Qoder**，此前僅知禁令未知替代方案；來源指控未經 Anthropic 證實，多家媒體跟進（American Bazaar、Seeking Alpha、Crypto News、WTVB、TechCrunch 07-04）；首個以「安全疑慮」為由退出的具名企業案例，區別於此前的成本（Microsoft）與出口管制（JPMorgan）兩類退出理由；安全指控本身詳見 [[topics/ai-agent-safety]] | 2026-07-07 |
 | Lindy | 中型（AI 新創） | Claude API → DeepSeek | 🔄 | 2026-06-29 | CEO Flo Crivello 公開宣告 100% 流量從 Claude 切換至 DeepSeek，每月省下數百萬美元；「最省錢 > 最強模型」趨勢最具名案例，屬 API 客戶成本敏感度案例（詳見 [[topics/enterprise-cost-management]]、[[topics/competitor-landscape]]） | 2026-06-29 |
 | 加州州政府 | 政府（州級） | Claude API | ✅ | 2026-06-29 | 州長 Newsom 與 Anthropic 正式簽署協議，Claude 進入加州州政府應用；迄今最明確的美國地方政府採用案例（詳見 [[topics/anthropic-business]]） | 2026-06-29 |
 | Globant（NYSE: GLOB） | 頂尖 | Claude API | ✅ | 2026-06-30 | 與 Anthropic 結盟推出 Claude 驅動的 AI Pods，重新定義企業 AI 交付模式；上市公司，覆蓋全球多行業客戶（詳見 [[topics/anthropic-business]]） | 2026-06-30 |
@@ -71,7 +72,7 @@
 
 | 工具 | 企業採用數 | 趨勢 | 主要阻力 |
 |------|----------|------|---------|
-| Claude Code | 5 使用中（Amazon、UiPath、Rubrik、JFrog、Salesforce）+ 1 縮減中（Uber）+ 2 退出（Microsoft、Alibaba） | ⚠️ 成本壓力 + Fable 5 封鎖衝擊 + 安全疑慮新增退出理由 | 缺乏企業層級預算管控；Fable 5 出口管制加速部分企業評估替代方案；Alibaba 案例顯示「疑似後門」指控也可能成為退出理由（指控未經證實） |
+| Claude Code | 6 使用中（Amazon、UiPath、Rubrik、JFrog、Salesforce、Alberta 省政府）+ 1 縮減中（Uber）+ 2 退出（Microsoft、Alibaba → Qoder） | ⚠️ 成本壓力 + Fable 5 封鎖衝擊 + 安全疑慮新增退出理由；✅ 政府採用具體成效案例增加（Alberta 4.66 億行/20hr） | 缺乏企業層級預算管控；Fable 5 出口管制加速部分企業評估替代方案；Alibaba 案例顯示「疑似後門」指控也可能成為退出理由（指控未經證實），且已確認具體替代方案（Qoder） |
 | Claude API | 22（Apple、KPMG、iCapital、哈佛、Fujitsu、Travelport、Nimble Gravity、ZoomInfo、LG Group、AppFolio、Salesforce Claude API、TCS、DXC Technology、Atlassian、JPMorgan Chase 美國本部、Charleston Hospitality Group、Notion、加州州政府、Globant、DataArt、Okta）+ 1 退出中（Lindy → DeepSeek） | 🟢 快速擴張（政府/合規/服務業縱深加深）；⚠️ 部分 API 客戶因成本敏感轉向競品 | — |
 | GitHub Copilot | 1（Microsoft） | 🟢 Microsoft 背書 | 生態鎖定 |
 | OpenAI Codex | 2（Amazon、UiPath） | 🟢 快速成長 | — |
@@ -94,6 +95,10 @@ Claude Code 是工程師日常編碼工具（CLI），成本隨使用量線性�
 ---
 
 ## 時序
+
+### 2026-07-07
+- **阿里巴巴禁用 Claude 改用內部工具 Qoder（三媒體確認）**：PYMNTS、Benzinga、BeInCrypto 三獨立媒體確認阿里巴巴以資安疑慮禁止員工使用 Anthropic Claude，並**明確指示改用內部工具 Qoder**；此前僅知禁令與 07-10 生效日，本次補上具體替代方案細節，是繼 Microsoft（GitHub Copilot）、JPMorgan（出口管制被迫）之後，第三個「退出 Claude → 明確替代工具」的具名案例（Benzinga https://www.benzinga.com/markets/tech/26/07/60297708/alibaba-reportedly-bans-anthropics-claude-for-employees-citing-security-risks-directs-them-to-use-qoder-instead）
+- **Alberta 省政府具名採用：20 小時掃描 4.66 億行程式碼**：Anthropic Blog 官方案例研究揭露，加拿大 Alberta 省技術與創新部門自 2025 年起使用 Claude Code（含 Opus、Sonnet 模型）進行系統資安審查，20 小時內完成 4.66 億行程式碼掃描，並建立漏洞盤點、修補與新工具；是繼加州州政府（Newsom 協議）後另一個具體量化成效的地方政府採用案例（Anthropic Blog https://www.anthropic.com/news/alberta-government-claude-cybersecurity；Digital Watch Observatory 跟進）
 
 ### 2026-07-06
 - **Meta 傳出限制工程師使用 Claude（未確認）**：日報補充提及 Meta 限制工程師使用 Claude，惟未提供具體來源連結、規模範圍或生效日期，暫列為 ❓ 未確認狀態，待後續獨立媒體報導確認後更新（若確認屬實，將是繼 Alibaba 安全疑慮、Microsoft 成本、JPMorgan Chase 出口管制後第四種退出/縮限驅動因素的具名頂尖科技企業案例）
