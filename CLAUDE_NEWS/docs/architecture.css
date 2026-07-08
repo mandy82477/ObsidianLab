@@ -1,0 +1,545 @@
+/* ============================================================
+   architecture.css — 共用樣式表
+   給 architecture-current.html 與 architecture-evolution-v2.html 使用
+   風格：paper/sumi editorial — hairline 邊框、單一 ochre 強調色
+   ============================================================ */
+
+@import url("https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400;1,500&family=Inter:wght@400;500&family=JetBrains+Mono:wght@400;500&family=Noto+Sans+TC:wght@400;500&family=Noto+Serif+TC:wght@400;500&display=swap");
+
+/* ---------- 1. 設計 token ---------- */
+:root {
+  /* 紙感底色 */
+  --paper-0: #f7f4ed;
+  --paper-1: #fbf9f3;
+  --paper-2: #efeae0;
+  --paper-3: #e5dfd2;
+
+  /* 文字色階 */
+  --ink-1: #1a1814;
+  --ink-2: #4a4640;
+  --ink-3: #8a847a;
+  --ink-4: #b8b2a4;
+
+  /* 邊框 */
+  --border-1: #1a181414;
+  --border-2: #1a181424;
+  --border-strong: #1a181452;
+
+  /* 品牌強調色（ochre，唯一強調色） */
+  --ochre-9: #8e5f3d;
+  --ochre-7: #b08968;
+  --ochre-5: #c9a88a;
+  --ochre-tint: #b089681a;
+
+  /* 語意色（用於 track / phase 分類，非品牌強調） */
+  --info: #5c7a8f;
+  --info-tint: #5c7a8f14;
+  --success: #6b8f6b;
+  --success-tint: #6b8f6b14;
+  --warn: #b5852e;
+  --warn-tint: #b5852e14;
+
+  /* 字型 */
+  --font-display: "Cormorant Garamond", "Noto Serif TC", Georgia, serif;
+  --font-sans: "Inter", "Noto Sans TC", system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, "SFMono-Regular", monospace;
+
+  --radius: 2px;
+}
+
+/* ---------- 2. Reset / 基礎 ---------- */
+*, *::before, *::after { box-sizing: border-box; }
+html, body { margin: 0; padding: 0; }
+body {
+  background: var(--paper-0);
+  color: var(--ink-1);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  line-height: 1.5;
+}
+h1, h2, h3, h4, h5, h6, p, ul, ol { margin: 0; padding: 0; }
+ul, ol { list-style: none; }
+a { color: inherit; text-decoration: none; }
+img, svg { display: block; max-width: 100%; }
+button, input, textarea { font: inherit; color: inherit; }
+button { cursor: pointer; background: none; border: none; }
+code { font-family: var(--font-mono); }
+table { border-collapse: collapse; width: 100%; }
+
+/* ---------- 3. Layout helpers ---------- */
+.wrap {
+  max-width: 56rem;
+  margin: 0 auto;
+  padding-left: 1.25rem;
+  padding-right: 1.25rem;
+}
+.wrap--py { padding-top: 2rem; padding-bottom: 2rem; }
+
+/* ---------- 4. Header / 導覽 tab ---------- */
+.arch-header {
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  backdrop-filter: blur(8px);
+  border-bottom: 1px solid var(--border-2);
+  background: color-mix(in srgb, var(--paper-0) 82%, transparent);
+}
+.arch-title {
+  font-family: var(--font-display);
+  font-weight: 500;
+  font-size: 26px;
+  line-height: 1.25;
+  color: var(--ink-1);
+}
+.arch-title__sub {
+  color: var(--ink-3);
+  font-style: italic;
+}
+.arch-subtitle {
+  margin-top: 4px;
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 0.02em;
+  color: var(--ink-3);
+}
+
+.arch-nav {
+  margin-top: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 0;
+  border-bottom: 1px solid var(--border-2);
+}
+.arch-tab {
+  padding: 6px 12px;
+  font-family: var(--font-sans);
+  font-size: 12px;
+  color: var(--ink-3);
+  border-bottom: 2px solid transparent;
+  margin-bottom: -1px;
+  transition: color 0.15s, border-color 0.15s;
+}
+.arch-tab:hover { color: var(--ink-2); }
+.arch-tab--active {
+  color: var(--ochre-9);
+  font-weight: 500;
+  border-bottom-color: var(--ochre-9);
+}
+
+/* 日期標記（現況截至 / 涵蓋範圍） */
+.date-mark {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  color: var(--ink-3);
+  letter-spacing: 0.02em;
+}
+
+/* ---------- 5. 架構圖 filter tab（current 頁） ---------- */
+.dgm-tab {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 10px;
+  font-family: var(--font-sans);
+  font-size: 12px;
+  border: 1px solid var(--border-2);
+  border-radius: var(--radius);
+  color: var(--ink-3);
+  background: transparent;
+  transition: color 0.15s, border-color 0.15s, background 0.15s;
+}
+.dgm-tab:hover { color: var(--ink-2); border-color: var(--border-strong); }
+.dgm-tab--active {
+  border-color: var(--ochre-9);
+  color: var(--ochre-9);
+  background: var(--ochre-tint);
+}
+
+/* ---------- 6. Callout ---------- */
+.arch-callout {
+  margin-bottom: 2rem;
+  border: 1px solid var(--border-2);
+  border-radius: var(--radius);
+  background: var(--paper-2);
+  padding: 12px 16px;
+}
+.arch-callout__title {
+  font-family: var(--font-mono);
+  font-size: 10.5px;
+  letter-spacing: 0.04em;
+  margin-bottom: 6px;
+  color: var(--ink-3);
+}
+.arch-callout ul {
+  font-family: var(--font-sans);
+  font-size: 12px;
+  color: var(--ink-2);
+  line-height: 1.7;
+  padding-left: 16px;
+  list-style: disc;
+}
+.arch-callout--warn {
+  border-color: var(--warn);
+  background: var(--warn-tint);
+}
+.arch-callout--warn .arch-callout__title { color: var(--warn); }
+
+/* 色彩語意說明（overview 圖上方） */
+.color-legend {
+  font-family: var(--font-sans);
+  font-size: 11px;
+  color: var(--ink-3);
+  margin-bottom: 10px;
+}
+.color-legend strong { font-weight: 500; }
+
+/* ---------- 7. 架構圖：box / step / arrow / panel ---------- */
+.dgm-panel { }
+
+.dgm-box {
+  border: 1px solid var(--border-strong);
+  border-radius: var(--radius);
+  padding: 8px 12px;
+  display: inline-block;
+}
+.dgm-box--ochre {
+  border-color: var(--ochre-7);
+  background: var(--ochre-tint);
+}
+.dgm-box__label {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  color: var(--ochre-9);
+}
+.dgm-box__desc {
+  font-family: var(--font-sans);
+  font-size: 11px;
+  color: var(--ink-2);
+  margin-top: 2px;
+}
+
+.dgm-step {
+  border: 1px solid var(--border-2);
+  border-radius: var(--radius);
+  padding: 4px 9px;
+  font-family: var(--font-sans);
+  font-size: 11px;
+  color: var(--ink-2);
+  display: inline-block;
+}
+
+.dgm-arrow {
+  color: var(--ink-4);
+  font-family: var(--font-mono);
+  margin: 6px 0 6px 14px;
+}
+
+/* Phase 三色邊框：a/c = success（背景 agent 自動執行）；b = ochre（需呼叫 session 親自） */
+.phase {
+  border-radius: var(--radius);
+  padding: 12px;
+  margin-bottom: 10px;
+}
+.phase__label {
+  font-family: var(--font-mono);
+  font-size: 10.5px;
+  letter-spacing: 0.04em;
+  margin-bottom: 8px;
+}
+.phase--a {
+  border: 1px solid var(--success);
+}
+.phase--a .phase__label { color: var(--success); }
+.phase--b {
+  border: 1px solid var(--ochre-9);
+  background: var(--ochre-tint);
+}
+.phase--b .phase__label { color: var(--ochre-9); }
+.phase--c {
+  border: 1px solid var(--success);
+}
+.phase--c .phase__label { color: var(--success); }
+
+/* ---------- 8. 演進頁：track filter 按鈕 ---------- */
+.track-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 10px;
+  font-family: var(--font-sans);
+  font-size: 12px;
+  border: 1px solid var(--border-2);
+  border-radius: var(--radius);
+  color: var(--ink-3);
+  background: transparent;
+  transition: color 0.15s, border-color 0.15s, background 0.15s;
+}
+.track-btn__dot {
+  display: inline-block;
+  width: 7px;
+  height: 7px;
+  border-radius: 999px;
+  flex-shrink: 0;
+}
+.track-btn--script.track-btn--active {
+  border-color: var(--info);
+  color: var(--info);
+  background: var(--ochre-tint);
+}
+.track-btn--llm.track-btn--active {
+  border-color: var(--ochre-9);
+  color: var(--ochre-9);
+  background: var(--ochre-tint);
+}
+.track-btn--agent.track-btn--active {
+  border-color: var(--success);
+  color: var(--success);
+  background: var(--ochre-tint);
+}
+.track-btn--script .track-btn__dot { background-color: var(--info); }
+.track-btn--llm .track-btn__dot { background-color: var(--ochre-9); }
+.track-btn--agent .track-btn__dot { background-color: var(--success); }
+
+.search-box {
+  margin-left: auto;
+  width: 12rem;
+  padding: 4px 10px;
+  font-family: var(--font-sans);
+  font-size: 12px;
+  border: 1px solid var(--border-2);
+  border-radius: var(--radius);
+  background: var(--paper-1);
+  color: var(--ink-1);
+  outline: none;
+}
+.search-box:focus { border-color: var(--border-strong); }
+
+/* ---------- 9. 演進頁：時間軸 / event card ---------- */
+.timeline-month {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 0.08em;
+  color: var(--ink-3);
+  margin: 2rem 0 0.75rem;
+}
+.timeline-track {
+  position: relative;
+  padding-left: 22px;
+}
+.timeline-track::before {
+  content: "";
+  position: absolute;
+  left: 6px;
+  top: 0;
+  bottom: 0;
+  width: 1px;
+  background: var(--border-2);
+}
+.event-card-wrap {
+  position: relative;
+  margin-bottom: 0.75rem;
+}
+.event-card-wrap__dot {
+  position: absolute;
+  left: -22px;
+  top: 9px;
+  width: 7px;
+  height: 7px;
+  border-radius: 999px;
+  box-shadow: 0 0 0 3px var(--paper-0);
+}
+.event-card {
+  width: 100%;
+  text-align: left;
+  padding: 10px 14px;
+  background: var(--paper-1);
+  border-radius: var(--radius);
+  border-left: 2px solid var(--border-strong);
+  cursor: pointer;
+}
+.event-card--script { border-left-color: var(--info); }
+.event-card--llm { border-left-color: var(--ochre-9); }
+.event-card--agent { border-left-color: var(--success); }
+
+.event-card__head {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 10px;
+}
+.event-date {
+  font-family: var(--font-mono);
+  font-size: 10.5px;
+  color: var(--ink-3);
+}
+.event-tag {
+  display: inline-block;
+  padding: 1px 6px;
+  font-family: var(--font-sans);
+  font-size: 10px;
+  line-height: 1.4;
+  border: 1px solid var(--border-strong);
+  border-radius: var(--radius);
+  color: var(--ink-3);
+}
+.event-tag--script { border-color: var(--info); color: var(--info); }
+.event-tag--llm { border-color: var(--ochre-9); color: var(--ochre-9); }
+.event-tag--agent { border-color: var(--success); color: var(--success); }
+.event-tag--diagram { border-color: var(--warn); color: var(--warn); }
+
+.event-title {
+  margin-top: 6px;
+  font-family: var(--font-sans);
+  font-weight: 500;
+  font-size: 14.5px;
+  line-height: 1.375;
+  color: var(--ink-1);
+}
+.event-toggle {
+  font-family: var(--font-mono);
+  font-size: 13px;
+  color: var(--ink-3);
+  flex-shrink: 0;
+}
+
+.event-body {
+  margin-top: 12px;
+  padding-top: 12px;
+  border-top: 1px solid var(--border-1);
+  font-family: var(--font-sans);
+  font-size: 13px;
+  line-height: 1.65;
+  color: var(--ink-2);
+}
+.event-body p { margin: 8px 0; }
+.event-body strong { font-weight: 500; color: var(--ink-1); }
+.event-body code {
+  font-family: var(--font-mono);
+  font-size: 0.9em;
+  background: var(--paper-2);
+  padding: 1px 4px;
+  border-radius: 2px;
+}
+.event-body pre {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  background: var(--paper-2);
+  border: 1px solid var(--border-1);
+  border-radius: var(--radius);
+  padding: 10px 12px;
+  overflow-x: auto;
+  white-space: pre;
+  margin: 10px 0;
+  color: var(--ink-2);
+}
+.event-body table {
+  margin: 10px 0;
+  font-size: 12px;
+}
+.event-body th, .event-body td {
+  text-align: left;
+  padding: 5px 8px;
+  border-bottom: 1px solid var(--border-2);
+  color: var(--ink-2);
+}
+.event-body th { color: var(--ink-3); font-weight: 500; }
+.event-body blockquote {
+  border-left: 2px solid var(--ochre-7);
+  padding-left: 10px;
+  color: var(--ink-2);
+  margin: 10px 0;
+}
+
+/* diagram 容器（事件卡內嵌） */
+.dgm-embed {
+  margin: 12px 0;
+  padding: 12px;
+  border: 1px solid var(--border-1);
+  border-radius: var(--radius);
+  background: var(--paper-2);
+  overflow-x: auto;
+}
+
+/* ---------- 10. 表格（模組對照等） ---------- */
+.arch-table-wrap { overflow-x: auto; }
+.arch-table {
+  font-family: var(--font-sans);
+  font-size: 11.5px;
+}
+.arch-table th {
+  text-align: left;
+  padding: 6px 8px;
+  color: var(--ink-3);
+  font-weight: 500;
+  border-bottom: 1px solid var(--border-2);
+}
+.arch-table td {
+  padding: 6px 8px;
+  color: var(--ink-2);
+  border-bottom: 1px solid var(--border-2);
+}
+.arch-table td.mono {
+  font-family: var(--font-mono);
+  font-size: 11px;
+}
+
+/* ---------- 11. Footer ---------- */
+.arch-footer {
+  border-top: 1px solid var(--border-2);
+  padding: 16px 0;
+  font-family: var(--font-sans);
+  font-size: 11px;
+  color: var(--ink-3);
+}
+
+/* ---------- 12. 最小 utility 層 ----------
+   architecture-current.html body 沿用少量類 Tailwind 的 utility class 名稱
+   （非 Tailwind 依賴，這裡手寫等效定義，只涵蓋實際用到的子集） */
+.min-h-screen { min-height: 100vh; }
+.sticky { position: sticky; }
+.top-0 { top: 0; }
+.z-20 { z-index: 20; }
+.backdrop-blur { backdrop-filter: blur(8px); }
+.mx-auto { margin-left: auto; margin-right: auto; }
+.max-w-4xl { max-width: 56rem; }
+.flex { display: flex; }
+.flex-wrap { flex-wrap: wrap; }
+.items-baseline { align-items: baseline; }
+.items-center { align-items: center; }
+.items-start { align-items: flex-start; }
+.justify-between { justify-content: space-between; }
+.leading-tight { line-height: 1.25; }
+.tracking-wide { letter-spacing: 0.025em; }
+.transition-colors { transition: color 0.15s, background-color 0.15s, border-color 0.15s; }
+.space-y-2 > * + * { margin-top: 0.5rem; }
+
+.gap-0 { gap: 0; }
+.gap-1 { gap: 0.25rem; }
+.gap-1\.5 { gap: 0.375rem; }
+.gap-2 { gap: 0.5rem; }
+.gap-4 { gap: 1rem; }
+.gap-6 { gap: 1.5rem; }
+
+.px-2 { padding-left: 0.5rem; padding-right: 0.5rem; }
+.px-2\.5 { padding-left: 0.625rem; padding-right: 0.625rem; }
+.px-3 { padding-left: 0.75rem; padding-right: 0.75rem; }
+.px-5 { padding-left: 1.25rem; padding-right: 1.25rem; }
+.py-1 { padding-top: 0.25rem; padding-bottom: 0.25rem; }
+.py-1\.5 { padding-top: 0.375rem; padding-bottom: 0.375rem; }
+.py-5 { padding-top: 1.25rem; padding-bottom: 1.25rem; }
+.py-8 { padding-top: 2rem; padding-bottom: 2rem; }
+
+.mb-1 { margin-bottom: 0.25rem; }
+.mb-4 { margin-bottom: 1rem; }
+.mb-8 { margin-bottom: 2rem; }
+.mt-1 { margin-top: 0.25rem; }
+.mt-2 { margin-top: 0.5rem; }
+.mt-3 { margin-top: 0.75rem; }
+.mt-4 { margin-top: 1rem; }
+.mt-6 { margin-top: 1.5rem; }
+.mt-8 { margin-top: 2rem; }
+
+.text-\[11px\] { font-size: 11px; }
+.text-\[12px\] { font-size: 12px; }
+.text-\[13px\] { font-size: 13px; }
+.text-\[26px\] { font-size: 26px; }
