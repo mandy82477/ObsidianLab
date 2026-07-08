@@ -1,0 +1,792 @@
+{
+  "date": "2026-07-08",
+  "generatedAt": "2026-07-08 13:37 UTC",
+  "articleCount": 72,
+  "sourceCount": "10/10 | **文章數：** 72 | **更新時間：** 2026-07-08 13:37 UTC",
+  "bulletin": "",
+  "topStories": [],
+  "techUpdates": [
+    {
+      "title": "[anthropics/claude-code] v2.1.204",
+      "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.204",
+      "source": "GitHub / anthropics/claude-code",
+      "time": "07/08 00:27",
+      "sentiment": "",
+      "body": "修復 headless session 中 SessionStart hook 事件無法即時串流的問題；此問題先前可能導致遠端 worker 在 hook 執行中途被系統誤判為閒置而回收。",
+      "focusTags": []
+    },
+    {
+      "title": "[Status] Elevated errors on Claude Sonnet 5",
+      "url": "https://status.claude.com/incidents/n3v83qmtlbqm",
+      "source": "Anthropic Status",
+      "time": "07/08 06:40",
+      "sentiment": "",
+      "body": "Claude Sonnet 5 一度出現錯誤率升高，事件已於 06:40 UTC 解決。",
+      "focusTags": []
+    },
+    {
+      "title": "[Status] Elevated errors for some models",
+      "url": "https://status.claude.com/incidents/l9zyw879cyd6",
+      "source": "Anthropic Status",
+      "time": "07/07 23:46",
+      "sentiment": "",
+      "body": "部分模型請求一度出現錯誤率升高，官方持續監控後於 23:46 UTC 確認問題已解決。",
+      "focusTags": []
+    },
+    {
+      "title": "[Status] Claude Tag seeing elevated GitHub operation failures",
+      "url": "https://status.claude.com/incidents/d23j8s7t8rx2",
+      "source": "Anthropic Status",
+      "time": "07/07 15:52",
+      "sentiment": "",
+      "body": "Claude Tag 的 GitHub 操作一度出現錯誤率升高，官方調整後觀察到錯誤率下降，於 15:52 UTC 解決。",
+      "focusTags": []
+    }
+  ],
+  "mediaReports": [
+    {
+      "title": "China warns of \"security backdoor\" in Anthropic AI coding tool",
+      "url": "https://www.cbsnews.com/news/china-security-backdoor-anthropic-ai-coding-tool/",
+      "source": "Google News / CBS News",
+      "time": "07/08 11:10",
+      "sentiment": "",
+      "body": "CBS News 報導中國當局指稱 Anthropic AI 程式工具存在「安全後門」。",
+      "focusTags": []
+    },
+    {
+      "title": "OpenAI Returns To The Ring As Anthropic's Cheaper AI Raises The Stakes – Elon Musk Teases Grok 4.5",
+      "url": "https://finance.yahoo.com/technology/ai/articles/openai-returns-ring-anthropic-cheaper-091614307.html",
+      "source": "Google News / Yahoo Finance",
+      "time": "07/08 09:16",
+      "sentiment": "",
+      "body": "Yahoo Finance 報導 Anthropic 推出更低價模型後，OpenAI 重新加碼競爭，Elon Musk 也預告 Grok 4.5。",
+      "focusTags": []
+    },
+    {
+      "title": "China issues backdoor security risk over Anthropic's Claude Code",
+      "url": "https://seekingalpha.com/news/4612152-china-issues-backdoor-security-risk-over-anthropics-claude-code",
+      "source": "Google News / Seeking Alpha",
+      "time": "07/08 09:07",
+      "sentiment": "",
+      "body": "Seeking Alpha 報導中國就 Claude Code 提出後門資安風險指控。",
+      "focusTags": []
+    },
+    {
+      "title": "China says Anthropic's AI coding tool secretly tracks users and sends data to remote servers",
+      "url": "https://cybernews.com/ai-news/china-backdoor-security-alert-anthropics-claude-code/",
+      "source": "Google News / Cybernews",
+      "time": "07/08 09:01",
+      "sentiment": "",
+      "body": "Cybernews 報導中國方面聲稱 Anthropic 的 AI 程式工具會秘密追蹤使用者並將資料傳送至遠端伺服器。",
+      "focusTags": [
+        "[風險警示]"
+      ]
+    },
+    {
+      "title": "China Flags Backdoor Risk in Anthropic's Claude Code",
+      "url": "https://www.techbuzz.ai/articles/china-flags-backdoor-risk-in-anthropic-s-claude-code",
+      "source": "Google News / The Tech Buzz",
+      "time": "07/08 08:46",
+      "sentiment": "",
+      "body": "The Tech Buzz 報導中國標記 Claude Code 存在後門風險。",
+      "focusTags": []
+    },
+    {
+      "title": "China warns about AI risks with Anthropic's Claude Code",
+      "url": "https://www.cnbc.com/2026/07/08/china-anthropic-ai-claude-code-backdoor-security-threat.html",
+      "source": "Google News / CNBC",
+      "time": "07/08 08:14",
+      "sentiment": "",
+      "body": "CNBC 報導中國就 Claude Code 提出資安風險警告，稱其存在後門疑慮。",
+      "focusTags": [
+        "[風險警示]"
+      ]
+    },
+    {
+      "title": "China Says It Has Found Security Vulnerabilities in Anthropic's Claude Code",
+      "url": "https://www.wsj.com/tech/ai/china-says-it-has-found-security-vulnerabilities-in-anthropics-claude-code-5ecf05dc",
+      "source": "Google News / WSJ",
+      "time": "07/08 08:08",
+      "sentiment": "",
+      "body": "WSJ 報導中國聲稱在 Claude Code 中發現資安漏洞。",
+      "focusTags": [
+        "[風險警示]"
+      ]
+    },
+    {
+      "title": "China issues 'backdoor' security alert over Anthropic's Claude Code",
+      "url": "https://www.reuters.com/legal/litigation/china-issues-backdoor-security-alert-over-anthropics-claude-code-2026-07-08/",
+      "source": "Google News / Reuters",
+      "time": "07/08 07:01",
+      "sentiment": "",
+      "body": "路透報導中國就 Claude Code 發布「後門」資安警示。",
+      "focusTags": [
+        "[風險警示]"
+      ]
+    },
+    {
+      "title": "China's industry regulator flags 'backdoor' risk in Claude Code",
+      "url": "https://www.chinadaily.com.cn/a/202607/08/WS6a4df051a310986e2b464298.html",
+      "source": "Google News / China Daily",
+      "time": "07/08 06:38",
+      "sentiment": "",
+      "body": "China Daily 報導中國工業主管機關就 Claude Code 標記「後門」風險。",
+      "focusTags": []
+    },
+    {
+      "title": "Anthropic extends Claude Fable 5 free offer till July 12: Eligibility and other details explained",
+      "url": "https://timesofindia.indiatimes.com/technology/tech-news/anthropic-extends-claude-fable-5-free-offer-till-july-12-eligibility-and-other-details-explained/articleshow/132255396.cms",
+      "source": "Google News / The Times of India",
+      "time": "07/08 06:19",
+      "sentiment": "",
+      "body": "Times of India 報導 Anthropic 將 Claude Fable 5 免費使用期限延長至 7 月 12 日，並說明資格條件。",
+      "focusTags": [
+        "[持續追蹤]"
+      ]
+    },
+    {
+      "title": "Anthropic 3Q26 Profit Over $1B: The Anthropic IPO Financials Sneak Peak",
+      "url": "https://newsletter.semianalysis.com/p/anthropic-3q26-profit-over-1b-the",
+      "source": "Google News / SemiAnalysis",
+      "time": "07/08 06:04",
+      "sentiment": "",
+      "body": "SemiAnalysis 報導 Anthropic 2026 財年第三季獲利超過 10 億美元，並提前一窺其潛在 IPO 財務數字。",
+      "focusTags": []
+    },
+    {
+      "title": "Anthropic shines a light into the Claude AI black hole",
+      "url": "https://www.cio.com/article/4194145/anthropic-shines-a-light-into-the-claude-ai-black-hole.html",
+      "source": "Google News / cio.com",
+      "time": "07/08 04:27",
+      "sentiment": "",
+      "body": "cio.com 報導 Anthropic 對外說明 Claude 內部運作機制中此前較不透明的部分。",
+      "focusTags": []
+    },
+    {
+      "title": "Response incomplete Claude. Is Claude down? Claude api error",
+      "url": "https://www.aol.com/articles/response-incomplete-claude-claude-down-000306712.html",
+      "source": "Google News / AOL.com",
+      "time": "07/08 00:05",
+      "sentiment": "",
+      "body": "AOL.com 報導使用者反映 Claude 出現回應不完整、API 錯誤等問題，並詢問服務是否中斷。",
+      "focusTags": []
+    },
+    {
+      "title": "Cayley graph search with Claude Code: what puzzle competitions look like in 2026",
+      "url": "https://artgor.medium.com/cayley-graph-search-with-claude-code-what-puzzle-competitions-look-like-in-2026-3db5d66efd07",
+      "source": "Google News / Medium",
+      "time": "07/08 00:00",
+      "sentiment": "",
+      "body": "Medium 作者分享用 Claude Code 進行 Cayley 圖搜尋以參加解謎競賽的經驗。",
+      "focusTags": []
+    },
+    {
+      "title": "Microsoft is reportedly ditching OpenAI's and Anthropic's AI models in favor of its own to cut costs",
+      "url": "https://siliconangle.com/2026/07/07/microsoft-reportedly-ditching-openais-anthropics-ai-models-favor-cut-costs/",
+      "source": "Google News / SiliconANGLE",
+      "time": "07/07 23:54",
+      "sentiment": "",
+      "body": "SiliconANGLE 報導 Microsoft 傳出正逐步捨棄 OpenAI 與 Anthropic 模型，改用自研模型以節省成本。",
+      "focusTags": []
+    },
+    {
+      "title": "Claude Fable 5 Extends By Five More Days. 10 Moves To Make Now!",
+      "url": "https://www.forbes.com/sites/sandycarter/2026/07/07/claude-fable-5-extends-by-five-more-days-10-moves-to-make-now/",
+      "source": "Google News / Forbes",
+      "time": "07/07 23:23",
+      "sentiment": "",
+      "body": "Forbes 報導 Claude Fable 5 免費期限再延長 5 天，並列出使用者現在可採取的 10 個行動建議。",
+      "focusTags": [
+        "[持續追蹤]"
+      ]
+    },
+    {
+      "title": "Perplexity is quietly building an AI coding tool to take on Cursor and Claude Code",
+      "url": "https://www.businessinsider.com/perplexity-building-ai-coding-tool-take-on-cursor-and-openai-2026-7",
+      "source": "Google News / Business Insider",
+      "time": "07/07 23:22",
+      "sentiment": "",
+      "body": "Business Insider 報導 Perplexity 正低調開發一款 AI 程式工具，意在對打 Cursor 與 Claude Code。",
+      "focusTags": []
+    },
+    {
+      "title": "Anthropic Brings Claude Code and Cowork to Government",
+      "url": "https://letsdatascience.com/news/anthropic-brings-claude-code-and-cowork-to-government-06df8bbb",
+      "source": "Google News / Let's Data Science",
+      "time": "07/07 22:47",
+      "sentiment": "",
+      "body": "Let's Data Science 報導 Anthropic 將 Claude Code 與 Cowork 帶入政府機構應用場景。",
+      "focusTags": []
+    },
+    {
+      "title": "Anthropic Expands in Manhattan, Part of an A.I. Boom in New York",
+      "url": "https://www.nytimes.com/2026/07/07/nyregion/anthropic-ai-boom-nyc.html",
+      "source": "Google News / The New York Times",
+      "time": "07/07 20:34",
+      "sentiment": "",
+      "body": "The New York Times 報導 Anthropic 在曼哈頓擴大據點，為紐約 AI 產業熱潮的一環。",
+      "focusTags": []
+    },
+    {
+      "title": "Why the rise of open source AI isn't hurting Anthropic … yet",
+      "url": "https://techcrunch.com/2026/07/07/why-the-rise-of-open-source-ai-isnt-hurting-anthropic-yet/",
+      "source": "Google News / TechCrunch",
+      "time": "07/07 20:04",
+      "sentiment": "",
+      "body": "TechCrunch 分析開源 AI 崛起目前尚未對 Anthropic 業務造成明顯衝擊的原因。",
+      "focusTags": []
+    },
+    {
+      "title": "Anthropic's Claude Cowork now keeps working when you close your laptop",
+      "url": "https://thenewstack.io/claude-cowork-cloud-mobile/",
+      "source": "Google News / The New Stack",
+      "time": "07/07 19:23",
+      "sentiment": "",
+      "body": "The New Stack 報導 Claude Cowork 新增雲端執行能力，使用者闔上筆電後任務仍可持續進行。",
+      "focusTags": []
+    },
+    {
+      "title": "Business Watch: Anthropic launches Claude Science; AstraZeneca links with CSPC again",
+      "url": "https://cen.acs.org/business/business-watch-anthropic-claude-science-astrazeneca-cspc/104/web/2026/07",
+      "source": "Google News / Chemical & Engineering News",
+      "time": "07/07 18:42",
+      "sentiment": "",
+      "body": "Chemical & Engineering News 報導 Anthropic 推出 Claude Science，同期報導 AstraZeneca 與 CSPC 再度合作的產業動態。",
+      "focusTags": []
+    },
+    {
+      "title": "Alibaba Bans Anthropic's Claude Code as AI Security Fight Escalates",
+      "url": "https://finance.yahoo.com/technology/ai/articles/alibaba-bans-anthropics-claude-code-175649089.html",
+      "source": "Google News / Yahoo Finance",
+      "time": "07/07 17:56",
+      "sentiment": "",
+      "body": "Yahoo Finance 報導阿里巴巴禁用 Claude Code，將此舉定調為中美 AI 資安爭端持續升溫的最新進展。",
+      "focusTags": [
+        "[持續追蹤]"
+      ]
+    },
+    {
+      "title": "The Head of Claude Code Says Your Startup Needs These 5 Employee Archetypes",
+      "url": "https://www.inc.com/ashley-couto/claude-code-startup-needs-employee-archetypes/91370409",
+      "source": "Google News / inc.com",
+      "time": "07/07 17:51",
+      "sentiment": "",
+      "body": "inc.com 報導 Claude Code 負責人分享其認為新創公司需要具備的 5 種員工原型。",
+      "focusTags": []
+    },
+    {
+      "title": "I used Claude Fable 5 for zero-shot coding, and understood why Anthropic locked it down",
+      "url": "https://www.xda-developers.com/i-used-claude-fable-5-for-zero-shot-coding-and-understood-why-anthropic-locked-it-down/",
+      "source": "Google News / XDA",
+      "time": "07/07 17:00",
+      "sentiment": "",
+      "body": "XDA 作者分享實測 Claude Fable 5 進行一次性程式生成的心得，並談及對 Anthropic 限縮其開放程度的理解。",
+      "focusTags": []
+    },
+    {
+      "title": "Claude Cowork expands to mobile and web",
+      "url": "https://techcrunch.com/2026/07/07/the-coding-agent-wars-are-spilling-into-the-rest-of-the-office-claude-cowork/",
+      "source": "Google News / TechCrunch",
+      "time": "07/07 16:27",
+      "sentiment": "",
+      "body": "TechCrunch 報導 Claude Cowork 正式擴展至行動裝置與網頁版。",
+      "focusTags": []
+    },
+    {
+      "title": "Microsoft Replaces OpenAI, Anthropic With Own AI in Some Apps",
+      "url": "https://www.bloomberg.com/news/articles/2026-07-07/microsoft-replaces-openai-anthropic-with-own-ai-in-some-apps",
+      "source": "Google News / Bloomberg.com",
+      "time": "07/07 16:19",
+      "sentiment": "",
+      "body": "Bloomberg 報導 Microsoft 在部分產品中以自研 AI 取代 OpenAI 與 Anthropic 模型。",
+      "focusTags": []
+    },
+    {
+      "title": "Anthropic will make Claude Cowork available to users via the cloud",
+      "url": "https://www.nbcnews.com/tech/tech-news/anthropic-will-make-claude-cowork-available-users-cloud-rcna353218",
+      "source": "Google News / NBC News",
+      "time": "07/07 16:00",
+      "sentiment": "",
+      "body": "NBC News 報導 Anthropic 將透過雲端讓使用者存取 Claude Cowork。",
+      "focusTags": []
+    },
+    {
+      "title": "Anthropic says customers are using Claude Cowork for 'the work around work,' as AI companies soften job-loss rhetoric",
+      "url": "https://finance.yahoo.com/technology/article/anthropic-says-customers-are-using-claude-cowork-for-the-work-around-work-as-ai-companies-soften-job-loss-rhetoric-160000661.html",
+      "source": "Google News / Yahoo Finance",
+      "time": "07/07 16:00",
+      "sentiment": "",
+      "body": "Yahoo Finance 報導 Anthropic 表示客戶多將 Claude Cowork 用於處理「工作周邊的工作」，同時指出 AI 業者正淡化裁員相關言論基調。",
+      "focusTags": []
+    },
+    {
+      "title": "Shut Those Laptops! Anthropic Puts Its Claude Cowork Agent on Your Phone",
+      "url": "https://www.wired.com/story/shut-those-laptops-anthropic-puts-its-claude-cowork-agent-on-your-phone/",
+      "source": "Google News / WIRED",
+      "time": "07/07 16:00",
+      "sentiment": "",
+      "body": "WIRED 報導 Anthropic 將 Claude Cowork agent 帶到手機上，使用者不需開著筆電也能讓任務持續執行。",
+      "focusTags": [
+        "[新工具]"
+      ]
+    }
+  ],
+  "discussions": [
+    {
+      "title": "[BUG] Claude Max plan session limits exhausted abnormally fast since March 23, 2026 (CLI usage)",
+      "url": "https://github.com/anthropics/claude-code/issues/38335",
+      "source": "GitHub Issues / claude-code",
+      "time": "07/07 19:37",
+      "sentiment": "",
+      "body": "使用者回報 Claude Max 方案自 3 月 23 日起，CLI 使用情境下 session 額度異常快速耗盡，累積 790 則留言、536 個讚，為今日互動量最高條目。情緒：😤",
+      "focusTags": [
+        "[社群趨勢]"
+      ]
+    },
+    {
+      "title": "[BUG] AskUserQuestion: \"No response after 60s — continued without an answer\"",
+      "url": "https://github.com/anthropics/claude-code/issues/73125",
+      "source": "GitHub Issues / claude-code",
+      "time": "07/08 03:47",
+      "sentiment": "",
+      "body": "使用者回報 AskUserQuestion 工具在 60 秒無回應後會直接略過並自行繼續執行，未等待使用者確認，累積 142 則留言、403 個讚。情緒：😤",
+      "focusTags": []
+    },
+    {
+      "title": "Copy/paste from terminal includes unwanted indentation and trailing spaces",
+      "url": "https://github.com/anthropics/claude-code/issues/18170",
+      "source": "GitHub Issues / claude-code",
+      "time": "07/07 13:56",
+      "sentiment": "",
+      "body": "使用者回報從 Claude Code 終端機複製文字時會夾帶多餘縮排與行尾空白，累積 131 則留言、271 個讚。情緒：😤",
+      "focusTags": []
+    },
+    {
+      "title": "[FEATURE] Multi-account switching in Claude Mobile app without shared email",
+      "url": "https://github.com/anthropics/claude-code/issues/36151",
+      "source": "GitHub Issues / claude-code",
+      "time": "07/08 06:42",
+      "sentiment": "",
+      "body": "社群要求 Claude Mobile app 支援免共用 email 的多帳號切換功能，累積 123 則留言、542 個讚，為今日反應數最高條目。情緒：😐",
+      "focusTags": []
+    },
+    {
+      "title": "[BUG] Claude Code Desktop fails to Relaunch on Windows due to orphaned process file lock",
+      "url": "https://github.com/anthropics/claude-code/issues/42776",
+      "source": "GitHub Issues / claude-code",
+      "time": "07/07 15:01",
+      "sentiment": "",
+      "body": "使用者回報 Windows 版 Desktop app 因孤兒行程檔案鎖定，導致無法重新啟動，累積 101 則留言、39 個讚。情緒：😤",
+      "focusTags": []
+    },
+    {
+      "title": "[BUG] GitHub Connector connected in Claude Desktop but not recognized by Claude",
+      "url": "https://github.com/anthropics/claude-code/issues/32479",
+      "source": "GitHub Issues / claude-code",
+      "time": "07/07 17:10",
+      "sentiment": "",
+      "body": "使用者回報 Claude Desktop 中已連接的 GitHub Connector 未被 Claude 正確辨識，累積 70 則留言、118 個讚。情緒：😤",
+      "focusTags": []
+    },
+    {
+      "title": "[BUG] Unhandled Case [object Object]",
+      "url": "https://github.com/anthropics/claude-code/issues/59033",
+      "source": "GitHub Issues / claude-code",
+      "time": "07/07 15:06",
+      "sentiment": "",
+      "body": "使用者回報遇到未處理例外，錯誤訊息僅顯示 `[object Object]`，缺乏可讀資訊，累積 70 則留言、85 個讚。情緒：😤",
+      "focusTags": []
+    },
+    {
+      "title": "Geosql: A Claude/Codex skill for geospatial data",
+      "url": "https://github.com/dekart-xyz/geosql",
+      "source": "Hacker News",
+      "time": "07/08 08:37",
+      "sentiment": "",
+      "body": "開發者發布 Geosql，一款供 Claude/Codex 使用的地理空間資料技能；HN 討論質疑其宣稱的成效數據（4 倍改善）與細部成功率不一致，獲 55 分。情緒：🤔",
+      "focusTags": []
+    },
+    {
+      "title": "Max Plan: Token usage increased ~3-5x without any configuration change (since ~March 28-29)",
+      "url": "https://github.com/anthropics/claude-code/issues/41506",
+      "source": "GitHub Issues / claude-code",
+      "time": "07/08 03:42",
+      "sentiment": "",
+      "body": "使用者回報 Max 方案（$100/月）自 3 月底起 token 消耗量在未變更設定的情況下增加約 3-5 倍，累積 54 則留言、29 個讚。情緒：😤",
+      "focusTags": []
+    },
+    {
+      "title": "Inter-session communication for multi-Claude workflows",
+      "url": "https://github.com/anthropics/claude-code/issues/24798",
+      "source": "GitHub Issues / claude-code",
+      "time": "07/07 20:23",
+      "sentiment": "",
+      "body": "社群提出功能請求，希望支援多個 Claude session 之間的直接溝通機制，以銜接有依賴關係的多階段工作流程，累積 54 則留言、18 個讚。情緒：😐",
+      "focusTags": []
+    },
+    {
+      "title": "[BUG] Edit preview/diff not showing in VSCode extension UI when confirming changes",
+      "url": "https://github.com/anthropics/claude-code/issues/8660",
+      "source": "GitHub Issues / claude-code",
+      "time": "07/07 20:02",
+      "sentiment": "",
+      "body": "使用者回報 VSCode 擴充套件確認變更時未顯示編輯預覽／差異畫面，回報者註明截至 3 月此問題仍存在，累積 52 則留言、82 個讚。情緒：😤",
+      "focusTags": []
+    },
+    {
+      "title": "Show HN: Shellular – run Claude Code, Codex, Pi from your phone",
+      "url": "https://shellular.dev/",
+      "source": "Hacker News",
+      "time": "07/07 14:08",
+      "sentiment": "",
+      "body": "開發者發布 Shellular，讓使用者從手機遠端操作原本在自有機器上執行的 Claude Code、Codex 等 agent 與終端機、開發伺服器，HN 獲 32 分，跨 2 來源報導。情緒：😊",
+      "focusTags": []
+    },
+    {
+      "title": "Anthropic is launching Claude Cowork on mobile and web",
+      "url": "https://www.theverge.com/ai-artificial-intelligence/961978/anthropic-claude-cowork-mobile-web",
+      "source": "Hacker News",
+      "time": "07/07 17:50",
+      "sentiment": "",
+      "body": "The Verge 報導經 HN 討論轉發，說明 Claude Cowork 週二起開放行動裝置與網頁版，首波供 Max 訂閱用戶使用，HN 獲 16 分，跨 2 來源報導。情緒：😊",
+      "focusTags": [
+        "[新工具]"
+      ]
+    },
+    {
+      "title": "Abnormal.ai Response to Anthropic Lawsuit",
+      "url": "https://abnormal.ai/blog/abnormal-response-to-anthropic-lawsuit",
+      "source": "Hacker News",
+      "time": "07/07 19:40",
+      "sentiment": "",
+      "body": "Abnormal.ai 發布公開回應反駁 Anthropic 對其提起的商標侵權訴訟，指出自身品牌設計早於 Anthropic 成立前已存在，HN 獲 11 分。情緒：🤔",
+      "focusTags": []
+    },
+    {
+      "title": "Show HN: FactIQ – a realtime econ+finance database for AI agents",
+      "url": "https://github.com/defog-ai/factiq-plugin",
+      "source": "Hacker News",
+      "time": "07/08 01:39",
+      "sentiment": "",
+      "body": "開發者發布 FactIQ，一套供 AI agent 使用的即時總體經濟與金融資料庫外掛，HN 獲 5 分。情緒：😐",
+      "focusTags": []
+    },
+    {
+      "title": "Show HN: Control YOLO Training and Datasets from Claude/Cursor via MCP",
+      "url": "https://github.com/amanharshx/ultralytics-mcp",
+      "source": "Hacker News",
+      "time": "07/08 12:04",
+      "sentiment": "",
+      "body": "開發者發布透過 MCP 讓 Claude/Cursor 控制 YOLO 模型訓練與資料集的工具，貼文已被 HN 標記 flagged，獲 3 分。情緒：😐",
+      "focusTags": []
+    },
+    {
+      "title": "Show HN: Bike4Mind – open-core AI workbench; any model, agents, RAG, self-host",
+      "url": "https://github.com/Bike4Mind/bike4mind",
+      "source": "Hacker News",
+      "time": "07/07 19:17",
+      "sentiment": "",
+      "body": "開發者發布開源核心 AI 工作台 Bike4Mind，支援多模型（含 Claude）、agent、RAG 與自架設，HN 獲 3 分。情緒：😐",
+      "focusTags": []
+    },
+    {
+      "title": "Show HN: The Banana Test: coding agents grow a 3D banana plant",
+      "url": "https://francescomoramarco.com/banana-test/",
+      "source": "Hacker News",
+      "time": "07/07 13:54",
+      "sentiment": "",
+      "body": "開發者用同一提示詞讓包含 Claude Code、Codex 在內的 5 款 coding agent 以 three.js 呈現香蕉植株完整生長週期，比較各 agent 對程序式生成與生物邏輯的掌握程度，HN 獲 2 分。情緒：😊",
+      "focusTags": []
+    },
+    {
+      "title": "Show HN: Claude-teleport, move your Claude Code history between machines",
+      "url": "https://github.com/gowtham-sai-yadav/claude-teleport",
+      "source": "Hacker News",
+      "time": "07/07 12:30",
+      "sentiment": "",
+      "body": "開發者發布 claude-teleport，用於在不同機器間搬移 Claude Code 使用紀錄，HN 討論者表示換新開發機時會想使用，獲 2 分。情緒：😊",
+      "focusTags": []
+    },
+    {
+      "title": "Show HN: ChatGPT, Claude and Codex-style chat inputs in one React component",
+      "url": "https://prompt-area.com/styles",
+      "source": "Hacker News",
+      "time": "07/08 02:58",
+      "sentiment": "",
+      "body": "開發者發布 Prompt Area，提供可直接複製使用的 ChatGPT、Claude、Codex 風格聊天輸入框 React 元件組合，HN 獲 1 分。情緒：😐",
+      "focusTags": []
+    },
+    {
+      "title": "Show HN: Claudeometer – Share and pool Claude usage across a team (macOS, OSS)",
+      "url": "https://github.com/SGSI/claudeometer",
+      "source": "Hacker News",
+      "time": "07/07 19:17",
+      "sentiment": "",
+      "body": "開發者發布 macOS 開源工具 Claudeometer，供團隊共享與彙整 Claude 用量，貼文已被 HN 標記 flagged／dead，獲 1 分。情緒：😐",
+      "focusTags": []
+    },
+    {
+      "title": "Show HN: Rewire Text – system-wide text transforms with BYOK and local-models",
+      "url": "https://sunsetmesasoftware.com/rewire-text/",
+      "source": "Hacker News",
+      "time": "07/07 13:55",
+      "sentiment": "",
+      "body": "開發者發布 Rewire Text，一款支援自帶金鑰（含 Anthropic API）或本機模型的全系統文字轉換工具，HN 獲 1 分。情緒：😐",
+      "focusTags": []
+    },
+    {
+      "title": "Usage differences between Claude formats",
+      "url": "https://www.reddit.com/r/ClaudeCode/comments/1uqssj0/usage_differences_between_claude_formats/",
+      "source": "Reddit / r/ClaudeCode",
+      "time": "07/08 13:31",
+      "sentiment": "",
+      "body": "Reddit 使用者詢問 VS Code 擴充套件與桌面 app 之間，Claude 用量計算方式是否存在差異。情緒：🤔",
+      "focusTags": []
+    },
+    {
+      "title": "Referral code",
+      "url": "https://www.reddit.com/r/ClaudeCode/comments/1uqsoyv/referral_code/",
+      "source": "Reddit / r/ClaudeCode",
+      "time": "07/08 13:27",
+      "sentiment": "",
+      "body": "Reddit 使用者尋求 Max 方案推薦碼，希望藉此獲得更多用量額度。情緒：😐",
+      "focusTags": []
+    },
+    {
+      "title": "This ai driven development stuff melt my brain fr,,",
+      "url": "https://www.reddit.com/r/ClaudeCode/comments/1uqsica/this_ai_driven_development_stuff_melt_my_brain_fr/",
+      "source": "Reddit / r/ClaudeCode",
+      "time": "07/08 13:20",
+      "sentiment": "",
+      "body": "Reddit 使用者分享用 AI 開發的心得，笑稱自己已經開始對著終端機打字而非對 Claude Code。情緒：😊",
+      "focusTags": []
+    },
+    {
+      "title": "Cache hit rate dropping by 20% doubles your agent's bills",
+      "url": "https://www.reddit.com/r/ClaudeCode/comments/1uqsah2/cache_hit_rate_dropping_by_20_doubles_your_agents_bills/",
+      "source": "Reddit / r/ClaudeCode",
+      "time": "07/08 13:12",
+      "sentiment": "",
+      "body": "Reddit 使用者以圖表分享觀察：cache 命中率下降 20% 會讓 agent 帳單翻倍，貼文以圖片為主、文字說明有限。情緒：😤",
+      "focusTags": []
+    },
+    {
+      "title": "Claude Max (20x) weekly limit exhausted in less than a day — anyone else hitting this?",
+      "url": "https://www.reddit.com/r/ClaudeCode/comments/1uqs99q/claude_max_20x_weekly_limit_exhausted_in_less/",
+      "source": "Reddit / r/ClaudeCode",
+      "time": "07/08 13:10",
+      "sentiment": "",
+      "body": "Reddit 使用者回報 Max（20x）方案每週額度不到一天就用盡，詢問是否有其他人遇到相同狀況，與今日 GitHub 上的額度耗盡回報呼應。情緒：😤",
+      "focusTags": []
+    },
+    {
+      "title": "I had 20 AI agents read 8 months of my claude sessions and build a model of how I think. it was unsettling how accurate it was",
+      "url": "https://www.reddit.com/r/ClaudeCode/comments/1uqs4qa/i_had_20_ai_agents_read_8_months_of_my_claude/",
+      "source": "Reddit / r/ClaudeCode",
+      "time": "07/08 13:05",
+      "sentiment": "",
+      "body": "Reddit 使用者用 20 個 AI agent 分析自己 8 個月的 Claude session 紀錄、建立個人思考模式模型，表示結果精準到令人不安。情緒：🤔",
+      "focusTags": []
+    },
+    {
+      "title": "What OS do you run Claude Code on?",
+      "url": "https://www.reddit.com/r/ClaudeCode/comments/1uqs0hc/what_os_do_you_run_claude_code_on/",
+      "source": "Reddit / r/ClaudeCode",
+      "time": "07/08 13:01",
+      "sentiment": "",
+      "body": "Reddit 社群閒聊各自使用 Claude Code 的作業系統。情緒：😐",
+      "focusTags": []
+    },
+    {
+      "title": "workflow notes on an 800-line fastapi project written by claude code",
+      "url": "https://www.reddit.com/r/ClaudeCode/comments/1uqrxay/workflow_notes_on_an_800line_fastapi_project/",
+      "source": "Reddit / r/ClaudeCode",
+      "time": "07/08 12:57",
+      "sentiment": "",
+      "body": "Reddit 使用者分享用 Claude Code 打造一款 800 行 FastAPI 專案（S&P 500 走勢方向猜謎遊戲）的工作流心得。情緒：😊",
+      "focusTags": []
+    },
+    {
+      "title": "ApertureLab: Synthetic Aperture Sonar+Radar Simulator",
+      "url": "https://www.reddit.com/r/ClaudeCode/comments/1uqruyc/aperturelab_synthetic_aperture_sonarradar/",
+      "source": "Reddit / r/ClaudeCode",
+      "time": "07/08 12:55",
+      "sentiment": "",
+      "body": "Reddit 使用者分享用 Claude Code 打造的合成孔徑聲納／雷達模擬器開源專案，起因是苦於找不到免費堪用的現成模擬器。情緒：😊",
+      "focusTags": []
+    },
+    {
+      "title": "typed Is Live: Drop-in Claude Code Fallback, Cheaper Overage",
+      "url": "https://www.reddit.com/r/artificial/comments/1uqgz8m/typed_is_live_dropin_claude_code_fallback_cheaper/",
+      "source": "Reddit / r/artificial",
+      "time": "07/08 03:22",
+      "sentiment": "",
+      "body": "開發者發布 typed，主打作為 Claude Code 的備援方案，超額用量費率較低。情緒：😐",
+      "focusTags": []
+    },
+    {
+      "title": "TigrimOSR v0.6.2 — Open Loop Engineering: create your own custom agent loop with Rust browser + LINE/Telegram bots",
+      "url": "https://www.reddit.com/r/artificial/comments/1uqed9g/tigrimosr_v062_open_loop_engineering_create_your/",
+      "source": "Reddit / r/artificial",
+      "time": "07/08 01:20",
+      "sentiment": "",
+      "body": "開發者發布 TigrimOSR，一套 Rust 原生多 agent 工作空間，主打「Open Loop Engineering」概念與 LINE／Telegram bot 整合。情緒：😐",
+      "focusTags": []
+    }
+  ],
+  "billing": [
+    {
+      "title": "[BUG] Claude Max plan session limits exhausted abnormally fast since March 23, 2026 (CLI usage)",
+      "url": "https://github.com/anthropics/claude-code/issues/38335",
+      "source": "GitHub Issues / claude-code",
+      "time": "07/07 19:37",
+      "sentiment": "",
+      "body": "使用者回報 Claude Max 方案 CLI 使用情境下 session 額度自 3 月 23 日起異常快速耗盡，累積 790 則留言、536 個讚，為今日互動量最高條目。",
+      "focusTags": [
+        "[社群趨勢]"
+      ]
+    },
+    {
+      "title": "Max Plan: Token usage increased ~3-5x without any configuration change (since ~March 28-29)",
+      "url": "https://github.com/anthropics/claude-code/issues/41506",
+      "source": "GitHub Issues / claude-code",
+      "time": "07/08 03:42",
+      "sentiment": "",
+      "body": "使用者回報 Max 方案（$100/月）token 消耗量自 3 月底起在未變更設定的情況下增加約 3-5 倍。",
+      "focusTags": []
+    },
+    {
+      "title": "Claude Max (20x) weekly limit exhausted in less than a day — anyone else hitting this?",
+      "url": "https://www.reddit.com/r/ClaudeCode/comments/1uqs99q/claude_max_20x_weekly_limit_exhausted_in_less/",
+      "source": "Reddit / r/ClaudeCode",
+      "time": "07/08 13:10",
+      "sentiment": "",
+      "body": "Reddit 使用者回報 Max（20x）方案每週額度不到一天就用盡。",
+      "focusTags": []
+    },
+    {
+      "title": "Cache hit rate dropping by 20% doubles your agent's bills",
+      "url": "https://www.reddit.com/r/ClaudeCode/comments/1uqsah2/cache_hit_rate_dropping_by_20_doubles_your_agents_bills/",
+      "source": "Reddit / r/ClaudeCode",
+      "time": "07/08 13:12",
+      "sentiment": "",
+      "body": "Reddit 使用者分享 cache 命中率下降 20% 會讓 agent 帳單翻倍的觀察。",
+      "focusTags": []
+    },
+    {
+      "title": "Anthropic extends Claude Fable 5 free offer till July 12: Eligibility and other details explained",
+      "url": "https://timesofindia.indiatimes.com/technology/tech-news/anthropic-extends-claude-fable-5-free-offer-till-july-12-eligibility-and-other-details-explained/articleshow/132255396.cms",
+      "source": "Google News / The Times of India",
+      "time": "07/08 06:19",
+      "sentiment": "",
+      "body": "Times of India 報導 Anthropic 將 Claude Fable 5 免費使用期限延長至 7 月 12 日，並說明資格條件。",
+      "focusTags": [
+        "[持續追蹤]"
+      ]
+    },
+    {
+      "title": "Anthropic 3Q26 Profit Over $1B: The Anthropic IPO Financials Sneak Peak",
+      "url": "https://newsletter.semianalysis.com/p/anthropic-3q26-profit-over-1b-the",
+      "source": "Google News / SemiAnalysis",
+      "time": "07/08 06:04",
+      "sentiment": "",
+      "body": "SemiAnalysis 報導 Anthropic 2026 財年第三季獲利超過 10 億美元。",
+      "focusTags": []
+    }
+  ],
+  "focus": [
+    {
+      "tag": "[風險警示]",
+      "text": "中國官方指控 Anthropic Claude Code 存在「後門」資安疑慮，Cybernews 報導稱其宣稱該工具會將使用者資料回傳至遠端伺服器；路透、WSJ、CNBC、CBS 等至少 8 家媒體同步報導此一指控。",
+      "ref_urls": [
+        "https://www.reuters.com/legal/litigation/china-issues-backdoor-security-alert-over-anthropics-claude-code-2026-07-08/",
+        "https://www.wsj.com/tech/ai/china-says-it-has-found-security-vulnerabilities-in-anthropics-claude-code-5ecf05dc",
+        "https://www.cnbc.com/2026/07/08/china-anthropic-ai-claude-code-backdoor-security-threat.html",
+        "https://cybernews.com/ai-news/china-backdoor-security-alert-anthropics-claude-code/"
+      ]
+    },
+    {
+      "tag": "[持續追蹤]",
+      "text": "阿里巴巴以資安疑慮為由禁止員工使用 Claude Code，Yahoo Finance 將此舉定調為「AI 資安爭端升溫」，與中方後門指控同屬一條敘事線。",
+      "ref_urls": [
+        "https://finance.yahoo.com/technology/ai/articles/alibaba-bans-anthropics-claude-code-175649089.html"
+      ]
+    },
+    {
+      "tag": "[新工具]",
+      "text": "Anthropic 宣布 Claude Cowork 自週二起擴展至行動裝置與網頁版，首波開放 Max 訂閱用戶；新版可在雲端持續執行任務，即使闔上筆電也不中斷，但官方表示「完整體驗」仍在桌面版。",
+      "ref_urls": [
+        "https://www.theverge.com/ai-artificial-intelligence/961978/anthropic-claude-cowork-mobile-web",
+        "https://www.wired.com/story/shut-those-laptops-anthropic-puts-its-claude-cowork-agent-on-your-phone/"
+      ]
+    },
+    {
+      "tag": "[持續追蹤]",
+      "text": "Anthropic 將 Claude Fable 5 免費使用期限再延長 5 天至 7 月 12 日。",
+      "ref_urls": [
+        "https://timesofindia.indiatimes.com/technology/tech-news/anthropic-extends-claude-fable-5-free-offer-till-july-12-eligibility-and-other-details-explained/articleshow/132255396.cms",
+        "https://www.forbes.com/sites/sandycarter/2026/07/07/claude-fable-5-extends-by-five-more-days-10-moves-to-make-now/"
+      ]
+    },
+    {
+      "tag": "[社群趨勢]",
+      "text": "GitHub Issue 回報 Claude Max 方案 session 額度自 3 月 23 日起異常快速耗盡（CLI 使用情境），累積 790 則留言與 536 個讚，為今日社群互動量最高條目。",
+      "ref_urls": [
+        "https://github.com/anthropics/claude-code/issues/38335"
+      ]
+    }
+  ],
+  "sourceStatus": [
+    {
+      "name": "Anthropic Status",
+      "ok": true,
+      "count": 3
+    },
+    {
+      "name": "lobste.rs",
+      "ok": true,
+      "count": 0
+    },
+    {
+      "name": "Hacker News",
+      "ok": true,
+      "count": 17
+    },
+    {
+      "name": "GitHub Issues",
+      "ok": true,
+      "count": 10
+    },
+    {
+      "name": "Claude API Release Notes",
+      "ok": true,
+      "count": 0
+    },
+    {
+      "name": "dev.to",
+      "ok": true,
+      "count": 0
+    },
+    {
+      "name": "Anthropic Blog",
+      "ok": true,
+      "count": 0
+    },
+    {
+      "name": "GitHub",
+      "ok": true,
+      "count": 2
+    },
+    {
+      "name": "Google News",
+      "ok": true,
+      "count": 41
+    },
+    {
+      "name": "Reddit",
+      "ok": true,
+      "count": 12
+    }
+  ],
+  "preview": "[anthropics/claude-code] v2.1.204"
+}
