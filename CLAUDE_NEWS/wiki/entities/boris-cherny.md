@@ -4,8 +4,8 @@
 **狀態：** active
 **領域：** 👤 人物
 **首次出現：** 2026-04-23（事後報告發布）
-**最後更新：** 2026-06-29
-**最後新聞更新：** 2026-06-28
+**最後更新：** 2026-07-08
+**最後新聞更新：** 2026-07-08
 
 > **最新工作流分享**（2026-06-28）
 > Boris Cherny 在 howborisusesclaudecode.com 公開分享 13 個日常 Claude Code 使用技巧，包括同時開 5 個獨立 git checkout 搭配 5 個 Claude Code 實例、以 `--teleport` 旗標跨本地/Web 環境切換、從 iPhone 啟動 session 下午電腦接力等。他強調這是「surprisingly vanilla」setup，Claude Code 開箱即用無需特殊配置。
@@ -113,9 +113,11 @@ Boris Cherny 的公開言論呈現兩種截然不同的社群反應：
 - [[topics/code-quality-decline]]（4/23 事後報告與社群問責）
 - [[topics/community-tech-patterns]]（設計哲學：Loops、vibe coding 反思）
 - [[entities/fiona-fung]]（「工程師更孤獨」論述具名發言人，曾誤列為候選）
+- [[entities/cat-wu]]（「Head of Claude Code」5 種員工原型論述另一候選人，待核實）
 
 ## 歷史記錄
 
+- 2026-07-08：inc.com 報導「Head of Claude Code」談新創公司需具備的 5 種員工原型（employee archetypes），原文未具名確認發言人，可能為 Boris Cherny 或 [[entities/cat-wu]]，暫標（待核實）（inc.com，2026-07-07，https://www.inc.com/ashley-couto/claude-code-startup-needs-employee-archetypes/91370409）
 - 2026-06-28：在 howborisusesclaudecode.com 公開 13 個日常 Claude Code 使用技巧，涵蓋 5 個並行實例搭配獨立 git checkout、`--teleport` 跨環境切換、iPhone 啟動電腦接力等；強調「surprisingly vanilla」setup（Hacker News，score 5）
 - 2026-06-24：Times of India 報導其承認「AI 寫 100% 程式碼正在變得有問題」，與早前「coding is solved」立場形成對比，呼應企業端過度依賴反彈聲浪
 - 2026-06-23：Business Insider 報導其對企業 AI 投資的立場：支持 ROI 導向，但反對完全不留實驗預算
@@ -146,3 +148,4 @@ Boris Cherny 的公開言論呈現兩種截然不同的社群反應：
 - [[news/2026-06-23]]
 - [[news/2026-06-24]]
 - [[news/2026-06-28]]
+- [[news/2026-07-08]]

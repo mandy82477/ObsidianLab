@@ -3,11 +3,11 @@
 **狀態：** ongoing
 **領域：** 💼 商業
 **開始日期：** 2026-05-28
-**最後更新：** 2026-07-06
-**最後新聞更新：** 2026-07-06
+**最後更新：** 2026-07-08
+**最後新聞更新：** 2026-07-08
 
-> **最新動態**（2026-07-06）
-> Anthropic 與比特幣礦業轉型公司 TeraWulf 簽下**190 億美元、20 年期**肯塔基 AI 基礎設施園區租約（今日最大商業事件，WSJ/CNBC/Barron's 等 6+ 家財經媒體同步報導），消息當日推動 TeraWulf 股價大漲約 17%（Barron's），CoreWeave、IREN 等同業租賃行情同步受比價效應牽動（IREN 股價盤後漲 5%）；同日傳出 Anthropic 正洽談三星代工客製化 AI 晶片，若成真將是繼自建資料中心後另一項硬體自主布局；另有 The Information 報導部分小型企業改用 Claude 自建工作流取代 Salesforce，AiThority 報導 Claude 成為 Google Workspace 內受治理 workflow agent。詳見「戰略合作」表與「時序」。
+> **最新動態**（2026-07-08）
+> SemiAnalysis 報導 Anthropic 2026 財年第三季（3Q26）獲利超過 10 億美元，首度被第三方揭露正獲利數據，為評估潛在 IPO 財務體質的重要前瞻指標；同日 SiliconANGLE／Bloomberg 兩獨立來源傳出 Microsoft 正逐步以自研模型取代部分產品中的 OpenAI 與 Anthropic 模型以降低成本（未經官方證實），呼應既有「Microsoft 退出風險」觀察，顯示依賴度收斂可能從編碼工具層擴大至底層模型層（詳見 [[topics/enterprise-tool-tracker]]、[[topics/competitor-landscape]]）。另有 Anthropic 在曼哈頓擴大據點、Claude Code 與 Cowork 帶入政府機構應用場景等訊號。詳見「時序」。
 
 ---
 
@@ -23,7 +23,7 @@ Anthropic 在技術聲譽與企業採用率上持續上升（企業採用率 34.
 | 估值 | $965B（Series H，2026-05-28）|
 | 年化營收（ARR）| $47B（2026-05 月初；Simon Willison 追蹤）|
 | 融資規模 | $65B（Series H，史上最大單輪 AI 融資）|
-| 獲利狀況 | 未公開；收入快速成長但支出龐大 |
+| 獲利狀況 | 3Q26（2026 財年第三季）獲利超過 10 億美元，首度被第三方揭露正獲利數據 — SemiAnalysis 2026-07-08（IPO 財務前瞻）|
 | 定價策略自主性 | 強勢（The Information 2026-05-13：企業客戶即使面對漲價仍持續採用）|
 | 主要商業風險 | 大型企業因成本失控退出（Microsoft 原訂 6/30，已於 6/21 加速退出；見 [[topics/enterprise-tool-tracker]]）|
 
@@ -67,7 +67,8 @@ Simon Willison（知名開發者博主）發表文章，認為 Anthropic 與 Ope
 | Max $200/月方案隱性補貼 17 倍 | token-xray 計算：$200/月實際提供相當於 $3,400 API 用量 | 社群計算，2026-05-28 |
 | $30,983 tokens on $200/mo | 重度用戶單月在 Max 方案下消耗相當 $30,983 計算資源 | tokenflex.ing 排行榜，2026-05-23 |
 | 定價強勢期 | 企業客戶即使面對成本上漲仍持續採用 | The Information，2026-05-13 |
-| 未公開獲利時程 | Anthropic 從未公告盈虧平衡預期 | — |
+| 3Q26 獲利 > $10 億美元 | 首度被第三方揭露正獲利數據，IPO 財務前瞻指標 | SemiAnalysis，2026-07-08 |
+| 未公開獲利時程 | Anthropic 從未公告盈虧平衡預期完整細節 | — |
 
 **結構性問題**：訂閱方案補貼規模龐大（17 倍），6/15 政策是 Anthropic 收窄補貼的第一步。社群討論「未來必然漲價」但 Anthropic 無官方回應。
 
@@ -78,6 +79,7 @@ Simon Willison（知名開發者博主）發表文章，認為 Anthropic 與 Ope
 | 風險 | 當前狀況 | 嚴重度 |
 |------|---------|--------|
 | 企業因成本退出 | Microsoft 6/21 加速退出（原訂 6/30）；Uber 警戒中 | ⚠️ 高 |
+| 雲端夥伴自研模型替代（推論，未證實）| Microsoft 傳出以自研模型逐步取代部分產品中的 OpenAI/Anthropic 模型以降成本（SiliconANGLE/Bloomberg 2026-07-07）；若屬實，依賴度收斂從編碼工具層擴大至底層模型層 | ⚠️ 中高 |
 | 補貼不可持續 | 17 倍補貼規模無法長期維持 | ⚠️ 中高 |
 | 競品分流 | OpenCode 157K 用戶；DeepSeek 低成本替代 | ⚠️ 中 |
 | 定價透明度危機 | 多次靜默計費改動損傷信任 | ⚠️ 中 |
@@ -143,6 +145,13 @@ Simon Willison（知名開發者博主）發表文章，認為 Anthropic 與 Ope
 - [[news/2026-05-13]]（The Information：定價強勢期）
 
 ## 時序
+
+### 2026-07-08
+- **[IPO 財務前瞻，重大] SemiAnalysis：Anthropic 2026 財年第三季（3Q26）獲利超過 10 億美元**：SemiAnalysis 深度報導提前披露 Anthropic 財務數字，確認 3Q26 單季獲利超過 10 億美元，為 Anthropic 首次被第三方研究機構揭露正獲利數據，也是評估其潛在 IPO 財務體質的重要前瞻指標。**對估值的意涵**：此前僅有 ARR $47B 成長數據（Simon Willison 追蹤），未見獲利面；若獲利趨勢延續，將實質支撐 Series H $965B 估值的基本面，對 IPO 路演定價談判力有正面影響（推論）（SemiAnalysis https://newsletter.semianalysis.com/p/anthropic-3q26-profit-over-1b-the-anthropic-ipo-financials-sneak-peak）
+- **[雲端夥伴依賴度收斂風險] Microsoft 傳出以自研模型取代部分產品中的 OpenAI 與 Anthropic 模型**：SiliconANGLE、Bloomberg 兩獨立來源同步報導，Microsoft 正逐步以自研模型取代部分產品中的 OpenAI 與 Anthropic 模型以降低成本。**對商業的意涵**：若屬實，呼應此前 Microsoft 退出 Claude Code（06-21，成本原因）與 Kevin Scott 公開批評 Anthropic 定價過高（06-04）的既有觀察，顯示 Microsoft 對 Anthropic 的商業依賴正從「編碼工具層」擴大至「底層模型層」的雙重收斂；對 Anthropic 而言意味著雲端夥伴兼競爭者的關係進一步向競爭傾斜（推論，未經 Anthropic 或 Microsoft 官方證實）（SiliconANGLE https://siliconangle.com/2026/07/07/microsoft-reportedly-ditching-openais-anthropics-ai-models-favor-cut-costs/；Bloomberg https://www.bloomberg.com/news/articles/2026-07-07/microsoft-replaces-openai-anthropic-with-own-ai-in-some-apps）；競品格局意涵詳見 [[topics/competitor-landscape]]
+- **[據點擴張] Anthropic 在曼哈頓擴大據點**：The New York Times 報導 Anthropic 在曼哈頓擴大辦公據點，為紐約 AI 產業熱潮的一環，反映 Anthropic 持續在紐約市場加碼人才與業務布局（NYT https://www.nytimes.com/2026/07/07/nyregion/anthropic-ai-boom-nyc.html）
+- **[公部門客戶擴展] Anthropic 將 Claude Code 與 Cowork 帶入政府機構應用場景**：Let's Data Science 報導 Anthropic 將 Claude Code 與 Cowork（含行動/網頁版）擴展至政府機構應用場景，延續近期加州州政府（Newsom 協議）、Alberta 省政府（加拿大）等地方政府採用案例的產品線擴張（詳見 [[topics/enterprise-tool-tracker]]）（Let's Data Science https://letsdatascience.com/news/anthropic-brings-claude-code-and-cowork-to-government-06df8bbb）
+- **[競品動態，詳見 competitor-landscape] TechCrunch 分析開源 AI 崛起尚未衝擊 Anthropic；Perplexity 傳出低調開發 AI 編碼工具對打 Cursor / Claude Code**：兩則競品/市場動態詳見 [[topics/competitor-landscape]]
 
 ### 2026-07-06
 - **[今日最大商業事件] Anthropic 與 TeraWulf 簽署 190 億美元、20 年期肯塔基資料中心租約**：WSJ、CNBC、Barron's、Investor's Business Daily、Yahoo Finance、KFGO、Courier-Journal 等 6+ 家財經媒體同步報導，Anthropic 與比特幣礦業轉型公司 TeraWulf 簽下 20 年期、190 億美元的 AI 基礎設施園區租約（肯塔基州）。**對股價與競爭格局的意涵**：消息一出 TeraWulf 股價當日大漲約 17%（Barron's），報導同時點名 CoreWeave、IREN 等同業，帶動整體 AI 資料中心租賃市場比價效應；IREN 股價盤後亦上漲 5%（市場臆測其與 Anthropic 有合約往來，Yahoo Finance）。此案例顯示 Anthropic 持續加碼自建算力版圖，且透過長約鎖定產能同時把比特幣礦業轉型公司拉入 AI 資料中心賽道（WSJ https://www.wsj.com/finance/investing/terawulf-signs-19-billion-lease-with-anthropic-for-ai-infrastructure-campus-ef26be27；CNBC https://www.cnbc.com/2026/07/06/anthropic-terawulf-data-center-ai.html；Barron's https://www.barrons.com/articles/terawulf-stock-anthropic-ai-data-centers-43d5629a）

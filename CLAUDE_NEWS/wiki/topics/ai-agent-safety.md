@@ -3,21 +3,19 @@
 **狀態：** ongoing
 **領域：** 🏛️ 政策/安全
 **開始日期：** 2026-04-27
-**最後更新：** 2026-07-07
-**最後新聞更新：** 2026-07-07
+**最後更新：** 2026-07-08
+**最後新聞更新：** 2026-07-08
 
-> **最新安全事件**（2026-07-07）
-> Anthropic 對先前「embedded spyware」單方指控（v2.1.91+ 中國代理偵測）首度正式回應：Malwarebytes 報導 Anthropic 稱先前被指控的「隱藏追蹤器」屬內部**實驗**性質，非惡意設計；The Neuron、Axios 另報導 Anthropic 說明 Claude 存在「隱藏工作空間」機制。**「實驗」為官方單方說法，社群是否接受尚待觀察，不構成「已澄清無虞」的定論。** 同時阿里巴巴禁用 Claude 事件補上新細節：改用內部工具 Qoder（PYMNTS、Benzinga、BeInCrypto 三獨立媒體確認）。第三方資安廠商 Radware 將 Claude Code 防護納入其 agent 安全產品線，為防護方生態新訊號。
+> **最新安全事件**（2026-07-08）
+> 中國工業主管機關就 Claude Code 正式發布「後門」資安警示（Reuters、WSJ、CNBC、CBS News 等 8+ 家媒體同步報導），指控該工具秘密追蹤使用者並將資料回傳至遠端伺服器；為中國官方（非社群/企業）首次就此議題正式表態，直接延續 06-30 起追蹤的「中國代理偵測程式碼」/「embedded spyware」社群指控敘事線——且與 Anthropic 07-07 才將該指控定調為內部「實驗」形成正面矛盾：中方指控隻字未提「實驗」框架，逕自升級為政府層級資安警示。多數報導將「後門」「資料回傳」標明為中方說法（如 Cybernews 標題用「China says」），截至目前 Anthropic 未見官方回應。政策面詳見 [[topics/anthropic-government-policy]]。
 
 ---
 
 ## 摘要
 
-**最新態勢（2026-07-07）：** Anthropic 就「embedded spyware」指控（v2.1.91+ 中國代理偵測，2026-06-30 起追蹤）首度正式回應——Malwarebytes 報導官方稱先前所謂「隱藏追蹤器」是內部**實驗**性質，並非惡意設計；The Neuron／Axios 同時報導 Anthropic 說明的「隱藏工作空間」（hidden workspace）機制，指 Claude 有自己的空間可供「思考」。此為官方對 07-02 spyware 指控的正式定調，**狀態由「社群單方指控、官方無回應」轉為「官方稱為實驗」**，但社群是否接受此說法仍待觀察，不可視為爭議已解決。另一方面，阿里巴巴禁用 Claude 事件經 PYMNTS、Benzinga、BeInCrypto 三獨立媒體確認並補上新細節：員工被指示改用內部工具 Qoder。第三方資安公司 Radware 將 Claude Code 防護與合規/稽核報告功能納入其 AI agent 安全產品線，屬防護生態擴張訊號。
+**最新態勢（2026-07-08）：** 中國工業主管機關就 Claude Code 發布正式「後門」資安警示，指控其秘密追蹤使用者並將資料回傳至遠端伺服器；Reuters「China issues 'backdoor' security alert over Anthropic's Claude Code」、WSJ、CNBC、CBS News、Cybernews、China Daily、Seeking Alpha、The Tech Buzz 等至少 8 家媒體同步報導。**此為同一敘事線（06-30 社群「embedded spyware」指控 → 07-07 Anthropic 定調「實驗」）的重大升級**：指控主體從社群/企業層級（Reddit、Alibaba）躍升至中國官方層級，且時間點恰在 Anthropic 才於 07-07 將類似指控定性為內部「實驗」之後僅一日，形成雙方各執一詞、互不承認對方框架的正面對峙。多數報導明確標註「後門」「資料回傳」為中方單方說法（未附技術證據），Anthropic 截至日報產出時尚未正面回應。
 
-**此前態勢（2026-07-06）：** 阿里巴巴禁止員工使用 Claude Code 一事經 qz.com、TechRadar、SDxCentral、digitimes 多家媒體同步報導，確認 07-03 Reuters 獨家消息成真為企業正式禁令；同日 Yahoo Finance 報導 Meta 亦限制工程師使用 Anthropic Claude，顯示企業對外部 AI 編碼工具的資安審查有擴散跡象（中國/美國企業同步出現）。「後門風險」指控本身仍無公開技術證據，三方（Alibaba、Meta、Anthropic）均未正式回應指控是否成立，維持「待查證」。
-
-**更早態勢（2026-07-01／07-02）：** 研究者在 Claude Code 2.1.196 binary 發現同形字符替換函式（homoglyph substitution），疑用於對輸出文字嵌入不可見的隱寫標記；HN score 2263 為本頁史上最高熱度安全事件，36Kr 確認此機制針對時區資訊及中國 AI Lab 連線者注入系統提示，Anthropic 承諾修復（版本未定）。同日 CVE-2026-55407 披露：Anthropic Rust protobuf 函式庫 buffa 存在約 22 倍記憶體放大的 DoS 漏洞（Endor Labs AI SAST 發現，修補待確認）。加上 Mozilla 0din 揭露的乾淨 GitHub Repo prompt injection 至今未修補（四個第三方媒體確認），本頁維持「隱私爭議 + 未修補設計缺陷 + 企業信任對峙」並行的階段。
+**此前態勢（2026-07-07）：** Anthropic 就「embedded spyware」指控（v2.1.91+ 中國代理偵測，2026-06-30 起追蹤）首度正式回應——Malwarebytes 報導官方稱先前所謂「隱藏追蹤器」是內部**實驗**性質，並非惡意設計；The Neuron／Axios 同時報導 Anthropic 說明的「隱藏工作空間」（hidden workspace）機制。同日阿里巴巴禁用 Claude 事件經 PYMNTS、Benzinga、BeInCrypto 三獨立媒體確認並補上新細節：員工被指示改用內部工具 Qoder；第三方資安公司 Radware 將 Claude Code 防護納入其 AI agent 安全產品線。以上 07-06 以前的細節詳見「## 時序」對應日期。
 
 **議題定義：** 本頁追蹤 Claude Code 與相關 AI agent 的安全事件，涵蓋 CVE 漏洞披露（沙箱逃逸、遠端代碼執行）、提示注入與 Agentjacking 攻擊、惡意套件與供應鏈污染、以及 agent 不當執行造成的資料損毀。代表性案例：Cursor 搭載 Claude Opus 在 9 秒內刪除 PocketOS 整個生產資料庫（2026-04-28），成為業界討論 AI agent 不可逆操作防護的主要引用案例；OALABS 蜜罐分析（2026-06-16）則以逾 1,000 個真實攻擊 session 日誌確認攻擊者已將 Claude Code 作為進攻性工具入侵 14 家企業，標誌濫用從理論轉為在野事實。Claude Code 已累積多個具名 CVE，攻擊面涵蓋 repo clone、deeplink、第三方錯誤追蹤工具注入等向量；社群已建立 stop hook 與沙盒隔離等防護工具（見下方「防護機制建議」）。逐日事件詳見「## 時序」，各事件技術細節見「## 技術彙整」。
 
@@ -30,7 +28,7 @@
 | 風險 / 指控 | 披露日 | 影響範圍 | 官方回應 | 狀態 |
 |------------|--------|---------|---------|------|
 | 同形字符隱寫術（疑對輸出嵌入不可見標記，針對中國 AI Lab 連線者注入系統提示） | 2026-07-01 | 所有使用輸出文字的用戶（隱私/透明度層） | 承諾修復（版本未定，見 [[topics/anthropic-commitments]]） | 🟡 官方承諾修復中 |
-| 中國代理偵測程式碼（v2.1.91 起偵測中國使用者/代理/AI 實驗室並隱形修改 system prompt，binary 疑遭混淆） | 2026-06-30 | 疑似全體用戶（地理位置偵測層） | **Anthropic 定調為內部「實驗」**（2026-07-07，Malwarebytes；社群接受度待觀察） | 🟡 官方已回應（定性未獲第三方驗證） |
+| 中國代理偵測程式碼（v2.1.91 起偵測中國使用者/代理/AI 實驗室並隱形修改 system prompt，binary 疑遭混淆）／中國官方「後門」正式警示（秘密追蹤並回傳資料至遠端伺服器） | 2026-06-30（首見）／2026-07-08（官方升級） | 全體用戶（地理位置偵測層）；中國官方警示涵蓋範圍未界定 | Anthropic 07-07 稱「實驗」；中國官方 07-08 警示未提及此定性，逕自升級為政府層級指控，Anthropic 尚未回應 | 🔴 雙方各執一詞（政府層級指控 vs 官方「實驗」說法，均無第三方技術驗證） |
 | Alibaba 禁用 Claude Code（疑似後門風險指控，改用內部工具 Qoder）；Meta 同日限制工程師使用 Claude | 2026-07-03（Alibaba 傳出）／2026-07-06（多媒體確認 + Meta 跟進）／2026-07-07（Qoder 細節確認） | 企業信任層（無具體技術細節） | 無回應（Alibaba、Meta、Anthropic 三方均未就「後門」技術層面證實或否認） | ❓ 待查證（多媒體聲稱，無第三方資安驗證） |
 | 乾淨 GitHub Repo 提示注入可取得完整系統控制（Mozilla 0din） | 2026-06-28 | 任何處理外部 repo 的工作流 | 無回應 | 🔴 未修補 |
 | CVE-2026-55407：buffa Rust protobuf 約 22 倍記憶體放大 DoS | 2026-07-01 | 使用 buffa 解碼路徑的服務 | 修補狀態待確認 | 🔴 未修補 |
@@ -47,7 +45,8 @@
 
 | 結論 | 狀態 | 日期 |
 |------|------|------|
-| 「embedded spyware」指控：Anthropic 定調為內部「實驗」，非惡意設計 | 🟡 官方回應（社群接受度待觀察） | 2026-07-07 |
+| 中國工業主管機關正式發布「後門」資安警示，指控 Claude Code 秘密追蹤並回傳資料；8+ 媒體同步報導，未附技術證據 | 🔴 政府層級指控（與 Anthropic「實驗」說法正面矛盾，均無第三方驗證） | 2026-07-08 |
+| 「embedded spyware」指控：Anthropic 定調為內部「實驗」，非惡意設計 | 🟡 官方回應（社群接受度待觀察，隔日遭中國官方升級推翻） | 2026-07-07 |
 | Alibaba 禁用 Claude Code（改用內部工具 Qoder）+ Meta 限制工程師使用 Claude：疑似後門風險指控，無技術細節或第三方驗證，跨企業擴散 | 🔴 多媒體聲稱（待查證） | 2026-07-06／07-07 |
 | Radware 將 Claude Code 防護納入 agent 安全產品線 | 🛠️ 第三方防護生態擴張 | 2026-07-07 |
 | Claude Code 同形字符隱寫術：疑對輸出嵌入不可見標記，36Kr 確認針對中國 AI Lab 連線注入系統提示（HN 2263） | 🔴 Anthropic 承諾修復（版本未定） | 2026-07-01 |
@@ -83,6 +82,15 @@
 ---
 
 ## 技術彙整
+
+### 中國官方正式發布「後門」資安警示（2026-07-08 新增，敘事線再升級）
+
+- **揭露來源**：Reuters「China issues 'backdoor' security alert over Anthropic's Claude Code」（2026-07-08 07:01 UTC；https://www.reuters.com/legal/litigation/china-issues-backdoor-security-alert-over-anthropics-claude-code-2026-07-08/）；WSJ「China Says It Has Found Security Vulnerabilities in Anthropic's Claude Code」（https://www.wsj.com/tech/ai/china-says-it-has-found-security-vulnerabilities-in-anthropics-claude-code-5ecf05dc）；CNBC（https://www.cnbc.com/2026/07/08/china-anthropic-ai-claude-code-backdoor-security-threat.html）；CBS News（https://www.cbsnews.com/news/china-security-backdoor-anthropic-ai-coding-tool/）；Cybernews「China says Anthropic's AI coding tool secretly tracks users and sends data to remote servers」（https://cybernews.com/ai-news/china-backdoor-security-alert-anthropics-claude-code/）；China Daily「China's industry regulator flags 'backdoor' risk in Claude Code」（https://www.chinadaily.com.cn/a/202607/08/WS6a4df051a310986e2b464298.html）；Seeking Alpha（https://seekingalpha.com/news/4612152-china-issues-backdoor-security-risk-over-anthropics-claude-code）；The Tech Buzz（https://www.techbuzz.ai/articles/china-flags-backdoor-risk-in-anthropic-s-claude-code）；共至少 8 家媒體同步報導，為本頁今日最大規模跨來源訊號
+- **核心主張**：中國工業主管機關（regulator）就 Claude Code 發布正式資安警示，指控該工具存在「後門」，會秘密追蹤使用者並將資料回傳至遠端伺服器
+- **與既有敘事線的關係（重要）**：此指控與 2026-06-30 起追蹤的社群「embedded spyware」單方指控（v2.1.91+ 中國代理偵測，見下方「Claude Code 中國代理偵測程式碼」條目）主張高度相似——「秘密追蹤並回傳資料」與社群原始指控的技術描述一致。但**中國官方警示完全未提及、也未承認 Anthropic 於 07-07 才提出的「內部實驗」定調**；換言之，官方層級指控是在 Anthropic 才提出解釋的隔日，逕自以政府身分將爭議升級為正式資安警示，形成「Anthropic 稱是實驗」vs「中國官方稱是後門」的直接對峙，兩方框架互不承認，未見調和
+- **性質區分（誰出牌）**：本次為 🏛️ 中國官方層級首次正式表態，區別於此前企業層級的阿里巴巴禁令（🌐，2026-07-03 起）與社群層級的 Reddit/HN 指控（🌐，2026-06-30）；政策/外交面的完整分析見 [[topics/anthropic-government-policy]]
+- **可信度評估**：多家國際主流媒體（Reuters、WSJ、CNBC、CBS News 等）同步報導同一中國官方警示內容，媒體報導本身可信度高（確實有此官方警示存在）；但**警示所指控的「後門」「秘密追蹤」「資料回傳」技術主張本身，多數報導標明為中方單方說法**（如 Cybernews 標題「China says」），未見獨立第三方資安機構驗證技術細節或提供程式碼佐證；Anthropic 截至日報產出時尚未正面回應
+- **未解問題**：中國官方警示所指的「後門」是否即為社群 06-30 發現的中國代理偵測程式碼，或為另一獨立技術指控，報導未明確說明兩者是否為同一機制；後續觀察 Anthropic 官方回應與是否有第三方技術驗證
 
 ### Radware 將 Claude Code 防護納入 agent 安全產品線（2026-07-07 新增）
 
@@ -364,6 +372,7 @@
 
 ## 參考來源
 
+- [[news/2026-07-08]]
 - [[news/2026-07-07]]
 - [[news/2026-07-06]]
 - [[news/2026-07-03]]
@@ -391,6 +400,10 @@
 ## 時序
 
 > 更早期時序見 [[topics/ai-agent-safety-archive]]
+
+### 2026-07-08
+- **[官方升級] 中國工業主管機關正式發布「後門」資安警示**：Reuters、WSJ、CNBC、CBS News、Cybernews、China Daily、Seeking Alpha、The Tech Buzz 等至少 8 家媒體同步報導中國官方就 Claude Code 發布「後門」正式資安警示，指控其秘密追蹤使用者並回傳資料至遠端伺服器；為中國官方（非社群/企業）首次就此議題正式表態，直接延續 06-30「embedded spyware」社群指控敘事線，且與 Anthropic 07-07「內部實驗」定調形成正面矛盾（兩方框架互不承認）；多數報導標明「後門」為中方單方說法，未附技術證據，Anthropic 尚未回應（Reuters，https://www.reuters.com/legal/litigation/china-issues-backdoor-security-alert-over-anthropics-claude-code-2026-07-08/；WSJ，https://www.wsj.com/tech/ai/china-says-it-has-found-security-vulnerabilities-in-anthropics-claude-code-5ecf05dc）；政策/外交面詳見 [[topics/anthropic-government-policy]]
+- **[敘事呼應] Yahoo Finance：阿里巴巴禁用 Claude Code 為「AI 資安爭端升溫」最新進展**：Yahoo Finance 報導將阿里巴巴禁用 Claude Code 一事（已於 07-03～07-07 多媒體確認，改用內部工具 Qoder）定調為中美「AI 資安爭端持續升溫」的最新進展，與同日中國官方後門警示呼應同一敘事線；**（推論）** 兩則報導方向一致，但無新證據顯示阿里禁令決定直接源自本次官方警示本身（Yahoo Finance，https://finance.yahoo.com/technology/ai/articles/alibaba-bans-anthropics-claude-code-175649089.html）；企業採用面另見商業記者負責的 [[topics/enterprise-tool-tracker]]
 
 ### 2026-07-07
 - **[狀態轉折] 「embedded spyware」指控：Anthropic 定調為內部「實驗」**：Malwarebytes 報導 Anthropic 首度正式回應 06-30 起追蹤的「embedded spyware」單方指控（v2.1.91+ 中國代理偵測），稱先前被指控的「隱藏追蹤器」屬內部**實驗**性質，非惡意設計；The Neuron、Axios 另報導 Anthropic 說明 Claude 存在「隱藏工作空間」機制（「Claude has carved out its own space to ponder」）。**「實驗」為官方單方說法，社群（原指控發起者）是否接受尚無後續回應，不構成「已澄清無虞」的定論**（Malwarebytes，https://www.malwarebytes.com/blog/news/2026/07/claude-codes-hidden-tracker-was-an-experiment-says-anthropic；The Neuron，https://www.theneurondaily.com/p/anthropic-found-claude-s-hidden-workspace；Axios，https://www.axios.com/2026/07/06/anthropic-claude-ai-conscious）

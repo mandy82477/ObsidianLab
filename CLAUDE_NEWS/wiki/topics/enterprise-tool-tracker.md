@@ -3,8 +3,8 @@
 **狀態：** ongoing
 **領域：** 💼 商業
 **開始日期：** 2026-05-26
-**最後更新：** 2026-07-07
-**最後新聞更新：** 2026-07-07
+**最後更新：** 2026-07-08
+**最後新聞更新：** 2026-07-08
 
 > **最新企業採用異動**（2026-07-07）
 > 三獨立媒體（PYMNTS、Benzinga、BeInCrypto）確認阿里巴巴以資安疑慮禁用 Claude，並**明確改用內部工具 Qoder**（此前僅知禁令與生效日，今補上替代方案細節）；同日 Anthropic Blog 揭露加拿大 Alberta 省政府自 2025 年起使用 Claude Code 於 20 小時內掃描 4.66 億行程式碼完成資安審查，為具名政府採用新增一筆。
@@ -95,6 +95,9 @@ Claude Code 是工程師日常編碼工具（CLI），成本隨使用量線性�
 ---
 
 ## 時序
+
+### 2026-07-08
+- **Alibaba 禁用 Claude Code 事件再獲媒體確認，定調升溫為中美 AI 資安爭端**：Yahoo Finance（07-08）跟進報導阿里巴巴禁用 Anthropic Claude Code 事件，將其定調為中美 AI 資安爭端升溫的一環；未提供禁令細節、生效日或替代方案的新事實，僅補充「地緣政治爭端」框架，維持既有 ❌ 已退出狀態與 07-10 生效日不變（Yahoo Finance https://finance.yahoo.com/technology/ai/articles/alibaba-bans-anthropics-claude-code-175649089.html）
 
 ### 2026-07-07
 - **阿里巴巴禁用 Claude 改用內部工具 Qoder（三媒體確認）**：PYMNTS、Benzinga、BeInCrypto 三獨立媒體確認阿里巴巴以資安疑慮禁止員工使用 Anthropic Claude，並**明確指示改用內部工具 Qoder**；此前僅知禁令與 07-10 生效日，本次補上具體替代方案細節，是繼 Microsoft（GitHub Copilot）、JPMorgan（出口管制被迫）之後，第三個「退出 Claude → 明確替代工具」的具名案例（Benzinga https://www.benzinga.com/markets/tech/26/07/60297708/alibaba-reportedly-bans-anthropics-claude-for-employees-citing-security-risks-directs-them-to-use-qoder-instead）

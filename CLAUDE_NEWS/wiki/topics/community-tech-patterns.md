@@ -3,11 +3,11 @@
 **狀態：** monitoring
 **領域：** 🌐 社群
 **開始日期：** 2026-04-25
-**最後更新：** 2026-07-07
-**最後新聞更新：** 2026-07-07
+**最後更新：** 2026-07-08
+**最後新聞更新：** 2026-07-08
 
-> **最新工作流模式**（2026-07-07）
-> 新增 InstantVideos：Claude + GLM-5.2 + Nano Banana 2 Lite + ffmpeg 組成的多模型短影音自動化 pipeline，30 秒產出一支短片（HN 23 分，跨 2 來源），將多模型路由思路從編碼任務延伸至內容生成領域，成熟度 ⏳ 新興。07-06：新增兩則模式：① CaveMan Skill 將單次回覆 token 從 70 降至 20，延續「穴居人模式」既有降耗思路的新實作；② 平行 Agent 即時對話地圖，讀取本機 JSONL transcript 呈現多 agent 進度，回應「20-instance 崩潰分析」「1000 Subagents Fan-out」已指出的規模化協調痛點，成熟度均標記 ⏳ 新興（單一低分實作，尚無採用數據）。07-05：本地小模型分流節省 context 機制觀察（Fast Context Task Router，原專案已下架）。
+> **最新工作流模式**（2026-07-08）
+> 新增 Shellular：讓使用者從手機遠端操作自有機器上執行中的 Claude Code、Codex 等 agent（HN 32 分，跨 2 來源），與既有 ccgram（Telegram 遠端控制）、Android Remote Control MCP 同屬「行動裝置遠端操作 agent session」模式家族的第三個獨立實作，成熟度 ⏳ 新興。
 
 ---
 
@@ -45,6 +45,7 @@
 | **Agent 記憶保護** | 結構化 Markdown 編輯器取代 regex | ⏳ 新興 | agent 用 regex 修改記憶檔案易損壞結構；以結構化 AST 編輯器操作 Markdown，防止非預期覆寫 |
 | **跨 Repo 依賴可視化** | Cross-repo blast radius 分析 | ⏳ 新興 | Claude Code 讀完整 clone、Cursor 讀相似度索引，兩者皆不看依賴圖；串接 cross-repo blast radius 分析以補盲點 |
 | **MCP 長 Session 穩健化** | MCP server 失效模式防護 | ⏳ 新興 | 長 session 三大失效模式：連線中斷、工具超時、上下文失憶；對應策略：心跳檢查、超時重試、session 狀態快照 |
+| **行動裝置遠端控制** | ccgram（Telegram）、Android Remote Control MCP、Shellular | ⏳ 新興 | 手機作為 agent 控制介面，透過 Telegram bot / MCP / 專屬 web-app 等不同傳輸層連線並操作本機執行中的 Claude Code / Codex session |
 
 > 成熟度：✅ 成熟（社群廣泛實踐）/ ⚡ 活躍（持續演進中）/ ⏳ 新興（近期出現，尚在探索）
 
@@ -53,6 +54,13 @@
 ## 技術彙整
 
 ### 2026-07
+
+#### Shellular：從手機遠端操作本機 Claude Code / Codex Session（2026-07-08）
+
+- **核心模式：** 開發者發布 Shellular，讓使用者從手機遠端連線至自有機器，操作正在執行的 Claude Code、Codex 等 coding agent 與終端機、開發伺服器
+- **與既有模式的關係：** 與 ccgram（2026-06-28，透過 Telegram 遠端控制 Claude Code）、Android Remote Control MCP（Plugin 設計模式一節）同屬「行動裝置遠端操作 agent session」模式家族的第三個獨立實作；三者共同顯示「手機作為 agent 控制介面」是社群反覆出現的需求，各自選擇不同傳輸層（Telegram bot、MCP、專屬 web app）
+- **來源：** [Show HN: Shellular – run Claude Code, Codex, Pi from your phone](https://shellular.dev/)（Hacker News Show HN，32 分，跨 2 來源報導）
+- **成熟度：** ⏳ 新興（單一 Show HN 專案，尚無採用數據；但屬第三個獨立佐證同一需求的實作，模式本身已具跨案例重複出現的訊號）
 
 #### InstantVideos：Claude + GLM-5.2 + Nano Banana 2 Lite + ffmpeg 多模型短影音自動化 pipeline（2026-07-07）
 

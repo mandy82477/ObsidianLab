@@ -1,12 +1,12 @@
 # Claude / Anthropic 生態系概覽
 
-**最後更新：** 2026-07-07
+**最後更新：** 2026-07-08
 
 ---
 
 ## 當前局勢
 
-出口管制解除後的「蜜月期」很短：Fable 5 / Mythos 5 於 7/1 全面恢復，但短短兩天內就爆出**「embedded spyware」指控**與**Alibaba 因疑似後門風險禁用 Claude Code**，安全信任問題從「政府管制」轉移到「產品本身是否可信」。
+出口管制解除後的「蜜月期」很短：Fable 5 / Mythos 5 於 7/1 全面恢復，但短短兩天內就爆出**「embedded spyware」指控**與**Alibaba 因疑似後門風險禁用 Claude Code**，安全信任問題從「政府管制」轉移到「產品本身是否可信」。**7/8 事件再升級：中國官方（工業主管機關）首度以政府層級發布 Claude Code「後門」資安警示，稱其秘密追蹤使用者並回傳資料，Reuters/WSJ/CNBC/CBS/Cybernews/China Daily 等 8+ 家媒體同步報導**——與 Anthropic 07-07 才提出的「內部實驗」定調時隔一日、框架正面矛盾，Anthropic 尚未正面回應，信任爭議從社群單方指控躍升為國家級公開對峙。
 
 **解禁落地**：出口管制封鎖期確認為 18–19 天，Anthropic 履行承諾之一——Fable 5 redeploy 隨附「Defense in Depth」新安全分類器，高風險 coding 請求自動 fallback 至 Opus 4.8（首日已有誤判負面實測）。7/7 前 Pro/Max/Team 享 50% 配額，7/7 後轉為 usage-based billing（**倒數中**，詳見 [[feature-radar]]）。
 
@@ -72,10 +72,14 @@
 
 ---
 
-## 近兩週重大事件（2026-06-21 至 2026-07-07）
+## 近兩週重大事件（2026-06-22 至 2026-07-08）
 
 | 日期 | 事件 | 影響 |
 |------|------|------|
+| 07-08 | **中國官方首度政府層級指控 Claude Code「後門」**（Reuters/WSJ/CNBC/CBS/Cybernews/China Daily 等 8+ 家） | 🔴 信任爭議升為國家級對峙，與官方「實驗」定調正面矛盾 |
+| 07-08 | **Claude Cowork 擴展至行動/網頁版**（雲端持續執行、涵蓋政府客戶，限 Max）；v2.1.204 修復 headless hook | 🛠️ 官方新功能（🔥🔥🔥🔥）|
+| 07-08 | Microsoft 傳以自研模型取代部分產品中 OpenAI/Anthropic 模型（SiliconANGLE/Bloomberg）| 💼 雲端夥伴依賴度收斂風險 |
+| 07-08 | Fable 5 免費期限再延 5 天至 7/12；Anthropic 3Q26 獲利 >10 億美元（SemiAnalysis）| 💼 促銷延長＋首度正獲利數據 |
 | 07-07 | **Anthropic 定調「隱藏追蹤器」為內部實驗、非惡意**（Malwarebytes/Axios/The Neuron） | 🔴→🟡 spyware 指控首次官方回應 |
 | 07-07 | Alibaba 禁令三媒體再確認，補「改用 Qoder」細節；Alberta 省政府具名採用（20hr 掃 4.66 億行） | 💼 企業版圖一退一進 |
 | 07-07 | Claude Code v2.1.202：`/config` 新增 Dynamic workflow size 設定 | 🛠️ 官方新設定 |

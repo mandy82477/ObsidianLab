@@ -2,10 +2,16 @@
 
 LLM 查詢此 wiki 時，**先讀這個檔案**找相關頁面，再讀具體頁面取得詳細資訊。
 
-**最後更新：** 2026-07-07
+**最後更新：** 2026-07-08
 ---
 
 ## 近期異動
+
+- [[topics/ai-agent-safety]]／[[topics/anthropic-government-policy]] — 2026-07-08：**中國官方層級首度指控 Claude Code「後門」**——工業主管機關發布資安警示，稱其秘密追蹤使用者並回傳資料至遠端伺服器；Reuters/WSJ/CNBC/CBS/Cybernews/China Daily 等 8+ 家媒體同步報導（多標明為「中方說法」）；與 Anthropic 07-07「內部實驗」定調時隔一日、框架正面矛盾，Anthropic 尚未正面回應
+- [[entities/claude-code]]／[[feature-radar]] — 2026-07-08：**Claude Cowork 擴展至行動/網頁版**（雲端持續執行、闔上裝置不中斷、涵蓋政府客戶，首波限 Max，🔥🔥🔥🔥 feature-radar 新條目）；v2.1.204 修復 headless SessionStart hook 串流（純 bug fix）；已知問題新增 4 條（#32479 GitHub Connector、#59033 [object Object]、#24798 inter-session 溝通、#8660 VSCode edit preview）
+- [[entities/pricing]]／[[entities/fable-5]] — 2026-07-08：**Fable 5 免費期限再延 5 天至 7/12**（原 7/7）；feature-radar「⏰ 倒數中」新增 7/12 到期列；Max 額度異常快速耗盡/token 3-5x（#38335 790 留言、#41506）記入 pricing 配額異常
+- [[topics/anthropic-business]]／[[topics/competitor-landscape]] — 2026-07-08：**Microsoft 傳以自研模型取代部分產品中 OpenAI/Anthropic 模型**（SiliconANGLE/Bloomberg，呼應退出風險）；Anthropic 3Q26 獲利 >10 億美元（SemiAnalysis，IPO 前瞻）；Perplexity 傳低調開發 AI 編碼工具對打 Cursor/Claude Code；曼哈頓據點擴張
+- [[topics/community-tech-patterns]]／[[topics/community-tech-discussions]] — 2026-07-08：Shellular（手機遠端操作本機 Claude Code/Codex，HN 32）補入「行動裝置遠端控制」模式類（呼應 Cowork 行動化官方趨勢）；Geosql 地理空間 skill 宣稱 4 倍改善數據被質疑（HN 55，正反交鋒）
 
 - [[topics/ai-agent-safety]]／[[topics/anthropic-commitments]] — 2026-07-07：**「隱藏追蹤器」事件轉折**——Anthropic 定調先前被指控的 hidden tracker 為內部「實驗」、非惡意（Malwarebytes/Axios/The Neuron）；commitments spyware 回應狀態 ❓→🟡（官方單方說法，社群接受度待觀察）
 - [[topics/enterprise-tool-tracker]]／[[topics/anthropic-government-policy]] — 2026-07-07：Alibaba 禁令三媒體（PYMNTS/Benzinga/BeInCrypto）再確認，補「**改用內部工具 Qoder**」細節（生效日 07-10）

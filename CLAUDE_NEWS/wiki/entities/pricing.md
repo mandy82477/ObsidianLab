@@ -4,11 +4,11 @@
 **狀態：** active（持續調整中）
 **領域：** 💼 商業
 **首次出現：** 2026-04-25
-**最後更新：** 2026-07-07
-**最後新聞更新：** 2026-07-07
+**最後更新：** 2026-07-08
+**最後新聞更新：** 2026-07-08
 
-> **最新計費政策異動**（2026-07-04）
-> Anthropic 推出企業版 Claude 支出控管（spend controls）功能，回應企業 agentic AI 帳單頻繁超支的普遍痛點（Tech Times），是官方首次針對 [[topics/enterprise-cost-management]] 長期呼籲的「部門/團隊層級預算分配與上限設定」缺口推出產品化解法；具體控管粒度（部門層級／per-user／即時警報）尚未公開，待後續報導補充。
+> **最新計費政策異動**（2026-07-08）
+> Anthropic 將 Claude Fable 5 免費使用期限再延長 5 天至 **2026-07-12**（Times of India、Forbes），原定 7/7 起 Fable 5 轉為 usage-based billing 的時程順延；同時 GitHub Issues #38335（790 留言/536 讚）、#41506（54 留言/29 讚）與 Reddit r/ClaudeCode 集體反映 Max 方案 CLI session 額度自 3 月底起異常快速耗盡、token 消耗增加約 3–5 倍，凸顯官方尚未正面回應的成本失控疑慮，詳見「重要政策變動紀錄」。
 
 ## 現況
 
@@ -38,7 +38,7 @@
 | 模型 | Input / Output per Mtok | 備注 |
 |------|------|------|
 | Claude Sonnet 5 | $2 / $10 | 促銷定價，有效期至 2026-08-31；Claude Code 新預設模型，相較 Opus 4.8 估計省 60% 成本 |
-| Claude Fable 5 | $10 / $50 | 2026-07-07 前 Pro/Max/Team 訂閱每週配額含 50%；7/7 後轉 usage-based billing（依用量計費），定價另行公告 |
+| Claude Fable 5 | $10 / $50 | 免費使用期限延長至 **2026-07-12**（Times of India、Forbes 2026-07-07/08，較原定 7/7 再延 5 天）；Pro/Max/Team 訂閱每週配額含 50% 用量持續至該日；7/12 後是否轉 usage-based billing 或再延長，待官方後續公告 |
 | Claude Opus 4.8 | 未見日報明確標價 | 作為 Sonnet 5 促銷折扣的比較基準（見上）|
 
 > 模型能力與評測細節見 [[topics/model-comparison]]；此表僅列價格。
@@ -49,7 +49,7 @@
 
 - **訂閱配額制維持**：原定 2026-06-15 生效的 Agent SDK / `claude -p` 計費切割已於 2026-06-16 暫停，重新推行時間未定；Agent SDK、`claude -p`、第三方 Agent SDK app 用量持續計入訂閱配額，無需額外信用池（來源：2026-06-16、2026-06-18 DevOps.com）
 - **週配額 +50% 過渡期持續中（至 2026-07-13）**：Anthropic 於 2026-05-14 宣布臨時提高所有付費方案週用量上限 50%，緩衝 6/15 政策衝擊；政策雖已暫停，此過渡期加成截至查證時（來源日期）仍標示 7/13 到期，屆時是否延續未見後續公告，需留意（來源：2026-05-14）
-- **Fable 5 計費轉換將於 2026-07-07 生效**：7/7 前 Pro/Max/Team 每週配額仍含 50% Fable 5 用量；7/7 後改為 usage-based billing，不再包含在訂閱配額內，須另計費用（來源：2026-07-01）
+- **Fable 5 免費使用期限延長至 2026-07-12（原定 7/7）**：Times of India、Forbes（2026-07-07/08）報導 Anthropic 將 Fable 5 免費使用期限再延長 5 天，Pro/Max/Team 每週配額含 50% Fable 5 用量的過渡期同步順延至 7/12；7/12 後是否改為 usage-based billing 或再延長，待官方後續公告（來源：2026-07-01、2026-07-07/08）
 - **1M context window 觸發 API 計費通道**：即使儀表板顯示 0% 訂閱用量，1M context window 仍會觸發獨立的 API 計費通道並產生額外費用（實例：2026-05-11 用戶 0% 用量下遭收取 $3.37 Extra Usage）
 - **`ANTHROPIC_API_KEY` 環境變數陷阱**：雲端環境（CI/CD、Docker、K8s）若設置此環境變數，所有 Claude Code 呼叫自動改走 API 計費通道而非訂閱配額，需檢查環境變數避免非預期扣費（來源：2026-04-30）
 - **Max 用量上限爭議進入司法程序**：2026-06-16 集體訴訟指控 Max 5x／Max 20x 實際使用限制遠低於廣告宣稱（Max 20x 實測僅 Pro 的 6–8 倍，非廣告的 20 倍），訴訟結果將直接影響方案信任度與可能的退款/調整義務（來源：2026-06-16 CNET、Decrypt）
@@ -121,6 +121,10 @@ git commit 歷史出現大寫字串「HERMES.md」會觸發靜默切換至 API �
 
 ### 定價與促銷（模型定價、方案設計）
 
+#### 2026-07-07～08：Fable 5 免費使用期限再延長 5 天至 7 月 12 日
+
+- **官方延長免費期**：Times of India、Forbes 報導 Anthropic 將 Claude Fable 5 免費使用期限再延長 5 天，由原定 2026-07-07 延至 **2026-07-12**；Pro/Max/Team 每週配額含 50% Fable 5 用量的過渡期同步順延。**注意**：這是繼 06-09（原定 6/22 轉消費制）、07-01（明確 7/7 為 usage-based billing 生效日）之後第二次延後轉換時程，顯示 Anthropic 對 Fable 5 計費模式轉換採取謹慎、分批延後的策略，可能反映對用戶留存或計費系統就緒度的顧慮（推論）（Times of India https://timesofindia.indiatimes.com/technology/tech-news/anthropic-extends-claude-fable-5-free-offer-till-july-12-eligibility-and-other-details-explained/articleshow/132255396.cms；Forbes https://www.forbes.com/sites/sandycarter/2026/07/07/claude-fable-5-extends-by-five-more-days-10-moves-to-make-now/）
+
 #### 2026-07-04：企業版 Claude 支出控管（spend controls）功能上線
 
 - **官方推出企業支出控管功能**：Tech Times 報導（07-04），企業導入 agentic AI 後帳單頻繁超出預算成為普遍痛點，Anthropic 針對企業客戶推出 Claude 支出控管功能協助管理成本。**注意**：報導僅描述功能定位，未揭露具體控管粒度（部門/團隊層級預算上限、per-user 報表、即時警報等 [[topics/enterprise-cost-management]] 長期呼籲的功能是否齊備）；是官方首次針對企業成本失控問題推出產品化解法，而非僅靠配額縮減或計費政策調整（推論：對正面臨 Uber 式成本失控的企業客戶構成留存誘因）。詳見 [[topics/anthropic-business]]、[[topics/enterprise-cost-management]]（Tech Times https://www.techtimes.com/articles/319687/20260704/claude-enterprise-spend-controls-arrive-agentic-ai-bills-blow-past-budgets.htm）
@@ -159,6 +163,13 @@ git commit 歷史出現大寫字串「HERMES.md」會觸發靜默切換至 API �
 The Information 報導企業客戶即使面對成本上漲仍持續採用；Anthropic API 定價策略短期維持強勢。
 
 ### 配額與速率
+
+#### 2026-07-07～08：Max 方案額度異常快速耗盡、token 消耗增加 3–5 倍（持續發酵，官方無回應）
+
+- **GitHub Issue #38335（790 留言/536 讚）**：反映 Max 方案 CLI session 額度自 2026-03-23 起異常快速耗盡，為近期社群互動量最高的計費類 issue 之一（GitHub https://github.com/anthropics/claude-code/issues/38335）
+- **GitHub Issue #41506（54 留言/29 讚）**：反映 Max（$100/月）方案 token 消耗自 3 月底起增加約 3–5 倍，未見對應功能或用量增加可解釋此漲幅（GitHub https://github.com/anthropics/claude-code/issues/41506）
+- **Reddit r/ClaudeCode：「Claude Max (20x) weekly limit exhausted in less than a day」**：使用者回報週額度不到一天即用盡（Reddit https://www.reddit.com/r/ClaudeCode/comments/1uqs99q/）
+- **對留存的意涵**：三則獨立訊號（2 個高互動 GitHub issue + Reddit）方向一致，指向 Max 方案的用量計量或消耗速率可能存在系統性異常，而非個案；與既有 06-16 Max 集體訴訟（廣告 20 倍實測僅 6–8 倍）同屬「用量承諾與實際體驗落差」的信任問題，Anthropic 尚未提供官方解釋或修復時程（推論）
 
 #### 2026-06-30：配額再次縮減（社群反映，Anthropic 無官方公告）
 

@@ -4,11 +4,11 @@
 **狀態：** active（正式發布；出口管制已解除，2026-07-01 起全球恢復存取）
 **領域：** 🤖 模型
 **首次出現：** 2026-06-09
-**最後更新：** 2026-07-07
-**最後新聞更新：** 2026-07-06
+**最後更新：** 2026-07-08
+**最後新聞更新：** 2026-07-08
 
-> **最新進展**（2026-07-06）
-> Anthropic 多個模型一度發生錯誤率升高，Fable 5 亦受影響，事件於同日解決（[Anthropic Status](https://status.claude.com/incidents/tl8x3p1msff2)）。另有 HN 實測案例（Show HN，6 分）佐證解封後能力：作者在出口管制期間卡關三週的 Super Nintendo Python 移植專案，Fable 5 解封後 90 分鐘內找出根本問題並修復 23 個編譯器 bug（[fabian-kuebler.com](https://fabian-kuebler.com/posts/fable-python-snes/)）。
+> **最新進展**（2026-07-08）
+> Anthropic 將 Fable 5 免費使用期限再延長 5 天至 7 月 12 日（定價細節見 [[entities/pricing]]）；XDA 作者實測 Fable 5 進行 zero-shot coding，並談及由此理解 Anthropic 為何限縮其開放程度（[XDA](https://www.xda-developers.com/i-used-claude-fable-5-for-zero-shot-coding-and-understood-why-anthropic-locked-it-down/)）。
 
 ---
 
@@ -148,6 +148,11 @@ claude --model claude-fable-5-20260609
 ## 歷史記錄
 
 ### 解禁後（2026-07-01 起）
+
+#### 2026-07-08
+**免費期限延長至 7/12 + zero-shot coding 實測**：
+- **免費期再延長**：Anthropic 將 Fable 5 免費使用期限再延展 5 天，延至 2026-07-12（[Times of India](https://timesofindia.indiatimes.com/technology/tech-news/anthropic-extends-claude-fable-5-free-offer-till-july-12-eligibility-and-other-details-explained/articleshow/132255396.cms)、[Forbes](https://www.forbes.com/sites/sandycarter/2026/07/07/claude-fable-5-extends-by-five-more-days-10-moves-to-make-now/)，2026-07-07~08）；定價與資格細節見 [[entities/pricing]]
+- **XDA zero-shot coding 實測**：作者以 Fable 5 進行 zero-shot（一次性）程式生成測試，並反思為何 Anthropic 選擇對 Fable 5 施加更嚴格的存取限制（[XDA](https://www.xda-developers.com/i-used-claude-fable-5-for-zero-shot-coding-and-understood-why-anthropic-locked-it-down/)）
 
 #### 2026-07-06
 **Anthropic 多模型錯誤率升高事件（同日解決）+ HN 實測佐證解封後能力**：

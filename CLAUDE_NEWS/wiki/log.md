@@ -3,6 +3,25 @@
 Append-only 紀錄。每次 ingest、lint，以及**揭露缺陷或促成改動的使用者 query**，都在此追加一條（純資訊性、未促成改動的 query 不記，避免噪音）。
 格式：`## [YYYY-MM-DD] 類型 | 說明`
 
+## 2026-07-08 Ingest | news/2026-07-08.md（72 則）
+
+- 來源日報：`news/2026-07-08.md`（72 則，10/10 來源；Google News 41、HN 17、GitHub Issues 10、Reddit 12、Anthropic Status 3、GitHub 2）
+- 分類派工：模型、功能、商業、安全政策、社群、人物（六類全數並行 foreground，model: sonnet）
+- 更新頁面：
+  - **安全政策**：`ai-agent-safety.md` + `anthropic-government-policy.md`——**中國官方層級首度指控 Claude Code「後門」**（工業主管機關資安警示，稱秘密追蹤/回傳資料，Reuters/WSJ/CNBC/CBS/Cybernews/China Daily 等 8+ 家）；兩頁 callout 覆寫、攻防紀錄新增兩列（🏛️ 中國官方、🌐 Yahoo 阿里禁令呼應）、時序新段；明確標註與 07-07「內部實驗」定調正面矛盾、未強行調和；獨立頁門檻仍未達（留待週度回顧）
+  - **功能**：`claude-code.md`（v2.1.204 版本列純 bug fix、已知問題新增 4 條 #32479/#59033/#24798/#8660 + 5 條計數更新、現況加 Cowork 行動/網頁段）；`claude-tag.md`（GitHub 操作錯誤率事件→已修復）；`official-community-gap.md`（平台可及性缺口因 Cowork 擴展同步）；**feature-radar 新增 Cowork 行動/網頁版（🔥🔥🔥🔥 ⚡）**
+  - **商業**：`anthropic-business.md`（3Q26 獲利 >10 億、Microsoft 自研模型替代風險列、曼哈頓擴張、Cowork 進政府）；`pricing.md`（Fable 5 免費期延至 7/12、Max 額度異常/token 3-5x 配額節點）；`competitor-landscape.md`（Microsoft 自研 🔴 + Perplexity 傳聞競品，均標未證實）；`enterprise-tool-tracker.md`（Alibaba 既有事件僅補來源、狀態不變）
+  - **模型**：`fable-5.md`（免費期延 7/12 + XDA zero-shot 實測，wikilink pricing）；`sonnet-5.md`（07-08 錯誤率升高同日解決，輕量）
+  - **社群**：`community-tech-patterns.md`（Shellular 手機遠端操作補入「行動裝置遠端控制」模式類，呼應 Cowork 官方趨勢）；`community-tech-discussions.md`（Geosql 4 倍改善數據質疑，HN 55 正反交鋒；同步清理 14 條逾 21 天 ☄️閃現）；Reddit 條目 score 均 0 未達門檻不收
+  - **人物**：`boris-cherny.md` + `cat-wu.md`（inc.com「Head of Claude Code」5 員工原型，頭銜未具名，兩候選頁均以（待核實）記錄並互加 wikilink）
+- feature-radar：新增 Cowork 行動/網頁版（🔥🔥🔥🔥）；最新版本行 → v2.1.204；⏰ 倒數中新增 7/12 Fable 免費到期列（移除已生效的 7/7 過渡註記）；本週推薦輪替（Artifacts → Cowork，Fable 5 更新為免費延 7/12）
+- index.md 狀態變更：無（無實體狀態主值變更）；近期異動 prepend 5 筆 07-08
+- 新增頁面：無
+- overview：當前局勢「信任危機」升級為國家級對峙段落；近兩週事件表 prepend 4 筆 07-08、範圍更新至 07-08
+- 摘要：主軸——**中國官方政府層級首度指控 Claude Code「後門」**（8+ 媒體，與官方「實驗」定調正面矛盾，信任爭議升為國家級）；Claude Cowork 擴展行動/網頁版（雲端持續執行，🔥🔥🔥🔥）；Fable 5 免費延 7/12；Microsoft 傳自研模型替代
+- 呈現品質：全部通過（六記者 + 主編；多頁 callout 覆寫、摘要精簡、時序同步）
+- 品質備註：社群記者回報 Reddit score 均 0（Reddit 分數未被 gathered_items 追蹤）故全數未達門檻不收——屬資料來源限制而非記者判斷問題，已如實標註
+
 ## 2026-07-07 Ingest | news/2026-07-07.md（42 則）
 
 - 來源日報：`news/2026-07-07.md`（42 則，10/10 來源；Google News 20、GitHub Issues 10、HN 5、Reddit 10、Anthropic Status 2、Anthropic Blog 1、GitHub 1）

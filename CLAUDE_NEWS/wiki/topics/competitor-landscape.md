@@ -3,11 +3,11 @@
 **狀態：** monitoring
 **領域：** 💼 商業
 **開始日期：** 2026-04
-**最後更新：** 2026-07-07
-**最後新聞更新：** 2026-07-07
+**最後更新：** 2026-07-08
+**最後新聞更新：** 2026-07-08
 
-> **最新競品動態**（2026-07-07）
-> CNBC 報導，在 OpenAI、Anthropic 使用成本上升的背景下，中國本土 AI 模型在美國企業端採用率上升——是繼 DeepSeek（Lindy 案例）、Zhipu Z.ai 之後，「成本驅動企業轉向中國模型」趨勢首次獲主流財經媒體以總體視角確認；同日 DeepSeek 生態系推出開源 agent 工具「Deep Code」，被視為直接對標 Claude Code 的新競品。
+> **最新競品動態**（2026-07-08）
+> SiliconANGLE、Bloomberg 兩獨立來源傳出 Microsoft 正逐步以自研模型取代部分產品中的 OpenAI 與 Anthropic 模型以降低成本，若屬實是雲端大廠自身也成為模型層競品的重大訊號；同日 Business Insider 報導 Perplexity 正低調開發 AI 編碼工具，意在對打 Cursor 與 Claude Code，新增一個具名潛在競品；TechCrunch 另以總體視角分析開源 AI 崛起為何目前尚未對 Anthropic 業務造成明顯衝擊。
 
 ---
 
@@ -73,6 +73,17 @@ Claude Code 已成為 AI 輔助編碼的標竿產品，但競爭正快速升溫�
 - **規模**：157,000 名開發者轉向（The New Stack，2026-05-12）
 - **定位**：開源替代 Claude Code；XDA 評測認為功能與體驗相當
 - **插件**：`OpenCode-power-pack` 已移植 Anthropic 官方 11 個 skills
+
+### Microsoft 自研模型 🔴（傳聞，2026-07-07）
+- **狀態**：傳聞階段（SiliconANGLE、Bloomberg 兩獨立來源 2026-07-07 同步報導，未經 Microsoft/Anthropic 官方證實）
+- **動態**：Microsoft 傳出正逐步以自研模型取代部分產品中的 OpenAI 與 Anthropic 模型以降低成本
+- **與既有觀察的呼應**：延續 Microsoft 06-21 退出 Claude Code（成本原因）、06-04 Kevin Scott 公開批評 Anthropic 定價過高的既有軌跡，若屬實代表依賴度收斂從「編碼工具層」擴大至「底層模型層」的雙重收斂
+- **意義**：雲端大廠若成功以自研模型替代第三方模型，將直接侵蝕 Anthropic 的 API 收入來源，且此風險不受 Anthropic 內部定價或效能改善控制（推論）（SiliconANGLE https://siliconangle.com/2026/07/07/microsoft-reportedly-ditching-openais-anthropics-ai-models-favor-cut-costs/；Bloomberg https://www.bloomberg.com/news/articles/2026-07-07/microsoft-replaces-openai-anthropic-with-own-ai-in-some-apps）；商業風險面詳見 [[topics/anthropic-business]]
+
+### Perplexity AI 編碼工具（傳聞開發中，2026-07-07）
+- **狀態**：傳聞階段（Business Insider 2026-07-07 報導）
+- **動態**：Perplexity 正低調開發一款 AI 程式編碼工具，意在對打 Cursor 與 Claude Code
+- **意義**：AI 搜尋/問答起家的 Perplexity 若切入編碼工具賽道，是繼 DeepSeek、Zhipu Z.ai 之後另一個非傳統編碼工具背景的新進入者，顯示 Claude Code 賽道的競爭者組成正持續多元化（推論，細節與時程未公開）（Business Insider https://www.businessinsider.com/perplexity-building-ai-coding-tool-take-on-cursor-and-openai-2026-7）
 
 ### GitHub Copilot
 - **狀態**：Active（2026-05-16 推出全新應用程式，明確點名對標 Claude Code）
@@ -155,6 +166,11 @@ Claude Code 已成為 AI 輔助編碼的標竿產品，但競爭正快速升溫�
 ---
 
 ## 時序
+
+### 2026-07-08
+- **[雲端夥伴自身成為模型層競品，重大] Microsoft 傳出以自研模型取代部分產品中的 OpenAI 與 Anthropic 模型**：SiliconANGLE、Bloomberg 兩獨立來源同步報導，Microsoft 正逐步以自研模型取代部分產品中的 OpenAI 與 Anthropic 模型以降低成本。**對競爭格局的意涵**：呼應既有 Microsoft 06-21 退出 Claude Code（成本原因）與 06-04 Kevin Scott 公開批評 Anthropic 定價過高的軌跡，若屬實顯示 Microsoft 對 Anthropic 的依賴正從「編碼工具層」擴大至「底層模型層」；雲端夥伴兼競爭者的關係進一步向競爭傾斜，且此風險不受 Anthropic 內部定價或效能改善控制（推論，未經官方證實）（SiliconANGLE https://siliconangle.com/2026/07/07/microsoft-reportedly-ditching-openais-anthropics-ai-models-favor-cut-costs/；Bloomberg https://www.bloomberg.com/news/articles/2026-07-07/microsoft-replaces-openai-anthropic-with-own-ai-in-some-apps）；商業風險面詳見 [[topics/anthropic-business]]
+- **[新競品] Perplexity 傳出低調開發 AI 編碼工具，對打 Cursor 與 Claude Code**：Business Insider 報導 Perplexity 正低調開發一款 AI 程式編碼工具，意在對打 Cursor 與 Claude Code。**對競爭格局的意涵**：繼 DeepSeek、Zhipu Z.ai 之後，AI 編碼工具賽道再添一個非傳統背景（搜尋/問答起家）的潛在進入者，顯示賽道競爭者組成持續多元化；細節與上市時程未公開（Business Insider https://www.businessinsider.com/perplexity-building-ai-coding-tool-take-on-cursor-and-openai-2026-7）
+- **[總體分析] TechCrunch：開源 AI 崛起為何目前尚未衝擊 Anthropic**：TechCrunch 分析文章探討開源 AI（DeepSeek、Zhipu 等）崛起目前為何尚未對 Anthropic 業務造成明顯衝擊。**對競爭格局的意涵**：與近期 CNBC（07-07）「成本驅動企業轉向中國模型」的總體趨勢報導形成對照視角，顯示媒體對 Anthropic 護城河韌性的評估仍存在分歧（TechCrunch https://techcrunch.com/2026/07/07/why-the-rise-of-open-source-ai-isnt-hurting-anthropic-yet/）
 
 ### 2026-07-07
 - **[總體視角確認成本驅動轉向] CNBC：中國本土模型因 OpenAI/Anthropic 成本上升，在美企擴大採用**：CNBC 報導，在 OpenAI、Anthropic 使用成本持續上升情況下，中國本土 AI 模型在美國企業端的採用率上升。**對競爭格局的意涵**：此前 DeepSeek（Lindy 案例，06-29）、Zhipu Z.ai（06-27、07-06 ZCode）均為個案或單一廠商視角，本次 CNBC 以總體趨勢視角確認「成本驅動企業轉向中國模型」已成一般性現象，而非孤立案例；對 Anthropic 而言意味著訂閱/API 雙軌定價的護城河持續受壓（CNBC https://www.cnbc.com/2026/07/07/chinese-ai-models-costs-us-openai-anthropic.html）
