@@ -24,6 +24,15 @@ SUBREDDIT_QUERIES = [
 _TOKEN_URL = "https://www.reddit.com/api/v1/access_token"
 _OAUTH_BASE = "https://oauth.reddit.com"
 
+# Per-subreddit-per-pass cap, so one busy subreddit can't eat the whole budget
+# before the others (and the top pass) are reached.
+MAX_PER_SUBREDDIT = 6
+
+# Seconds to wait between RSS requests. The two-pass fetch doubles request count,
+# and Reddit rate-limits the anonymous RSS endpoints aggressively (429); a short
+# spacing markedly cuts failures at ~14s added latency on a daily background run.
+_INTER_REQUEST_DELAY = 1.0
+
 
 class Reddit(BaseSource):
     def fetch(self) -> list[FeedItem]:
@@ -44,34 +53,68 @@ class Reddit(BaseSource):
 def _fetch_rss_all(cutoff: datetime, lookback: int) -> list[FeedItem]:
     # Reddit's ?t= param is server-side: use 'week' for backfill runs > 26h
     reddit_time = "week" if lookback > 30 else "day"
-    items = []
 
-    for subreddit, query in SUBREDDIT_QUERIES:
-        if query is None:
-            # Entire subreddit is on-topic: skip search, pull the new feed directly.
-            url = f"https://www.reddit.com/r/{subreddit}/new.rss"
-        else:
-            url = (
-                f"https://www.reddit.com/r/{subreddit}/search.rss"
-                f"?q={query.replace(' ', '+')}&sort=new&t={reddit_time}&restrict_sr=1"
-            )
-        fetched = _fetch_rss(url)
-        for entry in fetched[:MAX_ITEMS_PER_SOURCE // 2]:
-            pub = parse_feed_time(entry)
-            if pub and pub < cutoff:
-                continue
-            items.append(FeedItem(
-                title=entry.get("title", "(no title)"),
-                url=entry.get("link", ""),
-                source=f"Reddit / r/{subreddit}",
-                published=pub or datetime.now(tz=timezone.utc),
-                score=int(entry.get("slash_comments", 0)),
-                score_unit="留言",
-                summary=entry.get("summary", "")[:200],
-                category="community",
-            ))
+    # Two passes per subreddit:
+    #   - "new"  (sort=new): recent posts within the normal lookback window
+    #   - "top"  (sort=top&t=week): the week's hottest, so a showcase that went
+    #     viral 2-3 days ago isn't missed just because it fell out of /new.
+    # Reddit's RSS/Atom carries no score, so "hot" can't be filtered numerically
+    # downstream — membership in the top-of-week feed IS the popularity signal.
+    # The dedup stage (seen_urls.json) stops top posts re-emitting on later days.
+    top_cutoff = datetime.now(tz=timezone.utc) - timedelta(days=7)
+    seen: set[str] = set()
 
-    return items[:MAX_ITEMS_PER_SOURCE]
+    def _run_pass(sort_top: bool) -> list[FeedItem]:
+        out: list[FeedItem] = []
+        item_cutoff = top_cutoff if sort_top else cutoff
+        # RSS carries no score, so the top-of-week pass tags its provenance in the
+        # source label: "· 週熱門" tells the wiki reporters this item cleared Reddit's
+        # weekly popularity bar and may be admitted despite score being unavailable
+        # (see .claude/rules/wiki-reporter-shared.md interaction-threshold table).
+        marker = " · 週熱門" if sort_top else ""
+        for subreddit, query in SUBREDDIT_QUERIES:
+            if query is None:
+                # Entire subreddit is on-topic: skip search, pull the listing feed.
+                url = (
+                    f"https://www.reddit.com/r/{subreddit}/top.rss?t=week"
+                    if sort_top
+                    else f"https://www.reddit.com/r/{subreddit}/new.rss"
+                )
+            else:
+                sort = "top" if sort_top else "new"
+                t = "week" if sort_top else reddit_time
+                url = (
+                    f"https://www.reddit.com/r/{subreddit}/search.rss"
+                    f"?q={query.replace(' ', '+')}&sort={sort}&t={t}&restrict_sr=1"
+                )
+            fetched = _fetch_rss(url)
+            time.sleep(_INTER_REQUEST_DELAY)  # be polite: Reddit rate-limits hard
+            for entry in fetched[:MAX_PER_SUBREDDIT]:
+                link = entry.get("link", "")
+                if not link or link in seen:
+                    continue
+                pub = parse_feed_time(entry)
+                if pub and pub < item_cutoff:
+                    continue
+                seen.add(link)
+                out.append(FeedItem(
+                    title=entry.get("title", "(no title)"),
+                    url=link,
+                    source=f"Reddit / r/{subreddit}{marker}",
+                    published=pub or datetime.now(tz=timezone.utc),
+                    score=int(entry.get("slash_comments", 0)),
+                    score_unit="留言",
+                    summary=entry.get("summary", "")[:200],
+                    category="community",
+                ))
+        return out
+
+    # Split the budget so hot posts always get slots (new pass runs first, so
+    # without a split it would consume the entire cap).
+    half = MAX_ITEMS_PER_SOURCE // 2
+    new_items = _run_pass(sort_top=False)
+    top_items = _run_pass(sort_top=True)
+    return (new_items[:half] + top_items[:half])[:MAX_ITEMS_PER_SOURCE]
 
 
 def _fetch_rss(url: str) -> list:

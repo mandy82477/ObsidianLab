@@ -3,6 +3,19 @@
 Append-only 紀錄。每次 ingest、lint，以及**揭露缺陷或促成改動的使用者 query**，都在此追加一條（純資訊性、未促成改動的 query 不記，避免噪音）。
 格式：`## [YYYY-MM-DD] 類型 | 說明`
 
+## 2026-07-08 Query | Reddit 條目 score 恆為 0 → 系統性被 wiki 門檻擋掉
+
+- **使用者點出：** 問「這幾天 Fable 5 有什麼有趣的應用」發現答案異常稀薄，直覺「是不是資料來源的問題」。
+- **查證：** `gathered_items.json` 全部 12 條 Reddit score 皆為 0（HN/GitHub Issues 皆有真實分數）。
+- **根因（兩層疊加）：**
+  1. 無 `REDDIT_CLIENT_ID/SECRET` → 走 RSS fallback（Phase A 的 429 限流即此路徑特徵）
+  2. `sources/reddit.py` RSS 路徑 `score=int(entry.get("slash_comments", 0))` 為死碼——Reddit Atom RSS 不帶讚數/留言數，恆回退 0（OAuth 路徑 `post.get("ups")` 才正確）
+  - 後果鏈：score=0 → 過不了 `wiki-reporter-shared.md` 互動門檻（Reddit ≥20 讚）→ **每天所有 Reddit 條目在 wiki 收錄階段全被丟棄**；r/ClaudeAI/r/ClaudeCode 的 showcase（如 Fable 應用實測）系統性消失。另 RSS 抓取偏「最新」（`sort=new`）+ 26h 窗，2-3 天前爆紅但稍舊的貼文也抓不到。
+- **處置（本次）：** 改 `sources/reddit.py` RSS 抓取為雙輪（`sort=new` + `sort=top&t=week`），跨輪去重、new/top 各分一半預算（各 10）、每 sub 每輪上限 6、加 1s inter-request 節流緩解 429。→ 讓**日報**得以surface近一週熱門 Reddit 貼文（含稍舊 showcase）。31/31 測試通過。
+- **未竟（待使用者定奪）：** score 仍為 0（RSS 天生無此欄），故 **wiki 收錄端門檻仍無法機械式放行 Reddit**。根治需擇一：(a) 設 Reddit OAuth 憑證（程式已備 `ups` 路徑）；(b) 改收錄門檻規則，讓「來自 top-of-week 抓取」本身視為達門檻（需標記來源 + `/review-commands`）。
+- **防再犯建議：** 可加「整個來源所有條目 score 皆 0 但 score_unit 宣稱為真實指標」的資料品質告警，避免此類靜默劣化再度無人察覺。
+- **注意：** `sources/reddit.py` 改動尚未 commit/push；憑此路徑決定後再一併處理。
+
 ## 2026-07-08 Ingest | news/2026-07-08.md（72 則）
 
 - 來源日報：`news/2026-07-08.md`（72 則，10/10 來源；Google News 41、HN 17、GitHub Issues 10、Reddit 12、Anthropic Status 3、GitHub 2）
