@@ -72,6 +72,22 @@
 
 ---
 
+## 完工定義（Definition of Done）
+
+**改動未閉迴路不算完成。** 實質改動（pipeline / 規則 / wiki / 腳本）的完工定義三者到齊：
+
+1. **測試綠**：`python scripts/run_tests.py` 通過
+2. **已 commit**：非 data 檔的改動已進 git（data 檔如 `gathered_items.json` / `emitted_items.json` / `seen_urls.json` 例外，不需為它們 commit）
+3. **依賴缺口已登記**：若改動依賴尚缺的憑證/服務/真解（而非真正解決），在 `docs/workaround-register.md` 登記 owner + 複查日，不可只留在對話裡
+
+三者缺一，任務標「進行中」，不標「完成」。
+
+> 判斷：這個改動的迴路閉了嗎？測試、commit、依賴缺口登記三者到齊了嗎？缺一 → 還沒完成。
+
+**開放迴路掃描：** 每週跑 `python scripts/open_loops.py`（列出未 commit 的實質改動、逾複查日的 workaround）；日常則由 SessionStart hook 在開啟專案時提醒未 commit 的實質改動。
+
+---
+
 ## Skills
 
 | 指令 | 用途 | 何時執行 | 詳細規格 |
