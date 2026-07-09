@@ -1,0 +1,26 @@
+{
+  "name": "CLAUDE NEWS · LLM-WIKI",
+  "short_name": "CLAUDE NEWS",
+  "description": "每日聚焦 Claude Code 與 Anthropic 核心動態：官方更新、社群實測、生態趨勢，經 LLM 評分過濾與繁中摘要。",
+  "lang": "zh-TW",
+  "start_url": ".",
+  "scope": ".",
+  "display": "standalone",
+  "orientation": "portrait-primary",
+  "background_color": "#F7F4ED",
+  "theme_color": "#8E5F3D",
+  "icons": [
+    {
+      "src": "icons/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "icons/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ]
+}

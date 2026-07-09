@@ -615,6 +615,16 @@ def build():
         html = _re.sub(r'assets/design\.css(\?v=\d+)?', f'assets/design.css?v={ver}', html)
         index.write_text(html, encoding="utf-8")
 
+    # Bump the service-worker cache version so each deploy ships a fresh cache
+    # name → clients auto-drop stale content (PWA offline cache).
+    sw = ROOT / "web_reader" / "sw.js"
+    if sw.exists():
+        import re as _re2
+        sw_txt = sw.read_text(encoding="utf-8")
+        sw_txt = _re2.sub(r"const SW_VERSION = '[^']*';",
+                          f"const SW_VERSION = '{ver}';", sw_txt, count=1)
+        sw.write_text(sw_txt, encoding="utf-8")
+
     # ── Write search index (full plain text, stripped of markdown syntax) ────────
     search_index = []
     for item in entities + topics:
