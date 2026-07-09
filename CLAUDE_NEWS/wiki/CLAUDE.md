@@ -14,7 +14,8 @@ wiki/
 ├── feature-radar.md ← 官方功能熱度追蹤（每次 ingest 更新）
 ├── reader-notes.md  ← 使用者「記一下」的待辦收件匣（weekly-review 每週消費）
 ├── entities/        ← 模型、功能、人物、產品的持久頁面
-└── topics/          ← 跨日追蹤的進行中議題
+├── topics/          ← 跨日追蹤的進行中議題
+└── sources/         ← 來源節點（供 Obsidian Graph 分析「來源 × 類別」，見連結慣例）
 ```
 
 ---
@@ -41,6 +42,7 @@ wiki/
 - 頁面間：`[[entities/claude-code]]`
 - 引用日報：`[[news/2026-04-25]]`
 - 外部：`[標題](url)`
+- 引用具體來源平台（供 Obsidian Graph 分析「來源 × 類別」，見 `wiki/sources/`）：`[[sources/hacker-news]]`，規則見 `.claude/rules/wiki-reporter-shared.md`
 
 ---
 

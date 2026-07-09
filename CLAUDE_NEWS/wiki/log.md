@@ -2538,3 +2538,48 @@ Append-only 紀錄。每次 ingest、lint，以及**揭露缺陷或促成改動�
 - 延伸：無（六類記者一致判斷：07-04 新訊號已被 07-04 那輪回顧的六項延伸覆蓋，或未達收錄門檻）
 - 使用者跳過項目：無
 - 觀察待辦：#74066 session/cache 洩漏疑慮（單帖單日）由下次例行 ingest 併入 ai-agent-safety 漏洞區塊標「待查證」；Karpathy 待核實標記已掛 5 週，交由下次 lint 3g 待查證回訪處理；Crew、Mycelium 新工具留待下次 lint 策展評估
+
+## 2026-07-10 Lint
+
+- 修正矛盾：
+  - 功能：`official-community-gap.md` 頁內 Cowork 事件日期 07-07→07-08（摘要＋技術彙整 2 處，與 claude-code.md/index.md 一致）
+  - 模型：`fable-5.md` 免費期限指標欄過期（06-22→07-12，與同頁 callout 一致）
+- 補連結：`teresa-carlson`（原僅 index/log 引用）→ 由人物記者在 `ai-talent-flow.md` 相關實體補 wikilink，雙向連結成形
+- 狀態更新：`recursive-self-improvement` ongoing→monitoring（最後新聞更新 2026-06-22，距今 18 天無新進展；記者已改頁面 callout/摘要，主編已同步 index.md Topics 表）
+- resolved 收尾：無
+- 新增 entities：無（本輪掃描無達 3 次提及且無頁的新名稱；六記者亦未回報建頁候選）
+- 呈現品質：全部通過（多頁記者主動修復——過期檢查點日期 bugcrawl/claude-design/openclaw、逾期待查證標記 claude-code 7 條/opus-4-7/karpathy/chris-ciauri/john-jumper 改註「至今無後續」或轉明確結論、discussions 過期 ☄️閃現 清理 4 筆）
+- 入口層健檢：`community-tech-discussions.md`（1000 行）、`community-tech-patterns.md`（897 行）、`ai-agent-safety.md`（513 行）均具完整入口層（callout＋概覽表＋月份/主題分組），通過不拆分；無語意分岔/死案候選
+- 待查證回訪：已完成多筆（模型 opus-4-7；功能 claude-code 7 條；人物 chris-ciauri 預測獲驗證/karpathy 改註/john-jumper 澄清；安全政策無逾期）；其餘標記均在 14 天門檻內
+- 規則檔健檢：
+  - wiki/CLAUDE.md：53 行（閾值 80）✅
+  - .claude/rules/wiki-ingest.md：71 行（閾值 80）✅
+  - .claude/rules/wiki-ingest-format.md：145 行（閾值 200）✅
+  - 各記者規則檔：commercial 102 / community 123 / community-lint 110 / features 154 / models 57 / people 44 / safety-policy 56 / reporter-shared 91（閾值 150）→ ⚠️ features 154 略超，建議下輪簡化（非阻擋）
+  - 矛盾：無（本 session 兩次 /review-commands 均零錯誤）
+  - 引用驗證：全部通過（7 錨點：首次出現/痛點洞察/近期工具/技術彙整/熱門討論/衍生/全覽表 皆存在）
+  - 遵守率：全部通過（近 3 次 ingest 呈現品質 3/3、feature-radar 3/3）
+  - 過期規則（>60 天）：僅 `[加入: 2026-04-25]`（format 模板，76 天）→ 已確認模板仍在用且有效，無需修訂
+  - 簡化：跳過（features.md 略超記待辦，餘皆在閾值內）
+  - 來源健康（近 7 天）：⚠️ dev.to 連 7 天 0（本 session 已改 top=30 抓法，驗證重抓得 15 則）、lobste.rs 連 7 天 0（本 session 已移出 pipeline）、Claude API Release Notes 連 7 天 0（未查證，待排查）、Anthropic Blog 4 天 0（稀疏但會產出，非壞）；GitHub Issues/Google News/HN/Reddit 正常
+  - 跨檔案語意矛盾（6g）：✅ 全部配對語意一致
+  - 成長迴路（月度）：非本月首次 lint（本月已有 1 筆 Lint），跳過
+- 品質指標（6h）：
+  - ref 覆蓋率（每週）：100%（近 7 天 35 條列 / 62 ref，每條列至少一 ref）✅
+  - 採用驗證率（月度）：非本月首次 lint，跳過
+  - 外部死鏈（月度）：非本月首次 lint，跳過
+  - 趨勢判讀：持平（ref 覆蓋率維持滿分）
+- 讀者模擬：3 題全 ✅（升版決策→feature-radar 2 跳；multi-agent 驗證→community-tech-patterns 2 跳；中國後門進展→ai-agent-safety 2 跳）
+- lint 自我遵守率：6/6 記者回報一次過（格式完整、3a–3g 各有明確結果，無退回）
+- community-tech-tools 策展：汰除 34 筆逾 30 天 ⏳（頁面 319→285 行）、新增 Shellular；精選層無變動；patterns 淘汰審查 dry run 0 條（全部仍被引用）
+- overview.md：已更新（當前局勢補 07-09 中國後門延燒第二天/Reflect with Claude/1.2 兆估值；事件表 prepend 3 筆 07-09、範圍更新至 07-09；社群工具段同步本輪策展）
+- 品質備註：無
+
+### 本次 lint 期間 pipeline 來源優化（session 內同步進行，非 lint 標準步驟）
+- dev.to 改 `top=30` 抓法（解除 26h 時間窗綁定、門檻 5/2→3/2）：重抓 07-09 驗證 0→15 則，內容為技術 pattern 精華
+- lobste.rs 移出 pipeline（`ai` tag+標題關鍵字抓法 18 天 0 命中，價值與 HN 重疊；`lobsters.py` 檔保留備日後）
+- GitHub Issues 單日上限 10→15
+- 新增資料品質告警（`main.py` `_warn_if_scores_all_zero`）：來源全數 score=0 但宣稱真實指標時 WARNING，已驗證對 Reddit 觸發
+- 新增社群記者規則「dev.to 條目以內容判斷、不看讚數」（`.claude/rules/wiki-ingest-community.md`）
+- 新增 `wiki/sources/` 10 個來源節點頁 + wikilink 機制（供 Obsidian Graph 分析「來源 × 類別」）
+- 改動未 commit；測試 31/31 綠；兩次 /review-commands 零錯誤

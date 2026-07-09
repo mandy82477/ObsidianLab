@@ -20,7 +20,7 @@ from news_aggregator.sources.base import BaseSource, FeedItem
 logger = logging.getLogger(__name__)
 
 REPO = "anthropics/claude-code"
-MAX_ITEMS = 10
+MAX_ITEMS = 15
 MIN_COMMENTS_HOT = 5      # older issue, heavy recent discussion
 MIN_COMMENTS_NEW = 2      # brand-new issue with early traction
 

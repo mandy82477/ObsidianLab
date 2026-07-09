@@ -3,7 +3,7 @@
 **狀態：** ongoing
 **領域：** 💼 商業
 **開始日期：** 2026-06-19
-**最後更新：** 2026-06-29
+**最後更新：** 2026-07-10
 **最後新聞更新：** 2026-06-29
 
 > **最新動態**（2026-06-29）
@@ -53,6 +53,7 @@
 
 - [[entities/john-jumper]] — 諾貝爾獎得主，DeepMind → Anthropic（6/19）
 - [[entities/andrej-karpathy]] — 近期加入 Anthropic（待核實）
+- [[entities/teresa-carlson]] — 前 Microsoft/AWS 高管，2026-07-07 加入 Anthropic 主導公部門業務（待核實，非研究職但屬同期人才佈局）
 - [[topics/competitor-landscape]] — Google / OpenAI 競品格局
 - [[topics/anthropic-business]] — Anthropic 商業與人才動態
 - [[topics/recursive-self-improvement]] — Claude 已寫 80–90% Anthropic 程式碼，人才邊際效益的背景

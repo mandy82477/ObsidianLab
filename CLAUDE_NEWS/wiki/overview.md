@@ -1,12 +1,12 @@
 # Claude / Anthropic 生態系概覽
 
-**最後更新：** 2026-07-08
+**最後更新：** 2026-07-10
 
 ---
 
 ## 當前局勢
 
-出口管制解除後的「蜜月期」很短：Fable 5 / Mythos 5 於 7/1 全面恢復，但短短兩天內就爆出**「embedded spyware」指控**與**Alibaba 因疑似後門風險禁用 Claude Code**，安全信任問題從「政府管制」轉移到「產品本身是否可信」。**7/8 事件再升級：中國官方（工業主管機關）首度以政府層級發布 Claude Code「後門」資安警示，稱其秘密追蹤使用者並回傳資料，Reuters/WSJ/CNBC/CBS/Cybernews/China Daily 等 8+ 家媒體同步報導**——與 Anthropic 07-07 才提出的「內部實驗」定調時隔一日、框架正面矛盾，Anthropic 尚未正面回應，信任爭議從社群單方指控躍升為國家級公開對峙。
+出口管制解除後的「蜜月期」很短：Fable 5 / Mythos 5 於 7/1 全面恢復，但短短兩天內就爆出**「embedded spyware」指控**與**Alibaba 因疑似後門風險禁用 Claude Code**，安全信任問題從「政府管制」轉移到「產品本身是否可信」。**7/8 事件再升級：中國官方（工業主管機關）首度以政府層級發布 Claude Code「後門」資安警示，稱其秘密追蹤使用者並回傳資料，Reuters/WSJ/CNBC/CBS/Cybernews/China Daily 等 8+ 家媒體同步報導**——與 Anthropic 07-07 才提出的「內部實驗」定調時隔一日、框架正面矛盾，Anthropic 尚未正面回應，信任爭議從社群單方指控躍升為國家級公開對峙。**7/9 延燒進第二天**（WSJ/Fox Business/TechRadar/Yahoo Tech），TechRadar 首見「建議解除安裝」的具體行動呼籲；三方仍未正式回應，獨立頁建頁門檻暫未達。同日 Anthropic 另推出 **「Reflect with Claude」測試版**（使用模式回顧，多媒體同步報導，TechCrunch 以「悄悄推銷 AI」提出質疑），並傳出**次級市場估值飆升至 1.2 兆美元**（幾乎無人願售）。
 
 **解禁落地**：出口管制封鎖期確認為 18–19 天，Anthropic 履行承諾之一——Fable 5 redeploy 隨附「Defense in Depth」新安全分類器，高風險 coding 請求自動 fallback 至 Opus 4.8（首日已有誤判負面實測）。7/7 前 Pro/Max/Team 享 50% 配額，7/7 後轉為 usage-based billing（**倒數中**，詳見 [[feature-radar]]）。
 
@@ -72,10 +72,13 @@
 
 ---
 
-## 近兩週重大事件（2026-06-22 至 2026-07-08）
+## 近兩週重大事件（2026-06-25 至 2026-07-09）
 
 | 日期 | 事件 | 影響 |
 |------|------|------|
+| 07-09 | **中國「後門」指控延燒第二天**（WSJ/Fox Business/TechRadar/Yahoo Tech，TechRadar 首見「建議解除安裝」）| 🔴 三方仍未回應，議題持續發酵 |
+| 07-09 | **Anthropic 推出「Reflect with Claude」測試版**（使用模式回顧，TechCrunch 質疑「悄悄推銷 AI」）| 🛠️ 新功能（🔥🔥🔥）|
+| 07-09 | Anthropic 次級市場估值傳飆升至 **1.2 兆美元**（幾乎無人願售）；Meta 跨入 AI 編碼工具市場 | 💼 估值與競爭雙訊號 |
 | 07-08 | **中國官方首度政府層級指控 Claude Code「後門」**（Reuters/WSJ/CNBC/CBS/Cybernews/China Daily 等 8+ 家） | 🔴 信任爭議升為國家級對峙，與官方「實驗」定調正面矛盾 |
 | 07-08 | **Claude Cowork 擴展至行動/網頁版**（雲端持續執行、涵蓋政府客戶，限 Max）；v2.1.204 修復 headless hook | 🛠️ 官方新功能（🔥🔥🔥🔥）|
 | 07-08 | Microsoft 傳以自研模型取代部分產品中 OpenAI/Anthropic 模型（SiliconANGLE/Bloomberg）| 💼 雲端夥伴依賴度收斂風險 |
@@ -111,7 +114,7 @@
 
 ## 社群工具生態
 
-社群工具目錄（[[topics/community-tech-tools]]）持續策展中，本輪新增額度監控類工具（LimitBar、claude-needs-input）回應 Fable 5 計費轉換前的焦慮情緒；汰除 25 筆逾 30 天無後續的 ⏳ 條目。
+社群工具目錄（[[topics/community-tech-tools]]）持續策展中，本輪（2026-07-10 lint）新增 Shellular（行動裝置遠端控制 Claude Code）；汰除 34 筆逾 30 天無後續的 ⏳ 條目，頁面精簡至 285 行。
 
 - 🔥🔥🔥 **額度/成本監控**（LimitBar / CCLimitPing / claude-needs-input）— 7/7 計費轉換前需求集中湧現
 - 🔥🔥 **Agent 協調與路由**（Workweave Router / Gorchestra）— 成本感知自動路由需求持續

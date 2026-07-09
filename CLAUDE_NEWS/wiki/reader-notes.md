@@ -14,6 +14,8 @@
 
 ---
 
+- [⏳] 2026-07-09｜🔍 興趣主題｜使用者關心 Anthropic **股票/IPO 投資管道**——目前無公開市場管道，次級市場「幾乎無人願賣」（qz.com/Business Insider，估值傳 1.2 兆美元）；weekly-review 留意後續 IPO 時程、次級市場流動性變化、可否加開追蹤子區塊於 [[topics/anthropic-business]]
+
 - [⏳] 2026-07-07｜🔍 興趣主題｜想深入追蹤「**隱藏追蹤器**」技術線：v2.1.91 中國代理偵測程式碼 →「embedded spyware」指控 → 07-07 Anthropic 定調「實驗」；weekly-review 評估是否值得從 [[topics/ai-agent-safety]] 抽出獨立追蹤/深化（含混淆手法、與「hidden workspace」是否同一機制、出口管制關聯）
 
 - [📌] 2026-07-07｜📓 雜記｜**今天改動方向**：從「修單一產出值」轉向「修上游源頭＋防再犯」——日報程度詞須錨定原文（Elevated≠大規模）、callout 改覆寫不留前次、query-log 記錄缺陷驅動改動、reader-notes 收件匣捕捉需求；核心哲學：宣告≠執行（機制放 memory 才觸發）、每次提問當防再犯訊號。

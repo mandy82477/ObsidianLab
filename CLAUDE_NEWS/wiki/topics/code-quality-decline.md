@@ -3,17 +3,17 @@
 **狀態：** monitoring（官方已說明，待驗證恢復）
 **領域：** 🛠️ 工具/功能
 **開始日期：** 2026-03（推測）
-**最後更新：** 2026-07-05
-**最後新聞更新：** 2026-07-04
+**最後更新：** 2026-07-10
+**最後新聞更新：** 2026-07-08
 
-> **最近效能退步事件**（2026-07-03）
-> 06 月下旬起集中出現四個獨立的「token 消耗異常」訊號：HN 熱議「Claude Code 5x 更貴」（score 53）、獨立開發者單月燒 $62,021、GitHub issue #16856 回報 2.1.1 版 token 消耗達 4 倍以上、issue #38335 回報 Max 方案額度自 3/23 起異常消耗且累積大量留言。四者訊號來源獨立但主張方向一致，惟目前無法排除是計費/計量問題而非模型能力退步（詳見下方子區塊）。
+> **最近效能退步事件**（2026-07-08）
+> 06 月下旬起集中出現五個獨立的「token 消耗異常」訊號：HN 熱議「Claude Code 5x 更貴」（score 53）、獨立開發者單月燒 $62,021、GitHub issue #16856 回報 2.1.1 版 token 消耗達 4 倍以上、issue #38335 回報 Max 方案額度自 3/23 起異常消耗且累積大量留言、issue #41506 回報 Max 方案自 3/28-29 起 token 消耗增加 3-5 倍（54 留言）。五者訊號來源獨立但主張方向一致，惟目前無法排除是計費/計量問題而非模型能力退步（詳見下方子區塊）。
 
 ---
 
 ## 摘要
 
-**當前狀態：** 官方已說明 4 月退步原因為工程疏失，恢復情況待驗證；2026-06 下旬起投訴焦點轉向「token 消耗異常／成本暴增」——四個獨立訊號（HN 熱議、$62,021 具名案例、兩則 GitHub issue）指向同一方向，但目前無法斷定是模型真退步、計費計量問題、或 context/工具配置問題（詳見「Token 消耗異常訊號群」）；此前的「工具行為不一致」投訴（自訂編排路由失效、無障礙偏差）性質也不一，共同點是均非典型的模型能力退步，官方多未回應。
+**當前狀態：** 官方已說明 4 月退步原因為工程疏失，恢復情況待驗證；2026-06 下旬起投訴焦點轉向「token 消耗異常／成本暴增」——五個獨立訊號（HN 熱議、$62,021 具名案例、三則 GitHub issue）指向同一方向，但目前無法斷定是模型真退步、計費計量問題、或 context/工具配置問題（詳見「Token 消耗異常訊號群」）；此前的「工具行為不一致」投訴（自訂編排路由失效、無障礙偏差）性質也不一，共同點是均非典型的模型能力退步，官方多未回應。
 
 Claude Code 在 2026 年 3 月至 4 月間出現長達約一個月的效能明顯退步，引發大量開發者不滿。2026-04-24，Anthropic 首次正式承認此問題，說明原因為**工程疏失**（engineering missteps），並非刻意的模型行為調整。
 
@@ -21,7 +21,7 @@ Claude Code 在 2026 年 3 月至 4 月間出現長達約一個月的效能明�
 
 ## Token 消耗異常訊號群（2026-06 下旬起）
 
-**四個獨立訊號：**
+**五個獨立訊號：**
 
 | 日期 | 訊號 | 來源 | 強度 |
 |------|------|------|------|
@@ -29,6 +29,7 @@ Claude Code 在 2026 年 3 月至 4 月間出現長達約一個月的效能明�
 | 2026-07-01 | 獨立開發者單月燒 $62,021 token 的具名案例 | Reddit r/ClaudeAI（[原文](https://www.reddit.com/r/ClaudeAI/comments/1ukli2u/i_burned_62021_in_claude_tokens_in_june_solo_dev/)）| 個案但引發廣泛討論 |
 | 2026-07-03 | GitHub issue #16856：升級至 2.1.1 版後 token 消耗速度較前版快 4 倍以上 | [GitHub Issues #16856](https://github.com/anthropics/claude-code/issues/16856) | 具體版本號可複現主張 |
 | 2026-07-03 | GitHub issue #38335：Max 方案 session 額度自 3/23 起異常加速消耗，累積大量留言 | [GitHub Issues #38335](https://github.com/anthropics/claude-code/issues/38335) | 高（留言數達對照表高門檻）|
+| 2026-07-08 | GitHub issue #41506：Max 方案（$100/月）token 消耗量自 3/28-29 起在未變更設定下增加約 3-5 倍，累積 54 則留言、29 個讚 | [GitHub Issues #41506](https://github.com/anthropics/claude-code/issues/41506) | 高（留言數達對照表高門檻，與 #38335 同期同方向）|
 
 **核心分析：三種假說目前證據各支持什麼**
 
@@ -96,6 +97,9 @@ Claude Code 在 2026 年 3 月至 4 月間出現長達約一個月的效能明�
 - [Anthropic's definition of safety is too narrow](https://jonathannen.com/anthropic-safety-too-narrow/)
 
 ## 時序（最新在上）
+
+### 2026-07-08
+- **Token 消耗異常訊號群再添一例**：GitHub issue #41506 回報 Max 方案（$100/月）token 消耗量自 3 月底起在未變更設定下增加約 3-5 倍，累積 54 則留言、29 個讚；與 07-03 的 #38335、07-01 的兩則社群訊號方向一致，強化「非單一個案」的訊號密度；官方尚未回應（來源：[GitHub Issues #41506](https://github.com/anthropics/claude-code/issues/41506)）
 
 ### 2026-07-04
 - **Plan mode 逾時自動代答 + 整體變慢投訴延續**：Reddit r/ClaudeCode 用戶（source_count 2）反映 plan mode 逾時後自動選擇非預期選項，並主觀感受近期回應變慢、能力下降；與 07-02 已記錄的 AskUserQuestion 60 秒逾時自動代答爭議（見 [[community-tech-discussions]]）屬同一「逾時代答破壞決策體驗」機制的延續投訴，「變慢/能力下降」部分仍屬主觀感受，無 benchmark 或版本號佐證（來源：[Reddit r/ClaudeCode](https://www.reddit.com/r/ClaudeCode/comments/1und5g7/claude_code_cli_is_getting_harder_to_use_plus/)）

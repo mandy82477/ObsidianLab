@@ -25,6 +25,27 @@
 - **僅做格式修正、品質審查、欄位補全等非新聞性修改**時，只更新「最後更新」，**不動「最後新聞更新」**
 - 完成後依 `.claude/rules/wiki-ingest-format.md`「Wiki 頁面呈現品質標準」執行審查
 
+## 來源節點 wikilink `[加入: 2026-07-09]`
+
+新增條目時，若該事實明確來自某一則具體新聞項目，在條目附近加上對應的來源節點連結（供 Obsidian Graph 觀察「來源 × 類別」分布，見 `wiki/CLAUDE.md` 連結慣例）。日報條目結尾的 `` `來源` `` 標記取「/」前半段對照下表：
+
+| 日報 `來源` 前綴 | wikilink |
+|---|---|
+| Hacker News | `[[sources/hacker-news]]` |
+| Reddit | `[[sources/reddit]]` |
+| GitHub Issues | `[[sources/github-issues]]` |
+| GitHub、GitHub Search | `[[sources/github]]` |
+| Google News | `[[sources/google-news]]` |
+| dev.to | `[[sources/devto]]` |
+| lobste.rs | `[[sources/lobsters]]` |
+| Anthropic Blog | `[[sources/anthropic-blog]]` |
+| Anthropic Status | `[[sources/anthropic-status]]` |
+| Claude API Release Notes | `[[sources/claude-api-release-notes]]` |
+
+僅對「今日新增的具體事實」加此連結，不需回溯補歷史條目；一則事實有多個來源時可加多個 wikilink。此為輕量標記，不需額外欄位或表格，不影響既有 `## 參考來源`（日報連結）寫法。
+
+---
+
 ## 互動門檻對照表 `[加入: 2026-07-04]`
 
 來源已擴充至 11 個，各規則檔的互動門檻以下表為準（規則檔寫「高/中/低門檻」即引用此表）；

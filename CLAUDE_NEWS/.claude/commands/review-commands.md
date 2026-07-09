@@ -84,7 +84,6 @@ description: 驗證所有 commands / rules / CLAUDE.md 修改後，相關指令�
 - [ ] Step 3e 引用 `.claude/rules/wiki-ingest-format.md`「Wiki 頁面呈現品質標準」
 - [ ] Step 6b 錨點驗證表存在
 - [ ] Step 6d 指向 `.claude/rules/wiki-ingest-format.md` 及 `wiki-ingest-*.md` 中的 `[加入:]` 標記
-- [ ] Step 6e 分別檢查 `wiki/CLAUDE.md`（閾值 80 行）和 `.claude/rules/wiki-ingest.md`（閾值 80 行）
 
 **news-pipeline.md**
 - [ ] 明確禁止 `/news-pipeline` 本身被包進背景 agent 呼叫

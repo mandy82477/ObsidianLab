@@ -3,10 +3,10 @@
 **狀態：** ongoing
 **領域：** 🌐 社群
 **開始日期：** 2026-04-25
-**最後更新：** 2026-07-04
+**最後更新：** 2026-07-10
 
-> **最新工具動態**（2026-07-04）
-> 07-03 額度焦慮情緒串催生兩款用量監控小工具：LimitBar（macOS 選單列即時額度顯示，source_count 2）與 claude-needs-input（終端機標籤變色提示需要輸入，source_count 2）；同日 CCLimitPing（同一 repo 於 06-07、07-03 兩度 Show HN）更新為最新版本說明並去重合併。本次 lint 汰除 25 筆逾 30 天無後續的 ⏳ 條目（2026-06-01～06-03 首次出現的工具，含 Claudinho、100cc、DepsGuard 等）。
+> **最新工具動態**（2026-07-10）
+> 新增 Shellular（手機遠端操作本機 Claude Code / Codex，HN 32、source_count 2），與既有 ccgram、Android Remote Control MCP 同屬「行動裝置遠端控制」模式家族第三個獨立實作。本次 lint 汰除 34 筆逾 30 天無後續的 ⏳ 條目（2026-06-04～06-09 首次出現的工具，含 Rayline、Guardian Runtime、Intuned、Boxes.dev 等）；近期新出現的 Show HN 工具（Tilion、Atelier、agent-convert、i18nstack 等，HN 均 < 5 分或已 flagged）未達收錄門檻，本輪不收錄。
 
 ---
 
@@ -129,6 +129,7 @@
 
 | 工具 | 類型 | 採用 | 首次出現 | 簡介 |
 | --- | --- | --- | --- | --- |
+| [**Shellular**](https://shellular.dev/) | 遠端控制 | ⏳ | 2026-07-08 | 讓使用者從手機遠端操作自有機器上執行中的 Claude Code、Codex 等 agent 與終端機、開發伺服器；HN score 32，跨 2 來源報導；與 ccgram（Telegram）、Android Remote Control MCP 同屬「行動裝置遠端控制」模式家族第三個獨立實作 |
 | [**LimitBar**](https://mikaweiss6.gumroad.com/l/limitbar) | 用量監控 | ⏳ | 2026-07-03 | macOS 選單列 app，每 60 秒輪詢 Anthropic 端點即時顯示 Claude 用量限制（含 Fable 專屬額度），原生 Swift/AppKit 單一二進位 < 1MB，讀取用量端點不消耗 token；Show HN score 2，source_count 2 |
 | [**claude-needs-input**](https://github.com/rickardstureborg/claude-needs-input) | 工作流 | ⏳ | 2026-07-03 | 終端機標籤在 Claude Code 需要輸入時脈動變橙色（完成則變綠），用 Haiku + 規則判斷阻塞式 vs 收尾式提問；緩解 AskUserQuestion 60 秒逾時痛點（可搭配 `--disallowed-tools AskUserQuestion`）；Show HN score 3，source_count 2 |
 | [**autoharness**](https://github.com/tigerless-labs/autoharness) | Skills | ⏳ | 2026-06-30 | 自學習、自維護的 Claude Code skill 層，旨在讓 agent 能持續優化自身工作流程；Show HN |
@@ -189,42 +190,7 @@
 | [**permafrost**](https://github.com/jianzhichun/permafrost) | 費用監測 | ⏳ | 2026-06-10 | 凍結 Claude Code prompt 前綴以利用快取，宣稱降低 DeepSeek 費用 64%；Show HN score 3 |
 | [**Lanes v0.43.0**](https://lanes.sh/blog/claude-fable-5) | 多 Agent | ⏳ | 2026-06-10 | 並行 agent session 工具更新支援 Claude Fable 5，說明 Fable 5 fallback 機制 |
 | [**ktx**](https://github.com/Kaelio/ktx) | 工作流 | ⏳ | 2026-06-10 | Data agent context 層，解決 AI 在 data warehouse 生成「valid 但 incorrect SQL」問題，提供 deprecated columns、業務規則等隱性知識；聲稱為 Anthropic 內部分析引擎開源版，支援 LLM-driven analytics；Show HN score 79 |
-| [**Rayline**](https://rayline.ai/) | 模型路由 | ⏳ | 2026-06-09 | Claude Code 相容 LLM gateway，攔截內部路由；主 agent 跑 Opus、subagent 路由至便宜模型或本地模型；確定性設定（非 LLM 決策）；Show HN score 11 |
-| [**Guardian Runtime**](https://github.com/ashp15205/guardian-runtime) | 安全工具 | ⏳ | 2026-06-09 | 本地 FinOps + 安全 proxy（localhost:8080），提供 API 硬性預算上限（防 retry 暴衝）、API key/PII 洩漏即時偵測、Terse Mode（宣稱降低輸出 token 成本 40–70%）；支援 OpenAI/Anthropic/Gemini；Show HN |
-| [**CapaKit**](https://capakit.com/) | 安全工具 | ⏳ | 2026-06-09 | Sandbox AI coding agent 完整生命週期（建置到執行），監控 build 階段依賴安裝行為，防止 secrets baked into config 與 npm install 惡意腳本；Show HN score 4 |
-| [**Storytime**](https://1ps0.info/storytime/) | 工作流 | ⏳ | 2026-06-09 | Claude Code continuity 工具：`/storytime` 指令產生增量文件集合，保存 domain lens 與上下文跨 session 延續；作者日常驅動工具；Show HN score 1 |
-| [**cc-bridge**](https://github.com/Incultnitollc/claude-code-live-bridge) | 多 Agent | ⏳ | 2026-06-09 | 兩個 Claude Code 視窗透過單一 JSONL 檔案即時互通；Show HN score 2（[flagged]）|
-| [**RunAPI**](https://runapi.ai/) | 整合工具 | ⏳ | 2026-06-09 | 一個 API key 存取 AI video/image/music/LLM；提供 MCP server + CLI skills，可直接在 Claude Code 整合 Kling/Suno/Flux/Gemini/DeepSeek；Show HN score 3 |
-| [**Intuned**](https://intunedhq.com) | 工作流 | ⏳ | 2026-06-09 | YC S22；AI agent 驅動的瀏覽器自動化平台，automation 以程式碼執行，agent 自動維護（healing）；Launch HN score 110 |
-| [**Levi**](https://ttanv.github.io/levi/) | Agent 框架 | ⏳ | 2026-06-08 | 開源 AlphaEvolve 複現系統；支援 Claude Code / Codex，成本比現有開源框架低達 35 倍；Show HN score 2 |
-| [**Claude Code Status Line**](https://www.aimhuge.com/blog/claude-code-status-line) | IDE/終端 | ⏳ | 2026-06-08 | Claude Code status bar 顯示 ctx 使用率、rate-limit 倒數（燃盡計時）、模型選擇與 git branch；HN score 7 |
-| [**xword-pipeline**](https://github.com/ekorbia/xword-pipeline) | 創意生成 | ⏳ | 2026-06-09 | Rust fill-engine + Claude clue-writer 生成 NYT 風格填字遊戲；含 QA 審查步驟；Show HN score 3 |
-| [**Agam**](https://github.com/CrypticCortex/agam) | 記憶管理 | ⏳ | 2026-06-09 | Activation-based（非向量檢索）Claude Code 長期記憶架構；實驗性；Show HN 入選 |
-| [**ARouter**](https://github.com/sricola/arouter) | 模型路由 | ⏳ | 2026-06-09 | OpenAI/Anthropic drop-in proxy，支援成本降低與 failover；社群建議說明與 LiteLLM 差異；Show HN score 2 |
-| [**Copilot Vulnerability Harness**](https://github.com/davidreis97/defending-code-reference-harness-copilot) | 安全/漏洞發現 | ⏳ | 2026-06-09 | Anthropic `defending-code-reference-harness` 的 GitHub Copilot CLI 移植版；無 Claude Code 也能執行自主漏洞發現；HN score 1 |
-| [**Maggy**](https://www.reddit.com/r/ClaudeAI/comments/1tzqg8i/what_started_as_a_claude_code_scaffolding_repo_is/) | Agent SDK | ⏳ | 2026-06-09 | 由 Claude Code scaffolding repo 演進的全功能開源 AI harness |
-| [**dbmachine**](https://github.com/kenm47/dbmachine) | 全棧框架 | ⏳ | 2026-06-09 | Claude 作為後端與前端，僅保留 DB 與 plumbing；「local Supabase with Claude as interface」概念；Show HN 入選 |
-| [**makememe**](https://github.com/dhruvmehra/makememe) | 創意工具 | ⏳ | 2026-06-09 | Claude Code meme 生成 CLI，可觸發於 CI 結果或 release；Show HN score 1 |
-| [**Lobsteady**](https://lobsteady.com) | 訂閱代理 | ⏳ | 2026-06-09 | $20/月固定費用，讓 Claude Pro/Max 訂閱在 Slack/Discord/Telegram 使用；代理訂閱流量，避免 API 帳單；Show HN score 1 |
 | [**CCLimitPing**](https://github.com/wavever/CCLimitPing) | Rate limit 管理 | ⏳ | 2026-07-03 | 讓 Claude Code 與 Codex 的 rate limit 視窗保持連續，5 小時限制解除瞬間自動觸發 continue，防止因斷線導致配額浪費；同 repo 於 06-07 首次 Show HN（score 1）後於 07-03 因額度焦慮情緒串再度 Show HN（score 2） |
-| [**Kite Markdown**](https://www.kitemarkdown.com/) | 閱讀工具 | ⏳ | 2026-06-07 | Mac 原生 Markdown 閱讀器，QuickLook 整合，特別為大量閱讀 AI 生成 .md 檔案設計，一次性購買無訂閱；Show HN score 2 |
-| [**Lathe**](https://github.com/devenjarvis/lathe) | 學習工具 | ⏳ | 2026-06-07 | 用 LLM 輔助學習新領域而非代勞，生成帶有 source 引用、side-notes 與習題的互動式教學，強制用戶親手輸入程式碼；Show HN score 2 |
-| [**Ccgs**](https://github.com/ingram-technologies/claude-git-sessions) | Session 管理 | ⏳ | 2026-06-07 | 透過 Git orphan branch 在團隊間分享 Claude Code session，智慧重寫絕對路徑，支援跨裝置 `--resume` 接續工作；Show HN score 6 |
-| [**Sandfence**](https://github.com/sheremetyev/sandfence) | 安全/沙箱 | ⏳ | 2026-06-06 | macOS 原生沙箱工具，限制 Claude Code 與 Codex 對系統資源的存取；Show HN score 1 |
-| [**Lazarus**](https://github.com/ExpressGradient/lazarus) | Agent SDK | ⏳ | 2026-06-06 | 長任務 coding agent，以單一 Python runtime 為唯一工具，模型自行撰寫 Python 執行所有操作（inspect/read/edit/test）；針對 FrontierSWE benchmark 設計；HN score 1 |
-| [**Busbar**](https://github.com/MattJackson/busbarAI) | 模型路由 | ⏳ | 2026-06-06 | 單一 Rust 二進位 LLM gateway，整合 Anthropic/OpenAI/Gemini/Bedrock/Cohere 6 種協議，客戶端無感知負載均衡；Show HN score 1 |
-| [**Local MCP**](https://www.local-mcp.com/en) | 整合工具 | ⏳ | 2026-06-06 | 本地 MCP server，整合 Mail/Calendar/Contacts/Teams/Outlook/Excel 等桌面應用；支援 Claude/ChatGPT/Cursor，GDPR/CCPA 合規；Show HN score 2 |
-| [**Zedra**](https://github.com/tanlethanh/zedra) | 遠端控制 | ⏳ | 2026-06-06 | Rust/GPUI 打造的手機控制面板，透過 P2P QUIC/UDP 遠端控制桌面 Claude Code/Codex，支援 iOS/Android 及 Mac/Linux/Windows CLI；Show HN score 2 |
-| [**Lich**](https://github.com/RPate97/lich) | 多 Agent | ⏳ | 2026-06-06 | Worktree-aware 本地開發棧協調器，讓每個 coding agent 各自擁有獨立環境（port、DB、log），解決並行代理開發基礎設施衝突；Show HN score 6 |
-| [**Gito v4.1.0**](https://github.com/Nayjest/Gito/releases/tag/v4.1.0) | 程式碼審查 | ⏳ | 2026-06-06 | AI 程式碼審查工具，新增 Claude Code 與 Gemini CLI 支援；Show HN score 2 |
-| [**FirstDraft**](https://firstdraft.run) | CI/自動化 | ⏳ | 2026-06-05 | AI workers 自動監看 Jira、認領任務、push branch、開 draft PR；支援 Claude Code + Codex；Show HN score 3 |
-| [**Claude-o-meter**](https://github.com/joshcarter/claude-o-meter) | 用量監控 | ⏳ | 2026-06-05 | 仿 1980s Corvette 儀錶的 token 燃燒率顯示；紅線 = 剛好在 5 小時結束時耗盡 tokens；Show HN score 2 |
-| [**Resume**](https://pennyroyaltea.github.io/resume/) | Session 管理 | ⏳ | 2026-06-05 | CLI 管理 Claude Code + Codex sessions；支援 session 篩選與切換；Show HN score 2 |
-| [**Boxes.dev**](https://boxes.dev) | 雲端 IDE | ⏳ | 2026-06-04 | 每個 Claude Code/Codex agent 都有獨立雲端主機，徹底解決 localhost 並行限制；支援手機直接使用；Show HN score 7 |
-| [**agent-browser-shield**](https://github.com/pixiebrix/agent-browser-shield) | 安全/防護 | ⏳ | 2026-06-04 | 瀏覽器擴充保護 AI agent 免受網頁暗黑模式（假庫存、誘導點擊）操縱；Show HN score 7 |
-| [**Ano**](https://ano.chat) | 團隊溝通 | ⏳ | 2026-06-04 | 輕量 Slack 替代品，以 Claude Code 為內建 assistant；本地優先；Show HN score 6 |
-| [**Nori-skillsets**](https://github.com/tilework-tech/nori-skillsets) | Config 管理 | ⏳ | 2026-06-04 | 在不同 agent（Claude Code↔Codex）或不同場景（debug/feature）之間切換 skill 配置；Show HN score 2 |
-| [**AI Gauge**](https://github.com/jpajak/ai-gauge) | 用量監控 | ⏳ | 2026-06-04 | 桌面監控 Claude/Codex/Copilot 用量上限，統一顯示 session 與週用量；Show HN score 2 |
 | [**Minicor**](https://www.minicor.com/) | 工作流 | ⚡ | 2026-05-27 | YC P26 新創，AI 公司整合無 API 桌面系統（Windows RPA）的可擴展基礎設施；HN score 98 |
 | [**Superset**](https://github.com/superset-sh/superset) | 多 Agent | ⚡ | 2026-05-23 | YC P26 開源 agentic IDE，可同時平行運行 Claude Code、Codex、OpenCode 等，底層以 git worktree 隔離各 agent 工作區，解決多 agent 並行的 terminal 混亂問題；Show HN 發布 |
 | [**VIR**](https://www.reddit.com/r/ClaudeAI/comments/1tlcai2/) | 記憶工具 | ⚡ | 2026-05-23 | 背景讀取 `~/.claude/projects` 所有 JSONL session 檔，分類萃取知識（pattern/gotcha/decision/tool），寫入 Obsidian vault 並透過 MCP 讓 Claude Code 存取，解決 session 記憶歸零問題 |

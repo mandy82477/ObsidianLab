@@ -21,6 +21,13 @@
 
 **產品化矩陣轉知 `[加入: 2026-07-04]`：** 發現新的 agent 工作模式（patterns 頁新增條目）時，在回報中註明「請主編轉知功能記者評估產品化矩陣新增列」；`wiki/topics/official-community-gap.md` 的矩陣由功能記者維護，社群記者不直接寫該頁。
 
+**dev.to 條目以內容判斷、不看讚數 `[加入: 2026-07-10]`：** dev.to 走 `top=30` 抓法（過去 30 天高互動文章），但**讚數在 dev.to 幾乎不能當品質指標**——實測顯示最有價值的第一手實作文（如「對抗式 Claude 互審 loop」「local reverse proxy 看 CC 送什麼」）讚數常只有 2–3，反而 SEO 農場文有 5–6 讚。因此 dev.to 條目一律**用內容判斷收錄，不套互動門檻對照表的數字**：
+
+- ✅ **優先收**：「我做了 X、這是怎麼運作 / 踩了什麼坑」的第一手實作、可複用 pattern、具體工具或量化實測（歸 `community-tech-patterns.md`）
+- ❌ **排除**：`Complete Guide` / `Everything you need to know` 型 SEO 農場文（常來自 `ai_made_tools`、`tokenmixai` 等內容農場帳號）；純新聞轉述（定價、發布、事件解釋——這些已由媒體/HN 來源覆蓋，dev.to 版本無獨特價值）；純帶貨 / growth hacking 自我推銷
+
+> 判斷原則：dev.to 的獨特價值是「工程師第一手實作經驗」，不是新聞或教學索引。內容答不出「作者具體做了什麼、學到什麼機制」→ 不收。
+
 ---
 
 ## community-tech-discussions 收錄門檻 `[加入: 2026-06-28]`

@@ -24,7 +24,6 @@ from news_aggregator.sources.github_releases import GitHubReleases
 from news_aggregator.sources.github_issues import GitHubIssues
 from news_aggregator.sources.google_news import GoogleNews
 from news_aggregator.sources.hackernews import HackerNews
-from news_aggregator.sources.lobsters import Lobsters
 from news_aggregator.sources.reddit import Reddit
 
 
@@ -54,6 +53,25 @@ def parse_args() -> argparse.Namespace:
         help="Fetch, dedup, enrich, filter — then write gathered_items.json and exit (no LLM digest)",
     )
     return p.parse_args()
+
+
+# score_unit values that denote a real engagement metric (vs "" = n/a). If a
+# source returns items but ALL of them score 0 while claiming one of these units,
+# the metric is silently broken (e.g. Reddit RSS has no vote count → always 0),
+# which lets the whole source slip past downstream interaction gates unnoticed.
+_REAL_SCORE_UNITS = {"分", "讚", "留言"}
+
+
+def _warn_if_scores_all_zero(name: str, items: list, logger) -> None:
+    if not items or any(getattr(it, "score", 0) for it in items):
+        return
+    claimed = {getattr(it, "score_unit", "") for it in items} & _REAL_SCORE_UNITS
+    if claimed:
+        logger.warning(
+            "資料品質告警：來源 %s 回傳 %d 筆但 score 全為 0，score_unit 宣稱為真實指標 %s"
+            "（疑似靜默劣化，該來源將被下游互動門檻全數擋掉）",
+            name, len(items), "/".join(sorted(claimed)),
+        )
 
 
 def check_gap_lookback(target_date: date, news_dir=NEWS_DIR) -> str | None:
@@ -111,7 +129,6 @@ def main() -> None:
         ("Reddit", Reddit()),
         ("Google News", GoogleNews()),
         ("dev.to", DevTo()),
-        ("lobste.rs", Lobsters()),
         ("Claude API Release Notes", ApiDocs()),
     ]
 
@@ -131,6 +148,7 @@ def main() -> None:
                 all_items.extend(items)
                 source_status[name] = {"ok": True, "count": len(items)}
                 logger.info("%s: %d item(s)", name, len(items))
+                _warn_if_scores_all_zero(name, items, logger)
             except Exception as e:
                 source_status[name] = {"ok": False, "count": 0}
                 logger.warning("%s: fetch raised unexpected exception: %s", name, e)
