@@ -4,17 +4,17 @@
 **狀態：** active
 **領域：** 🤖 模型
 **首次出現：** 2026-05-28
-**最後更新：** 2026-07-01
-**最後新聞更新：** 2026-06-24
+**最後更新：** 2026-07-09
+**最後新聞更新：** 2026-07-09
 
-> **最新服務狀態**（2026-06-24）
-> Claude Opus 4.8 出現跨 API、Claude Code 與 Console 的高錯誤率事件（elevated errors），Anthropic 正在調查中（dev.to）。
+> **最新服務狀態**（2026-07-09）
+> Claude Opus 4.8 一度出現錯誤率升高（Elevated errors），Anthropic Status 於 03:50 UTC 確認問題已解決（中性/低強度事件）；同期 Reddit 使用者反映近期使用體驗轉佳（提及剛發布時曾不穩定），屬弱訊號（score 恆 0），僅供口碑參考。
 
 ---
 
 ## 現況
 
-**2026-06-24 最新**：跨 API、Claude Code 與 Console 三個平台出現高錯誤率（elevated errors），Anthropic 正在調查中；同日第三方評測 Gemini 3.5 Flash 以 35.4 對 34.8 略勝，分析指主因為指令遵循失誤而非能力差距。
+**2026-07-09 最新**：Opus 4.8 一度出現錯誤率升高（Elevated errors），官方於 03:50 UTC 確認問題已解決；同期 Reddit 用戶反映使用體驗轉佳，屬弱訊號僅供參考。
 
 Claude Opus 4.8 於 2026-05-28 正式發布，同步推出 Dynamic Workflows（Research Preview）與 Fast Mode 降價，是 2026 年以來 Anthropic 發布規模最大的旗艦更新。**2026-06-09 Claude Fable 5 發布後，Opus 4.8 不再是最高階公開模型**，現作為 Fable 5 受出口管制停用期間的 fallback 模型（< 5% session 觸發）。核心指標：SWE-bench Pro 69.2%（1M context window）；Fast Mode 速度為標準的 2.5 倍、費率降至前代的 1/3。
 
@@ -125,6 +125,7 @@ claude.ai 用戶現可調節 Claude 在任務上投入的努力程度，不再�
 
 | 日期 | 事件 |
 |------|------|
+| 2026-07-09 | **錯誤率一度升高（同日解決）**：Anthropic Status 通報 Claude Opus 4.8 出現 Elevated errors，於 03:50 UTC 確認問題已解決；同期 Reddit 用戶反映近期使用體驗轉佳，提及發布初期曾有不穩定（弱訊號，score 恆 0） |
 | 2026-06-24 | **第三方評測：Gemini 3.5 Flash 35.4 vs Opus 4.8 34.8 略勝**：RuntimeWire 對比評測中 Gemini 在四項任務贏三項；Claude 在 messy-orders-to-json 任務因輸出 Markdown code fence（違反 JSON-only 指令）失分；分析師評論失分屬指令遵循失誤，非能力差距（[runtimewire.com](https://runtimewire.com/article/head-to-head-anthropic-claude-opus-4-8-vs-google-gemini-3-5-flash)，HN score 3） |
 | 2026-06-24 | **跨平台高錯誤率事件**：Claude Opus 4.8 出現跨 API、Claude Code 與 Console 三個平台的高錯誤率（elevated errors），Anthropic 正在調查中（[dev.to](https://dev.to/damogallagher/claude-opus-48-is-seeing-elevated-errors-across-api-claude-code-and-console-1g9a)）；範圍較 6/22 事件更廣，影響 Claude Code 工作流用戶 |
 | 2026-06-22 | **529 Overloaded 事件**：Anthropic 官方確認 Opus 4.8 出現 elevated error rates（HTTP 529）；另有全球 90 分鐘中斷，Max Plan 用戶反映自上週起錯誤激增（[cybersecuritynews.com](https://cybersecuritynews.com/anthropic-claude-ai-outage/)、HN score 可見） |

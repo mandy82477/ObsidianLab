@@ -3,6 +3,23 @@
 Append-only 紀錄。每次 ingest、lint，以及**揭露缺陷或促成改動的使用者 query**，都在此追加一條（純資訊性、未促成改動的 query 不記，避免噪音）。
 格式：`## [YYYY-MM-DD] 類型 | 說明`
 
+## 2026-07-09 Ingest | news/2026-07-09.md（60 則）
+
+- 來源日報：`news/2026-07-09.md`（60 則，10/10 來源；Google News 32、HN 12、Reddit 16、GitHub Issues 10、Anthropic Status 1、Anthropic Blog 1）
+- 分類派工：模型、功能、商業、安全政策、社群（五類並行 foreground，model: sonnet；今日無人物類條目，不派工）
+- 更新頁面：
+  - **模型**：`sonnet-5.md`（07-09 評測分數/定價傳聞，定價面留給商業記者）；`opus-4-8.md`（callout 更新，Reddit 弱訊號好感度回饋標註參考）；`fable-5.md`（官方 orchestrator 基準 46% 成本/96% 效能補入，來源未附原始連結已標註）；`model-comparison.md`（同步新增 Fable 5 orchestrator 協作基準列）
+  - **功能**：`claude-code.md`（AGENTS.md #6235 反應數 5598→5627；新增/更新已知問題：Console scrolling #826、Screen Flickering #769/#1913、Buddy 請願 #45596、多帳號 Connector #27302、Stream idle timeout #46987、Max 5x 帳號停用 #5088）；`official-community-gap.md`（AGENTS.md 矩陣反應數同步）；**feature-radar 新增 Reflect with Claude（🔥🔥🔥 ⚡）**
+  - **商業**：`anthropic-business.md`（次級市場估值 1.2 兆、Anthropic/OpenAI/SpaceX 市值超越 25 年退場交易總和、TeraWulf 35 億續融資、AWS 治理功能、藥物研究後續、Salesforce Slack 內部觀感，戰略合作表新增 AWS 列）；`pricing.md`（INR #17432 反應數 594→598、Max 額度 #38335 留言 790→791 + Reddit 27%/7% 案例）；`competitor-landscape.md`（新增 Meta AI 程式輔助工具競品條目）
+  - **安全政策**：`ai-agent-safety.md` + `anthropic-government-policy.md`（中國「後門」指控延燒第二天，WSJ/Fox Business/TechRadar/Yahoo Tech，TechRadar 首見「建議解除安裝」；Anthropic dual-use knowledge「關閉開關」研究說明；獨立頁建頁門檻評估：三方仍未正式回應，暫不建頁，留待週度回顧）
+  - **社群**：今日 15 則條目均未達收錄門檻或已由其他記者/既有頁面涵蓋，無頁面更新（Reflect with Claude HN 29 分由功能記者處理官方功能頁；Claude Certified 認證公告已轉知主編評估）
+- feature-radar：新增 Reflect with Claude（🔥🔥🔥 ⚡ Preview）；本週推薦輪替（Sonnet 5 已連續推薦 >7 天且今日未更新，依防霸榜規則換為 `/goal` 指令；Fable 5、Cowork 維持）；最新版本行維持 v2.1.204（今日無新版本）；⏰ 倒數中不動（無到期/新增）
+- index.md 狀態變更：無（無實體狀態主值變更）；近期異動 prepend 4 筆 07-09
+- 新增頁面：無
+- 摘要：主軸——Anthropic 發布「Reflect with Claude」測試版使用回顧功能（多媒體同步報導，TechCrunch 提出質疑角度）；中國「後門」指控延燒進入第二天；Anthropic 次級市場估值傳飆升至 1.2 兆美元；AGENTS.md 支援請求反應數持續攀升（5627 讚）
+- 呈現品質：全部通過（五記者 + 主編；ai-agent-safety.md 修復現況時序侵蝕、opus-4-8.md 修復過期 callout）
+- 品質備註：社群記者本次無頁面更新但完整交代 15 則條目逐一比對門檻的判斷過程，回報品質良好非疏漏；Claude Certified 認證公告主編評估後判斷資訊過於單薄（無官方連結佐證），暫不轉功能記者，留待未來有更完整報導再收錄
+
 ## 2026-07-08 Query | Reddit 條目 score 恆為 0 → 系統性被 wiki 門檻擋掉
 
 - **使用者點出：** 問「這幾天 Fable 5 有什麼有趣的應用」發現答案異常稀薄，直覺「是不是資料來源的問題」。

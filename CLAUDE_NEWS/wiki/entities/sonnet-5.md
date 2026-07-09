@@ -4,11 +4,11 @@
 **狀態：** active（正式發布）
 **領域：** 🤖 模型
 **首次出現：** 2026-07-01
-**最後更新：** 2026-07-08
-**最後新聞更新：** 2026-07-08
+**最後更新：** 2026-07-09
+**最後新聞更新：** 2026-07-09
 
-> **最新動態**（2026-07-02）
-> 發布次日出現兩則爭議性回饋（皆屬主觀/分析性質，非量化評測）：HN 一篇分析文章指 Anthropic 修改了官方對比圖表（原版本讓 Sonnet 5 表現不佳），引發資料呈現可信度討論（score 3，訊號弱）；同時 Reddit 多位使用者反映 Sonnet 5 雖智力提升，但互動個性/語氣不如 Sonnet 4.6。
+> **最新動態**（2026-07-09）
+> Mashable 報導 Anthropic「正式發布」Claude Sonnet 5（07-09 03:41 UTC），與 2026-07-01 官方公告日期重疊，疑為媒體遲來報導或分階段正式化，非新的發布事件；另一科技媒體 tech-insider.org 同日宣稱評測分數達 57 分、API 成本較前代減半，數字未見官方或其他來源佐證，列「待查證」（定價細節見 [[entities/pricing]]）。
 
 ---
 
@@ -64,6 +64,7 @@ claude --model claude-sonnet-5-20260701
 
 - ⚠️ **官方對比圖表遭質疑修改（2026-07-02，待核實）**：分析文章指出 Anthropic 修改了官方 Sonnet 5 對比圖表，該圖表原版本呈現 Sonnet 5 表現較差（[vincentschmalbach.com](https://www.vincentschmalbach.com/anthropic-changed-sonnet-5-chart-after-it-made-sonnet-look-bad/)，HN score 3）；HN score 3 訊號極弱，且原文未提供修改前後圖表對照的完整存檔連結，暫列「待核實」，不寫成定論
 - ⚠️ **個性/語氣不如 Sonnet 4.6（主觀回饋）**：Reddit 多位使用者反映 Sonnet 5 智力提升但互動個性流失——Sonnet 4.6 原本較有個性、懂得對話節奏、簡短回應精準，Sonnet 5 感覺更像通用「help」助手而非有特色的對話夥伴（[Reddit r/ClaudeAI](https://www.reddit.com/r/ClaudeAI/comments/1ulf5xc/something_important_was_lost_between_sonnet_46/)）；屬主觀體驗回饋，非量化評測，與 Fable 5「失去靈魂」討論（見 [[entities/fable-5]] 爭議區）呈現類似的世代模型「個性 vs 能力」取捨模式（推論）
+- ⚠️ **回應內容重複（弱訊號，2026-07-09）**：Reddit r/ClaudeCode 使用者詢問是否也遇到 Sonnet 5 回應內容重複的情形；貼文無 score（Reddit RSS 恆 0，非跨平台佐證），暫僅列為待觀察訊號，不構成已驗證問題
 
 ## 相關議題
 
@@ -78,6 +79,9 @@ claude --model claude-sonnet-5-20260701
 - [[news/2026-07-01]]
 
 ## 歷史記錄
+
+### 2026-07-09
+**媒體「正式發布」報導 + 評測分數/定價初步數字（待查證）**：Mashable 於 07-09 03:41 UTC 報導 Anthropic「finally, officially launches Claude Sonnet 5」，與既有 07-01 官方發布日重疊；tech-insider.org 同日另發文宣稱評測分數達 57 分、API 成本較前代減半（"Claude Sonnet 5 Debuts: 57 Score, Half the API Cost"，13:10 UTC），惟未附具體 benchmark 名稱與官方來源，列「待查證」。定價相關細節見 [[entities/pricing]]。此外 Reddit r/ClaudeCode 出現「回應內容重複」的弱訊號回報（score 恆 0，見「爭議」區）。
 
 ### 2026-07-08
 **錯誤率再度升高（同日解決）**：Anthropic Status 通報 Sonnet 5 錯誤率一度升高，於 06:40 UTC 解決，無需採取行動（[Anthropic Status](https://status.claude.com/incidents/n3v83qmtlbqm)）；另有 07-07 23:46 UTC 一起「部分模型請求錯誤率升高」事件同日解決。屬穩定性事件，非能力或定價變化。

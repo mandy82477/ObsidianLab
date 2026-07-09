@@ -2,11 +2,15 @@
 
 LLM 查詢此 wiki 時，**先讀這個檔案**找相關頁面，再讀具體頁面取得詳細資訊。
 
-**最後更新：** 2026-07-08
+**最後更新：** 2026-07-09
 ---
 
 ## 近期異動
 
+- [[feature-radar]]／[[entities/claude-code]] — 2026-07-09：**Anthropic 推出「Reflect with Claude」測試版**（Settings 使用模式儀表板，TechCrunch/Mashable/CNET/Axios/The Verge 同步報導，feature-radar 新條目 🔥🔥🔥）；AGENTS.md 請求（#6235）反應數更新至 5627 讚；已知問題新增/更新多條（Console scrolling #826、Screen Flickering #769/#1913、Buddy 請願 #45596、多帳號 Connector #27302、Stream idle timeout #46987、Max 5x 帳號停用 #5088）
+- [[topics/ai-agent-safety]]／[[topics/anthropic-government-policy]] — 2026-07-09：中國「後門」指控延燒第二天（WSJ/Fox Business/TechRadar/Yahoo Tech），TechRadar 首見「建議解除安裝」具體行動呼籲；三方仍未正式回應，獨立頁建頁門檻暫未達；Anthropic 研究部落格發布 dual-use knowledge「關閉開關」機制說明
+- [[topics/anthropic-business]]／[[entities/pricing]]／[[topics/competitor-landscape]] — 2026-07-09：Anthropic 次級市場估值傳飆升至 1.2 兆美元（幾乎無人願售）；Anthropic/OpenAI/SpaceX 市值超越 25 年科技業退場交易總和；TeraWulf 尋求 35 億美元融資續建資料中心；Meta 跨入 AI 程式輔助工具市場；AWS 集中管理 Claude 存取/支出/治理；Max 額度異常（#38335）與 INR 定價需求（#17432）反應數更新
+- [[entities/sonnet-5]]／[[entities/fable-5]]／[[topics/model-comparison]] — 2026-07-09：Sonnet 5 媒體重複報導評測/定價傳聞（57分、API 減半，定價面留給 pricing.md）；Fable 5 官方 orchestrator 基準（46% 成本達 96% 效能）補入 model-comparison 對照表
 - [[topics/ai-agent-safety]]／[[topics/anthropic-government-policy]] — 2026-07-08：**中國官方層級首度指控 Claude Code「後門」**——工業主管機關發布資安警示，稱其秘密追蹤使用者並回傳資料至遠端伺服器；Reuters/WSJ/CNBC/CBS/Cybernews/China Daily 等 8+ 家媒體同步報導（多標明為「中方說法」）；與 Anthropic 07-07「內部實驗」定調時隔一日、框架正面矛盾，Anthropic 尚未正面回應
 - [[entities/claude-code]]／[[feature-radar]] — 2026-07-08：**Claude Cowork 擴展至行動/網頁版**（雲端持續執行、闔上裝置不中斷、涵蓋政府客戶，首波限 Max，🔥🔥🔥🔥 feature-radar 新條目）；v2.1.204 修復 headless SessionStart hook 串流（純 bug fix）；已知問題新增 4 條（#32479 GitHub Connector、#59033 [object Object]、#24798 inter-session 溝通、#8660 VSCode edit preview）
 - [[entities/pricing]]／[[entities/fable-5]] — 2026-07-08：**Fable 5 免費期限再延 5 天至 7/12**（原 7/7）；feature-radar「⏰ 倒數中」新增 7/12 到期列；Max 額度異常快速耗盡/token 3-5x（#38335 790 留言、#41506）記入 pricing 配額異常

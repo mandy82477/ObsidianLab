@@ -3,11 +3,11 @@
 **狀態：** monitoring
 **領域：** 💼 商業
 **開始日期：** 2026-04
-**最後更新：** 2026-07-08
-**最後新聞更新：** 2026-07-08
+**最後更新：** 2026-07-09
+**最後新聞更新：** 2026-07-09
 
-> **最新競品動態**（2026-07-08）
-> SiliconANGLE、Bloomberg 兩獨立來源傳出 Microsoft 正逐步以自研模型取代部分產品中的 OpenAI 與 Anthropic 模型以降低成本，若屬實是雲端大廠自身也成為模型層競品的重大訊號；同日 Business Insider 報導 Perplexity 正低調開發 AI 編碼工具，意在對打 Cursor 與 Claude Code，新增一個具名潛在競品；TechCrunch 另以總體視角分析開源 AI 崛起為何目前尚未對 Anthropic 業務造成明顯衝擊。
+> **最新競品動態**（2026-07-09）
+> CNBC 報導 Meta 正跨入 AI 程式輔助工具市場，意圖追趕 Anthropic 與 OpenAI，是繼 Perplexity（07-07）後又一家非傳統編碼工具背景的科技巨頭進入賽道，社群媒體巨頭陣營正式加入競爭。
 
 ---
 
@@ -79,6 +79,11 @@ Claude Code 已成為 AI 輔助編碼的標竿產品，但競爭正快速升溫�
 - **動態**：Microsoft 傳出正逐步以自研模型取代部分產品中的 OpenAI 與 Anthropic 模型以降低成本
 - **與既有觀察的呼應**：延續 Microsoft 06-21 退出 Claude Code（成本原因）、06-04 Kevin Scott 公開批評 Anthropic 定價過高的既有軌跡，若屬實代表依賴度收斂從「編碼工具層」擴大至「底層模型層」的雙重收斂
 - **意義**：雲端大廠若成功以自研模型替代第三方模型，將直接侵蝕 Anthropic 的 API 收入來源，且此風險不受 Anthropic 內部定價或效能改善控制（推論）（SiliconANGLE https://siliconangle.com/2026/07/07/microsoft-reportedly-ditching-openais-anthropics-ai-models-favor-cut-costs/；Bloomberg https://www.bloomberg.com/news/articles/2026-07-07/microsoft-replaces-openai-anthropic-with-own-ai-in-some-apps）；商業風險面詳見 [[topics/anthropic-business]]
+
+### Meta AI 程式輔助工具（傳聞開發中，2026-07-09）
+- **狀態**：傳聞階段（CNBC 2026-07-09 報導）
+- **動態**：Meta 正跨入 AI 程式輔助工具市場，意圖追趕 Anthropic 與 OpenAI
+- **意義**：繼 Perplexity（07-07）之後，又一家非傳統編碼工具背景的科技巨頭傳出進軍 AI 編碼賽道；若 Meta 憑藉自有 Llama 模型與龐大開發者生態切入，可能為 Claude Code 帶來新一輪「大廠免費/低價捆綁」壓力，類似 Microsoft Copilot CLI 路徑（推論，細節與時程未公開）（CNBC）
 
 ### Perplexity AI 編碼工具（傳聞開發中，2026-07-07）
 - **狀態**：傳聞階段（Business Insider 2026-07-07 報導）
@@ -166,6 +171,9 @@ Claude Code 已成為 AI 輔助編碼的標竿產品，但競爭正快速升溫�
 ---
 
 ## 時序
+
+### 2026-07-09
+- **[新競品，社群媒體巨頭入局] Meta 跨入 AI 程式輔助工具市場追趕 Anthropic/OpenAI**：CNBC 報導 Meta 正跨入 AI 程式輔助工具市場，意圖追趕 Anthropic 與 OpenAI。**對競爭格局的意涵**：繼 Perplexity（07-07）之後，AI 編碼工具賽道再添一個非傳統背景的巨頭進入者；Meta 具備 Llama 開源模型與龐大開發者基礎，若正式推出產品可能複製 Microsoft（Copilot CLI）的「免費/低價捆綁」壓力路徑，細節與上市時程未公開（推論）（CNBC）
 
 ### 2026-07-08
 - **[雲端夥伴自身成為模型層競品，重大] Microsoft 傳出以自研模型取代部分產品中的 OpenAI 與 Anthropic 模型**：SiliconANGLE、Bloomberg 兩獨立來源同步報導，Microsoft 正逐步以自研模型取代部分產品中的 OpenAI 與 Anthropic 模型以降低成本。**對競爭格局的意涵**：呼應既有 Microsoft 06-21 退出 Claude Code（成本原因）與 06-04 Kevin Scott 公開批評 Anthropic 定價過高的軌跡，若屬實顯示 Microsoft 對 Anthropic 的依賴正從「編碼工具層」擴大至「底層模型層」；雲端夥伴兼競爭者的關係進一步向競爭傾斜，且此風險不受 Anthropic 內部定價或效能改善控制（推論，未經官方證實）（SiliconANGLE https://siliconangle.com/2026/07/07/microsoft-reportedly-ditching-openais-anthropics-ai-models-favor-cut-costs/；Bloomberg https://www.bloomberg.com/news/articles/2026-07-07/microsoft-replaces-openai-anthropic-with-own-ai-in-some-apps）；商業風險面詳見 [[topics/anthropic-business]]

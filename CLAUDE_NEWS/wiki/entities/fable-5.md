@@ -4,11 +4,11 @@
 **狀態：** active（正式發布；出口管制已解除，2026-07-01 起全球恢復存取）
 **領域：** 🤖 模型
 **首次出現：** 2026-06-09
-**最後更新：** 2026-07-08
-**最後新聞更新：** 2026-07-08
+**最後更新：** 2026-07-09
+**最後新聞更新：** 2026-07-09
 
-> **最新進展**（2026-07-08）
-> Anthropic 將 Fable 5 免費使用期限再延長 5 天至 7 月 12 日（定價細節見 [[entities/pricing]]）；XDA 作者實測 Fable 5 進行 zero-shot coding，並談及由此理解 Anthropic 為何限縮其開放程度（[XDA](https://www.xda-developers.com/i-used-claude-fable-5-for-zero-shot-coding-and-understood-why-anthropic-locked-it-down/)）。
+> **最新進展**（2026-07-09）
+> Reddit 使用者整理 Anthropic 官方基準測試「Fable 5 orchestrates, cheap models execute」：以 Fable 5 負責任務調度、較便宜模型負責執行，可用 46% 成本達到 96% 效能，此模式現可在 Claude Code 中直接套用（週熱門標記，來源貼文日期 2026-07-08）；此外 Anthropic 前一日（07-07/08）已將 Fable 5 免費使用期限再延長至 7 月 12 日（定價細節見 [[entities/pricing]]）。
 
 ---
 
@@ -69,6 +69,7 @@ claude --model claude-fable-5-20260609
 
 ## 核心功能
 
+- **多模型協作基準（官方，2026-07-08）**：Anthropic 公布「Fable 5 orchestrates, cheap models execute」基準數字——Fable 5 負責任務調度、較便宜模型負責實際執行，可用 46% 成本達到 96% 效能，此協作模式現可在 Claude Code 中直接套用（Reddit r/ClaudeAI 整理轉載，週熱門標記，原始官方發布連結未附，暫列官方數據轉述）
 - **Mythos 架構公開版**：首次讓大眾使用 Mythos 等級推理能力
 - **安全分類器護欄**：觸發時靜默 fallback 至 Opus 4.8，不拒絕請求（< 5% session）
 - **1M context + 128K output**：適合處理整個 codebase 或長文件的任務
@@ -148,6 +149,9 @@ claude --model claude-fable-5-20260609
 ## 歷史記錄
 
 ### 解禁後（2026-07-01 起）
+
+#### 2026-07-09
+**官方基準：「Fable 5 orchestrates, cheap models execute」— 46% 成本達 96% 效能**：Reddit 使用者整理 Anthropic 官方公布的多模型協作模式基準數字，指出以 Fable 5 負責任務調度（orchestrator）、由較便宜模型負責實際執行，可用 46% 的成本達到 96% 的效能水準；此模式現可在 Claude Code 中直接套用（Reddit r/ClaudeAI，週熱門標記，來源貼文日期 2026-07-08 19:17 UTC）。屬官方基準數據轉述，原始發布連結未附於本則貼文，暫未直接查證官方原始頁面。
 
 #### 2026-07-08
 **免費期限延長至 7/12 + zero-shot coding 實測**：

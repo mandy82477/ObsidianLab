@@ -3,11 +3,11 @@
 **狀態：** ongoing
 **領域：** 💼 商業
 **開始日期：** 2026-05-28
-**最後更新：** 2026-07-08
-**最後新聞更新：** 2026-07-08
+**最後更新：** 2026-07-09
+**最後新聞更新：** 2026-07-09
 
-> **最新動態**（2026-07-08）
-> SemiAnalysis 報導 Anthropic 2026 財年第三季（3Q26）獲利超過 10 億美元，首度被第三方揭露正獲利數據，為評估潛在 IPO 財務體質的重要前瞻指標；同日 SiliconANGLE／Bloomberg 兩獨立來源傳出 Microsoft 正逐步以自研模型取代部分產品中的 OpenAI 與 Anthropic 模型以降低成本（未經官方證實），呼應既有「Microsoft 退出風險」觀察，顯示依賴度收斂可能從編碼工具層擴大至底層模型層（詳見 [[topics/enterprise-tool-tracker]]、[[topics/competitor-landscape]]）。另有 Anthropic 在曼哈頓擴大據點、Claude Code 與 Cowork 帶入政府機構應用場景等訊號。詳見「時序」。
+> **最新動態**（2026-07-09）
+> qz.com、Business Insider 同步報導 Anthropic **次級市場估值飆升至 $1.2 兆美元**，但兩篇報導均指出股份幾乎無人願意出售、極難取得（估值飆升卻缺乏流動性佐證）；同日 TechCrunch 報導 Anthropic、OpenAI、SpaceX 三者市值總和已超越過去 25 年科技業所有退場交易總和；Bloomberg 報導資料中心業者 TeraWulf 正尋求 **$35 億美元** 融資，用於興建其已簽約租予 Anthropic 使用的肯塔基資料中心（延伸 07-06 已記錄的 $190 億美元、20 年期租約）；AWS 推出集中管理 Claude 存取、支出與治理的企業功能。詳見「時序」。
 
 ---
 
@@ -91,6 +91,7 @@ Simon Willison（知名開發者博主）發表文章，認為 Anthropic 與 Ope
 
 | 合作方 | 類型 | 日期 | 意義 |
 |--------|------|------|------|
+| AWS | 雲端整合（治理功能） | 2026-07-09 | AWS 推出集中管理 Claude 存取權限、支出與治理的企業功能（Help Net Security），與 07-01 Enterprise Gateway 同屬簡化企業導入 Claude 的產品化路線，強化 AWS 作為 Anthropic 主要雲端通路的黏著度（推論）（Help Net Security，日期見時序）|
 | TeraWulf（NASDAQ: WULF）| 基礎設施擴張（$19B、20 年租約）| 2026-07-06 | 比特幣礦業轉型公司 TeraWulf 與 Anthropic 簽署 20 年期、190 億美元肯塔基州 AI 基礎設施園區租約，是迄今已知規模最大的具體算力租賃合約之一；消息當日 TeraWulf 股價大漲約 17%（Barron's），CoreWeave、IREN 等同業被同步點名比較，帶動整體 AI 資料中心租賃市場比價效應（IREN 股價盤後漲 5%，市場臆測其亦與 Anthropic 有合約往來）。**對商業的意涵**：延續近期澳洲 1.4GW 採購、Micron 記憶體協議的算力自建佈局，顯示 Anthropic 正將部分算力供給從雲端夥伴（AWS/Google）分散至新興「AI 基礎設施」專營商，鎖定長期產能同時也把比特幣礦業轉型公司拉入 AI 資料中心賽道核心（推論）（WSJ https://www.wsj.com/finance/investing/terawulf-signs-19-billion-lease-with-anthropic-for-ai-infrastructure-campus-ef26be27；CNBC https://www.cnbc.com/2026/07/06/anthropic-terawulf-data-center-ai.html；Barron's https://www.barrons.com/articles/terawulf-stock-anthropic-ai-data-centers-43d5629a）|
 | Samsung | 晶片代工洽談（媒體持續追蹤，確定性未升級）| 2026-07-06 | TechRepublic 跟進報導 Anthropic 正洽談三星代工客製化 AI 晶片，與 07-02 The Information 首報、07-03/07-04 upi.com 跟進方向一致，但同樣未提供代工規模、金額、時程等可查證細節，暫維持「初步報導」定性；若成真，將是繼自建資料中心（TeraWulf、澳洲）後 Anthropic 另一項硬體自主布局（推論）（TechRepublic https://www.techrepublic.com/article/news-anthropic-samsung-custom-ai-chip/）|
 | Google Workspace | 企業客戶（受治理 workflow agent）| 2026-07-06 | AiThority 報導 Claude 在 Google Workspace 內以受治理 workflow agent 身分運作，屬既有 Google 生態整合的具體應用案例深化（AiThority https://aithority.com/robots/automation/anthropics-claude-becomes-a-governed-workflow-agent-inside-google-workspace/）|
@@ -145,6 +146,15 @@ Simon Willison（知名開發者博主）發表文章，認為 Anthropic 與 Ope
 - [[news/2026-05-13]]（The Information：定價強勢期）
 
 ## 時序
+
+### 2026-07-09
+- **[估值飆升但流動性存疑] Anthropic 次級市場估值飆升至 $1.2 兆美元，股份幾乎無人出售**：qz.com、Business Insider 同步報導 Anthropic 次級市場估值已飆升至 1.2 兆美元，但兩篇報導均指出目前幾乎無人願意出售手中股份，股份極難取得。**對估值的意涵**：這是繼 Series H（$965B，2026-05-28）之後次級市場對 Anthropic 的進一步溢價，但「估值飆升 vs 流動性枯竭」的組合意味著此數字更多反映稀缺性溢價而非可交易市場共識，IPO 前投資人對股權的惜售心態可能進一步推升未來 IPO 定價預期（推論）（qz.com「Anthropic's secondary market valuation has soared to $1.2 trillion. But almost no one is selling」；Business Insider「Anthropic has soared to a $1.2 trillion valuation on secondary markets. Shares are almost impossible to get.」）
+- **[產業級對照] TechCrunch：Anthropic、OpenAI、SpaceX 市值總和超越過去 25 年科技業所有退場交易總和**：TechCrunch 報導三家私人公司的市值規模已超越過去 25 年美國科技業所有 IPO / 併購退場交易的總和。**對估值的意涵**：以宏觀尺度佐證當前 AI 三巨頭私募市場估值的空前規模，也放大了「這些估值能否被公開市場實際兌現」的懸念（推論）（TechCrunch）
+- **[TeraWulf 融資後續] TeraWulf 尋求 $35 億美元融資，用於興建租予 Anthropic 的資料中心**：Bloomberg 報導 TeraWulf 正尋求 35 億美元資金，用於興建其已與 Anthropic 簽署的 20 年期、190 億美元肯塔基資料中心園區（延伸 07-06 已記錄事件）。**對商業的意涵**：顯示 TeraWulf 一方仍需大規模外部融資才能履行對 Anthropic 的產能承諾，Anthropic 算力自建策略的實際落地進度部分繫於合作夥伴自身的資本市場籌資能力，而非 Anthropic 直接出資（推論）（Bloomberg「TeraWulf Eyes $3.5 Billion for Anthropic-Leased Data Center」）
+- **[企業治理功能上線] AWS 推出集中管理 Claude 存取、支出與治理功能**：Help Net Security 報導 AWS 推出功能協助企業集中管理 Claude 的存取權限、支出與治理；與 07-01 Enterprise Gateway 同屬簡化企業導入路線的產品化延伸（詳見「戰略合作」表）
+- **[生命科學拓展持續] WTOP：Anthropic 打造藥物研究工具，計畫自行研究長期受忽視疾病**：WTOP 報導 Anthropic 持續推進藥物研究工具開發，計畫針對長期受忽視的疾病展開自有研究；延續 07-01 STAT News 首報、07-03 The Verge 跟進的「藥物開發野心」報導軌跡，具體管線規模與合作藥廠仍未公開
+- **[競品動態，詳見 competitor-landscape] Meta 跨入 AI 程式輔助工具市場追趕 Anthropic/OpenAI**：詳見 [[topics/competitor-landscape]]
+- **[企業內部觀感] Salesforce 員工對公司在自家 Slack 內推廣 Claude 感到困惑**：The Times of India 報導 Salesforce 員工對公司在其 277 億美元收購的 Slack 平台內推廣競品 Anthropic Claude 感到困惑。**注意**：此事件涉及 Salesforce 內部工具採購矛盾，而非典型的「企業採用 / 退出 AI 編碼工具」案例（Salesforce 本身仍是具名 Claude Code 使用企業，見 [[topics/enterprise-tool-tracker]]），故僅於本頁記錄作為企業軟體採購行為觀察，不計入工具追蹤表變更
 
 ### 2026-07-08
 - **[IPO 財務前瞻，重大] SemiAnalysis：Anthropic 2026 財年第三季（3Q26）獲利超過 10 億美元**：SemiAnalysis 深度報導提前披露 Anthropic 財務數字，確認 3Q26 單季獲利超過 10 億美元，為 Anthropic 首次被第三方研究機構揭露正獲利數據，也是評估其潛在 IPO 財務體質的重要前瞻指標。**對估值的意涵**：此前僅有 ARR $47B 成長數據（Simon Willison 追蹤），未見獲利面；若獲利趨勢延續，將實質支撐 Series H $965B 估值的基本面，對 IPO 路演定價談判力有正面影響（推論）（SemiAnalysis https://newsletter.semianalysis.com/p/anthropic-3q26-profit-over-1b-the-anthropic-ipo-financials-sneak-peak）

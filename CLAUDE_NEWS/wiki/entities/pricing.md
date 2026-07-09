@@ -4,11 +4,11 @@
 **狀態：** active（持續調整中）
 **領域：** 💼 商業
 **首次出現：** 2026-04-25
-**最後更新：** 2026-07-08
-**最後新聞更新：** 2026-07-08
+**最後更新：** 2026-07-09
+**最後新聞更新：** 2026-07-09
 
-> **最新計費政策異動**（2026-07-08）
-> Anthropic 將 Claude Fable 5 免費使用期限再延長 5 天至 **2026-07-12**（Times of India、Forbes），原定 7/7 起 Fable 5 轉為 usage-based billing 的時程順延；同時 GitHub Issues #38335（790 留言/536 讚）、#41506（54 留言/29 讚）與 Reddit r/ClaudeCode 集體反映 Max 方案 CLI session 額度自 3 月底起異常快速耗盡、token 消耗增加約 3–5 倍，凸顯官方尚未正面回應的成本失控疑慮，詳見「重要政策變動紀錄」。
+> **最新計費政策異動**（2026-07-09）
+> Max 20x 額度異常議題持續延燒：Reddit r/ClaudeAI 新增質疑「單一 session 27% 時間消耗掉整週額度 7%」的貼文，與同日 GitHub #38335（累積 791 留言、536 讚，較昨日 790 留言略增，社群註記留言數波動可能為抓取時間差）互相呼應，官方仍無回應；印度盧比在地化定價需求 GitHub #17432 反應數增至 **598 個讚**（205 留言，較昨日 594 讚略增），持續無官方回應。Fable 5 免費使用期限延長至 **2026-07-12** 仍為既有事件，今日僅有社群情緒延續討論，詳見「重要政策變動紀錄」。
 
 ## 現況
 
@@ -131,7 +131,7 @@ git commit 歷史出現大寫字串「HERMES.md」會觸發靜默切換至 API �
 
 #### 2026-07-03：印度盧比定價需求（未滿足需求，官方未回應）
 
-- **GitHub Issue 要求 INR 在地化定價方案（持續發酵，互動量攀升）**：印度用戶在 `anthropic/claude-code` Issue #17432 要求 Anthropic 推出盧比計價方案，比照 OpenAI（ChatGPT）、Google（Gemini）已有的在地化定價。互動量持續攀升：留言數由 204 增至 **205**、reactions 由 👍584 增至 **594**（2026-07-07 查證），為近期社群需求類 issue 中互動量顯著較高者之一。**注意**：純社群 feature request，Anthropic 至今（07-07）仍無官方回應或時程承諾；若 Anthropic 未來跟進在地化定價，將直接影響印度市場（全球最大 AI 開發者社群之一）的訂閱轉換率（推論）（GitHub https://github.com/anthropics/claude-code/issues/17432）
+- **GitHub Issue 要求 INR 在地化定價方案（持續發酵，互動量攀升）**：印度用戶在 `anthropic/claude-code` Issue #17432 要求 Anthropic 推出盧比計價方案，比照 OpenAI（ChatGPT）、Google（Gemini）已有的在地化定價。互動量持續攀升：留言數維持 **205**、reactions 由 👍594 增至 **598**（2026-07-09 查證），為近期社群需求類 issue 中互動量顯著較高者之一。**注意**：純社群 feature request，Anthropic 至今（07-09）仍無官方回應或時程承諾；若 Anthropic 未來跟進在地化定價，將直接影響印度市場（全球最大 AI 開發者社群之一）的訂閱轉換率（推論）（GitHub https://github.com/anthropics/claude-code/issues/17432）
 
 #### 2026-07-01：Claude Sonnet 5 促銷定價 + Fable 5 計費架構調整
 
@@ -164,12 +164,13 @@ The Information 報導企業客戶即使面對成本上漲仍持續採用；Anth
 
 ### 配額與速率
 
-#### 2026-07-07～08：Max 方案額度異常快速耗盡、token 消耗增加 3–5 倍（持續發酵，官方無回應）
+#### 2026-07-07～09：Max 方案額度異常快速耗盡、token 消耗增加 3–5 倍（持續發酵，官方無回應）
 
-- **GitHub Issue #38335（790 留言/536 讚）**：反映 Max 方案 CLI session 額度自 2026-03-23 起異常快速耗盡，為近期社群互動量最高的計費類 issue 之一（GitHub https://github.com/anthropics/claude-code/issues/38335）
+- **GitHub Issue #38335（791 留言/536 讚，2026-07-09 查證）**：反映 Max 方案 CLI session 額度自 2026-03-23 起異常快速耗盡，為近期社群互動量最高的計費類 issue 之一；留言數在 07-08（790）→ 07-09（791）間僅微幅變動，社群互動已趨於高原期（GitHub https://github.com/anthropics/claude-code/issues/38335）
 - **GitHub Issue #41506（54 留言/29 讚）**：反映 Max（$100/月）方案 token 消耗自 3 月底起增加約 3–5 倍，未見對應功能或用量增加可解釋此漲幅（GitHub https://github.com/anthropics/claude-code/issues/41506）
+- **Reddit r/ClaudeAI：「Claude Max 20x: Why did 27% of one session consume 7% of my entire weekly limit?」（2026-07-09）**：使用者具體質疑單一 session 中 27% 的時間消耗掉整週額度 7%，用量計量比例明顯失衡，與 GitHub #38335 反映的異常耗盡現象方向一致
 - **Reddit r/ClaudeCode：「Claude Max (20x) weekly limit exhausted in less than a day」**：使用者回報週額度不到一天即用盡（Reddit https://www.reddit.com/r/ClaudeCode/comments/1uqs99q/）
-- **對留存的意涵**：三則獨立訊號（2 個高互動 GitHub issue + Reddit）方向一致，指向 Max 方案的用量計量或消耗速率可能存在系統性異常，而非個案；與既有 06-16 Max 集體訴訟（廣告 20 倍實測僅 6–8 倍）同屬「用量承諾與實際體驗落差」的信任問題，Anthropic 尚未提供官方解釋或修復時程（推論）
+- **對留存的意涵**：多則獨立訊號（2 個高互動 GitHub issue + 2 則 Reddit 貼文）方向一致，指向 Max 方案的用量計量或消耗速率可能存在系統性異常，而非個案；與既有 06-16 Max 集體訴訟（廣告 20 倍實測僅 6–8 倍）同屬「用量承諾與實際體驗落差」的信任問題，Anthropic 至今（07-09）尚未提供官方解釋或修復時程（推論）
 
 #### 2026-06-30：配額再次縮減（社群反映，Anthropic 無官方公告）
 
