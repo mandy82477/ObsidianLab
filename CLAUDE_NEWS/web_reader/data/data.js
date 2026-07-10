@@ -6,15 +6,15 @@ window.WIKI_DATA = {
       "pageType": "entity",
       "name": "Andrej Karpathy",
       "entityType": "person",
-      "status": "active",
+      "status": "active（待核實）",
       "domain": "👤 人物",
       "pill": "active",
       "firstSeen": "2026-05-17（CLAUDE.md 維護討論中被引用）",
       "startDate": "",
-      "lastUpdated": "2026-06-30",
+      "lastUpdated": "2026-07-10",
       "lastNewsUpdate": "2026-05-29",
-      "summary": "Andrej Karpathy 為知名 AI 研究者，已加入 Anthropic（待核實，來源：HN 討論）。以 OpenAI 聯合創始人/研究總監及 Tesla AI/Autopilot 負責人身份廣為人知。加入 Anthropic 後，公開分享其「CLAUDE.md 四條規則」，其中強調「不讓 agent 讀超過必…",
-      "latestHeadline": "HN 社群討論確認 Karpathy 已正式加入 Anthropic，Eureka Labs GitHub org 停更、LinkedIn 資訊移除，推測已解散（待核實）"
+      "summary": "Andrej Karpathy 為知名 AI 研究者，傳已加入 Anthropic（2026-05-29，至今無後續：來源僅 HN 討論，近 14 天日報無進一步獨立確認）。以 OpenAI 聯合創始人/研究總監及 Tesla AI/Autopilot 負責人身份廣為人知。若加入屬實，其分享的「CLAUDE.md 四條…",
+      "latestHeadline": "HN 社群討論確認 Karpathy 已正式加入 Anthropic，Eureka Labs GitHub org 停更、LinkedIn 資訊移除，推測已解散（2026-05-29，至今無後續：近 14 天日報無進一步報導）"
     },
     {
       "id": "boris-cherny",
@@ -41,9 +41,9 @@ window.WIKI_DATA = {
       "pill": "info",
       "firstSeen": "2026-04-26",
       "startDate": "",
-      "lastUpdated": "2026-06-30",
+      "lastUpdated": "2026-07-10",
       "lastNewsUpdate": "2026-06-20",
-      "summary": "截至 2026-06-20 仍無後續公開資訊，Bugcrawl 自 2026-04-26 首度被 TestingCatalog 報導後維持內部測試狀態。此工具由 Anthropic 開發，專為 Claude Code 提供自動化漏洞偵測功能，強化 AI 輔助開發流程中的程式品質把關，目前尚未正式公開、無公開測試邀請。 …",
+      "summary": "截至 2026-07-10 仍無後續公開資訊，Bugcrawl 自 2026-04-26 首度被 TestingCatalog 報導後維持內部測試狀態。此工具由 Anthropic 開發，專為 Claude Code 提供自動化漏洞偵測功能，強化 AI 輔助開發流程中的程式品質把關，目前尚未正式公開、無公開測試邀請。 …",
       "latestHeadline": "首次被媒體報導（TestingCatalog），確認 Anthropic 正在測試此工具"
     },
     {
@@ -71,10 +71,10 @@ window.WIKI_DATA = {
       "pill": "active",
       "firstSeen": "2026-06-19",
       "startDate": "",
-      "lastUpdated": "2026-06-30",
+      "lastUpdated": "2026-07-10",
       "lastNewsUpdate": "2026-06-18",
-      "summary": "2026-06-18，Chris Ciauri 在首爾 Conrad 飯店召開記者會，公開表態「非常有信心，數日內模型將重新開放」（待核實），針對 Fable 5 / Mythos 出口管制問題給出具體時間框架。這是 Anthropic 首次在亞太地區就此議題公開表態。 Chris Ciauri 是 Anthropic…",
-      "latestHeadline": "在首爾 Conrad 飯店召開記者會，宣布對 Fable 5 / Mythos 解禁「數日內」的信心（待核實）；同場出席者包括 Anthropic Korea 代表 Choi Ki-young"
+      "summary": "2026-06-18，Chris Ciauri 在首爾 Conrad 飯店召開記者會，公開表態「非常有信心，數日內模型將重新開放」，針對 Fable 5 / Mythos 出口管制問題給出具體時間框架。這是 Anthropic 首次在亞太地區就此議題公開表態。**後續驗證**：出口管制已於 2026-07-01 正式解…",
+      "latestHeadline": "Fable 5 / Mythos 出口管制正式解除（見 [[topics/anthropic-government-policy]]），驗證 Ciauri 06-18「數日內」信心表態方向正確"
     },
     {
       "id": "chris-olah",
@@ -101,7 +101,7 @@ window.WIKI_DATA = {
       "pill": "active",
       "firstSeen": "2025（正式推出）",
       "startDate": "",
-      "lastUpdated": "2026-07-09",
+      "lastUpdated": "2026-07-10",
       "lastNewsUpdate": "2026-07-09",
       "summary": "**Reflect with Claude 測試版推出（2026-07-09）：** Anthropic 官方部落格宣布「Reflect with Claude」測試版功能，使用者可在 Settings 中檢視使用模式儀表板，理解自己使用 Claude 的模式；TechCrunch、Mashable、CNET、Axio…",
       "latestHeadline": "Reflect with Claude 測試版推出：Settings 內新增使用模式儀表板，TechCrunch、Mashable、CNET、Axios、The Verge 多家媒體同步報導，多類比「AI 版 Spotify Wrapped」，TechCrunch 提出「悄悄推銷 AI」質疑角度；HN 29 分（見 ["
@@ -116,9 +116,9 @@ window.WIKI_DATA = {
       "pill": "active",
       "firstSeen": "2026-04-27",
       "startDate": "",
-      "lastUpdated": "2026-06-30",
+      "lastUpdated": "2026-07-10",
       "lastNewsUpdate": "2026-06-20",
-      "summary": "Claude Design 是 Anthropic 推出的 AI 設計工具功能，旨在讓 Claude 具備輔助 UI／視覺設計的能力。目前處於初期階段，社群評價以負面為主——幻覺嚴重、工具錯誤頻繁，且輸出設計風格過度貼近 Anthropic 自家品牌，忽略用戶提供的設計素材。截至 2026-06-20，無後續公開更新，…",
+      "summary": "Claude Design 是 Anthropic 推出的 AI 設計工具功能，旨在讓 Claude 具備輔助 UI／視覺設計的能力。目前處於初期階段，社群評價以負面為主——幻覺嚴重、工具錯誤頻繁，且輸出設計風格過度貼近 Anthropic 自家品牌，忽略用戶提供的設計素材。截至 2026-07-10，無後續公開更新，…",
       "latestHeadline": "有開發者透過讓 Claude Design 洩漏部分指引，成功反向工程其系統提示詞，並以近似版本公開分享，顯示提示工程邏輯可被複製至其他 LLM 或 Claude Code 環境，降低了其差異化壁壘"
     },
     {
@@ -191,7 +191,7 @@ window.WIKI_DATA = {
       "pill": "active",
       "firstSeen": "2026-06-09",
       "startDate": "",
-      "lastUpdated": "2026-07-09",
+      "lastUpdated": "2026-07-10",
       "lastNewsUpdate": "2026-07-09",
       "summary": "Claude Fable 5 是 Anthropic 於 2026-06-09 發布的旗艦模型，為**史上首款向大眾開放的 Mythos 級模型**。Fable 5 與 Claude Mythos 5 共用相同的模型權重，差異在於 Fable 5 前置安全分類器——觸發時 fallback 至 Claude Opus …",
       "latestHeadline": "Claude Fable 5 是 Anthropic 於 2026-06-09 發布的旗艦模型，為史上首款向大眾開放的 Mythos 級模型。Fable 5 與 Claude Mythos 5 共用相同的模型權重，差異在於 Fable 5 前置安全分類器——觸發時 fallback 至 Claude Opus 4.8（"
@@ -236,7 +236,7 @@ window.WIKI_DATA = {
       "pill": "active",
       "firstSeen": "2026-06-20",
       "startDate": "",
-      "lastUpdated": "2026-06-30",
+      "lastUpdated": "2026-07-10",
       "lastNewsUpdate": "2026-06-26",
       "summary": "2026-06-21，Reuters 正式確認 John Jumper 已離開 Google DeepMind、加入 Anthropic（HN score 77）。他成為一週內出走 Google 加入 Anthropic 的多位頂尖研究員之一，dev.to 報導指此波人才流失連帶造成 Google Alphabet 市…",
       "latestHeadline": "dev.to 多篇報導總結此波 Google AI 人才出走潮，指 Jumper 加入時點適逢 Anthropic Mythos 出口管制危機；一週內 4 位頂尖研究員離開 Google，Google Alphabet 市值蒸發約 2,700 億美元，Gemini 3.5 延期（來源：dev.to）"
@@ -281,7 +281,7 @@ window.WIKI_DATA = {
       "pill": "active",
       "firstSeen": "2026-04-25",
       "startDate": "",
-      "lastUpdated": "2026-07-01",
+      "lastUpdated": "2026-07-10",
       "lastNewsUpdate": "2026-05-14",
       "summary": "OpenClaw 是一款第三方 Claude agentic 工具，設計用途為擴展 Claude 訂閱方案的自動化用量。歷經 2026-04-25 配額禁令後，Anthropic 於 2026-05-14 宣布恢復允許 OpenClaw 等第三方工具使用，但代價是：**這些用量全數脫離訂閱方案，改為按完整 API 費率…",
       "latestHeadline": "OpenClaw 是一款第三方 Claude agentic 工具，設計用途為擴展 Claude 訂閱方案的自動化用量。歷經 2026-04-25 配額禁令後，Anthropic 於 2026-05-14 宣布恢復允許 OpenClaw 等第三方工具使用，但代價是：這些用量全數脫離訂閱方案，改為按完整 API 費率計費"
@@ -311,7 +311,7 @@ window.WIKI_DATA = {
       "pill": "active",
       "firstSeen": "2026-04-24",
       "startDate": "",
-      "lastUpdated": "2026-07-01",
+      "lastUpdated": "2026-07-10",
       "lastNewsUpdate": "2026-06-25",
       "summary": "**當前狀態：** 已被 Opus 4.8 / Fable 5 取代，現為第三階旗艦；agentic coding 場景仍有口碑，一般對話評價分歧。 Claude Opus 4.7 於 2026-04-24 正式發布，已相繼被 Opus 4.8（2026-05-28）與 Fable 5（2026-06-09）取代，現為…",
       "latestHeadline": "當前狀態： 已被 Opus 4.8 / Fable 5 取代，現為第三階旗艦；agentic coding 場景仍有口碑，一般對話評價分歧。"
@@ -433,7 +433,7 @@ window.WIKI_DATA = {
       "pill": "active",
       "firstSeen": "",
       "startDate": "2026-06-19",
-      "lastUpdated": "2026-06-29",
+      "lastUpdated": "2026-07-10",
       "lastNewsUpdate": "2026-06-29",
       "summary": "截至 2026-06-29，一週至兩週內 Google DeepMind 連失至少 4–5 位頂尖研究員至 Anthropic，市值蒸發約 $2,700 億美元（推論，分析師估算），Gemini 3.5 Pro 延期至七月（推論，dev.to 報導，未經 Google 官方確認）。最矚目的是 2024 諾貝爾化學獎得主…",
       "latestHeadline": "dev.to 報導：Gemini 3.5 Pro 延期至七月，同期 4 位 Google 資深研究員轉投 Anthropic，AI 人才流動繼續向 Anthropic 傾斜（推論，未經 Google 官方確認）。（ref: https://dev.to/doremonai/gemini-35-pro-delayed-t"
@@ -493,10 +493,10 @@ window.WIKI_DATA = {
       "pill": "warn",
       "firstSeen": "",
       "startDate": "2026-03（推測）",
-      "lastUpdated": "2026-07-05",
-      "lastNewsUpdate": "2026-07-04",
-      "summary": "**當前狀態：** 官方已說明 4 月退步原因為工程疏失，恢復情況待驗證；2026-06 下旬起投訴焦點轉向「token 消耗異常／成本暴增」——四個獨立訊號（HN 熱議、$62,021 具名案例、兩則 GitHub issue）指向同一方向，但目前無法斷定是模型真退步、計費計量問題、或 context/工具配置問題（…",
-      "latestHeadline": "當前狀態： 官方已說明 4 月退步原因為工程疏失，恢復情況待驗證；2026-06 下旬起投訴焦點轉向「token 消耗異常／成本暴增」——四個獨立訊號（HN 熱議、$62,021 具名案例、兩則 GitHub issue）指向同一方向，但目前無法斷定是模型真退步、計費計量問題、或 context/工具配置問題（詳見「T"
+      "lastUpdated": "2026-07-10",
+      "lastNewsUpdate": "2026-07-08",
+      "summary": "**當前狀態：** 官方已說明 4 月退步原因為工程疏失，恢復情況待驗證；2026-06 下旬起投訴焦點轉向「token 消耗異常／成本暴增」——五個獨立訊號（HN 熱議、$62,021 具名案例、三則 GitHub issue）指向同一方向，但目前無法斷定是模型真退步、計費計量問題、或 context/工具配置問題（…",
+      "latestHeadline": "當前狀態： 官方已說明 4 月退步原因為工程疏失，恢復情況待驗證；2026-06 下旬起投訴焦點轉向「token 消耗異常／成本暴增」——五個獨立訊號（HN 熱議、$62,021 具名案例、三則 GitHub issue）指向同一方向，但目前無法斷定是模型真退步、計費計量問題、或 context/工具配置問題（詳見「T"
     },
     {
       "id": "community-pattern-trends",
@@ -508,8 +508,8 @@ window.WIKI_DATA = {
       "pill": "active",
       "firstSeen": "",
       "startDate": "2026-06-29",
-      "lastUpdated": "2026-06-30",
-      "lastNewsUpdate": "2026-06-30",
+      "lastUpdated": "2026-07-10",
+      "lastNewsUpdate": "2026-07-10",
       "summary": "本頁從 [[topics/community-tech-patterns]] 的具體模式中，**萃取出宏觀趨勢**——社群正在往哪些方向收斂，每條趨勢的熱度曲線（加溫 / 穩定 / 醞釀），以及**對現有設計的啟示**：工程師看到這條趨勢，該回頭重新思考自己現有設計的什麼。 - **週更**：本頁只在 `/wiki-l…",
       "latestHeadline": "本頁從  的具體模式中，萃取出宏觀趨勢——社群正在往哪些方向收斂，每條趨勢的熱度曲線（加溫 / 穩定 / 醞釀），以及對現有設計的啟示：工程師看到這條趨勢，該回頭重新思考自己現有設計的什麼。"
     },
@@ -523,7 +523,7 @@ window.WIKI_DATA = {
       "pill": "active",
       "firstSeen": "",
       "startDate": "2026-04-25",
-      "lastUpdated": "2026-07-08",
+      "lastUpdated": "2026-07-10",
       "lastNewsUpdate": "2026-07-08",
       "summary": "追蹤 Claude Code 社群中活躍的概念辯論、設計哲學、實證研究與技術反思。與 [[topics/community-tech-patterns]] 追蹤具體工具和工作流不同，本頁聚焦思想碰撞：什麼哲學正在成形、什麼假設受到挑戰、什麼共識正在收斂。頁面結構：**🔥 本週熱點**（當前最熱的持續議題）→ **🌊 長…",
       "latestHeadline": "追蹤 Claude Code 社群中活躍的概念辯論、設計哲學、實證研究與技術反思。與  追蹤具體工具和工作流不同，本頁聚焦思想碰撞：什麼哲學正在成形、什麼假設受到挑戰、什麼共識正在收斂。頁面結構：🔥 本週熱點（當前最熱的持續議題）→ 🌊 長期議題（主題彙整）→ 熱門討論記錄（最近 30 天）→ 技術彙整（逐篇深度筆記）"
@@ -568,7 +568,7 @@ window.WIKI_DATA = {
       "pill": "active",
       "firstSeen": "",
       "startDate": "2026-04-25",
-      "lastUpdated": "2026-07-04",
+      "lastUpdated": "2026-07-10",
       "lastNewsUpdate": "",
       "summary": "追蹤 Claude Code 社群發布的工具、插件與 skill 專案。此頁為 lint 專用，由 /wiki-lint 定期策展；每日 ingest 不更新此頁。日常工作流模式見 [[topics/community-tech-patterns]]，概念辯論見 [[topics/community-tech-disc…",
       "latestHeadline": "追蹤 Claude Code 社群發布的工具、插件與 skill 專案。此頁為 lint 專用，由 /wiki-lint 定期策展；每日 ingest 不更新此頁。日常工作流模式見 ，概念辯論見 。"
@@ -1453,7 +1453,7 @@ window.WIKI_DATA = {
       "pill": "warn",
       "firstSeen": "",
       "startDate": "2026-05-17",
-      "lastUpdated": "2026-07-09",
+      "lastUpdated": "2026-07-10",
       "lastNewsUpdate": "2026-07-08",
       "summary": "比對社群工具所反映的開發者痛點，與 Anthropic 官方功能路線之間的覆蓋情況。識別哪些痛點官方正在積極解決、哪些被忽略或結構性缺席。 截至 2026-07-08，矩陣涵蓋 9 個核心痛點：多 agent 協調與安全隔離已獲高度官方對應；輸出品質驗證、平台可及性（Artifacts 輸出共享 + Cowork 行動…",
       "latestHeadline": "Claude Cowork 正式擴展至行動裝置與網頁版：首波開放 Max 訂閱用戶，任務可雲端持續執行、涵蓋政府機構客戶；「平台可及性」缺口的輸入操作面首度正式填補（先前僅 Artifacts 覆蓋輸出面），矩陣狀態維持 ⚡ 部分對應（官方稱完整體驗仍限桌面版）"
@@ -1463,12 +1463,12 @@ window.WIKI_DATA = {
       "pageType": "topic",
       "name": "AI 遞歸自我改進與全球暫停呼籲",
       "entityType": "",
-      "status": "ongoing",
+      "status": "monitoring（無新進展，議題未結案，暫轉低頻觀察）",
       "domain": "🏛️ 政策/安全",
-      "pill": "active",
+      "pill": "warn",
       "firstSeen": "",
       "startDate": "2026-06-04",
-      "lastUpdated": "2026-07-01",
+      "lastUpdated": "2026-07-10",
       "lastNewsUpdate": "2026-06-22",
       "summary": "2026-06-04，Anthropic Institute 發布《When AI Builds Itself: Our progress toward recursive self-improvement》報告（HN 477），首次系統性披露 AI 加速自身開發的進展：Anthropic 工程師平均每人可交付的程式碼…",
       "latestHeadline": "[五眼聯盟警告] 罕見聯合聲明：數月內出現毀滅性 AI：五眼聯盟發表聯合聲明，警告能癱瘓政府與企業的 AI 模型將在數月內出現；為迄今最高層級政府機構對遞歸自我改進威脅的公開預警，與 Anthropic 6/4 報告的「煞車踏板」呼籲形成跨機構共鳴（The Guardian）"
