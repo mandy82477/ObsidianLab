@@ -7,6 +7,12 @@ LLM 查詢此 wiki 時，**先讀這個檔案**找相關頁面，再讀具體頁
 
 ## 近期異動
 
+- [[entities/bernanke]] — 2026-07-10：**新頁面**，前聯準會主席 Ben Bernanke 加入 Anthropic 長期利益信託（Long-Term Benefit Trust）董事會，Reuters/CNBC/Bloomberg 同步報導，HN 66 分討論其對治理公信力的意義
+- [[topics/ai-agent-safety]]／[[topics/anthropic-government-policy]] — 2026-07-10：**中國「後門」指控延燒第三天，Anthropic 首次公開否認**（UC Today/BankInfoSecurity/TechRadar/TechRepublic/Fox Business/CISO Series 多家媒體）；同日 Anthropic 發布「Inviting hard questions」聲明，關聯待查證；dev.to 出現第二則獨立 steganography 隱藏標記指控（adioof），與既有 07-01 同形字符事件關聯待釐清
+- [[entities/claude-code]]／[[feature-radar]] — 2026-07-10：**v2.1.206** 發布（`/cd` 目錄路徑建議、`/doctor` CLAUDE.md 精簡檢查，feature-radar 新條目）；已知問題新增 8 條（#16157 Max 額度瞬間觸頂 1479 留言最高互動、#34820 visualize DNS 故障、#73365 Fable 5 advisor unavailable、#15942 VS 2026 整合、#30154 Desktop 多視窗、#49322 Opus 4.7 思考摘要未渲染、#8451 VSCode ide_selection 錯誤等）；AGENTS.md（#6235）反應數更新至 5634 讚；Reflect with Claude 熱度升至 🔥🔥🔥🔥（Axios/Verge 二度跟進）
+- [[topics/anthropic-business]]／[[topics/competitor-landscape]]／[[entities/pricing]] — 2026-07-10：UST 與 Anthropic 合作導入實體製造業（2 萬工程師受訓）；OpenAI 推出 ChatGPT Work / GPT-5.6 對標 Anthropic；Cursor 開發 AI Agent 對抗 Claude Cowork；Microsoft 部分產品改用自研 AI 取代 OpenAI/Anthropic；Meta 跨入 AI coding 市場；Anthropic/OpenAI/SpaceX 估值超越 25 年科技業退場交易總和；Musk 稱 Anthropic 為業界「leader」
+- [[entities/fable-5]] — 2026-07-10：新增已知問題 #73365 Fable 5 advisor 全 session unavailable（🔴 未修復，Claude Code 呼叫層失效，已與 claude-code.md 互相 wikilink）
+- [[topics/community-tech-patterns]]／[[topics/community-tech-discussions]] — 2026-07-10：dev.to 三篇第一手實作收錄（context window 診斷法、對抗式 plan-review-loop、本地 reverse proxy 攔截請求）；HN Show HN 兩則達門檻收錄（Devthropology GitHub 分析工具 34 分、AI 思考表徵編輯器 31 分，源自 Anthropic 可解釋性論文）；Bernanke 任命引發 HN 討論收入 discussions（🔥🔥🔥）
 - [[feature-radar]]／[[entities/claude-code]] — 2026-07-09：**Anthropic 推出「Reflect with Claude」測試版**（Settings 使用模式儀表板，TechCrunch/Mashable/CNET/Axios/The Verge 同步報導，feature-radar 新條目 🔥🔥🔥）；AGENTS.md 請求（#6235）反應數更新至 5627 讚；已知問題新增/更新多條（Console scrolling #826、Screen Flickering #769/#1913、Buddy 請願 #45596、多帳號 Connector #27302、Stream idle timeout #46987、Max 5x 帳號停用 #5088）
 - [[topics/ai-agent-safety]]／[[topics/anthropic-government-policy]] — 2026-07-09：中國「後門」指控延燒第二天（WSJ/Fox Business/TechRadar/Yahoo Tech），TechRadar 首見「建議解除安裝」具體行動呼籲；三方仍未正式回應，獨立頁建頁門檻暫未達；Anthropic 研究部落格發布 dual-use knowledge「關閉開關」機制說明
 - [[topics/anthropic-business]]／[[entities/pricing]]／[[topics/competitor-landscape]] — 2026-07-09：Anthropic 次級市場估值傳飆升至 1.2 兆美元（幾乎無人願售）；Anthropic/OpenAI/SpaceX 市值超越 25 年科技業退場交易總和；TeraWulf 尋求 35 億美元融資續建資料中心；Meta 跨入 AI 程式輔助工具市場；AWS 集中管理 Claude 存取/支出/治理；Max 額度異常（#38335）與 INR 定價需求（#17432）反應數更新
@@ -119,6 +125,7 @@ LLM 查詢此 wiki 時，**先讀這個檔案**找相關頁面，再讀具體頁
 | [[entities/openclaw]] | product | 🛠️ 工具/功能 | active | 第三方 agentic 工具，歷經禁令後 6/15 起恢復允許但改走信用池 API 費率計費 |
 | [[entities/google-investment]] | event | 💼 商業 | resolved | Google 投資 400 億美元歷史記錄，含循環算力交易結構 |
 | [[entities/managed-agents]] | feature | 🛠️ 工具/功能 | active（正式發布）| Managed Agents 官方框架：Dreaming 記憶整合、20 路並行子代理、Outcomes 規格驗證 |
+| [[entities/bernanke]] | person | 👤 人物 | active | 前聯準會主席，2026-07-09 加入 Anthropic 長期利益信託（Long-Term Benefit Trust）董事會 |
 | [[entities/boris-cherny]] | person | 👤 人物 | active | Claude Code 創始人，「Loops 是未來」設計哲學、「coding is solved」論戰、第三方工具邊界聲明 |
 | [[entities/chris-ciauri]] | person | 👤 人物 | active | Anthropic 國際業務總監；首爾記者會宣布 Fable 5 / Mythos 解禁信心（2026-06-18）|
 | [[entities/john-jumper]] | person | 👤 人物 | active | 諾貝爾化學獎得主（AlphaFold），2026-06-19 離開 Google DeepMind 加入 Anthropic（Reuters 確認）|

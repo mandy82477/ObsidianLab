@@ -5,7 +5,7 @@
 **領域：** 🤖 模型
 **首次出現：** 2026-06-09
 **最後更新：** 2026-07-10
-**最後新聞更新：** 2026-07-09
+**最後新聞更新：** 2026-07-10
 
 > **最新進展**（2026-07-09）
 > Reddit 使用者整理 Anthropic 官方基準測試「Fable 5 orchestrates, cheap models execute」：以 Fable 5 負責任務調度、較便宜模型負責執行，可用 46% 成本達到 96% 效能，此模式現可在 Claude Code 中直接套用（週熱門標記，來源貼文日期 2026-07-08）；此外 Anthropic 前一日（07-07/08）已將 Fable 5 免費使用期限再延長至 7 月 12 日（定價細節見 [[entities/pricing]]）。
@@ -86,6 +86,7 @@ claude --model claude-fable-5-20260609
 - ⚠️ **30 天資料保留**：Bedrock 用戶數據強制離開 AWS 安全邊界，企業隱私顧慮
 - ⚠️ **「失去靈魂」討論**：部分用戶認為 Fable 5 相比 Opus 4.6 更工具性、減少人本關懷深度
 - ⚠️ **「Defense in Depth」分類器誤判（2026-07-02，新）**：redeploy 後新增的資安/程式碼請求分類器出現誤判案例——合法資安審查請求被攔截、化學問題被拒（後者待核實），攔截範圍可能超出原設計的 coding/cybersecurity 場景
+- 🔴 **Advisor 角色全面 unavailable（2026-07-10，新，未修復）**：GitHub Issue #73365 回報 Fable 5 advisor（Opus 4.8 main 底下的 advisor 角色）在所有 Claude Code session 中皆顯示「unavailable」，版本 v2.1.198，累積 50 則留言、100 個讚，情緒強烈。此為 Claude Code 功能面的呼叫失效，非模型能力本身劣化；完整 bug 追蹤見 [[entities/claude-code]] 已知問題（[GitHub Issues](https://github.com)，2026-07-10）
 
 ## 出口管制：雙方立場
 
@@ -149,6 +150,9 @@ claude --model claude-fable-5-20260609
 ## 歷史記錄
 
 ### 解禁後（2026-07-01 起）
+
+#### 2026-07-10
+**GitHub Issue #73365：Advisor 角色全面 unavailable（🔴 未修復）**：Fable 5 advisor（Opus 4.8 main 底下的 advisor 角色）在所有 Claude Code session 中皆顯示「unavailable」，版本 v2.1.198，累積 50 則留言、100 個讚，情緒 😤。此為 Claude Code 呼叫層面的可用性問題，功能記者已同步記入 [[entities/claude-code]] 已知問題。
 
 #### 2026-07-09
 **官方基準：「Fable 5 orchestrates, cheap models execute」— 46% 成本達 96% 效能**：Reddit 使用者整理 Anthropic 官方公布的多模型協作模式基準數字，指出以 Fable 5 負責任務調度（orchestrator）、由較便宜模型負責實際執行，可用 46% 的成本達到 96% 的效能水準；此模式現可在 Claude Code 中直接套用（Reddit r/ClaudeAI，週熱門標記，來源貼文日期 2026-07-08 19:17 UTC）。屬官方基準數據轉述，原始發布連結未附於本則貼文，暫未直接查證官方原始頁面。

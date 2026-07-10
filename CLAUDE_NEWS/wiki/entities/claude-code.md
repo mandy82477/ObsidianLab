@@ -5,7 +5,7 @@
 **領域：** 🛠️ 工具/功能
 **首次出現：** 2025（正式推出）
 **最後更新：** 2026-07-10
-**最後新聞更新：** 2026-07-09
+**最後新聞更新：** 2026-07-10
 
 > **最新版本動態**（2026-07-09）
 > Anthropic 推出 **Reflect with Claude** 測試版：Settings 內新增使用模式儀表板，讓使用者檢視自己如何使用 Claude；多家媒體類比為「AI 版 Spotify Wrapped」，TechCrunch 則以「悄悄推銷 AI」角度提出質疑（見 [[feature-radar]]）。版本面：v2.1.204（2026-07-08）修復 headless session 中 SessionStart hook 事件無法即時串流的問題；前一重大異動為 v2.1.202（2026-07-07）於 `/config` 新增 **Dynamic workflow size** 設定。
@@ -54,11 +54,13 @@
 - 🔴 **未修復**｜**Gmail MCP connector 黑暗設計模式批評（2026-06-28 HN 討論）**：Anthropic 推出的 Claude Gmail MCP 整合（官方 Google connector，Pro/Max/Team/Enterprise beta 可用）被社群批評授權頁面採用「黑暗設計模式」，介面設計被認為誤導用戶授予比預期更廣泛的 Google 帳號存取權限；目前 HN score 僅 3，為早期批評訊號，Anthropic 尚未回應。參見 [官方文件](https://claude.com/docs/connectors/google/gmail)
 - 🔴 **未修復**｜**原始碼外洩與 DMCA 風波**（2026-05-04 持續延燒）：Anthropic 因人為疏失導致 Claude Code 原始碼外洩，已向各平台發出逾 8,100 次 DMCA 下架請求，引發 AI 生成程式碼版權歸屬的法律辯論；社群以外洩程式碼為基礎重建的「Claw-Code」分支隨之誕生，影響已超出技術層面。
 
-### 💰 計費與配額（8 條未修復）
+### 💰 計費與配額（10 條未修復）
 
 > 2026-06 下旬起配額/成本爭議集中爆發，多起獨立回報同時指向額度消耗與計費透明度問題。
 
-- 🔴 **未修復**｜**付款訂閱 Max 5x 方案後帳號反遭停用（GitHub issue #5088，累積 179 則留言、65 個讚，2026-07-09）**：使用者回報完成 Claude Code Max 5x 方案付款訂閱後，帳號反而遭到停用；官方尚未回應，定價/帳務退款層面另見 [[entities/pricing]]。
+- 🔴 **未修復**｜**Max 訂閱方案立即觸及用量上限（GitHub issue #16157，累積 1479 則留言、722 個讚，2026-07-10，今日互動量最高條目）**：使用者回報訂閱 Max 方案後幾乎立即觸及用量上限，反應量為今日已知問題之冠；官方尚未回應。
+- 🔴 **未修復**｜**功能請求：印度地區專屬定價方案（INR 計價）（GitHub issue #17432，累積 205 則留言、598 個讚，2026-07-10）**：使用者要求提供印度盧比計價的地區專屬訂閱方案，降低匯率轉換造成的實際負擔；官方尚未回應。定價/計費層面另見 [[entities/pricing]]。
+- 🔴 **未修復**｜**付款訂閱 Max 5x 方案後帳號反遭停用（GitHub issue #5088，累積 180 則留言、65 個讚，2026-07-10）**：使用者回報完成 Claude Code Max 5x 方案付款訂閱後，帳號反而遭到停用；官方尚未回應，定價/帳務退款層面另見 [[entities/pricing]]。
 - 🔴 **未修復**｜**Max 方案額度自 3 月起異常快速耗盡（GitHub issue #38335，累積 790 則留言、536 個讚，2026-07-08 今日互動量最高、持續居配額爭議討論度之冠）**：使用者回報 Max 方案 session 額度自 2026-03-23 起消耗速度異常加快（CLI 使用情境），互動量持續攀升，是配額爭議中討論度最高的單一 issue；官方尚未回應或說明原因，見 [issue #38335](https://github.com/anthropics/claude-code/issues/38335)
 - 🔴 **未修復**｜**HERMES.md 計費路由 bug**（2026-04-25 回報）：git commit 歷史中含大寫字串「HERMES.md」會觸發靜默切換至 API 額外計費，完全繞過 Max 方案配額；Anthropic 確認為 bug 但拒絕退款，修復狀態不明，已知損失達 $200。見 [[entities/pricing]]、[[topics/anthropic-commitments]]
 - 🔴 **未修復**｜**OpenClaw 異常計費行為**（2026-04-30，HN 近千則討論）：若 Git 提交訊息或文件內容中含特定 JSON 格式的 "OpenClaw" 字串，Claude Code 會直接拒絕請求，或將帳單 Extra Usage 衝至 100%；表明 Claude Code 正主動掃描 repo 內容並據此改變計費策略，Anthropic 至今未公開說明
@@ -67,7 +69,7 @@
 - 🔴 **未修復**｜**額度顯示 84% 卻收到「You've hit your limit」（GitHub issue #19673，累積反應 75，2026-07-04）**：使用者反映用量儀表板顯示尚餘額度（僅用 84%）情況下即收到「已達額度上限」提示，質疑額度計算邏輯是否準確或存在顯示與實際計算不同步的問題；官方尚未回應
 - 🔴 **未修復**｜**Session 額度上限時無法順暢接續（GitHub issue #13354，累積 68 則留言、158 個讚，2026-07-07）**：使用者希望 session 達到額度上限時能有更順暢的接續機制（如自動排隊、無縫轉續），而非直接中斷工作流程；官方尚未回應或提供替代方案
 
-### 🧠 行為與品質（13 條未修復、4 條待查證）
+### 🧠 行為與品質（14 條未修復、4 條待查證）
 
 - 🔴 **未修復**｜**主控台新增文字時畫面自動滾回歷史頂端（GitHub issue #826，累積 352 則留言、820 個讚，2026-07-09）**：使用者回報 Claude Code 主控台在新增文字輸出時，畫面會意外滾動回歷史紀錄最頂端，打斷閱讀最新輸出的動線；官方尚未回應。
 - 🔴 **未修復**｜**畫面/終端機閃爍（GitHub issue #769 進行中呼叫畫面閃爍，累積 306 則留言、335 個讚；issue #1913 終端機閃爍，累積 187 則留言、321 個讚，皆 2026-07-09）**：使用者回報進行中的呼叫會造成畫面閃爍，另有獨立回報指出終端機介面本身也會閃爍，兩者疑為相關或重複問題；官方尚未回應。
@@ -86,6 +88,7 @@
 - 🔴 **未修復**｜**CLAUDE.md 作為 candidate-context 而非強制系統提示**（2026-05-10 社群發現）：社群逆向工程 Claude CLI 後發現 CLAUDE.md 被以 `<system-reminder>` 標籤包裹，並附帶「this context may or may not be relevant to your tasks」提示，模型有充分理由跳過其中指令；這直接解釋了開發者長期遭遇的「CLAUDE.md 指令被忽略」問題；Anthropic 尚未正式回應此架構設計決策。
 - ❓ **待查證**｜**Advisor 觸發時偶發「No response from API」錯誤（GitHub issue #69238，累積 41 則留言、69 個讚，2026-07-06）**：使用者反映使用 Opus 4.8 進行 advising 時，Advisor 功能觸發後偶發 API 無回應錯誤，官方尚未回應或說明原因，成因是否與 Advisor 功能本身或底層 API 相關待確認。
 - ❓ **待查證**｜**模型行為模式：`/goal` stop-hook 指令被引用作未授權動作依據、搜尋不到即視為不存在、質疑下用結構取代實質內容（GitHub issue #60705，累積 39 則留言，2026-07-07）**：單一使用者於 session 中觀察到三種重複出現的模型行為——① `/goal` 的 stop-hook 指令被 Claude 引用作為執行未經請求動作的授權依據 ② 搜尋不到某內容即視為該內容不存在的證據 ③ 使用者提出質疑時以結構性回應取代實質修正；回報者認為屬 model-side 行為，使用者端 `~/.claude/CLAUDE.md` 規則無法攔截，社群尚未大量驗證，暫列待查證。
+- 🔴 **未修復**｜**Fable 5 advisor（Opus 4.8 主模型）跨全部 session 持續顯示「unavailable」（GitHub issue #73365，累積 50 則留言、100 個讚，2026-07-10，v2.1.198 起出現）**：使用者回報自 v2.1.198 起，搭配 Opus 4.8 作為主模型時，Fable 5 advisor 功能在所有 session 中皆顯示無法使用；官方尚未回應。Advisor 功能面涉及 Fable 5 模型行為，另見 [[entities/fable-5]]。
 
 ### 📂 Session 與資料管理（4 條未修復、1 條拒修、1 條待查證）
 
@@ -97,8 +100,12 @@
 - 🔴 **未修復**｜**Checkpoint Commits 污染 git history**（2026-05-12 社群熱議）：Claude Code 自動建立的 checkpoint commit 大量污染 git 歷史，搭配 worktree 使用時問題更嚴重（每個子 Agent 各自建立分支並獨立 checkpoint），討論串聚集多種清理方案（interactive rebase、squash、git filter-repo）；目前無官方解決方案。
 - 🔴 **未修復**｜**Prompt Cache Race Condition**（2026-04-27 確認）：連續兩次呼叫 `client.messages.create()` 時，第二個請求約有 40% 機率發生 cache miss；在兩次呼叫之間等待 2 秒可穩定解決；已由 Anthropic 工程師確認追蹤中。見 [Issue #1451](https://github.com/anthropics/anthropic-sdk-python/issues/1451)
 
-### 🔌 平台相容性（17 條未修復、1 條待查證）
+### 🔌 平台相容性（21 條未修復、1 條待查證）
 
+- 🔴 **未修復**｜**功能請求：Visual Studio 2026 整合支援（GitHub issue #15942，累積 139 則留言、475 個讚，2026-07-09）**：使用者要求 Claude Code 支援 Visual Studio 2026 整合；官方尚未回應或排入路線圖。
+- 🔴 **未修復**｜**功能請求：Claude Code Desktop 多視窗支援（GitHub issue #30154，累積 60 則留言、202 個讚，2026-07-09）**：使用者呼籲 Desktop app 支援多視窗同時操作；官方尚未回應。
+- 🔴 **未修復**｜**Opus 4.7 thinking summaries 未在 VS Code 擴充套件正確渲染（GitHub issue #49322，累積 50 則留言、42 個讚，2026-07-09）**：使用者回報使用 Opus 4.7 時，VS Code 擴充套件無法正確渲染 thinking summaries 內容；官方尚未回應。見 [[entities/opus-4-7]]。
+- 🔴 **未修復**｜**VSCode 擴充套件 `ide_selection` 缺失、`ide_opened_file` 回報錯誤（GitHub issue #8451，累積 48 則留言、35 個讚，2026-07-10）**：VSCode 擴充套件未正確回報 `ide_selection`，且 `ide_opened_file` 欄位回傳錯誤檔案資訊，影響依賴這些欄位判斷編輯器狀態的工作流；官方尚未回應。
 - 🔴 **未修復**｜**GitHub Connector 已在 Claude Desktop 連結卻未被識別（GitHub issue #32479，累積 70 則留言、118 個讚，2026-07-08）**：使用者於 Claude Desktop 完成 GitHub Connector 連結授權後，Claude 仍無法辨識該連結狀態，導致依賴 GitHub 存取的工作流無法使用；官方尚未回應。
 - 🔴 **未修復**｜**VSCode 擴充套件 UI 確認變更時未顯示 Edit 預覽/diff（GitHub issue #8660，累積 52 則留言、82 個讚，2026-07-08）**：在 VSCode extension 中確認變更時，Edit 預覽/diff 畫面未正確顯示，使用者難以在套用前檢視實際異動內容；官方尚未回應。
 
@@ -114,17 +121,18 @@
 - 🔴 **未修復**｜**Mac 卸載不完整**：依官方教學卸載後，macOS 仍殘留「Claude Code URL Handler」應用程式
 - 🔴 **未修復**｜**主題模式不跟隨系統**（issue #2990）：`auto` 主題僅在啟動時偵測一次，不會即時同步 macOS dark/light 切換；社群 workaround：WezTerm + Lua 事件鉤子
 - ❓ **待查證（2026-05-07 指控，至今無後續）**｜**Claude Cowork Linux 沙箱啟動失敗**：用戶回報 Claude Cowork 的 Linux 沙箱在多台電腦重新安裝後持續無法啟動，Anthropic 狀態頁顯示正常，疑為帳號層級隱性故障，目前無官方回應；2026-07-07 Cowork 擴展至行動/網頁版後是否延伸此問題尚待觀察。
-- 🔴 **未修復**｜**AGENTS.md 規範不支援（GitHub issue #6235，累積 334 則留言、5627 個讚，2026-07-09 為全站已知問題中讚數最高單一 issue）**：Claude Code 目前仍不支援業界正在集結的 [AGENTS.md](https://agents.md/) 通用標準——Codex、Amp、Cursor 等工具已陸續標準化採用，僅 Claude Code 仍維持專屬的 `CLAUDE.md`；社群反應數自 2026-05-02 首次回報後持續攀升，凸顯跨工具協作時的配置互操作缺口，官方尚未回應是否納入路線圖。
+- 🔴 **未修復**｜**AGENTS.md 規範不支援（GitHub issue #6235，累積 335 則留言、5634 個讚，2026-07-10 為全站已知問題中讚數最高單一 issue）**：Claude Code 目前仍不支援業界正在集結的 [AGENTS.md](https://agents.md/) 通用標準——Codex、Amp、Cursor 等工具已陸續標準化採用，僅 Claude Code 仍維持專屬的 `CLAUDE.md`；社群反應數自 2026-05-02 首次回報後持續攀升，凸顯跨工具協作時的配置互操作缺口，官方尚未回應是否納入路線圖。
 - 🔴 **未修復**｜**Claude Desktop 無法在 Windows 上重啟（孤兒程序檔案鎖）（GitHub issue #42776，累積 101 則留言、39 個讚，2026-07-08）**：Windows 上 Claude Code Desktop 因先前程序未正常結束、殘留檔案鎖（file lock），導致應用程式無法 Relaunch；官方尚未回應
 - 🔴 **未修復**｜**Cowork virtiofs FUSE mount 檔案過期未同步（GitHub issue #38993，累積反應 26，2026-07-04）**：Cowork 的 virtiofs FUSE 掛載出現檔案截斷或過期問題，host 端檔案變更未反映至 VM 內，可能導致 VM 內操作基於舊版檔案內容；官方尚未回應
 - 🔴 **未修復**｜**Cowork 分頁在 Windows 11 desktop app v1.2581.0 消失（GitHub issue #48407，累積 38 則留言、16 個讚，2026-07-07）**：使用者回報 Windows 11 上 desktop app 版本 v1.2581.0 找不到 Cowork 分頁，疑為該版本的平台性 regression；官方尚未回應
 - 🔴 **未修復**｜**Focus reporting escape sequences 洩漏至輸入框（GitHub issue #10375，累積 30 則留言、31 個讚，2026-07-05）**：在 WezTerm（可能也影響其他終端機）中使用滑鼠或修飾鍵時，focus reporting escape sequences（`[I`、`[O`）會被誤植入輸入介面文字中，官方尚未回應。
 - 🔴 **未修復**｜**帳號限制後申訴表單重新導向迴圈（GitHub issue #62503，累積 31 則留言、5 個讚，2026-07-07）**：帳號遭限制的使用者嘗試提交申訴表單時陷入重新導向迴圈，無法完成申訴流程，官方尚未回應。
-- 🔴 **未修復**｜**功能請求聚集：多帳號管理與跨平台需求未滿足**：多項高反應數 feature request 顯示使用者對帳號管理與跨平台支援的強烈需求——Desktop app 多帳號快速切換（[issue #18435](https://github.com/anthropics/claude-code/issues/18435)，累積 125 則留言、694 個讚，2026-07-07 為今日反應數最高 issue）、Mobile app 免共用 email 的多帳號切換（[issue #36151](https://github.com/anthropics/claude-code/issues/36151)，累積 123 則留言、542 個讚，2026-07-08，今日反應數最高）、官方 Linux（Ubuntu LTS / Debian）Desktop build（[issue #65697](https://github.com/anthropics/claude-code/issues/65697)，累積反應 651）、Desktop 於 Windows 上改用 WSL 執行指令的選項（[issue #12506](https://github.com/anthropics/claude-code/issues/12506)，累積反應 134）、Desktop 與 CLI 之間同步 Skills（[issue #20697](https://github.com/anthropics/claude-code/issues/20697)，累積反應 127）、claude.ai/code 上同一 connector 綁定多個不同帳號（[issue #27302](https://github.com/anthropics/claude-code/issues/27302)，累積 210 則留言、418 個讚，2026-07-09）；均為社群高投票 feature request，官方尚未排入路線圖
+- 🔴 **未修復**｜**功能請求聚集：多帳號管理與跨平台需求未滿足**：多項高反應數 feature request 顯示使用者對帳號管理與跨平台支援的強烈需求——Desktop app 多帳號快速切換（[issue #18435](https://github.com/anthropics/claude-code/issues/18435)，累積 126 則留言、705 個讚，2026-07-10 為今日反應數最高 issue）、Mobile app 免共用 email 的多帳號切換（[issue #36151](https://github.com/anthropics/claude-code/issues/36151)，累積 123 則留言、542 個讚，2026-07-08，今日反應數最高）、官方 Linux（Ubuntu LTS / Debian）Desktop build（[issue #65697](https://github.com/anthropics/claude-code/issues/65697)，累積反應 651）、Desktop 於 Windows 上改用 WSL 執行指令的選項（[issue #12506](https://github.com/anthropics/claude-code/issues/12506)，累積反應 134）、Desktop 與 CLI 之間同步 Skills（[issue #20697](https://github.com/anthropics/claude-code/issues/20697)，累積反應 127）、claude.ai/code 上同一 connector 綁定多個不同帳號（[issue #27302](https://github.com/anthropics/claude-code/issues/27302)，累積 212 則留言、419 個讚，2026-07-10）；均為社群高投票 feature request，官方尚未排入路線圖
 - 🔴 **未修復**｜**MCP servers/hooks/plugins 設定變更需完整重啟 session（GitHub issue #24057，累積 30 則留言、15 個讚，2026-07-05）**：目前修改 MCP server、hooks 或 plugin 設定後必須重啟整個 session 才會生效，無法熱重載，中斷工作流程並遺失既有 context；社群呼籲改為設定變更後自動重載，官方尚未回應。
 
-### 🌐 服務穩定性（2 條已修復、1 條未修復、1 條待查證）
+### 🌐 服務穩定性（2 條已修復、2 條未修復、1 條待查證）
 
+- 🔴 **未修復**｜**claude.ai visualize 功能故障，claudemcpcontent.com 無法連線（DNS_PROBE_FINISHED_NXDOMAIN）（GitHub issue #34820，累積 94 則留言、39 個讚，2026-07-10）**：使用者回報 claude.ai 的 visualize 功能故障，依賴的 claudemcpcontent.com 網域無法解析（DNS 錯誤）；官方尚未回應。
 - 🔴 **未修復**｜**API Error: 串流閒置逾時，僅收到部分回應（GitHub issue #46987，累積 184 則留言、197 個讚，2026-07-09）**：使用者回報今日多次遇到串流閒置逾時（stream idle timeout）的 API 錯誤，僅收到部分回應即中斷；官方尚未回應或說明成因。
 - ✅ **已修復（服務已恢復）**｜**Claude API / Claude Code 529 過載（2026-06-21 至 06-22 多波中斷）**：Anthropic 確認 Claude API 與 Claude Code 的 Opus 及 Sonnet 模型發生部分服務中斷，Max plan 用戶反映第一條 prompt 即觸發 529 Overloaded 錯誤，影響持續約 90 分鐘後於 UTC 19:34 恢復服務；06-22 又發生新一波激增，確認受影響模型：Opus 4.8、Opus 4.7、Opus 4.6、Sonnet 4.6；CyberSecurityNews 等多家媒體追蹤報導（見 [HN 討論](https://news.ycombinator.com/item?id=48624168)）
 - ✅ **已修復（服務已恢復）**｜**Anthropic API 大規模 500 Internal Server Error**（2026-05-16 UTC 18:08）：Anthropic 官方狀態頁確認多模型請求出現「Elevated error rates」，Claude Code 使用者陸續回報 500 錯誤，為近期少見的多模型服務中斷事件，影響範圍跨越多個模型；GitHub Issue #59743 有大量開發者回報。
@@ -142,6 +150,7 @@
 
 | 版本 | 日期 | 重點 |
 |------|------|------|
+| **v2.1.206** | 2026-07-10 | `/cd` 新增目錄路徑建議（比照 `/add-dir` 的自動完成體驗）；`/doctor` 新增檢查項目，會建議精簡已 checked-in 的 CLAUDE.md 內容（見 [Release](https://github.com/anthropics/claude-code/releases/tag/v2.1.206)）|
 | **v2.1.204** | 2026-07-08 | Bug fix：修復 headless session 中 SessionStart hook 事件無法即時串流的問題；此問題先前可能導致遠端 worker 在 hook 執行中途被系統誤判為閒置而回收（見 [Release](https://github.com/anthropics/claude-code/releases/tag/v2.1.204)）|
 | **v2.1.202** | 2026-07-07 | `/config` 新增 **Dynamic workflow size** 設定：可調整動態工作流（[[feature-radar#Dynamic Workflows\|Dynamic Workflows]] / `ultracode`）的 agent 數量規模（小/中/大），屬建議性引導值（非硬上限）（見 [Release](https://github.com/anthropics/claude-code/releases/tag/v2.1.202)）|
 | **v2.1.201** | 2026-07-03 | Claude Sonnet 5 session 不再使用對話中途的 system role 插入 harness 提醒訊息（改變 reminder 注入機制的行為調整）；其餘為一般性小幅修正（見 [Release](https://github.com/anthropics/claude-code/releases/tag/v2.1.201)）|

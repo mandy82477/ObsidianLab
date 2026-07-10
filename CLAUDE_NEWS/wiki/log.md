@@ -2583,3 +2583,12 @@ Append-only 紀錄。每次 ingest、lint，以及**揭露缺陷或促成改動�
 - 新增社群記者規則「dev.to 條目以內容判斷、不看讚數」（`.claude/rules/wiki-ingest-community.md`）
 - 新增 `wiki/sources/` 10 個來源節點頁 + wikilink 機制（供 Obsidian Graph 分析「來源 × 類別」）
 - 改動未 commit；測試 31/31 綠；兩次 /review-commands 零錯誤
+
+## 2026-07-10 Ingest
+
+- 來源日報：[[news/2026-07-10]]
+- 更新頁面：topics/ai-agent-safety.md、topics/anthropic-government-policy.md、topics/anthropic-business.md、topics/competitor-landscape.md、entities/pricing.md、entities/claude-code.md、topics/official-community-gap.md、topics/community-tech-patterns.md、topics/community-tech-discussions.md、entities/fable-5.md、feature-radar.md、index.md
+- 新增頁面：entities/bernanke.md
+- 摘要：中國「後門」指控延燒第三天、Anthropic 首度公開否認；前聯準會主席 Bernanke 加入 Anthropic 治理信託；Claude Code v2.1.206 發布；OpenAI ChatGPT Work/GPT-5.6 與 Cursor 新 Agent 加劇對 Anthropic 的競爭壓力
+- 呈現品質：全部通過
+- 品質備註：無

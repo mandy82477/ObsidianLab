@@ -4,7 +4,7 @@
 **領域：** 🛠️ 工具/功能
 **開始日期：** 2026-05-17
 **最後更新：** 2026-07-10
-**最後新聞更新：** 2026-07-08
+**最後新聞更新：** 2026-07-10
 
 > **最新功能缺口**（2026-07-08）
 > Claude Cowork 正式擴展至行動裝置與網頁版（首波開放 Max 訂閱用戶，涵蓋政府機構客戶），任務可在雲端持續執行、闔上筆電也不中斷——「平台可及性」缺口的**輸入操作面**首度獲得正式填補（先前僅 Artifacts 覆蓋輸出共享面）。官方明言「完整體驗」仍在桌面版，矩陣狀態維持 ⚡ 部分對應。
@@ -33,7 +33,7 @@
 | 成本感知模型路由 | 2026-06-27，Opus 4.7 tokenizer 改版成本大漲後爆發 | Workweave Router（HN 181，實測降 40%+）、Dragoman、Rayline | 無 | ❌ 無官方對應 | feature-radar 全覽表無任何路由/成本最佳化功能；社群工具是唯一解法 |
 | 額度/用量監控 | 2026-05 起持續累積，2026-07-03 因 7/7 計費轉換臨近急遽爆發 | LimitBar、CCLimitPing、claude-needs-input | 企業版 Spend Controls（2026-07-04 宣布，控管粒度未公開，見 [[topics/enterprise-cost-management]]）；個人用戶仍無官方儀表板/告警 UI | 🧪 部分產品化（僅企業版） | 個人重度使用者缺口依舊，迫切性隨計費轉換 deadline 逼近而升高，見 [[feature-radar]] ⏰ 倒數中 |
 | Slack 內 AI 隊友 | 弱社群前驅（Ano 等輕量 Slack + Claude 整合，2026-06-04） | Ano | Claude Tag（2026-06-24，Slack-native，Anthropic 內部 65% 程式碼由其生成） | ✅ 已產品化 | 此列較弱屬「社群發明」框架——官方主導色彩強，社群前驅稀薄，列入僅供對照參考 |
-| 跨工具 agent 設定標準（AGENTS.md） | 2026-05-02 起，[GitHub issue #6235](https://github.com/anthropics/claude-code/issues/6235) 累積 334 則留言、5627 個讚（2026-07-09，全站已知問題讚數之最）| Codex、Amp、Cursor（均已採用 AGENTS.md 標準） | 無 | ❌ 無官方對應 | Claude Code 仍不支援 AGENTS.md，多工具並用者需為 Claude Code 額外維護 CLAUDE.md，造成配置互通痛點；反應數持續攀升顯示壓力未見緩解 |
+| 跨工具 agent 設定標準（AGENTS.md） | 2026-05-02 起，[GitHub issue #6235](https://github.com/anthropics/claude-code/issues/6235) 累積 335 則留言、5634 個讚（2026-07-10，全站已知問題讚數之最）| Codex、Amp、Cursor（均已採用 AGENTS.md 標準） | 無 | ❌ 無官方對應 | Claude Code 仍不支援 AGENTS.md，多工具並用者需為 Claude Code 額外維護 CLAUDE.md，造成配置互通痛點；反應數持續攀升顯示壓力未見緩解；v2.1.206（2026-07-10）`/doctor` 新增建議精簡 CLAUDE.md 內容的檢查項，屬維護性提示而非互操作標準對應，缺口性質未變 |
 | 多平行 agent 即時可觀測性／協調地圖 | 2026-07-06 Show HN live-log-viewer-next（讀本機 JSONL transcript 呈現即時對話地圖）；既有 1000 Subagents Fan-out、20-instance 崩潰分析持續堆疊 | live-log-viewer-next、（fan-out/多 instance 分析工具鏈） | Agent View（`claude agents` 多 session 列表管理，v2.1.139） | ❌ 無官方對應 | 官方 Agent View 為**列表式** session 管理，非跨 agent 即時狀態流的 live map；當數十至上千平行 agent 併跑時「誰卡住、誰在等、彼此依賴」缺乏即時可觀測面，社群自建地圖式檢視器補位，官方無對應方向 |
 
 ---
@@ -83,7 +83,7 @@ Dreaming 定位是「任務間隙自動鞏固記憶」，仍為 Research Preview
 
 ### ❌ 完全在雷達外：CLAUDE.md 失效
 
-Writ（語意規則注入）、Caliber（跨工具 config 統一）、Patina（腐化偵測）代表的問題是「如何讓 AI 行為邊界可持久、可維護」。官方對複雜 CLAUDE.md 場景幾乎無文件指引，也無任何功能方向對應。
+Writ（語意規則注入）、Caliber（跨工具 config 統一）、Patina（腐化偵測）代表的問題是「如何讓 AI 行為邊界可持久、可維護」。官方對複雜 CLAUDE.md 場景幾乎無文件指引，也無任何功能方向對應。v2.1.206（2026-07-10）`/doctor` 新增建議精簡已 checked-in CLAUDE.md 內容的檢查項，是官方首次對 CLAUDE.md 維護面給出工具化提示，但僅止於「內容過長」的健檢建議，未觸及規則被視為 candidate-context 而遭忽略的核心可靠性問題，缺口性質未變。
 
 ### ⚡ 部分對應：平台可及性
 
