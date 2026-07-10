@@ -1,0 +1,66 @@
+# 每日新聞抓取（自動化流水線「階段 ①」）
+#
+# 這是「GitHub Actions 抓料 + 雲端 routine 做 LLM」分裂架構的第一段。
+# 只做純 Python 抓取（不呼叫 LLM、不需 API key），把 gathered_items.json 與
+# 去重快取 commit 回 repo，交給雲端 routine（daily-news-pipeline-cloud）接手
+# 生成日報 / wiki / 網站。
+#
+# 為何要在這裡跑而不是雲端 routine：雲端 routine 的沙盒 egress 政策封鎖一般
+# 外部網域（Reddit / HN / Google News …回 403），抓不到新聞；GitHub Actions
+# runner 網路無限制，且抓取步驟不需 LLM，正好補上缺口。
+#
+# 手動補救路徑（/news-pipeline）完全不受影響：本檔只是「加上去」的自動路徑。
+name: daily-gather
+
+on:
+  schedule:
+    # 12:30 UTC = 20:30 Asia/Taipei，早於雲端 routine（13:00 UTC / 21:00 台北）約 30 分鐘，
+    # 留足時間讓 commit 推上 repo 供雲端 routine 的新鮮 checkout 讀到。
+    # 註：GitHub 排程可能因負載延遲數分鐘，30 分鐘緩衝為此預留。
+    - cron: "30 12 * * *"
+  workflow_dispatch: {}  # 允許手動觸發（測試用）
+
+# 同一時間只跑一個，避免排程與手動觸發重疊造成 push 衝突。
+concurrency:
+  group: daily-gather
+  cancel-in-progress: false
+
+permissions:
+  contents: write  # 需要寫入權限把 gathered_items.json / 快取 commit 回 repo
+
+jobs:
+  gather:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: CLAUDE_NEWS/src
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.13"
+
+      - name: Install dependencies
+        run: python -m pip install --upgrade pip && pip install -r requirements_news.txt
+
+      - name: Gather news (Python only, no LLM)
+        run: python -m news_aggregator.main --gather-only
+
+      - name: Commit gathered data + dedup caches
+        working-directory: .  # repo root
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add CLAUDE_NEWS/src/gathered_items.json \
+                  CLAUDE_NEWS/src/news_aggregator/emitted_items.json \
+                  CLAUDE_NEWS/src/news_aggregator/seen_urls.json
+          if git diff --cached --quiet; then
+            echo "No data changes to commit."
+          else
+            git commit -m "data: daily gather $(date -u +%F) (GH Actions)"
+            git push
+            echo "Pushed gathered data for $(date -u +%F)."
+          fi
