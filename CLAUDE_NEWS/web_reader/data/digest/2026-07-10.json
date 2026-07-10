@@ -1,0 +1,619 @@
+{
+  "date": "2026-07-10",
+  "generatedAt": "2026-07-10 12:21 UTC",
+  "articleCount": 82,
+  "sourceCount": "9/9 | **文章數：** 82 | **更新時間：** 2026-07-10 12:21 UTC",
+  "bulletin": "",
+  "topStories": [
+    {
+      "title": "China Calls Claude Code a Security Risk Amid Deepening Anthropic-Alibaba Dispute",
+      "url": "https://www.uctoday.com/security-compliance-risk/china-calls-claude-code-a-security-risk-amid-deepening-anthropic-alibaba-dispute/",
+      "source": "Google News / UC Today",
+      "time": "07/10 09:21",
+      "sentiment": "",
+      "body": "中國官方指控 Claude Code 含有安全「後門」，呼籲使用者解除安裝；Anthropic 隨後公開反駁該說法。事件同時被 CISO Series、Technology Org、TechRepublic、TechRadar、Fox Business 等多家獨立媒體報導，構成本週最大規模的跨媒體事件。",
+      "focusTags": [
+        "[風險警示]"
+      ]
+    },
+    {
+      "title": "Former Fed chair Ben Bernanke joins Anthropic's AI oversight trust",
+      "url": "https://www.reuters.com/business/former-fed-chair-ben-bernanke-joins-anthropics-ai-oversight-trust-2026-07-09/",
+      "source": "Google News / Reuters",
+      "time": "07/09 17:33",
+      "sentiment": "",
+      "body": "Bernanke 加入 Anthropic 獨立監督機構「長期利益信託」，Reuters、CNBC、Bloomberg 均有報導，凸顯 Anthropic 治理架構持續擴充外部監督成員。",
+      "focusTags": [
+        "[重大事件]"
+      ]
+    }
+  ],
+  "techUpdates": [
+    {
+      "title": "[anthropics/claude-code] v2.1.206",
+      "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.206",
+      "source": "GitHub / anthropics/claude-code",
+      "time": "07/10 01:45",
+      "sentiment": "",
+      "body": "新版為 `/cd` 加入目錄路徑建議（比照 `/add-dir`），並新增 `/doctor` 檢查項目，建議精簡已checked-in 的 CLAUDE.md 內容。",
+      "focusTags": [
+        "[新工具]"
+      ]
+    },
+    {
+      "title": "Inviting hard questions",
+      "url": "https://www.anthropic.com/news/hard-questions",
+      "source": "Anthropic Blog",
+      "time": "07/10 12:19",
+      "sentiment": "",
+      "body": "Anthropic 發文回應外界對 AI 是否安全、是否會取代工作等疑慮，說明公司希望正面處理這些「難題」的立場。",
+      "focusTags": []
+    },
+    {
+      "title": "UST is bringing Claude to physical AI",
+      "url": "https://www.anthropic.com/news/ust-claude",
+      "source": "Anthropic Blog",
+      "time": "07/10 12:19",
+      "sentiment": "",
+      "body": "Anthropic 宣布與工程服務公司 UST 合作，將 Claude 導入晶片、汽車、連網裝置等實體製造流程，並訓練 UST 兩萬名工程師與顧問使用 Claude。",
+      "focusTags": []
+    },
+    {
+      "title": "A new way to reflect on how you use Claude",
+      "url": "https://www.anthropic.com/news/reflect-with-claude",
+      "source": "Hacker News",
+      "time": "07/09 13:30",
+      "sentiment": "",
+      "body": "Anthropic 推出 Beta 功能，讓使用者在 Claude for web 或桌面版的設定中檢視自己的使用模式與時間分配儀表板。",
+      "focusTags": [
+        "[新工具]"
+      ]
+    }
+  ],
+  "mediaReports": [
+    {
+      "title": "China Calls Claude Code a Security Risk Amid Deepening Anthropic-Alibaba Dispute",
+      "url": "https://www.uctoday.com/security-compliance-risk/china-calls-claude-code-a-security-risk-amid-deepening-anthropic-alibaba-dispute/",
+      "source": "Google News / UC Today",
+      "time": "07/10 09:21",
+      "sentiment": "",
+      "body": "",
+      "focusTags": [
+        "[風險警示]"
+      ]
+    },
+    {
+      "title": "Anthropic Rejects China's Claim About Claude Code Backdoor",
+      "url": "https://www.bankinfosecurity.com/anthropic-rejects-chinas-claim-about-claude-code-backdoor-a-32184",
+      "source": "Google News / BankInfoSecurity",
+      "time": "07/10 02:45",
+      "sentiment": "",
+      "body": "",
+      "focusTags": [
+        "[風險警示]"
+      ]
+    },
+    {
+      "title": "China Warns of \"Backdoor\" Security Risk in Anthropic's Claude Code",
+      "url": "https://www.technology.org/2026/07/10/china-anthropic-claude-code-backdoor-warning/",
+      "source": "Google News / Technology Org",
+      "time": "07/10 00:31",
+      "sentiment": "",
+      "body": "",
+      "focusTags": []
+    },
+    {
+      "title": "China Warns of Claude Code 'Backdoor' Security Risk",
+      "url": "https://www.techrepublic.com/article/news-china-claude-code-backdoor-security-risk-apac/",
+      "source": "Google News / TechRepublic",
+      "time": "07/09 20:15",
+      "sentiment": "",
+      "body": "",
+      "focusTags": []
+    },
+    {
+      "title": "China warns users of alleged 'security backdoor vulnerabilities' in Anthropic's Claude Code",
+      "url": "https://www.techradar.com/pro/china-warns-users-of-alleged-security-backdoor-vulnerabilities-in-anthropics-claude-code-tells-users-to-uninstall-for-sfaety-reasons",
+      "source": "Google News / TechRadar",
+      "time": "07/09 11:25",
+      "sentiment": "",
+      "body": "",
+      "focusTags": [
+        "[風險警示]"
+      ]
+    },
+    {
+      "title": "Anthropic Resets Claude Code Usage Limits Again After a Rough Week of Outages",
+      "url": "https://startupfortune.com/anthropic-resets-claude-code-usage-limits-again-after-a-rough-week-of-outages/",
+      "source": "Google News / Startup Fortune",
+      "time": "07/10 01:01",
+      "sentiment": "",
+      "body": "",
+      "focusTags": []
+    },
+    {
+      "title": "Former Fed chair Ben Bernanke joins Anthropic's AI oversight trust",
+      "url": "https://www.reuters.com/business/former-fed-chair-ben-bernanke-joins-anthropics-ai-oversight-trust-2026-07-09/",
+      "source": "Google News / Reuters",
+      "time": "07/09 17:33",
+      "sentiment": "",
+      "body": "",
+      "focusTags": [
+        "[重大事件]"
+      ]
+    },
+    {
+      "title": "Anthropic appoints former Fed Chair Ben Bernanke to its independent trust",
+      "url": "https://www.cnbc.com/2026/07/09/anthropic-fed-chair-bernanke-independent-trust.html",
+      "source": "Google News / CNBC",
+      "time": "07/09 17:23",
+      "sentiment": "",
+      "body": "",
+      "focusTags": []
+    },
+    {
+      "title": "Former Fed Chairman Ben Bernanke Joins Anthropic Oversight Trust",
+      "url": "https://www.bloomberg.com/news/articles/2026-07-09/former-fed-chairman-ben-bernanke-joins-anthropic-oversight-trust",
+      "source": "Google News / Bloomberg.com",
+      "time": "07/09 16:30",
+      "sentiment": "",
+      "body": "",
+      "focusTags": []
+    },
+    {
+      "title": "Anthropic's Reflection: AI gets its screen-time moment",
+      "url": "https://www.axios.com/2026/07/09/anthropic-reflection-ai-screen-time",
+      "source": "Google News / Axios",
+      "time": "07/09 15:30",
+      "sentiment": "",
+      "body": "",
+      "focusTags": [
+        "[新工具]"
+      ]
+    },
+    {
+      "title": "Say hello to Claude Wrapped",
+      "url": "https://www.theverge.com/ai-artificial-intelligence/963105/anthropic-claude-wrapped-reflection-ai-usage",
+      "source": "Google News / The Verge",
+      "time": "07/09 13:30",
+      "sentiment": "",
+      "body": "",
+      "focusTags": [
+        "[新工具]"
+      ]
+    },
+    {
+      "title": "Anthropic found a hidden space where Claude puzzles over concepts",
+      "url": "https://www.technologyreview.com/2026/07/09/1140293/anthropic-found-a-hidden-space-where-claude-puzzles-over-concepts/",
+      "source": "Google News / MIT Technology Review",
+      "time": "07/09 20:22",
+      "sentiment": "",
+      "body": "",
+      "focusTags": []
+    },
+    {
+      "title": "OpenAI unveils long-awaited \"super app\" as rivalry with Anthropic intensifies",
+      "url": "https://www.reuters.com/business/openai-launches-chatgpt-work-2026-07-09/",
+      "source": "Google News / Reuters",
+      "time": "07/09 23:08",
+      "sentiment": "",
+      "body": "",
+      "focusTags": []
+    },
+    {
+      "title": "OpenAI's GPT-5.6 and ChatGPT Work aim to beat Anthropic on price, speed, and productivity",
+      "url": "https://www.zdnet.com/article/openais-gpt-5-6-chatgpt-work-beat-anthropic-on-price-speed-and-productivity/",
+      "source": "Google News / ZDNET",
+      "time": "07/09 20:26",
+      "sentiment": "",
+      "body": "",
+      "focusTags": []
+    },
+    {
+      "title": "Elon Musk says he was wrong about Anthropic, now calls the AI rival the 'leader'",
+      "url": "https://www.businessinsider.com/elon-musk-anthropic-ai-leader-rival-claude-spacexai-2026-7",
+      "source": "Google News / Business Insider",
+      "time": "07/09 21:53",
+      "sentiment": "",
+      "body": "",
+      "focusTags": []
+    },
+    {
+      "title": "Musk calls rival Anthropic the current frontrunner in AI",
+      "url": "https://finance.yahoo.com/technology/ai/articles/musk-calls-rival-anthropic-current-185914796.html",
+      "source": "Google News / Yahoo Finance",
+      "time": "07/09 18:59",
+      "sentiment": "",
+      "body": "",
+      "focusTags": []
+    },
+    {
+      "title": "Cursor Is Developing an AI Agent to Compete With Claude Cowork",
+      "url": "https://www.theinformation.com/articles/cursor-developing-ai-agent-compete-claude-cowork",
+      "source": "Google News / The Information",
+      "time": "07/09 19:57",
+      "sentiment": "",
+      "body": "",
+      "focusTags": []
+    },
+    {
+      "title": "Microsoft replaces OpenAI, Anthropic with own AI in some apps",
+      "url": "https://www.seattletimes.com/business/microsoft-replaces-openai-anthropic-with-own-ai-in-some-apps/",
+      "source": "Google News / The Seattle Times",
+      "time": "07/09 19:53",
+      "sentiment": "",
+      "body": "",
+      "focusTags": []
+    },
+    {
+      "title": "Meta jumps into AI coding market in effort to chase Anthropic and OpenAI",
+      "url": "https://www.cnbc.com/2026/07/09/meta-jumps-into-ai-coding-market-to-chase-anthropic-and-openai.html",
+      "source": "Google News / CNBC",
+      "time": "07/09 14:00",
+      "sentiment": "",
+      "body": "",
+      "focusTags": []
+    },
+    {
+      "title": "Anthropic, OpenAI, and SpaceX are bigger than the last 25 years of tech exits",
+      "url": "https://techcrunch.com/2026/07/09/anthropic-openai-and-spacex-are-bigger-than-the-last-25-years-of-tech-exits/",
+      "source": "Google News / TechCrunch",
+      "time": "07/09 14:51",
+      "sentiment": "",
+      "body": "",
+      "focusTags": []
+    },
+    {
+      "title": "A view from inside Anthropic's Claude Partner Network",
+      "url": "https://www.channeldive.com/news/inside-anthropic-claude-partner-network-caylent/824748/",
+      "source": "Google News / Channel Dive",
+      "time": "07/09 19:05",
+      "sentiment": "",
+      "body": "",
+      "focusTags": []
+    },
+    {
+      "title": "Anthropic Wants You to Pay Up for Claude Fable 5",
+      "url": "https://www.wired.com/story/model-behavior-anthropic-will-charge-consumers-extra-to-use-claude-fable-5/",
+      "source": "Google News / WIRED",
+      "time": "07/09 18:30",
+      "sentiment": "",
+      "body": "",
+      "focusTags": []
+    },
+    {
+      "title": "What Is MCP, the Model Context Protocol Powering AI Agents Now",
+      "url": "https://startupfortune.com/what-is-mcp-the-model-context-protocol-powering-ai-agents-now/",
+      "source": "Google News / Startup Fortune",
+      "time": "07/09 13:41",
+      "sentiment": "",
+      "body": "",
+      "focusTags": []
+    },
+    {
+      "title": "China finds security vulnerabilities in Anthropic's Claude AI model",
+      "url": "https://www.foxbusiness.com/video/6400633590112",
+      "source": "Google News / Fox Business",
+      "time": "07/09 12:04",
+      "sentiment": "",
+      "body": "",
+      "focusTags": []
+    },
+    {
+      "title": "Cybersecurity News: Interpol's global fraud sweep, China's Claude Code flag, old Github account tricks - CISO Series",
+      "url": "https://cisoseries.com/cybersecurity-news-interpols-global-fraud-sweep-chinas-claude-code-flag-old-github-account-tricks/",
+      "source": "Google News / CISO Series",
+      "time": "07/10 10:00",
+      "sentiment": "",
+      "body": "",
+      "focusTags": []
+    }
+  ],
+  "discussions": [
+    {
+      "title": "[BUG] Instantly hitting usage limits with Max subscription",
+      "url": "https://github.com/anthropics/claude-code/issues/16157",
+      "source": "GitHub Issues / claude-code",
+      "time": "07/10 10:58",
+      "sentiment": "",
+      "body": "Max 訂閱用戶回報立即觸頂用量限制，累積 1479 則留言、722 個讚，是今日互動量最高的社群條目。情緒：😤",
+      "focusTags": [
+        "[持續追蹤]"
+      ]
+    },
+    {
+      "title": "Feature Request: Support AGENTS.md.",
+      "url": "https://github.com/anthropics/claude-code/issues/6235",
+      "source": "GitHub Issues / claude-code",
+      "time": "07/10 03:42",
+      "sentiment": "",
+      "body": "社群要求 Claude Code 支援業界正逐漸標準化的 AGENTS.md 格式（Codex、Amp、Cursor 已採用），累積 335 則留言、5634 個讚，是今日按讚數最高的條目。情緒：🤔",
+      "focusTags": [
+        "[持續追蹤]"
+      ]
+    },
+    {
+      "title": "FEATURE: Support multiple Connector accounts (same connector, different accounts) in Claude and Claude Code on the web",
+      "url": "https://github.com/anthropics/claude-code/issues/27302",
+      "source": "GitHub Issues / claude-code",
+      "time": "07/09 21:26",
+      "sentiment": "",
+      "body": "社群要求 Claude Code on the web 支援同一 Connector 掛載多個帳號，累積 212 則留言、419 個讚。情緒：😐",
+      "focusTags": []
+    },
+    {
+      "title": "Feature Request: India-Specific Pricing Plans (INR) for Claude & Claude Code",
+      "url": "https://github.com/anthropics/claude-code/issues/17432",
+      "source": "GitHub Issues / claude-code",
+      "time": "07/10 10:58",
+      "sentiment": "",
+      "body": "社群要求 Anthropic 比照 OpenAI、Google 推出印度盧比計價方案，累積 205 則留言、598 個讚。情緒：😐",
+      "focusTags": []
+    },
+    {
+      "title": "Claude Account Disabled After Payment for Claude Code Max 5x Plan",
+      "url": "https://github.com/anthropics/claude-code/issues/5088",
+      "source": "GitHub Issues / claude-code",
+      "time": "07/10 02:04",
+      "sentiment": "",
+      "body": "使用者回報付款後帳號反遭停用，累積 180 則留言、65 個讚。情緒：😤",
+      "focusTags": []
+    },
+    {
+      "title": "Add support for Visual Studio 2026 Integration",
+      "url": "https://github.com/anthropics/claude-code/issues/15942",
+      "source": "GitHub Issues / claude-code",
+      "time": "07/09 14:19",
+      "sentiment": "",
+      "body": "社群要求 Claude Code 支援 Visual Studio 2026 整合，累積 139 則留言、475 個讚。情緒：😐",
+      "focusTags": []
+    },
+    {
+      "title": "[FEATURE] Add the ability to manage multiple Claude accounts within the Claude Desktop app with easy switching between profiles.",
+      "url": "https://github.com/anthropics/claude-code/issues/18435",
+      "source": "GitHub Issues / claude-code",
+      "time": "07/10 02:15",
+      "sentiment": "",
+      "body": "社群要求 Claude Desktop 支援多帳號切換管理，累積 126 則留言、705 個讚。情緒：😐",
+      "focusTags": []
+    },
+    {
+      "title": "[BUG] claude.ai visualize feature broken — claudemcpcontent.com unreachable (DNS_PROBE_FINISHED_NXDOMAIN)",
+      "url": "https://github.com/anthropics/claude-code/issues/34820",
+      "source": "GitHub Issues / claude-code",
+      "time": "07/10 07:38",
+      "sentiment": "",
+      "body": "使用者回報 claude.ai 的 visualize 功能因後端網域 DNS 解析失敗而無法使用，累積 94 則留言、39 個讚。情緒：😤",
+      "focusTags": []
+    },
+    {
+      "title": "Ben Bernanke Joins Anthropic Oversight Trust",
+      "url": "https://www.anthropic.com/news/ben-bernanke",
+      "source": "Hacker News",
+      "time": "07/10 02:39",
+      "sentiment": "",
+      "body": "前聯準會主席 Bernanke 加入 Anthropic 長期利益信託，社群討論其對治理公信力的意義，HN 66 分。情緒：😐",
+      "focusTags": [
+        "[重大事件]"
+      ]
+    },
+    {
+      "title": "FEATURE: Multi-window support in Claude Code Desktop",
+      "url": "https://github.com/anthropics/claude-code/issues/30154",
+      "source": "GitHub Issues / claude-code",
+      "time": "07/09 15:49",
+      "sentiment": "",
+      "body": "社群要求 Claude Code Desktop 支援多視窗，累積 60 則留言、202 個讚。情緒：😐",
+      "focusTags": []
+    },
+    {
+      "title": "[BUG] Advisor always \"unavailable\" with Fable 5 advisor (Opus 4.8 main) across all sessions (v2.1.198)",
+      "url": "https://github.com/anthropics/claude-code/issues/73365",
+      "source": "GitHub Issues / claude-code",
+      "time": "07/10 11:53",
+      "sentiment": "",
+      "body": "使用者回報 Fable 5 advisor 在所有 session 中皆顯示「unavailable」，累積 50 則留言、100 個讚。情緒：😤",
+      "focusTags": []
+    },
+    {
+      "title": "[BUG] Opus 4.7 thinking summaries not rendered in VS Code extension",
+      "url": "https://github.com/anthropics/claude-code/issues/49322",
+      "source": "GitHub Issues / claude-code",
+      "time": "07/09 21:09",
+      "sentiment": "",
+      "body": "使用者回報 VS Code 擴充套件未正確顯示 Opus 4.7 的思考摘要，累積 50 則留言、42 個讚。情緒：😐",
+      "focusTags": []
+    },
+    {
+      "title": "[BUG] missing ide_selection and wrong ide_opened_file in VSCode extension",
+      "url": "https://github.com/anthropics/claude-code/issues/8451",
+      "source": "GitHub Issues / claude-code",
+      "time": "07/10 11:35",
+      "sentiment": "",
+      "body": "VS Code 擴充套件回報選取範圍與開啟檔案資訊有誤，累積 48 則留言、35 個讚。情緒：😐",
+      "focusTags": []
+    },
+    {
+      "title": "My AI agent got dumber mid-session. I measured the context window before blaming MCP.",
+      "url": "https://dev.to/rapls/my-ai-agent-got-dumber-mid-session-i-measured-the-context-window-before-blaming-mcp-4c3l",
+      "source": "dev.to / #claudecode",
+      "time": "06/17 02:07",
+      "sentiment": "",
+      "body": "作者實測發現 agent 中途變笨的元凶並非常被歸咎的 MCP server 佔用 context，而是實際測量 context 用量後才找到真正原因，提供可複用的診斷方法。情緒：🤔",
+      "focusTags": []
+    },
+    {
+      "title": "Connecting an MCP server gives your agent hands. It also gives a stranger a way in.",
+      "url": "https://dev.to/rapls/connecting-an-mcp-server-gives-your-agent-hands-it-also-gives-a-stranger-a-way-in-3mgi",
+      "source": "dev.to / #claudecode",
+      "time": "06/21 01:53",
+      "sentiment": "",
+      "body": "作者以自身曾踩過的 HTML injection 教訓出發，說明 MCP 讓 agent 具備行動力的同時也放大了「LLM 輸出即不可信輸入」的風險。情緒：🤔",
+      "focusTags": []
+    },
+    {
+      "title": "I built a multi-agent loop where an adversarial Claude reviewer reads your actual codebase before approving plans",
+      "url": "https://dev.to/execute25/i-built-a-multi-agent-loop-where-an-adversarial-claude-reviewer-reads-your-actual-codebase-before-2d8n",
+      "source": "dev.to / #claudeai",
+      "time": "06/25 02:37",
+      "sentiment": "",
+      "body": "作者開源 agent-plan-review-loop，讓一個預設「計畫是錯的」的對抗式 Claude reviewer 反覆挑戰實作計畫，直到通過審查才放行，解決 LLM 審查過度樂觀的問題。情緒：🤔",
+      "focusTags": []
+    },
+    {
+      "title": "I built a local reverse proxy to see what Claude Code actually sends to Anthropic",
+      "url": "https://dev.to/houleixx/i-built-a-local-reverse-proxy-to-see-what-claude-code-actually-sends-to-anthropic-5foo",
+      "source": "dev.to / #claudecode",
+      "time": "06/10 07:08",
+      "sentiment": "",
+      "body": "因 Claude Code 不遵守 HTTP_PROXY 設定，作者自建一個跑在 loopback 的本地反向代理，即時檢視每次請求的 prompt、token 與花費。情緒：🤔",
+      "focusTags": []
+    },
+    {
+      "title": "Anthropic hid tracking signals in Unicode apostrophes. That's not telemetry, that's steganography.",
+      "url": "https://dev.to/adioof/anthropic-hid-tracking-signals-in-unicode-apostrophes-thats-not-telemetry-thats-steganography-2p3e",
+      "source": "dev.to / #anthropic",
+      "time": "07/01 15:38",
+      "sentiment": "",
+      "body": "作者指控 Claude Code 在特定條件下（如透過競品網域路由請求、使用中國時區）以 Unicode 撇號變體與日期格式作為隱藏標記，稱此舉近似 steganography；此為單一作者主張，尚待其他來源佐證。情緒：😤",
+      "focusTags": []
+    },
+    {
+      "title": "Show HN: Devthropology – Better Insights for GitHub Repos",
+      "url": "https://devthropology.com/demo",
+      "source": "Hacker News",
+      "time": "07/09 16:47",
+      "sentiment": "",
+      "body": "開發者打造 GitHub PR 資料分析工具，提供貢獻者互動、程式碼健康度等視覺化洞察，HN 34 分。情緒：😐",
+      "focusTags": []
+    },
+    {
+      "title": "Show HN: I built a web tool to see and edit what an AI thinks before it answers",
+      "url": "https://lucid.earthpilot.ai",
+      "source": "Hacker News",
+      "time": "07/09 17:36",
+      "sentiment": "",
+      "body": "開發者受 Anthropic 論文《Verbalizable Representations Form a Global Workspace in Language Models》啟發，做出可視覺化並編輯開源模型內部推理表徵的工具，HN 31 分。情緒：😊",
+      "focusTags": []
+    },
+    {
+      "title": "Show HN: Policy enforcement for Claude Code, Cursor, and Codex",
+      "url": "https://kastra.ai/",
+      "source": "Hacker News",
+      "time": "07/09 15:26",
+      "sentiment": "",
+      "body": "開發者打造 Kastra，在 agent 工具呼叫執行前依確定性政策攔截評估，起因是曾攔下一個差點對正式環境資料庫執行 DELETE 的 Cursor agent，HN 12 分。情緒：😐",
+      "focusTags": []
+    },
+    {
+      "title": "Show HN: Papercrane-CLI – a BI tool built for Claude Code",
+      "url": "https://papercrane.ai/blog/today-im-launching-papercrane-cli-a-bi-tool-built-for-claude-code",
+      "source": "Hacker News",
+      "time": "07/09 15:33",
+      "sentiment": "",
+      "body": "開發者推出命令列 BI 工具，讓 Claude Code 直接存取資料並產生可分享的儀表板連結，HN 7 分。情緒：😐",
+      "focusTags": []
+    },
+    {
+      "title": "Show HN: Slopera, a browser that hallucinates every page with an LLM",
+      "url": "https://github.com/fresswolf/Slopera",
+      "source": "Hacker News",
+      "time": "07/09 13:10",
+      "sentiment": "",
+      "body": "開發者打造一款不連線真實網頁、改由 LLM 即時生成頁面內容的桌面瀏覽器，需搭配 Anthropic 或 OpenRouter API key 使用，HN 3 分。情緒：🤔",
+      "focusTags": []
+    }
+  ],
+  "billing": [],
+  "focus": [
+    {
+      "tag": "[風險警示]",
+      "text": "中國官方警告 Claude Code 存在「後門」安全風險，Anthropic 隨即公開否認該指控，事件同時獲多家科技與資安媒體報導。",
+      "ref_urls": [
+        "https://www.uctoday.com/security-compliance-risk/china-calls-claude-code-a-security-risk-amid-deepening-anthropic-alibaba-dispute/",
+        "https://www.bankinfosecurity.com/anthropic-rejects-chinas-claim-about-claude-code-backdoor-a-32184",
+        "https://www.techradar.com/pro/china-warns-users-of-alleged-security-backdoor-vulnerabilities-in-anthropics-claude-code-tells-users-to-uninstall-for-sfaety-reasons"
+      ]
+    },
+    {
+      "tag": "[重大事件]",
+      "text": "前聯準會主席 Ben Bernanke 加入 Anthropic 長期利益信託（Long-Term Benefit Trust）董事會。",
+      "ref_urls": [
+        "https://www.anthropic.com/news/ben-bernanke",
+        "https://www.reuters.com/business/former-fed-chair-ben-bernanke-joins-anthropics-ai-oversight-trust-2026-07-09/"
+      ]
+    },
+    {
+      "tag": "[新工具]",
+      "text": "Claude Code v2.1.206 發布，新增 `/cd` 目錄路徑建議、`/doctor` 檢查 CLAUDE.md 精簡建議等功能。",
+      "ref_urls": [
+        "https://github.com/anthropics/claude-code/releases/tag/v2.1.206"
+      ]
+    },
+    {
+      "tag": "[持續追蹤]",
+      "text": "GitHub Issues 上「Max 訂閱方案立刻觸頂用量限制」的臭蟲回報累積 1479 則留言、722 個讚，「支援 AGENTS.md」功能請求則累積 5634 個讚，反映社群對用量政策與跨工具標準化的高度關注。",
+      "ref_urls": [
+        "https://github.com/anthropics/claude-code/issues/16157",
+        "https://github.com/anthropics/claude-code/issues/6235"
+      ]
+    },
+    {
+      "tag": "[新工具]",
+      "text": "Anthropic 推出 Beta 功能「Reflect with Claude」（俗稱 Claude Wrapped），讓使用者檢視自己的 Claude 使用模式，同步獲 Axios、The Verge 報導。",
+      "ref_urls": [
+        "https://www.anthropic.com/news/reflect-with-claude",
+        "https://www.axios.com/2026/07/09/anthropic-reflection-ai-screen-time",
+        "https://www.theverge.com/ai-artificial-intelligence/963105/anthropic-claude-wrapped-reflection-ai-usage"
+      ]
+    }
+  ],
+  "sourceStatus": [
+    {
+      "name": "Anthropic Status",
+      "ok": true,
+      "count": 0
+    },
+    {
+      "name": "Hacker News",
+      "ok": true,
+      "count": 17
+    },
+    {
+      "name": "GitHub Issues",
+      "ok": true,
+      "count": 15
+    },
+    {
+      "name": "Claude API Release Notes",
+      "ok": true,
+      "count": 0
+    },
+    {
+      "name": "dev.to",
+      "ok": true,
+      "count": 15
+    },
+    {
+      "name": "Anthropic Blog",
+      "ok": true,
+      "count": 2
+    },
+    {
+      "name": "GitHub",
+      "ok": true,
+      "count": 1
+    },
+    {
+      "name": "Google News",
+      "ok": true,
+      "count": 34
+    },
+    {
+      "name": "Reddit",
+      "ok": true,
+      "count": 11
+    }
+  ],
+  "preview": "China Calls Claude Code a Security Risk Amid Deepening Anthropic-Alibaba Dispute"
+}
