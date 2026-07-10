@@ -1,6 +1,174 @@
 {
-  "https://twitter.com/karpathy/status/2056753169888334312": {
-    "first_emitted": "2026-05-19",
-    "score_at_emit": 1431
+  "https://www.anthropic.com/news/hard-questions": {
+    "first_emitted": "2026-07-10",
+    "score_at_emit": 0
+  },
+  "https://www.anthropic.com/news/ust-claude": {
+    "first_emitted": "2026-07-10",
+    "score_at_emit": 0
+  },
+  "https://www.anthropic.com/news/ben-bernanke": {
+    "first_emitted": "2026-07-10",
+    "score_at_emit": 66
+  },
+  "https://www.anthropic.com/news/reflect-with-claude": {
+    "first_emitted": "2026-07-10",
+    "score_at_emit": 44
+  },
+  "https://devthropology.com/demo": {
+    "first_emitted": "2026-07-10",
+    "score_at_emit": 34
+  },
+  "https://lucid.earthpilot.ai": {
+    "first_emitted": "2026-07-10",
+    "score_at_emit": 31
+  },
+  "https://dev.to/rapls/my-ai-agent-got-dumber-mid-session-i-measured-the-context-window-before-blaming-mcp-4c3l": {
+    "first_emitted": "2026-07-10",
+    "score_at_emit": 21
+  },
+  "https://dev.to/rapls/connecting-an-mcp-server-gives-your-agent-hands-it-also-gives-a-stranger-a-way-in-3mgi": {
+    "first_emitted": "2026-07-10",
+    "score_at_emit": 18
+  },
+  "https://kastra.ai": {
+    "first_emitted": "2026-07-10",
+    "score_at_emit": 12
+  },
+  "https://dev.to/toffy/use-fable-5-where-it-pays-for-itself-1809": {
+    "first_emitted": "2026-07-10",
+    "score_at_emit": 8
+  },
+  "https://papercrane.ai/blog/today-im-launching-papercrane-cli-a-bi-tool-built-for-claude-code": {
+    "first_emitted": "2026-07-10",
+    "score_at_emit": 7
+  },
+  "https://dev.to/adioof/anthropic-hid-tracking-signals-in-unicode-apostrophes-thats-not-telemetry-thats-steganography-2p3e": {
+    "first_emitted": "2026-07-10",
+    "score_at_emit": 6
+  },
+  "https://dev.to/toffy/one-command-turns-claude-code-into-a-full-dev-team-1d1e": {
+    "first_emitted": "2026-07-10",
+    "score_at_emit": 6
+  },
+  "https://dev.to/aws-builders/how-my-first-claude-code-on-aws-bedrock-experiment-cost-me-843-in-just-one-day-1835": {
+    "first_emitted": "2026-07-10",
+    "score_at_emit": 6
+  },
+  "https://dev.to/sayed_ali_alkamel/i-pointed-a-skill-linter-at-a-52k-star-repo-here-is-what-84100-looks-like-28cn": {
+    "first_emitted": "2026-07-10",
+    "score_at_emit": 6
+  },
+  "https://dev.to/tokenmixai/i-did-the-math-on-claude-sonnet-5-the-60-opus-discount-is-real-but-temporary-31pf": {
+    "first_emitted": "2026-07-10",
+    "score_at_emit": 5
+  },
+  "https://dev.to/newan2001/i-built-a-claude-code-skill-that-finds-customers-not-competitors-on-reddit-linkedin-4h82": {
+    "first_emitted": "2026-07-10",
+    "score_at_emit": 5
+  },
+  "https://dev.to/grenishrai/anthropics-claude-in-2026-when-frontier-ai-stopped-being-just-software-3mch": {
+    "first_emitted": "2026-07-10",
+    "score_at_emit": 5
+  },
+  "https://github.com/fresswolf/Slopera": {
+    "first_emitted": "2026-07-10",
+    "score_at_emit": 3
+  },
+  "https://dev.to/ai_made_tools/claude-sonnet-5-complete-guide-to-benchmarks-pricing-and-features-2026-1n5b": {
+    "first_emitted": "2026-07-10",
+    "score_at_emit": 3
+  },
+  "https://dev.to/execute25/i-built-a-multi-agent-loop-where-an-adversarial-claude-reviewer-reads-your-actual-codebase-before-2d8n": {
+    "first_emitted": "2026-07-10",
+    "score_at_emit": 3
+  },
+  "https://dev.to/tokenmixai/i-checked-why-claude-fable-5-was-suspended-4-days-after-launch-this-is-not-an-outage-54f2": {
+    "first_emitted": "2026-07-10",
+    "score_at_emit": 3
+  },
+  "https://github.com/vibhasjain/agent-keyboard": {
+    "first_emitted": "2026-07-10",
+    "score_at_emit": 2
+  },
+  "https://github.com/MadsLorentzen/ai-job-search": {
+    "first_emitted": "2026-07-10",
+    "score_at_emit": 2
+  },
+  "https://github.com/Kuberwastaken/subagentmaxxing": {
+    "first_emitted": "2026-07-10",
+    "score_at_emit": 2
+  },
+  "https://jazzyalex.github.io/agent-sessions": {
+    "first_emitted": "2026-07-10",
+    "score_at_emit": 2
+  },
+  "https://dev.to/arthurpro/mcp-after-year-one-six-design-lessons-the-industry-is-still-learning-1bdb": {
+    "first_emitted": "2026-07-10",
+    "score_at_emit": 2
+  },
+  "https://dev.to/houleixx/i-built-a-local-reverse-proxy-to-see-what-claude-code-actually-sends-to-anthropic-5foo": {
+    "first_emitted": "2026-07-10",
+    "score_at_emit": 2
+  },
+  "https://github.com/Clear-Sights/Makoto": {
+    "first_emitted": "2026-07-10",
+    "score_at_emit": 1
+  },
+  "https://secondhandtokens.com": {
+    "first_emitted": "2026-07-10",
+    "score_at_emit": 1
+  },
+  "https://github.com/whatadewitt/claude-status-light": {
+    "first_emitted": "2026-07-10",
+    "score_at_emit": 1
+  },
+  "https://outsideagent.ai": {
+    "first_emitted": "2026-07-10",
+    "score_at_emit": 1
+  },
+  "https://www.reddit.com/r/ClaudeCode/comments/1usmnip/straightening_spagetti_code": {
+    "first_emitted": "2026-07-10",
+    "score_at_emit": 0
+  },
+  "https://www.reddit.com/r/ClaudeCode/comments/1usmkxi/how_did_you_use_fable_i_joined_late_missed_most": {
+    "first_emitted": "2026-07-10",
+    "score_at_emit": 0
+  },
+  "https://www.reddit.com/r/ClaudeCode/comments/1usmhov/changing_model_after_response_alredy_started": {
+    "first_emitted": "2026-07-10",
+    "score_at_emit": 0
+  },
+  "https://www.reddit.com/r/ClaudeCode/comments/1usme8d/i_built_a_model_router_for_claude_code": {
+    "first_emitted": "2026-07-10",
+    "score_at_emit": 0
+  },
+  "https://www.reddit.com/r/ClaudeCode/comments/1usmcjh/built_an_mcp_server_that_turns_claude_code_into_a": {
+    "first_emitted": "2026-07-10",
+    "score_at_emit": 0
+  },
+  "https://www.reddit.com/r/artificial/comments/1urmekh/whats_your_actual_workflow_for_keeping_context": {
+    "first_emitted": "2026-07-10",
+    "score_at_emit": 0
+  },
+  "https://www.reddit.com/r/artificial/comments/1uovy56/benchmarks_compare_open_models_against_closed": {
+    "first_emitted": "2026-07-10",
+    "score_at_emit": 0
+  },
+  "https://www.reddit.com/r/artificial/comments/1uoana3/a_war_between_anthropic_and_alibaba": {
+    "first_emitted": "2026-07-10",
+    "score_at_emit": 0
+  },
+  "https://www.reddit.com/r/artificial/comments/1unbuu4/wait_what": {
+    "first_emitted": "2026-07-10",
+    "score_at_emit": 0
+  },
+  "https://www.reddit.com/r/artificial/comments/1un6v9c/this_week_in_ai_gpt56_gemini_35_flash_claude": {
+    "first_emitted": "2026-07-10",
+    "score_at_emit": 0
+  },
+  "https://www.reddit.com/r/artificial/comments/1umysgl/anthropic_vs_opensourced_model": {
+    "first_emitted": "2026-07-10",
+    "score_at_emit": 0
   }
 }
