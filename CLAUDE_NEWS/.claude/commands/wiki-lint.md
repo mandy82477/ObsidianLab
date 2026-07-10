@@ -330,6 +330,21 @@ python scripts/check_links.py
 
 同步所有因本次 lint 造成的頁面新增、移動、狀態變更。
 
+### 10. 收尾閉迴路：commit wiki + build web + 單一 push `[加入: 2026-07-10]`
+
+**為何必要：** lint 只改 `wiki/*.md`，web build 僅發生於本步驟與 `/news-pipeline`。若跳過本步，本次修正不會出現在 web reader，得等下一次日更 pipeline 才上站——這正是「週更網站沒更新」的根因。lint 結束前必須自行閉迴路（對齊根目錄 `CLAUDE.md`「完工定義」：測試綠 + 已 commit）。
+
+依序執行（`REPO_ROOT` = `C:\Users\Mandy\CLAUDE_OBSIDIAN\ObsidianLab\CLAUDE_NEWS`，`PYTHON` = `C:\Users\Mandy\AppData\Local\Programs\Python\Python313\python.exe`）：
+
+1. **Commit wiki 變更**（先不 push）：`git -C REPO_ROOT add wiki/` → `git -C REPO_ROOT commit -m "wiki: weekly lint YYYY-MM-DD"`（wiki 無變更則跳過 commit，續下一步）
+2. **強制測試套件**：`PYTHON REPO_ROOT\scripts\run_tests.py`
+   - 失敗（exit≠0）→ 跳過 build 與 web commit，仍執行步驟 4 推送已完成的 wiki commit；log 記 `Tests FAILED - web build skipped`
+   - 全過（exit 0）→ 續步驟 3
+3. **建置 web 並 commit**：`PYTHON REPO_ROOT\scripts\build_web.py` → `git -C REPO_ROOT add web_reader/` → `git -C REPO_ROOT commit -m "web: rebuild YYYY-MM-DD（週更 lint 上站）"`
+4. **單一 push**：`git -C REPO_ROOT push`（本次所有 commit 一次推送，一次 push = 一個 Pages 部署，避免並發競爭；理由同 `.claude/commands/news-pipeline-steps.md` Step 5）
+
+> 本步 commit 為實質改動閉迴路的一部分，**不可只留在對話裡**（同 SessionStart hook 的未 commit 提醒對象）。
+
 ## 注意事項
 
 - 繁體中文為主，英文術語保留英文

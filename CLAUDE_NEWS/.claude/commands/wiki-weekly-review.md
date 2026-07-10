@@ -103,6 +103,17 @@ description: 每週判斷本週有哪些主題值得加碼追蹤（建頁/加開
 - 聚焦校準：（月度才有：命中率＋偏誤模式觀察，或「非本月首次週度回顧，跳過」）
 ```
 
+### 6. 收尾閉迴路：commit wiki + build web + 單一 push `[加入: 2026-07-10]`
+
+**僅當步驟 4 實際執行了頁面修改時才需要**（使用者「都不要」且無 log 以外變更 → 仍須 commit log.md 這一筆，照走本步）。理由同 `.claude/commands/wiki-lint.md` 步驟 10：本指令改 `wiki/*.md` 不會自動上站，web build 僅發生於本步與 `/news-pipeline`。
+
+依序執行（`REPO_ROOT` = `C:\Users\Mandy\CLAUDE_OBSIDIAN\ObsidianLab\CLAUDE_NEWS`，`PYTHON` = `C:\Users\Mandy\AppData\Local\Programs\Python\Python313\python.exe`）：
+
+1. `git -C REPO_ROOT add wiki/` → `git -C REPO_ROOT commit -m "wiki: weekly review YYYY-MM-DD"`（無變更則跳過）
+2. `PYTHON REPO_ROOT\scripts\run_tests.py`（失敗 → 跳過 build 與 web commit，仍執行步驟 4 推送 wiki commit）
+3. `PYTHON REPO_ROOT\scripts\build_web.py` → `git -C REPO_ROOT add web_reader/` → `git -C REPO_ROOT commit -m "web: rebuild YYYY-MM-DD（週度回顧上站）"`
+4. `git -C REPO_ROOT push`（單一 push，理由見 `.claude/commands/news-pipeline-steps.md` Step 5）
+
 ## 注意事項
 
 - 繁體中文為主
