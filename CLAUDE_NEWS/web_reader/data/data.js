@@ -11,7 +11,7 @@ window.WIKI_DATA = {
       "pill": "active",
       "firstSeen": "2026-05-17（CLAUDE.md 維護討論中被引用）",
       "startDate": "",
-      "lastUpdated": "2026-07-10",
+      "lastUpdated": "2026-07-11",
       "lastNewsUpdate": "2026-05-29",
       "summary": "Andrej Karpathy 為知名 AI 研究者，傳已加入 Anthropic（2026-05-29，至今無後續：來源僅 HN 討論，近 14 天日報無進一步獨立確認）。以 OpenAI 聯合創始人/研究總監及 Tesla AI/Autopilot 負責人身份廣為人知。若加入屬實，其分享的「CLAUDE.md 四條…",
       "latestHeadline": "HN 社群討論確認 Karpathy 已正式加入 Anthropic，Eureka Labs GitHub org 停更、LinkedIn 資訊移除，推測已解散（2026-05-29，至今無後續：近 14 天日報無進一步報導）"
@@ -116,7 +116,7 @@ window.WIKI_DATA = {
       "pill": "active",
       "firstSeen": "2025（正式推出）",
       "startDate": "",
-      "lastUpdated": "2026-07-10",
+      "lastUpdated": "2026-07-11",
       "lastNewsUpdate": "2026-07-10",
       "summary": "**Reflect with Claude 測試版推出（2026-07-09）：** Anthropic 官方部落格宣布「Reflect with Claude」測試版功能，使用者可在 Settings 中檢視使用模式儀表板，理解自己使用 Claude 的模式；TechCrunch、Mashable、CNET、Axio…",
       "latestHeadline": "Reflect with Claude 測試版推出：Settings 內新增使用模式儀表板，TechCrunch、Mashable、CNET、Axios、The Verge 多家媒體同步報導，多類比「AI 版 Spotify Wrapped」，TechCrunch 提出「悄悄推銷 AI」質疑角度；HN 29 分（見 ["
@@ -191,7 +191,7 @@ window.WIKI_DATA = {
       "pill": "active",
       "firstSeen": "2026-04-25",
       "startDate": "",
-      "lastUpdated": "2026-07-06",
+      "lastUpdated": "2026-07-11",
       "lastNewsUpdate": "2026-07-06",
       "summary": "2026-06-26，Wired 確認 Trump 政府已不再信任 Amodei，由 Tom Brown 全面接管 Fable 5 出口管制談判；白宮人士批評其「行為怪異」。此為他近期最重大的政治處境轉變，顯示 Anthropic 與現任行政當局關係持續惡化。**後續進展**：Tom Brown 主導的談判已於 202…",
       "latestHeadline": "接受 STAT News 專訪，談 AI 對生技（biotech）產業的潛在影響；日報僅提供標題層級資訊，具體論述內容待後續報導補充（待核實）（來源：STAT News）"
@@ -206,10 +206,10 @@ window.WIKI_DATA = {
       "pill": "active",
       "firstSeen": "2026-06-09",
       "startDate": "",
-      "lastUpdated": "2026-07-10",
+      "lastUpdated": "2026-07-11",
       "lastNewsUpdate": "2026-07-10",
-      "summary": "Claude Fable 5 是 Anthropic 於 2026-06-09 發布的旗艦模型，為**史上首款向大眾開放的 Mythos 級模型**。Fable 5 與 Claude Mythos 5 共用相同的模型權重，差異在於 Fable 5 前置安全分類器——觸發時 fallback 至 Claude Opus …",
-      "latestHeadline": "Claude Fable 5 是 Anthropic 於 2026-06-09 發布的旗艦模型，為史上首款向大眾開放的 Mythos 級模型。Fable 5 與 Claude Mythos 5 共用相同的模型權重，差異在於 Fable 5 前置安全分類器——觸發時 fallback 至 Claude Opus 4.8（"
+      "summary": "**2026-07-10 最新**：GitHub Issue #73365 回報 Fable 5 advisor 角色在所有 Claude Code session 中全面 unavailable（🔴 未修復，呼叫層問題非模型能力劣化，詳見「爭議」與 [[entities/claude-code]]）；07-09 官方…",
+      "latestHeadline": "2026-07-10 最新：GitHub Issue #73365 回報 Fable 5 advisor 角色在所有 Claude Code session 中全面 unavailable（🔴 未修復，呼叫層問題非模型能力劣化，詳見「爭議」與 ）；07-09 官方公布「Fable 5 調度、便宜模型執行」協作基準（46"
     },
     {
       "id": "fiona-fung",
@@ -251,7 +251,7 @@ window.WIKI_DATA = {
       "pill": "active",
       "firstSeen": "2026-06-20",
       "startDate": "",
-      "lastUpdated": "2026-07-10",
+      "lastUpdated": "2026-07-11",
       "lastNewsUpdate": "2026-06-26",
       "summary": "2026-06-21，Reuters 正式確認 John Jumper 已離開 Google DeepMind、加入 Anthropic（HN score 77）。他成為一週內出走 Google 加入 Anthropic 的多位頂尖研究員之一，dev.to 報導指此波人才流失連帶造成 Google Alphabet 市…",
       "latestHeadline": "dev.to 多篇報導總結此波 Google AI 人才出走潮，指 Jumper 加入時點適逢 Anthropic Mythos 出口管制危機；一週內 4 位頂尖研究員離開 Google，Google Alphabet 市值蒸發約 2,700 億美元，Gemini 3.5 延期（來源：dev.to）"
@@ -281,10 +281,10 @@ window.WIKI_DATA = {
       "pill": "active",
       "firstSeen": "2026-04（限定夥伴 Preview）",
       "startDate": "",
-      "lastUpdated": "2026-07-02",
+      "lastUpdated": "2026-07-11",
       "lastNewsUpdate": "2026-07-01",
-      "summary": "Claude Mythos 是 Anthropic 的高能力 AI 模型家族，已確認具備**自主發現並武器化軟體漏洞、生成可執行 exploit** 的能力，是 AI 安全領域的重大里程碑。2026-06-09 起分為兩個版本：**Claude Fable 5**（以 Mythos 架構為核心、附加安全護欄的公開版，史…",
-      "latestHeadline": "Claude Mythos 是 Anthropic 的高能力 AI 模型家族，已確認具備自主發現並武器化軟體漏洞、生成可執行 exploit 的能力，是 AI 安全領域的重大里程碑。2026-06-09 起分為兩個版本：Claude Fable 5（以 Mythos 架構為核心、附加安全護欄的公開版，史上首款向大眾開放"
+      "summary": "**當前狀態（2026-07-01 起）**：出口管制已全面解除，Mythos 5 可用範圍從機構白名單擴大為全球一般用戶；解禁交換條件為 Anthropic 承諾主動偵測安全風險、配合標準協議、通報惡意活動。管制事件歷時 18 天（2026-06-13 至 2026-07-01），完整經過見下方「時序」。 Claud…",
+      "latestHeadline": "當前狀態（2026-07-01 起）：出口管制已全面解除，Mythos 5 可用範圍從機構白名單擴大為全球一般用戶；解禁交換條件為 Anthropic 承諾主動偵測安全風險、配合標準協議、通報惡意活動。管制事件歷時 18 天（2026-06-13 至 2026-07-01），完整經過見下方「時序」。"
     },
     {
       "id": "openclaw",
@@ -311,8 +311,8 @@ window.WIKI_DATA = {
       "pill": "active",
       "firstSeen": "2026-04-27",
       "startDate": "",
-      "lastUpdated": "2026-06-20",
-      "lastNewsUpdate": "",
+      "lastUpdated": "2026-07-11",
+      "lastNewsUpdate": "2026-05-22",
       "summary": "OpenCode 是 Claude Code 的主要開源替代品，截至 2026-05-12 已吸引 **157,000 名開發者**轉向（The New Stack 報導）。功能與體驗被 XDA 評測認為與 Claude Code 相當，且完全開源免費。即便 Anthropic 宣布倍增速率限制，對 vendor lo…",
       "latestHeadline": "XDA 評為可行替代方案；`OpenCode-power-pack` 移植官方 11 個 skills；DeepSeek 宣布建構自有競品，顯示開源 Claude Code 競品格局持續擴大"
     },
@@ -341,7 +341,7 @@ window.WIKI_DATA = {
       "pill": "active",
       "firstSeen": "2026-05-28",
       "startDate": "",
-      "lastUpdated": "2026-07-09",
+      "lastUpdated": "2026-07-11",
       "lastNewsUpdate": "2026-07-09",
       "summary": "**2026-07-09 最新**：Opus 4.8 一度出現錯誤率升高（Elevated errors），官方於 03:50 UTC 確認問題已解決；同期 Reddit 用戶反映使用體驗轉佳，屬弱訊號僅供參考。 Claude Opus 4.8 於 2026-05-28 正式發布，同步推出 Dynamic Workfl…",
       "latestHeadline": "錯誤率一度升高（同日解決）：Anthropic Status 通報 Claude Opus 4.8 出現 Elevated errors，於 03:50 UTC 確認問題已解決；同期 Reddit 用戶反映近期使用體驗轉佳，提及發布初期曾有不穩定（弱訊號，score 恆 0）"
@@ -371,10 +371,10 @@ window.WIKI_DATA = {
       "pill": "active",
       "firstSeen": "2026-07-01",
       "startDate": "",
-      "lastUpdated": "2026-07-09",
+      "lastUpdated": "2026-07-11",
       "lastNewsUpdate": "2026-07-09",
-      "summary": "Claude Sonnet 5 於 2026-07-01 正式發布，定位為 Anthropic **最 agentic 的 Sonnet 模型**，在 reasoning、tool use、coding、knowledge work 等多個面向均有顯著提升，效能接近 Opus 4.8。 **與 [[entities/f…",
-      "latestHeadline": "Claude Sonnet 5 於 2026-07-01 正式發布，定位為 Anthropic 最 agentic 的 Sonnet 模型，在 reasoning、tool use、coding、knowledge work 等多個面向均有顯著提升，效能接近 Opus 4.8。"
+      "summary": "**2026-07-09 最新**：Mashable 報導 Anthropic「正式發布」Sonnet 5，與 07-01 官方公告日期重疊，疑為媒體遲來報導；另有評測分數 57 分、API 成本減半的傳聞數字未見佐證，列「待查證」（詳見上方 callout）。 Claude Sonnet 5 於 2026-07-01…",
+      "latestHeadline": "2026-07-09 最新：Mashable 報導 Anthropic「正式發布」Sonnet 5，與 07-01 官方公告日期重疊，疑為媒體遲來報導；另有評測分數 57 分、API 成本減半的傳聞數字未見佐證，列「待查證」（詳見上方 callout）。"
     },
     {
       "id": "teresa-carlson",
@@ -433,7 +433,7 @@ window.WIKI_DATA = {
       "pill": "active",
       "firstSeen": "",
       "startDate": "2026-04-27",
-      "lastUpdated": "2026-07-10",
+      "lastUpdated": "2026-07-11",
       "lastNewsUpdate": "2026-07-10",
       "summary": "**最新態勢（2026-07-10）：** 中國「後門」指控延燒第三天，UC Today、BankInfoSecurity、Technology Org、TechRepublic、TechRadar、CISO Series、Fox Business 等多家獨立媒體續報導；**同日 Anthropic 首度公開反駁該指控…",
       "latestHeadline": "最新態勢（2026-07-10）： 中國「後門」指控延燒第三天，UC Today、BankInfoSecurity、Technology Org、TechRepublic、TechRadar、CISO Series、Fox Business 等多家獨立媒體續報導；同日 Anthropic 首度公開反駁該指控——為此議題"
@@ -463,8 +463,8 @@ window.WIKI_DATA = {
       "pill": "active",
       "firstSeen": "",
       "startDate": "2026-05-28",
-      "lastUpdated": "2026-07-09",
-      "lastNewsUpdate": "2026-07-09",
+      "lastUpdated": "2026-07-11",
+      "lastNewsUpdate": "2026-07-10",
       "summary": "Anthropic 在技術聲譽與企業採用率上持續上升（企業採用率 34.4% 首超 OpenAI 32.3%，Ramp AI Index 2026-05-15），並於 2026-05-28 完成 $65B Series H 融資，估值 $965B，超越 OpenAI 成全球最大 AI 新創。核心矛盾從「PMF vs 獲…",
       "latestHeadline": "[實體製造業滲透] Anthropic 與 UST 合作，將 Claude 導入晶片、汽車、連網裝置等實體製造流程：Anthropic 官方公告與工程服務公司 UST 合作，訓練 UST 兩萬名工程師與顧問使用 Claude，把 Claude 導入晶片設計、汽車、連網裝置等實體製造流程。對商業的意涵：延續近期 Micr"
     },
@@ -493,7 +493,7 @@ window.WIKI_DATA = {
       "pill": "warn",
       "firstSeen": "",
       "startDate": "2026-05-01",
-      "lastUpdated": "2026-07-10",
+      "lastUpdated": "2026-07-11",
       "lastNewsUpdate": "2026-07-10",
       "summary": "**出口管制已於 2026-07-01 全面解除。** 美國商務部長 Howard Lutnick 宣布解除 Fable 5 和 Mythos 5 的出口管制，正式生效；Anthropic 承諾三項義務換取解封（主動偵測安全風險、與政府合作制定協議與標準、通報惡意活動）；封鎖期共 18–19 天（2026-06-13 …",
       "latestHeadline": "出口管制已於 2026-07-01 全面解除。 美國商務部長 Howard Lutnick 宣布解除 Fable 5 和 Mythos 5 的出口管制，正式生效；Anthropic 承諾三項義務換取解封（主動偵測安全風險、與政府合作制定協議與標準、通報惡意活動）；封鎖期共 18–19 天（2026-06-13 全面封鎖"
@@ -508,7 +508,7 @@ window.WIKI_DATA = {
       "pill": "warn",
       "firstSeen": "",
       "startDate": "2026-03（推測）",
-      "lastUpdated": "2026-07-10",
+      "lastUpdated": "2026-07-11",
       "lastNewsUpdate": "2026-07-08",
       "summary": "**當前狀態：** 官方已說明 4 月退步原因為工程疏失，恢復情況待驗證；2026-06 下旬起投訴焦點轉向「token 消耗異常／成本暴增」——五個獨立訊號（HN 熱議、$62,021 具名案例、三則 GitHub issue）指向同一方向，但目前無法斷定是模型真退步、計費計量問題、或 context/工具配置問題（…",
       "latestHeadline": "當前狀態： 官方已說明 4 月退步原因為工程疏失，恢復情況待驗證；2026-06 下旬起投訴焦點轉向「token 消耗異常／成本暴增」——五個獨立訊號（HN 熱議、$62,021 具名案例、三則 GitHub issue）指向同一方向，但目前無法斷定是模型真退步、計費計量問題、或 context/工具配置問題（詳見「T"
@@ -583,8 +583,8 @@ window.WIKI_DATA = {
       "pill": "active",
       "firstSeen": "",
       "startDate": "2026-04-25",
-      "lastUpdated": "2026-07-10",
-      "lastNewsUpdate": "",
+      "lastUpdated": "2026-07-11",
+      "lastNewsUpdate": "2026-07-11",
       "summary": "追蹤 Claude Code 社群發布的工具、插件與 skill 專案。此頁為 lint 專用，由 /wiki-lint 定期策展；每日 ingest 不更新此頁。日常工作流模式見 [[topics/community-tech-patterns]]，概念辯論見 [[topics/community-tech-disc…",
       "latestHeadline": "追蹤 Claude Code 社群發布的工具、插件與 skill 專案。此頁為 lint 專用，由 /wiki-lint 定期策展；每日 ingest 不更新此頁。日常工作流模式見 ，概念辯論見 。"
     },
@@ -1453,10 +1453,10 @@ window.WIKI_DATA = {
       "pill": "active",
       "firstSeen": "",
       "startDate": "2026-07-02",
-      "lastUpdated": "2026-07-09",
+      "lastUpdated": "2026-07-11",
       "lastNewsUpdate": "2026-07-09",
-      "summary": "本頁回答一個問題：**「我該用哪個 Claude 模型？」** 各模型的深度資訊（爭議、時序、已知問題）在各自的 entities 頁；本頁只做橫向對照與情境推薦，模型陣容變化時同步更新。",
-      "latestHeadline": "本頁回答一個問題：「我該用哪個 Claude 模型？」 各模型的深度資訊（爭議、時序、已知問題）在各自的 entities 頁；本頁只做橫向對照與情境推薦，模型陣容變化時同步更新。"
+      "summary": "**目前公開陣容五級維持不變（Fable 5 > Opus 4.8 > Sonnet 5 > Sonnet 4.6 > Haiku 4.5），07-08 官方公布的多模型協作基準是最新橫向比較資訊。** 本頁回答一個問題：**「我該用哪個 Claude 模型？」** 各模型的深度資訊（爭議、時序、已知問題）在各自的 e…",
+      "latestHeadline": "目前公開陣容五級維持不變（Fable 5 > Opus 4.8 > Sonnet 5 > Sonnet 4.6 > Haiku 4.5），07-08 官方公布的多模型協作基準是最新橫向比較資訊。 本頁回答一個問題：「我該用哪個 Claude 模型？」 各模型的深度資訊（爭議、時序、已知問題）在各自的 entities "
     },
     {
       "id": "official-community-gap",
@@ -1468,7 +1468,7 @@ window.WIKI_DATA = {
       "pill": "warn",
       "firstSeen": "",
       "startDate": "2026-05-17",
-      "lastUpdated": "2026-07-10",
+      "lastUpdated": "2026-07-11",
       "lastNewsUpdate": "2026-07-10",
       "summary": "比對社群工具所反映的開發者痛點，與 Anthropic 官方功能路線之間的覆蓋情況。識別哪些痛點官方正在積極解決、哪些被忽略或結構性缺席。 截至 2026-07-08，矩陣涵蓋 9 個核心痛點：多 agent 協調與安全隔離已獲高度官方對應；輸出品質驗證、平台可及性（Artifacts 輸出共享 + Cowork 行動…",
       "latestHeadline": "Claude Cowork 正式擴展至行動裝置與網頁版：首波開放 Max 訂閱用戶，任務可雲端持續執行、涵蓋政府機構客戶；「平台可及性」缺口的輸入操作面首度正式填補（先前僅 Artifacts 覆蓋輸出面），矩陣狀態維持 ⚡ 部分對應（官方稱完整體驗仍限桌面版）"
