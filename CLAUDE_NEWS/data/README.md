@@ -15,7 +15,7 @@ Schema（每行一筆）：
 | 欄位 | 說明 |
 |------|------|
 | `date` | 日報日期（YYYY-MM-DD） |
-| `source` | 來源 slug（`hacker-news` / `reddit` / `github-issues` / `github` / `google-news` / `devto` / `lobsters` / `anthropic-blog` / `anthropic-status` / `claude-api-release-notes`），對照表見 `.claude/rules/wiki-reporter-shared.md` |
+| `source` | 來源 slug（`hacker-news` / `reddit` / `github-issues` / `github` / `google-news` / `devto` / `lobsters` / `anthropic-blog` / `anthropic-status` / `claude-api-release-notes` / `blog`），對照表見 `.claude/rules/wiki-reporter-shared.md` |
 | `category` | 六類別之一：模型 / 功能 / 商業 / 安全政策 / 社群 / 人物 |
 | `page` | 寫入的 wiki 相對路徑，不含 `.md`（如 `topics/ai-agent-safety`） |
 | `item_url` | 日報條目原始連結 |

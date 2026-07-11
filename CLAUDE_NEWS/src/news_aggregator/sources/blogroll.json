@@ -1,0 +1,4 @@
+{
+  "_doc": "權威部落客 RSS 名單。status: probation(試用期30天)/active/retired。汰換由 /source-review 建議、使用者確認後改此檔。命中統計不存此檔，由 data/*.jsonl 推導。blog 條目 schema: {\"slug\", \"name\", \"rss_url\", \"added\": \"YYYY-MM-DD\", \"tags\": [], \"status\": \"probation\", \"notes\": \"\"}",
+  "blogs": []
+}
