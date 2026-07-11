@@ -32,6 +32,9 @@ from pathlib import Path
 
 REPO_ROOT = Path(__file__).resolve().parent.parent
 REGISTRY_PATH = REPO_ROOT / ".claude" / "review-registry.json"
+# 全綠時寫入的時間戳記號檔，供 .claude/hooks/check_rule_modified.py 的
+# dirty-period 提醒機制判斷「上次綠檢」時間（見該 hook 的說明）。
+LAST_CHECK_MARKER = REPO_ROOT / ".claude" / ".last-rules-check"
 
 
 def _stdout():
@@ -401,6 +404,18 @@ def main() -> int:
 
     stream.write(report.render() + "\n")
     stream.flush()
+
+    if report.ok:
+        # 記錄「上次綠檢」時間戳（dirty-period 提醒機制用）；寫入失敗不影響檢查結果
+        try:
+            from datetime import datetime, timezone
+
+            LAST_CHECK_MARKER.write_text(
+                datetime.now(timezone.utc).isoformat(), encoding="utf-8"
+            )
+        except OSError:
+            pass
+
     return 0 if report.ok else 1
 
 
