@@ -1,4 +1,41 @@
 {
   "_doc": "權威部落客 RSS 名單。status: probation(試用期30天)/active/retired。汰換由 /source-review 建議、使用者確認後改此檔。命中統計不存此檔，由 data/*.jsonl 推導。blog 條目 schema: {\"slug\", \"name\", \"rss_url\", \"added\": \"YYYY-MM-DD\", \"tags\": [], \"status\": \"probation\", \"notes\": \"\"}",
-  "blogs": []
+  "blogs": [
+    {
+      "slug": "simonwillison",
+      "name": "Simon Willison",
+      "rss_url": "https://simonwillison.net/atom/everything/",
+      "added": "2026-07-11",
+      "tags": ["ai-engineering", "llm-eval", "tools"],
+      "status": "probation",
+      "notes": "llm CLI 作者，日更，橫跨模型評測/工具實測/生態觀察"
+    },
+    {
+      "slug": "jessevincent",
+      "name": "Jesse Vincent",
+      "rss_url": "https://blog.fsck.com/feed/feed.xml",
+      "added": "2026-07-11",
+      "tags": ["claude-code", "plugins", "skills"],
+      "status": "probation",
+      "notes": "Superpowers plugin 作者，篇篇命中 Claude Code plugin/skills 實務"
+    },
+    {
+      "slug": "arminronacher",
+      "name": "Armin Ronacher",
+      "rss_url": "https://lucumr.pocoo.org/feed.atom",
+      "added": "2026-07-11",
+      "tags": ["agent-design", "tooling"],
+      "status": "probation",
+      "notes": "Flask 作者，深挖 agent 工具設計失敗機制與升版風險"
+    },
+    {
+      "slug": "antirez",
+      "name": "antirez",
+      "rss_url": "https://antirez.com/rss",
+      "added": "2026-07-11",
+      "tags": ["systems", "claude-code"],
+      "status": "probation",
+      "notes": "Redis 創始人，Claude Code 批判性實測（頻率低但含金量高）"
+    }
+  ]
 }
