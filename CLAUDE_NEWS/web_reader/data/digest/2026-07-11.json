@@ -1,0 +1,244 @@
+{
+  "date": "2026-07-11",
+  "generatedAt": "2026-07-11 22:36 UTC",
+  "articleCount": 51,
+  "sourceCount": "10/10 | **文章數：** 51 | **更新時間：** 2026-07-11 22:36 UTC",
+  "bulletin": "",
+  "topStories": [
+    {
+      "title": "[BUG] Claude Max plan session limits exhausted abnormally fast since March 23, 2026 (CLI usage)",
+      "url": "https://github.com/anthropics/claude-code/issues/38335",
+      "source": "GitHub Issues / claude-code",
+      "time": "07/10 23:10",
+      "sentiment": "",
+      "body": "社群回報自 3/23 起 Claude Max 方案的 CLI session 額度消耗速度異常加快，該 issue 累計 792 則留言/讚同，是本輪 GitHub Issues 中互動量最高的條目，暫無官方明確回應。",
+      "focusTags": [
+        "[風險警示]"
+      ]
+    },
+    {
+      "title": "HERMES.md in git commit messages causes requests to route to extra usage billing instead of plan quota",
+      "url": "https://github.com/anthropics/claude-code/issues/53262",
+      "source": "GitHub Issues / claude-code",
+      "time": "07/11 14:28",
+      "sentiment": "",
+      "body": "repo commit 歷史中若出現字串 `HERMES.md`，會觸發 Claude Code 將請求誤判並改走 extra usage 計費，而非扣抵 Max 方案內含額度，獲得 533 個讚同、93 則留言。",
+      "focusTags": [
+        "[風險警示]"
+      ]
+    },
+    {
+      "title": "[BUG] API Error: Claude's response exceeded the 32000 output token maximum.",
+      "url": "https://github.com/anthropics/claude-code/issues/24055",
+      "source": "GitHub Issues / claude-code",
+      "time": "07/11 12:46",
+      "sentiment": "",
+      "body": "多名使用者回報回應長度超過 32000 output token 上限時觸發 API 錯誤，獲得 85 個讚同、137 則留言。",
+      "focusTags": []
+    }
+  ],
+  "techUpdates": [
+    {
+      "title": "[anthropics/claude-code] v2.1.207",
+      "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.207",
+      "source": "GitHub / anthropics/claude-code",
+      "time": "07/11 00:52",
+      "sentiment": "",
+      "body": "Auto mode 在 Bedrock、Vertex AI、Foundry 三個平台上不再需要 `CLAUDE_CODE_ENABLE_AUTO_MODE` 環境變數 opt-in 即可使用，可透過設定中的 `disableAutoMode` 關閉；同版並修復終端機凍結問題。",
+      "focusTags": [
+        "[持續追蹤]"
+      ]
+    }
+  ],
+  "mediaReports": [
+    {
+      "title": "Anthropic Adds A Dedicated In-App Browser To Claude Code Desktop - The Mac Observer",
+      "url": "https://www.macobserver.com/news/anthropic-adds-a-dedicated-in-app-browser-to-claude-code-desktop/",
+      "source": "Google News / The Mac Observer",
+      "time": "07/11 12:54",
+      "sentiment": "",
+      "body": "報導指出 Anthropic 為 Claude Code Desktop 新增內建瀏覽器功能。",
+      "focusTags": []
+    },
+    {
+      "title": "Anthropic announces 'Claude Corps' to teach nonprofits to use AI more effectively - Dayton Daily News",
+      "url": "https://www.daytondailynews.com/nation-world/anthropic-announces-claude-corps-to-teach-nonprofits-to-use-ai-more-effectively/article_a978f0cf-5abd-5420-89ef-6dc77064072b.html",
+      "source": "Google News / Dayton Daily News",
+      "time": "07/11 02:44",
+      "sentiment": "",
+      "body": "Anthropic 宣布「Claude Corps」計畫，協助非營利組織學習有效運用 AI 工具。",
+      "focusTags": []
+    },
+    {
+      "title": "A $65K job at Anthropic becomes a flashpoint in S.F's affordability crisis - Mission Local",
+      "url": "https://missionlocal.org/2026/07/anthropic-sf-affordability-ipo-housing-evictions-rent/",
+      "source": "Google News / Mission Local",
+      "time": "07/11 01:42",
+      "sentiment": "",
+      "body": "報導以 Anthropic 一則 6.5 萬美元年薪職缺為切入點，探討舊金山住房負擔能力危機與科技業薪資落差的爭議。",
+      "focusTags": []
+    }
+  ],
+  "discussions": [
+    {
+      "title": "One Wikipedia page costs your AI agent 68,000 tokens",
+      "url": "https://news.ycombinator.com/item?id=48867021",
+      "source": "Hacker News",
+      "time": "07/11 00:12 UTC · 情緒：🤔",
+      "sentiment": "",
+      "body": "作者實測發現 Claude Code 內建 WebFetch 對多數頁面處理良好（如將 Wikipedia 摘要壓到約 950 tokens），但在 JS 渲染或有反爬機制的頁面上會失敗並把原始 HTML 整段塞回 context，因而動手開發開源工具因應。",
+      "focusTags": [
+        "[社群趨勢]"
+      ]
+    },
+    {
+      "title": "Anthropic hid tracking signals in Unicode apostrophes. That's not telemetry, that's steganography.",
+      "url": "https://dev.to/adioof/anthropic-hid-tracking-signals-in-unicode-apostrophes-thats-not-telemetry-thats-steganography-2p3e",
+      "source": "dev.to / #anthropic",
+      "time": "07/01 15:38 UTC · 情緒：😤",
+      "sentiment": "",
+      "body": "作者指控 Claude Code 系統提示中曾出現以 Unicode 撇號變體與日期格式作為隱藏標記，並聲稱這些標記會依路由條件（如透過競品 API 網域、特定時區）觸發；此為單一部落格文章的指控，尚未見官方回應或第三方驗證。",
+      "focusTags": []
+    },
+    {
+      "title": "I built a local reverse proxy to see what Claude Code actually sends to Anthropic",
+      "url": "https://dev.to/houleixx/i-built-a-local-reverse-proxy-to-see-what-claude-code-actually-sends-to-anthropic-5foo",
+      "source": "dev.to / #claudecode",
+      "time": "06/10 07:08 UTC · 情緒：🤔",
+      "sentiment": "",
+      "body": "作者發現 Claude Code 不遵守 `HTTP_PROXY` 環境變數，因此自建一個 loopback 上的本地反向代理，即時檢視每次請求送出的 prompt、token 與費用。",
+      "focusTags": [
+        "[新工具]"
+      ]
+    },
+    {
+      "title": "I built a set of kitty terminal overlays for the Claude Code workflow",
+      "url": "https://www.reddit.com/r/ClaudeCode/comments/1utlkas/i_built_a_set_of_kitty_terminal_overlays_for_the/",
+      "source": "Reddit / r/ClaudeCode",
+      "time": "07/11 14:27 UTC · 情緒：😊",
+      "sentiment": "",
+      "body": "使用者分享一組 kitty 終端機 overlay 工具，讓 Claude Code 的 diff 可以像 IDE 一樣檢視、並方便切換 session 與瀏覽 git 歷史。",
+      "focusTags": []
+    },
+    {
+      "title": "According to DataBricks, pi-coding-agent is ~2x cheaper than CC/Codex, GLM 5.2 on par with Opus 4.8 high",
+      "url": "https://www.reddit.com/r/LocalLLaMA/comments/1usrek0/according_to_databricks_picodingagent_is_2x/",
+      "source": "Reddit / r/LocalLLaMA · 週熱門",
+      "time": "07/10 15:46 UTC · 情緒：🤔",
+      "sentiment": "",
+      "body": "r/LocalLLaMA 週熱門貼文轉述 DataBricks 的評測，指 pi-coding-agent 成本約為 Claude Code / Codex 的一半，且 GLM 5.2 表現可比 Opus 4.8 high；為單一來源轉述，數字未見官方交叉確認。",
+      "focusTags": []
+    }
+  ],
+  "billing": [
+    {
+      "title": "I Did the Math on Claude Sonnet 5. The 60% Opus Discount Is Real, But Temporary.",
+      "url": "https://dev.to/tokenmixai/i-did-the-math-on-claude-sonnet-5-the-60-opus-discount-is-real-but-temporary-31pf",
+      "source": "dev.to / #anthropic",
+      "time": "07/02 05:55",
+      "sentiment": "",
+      "body": "作者指出 Anthropic 已將 Sonnet 5 以 $2/$10 每百萬 token 的價格廣泛開放，優惠將持續至 8 月 31 日，並建議將其設為預設路由模型而非上限。",
+      "focusTags": []
+    },
+    {
+      "title": "How My First Claude Code on AWS Bedrock Experiment Cost Me $8.43 in Just One Day",
+      "url": "https://dev.to/aws-builders/how-my-first-claude-code-on-aws-bedrock-experiment-cost-me-843-in-just-one-day-1835",
+      "source": "dev.to / #claudecode",
+      "time": "06/16 11:00",
+      "sentiment": "",
+      "body": "作者記錄改用 AWS Bedrock 執行 Claude Code 第一天即產生 8.43 美元費用的經驗，並分享設定預算警示的心得，藉此避開 Anthropic 原生方案的 5 小時 session 與週用量上限。",
+      "focusTags": []
+    }
+  ],
+  "focus": [
+    {
+      "tag": "[持續追蹤]",
+      "text": "Claude Code v2.1.207 發布：Auto mode 在 Bedrock、Vertex AI、Foundry 上不再需要 `CLAUDE_CODE_ENABLE_AUTO_MODE` opt-in（可用 `disableAutoMode` 關閉），並修復終端機凍結問題。",
+      "ref_urls": [
+        "https://github.com/anthropics/claude-code/releases/tag/v2.1.207"
+      ]
+    },
+    {
+      "tag": "[風險警示]",
+      "text": "社群回報：commit 歷史含大小寫敏感字串 `HERMES.md` 時，Claude Code 會把請求誤導向 extra usage 計費，而非計入 Max 方案內含額度，該 issue 已獲 533 個讚同、93 則留言。",
+      "ref_urls": [
+        "https://github.com/anthropics/claude-code/issues/53262"
+      ]
+    },
+    {
+      "tag": "[風險警示]",
+      "text": "另一則回報指出，自 3 月 23 日起 Claude Max 方案的 CLI session 額度出現異常快速耗盡的情形，累計 792 則留言/讚同關注，目前尚未有官方定論。",
+      "ref_urls": [
+        "https://github.com/anthropics/claude-code/issues/38335"
+      ]
+    },
+    {
+      "tag": "[社群趨勢]",
+      "text": "Hacker News 一篇分析指出，單一 Wikipedia 頁面經 WebFetch 抓取的原始 HTML 約消耗 68,000 tokens，凸顯 agent 讀網頁時的 token 成本問題，作者並嘗試開發對應的開源工具。",
+      "ref_urls": [
+        "https://news.ycombinator.com/item?id=48867021"
+      ]
+    },
+    {
+      "tag": "[新工具]",
+      "text": "dev.to 上多篇實作文章持續出現，包括自建本地 reverse proxy 觀察 Claude Code 實際送出的內容、以及套件化管理 subagent 團隊的 `ccteams` 工具。",
+      "ref_urls": [
+        "https://dev.to/houleixx/i-built-a-local-reverse-proxy-to-see-what-claude-code-actually-sends-to-anthropic-5foo",
+        "https://dev.to/toffy/one-command-turns-claude-code-into-a-full-dev-team-1d1e"
+      ]
+    }
+  ],
+  "sourceStatus": [
+    {
+      "name": "Anthropic Status",
+      "ok": true,
+      "count": 0
+    },
+    {
+      "name": "GitHub Issues",
+      "ok": true,
+      "count": 15
+    },
+    {
+      "name": "Claude API Release Notes",
+      "ok": true,
+      "count": 0
+    },
+    {
+      "name": "dev.to",
+      "ok": true,
+      "count": 15
+    },
+    {
+      "name": "Google News",
+      "ok": true,
+      "count": 4
+    },
+    {
+      "name": "GitHub",
+      "ok": true,
+      "count": 1
+    },
+    {
+      "name": "Anthropic Blog",
+      "ok": true,
+      "count": 0
+    },
+    {
+      "name": "Blogroll",
+      "ok": true,
+      "count": 0
+    },
+    {
+      "name": "Hacker News",
+      "ok": true,
+      "count": 6
+    },
+    {
+      "name": "Reddit",
+      "ok": true,
+      "count": 11
+    }
+  ],
+  "preview": "[BUG] Claude Max plan session limits exhausted abnormally fast since March 23, 2026 (CLI usage)"
+}
