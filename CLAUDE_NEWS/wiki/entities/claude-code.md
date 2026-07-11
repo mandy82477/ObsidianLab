@@ -5,10 +5,10 @@
 **領域：** 🛠️ 工具/功能
 **首次出現：** 2025（正式推出）
 **最後更新：** 2026-07-11
-**最後新聞更新：** 2026-07-10
+**最後新聞更新：** 2026-07-11
 
-> **最新版本動態**（2026-07-09）
-> Anthropic 推出 **Reflect with Claude** 測試版：Settings 內新增使用模式儀表板，讓使用者檢視自己如何使用 Claude；多家媒體類比為「AI 版 Spotify Wrapped」，TechCrunch 則以「悄悄推銷 AI」角度提出質疑（見 [[feature-radar]]）。版本面：v2.1.204（2026-07-08）修復 headless session 中 SessionStart hook 事件無法即時串流的問題；前一重大異動為 v2.1.202（2026-07-07）於 `/config` 新增 **Dynamic workflow size** 設定。
+> **最新版本動態**（2026-07-11）
+> **v2.1.207**：Auto mode 在 Bedrock、Vertex AI、Foundry 三平台改為預設開啟，不再需要 `CLAUDE_CODE_ENABLE_AUTO_MODE` 環境變數 opt-in（可用 `disableAutoMode` 關閉），同版並修復終端機凍結問題。同日社群回報兩起已知問題：commit 訊息含 `HERMES.md` 字串會誤導向 extra usage 計費（GitHub issue #53262，533 讚、93 留言），以及回應超過 32000 output token 上限時觸發 API 錯誤（GitHub issue #24055，85 讚、137 留言）；另有報導指 Claude Code Desktop 新增內建瀏覽器。前一重大異動為 v2.1.206（2026-07-10）`/cd` 目錄建議與 `/doctor` CLAUDE.md 精簡檢查（見 [[feature-radar]]）。
 
 ---
 
@@ -16,7 +16,7 @@
 
 **Reflect with Claude 測試版推出（2026-07-09）：** Anthropic 官方部落格宣布「Reflect with Claude」測試版功能，使用者可在 Settings 中檢視使用模式儀表板，理解自己使用 Claude 的模式；TechCrunch、Mashable、CNET、Axios、The Verge 多家媒體同步報導，多將其類比為「AI 版 Spotify Wrapped」或「螢幕使用時間」統計工具，TechCrunch 則提出質疑觀點，認為此舉實質是包裝成「自我反思」的使用引導設計；HN 獲 29 分。詳見 [[feature-radar]]。
 
-**最新版本動態：** 最新版本 **v2.1.204**（2026-07-08）為 bug fix：修復 headless session 中 SessionStart hook 事件無法即時串流的問題（可能導致遠端 worker 在 hook 執行中途被誤判閒置而遭回收）；無新指令/旗標。前一重大異動為 **v2.1.202**（2026-07-07）於 `/config` 新增 **Dynamic workflow size** 設定，可調整 Dynamic Workflows / ultracode 的 agent 數量規模（小/中/大，建議性引導值非硬上限）；再前一異動為 **v2.1.197**（2026-07-01）正式將 Claude Sonnet 5 設為 Claude Code 預設模型，原生支援 1M token context window，促銷定價至 2026-08-31。近期各版本的指令、旗標與設定項異動，詳見下方「最新版本」表格。Claude Cowork 擴展至行動/網頁版事件（2026-07-08）詳見下方「歷史記錄」與「已知問題」。
+**最新版本動態：** 最新版本 **v2.1.207**（2026-07-11）將 Auto mode 在 Bedrock、Vertex AI、Foundry 三平台改為預設開啟，不再需要 `CLAUDE_CODE_ENABLE_AUTO_MODE` 環境變數 opt-in（可用設定項 `disableAutoMode` 關閉），同版修復終端機凍結問題；此前 Auto mode 於 v2.1.158（2026-05-30）僅在三平台以 opt-in 方式支援 Opus 4.7/4.8，本次為預設化升級。前一重大異動為 **v2.1.206**（2026-07-10）新增 `/cd` 目錄路徑建議與 `/doctor` CLAUDE.md 精簡檢查；再前一異動為 **v2.1.204**（2026-07-08）修復 headless session 中 SessionStart hook 事件無法即時串流的問題。近期各版本的指令、旗標與設定項異動，詳見下方「最新版本」表格。
 
 **產品定位：** Claude Code 是 Anthropic 的 AI 編碼 CLI 工具，核心能力已從程式碼助理擴展為具備全桌面自動化、多代理管理（Managed Agents）、MCP Server 整合、Hooks 機制與 AI 安全審查的完整 agent 開發平台；GitHub Stars 達 **131,000+**。
 
@@ -60,15 +60,16 @@
 - 🔴 **未修復**｜**功能請求：印度地區專屬定價方案（INR 計價）（GitHub issue #17432，累積 205 則留言、598 個讚，2026-07-10）**：使用者要求提供印度盧比計價的地區專屬訂閱方案，降低匯率轉換造成的實際負擔；官方尚未回應。定價/計費層面另見 [[entities/pricing]]。
 - 🔴 **未修復**｜**付款訂閱 Max 5x 方案後帳號反遭停用（GitHub issue #5088，累積 180 則留言、65 個讚，2026-07-10）**：使用者回報完成 Claude Code Max 5x 方案付款訂閱後，帳號反而遭到停用；官方尚未回應，定價/帳務退款層面另見 [[entities/pricing]]。
 - 🔴 **未修復**｜**Max 方案額度自 3 月起異常快速耗盡（GitHub issue #38335，累積 790 則留言、536 個讚，2026-07-08 今日互動量最高、持續居配額爭議討論度之冠）**：使用者回報 Max 方案 session 額度自 2026-03-23 起消耗速度異常加快（CLI 使用情境），互動量持續攀升，是配額爭議中討論度最高的單一 issue；官方尚未回應或說明原因，見 [issue #38335](https://github.com/anthropics/claude-code/issues/38335)
-- 🔴 **未修復**｜**HERMES.md 計費路由 bug**（2026-04-25 回報）：git commit 歷史中含大寫字串「HERMES.md」會觸發靜默切換至 API 額外計費，完全繞過 Max 方案配額；Anthropic 確認為 bug 但拒絕退款，修復狀態不明，已知損失達 $200。見 [[entities/pricing]]、[[topics/anthropic-commitments]]
+- 🔴 **未修復**｜**HERMES.md 計費路由 bug（GitHub issue #53262，累積 93 則留言、533 個讚，2026-07-11 再度延燒）**：git commit 歷史中含大小寫敏感字串「HERMES.md」會觸發靜默切換至 API 額外計費，完全繞過 Max 方案內含額度；問題自 2026-04-25 首次回報以來持續未解，2026-07-11 以正式 issue 形式重新獲得大量社群回響；Anthropic 先前確認為 bug 但拒絕退款，修復狀態不明，已知損失達 $200。見 [[entities/pricing]]、[[topics/anthropic-commitments]]
 - 🔴 **未修復**｜**OpenClaw 異常計費行為**（2026-04-30，HN 近千則討論）：若 Git 提交訊息或文件內容中含特定 JSON 格式的 "OpenClaw" 字串，Claude Code 會直接拒絕請求，或將帳單 Extra Usage 衝至 100%；表明 Claude Code 正主動掃描 repo 內容並據此改變計費策略，Anthropic 至今未公開說明
 - 🔴 **未修復**｜**ANTHROPIC_API_KEY 雲端計費陷阱**（2026-04-30）：雲端環境設置此環境變數時，所有呼叫自動改走 API 計費通道，見 [[entities/pricing]]
 - 🔴 **未修復**｜**MCP Token 消耗問題**：多個 MCP Server 併用時，每條訊息可能消耗 20,000+ tokens
 - 🔴 **未修復**｜**額度顯示 84% 卻收到「You've hit your limit」（GitHub issue #19673，累積反應 75，2026-07-04）**：使用者反映用量儀表板顯示尚餘額度（僅用 84%）情況下即收到「已達額度上限」提示，質疑額度計算邏輯是否準確或存在顯示與實際計算不同步的問題；官方尚未回應
 - 🔴 **未修復**｜**Session 額度上限時無法順暢接續（GitHub issue #13354，累積 68 則留言、158 個讚，2026-07-07）**：使用者希望 session 達到額度上限時能有更順暢的接續機制（如自動排隊、無縫轉續），而非直接中斷工作流程；官方尚未回應或提供替代方案
 
-### 🧠 行為與品質（14 條未修復、4 條待查證）
+### 🧠 行為與品質（15 條未修復、4 條待查證）
 
+- 🔴 **未修復**｜**回應超過 32000 output token 上限觸發 API 錯誤（GitHub issue #24055，累積 137 則留言、85 個讚，2026-07-11）**：多名使用者回報回應長度超過 32000 output token 上限時觸發「API Error: Claude's response exceeded the 32000 output token maximum」；官方尚未回應。
 - 🔴 **未修復**｜**主控台新增文字時畫面自動滾回歷史頂端（GitHub issue #826，累積 352 則留言、820 個讚，2026-07-09）**：使用者回報 Claude Code 主控台在新增文字輸出時，畫面會意外滾動回歷史紀錄最頂端，打斷閱讀最新輸出的動線；官方尚未回應。
 - 🔴 **未修復**｜**畫面/終端機閃爍（GitHub issue #769 進行中呼叫畫面閃爍，累積 306 則留言、335 個讚；issue #1913 終端機閃爍，累積 187 則留言、321 個讚，皆 2026-07-09）**：使用者回報進行中的呼叫會造成畫面閃爍，另有獨立回報指出終端機介面本身也會閃爍，兩者疑為相關或重複問題；官方尚未回應。
 - 🔴 **未修復**｜**社群請願恢復已移除的 `/buddy` 功能（GitHub issue #45596，累積 262 則留言、2037 個讚，2026-07-09）**：`/buddy` 功能已於 4 月自 Claude Code v2.1.97 起移除，官方未附說明；社群集體請願要求恢復，反應數居今日已知問題前列，官方尚未回應是否重新上架。
@@ -148,6 +149,7 @@
 
 | 版本 | 日期 | 重點 |
 |------|------|------|
+| **v2.1.207** | 2026-07-11 | **Auto mode 在 Bedrock/Vertex AI/Foundry 三平台預設開啟**：不再需要 `CLAUDE_CODE_ENABLE_AUTO_MODE` 環境變數 opt-in，可透過設定中的 `disableAutoMode` 關閉；同版修復終端機凍結問題（見 [Release](https://github.com/anthropics/claude-code/releases/tag/v2.1.207)）|
 | **v2.1.206** | 2026-07-10 | `/cd` 新增目錄路徑建議（比照 `/add-dir` 的自動完成體驗）；`/doctor` 新增檢查項目，會建議精簡已 checked-in 的 CLAUDE.md 內容（見 [Release](https://github.com/anthropics/claude-code/releases/tag/v2.1.206)）|
 | **v2.1.204** | 2026-07-08 | Bug fix：修復 headless session 中 SessionStart hook 事件無法即時串流的問題；此問題先前可能導致遠端 worker 在 hook 執行中途被系統誤判為閒置而回收（見 [Release](https://github.com/anthropics/claude-code/releases/tag/v2.1.204)）|
 | **v2.1.202** | 2026-07-07 | `/config` 新增 **Dynamic workflow size** 設定：可調整動態工作流（[[feature-radar#Dynamic Workflows\|Dynamic Workflows]] / `ultracode`）的 agent 數量規模（小/中/大），屬建議性引導值（非硬上限）（見 [Release](https://github.com/anthropics/claude-code/releases/tag/v2.1.202)）|

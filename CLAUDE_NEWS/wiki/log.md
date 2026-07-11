@@ -3,6 +3,24 @@
 Append-only 紀錄。每次 ingest、lint，以及**揭露缺陷或促成改動的使用者 query**，都在此追加一條（純資訊性、未促成改動的 query 不記，避免噪音）。
 格式：`## [YYYY-MM-DD] 類型 | 說明`
 
+## 2026-07-11 Ingest | news/2026-07-11.md（51 則，補跑）
+
+- 來源日報：`news/2026-07-11.md`（51 則，10/10 來源；GitHub Issues 15、dev.to 15、Google News 4、Hacker News 6、Reddit 11、GitHub 1）
+- **補跑說明：** 每日自動化分裂架構首跑日，GitHub Actions 抓料實際延遲至 14:02 UTC（設計 12:30 UTC），雲端 routine（設計 13:00 UTC 開跑）因新鮮度防線正確中止未生假日報；本次由本機手動 `/news-pipeline 2026-07-11` 補跑（詳見 `docs/daily-automation.md`）
+- 分類派工：功能、商業、安全政策、社群（四類並行 foreground，model: sonnet；今日無模型類、人物類條目）
+- 更新頁面：
+  - **功能**：`claude-code.md`（v2.1.207 Auto mode 於 Bedrock/Vertex/Foundry 改預設開啟＋終端機凍結修復；已知問題新增 #24055 32000 output token 上限、更新 #53262 HERMES.md 計費誤判）
+  - **商業**：`anthropic-business.md`（Claude Corps 非營利 AI 教育計畫、$65K 職缺與舊金山住房負擔爭議報導）；`pricing.md`（#38335 Max session 額度異常留言數 790→792 續增、Sonnet 5 促銷第一手實測、AWS Bedrock 首日成本 $8.43 案例）；`competitor-landscape.md`（新增 pi-coding-agent／GLM 5.2 待查證競品定價條目）
+  - **安全政策**：無更新（Unicode 撇號 steganography 指控為 07-10 已收錄事件之重複出現，非新事實）
+  - **社群**：`community-tech-patterns.md`（新增 ccteams subagent 團隊套件化工具）；`community-tech-discussions.md`（新增 WebFetch 68,000 token 成本觀察討論）
+- feature-radar：新增 Claude Code v2.1.207（🔥🔥 ⚡）、Claude Code Desktop 內建瀏覽器（🔥 ⏳ 待驗證，單一媒體來源尚待官方或社群佐證）；升版風險最新版本行更新為 v2.1.207；本週推薦與⏰倒數中均未達變動門檻，維持不動
+- index.md 狀態變更：無
+- 新增頁面：無
+- 轉知事項：社群記者回報 ccteams（subagent 團隊套件化）為新的 agent 工作模式，請下次功能記者評估 `official-community-gap.md` 產品化矩陣是否新增列
+- 摘要：主軸——Claude Code v2.1.207 發布（Auto mode 三平台預設開啟＋終端機凍結修復）；GitHub Issues 熱度持續（HERMES.md 計費誤判 533 讚同、Max session 額度異常 792 則、32000 token 上限錯誤）；Anthropic Claude Corps 非營利計畫與 SF 職缺住房爭議報導；社群工具與定價實測（ccteams、Sonnet 5 促銷分析、Bedrock 成本經驗）
+- 呈現品質：全部通過（功能／商業／社群三記者皆回報 ✅；安全政策記者判定無新事實，未修改頁面）
+- 品質備註：無
+
 ## 2026-07-09 Ingest | news/2026-07-09.md（60 則）
 
 - 來源日報：`news/2026-07-09.md`（60 則，10/10 來源；Google News 32、HN 12、Reddit 16、GitHub Issues 10、Anthropic Status 1、Anthropic Blog 1）

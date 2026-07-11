@@ -4,10 +4,10 @@
 **領域：** 💼 商業
 **開始日期：** 2026-05-28
 **最後更新：** 2026-07-11
-**最後新聞更新：** 2026-07-10
+**最後新聞更新：** 2026-07-11
 
-> **最新動態**（2026-07-10）
-> Anthropic 與工程服務公司 UST 合作，將 Claude 導入晶片、汽車、連網裝置等實體製造流程，並訓練 UST 兩萬名工程師與顧問，是商業版圖從軟體/服務業向實體製造垂直產業滲透的具體案例；同日前聯準會主席 Ben Bernanke 加入 Anthropic 長期利益信託（Long-Term Benefit Trust）董事會（[[entities/bernanke]]），強化 IPO 前治理公信力敘事。同日競品線遭正面挑戰：OpenAI 推出 ChatGPT Work / GPT-5.6、Cursor 開發對標 Claude Cowork 的 AI Agent（詳見 [[topics/competitor-landscape]]），但 Elon Musk 亦公開稱 Anthropic 為業界「領導者」。07-09 估值面：次級市場估值飆升至 $1.2 兆美元但流動性存疑，詳見「時序」。
+> **最新動態**（2026-07-11）
+> Anthropic 官方宣布「Claude Corps」非營利組織 AI 培力計畫的媒體擴散報導（Dayton Daily News），為 06-11 已記錄計畫的後續曝光，非新政策；同日 Mission Local 以一則 6.5 萬美元年薪的 Anthropic 職缺為切入點，探討公司薪資結構與舊金山住房負擔能力危機的爭議關聯，屬企業形象/勞動市場面向報導，非財務或估值面事件。07-10 重大事件：Anthropic 與工程服務公司 UST 合作將 Claude 導入實體製造流程並訓練兩萬名工程師；前聯準會主席 Ben Bernanke 加入長期利益信託董事會（[[entities/bernanke]]）；競品線遭 OpenAI ChatGPT Work / GPT-5.6、Cursor AI Agent 正面挑戰（詳見 [[topics/competitor-landscape]]）。07-09 估值面：次級市場估值飆升至 $1.2 兆美元但流動性存疑，詳見「時序」。
 
 ---
 
@@ -147,6 +147,10 @@ Simon Willison（知名開發者博主）發表文章，認為 Anthropic 與 Ope
 - [[news/2026-05-13]]（The Information：定價強勢期）
 
 ## 時序
+
+### 2026-07-11
+- **[媒體擴散，非新政策] Dayton Daily News 報導「Claude Corps」非營利組織 AI 培力計畫**：Anthropic 宣布 Claude Corps，協助非營利組織學習有效運用 AI 工具；此為 06-11 已記錄計畫（招募 1,000 名職涯初期人才、派遣至全美非營利組織服務一年、全薪支付）的媒體擴散報導，非獨立新事件（Dayton Daily News https://www.daytondailynews.com/nation-world/anthropic-announces-claude-corps-to-teach-nonprofits-to-use-ai-more-effectively/article_a978f0cf-5abd-5420-89ef-6dc77064072b.html）
+- **[勞動市場爭議] Mission Local：Anthropic 6.5 萬美元職缺成為舊金山住房負擔能力危機的爭議焦點**：Mission Local 報導以 Anthropic 一則年薪 6.5 萬美元的職缺為切入點，探討舊金山住房負擔能力危機、驅逐案與科技業高薪員工推升房租之間的關聯，並連結 Anthropic IPO 前景一併討論。**對商業的意涵**：屬企業僱傭實務引發的社會輿論案例，非財務或估值面事件，但反映 Anthropic 在舊金山當地社群的形象壓力可能隨其規模擴大與 IPO 關注度上升而加劇（推論）（Mission Local https://missionlocal.org/2026/07/anthropic-sf-affordability-ipo-housing-evictions-rent/）
 
 ### 2026-07-10
 - **[實體製造業滲透] Anthropic 與 UST 合作，將 Claude 導入晶片、汽車、連網裝置等實體製造流程**：Anthropic 官方公告與工程服務公司 UST 合作，訓練 UST **兩萬名**工程師與顧問使用 Claude，把 Claude 導入晶片設計、汽車、連網裝置等實體製造流程。**對商業的意涵**：延續近期 Micron 記憶體協議、TeraWulf 資料中心租約等硬體供應鏈布局，本次進一步從「算力供應」層擴大至「終端應用場景」層，顯示 Anthropic 正系統性拓展軟體以外的垂直產業版圖（推論）（Anthropic Blog「UST is bringing Claude to physical AI」）

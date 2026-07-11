@@ -4,8 +4,8 @@
 **狀態：** active（持續調整中）
 **領域：** 💼 商業
 **首次出現：** 2026-04-25
-**最後更新：** 2026-07-10
-**最後新聞更新：** 2026-07-10
+**最後更新：** 2026-07-11
+**最後新聞更新：** 2026-07-11
 
 > **最新計費政策異動**（2026-07-10）
 > Wired 報導「Anthropic Wants You to Pay Up for Claude Fable 5」，聚焦消費者需額外付費使用 Fable 5 的趨勢，呼應既有 07-07/08 已記錄的免費期限延長至 **2026-07-12** 與 7/12 後轉 usage-based billing 的政策走向，屬媒體視角補充而非新政策異動。Max 20x 額度異常、印度盧比在地化定價需求（GitHub #17432，598 讚/205 留言）等既有爭議今日無新進展，詳見「重要政策變動紀錄」。
@@ -137,6 +137,11 @@ git commit 歷史出現大寫字串「HERMES.md」會觸發靜默切換至 API �
 
 - **GitHub Issue 要求 INR 在地化定價方案（持續發酵，互動量攀升）**：印度用戶在 `anthropic/claude-code` Issue #17432 要求 Anthropic 推出盧比計價方案，比照 OpenAI（ChatGPT）、Google（Gemini）已有的在地化定價。互動量持續攀升：留言數維持 **205**、reactions 由 👍594 增至 **598**（2026-07-09 查證），為近期社群需求類 issue 中互動量顯著較高者之一。**注意**：純社群 feature request，Anthropic 至今（07-09）仍無官方回應或時程承諾；若 Anthropic 未來跟進在地化定價，將直接影響印度市場（全球最大 AI 開發者社群之一）的訂閱轉換率（推論）（GitHub https://github.com/anthropics/claude-code/issues/17432）
 
+#### 2026-07-02：第三方實測確認 Sonnet 5 促銷定價，籲設為預設路由模型
+
+- **dev.to 第一手定價實測**：作者計算確認 Anthropic 已將 Sonnet 5 以 $2/$10（每百萬 token）廣泛開放，優惠將持續至 **2026-08-31**，與官方 07-01 公告數字一致；文章建議開發者應將 Sonnet 5 設為**預設路由模型**而非僅作為用量上限的備援，以最大化促銷期內的成本節省（dev.to https://dev.to/tokenmixai/i-did-the-math-on-claude-sonnet-5-the-60-opus-discount-is-real-but-temporary-31pf）
+- **注意**：優惠明確為「temporary」，8/31 到期後定價走向未見官方公告，屆時是否延續或調升需留意（見「⏰ 倒數中」風險提示）
+
 #### 2026-07-01：Claude Sonnet 5 促銷定價 + Fable 5 計費架構調整
 
 - **Claude Sonnet 5 促銷定價**：$2/Mtok（輸入）、$10/Mtok（輸出），有效期至 2026-08-31；Claude Code 用戶以此定價使用新預設模型，相較 Opus 4.8 估計省 60% 成本。**對採用率的意涵**：若 Claude Code 預設路由切換至 Sonnet 5，重度使用者的月均 API 費用可能顯著降低，有助於緩解近期配額縮減導致的訂閱留存壓力（推論）。
@@ -168,9 +173,9 @@ The Information 報導企業客戶即使面對成本上漲仍持續採用；Anth
 
 ### 配額與速率
 
-#### 2026-07-07～09：Max 方案額度異常快速耗盡、token 消耗增加 3–5 倍（持續發酵，官方無回應）
+#### 2026-07-07～10：Max 方案額度異常快速耗盡、token 消耗增加 3–5 倍（持續發酵，官方無回應）
 
-- **GitHub Issue #38335（791 留言/536 讚，2026-07-09 查證）**：反映 Max 方案 CLI session 額度自 2026-03-23 起異常快速耗盡，為近期社群互動量最高的計費類 issue 之一；留言數在 07-08（790）→ 07-09（791）間僅微幅變動，社群互動已趨於高原期（GitHub https://github.com/anthropics/claude-code/issues/38335）
+- **GitHub Issue #38335（792 留言，2026-07-10 查證）**：反映 Max 方案 CLI session 額度自 2026-03-23 起異常快速耗盡，為近期社群互動量最高的計費類 issue 之一；留言數 07-08（790）→ 07-09（791）→ 07-10（792）持續微幅增加，社群互動已趨於高原期，官方仍無明確回應（GitHub https://github.com/anthropics/claude-code/issues/38335）
 - **GitHub Issue #41506（54 留言/29 讚）**：反映 Max（$100/月）方案 token 消耗自 3 月底起增加約 3–5 倍，未見對應功能或用量增加可解釋此漲幅（GitHub https://github.com/anthropics/claude-code/issues/41506）
 - **Reddit r/ClaudeAI：「Claude Max 20x: Why did 27% of one session consume 7% of my entire weekly limit?」（2026-07-09）**：使用者具體質疑單一 session 中 27% 的時間消耗掉整週額度 7%，用量計量比例明顯失衡，與 GitHub #38335 反映的異常耗盡現象方向一致
 - **Reddit r/ClaudeCode：「Claude Max (20x) weekly limit exhausted in less than a day」**：使用者回報週額度不到一天即用盡（Reddit https://www.reddit.com/r/ClaudeCode/comments/1uqs99q/）
@@ -304,6 +309,11 @@ Anthropic 將使用場景切分為**兩條獨立計費軌道**：
 - 設定費用警報（Anthropic 儀表板有顯示延遲，建議自建監控腳本）
 
 ### 成本案例與優化
+
+#### 2026-06-16：Claude Code on AWS Bedrock 首日成本實測 $8.43
+
+- **第一手成本實測**：開發者記錄改用 AWS Bedrock 執行 Claude Code 第一天即產生 **$8.43** 費用，分享設定預算警示的經驗；動機是規避 Anthropic 原生訂閱方案的 5 小時 session 與週用量上限（見上方「配額與速率」爭議）（dev.to https://dev.to/aws-builders/how-my-first-claude-code-on-aws-bedrock-experiment-cost-me-843-in-just-one-day-1835）
+- **注意**：屬個人開發者單日數據，未見長期追蹤或企業規模驗證；Bedrock 走 API 費率計費，脫離訂閱配額限制的同時亦脫離訂閱補貼，長期成本需視實際用量規模評估
 
 #### 2026-05-18：Uber 企業成本警示、Opus+Sonnet 混合策略
 

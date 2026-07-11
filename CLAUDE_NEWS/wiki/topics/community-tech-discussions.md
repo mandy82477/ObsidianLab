@@ -4,10 +4,10 @@
 **領域：** 🌐 社群
 **開始日期：** 2026-04-25
 **最後更新：** 2026-07-11
-**最後新聞更新：** 2026-07-10
+**最後新聞更新：** 2026-07-11
 
-> **最熱討論**（2026-07-10）
-> 新增 Ben Bernanke 加入 Anthropic Oversight Trust 引發的治理正當性討論（HN 66 分），社群聚焦知名經濟學者加入是否能為 AI 安全監督帶來實質獨立性，或僅是象徵性任命。Geosql（地理空間 Claude/Codex skill）效能宣稱矛盾質疑（HN 55 分）、額度焦慮系列與 AskUserQuestion 60 秒逾時爭議（GitHub Issue #73125 留言 109、👍 375）仍為近期高熱度議題。
+> **最熱討論**（2026-07-11）
+> 新增 WebFetch 隱藏 token 成本觀察：HN 實測顯示 Claude Code 內建 WebFetch 在 JS 渲染或反爬頁面失敗時，會把整段原始 HTML（如 Wikipedia 頁面 68,240 tokens）直接塞回 context（HN 12 分）。Ben Bernanke 加入 Anthropic Oversight Trust 引發的治理正當性討論（HN 66 分）、Geosql 效能宣稱矛盾質疑（HN 55 分）、額度焦慮系列與 AskUserQuestion 60 秒逾時爭議（GitHub Issue #73125 留言 109、👍 375）仍為近期高熱度議題。
 
 ---
 
@@ -170,6 +170,13 @@ MCP 的實際成本遠超多數使用者預期，已有多個量化案例：
 ## 技術彙整
 
 ### 2026-07
+
+#### WebFetch 的隱藏 Token 稅：Wikipedia 頁面實測 68,000 tokens 的成本盲點（2026-07-11）
+
+- **來源：** 「One Wikipedia page costs your AI agent 68,000 tokens」— Hacker News（HN score 12，07-11）
+- **核心論點：** 作者實測 Claude Code 內建 WebFetch 在多數頁面表現良好（如將 Wikipedia 原始 HTML 68,240 tokens 壓縮摘要至約 950 tokens），但在 JS 渲染或反爬機制頁面（如 quotes.toscrape.com/js、nike.com）會直接失敗，並把整段原始 HTML 塞回 context，形成使用者難以察覺的隱藏 token 成本
+- **與既有討論的關係：** 與已收錄於 [[topics/community-tech-patterns]] 的「Context Window 診斷法」「Token Bloat 系統性對策」等既有共識呼應——問題核心是「工具失敗時的降級行為」而非模型本身退步；此案例補充 WebFetch 具體失敗場景與量化數字（推論）
+- **收斂結論：** 尚無社群層級收斂，單一來源（HN score 12，達低門檻），作者提及正在開發對應開源工具但原文尚未附上連結
 
 #### MCP 授權即擴大攻擊面：「給 agent 一雙手，也給陌生人一個入口」的信任反思（2026-07-10）
 

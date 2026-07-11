@@ -4,7 +4,7 @@
 僅收錄官方 changelog、release note 或官方公告來源；社群工具見 [[topics/community-tech-tools]]。
 每次 ingest 後由 LLM 維護：新增功能、更新熱度、補充社群回饋。
 
-**最後更新：** 2026-07-10
+**最後更新：** 2026-07-11
 
 ---
 
@@ -20,7 +20,7 @@
 
 ## ⚠️ 升版風險（每次 ingest 更新）
 
-**最新版本：** v2.1.206（2026-07-10，`/cd` 新增目錄路徑建議、`/doctor` 新增 CLAUDE.md 精簡檢查）
+**最新版本：** v2.1.207（2026-07-11，Auto mode 在 Bedrock/Vertex/Foundry 三平台改為預設開啟免 opt-in、修復終端機凍結問題）
 
 | 風險 | 嚴重度 | 說明 |
 |------|--------|------|
@@ -63,6 +63,8 @@
 
 | 功能 | 發布日期 | 熱度 | 試用價值 | 狀態 |
 |------|----------|------|----------|------|
+| **Claude Code v2.1.207**（Auto mode 在 Bedrock/Vertex/Foundry 改預設開啟、修復終端機凍結） | 2026-07-11 | 🔥🔥 | ⚡ 有條件推薦 | 正式發布 |
+| **Claude Code Desktop 內建瀏覽器**（單一媒體來源，官方版本號待確認） | 2026-07-11 | 🔥 | ⏳ 待驗證 | 待確認 |
 | **Claude Code v2.1.206**（`/cd` 目錄路徑建議、`/doctor` CLAUDE.md 精簡檢查） | 2026-07-10 | 🔥🔥 | ⚡ 有條件推薦 | 正式發布 |
 | **Reflect with Claude**（Settings 內使用模式儀表板，媒體廣泛報導但 HN 僅 29 分） | 2026-07-09 | 🔥🔥🔥🔥 | ⚡ 有條件推薦 | Preview |
 | **Claude Cowork 行動版 / 網頁版**（雲端持續執行，闔上裝置任務不中斷，首波 Max 訂閱戶，涵蓋政府客戶） | 2026-07-07 | 🔥🔥🔥🔥 | ⚡ 有條件推薦 | Preview（限 Max） |
@@ -121,6 +123,35 @@
 ---
 
 ## 🆕 最新功能（2026-07）
+
+### Claude Code v2.1.207
+**發布：** 2026-07-11（v2.1.207） | **熱度：** 🔥🔥 | **試用價值：** ⚡ 有條件推薦 | **狀態：** 正式發布
+
+**是什麼：** Auto mode 在 Bedrock、Vertex AI、Foundry 三個平台上不再需要 `CLAUDE_CODE_ENABLE_AUTO_MODE` 環境變數 opt-in 即可使用（可用 `disableAutoMode` 關閉）；同版修復終端機凍結問題。
+
+**為何熱：** 將 2026-05-30 v2.1.158 首次引入的 Bedrock/Vertex/Foundry Auto mode 從 opt-in 改為預設開啟，屬使用門檻降低的升格事件；終端機凍結修復對日常穩定性有直接幫助。
+
+**快速上手：**
+```
+# Bedrock / Vertex AI / Foundry 上，Auto mode 現為預設開啟
+# 如需關閉：
+claude config set disableAutoMode true
+```
+
+**注意事項：** 若原先依賴 opt-in 未啟用 Auto mode 的工作流，升版後行為會改變，需確認是否要用 `disableAutoMode` 關閉。
+
+---
+
+### Claude Code Desktop 內建瀏覽器（待確認）
+**發布：** 2026-07-11（媒體報導，官方版本號待確認） | **熱度：** 🔥 | **試用價值：** ⏳ 待驗證 | **狀態：** 待確認（單一媒體來源）
+
+**是什麼：** The Mac Observer 報導 Anthropic 為 Claude Code Desktop 新增內建瀏覽器功能，讓使用者無需切離桌面應用即可瀏覽網頁內容。
+
+**為何熱：** 目前僅單一媒體來源，尚無官方 changelog / release notes 或社群討論佐證，熱度保守標記；下次 ingest 若未見官方或社群佐證，建議降級或移除。
+
+**注意事項：** 功能存在與具體操作方式待官方確認。
+
+---
 
 ### Claude Code v2.1.206
 **發布：** 2026-07-10（v2.1.206） | **熱度：** 🔥🔥 | **試用價值：** ⚡ 有條件推薦 | **狀態：** 正式發布

@@ -4,10 +4,10 @@
 **領域：** 🌐 社群
 **開始日期：** 2026-04-25
 **最後更新：** 2026-07-11
-**最後新聞更新：** 2026-07-10
+**最後新聞更新：** 2026-07-11
 
-> **最新工作流模式**（2026-07-10）
-> 新增 5 則工具/實作：Context window 診斷法（先測量再究責 MCP，dev.to）、開源對抗式 Claude reviewer agent-plan-review-loop（讀取真實 codebase 反覆挑戰實作計畫）、本地反向代理攔截 Claude Code 實際送出的請求內容（因 Claude Code 不遵守 HTTP_PROXY）、GitHub PR 協作健康度視覺化工具 Devthropology（HN 34 分）、AI 思考表徵視覺化編輯器（HN 31 分，源自 Anthropic 論文啟發）。
+> **最新工作流模式**（2026-07-11）
+> 新增 ccteams：npm 套件化管理 Claude Code subagent 團隊，一鍵套用不同語言/框架的 builder+reviewer 組合（dev.to）。
 
 ---
 
@@ -23,7 +23,7 @@
 
 | 類別 | 代表技巧 | 成熟度 | 核心概念 |
 |------|---------|--------|---------|
-| **Multi-agent 架構** | Claude Squad、Speculative Parallelism | ✅ 成熟 | orchestrator 分派 + 獨立 git worktree，防答案塌縮 |
+| **Multi-agent 架構** | Claude Squad、Speculative Parallelism、ccteams（套件化團隊配置） | ✅ 成熟 | orchestrator 分派 + 獨立 git worktree，防答案塌縮；ccteams 將驗證良好的 subagent 組合打包為可跨專案安裝的套件 |
 | **Skills 設計** | 知識框架化、流程 skill 化 | ✅ 成熟 | description 自動觸發，將書籍/流程封裝為可複用 skill |
 | **CLAUDE.md 管理** | 精簡規則策略、Self-improving Rules、防腐爛機制 | ✅ 成熟 | 以「規則」非「建議」撰寫，CI 攔截違反架構 PR |
 | **Hooks 與自動化** | PostToolUse 稽核、Git Hooks 品質門、/goal Fire-and-Forget、deploy/migration 保護、Pre-completion Hook、Stop Hook 音效通知、Hooks 環境感知條件觸發（Adrafinil、氛圍狀態燈） | ✅ 成熟 | 強制執行 > CLAUDE.md 建議；Stop Hook 要求可驗證完成證明；CLAUDE.md 做偏好、Hooks 做邊界；Pre-completion Hook 防模糊結束；hooks 可感知 agent 活躍狀態驅動環境副作用（螢幕喚醒、實體燈光顏色） |
@@ -54,6 +54,13 @@
 ## 技術彙整
 
 ### 2026-07
+
+#### ccteams：套件化管理 Claude Code Subagent 團隊（2026-07-11）
+
+- **核心模式：** 開發者發布 npm 套件 ccteams，讓使用者以單一指令（`ccteams use go-api` / `next-ts` / `generalist`）將預先調校好的 builder + reviewer subagent 團隊套用到當前專案，取代過去每個新專案都需重新手寫相同 subagent 組合的重複勞動
+- **與既有模式的關係：** 與既有「Multi-agent 架構」「Skills 設計」重疊但聚焦點不同——不是設計新的協作邏輯，而是把已驗證良好的 subagent 配置打包成可跨專案安裝、可版本化的套件，類似把 npm 套件生態的可重用性延伸到 agent 團隊配置本身
+- **來源：** 「One command turns Claude Code into a full dev team」— dev.to（作者 toffy，原文發布 06-18）
+- **成熟度：** ⏳ 新興（單一作者 npm 套件已發布，尚無採用數據）
 
 #### Context Window 診斷法：先測量再究責 MCP（2026-07-10）
 
