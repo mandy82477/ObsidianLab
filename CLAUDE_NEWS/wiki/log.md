@@ -2592,3 +2592,47 @@ Append-only 紀錄。每次 ingest、lint，以及**揭露缺陷或促成改動�
 - 摘要：中國「後門」指控延燒第三天、Anthropic 首度公開否認；前聯準會主席 Bernanke 加入 Anthropic 治理信託；Claude Code v2.1.206 發布；OpenAI ChatGPT Work/GPT-5.6 與 Cursor 新 Agent 加劇對 Anthropic 的競爭壓力
 - 呈現品質：全部通過
 - 品質備註：無
+
+## 2026-07-11 Lint（雲端排程執行）
+
+- 修正矛盾：
+  - 模型：`opus-4-8.md` Fable 5 fallback 描述殘留「受出口管制停用期間」舊狀態語言（管制已 07-01 解除）→ 改為現行「Defense in Depth」分類器觸發機制，補 wikilink 至 `[[entities/fable-5]]`
+  - 功能：`code-quality-decline.md` 與 `entities/claude-code.md` 對 Stop hooks 失效狀態用語不一致（前者「待確認」／後者已知問題 🔴）→ 統一為 🔴 已確認持續回歸問題，互加 wikilink
+  - 社群：`community-tech-tools.md` 與 `code-quality-decline.md` 對 CC-Canary 首次出現日期矛盾（05-12 vs 04-25）→ 以 `news/2026-04-25.md` 原文為準統一為 2026-04-25，互加 wikilink
+- 補連結：`entities/bernanke.md`（原僅 index/log 引用）→ 補於 `entities/dario-amodei.md`「相關議題」；`entities/claude-tag.md`（原僅 index 引用）→ 補於 `topics/official-community-gap.md` 矩陣列與 `entities/claude-code.md`「相關議題」
+- 狀態更新：無（六記者一致回報無 ongoing→monitoring/resolved 變更；`recursive-self-improvement` 等維持上週狀態）
+- resolved 收尾：無
+- 新增 entities：無（本輪未直接建立；候選見下方「待使用者確認」）
+- 呈現品質：⚠️已修復共 11 頁——`sonnet-5.md`／`opus-4-8.md`／`mythos.md`／`fable-5.md`／`model-comparison.md`（delta-first 改寫、凍結指標補「數據截至」標註）、`claude-code.md`（現況時序侵蝕修復）、`opencode.md`（補回缺失的「最後新聞更新」欄位）、`code-quality-decline.md`（事件流堆積改月份分組）、`anthropic-business.md`（標頭/callout 落後既有內容 1 天已同步、移除嵌入正文的 LLM 操作指令殘留）、`ai-agent-safety.md`／`anthropic-government-policy.md`（待查證標記回訪）、`community-tech-tools.md`（清除 2 處懸空引用、補回缺列的 AISlop）；其餘全數 ✅ 通過
+- 入口層健檢：`ai-agent-safety.md`（538 行）、`community-tech-patterns.md`（932 行）、`community-tech-discussions.md`（1008 行）均具備完整入口層（callout＋概覽表＋月份/主題分組），通過不拆分；無語意分岔/死案候選（六記者 3f 欄位皆回報「無」）
+- 待查證回訪：
+  - 已更新：`entities/john-jumper.md`（Twitter 來源標記，已於 2026-06-21 獲 Reuters 獨立確認，移除待查證標記並補來源）；`topics/anthropic-government-policy.md`（2 處出口管制撤銷疑問，已於 07-01 全面解除，補參照）
+  - 已改註無後續：`entities/andrej-karpathy.md`（加入傳聞 05-29，近 14 天無新報導，稽核日期更新）；`topics/ai-agent-safety.md`（「Let's Data Science」漏洞指控 06-02，查證同名來源皆無關報導，改註「至今無後續」）
+  - 其餘標記距今 ≤14 天未觸碰
+- 規則檔健檢：
+  - 矛盾（6a）：無（規則檔本次未被修改，延續上次 `/review-commands` 零錯誤狀態）
+  - 引用驗證（6b）：7/7 全部通過
+  - 遵守率（6c）：近 3 次 ingest（07-08/07-09/07-10）呈現品質 3/3、feature-radar 提及 3/3、log 格式正確 3/3，全部通過
+  - 過期規則（6d，>60 天）：`[加入: 2026-04-25]`（entities/topics 格式模板，距今 77 天）→ 連續第 2 週超過閾值，**📋 待使用者確認**是否需修訂（上週 07-10 lint 已審閱認定仍吻合現狀，本週僅重新列出未再變動）
+  - 來源健康（6e）：⚠️ `Claude API Release Notes` 連續 7 天（07-04~07-10）count=0，已連續 2 週出現同樣異常，原因尚待排查（純觀察回報，不自行修改 pipeline）；`lobste.rs` 已依上輪決定移出來源清單（預期中，非異常）；`dev.to` 07-10 恢復至 15 則（`top=30` 抓法改動生效）；`GitHub Issues` 單日上限已生效為 15（07-10=15）；其餘來源（HN/Reddit/Google News/GitHub/Anthropic Blog/Status）正常
+  - 跨檔案語意矛盾（6f）：✅ 全部配對語意一致（5/5，含 REPO_ROOT/PYTHON 值、六類 subagent_type 名稱、lint-only 邊界宣告、五欄回報格式）
+  - 成長迴路（月度）：非本月首次 lint（本月已有 07-04、07-10 兩筆 Lint 記錄），跳過
+- 品質指標（6g）：
+  - ref 覆蓋率（每週）：100%（近 7 天 07-04~07-10，35 條列 / 35 條列皆至少一 ref）✅，缺 ref 日期：無
+  - 採用驗證率（月度）：非本月首次 lint，跳過
+  - 外部死鏈（月度）：非本月首次 lint，跳過
+  - 趨勢判讀：持平（連續 3 期維持 100%；`wiki/metrics.md` 已補記 07-10 遺漏列並 append 07-11 列）
+- 讀者模擬：3 題全 ✅ —— 「v2.1.206 該不該升版」→ `feature-radar.md`「升版風險」2 跳可答；「中國後門指控 Anthropic 有無正式回應」→ `topics/ai-agent-safety.md` 頂部 callout 2 跳可答；「Bernanke 加入信託對治理的意義」→ `entities/bernanke.md` 現況 2 跳可答
+- lint 自我遵守率：6/6 記者回報一次過（3a–3g 七項皆有明確結果，格式完整，無退回）
+- community-tech-tools 策展：新增 Devthropology、AI 思考表徵編輯器、Geosql（⚠️效果存疑已標註）、Peek-CLI；汰除 5 筆逾 30 天無後續 ⏳ 條目（claude-quota/OpenYabby/agent-pd/claudefeed/Lanes v0.43.0）；精選層無新提拔，Intuned 因查無原始新聞來源移出精選層；痛點洞察同步（清除 Rayline 殘留敘述，多模型鎖定防禦列狀態 🔥→🌙）
+- patterns 淘汰審查（community-tech-patterns，dry-run，**待使用者確認**）：建議淘汰 0 條；建議合併 1 組——「記憶與知識管理」↔「跨環境 Agent 記憶」（模式概覽表重複收錄同一工具 ltm/Core Memory Packet，概念高度重疊）；保留 3 類（Agent 版本控制／安全架構／Context window 縮減舊條目，理由：概念仍有效或已妥善標記歷史）
+- community-pattern-trends 週更：無新趨勢節點（近 14 天資料已被 07-10 lint 涵蓋；「行動裝置遠端控制」醞釀中趨勢首見 06-28，距今 13 天未滿 14 天成形門檻）
+- overview.md：已更新（當前局勢改寫為中國後門指控延燒第四天/Anthropic 首度公開否認、Bernanke 治理信託任命、UST 合作、OpenAI/Cursor/Microsoft 三線競爭夾擊；近兩週事件表 prepend 4 筆 07-10、範圍更新至 06-27~07-10；商業動態/功能推薦/社群情緒指標同步改寫）
+- 品質備註：無
+
+### 📋 待使用者確認（雲端 lint 自主安全部分完成，以下項目留待人工決定）
+
+1. **新實體頁候選**：`Reflect with Claude`（Anthropic 官方 Beta 功能，2026-07-09 發布，07-10 媒體延燒第二天，feature-radar 熱度 🔥🔥🔥🔥／試用價值 ⚡，已有名稱＋狀態＋多起具體事件，資訊足夠建頁；與 `claude-design.md`／`claude-security.md`／`bugcrawl.md` 同類先例）→ 是否建立 `wiki/entities/reflect-with-claude.md`？
+2. **community-tech-patterns 淘汰審查**：建議合併「記憶與知識管理」↔「跨環境 Agent 記憶」兩類別（重複收錄同一工具）→ 是否同意合併？
+3. **規則年齡審查（6d）**：`.claude/rules/wiki-ingest-format.md` 的 entities/topics 格式模板 `[加入: 2026-04-25]` 已連續第 2 週超過 60 天閾值（距今 77 天）→ 是否需要重新審視此模板規則，或標記為「已審閱，長期有效」以停止重複列出？
+4. **來源健康**：`Claude API Release Notes` 已連續 2 週（14 天）count=0 → 是否授權查修此來源的抓取邏輯（可能是 URL 失效或格式改版）？

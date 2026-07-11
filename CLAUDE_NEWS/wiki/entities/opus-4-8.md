@@ -4,7 +4,7 @@
 **狀態：** active
 **領域：** 🤖 模型
 **首次出現：** 2026-05-28
-**最後更新：** 2026-07-09
+**最後更新：** 2026-07-11
 **最後新聞更新：** 2026-07-09
 
 > **最新服務狀態**（2026-07-09）
@@ -16,7 +16,7 @@
 
 **2026-07-09 最新**：Opus 4.8 一度出現錯誤率升高（Elevated errors），官方於 03:50 UTC 確認問題已解決；同期 Reddit 用戶反映使用體驗轉佳，屬弱訊號僅供參考。
 
-Claude Opus 4.8 於 2026-05-28 正式發布，同步推出 Dynamic Workflows（Research Preview）與 Fast Mode 降價，是 2026 年以來 Anthropic 發布規模最大的旗艦更新。**2026-06-09 Claude Fable 5 發布後，Opus 4.8 不再是最高階公開模型**，現作為 Fable 5 受出口管制停用期間的 fallback 模型（< 5% session 觸發）。核心指標：SWE-bench Pro 69.2%（1M context window）；Fast Mode 速度為標準的 2.5 倍、費率降至前代的 1/3。
+Claude Opus 4.8 於 2026-05-28 正式發布，同步推出 Dynamic Workflows（Research Preview）與 Fast Mode 降價，是 2026 年以來 Anthropic 發布規模最大的旗艦更新。**2026-06-09 Claude Fable 5 發布後，Opus 4.8 不再是最高階公開模型**，現作為 Fable 5 安全分類器觸發時的 fallback 模型（< 5% session 觸發）——出口管制期間（2026-06-13 至 07-01）Opus 4.8 曾是 Fable 5 全面下線時的唯一替代選項，管制已於 2026-07-01 解除，現行 fallback 角色改由 Fable 5「Defense in Depth」分類器觸發（詳見 [[entities/fable-5]]）。核心指標：SWE-bench Pro 69.2%（1M context window）；Fast Mode 速度為標準的 2.5 倍、費率降至前代的 1/3。
 
 ---
 

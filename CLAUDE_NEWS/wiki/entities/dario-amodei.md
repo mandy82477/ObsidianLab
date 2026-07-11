@@ -4,7 +4,7 @@
 **狀態：** active
 **領域：** 👤 人物
 **首次出現：** 2026-04-25
-**最後更新：** 2026-07-06
+**最後更新：** 2026-07-11
 **最後新聞更新：** 2026-07-06
 
 > **最新政策立場**（2026-06-26，政策後續見 [[topics/anthropic-government-policy]]）
@@ -51,6 +51,7 @@ Dario Amodei 是 Anthropic 共同創辦人兼執行長（CEO），與 Chris Olah
 - [[entities/chris-olah]] — Anthropic 共同創辦人
 - [[entities/tom-brown]] — 接管政府談判的 Anthropic 聯合創辦人
 - [[entities/fable-5]] — 2026 旗艦模型（個人出席大會宣布相關政策）
+- [[entities/bernanke]] — 前聯準會主席，2026-07-09 加入監督 Amodei 執行方向的「長期利益信託」董事會
 
 ## 參考來源
 

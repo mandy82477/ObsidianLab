@@ -3,7 +3,7 @@
 **狀態：** monitoring
 **領域：** 🛠️ 工具/功能
 **開始日期：** 2026-05-17
-**最後更新：** 2026-07-10
+**最後更新：** 2026-07-11
 **最後新聞更新：** 2026-07-10
 
 > **最新功能缺口**（2026-07-08）
@@ -32,7 +32,7 @@
 | 多代理 PR/程式碼審查 | 2026-05-08 4-agent Code Review；2026-05-11 adamsreview | adamsreview、Read-Only Reviewer Agent（2026-06-26）、Mira | `/code-review`（原 `/simplify`，v2.1.146）+ `/code-review --fix`（v2.1.152） | 🧪 部分產品化 | 官方 `/code-review` 已評 ✅ 推薦，但社群「adversarial 多模型審查抓到更多真實 bug」的說法尚無雙方公開對照數據佐證 |
 | 成本感知模型路由 | 2026-06-27，Opus 4.7 tokenizer 改版成本大漲後爆發 | Workweave Router（HN 181，實測降 40%+）、Dragoman、Rayline | 無 | ❌ 無官方對應 | feature-radar 全覽表無任何路由/成本最佳化功能；社群工具是唯一解法 |
 | 額度/用量監控 | 2026-05 起持續累積，2026-07-03 因 7/7 計費轉換臨近急遽爆發 | LimitBar、CCLimitPing、claude-needs-input | 企業版 Spend Controls（2026-07-04 宣布，控管粒度未公開，見 [[topics/enterprise-cost-management]]）；個人用戶仍無官方儀表板/告警 UI | 🧪 部分產品化（僅企業版） | 個人重度使用者缺口依舊，迫切性隨計費轉換 deadline 逼近而升高，見 [[feature-radar]] ⏰ 倒數中 |
-| Slack 內 AI 隊友 | 弱社群前驅（Ano 等輕量 Slack + Claude 整合，2026-06-04） | Ano | Claude Tag（2026-06-24，Slack-native，Anthropic 內部 65% 程式碼由其生成） | ✅ 已產品化 | 此列較弱屬「社群發明」框架——官方主導色彩強，社群前驅稀薄，列入僅供對照參考 |
+| Slack 內 AI 隊友 | 弱社群前驅（Ano 等輕量 Slack + Claude 整合，2026-06-04） | Ano | [[entities/claude-tag\|Claude Tag]]（2026-06-24，Slack-native，Anthropic 內部 65% 程式碼由其生成） | ✅ 已產品化 | 此列較弱屬「社群發明」框架——官方主導色彩強，社群前驅稀薄，列入僅供對照參考 |
 | 跨工具 agent 設定標準（AGENTS.md） | 2026-05-02 起，[GitHub issue #6235](https://github.com/anthropics/claude-code/issues/6235) 累積 335 則留言、5634 個讚（2026-07-10，全站已知問題讚數之最）| Codex、Amp、Cursor（均已採用 AGENTS.md 標準） | 無 | ❌ 無官方對應 | Claude Code 仍不支援 AGENTS.md，多工具並用者需為 Claude Code 額外維護 CLAUDE.md，造成配置互通痛點；反應數持續攀升顯示壓力未見緩解；v2.1.206（2026-07-10）`/doctor` 新增建議精簡 CLAUDE.md 內容的檢查項，屬維護性提示而非互操作標準對應，缺口性質未變 |
 | 多平行 agent 即時可觀測性／協調地圖 | 2026-07-06 Show HN live-log-viewer-next（讀本機 JSONL transcript 呈現即時對話地圖）；既有 1000 Subagents Fan-out、20-instance 崩潰分析持續堆疊 | live-log-viewer-next、（fan-out/多 instance 分析工具鏈） | Agent View（`claude agents` 多 session 列表管理，v2.1.139） | ❌ 無官方對應 | 官方 Agent View 為**列表式** session 管理，非跨 agent 即時狀態流的 live map；當數十至上千平行 agent 併跑時「誰卡住、誰在等、彼此依賴」缺乏即時可觀測面，社群自建地圖式檢視器補位，官方無對應方向 |
 
