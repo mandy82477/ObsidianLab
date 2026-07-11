@@ -1,6 +1,6 @@
 # Design Diagram — 現況架構（維運用）
 
-**最後更新：** 2026-07-05
+**最後更新：** 2026-07-11
 **文件定位：** 這份是「**系統現在怎麼運作**」的操作/維運架構圖，給要執行或維護 pipeline 的人看。
 「**系統怎麼演變成現在這樣**」的演進敘事，另見 `docs/architecture-evolution.html`（互動時間軸），兩者分工不重疊。
 
@@ -62,8 +62,8 @@ flowchart TD
         S6["Reddit\n(含 r/ClaudeCode)"]
         S7["Google News\n(category=media)"]
         S8["dev.to\n(API + reactions)"]
-        S9["lobste.rs"]
-        S10["Claude API\nRelease Notes"]
+        S9["Claude API\nRelease Notes"]
+        S10["Blogroll\n(權威部落客 RSS\n4 位 probation)"]
     end
 
     SRC --> DEDUP["dedup.py\nURL 正規化 + 模糊標題去重\n官方來源優先"]
@@ -79,12 +79,14 @@ flowchart TD
     end
 
     FILTER --> OUT["gathered_items.json\n（items + date + source_status\n+ score_unit + source_count）"]
+    FILTER --> FUNNEL["data/source_funnel.jsonl\n（append：每次執行各來源\ngathered/filtered/emitted 漏斗數）"]
 ```
 
 **關鍵欄位：**
 - `score_unit`：分（HN）/ 讚（Reddit、dev.to）/ 留言 —— 跨來源比熱度時單位不同，不可直接比大小
 - `source_count`：同一事件被幾個獨立來源報導，> 1 視為重要度加權
 - `source_status`：每個來源本次抓到幾筆（餵給日報「📡 來源狀態」表 + wiki-lint 6f 來源健康檢查）
+- `source_funnel.jsonl`：跨日累積的來源漏斗統計（gathered→filtered→emitted），供未來 `/source-review` 判斷各來源效益與部落客汰換（GH Actions 每日 commit）
 
 ---
 
@@ -111,9 +113,12 @@ flowchart TD
 
     CONSOLIDATE["主編彙整（序列化寫入共用檔）\n收報核對：逐項驗 3a–3g 有明確結果，缺項退回"]
     CONSOLIDATE --> SHARED["feature-radar.md（本週推薦/升版風險/倒數中）\nindex.md（狀態變更 + 新頁）\nlog.md（append，含品質備註）\noverview.md（重大事件才更新）"]
+    CONSOLIDATE --> LEDGER["data/source_attribution.jsonl\n（append：記者回報的『來源歸因』欄\n轉 日期×來源×類別×頁面）"]
 ```
 
 **頁面歸屬＝動態認領：** 記者的負責頁面由 `index.md` 的「領域」欄位決定，不寫死清單；新頁面自動被對應記者涵蓋。
+
+**來源歸因走 ledger、不進 wiki 正文：** 記者在回報訊息填「來源歸因」欄（非 wiki 正文），主編彙整時 append 至 `data/source_attribution.jsonl`。此設計取代了舊的 `[[sources/xxx]]` wikilink 機制（2026-07-11 撤除——wikilink 會污染 web reader 且 Graph 二元邊答不了來源比重問題）。
 
 ---
 
@@ -134,6 +139,28 @@ flowchart TD
 
 ---
 
+## 規則一致性治理（三層防線）
+
+`.claude/commands/`、`.claude/rules/`、`CLAUDE.md` 之間有大量交叉引用與同步配對，靠人肉維持一致會漂移。機械檢查已腳本化（`scripts/check_rules.py` 讀 `.claude/review-registry.json`，跑裸露引用/路徑存在/錨點/同步配對四類檢查 + coupling 提示），三層防線確保「改了規則就會被驗」：
+
+```mermaid
+flowchart TD
+    EDIT["改動 .claude/commands|rules 或 CLAUDE.md"] --> H1
+
+    H1["第一層：PostToolUse hook（dirty-period 預告）\ncheck_rule_modified.py\n一批改動只提醒一次，綠檢後重置"]
+    H1 --> H2["第二層：Stop hook（收工檢查）\ncheck_rules_on_stop.py\n偵測規則檔 mtime > 上次綠檢\n→ block 收工，逼先驗"]
+    H2 --> H3["第三層：DoD 兜底\nrun_tests.py 內建 check_rules.py\n測試不綠不算完工"]
+
+    H3 --> CHECK{"python scripts/check_rules.py"}
+    CHECK -->|零錯誤| MARK["寫 .claude/.last-rules-check\n（三層共用記號檔，重置提醒）"]
+    CHECK -->|有 ❌| FIX["/review-commands 薄殼\n判讀失敗 → 修檔案或改 registry\n→ 重跑到零錯誤"]
+    FIX --> CHECK
+```
+
+**通用化：** 此機制已抽成全域 skill `/build-review-command`（通用引擎 + 專案 registry 分離），可在其他專案快速建立同套三層防線。
+
+---
+
 ## 產物與唯讀邊界
 
 ```mermaid
@@ -145,7 +172,7 @@ flowchart LR
         D["wiki/log.md（append only）"]
         E["web_reader/data/（build 產物）"]
     end
-    B & C & D --> BUILD["scripts/build_web.py\n（含 wikilink 斷鏈檢查 + 領域欄位防呆）"]
+    B & C & D --> BUILD["scripts/build_web.py\n（wikilink 斷鏈檢查 + 領域欄位防呆\n+ 剝除 [[sources/*]] 分析標記不外洩 web）"]
     A --> BUILD
     BUILD --> E
 ```
@@ -159,10 +186,12 @@ flowchart LR
 | 想做的事 | 動哪個檔 |
 |---------|---------|
 | 新增新聞來源 | `src/news_aggregator/sources/` 繼承 `BaseSource`，在 `main.py` sources 列表註冊 |
+| 增減權威部落客 | `src/news_aggregator/sources/blogroll.json`（status: probation/active/retired，汰換由 `/source-review` 建議） |
 | 改過濾規則 | `src/news_aggregator/filter.py`（純規則，無 LLM） |
 | 改日報格式 | `.claude/commands/news-pipeline-steps.md` Step 1b |
 | 改記者職責/規則 | `.claude/rules/wiki-ingest-[category].md` |
 | 改 web 呈現 | `web_reader/`（設計規範見 `.claude/rules/web-reader-design.md`）+ `scripts/build_web.py` |
-| 改任何規則/指令後驗證 | `/review-commands`（跑到零錯誤） |
+| 改任何規則/指令後驗證 | `/review-commands`（判讀 `scripts/check_rules.py` 失敗並修復；機械檢查已掛進 `run_tests.py`） |
+| 改規則一致性檢查項 | `.claude/review-registry.json`（同步配對/錨點/allowlist，登記於此即生效） |
 
 執行日誌：`src/logs/` | 測試：`scripts/run_tests.py`

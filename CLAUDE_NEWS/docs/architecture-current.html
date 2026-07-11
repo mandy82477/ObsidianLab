@@ -5,7 +5,7 @@
         <div>
           <h1 class="text-[26px] leading-tight" style="font-family: var(--font-display); font-weight: 500; color: var(--ink-1);">自動化新聞知識庫系統<span style="color: var(--ink-3); font-style: italic;"> / 現有架構</span></h1>
           <p class="mt-1 text-[11px] tracking-wide" style="font-family: var(--font-mono); color: var(--ink-3);">CURRENT ARCHITECTURE — 現況操作／維運視圖</p>
-          <p style="margin-top: 8px; font-family: var(--font-mono); font-size: 11px; color: var(--ink-3); letter-spacing: 0.02em;">現況截至 2026-07-05 · 源自 src/DesignDocument/Design Diagram.md</p>
+          <p style="margin-top: 8px; font-family: var(--font-mono); font-size: 11px; color: var(--ink-3); letter-spacing: 0.02em;">現況截至 2026-07-11 · 源自 src/DesignDocument/Design Diagram.md</p>
         </div>
       </div>
       <!-- 頁面導覽 tab -->
@@ -20,6 +20,7 @@
         <button class="dgm-tab flex items-center gap-1.5 px-2.5 py-1 text-[12px] transition-colors" data-dgm="ingest" style="font-family: var(--font-sans); border: 1px solid var(--border-2); border-radius: 2px; color: var(--ink-3); background: transparent;">Wiki Ingest</button>
         <button class="dgm-tab flex items-center gap-1.5 px-2.5 py-1 text-[12px] transition-colors" data-dgm="lint" style="font-family: var(--font-sans); border: 1px solid var(--border-2); border-radius: 2px; color: var(--ink-3); background: transparent;">Wiki Lint</button>
         <button class="dgm-tab flex items-center gap-1.5 px-2.5 py-1 text-[12px] transition-colors" data-dgm="artifacts" style="font-family: var(--font-sans); border: 1px solid var(--border-2); border-radius: 2px; color: var(--ink-3); background: transparent;">產物邊界</button>
+        <button class="dgm-tab flex items-center gap-1.5 px-2.5 py-1 text-[12px] transition-colors" data-dgm="govern" style="font-family: var(--font-sans); border: 1px solid var(--border-2); border-radius: 2px; color: var(--ink-3); background: transparent;">規則治理</button>
       </div>
     </div>
   </div>
@@ -118,8 +119,8 @@
           <span class="dgm-step" style="border: 1px solid var(--border-2); border-radius: 2px; padding: 4px 9px; font-family: var(--font-sans); font-size: 11px; color: var(--ink-2);">Reddit（含 r/ClaudeCode）</span>
           <span class="dgm-step" style="border: 1px solid var(--border-2); border-radius: 2px; padding: 4px 9px; font-family: var(--font-sans); font-size: 11px; color: var(--ink-2);">Google News（category=media）</span>
           <span class="dgm-step" style="border: 1px solid var(--border-2); border-radius: 2px; padding: 4px 9px; font-family: var(--font-sans); font-size: 11px; color: var(--ink-2);">dev.to（API + reactions）</span>
-          <span class="dgm-step" style="border: 1px solid var(--border-2); border-radius: 2px; padding: 4px 9px; font-family: var(--font-sans); font-size: 11px; color: var(--ink-2);">lobste.rs</span>
           <span class="dgm-step" style="border: 1px solid var(--border-2); border-radius: 2px; padding: 4px 9px; font-family: var(--font-sans); font-size: 11px; color: var(--ink-2);">Claude API Release Notes</span>
+          <span class="dgm-step" style="border: 1px solid var(--border-2); border-radius: 2px; padding: 4px 9px; font-family: var(--font-sans); font-size: 11px; color: var(--ink-2);">Blogroll（權威部落客 RSS · 4 位 probation）</span>
         </div>
       </div>
 
@@ -159,9 +160,15 @@
 
       <div class="dgm-arrow" style="color: var(--ink-4); font-family: var(--font-mono); margin: 0 0 6px 14px;">↓</div>
 
-      <div class="dgm-box" style="border: 1px solid var(--border-strong); border-radius: 2px; padding: 8px 12px; display: inline-block;">
-        <div style="font-family: var(--font-mono); font-size: 11px; color: var(--ink-1);">gathered_items.json</div>
-        <div style="font-family: var(--font-sans); font-size: 11px; color: var(--ink-3); margin-top: 2px;">items + date + source_status + score_unit + source_count</div>
+      <div class="flex flex-wrap gap-3">
+        <div class="dgm-box" style="border: 1px solid var(--border-strong); border-radius: 2px; padding: 8px 12px; display: inline-block;">
+          <div style="font-family: var(--font-mono); font-size: 11px; color: var(--ink-1);">gathered_items.json</div>
+          <div style="font-family: var(--font-sans); font-size: 11px; color: var(--ink-3); margin-top: 2px;">items + date + source_status + score_unit + source_count</div>
+        </div>
+        <div class="dgm-box" style="border: 1px solid var(--border-strong); border-radius: 2px; padding: 8px 12px; display: inline-block;">
+          <div style="font-family: var(--font-mono); font-size: 11px; color: var(--ink-1);">data/source_funnel.jsonl</div>
+          <div style="font-family: var(--font-sans); font-size: 11px; color: var(--ink-3); margin-top: 2px;">append：各來源 gathered/filtered/emitted 漏斗（跨日累積）</div>
+        </div>
       </div>
 
       <div class="mt-6" style="font-family: var(--font-sans); font-size: 12px; color: var(--ink-2); line-height: 1.7;">
@@ -170,6 +177,7 @@
           <li><code style="font-family: var(--font-mono);">score_unit</code>：分（HN）／讚（Reddit、dev.to）／留言 —— 跨來源比熱度時單位不同，不可直接比大小</li>
           <li><code style="font-family: var(--font-mono);">source_count</code>：同一事件被幾個獨立來源報導，&gt; 1 視為重要度加權</li>
           <li><code style="font-family: var(--font-mono);">source_status</code>：每個來源本次抓到幾筆（餵給日報「📡 來源狀態」表 + wiki-lint 6f 來源健康檢查）</li>
+          <li><code style="font-family: var(--font-mono);">source_funnel.jsonl</code>：跨日漏斗統計，供 <code style="font-family: var(--font-mono);">/source-review</code> 判斷來源效益與部落客汰換（GH Actions 每日 commit）</li>
         </ul>
       </div>
     </div>
@@ -223,10 +231,13 @@
           <span class="dgm-step" style="border: 1px solid var(--border-2); border-radius: 2px; padding: 4px 9px; font-family: var(--font-sans); font-size: 11px; color: var(--ink-2);">index.md（狀態變更＋新頁）</span>
           <span class="dgm-step" style="border: 1px solid var(--border-2); border-radius: 2px; padding: 4px 9px; font-family: var(--font-sans); font-size: 11px; color: var(--ink-2);">log.md（append，含品質備註）</span>
           <span class="dgm-step" style="border: 1px solid var(--border-2); border-radius: 2px; padding: 4px 9px; font-family: var(--font-sans); font-size: 11px; color: var(--ink-2);">overview.md（重大事件才更新）</span>
+          <span class="dgm-step" style="border: 1px solid var(--border-strong); border-radius: 2px; padding: 4px 9px; font-family: var(--font-mono); font-size: 11px; color: var(--ink-1);">data/source_attribution.jsonl（來源歸因 append）</span>
         </div>
       </div>
 
       <p class="mt-6 text-[12px]" style="font-family: var(--font-sans); color: var(--ink-2); line-height: 1.6;"><strong style="color: var(--ink-1); font-weight: 500;">頁面歸屬＝動態認領：</strong>記者的負責頁面由 <code style="font-family: var(--font-mono);">index.md</code> 的「領域」欄位決定，不寫死清單；新頁面自動被對應記者涵蓋。</p>
+
+      <p class="mt-2 text-[12px]" style="font-family: var(--font-sans); color: var(--ink-2); line-height: 1.6;"><strong style="color: var(--ink-1); font-weight: 500;">來源歸因走 ledger、不進 wiki 正文：</strong>記者在回報訊息填「來源歸因」欄，主編彙整時 append 至 <code style="font-family: var(--font-mono);">data/source_attribution.jsonl</code>（日期×來源×類別×頁面）。此設計取代舊的 <code style="font-family: var(--font-mono);">[[sources/*]]</code> wikilink 機制（2026-07-11 撤除——會污染 web reader，且 Graph 二元邊答不了來源比重問題）。</p>
     </div>
 
     <!-- 圖④ Wiki Lint -->
@@ -284,6 +295,7 @@
           <div class="dgm-step" style="border: 1px solid var(--border-2); border-radius: 2px; padding: 6px 10px; font-family: var(--font-sans); font-size: 11px; color: var(--ink-2);">C · wiki/feature-radar.md, index.md, overview.md, metrics.md</div>
           <div class="dgm-step" style="border: 1px solid var(--border-2); border-radius: 2px; padding: 6px 10px; font-family: var(--font-sans); font-size: 11px; color: var(--ink-2);">D · wiki/log.md（append only）</div>
           <div class="dgm-step" style="border: 1px solid var(--border-2); border-radius: 2px; padding: 6px 10px; font-family: var(--font-sans); font-size: 11px; color: var(--ink-2);">E · web_reader/data/（build 產物）</div>
+          <div class="dgm-step" style="border: 1px solid var(--border-2); border-radius: 2px; padding: 6px 10px; font-family: var(--font-sans); font-size: 11px; color: var(--ink-2);">F · data/*.jsonl（source_attribution 主編 append／source_funnel pipeline append；GH Actions commit，不進手動 commit）</div>
         </div>
       </div>
 
@@ -293,7 +305,7 @@
 
       <div class="dgm-box" style="border: 1px solid var(--ochre-7); border-radius: 2px; background: var(--ochre-tint); padding: 8px 12px; display: inline-block; margin-top: 6px;">
         <div style="font-family: var(--font-mono); font-size: 11px; color: var(--ochre-9);">scripts/build_web.py</div>
-        <div style="font-family: var(--font-sans); font-size: 11px; color: var(--ink-2); margin-top: 2px;">含 wikilink 斷鏈檢查 ＋ 領域欄位防呆</div>
+        <div style="font-family: var(--font-sans); font-size: 11px; color: var(--ink-2); margin-top: 2px;">wikilink 斷鏈檢查 ＋ 領域欄位防呆 ＋ 剝除 [[sources/*]]（分析標記不外洩 web）</div>
       </div>
 
       <div class="dgm-arrow" style="color: var(--ink-4); font-family: var(--font-mono); margin: 6px 0 6px 14px;">↓</div>
@@ -324,16 +336,58 @@
           </thead>
           <tbody>
             <tr style="border-bottom: 1px solid var(--border-2);"><td style="padding: 6px 8px; color: var(--ink-2);">新增新聞來源</td><td style="padding: 6px 8px; color: var(--ink-2); font-family: var(--font-mono); font-size: 11px;">src/news_aggregator/sources/ 繼承 BaseSource，main.py 註冊</td></tr>
+            <tr style="border-bottom: 1px solid var(--border-2);"><td style="padding: 6px 8px; color: var(--ink-2);">增減權威部落客</td><td style="padding: 6px 8px; color: var(--ink-2); font-family: var(--font-mono); font-size: 11px;">sources/blogroll.json（probation/active/retired）</td></tr>
             <tr style="border-bottom: 1px solid var(--border-2);"><td style="padding: 6px 8px; color: var(--ink-2);">改過濾規則</td><td style="padding: 6px 8px; color: var(--ink-2); font-family: var(--font-mono); font-size: 11px;">src/news_aggregator/filter.py（純規則，無 LLM）</td></tr>
             <tr style="border-bottom: 1px solid var(--border-2);"><td style="padding: 6px 8px; color: var(--ink-2);">改日報格式</td><td style="padding: 6px 8px; color: var(--ink-2); font-family: var(--font-mono); font-size: 11px;">.claude/commands/news-pipeline-steps.md Step 1b</td></tr>
             <tr style="border-bottom: 1px solid var(--border-2);"><td style="padding: 6px 8px; color: var(--ink-2);">改記者職責／規則</td><td style="padding: 6px 8px; color: var(--ink-2); font-family: var(--font-mono); font-size: 11px;">.claude/rules/wiki-ingest-[category].md</td></tr>
             <tr style="border-bottom: 1px solid var(--border-2);"><td style="padding: 6px 8px; color: var(--ink-2);">改 web 呈現</td><td style="padding: 6px 8px; color: var(--ink-2); font-family: var(--font-mono); font-size: 11px;">web_reader/（見 web-reader-design.md）+ scripts/build_web.py</td></tr>
-            <tr><td style="padding: 6px 8px; color: var(--ink-2);">改任何規則／指令後驗證</td><td style="padding: 6px 8px; color: var(--ink-2); font-family: var(--font-mono); font-size: 11px;">/review-commands（跑到零錯誤）</td></tr>
+            <tr style="border-bottom: 1px solid var(--border-2);"><td style="padding: 6px 8px; color: var(--ink-2);">改任何規則／指令後驗證</td><td style="padding: 6px 8px; color: var(--ink-2); font-family: var(--font-mono); font-size: 11px;">/review-commands（判讀 check_rules.py 失敗；機械檢查已掛 run_tests.py）</td></tr>
+            <tr><td style="padding: 6px 8px; color: var(--ink-2);">改規則一致性檢查項</td><td style="padding: 6px 8px; color: var(--ink-2); font-family: var(--font-mono); font-size: 11px;">.claude/review-registry.json（同步配對／錨點／allowlist）</td></tr>
           </tbody>
         </table>
         </div>
         <p class="mt-3 text-[11px]" style="font-family: var(--font-sans); color: var(--ink-3);">執行日誌：<code style="font-family: var(--font-mono);">src/logs/</code> ｜ 測試：<code style="font-family: var(--font-mono);">scripts/run_tests.py</code></p>
       </div>
+    </div>
+
+    <!-- 圖⑥ 規則一致性治理（三層防線）-->
+    <div id="dgm-govern" class="dgm-panel" style="display:none;">
+      <div class="text-[13px] mb-4" style="font-family: var(--font-sans); color: var(--ink-2);">
+        <span style="color: var(--ochre-9); font-weight: 500;">規則一致性治理</span> — <code style="font-family: var(--font-mono); font-size: 11px;">.claude/commands|rules</code> 與 <code style="font-family: var(--font-mono); font-size: 11px;">CLAUDE.md</code> 交叉引用眾多，三層防線確保「改了規則就會被驗」。
+      </div>
+
+      <div class="dgm-box" style="border: 1px solid var(--border-strong); border-radius: 2px; padding: 8px 12px; display: inline-block;">
+        <div style="font-family: var(--font-mono); font-size: 11px; color: var(--ink-1);">改動 .claude/commands|rules 或 CLAUDE.md</div>
+      </div>
+
+      <div class="dgm-arrow" style="color: var(--ink-4); font-family: var(--font-mono); margin: 6px 0 6px 14px;">↓</div>
+
+      <div class="space-y-2">
+        <div class="dgm-box" style="border: 1px solid var(--ochre-7); border-radius: 2px; background: var(--ochre-tint); padding: 8px 12px;">
+          <div style="font-family: var(--font-mono); font-size: 11px; color: var(--ochre-9);">第一層 · PostToolUse hook（dirty-period 預告）</div>
+          <div style="font-family: var(--font-sans); font-size: 11px; color: var(--ink-2); margin-top: 2px;">check_rule_modified.py — 一批改動只提醒一次，綠檢後重置</div>
+        </div>
+        <div class="dgm-box" style="border: 1px solid var(--ochre-7); border-radius: 2px; background: var(--ochre-tint); padding: 8px 12px;">
+          <div style="font-family: var(--font-mono); font-size: 11px; color: var(--ochre-9);">第二層 · Stop hook（收工檢查）</div>
+          <div style="font-family: var(--font-sans); font-size: 11px; color: var(--ink-2); margin-top: 2px;">check_rules_on_stop.py — 規則檔 mtime &gt; 上次綠檢 → block 收工，逼先驗</div>
+        </div>
+        <div class="dgm-box" style="border: 1px solid var(--ochre-7); border-radius: 2px; background: var(--ochre-tint); padding: 8px 12px;">
+          <div style="font-family: var(--font-mono); font-size: 11px; color: var(--ochre-9);">第三層 · DoD 兜底</div>
+          <div style="font-family: var(--font-sans); font-size: 11px; color: var(--ink-2); margin-top: 2px;">run_tests.py 內建 check_rules.py — 測試不綠不算完工</div>
+        </div>
+      </div>
+
+      <div class="dgm-arrow" style="color: var(--ink-4); font-family: var(--font-mono); margin: 6px 0 6px 14px;">↓</div>
+
+      <div style="border: 1px solid var(--border-2); border-radius: 2px; padding: 12px;">
+        <div style="font-family: var(--font-mono); font-size: 11px; color: var(--ink-1); margin-bottom: 6px;">python scripts/check_rules.py</div>
+        <div class="flex flex-wrap gap-2" style="font-family: var(--font-sans); font-size: 11px;">
+          <span class="dgm-step" style="border: 1px solid var(--success); border-radius: 2px; padding: 4px 9px; color: var(--success);">零錯誤 → 寫 .claude/.last-rules-check（三層共用記號，重置提醒）</span>
+          <span class="dgm-step" style="border: 1px solid var(--border-2); border-radius: 2px; padding: 4px 9px; color: var(--ink-2);">有 ❌ → /review-commands 薄殼判讀 → 修檔案或改 registry → 重跑</span>
+        </div>
+      </div>
+
+      <p class="mt-6 text-[12px]" style="font-family: var(--font-sans); color: var(--ink-2); line-height: 1.6;"><strong style="color: var(--ink-1); font-weight: 500;">通用化：</strong>此機制已抽成全域 skill <code style="font-family: var(--font-mono);">/build-review-command</code>（通用引擎 + 專案 <code style="font-family: var(--font-mono);">review-registry.json</code> 分離），可在其他專案快速建立同套三層防線。</p>
     </div>
 
   </div>
