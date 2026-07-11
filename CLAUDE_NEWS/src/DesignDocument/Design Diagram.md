@@ -139,25 +139,24 @@ flowchart TD
 
 ---
 
-## 規則一致性治理（三層防線）
+## 規則一致性治理（兩層防線）
 
-`.claude/commands/`、`.claude/rules/`、`CLAUDE.md` 之間有大量交叉引用與同步配對，靠人肉維持一致會漂移。機械檢查已腳本化（`scripts/check_rules.py` 讀 `.claude/review-registry.json`，跑裸露引用/路徑存在/錨點/同步配對四類檢查 + coupling 提示），三層防線確保「改了規則就會被驗」：
+`.claude/commands/`、`.claude/rules/`、`CLAUDE.md` 之間有大量交叉引用與同步配對，靠人肉維持一致會漂移。機械檢查已腳本化（`scripts/check_rules.py` 讀 `.claude/review-registry.json`，跑裸露引用/路徑存在/錨點/同步配對四類檢查 + coupling 提示），兩層防線確保「改了規則就會被驗」：
 
 ```mermaid
 flowchart TD
-    EDIT["改動 .claude/commands|rules 或 CLAUDE.md"] --> H1
+    EDIT["改動 .claude/commands|rules 或 CLAUDE.md"] --> H2
 
-    H1["第一層：PostToolUse hook（dirty-period 預告）\ncheck_rule_modified.py\n一批改動只提醒一次，綠檢後重置"]
-    H1 --> H2["第二層：Stop hook（收工檢查）\ncheck_rules_on_stop.py\n偵測規則檔 mtime > 上次綠檢\n→ block 收工，逼先驗"]
-    H2 --> H3["第三層：DoD 兜底\nrun_tests.py 內建 check_rules.py\n測試不綠不算完工"]
+    H2["第一層：Stop hook（收工檢查）\ncheck_rules_on_stop.py\n偵測規則檔 mtime > 上次綠檢\n→ block 收工，逼先驗"]
+    H2 --> H3["第二層：DoD 兜底\nrun_tests.py 內建 check_rules.py\n測試不綠不算完工"]
 
     H3 --> CHECK{"python scripts/check_rules.py"}
-    CHECK -->|零錯誤| MARK["寫 .claude/.last-rules-check\n（三層共用記號檔，重置提醒）"]
+    CHECK -->|零錯誤| MARK["寫 .claude/.last-rules-check\n（兩層共用記號檔，重置提醒）"]
     CHECK -->|有 ❌| FIX["/review-commands 薄殼\n判讀失敗 → 修檔案或改 registry\n→ 重跑到零錯誤"]
     FIX --> CHECK
 ```
 
-**通用化：** 此機制已抽成全域 skill `/build-review-command`（通用引擎 + 專案 registry 分離），可在其他專案快速建立同套三層防線。
+**通用化：** 此機制已抽成全域 skill `/build-review-command`（通用引擎 + 專案 registry 分離），可在其他專案快速建立同套兩層防線。
 
 ---
 

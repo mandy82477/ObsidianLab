@@ -1029,9 +1029,9 @@ llm 呼叫從「一支 prompt 生成一份文件」演變為「多個獨立 llm 
     </div>
   </button>
 </div>
-<div class="event-card-wrap" data-track="script" data-search="規則一致性治理：機械檢查腳本化 + 三層防線
+<div class="event-card-wrap" data-track="script" data-search="規則一致性治理：機械檢查腳本化 + 兩層防線
 .claude/commands|rules 與 CLAUDE.md 交叉引用眾多，靠人肉 grep 維持一致會漂移，且『改完記得跑 /review-commands』靠記憶執行。
-做法：把裸露引用/路徑存在/錨點/同步配對四類機械檢查收斂進 scripts/check_rules.py（純 Python，讀 .claude/review-registry.json），掛進測試套件。三層防線：PostToolUse hook dirty-period 預告、Stop hook 收工時擋住未驗證改動、run_tests.py 內建 check_rules 的 DoD 兜底。/review-commands 縮成薄殼只判讀失敗。此機制抽成全域 skill /build-review-command 可移植到其他專案。
+做法：把裸露引用/路徑存在/錨點/同步配對四類機械檢查收斂進 scripts/check_rules.py（純 Python，讀 .claude/review-registry.json），掛進測試套件。兩層防線：Stop hook 收工時擋住未驗證改動、run_tests.py 內建 check_rules 的 DoD 兜底。/review-commands 縮成薄殼只判讀失敗。此機制抽成全域 skill /build-review-command 可移植到其他專案。
 原則：確定性檢查進腳本掛測試，LLM 只判讀失敗；驗證成本隨改動規模分級。
 ">
   <span class="event-card-wrap__dot" style="background-color: var(--info);"></span>
@@ -1043,14 +1043,14 @@ llm 呼叫從「一支 prompt 生成一份文件」演變為「多個獨立 llm 
 
 
         </div>
-        <h3 class="event-title">規則一致性治理：機械檢查腳本化 + 三層防線</h3>
+        <h3 class="event-title">規則一致性治理：機械檢查腳本化 + 兩層防線</h3>
       </div>
       <span class="event-toggle">+</span>
     </div>
     <div class="event-body" hidden>
 
       <p><code>.claude/commands|rules</code> 與 <code>CLAUDE.md</code> 交叉引用眾多，靠人肉 grep 維持一致會漂移，且「改完記得跑 <code>/review-commands</code>」靠記憶執行。</p>
-<p><strong>做法：</strong> 把裸露引用／路徑存在／錨點／同步配對四類機械檢查收斂進 <code>scripts/check_rules.py</code>（純 Python，讀 <code>.claude/review-registry.json</code>），掛進測試套件。三層防線：PostToolUse hook dirty-period 預告、Stop hook 收工時擋住未驗證改動、<code>run_tests.py</code> 內建 check_rules 的 DoD 兜底。<code>/review-commands</code> 縮成薄殼只判讀失敗。此機制抽成全域 skill <code>/build-review-command</code> 可移植到其他專案。</p>
+<p><strong>做法：</strong> 把裸露引用／路徑存在／錨點／同步配對四類機械檢查收斂進 <code>scripts/check_rules.py</code>（純 Python，讀 <code>.claude/review-registry.json</code>），掛進測試套件。兩層防線：Stop hook 收工時擋住未驗證改動、<code>run_tests.py</code> 內建 check_rules 的 DoD 兜底。<code>/review-commands</code> 縮成薄殼只判讀失敗。此機制抽成全域 skill <code>/build-review-command</code> 可移植到其他專案。</p>
 <p><strong>原則：</strong> 確定性檢查進腳本掛測試，LLM 只判讀失敗；驗證成本隨改動規模分級。</p>
     </div>
   </button>

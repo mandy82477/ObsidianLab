@@ -350,10 +350,10 @@
       </div>
     </div>
 
-    <!-- 圖⑥ 規則一致性治理（三層防線）-->
+    <!-- 圖⑥ 規則一致性治理（兩層防線）-->
     <div id="dgm-govern" class="dgm-panel" style="display:none;">
       <div class="text-[13px] mb-4" style="font-family: var(--font-sans); color: var(--ink-2);">
-        <span style="color: var(--ochre-9); font-weight: 500;">規則一致性治理</span> — <code style="font-family: var(--font-mono); font-size: 11px;">.claude/commands|rules</code> 與 <code style="font-family: var(--font-mono); font-size: 11px;">CLAUDE.md</code> 交叉引用眾多，三層防線確保「改了規則就會被驗」。
+        <span style="color: var(--ochre-9); font-weight: 500;">規則一致性治理</span> — <code style="font-family: var(--font-mono); font-size: 11px;">.claude/commands|rules</code> 與 <code style="font-family: var(--font-mono); font-size: 11px;">CLAUDE.md</code> 交叉引用眾多，兩層防線確保「改了規則就會被驗」。
       </div>
 
       <div class="dgm-box" style="border: 1px solid var(--border-strong); border-radius: 2px; padding: 8px 12px; display: inline-block;">
@@ -364,15 +364,11 @@
 
       <div class="space-y-2">
         <div class="dgm-box" style="border: 1px solid var(--ochre-7); border-radius: 2px; background: var(--ochre-tint); padding: 8px 12px;">
-          <div style="font-family: var(--font-mono); font-size: 11px; color: var(--ochre-9);">第一層 · PostToolUse hook（dirty-period 預告）</div>
-          <div style="font-family: var(--font-sans); font-size: 11px; color: var(--ink-2); margin-top: 2px;">check_rule_modified.py — 一批改動只提醒一次，綠檢後重置</div>
-        </div>
-        <div class="dgm-box" style="border: 1px solid var(--ochre-7); border-radius: 2px; background: var(--ochre-tint); padding: 8px 12px;">
-          <div style="font-family: var(--font-mono); font-size: 11px; color: var(--ochre-9);">第二層 · Stop hook（收工檢查）</div>
+          <div style="font-family: var(--font-mono); font-size: 11px; color: var(--ochre-9);">第一層 · Stop hook（收工檢查）</div>
           <div style="font-family: var(--font-sans); font-size: 11px; color: var(--ink-2); margin-top: 2px;">check_rules_on_stop.py — 規則檔 mtime &gt; 上次綠檢 → block 收工，逼先驗</div>
         </div>
         <div class="dgm-box" style="border: 1px solid var(--ochre-7); border-radius: 2px; background: var(--ochre-tint); padding: 8px 12px;">
-          <div style="font-family: var(--font-mono); font-size: 11px; color: var(--ochre-9);">第三層 · DoD 兜底</div>
+          <div style="font-family: var(--font-mono); font-size: 11px; color: var(--ochre-9);">第二層 · DoD 兜底</div>
           <div style="font-family: var(--font-sans); font-size: 11px; color: var(--ink-2); margin-top: 2px;">run_tests.py 內建 check_rules.py — 測試不綠不算完工</div>
         </div>
       </div>
@@ -382,12 +378,12 @@
       <div style="border: 1px solid var(--border-2); border-radius: 2px; padding: 12px;">
         <div style="font-family: var(--font-mono); font-size: 11px; color: var(--ink-1); margin-bottom: 6px;">python scripts/check_rules.py</div>
         <div class="flex flex-wrap gap-2" style="font-family: var(--font-sans); font-size: 11px;">
-          <span class="dgm-step" style="border: 1px solid var(--success); border-radius: 2px; padding: 4px 9px; color: var(--success);">零錯誤 → 寫 .claude/.last-rules-check（三層共用記號，重置提醒）</span>
+          <span class="dgm-step" style="border: 1px solid var(--success); border-radius: 2px; padding: 4px 9px; color: var(--success);">零錯誤 → 寫 .claude/.last-rules-check（兩層共用記號，重置提醒）</span>
           <span class="dgm-step" style="border: 1px solid var(--border-2); border-radius: 2px; padding: 4px 9px; color: var(--ink-2);">有 ❌ → /review-commands 薄殼判讀 → 修檔案或改 registry → 重跑</span>
         </div>
       </div>
 
-      <p class="mt-6 text-[12px]" style="font-family: var(--font-sans); color: var(--ink-2); line-height: 1.6;"><strong style="color: var(--ink-1); font-weight: 500;">通用化：</strong>此機制已抽成全域 skill <code style="font-family: var(--font-mono);">/build-review-command</code>（通用引擎 + 專案 <code style="font-family: var(--font-mono);">review-registry.json</code> 分離），可在其他專案快速建立同套三層防線。</p>
+      <p class="mt-6 text-[12px]" style="font-family: var(--font-sans); color: var(--ink-2); line-height: 1.6;"><strong style="color: var(--ink-1); font-weight: 500;">通用化：</strong>此機制已抽成全域 skill <code style="font-family: var(--font-mono);">/build-review-command</code>（通用引擎 + 專案 <code style="font-family: var(--font-mono);">review-registry.json</code> 分離），可在其他專案快速建立同套兩層防線。</p>
     </div>
 
   </div>
