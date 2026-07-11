@@ -535,4 +535,4 @@
 ### 2026-06-02
 - **[供應鏈攻擊] 637 npm 套件植入 Claude Code SessionStart Hook**：2026-05-19 攻擊（39 分鐘內 323 套件受害）的完整分析發布；惡意程式具體利用 Claude Code hooks 機制，在每次 Claude Code 啟動時執行任意指令；是 Claude Code hooks 系統首次出現在真實供應鏈攻擊中（dev.to 報告）
 - **[安全修復] v2.1.160 shell startup file 寫入提示**：修復 Claude Code 可在未提示的情況下寫入 `.zshenv`、`.zlogin`、`.bash_login`、`~/.config/git/` 的安全漏洞；先前版本可能導致惡意指令在 shell 啟動時自動執行
-- **[安全漏洞] Claude Code Flaw Exposes Repositories**：Let's Data Science 報導 Claude Code 存在可暴露 repository 的安全漏洞，細節尚待確認
+- **[安全漏洞] Claude Code Flaw Exposes Repositories**：Let's Data Science 報導 Claude Code 存在可暴露 repository 的安全漏洞（2026-06-02 指控，至今無後續——查核近 14 天日報與該來源後續報導，未見技術細節或修補公告）

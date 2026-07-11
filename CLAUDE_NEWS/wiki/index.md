@@ -2,11 +2,12 @@
 
 LLM 查詢此 wiki 時，**先讀這個檔案**找相關頁面，再讀具體頁面取得詳細資訊。
 
-**最後更新：** 2026-07-10
+**最後更新：** 2026-07-11
 ---
 
 ## 近期異動
 
+- **2026-07-11 週度 Lint（雲端排程）**：修正 3 處跨頁矛盾（opus-4-8 Fable 5 fallback 過期敘述、code-quality-decline/claude-code Stop hooks 狀態不一致、CC-Canary 首次出現日期）；補 2 處孤立連結（bernanke、claude-tag）；11 頁呈現品質修復（delta-first 改寫、凍結指標標註、現況時序侵蝕清理等）；`community-tech-tools.md` 新增 4 工具／汰除 5 筆過期；ref 覆蓋率 100%；讀者模擬 3/3 通過；留 4 項待使用者確認（新實體候選 Reflect with Claude、patterns 合併建議、規則年齡審查、來源健康排查）詳見 [[log]]
 - [[entities/bernanke]] — 2026-07-10：**新頁面**，前聯準會主席 Ben Bernanke 加入 Anthropic 長期利益信託（Long-Term Benefit Trust）董事會，Reuters/CNBC/Bloomberg 同步報導，HN 66 分討論其對治理公信力的意義
 - [[topics/ai-agent-safety]]／[[topics/anthropic-government-policy]] — 2026-07-10：**中國「後門」指控延燒第三天，Anthropic 首次公開否認**（UC Today/BankInfoSecurity/TechRadar/TechRepublic/Fox Business/CISO Series 多家媒體）；同日 Anthropic 發布「Inviting hard questions」聲明，關聯待查證；dev.to 出現第二則獨立 steganography 隱藏標記指控（adioof），與既有 07-01 同形字符事件關聯待釐清
 - [[entities/claude-code]]／[[feature-radar]] — 2026-07-10：**v2.1.206** 發布（`/cd` 目錄路徑建議、`/doctor` CLAUDE.md 精簡檢查，feature-radar 新條目）；已知問題新增 8 條（#16157 Max 額度瞬間觸頂 1479 留言最高互動、#34820 visualize DNS 故障、#73365 Fable 5 advisor unavailable、#15942 VS 2026 整合、#30154 Desktop 多視窗、#49322 Opus 4.7 思考摘要未渲染、#8451 VSCode ide_selection 錯誤等）；AGENTS.md（#6235）反應數更新至 5634 讚；Reflect with Claude 熱度升至 🔥🔥🔥🔥（Axios/Verge 二度跟進）

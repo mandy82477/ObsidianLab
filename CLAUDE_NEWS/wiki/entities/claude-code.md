@@ -4,7 +4,7 @@
 **狀態：** active
 **領域：** 🛠️ 工具/功能
 **首次出現：** 2025（正式推出）
-**最後更新：** 2026-07-10
+**最後更新：** 2026-07-11
 **最後新聞更新：** 2026-07-10
 
 > **最新版本動態**（2026-07-09）
@@ -16,9 +16,7 @@
 
 **Reflect with Claude 測試版推出（2026-07-09）：** Anthropic 官方部落格宣布「Reflect with Claude」測試版功能，使用者可在 Settings 中檢視使用模式儀表板，理解自己使用 Claude 的模式；TechCrunch、Mashable、CNET、Axios、The Verge 多家媒體同步報導，多將其類比為「AI 版 Spotify Wrapped」或「螢幕使用時間」統計工具，TechCrunch 則提出質疑觀點，認為此舉實質是包裝成「自我反思」的使用引導設計；HN 獲 29 分。詳見 [[feature-radar]]。
 
-**最新版本動態：** 最新版本 **v2.1.204**（2026-07-08）為 bug fix：修復 headless session 中 SessionStart hook 事件無法即時串流的問題（可能導致遠端 worker 在 hook 執行中途被誤判閒置而遭回收）；無新指令/旗標。前一重大異動為 **v2.1.202**（2026-07-07）於 `/config` 新增 **Dynamic workflow size** 設定，可調整 Dynamic Workflows / ultracode 的 agent 數量規模（小/中/大，建議性引導值非硬上限）；再前一異動為 **v2.1.197**（2026-07-01）正式將 Claude Sonnet 5 設為 Claude Code 預設模型，原生支援 1M token context window，促銷定價至 2026-08-31。近期各版本的指令、旗標與設定項異動，詳見下方「最新版本」表格。
-
-**Cowork 擴展至行動/網頁版（2026-07-07～08）：** Anthropic 宣布 Claude Cowork 自本週起擴展至行動裝置與網頁版，首波開放 Max 訂閱用戶；新版可在雲端持續執行任務，即使闔上筆電/關閉裝置也不中斷，官方表示「完整體驗」仍在桌面版；此次擴展也涵蓋政府機構客戶。The Verge、TechCrunch、WIRED、NBC News、The New Stack、Let's Data Science 等多家媒體同步報導；Cowork 既有平台相容性已知問題（見下方「已知問題」）尚未確認是否延伸至新平台。
+**最新版本動態：** 最新版本 **v2.1.204**（2026-07-08）為 bug fix：修復 headless session 中 SessionStart hook 事件無法即時串流的問題（可能導致遠端 worker 在 hook 執行中途被誤判閒置而遭回收）；無新指令/旗標。前一重大異動為 **v2.1.202**（2026-07-07）於 `/config` 新增 **Dynamic workflow size** 設定，可調整 Dynamic Workflows / ultracode 的 agent 數量規模（小/中/大，建議性引導值非硬上限）；再前一異動為 **v2.1.197**（2026-07-01）正式將 Claude Sonnet 5 設為 Claude Code 預設模型，原生支援 1M token context window，促銷定價至 2026-08-31。近期各版本的指令、旗標與設定項異動，詳見下方「最新版本」表格。Claude Cowork 擴展至行動/網頁版事件（2026-07-08）詳見下方「歷史記錄」與「已知問題」。
 
 **產品定位：** Claude Code 是 Anthropic 的 AI 編碼 CLI 工具，核心能力已從程式碼助理擴展為具備全桌面自動化、多代理管理（Managed Agents）、MCP Server 整合、Hooks 機制與 AI 安全審查的完整 agent 開發平台；GitHub Stars 達 **131,000+**。
 
@@ -256,6 +254,7 @@
 - [[topics/official-community-gap]]（官方功能路線 vs 社群痛點缺口分析）
 - [[entities/claude-design]]（AI 設計工具，與 Claude Code 整合尚不完善）
 - [[entities/openclaw]]（第三方 agentic 工具，Anthropic 主動管控中）
+- [[entities/claude-tag]]（Slack-native AI 協作工具，定位為 Claude Code 向團隊協作方向的延伸）
 - [[entities/boris-cherny]]（Claude Code 創始人）
 - [[entities/cat-wu]]（Claude Code 產品負責人，AI 主動性論述）
 
@@ -289,6 +288,7 @@
 | 日期 | 事件 |
 |------|------|
 | 2026-07-09 | **Reflect with Claude 測試版推出**：Settings 內新增使用模式儀表板，TechCrunch、Mashable、CNET、Axios、The Verge 多家媒體同步報導，多類比「AI 版 Spotify Wrapped」，TechCrunch 提出「悄悄推銷 AI」質疑角度；HN 29 分（見 [[feature-radar]]）|
+| 2026-07-08 | **Claude Cowork 擴展至行動裝置與網頁版**：首波開放 Max 訂閱用戶，任務可在雲端持續執行，闔上筆電/關閉裝置也不中斷，此次擴展亦涵蓋政府機構客戶；官方表示「完整體驗」仍限桌面版；The Verge、TechCrunch、WIRED、NBC News、The New Stack、Let's Data Science 等多家媒體同步報導；Cowork 既有平台相容性已知問題是否延伸至新平台尚待觀察（見「已知問題」）|
 | 2026-07-01 | **v2.1.197 Sonnet 5 正式成為預設模型**：Claude Code 預設切換至 Claude Sonnet 5，原生支援 1M token context window，促銷定價至 2026-08-31；使用者升版後無需手動切換即享受完整 1M context（見 [Release](https://github.com/anthropics/claude-code/releases/tag/v2.1.197)）|
 | 2026-07-01 | **Enterprise Gateway 發布**：Anthropic 新增 Enterprise Gateway，簡化企業在 AWS 和 Google Cloud 上接入 Claude Code 的流程，降低大型組織的部署門檻（見 [DevOps.com 報導](https://devops.com/anthropic-adds-enterprise-gateway-to-simplify-claude-code-access-on-aws-and-google-cloud/)）|
 | 2026-07-01 | **anthropic-sdk-python v0.115.0**：新增 Managed Agents API 支援，Python 開發者可透過 SDK 直接操作 Managed Agents 框架（見 [[entities/managed-agents]]）|

@@ -4,7 +4,7 @@
 **狀態：** active
 **領域：** 👤 人物
 **首次出現：** 2026-06-20
-**最後更新：** 2026-07-10
+**最後更新：** 2026-07-11
 **最後新聞更新：** 2026-06-26
 
 ---
@@ -34,7 +34,7 @@ John Jumper 以 AlphaFold 系列模型的開發著稱，AlphaFold 2 解決了困
 ## 參考來源
 
 - [[news/2026-06-20]]
-- [HN 討論](https://twitter.com/i/status/2068001285173834106)（HN score: 4，原始消息來自 Twitter，待核實）
+- [HN 討論](https://twitter.com/i/status/2068001285173834106)（HN score: 4，原始消息來自 Twitter；同一事實已於 2026-06-21 獲 Reuters 獨立確認，見下方歷史記錄，待核實標記解除）
 - [Anthropic hiring AlphaFold co-creator John Jumper is a real frontier-lab talent signal](https://dev.to/damogallagher/anthropic-hiring-alphafold-co-creator-john-jumper-is-a-real-frontier-lab-talent-signal-3p4f)（dev.to，2026-06-20，社群分析文）
 - [The Nobel Laureate Who Joined Anthropic Mid-Crisis](https://dev.to/peremptory/the-nobel-laureate-who-joined-anthropic-mid-crisis-5cfh)（dev.to，2026-06-26）
 - [Google's AI Brain Drain: 4 Top Researchers Leave for Anthropic in One Week](https://dev.to/doremonai/googles-ai-brain-drain-4-top-researchers-leave-for-anthropic-in-one-week-270b-wiped-gemini-35-5ffl)（dev.to，2026-06-26）
