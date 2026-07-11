@@ -12,6 +12,8 @@ LOOKBACK_HOURS = 26
 
 NEWS_DIR = REPO_ROOT / "news"                 # CLAUDE_NEWS/news/
 LOG_DIR = SRC_DIR / "logs"                    # src/logs/
+DATA_DIR = REPO_ROOT / "data"                 # CLAUDE_NEWS/data/
+FUNNEL_FILE = DATA_DIR / "source_funnel.jsonl"
 
 GITHUB_TOKEN = os.getenv("GITHUB_TOKEN", "")
 REDDIT_CLIENT_ID = os.getenv("REDDIT_CLIENT_ID", "")

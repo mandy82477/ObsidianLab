@@ -25,24 +25,33 @@
 - **僅做格式修正、品質審查、欄位補全等非新聞性修改**時，只更新「最後更新」，**不動「最後新聞更新」**
 - 完成後依 `.claude/rules/wiki-ingest-format.md`「Wiki 頁面呈現品質標準」執行審查
 
-## 來源節點 wikilink `[加入: 2026-07-09]`
+## 來源歸因回報 `[加入: 2026-07-11]`
 
-新增條目時，若該事實明確來自某一則具體新聞項目，在條目附近加上對應的來源節點連結（供 Obsidian Graph 觀察「來源 × 類別」分布，見 `wiki/CLAUDE.md` 連結慣例）。日報條目結尾的 `` `來源` `` 標記取「/」前半段對照下表：
+新增條目時，若該事實明確來自某一則具體新聞項目，在**回報訊息**（不是 wiki 正文）的「來源歸因」欄列出，每筆一行，格式：
 
-| 日報 `來源` 前綴 | wikilink |
+```
+slug | 類別 | page路徑 | item_url | item_title
+```
+
+- `slug`：日報條目結尾的 `` `來源` `` 標記取「/」前半段，對照下表
+- `類別`：你的記者類別（模型/功能/商業/安全政策/社群/人物）
+- `page路徑`：本次寫入的 wiki 相對路徑，不含 `.md`（如 `topics/ai-agent-safety`）
+- `item_url` / `item_title`：日報條目的原始連結與標題
+
+| 日報 `來源` 前綴 | slug |
 |---|---|
-| Hacker News | `[[sources/hacker-news]]` |
-| Reddit | `[[sources/reddit]]` |
-| GitHub Issues | `[[sources/github-issues]]` |
-| GitHub、GitHub Search | `[[sources/github]]` |
-| Google News | `[[sources/google-news]]` |
-| dev.to | `[[sources/devto]]` |
-| lobste.rs | `[[sources/lobsters]]` |
-| Anthropic Blog | `[[sources/anthropic-blog]]` |
-| Anthropic Status | `[[sources/anthropic-status]]` |
-| Claude API Release Notes | `[[sources/claude-api-release-notes]]` |
+| Hacker News | `hacker-news` |
+| Reddit | `reddit` |
+| GitHub Issues | `github-issues` |
+| GitHub、GitHub Search | `github` |
+| Google News | `google-news` |
+| dev.to | `devto` |
+| lobste.rs | `lobsters` |
+| Anthropic Blog | `anthropic-blog` |
+| Anthropic Status | `anthropic-status` |
+| Claude API Release Notes | `claude-api-release-notes` |
 
-僅對「今日新增的具體事實」加此連結，不需回溯補歷史條目；一則事實有多個來源時可加多個 wikilink。此為輕量標記，不需額外欄位或表格，不影響既有 `## 參考來源`（日報連結）寫法。
+僅對「今日新增的具體事實」回報歸因，不需回溯補歷史條目；一則事實有多個來源時每個來源各回報一筆。**wiki 正文不加任何 sources wikilink**（來源節點連結機制已於 2026-07-11 撤除）；歸因由主編 append 至 `data/source_attribution.jsonl`，不影響既有 `## 參考來源`（日報連結）寫法。
 
 ---
 
@@ -87,5 +96,6 @@ feature-radar 新增：[條目標題 or 無]
 index.md 狀態變更：[page: 舊狀態 → 新狀態 or 無]
 新增頁面：[filepath or 無]
 同步自查：[✅ 已同步 / ⚠️ 需主編轉知（說明）/ 不適用]
+來源歸因：[每筆一行 or 無]
 | 呈現品質審查 | [每頁：✅ 通過 / ⚠️ 已修復（說明）/ 📋 已記錄待辦（說明）] |
 ```

@@ -3,7 +3,7 @@
 **狀態：** monitoring
 **領域：** 🌐 社群
 **開始日期：** 2026-04-25
-**最後更新：** 2026-07-10
+**最後更新：** 2026-07-11
 **最後新聞更新：** 2026-07-10
 
 > **最新工作流模式**（2026-07-10）
@@ -59,35 +59,35 @@
 
 - **核心模式：** 作者觀察到 agent 在長 session 中途「變笨」，最初直覺懷疑是某個 MCP server 佔用過多 context，但實際測量 context window 使用量後才找到真正原因（並非 MCP 本身），提供「先測量、再歸咎工具」的可複用診斷流程，避免不必要的除錯繞路
 - **與既有模式的關係：** 呼應既有「Context 管理生命週期」與「Context Rot 修復五法」（見 [[topics/community-tech-discussions]]）已建立的共識——「越用越笨」多為 context 腐蝕而非模型或工具退步；此案例補充具體診斷步驟（測量優先於歸因），而非直接假設某個外部工具是元凶
-- **來源：** 「My AI agent got dumber mid-session. I measured the context window before blaming MCP.」— dev.to（作者 rapls，#claudecode，原文發布 06-17）[[sources/devto]]
+- **來源：** 「My AI agent got dumber mid-session. I measured the context window before blaming MCP.」— dev.to（作者 rapls，#claudecode，原文發布 06-17）
 - **成熟度：** ⏳ 新興（單一作者第一手診斷經驗，尚無其他來源複現）
 
 #### Agent-plan-review-loop：對抗式 Claude Reviewer 逐步挑戰實作計畫（2026-07-10）
 
 - **核心模式：** 開發者開源 agent-plan-review-loop，讓一個預設「這個計畫是錯的」的對抗式 Claude reviewer 讀取真實 codebase，反覆挑戰待審計畫直到通過審查才放行，解決 LLM 審查者過度樂觀、容易對計畫照單全收的問題
 - **與既有模式的關係：** 與既有「多代理 PR Review」類別中「對抗性審查（計畫前 + 程式碼後）」（2026-05-12／06-25）同屬同一模式家族，此案例是該模式在「計畫審查」階段的具體開源實作，reviewer 明確讀取實際 codebase 而非僅憑計畫文字判斷
-- **來源：** 「I built a multi-agent loop where an adversarial Claude reviewer reads your actual codebase before approving plans」— dev.to（作者 execute25，#claudeai，原文發布 06-25）[[sources/devto]]
+- **來源：** 「I built a multi-agent loop where an adversarial Claude reviewer reads your actual codebase before approving plans」— dev.to（作者 execute25，#claudeai，原文發布 06-25）
 - **成熟度：** ⏳ 新興（單一開源專案，尚無採用數據）
 
 #### Local Reverse Proxy：攔截並檢視 Claude Code 實際送出的請求內容（2026-07-10）
 
 - **核心模式：** 因 Claude Code 不遵守 HTTP_PROXY 環境變數設定，作者自建一個跑在 loopback 的本地反向代理，即時攔截並檢視每次請求送往 Anthropic 的完整 prompt、token 用量與花費，補足官方缺乏的請求層可觀測性
 - **與既有模式的關係：** 與既有「費用可觀測性工具」類別（成本追蹤/預算工具）互補，差異在於此工具聚焦「請求內容本身」的透明度而非僅統計費用數字；也呼應 07-01「Claude Code 隱寫術」信任危機事件後，社群對「Claude Code 究竟送了什麼出去」的關注升高（見 [[topics/community-tech-discussions]]）
-- **來源：** 「I built a local reverse proxy to see what Claude Code actually sends to Anthropic」— dev.to（作者 houleixx，#claudecode，原文發布 06-10）[[sources/devto]]
+- **來源：** 「I built a local reverse proxy to see what Claude Code actually sends to Anthropic」— dev.to（作者 houleixx，#claudecode，原文發布 06-10）
 - **成熟度：** ⏳ 新興（單一作者工具，未見開源 repo 連結或採用數據）
 
 #### Devthropology：GitHub Repo 貢獻者互動與程式碼健康度視覺化（2026-07-10）
 
 - **核心模式：** Show HN 工具 Devthropology 分析 GitHub PR 資料，提供貢獻者互動關係與程式碼健康度的視覺化洞察，供團隊了解協作模式與潛在瓶頸
 - **與 Claude Code 生態的關係：** 非 Claude Code 專屬工具，但屬於「AI 輔助開發團隊如何觀察協作健康度」的鄰接工具類別，可作為 agent 大量產出 PR 後的團隊層可觀測性補充（推論）
-- **來源：** [Show HN: Devthropology – Better Insights for GitHub Repos](https://devthropology.com/demo)（Hacker News Show HN，34 分）[[sources/hacker-news]]
+- **來源：** [Show HN: Devthropology – Better Insights for GitHub Repos](https://devthropology.com/demo)（Hacker News Show HN，34 分）
 - **成熟度：** ⏳ 新興（單一 Show HN 專案，尚無採用數據；達互動門檻中門檻 HN≥30分）
 
 #### AI 思考表徵編輯器：視覺化並編輯模型回答前的內部推理（2026-07-10）
 
 - **核心模式：** 開發者受 Anthropic 論文《Verbalizable Representations Form a Global Workspace in Language Models》啟發，做出可視覺化並編輯開源模型內部推理表徵（thinking representation）的網頁工具，讓使用者在模型正式作答前介入調整其「思考」內容
 - **與既有模式的關係：** 呼應既有「Extended Thinking 為摘要而非真實推理」討論（見 [[topics/community-tech-discussions]]）對「thinking blocks 究竟代表什麼」的持續關注；此工具提供社群一個實驗性介面直接操作內部表徵，而非僅停留在文本層辯論
-- **來源：** [Show HN: I built a web tool to see and edit what an AI thinks before it answers](https://lucid.earthpilot.ai)（Hacker News Show HN，31 分）；相關論文亦見於同日 MIT Technology Review 報導「Anthropic found a hidden space where Claude puzzles over concepts」[[sources/hacker-news]]
+- **來源：** [Show HN: I built a web tool to see and edit what an AI thinks before it answers](https://lucid.earthpilot.ai)（Hacker News Show HN，31 分）；相關論文亦見於同日 MIT Technology Review 報導「Anthropic found a hidden space where Claude puzzles over concepts」
 - **成熟度：** ⏳ 新興（單一 Show HN 專案，尚無採用數據；達互動門檻中門檻 HN≥30分）
 
 #### Shellular：從手機遠端操作本機 Claude Code / Codex Session（2026-07-08）

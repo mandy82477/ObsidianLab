@@ -56,7 +56,8 @@ jobs:
           git config user.email "github-actions[bot]@users.noreply.github.com"
           git add CLAUDE_NEWS/src/gathered_items.json \
                   CLAUDE_NEWS/src/news_aggregator/emitted_items.json \
-                  CLAUDE_NEWS/src/news_aggregator/seen_urls.json
+                  CLAUDE_NEWS/src/news_aggregator/seen_urls.json \
+                  CLAUDE_NEWS/data/source_funnel.jsonl
           if git diff --cached --quiet; then
             echo "No data changes to commit."
           else

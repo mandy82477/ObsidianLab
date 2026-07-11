@@ -51,6 +51,14 @@
 
 **`wiki/log.md`**（append only）：寫入完整 ingest 紀錄，含所有記者回報摘要與品質審查結果。彙整時若發現記者品質問題（回報含糊、漏同步自查、格式退化等），在該次 ingest 紀錄內加一行 `品質備註：[類別] [問題型態一句話]`；無問題則不寫此行。
 
+**`data/source_attribution.jsonl`**（append only）：把所有記者回報的「來源歸因」欄逐筆轉成一行 JSON append，schema：
+
+```json
+{"date": "<日報日期>", "source": "<slug>", "category": "<六類別>", "page": "<wiki相對路徑不含.md>", "item_url": "...", "item_title": "..."}
+```
+
+slug 對照表見 `.claude/rules/wiki-reporter-shared.md`「來源歸因回報」；記者回報「無」則不寫。schema 詳細說明見 `data/README.md`。
+
 **`wiki/overview.md`**：若有重大事件（新模型發布、重大政策變化），更新「當前局勢」段落。
 
 ---
@@ -66,6 +74,7 @@ feature-radar 新增：[條目標題 or 無]
 index.md 狀態變更：[page: 舊狀態 → 新狀態 or 無]
 新增頁面：[filepath or 無]
 同步自查：[✅ 已同步 / ⚠️ 需主編轉知（說明）/ 不適用]
+來源歸因：[每筆一行 or 無]
 ```
 
 主編依此格式彙整，確保不遺漏任何狀態變更。

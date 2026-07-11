@@ -2592,3 +2592,15 @@ Append-only 紀錄。每次 ingest、lint，以及**揭露缺陷或促成改動�
 - 摘要：中國「後門」指控延燒第三天、Anthropic 首度公開否認；前聯準會主席 Bernanke 加入 Anthropic 治理信託；Claude Code v2.1.206 發布；OpenAI ChatGPT Work/GPT-5.6 與 Cursor 新 Agent 加劇對 Anthropic 的競爭壓力
 - 呈現品質：全部通過
 - 品質備註：無
+
+## 2026-07-11 Query | sources wikilink 機制撤除 → 改結構化 ledger + 漏斗統計
+
+- **使用者點出：** 質疑「wiki 都知道資料來源嗎／效果好嗎／有必要放 wiki 嗎」——sources wikilink 機制（07-10 加入）是否值得存在。
+- **根因（兩層）：**
+  1. sources wikilink 寫在 wiki 正文會外洩到 web reader，成為斷鏈與突兀按鈕（讀者視角是噪音）
+  2. Obsidian Graph 的邊是二元的（有連 / 沒連），回答不了「哪個來源對哪個類別貢獻多少比重」這種需要計數的問題
+- **處置：**
+  - 撤機制：清除 5 頁共 12 條 sources wikilink、刪除 `wiki/sources/` 10 個節點頁、撤 `.claude/rules/wiki-reporter-shared.md`「來源節點 wikilink」規則（改為「來源歸因回報」——記者在回報訊息回報，不寫 wiki 正文）
+  - 改結構化 ledger：`data/source_attribution.jsonl`（主編彙整時 append，schema 見 `data/README.md`）
+  - 加漏斗統計：`data/source_funnel.jsonl`（`main.py` 每次 gather/render append 各來源 gathered→filtered→emitted 計數，由 daily-gather Actions commit）
+  - 設計原則沉澱至使用者全域 `~/.claude/system-design-principles.md` C4/C5/C6

@@ -4,7 +4,7 @@
 **狀態：** active
 **領域：** 👤 人物
 **首次出現：** 2026-07-10
-**最後更新：** 2026-07-10
+**最後更新：** 2026-07-11
 **最後新聞更新：** 2026-07-10
 
 > **最新動態**（2026-07-09）
@@ -31,7 +31,7 @@
 - Reuters，2026-07-09：「Former Fed chair Ben Bernanke joins Anthropic's AI oversight trust」
 - CNBC，2026-07-09：「Anthropic appoints former Fed Chair Ben Bernanke to its independent trust」
 - Bloomberg，2026-07-09：「Former Fed Chairman Ben Bernanke Joins Anthropic Oversight Trust」
-- [[sources/hacker-news]]：66 分討論，聚焦治理公信力意義
+- Hacker News：66 分討論，聚焦治理公信力意義
 
 ## 歷史記錄
 

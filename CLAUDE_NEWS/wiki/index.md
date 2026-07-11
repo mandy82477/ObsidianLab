@@ -100,14 +100,6 @@ LLM 查詢此 wiki 時，**先讀這個檔案**找相關頁面，再讀具體頁
 
 ---
 
-## Sources（來源節點）
-
-供 Obsidian Graph View 分析「來源 × 類別」分布，見 `wiki/CLAUDE.md` 連結慣例；記者新增條目規則見 `.claude/rules/wiki-reporter-shared.md`。
-
-[[sources/hacker-news]] · [[sources/reddit]] · [[sources/github-issues]] · [[sources/github]] · [[sources/google-news]] · [[sources/devto]] · [[sources/lobsters]] · [[sources/anthropic-blog]] · [[sources/anthropic-status]] · [[sources/claude-api-release-notes]]
-
----
-
 ## Entities（實體頁）
 
 | 頁面 | 類型 | 領域 | 狀態 | 摘要 |

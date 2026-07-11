@@ -1,10 +1,12 @@
 import argparse
+import json
 import logging
 import logging.handlers
 import math
 import time
 from concurrent.futures import ThreadPoolExecutor, as_completed
 from datetime import date, datetime, time as dt_time, timedelta, timezone
+from pathlib import Path
 
 import news_aggregator.config as _cfg
 from news_aggregator.config import LOG_DIR, NEWS_DIR
@@ -72,6 +74,81 @@ def _warn_if_scores_all_zero(name: str, items: list, logger) -> None:
             "（疑似靜默劣化，該來源將被下游互動門檻全數擋掉）",
             name, len(items), "/".join(sorted(claimed)),
         )
+
+
+def _count_by_prefix(items) -> dict[str, int]:
+    """Group items by the leading part of their source label.
+
+    "Hacker News / Show HN" → "Hacker News"; "Reddit / r/X · 週熱門" → "Reddit".
+    """
+    counts: dict[str, int] = {}
+    for it in items:
+        prefix = (getattr(it, "source", "") or "").split(" / ")[0].split(" · ")[0].strip()
+        counts[prefix] = counts.get(prefix, 0) + 1
+    return counts
+
+
+def _map_prefix_to_registered(prefix: str, registered: list[str]) -> str | None:
+    """Best-effort map a source-label prefix back to a registered source name."""
+    if not prefix:
+        return None
+    for name in registered:
+        if prefix == name:
+            return name
+    for name in registered:
+        if prefix.startswith(name) or name.startswith(prefix):
+            return name
+    return None
+
+
+def write_funnel_record(path, date, mode, lookback_hours, source_status,
+                        filtered_items, emitted_items) -> None:
+    """Append one JSON line of per-source funnel stats to `path`.
+
+    Best-effort: any failure is logged as a warning and never interrupts the
+    main pipeline.
+    """
+    logger = logging.getLogger(__name__)
+    try:
+        registered = list(source_status.keys())
+        sources = {
+            name: {
+                "ok": bool(status.get("ok", False)),
+                "gathered": int(status.get("count", 0)),
+                "filtered": 0,
+                "emitted": 0,
+            }
+            for name, status in source_status.items()
+        }
+        for stage, items in (("filtered", filtered_items), ("emitted", emitted_items)):
+            for prefix, n in _count_by_prefix(items).items():
+                name = _map_prefix_to_registered(prefix, registered)
+                if name is None:
+                    bucket = sources.setdefault(
+                        "_unmapped",
+                        {"ok": None, "gathered": 0, "filtered": 0, "emitted": 0},
+                    )
+                    bucket[stage] += n
+                else:
+                    sources[name][stage] += n
+        record = {
+            "date": date if isinstance(date, str) else date.isoformat(),
+            "run_ts": datetime.now(tz=timezone.utc).isoformat(),
+            "mode": mode,
+            "lookback_hours": lookback_hours,
+            "sources": sources,
+            "totals": {
+                "gathered": sum(s.get("gathered", 0) for s in sources.values()),
+                "filtered": len(filtered_items),
+                "emitted": len(emitted_items),
+            },
+        }
+        path = Path(path)
+        path.parent.mkdir(parents=True, exist_ok=True)
+        with path.open("a", encoding="utf-8") as f:
+            f.write(json.dumps(record, ensure_ascii=False) + "\n")
+    except Exception as e:
+        logger.warning("source funnel 統計寫入失敗（不影響主流程）: %s", e)
 
 
 def check_gap_lookback(target_date: date, news_dir=NEWS_DIR) -> str | None:
@@ -167,6 +244,7 @@ def main() -> None:
 
     filtered = filter_relevant(enriched)
     logger.info("After relevance filter: %d items", len(filtered))
+    relevance_filtered = filtered  # snapshot for funnel stats (pre emitted-cache)
 
     if args.gather_only:
         # Cross-run dedup: drop items already emitted in a previous digest,
@@ -184,8 +262,6 @@ def main() -> None:
             logger.info("Emitted-cache filter: skipped for backfill (--date %s)", args.date)
 
         # Write gathered items to JSON for Claude session to analyse
-        import json as _json
-        from datetime import datetime as _dt
         out = {
             "date": target_date.isoformat(),
             "article_count": len(filtered),
@@ -206,15 +282,28 @@ def main() -> None:
             ],
         }
         gather_path = LOG_DIR.parent / "gathered_items.json"
-        gather_path.write_text(_json.dumps(out, ensure_ascii=False, indent=2), encoding="utf-8")
+        gather_path.write_text(json.dumps(out, ensure_ascii=False, indent=2), encoding="utf-8")
         logger.info("--gather-only: wrote %d items to %s", len(filtered), gather_path)
         # Persist emitted cache only after the output JSON was written successfully.
         # Skipped entirely for backfill runs — see cache-skip comment above.
         if updated_cache is not None:
             save_cache(updated_cache)
+        write_funnel_record(
+            _cfg.FUNNEL_FILE, target_date,
+            "backfill" if args.date else "gather",
+            _cfg.LOOKBACK_HOURS, source_status,
+            relevance_filtered, filtered,
+        )
         elapsed = time.time() - start
         logger.info("=== Gather complete: %d items / %d sources / %.1fs ===", len(filtered), len(sources), elapsed)
         return
+
+    write_funnel_record(
+        _cfg.FUNNEL_FILE, target_date,
+        "backfill" if args.date else "render",
+        _cfg.LOOKBACK_HOURS, source_status,
+        relevance_filtered, filtered,
+    )
 
     digest_path, is_fallback = render(filtered, target_date, source_status)
     logger.info("Digest written: %s", digest_path)

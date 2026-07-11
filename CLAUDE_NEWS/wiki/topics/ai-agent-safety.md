@@ -3,7 +3,7 @@
 **狀態：** ongoing
 **領域：** 🏛️ 政策/安全
 **開始日期：** 2026-04-27
-**最後更新：** 2026-07-10
+**最後更新：** 2026-07-11
 **最後新聞更新：** 2026-07-10
 
 > **最新安全事件**（2026-07-10）
@@ -440,9 +440,9 @@
 > 更早期時序見 [[topics/ai-agent-safety-archive]]
 
 ### 2026-07-10
-- **[狀態轉折] 中國「後門」指控延燒第三天，Anthropic 首度公開否認**：UC Today、BankInfoSecurity、Technology Org、TechRepublic、TechRadar、CISO Series、Fox Business 等多家獨立媒體（[[sources/google-news]]）續報導；**Anthropic 今日首度公開反駁**中國官方「後門」指控本身——為此議題自 06-30 起追蹤以來，官方第一次正面回應中國官方層級的指控（區別於 07-07 針對社群原始指控的「實驗」定調）；反駁具體內容與是否附證據待查證原文；技術面詳見「## 技術彙整」；政策/外交面詳見 [[topics/anthropic-government-policy]]
-- **[同日聲明] Anthropic Blog：「Inviting hard questions」**（[[sources/anthropic-blog]]）：Anthropic 發文正面回應外界對 AI 安全性、是否取代工作等疑慮，發布時間（07-10 12:19 UTC）與後門否認同日，兩者是否為同一波公關回應待查證（推論，未證實）
-- **[第二來源，待查證] dev.to（adioof）「隱藏追蹤標記」steganography 指控**（[[sources/devto]]）：作者指控 Claude Code 透過競品網域路由與中國時區觸發 Unicode 撇號變體隱藏標記，主張此為 steganography 而非 telemetry（發布於 2026-07-01，今日日報首次收錄）；與既有 07-01 同形字符隱寫術條目（thereallo.dev）高度相關，可能為同一發現的平行報導；單一作者主張，尚待第三方佐證；詳見「## 技術彙整」
+- **[狀態轉折] 中國「後門」指控延燒第三天，Anthropic 首度公開否認**：UC Today、BankInfoSecurity、Technology Org、TechRepublic、TechRadar、CISO Series、Fox Business 等多家獨立媒體續報導；**Anthropic 今日首度公開反駁**中國官方「後門」指控本身——為此議題自 06-30 起追蹤以來，官方第一次正面回應中國官方層級的指控（區別於 07-07 針對社群原始指控的「實驗」定調）；反駁具體內容與是否附證據待查證原文；技術面詳見「## 技術彙整」；政策/外交面詳見 [[topics/anthropic-government-policy]]
+- **[同日聲明] Anthropic Blog：「Inviting hard questions」**：Anthropic 發文正面回應外界對 AI 安全性、是否取代工作等疑慮，發布時間（07-10 12:19 UTC）與後門否認同日，兩者是否為同一波公關回應待查證（推論，未證實）
+- **[第二來源，待查證] dev.to（adioof）「隱藏追蹤標記」steganography 指控**：作者指控 Claude Code 透過競品網域路由與中國時區觸發 Unicode 撇號變體隱藏標記，主張此為 steganography 而非 telemetry（發布於 2026-07-01，今日日報首次收錄）；與既有 07-01 同形字符隱寫術條目（thereallo.dev）高度相關，可能為同一發現的平行報導；單一作者主張，尚待第三方佐證；詳見「## 技術彙整」
 
 ### 2026-07-08
 - **[官方升級] 中國工業主管機關正式發布「後門」資安警示**：Reuters、WSJ、CNBC、CBS News、Cybernews、China Daily、Seeking Alpha、The Tech Buzz 等至少 8 家媒體同步報導中國官方就 Claude Code 發布「後門」正式資安警示，指控其秘密追蹤使用者並回傳資料至遠端伺服器；為中國官方（非社群/企業）首次就此議題正式表態，直接延續 06-30「embedded spyware」社群指控敘事線，且與 Anthropic 07-07「內部實驗」定調形成正面矛盾（兩方框架互不承認）；多數報導標明「後門」為中方單方說法，未附技術證據，Anthropic 尚未回應（Reuters，https://www.reuters.com/legal/litigation/china-issues-backdoor-security-alert-over-anthropics-claude-code-2026-07-08/；WSJ，https://www.wsj.com/tech/ai/china-says-it-has-found-security-vulnerabilities-in-anthropics-claude-code-5ecf05dc）；政策/外交面詳見 [[topics/anthropic-government-policy]]

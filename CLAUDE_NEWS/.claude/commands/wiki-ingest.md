@@ -96,6 +96,10 @@ argument-hint: [YYYY-MM-DD]
 - 品質備註：（若彙整時發現記者品質問題——回報含糊、漏同步自查、格式退化等——每項一行 `[類別] [問題型態一句話]`；無問題則不寫此行）
 ```
 
+**`data/source_attribution.jsonl`**（append only，不可修改既有行）
+- 把所有記者回報的「來源歸因」欄逐筆轉成一行 JSON append，schema 與 slug 對照見 `.claude/rules/wiki-ingest.md`「第三步」與 `data/README.md`
+- 記者回報「無」則該記者不寫；全部記者皆「無」則不動此檔
+
 **`wiki/overview.md`**（視情況）
 - 若有重大事件（新模型發布、重大政策變化），更新「當前局勢」段落
 
@@ -107,6 +111,7 @@ argument-hint: [YYYY-MM-DD]
 - [ ] feature-radar.md 已彙整更新（無新功能則標「本日無新功能」）
 - [ ] wiki/index.md 狀態已全部同步（含所有記者回報的狀態變更）
 - [ ] wiki/log.md 已 append 本次 ingest 紀錄（含品質審查彙整，未修改既有條目）
+- [ ] data/source_attribution.jsonl 已 append 所有記者回報的來源歸因（每筆一行 JSON；全部回報「無」則跳過）
 - [ ] 未在 `CLAUDE_NEWS/wiki/` 以外路徑建立或修改任何 wiki 檔案
 
 完成後輸出摘要：
