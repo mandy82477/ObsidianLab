@@ -26,7 +26,7 @@ window.WIKI_DATA = {
       "pill": "active",
       "firstSeen": "2026-07-10",
       "startDate": "",
-      "lastUpdated": "2026-07-10",
+      "lastUpdated": "2026-07-11",
       "lastNewsUpdate": "2026-07-10",
       "summary": "2026-07-09，Anthropic 官方公告前聯準會主席 Ben Bernanke 加入公司獨立監督機構「長期利益信託」（Long-Term Benefit Trust）董事會。長期利益信託是 Anthropic 治理結構中負責監督公司使命（安全優先於商業利益）的獨立機構，成員具有選任/罷免部分董事會成員的權力。…",
       "latestHeadline": "前聯準會主席 Ben Bernanke 加入 Anthropic 長期利益信託（Long-Term Benefit Trust）董事會，Reuters/CNBC/Bloomberg 同步報導，HN 討論 66 分（來源：Anthropic 官方公告、Reuters、CNBC、Bloomberg）"
@@ -433,7 +433,7 @@ window.WIKI_DATA = {
       "pill": "active",
       "firstSeen": "",
       "startDate": "2026-04-27",
-      "lastUpdated": "2026-07-10",
+      "lastUpdated": "2026-07-11",
       "lastNewsUpdate": "2026-07-10",
       "summary": "**最新態勢（2026-07-10）：** 中國「後門」指控延燒第三天，UC Today、BankInfoSecurity、Technology Org、TechRepublic、TechRadar、CISO Series、Fox Business 等多家獨立媒體續報導；**同日 Anthropic 首度公開反駁該指控…",
       "latestHeadline": "最新態勢（2026-07-10）： 中國「後門」指控延燒第三天，UC Today、BankInfoSecurity、Technology Org、TechRepublic、TechRadar、CISO Series、Fox Business 等多家獨立媒體續報導；同日 Anthropic 首度公開反駁該指控——為此議題"
@@ -493,7 +493,7 @@ window.WIKI_DATA = {
       "pill": "warn",
       "firstSeen": "",
       "startDate": "2026-05-01",
-      "lastUpdated": "2026-07-10",
+      "lastUpdated": "2026-07-11",
       "lastNewsUpdate": "2026-07-10",
       "summary": "**出口管制已於 2026-07-01 全面解除。** 美國商務部長 Howard Lutnick 宣布解除 Fable 5 和 Mythos 5 的出口管制，正式生效；Anthropic 承諾三項義務換取解封（主動偵測安全風險、與政府合作制定協議與標準、通報惡意活動）；封鎖期共 18–19 天（2026-06-13 …",
       "latestHeadline": "出口管制已於 2026-07-01 全面解除。 美國商務部長 Howard Lutnick 宣布解除 Fable 5 和 Mythos 5 的出口管制，正式生效；Anthropic 承諾三項義務換取解封（主動偵測安全風險、與政府合作制定協議與標準、通報惡意活動）；封鎖期共 18–19 天（2026-06-13 全面封鎖"
@@ -538,7 +538,7 @@ window.WIKI_DATA = {
       "pill": "active",
       "firstSeen": "",
       "startDate": "2026-04-25",
-      "lastUpdated": "2026-07-10",
+      "lastUpdated": "2026-07-11",
       "lastNewsUpdate": "2026-07-10",
       "summary": "追蹤 Claude Code 社群中活躍的概念辯論、設計哲學、實證研究與技術反思。與 [[topics/community-tech-patterns]] 追蹤具體工具和工作流不同，本頁聚焦思想碰撞：什麼哲學正在成形、什麼假設受到挑戰、什麼共識正在收斂。頁面結構：**🔥 本週熱點**（當前最熱的持續議題）→ **🌊 長…",
       "latestHeadline": "追蹤 Claude Code 社群中活躍的概念辯論、設計哲學、實證研究與技術反思。與  追蹤具體工具和工作流不同，本頁聚焦思想碰撞：什麼哲學正在成形、什麼假設受到挑戰、什麼共識正在收斂。頁面結構：🔥 本週熱點（當前最熱的持續議題）→ 🌊 長期議題（主題彙整）→ 熱門討論記錄（最近 30 天）→ 技術彙整（逐篇深度筆記）"
@@ -553,7 +553,7 @@ window.WIKI_DATA = {
       "pill": "warn",
       "firstSeen": "",
       "startDate": "2026-04-25",
-      "lastUpdated": "2026-07-10",
+      "lastUpdated": "2026-07-11",
       "lastNewsUpdate": "2026-07-10",
       "summary": "追蹤 Claude Code 社群在實際開發中累積的**工作流與應用模式**。本頁收錄的模式類型包括 Multi-agent 架構、Skills 設計、CLAUDE.md 管理、Hooks 與自動化、模型使用策略、Token 成本優化、記憶與知識管理、Plugin/MCP 整合等，持續累積形成社群最佳實踐知識庫。 工具…",
       "latestHeadline": "追蹤 Claude Code 社群在實際開發中累積的工作流與應用模式。本頁收錄的模式類型包括 Multi-agent 架構、Skills 設計、CLAUDE.md 管理、Hooks 與自動化、模型使用策略、Token 成本優化、記憶與知識管理、Plugin/MCP 整合等，持續累積形成社群最佳實踐知識庫。"
