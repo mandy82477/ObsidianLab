@@ -14,10 +14,13 @@ name: daily-gather
 
 on:
   schedule:
-    # 12:30 UTC = 20:30 Asia/Taipei，早於雲端 routine（13:00 UTC / 21:00 台北）約 30 分鐘，
+    # 10:00 UTC = 18:00 Asia/Taipei，早於雲端 routine（13:00 UTC / 21:00 台北）約 3 小時。
     # 留足時間讓 commit 推上 repo 供雲端 routine 的新鮮 checkout 讀到。
-    # 註：GitHub 排程可能因負載延遲數分鐘，30 分鐘緩衝為此預留。
-    - cron: "30 12 * * *"
+    # 註：原設計為 30 分鐘緩衝（12:30 UTC），2026-07-11 首跑實測 GitHub Actions
+    # scheduled workflow 延遲達 1.5–2.7 小時（12:30 排程實跑 14:02/15:12 UTC），
+    # 30 分鐘緩衝不足以吸收，導致雲端 routine 新鮮度防線正確中止、當日未自動生日報。
+    # 拉大為 3 小時緩衝，覆蓋觀測到的最大延遲（2h42m）。
+    - cron: "0 10 * * *"
   workflow_dispatch: {}  # 允許手動觸發（測試用）
 
 # 同一時間只跑一個，避免排程與手動觸發重疊造成 push 衝突。

@@ -15,7 +15,7 @@
 
 ```
 ① GitHub Actions（.github/workflows/daily-gather.yml）
-   12:30 UTC / 20:30 台北 · 網路無限制 · 免 API
+   10:00 UTC / 18:00 台北 · 網路無限制 · 免 API
    跑 python -m news_aggregator.main --gather-only
    → commit gathered_items.json + seen_urls.json + emitted_items.json 回 master
         ↓（資料進 repo）
@@ -25,7 +25,7 @@
    → 生日報 → 六記者 ingest → build → 單一 push → 上站
 ```
 
-兩段用 **30 分鐘時間差**鬆耦合;② 的新鮮度防線確保 ① 若失敗,② 不會拿舊料生假日報。
+兩段用 **3 小時時間差**鬆耦合（`[改版: 2026-07-11]` 原設計 30 分鐘，首跑當日 GitHub Actions 排程延遲 1.5–2.7 小時導致 ② 新鮮度防線中止、未生假日報，已拉大緩衝覆蓋觀測到的最大延遲）；② 的新鮮度防線確保 ① 若失敗,② 不會拿舊料生假日報。
 
 ## 為什麼快取檔要 commit（與 CLAUDE.md 資料檔例外的關係）
 
@@ -47,4 +47,4 @@ CLAUDE.md 說資料檔「不需 commit」是指手動流程無此義務,非禁�
 - **Actions**：https://github.com/mandy82477/ObsidianLab/actions → `daily-gather`
 - **雲端 routine**：https://claude.ai/code/routines/trig_01JNrBGyrsZk1HjBQeJ7UKLG
 - **是否上站**：master 每天應出現 `data: daily gather`（①）+ `news/wiki/web`（②）共約 4 筆 commit;網站 Pages 自動重建。
-- **待驗證**：首次全自動實跑為 2026-07-11;在此之前僅各段分別驗過（① 43 條實測、② 寫回 GitHub master 實測 80 秒）。
+- **首跑結果（2026-07-11）**：❌ 失敗。① 實際延遲至 14:02 UTC 才 push（設計 12:30 UTC），② 於 13:00 UTC 開跑時讀不到當日資料，新鮮度防線正確中止、未生假日報。已本機補跑並將 ① 排程提早至 10:00 UTC（3 小時緩衝），見 `docs/workaround-register.md` 對應列。下次自動線觀察日：2026-07-12 起。
