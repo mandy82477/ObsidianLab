@@ -127,4 +127,6 @@
 
 **修改任何 `CLAUDE.md`、`.claude/commands/`、`.claude/rules/` 中的檔案後，必須確保所有相關指令仍可正確執行，執行 `/review-commands` 直到零錯誤為止。**
 
+規則一致性的機械檢查（裸露引用、路徑存在性、錨點、同步配對）已納入測試套件（`scripts/check_rules.py`，掛在 `python scripts/run_tests.py` 內一併執行）；`/review-commands` 只負責判讀失敗並修復。
+
 詳細規則（路徑引用原則、反向查詢、設計原則、長度控制）：**`.claude/rules/claude-md-edit.md`**（修改前必須讀取此檔）

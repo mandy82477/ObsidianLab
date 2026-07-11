@@ -52,5 +52,7 @@ command / skill 中永遠使用明確路徑，**禁止裸露的 `CLAUDE.md`**：
 
 **修改完成後執行 `/review-commands`，直到零錯誤才可收工。**
 
+規則一致性已納入測試套件（`scripts/check_rules.py`，讀取 `.claude/review-registry.json` 執行裸露引用、路徑存在性、錨點、同步配對四類機械檢查），`/review-commands` 只做失敗判讀與修復，不再手動 grep。新增同步配對或錨點時登記進 `.claude/review-registry.json`，不需另外維護紙本註冊表。
+
 **判斷標準：**
 > 所有引用這個檔案的 command / skill，在修改後還能正確找到所需的規則或格式嗎？若否，先修引用再收工。

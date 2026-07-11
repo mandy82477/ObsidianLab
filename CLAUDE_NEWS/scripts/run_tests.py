@@ -13,14 +13,19 @@ run_tests.py — 執行 src/tests/ 下所有確定性單元測試（unittest dis
 
 供 news-pipeline-steps.md Step 4（建置 Web Reader）前置檢查呼叫：
 測試失敗時視同 Step 4 失敗，跳過 web build 與 web commit。
+
+跑完 unittest 全數通過後，另外執行 scripts/check_rules.py（.claude/commands、
+.claude/rules 的規則一致性機械檢查）；任一失敗都會讓本腳本整體 exit 1。
 """
 import io
+import subprocess
 import sys
 import unittest
 from pathlib import Path
 
 REPO_ROOT = Path(__file__).resolve().parent.parent
 SRC_DIR = REPO_ROOT / "src"
+CHECK_RULES = REPO_ROOT / "scripts" / "check_rules.py"
 
 
 def main() -> int:
@@ -41,18 +46,30 @@ def main() -> int:
     runner = unittest.TextTestRunner(stream=stream, verbosity=2)
     result = runner.run(suite)
 
-    if result.wasSuccessful():
+    unit_ok = result.wasSuccessful()
+    if unit_ok:
         stream.write(f"\nOK: {result.testsRun} 個測試案例全數通過\n")
-        stream.flush()
-        return 0
-
-    stream.write(f"\nFAILED: {len(result.failures)} 個失敗、{len(result.errors)} 個錯誤（共 {result.testsRun} 個案例）\n")
-    for test, _ in result.failures:
-        stream.write(f"  FAIL: {test}\n")
-    for test, _ in result.errors:
-        stream.write(f"  ERROR: {test}\n")
+    else:
+        stream.write(f"\nFAILED: {len(result.failures)} 個失敗、{len(result.errors)} 個錯誤（共 {result.testsRun} 個案例）\n")
+        for test, _ in result.failures:
+            stream.write(f"  FAIL: {test}\n")
+        for test, _ in result.errors:
+            stream.write(f"  ERROR: {test}\n")
     stream.flush()
-    return 1
+
+    # 規則一致性機械檢查（commands / rules 的裸露引用、路徑存在性、錨點、同步配對）
+    rules_ok = True
+    if CHECK_RULES.exists():
+        proc = subprocess.run([sys.executable, str(CHECK_RULES)], capture_output=True, text=True, encoding="utf-8")
+        stream.write("\n" + proc.stdout + "\n")
+        if proc.stderr:
+            stream.write(proc.stderr + "\n")
+        rules_ok = proc.returncode == 0
+    else:
+        stream.write(f"\nWARN: {CHECK_RULES} 不存在，跳過規則一致性檢查\n")
+    stream.flush()
+
+    return 0 if (unit_ok and rules_ok) else 1
 
 
 if __name__ == "__main__":

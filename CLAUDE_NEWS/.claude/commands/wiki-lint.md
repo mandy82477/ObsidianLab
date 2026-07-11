@@ -173,12 +173,12 @@ index.md 狀態變更：[page: 舊狀態→新狀態 or 無]
 
 | 規則描述中的引用 | 應存在於 | 驗證方式 |
 |---------------|---------|---------|
-| `首次出現` 欄 | `topics/community-tech-tools.md` | grep `\| 首次出現 \|` |
-| `## 痛點洞察` 區塊 | `topics/community-tech-tools.md` | grep `## 痛點洞察` |
-| `近期工具` 欄 | `topics/community-tech-tools.md` | grep `近期工具` |
-| `## 技術彙整` 區塊 | `topics/community-tech-discussions.md` | grep `## 技術彙整` |
-| `熱門討論` 表格 | `topics/community-tech-discussions.md` | grep `熱門討論` |
-| `衍生` 欄 | `topics/community-tech-discussions.md` | grep `衍生` |
+| `首次出現` 欄 | `wiki/topics/community-tech-tools.md` | grep `\| 首次出現 \|` |
+| `## 痛點洞察` 區塊 | `wiki/topics/community-tech-tools.md` | grep `## 痛點洞察` |
+| `近期工具` 欄 | `wiki/topics/community-tech-tools.md` | grep `近期工具` |
+| `## 技術彙整` 區塊 | `wiki/topics/community-tech-discussions.md` | grep `## 技術彙整` |
+| `熱門討論` 表格 | `wiki/topics/community-tech-discussions.md` | grep `熱門討論` |
+| `衍生` 欄 | `wiki/topics/community-tech-discussions.md` | grep `衍生` |
 | `全覽表` 區塊 | `wiki/feature-radar.md` | grep `全覽表` |
 
 輸出：
