@@ -23,6 +23,14 @@ description: 系統架構變動時，快速同步更新架構文件（Design Dia
 
 ---
 
+## 分工（省 token）
+
+- **主 session 只做判斷性工作**：判斷變更範圍（步驟 1）、改事實來源 `src/DesignDocument/Design Diagram.md`（步驟 2）。
+- **機械式 HTML 鏡射交給 sonnet agent**：`Design Diagram.md` 定稿後，把「照 Design Diagram.md 更新 `docs/architecture-current.html` 對應 panel／`docs/architecture-evolution.html` 對應事件卡」派給 `model: "sonnet"` 的 agent 執行（步驟 3、4）——這是照抄既有 class 寫法的機械式編輯，不需要旗艦模型判斷。
+- **主 session 最後重驗 disk 上的最終檔**：無論步驟 3/4 是自己做還是派工，commit 前都必須親自跑 `python scripts/check_arch_docs.py` 與步驟 5 的驗證（呼應下方不變式 #4——派工可能讓中間狀態與最終狀態不一致，機械檢查與驗證不能也外包）。
+
+---
+
 ## 步驟
 
 ### 1. 判斷變更範圍
@@ -51,8 +59,15 @@ description: 系統架構變動時，快速同步更新架構文件（Design Dia
 - `track` 三選一：`script`（腳本/pipeline）/ `llm`（LLM 呼叫點）/ `agent`（Agent 設計）
 - 只有真正的新架構模式才配新 diagram（SVG）；沿用既有 A–F 的畫法
 
-### 5. 驗證（強制，用 preview，不可略過）
-launch.json 已有 `docs-preview`（port 3132）。preview_start 後對**每個改過的 HTML** 逐項查（用 preview_eval / preview_inspect）：
+### 5. 驗證（強制，preview 可用時首選；不可用時走靜態 fallback，兩者皆不可略過）
+
+**先跑機械漂移檢查（永遠先跑，不管 preview 是否可用）：**
+```
+python scripts/check_arch_docs.py
+```
+涵蓋來源清單一致、日期三處同步、charset meta、CSS token 存在性四類——這是今天（2026-07-05/06）血淚坑的機械化版本，不管走哪條驗證路徑都必須通過。
+
+**A. preview 可用時（首選）：** launch.json 已有 `docs-preview`（port 3132）。preview_start 後對**每個改過的 HTML** 逐項查（用 preview_eval / preview_inspect）：
 
 | 檢查 | 怎麼查 | 為什麼（哪次踩過）|
 |------|--------|------------------|
@@ -65,7 +80,14 @@ launch.json 已有 `docs-preview`（port 3132）。preview_start 後對**每個�
 - **截圖工具此環境會逾時，不要用 screenshot**，一律 eval/inspect
 - **不可只信「看起來好了」或 agent 的「已驗證」**——親自 eval 查渲染後的實際值
 
+**B. preview 工具不可用時（fallback，不可略過驗證、不可靠肉眼代替）：** 跑靜態三件套，缺一不可：
+
+1. `python scripts/check_arch_docs.py`（上方已跑，此處確認為綠）
+2. HTML 標籤結構平衡：用 Python 標準庫 `html.parser` 解析兩份改過的 HTML，確認 `feed()` 不拋例外、且無明顯未閉合標籤（可用 `HTMLParser` 搭配 tag stack 檢查 start/end 配對）
+3. 新增 tab（若有）的 JS 通用性確認：確認 filter bar 用的是既有 `.dgm-tab` class + `getElementById('dgm-' + this.dataset.dgm)` 這類通用邏輯——新 panel 只要照既有 `data-dgm` 命名規則加 tab 與 panel，**不需要改 JS**；若新增邏輯偏離此模式，視為未過驗證
+
 ### 6. Commit
+- Commit 前再跑一次 `python scripts/check_arch_docs.py` 到零錯誤（守住不變式 #4：派工重驗最終 disk 狀態）
 - `git add docs/ src/DesignDocument/`，commit 訊息 `docs: 架構文件同步 <一句話變動>`，結尾加 Co-Authored-By 行；push
 
 ---
