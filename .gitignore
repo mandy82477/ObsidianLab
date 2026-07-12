@@ -22,3 +22,9 @@ desktop.ini
 
 # Claude Code worktrees
 .claude/worktrees/
+
+
+
+
+# Ignore Smart Environment folder
+.smart-env
