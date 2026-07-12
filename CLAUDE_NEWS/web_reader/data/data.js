@@ -116,8 +116,8 @@ window.WIKI_DATA = {
       "pill": "active",
       "firstSeen": "2025（正式推出）",
       "startDate": "",
-      "lastUpdated": "2026-07-11",
-      "lastNewsUpdate": "2026-07-11",
+      "lastUpdated": "2026-07-12",
+      "lastNewsUpdate": "2026-07-12",
       "summary": "**Reflect with Claude 測試版推出（2026-07-09）：** Anthropic 官方部落格宣布「Reflect with Claude」測試版功能，使用者可在 Settings 中檢視使用模式儀表板，理解自己使用 Claude 的模式；TechCrunch、Mashable、CNET、Axio…",
       "latestHeadline": "Reflect with Claude 測試版推出：Settings 內新增使用模式儀表板，TechCrunch、Mashable、CNET、Axios、The Verge 多家媒體同步報導，多類比「AI 版 Spotify Wrapped」，TechCrunch 提出「悄悄推銷 AI」質疑角度；HN 29 分（見 ["
     },
@@ -433,10 +433,10 @@ window.WIKI_DATA = {
       "pill": "active",
       "firstSeen": "",
       "startDate": "2026-04-27",
-      "lastUpdated": "2026-07-11",
-      "lastNewsUpdate": "2026-07-10",
-      "summary": "**最新態勢（2026-07-10）：** 中國「後門」指控延燒第三天，UC Today、BankInfoSecurity、Technology Org、TechRepublic、TechRadar、CISO Series、Fox Business 等多家獨立媒體續報導；**同日 Anthropic 首度公開反駁該指控…",
-      "latestHeadline": "最新態勢（2026-07-10）： 中國「後門」指控延燒第三天，UC Today、BankInfoSecurity、Technology Org、TechRepublic、TechRadar、CISO Series、Fox Business 等多家獨立媒體續報導；同日 Anthropic 首度公開反駁該指控——為此議題"
+      "lastUpdated": "2026-07-12",
+      "lastNewsUpdate": "2026-07-11",
+      "summary": "**最新態勢（2026-07-09）：** Anthropic 研究部落格發布「An off switch for dual-use knowledge in AI models」，說明針對化學/生物等雙重用途知識的模型層「關閉開關」機制，屬官方主動安全機制揭露。 **中美 AI 工具信任對峙已獨立成頁：** 中國代理…",
+      "latestHeadline": "最新態勢（2026-07-09）： Anthropic 研究部落格發布「An off switch for dual-use knowledge in AI models」，說明針對化學/生物等雙重用途知識的模型層「關閉開關」機制，屬官方主動安全機制揭露。"
     },
     {
       "id": "ai-talent-flow",
@@ -463,8 +463,8 @@ window.WIKI_DATA = {
       "pill": "active",
       "firstSeen": "",
       "startDate": "2026-05-28",
-      "lastUpdated": "2026-07-11",
-      "lastNewsUpdate": "2026-07-11",
+      "lastUpdated": "2026-07-12",
+      "lastNewsUpdate": "2026-07-12",
       "summary": "Anthropic 在技術聲譽與企業採用率上持續上升（企業採用率 34.4% 首超 OpenAI 32.3%，Ramp AI Index 2026-05-15），並於 2026-05-28 完成 $65B Series H 融資，估值 $965B，超越 OpenAI 成全球最大 AI 新創。核心矛盾從「PMF vs 獲…",
       "latestHeadline": "[媒體擴散，非新政策] Dayton Daily News 報導「Claude Corps」非營利組織 AI 培力計畫：Anthropic 宣布 Claude Corps，協助非營利組織學習有效運用 AI 工具；此為 06-11 已記錄計畫（招募 1,000 名職涯初期人才、派遣至全美非營利組織服務一年、全薪支付）的媒"
     },
@@ -488,13 +488,13 @@ window.WIKI_DATA = {
       "pageType": "topic",
       "name": "Anthropic 政府與軍事政策",
       "entityType": "",
-      "status": "monitoring（出口管制主線已解除，剩餘承諾落實與衍生支線持續觀察；中美 AI 工具政策拉扯新增支線）",
+      "status": "monitoring（出口管制主線已解除，剩餘承諾落實與衍生支線持續觀察；中美 AI 工具信任對峙已獨立成頁）",
       "domain": "🏛️ 政策/安全",
       "pill": "warn",
       "firstSeen": "",
       "startDate": "2026-05-01",
-      "lastUpdated": "2026-07-11",
-      "lastNewsUpdate": "2026-07-10",
+      "lastUpdated": "2026-07-12",
+      "lastNewsUpdate": "2026-07-11",
       "summary": "**出口管制已於 2026-07-01 全面解除。** 美國商務部長 Howard Lutnick 宣布解除 Fable 5 和 Mythos 5 的出口管制，正式生效；Anthropic 承諾三項義務換取解封（主動偵測安全風險、與政府合作制定協議與標準、通報惡意活動）；封鎖期共 18–19 天（2026-06-13 …",
       "latestHeadline": "出口管制已於 2026-07-01 全面解除。 美國商務部長 Howard Lutnick 宣布解除 Fable 5 和 Mythos 5 的出口管制，正式生效；Anthropic 承諾三項義務換取解封（主動偵測安全風險、與政府合作制定協議與標準、通報惡意活動）；封鎖期共 18–19 天（2026-06-13 全面封鎖"
     },
@@ -508,10 +508,10 @@ window.WIKI_DATA = {
       "pill": "warn",
       "firstSeen": "",
       "startDate": "2026-03（推測）",
-      "lastUpdated": "2026-07-11",
-      "lastNewsUpdate": "2026-07-08",
-      "summary": "**當前狀態：** 官方已說明 4 月退步原因為工程疏失，恢復情況待驗證；2026-06 下旬起投訴焦點轉向「token 消耗異常／成本暴增」——五個獨立訊號（HN 熱議、$62,021 具名案例、三則 GitHub issue）指向同一方向，但目前無法斷定是模型真退步、計費計量問題、或 context/工具配置問題（…",
-      "latestHeadline": "當前狀態： 官方已說明 4 月退步原因為工程疏失，恢復情況待驗證；2026-06 下旬起投訴焦點轉向「token 消耗異常／成本暴增」——五個獨立訊號（HN 熱議、$62,021 具名案例、三則 GitHub issue）指向同一方向，但目前無法斷定是模型真退步、計費計量問題、或 context/工具配置問題（詳見「T"
+      "lastUpdated": "2026-07-12",
+      "lastNewsUpdate": "2026-07-12",
+      "summary": "**當前狀態：** 官方已說明 4 月退步原因為工程疏失，恢復情況待驗證；2026-06 下旬起投訴焦點轉向「token 消耗異常／成本暴增」——訊號鏈自 06-27 延燒至 07-09（共 13 天），累計八個獨立訊號（HN 熱議、$62,021 具名案例、四則 GitHub issue、兩則額度異常比例回報），且 …",
+      "latestHeadline": "當前狀態： 官方已說明 4 月退步原因為工程疏失，恢復情況待驗證；2026-06 下旬起投訴焦點轉向「token 消耗異常／成本暴增」——訊號鏈自 06-27 延燒至 07-09（共 13 天），累計八個獨立訊號（HN 熱議、$62,021 具名案例、四則 GitHub issue、兩則額度異常比例回報），且 07-0"
     },
     {
       "id": "community-pattern-trends",
@@ -538,8 +538,8 @@ window.WIKI_DATA = {
       "pill": "active",
       "firstSeen": "",
       "startDate": "2026-04-25",
-      "lastUpdated": "2026-07-11",
-      "lastNewsUpdate": "2026-07-11",
+      "lastUpdated": "2026-07-12",
+      "lastNewsUpdate": "2026-07-12",
       "summary": "追蹤 Claude Code 社群中活躍的概念辯論、設計哲學、實證研究與技術反思。與 [[topics/community-tech-patterns]] 追蹤具體工具和工作流不同，本頁聚焦思想碰撞：什麼哲學正在成形、什麼假設受到挑戰、什麼共識正在收斂。頁面結構：**🔥 本週熱點**（當前最熱的持續議題）→ **🌊 長…",
       "latestHeadline": "追蹤 Claude Code 社群中活躍的概念辯論、設計哲學、實證研究與技術反思。與  追蹤具體工具和工作流不同，本頁聚焦思想碰撞：什麼哲學正在成形、什麼假設受到挑戰、什麼共識正在收斂。頁面結構：🔥 本週熱點（當前最熱的持續議題）→ 🌊 長期議題（主題彙整）→ 熱門討論記錄（最近 30 天）→ 技術彙整（逐篇深度筆記）"
     },
@@ -1487,6 +1487,21 @@ window.WIKI_DATA = {
       "lastNewsUpdate": "2026-06-22",
       "summary": "2026-06-04，Anthropic Institute 發布《When AI Builds Itself: Our progress toward recursive self-improvement》報告（HN 477），首次系統性披露 AI 加速自身開發的進展：Anthropic 工程師平均每人可交付的程式碼…",
       "latestHeadline": "[五眼聯盟警告] 罕見聯合聲明：數月內出現毀滅性 AI：五眼聯盟發表聯合聲明，警告能癱瘓政府與企業的 AI 模型將在數月內出現；為迄今最高層級政府機構對遞歸自我改進威脅的公開預警，與 Anthropic 6/4 報告的「煞車踏板」呼籲形成跨機構共鳴（The Guardian）"
+    },
+    {
+      "id": "safety-china-trust-dispute",
+      "pageType": "topic",
+      "name": "中美 AI 工具信任對峙",
+      "entityType": "",
+      "status": "ongoing",
+      "domain": "🏛️ 政策/安全",
+      "pill": "active",
+      "firstSeen": "",
+      "startDate": "2026-06-30",
+      "lastUpdated": "2026-07-12",
+      "lastNewsUpdate": "2026-07-11",
+      "summary": "本頁追蹤 2026-06-30 起延燒的「中美 AI 工具信任對峙」：一條由社群逆向工程指控起頭、逐步升級至中國政府正式警示、企業連鎖禁用、最終由 Anthropic 公開否認的敘事線。核心矛盾是**雙方均提出未經第三方驗證的技術指控**——社群/中國官方稱 Claude Code 內建「秘密追蹤中國使用者並回傳資料」…",
+      "latestHeadline": "Anthropic 首度公開否認中國官方「後門」指控（多家獨立媒體報導）；同日發布「Inviting hard questions」聲明，兩者關聯待查證（推論）"
     }
   ],
   "digestIndex": [
