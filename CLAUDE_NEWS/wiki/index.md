@@ -2,11 +2,12 @@
 
 LLM 查詢此 wiki 時，**先讀這個檔案**找相關頁面，再讀具體頁面取得詳細資訊。
 
-**最後更新：** 2026-07-11
+**最後更新：** 2026-07-12
 ---
 
 ## 近期異動
 
+- **2026-07-12 週度延伸回顧**：新建 [[topics/safety-china-trust-dispute]]（中美 AI 工具信任對峙，自 ai-agent-safety / government-policy 拆出並收斂重複敘事）；[[topics/anthropic-business]] 加開「IPO 前瞻與估值追蹤」子區塊（Series H→$1.2兆次級估值→3Q26 首度獲利曝光→護城河疑慮鏈條）；[[topics/code-quality-decline]]／[[topics/community-tech-discussions]] 額度異常訊號群數字更新（#38335 達 791 留言、cache 命中率降 20% 機制）、額度焦慮熱度 🔥🔥→🔥🔥🔥；[[entities/claude-code]] 已知問題新增「👤 帳號管理」分組（Mobile/Desktop/Web 多帳號切換三 issue 整併）詳見 [[log]]
 - **2026-07-11 週度 Lint（雲端排程）**：修正 3 處跨頁矛盾（opus-4-8 Fable 5 fallback 過期敘述、code-quality-decline/claude-code Stop hooks 狀態不一致、CC-Canary 首次出現日期）；補 2 處孤立連結（bernanke、claude-tag）；11 頁呈現品質修復（delta-first 改寫、凍結指標標註、現況時序侵蝕清理等）；`community-tech-tools.md` 新增 4 工具／汰除 5 筆過期；ref 覆蓋率 100%；讀者模擬 3/3 通過；留 4 項待使用者確認（新實體候選 Reflect with Claude、patterns 合併建議、規則年齡審查、來源健康排查）詳見 [[log]]
 - [[entities/bernanke]] — 2026-07-10：**新頁面**，前聯準會主席 Ben Bernanke 加入 Anthropic 長期利益信託（Long-Term Benefit Trust）董事會，Reuters/CNBC/Bloomberg 同步報導，HN 66 分討論其對治理公信力的意義
 - [[topics/ai-agent-safety]]／[[topics/anthropic-government-policy]] — 2026-07-10：**中國「後門」指控延燒第三天，Anthropic 首次公開否認**（UC Today/BankInfoSecurity/TechRadar/TechRepublic/Fox Business/CISO Series 多家媒體）；同日 Anthropic 發布「Inviting hard questions」聲明，關聯待查證；dev.to 出現第二則獨立 steganography 隱藏標記指控（adioof），與既有 07-01 同形字符事件關聯待釐清
@@ -149,9 +150,10 @@ LLM 查詢此 wiki 時，**先讀這個檔案**找相關頁面，再讀具體頁
 | [[topics/community-tech-patterns]] | 🌐 社群 | monitoring | 社群實戰模式庫（日更）：multi-agent、skills 設計、工作流最佳實踐的可複用做法 |
 | [[topics/community-pattern-trends]] | 🌐 社群 | ongoing | 社群趨勢觀察（週更）：從模式庫萃取的宏觀層——5 條成形趨勢的熱度曲線 + 對現有設計的啟示 |
 | [[topics/community-tech-discussions]] | 🌐 社群 | ongoing | 社群技術討論趨勢：設計哲學辯論、實證研究、架構反思（HTML vs MD、Skill Atrophy 等） |
-| [[topics/ai-agent-safety]] | 🏛️ 政策/安全 | ongoing | AI agent 安全：中國代理偵測程式碼爭議（v2.1.91+，待確認）+ GitHub Repo prompt injection 多媒體確認 + 假冒安裝包 |
+| [[topics/safety-china-trust-dispute]] | 🏛️ 政策/安全 | ongoing | 中美 AI 工具信任對峙：中國代理偵測程式碼/隱寫術指控 → Alibaba/Meta 禁用 → 中國官方「後門」警示 vs Anthropic 07-10 首度公開否認（2026-07-12 自 ai-agent-safety / government-policy 拆出）|
+| [[topics/ai-agent-safety]] | 🏛️ 政策/安全 | ongoing | AI agent 安全：GitHub Repo prompt injection 多媒體確認 + 假冒安裝包 + CVE/DoS 漏洞（中國信任對峙已分流至 [[topics/safety-china-trust-dispute]]）|
 | [[topics/ai-agent-safety-archive]] | 🏛️ 政策/安全 | monitoring | AI Agent 安全時序歷史存檔（2026-05-22 以前）；主頁 [[topics/ai-agent-safety]] 瘦身分流 |
-| [[topics/anthropic-government-policy]] | 🏛️ 政策/安全 | monitoring | Anthropic 政府政策攻防：出口管制主線已於 2026-07-01 解除，剩餘承諾落實、歐洲據點爭奪、Legion 訴訟等衍生支線持續觀察 |
+| [[topics/anthropic-government-policy]] | 🏛️ 政策/安全 | monitoring | Anthropic 政府政策攻防：出口管制主線已於 2026-07-01 解除，剩餘承諾落實、歐洲據點爭奪、Legion 訴訟等衍生支線持續觀察（中國信任對峙已分流至 [[topics/safety-china-trust-dispute]]）|
 | [[topics/official-community-gap]] | 🛠️ 工具/功能 | monitoring | 官方功能 vs 社群痛點缺口矩陣：哪些痛點官方正在解決、哪些結構性缺席 |
 | [[topics/enterprise-cost-management]] | 💼 商業 | monitoring | 企業規模採用 Claude 的成本結構挑戰：Uber/Microsoft 案例、缺失工具、因應策略 |
 | [[topics/enterprise-tool-tracker]] | 💼 商業 | ongoing | 大型企業 AI 編碼工具使用追蹤：Microsoft/Amazon/Uber/Apple 等企業當前工具選擇與變化軌跡；07-03 Alibaba 以疑似後門風險禁用 Claude Code（❌ 退出） |

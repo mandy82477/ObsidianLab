@@ -23,6 +23,7 @@
 ## 相關議題
 
 - [[topics/anthropic-government-policy]] — Anthropic 與政府互動、治理與監管議題
+- [[topics/ai-talent-flow]] — Anthropic 延攬資深高管/治理外部化的人才佈局敘事
 - [[entities/dario-amodei]] — Anthropic CEO，長期利益信託所監督對象
 
 ## 參考來源

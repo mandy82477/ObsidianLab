@@ -2666,3 +2666,17 @@ Append-only 紀錄。每次 ingest、lint，以及**揭露缺陷或促成改動�
 2. **community-tech-patterns 淘汰審查**：建議合併「記憶與知識管理」↔「跨環境 Agent 記憶」兩類別（重複收錄同一工具）→ 是否同意合併？
 3. **規則年齡審查（6d）**：`.claude/rules/wiki-ingest-format.md` 的 entities/topics 格式模板 `[加入: 2026-04-25]` 已連續第 2 週超過 60 天閾值（距今 77 天）→ 是否需要重新審視此模板規則，或標記為「已審閱，長期有效」以停止重複列出？
 4. **來源健康**：`Claude API Release Notes` 已連續 2 週（14 天）count=0 → 是否授權查修此來源的抓取邏輯（可能是 URL 失效或格式改版）？
+
+## 2026-07-12 週度延伸回顧
+
+- 延伸（六記者並行判斷 → 使用者確認全執行，均帶 model:sonnet）：
+  - **新頁** `topics/safety-china-trust-dispute.md`：自 ai-agent-safety + anthropic-government-policy 拆出「中美 AI 工具信任對峙」，整合技術指控線（v2.1.91 代理偵測、thereallo.dev + dev.to/adioof 兩則隱寫術指控）＋外交/企業線（Alibaba 改用 Qoder/Meta 限制、中國官方 07-08 政府層級「後門」警示、Anthropic 07-07「實驗」定調 → 07-10 首度公開否認）成五階段敘事；兩原頁重複敘事收斂為指針+wikilink，移除三處「待評估建頁」已消費待辦，全檔 grep cross-check 無殘留（消費 reader-notes 07-07「隱藏追蹤器」🔍）
+  - `topics/anthropic-business.md`：加開「IPO 前瞻與估值追蹤」子區塊（Series H $965B → $1.2兆次級估值/流動性矛盾 → 3Q26 首度獲利曝光 → 護城河疑慮 → FT 結構性挑戰 → 市值超越 25 年退場總和鏈條），置於摘要後、時序不重複維護（消費 reader-notes 07-09「Anthropic 股票/IPO」🔍）
+  - `topics/code-quality-decline.md` + `topics/community-tech-discussions.md`：額度/成本異常訊號群數字更新（#38335→791 留言、cache 命中率降 20% 帳單翻倍機制、Max 20x 週額度單日耗盡、27%/7% 比例異常），額度焦慮系列熱度 🔥🔥→🔥🔥🔥，兩頁互引
+  - `entities/claude-code.md`：已知問題新增「👤 帳號管理」分組，整併 #36151（Mobile 542讚）/#18435（Desktop 705讚）/#27302（Web 419讚）為全平台共通缺口，精簡平台相容性組內重複列
+  - `entities/bernanke.md`：補 [[topics/ai-talent-flow]] wikilink（記者觀察順手做）
+  - index.md：新增 safety-china-trust-dispute 列（🏛️ 政策/安全 ongoing）、更新 ai-agent-safety/government-policy 描述加分流註記、近期異動 prepend 07-12 條
+- reader-notes 消費：07-09 IPO → ✅ 已納入；07-07 隱藏追蹤器 → ✅ 已納入；07-12 GPT-5.6 比較 → 保留 ⏳（模型＋商業記者查證本週日報仍無第一手實測/定價數字，Reuters/ZDNET 僅定性訴求，待查證）
+- 使用者跳過項目：無（四項建議全執行）
+- 聚焦校準：非本月首次週度回顧（本月已有 07-04、07-05），跳過
+- 品質備註：無
