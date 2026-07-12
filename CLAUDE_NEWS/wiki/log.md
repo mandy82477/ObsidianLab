@@ -2680,3 +2680,10 @@ Append-only 紀錄。每次 ingest、lint，以及**揭露缺陷或促成改動�
 - 使用者跳過項目：無（四項建議全執行）
 - 聚焦校準：非本月首次週度回顧（本月已有 07-04、07-05），跳過
 - 品質備註：無
+
+## 2026-07-12 Query：GPT-5.6 資料少是否為來源蒐集問題
+
+- **提問**：使用者問「GPT-5.6 這麼沒有是因為來源蒐集問題嗎」。
+- **查證**：查 src/news_aggregator/sources/ 三大來源查詢詞——google_news（Claude Code/Anthropic AI/Anthropic Claude/…）、hackernews（Claude Code/Anthropic/claude/anthropic）、reddit（ClaudeCode/ClaudeAI/LocalLLaMA+Anthropic）全為 Claude/Anthropic 錨定，符合 CLAUDE.md 蒐集範圍設計。再手動 WebSearch 做決定性測試。
+- **根因（部分為真實缺口，非既有來源 bug）**：GPT-5.6（代號 Sol）vs Claude 第一手跑分實已大量發表（TerminalBench 2.1 Sol 88.8/Opus 4.8 78.9/Fable 5 84.3；SWE-Bench Pro Fable 80.3>GPT 58.6；Sol 便宜 50%；over-agency 安全議題），但都在對照型部落格（MindStudio/DataCamp/codersera/superframeworks 等）——**這類 venue 不在 blogroll，Google News「Anthropic Claude」query 偏新聞媒體抓不到**。既有 Claude 錨定機制本身正常（Reuters/ZDNET 定位新聞有抓到），缺的是評測部落格這個 venue。取捨點：這類 venue 一半是 SEO 農場對照文，無腦加來源會灌雜訊。
+- **處置**：使用者決策＝(1) 不回填部落格數字，等官方 benchmark 再寫；(2) pipeline 先不擴充來源，觀察一週。reader-notes 07-12 GPT-5.6 條已補記查證結論＋一週後回看 checkpoint（約 07-19）。無程式碼/wiki 內容變更。
