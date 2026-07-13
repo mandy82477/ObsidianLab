@@ -58,7 +58,7 @@
 
 - 🔴 **未修復**｜**Max 訂閱方案立即觸及用量上限（GitHub issue #16157，累積 1480 則留言、722 個讚，2026-07-12 仍為互動量最高條目）**：使用者回報訂閱 Max 方案後幾乎立即觸及用量上限，反應量持續居冠；官方尚未回應。
 - 🔴 **未修復**｜**圖片處理失敗導致 token 大量浪費（GitHub issue #60334，2026-07-12 回報）**：使用者回報一次圖片處理失敗即耗掉五小時額度約 70%；Anthropic API 端圖片處理錯誤直接反映為使用者額度損失，官方尚未回應。
-- 🔴 **未修復**｜**功能請求：MCP Sampling 支援以善用 Max 訂閱降低 API 成本（GitHub issue #1785，2026-07-12 回報）**：使用者呼籲支援 MCP Sampling，讓 MCP Server 端運算可透過既有 Claude Max 訂閱額度執行，避免額外 API 計費；官方尚未回應或排入路線圖。
+- 🔴 **未修復**｜**功能請求：MCP Sampling 支援以善用 Max 訂閱降低 API 成本（GitHub issue #1785，累積 58 則留言，2026-07-12 回報）**：使用者呼籲支援 MCP Sampling，讓 MCP Server 端運算可透過既有 Claude Max 訂閱額度執行，避免額外 API 計費；官方尚未回應或排入路線圖。
 - 🔴 **未修復**｜**功能請求：印度地區專屬定價方案（INR 計價）（GitHub issue #17432，累積 205 則留言、598 個讚，2026-07-10）**：使用者要求提供印度盧比計價的地區專屬訂閱方案，降低匯率轉換造成的實際負擔；官方尚未回應。定價/計費層面另見 [[entities/pricing]]。
 - 🔴 **未修復**｜**付款訂閱 Max 5x 方案後帳號反遭停用（GitHub issue #5088，累積 180 則留言、65 個讚，2026-07-10）**：使用者回報完成 Claude Code Max 5x 方案付款訂閱後，帳號反而遭到停用；官方尚未回應，定價/帳務退款層面另見 [[entities/pricing]]。
 - 🔴 **未修復**｜**Max 方案額度自 3 月起異常快速耗盡（GitHub issue #38335，累積 790 則留言、536 個讚，2026-07-08 今日互動量最高、持續居配額爭議討論度之冠）**：使用者回報 Max 方案 session 額度自 2026-03-23 起消耗速度異常加快（CLI 使用情境），互動量持續攀升，是配額爭議中討論度最高的單一 issue；官方尚未回應或說明原因，見 [issue #38335](https://github.com/anthropics/claude-code/issues/38335)
@@ -95,7 +95,7 @@
 
 ### 📂 Session 與資料管理（5 條未修復、1 條拒修、1 條待查證）
 
-- 🔴 **未修復**｜**對話壓縮（compaction）間歇性失敗或卡死（GitHub issue #20696，2026-07-12 回報，regression）**：claude.ai 網頁版／行動版對話壓縮功能自 2026-01-15 起偶發失敗或卡死，回報者稱此為回歸性問題（先前版本未見）；官方尚未回應。與已列「Auto Compact 失效」為不同介面（此為 claude.ai web/mobile，另一為 Claude Code CLI），暫分列追蹤。
+- 🔴 **未修復**｜**對話壓縮（compaction）間歇性失敗或卡死（GitHub issue #20696，累積 61 則留言，2026-07-12 回報，regression）**：claude.ai 網頁版／行動版對話壓縮功能自 2026-01-15 起偶發失敗或卡死，回報者稱此為回歸性問題（先前版本未見）；官方尚未回應。與已列「Auto Compact 失效」為不同介面（此為 claude.ai web/mobile，另一為 Claude Code CLI），暫分列追蹤。
 - 🔴 **未修復**｜**功能請求：多 Claude session 間直接通訊（GitHub issue #24798，累積 54 則留言、18 個讚，2026-07-08）**：使用者呼籲支援 multi-Claude 工作流中 session 之間的直接通訊機制，避免需透過檔案系統或外部工具中繼協調；官方尚未回應或排入路線圖。
 
 - ⛔ **官方拒修**｜**Session 歷史 30 天自動刪除（Anthropic 明確拒絕修復）**（2026-05-01 確認，2026-06-30 更新）：Claude Code 預設在 30 天後自動刪除 session `.jsonl` 歷史檔；Anthropic 官方在 [GitHub issue #62476](https://github.com/anthropics/claude-code/issues/62476) 明確表示不會修復此行為。社群建議替代方案：用 CLAUDE.md 記錄關鍵決策，或建立 `.claude/changelog` 手動保留對話摘要。延長保留期間的臨時解法：`npx agentinit agent set claude cleanupPeriodDays 365`

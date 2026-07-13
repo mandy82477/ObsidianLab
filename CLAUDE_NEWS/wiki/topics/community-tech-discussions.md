@@ -7,7 +7,7 @@
 **最後新聞更新：** 2026-07-13
 
 > **最熱討論**（2026-07-13）
-> 額度焦慮系列持續延燒：Reddit r/ClaudeCode 新增一則 Max 5x 訂閱用量消耗速度變快回報（5 小時額度約 2 小時用完），與既有 Max 20x 系列同方向呼應（詳見 [[code-quality-decline]]）；單一貼文、無評論數據佐證，熱度維持 🔥🔥🔥 不上調。07-08~07-09 「cache 命中率下降 20% 帳單翻倍」「Max 20x 週額度不到一天用盡」「單一 session 27% 時間耗掉週額度 7%」等既有節點仍為系列核心證據。另有 WebFetch 隱藏 token 成本觀察（HN 12 分）、Ben Bernanke 加入 Anthropic Oversight Trust 治理正當性討論（HN 66 分）、Geosql 效能宣稱矛盾質疑（HN 55 分）、AskUserQuestion 60 秒逾時爭議（GitHub Issue #73125 留言 109、👍 375）仍為近期高熱度議題。
+> Claude Code vs OpenCode token 開銷實測討論在 HN 大幅升溫至 624 分（前次記錄僅一般熱度），成為近期單日最高分討論之一；同日新增 Zed 創作者公開批評 Anthropic 言行不一（HN 557 分）與 Redis 創始人 antirez「掌控想法而非程式碼」典範主張（Blog，具名表態）。額度焦慮系列持續延燒：Reddit r/ClaudeCode 新增一則 Max 5x 訂閱用量消耗速度變快回報（5 小時額度約 2 小時用完），與既有 Max 20x 系列同方向呼應（詳見 [[code-quality-decline]]）；單一貼文、無評論數據佐證，熱度維持 🔥🔥🔥 不上調。07-08~07-09 「cache 命中率下降 20% 帳單翻倍」「Max 20x 週額度不到一天用盡」「單一 session 27% 時間耗掉週額度 7%」等既有節點仍為系列核心證據。另有 WebFetch 隱藏 token 成本觀察（HN 12 分）、Ben Bernanke 加入 Anthropic Oversight Trust 治理正當性討論（HN 66 分）、Geosql 效能宣稱矛盾質疑（HN 55 分）、AskUserQuestion 60 秒逾時爭議（GitHub Issue #73125 留言 109、👍 375）仍為近期高熱度議題。
 
 ---
 
@@ -103,7 +103,9 @@ MCP 的實際成本遠超多數使用者預期，已有多個量化案例：
 
 | 討論主題 | 首見 | 熱度 | 模式 | 核心論點 | 衍生 |
 |---------|------|------|------|---------|------|
-| Claude Code 啟動送出 33k tokens vs OpenCode 僅 7k：harness 開銷實測比較 | 2026-07-12 | 🔥🔥 | ☄️閃現 | 作者實際攔截並比對 Claude Code 與 OpenCode 對 Anthropic 端點的請求內容與 usage block，量測發現 Claude Code 在讀取使用者 prompt 前已送出約 33,000 tokens（快取策略 + harness 開銷），OpenCode 同等情境僅約 7,000 tokens；兩個獨立來源報導同一測量結果（source_count 2，達收錄門檻），呼應既有「MCP 成本結構」長期議題與「Local Reverse Proxy」（[[topics/community-tech-patterns]]）對 Claude Code 實際送出內容的持續關注；原文見 systima.ai（Hacker News，跨 2 來源） | — |
+| Zed 創作者公開批評 Anthropic 言行不一：「打臉」爭議 | 2026-07-13 | 🔥🔥🔥🔥 | ☄️閃現 | HN 討論（score 557）：部落格作者引用 Zed 編輯器創作者的公開表態，指出 Anthropic 對外宣稱與實際作為存在落差（標題直譯「實話實說，Anthropic 在放煙霧彈」）；HN 分數達本輪次高，反映社群對 Anthropic 言行一致性的持續關注，但原文細節與具體指控內容尚待進一步查證；[原文](https://raymyers.org/post/zed-creator-calls-spade-a-spade/)（HN） | — |
+| antirez：「掌控想法而非程式碼」——AI 輔助程式設計新典範主張 | 2026-07-13 | 🔥 | ☄️閃現 | Redis 創始人 antirez 部落格文章主張：AI 輔助開發時代，工程師應掌控的是「想法」（設計意圖、架構決策）而非逐行程式碼本身；呼應既有「規格驅動 > vibe coding」哲學共識，補上一位具代表性技術人物的具名背書；[原文](http://antirez.com/news/169)（Blog；具名表態，無社群延燒） | — |
+| Claude Code 啟動送出 33k tokens vs OpenCode 僅 7k：harness 開銷實測比較 | 2026-07-12 | 🔥🔥🔥🔥 | ☄️閃現 | 作者實際攔截並比對 Claude Code 與 OpenCode 對 Anthropic 端點的請求內容與 usage block，量測發現 Claude Code 在讀取使用者 prompt 前已送出約 33,000 tokens（快取策略 + harness 開銷），OpenCode 同等情境僅約 7,000 tokens；兩個獨立來源報導同一測量結果，呼應既有「MCP 成本結構」長期議題與「Local Reverse Proxy」（[[topics/community-tech-patterns]]）對 Claude Code 實際送出內容的持續關注；07-13 追蹤發現 HN 分數大幅攀升至 624 分（單日內從一般討論躍升為本輪最高分討論之一），熱度上調；原文見 systima.ai（Hacker News，score 624） | — |
 | Ben Bernanke 加入 Anthropic Oversight Trust：AI 治理獨立性辯論 | 2026-07-10 | 🔥🔥🔥 | ☄️閃現 | HN 討論（66 分）：前聯準會主席 Ben Bernanke 加入 Anthropic 新設立的 Oversight Trust，社群討論聚焦知名經濟學者加入是否能為 AI 安全監督機制帶來實質獨立性，或僅是強化企業治理形象的象徵性任命；具體任命事實與商業意涵已由 [[topics/anthropic-business]] 記錄，本頁聚焦社群對「治理正當性」的討論角度（HN） | — |
 | Geosql：地理空間 Skill 宣稱 4 倍改善數據被質疑不一致 | 2026-07-08 | 🔥🔥🔥 | ☄️閃現 | 開發者發布 Geosql，供 Claude/Codex 使用的地理空間資料 skill，宣稱整體效能較基準提升約 4 倍；HN 討論者比對作者自己公布的細部任務成功率數據，指出逐項成功率加總後難以支撐「4 倍」這個整體宣稱數字，質疑基準測試方法論或呈現方式有誇大之嫌；[GitHub](https://github.com/dekart-xyz/geosql)（HN score 55） | — |
 | Anthropic API 穩定性與訂閱鎖定引發好感度流失論 | 2026-07-06 | 🔥🔥🔥 | ☄️閃現 | 部落格作者實測多款 agent harness 後批評 Anthropic API 穩定性不佳，且訂閱制與 API 額度綁定造成 vendor lock-in；認為在開源模型日益競爭下，此舉正流失開發者好感（HN score 97）；與同期「API 大規模錯誤」「額度上限焦慮」等穩定性/鎖定相關痛點呼應，但本篇核心論點聚焦「商業設計選擇」而非單純技術故障；[原文](https://raheeljunaid.com/blog/anthropics-method-to-losing-goodwill-in-a-few-easy-steps/)（HN） | — |
@@ -171,6 +173,19 @@ MCP 的實際成本遠超多數使用者預期，已有多個量化案例：
 ## 技術彙整
 
 ### 2026-07
+
+#### Claude Code 33k tokens vs OpenCode 7k harness 開銷實測：HN 分數單日暴衝至 624（2026-07-13）
+
+- **來源：** [Claude Code vs OpenCode: measuring the token overhead](https://systima.ai/blog/claude-code-vs-opencode-token-overhead)（Hacker News，score 624，07-13 追蹤）
+- **核心論點：** 07-12 首度記錄時本篇僅為一般熱度討論，07-13 追蹤發現 HN 分數已攀升至 624 分，成為近期單日最高分討論之一；原始測量內容不變（Claude Code 讀取 prompt 前已送出約 33,000 tokens、OpenCode 僅約 7,000 tokens），但社群關注度的暴衝本身是訊號——顯示「harness 開銷」議題在 07 月中旬已從小眾技術觀察上升為主流關注焦點
+- **與既有討論的關係：** 呼應 [[topics/community-tech-patterns]] 中「Local Reverse Proxy」對 Claude Code 實際送出內容的持續關注，以及本頁「MCP 成本結構」長期議題（推論：兩者共同指向「使用者難以核實 Claude Code 實際 token 消耗」是持續擴大的信任議題）
+- **收斂結論：** 尚無 Anthropic 官方回應；分數暴衝顯示此為值得持續追蹤的熱度節點，非單日曇花一現
+
+#### Zed 創作者公開批評 Anthropic 言行不一：HN 557 分高熱度討論（2026-07-13）
+
+- **來源：** [Zed creator calls spade a spade, Anthropic blows smoke](https://raymyers.org/post/zed-creator-calls-spade-a-spade/)（Hacker News，score 557）
+- **核心論點：** 部落格作者引用 Zed 編輯器創作者的公開表態，指出 Anthropic 對外宣稱與實際作為之間存在落差；HN 557 分達本輪次高分，顯示社群對此議題有相當程度共鳴，但原文具體指控內容與脈絡尚待進一步查證（本條目僅記錄已確認的分數與標題，避免過度推論具體指控內容）
+- **收斂結論：** 尚無法判斷是否收斂或延燒，待後續追蹤是否有跟進報導或 Anthropic 回應
 
 #### 額度焦慮系列補上量化證據：cache 命中率下降與異常額度消耗比例（2026-07-08~07-09）
 

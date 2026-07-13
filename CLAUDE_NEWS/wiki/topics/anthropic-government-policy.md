@@ -103,6 +103,7 @@ Fable 5 發布後，Amazon 安全研究人員發現特定提示詞可讓模型�
 
 | 日期 | 方 | 動作 | 效果 |
 |------|----|------|------|
+| 2026-07-13 | 🌐 | 《紐約時報》刊出分析文章〈What the Government's Fight With Anthropic Reveals About Free Speech in America〉，將政府與 Anthropic 的法律攻防（出口管制/監理互動）折射為美國言論自由議題的觀察案例（NYT，經 Google News 轉載，原文網址因轉址未確認） | 論述類報導，非新事件；首次將本頁攻防主線明確納入「言論自由」框架，與既有「安全論述雙面刃」「AI 主權之爭」等框架併列，屬第三個觀察角度；無新事實或技術細節 |
 | 2026-07-13 | 🌐 | New York Post（經 Google News 轉載）刊文指控中國「複製」Anthropic/OpenAI 前沿 AI 技術並定性為美國國安威脅，未提供新技術證據，論調呼應既有阿里巴巴蒸餾指控（06-10 致參議院信）（New York Post） | 單一媒體來源、無第三方或官方確認，僅延續既有「中國竊取/複製前沿 AI 能力」敘事框架，未新增具體事實或機制細節 |
 | 2026-06-30～07-10 | 🌐🏢🏛️ | 中美 AI 工具信任對峙（中國代理偵測程式碼 → 隱寫術指控 → Alibaba/Meta 禁用 → Anthropic「實驗」定調 → 中國官方後門警示 → Anthropic 首度否認），逐日事件與可信度評估已整合拆出至 [[topics/safety-china-trust-dispute]] | 完整敘事、來源列表見新頁；本表僅保留出口管制主線事件 |
 | 2026-07-03 | 🌐 | MarketScale 延遲報導確認 7/1 出口管制解除，封鎖期精確為 19 天（MarketScale） | 對既有 7/1 事件的媒體確認，補充精確天數；非新增事件 |
@@ -209,6 +210,7 @@ Fable 5 發布後，Amazon 安全研究人員發現特定提示詞可讓模型�
 ## 時序
 
 ### 2026-07-13
+- **[框架分析] 紐約時報：政府與 Anthropic 的法律攻防折射言論自由議題**：《紐約時報》刊出分析文章〈What the Government's Fight With Anthropic Reveals About Free Speech in America〉，將政府與 Anthropic 之間的法律攻防（訴訟／出口管制／監理互動）解讀為美國言論自由議題的觀察案例；屬論述類深度報導，非新事件，未新增具體事實；為本頁既有「安全論述雙面刃」（FT/Stratechery）、「AI 主權之爭」（MIT Tech Review）等媒體框架之外，首次出現的「言論自由」框架（NYT，經 Google News 轉載，2026-07-13；原文網址因轉址連結未確認，待查證）
 - **[媒體重申，無新事實] New York Post：中國「複製」前沿 AI 技術，威脅美國國安**：New York Post（經 Google News 轉載）刊文指控中國複製 Anthropic、OpenAI 等前沿 AI 技術並定性為國安威脅；未提供新技術證據或具體案例，論調呼應既有 06-10 阿里巴巴蒸餾指控；單一媒體來源，無第三方或官方確認（New York Post，2026-07-13；https://nypost.com/2026/07/13/business/how-china-is-ripping-off-cutting-edge-ai-from-anthropic-openai-and-threatening-us-national-security/）
 
 > 2026-06-27 至 2026-07-01（解封主線最後階段）逐日事件已與上方「## 攻防紀錄」表格內容重複，此處不再重複全文，僅列出表格未涵蓋的補充細節；完整逐日敘述請查表格。

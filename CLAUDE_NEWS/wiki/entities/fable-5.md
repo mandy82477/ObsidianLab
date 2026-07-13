@@ -159,7 +159,7 @@ claude --model claude-fable-5-20260609
 **多家媒體重複確認延長至 7/19（無新日期變化）**：Forbes（Tyler Roush）、Help Net Security、Economic Times、Forbes（Sandy Carter）等多家媒體同日重複報導 Fable 5 存取限制延長至 2026-07-19 一事，內容與 07-12 記錄的同一事件一致，未出現新的日期或條件變化，僅為跨媒體多來源重複確認（[Forbes](https://www.forbes.com/)、[Help Net Security](https://www.helpnetsecurity.com/)、[Economic Times](https://economictimes.indiatimes.com/)，2026-07-13）。
 
 #### 2026-07-12
-**存取限制再度延長至 7/19**：Anthropic 將 Fable 5 存取限制再次延長，由原訂 7/12 延至 2026-07-19（Google News/The Economic Times，2026-07-12 18:08 UTC）。Simon Willison 部落格「Fable gets another bump」（2026-07-12 21:20 UTC）指出，延後原因與競品 GPT-5.6 Sol 被業界視為明顯屬於 Fable／Mythos 同級模型有關，暗示 Anthropic 觀察競品定位後才決定存取政策走向；免費期限與計費細節見 [[entities/pricing]]。
+**存取限制再度延長至 7/19**：Anthropic 將 Fable 5 存取限制再次延長，由原訂 7/12 延至 2026-07-19（Google News/The Economic Times，2026-07-12 18:08 UTC）。[Simon Willison 部落格「Fable gets another bump」](https://simonwillison.net/2026/Jul/12/bump/#atom-everything)（2026-07-12 21:20 UTC）第一手記錄並指出，延後原因與競品 GPT-5.6 Sol 被業界視為明顯屬於 Fable／Mythos 同級模型有關，暗示 Anthropic 觀察競品定位後才決定存取政策走向；免費期限與計費細節見 [[entities/pricing]]。
 
 #### 2026-07-10
 **GitHub Issue #73365：Advisor 角色全面 unavailable（🔴 未修復）**：Fable 5 advisor（Opus 4.8 main 底下的 advisor 角色）在所有 Claude Code session 中皆顯示「unavailable」，版本 v2.1.198，累積 50 則留言、100 個讚，情緒 😤。此為 Claude Code 呼叫層面的可用性問題，功能記者已同步記入 [[entities/claude-code]] 已知問題。
