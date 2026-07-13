@@ -3,6 +3,17 @@
 Append-only 紀錄。每次 ingest、lint，以及**揭露缺陷或促成改動的使用者 query**，都在此追加一條（純資訊性、未促成改動的 query 不記，避免噪音）。
 格式：`## [YYYY-MM-DD] 類型 | 說明`
 
+## 2026-07-13 Query 後續 | 發現並修正 emitted-cache 靜默丟棄 bug，25 則新聞補回
+
+- **提問**：使用者追問「今天有搜尋 Blogroll 的文章嗎」，查證發現 4 篇 Blogroll 文章確實被抓到但完全沒進日報；追問「這不是 GitHub 蒐集的今天的都會有問題嗎」，進一步比對確認範圍遠大於 Blogroll。
+- **根因**：GH Actions `daily-gather` 於當日 12:37 UTC 執行成功並寫入 `emitted_items.json` 快取，但當日雲端 routine 未接續產出日報；本機同日稍晚重新抓取時，這批項目的 URL 已被快取判定「已出現過」，除非分數漲幅達 2 倍以上且絕對值 +10 才會重新收錄。實測比對兩次抓取結果，穩定網址來源（HN／GitHub Issues／Reddit／Blogroll）25 則中 21 則、Google News 15 則中至少 4 則，共 **25 則（約 GH Actions 當次抓取的 70%）永久靜默消失**，包含兩則 HN 500+ 分的高熱度討論（token overhead 實測 624 分、批評 Anthropic 文章 557 分）。
+- **處置**：
+  1. **補回內容**：於 `news/2026-07-13.md` 追加「🔄 補充抓取」區塊記錄全部 25 則；依內容價值分派功能／社群／模型／安全政策四類記者，更新 `claude-code.md`／`fable-5.md`／`opus-4-7.md`／`community-tech-discussions.md`／`anthropic-government-policy.md`；模型記者順帶修正 `model-comparison.md` 殘留的 7/7 舊日期字串。
+  2. **根治 pipeline**：`emitted_cache.py` 改為兩階段確認——`--gather-only` 只標記 `digest_confirmed: false`（暫定），新增 `--confirm-digest`（Step 1c，於日報 commit 成功後呼叫）才轉為 `true`；未確認的項目視同未出現過，下次重跑會重新提供，不會被永久靜默丟棄。同步更新 `.claude/commands/news-pipeline-steps.md` 插入 Step 1c。
+  3. 對既有 `emitted_items.json` 做一次性遷移：247 筆歷史項目補上 `digest_confirmed: true`（沿用舊制假設），避免這次改動讓所有歷史項目被當成「未確認」而洗版回流。
+  4. 新增 `src/tests/test_emitted_cache.py`（7 個測試）覆蓋兩階段確認邏輯，含「score 恆零來源在未確認狀態下應可被重新提供」的回歸測試。
+- **commit**：`3beaa9f`（pipeline 修正）、`36319a2`（news+wiki 補回）。
+
 ## 2026-07-13 Ingest | news/2026-07-13.md（39 則）
 
 - 來源日報：[[news/2026-07-13]]（39 則，10/10 來源；Hacker News 14、GitHub Issues 15、dev.to 15、Google News 30、Blogroll 4、Reddit 7，來源計數含跨類重疊）
