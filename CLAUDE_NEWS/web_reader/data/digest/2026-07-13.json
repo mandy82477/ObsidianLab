@@ -1,8 +1,8 @@
 {
   "date": "2026-07-13",
-  "generatedAt": "2026-07-13 15:16 UTC",
+  "generatedAt": "2026-07-13 15:16 UTC（補充抓取回填時間：2026-07-13 23:50 UTC）",
   "articleCount": 39,
-  "sourceCount": "10/10 | **文章數：** 39 | **更新時間：** 2026-07-13 15:16 UTC",
+  "sourceCount": "10/10 | **文章數：** 39 + 25 補充（見「🔄 補充抓取」，含 2 則既有 issue 留言數更新、8 則低互動未收錄） | **更新時間：** 2026-07-13 15:16 UTC（補充抓取回填時間：2026-07-13 23:50 UTC）",
   "bulletin": "",
   "topStories": [
     {
@@ -451,6 +451,150 @@
       "focusTags": [
         "[持續追蹤]"
       ]
+    },
+    {
+      "title": "Claude Code sends 33k tokens before reading the prompt; OpenCode sends 7k",
+      "url": "https://systima.ai/blog/claude-code-vs-opencode-token-overhead",
+      "source": "Hacker News",
+      "time": "624 分",
+      "sentiment": "",
+      "body": "實測比較 Claude Code 與 OpenCode 的 token 開銷差異，發現 Claude Code 在讀取 prompt 前已消耗 33k tokens，OpenCode 僅 7k；HN 討論量達 624 分，為近期少見的高熱度技術實測文（呼應 07-12 已收錄的同主題實測討論，此為同議題大幅升溫版本）。",
+      "focusTags": []
+    },
+    {
+      "title": "Zig Creator Calls Spade a Spade, Anthropic Blows Smoke",
+      "url": "https://raymyers.org/post/zed-creator-calls-spade-a-spade/",
+      "source": "Hacker News",
+      "time": "557 分",
+      "sentiment": "",
+      "body": "作者針對 Anthropic 的公開言論提出批評性評論，HN 討論量達 557 分，屬本日最高熱度討論之一。",
+      "focusTags": []
+    },
+    {
+      "title": "[BUG] Conversation compaction intermittently fails or deadlocks chats (claude.ai web/mobile, post–Jan 15 regression)",
+      "url": "https://github.com/anthropics/claude-code/issues/20696",
+      "source": "GitHub Issues / claude-code",
+      "time": "61 留言",
+      "sentiment": "",
+      "body": "claude.ai 網頁版／行動版對話壓縮功能間歇性失敗或卡死，回報者稱為回歸性問題；累積 61 則留言（此 issue 已於 07-12 記入已知問題，本次為留言數更新）。",
+      "focusTags": []
+    },
+    {
+      "title": "[Feature Request] Support for MCP Sampling to leverage Claude Max subscriptions and reduce API costs",
+      "url": "https://github.com/anthropics/claude-code/issues/1785",
+      "source": "GitHub Issues / claude-code",
+      "time": "58 留言",
+      "sentiment": "",
+      "body": "使用者呼籲支援 MCP Sampling 以善用 Claude Max 訂閱額度降低 API 成本；累積 58 則留言（此 issue 已於 07-12 記入已知問題，本次為留言數更新）。",
+      "focusTags": []
+    },
+    {
+      "title": "Claude Code May–July 2026 weekly limits promotion",
+      "url": "https://support.claude.com/en/articles/15910845-claude-code-may-july-2026-weekly-limits-promotion",
+      "source": "Hacker News",
+      "time": "45 分",
+      "sentiment": "",
+      "body": "Anthropic 官方支援文章確認每週用量上限提高 50% 促銷已延長，為既有促銷延期事件的官方一手來源。",
+      "focusTags": []
+    },
+    {
+      "title": "Anthropic found a hidden space where Claude puzzles over concepts",
+      "url": "https://www.technologyreview.com/2026/07/09/1140293/anthropic-found-a-hidden-space-where-claude-puzzles-over-concepts/",
+      "source": "Hacker News",
+      "time": "14 分",
+      "sentiment": "",
+      "body": "MIT Technology Review 報導 Anthropic 發現的模型內部隱藏推理空間技術（與既有 J-space／Jacobian Lens 研究同源）。",
+      "focusTags": []
+    },
+    {
+      "title": "Evaluating J-space entropy as an error predictor across 7 datasets on Qwen3-4B [R]",
+      "url": "https://www.reddit.com/r/MachineLearning/comments/1uv5l75/evaluating_jspace_entropy_as_an_error_predictor/",
+      "source": "",
+      "time": "",
+      "sentiment": "",
+      "body": "獨立研究者延伸 Anthropic Jacobian Lens／J-space 研究，在 Qwen3-4B 上評估 J-space entropy 作為錯誤預測指標，橫跨 7 個資料集。 `Reddit / r/MachineLearning · 週熱門`",
+      "focusTags": []
+    },
+    {
+      "title": "What the Government's Fight With Anthropic Reveals About Free Speech in America",
+      "url": "https://news.google.com/rss/articles/CBMidkFVX3lxTE1NUXJYdDFkLUdfcUNoaWlhZjdmSFEwaFpxSWRBZ3RQeTlZaEtPQndESGduWmk3Z1dHWWFzV3BzMGFqQVE2aUJFSWZEU1NZeXl3VEtmQ3hrem00aDJ1UzVydHlQdkZMMElLT2RBaGxndnc1c0g4TXc?oc=5",
+      "source": "",
+      "time": "",
+      "sentiment": "",
+      "body": "《紐約時報》分析政府與 Anthropic 之間的法律攻防如何折射出美國言論自由議題，屬安全政策面深度報導。 `Google News / The New York Times`",
+      "focusTags": []
+    },
+    {
+      "title": "Control the ideas, not the code",
+      "url": "http://antirez.com/news/169",
+      "source": "",
+      "time": "",
+      "sentiment": "",
+      "body": "Redis 創始人 antirez 發表對 AI 輔助程式設計典範的評論觀點：應該掌控想法而非程式碼本身。 `Blog / antirez`",
+      "focusTags": []
+    },
+    {
+      "title": "Fable gets another bump",
+      "url": "https://simonwillison.net/2026/Jul/12/bump/#atom-everything",
+      "source": "",
+      "time": "",
+      "sentiment": "",
+      "body": "Simon Willison 第一手記錄 Anthropic 因 GPT-5.6 Sol 被視為同級競品，再次延長 Fable 5 存取視窗的技術觀察。 `Blog / Simon Willison`",
+      "focusTags": []
+    },
+    {
+      "title": "Musk admits underestimating Anthropic AI, boosting Amazon, Alphabet prospects",
+      "url": "https://news.google.com/rss/articles/CBMipgFBVV95cUxOQlZXNDhvVDNpZGFlLWhJQzFfU0dvQXU5YjNzb054cEdsWEFBUG1XWmgxd2pHSEs3SWU2ZkJpRVA2bGlnb21zeUpHNER0LS1CU1FMRmNpUWJUcVJ3SlhKWkVuOFZRdFpQclNxOEtwa2JzTEtwOEtHZ0JvY1NPZVBUcnRGRHY5eEJFNWQ1YXNRb1Y4N0RFYWczNzNtY045RGhYcEhSOEZB?oc=5",
+      "source": "",
+      "time": "",
+      "sentiment": "",
+      "body": "Crypto Briefing 另一來源報導 Musk 對 Anthropic AI 模型看法「明顯錯誤」的表態（與本日已收錄的 Yahoo Finance 報導為同一事件）。 `Google News / Crypto Briefing`",
+      "focusTags": []
+    },
+    {
+      "title": "Agent Harness ECC Tops 228K Stars: Free Tool Turns Claude Code Into a Full Dev Team",
+      "url": "https://news.google.com/rss/articles/CBMiygFBVV95cUxNMVRnTU9DaTdZRjNRMC1IVml4eTNkbUN1Y0diZXAxMjJZRDFEN1BJdGNpQ0xQSXI3T2pKZmRNRVAwdjJmU2t1c0hRaHZtSlVaMWp2SEdyeFlzV041dFQ1MUgxWmlVYXdMUXBfNElVOGhVaElPTVNJaDBWSGp1VVRpSjVsNVRaWWw5a0xGQWJKTjhfZ21fSklhVDFaYkpIV0RTRW9YV0Ffdk1CTXdtRHYzTFNTcHVvaEQwMEJwWE5CSktpNkJUVTZadG53?oc=5",
+      "source": "",
+      "time": "",
+      "sentiment": "",
+      "body": "Tech Times 報導稱開源工具 Agent Harness ECC 累積 22.8 萬顆星標，宣稱可將 Claude Code 變成完整開發團隊（星數規模顯著，來源單一，數字待查證）。 `Google News / Tech Times`",
+      "focusTags": []
+    },
+    {
+      "title": "Claude Fable 5 stays free for paid users until July 19 as Anthropic buys more time",
+      "url": "https://news.google.com/rss/articles/CBMi3gFBVV95cUxQc0lsel93dHhiN0d2bXEwZmpDTk50SDZYTGtiX2tYMUUtUHo4TnZOVW9EaWJDMkVmcHdZT1g4V2w1ZDdKcDJjYTdUYUt2aXVJTHNJY3NDQmFCRWpaaVNqbFZUaEczRUFVMWFDUEFWNE5hUF9uYy03em1ETlpTRDc1MFpnVU1xNl9ORE81WTdXT3Q3STJjeTA5NGNtSU1YSmNCNXc4Skt1SUhaR0EtVVBBd1llLS0xRXNGRlFQT0NCdWdTNUc5UXljS1k4X2o0R3JxTTRKdi1pY21TUEx3bEHSAeMBQVVfeXFMTWJiT3RadlJ4blVGTWhPMUc4T01EV3RENWUxZUFvd3lsdW5MbUlHQmNDR1Jrd20tejB3enZoZllUVnZVWmlkUVhCU3VLWTNSTU04SjZrOGNGanJfbjdYSGd2SE44X1dFUHJGaTJ5LXI2OGRzd2NVajhxQzRIMFVOc0YtOVNNMFdJODdidHQwY3VUaFRiQTN0dVJOYkJ1QjNseF9qZFVsbzFsSUludWhBNHg0V2hmSVQ2TUE5cTZGcnF4SGUycmltQ2RIYlJ5azZrS2IwUExqX1cyMWE2WVJNZWVCa3c?oc=5",
+      "source": "",
+      "time": "",
+      "sentiment": "",
+      "body": "BleepingComputer 另一來源確認 Fable 5 免費使用期限延長至 7 月 19 日（與已收錄事件重複）。 `Google News / BleepingComputer`",
+      "focusTags": []
+    },
+    {
+      "title": "Directly Responsible Individuals (DRI)",
+      "url": "https://simonwillison.net/2026/Jul/12/directly-responsible-individuals/#atom-everything",
+      "source": "",
+      "time": "",
+      "sentiment": "",
+      "body": "Simon Willison 引用 GitLab 的「Directly Responsible Individuals」工程責任制概念，討論其在 AI 輔助開發流程中的適用性。 `Blog / Simon Willison`",
+      "focusTags": []
+    },
+    {
+      "title": "Show HN: Use After Effects with Claude Code, Cursor and Antigravity",
+      "url": "https://github.com/Arman-Luthra/aftr",
+      "source": "",
+      "time": "",
+      "sentiment": "",
+      "body": "兩則 Show HN 工具發布，熱度較低（6 分／3 分），未達收錄門檻，僅存檔。 `Hacker News` **低互動 Reddit 條目（0 留言，未達收錄門檻，僅存檔）：** [I gave Claude Code a week on Fable and it built a true-scale atlas of the universe](https://www.reddit.com/r/ClaudeCode/comments/1uvaawh/i_gave_claude_code_a_week_on_fable_and_it_built_a/)／[what do you think of this?](https://www.reddit.com/r/ClaudeCode/comments/1uva98g/what_do_you_think_of_this/)／[Who eats the cache cost on Fable downgrades?](https://www.reddit.com/r/ClaudeCode/comments/1uva3kx/who_eats_the_cache_cost_on_fable_downgrades/)／[Feature request: Let Claude Code expose an opt-in native MCP server](https://www.reddit.com/r/ClaudeCode/comments/1uva3bn/feature_request_let_claude_code_expose_an_optin/)／[[OS] I keep finding the same critical bug in AI-built apps](https://www.reddit.com/r/ClaudeAI/comments/1uv9z5u/os_i_keep_finding_the_same_critical_bug_in/)／[Fable 5 is not great](https://www.reddit.com/r/ClaudeCode/comments/1uv9vw1/fable_5_is_not_great/)／[Claude App vs API - similar benefits?](https://www.reddit.com/r/ClaudeAI/comments/1uv9gnw/claude_app_vs_api_similar_benefits/)／[Using Cowork/Code with a backed-up folder?](https://www.reddit.com/r/ClaudeAI/comments/1uv9dfp/using_coworkcode_with_a_backedup_folder/) `Reddit / r/ClaudeCode, r/ClaudeAI`",
+      "focusTags": []
+    },
+    {
+      "title": "sqlite-utils 4.1.1",
+      "url": "https://simonwillison.net/2026/Jul/12/sqlite-utils/#atom-everything",
+      "source": "",
+      "time": "",
+      "sentiment": "",
+      "body": "Simon Willison 部落格關鍵字誤觸（sqlite-utils 套件更新，與 Claude/Anthropic 無直接關聯），判定不收錄，僅存檔說明來源機制。 `Blog / Simon Willison` | 來源 | 狀態 | 條數 | |------|------|------|",
+      "focusTags": []
     }
   ],
   "focus": [

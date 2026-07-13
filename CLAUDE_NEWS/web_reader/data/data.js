@@ -326,8 +326,8 @@ window.WIKI_DATA = {
       "pill": "active",
       "firstSeen": "2026-04-24",
       "startDate": "",
-      "lastUpdated": "2026-07-12",
-      "lastNewsUpdate": "2026-07-12",
+      "lastUpdated": "2026-07-13",
+      "lastNewsUpdate": "2026-07-13",
       "summary": "**當前狀態：** 已被 Opus 4.8 / Fable 5 取代，現為第三階旗艦；agentic coding 場景仍有口碑，一般對話評價分歧。 Claude Opus 4.7 於 2026-04-24 正式發布，已相繼被 Opus 4.8（2026-05-28）與 Fable 5（2026-06-09）取代，現為…",
       "latestHeadline": "當前狀態： 已被 Opus 4.8 / Fable 5 取代，現為第三階旗艦；agentic coding 場景仍有口碑，一般對話評價分歧。"
     },
@@ -511,7 +511,7 @@ window.WIKI_DATA = {
       "lastUpdated": "2026-07-13",
       "lastNewsUpdate": "2026-07-13",
       "summary": "**出口管制已於 2026-07-01 全面解除。** 美國商務部長 Howard Lutnick 宣布解除 Fable 5 和 Mythos 5 的出口管制，正式生效；Anthropic 承諾三項義務換取解封（主動偵測安全風險、與政府合作制定協議與標準、通報惡意活動）；封鎖期共 18–19 天（2026-06-13 …",
-      "latestHeadline": "[媒體重申，無新事實] New York Post：中國「複製」前沿 AI 技術，威脅美國國安：New York Post（經 Google News 轉載）刊文指控中國複製 Anthropic、OpenAI 等前沿 AI 技術並定性為國安威脅；未提供新技術證據或具體案例，論調呼應既有 06-10 阿里巴巴蒸餾指控；單"
+      "latestHeadline": "[框架分析] 紐約時報：政府與 Anthropic 的法律攻防折射言論自由議題：《紐約時報》刊出分析文章〈What the Government's Fight With Anthropic Reveals About Free Speech in America〉，將政府與 Anthropic 之間的法律攻防（訴訟／"
     },
     {
       "id": "code-quality-decline",
@@ -1468,7 +1468,7 @@ window.WIKI_DATA = {
       "pill": "active",
       "firstSeen": "",
       "startDate": "2026-07-02",
-      "lastUpdated": "2026-07-12",
+      "lastUpdated": "2026-07-13",
       "lastNewsUpdate": "2026-07-12",
       "summary": "**目前公開陣容五級維持不變（Fable 5 > Opus 4.8 > Sonnet 5 > Sonnet 4.6 > Haiku 4.5），07-08 官方公布的多模型協作基準是最新橫向比較資訊。** 本頁回答一個問題：**「我該用哪個 Claude 模型？」** 各模型的深度資訊（爭議、時序、已知問題）在各自的 e…",
       "latestHeadline": "目前公開陣容五級維持不變（Fable 5 > Opus 4.8 > Sonnet 5 > Sonnet 4.6 > Haiku 4.5），07-08 官方公布的多模型協作基準是最新橫向比較資訊。 本頁回答一個問題：「我該用哪個 Claude 模型？」 各模型的深度資訊（爭議、時序、已知問題）在各自的 entities "
