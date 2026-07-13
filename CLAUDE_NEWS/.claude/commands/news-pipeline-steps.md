@@ -140,6 +140,19 @@ git -C REPO_ROOT commit -m "news: daily digest TARGET_DATE"
 
 ---
 
+## Step 1c：確認 emitted-cache（強制，commit 成功後才執行）
+
+```
+cd REPO_ROOT\src
+PYTHON -m news_aggregator.main --confirm-digest [--date TARGET_DATE]
+```
+
+- 這一步把 `gathered_items.json` 中的項目在 `emitted_items.json` 標記為 `digest_confirmed: true`——只有真正寫成日報的項目才會被永久視為「已出現過」
+- **為什麼需要這步**：Step 1a（`--gather-only`）只負責篩選＋寫 `gathered_items.json`，不再自動視為「已發布」；如果 Step 1a 成功但 Step 1b（或後續 wiki ingest）失敗、從未真正產出日報，Step 1a 篩掉的項目仍會在下次重新抓取時被當作新項目而非永久靜默丟棄（2026-07-13 曾因此漏失 GH Actions 抓到的 25 則新聞，事後人工補回，詳見當日 log）
+- 若此步驟失敗，記錄警告但不影響已完成的 news commit，繼續後續步驟（下次重跑會自然重新確認）
+
+---
+
 ## Step 2：Wiki Ingest（不在本檔案）
 
 Step 2 由呼叫 `/news-pipeline` 的 session 親自執行，完整步驟見 `.claude/commands/wiki-ingest.md`（不在此重複，避免兩份副本失步）。執行方式與失敗處理原則見 `.claude/commands/news-pipeline.md` Phase B：Step 2 失敗時記錄但仍進入 Phase C（web build 不依賴 wiki）。

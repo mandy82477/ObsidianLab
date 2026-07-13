@@ -11,6 +11,18 @@ That signals the story picked up meaningfully more traction, worth a
 second mention. Otherwise it's filtered out.
 
 Cache entries expire after CACHE_TTL_DAYS so the file doesn't grow forever.
+
+Two-phase commit (digest_confirmed): a `--gather-only` run marks entries it
+emits as digest_confirmed=False — "provisionally emitted, not yet known to
+have reached a real digest". Only main()'s --confirm-digest step (run after
+Step 1b actually writes news/*.md) flips them to True. Until confirmed, an
+entry is treated as if it weren't in the cache at all, so it keeps being
+re-offered to later runs. This exists because a `--gather-only` run can
+succeed (e.g. the GH Actions cron) while the digest that was supposed to
+follow it never gets built (e.g. a cloud routine that failed to fire) — the
+old single-phase cache would silently blackhole those items forever, since
+score_at_emit for a never-rendered item is exactly what it'll be next time,
+so the reignite check (delta >= 10) can never fire.
 """
 import json
 import logging
@@ -65,10 +77,15 @@ def filter_new_or_reignited(
 ) -> tuple[list[FeedItem], dict]:
     """Return (items to keep, updated cache — not yet saved).
 
-    - Item not in cache -> kept, added to cache.
-    - Item in cache, current score < reignite threshold -> dropped.
-    - Item in cache, current score >= 2x recorded score and delta >= 10
-      -> kept (reignited), cache entry's score_at_emit updated.
+    - Item not in cache, or in cache but not yet digest_confirmed -> kept,
+      (re-)added to cache with digest_confirmed=False. An unconfirmed entry
+      means an earlier --gather-only run offered this item but no digest
+      was ever confirmed built from it, so it's treated as if never emitted.
+    - Item in cache and digest_confirmed, current score < reignite threshold
+      -> dropped.
+    - Item in cache and digest_confirmed, current score >= 2x recorded score
+      and delta >= 10 -> kept (reignited), cache entry updated and reset to
+      digest_confirmed=False pending the next confirm-digest call.
     """
     today = today or date.today()
     today_str = today.isoformat()
@@ -79,9 +96,13 @@ def filter_new_or_reignited(
         norm = _normalize_url(item.url)
         existing = updated_cache.get(norm)
 
-        if existing is None:
+        if existing is None or not existing.get("digest_confirmed", False):
             kept.append(item)
-            updated_cache[norm] = {"first_emitted": today_str, "score_at_emit": item.score}
+            updated_cache[norm] = {
+                "first_emitted": (existing or {}).get("first_emitted", today_str),
+                "score_at_emit": item.score,
+                "digest_confirmed": False,
+            }
             continue
 
         prev_score = existing.get("score_at_emit", 0)
@@ -93,7 +114,31 @@ def filter_new_or_reignited(
             updated_cache[norm] = {
                 "first_emitted": existing.get("first_emitted", today_str),
                 "score_at_emit": item.score,
+                "digest_confirmed": False,
             }
-        # else: already emitted, no reignition -> drop silently
+        # else: already emitted & confirmed, no reignition -> drop silently
 
     return kept, updated_cache
+
+
+def confirm_digest(cache: dict, urls: list[str], today: date | None = None) -> dict:
+    """Mark the given URLs as digest_confirmed=True — call this only after a
+    real digest (news/*.md) has actually been written from these items.
+
+    Unknown URLs (not already in cache, e.g. because filtering happened in a
+    process that never called save_cache) are added fresh and confirmed.
+    """
+    today = today or date.today()
+    today_str = today.isoformat()
+    updated_cache = dict(cache)
+
+    for url in urls:
+        norm = _normalize_url(url)
+        existing = updated_cache.get(norm, {})
+        updated_cache[norm] = {
+            "first_emitted": existing.get("first_emitted", today_str),
+            "score_at_emit": existing.get("score_at_emit", 0),
+            "digest_confirmed": True,
+        }
+
+    return updated_cache

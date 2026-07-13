@@ -1,834 +1,1237 @@
 {
   "https://www.anthropic.com/news/hard-questions": {
     "first_emitted": "2026-07-10",
-    "score_at_emit": 0
+    "score_at_emit": 0,
+    "digest_confirmed": true
   },
   "https://www.anthropic.com/news/ust-claude": {
     "first_emitted": "2026-07-10",
-    "score_at_emit": 0
+    "score_at_emit": 0,
+    "digest_confirmed": true
   },
   "https://www.anthropic.com/news/ben-bernanke": {
     "first_emitted": "2026-07-10",
-    "score_at_emit": 66
+    "score_at_emit": 66,
+    "digest_confirmed": true
   },
   "https://www.anthropic.com/news/reflect-with-claude": {
     "first_emitted": "2026-07-10",
-    "score_at_emit": 44
+    "score_at_emit": 44,
+    "digest_confirmed": true
   },
   "https://devthropology.com/demo": {
     "first_emitted": "2026-07-10",
-    "score_at_emit": 34
+    "score_at_emit": 34,
+    "digest_confirmed": true
   },
   "https://lucid.earthpilot.ai": {
     "first_emitted": "2026-07-10",
-    "score_at_emit": 31
+    "score_at_emit": 31,
+    "digest_confirmed": true
   },
   "https://dev.to/rapls/my-ai-agent-got-dumber-mid-session-i-measured-the-context-window-before-blaming-mcp-4c3l": {
     "first_emitted": "2026-07-10",
-    "score_at_emit": 21
+    "score_at_emit": 21,
+    "digest_confirmed": true
   },
   "https://dev.to/rapls/connecting-an-mcp-server-gives-your-agent-hands-it-also-gives-a-stranger-a-way-in-3mgi": {
     "first_emitted": "2026-07-10",
-    "score_at_emit": 18
+    "score_at_emit": 18,
+    "digest_confirmed": true
   },
   "https://kastra.ai": {
     "first_emitted": "2026-07-10",
-    "score_at_emit": 12
+    "score_at_emit": 12,
+    "digest_confirmed": true
   },
   "https://dev.to/toffy/use-fable-5-where-it-pays-for-itself-1809": {
     "first_emitted": "2026-07-10",
-    "score_at_emit": 8
+    "score_at_emit": 8,
+    "digest_confirmed": true
   },
   "https://papercrane.ai/blog/today-im-launching-papercrane-cli-a-bi-tool-built-for-claude-code": {
     "first_emitted": "2026-07-10",
-    "score_at_emit": 7
+    "score_at_emit": 7,
+    "digest_confirmed": true
   },
   "https://dev.to/adioof/anthropic-hid-tracking-signals-in-unicode-apostrophes-thats-not-telemetry-thats-steganography-2p3e": {
     "first_emitted": "2026-07-10",
-    "score_at_emit": 6
+    "score_at_emit": 6,
+    "digest_confirmed": true
   },
   "https://dev.to/toffy/one-command-turns-claude-code-into-a-full-dev-team-1d1e": {
     "first_emitted": "2026-07-10",
-    "score_at_emit": 6
+    "score_at_emit": 6,
+    "digest_confirmed": true
   },
   "https://dev.to/aws-builders/how-my-first-claude-code-on-aws-bedrock-experiment-cost-me-843-in-just-one-day-1835": {
     "first_emitted": "2026-07-10",
-    "score_at_emit": 6
+    "score_at_emit": 6,
+    "digest_confirmed": true
   },
   "https://dev.to/sayed_ali_alkamel/i-pointed-a-skill-linter-at-a-52k-star-repo-here-is-what-84100-looks-like-28cn": {
     "first_emitted": "2026-07-10",
-    "score_at_emit": 6
+    "score_at_emit": 6,
+    "digest_confirmed": true
   },
   "https://dev.to/tokenmixai/i-did-the-math-on-claude-sonnet-5-the-60-opus-discount-is-real-but-temporary-31pf": {
     "first_emitted": "2026-07-10",
-    "score_at_emit": 5
+    "score_at_emit": 5,
+    "digest_confirmed": true
   },
   "https://dev.to/newan2001/i-built-a-claude-code-skill-that-finds-customers-not-competitors-on-reddit-linkedin-4h82": {
     "first_emitted": "2026-07-10",
-    "score_at_emit": 5
+    "score_at_emit": 5,
+    "digest_confirmed": true
   },
   "https://dev.to/grenishrai/anthropics-claude-in-2026-when-frontier-ai-stopped-being-just-software-3mch": {
     "first_emitted": "2026-07-10",
-    "score_at_emit": 5
+    "score_at_emit": 5,
+    "digest_confirmed": true
   },
   "https://github.com/fresswolf/Slopera": {
     "first_emitted": "2026-07-10",
-    "score_at_emit": 3
+    "score_at_emit": 3,
+    "digest_confirmed": true
   },
   "https://dev.to/ai_made_tools/claude-sonnet-5-complete-guide-to-benchmarks-pricing-and-features-2026-1n5b": {
     "first_emitted": "2026-07-10",
-    "score_at_emit": 3
+    "score_at_emit": 3,
+    "digest_confirmed": true
   },
   "https://dev.to/execute25/i-built-a-multi-agent-loop-where-an-adversarial-claude-reviewer-reads-your-actual-codebase-before-2d8n": {
     "first_emitted": "2026-07-10",
-    "score_at_emit": 3
+    "score_at_emit": 3,
+    "digest_confirmed": true
   },
   "https://dev.to/tokenmixai/i-checked-why-claude-fable-5-was-suspended-4-days-after-launch-this-is-not-an-outage-54f2": {
     "first_emitted": "2026-07-10",
-    "score_at_emit": 3
+    "score_at_emit": 3,
+    "digest_confirmed": true
   },
   "https://github.com/vibhasjain/agent-keyboard": {
     "first_emitted": "2026-07-10",
-    "score_at_emit": 2
+    "score_at_emit": 2,
+    "digest_confirmed": true
   },
   "https://github.com/MadsLorentzen/ai-job-search": {
     "first_emitted": "2026-07-10",
-    "score_at_emit": 2
+    "score_at_emit": 2,
+    "digest_confirmed": true
   },
   "https://github.com/Kuberwastaken/subagentmaxxing": {
     "first_emitted": "2026-07-10",
-    "score_at_emit": 2
+    "score_at_emit": 2,
+    "digest_confirmed": true
   },
   "https://jazzyalex.github.io/agent-sessions": {
     "first_emitted": "2026-07-10",
-    "score_at_emit": 2
+    "score_at_emit": 2,
+    "digest_confirmed": true
   },
   "https://dev.to/arthurpro/mcp-after-year-one-six-design-lessons-the-industry-is-still-learning-1bdb": {
     "first_emitted": "2026-07-10",
-    "score_at_emit": 2
+    "score_at_emit": 2,
+    "digest_confirmed": true
   },
   "https://dev.to/houleixx/i-built-a-local-reverse-proxy-to-see-what-claude-code-actually-sends-to-anthropic-5foo": {
     "first_emitted": "2026-07-10",
-    "score_at_emit": 2
+    "score_at_emit": 2,
+    "digest_confirmed": true
   },
   "https://github.com/Clear-Sights/Makoto": {
     "first_emitted": "2026-07-10",
-    "score_at_emit": 1
+    "score_at_emit": 1,
+    "digest_confirmed": true
   },
   "https://secondhandtokens.com": {
     "first_emitted": "2026-07-10",
-    "score_at_emit": 1
+    "score_at_emit": 1,
+    "digest_confirmed": true
   },
   "https://github.com/whatadewitt/claude-status-light": {
     "first_emitted": "2026-07-10",
-    "score_at_emit": 1
+    "score_at_emit": 1,
+    "digest_confirmed": true
   },
   "https://outsideagent.ai": {
     "first_emitted": "2026-07-10",
-    "score_at_emit": 1
+    "score_at_emit": 1,
+    "digest_confirmed": true
   },
   "https://www.reddit.com/r/ClaudeCode/comments/1usmnip/straightening_spagetti_code": {
     "first_emitted": "2026-07-10",
-    "score_at_emit": 0
+    "score_at_emit": 0,
+    "digest_confirmed": true
   },
   "https://www.reddit.com/r/ClaudeCode/comments/1usmkxi/how_did_you_use_fable_i_joined_late_missed_most": {
     "first_emitted": "2026-07-10",
-    "score_at_emit": 0
+    "score_at_emit": 0,
+    "digest_confirmed": true
   },
   "https://www.reddit.com/r/ClaudeCode/comments/1usmhov/changing_model_after_response_alredy_started": {
     "first_emitted": "2026-07-10",
-    "score_at_emit": 0
+    "score_at_emit": 0,
+    "digest_confirmed": true
   },
   "https://www.reddit.com/r/ClaudeCode/comments/1usme8d/i_built_a_model_router_for_claude_code": {
     "first_emitted": "2026-07-10",
-    "score_at_emit": 0
+    "score_at_emit": 0,
+    "digest_confirmed": true
   },
   "https://www.reddit.com/r/ClaudeCode/comments/1usmcjh/built_an_mcp_server_that_turns_claude_code_into_a": {
     "first_emitted": "2026-07-10",
-    "score_at_emit": 0
+    "score_at_emit": 0,
+    "digest_confirmed": true
   },
   "https://www.reddit.com/r/artificial/comments/1urmekh/whats_your_actual_workflow_for_keeping_context": {
     "first_emitted": "2026-07-10",
-    "score_at_emit": 0
+    "score_at_emit": 0,
+    "digest_confirmed": true
   },
   "https://www.reddit.com/r/artificial/comments/1uovy56/benchmarks_compare_open_models_against_closed": {
     "first_emitted": "2026-07-10",
-    "score_at_emit": 0
+    "score_at_emit": 0,
+    "digest_confirmed": true
   },
   "https://www.reddit.com/r/artificial/comments/1uoana3/a_war_between_anthropic_and_alibaba": {
     "first_emitted": "2026-07-10",
-    "score_at_emit": 0
+    "score_at_emit": 0,
+    "digest_confirmed": true
   },
   "https://www.reddit.com/r/artificial/comments/1unbuu4/wait_what": {
     "first_emitted": "2026-07-10",
-    "score_at_emit": 0
+    "score_at_emit": 0,
+    "digest_confirmed": true
   },
   "https://www.reddit.com/r/artificial/comments/1un6v9c/this_week_in_ai_gpt56_gemini_35_flash_claude": {
     "first_emitted": "2026-07-10",
-    "score_at_emit": 0
+    "score_at_emit": 0,
+    "digest_confirmed": true
   },
   "https://www.reddit.com/r/artificial/comments/1umysgl/anthropic_vs_opensourced_model": {
     "first_emitted": "2026-07-10",
-    "score_at_emit": 0
+    "score_at_emit": 0,
+    "digest_confirmed": true
   },
   "https://status.claude.com/incidents/mpn4d4xt44dm": {
     "first_emitted": "2026-07-10",
-    "score_at_emit": 0
+    "score_at_emit": 0,
+    "digest_confirmed": true
   },
   "https://github.com/anthropics/claude-code/releases/tag/v2.1.206": {
     "first_emitted": "2026-07-10",
-    "score_at_emit": 0
+    "score_at_emit": 0,
+    "digest_confirmed": true
   },
   "https://github.com/anthropics/claude-code/issues/16157": {
     "first_emitted": "2026-07-10",
-    "score_at_emit": 1479
+    "score_at_emit": 1479,
+    "digest_confirmed": true
   },
   "https://github.com/anthropics/claude-code/issues/38335": {
     "first_emitted": "2026-07-10",
-    "score_at_emit": 791
+    "score_at_emit": 791,
+    "digest_confirmed": true
   },
   "https://github.com/anthropics/claude-code/issues/6235": {
     "first_emitted": "2026-07-10",
-    "score_at_emit": 335
+    "score_at_emit": 335,
+    "digest_confirmed": true
   },
   "https://github.com/anthropics/claude-code/issues/27302": {
     "first_emitted": "2026-07-10",
-    "score_at_emit": 212
+    "score_at_emit": 212,
+    "digest_confirmed": true
   },
   "https://github.com/anthropics/claude-code/issues/17432": {
     "first_emitted": "2026-07-10",
-    "score_at_emit": 205
+    "score_at_emit": 205,
+    "digest_confirmed": true
   },
   "https://github.com/anthropics/claude-code/issues/5088": {
     "first_emitted": "2026-07-10",
-    "score_at_emit": 180
+    "score_at_emit": 180,
+    "digest_confirmed": true
   },
   "https://github.com/anthropics/claude-code/issues/73125": {
     "first_emitted": "2026-07-10",
-    "score_at_emit": 143
+    "score_at_emit": 143,
+    "digest_confirmed": true
   },
   "https://github.com/anthropics/claude-code/issues/15942": {
     "first_emitted": "2026-07-10",
-    "score_at_emit": 139
+    "score_at_emit": 139,
+    "digest_confirmed": true
   },
   "https://github.com/anthropics/claude-code/issues/18435": {
     "first_emitted": "2026-07-10",
-    "score_at_emit": 126
+    "score_at_emit": 126,
+    "digest_confirmed": true
   },
   "https://github.com/anthropics/claude-code/issues/36151": {
     "first_emitted": "2026-07-10",
-    "score_at_emit": 126
+    "score_at_emit": 126,
+    "digest_confirmed": true
   },
   "https://github.com/anthropics/claude-code/issues/34820": {
     "first_emitted": "2026-07-10",
-    "score_at_emit": 94
+    "score_at_emit": 94,
+    "digest_confirmed": true
   },
   "https://github.com/anthropics/claude-code/issues/30154": {
     "first_emitted": "2026-07-10",
-    "score_at_emit": 60
+    "score_at_emit": 60,
+    "digest_confirmed": true
   },
   "https://github.com/anthropics/claude-code/issues/73365": {
     "first_emitted": "2026-07-10",
-    "score_at_emit": 56
+    "score_at_emit": 56,
+    "digest_confirmed": true
   },
   "https://github.com/anthropics/claude-code/issues/49322": {
     "first_emitted": "2026-07-10",
-    "score_at_emit": 50
+    "score_at_emit": 50,
+    "digest_confirmed": true
   },
   "https://github.com/anthropics/claude-code/issues/8451": {
     "first_emitted": "2026-07-10",
-    "score_at_emit": 48
+    "score_at_emit": 48,
+    "digest_confirmed": true
   },
   "https://michael480th.github.io/Banana-Battle": {
     "first_emitted": "2026-07-10",
-    "score_at_emit": 2
+    "score_at_emit": 2,
+    "digest_confirmed": true
   },
   "https://www.reddit.com/r/ClaudeCode/comments/1usqfv5/i_made_a_claudemd_focused_on_explicitness_and": {
     "first_emitted": "2026-07-10",
-    "score_at_emit": 0
+    "score_at_emit": 0,
+    "digest_confirmed": true
   },
   "https://www.reddit.com/r/ClaudeCode/comments/1usqf10/built_a_free_inbox_cleaner_in_rust_because_my": {
     "first_emitted": "2026-07-10",
-    "score_at_emit": 0
+    "score_at_emit": 0,
+    "digest_confirmed": true
   },
   "https://www.reddit.com/r/ClaudeCode/comments/1usq948/what_is_the_most_impressive_thing_you_built_with": {
     "first_emitted": "2026-07-10",
-    "score_at_emit": 0
+    "score_at_emit": 0,
+    "digest_confirmed": true
   },
   "https://www.reddit.com/r/ClaudeCode/comments/1usq1he/checklist_i_run_before_calling_a_loop": {
     "first_emitted": "2026-07-10",
-    "score_at_emit": 0
+    "score_at_emit": 0,
+    "digest_confirmed": true
   },
   "https://www.reddit.com/r/ClaudeCode/comments/1uspzoz/how_great_is_the_new_siri_really_coding_looping": {
     "first_emitted": "2026-07-10",
-    "score_at_emit": 0
+    "score_at_emit": 0,
+    "digest_confirmed": true
   },
   "https://www.reddit.com/r/ClaudeCode/comments/1uspsia/context_after_session_limit_hit": {
     "first_emitted": "2026-07-10",
-    "score_at_emit": 0
+    "score_at_emit": 0,
+    "digest_confirmed": true
   },
   "https://news.google.com/rss/articles/CBMi8wFBVV95cUxOWi1abVhFenVsaVJRTk15Y09uNDdway0xaEx5M1dDS1VFRWxzcy05a2UyemhMM1VxWUkwdzdaVDZKUGZBSHNILThhaVN1OU1nRGUxdHRWanhvMS1QSjdtaVlySkpFc1dsSHotbGlodG9BTDdkT1hkVXRLT1JyME9pMlc1QzRZbGowdGoxZ0lGSl9vRDM0YnNRU2NsSFZfaDhaNUowRGgtMzFjMTdQRU05X1NCOHFfMTdtamFsc2U3bjJoemJ2aEtMTjVWWlVDVTZWY3RWT1ZFRTRwSVg0cnllSW5CNDF5Q25xWVoyZF9kc2F3YTDSAfgBQVVfeXFMUG9yZGtLdU8xbUpBWVhBWG1UTXdKclNzZFg1R0hDb21JTmJSTXAxRkl5ZlZCQy1zUUhheVZGdVpjdFdHZTZ5UEh4cDJLS1lYZEI2bUUyYnBaYk93d1hVaW9qUGhQSDYzOG5ETjdVMVVGZVZLOVBCMmY0M0szRmZuUzJMeUEwUVlRbXZRTjd0RXpGYkRLbktEZnoyYmhxakxJOHYwSmF4bkdzc1BMc3A1RXNRd3BCN3RBalpJSUFmRVgtT3RKLUNlWnh0b25FbndHUU9XeEE2UHJ1bHRCSmxOOEE3TDlWTHlQcVprVk5WLTVGTll2RUM1T2I?oc=5": {
     "first_emitted": "2026-07-10",
-    "score_at_emit": 0
+    "score_at_emit": 0,
+    "digest_confirmed": true
   },
   "https://news.google.com/rss/articles/CBMivgFBVV95cUxQWjhsUlE1UTJUUWZvei1icGN6YnAySmdHUUZUYjRXME8yck9DcEtiYlNiSGlnRnY0Vkl6UWNaZGxKSlQ2TnBQNy02WHByQ1NsdkFHMTd5d0IzZUZGZmx6VHZVRFJ2WjNPbEVLMU9nQjlRMG02dHFZTXZ5My1iX1hIeDdLbXU1UUE4bUhTbzA5ZlFqSFNFWENrdndnNmpUcENBM2ZkNmU0S0RCUWUzR2JFU3dKUjMzMi12Mk40aGhR?oc=5": {
     "first_emitted": "2026-07-10",
-    "score_at_emit": 0
+    "score_at_emit": 0,
+    "digest_confirmed": true
   },
   "https://news.google.com/rss/articles/CBMinwFBVV95cUxORFJHQ1o3bXAzQ1NTSV81WDlGSXR2RWZQdDZGNlBVYmZTY2gwZDIzbFFmRWZDOVFXOHFlTkhjWlYzM2tSWGhBYXdGd1JEZmpkd1J4RnhlaUFHQkozTzhxSHFQNjg0cmt6ZGYxcDlUSE5aMklmT1dOMXFsV3ctRko2QWhWUW1SejNkamxrbFBVNHhPYkk0S1Q2SzZOa0tpYlU?oc=5": {
     "first_emitted": "2026-07-10",
-    "score_at_emit": 0
+    "score_at_emit": 0,
+    "digest_confirmed": true
   },
   "https://news.google.com/rss/articles/CBMiU0FVX3lxTFBtMklheERUNXZ4SmRTN3hoZWZ2NUE3bndtLUJoa0JKdm9hOHlYeXltZnZQNENBMjdHMjVTRk1CT0ROcGMtVFVYSjdSNHdKSi1fU21B?oc=5": {
     "first_emitted": "2026-07-10",
-    "score_at_emit": 0
+    "score_at_emit": 0,
+    "digest_confirmed": true
   },
   "https://news.google.com/rss/articles/CBMiqAFBVV95cUxNa2h1NmxkaEpnNlpkemhuNl9BMkQ1eThoekRBdnhGendRRkRjRTRrcTUxSmF5M3RkRlhnNzI5WmttRE9HVlp3clhHWmV0alpxX0NVaHRNcHVjcFVsWU53NTZCLVRDT0w2dzQwYm1UU3o1OFQyNWpxUGQ3Wkc0anRhR081eTZBQ3V6a19BTnJTT254S1luRjhQZ3pjLWtGMS1aSGRlTlpmajg?oc=5": {
     "first_emitted": "2026-07-10",
-    "score_at_emit": 0
+    "score_at_emit": 0,
+    "digest_confirmed": true
   },
   "https://news.google.com/rss/articles/CBMiU0FVX3lxTE9PWmhDajNFV09GX2ZrcFpRTHJUcFdwcFZDRDFvMlQ5MGhpclVkR1dYSFI4MllXTWRkaTR5cEhQN0RvcmFRVTVicXpxbUZkc2lDUTZj?oc=5": {
     "first_emitted": "2026-07-10",
-    "score_at_emit": 0
+    "score_at_emit": 0,
+    "digest_confirmed": true
   },
   "https://news.google.com/rss/articles/CBMiiwFBVV95cUxOdVFrbTBnNUdXbUt2UjNfMmtOSFJfR3RSSmVud2ZNTzVlNDhpQkpaZlpuU0FTRTUtU09VYV9PLTZ4S1VDekphaUR6TDJMdUNTb3JmUjdhMjVKSE5RZXM2aG1UZ3lSdHh2bDhqY0ZuNExLR1MzQjJvWTQ5ZGJzVEZDZXZoa1VyQko3R3hR?oc=5": {
     "first_emitted": "2026-07-10",
-    "score_at_emit": 0
+    "score_at_emit": 0,
+    "digest_confirmed": true
   },
   "https://news.google.com/rss/articles/CBMifkFVX3lxTE1wemJKWTFORXd6YmVORDljMUFEUGZmMlllRmlfX0lSRGpicmFuRmQ2NFNwV0hNWnhrZmZsamZGMXYyM1JGemZ0ODBnaXo0anRwZk81RzA3ZmY2VkZMYnVld2dHQV9FUFNEYjd3Sy1HNmUtdnRIbkx6Mnc0ZDVfQQ?oc=5": {
     "first_emitted": "2026-07-10",
-    "score_at_emit": 0
+    "score_at_emit": 0,
+    "digest_confirmed": true
   },
   "https://news.google.com/rss/articles/CBMioAFBVV95cUxPWWg4QlB6VW5lZ282SHlQRWphdjRWSnVLUkhXNWUyYlN6dnhPYjVST2t6UmVXWmRMX3NDZFk0dzdtdVhaZV9DTUxnTkt2R2VuMlhRYnJwY3VBNlk5bXFTZEFzTGxLRlM3aG1aYmVLSU84UVFyRE1IOWkxR2NiRnVyT1AyOXFiLTFuTW5KekFqLUZTTHJxbFFXS0tmOEg5d0Jw?oc=5": {
     "first_emitted": "2026-07-10",
-    "score_at_emit": 0
+    "score_at_emit": 0,
+    "digest_confirmed": true
   },
   "https://news.google.com/rss/articles/CBMilAFBVV95cUxNRjhMU0szcDZGZEJyYzFqMnlxMVV5Z25mbVNyMi1qQnBUYWp1U3pQZnA0dnBpQll4dzZHMkdlc09heTBJYjY3UG9GX25sd1VKMEFSczR6UmFfMVNtTndFYnlGVDJ4TXI1U3JnWGNtUHlId2E3a09KUUE2ZDVkV1lqSWhEbzd1SndpZzFNUm55QWwyMEc4?oc=5": {
     "first_emitted": "2026-07-10",
-    "score_at_emit": 0
+    "score_at_emit": 0,
+    "digest_confirmed": true
   },
   "https://news.google.com/rss/articles/CBMiugFBVV95cUxPTVBLbm9aTGI4dlBYeGpyT2N4c3Zja214TUt2QllUQmswUzJTeXR4aWlsU25ibnJCaVlaZVFuMUtBbjBSQ0JEcjZfMnA1UE94cDBBdlBfbnZFY3RLR1Y0MjJrbVJNNjB6OUwyUTJRWXlYT1gtYTI2eGRDaDd1WThvZFYxaERDOEVYeS1UbU5iS0VjSmhUTExhajBDelFQSjUwdjFJd2ZoOEhkRmRBazZaYnRidzRlLUFEOHfSAb8BQVVfeXFMUFhtUFdVa1lqQk8zdFU3NE5QLTdrY0lFdERFRnRGNmtWMjNSdFhNSTF0M29qQnUweWc0Qm9HVEh3aWtGZUNuLVZHN3FmckxCZDJMYmY2ZC1OR0N0R1ZMcG5RU2tFdFlXYms3aEVyTjN2emh2YUVGUlRQRjh1MzBiMi1SUjlEOGVBUTlhaENnbS1lZXBHS3FvMS15YnFtdFZBa2xjQ3RqeWNCUHpOandrQnI1RjZSd2ZzN0RLXzZodm8?oc=5": {
     "first_emitted": "2026-07-10",
-    "score_at_emit": 0
+    "score_at_emit": 0,
+    "digest_confirmed": true
   },
   "https://news.google.com/rss/articles/CBMigwFBVV95cUxOMGFKel9mdWRQREl4YmU0OU8tOGJTYlpQcmxUZWxHQzdOanJDWjRzMWNBdVdkWkNNczlPNElMVWRkYXlKeU1ISUVLdVJiZFhKd0V0ZVl4U09PWWZsWnNHdHdZVDdlc2ppWFAtd2w0OGxKbjlrZWM1N3pRVnR1ZmNmR1pNSQ?oc=5": {
     "first_emitted": "2026-07-10",
-    "score_at_emit": 0
+    "score_at_emit": 0,
+    "digest_confirmed": true
   },
   "https://news.google.com/rss/articles/CBMikgFBVV95cUxOZ2tEWU1XQmk4OEdCcHhKSmF1VkFwMUxLcUJsQTVRY2N3NEhkMXduSUo3bVBBUk1zYUp6Q2p2QWozRHZ5NnJwM2VLSG0yUkJSOV9JMGpoZjl6R3Jsa0UxZnozeGQ1NjI1Z3NobzZMQlpLNjJBVTZSR3plRTJ6T2pCalhKUHVubnBlOENtVTBSN0dOUQ?oc=5": {
     "first_emitted": "2026-07-10",
-    "score_at_emit": 0
+    "score_at_emit": 0,
+    "digest_confirmed": true
   },
   "https://news.google.com/rss/articles/CBMinwFBVV95cUxQc3FyRXJHNHJaSlFGblZPVnVpc05lVGd1S2RibEVHSlZsVk5wLVhhV1lBVkwzQ0pqLXg5bnZBVURfY29SaDlKMU40aDBGeFFpajZBVU1ZWUdrc1NFMC1rUWRJMS1qZ0FheHAwb0VpcmdzNHB0TW9qVDFuSXdra2RYNjRmM0w4THktQ1diSHNNeko2R09qTFZzVEEyMG1sOVE?oc=5": {
     "first_emitted": "2026-07-10",
-    "score_at_emit": 0
+    "score_at_emit": 0,
+    "digest_confirmed": true
   },
   "https://news.google.com/rss/articles/CBMijgFBVV95cUxOUUt4VEJ2TW1WeWZaUlNIYWR4OE1xVUhQY0NDeVppOWNwVGF0TEpQdGUtT3JGT1hrMFJlcWJ6ck5TbllTdERMb2ZQamstcnZFVkFjTkxkbGQwZmM5Zmg1bnNaMlRZeWI2aEhraVFhX3MzRkRWdXQ5MHNJd3EtTlc0SU5IYk5DSTJGSU9tdWJ3?oc=5": {
     "first_emitted": "2026-07-10",
-    "score_at_emit": 0
+    "score_at_emit": 0,
+    "digest_confirmed": true
   },
   "https://news.google.com/rss/articles/CBMipgFBVV95cUxPRWFPUzFGbjVnQXpCQmh0d3BybFlmSnR1R0E0WUpLdXBVVTN6eENPajNoS25udGFHSmpITnptUWRScGlXb1o5NnNWMHNFY2pSRHpIS21hZGdpNi1PbHZ0NzJrVThQcDFNaVRSbGRJLVBSa21XX0RmTDBFOXNWRnhhWmdOVU1SV1Nsd1Z4N1BhRDFSSFVhWEdMM2ZaaVFDZlhGVkl6emp3?oc=5": {
     "first_emitted": "2026-07-10",
-    "score_at_emit": 0
+    "score_at_emit": 0,
+    "digest_confirmed": true
   },
   "https://news.google.com/rss/articles/CBMiWEFVX3lxTE0yeHlpRmsxaGNhVGwxREszVzFIZHh1T05XS0F2c0JrczVmd3hBaWNnMjB0N0xSYTdRd2hxREp2OGF4SEtDemFEanpLZVNlSFRSSThuQVBXMFY?oc=5": {
     "first_emitted": "2026-07-10",
-    "score_at_emit": 0
+    "score_at_emit": 0,
+    "digest_confirmed": true
   },
   "https://news.google.com/rss/articles/CBMiiwFBVV95cUxPV0QybzJ5YnlPRFFEaFA3S3FFSkJiMXJEM1NoQkhCM28xOTlJMVVfaWFLbng0S25BTC1sODNhMFd3bVJtNmxORmNJUGFuTHRPazVpNWFQTjN5VUU1SG5zVU9EUzU4WDAyM3h1NkdZZkhISFVVeG9LaG94SUxJSmRYNDBwMGV6dS1XelRN0gGQAUFVX3lxTE5sTTd1OF9aX296R0VWb21mZGItcWRhbnlCS0ZnNUlKVFVqd3RBT1RoaVVFV0dnUXZjNW56bWZucmFRQjA5NkNpd3ktY0M5UEY2S0gyd0E4ZHZoZndvdXpLbzh0ZDkwYTRWOFJHaXVfcEI2dE5UQWctUkNfMXczaU9kQ3p2azIwUmhZM0Vldi1JSg?oc=5": {
     "first_emitted": "2026-07-10",
-    "score_at_emit": 0
+    "score_at_emit": 0,
+    "digest_confirmed": true
   },
   "https://news.google.com/rss/articles/CBMitgFBVV95cUxPOGJjWFRTd3VPOXVlem5JY0RDakE5RUNWdjRCUTQzNGRXTFM3bmM2Z2p3UW9qcnR1ZE83ZXNPU2E5VUV2NkhqX1JhZk9Ibmxoa1BUVTZ1ejlqeUx4M3JwS0RjRE5sUjFPUnkxQlpsTUVxbFlReWdIMktwVDNtankzZDdCNTBEQnZGakdDcDdfV3ItRXRUN0MxY21QMWk3UXJ3eWI3UnBUeDlVSjhjVmwwblFoWU50dw?oc=5": {
     "first_emitted": "2026-07-10",
-    "score_at_emit": 0
+    "score_at_emit": 0,
+    "digest_confirmed": true
   },
   "https://news.google.com/rss/articles/CBMioAFBVV95cUxPYks0cTFOVkphWVZ4Ukdja2lQa3hmTlBWcWNQTmdVd2ZHdmxVUTdHWG1XUWlfamcyZTUxWlB3S3QtcnJwVW4wQ1llUDVBb3RDSUN0X2hETURrYUgxUmkzcE1GcEpUdGZDaE1ibm9pdzhZeFlFeE9UdXQ3V1RCLS1XNHJaaHdWb3BLWlBFMlp0VkpMYXBISXNiWTJDemNQZDV0?oc=5": {
     "first_emitted": "2026-07-10",
-    "score_at_emit": 0
+    "score_at_emit": 0,
+    "digest_confirmed": true
   },
   "https://news.google.com/rss/articles/CBMioAFBVV95cUxOa1dxU1JNM2gybUFmVWR1STVhX2VWVGVGWGhxMEdXX0RBR243dGIzaDBqR1NCS2VSX2Z6ZVFXa181QUZSeHB0SDNhM25wYzNzYk1iY1NObWs3bE5iNlZKdC1jMmFhaklWNHpLQlN6UU5UT01HalhfY0hRRWFzbVk1ZDVSR1V1X1VuMTBsMFlMb0c0eTdVcnU0bDQ1aFE3NTFw0gGmAUFVX3lxTE1nWm5QWUJiRDFLYkZVcEdjUjZJcHlyRXItanp5YUhRSkRIMjVIRFd4YW5uYmlkWjNaLW4yY3FjanBOV2ZlUDY0TjFBZkVaeXh2NzFSdzVoYUZGQlpGaGUzMWVYNHktMkVrRVJWakdxbExxUjRyMVd2VDh0bF9SeG11VTNHRXIwdWFzdmlaNGZ4TzB1RXYteTI0aWFVcmJRQkRMNFpSNEE?oc=5": {
     "first_emitted": "2026-07-10",
-    "score_at_emit": 0
+    "score_at_emit": 0,
+    "digest_confirmed": true
   },
   "https://news.google.com/rss/articles/CBMikwFBVV95cUxQRHhwUkdUV0w5aG4zTUtPT05zTnlmNUN3RklKVk8zdlNvOThLQjFvTElnQkZIVldDN1NCbUkyNy1sWmZiaHhmRmVFY3F1dlh2UFNSVGhOUnhvMWdNVXBnMGFNaWhZaFlyZVpSQWFNVDlvTXdKMEpfaHhvODVxRkhqODRQd3lLNUV3OEdNblljTTBrejQ?oc=5": {
     "first_emitted": "2026-07-10",
-    "score_at_emit": 0
+    "score_at_emit": 0,
+    "digest_confirmed": true
   },
   "https://github.com/anthropics/claude-code/releases/tag/v2.1.207": {
     "first_emitted": "2026-07-11",
-    "score_at_emit": 0
+    "score_at_emit": 0,
+    "digest_confirmed": true
   },
   "https://github.com/anthropics/anthropic-sdk-typescript/releases/tag/sdk-v0.111.0": {
     "first_emitted": "2026-07-11",
-    "score_at_emit": 0
+    "score_at_emit": 0,
+    "digest_confirmed": true
   },
   "https://status.claude.com/incidents/6djcn2k6v8kp": {
     "first_emitted": "2026-07-11",
-    "score_at_emit": 0
+    "score_at_emit": 0,
+    "digest_confirmed": true
   },
   "https://www.tryai.dev/blog/gpt-5.6-build-off-12-models": {
     "first_emitted": "2026-07-11",
-    "score_at_emit": 150
+    "score_at_emit": 150,
+    "digest_confirmed": true
   },
   "https://github.com/anthropics/claude-code/issues/24055": {
     "first_emitted": "2026-07-11",
-    "score_at_emit": 137
+    "score_at_emit": 137,
+    "digest_confirmed": true
   },
   "https://github.com/anthropics/claude-code/issues/42776": {
     "first_emitted": "2026-07-11",
-    "score_at_emit": 104
+    "score_at_emit": 104,
+    "digest_confirmed": true
   },
   "https://github.com/anthropics/claude-code/issues/50270": {
     "first_emitted": "2026-07-11",
-    "score_at_emit": 64
+    "score_at_emit": 64,
+    "digest_confirmed": true
   },
   "https://github.com/anthropics/claude-code/issues/27263": {
     "first_emitted": "2026-07-11",
-    "score_at_emit": 49
+    "score_at_emit": 49,
+    "digest_confirmed": true
   },
   "https://github.com/anthropics/claude-code/issues/5674": {
     "first_emitted": "2026-07-11",
-    "score_at_emit": 48
+    "score_at_emit": 48,
+    "digest_confirmed": true
   },
   "https://github.com/anthropics/claude-code/issues/74649": {
     "first_emitted": "2026-07-11",
-    "score_at_emit": 47
+    "score_at_emit": 47,
+    "digest_confirmed": true
   },
   "https://github.com/anthropics/claude-code/issues/60705": {
     "first_emitted": "2026-07-11",
-    "score_at_emit": 47
+    "score_at_emit": 47,
+    "digest_confirmed": true
   },
   "https://github.com/anthropics/claude-code/issues/69238": {
     "first_emitted": "2026-07-11",
-    "score_at_emit": 47
+    "score_at_emit": 47,
+    "digest_confirmed": true
   },
   "https://github.com/anthropics/claude-code/issues/56913": {
     "first_emitted": "2026-07-11",
-    "score_at_emit": 46
+    "score_at_emit": 46,
+    "digest_confirmed": true
   },
   "https://github.com/anthropics/claude-code/issues/14828": {
     "first_emitted": "2026-07-11",
-    "score_at_emit": 40
+    "score_at_emit": 40,
+    "digest_confirmed": true
   },
   "https://github.com/anthropics/claude-code/issues/27492": {
     "first_emitted": "2026-07-11",
-    "score_at_emit": 38
+    "score_at_emit": 38,
+    "digest_confirmed": true
   },
   "https://github.com/anthropics/claude-code/issues/50674": {
     "first_emitted": "2026-07-11",
-    "score_at_emit": 38
+    "score_at_emit": 38,
+    "digest_confirmed": true
   },
   "https://news.ycombinator.com/item?id=48867021": {
     "first_emitted": "2026-07-11",
-    "score_at_emit": 12
+    "score_at_emit": 12,
+    "digest_confirmed": true
   },
   "https://github.com/inferock/inferock-bench": {
     "first_emitted": "2026-07-11",
-    "score_at_emit": 3
+    "score_at_emit": 3,
+    "digest_confirmed": true
   },
   "https://github.com/Trivo25/code-airlock": {
     "first_emitted": "2026-07-11",
-    "score_at_emit": 2
+    "score_at_emit": 2,
+    "digest_confirmed": true
   },
   "https://github.com/seaworthy-io/seaworthy-mcp": {
     "first_emitted": "2026-07-11",
-    "score_at_emit": 2
+    "score_at_emit": 2,
+    "digest_confirmed": true
   },
   "https://github.com/Quality-Max/9lives": {
     "first_emitted": "2026-07-11",
-    "score_at_emit": 2
+    "score_at_emit": 2,
+    "digest_confirmed": true
   },
   "https://github.com/thrinz/agentpeek": {
     "first_emitted": "2026-07-11",
-    "score_at_emit": 1
+    "score_at_emit": 1,
+    "digest_confirmed": true
   },
   "https://github.com/amebahead/explain-like-iam-five-rules": {
     "first_emitted": "2026-07-11",
-    "score_at_emit": 1
+    "score_at_emit": 1,
+    "digest_confirmed": true
   },
   "https://news.ycombinator.com/item?id=48864459": {
     "first_emitted": "2026-07-11",
-    "score_at_emit": 1
+    "score_at_emit": 1,
+    "digest_confirmed": true
   },
   "https://github.com/jokkebk/bunrun": {
     "first_emitted": "2026-07-11",
-    "score_at_emit": 1
+    "score_at_emit": 1,
+    "digest_confirmed": true
   },
   "https://www.reddit.com/r/ClaudeCode/comments/1utkvz9/anyone_else_prefer_older_or_nonlatest_versions_of": {
     "first_emitted": "2026-07-11",
-    "score_at_emit": 0
+    "score_at_emit": 0,
+    "digest_confirmed": true
   },
   "https://www.reddit.com/r/ClaudeCode/comments/1utkpk6/i_benchmarked_gpt56_sollunaterra_by_role_sol_high": {
     "first_emitted": "2026-07-11",
-    "score_at_emit": 0
+    "score_at_emit": 0,
+    "digest_confirmed": true
   },
   "https://www.reddit.com/r/ClaudeCode/comments/1utkn2y/fable_is_increasingly_unusable": {
     "first_emitted": "2026-07-11",
-    "score_at_emit": 0
+    "score_at_emit": 0,
+    "digest_confirmed": true
   },
   "https://www.reddit.com/r/ClaudeCode/comments/1utkbdk/i_built_an_mcp_server_that_turns_app_screenshots": {
     "first_emitted": "2026-07-11",
-    "score_at_emit": 0
+    "score_at_emit": 0,
+    "digest_confirmed": true
   },
   "https://www.reddit.com/r/ClaudeCode/comments/1utk88v/referral_code_needed": {
     "first_emitted": "2026-07-11",
-    "score_at_emit": 0
+    "score_at_emit": 0,
+    "digest_confirmed": true
   },
   "https://www.reddit.com/r/ClaudeAI/comments/1utk7nd/claude_code_repeated_a_user_message_that_does_not": {
     "first_emitted": "2026-07-11",
-    "score_at_emit": 0
+    "score_at_emit": 0,
+    "digest_confirmed": true
   },
   "https://www.reddit.com/r/ClaudeCode/comments/1utk71z/perplexity_enterprise_pricing_what_am_i_missing": {
     "first_emitted": "2026-07-11",
-    "score_at_emit": 0
+    "score_at_emit": 0,
+    "digest_confirmed": true
   },
   "https://news.google.com/rss/articles/CBMinwFBVV95cUxNeTNzYmxlSTYwVUpOTmg1SUZiWkxuX2ZzUk9OTXdsQThMMmVvXzgxYXpGYlpDM0FteEZlM0F5WkgyYjlrQTJxUGpUb2prcHltNFZLaFd1Nzg3c3ZocXFCSnpSTnhHVTZISTNlNlVpTF8zN0JpTnZud29yc2V4UjhkNlVlYzNVVTB3bGE2Mm1SOFNVbzJnNklTeFVvWUN6M1E?oc=5": {
     "first_emitted": "2026-07-11",
-    "score_at_emit": 0
+    "score_at_emit": 0,
+    "digest_confirmed": true
   },
   "https://www.reddit.com/r/ClaudeAI/comments/1utj8qj/bug_claudeapi_skill_using_an_insane_amount_of": {
     "first_emitted": "2026-07-11",
-    "score_at_emit": 0
+    "score_at_emit": 0,
+    "digest_confirmed": true
   },
   "https://www.reddit.com/r/ClaudeAI/comments/1utimp8/claude_has_been_ending_conversation_if_i_abuse_it": {
     "first_emitted": "2026-07-11",
-    "score_at_emit": 0
+    "score_at_emit": 0,
+    "digest_confirmed": true
   },
   "https://www.reddit.com/r/ClaudeAI/comments/1utfsi9/telling_claude_to_interview_me_for_unknown": {
     "first_emitted": "2026-07-11",
-    "score_at_emit": 0
+    "score_at_emit": 0,
+    "digest_confirmed": true
   },
   "https://news.google.com/rss/articles/CBMihAJBVV95cUxOUG1LZ3ByVE9jX2RMcnFWa3FkM3dQeWdUUk9wUk45d3d2WGNyYmVQSE9CTHFMTmRpdjNoamhFSmttZS1FRVlPVU1PV1cxMWxlRjU2cW9KN29BaVh2OWxMdnU2NVZmUEVKM3hIMEFlWV9yckJqQ2cxVkdlQ3J0QWxxV01LUlBSR1c2a1BNQTVyQktScDhGclc1YVlxd2FobkRTVi05WS03SE5kMHhRQktTMTU1dnVPcUR3U2ZQNkVVYWJyYi1YaU5SeHpKU1pQMl82YjhtTW45S01fakNOc1IxYVhmN29uaW9mUklveWpDcFFzQVdBY25vMWpWejdLX2FWU2dGMw?oc=5": {
     "first_emitted": "2026-07-11",
-    "score_at_emit": 0
+    "score_at_emit": 0,
+    "digest_confirmed": true
   },
   "https://news.google.com/rss/articles/CBMikAFBVV95cUxNRWVvbTBUT3NhcENnVjJ3WDZibVRLM1ZOLWVXaUNnSWRDUTBaT3JTOE83ZXdyWHU4OENPUUVUTTl1NmZnLUxTemVzMk5CQVRkeVZSN1BVWVJpbDg1RE1XSnhZVEJUMkZKM0JKeWVhaHZ4U19ZRTh6M0hoWkVQZTF4VVo3bFVnUzRsbEZSTTdZVlA?oc=5": {
     "first_emitted": "2026-07-11",
-    "score_at_emit": 0
+    "score_at_emit": 0,
+    "digest_confirmed": true
   },
   "https://news.google.com/rss/articles/CBMiogFBVV95cUxNeTdVOXR4aVFGbjVhUGNjWjNsb2s4WE5RcGV6UWRnMmVUWEdUbm1xMjJaWUxrWHJQVEd0Mm05M3VFRlRjWlVGUnVuckNCd0ZhMWpqWHdTcFN4MGlmc0NEM0QyR2drT3Q1WEc4UlpJUWNmX21Qb0h6WTRZUFZfUW4ydk5STlNMaExUSTlOMkI1N1dNdVVtUGs0WUs4TUdreUVTb1E?oc=5": {
     "first_emitted": "2026-07-11",
-    "score_at_emit": 0
+    "score_at_emit": 0,
+    "digest_confirmed": true
   },
   "https://news.google.com/rss/articles/CBMixgFBVV95cUxQSzhPUDhodDNXd0pRVEtYUmExcExfQmRMdmd1Y3l5bHFuc0I5aXVEeFQyNWFyOUpSNTB0RUR2SkVJZVVnc3BkM3FadDVaaURQV0oxSWxsby1KSHBUT1I0bThNemZ6eDF2c3hPSjdpaEFOcXFyTjlKbUpkSzVSa0ZLRy1KbFlNRXh1dkctM1JKSmV3X0w2dDhsck5PM0tNWVVUa0lTbmpKaXBhVlZvaVBVY1I4UkxjUTgtQmk4UUhxUjRwZkE3Vmc?oc=5": {
     "first_emitted": "2026-07-11",
-    "score_at_emit": 0
+    "score_at_emit": 0,
+    "digest_confirmed": true
   },
   "https://news.google.com/rss/articles/CBMimwFBVV95cUxNTDJWWV9ta2NreFF5WlVQUWo1VmZ1X2FhYnZNWEdzWXNvN0cxRWxDM0Q1ZEdjWFdvMFB3OWNtMjlFSzlVMDh1YVJkckl1aXpEVEtMLU9kTm5HUFdiVnl5dEgxN3pJbzRycWVfMTdGWVZkaUtGSzMwNllnSDBfaWpRU1VGWi1SUElKc3NUOE9PUzdWb1IyT0Nfd04tSQ?oc=5": {
     "first_emitted": "2026-07-11",
-    "score_at_emit": 0
+    "score_at_emit": 0,
+    "digest_confirmed": true
   },
   "https://news.google.com/rss/articles/CBMijwFBVV95cUxPOGhyX09LLVJyU2oxeklZZlNoUkNtR1hYb0FYNnNuMHFPeVI4TTR3LVVZNHJyaVZwdENHNUhIV0tlaVl1NXBOUUQ1SUpGZlRYa0VueHQyckJhVGhYUUllQ0NIbXM4WlZzMzc3NktnMXRlczdZYm9OVHpJQjB1QTFDSjVWY0ozRWsxY2dPRFJRTdIBlAFBVV95cUxPek9xOXU0ajFsckl5bEFRTFRqV2RURlNSQUhUMWVFSVU1RDVjVGJrLUF4Nnh5dVd4QWxXaHhrTEIwSkdNdHRITGdRVE5wb1JSRFYyQkxoLXRpbEk5SzlhLTRta2JyQVlwTGJpdkhnZDRkS1F1cWZCOGJSajBLRGt2LTZka1NpcUxueHhTWmNsb3dkQml5?oc=5": {
     "first_emitted": "2026-07-11",
-    "score_at_emit": 0
+    "score_at_emit": 0,
+    "digest_confirmed": true
   },
   "https://news.google.com/rss/articles/CBMiygJBVV95cUxNcHM3Y3hDMEJyYmstN19IVHNKUldZTjZFVTh6cFloamhQclJ4R3VYQVdzYUY4ejY1TjBwVkE4NXREV2tvdGRGTVBJMzdoWDBORnRRTzBkSlJrdTNYdUVPRmNUTUM0QzBHYTFkRW5SeTl1M2RrSzRMNmt1U0FjTFhiU0k1eDVsczRmWGhKM1J4c2xYaWNoOTJpdXZ3SFA4MGxaTlZiVzlNbGc2c0E4RHBRdDJERzRoTk1ndkdwSU1MQmZqeGljSXdoZjZVNnhSRWlMMnAyVjhEWm80S0VwNWlXU3hiVHk2U1NxQ0tWZnFFR1NVYUpNZXNGb0pPSmo5UVEyYjY0dWdHNW8yRkhsOElpQkJ2SGVQTDgtOEJ0aTRrcjZVczk5b3kyNHF4NV9nNXh3U3R2cC1Ma3JmZGFUOFU0d1Z4bHhyU2VBUlE?oc=5": {
     "first_emitted": "2026-07-11",
-    "score_at_emit": 0
+    "score_at_emit": 0,
+    "digest_confirmed": true
   },
   "https://www.reddit.com/r/LocalLLaMA/comments/1usrek0/according_to_databricks_picodingagent_is_2x": {
     "first_emitted": "2026-07-11",
-    "score_at_emit": 0
+    "score_at_emit": 0,
+    "digest_confirmed": true
   },
   "https://news.google.com/rss/articles/CBMihwFBVV95cUxNcWZISUcyNUR2anhaVkl2a3dwQTN2cmd1dmx3bGJWci1iWGgyZVlEYWtMZ0pMbEx4SnF4eFNweXd4S3Frd0pvZ2QxangyS2lJQlZudnd3NmlTSUxTOE5hbjV4V0xwa29xd2Z5Wms1Q09UbWVoOF84QUhnQ3dKZ1V5aTJGT25jNjA?oc=5": {
     "first_emitted": "2026-07-11",
-    "score_at_emit": 0
+    "score_at_emit": 0,
+    "digest_confirmed": true
   },
   "https://www.reddit.com/r/LocalLLaMA/comments/1ur41ou/4bit_glm52_753b_moe_on_4_dgx_spark_708_on": {
     "first_emitted": "2026-07-11",
-    "score_at_emit": 0
+    "score_at_emit": 0,
+    "digest_confirmed": true
   },
   "https://www.reddit.com/r/LocalLLaMA/comments/1uptw9b/a_trained_fastweight_memory_a_3mparam_transformer": {
     "first_emitted": "2026-07-11",
-    "score_at_emit": 0
+    "score_at_emit": 0,
+    "digest_confirmed": true
   },
   "https://www.reddit.com/r/LocalLLaMA/comments/1upjgqs/update_i_built_a_tool_to_turn_your_claude_code": {
     "first_emitted": "2026-07-11",
-    "score_at_emit": 0
+    "score_at_emit": 0,
+    "digest_confirmed": true
   },
   "https://www.reddit.com/r/LocalLLaMA/comments/1unbjr2/using_local_models_with_hermes_vs_claude_code": {
     "first_emitted": "2026-07-11",
-    "score_at_emit": 0
+    "score_at_emit": 0,
+    "digest_confirmed": true
   },
   "https://github.com/anthropics/claude-code/issues/53262": {
     "first_emitted": "2026-07-12",
-    "score_at_emit": 93
+    "score_at_emit": 93,
+    "digest_confirmed": true
   },
   "https://github.com/anthropics/claude-code/issues/60334": {
     "first_emitted": "2026-07-12",
-    "score_at_emit": 70
+    "score_at_emit": 70,
+    "digest_confirmed": true
   },
   "https://github.com/anthropics/claude-code/issues/40198": {
     "first_emitted": "2026-07-12",
-    "score_at_emit": 61
+    "score_at_emit": 61,
+    "digest_confirmed": true
   },
   "https://github.com/anthropics/claude-code/issues/24798": {
     "first_emitted": "2026-07-12",
-    "score_at_emit": 56
+    "score_at_emit": 56,
+    "digest_confirmed": true
   },
   "https://github.com/anthropics/claude-code/issues/36168": {
     "first_emitted": "2026-07-12",
-    "score_at_emit": 55
+    "score_at_emit": 55,
+    "digest_confirmed": true
   },
   "https://www.androidauthority.com/claude-latest-models-pushback-bad-3683521": {
     "first_emitted": "2026-07-12",
-    "score_at_emit": 47
+    "score_at_emit": 47,
+    "digest_confirmed": true
   },
   "https://github.com/anthropics/claude-code/issues/11018": {
     "first_emitted": "2026-07-12",
-    "score_at_emit": 45
+    "score_at_emit": 45,
+    "digest_confirmed": true
   },
   "https://openbenchmarks.com": {
     "first_emitted": "2026-07-12",
-    "score_at_emit": 6
+    "score_at_emit": 6,
+    "digest_confirmed": true
   },
   "https://dev.to/grenishrai/the-paradox-of-power-why-anthropic-released-and-then-restricted-claude-fable-5-2g3p": {
     "first_emitted": "2026-07-12",
-    "score_at_emit": 6
+    "score_at_emit": 6,
+    "digest_confirmed": true
   },
   "https://github.com/ninjahawk/Confessor": {
     "first_emitted": "2026-07-12",
-    "score_at_emit": 5
+    "score_at_emit": 5,
+    "digest_confirmed": true
   },
   "https://www.runaether.dev": {
     "first_emitted": "2026-07-12",
-    "score_at_emit": 3
+    "score_at_emit": 3,
+    "digest_confirmed": true
   },
   "https://dev.to/valpere/session-indexer-giving-claude-code-a-memory-that-doesnt-die-with-the-project-next-door-3b76": {
     "first_emitted": "2026-07-12",
-    "score_at_emit": 3
+    "score_at_emit": 3,
+    "digest_confirmed": true
   },
   "https://claudelines.com": {
     "first_emitted": "2026-07-12",
-    "score_at_emit": 2
+    "score_at_emit": 2,
+    "digest_confirmed": true
   },
   "https://whatpetshouldiget.com/play.html": {
     "first_emitted": "2026-07-12",
-    "score_at_emit": 2
+    "score_at_emit": 2,
+    "digest_confirmed": true
   },
   "https://github.com/dotbrt/dejaview": {
     "first_emitted": "2026-07-12",
-    "score_at_emit": 1
+    "score_at_emit": 1,
+    "digest_confirmed": true
   },
   "https://github.com/crisnahine/chameleon": {
     "first_emitted": "2026-07-12",
-    "score_at_emit": 1
+    "score_at_emit": 1,
+    "digest_confirmed": true
   },
   "https://github.com/raine/claude-code-proxy": {
     "first_emitted": "2026-07-12",
-    "score_at_emit": 1
+    "score_at_emit": 1,
+    "digest_confirmed": true
   },
   "https://waitingfor.ai": {
     "first_emitted": "2026-07-12",
-    "score_at_emit": 1
+    "score_at_emit": 1,
+    "digest_confirmed": true
   },
   "https://www.reddit.com/r/ClaudeCode/comments/1uuck8s/claude_usage_bug": {
     "first_emitted": "2026-07-12",
-    "score_at_emit": 0
+    "score_at_emit": 0,
+    "digest_confirmed": true
   },
   "https://www.reddit.com/r/ClaudeCode/comments/1uuce0y/can_i_get_a_guest_pass_to_try_claude_fable": {
     "first_emitted": "2026-07-12",
-    "score_at_emit": 0
+    "score_at_emit": 0,
+    "digest_confirmed": true
   },
   "https://www.reddit.com/r/ClaudeCode/comments/1uucaiy/mnema_a_local_encrypted_memory_layer_for_ai_agents": {
     "first_emitted": "2026-07-12",
-    "score_at_emit": 0
+    "score_at_emit": 0,
+    "digest_confirmed": true
   },
   "https://www.reddit.com/r/ClaudeCode/comments/1uucafo/fable_is_back_again": {
     "first_emitted": "2026-07-12",
-    "score_at_emit": 0
+    "score_at_emit": 0,
+    "digest_confirmed": true
   },
   "https://www.reddit.com/r/ClaudeCode/comments/1uuc653/migration_prompts_to_sol_using_fable_machine_to": {
     "first_emitted": "2026-07-12",
-    "score_at_emit": 0
+    "score_at_emit": 0,
+    "digest_confirmed": true
   },
   "https://www.reddit.com/r/ClaudeCode/comments/1uuc1wd/getting_this_even_after_account_is_logged_in_what": {
     "first_emitted": "2026-07-12",
-    "score_at_emit": 0
+    "score_at_emit": 0,
+    "digest_confirmed": true
   },
   "https://www.reddit.com/r/LocalLLaMA/comments/1uubneb/i_tried_to_make_clean_architectures_depends_only": {
     "first_emitted": "2026-07-12",
-    "score_at_emit": 0
+    "score_at_emit": 0,
+    "digest_confirmed": true
   },
   "https://www.reddit.com/r/LocalLLaMA/comments/1uubbsb/harnesstrim_a_deterministic_benchmarked": {
     "first_emitted": "2026-07-12",
-    "score_at_emit": 0
+    "score_at_emit": 0,
+    "digest_confirmed": true
   },
   "https://www.reddit.com/r/LocalLLaMA/comments/1uuavid/opencode_agents_vs_claude_code": {
     "first_emitted": "2026-07-12",
-    "score_at_emit": 0
+    "score_at_emit": 0,
+    "digest_confirmed": true
   },
   "https://news.google.com/rss/articles/CBMiugFBVV95cUxPdl9XYWMwRTdUcUJDa3lXQlRqMVhxbU5QSFA2cmFvUVU4U0tEVHE1ODhHQVhrMlFncGdnd29UelZvdHU4YW1GQlRNcXFsUHVRWjY3MkVGT1gyTkFaaFp2MUYxVkNXNXpTSllmOVFnTm5Od2Rsc1JkMTFaVzJ1TTcteWw5QzlibWtfdmNONkd5clMzUWZtaXFRRFItRjFZWHI1WmdpOXl3eTFWZE9SaVg3TW8xMFNkWnp5b1E?oc=5": {
     "first_emitted": "2026-07-12",
-    "score_at_emit": 0
+    "score_at_emit": 0,
+    "digest_confirmed": true
   },
   "https://news.google.com/rss/articles/CBMiaEFVX3lxTE5YTGhHb2IwcElVbHFsdnFVSHJlM1VzMW1hTHRoX0J0N19oSFJCX0NDTEhRS0ZjYnhKcnVfRmlXRm9JS1pMVDcxOC12ZWNzaVM0MGVzZldCbFcxTk9ZTG9jVTA2Z0syOXFH?oc=5": {
     "first_emitted": "2026-07-12",
-    "score_at_emit": 0
+    "score_at_emit": 0,
+    "digest_confirmed": true
   },
   "https://www.reddit.com/r/LocalLLaMA/comments/1uu3545/qwenthropic": {
     "first_emitted": "2026-07-12",
-    "score_at_emit": 0
+    "score_at_emit": 0,
+    "digest_confirmed": true
   },
   "https://news.google.com/rss/articles/CBMiigFBVV95cUxQTTN6VzVIY0NldnZ2dW1WLVZCM2FaeUJVbW9IRXIwNVBkcGJZWTNZYjRfLXhFdTcyaVVNb04zclNHMnROVE1FYy1CWVBVM2xBd09XaVBlRERLd1g4RWRxak1hZDRYODRWOFlHMHpiM1RxcERrbVRza3Bya2JZTXpsVWdKdjlZVlM2NFE?oc=5": {
     "first_emitted": "2026-07-12",
-    "score_at_emit": 0
+    "score_at_emit": 0,
+    "digest_confirmed": true
   },
   "https://news.google.com/rss/articles/CBMihAFBVV95cUxNaVZob3BlX25qanJ3VjYwdUR0bmFJWW9zUmUxLUczWHVvZ1didnZOODZMRHZ0cWdGWk1LNDNTM3FqOFU3a0FtZUF3OWxaUGFiSXVHRDdFU3M3OTVVZC1ZcTFPZUVxbUVPMmtfMDg4WkhPQXhCcjlsSmkzaWQ2OEpxR2dzcGM?oc=5": {
     "first_emitted": "2026-07-12",
-    "score_at_emit": 0
+    "score_at_emit": 0,
+    "digest_confirmed": true
   },
   "https://news.google.com/rss/articles/CBMimgFBVV95cUxNSzdjaWhlRlIxazNzdWppcUVBbjNnLTkzd1ItS1plN2h6QTYwUE9kRWRxbEl3eW9VcENST2pxdGhlRjlNd1BqQnU1UHFvVFUwVW9wb0NNdUNHTEdwNC04YmdIN2RiRkJfRFNkWU5YLU0zNWJreW5Rd2JxV3dvWmREVnRaMl8yTDFLdFV2eGtKbHFmRV9hYS10WHZ3?oc=5": {
     "first_emitted": "2026-07-12",
-    "score_at_emit": 0
+    "score_at_emit": 0,
+    "digest_confirmed": true
   },
   "https://news.google.com/rss/articles/CBMiYkFVX3lxTE10ZkNTb0tGVnFXQVRyMWttSkdNekIwLW4yeWhseV9nVkliZkxYV0JjY29NN2NBX3QxMGdTYURWekFZVGhVN1ZQWHhFd0NvVl81LU1jYmxyb0tKSTZRbGdVdmZ3?oc=5": {
     "first_emitted": "2026-07-12",
-    "score_at_emit": 0
+    "score_at_emit": 0,
+    "digest_confirmed": true
   },
   "https://systima.ai/blog/claude-code-vs-opencode-token-overhead": {
     "first_emitted": "2026-07-13",
-    "score_at_emit": 624
+    "score_at_emit": 624,
+    "digest_confirmed": true
   },
   "https://raymyers.org/post/zed-creator-calls-spade-a-spade": {
     "first_emitted": "2026-07-13",
-    "score_at_emit": 557
+    "score_at_emit": 557,
+    "digest_confirmed": true
   },
   "https://github.com/anthropics/claude-code/issues/20696": {
     "first_emitted": "2026-07-13",
-    "score_at_emit": 61
+    "score_at_emit": 61,
+    "digest_confirmed": true
   },
   "https://github.com/anthropics/claude-code/issues/1785": {
     "first_emitted": "2026-07-13",
-    "score_at_emit": 58
+    "score_at_emit": 58,
+    "digest_confirmed": true
   },
   "https://support.claude.com/en/articles/15910845-claude-code-may-july-2026-weekly-limits-promotion": {
     "first_emitted": "2026-07-13",
-    "score_at_emit": 45
+    "score_at_emit": 45,
+    "digest_confirmed": true
   },
   "https://www.technologyreview.com/2026/07/09/1140293/anthropic-found-a-hidden-space-where-claude-puzzles-over-concepts": {
     "first_emitted": "2026-07-13",
-    "score_at_emit": 14
+    "score_at_emit": 14,
+    "digest_confirmed": true
   },
   "https://github.com/Arman-Luthra/aftr": {
     "first_emitted": "2026-07-13",
-    "score_at_emit": 6
+    "score_at_emit": 6,
+    "digest_confirmed": true
   },
   "https://github.com/autopost/llm-mock": {
     "first_emitted": "2026-07-13",
-    "score_at_emit": 3
+    "score_at_emit": 3,
+    "digest_confirmed": true
   },
   "https://www.reddit.com/r/ClaudeCode/comments/1uvaawh/i_gave_claude_code_a_week_on_fable_and_it_built_a": {
     "first_emitted": "2026-07-13",
-    "score_at_emit": 0
+    "score_at_emit": 0,
+    "digest_confirmed": true
   },
   "https://www.reddit.com/r/ClaudeCode/comments/1uva98g/what_do_you_think_of_this": {
     "first_emitted": "2026-07-13",
-    "score_at_emit": 0
+    "score_at_emit": 0,
+    "digest_confirmed": true
   },
   "https://www.reddit.com/r/ClaudeCode/comments/1uva3kx/who_eats_the_cache_cost_on_fable_downgrades": {
     "first_emitted": "2026-07-13",
-    "score_at_emit": 0
+    "score_at_emit": 0,
+    "digest_confirmed": true
   },
   "https://www.reddit.com/r/ClaudeCode/comments/1uva3bn/feature_request_let_claude_code_expose_an_optin": {
     "first_emitted": "2026-07-13",
-    "score_at_emit": 0
+    "score_at_emit": 0,
+    "digest_confirmed": true
   },
   "https://www.reddit.com/r/ClaudeAI/comments/1uv9z5u/os_i_keep_finding_the_same_critical_bug_in": {
     "first_emitted": "2026-07-13",
-    "score_at_emit": 0
+    "score_at_emit": 0,
+    "digest_confirmed": true
   },
   "https://www.reddit.com/r/ClaudeCode/comments/1uv9vw1/fable_5_is_not_great": {
     "first_emitted": "2026-07-13",
-    "score_at_emit": 0
+    "score_at_emit": 0,
+    "digest_confirmed": true
   },
   "https://www.reddit.com/r/ClaudeAI/comments/1uv9gnw/claude_app_vs_api_similar_benefits": {
     "first_emitted": "2026-07-13",
-    "score_at_emit": 0
+    "score_at_emit": 0,
+    "digest_confirmed": true
   },
   "https://www.reddit.com/r/ClaudeAI/comments/1uv9dfp/using_coworkcode_with_a_backedup_folder": {
     "first_emitted": "2026-07-13",
-    "score_at_emit": 0
+    "score_at_emit": 0,
+    "digest_confirmed": true
   },
   "http://antirez.com/news/169": {
     "first_emitted": "2026-07-13",
-    "score_at_emit": 0
+    "score_at_emit": 0,
+    "digest_confirmed": true
   },
   "https://news.google.com/rss/articles/CBMipwFBVV95cUxQcnRkUThTbUk5T2toQ1RPb05GREh4a3JvSU01blpDbHpDY3NDT3pzSkdZaWNiZEtKX1JrNk5LcmZxQ0pwT19DaFVDc2UwLS1ueUZERWk3c05mWmduUkdia2ZVQlZTeEZMTXpvZmxHQzlNNjdocFg2U29Tcy0zV1dMcGdBMllVaUZLZWhtTmxJcmlqQ2NMckhpcy1COEdSV2dOckVHLXBkRQ?oc=5": {
     "first_emitted": "2026-07-13",
-    "score_at_emit": 0
+    "score_at_emit": 0,
+    "digest_confirmed": true
   },
   "https://news.google.com/rss/articles/CBMirwFBVV95cUxNU09CamI2RWlHeVFhZHhkcENTeUxHY29SVFhYSm94UGxGajB5QThtdDc4cS1OT1lkSHo1a0tVbTJidTdnYkMwdC1fczUwempZdFRHZG9sc0ZRZDg3UzdEVXdveUZyYUdUU0ZVazlpSzMzdG82bDJhNUpWMmoyUkEzcGRGVEZ2dE9kRnhLdm8zekg3bVFSTnhUOUlBUVdTRmoySkFBTTcyU0xvbklFS2Vn?oc=5": {
     "first_emitted": "2026-07-13",
-    "score_at_emit": 0
+    "score_at_emit": 0,
+    "digest_confirmed": true
   },
   "https://news.google.com/rss/articles/CBMilwFBVV95cUxOcDlFTEdGMG84dzNVN3RpTnNnZXBnbVFGMkt2R2VNSnlteFItSmpRTUt2V3RheWhubndOUjloRndZWXBWcEdyZmNBYldURUw0YVJXTmtYd1FfUThPUmZPLTFyUTVhTU5TaGJ1bVJReE5ZLVlvRkJXVVZJTG9kQl9IVjM4Q1ozd21VeWU3QWUtcF8zQ1RRZUY4?oc=5": {
     "first_emitted": "2026-07-13",
-    "score_at_emit": 0
+    "score_at_emit": 0,
+    "digest_confirmed": true
   },
   "https://news.google.com/rss/articles/CBMipgFBVV95cUxOQlZXNDhvVDNpZGFlLWhJQzFfU0dvQXU5YjNzb054cEdsWEFBUG1XWmgxd2pHSEs3SWU2ZkJpRVA2bGlnb21zeUpHNER0LS1CU1FMRmNpUWJUcVJ3SlhKWkVuOFZRdFpQclNxOEtwa2JzTEtwOEtHZ0JvY1NPZVBUcnRGRHY5eEJFNWQ1YXNRb1Y4N0RFYWczNzNtY045RGhYcEhSOEZB?oc=5": {
     "first_emitted": "2026-07-13",
-    "score_at_emit": 0
+    "score_at_emit": 0,
+    "digest_confirmed": true
   },
   "https://news.google.com/rss/articles/CBMi1gFBVV95cUxQTGFvcEc3bmw4aEl1eGZPc3JIR3JhVThCQXJMdXo3RnM5Q2ZId29JLXJlcnRqd0JIMi1xVFBZS2VNWVFFMExyNXNzdzkyX2phdWo5dHBZaXAtZzBPOTQyYlRuX2VpWFQxS1FkMFBjVDFRV05FTzZEV3VpMHR3LXBjX1A5Z3BoYlZfbnozOXl3bnk1bGk4eVRnS0FNZHhDLUstNnZCMk1fUEVtUjJsam5jWG1VTXRQUURtQnF0Si1sWG85Z2JOVzNTSThVOE9sdkRIQUlEZ3BB?oc=5": {
     "first_emitted": "2026-07-13",
-    "score_at_emit": 0
+    "score_at_emit": 0,
+    "digest_confirmed": true
   },
   "https://news.google.com/rss/articles/CBMikgFBVV95cUxNUkx5TVR0N0loXzVWeUh6bU9hdVJTUDlkTVdYaVM2dWJ4Yl8zN19GdU1tR3BTT2tFcHQ0eXg2eHZWd2FiRHN6aHZ5aU5PUzJ4RmVZeDlxZ2tBVzMwSVJ5aHcyaF8xLWNOeV9xbEs0VHlrWkdDQzJxd0JwendOOXRPN2RRZEUwZHgwVmR0OGw2YURtdw?oc=5": {
     "first_emitted": "2026-07-13",
-    "score_at_emit": 0
+    "score_at_emit": 0,
+    "digest_confirmed": true
   },
   "https://news.google.com/rss/articles/CBMidkFVX3lxTE1NUXJYdDFkLUdfcUNoaWlhZjdmSFEwaFpxSWRBZ3RQeTlZaEtPQndESGduWmk3Z1dHWWFzV3BzMGFqQVE2aUJFSWZEU1NZeXl3VEtmQ3hrem00aDJ1UzVydHlQdkZMMElLT2RBaGxndnc1c0g4TXc?oc=5": {
     "first_emitted": "2026-07-13",
-    "score_at_emit": 0
+    "score_at_emit": 0,
+    "digest_confirmed": true
   },
   "https://www.reddit.com/r/MachineLearning/comments/1uv5l75/evaluating_jspace_entropy_as_an_error_predictor": {
     "first_emitted": "2026-07-13",
-    "score_at_emit": 0
+    "score_at_emit": 0,
+    "digest_confirmed": true
   },
   "https://news.google.com/rss/articles/CBMiowFBVV95cUxOamRYZHlzTjF2dW5TbVo3MGFScnVfeFRfUHRCNDRWaGhtSU5HbFJlNDNEUzd3akFxNFE1Y3J3ekhyR0FYLWhhNi0zTmd4Qno3ek5UUEJncjQ1TS1GODlGRnJzQm1SNEF3ZkwyZXd6Z2JOV3plSUdZdGloLVdtc0RzUGRTU25XeHF2VS1kT04xd3U2dEVZdHFyb09MRUFkRzBNc1ZB?oc=5": {
     "first_emitted": "2026-07-13",
-    "score_at_emit": 0
+    "score_at_emit": 0,
+    "digest_confirmed": true
   },
   "https://news.google.com/rss/articles/CBMiqwFBVV95cUxPSnlHZk5GTWlVYVNBTWJGZUdqbnE1bllJc29UNUFVandHdUhvcEhpNnRKdFdDSVNqOThFS2NTN2gwcFFodG12VTNJNHlJcndZU1EydDhSWmVMSWFXVkc1NGRMWWNnSGdKS2JUaDBDT3pnQzg1SzVOMUx2ay1OODlodU10Yk9zdEFacWFUVTVmak5HYjRKVHRtN21vNXN1T0ItZUpNZzhLYmcxeE0?oc=5": {
     "first_emitted": "2026-07-13",
-    "score_at_emit": 0
+    "score_at_emit": 0,
+    "digest_confirmed": true
   },
   "https://news.google.com/rss/articles/CBMiygFBVV95cUxNMVRnTU9DaTdZRjNRMC1IVml4eTNkbUN1Y0diZXAxMjJZRDFEN1BJdGNpQ0xQSXI3T2pKZmRNRVAwdjJmU2t1c0hRaHZtSlVaMWp2SEdyeFlzV041dFQ1MUgxWmlVYXdMUXBfNElVOGhVaElPTVNJaDBWSGp1VVRpSjVsNVRaWWw5a0xGQWJKTjhfZ21fSklhVDFaYkpIV0RTRW9YV0Ffdk1CTXdtRHYzTFNTcHVvaEQwMEJwWE5CSktpNkJUVTZadG53?oc=5": {
     "first_emitted": "2026-07-13",
-    "score_at_emit": 0
+    "score_at_emit": 0,
+    "digest_confirmed": true
   },
   "https://news.google.com/rss/articles/CBMizgFBVV95cUxQTHpncEwwZEpIXzliS3V6ZXVNYzZDYW5HUnpoNm1SWFhxbUIwT00zcjZEd01vOEJWS1RiTTJldWttZ2R5MW1vREw3YWotQXNEbjVVTjFZUFBBN1p1Y3BxZVFXT3NOZHZuMFlzM05md3dWNEVKZVVIdDlXeFlYdWJaVHprV21sWjB6RnZsTjVtQVZTeFhza05HMWdsb3ExeXNDb0VtZmZ0WTFVSG42ZG1NV1I1TjhERG1JbzAwUk9lekJFLWQtNTBSVkFpWGdqQQ?oc=5": {
     "first_emitted": "2026-07-13",
-    "score_at_emit": 0
+    "score_at_emit": 0,
+    "digest_confirmed": true
   },
   "https://simonwillison.net/2026/Jul/12/directly-responsible-individuals": {
     "first_emitted": "2026-07-13",
-    "score_at_emit": 0
+    "score_at_emit": 0,
+    "digest_confirmed": true
   },
   "https://simonwillison.net/2026/Jul/12/bump": {
     "first_emitted": "2026-07-13",
-    "score_at_emit": 0
+    "score_at_emit": 0,
+    "digest_confirmed": true
   },
   "https://simonwillison.net/2026/Jul/12/sqlite-utils": {
     "first_emitted": "2026-07-13",
-    "score_at_emit": 0
+    "score_at_emit": 0,
+    "digest_confirmed": true
   },
   "https://news.google.com/rss/articles/CBMi3gFBVV95cUxQc0lsel93dHhiN0d2bXEwZmpDTk50SDZYTGtiX2tYMUUtUHo4TnZOVW9EaWJDMkVmcHdZT1g4V2w1ZDdKcDJjYTdUYUt2aXVJTHNJY3NDQmFCRWpaaVNqbFZUaEczRUFVMWFDUEFWNE5hUF9uYy03em1ETlpTRDc1MFpnVU1xNl9ORE81WTdXT3Q3STJjeTA5NGNtSU1YSmNCNXc4Skt1SUhaR0EtVVBBd1llLS0xRXNGRlFQT0NCdWdTNUc5UXljS1k4X2o0R3JxTTRKdi1pY21TUEx3bEHSAeMBQVVfeXFMTWJiT3RadlJ4blVGTWhPMUc4T01EV3RENWUxZUFvd3lsdW5MbUlHQmNDR1Jrd20tejB3enZoZllUVnZVWmlkUVhCU3VLWTNSTU04SjZrOGNGanJfbjdYSGd2SE44X1dFUHJGaTJ5LXI2OGRzd2NVajhxQzRIMFVOc0YtOVNNMFdJODdidHQwY3VUaFRiQTN0dVJOYkJ1QjNseF9qZFVsbzFsSUludWhBNHg0V2hmSVQ2TUE5cTZGcnF4SGUycmltQ2RIYlJ5azZrS2IwUExqX1cyMWE2WVJNZWVCa3c?oc=5": {
     "first_emitted": "2026-07-13",
-    "score_at_emit": 0
+    "score_at_emit": 0,
+    "digest_confirmed": true
   },
   "https://news.google.com/rss/articles/CBMiywFBVV95cUxPZ0tDbHVxREZtTFZXVXAtdHdDejJHTVdZU1ZOR1pibWNLTjB3eUhrbm5rX1pwX243SV9NbVdCQ0phMUVnVU1KOHY0eEZQQTF0SnAzbHl1dFEtN2I4TkxRc05GQ0NxdFZJYUVRdG9va3JwOGM2QXN4b3RMQlVFYms3MzJFczVaay1pVThLbTF6UE5WLW5xV1pWRTh3eWxSY29DVWg3TkxoY2tVcXBfdU1TdFRTY0RfVW1UbWotc3Rwdk9JZzhocm1pamVuONIB0AFBVV95cUxORTcweUF6MGZFX0dvWGxpTE1VZUl2dzVxeXVsTHhqb1ltRWhjSGhBSERNUC1nQm9uY0tSN3FFWk1XbWtGR0UyWlhfY09TNzZoR2ZYNS1xU2dOMXJEYkN5M1ZhY3JzMVRKWjJ6NFlueDRkOXJERV9wX2Nhb1ZuemtuUlhQbGN1a3lUZTFkQmNNa1h0OHg5SEE4Z1hha2tENlEzMWJrUmJtdkN0bFF6Z1lxbmowZmZ5eHVRZm03a1laUmJneVFnSG9VWWZmSmlITUlM?oc=5": {
     "first_emitted": "2026-07-13",
-    "score_at_emit": 0
+    "score_at_emit": 0,
+    "digest_confirmed": true
   },
   "https://news.google.com/rss/articles/CBMiaEFVX3lxTE1kVk16UUNiNnJYUlJzdUpDTTJ1R0ItRHhHajlXeFNjdjdjek45TTBsZ2QxSVZaa3BObDhJaDhVYmdfT3gtZ1otbVpuTUwwRG5TbkgzUU9BTmNXeWpKT05UYms0NUhqSUdV?oc=5": {
     "first_emitted": "2026-07-13",
-    "score_at_emit": 0
+    "score_at_emit": 0,
+    "digest_confirmed": true
   },
   "https://news.google.com/rss/articles/CBMivgFBVV95cUxPemtJQ3lGSTdYY1MxTmxTdVl2R0dVZG1CUTgzd3h6bVVvNVNXZGVkZHBZVnZRR2dLSDVqTHFKUXNxWFNVZ19TOGc5M0ZvOGdrQnJxdWM3QXBldnBraGZQZXJlRlJtQXo5QmRxWnAtZF9EZzZ0UVFHSWNfV25zZS13aDVIVlBFaE05cjEzOEJQcFFlYk1QTnl0Q1AtNzl1MDdPQ2czZEFldFpnMV9TOGdKYnFyQUJLMXBXMmtLb1VR?oc=5": {
     "first_emitted": "2026-07-13",
-    "score_at_emit": 0
+    "score_at_emit": 0,
+    "digest_confirmed": true
+  },
+  "https://status.claude.com/incidents/pb6hndrzfhxn": {
+    "first_emitted": "2026-07-13",
+    "score_at_emit": 0,
+    "digest_confirmed": true
+  },
+  "https://github.com/anthropics/claude-code/issues/5826": {
+    "first_emitted": "2026-07-13",
+    "score_at_emit": 66,
+    "digest_confirmed": true
+  },
+  "https://github.com/anthropics/claude-code/issues/38993": {
+    "first_emitted": "2026-07-13",
+    "score_at_emit": 44,
+    "digest_confirmed": true
+  },
+  "https://github.com/anthropics/claude-code/issues/5706": {
+    "first_emitted": "2026-07-13",
+    "score_at_emit": 36,
+    "digest_confirmed": true
+  },
+  "https://github.com/anthropics/claude-code/issues/28077": {
+    "first_emitted": "2026-07-13",
+    "score_at_emit": 36,
+    "digest_confirmed": true
+  },
+  "https://github.com/anthropics/claude-code/issues/29006": {
+    "first_emitted": "2026-07-13",
+    "score_at_emit": 34,
+    "digest_confirmed": true
+  },
+  "https://github.com/anthropics/claude-code/issues/28322": {
+    "first_emitted": "2026-07-13",
+    "score_at_emit": 33,
+    "digest_confirmed": true
+  },
+  "https://github.com/pedroaugusto04/Kote": {
+    "first_emitted": "2026-07-13",
+    "score_at_emit": 3,
+    "digest_confirmed": true
+  },
+  "https://harpist.site": {
+    "first_emitted": "2026-07-13",
+    "score_at_emit": 2,
+    "digest_confirmed": true
+  },
+  "https://costbase.co": {
+    "first_emitted": "2026-07-13",
+    "score_at_emit": 2,
+    "digest_confirmed": true
+  },
+  "https://diffforge.ai": {
+    "first_emitted": "2026-07-13",
+    "score_at_emit": 2,
+    "digest_confirmed": true
+  },
+  "https://ocamllearn.vercel.app": {
+    "first_emitted": "2026-07-13",
+    "score_at_emit": 1,
+    "digest_confirmed": true
+  },
+  "https://topsoil-two.vercel.app": {
+    "first_emitted": "2026-07-13",
+    "score_at_emit": 1,
+    "digest_confirmed": true
+  },
+  "https://www.reddit.com/r/ClaudeCode/comments/1uvec4f/anthropic_needs_to_work_on_their_communication": {
+    "first_emitted": "2026-07-13",
+    "score_at_emit": 0,
+    "digest_confirmed": true
+  },
+  "https://www.reddit.com/r/ClaudeCode/comments/1uve90h/usage_limits_getting_lower": {
+    "first_emitted": "2026-07-13",
+    "score_at_emit": 0,
+    "digest_confirmed": true
+  },
+  "https://www.reddit.com/r/ClaudeCode/comments/1uvdvys/can_someone_please_give_me_1_week_guest_pass": {
+    "first_emitted": "2026-07-13",
+    "score_at_emit": 0,
+    "digest_confirmed": true
+  },
+  "https://www.forbes.com/sites/tylerroush/2026/07/13/ai-model-wars-anthropic-extends-fable-access-again-after-openais-sol-release": {
+    "first_emitted": "2026-07-13",
+    "score_at_emit": 0,
+    "digest_confirmed": true
+  },
+  "https://www.reddit.com/r/ClaudeCode/comments/1uvdngg/i_want_to_complain_to_be_happy_but_i_cant_fable_5": {
+    "first_emitted": "2026-07-13",
+    "score_at_emit": 0,
+    "digest_confirmed": true
+  },
+  "https://www.reddit.com/r/ClaudeCode/comments/1uvd4h7/how_can_i_stop_claude_from_guessing": {
+    "first_emitted": "2026-07-13",
+    "score_at_emit": 0,
+    "digest_confirmed": true
+  },
+  "https://www.reddit.com/r/ClaudeCode/comments/1uvcz7o/angry_af_vibe_coding": {
+    "first_emitted": "2026-07-13",
+    "score_at_emit": 0,
+    "digest_confirmed": true
+  },
+  "https://wersm.com/claude-code-can-now-browse-the-web-without-opening-chrome": {
+    "first_emitted": "2026-07-13",
+    "score_at_emit": 0,
+    "digest_confirmed": true
+  },
+  "https://finance.yahoo.com/technology/ai/articles/ltm-partners-anthropic-accelerate-claude-113000192.html": {
+    "first_emitted": "2026-07-13",
+    "score_at_emit": 0,
+    "digest_confirmed": true
+  },
+  "https://mashable.com/tech/anthropic-claude-cowork-to-web-mobile-launch": {
+    "first_emitted": "2026-07-13",
+    "score_at_emit": 0,
+    "digest_confirmed": true
+  },
+  "https://www.tweaktown.com/news/112601/cursor-builds-ai-agent-sand-to-rival-anthropics-claude-cowork/index.html": {
+    "first_emitted": "2026-07-13",
+    "score_at_emit": 0,
+    "digest_confirmed": true
+  },
+  "https://finance.yahoo.com/technology/ai/articles/elon-musk-says-clearly-wrong-101400836.html": {
+    "first_emitted": "2026-07-13",
+    "score_at_emit": 0,
+    "digest_confirmed": true
+  },
+  "https://nypost.com/2026/07/13/business/how-china-is-ripping-off-cutting-edge-ai-from-anthropic-openai-and-threatening-us-national-security": {
+    "first_emitted": "2026-07-13",
+    "score_at_emit": 0,
+    "digest_confirmed": true
+  },
+  "https://www.businessinsider.com/anthropic-hires-monzo-cofounder-tom-blomfield-ai-compute-y-combinator-2026-7": {
+    "first_emitted": "2026-07-13",
+    "score_at_emit": 0,
+    "digest_confirmed": true
+  },
+  "https://timesofindia.indiatimes.com/technology/tech-news/tcs-takes-on-openai-anthropic-amazon-and-microsoft-to-build-a-team-of-forward-deployed-engineers-ceo-k-krithivasan-says-we-would-be-ensuring-/articleshow/132362389.cms": {
+    "first_emitted": "2026-07-13",
+    "score_at_emit": 0,
+    "digest_confirmed": true
+  },
+  "https://www.helpnetsecurity.com/2026/07/13/claude-code-weekly-limits-promotion-extended": {
+    "first_emitted": "2026-07-13",
+    "score_at_emit": 0,
+    "digest_confirmed": true
+  },
+  "https://spectrumlocalnews.com/nc/charlotte/news/2026/07/09/anthropic-claude-corps-fellowship-a-i-": {
+    "first_emitted": "2026-07-13",
+    "score_at_emit": 0,
+    "digest_confirmed": true
+  },
+  "https://www.afr.com/politics/federal/anthropic-tells-chalmers-21b-investment-hinges-on-copyright-20260713-p60esj": {
+    "first_emitted": "2026-07-13",
+    "score_at_emit": 0,
+    "digest_confirmed": true
+  },
+  "https://techxplore.com/news/2026-07-mulling-ai-investment-anthropic-lobbied.html": {
+    "first_emitted": "2026-07-13",
+    "score_at_emit": 0,
+    "digest_confirmed": true
+  },
+  "https://www.reddit.com/r/LocalLLaMA/comments/1uv54fv/compressed_version_of_qwen3627b_coming_from": {
+    "first_emitted": "2026-07-13",
+    "score_at_emit": 0,
+    "digest_confirmed": true
+  },
+  "https://www.businessinsider.com/microsoft-ceo-satya-nadella-swipe-ai-model-makers-distillation-2026-7": {
+    "first_emitted": "2026-07-13",
+    "score_at_emit": 0,
+    "digest_confirmed": true
+  },
+  "https://www.forbes.com/sites/sandycarter/2026/07/13/claude-fable-5-extends-to-july-19-7-days-7-power-moves": {
+    "first_emitted": "2026-07-13",
+    "score_at_emit": 0,
+    "digest_confirmed": true
+  },
+  "https://www.techtimes.com/articles/320266/20260712/anthropic-confirms-166m-billing-error-auditors-find-17m-enterprise-overcharges.htm": {
+    "first_emitted": "2026-07-13",
+    "score_at_emit": 0,
+    "digest_confirmed": true
+  },
+  "https://m.economictimes.com/tech/artificial-intelligence/anthropic-extends-fable-5-access-through-july-19/articleshow/132350610.cms": {
+    "first_emitted": "2026-07-13",
+    "score_at_emit": 0,
+    "digest_confirmed": true
+  },
+  "https://thenewstack.io/ust-anthropic-enterprise-ai-stack": {
+    "first_emitted": "2026-07-13",
+    "score_at_emit": 0,
+    "digest_confirmed": true
+  },
+  "https://the-decoder.com/claude-code-now-has-a-built-in-browser-that-lets-the-ai-read-click-and-type-on-external-websites": {
+    "first_emitted": "2026-07-13",
+    "score_at_emit": 0,
+    "digest_confirmed": true
   }
 }

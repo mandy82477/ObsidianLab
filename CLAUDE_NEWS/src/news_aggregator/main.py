@@ -13,7 +13,7 @@ from news_aggregator.config import LOG_DIR, NEWS_DIR
 from news_aggregator.dedup import deduplicate
 from news_aggregator.digest import render
 from news_aggregator.emitted_cache import (
-    filter_new_or_reignited, load_cache, prune_expired, save_cache,
+    confirm_digest, filter_new_or_reignited, load_cache, prune_expired, save_cache,
 )
 from news_aggregator.enricher import enrich
 from news_aggregator.filter import filter_relevant
@@ -54,6 +54,15 @@ def parse_args() -> argparse.Namespace:
         "--gather-only",
         action="store_true",
         help="Fetch, dedup, enrich, filter — then write gathered_items.json and exit (no LLM digest)",
+    )
+    p.add_argument(
+        "--confirm-digest",
+        action="store_true",
+        help=(
+            "Mark every item in gathered_items.json as digest_confirmed in the "
+            "emitted-cache. Run this only after a real digest (news/*.md) has "
+            "actually been written from that file — see emitted_cache.py for why."
+        ),
     )
     return p.parse_args()
 
@@ -188,6 +197,15 @@ def main() -> None:
     else:
         target_date = date.today()
         logger.info("=== News aggregator run started ===")
+
+    if args.confirm_digest:
+        gather_path = LOG_DIR.parent / "gathered_items.json"
+        gathered = json.loads(gather_path.read_text(encoding="utf-8"))
+        urls = [it["url"] for it in gathered.get("items", [])]
+        cache = confirm_digest(load_cache(), urls, today=target_date)
+        save_cache(cache)
+        logger.info("--confirm-digest: confirmed %d item(s) from %s", len(urls), gather_path)
+        return
         if args.gather_only:
             # Gap recovery: if yesterday's digest is missing or empty, extend the
             # lookback window to cover the hole left by a failed previous run.
