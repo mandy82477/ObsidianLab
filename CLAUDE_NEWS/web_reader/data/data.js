@@ -116,8 +116,8 @@ window.WIKI_DATA = {
       "pill": "active",
       "firstSeen": "2025（正式推出）",
       "startDate": "",
-      "lastUpdated": "2026-07-12",
-      "lastNewsUpdate": "2026-07-12",
+      "lastUpdated": "2026-07-13",
+      "lastNewsUpdate": "2026-07-13",
       "summary": "**Reflect with Claude 測試版推出（2026-07-09）：** Anthropic 官方部落格宣布「Reflect with Claude」測試版功能，使用者可在 Settings 中檢視使用模式儀表板，理解自己使用 Claude 的模式；TechCrunch、Mashable、CNET、Axio…",
       "latestHeadline": "Reflect with Claude 測試版推出：Settings 內新增使用模式儀表板，TechCrunch、Mashable、CNET、Axios、The Verge 多家媒體同步報導，多類比「AI 版 Spotify Wrapped」，TechCrunch 提出「悄悄推銷 AI」質疑角度；HN 29 分（見 ["
     },
@@ -206,8 +206,8 @@ window.WIKI_DATA = {
       "pill": "active",
       "firstSeen": "2026-06-09",
       "startDate": "",
-      "lastUpdated": "2026-07-12",
-      "lastNewsUpdate": "2026-07-12",
+      "lastUpdated": "2026-07-13",
+      "lastNewsUpdate": "2026-07-13",
       "summary": "**2026-07-12 最新**：Fable 5 存取限制再度延長至 7/19（原至 7/12），媒體報導與 Simon Willison 均指出，延後與競品 GPT-5.6 Sol 被視為 Fable／Mythos 同級模型有關，暗示 Anthropic 在觀察競品定位後才決定是否放寬存取限制。 **2026-07…",
       "latestHeadline": "2026-07-12 最新：Fable 5 存取限制再度延長至 7/19（原至 7/12），媒體報導與 Simon Willison 均指出，延後與競品 GPT-5.6 Sol 被視為 Fable／Mythos 同級模型有關，暗示 Anthropic 在觀察競品定位後才決定是否放寬存取限制。"
     },
@@ -356,8 +356,8 @@ window.WIKI_DATA = {
       "pill": "active",
       "firstSeen": "2026-04-25",
       "startDate": "",
-      "lastUpdated": "2026-07-12",
-      "lastNewsUpdate": "2026-07-12",
+      "lastUpdated": "2026-07-13",
+      "lastNewsUpdate": "2026-07-13",
       "summary": "**2026-07-04 官方推出企業支出控管（spend controls）功能**，回應企業 agentic AI 帳單頻繁超支的普遍痛點，是官方首次針對成本失控問題推出產品化解法（詳見下方時序）。目前所有付費方案用量仍維持原訂閱配額制——原定 2026-06-15 實施的「程式化用量（Agent SDK、`cla…",
       "latestHeadline": "2026-07-04 官方推出企業支出控管（spend controls）功能，回應企業 agentic AI 帳單頻繁超支的普遍痛點，是官方首次針對成本失控問題推出產品化解法（詳見下方時序）。目前所有付費方案用量仍維持原訂閱配額制——原定 2026-06-15 實施的「程式化用量（Agent SDK、`claude "
     },
@@ -390,6 +390,21 @@ window.WIKI_DATA = {
       "lastNewsUpdate": "2026-07-07",
       "summary": "2026-07-07，FedScoop 報導 Anthropic 延攬 Teresa Carlson 主導公部門業務。Carlson 曾任職 Microsoft 與 AWS，在雲端服務公部門業務領域有豐富經驗（待核實：Anthropic 內部確切職稱）。 此為事件層級記錄，日報僅標題報導，尚無 Carlson 本人公開…",
       "latestHeadline": "加入 Anthropic，主導公部門業務，此前曾任職 Microsoft、AWS（FedScoop）（待核實：確切職稱與到任日期）"
+    },
+    {
+      "id": "tom-blomfield",
+      "pageType": "entity",
+      "name": "Tom Blomfield",
+      "entityType": "person",
+      "status": "active（待核實）",
+      "domain": "👤 人物",
+      "pill": "active",
+      "firstSeen": "2026-07-13",
+      "startDate": "",
+      "lastUpdated": "2026-07-13",
+      "lastNewsUpdate": "2026-07-13",
+      "summary": "2026-07-13，Business Insider 報導 Anthropic 新聘 Monzo（英國數位銀行）共同創辦人 Tom Blomfield 加入公司，報導提及此事與 AI compute、Y Combinator 背景相關，但未提供明確職稱或具體職掌說明（待核實）。Blomfield 先前為 Y Comb…",
+      "latestHeadline": "Business Insider 報導 Anthropic 新聘 Monzo 共同創辦人 Tom Blomfield，涉及 AI compute、Y Combinator 背景，職稱與職掌待核實（來源：Business Insider）"
     },
     {
       "id": "tom-brown",
@@ -448,10 +463,10 @@ window.WIKI_DATA = {
       "pill": "active",
       "firstSeen": "",
       "startDate": "2026-06-19",
-      "lastUpdated": "2026-07-10",
-      "lastNewsUpdate": "2026-06-29",
+      "lastUpdated": "2026-07-13",
+      "lastNewsUpdate": "2026-07-13",
       "summary": "截至 2026-06-29，一週至兩週內 Google DeepMind 連失至少 4–5 位頂尖研究員至 Anthropic，市值蒸發約 $2,700 億美元（推論，分析師估算），Gemini 3.5 Pro 延期至七月（推論，dev.to 報導，未經 Google 官方確認）。最矚目的是 2024 諾貝爾化學獎得主…",
-      "latestHeadline": "dev.to 報導：Gemini 3.5 Pro 延期至七月，同期 4 位 Google 資深研究員轉投 Anthropic，AI 人才流動繼續向 Anthropic 傾斜（推論，未經 Google 官方確認）。（ref: https://dev.to/doremonai/gemini-35-pro-delayed-t"
+      "latestHeadline": "[跨界執行層人才，非典型 AI 實驗室流動] Anthropic 新聘 Monzo 共同創辦人 Tom Blomfield：Business Insider 報導 Anthropic 聘請英國數位銀行 Monzo 共同創辦人 Tom Blomfield，背景涉及 AI compute 與 Y Combinator。對商"
     },
     {
       "id": "anthropic-business",
@@ -463,10 +478,10 @@ window.WIKI_DATA = {
       "pill": "active",
       "firstSeen": "",
       "startDate": "2026-05-28",
-      "lastUpdated": "2026-07-12",
-      "lastNewsUpdate": "2026-07-12",
+      "lastUpdated": "2026-07-13",
+      "lastNewsUpdate": "2026-07-13",
       "summary": "Anthropic 在技術聲譽與企業採用率上持續上升（企業採用率 34.4% 首超 OpenAI 32.3%，Ramp AI Index 2026-05-15），並於 2026-05-28 完成 $65B Series H 融資，估值 $965B，超越 OpenAI 成全球最大 AI 新創。核心矛盾從「PMF vs 獲…",
-      "latestHeadline": "[媒體擴散，非新事件] The New Stack 跟進報導 UST 合作案，強調「訓練 2 萬人」規模：Google News/The New Stack（07-12 17:04 UTC）以「Anthropic's newest enterprise partner is training 20,000 people"
+      "latestHeadline": "[澳洲投資具體金額首度揭露] Anthropic 210 億美元澳洲投資案取決於著作權法規明確性：AFR 報導 Anthropic 向澳洲財長 Chalmers 表示其 210 億美元投資案明確取決於著作權法規的明確性，總理不急於處理此議題；Tech Xplore 同步報導 Anthropic 為爭取此投資案正遊說澳洲"
     },
     {
       "id": "anthropic-commitments",
@@ -493,10 +508,10 @@ window.WIKI_DATA = {
       "pill": "warn",
       "firstSeen": "",
       "startDate": "2026-05-01",
-      "lastUpdated": "2026-07-12",
-      "lastNewsUpdate": "2026-07-11",
+      "lastUpdated": "2026-07-13",
+      "lastNewsUpdate": "2026-07-13",
       "summary": "**出口管制已於 2026-07-01 全面解除。** 美國商務部長 Howard Lutnick 宣布解除 Fable 5 和 Mythos 5 的出口管制，正式生效；Anthropic 承諾三項義務換取解封（主動偵測安全風險、與政府合作制定協議與標準、通報惡意活動）；封鎖期共 18–19 天（2026-06-13 …",
-      "latestHeadline": "出口管制已於 2026-07-01 全面解除。 美國商務部長 Howard Lutnick 宣布解除 Fable 5 和 Mythos 5 的出口管制，正式生效；Anthropic 承諾三項義務換取解封（主動偵測安全風險、與政府合作制定協議與標準、通報惡意活動）；封鎖期共 18–19 天（2026-06-13 全面封鎖"
+      "latestHeadline": "[媒體重申，無新事實] New York Post：中國「複製」前沿 AI 技術，威脅美國國安：New York Post（經 Google News 轉載）刊文指控中國複製 Anthropic、OpenAI 等前沿 AI 技術並定性為國安威脅；未提供新技術證據或具體案例，論調呼應既有 06-10 阿里巴巴蒸餾指控；單"
     },
     {
       "id": "code-quality-decline",
@@ -508,10 +523,10 @@ window.WIKI_DATA = {
       "pill": "warn",
       "firstSeen": "",
       "startDate": "2026-03（推測）",
-      "lastUpdated": "2026-07-12",
-      "lastNewsUpdate": "2026-07-12",
-      "summary": "**當前狀態：** 官方已說明 4 月退步原因為工程疏失，恢復情況待驗證；2026-06 下旬起投訴焦點轉向「token 消耗異常／成本暴增」——訊號鏈自 06-27 延燒至 07-09（共 13 天），累計八個獨立訊號（HN 熱議、$62,021 具名案例、四則 GitHub issue、兩則額度異常比例回報），且 …",
-      "latestHeadline": "當前狀態： 官方已說明 4 月退步原因為工程疏失，恢復情況待驗證；2026-06 下旬起投訴焦點轉向「token 消耗異常／成本暴增」——訊號鏈自 06-27 延燒至 07-09（共 13 天），累計八個獨立訊號（HN 熱議、$62,021 具名案例、四則 GitHub issue、兩則額度異常比例回報），且 07-0"
+      "lastUpdated": "2026-07-13",
+      "lastNewsUpdate": "2026-07-13",
+      "summary": "**當前狀態：** 官方已說明 4 月退步原因為工程疏失，恢復情況待驗證；2026-06 下旬起投訴焦點轉向「token 消耗異常／成本暴增」——訊號鏈自 06-27 延燒至 07-13（共 17 天），累計九個獨立訊號（HN 熱議、$62,021 具名案例、四則 GitHub issue、兩則額度異常比例回報、07-…",
+      "latestHeadline": "當前狀態： 官方已說明 4 月退步原因為工程疏失，恢復情況待驗證；2026-06 下旬起投訴焦點轉向「token 消耗異常／成本暴增」——訊號鏈自 06-27 延燒至 07-13（共 17 天），累計九個獨立訊號（HN 熱議、$62,021 具名案例、四則 GitHub issue、兩則額度異常比例回報、07-13 M"
     },
     {
       "id": "community-pattern-trends",
@@ -531,15 +546,15 @@ window.WIKI_DATA = {
     {
       "id": "community-tech-discussions",
       "pageType": "topic",
-      "name": "﻿# 社群技術討論趨勢",
+      "name": "社群技術討論趨勢",
       "entityType": "",
       "status": "ongoing",
       "domain": "🌐 社群",
       "pill": "active",
       "firstSeen": "",
       "startDate": "2026-04-25",
-      "lastUpdated": "2026-07-12",
-      "lastNewsUpdate": "2026-07-12",
+      "lastUpdated": "2026-07-13",
+      "lastNewsUpdate": "2026-07-13",
       "summary": "追蹤 Claude Code 社群中活躍的概念辯論、設計哲學、實證研究與技術反思。與 [[topics/community-tech-patterns]] 追蹤具體工具和工作流不同，本頁聚焦思想碰撞：什麼哲學正在成形、什麼假設受到挑戰、什麼共識正在收斂。頁面結構：**🔥 本週熱點**（當前最熱的持續議題）→ **🌊 長…",
       "latestHeadline": "追蹤 Claude Code 社群中活躍的概念辯論、設計哲學、實證研究與技術反思。與  追蹤具體工具和工作流不同，本頁聚焦思想碰撞：什麼哲學正在成形、什麼假設受到挑戰、什麼共識正在收斂。頁面結構：🔥 本週熱點（當前最熱的持續議題）→ 🌊 長期議題（主題彙整）→ 熱門討論記錄（最近 30 天）→ 技術彙整（逐篇深度筆記）"
     },
@@ -598,10 +613,10 @@ window.WIKI_DATA = {
       "pill": "warn",
       "firstSeen": "",
       "startDate": "2026-04",
-      "lastUpdated": "2026-07-11",
-      "lastNewsUpdate": "2026-07-11",
+      "lastUpdated": "2026-07-13",
+      "lastNewsUpdate": "2026-07-13",
       "summary": "Claude Code 已成為 AI 輔助編碼的標竿產品，但競爭正快速升溫。2026-05 是關鍵轉折月：OpenAI Codex 下載量單週爆增 1,397%、OpenCode 吸走 15.7 萬開發者、Microsoft 取消數千名員工授權改推 Copilot CLI——分流訊號同步出現。另一方面，Anthropi…",
-      "latestHeadline": "[待查證，單一來源轉述] DataBricks 評測：pi-coding-agent 成本約為 Claude Code / Codex 之半，GLM 5.2 表現可比 Opus 4.8 high：Reddit r/LocalLLaMA 週熱門貼文轉述 DataBricks 的評測結果，指出 pi-coding-agen"
+      "latestHeadline": "[Agentic 工作台代號曝光] Cursor 對標 Claude Cowork 的 AI agent 確認代號「Sand」：TweakTown 報導 Cursor 正打造名為「Sand」的 AI agent，作為 Claude Cowork 的競品。對競爭格局的意涵：延續 07-09 The Information"
     },
     {
       "id": "enterprise-cost-management",
@@ -1453,8 +1468,8 @@ window.WIKI_DATA = {
       "pill": "active",
       "firstSeen": "",
       "startDate": "2026-07-02",
-      "lastUpdated": "2026-07-11",
-      "lastNewsUpdate": "2026-07-09",
+      "lastUpdated": "2026-07-12",
+      "lastNewsUpdate": "2026-07-12",
       "summary": "**目前公開陣容五級維持不變（Fable 5 > Opus 4.8 > Sonnet 5 > Sonnet 4.6 > Haiku 4.5），07-08 官方公布的多模型協作基準是最新橫向比較資訊。** 本頁回答一個問題：**「我該用哪個 Claude 模型？」** 各模型的深度資訊（爭議、時序、已知問題）在各自的 e…",
       "latestHeadline": "目前公開陣容五級維持不變（Fable 5 > Opus 4.8 > Sonnet 5 > Sonnet 4.6 > Haiku 4.5），07-08 官方公布的多模型協作基準是最新橫向比較資訊。 本頁回答一個問題：「我該用哪個 Claude 模型？」 各模型的深度資訊（爭議、時序、已知問題）在各自的 entities "
     },
@@ -1468,8 +1483,8 @@ window.WIKI_DATA = {
       "pill": "warn",
       "firstSeen": "",
       "startDate": "2026-05-17",
-      "lastUpdated": "2026-07-11",
-      "lastNewsUpdate": "2026-07-10",
+      "lastUpdated": "2026-07-13",
+      "lastNewsUpdate": "2026-07-13",
       "summary": "比對社群工具所反映的開發者痛點，與 Anthropic 官方功能路線之間的覆蓋情況。識別哪些痛點官方正在積極解決、哪些被忽略或結構性缺席。 截至 2026-07-08，矩陣涵蓋 9 個核心痛點：多 agent 協調與安全隔離已獲高度官方對應；輸出品質驗證、平台可及性（Artifacts 輸出共享 + Cowork 行動…",
       "latestHeadline": "Claude Cowork 正式擴展至行動裝置與網頁版：首波開放 Max 訂閱用戶，任務可雲端持續執行、涵蓋政府機構客戶；「平台可及性」缺口的輸入操作面首度正式填補（先前僅 Artifacts 覆蓋輸出面），矩陣狀態維持 ⚡ 部分對應（官方稱完整體驗仍限桌面版）"
     },
@@ -1505,6 +1520,12 @@ window.WIKI_DATA = {
     }
   ],
   "digestIndex": [
+    {
+      "date": "2026-07-13",
+      "articleCount": 39,
+      "preview": "[BUG] Claude Desktop doesn't connect to Custom MCPs altogether (not with OAuth 2.1 nor with SSE)",
+      "topCount": 4
+    },
     {
       "date": "2026-07-12",
       "articleCount": 43,
