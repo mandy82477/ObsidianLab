@@ -3,8 +3,8 @@
 **狀態：** monitoring
 **領域：** 🛠️ 工具/功能
 **開始日期：** 2026-05-17
-**最後更新：** 2026-07-11
-**最後新聞更新：** 2026-07-10
+**最後更新：** 2026-07-13
+**最後新聞更新：** 2026-07-13
 
 > **最新功能缺口**（2026-07-08）
 > Claude Cowork 正式擴展至行動裝置與網頁版（首波開放 Max 訂閱用戶，涵蓋政府機構客戶），任務可在雲端持續執行、闔上筆電也不中斷——「平台可及性」缺口的**輸入操作面**首度獲得正式填補（先前僅 Artifacts 覆蓋輸出共享面）。官方明言「完整體驗」仍在桌面版，矩陣狀態維持 ⚡ 部分對應。
@@ -25,7 +25,7 @@
 | 模式 | 社群起源 | 代表社群工具 | 官方對應 | 狀態 | 缺口分析 |
 |------|---------|------------|---------|------|---------|
 | Subagent 派工/編排 | 2026-05 前，Claude Squad orchestrator 模式 | Claude Squad、Harness（multi-worktree） | Managed Agents（2026-04-30 Beta→2026-05-11 正式）+ `subagent_type` 匹配改善（v2.1.140） | ✅ 已產品化 | 官方能力已超前，Boris Cherny 揭露內部「數千子代理夜間跑批」工作流（2026-05-13），早期社群模式已被涵蓋 |
-| Multi-agent workflow 腳本化 | 2026-06-18 Gorchestra（手機遠端多 agent 控制）；2026-07-01 動態 fan-out 教學 | Gorchestra、TBD（agent-channels）、Superset | Dynamic Workflows（2026-05-28，Research Preview，最多 1,000 平行子代理）＋ `/config` **Dynamic workflow size** 設定（v2.1.202，2026-07-07，可調整 agent 規模小/中/大）；Coordinator 模式（v2.1.152） | 🧪 部分產品化 | 官方版本存在但 feature-radar 明確標「❌ 暫不推薦」（UltraCode 1.7M token bug 無退款）；v2.1.202 新增規模引導值屬易用性微調，未解決核心退款爭議；手機遠端操控場景官方仍無對應 |
+| Multi-agent workflow 腳本化 | 2026-06-18 Gorchestra（手機遠端多 agent 控制）；2026-07-01 動態 fan-out 教學 | Gorchestra、TBD（agent-channels）、Superset | Dynamic Workflows（2026-05-28，Research Preview，最多 1,000 平行子代理）＋ `/config` **Dynamic workflow size** 設定（v2.1.202，2026-07-07，可調整 agent 規模小/中/大）；Coordinator 模式（v2.1.152） | 🧪 部分產品化 | 官方版本存在但 feature-radar 明確標「❌ 暫不推薦」（UltraCode 1.7M token bug 無退款）；v2.1.202 新增規模引導值屬易用性微調，未解決核心退款爭議；手機遠端操控場景**出現初步官方線索**——2026-07-13 GitHub issue #28322 顯示 `/remote-control`（`/rc`）指令已存在但既有 session 無法辨識（需新 session），同日 issue #29006 社群仍在請求 Desktop App 遠端控制 CC session，顯示官方可能已悄悄鋪路但尚未正式發布/文件化，缺口尚未完全補上 |
 | Agent 需要輸入時的通知 | 2026-06-28 Stop Hook 音效通知；2026-07-02 氛圍狀態燈；2026-07-03 claude-needs-input | claude-needs-input（終端機標籤變色）、氛圍狀態燈（實體 LED） | `waitingFor` 可見性（v2.1.162，2026-06-04） | 🧪 部分產品化 | 官方僅提供被動可見性（需主動查看畫面），社群工具補上主動提醒（變色、聲音、實體燈號），官方尚未涉足 |
 | 破壞性指令防護 | 長期社群關注（沙盒隔離、git 安全腳本） | SmolVM、Sandfence、CapaKit | 破壞性 Git 指令自動封鎖（v2.1.183，2026-06-19）；Claude Code Sandboxing（2026-05-10）、`hard_deny`（2026-05-09） | ✅ 已產品化 | 官方對 git 層級防護已完整覆蓋且評價高（🔥🔥🔥 ✅ 推薦）；社群沙盒工具仍在更廣泛的資源限制場景（非僅 git）補位 |
 | 跨 session 記憶持久化 | 2026-05-05 起記憶工具浪潮；2026-06-28 OKF 格式 | ltm（Core Memory Packet）、VIR、CoreMem、OKF | Dreaming 記憶整合（2026-05-07，Research Preview） | 🧪 部分產品化 | Dreaming 兩個月後仍為 Research Preview、試用價值「⏳ 觀望」；社群工具（OKF）跨工具跨模型，Dreaming（僅限 Anthropic 生態）無法取代 |

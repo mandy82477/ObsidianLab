@@ -4,11 +4,11 @@
 **狀態：** active
 **領域：** 🛠️ 工具/功能
 **首次出現：** 2025（正式推出）
-**最後更新：** 2026-07-12
-**最後新聞更新：** 2026-07-12
+**最後更新：** 2026-07-13
+**最後新聞更新：** 2026-07-13
 
 > **最新版本動態**（2026-07-11）
-> **v2.1.207**：Auto mode 在 Bedrock、Vertex AI、Foundry 三平台改為預設開啟，不再需要 `CLAUDE_CODE_ENABLE_AUTO_MODE` 環境變數 opt-in（可用 `disableAutoMode` 關閉），同版並修復終端機凍結問題。同日社群回報兩起已知問題：commit 訊息含 `HERMES.md` 字串會誤導向 extra usage 計費（GitHub issue #53262，533 讚、93 留言），以及回應超過 32000 output token 上限時觸發 API 錯誤（GitHub issue #24055，85 讚、137 留言）；另有報導指 Claude Code Desktop 新增內建瀏覽器。前一重大異動為 v2.1.206（2026-07-10）`/cd` 目錄建議與 `/doctor` CLAUDE.md 精簡檢查（見 [[feature-radar]]）。
+> **v2.1.207**：Auto mode 在 Bedrock、Vertex AI、Foundry 三平台改為預設開啟，不再需要 `CLAUDE_CODE_ENABLE_AUTO_MODE` 環境變數 opt-in（可用 `disableAutoMode` 關閉），同版並修復終端機凍結問題。同日社群回報兩起已知問題：commit 訊息含 `HERMES.md` 字串會誤導向 extra usage 計費（GitHub issue #53262，533 讚、93 留言），以及回應超過 32000 output token 上限時觸發 API 錯誤（GitHub issue #24055，85 讚、137 留言）；另有報導指 Claude Code Desktop 新增內建瀏覽器（2026-07-13 兩則媒體報導證實為同組已計入來源，未新增熱度）。前一重大異動為 v2.1.206（2026-07-10）`/cd` 目錄建議與 `/doctor` CLAUDE.md 精簡檢查（見 [[feature-radar]]）。2026-07-13 已知問題新增 5 條：MCP OAuth 2.1 無法連線 Desktop（#5826，本日互動最高）、MCP 缺 Token 刷新機制（#5706）、CLI TUI 無法捲動回看歷史（#28077）、Desktop App 遠端控制 CC session 功能請求（#29006）、既有 session 中 `/remote-control` 未被識別（#28322，暗示此指令可能已存在但未完整發布）。
 
 ---
 
@@ -69,7 +69,7 @@
 - 🔴 **未修復**｜**額度顯示 84% 卻收到「You've hit your limit」（GitHub issue #19673，累積反應 75，2026-07-04）**：使用者反映用量儀表板顯示尚餘額度（僅用 84%）情況下即收到「已達額度上限」提示，質疑額度計算邏輯是否準確或存在顯示與實際計算不同步的問題；官方尚未回應
 - 🔴 **未修復**｜**Session 額度上限時無法順暢接續（GitHub issue #13354，累積 68 則留言、158 個讚，2026-07-07）**：使用者希望 session 達到額度上限時能有更順暢的接續機制（如自動排隊、無縫轉續），而非直接中斷工作流程；官方尚未回應或提供替代方案
 
-### 🧠 行為與品質（16 條未修復、4 條待查證）
+### 🧠 行為與品質（17 條未修復、4 條待查證）
 
 - 🔴 **未修復**｜**`--dangerously-skip-permissions` 於 v2.1.77 後所有版本失效（GitHub issue #36168，2026-07-12 回報，regression）**：使用者回報 v2.1.77 之後的所有 Claude Code 版本，`--dangerously-skip-permissions`（跳過權限確認旗標）皆無法正常運作，影響依賴此旗標進行無人值守自動化的工作流；官方尚未回應或說明成因。
 - 🔴 **未修復**｜**回應超過 32000 output token 上限觸發 API 錯誤（GitHub issue #24055，累積 137 則留言、85 個讚，2026-07-11）**：多名使用者回報回應長度超過 32000 output token 上限時觸發「API Error: Claude's response exceeded the 32000 output token maximum」；官方尚未回應。
@@ -88,6 +88,7 @@
 - 🔴 **未修復**｜**Usage Policy 隨機拒絕**（Opus 4.7 以來）：Claude Code 頻繁出現無明確觸發條件的 Usage Policy 拒絕；官方建議切換至 `/model claude-sonnet-4-20250514` 作為緩解手段；見 [[entities/opus-4-7]]
 - 🔴 **未修復**｜**Speed Bumps 增加**（2026-04-29 回報）：多位長期使用者反映本週起 Claude Code 明顯增加中途暫停詢問的頻率，即使簡單任務也頻繁打斷工作流程，社群猜測與系統層級的行為調整有關，無官方說明
 - 🔴 **未修復**｜**CLAUDE.md 作為 candidate-context 而非強制系統提示**（2026-05-10 社群發現）：社群逆向工程 Claude CLI 後發現 CLAUDE.md 被以 `<system-reminder>` 標籤包裹，並附帶「this context may or may not be relevant to your tasks」提示，模型有充分理由跳過其中指令；這直接解釋了開發者長期遭遇的「CLAUDE.md 指令被忽略」問題；Anthropic 尚未正式回應此架構設計決策。
+- 🔴 **未修復**｜**CLI TUI 模式下無法捲動回看完整對話歷史（GitHub issue #28077，2026-07-13 回報）**：使用者反映 CLI TUI 模式下，較舊訊息會變成無法捲動回看，即使尚未觸發 context 壓縮；官方尚未回應。
 - ❓ **待查證**｜**Advisor 觸發時偶發「No response from API」錯誤（GitHub issue #69238，累積 41 則留言、69 個讚，2026-07-06）**：使用者反映使用 Opus 4.8 進行 advising 時，Advisor 功能觸發後偶發 API 無回應錯誤，官方尚未回應或說明原因，成因是否與 Advisor 功能本身或底層 API 相關待確認。
 - ❓ **待查證**｜**模型行為模式：`/goal` stop-hook 指令被引用作未授權動作依據、搜尋不到即視為不存在、質疑下用結構取代實質內容（GitHub issue #60705，累積 39 則留言，2026-07-07）**：單一使用者於 session 中觀察到三種重複出現的模型行為——① `/goal` 的 stop-hook 指令被 Claude 引用作為執行未經請求動作的授權依據 ② 搜尋不到某內容即視為該內容不存在的證據 ③ 使用者提出質疑時以結構性回應取代實質修正；回報者認為屬 model-side 行為，使用者端 `~/.claude/CLAUDE.md` 規則無法攔截，社群尚未大量驗證，暫列待查證。
 - 🔴 **未修復**｜**Fable 5 advisor（Opus 4.8 主模型）跨全部 session 持續顯示「unavailable」（GitHub issue #73365，累積 50 則留言、100 個讚，2026-07-10，v2.1.198 起出現）**：使用者回報自 v2.1.198 起，搭配 Opus 4.8 作為主模型時，Fable 5 advisor 功能在所有 session 中皆顯示無法使用；官方尚未回應。Advisor 功能面涉及 Fable 5 模型行為，另見 [[entities/fable-5]]。
@@ -109,7 +110,7 @@
 
 - 🔴 **未修復**｜**Claude 全平台共通的帳號架構缺口——三平台各自提出多帳號管理訴求**：Mobile app 缺乏免共用 email 的多帳號切換（[issue #36151](https://github.com/anthropics/claude-code/issues/36151)，累積 123 則留言、542 個讚，2026-07-08 該日反應數最高）；Desktop app 缺乏多帳號管理與快速切換（[issue #18435](https://github.com/anthropics/claude-code/issues/18435)，累積 126 則留言、705 個讚，2026-07-10 該日反應數最高）；Claude／Claude Code on the web 缺乏同一 Connector 掛載多個帳號的支援（[issue #27302](https://github.com/anthropics/claude-code/issues/27302)，累積 212 則留言、419 個讚，2026-07-10）；三則 issue 分屬不同介面、互不重複，卻在同一週集中出現，共同反映 Claude 帳號模型尚未針對多身份使用情境（如工作／個人帳號分離、多客戶服務）設計統一的跨平台身份層；官方尚未於任一平台回應或排入路線圖。
 
-### 🔌 平台相容性（21 條未修復、1 條待查證）
+### 🔌 平台相容性（29 條未修復、1 條待查證）
 
 - 🔴 **未修復**｜**功能請求：Visual Studio 2026 整合支援（GitHub issue #15942，累積 139 則留言、475 個讚，2026-07-09）**：使用者要求 Claude Code 支援 Visual Studio 2026 整合；官方尚未回應或排入路線圖。
 - 🔴 **未修復**｜**功能請求：Claude Code Desktop 多視窗支援（GitHub issue #30154，累積 60 則留言、202 個讚，2026-07-09）**：使用者呼籲 Desktop app 支援多視窗同時操作；官方尚未回應。
@@ -132,7 +133,11 @@
 - ❓ **待查證（2026-05-07 指控，至今無後續）**｜**Claude Cowork Linux 沙箱啟動失敗**：用戶回報 Claude Cowork 的 Linux 沙箱在多台電腦重新安裝後持續無法啟動，Anthropic 狀態頁顯示正常，疑為帳號層級隱性故障，目前無官方回應；2026-07-07 Cowork 擴展至行動/網頁版後是否延伸此問題尚待觀察。
 - 🔴 **未修復**｜**AGENTS.md 規範不支援（GitHub issue #6235，累積 335 則留言、5634 個讚，2026-07-10 為全站已知問題中讚數最高單一 issue）**：Claude Code 目前仍不支援業界正在集結的 [AGENTS.md](https://agents.md/) 通用標準——Codex、Amp、Cursor 等工具已陸續標準化採用，僅 Claude Code 仍維持專屬的 `CLAUDE.md`；社群反應數自 2026-05-02 首次回報後持續攀升，凸顯跨工具協作時的配置互操作缺口，官方尚未回應是否納入路線圖。
 - 🔴 **未修復**｜**Claude Desktop 無法在 Windows 上重啟（孤兒程序檔案鎖）（GitHub issue #42776，累積 101 則留言、39 個讚，2026-07-08）**：Windows 上 Claude Code Desktop 因先前程序未正常結束、殘留檔案鎖（file lock），導致應用程式無法 Relaunch；官方尚未回應
-- 🔴 **未修復**｜**Cowork virtiofs FUSE mount 檔案過期未同步（GitHub issue #38993，累積反應 26，2026-07-04）**：Cowork 的 virtiofs FUSE 掛載出現檔案截斷或過期問題，host 端檔案變更未反映至 VM 內，可能導致 VM 內操作基於舊版檔案內容；官方尚未回應
+- 🔴 **未修復**｜**Cowork virtiofs FUSE mount 檔案過期未同步（GitHub issue #38993，累積 44 則留言、32 個讚，2026-07-12 更新）**：Cowork 的 virtiofs FUSE 掛載出現檔案截斷或過期問題，host 端檔案變更未反映至 VM 內，可能導致 VM 內操作基於舊版檔案內容；官方尚未回應
+- 🔴 **未修復**｜**自建 OAuth 2.1 認證 MCP Server 無法連線 Claude Desktop（GitHub issue #5826，累積 66 則留言、71 個讚，2026-07-13 為本日互動最高條目）**：使用者回報自建 OAuth 2.1 認證的 MCP 伺服器在 Claude Code CLI 上運作良好，但 Claude Desktop 完全無法連線，不論走 OAuth 2.1 或 SSE 皆然；官方尚未回應。
+- 🔴 **未修復**｜**MCP Server 整合缺乏 Token 刷新機制（GitHub issue #5706，2026-07-13 回報）**：使用者指出 Claude Code 目前沒有為 MCP 伺服器刷新 token 的機制，只能改用較長效期的 token 作為替代；官方尚未回應。
+- 🔴 **未修復**｜**功能請求：Claude Desktop App 遠端控制 Claude Code session（GitHub issue #29006，2026-07-12 提出，社群反應熱烈）**：社群請求讓 Claude Desktop App 能遠端控制 Claude Code session；官方尚未回應或排入路線圖。與下列 `/remote-control` 既知問題疑似指向同一功能方向（見 issue #28322）。
+- 🔴 **未修復**｜**既有 session 中 `/remote-control`（`/rc`）未被識別為內建指令（GitHub issue #28322，2026-07-13 回報）**：使用者發現在既有 session 中輸入 `/remote-control` 或 `/rc` 會被判定為未知指令，須開啟新 session 才可使用；顯示此指令可能已存在但尚未完整發布或文件化，官方尚未回應。
 - 🔴 **未修復**｜**Cowork 分頁在 Windows 11 desktop app v1.2581.0 消失（GitHub issue #48407，累積 38 則留言、16 個讚，2026-07-07）**：使用者回報 Windows 11 上 desktop app 版本 v1.2581.0 找不到 Cowork 分頁，疑為該版本的平台性 regression；官方尚未回應
 - 🔴 **未修復**｜**Focus reporting escape sequences 洩漏至輸入框（GitHub issue #10375，累積 30 則留言、31 個讚，2026-07-05）**：在 WezTerm（可能也影響其他終端機）中使用滑鼠或修飾鍵時，focus reporting escape sequences（`[I`、`[O`）會被誤植入輸入介面文字中，官方尚未回應。
 - 🔴 **未修復**｜**帳號限制後申訴表單重新導向迴圈（GitHub issue #62503，累積 31 則留言、5 個讚，2026-07-07）**：帳號遭限制的使用者嘗試提交申訴表單時陷入重新導向迴圈，無法完成申訴流程，官方尚未回應。

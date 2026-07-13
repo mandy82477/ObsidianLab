@@ -2,12 +2,18 @@
 
 LLM 查詢此 wiki 時，**先讀這個檔案**找相關頁面，再讀具體頁面取得詳細資訊。
 
-**最後更新：** 2026-07-12
+**最後更新：** 2026-07-13
 ---
 
 ## 近期異動
 
-- [[entities/claude-code]]／[[feature-radar]]／[[entities/fable-5]]／[[entities/pricing]] — 2026-07-12（本機補跑，GH Actions 抓料成功但當日雲端 routine 未產出，詳見 log）：內建瀏覽器第二媒體來源證實互動能力細節（熱度🔥→🔥🔥）；Fable 5 免費期限＋週配額 +50% 促銷統一延長至 7/19（因 GPT-5.6 Sol 被視為同級競品）；已知問題新增 4 條（#36168 bypass-permissions 於 v2.1.77 後全面失效、#20696 網頁/行動版對話壓縮偶發卡死、#60334 圖片處理 API 錯誤耗用額度、#1785 MCP Sampling 功能請求）；[[topics/community-tech-discussions]] 新增 token overhead 實測討論（Claude Code 33k vs OpenCode 7k）；[[topics/community-tech-patterns]] 新增 5 條 dev.to 第一手實作
+- [[entities/tom-blomfield]] — 2026-07-13：**新頁面（待核實）**，前 Monzo 共同創辦人加入 Anthropic（Business Insider 單一來源），人才流動商業影響面同步記入 [[topics/ai-talent-flow]]
+- [[entities/pricing]]／[[topics/anthropic-business]] — 2026-07-13：Anthropic 證實 1660 萬美元帳務錯誤，稽核發現企業客戶被多收 170 萬美元；[[topics/competitor-landscape]] 新增 Cursor 對手產品「Sand」、Nadella 隱晦批評模型蒸餾、TCS 前線部署工程師團隊；LTM 與 Anthropic 建立企業合作
+- [[entities/fable-5]] — 2026-07-13：Fable 5／週配額促銷延長至 7/19 一事多家媒體（Forbes×2、Help Net Security、Economic Times）重複確認，無新細節
+- [[entities/claude-code]] — 2026-07-13：已知問題新增 6 條（#5826 MCP OAuth 2.1 無法連線 Desktop 66 留言本日最高互動、#38993 Cowork virtiofs 過期檔案 44 留言、#5706 MCP token 刷新缺失、#28077 CLI TUI 無法捲動回看、#29006 Desktop App 遠端控制請求、#28322 `/remote-control` 未被識別）；內建瀏覽器與 Cowork 行動/網頁版報導核對後確認為既有事件重複來源，未加熱度
+- [[topics/code-quality-decline]]／[[topics/community-tech-discussions]] — 2026-07-13：額度焦慮系列新節點（Max 5x 用戶回報消耗速度變快，延燒天數達 17 天）
+- [[topics/anthropic-government-policy]] — 2026-07-13：中國「複製」Anthropic/OpenAI 前沿技術、威脅美國國安報導（NY Post），記入攻防紀錄表
+- [[topics/anthropic-business]] — 2026-07-12（本機補跑，GH Actions 抓料成功但當日雲端 routine 未產出，詳見 log）：內建瀏覽器第二媒體來源證實互動能力細節（熱度🔥→🔥🔥）；Fable 5 免費期限＋週配額 +50% 促銷統一延長至 7/19（因 GPT-5.6 Sol 被視為同級競品）；已知問題新增 4 條（#36168 bypass-permissions 於 v2.1.77 後全面失效、#20696 網頁/行動版對話壓縮偶發卡死、#60334 圖片處理 API 錯誤耗用額度、#1785 MCP Sampling 功能請求）；[[topics/community-tech-discussions]] 新增 token overhead 實測討論（Claude Code 33k vs OpenCode 7k）；[[topics/community-tech-patterns]] 新增 5 條 dev.to 第一手實作
 - **2026-07-12 週度延伸回顧**：新建 [[topics/safety-china-trust-dispute]]（中美 AI 工具信任對峙，自 ai-agent-safety / government-policy 拆出並收斂重複敘事）；[[topics/anthropic-business]] 加開「IPO 前瞻與估值追蹤」子區塊（Series H→$1.2兆次級估值→3Q26 首度獲利曝光→護城河疑慮鏈條）；[[topics/code-quality-decline]]／[[topics/community-tech-discussions]] 額度異常訊號群數字更新（#38335 達 791 留言、cache 命中率降 20% 機制）、額度焦慮熱度 🔥🔥→🔥🔥🔥；[[entities/claude-code]] 已知問題新增「👤 帳號管理」分組（Mobile/Desktop/Web 多帳號切換三 issue 整併）詳見 [[log]]
 - **2026-07-11 週度 Lint（雲端排程）**：修正 3 處跨頁矛盾（opus-4-8 Fable 5 fallback 過期敘述、code-quality-decline/claude-code Stop hooks 狀態不一致、CC-Canary 首次出現日期）；補 2 處孤立連結（bernanke、claude-tag）；11 頁呈現品質修復（delta-first 改寫、凍結指標標註、現況時序侵蝕清理等）；`community-tech-tools.md` 新增 4 工具／汰除 5 筆過期；ref 覆蓋率 100%；讀者模擬 3/3 通過；留 4 項待使用者確認（新實體候選 Reflect with Claude、patterns 合併建議、規則年齡審查、來源健康排查）詳見 [[log]]
 - [[entities/bernanke]] — 2026-07-10：**新頁面**，前聯準會主席 Ben Bernanke 加入 Anthropic 長期利益信託（Long-Term Benefit Trust）董事會，Reuters/CNBC/Bloomberg 同步報導，HN 66 分討論其對治理公信力的意義
@@ -134,6 +140,7 @@ LLM 查詢此 wiki 時，**先讀這個檔案**找相關頁面，再讀具體頁
 | [[entities/opencode]] | product | 🛠️ 工具/功能 | active（快速成長）| Claude Code 主要開源替代品，157K 開發者分流，OpenCode-power-pack 移植官方 11 個 skills |
 | [[entities/claude-tag]] | feature | 🛠️ 工具/功能 | active | Claude Tag：Slack-native AI 協作工具，可讀取頻道上下文、跨 session 記憶、主動完成任務；Anthropic 內部 65% 程式碼由其生成 |
 | [[entities/fable-5]] | model | 🤖 模型 | active（已解禁）| Claude Fable 5：首款 Mythos 級公開模型，$10/$50 per M token；7/1 解禁，Pro/Max/Team 7/7 前享 50% 配額，7/7 後 usage-based billing |
+| [[entities/tom-blomfield]] | person | 👤 人物 | active（待核實）| 前 Monzo 共同創辦人，2026-07-13 加入 Anthropic（Business Insider 單一來源，AI compute／Y Combinator 背景）|
 
 ---
 

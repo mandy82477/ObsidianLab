@@ -3,11 +3,11 @@
 **狀態：** monitoring
 **領域：** 💼 商業
 **開始日期：** 2026-04
-**最後更新：** 2026-07-11
-**最後新聞更新：** 2026-07-11
+**最後更新：** 2026-07-13
+**最後新聞更新：** 2026-07-13
 
-> **最新競品動態**（2026-07-10）
-> OpenAI 正式推出「super app」ChatGPT Work，搭配 GPT-5.6，明確訴求在價格、速度、生產力上超越 Anthropic（Reuters、ZDNET）；同日 The Information 報導 Cursor 正開發 AI agent 直接對標 Claude Cowork。兩則動態顯示 Anthropic 的兩大核心產品線（訂閱定價與 agentic 工作台）同時遭遇正面挑戰。此外 Elon Musk 公開稱 Anthropic 為 AI 界「領導者」，承認先前判斷有誤。
+> **最新競品動態**（2026-07-13）
+> Cursor 對標 Claude Cowork 的 AI agent 首度確認代號「**Sand**」（TweakTown，延續 07-09 The Information 首報）；Microsoft CEO Satya Nadella 針對 Anthropic 等廠商的模型蒸餾（distillation）做法提出隱晦批評，延續 Microsoft 與 Anthropic「雲端夥伴 vs 底層模型競爭者」的既有張力；TCS 執行長宣布將組建「前線部署工程師」團隊正面對抗 OpenAI、Anthropic、Amazon、Microsoft，儘管 TCS 本身仍是 Anthropic 戰略夥伴（Global Premier Partnership，見 [[topics/anthropic-business]]），形成「既合作又競爭」的矛盾結構；Elon Musk 再度公開表示先前對 Anthropic AI 模型的看法「明顯錯誤」，延續 07-10 稱其為業界「領導者」的表態，兩獨立來源報導。
 
 ---
 
@@ -86,10 +86,10 @@ Claude Code 已成為 AI 輔助編碼的標竿產品，但競爭正快速升溫�
 - **動態**：OpenAI 發表長期醞釀的「super app」ChatGPT Work，搭配新模型 GPT-5.6，明確訴求在**價格、速度、生產力**三個面向上超越 Anthropic
 - **意義**：與既有 OpenAI Codex CLI（下載量對 Claude Code 分流）不同，ChatGPT Work 定位為企業工作場景的整合入口，正面挑戰 Anthropic 的訂閱與企業採購雙軌商業模式；若價格與速度確實具優勢，可能加劇 Anthropic 6/15 計費爭議後的訂閱留存壓力（推論）（Reuters「OpenAI unveils long-awaited "super app" as rivalry with Anthropic intensifies」；ZDNET「OpenAI's GPT-5.6 and ChatGPT Work aim to beat Anthropic on price, speed, and productivity」）；定價細節待後續報導補上具體數字，見「競品定價對照」
 
-### Cursor AI Agent 對標 Claude Cowork（傳聞開發中，2026-07-09）
-- **狀態**：傳聞階段（The Information 2026-07-09 報導）
-- **動態**：Cursor 正在開發 AI agent 產品，直接對標 Anthropic 的 Claude Cowork
-- **意義**：Cursor 此前定位為 IDE 整合型工具，若切入 agentic 工作台賽道，代表其在 SpaceX 收購（2026-06-17 完成）後正積極擴張產品線，從「編碼輔助」延伸至「自主任務執行」，與 Claude Cowork 直接競爭（推論，細節與時程未公開）（The Information「Cursor Is Developing an AI Agent to Compete With Claude Cowork」）
+### Cursor AI Agent「Sand」對標 Claude Cowork（開發中，代號確認 2026-07-13）
+- **狀態**：開發中，代號首度確認為「Sand」（TweakTown 2026-07-13；The Information 2026-07-09 首報）
+- **動態**：Cursor 正在打造名為「Sand」的 AI agent，直接對標 Anthropic 的 Claude Cowork
+- **意義**：Cursor 此前定位為 IDE 整合型工具，若切入 agentic 工作台賽道，代表其在 SpaceX 收購（2026-06-17 完成）後正積極擴張產品線，從「編碼輔助」延伸至「自主任務執行」，與 Claude Cowork 直接競爭；代號曝光顯示產品開發已進入具體階段，非僅停留在傳聞（推論，功能細節與上市時程仍未公開）（TweakTown https://www.tweaktown.com/news/112601/cursor-builds-ai-agent-sand-to-rival-anthropics-claude-cowork/index.html；The Information「Cursor Is Developing an AI Agent to Compete With Claude Cowork」）
 
 ### Meta AI 程式輔助工具（傳聞開發中，2026-07-09）
 - **狀態**：傳聞階段（CNBC 2026-07-09 報導）
@@ -182,6 +182,12 @@ Claude Code 已成為 AI 輔助編碼的標竿產品，但競爭正快速升溫�
 ---
 
 ## 時序
+
+### 2026-07-13
+- **[Agentic 工作台代號曝光] Cursor 對標 Claude Cowork 的 AI agent 確認代號「Sand」**：TweakTown 報導 Cursor 正打造名為「Sand」的 AI agent，作為 Claude Cowork 的競品。**對競爭格局的意涵**：延續 07-09 The Information 首報「Cursor 開發 AI agent 對抗 Claude Cowork」，本次首度曝光具體產品代號，顯示開發已進入具體階段（推論，詳見「主要競品追蹤」Cursor 條目）（TweakTown https://www.tweaktown.com/news/112601/cursor-builds-ai-agent-sand-to-rival-anthropics-claude-cowork/index.html）
+- **[雲端夥伴表態，隱晦批評] Satya Nadella 針對 Anthropic 等廠商的模型蒸餾做法提出隱晦批評**：Business Insider 報導微軟執行長 Satya Nadella 針對 Anthropic 等 AI 模型廠商的模型蒸餾（distillation）做法提出隱晦批評。**對競爭格局的意涵**：延續既有 Microsoft-Anthropic「雲端夥伴兼競爭者」複雜關係（06-21 Microsoft 退出 Claude Code、07-07/08 傳出以自研模型取代 Anthropic 模型），本次由 Microsoft 執行長親自對 Anthropic 陣營的模型訓練方法表態批評，與 06-25 Anthropic 指控 Alibaba 蒸餾攻擊事件形成對照——顯示「模型蒸餾」已成為業界普遍關注、且可能被競爭對手用作攻擊點的議題（推論，具體所指做法未明確點名）（Business Insider https://www.businessinsider.com/microsoft-ceo-satya-nadella-swipe-ai-model-makers-distillation-2026-7）
+- **[專業服務商競合矛盾] TCS 執行長宣布組建「前線部署工程師」團隊對抗 OpenAI/Anthropic/Amazon/Microsoft**：The Times of India 報導 TCS 執行長 K. Krithivasan 表示將組建「前線部署工程師」團隊，與 OpenAI、Anthropic、Amazon、Microsoft 競爭。**對競爭格局的意涵**：TCS 本身是 Anthropic 戰略夥伴（06-11 Global Premier Partnership，5 萬員工導入 Claude），此番宣示形成「既合作又競爭」的矛盾結構——呼應 07-03 已記錄的「大型科技公司大規模派遣員工進駐客戶辦公室」趨勢（OpenAI、Anthropic、Amazon、Microsoft 均在列），TCS 等傳統 IT 服務商正試圖以自建同類團隊搶佔企業級 AI 落地服務市場，而非僅作為 Anthropic 的通路夥伴（推論）（The Times of India https://timesofindia.indiatimes.com/technology/tech-news/tcs-takes-on-openai-anthropic-amazon-and-microsoft-to-build-a-team-of-forward-deployed-engineers-ceo-k-krithivasan-says-we-would-be-ensuring-/articleshow/132362389.cms；詳見 [[topics/anthropic-business]] TCS 合作紀錄）
+- **[競品陣營表態延續] Elon Musk 再度公開稱先前對 Anthropic AI 模型的看法「明顯錯誤」**：Yahoo Finance 兩獨立來源報導 Elon Musk 公開表示先前對 Anthropic AI 模型的看法「明顯錯誤」，被視為對 Amazon、Alphabet 投資人的利多消息。**對競爭格局的意涵**：延續 07-10 已記錄的「Musk 稱 Anthropic 為業界領導者」表態，本次為同一立場的再次公開重申，兩獨立來源報導強化其表態的傳播度（推論）（Yahoo Finance https://finance.yahoo.com/technology/ai/articles/elon-musk-says-clearly-wrong-101400836.html）
 
 ### 2026-07-10
 - **[待查證，單一來源轉述] DataBricks 評測：pi-coding-agent 成本約為 Claude Code / Codex 之半，GLM 5.2 表現可比 Opus 4.8 high**：Reddit r/LocalLLaMA 週熱門貼文轉述 DataBricks 的評測結果，指出 pi-coding-agent 成本約為 Claude Code / Codex 的一半，GLM 5.2 表現可與 Opus 4.8 high 相提並論。**注意**：為單一來源轉述，未見官方或第三方交叉確認具體數字，標記「待查證」。**對競爭格局的意涵**：若數字成立，代表低成本編碼 agent 與開源模型持續逼近 Claude Code 效能與定價天花板，與既有 DeepSeek、Zhipu 陣營形成同向壓力（推論，待驗證）（Reddit https://www.reddit.com/r/LocalLLaMA/comments/1usrek0/according_to_databricks_picodingagent_is_2x/）

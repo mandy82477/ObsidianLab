@@ -3,6 +3,25 @@
 Append-only 紀錄。每次 ingest、lint，以及**揭露缺陷或促成改動的使用者 query**，都在此追加一條（純資訊性、未促成改動的 query 不記，避免噪音）。
 格式：`## [YYYY-MM-DD] 類型 | 說明`
 
+## 2026-07-13 Ingest | news/2026-07-13.md（39 則）
+
+- 來源日報：[[news/2026-07-13]]（39 則，10/10 來源；Hacker News 14、GitHub Issues 15、dev.to 15、Google News 30、Blogroll 4、Reddit 7，來源計數含跨類重疊）
+- 分類派工：模型、功能、商業、安全政策、社群、人物（六類並行 foreground，model: sonnet）
+- 更新頁面：
+  - **模型**：`fable-5.md`（Fable 5／週配額促銷延長至 7/19，多家媒體 Forbes×2/Help Net Security/Economic Times 重複確認，無新細節；Haiku 4.5 錯誤率升高 status incident 判定不收錄；Reddit Qwen-3.6-27B 非 Anthropic 相關略過）
+  - **功能**：`claude-code.md`（已知問題新增 6 條：#5826 MCP OAuth 2.1 無法連線 Desktop 66 留言本日最高互動、#38993 Cowork virtiofs 過期檔案 44 留言、#5706 MCP token 刷新缺失、#28077 CLI TUI 無法捲動回看、#29006 Desktop App 遠端控制請求、#28322 `/remote-control` 未識別；內建瀏覽器與 Cowork 行動/網頁版報導核對後確認為既有事件重複來源，未加熱度）；`official-community-gap.md`（產品化矩陣補充 remote-control 相關缺口交叉線索）
+  - **商業**：`anthropic-business.md`（LTM 企業合作新增列）；`competitor-landscape.md`（Cursor「Sand」對手產品、Nadella 隱晦批評模型蒸餾、TCS 前線部署工程師團隊、Musk 表態）；`ai-talent-flow.md`（Tom Blomfield 加入 Anthropic）；`pricing.md`（1660 萬美元帳務錯誤、企業多收 170 萬美元）
+  - **安全政策**：`anthropic-government-policy.md`（中國「複製」Anthropic/OpenAI 前沿技術、威脅美國國安報導記入攻防紀錄表，單一來源未達 callout 覆寫門檻）
+  - **社群**：`code-quality-decline.md`／`community-tech-discussions.md`（額度焦慮系列新節點：Max 5x 用戶回報消耗變快，延燒天數達 17 天；6 則 Show HN 工具因缺互動數字且 community-tech-tools.md 已改 lint-only 未收錄；其餘 Reddit 單則貼文與 GitHub Issues 依分流規則不收錄）
+  - **人物**：`tom-blomfield.md`（**新頁面**，前 Monzo 共同創辦人加入 Anthropic，Business Insider 單一來源，標記待核實）
+- feature-radar：本日無新功能；升版風險與本週推薦未變動
+- index.md 狀態變更：新增 `entities/tom-blomfield`（無 → active（待核實））
+- 新增頁面：`wiki/entities/tom-blomfield.md`
+- 轉知事項：無（人物/商業記者已互相 wikilink，同步完成）
+- 摘要：主軸——Anthropic 新聘 Monzo 共同創辦人 Tom Blomfield；1660 萬美元帳務錯誤與企業多收 170 萬美元；Cursor 推出對手產品「Sand」；Claude Code 已知問題新增 6 條（MCP OAuth/token 刷新、Cowork virtiofs、CLI TUI 捲動、remote-control 相關）；Fable 5／週配額促銷延長至 7/19 多家媒體重複確認；額度焦慮系列延燒滿 17 天
+- 呈現品質：全部通過（六記者皆回報 ✅）
+- 品質備註：無
+
 ## 2026-07-13 Query 後續 | 確認根因：雲端 routine 從未實際建立，已重新排程
 
 - **確認過程**：使用者親自登入 claude.ai routines 頁查看，回報「看起來沒有排」；用 `RemoteTrigger list` 查詢確認，文件記載的 `daily-news-pipeline-cloud`（trig_01JNrBGyrsZk1HjBQeJ7UKLG）確實不存在，帳號下只有 `cloud-writeback-probe`（已停用）與 `weekly-wiki-lint-cloud`（正常運作中）兩個排程。

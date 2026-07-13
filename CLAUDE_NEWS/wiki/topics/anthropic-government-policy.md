@@ -3,8 +3,8 @@
 **狀態：** monitoring（出口管制主線已解除，剩餘承諾落實與衍生支線持續觀察；中美 AI 工具信任對峙已獨立成頁）
 **領域：** 🏛️ 政策/安全
 **開始日期：** 2026-05-01
-**最後更新：** 2026-07-12
-**最後新聞更新：** 2026-07-11
+**最後更新：** 2026-07-13
+**最後新聞更新：** 2026-07-13
 
 > **最新攻防紀錄**（2026-07-02）
 > 出口管制解除後續：Anthropic 為 Fable 5 新增「Defense in Depth」資安/程式碼分類器，高風險 cybersecurity/coding 請求自動 fallback 至 Opus 4.8——三項解封承諾（主動偵測安全風險）首次出現具體技術實作；上線首日即出現誤判合法安全審查請求的負面案例。中美 AI 工具信任對峙（中國代理偵測程式碼、Alibaba/Meta 禁用、中國官方後門警示、Anthropic 07-10 首度否認）已於 2026-07-12 整合拆出至獨立頁 [[topics/safety-china-trust-dispute]]，完整逐日敘事見該頁。
@@ -30,7 +30,7 @@
 | 中美 AI 工具信任對峙（已獨立成頁）| 敘事線（社群指控 → 企業禁用 → 官方定調「實驗」→ 政府層級升級 → Anthropic 07-10 首度否認）已於 2026-07-12 整合拆出至 [[topics/safety-china-trust-dispute]] | 中國官方與 Alibaba 是否就 Anthropic 否認再表態；中國是否有後續監管動作（如限制/禁售）；完整時序見新頁 |
 | 三項承諾落實                   | 首個落實動作：「Defense in Depth」資安/程式碼分類器，高風險 cybersecurity/coding 請求自動 fallback 至 Opus 4.8（2026-07-02）；上線首日即出現誤判合法安全審查請求的負面案例                                                                                                                            | 分類器精確度改善；其餘兩項承諾（標準制定合作、惡意活動通報）的可觀察動作                                                                                   |
 | 歐洲據點爭奪                   | 奧地利已向歐盟提案邀請 Anthropic 設立歐盟據點（2026-06-28）                                                                                                                                                                                                           | 管制解除是否降低歐洲遊說動能；Anthropic 是否表態                                                                                          |
-| 阿里巴巴蒸餾指控                 | Anthropic 單方指控（6/10 致函參議院），阿里巴巴無回應、無第三方確認                                                                                                                                                                                                          | 阿里巴巴官方回應或國會後續動作；技術面見 [[topics/ai-agent-safety]]                                                                        |
+| 阿里巴巴蒸餾指控                 | Anthropic 單方指控（6/10 致函參議院），阿里巴巴無回應、無第三方確認；2026-07-13 New York Post 刊文重申「中國複製前沿 AI」國安威脅框架，仍屬單一媒體來源、無新證據                                                                                                                                                                                                          | 阿里巴巴官方回應或國會後續動作；技術面見 [[topics/ai-agent-safety]]                                                                        |
 | Legion 司法挑戰              | 已向 DC 聯邦法院補充提訴並申請緊急禁制令（2026-06-28）                                                                                                                                                                                                                 | 管制解除後訴訟是否失去標的、撤案或轉為求償                                                                                                  |
 | NSA 存取權                  | NSA 因爭議於 6/23 失去 Fable 存取權                                                                                                                                                                                                                         | 管制解除是否恢復此存取，尚未見報導                                                                                                      |
 | 身份管控收緊                   | 計畫對部分 Free/Pro/Max 用戶要求身份證明與臉部掃描（最快 7 月），觸發條件未公開；帳號封禁申訴機制缺失（HN score 55）                                                                                                                                                                           | 7 月是否如期上路；觸發條件與覆蓋範圍是否公開                                                                                                |
@@ -103,6 +103,7 @@ Fable 5 發布後，Amazon 安全研究人員發現特定提示詞可讓模型�
 
 | 日期 | 方 | 動作 | 效果 |
 |------|----|------|------|
+| 2026-07-13 | 🌐 | New York Post（經 Google News 轉載）刊文指控中國「複製」Anthropic/OpenAI 前沿 AI 技術並定性為美國國安威脅，未提供新技術證據，論調呼應既有阿里巴巴蒸餾指控（06-10 致參議院信）（New York Post） | 單一媒體來源、無第三方或官方確認，僅延續既有「中國竊取/複製前沿 AI 能力」敘事框架，未新增具體事實或機制細節 |
 | 2026-06-30～07-10 | 🌐🏢🏛️ | 中美 AI 工具信任對峙（中國代理偵測程式碼 → 隱寫術指控 → Alibaba/Meta 禁用 → Anthropic「實驗」定調 → 中國官方後門警示 → Anthropic 首度否認），逐日事件與可信度評估已整合拆出至 [[topics/safety-china-trust-dispute]] | 完整敘事、來源列表見新頁；本表僅保留出口管制主線事件 |
 | 2026-07-03 | 🌐 | MarketScale 延遲報導確認 7/1 出口管制解除，封鎖期精確為 19 天（MarketScale） | 對既有 7/1 事件的媒體確認，補充精確天數；非新增事件 |
 | 2026-07-02 | 🏢 | Anthropic 為 7/1 重新部署的 Fable 5 新增「Defense in Depth」機制：新資安/程式碼分類器對高風險 cybersecurity/coding 請求自動 fallback 至 Opus 4.8（Reddit r/ClaudeAI）；WSJ 分析：解封只是「馴服 AI」戰役的開始（WSJ） | 「主動偵測安全風險」承諾首次有可觀察的技術落實；但使用者實測（dev.to）已出現分類器誤判合法請求案例，顯示落實品質仍待觀察 |
@@ -185,6 +186,7 @@ Fable 5 發布後，Amazon 安全研究人員發現特定提示詞可讓模型�
 
 ## 參考來源
 
+- [[news/2026-07-13]]
 - [[news/2026-07-10]]
 - [[news/2026-07-08]]
 - [[news/2026-07-07]]
@@ -205,6 +207,9 @@ Fable 5 發布後，Amazon 安全研究人員發現特定提示詞可讓模型�
 - [Chris Olah Vatican Remarks](https://www.anthropic.com/news/chris-olah-pope-leo-encyclical) — Anthropic Blog
 
 ## 時序
+
+### 2026-07-13
+- **[媒體重申，無新事實] New York Post：中國「複製」前沿 AI 技術，威脅美國國安**：New York Post（經 Google News 轉載）刊文指控中國複製 Anthropic、OpenAI 等前沿 AI 技術並定性為國安威脅；未提供新技術證據或具體案例，論調呼應既有 06-10 阿里巴巴蒸餾指控；單一媒體來源，無第三方或官方確認（New York Post，2026-07-13；https://nypost.com/2026/07/13/business/how-china-is-ripping-off-cutting-edge-ai-from-anthropic-openai-and-threatening-us-national-security/）
 
 > 2026-06-27 至 2026-07-01（解封主線最後階段）逐日事件已與上方「## 攻防紀錄」表格內容重複，此處不再重複全文，僅列出表格未涵蓋的補充細節；完整逐日敘述請查表格。
 

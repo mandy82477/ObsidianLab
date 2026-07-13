@@ -3,11 +3,11 @@
 **狀態：** ongoing
 **領域：** 💼 商業
 **開始日期：** 2026-06-19
-**最後更新：** 2026-07-10
-**最後新聞更新：** 2026-06-29
+**最後更新：** 2026-07-13
+**最後新聞更新：** 2026-07-13
 
-> **最新動態**（2026-06-29）
-> 兩週內 Google DeepMind 連失 4–5 位頂尖研究員至 Anthropic（含諾貝爾化學獎得主 John Jumper），市值蒸發約 $2,700 億（推論）；最值得注意的是流失方向（AI coding）正是 Google 自己落後的領域（推論）。
+> **最新動態**（2026-07-13）
+> Business Insider 報導 Anthropic 新聘 Monzo 共同創辦人 Tom Blomfield（AI compute / Y Combinator 背景）——與此前 Google DeepMind 研究員流入案例不同，此為金融科技創業者跨界加入 AI 實驗室的執行層人才佈局，非傳統「AI 實驗室之間」流動（詳見下方時序說明）。核心格局仍延續：兩週內 Google DeepMind 連失 4–5 位頂尖研究員至 Anthropic（含諾貝爾化學獎得主 John Jumper），市值蒸發約 $2,700 億（推論）；最值得注意的是流失方向（AI coding）正是 Google 自己落後的領域（推論）。
 
 ## 摘要
 
@@ -29,6 +29,9 @@
 - 人才流動為**雙向洗牌**（Google 同期亦失人至 OpenAI），非單向崩塌。
 
 ## 時序
+
+### 2026-07-13
+- **[跨界執行層人才，非典型 AI 實驗室流動] Anthropic 新聘 Monzo 共同創辦人 Tom Blomfield**：Business Insider 報導 Anthropic 聘請英國數位銀行 Monzo 共同創辦人 Tom Blomfield，背景涉及 AI compute 與 Y Combinator。**對商業的意涵**：與本頁核心追蹤的「Google DeepMind → Anthropic 研究員流動」模式不同，Blomfield 出身金融科技創業與加速器生態，而非競爭 AI 實驗室；若屬執行層人才佈局（而非研究職），可能反映 Anthropic 在 IPO 前加強營運/擴張團隊縱深的策略，與近期 Teresa Carlson（前 Microsoft/AWS 高管）加入公部門業務團隊的模式類似（推論，具體職位與職責未見報導）（Business Insider https://www.businessinsider.com/anthropic-hires-monzo-cofounder-tom-blomfield-ai-compute-y-combinator-2026-7）
 
 ### 2026-06-29
 - dev.to 報導：Gemini 3.5 Pro 延期至七月，同期 4 位 Google 資深研究員轉投 Anthropic，AI 人才流動繼續向 Anthropic 傾斜（推論，未經 Google 官方確認）。（ref: https://dev.to/doremonai/gemini-35-pro-delayed-to-july-4-senior-google-researchers-defect-to-anthropic-47he）

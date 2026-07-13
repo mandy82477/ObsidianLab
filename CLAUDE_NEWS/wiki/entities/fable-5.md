@@ -4,8 +4,8 @@
 **狀態：** active（正式發布；出口管制已解除，2026-07-01 起全球恢復存取）
 **領域：** 🤖 模型
 **首次出現：** 2026-06-09
-**最後更新：** 2026-07-12
-**最後新聞更新：** 2026-07-12
+**最後更新：** 2026-07-13
+**最後新聞更新：** 2026-07-13
 
 > **最新進展**（2026-07-12）
 > Fable 5 存取限制再度延長至 2026-07-19。媒體報導與 Simon Willison 部落格均指出，延後原因與 GPT-5.6 Sol 被業界認為屬於 Fable／Mythos 同級模型有關（定價細節見 [[entities/pricing]]）。
@@ -154,6 +154,9 @@ claude --model claude-fable-5-20260609
 ## 歷史記錄
 
 ### 解禁後（2026-07-01 起）
+
+#### 2026-07-13
+**多家媒體重複確認延長至 7/19（無新日期變化）**：Forbes（Tyler Roush）、Help Net Security、Economic Times、Forbes（Sandy Carter）等多家媒體同日重複報導 Fable 5 存取限制延長至 2026-07-19 一事，內容與 07-12 記錄的同一事件一致，未出現新的日期或條件變化，僅為跨媒體多來源重複確認（[Forbes](https://www.forbes.com/)、[Help Net Security](https://www.helpnetsecurity.com/)、[Economic Times](https://economictimes.indiatimes.com/)，2026-07-13）。
 
 #### 2026-07-12
 **存取限制再度延長至 7/19**：Anthropic 將 Fable 5 存取限制再次延長，由原訂 7/12 延至 2026-07-19（Google News/The Economic Times，2026-07-12 18:08 UTC）。Simon Willison 部落格「Fable gets another bump」（2026-07-12 21:20 UTC）指出，延後原因與競品 GPT-5.6 Sol 被業界視為明顯屬於 Fable／Mythos 同級模型有關，暗示 Anthropic 觀察競品定位後才決定存取政策走向；免費期限與計費細節見 [[entities/pricing]]。
