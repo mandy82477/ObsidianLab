@@ -4,17 +4,19 @@
 **狀態：** active（正式發布；出口管制已解除，2026-07-01 起全球恢復存取）
 **領域：** 🤖 模型
 **首次出現：** 2026-06-09
-**最後更新：** 2026-07-11
-**最後新聞更新：** 2026-07-10
+**最後更新：** 2026-07-12
+**最後新聞更新：** 2026-07-12
 
-> **最新進展**（2026-07-09）
-> Reddit 使用者整理 Anthropic 官方基準測試「Fable 5 orchestrates, cheap models execute」：以 Fable 5 負責任務調度、較便宜模型負責執行，可用 46% 成本達到 96% 效能，此模式現可在 Claude Code 中直接套用（週熱門標記，來源貼文日期 2026-07-08）；此外 Anthropic 前一日（07-07/08）已將 Fable 5 免費使用期限再延長至 7 月 12 日（定價細節見 [[entities/pricing]]）。
+> **最新進展**（2026-07-12）
+> Fable 5 存取限制再度延長至 2026-07-19。媒體報導與 Simon Willison 部落格均指出，延後原因與 GPT-5.6 Sol 被業界認為屬於 Fable／Mythos 同級模型有關（定價細節見 [[entities/pricing]]）。
 
 ---
 
 ## 現況
 
-**2026-07-10 最新**：GitHub Issue #73365 回報 Fable 5 advisor 角色在所有 Claude Code session 中全面 unavailable（🔴 未修復，呼叫層問題非模型能力劣化，詳見「爭議」與 [[entities/claude-code]]）；07-09 官方公布「Fable 5 調度、便宜模型執行」協作基準（46% 成本達 96% 效能），免費使用期限延長至 7/12。
+**2026-07-12 最新**：Fable 5 存取限制再度延長至 7/19（原至 7/12），媒體報導與 Simon Willison 均指出，延後與競品 GPT-5.6 Sol 被視為 Fable／Mythos 同級模型有關，暗示 Anthropic 在觀察競品定位後才決定是否放寬存取限制。
+
+**2026-07-10**：GitHub Issue #73365 回報 Fable 5 advisor 角色在所有 Claude Code session 中全面 unavailable（🔴 未修復，呼叫層問題非模型能力劣化，詳見「爭議」與 [[entities/claude-code]]）；07-09 官方公布「Fable 5 調度、便宜模型執行」協作基準（46% 成本達 96% 效能）。
 
 Claude Fable 5 是 Anthropic 於 2026-06-09 發布的旗艦模型，為**史上首款向大眾開放的 Mythos 級模型**。Fable 5 與 Claude Mythos 5 共用相同的模型權重，差異在於 Fable 5 前置安全分類器——觸發時 fallback 至 Claude Opus 4.8（Anthropic 稱不到 5% 的 session 受影響）。核心定位：任務越複雜越長期，Fable 5 的優勢越明顯；在軟體工程、知識工作、視覺、科學研究等幾乎所有 benchmark 達到 SOTA。
 
@@ -26,7 +28,7 @@ Claude Fable 5 是 Anthropic 於 2026-06-09 發布的旗艦模型，為**史上�
 | Output 定價 | $50 / 百萬 token |
 | Context Window | 1,000,000 token |
 | 最大 Output | 128,000 token |
-| 免費期限 | 訂閱用戶至 2026-07-12（原至 06-22，經多次延長，見「歷史記錄」）|
+| 免費期限 | 訂閱用戶至 2026-07-19（原至 06-22，經多次延長，見「歷史記錄」）|
 
 ## 配額與計費過渡（至 7/7）
 
@@ -152,6 +154,9 @@ claude --model claude-fable-5-20260609
 ## 歷史記錄
 
 ### 解禁後（2026-07-01 起）
+
+#### 2026-07-12
+**存取限制再度延長至 7/19**：Anthropic 將 Fable 5 存取限制再次延長，由原訂 7/12 延至 2026-07-19（Google News/The Economic Times，2026-07-12 18:08 UTC）。Simon Willison 部落格「Fable gets another bump」（2026-07-12 21:20 UTC）指出，延後原因與競品 GPT-5.6 Sol 被業界視為明顯屬於 Fable／Mythos 同級模型有關，暗示 Anthropic 觀察競品定位後才決定存取政策走向；免費期限與計費細節見 [[entities/pricing]]。
 
 #### 2026-07-10
 **GitHub Issue #73365：Advisor 角色全面 unavailable（🔴 未修復）**：Fable 5 advisor（Opus 4.8 main 底下的 advisor 角色）在所有 Claude Code session 中皆顯示「unavailable」，版本 v2.1.198，累積 50 則留言、100 個讚，情緒 😤。此為 Claude Code 呼叫層面的可用性問題，功能記者已同步記入 [[entities/claude-code]] 已知問題。

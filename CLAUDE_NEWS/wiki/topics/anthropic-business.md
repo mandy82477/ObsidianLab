@@ -166,6 +166,9 @@ Simon Willison（知名開發者博主）發表文章，認為 Anthropic 與 Ope
 
 ## 時序
 
+### 2026-07-12
+- **[媒體擴散，非新事件] The New Stack 跟進報導 UST 合作案，強調「訓練 2 萬人」規模**：Google News/The New Stack（07-12 17:04 UTC）以「Anthropic's newest enterprise partner is training 20,000 people on Claude」為題跟進 07-10 已記錄的 UST 合作（訓練 UST 兩萬名工程師與顧問使用 Claude，導入晶片、汽車、連網裝置等實體製造流程），為第二個獨立媒體來源報導同一案例。**對商業的意涵**：兩獨立來源（Anthropic Blog 官方公告 + The New Stack 跟進）在 2 天內報導同一培訓規模，被視為企業導入 AI 深度（而非僅試點）的訊號，強化 UST 案例作為 Anthropic 從「算力供應」向「終端應用場景」滲透的具體佐證（推論，詳見「戰略合作」表 07-10 UST 列）（The New Stack）
+
 ### 2026-07-11
 - **[媒體擴散，非新政策] Dayton Daily News 報導「Claude Corps」非營利組織 AI 培力計畫**：Anthropic 宣布 Claude Corps，協助非營利組織學習有效運用 AI 工具；此為 06-11 已記錄計畫（招募 1,000 名職涯初期人才、派遣至全美非營利組織服務一年、全薪支付）的媒體擴散報導，非獨立新事件（Dayton Daily News https://www.daytondailynews.com/nation-world/anthropic-announces-claude-corps-to-teach-nonprofits-to-use-ai-more-effectively/article_a978f0cf-5abd-5420-89ef-6dc77064072b.html）
 - **[勞動市場爭議] Mission Local：Anthropic 6.5 萬美元職缺成為舊金山住房負擔能力危機的爭議焦點**：Mission Local 報導以 Anthropic 一則年薪 6.5 萬美元的職缺為切入點，探討舊金山住房負擔能力危機、驅逐案與科技業高薪員工推升房租之間的關聯，並連結 Anthropic IPO 前景一併討論。**對商業的意涵**：屬企業僱傭實務引發的社會輿論案例，非財務或估值面事件，但反映 Anthropic 在舊金山當地社群的形象壓力可能隨其規模擴大與 IPO 關注度上升而加劇（推論）（Mission Local https://missionlocal.org/2026/07/anthropic-sf-affordability-ipo-housing-evictions-rent/）

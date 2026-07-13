@@ -103,6 +103,7 @@ MCP 的實際成本遠超多數使用者預期，已有多個量化案例：
 
 | 討論主題 | 首見 | 熱度 | 模式 | 核心論點 | 衍生 |
 |---------|------|------|------|---------|------|
+| Claude Code 啟動送出 33k tokens vs OpenCode 僅 7k：harness 開銷實測比較 | 2026-07-12 | 🔥🔥 | ☄️閃現 | 作者實際攔截並比對 Claude Code 與 OpenCode 對 Anthropic 端點的請求內容與 usage block，量測發現 Claude Code 在讀取使用者 prompt 前已送出約 33,000 tokens（快取策略 + harness 開銷），OpenCode 同等情境僅約 7,000 tokens；兩個獨立來源報導同一測量結果（source_count 2，達收錄門檻），呼應既有「MCP 成本結構」長期議題與「Local Reverse Proxy」（[[topics/community-tech-patterns]]）對 Claude Code 實際送出內容的持續關注；原文見 systima.ai（Hacker News，跨 2 來源） | — |
 | Ben Bernanke 加入 Anthropic Oversight Trust：AI 治理獨立性辯論 | 2026-07-10 | 🔥🔥🔥 | ☄️閃現 | HN 討論（66 分）：前聯準會主席 Ben Bernanke 加入 Anthropic 新設立的 Oversight Trust，社群討論聚焦知名經濟學者加入是否能為 AI 安全監督機制帶來實質獨立性，或僅是強化企業治理形象的象徵性任命；具體任命事實與商業意涵已由 [[topics/anthropic-business]] 記錄，本頁聚焦社群對「治理正當性」的討論角度（HN） | — |
 | Geosql：地理空間 Skill 宣稱 4 倍改善數據被質疑不一致 | 2026-07-08 | 🔥🔥🔥 | ☄️閃現 | 開發者發布 Geosql，供 Claude/Codex 使用的地理空間資料 skill，宣稱整體效能較基準提升約 4 倍；HN 討論者比對作者自己公布的細部任務成功率數據，指出逐項成功率加總後難以支撐「4 倍」這個整體宣稱數字，質疑基準測試方法論或呈現方式有誇大之嫌；[GitHub](https://github.com/dekart-xyz/geosql)（HN score 55） | — |
 | Anthropic API 穩定性與訂閱鎖定引發好感度流失論 | 2026-07-06 | 🔥🔥🔥 | ☄️閃現 | 部落格作者實測多款 agent harness 後批評 Anthropic API 穩定性不佳，且訂閱制與 API 額度綁定造成 vendor lock-in；認為在開源模型日益競爭下，此舉正流失開發者好感（HN score 97）；與同期「API 大規模錯誤」「額度上限焦慮」等穩定性/鎖定相關痛點呼應，但本篇核心論點聚焦「商業設計選擇」而非單純技術故障；[原文](https://raheeljunaid.com/blog/anthropics-method-to-losing-goodwill-in-a-few-easy-steps/)（HN） | — |

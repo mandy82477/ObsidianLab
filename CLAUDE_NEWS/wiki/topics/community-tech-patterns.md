@@ -3,11 +3,11 @@
 **狀態：** monitoring
 **領域：** 🌐 社群
 **開始日期：** 2026-04-25
-**最後更新：** 2026-07-11
-**最後新聞更新：** 2026-07-11
+**最後更新：** 2026-07-12
+**最後新聞更新：** 2026-07-12
 
-> **最新工作流模式**（2026-07-11）
-> 新增 ccteams：npm 套件化管理 Claude Code subagent 團隊，一鍵套用不同語言/框架的 builder+reviewer 組合（dev.to）。
+> **最新工作流模式**（2026-07-12）
+> 補跑 07-12 dev.to 五則第一手實作：本地 SQLite session 記憶索引（session-indexer）、自製 skill linter 診斷 52k-star repo、AWS Bedrock 執行 Claude Code 單日成本教訓、「Fable 5 物有所值」分層模型路由心法、以及用 skill 找潛在客戶的誤抓同業教訓。
 
 ---
 
@@ -54,6 +54,41 @@
 ## 技術彙整
 
 ### 2026-07
+
+#### session-indexer：本地 SQLite 索引 Claude Code 逐字稿供跨 Session 語意搜尋（2026-07-12）
+
+- **核心模式：** Go 工具 session-indexer 讀取 Claude Code session transcript，索引進本地 SQLite 資料庫，讓開發者能跨 session 語意搜尋過去對話與程式碼決策，避免「跨專案記憶消失」問題
+- **與既有模式的關係：** 同屬「本機持久化記憶架構」與「Session 記憶與搜尋工具生態」（2026-05-05）模式家族的新實作版本，聚焦本地 SQLite 索引而非雲端或純 Markdown
+- **來源：** 「session-indexer: giving Claude Code a memory that doesn't die with the project next door」— dev.to（作者 valpere，原文發布 07-04）
+- **成熟度：** ⏳ 新興（單一作者工具，尚無採用數據）
+
+#### Skill Linter 對 52k-Star Repo 的 84/100 診斷案例：Skill 品質共通模式（2026-07-12）
+
+- **核心模式：** 作者自製 skill linter，對一個 52k star 高星 repo 中 24 個 skills 逐一檢測，量化出 84/100 品質分數，並歸納出多個 skill 撰寫的共通可修正模式（如缺乏明確邊界、指令模糊等）
+- **與既有模式的關係：** 呼應既有「Caliper：pass@k 指標的 Skill 可靠性測試方法」（2026-06-29），同屬「量化評估 skill 品質」思路的新工具，此案例聚焦靜態規則檢查（linter）而非執行時測試
+- **來源：** 「I Pointed a Skill Linter at a 52k-Star Repo. Here Is What 84/100 Looks Like.」— dev.to（作者 sayed_ali_alkamel，原文發布 06-13）
+- **成熟度：** ⏳ 新興（單一作者工具與案例，尚無其他來源複現）
+
+#### AWS Bedrock 執行 Claude Code 單日 $8.43 計費教訓（2026-07-12）
+
+- **核心模式：** 開發者首次改用 AWS Bedrock 執行 Claude Code，記錄單日花費 $8.43 的實測計費細節與意外之處，作為「透過 Bedrock 用 Claude Code」路徑的第一手成本參考
+- **與既有模式的關係：** 補充既有「費用可觀測性工具」與「Token 路由與成本優化」類別中缺乏的 Bedrock 路徑具體數字，可與 API 直連、Claude Desktop 訂閱制的成本案例並列比較
+- **來源：** 「How My First Claude Code on AWS Bedrock Experiment Cost Me $8.43 in Just One Day」— dev.to（作者 aws-builders，原文發布 06-16）
+- **成熟度：** ⏳ 新興（單日單一案例，樣本量小）
+
+#### 「讓 Fable 5 物有所值」的分層模型路由實務（2026-07-12）
+
+- **核心模式：** 作者主張僅在需要頂尖判斷力的任務上使用 Fable 5，其餘工作交給成本較低的 subagent 處理，以此讓 Fable 5 的高單價「物有所值」
+- **與既有模式的關係：** 屬「模型使用策略」類別下既有 Workweave Router／Dragoman 等成本感知路由思路的實務心法版，聚焦「何時該用旗艦模型」的判斷原則而非工具本身
+- **來源：** 「Use Fable 5 where it pays for itself」— dev.to（作者 toffy，原文發布 07-02）
+- **成熟度：** ⏳ 新興（單一作者實務分享，未見量化數據）
+
+#### 用 Claude Code Skill 在 Reddit/LinkedIn 找潛在客戶而非同業（2026-07-12）
+
+- **核心模式：** 作者建置自動搜尋潛在客戶的 Claude Code skill，早期版本曾誤抓同業競品作為目標，記錄調整篩選邏輯排除同業、聚焦真實潛在客戶的過程
+- **與既有模式的關係：** 新的應用領域案例——「Skill 設計模式」類別過去多聚焦開發流程本身，此案例將 skill 用於銷售/業務開發場景，補充 skill 應用場景多樣性的佐證
+- **來源：** 「I built a Claude Code skill that finds customers, not competitors, on Reddit & LinkedIn」— dev.to（作者 newan2001，原文發布 06-19）
+- **成熟度：** ⏳ 新興（單一作者工具，尚無採用數據）
 
 #### ccteams：套件化管理 Claude Code Subagent 團隊（2026-07-11）
 

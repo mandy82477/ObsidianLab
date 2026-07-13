@@ -7,6 +7,7 @@ LLM 查詢此 wiki 時，**先讀這個檔案**找相關頁面，再讀具體頁
 
 ## 近期異動
 
+- [[entities/claude-code]]／[[feature-radar]]／[[entities/fable-5]]／[[entities/pricing]] — 2026-07-12（本機補跑，GH Actions 抓料成功但當日雲端 routine 未產出，詳見 log）：內建瀏覽器第二媒體來源證實互動能力細節（熱度🔥→🔥🔥）；Fable 5 免費期限＋週配額 +50% 促銷統一延長至 7/19（因 GPT-5.6 Sol 被視為同級競品）；已知問題新增 4 條（#36168 bypass-permissions 於 v2.1.77 後全面失效、#20696 網頁/行動版對話壓縮偶發卡死、#60334 圖片處理 API 錯誤耗用額度、#1785 MCP Sampling 功能請求）；[[topics/community-tech-discussions]] 新增 token overhead 實測討論（Claude Code 33k vs OpenCode 7k）；[[topics/community-tech-patterns]] 新增 5 條 dev.to 第一手實作
 - **2026-07-12 週度延伸回顧**：新建 [[topics/safety-china-trust-dispute]]（中美 AI 工具信任對峙，自 ai-agent-safety / government-policy 拆出並收斂重複敘事）；[[topics/anthropic-business]] 加開「IPO 前瞻與估值追蹤」子區塊（Series H→$1.2兆次級估值→3Q26 首度獲利曝光→護城河疑慮鏈條）；[[topics/code-quality-decline]]／[[topics/community-tech-discussions]] 額度異常訊號群數字更新（#38335 達 791 留言、cache 命中率降 20% 機制）、額度焦慮熱度 🔥🔥→🔥🔥🔥；[[entities/claude-code]] 已知問題新增「👤 帳號管理」分組（Mobile/Desktop/Web 多帳號切換三 issue 整併）詳見 [[log]]
 - **2026-07-11 週度 Lint（雲端排程）**：修正 3 處跨頁矛盾（opus-4-8 Fable 5 fallback 過期敘述、code-quality-decline/claude-code Stop hooks 狀態不一致、CC-Canary 首次出現日期）；補 2 處孤立連結（bernanke、claude-tag）；11 頁呈現品質修復（delta-first 改寫、凍結指標標註、現況時序侵蝕清理等）；`community-tech-tools.md` 新增 4 工具／汰除 5 筆過期；ref 覆蓋率 100%；讀者模擬 3/3 通過；留 4 項待使用者確認（新實體候選 Reflect with Claude、patterns 合併建議、規則年齡審查、來源健康排查）詳見 [[log]]
 - [[entities/bernanke]] — 2026-07-10：**新頁面**，前聯準會主席 Ben Bernanke 加入 Anthropic 長期利益信託（Long-Term Benefit Trust）董事會，Reuters/CNBC/Bloomberg 同步報導，HN 66 分討論其對治理公信力的意義

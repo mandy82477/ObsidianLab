@@ -4,11 +4,11 @@
 **狀態：** active（已被取代，第三階旗艦）
 **領域：** 🤖 模型
 **首次出現：** 2026-04-24
-**最後更新：** 2026-07-10
-**最後新聞更新：** 2026-06-25
+**最後更新：** 2026-07-12
+**最後新聞更新：** 2026-07-12
 
-> **最新服務異常**（2026-06-21～22）
-> Anthropic 官方確認 Opus 4.7 於 2026-06-21 至 22 出現 HTTP 529 大規模中斷約 90 分鐘，Max Plan 用戶 coding tasks 與 Claude Code 受影響最重。
+> **最新研究發現**（2026-07-12）
+> Anthropic 研究團隊以 J-lens 工具在 **Claude Opus 4.6** 內部發現名為「J-space」的隱藏推理空間，可能揭露模型接下來要輸出的概念（詳見「研究發現」）。此為 Opus 4.6 而非 4.7 本身的發現，記錄於本頁因 4.6 尚無獨立 entities 頁。
 
 ---
 
@@ -93,6 +93,16 @@ Anthropic 未事先公告即要求 Pro 用戶另購 Extra Usage 才能使用 Opu
 
 ### Transparency Hub 缺席（仍存在）
 社群發現 Anthropic 未將 Opus 4.7 與 Mythos Preview 納入透明度中心（Transparency Hub），引發對資訊公開一致性的質疑。
+
+---
+
+## 研究發現：Opus 4.6 內部隱藏推理空間「J-space」（2026-07-12）
+
+Anthropic 研究團隊使用名為 **J-lens** 的可解釋性工具，在 **Claude Opus 4.6**（非 4.7）內部發現一個稱為「J-space」的隱藏空間，模型在此空間中會「醞釀概念」，可能揭露其接下來要輸出的內容——即模型在生成最終回應之前，內部已存在一層可被觀測的中間推理表徵（[Hacker News](https://news.ycombinator.com)，2026-07-12 12:13 UTC，原文 technologyreview.com，「Anthropic found a hidden space where Claude puzzles over concepts」）。
+
+**社群跟進（同日）**：Reddit r/LocalLLaMA 使用者將同一分析方法套用到開源模型 **Qwen3-8B** 做對照實驗，發文「Anthropic found Claude reasoning in silence (J-space) — we ran the same lens on open Qwen3-8B」（2026-07-12 14:22 UTC）；此為社群首次嘗試在開源模型上重現此可解釋性發現，尚待更多結果驗證是否為 Transformer 架構的通用現象或 Anthropic 模型特有機制。
+
+**記錄位置說明**：Opus 4.6 目前無獨立 entities 頁，此發現與本頁既有大量 Opus 4.6 對照內容（見「使用場景共識」）相關，暫記於此；若後續累積更多獨立於 4.7 的 Opus 4.6 動態，將評估另立頁面。
 
 ---
 

@@ -3,6 +3,25 @@
 Append-only 紀錄。每次 ingest、lint，以及**揭露缺陷或促成改動的使用者 query**，都在此追加一條（純資訊性、未促成改動的 query 不記，避免噪音）。
 格式：`## [YYYY-MM-DD] 類型 | 說明`
 
+## 2026-07-12 Ingest | news/2026-07-12.md（43 則，補跑）
+
+- 來源日報：`news/2026-07-12.md`（43 則，10/10 來源；Hacker News 16、GitHub Issues 15、dev.to 15、Google News 27、Reddit 10、Blogroll 4；來源計數含跨類重疊）
+- **補跑說明：** 2026-07-12 全日自動化管線未產出——GH Actions `daily-gather` 排程於 11:16 UTC 執行成功（早於雲端 routine 13:00 UTC 約 1h44m，理論緩衝足夠），但該次 job 判定「無資料變化可 commit」（無 `data: daily gather 2026-07-12` commit），後續雲端 routine 也無任何產出痕跡（無 `news: daily digest`／`wiki: auto-ingest` commit），根因尚未確認（無法從 GitHub Actions 匿名存取取得完整 Python 執行 log，需登入查證）。本次由本機 `/news-pipeline 2026-07-12` 補跑：Step 1a 重新抓取成功（43 則，10/10 來源皆 OK，Reddit 過程出現多次 429 但最終仍正常回應）
+- 分類派工：模型、功能、商業、安全政策、社群（人物記者判定無條目落入收錄範圍，未更新任何頁面）
+- 更新頁面：
+  - **模型**：`fable-5.md`（免費期限延長至 7/19 同步）；`opus-4-7.md`（暫記 Opus 4.6「J-space」隱藏推理空間研究發現＋Reddit 對 Qwen3-8B 跟進實驗，並標註「無獨立頁暫記於此」）
+  - **功能**：`claude-code.md`（已知問題新增 #36168 bypass-permissions 於 v2.1.77 後全面失效、#60334 圖片處理 API 錯誤耗額度、#1785 MCP Sampling 功能請求、#20696 網頁/行動版對話壓縮偶發卡死；#16157 Max 額度瞬間觸頂留言數更新至 1480）
+  - **商業**：`pricing.md`（週用量 +50% 促銷與 Fable 5 免費期限統一延長至 7/19）；`anthropic-business.md`（UST 訓練 2 萬員工案例第二來源跟進，標註媒體擴散非新事件）
+  - **安全政策**：無更新（Unicode 撇號 steganography 為 `safety-china-trust-dispute.md` 已收錄事件之第三次重複出現；舊金山抗議照片報導內容單薄、非政府-Anthropic 互動事件，兩者皆判定不收錄）
+  - **社群**：`community-tech-discussions.md`（新增 token overhead 實測討論：Claude Code 33k vs OpenCode 7k，兩獨立來源達門檻）；`community-tech-patterns.md`（新增 5 條 dev.to 第一手實作：session-indexer、Skill Linter 診斷、AWS Bedrock 成本教訓、Fable 5 分層路由心法、customer-finder skill；5 個 Show HN 工具因缺互動數字未收錄；tokenmixai／grenishrai／ai_made_tools 共 5 篇依內容判斷排除）
+- feature-radar：Claude Code Desktop 內建瀏覽器熱度 🔥→🔥🔥（第二媒體來源＋互動能力細節）；⏰倒數中原 7/12＋7/13 兩列合併為 7/19 統一到期列；本週推薦同步更新 Fable 5 免費期限文字；升版風險未變動
+- index.md 狀態變更：無
+- 新增頁面：無
+- 轉知事項：無
+- 摘要：主軸——GH Actions 抓料成功但雲端 routine 當日無產出，07-12 自動化管線第二次失敗（與 07-11 首跑失敗根因不同，這次抓料端本身「無變化可 commit」，非新鮮度防線中止），已本機補跑補齊；Fable 5／週配額促銷再延至 7/19（GPT-5.6 Sol 同級競爭壓力）；Claude Code 已知問題新增 4 條（bypass-permissions 失效、對話壓縮卡死等 regression）；Anthropic Opus 4.6 J-space 隱藏推理空間研究；Claude Code 33k vs OpenCode 7k token 開銷實測討論
+- 呈現品質：全部通過（模型／功能／商業／社群四記者皆回報 ✅；安全政策記者判定無新事實，未修改頁面；人物記者判定無條目落入範圍，未修改頁面）
+- 品質備註：GH Actions `daily-gather` 3 小時緩衝（a053900 修復）仍未能穩定產出當日資料，`docs/workaround-register.md` 該列複查日 2026-07-14 前需再次確認根因（本次無法排除是抓料腳本邏輯 bug 導致誤判無差異，也無法排除雲端 routine 端當日未觸發）
+
 ## 2026-07-11 Ingest | news/2026-07-11.md（51 則，補跑）
 
 - 來源日報：`news/2026-07-11.md`（51 則，10/10 來源；GitHub Issues 15、dev.to 15、Google News 4、Hacker News 6、Reddit 11、GitHub 1）
