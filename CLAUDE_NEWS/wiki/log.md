@@ -3,6 +3,14 @@
 Append-only 紀錄。每次 ingest、lint，以及**揭露缺陷或促成改動的使用者 query**，都在此追加一條（純資訊性、未促成改動的 query 不記，避免噪音）。
 格式：`## [YYYY-MM-DD] 類型 | 說明`
 
+## 2026-07-13 Query | 更正 07-12 自動化失敗誤判：GH Actions 抓料實際成功，缺口在雲端 routine
+
+- **提問**：使用者追問「為什麼昨天的日報排程派工失敗」，並提供 07-12 GH Actions `daily-gather` run 的完整 CI log 供比對。
+- **原始誤判（見下方「2026-07-12 Ingest」條目的「補跑說明」與「品質備註」）**：因本機當時 `git log --all` 尚未 fetch 到該次 GH Actions 直接 push 的遠端 commit，誤判該次 run「無資料變化可 commit」，因而懷疑抓料腳本邏輯有 bug。
+- **依使用者提供的完整 log 更正**：GH Actions 於 2026-07-12 11:16–11:18 UTC 執行，抓到 61 項 dedup 後 61→enrichment 61→relevance filter 58→emitted-cache filter 58→34 項，**正常 commit `e18b02d`（data: daily gather 2026-07-12）並於 11:18 UTC push 成功**，比雲端 routine 13:00 UTC 早近 1h42m，緩衝充足。GH Actions 抓料這段本次完全正常，先前的懷疑不成立。
+- **收斂後的根因**：問題單純落在雲端 routine（`daily-news-pipeline-cloud`，trig_01JNrBGyrsZk1HjBQeJ7UKLG）當日 13:00 UTC 那次執行——沒有任何產出痕跡（無 digest/wiki-ingest commit），是根本沒觸發還是觸發後失敗尚未確認，此工具無法讀取 routine 執行紀錄，需使用者查 claude.ai routines 頁。
+- **處置**：`docs/workaround-register.md` 對應列已更正診斷內容（標記 GH Actions 端已排除、鎖定雲端 routine 端），複查日維持 2026-07-14。
+
 ## 2026-07-12 Ingest | news/2026-07-12.md（43 則，補跑）
 
 - 來源日報：`news/2026-07-12.md`（43 則，10/10 來源；Hacker News 16、GitHub Issues 15、dev.to 15、Google News 27、Reddit 10、Blogroll 4；來源計數含跨類重疊）
