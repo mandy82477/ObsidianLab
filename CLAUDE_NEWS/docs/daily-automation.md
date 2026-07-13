@@ -19,7 +19,7 @@
    跑 python -m news_aggregator.main --gather-only
    → commit gathered_items.json + seen_urls.json + emitted_items.json 回 master
         ↓（資料進 repo）
-② 雲端 routine（daily-news-pipeline-cloud，trig_01JNrBGyrsZk1HjBQeJ7UKLG）
+② 雲端 routine（daily-news-pipeline-cloud，trig_01AWf2wwmVeL3ykPCSyxyvzw）
    13:00 UTC / 21:00 台北 · 訂閱 LLM · 不需上網
    讀 ① 的 gathered_items.json（新鮮度防線：非今日/0 條則中止不生假日報）
    → 生日報 → 六記者 ingest → build → 單一 push → 上站
@@ -45,6 +45,7 @@ CLAUDE.md 說資料檔「不需 commit」是指手動流程無此義務,非禁�
 ## 監控與驗證
 
 - **Actions**：https://github.com/mandy82477/ObsidianLab/actions → `daily-gather`
-- **雲端 routine**：https://claude.ai/code/routines/trig_01JNrBGyrsZk1HjBQeJ7UKLG
+- **雲端 routine**：https://claude.ai/code/routines/trig_01AWf2wwmVeL3ykPCSyxyvzw
 - **是否上站**：master 每天應出現 `data: daily gather`（①）+ `news/wiki/web`（②）共約 4 筆 commit;網站 Pages 自動重建。
-- **首跑結果（2026-07-11）**：❌ 失敗。① 實際延遲至 14:02 UTC 才 push（設計 12:30 UTC），② 於 13:00 UTC 開跑時讀不到當日資料，新鮮度防線正確中止、未生假日報。已本機補跑並將 ① 排程提早至 10:00 UTC（3 小時緩衝），見 `docs/workaround-register.md` 對應列。下次自動線觀察日：2026-07-12 起。
+- **首跑結果（2026-07-11）**：❌ 失敗。① 實際延遲至 14:02 UTC 才 push（設計 12:30 UTC），② 於 13:00 UTC 開跑時讀不到當日資料，新鮮度防線正確中止、未生假日報。已本機補跑並將 ① 排程提早至 10:00 UTC（3 小時緩衝），見 `docs/workaround-register.md` 對應列。
+- **07-12 追查發現真正根因（2026-07-13 確認）**：② 這個雲端 routine **從未被實際建立過**——文件記載的 trigger ID `trig_01JNrBGyrsZk1HjBQeJ7UKLG` 用 `RemoteTrigger list` 查詢完全不存在。也就是說 07-11、07-12 連兩天①都有成功抓料 commit（07-12 那次已用完整 CI log 核對確認：58→34 則、`e18b02d` 正常 push），但②從頭到尾沒有任何排程在跑，並非延遲或中止。已於 2026-07-13 15:15 UTC 用 `RemoteTrigger create` 重新建立正確的 daily-news-pipeline-cloud（trig_01AWf2wwmVeL3ykPCSyxyvzw，cron `0 13 * * *`），首次真正排程執行預計 2026-07-14 13:00 UTC，需觀察是否穩定跑通（見 `docs/workaround-register.md` 對應列複查日）。

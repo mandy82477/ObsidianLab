@@ -3,6 +3,13 @@
 Append-only 紀錄。每次 ingest、lint，以及**揭露缺陷或促成改動的使用者 query**，都在此追加一條（純資訊性、未促成改動的 query 不記，避免噪音）。
 格式：`## [YYYY-MM-DD] 類型 | 說明`
 
+## 2026-07-13 Query 後續 | 確認根因：雲端 routine 從未實際建立，已重新排程
+
+- **確認過程**：使用者親自登入 claude.ai routines 頁查看，回報「看起來沒有排」；用 `RemoteTrigger list` 查詢確認，文件記載的 `daily-news-pipeline-cloud`（trig_01JNrBGyrsZk1HjBQeJ7UKLG）確實不存在，帳號下只有 `cloud-writeback-probe`（已停用）與 `weekly-wiki-lint-cloud`（正常運作中）兩個排程。
+- **根因**：雲端 routine 那一段自動化文件寫的是設計意圖，但當初從未真的呼叫 API 建立成功（或建立後遺失），07-11、07-12 未自動生日報單純是②從頭到尾沒有排程在跑。
+- **處置**：用 `RemoteTrigger create` 重新建立正確排程（`trig_01AWf2wwmVeL3ykPCSyxyvzw`，cron `0 13 * * *`，13:00 UTC/21:00 台北），prompt 含新鮮度防線（比對 `gathered_items.json` 的 date 是否為當日、items 是否非空，不符則中止不生假日報）與完整 pipeline 步驟（讀 news-pipeline-steps.md Step 0/1b + wiki-ingest.md Step 2 + news-pipeline-steps.md Step 3-6，平台覆寫為 python3/Linux 路徑）。已更正 `docs/daily-automation.md`、`docs/workaround-register.md` 對應 trigger ID 與診斷內容。
+- **待驗證**：2026-07-14 13:00 UTC 首次真正執行，觀察 master 是否出現完整 news/wiki/web 三段 commit；複查日訂 2026-07-15。
+
 ## 2026-07-13 Query | 更正 07-12 自動化失敗誤判：GH Actions 抓料實際成功，缺口在雲端 routine
 
 - **提問**：使用者追問「為什麼昨天的日報排程派工失敗」，並提供 07-12 GH Actions `daily-gather` run 的完整 CI log 供比對。
