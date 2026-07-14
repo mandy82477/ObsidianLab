@@ -2,11 +2,18 @@
 
 LLM 查詢此 wiki 時，**先讀這個檔案**找相關頁面，再讀具體頁面取得詳細資訊。
 
-**最後更新：** 2026-07-13
+**最後更新：** 2026-07-14
 ---
 
 ## 近期異動
 
+- [[entities/pricing]]／[[topics/anthropic-business]]／[[topics/competitor-landscape]] — 2026-07-14：**Anthropic 於印度啟動盧比計價**，Pro 方案訂為每月 Rs 2,000（TechCrunch/NDTV/Times of India/bestmediainfo 多家媒體同步報導），回應長期未獲回應的印度 INR 定價需求（GitHub Issue 👍584）；The Register 分析 tokenizer 設計複雜化跨供應商定價比較；$65K Anthropic 職缺薪資爭議（IPO 熱潮期間，舊金山房市緊繃背景）記入商業時序；Musk「AI 領域明確領先者」表態記入 competitor-landscape（人物記者依既有慣例轉知商業記者處理，未建 Musk 獨立人物頁）
+- [[entities/claude-code]] — 2026-07-14：**v2.1.209** 發布（純 bug fix，修復 `/model` 對話框在背景 session 被過度防護阻擋的問題，回退先前過寬防護邏輯）；已知問題新增 3 條：OAuth 登入因 `auth.anthropic.com` DNS 無法解析完全無法驗證（#33238，150 留言本日最高互動）、「tool call could not be parsed」間歇性中斷 session（#63875／#62123 兩則獨立回報合併追蹤）、伺服器端速率限制與用量上限無關（#53915）；內建瀏覽器與 Cowork 行動/網頁版報導核對後確認為既有事件重複來源，未加熱度
+- [[topics/anthropic-government-policy]]／[[entities/mythos]] — 2026-07-14：Reuters 獨家報導**加拿大金融監管機關在銀行業網路風險警告信中引用 Claude Mythos**，為出口管制解除後監管機構首度將 Mythos 能力明確點名的風險評估案例；另記錄 Hegseth 稱 Anthropic 為「國安風險」但 CISA 已在使用其產品的政府內部立場矛盾案例
+- [[topics/recursive-self-improvement]] — 2026-07-14：Decrypt 報導抗議者在 OpenAI/Anthropic/Google DeepMind 總部前遊行要求暫停 AI 開發（單一標題式報導，低資訊量，狀態維持 monitoring）
+- [[topics/community-tech-patterns]] — 2026-07-14：新增 Anthropic 官方公布的 multi-model 工作流模式「Fable 5 orchestrates, cheap models execute」（46% 成本達 96% 效能，可在 Claude Code today 直接複用）；語音提示/輸出類工具（Mr. Meeseeks 語音外掛 HN 130 分、kokoro 語音輸出 aloud）與 Sx 2.0（Dropbox skill 分享）補入
+- [[topics/community-tech-discussions]] — 2026-07-14：新增 Bun 借助 Claude 將 Zig 改寫為 Rust、Zig 語言創始人批評該改寫為「unreviewed slop」的正反交鋒案例（媒體報導層級，尚待社群延燒佐證，🔥 熱度誠實標注）
+- [[entities/fable-5]]／[[topics/model-comparison]] — 2026-07-14：Fable 5 存取延長報導（Forbes／The New Stack）僅推測性暗示與 Cursor 內部發現有關但未說明具體原因，無新截止日；fable-5.md 修復舊日期字串殘留（「原訂 7/7」子標題已更新反映現行 7/19 順延）；GPT-5.6 Sol vs Fable 5 社群實測混合評價（有人認為 Fable 更快更少 bug，也有人認可 Sol 額度重置頻率）補入社群觀察
 - [[entities/tom-blomfield]] — 2026-07-13：**新頁面（待核實）**，前 Monzo 共同創辦人加入 Anthropic（Business Insider 單一來源），人才流動商業影響面同步記入 [[topics/ai-talent-flow]]
 - [[entities/pricing]]／[[topics/anthropic-business]] — 2026-07-13：Anthropic 證實 1660 萬美元帳務錯誤，稽核發現企業客戶被多收 170 萬美元；[[topics/competitor-landscape]] 新增 Cursor 對手產品「Sand」、Nadella 隱晦批評模型蒸餾、TCS 前線部署工程師團隊；LTM 與 Anthropic 建立企業合作
 - [[entities/fable-5]] — 2026-07-13：Fable 5／週配額促銷延長至 7/19 一事多家媒體（Forbes×2、Help Net Security、Economic Times）重複確認，無新細節

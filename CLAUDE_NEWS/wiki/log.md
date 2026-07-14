@@ -2751,3 +2751,14 @@ Append-only 紀錄。每次 ingest、lint，以及**揭露缺陷或促成改動�
 - **查證**：查 src/news_aggregator/sources/ 三大來源查詢詞——google_news（Claude Code/Anthropic AI/Anthropic Claude/…）、hackernews（Claude Code/Anthropic/claude/anthropic）、reddit（ClaudeCode/ClaudeAI/LocalLLaMA+Anthropic）全為 Claude/Anthropic 錨定，符合 CLAUDE.md 蒐集範圍設計。再手動 WebSearch 做決定性測試。
 - **根因（部分為真實缺口，非既有來源 bug）**：GPT-5.6（代號 Sol）vs Claude 第一手跑分實已大量發表（TerminalBench 2.1 Sol 88.8/Opus 4.8 78.9/Fable 5 84.3；SWE-Bench Pro Fable 80.3>GPT 58.6；Sol 便宜 50%；over-agency 安全議題），但都在對照型部落格（MindStudio/DataCamp/codersera/superframeworks 等）——**這類 venue 不在 blogroll，Google News「Anthropic Claude」query 偏新聞媒體抓不到**。既有 Claude 錨定機制本身正常（Reuters/ZDNET 定位新聞有抓到），缺的是評測部落格這個 venue。取捨點：這類 venue 一半是 SEO 農場對照文，無腦加來源會灌雜訊。
 - **處置**：使用者決策＝(1) 不回填部落格數字，等官方 benchmark 再寫；(2) pipeline 先不擴充來源，觀察一週。reader-notes 07-12 GPT-5.6 條已補記查證結論＋一週後回看 checkpoint（約 07-19）。無程式碼/wiki 內容變更。
+
+## 2026-07-14 Ingest
+
+- 來源日報：[[news/2026-07-14]]
+- 更新頁面：wiki/entities/claude-code.md、fable-5.md、opus-4-8.md、opus-4-7.md、sonnet-5.md、pricing.md、mythos.md、wiki/topics/model-comparison.md、anthropic-business.md、competitor-landscape.md、anthropic-government-policy.md、recursive-self-improvement.md、community-tech-patterns.md、community-tech-discussions.md
+- 新增頁面：無
+- 摘要：Anthropic 印度盧比在地化定價（回應長期未回應的 INR 定價需求）為本日最大商業事件；Claude Code v2.1.209 純 bug fix 版本，OAuth DNS 無法解析（#33238，150 留言本日最高互動）與兩則獨立「tool call could not be parsed」回報延燒為本日最高熱度已知問題；Reuters 獨家報導加拿大金融監管機關引用 Claude Mythos 警告銀行網路風險，為解禁後首見監管案例；社群面新增官方 multi-model 工作流模式「Fable 5 orchestrates, cheap models execute」（46% 成本／96% 效能）與 Bun Zig→Rust 改寫正反交鋒討論。
+- 呈現品質：全部通過（模型記者修復 fable-5.md 舊日期字串殘留 1 處；其餘各頁 delta-first callout／摘要／熱度表位置均核可）
+- 品質備註：[安全政策] 主編派工時原文節錄未附逐條 item_url，記者回報來源歸因時多筆標「未提供」，已由主編對照 gathered_items.json 原始記錄補齊 URL 後寫入 data/source_attribution.jsonl，後續派工應在節錄中明確標註「item_url:」欄位避免此缺口
+- 轉知事項：[社群→功能/商業] Microsoft 早期 Claude Code／GitHub Copilot CLI 企業級 rollout 學術研究（HN 61 分）建議評估是否納入 official-community-gap.md 或 enterprise-tool-tracker.md，本次因無具體矩陣對應列／無具名企業主體而未收錄，留待後續觀察是否有具體事件錨點
+- 人物記者判定：Musk「AI 領域明確領先者」／Altman「Thought This Was Satire」兩則外部競爭對手 CEO 表態，依 2026-07-13 既有慣例（同類表態走商業記者 competitor-landscape.md，非人物記者建頁範疇）判定無需建立獨立人物頁，已由商業記者收錄
