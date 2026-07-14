@@ -4,11 +4,11 @@
 **狀態：** active（已被取代，第三階旗艦）
 **領域：** 🤖 模型
 **首次出現：** 2026-04-24
-**最後更新：** 2026-07-13
-**最後新聞更新：** 2026-07-13
+**最後更新：** 2026-07-14
+**最後新聞更新：** 2026-07-14
 
-> **最新研究發現**（2026-07-12）
-> Anthropic 研究團隊以 J-lens 工具在 **Claude Opus 4.6** 內部發現名為「J-space」的隱藏推理空間，可能揭露模型接下來要輸出的概念（詳見「研究發現」）。此為 Opus 4.6 而非 4.7 本身的發現，記錄於本頁因 4.6 尚無獨立 entities 頁。
+> **最新研究發現**（2026-07-13）
+> Anthropic 研究團隊以 J-lens 工具在 **Claude Opus 4.6** 內部發現名為「J-space」的隱藏推理空間，可能揭露模型接下來要輸出的概念；MIT Technology Review 07-13 發文對此發現採審慎解讀，區分「證明了什麼／還未證明什麼」（詳見「研究發現」）。此為 Opus 4.6 而非 4.7 本身的發現，記錄於本頁因 4.6 尚無獨立 entities 頁。
 
 ---
 
@@ -105,6 +105,8 @@ Anthropic 研究團隊使用名為 **J-lens** 的可解釋性工具，在 **Clau
 **第二個獨立跟進實驗（2026-07-13）**：另一位獨立研究者在 [Reddit r/MachineLearning（週熱門）](https://www.reddit.com/r/MachineLearning/comments/1uv5l75/evaluating_jspace_entropy_as_an_error_predictor/) 發文，將 J-space entropy 作為錯誤預測指標，橫跨 7 個資料集在 **Qwen3-4B**（與上則 Qwen3-8B 不同規模）上進行評估。至此已有兩個獨立社群跟進實驗分別在 Qwen3-8B、Qwen3-4B 上驗證 J-space 概念，顯示此可解釋性方法正吸引開源社群跨模型規模覆現（推論）。
 
 **記錄位置說明**：Opus 4.6 目前無獨立 entities 頁，此發現與本頁既有大量 Opus 4.6 對照內容（見「使用場景共識」）相關，暫記於此；若後續累積更多獨立於 4.7 的 Opus 4.6 動態，將評估另立頁面。
+
+**MIT Technology Review 審慎解讀（2026-07-13）**：MIT Technology Review 發表〈What Anthropic's latest AI discovery does—and doesn't show〉，對上述 J-space 發現採取較審慎的態度，區分該研究實際證明了什麼、又還未能證明什麼；具體區分細節未見於本則摘要，暫列標題級記錄，待後續報導補充量化內容或方法論限制時再擴寫（[Google News／MIT Technology Review](https://www.technologyreview.com)，2026-07-13）。
 
 ---
 

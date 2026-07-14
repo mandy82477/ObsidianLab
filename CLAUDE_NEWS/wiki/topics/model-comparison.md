@@ -3,11 +3,11 @@
 **狀態：** ongoing
 **領域：** 🤖 模型
 **開始日期：** 2026-07-02
-**最後更新：** 2026-07-13
-**最後新聞更新：** 2026-07-12
+**最後更新：** 2026-07-14
+**最後新聞更新：** 2026-07-14
 
-> **最新對照更新**（2026-07-12）
-> Fable 5 免費使用期限（快速選型表「狀態」欄）因 GPT-5.6 Sol 被視為同級競品，已從 7/7 三度順延至 **7/19**，到期後才轉 usage-based billing；目前公開陣容五級維持不變：Fable 5（旗艦）> Opus 4.8 > Sonnet 5（主力）> Sonnet 4.6 > Haiku 4.5。
+> **最新對照更新**（2026-07-14）
+> Fable 5 免費期限維持 7/19 不變（見 [[entities/fable-5]]；The New Stack 07-13 報導 Anthropic 拒絕說明延長是否與 Cursor 內部發現有關，推測性報導，無新截止日）。社群持續出現 Fable 5 vs GPT-5.6 Sol 的多小時實測比較，評價分歧：速度與 bug 數量傾向 Fable 5 勝出，但 Sol 5.6 額度重置頻率被視為優勢（Reddit，詳見「社群實測觀察」）。目前公開陣容五級維持不變：Fable 5（旗艦）> Opus 4.8 > Sonnet 5（主力）> Sonnet 4.6 > Haiku 4.5。
 
 ---
 
@@ -47,6 +47,18 @@
 | 多模型協作成本效益（orchestrator 模式）| Fable 5 調度 + 便宜模型執行：**46% 成本達 96% 效能**（官方基準，Reddit r/ClaudeAI 整理轉載，週熱門標記，來源貼文 2026-07-08，原始官方連結未附）| — | — | 與上一列「Fable 5 單獨執行 token 消耗約 2 倍」形成對照：協作模式可望大幅壓低整體成本，惟原始 benchmark 頁面尚未直接查證 |
 
 > 數據截至 2026-07-09；詳細評測條件與矛盾結果並陳原則見各模型 entities 頁。
+>
+> **延伸閱讀（待補充量化數字）**：MarkTechPost（2026-07-14）發布 Sonnet 5 / Sonnet 4.6 / Opus 4.8 三模型 agentic coding benchmark、API 定價、成本效益取捨的完整對照文章，惟日報摘要僅標題級資訊、未附具體評測數字，暫列為外部延伸閱讀資源，待補充查證後再納入下方表格（Google News／MarkTechPost，2026-07-14；詳見 [[entities/sonnet-5]] 歷史記錄）。
+
+### 社群實測觀察：Fable 5 vs GPT-5.6 Sol（並陳，混合評價，訊號偏弱）
+
+| 觀察 | 結論 | 樣本條件 | 來源與日期 |
+|------|------|---------|-----------|
+| 多小時實測：速度更快、bug 更少 | Fable 5 勝出（速度／穩定性） | 個人用戶多小時使用比較，非量化 benchmark；標題直述「fable clearly beats in speed and less bugs」 | Reddit r/ClaudeCode「Fable > Sol 5.6 Ultra」，2026-07-14 |
+| Sol 5.6 額度重置頻率（甚至每日兩次） | Sol 5.6 在額度重置機制上具使用體驗優勢 | 同一用戶主觀比較，非量化數字 | Reddit r/ClaudeCode「Fable > Sol 5.6 Ultra」，2026-07-14 |
+| 相同 iOS 卡路里追蹤 App brief 對比（影片） | 無文字結論，僅影片示範，未附文字評測摘要 | 同一需求、不同模型輸出的並排展示 | Reddit r/ClaudeCode「GPT-5.6 Sol vs Claude Fable 5 on the same iOS calorie-tracker brief」，2026-07-14 |
+
+**小結**：GPT-5.6 Sol vs Fable 5 的社群實測持續出現，本輪均為 r/ClaudeCode 單一使用者觀點，Reddit RSS score 恆 0（非跨平台佐證），訊號強度偏弱；速度與 bug 數量的主觀評價傾向 Fable 5 勝出，但 Sol 5.6 額度重置頻率被使用者視為明顯優勢——兩者呈現「能力 vs 配額體驗」的不同勝負軸，不構成單一結論，需更多獨立來源與量化 benchmark 佐證。
 
 ### token 成本：兩個方向相反的實測結果（並陳，不選邊）
 
@@ -55,7 +67,7 @@
 | 儀器化實測：新版模型 token 用量顯著更高，但**每任務總成本反而下降** | 需同時看 token 用量與任務完成率，不能只看單位成本或速度 | 工程師以 signoz.io 自建儀表板對比新舊版 Claude 模型；HN score 5（訊號偏弱，結論標「待驗證」） | [signoz.io](https://signoz.io/blog/claude-code-model-comparison/)，2026-06-29 |
 | 用戶回報：**$50 額度原可用兩天，現在一小時內燒完** | 懷疑新模型（4.8）刻意提高 quota 消耗；成本暴增趨勢延燒至社群多篇貼文（費用 5x 暴增回報、企業採「穴居人模式」壓縮輸出降本）| 個人用戶主觀對照前後月份帳單，非儀器化測量；未附詳細 log | [Vincent Schmalbach 部落格](https://www.vincentschmalbach.com/claude-code-quietly-looks-5x-more-expensive/)，2026-07-01；[GitHub Issue #62476](https://github.com/anthropics/claude-code/issues/62476) |
 
-**矛盾之處**：前者是受控測量（同任務對比新舊模型的 token 用量與完成率），後者是用戶主觀感受同一模型（Opus 4.8/Fable 5）近期的帳單變化，兩者測的不是同一件事——不構成直接互斥，但都指向「新一代模型的 token 消耗與實際成本之間的關係，社群尚無共識」。Fable 5 配額吃緊的相關社群省額度策略見 [[entities/fable-5]] 「配額與計費過渡（至 7/7）」子區塊。
+**矛盾之處**：前者是受控測量（同任務對比新舊模型的 token 用量與完成率），後者是用戶主觀感受同一模型（Opus 4.8/Fable 5）近期的帳單變化，兩者測的不是同一件事——不構成直接互斥，但都指向「新一代模型的 token 消耗與實際成本之間的關係，社群尚無共識」。Fable 5 配額吃緊的相關社群省額度策略見 [[entities/fable-5]] 「配額與計費過渡（原訂 7/7，現已順延至 7/19）」子區塊。
 
 ## 相關實體
 

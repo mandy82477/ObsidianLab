@@ -4,11 +4,11 @@
 **狀態：** active
 **領域：** 🛠️ 工具/功能
 **首次出現：** 2025（正式推出）
-**最後更新：** 2026-07-13
-**最後新聞更新：** 2026-07-13
+**最後更新：** 2026-07-14
+**最後新聞更新：** 2026-07-14
 
-> **最新版本動態**（2026-07-11）
-> **v2.1.207**：Auto mode 在 Bedrock、Vertex AI、Foundry 三平台改為預設開啟，不再需要 `CLAUDE_CODE_ENABLE_AUTO_MODE` 環境變數 opt-in（可用 `disableAutoMode` 關閉），同版並修復終端機凍結問題。同日社群回報兩起已知問題：commit 訊息含 `HERMES.md` 字串會誤導向 extra usage 計費（GitHub issue #53262，533 讚、93 留言），以及回應超過 32000 output token 上限時觸發 API 錯誤（GitHub issue #24055，85 讚、137 留言）；另有報導指 Claude Code Desktop 新增內建瀏覽器（2026-07-13 兩則媒體報導證實為同組已計入來源，未新增熱度）。前一重大異動為 v2.1.206（2026-07-10）`/cd` 目錄建議與 `/doctor` CLAUDE.md 精簡檢查（見 [[feature-radar]]）。2026-07-13 已知問題新增 5 條：MCP OAuth 2.1 無法連線 Desktop（#5826，本日互動最高）、MCP 缺 Token 刷新機制（#5706）、CLI TUI 無法捲動回看歷史（#28077）、Desktop App 遠端控制 CC session 功能請求（#29006）、既有 session 中 `/remote-control` 未被識別（#28322，暗示此指令可能已存在但未完整發布）。
+> **最新版本動態**（2026-07-14）
+> **v2.1.209**：修復 `claude agents` 背景 session 中 `/model` 等對話框被過度廣泛的防護機制阻擋的問題（回退先前過寬的防護邏輯），屬純 bug fix，不含新功能異動。本日新增已知問題 3 條：OAuth 登入逾時失敗、`auth.anthropic.com` 網域無法解析（GitHub issue #33238，累積 150 留言、46 讚，本日互動量最高）；「The model's tool call could not be parsed (retry also failed)」間歇性中斷 session，兩則獨立高互動回報合併追蹤（issue #63875 累積 75 留言、117 讚；issue #62123 累積 63 留言、113 讚）；伺服器端速率限制錯誤與用量上限無關（issue #53915，累積 68 留言、26 讚）。前一重大異動為 v2.1.207（2026-07-11）Auto mode 於 Bedrock/Vertex AI/Foundry 三平台改為預設開啟並修復終端機凍結問題（見 [[feature-radar]]）。Claude Code Desktop 內建瀏覽器（2026-07-13 已由 inc.com、WeRSM 兩則媒體交叉確認，見 [[feature-radar]]）與 Claude Cowork 行動版/網頁版擴展（Mashable 2026-07-13 報導）均為既有已記錄事件的重複跟進報導，本日未新增歷史條目。
 
 ---
 
@@ -16,7 +16,7 @@
 
 **Reflect with Claude 測試版推出（2026-07-09）：** Anthropic 官方部落格宣布「Reflect with Claude」測試版功能，使用者可在 Settings 中檢視使用模式儀表板，理解自己使用 Claude 的模式；TechCrunch、Mashable、CNET、Axios、The Verge 多家媒體同步報導，多將其類比為「AI 版 Spotify Wrapped」或「螢幕使用時間」統計工具，TechCrunch 則提出質疑觀點，認為此舉實質是包裝成「自我反思」的使用引導設計；HN 獲 29 分。詳見 [[feature-radar]]。
 
-**最新版本動態：** 最新版本 **v2.1.207**（2026-07-11）將 Auto mode 在 Bedrock、Vertex AI、Foundry 三平台改為預設開啟，不再需要 `CLAUDE_CODE_ENABLE_AUTO_MODE` 環境變數 opt-in（可用設定項 `disableAutoMode` 關閉），同版修復終端機凍結問題；此前 Auto mode 於 v2.1.158（2026-05-30）僅在三平台以 opt-in 方式支援 Opus 4.7/4.8，本次為預設化升級。前一重大異動為 **v2.1.206**（2026-07-10）新增 `/cd` 目錄路徑建議與 `/doctor` CLAUDE.md 精簡檢查；再前一異動為 **v2.1.204**（2026-07-08）修復 headless session 中 SessionStart hook 事件無法即時串流的問題。近期各版本的指令、旗標與設定項異動，詳見下方「最新版本」表格。
+**最新版本動態：** 最新版本 **v2.1.209**（2026-07-14）修復 `claude agents` 背景 session 中 `/model` 等對話框被過度廣泛的防護機制阻擋的問題（回退先前過寬的防護邏輯），屬純 bug fix，未含新功能異動，故不進 [[feature-radar]]。前一重大異動為 **v2.1.207**（2026-07-11）將 Auto mode 在 Bedrock、Vertex AI、Foundry 三平台改為預設開啟，不再需要 `CLAUDE_CODE_ENABLE_AUTO_MODE` 環境變數 opt-in（可用設定項 `disableAutoMode` 關閉），同版修復終端機凍結問題；再前一異動為 **v2.1.206**（2026-07-10）新增 `/cd` 目錄路徑建議與 `/doctor` CLAUDE.md 精簡檢查。近期各版本的指令、旗標與設定項異動，詳見下方「最新版本」表格。
 
 **產品定位：** Claude Code 是 Anthropic 的 AI 編碼 CLI 工具，核心能力已從程式碼助理擴展為具備全桌面自動化、多代理管理（Managed Agents）、MCP Server 整合、Hooks 機制與 AI 安全審查的完整 agent 開發平台；GitHub Stars 達 **131,000+**。
 
@@ -52,10 +52,11 @@
 - 🔴 **未修復**｜**Gmail MCP connector 黑暗設計模式批評（2026-06-28 HN 討論）**：Anthropic 推出的 Claude Gmail MCP 整合（官方 Google connector，Pro/Max/Team/Enterprise beta 可用）被社群批評授權頁面採用「黑暗設計模式」，介面設計被認為誤導用戶授予比預期更廣泛的 Google 帳號存取權限；目前 HN score 僅 3，為早期批評訊號，Anthropic 尚未回應。參見 [官方文件](https://claude.com/docs/connectors/google/gmail)
 - 🔴 **未修復**｜**原始碼外洩與 DMCA 風波**（2026-05-04 持續延燒）：Anthropic 因人為疏失導致 Claude Code 原始碼外洩，已向各平台發出逾 8,100 次 DMCA 下架請求，引發 AI 生成程式碼版權歸屬的法律辯論；社群以外洩程式碼為基礎重建的「Claw-Code」分支隨之誕生，影響已超出技術層面。
 
-### 💰 計費與配額（12 條未修復）
+### 💰 計費與配額（13 條未修復）
 
 > 2026-06 下旬起配額/成本爭議集中爆發，多起獨立回報同時指向額度消耗與計費透明度問題。
 
+- 🔴 **未修復**｜**「Server is temporarily limiting requests」錯誤與用量上限無關（GitHub issue #53915，累積 68 則留言、26 個讚，2026-07-13）**：使用者回報收到「伺服器暫時限制請求」的速率限制錯誤，官方訊息明確標註並非使用者用量上限所致；成因與是否可緩解官方尚未說明。
 - 🔴 **未修復**｜**Max 訂閱方案立即觸及用量上限（GitHub issue #16157，累積 1480 則留言、722 個讚，2026-07-12 仍為互動量最高條目）**：使用者回報訂閱 Max 方案後幾乎立即觸及用量上限，反應量持續居冠；官方尚未回應。
 - 🔴 **未修復**｜**圖片處理失敗導致 token 大量浪費（GitHub issue #60334，2026-07-12 回報）**：使用者回報一次圖片處理失敗即耗掉五小時額度約 70%；Anthropic API 端圖片處理錯誤直接反映為使用者額度損失，官方尚未回應。
 - 🔴 **未修復**｜**功能請求：MCP Sampling 支援以善用 Max 訂閱降低 API 成本（GitHub issue #1785，累積 58 則留言，2026-07-12 回報）**：使用者呼籲支援 MCP Sampling，讓 MCP Server 端運算可透過既有 Claude Max 訂閱額度執行，避免額外 API 計費；官方尚未回應或排入路線圖。
@@ -69,8 +70,9 @@
 - 🔴 **未修復**｜**額度顯示 84% 卻收到「You've hit your limit」（GitHub issue #19673，累積反應 75，2026-07-04）**：使用者反映用量儀表板顯示尚餘額度（僅用 84%）情況下即收到「已達額度上限」提示，質疑額度計算邏輯是否準確或存在顯示與實際計算不同步的問題；官方尚未回應
 - 🔴 **未修復**｜**Session 額度上限時無法順暢接續（GitHub issue #13354，累積 68 則留言、158 個讚，2026-07-07）**：使用者希望 session 達到額度上限時能有更順暢的接續機制（如自動排隊、無縫轉續），而非直接中斷工作流程；官方尚未回應或提供替代方案
 
-### 🧠 行為與品質（17 條未修復、4 條待查證）
+### 🧠 行為與品質（18 條未修復、4 條待查證）
 
+- 🔴 **未修復**｜**「The model's tool call could not be parsed (retry also failed)」間歇性中斷 session（issue #63875，累積 75 則留言、117 個讚；issue #62123，累積 63 則留言、113 個讚，皆 2026-07-13 回報，屬同一 bug 兩則獨立高互動回報，合併追蹤）**：session 進行中間歇性中斷並顯示「The model's tool call could not be parsed (retry also failed)」錯誤；issue #62123 回報者指出在 Opus 4.7 環境下多次發生；官方尚未回應或說明成因。
 - 🔴 **未修復**｜**`--dangerously-skip-permissions` 於 v2.1.77 後所有版本失效（GitHub issue #36168，2026-07-12 回報，regression）**：使用者回報 v2.1.77 之後的所有 Claude Code 版本，`--dangerously-skip-permissions`（跳過權限確認旗標）皆無法正常運作，影響依賴此旗標進行無人值守自動化的工作流；官方尚未回應或說明成因。
 - 🔴 **未修復**｜**回應超過 32000 output token 上限觸發 API 錯誤（GitHub issue #24055，累積 137 則留言、85 個讚，2026-07-11）**：多名使用者回報回應長度超過 32000 output token 上限時觸發「API Error: Claude's response exceeded the 32000 output token maximum」；官方尚未回應。
 - 🔴 **未修復**｜**主控台新增文字時畫面自動滾回歷史頂端（GitHub issue #826，累積 352 則留言、820 個讚，2026-07-09）**：使用者回報 Claude Code 主控台在新增文字輸出時，畫面會意外滾動回歷史紀錄最頂端，打斷閱讀最新輸出的動線；官方尚未回應。
@@ -144,8 +146,9 @@
 - 🔴 **未修復**｜**功能請求聚集：跨平台支援需求未滿足**：多項高反應數 feature request 顯示使用者對跨平台支援的強烈需求——官方 Linux（Ubuntu LTS / Debian）Desktop build（[issue #65697](https://github.com/anthropics/claude-code/issues/65697)，累積反應 651）、Desktop 於 Windows 上改用 WSL 執行指令的選項（[issue #12506](https://github.com/anthropics/claude-code/issues/12506)，累積反應 134）、Desktop 與 CLI 之間同步 Skills（[issue #20697](https://github.com/anthropics/claude-code/issues/20697)，累積反應 127）；均為社群高投票 feature request，官方尚未排入路線圖。多帳號管理相關訴求已獨立整併至「👤 帳號管理」分組
 - 🔴 **未修復**｜**MCP servers/hooks/plugins 設定變更需完整重啟 session（GitHub issue #24057，累積 30 則留言、15 個讚，2026-07-05）**：目前修改 MCP server、hooks 或 plugin 設定後必須重啟整個 session 才會生效，無法熱重載，中斷工作流程並遺失既有 context；社群呼籲改為設定變更後自動重載，官方尚未回應。
 
-### 🌐 服務穩定性（2 條已修復、2 條未修復、1 條待查證）
+### 🌐 服務穩定性（2 條已修復、3 條未修復、1 條待查證）
 
+- 🔴 **未修復**｜**OAuth 登入逾時失敗，`auth.anthropic.com` 網域無法解析（GitHub issue #33238，累積 150 則留言、46 個讚，2026-07-13 為本日互動量最高條目）**：使用者回報 Claude Code OAuth 登入逾時失敗，`auth.anthropic.com` 網域完全無法透過 DNS 解析，導致使用者無法完成任何驗證流程；官方尚未回應。
 - 🔴 **未修復**｜**claude.ai visualize 功能故障，claudemcpcontent.com 無法連線（DNS_PROBE_FINISHED_NXDOMAIN）（GitHub issue #34820，累積 94 則留言、39 個讚，2026-07-10）**：使用者回報 claude.ai 的 visualize 功能故障，依賴的 claudemcpcontent.com 網域無法解析（DNS 錯誤）；官方尚未回應。
 - 🔴 **未修復**｜**API Error: 串流閒置逾時，僅收到部分回應（GitHub issue #46987，累積 184 則留言、197 個讚，2026-07-09）**：使用者回報今日多次遇到串流閒置逾時（stream idle timeout）的 API 錯誤，僅收到部分回應即中斷；官方尚未回應或說明成因。
 - ✅ **已修復（服務已恢復）**｜**Claude API / Claude Code 529 過載（2026-06-21 至 06-22 多波中斷）**：Anthropic 確認 Claude API 與 Claude Code 的 Opus 及 Sonnet 模型發生部分服務中斷，Max plan 用戶反映第一條 prompt 即觸發 529 Overloaded 錯誤，影響持續約 90 分鐘後於 UTC 19:34 恢復服務；06-22 又發生新一波激增，確認受影響模型：Opus 4.8、Opus 4.7、Opus 4.6、Sonnet 4.6；CyberSecurityNews 等多家媒體追蹤報導（見 [HN 討論](https://news.ycombinator.com/item?id=48624168)）
@@ -164,6 +167,7 @@
 
 | 版本 | 日期 | 重點 |
 |------|------|------|
+| **v2.1.209** | 2026-07-14 | Bug fix：修復 `claude agents` 背景 session 中 `/model` 等對話框被過度廣泛的防護機制阻擋的問題（回退先前過寬的防護邏輯），純可靠性修正，無新功能異動（見 [Release](https://github.com/anthropics/claude-code/releases/tag/v2.1.209)）|
 | **v2.1.207** | 2026-07-11 | **Auto mode 在 Bedrock/Vertex AI/Foundry 三平台預設開啟**：不再需要 `CLAUDE_CODE_ENABLE_AUTO_MODE` 環境變數 opt-in，可透過設定中的 `disableAutoMode` 關閉；同版修復終端機凍結問題（見 [Release](https://github.com/anthropics/claude-code/releases/tag/v2.1.207)）|
 | **v2.1.206** | 2026-07-10 | `/cd` 新增目錄路徑建議（比照 `/add-dir` 的自動完成體驗）；`/doctor` 新增檢查項目，會建議精簡已 checked-in 的 CLAUDE.md 內容（見 [Release](https://github.com/anthropics/claude-code/releases/tag/v2.1.206)）|
 | **v2.1.204** | 2026-07-08 | Bug fix：修復 headless session 中 SessionStart hook 事件無法即時串流的問題；此問題先前可能導致遠端 worker 在 hook 執行中途被系統誤判為閒置而回收（見 [Release](https://github.com/anthropics/claude-code/releases/tag/v2.1.204)）|

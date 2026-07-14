@@ -4,17 +4,19 @@
 **狀態：** active（正式發布）
 **領域：** 🤖 模型
 **首次出現：** 2026-07-01
-**最後更新：** 2026-07-11
-**最後新聞更新：** 2026-07-09
+**最後更新：** 2026-07-14
+**最後新聞更新：** 2026-07-14
 
-> **最新動態**（2026-07-09）
-> Mashable 報導 Anthropic「正式發布」Claude Sonnet 5（07-09 03:41 UTC），與 2026-07-01 官方公告日期重疊，疑為媒體遲來報導或分階段正式化，非新的發布事件；另一科技媒體 tech-insider.org 同日宣稱評測分數達 57 分、API 成本較前代減半，數字未見官方或其他來源佐證，列「待查證」（定價細節見 [[entities/pricing]]）。
+> **最新動態**（2026-07-14）
+> MarkTechPost 發布 Sonnet 5 vs Sonnet 4.6 vs Opus 4.8 三模型深度比較文章，涵蓋 agentic coding benchmark、API 定價與成本效益取捨，惟原文摘要僅標題級資訊，具體數字待查證；07-09 tech-insider.org 提及的「評測 57 分、API 成本減半」等數字仍缺乏獨立佐證，維持「待查證」（定價細節見 [[entities/pricing]]）。
 
 ---
 
 ## 現況
 
-**2026-07-09 最新**：Mashable 報導 Anthropic「正式發布」Sonnet 5，與 07-01 官方公告日期重疊，疑為媒體遲來報導；另有評測分數 57 分、API 成本減半的傳聞數字未見佐證，列「待查證」（詳見上方 callout）。
+**2026-07-14 最新**：MarkTechPost 發布 Sonnet 5 / Sonnet 4.6 / Opus 4.8 三模型 agentic coding benchmark、API 定價、成本效益比較的深度文章，具體數字待查證（詳見「歷史記錄」）。
+
+**2026-07-09**：Mashable 報導 Anthropic「正式發布」Sonnet 5，與 07-01 官方公告日期重疊，疑為媒體遲來報導；另有評測分數 57 分、API 成本減半的傳聞數字未見佐證，列「待查證」。
 
 Claude Sonnet 5 於 2026-07-01 正式發布，定位為 Anthropic **最 agentic 的 Sonnet 模型**，在 reasoning、tool use、coding、knowledge work 等多個面向均有顯著提升，效能接近 Opus 4.8。
 
@@ -81,6 +83,9 @@ claude --model claude-sonnet-5-20260701
 - [[news/2026-07-01]]
 
 ## 歷史記錄
+
+### 2026-07-14
+**MarkTechPost 三模型深度比較（Sonnet 5 vs Sonnet 4.6 vs Opus 4.8）**：MarkTechPost 發布文章〈Anthropic Claude Sonnet 5 vs Sonnet 4.6 vs Opus 4.8: Agentic Coding Benchmarks, API Pricing, and Cost-Performance Tradeoffs Compared〉，涵蓋三模型的 agentic coding 基準測試、API 定價與成本效益取捨分析；本則日報摘要僅提供標題級資訊，未附具體評測數字，暫列為外部延伸閱讀資源，待後續補充量化內容時再擴寫（Google News／MarkTechPost，2026-07-14）。完整選型對照見 [[topics/model-comparison]]。
 
 ### 2026-07-09
 **媒體「正式發布」報導 + 評測分數/定價初步數字（待查證）**：Mashable 於 07-09 03:41 UTC 報導 Anthropic「finally, officially launches Claude Sonnet 5」，與既有 07-01 官方發布日重疊；tech-insider.org 同日另發文宣稱評測分數達 57 分、API 成本較前代減半（"Claude Sonnet 5 Debuts: 57 Score, Half the API Cost"，13:10 UTC），惟未附具體 benchmark 名稱與官方來源，列「待查證」。定價相關細節見 [[entities/pricing]]。此外 Reddit r/ClaudeCode 出現「回應內容重複」的弱訊號回報（score 恆 0，見「爭議」區）。

@@ -4,19 +4,19 @@
 **狀態：** active（正式發布；出口管制已解除，2026-07-01 起全球恢復存取）
 **領域：** 🤖 模型
 **首次出現：** 2026-06-09
-**最後更新：** 2026-07-13
-**最後新聞更新：** 2026-07-13
+**最後更新：** 2026-07-14
+**最後新聞更新：** 2026-07-14
 
-> **最新進展**（2026-07-12）
-> Fable 5 存取限制再度延長至 2026-07-19。媒體報導與 Simon Willison 部落格均指出，延後原因與 GPT-5.6 Sol 被業界認為屬於 Fable／Mythos 同級模型有關（定價細節見 [[entities/pricing]]）。
+> **最新進展**（2026-07-13）
+> Fable 5 存取限制維持延長至 7/19，無新截止日變動。The New Stack 報導 Anthropic 拒絕說明本次延長是否與開發者在 Cursor 中的發現有關，暗示延長原因可能另有隱情，但目前僅屬推測性報導、缺乏具體佐證（推論，Forbes 同步報導但未提供新細節）。定價細節見 [[entities/pricing]]。
 
 ---
 
 ## 現況
 
-**2026-07-12 最新**：Fable 5 存取限制再度延長至 7/19（原至 7/12），媒體報導與 Simon Willison 均指出，延後與競品 GPT-5.6 Sol 被視為 Fable／Mythos 同級模型有關，暗示 Anthropic 在觀察競品定位後才決定是否放寬存取限制。
+**2026-07-13 最新**：Fable 5 存取限制維持延長至 7/19，無新截止日變動；The New Stack 報導 Anthropic 拒絕說明本次延長是否與開發者在 Cursor 中的發現有關，暗示背後可能另有隱情，但目前僅屬推測性報導，缺乏具體佐證（推論）。
 
-**2026-07-10**：GitHub Issue #73365 回報 Fable 5 advisor 角色在所有 Claude Code session 中全面 unavailable（🔴 未修復，呼叫層問題非模型能力劣化，詳見「爭議」與 [[entities/claude-code]]）；07-09 官方公布「Fable 5 調度、便宜模型執行」協作基準（46% 成本達 96% 效能）。
+**2026-07-12**：Fable 5 存取限制再度延長至 7/19（原至 7/12），媒體報導與 Simon Willison 均指出，延後與競品 GPT-5.6 Sol 被視為 Fable／Mythos 同級模型有關，暗示 Anthropic 在觀察競品定位後才決定是否放寬存取限制。
 
 Claude Fable 5 是 Anthropic 於 2026-06-09 發布的旗艦模型，為**史上首款向大眾開放的 Mythos 級模型**。Fable 5 與 Claude Mythos 5 共用相同的模型權重，差異在於 Fable 5 前置安全分類器——觸發時 fallback 至 Claude Opus 4.8（Anthropic 稱不到 5% 的 session 受影響）。核心定位：任務越複雜越長期，Fable 5 的優勢越明顯；在軟體工程、知識工作、視覺、科學研究等幾乎所有 benchmark 達到 SOTA。
 
@@ -30,9 +30,9 @@ Claude Fable 5 是 Anthropic 於 2026-06-09 發布的旗艦模型，為**史上�
 | 最大 Output | 128,000 token |
 | 免費期限 | 訂閱用戶至 2026-07-19（原至 06-22，經多次延長，見「歷史記錄」）|
 
-## 配額與計費過渡（至 7/7）
+## 配額與計費過渡（原訂 7/7，現已順延至 7/19）
 
-**規則：** Pro/Max/Team 方案 7/7 前維持每週配額 50%（含 Fable 5 用量），7/7 後改依用量計費（usage-based billing），定價另行公布；Enterprise 方案需聯繫帳戶主管（[Anthropic Blog](https://www.anthropic.com/news/redeploying-fable-5)，2026-07-01）。定價數字細節見 [[entities/pricing]]。
+**規則（2026-07-01 原始公告）：** Pro/Max/Team 方案 7/7 前維持每週配額 50%（含 Fable 5 用量），7/7 後改依用量計費（usage-based billing），定價另行公布；Enterprise 方案需聯繫帳戶主管（[Anthropic Blog](https://www.anthropic.com/news/redeploying-fable-5)，2026-07-01）。**此 7/7 節點已因免費期限三度順延而未實際生效，目前免費期限延至 2026-07-19**（見上方「現況」與頁首 callout），屆時才會轉為用量計費。定價數字細節見 [[entities/pricing]]。
 
 **配額重置時間因訂閱起始日而異**：Reddit 社群 07-03 釐清，Fable 5 額度重置規則並非統一週期，而是依各用戶訂閱方案的起始時間點各自輪轉（「Fable resets on Monday if you held a plan already」），並非所有人同一天重置（[Reddit r/ClaudeCode](https://www.reddit.com/r/ClaudeCode/comments/1umt5h5/fable_resets_on_monday_if_you_held_a_plan_already/)，2026-07-03）。
 
@@ -156,6 +156,8 @@ claude --model claude-fable-5-20260609
 ### 解禁後（2026-07-01 起）
 
 #### 2026-07-13
+**Anthropic 拒絕說明延長原因，暗示與 Cursor 內部發現有關（推論）**：The New Stack 報導標題直指「Anthropic extends Fable 5 again — and won't talk about what developers found inside Cursor」，指出 Anthropic 拒絕說明本次延長是否與開發者在 Cursor 中發現的問題有關；Forbes 同日另一篇報導同樣說明存取限制延長，但未提供新細節。此為推測性報導，暗示延長原因可能另有隱情，但缺乏具體佐證，標「（推論）」（Google News／The New Stack、Google News／Forbes，2026-07-13）。
+
 **多家媒體重複確認延長至 7/19（無新日期變化）**：Forbes（Tyler Roush）、Help Net Security、Economic Times、Forbes（Sandy Carter）等多家媒體同日重複報導 Fable 5 存取限制延長至 2026-07-19 一事，內容與 07-12 記錄的同一事件一致，未出現新的日期或條件變化，僅為跨媒體多來源重複確認（[Forbes](https://www.forbes.com/)、[Help Net Security](https://www.helpnetsecurity.com/)、[Economic Times](https://economictimes.indiatimes.com/)，2026-07-13）。
 
 #### 2026-07-12

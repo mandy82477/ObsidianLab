@@ -4,11 +4,11 @@
 **狀態：** active（持續調整中）
 **領域：** 💼 商業
 **首次出現：** 2026-04-25
-**最後更新：** 2026-07-13
-**最後新聞更新：** 2026-07-13
+**最後更新：** 2026-07-14
+**最後新聞更新：** 2026-07-14
 
-> **最新計費政策異動**（2026-07-13）
-> Tech Times 報導：Anthropic 證實一筆 **1660 萬美元帳務錯誤**，稽核人員另發現企業客戶被多收 **170 萬美元**——是繼先前多次靜默計費改動（HERMES.md bug、prompt cache 窗口縮短、Token 估算翻倍等）後，首度出現具體揭露金額規模的帳務錯誤事件，且首度證實「企業被多收費」的具體數字。此事件與既有「計費透明度危機」敘事一致，但規模是目前已知最大（詳見「事故與爭議」新增條目）。此外，原訂 7/13 到期的週用量 +50% 促銷已於 07-12 官方公告延長至 **7/19**（詳見「重要政策變動紀錄」），與本次帳務錯誤為各自獨立事件。
+> **最新計費政策異動**（2026-07-14）
+> Anthropic 正式為**印度**（美國以外最大市場）推出盧比在地化計價，**Pro 方案訂為 Rs 2,000/月**——是官方首度正式回應 07-03 已記錄的 GitHub Issue #17432（reactions 598、長期無官方回應）印度在地化定價訴求（TechCrunch source_count=2、NDTV、Times of India、bestmediainfo.com 同步報導）。此外 The Register 分析指出 Anthropic tokenizer 設計較複雜，使 API 定價跨供應商成本估算更難直接比較（標題式報導，詳見「模型 API 定價現況」）。07-12/13 記錄之 **1660 萬美元帳務錯誤**（企業多收 170 萬美元）與週用量 +50% 促銷延長至 **7/19** 仍持續生效，詳見下方「重要政策變動紀錄」。
 
 ## 現況
 
@@ -23,7 +23,7 @@
 | 方案 | 月費 | 內容 | 注意 |
 |------|------|------|------|
 | Free | 待查證 | 基本限制額度 | 無公開月費數字見於日報 |
-| Pro | $20 | 標準互動用量 | 原定 6/15 起另有 $20 programmatic 信用池，已暫停 |
+| Pro | $20 | 標準互動用量 | 原定 6/15 起另有 $20 programmatic 信用池，已暫停；**印度盧比在地化定價 Rs 2,000/月**（2026-07-13 官方推出，首個非美元在地化定價市場，回應 GitHub Issue #17432 訴求）|
 | Max 5x | $100 | Pro 的 5 倍用量 | 2026-06-26 Reddit 貼文誤植為 $50，已依 2026-05-14 xda-developers／dev.to 官方公告原文（$100）更正 |
 | Max 20x | $200 | Pro 的 20 倍用量；context window、Claude Code 額度、優先排隊等有結構性差異 | **用量上限集體訴訟進行中**（Karl Kahn 訴訟，2026-06-16 提起，指控實際僅 6–8 倍而非 20 倍） |
 | Team | 待查證 | 團隊協作方案 | 06-19 官方宣布速率翻倍時同步適用 |
@@ -42,6 +42,7 @@
 | Claude Opus 4.8 | 未見日報明確標價 | 作為 Sonnet 5 促銷折扣的比較基準（見上）|
 
 > 模型能力與評測細節見 [[topics/model-comparison]]；此表僅列價格。
+> **注意（2026-07-14）**：The Register 分析指出 Anthropic tokenizer 設計較為複雜，使 API 定價與跨供應商成本估算更難以直接比較（標題式報導，無進一步量化細節，source_count=2）。
 
 ---
 
@@ -54,6 +55,7 @@
 - **`ANTHROPIC_API_KEY` 環境變數陷阱**：雲端環境（CI/CD、Docker、K8s）若設置此環境變數，所有 Claude Code 呼叫自動改走 API 計費通道而非訂閱配額，需檢查環境變數避免非預期扣費（來源：2026-04-30）
 - **Max 用量上限爭議進入司法程序**：2026-06-16 集體訴訟指控 Max 5x／Max 20x 實際使用限制遠低於廣告宣稱（Max 20x 實測僅 Pro 的 6–8 倍，非廣告的 20 倍），訴訟結果將直接影響方案信任度與可能的退款/調整義務（來源：2026-06-16 CNET、Decrypt）
 - **企業支出控管功能上線（2026-07-04）**：具體控管粒度（部門/團隊層級、per-user、即時警報）尚未公開，待後續報導補充（來源：2026-07-04 Tech Times）
+- **印度盧比在地化定價正式生效（2026-07-13）**：Pro 方案訂為 **Rs 2,000/月**，為美國以外最大市場首次官方在地化定價；Max/Team/Enterprise 是否同步在地化計價未見報導，待補充（來源：2026-07-13～14 TechCrunch、NDTV、Times of India、bestmediainfo.com）
 
 ---
 
@@ -125,6 +127,12 @@ git commit 歷史出現大寫字串「HERMES.md」會觸發靜默切換至 API �
 
 ### 定價與促銷（模型定價、方案設計）
 
+#### 2026-07-13/14：印度盧比在地化定價正式推出，回應長期社群訴求（重大）
+
+- **官方推出印度盧比計價，Pro 方案 Rs 2,000/月**：TechCrunch（source_count=2）、NDTV、Times of India、bestmediainfo.com 同步報導，Anthropic 為美國以外最大市場印度啟動盧比計價，Pro 方案訂為每月 **Rs 2,000**。**對採用率的意涵**：是官方首度正式回應下方 07-03 條目記錄的 GitHub Issue #17432（reactions 598、留言 205，長期無官方回應）印度在地化定價訴求，若能提升印度市場訂閱轉換率，將直接驗證此前「未回應在地化定價將影響全球最大開發者社群之一的轉換率」的推論；具體匯率換算基準、是否同步適用 Max/Team/Enterprise 方案未見報導細節，待後續補充（NDTV「Anthropic Starts India Pricing For Claude AI, Pro Plan At Rs 2,000」；TechCrunch「Anthropic starts localizing Claude pricing for India, its biggest market after the US」）
+- **API 定價跨供應商比較難度浮上檯面（The Register）**：Google News/The Register（source_count=2）分析指出 Anthropic tokenizer 設計較複雜，使 API 定價與跨供應商成本估算更難以直接比較；僅標題式報導，無具體量化細節，惟此議題與印度盧比在地化定價同日出現，共同凸顯 Anthropic 全球定價透明度議題（推論：一為訂閱端在地化，一為 API 端可比性，兩者性質不同，不宜混為一談）
+- **社群對 Fable 5 訂閱去留持續揣測（非官方，無新事實）**：Reddit r/ClaudeCode（2026-07-14，無週熱門標記）用戶詢問 Fable 5 是否會退出訂閱方案改為純點數（credit-based）付費，反映月付 $100 訂閱用戶對加購點數的不滿；同時 Reddit r/ClaudeAI · 週熱門（2026-07-10）另一貼文推論，隨 OpenAI Sol 上市成為同級競品，現階段將 Fable 5 移出訂閱方案的可能性不高，如同 Opus 4.5 上市後未被移出訂閱方案的先例。**注意**：兩則均為社群揣測，非官方公告，與上方「Fable 5 免費使用期限延長至 7/19 後是否轉 usage-based billing」的既有未決問題方向一致，可視為市場對該懸而未決政策的持續關注訊號（推論）（Reddit r/ClaudeCode；Reddit r/ClaudeAI）
+
 #### 2026-07-12：週用量 +50% 促銷再延長至 7/19，Fable 5 免費期同步順延
 
 - **官方公告**：Anthropic 官方公告（Hacker News 轉載，support.claude.com，2026-07-12 18:01 UTC）將原訂 5–7 月週用量 +50% 促銷再延長，效期由 7/13 延至 **2026-07-19**；適用範圍限定 **Pro／Max／Team 及舊制（席位制）Enterprise 方案**，**Free 方案與用量制 Enterprise 席位不適用**，5 小時額度不受影響。
@@ -144,9 +152,10 @@ git commit 歷史出現大寫字串「HERMES.md」會觸發靜默切換至 API �
 
 - **官方推出企業支出控管功能**：Tech Times 報導（07-04），企業導入 agentic AI 後帳單頻繁超出預算成為普遍痛點，Anthropic 針對企業客戶推出 Claude 支出控管功能協助管理成本。**注意**：報導僅描述功能定位，未揭露具體控管粒度（部門/團隊層級預算上限、per-user 報表、即時警報等 [[topics/enterprise-cost-management]] 長期呼籲的功能是否齊備）；是官方首次針對企業成本失控問題推出產品化解法，而非僅靠配額縮減或計費政策調整（推論：對正面臨 Uber 式成本失控的企業客戶構成留存誘因）。詳見 [[topics/anthropic-business]]、[[topics/enterprise-cost-management]]（Tech Times https://www.techtimes.com/articles/319687/20260704/claude-enterprise-spend-controls-arrive-agentic-ai-bills-blow-past-budgets.htm）
 
-#### 2026-07-03：印度盧比定價需求（未滿足需求，官方未回應）
+#### 2026-07-03：印度盧比定價需求（✅ 已於 2026-07-13 獲官方回應，見上方 07-13/14 條目）
 
 - **GitHub Issue 要求 INR 在地化定價方案（持續發酵，互動量攀升）**：印度用戶在 `anthropic/claude-code` Issue #17432 要求 Anthropic 推出盧比計價方案，比照 OpenAI（ChatGPT）、Google（Gemini）已有的在地化定價。互動量持續攀升：留言數維持 **205**、reactions 由 👍594 增至 **598**（2026-07-09 查證），為近期社群需求類 issue 中互動量顯著較高者之一。**注意**：純社群 feature request，Anthropic 至今（07-09）仍無官方回應或時程承諾；若 Anthropic 未來跟進在地化定價，將直接影響印度市場（全球最大 AI 開發者社群之一）的訂閱轉換率（推論）（GitHub https://github.com/anthropics/claude-code/issues/17432）
+- **✅ 已解決（2026-07-13 更新）**：Anthropic 於 07-13 正式推出印度盧比計價（Pro 方案 Rs 2,000/月），為此需求首次獲得官方正式回應，長期無回應狀態結束；詳見上方「2026-07-13/14：印度盧比在地化定價正式推出」條目
 
 #### 2026-07-02：第三方實測確認 Sonnet 5 促銷定價，籲設為預設路由模型
 
@@ -191,6 +200,7 @@ The Information 報導企業客戶即使面對成本上漲仍持續採用；Anth
 - **Reddit r/ClaudeAI：「Claude Max 20x: Why did 27% of one session consume 7% of my entire weekly limit?」（2026-07-09）**：使用者具體質疑單一 session 中 27% 的時間消耗掉整週額度 7%，用量計量比例明顯失衡，與 GitHub #38335 反映的異常耗盡現象方向一致
 - **Reddit r/ClaudeCode：「Claude Max (20x) weekly limit exhausted in less than a day」**：使用者回報週額度不到一天即用盡（Reddit https://www.reddit.com/r/ClaudeCode/comments/1uqs99q/）
 - **對留存的意涵**：多則獨立訊號（2 個高互動 GitHub issue + 2 則 Reddit 貼文）方向一致，指向 Max 方案的用量計量或消耗速率可能存在系統性異常，而非個案；與既有 06-16 Max 集體訴訟（廣告 20 倍實測僅 6–8 倍）同屬「用量承諾與實際體驗落差」的信任問題，Anthropic 至今（07-09）尚未提供官方解釋或修復時程（推論）
+- **正面反例（同期出現）**：Reddit r/ClaudeAI · 週熱門（2026-07-09）「5 hour and weekly limits have been reset. Thanks Anthropic!」一則貼文回報 5 小時與週用量額度已被重置並表達感謝；與上述額度異常耗盡投訴同期出現，方向相反，可能反映用戶端因帳號、時段或所屬方案不同而體驗分化，非全面性的正面或負面訊號（推論）
 
 #### 2026-06-30：配額再次縮減（社群反映，Anthropic 無官方公告）
 
