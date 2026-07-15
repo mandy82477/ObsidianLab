@@ -4,11 +4,11 @@
 **狀態：** active
 **領域：** 🛠️ 工具/功能
 **首次出現：** 2025（正式推出）
-**最後更新：** 2026-07-14
-**最後新聞更新：** 2026-07-14
+**最後更新：** 2026-07-15
+**最後新聞更新：** 2026-07-15
 
-> **最新版本動態**（2026-07-14）
-> **v2.1.209**：修復 `claude agents` 背景 session 中 `/model` 等對話框被過度廣泛的防護機制阻擋的問題（回退先前過寬的防護邏輯），屬純 bug fix，不含新功能異動。本日新增已知問題 3 條：OAuth 登入逾時失敗、`auth.anthropic.com` 網域無法解析（GitHub issue #33238，累積 150 留言、46 讚，本日互動量最高）；「The model's tool call could not be parsed (retry also failed)」間歇性中斷 session，兩則獨立高互動回報合併追蹤（issue #63875 累積 75 留言、117 讚；issue #62123 累積 63 留言、113 讚）；伺服器端速率限制錯誤與用量上限無關（issue #53915，累積 68 留言、26 讚）。前一重大異動為 v2.1.207（2026-07-11）Auto mode 於 Bedrock/Vertex AI/Foundry 三平台改為預設開啟並修復終端機凍結問題（見 [[feature-radar]]）。Claude Code Desktop 內建瀏覽器（2026-07-13 已由 inc.com、WeRSM 兩則媒體交叉確認，見 [[feature-radar]]）與 Claude Cowork 行動版/網頁版擴展（Mashable 2026-07-13 報導）均為既有已記錄事件的重複跟進報導，本日未新增歷史條目。
+> **最新版本動態**（2026-07-15）
+> **v2.1.210**（2026-07-14）：新增「已折疊工具摘要行」即時經過時間計數器（長時間執行的工具呼叫不再看似卡住）；新增 `Write(path)` 相關啟動警告——原文摘要於來源處被截斷，僅此兩項變更可確認，內容有限，暫不進 [[feature-radar]]（詳見「版本更新」表格）。claude.ai 於 07-14 22:16 UTC 發生 container creation 部分中斷，約 20 分鐘後已解決。本日新增已知問題 6 條（皆 🔴 未修復，剛回報無法判斷是否已修復）：Remote Control 自動重連失效、靜默斷線（issue #34255）；跨機器多 agent 協作 / Agent-to-Agent 協定功能請求（issue #28300）；GitLab 整合功能請求（issue #12346）；Environment Contributions 警告重複出現（issue #3301）；VS Code 外掛 LaTeX 渲染功能請求（issue #16446）；VS Code 擴充功能 diff 審閱 UI 功能請求（issue #33932）。既有已知問題更新：OAuth 登入逾時 / `auth.anthropic.com` 無法解析（issue #33238，累積留言 150→151、讚 46→47，本日互動量最高）、GitHub Connector 未被識別（issue #32479，累積留言 70→71、讚 118→120）。前一重大異動為 v2.1.207（2026-07-11）Auto mode 於 Bedrock/Vertex AI/Foundry 三平台改為預設開啟並修復終端機凍結問題（見 [[feature-radar]]）。
 
 ---
 
@@ -16,13 +16,13 @@
 
 **Reflect with Claude 測試版推出（2026-07-09）：** Anthropic 官方部落格宣布「Reflect with Claude」測試版功能，使用者可在 Settings 中檢視使用模式儀表板，理解自己使用 Claude 的模式；TechCrunch、Mashable、CNET、Axios、The Verge 多家媒體同步報導，多將其類比為「AI 版 Spotify Wrapped」或「螢幕使用時間」統計工具，TechCrunch 則提出質疑觀點，認為此舉實質是包裝成「自我反思」的使用引導設計；HN 獲 29 分。詳見 [[feature-radar]]。
 
-**最新版本動態：** 最新版本 **v2.1.209**（2026-07-14）修復 `claude agents` 背景 session 中 `/model` 等對話框被過度廣泛的防護機制阻擋的問題（回退先前過寬的防護邏輯），屬純 bug fix，未含新功能異動，故不進 [[feature-radar]]。前一重大異動為 **v2.1.207**（2026-07-11）將 Auto mode 在 Bedrock、Vertex AI、Foundry 三平台改為預設開啟，不再需要 `CLAUDE_CODE_ENABLE_AUTO_MODE` 環境變數 opt-in（可用設定項 `disableAutoMode` 關閉），同版修復終端機凍結問題；再前一異動為 **v2.1.206**（2026-07-10）新增 `/cd` 目錄路徑建議與 `/doctor` CLAUDE.md 精簡檢查。近期各版本的指令、旗標與設定項異動，詳見下方「最新版本」表格。
+**最新版本動態：** 最新版本 **v2.1.210**（2026-07-14）新增已折疊工具摘要行的即時經過時間計數器、`Write(path)` 相關啟動警告；來源原文摘要被截斷，僅此兩項可確認，未見新指令/新旗標/breaking change 等明確使用者端具體異動，故不進 [[feature-radar]]，僅記入版本表。前一重大異動為 **v2.1.207**（2026-07-11）將 Auto mode 在 Bedrock、Vertex AI、Foundry 三平台改為預設開啟，不再需要 `CLAUDE_CODE_ENABLE_AUTO_MODE` 環境變數 opt-in（可用設定項 `disableAutoMode` 關閉），同版修復終端機凍結問題；再前一異動為 **v2.1.206**（2026-07-10）新增 `/cd` 目錄路徑建議與 `/doctor` CLAUDE.md 精簡檢查。近期各版本的指令、旗標與設定項異動，詳見下方「最新版本」表格。
 
 **產品定位：** Claude Code 是 Anthropic 的 AI 編碼 CLI 工具，核心能力已從程式碼助理擴展為具備全桌面自動化、多代理管理（Managed Agents）、MCP Server 整合、Hooks 機制與 AI 安全審查的完整 agent 開發平台；GitHub Stars 達 **131,000+**。
 
 **官方使用研究：** Anthropic 發表基於 2025/10–2026/04 約 40 萬個 session 的分析研究，發現人類主導規劃決策、Claude 主導執行決策，且使用者領域專業越高，Claude 每條指令完成的工作量越大。
 
-**市場與競爭：** Microsoft 正陸續取消內部授權轉推 GitHub Copilot CLI（見 [[topics/competitor-landscape]]）；Ramp AI Index 數據顯示 Anthropic 企業採用率首次超越 OpenAI（34.4% vs 32.3%）。
+**市場與競爭：** Microsoft 正陸續取消內部授權轉推 GitHub Copilot CLI（見 [[topics/competitor-landscape]]）；Ramp AI Index 數據顯示 Anthropic 企業採用率首次超越 OpenAI（34.4% vs 32.3%）；AWS 於 2026-07-15 推出「Claude Apps Gateway」，定位為 Claude Code 與 Claude Desktop 可自架部署的控制平面，屬第三方（非 Anthropic 官方）生態工具，目前僅有標題可用（Google News / infoq.com 轉址頁面無法取得細節），資訊不足暫記待觀察，與 [[entities/managed-agents]] 的企業自架沙箱主題相關，待後續報導補齊細節再評估是否建頁。
 
 ## 熱度與試用價值
 
@@ -112,13 +112,19 @@
 
 - 🔴 **未修復**｜**Claude 全平台共通的帳號架構缺口——三平台各自提出多帳號管理訴求**：Mobile app 缺乏免共用 email 的多帳號切換（[issue #36151](https://github.com/anthropics/claude-code/issues/36151)，累積 123 則留言、542 個讚，2026-07-08 該日反應數最高）；Desktop app 缺乏多帳號管理與快速切換（[issue #18435](https://github.com/anthropics/claude-code/issues/18435)，累積 126 則留言、705 個讚，2026-07-10 該日反應數最高）；Claude／Claude Code on the web 缺乏同一 Connector 掛載多個帳號的支援（[issue #27302](https://github.com/anthropics/claude-code/issues/27302)，累積 212 則留言、419 個讚，2026-07-10）；三則 issue 分屬不同介面、互不重複，卻在同一週集中出現，共同反映 Claude 帳號模型尚未針對多身份使用情境（如工作／個人帳號分離、多客戶服務）設計統一的跨平台身份層；官方尚未於任一平台回應或排入路線圖。
 
-### 🔌 平台相容性（29 條未修復、1 條待查證）
+### 🔌 平台相容性（35 條未修復、1 條待查證）
 
+- 🔴 **未修復**｜**Remote Control 自動重連機制失效，靜默斷線且無法自行恢復（GitHub issue #34255，累積 54 則留言、97 個讚，2026-07-15）**：使用者回報 Remote Control 功能連線中斷後不會自動重連，且無任何提示告知已斷線，需手動介入才能恢復；與下列 `/remote-control` 相關問題（issue #28322、#29006）同屬 Remote Control 功能仍不穩定的訊號；官方尚未回應。
+- 🔴 **未修復**｜**功能請求：跨機器多 agent 協作（Agent-to-Agent 協定）（GitHub issue #28300，累積 35 則留言，2026-07-14）**：使用者呼籲 Claude Code 支援跨機器的多 agent 協作，採用 Agent-to-Agent 協定；與 [[entities/managed-agents]] 現有多代理協調能力相關，官方尚未回應或排入路線圖。
+- 🔴 **未修復**｜**功能請求：GitLab 整合（儲存庫連接、Merge Request、行動裝置存取）（GitHub issue #12346，累積 46 則留言、118 個讚，2026-07-14）**：使用者呼籲 Claude Code 支援 GitLab 整合，比照現有 GitHub 整合提供儲存庫連接、Merge Request 操作與行動裝置存取；官方尚未回應或排入路線圖。
+- 🔴 **未修復**｜**功能請求：VS Code 擴充功能比照 GitHub Copilot Edits Review 的差異審閱介面（GitHub issue #33932，累積 33 則留言、218 個讚，2026-07-14）**：使用者呼籲 VS Code 擴充功能提供類似 GitHub Copilot Edits Review 的 diff 審閱 UI；官方尚未回應或排入路線圖。
+- 🔴 **未修復**｜**功能請求：VS Code 擴充套件支援 LaTeX 算式渲染（GitHub issue #16446，累積 35 則留言、122 個讚，2026-07-14）**：使用者請求「Claude Code for VS Code」外掛支援 LaTeX 算式渲染；官方尚未回應或排入路線圖。
+- 🔴 **未修復**｜**Environment Contributions 警告訊息持續重複出現（GitHub issue #3301，累積 40 則留言、78 個讚，2026-07-14，Claude Code Status v1.0.25）**：使用者回報每次開啟 Cursor 或 VS Code IDE 時，Environment Contributions 警告訊息都會持續重複出現；官方尚未回應。
 - 🔴 **未修復**｜**功能請求：Visual Studio 2026 整合支援（GitHub issue #15942，累積 139 則留言、475 個讚，2026-07-09）**：使用者要求 Claude Code 支援 Visual Studio 2026 整合；官方尚未回應或排入路線圖。
 - 🔴 **未修復**｜**功能請求：Claude Code Desktop 多視窗支援（GitHub issue #30154，累積 60 則留言、202 個讚，2026-07-09）**：使用者呼籲 Desktop app 支援多視窗同時操作；官方尚未回應。
 - 🔴 **未修復**｜**Opus 4.7 thinking summaries 未在 VS Code 擴充套件正確渲染（GitHub issue #49322，累積 50 則留言、42 個讚，2026-07-09）**：使用者回報使用 Opus 4.7 時，VS Code 擴充套件無法正確渲染 thinking summaries 內容；官方尚未回應。見 [[entities/opus-4-7]]。
 - 🔴 **未修復**｜**VSCode 擴充套件 `ide_selection` 缺失、`ide_opened_file` 回報錯誤（GitHub issue #8451，累積 48 則留言、35 個讚，2026-07-10）**：VSCode 擴充套件未正確回報 `ide_selection`，且 `ide_opened_file` 欄位回傳錯誤檔案資訊，影響依賴這些欄位判斷編輯器狀態的工作流；官方尚未回應。
-- 🔴 **未修復**｜**GitHub Connector 已在 Claude Desktop 連結卻未被識別（GitHub issue #32479，累積 70 則留言、118 個讚，2026-07-08）**：使用者於 Claude Desktop 完成 GitHub Connector 連結授權後，Claude 仍無法辨識該連結狀態，導致依賴 GitHub 存取的工作流無法使用；官方尚未回應。
+- 🔴 **未修復**｜**GitHub Connector 已在 Claude Desktop 連結卻未被識別（GitHub issue #32479，累積 71 則留言、120 個讚，2026-07-14）**：使用者於 Claude Desktop 完成 GitHub Connector 連結授權後，Claude 仍無法辨識該連結狀態，導致依賴 GitHub 存取的工作流無法使用；官方尚未回應。
 - 🔴 **未修復**｜**VSCode 擴充套件 UI 確認變更時未顯示 Edit 預覽/diff（GitHub issue #8660，累積 52 則留言、82 個讚，2026-07-08）**：在 VSCode extension 中確認變更時，Edit 預覽/diff 畫面未正確顯示，使用者難以在套用前檢視實際異動內容；官方尚未回應。
 
 - 🔴 **未修復**｜**Claude Desktop 每輪工具呼叫次數限制回歸，中斷 MCP/SSH agent 工作流（GitHub issue #33969，累積 48 則留言、44 個讚，2026-07-07，regression）**：Claude Desktop 每輪工具呼叫次數限制出現回歸，導致依賴多輪工具呼叫的 MCP／SSH 相關 agent 工作流中斷；官方尚未回應。
@@ -146,9 +152,10 @@
 - 🔴 **未修復**｜**功能請求聚集：跨平台支援需求未滿足**：多項高反應數 feature request 顯示使用者對跨平台支援的強烈需求——官方 Linux（Ubuntu LTS / Debian）Desktop build（[issue #65697](https://github.com/anthropics/claude-code/issues/65697)，累積反應 651）、Desktop 於 Windows 上改用 WSL 執行指令的選項（[issue #12506](https://github.com/anthropics/claude-code/issues/12506)，累積反應 134）、Desktop 與 CLI 之間同步 Skills（[issue #20697](https://github.com/anthropics/claude-code/issues/20697)，累積反應 127）；均為社群高投票 feature request，官方尚未排入路線圖。多帳號管理相關訴求已獨立整併至「👤 帳號管理」分組
 - 🔴 **未修復**｜**MCP servers/hooks/plugins 設定變更需完整重啟 session（GitHub issue #24057，累積 30 則留言、15 個讚，2026-07-05）**：目前修改 MCP server、hooks 或 plugin 設定後必須重啟整個 session 才會生效，無法熱重載，中斷工作流程並遺失既有 context；社群呼籲改為設定變更後自動重載，官方尚未回應。
 
-### 🌐 服務穩定性（2 條已修復、3 條未修復、1 條待查證）
+### 🌐 服務穩定性（3 條已修復、3 條未修復、1 條待查證）
 
-- 🔴 **未修復**｜**OAuth 登入逾時失敗，`auth.anthropic.com` 網域無法解析（GitHub issue #33238，累積 150 則留言、46 個讚，2026-07-13 為本日互動量最高條目）**：使用者回報 Claude Code OAuth 登入逾時失敗，`auth.anthropic.com` 網域完全無法透過 DNS 解析，導致使用者無法完成任何驗證流程；官方尚未回應。
+- ✅ **已修復（同日解決）**｜**claude.ai container creation 部分中斷（2026-07-14 21:56–22:16 UTC）**：Anthropic Status 頁面顯示 claude.ai 的 container creation 功能發生部分中斷，約 20 分鐘後修復完成並經監控確認恢復正常；狀態頁未進一步說明確切成因與影響範圍，可能涉及 Claude Code on the web／Cowork 的沙箱建立流程。
+- 🔴 **未修復**｜**OAuth 登入逾時失敗，`auth.anthropic.com` 網域無法解析（GitHub issue #33238，累積 151 則留言、47 個讚，2026-07-14 仍為互動量最高條目）**：使用者回報 Claude Code OAuth 登入逾時失敗，`auth.anthropic.com` 網域完全無法透過 DNS 解析，導致使用者完全無法完成驗證流程；官方尚未回應。
 - 🔴 **未修復**｜**claude.ai visualize 功能故障，claudemcpcontent.com 無法連線（DNS_PROBE_FINISHED_NXDOMAIN）（GitHub issue #34820，累積 94 則留言、39 個讚，2026-07-10）**：使用者回報 claude.ai 的 visualize 功能故障，依賴的 claudemcpcontent.com 網域無法解析（DNS 錯誤）；官方尚未回應。
 - 🔴 **未修復**｜**API Error: 串流閒置逾時，僅收到部分回應（GitHub issue #46987，累積 184 則留言、197 個讚，2026-07-09）**：使用者回報今日多次遇到串流閒置逾時（stream idle timeout）的 API 錯誤，僅收到部分回應即中斷；官方尚未回應或說明成因。
 - ✅ **已修復（服務已恢復）**｜**Claude API / Claude Code 529 過載（2026-06-21 至 06-22 多波中斷）**：Anthropic 確認 Claude API 與 Claude Code 的 Opus 及 Sonnet 模型發生部分服務中斷，Max plan 用戶反映第一條 prompt 即觸發 529 Overloaded 錯誤，影響持續約 90 分鐘後於 UTC 19:34 恢復服務；06-22 又發生新一波激增，確認受影響模型：Opus 4.8、Opus 4.7、Opus 4.6、Sonnet 4.6；CyberSecurityNews 等多家媒體追蹤報導（見 [HN 討論](https://news.ycombinator.com/item?id=48624168)）
@@ -167,6 +174,7 @@
 
 | 版本 | 日期 | 重點 |
 |------|------|------|
+| **v2.1.210** | 2026-07-14 | 已折疊工具摘要行新增即時經過時間計數器（長時間執行的工具呼叫不再看似卡住）；新增 `Write(path)` 相關啟動警告；來源原文於此處被截斷，僅此兩項變更可確認，暫無法判斷是否有其他異動（見 [Release](https://github.com/anthropics/claude-code/releases/tag/v2.1.210)）|
 | **v2.1.209** | 2026-07-14 | Bug fix：修復 `claude agents` 背景 session 中 `/model` 等對話框被過度廣泛的防護機制阻擋的問題（回退先前過寬的防護邏輯），純可靠性修正，無新功能異動（見 [Release](https://github.com/anthropics/claude-code/releases/tag/v2.1.209)）|
 | **v2.1.207** | 2026-07-11 | **Auto mode 在 Bedrock/Vertex AI/Foundry 三平台預設開啟**：不再需要 `CLAUDE_CODE_ENABLE_AUTO_MODE` 環境變數 opt-in，可透過設定中的 `disableAutoMode` 關閉；同版修復終端機凍結問題（見 [Release](https://github.com/anthropics/claude-code/releases/tag/v2.1.207)）|
 | **v2.1.206** | 2026-07-10 | `/cd` 新增目錄路徑建議（比照 `/add-dir` 的自動完成體驗）；`/doctor` 新增檢查項目，會建議精簡已 checked-in 的 CLAUDE.md 內容（見 [Release](https://github.com/anthropics/claude-code/releases/tag/v2.1.206)）|
@@ -278,9 +286,11 @@
 - [[entities/claude-tag]]（Slack-native AI 協作工具，定位為 Claude Code 向團隊協作方向的延伸）
 - [[entities/boris-cherny]]（Claude Code 創始人）
 - [[entities/cat-wu]]（Claude Code 產品負責人，AI 主動性論述）
+- [[entities/claude-for-teachers]]（同為 Anthropic 產品線，面向 K-12 教師的免費進階存取方案）
 
 ## 參考來源
 
+- [[news/2026-07-15]]
 - [[news/2026-04-25]]
 - [[news/2026-04-26]]
 - [[news/2026-04-27]]
@@ -308,6 +318,7 @@
 
 | 日期 | 事件 |
 |------|------|
+| 2026-07-14 | **v2.1.210**：已折疊工具摘要行新增即時經過時間計數器；新增 `Write(path)` 相關啟動警告；原文摘要被截斷，內容有限，不進 [[feature-radar]]；claude.ai container creation 於 21:56–22:16 UTC 部分中斷，同日已解決；本日新增 6 則已知問題（Remote Control 自動重連失效 issue #34255、跨機器多 agent 協作功能請求 issue #28300、GitLab 整合功能請求 issue #12346、Environment Contributions 警告重複出現 issue #3301、VS Code LaTeX 渲染功能請求 issue #16446、VS Code diff 審閱 UI 功能請求 issue #33932），另更新 OAuth 登入逾時（issue #33238）與 GitHub Connector 未被識別（issue #32479）既有已知問題數據 |
 | 2026-07-09 | **Reflect with Claude 測試版推出**：Settings 內新增使用模式儀表板，TechCrunch、Mashable、CNET、Axios、The Verge 多家媒體同步報導，多類比「AI 版 Spotify Wrapped」，TechCrunch 提出「悄悄推銷 AI」質疑角度；HN 29 分（見 [[feature-radar]]）|
 | 2026-07-08 | **Claude Cowork 擴展至行動裝置與網頁版**：首波開放 Max 訂閱用戶，任務可在雲端持續執行，闔上筆電/關閉裝置也不中斷，此次擴展亦涵蓋政府機構客戶；官方表示「完整體驗」仍限桌面版；The Verge、TechCrunch、WIRED、NBC News、The New Stack、Let's Data Science 等多家媒體同步報導；Cowork 既有平台相容性已知問題是否延伸至新平台尚待觀察（見「已知問題」）|
 | 2026-07-01 | **v2.1.197 Sonnet 5 正式成為預設模型**：Claude Code 預設切換至 Claude Sonnet 5，原生支援 1M token context window，促銷定價至 2026-08-31；使用者升版後無需手動切換即享受完整 1M context（見 [Release](https://github.com/anthropics/claude-code/releases/tag/v2.1.197)）|

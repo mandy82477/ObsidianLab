@@ -3,6 +3,23 @@
 Append-only 紀錄。每次 ingest、lint，以及**揭露缺陷或促成改動的使用者 query**，都在此追加一條（純資訊性、未促成改動的 query 不記，避免噪音）。
 格式：`## [YYYY-MM-DD] 類型 | 說明`
 
+## 2026-07-15 Ingest | news/2026-07-15.md（61 則）
+
+- 來源日報：[[news/2026-07-15]]（61 則，10/10 來源；Google News 36、GitHub Issues 15、dev.to 15、Hacker News 12、Reddit 11、Anthropic Blog 2、Blogroll 2、GitHub 1、Anthropic Status 1、Claude API Release Notes 0）
+- 分類派工：功能、商業、安全政策、社群（四類並行 foreground；本日模型／人物無條目，跳過）
+- 更新頁面：
+  - **功能**：`entities/claude-code.md`（v2.1.210 版本表新增；已知問題新增 6 條——OAuth DNS 登入失敗 #33238 本日最高互動 151 留言、GitHub Connector 不被辨識 #32479、Remote Control 自動重連失效 #34255、GitLab 整合請求 #12346、Environment Contributions 警告重現 #3301、跨機器多 agent A2A 協定請求 #28300；🌐 服務穩定性新增 claude.ai container creation 中斷 ✅ 已修復記錄）；`entities/claude-science.md`（早期使用者評價：工作流程加快但仍有缺口）
+  - **商業**：`topics/anthropic-business.md`（戰略合作新增 4 列：Claranova PDF 整合、加拿大 AI 研究投資 1,000 萬加幣、Optum+UST 醫療合作、Varonis runtime 安全防護）；`topics/competitor-landscape.md`（HackerNoon Claude Code vs Codex vs OpenCode 比較、Anthropic-Alibaba 競爭關係分析）
+  - **安全政策**：`topics/ai-agent-safety.md`（Fable 5 `/btw` 指令繞過安全限制、澳洲企業遭駭客利用 Claude Code、Sonnet 5/Opus 4.8 推理簽章可被還原三則，均僅標題層級資訊，標「❓ 待查證」）；`topics/anthropic-government-policy.md`（Anthropic 招募人力應對災難性風險、逐州加強 AI 規則計畫、EU 官員對安全聽證會派員層級不滿三則）
+  - **社群**：`topics/community-tech-discussions.md`（Launch HN Agnost AI 79 分、dev.to「30 天讓 Claude Code 寫 90% 程式碼後變差」第一手反思、Armin Ronacher 具名引用）；`topics/community-tech-patterns.md`（Reddit context 分支/合併工具 source_count=2、dev.to AI 工具挑選漸進採用原則）；今日 8 則 Show HN（1–6 分）與多數 Reddit sort=new 貼文（score=0 無週熱門標記）依門檻規則不收錄
+  - **主編**：`feature-radar.md`（新增 Claude for Teachers、Claude Code v2.1.210 兩條；最新版本行同步 v2.1.210）；`index.md`（新增 claude-for-teachers 頁面列、彙整今日近期異動九則）
+- feature-radar：新增 2 條（Claude for Teachers 🔥🔥🔥 ⏳ 觀望；Claude Code v2.1.210 🔥 ⚡ 有條件推薦）；本週推薦與升版風險表未變動（僅同步最新版本行），⏰ 倒數中無變化
+- index.md 狀態變更：新增 `entities/claude-for-teachers`（無 → active）
+- 新增頁面：`wiki/entities/claude-for-teachers.md`
+- 摘要：Anthropic 推出 Claude for Teachers 引發多家媒體同步報導，同時 Claude Code OAuth 登入因 DNS 故障成為本日互動量最高的社群回報（151 留言）
+- 呈現品質：功能／商業／安全政策／社群四類共 9 頁全數 ✅ 通過，僅 `claude-for-teachers.md` 因原始資料未提供教師驗證入口網址，「快速上手」區塊標 📋 已記錄待辦（頁內已誠實標註原因，待後續日報補齊）
+- 品質備註：[安全政策] 記者回報 Fable 5 `/btw` 繞過與澳洲駭客事件涉及 Claude Code 功能面但資訊不足以下結論，已標記「⚠️ 需主編轉知」；因兩則僅有標題層級資訊、功能記者派工時未收到此節錄，主編於此記錄待明日 ingest 若有更多細節時一併轉交功能記者確認是否需記入 `claude-code.md` 已知問題
+
 ## 2026-07-13 Query 後續 | 發現並修正 emitted-cache 靜默丟棄 bug，25 則新聞補回
 
 - **提問**：使用者追問「今天有搜尋 Blogroll 的文章嗎」，查證發現 4 篇 Blogroll 文章確實被抓到但完全沒進日報；追問「這不是 GitHub 蒐集的今天的都會有問題嗎」，進一步比對確認範圍遠大於 Blogroll。

@@ -3,11 +3,11 @@
 **狀態：** monitoring
 **領域：** 🌐 社群
 **開始日期：** 2026-04-25
-**最後更新：** 2026-07-14
-**最後新聞更新：** 2026-07-14
+**最後更新：** 2026-07-15
+**最後新聞更新：** 2026-07-15
 
-> **最新工作流模式**（2026-07-14）
-> Anthropic 官方公布第一方基準數據：Fable 5 編排、便宜模型執行的多模型工作流可在 46% 成本下達 96% 效能，且今日已可在 Claude Code 直接使用；同日另補入 Sx 2.0（免 git 雲端硬碟分享 skill）與 Mr. Meeseeks／aloud 語音提示小趨勢觀察（HN 130 分為本日社群條目最高分）。
+> **最新工作流模式**（2026-07-15）
+> 今日社群互動量偏低，新增 Reddit 跨來源訊號（source_count=2）工具：可從任一訊息分支、合併多個對話串的 Context 精準控制 app，屬「Context 管理」類別新增的使用者手動操作模式；並補記 dev.to（06-18）「AI 工具漸進採用原則」——procedure file 優於 CLI、CLI 優於更重整合，只在證明會重複使用後才建置重機具。07-14 既有工作流模式仍為近期主軸：Anthropic 官方公布 Fable 5 編排、便宜模型執行的多模型工作流可在 46% 成本下達 96% 效能，且已可在 Claude Code 直接使用。
 
 ---
 
@@ -25,7 +25,7 @@
 |------|---------|--------|---------|
 | **Multi-agent 架構** | Claude Squad、Speculative Parallelism、ccteams（套件化團隊配置） | ✅ 成熟 | orchestrator 分派 + 獨立 git worktree，防答案塌縮；ccteams 將驗證良好的 subagent 組合打包為可跨專案安裝的套件 |
 | **Skills 設計** | 知識框架化、流程 skill 化、免 git 雲端硬碟分享（Sx 2.0） | ✅ 成熟 | description 自動觸發，將書籍/流程封裝為可複用 skill；Sx 2.0 將分享管道從 git 延伸至 Dropbox/Drive/iCloud，降低非技術團隊採用門檻 |
-| **CLAUDE.md 管理** | 精簡規則策略、Self-improving Rules、防腐爛機制 | ✅ 成熟 | 以「規則」非「建議」撰寫，CI 攔截違反架構 PR |
+| **CLAUDE.md 管理** | 精簡規則策略、Self-improving Rules、防腐爛機制、漸進式工具採用原則 | ✅ 成熟 | 以「規則」非「建議」撰寫，CI 攔截違反架構 PR；新增能力前先問「會不會重複使用」，procedure file → CLI → 重整合依序升級 |
 | **Hooks 與自動化** | PostToolUse 稽核、Git Hooks 品質門、/goal Fire-and-Forget、deploy/migration 保護、Pre-completion Hook、Stop Hook 音效通知、Hooks 環境感知條件觸發（Adrafinil、氛圍狀態燈） | ✅ 成熟 | 強制執行 > CLAUDE.md 建議；Stop Hook 要求可驗證完成證明；CLAUDE.md 做偏好、Hooks 做邊界；Pre-completion Hook 防模糊結束；hooks 可感知 agent 活躍狀態驅動環境副作用（螢幕喚醒、實體燈光顏色） |
 | **模型使用策略** | 分層模型（Sonnet + Opus）、多模型路由、Workweave Router、跨模態內容生成分工（InstantVideos）、Fable 5 Orchestrator-Executor（官方基準） | ⚡ 活躍 | 依任務複雜度路由，節省 60% 用量；Dragoman / Workweave 自動路由；嵌入 Claude Code / Codex / Cursor 的成本感知路由；InstantVideos 將分工路由思路延伸至內容生成（文字/圖像/影音各交專門模型）；Anthropic 官方基準證實 Fable 5 編排 + 便宜模型執行可達 46% 成本／96% 效能 |
 | **Token / 成本優化** | MCP Code Execution、Token Bloat 對策、本機圖資料庫索引、穴居人模式（Caveman）企業採用 | ⚡ 活躍 | HTML→Markdown 降 80% token；快取不跨 session 是費用主因；極簡輸出模式（穴居人）企業採用獲 404 Media 確認，OpenAI、Nvidia、GitHub 開發者使用 |
@@ -33,7 +33,7 @@
 | **Plugin / MCP 整合** | Plugin 反模式整理、Claude Code 作為 MCP 協調中心 | ⚡ 活躍 | 避免不必要 context 載入；Claude Code 主導 MCP 工具鏈協作 |
 | **多代理 PR Review** | 4-agent Code Review、對抗性審查（計畫前 + 程式碼後）、Read-Only Reviewer | ⚡ 活躍 | 架構師代理協調 + 多廠商模型交叉審查；對抗性審查者讀取真實 codebase；read-only 權限約束維持對立性 |
 | **Agent 版本控制** | ADR 注入、架構決策文件先於實作 | ⏳ 新興 | 決策文件先於實作，降低代理方向偏移風險 |
-| **Context 管理** | Just-in-Time @-file、Repo-as-Memory、Context Rot 修復 | ⚡ 活躍 | 即時取回優於預先加載；repo 是記憶體、模型是工作者；避免 context 過早飽和 |
+| **Context 管理** | Just-in-Time @-file、Repo-as-Memory、Context Rot 修復、對話分支/合併手動控制 | ⚡ 活躍 | 即時取回優於預先加載；repo 是記憶體、模型是工作者；避免 context 過早飽和；新增使用者可視化分支/合併對話以精準控制 context 範圍的手動操作模式 |
 | **Agent 規模化** | 20-instance 崩潰分析、批量 OSS Bug 修復、Personas vs Tool-scoping、Mac Mini 自主 agent 部署、TBD（HN 4，agent-channels 跨 worktree 通訊）、live-log-viewer-next（平行 agent 即時對話地圖） | ⏳ 新興 | 超過 10 個並行 agent 需獨立 worktree + orchestrator 協調層；工具範圍限制比角色描述更可靠的邊界守護；無人監督排程任務已有完整 Mac Mini M4 方案；可觀測性層開始補足「多 agent 進度難追蹤」的協調盲點 |
 | **安全架構** | CLAUDE.md for K8s、語意層漂移 CI 測試、Trent 內嵌評估 | ⏳ 新興 | AI 加速開發下的系統性安全防線；CI 攔截語義退化 |
 | **跨環境 Agent 記憶** | Core Memory Packet、Agent 持續運作架構 | ⏳ 新興 | 跨編輯器 / 跨機器 / 跨模型的供應商中立記憶協定 |
@@ -54,6 +54,13 @@
 ## 技術彙整
 
 ### 2026-07
+
+#### Context 分支與合併：精準控制 Claude 對話可見範圍的手動 Context 管理工具（2026-07-15）
+
+- **核心模式：** 開發者釋出應用程式，讓使用者能從任一則歷史訊息分支（branch）出新對話、並可將多個對話串合併（merge），藉此精準控制 Claude 在後續互動中實際看到的 context 範圍；核心訴求與既有「Context Rot 修復」「Just-in-Time @-file Retrieval」同屬「限制/裁剪 context 輸入」思路，差異在於以對話樹狀分支/合併作為使用者可視化操作介面，而非工具層自動裁剪
+- **與既有模式的關係：** 補充「Context 管理」類別在使用者互動層（非工具自動化層）的手動控制選項；同一貼文 source_count=2（跨來源出現），視為具一定訊號強度，但尚無公開 repo/demo 連結可查證實作細節
+- **來源：** 「I built an app where you control exactly what context Claude sees: branch from any message, merge whole chats. Free to try.」— Reddit r/ClaudeCode（source_count=2）
+- **成熟度：** ⏳ 新興（今日首見，免費試用產品，尚待社群後續採用回饋佐證）
 
 #### Fable 5 Orchestrates, Cheap Models Execute：官方基準 46% 成本達 96% 效能的多模型工作流模式（2026-07-14）
 
@@ -653,6 +660,15 @@
 - **解決的問題：** Boris Cherny「coding is solved」後社群對 vibe coding 的反思——無規格的 AI 代碼容易偏離實際需求並累積技術債
 - **注意：** 對應工具（opsx）已被 HN flagged，社群接受度尚待觀察（GitHub davidpv/opsx-spec-driven-development-toolkit）
 - **訊號：** 單一經驗談，無機制驗證，待社群佐證
+
+#### AI 工具採用漸進原則：先用最輕量的選項，證明會重複使用才上重機具（2026-06-18）
+
+- **核心模式：** 為 AI coding agent 新增能力時，優先採用最輕量的形式——procedure file（純文字流程說明）優於 CLI 工具，CLI 工具優於更重的整合方案；只有在證明會被重複使用後，才值得投入建置較重的機制
+- **協作演化案例：** 作者發布此原則後，一名留言者將其改寫為更完善的版本，作者記錄了社群協作改進規則本身的過程，呈現「規則也該被持續迭代」的示範案例
+- **適用場景：** 判斷是否該為某項重複性工作寫 Skill / Hook / MCP 整合，或先用一份 procedure file 手動起步即可
+- **與既有模式的關係：** 與「CLAUDE.md 規則總量上限：每新規則必刪一條」（06-20）同屬「控制 agent 配置複雜度」思路，本則聚焦「新增能力前的成本評估順序」
+- **來源：** 「I published a rule for picking AI tools. A commenter rewrote it into a better one.」— dev.to / #claudecode（5 讚；依規則以內容第一手程度判斷，非讚數）
+- **成熟度：** ⏳ 新興（單篇經驗談，尚待社群驗證）
 
 #### Multi-agent 工作流
 

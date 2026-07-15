@@ -2,11 +2,20 @@
 
 LLM 查詢此 wiki 時，**先讀這個檔案**找相關頁面，再讀具體頁面取得詳細資訊。
 
-**最後更新：** 2026-07-14
+**最後更新：** 2026-07-15
 ---
 
 ## 近期異動
 
+- [[entities/claude-for-teachers]] — 2026-07-15：**新頁面**，Anthropic 推出 Claude for Teachers，向美國通過認證的 K-12 教師免費開放進階 Claude 功能與教學技能庫，對接全美 50 州學術標準；CBS News、The Hill、Forbes、9to5Mac、Central Oregon Daily 等至少六家獨立媒體同步報導，feature-radar 新增條目（🔥🔥🔥 ⏳ 觀望，快速上手待補）
+- [[entities/claude-code]] — 2026-07-15：**v2.1.210** 發布（收合工具摘要列即時耗時計數器、`Write(path)` 啟動警告）；已知問題新增 6 條——OAuth 登入因 DNS 無法解析完全無法驗證（#33238，151 留言本日最高互動）、GitHub Connector 已連接卻不被辨識（#32479，71 留言）、Remote Control 自動重連失效靜默斷線（#34255，54 留言）、GitLab 整合功能請求（#12346，46 留言）、Environment Contributions 警告持續重現（#3301，40 留言）、跨機器多 agent 協作 A2A 協定功能請求（#28300，35 留言）等；claude.ai container creation 部分中斷已於當日解決
+- [[entities/claude-science]] — 2026-07-15：早期使用者評價浮現：工作流程加快，但仍存在功能缺口（the-scientist.com）
+- [[topics/anthropic-business]] — 2026-07-15：新增戰略合作 4 列——Claranova PDF 工具整合 Claude API、Anthropic 承諾 1,000 萬加幣支持加拿大 AI 研究、Optum 醫療合作＋UST 整合、Varonis 為 Claude Code/Cowork 提供 runtime 安全防護
+- [[topics/competitor-landscape]] — 2026-07-15：HackerNoon 比較 Claude Code vs Codex vs OpenCode（跨來源轉載）；Technology Org 分析 Claude Code 內部邏輯凸顯 Anthropic-Alibaba 競爭關係
+- [[topics/anthropic-government-policy]] — 2026-07-15：Anthropic 招募人力應對災難性風險（Axios）、推動逐州加強 AI 監管規則計畫（Politico）、EU 官員對僅派初階員工出席安全聽證會表達不滿（politico.eu），三則均僅標題層級資訊，記為待觀察
+- [[topics/ai-agent-safety]] — 2026-07-15：Fable 5 疑似遭 `/btw` 指令繞過安全限制（Crypto Briefing）、澳洲企業因 Claude Code 遭駭客利用而面臨風險（TechRepublic）、HN 展示可還原 Sonnet 5/Opus 4.8 加密推理簽章（score 2，低優先度記錄）——三則均僅標題層級資訊，標「❓ 待查證」
+- [[topics/community-tech-discussions]] — 2026-07-15：新增 Launch HN Agnost AI（79 分，agent 對話回饋分析 SaaS）、dev.to「30 天讓 Claude Code 寫 90% 程式碼後變成更差的開發者」第一手反思、Armin Ronacher 具名引用（🔥，無社群延燒）
+- [[topics/community-tech-patterns]] — 2026-07-15：新增 Reddit context 分支/合併管理工具（source_count=2 跨來源訊號）、dev.to「AI 工具挑選漸進採用原則」經留言者改寫案例
 - [[entities/pricing]]／[[topics/anthropic-business]]／[[topics/competitor-landscape]] — 2026-07-14：**Anthropic 於印度啟動盧比計價**，Pro 方案訂為每月 Rs 2,000（TechCrunch/NDTV/Times of India/bestmediainfo 多家媒體同步報導），回應長期未獲回應的印度 INR 定價需求（GitHub Issue 👍584）；The Register 分析 tokenizer 設計複雜化跨供應商定價比較；$65K Anthropic 職缺薪資爭議（IPO 熱潮期間，舊金山房市緊繃背景）記入商業時序；Musk「AI 領域明確領先者」表態記入 competitor-landscape（人物記者依既有慣例轉知商業記者處理，未建 Musk 獨立人物頁）
 - [[entities/claude-code]] — 2026-07-14：**v2.1.209** 發布（純 bug fix，修復 `/model` 對話框在背景 session 被過度防護阻擋的問題，回退先前過寬防護邏輯）；已知問題新增 3 條：OAuth 登入因 `auth.anthropic.com` DNS 無法解析完全無法驗證（#33238，150 留言本日最高互動）、「tool call could not be parsed」間歇性中斷 session（#63875／#62123 兩則獨立回報合併追蹤）、伺服器端速率限制與用量上限無關（#53915）；內建瀏覽器與 Cowork 行動/網頁版報導核對後確認為既有事件重複來源，未加熱度
 - [[topics/anthropic-government-policy]]／[[entities/mythos]] — 2026-07-14：Reuters 獨家報導**加拿大金融監管機關在銀行業網路風險警告信中引用 Claude Mythos**，為出口管制解除後監管機構首度將 Mythos 能力明確點名的風險評估案例；另記錄 Hegseth 稱 Anthropic 為「國安風險」但 CISA 已在使用其產品的政府內部立場矛盾案例
@@ -148,6 +157,7 @@ LLM 查詢此 wiki 時，**先讀這個檔案**找相關頁面，再讀具體頁
 | [[entities/claude-tag]] | feature | 🛠️ 工具/功能 | active | Claude Tag：Slack-native AI 協作工具，可讀取頻道上下文、跨 session 記憶、主動完成任務；Anthropic 內部 65% 程式碼由其生成 |
 | [[entities/fable-5]] | model | 🤖 模型 | active（已解禁）| Claude Fable 5：首款 Mythos 級公開模型，$10/$50 per M token；7/1 解禁，Pro/Max/Team 7/7 前享 50% 配額，7/7 後 usage-based billing |
 | [[entities/tom-blomfield]] | person | 👤 人物 | active（待核實）| 前 Monzo 共同創辦人，2026-07-13 加入 Anthropic（Business Insider 單一來源，AI compute／Y Combinator 背景）|
+| [[entities/claude-for-teachers]] | product | 🛠️ 工具/功能 | active | Anthropic 面向美國通過認證 K-12 教師的免費方案，開放進階 Claude 功能與教學技能庫，對接全美 50 州學術標準 |
 
 ---
 

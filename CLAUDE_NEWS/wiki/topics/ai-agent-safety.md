@@ -3,17 +3,17 @@
 **狀態：** ongoing
 **領域：** 🏛️ 政策/安全
 **開始日期：** 2026-04-27
-**最後更新：** 2026-07-12
-**最後新聞更新：** 2026-07-11
+**最後更新：** 2026-07-15
+**最後新聞更新：** 2026-07-15
 
-> **最新安全事件**（2026-07-09）
-> Anthropic 研究部落格發布「An off switch for dual-use knowledge in AI models」，說明針對化學/生物等雙重用途知識的模型層「關閉開關」機制，屬官方主動安全機制揭露。**中美 AI 工具信任對峙**（中國代理偵測程式碼、同形字符隱寫術指控、Alibaba/Meta 禁用、中國官方「後門」警示、Anthropic 07-10 首度公開否認）已整合為獨立頁 [[topics/safety-china-trust-dispute]]，完整逐日時序與可信度評估見該頁；本頁僅保留與 Claude Code 漏洞/提示注入主線直接相關的技術內容。
+> **最新安全事件**（2026-07-15，待查證）
+> 兩則僅標題可用的 Google News 轉址報導：Crypto Briefing 指有人透過 Claude Code `/btw` 指令繞過 Claude Fable 5 安全限制；TechRepublic 指 Anthropic 發現駭客利用 Claude Code 使澳洲企業面臨風險。兩則均無法取得原文細節，記為待查證條目。另有 HN score 2 的低互動 Show HN，聲稱可還原 Claude Opus 4.8 / Sonnet 5 加密推理簽章的原始推理過程，暫列低優先度待觀察。**中美 AI 工具信任對峙**（中國代理偵測程式碼、同形字符隱寫術指控、Alibaba/Meta 禁用、中國官方「後門」警示、Anthropic 07-10 首度公開否認）已整合為獨立頁 [[topics/safety-china-trust-dispute]]，完整逐日時序與可信度評估見該頁；本頁僅保留與 Claude Code 漏洞/提示注入主線直接相關的技術內容。
 
 ---
 
 ## 摘要
 
-**最新態勢（2026-07-09）：** Anthropic 研究部落格發布「An off switch for dual-use knowledge in AI models」，說明針對化學/生物等雙重用途知識的模型層「關閉開關」機制，屬官方主動安全機制揭露。
+**最新態勢（2026-07-15，待查證）：** 兩則僅標題可用的 Google News 轉址報導——Crypto Briefing 指有人透過 Claude Code `/btw` 指令繞過 Claude Fable 5 安全限制；TechRepublic 指 Anthropic 發現駭客利用 Claude Code 使澳洲企業面臨風險——均無法取得原文技術細節，記為待查證條目。另有 2026-07-09 Anthropic 研究部落格發布「An off switch for dual-use knowledge in AI models」，說明針對化學/生物等雙重用途知識的模型層「關閉開關」機制，屬官方主動安全機制揭露。
 
 **中美 AI 工具信任對峙已獨立成頁：** 中國代理偵測程式碼（06-30 起）、同形字符隱寫術指控（07-01）、Alibaba 禁用 Claude Code + Meta 限制工程師使用 Claude（07-03～07-07）、Anthropic「實驗」定調（07-07）、中國官方正式「後門」資安警示（07-08）、延燒第二/三天（07-09/07-10）、Anthropic 首度公開否認（07-10）等一系列社群/企業/政府/官方互動，已於 2026-07-12 整合拆出至 [[topics/safety-china-trust-dispute]]，本頁不再重複維護詳細敘事，僅保留與模型層/產品層漏洞直接相關的技術細節。政策/外交面完整分析仍見 [[topics/anthropic-government-policy]]。
 
@@ -34,6 +34,8 @@
 | .env secret 明文存於本機 SQLite，標準 scanner 無法偵測 | 2026-05-19 | 所有本機開發環境 | 無回應 | 🔴 未修補 |
 | Claude Code 根目錄掃描暴露 SSH 私鑰於 context | 2026-06-20 | 多租戶 / 共用環境風險更高 | 已承認行為存在，未修補 | 🔴 未修補 |
 | Session 歷史 30 天自動刪除，無法延長保留期 | 2026-05-01 | 需長期審計追蹤的企業用戶 | 明確拒絕修復（GitHub #62476，見 [[topics/anthropic-commitments]]） | ⛔ 官方拒修（承諾不會做） |
+| Fable 5 `/btw` 指令據稱可繞過安全限制（僅標題可用） | 2026-07-15 | 待確認（若屬實，涉及所有 Claude Code + Fable 5 使用者） | 無回應（尚無原文可查） | ❓ 待查證 |
+| Anthropic 發現駭客利用 Claude Code，澳洲企業面臨風險（僅標題可用） | 2026-07-15 | 待確認（若屬實，澳洲企業為主要受影響對象） | 無回應（尚無原文可查） | ❓ 待查證 |
 
 ---
 
@@ -43,6 +45,8 @@
 
 | 結論 | 狀態 | 日期 |
 |------|------|------|
+| Fable 5 `/btw` 指令據稱可繞過安全限制；Anthropic 發現駭客利用 Claude Code 使澳洲企業面臨風險（兩則僅 Google News 標題可用，無原文細節） | ❓ 待查證，未經第三方或官方確認 | 2026-07-15 |
+| Claude Opus 4.8 / Sonnet 5 加密推理簽章聲稱遭還原（HN score 2，互動量極低） | ❓ 低優先度待觀察，未經第三方驗證 | 2026-07-14 |
 | 中美 AI 工具信任對峙延燒（社群指控 → 企業禁用 → 官方定調「實驗」→ 政府層級升級 → Anthropic 首度否認），完整時序見 [[topics/safety-china-trust-dispute]] | 🔴 雙方各自表態，均無第三方驗證 | 2026-06-30～07-10 |
 | Anthropic 發布雙重用途知識（dual-use knowledge）模型層「關閉開關」機制說明 | 🛠️ 官方主動安全機制 | 2026-07-09 |
 | Radware 將 Claude Code 防護納入 agent 安全產品線 | 🛠️ 第三方防護生態擴張 | 2026-07-07 |
@@ -81,6 +85,30 @@
 ### 中美 AI 工具信任對峙（2026-06-30 起，已於 2026-07-12 整合拆出至獨立頁）
 
 完整敘事——Claude Code 中國代理偵測程式碼（v2.1.91，06-30/07-02）、兩則獨立同形字符隱寫術指控（07-01，thereallo.dev + dev.to/adioof）、Alibaba 禁用 Claude Code + Meta 限制工程師使用 Claude（07-03～07-07）、Anthropic「實驗」定調（07-07）、中國官方正式「後門」資安警示（07-08）、延燒第二/三天（07-09/07-10）、Anthropic 首度公開否認（07-10）——已整併至 [[topics/safety-china-trust-dispute]]，含逐日時序、可信度評估、完整媒體來源列表。本頁不再重複維護此段敘事；政策/外交面完整分析另見 [[topics/anthropic-government-policy]]。
+
+### Fable 5 `/btw` 指令繞過安全限制（2026-07-15 新增，待查證）
+
+- **揭露來源**：Crypto Briefing（經 Google News 轉載，2026-07-15 00:23 UTC）；僅標題可用，原文為 Google News 轉址頁面，無法取得完整內容
+- **標題訊息**：報導標題指出有人透過 Claude Code 中的 `/btw` 指令繞過 Claude Fable 5 的安全限制（"Claude Fable 5 security bypassed using '/btw' command in Claude Code"）
+- **事件分類**：屬新繞過手法披露，性質上與 2026-06-22 Fable 5 三詞越獄「Fix this code」同類——若屬實，代表 Fable 5 護欄持續出現輕量觸發語即可繞過的模式
+- **可信度評估（待確認）**：僅單一媒體標題轉載，無法取得原文技術細節、影響範圍、Anthropic 是否回應或是否已修補；不排除為既有 06-22「Fix this code」事件的變體報導，須待原文或第二來源確認
+- **與既有條目關聯**：見下方「Fable 5 三詞越獄：『Fix this code』（2026-06-22 新增）」
+
+### Anthropic 發現駭客利用 Claude Code，澳洲企業面臨風險（2026-07-15 新增，待查證）
+
+- **揭露來源**：TechRepublic（經 Google News 轉載，2026-07-15 06:57 UTC）；僅標題可用，原文為 Google News 轉址頁面，無法取得完整內容
+- **標題訊息**：報導標題指出 Anthropic 發現有駭客利用 Claude Code，使澳洲企業面臨風險（"Australian Enterprises At Risk as Anthropic Finds Hackers In Claude Code"）
+- **事件分類**：屬「攻擊者利用 Claude Code 進攻性操作」類別，性質上呼應 2026-06-16 OALABS 蜜罐分析（攻擊者以 Claude Code 入侵 14 家企業）——若屬實，差異在於本次揭露方為 Anthropic 官方而非第三方研究，且風險對象明確指向澳洲企業
+- **可信度評估（待確認）**：僅單一媒體標題轉載，無法確認具體攻擊手法、受影響企業名稱或數量、Anthropic 官方聲明全文，或是否已有修補/防護措施；待原文或 Anthropic 官方公告確認
+- **與既有條目關聯**：見下方「OALABS 分析：攻擊者使用 Claude + Codex 入侵 14 家企業（2026-06-20 新增）」
+
+### Claude Opus 4.8 / Sonnet 5 加密推理簽章聲稱遭還原（2026-07-14 新增，低優先度待觀察）
+
+- **揭露來源**：Hacker News「Show HN: Unlock Claude Sonnet 5's original reasoning」（2026-07-14 17:18 UTC，score 2）
+- **內容摘要**：開發者展示聲稱可從 Claude Opus 4.8 與 Sonnet 5 加密的推理簽章（thinking signature）中還原出原始推理過程，提供「Prove It Yourself」範例與線上即時對話示範
+- **事件分類**：與本頁多數條目聚焦的 Claude Code 產品層漏洞不同，此案例涉及模型輸出層的加密機制（推理簽章）被聲稱破解，性質上更接近模型層安全/隱私機制的技術揭露
+- **可信度評估（待確認，低優先度）**：HN 互動量極低（score 2，未達互動門檻對照表「低」門檻 10 分），僅單一開發者自行展示的 demo，未見第三方驗證或 Anthropic 官方回應；技術可信度與還原內容的完整性均未經獨立確認，暫記錄待後續觀察是否有跟進報導或官方回應
+- **安全政策含義（若屬實，待確認）**：推理簽章原設計目的可能包含防止用戶篡改/偽造推理過程或避免中間推理內容外洩；若可被還原，可能影響依賴此機制的信任假設，但目前資訊不足以判斷實際影響範圍
 
 ### Anthropic 研究：AI 模型雙重用途知識「關閉開關」機制（2026-07-09 新增，官方主動安全機制）
 
@@ -324,6 +352,7 @@
 
 ## 參考來源
 
+- [[news/2026-07-15]]
 - [[news/2026-07-10]]
 - [[news/2026-07-08]]
 - [[news/2026-07-07]]
@@ -355,6 +384,13 @@
 > 更早期時序見 [[topics/ai-agent-safety-archive]]
 
 > **中美 AI 工具信任對峙**（06-30～07-10：中國代理偵測程式碼、隱寫術指控、Alibaba/Meta 禁用、中國官方後門警示、Anthropic 首度否認）完整逐日時序已整合至 [[topics/safety-china-trust-dispute]]，此處不再重複條目，僅保留與本頁漏洞/提示注入主線相關者。
+
+### 2026-07-15
+- **[待查證] Fable 5 `/btw` 指令據稱可繞過安全限制**：Crypto Briefing（經 Google News 轉載）標題指出有人透過 Claude Code `/btw` 指令繞過 Claude Fable 5 安全限制；僅標題可用，原文為轉址頁面，無法取得技術細節（Google News/Crypto Briefing，2026-07-15 00:23 UTC）
+- **[待查證] Anthropic 發現駭客利用 Claude Code，澳洲企業面臨風險**：TechRepublic（經 Google News 轉載）標題指出 Anthropic 發現有駭客利用 Claude Code，使澳洲企業面臨風險；僅標題可用，原文為轉址頁面，無法取得技術細節或受影響企業資訊（Google News/TechRepublic，2026-07-15 06:57 UTC）
+
+### 2026-07-14
+- **[低優先度待觀察] Claude Opus 4.8 / Sonnet 5 加密推理簽章聲稱遭還原**：Hacker News Show HN 展示可從 Claude Opus 4.8 與 Sonnet 5 加密推理簽章還原原始推理過程的 demo；HN score 2，互動量極低，未見第三方驗證或官方回應（Hacker News，2026-07-14 17:18 UTC）
 
 ### 2026-07-07
 - **[防護生態] Radware 將 Claude Code 防護納入 agent 安全產品線**：SiliconANGLE、Let's Data Science、Stock Titan 三獨立來源報導資安公司 Radware 將 Claude Code 防護與合規/稽核報告功能納入其 AI agent 安全產品線，屬第三方商業防護生態擴張訊號（SiliconANGLE，https://siliconangle.com/2026/07/07/radware-adds-claude-code-protection-compliance-reporting-agent-security/）

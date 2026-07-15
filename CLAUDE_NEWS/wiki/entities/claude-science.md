@@ -4,12 +4,14 @@
 **狀態：** active
 **領域：** 🛠️ 工具/功能
 **首次出現：** 2026-07-01
-**最後更新：** 2026-07-01
-**最後新聞更新：** 2026-07-01
+**最後更新：** 2026-07-15
+**最後新聞更新：** 2026-07-15
 
 ---
 
 ## 現況
+
+**早期使用者評價（2026-07-15）：** the-scientist.com 報導科學研究者對 Claude Science 的早期評價：工作流程加快，但仍存在功能缺口（"Faster Workflows, But Gaps Remain"）。原文僅有標題可用（Google News 轉址頁面無法取得完整內容），具體缺口項目與量化證據待後續報導補齊。
 
 Claude Science 是 Anthropic 於 2026-07-01 發布的科學家專用 AI 工作台 app。整合研究常用工具套件、可稽核 artifact（Auditable Artifacts）與彈性雲端運算資源，定位為科研人員的端對端 AI 研究平台。使用者可直接存取此 app，無需自行配置底層 API。
 
@@ -48,10 +50,13 @@ Claude Science 是 Anthropic 於 2026-07-01 發布的科學家專用 AI 工作�
 ## 參考來源
 
 - [Anthropic Blog: Claude Science AI Workbench](https://www.anthropic.com/news/claude-science-ai-workbench)（2026-07-01）
+- Google News / the-scientist.com："Early Verdicts on Claude Science: Faster Workflows, But Gaps Remain"（2026-07-15，僅標題可用）
 - [[news/2026-07-01]]
+- [[news/2026-07-15]]
 
 ## 歷史記錄
 
 | 日期 | 事件 |
 |------|------|
+| 2026-07-15 | the-scientist.com 報導科學研究者早期評價：工作流程加快，但仍存在功能缺口；僅標題可用，細節待補 |
 | 2026-07-01 | 正式發布，科學家專用 AI 工作台 app，整合研究工具套件、可稽核 artifact 與彈性雲端運算 |
