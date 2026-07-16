@@ -2790,3 +2790,23 @@ Append-only 紀錄。每次 ingest、lint，以及**揭露缺陷或促成改動�
 - 品質備註：
   - [安全政策→功能] 「Claude Code and DeepSeek Powered Chinese Cyber Espionage Campaign」一則涉及 Claude Code 被指用作攻擊工具鏈之一，安全政策記者已標註「請主編轉知功能記者」，惟功能記者當次派工已先行完成、未能即時收到此轉知，故本則暫僅記錄於 ai-agent-safety.md（標「僅標題可用/待查證」），功能記者下次 ingest 應檢視是否需在 claude-code.md 補充對應說明或已知問題條目
   - [社群→商業/人物] 「Where are YC founders now? OpenAI and Anthropic, mostly」（HN 85 分，達收錄高門檻）內容為 YC 創辦人流向 OpenAI/Anthropic 的人才資料，性質貼近 `topics/ai-talent-flow.md`（商業記者）或人物記者範疇，非社群記者四頁可收，社群記者已標記但本次主編判斷屬單一網站彙整、無具名個別事件錨點，暫不強制建檔，留待後續日報出現具體人物加入事件時再行收錄
+## 2026-07-16 週度延伸回顧
+
+- 延伸（六記者並行判斷 → 使用者確認全六項執行，均帶 model:sonnet，續用原 agent context 執行）：
+  - `entities/claude-code.md`：已知問題新增「🔌 MCP 整合」分組，整併 #5826（OAuth 2.1 無法連線 Desktop，66 留言本週最高互動）/#5706（token 刷新缺失）/#1785（MCP Sampling）/#33969/#24057/MCP Token 消耗共 6 條；計費與配額組頭 12→10、平台相容性 29→25 同步；本週 4/5 天日報有 MCP 訊號
+  - `topics/community-tech-discussions.md`：長期議題加開第 6 子區塊「Anthropic 透明度與信任赤字」，彙整 06-23 帳號封禁無申訴、06-30 spyware 指控、07-01 隱寫（HN 2263）、07-01 成本 5x 暴增、07-02 未公開系統訊息、07-06 好感度流失（HN 97）、07-13 Zed 創作者具名批評（HN 557）、07-13 Reddit 溝通抱怨共 8 起分散事件為索引；07-05/07-06 收斂結論補指向句
+  - `topics/anthropic-government-policy.md`：補 07-13 澳洲著作權遊說（Anthropic 向財長 Chalmers 表態 210 億美元投資取決於著作權法規明確性；AFR＋TechXplore 兩獨立來源）——繼奧地利/歐盟後第二個具名國家級「投資換政策」互動；callout 覆寫、攻防紀錄/時序 prepend
+  - `topics/enterprise-cost-management.md`：補 07-13「$16.6M 帳務錯誤、企業被多收 $1.7M」事件與 07-04 Spend Controls 的可信度對比（標推論）；該頁自 07-05 未更新的同步缺口關閉
+  - `topics/anthropic-business.md`：「IPO 前瞻與估值追蹤」表補 07-10 Bernanke 入長期利益信託列（治理公信力面，對應 FT 結構性質疑）
+  - `entities/bernanke.md`／`entities/teresa-carlson.md`：補 [[entities/tom-blomfield]] 與彼此 wikilink，三筆外部延攬人事三向可導覽
+- reader-notes 消費：GPT-5.6 vs Claude（07-12 ⏳）——模型/商業/社群三記者分頭查證 07-09~07-13 日報，仍無官方 benchmark 或可信第一手數字（僅 ZDNET/Reuters 定性、Reddit 臆測），維持 ⏳ 並補記查證結果，下次回顧再查；📌 07-07 雜記未逾 30 天保留
+- 使用者跳過項目：無
+- 聚焦校準：**首次實際執行**——發現跳過條件結構性漏洞（07-04 回顧早於規則誕生〔07-05〕卻佔用「本月首次」名額，導致 07-05/07-12/07-16 連續誤跳過，metrics.md 聚焦命中率欄三列全 —；由使用者提問「聚焦校準有做過嗎」揭露）。本次回看 06-14~06-20 聚焦 → 30 天：命中率 36%（4/11，部分命中計 0.5 則 41%）；命中：Fable/Mythos 管制線、Agent SDK 計費、SpaceX/Cursor、John Jumper；誤報 6：Karl Kahn 訴訟、Artifacts、磁碟掃描、Pentagon、Show HN 工具批次 ×2；漏報 1：Agentjacking（具名資安揭露，至今 🔴 未修復仍在追蹤）。偏誤模式：(1) Show HN 工具類 0/9 系統性高估；(2) 具名資安揭露權重低於熱度；(3) 訴訟類 30 天窗口先天不利（非選材錯誤）。命中率已 append `wiki/metrics.md`。選材指引修正提案（news-pipeline-steps.md Step 1b 加「新工具/風險警示選入門檻」）＋跳過條件修正提案（改查 metrics.md 聚焦命中率欄本月有無數值）均待使用者確認後才修改
+- 品質備註：無
+
+## 2026-07-16 Query：聚焦校準有做過嗎
+
+- **提問**：使用者問「聚焦校準有做過嗎?」。
+- **查證**：`wiki/metrics.md` 聚焦命中率欄三列全 `—`；log 07-04/07-05 回顧無校準記錄、07-12 與本次均判「非本月首次」跳過。
+- **根因**：跳過條件「log.md 本月尚無週度延伸回顧記錄」查的是執行記錄而非產出物——規則 07-05 誕生時 07-04 記錄已存在，當月名額被規則誕生前的回顧佔用，之後每週都誤判已做過。
+- **處置**：本 session 立即補跑首次聚焦校準（結果見上條）；防再犯修正提案（判斷方式改查 metrics.md 聚焦命中率欄）待使用者確認。

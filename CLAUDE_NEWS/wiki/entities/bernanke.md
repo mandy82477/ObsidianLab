@@ -4,7 +4,7 @@
 **狀態：** active
 **領域：** 👤 人物
 **首次出現：** 2026-07-10
-**最後更新：** 2026-07-11
+**最後更新：** 2026-07-16
 **最後新聞更新：** 2026-07-10
 
 > **最新動態**（2026-07-09）
@@ -25,6 +25,8 @@
 - [[topics/anthropic-government-policy]] — Anthropic 與政府互動、治理與監管議題
 - [[topics/ai-talent-flow]] — Anthropic 延攬資深高管/治理外部化的人才佈局敘事
 - [[entities/dario-amodei]] — Anthropic CEO，長期利益信託所監督對象
+- [[entities/teresa-carlson]] — 近期同批加入 Anthropic 的外部高管案例（2026-07-07，公部門業務，待核實）
+- [[entities/tom-blomfield]] — 近期同批加入 Anthropic 的知名外部人士案例（2026-07-13，待核實）
 
 ## 參考來源
 
