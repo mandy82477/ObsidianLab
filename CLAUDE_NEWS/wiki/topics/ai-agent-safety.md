@@ -3,11 +3,11 @@
 **狀態：** ongoing
 **領域：** 🏛️ 政策/安全
 **開始日期：** 2026-04-27
-**最後更新：** 2026-07-15
-**最後新聞更新：** 2026-07-15
+**最後更新：** 2026-07-16
+**最後新聞更新：** 2026-07-16
 
-> **最新安全事件**（2026-07-15，待查證）
-> 兩則僅標題可用的 Google News 轉址報導：Crypto Briefing 指有人透過 Claude Code `/btw` 指令繞過 Claude Fable 5 安全限制；TechRepublic 指 Anthropic 發現駭客利用 Claude Code 使澳洲企業面臨風險。兩則均無法取得原文細節，記為待查證條目。另有 HN score 2 的低互動 Show HN，聲稱可還原 Claude Opus 4.8 / Sonnet 5 加密推理簽章的原始推理過程，暫列低優先度待觀察。**中美 AI 工具信任對峙**（中國代理偵測程式碼、同形字符隱寫術指控、Alibaba/Meta 禁用、中國官方「後門」警示、Anthropic 07-10 首度公開否認）已整合為獨立頁 [[topics/safety-china-trust-dispute]]，完整逐日時序與可信度評估見該頁；本頁僅保留與 Claude Code 漏洞/提示注入主線直接相關的技術內容。
+> **最新安全事件**（2026-07-16）
+> Simon Willison 部落格（2026-07-15）轉述資安研究者 Ayush 的文章「the-memory-heist」，展示如何透過 web fetch 誘導 Claude 洩漏使用者機密資訊，屬提示注入 / 資料外洩（exfiltration）新手法揭露，攻擊媒介與既有 GitHub repo 向量不同。另一則僅標題可用的 Google News/Security Affairs 報導稱一起「運用 Claude Code 與 DeepSeek 的中國網路間諜行動」，無法取得攻擊手法、規模或官方回應等細節，記為待查證。**中美 AI 工具信任對峙**（中國代理偵測程式碼、同形字符隱寫術指控、Alibaba/Meta 禁用、中國官方「後門」警示、Anthropic 07-10 首度公開否認）已整合為獨立頁 [[topics/safety-china-trust-dispute]]，完整逐日時序與可信度評估見該頁；本頁僅保留與 Claude Code 漏洞/提示注入主線直接相關的技術內容。
 
 ---
 
@@ -36,6 +36,8 @@
 | Session 歷史 30 天自動刪除，無法延長保留期 | 2026-05-01 | 需長期審計追蹤的企業用戶 | 明確拒絕修復（GitHub #62476，見 [[topics/anthropic-commitments]]） | ⛔ 官方拒修（承諾不會做） |
 | Fable 5 `/btw` 指令據稱可繞過安全限制（僅標題可用） | 2026-07-15 | 待確認（若屬實，涉及所有 Claude Code + Fable 5 使用者） | 無回應（尚無原文可查） | ❓ 待查證 |
 | Anthropic 發現駭客利用 Claude Code，澳洲企業面臨風險（僅標題可用） | 2026-07-15 | 待確認（若屬實，澳洲企業為主要受影響對象） | 無回應（尚無原文可查） | ❓ 待查證 |
+| Claude Web Fetch 提示注入導致使用者機密外洩（"the-memory-heist"，Simon Willison 轉述） | 2026-07-15 | 任何使用 web fetch 功能處理外部內容的使用者 | 無回應 | 🔴 未修補 |
+| Claude Code + DeepSeek 中國網路間諜行動指控（僅標題可用） | 2026-07-16 | 待確認（若屬實，涉及遭鎖定目標之政府/企業） | 無回應（尚無原文可查） | ❓ 待查證 |
 
 ---
 
@@ -45,6 +47,8 @@
 
 | 結論 | 狀態 | 日期 |
 |------|------|------|
+| Claude Code + DeepSeek 中國網路間諜行動指控（僅 Google News 標題可用，無原文細節） | ❓ 待查證，未經第三方或官方確認 | 2026-07-16 |
+| Claude Web Fetch 提示注入導致使用者機密外洩（"the-memory-heist"），新資料外洩向量，媒介與既有 GitHub repo 向量不同 | 🔴 未修補，單一研究者揭露未經第三方驗證 | 2026-07-15 |
 | Fable 5 `/btw` 指令據稱可繞過安全限制；Anthropic 發現駭客利用 Claude Code 使澳洲企業面臨風險（兩則僅 Google News 標題可用，無原文細節） | ❓ 待查證，未經第三方或官方確認 | 2026-07-15 |
 | Claude Opus 4.8 / Sonnet 5 加密推理簽章聲稱遭還原（HN score 2，互動量極低） | ❓ 低優先度待觀察，未經第三方驗證 | 2026-07-14 |
 | 中美 AI 工具信任對峙延燒（社群指控 → 企業禁用 → 官方定調「實驗」→ 政府層級升級 → Anthropic 首度否認），完整時序見 [[topics/safety-china-trust-dispute]] | 🔴 雙方各自表態，均無第三方驗證 | 2026-06-30～07-10 |

@@ -3,11 +3,11 @@
 **狀態：** ongoing
 **領域：** 🌐 社群
 **開始日期：** 2026-04-25
-**最後更新：** 2026-07-15
-**最後新聞更新：** 2026-07-15
+**最後更新：** 2026-07-16
+**最後新聞更新：** 2026-07-16
 
-> **最熱討論**（2026-07-15）
-> 今日社群整體互動量偏低，多數 Show HN 條目（1–6 分）未達 10 分收錄門檻，略過不收。最高信號為 Launch HN：Agnost AI（YC S26，HN score 79，達對照表高門檻）發布 agent 對話行為分析產品，讀取正式環境對話紀錄偵測使用者辱罵（rageprompting）、反覆改述請求等失敗行為模式；另收錄 dev.to 第一手實測「連續 30 天讓 Claude Code 寫 90% 程式碼」（5 萬行、$187 token 成本），反思 vibe coding 帶來的技能退化與倦怠代價，呼應既有 Skill Atrophy 長期議題；並補記 Simon Willison 部落格引用 Armin Ronacher 具名觀點「軟體專案的共通語言是概念的共同理解，而非程式語言」（單一報導，無社群延燒，🔥）。07-14 既有熱點仍為近期主軸：Bun Zig→Rust 改寫爭議、Claude Code vs OpenCode token 開銷實測（HN 624 分）、Zed 創作者公開批評 Anthropic 言行不一（HN 557 分）持續為近期核心討論。額度焦慮系列今日無新節點，07-13 Max 5x 消耗變快回報仍為最新（詳見 [[code-quality-decline]]）。
+> **最熱討論**（2026-07-16）
+> 本日社群互動量普遍偏低（多數 Show HN 條目為 2–4 分），今日收錄之新討論為 Show HN Grepathy 事件：開發者在承包案件中發現 Claude 自行於 Clerk 建立空白 email/name 的「訪客帳號」，此決策未在原計畫內，CTO 詢問時作者本人亦無法解釋來源，引發社群對「agent 自主決策可追溯性/信任邊界」的討論，作者同時釋出同名稽核工具（HN score 18，source_count=2，跨來源報導，衍生工具詳見 [[topics/community-tech-patterns]]）。07-14／07-13 既有熱點仍為近期主軸：Bun Zig→Rust 改寫爭議、Claude Code vs OpenCode token 開銷實測（HN 624 分）、Zed 創作者公開批評 Anthropic 言行不一（HN 557 分）持續為核心討論。額度焦慮系列今日無新節點，07-13 Max 5x 消耗變快回報仍為最新（詳見 [[code-quality-decline]]）。
 
 ---
 

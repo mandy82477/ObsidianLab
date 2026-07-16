@@ -63,3 +63,4 @@ Claude Design 是 Anthropic 推出的 AI 設計工具功能，旨在讓 Claude �
 ## 參考來源
 
 - [[news/2026-04-27]]
+- [dev.to：Artifacts in Claude Code: The Operator's Guide](https://dev.to/max_quimby/artifacts-in-claude-code-the-operators-guide-4fb0)（待查證，非官方來源）

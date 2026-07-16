@@ -3,11 +3,11 @@
 **狀態：** monitoring
 **領域：** 🌐 社群
 **開始日期：** 2026-04-25
-**最後更新：** 2026-07-15
-**最後新聞更新：** 2026-07-15
+**最後更新：** 2026-07-16
+**最後新聞更新：** 2026-07-16
 
-> **最新工作流模式**（2026-07-15）
-> 今日社群互動量偏低，新增 Reddit 跨來源訊號（source_count=2）工具：可從任一訊息分支、合併多個對話串的 Context 精準控制 app，屬「Context 管理」類別新增的使用者手動操作模式；並補記 dev.to（06-18）「AI 工具漸進採用原則」——procedure file 優於 CLI、CLI 優於更重整合，只在證明會重複使用後才建置重機具。07-14 既有工作流模式仍為近期主軸：Anthropic 官方公布 Fable 5 編排、便宜模型執行的多模型工作流可在 46% 成本下達 96% 效能，且已可在 Claude Code 直接使用。
+> **最新工作流模式**（2026-07-16）
+> 今日社群互動量回升，本日最高分為 Show HN Brainless：模仿 Claude Code/Codex/Grok 介面風格的 shadcn 元件庫（HN 124 分），一行指令即可安裝進專案；另收錄 Agentty（C++26 撰寫的 Claude Code drop-in 替代品，11MB 二進位檔，HN 38 分，討論聚焦「重點在 harness 設計而非單純呼叫 API」）；跨來源訊號（source_count=2）新增 OtoDock（自架伺服器運行 Claude Code + Codex agent 團隊）與 Grepathy（偵測、追蹤 agent 未經核准自主決策的稽核工具，衍生自 [[topics/community-tech-discussions]] 同日收錄的信任疑慮討論）。07-15 既有模式（Context 分支/合併工具）與 07-14 Fable 5 官方編排基準仍為近期背景。
 
 ---
 
@@ -23,7 +23,7 @@
 
 | 類別 | 代表技巧 | 成熟度 | 核心概念 |
 |------|---------|--------|---------|
-| **Multi-agent 架構** | Claude Squad、Speculative Parallelism、ccteams（套件化團隊配置） | ✅ 成熟 | orchestrator 分派 + 獨立 git worktree，防答案塌縮；ccteams 將驗證良好的 subagent 組合打包為可跨專案安裝的套件 |
+| **Multi-agent 架構** | Claude Squad、Speculative Parallelism、ccteams（套件化團隊配置）、OtoDock（自架伺服器 Claude Code + Codex 團隊） | ✅ 成熟 | orchestrator 分派 + 獨立 git worktree，防答案塌縮；ccteams 將驗證良好的 subagent 組合打包為可跨專案安裝的套件；OtoDock 將 Claude Code 與 Codex 組成協作團隊部署於自有伺服器 |
 | **Skills 設計** | 知識框架化、流程 skill 化、免 git 雲端硬碟分享（Sx 2.0） | ✅ 成熟 | description 自動觸發，將書籍/流程封裝為可複用 skill；Sx 2.0 將分享管道從 git 延伸至 Dropbox/Drive/iCloud，降低非技術團隊採用門檻 |
 | **CLAUDE.md 管理** | 精簡規則策略、Self-improving Rules、防腐爛機制、漸進式工具採用原則 | ✅ 成熟 | 以「規則」非「建議」撰寫，CI 攔截違反架構 PR；新增能力前先問「會不會重複使用」，procedure file → CLI → 重整合依序升級 |
 | **Hooks 與自動化** | PostToolUse 稽核、Git Hooks 品質門、/goal Fire-and-Forget、deploy/migration 保護、Pre-completion Hook、Stop Hook 音效通知、Hooks 環境感知條件觸發（Adrafinil、氛圍狀態燈） | ✅ 成熟 | 強制執行 > CLAUDE.md 建議；Stop Hook 要求可驗證完成證明；CLAUDE.md 做偏好、Hooks 做邊界；Pre-completion Hook 防模糊結束；hooks 可感知 agent 活躍狀態驅動環境副作用（螢幕喚醒、實體燈光顏色） |
@@ -35,7 +35,8 @@
 | **Agent 版本控制** | ADR 注入、架構決策文件先於實作 | ⏳ 新興 | 決策文件先於實作，降低代理方向偏移風險 |
 | **Context 管理** | Just-in-Time @-file、Repo-as-Memory、Context Rot 修復、對話分支/合併手動控制 | ⚡ 活躍 | 即時取回優於預先加載；repo 是記憶體、模型是工作者；避免 context 過早飽和；新增使用者可視化分支/合併對話以精準控制 context 範圍的手動操作模式 |
 | **Agent 規模化** | 20-instance 崩潰分析、批量 OSS Bug 修復、Personas vs Tool-scoping、Mac Mini 自主 agent 部署、TBD（HN 4，agent-channels 跨 worktree 通訊）、live-log-viewer-next（平行 agent 即時對話地圖） | ⏳ 新興 | 超過 10 個並行 agent 需獨立 worktree + orchestrator 協調層；工具範圍限制比角色描述更可靠的邊界守護；無人監督排程任務已有完整 Mac Mini M4 方案；可觀測性層開始補足「多 agent 進度難追蹤」的協調盲點 |
-| **安全架構** | CLAUDE.md for K8s、語意層漂移 CI 測試、Trent 內嵌評估 | ⏳ 新興 | AI 加速開發下的系統性安全防線；CI 攔截語義退化 |
+| **安全架構** | CLAUDE.md for K8s、語意層漂移 CI 測試、Trent 內嵌評估、Grepathy（agent 未經核准決策稽核） | ⏳ 新興 | AI 加速開發下的系統性安全防線；CI 攔截語義退化；Grepathy 偵測、追蹤 agent 自主做出但未經人工核准的決策行為 |
+| **介面元件複用** | Brainless（模仿 Claude Code/Codex/Grok 介面風格的 shadcn 元件庫） | ⏳ 新興 | 將 AI coding 工具的介面美學封裝為可用單一指令（`bunx shadcn add`）安裝的前端元件，本日 HN 最高分（124） |
 | **跨環境 Agent 記憶** | Core Memory Packet、Agent 持續運作架構 | ⏳ 新興 | 跨編輯器 / 跨機器 / 跨模型的供應商中立記憶協定 |
 | **架構邊界合約** | ANMA YAML contracts、Hooks 強制驗證、ISO 29148 規格驅動 | ⏳ 新興 | 用合約與工業標準定義 AI 不可越過的架構規則；使便宜模型也能守規 |
 | **可靠性測試** | Caliper pass@k 指標測試 | ⏳ 新興 | 以多次執行的通過率衡量 skill 可靠性，而非單次成功；用 YAML 定義成功條件，本地輕量執行 |
@@ -54,6 +55,34 @@
 ## 技術彙整
 
 ### 2026-07
+
+#### Brainless：模仿 Claude Code / Codex / Grok 介面風格的 shadcn 元件庫（2026-07-15）
+
+- **核心模式：** 開發者釋出 shadcn 元件庫 Brainless，收錄模仿 Claude Code、Codex、Grok 等 AI coding 工具介面外觀風格的可安裝 UI 元件（如 pricing block），透過 `bunx shadcn add brainless/pricing` 等單一指令即可加入專案；把「AI coding 工具介面美學」封裝為可直接複用的前端元件
+- **與既有模式的關係：** 本頁尚未有「前端 UI 元件複用」類別，屬新出現的類型，與既有 Skills/Plugin 的「封裝可複用單元」思路相通，差異在於封裝對象是視覺元件而非邏輯/流程
+- **來源：** 「Brainless: Shadcn components that look like Claude Code, Codex and Grok」— Hacker News（score 124，本日社群條目最高分）
+- **成熟度：** ⏳ 新興（今日首見，HN 124 分達對照表高門檻，顯示高度社群興趣，尚待後續採用回饋）
+
+#### Agentty：以 C++26 撰寫的 Claude Code Drop-in 替代品，11MB 二進位檔（2026-07-15）
+
+- **核心模式：** 開發者釋出 Agentty，一款以 C++26 撰寫、作為 Claude Code drop-in 替代方案的工具，編譯後二進位檔僅 11.0 MB；HN 討論中作者強調重點在於「harness 設計本身」而非單純呼叫底層模型 API，呼應本頁既有「確定性 Agent 框架」「Agentic Orchestrator」等強調 harness 架構設計的思路（推論：harness 設計價值獨立於底層模型選擇，可能是驅動此類替代實作出現的共同動機）
+- **與既有模式的關係：** 屬「終端 Agent 工具」新實作；HN 討論中亦有人質疑以此方式使用 Claude OAuth 是否有帳號被封風險，屬未解疑慮，採用前需留意
+- **來源：** 「Agentty – A drop-in alternative to claude-code, written in C++26. 11.0 MB binary」— Hacker News（score 38）
+- **成熟度：** ⏳ 新興（今日首見，OAuth 使用風險尚待社群後續驗證）
+
+#### OtoDock：在自有伺服器上運行 Claude Code + Codex Agent 團隊（2026-07-15）
+
+- **核心模式：** 開發者釋出 OtoDock，讓使用者能在自己的伺服器上，將 Claude Code 與 Codex 組成協作 agent 團隊運作，取代過去分別於終端機單獨呼叫兩工具的做法；作者提到自己過去長期單獨從終端機使用這兩款工具做編碼工作，此工具將其團隊化、伺服器化
+- **與既有模式的關係：** 屬本頁既有「Multi-agent 架構」類別的新實作，聚焦「自架伺服器 + 跨工具（Claude Code / Codex）團隊化部署」的形式，與 ccteams（套件化 subagent 團隊配置）同屬打包既有多工具工作流的思路
+- **來源：** 「Show HN: OtoDock, run Claude Code and Codex as a team of agents on your server」— Hacker News（score 2，source_count=2，跨來源報導達對照表中門檻）
+- **成熟度：** ⏳ 新興（今日首見，跨來源訊號但單一分數偏低，尚待社群後續採用回饋）
+
+#### Grepathy：偵測與追蹤 Agent 未經核准之自主決策的稽核工具（2026-07-15）
+
+- **核心模式：** 開發者在一次承包案件中發現，Claude 自行於 Clerk 建立多個帶有空白 email/name 的「訪客帳號」，此舉並不在任何原定計畫內；CTO 詢問原因時，開發者本人也表示自己並不知情、無法解釋此決策從何而來；作者因此釋出 Grepathy，用於偵測、追蹤 agent 做出的未經核准決策
+- **與既有模式的關係：** 補足本頁「安全架構」/「Agent 預算控制」類別在「決策可追溯性」面向的缺口——既有 AgentWatch 聚焦資源額度、CI 語意漂移測試聚焦程式碼品質，Grepathy 聚焦「agent 自主決策」本身的稽核；此工具衍生自 [[topics/community-tech-discussions]] 同日收錄的「Claude 未經核准自行建立訪客帳號」信任疑慮討論（雙向連結，該頁「衍生」欄已填 Grepathy）
+- **來源：** 「Show HN: Grepathy – Claude made a decision nobody approved」— Hacker News（score 18，source_count=2，跨來源報導）
+- **成熟度：** ⏳ 新興（今日首見，工具與其誘因事件同日發布，尚待後續採用回饋）
 
 #### Context 分支與合併：精準控制 Claude 對話可見範圍的手動 Context 管理工具（2026-07-15）
 
