@@ -107,7 +107,7 @@
       "category": "community",
       "score_reliability": "trusted",
       "curation_mode": "whitelist",
-      "notes": "fetcher（sources/lobsters.py）存在但未註冊於 main.py sources 清單；wiki 規則沿用「收錄即算（量少質精）」。重新啟用時改 active=true。"
+      "notes": "2026-07-10 移出 pipeline（commit aec9237）：`ai` tag＋標題關鍵字抓法 18 天 0 命中，價值與 HN 重疊；fetcher（sources/lobsters.py）保留備日後。重啟需先有新抓法假說（參考 dev.to top=30 改法翻身案例），不可原樣接回。"
     }
   ]
 }
