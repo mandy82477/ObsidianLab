@@ -26,7 +26,7 @@ window.WIKI_DATA = {
       "pill": "active",
       "firstSeen": "2026-07-10",
       "startDate": "",
-      "lastUpdated": "2026-07-11",
+      "lastUpdated": "2026-07-16",
       "lastNewsUpdate": "2026-07-10",
       "summary": "2026-07-09，Anthropic 官方公告前聯準會主席 Ben Bernanke 加入公司獨立監督機構「長期利益信託」（Long-Term Benefit Trust）董事會。長期利益信託是 Anthropic 治理結構中負責監督公司使命（安全優先於商業利益）的獨立機構，成員具有選任/罷免部分董事會成員的權力。…",
       "latestHeadline": "前聯準會主席 Ben Bernanke 加入 Anthropic 長期利益信託（Long-Term Benefit Trust）董事會，Reuters/CNBC/Bloomberg 同步報導，HN 討論 66 分（來源：Anthropic 官方公告、Reuters、CNBC、Bloomberg）"
@@ -401,7 +401,7 @@ window.WIKI_DATA = {
       "pill": "active",
       "firstSeen": "2026-07-07",
       "startDate": "",
-      "lastUpdated": "2026-07-07",
+      "lastUpdated": "2026-07-16",
       "lastNewsUpdate": "2026-07-07",
       "summary": "2026-07-07，FedScoop 報導 Anthropic 延攬 Teresa Carlson 主導公部門業務。Carlson 曾任職 Microsoft 與 AWS，在雲端服務公部門業務領域有豐富經驗（待核實：Anthropic 內部確切職稱）。 此為事件層級記錄，日報僅標題報導，尚無 Carlson 本人公開…",
       "latestHeadline": "加入 Anthropic，主導公部門業務，此前曾任職 Microsoft、AWS（FedScoop）（待核實：確切職稱與到任日期）"
@@ -643,10 +643,10 @@ window.WIKI_DATA = {
       "pill": "warn",
       "firstSeen": "",
       "startDate": "2026-05-01",
-      "lastUpdated": "2026-07-05",
-      "lastNewsUpdate": "2026-07-04",
+      "lastUpdated": "2026-07-16",
+      "lastNewsUpdate": "2026-07-16",
       "summary": "大型組織採用 Claude Code 後，成本結構挑戰迅速浮現。Uber 四個月耗盡全年 AI 預算（Forbes 報導）是目前最具代表性的公開案例，揭示企業在缺乏細粒度使用量控管工具的情況下，AI 工具成本極易失控。此議題已從開發者社群的個人抱怨升級至 Forbes、Business Insider 等主流財經媒體的…",
-      "latestHeadline": "[官方產品化回應] Anthropic 推出企業版 Claude 支出控管（spend controls）功能：Tech Times 報導，企業導入 agentic AI 後帳單頻繁超出預算的痛點持續發酵，Anthropic 針對企業客戶推出支出控管功能協助管理成本。對本頁「企業層級缺失的工具」缺口的意涵：這是本頁自 "
+      "latestHeadline": "[帳務錯誤重大揭露] Anthropic 證實 1660 萬美元帳務錯誤，稽核發現企業客戶被多收 170 萬美元：Tech Times 報導 Anthropic 證實一筆 1660 萬美元的帳務錯誤，稽核人員另發現企業客戶被多收 170 萬美元；受影響企業名單與退款機制未見報導。對本頁的意涵：本頁自 2026-05-0"
     },
     {
       "id": "enterprise-tool-tracker",
