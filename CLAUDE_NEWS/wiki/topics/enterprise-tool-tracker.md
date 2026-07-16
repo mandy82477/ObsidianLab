@@ -74,7 +74,7 @@
 | 工具 | 企業採用數 | 趨勢 | 主要阻力 |
 |------|----------|------|---------|
 | Claude Code | 6 使用中（Amazon、UiPath、Rubrik、JFrog、Salesforce、Alberta 省政府）+ 1 縮減中（Uber）+ 2 退出（Microsoft、Alibaba → Qoder） | ⚠️ 成本壓力 + Fable 5 封鎖衝擊 + 安全疑慮新增退出理由；✅ 政府採用具體成效案例增加（Alberta 4.66 億行/20hr） | 缺乏企業層級預算管控；Fable 5 出口管制加速部分企業評估替代方案；Alibaba 案例顯示「疑似後門」指控也可能成為退出理由（指控未經證實），且已確認具體替代方案（Qoder） |
-| Claude API | 22（Apple、KPMG、iCapital、哈佛、Fujitsu、Travelport、Nimble Gravity、ZoomInfo、LG Group、AppFolio、Salesforce Claude API、TCS、DXC Technology、Atlassian、JPMorgan Chase 美國本部、Charleston Hospitality Group、Notion、加州州政府、Globant、DataArt、Okta）+ 1 退出中（Lindy → DeepSeek） | 🟢 快速擴張（政府/合規/服務業縱深加深）；⚠️ 部分 API 客戶因成本敏感轉向競品 | — |
+| Claude API | 23（Apple、KPMG、iCapital、哈佛、Fujitsu、Travelport、Nimble Gravity、ZoomInfo、LG Group、AppFolio、Salesforce Claude API、TCS、DXC Technology、Atlassian、JPMorgan Chase 美國本部、Charleston Hospitality Group、Notion、加州州政府、Globant、DataArt、Okta、Grasshopper Bank）+ 1 退出中（Lindy → DeepSeek） | 🟢 快速擴張（政府/合規/服務業縱深加深，新增金融科技銀行）；⚠️ 部分 API 客戶因成本敏感轉向競品 | — |
 | GitHub Copilot | 1（Microsoft） | 🟢 Microsoft 背書 | 生態鎖定 |
 | OpenAI Codex | 2（Amazon、UiPath） | 🟢 快速成長 | — |
 | Cursor | 1（Uber） | ⚠️ 新創份額下滑 | 成本管控困難；企業級功能不如 Claude Code |
@@ -96,6 +96,9 @@ Claude Code 是工程師日常編碼工具（CLI），成本隨使用量線性�
 ---
 
 ## 時序
+
+### 2026-07-15
+- **Grasshopper Bank 成為首家列入 Anthropic MCP 目錄的銀行**：Financial IT 報導 Grasshopper Bank 成為首家列入 Anthropic MCP（Model Context Protocol）目錄的銀行，為金融業具名採用 MCP 生態系的起點案例；具體整合規模、應用場景未見細節（僅標題可用，Google News 轉址）（Google News/Financial IT）
 
 ### 2026-07-08
 - **Alibaba 禁用 Claude Code 事件再獲媒體確認，定調升溫為中美 AI 資安爭端**：Yahoo Finance（07-08）跟進報導阿里巴巴禁用 Anthropic Claude Code 事件，將其定調為中美 AI 資安爭端升溫的一環；未提供禁令細節、生效日或替代方案的新事實，僅補充「地緣政治爭端」框架，維持既有 ❌ 已退出狀態與 07-10 生效日不變（Yahoo Finance https://finance.yahoo.com/technology/ai/articles/alibaba-bans-anthropics-claude-code-175649089.html）
