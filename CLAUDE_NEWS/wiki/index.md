@@ -2,11 +2,22 @@
 
 LLM 查詢此 wiki 時，**先讀這個檔案**找相關頁面，再讀具體頁面取得詳細資訊。
 
-**最後更新：** 2026-07-15
+**最後更新：** 2026-07-16
 ---
 
 ## 近期異動
 
+- [[entities/claude-code]] — 2026-07-16：**v2.1.211** 發布（`--forward-subagent-text` 旗標 + 對應環境變數，stream-json 輸出含 subagent 文字與思考內容，feature-radar 新條目；另修復一項權限相關問題）；已知問題新增高互動條目——手機號碼驗證機制問題（#34229，741 留言/892 讚同，本日最高互動）、Cowork 建立 10GB VM bundle 導致效能持續劣化（#22543，76 留言）、Cowork Edit/Write 靜默截斷檔案（#53940，43 留言，🔴 已列入 feature-radar 升版風險）、session 額度續行請求（#13354，69 留言）；Remote Control 自動重連（#34255）與 GitLab 整合請求（#12346）留言數更新
+- [[entities/claude-design]] — 2026-07-16：dev.to 操作指南補充 Artifacts 建立即時儀表板/圖表/可分享頁面與 Claude Design 同步程式碼庫的設定說明
+- [[topics/anthropic-business]] — 2026-07-16：Anthropic 與 Blackstone 共同成立 **15 億美元 AI 實作公司 Ode**（Technology Org、TechCrunch 雙來源）；Yahoo Finance／CNBC／Bloomberg 三家財經媒體同步報導 Anthropic **上市前投資人會議安排**，新增「IPO 前瞻」相關列
+- [[topics/competitor-landscape]] — 2026-07-16：中國新創 Moonshot 即將發布挑戰 Anthropic 領先地位的新模型（Financial Times）；Microsoft 傳訓練業務團隊向客戶淡化 OpenAI／Anthropic 優勢（Yahoo Finance）
+- [[topics/enterprise-tool-tracker]] — 2026-07-16：Grasshopper 銀行成為首家列入 Anthropic MCP 目錄的銀行（Financial IT）
+- [[entities/pricing]] — 2026-07-16：Geeky Gadgets 建議以 Sonnet 取代 Fable 5 處理常規任務以降低成本；Reddit 使用者回報 Claude Max 週用量疑似提前重置（單一回報，待查證）
+- [[topics/anthropic-government-policy]] — 2026-07-16：EU 官員批評 Anthropic 僅派初階員工出席歐洲議會安全聽證（Politico，確認並補足 07-14 既有標題式報導）；Anthropic 執行長捐款 100 萬美元予 super PAC，捲入 AI 陣營政治獻金角力（Politico，僅標題可用）
+- [[topics/ai-agent-safety]] — 2026-07-16：資安研究揭露透過 web fetch 誘導 Claude 洩漏使用者機密資訊的手法（Simon Willison 部落格轉述）；Security Affairs 報導一起據稱運用 Claude Code 與 DeepSeek 的中國網路間諜行動（僅標題可用，待查證，需主編轉知功能記者評估是否影響 claude-code.md）
+- [[entities/mythos]]／[[topics/model-comparison]] — 2026-07-16：JPMorgan CEO Dimon 公開表示 Anthropic Mythos 的 AI 風險是「真實的問題」（Reuters，僅標題可用）；Anthropic 研究部落格「Claude 跨模型/跨語言價值觀差異」分析補入
+- [[entities/dario-amodei]] — 2026-07-16：捐款 100 萬美元予 super PAC 一事記入歷史記錄（待核實，標題未具名確認）
+- [[topics/community-tech-patterns]]／[[topics/community-tech-discussions]] — 2026-07-16：新增 Brainless（HN 124 分，仿 Claude Code/Codex/Grok 介面 shadcn 元件庫）、Agentty（HN 38 分，C++26 版 Claude Code 替代品）、OtoDock（跨來源，Claude Code+Codex 協作 agent 團隊）；Grepathy 事件（Claude 於承包案自行建立未授權 guest users，HN 18 分+跨來源）雙頁收錄並互相連結；熱門討論表格例行清理 15 筆逾 21 天 ☄️閃現 條目
 - [[entities/claude-for-teachers]] — 2026-07-15：**新頁面**，Anthropic 推出 Claude for Teachers，向美國通過認證的 K-12 教師免費開放進階 Claude 功能與教學技能庫，對接全美 50 州學術標準；CBS News、The Hill、Forbes、9to5Mac、Central Oregon Daily 等至少六家獨立媒體同步報導，feature-radar 新增條目（🔥🔥🔥 ⏳ 觀望，快速上手待補）
 - [[entities/claude-code]] — 2026-07-15：**v2.1.210** 發布（收合工具摘要列即時耗時計數器、`Write(path)` 啟動警告）；已知問題新增 6 條——OAuth 登入因 DNS 無法解析完全無法驗證（#33238，151 留言本日最高互動）、GitHub Connector 已連接卻不被辨識（#32479，71 留言）、Remote Control 自動重連失效靜默斷線（#34255，54 留言）、GitLab 整合功能請求（#12346，46 留言）、Environment Contributions 警告持續重現（#3301，40 留言）、跨機器多 agent 協作 A2A 協定功能請求（#28300，35 留言）等；claude.ai container creation 部分中斷已於當日解決
 - [[entities/claude-science]] — 2026-07-15：早期使用者評價浮現：工作流程加快，但仍存在功能缺口（the-scientist.com）

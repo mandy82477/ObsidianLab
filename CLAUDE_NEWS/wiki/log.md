@@ -2779,3 +2779,14 @@ Append-only 紀錄。每次 ingest、lint，以及**揭露缺陷或促成改動�
 - 品質備註：[安全政策] 主編派工時原文節錄未附逐條 item_url，記者回報來源歸因時多筆標「未提供」，已由主編對照 gathered_items.json 原始記錄補齊 URL 後寫入 data/source_attribution.jsonl，後續派工應在節錄中明確標註「item_url:」欄位避免此缺口
 - 轉知事項：[社群→功能/商業] Microsoft 早期 Claude Code／GitHub Copilot CLI 企業級 rollout 學術研究（HN 61 分）建議評估是否納入 official-community-gap.md 或 enterprise-tool-tracker.md，本次因無具體矩陣對應列／無具名企業主體而未收錄，留待後續觀察是否有具體事件錨點
 - 人物記者判定：Musk「AI 領域明確領先者」／Altman「Thought This Was Satire」兩則外部競爭對手 CEO 表態，依 2026-07-13 既有慣例（同類表態走商業記者 competitor-landscape.md，非人物記者建頁範疇）判定無需建立獨立人物頁，已由商業記者收錄
+
+## 2026-07-16 Ingest
+
+- 來源日報：[[news/2026-07-16]]
+- 更新頁面：wiki/entities/claude-code.md、claude-design.md、mythos.md、opus-4-8.md、dario-amodei.md、pricing.md、wiki/topics/model-comparison.md、official-community-gap.md、anthropic-business.md、anthropic-government-policy.md、ai-agent-safety.md、competitor-landscape.md、enterprise-tool-tracker.md、community-tech-patterns.md、community-tech-discussions.md
+- 新增頁面：無
+- 摘要：Claude Code v2.1.211 新增 `--forward-subagent-text` 旗標；本日互動量最高條目為手機驗證機制問題（741 留言/892 讚同），另有兩起 Cowork 已知問題（10GB VM bundle 效能劣化、Edit/Write 靜默截斷檔案）因涉資料完整性風險已列入 feature-radar 升版風險表；商業面 Anthropic 與 Blackstone 成立 15 億美元 AI 實作公司 Ode，同時三家財經媒體同步報導 IPO 前投資人會議安排；安全政策面新增資安研究揭露 web fetch 誘導 Claude 洩漏機密資訊手法、EU 官員批評 Anthropic 安全聽證僅派初階員工出席；社群面 Brainless（HN 124 分）為本日最高分條目，Grepathy 事件（Claude 於承包案自行建立未授權帳號）雙頁收錄。
+- 呈現品質：全部通過（community-tech-discussions.md 同步執行熱門討論表格 21 天保留規則清理，移除 15 筆過期 ☄️閃現 條目）
+- 品質備註：
+  - [安全政策→功能] 「Claude Code and DeepSeek Powered Chinese Cyber Espionage Campaign」一則涉及 Claude Code 被指用作攻擊工具鏈之一，安全政策記者已標註「請主編轉知功能記者」，惟功能記者當次派工已先行完成、未能即時收到此轉知，故本則暫僅記錄於 ai-agent-safety.md（標「僅標題可用/待查證」），功能記者下次 ingest 應檢視是否需在 claude-code.md 補充對應說明或已知問題條目
+  - [社群→商業/人物] 「Where are YC founders now? OpenAI and Anthropic, mostly」（HN 85 分，達收錄高門檻）內容為 YC 創辦人流向 OpenAI/Anthropic 的人才資料，性質貼近 `topics/ai-talent-flow.md`（商業記者）或人物記者範疇，非社群記者四頁可收，社群記者已標記但本次主編判斷屬單一網站彙整、無具名個別事件錨點，暫不強制建檔，留待後續日報出現具體人物加入事件時再行收錄
