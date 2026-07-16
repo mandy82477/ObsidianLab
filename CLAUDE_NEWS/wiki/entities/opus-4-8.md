@@ -4,7 +4,7 @@
 **狀態：** active
 **領域：** 🤖 模型
 **首次出現：** 2026-05-28
-**最後更新：** 2026-07-14
+**最後更新：** 2026-07-16
 **最後新聞更新：** 2026-07-14
 
 > **最新服務狀態**（2026-07-09）
@@ -123,7 +123,7 @@ claude.ai 用戶現可調節 Claude 在任務上投入的努力程度，不再�
 
 ## 下一代模型觀察：「Opus 5」傳聞（推測性，尚未證實）
 
-**2026-07-13**：dev.to 作者比對 Anthropic 模型型錄、定價文件與過往發布節奏，認為「Opus 5」的存在具一定可信度，但強調坊間流傳的確切發布日期與跑分數字目前均缺乏佐證（"Opus 5 is plausible, but every exact date and benchmark circulating today is unsupported."）。此為單一 dev.to 分析文章，非官方訊號，亦無具體發布時間表，列「待驗證」；若後續有更多獨立來源佐證，將評估另立 entities 頁（[dev.to](https://dev.to)，2026-07-13）。
+**2026-07-13**：dev.to 作者 tokenmixai 於〈I Traced 4 Claude Opus 5 Signals. The Release Date Still Isn't Real Yet.〉一文中，比對 Anthropic 模型型錄、定價文件與過往發布節奏，認為「Opus 5」的存在具一定可信度，但強調坊間流傳的確切發布日期與跑分數字目前均缺乏佐證（"Opus 5 is plausible, but every exact date and benchmark circulating today is unsupported."）。此為單一 dev.to 分析文章，非官方訊號，亦無具體發布時間表，列「待驗證」；若後續有更多獨立來源佐證，將評估另立 entities 頁（[dev.to](https://dev.to/tokenmixai/i-traced-4-claude-opus-5-signals-the-release-date-still-isnt-real-yet-2f2j)，2026-07-13）。此連結於 2026-07-16 補齊（原始記錄僅有泛用網域連結）。
 
 ## 歷史記錄
 

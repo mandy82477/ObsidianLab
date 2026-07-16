@@ -4,15 +4,17 @@
 **狀態：** active（出口管制解除，2026-07-01 起全球恢復存取）
 **領域：** 🤖 模型
 **首次出現：** 2026-04（限定夥伴 Preview）
-**最後更新：** 2026-07-14
-**最後新聞更新：** 2026-07-13
+**最後更新：** 2026-07-16
+**最後新聞更新：** 2026-07-16
 
-> **最新進展**（2026-07-13）
-> 出口管制已於 2026-07-01 全面解禁，Mythos 5 可用範圍從機構白名單擴大為全球一般用戶（完整經過見下方「時序」）。解禁後首見具體監管機構風險評估案例：Reuters 獨家報導（source_count=2），加拿大金融監管機關發函警告銀行業網路風險，內容明確引用 Claude Mythos 作為佐證——顯示監管機構已開始將 Mythos 級模型的高階網路攻擊協助能力，正式納入金融業風險評估框架，是解禁後「使用面」敘事之外首個「監管面」後續訊號。
+> **最新進展**（2026-07-16）
+> 摩根大通執行長 Jamie Dimon 公開表示，Anthropic Mythos 模型所涉及的 AI 風險是「真實的問題」（real issue）（Reuters via Google News，僅標題可用，內文細節待查證）。這是繼 07-13 加拿大金融監管機關引用 Mythos 作為銀行業網路風險警告佐證後，金融業界對 Mythos 級模型風險認知持續升溫的最新一例——從監管機構正式文件延伸到具名金融業高管公開表態；政策/監管面完整分析見 [[topics/anthropic-government-policy]]，本頁僅記錄模型能力認知面動態。
 
 ---
 
 ## 現況
+
+**2026-07-16 最新**：摩根大通執行長 Jamie Dimon 公開表示 Mythos AI 風險是「真實問題」（Reuters／Google News，僅標題可用，無法取得完整內文）；延續 07-13 加拿大金融監管機關引用案例，顯示金融業界對 Mythos 風險認知持續累積（詳見下方「時序」）。
 
 **當前狀態（2026-07-01 起）**：出口管制已全面解除，Mythos 5 可用範圍從機構白名單擴大為全球一般用戶；解禁交換條件為 Anthropic 承諾主動偵測安全風險、配合標準協議、通報惡意活動。管制事件歷時 18 天（2026-06-13 至 2026-07-01），完整經過見下方「時序」。
 
@@ -88,6 +90,11 @@ Anthropic 的官方 AI 資安能力研究計畫，Mythos Preview 為核心工具
 ## 時序
 
 ### 解禁後（2026-06-27 起）
+
+#### 2026-07-16
+**摩根大通執行長 Dimon：Mythos AI 風險是「真實問題」（Reuters／Google News，僅標題可用）**：
+- Reuters 報導（經 Google News RSS 轉載，僅取得標題，無法取得完整內文細節），摩根大通執行長 Jamie Dimon 公開表示 Anthropic Mythos 模型所涉及的 AI 風險是「真實的問題」（real issue）（[Google News/Reuters](https://news.google.com/rss/articles/CBMiugFBVV95cUxQQllaMFNac0hQSGkxVzh2V2VmWk9YR3Q3eXdEYW05UDMyd2hGc0F5N0d2MUZNQ2UxbVNqdl9DcUpkVzNQZzJDQkNjZ0pwNDY3MDhHVTdwVEhEU1FFZHYxVEZITllpYTJ1R190YU1zN292LVBDemhUYkNTNmZ1T0ktb3U4ek1CeFZfOF9PUWpWakNRU05uRnNFZUNLdVNESU80eDBJOEFadms0Y0VCWXI5YUhMQ05lZFBqdGc?oc=5)）
+- 這是繼 07-13 加拿大金融監管機關引用 Mythos 作為銀行業網路風險佐證後，金融業界對 Mythos 級模型風險認知持續升溫的最新一例；從監管機構正式文件延伸到具名金融業高管公開表態，顯示風險認知已從單一監管案例擴散至產業領袖層級。此則與安全政策記者條目重疊（風險評論之政策/監管面），本頁僅記錄模型認知動態面向，完整政策分析見 [[topics/anthropic-government-policy]]。
 
 #### 2026-07-13
 **加拿大金融監管機關引用 Claude Mythos 警告銀行網路風險（Reuters 獨家）**：

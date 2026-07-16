@@ -3,8 +3,8 @@
 **狀態：** ongoing
 **領域：** 🤖 模型
 **開始日期：** 2026-07-02
-**最後更新：** 2026-07-14
-**最後新聞更新：** 2026-07-14
+**最後更新：** 2026-07-16
+**最後新聞更新：** 2026-07-16
 
 > **最新對照更新**（2026-07-14）
 > Fable 5 免費期限維持 7/19 不變（見 [[entities/fable-5]]；The New Stack 07-13 報導 Anthropic 拒絕說明延長是否與 Cursor 內部發現有關，推測性報導，無新截止日）。社群持續出現 Fable 5 vs GPT-5.6 Sol 的多小時實測比較，評價分歧：速度與 bug 數量傾向 Fable 5 勝出，但 Sol 5.6 額度重置頻率被視為優勢（Reddit，詳見「社群實測觀察」）。目前公開陣容五級維持不變：Fable 5（旗艦）> Opus 4.8 > Sonnet 5（主力）> Sonnet 4.6 > Haiku 4.5。
@@ -68,6 +68,12 @@
 | 用戶回報：**$50 額度原可用兩天，現在一小時內燒完** | 懷疑新模型（4.8）刻意提高 quota 消耗；成本暴增趨勢延燒至社群多篇貼文（費用 5x 暴增回報、企業採「穴居人模式」壓縮輸出降本）| 個人用戶主觀對照前後月份帳單，非儀器化測量；未附詳細 log | [Vincent Schmalbach 部落格](https://www.vincentschmalbach.com/claude-code-quietly-looks-5x-more-expensive/)，2026-07-01；[GitHub Issue #62476](https://github.com/anthropics/claude-code/issues/62476) |
 
 **矛盾之處**：前者是受控測量（同任務對比新舊模型的 token 用量與完成率），後者是用戶主觀感受同一模型（Opus 4.8/Fable 5）近期的帳單變化，兩者測的不是同一件事——不構成直接互斥，但都指向「新一代模型的 token 消耗與實際成本之間的關係，社群尚無共識」。Fable 5 配額吃緊的相關社群省額度策略見 [[entities/fable-5]] 「配額與計費過渡（原訂 7/7，現已順延至 7/19）」子區塊。
+
+## 跨模型／跨語言行為研究（官方，非選型指標）
+
+Anthropic 研究部落格於 2026-07-15 發布〈Claude's values across models and languages〉，探討使用者向 Claude 提出**沒有普遍正確答案的問題**時（例如「該不該接受新工作」「如何處理與朋友的衝突」），Claude 在不同模型版本與不同語言之間展現的價值觀回應差異（[Anthropic Research](https://www.anthropic.com/research/claude-values-models-languages)，2026-07-15；Hacker News 累積 32 分）。
+
+**性質說明：** 這是模型行為／對齊研究，非可用功能、也非 benchmark 分數，**不影響本頁「該用哪個模型」的選型建議**；因研究涉及跨模型、跨語言比較而非單一模型，記錄於本頁而非個別 entities 頁。原文摘要僅提供研究主題與範例問題，未附具體樣本語言清單、模型清單或量化差異數字，暫列標題級記錄，待後續報導或原始研究補充細節時再擴寫。
 
 ## 相關實體
 

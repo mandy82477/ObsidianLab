@@ -3,11 +3,11 @@
 **狀態：** monitoring（出口管制主線已解除，剩餘承諾落實與衍生支線持續觀察；中美 AI 工具信任對峙已獨立成頁）
 **領域：** 🏛️ 政策/安全
 **開始日期：** 2026-05-01
-**最後更新：** 2026-07-15
-**最後新聞更新：** 2026-07-15
+**最後更新：** 2026-07-16
+**最後新聞更新：** 2026-07-16
 
-> **最新攻防紀錄**（2026-07-15，待查證）
-> 三則新增皆僅 Google News 標題可用，原文為轉址頁面：Axios 報導 Anthropic 正招募人力應對潛在災難性風險（催化安全團隊建置）；Politico 報導 Anthropic 正推動逐州加強 AI 監管規則的計畫；politico.eu 報導歐盟官員因 Anthropic 僅派遣一名初階員工出席安全聽證會而不滿，稱其「不重視歐洲」。三則均待原文或後續報導確認細節。前一日（07-14）：國防部長 Hegseth 曾稱 Anthropic 為「國家安全風險」，如今 CISA 已在使用其產品，形成政府內部立場矛盾敘事（The National Interest，僅標題式轉載，細節待確認），延續 06-05 Hegseth 首次確認風險標籤事件的後續發展；同日 Reuters 獨家報導（source_count=2）：加拿大金融監管機關發函警告銀行業網路風險，內容明確引用 Claude Mythos 作為佐證，詳見 [[entities/mythos]]。出口管制主線本身已於 07-01 落幕（詳見「## 摘要」）；中美 AI 工具信任對峙已於 2026-07-12 整合拆出至獨立頁 [[topics/safety-china-trust-dispute]]。
+> **最新攻防紀錄**（2026-07-16）
+> Hacker News 轉載 Politico 全文報導（累積 19 分），確認並補足 07-14 politico.eu 標題式報導細節：歐盟政策官員不滿 Anthropic 僅派遣一名初階員工 Donny Greenberg（而非資深主管）出席歐洲議會安全聽證會，回應先進 AI 能力風險疑慮。同日（Google News/Politico，僅標題可用，原文因轉址未確認）：Anthropic CEO Dario Amodei 捐款 100 萬美元予某 super PAC，捲入 AI 陣營之間鉅額政治獻金角力，具體 PAC 名稱與資金用途待確認；人物面向詳見 [[entities/dario-amodei]]。出口管制主線本身已於 07-01 落幕（詳見「## 摘要」）；中美 AI 工具信任對峙已於 2026-07-12 整合拆出至獨立頁 [[topics/safety-china-trust-dispute]]。
 
 ---
 
@@ -36,9 +36,10 @@
 | 身份管控收緊                   | 計畫對部分 Free/Pro/Max 用戶要求身份證明與臉部掃描（最快 7 月），觸發條件未公開；帳號封禁申訴機制缺失（HN score 55）                                                                                                                                                                           | 7 月是否如期上路；觸發條件與覆蓋範圍是否公開                                                                                                |
 | Anthropic 安全人力擴編（災難性風險） | Axios 報導 Anthropic 正在招募人力以應對潛在災難性風險，偏向安全團隊建置動態，僅標題式轉載，具體職位與規模待確認（2026-07-15） | 是否有更多報導揭露職位性質、規模、招募進度 |
 | 州級 AI 規則倡議 | Politico 報導 Anthropic 正推動一項逐州加強 AI 監管規則的計畫（美國州層級政策倡議），僅標題式轉載，具體州別與內容待確認（2026-07-15） | 涉及哪些州、規則具體內容、是否與聯邦出口管制/歐洲遊說形成一致的政策倡議策略 |
-| EU 對 Anthropic 投入度觀感 | politico.eu 報導歐盟官員不滿 Anthropic 僅派遣一名初階員工出席安全聽證會，稱其「不重視歐洲」，僅標題式轉載（2026-07-14） | 是否影響「歐洲據點爭奪」進度；Anthropic 是否回應或調整後續出席層級 |
+| EU 對 Anthropic 投入度觀感 | 07-14 politico.eu 標題式報導已於 07-16 經 Hacker News 轉載 Politico 全文（19 分）確認並補足細節：歐盟政策官員點名批評 Anthropic 派遣初階員工 **Donny Greenberg**（而非資深主管）出席歐洲議會安全聽證會，回應先進 AI 能力風險疑慮 | Anthropic 是否公開回應或調整後續出席層級；是否影響「歐洲據點爭奪」進度 |
 | 美國政府內部立場矛盾（Hegseth vs CISA） | The National Interest 報導：國防部長 Hegseth 曾稱 Anthropic 為「國家安全風險」，CISA（網路安全暨基礎設施安全局）現正使用其產品（2026-07-14，僅標題式轉載，細節待確認） | 是否有具體使用範圍、時間點或官方回應公開；是否呼應 06-05 Hegseth 首次確認風險標籤的既有敘事 |
 | 加拿大金融監管風險評估             | Reuters 獨家報導（source_count=2）：加拿大金融監管機關發函警告銀行業網路風險，內容明確引用 Claude Mythos（2026-07-13）；Mythos 07-01 解禁後監管機構首見的具體風險評估案例 | 是否有其他國家監管機構跟進類似警告；加拿大監管機關是否公開警告全文或機構名稱 |
+| Anthropic CEO 政治獻金布局 | Politico（經 Google News 轉載，僅標題可用）：Dario Amodei 捐款 100 萬美元予某 super PAC，捲入 AI 陣營之間鉅額政治獻金角力（2026-07-16）；具體 PAC 名稱、資金用途、對立陣營身分均待原文確認 | 是否與州級 AI 規則倡議（07-15）構成一致的政治佈局；是否有對立 PAC 陣營公開回應；人物面向詳見 [[entities/dario-amodei]] |
 
 ---
 
@@ -108,6 +109,8 @@ Fable 5 發布後，Amazon 安全研究人員發現特定提示詞可讓模型�
 
 | 日期 | 方 | 動作 | 效果 |
 |------|----|------|------|
+| 2026-07-16 | 🌐🏛️ | Hacker News 轉載 Politico 全文報導（累積 19 分），確認並補足 07-14 politico.eu 標題式報導：具名初階員工 Donny Greenberg 出席歐洲議會安全聽證會，回應先進 AI 能力風險疑慮（原文：politico.eu/article/anthropic-european-parliament-donny-greenberg-artificial-intelligence-ai） | 07-14 headline 首度取得全文與具名細節確認；歐盟對 Anthropic 政府關係投入層級的不滿具體化（點名基層員工代表出席），可能影響「歐洲據點爭奪」進度 |
+| 2026-07-16 | 🏢 | Anthropic CEO Dario Amodei 捐款 100 萬美元予某 super PAC，捲入 AI 陣營之間鉅額政治獻金角力（Google News/Politico，僅標題式轉載，原文因轉址未確認） | Anthropic 高層首度出現具金額的美國政治獻金動作；與 07-15 州級 AI 規則倡議是否構成一致政治佈局待觀察；人物面向詳見 [[entities/dario-amodei]] |
 | 2026-07-15 | 🏢 | Axios 報導 Anthropic 正在招募人力以應對潛在災難性風險（catastrophic risk），偏向安全團隊建置動態（Google News/Axios，僅標題式轉載，原文因轉址未確認） | 顯示 Anthropic 持續擴大安全/災難性風險相關人力編制；具體職位、規模、時間表待確認 |
 | 2026-07-15 | 🏢 | Politico 報導 Anthropic 正推動一項逐州加強 AI 監管規則的計畫（美國州層級政策倡議）（Google News/Politico，僅標題式轉載，原文因轉址未確認） | Anthropic 主動遊說州級 AI 監管收緊，與其一貫「越強模型越需要護欄」立場一致；具體州別、規則內容、遊說對象待確認 |
 | 2026-07-14 | 🌐🏛️ | politico.eu 報導歐盟官員對 Anthropic 僅派遣一名初階員工出席安全聽證會表達不滿，稱其「不重視歐洲」（Google News/politico.eu，僅標題式轉載，原文因轉址未確認） | 歐盟對 Anthropic 政府關係投入程度出現具體負面評價，呼應「歐洲據點爭奪」變數中歐洲對 Anthropic 重視度的觀察角度；具體聽證會場合、官員身分、後續外交效應待確認 |
@@ -197,6 +200,7 @@ Fable 5 發布後，Amazon 安全研究人員發現特定提示詞可讓模型�
 
 ## 參考來源
 
+- [[news/2026-07-16]]
 - [[news/2026-07-15]]
 - [[news/2026-07-14]]
 - [[news/2026-07-13]]
@@ -220,6 +224,10 @@ Fable 5 發布後，Amazon 安全研究人員發現特定提示詞可讓模型�
 - [Chris Olah Vatican Remarks](https://www.anthropic.com/news/chris-olah-pope-leo-encyclical) — Anthropic Blog
 
 ## 時序
+
+### 2026-07-16
+- **[EU 施壓具體化] HN 轉載 Politico 全文：確認 Anthropic 派遣初階員工 Donny Greenberg 出席歐盟安全聽證**：Hacker News（累積 19 分）轉載 Politico 全文報導，確認並補足 07-14 politico.eu 標題式報導：布魯塞爾政策官員批評 Anthropic 週二未派遣資深主管，僅派遣初階員工 Donny Greenberg 出席歐洲議會，回應對先進 AI 能力風險的疑慮（Hacker News/Politico，2026-07-16 05:08 UTC；https://www.politico.eu/article/anthropic-european-parliament-donny-greenberg-artificial-intelligence-ai/）
+- **[待查證] Politico：Anthropic CEO 捐款 100 萬美元予 super PAC**：Google News 轉載 Politico 標題，指 Anthropic CEO（Dario Amodei）捐款 100 萬美元予某 super PAC，捲入 AI 陣營之間鉅額政治獻金角力；僅標題可用，原文為轉址頁面，PAC 名稱與資金用途待確認（Google News/Politico，2026-07-16 06:04 UTC）
 
 ### 2026-07-15
 - **[待查證] Axios：Anthropic 招募人力應對災難性風險**：Axios（經 Google News 轉載）標題指出 Anthropic 正在招募人力以應對潛在災難性風險（catastrophic risk），偏向安全團隊建置動態；僅標題可用，原文為轉址頁面，無法取得具體職位、規模或時間表（Google News/Axios，2026-07-15 09:10 UTC）
