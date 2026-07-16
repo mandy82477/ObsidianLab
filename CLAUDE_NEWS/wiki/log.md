@@ -2817,3 +2817,7 @@ Append-only 紀錄。每次 ingest、lint，以及**揭露缺陷或促成改動�
 - **查證**：三路研究（skill/開源專案掃描、業界學術技術、本專案盤點）確認——品質挑選停在條目層特例門檻（HN 分數、Reddit 週熱門、dev.to 內容判斷各一套補丁），來源層無回饋迴路；`source_funnel.jsonl` 與 `source_attribution.jsonl` 為 `/source-review` 預留但從未實作，兩份 ledger 缺程式化 join（註冊名 vs slug 斷鏈）。
 - **根因**：來源特性知識（分數可信度、判準模式）散落規則檔文字，程式端無單一真相源；每次來源指標失真只能事後補規則，無法防再犯。
 - **處置**：建置來源評分 Phase 0–1（監控層，2026-07-16 上線）——`data/source_registry.json`（name↔slug↔品質標籤單一真相源）、`scripts/source_scorecard.py`（收錄率/Wilson 下界/wiki 率/Presence/HHI/domain 信譽分佈，Bayesian 假票平滑）、`data/external/domain_pc1.csv`（Lin et al. 2023，11,520 domains，接 Google News）、掛 `/wiki-lint` 6e 週更。enforcement 屬 Phase 2（≥60 天資料＋pipeline-change-check）。設計依據與逐來源機制：`docs/source-scoring-optimization.md`。
+
+## 2026-07-16 防再犯修正（聚焦校準）
+
+- 使用者確認執行兩項提案（commit 6805958）：(1) `.claude/commands/wiki-weekly-review.md` 聚焦校準跳過條件改查 `wiki/metrics.md` 聚焦命中率欄本月有無數值（查產出物，不查執行記錄）；(2) `.claude/commands/news-pipeline-steps.md` Step 1b 今日聚焦新增選材門檻（[新工具] 未達中門檻且無跨來源不單獨聚焦；[風險警示] 具名資安揭露優先於純熱度）。`/review-commands` 首輪零錯誤。
