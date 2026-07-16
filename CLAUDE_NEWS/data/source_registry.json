@@ -1,0 +1,113 @@
+{
+  "_doc": [
+    "來源註冊表（單一真相源）：pipeline 註冊名 ↔ attribution slug ↔ 來源層品質標籤。",
+    "此檔取代散落於 .claude/rules/*.md 的來源特性補丁條文，程式端（scripts/source_scorecard.py）與規則端共用。",
+    "score_reliability：trusted＝平台互動分數可作門檻訊號（僅限來源內比較，不可跨來源比絕對值）／",
+    "untrusted＝分數失真（造假、恆 0、反指標），一律不得用數字門檻機械判定／none＝來源天生無互動分數。",
+    "curation_mode：score＝來源內分數排序＋門檻／content＝逐條內容判斷（第一手實作、可驗證性）／",
+    "whitelist＝策展白名單，收錄即過（官方源、blogroll 名單）。",
+    "依據：docs/source-scoring-optimization.md（含各標籤的研究出處）。修改欄位定義時同步該文件。"
+  ],
+  "sources": [
+    {
+      "name": "Anthropic Blog",
+      "slug": "anthropic-blog",
+      "active": true,
+      "category": "official",
+      "score_reliability": "none",
+      "curation_mode": "whitelist",
+      "notes": "官方一手源，無互動分數；收錄即過。"
+    },
+    {
+      "name": "Anthropic Status",
+      "slug": "anthropic-status",
+      "active": true,
+      "category": "official",
+      "score_reliability": "none",
+      "curation_mode": "whitelist",
+      "notes": "官方狀態頁，事件型，無分數。"
+    },
+    {
+      "name": "Claude API Release Notes",
+      "slug": "claude-api-release-notes",
+      "active": true,
+      "category": "official",
+      "score_reliability": "none",
+      "curation_mode": "whitelist",
+      "notes": "官方 changelog，無分數。"
+    },
+    {
+      "name": "GitHub",
+      "slug": "github",
+      "active": true,
+      "category": "official",
+      "score_reliability": "untrusted",
+      "curation_mode": "content",
+      "notes": "releases 部分為官方 changelog（score=0）；repo 搜尋部分用 star 數，star 可大規模造假（arXiv 2412.13459）且與工程品質無相關（arXiv 1606.04984），不得單獨當品質訊號。"
+    },
+    {
+      "name": "GitHub Issues",
+      "slug": "github-issues",
+      "active": true,
+      "category": "community",
+      "score_reliability": "trusted",
+      "curation_mode": "score",
+      "notes": "留言數反映討論深度，來源內可比。"
+    },
+    {
+      "name": "Hacker News",
+      "slug": "hacker-news",
+      "active": true,
+      "category": "community",
+      "score_reliability": "trusted",
+      "curation_mode": "score",
+      "notes": "HN 分數與內在品質相關性有實證支持（Stoddard, WWW 2015），但受 herding 膨脹約 25%（Muchnik, Science 2013）：用序位/門檻，不用絕對值。"
+    },
+    {
+      "name": "Reddit",
+      "slug": "reddit",
+      "active": true,
+      "category": "community",
+      "score_reliability": "untrusted",
+      "curation_mode": "content",
+      "notes": "匿名 RSS 路徑 score 恆 0（非真實低互動）；「· 週熱門」標記＝通過 Reddit 一週熱度排序，視為達低門檻。OAuth 憑證上線後（見 docs/workaround-register.md）可改 trusted。"
+    },
+    {
+      "name": "Google News",
+      "slug": "google-news",
+      "active": true,
+      "category": "media",
+      "score_reliability": "none",
+      "curation_mode": "content",
+      "domain_prior": true,
+      "notes": "無互動分數且 publisher 長尾雜，是唯一適用 domain 信譽先驗的來源：查 data/external/domain_pc1.csv（Lin et al. 2023, PNAS Nexus）。查無資料記「未知」不記「低分」。"
+    },
+    {
+      "name": "dev.to",
+      "slug": "devto",
+      "active": true,
+      "category": "community",
+      "score_reliability": "untrusted",
+      "curation_mode": "content",
+      "notes": "實測讚數為反指標（第一手實作文 2–3 讚、SEO 農場文 5–6 讚，2026-07-10 教訓），一律內容判斷；規則見 .claude/rules/wiki-ingest-community.md。"
+    },
+    {
+      "name": "Blogroll",
+      "slug": "blog",
+      "active": true,
+      "category": "community",
+      "score_reliability": "none",
+      "curation_mode": "whitelist",
+      "notes": "權威部落客策展名單，生命週期（probation/active/retired）在 src/news_aggregator/blogroll.json；汰換依記分卡建議、使用者確認。"
+    },
+    {
+      "name": "lobste.rs",
+      "slug": "lobsters",
+      "active": false,
+      "category": "community",
+      "score_reliability": "trusted",
+      "curation_mode": "whitelist",
+      "notes": "fetcher（sources/lobsters.py）存在但未註冊於 main.py sources 清單；wiki 規則沿用「收錄即算（量少質精）」。重新啟用時改 active=true。"
+    }
+  ]
+}

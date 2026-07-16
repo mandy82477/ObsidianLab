@@ -2810,3 +2810,10 @@ Append-only 紀錄。每次 ingest、lint，以及**揭露缺陷或促成改動�
 - **查證**：`wiki/metrics.md` 聚焦命中率欄三列全 `—`；log 07-04/07-05 回顧無校準記錄、07-12 與本次均判「非本月首次」跳過。
 - **根因**：跳過條件「log.md 本月尚無週度延伸回顧記錄」查的是執行記錄而非產出物——規則 07-05 誕生時 07-04 記錄已存在，當月名額被規則誕生前的回顧佔用，之後每週都誤判已做過。
 - **處置**：本 session 立即補跑首次聚焦校準（結果見上條）；防再犯修正提案（判斷方式改查 metrics.md 聚焦命中率欄）待使用者確認。
+
+## 2026-07-16 Query：資料來源的品質挑選有問題
+
+- **提問**：使用者反映對資料來源的品質挑選有問題，要求研究公開 AI news skill 生態與學術文獻後優化本專案（最想加強來源評分）。
+- **查證**：三路研究（skill/開源專案掃描、業界學術技術、本專案盤點）確認——品質挑選停在條目層特例門檻（HN 分數、Reddit 週熱門、dev.to 內容判斷各一套補丁），來源層無回饋迴路；`source_funnel.jsonl` 與 `source_attribution.jsonl` 為 `/source-review` 預留但從未實作，兩份 ledger 缺程式化 join（註冊名 vs slug 斷鏈）。
+- **根因**：來源特性知識（分數可信度、判準模式）散落規則檔文字，程式端無單一真相源；每次來源指標失真只能事後補規則，無法防再犯。
+- **處置**：建置來源評分 Phase 0–1（監控層，2026-07-16 上線）——`data/source_registry.json`（name↔slug↔品質標籤單一真相源）、`scripts/source_scorecard.py`（收錄率/Wilson 下界/wiki 率/Presence/HHI/domain 信譽分佈，Bayesian 假票平滑）、`data/external/domain_pc1.csv`（Lin et al. 2023，11,520 domains，接 Google News）、掛 `/wiki-lint` 6e 週更。enforcement 屬 Phase 2（≥60 天資料＋pipeline-change-check）。設計依據與逐來源機制：`docs/source-scoring-optimization.md`。

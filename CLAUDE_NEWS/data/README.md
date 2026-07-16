@@ -2,6 +2,11 @@
 
 本目錄存放 pipeline 產出的結構化統計資料，**append only**，供後續分析「哪個來源對哪個類別最有幫助」。資料檔（`*.jsonl`）由自動化流程維護：`source_attribution.jsonl` 由 wiki ingest 主編 append；`source_funnel.jsonl` 由每日 GitHub Actions gather / render 時 append 並 commit。
 
+另含兩個非 JSONL 檔（皆為 `scripts/source_scorecard.py` 的輸入，設計說明見 `docs/source-scoring-optimization.md`）：
+
+- **`source_registry.json`**：來源註冊表（單一真相源）——pipeline 註冊名 ↔ attribution slug ↔ 來源層品質標籤（`score_reliability` / `curation_mode`）。手動維護，新增或調整來源時同步更新。
+- **`external/domain_pc1.csv`**：Lin et al. (2023, PNAS Nexus) 的 domain 信譽聚合分數（11,520 domains，pc1 0–1），來自 [hauselin/domain-quality-ratings](https://github.com/hauselin/domain-quality-ratings)。靜態外部資料，每季複查時效（見 `docs/workaround-register.md`）。
+
 ## source_attribution.jsonl
 
 wiki ingest 時的來源歸因 ledger。主編收齊記者回報後，把各記者「來源歸因」欄逐筆轉為一行 JSON append（記者回報「無」則不寫）。
