@@ -2,11 +2,12 @@
 
 LLM 查詢此 wiki 時，**先讀這個檔案**找相關頁面，再讀具體頁面取得詳細資訊。
 
-**最後更新：** 2026-07-16
+**最後更新：** 2026-07-17
 ---
 
 ## 近期異動
 
+- [[entities/claude-skills]] — 2026-07-17：**新頁面**，官方 Skills 產品線與生態單一入口（使用者指定追蹤官方力推項目）——六大控制層定位、31 個小企業技能包（首日 38.2 萬下載）、教師技能庫、`--safe-mode`／巢狀 subagent 支援、第三方移植（OpenCode-power-pack／Claudinho）與「官方無市集、創作者無變現」結構性缺口；設計面仍歸 [[topics/community-tech-patterns]]，兩頁互 wikilink
 - [[entities/claude-code]] — 2026-07-16：**v2.1.211** 發布（`--forward-subagent-text` 旗標 + 對應環境變數，stream-json 輸出含 subagent 文字與思考內容，feature-radar 新條目；另修復一項權限相關問題）；已知問題新增高互動條目——手機號碼驗證機制問題（#34229，741 留言/892 讚同，本日最高互動）、Cowork 建立 10GB VM bundle 導致效能持續劣化（#22543，76 留言）、Cowork Edit/Write 靜默截斷檔案（#53940，43 留言，🔴 已列入 feature-radar 升版風險）、session 額度續行請求（#13354，69 留言）；Remote Control 自動重連（#34255）與 GitLab 整合請求（#12346）留言數更新
 - [[entities/claude-design]] — 2026-07-16：dev.to 操作指南補充 Artifacts 建立即時儀表板/圖表/可分享頁面與 Claude Design 同步程式碼庫的設定說明
 - [[topics/anthropic-business]] — 2026-07-16：Anthropic 與 Blackstone 共同成立 **15 億美元 AI 實作公司 Ode**（Technology Org、TechCrunch 雙來源）；Yahoo Finance／CNBC／Bloomberg 三家財經媒體同步報導 Anthropic **上市前投資人會議安排**，新增「IPO 前瞻」相關列
@@ -167,6 +168,7 @@ LLM 查詢此 wiki 時，**先讀這個檔案**找相關頁面，再讀具體頁
 | [[entities/chris-olah]] | person | 👤 人物 | active | Anthropic 共同創辦人、AI 可解釋性研究先驅；2026-05-26 梵蒂岡封論揭幕演講 |
 | [[entities/opencode]] | product | 🛠️ 工具/功能 | active（快速成長）| Claude Code 主要開源替代品，157K 開發者分流，OpenCode-power-pack 移植官方 11 個 skills |
 | [[entities/claude-tag]] | feature | 🛠️ 工具/功能 | active | Claude Tag：Slack-native AI 協作工具，可讀取頻道上下文、跨 session 記憶、主動完成任務；Anthropic 內部 65% 程式碼由其生成 |
+| [[entities/claude-skills]] | feature | 🛠️ 工具/功能 | active | Claude Skills：官方 Skills 產品線與生態單一入口——六大控制層之一，官方小企業/教師技能包、平台支援、第三方移植動態；設計面歸 [[topics/community-tech-patterns]] |
 | [[entities/fable-5]] | model | 🤖 模型 | active（已解禁）| Claude Fable 5：首款 Mythos 級公開模型，$10/$50 per M token；7/1 解禁，Pro/Max/Team 7/7 前享 50% 配額，7/7 後 usage-based billing |
 | [[entities/tom-blomfield]] | person | 👤 人物 | active（待核實）| 前 Monzo 共同創辦人，2026-07-13 加入 Anthropic（Business Insider 單一來源，AI compute／Y Combinator 背景）|
 | [[entities/claude-for-teachers]] | product | 🛠️ 工具/功能 | active | Anthropic 面向美國通過認證 K-12 教師的免費方案，開放進階 Claude 功能與教學技能庫，對接全美 50 州學術標準 |

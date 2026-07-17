@@ -14,6 +14,7 @@
 | `wiki/entities/openclaw.md` | OpenClaw 第三方整合政策變化 |
 | `wiki/entities/claude-design.md` | Claude Design 工具更新 |
 | `wiki/entities/claude-security.md` | Claude Security 資安產品動態 |
+| `wiki/entities/claude-skills.md` | Skills 官方產品線與生態：官方技能包、平台支援、分享機制、第三方移植（設計面歸社群記者 patterns 頁） |
 | `wiki/topics/official-community-gap.md` | 官方功能 vs 社群痛點缺口變化 |
 | `wiki/feature-radar.md` | 新增/更新功能條目（**須回報主編彙整**，不直接寫入） |
 

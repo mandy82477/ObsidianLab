@@ -4,7 +4,7 @@
 **狀態：** active
 **領域：** 🛠️ 工具/功能
 **首次出現：** 2025（正式推出）
-**最後更新：** 2026-07-16
+**最後更新：** 2026-07-17
 **最後新聞更新：** 2026-07-16
 
 > **最新版本動態**（2026-07-16）
@@ -264,7 +264,7 @@
 
 - **CLAUDE.md** — 專案級別的 AI 指令設定
 - **Hooks** — 在特定事件前後注入自定義邏輯（如：修改代碼後強制跑測試）
-- **Skills** — 可複用的任務封裝單元，Claude 透過描述自動觸發
+- **Skills** — 可複用的任務封裝單元，Claude 透過描述自動觸發；官方產品線與生態詳見 [[entities/claude-skills]]
 - **Agent Teams** — 多 agent 協作，目前僅支援 Claude 實例（社群已有 workaround）
 - **MCP Servers** — 外部工具整合（注意：多個 MCP 可能導致每次訊息消耗 20k+ tokens）
 - **Memories** — 跨 session 的持久記憶（Managed Agents Beta）

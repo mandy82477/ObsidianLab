@@ -3,7 +3,7 @@
 **狀態：** monitoring
 **領域：** 🌐 社群
 **開始日期：** 2026-04-25
-**最後更新：** 2026-07-16
+**最後更新：** 2026-07-17
 **最後新聞更新：** 2026-07-16
 
 > **最新工作流模式**（2026-07-16）
@@ -1005,6 +1005,7 @@
 ## 相關實體
 
 - [[entities/claude-code]]
+- [[entities/claude-skills]]（官方 Skills 產品線與生態單一入口——官方 bundle、平台支援、第三方移植；本頁只管 skill 設計面）
 - [[entities/pricing]]（token 消耗與模型選擇策略相關）
 - [[entities/managed-agents]]（官方 Agent 框架：Dreaming 記憶整合、20 路並行、Outcomes 規格驗證）
 - **Project Deal**（Claude 代理人交易談判實驗，multi-agent 應用的商業探索；詳見 [[entities/claude-code]]）

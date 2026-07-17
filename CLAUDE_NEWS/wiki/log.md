@@ -2827,3 +2827,17 @@ Append-only 紀錄。每次 ingest、lint，以及**揭露缺陷或促成改動�
 - **提問**：使用者問 community-pattern-trends 為何最後更新停在 07-10、哪些頁是週更、能否加 TAG 讓這件事更明顯。
 - **查證**：日期停留為設計行為（lint 週更＋無新節點不動頁）；週更頁共三頁：overview、community-pattern-trends、community-tech-tools。
 - **處置**：三頁標頭新增「**更新頻率：** 🗓️ 週更（維護指令）」欄位，index.md 對應摘要前綴「🗓️ 週更」；慣例寫入 `.claude/rules/wiki-ingest-format.md`（選填欄位，日後週更頁比照）。
+
+## 2026-07-17 Query：地端 AI server 商業評估（wiki 邊界確認 + 台灣落地層市場分析）
+
+- **問題**：使用者為友人「20 萬台幣自組 AI server 套阿里 Qwen 模型」評估商業模式，過程中反覆測試 wiki 對跨模型評測、競品能力、台灣本地市場的覆蓋能力。
+- **根因**：非缺陷——wiki 依 CLAUDE.md 設計不收「與 Claude/Anthropic 無直接關聯的通用 AI 新聞」，故 benchmark 絕對數字、競品硬體規格、台灣落地層（本地供給/法規/預算行為）皆在設計邊界外；本次確認邊界執行正確（log 既有「Qwen 非 Anthropic 相關略過」「GLM 5.2 無直接關聯未更新」兩筆自證）。wiki 實際貢獻：阿里蒸餾指控（ai-agent-safety）、自架沙箱+MCP 隧道（managed-agents）、企業退出三軌（enterprise-tool-tracker）、成本失控案例（enterprise-cost-management/pricing）與 competitor-landscape 的「待查證」可信度標記（後經外部查證 GLM-5.2 開源榜首屬實，FrontierSWE 74.4 vs Opus 4.8 75.1）。
+- **處置**：以 ECC market-research 方法論執行台灣落地層市場分析（探針優先），Stage 1 即觸發 kill-switch：華碩 Ascent GX10（NT$99,900 起、128GB 統一記憶體）半價輾壓自組機；2026 政府 AI 補助明文排除中國廠牌資通訊產品；中小企業 20 萬預算帶需求全數流向雲端。結論 no-go（硬體本位）/有條件轉服務本位。報告存 scratchpad `taiwan-onprem-ai-server-feasibility.md`（session 交付物，不入 wiki）。reader-notes 2026-07-17 已有對應興趣主題條目（Claude vs 開源競品能力差距）待 weekly-review 判 venue 擴充三題。
+
+## 2026-07-17 新增頁面 | claude-skills.md（官方 Skills 產品線與生態）
+
+- **背景**：使用者表示想追蹤「Anthropic 力推的 Skills」。查證發現 Skills 覆蓋散在 10+ 頁（patterns 36 處、claude-code 12 處、opencode/claude-for-teachers/tools 等）而無單一入口，達建頁標準。
+- **分工設計**：`entities/claude-skills.md`（功能記者主責）管官方產品線與生態（官方 bundle、平台支援、分享機制、第三方移植）；`topics/community-tech-patterns.md` 照舊管 skill 設計面，兩頁互 wikilink——比照 pricing（商業）vs 模型頁（能力）的分工邏輯。
+- **執行**：功能記者（sonnet）回讀歷史日報與既有 wiki 建頁，時間軸涵蓋 2026-04-27（OpenCode-power-pack 移植）至 2026-07-15（教師技能庫）；主編修 callout 對齊最新事件（07-15）與最後新聞更新日期；同步 index.md 新增列與近期異動、claude-code.md 核心功能與 patterns.md 相關實體補 wikilink、`.claude/rules/wiki-ingest-features.md` 負責頁面表新增列。
+- **feature-radar 判定**：記者建議新增 radar 條目，主編判定**不新增**——radar 追蹤「新發布功能」熱度，Skills 為長期 GA 機制，entity 頁已足；日後 Skills 有新官方發布（如市集上線）再依准入定義進 radar。
+- 品質備註：無
