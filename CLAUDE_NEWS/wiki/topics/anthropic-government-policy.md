@@ -3,11 +3,11 @@
 **狀態：** monitoring（出口管制主線已解除，剩餘承諾落實與衍生支線持續觀察；中美 AI 工具信任對峙已獨立成頁）
 **領域：** 🏛️ 政策/安全
 **開始日期：** 2026-05-01
-**最後更新：** 2026-07-16
-**最後新聞更新：** 2026-07-16
+**最後更新：** 2026-07-17
+**最後新聞更新：** 2026-07-17
 
 > **最新攻防紀錄**（2026-07-16）
-> Hacker News 轉載 Politico 全文報導（累積 19 分），確認並補足 07-14 politico.eu 標題式報導細節：歐盟政策官員不滿 Anthropic 僅派遣一名初階員工 Donny Greenberg（而非資深主管）出席歐洲議會安全聽證會，回應先進 AI 能力風險疑慮。同日（Google News/Politico，僅標題可用，原文因轉址未確認）：Anthropic CEO Dario Amodei 捐款 100 萬美元予某 super PAC，捲入 AI 陣營之間鉅額政治獻金角力，具體 PAC 名稱與資金用途待確認；人物面向詳見 [[entities/dario-amodei]]。出口管制主線本身已於 07-01 落幕（詳見「## 摘要」）；中美 AI 工具信任對峙已於 2026-07-12 整合拆出至獨立頁 [[topics/safety-china-trust-dispute]]。
+> Politico（經 Google News 轉載，僅標題可用）報導美國參議員 Mike Rounds 就 Anthropic 的 Mythos 接受五角大廈（Pentagon）簡報，顯示國會層級對 Mythos 軍用能力的關注持續；同日南華早報（SCMP）獨家專訪「Pax Silica」政策架構的主要推手（姓名待確認），論述美國仍可維持 AI 領先地位，為既有「管制恐反助中國」論述（Bloomberg 06-26）提供首個正面反論；WIRED 分析並確認 Anthropic 正積極遊說美國各州加快 AI 監管腳步（延續並補強 07-15 Politico 標題式報導）。同日稍早的另一批事件——HN 轉載 Politico 全文揭露 Anthropic 派遣初階員工出席歐盟聽證、Dario Amodei 政治獻金——詳見下方「## 攻防紀錄」。出口管制主線本身已於 07-01 落幕（詳見「## 摘要」）；中美 AI 工具信任對峙已於 2026-07-12 整合拆出至獨立頁 [[topics/safety-china-trust-dispute]]。
 
 ---
 
@@ -36,11 +36,13 @@
 | NSA 存取權                  | NSA 因爭議於 6/23 失去 Fable 存取權                                                                                                                                                                                                                         | 管制解除是否恢復此存取，尚未見報導                                                                                                      |
 | 身份管控收緊                   | 計畫對部分 Free/Pro/Max 用戶要求身份證明與臉部掃描（最快 7 月），觸發條件未公開；帳號封禁申訴機制缺失（HN score 55）                                                                                                                                                                           | 7 月是否如期上路；觸發條件與覆蓋範圍是否公開                                                                                                |
 | Anthropic 安全人力擴編（災難性風險） | Axios 報導 Anthropic 正在招募人力以應對潛在災難性風險，偏向安全團隊建置動態，僅標題式轉載，具體職位與規模待確認（2026-07-15） | 是否有更多報導揭露職位性質、規模、招募進度 |
-| 州級 AI 規則倡議 | Politico 報導 Anthropic 正推動一項逐州加強 AI 監管規則的計畫（美國州層級政策倡議），僅標題式轉載，具體州別與內容待確認（2026-07-15） | 涉及哪些州、規則具體內容、是否與聯邦出口管制/歐洲遊說形成一致的政策倡議策略 |
+| 州級 AI 規則倡議 | WIRED（07-16）分析並確認 Anthropic 正積極遊說美國各州加快 AI 監管腳步（州級而非僅聯邦層級的政策遊說），延續並補強 07-15 Politico 標題式報導；具體州別、規則內容與遊說對象仍未見報導細節 | 涉及哪些州、規則具體內容、是否與聯邦出口管制/歐洲遊說形成一致的政策倡議策略；WIRED 是否釋出更完整分析全文 |
 | EU 對 Anthropic 投入度觀感 | 07-14 politico.eu 標題式報導已於 07-16 經 Hacker News 轉載 Politico 全文（19 分）確認並補足細節：歐盟政策官員點名批評 Anthropic 派遣初階員工 **Donny Greenberg**（而非資深主管）出席歐洲議會安全聽證會，回應先進 AI 能力風險疑慮 | Anthropic 是否公開回應或調整後續出席層級；是否影響「歐洲據點爭奪」進度 |
 | 美國政府內部立場矛盾（Hegseth vs CISA） | The National Interest 報導：國防部長 Hegseth 曾稱 Anthropic 為「國家安全風險」，CISA（網路安全暨基礎設施安全局）現正使用其產品（2026-07-14，僅標題式轉載，細節待確認） | 是否有具體使用範圍、時間點或官方回應公開；是否呼應 06-05 Hegseth 首次確認風險標籤的既有敘事 |
 | 加拿大金融監管風險評估             | Reuters 獨家報導（source_count=2）：加拿大金融監管機關發函警告銀行業網路風險，內容明確引用 Claude Mythos（2026-07-13）；Mythos 07-01 解禁後監管機構首見的具體風險評估案例 | 是否有其他國家監管機構跟進類似警告；加拿大監管機關是否公開警告全文或機構名稱 |
 | Anthropic CEO 政治獻金布局 | Politico（經 Google News 轉載，僅標題可用）：Dario Amodei 捐款 100 萬美元予某 super PAC，捲入 AI 陣營之間鉅額政治獻金角力（2026-07-16）；具體 PAC 名稱、資金用途、對立陣營身分均待原文確認 | 是否與州級 AI 規則倡議（07-15）構成一致的政治佈局；是否有對立 PAC 陣營公開回應；人物面向詳見 [[entities/dario-amodei]] |
+| 國會參議院 Mythos 軍事簡報 | Politico（經 Google News 轉載，僅標題可用）：參議員 Mike Rounds 就 Anthropic 的 Mythos 接受五角大廈簡報，暗示 Mythos 軍用能力持續受國會層級關注（2026-07-16） | Rounds 是否公開表態或提出立法動作；是否與「軍事合約」戰場既有的「DoD 已將三分之二 AI 工作量移出 Anthropic」敘事產生新進展 |
+| Pax Silica 政策架構與中美 AI 領先地位論戰 | 南華早報獨家專訪「Pax Silica」政策架構主要推手（姓名待確認），主張美國仍可維持 AI 領先地位，為既有「出口管制反效」論述（Bloomberg 06-26）提供首個正面反駁（2026-07-16，僅單一媒體專訪，待第三方確認） | Pax Silica 政策架構具體內容與推手身分；此論述是否獲其他政策圈人士呼應或反駁 |
 
 ---
 
@@ -63,6 +65,8 @@ Anthropic 的整個品牌建立在一個論述上：「我們建造了史上最�
 五角大廈想要一個能用在戰場場景的 AI 工具，但 Claude 的安全護欄在這些場景中限制過多。2026-05-01，DoD 與 SpaceX、OpenAI、Google 等 7 家公司簽署機密網路部署協議，Anthropic 被排除。
 
 這不是商業談判失敗，而是 Anthropic 的核心產品主張（護欄不可移除）與軍事需求（護欄是障礙）在結構上不相容。DoD 後來在 6/8 積極尋找替代，6/17 已將三分之二 AI 工作量移出 Anthropic。
+
+2026-07-16，Politico（僅標題可用）報導參議員 Mike Rounds 就 Mythos 接受五角大廈簡報，顯示儘管 DoD 已大幅轉移工作量，國會軍事委員會層級對 Mythos 軍用能力的關注並未消退；具體簡報內容與 Rounds 立場待確認。
 
 ### 🚫 出口管制：誰來管最強的模型
 
@@ -88,6 +92,8 @@ Fable 5 發布後，Amazon 安全研究人員發現特定提示詞可讓模型�
 
 此外，Anthropic 已於 2026-06-10 致函美參議院，正式指控阿里巴巴透過約 25,000 個假帳號在 2026-04-22 至 2026-06-05 間，向 Claude 發動 2,880 萬次模型交換以蒸餾提取 AI 能力，為已知最大規模 AI 蒸餾攻擊（CNBC，2026-06-24；https://www.cnbc.com/2026/06/24/anthropic-alibaba-distillation-campaign.html）。此事件同時強化出口管制必要性論述（中國行為者已在主動提取受管制模型能力），亦為政府討論 AI 出口管制政策提供具體數據支撐；技術安全面向詳見 [[topics/ai-agent-safety]]。
 
+2026-07-16，南華早報（SCMP）獨家專訪「Pax Silica」政策架構主要推手（姓名待確認），論述美國仍可望維持 AI 領先地位；此為「管制反而助長中國開源模型採用」論述（Bloomberg，2026-06-26）出現以來，首個公開為出口管制/美中科技對峙政策方向背書的正面反論，惟目前僅單一媒體專訪，論者身分與政策架構具體內容待確認。
+
 ### 🌍 策略選擇：Anthropic 換戰場而非退讓
 
 面對政府市場持續碰壁，Anthropic 選擇強化其他方向而非妥協：
@@ -100,6 +106,8 @@ Fable 5 發布後，Amazon 安全研究人員發現特定提示詞可讓模型�
 
 2026-06-30，Fortune 深度報導正式從主流財經媒體視角量化了此代價：Anthropic 因拒絕配合 Trump 政府的遊戲規則（包括公開拒絕對護欄做出妥協），付出了其他主動配合的科技巨頭所未承受的實質損失；此報導將 Anthropic 的策略選擇定性為「bucked the rules」，而非「principled stance」，顯示媒體框架開始從「政府打壓受害者」轉向「策略失算代價」。同日，CNBC 報導白宮 AI 打壓為中國模型廠商創造追趕機會，進一步強化「管制反效」論述；SF Examiner 引述 AI 專家稱需要監管但質疑 Anthropic 案的特定封禁方式，為 Anthropic 提供外部中立聲音（Fortune，2026-06-30；https://fortune.com/2026/06/30/anthropic-clash-with-u-s-government-shows-its-failure-to-play-by-trump-administration-playbook/；CNBC，2026-06-30；https://www.cnbc.com/2026/06/30/white-house-ai-china-crackdown.html）。
 
+2026-07-16，WIRED 分析並確認 Anthropic 正積極遊說美國各州加快 AI 監管腳步（州級而非僅聯邦層級的政策倡議，延續並補強 07-15 Politico 標題式報導）；此舉呼應 Anthropic「越強模型越需要護欄」的一貫立場（見「## 根本矛盾」），顯示公司在聯邦出口管制主線落幕後，持續透過州級遊說主動形塑監管環境，而非退出政策場域。
+
 ---
 
 ## 攻防紀錄
@@ -110,6 +118,9 @@ Fable 5 發布後，Amazon 安全研究人員發現特定提示詞可讓模型�
 
 | 日期 | 方 | 動作 | 效果 |
 |------|----|------|------|
+| 2026-07-16 | 🏛️🌐 | Politico（經 Google News 轉載，僅標題可用，原文因轉址未確認）：參議員 Mike Rounds 就 Anthropic 的 Mythos 接受五角大廈簡報（2026-07-16 20:12 UTC） | 國會軍事委員會層級對 Mythos 軍用能力的關注持續，暗示 05-01 DoD 排除 Anthropic、06-17 三分之二工作量轉移後，軍事戰場仍有國會層級後續動態；具體簡報內容與 Rounds 立場待確認 |
+| 2026-07-16 | 🌐 | WIRED 分析並確認 Anthropic 正積極遊說美國各州加快 AI 監管腳步（州級而非僅聯邦層級政策遊說），延續並補強 07-15 Politico 標題式報導（2026-07-16 18:35 UTC） | 州級規則倡議首度獲具分析深度的媒體（WIRED）確認，非僅標題轉載；具體州別與規則內容仍待報導揭露 |
+| 2026-07-16 | 🌐 | 南華早報獨家專訪「Pax Silica」政策架構主要推手（姓名待確認），論述美國仍可維持 AI 領先地位（2026-07-16 15:00 UTC） | 為既有「出口管制反效，恐助長中國開源模型」論述（Bloomberg 06-26）首度出現的正面反駁觀點；論者身分與政策架構具體內容待確認 |
 | 2026-07-16 | 🌐🏛️ | Hacker News 轉載 Politico 全文報導（累積 19 分），確認並補足 07-14 politico.eu 標題式報導：具名初階員工 Donny Greenberg 出席歐洲議會安全聽證會，回應先進 AI 能力風險疑慮（原文：politico.eu/article/anthropic-european-parliament-donny-greenberg-artificial-intelligence-ai） | 07-14 headline 首度取得全文與具名細節確認；歐盟對 Anthropic 政府關係投入層級的不滿具體化（點名基層員工代表出席），可能影響「歐洲據點爭奪」進度 |
 | 2026-07-16 | 🏢 | Anthropic CEO Dario Amodei 捐款 100 萬美元予某 super PAC，捲入 AI 陣營之間鉅額政治獻金角力（Google News/Politico，僅標題式轉載，原文因轉址未確認） | Anthropic 高層首度出現具金額的美國政治獻金動作；與 07-15 州級 AI 規則倡議是否構成一致政治佈局待觀察；人物面向詳見 [[entities/dario-amodei]] |
 | 2026-07-15 | 🏢 | Axios 報導 Anthropic 正在招募人力以應對潛在災難性風險（catastrophic risk），偏向安全團隊建置動態（Google News/Axios，僅標題式轉載，原文因轉址未確認） | 顯示 Anthropic 持續擴大安全/災難性風險相關人力編制；具體職位、規模、時間表待確認 |
@@ -228,6 +239,9 @@ Fable 5 發布後，Amazon 安全研究人員發現特定提示詞可讓模型�
 ## 時序
 
 ### 2026-07-16
+- **[軍事監督] Politico：參議員 Mike Rounds 就 Mythos 接受五角大廈簡報**：Google News 轉載 Politico 標題，稱美國參議員 Mike Rounds 就 Anthropic 的 Mythos 接受五角大廈（Pentagon）簡報；僅標題可用，原文為轉址頁面，無法取得簡報具體內容或 Rounds 立場（Google News/Politico，2026-07-16 20:12 UTC）
+- **[政策倡議確認] WIRED：Anthropic 積極遊說各州加快 AI 監管**：WIRED（經 Google News 轉載）分析報導指出 Anthropic 正積極推動美國各州加快 AI 監管腳步（州級而非僅聯邦層級的政策遊說），確認並補強 07-15 Politico 標題式報導（Google News/WIRED，2026-07-16 18:35 UTC）
+- **[中美論戰新觀點] 南華早報獨家：Pax Silica 政策架構推手論美國可維持 AI 領先地位**：南華早報（SCMP）獨家專訪「Pax Silica」政策架構的主要推手（姓名待確認），探討 Anthropic 與中國之間的競合關係，並論述美國仍可維持 AI 領先地位；為 Bloomberg（06-26）「管制反效」論述後首見的正面反駁觀點，惟目前僅單一媒體專訪，待其他來源確認（Google News/South China Morning Post，2026-07-16 15:00 UTC）
 - **[EU 施壓具體化] HN 轉載 Politico 全文：確認 Anthropic 派遣初階員工 Donny Greenberg 出席歐盟安全聽證**：Hacker News（累積 19 分）轉載 Politico 全文報導，確認並補足 07-14 politico.eu 標題式報導：布魯塞爾政策官員批評 Anthropic 週二未派遣資深主管，僅派遣初階員工 Donny Greenberg 出席歐洲議會，回應對先進 AI 能力風險的疑慮（Hacker News/Politico，2026-07-16 05:08 UTC；https://www.politico.eu/article/anthropic-european-parliament-donny-greenberg-artificial-intelligence-ai/）
 - **[待查證] Politico：Anthropic CEO 捐款 100 萬美元予 super PAC**：Google News 轉載 Politico 標題，指 Anthropic CEO（Dario Amodei）捐款 100 萬美元予某 super PAC，捲入 AI 陣營之間鉅額政治獻金角力；僅標題可用，原文為轉址頁面，PAC 名稱與資金用途待確認（Google News/Politico，2026-07-16 06:04 UTC）
 

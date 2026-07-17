@@ -3,11 +3,11 @@
 **狀態：** monitoring
 **領域：** 🛠️ 工具/功能
 **開始日期：** 2026-05-17
-**最後更新：** 2026-07-16
-**最後新聞更新：** 2026-07-16
+**最後更新：** 2026-07-17
+**最後新聞更新：** 2026-07-17
 
-> **最新功能缺口**（2026-07-08）
-> Claude Cowork 正式擴展至行動裝置與網頁版（首波開放 Max 訂閱用戶，涵蓋政府機構客戶），任務可在雲端持續執行、闔上筆電也不中斷——「平台可及性」缺口的**輸入操作面**首度獲得正式填補（先前僅 Artifacts 覆蓋輸出共享面）。官方明言「完整體驗」仍在桌面版，矩陣狀態維持 ⚡ 部分對應。
+> **最新功能缺口**（2026-07-17）
+> v2.1.212 將 `/fork` 改為建立獨立**背景 session**（`claude agents` 自成一列），原本同 session 子 agent 行為更名為 `/subtask`——「多平行 agent 即時可觀測性／協調地圖」缺口的**列表管理面**再進一步（延續 v2.1.211 `--forward-subagent-text` 旗標的可觀測性補強），但仍非即時依賴關係／狀態流的 live map，矩陣狀態維持 ❌ 無官方對應。
 
 ## 摘要
 
@@ -24,7 +24,7 @@
 
 | 模式 | 社群起源 | 代表社群工具 | 官方對應 | 狀態 | 缺口分析 |
 |------|---------|------------|---------|------|---------|
-| Subagent 派工/編排 | 2026-05 前，Claude Squad orchestrator 模式 | Claude Squad、Harness（multi-worktree） | Managed Agents（2026-04-30 Beta→2026-05-11 正式）+ `subagent_type` 匹配改善（v2.1.140） | ✅ 已產品化 | 官方能力已超前，Boris Cherny 揭露內部「數千子代理夜間跑批」工作流（2026-05-13），早期社群模式已被涵蓋 |
+| Subagent 派工/編排 | 2026-05 前，Claude Squad orchestrator 模式 | Claude Squad、Harness（multi-worktree） | Managed Agents（2026-04-30 Beta→2026-05-11 正式）+ `subagent_type` 匹配改善（v2.1.140）+ `/fork`／`/subtask` 語意拆分（v2.1.212，2026-07-17） | ✅ 已產品化 | 官方能力已超前，Boris Cherny 揭露內部「數千子代理夜間跑批」工作流（2026-05-13），早期社群模式已被涵蓋；2026-07-17 官方進一步將「背景多開新 session」（`/fork`）與「同 session 委派子任務」（`/subtask`）拆成兩個明確指令，派工模式的操作介面更成熟 |
 | Multi-agent workflow 腳本化 | 2026-06-18 Gorchestra（手機遠端多 agent 控制）；2026-07-01 動態 fan-out 教學 | Gorchestra、TBD（agent-channels）、Superset | Dynamic Workflows（2026-05-28，Research Preview，最多 1,000 平行子代理）＋ `/config` **Dynamic workflow size** 設定（v2.1.202，2026-07-07，可調整 agent 規模小/中/大）；Coordinator 模式（v2.1.152） | 🧪 部分產品化 | 官方版本存在但 feature-radar 明確標「❌ 暫不推薦」（UltraCode 1.7M token bug 無退款）；v2.1.202 新增規模引導值屬易用性微調，未解決核心退款爭議；手機遠端操控場景**出現初步官方線索**——2026-07-13 GitHub issue #28322 顯示 `/remote-control`（`/rc`）指令已存在但既有 session 無法辨識（需新 session），同日 issue #29006 社群仍在請求 Desktop App 遠端控制 CC session，顯示官方可能已悄悄鋪路但尚未正式發布/文件化，缺口尚未完全補上 |
 | Agent 需要輸入時的通知 | 2026-06-28 Stop Hook 音效通知；2026-07-02 氛圍狀態燈；2026-07-03 claude-needs-input | claude-needs-input（終端機標籤變色）、氛圍狀態燈（實體 LED） | `waitingFor` 可見性（v2.1.162，2026-06-04） | 🧪 部分產品化 | 官方僅提供被動可見性（需主動查看畫面），社群工具補上主動提醒（變色、聲音、實體燈號），官方尚未涉足 |
 | 破壞性指令防護 | 長期社群關注（沙盒隔離、git 安全腳本） | SmolVM、Sandfence、CapaKit | 破壞性 Git 指令自動封鎖（v2.1.183，2026-06-19）；Claude Code Sandboxing（2026-05-10）、`hard_deny`（2026-05-09） | ✅ 已產品化 | 官方對 git 層級防護已完整覆蓋且評價高（🔥🔥🔥 ✅ 推薦）；社群沙盒工具仍在更廣泛的資源限制場景（非僅 git）補位 |
@@ -34,7 +34,7 @@
 | 額度/用量監控 | 2026-05 起持續累積，2026-07-03 因 7/7 計費轉換臨近急遽爆發 | LimitBar、CCLimitPing、claude-needs-input | 企業版 Spend Controls（2026-07-04 宣布，控管粒度未公開，見 [[topics/enterprise-cost-management]]）；個人用戶仍無官方儀表板/告警 UI | 🧪 部分產品化（僅企業版） | 個人重度使用者缺口依舊，迫切性隨計費轉換 deadline 逼近而升高，見 [[feature-radar]] ⏰ 倒數中 |
 | Slack 內 AI 隊友 | 弱社群前驅（Ano 等輕量 Slack + Claude 整合，2026-06-04） | Ano | [[entities/claude-tag\|Claude Tag]]（2026-06-24，Slack-native，Anthropic 內部 65% 程式碼由其生成） | ✅ 已產品化 | 此列較弱屬「社群發明」框架——官方主導色彩強，社群前驅稀薄，列入僅供對照參考 |
 | 跨工具 agent 設定標準（AGENTS.md） | 2026-05-02 起，[GitHub issue #6235](https://github.com/anthropics/claude-code/issues/6235) 累積 335 則留言、5634 個讚（2026-07-10，全站已知問題讚數之最）| Codex、Amp、Cursor（均已採用 AGENTS.md 標準） | 無 | ❌ 無官方對應 | Claude Code 仍不支援 AGENTS.md，多工具並用者需為 Claude Code 額外維護 CLAUDE.md，造成配置互通痛點；反應數持續攀升顯示壓力未見緩解；v2.1.206（2026-07-10）`/doctor` 新增建議精簡 CLAUDE.md 內容的檢查項，屬維護性提示而非互操作標準對應，缺口性質未變 |
-| 多平行 agent 即時可觀測性／協調地圖 | 2026-07-06 Show HN live-log-viewer-next（讀本機 JSONL transcript 呈現即時對話地圖）；既有 1000 Subagents Fan-out、20-instance 崩潰分析持續堆疊 | live-log-viewer-next、（fan-out/多 instance 分析工具鏈） | Agent View（`claude agents` 多 session 列表管理，v2.1.139）＋ `--forward-subagent-text` 旗標（v2.1.211，2026-07-15） | ❌ 無官方對應 | 官方 Agent View 為**列表式** session 管理，非跨 agent 即時狀態流的 live map；當數十至上千平行 agent 併跑時「誰卡住、誰在等、彼此依賴」缺乏即時可觀測面，社群自建地圖式檢視器補位，官方無對應方向。2026-07-15 v2.1.211 新增 `--forward-subagent-text` 旗標與 `CLAUDE_CODE_FORWARD_SUBAGENT_TEXT` 環境變數，讓 `stream-json` 輸出包含 subagent 文字與思考內容，為社群建構觀測工具提供官方資料來源，但本身仍非官方 live map 產品，狀態未變 |
+| 多平行 agent 即時可觀測性／協調地圖 | 2026-07-06 Show HN live-log-viewer-next（讀本機 JSONL transcript 呈現即時對話地圖）；既有 1000 Subagents Fan-out、20-instance 崩潰分析持續堆疊 | live-log-viewer-next、（fan-out/多 instance 分析工具鏈） | Agent View（`claude agents` 多 session 列表管理，v2.1.139）＋ `--forward-subagent-text` 旗標（v2.1.211，2026-07-15）＋ `/fork` 背景 session 化（v2.1.212，2026-07-17） | ❌ 無官方對應 | 官方 Agent View 為**列表式** session 管理，非跨 agent 即時狀態流的 live map；當數十至上千平行 agent 併跑時「誰卡住、誰在等、彼此依賴」缺乏即時可觀測面，社群自建地圖式檢視器補位，官方無對應方向。2026-07-15 v2.1.211 新增 `--forward-subagent-text` 旗標與 `CLAUDE_CODE_FORWARD_SUBAGENT_TEXT` 環境變數，讓 `stream-json` 輸出包含 subagent 文字與思考內容，為社群建構觀測工具提供官方資料來源；2026-07-17 v2.1.212 將 `/fork` 改為建立獨立背景 session（`claude agents` 自成一列），原同 session 子 agent 行為更名 `/subtask`，使多開背景任務與同 session 委派的列表可見度更清楚拆分，但本身仍非官方 live map 產品，狀態未變 |
 
 ---
 
@@ -128,6 +128,9 @@ v2.1.196（2026-06-29）新增 org default model 功能，企業管理員可在 
 - [[topics/community-tech-discussions]] — 社群技術辯論
 
 ## 時序
+
+### 2026-07-17
+- **v2.1.212：`/fork` 改為背景 session 化，`/subtask` 承接同 session 子 agent 語意**：「Subagent 派工/編排」的指令介面更明確拆分為「多開背景 session」與「同 session 委派」；「多平行 agent 即時可觀測性」缺口的列表管理面再進一步，但仍非即時依賴關係 live map，矩陣狀態維持 ❌ 無官方對應
 
 ### 2026-07-15
 - **v2.1.211 新增 `--forward-subagent-text` 旗標，為「多平行 agent 即時可觀測性」缺口提供官方資料來源**：`stream-json` 輸出可包含 subagent 文字與思考內容，讓社群建構觀測/監控工具時不必自行拼湊資料來源；但官方仍未推出 live map 類產品，矩陣狀態維持 ❌ 無官方對應

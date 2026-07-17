@@ -3,11 +3,11 @@
 **狀態：** monitoring
 **領域：** 💼 商業
 **開始日期：** 2026-04
-**最後更新：** 2026-07-16
-**最後新聞更新：** 2026-07-16
+**最後更新：** 2026-07-17
+**最後新聞更新：** 2026-07-17
 
-> **最新競品動態**（2026-07-16）
-> 中國新創 Moonshot 據 Financial Times 報導即將發布新模型，被視為挑戰 Anthropic 市場領先地位，延續中國陣營（DeepSeek、Zhipu、360、Alibaba）持續追趕的既有格局，新增一家具名競爭者。同日（07-15）另有報導指出 Microsoft 據稱正訓練業務團隊，向客戶淡化 OpenAI 與 Anthropic 的競爭優勢，延續 Microsoft 06-21 退出 Claude Code、07-07/08 自研模型替代傳聞的既有軌跡，從「產品替代」延伸至「銷售話術」戰線。以上均僅標題層級資訊，具體內容待查證。07-15 記錄之 Claude Code vs Codex vs OpenCode 三方比較文、Claude Code 內部設計對照 Alibaba 蒸餾指控分析，詳見下方時序。
+> **最新競品動態**（2026-07-17）
+> Moonshot AI 發布新模型 **Kimi K3**（官方自稱 2.8 兆參數、該公司「最強模型」，CNBC/TechCrunch/FT 同步報導），自稱可與 OpenAI、Anthropic 匹敵；TechCrunch 分析即將推出的 Kimi 3 有望縮小與 Opus 4.8 的差距，FT 稱其為挑戰 Anthropic 領先地位的競品，是 07-16 首報後 24 小時內從「傳聞即將發布」到「正式發布＋規格揭露」的具體化。Reddit r/LocalLLaMA 另有貼文稱 Kimi K3 在 arena.ai 排行榜上超越 Claude Fable 與 GPT-5.6 Sol，惟為社群圖片貼文，無評測方法論細節，屬社群觀感而非官方 benchmark，標記待查證。同日 Microsoft 執行長 Satya Nadella 公開批評 Anthropic 的 Fable「受編輯層面控制」（CNBC），延續 07-13 已記錄的蒸餾隱晦批評，雲端夥伴兼競爭者對 Anthropic 產品的公開評論持續累積。
 
 ---
 
@@ -131,11 +131,12 @@ Claude Code 已成為 AI 輔助編碼的標竿產品，但競爭正快速升溫�
 - **策略**：以開源路線滲透出口管制無法觸及的市場，類似 DeepSeek 以「免費壁壘」繞開競爭管制；2026-07-06 更進一步推出免費 IDE/CLI 工具 ZCode，正面對標 Cursor 與 Claude Code 的產品層，而非僅停留在底層模型競爭
 - **意義**：管制空窗期是中國廠商能力追趕的加速器；Anthropic 若無法有效解封中國及受管制市場，Zhipu 等廠商受惠；ZCode 以「免費」直接衝擊 Claude Code 的訂閱/API 雙軌計費模式，對價格敏感的個人開發者與新創構成潛在分流壓力（推論）（CNBC https://www.cnbc.com/2026/06/26/china-zhipu-z-ai-open-source-anthropic-openai.html；Techzine Global https://www.techzine.eu/news/devops/142702/z-ai-takes-on-cursor-and-claude-code-with-free-zcode/）
 
-### Moonshot AI 🔴（新進，2026-07-16）
-- **狀態**：據報即將發布新模型（Financial Times 07-16 首報，未經 Anthropic/Moonshot 官方進一步細節）
-- **背景**：中國 AI 新創，本頁新增追蹤之競爭者
-- **動態**：Financial Times 報導 Moonshot 即將發布挑戰 Anthropic 市場領先地位的新模型
-- **意義**：與既有 DeepSeek、Zhipu Z.AI、中國 360 Tulongfeng 同屬中國陣營追趕 Anthropic 的競爭者，顯示中國 AI 新創在模型層的挑戰持續有新進入者，而非僅既有幾家廠商延續動作；僅標題可用，未見具體模型名稱、能力數據或發布時程（Google News/Financial Times，標題式報導）
+### Moonshot AI 🔴（Kimi K3 正式發布，2026-07-16/17）
+- **狀態**：Active——07-16 Financial Times 首報「即將發布」，07-17 CNBC、TechCrunch、FT 確認正式發布 **Kimi K3**（官方部落格自稱該公司「最強模型」）
+- **背景**：中國 AI 新創，本頁 07-16 新增追蹤之競爭者
+- **規格與宣稱**：官方宣稱 **2.8 兆參數**；TechCrunch 分析即將推出的後續版本 Kimi 3 有望縮小與 Opus 4.8 的能力差距；FT 將其定位為挑戰 Anthropic 市場領先地位的競品
+- **社群觀感（待查證）**：Reddit r/LocalLLaMA 貼文稱 Kimi K3 在 arena.ai 排行榜上超越 Claude Fable 與 GPT-5.6 Sol；**注意**：該貼文為社群圖片貼文，未附評測方法論細節，無法確認測試條件與樣本，屬社群觀感而非官方 benchmark，不可視為獨立驗證數字
+- **意義**：與既有 DeepSeek、Zhipu Z.AI、中國 360 Tulongfeng 同屬中國陣營追趕 Anthropic 的競爭者，顯示中國 AI 新創在模型層的挑戰持續有新進入者；本次是繼「傳聞即將發布」後 24 小時內即完成規格揭露與三方媒體確認，追趕速度較既有競品更快（推論）；具體訓練成本、開源與否、API 定價未見報導（CNBC；[TechCrunch](https://news.google.com/rss/articles/CBMitAFBVV95cUxQWGljNFJ6U2NlZXQwdzQ3MWVBQ1dRZnNVV0w1Mk13SXJCbmU4b2ptdnpubS1CZFAxNDdzQVhZZDg1QVdXbjlaRi10ZEQ3MTE0NmQ4OEZTUWhmQUZORUQ3clkwdnloY1BZTE9TT1ROaHhpQjBxc3F3YVlRc0Z6WmNNd1U4MjJFT3N0TTFGUFppQ0tJcWlyZVMtLVlORVFsVVloQjNXM3JwWDhYY0t0V25QS0drVXU?oc=5)；[Financial Times](https://news.google.com/rss/articles/CBMihAFBVV95cUxQWEJQT1JGSHNrRUxZWklhbkJmaklfbWJNWW9kaHpzSEwtQjZnb2tPTVhRLVUxcHNYbW91NFdyZzRteVBwNHdOTjFOcDFXcEtsLUloS2NValhlNENsYVpEWTYxYXhkb0t1cE81bUQ1SFRsRFYyV3ZVR3h3enhXOXBXV05pVXY?oc=5)）
 
 ### 中國 360 Tulongfeng 🔴
 - **狀態**：Active（2026-06-28 發布，宣稱對標 Mythos 5）
@@ -194,6 +195,11 @@ Claude Code 已成為 AI 輔助編碼的標竿產品，但競爭正快速升溫�
 ---
 
 ## 時序
+
+### 2026-07-17
+- **[新模型正式發布，中國陣營追趕加速] Moonshot AI 發布 Kimi K3，官方稱「最強模型」，TechCrunch 分析後續版本逼近 Opus 4.8**：CNBC、TechCrunch、Financial Times 同步報導 Moonshot AI 正式發布 Kimi K3（宣稱 2.8 兆參數），自稱可與 OpenAI、Anthropic 匹敵；TechCrunch 分析即將推出的 Kimi 3 有望縮小與 Opus 4.8 之間的差距。**對競爭格局的意涵**：詳見「主要競品追蹤」Moonshot AI 子區塊更新（Google News/TechCrunch；Google News/Financial Times；CNBC）
+- **[社群觀感，待查證] Reddit 稱 Kimi K3 在 arena.ai 排行榜超越 Claude Fable 與 GPT-5.6 Sol**：r/LocalLLaMA 貼文（社群圖片，無評測方法論細節）宣稱 Kimi K3 在 arena.ai 排行榜上表現優於 Claude Fable 與 GPT-5.6 Sol。**注意**：無法確認測試條件與樣本規模，屬社群觀感非官方 benchmark，暫不視為獨立驗證數字，僅記錄社群關注度訊號（Reddit r/LocalLLaMA）
+- **[雲端夥伴公開批評，延續既有序列] Nadella 批評 Anthropic 的 Fable「受編輯層面控制」**：CNBC 報導微軟執行長 Satya Nadella 公開批評 Anthropic 的 Fable「受到編輯層面的控制（editorially controlled）」。**對競爭格局的意涵**：延續 07-13 已記錄的 Nadella 對 Anthropic 模型蒸餾做法的隱晦批評、06-21 Microsoft 退出 Claude Code、07-07/08 自研模型替代傳聞的既有軌跡，是 Microsoft 執行長本人第二次對 Anthropic 產品／做法公開表態，顯示雲端夥伴兼競爭者關係的公開評論持續累積（推論，具體所指「編輯控制」內容未明確說明）（Google News/CNBC）
 
 ### 2026-07-16
 - **[新競品，中國陣營再添一員] Moonshot 據報即將發布挑戰 Anthropic 領先地位的新模型**：Financial Times 報導中國 AI 新創 Moonshot 即將發布新模型，被視為挑戰 Anthropic 市場領先地位。**對競爭格局的意涵**：詳見「主要競品追蹤」新增 Moonshot AI 子區塊（Google News/Financial Times）

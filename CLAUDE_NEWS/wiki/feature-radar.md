@@ -4,31 +4,31 @@
 僅收錄官方 changelog、release note 或官方公告來源；社群工具見 [[topics/community-tech-tools]]。
 每次 ingest 後由 LLM 維護：新增功能、更新熱度、補充社群回饋。
 
-**最後更新：** 2026-07-16
+**最後更新：** 2026-07-17
 
 ---
 
 ## ⭐ 本週推薦
 
 - **Claude Fable 5（免費期限延至 7/19）**（熱度 🔥🔥🔥🔥🔥）：旗艦模型全球恢復，免費使用期限因 GPT-5.6 Sol 被視為同級競品再度延長至 7/19（原 7/12），到期後轉 usage-based billing，想試 Mythos 級推理者把握視窗
-- **`/goal` 指令**（熱度 🔥🔥🔥🔥🔥）：長期目標導向工作流指令，適合需要跨多個 session 追蹤進度的複雜任務
+- **Claude Code Artifacts**（熱度 🔥🔥🔥🔥🔥）：工作階段可即時輸出互動式儀表板、圖表與可分享頁面，適合需要展示中間產出或建立輕量工具的開發者
 - **Claude Cowork 行動版 / 網頁版**（熱度 🔥🔥🔥🔥）：任務可在雲端持續執行，闔上筆電或關閉裝置也不中斷，首波開放 Max 訂閱戶，適合需要行動場景交辦長時間背景任務者
 
-> Claude Sonnet 5 已連續推薦超過 7 天且今日 ingest 未更新其熱度/試用價值，依防霸榜規則換下；詳細條目仍見下方全覽表。
+> `/goal` 指令已連續推薦超過 7 天（自 07-09 起）且今日 ingest 未更新其熱度/試用價值，依防霸榜規則換下，改為 Claude Code Artifacts（上次在推薦榜為 07-07 之前）；詳細條目仍見下方全覽表。
 
 ---
 
 ## ⚠️ 升版風險（每次 ingest 更新）
 
-**最新版本：** v2.1.211（2026-07-15，新增 `--forward-subagent-text` 旗標與對應環境變數，可在 stream-json 輸出中包含 subagent 文字與思考內容，另修復一項權限相關問題）
+**最新版本：** v2.1.212（2026-07-17，`/fork` 改為將對話複製進背景 session、原同 session 子 agent 功能改名 `/subtask`；同日 anthropic-sdk-typescript sdk-v0.112.1、anthropic-sdk-python v0.117.0 一併發布）
 
 | 風險 | 嚴重度 | 說明 |
 |------|--------|------|
-| Cowork 已知問題（VM bundle 效能劣化 + 檔案靜默截斷） | 🔴 | Cowork 功能會建立高達 10GB 的 VM bundle，導致啟動變慢、UI 延遲、效能隨時間持續劣化（#22543，76 留言）；Edit/Write 工具另因緩衝區容量上限（byte-conservation buffer cap）靜默截斷檔案，任何檔案大小皆可重現（#53940，43 留言），屬資料完整性風險，非邊緣情況 |
-| 隱寫術／代理偵測爭議 | 🟡 | v2.1.196 binary 含同形字符替換函式（HN 2263），07-02 升為「embedded spyware」指控；**07-07 Anthropic 定調該隱藏追蹤器為內部「實驗」、非惡意**（官方單方說法，社群接受度與是否移除待觀察）|
+| Cowork 已知問題（VM bundle 效能劣化 + 檔案靜默截斷） | 🔴 | Cowork 功能會建立高達 10GB 的 VM bundle，導致啟動變慢、UI 延遲、效能隨時間持續劣化（#22543，76 留言）；Edit/Write 工具另因緩衝區容量上限（byte-conservation buffer cap）靜默截斷檔案，任何檔案大小皆可重現（#53940，累計 16 個讚同反應），屬資料完整性風險，非邊緣情況 |
+| `/fork` 語意變更（⚠️ Breaking Change，無過渡期） | 🔴 | v2.1.212 起 `/fork` 不再於同一 session 內啟動子 agent，改為複製對話進新背景 session；依賴舊行為撰寫的 skill/hook/巨集需立即改用 `/subtask`，官方 release note 未附完整遷移指南 |
 | Fable 5 Defense in Depth 誤判 | 🟡 | 解禁後新安全分類器將高風險 coding 請求 fallback 至 Opus 4.8，首日已有誤判實測案例 |
 
-**建議：** 想用 Sonnet 5 + 1M context 可升 v2.1.197 以上；**重度依賴 Cowork 的使用者近期應避免處理大型檔案或大量寫入操作**，Edit/Write 靜默截斷問題目前無官方修復時程；隱寫術爭議 Anthropic 已回應定調「實驗」但社群未驗證，對隱私敏感（尤其涉中國區網路環境）者仍建議留意後續。
+**建議：** 升級前確認是否有依賴 `/fork` 舊行為（同 session 子 agent 委派）撰寫的 skill/hook/巨集，若有需立即改寫為 `/subtask`；**重度依賴 Cowork 的使用者近期應避免處理大型檔案或大量寫入操作**，Edit/Write 靜默截斷問題目前無官方修復時程；Fable 5 defense-in-depth 誤判問題持續，敏感任務建議留意。
 
 ---
 
@@ -62,6 +62,8 @@
 
 | 功能 | 發布日期 | 熱度 | 試用價值 | 狀態 |
 |------|----------|------|----------|------|
+| **Claude Code v2.1.212**（`/fork` 改為背景 session 化，原同 session 子 agent 功能改名 `/subtask`；⚠️ Breaking change 無過渡期） | 2026-07-17 | 🔥🔥🔥 | ⚡ 有條件推薦 | 正式發布 |
+| **Claude 1Password 整合**（透過已存 1Password 憑證登入網站免暴露密碼，官方一手公告未附） | 2026-07-17 | 🔥🔥 | ⏳ 觀望 | 官方新功能（狀態未明） |
 | **Claude for Teachers**（美國通過認證 K-12 教師免費開放進階 Claude 功能與教學技能庫，對接全美 50 州學術標準） | 2026-07-15 | 🔥🔥🔥 | ⏳ 觀望 | 正式發布（限定對象） |
 | **Claude Code v2.1.211**（`--forward-subagent-text` 旗標，stream-json 輸出含 subagent 文字與思考內容） | 2026-07-15 | 🔥🔥 | ⚡ 有條件推薦 | 正式發布 |
 | **Claude Code v2.1.210**（收合工具摘要列即時耗時計數器、`Write(path)` 啟動警告） | 2026-07-14 | 🔥 | ⚡ 有條件推薦 | 正式發布 |
@@ -125,6 +127,47 @@
 ---
 
 ## 🆕 最新功能（2026-07）
+
+### `/fork` 背景 Session 化與 `/subtask` 語意拆分
+**發布：** 2026-07-17（v2.1.212） | **熱度：** 🔥🔥🔥 | **試用價值：** ⚡ 有條件推薦 | **狀態：** 正式發布
+
+**是什麼：** `/fork` 不再於同一 session 內啟動子 agent，而是將目前對話複製進一個新的背景 session（在 `claude agents` 列表中自成一列），使用者可同時繼續原本工作；原本 `/fork` 提供的「同 session 子 agent」功能改由新指令 `/subtask` 承接。
+
+**為何熱：** 對核心多 agent 工作流指令的行為重新定義，直接影響所有依賴 `/fork` 舊語意（同 session 子 agent 委派）撰寫的腳本、hotkey、自動化流程；⚠️ Breaking change，無過渡期，即刻生效。與既有 `--forward-subagent-text`（v2.1.211）、Agent View（`claude agents`）同屬 agent 可觀測性/協調基礎設施延伸，見 [[topics/official-community-gap]]「多平行 agent 即時可觀測性」與「Subagent 派工/編排」列。
+
+**現在要試嗎：** 依賴 `/fork` 舊行為（同一 session 內快速委派子任務）的使用者，升版後應立即改用 `/subtask`；需要「複製對話到背景繼續跑、同時手邊繼續操作」的使用者可直接改用新版 `/fork`。
+
+**快速上手：**
+```
+# 同一 session 內委派子任務（舊 /fork 行為，現改用）
+/subtask 幫我檢查這段程式碼有沒有 race condition
+
+# 複製目前對話到新背景 session，繼續在原 session 工作
+/fork
+# 之後可在 `claude agents` 看到新背景 session 的獨立列
+```
+
+**注意事項：** ⚠️ Breaking change，無棄用過渡期；舊版依賴 `/fork` 語意的 skill/hook/巨集需立即改寫為 `/subtask`；官方 release note 未附完整遷移指南，細節以 GitHub Release 為準。
+
+---
+
+### Claude 1Password 整合
+**發布：** 2026-07-17（媒體報導，官方一手公告未附） | **熱度：** 🔥🔥 | **試用價值：** ⏳ 觀望（技術細節/適用範圍未知） | **狀態：** 官方新功能（正式/Preview 狀態未明）
+
+**是什麼：** 使用者可透過已存的 1Password 憑證登入網站，過程不會將密碼暴露給 Claude 或 Anthropic，屬 Claude 代理瀏覽情境下的安全登入機制。
+
+**為何熱：** The Verge、Engadget、SiliconANGLE、Help Net Security 四家媒體同步報導，回應「agent 幫你操作瀏覽器時密碼要不要交給 AI」的長期資安疑慮。
+
+**現在要試嗎：** 僅有媒體報導層級資訊，官方文件、適用產品線（Claude.ai／Claude for Chrome／Cowork）、設定步驟均未確認，建議先觀望，待官方一手來源（changelog/部落格）確認後再評估導入。
+
+**快速上手：**
+```
+（官方尚未公布具體設定步驟，待補）
+```
+
+**注意事項：** 本條目資訊完全來自媒體轉述，非官方一手來源；技術規格、支援平台範圍未知，下次 ingest 應追蹤官方來源補齊。
+
+---
 
 ### Claude for Teachers
 **發布：** 2026-07-15 | **熱度：** 🔥🔥🔥 | **試用價值：** ⏳ 觀望 | **狀態：** 正式發布（限定對象）

@@ -8,6 +8,11 @@ LLM 查詢此 wiki 時，**先讀這個檔案**找相關頁面，再讀具體頁
 ## 近期異動
 
 - [[entities/claude-skills]] — 2026-07-17：**新頁面**，官方 Skills 產品線與生態單一入口（使用者指定追蹤官方力推項目）——六大控制層定位、31 個小企業技能包（首日 38.2 萬下載）、教師技能庫、`--safe-mode`／巢狀 subagent 支援、第三方移植（OpenCode-power-pack／Claudinho）與「官方無市集、創作者無變現」結構性缺口；設計面仍歸 [[topics/community-tech-patterns]]，兩頁互 wikilink
+- [[entities/claude-code]] — 2026-07-17：**v2.1.212** 發布（`/fork` 改為將對話複製進背景 session，原同 session 子 agent 功能改名 `/subtask`，⚠️ Breaking change 無過渡期，feature-radar 新條目）；已知問題新增 5 條——呼叫進行中畫面閃爍（#769，335 讚同，本日最高互動）、終端機複製貼上多餘縮排（#18170，275 讚同）、VS Code 停用自動附加設定請求（#24726，185 讚同）、Cowork 網路白名單失效（#30112，49 讚同）、Opus 4.7 思考摘要遺失（#49268，78 讚同，連結 [[entities/opus-4-7]]）；#13354（session 額度續行）、#23134（貼上文字收合）留言數更新，#53940（Cowork Edit/Write 靜默截斷）補齊連結；已修復「Reflect with Claude」歷史記錄重複段落與 #13354 重複條目問題
+- [[topics/anthropic-business]] — 2026-07-17：新增 FIS 與 Anthropic 延長合作、Deloitte 推出 Claude 驅動安全軟體平台、Claude Corps 開放申請（8.5 萬美元／1,000 人）；記入 Anthropic 徵才形塑 IPO 敘事（60 萬美元）與 Alphabet 財報受惠 Anthropic 收益的分析觀點（BofA，定性無數字）
+- [[entities/pricing]] — 2026-07-17：記錄交易員押注 Fable 5 免費存取期限第四度延長（市場猜測，非官方公告，7/19 到期日不變）
+- [[topics/competitor-landscape]] — 2026-07-17：Moonshot AI 正式發布 Kimi K3（2.8 兆參數）並自稱匹敵 OpenAI／Anthropic，TechCrunch 稱即將推出的 Kimi 3 有望縮小與 Opus 4.8 差距；Microsoft Nadella 再度批評 Fable「受編輯控制」
+- [[topics/anthropic-government-policy]] — 2026-07-17：美國參議員 Mike Rounds 就 Mythos 接受五角大廈簡報（待確認）；WIRED 確認並補強 Anthropic 推動州級 AI 監管遊說報導；SCMP 獨家專訪 Pax Silica 政策架構推手，補充中美競合脈絡（人物身分待確認，未達建頁門檻）
 - [[entities/claude-code]] — 2026-07-16：**v2.1.211** 發布（`--forward-subagent-text` 旗標 + 對應環境變數，stream-json 輸出含 subagent 文字與思考內容，feature-radar 新條目；另修復一項權限相關問題）；已知問題新增高互動條目——手機號碼驗證機制問題（#34229，741 留言/892 讚同，本日最高互動）、Cowork 建立 10GB VM bundle 導致效能持續劣化（#22543，76 留言）、Cowork Edit/Write 靜默截斷檔案（#53940，43 留言，🔴 已列入 feature-radar 升版風險）、session 額度續行請求（#13354，69 留言）；Remote Control 自動重連（#34255）與 GitLab 整合請求（#12346）留言數更新
 - [[entities/claude-design]] — 2026-07-16：dev.to 操作指南補充 Artifacts 建立即時儀表板/圖表/可分享頁面與 Claude Design 同步程式碼庫的設定說明
 - [[topics/anthropic-business]] — 2026-07-16：Anthropic 與 Blackstone 共同成立 **15 億美元 AI 實作公司 Ode**（Technology Org、TechCrunch 雙來源）；Yahoo Finance／CNBC／Bloomberg 三家財經媒體同步報導 Anthropic **上市前投資人會議安排**，新增「IPO 前瞻」相關列

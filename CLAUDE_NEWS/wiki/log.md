@@ -2841,3 +2841,16 @@ Append-only 紀錄。每次 ingest、lint，以及**揭露缺陷或促成改動�
 - **執行**：功能記者（sonnet）回讀歷史日報與既有 wiki 建頁，時間軸涵蓋 2026-04-27（OpenCode-power-pack 移植）至 2026-07-15（教師技能庫）；主編修 callout 對齊最新事件（07-15）與最後新聞更新日期；同步 index.md 新增列與近期異動、claude-code.md 核心功能與 patterns.md 相關實體補 wikilink、`.claude/rules/wiki-ingest-features.md` 負責頁面表新增列。
 - **feature-radar 判定**：記者建議新增 radar 條目，主編判定**不新增**——radar 追蹤「新發布功能」熱度，Skills 為長期 GA 機制，entity 頁已足；日後 Skills 有新官方發布（如市集上線）再依准入定義進 radar。
 - 品質備註：無
+
+## 2026-07-17 Ingest | news/2026-07-17.md（67 則）
+
+- 來源日報：[[news/2026-07-17]]
+- 分類：功能 12 則、商業 9 則、安全政策 4 則、社群 20 則（模型、人物本日無條目）
+- 更新頁面：entities/claude-code、entities/managed-agents、topics/official-community-gap（功能）；topics/anthropic-business、entities/pricing、topics/competitor-landscape（商業）；topics/anthropic-government-policy（安全政策）
+- 新增頁面：無
+- feature-radar：新增 2 條——`/fork` 背景 Session 化與 `/subtask` 語意拆分（v2.1.212，🔥🔥🔥 ⚡，⚠️ Breaking change 無過渡期）、Claude 1Password 整合（🔥🔥 ⏳，僅媒體報導無官方一手來源）；升版風險表以「`/fork` 語意變更」（🔴）取代已定調的隱寫術爭議列，Cowork 已知問題／Fable 5 defense-in-depth 維持；本週推薦輪替（`/goal` 已連續推薦逾 7 天且今日未更新，依防霸榜規則換為 Claude Code Artifacts，Fable 5／Cowork 維持）；⏰ 倒數中無變化
+- 社群：今日 20 則條目（12 則 HN Show HN、4 則 dev.to、4 則 Reddit 圖片／低互動貼文）經社群記者逐條核對，全數未達收錄門檻（HN 最高僅 9 分、Reddit 均無週熱門標記、dev.to 前兩則第一手內容查表後確認已存在既有頁面判定重複），本輪社群頁面無異動
+- 安全政策：Claude Code + DeepSeek 中國網路間諜行動（Security Affairs）核對後確認為 07-16 已收錄事件的 Google News 重複聚合，未重複寫入；SCMP「Pax Silica」專訪因關鍵人物姓名未知未達建頁門檻，記錄於 anthropic-government-policy.md 待日後追蹤是否升格
+- 呈現品質審查：claude-code.md ⚠️ 已修復（「現況」段落與歷史記錄重複的舊段落、#13354 重複條目已清理）；其餘 6 頁 ✅ 通過
+- 摘要：v2.1.212 帶來 `/fork`/`/subtask` breaking change 與 Claude 1Password 整合為今日官方功能焦點；商業面 Kimi K3 正式發布延續 Moonshot 對 Anthropic 的競品壓力敘事；安全政策面五角大廈簡報、州級監管遊說、中美 AI 政策三線並進
+- 品質備註：無
