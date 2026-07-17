@@ -143,3 +143,5 @@ callout 放在標頭欄位（最後更新、最後新聞更新）之後，`---` 
 **領域欄位**：所有 entities/ 與 topics/ 頁面標頭必填 `**領域：**`，六選一：🤖 模型 / 🛠️ 工具/功能 / 👤 人物 / 💼 商業 / 🏛️ 政策/安全 / 🌐 社群。`wiki/index.md` 對應欄位須同步。
 
 **新 topics slug 命名規約**（既有頁面不溯及）：社群類 `community-*`、企業類 `enterprise-*`、Anthropic 官方 `anthropic-*`、安全政策 `safety-*`。
+
+**更新頻率欄位（選填）`[加入: 2026-07-16]`**：非每日維護的頁面（週更／lint 專用）在標頭「領域」之後加一行 `**更新頻率：** 🗓️ 週更（維護指令）`，並在 `wiki/index.md` 對應摘要前綴「🗓️ 週更」——向讀者說明日期停留是設計而非漏更新。每日維護頁**不加**此欄。目前適用：`wiki/overview.md`、`wiki/topics/community-pattern-trends.md`、`wiki/topics/community-tech-tools.md`；日後新增週更頁時比照。

@@ -2821,3 +2821,9 @@ Append-only 紀錄。每次 ingest、lint，以及**揭露缺陷或促成改動�
 ## 2026-07-16 防再犯修正（聚焦校準）
 
 - 使用者確認執行兩項提案（commit 6805958）：(1) `.claude/commands/wiki-weekly-review.md` 聚焦校準跳過條件改查 `wiki/metrics.md` 聚焦命中率欄本月有無數值（查產出物，不查執行記錄）；(2) `.claude/commands/news-pipeline-steps.md` Step 1b 今日聚焦新增選材門檻（[新工具] 未達中門檻且無跨來源不單獨聚焦；[風險警示] 具名資安揭露優先於純熱度）。`/review-commands` 首輪零錯誤。
+
+## 2026-07-16 Query：週更頁面標示
+
+- **提問**：使用者問 community-pattern-trends 為何最後更新停在 07-10、哪些頁是週更、能否加 TAG 讓這件事更明顯。
+- **查證**：日期停留為設計行為（lint 週更＋無新節點不動頁）；週更頁共三頁：overview、community-pattern-trends、community-tech-tools。
+- **處置**：三頁標頭新增「**更新頻率：** 🗓️ 週更（維護指令）」欄位，index.md 對應摘要前綴「🗓️ 週更」；慣例寫入 `.claude/rules/wiki-ingest-format.md`（選填欄位，日後週更頁比照）。
