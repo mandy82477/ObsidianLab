@@ -187,6 +187,7 @@ def compute(registry: list[dict], funnel: dict, attribution: list[dict],
             "active": src.get("active", True),
             "score_reliability": src.get("score_reliability", "none"),
             "curation_mode": src.get("curation_mode", "content"),
+            "rate_comparable": src.get("rate_comparable", True),
             "days_seen": f["days_seen"],
             "gathered": f["gathered"],
             "filtered": f["filtered"],
@@ -226,18 +227,49 @@ def render_markdown(result: dict) -> str:
         "> 指標為**平滑後**數值（小樣本被拉向全站基準）；標 ⚠️ 者樣本不足"
         f"（< {MIN_DAYS} 天或 < {MIN_GATHERED} 條），數字僅供趨勢觀察，不可作汰換依據。",
         "",
+        "## 社群 / 媒體來源（依 Presence 排序）",
+        "",
         "| 來源 | 樣本 | 抓取 | 收錄 | wiki | 收錄率* | Wilson下界 | wiki率* | Presence | 分數可信度 |",
         "|---|---|---|---|---|---|---|---|---|---|",
     ]
-    for r in sorted(result["sources"], key=lambda x: -x["presence"]):
-        if not r["active"]:
-            continue
+    has_incomparable = False
+    active = [r for r in result["sources"] if r["active"]]
+    for r in sorted((r for r in active if r["curation_mode"] != "whitelist"),
+                    key=lambda x: -x["presence"]):
         flag = "⚠️" if r["low_sample"] else "✅"
+        if r["gathered"] == 0:
+            emit_cell, wilson_cell = "—", "—"
+        else:
+            dagger = "" if r["rate_comparable"] else "†"
+            emit_cell = f"{r['emit_rate']:.0%}{dagger}"
+            wilson_cell = f"{r['emit_wilson']:.0%}{dagger}"
+            has_incomparable = has_incomparable or not r["rate_comparable"]
+        wiki_cell = f"{r['wiki_rate']:.0%}" if r["emitted"] > 0 else "—"
         lines.append(
             f"| {r['name']} | {flag} {r['days_seen']}天 | {r['gathered']} | {r['emitted']} | {r['wiki_hits']} "
-            f"| {r['emit_rate']:.0%} | {r['emit_wilson']:.0%} | {r['wiki_rate']:.0%} "
+            f"| {emit_cell} | {wilson_cell} | {wiki_cell} "
             f"| {r['presence']:.0%} | {r['score_reliability']} |"
         )
+    if has_incomparable:
+        lines.append("")
+        lines.append("† 抓法為跨日重覆視窗（如 dev.to top=30），gathered 含跨日重複、"
+                     "收錄率結構性偏低，**不可與 26h 窗來源比較**，只看自身趨勢。")
+
+    lines += [
+        "",
+        "## 官方 / 白名單來源（保險性來源，不排名）",
+        "",
+        "> 這組的價值是「事件發生時第一時間在場」（官方源）或「策展名單的長期沉澱」（Blogroll），"
+        "比率與 Presence 排名不適用；要盯的是**漏接與斷線**（wiki-lint 6e 連續缺席告警）與"
+        "**probation 期滿的絕對命中數**（Blogroll，見 docs/workaround-register.md）。官方源抓取 0 = 該期間無官方更新，屬正常。",
+        "",
+        "| 來源 | 樣本 | 抓取 | 收錄 | wiki 筆數 |",
+        "|---|---|---|---|---|",
+    ]
+    for r in sorted((r for r in active if r["curation_mode"] == "whitelist"),
+                    key=lambda x: x["name"]):
+        flag = "⚠️" if r["low_sample"] else "✅"
+        lines.append(f"| {r['name']} | {flag} {r['days_seen']}天 | {r['gathered']} | {r['emitted']} | {r['wiki_hits']} |")
 
     gnews = next((r for r in result["sources"] if r["slug"] == "google-news"), None)
     if gnews and gnews["pc1_buckets"]:

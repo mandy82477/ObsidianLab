@@ -89,7 +89,8 @@
       "category": "community",
       "score_reliability": "untrusted",
       "curation_mode": "content",
-      "notes": "實測讚數為反指標（第一手實作文 2–3 讚、SEO 農場文 5–6 讚，2026-07-10 教訓），一律內容判斷；規則見 .claude/rules/wiki-ingest-community.md。"
+      "rate_comparable": false,
+      "notes": "實測讚數為反指標（第一手實作文 2–3 讚、SEO 農場文 5–6 讚，2026-07-10 教訓），一律內容判斷；規則見 .claude/rules/wiki-ingest-community.md。rate_comparable=false：top=30 抓法每日重抓 30 天窗，gathered 含跨日重複（由 emitted-cache 擋下），收錄率結構性偏低，不可與 26h 窗來源比較。"
     },
     {
       "name": "Blogroll",

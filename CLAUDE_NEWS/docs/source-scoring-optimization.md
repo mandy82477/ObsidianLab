@@ -93,6 +93,12 @@
 
 **樣本閘門**：< 14 天或 < 30 條抓取的來源標 ⚠️，數字僅供趨勢觀察，不得作為汰換依據。
 
+**公道性規則 `[加入: 2026-07-16]`**——三條防止指標冤枉特定來源的規則：
+
+1. **分組呈現**：`curation_mode: whitelist` 的來源（官方源、Blogroll）不進 Presence 排名表，另列「保險性來源」組——它們的價值是「事件發生時在場」與策展沉澱，量產比率指標不適用；要盯的是漏接與斷線（wiki-lint 6e 缺席告警）、Blogroll probation 期滿的絕對命中數。
+2. **† 標記（rate_comparable=false）**：抓法為跨日重覆視窗的來源（dev.to top=30 每日重抓 30 天窗，gathered 含跨日重複、由 emitted-cache 擋下），收錄率結構性偏低，帶 † 標記且不可與 26h 窗來源比較，只看自身趨勢。標記存於 registry 的 `rate_comparable` 欄位。
+3. **零樣本顯示「—」**：gathered=0 的來源不顯示平滑先驗值（零樣本時公式回吐全站基準，看起來像實測數字，實為無中生有）。
+
 資料來源與 join：`source_funnel.jsonl`（以註冊名為 key，同日多筆取 gathered 最大者）× `source_attribution.jsonl`（以 slug 為 key），經 registry 的 name↔slug 對照 join；attribution 出現未註冊 slug 時記分卡會列「⚠️ 未註冊 slug」提醒修 registry 或記者回報。
 
 ## 5. 首次實測基線（2026-07-16，6 天樣本，僅供示意）

@@ -116,6 +116,42 @@ class TestRegistryIntegrity(unittest.TestCase):
         for name in active_names:
             self.assertIn(f'("{name}"', main_py, f"registry 標 active 的來源 {name} 不在 main.py sources 清單")
 
+    def test_render_fairness_rules(self):
+        """公道性三規則：零樣本顯示 —、dev.to 收錄率帶 †、whitelist 組不參與排名表。"""
+        funnel = {"days": 20, "dates": ("2026-07-01", "2026-07-20"), "per_source": {
+            "Hacker News": {"gathered": 100, "filtered": 80, "emitted": 50, "days_seen": 20},
+            "dev.to": {"gathered": 90, "filtered": 80, "emitted": 40, "days_seen": 20},
+            "Claude API Release Notes": {"gathered": 0, "filtered": 0, "emitted": 0, "days_seen": 20},
+            "Anthropic Blog": {"gathered": 2, "filtered": 2, "emitted": 1, "days_seen": 20},
+        }}
+        result = sc.compute(self.registry, funnel, [], {})
+        md = sc.render_markdown(result)
+
+        ranked_section = md.split("## 官方 / 白名單來源")[0]
+        whitelist_section = md.split("## 官方 / 白名單來源")[1]
+        # whitelist 來源只出現在保險組，不進排名表
+        self.assertNotIn("Anthropic Blog", ranked_section)
+        self.assertIn("| Anthropic Blog |", whitelist_section)
+        self.assertIn("| Claude API Release Notes |", whitelist_section)
+        # dev.to（rate_comparable=false）收錄率帶 † 且有腳註
+        devto_line = next(l for l in ranked_section.splitlines() if l.startswith("| dev.to"))
+        self.assertIn("%†", devto_line)
+        self.assertIn("† 抓法為跨日重覆視窗", ranked_section)
+        # HN（rate_comparable 預設 true）不帶 †
+        hn_line = next(l for l in ranked_section.splitlines() if l.startswith("| Hacker News"))
+        self.assertNotIn("†", hn_line)
+
+    def test_render_zero_gathered_shows_dash_not_prior(self):
+        """零樣本來源不得顯示平滑先驗值（會被誤讀為實測）。以 content 來源驗證 — 邏輯。"""
+        funnel = {"days": 20, "dates": ("2026-07-01", "2026-07-20"), "per_source": {
+            "Hacker News": {"gathered": 100, "filtered": 80, "emitted": 50, "days_seen": 20},
+            "Google News": {"gathered": 0, "filtered": 0, "emitted": 0, "days_seen": 20},
+        }}
+        result = sc.compute(self.registry, funnel, [], {})
+        md = sc.render_markdown(result)
+        gn_line = next(l for l in md.splitlines() if l.startswith("| Google News"))
+        self.assertIn("| — | — | — |", gn_line)
+
     def test_compute_end_to_end_with_fixtures(self):
         funnel = {"days": 3, "dates": ("2026-07-11", "2026-07-13"),
                   "per_source": {"Hacker News": {"gathered": 40, "filtered": 30, "emitted": 15, "days_seen": 3}}}
