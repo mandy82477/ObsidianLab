@@ -84,6 +84,7 @@ META_RE = {
     "startDate":  re.compile(r"\*\*開始日期[：:]\*\*\s*(.+)"),
     "lastUpdated":    re.compile(r"\*\*最後更新[：:]\*\*\s*(.+)"),
     "lastNewsUpdate": re.compile(r"\*\*最後新聞更新[：:]\*\*\s*(.+)"),
+    "updateFreq":     re.compile(r"\*\*更新頻率[：:]\*\*\s*(.+)"),
 }
 
 SUMMARY_HEADERS = ["## 現況", "## 摘要"]
@@ -303,6 +304,7 @@ def parse_wiki(f: Path, page_type: str) -> dict:
         "startDate": "",
         "lastUpdated": "",
         "lastNewsUpdate": "",
+        "updateFreq": "",
         "summary": "",
         "latestHeadline": "",
         "markdown": raw,
@@ -595,11 +597,28 @@ def build():
         "radar": radar if radar else None,  # include markdown — rendered inline, no fetch needed
     }
 
+    # ── 來源透明度資料（scripts/source_scorecard.py，隨每日 build 更新）────────────
+    transparency = None
+    try:
+        import importlib.util
+        _sc_spec = importlib.util.spec_from_file_location(
+            "source_scorecard", ROOT / "scripts" / "source_scorecard.py")
+        _sc = importlib.util.module_from_spec(_sc_spec)
+        _sc_spec.loader.exec_module(_sc)
+        transparency = _sc.compute(
+            _sc.load_registry(), _sc.load_funnel(),
+            _sc.load_attribution(), _sc.load_domain_scores())
+    except Exception as e:  # 記分卡失敗不阻擋 build，透明度區塊在前端優雅缺席
+        print(f"WARN: transparency data skipped ({e})")
+
     OUT_JS.parent.mkdir(parents=True, exist_ok=True)
     with OUT_JS.open("w", encoding="utf-8") as fp:
         fp.write("// AUTO-GENERATED — do not edit. Run: python scripts/build_web.py\n")
         fp.write("window.WIKI_DATA = ")
         json.dump(wiki_data, fp, ensure_ascii=False, indent=2)
+        fp.write(";\n")
+        fp.write("window.TRANSPARENCY = ")
+        json.dump(transparency, fp, ensure_ascii=False, separators=(",", ":"))
         fp.write(";\n")
         fp.write("// Digest content is loaded on-demand from data/digest/{date}.json\n")
         fp.write("// Wiki content is loaded on-demand from data/wiki/{id}.json\n")

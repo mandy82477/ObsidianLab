@@ -13,6 +13,7 @@ window.WIKI_DATA = {
       "startDate": "",
       "lastUpdated": "2026-07-11",
       "lastNewsUpdate": "2026-05-29",
+      "updateFreq": "",
       "summary": "Andrej Karpathy 為知名 AI 研究者，傳已加入 Anthropic（2026-05-29，至今無後續：來源僅 HN 討論，近 14 天日報無進一步獨立確認）。以 OpenAI 聯合創始人/研究總監及 Tesla AI/Autopilot 負責人身份廣為人知。若加入屬實，其分享的「CLAUDE.md 四條…",
       "latestHeadline": "HN 社群討論確認 Karpathy 已正式加入 Anthropic，Eureka Labs GitHub org 停更、LinkedIn 資訊移除，推測已解散（2026-05-29，至今無後續：近 14 天日報無進一步報導）"
     },
@@ -28,6 +29,7 @@ window.WIKI_DATA = {
       "startDate": "",
       "lastUpdated": "2026-07-16",
       "lastNewsUpdate": "2026-07-10",
+      "updateFreq": "",
       "summary": "2026-07-09，Anthropic 官方公告前聯準會主席 Ben Bernanke 加入公司獨立監督機構「長期利益信託」（Long-Term Benefit Trust）董事會。長期利益信託是 Anthropic 治理結構中負責監督公司使命（安全優先於商業利益）的獨立機構，成員具有選任/罷免部分董事會成員的權力。…",
       "latestHeadline": "前聯準會主席 Ben Bernanke 加入 Anthropic 長期利益信託（Long-Term Benefit Trust）董事會，Reuters/CNBC/Bloomberg 同步報導，HN 討論 66 分（來源：Anthropic 官方公告、Reuters、CNBC、Bloomberg）"
     },
@@ -43,6 +45,7 @@ window.WIKI_DATA = {
       "startDate": "",
       "lastUpdated": "2026-07-08",
       "lastNewsUpdate": "2026-07-08",
+      "updateFreq": "",
       "summary": "2026-06-28，Boris Cherny 在 howborisusesclaudecode.com 公開個人日常 setup，展示同時開 5 個並行 Claude Code 實例的工作流，並強調「surprisingly vanilla」——無需特殊魔改即可完成。2026-06-24，他承認「AI 寫 100% …",
       "latestHeadline": "inc.com 報導「Head of Claude Code」談新創公司需具備的 5 種員工原型（employee archetypes），原文未具名確認發言人，可能為 Boris Cherny 或 [[entities/cat-wu]]，暫標（待核實）（inc.com，2026-07-07，https://www.i"
     },
@@ -58,6 +61,7 @@ window.WIKI_DATA = {
       "startDate": "",
       "lastUpdated": "2026-07-10",
       "lastNewsUpdate": "2026-06-20",
+      "updateFreq": "",
       "summary": "截至 2026-07-10 仍無後續公開資訊，Bugcrawl 自 2026-04-26 首度被 TestingCatalog 報導後維持內部測試狀態。此工具由 Anthropic 開發，專為 Claude Code 提供自動化漏洞偵測功能，強化 AI 輔助開發流程中的程式品質把關，目前尚未正式公開、無公開測試邀請。 …",
       "latestHeadline": "首次被媒體報導（TestingCatalog），確認 Anthropic 正在測試此工具"
     },
@@ -73,6 +77,7 @@ window.WIKI_DATA = {
       "startDate": "",
       "lastUpdated": "2026-07-08",
       "lastNewsUpdate": "2026-07-08",
+      "updateFreq": "",
       "summary": "2026-05-14，Cat Wu 在公開訪問中提出 AI 下一個重大躍進是「**主動性（proactivity）**」——AI 代理應能主動完成任務，而非等待使用者提示。這是 Claude Code 從「互動工具」轉向「自主代理平台」的產品定位宣言，迄今仍是她最後一次公開論述。 Cat Wu 是 Anthropic …",
       "latestHeadline": "inc.com 報導「Head of Claude Code」談新創公司需具備的 5 種員工原型（employee archetypes），原文未具名確認發言人，可能為 Cat Wu 或 [[entities/boris-cherny]]，暫標（待核實）（inc.com，2026-07-07，https://www.i"
     },
@@ -88,6 +93,7 @@ window.WIKI_DATA = {
       "startDate": "",
       "lastUpdated": "2026-07-10",
       "lastNewsUpdate": "2026-06-18",
+      "updateFreq": "",
       "summary": "2026-06-18，Chris Ciauri 在首爾 Conrad 飯店召開記者會，公開表態「非常有信心，數日內模型將重新開放」，針對 Fable 5 / Mythos 出口管制問題給出具體時間框架。這是 Anthropic 首次在亞太地區就此議題公開表態。**後續驗證**：出口管制已於 2026-07-01 正式解…",
       "latestHeadline": "Fable 5 / Mythos 出口管制正式解除（見 [[topics/anthropic-government-policy]]），驗證 Ciauri 06-18「數日內」信心表態方向正確"
     },
@@ -103,6 +109,7 @@ window.WIKI_DATA = {
       "startDate": "",
       "lastUpdated": "2026-06-30",
       "lastNewsUpdate": "2026-05-29",
+      "updateFreq": "",
       "summary": "Chris Olah 是 Anthropic 的共同創辦人之一，也是 AI 可解釋性（interpretability）研究領域的重要先驅。他以「神經網路電路」研究著名，強調透過理解 AI 內部機制來確保安全性，是 Anthropic 技術文化中「理解先於能力」立場的核心人物。 2026-05-26，Chris Ola…",
       "latestHeadline": "Wired 長文《The Vatican's Man Inside Anthropic》深度側寫 Olah 在梵蒂岡事件中的角色，Guardian 同日質疑 Anthropic 是否存在「Vatican-washing」"
     },
@@ -118,6 +125,7 @@ window.WIKI_DATA = {
       "startDate": "",
       "lastUpdated": "2026-07-16",
       "lastNewsUpdate": "2026-07-16",
+      "updateFreq": "",
       "summary": "**Reflect with Claude 測試版推出（2026-07-09）：** Anthropic 官方部落格宣布「Reflect with Claude」測試版功能，使用者可在 Settings 中檢視使用模式儀表板，理解自己使用 Claude 的模式；TechCrunch、Mashable、CNET、Axio…",
       "latestHeadline": "v2.1.210：已折疊工具摘要行新增即時經過時間計數器；新增 `Write(path)` 相關啟動警告；原文摘要被截斷，內容有限，不進 [[feature-radar]]；claude.ai container creation 於 21:56–22:16 UTC 部分中斷，同日已解決；本日新增 6 則已知問題（Re"
     },
@@ -133,6 +141,7 @@ window.WIKI_DATA = {
       "startDate": "",
       "lastUpdated": "2026-07-16",
       "lastNewsUpdate": "2026-07-16",
+      "updateFreq": "",
       "summary": "Claude Design 是 Anthropic 推出的 AI 設計工具功能，旨在讓 Claude 具備輔助 UI／視覺設計的能力。目前處於初期階段，社群評價以負面為主——幻覺嚴重、工具錯誤頻繁，且輸出設計風格過度貼近 Anthropic 自家品牌，忽略用戶提供的設計素材。截至 2026-07-10，無官方後續公開更…",
       "latestHeadline": "原文發表於 2026-06-21）：dev.to 教學文章提及 Claude Design 可同步至程式碼庫的設定方式，但未提供具體操作步驟，來源可信度存疑，Anthropic 官方未公開確認（待查證）"
     },
@@ -148,6 +157,7 @@ window.WIKI_DATA = {
       "startDate": "",
       "lastUpdated": "2026-07-15",
       "lastNewsUpdate": "2026-07-15",
+      "updateFreq": "",
       "summary": "Anthropic 於 2026-07-15（11:40 UTC）在官方部落格宣布「Claude for Teachers」，向美國通過認證的 K-12 教師免費開放進階 Claude 功能、教學技能庫，並對接全美 50 州學術標準的實證課綱（evidence-based curricula）。除 Anthropic …",
       "latestHeadline": "正式發布，向美國通過認證的 K-12 教師免費開放進階 Claude 功能、教學技能庫，並對接全美 50 州學術標準的實證課綱；CBS News、The Hill、Forbes、9to5Mac、Central Oregon Daily 等至少六家獨立媒體同步報導"
     },
@@ -163,6 +173,7 @@ window.WIKI_DATA = {
       "startDate": "",
       "lastUpdated": "2026-07-15",
       "lastNewsUpdate": "2026-07-15",
+      "updateFreq": "",
       "summary": "**早期使用者評價（2026-07-15）：** the-scientist.com 報導科學研究者對 Claude Science 的早期評價：工作流程加快，但仍存在功能缺口（\"Faster Workflows, But Gaps Remain\"）。原文僅有標題可用（Google News 轉址頁面無法取得完整內容）…",
       "latestHeadline": "the-scientist.com 報導科學研究者早期評價：工作流程加快，但仍存在功能缺口；僅標題可用，細節待補"
     },
@@ -178,6 +189,7 @@ window.WIKI_DATA = {
       "startDate": "",
       "lastUpdated": "2026-07-01",
       "lastNewsUpdate": "2026-05-28",
+      "updateFreq": "",
       "summary": "Claude Security 於 2026-04-30 宣布推出公開測試版，並於 2026-05-01 正式向**全部 Enterprise 客戶**開放。ZDNET、SecurityWeek、SiliconANGLE、CRN、Pulse 2.0 等多家媒體報導。這是 Anthropic 首次以**獨立資安產品形式*…",
       "latestHeadline": "Cisco LLM Security Leaderboard 首次發布：Anthropic 模型佔前十名 8 個席位（8/10），成為企業採購 AI 工具時最強的第三方安全背書；調查同時顯示 83% 企業計畫部署 agentic AI，但僅 29% 認為已具備足夠安全管控能力——此數字直接推動 Claude Secur"
     },
@@ -193,6 +205,7 @@ window.WIKI_DATA = {
       "startDate": "",
       "lastUpdated": "2026-07-08",
       "lastNewsUpdate": "2026-07-08",
+      "updateFreq": "",
       "summary": "**最新動態：** Anthropic Status 確認 Claude Tag 的 GitHub 操作於 2026-07-07 一度出現錯誤率升高，已於同日 15:52 UTC 恢復正常（事故頁：[status.claude.com](https://status.claude.com/incidents/d23j8…",
       "latestHeadline": "Anthropic 正式發布 Claude Tag，進入今日 HN 熱門討論（情緒 😊）；Anthropic 內部 65% 產品程式碼由 Claude Tag 生成（官方公告數據）"
     },
@@ -208,6 +221,7 @@ window.WIKI_DATA = {
       "startDate": "",
       "lastUpdated": "2026-07-16",
       "lastNewsUpdate": "2026-07-16",
+      "updateFreq": "",
       "summary": "2026-06-26，Wired 確認 Trump 政府已不再信任 Amodei，由 Tom Brown 全面接管 Fable 5 出口管制談判；白宮人士批評其「行為怪異」。此為他近期最重大的政治處境轉變，顯示 Anthropic 與現任行政當局關係持續惡化。**後續進展**：Tom Brown 主導的談判已於 202…",
       "latestHeadline": "Politico 報導（經 Google News 轉載）指「Anthropic 執行長」捐款 100 萬美元予某 super PAC，捲入 AI 陣營之間鉅額政治獻金角力戰局；原文標題未具名確認捐款人身分，現任執行長為 Dario Amodei，惟此事實歸屬本人尚待核實（待核實）（政策/政治角力面向另見安全政策記者相"
     },
@@ -223,6 +237,7 @@ window.WIKI_DATA = {
       "startDate": "",
       "lastUpdated": "2026-07-14",
       "lastNewsUpdate": "2026-07-14",
+      "updateFreq": "",
       "summary": "**2026-07-13 最新**：Fable 5 存取限制維持延長至 7/19，無新截止日變動；The New Stack 報導 Anthropic 拒絕說明本次延長是否與開發者在 Cursor 中的發現有關，暗示背後可能另有隱情，但目前僅屬推測性報導，缺乏具體佐證（推論）。 **2026-07-12**：Fable…",
       "latestHeadline": "2026-07-13 最新：Fable 5 存取限制維持延長至 7/19，無新截止日變動；The New Stack 報導 Anthropic 拒絕說明本次延長是否與開發者在 Cursor 中的發現有關，暗示背後可能另有隱情，但目前僅屬推測性報導，缺乏具體佐證（推論）。"
     },
@@ -238,6 +253,7 @@ window.WIKI_DATA = {
       "startDate": "",
       "lastUpdated": "2026-06-30",
       "lastNewsUpdate": "2026-06-23",
+      "updateFreq": "",
       "summary": "2026-06-22，Fiona Fung 接受 Business Insider 採訪時指出：Claude Code 使 coding 不再是開發瓶頸，但工程師在使用 AI 工具後開始感到孤獨。這是 Anthropic 工程領導層少見的公開論述，點出 AI 編碼工具帶來的社會性副作用。 Fiona Fung 是 An…",
       "latestHeadline": "Business Insider 採訪報導：Claude Code 讓 coding 不再是瓶頸，但工程師開始感到孤獨"
     },
@@ -253,6 +269,7 @@ window.WIKI_DATA = {
       "startDate": "",
       "lastUpdated": "2026-05-23",
       "lastNewsUpdate": "",
+      "updateFreq": "",
       "summary": "2026-04-24，Google 宣布以現金與運算資源形式向 Anthropic 投資最高 **400 億美元**，初期承諾 100 億，其餘 300 億視績效目標達成情況追加。此次投資估值 Anthropic 為 **3,500 億美元**，是 AI 領域迄今規模最大的單筆投資之一。 Bloomberg、TechC…",
       "latestHeadline": "Data Center Knowledge 報導：Google 與 Anthropic 的算力合作已達到 gigawatt 等級的預購規模，反映 AI 基礎建設的資本投入正進一步集中，Anthropic 對自身長期算力需求的預判已超越一般規模"
     },
@@ -268,6 +285,7 @@ window.WIKI_DATA = {
       "startDate": "",
       "lastUpdated": "2026-07-11",
       "lastNewsUpdate": "2026-06-26",
+      "updateFreq": "",
       "summary": "2026-06-21，Reuters 正式確認 John Jumper 已離開 Google DeepMind、加入 Anthropic（HN score 77）。他成為一週內出走 Google 加入 Anthropic 的多位頂尖研究員之一，dev.to 報導指此波人才流失連帶造成 Google Alphabet 市…",
       "latestHeadline": "dev.to 多篇報導總結此波 Google AI 人才出走潮，指 Jumper 加入時點適逢 Anthropic Mythos 出口管制危機；一週內 4 位頂尖研究員離開 Google，Google Alphabet 市值蒸發約 2,700 億美元，Gemini 3.5 延期（來源：dev.to）"
     },
@@ -283,6 +301,7 @@ window.WIKI_DATA = {
       "startDate": "",
       "lastUpdated": "2026-07-04",
       "lastNewsUpdate": "2026-07-01",
+      "updateFreq": "",
       "summary": "Anthropic Managed Agents 是 Claude Platform 上的官方 Agent 框架，提供持久記憶（含 Dreaming 記憶整合）、20 路並行子代理、Outcomes 規格驗證、Proactive Workflows 與企業自架沙箱等功能，Anthropic 定位為「agentic AI…",
       "latestHeadline": "anthropic-sdk-python v0.115.0 新增 Managed Agents API 支援，Python SDK 正式跟進框架更新，開發者可透過官方 SDK 直接操作 Managed Agents（見 [Release](https://github.com/anthropics/anthropic-"
     },
@@ -298,6 +317,7 @@ window.WIKI_DATA = {
       "startDate": "",
       "lastUpdated": "2026-07-16",
       "lastNewsUpdate": "2026-07-16",
+      "updateFreq": "",
       "summary": "**2026-07-16 最新**：摩根大通執行長 Jamie Dimon 公開表示 Mythos AI 風險是「真實問題」（Reuters／Google News，僅標題可用，無法取得完整內文）；延續 07-13 加拿大金融監管機關引用案例，顯示金融業界對 Mythos 風險認知持續累積（詳見下方「時序」）。 **當…",
       "latestHeadline": "2026-07-16 最新：摩根大通執行長 Jamie Dimon 公開表示 Mythos AI 風險是「真實問題」（Reuters／Google News，僅標題可用，無法取得完整內文）；延續 07-13 加拿大金融監管機關引用案例，顯示金融業界對 Mythos 風險認知持續累積（詳見下方「時序」）。"
     },
@@ -313,6 +333,7 @@ window.WIKI_DATA = {
       "startDate": "",
       "lastUpdated": "2026-07-10",
       "lastNewsUpdate": "2026-05-14",
+      "updateFreq": "",
       "summary": "OpenClaw 是一款第三方 Claude agentic 工具，設計用途為擴展 Claude 訂閱方案的自動化用量。歷經 2026-04-25 配額禁令後，Anthropic 於 2026-05-14 宣布恢復允許 OpenClaw 等第三方工具使用，但代價是：**這些用量全數脫離訂閱方案，改為按完整 API 費率…",
       "latestHeadline": "OpenClaw 是一款第三方 Claude agentic 工具，設計用途為擴展 Claude 訂閱方案的自動化用量。歷經 2026-04-25 配額禁令後，Anthropic 於 2026-05-14 宣布恢復允許 OpenClaw 等第三方工具使用，但代價是：這些用量全數脫離訂閱方案，改為按完整 API 費率計費"
     },
@@ -328,6 +349,7 @@ window.WIKI_DATA = {
       "startDate": "",
       "lastUpdated": "2026-07-11",
       "lastNewsUpdate": "2026-05-22",
+      "updateFreq": "",
       "summary": "OpenCode 是 Claude Code 的主要開源替代品，截至 2026-05-12 已吸引 **157,000 名開發者**轉向（The New Stack 報導）。功能與體驗被 XDA 評測認為與 Claude Code 相當，且完全開源免費。即便 Anthropic 宣布倍增速率限制，對 vendor lo…",
       "latestHeadline": "XDA 評為可行替代方案；`OpenCode-power-pack` 移植官方 11 個 skills；DeepSeek 宣布建構自有競品，顯示開源 Claude Code 競品格局持續擴大"
     },
@@ -343,6 +365,7 @@ window.WIKI_DATA = {
       "startDate": "",
       "lastUpdated": "2026-07-14",
       "lastNewsUpdate": "2026-07-14",
+      "updateFreq": "",
       "summary": "**當前狀態：** 已被 Opus 4.8 / Fable 5 取代，現為第三階旗艦；agentic coding 場景仍有口碑，一般對話評價分歧。 Claude Opus 4.7 於 2026-04-24 正式發布，已相繼被 Opus 4.8（2026-05-28）與 Fable 5（2026-06-09）取代，現為…",
       "latestHeadline": "當前狀態： 已被 Opus 4.8 / Fable 5 取代，現為第三階旗艦；agentic coding 場景仍有口碑，一般對話評價分歧。"
     },
@@ -358,6 +381,7 @@ window.WIKI_DATA = {
       "startDate": "",
       "lastUpdated": "2026-07-16",
       "lastNewsUpdate": "2026-07-14",
+      "updateFreq": "",
       "summary": "**2026-07-09 最新**：Opus 4.8 一度出現錯誤率升高（Elevated errors），官方於 03:50 UTC 確認問題已解決；同期 Reddit 用戶反映使用體驗轉佳，屬弱訊號僅供參考。 Claude Opus 4.8 於 2026-05-28 正式發布，同步推出 Dynamic Workfl…",
       "latestHeadline": "錯誤率一度升高（同日解決）：Anthropic Status 通報 Claude Opus 4.8 出現 Elevated errors，於 03:50 UTC 確認問題已解決；同期 Reddit 用戶反映近期使用體驗轉佳，提及發布初期曾有不穩定（弱訊號，score 恆 0）"
     },
@@ -373,6 +397,7 @@ window.WIKI_DATA = {
       "startDate": "",
       "lastUpdated": "2026-07-16",
       "lastNewsUpdate": "2026-07-16",
+      "updateFreq": "",
       "summary": "**2026-07-04 官方推出企業支出控管（spend controls）功能**，回應企業 agentic AI 帳單頻繁超支的普遍痛點，是官方首次針對成本失控問題推出產品化解法（詳見下方時序）。目前所有付費方案用量仍維持原訂閱配額制——原定 2026-06-15 實施的「程式化用量（Agent SDK、`cla…",
       "latestHeadline": "2026-07-04 官方推出企業支出控管（spend controls）功能，回應企業 agentic AI 帳單頻繁超支的普遍痛點，是官方首次針對成本失控問題推出產品化解法（詳見下方時序）。目前所有付費方案用量仍維持原訂閱配額制——原定 2026-06-15 實施的「程式化用量（Agent SDK、`claude "
     },
@@ -388,6 +413,7 @@ window.WIKI_DATA = {
       "startDate": "",
       "lastUpdated": "2026-07-14",
       "lastNewsUpdate": "2026-07-14",
+      "updateFreq": "",
       "summary": "**2026-07-14 最新**：MarkTechPost 發布 Sonnet 5 / Sonnet 4.6 / Opus 4.8 三模型 agentic coding benchmark、API 定價、成本效益比較的深度文章，具體數字待查證（詳見「歷史記錄」）。 **2026-07-09**：Mashable 報導…",
       "latestHeadline": "2026-07-14 最新：MarkTechPost 發布 Sonnet 5 / Sonnet 4.6 / Opus 4.8 三模型 agentic coding benchmark、API 定價、成本效益比較的深度文章，具體數字待查證（詳見「歷史記錄」）。"
     },
@@ -403,6 +429,7 @@ window.WIKI_DATA = {
       "startDate": "",
       "lastUpdated": "2026-07-16",
       "lastNewsUpdate": "2026-07-07",
+      "updateFreq": "",
       "summary": "2026-07-07，FedScoop 報導 Anthropic 延攬 Teresa Carlson 主導公部門業務。Carlson 曾任職 Microsoft 與 AWS，在雲端服務公部門業務領域有豐富經驗（待核實：Anthropic 內部確切職稱）。 此為事件層級記錄，日報僅標題報導，尚無 Carlson 本人公開…",
       "latestHeadline": "加入 Anthropic，主導公部門業務，此前曾任職 Microsoft、AWS（FedScoop）（待核實：確切職稱與到任日期）"
     },
@@ -418,6 +445,7 @@ window.WIKI_DATA = {
       "startDate": "",
       "lastUpdated": "2026-07-13",
       "lastNewsUpdate": "2026-07-13",
+      "updateFreq": "",
       "summary": "2026-07-13，Business Insider 報導 Anthropic 新聘 Monzo（英國數位銀行）共同創辦人 Tom Blomfield 加入公司，報導提及此事與 AI compute、Y Combinator 背景相關，但未提供明確職稱或具體職掌說明（待核實）。Blomfield 先前為 Y Comb…",
       "latestHeadline": "Business Insider 報導 Anthropic 新聘 Monzo 共同創辦人 Tom Blomfield，涉及 AI compute、Y Combinator 背景，職稱與職掌待核實（來源：Business Insider）"
     },
@@ -433,6 +461,7 @@ window.WIKI_DATA = {
       "startDate": "",
       "lastUpdated": "2026-06-30",
       "lastNewsUpdate": "2026-06-26",
+      "updateFreq": "",
       "summary": "2026-06-25，Tom Brown 接管 Anthropic 與白宮的 Fable 5 出口管制談判，取代 Dario Amodei 負責與 Trump 政府的直接對話。白宮人士評價其「不像 Dario 那樣行為怪異，能夠實際有效溝通」，是他在 Anthropic 政治分量上首次公開體現。 Tom Brown 是…",
       "latestHeadline": "Wired 報導補充確認 Tom Brown 為 GPT-3 共同研發者（OpenAI 時期），Anthropic 聯合創辦人身份獲多來源確認（來源：WIRED）"
     }
@@ -450,6 +479,7 @@ window.WIKI_DATA = {
       "startDate": "2026-04-27",
       "lastUpdated": "2026-07-01",
       "lastNewsUpdate": "2026-06-27",
+      "updateFreq": "",
       "summary": "",
       "latestHeadline": ""
     },
@@ -465,6 +495,7 @@ window.WIKI_DATA = {
       "startDate": "2026-04-27",
       "lastUpdated": "2026-07-16",
       "lastNewsUpdate": "2026-07-16",
+      "updateFreq": "",
       "summary": "**最新態勢（2026-07-16）：** Simon Willison 部落格轉述資安研究者 Ayush 的「the-memory-heist」文章，揭露透過 web fetch 誘導 Claude 洩漏使用者機密資訊的新提示注入/外洩手法；另一則僅標題可用的 Google News/Security Affairs…",
       "latestHeadline": "最新態勢（2026-07-16）： Simon Willison 部落格轉述資安研究者 Ayush 的「the-memory-heist」文章，揭露透過 web fetch 誘導 Claude 洩漏使用者機密資訊的新提示注入/外洩手法；另一則僅標題可用的 Google News/Security Affairs 報導稱"
     },
@@ -480,6 +511,7 @@ window.WIKI_DATA = {
       "startDate": "2026-06-19",
       "lastUpdated": "2026-07-13",
       "lastNewsUpdate": "2026-07-13",
+      "updateFreq": "",
       "summary": "截至 2026-06-29，一週至兩週內 Google DeepMind 連失至少 4–5 位頂尖研究員至 Anthropic，市值蒸發約 $2,700 億美元（推論，分析師估算），Gemini 3.5 Pro 延期至七月（推論，dev.to 報導，未經 Google 官方確認）。最矚目的是 2024 諾貝爾化學獎得主…",
       "latestHeadline": "[跨界執行層人才，非典型 AI 實驗室流動] Anthropic 新聘 Monzo 共同創辦人 Tom Blomfield：Business Insider 報導 Anthropic 聘請英國數位銀行 Monzo 共同創辦人 Tom Blomfield，背景涉及 AI compute 與 Y Combinator。對商"
     },
@@ -495,6 +527,7 @@ window.WIKI_DATA = {
       "startDate": "2026-05-28",
       "lastUpdated": "2026-07-16",
       "lastNewsUpdate": "2026-07-16",
+      "updateFreq": "",
       "summary": "Anthropic 在技術聲譽與企業採用率上持續上升（企業採用率 34.4% 首超 OpenAI 32.3%，Ramp AI Index 2026-05-15），並於 2026-05-28 完成 $65B Series H 融資，估值 $965B，超越 OpenAI 成全球最大 AI 新創。核心矛盾從「PMF vs 獲…",
       "latestHeadline": "[重大，商業模式擴張] Anthropic 與 Blackstone 共同成立 $15 億美元 AI 實作公司「Ode」：Technology Org 報導 Anthropic 與私募巨頭 Blackstone 共同成立名為 Ode 的 AI 實作（implementation）公司，規模達 15 億美元；TechCr"
     },
@@ -510,6 +543,7 @@ window.WIKI_DATA = {
       "startDate": "2026-07-03",
       "lastUpdated": "2026-07-07",
       "lastNewsUpdate": "2026-07-07",
+      "updateFreq": "",
       "summary": "本頁回答一個問題：**「Anthropic 說過要做的事，做了嗎？」** 官方每次承諾修復、承諾政策、或明確拒絕時，在此建檔追蹤後續；狀態變化時由每日 ingest 更新。已兌現或已死案的條目移入「已結案」。 **狀態符號：** 🔴 未兌現 / 🟡 部分兌現 / ✅ 已兌現 / ⛔ 明確拒絕（不會做）/ ❓ 待官方回應",
       "latestHeadline": "spyware 指控回應狀態更新——Anthropic 首度回應，定調為內部「實驗」（🟡 已回應，定性未獲驗證）"
     },
@@ -525,6 +559,7 @@ window.WIKI_DATA = {
       "startDate": "2026-05-01",
       "lastUpdated": "2026-07-16",
       "lastNewsUpdate": "2026-07-16",
+      "updateFreq": "",
       "summary": "**出口管制已於 2026-07-01 全面解除。** 美國商務部長 Howard Lutnick 宣布解除 Fable 5 和 Mythos 5 的出口管制，正式生效；Anthropic 承諾三項義務換取解封（主動偵測安全風險、與政府合作制定協議與標準、通報惡意活動）；封鎖期共 18–19 天（2026-06-13 …",
       "latestHeadline": "[EU 施壓具體化] HN 轉載 Politico 全文：確認 Anthropic 派遣初階員工 Donny Greenberg 出席歐盟安全聽證：Hacker News（累積 19 分）轉載 Politico 全文報導，確認並補足 07-14 politico.eu 標題式報導：布魯塞爾政策官員批評 Anthropi"
     },
@@ -540,6 +575,7 @@ window.WIKI_DATA = {
       "startDate": "2026-03（推測）",
       "lastUpdated": "2026-07-13",
       "lastNewsUpdate": "2026-07-13",
+      "updateFreq": "",
       "summary": "**當前狀態：** 官方已說明 4 月退步原因為工程疏失，恢復情況待驗證；2026-06 下旬起投訴焦點轉向「token 消耗異常／成本暴增」——訊號鏈自 06-27 延燒至 07-13（共 17 天），累計九個獨立訊號（HN 熱議、$62,021 具名案例、四則 GitHub issue、兩則額度異常比例回報、07-…",
       "latestHeadline": "當前狀態： 官方已說明 4 月退步原因為工程疏失，恢復情況待驗證；2026-06 下旬起投訴焦點轉向「token 消耗異常／成本暴增」——訊號鏈自 06-27 延燒至 07-13（共 17 天），累計九個獨立訊號（HN 熱議、$62,021 具名案例、四則 GitHub issue、兩則額度異常比例回報、07-13 M"
     },
@@ -555,6 +591,7 @@ window.WIKI_DATA = {
       "startDate": "2026-06-29",
       "lastUpdated": "2026-07-16",
       "lastNewsUpdate": "2026-07-10",
+      "updateFreq": "🗓️ 週更（`/wiki-lint` 維護；無新趨勢節點時刻意不動——日期停留＝趨勢層無變化，非漏更新）",
       "summary": "本頁從 [[topics/community-tech-patterns]] 的具體模式中，**萃取出宏觀趨勢**——社群正在往哪些方向收斂，每條趨勢的熱度曲線（加溫 / 穩定 / 醞釀），以及**對現有設計的啟示**：工程師看到這條趨勢，該回頭重新思考自己現有設計的什麼。 - **週更**：本頁只在 `/wiki-l…",
       "latestHeadline": "本頁從  的具體模式中，萃取出宏觀趨勢——社群正在往哪些方向收斂，每條趨勢的熱度曲線（加溫 / 穩定 / 醞釀），以及對現有設計的啟示：工程師看到這條趨勢，該回頭重新思考自己現有設計的什麼。"
     },
@@ -570,6 +607,7 @@ window.WIKI_DATA = {
       "startDate": "2026-04-25",
       "lastUpdated": "2026-07-16",
       "lastNewsUpdate": "2026-07-16",
+      "updateFreq": "",
       "summary": "追蹤 Claude Code 社群中活躍的概念辯論、設計哲學、實證研究與技術反思。與 [[topics/community-tech-patterns]] 追蹤具體工具和工作流不同，本頁聚焦思想碰撞：什麼哲學正在成形、什麼假設受到挑戰、什麼共識正在收斂。頁面結構：**🔥 本週熱點**（當前最熱的持續議題）→ **🌊 長…",
       "latestHeadline": "追蹤 Claude Code 社群中活躍的概念辯論、設計哲學、實證研究與技術反思。與  追蹤具體工具和工作流不同，本頁聚焦思想碰撞：什麼哲學正在成形、什麼假設受到挑戰、什麼共識正在收斂。頁面結構：🔥 本週熱點（當前最熱的持續議題）→ 🌊 長期議題（主題彙整）→ 熱門討論記錄（最近 30 天）→ 技術彙整（逐篇深度筆記）"
     },
@@ -585,6 +623,7 @@ window.WIKI_DATA = {
       "startDate": "2026-04-25",
       "lastUpdated": "2026-07-16",
       "lastNewsUpdate": "2026-07-16",
+      "updateFreq": "",
       "summary": "追蹤 Claude Code 社群在實際開發中累積的**工作流與應用模式**。本頁收錄的模式類型包括 Multi-agent 架構、Skills 設計、CLAUDE.md 管理、Hooks 與自動化、模型使用策略、Token 成本優化、記憶與知識管理、Plugin/MCP 整合等，持續累積形成社群最佳實踐知識庫。 工具…",
       "latestHeadline": "追蹤 Claude Code 社群在實際開發中累積的工作流與應用模式。本頁收錄的模式類型包括 Multi-agent 架構、Skills 設計、CLAUDE.md 管理、Hooks 與自動化、模型使用策略、Token 成本優化、記憶與知識管理、Plugin/MCP 整合等，持續累積形成社群最佳實踐知識庫。"
     },
@@ -600,6 +639,7 @@ window.WIKI_DATA = {
       "startDate": "2026-04-25",
       "lastUpdated": "2026-07-01",
       "lastNewsUpdate": "2026-05-22",
+      "updateFreq": "",
       "summary": "**此頁為歷史記錄，2026-05-22 後的時序整合至 [[topics/community-tech-patterns]]。** 本頁記錄 Claude Code 社群技術應用趨勢的時序演進，追蹤範圍從 2026 年 4 月下旬至今，最新條目為 2026 年 5 月下旬。與 [[topics/community-t…",
       "latestHeadline": "Spec-Driven Development 工作流（HN Show）：多步驟生成規格（需求→程式碼分析→設計）→ 分拆子任務→每步之間清除 context再執行，藉此降低成本並提升 agent 表現；與 Managed Agents Outcomes 機制的「spec 作為執行依據」原則在社群層面形成呼應，是規格驅"
     },
@@ -615,6 +655,7 @@ window.WIKI_DATA = {
       "startDate": "2026-04-25",
       "lastUpdated": "2026-07-16",
       "lastNewsUpdate": "2026-07-11",
+      "updateFreq": "🗓️ 週更（`/wiki-lint` 策展維護，每日 ingest 不更新此頁）",
       "summary": "追蹤 Claude Code 社群發布的工具、插件與 skill 專案。此頁為 lint 專用，由 /wiki-lint 定期策展；每日 ingest 不更新此頁。日常工作流模式見 [[topics/community-tech-patterns]]，概念辯論見 [[topics/community-tech-disc…",
       "latestHeadline": "追蹤 Claude Code 社群發布的工具、插件與 skill 專案。此頁為 lint 專用，由 /wiki-lint 定期策展；每日 ingest 不更新此頁。日常工作流模式見 ，概念辯論見 。"
     },
@@ -630,6 +671,7 @@ window.WIKI_DATA = {
       "startDate": "2026-04",
       "lastUpdated": "2026-07-16",
       "lastNewsUpdate": "2026-07-16",
+      "updateFreq": "",
       "summary": "Claude Code 已成為 AI 輔助編碼的標竿產品，但競爭正快速升溫。2026-05 是關鍵轉折月：OpenAI Codex 下載量單週爆增 1,397%、OpenCode 吸走 15.7 萬開發者、Microsoft 取消數千名員工授權改推 Copilot CLI——分流訊號同步出現。另一方面，Anthropi…",
       "latestHeadline": "[新競品，中國陣營再添一員] Moonshot 據報即將發布挑戰 Anthropic 領先地位的新模型：Financial Times 報導中國 AI 新創 Moonshot 即將發布新模型，被視為挑戰 Anthropic 市場領先地位。對競爭格局的意涵：詳見「主要競品追蹤」新增 Moonshot AI 子區塊（Goo"
     },
@@ -645,6 +687,7 @@ window.WIKI_DATA = {
       "startDate": "2026-05-01",
       "lastUpdated": "2026-07-16",
       "lastNewsUpdate": "2026-07-16",
+      "updateFreq": "",
       "summary": "大型組織採用 Claude Code 後，成本結構挑戰迅速浮現。Uber 四個月耗盡全年 AI 預算（Forbes 報導）是目前最具代表性的公開案例，揭示企業在缺乏細粒度使用量控管工具的情況下，AI 工具成本極易失控。此議題已從開發者社群的個人抱怨升級至 Forbes、Business Insider 等主流財經媒體的…",
       "latestHeadline": "[帳務錯誤重大揭露] Anthropic 證實 1660 萬美元帳務錯誤，稽核發現企業客戶被多收 170 萬美元：Tech Times 報導 Anthropic 證實一筆 1660 萬美元的帳務錯誤，稽核人員另發現企業客戶被多收 170 萬美元；受影響企業名單與退款機制未見報導。對本頁的意涵：本頁自 2026-05-0"
     },
@@ -660,6 +703,7 @@ window.WIKI_DATA = {
       "startDate": "2026-05-26",
       "lastUpdated": "2026-07-16",
       "lastNewsUpdate": "2026-07-16",
+      "updateFreq": "",
       "summary": "**本月（2026-06）淨變化：** 3 家退出/縮減（Microsoft 成本、JPMorgan Chase 香港出口管制、Alibaba 安全疑慮）+ 1 家 API 客戶切換（Lindy → DeepSeek，成本），對 10+ 家新增/擴大採用（Globant、DataArt、Okta、Rubrik、加州州政…",
       "latestHeadline": "Grasshopper Bank 成為首家列入 Anthropic MCP 目錄的銀行：Financial IT 報導 Grasshopper Bank 成為首家列入 Anthropic MCP（Model Context Protocol）目錄的銀行，為金融業具名採用 MCP 生態系的起點案例；具體整合規模、應用場景",
       "enterpriseTracker": {
@@ -1509,6 +1553,7 @@ window.WIKI_DATA = {
       "startDate": "2026-07-02",
       "lastUpdated": "2026-07-16",
       "lastNewsUpdate": "2026-07-16",
+      "updateFreq": "",
       "summary": "**目前公開陣容五級維持不變（Fable 5 > Opus 4.8 > Sonnet 5 > Sonnet 4.6 > Haiku 4.5），07-08 官方公布的多模型協作基準是最新橫向比較資訊。** 本頁回答一個問題：**「我該用哪個 Claude 模型？」** 各模型的深度資訊（爭議、時序、已知問題）在各自的 e…",
       "latestHeadline": "目前公開陣容五級維持不變（Fable 5 > Opus 4.8 > Sonnet 5 > Sonnet 4.6 > Haiku 4.5），07-08 官方公布的多模型協作基準是最新橫向比較資訊。 本頁回答一個問題：「我該用哪個 Claude 模型？」 各模型的深度資訊（爭議、時序、已知問題）在各自的 entities "
     },
@@ -1524,6 +1569,7 @@ window.WIKI_DATA = {
       "startDate": "2026-05-17",
       "lastUpdated": "2026-07-16",
       "lastNewsUpdate": "2026-07-16",
+      "updateFreq": "",
       "summary": "比對社群工具所反映的開發者痛點，與 Anthropic 官方功能路線之間的覆蓋情況。識別哪些痛點官方正在積極解決、哪些被忽略或結構性缺席。 截至 2026-07-08，矩陣涵蓋 9 個核心痛點：多 agent 協調與安全隔離已獲高度官方對應；輸出品質驗證、平台可及性（Artifacts 輸出共享 + Cowork 行動…",
       "latestHeadline": "v2.1.211 新增 `--forward-subagent-text` 旗標，為「多平行 agent 即時可觀測性」缺口提供官方資料來源：`stream-json` 輸出可包含 subagent 文字與思考內容，讓社群建構觀測/監控工具時不必自行拼湊資料來源；但官方仍未推出 live map 類產品，矩陣狀態維持 "
     },
@@ -1539,6 +1585,7 @@ window.WIKI_DATA = {
       "startDate": "2026-06-04",
       "lastUpdated": "2026-07-14",
       "lastNewsUpdate": "2026-07-13",
+      "updateFreq": "",
       "summary": "2026-06-04，Anthropic Institute 發布《When AI Builds Itself: Our progress toward recursive self-improvement》報告（HN 477），首次系統性披露 AI 加速自身開發的進展：Anthropic 工程師平均每人可交付的程式碼…",
       "latestHeadline": "[公眾社會運動] 示威者要求 OpenAI、Anthropic、Google DeepMind 暫停 AI 開發：抗議者在三家公司總部前遊行，要求暫停 AI 開發；報導僅為標題式轉載，未提供遊行規模、具體訴求或後續官方回應等細節（Decrypt，經 Google News 轉載，2026-07-13，待確認細節）"
     },
@@ -1554,6 +1601,7 @@ window.WIKI_DATA = {
       "startDate": "2026-06-30",
       "lastUpdated": "2026-07-12",
       "lastNewsUpdate": "2026-07-11",
+      "updateFreq": "",
       "summary": "本頁追蹤 2026-06-30 起延燒的「中美 AI 工具信任對峙」：一條由社群逆向工程指控起頭、逐步升級至中國政府正式警示、企業連鎖禁用、最終由 Anthropic 公開否認的敘事線。核心矛盾是**雙方均提出未經第三方驗證的技術指控**——社群/中國官方稱 Claude Code 內建「秘密追蹤中國使用者並回傳資料」…",
       "latestHeadline": "Anthropic 首度公開否認中國官方「後門」指控（多家獨立媒體報導）；同日發布「Inviting hard questions」聲明，兩者關聯待查證（推論）"
     }
@@ -2064,5 +2112,6 @@ window.WIKI_DATA = {
     "summary": "追蹤 Claude / Claude Code 每個新發布功能的社群熱度、試用價值與快速上手方式。"
   }
 };
+window.TRANSPARENCY = {"window":{"days":6,"from":"2026-07-11","to":"2026-07-16"},"totals":{"gathered":522,"emitted":317,"wiki_hits":157,"prior_emit":0.60727969348659,"prior_wiki":0.4952681388012618},"hhi":0.2608219400381354,"sources":[{"name":"Anthropic Blog","slug":"anthropic-blog","active":true,"score_reliability":"none","curation_mode":"whitelist","rate_comparable":true,"days_seen":6,"gathered":2,"filtered":1,"emitted":1,"wiki_hits":1,"emit_rate":0.5975269940787182,"emit_wilson":0.09452865480086611,"wiki_rate":0.5411528534556925,"presence":0.006369426751592357,"low_sample":true,"pc1_buckets":{"unknown":1}},{"name":"Anthropic Status","slug":"anthropic-status","active":true,"score_reliability":"none","curation_mode":"whitelist","rate_comparable":true,"days_seen":6,"gathered":6,"filtered":6,"emitted":5,"wiki_hits":1,"emit_rate":0.6594459180666077,"emit_wilson":0.4364905634363539,"wiki_rate":0.3968454258675079,"presence":0.006369426751592357,"low_sample":true,"pc1_buckets":{"unknown":1}},{"name":"Claude API Release Notes","slug":"claude-api-release-notes","active":true,"score_reliability":"none","curation_mode":"whitelist","rate_comparable":true,"days_seen":6,"gathered":0,"filtered":0,"emitted":0,"wiki_hits":0,"emit_rate":0.60727969348659,"emit_wilson":0.0,"wiki_rate":0.49526813880126175,"presence":0.0,"low_sample":true,"pc1_buckets":{}},{"name":"GitHub","slug":"github","active":true,"score_reliability":"untrusted","curation_mode":"content","rate_comparable":true,"days_seen":6,"gathered":5,"filtered":4,"emitted":4,"wiki_hits":4,"emit_rate":0.645823754789272,"emit_wilson":0.37552826411853885,"wiki_rate":0.6394772420009013,"presence":0.025477707006369428,"low_sample":true,"pc1_buckets":{"unknown":4}},{"name":"GitHub Issues","slug":"github-issues","active":true,"score_reliability":"trusted","curation_mode":"score","rate_comparable":true,"days_seen":6,"gathered":90,"filtered":84,"emitted":44,"wiki_hits":34,"emit_rate":0.5104144897248345,"emit_wilson":0.3882031497910542,"wiki_rate":0.7213459516298634,"presence":0.21656050955414013,"low_sample":true,"pc1_buckets":{"unknown":34}},{"name":"Hacker News","slug":"hacker-news","active":true,"score_reliability":"trusted","curation_mode":"score","rate_comparable":true,"days_seen":6,"gathered":90,"filtered":78,"emitted":64,"wiki_hits":17,"emit_rate":0.6922326715430164,"emit_wilson":0.610357621849017,"wiki_rate":0.2966578565947651,"presence":0.10828025477707007,"low_sample":true,"pc1_buckets":{"unknown":15,"high":2}},{"name":"Reddit","slug":"reddit","active":true,"score_reliability":"untrusted","curation_mode":"content","rate_comparable":true,"days_seen":6,"gathered":65,"filtered":55,"emitted":54,"wiki_hits":18,"emit_rate":0.7781834572909623,"emit_wilson":0.721833508048396,"wiki_rate":0.35863564668769715,"presence":0.11464968152866242,"low_sample":true,"pc1_buckets":{"unknown":18}},{"name":"Google News","slug":"google-news","active":true,"score_reliability":"none","curation_mode":"content","rate_comparable":true,"days_seen":6,"gathered":158,"filtered":94,"emitted":91,"wiki_hits":67,"emit_rate":0.5794696284816393,"emit_wilson":0.49798538610709875,"wiki_rate":0.7124027860199269,"presence":0.4267515923566879,"low_sample":true,"pc1_buckets":{"unknown":7,"high":52,"mid":8}},{"name":"dev.to","slug":"devto","active":true,"score_reliability":"untrusted","curation_mode":"content","rate_comparable":false,"days_seen":6,"gathered":90,"filtered":90,"emitted":40,"wiki_hits":12,"emit_rate":0.4740508533611982,"emit_wilson":0.34615486330171846,"wiki_rate":0.33905362776025233,"presence":0.07643312101910828,"low_sample":true,"pc1_buckets":{"unknown":12}},{"name":"Blogroll","slug":"blog","active":true,"score_reliability":"none","curation_mode":"whitelist","rate_comparable":true,"days_seen":6,"gathered":16,"filtered":15,"emitted":14,"wiki_hits":3,"emit_rate":0.7262664963814389,"emit_wilson":0.6397666856325172,"wiki_rate":0.33136172450052576,"presence":0.01910828025477707,"low_sample":true,"pc1_buckets":{"unknown":3}},{"name":"lobste.rs","slug":"lobsters","active":false,"score_reliability":"trusted","curation_mode":"whitelist","rate_comparable":true,"days_seen":0,"gathered":0,"filtered":0,"emitted":0,"wiki_hits":0,"emit_rate":0.60727969348659,"emit_wilson":0.0,"wiki_rate":0.49526813880126175,"presence":0.0,"low_sample":true,"pc1_buckets":{}}],"unknown_slugs":{},"domain_data_loaded":11520};
 // Digest content is loaded on-demand from data/digest/{date}.json
 // Wiki content is loaded on-demand from data/wiki/{id}.json

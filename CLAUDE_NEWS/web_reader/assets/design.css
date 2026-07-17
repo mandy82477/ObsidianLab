@@ -710,6 +710,7 @@ code {
 .kb-type-pill--entity     { color: var(--ink-2); border-color: var(--border-2); }
 .kb-type-pill--topic      { color: var(--ochre-9); border-color: var(--ochre-7); }
 .kb-type-pill--comparison { color: var(--ink-2); border-color: var(--border-strong); }
+.kb-type-pill--weekly     { color: var(--ochre-9); border-color: var(--ochre-5); }
 
 .entity-row__name {
   display: inline-flex; align-items: baseline; gap: 0;
@@ -774,6 +775,7 @@ code {
 .pill--info    { color: var(--info);    border-color: var(--info); }
 .pill--purple  { color: var(--ochre-9); border-color: var(--ochre-7); }
 .pill--gray    { color: var(--ink-3);   border-color: var(--border-2); }
+.pill--weekly  { color: var(--ochre-9); border-color: var(--ochre-5); }
 
 /* ── Archive view — month sections, hairline rows ─────────── */
 .archive { max-width: 1100px; margin: 0 auto; padding: 56px 24px 80px; }
@@ -2068,3 +2070,41 @@ code {
   .arch__row { grid-template-columns: 78px 1fr; }
   .arch__row__count { grid-column: 2; text-align: left; padding-top: 4px; }
 }
+
+/* ── Transparency（關於頁 · 來源記分卡）──────────────────────────────────── */
+.trans { margin-top: 56px; padding-top: 40px; border-top: 1px solid var(--border-2); }
+.trans:empty { display: none; }
+.trans__lead {
+  font-family: var(--font-sans); font-size: 13px; line-height: 1.7;
+  color: var(--ink-2); max-width: 640px; margin: 10px 0 4px;
+}
+.trans__wrap { overflow-x: auto; margin-top: 20px; }
+.trans__table {
+  width: 100%; border-collapse: collapse;
+  font-family: var(--font-sans); font-size: 12.5px;
+}
+.trans__table th {
+  font-size: 10.5px; font-weight: 500;
+  letter-spacing: 0.08em; text-transform: uppercase;
+  color: var(--ink-3); text-align: left;
+  padding: 6px 10px; border-bottom: 1px solid var(--border-strong);
+  white-space: nowrap;
+}
+.trans__table td {
+  padding: 7px 10px; border-bottom: 1px solid var(--border-2);
+  color: var(--ink-2); white-space: nowrap;
+}
+.trans__table th.num, .trans__table td.num {
+  font-family: var(--font-mono); font-variant-numeric: tabular-nums;
+  text-align: right;
+}
+.trans__table tbody tr:hover td { background: var(--bg-1); }
+.trans__src { color: var(--ink-1); font-weight: 500; }
+.trans__warn { color: var(--ochre-7); font-size: 11px; cursor: help; }
+.trans__table--wl { margin-top: 4px; }
+.trans__note {
+  font-family: var(--font-sans); font-size: 11.5px; line-height: 1.6;
+  color: var(--ink-3); margin-top: 10px;
+}
+.trans__note a { color: var(--ink-2); text-decoration: underline; text-underline-offset: 2px; }
+.trans__note a:hover { color: var(--ochre-9); }

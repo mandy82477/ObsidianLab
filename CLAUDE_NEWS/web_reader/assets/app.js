@@ -5,7 +5,7 @@
 
   const $ = s => document.querySelector(s);
   const $$ = s => document.querySelectorAll(s);
-  let rendered = { today: false, wiki: false, archive: false };
+  let rendered = { today: false, wiki: false, archive: false, about: false };
   let detailReturnView = 'wiki';
 
   // ── On-demand fetch caches ───────────────────────────────────────────────────
@@ -148,6 +148,7 @@
     if (id === 'today'   && !rendered.today)   { renderLatestDigest(); rendered.today   = true; }
     if (id === 'wiki'    && !rendered.wiki)     { renderWiki();         rendered.wiki    = true; }
     if (id === 'archive' && !rendered.archive)  { renderArchive();      rendered.archive = true; }
+    if (id === 'about'   && !rendered.about)    { renderTransparency(); rendered.about   = true; }
   };
 
   // ── Helpers ─────────────────────────────────────────────────────────────────
@@ -375,7 +376,7 @@
       return `
 <div class="${rowCls}" onclick="openWikiPage('${esc(item.id)}','${item._kbBaseType}')">
   <div class="entity-row__name"><span class="bracket">[[</span>${esc(item.id)}<span class="bracket">]]</span></div>
-  <div><span class="kb-type-pill kb-type-pill--${kbType}">${esc(typeLabel)}</span></div>
+  <div><span class="kb-type-pill kb-type-pill--${kbType}">${esc(typeLabel)}</span>${item.updateFreq ? ' <span class="kb-type-pill kb-type-pill--weekly">🗓️ 週更</span>' : ''}</div>
   <div><span class="pill pill--${item.pill}">${esc(statusLabelShort(item.status))}</span></div>
   <div class="entity-row__summary">${esc(item.latestHeadline || '')}</div>
   <div class="entity-row__updated">${item.lastNewsUpdate === today ? '<span class="badge-new">今日</span>' : ''}${esc(item.lastNewsUpdate || item.lastUpdated || item.startDate || item.firstSeen || '')}</div>
@@ -417,6 +418,70 @@
   // ── Archive ──────────────────────────────────────────────────────────────────
   const MONTH_NAMES_FULL = ['January','February','March','April','May','June','July','August','September','October','November','December'];
   const DOW_NAMES = ['SUN','MON','TUE','WED','THU','FRI','SAT'];
+  // ── Transparency（關於頁「資料透明度」，資料來自 build 時的來源記分卡）────────────
+  function renderTransparency() {
+    const host = $('#transparency');
+    if (!host) return;
+    const T = window.TRANSPARENCY;
+    if (!T || !T.sources || !T.sources.length) { host.innerHTML = ''; return; }
+
+    const pct = v => Math.round(v * 100) + '%';
+    const active = T.sources.filter(s => s.active);
+    const ranked = active.filter(s => s.curation_mode !== 'whitelist')
+                         .sort((a, b) => b.presence - a.presence);
+    const wl = active.filter(s => s.curation_mode === 'whitelist')
+                     .sort((a, b) => a.name.localeCompare(b.name));
+
+    let hasDagger = false;
+    const rankedRows = ranked.map(s => {
+      const warn = s.low_sample ? ' <span class="trans__warn" title="樣本不足（<14 天或 <30 條），僅供趨勢觀察">⚠︎</span>' : '';
+      let emit = '—', wiki = '—';
+      if (s.gathered > 0) {
+        emit = pct(s.emit_rate) + (s.rate_comparable ? '' : '†');
+        if (!s.rate_comparable) hasDagger = true;
+      }
+      if (s.emitted > 0) wiki = pct(s.wiki_rate);
+      return `<tr><td class="trans__src">${esc(s.name)}${warn}</td>` +
+             `<td class="num">${s.gathered}</td><td class="num">${s.emitted}</td>` +
+             `<td class="num">${s.wiki_hits}</td><td class="num">${emit}</td>` +
+             `<td class="num">${wiki}</td><td class="num">${pct(s.presence)}</td></tr>`;
+    }).join('');
+
+    const wlRows = wl.map(s =>
+      `<tr><td class="trans__src">${esc(s.name)}</td>` +
+      `<td class="num">${s.gathered}</td><td class="num">${s.emitted}</td>` +
+      `<td class="num">${s.wiki_hits}</td></tr>`
+    ).join('');
+
+    const gn = T.sources.find(s => s.slug === 'google-news');
+    const b = (gn && gn.pc1_buckets) || {};
+    const domainLine = (b.high || b.mid || b.low || b.unknown)
+      ? `<div class="trans__note">Google News 媒體信譽組成（wiki 歸因條目，Lin et al. 2023）：` +
+        `高 ${b.high || 0} · 中 ${b.mid || 0} · 低 ${b.low || 0} · 未知 ${b.unknown || 0}</div>`
+      : '';
+
+    host.innerHTML = `
+      <div class="about__scope-eyebrow">04 · transparency</div>
+      <h2 class="about__scope-h">資料 <em>透明度</em></h2>
+      <p class="trans__lead">觀測窗 ${esc(T.window.from)} — ${esc(T.window.to)}（${T.window.days} 天）：
+        抓取 ${T.totals.gathered} → 收錄 ${T.totals.emitted} → 沉澱 wiki ${T.totals.wiki_hits} 筆 ·
+        來源集中度 HHI ${T.hhi.toFixed(3)}</p>
+      <div class="trans__wrap"><table class="trans__table">
+        <thead><tr><th>社群 / 媒體來源</th><th class="num">抓取</th><th class="num">收錄</th>
+        <th class="num">wiki</th><th class="num">收錄率</th><th class="num">wiki 率</th><th class="num">占比</th></tr></thead>
+        <tbody>${rankedRows}</tbody>
+      </table></div>
+      ${hasDagger ? '<div class="trans__note">† 跨日重覆視窗抓法（dev.to top=30），收錄率結構性偏低，不與其他來源比較。</div>' : ''}
+      <div class="trans__wrap"><table class="trans__table trans__table--wl">
+        <thead><tr><th>官方 / 白名單來源（保險性，不排名）</th><th class="num">抓取</th><th class="num">收錄</th><th class="num">wiki</th></tr></thead>
+        <tbody>${wlRows}</tbody>
+      </table></div>
+      ${domainLine}
+      <div class="trans__note">收錄率與 wiki 率為 Bayesian 平滑值；指標定義與公道性規則見
+        <a href="https://github.com/mandy82477/ObsidianLab/blob/master/CLAUDE_NEWS/docs/source-scoring-optimization.md"
+           target="_blank" rel="noreferrer">source-scoring-optimization.md ↗</a></div>`;
+  }
+
   function renderArchive() {
     const container = $('#archive-grid');
     if (!container) return;
@@ -627,6 +692,7 @@
     if (item.firstSeen)  metaRows.push({ label: '首次出現', val: item.firstSeen });
     if (item.startDate)  metaRows.push({ label: '開始日期', val: item.startDate });
     if (item.lastUpdated)metaRows.push({ label: '最後更新', val: item.lastUpdated });
+    if (item.updateFreq) metaRows.push({ label: '更新頻率', val: item.updateFreq });
 
     const metaHtml = metaRows.map(r =>
       `<div class="detail__meta-row"><span class="detail__meta-label">${esc(r.label)}</span><span>${esc(r.val)}</span></div>`
@@ -645,6 +711,7 @@
 <div class="detail__type-row">
   ${item.status ? `<span class="pill pill--${item.pill}">${esc(statusLabelFull(item.status))}</span>` : ''}
   <span class="pill pill--gray">${esc(item.entityType || typeLabel)}</span>
+  ${item.updateFreq ? `<span class="pill pill--weekly">🗓️ 週更</span>` : ''}
 </div>
 <h1 class="detail__h1">${esc(item.name)}</h1>
 ${metaRows.length ? `<div class="detail__meta">${metaHtml}</div>` : ''}
@@ -1162,7 +1229,7 @@ ${trackerHtml}
       const lastEl  = $('.about__prov-last');
       const subEl   = $('.about__prov-lastsub');
       if (lastEl) lastEl.innerHTML = `<em>${dateFmt}</em>`;
-      if (subEl)  subEl.textContent = `${latest.articleCount} articles · 6/6 sources · score ≥ 3`;
+      if (subEl)  subEl.textContent = `${latest.articleCount} articles · 10 sources · curated daily`;
     }
   });
 
