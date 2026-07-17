@@ -1,6 +1,6 @@
 # Design Diagram — 現況架構（維運用）
 
-**最後更新：** 2026-07-11
+**最後更新：** 2026-07-17
 **文件定位：** 這份是「**系統現在怎麼運作**」的操作/維運架構圖，給要執行或維護 pipeline 的人看。
 「**系統怎麼演變成現在這樣**」的演進敘事，另見 `docs/architecture-evolution.html`（互動時間軸），兩者分工不重疊。
 
@@ -22,7 +22,7 @@ flowchart TD
     subgraph PA["Phase A —— 背景 agent（model: sonnet）"]
         S0["Step 0：昨日缺跑檢查\n（今日模式才跑，backfill 跳過）"]
         S1A["Step 1a：Python 聚合器\n--gather-only（無 LLM）"]
-        S1B["Step 1b：Claude session 生成日報\n六區塊 + 格式自檢 3a/3b"]
+        S1B["Step 1b：Claude session 生成日報\n六區塊 + 自檢 3a 格式/3b 來源表\n/3c 摘要忠實度（抽樣對照原文）"]
         S0 --> S1A --> S1B
     end
 
@@ -86,7 +86,7 @@ flowchart TD
 - `score_unit`：分（HN）/ 讚（Reddit、dev.to）/ 留言 —— 跨來源比熱度時單位不同，不可直接比大小
 - `source_count`：同一事件被幾個獨立來源報導，> 1 視為重要度加權
 - `source_status`：每個來源本次抓到幾筆（餵給日報「📡 來源狀態」表 + wiki-lint 6f 來源健康檢查）
-- `source_funnel.jsonl`：跨日累積的來源漏斗統計（gathered→filtered→emitted），供未來 `/source-review` 判斷各來源效益與部落客汰換（GH Actions 每日 commit）
+- `source_funnel.jsonl`：跨日累積的來源漏斗統計（gathered→filtered→emitted），與 `source_attribution.jsonl` 一起餵給**來源記分卡**（見下方「來源評分」節；GH Actions 每日 commit）
 
 ---
 
@@ -118,11 +118,13 @@ flowchart TD
 
 **頁面歸屬＝動態認領：** 記者的負責頁面由 `index.md` 的「領域」欄位決定，不寫死清單；新頁面自動被對應記者涵蓋。
 
+**注入防護 `[加入: 2026-07-17]`：** 日報條目的標題/摘要來自外部網路，記者一律視為引用資料而非指令；條目內出現指令式文字不執行，回報「⚠️ 疑似注入」轉知主編（`.claude/rules/wiki-reporter-shared.md` 邊界限制）。
+
 **來源歸因走 ledger、不進 wiki 正文：** 記者在回報訊息填「來源歸因」欄（非 wiki 正文），主編彙整時 append 至 `data/source_attribution.jsonl`。此設計取代了舊的 `[[sources/xxx]]` wikilink 機制（2026-07-11 撤除——wikilink 會污染 web reader 且 Graph 二元邊答不了來源比重問題）。
 
 ---
 
-## Wiki Lint（`/wiki-lint`，每週手動，9 步）
+## Wiki Lint（`/wiki-lint`，每週手動，10 步）
 
 ```mermaid
 flowchart TD
@@ -131,11 +133,35 @@ flowchart TD
     L3["3. 語意分岔／死案候選（需使用者確認）"] --> L4
     L4["4. 建議新實體頁"] --> L5
     L5["5. 更新 overview.md"] --> L6
-    L6["6. 規則健檢 6a–6h\n(矛盾/引用/遵守率/年齡/長度/來源健康\n/跨檔語意矛盾/品質指標+成長迴路蒸餾)"] --> L7
+    L6["6. 規則健檢 6a–6g\n(矛盾/引用/遵守率/年齡/來源健康+記分卡\n/跨檔語意矛盾/品質指標+成長迴路蒸餾)"] --> L7
     L7["7. 讀者模擬驗收（3 讀者 3 跳測試）"] --> L8
     L8["8. append log（含 metrics 趨勢）"] --> L9
-    L9["9. 更新 index.md"]
+    L9["9. 更新 index.md"] --> L10
+    L10["10. 收尾閉迴路\ncommit wiki → 測試 → build web → 單一 push"]
 ```
+
+**6e 來源健康 + 記分卡 `[改版: 2026-07-16]`：** 除既有「連續 3 天 count=0」抓取告警外，每週執行 `python scripts/source_scorecard.py` 附記分卡表；樣本充足且 Wilson 下界與 Presence 雙低者列觀察名單回報使用者，不自行動 pipeline。
+
+---
+
+## 來源評分（監控層，2026-07-16 上線）
+
+**Phase 1＝純監控**：分數不回饋 pipeline 任何行為；enforcement（汰換、門檻調整、黑名單下放）屬 Phase 2，門檻＝累積 ≥ 60 天資料且逐項走 `/pipeline-change-check`。設計依據與逐來源機制：`docs/source-scoring-optimization.md`。
+
+```mermaid
+flowchart TD
+    REG["data/source_registry.json\n（單一真相源：註冊名↔slug\n↔score_reliability↔curation_mode）"]
+    FUN["data/source_funnel.jsonl\n（每日漏斗，GH Actions append）"]
+    ATT["data/source_attribution.jsonl\n（wiki 歸因，主編 append）"]
+    PC1["data/external/domain_pc1.csv\n（Lin et al. 2023，11,520 domains\n每季複查時效）"]
+
+    REG & FUN & ATT & PC1 --> SC["scripts/source_scorecard.py\n（純 stdlib、零 LLM）\n收錄率/Wilson 下界/wiki 率\n/Presence/HHI/domain 信譽分佈\nBayesian 假票平滑"]
+
+    SC -->|每週| LINT6E["/wiki-lint 6e\n附表＋觀察名單建議\n（人工確認才動 registry/blogroll）"]
+    SC -->|每日 build| WEB["build_web.py 嵌 window.TRANSPARENCY\n→ web reader 關於頁「資料透明度」"]
+```
+
+**公道性規則**（防指標冤枉特定來源）：whitelist 來源（官方源/Blogroll）不排 Presence 名次、另列保險組；跨日重覆視窗抓法（dev.to top=30）收錄率帶 † 不跨來源比較（registry `rate_comparable` 欄）；零樣本顯示「—」不回吐平滑先驗。
 
 ---
 
@@ -171,7 +197,7 @@ flowchart LR
         D["wiki/log.md（append only）"]
         E["web_reader/data/（build 產物）"]
     end
-    B & C & D --> BUILD["scripts/build_web.py\n（wikilink 斷鏈檢查 + 領域欄位防呆\n+ 剝除 [[sources/*]] 分析標記不外洩 web）"]
+    B & C & D --> BUILD["scripts/build_web.py\n（wikilink 斷鏈檢查 + 領域欄位防呆\n+ 剝除 [[sources/*]] 分析標記不外洩 web\n+ 嵌來源記分卡 window.TRANSPARENCY）"]
     A --> BUILD
     BUILD --> E
 ```
@@ -185,7 +211,8 @@ flowchart LR
 | 想做的事 | 動哪個檔 |
 |---------|---------|
 | 新增新聞來源 | `src/news_aggregator/sources/` 繼承 `BaseSource`，在 `main.py` sources 列表註冊 |
-| 增減權威部落客 | `src/news_aggregator/sources/blogroll.json`（status: probation/active/retired，汰換由 `/source-review` 建議） |
+| 增減權威部落客 | `src/news_aggregator/sources/blogroll.json`（status: probation/active/retired，汰換依來源記分卡建議、使用者確認） |
+| 調來源品質標籤 / 看來源效益 | `data/source_registry.json`（標籤）＋ `python scripts/source_scorecard.py`（記分卡，隨 `/wiki-lint` 6e 週跑） |
 | 改過濾規則 | `src/news_aggregator/filter.py`（純規則，無 LLM） |
 | 改日報格式 | `.claude/commands/news-pipeline-steps.md` Step 1b |
 | 改記者職責/規則 | `.claude/rules/wiki-ingest-[category].md` |

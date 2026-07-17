@@ -5,7 +5,7 @@
         <div>
           <h1 class="text-[26px] leading-tight" style="font-family: var(--font-display); font-weight: 500; color: var(--ink-1);">自動化新聞知識庫系統<span style="color: var(--ink-3); font-style: italic;"> / 現有架構</span></h1>
           <p class="mt-1 text-[11px] tracking-wide" style="font-family: var(--font-mono); color: var(--ink-3);">CURRENT ARCHITECTURE — 現況操作／維運視圖</p>
-          <p style="margin-top: 8px; font-family: var(--font-mono); font-size: 11px; color: var(--ink-3); letter-spacing: 0.02em;">現況截至 2026-07-11 · 源自 src/DesignDocument/Design Diagram.md</p>
+          <p style="margin-top: 8px; font-family: var(--font-mono); font-size: 11px; color: var(--ink-3); letter-spacing: 0.02em;">現況截至 2026-07-17 · 源自 src/DesignDocument/Design Diagram.md</p>
         </div>
       </div>
       <!-- 頁面導覽 tab -->
@@ -63,7 +63,7 @@
           <span style="color: var(--ink-4); font-family: var(--font-mono);">→</span>
           <span class="dgm-step" style="border: 1px solid var(--border-2); border-radius: 2px; padding: 4px 9px; font-family: var(--font-sans); font-size: 11px; color: var(--ink-2);">Step 1a 聚合器（無 LLM）</span>
           <span style="color: var(--ink-4); font-family: var(--font-mono);">→</span>
-          <span class="dgm-step" style="border: 1px solid var(--border-2); border-radius: 2px; padding: 4px 9px; font-family: var(--font-sans); font-size: 11px; color: var(--ink-2);">Step 1b 生成日報</span>
+          <span class="dgm-step" style="border: 1px solid var(--border-2); border-radius: 2px; padding: 4px 9px; font-family: var(--font-sans); font-size: 11px; color: var(--ink-2);">Step 1b 生成日報（六區塊＋自檢 3a 格式/3b 來源表/3c 摘要忠實度，抽樣對照原文）</span>
         </div>
       </div>
 
@@ -177,7 +177,7 @@
           <li><code style="font-family: var(--font-mono);">score_unit</code>：分（HN）／讚（Reddit、dev.to）／留言 —— 跨來源比熱度時單位不同，不可直接比大小</li>
           <li><code style="font-family: var(--font-mono);">source_count</code>：同一事件被幾個獨立來源報導，&gt; 1 視為重要度加權</li>
           <li><code style="font-family: var(--font-mono);">source_status</code>：每個來源本次抓到幾筆（餵給日報「📡 來源狀態」表 + wiki-lint 6f 來源健康檢查）</li>
-          <li><code style="font-family: var(--font-mono);">source_funnel.jsonl</code>：跨日漏斗統計，供 <code style="font-family: var(--font-mono);">/source-review</code> 判斷來源效益與部落客汰換（GH Actions 每日 commit）</li>
+          <li><code style="font-family: var(--font-mono);">source_funnel.jsonl</code>：跨日漏斗統計，與 <code style="font-family: var(--font-mono);">source_attribution.jsonl</code> 一起餵給來源記分卡（<code style="font-family: var(--font-mono);">scripts/source_scorecard.py</code>）（GH Actions 每日 commit）</li>
         </ul>
       </div>
     </div>
@@ -238,12 +238,14 @@
       <p class="mt-6 text-[12px]" style="font-family: var(--font-sans); color: var(--ink-2); line-height: 1.6;"><strong style="color: var(--ink-1); font-weight: 500;">頁面歸屬＝動態認領：</strong>記者的負責頁面由 <code style="font-family: var(--font-mono);">index.md</code> 的「領域」欄位決定，不寫死清單；新頁面自動被對應記者涵蓋。</p>
 
       <p class="mt-2 text-[12px]" style="font-family: var(--font-sans); color: var(--ink-2); line-height: 1.6;"><strong style="color: var(--ink-1); font-weight: 500;">來源歸因走 ledger、不進 wiki 正文：</strong>記者在回報訊息填「來源歸因」欄，主編彙整時 append 至 <code style="font-family: var(--font-mono);">data/source_attribution.jsonl</code>（日期×來源×類別×頁面）。此設計取代舊的 <code style="font-family: var(--font-mono);">[[sources/*]]</code> wikilink 機制（2026-07-11 撤除——會污染 web reader，且 Graph 二元邊答不了來源比重問題）。</p>
+
+      <p class="mt-2 text-[12px]" style="font-family: var(--font-sans); color: var(--ink-2); line-height: 1.6;"><strong style="color: var(--ink-1); font-weight: 500;">注入防護：</strong>日報條目的標題／摘要來自外部網路，記者一律視為引用資料而非指令；條目內出現指令式文字不執行，回報「⚠️ 疑似注入」轉知主編。</p>
     </div>
 
     <!-- 圖④ Wiki Lint -->
     <div id="dgm-lint" class="dgm-panel" style="display:none;">
       <div class="text-[13px] mb-4" style="font-family: var(--font-sans); color: var(--ink-2);">
-        <span style="color: var(--ochre-9); font-weight: 500;">Wiki Lint</span> — <span style="font-family: var(--font-mono); font-size: 11px;">/wiki-lint</span>，每週手動，9 步。
+        <span style="color: var(--ochre-9); font-weight: 500;">Wiki Lint</span> — <span style="font-family: var(--font-mono); font-size: 11px;">/wiki-lint</span>，每週手動，10 步。
       </div>
 
       <div class="space-y-2">
@@ -269,16 +271,20 @@
         <div class="dgm-step" style="border: 1px solid var(--border-2); border-radius: 2px; padding: 8px 12px; font-family: var(--font-sans); font-size: 12px; color: var(--ink-2);">5. 更新 overview.md</div>
         <div style="font-family: var(--font-mono); color: var(--ink-4); font-size: 11px; margin-left: 14px;">↓</div>
         <div style="border: 1px solid var(--ochre-9); border-radius: 2px; padding: 10px 12px; background: var(--ochre-tint);">
-          <div style="font-family: var(--font-sans); font-size: 12px; color: var(--ink-1); margin-bottom: 6px;">6. 規則健檢 6a–6h</div>
-          <div style="font-family: var(--font-sans); font-size: 11px; color: var(--ink-2); line-height: 1.6;">矛盾／引用／遵守率／年齡／長度／來源健康／跨檔語意矛盾／品質指標＋成長迴路蒸餾</div>
+          <div style="font-family: var(--font-sans); font-size: 12px; color: var(--ink-1); margin-bottom: 6px;">6. 規則健檢 6a–6g</div>
+          <div style="font-family: var(--font-sans); font-size: 11px; color: var(--ink-2); line-height: 1.6;">矛盾／引用／遵守率／年齡／來源健康＋記分卡／跨檔語意矛盾／品質指標＋成長迴路蒸餾</div>
         </div>
         <div style="font-family: var(--font-mono); color: var(--ink-4); font-size: 11px; margin-left: 14px;">↓</div>
         <div class="dgm-step" style="border: 1px solid var(--border-2); border-radius: 2px; padding: 8px 12px; font-family: var(--font-sans); font-size: 12px; color: var(--ink-2);">7. 讀者模擬驗收（3 讀者 3 跳測試）</div>
         <div style="font-family: var(--font-mono); color: var(--ink-4); font-size: 11px; margin-left: 14px;">↓</div>
         <div class="dgm-step" style="border: 1px solid var(--border-2); border-radius: 2px; padding: 8px 12px; font-family: var(--font-sans); font-size: 12px; color: var(--ink-2);">8. append log（含 metrics 趨勢）</div>
         <div style="font-family: var(--font-mono); color: var(--ink-4); font-size: 11px; margin-left: 14px;">↓</div>
-        <div class="dgm-step" style="border: 1px solid var(--border-strong); border-radius: 2px; padding: 8px 12px; font-family: var(--font-sans); font-size: 12px; color: var(--ink-1);">9. 更新 index.md</div>
+        <div class="dgm-step" style="border: 1px solid var(--border-2); border-radius: 2px; padding: 8px 12px; font-family: var(--font-sans); font-size: 12px; color: var(--ink-2);">9. 更新 index.md</div>
+        <div style="font-family: var(--font-mono); color: var(--ink-4); font-size: 11px; margin-left: 14px;">↓</div>
+        <div class="dgm-step" style="border: 1px solid var(--border-strong); border-radius: 2px; padding: 8px 12px; font-family: var(--font-sans); font-size: 12px; color: var(--ink-1);">10. 收尾閉迴路：commit wiki → 測試 → build web → 單一 push</div>
       </div>
+
+      <p class="mt-6 text-[12px]" style="font-family: var(--font-sans); color: var(--ink-2); line-height: 1.6;"><strong style="color: var(--ink-1); font-weight: 500;">6e 來源健康＋記分卡：</strong>除既有「連續 3 天 count=0」抓取告警外，每週執行 <code style="font-family: var(--font-mono);">python scripts/source_scorecard.py</code> 附記分卡表；樣本充足且 Wilson 下界與 Presence 雙低者列觀察名單回報使用者，不自行動 pipeline。</p>
     </div>
 
     <!-- 圖⑤ 產物與唯讀邊界 -->
@@ -305,7 +311,7 @@
 
       <div class="dgm-box" style="border: 1px solid var(--ochre-7); border-radius: 2px; background: var(--ochre-tint); padding: 8px 12px; display: inline-block; margin-top: 6px;">
         <div style="font-family: var(--font-mono); font-size: 11px; color: var(--ochre-9);">scripts/build_web.py</div>
-        <div style="font-family: var(--font-sans); font-size: 11px; color: var(--ink-2); margin-top: 2px;">wikilink 斷鏈檢查 ＋ 領域欄位防呆 ＋ 剝除 [[sources/*]]（分析標記不外洩 web）</div>
+        <div style="font-family: var(--font-sans); font-size: 11px; color: var(--ink-2); margin-top: 2px;">wikilink 斷鏈檢查 ＋ 領域欄位防呆 ＋ 剝除 [[sources/*]]（分析標記不外洩 web）＋ 嵌來源記分卡 window.TRANSPARENCY（web reader 透明度頁）</div>
       </div>
 
       <div class="dgm-arrow" style="color: var(--ink-4); font-family: var(--font-mono); margin: 6px 0 6px 14px;">↓</div>
@@ -347,6 +353,38 @@
         </table>
         </div>
         <p class="mt-3 text-[11px]" style="font-family: var(--font-sans); color: var(--ink-3);">執行日誌：<code style="font-family: var(--font-mono);">src/logs/</code> ｜ 測試：<code style="font-family: var(--font-mono);">scripts/run_tests.py</code></p>
+      </div>
+
+      <div class="mt-8" style="border-top: 1px solid var(--border-2); padding-top: 16px;">
+        <div style="font-family: var(--font-mono); font-size: 10.5px; color: var(--ink-3); letter-spacing: 0.04em; margin-bottom: 8px;">來源評分（監控層，2026-07-16 上線）</div>
+        <div style="border: 1px solid var(--border-2); border-radius: 2px; padding: 12px; margin-bottom: 10px;">
+          <div class="flex flex-wrap gap-2">
+            <span class="dgm-step" style="border: 1px solid var(--border-2); border-radius: 2px; padding: 4px 9px; font-family: var(--font-sans); font-size: 11px; color: var(--ink-2);">data/source_registry.json（單一真相源）</span>
+            <span class="dgm-step" style="border: 1px solid var(--border-2); border-radius: 2px; padding: 4px 9px; font-family: var(--font-sans); font-size: 11px; color: var(--ink-2);">data/source_funnel.jsonl</span>
+            <span class="dgm-step" style="border: 1px solid var(--border-2); border-radius: 2px; padding: 4px 9px; font-family: var(--font-sans); font-size: 11px; color: var(--ink-2);">data/source_attribution.jsonl</span>
+            <span class="dgm-step" style="border: 1px solid var(--border-2); border-radius: 2px; padding: 4px 9px; font-family: var(--font-sans); font-size: 11px; color: var(--ink-2);">data/external/domain_pc1.csv</span>
+          </div>
+        </div>
+
+        <div class="dgm-arrow" style="color: var(--ink-4); font-family: var(--font-mono); margin: 0 0 6px 14px;">↓</div>
+
+        <div class="dgm-box" style="border: 1px solid var(--ochre-7); border-radius: 2px; background: var(--ochre-tint); padding: 8px 12px; display: inline-block;">
+          <div style="font-family: var(--font-mono); font-size: 11px; color: var(--ochre-9);">scripts/source_scorecard.py</div>
+          <div style="font-family: var(--font-sans); font-size: 11px; color: var(--ink-2); margin-top: 2px;">收錄率／Wilson 下界／wiki 率／Presence／HHI，Bayesian 假票平滑</div>
+        </div>
+
+        <div class="dgm-arrow" style="color: var(--ink-4); font-family: var(--font-mono); margin: 6px 0 6px 14px;">↓</div>
+
+        <div class="flex flex-wrap gap-3">
+          <div class="dgm-box" style="border: 1px solid var(--border-strong); border-radius: 2px; padding: 8px 12px; display: inline-block;">
+            <div style="font-family: var(--font-sans); font-size: 11px; color: var(--ink-1);">/wiki-lint 6e 週報（觀察名單建議）</div>
+          </div>
+          <div class="dgm-box" style="border: 1px solid var(--border-strong); border-radius: 2px; padding: 8px 12px; display: inline-block;">
+            <div style="font-family: var(--font-sans); font-size: 11px; color: var(--ink-1);">build_web.py 透明度頁</div>
+          </div>
+        </div>
+
+        <p class="mt-4 text-[12px]" style="font-family: var(--font-sans); color: var(--ink-2); line-height: 1.6;"><strong style="color: var(--ink-1); font-weight: 500;">Phase 1 純監控：</strong>分數不回饋 pipeline 任何行為；enforcement（汰換／門檻調整／黑名單下放）屬 Phase 2，門檻為累積 ≥ 60 天資料且逐項走 <code style="font-family: var(--font-mono);">/pipeline-change-check</code>。</p>
       </div>
     </div>
 

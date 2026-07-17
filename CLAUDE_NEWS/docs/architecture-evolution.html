@@ -11,7 +11,7 @@
     <div class="wrap" style="padding-top: 1.25rem; padding-bottom: 1.25rem;">
       <div>
         <h1 class="arch-title">自動化新聞知識庫系統<span class="arch-title__sub"> / 架構演進</span></h1>
-        <p class="arch-subtitle">SCRIPT &middot; LLM 呼叫點 &middot; AGENT 設計 &mdash; 三條線的時間軸（2026-04-25 &rarr; 2026-07-11）</p>
+        <p class="arch-subtitle">SCRIPT &middot; LLM 呼叫點 &middot; AGENT 設計 &mdash; 三條線的時間軸（2026-04-25 &rarr; 2026-07-17）</p>
       </div>
       <nav class="arch-nav">
         <a href="architecture-evolution-v2.html" class="arch-tab arch-tab--active">架構演進</a>
@@ -1052,6 +1052,36 @@ llm 呼叫從「一支 prompt 生成一份文件」演變為「多個獨立 llm 
       <p><code>.claude/commands|rules</code> 與 <code>CLAUDE.md</code> 交叉引用眾多，靠人肉 grep 維持一致會漂移，且「改完記得跑 <code>/review-commands</code>」靠記憶執行。</p>
 <p><strong>做法：</strong> 把裸露引用／路徑存在／錨點／同步配對四類機械檢查收斂進 <code>scripts/check_rules.py</code>（純 Python，讀 <code>.claude/review-registry.json</code>），掛進測試套件。兩層防線：Stop hook 收工時擋住未驗證改動、<code>run_tests.py</code> 內建 check_rules 的 DoD 兜底。<code>/review-commands</code> 縮成薄殼只判讀失敗。此機制抽成全域 skill <code>/build-review-command</code> 可移植到其他專案。</p>
 <p><strong>原則：</strong> 確定性檢查進腳本掛測試，LLM 只判讀失敗；驗證成本隨改動規模分級。</p>
+    </div>
+  </button>
+</div>
+<div class="event-card-wrap" data-track="script" data-search="來源評分監控層上線
+過去來源品質判斷停留在條目層的個案特例（單一來源被排除或降權），沒有跨來源、跨時間的量化基礎；這次補上來源層的回饋迴路。
+做法：以 data/source_registry.json 作為來源註冊單一真相源（slug/可信度標籤/策展模式），搭配純 stdlib 零 LLM 的 scripts/source_scorecard.py 計算收錄率、Wilson 信賴下界、wiki 引用率、Presence 指數、HHI 集中度，並用 Bayesian 假票平滑處理樣本不足的來源；Google News 額外接 Lin et al. 2023 的 domain 信譽表比對。
+公道性三規則防止指標冤枉特定來源：whitelist（官方源/Blogroll）不參與排名、跨日重覆視窗抓法標 † 不跨來源比較、零樣本顯示「—」不回吐平滑先驗。
+輸出掛進 /wiki-lint 6e 週跑附記分卡表，以及 build_web.py 嵌入 web reader 的資料透明度頁。
+原則：Phase 1 純監控，分數不回饋 pipeline 任何行為；enforcement（汰換/門檻調整/黑名單下放）待累積 ≥ 60 天資料且逐項走 /pipeline-change-check。
+">
+  <span class="event-card-wrap__dot" style="background-color: var(--info);"></span>
+  <button class="event-card event-card--script" onclick="toggleEvent(this)">
+    <div class="event-card__head">
+      <div>
+        <div>
+          <span class="event-date">2026.07.16</span>
+          <span class="event-tag event-tag--script">監控層上線</span>
+
+        </div>
+        <h3 class="event-title">來源評分監控層上線</h3>
+      </div>
+      <span class="event-toggle">+</span>
+    </div>
+    <div class="event-body" hidden>
+
+      <p>過去來源品質判斷停留在條目層的個案特例（單一來源被排除或降權），沒有跨來源、跨時間的量化基礎；這次補上來源層的回饋迴路。</p>
+<p><strong>做法：</strong> 以 <code>data/source_registry.json</code> 作為來源註冊單一真相源（slug／可信度標籤／策展模式），搭配純 stdlib 零 LLM 的 <code>scripts/source_scorecard.py</code> 計算收錄率、Wilson 信賴下界、wiki 引用率、Presence 指數、HHI 集中度，並用 Bayesian 假票平滑處理樣本不足的來源；Google News 額外接 Lin et al. 2023 的 domain 信譽表比對。</p>
+<p><strong>公道性三規則：</strong> whitelist（官方源／Blogroll）不參與排名、跨日重覆視窗抓法標 † 不跨來源比較、零樣本顯示「—」不回吐平滑先驗，防止指標冤枉特定來源。</p>
+<p>輸出掛進 <code>/wiki-lint</code> 6e 週跑附記分卡表，以及 <code>build_web.py</code> 嵌入 web reader 的資料透明度頁。</p>
+<p><strong>原則：</strong> Phase 1 純監控，分數不回饋 pipeline 任何行為；enforcement（汰換／門檻調整／黑名單下放）待累積 ≥ 60 天資料且逐項走 <code>/pipeline-change-check</code>。</p>
     </div>
   </button>
 </div>
