@@ -29,7 +29,7 @@
 |------------|--------|---------|---------|------|
 | 中美 AI 工具信任對峙（中國代理偵測程式碼、同形字符隱寫術指控、Alibaba/Meta 禁用、中國官方「後門」警示 vs Anthropic 07-10 首度否認） | 2026-06-30 起，持續延燒 | 全體用戶（隱私/透明度層）+ 企業信任層；中國官方警示涵蓋範圍未界定 | 雙方各自表態（Anthropic「實驗」→ 中國官方「後門」→ Anthropic 公開否認），均無第三方技術驗證 | 🔴 詳見 [[topics/safety-china-trust-dispute]] |
 | 乾淨 GitHub Repo 提示注入可取得完整系統控制（Mozilla 0din） | 2026-06-28 | 任何處理外部 repo 的工作流 | 無回應 | 🔴 未修補 |
-| CVE-2026-55407：buffa Rust protobuf 約 22 倍記憶體放大 DoS | 2026-07-01 | 使用 buffa 解碼路徑的服務 | 修補狀態待確認 | 🔴 未修補 |
+| CVE-2026-55407：buffa Rust protobuf 約 22 倍記憶體放大 DoS | 2026-07-01 | 使用 buffa 解碼路徑的服務 | 無回應（2026-07-01 揭露，至今無後續報導確認是否已修補） | 🔴 未修補 |
 | Agentjacking：偽造 Sentry 錯誤報告劫持 Claude Code / Cursor / Cline | 2026-06-16 | 使用 Sentry MCP 整合的開發者 | 無官方修補，僅社群提供設定緩解（2026-06-27） | 🔴 未修補 |
 | .env secret 明文存於本機 SQLite，標準 scanner 無法偵測 | 2026-05-19 | 所有本機開發環境 | 無回應 | 🔴 未修補 |
 | Claude Code 根目錄掃描暴露 SSH 私鑰於 context | 2026-06-20 | 多租戶 / 共用環境風險更高 | 已承認行為存在，未修補 | 🔴 未修補 |
@@ -54,7 +54,7 @@
 | 中美 AI 工具信任對峙延燒（社群指控 → 企業禁用 → 官方定調「實驗」→ 政府層級升級 → Anthropic 首度否認），完整時序見 [[topics/safety-china-trust-dispute]] | 🔴 雙方各自表態，均無第三方驗證 | 2026-06-30～07-10 |
 | Anthropic 發布雙重用途知識（dual-use knowledge）模型層「關閉開關」機制說明 | 🛠️ 官方主動安全機制 | 2026-07-09 |
 | Radware 將 Claude Code 防護納入 agent 安全產品線 | 🛠️ 第三方防護生態擴張 | 2026-07-07 |
-| CVE-2026-55407：buffa Rust protobuf unknown-field decoder 約 22 倍記憶體放大 DoS | ⚠️ 修補待確認 | 2026-07-01 |
+| CVE-2026-55407：buffa Rust protobuf unknown-field decoder 約 22 倍記憶體放大 DoS | ⚠️ 修補狀態無後續（2026-07-01 揭露，14 天內無跟進報導） | 2026-07-01 |
 | 乾淨 GitHub Repo 提示注入可取得完整系統控制（Mozilla 0din，四個第三方媒體確認） | 🔴 未修補，官方無回應 | 2026-06-28 |
 | 阿里巴巴 25,000 假帳號 2,880 萬次蒸餾攻擊：帳號農場已達工業規模，ToS 偵測被大規模繞過 | 🔴 單一聲稱（Anthropic 官方指控，待對方回應） | 2026-06-26 |
 | OALABS 蜜罐：攻擊者以 Claude Code 入侵 14 家企業，進攻性濫用已達在野成熟度 | 🔴 官方無回應 | 2026-06-16 |
@@ -149,10 +149,10 @@
 
 - **揭露來源**：Endor Labs（AI SAST 引擎自動發現，2026-07-01；https://www.endorlabs.com/learn/endor-labs-ai-sast-finds-zero-day-cve-2026-55407-buffa）；HN score 5
 - **漏洞描述**：Anthropic Rust protobuf 函式庫 buffa 的 unknown-field decoder 實作存在缺陷，攻擊者可透過構造特定 wire data 觸發約 22 倍記憶體放大，最終導致 OOM（Out-of-Memory）崩潰，實現對服務的 DoS（拒絕服務）攻擊
-- **漏洞生命週期**：由 Endor Labs AI SAST 引擎首次發現（zero-day），已獲 CVE 編號 CVE-2026-55407；修補狀態待確認
+- **漏洞生命週期**：由 Endor Labs AI SAST 引擎首次發現（zero-day），已獲 CVE 編號 CVE-2026-55407；修補狀態（2026-07-01 揭露，至今無後續報導確認是否已修補）
 - **嚴重程度**：DoS 類漏洞，嚴重度低於 RCE/身份繞過；但若 buffa 用於 Anthropic 生產環境 protobuf 解碼路徑，大規模攻擊可導致服務不可用
 - **意義**：此漏洞由 AI SAST（靜態應用安全測試）工具自動發現，延續 Project Glasswing 所示的「AI 加速漏洞發現」趨勢，同時也是 Anthropic 自身 Rust 工具鏈的供應鏈安全問題首次公開披露
-- **可信度評估**：Endor Labs 為資安廠商，CVE 機制已為官方確認管道；HN score 5 顯示熱度有限；修補時程與影響範圍待 Anthropic 官方公告
+- **可信度評估**：Endor Labs 為資安廠商，CVE 機制已為官方確認管道；HN score 5 顯示熱度有限；修補時程與影響範圍無 Anthropic 官方公告（2026-07-01 揭露，至今無後續報導）
 
 ### Claude Code Prompt Injection 完整接管：乾淨 GitHub Repo 向量多媒體確認（2026-06-30 新增）
 
