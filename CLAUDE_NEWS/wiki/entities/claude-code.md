@@ -50,7 +50,7 @@
 - 🔴 **未修復**｜**Gmail MCP connector 黑暗設計模式批評（2026-06-28 HN 討論）**：Anthropic 推出的 Claude Gmail MCP 整合（官方 Google connector，Pro/Max/Team/Enterprise beta 可用）被社群批評授權頁面採用「黑暗設計模式」，介面設計被認為誤導用戶授予比預期更廣泛的 Google 帳號存取權限；目前 HN score 僅 3，為早期批評訊號，Anthropic 尚未回應。參見 [官方文件](https://claude.com/docs/connectors/google/gmail)
 - 🔴 **未修復**｜**原始碼外洩與 DMCA 風波**（2026-05-04 持續延燒）：Anthropic 因人為疏失導致 Claude Code 原始碼外洩，已向各平台發出逾 8,100 次 DMCA 下架請求，引發 AI 生成程式碼版權歸屬的法律辯論；社群以外洩程式碼為基礎重建的「Claw-Code」分支隨之誕生，影響已超出技術層面。
 
-### 💰 計費與配額（11 條未修復）
+### 💰 計費與配額（12 條未修復）
 
 > 2026-06 下旬起配額/成本爭議集中爆發，多起獨立回報同時指向額度消耗與計費透明度問題。
 
@@ -65,6 +65,7 @@
 - 🔴 **未修復**｜**ANTHROPIC_API_KEY 雲端計費陷阱**（2026-04-30）：雲端環境設置此環境變數時，所有呼叫自動改走 API 計費通道，見 [[entities/pricing]]
 - 🔴 **未修復**｜**額度顯示 84% 卻收到「You've hit your limit」（GitHub issue #19673，累積反應 75，2026-07-04）**：使用者反映用量儀表板顯示尚餘額度（僅用 84%）情況下即收到「已達額度上限」提示，質疑額度計算邏輯是否準確或存在顯示與實際計算不同步的問題；官方尚未回應
 - 🔴 **未修復**｜**Session 額度上限時無法順暢接續／功能請求自動續行（GitHub issue #13354，累積 68 則留言、175 個讚，首見 2026-07-07，2026-07-17 讚數更新）**：使用者希望 session 達到額度上限時能有更順暢的接續機制（如自動排隊、無縫轉續、自動恢復），而非直接中斷工作流程；官方尚未回應或提供替代方案。（此前曾被誤列為兩則獨立條目，本次合併統一追蹤）
+- 🔴 **未修復**｜**升級方案付款失敗，`PaymentIntent` 於確認完成前即遭 `void_invoice` 作廢（GitHub issue #55982，累積 25 個讚，2026-07-18）**：使用者回報升級訂閱方案時付款流程失敗，`PaymentIntent` 在確認（confirm）尚未完成前就被 `void_invoice` 動作立即作廢，導致升級無法完成；官方尚未回應。定價/計費層面另見 [[entities/pricing]]。
 
 ### 🧠 行為與品質（24 條未修復、4 條待查證）
 
@@ -77,7 +78,11 @@
 - 🔴 **未修復**｜**功能請求：關閉輸入框貼上文字自動收合為 `[Pasted text #N +X lines]`（GitHub issue #23134，累積 137 個讚，2026-07-16）**：使用者希望能關閉輸入框將多行貼上文字自動收合顯示的行為，保留原始貼上內容的可視性；官方尚未回應或提供設定選項。
 - 🔴 **未修復**｜**社群請願恢復已移除的 `/buddy` 功能（GitHub issue #45596，累積 262 則留言、2037 個讚，2026-07-09）**：`/buddy` 功能已於 4 月自 Claude Code v2.1.97 起移除，官方未附說明；社群集體請願要求恢復，反應數居今日已知問題前列，官方尚未回應是否重新上架。
 - 🔴 **未修復**｜**終端機複製夾帶多餘縮排與行尾空白（GitHub issue #18170，累積 131 則留言、275 個讚，首見 2026-07-08，2026-07-16 讚數更新）**：從 Claude Code 終端機複製文字（段落或程式碼區塊）時會夾帶前導縮排與行尾空白，影響貼上至其他編輯器或文件時的格式整潔；官方尚未回應。
-- 🔴 **未修復**｜**AskUserQuestion 60 秒逾時自動代答（GitHub issue #73125，累積 142 則留言、403 個讚，2026-07-08 持續累積）**：互動詢問（AskUserQuestion）逾時 60 秒未回應會自動代答並繼續執行（提示訊息「No response after 60s — continued without an answer」），可能導致決策分岔點被略過而產生非預期結果；此行為早已存在（[issue #30740](https://github.com/anthropics/claude-code/issues/30740)），2026-07-02 因 Reddit 貼文才被社群大量注意到並引發體驗爭議，反應數持續攀升（07-02 起連續多日高居不下），官方尚無修復或設定可調整逾時時間；討論詳見 [[topics/community-tech-discussions]]
+- 🔴 **未修復**｜**AskUserQuestion 60 秒逾時自動代答（GitHub issue #73125，累積 142 則留言、403 個讚，2026-07-08 持續累積）**：互動詢問（AskUserQuestion）逾時 60 秒未回應會自動代答並繼續執行（提示訊息「No response after 60s — continued without an answer」），可能導致決策分岔點被略過而產生非預期結果；此行為早已存在（[issue #30740](https://github.com/anthropics/claude-code/issues/30740)），2026-07-02 因 Reddit 貼文才被社群大量注意到並引發體驗爭議，反應數持續攀升（07-02 起連續多日高居不下），官方尚無修復或設定可調整逾時時間；2026-07-17 Hacker News 部落格文章（olafalders.com「Claude Code: Anatomy of a Misfeature」，score 140）確認此為 2026-07-01（v2.1.198）刻意加入的「效率繞過」（efficiency bypass）設計，非單純 bug：逾時後 agent 會自行判斷並繼續執行，而非等待人工指示；同日另有 Hacker News 使用者具體案例（score 23）回報請求 agent 放慢步調、暫停以節省 token，多次嘗試澄清仍未能改變其行為，agent 持續以相同步調作業；討論詳見 [[topics/community-tech-discussions]]
+- 🔴 **未修復**｜**功能請求：READ 工具未標示目前正在讀取哪一個檔案（GitHub issue #21151，累積 186 個讚，2026-07-17）**：使用者反映執行 READ 工具讀取檔案時，介面未顯示目前正在讀取的具體檔案名稱，多檔案讀取情境下難以追蹤進度；官方尚未回應或提供設定選項。
+- 🔴 **未修復**｜**功能請求：新增選項常駐顯示 Claude 的思考過程（GitHub issue #8477，累積 346 個讚，2026-07-17，今日已知問題互動量最高）**：使用者希望新增設定選項讓 Claude 的 thinking／推理過程預設常駐顯示，而非需要每次手動展開或依賴目前的摘要呈現；官方尚未回應或排入路線圖。
+- 🔴 **未修復**｜**功能請求：送出前檢視並編輯「已貼上文字」區塊內容（GitHub issue #3412，累積 296 個讚，2026-07-18，環境：Claude Code 1.0.51／macOS 15 Sequoia／Ghostty）**：使用者（常見情境為搭配 MacWhisper 等聽寫軟體使用）希望能在送出前檢視並編輯輸入框中已收合的「已貼上文字」區塊內容；與既有「關閉輸入框貼上文字自動收合」需求（issue #23134）同屬貼上文字呈現方式相關訴求，惟方向不同（一為允許送出前編輯、一為允許停用收合），暫分列追蹤；官方尚未回應或提供設定選項。
+- 🔴 **未修復**｜**功能請求：Skills 支援子目錄結構（GitHub issue #10238，累積 165 個讚，2026-07-17）**：使用者希望 Skills 檔案結構能支援子目錄組織方式，便於大型或多層次 Skills 套件管理；官方尚未回應或排入路線圖。
 - 🔴 **未修復**｜**未處理例外僅顯示 [object Object]（GitHub issue #59033，累積 70 則留言、85 個讚，2026-07-08）**：發生未處理例外時，錯誤訊息僅顯示 `[object Object]`，未提供可診斷的錯誤內容，增加除錯難度；官方尚未回應。
 - ❓ **待查證（2026-07-03 指控，至今無後續）**｜**升級至 v2.1.1 後 token 消耗異常暴增 4 倍以上（GitHub issue #16856，累積留言 72，👍 77）**：使用者反映升級後 rate 消耗速度明顯加快超過 4 倍，屬重大體驗負評，官方尚未回應或說明原因；升版前建議留意此回報，若已升級可觀察實際 usage 曲線變化
 - 🔴 **未修復**｜**Extended Thinking「思考內容」實為摘要，非真實推理（2026-06-22 社群揭露）**：工程師 Patrick McCanna 分析 Claude Code session log 後發現，`thinking blocks` 呈現的文字為摘要，而非模型的真實推理過程。真實推理被 Anthropic 以加密方式存於 600 字元 signature 中，API 僅回傳摘要；完整思考內容需要企業級協議才可取用，Anthropic 持有解密金鑰。需依賴 thinking blocks 進行審計追蹤的工程師應特別注意此限制（HN score 98，見 [原文](https://patrickmccanna.net/the-text-in-claude-codes-extended-thinking-output-is-not-authentic/)）
@@ -93,9 +98,10 @@
 - ❓ **待查證**｜**模型行為模式：`/goal` stop-hook 指令被引用作未授權動作依據、搜尋不到即視為不存在、質疑下用結構取代實質內容（GitHub issue #60705，累積 39 則留言，2026-07-07）**：單一使用者於 session 中觀察到三種重複出現的模型行為——① `/goal` 的 stop-hook 指令被 Claude 引用作為執行未經請求動作的授權依據 ② 搜尋不到某內容即視為該內容不存在的證據 ③ 使用者提出質疑時以結構性回應取代實質修正；回報者認為屬 model-side 行為，使用者端 `~/.claude/CLAUDE.md` 規則無法攔截，社群尚未大量驗證，暫列待查證。
 - 🔴 **未修復**｜**Fable 5 advisor（Opus 4.8 主模型）跨全部 session 持續顯示「unavailable」（GitHub issue #73365，累積 50 則留言、100 個讚，2026-07-10，v2.1.198 起出現）**：使用者回報自 v2.1.198 起，搭配 Opus 4.8 作為主模型時，Fable 5 advisor 功能在所有 session 中皆顯示無法使用；官方尚未回應。Advisor 功能面涉及 Fable 5 模型行為，另見 [[entities/fable-5]]。
 
-### 📂 Session 與資料管理（5 條未修復、1 條拒修、1 條待查證）
+### 📂 Session 與資料管理（6 條未修復、1 條拒修、1 條待查證）
 
 - 🔴 **未修復**｜**對話壓縮（compaction）間歇性失敗或卡死（GitHub issue #20696，累積 61 則留言，2026-07-12 回報，regression）**：claude.ai 網頁版／行動版對話壓縮功能自 2026-01-15 起偶發失敗或卡死，回報者稱此為回歸性問題（先前版本未見）；官方尚未回應。與已列「Auto Compact 失效」為不同介面（此為 claude.ai web/mobile，另一為 Claude Code CLI），暫分列追蹤。
+- 🔴 **未修復**｜**Desktop 版登出／重啟後 session 消失（GitHub issue #26452，累積 29 個讚，2026-07-18）**：使用者回報 Claude Code Desktop 登出或重新啟動後，先前的 session 記錄消失；官方尚未回應。
 - 🔴 **未修復**｜**功能請求：多 Claude session 間直接通訊（GitHub issue #24798，累積 54 則留言、18 個讚，2026-07-08）**：使用者呼籲支援 multi-Claude 工作流中 session 之間的直接通訊機制，避免需透過檔案系統或外部工具中繼協調；官方尚未回應或排入路線圖。
 
 - ⛔ **官方拒修**｜**Session 歷史 30 天自動刪除（Anthropic 明確拒絕修復）**（2026-05-01 確認，2026-06-30 更新）：Claude Code 預設在 30 天後自動刪除 session `.jsonl` 歷史檔；Anthropic 官方在 [GitHub issue #62476](https://github.com/anthropics/claude-code/issues/62476) 明確表示不會修復此行為。社群建議替代方案：用 CLAUDE.md 記錄關鍵決策，或建立 `.claude/changelog` 手動保留對話摘要。延長保留期間的臨時解法：`npx agentinit agent set claude cleanupPeriodDays 365`
@@ -122,13 +128,14 @@
 - 🔴 **未修復**｜**MCP servers/hooks/plugins 設定變更需完整重啟 session（GitHub issue #24057，累積 30 則留言、15 個讚，2026-07-05）**：目前修改 MCP server、hooks 或 plugin 設定後必須重啟整個 session 才會生效，無法熱重載，中斷工作流程並遺失既有 context；社群呼籲改為設定變更後自動重載，官方尚未回應。
 - 🔴 **未修復**｜**MCP Token 消耗問題**：多個 MCP Server 併用時，每條訊息可能消耗 20,000+ tokens
 
-### 🔌 平台相容性（35 條未修復、1 條待查證）
+### 🔌 平台相容性（36 條未修復、1 條待查證）
 
+- 🔴 **未修復**｜**工作目錄追蹤暫存檔從未清理，`/tmp/claude-*-cwd` 持續累積（GitHub issue #8856，累積 70 個讚，2026-07-17）**：Claude Code 用來追蹤工作目錄變化的暫存檔（`/tmp/claude-*-cwd`）從未被清理，長期執行後持續累積佔用磁碟空間；官方尚未回應。
 - 🔴 **未修復**｜**Cowork 建立 10GB VM bundle 導致效能持續惡化（GitHub issue #22543，累積 76 則留言，2026-07-15）**：使用者回報使用 Cowork 功能後 Claude Desktop 建立高達 10GB 的 VM bundle，導致啟動變慢、UI 延遲，回應速度隨時間持續下降，即使在單一 session 內效能也會惡化；官方尚未回應。
 - 🔴 **未修復**｜**Cowork Edit/Write 工具因緩衝區容量上限靜默截斷檔案（byte-conservation buffer cap，GitHub issue #53940，累積 43 則留言／16 個讚，原始回報 2026-04-27，2026-07-16 為作者持續維護的長篇更新摘要）**：使用者回報 Cowork 的 Edit/Write 工具會因緩衝區容量上限機制靜默截斷檔案內容，且此問題具確定性、在任何檔案大小下皆會觸發，並非邊緣情況；屬嚴重的資料完整性缺陷；官方尚未回應。
 - 🔴 **未修復**｜**Cowork 網路對外連線白名單失效（GitHub issue #30112，累積 49 個讚，2026-07-17）**：Cowork 的網路對外連線白名單機制失效，自訂網域即使已列入允許清單仍遭以 403 blocked-by-allowlist 擋下；官方尚未回應。
 - 🔴 **未修復**｜**功能請求：VS Code 擴充套件新增停用自動附加開啟檔案/選取範圍設定（GitHub issue #24726，累積 185 個讚，2026-07-17）**：使用者希望 VS Code 擴充套件提供選項，可停用自動將目前開啟檔案或選取範圍附加進對話 context 的行為；官方尚未回應或提供設定選項。
-- 🔴 **未修復**｜**Remote Control 自動重連機制失效，靜默斷線且無法自行恢復（GitHub issue #34255，累積 56 則留言、97 個讚，2026-07-16）**：使用者回報 Remote Control 功能連線中斷後不會自動重連，且無任何提示告知已斷線，需手動介入才能恢復；與下列 `/remote-control` 相關問題（issue #28322、#29006）同屬 Remote Control 功能仍不穩定的訊號；官方尚未回應。
+- 🔴 **未修復**｜**Remote Control 自動重連機制失效，靜默斷線且無法自行恢復（GitHub issue #34255，累積 56 則留言、97 個讚，2026-07-16，2026-07-17 反應數持平、問題持續未解）**：使用者回報 Remote Control 功能連線中斷後不會自動重連，且無任何提示告知已斷線，需手動介入才能恢復；與下列 `/remote-control` 相關問題（issue #28322、#29006）同屬 Remote Control 功能仍不穩定的訊號；官方尚未回應。
 - 🔴 **未修復**｜**功能請求：跨機器多 agent 協作（Agent-to-Agent 協定）（GitHub issue #28300，累積 35 則留言，2026-07-14）**：使用者呼籲 Claude Code 支援跨機器的多 agent 協作，採用 Agent-to-Agent 協定；與 [[entities/managed-agents]] 現有多代理協調能力相關，官方尚未回應或排入路線圖。
 - 🔴 **未修復**｜**功能請求：GitLab 整合（儲存庫連接、Merge Request、行動裝置存取）（GitHub issue #12346，累積 47 則留言、118 個讚，2026-07-15）**：使用者呼籲 Claude Code 支援 GitLab 整合，比照現有 GitHub 整合提供儲存庫連接、Merge Request 操作與行動裝置存取；官方尚未回應或排入路線圖。
 - 🔴 **未修復**｜**功能請求：VS Code 擴充功能比照 GitHub Copilot Edits Review 的差異審閱介面（GitHub issue #33932，累積 33 則留言、218 個讚，2026-07-14）**：使用者呼籲 VS Code 擴充功能提供類似 GitHub Copilot Edits Review 的 diff 審閱 UI；官方尚未回應或排入路線圖。
@@ -161,8 +168,12 @@
 - 🔴 **未修復**｜**帳號限制後申訴表單重新導向迴圈（GitHub issue #62503，累積 31 則留言、5 個讚，2026-07-07）**：帳號遭限制的使用者嘗試提交申訴表單時陷入重新導向迴圈，無法完成申訴流程，官方尚未回應。
 - 🔴 **未修復**｜**功能請求聚集：跨平台支援需求未滿足**：多項高反應數 feature request 顯示使用者對跨平台支援的強烈需求——官方 Linux（Ubuntu LTS / Debian）Desktop build（[issue #65697](https://github.com/anthropics/claude-code/issues/65697)，累積反應 651）、Desktop 於 Windows 上改用 WSL 執行指令的選項（[issue #12506](https://github.com/anthropics/claude-code/issues/12506)，累積反應 134）、Desktop 與 CLI 之間同步 Skills（[issue #20697](https://github.com/anthropics/claude-code/issues/20697)，累積反應 127）；均為社群高投票 feature request，官方尚未排入路線圖。多帳號管理相關訴求已獨立整併至「👤 帳號管理」分組
 
-### 🌐 服務穩定性（3 條已修復、3 條未修復、1 條待查證）
+### 🌐 服務穩定性（7 條已修復、3 條未修復、1 條待查證）
 
+- ✅ **已修復（同日解決）**｜**Anthropic Status：Sonnet 5 與 Haiku 4.5 錯誤率升高（2026-07-17 07:03–12:21 UTC）**：兩模型同時出現錯誤率升高，07:03 UTC 進入監控、07:10 UTC 標記問題已定位，12:21 UTC 確認解決。
+- ✅ **已修復（同日解決）**｜**Anthropic Status：Claude Opus 4.8 錯誤率升高（2026-07-17 14:57–15:33 UTC）**：14:57 UTC 標記問題已定位，15:27 UTC 套用修復進入監控，15:33 UTC 確認解決。
+- ✅ **已修復（同日解決）**｜**Anthropic Status：Sonnet 5 錯誤率升高（2026-07-17 18:22–18:27 UTC）**：18:22 UTC 套用修復進入監控，18:27 UTC 確認解決。
+- ✅ **已修復（同日解決）**｜**Anthropic Status：Fable 5 錯誤率升高（2026-07-17 18:48–19:43 UTC）**：18:48 UTC 套用修復進入監控，19:43 UTC 確認解決，官方確認 Fable 5 仍如預期維持「不消耗用量額度」的存取狀態。見 [[entities/fable-5]]。
 - ✅ **已修復（同日解決）**｜**claude.ai container creation 部分中斷（2026-07-14 21:56–22:16 UTC）**：Anthropic Status 頁面顯示 claude.ai 的 container creation 功能發生部分中斷，約 20 分鐘後修復完成並經監控確認恢復正常；狀態頁未進一步說明確切成因與影響範圍，可能涉及 Claude Code on the web／Cowork 的沙箱建立流程。
 - 🔴 **未修復**｜**OAuth 登入逾時失敗，`auth.anthropic.com` 網域無法解析（GitHub issue #33238，累積 151 則留言、47 個讚，2026-07-14 仍為互動量最高條目）**：使用者回報 Claude Code OAuth 登入逾時失敗，`auth.anthropic.com` 網域完全無法透過 DNS 解析，導致使用者完全無法完成驗證流程；官方尚未回應。
 - 🔴 **未修復**｜**claude.ai visualize 功能故障，claudemcpcontent.com 無法連線（DNS_PROBE_FINISHED_NXDOMAIN）（GitHub issue #34820，累積 94 則留言、39 個讚，2026-07-10）**：使用者回報 claude.ai 的 visualize 功能故障，依賴的 claudemcpcontent.com 網域無法解析（DNS 錯誤）；官方尚未回應。
@@ -183,6 +194,9 @@
 
 | 版本 | 日期 | 重點 |
 |------|------|------|
+| **v2.1.214** | 2026-07-18 | 修復 single-segment `dir/**` allow 規則（如 `Edit(src/**)`）誤自動核准樹狀結構中任意層級 `dir/` 目錄寫入的問題（原本應僅限 `<cwd>/dir`），並修復另一項相關權限問題（原文於此處被截斷，細節未知）；純安全性修正，無新指令/旗標（見 [Release](https://github.com/anthropics/claude-code/releases/tag/v2.1.214)）|
+| **anthropic-sdk-typescript google-cloud-sdk v0.0.6** | 2026-07-17 | Changelog 僅提供與前版的完整比較連結，未列出具體異動項目，純版本號更新，暫記版本表（見 [Release](https://github.com/anthropics/anthropic-sdk-typescript/releases/tag/google-cloud-sdk-v0.0.6)）|
+| **anthropic-sdk-typescript v0.112.3** | 2026-07-17 | Chores：docs 小幅調整，無使用者端功能異動（見 [Release](https://github.com/anthropics/anthropic-sdk-typescript/releases/tag/sdk-v0.112.3)）|
 | **v2.1.212** | 2026-07-17 | ⚠️ **Breaking change**：`/fork` 不再於同一 session 內啟動子 agent，改為將目前對話複製進一個新的**背景 session**（在 `claude agents` 中自成一列），使用者可同時繼續原本工作；原本 `/fork` 的同 session 子 agent 行為更名為 **`/subtask`**；依賴舊版 `/fork` 語意的腳本/工作流需改用 `/subtask`，無過渡期即刻生效（見 [Release](https://github.com/anthropics/claude-code/releases/tag/v2.1.212)）|
 | **anthropic-sdk-typescript v0.112.1** | 2026-07-16 | Changelog 未列出具體異動說明，純版本號更新，暫記版本表（見 [Release](https://github.com/anthropics/anthropic-sdk-typescript/releases/tag/sdk-v0.112.1)）|
 | **anthropic-sdk-python v0.117.0** | 2026-07-16 | 新增「api: add support for dreaming」，changelog 未進一步說明技術細節；命名疑似對應 [[entities/managed-agents]] 既有 Dreaming 記憶整合功能的 API 化，尚待更多資訊確認（見 [Release](https://github.com/anthropics/anthropic-sdk-python/releases/tag/v0.117.0)）|
