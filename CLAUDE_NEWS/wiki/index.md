@@ -7,6 +7,7 @@ LLM 查詢此 wiki 時，**先讀這個檔案**找相關頁面，再讀具體頁
 
 ## 近期異動
 
+- **2026-07-18 Ingest**：[[entities/claude-code]] v2.1.214（純安全性修正，未列 feature-radar）發布，新增已知問題 7 條（思考過程常駐顯示 #8477 346 讚同居首、貼上文字編輯 #3412 296 讚同等）；Anthropic Status 錄得四起錯誤率升高事件（Fable 5／Sonnet 5／Opus 4.8／Sonnet 5+Haiku 4.5）皆同日修復；AskUserQuestion 60 秒逾時機制經部落格文章證實為 07-01 刻意加入的「效率繞過」設計，社群具體案例佐證。[[topics/anthropic-business]] 新增 Meta-Anthropic 傳洽談 100 億美元運算力租賃協議（HN+Reuters+NYT 三方獨立來源）；[[entities/pricing]] 記錄 Fable 5 存取政策今日出現「收緊限制」與「@claudeai 設為永久」兩則方向相反報導，兩者並存待觀察；[[topics/competitor-landscape]] 補入 Moonshot Kimi K3 官方一手規格（2.8T 參數）。[[topics/anthropic-government-policy]] 新增 Anthropic 員工捐款 300 萬美元支持 AI 安全法規（併入既有政治獻金布局故事線，待查證）。[[entities/boris-cherny]] 新增「同時執行數千個 Claude Code agent」聲明（待核實）。呈現品質全數通過，詳見 [[log]]
 - **2026-07-18 週度 Lint（雲端排程）**：修正 3 處跨頁矛盾（anthropic-commitments/safety-china-trust-dispute 中國回應狀態不同步、ai-talent-flow John Jumper 日期錯記 06-19→06-21）；19 頁呈現品質修復（待查證標記改註、月份分組補結構、callout/數字同步等）；`community-tech-tools.md` 新增 18 工具／汰除 26 筆；`community-pattern-trends.md` 4 條趨勢更新演進節點；overview.md 全文改寫反映近兩週局勢（v2.1.212 `/fork` breaking change、Fable 5 7/19 到期倒數、IPO 敘事、中國信任對峙轉入觀察期）；ref 覆蓋率 100%；讀者模擬 3/3 通過；留 5 項待使用者確認（新實體候選 Reflect with Claude 第 3 週未決、patterns 合併建議、規則年齡審查、來源健康、6c 遵守率記錄方式）詳見 [[log]]
 - [[entities/claude-skills]] — 2026-07-17：**新頁面**，官方 Skills 產品線與生態單一入口（使用者指定追蹤官方力推項目）——六大控制層定位、31 個小企業技能包（首日 38.2 萬下載）、教師技能庫、`--safe-mode`／巢狀 subagent 支援、第三方移植（OpenCode-power-pack／Claudinho）與「官方無市集、創作者無變現」結構性缺口；設計面仍歸 [[topics/community-tech-patterns]]，兩頁互 wikilink
 - [[entities/claude-code]] — 2026-07-17：**v2.1.212** 發布（`/fork` 改為將對話複製進背景 session，原同 session 子 agent 功能改名 `/subtask`，⚠️ Breaking change 無過渡期，feature-radar 新條目）；已知問題新增 5 條——呼叫進行中畫面閃爍（#769，335 讚同，本日最高互動）、終端機複製貼上多餘縮排（#18170，275 讚同）、VS Code 停用自動附加設定請求（#24726，185 讚同）、Cowork 網路白名單失效（#30112，49 讚同）、Opus 4.7 思考摘要遺失（#49268，78 讚同，連結 [[entities/opus-4-7]]）；#13354（session 額度續行）、#23134（貼上文字收合）留言數更新，#53940（Cowork Edit/Write 靜默截斷）補齊連結；已修復「Reflect with Claude」歷史記錄重複段落與 #13354 重複條目問題
@@ -162,7 +163,7 @@ LLM 查詢此 wiki 時，**先讀這個檔案**找相關頁面，再讀具體頁
 | [[entities/google-investment]] | event | 💼 商業 | resolved | Google 投資 400 億美元歷史記錄，含循環算力交易結構 |
 | [[entities/managed-agents]] | feature | 🛠️ 工具/功能 | active（正式發布）| Managed Agents 官方框架：Dreaming 記憶整合、20 路並行子代理、Outcomes 規格驗證 |
 | [[entities/bernanke]] | person | 👤 人物 | active | 前聯準會主席，2026-07-09 加入 Anthropic 長期利益信託（Long-Term Benefit Trust）董事會 |
-| [[entities/boris-cherny]] | person | 👤 人物 | active | Claude Code 創始人，「Loops 是未來」設計哲學、「coding is solved」論戰、第三方工具邊界聲明 |
+| [[entities/boris-cherny]] | person | 👤 人物 | active（待核實） | Claude Code 創始人，「Loops 是未來」設計哲學、「coding is solved」論戰、第三方工具邊界聲明；07-17 稱同時執行數千個 Claude Code agent（待核實） |
 | [[entities/chris-ciauri]] | person | 👤 人物 | active | Anthropic 國際業務總監；首爾記者會宣布 Fable 5 / Mythos 解禁信心（2026-06-18）|
 | [[entities/john-jumper]] | person | 👤 人物 | active | 諾貝爾化學獎得主（AlphaFold），2026-06-19 離開 Google DeepMind 加入 Anthropic（Reuters 確認）|
 | [[entities/cat-wu]] | person | 👤 人物 | active | Claude Code 產品負責人，「AI 下一步是主動性（proactivity）」論述 |

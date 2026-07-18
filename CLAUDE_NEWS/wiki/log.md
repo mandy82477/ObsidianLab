@@ -2904,3 +2904,22 @@ Append-only 紀錄。每次 ingest、lint，以及**揭露缺陷或促成改動�
 3. **規則年齡審查（6d）**：4 項規則超過 60 天閾值——`entities/topics 格式模板`〔04-25，84 天，連續第 3 週〕、`Wiki 頁面呈現品質標準`〔05-15，64 天，本週首度越線〕、`patterns↔discussions 雙向連結規則`〔05-16，63 天，本週首度越線〕→ 是否需要重新審視這些規則，或標記為「已審閱，長期有效」以停止重複列出？
 4. **來源健康**：`Claude API Release Notes` 已連續 3 週（21 天）count=0 → 是否授權查修此來源的抓取邏輯（可能是 URL 失效或格式改版）？
 5. **6c 遵守率發現**：近 3 次 ingest（07-14/07-16/07-17）log 敘述中僅 1/3 明確點名「feature-radar」，但實際檔案 3/3 皆有更新（git 歷史核對確認版本行與風險表同步）——是否要求 ingest log 敘述一律明確點名 feature-radar 更新狀態（即使是「僅版本行同步，無新條目」），以避免日後誤判為管線缺失？
+
+## 2026-07-18 Ingest | news/2026-07-18.md（67 則）
+
+- 來源日報：[[news/2026-07-18]]（67 則，10/10 來源；Google News 27、GitHub Issues 15、dev.to 15、Hacker News 13、Reddit 12、Anthropic Status 4、GitHub 4、Blogroll 3、Anthropic Blog 0、Claude API Release Notes 0）
+- 分類派工：功能 17 則、商業 18 則、安全政策 2 則、社群 29 則、人物 1 則（五類並行 foreground，model: sonnet；模型本日無條目，跳過。註：本次因自訂 subagent_type 註冊表未載入，改以 general-purpose agent 內嵌對應記者角色規則＋開始前必讀清單執行，功能等同五位專職記者）
+- 更新頁面：
+  - **功能**：`entities/claude-code.md`（v2.1.214 純安全性修正發布，未列 feature-radar；已知問題新增 7 條——READ 工具未標示檔案 #21151 186 讚、思考過程常駐顯示 #8477 346 讚本日最高互動、貼上文字編輯 #3412 296 讚、記憶體洩漏 /tmp/claude-*-cwd #8856 70 讚、升級付款 PaymentIntent 異常 #55982 25 讚、Desktop session 消失 #26452 29 讚、skills 子目錄支援 #10238 165 讚；Remote Control 重連失效 #34255 反應數更新；AskUserQuestion 60 秒逾時機制經部落格文章證實為 07-01（v2.1.198）刻意加入的「效率繞過」設計，另有社群具體案例佐證；Anthropic Status 四起錯誤率升高事件同日修復記錄）；`entities/claude-for-teachers.md`（Education Week／WDET 兩則媒體追蹤更新）
+  - **商業**：`topics/anthropic-business.md`（新增 Meta-Anthropic 傳洽談 100 億美元運算力租賃協議，HN+Reuters+NYT 三方獨立來源；Anthropic $60 萬職缺形塑 IPO 敘事、AMD/Jefferies 洽談關注、Anthropic 廣告反彈評論）；`entities/pricing.md`（Fable 5 存取政策今日出現「Max/Team Premium 收緊限制＋Pro 導向 API 計費」與「`@claudeai` 官方帳號稱設為永久」兩則方向相反報導，兩者並存記錄未擇一呈現，交易員押注第四度延長；Claude 最便宜 API 模式記入模型 API 定價現況）；`topics/competitor-landscape.md`（Moonshot Kimi K3 官方一手規格〔2.8T 參數、Kimi Delta Attention、100 萬 token context〕補入，取代原僅媒體轉述版本；WSJ/Globe and Mail/Forbes/BBC 後續跟進報導併入既有 07-17 事件，非獨立新事件；中美 AI「蒸餾」指控記入）
+  - **安全政策**：`topics/anthropic-government-policy.md`（Anthropic 員工捐款 300 萬美元支持 AI 安全法規推動，併入既有「政治獻金布局」故事線與 07-16 Dario Amodei 個人捐款 100 萬美元 super PAC 事件，兩筆捐款是否同一 PAC 待查證；SingularityHub「聊天機器人意識特徵」報導經查證與三頁觸發條件均不符，判定不適用未建頁）
+  - **社群**：`topics/community-tech-discussions.md`（「效率繞過」機制〔HN 140 分部落格分析＋HN 23 分具體案例〕合併更新既有 AskUserQuestion 60 秒逾時熱門討論列，熱度 🔥🔥→🔥🔥🔥；三則 Reddit 週熱門低門檻條目收錄；LLM cliché highlighter 部落格工具收錄）
+  - **人物**：`entities/boris-cherny.md`（新增「現在同時執行數千個 Claude Code agent」聲明，單一媒體來源標記待核實）
+  - 今日 29 則社群節錄中 23 則因未達互動門檻（多數 Show HN 僅 1-4 分、Reddit sort=new score 不可信且無跨來源佐證）或查表確認為既有條目重複浮現（3 則 dev.to）而不收錄，詳見社群記者回報
+- feature-radar：本日無新條目（v2.1.214 為純安全性修正，未通過准入定義）；最新版本行同步至 v2.1.214；本週推薦與升版風險表因無回報變化維持原內容，僅同步版本行；⏰ 倒數中無變化
+- index.md 狀態變更：`entities/boris-cherny`（active → active（待核實）)
+- 新增頁面：無
+- 摘要：官方面 v2.1.214 純安全性修正、Anthropic Status 四起錯誤率升高事件皆同日修復；商業面 Meta-Anthropic $10B 運算力租賃洽談三方獨立來源、Fable 5 存取政策訊號分歧（收緊 vs 永久）為今日主軸；社群面「效率繞過」機制（7/1 起 60 秒逾時自動代答）經部落格具名分析與具體案例雙重驗證，延續既有討論列；安全政策面 Anthropic 政治獻金布局規模擴大（員工 $3M + CEO 個人 $1M）
+- 呈現品質：五類共 8 頁全數 ✅ 通過，未出現需修復或待辦項目
+- 品質備註：無
+
