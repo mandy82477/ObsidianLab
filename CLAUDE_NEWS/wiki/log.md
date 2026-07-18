@@ -2854,3 +2854,53 @@ Append-only 紀錄。每次 ingest、lint，以及**揭露缺陷或促成改動�
 - 呈現品質審查：claude-code.md ⚠️ 已修復（「現況」段落與歷史記錄重複的舊段落、#13354 重複條目已清理）；其餘 6 頁 ✅ 通過
 - 摘要：v2.1.212 帶來 `/fork`/`/subtask` breaking change 與 Claude 1Password 整合為今日官方功能焦點；商業面 Kimi K3 正式發布延續 Moonshot 對 Anthropic 的競品壓力敘事；安全政策面五角大廈簡報、州級監管遊說、中美 AI 政策三線並進
 - 品質備註：無
+
+## 2026-07-18 Lint（雲端排程執行）
+
+- 修正矛盾：
+  - 安全政策：`topics/anthropic-commitments.md`「spyware 指控回應」列停留在 07-07 狀態，未反映 `topics/safety-china-trust-dispute.md` 已記錄的 07-08 中國官方警示與 07-10 Anthropic 首度公開否認 → 已更新該列狀態/callout/時序，失效的 `[[topics/ai-agent-safety]]` 連結改指向現持完整敘事的 `[[topics/safety-china-trust-dispute]]`
+  - 安全政策：`topics/safety-china-trust-dispute.md`「目前結論」表「中國代理偵測程式碼」列仍寫「官方無回應」，與同頁其後 07-07/07-10 官方已回應的記載矛盾 → 修正為「官方已回應（07-07 定調實驗、07-10 進一步否認）」
+  - 商業（主編發現，非記者回報）：`topics/ai-talent-flow.md`「### 2026-06-19」時序分組將 John Jumper 加入的 Reuters 確認報導錯記為 06-19，與 `entities/john-jumper.md`／`news/2026-06-21.md` 記載的 06-21 官方確認日矛盾（Reuters URL 帶 06-19 為原始報導日，但本站日報實際於 06-21 收錄）→ 主編直接改期為 2026-06-21，同步「開始日期」與「相關實體」欄
+- 補孤立連結：無（六類全數頁面皆有其他頁面 wikilink 引用）
+- 狀態更新：無（六記者一致回報無 ongoing→monitoring/resolved 變更）
+- resolved 收尾：無
+- 新增 entities：無（本輪未直接建立；候選見下方「待使用者確認」）
+- 呈現品質：
+  - 模型：⚠️已修復 4 頁（sonnet-5/mythos/fable-5 待查證標記改寫、opus-4-8 前代比較表 Context Window 欄位補全、model-comparison.md 頂部 callout 過期更新）；opus-4-7 ✅ 通過
+  - 功能：⚠️已修復 3 頁（claude-code.md 懸置標記改註、code-quality-decline.md「目前結論」數字落後同步、official-community-gap.md 補 Managed Agents Dreaming API 矩陣列）；其餘 10 頁 ✅ 通過
+  - 商業：⚠️已修復 enterprise-cost-management.md／enterprise-tool-tracker.md（時序月份分組）；⚠️部分修復 anthropic-business.md（已補月份分組，06-15~06-26 完整主題重分類工作量過大未執行，列入待辦）；其餘 4 頁 ✅ 通過
+  - 安全政策：⚠️已修復 anthropic-commitments.md／safety-china-trust-dispute.md（矛盾修正）、ai-agent-safety.md（CVE-2026-55407 懸置標記改註）；📋 待辦 4 頁時序段落連續無分組（safety-china-trust-dispute 9 個、ai-agent-safety 22 個、ai-agent-safety-archive 16 個＋存檔區、anthropic-government-policy 約 30 個——**全站 topics 頁時序段落的普遍慣例，非單頁問題**，工作量過大本輪未執行，列入下次 lint 或獨立任務待辦）
+  - 人物：⚠️已修復 john-jumper.md（首次出現日期修正為 06-19〈Twitter 傳出，待核實〉並補頂部 callout）、dario-amodei.md（callout 更新反映 07-16 super PAC 捐款動態〈待核實〉）；boris-cherny/cat-wu/andrej-karpathy/chris-olah/teresa-carlson/tom-blomfield ✅ 核實後無需修改
+  - 社群：⚠️已修復 code-quality-decline.md（「目前結論」統計數字同步）、community-tech-discussions.md（清理 6 筆逾 21 天 ☄️閃現 舊條目）、community-tech-timeline.md（29 個連續日期補月份分組）；community-tech-patterns/community-pattern-trends ✅ 通過；community-tech-tools 策展詳見下方
+- 入口層健檢：本輪僅安全政策 4 頁觸發 3e 事件流堆積警示（詳見上方呈現品質欄，已記錄待辦，非 3f 語意分岔/死案候選）；六記者 3f 欄位均回報「無」語意分岔/死案候選
+- 待查證回訪：
+  - 已改註無後續：模型（sonnet-5 官方對比圖表爭議、mythos Z.Ai/WSJ 中國網安追趕報導、fable-5 化學問題被拒事件）；功能（claude-code.md #16856 token 暴增、36Kr 背景任務升級報導）；安全政策（ai-agent-safety.md CVE-2026-55407 DoS 漏洞，2026-07-01 揭露至今無後續）
+  - 已更新：安全政策（safety-china-trust-dispute.md／anthropic-commitments.md 中國代理偵測回應狀態，見上方矛盾修正）
+  - 其餘標記距今 ≤14 天，依規則不動
+- 規則檔健檢：
+  - 矛盾（6a）：無（掃描全部規則檔未發現同一行為的相反指示或觸發條件衝突）
+  - 引用驗證（6b）：7/7 全部通過（首次出現/痛點洞察/近期工具/技術彙整/熱門討論/衍生/全覽表錨點皆存在）
+  - 遵守率（6c）：呈現品質審查 3/3（07-14/07-16/07-17 log 皆含 ✅/⚠️/📋 標記）；**⚠️ feature-radar 提及僅 1/3**（07-17 log 明確點名，07-14/07-16 log 敘述未提及）——經 git 歷史核對，`feature-radar.md` 實際上 3/3 均有更新（版本行＋升版風險表同步），**屬 log 敘述完整度落差，非真實管線缺失**；log 格式正確 3/3
+  - 過期規則（6d，>60 天）：4 項超過閾值——`.claude/rules/wiki-ingest-format.md` entities/topics 格式模板〔加入: 2026-04-25〕（連續第 3 週超標，距今 84 天）；**新增 2 項本週首度越線**：`.claude/rules/wiki-ingest-format.md`「Wiki 頁面呈現品質標準」〔加入: 2026-05-15〕（距今 64 天）、`.claude/rules/wiki-ingest-community.md`「community-tech-patterns ↔ discussions 雙向連結規則」〔加入: 2026-05-16〕（距今 63 天）→ 📋 待使用者確認
+  - 來源健康（6e）：⚠️ `Claude API Release Notes` 連續 7 天（07-11~07-17）count=0，**已連續第 3 週出現同樣異常**，原因尚待排查（純觀察回報，不自行修改 pipeline）；其餘來源（HN/Reddit/Google News/dev.to/GitHub/GitHub Issues/Anthropic Status）正常；`scripts/source_scorecard.py` 記分卡：全部來源樣本仍 ⚠️ 7 天不足，僅供趨勢觀察；無「未註冊 slug」告警；Google News domain 信譽分佈低信譽（<0.4）桶 0 筆
+  - 跨檔案語意矛盾（6f）：✅ 全部配對語意一致（16/16 registered sync_pairs 機械檢查通過；另手動檢視 07-17 新增的注入防護／忠實度自檢規則，未發現與既有規則衝突）
+  - 成長迴路（月度）：非本月首次 lint（本月已有 07-04、07-10、07-11 三筆 Lint 記錄），跳過
+- 品質指標（6g）：
+  - ref 覆蓋率（每週）：100%（07-11~07-17，35 條列/35 條列均達標）✅，缺 ref 日期：無
+  - 採用驗證率（月度）：非本月首次 lint，跳過
+  - 外部死鏈（月度）：非本月首次 lint，跳過
+  - 趨勢判讀：持平（連續 4 期維持 100%）；已 append `wiki/metrics.md` 07-18 列
+- 讀者模擬：3 題全 ✅ ——「v2.1.212 的 /fork 改變會不會影響現有 skill、該不該升版」→ `feature-radar.md`「升版風險」2 跳可答；「Fable 5 編排便宜模型執行的社群驗證效果如何」→ `topics/community-pattern-trends.md` 趨勢四 2 跳可答；「中國後門指控現在的官方立場、事情結束了嗎」→ `topics/safety-china-trust-dispute.md` 頂部 callout 2 跳可答
+- lint 自我遵守率：6/6 記者回報一次過（3a–3g 七項皆有明確結果，格式完整，無退回）
+- community-tech-tools 策展：新增 18 筆（Brainless／Agentty／OtoDock／Grepathy／cc-session-recover／Cc-hindsight／Fleet Deck／aloud／Sx 2.0／claude-meseeks／Topsoil／Kastra／Papercrane-CLI／Agent Sessions／Tilion／Atelier／claude-code-live-memory／live-log-viewer-next）；汰除 26 筆逾 30 天無後續 ⏳ 條目；精選層新增 Brainless（HN124）與 claude-meseeks（HN130，新增通知/語音子分類）；痛點洞察同步 4 列代表工具/近期工具，清除 6 個已汰除工具殘留引用
+- community-tech-patterns 淘汰審查（dry-run，**待使用者確認**）：建議淘汰 0 條；建議合併 1 組（「記憶與知識管理」↔「跨環境 Agent 記憶」，代表工具重疊）；保留 20 類；無法判斷 3 項（見下方待確認清單）
+- community-pattern-trends 週更：4 條趨勢新增演進節點（Multi-agent 隔離工程化套件化部署、Context 主權爭奪使用者可視化分支合併、模型路由自動化獲官方基準背書、對抗性設計 plan-review-loop 延伸），無新趨勢達成立門檻、無趨勢降級淡出
+- overview.md：已全文改寫（當前局勢改寫為中國信任對峙轉入觀察期、v2.1.212 `/fork` breaking change＋Cowork 資料完整性風險、Fable 5 promo 7/19 倒數、IPO 敘事加溫、政策戰線延伸、官方 Skills/教師方案生態擴張；近兩週事件表更新至 07-04~07-17；社群工具生態/商業動態/功能推薦/情緒指標全面同步；上次全文改寫為 07-11 lint，07-16 僅零星更新未反映 07-12~07-17 事態，本輪為完整重寫）
+
+### 📋 待使用者確認（雲端 lint 自主安全部分完成，以下項目留待人工決定）
+
+1. **新實體頁候選（連續第 3 週提出）**：`Reflect with Claude`（Anthropic 官方 Beta 功能，2026-07-09 發布，feature-radar 熱度 🔥🔥🔥🔥／試用價值 ⚡，資訊足夠建頁；07-11、07-17 lint 皆提出仍未定案）→ 是否建立 `wiki/entities/reflect-with-claude.md`？
+2. **community-tech-patterns 淘汰審查**：建議合併「記憶與知識管理」↔「跨環境 Agent 記憶」兩類別（重複收錄同一代表工具）→ 是否同意合併？另有 3 項無法自動判斷，需人工確認：(a) Agent 版本控制／ADR 注入——70 天沉寂但概念未被否證，是否保留；(b) AgentWatch vs 官方 Claude Enterprise Spend Controls——功能部分重疊，是否加註「官方趨勢觀察」；(c) 行動裝置遠端控制（ccgram/Shellular）vs Claude Cowork 行動版——執行環境模型不同，是否算官方化取代
+3. **規則年齡審查（6d）**：4 項規則超過 60 天閾值——`entities/topics 格式模板`〔04-25，84 天，連續第 3 週〕、`Wiki 頁面呈現品質標準`〔05-15，64 天，本週首度越線〕、`patterns↔discussions 雙向連結規則`〔05-16，63 天，本週首度越線〕→ 是否需要重新審視這些規則，或標記為「已審閱，長期有效」以停止重複列出？
+4. **來源健康**：`Claude API Release Notes` 已連續 3 週（21 天）count=0 → 是否授權查修此來源的抓取邏輯（可能是 URL 失效或格式改版）？
+5. **6c 遵守率發現**：近 3 次 ingest（07-14/07-16/07-17）log 敘述中僅 1/3 明確點名「feature-radar」，但實際檔案 3/3 皆有更新（git 歷史核對確認版本行與風險表同步）——是否要求 ingest log 敘述一律明確點名 feature-radar 更新狀態（即使是「僅版本行同步，無新條目」），以避免日後誤判為管線缺失？

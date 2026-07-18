@@ -2,11 +2,12 @@
 
 LLM 查詢此 wiki 時，**先讀這個檔案**找相關頁面，再讀具體頁面取得詳細資訊。
 
-**最後更新：** 2026-07-17
+**最後更新：** 2026-07-18
 ---
 
 ## 近期異動
 
+- **2026-07-18 週度 Lint（雲端排程）**：修正 3 處跨頁矛盾（anthropic-commitments/safety-china-trust-dispute 中國回應狀態不同步、ai-talent-flow John Jumper 日期錯記 06-19→06-21）；19 頁呈現品質修復（待查證標記改註、月份分組補結構、callout/數字同步等）；`community-tech-tools.md` 新增 18 工具／汰除 26 筆；`community-pattern-trends.md` 4 條趨勢更新演進節點；overview.md 全文改寫反映近兩週局勢（v2.1.212 `/fork` breaking change、Fable 5 7/19 到期倒數、IPO 敘事、中國信任對峙轉入觀察期）；ref 覆蓋率 100%；讀者模擬 3/3 通過；留 5 項待使用者確認（新實體候選 Reflect with Claude 第 3 週未決、patterns 合併建議、規則年齡審查、來源健康、6c 遵守率記錄方式）詳見 [[log]]
 - [[entities/claude-skills]] — 2026-07-17：**新頁面**，官方 Skills 產品線與生態單一入口（使用者指定追蹤官方力推項目）——六大控制層定位、31 個小企業技能包（首日 38.2 萬下載）、教師技能庫、`--safe-mode`／巢狀 subagent 支援、第三方移植（OpenCode-power-pack／Claudinho）與「官方無市集、創作者無變現」結構性缺口；設計面仍歸 [[topics/community-tech-patterns]]，兩頁互 wikilink
 - [[entities/claude-code]] — 2026-07-17：**v2.1.212** 發布（`/fork` 改為將對話複製進背景 session，原同 session 子 agent 功能改名 `/subtask`，⚠️ Breaking change 無過渡期，feature-radar 新條目）；已知問題新增 5 條——呼叫進行中畫面閃爍（#769，335 讚同，本日最高互動）、終端機複製貼上多餘縮排（#18170，275 讚同）、VS Code 停用自動附加設定請求（#24726，185 讚同）、Cowork 網路白名單失效（#30112，49 讚同）、Opus 4.7 思考摘要遺失（#49268，78 讚同，連結 [[entities/opus-4-7]]）；#13354（session 額度續行）、#23134（貼上文字收合）留言數更新，#53940（Cowork Edit/Write 靜默截斷）補齊連結；已修復「Reflect with Claude」歷史記錄重複段落與 #13354 重複條目問題
 - [[topics/anthropic-business]] — 2026-07-17：新增 FIS 與 Anthropic 延長合作、Deloitte 推出 Claude 驅動安全軟體平台、Claude Corps 開放申請（8.5 萬美元／1,000 人）；記入 Anthropic 徵才形塑 IPO 敘事（60 萬美元）與 Alphabet 財報受惠 Anthropic 收益的分析觀點（BofA，定性無數字）
