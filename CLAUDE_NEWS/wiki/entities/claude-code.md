@@ -5,10 +5,10 @@
 **領域：** 🛠️ 工具/功能
 **首次出現：** 2025（正式推出）
 **最後更新：** 2026-07-18
-**最後新聞更新：** 2026-07-17
+**最後新聞更新：** 2026-07-18
 
-> **最新版本動態**（2026-07-17）
-> **v2.1.212**（2026-07-17）：⚠️ **Breaking change**——`/fork` 不再於同一 session 內啟動子 agent，改為將目前對話複製進一個新的**背景 session**（在 `claude agents` 中自成一列），使用者可同時繼續原本工作；原本由 `/fork` 啟動的同 session 子 agent 功能更名為 **`/subtask`**；依賴舊版 `/fork` 語意的腳本/工作流需改用 `/subtask`，**無過渡期，即刻生效**；已提報 [[feature-radar]] 新增條目。同日 TypeScript SDK v0.112.1（無 changelog 說明）、Python SDK v0.117.0（新增「dreaming」API 支援，細節未知，疑似對應 [[entities/managed-agents]] 既有 Dreaming 功能）發布。另有多家媒體（The Verge、Engadget、SiliconANGLE、Help Net Security）同步報導 Claude 新增 **1Password 整合**：使用者可透過已存憑證登入網站，密碼不會外流至 Claude／Anthropic，官方技術細節待補。本日新增已知問題 4 條：`In-progress Call` 導致畫面閃爍（issue #769，累積 335 個讚，全站互動最高）；VS Code 擴充套件請求新增停用自動附加開啟檔案/選取範圍設定（issue #24726，185 個讚）；Cowork 網路對外連線白名單失效，自訂網域仍遭 403 blocked-by-allowlist 擋下（issue #30112，49 個讚）；Opus 4.7（v2.1.111）thinking summaries 消失，追查為 harness 未設定 extended-thinking API 的 `display: "summarized"` 參數（issue #49268，78 個讚，見 [[entities/opus-4-7]]）。既有已知問題更新：終端機複製夾帶縮排/行尾空白（issue #18170，271→275 個讚）、Session 額度上限續行請求（統一併入 issue #13354，158→175 個讚）、Cowork Edit/Write 緩衝區截斷檔案（補上 issue #53940 連結，確認為確定性重現、各檔案大小皆觸發）。前一重大異動為 v2.1.211（2026-07-15）`--forward-subagent-text` 旗標（見「版本更新」表格）。
+> **最新版本動態**（2026-07-18）
+> **v2.1.214**（2026-07-18）：純安全性修正——修復 single-segment `dir/**` allow 規則（如 `Edit(src/**)`）誤自動核准樹狀結構中任意層級 `dir/` 目錄寫入的權限漏洞（原本應僅限 `<cwd>/dir`），並修復另一項相關權限問題（原文於 200 字元處截斷，細節未知）；無新指令/旗標，未列入 [[feature-radar]]。同日 TypeScript SDK 發布 v0.112.3（docs 小幅調整）與 Google Cloud SDK 附屬套件 v0.0.6（無 changelog 說明）。Anthropic Status 於 07-17 一日內錄得四起錯誤率升高事件並皆同日修復：Sonnet 5＋Haiku 4.5（07:03–12:21 UTC）、Claude Opus 4.8（14:57–15:33 UTC）、Sonnet 5（18:22–18:27 UTC）、Fable 5（18:48–19:43 UTC，官方確認 Fable 5 仍如預期維持「不消耗用量額度」的存取狀態）。本日新增已知問題 7 條：READ 工具未標示目前正在讀取哪一個檔案（issue #21151，186 個讚）；功能請求新增選項常駐顯示 Claude 思考過程（issue #8477，346 個讚，今日互動最高）；工作目錄追蹤暫存檔 `/tmp/claude-*-cwd` 從未清理持續累積（issue #8856，70 個讚）；送出前檢視/編輯「已貼上文字」區塊（issue #3412，296 個讚）；升級方案付款時 `PaymentIntent` 於確認完成前即遭 `void_invoice` 作廢（issue #55982，25 個讚）；Desktop 版登出／重啟後 session 消失（issue #26452，29 個讚）；Skills 支援子目錄結構（issue #10238，165 個讚）。既有已知問題更新：Remote Control 自動重連失效（issue #34255）反應數持平於 97 個讚，問題持續未解；AskUserQuestion 60 秒逾時自動代答機制經 Hacker News 部落格文章（olafalders.com「Claude Code: Anatomy of a Misfeature」，score 140）確認為 2026-07-01（v2.1.198）刻意加入的「效率繞過」設計，另有 Hacker News 使用者具體案例（score 23）證實請求放慢步調／暫停仍遭 agent 無視。前一重大異動為 v2.1.212（2026-07-17）`/fork` Breaking change（見「版本更新」表格）。
 
 ---
 
