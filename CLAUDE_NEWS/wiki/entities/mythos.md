@@ -4,7 +4,7 @@
 **狀態：** active（出口管制解除，2026-07-01 起全球恢復存取）
 **領域：** 🤖 模型
 **首次出現：** 2026-04（限定夥伴 Preview）
-**最後更新：** 2026-07-16
+**最後更新：** 2026-07-18
 **最後新聞更新：** 2026-07-16
 
 > **最新進展**（2026-07-16）
@@ -104,13 +104,13 @@ Anthropic 的官方 AI 資安能力研究計畫，Mythos Preview 為核心工具
 #### 2026-06-29
 **美國政府正式許可恢復 Mythos 存取（信任合作夥伴）+ 中國 Z.Ai 聲稱對標**：
 - **政府許可進一步確認**：qz.com 報導 Anthropic 正式獲得美國政府許可，可向特定信任合作夥伴恢復 Mythos 存取（[qz.com](https://qz.com/anthropic-mythos-5-clearance-trusted-partners-commerce-062926)）；此為繼 6/27 商務部長 Lutnick 致函後，政府鬆綁政策的進一步落實，Fable 5 全面解禁談判同步推進中
-- **中國 Z.Ai 聲稱對標 Mythos（待核實）**：Reuters 報導（[Reuters](https://www.reuters.com/legal/litigation/chinas-360-says-it-has-developed-tools-match-anthropics-mythos-2026-06-24/)，HN score 8）中國 Z.Ai 與 360 聲稱已開發出可與 Mythos 匹敵的網路安全 AI 模型；Z.Ai 為新出現的宣稱方（360 已見於 6/24 條目）；兩家公司均未提供獨立 benchmark 驗證，標「待核實」
+- **中國 Z.Ai 聲稱對標 Mythos（2026-06-24 指控，至今無後續）**：Reuters 報導（[Reuters](https://www.reuters.com/legal/litigation/chinas-360-says-it-has-developed-tools-match-anthropics-mythos-2026-06-24/)，HN score 8）中國 Z.Ai 與 360 聲稱已開發出可與 Mythos 匹敵的網路安全 AI 模型；Z.Ai 為新出現的宣稱方（360 已見於 6/24 條目）；兩家公司均未提供獨立 benchmark 驗證，近 14 天日報無相關後續報導佐證
 
 #### 2026-06-28
 **TechCrunch / Mashable 後續確認 Mythos 5 部分解禁 + 競品聲稱對標（Sakana Fugu / WSJ）**：
 - **TechCrunch 補充細節**（HN n/a）：補充 Lutnick 致信收件人為 Anthropic **chief compute officer Tom Brown**（非此前部分媒體所述的聯合創辦人），確認 100+ 受信任機構範圍含其**非美籍員工**，是兩週禁令後的差異化部分鬆綁（[TechCrunch](https://techcrunch.com/2026/06/26/trump-admin-releases-anthropic-mythos-to-be-used-by-more-than-100-us-companies-agencies/)）；Mashable 同步報導（[Mashable](https://mashable.com/tech/claude-mythos-5-reinstated-by-us-government)）
 - **Sakana AI Fugu**：日本 Sakana AI 發布 Fugu，聲稱可與 Fable 5 / Mythos Preview 比肩，支援 multi-agent API 協調其他模型（[TechCrunch](https://techcrunch.com/2026/06/27/asian-ai-startups-launch-mythos-like-models-as-anthropics-export-ban-drags-on/)，HN score 256）；與同日中國 360 Tulongfeng 聲明合看，亞洲 AI 新創正以出口禁令空檔加速追趕 Mythos 等級能力
-- **WSJ：中國已在網路安全 AI 追上 Anthropic**：WSJ 報導指中國在網路安全 AI 能力上已逼近 Anthropic，Tulongfeng 為代表案例（[WSJ](https://www.wsj.com/tech/ai/chinese-ai-anthropic-mythos-cybersecurity-574b02c2)，Reuters HN score 7）；此說法尚未有獨立 benchmark 驗證，分析師標「待核實」
+- **WSJ：中國已在網路安全 AI 追上 Anthropic（2026-06-28 指控，至今無後續）**：WSJ 報導指中國在網路安全 AI 能力上已逼近 Anthropic，Tulongfeng 為代表案例（[WSJ](https://www.wsj.com/tech/ai/chinese-ai-anthropic-mythos-cybersecurity-574b02c2)，Reuters HN score 7）；此說法尚未有獨立 benchmark 驗證，近 14 天日報無相關後續報導佐證
 
 #### 2026-06-27
 **Mythos 5 部分解禁：美國商務部批准 100+ 機構有限存取**：

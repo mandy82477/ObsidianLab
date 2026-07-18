@@ -4,7 +4,7 @@
 **狀態：** active（正式發布）
 **領域：** 🤖 模型
 **首次出現：** 2026-07-01
-**最後更新：** 2026-07-14
+**最後更新：** 2026-07-18
 **最後新聞更新：** 2026-07-14
 
 > **最新動態**（2026-07-14）
@@ -66,7 +66,7 @@ claude --model claude-sonnet-5-20260701
 
 ## 爭議
 
-- ⚠️ **官方對比圖表遭質疑修改（2026-07-02，待核實）**：分析文章指出 Anthropic 修改了官方 Sonnet 5 對比圖表，該圖表原版本呈現 Sonnet 5 表現較差（[vincentschmalbach.com](https://www.vincentschmalbach.com/anthropic-changed-sonnet-5-chart-after-it-made-sonnet-look-bad/)，HN score 3）；HN score 3 訊號極弱，且原文未提供修改前後圖表對照的完整存檔連結，暫列「待核實」，不寫成定論
+- ⚠️ **官方對比圖表遭質疑修改（2026-07-02 指控，至今無後續）**：分析文章指出 Anthropic 修改了官方 Sonnet 5 對比圖表，該圖表原版本呈現 Sonnet 5 表現較差（[vincentschmalbach.com](https://www.vincentschmalbach.com/anthropic-changed-sonnet-5-chart-after-it-made-sonnet-look-bad/)，HN score 3）；HN score 3 訊號極弱，且原文未提供修改前後圖表對照的完整存檔連結，近 14 天日報無相關後續報導或官方回應，暫無法進一步驗證
 - ⚠️ **個性/語氣不如 Sonnet 4.6（主觀回饋）**：Reddit 多位使用者反映 Sonnet 5 智力提升但互動個性流失——Sonnet 4.6 原本較有個性、懂得對話節奏、簡短回應精準，Sonnet 5 感覺更像通用「help」助手而非有特色的對話夥伴（[Reddit r/ClaudeAI](https://www.reddit.com/r/ClaudeAI/comments/1ulf5xc/something_important_was_lost_between_sonnet_46/)）；屬主觀體驗回饋，非量化評測，與 Fable 5「失去靈魂」討論（見 [[entities/fable-5]] 爭議區）呈現類似的世代模型「個性 vs 能力」取捨模式（推論）
 - ⚠️ **回應內容重複（弱訊號，2026-07-09）**：Reddit r/ClaudeCode 使用者詢問是否也遇到 Sonnet 5 回應內容重複的情形；貼文無 score（Reddit RSS 恆 0，非跨平台佐證），暫僅列為待觀察訊號，不構成已驗證問題
 
@@ -95,7 +95,7 @@ claude --model claude-sonnet-5-20260701
 
 ### 2026-07-02
 **發布次日爭議：圖表可信度質疑 + 個性流失回饋**：
-- **官方圖表修改爭議（待核實）**：HN 文章指控 Anthropic 修改官方 Sonnet 5 對比圖表，原版本讓 Sonnet 5 表現不佳（[vincentschmalbach.com](https://www.vincentschmalbach.com/anthropic-changed-sonnet-5-chart-after-it-made-sonnet-look-bad/)），HN score 3 訊號弱，尚待更多獨立來源佐證
+- **官方圖表修改爭議（2026-07-02 指控，至今無後續）**：HN 文章指控 Anthropic 修改官方 Sonnet 5 對比圖表，原版本讓 Sonnet 5 表現不佳（[vincentschmalbach.com](https://www.vincentschmalbach.com/anthropic-changed-sonnet-5-chart-after-it-made-sonnet-look-bad/)），HN score 3 訊號弱，近 14 天日報無相關後續報導或獨立佐證
 - **個性流失回饋**：Reddit 多位使用者反映 Sonnet 5 相較 Sonnet 4.6 智力提升但互動個性/語氣弱化，感覺更通用化（[Reddit](https://www.reddit.com/r/ClaudeAI/comments/1ulf5xc/something_important_was_lost_between_sonnet_46/)），屬主觀體驗，非量化評測
 
 ### 2026-07-01

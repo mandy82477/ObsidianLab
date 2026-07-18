@@ -4,7 +4,7 @@
 **狀態：** active
 **領域：** 🛠️ 工具/功能
 **首次出現：** 2025（正式推出）
-**最後更新：** 2026-07-17
+**最後更新：** 2026-07-18
 **最後新聞更新：** 2026-07-17
 
 > **最新版本動態**（2026-07-17）
@@ -79,7 +79,7 @@
 - 🔴 **未修復**｜**終端機複製夾帶多餘縮排與行尾空白（GitHub issue #18170，累積 131 則留言、275 個讚，首見 2026-07-08，2026-07-16 讚數更新）**：從 Claude Code 終端機複製文字（段落或程式碼區塊）時會夾帶前導縮排與行尾空白，影響貼上至其他編輯器或文件時的格式整潔；官方尚未回應。
 - 🔴 **未修復**｜**AskUserQuestion 60 秒逾時自動代答（GitHub issue #73125，累積 142 則留言、403 個讚，2026-07-08 持續累積）**：互動詢問（AskUserQuestion）逾時 60 秒未回應會自動代答並繼續執行（提示訊息「No response after 60s — continued without an answer」），可能導致決策分岔點被略過而產生非預期結果；此行為早已存在（[issue #30740](https://github.com/anthropics/claude-code/issues/30740)），2026-07-02 因 Reddit 貼文才被社群大量注意到並引發體驗爭議，反應數持續攀升（07-02 起連續多日高居不下），官方尚無修復或設定可調整逾時時間；討論詳見 [[topics/community-tech-discussions]]
 - 🔴 **未修復**｜**未處理例外僅顯示 [object Object]（GitHub issue #59033，累積 70 則留言、85 個讚，2026-07-08）**：發生未處理例外時，錯誤訊息僅顯示 `[object Object]`，未提供可診斷的錯誤內容，增加除錯難度；官方尚未回應。
-- ❓ **待查證**｜**升級至 v2.1.1 後 token 消耗異常暴增 4 倍以上（GitHub issue #16856，累積留言 72，👍 77）**：使用者反映升級後 rate 消耗速度明顯加快超過 4 倍，屬重大體驗負評，官方尚未回應或說明原因；升版前建議留意此回報，若已升級可觀察實際 usage 曲線變化
+- ❓ **待查證（2026-07-03 指控，至今無後續）**｜**升級至 v2.1.1 後 token 消耗異常暴增 4 倍以上（GitHub issue #16856，累積留言 72，👍 77）**：使用者反映升級後 rate 消耗速度明顯加快超過 4 倍，屬重大體驗負評，官方尚未回應或說明原因；升版前建議留意此回報，若已升級可觀察實際 usage 曲線變化
 - 🔴 **未修復**｜**Extended Thinking「思考內容」實為摘要，非真實推理（2026-06-22 社群揭露）**：工程師 Patrick McCanna 分析 Claude Code session log 後發現，`thinking blocks` 呈現的文字為摘要，而非模型的真實推理過程。真實推理被 Anthropic 以加密方式存於 600 字元 signature 中，API 僅回傳摘要；完整思考內容需要企業級協議才可取用，Anthropic 持有解密金鑰。需依賴 thinking blocks 進行審計追蹤的工程師應特別注意此限制（HN score 98，見 [原文](https://patrickmccanna.net/the-text-in-claude-codes-extended-thinking-output-is-not-authentic/)）
 - 🔴 **未修復**｜**Explore subagent 固定使用 Haiku 模型（2026-06-30 社群分析）**：深入分析 Claude Code 內建 subagent 類型後發現，Explore subagent 被鎖定只能使用 Haiku 模型（見 [Reddit 討論](https://www.reddit.com/r/ClaudeAI/comments/1ujpz0t/caution_when_using_native_subagent_explore_for/)）。在複雜除錯場景中，Haiku 能力可能不足以完成任務，導致誤判或分析遺漏。使用前建議確認任務複雜度是否在 Haiku 能力範圍內；若需更強推理能力，考慮改用其他 subagent 類型或直接指定模型的自訂 agent。
 - ❓ **待查證（2026-06-22 指控，至今無後續）**｜**記憶過多導致品質退步**：用戶反映兩個進行中專案的 Claude Code 品質近期大幅退步，疑似 context 中累積過多歷史記憶導致干擾；見 [[topics/code-quality-decline]]
@@ -343,7 +343,7 @@
 | 2026-06-30 | **v2.1.197**（初報）：`/model` 選單出現 Sonnet 5 選項（當時無法選用），社群預測正式發布在即；07-01 官方確認正式切換 |
 | 2026-06-30 | **Explore subagent 鎖定 Haiku 分析**：社群深入分析內建 subagent 類型，發現 Explore subagent 固定使用 Haiku 模型，除錯場景可能因模型能力不足導致問題（見 [[已知問題]]）|
 | 2026-06-30 | **Session 30天自動刪除：Anthropic 拒絕修復**：官方在 GitHub issue #62476 明確表示不修復此行為，社群建議透過 CLAUDE.md + `.claude/changelog` 手動保留記錄 |
-| 2026-06-30 | **36Kr 報導背景任務升級**（待核實）：36Kr 報導 Claude Code 下一重大升級方向為讓系統在背景完成所有任務、同時使用者繼續對話互動；官方尚未正式公告 |
+| 2026-06-30 | **36Kr 報導背景任務升級**（2026-06-30 指控，至今無後續）：36Kr 報導 Claude Code 下一重大升級方向為讓系統在背景完成所有任務、同時使用者繼續對話互動；官方尚未正式公告 |
 | 2026-06-29 | **v2.1.196**：新增 org default model 功能，企業管理員在 org console 設定後，使用者在 `/model` 看到「Org default」或「Role default」選項 |
 | 2026-06-25 | **v2.1.191**：新增 `/rewind` 指令，可從 `/clear` 執行前任一對話節點恢復，無需重新輸入指令背景；修正 streaming 捲軸自動跳底部問題（UX 改善）；TypeScript SDK v0.106.0 與 Python SDK v0.112.0 同日發布，新增 `client.system.message` 支援 |
 | 2026-06-24 | **v2.1.187**：新增 `sandbox.credentials` 設定，可阻止沙盒指令讀取憑證檔案與機密環境變數（AWS 金鑰、API token 等），防止沙盒內惡意指令竊取敏感資訊；新增組織層級模型限制功能，企業管理員可統一管控可用模型清單 |

@@ -4,15 +4,17 @@
 **狀態：** active
 **領域：** 👤 人物
 **首次出現：** 2026-04-25
-**最後更新：** 2026-07-16
+**最後更新：** 2026-07-18
 **最後新聞更新：** 2026-07-16
 
-> **最新政策立場**（2026-06-26，政策後續見 [[topics/anthropic-government-policy]]）
-> Wired 報導延伸確認：Trump 政府已不再信任 Dario Amodei，改由 Anthropic 聯合創辦人 Tom Brown（GPT-3 共同研發者）接替與政府的 Fable/Mythos 解鎖談判。政府稱 Tom Brown「能實際討論，不怪」，Dario 的安全立場與政策風格持續受到質疑。Tom Brown 主導的談判已於 2026-07-01 促成出口管制正式解除（見 [[entities/fable-5]]、[[entities/tom-brown]]），但 Dario 本人與白宮的信任關係尚無報導顯示已修復。
+> **最新動態**（2026-07-16，待核實）
+> Politico 報導「Anthropic 執行長」捐款 100 萬美元予某 super PAC，捲入 AI 陣營政治獻金角力戰局；原文標題未具名確認捐款人身分，現任執行長為 Dario Amodei，但此事實歸屬本人尚待核實。政策立場面延續 2026-06-26 Wired 報導：Trump 政府已不再信任 Amodei，改由聯合創辦人 Tom Brown（GPT-3 共同研發者）接管 Fable/Mythos 解鎖談判，該談判已於 2026-07-01 促成出口管制正式解除（見 [[topics/anthropic-government-policy]]、[[entities/tom-brown]]），但 Dario 本人與白宮的信任關係尚無報導顯示已修復。
 
 ---
 
 ## 現況
+
+2026-07-16，Politico 報導「Anthropic 執行長」捐款 100 萬美元予某 super PAC，捲入 AI 陣營之間鉅額政治獻金角力戰局；原文標題未具名確認捐款人身分，現任執行長為 Dario Amodei，但此事實歸屬本人尚待核實（政策/政治角力面向另見安全政策記者相關頁面）。
 
 2026-06-26，Wired 確認 Trump 政府已不再信任 Amodei，由 Tom Brown 全面接管 Fable 5 出口管制談判；白宮人士批評其「行為怪異」。此為他近期最重大的政治處境轉變，顯示 Anthropic 與現任行政當局關係持續惡化。**後續進展**：Tom Brown 主導的談判已於 2026-07-01 促成 Fable 5／Mythos 5 出口管制正式解除、全球恢復存取（見 [[topics/anthropic-government-policy]]、[[entities/fable-5]]），但截至目前尚無報導提及 Dario 個人與白宮的信任關係已修復——談判成果與 Dario 本人政治處境是兩條獨立線索，不應混為一談。
 
