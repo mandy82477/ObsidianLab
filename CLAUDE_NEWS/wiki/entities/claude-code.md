@@ -14,7 +14,7 @@
 
 ## 現況
 
-**最新版本動態：** 最新版本 **v2.1.212**（2026-07-17）為 ⚠️ **Breaking change**：`/fork` 不再於同一 session 內啟動子 agent，改為將對話複製進一個新的背景 session（在 `claude agents` 中自成一列），使用者可同時繼續原工作；原本由 `/fork` 啟動的同 session 子 agent 功能更名為 `/subtask`，依賴舊語意的腳本/工作流需改用新指令，無過渡期即刻生效；已提報 [[feature-radar]] 新增條目。前一版本 **v2.1.211**（2026-07-15）新增 `--forward-subagent-text` 旗標與 `CLAUDE_CODE_FORWARD_SUBAGENT_TEXT` 環境變數，可在 `stream-json` 輸出中包含 subagent 文字與思考內容，讓建構監控／日誌工具的開發者取得子代理層級的可觀測資料。再前一重大異動為 **v2.1.207**（2026-07-11）將 Auto mode 在 Bedrock、Vertex AI、Foundry 三平台改為預設開啟，不再需要 `CLAUDE_CODE_ENABLE_AUTO_MODE` 環境變數 opt-in（可用設定項 `disableAutoMode` 關閉），同版修復終端機凍結問題。近期各版本的指令、旗標與設定項異動，詳見下方「最新版本」表格。
+**最新版本動態：** 最新版本 **v2.1.214**（2026-07-18）為純安全性修正：修復 single-segment `dir/**` allow 規則（如 `Edit(src/**)`）誤自動核准樹狀結構中任意層級 `dir/` 目錄寫入的權限漏洞（原本應僅限 `<cwd>/dir`），並修復另一項相關權限問題；無新指令/旗標，未列入 [[feature-radar]]。前一重大異動為 **v2.1.212**（2026-07-17）⚠️ **Breaking change**：`/fork` 不再於同一 session 內啟動子 agent，改為將對話複製進一個新的背景 session（在 `claude agents` 中自成一列），使用者可同時繼續原工作；原本由 `/fork` 啟動的同 session 子 agent 功能更名為 `/subtask`，依賴舊語意的腳本/工作流需改用新指令，無過渡期即刻生效；已提報 [[feature-radar]] 新增條目。近期各版本的指令、旗標與設定項異動，詳見下方「最新版本」表格。
 
 **產品定位：** Claude Code 是 Anthropic 的 AI 編碼 CLI 工具，核心能力已從程式碼助理擴展為具備全桌面自動化、多代理管理（Managed Agents）、MCP Server 整合、Hooks 機制、AI 安全審查，以及可串接 1Password 憑證庫安全登入網站（密碼不外流至 Claude／Anthropic，2026-07-17 多家媒體報導，官方技術細節待補）的完整 agent 開發平台；GitHub Stars 達 **131,000+**。
 
@@ -66,7 +66,7 @@
 - 🔴 **未修復**｜**額度顯示 84% 卻收到「You've hit your limit」（GitHub issue #19673，累積反應 75，2026-07-04）**：使用者反映用量儀表板顯示尚餘額度（僅用 84%）情況下即收到「已達額度上限」提示，質疑額度計算邏輯是否準確或存在顯示與實際計算不同步的問題；官方尚未回應
 - 🔴 **未修復**｜**Session 額度上限時無法順暢接續／功能請求自動續行（GitHub issue #13354，累積 68 則留言、175 個讚，首見 2026-07-07，2026-07-17 讚數更新）**：使用者希望 session 達到額度上限時能有更順暢的接續機制（如自動排隊、無縫轉續、自動恢復），而非直接中斷工作流程；官方尚未回應或提供替代方案。（此前曾被誤列為兩則獨立條目，本次合併統一追蹤）
 
-### 🧠 行為與品質（20 條未修復、4 條待查證）
+### 🧠 行為與品質（24 條未修復、4 條待查證）
 
 - 🔴 **未修復**｜**「The model's tool call could not be parsed (retry also failed)」間歇性中斷 session（issue #63875，累積 75 則留言、117 個讚；issue #62123，累積 63 則留言、113 個讚，皆 2026-07-13 回報，屬同一 bug 兩則獨立高互動回報，合併追蹤）**：session 進行中間歇性中斷並顯示「The model's tool call could not be parsed (retry also failed)」錯誤；issue #62123 回報者指出在 Opus 4.7 環境下多次發生；官方尚未回應或說明成因。
 - 🔴 **未修復**｜**`--dangerously-skip-permissions` 於 v2.1.77 後所有版本失效（GitHub issue #36168，2026-07-12 回報，regression）**：使用者回報 v2.1.77 之後的所有 Claude Code 版本，`--dangerously-skip-permissions`（跳過權限確認旗標）皆無法正常運作，影響依賴此旗標進行無人值守自動化的工作流；官方尚未回應或說明成因。

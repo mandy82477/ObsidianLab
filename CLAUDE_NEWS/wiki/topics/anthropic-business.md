@@ -180,6 +180,15 @@ Simon Willison（知名開發者博主）發表文章，認為 Anthropic 與 Ope
 
 ### 2026-07
 
+#### 2026-07-18
+- **[重大，算力供給側，三方交叉驗證] Meta 據報洽談以 100 億美元規模租賃運算力予 Anthropic**：詳見「戰略合作」表新增列（Google News/Reuters；Google News/The New York Times；Hacker News）
+- **[運算力吃緊訊號，與上則呼應] Anthropic 收緊 Claude Fable 5 存取限制，Startup Fortune／the-decoder 稱因運算資源不足**：詳見 [[entities/pricing]]
+- **[矛盾訊號，需持續觀察] 官方 `@claudeai` 帳號同日稱將 Fable 5「設為永久」，與上則收緊限制方向相反**：詳見 [[entities/pricing]]
+- **[分析師觀察，未確認] Jefferies 分析師關注 AMD 是否將與 Anthropic 達成合作，時值 Advancing AI 2026 活動將近**：Yahoo! Finance Canada 報導 Jefferies 分析師持續關注 AMD 是否可能與 Anthropic 達成合作協議，時值 AMD「Advancing AI 2026」活動即將舉行。**注意**：屬分析師觀察/猜測階段，非官方確認或洽談中報導，暫不列入戰略合作表（Google News/Yahoo! Finance Canada）
+- **[IPO 敘事，媒體擴散確認，非新事實] Yahoo Finance Singapore 跟進報導 Anthropic 60 萬美元 IPO 敘事職缺**：與 07-17 已記錄的 Business Insider 首報為同一事實（$600,000 徵才協助形塑 IPO 前華爾街敘事），本次為另一獨立媒體跟進報導，強化該訊號的傳播度，非新增事實（Google News/Yahoo Finance Singapore）
+- **[廣告爭議延伸評論，資訊量少] Time Magazine 評論 Anthropic 廣告反彈聲浪「背後有更值得關注的意涵」**：Time Magazine 發表評論文章，探討外界對 Anthropic 一則廣告的反彈聲浪，並指出爭議背後有更值得關注的意涵。**注意**：原文摘要未展開具體廣告內容與反彈細節，暫記錄評論存在，待後續補充（Google News/Time Magazine）
+- **[競品動態，詳見 competitor-landscape] Kimi K3 官方一手技術規格揭露；中國 AI 蒸餾指控延燒，Chamath Palihapitiy 加入評論；WSJ 分析 AI 普及對中美競爭格局的不對稱意涵**：三則競品動態詳見 [[topics/competitor-landscape]]
+
 #### 2026-07-17
 - **[IPO 敘事整備，具體金額首見] Anthropic 揭露將支付 60 萬美元徵才形塑其「棘手 IPO 敘事故事」**：Business Insider 報導 Anthropic 將支付 $600,000 尋人協助形塑其 IPO 前敘事。**對商業的意涵**：詳見「IPO 前瞻與估值追蹤」表新增列（Google News/Business Insider）
 - **[戰略合作，金融科技延續] FIS 與 Anthropic 延長既有合作關係**：詳見「戰略合作」表新增列（Google News/Asset Servicing Times）
