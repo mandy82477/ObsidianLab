@@ -3,11 +3,11 @@
 **狀態：** monitoring（出口管制主線已解除，剩餘承諾落實與衍生支線持續觀察；中美 AI 工具信任對峙已獨立成頁）
 **領域：** 🏛️ 政策/安全
 **開始日期：** 2026-05-01
-**最後更新：** 2026-07-17
-**最後新聞更新：** 2026-07-17
+**最後更新：** 2026-07-18
+**最後新聞更新：** 2026-07-18
 
-> **最新攻防紀錄**（2026-07-16）
-> Politico（經 Google News 轉載，僅標題可用）報導美國參議員 Mike Rounds 就 Anthropic 的 Mythos 接受五角大廈（Pentagon）簡報，顯示國會層級對 Mythos 軍用能力的關注持續；同日南華早報（SCMP）獨家專訪「Pax Silica」政策架構的主要推手（姓名待確認），論述美國仍可維持 AI 領先地位，為既有「管制恐反助中國」論述（Bloomberg 06-26）提供首個正面反論；WIRED 分析並確認 Anthropic 正積極遊說美國各州加快 AI 監管腳步（延續並補強 07-15 Politico 標題式報導）。同日稍早的另一批事件——HN 轉載 Politico 全文揭露 Anthropic 派遣初階員工出席歐盟聽證、Dario Amodei 政治獻金——詳見下方「## 攻防紀錄」。出口管制主線本身已於 07-01 落幕（詳見「## 摘要」）；中美 AI 工具信任對峙已於 2026-07-12 整合拆出至獨立頁 [[topics/safety-china-trust-dispute]]。
+> **最新攻防紀錄**（2026-07-17）
+> SFGATE（經 Google News 轉載，僅標題可用）報導 Anthropic 員工捐款 300 萬美元，支持 AI 安全相關法規推動，緊接 07-16 Dario Amodei 個人捐款 100 萬美元予某 super PAC 的政治獻金布局動態，顯示 Anthropic 相關人士在美國 AI 政策遊說／獻金領域的參與持續加碼；捐款對象（是否為同一 super PAC）、支持的具體法規對象均待原文確認（待查證）。07-16 其餘攻防（五角大廈 Mythos 簡報、州級監管遊說、Pax Silica 論戰、歐盟聽證細節）詳見下方「## 攻防紀錄」。出口管制主線本身已於 07-01 落幕（詳見「## 摘要」）；中美 AI 工具信任對峙已於 2026-07-12 整合拆出至獨立頁 [[topics/safety-china-trust-dispute]]。
 
 ---
 
@@ -40,7 +40,7 @@
 | EU 對 Anthropic 投入度觀感 | 07-14 politico.eu 標題式報導已於 07-16 經 Hacker News 轉載 Politico 全文（19 分）確認並補足細節：歐盟政策官員點名批評 Anthropic 派遣初階員工 **Donny Greenberg**（而非資深主管）出席歐洲議會安全聽證會，回應先進 AI 能力風險疑慮 | Anthropic 是否公開回應或調整後續出席層級；是否影響「歐洲據點爭奪」進度 |
 | 美國政府內部立場矛盾（Hegseth vs CISA） | The National Interest 報導：國防部長 Hegseth 曾稱 Anthropic 為「國家安全風險」，CISA（網路安全暨基礎設施安全局）現正使用其產品（2026-07-14，僅標題式轉載，細節待確認） | 是否有具體使用範圍、時間點或官方回應公開；是否呼應 06-05 Hegseth 首次確認風險標籤的既有敘事 |
 | 加拿大金融監管風險評估             | Reuters 獨家報導（source_count=2）：加拿大金融監管機關發函警告銀行業網路風險，內容明確引用 Claude Mythos（2026-07-13）；Mythos 07-01 解禁後監管機構首見的具體風險評估案例 | 是否有其他國家監管機構跟進類似警告；加拿大監管機關是否公開警告全文或機構名稱 |
-| Anthropic CEO 政治獻金布局 | Politico（經 Google News 轉載，僅標題可用）：Dario Amodei 捐款 100 萬美元予某 super PAC，捲入 AI 陣營之間鉅額政治獻金角力（2026-07-16）；具體 PAC 名稱、資金用途、對立陣營身分均待原文確認 | 是否與州級 AI 規則倡議（07-15）構成一致的政治佈局；是否有對立 PAC 陣營公開回應；人物面向詳見 [[entities/dario-amodei]] |
+| Anthropic 政治獻金布局 | Politico（07-16，經 Google News 轉載，僅標題可用）：Dario Amodei 個人捐款 100 萬美元予某 super PAC；SFGATE（07-17，經 Google News 轉載，僅標題可用）：Anthropic 員工另捐款 300 萬美元支持 AI 安全相關法規推動，捲入 AI 陣營之間鉅額政治獻金角力；兩筆捐款的 PAC/組織名稱、資金用途、對立陣營身分均待原文確認 | 兩筆捐款是否流向同一 PAC 或同一政策倡議；是否與州級 AI 規則倡議（07-15）構成一致的政治佈局；是否有對立陣營公開回應；人物面向詳見 [[entities/dario-amodei]] |
 | 國會參議院 Mythos 軍事簡報 | Politico（經 Google News 轉載，僅標題可用）：參議員 Mike Rounds 就 Anthropic 的 Mythos 接受五角大廈簡報，暗示 Mythos 軍用能力持續受國會層級關注（2026-07-16） | Rounds 是否公開表態或提出立法動作；是否與「軍事合約」戰場既有的「DoD 已將三分之二 AI 工作量移出 Anthropic」敘事產生新進展 |
 | Pax Silica 政策架構與中美 AI 領先地位論戰 | 南華早報獨家專訪「Pax Silica」政策架構主要推手（姓名待確認），主張美國仍可維持 AI 領先地位，為既有「出口管制反效」論述（Bloomberg 06-26）提供首個正面反駁（2026-07-16，僅單一媒體專訪，待第三方確認） | Pax Silica 政策架構具體內容與推手身分；此論述是否獲其他政策圈人士呼應或反駁 |
 
@@ -118,6 +118,7 @@ Fable 5 發布後，Amazon 安全研究人員發現特定提示詞可讓模型�
 
 | 日期 | 方 | 動作 | 效果 |
 |------|----|------|------|
+| 2026-07-17 | 🏢 | SFGATE（經 Google News 轉載，僅標題可用，原文因轉址未確認）：Anthropic 員工捐款 300 萬美元，支持 AI 安全相關法規推動（2026-07-17 16:43 UTC） | 繼 07-16 Dario Amodei 個人捐款 100 萬美元予某 super PAC 後，Anthropic 員工集體捐款規模更大（300 萬美元）；是否流向同一 PAC/組織、支持哪項具體法規均待原文確認（待查證） |
 | 2026-07-16 | 🏛️🌐 | Politico（經 Google News 轉載，僅標題可用，原文因轉址未確認）：參議員 Mike Rounds 就 Anthropic 的 Mythos 接受五角大廈簡報（2026-07-16 20:12 UTC） | 國會軍事委員會層級對 Mythos 軍用能力的關注持續，暗示 05-01 DoD 排除 Anthropic、06-17 三分之二工作量轉移後，軍事戰場仍有國會層級後續動態；具體簡報內容與 Rounds 立場待確認 |
 | 2026-07-16 | 🌐 | WIRED 分析並確認 Anthropic 正積極遊說美國各州加快 AI 監管腳步（州級而非僅聯邦層級政策遊說），延續並補強 07-15 Politico 標題式報導（2026-07-16 18:35 UTC） | 州級規則倡議首度獲具分析深度的媒體（WIRED）確認，非僅標題轉載；具體州別與規則內容仍待報導揭露 |
 | 2026-07-16 | 🌐 | 南華早報獨家專訪「Pax Silica」政策架構主要推手（姓名待確認），論述美國仍可維持 AI 領先地位（2026-07-16 15:00 UTC） | 為既有「出口管制反效，恐助長中國開源模型」論述（Bloomberg 06-26）首度出現的正面反駁觀點；論者身分與政策架構具體內容待確認 |
@@ -213,6 +214,7 @@ Fable 5 發布後，Amazon 安全研究人員發現特定提示詞可讓模型�
 
 ## 參考來源
 
+- [[news/2026-07-18]]
 - [[news/2026-07-16]]
 - [[news/2026-07-15]]
 - [[news/2026-07-14]]
@@ -237,6 +239,9 @@ Fable 5 發布後，Amazon 安全研究人員發現特定提示詞可讓模型�
 - [Chris Olah Vatican Remarks](https://www.anthropic.com/news/chris-olah-pope-leo-encyclical) — Anthropic Blog
 
 ## 時序
+
+### 2026-07-17
+- **[待查證] SFGATE：Anthropic 員工捐款 300 萬美元支持 AI 安全法規推動**：Google News 轉載 SFGATE 標題，稱 Anthropic 員工捐款 300 萬美元，支持 AI 安全相關法規推動；僅標題可用，原文為轉址頁面，捐款對象（是否為 super PAC 或其他組織）、支持的具體法規均未展開（Google News/SFGATE，2026-07-17 16:43 UTC）
 
 ### 2026-07-16
 - **[軍事監督] Politico：參議員 Mike Rounds 就 Mythos 接受五角大廈簡報**：Google News 轉載 Politico 標題，稱美國參議員 Mike Rounds 就 Anthropic 的 Mythos 接受五角大廈（Pentagon）簡報；僅標題可用，原文為轉址頁面，無法取得簡報具體內容或 Rounds 立場（Google News/Politico，2026-07-16 20:12 UTC）
