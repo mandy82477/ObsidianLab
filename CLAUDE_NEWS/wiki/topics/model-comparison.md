@@ -6,8 +6,8 @@
 **最後更新：** 2026-07-19
 **最後新聞更新：** 2026-07-16
 
-> **最新對照更新**（2026-07-14）
-> Fable 5 免費期限維持 7/19 不變（見 [[entities/fable-5]]；The New Stack 07-13 報導 Anthropic 拒絕說明延長是否與 Cursor 內部發現有關，推測性報導，無新截止日）。社群持續出現 Fable 5 vs GPT-5.6 Sol 的多小時實測比較，評價分歧：速度與 bug 數量傾向 Fable 5 勝出，但 Sol 5.6 額度重置頻率被視為優勢（Reddit，詳見「社群實測觀察」）。目前公開陣容五級維持不變：Fable 5（旗艦）> Opus 4.8 > Sonnet 5（主力）> Sonnet 4.6 > Haiku 4.5。
+> **最新對照更新**（2026-07-15）
+> Anthropic 研究部落格發布〈Claude's values across models and languages〉，分析 Claude 在不同模型版本與語言間的價值觀回應差異（非選型指標，不影響本頁建議，詳見「跨模型／跨語言行為研究」）。選型面本身無變化：Fable 5 免費期限維持 7/19 不變（見 [[entities/fable-5]]），公開陣容五級維持不變：Fable 5（旗艦）> Opus 4.8 > Sonnet 5（主力）> Sonnet 4.6 > Haiku 4.5；社群持續回報 Fable 5 vs GPT-5.6 Sol 混合評價（速度／bug 數量傾向 Fable 5，額度重置頻率傾向 Sol，詳見「社群實測觀察」）。
 
 ---
 

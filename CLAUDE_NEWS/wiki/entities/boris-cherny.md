@@ -4,11 +4,11 @@
 **狀態：** active
 **領域：** 👤 人物
 **首次出現：** 2026-04-23（事後報告發布）
-**最後更新：** 2026-07-08
-**最後新聞更新：** 2026-07-08
+**最後更新：** 2026-07-18
+**最後新聞更新：** 2026-07-18
 
-> **最新工作流分享**（2026-06-28）
-> Boris Cherny 在 howborisusesclaudecode.com 公開分享 13 個日常 Claude Code 使用技巧，包括同時開 5 個獨立 git checkout 搭配 5 個 Claude Code 實例、以 `--teleport` 旗標跨本地/Web 環境切換、從 iPhone 啟動 session 下午電腦接力等。他強調這是「surprisingly vanilla」setup，Claude Code 開箱即用無需特殊配置。
+> **最新動態**（2026-07-17，待核實）
+> Startup Fortune 報導 Boris Cherny 表示他現在同時執行數千個 Claude Code agent。報導僅為標題層級資訊，未展開原始出處（訪談或社群貼文未明），呼應他先前（2026-05-13）揭露的夜間數千子代理深度工作工作流，暫標待核實。
 
 ---
 
@@ -21,6 +21,14 @@ Boris Cherny 是 Anthropic Claude Code 的創始人與負責人（Head of Claude
 ---
 
 ## 公開言論與主張
+
+### 「現在同時執行數千個 Claude Code agent」（2026-07-17，待核實）
+
+Startup Fortune 報導 Boris Cherny 表示他現在同時執行數千個 Claude Code agent。原文屬標題層級資訊，未展開具體脈絡（是否為訪談、社群貼文或其他場合的發言未明），暫標（待核實）。此說法呼應他 2026-05-13 揭露的「每晚數千個 AI 子代理」工作流架構，若屬實則顯示該工作流已從「夜間批次」擴展為「同時執行」的常態實踐，但因原始出處不明，尚不確定是否為既有立場的延伸陳述或報導轉述誤差。
+
+- 來源：[Google News / Startup Fortune，2026-07-17](https://news.google.com/rss/articles/CBMingFBVV95cUxOeEZlYzhQcGFQX3V2N3U1T1doZmVIdkhvQ3plX3ZVRFdwQU5faGtWZzVEeVhmMVdGU2F3c1BLcFFLVnZHd0RnNE5vQkVYSFg5V2lQTm5hSEY3a25ZM3AweWJ5VHhFeHdfRUt0RTVSNXdXa0NEZTBJYjVoRjJlWml1aC1PZUhOLUxQS09nUWF3R0kzX2FCRkdsQ1AzOW1XQQ?oc=5)
+
+---
 
 ### 13 個日常 Claude Code 使用技巧（2026-06-28）
 
@@ -117,6 +125,7 @@ Boris Cherny 的公開言論呈現兩種截然不同的社群反應：
 
 ## 歷史記錄
 
+- 2026-07-17：Startup Fortune 報導其表示現在同時執行數千個 Claude Code agent，呼應 5/13 揭露的夜間數千子代理工作流，惟原始出處（訪談或社群貼文）未明，暫標（待核實）（Google News / Startup Fortune，2026-07-17）
 - 2026-07-08：inc.com 報導「Head of Claude Code」談新創公司需具備的 5 種員工原型（employee archetypes），原文未具名確認發言人，可能為 Boris Cherny 或 [[entities/cat-wu]]，暫標（待核實）（inc.com，2026-07-07，https://www.inc.com/ashley-couto/claude-code-startup-needs-employee-archetypes/91370409）
 - 2026-06-28：在 howborisusesclaudecode.com 公開 13 個日常 Claude Code 使用技巧，涵蓋 5 個並行實例搭配獨立 git checkout、`--teleport` 跨環境切換、iPhone 啟動電腦接力等；強調「surprisingly vanilla」setup（Hacker News，score 5）
 - 2026-06-24：Times of India 報導其承認「AI 寫 100% 程式碼正在變得有問題」，與早前「coding is solved」立場形成對比，呼應企業端過度依賴反彈聲浪
@@ -149,3 +158,4 @@ Boris Cherny 的公開言論呈現兩種截然不同的社群反應：
 - [[news/2026-06-24]]
 - [[news/2026-06-28]]
 - [[news/2026-07-08]]
+- [[news/2026-07-18]]

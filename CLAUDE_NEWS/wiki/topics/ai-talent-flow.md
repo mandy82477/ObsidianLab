@@ -2,8 +2,8 @@
 
 **狀態：** ongoing
 **領域：** 💼 商業
-**開始日期：** 2026-06-19
-**最後更新：** 2026-07-13
+**開始日期：** 2026-06-21
+**最後更新：** 2026-07-18
 **最後新聞更新：** 2026-07-13
 
 > **最新動態**（2026-07-13）
@@ -49,12 +49,12 @@
 ### 2026-06-23
 - Barron's / SEJ：Google 同週失去兩名頂尖 AI 研究員，分別轉投 OpenAI 與 Anthropic；Alphabet 股價受影響。（ref: https://www.barrons.com/articles/alphabet-stock-jumper-deepmind-anthropic-3242f738）（ref: https://www.searchenginejournal.com/google-loses-two-top-ai-researchers-to-openai-anthropic/580201/）
 
-### 2026-06-19
-- Reuters：AlphaFold 共同創造者、2024 諾貝爾化學獎得主 John Jumper 離開 Google DeepMind 加入 Anthropic，被視為 Anthropic 向科學計算擴展的人才訊號；社群評「DeepMind 這週被掏空了」。繼 Noam Shazeer 之後再添頂尖人才。（ref: https://www.reuters.com/technology/us-scientist-john-jumper-leave-google-deepmind-anthropic-2026-06-19/）
+### 2026-06-21
+- Reuters：AlphaFold 共同創造者、2024 諾貝爾化學獎得主 John Jumper 離開 Google DeepMind 加入 Anthropic，被視為 Anthropic 向科學計算擴展的人才訊號；社群評「DeepMind 這週被掏空了」。繼 Noam Shazeer 之後再添頂尖人才。（Reuters 報導見報於 `news/2026-06-21.md`，Reuters URL 帶 2026-06-19 為原始報導日，與 [[entities/john-jumper]] 的 06-21 官方確認記載一致）（ref: https://www.reuters.com/technology/us-scientist-john-jumper-leave-google-deepmind-anthropic-2026-06-19/）
 
 ## 相關實體
 
-- [[entities/john-jumper]] — 諾貝爾獎得主，DeepMind → Anthropic（6/19）
+- [[entities/john-jumper]] — 諾貝爾獎得主，DeepMind → Anthropic（6/21 Reuters 確認）
 - [[entities/andrej-karpathy]] — 近期加入 Anthropic（待核實）
 - [[entities/teresa-carlson]] — 前 Microsoft/AWS 高管，2026-07-07 加入 Anthropic 主導公部門業務（待核實，非研究職但屬同期人才佈局）
 - [[topics/competitor-landscape]] — Google / OpenAI 競品格局

@@ -4,14 +4,14 @@
 **狀態：** active
 **領域：** 🛠️ 工具/功能
 **首次出現：** 2026-07-15
-**最後更新：** 2026-07-15
-**最後新聞更新：** 2026-07-15
+**最後更新：** 2026-07-18
+**最後新聞更新：** 2026-07-18
 
 ---
 
 ## 現況
 
-Anthropic 於 2026-07-15（11:40 UTC）在官方部落格宣布「Claude for Teachers」，向美國通過認證的 K-12 教師免費開放進階 Claude 功能、教學技能庫，並對接全美 50 州學術標準的實證課綱（evidence-based curricula）。除 Anthropic Blog 官方公告外，Google News 聚合下另有 CBS News、The Hill、Forbes、9to5Mac、Central Oregon Daily 等至少六家獨立媒體同步報導，聚合本身標記三個獨立來源，教育產業關注度高。
+後續媒體追蹤持續兩條路線：一是評論疑慮（2026-07-17，Education Week 報導部分評論者對「Claude for Teachers」表達疑慮，具體疑慮內容原文未展開），二是地方教育單位實際採用案例（2026-07-17，WDET 101.9 FM 報導 Anthropic 將此教師版 AI 產品導入底特律課堂）。Anthropic 於 2026-07-15（11:40 UTC）在官方部落格宣布「Claude for Teachers」，向美國通過認證的 K-12 教師免費開放進階 Claude 功能、教學技能庫，並對接全美 50 州學術標準的實證課綱（evidence-based curricula）。除 Anthropic Blog 官方公告外，Google News 聚合下另有 CBS News、The Hill、Forbes、9to5Mac、Central Oregon Daily 等至少六家獨立媒體同步報導，聚合本身標記三個獨立來源，教育產業關注度高。
 
 原文重點：「We're introducing Claude for Teachers, providing verified K-12 educators in the US free access to premium Claude capabilities, a library of teaching skills, and a direct connection to evidence-based curricula, mapped to academic standards in all 50 states.」
 
@@ -48,10 +48,14 @@ Anthropic 於 2026-07-15（11:40 UTC）在官方部落格宣布「Claude for Tea
 
 - [Anthropic Blog: Introducing Claude for Teachers](https://www.anthropic.com/news/claude-for-teachers)（2026-07-15）
 - Google News 聚合：CBS News、The Hill、Forbes、9to5Mac、Central Oregon Daily 等媒體報導
+- Education Week「Anthropic Launches Claude for Teachers. Why Some Critics Are Concerned」（2026-07-17，Google News 聚合，原文連結未於摘要提供）
+- WDET 101.9 FM「AI giant Anthropic bringing new artificial intelligence for teachers to Detroit classrooms」（2026-07-17，Google News 聚合，原文連結未於摘要提供）
 - [[news/2026-07-15]]
+- [[news/2026-07-18]]
 
 ## 歷史記錄
 
 | 日期 | 事件 |
 |------|------|
+| 2026-07-17 | Education Week 報導部分評論者對此產品表達疑慮（具體疑慮內容原文未展開）；WDET 101.9 FM 報導 Anthropic 將此教師版 AI 產品導入底特律課堂，屬地方教育單位採用案例 |
 | 2026-07-15 | 正式發布，向美國通過認證的 K-12 教師免費開放進階 Claude 功能、教學技能庫，並對接全美 50 州學術標準的實證課綱；CBS News、The Hill、Forbes、9to5Mac、Central Oregon Daily 等至少六家獨立媒體同步報導 |

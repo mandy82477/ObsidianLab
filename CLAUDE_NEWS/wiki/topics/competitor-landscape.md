@@ -4,10 +4,10 @@
 **領域：** 💼 商業
 **開始日期：** 2026-04
 **最後更新：** 2026-07-19
-**最後新聞更新：** 2026-07-17
+**最後新聞更新：** 2026-07-18
 
-> **最新競品動態**（2026-07-17）
-> Moonshot AI 發布新模型 **Kimi K3**（官方自稱 2.8 兆參數、該公司「最強模型」，CNBC/TechCrunch/FT 同步報導），自稱可與 OpenAI、Anthropic 匹敵；TechCrunch 分析即將推出的 Kimi 3 有望縮小與 Opus 4.8 的差距，FT 稱其為挑戰 Anthropic 領先地位的競品，是 07-16 首報後 24 小時內從「傳聞即將發布」到「正式發布＋規格揭露」的具體化。Reddit r/LocalLLaMA 另有貼文稱 Kimi K3 在 arena.ai 排行榜上超越 Claude Fable 與 GPT-5.6 Sol，惟為社群圖片貼文，無評測方法論細節，屬社群觀感而非官方 benchmark，標記待查證。同日 Microsoft 執行長 Satya Nadella 公開批評 Anthropic 的 Fable「受編輯層面控制」（CNBC），延續 07-13 已記錄的蒸餾隱晦批評，雲端夥伴兼競爭者對 Anthropic 產品的公開評論持續累積。
+> **最新競品動態**（2026-07-18）
+> Moonshot AI 官方公告首度揭露 Kimi K3 完整技術規格（Simon Willison 部落格引述一手公告）：**2.8 兆參數**，採用自研 **Kimi Delta Attention** 與 **Attention Residuals** 架構，具原生視覺能力與 **100 萬 token** context window；官方自陳「整體表現仍落後 Claude Fable 5 與 GPT-5.6 Sol，但在受測開源模型中持續居於領先」——為 07-16/17 首報後首次出現官方一手技術細節與自我定位，比 07-17 已記錄的 Reddit 社群觀感（待查證）更具查證價值。BBC、Forbes（source_count=2）、The Globe and Mail 同日同步跟進報導，聚焦「Kimi K3 能力逼近 Claude/ChatGPT 令美國科技業意外」，屬既有事件的媒體擴散而非新事實。WSJ 分析文章指出 AI 技術更廣泛普及對中國整體有利，但對 OpenAI 與 Anthropic 未必是好消息。另有報導稱 Anthropic 與 OpenAI 指控中國 AI 公司「蒸餾」，投資人 Chamath Palihapitiy 就此加入評論（The Times of India，具體評論內容未展開）。
 
 ---
 
@@ -131,12 +131,13 @@ Claude Code 已成為 AI 輔助編碼的標竿產品，但競爭正快速升溫�
 - **策略**：以開源路線滲透出口管制無法觸及的市場，類似 DeepSeek 以「免費壁壘」繞開競爭管制；2026-07-06 更進一步推出免費 IDE/CLI 工具 ZCode，正面對標 Cursor 與 Claude Code 的產品層，而非僅停留在底層模型競爭
 - **意義**：管制空窗期是中國廠商能力追趕的加速器；Anthropic 若無法有效解封中國及受管制市場，Zhipu 等廠商受惠；ZCode 以「免費」直接衝擊 Claude Code 的訂閱/API 雙軌計費模式，對價格敏感的個人開發者與新創構成潛在分流壓力（推論）（CNBC https://www.cnbc.com/2026/06/26/china-zhipu-z-ai-open-source-anthropic-openai.html；Techzine Global https://www.techzine.eu/news/devops/142702/z-ai-takes-on-cursor-and-claude-code-with-free-zcode/）
 
-### Moonshot AI 🔴（Kimi K3 正式發布，2026-07-16/17）
-- **狀態**：Active——07-16 Financial Times 首報「即將發布」，07-17 CNBC、TechCrunch、FT 確認正式發布 **Kimi K3**（官方部落格自稱該公司「最強模型」）
+### Moonshot AI 🔴（Kimi K3 正式發布，2026-07-16/17；官方規格揭露 07-18）
+- **狀態**：Active——07-16 Financial Times 首報「即將發布」，07-17 CNBC、TechCrunch、FT 確認正式發布 **Kimi K3**（官方部落格自稱該公司「最強模型」），07-18 官方一手技術規格經 Simon Willison 引述完整揭露
 - **背景**：中國 AI 新創，本頁 07-16 新增追蹤之競爭者
-- **規格與宣稱**：官方宣稱 **2.8 兆參數**；TechCrunch 分析即將推出的後續版本 Kimi 3 有望縮小與 Opus 4.8 的能力差距；FT 將其定位為挑戰 Anthropic 市場領先地位的競品
-- **社群觀感（待查證）**：Reddit r/LocalLLaMA 貼文稱 Kimi K3 在 arena.ai 排行榜上超越 Claude Fable 與 GPT-5.6 Sol；**注意**：該貼文為社群圖片貼文，未附評測方法論細節，無法確認測試條件與樣本，屬社群觀感而非官方 benchmark，不可視為獨立驗證數字
-- **意義**：與既有 DeepSeek、Zhipu Z.AI、中國 360 Tulongfeng 同屬中國陣營追趕 Anthropic 的競爭者，顯示中國 AI 新創在模型層的挑戰持續有新進入者；本次是繼「傳聞即將發布」後 24 小時內即完成規格揭露與三方媒體確認，追趕速度較既有競品更快（推論）；具體訓練成本、開源與否、API 定價未見報導（CNBC；[TechCrunch](https://news.google.com/rss/articles/CBMitAFBVV95cUxQWGljNFJ6U2NlZXQwdzQ3MWVBQ1dRZnNVV0w1Mk13SXJCbmU4b2ptdnpubS1CZFAxNDdzQVhZZDg1QVdXbjlaRi10ZEQ3MTE0NmQ4OEZTUWhmQUZORUQ3clkwdnloY1BZTE9TT1ROaHhpQjBxc3F3YVlRc0Z6WmNNd1U4MjJFT3N0TTFGUFppQ0tJcWlyZVMtLVlORVFsVVloQjNXM3JwWDhYY0t0V25QS0drVXU?oc=5)；[Financial Times](https://news.google.com/rss/articles/CBMihAFBVV95cUxQWEJQT1JGSHNrRUxZWklhbkJmaklfbWJNWW9kaHpzSEwtQjZnb2tPTVhRLVUxcHNYbW91NFdyZzRteVBwNHdOTjFOcDFXcEtsLUloS2NValhlNENsYVpEWTYxYXhkb0t1cE81bUQ1SFRsRFYyV3ZVR3h3enhXOXBXV05pVXY?oc=5)）
+- **官方規格（2026-07-18，一手來源）**：Moonshot AI 官方公告確認 Kimi K3 為 **2.8 兆參數**模型，採用自研 **Kimi Delta Attention** 與 **Attention Residuals** 架構，具原生視覺能力與 **100 萬 token** context window；官方自陳定位：「整體表現仍落後 Claude Fable 5 與 GPT-5.6 Sol，但在受測開源模型中持續居於領先」（原文："While its overall performance still trails the most powerful proprietary models, Claude Fable 5 and GPT 5.6 Sol, Kimi K3 demonstrated frontier-level performance across our evaluation suite, consistently outperforming other tested models."）——是官方首次明確自我定位於 Claude/GPT 旗艦模型之下、開源陣營之上，較 TechCrunch 07-17 的第三方分析（「有望縮小與 Opus 4.8 差距」）更保守但更具查證價值（Blog/Simon Willison，引述 Moonshot AI 官方公告）
+- **媒體擴散跟進（07-18，非新事實）**：BBC、Forbes（source_count=2）、The Globe and Mail 同步報導 Kimi K3 能力逼近 Claude／ChatGPT，多聚焦「令美國科技業意外」的敘事角度，屬 07-17 發布事件的媒體擴散而非新增訊息
+- **社群觀感（待查證）**：Reddit r/LocalLLaMA 貼文稱 Kimi K3 在 arena.ai 排行榜上超越 Claude Fable 與 GPT-5.6 Sol；**注意**：該貼文為社群圖片貼文，未附評測方法論細節，無法確認測試條件與樣本，屬社群觀感而非官方 benchmark，與官方 07-18 自陳「仍落後 Fable 5/GPT-5.6 Sol」的一手說法方向相反，應以官方一手資料為準
+- **意義**：與既有 DeepSeek、Zhipu Z.AI、中國 360 Tulongfeng 同屬中國陣營追趕 Anthropic 的競爭者，顯示中國 AI 新創在模型層的挑戰持續有新進入者；本次是繼「傳聞即將發布」後 48 小時內完成「發布→規格揭露→媒體擴散」全流程，追趕速度與資訊透明度均較既有競品更快（推論）；具體訓練成本、開源與否、API 定價未見報導（CNBC；[TechCrunch](https://news.google.com/rss/articles/CBMitAFBVV95cUxQWGljNFJ6U2NlZXQwdzQ3MWVBQ1dRZnNVV0w1Mk13SXJCbmU4b2ptdnpubS1CZFAxNDdzQVhZZDg1QVdXbjlaRi10ZEQ3MTE0NmQ4OEZTUWhmQUZORUQ3clkwdnloY1BZTE9TT1ROaHhpQjBxc3F3YVlRc0Z6WmNNd1U4MjJFT3N0TTFGUFppQ0tJcWlyZVMtLVlORVFsVVloQjNXM3JwWDhYY0t0V25QS0drVXU?oc=5)；[Financial Times](https://news.google.com/rss/articles/CBMihAFBVV95cUxQWEJQT1JGSHNrRUxZWklhbkJmaklfbWJNWW9kaHpzSEwtQjZnb2tPTVhRLVUxcHNYbW91NFdyZzRteVBwNHdOTjFOcDFXcEtsLUloS2NValhlNENsYVpEWTYxYXhkb0t1cE81bUQ1SFRsRFYyV3ZVR3h3enhXOXBXV05pVXY?oc=5)）
 
 ### 中國 360 Tulongfeng 🔴
 - **狀態**：Active（2026-06-28 發布，宣稱對標 Mythos 5）
@@ -160,6 +161,7 @@ Claude Code 已成為 AI 輔助編碼的標竿產品，但競爭正快速升溫�
 - **特點**：Qwen3.7-Max 聲稱可持續自主運行 35 小時，直接瞄準 Claude Code 的長時間自主執行場景
 - **重大事件**（2026-06-25）：Anthropic 正式指控阿里巴巴使用約 25,000 個假帳號、執行 2,880 萬次 Claude 對話，進行大規模 AI 模型蒸餾攻擊，竊取 Claude 能力輸入自家模型；阿里巴巴股價單日下跌逾 33%；Reuters、Bloomberg、WSJ、BBC、FT 多家媒體同步報導
 - **意義**：競品行為從「公開宣稱相容」升級至「非法蒸餾」層面，Anthropic 首次採取法律手段直接對中國科技巨頭提出正式指控，開創 AI 能力保護的新型法律戰場
+- **指控範圍疑似擴大（2026-07-18，待查證）**：The Times of India 報導 Anthropic 與 OpenAI 指控「中國 AI 公司」（複數）從事蒸餾行為，投資人 Chamath Palihapitiy 就此加入評論；報導未點名具體公司名單，無法確認是否為 06-25 Alibaba 指控案的延伸報導或新增其他廠商，具體評論內容原文亦未展開，待後續補充（Google News/The Times of India）
 
 ---
 
@@ -195,6 +197,13 @@ Claude Code 已成為 AI 輔助編碼的標竿產品，但競爭正快速升溫�
 ---
 
 ## 時序
+
+### 2026-07-18
+- **[官方一手規格揭露] Moonshot AI 官方公告 Kimi K3 完整技術規格：2.8T 參數、Kimi Delta Attention、100 萬 token context**：Simon Willison 部落格引述 Moonshot AI 官方公告一手資料，確認 Kimi K3 採用自研 Kimi Delta Attention 與 Attention Residuals 架構，具原生視覺能力，官方自陳「整體表現仍落後 Claude Fable 5 與 GPT-5.6 Sol，但在受測開源模型中持續居於領先」。**對競爭格局的意涵**：詳見「主要競品追蹤」Moonshot AI 子區塊更新（Blog/Simon Willison，引述 Moonshot AI 官方公告）
+- **[媒體跟進，多方確認，非新事實] BBC、Forbes、The Globe and Mail 同步報導 Kimi K3 能力逼近 Claude／ChatGPT，令美國科技業意外**：BBC 報導 Moonshot AI 宣稱 Kimi K3 可與 OpenAI、Anthropic 匹敵；Forbes（source_count=2）比較 Kimi K3 與 ChatGPT、Claude 差異；The Globe and Mail 稱這款中國模型「以匹敵 Claude 與 ChatGPT 的能力令美國科技業感到意外」。**注意**：三則均為 07-17 首發事件的今日媒體跟進報導，非全新事實，反映事件擴散廣度而非新增訊息（Google News/BBC；Google News/Forbes；Google News/The Globe and Mail）
+- **[總體分析，中美競爭格局] WSJ：AI 更廣泛普及對中國有利，對 OpenAI／Anthropic 未必是好消息**：WSJ 分析文章指出，AI 技術更廣泛普及（如 Kimi K3 等開源/低成本中國模型的擴散）對中國整體有利，但對 OpenAI 與 Anthropic 而言未必是正面訊號。**對競爭格局的意涵**：與既有 07-07 CNBC「中國本土模型因 Anthropic/OpenAI 成本上升而在美企擴大採用」的總體趨勢論調一致，本次從「技術普及性」角度補充另一分析視角——技術擴散速度可能比單一模型能力對比更根本地侵蝕 Anthropic 的差異化護城河（推論）（Google News/WSJ）
+- **[蒸餾指控延燒，具名投資人加入評論] Anthropic 與 OpenAI 指控中國 AI 公司「蒸餾」，Chamath Palihapitiy 加入評論**：The Times of India 報導，繼 Anthropic 與 OpenAI 指控中國 AI 公司從事模型蒸餾（distillation）行為後，投資人 Chamath Palihapitiy 就此發表評論。**對競爭格局的意涵**：詳見「主要競品追蹤」Alibaba Qwen3.7-Max 子區塊新增說明；具體評論內容與是否涉及新公司名單未見細節，待後續補充（Google News/The Times of India）
+- **[運算力供給側，詳見 anthropic-business] Meta 據報洽談以 100 億美元規模租賃運算力予 Anthropic；Anthropic 同步收緊 Fable 5 存取限制**：兩則與 Anthropic 商業/計費面直接相關的動態詳見 [[topics/anthropic-business]]、[[entities/pricing]]
 
 ### 2026-07-17
 - **[新模型正式發布，中國陣營追趕加速] Moonshot AI 發布 Kimi K3，官方稱「最強模型」，TechCrunch 分析後續版本逼近 Opus 4.8**：CNBC、TechCrunch、Financial Times 同步報導 Moonshot AI 正式發布 Kimi K3（宣稱 2.8 兆參數），自稱可與 OpenAI、Anthropic 匹敵；TechCrunch 分析即將推出的 Kimi 3 有望縮小與 Opus 4.8 之間的差距。**對競爭格局的意涵**：詳見「主要競品追蹤」Moonshot AI 子區塊更新（Google News/TechCrunch；Google News/Financial Times；CNBC）

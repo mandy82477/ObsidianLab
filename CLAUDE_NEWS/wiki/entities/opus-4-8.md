@@ -4,7 +4,7 @@
 **狀態：** active
 **領域：** 🤖 模型
 **首次出現：** 2026-05-28
-**最後更新：** 2026-07-16
+**最後更新：** 2026-07-18
 **最後新聞更新：** 2026-07-14
 
 > **最新服務狀態**（2026-07-09）
@@ -100,7 +100,7 @@ claude.ai 用戶現可調節 Claude 在任務上投入的努力程度，不再�
 | 指標 | Opus 4.7 | Opus 4.8 |
 |------|---------|---------|
 | SWE-bench Pro | — | 69.2% |
-| Context Window | — | 1M tokens |
+| Context Window | 200K | 1M tokens |
 | Dynamic Workflows | ❌ | ✅ Research Preview |
 | Fast Mode 費用 | 基準 | 1/3 |
 | 定價 | 基準 | 同價 |

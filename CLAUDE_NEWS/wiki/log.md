@@ -2855,9 +2855,77 @@ Append-only 紀錄。每次 ingest、lint，以及**揭露缺陷或促成改動�
 - 摘要：v2.1.212 帶來 `/fork`/`/subtask` breaking change 與 Claude 1Password 整合為今日官方功能焦點；商業面 Kimi K3 正式發布延續 Moonshot 對 Anthropic 的競品壓力敘事；安全政策面五角大廈簡報、州級監管遊說、中美 AI 政策三線並進
 - 品質備註：無
 
+## 2026-07-18 Lint（雲端排程執行）
+
+- 修正矛盾：
+  - 安全政策：`topics/anthropic-commitments.md`「spyware 指控回應」列停留在 07-07 狀態，未反映 `topics/safety-china-trust-dispute.md` 已記錄的 07-08 中國官方警示與 07-10 Anthropic 首度公開否認 → 已更新該列狀態/callout/時序，失效的 `[[topics/ai-agent-safety]]` 連結改指向現持完整敘事的 `[[topics/safety-china-trust-dispute]]`
+  - 安全政策：`topics/safety-china-trust-dispute.md`「目前結論」表「中國代理偵測程式碼」列仍寫「官方無回應」，與同頁其後 07-07/07-10 官方已回應的記載矛盾 → 修正為「官方已回應（07-07 定調實驗、07-10 進一步否認）」
+  - 商業（主編發現，非記者回報）：`topics/ai-talent-flow.md`「### 2026-06-19」時序分組將 John Jumper 加入的 Reuters 確認報導錯記為 06-19，與 `entities/john-jumper.md`／`news/2026-06-21.md` 記載的 06-21 官方確認日矛盾（Reuters URL 帶 06-19 為原始報導日，但本站日報實際於 06-21 收錄）→ 主編直接改期為 2026-06-21，同步「開始日期」與「相關實體」欄
+- 補孤立連結：無（六類全數頁面皆有其他頁面 wikilink 引用）
+- 狀態更新：無（六記者一致回報無 ongoing→monitoring/resolved 變更）
+- resolved 收尾：無
+- 新增 entities：無（本輪未直接建立；候選見下方「待使用者確認」）
+- 呈現品質：
+  - 模型：⚠️已修復 4 頁（sonnet-5/mythos/fable-5 待查證標記改寫、opus-4-8 前代比較表 Context Window 欄位補全、model-comparison.md 頂部 callout 過期更新）；opus-4-7 ✅ 通過
+  - 功能：⚠️已修復 3 頁（claude-code.md 懸置標記改註、code-quality-decline.md「目前結論」數字落後同步、official-community-gap.md 補 Managed Agents Dreaming API 矩陣列）；其餘 10 頁 ✅ 通過
+  - 商業：⚠️已修復 enterprise-cost-management.md／enterprise-tool-tracker.md（時序月份分組）；⚠️部分修復 anthropic-business.md（已補月份分組，06-15~06-26 完整主題重分類工作量過大未執行，列入待辦）；其餘 4 頁 ✅ 通過
+  - 安全政策：⚠️已修復 anthropic-commitments.md／safety-china-trust-dispute.md（矛盾修正）、ai-agent-safety.md（CVE-2026-55407 懸置標記改註）；📋 待辦 4 頁時序段落連續無分組（safety-china-trust-dispute 9 個、ai-agent-safety 22 個、ai-agent-safety-archive 16 個＋存檔區、anthropic-government-policy 約 30 個——**全站 topics 頁時序段落的普遍慣例，非單頁問題**，工作量過大本輪未執行，列入下次 lint 或獨立任務待辦）
+  - 人物：⚠️已修復 john-jumper.md（首次出現日期修正為 06-19〈Twitter 傳出，待核實〉並補頂部 callout）、dario-amodei.md（callout 更新反映 07-16 super PAC 捐款動態〈待核實〉）；boris-cherny/cat-wu/andrej-karpathy/chris-olah/teresa-carlson/tom-blomfield ✅ 核實後無需修改
+  - 社群：⚠️已修復 code-quality-decline.md（「目前結論」統計數字同步）、community-tech-discussions.md（清理 6 筆逾 21 天 ☄️閃現 舊條目）、community-tech-timeline.md（29 個連續日期補月份分組）；community-tech-patterns/community-pattern-trends ✅ 通過；community-tech-tools 策展詳見下方
+- 入口層健檢：本輪僅安全政策 4 頁觸發 3e 事件流堆積警示（詳見上方呈現品質欄，已記錄待辦，非 3f 語意分岔/死案候選）；六記者 3f 欄位均回報「無」語意分岔/死案候選
+- 待查證回訪：
+  - 已改註無後續：模型（sonnet-5 官方對比圖表爭議、mythos Z.Ai/WSJ 中國網安追趕報導、fable-5 化學問題被拒事件）；功能（claude-code.md #16856 token 暴增、36Kr 背景任務升級報導）；安全政策（ai-agent-safety.md CVE-2026-55407 DoS 漏洞，2026-07-01 揭露至今無後續）
+  - 已更新：安全政策（safety-china-trust-dispute.md／anthropic-commitments.md 中國代理偵測回應狀態，見上方矛盾修正）
+  - 其餘標記距今 ≤14 天，依規則不動
+- 規則檔健檢：
+  - 矛盾（6a）：無（掃描全部規則檔未發現同一行為的相反指示或觸發條件衝突）
+  - 引用驗證（6b）：7/7 全部通過（首次出現/痛點洞察/近期工具/技術彙整/熱門討論/衍生/全覽表錨點皆存在）
+  - 遵守率（6c）：呈現品質審查 3/3（07-14/07-16/07-17 log 皆含 ✅/⚠️/📋 標記）；**⚠️ feature-radar 提及僅 1/3**（07-17 log 明確點名，07-14/07-16 log 敘述未提及）——經 git 歷史核對，`feature-radar.md` 實際上 3/3 均有更新（版本行＋升版風險表同步），**屬 log 敘述完整度落差，非真實管線缺失**；log 格式正確 3/3
+  - 過期規則（6d，>60 天）：4 項超過閾值——`.claude/rules/wiki-ingest-format.md` entities/topics 格式模板〔加入: 2026-04-25〕（連續第 3 週超標，距今 84 天）；**新增 2 項本週首度越線**：`.claude/rules/wiki-ingest-format.md`「Wiki 頁面呈現品質標準」〔加入: 2026-05-15〕（距今 64 天）、`.claude/rules/wiki-ingest-community.md`「community-tech-patterns ↔ discussions 雙向連結規則」〔加入: 2026-05-16〕（距今 63 天）→ 📋 待使用者確認
+  - 來源健康（6e）：⚠️ `Claude API Release Notes` 連續 7 天（07-11~07-17）count=0，**已連續第 3 週出現同樣異常**，原因尚待排查（純觀察回報，不自行修改 pipeline）；其餘來源（HN/Reddit/Google News/dev.to/GitHub/GitHub Issues/Anthropic Status）正常；`scripts/source_scorecard.py` 記分卡：全部來源樣本仍 ⚠️ 7 天不足，僅供趨勢觀察；無「未註冊 slug」告警；Google News domain 信譽分佈低信譽（<0.4）桶 0 筆
+  - 跨檔案語意矛盾（6f）：✅ 全部配對語意一致（16/16 registered sync_pairs 機械檢查通過；另手動檢視 07-17 新增的注入防護／忠實度自檢規則，未發現與既有規則衝突）
+  - 成長迴路（月度）：非本月首次 lint（本月已有 07-04、07-10、07-11 三筆 Lint 記錄），跳過
+- 品質指標（6g）：
+  - ref 覆蓋率（每週）：100%（07-11~07-17，35 條列/35 條列均達標）✅，缺 ref 日期：無
+  - 採用驗證率（月度）：非本月首次 lint，跳過
+  - 外部死鏈（月度）：非本月首次 lint，跳過
+  - 趨勢判讀：持平（連續 4 期維持 100%）；已 append `wiki/metrics.md` 07-18 列
+- 讀者模擬：3 題全 ✅ ——「v2.1.212 的 /fork 改變會不會影響現有 skill、該不該升版」→ `feature-radar.md`「升版風險」2 跳可答；「Fable 5 編排便宜模型執行的社群驗證效果如何」→ `topics/community-pattern-trends.md` 趨勢四 2 跳可答；「中國後門指控現在的官方立場、事情結束了嗎」→ `topics/safety-china-trust-dispute.md` 頂部 callout 2 跳可答
+- lint 自我遵守率：6/6 記者回報一次過（3a–3g 七項皆有明確結果，格式完整，無退回）
+- community-tech-tools 策展：新增 18 筆（Brainless／Agentty／OtoDock／Grepathy／cc-session-recover／Cc-hindsight／Fleet Deck／aloud／Sx 2.0／claude-meseeks／Topsoil／Kastra／Papercrane-CLI／Agent Sessions／Tilion／Atelier／claude-code-live-memory／live-log-viewer-next）；汰除 26 筆逾 30 天無後續 ⏳ 條目；精選層新增 Brainless（HN124）與 claude-meseeks（HN130，新增通知/語音子分類）；痛點洞察同步 4 列代表工具/近期工具，清除 6 個已汰除工具殘留引用
+- community-tech-patterns 淘汰審查（dry-run，**待使用者確認**）：建議淘汰 0 條；建議合併 1 組（「記憶與知識管理」↔「跨環境 Agent 記憶」，代表工具重疊）；保留 20 類；無法判斷 3 項（見下方待確認清單）
+- community-pattern-trends 週更：4 條趨勢新增演進節點（Multi-agent 隔離工程化套件化部署、Context 主權爭奪使用者可視化分支合併、模型路由自動化獲官方基準背書、對抗性設計 plan-review-loop 延伸），無新趨勢達成立門檻、無趨勢降級淡出
+- overview.md：已全文改寫（當前局勢改寫為中國信任對峙轉入觀察期、v2.1.212 `/fork` breaking change＋Cowork 資料完整性風險、Fable 5 promo 7/19 倒數、IPO 敘事加溫、政策戰線延伸、官方 Skills/教師方案生態擴張；近兩週事件表更新至 07-04~07-17；社群工具生態/商業動態/功能推薦/情緒指標全面同步；上次全文改寫為 07-11 lint，07-16 僅零星更新未反映 07-12~07-17 事態，本輪為完整重寫）
+
+### 📋 待使用者確認（雲端 lint 自主安全部分完成，以下項目留待人工決定）
+
+1. **新實體頁候選（連續第 3 週提出）**：`Reflect with Claude`（Anthropic 官方 Beta 功能，2026-07-09 發布，feature-radar 熱度 🔥🔥🔥🔥／試用價值 ⚡，資訊足夠建頁；07-11、07-17 lint 皆提出仍未定案）→ 是否建立 `wiki/entities/reflect-with-claude.md`？
+2. **community-tech-patterns 淘汰審查**：建議合併「記憶與知識管理」↔「跨環境 Agent 記憶」兩類別（重複收錄同一代表工具）→ 是否同意合併？另有 3 項無法自動判斷，需人工確認：(a) Agent 版本控制／ADR 注入——70 天沉寂但概念未被否證，是否保留；(b) AgentWatch vs 官方 Claude Enterprise Spend Controls——功能部分重疊，是否加註「官方趨勢觀察」；(c) 行動裝置遠端控制（ccgram/Shellular）vs Claude Cowork 行動版——執行環境模型不同，是否算官方化取代
+3. **規則年齡審查（6d）**：4 項規則超過 60 天閾值——`entities/topics 格式模板`〔04-25，84 天，連續第 3 週〕、`Wiki 頁面呈現品質標準`〔05-15，64 天，本週首度越線〕、`patterns↔discussions 雙向連結規則`〔05-16，63 天，本週首度越線〕→ 是否需要重新審視這些規則，或標記為「已審閱，長期有效」以停止重複列出？
+4. **來源健康**：`Claude API Release Notes` 已連續 3 週（21 天）count=0 → 是否授權查修此來源的抓取邏輯（可能是 URL 失效或格式改版）？
+5. **6c 遵守率發現**：近 3 次 ingest（07-14/07-16/07-17）log 敘述中僅 1/3 明確點名「feature-radar」，但實際檔案 3/3 皆有更新（git 歷史核對確認版本行與風險表同步）——是否要求 ingest log 敘述一律明確點名 feature-radar 更新狀態（即使是「僅版本行同步，無新條目」），以避免日後誤判為管線缺失？
+
+## 2026-07-18 Ingest | news/2026-07-18.md（67 則）
+
+- 來源日報：[[news/2026-07-18]]（67 則，10/10 來源；Google News 27、GitHub Issues 15、dev.to 15、Hacker News 13、Reddit 12、Anthropic Status 4、GitHub 4、Blogroll 3、Anthropic Blog 0、Claude API Release Notes 0）
+- 分類派工：功能 17 則、商業 18 則、安全政策 2 則、社群 29 則、人物 1 則（五類並行 foreground，model: sonnet；模型本日無條目，跳過。註：本次因自訂 subagent_type 註冊表未載入，改以 general-purpose agent 內嵌對應記者角色規則＋開始前必讀清單執行，功能等同五位專職記者）
+- 更新頁面：
+  - **功能**：`entities/claude-code.md`（v2.1.214 純安全性修正發布，未列 feature-radar；已知問題新增 7 條——READ 工具未標示檔案 #21151 186 讚、思考過程常駐顯示 #8477 346 讚本日最高互動、貼上文字編輯 #3412 296 讚、記憶體洩漏 /tmp/claude-*-cwd #8856 70 讚、升級付款 PaymentIntent 異常 #55982 25 讚、Desktop session 消失 #26452 29 讚、skills 子目錄支援 #10238 165 讚；Remote Control 重連失效 #34255 反應數更新；AskUserQuestion 60 秒逾時機制經部落格文章證實為 07-01（v2.1.198）刻意加入的「效率繞過」設計，另有社群具體案例佐證；Anthropic Status 四起錯誤率升高事件同日修復記錄）；`entities/claude-for-teachers.md`（Education Week／WDET 兩則媒體追蹤更新）
+  - **商業**：`topics/anthropic-business.md`（新增 Meta-Anthropic 傳洽談 100 億美元運算力租賃協議，HN+Reuters+NYT 三方獨立來源；Anthropic $60 萬職缺形塑 IPO 敘事、AMD/Jefferies 洽談關注、Anthropic 廣告反彈評論）；`entities/pricing.md`（Fable 5 存取政策今日出現「Max/Team Premium 收緊限制＋Pro 導向 API 計費」與「`@claudeai` 官方帳號稱設為永久」兩則方向相反報導，兩者並存記錄未擇一呈現，交易員押注第四度延長；Claude 最便宜 API 模式記入模型 API 定價現況）；`topics/competitor-landscape.md`（Moonshot Kimi K3 官方一手規格〔2.8T 參數、Kimi Delta Attention、100 萬 token context〕補入，取代原僅媒體轉述版本；WSJ/Globe and Mail/Forbes/BBC 後續跟進報導併入既有 07-17 事件，非獨立新事件；中美 AI「蒸餾」指控記入）
+  - **安全政策**：`topics/anthropic-government-policy.md`（Anthropic 員工捐款 300 萬美元支持 AI 安全法規推動，併入既有「政治獻金布局」故事線與 07-16 Dario Amodei 個人捐款 100 萬美元 super PAC 事件，兩筆捐款是否同一 PAC 待查證；SingularityHub「聊天機器人意識特徵」報導經查證與三頁觸發條件均不符，判定不適用未建頁）
+  - **社群**：`topics/community-tech-discussions.md`（「效率繞過」機制〔HN 140 分部落格分析＋HN 23 分具體案例〕合併更新既有 AskUserQuestion 60 秒逾時熱門討論列，熱度 🔥🔥→🔥🔥🔥；三則 Reddit 週熱門低門檻條目收錄；LLM cliché highlighter 部落格工具收錄）
+  - **人物**：`entities/boris-cherny.md`（新增「現在同時執行數千個 Claude Code agent」聲明，單一媒體來源標記待核實）
+  - 今日 29 則社群節錄中 23 則因未達互動門檻（多數 Show HN 僅 1-4 分、Reddit sort=new score 不可信且無跨來源佐證）或查表確認為既有條目重複浮現（3 則 dev.to）而不收錄，詳見社群記者回報
+- feature-radar：本日無新條目（v2.1.214 為純安全性修正，未通過准入定義）；最新版本行同步至 v2.1.214；本週推薦與升版風險表因無回報變化維持原內容，僅同步版本行；⏰ 倒數中無變化
+- index.md 狀態變更：`entities/boris-cherny`（active → active（待核實）)
+- 新增頁面：無
+- 摘要：官方面 v2.1.214 純安全性修正、Anthropic Status 四起錯誤率升高事件皆同日修復；商業面 Meta-Anthropic $10B 運算力租賃洽談三方獨立來源、Fable 5 存取政策訊號分歧（收緊 vs 永久）為今日主軸；社群面「效率繞過」機制（7/1 起 60 秒逾時自動代答）經部落格具名分析與具體案例雙重驗證，延續既有討論列；安全政策面 Anthropic 政治獻金布局規模擴大（員工 $3M + CEO 個人 $1M）
+- 呈現品質：五類共 8 頁全數 ✅ 通過，未出現需修復或待辦項目
+- 品質備註：無
+
 ## 2026-07-19 週度延伸回顧
 
-- 延伸（六記者並行判斷 → 使用者確認 4/5 項執行，均帶 model:sonnet）：
+- 延伸（六記者並行判斷 → 使用者確認 4/5 項執行，均帶 model:sonnet；範圍為 news/2026-07-13~07-17，執行時 07-18 雲端 ingest/lint 尚未同步至本機，事後 merge 時確認無實質衝突——本次延伸與 07-18 雲端更新觸及同一批頁面但段落互不重疊）：
   - `entities/claude-code.md`：服務穩定性子區塊新增彙整條目——07-15~07-17 這 72 小時內 Anthropic Status 累計 6 起獨立事件（多模型錯誤率×2、Sonnet 5 單獨一起、企業 SSO 登入失敗、Opus 4.7 錯誤率升高、Sonnet 5/Haiku 4.5 錯誤率升高），前 5 起已解決，07-17 07:10 通報那起截至 07-19 彙整時仍無後續日報可確認解決時間；GV Wire 引用 Downdetector 佐證；標題統計行同步（已修復 3→3、未修復 3→4）
   - `topics/anthropic-government-policy.md`：合併本週四條各自獨立記錄的「Mythos 風險跨界重新浮現」事件（JPMorgan CEO Dimon「real issue」發言、加拿大金融監管警告信、參議員 Mike Rounds 五角大廈簡報、Hegseth vs CISA 立場矛盾）為單一綜合敘事段落，說明出口管制解除後風險論述罕見地同步在金融業/監管/國會/政府內部四條戰線重燃；補與 `entities/mythos.md` 的 Dimon 發言雙向 wikilink；callout 覆寫為單一最新版本
   - `topics/model-comparison.md`：新增「外部評測榜單」連結區塊（Artificial Analysis Intelligence Index、HF Open LLM Leaderboard），只放連結不放會凍結的具體分數，回應 reader-notes GLM/Qwen 與 GPT-5.6 兩條「指路而非囤積」需求
@@ -2865,4 +2933,4 @@ Append-only 紀錄。每次 ingest、lint，以及**揭露缺陷或促成改動�
 - 使用者跳過項目：`entities/opus-4-8.md` 補 Kimi K3/Moonshot 交叉引用——使用者判斷此條邊際效益低（資訊已在 competitor-landscape.md，一行 wikilink 對讀者理解 Opus 4.8 本身幫助有限），確認跳過
 - reader-notes 消費：07-17 GLM/Qwen 開源競品差距 → ✅ 已納入（三題皆已裁定並落地，見上）；07-12 GPT-5.6 vs Claude → 連續三輪（07-16、07-19）查無官方數字，維持 ⏳ 但改為被動觸發，不再每週主動重查；📌 07-07 雜記未逾 30 天，保留
 - 聚焦校準：非本月首次週度回顧（本月已於 07-16 執行），跳過
-- 品質備註：無
+- 品質備註：本次執行期間雲端 pipeline 同步完成 07-18 每日 ingest 與週度 lint（詳見上方兩則），merge 時發現本次延伸與雲端更新觸及部分同一頁面（claude-code.md/anthropic-government-policy.md/competitor-landscape.md），逐檔核對後確認段落互不重疊、內容無矛盾，正常合併

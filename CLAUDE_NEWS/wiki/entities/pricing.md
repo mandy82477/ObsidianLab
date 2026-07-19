@@ -4,11 +4,11 @@
 **狀態：** active（持續調整中）
 **領域：** 💼 商業
 **首次出現：** 2026-04-25
-**最後更新：** 2026-07-17
-**最後新聞更新：** 2026-07-17
+**最後更新：** 2026-07-18
+**最後新聞更新：** 2026-07-18
 
-> **最新計費政策異動**（2026-07-17）
-> Proactive financial news 報導交易員押注 Anthropic 將**第四度延長** Claude Fable 5 免費使用期限——此前已延長三次（06-09 原訂 6/22 → 07-01 延至 7/7 → 07-07/08 延至 7/12 → 07-12 再延至 **7/19**），本次是市場對「7/19 到期後是否再延」的押注，屬市場預期而非官方公告。07-16 記錄之 Sonnet 5 替代建議、週用量提前重置單一回報仍待觀察；07-13/14 印度盧比在地化定價、1660 萬美元帳務錯誤、週用量促銷延長至 7/19 持續生效。
+> **最新計費政策異動**（2026-07-18，訊號分歧，待觀察）
+> 就在 7/19 免費期到期前一天，Fable 5 存取政策出現**兩則方向相反的報導**：(1) Startup Fortune、the-decoder.com（source_count=2）報導 Anthropic 因運算資源吃緊，大幅收緊 Max／Team Premium 方案的 Fable 5 使用配額，並將 Pro 方案用戶導向改用 API 計費；(2) Simon Willison 部落格同日引述官方 `@claudeai` Twitter 帳號，標題稱「將 Fable 5 設為永久」。兩者皆記錄、不擇一呈現，需持續觀察官方後續公告釐清。同日 Yahoo Finance UK（source_count=2）獨立佐證 07-17 已記錄之「交易員押注第四度延長」市場訊號；另有 MakeUseOf 報導 Claude 最便宜的 API 模式每項任務僅需幾分錢成本，多數使用者不知其存在。
 
 ## 現況
 
@@ -23,7 +23,7 @@
 | 方案 | 月費 | 內容 | 注意 |
 |------|------|------|------|
 | Free | 待查證 | 基本限制額度 | 無公開月費數字見於日報 |
-| Pro | $20 | 標準互動用量 | 原定 6/15 起另有 $20 programmatic 信用池，已暫停；**印度盧比在地化定價 Rs 2,000/月**（2026-07-13 官方推出，首個非美元在地化定價市場，回應 GitHub Issue #17432 訴求）|
+| Pro | $20 | 標準互動用量 | 原定 6/15 起另有 $20 programmatic 信用池，已暫停；**印度盧比在地化定價 Rs 2,000/月**（2026-07-13 官方推出，首個非美元在地化定價市場，回應 GitHub Issue #17432 訴求）；**（2026-07-18，待查證）** the-decoder.com（source_count=2）報導 Pro 方案用戶被導向改用 API 計費存取 Fable 5，惟同日另有官方帳號稱 Fable 5 將「設為永久」，方向矛盾，詳見下方時序 |
 | Max 5x | $100 | Pro 的 5 倍用量 | 2026-06-26 Reddit 貼文誤植為 $50，已依 2026-05-14 xda-developers／dev.to 官方公告原文（$100）更正 |
 | Max 20x | $200 | Pro 的 20 倍用量；context window、Claude Code 額度、優先排隊等有結構性差異 | **用量上限集體訴訟進行中**（Karl Kahn 訴訟，2026-06-16 提起，指控實際僅 6–8 倍而非 20 倍） |
 | Team | 待查證 | 團隊協作方案 | 06-19 官方宣布速率翻倍時同步適用 |
@@ -38,11 +38,12 @@
 | 模型 | Input / Output per Mtok | 備注 |
 |------|------|------|
 | Claude Sonnet 5 | $2 / $10 | 促銷定價，有效期至 2026-08-31；Claude Code 新預設模型，相較 Opus 4.8 估計省 60% 成本 |
-| Claude Fable 5 | $10 / $50 | 免費使用期限再度延長至 **2026-07-19**（原訂 7/12，隨 07-12 官方週用量促銷延長公告同步順延，Hacker News/support.claude.com；競爭角度見 Google News/The Economic Times、Simon Willison 07-12：與 GPT-5.6 Sol 同級競爭有關，推論）；Pro/Max/Team 訂閱每週配額含 50% 用量持續至該日；7/19 後是否轉 usage-based billing 或再延長，待官方後續公告 |
+| Claude Fable 5 | $10 / $50 | 免費使用期限原訂延長至 **2026-07-19**（原訂 7/12，隨 07-12 官方週用量促銷延長公告同步順延）；**（2026-07-18，訊號矛盾）** Startup Fortune／the-decoder.com 報導因運算資源吃緊已收緊 Max/Team Premium 配額並將 Pro 導向 API 計費，惟同日 Simon Willison 引述官方 `@claudeai` 帳號稱將 Fable 5「設為永久」，兩者方向相反，7/19 到期前實際政策待官方明確公告釐清（見下方時序）|
 | Claude Opus 4.8 | 未見日報明確標價 | 作為 Sonnet 5 促銷折扣的比較基準（見上）|
 
 > 模型能力與評測細節見 [[topics/model-comparison]]；此表僅列價格。
 > **注意（2026-07-14）**：The Register 分析指出 Anthropic tokenizer 設計較為複雜，使 API 定價與跨供應商成本估算更難以直接比較（標題式報導，無進一步量化細節，source_count=2）。
+> **注意（2026-07-18）**：MakeUseOf 報導 Claude 存在「最便宜的 API 模式」，每項任務僅需幾分錢成本，但多數使用者不知其存在；報導未點名具體模式或模型（推測涉及 Haiku 或 Batch API），僅標題層級資訊，待後續補充具體費率（Google News/MakeUseOf）。
 
 ---
 
@@ -50,7 +51,9 @@
 
 - **訂閱配額制維持**：原定 2026-06-15 生效的 Agent SDK / `claude -p` 計費切割已於 2026-06-16 暫停，重新推行時間未定；Agent SDK、`claude -p`、第三方 Agent SDK app 用量持續計入訂閱配額，無需額外信用池（來源：2026-06-16、2026-06-18 DevOps.com）
 - **週配額 +50% 過渡期再次延長（至 2026-07-19）**：Anthropic 官方公告（2026-07-12，Hacker News/support.claude.com）將原訂 7/13 到期的週用量 +50% 促銷再延長至 **2026-07-19**；適用 Pro／Max／Team 及舊制（席位制）Enterprise 方案，**Free 方案與用量制 Enterprise 席位不適用**，5 小時額度不受影響；7/19 後是否延續未見後續公告，需留意（來源：2026-05-14、2026-07-12）
-- **Fable 5 免費使用期限再延長至 2026-07-19（原定 7/12）**：隨 07-12 週用量促銷延長公告同步順延，Pro/Max/Team 每週配額含 50% Fable 5 用量的過渡期同步延至 7/19；競爭角度分析（Google News/The Economic Times、Simon Willison 07-12）指出與 GPT-5.6 Sol 被視為同級模型有關（推論）；7/19 後是否改為 usage-based billing 或再延長，待官方後續公告（來源：2026-07-01、2026-07-07/08、2026-07-12）
+- **Fable 5 免費使用期限原訂延至 2026-07-19（原定 7/12）**：隨 07-12 週用量促銷延長公告同步順延，Pro/Max/Team 每週配額含 50% Fable 5 用量的過渡期同步延至 7/19；競爭角度分析（Google News/The Economic Times、Simon Willison 07-12）指出與 GPT-5.6 Sol 被視為同級模型有關（推論）（來源：2026-07-01、2026-07-07/08、2026-07-12）
+- **⚠️ 2026-07-18 訊號矛盾，7/19 到期前實際走向待官方明確公告**：Startup Fortune、the-decoder.com（source_count=2）報導 Anthropic 因運算資源吃緊，已收緊 Max／Team Premium 方案 Fable 5 配額並將 Pro 用戶導向 API 計費——指向轉為 usage-based billing 或更嚴格限制的方向；但同日 Simon Willison 部落格引述官方 `@claudeai` Twitter 帳號，標題稱「將 Fable 5 設為永久」——指向相反方向（免費/內建持續）。兩則皆記錄、不擇一呈現，需持續觀察官方後續公告（來源：2026-07-18 Startup Fortune、the-decoder.com、Blog/Simon Willison）
+- **交易員押注第四度延長（市場猜測，非官方，07-18 獨立來源佐證）**：Yahoo Finance UK（source_count=2，2026-07-17）獨立報導交易員押注 Anthropic 將第四度延長 Fable 5 免費期限，與 07-17 已記錄之 Proactive financial news 首報方向一致，屬市場預期而非官方公告
 - **1M context window 觸發 API 計費通道**：即使儀表板顯示 0% 訂閱用量，1M context window 仍會觸發獨立的 API 計費通道並產生額外費用（實例：2026-05-11 用戶 0% 用量下遭收取 $3.37 Extra Usage）
 - **`ANTHROPIC_API_KEY` 環境變數陷阱**：雲端環境（CI/CD、Docker、K8s）若設置此環境變數，所有 Claude Code 呼叫自動改走 API 計費通道而非訂閱配額，需檢查環境變數避免非預期扣費（來源：2026-04-30）
 - **Max 用量上限爭議進入司法程序**：2026-06-16 集體訴訟指控 Max 5x／Max 20x 實際使用限制遠低於廣告宣稱（Max 20x 實測僅 Pro 的 6–8 倍，非廣告的 20 倍），訴訟結果將直接影響方案信任度與可能的退款/調整義務（來源：2026-06-16 CNET、Decrypt）
@@ -128,9 +131,16 @@ git commit 歷史出現大寫字串「HERMES.md」會觸發靜默切換至 API �
 
 ### 定價與促銷（模型定價、方案設計）
 
-#### 2026-07-17：交易員押注 Fable 5 免費期將第四度延長（市場猜測，非官方）
+#### 2026-07-18：Fable 5 存取政策訊號分歧——「收緊限制」vs「設為永久」同日並存
+
+- **收緊限制方向**：Startup Fortune（「Anthropic Limits Claude Fable 5 Access as It Runs Out of Compute」）與 the-decoder.com（source_count=2，「Anthropic slashes Claude Fable 5 limits in Max and Team Premium and pushes Pro users toward API pricing」）同日報導，Anthropic 因運算資源吃緊，大幅縮減 Max 與 Team Premium 方案的 Fable 5 使用配額，並將 Pro 方案用戶導向改用 API 計費。**與 Meta 運算力租賃洽談的呼應（推論）**：同日 [[topics/anthropic-business]] 記錄 Meta 據報洽談以 100 億美元規模租賃運算力予 Anthropic，兩則報導共同指向「Anthropic 運算需求已超出現有供給」的同一根因——對外租算力、對內收緊高階模型配額，是同一資源缺口下的一體兩面（推論）。
+- **設為永久方向（矛盾訊號）**：Simon Willison 部落格同日（06:00 UTC，早於上述兩則收緊限制報導）引述官方 `@claudeai` Twitter 帳號發布內容，標題為「Claude make Fable 5 permanent」（將 Fable 5 設為永久）；原文於標題引述後即截斷，無更多細節可查證。
+- **⚠️ 如實記錄矛盾，不擇一呈現**：兩則方向相反的報導同日出現，可能反映（a）官方公告本身存在時間差或表述模糊、（b）「設為永久」specifically 指某項功能/免費層級的一部分而非整體 Fable 5 免費存取、或（c）媒體對同一份公告有不同解讀。目前生效的免費期到期日仍為 **2026-07-19**（見上方「當前生效的計費規則」），實際政策走向待 7/19 前後官方進一步公告釐清。
+
+#### 2026-07-17：交易員押注 Fable 5 免費期將第四度延長（市場猜測，非官方，07-18 獨立來源佐證）
 
 - **市場押注，非官方公告**：Proactive financial news 報導交易員押注 Anthropic 將第四度延長 Claude Fable 5 免費使用期限。**注意**：此為財經媒體對交易員市場行為的報導，非 Anthropic 官方公告，目前生效的到期日仍為 **2026-07-19**（見上方「當前生效的計費規則」），未見變動。
+- **07-18 獨立來源佐證**：Yahoo Finance UK（source_count=2）獨立報導同一押注方向，強化此市場預期訊號的傳播度，非新增事實。
 - **對既有延長序列的意涵（推論）**：Fable 5 免費期已延長三次（06-09 原訂 6/22 → 07-01 明確 7/7 → 07-07/08 延至 7/12 → 07-12 再延至 7/19），交易員押注第四度延長顯示市場預期 Anthropic 對 usage-based billing 轉換將持續採取謹慎策略，與既有「Anthropic 對 Fable 5 計費轉換態度謹慎」的判斷（見 07-12 條目）方向一致；惟押注本身不構成事實依據，7/19 後實際走向仍待官方公告確認（Google News/Proactive financial news）
 
 #### 2026-07-13/14：印度盧比在地化定價正式推出，回應長期社群訴求（重大）

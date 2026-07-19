@@ -4,7 +4,7 @@
 僅收錄官方 changelog、release note 或官方公告來源；社群工具見 [[topics/community-tech-tools]]。
 每次 ingest 後由 LLM 維護：新增功能、更新熱度、補充社群回饋。
 
-**最後更新：** 2026-07-17
+**最後更新：** 2026-07-18
 
 ---
 
@@ -20,7 +20,7 @@
 
 ## ⚠️ 升版風險（每次 ingest 更新）
 
-**最新版本：** v2.1.212（2026-07-17，`/fork` 改為將對話複製進背景 session、原同 session 子 agent 功能改名 `/subtask`；同日 anthropic-sdk-typescript sdk-v0.112.1、anthropic-sdk-python v0.117.0 一併發布）
+**最新版本：** v2.1.214（2026-07-18，純安全性修正——修復 single-segment `dir/**` allow 規則誤自動核准樹狀結構中任意層級 `dir/` 目錄寫入的權限漏洞，並修復另一項相關權限問題；無新指令/旗標，未列入本頁。前一重大異動為 v2.1.212（2026-07-17）`/fork` 改為將對話複製進背景 session、原同 session 子 agent 功能改名 `/subtask`）
 
 | 風險 | 嚴重度 | 說明 |
 |------|--------|------|
