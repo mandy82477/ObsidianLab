@@ -4,7 +4,7 @@
 僅收錄官方 changelog、release note 或官方公告來源；社群工具見 [[topics/community-tech-tools]]。
 每次 ingest 後由 LLM 維護：新增功能、更新熱度、補充社群回饋。
 
-**最後更新：** 2026-07-18
+**最後更新：** 2026-07-19
 
 ---
 
@@ -20,15 +20,15 @@
 
 ## ⚠️ 升版風險（每次 ingest 更新）
 
-**最新版本：** v2.1.214（2026-07-18，純安全性修正——修復 single-segment `dir/**` allow 規則誤自動核准樹狀結構中任意層級 `dir/` 目錄寫入的權限漏洞，並修復另一項相關權限問題；無新指令/旗標，未列入本頁。前一重大異動為 v2.1.212（2026-07-17）`/fork` 改為將對話複製進背景 session、原同 session 子 agent 功能改名 `/subtask`）
+**最新版本：** v2.1.215（2026-07-19，Claude 不再自動執行 `/verify` 與 `/code-review` 兩項技能，須手動呼叫 `/verify` 或 `/code-review` 指令觸發；無過渡期，升級後立即生效。前一異動為 v2.1.214（2026-07-18）純安全性修正）
 
 | 風險 | 嚴重度 | 說明 |
 |------|--------|------|
 | Cowork 已知問題（VM bundle 效能劣化 + 檔案靜默截斷） | 🔴 | Cowork 功能會建立高達 10GB 的 VM bundle，導致啟動變慢、UI 延遲、效能隨時間持續劣化（#22543，76 留言）；Edit/Write 工具另因緩衝區容量上限（byte-conservation buffer cap）靜默截斷檔案，任何檔案大小皆可重現（#53940，累計 16 個讚同反應），屬資料完整性風險，非邊緣情況 |
 | `/fork` 語意變更（⚠️ Breaking Change，無過渡期） | 🔴 | v2.1.212 起 `/fork` 不再於同一 session 內啟動子 agent，改為複製對話進新背景 session；依賴舊行為撰寫的 skill/hook/巨集需立即改用 `/subtask`，官方 release note 未附完整遷移指南 |
-| Fable 5 Defense in Depth 誤判 | 🟡 | 解禁後新安全分類器將高風險 coding 請求 fallback 至 Opus 4.8，首日已有誤判實測案例 |
+| `/verify` `/code-review` 不再自動觸發（⚠️ Breaking Change，無過渡期） | 🔴 | v2.1.215 起 Claude 不再於背景自動執行 `/verify` 與 `/code-review`，須使用者手動呼叫指令；依賴自動驗證/審查隱性保護的既有工作流（CI、hook、慣例流程）升級後會失去這層保護，官方未附遷移指南 |
 
-**建議：** 升級前確認是否有依賴 `/fork` 舊行為（同 session 子 agent 委派）撰寫的 skill/hook/巨集，若有需立即改寫為 `/subtask`；**重度依賴 Cowork 的使用者近期應避免處理大型檔案或大量寫入操作**，Edit/Write 靜默截斷問題目前無官方修復時程；Fable 5 defense-in-depth 誤判問題持續，敏感任務建議留意。
+**建議：** 升級前確認是否有依賴 `/fork` 舊行為（同 session 子 agent 委派）撰寫的 skill/hook/巨集，若有需立即改寫為 `/subtask`；同時確認既有流程是否依賴 Claude 自動觸發 `/verify` `/code-review`，若有須在 CI 或 hook 中新增顯式呼叫；**重度依賴 Cowork 的使用者近期應避免處理大型檔案或大量寫入操作**，Edit/Write 靜默截斷問題目前無官方修復時程。Fable 5 Defense in Depth 誤判問題持續存在，詳見 [[entities/fable-5]]，非版本升級可解決，本表暫不重複列出。
 
 ---
 
@@ -36,7 +36,7 @@
 
 | 截止日 | 事件 | 到期後 | 你該做的決定 |
 |--------|------|--------|------------|
-| **2026-07-19** | Fable 5 免費使用期限＋週配額 +50% 促銷（原分列 7/12、7/13，已統一順延至 7/19，因 GPT-5.6 Sol 被視為同級競品）| 是否再延或轉 usage-based billing 尚無官方明確說法 | Pro/Max/Team 及舊制 Enterprise 用戶：7/19 前把握加成額度視窗；Free 與用量制 Enterprise 不受影響；留意到期後是否再延 |
+| **2026-07-19** | Fable 5 免費使用期限＋週配額 +50% 促銷到期日；同日另有兩則媒體報導方向不一致：Tech Times 稱 Max 方案轉永久、Pro 改 Credits-only，Dawn 稱 Fable 5 將以 50% 用量上限併入 Max/Team Premium | 兩篇報導均僅存標題、暫無官方公告可確認何者為準，詳見 [[entities/pricing]] | Pro/Max/Team 及舊制 Enterprise 用戶：留意官方是否於今明兩日發布正式公告，公告前不建議依單一媒體報導調整用量規劃 |
 | **2026-08-31** | Sonnet 5 促銷價 $2/$10 per Mtok 結束 | 正式定價未公布，成本可能上升 | 依賴 Sonnet 5 的自動化流程：8 月底前關注正式定價公告 |
 
 ---
@@ -62,6 +62,7 @@
 
 | 功能 | 發布日期 | 熱度 | 試用價值 | 狀態 |
 |------|----------|------|----------|------|
+| **Claude Code v2.1.215**（Claude 不再自動執行 `/verify` 與 `/code-review` 兩項技能，須手動呼叫指令觸發；⚠️ Breaking change 無過渡期） | 2026-07-19 | 🔥🔥 | ⚡ 有條件推薦 | 正式發布 |
 | **Claude Code v2.1.212**（`/fork` 改為背景 session 化，原同 session 子 agent 功能改名 `/subtask`；⚠️ Breaking change 無過渡期） | 2026-07-17 | 🔥🔥🔥 | ⚡ 有條件推薦 | 正式發布 |
 | **Claude 1Password 整合**（透過已存 1Password 憑證登入網站免暴露密碼，官方一手公告未附） | 2026-07-17 | 🔥🔥 | ⏳ 觀望 | 官方新功能（狀態未明） |
 | **Claude for Teachers**（美國通過認證 K-12 教師免費開放進階 Claude 功能與教學技能庫，對接全美 50 州學術標準） | 2026-07-15 | 🔥🔥🔥 | ⏳ 觀望 | 正式發布（限定對象） |

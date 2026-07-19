@@ -2934,3 +2934,20 @@ Append-only 紀錄。每次 ingest、lint，以及**揭露缺陷或促成改動�
 - reader-notes 消費：07-17 GLM/Qwen 開源競品差距 → ✅ 已納入（三題皆已裁定並落地，見上）；07-12 GPT-5.6 vs Claude → 連續三輪（07-16、07-19）查無官方數字，維持 ⏳ 但改為被動觸發，不再每週主動重查；📌 07-07 雜記未逾 30 天，保留
 - 聚焦校準：非本月首次週度回顧（本月已於 07-16 執行），跳過
 - 品質備註：本次執行期間雲端 pipeline 同步完成 07-18 每日 ingest 與週度 lint（詳見上方兩則），merge 時發現本次延伸與雲端更新觸及部分同一頁面（claude-code.md/anthropic-government-policy.md/competitor-landscape.md），逐檔核對後確認段落互不重疊、內容無矛盾，正常合併
+
+## 2026-07-19 Ingest | news/2026-07-19.md（49 則）
+
+- 來源日報：[[news/2026-07-19]]（49 則，10/10 來源；Hacker News 12、GitHub Issues 15、Google News 9、dev.to 15、GitHub 1、Blogroll 2、Reddit 12、Anthropic Status 0、Anthropic Blog 0、Claude API Release Notes 0）
+- 分類派工：模型 2 則、功能 10 則、商業 8 則、社群 29 則（四類並行 foreground，model: sonnet；安全政策、人物本日無條目，跳過。註：本次執行環境的自訂 subagent_type 註冊表未載入，改以 general-purpose agent 內嵌對應記者角色規則＋開始前必讀清單執行，功能等同四位專職記者）
+- 更新頁面：
+  - **模型**：`entities/opus-4-7.md`（新增已知問題：Opus 4.7 於較長 payload 會把舊版 XML tool-use 格式混入 JSON tool call，#49747，🔴 未修復，33 留言/34 讚同，達 GitHub Issue 中門檻；callout 覆寫為此事件。Opus 5 傳聞〔dev.to〕與 07-13 已收錄文章逐字相符，判定無新事實，未重複寫入）
+  - **功能**：`entities/claude-code.md`（v2.1.215 發布記錄：Claude 不再自動執行 `/verify` 與 `/code-review`，須手動呼叫；已知問題新增 5 起條目——5 小時額度不到 90 分鐘用罄 #6457 120 留言本日最高互動、Desktop 登出後 session 消失 #26452 49 留言、Environment Contributions 警告持續重現 #3301 43 留言、GitHub connector 連結成功卻無法讀取內容（近期退化）#71542 37 留言、對話訊息時間戳記請求 #44763 36 留言，另 Slack 多 workspace 請求 #44243 33 留言與既有 2 起條目數據同步更新；Multi-agent collaboration #28300、VS Code diff review #33932 因與既有記錄數字幾乎相同（各僅差 0–1 則留言）判定為噪音級浮動未更新，避免無意義 churn；Bun/Rust runtime 內部改動記入現況）；`entities/claude-skills.md`（新增 `/verify`/`/code-review` 行為變更列，因牴觸原「Claude 依語意自動觸發、無需手動呼叫」通則描述，同步修正現況首段）
+  - **商業**：`entities/pricing.md`（Fable 5 訂閱異動兩則媒體報導方向不一致：Tech Times 稱「Max 方案轉永久、Pro 改 Credits-only」，Dawn 稱「Fable 5 以 50% 用量上限併入 Max/Team Premium」，與既有 07-18 矛盾訊號並列記錄，不擇一呈現）；`topics/competitor-landscape.md`（新增 07-19 時序：Musk 表態序列延續、Musk 開源 Grok Build 與每月 12.5 億美元財務數字〔付款對象未確認〕、南韓市場地位〔KED Global〕、新競爭者 Thinking Machines 品牌定位〔Fast Company〕，四則均標記為標題層級資訊）；`topics/anthropic-business.md`（補上 07-18 已記錄「廣告反彈評論」當時缺失的具體廣告內容細節〔TechCrunch／HN 39 分〕；Meta/Anthropic「震撼彈」報導因原文過於單薄，記錄為待補充而非正式事件）
+  - **社群**：`topics/community-tech-patterns.md`（新增「Spare Mac 隔離環境」工作流模式，HN 234 分達高門檻）；`topics/community-tech-discussions.md`（Reddit「額度焦慮系列」🌊延燒列補充兩則延伸節點：Dear Anthropic This Has to STOP、Anthropic I think you really need to react）
+  - 今日 29 則社群節錄中 23 則因未達互動門檻（多數 Show HN 僅 1-5 分、多則 Reddit 為純圖片貼文無文字內容）或查表確認為既有條目重複浮現（3 則 dev.to）而不收錄，詳見社群記者回報
+- feature-radar：新增 1 條（Claude Code v2.1.215 `/verify`/`/code-review` 手動觸發變更，🔥🔥／⚡ 有條件推薦）；最新版本行同步至 v2.1.215；升版風險表新增「`/verify`/`/code-review` 不再自動觸發」🔴（Breaking change 無過渡期），置換原「Fable 5 Defense in Depth 誤判」列（該項非版本升級可解決之風險，移除重複列示，改於 [[entities/fable-5]] 參照）；⏰ 倒數中：07-19 Fable 5 到期列更新為反映今日兩則方向不一致的媒體報導，指向 [[entities/pricing]]；本週推薦：今日無新條目達 🔥🔥🔥🔥+ 門檻，維持原內容不動
+- index.md 狀態變更：無
+- 新增頁面：無
+- 摘要：官方面 v2.1.215 `/verify`/`/code-review` 改為手動觸發（Breaking change，無過渡期）為今日主軸；社群面 GitHub Issues 高互動未解決需求集中出現（5 小時額度異常等 8 起，含今日互動量最高的 120 留言 issue）；商業面 Fable 5 訂閱政策再現方向不一致的媒體報導、Musk/Anthropic 競爭與金流關係持續延燒
+- 呈現品質：四類共 7 頁全數 ✅ 通過，未出現需修復或待辦項目
+- 品質備註：無
