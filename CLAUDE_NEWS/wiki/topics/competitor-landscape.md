@@ -198,6 +198,12 @@ Claude Code 已成為 AI 輔助編碼的標竿產品，但競爭正快速升溫�
 
 ## 時序
 
+### 2026-07-19
+- **[競品陣營表態延續，非新事實] Motley Fool 再報 Musk 稱「低估了 Anthropic AI 實力」，建議 Amazon／Alphabet 投資人留意**：The Motley Fool 報導 Elon Musk 坦承先前低估了 Anthropic 的 AI 實力，文章建議 Amazon、Alphabet 投資人應留意此一動向。**注意**：此框架（Musk 表態 → 利多 Amazon/Alphabet 投資人）與 07-13 已記錄的 Yahoo Finance 報導幾乎一致，未見新引言或新事實，延續 07-09（首次表態）、07-10、07-13（兩獨立來源重申）、07-14（Proactive 媒體解讀）已記錄的 Musk 表態序列，屬既有敘事的再擴散（Google News/The Motley Fool，07-19 08:46 UTC）
+- **[財務數字，付款對象未確認，需審慎解讀] Musk 開源 Grok Build 對抗 Anthropic，標題稱 Anthropic 每月支付對方 12.5 億美元**：The New Stack 報導 Elon Musk 開源 Grok Build 以對抗 Anthropic，標題並提及 Anthropic 目前每月支付對方 **12.5 億美元（$1.25 billion/月）**。**注意（嚴格依原文，不推論）**：原文摘要遭 RSS 截斷，付款對象究竟是 Musk 本人、或其旗下事業（如 xAI／Colossus 算力租賃，呼應既有算力供給側緊俏敘事，見 [[topics/anthropic-business]] 07-18 Meta 100 億美元運算力洽談條目）與付款用途均不明，**不可逕自推論為「支付給 Musk 個人」**。若數字屬實且與算力採購有關，將是繼 Meta 100 億美元洽談後另一個規模量級的算力成本訊號，但目前僅為標題層級資訊，待後續報導補充細節後再評估是否需要更新「戰略合作」或「商業風險」表（Google News/The New Stack，07-18 10:39 UTC）
+- **[市場地位，無具體數據] KED Global：企業需求帶動下 Claude 有望在南韓生成式 AI 市場占據領先地位**：KED Global 報導標題稱受企業端需求帶動，Claude 有望在南韓生成式 AI 市場占據領先地位。**注意**：原文摘要遭 RSS 截斷，具體市佔數字、企業採用案例、與既有競品（如三星、Naver 等本土廠商）的對照均未見細節，僅記錄標題訊號，待後續報導補充具體數據方可評估是否構成區域市場格局變化（Google News/KED Global，07-19 10:21 UTC）
+- **[新競品，品牌／人才定位角度] Fast Company：新創 Thinking Machines 正在「智識調性」上對 Anthropic 構成競爭**：Fast Company 報導標題稱新創公司 Thinking Machines 正被視為在「智識調性（intellectual vibe）」上對 Anthropic 構成競爭態勢。**注意**：與既有以定價、企業採用、模型能力為主軸的競品追蹤不同，本則聚焦品牌形象／人才聲譽面向的競爭；原文摘要遭 RSS 截斷，具體內容、對比事實與時間點均不明，僅記錄新命名競爭對手浮上檯面，待後續報導補充後評估是否需在「主要競品追蹤」新增子區塊（Google News/Fast Company，07-19 11:08 UTC）
+
 ### 2026-07-18
 - **[官方一手規格揭露] Moonshot AI 官方公告 Kimi K3 完整技術規格：2.8T 參數、Kimi Delta Attention、100 萬 token context**：Simon Willison 部落格引述 Moonshot AI 官方公告一手資料，確認 Kimi K3 採用自研 Kimi Delta Attention 與 Attention Residuals 架構，具原生視覺能力，官方自陳「整體表現仍落後 Claude Fable 5 與 GPT-5.6 Sol，但在受測開源模型中持續居於領先」。**對競爭格局的意涵**：詳見「主要競品追蹤」Moonshot AI 子區塊更新（Blog/Simon Willison，引述 Moonshot AI 官方公告）
 - **[媒體跟進，多方確認，非新事實] BBC、Forbes、The Globe and Mail 同步報導 Kimi K3 能力逼近 Claude／ChatGPT，令美國科技業意外**：BBC 報導 Moonshot AI 宣稱 Kimi K3 可與 OpenAI、Anthropic 匹敵；Forbes（source_count=2）比較 Kimi K3 與 ChatGPT、Claude 差異；The Globe and Mail 稱這款中國模型「以匹敵 Claude 與 ChatGPT 的能力令美國科技業感到意外」。**注意**：三則均為 07-17 首發事件的今日媒體跟進報導，非全新事實，反映事件擴散廣度而非新增訊息（Google News/BBC；Google News/Forbes；Google News/The Globe and Mail）
