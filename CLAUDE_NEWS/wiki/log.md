@@ -2854,3 +2854,15 @@ Append-only 紀錄。每次 ingest、lint，以及**揭露缺陷或促成改動�
 - 呈現品質審查：claude-code.md ⚠️ 已修復（「現況」段落與歷史記錄重複的舊段落、#13354 重複條目已清理）；其餘 6 頁 ✅ 通過
 - 摘要：v2.1.212 帶來 `/fork`/`/subtask` breaking change 與 Claude 1Password 整合為今日官方功能焦點；商業面 Kimi K3 正式發布延續 Moonshot 對 Anthropic 的競品壓力敘事；安全政策面五角大廈簡報、州級監管遊說、中美 AI 政策三線並進
 - 品質備註：無
+
+## 2026-07-19 週度延伸回顧
+
+- 延伸（六記者並行判斷 → 使用者確認 4/5 項執行，均帶 model:sonnet）：
+  - `entities/claude-code.md`：服務穩定性子區塊新增彙整條目——07-15~07-17 這 72 小時內 Anthropic Status 累計 6 起獨立事件（多模型錯誤率×2、Sonnet 5 單獨一起、企業 SSO 登入失敗、Opus 4.7 錯誤率升高、Sonnet 5/Haiku 4.5 錯誤率升高），前 5 起已解決，07-17 07:10 通報那起截至 07-19 彙整時仍無後續日報可確認解決時間；GV Wire 引用 Downdetector 佐證；標題統計行同步（已修復 3→3、未修復 3→4）
+  - `topics/anthropic-government-policy.md`：合併本週四條各自獨立記錄的「Mythos 風險跨界重新浮現」事件（JPMorgan CEO Dimon「real issue」發言、加拿大金融監管警告信、參議員 Mike Rounds 五角大廈簡報、Hegseth vs CISA 立場矛盾）為單一綜合敘事段落，說明出口管制解除後風險論述罕見地同步在金融業/監管/國會/政府內部四條戰線重燃；補與 `entities/mythos.md` 的 Dimon 發言雙向 wikilink；callout 覆寫為單一最新版本
+  - `topics/model-comparison.md`：新增「外部評測榜單」連結區塊（Artificial Analysis Intelligence Index、HF Open LLM Leaderboard），只放連結不放會凍結的具體分數，回應 reader-notes GLM/Qwen 與 GPT-5.6 兩條「指路而非囤積」需求
+  - `topics/competitor-landscape.md`：GLM-5.2 對照列升級標註為完整 benchmark 數字（FrontierSWE 74.4 vs Opus 4.8 75.1、Terminal-Bench 2.1 81.0、SWE-bench Pro 62.1）＋明確「非日報進料，使用者 07-17 手動查證」標記，保留待查證精神
+- 使用者跳過項目：`entities/opus-4-8.md` 補 Kimi K3/Moonshot 交叉引用——使用者判斷此條邊際效益低（資訊已在 competitor-landscape.md，一行 wikilink 對讀者理解 Opus 4.8 本身幫助有限），確認跳過
+- reader-notes 消費：07-17 GLM/Qwen 開源競品差距 → ✅ 已納入（三題皆已裁定並落地，見上）；07-12 GPT-5.6 vs Claude → 連續三輪（07-16、07-19）查無官方數字，維持 ⏳ 但改為被動觸發，不再每週主動重查；📌 07-07 雜記未逾 30 天，保留
+- 聚焦校準：非本月首次週度回顧（本月已於 07-16 執行），跳過
+- 品質備註：無

@@ -4,7 +4,7 @@
 **狀態：** active
 **領域：** 🛠️ 工具/功能
 **首次出現：** 2025（正式推出）
-**最後更新：** 2026-07-17
+**最後更新：** 2026-07-19
 **最後新聞更新：** 2026-07-17
 
 > **最新版本動態**（2026-07-17）
@@ -161,8 +161,9 @@
 - 🔴 **未修復**｜**帳號限制後申訴表單重新導向迴圈（GitHub issue #62503，累積 31 則留言、5 個讚，2026-07-07）**：帳號遭限制的使用者嘗試提交申訴表單時陷入重新導向迴圈，無法完成申訴流程，官方尚未回應。
 - 🔴 **未修復**｜**功能請求聚集：跨平台支援需求未滿足**：多項高反應數 feature request 顯示使用者對跨平台支援的強烈需求——官方 Linux（Ubuntu LTS / Debian）Desktop build（[issue #65697](https://github.com/anthropics/claude-code/issues/65697)，累積反應 651）、Desktop 於 Windows 上改用 WSL 執行指令的選項（[issue #12506](https://github.com/anthropics/claude-code/issues/12506)，累積反應 134）、Desktop 與 CLI 之間同步 Skills（[issue #20697](https://github.com/anthropics/claude-code/issues/20697)，累積反應 127）；均為社群高投票 feature request，官方尚未排入路線圖。多帳號管理相關訴求已獨立整併至「👤 帳號管理」分組
 
-### 🌐 服務穩定性（3 條已修復、3 條未修復、1 條待查證）
+### 🌐 服務穩定性（3 條已修復、4 條未修復、1 條待查證）
 
+- 🔴 **未修復（截至 2026-07-17 日報彙整時）**｜**72 小時內密集服務不穩定：Anthropic Status 累計至少 6 起事件（2026-07-15～07-17）**：密度明顯高於本頁近月平均。(1) 多模型錯誤率升高，2026-07-15 15:11 UTC 確認解決；(2) Sonnet 5 錯誤率升高，2026-07-16 08:53 UTC 通報並同時確認解決；(3) 企業 SSO 登入失敗，2026-07-16 10:27 UTC 確認解決；(4) Opus 4.7 錯誤率升高（約 07-16 08:58 UTC 通報），已於 2026-07-16 13:30 UTC 確認解決；(5) 多模型錯誤率升高（第二起，07-16 18:30–22:15 UTC 期間），已於 2026-07-16 22:53 UTC 確認解決；(6) Sonnet 5／Haiku 4.5 錯誤率升高，2026-07-17 07:10 UTC 通報，截至 2026-07-17 日報彙整時（12:00 UTC）Anthropic Status 仍標記「已識別問題、修復實施中」尚未解決（[事件頁](https://status.claude.com/incidents/7gpjd8n56rlq)）。GV Wire 報導同步引用 Downdetector 錯誤回報數上升作為外部佐證，顯示使用者端確實感受到服務品質下降；截至彙整時（2026-07-19）尚無後續日報可確認 07-17 該起事件的最終解決時間。
 - ✅ **已修復（同日解決）**｜**claude.ai container creation 部分中斷（2026-07-14 21:56–22:16 UTC）**：Anthropic Status 頁面顯示 claude.ai 的 container creation 功能發生部分中斷，約 20 分鐘後修復完成並經監控確認恢復正常；狀態頁未進一步說明確切成因與影響範圍，可能涉及 Claude Code on the web／Cowork 的沙箱建立流程。
 - 🔴 **未修復**｜**OAuth 登入逾時失敗，`auth.anthropic.com` 網域無法解析（GitHub issue #33238，累積 151 則留言、47 個讚，2026-07-14 仍為互動量最高條目）**：使用者回報 Claude Code OAuth 登入逾時失敗，`auth.anthropic.com` 網域完全無法透過 DNS 解析，導致使用者完全無法完成驗證流程；官方尚未回應。
 - 🔴 **未修復**｜**claude.ai visualize 功能故障，claudemcpcontent.com 無法連線（DNS_PROBE_FINISHED_NXDOMAIN）（GitHub issue #34820，累積 94 則留言、39 個讚，2026-07-10）**：使用者回報 claude.ai 的 visualize 功能故障，依賴的 claudemcpcontent.com 網域無法解析（DNS 錯誤）；官方尚未回應。

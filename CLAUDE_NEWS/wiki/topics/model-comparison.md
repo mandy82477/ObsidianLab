@@ -3,7 +3,7 @@
 **狀態：** ongoing
 **領域：** 🤖 模型
 **開始日期：** 2026-07-02
-**最後更新：** 2026-07-16
+**最後更新：** 2026-07-19
 **最後新聞更新：** 2026-07-16
 
 > **最新對照更新**（2026-07-14）
@@ -74,6 +74,15 @@
 Anthropic 研究部落格於 2026-07-15 發布〈Claude's values across models and languages〉，探討使用者向 Claude 提出**沒有普遍正確答案的問題**時（例如「該不該接受新工作」「如何處理與朋友的衝突」），Claude 在不同模型版本與不同語言之間展現的價值觀回應差異（[Anthropic Research](https://www.anthropic.com/research/claude-values-models-languages)，2026-07-15；Hacker News 累積 32 分）。
 
 **性質說明：** 這是模型行為／對齊研究，非可用功能、也非 benchmark 分數，**不影響本頁「該用哪個模型」的選型建議**；因研究涉及跨模型、跨語言比較而非單一模型，記錄於本頁而非個別 entities 頁。原文摘要僅提供研究主題與範例問題，未附具體樣本語言清單、模型清單或量化差異數字，暫列標題級記錄，待後續報導或原始研究補充細節時再擴寫。
+
+## 外部評測榜單
+
+wiki 內建的模型評測數字有時效性限制（見上方各表格「數據截至」標註）。若需要更即時、涵蓋更廣的跨模型（含 GLM、Qwen、Kimi 等開源模型與 GPT-5.6 等非 Anthropic 閉源模型）評測對照，可參考：
+
+- [Artificial Analysis Intelligence Index](https://artificialanalysis.ai/) — 涵蓋開源與閉源模型的綜合能力評測，含 FrontierSWE、Terminal-Bench 等 coding/agentic 子項
+- [Hugging Face Open LLM Leaderboard](https://huggingface.co/spaces/open-llm-leaderboard/open_llm_leaderboard) — 開源模型專用評測榜單，適合追蹤 GLM / Qwen / Kimi 等開源競品
+
+> 外部連結僅供參考，非本 wiki 收錄事實；數字本身會隨時間變動，wiki 不記錄快照分數以免過期誤導。本 wiki 聚焦 Claude/Anthropic 生態系內的評測與定位分析。
 
 ## 相關實體
 

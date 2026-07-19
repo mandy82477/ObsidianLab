@@ -3,7 +3,7 @@
 **狀態：** monitoring
 **領域：** 💼 商業
 **開始日期：** 2026-04
-**最後更新：** 2026-07-17
+**最後更新：** 2026-07-19
 **最後新聞更新：** 2026-07-17
 
 > **最新競品動態**（2026-07-17）
@@ -33,7 +33,7 @@ Claude Code 已成為 AI 輔助編碼的標竿產品，但競爭正快速升溫�
 
 | 工具/模型 | 定價 | vs Claude 定位 | 來源日期 |
 |---------|------|--------------|---------|
-| pi-coding-agent | 未見具體掛牌價，僅稱「約為 Claude Code / Codex 之半」（DataBricks 評測，Reddit r/LocalLLaMA 轉述，單一來源未經官方交叉確認，**待查證**）| 若屬實代表低成本編碼 agent 持續逼近 Claude Code；GLM 5.2 據同一評測「表現可比 Opus 4.8 high」| 2026-07-10（Reddit https://www.reddit.com/r/LocalLLaMA/comments/1usrek0/according_to_databricks_picodingagent_is_2x/）|
+| pi-coding-agent | 未見具體掛牌價，僅稱「約為 Claude Code / Codex 之半」（DataBricks 評測，Reddit r/LocalLLaMA 轉述，單一來源未經官方交叉確認，**待查證**）| 若屬實代表低成本編碼 agent 持續逼近 Claude Code；GLM-5.2（Zhipu/Zai，753B 總參數/40B active）：Artificial Analysis Intelligence Index v4.1 外部佐證為開源模型榜首，FrontierSWE 74.4 vs Opus 4.8 75.1（僅差 0.7）、Terminal-Bench 2.1 81.0、SWE-bench Pro 62.1（**非日報進料**，來自使用者 2026-07-17 手動查證，詳見 [[log]] 2026-07-17「地端 AI server 商業評估」Query 條目；單一外部來源，非 Anthropic 官方數字，仍標**待查證**）| 2026-07-10（Reddit，pi-coding-agent 部分）／2026-07-17（GLM-5.2 部分，使用者查證）|
 | GitHub Copilot Pro+ | $39/月（含 Opus 存取，但對 Opus 使用採 **27 倍**加價換算）| 名義月費低於 Claude Max，但重度使用 Opus 時實際換算成本可能反超；作者實測建議直接用 Anthropic API 更划算 | 2026-05-06（開發者實測分析）|
 | DeepSeek V4 Flash（API） | 未見具體掛牌價，僅見「成本降低逾 100 倍」對比 Anthropic API 定價之定性描述 | 開源、低價策略正面衝擊 Anthropic「API 高價補貼 agent 服務」的商業邏輯；Microsoft 等已切換部分執行層 | 2026-06-26（rtrvr.ai）|
 | DeepSeek（Lindy 案例，API 整體遷移）| 未見換算後月費數字，僅見「每月省下數百萬美元」（Lindy 全公司規模）| 「最省錢 > 最強模型」具名案例，屬企業級大規模用量的相對節省，非單一訂閱價格對比 | 2026-06-29（CNBC）|
@@ -220,6 +220,7 @@ Claude Code 已成為 AI 輔助編碼的標竿產品，但競爭正快速升溫�
 
 ### 2026-07-10
 - **[待查證，單一來源轉述] DataBricks 評測：pi-coding-agent 成本約為 Claude Code / Codex 之半，GLM 5.2 表現可比 Opus 4.8 high**：Reddit r/LocalLLaMA 週熱門貼文轉述 DataBricks 的評測結果，指出 pi-coding-agent 成本約為 Claude Code / Codex 的一半，GLM 5.2 表現可與 Opus 4.8 high 相提並論。**注意**：為單一來源轉述，未見官方或第三方交叉確認具體數字，標記「待查證」。**對競爭格局的意涵**：若數字成立，代表低成本編碼 agent 與開源模型持續逼近 Claude Code 效能與定價天花板，與既有 DeepSeek、Zhipu 陣營形成同向壓力（推論，待驗證）（Reddit https://www.reddit.com/r/LocalLLaMA/comments/1usrek0/according_to_databricks_picodingagent_is_2x/）
+  - **[2026-07-17 追蹤更新，非日報進料] GLM-5.2（Zhipu/Zai，753B 總參數/40B active）外部評測佐證**：使用者於地端 AI server 商業評估過程中手動 WebSearch 查證，Artificial Analysis Intelligence Index v4.1 顯示 GLM-5.2 為開源模型榜首，FrontierSWE 74.4 vs Opus 4.8 75.1（僅差 0.7）、Terminal-Bench 2.1 81.0、SWE-bench Pro 62.1（詳見 [[log]] 2026-07-17「地端 AI server 商業評估」Query 條目）。**注意**：此為單一外部榜單來源、非日報收錄、非 Anthropic 官方數字，性質仍是「待查證」而非既定事實，僅代表 pi-coding-agent 條目中「GLM 5.2 可比 Opus 4.8 high」的說法首次獲得具體 benchmark 數字支持。**對競爭格局的意涵**：若 Artificial Analysis 榜單方法論可信，代表開源陣營（Zhipu/Zai）在編碼類 benchmark 已逼近 Opus 4.8 頂尖水準，差距縮小至個位百分點，對 Anthropic 高階模型的定價溢價正當性構成壓力（推論）。
 
 ### 2026-07-09
 - **[核心產品線正面挑戰，重大] OpenAI 推出「super app」ChatGPT Work / GPT-5.6，訴求價格/速度/生產力全面超越 Anthropic**：Reuters、ZDNET 報導 OpenAI 發表長期醞釀的 ChatGPT Work，搭配 GPT-5.6，明確訴求在價格、速度、生產力上超越 Anthropic。**對競爭格局的意涵**：與既有 Codex CLI 下載量分流（05-05 起）不同，本次挑戰延伸至企業工作場景整合入口，正面對打 Anthropic 訂閱與企業採購雙軌商業模式；若定價確實更具優勢，恐加劇 6/15 計費爭議後的訂閱留存壓力（推論）（Reuters「OpenAI unveils long-awaited "super app" as rivalry with Anthropic intensifies」；ZDNET）
