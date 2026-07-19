@@ -4,10 +4,10 @@
 **領域：** 💼 商業
 **開始日期：** 2026-04
 **最後更新：** 2026-07-19
-**最後新聞更新：** 2026-07-18
+**最後新聞更新：** 2026-07-19
 
-> **最新競品動態**（2026-07-18）
-> Moonshot AI 官方公告首度揭露 Kimi K3 完整技術規格（Simon Willison 部落格引述一手公告）：**2.8 兆參數**，採用自研 **Kimi Delta Attention** 與 **Attention Residuals** 架構，具原生視覺能力與 **100 萬 token** context window；官方自陳「整體表現仍落後 Claude Fable 5 與 GPT-5.6 Sol，但在受測開源模型中持續居於領先」——為 07-16/17 首報後首次出現官方一手技術細節與自我定位，比 07-17 已記錄的 Reddit 社群觀感（待查證）更具查證價值。BBC、Forbes（source_count=2）、The Globe and Mail 同日同步跟進報導，聚焦「Kimi K3 能力逼近 Claude/ChatGPT 令美國科技業意外」，屬既有事件的媒體擴散而非新事實。WSJ 分析文章指出 AI 技術更廣泛普及對中國整體有利，但對 OpenAI 與 Anthropic 未必是好消息。另有報導稱 Anthropic 與 OpenAI 指控中國 AI 公司「蒸餾」，投資人 Chamath Palihapitiy 就此加入評論（The Times of India，具體評論內容未展開）。
+> **最新競品動態**（2026-07-19，多為標題層級訊號，無重大可驗證新事件）
+> 今日新增四則競品相關報導，均僅存標題資訊、無具體數據可查證：(1) Motley Fool 再次報導 Musk「低估了 Anthropic AI 實力」，延續 07-09/10/13/14 已記錄的 Musk 表態序列，未見新引言，屬既有敘事的再擴散；(2) The New Stack 稱 Musk 開源 Grok Build 以對抗 Anthropic，標題並提及 Anthropic 每月支付對方 **12.5 億美元**，惟付款對象（Musk 本人或 xAI／Colossus 算力）與用途細節不明，不可逕自推論為支付予 Musk 個人；(3) KED Global 稱 Claude 有望受企業需求帶動在南韓生成式 AI 市場占據領先地位，無具體市佔數字；(4) Fast Company 稱新創 Thinking Machines 正在「智識調性」上對 Anthropic 構成競爭態勢，具體內容不明。07-18 已記錄的 Kimi K3 技術規格揭露仍是本月最具實質內容的競品事件，見下方「主要競品追蹤」與時序。
 
 ---
 
