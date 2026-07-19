@@ -3,11 +3,11 @@
 **狀態：** monitoring
 **領域：** 🌐 社群
 **開始日期：** 2026-04-25
-**最後更新：** 2026-07-17
-**最後新聞更新：** 2026-07-16
+**最後更新：** 2026-07-19
+**最後新聞更新：** 2026-07-19
 
-> **最新工作流模式**（2026-07-16）
-> 今日社群互動量回升，本日最高分為 Show HN Brainless：模仿 Claude Code/Codex/Grok 介面風格的 shadcn 元件庫（HN 124 分），一行指令即可安裝進專案；另收錄 Agentty（C++26 撰寫的 Claude Code drop-in 替代品，11MB 二進位檔，HN 38 分，討論聚焦「重點在 harness 設計而非單純呼叫 API」）；跨來源訊號（source_count=2）新增 OtoDock（自架伺服器運行 Claude Code + Codex agent 團隊）與 Grepathy（偵測、追蹤 agent 未經核准自主決策的稽核工具，衍生自 [[topics/community-tech-discussions]] 同日收錄的信任疑慮討論）。07-15 既有模式（Context 分支/合併工具）與 07-14 Fable 5 官方編排基準仍為近期背景。
+> **最新工作流模式**（2026-07-19）
+> 今日最高分為 HN「Setting up your spare Mac for Claude Code to control, a step-by-step guide」（score 234，本輪最高分）：作者提供完整步驟教學，將備用 Mac 設為 Claude Code 可透過 computer use 全權控制、並可用手機或 SSH 遠端下指令的常駐環境，核心動機是隔離主力工作機開啟 `--dangerously-skip-permissions` 的風險。今日其餘 HN Show HN 條目（Shikigami、FlexInference、Talon、AI Buddy、Synapse、OpenCareLoop、Go Micro 等）分數均為個位數，未達收錄門檻。07-15 既有模式（Brainless、Agentty、OtoDock、Grepathy、Context 分支/合併工具）與 07-14 Fable 5 官方編排基準仍為近期背景。
 
 ---
 
@@ -35,7 +35,7 @@
 | **Agent 版本控制** | ADR 注入、架構決策文件先於實作 | ⏳ 新興 | 決策文件先於實作，降低代理方向偏移風險 |
 | **Context 管理** | Just-in-Time @-file、Repo-as-Memory、Context Rot 修復、對話分支/合併手動控制 | ⚡ 活躍 | 即時取回優於預先加載；repo 是記憶體、模型是工作者；避免 context 過早飽和；新增使用者可視化分支/合併對話以精準控制 context 範圍的手動操作模式 |
 | **Agent 規模化** | 20-instance 崩潰分析、批量 OSS Bug 修復、Personas vs Tool-scoping、Mac Mini 自主 agent 部署、TBD（HN 4，agent-channels 跨 worktree 通訊）、live-log-viewer-next（平行 agent 即時對話地圖） | ⏳ 新興 | 超過 10 個並行 agent 需獨立 worktree + orchestrator 協調層；工具範圍限制比角色描述更可靠的邊界守護；無人監督排程任務已有完整 Mac Mini M4 方案；可觀測性層開始補足「多 agent 進度難追蹤」的協調盲點 |
-| **安全架構** | CLAUDE.md for K8s、語意層漂移 CI 測試、Trent 內嵌評估、Grepathy（agent 未經核准決策稽核） | ⏳ 新興 | AI 加速開發下的系統性安全防線；CI 攔截語義退化；Grepathy 偵測、追蹤 agent 自主做出但未經人工核准的決策行為 |
+| **安全架構** | CLAUDE.md for K8s、語意層漂移 CI 測試、Trent 內嵌評估、Grepathy（agent 未經核准決策稽核）、Spare Mac 隔離環境（--dangerously-skip-permissions 風險隔離） | ⏳ 新興 | AI 加速開發下的系統性安全防線；CI 攔截語義退化；Grepathy 偵測、追蹤 agent 自主做出但未經人工核准的決策行為；備用實體裝置作為 agent 全權控制沙箱，降低主力工作機風險 |
 | **介面元件複用** | Brainless（模仿 Claude Code/Codex/Grok 介面風格的 shadcn 元件庫） | ⏳ 新興 | 將 AI coding 工具的介面美學封裝為可用單一指令（`bunx shadcn add`）安裝的前端元件，本日 HN 最高分（124） |
 | **跨環境 Agent 記憶** | Core Memory Packet、Agent 持續運作架構 | ⏳ 新興 | 跨編輯器 / 跨機器 / 跨模型的供應商中立記憶協定 |
 | **架構邊界合約** | ANMA YAML contracts、Hooks 強制驗證、ISO 29148 規格驅動 | ⏳ 新興 | 用合約與工業標準定義 AI 不可越過的架構規則；使便宜模型也能守規 |
@@ -55,6 +55,13 @@
 ## 技術彙整
 
 ### 2026-07
+
+#### Spare Mac 作為 Claude Code 專屬常駐環境：隔離 --dangerously-skip-permissions 風險（2026-07-18）
+
+- **核心模式：** 作者撰寫完整步驟教學，示範如何把備用 Mac 設定為 Claude Code 可透過 computer use 全權控制的常駐環境，並可透過手機或 SSH 遠端下指令；核心動機是風險隔離——作者指出在主力工作機器上開啟 `--dangerously-skip-permissions` 旗標具有固有風險，獨立於主機之外的備用裝置可用來承擔研究與開發任務的風險，即使 agent 出錯也不影響主力環境
+- **與既有模式的關係：** 與本頁「安全架構」類別（CLAUDE.md for K8s、Grepathy 等）同屬降低 agent 自主行為風險的思路，差異在於本模式以「實體裝置隔離」而非軟體層稽核/合約作為防線；也與「行動裝置遠端控制」類別（ccgram、Shellular）有交集——皆透過手機遠端操作常駐執行中的 Claude Code / Codex session，但本模式的核心訴求是風險隔離而非單純便利性
+- **來源：** 「Setting up your spare Mac for Claude Code to control, a step-by-step guide」— Hacker News（score 234，本輪最高分）
+- **成熟度：** ⏳ 新興（今日首見，HN 234 分達對照表高門檻，顯示高度社群興趣，尚待社群後續實測回饋佐證是否有隱藏風險或限制）
 
 #### Brainless：模仿 Claude Code / Codex / Grok 介面風格的 shadcn 元件庫（2026-07-15）
 

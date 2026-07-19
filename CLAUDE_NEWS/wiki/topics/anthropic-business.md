@@ -3,11 +3,11 @@
 **狀態：** ongoing
 **領域：** 💼 商業
 **開始日期：** 2026-05-28
-**最後更新：** 2026-07-18
-**最後新聞更新：** 2026-07-18
+**最後更新：** 2026-07-19
+**最後新聞更新：** 2026-07-19
 
-> **最新動態**（2026-07-18）
-> 今日最重要商業訊號：Meta 據報洽談以 **100 億美元**規模將運算力租賃予 Anthropic——Reuters、The New York Times（各自獨立來源）、Hacker News（討論串，score 28）三方同步報導/討論，交叉驗證度高。此事與同日另兩則報導「Anthropic 因運算資源吃緊收緊 Claude Fable 5 存取限制」（Startup Fortune、the-decoder.com）形成清晰因果呼應：算力短缺同時逼出「向外部租算力」與「向內部收緊高階模型配額」兩條因應路線（推論）。惟同日 Simon Willison 部落格引述官方 `@claudeai` Twitter 帳號稱「將 Fable 5 設為永久」，與收緊存取限制方向相反，訊號分歧，兩則皆記錄、標記矛盾待觀察，詳見 [[entities/pricing]]。另有 Jefferies 分析師關注 AMD 是否將與 Anthropic 達成合作（僅屬分析師觀察階段，未確認）；中國蒸餾指控延燒，投資人 Chamath Palihapitiy 加入評論戰局；Kimi K3 官方一手技術規格首度揭露（2.8T 參數、Kimi Delta Attention、100 萬 token context）——以上競品動態詳見 [[topics/competitor-landscape]]。
+> **最新動態**（2026-07-19，Fable 5 免費期到期日）
+> 今日兩條線值得留意：(1) Fable 5 免費期到期日當天，存取政策訊號**仍未收斂**——Tech Times 稱「Max 永久、Pro 改 Credits-only」、Dawn 稱「併入 Max/Team Premium、用量上限 50%」，與 07-18 已記錄的矛盾訊號交疊卻未完全對照，四則報導均僅標題層級資訊，詳見 [[entities/pricing]]；(2) TechCrunch／Hacker News（score 39）揭露 07-18 已記錄「Time Magazine 評論廣告反彈聲浪」的具體內容——Anthropic 最新廣告《There's hope in hard questions》以監控人群、街友、墓地、礦工等陰暗意象搭配旁白提問，引發部分觀眾不安，補上前一日缺失的廣告細節。此外 Musk 對 Anthropic 的表態序列延續（含一則財務數字待證實：Anthropic 傳每月支付 12.5 億美元予對象不明的一方）、南韓市場地位、新競爭者 Thinking Machines 品牌定位等競品動態，均僅標題層級資訊，詳見 [[topics/competitor-landscape]]。
 
 ---
 
@@ -179,6 +179,12 @@ Simon Willison（知名開發者博主）發表文章，認為 Anthropic 與 Ope
 ## 時序
 
 ### 2026-07
+
+#### 2026-07-19
+- **[計費政策，到期日當天，訊號仍分歧] Fable 5 免費期到期，Tech Times／Dawn 標題各自宣稱「Max 永久／Pro Credits-only」與「併入 Max/Team Premium、上限 50%」**：詳見 [[entities/pricing]]「定價與促銷」07-19 條目
+- **[廣告爭議，內容首度揭露，補上 07-18 缺口] TechCrunch：Anthropic 最新廣告《There's hope in hard questions》以監控、街友、墓地、礦工等陰暗意象引發部分觀眾不安**：Hacker News 轉載 TechCrunch 報導（score 39，達互動門檻對照表「中」門檻 ≥30 分），廣告以一棟燃燒的房屋畫面開場，穿插監控人群的人臉辨識鏡頭、街頭露宿者、成排墓碑、礦工勞動等意象，搭配旁白提問，讓部分觀眾感到不安。**對商業的意涵**：補上 07-18 已記錄「Time Magazine 評論廣告反彈聲浪」條目當時缺失的具體廣告內容細節；一則以「艱難提問中蘊含希望」為主題卻大量使用陰暗意象的廣告，在 Anthropic 積極整備 IPO 敘事（見「IPO 前瞻」07-17 條目 60 萬美元徵才）之際引發不安觀感，可能是品牌敘事與公眾觀感之間的另一處摩擦點（推論）（Hacker News → TechCrunch，score 39，07-18 23:50 UTC）
+- **[競品動態，詳見 competitor-landscape，均為標題層級] Musk 表態序列延續（含每月 12.5 億美元財務數字，付款對象未確認）、南韓市場地位、新競爭者 Thinking Machines 品牌定位**：四則競品/表態動態詳見 [[topics/competitor-landscape]]
+- **[資訊過於單薄，未建立正式條目] Yahoo Finance Australia 稱「Meta、Anthropic 投下震撼彈」**：報導標題以「投下震撼彈」形容 Meta 與 Anthropic 近期針對 AI 市場的相關消息，原文摘要遭 RSS 截斷，具體內容不明，無法判斷是否為 07-18 已記錄的「Meta 100 億美元運算力洽談」的延伸報導或全新事件，暫不建立正式條目，僅此處記錄待後續補充（Google News/Yahoo Finance Australia，07-18 17:47 UTC）
 
 #### 2026-07-18
 - **[重大，算力供給側，三方交叉驗證] Meta 據報洽談以 100 億美元規模租賃運算力予 Anthropic**：詳見「戰略合作」表新增列（Google News/Reuters；Google News/The New York Times；Hacker News）
