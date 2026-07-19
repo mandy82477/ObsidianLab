@@ -5,16 +5,16 @@
 **領域：** 🛠️ 工具/功能
 **首次出現：** 2025（正式推出）
 **最後更新：** 2026-07-19
-**最後新聞更新：** 2026-07-18
+**最後新聞更新：** 2026-07-19
 
-> **最新版本動態**（2026-07-18）
-> **v2.1.214**（2026-07-18）：純安全性修正——修復 single-segment `dir/**` allow 規則（如 `Edit(src/**)`）誤自動核准樹狀結構中任意層級 `dir/` 目錄寫入的權限漏洞（原本應僅限 `<cwd>/dir`），並修復另一項相關權限問題（原文於 200 字元處截斷，細節未知）；無新指令/旗標，未列入 [[feature-radar]]。同日 TypeScript SDK 發布 v0.112.3（docs 小幅調整）與 Google Cloud SDK 附屬套件 v0.0.6（無 changelog 說明）。Anthropic Status 於 07-17 一日內錄得四起錯誤率升高事件並皆同日修復：Sonnet 5＋Haiku 4.5（07:03–12:21 UTC）、Claude Opus 4.8（14:57–15:33 UTC）、Sonnet 5（18:22–18:27 UTC）、Fable 5（18:48–19:43 UTC，官方確認 Fable 5 仍如預期維持「不消耗用量額度」的存取狀態）。本日新增已知問題 7 條：READ 工具未標示目前正在讀取哪一個檔案（issue #21151，186 個讚）；功能請求新增選項常駐顯示 Claude 思考過程（issue #8477，346 個讚，今日互動最高）；工作目錄追蹤暫存檔 `/tmp/claude-*-cwd` 從未清理持續累積（issue #8856，70 個讚）；送出前檢視/編輯「已貼上文字」區塊（issue #3412，296 個讚）；升級方案付款時 `PaymentIntent` 於確認完成前即遭 `void_invoice` 作廢（issue #55982，25 個讚）；Desktop 版登出／重啟後 session 消失（issue #26452，29 個讚）；Skills 支援子目錄結構（issue #10238，165 個讚）。既有已知問題更新：Remote Control 自動重連失效（issue #34255）反應數持平於 97 個讚，問題持續未解；AskUserQuestion 60 秒逾時自動代答機制經 Hacker News 部落格文章（olafalders.com「Claude Code: Anatomy of a Misfeature」，score 140）確認為 2026-07-01（v2.1.198）刻意加入的「效率繞過」設計，另有 Hacker News 使用者具體案例（score 23）證實請求放慢步調／暫停仍遭 agent 無視。前一重大異動為 v2.1.212（2026-07-17）`/fork` Breaking change（見「版本更新」表格）。
+> **最新版本動態**（2026-07-19）
+> **v2.1.215**（2026-07-19 02:56 UTC）：⚠️ **行為變更**——Claude 不再自動執行 `/verify` 與 `/code-review` 兩項技能，須由使用者手動呼叫 `/verify` 或 `/code-review` 指令才會觸發；依賴自動驗證/審查的既有工作流需改為顯式呼叫，無過渡期即刻生效，已提報 [[feature-radar]] 新增條目。同日 Hacker News（原文 simonwillison.net）證實 Jarred Sumner 的說法：Claude Code 自 **v2.1.181**（2026-06-17 發布）起底層執行環境已改用 Rust 重寫版 Bun runtime，Linux 平台啟動速度提升約 10%，多數使用者毫無察覺，屬底層基礎設施更新（作者以 `strings` 指令找到 563 個 `.rs` 檔名佐證）。本日新增已知問題：方案 5 小時用量限額在不到 1 小時 30 分鐘內即用罄（累積 120 則留言、31 個讚，今日互動量最高）；GitHub connector 可成功連結帳號內所有公開／私有 repository，卻無法讀取任何內容，回報為近期功能退化（累積 37 則留言、33 個讚）；功能請求新增訊息時間戳記，方便監控長時間背景 agent 工作進度（累積 36 則留言、66 個讚）；功能請求內建 Slack MCP connector 支援多 workspace，目前僅支援單一 workspace（累積 33 則留言、69 個讚）。既有已知問題更新：Desktop 版登出／重啟後 session 消失（issue #26452）補上留言數據，累積達 49 則留言；Environment Contributions 警告持續重複出現（issue #3301）反應數升至 43 則留言、81 個讚。前一重大異動為 v2.1.212（2026-07-17）`/fork` Breaking change（見「版本更新」表格）。
 
 ---
 
 ## 現況
 
-**最新版本動態：** 最新版本 **v2.1.214**（2026-07-18）為純安全性修正：修復 single-segment `dir/**` allow 規則（如 `Edit(src/**)`）誤自動核准樹狀結構中任意層級 `dir/` 目錄寫入的權限漏洞（原本應僅限 `<cwd>/dir`），並修復另一項相關權限問題；無新指令/旗標，未列入 [[feature-radar]]。前一重大異動為 **v2.1.212**（2026-07-17）⚠️ **Breaking change**：`/fork` 不再於同一 session 內啟動子 agent，改為將對話複製進一個新的背景 session（在 `claude agents` 中自成一列），使用者可同時繼續原工作；原本由 `/fork` 啟動的同 session 子 agent 功能更名為 `/subtask`，依賴舊語意的腳本/工作流需改用新指令，無過渡期即刻生效；已提報 [[feature-radar]] 新增條目。近期各版本的指令、旗標與設定項異動，詳見下方「最新版本」表格。
+**最新版本動態：** 最新版本 **v2.1.215**（2026-07-19）為 ⚠️ **行為變更**：Claude 不再自動執行 `/verify` 與 `/code-review` 兩項技能，須由使用者手動呼叫指令才會觸發，依賴自動驗證/審查的既有工作流需改為顯式呼叫，無過渡期即刻生效；已提報 [[feature-radar]] 新增條目。同日另有 Hacker News 證實 Claude Code 自 v2.1.181（2026-06-17）起底層已改用 Rust 重寫版 Bun runtime（Linux 啟動速度提升約 10%），屬底層基礎設施更新。前一重大異動為 **v2.1.212**（2026-07-17）⚠️ **Breaking change**：`/fork` 不再於同一 session 內啟動子 agent，改為將對話複製進一個新的背景 session（在 `claude agents` 中自成一列），使用者可同時繼續原工作；原本由 `/fork` 啟動的同 session 子 agent 功能更名為 `/subtask`，依賴舊語意的腳本/工作流需改用新指令，無過渡期即刻生效。近期各版本的指令、旗標與設定項異動，詳見下方「最新版本」表格。
 
 **產品定位：** Claude Code 是 Anthropic 的 AI 編碼 CLI 工具，核心能力已從程式碼助理擴展為具備全桌面自動化、多代理管理（Managed Agents）、MCP Server 整合、Hooks 機制、AI 安全審查，以及可串接 1Password 憑證庫安全登入網站（密碼不外流至 Claude／Anthropic，2026-07-17 多家媒體報導，官方技術細節待補）的完整 agent 開發平台；GitHub Stars 達 **131,000+**。
 
@@ -50,10 +50,11 @@
 - 🔴 **未修復**｜**Gmail MCP connector 黑暗設計模式批評（2026-06-28 HN 討論）**：Anthropic 推出的 Claude Gmail MCP 整合（官方 Google connector，Pro/Max/Team/Enterprise beta 可用）被社群批評授權頁面採用「黑暗設計模式」，介面設計被認為誤導用戶授予比預期更廣泛的 Google 帳號存取權限；目前 HN score 僅 3，為早期批評訊號，Anthropic 尚未回應。參見 [官方文件](https://claude.com/docs/connectors/google/gmail)
 - 🔴 **未修復**｜**原始碼外洩與 DMCA 風波**（2026-05-04 持續延燒）：Anthropic 因人為疏失導致 Claude Code 原始碼外洩，已向各平台發出逾 8,100 次 DMCA 下架請求，引發 AI 生成程式碼版權歸屬的法律辯論；社群以外洩程式碼為基礎重建的「Claw-Code」分支隨之誕生，影響已超出技術層面。
 
-### 💰 計費與配額（12 條未修復）
+### 💰 計費與配額（13 條未修復）
 
 > 2026-06 下旬起配額/成本爭議集中爆發，多起獨立回報同時指向額度消耗與計費透明度問題。
 
+- 🔴 **未修復**｜**方案 5 小時用量限額在不到 1 小時 30 分鐘內即用罄（GitHub Issues，累積 120 則留言、31 個讚，2026-07-19，今日互動量最高）**：使用者回報依標準 bug 回報範本提交，環境為 Anthropic API／Claude CLI v1.0.89，方案 5 小時用量限額實際不到 1 小時 30 分鐘即被用罄，遠低於預期使用時長；官方尚未回應，與既有「Max 訂閱方案立即觸及用量上限」（issue #16157）同屬配額消耗速度爭議，暫分列追蹤。
 - 🔴 **未修復**｜**「Server is temporarily limiting requests」錯誤與用量上限無關（GitHub issue #53915，累積 68 則留言、26 個讚，2026-07-13）**：使用者回報收到「伺服器暫時限制請求」的速率限制錯誤，官方訊息明確標註並非使用者用量上限所致；成因與是否可緩解官方尚未說明。
 - 🔴 **未修復**｜**Max 訂閱方案立即觸及用量上限（GitHub issue #16157，累積 1480 則留言、722 個讚，2026-07-12 仍為互動量最高條目）**：使用者回報訂閱 Max 方案後幾乎立即觸及用量上限，反應量持續居冠；官方尚未回應。
 - 🔴 **未修復**｜**圖片處理失敗導致 token 大量浪費（GitHub issue #60334，2026-07-12 回報）**：使用者回報一次圖片處理失敗即耗掉五小時額度約 70%；Anthropic API 端圖片處理錯誤直接反映為使用者額度損失，官方尚未回應。
@@ -101,7 +102,7 @@
 ### 📂 Session 與資料管理（6 條未修復、1 條拒修、1 條待查證）
 
 - 🔴 **未修復**｜**對話壓縮（compaction）間歇性失敗或卡死（GitHub issue #20696，累積 61 則留言，2026-07-12 回報，regression）**：claude.ai 網頁版／行動版對話壓縮功能自 2026-01-15 起偶發失敗或卡死，回報者稱此為回歸性問題（先前版本未見）；官方尚未回應。與已列「Auto Compact 失效」為不同介面（此為 claude.ai web/mobile，另一為 Claude Code CLI），暫分列追蹤。
-- 🔴 **未修復**｜**Desktop 版登出／重啟後 session 消失（GitHub issue #26452，累積 29 個讚，2026-07-18）**：使用者回報 Claude Code Desktop 登出或重新啟動後，先前的 session 記錄消失；官方尚未回應。
+- 🔴 **未修復**｜**Desktop 版登出／重啟後 session 消失（GitHub issue #26452，累積 49 則留言、29 個讚，2026-07-18，使用者急尋恢復方法）**：使用者回報 Claude Code Desktop 登出或重新啟動後，先前的 session 記錄消失，標題以「HOW to restore the sessions ASAP???」呈現急迫程度；官方尚未回應。
 - 🔴 **未修復**｜**功能請求：多 Claude session 間直接通訊（GitHub issue #24798，累積 54 則留言、18 個讚，2026-07-08）**：使用者呼籲支援 multi-Claude 工作流中 session 之間的直接通訊機制，避免需透過檔案系統或外部工具中繼協調；官方尚未回應或排入路線圖。
 
 - ⛔ **官方拒修**｜**Session 歷史 30 天自動刪除（Anthropic 明確拒絕修復）**（2026-05-01 確認，2026-06-30 更新）：Claude Code 預設在 30 天後自動刪除 session `.jsonl` 歷史檔；Anthropic 官方在 [GitHub issue #62476](https://github.com/anthropics/claude-code/issues/62476) 明確表示不會修復此行為。社群建議替代方案：用 CLAUDE.md 記錄關鍵決策，或建立 `.claude/changelog` 手動保留對話摘要。延長保留期間的臨時解法：`npx agentinit agent set claude cleanupPeriodDays 365`
@@ -117,10 +118,11 @@
 - 🔴 **未修復**｜**手機號碼驗證機制異常（GitHub issue #34229，累積 741 則留言、892 個讚，2026-07-16，全站已知問題今日互動量最高）**：使用者回報 Claude 帳號的手機號碼驗證流程出現問題；原文摘要於 preflight checklist 處被截斷，具體異常現象未知，僅能確認高互動量與「手機驗證」主題；官方尚未回應。見 [issue](https://github.com/anthropics/claude-code/issues/34229)
 - 🔴 **未修復**｜**Claude 全平台共通的帳號架構缺口——三平台各自提出多帳號管理訴求**：Mobile app 缺乏免共用 email 的多帳號切換（[issue #36151](https://github.com/anthropics/claude-code/issues/36151)，累積 123 則留言、542 個讚，2026-07-08 該日反應數最高）；Desktop app 缺乏多帳號管理與快速切換（[issue #18435](https://github.com/anthropics/claude-code/issues/18435)，累積 126 則留言、705 個讚，2026-07-10 該日反應數最高）；Claude／Claude Code on the web 缺乏同一 Connector 掛載多個帳號的支援（[issue #27302](https://github.com/anthropics/claude-code/issues/27302)，累積 212 則留言、419 個讚，2026-07-10）；三則 issue 分屬不同介面、互不重複，卻在同一週集中出現，共同反映 Claude 帳號模型尚未針對多身份使用情境（如工作／個人帳號分離、多客戶服務）設計統一的跨平台身份層；官方尚未於任一平台回應或排入路線圖。
 
-### 🔌 MCP 整合（6 條未修復）
+### 🔌 MCP 整合（7 條未修復）
 
 > 2026-07-13 集中爆發：連線認證（#5826 為當日全站互動最高條目）、token 生命週期（#5706）與計費透明度（#1785）三個面向同週同時升溫，加上既有的設定熱重載與 token 消耗問題，MCP 作為 Claude Code 核心整合機制的成熟度缺口成形。安全面的 Gmail MCP connector 黑暗設計模式批評另見「🛡️ 安全與隱私」分組。
 
+- 🔴 **未修復**｜**功能請求：內建 Slack MCP connector 支援連結多個 workspace（GitHub Issues，累積 33 則留言、69 個讚，2026-07-19）**：內建 Slack MCP connector 目前每個 Claude 帳號僅支援連結一個 workspace，UI 或設定皆無法新增第二個 workspace；使用者呼籲支援多 workspace 切換；官方尚未回應或排入路線圖。
 - 🔴 **未修復**｜**自建 OAuth 2.1 認證 MCP Server 無法連線 Claude Desktop（GitHub issue #5826，累積 66 則留言、71 個讚，2026-07-13 為本日互動最高條目）**：使用者回報自建 OAuth 2.1 認證的 MCP 伺服器在 Claude Code CLI 上運作良好，但 Claude Desktop 完全無法連線，不論走 OAuth 2.1 或 SSE 皆然；官方尚未回應。
 - 🔴 **未修復**｜**MCP Server 整合缺乏 Token 刷新機制（GitHub issue #5706，2026-07-13 回報）**：使用者指出 Claude Code 目前沒有為 MCP 伺服器刷新 token 的機制，只能改用較長效期的 token 作為替代；官方尚未回應。
 - 🔴 **未修復**｜**功能請求：MCP Sampling 支援以善用 Max 訂閱降低 API 成本（GitHub issue #1785，累積 58 則留言，2026-07-12 回報）**：使用者呼籲支援 MCP Sampling，讓 MCP Server 端運算可透過既有 Claude Max 訂閱額度執行，避免額外 API 計費；官方尚未回應或排入路線圖。
@@ -128,8 +130,10 @@
 - 🔴 **未修復**｜**MCP servers/hooks/plugins 設定變更需完整重啟 session（GitHub issue #24057，累積 30 則留言、15 個讚，2026-07-05）**：目前修改 MCP server、hooks 或 plugin 設定後必須重啟整個 session 才會生效，無法熱重載，中斷工作流程並遺失既有 context；社群呼籲改為設定變更後自動重載，官方尚未回應。
 - 🔴 **未修復**｜**MCP Token 消耗問題**：多個 MCP Server 併用時，每條訊息可能消耗 20,000+ tokens
 
-### 🔌 平台相容性（36 條未修復、1 條待查證）
+### 🔌 平台相容性（38 條未修復、1 條待查證）
 
+- 🔴 **未修復**｜**GitHub connector 可連結帳號內所有 repository 卻無法讀取任何內容，回報為近期功能退化（GitHub Issues，累積 37 則留言、33 個讚，2026-07-18）**：使用者回報 GitHub connector 雖能成功連結帳號內所有公開與私有 repository，Claude 卻無法讀取任何內容，帳號全域皆受影響（公開與私有 repo 皆然）；標題明確標註為近期發生的功能退化（regression）；與既有「GitHub Connector 已在 Claude Desktop 連結卻未被識別」（issue #32479）同屬 GitHub connector 可靠性問題但現象不同，暫分列追蹤；官方尚未回應。
+- 🔴 **未修復**｜**功能請求：對話訊息加上時間戳記，方便監控長時間背景 agent 工作進度（GitHub Issues，累積 36 則留言、66 個讚，2026-07-18）**：使用者希望能在使用者與 assistant 訊息上顯示時間戳記，便於監控長時間執行的背景 worker 進度；官方尚未回應或排入路線圖。
 - 🔴 **未修復**｜**工作目錄追蹤暫存檔從未清理，`/tmp/claude-*-cwd` 持續累積（GitHub issue #8856，累積 70 個讚，2026-07-17）**：Claude Code 用來追蹤工作目錄變化的暫存檔（`/tmp/claude-*-cwd`）從未被清理，長期執行後持續累積佔用磁碟空間；官方尚未回應。
 - 🔴 **未修復**｜**Cowork 建立 10GB VM bundle 導致效能持續惡化（GitHub issue #22543，累積 76 則留言，2026-07-15）**：使用者回報使用 Cowork 功能後 Claude Desktop 建立高達 10GB 的 VM bundle，導致啟動變慢、UI 延遲，回應速度隨時間持續下降，即使在單一 session 內效能也會惡化；官方尚未回應。
 - 🔴 **未修復**｜**Cowork Edit/Write 工具因緩衝區容量上限靜默截斷檔案（byte-conservation buffer cap，GitHub issue #53940，累積 43 則留言／16 個讚，原始回報 2026-04-27，2026-07-16 為作者持續維護的長篇更新摘要）**：使用者回報 Cowork 的 Edit/Write 工具會因緩衝區容量上限機制靜默截斷檔案內容，且此問題具確定性、在任何檔案大小下皆會觸發，並非邊緣情況；屬嚴重的資料完整性缺陷；官方尚未回應。
@@ -140,7 +144,7 @@
 - 🔴 **未修復**｜**功能請求：GitLab 整合（儲存庫連接、Merge Request、行動裝置存取）（GitHub issue #12346，累積 47 則留言、118 個讚，2026-07-15）**：使用者呼籲 Claude Code 支援 GitLab 整合，比照現有 GitHub 整合提供儲存庫連接、Merge Request 操作與行動裝置存取；官方尚未回應或排入路線圖。
 - 🔴 **未修復**｜**功能請求：VS Code 擴充功能比照 GitHub Copilot Edits Review 的差異審閱介面（GitHub issue #33932，累積 33 則留言、218 個讚，2026-07-14）**：使用者呼籲 VS Code 擴充功能提供類似 GitHub Copilot Edits Review 的 diff 審閱 UI；官方尚未回應或排入路線圖。
 - 🔴 **未修復**｜**功能請求：VS Code 擴充套件支援 LaTeX 算式渲染（GitHub issue #16446，累積 35 則留言、122 個讚，2026-07-14）**：使用者請求「Claude Code for VS Code」外掛支援 LaTeX 算式渲染；官方尚未回應或排入路線圖。
-- 🔴 **未修復**｜**Environment Contributions 警告訊息持續重複出現（GitHub issue #3301，累積 40 則留言、78 個讚，2026-07-14，Claude Code Status v1.0.25）**：使用者回報每次開啟 Cursor 或 VS Code IDE 時，Environment Contributions 警告訊息都會持續重複出現；官方尚未回應。
+- 🔴 **未修復**｜**Environment Contributions 警告訊息持續重複出現（GitHub issue #3301，累積 43 則留言、81 個讚，2026-07-18 更新，Claude Code Status v1.0.25）**：使用者回報每次開啟 Cursor 或 VS Code IDE 時，Environment Contributions 警告訊息都會持續重複出現；官方尚未回應。
 - 🔴 **未修復**｜**功能請求：Visual Studio 2026 整合支援（GitHub issue #15942，累積 139 則留言、475 個讚，2026-07-09）**：使用者要求 Claude Code 支援 Visual Studio 2026 整合；官方尚未回應或排入路線圖。
 - 🔴 **未修復**｜**功能請求：Claude Code Desktop 多視窗支援（GitHub issue #30154，累積 60 則留言、202 個讚，2026-07-09）**：使用者呼籲 Desktop app 支援多視窗同時操作；官方尚未回應。
 - 🔴 **未修復**｜**Opus 4.7 thinking summaries 未在 VS Code 擴充套件正確渲染（GitHub issue #49322，累積 50 則留言、42 個讚，2026-07-09）**：使用者回報使用 Opus 4.7 時，VS Code 擴充套件無法正確渲染 thinking summaries 內容；官方尚未回應。見 [[entities/opus-4-7]]。
@@ -201,6 +205,7 @@
 
 | 版本 | 日期 | 重點 |
 |------|------|------|
+| **v2.1.215** | 2026-07-19 | ⚠️ **行為變更**：Claude 不再自動執行 `/verify` 與 `/code-review` 兩項技能，須由使用者手動呼叫 `/verify` 或 `/code-review` 才會觸發；依賴自動驗證/審查的既有工作流需改用顯式呼叫，無過渡期即刻生效（見 [Release](https://github.com/anthropics/claude-code/releases/tag/v2.1.215)）|
 | **v2.1.214** | 2026-07-18 | 修復 single-segment `dir/**` allow 規則（如 `Edit(src/**)`）誤自動核准樹狀結構中任意層級 `dir/` 目錄寫入的問題（原本應僅限 `<cwd>/dir`），並修復另一項相關權限問題（原文於此處被截斷，細節未知）；純安全性修正，無新指令/旗標（見 [Release](https://github.com/anthropics/claude-code/releases/tag/v2.1.214)）|
 | **anthropic-sdk-typescript google-cloud-sdk v0.0.6** | 2026-07-17 | Changelog 僅提供與前版的完整比較連結，未列出具體異動項目，純版本號更新，暫記版本表（見 [Release](https://github.com/anthropics/anthropic-sdk-typescript/releases/tag/google-cloud-sdk-v0.0.6)）|
 | **anthropic-sdk-typescript v0.112.3** | 2026-07-17 | Chores：docs 小幅調整，無使用者端功能異動（見 [Release](https://github.com/anthropics/anthropic-sdk-typescript/releases/tag/sdk-v0.112.3)）|
@@ -277,6 +282,7 @@
 > ⚠️ **安裝安全警示**：Google 搜尋廣告曾出現仿冒官方安裝包（植入 Trojan:Win32/Kepavll!rfn），假冒包透過 IElevator 機制竊取瀏覽器 Cookie 與機密憑證，多家資安媒體同步報導。**務必僅從官方來源安裝：`github.com/anthropics/claude-code`**
 
 ### 開發者須知（評註型提示，非單一事件，不併入歷史記錄）
+- **底層 runtime 確認改用 Rust 版 Bun（2026-07-19 證實）**：Simon Willison 透過字串比對驗證 Jarred Sumner 的說法——Claude Code 自 **v2.1.181**（2026-06-17 發布）起，底層執行環境已改用 Rust 重寫版 Bun runtime，Linux 平台啟動速度提升約 10%，但屬底層基礎設施更新，多數使用者對此毫無察覺（作者以 `strings ~/.local/bin/claude | grep -m1 'Bun v1'` 等指令驗證，找到 563 個 `.rs` 檔名）。
 - **Extended Thinking 輸出為加密摘要，非原始推理（2026-06-22）**：session log 中的 thinking blocks 文字是推理的摘要版本，真實推理過程被 Anthropic 加密後存在 600 字元 signature 中，用戶端無法解密。需做審計追蹤或對推理過程有完整性要求的工程師，應避免以 thinking blocks 內容作為事實依據（見「已知問題」）
 - **年齡驗證政策（Persona Identity Verification，2026-06-22）**：Anthropic 在特定使用情境下導入 Persona 第三方身分驗證，以落實年齡管控、使用政策與法規遵循。此政策屬平台使用條款異動，不影響 CLI 操作
 - **CLI 權限客製化避免手動確認（2026-06-22）**：長工作流中可透過 `settings.json` 的 `allowedTools` 與 Permission Rules 設定白名單，減少 Claude Code 在 agentic 模式下不斷彈出手動確認。`Tool(param:value)` 語法（v2.1.178）支援比對工具輸入參數，搭配 `--dangerously-skip-permissions` 旗標可完全自動化非互動批次流程（見 [教學](https://dev.to/kapoormanish/stop-clicking-approve-how-to-customize-claude-code-cli-permissions-pnh)）

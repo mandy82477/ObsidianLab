@@ -4,8 +4,8 @@
 **狀態：** active
 **領域：** 🛠️ 工具/功能
 **首次出現：** 2026-04-27
-**最後更新：** 2026-07-17
-**最後新聞更新：** 2026-07-15
+**最後更新：** 2026-07-19
+**最後新聞更新：** 2026-07-19
 
 > **最新官方動態**（2026-07-15）
 > Claude for Teachers 教學技能庫發布，官方把 Skills 推進教育場景（美國認證 K-12 教師免費使用）。Skills 的官方定位框架則以 2026-06-21《七種指令傳遞方法》為準——與 CLAUDE.md、rules、subagents、hooks、output styles、system prompt append 並列六大控制層。
@@ -14,7 +14,7 @@
 
 ## 現況
 
-Anthropic 目前把 Skills 定位為官方六大「控制層」之一：把常用工作流程（如程式碼審查、安全審計、前端設計）封裝成描述文件，Claude 依語意自動判斷何時載入執行，使用者不需手動下指令。2026-06-21 官方部落格《七種指令傳遞方法》正式將其納入決策框架，釐清 Skills 與 CLAUDE.md、rules、subagents、hooks、output styles、system prompt append 之間的定位差異。
+Anthropic 目前把 Skills 定位為官方六大「控制層」之一：把常用工作流程（如程式碼審查、安全審計、前端設計）封裝成描述文件，Claude 依語意自動判斷何時載入執行，使用者不需手動下指令；**但 2026-07-19（v2.1.215）起 `/verify` 與 `/code-review` 兩項技能改為例外**，不再自動觸發，須使用者手動呼叫指令才會執行（詳見下方「官方 Skills 生態一覽」）。2026-06-21 官方部落格《七種指令傳遞方法》正式將其納入決策框架，釐清 Skills 與 CLAUDE.md、rules、subagents、hooks、output styles、system prompt append 之間的定位差異。
 
 官方近期最大手筆是 2026-05-24 發布的「31 個小企業 Skills」技能包，首日下載達 38.2 萬次，顯示 Skills 生態已從工程師專屬工具擴張至一般商業使用者；2026-06-05 官方部落格《Lessons from building Claude Code: How we use skills》進一步公開內部數百個 Skills 的實戰心得（什麼值得做成 skill、如何結構化、何時分享），是目前最權威的官方 Skills 設計指南。**官方目前尚未提供正式的 skill 分享／同步平台或市集機制**——現有的技能發現與安裝介面（如 Claudinho）都是第三方工具，社群也曾提出「Anthropic 建了 skill runtime 卻沒有創作者變現機制」的落差（見下方第三方生態動態）。
 
@@ -62,6 +62,7 @@ description: 在 PR 或 diff review 前，依團隊規範檢查命名、測試�
 | 官方設計指南 | 《Lessons from building Claude Code: How we use skills》——內部數百個 Skills 的實戰心得 | 2026-06-05 |
 | | 《七種指令傳遞方法》——Skills 與 CLAUDE.md/rules/subagents/hooks/output styles/system prompt append 六層控制的定位框架 | 2026-06-21 |
 | 分享／同步機制 | 官方尚無正式 skill 市集或分享平台；第三方 Claudinho 提供探索與安裝介面，但創作者變現機制仍缺（見下方） | 持續（無官方時程） |
+| 行為變更 | v2.1.215：`/verify` 與 `/code-review` 兩項官方技能不再由 Claude 自動觸發，須使用者手動呼叫指令才會執行；與上方「機制本身」列所述「依描述語意自動觸發、無需手動呼叫」的通則產生例外，依賴自動驗證/審查的既有工作流需改為顯式呼叫，無過渡期即刻生效。詳見 [[entities/claude-code]] 版本表 | 2026-07-19 |
 
 ## 第三方生態動態
 
