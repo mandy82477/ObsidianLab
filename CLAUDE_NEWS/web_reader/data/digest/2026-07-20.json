@@ -1,0 +1,622 @@
+{
+  "date": "2026-07-20",
+  "generatedAt": "2026-07-20 13:04 UTC",
+  "articleCount": 47,
+  "sourceCount": "10/10 | **文章數：** 47 | **更新時間：** 2026-07-20 13:04 UTC",
+  "bulletin": "",
+  "topStories": [
+    {
+      "title": "Fable 5 存取方案調整",
+      "url": "https://status.claude.com/incidents/tnypgb2jbqnq",
+      "source": "Anthropic Status",
+      "time": "07/20 07:35",
+      "sentiment": "",
+      "body": "Anthropic Status 頁面、SQ Magazine、《印度快報》均在今日報導 Claude Fable 5 針對 Pro／Max 方案的存取規則出現變動，包含免費存取結束與使用點數誤判問題；同時有 Reddit 用戶反映 Max 方案疑似無法使用 Fable 5，形成跨來源（官方＋媒體＋社群）同步關注的話題。",
+      "focusTags": [
+        "[風險警示]"
+      ]
+    },
+    {
+      "title": "Watch The Creator of Claude Code on The Hottest Piece of Software in the World",
+      "url": "https://news.google.com/rss/articles/CBMirgFBVV95cUxQZHp2bEZTR0FEa2lyTE9pbkplLVpKdkVGX3loQVIyVG1VVVpCSDhBOGFLVGtaTFNtSGxPcFhfVWxtZnRiQWVxSHR0TXlJcGpCcXhpX1h2MWhiSDZiQlFqc2ppOW15eUJ5TVVnZS1hUUlQRVhtSDJYUWJEaG5sUFQ5S3RvM2VtX0RnODZaczNPQWlxN0RNVjZIME5YTW9oZ2w5V29TMWxKcTZLMDltaUE?oc=5",
+      "source": "Google News / Bloomberg.com",
+      "time": "07/20 00:00",
+      "sentiment": "",
+      "body": "Bloomberg 專訪／報導聚焦 Claude Code 何以成為當紅開發工具話題，該報導被多個獨立來源引用（source_count=2）。",
+      "focusTags": []
+    }
+  ],
+  "techUpdates": [
+    {
+      "title": "[Status] Elevated error rates for Opus 4.5",
+      "url": "https://status.claude.com/incidents/hlt0yqp4lkww",
+      "source": "Anthropic Status",
+      "time": "07/20 10:57",
+      "sentiment": "",
+      "body": "Anthropic Status 頁面顯示 Opus 4.5 錯誤率上升，官方已於 07/20 10:57 UTC 表示修復已實施，正監控結果；此前於 07:57 UTC 首次識別問題。",
+      "focusTags": [
+        "[持續追蹤]"
+      ]
+    },
+    {
+      "title": "[Status] Fable 5 requiring usage credits on Max plans",
+      "url": "https://status.claude.com/incidents/tnypgb2jbqnq",
+      "source": "Anthropic Status",
+      "time": "07/20 07:35",
+      "sentiment": "",
+      "body": "Anthropic Status 頁面確認部分 Claude Code Max 方案用戶被錯誤提示需使用點數才能存取 Fable 5（該功能本屬方案內含），官方建議受影響用戶重新啟動用戶端。",
+      "focusTags": [
+        "[風險警示]"
+      ]
+    }
+  ],
+  "mediaReports": [
+    {
+      "title": "Why this venture capitalist is bullish on Anthropic's IPO — not OpenAI's",
+      "url": "https://news.google.com/rss/articles/CBMilgFBVV95cUxOZ2tsUWpzTFRkTjVjb3E1dTFJTTdzMHdiT2JVTi1PRzRFUTJZU0o4MHh1VXAwelR3cnh1SEN6dnR4dkZ1b2pBM2w3dUIyVjRQRzFBbjdCYi1pS3F4SjMySUxlNTVNXzFLNzltTW0yd1J3eEltejctWEFoSU1lRkpTUFV4cVlsRVFZTFVkY3hHMlhxYzhUQ3c?oc=5",
+      "source": "Google News / Yahoo Finance UK",
+      "time": "07/20 12:00",
+      "sentiment": "",
+      "body": "Yahoo Finance UK 報導一位創投對 Anthropic 上市前景看好，勝過對 OpenAI 的評價。",
+      "focusTags": []
+    },
+    {
+      "title": "Alibaba previews Qwen3.8, claims it rivals Anthropic Fable 5",
+      "url": "https://news.google.com/rss/articles/CBMib0FVX3lxTFBPaEFIdkhwZHd5bUtuQmY1NzRDdHIzajdWZWU4N29HdXpVS1dIODQtNEhPY1ZPSi1RanBiZFV2OWg5aG8xUDNwQi1xVFBlclI5bWRfenFqSm56UUNhVnlaVnRSZUtVYWl2dXZFUzVZUQ?oc=5",
+      "source": "Google News / qz.com",
+      "time": "07/20 11:56",
+      "sentiment": "",
+      "body": "qz.com 報導阿里巴巴預覽新模型 Qwen3.8，宣稱其能力足以匹敵 Anthropic Fable 5。",
+      "focusTags": [
+        "[持續追蹤]"
+      ]
+    },
+    {
+      "title": "Anthropic gifts Memphis nonprofit $1 million toward new headquarters focused on AI education",
+      "url": "https://news.google.com/rss/articles/CBMihgJBVV95cUxQRWhjWHpaSWZ1OU5Lc2JYWkVnaFo3SnJYdjZOOTd5Yk5KV2tnY1lrUWc4a2VMbzJMT3I2WEdiT1FVcXQtTWZjUzFIZ05aeGdGaHBtbGU1RnRpOEdlNGpac2VfeWh4THJxdUZfTnBaanBJekdpTy1yYUdZU0puZU0wdHlpUUQ3LVNPR1ZoX18wX1kxWXF5MkZsVlIwSUtzdzVoMkhWRnpTZzNBMW01LTBwOEk1SmJEU2lfVVFwaDJmdk5VMXU2cEtLMU9tNjNUZ25UNjF1WXYzQjNlbnBSc2J1Q1VBNEJrSWFoYk5PenJoelNlczBRempCbHh2eUVZd2FKOXUwX0VB?oc=5",
+      "source": "Google News / FOX13 Memphis",
+      "time": "07/20 10:46",
+      "sentiment": "",
+      "body": "FOX13 Memphis 報導 Anthropic 捐贈曼菲斯一家非營利組織 100 萬美元，用於興建聚焦 AI 教育的新總部。",
+      "focusTags": []
+    },
+    {
+      "title": "Nozomi Networks joins Anthropic's Project Glasswing to secure OT, IoT and cyber-physical systems",
+      "url": "https://news.google.com/rss/articles/CBMixgFBVV95cUxONVZIMXRoNG1XYlpiN2dYckllMUtpUXJBenFBanUtT2tua3R3d2xsWnNpZk9IOWZUaDdIOUdxTFY1QmJaYnJxQ1h5c3BxRk54d1VCM3piM1I1eG9qR3lJWU9kSm12Y243QUQtMDFiTlRnaE9CWGlaTURtM19WbTdFUjNGYTRBb3c2dVp3ckxKcnZSN3luOU9yVzNiMmdHQ3YwQVVXaGppY0ltMURtU2VzdnBzZHQ4cjBwYjRYc0UtZ2FNRmlTcmc?oc=5",
+      "source": "Google News / Industrial Cyber",
+      "time": "07/20 10:33",
+      "sentiment": "",
+      "body": "Industrial Cyber 報導 Nozomi Networks 加入 Anthropic 的 Project Glasswing 計畫，協助強化 OT／IoT／工控系統的安全防護。",
+      "focusTags": []
+    },
+    {
+      "title": "Traders bet Anthropic will ship new Claude Opus model within days",
+      "url": "https://news.google.com/rss/articles/CBMi0gFBVV95cUxQUmt3Y0UyM1FRN3RYVkFvV1VrNXlpRW9BR0t4bkh3bGZ4VTdRVTF4M3RvdkQ2LTduSjlDRW5mSV9ZVHM5SW1qNkFDZkpLYUJjMmp1R0tWNUhzLWtHd3h6cW9TcWpmNjh2ZHVNcWJuRHZhNXU5c0cwd0hkMWpyRVZNRW5CQ2o3Z2dmNVhRUFlyLWVtRENnU3dEUmtCeUl6em5OdWVHdlZXSUpERjV0b3llZVRaVTVubUxXdlJwR3hBWUE4bGZaN2NnY3d3eXdjaUoyT0E?oc=5",
+      "source": "Google News / Proactive financial news",
+      "time": "07/20 10:05",
+      "sentiment": "",
+      "body": "Proactive financial news 報導金融交易者押注 Anthropic 將於數日內推出新款 Claude Opus 模型（屬市場推測性報導）。",
+      "focusTags": []
+    },
+    {
+      "title": "US public health agencies to test OpenAI and Anthropic AI models",
+      "url": "https://news.google.com/rss/articles/CBMiiwFBVV95cUxNME1BWER0MEdxWklhZ092eDRZa3hmNWdUcm15YTNpNXZDLUZ1OE81WHQ1cmFEV1R4V0pQdXZ5Mk8waTJyTWdVMDFkbzhCbHBCcHkwWWJUV1dCSHpWUEtPWDFNVHJydmxoblg5VTFianBremJiRG5vZ2lPUnVUOU1wR0hWU1dPb1BxaUNN?oc=5",
+      "source": "Google News / AI News",
+      "time": "07/20 10:03",
+      "sentiment": "",
+      "body": "AI News 報導美國公共衛生機構將測試 OpenAI 與 Anthropic 的 AI 模型。",
+      "focusTags": []
+    },
+    {
+      "title": "Meta weighs up to $10bn AI compute deal with Anthropic",
+      "url": "https://news.google.com/rss/articles/CBMilgFBVV95cUxPdlFKa0lQZzNHbV9WSEZCODZ5d245LWhvRHJuNDlsZmlRcVZGVndvLXM5UUczUHpJbldTYkU0UjFSWmNwQ1l0Tjl1WUtiaUx5ZWlPUjBZbmloNUx2N2NZZVQ4UXg2MUtxUE9HSnlxTzdNMFYyZDVSVm05b0daWlA2M0dhTUFZNzNRcUpuRUduVDZXX2oxSXc?oc=5",
+      "source": "Google News / Yahoo Finance",
+      "time": "07/20 09:14",
+      "sentiment": "",
+      "body": "Yahoo Finance 報導 Meta 正評估對 Anthropic 挹注最高 100 億美元的 AI 運算合作。",
+      "focusTags": [
+        "[商業動態]"
+      ]
+    },
+    {
+      "title": "Anthropic's Claude sends S. Korean user $16.7 mn bill in apparent glitch",
+      "url": "https://news.google.com/rss/articles/CBMif0FVX3lxTE9DY3pmNVFRRG1qak5RUVNiWnNORmdkME9SQVhlTVo3THZFR01YZ3pHbVBOSHlNcWpCM2ZJUlNKbVpad215c1FzcWhWY0YydVVaTzNWUnlHQy0tVnpwQzlsUGJrM3d3UkpzSlFlcXUzdnk5c2xmQ0U4X2ota1BvcEU?oc=5",
+      "source": "Google News / KED Global",
+      "time": "07/20 09:10",
+      "sentiment": "",
+      "body": "KED Global 報導一名南韓用戶收到 Claude 開出的 1,670 萬美元帳單，疑似為系統故障所致。",
+      "focusTags": []
+    },
+    {
+      "title": "Anthropic Explained When to Tinker with Effort Level in Claude Code (Spoiler: Not Often)",
+      "url": "https://news.google.com/rss/articles/CBMirAFBVV95cUxPUTNuYWEyR1FrWHlpR2ZKSFJFMHhzUmpiQTRjeVZ6VnpYVU1nUnNWWWRBUEF6anJMaXdoaHZWNmdIb0pMZnlvdFhUSFlkUmtweUtXNkpqRWFKT1RmaDNIaXl1UjRJanU2WXl3ZFp5ZjJwc0YxVGxxOHFvaDh1RFgxQ0dWMWptZzl4TkFja3ZPQjYzQ2hyY28wZVpkQ1p4R1k5U1U1SWQ1ZmxLcHhU?oc=5",
+      "source": "Google News / quasa.io",
+      "time": "07/20 08:48",
+      "sentiment": "",
+      "body": "quasa.io 報導 Anthropic 說明 Claude Code 中 effort level（推理強度）設定的調整時機，建議一般情況不需頻繁調整。",
+      "focusTags": []
+    },
+    {
+      "title": "Meta is exploring the possibility of leasing AI capacity to Anthropic",
+      "url": "https://news.google.com/rss/articles/CBMivgFBVV95cUxPU25odEt3UXdoQ2pOWlV6dkFDcHdxUFZrMnN3bUxaakdXcm13WE9LNmFqdEZDcjJmUzAybjJGZ0hUcFVLYXJhbkhkZ2hzR3dzdU9mb1RZSmlJblY5T214QmNJb2hral94ODNnUkJHN01GN0ZaNFlWVHFOa3F2eURjWDBsZ0pOa3NBNmQyMTZKQm1iWFluQW9JS29SVldPUjdIUmxjZ1BvVW5mQUZldHVMOXpNazBhRGV2aEROOHN3?oc=5",
+      "source": "Google News / Techzine Global",
+      "time": "07/20 08:22",
+      "sentiment": "",
+      "body": "Techzine Global 報導 Meta 正探索向 Anthropic 出租 AI 運算資源的可能性，與前述 Meta-Anthropic 合作傳聞相呼應。",
+      "focusTags": []
+    },
+    {
+      "title": "Claude Mythos FAQ: Capabilities, access, competitors, implications",
+      "url": "https://news.google.com/rss/articles/CBMirgFBVV95cUxOaE10YjdGU2JoM2xVRC02Q3VRQkVOX3ZBVmVMY1hXbTUxNDgwTUZ5OVBMUUdLdWNPcEtfYUZVMS0xaTRYMWFWckU2eUNuZ251VHV2aF9wcU5GNUtReHE3QUlYODdPU2ZTN3pfaDhHWG84Ti1GZV9IMC05QWNrUVNqZHg5OUY2TEExWmZuQURTMi1Tb1duVUpyTW5uVVZfa0RFRnRjQVBPRFpmekxHQlE?oc=5",
+      "source": "Google News / csoonline.com",
+      "time": "07/20 06:32",
+      "sentiment": "",
+      "body": "csoonline.com 整理 Claude Mythos 的能力、存取方式、競爭者與影響的常見問答。",
+      "focusTags": []
+    },
+    {
+      "title": "Alibaba Says New AI Model Is Just Second to Anthropic's Fable 5",
+      "url": "https://news.google.com/rss/articles/CBMioAFBVV95cUxQTzB1S012cHg4eEkzckQ5QndPdG14Q0FPcUpyLUdGWUZGUldBTnhYWGltdnQ5bUdLOEluV05iYkd2cm44SEYyZEtqMlctbE9PNGMtUzI3MzhDdFVwRTM4MENFalE5aUx5cklkamVvX3dsWG1SSnZYakcxeEMyWWUyVFJCaks1Y0RDR2trUldGcG5JbHFwX3lkbGh1NV9WOFA4?oc=5",
+      "source": "Google News / WSJ",
+      "time": "07/20 05:37",
+      "sentiment": "",
+      "body": "WSJ 報導阿里巴巴表示其新模型能力僅次於 Anthropic Fable 5（source_count=2）。",
+      "focusTags": [
+        "[持續追蹤]"
+      ]
+    },
+    {
+      "title": "Claude Fable 5 Ends Free Access For Pro Subscribers",
+      "url": "https://news.google.com/rss/articles/CBMiekFVX3lxTE1KcmdVUnZtYmZOanI4UHpUeGpiNU95M1l3SDJUaEJjTHhxWUlYNHBfYW40T2RuTHZZUUw4a2RMck93OTdGQzhqeVBZemk1NXU2cVNYRUY5Z3IxRlJscUk3OVdMVzZlVzcyWTJYbUg2ZkYtNjNQT0FKN29n?oc=5",
+      "source": "Google News / SQ Magazine",
+      "time": "07/20 05:17",
+      "sentiment": "",
+      "body": "SQ Magazine 報導 Claude Fable 5 對 Pro 訂閱用戶結束免費存取（source_count=2）。",
+      "focusTags": []
+    },
+    {
+      "title": "Anthropic's Claude Fable 5 access plans change from July 20: Here's what's new",
+      "url": "https://news.google.com/rss/articles/CBMixgFBVV95cUxOZnhDak5scm5oXzdwUG5rbi1rYU42TE1CRnlGLVk0SF9YSk1NWGZRLXh0bkZtSnl0YzVNcTBNMjlzNVR0enhEeUtwQnVmdmc0SlFaQlc0TGZQTVFqb2NVNVFNT1pOaWY0M0JrRUJpSC10RDJ5UG9IZVpwOVhCX1EtYjRnTkZBc1dEZVdlQXVmSlFZWnJ0aXpKUXhrQ1U2NlZ5T2VNZWtfSkcyV1FBdWNZVTJLYjdtcnZoRDFzRUtjaWFIUF93VmfSAcwBQVVfeXFMT3gxTVJDT1F2N19ndTcwSWltdXJybG8xNVRLQ25rc1NGZ3lJMW1QZHlBRERYTzlnM0tGVnlkMm1mWlB6QXAzeXdUb0xXOEtjWXdFMnBWcWwzcGRTSk0yVWMzcHJnMmpQejN3cEVOdVBoRS16dTJoaW1xVXFucTZHMTlFRjZVaFViUW12blBNdUd4S0ZxV0Z2TElvMFpKMWpSOTRFMWdlNTBQR00zMEd5V0xMSTlMb0xvZUpJQXg1STNuUWY1TFBOdnZUZ1BS?oc=5",
+      "source": "Google News / The Indian Express",
+      "time": "07/20 04:04",
+      "sentiment": "",
+      "body": "The Indian Express 報導 Anthropic 的 Claude Fable 5 存取方案自 7 月 20 日起有所變動，說明新規則內容。",
+      "focusTags": []
+    },
+    {
+      "title": "UST Partners with Anthropic to Deploy Claude AI Across Enterprise Platforms",
+      "url": "https://news.google.com/rss/articles/CBMiygFBVV95cUxNNzdrSnE4T2otOVFwUnZ3aUpTQktlWkxHY1JfWWpmQU5NOW8xNWhOcnpoZl9Pc0Q3eVVJN3U3c0tVLXZBZUJZOHY4MXpsdVFScW5pZHZWTGZZWVRGaDBTVXhDR3Jjd3FxNVRNMmZBaFBLSTN2THFRZ3owYVVPcm9kcUFSeGdBTWIxVjVlMkZLQ3hySlR4bHRCNGdocFRaRlJfT1FqdmpKdkpPOGU3S0Znemd3REZhTnlrLVctU2RwNXA1S3g4ZmYwYXVn?oc=5",
+      "source": "Google News / The Fast Mode",
+      "time": "07/20 00:24",
+      "sentiment": "",
+      "body": "The Fast Mode 報導 IT 服務商 UST 與 Anthropic 合作，將 Claude AI 部署至其企業平台。",
+      "focusTags": []
+    },
+    {
+      "title": "Watch The Creator of Claude Code on The Hottest Piece of Software in the World",
+      "url": "https://news.google.com/rss/articles/CBMirgFBVV95cUxQZHp2bEZTR0FEa2lyTE9pbkplLVpKdkVGX3loQVIyVG1VVVpCSDhBOGFLVGtaTFNtSGxPcFhfVWxtZnRiQWVxSHR0TXlJcGpCcXhpX1h2MWhiSDZiQlFqc2ppOW15eUJ5TVVnZS1hUUlQRVhtSDJYUWJEaG5sUFQ5S3RvM2VtX0RnODZaczNPQWlxN0RNVjZIME5YTW9oZ2w5V29TMWxKcTZLMDltaUE?oc=5",
+      "source": "Google News / Bloomberg.com",
+      "time": "07/20 00:00",
+      "sentiment": "",
+      "body": "Bloomberg 專訪聚焦 Claude Code 創始人，談 Claude Code 成為熱門開發工具的原因（source_count=2）。",
+      "focusTags": []
+    },
+    {
+      "title": "Claude's AI assistant could be manipulated through browser extensions",
+      "url": "https://news.google.com/rss/articles/CBMixgJBVV95cUxOaENFYVpmVERVZkJacUpfMDU1QjVyc2tIalRjZ3psbi15TEE5d2RSLTB0ay1BdHk3RkUtNG1KLVNPZ2dhbVFwQUo1V3gxbllEM2l3NTJmWjN1UjUzMUw0c0xLLXVPSTZWQTN0VmNYVGtCaGhmaEcycGh1allpdlFOZ3Nha1lrOWdIaU1hSXRwZkpBanlFVXpKM01lN0xHdmM0MDlMV24zcWJwT0tlZE9USFlHcm0tTm1wOHl5UEVGc21KM29oekJMUEVLazZYbHVmR0VoUDZocmdTZV9TSklRTkU4VWlNX2d0T1IycjUxRkZrX2RQLWpkV085TjdmM1drUk13d3BCejBFQWR2ZzNIYlIyX21icVl0SU45VXBYUG5CUjA5X2d3UjNjN2hKLVV6cWlmRmZVZmlrVFp6UEpySFV0VURNUQ?oc=5",
+      "source": "Google News / TechRadar",
+      "time": "07/19 18:05",
+      "sentiment": "",
+      "body": "TechRadar 報導 Claude 的 AI 助理可能透過瀏覽器擴充功能遭到操縱，屬安全風險提醒。",
+      "focusTags": []
+    },
+    {
+      "title": "Anthropic Follows SpaceX Playbook, Claude-Parent Reportedly Pursuing Multibillion-Dollar Credit Lines Ahead of IPO",
+      "url": "https://news.google.com/rss/articles/CBMipwFBVV95cUxNNmJUYXZDTllxeUtmc1h6aHFQdnE4UEE3eGpLUFM4T2RCMGE3Z3dMSEI3dHZMQ2ZadVJKX25QekdmV3k4TktFazhKUW8tbHVpWVNWUDg2WXB4ZVFwSUJZUzBZWVQ0Y0tnX1VRc2w1a0VNV29UV1MxNzN1cEVuRUlDLW81b1ZaX0doZC0yYXdLcVlpSGFMdldTblRQNXZZMEdsc2FvZTYyRQ?oc=5",
+      "source": "Google News / Yahoo Finance",
+      "time": "07/19 14:31",
+      "sentiment": "",
+      "body": "Yahoo Finance 報導 Anthropic 傳出仿效 SpaceX 模式，於 IPO 前尋求數十億美元規模的信貸額度。",
+      "focusTags": [
+        "[商業動態]"
+      ]
+    },
+    {
+      "title": "Alibaba previews Qwen3.8, claiming its strength trails only Anthropic's Fable 5",
+      "url": "https://news.google.com/rss/articles/CBMiswFBVV95cUxPakRPRHUwd1M1b09VMGxEN2t6V3JfNzVsc3Zpcko1djRPaXVpdlAxYTh1eld2MkVSTUVlV1VCOXExUHkzSnFMQ2h3aXV0SHdEN2g4UXRBTlYzMm5rQnBVQmVpNzZwSWdkRG1ybU4zQ1p4dXFaWjUwTGxFQzRQM0FzVUE1TTM4UjllUDFWRjRKZS14MjdTbmhkZVYtR1BaenF2RlRydXZvTWstdmJMRFNhSGZKONIBswFBVV95cUxPLVNNNUpSUTZvb3ZlaUVrN2NWOF9nX21xNTFfbl9BUEg0VkpfZnh5M05HcVhoT0g3NDZsLWVRNlJud21VWGRSdzlweXR5dTN0NzFSLU5Rc1N1cks3SzZkd0JveFdPb0swTC01LWhlbmpfVXF2U3BFQTUtb2RjaXJxQUVqUXpSVlBZWGQzak1BMm5GTUJUZGdNUDc3c3VLeXhSd0pESkdTRXQ5WkkyNGMtdFlfdw?oc=5",
+      "source": "Google News / South China Morning Post",
+      "time": "07/19 13:20",
+      "sentiment": "",
+      "body": "South China Morning Post 報導阿里巴巴預告 Qwen3.8，稱其實力僅次於 Anthropic Fable 5。",
+      "focusTags": [
+        "[持續追蹤]"
+      ]
+    }
+  ],
+  "discussions": [
+    {
+      "title": "Claude Code skill for searching royalty-free stock photos via the Pexels API",
+      "url": "https://github.com/amalshehu/pexels-skill",
+      "source": "Hacker News",
+      "time": "07/19 12:55 UTC · 情緒：😊",
+      "sentiment": "",
+      "body": "開發者分享透過 Pexels API 搜尋免版稅圖庫的 Claude Code skill。",
+      "focusTags": []
+    },
+    {
+      "title": "Show HN: Knowledge graph skill for Claude/Kimi Code",
+      "url": "https://org-edge.com/sysedge.html",
+      "source": "Hacker News",
+      "time": "07/19 13:45 UTC · 情緒：😐",
+      "sentiment": "",
+      "body": "作者為追蹤需求可追溯性、測試覆蓋率與多實例溝通問題，打造以 Neo4j 為底的知識圖譜 skill，用於記錄使用者故事、測試案例與缺陷。",
+      "focusTags": []
+    },
+    {
+      "title": "Show HN: Fable-generated Bible minigames",
+      "url": "https://biblegames.xyz/",
+      "source": "Hacker News",
+      "time": "07/20 05:56 UTC · 情緒：😊",
+      "sentiment": "",
+      "body": "作者用 Fable 生成 18 款聖經主題小遊戲，測試模型跨類型產生完整小遊戲的能力，平均每款需約 10 次精修提示。",
+      "focusTags": []
+    },
+    {
+      "title": "Show HN: A schema you change by talking to it, without the model writing SQL",
+      "url": "https://github.com/leandrobon/mutable-crm",
+      "source": "Hacker News",
+      "time": "07/19 20:18 UTC · 情緒：😐",
+      "sentiment": "",
+      "body": "作者打造以對話方式變更 schema 的 CRM 專案，LLM 僅透過 tool use 呼叫函式修改資料庫、不直接寫 SQL，且不開放刪表操作，主要由 Claude Code 協助開發。",
+      "focusTags": []
+    },
+    {
+      "title": "Show HN: Giving Claude Code and Codex its voice",
+      "url": "https://github.com/softcane/aloud",
+      "source": "Hacker News",
+      "time": "07/19 15:03 UTC · 情緒：😐",
+      "sentiment": "",
+      "body": "開發者分享為 Claude Code 與 Codex 加上語音輸出的專案。",
+      "focusTags": []
+    },
+    {
+      "title": "Show HN: Claude Code Workflows for GPT/Codex",
+      "url": "https://github.com/cyrusNuevoDia/gpt-workflow",
+      "source": "Hacker News",
+      "time": "07/19 13:14 UTC · 情緒：😐",
+      "sentiment": "",
+      "body": "開發者分享將 Claude Code 工作流程移植給 GPT／Codex 使用的專案。",
+      "focusTags": []
+    },
+    {
+      "title": "Show HN: Subrust, a no_std, no alloc Subset-of-Rust interpreter",
+      "url": "https://github.com/orbitalhigh/subrust",
+      "source": "Hacker News",
+      "time": "07/19 12:48 UTC · 情緒：😊",
+      "sentiment": "",
+      "body": "作者為執行使用者腳本打造 Rust 子集直譯器，由 Claude Code（Fable/Opus）在監督下於數日內完成，作者對此表示印象深刻。",
+      "focusTags": []
+    },
+    {
+      "title": "Show HN: A simple TUI to CRUD Beads tasks",
+      "url": "https://github.com/finallyblueskies/beads-explorer",
+      "source": "Hacker News",
+      "time": "07/20 09:22 UTC · 情緒：😊",
+      "sentiment": "",
+      "body": "作者對現有 beads 任務管理 TUI 不滿意，找 Codex／Claude Code 打造具 vim 風格與樹狀導覽的新工具，並表示相當滿意。",
+      "focusTags": []
+    },
+    {
+      "title": "Show HN: Pgnudge – tell your app which Postgres tables just changed",
+      "url": "https://github.com/janbjorge/pgnudge",
+      "source": "Hacker News",
+      "time": "07/19 17:18 UTC · 情緒：😐",
+      "sentiment": "",
+      "body": "作者在 Claude 協助下寫出透過 WAL 複寫協定監看 Postgres 資料表變更的非同步 Python 函式庫，用以取代輪詢。",
+      "focusTags": []
+    },
+    {
+      "title": "Show HN: CallBro – Granola, but Powered by Codex, Claude Code, or Your Local LLM",
+      "url": "https://callbro.ai/",
+      "source": "Hacker News",
+      "time": "07/19 13:19 UTC · 情緒：😐",
+      "sentiment": "",
+      "body": "團隊打造本機端會議紀錄工具，讓使用者可自選 Codex、Claude Code 或本機 LLM 產生摘要與待辦事項。",
+      "focusTags": []
+    },
+    {
+      "title": "Passkey for Claude Desktop",
+      "url": "https://www.reddit.com/r/ClaudeCode/comments/1v1jot3/passkey_for_claude_desktop/",
+      "source": "Reddit / r/ClaudeCode",
+      "time": "07/20 12:09 UTC · 情緒：😐",
+      "sentiment": "",
+      "body": "Reddit 用戶討論 Claude 提示加入 passkey 以避免頻繁重新登入的訊息。",
+      "focusTags": []
+    },
+    {
+      "title": "Flame my attempt at building ClaudeCode Skills.",
+      "url": "https://www.reddit.com/r/ClaudeCode/comments/1v1jnuh/flame_my_attempt_at_building_claudecode_skills/",
+      "source": "Reddit / r/ClaudeCode",
+      "time": "07/20 12:07 UTC · 情緒：😐",
+      "sentiment": "",
+      "body": "Reddit 用戶分享自建的兩個 Claude Code skills，徵求社群意見。",
+      "focusTags": []
+    },
+    {
+      "title": "AND AGAIN, QUALITY AND RESPONSE SPEED DROPPED, STOP DOWNGRADING...",
+      "url": "https://www.reddit.com/r/ClaudeCode/comments/1v1jk10/and_again_quality_and_response_speed_dropped_stop/",
+      "source": "Reddit / r/ClaudeCode",
+      "time": "07/20 12:03 UTC · 情緒：😤",
+      "sentiment": "",
+      "body": "Reddit 用戶反映長時間使用 Opus 或 Fable 後品質與回應速度明顯下降，屬社群抱怨（單一用戶觀察，無官方佐證）。",
+      "focusTags": []
+    },
+    {
+      "title": "I built a Markdown memory layer so coding agents stop rediscovering the same project context",
+      "url": "https://www.reddit.com/r/ClaudeCode/comments/1v1jbve/i_built_a_markdown_memory_layer_so_coding_agents/",
+      "source": "Reddit / r/ClaudeCode",
+      "time": "07/20 11:53 UTC · 情緒：😐",
+      "sentiment": "",
+      "body": "Reddit 用戶分享為 coding agent 打造 Markdown 記憶層專案，用以避免重複探索專案背景。",
+      "focusTags": []
+    },
+    {
+      "title": "Help me figure out this design issue",
+      "url": "https://www.reddit.com/r/ClaudeCode/comments/1v1jbqd/help_me_figure_out_this_design_issue/",
+      "source": "Reddit / r/ClaudeCode",
+      "time": "07/20 11:53 UTC · 情緒：🤔",
+      "sentiment": "",
+      "body": "Reddit 用戶詢問如何讓 Claude Code 產出的介面設計不那麼像「AI 生成」的通用儀表板風格。",
+      "focusTags": []
+    },
+    {
+      "title": "ticketmill: open-source Claude Code plugin that batch-processes GitHub issues end-to-end, with a human merge gate",
+      "url": "https://www.reddit.com/r/ClaudeCode/comments/1v1jay7/ticketmill_opensource_claude_code_plugin_that/",
+      "source": "Reddit / r/ClaudeCode",
+      "time": "07/20 11:52 UTC · 情緒：😐",
+      "sentiment": "",
+      "body": "Reddit 用戶分享開源 Claude Code 外掛，批次處理 GitHub issues 全流程並保留人工合併把關點。",
+      "focusTags": []
+    },
+    {
+      "title": "Reduce AI Slop",
+      "url": "https://www.reddit.com/r/ClaudeAI/comments/1v1imxe/reduce_ai_slop/",
+      "source": "Reddit / r/ClaudeAI",
+      "time": "07/20 11:19 UTC · 情緒：🤔",
+      "sentiment": "",
+      "body": "Reddit 用戶分享自製 Claude skill，用來協助前端 agent 挑選較成熟的展示型元件、減少「AI 感」介面。",
+      "focusTags": []
+    },
+    {
+      "title": "anthropic nuked the pro plans on the app for some reason",
+      "url": "https://www.reddit.com/r/ClaudeAI/comments/1v1hiu8/anthropic_nuked_the_pro_plans_on_the_app_for_some/",
+      "source": "Reddit / r/ClaudeAI",
+      "time": "07/20 10:21 UTC · 情緒：😤",
+      "sentiment": "",
+      "body": "Reddit 用戶反映 App 內 Pro 方案顯示異常，原因不明（單一用戶觀察，未經官方證實）。",
+      "focusTags": []
+    },
+    {
+      "title": "5 kinds of visible memory in a full Claude client. First big update",
+      "url": "https://www.reddit.com/r/ClaudeAI/comments/1v1gs8q/5_kinds_of_visible_memory_in_a_full_claude_client/",
+      "source": "Reddit / r/ClaudeAI",
+      "time": "07/20 09:39 UTC · 情緒：😐",
+      "sentiment": "",
+      "body": "Reddit 用戶分享自製 Claude 用戶端專案的記憶功能更新，區分五種可視記憶類型。",
+      "focusTags": []
+    },
+    {
+      "title": "So... I can't use fable with my max plan ey?",
+      "url": "https://www.reddit.com/r/ClaudeAI/comments/1v1g5yy/so_i_cant_use_fable_with_my_max_plan_ey/",
+      "source": "Reddit / r/ClaudeAI",
+      "time": "07/20 09:03 UTC · 情緒：😤",
+      "sentiment": "",
+      "body": "Reddit 用戶反映 Max 方案疑似無法使用 Fable 5，與今日 Status 頁面回報的存取誤判事件時間點吻合。",
+      "focusTags": []
+    },
+    {
+      "title": "Quoting Sam Altman",
+      "url": "https://simonwillison.net/2026/Jul/20/sam-altman/#atom-everything",
+      "source": "Blog / Simon Willison",
+      "time": "07/20 03:47 UTC · 情緒：🤔",
+      "sentiment": "",
+      "body": "Simon Willison 引用 Sam Altman 談及開源策略的內部討論將於下次董事會進一步討論的言論。",
+      "focusTags": []
+    },
+    {
+      "title": "If you're building a harness, here is a simple tool to catch cache invalidation in your calls to LLMs",
+      "url": "https://www.reddit.com/r/LocalLLaMA/comments/1uztipo/if_youre_building_a_harness_here_is_a_simple_tool/",
+      "source": "Reddit / r/LocalLLaMA · 週熱門",
+      "time": "07/18 11:34 UTC · 情緒：😐",
+      "sentiment": "",
+      "body": "Reddit 用戶（週熱門）分享用於偵測 LLM 呼叫中 cache 失效問題的簡易工具。",
+      "focusTags": []
+    },
+    {
+      "title": "Kimi K3 is currently at the top of the leaderboard for Text Arena filtered for science queries.",
+      "url": "https://www.reddit.com/r/LocalLLaMA/comments/1uzh17f/kimi_k3_is_currently_at_the_top_of_the/",
+      "source": "Reddit / r/LocalLLaMA · 週熱門",
+      "time": "07/18 00:28 UTC · 情緒：😐",
+      "sentiment": "",
+      "body": "Reddit 用戶（週熱門）指出 Kimi K3 在 Text Arena 科學類查詢排行榜上暫居首位。",
+      "focusTags": []
+    },
+    {
+      "title": "KIMI K3 Beats Claude Fable and GPT 5.6 sol in arena.ai!!!",
+      "url": "https://www.reddit.com/r/LocalLLaMA/comments/1uydii0/kimi_k3_beats_claude_fable_and_gpt_56_sol_in/",
+      "source": "Reddit / r/LocalLLaMA · 週熱門",
+      "time": "07/16 19:57 UTC · 情緒：😤",
+      "sentiment": "",
+      "body": "Reddit 用戶（週熱門）宣稱 Kimi K3 在 arena.ai 評測中勝過 Claude Fable 與 GPT 5.6（單一社群貼文說法，未見獨立驗證）。",
+      "focusTags": []
+    },
+    {
+      "title": "Thinking Machines releases first open-weight model \"Inkling\"",
+      "url": "https://www.reddit.com/r/LocalLLaMA/comments/1uxdv34/thinking_machines_releases_first_openweight_model/",
+      "source": "Reddit / r/LocalLLaMA · 週熱門",
+      "time": "07/15 18:12 UTC · 情緒：😐",
+      "sentiment": "",
+      "body": "Reddit 用戶（週熱門）分享 Thinking Machines 發表首款開源權重模型 Inkling 的消息。",
+      "focusTags": []
+    },
+    {
+      "title": "Kimi K3 in the next few hours. Deepseek V4 GA later in the week. New Liquid models. New Mistral models sometime this month. And some rumours suggest GLM 5.5 is coming in August. Openweight AI is eating good.",
+      "url": "https://www.reddit.com/r/LocalLLaMA/comments/1uwe542/kimi_k3_in_the_next_few_hours_deepseek_v4_ga/",
+      "source": "Reddit / r/LocalLLaMA · 週熱門",
+      "time": "07/14 16:47 UTC · 情緒：😐",
+      "sentiment": "",
+      "body": "Reddit 用戶（週熱門）彙整近期開源模型發布動態，包含 Kimi K3、Deepseek V4、Liquid、Mistral 新模型與 GLM 5.5 傳聞。",
+      "focusTags": []
+    }
+  ],
+  "billing": [
+    {
+      "title": "[Status] Fable 5 requiring usage credits on Max plans",
+      "url": "https://status.claude.com/incidents/tnypgb2jbqnq",
+      "source": "Anthropic Status",
+      "time": "07/20 07:35",
+      "sentiment": "",
+      "body": "Anthropic Status 頁面確認部分 Max 方案用戶被錯誤提示需使用點數才能存取 Fable 5，官方建議受影響用戶重新啟動用戶端。",
+      "focusTags": [
+        "[風險警示]"
+      ]
+    },
+    {
+      "title": "Claude Fable 5 Ends Free Access For Pro Subscribers",
+      "url": "https://news.google.com/rss/articles/CBMiekFVX3lxTE1KcmdVUnZtYmZOanI4UHpUeGpiNU95M1l3SDJUaEJjTHhxWUlYNHBfYW40T2RuTHZZUUw4a2RMck93OTdGQzhqeVBZemk1NXU2cVNYRUY5Z3IxRlJscUk3OVdMVzZlVzcyWTJYbUg2ZkYtNjNQT0FKN29n?oc=5",
+      "source": "Google News / SQ Magazine",
+      "time": "07/20 05:17",
+      "sentiment": "",
+      "body": "SQ Magazine 報導 Claude Fable 5 對 Pro 訂閱用戶結束免費存取。",
+      "focusTags": []
+    },
+    {
+      "title": "Anthropic's Claude Fable 5 access plans change from July 20: Here's what's new",
+      "url": "https://news.google.com/rss/articles/CBMixgFBVV95cUxOZnhDak5scm5oXzdwUG5rbi1rYU42TE1CRnlGLVk0SF9YSk1NWGZRLXh0bkZtSnl0YzVNcTBNMjlzNVR0enhEeUtwQnVmdmc0SlFaQlc0TGZQTVFqb2NVNVFNT1pOaWY0M0JrRUJpSC10RDJ5UG9IZVpwOVhCX1EtYjRnTkZBc1dEZVdlQXVmSlFZWnJ0aXpKUXhrQ1U2NlZ5T2VNZWtfSkcyV1FBdWNZVTJLYjdtcnZoRDFzRUtjaWFIUF93VmfSAcwBQVVfeXFMT3gxTVJDT1F2N19ndTcwSWltdXJybG8xNVRLQ25rc1NGZ3lJMW1QZHlBRERYTzlnM0tGVnlkMm1mWlB6QXAzeXdUb0xXOEtjWXdFMnBWcWwzcGRTSk0yVWMzcHJnMmpQejN3cEVOdVBoRS16dTJoaW1xVXFucTZHMTlFRjZVaFViUW12blBNdUd4S0ZxV0Z2TElvMFpKMWpSOTRFMWdlNTBQR00zMEd5V0xMSTlMb0xvZUpJQXg1STNuUWY1TFBOdnZUZ1BS?oc=5",
+      "source": "Google News / The Indian Express",
+      "time": "07/20 04:04",
+      "sentiment": "",
+      "body": "The Indian Express 報導 Anthropic 的 Claude Fable 5 存取方案自 7 月 20 日起變動的細節。",
+      "focusTags": []
+    },
+    {
+      "title": "So... I can't use fable with my max plan ey?",
+      "url": "https://www.reddit.com/r/ClaudeAI/comments/1v1g5yy/so_i_cant_use_fable_with_my_max_plan_ey/",
+      "source": "Reddit / r/ClaudeAI",
+      "time": "07/20 09:03",
+      "sentiment": "",
+      "body": "Reddit 用戶反映 Max 方案疑似無法使用 Fable 5，與今日 Status 頁面回報的存取誤判事件時間點吻合。",
+      "focusTags": []
+    },
+    {
+      "title": "anthropic nuked the pro plans on the app for some reason",
+      "url": "https://www.reddit.com/r/ClaudeAI/comments/1v1hiu8/anthropic_nuked_the_pro_plans_on_the_app_for_some/",
+      "source": "Reddit / r/ClaudeAI",
+      "time": "07/20 10:21",
+      "sentiment": "",
+      "body": "Reddit 用戶反映 App 內 Pro 方案顯示異常，原因不明（單一用戶觀察，未經官方證實）。",
+      "focusTags": []
+    },
+    {
+      "title": "Anthropic's Claude sends S. Korean user $16.7 mn bill in apparent glitch",
+      "url": "https://news.google.com/rss/articles/CBMif0FVX3lxTE9DY3pmNVFRRG1qak5RUVNiWnNORmdkME9SQVhlTVo3THZFR01YZ3pHbVBOSHlNcWpCM2ZJUlNKbVpad215c1FzcWhWY0YydVVaTzNWUnlHQy0tVnpwQzlsUGJrM3d3UkpzSlFlcXUzdnk5c2xmQ0U4X2ota1BvcEU?oc=5",
+      "source": "Google News / KED Global",
+      "time": "07/20 09:10",
+      "sentiment": "",
+      "body": "KED Global 報導一名南韓用戶收到 Claude 開出的 1,670 萬美元帳單，疑似為系統故障所致。",
+      "focusTags": []
+    }
+  ],
+  "focus": [
+    {
+      "tag": "[持續追蹤]",
+      "text": "Anthropic Status 頁面顯示 Opus 4.5 出現錯誤率上升事件，官方已實施修復並持續監控結果。",
+      "ref_urls": [
+        "https://status.claude.com/incidents/hlt0yqp4lkww"
+      ]
+    },
+    {
+      "tag": "[風險警示]",
+      "text": "部分 Claude Code Max 方案用戶被系統誤判需使用點數才能存取 Fable 5（該功能實屬方案內建），官方確認為誤判，並提示受影響用戶重新啟動。",
+      "ref_urls": [
+        "https://status.claude.com/incidents/tnypgb2jbqnq"
+      ]
+    },
+    {
+      "tag": "[持續追蹤]",
+      "text": "WSJ、南華早報、qz.com 等多家媒體同步報導阿里巴巴新模型 Qwen3.8，均指其能力僅次於 Anthropic Fable 5。",
+      "ref_urls": [
+        "https://news.google.com/rss/articles/CBMioAFBVV95cUxQTzB1S012cHg4eEkzckQ5QndPdG14Q0FPcUpyLUdGWUZGUldBTnhYWGltdnQ5bUdLOEluV05iYkd2cm44SEYyZEtqMlctbE9PNGMtUzI3MzhDdFVwRTM4MENFalE5aUx5cklkamVvX3dsWG1SSnZYakcxeEMyWWUyVFJCaks1Y0RDR2trUldGcG5JbHFwX3lkbGh1NV9WOFA4?oc=5",
+        "https://news.google.com/rss/articles/CBMiswFBVV95cUxPakRPRHUwd1M1b09VMGxEN2t6V3JfNzVsc3Zpcko1djRPaXVpdlAxYTh1eld2MkVSTUVlV1VCOXExUHkzSnFMQ2h3aXV0SHdEN2g4UXRBTlYzMm5rQnBVQmVpNzZwSWdkRG1ybU4zQ1p4dXFaWjUwTGxFQzRQM0FzVUE1TTM4UjllUDFWRjRKZS14MjdTbmhkZVYtR1BaenF2RlRydXZvTWstdmJMRFNhSGZKONIBswFBVV95cUxPLVNNNUpSUTZvb3ZlaUVrN2NWOF9nX21xNTFfbl9BUEg0VkpfZnh5M05HcVhoT0g3NDZsLWVRNlJud21VWGRSdzlweXR5dTN0NzFSLU5Rc1N1cks3SzZkd0JveFdPb0swTC01LWhlbmpfVXF2U3BFQTUtb2RjaXJxQUVqUXpSVlBZWGQzak1BMm5GTUJUZGdNUDc3c3VLeXhSd0pESkdTRXQ5WkkyNGMtdFlfdw?oc=5",
+        "https://news.google.com/rss/articles/CBMib0FVX3lxTFBPaEFIdkhwZHd5bUtuQmY1NzRDdHIzajdWZWU4N29HdXpVS1dIODQtNEhPY1ZPSi1RanBiZFV2OWg5aG8xUDNwQi1xVFBlclI5bWRfenFqSm56UUNhVnlaVnRSZUtVYWl2dXZFUzVZUQ?oc=5"
+      ]
+    },
+    {
+      "tag": "[商業動態]",
+      "text": "Yahoo Finance 報導 Meta 正評估對 Anthropic 挹注最高 100 億美元的 AI 運算合作。",
+      "ref_urls": [
+        "https://news.google.com/rss/articles/CBMilgFBVV95cUxPdlFKa0lQZzNHbV9WSEZCODZ5d245LWhvRHJuNDlsZmlRcVZGVndvLXM5UUczUHpJbldTYkU0UjFSWmNwQ1l0Tjl1WUtiaUx5ZWlPUjBZbmloNUx2N2NZZVQ4UXg2MUtxUE9HSnlxTzdNMFYyZDVSVm05b0daWlA2M0dhTUFZNzNRcUpuRUduVDZXX2oxSXc?oc=5"
+      ]
+    },
+    {
+      "tag": "[商業動態]",
+      "text": "Yahoo Finance 報導 Anthropic 傳出仿效 SpaceX 模式，於 IPO 前尋求數十億美元規模的信貸額度。",
+      "ref_urls": [
+        "https://news.google.com/rss/articles/CBMipwFBVV95cUxNNmJUYXZDTllxeUtmc1h6aHFQdnE4UEE3eGpLUFM4T2RCMGE3Z3dMSEI3dHZMQ2ZadVJKX25QekdmV3k4TktFazhKUW8tbHVpWVNWUDg2WXB4ZVFwSUJZUzBZWVQ0Y0tnX1VRc2w1a0VNV29UV1MxNzN1cEVuRUlDLW81b1ZaX0doZC0yYXdLcVlpSGFMdldTblRQNXZZMEdsc2FvZTYyRQ?oc=5"
+      ]
+    }
+  ],
+  "sourceStatus": [
+    {
+      "name": "GitHub Issues",
+      "ok": true,
+      "count": 0
+    },
+    {
+      "name": "Anthropic Status",
+      "ok": true,
+      "count": 2
+    },
+    {
+      "name": "GitHub",
+      "ok": true,
+      "count": 0
+    },
+    {
+      "name": "Hacker News",
+      "ok": true,
+      "count": 11
+    },
+    {
+      "name": "dev.to",
+      "ok": true,
+      "count": 15
+    },
+    {
+      "name": "Google News",
+      "ok": true,
+      "count": 26
+    },
+    {
+      "name": "Claude API Release Notes",
+      "ok": true,
+      "count": 0
+    },
+    {
+      "name": "Blogroll",
+      "ok": true,
+      "count": 1
+    },
+    {
+      "name": "Anthropic Blog",
+      "ok": true,
+      "count": 0
+    },
+    {
+      "name": "Reddit",
+      "ok": true,
+      "count": 15
+    }
+  ],
+  "preview": "Fable 5 存取方案調整"
+}
