@@ -4,8 +4,8 @@
 **狀態：** active（出口管制解除，2026-07-01 起全球恢復存取）
 **領域：** 🤖 模型
 **首次出現：** 2026-04（限定夥伴 Preview）
-**最後更新：** 2026-07-18
-**最後新聞更新：** 2026-07-16
+**最後更新：** 2026-07-20
+**最後新聞更新：** 2026-07-20
 
 > **最新進展**（2026-07-16）
 > 摩根大通執行長 Jamie Dimon 公開表示，Anthropic Mythos 模型所涉及的 AI 風險是「真實的問題」（real issue）（Reuters via Google News，僅標題可用，內文細節待查證）。這是繼 07-13 加拿大金融監管機關引用 Mythos 作為銀行業網路風險警告佐證後，金融業界對 Mythos 級模型風險認知持續升溫的最新一例——從監管機構正式文件延伸到具名金融業高管公開表態；政策/監管面完整分析見 [[topics/anthropic-government-policy]]，本頁僅記錄模型能力認知面動態。
@@ -90,6 +90,11 @@ Anthropic 的官方 AI 資安能力研究計畫，Mythos Preview 為核心工具
 ## 時序
 
 ### 解禁後（2026-06-27 起）
+
+#### 2026-07-20
+**csoonline.com：Mythos FAQ 專文（能力／存取／競爭者／影響），僅標題可用（❓ 待查證）**：
+- Google News 轉載 csoonline.com 標題「Claude Mythos FAQ: Capabilities, access, competitors, implications」（[Google News/csoonline.com](https://news.google.com/rss/articles/CBMirgFBVV95cUxOaE10YjdGU2JoM2xVRC02Q3VRQkVOX3ZBVmVMY1hXbTUxNDgwTUZ5OVBMUUdLdWNPcEtfYUZVMS0xaTRYMWFWckU2eUNuZ251VHV2aF9wcU5GNUtReHE3QUlYODdPU2ZTN3pfaDhHWG84Ti1GZV9IMC05QWNrUVNqZHg5OUY2TEExWmZuQURTMi1Tb1duVUpyTW5uVVZfa0RFRnRjQVBPRFpmekxHQlE?oc=5)）；RSS 僅提供標題與轉址連結，無正文內容可用，無法取得具體 FAQ 問答內容
+- 顯示主流資安科技媒體持續以整理性 FAQ 形式報導 Mythos 現況（能力、存取方式、競爭者、影響），惟本則缺乏可驗證的新事實，暫僅記錄標題存在，待內容曝光或後續報導再補充分析
 
 #### 2026-07-16
 **摩根大通執行長 Dimon：Mythos AI 風險是「真實問題」（Reuters／Google News，僅標題可用）**：

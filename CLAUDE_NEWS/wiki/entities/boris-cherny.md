@@ -4,8 +4,8 @@
 **狀態：** active
 **領域：** 👤 人物
 **首次出現：** 2026-04-23（事後報告發布）
-**最後更新：** 2026-07-18
-**最後新聞更新：** 2026-07-18
+**最後更新：** 2026-07-20
+**最後新聞更新：** 2026-07-20
 
 > **最新動態**（2026-07-17，待核實）
 > Startup Fortune 報導 Boris Cherny 表示他現在同時執行數千個 Claude Code agent。報導僅為標題層級資訊，未展開原始出處（訪談或社群貼文未明），呼應他先前（2026-05-13）揭露的夜間數千子代理深度工作工作流，暫標待核實。
@@ -21,6 +21,14 @@ Boris Cherny 是 Anthropic Claude Code 的創始人與負責人（Head of Claude
 ---
 
 ## 公開言論與主張
+
+### Bloomberg「Claude Code 創造者」影片報導（2026-07-20，待查證）
+
+Bloomberg 發布一則影片／報導，標題為「Watch The Creator of Claude Code on The Hottest Piece of Software in the World」。Google News RSS 僅提供標題與轉址連結，無正文或影片逐字稿可用，標題本身**未具名**，無法直接確認受訪者是否即為 Boris Cherny。經查證：(1) Bloomberg 本身於 2026-07-16 發布特稿〈Anthropic and OpenAI Tools Transform the Profession of Coding〉，內容明確描述 Boris Cherny 以英文向多個 Claude 實例下指令的畫面；(2)「Creator of Claude Code」一詞在多個媒體（YouTube 訪談標題、Boris 本人 X 個人簡介「I created Claude Code」）中皆專指 Boris Cherny 本人，未見用於他人。基於以上脈絡佐證，此則報導**極可能**指涉 Boris Cherny，但因原文未具名確認，仍標（待查證），待更完整報導或逐字稿出現後收斂回填。
+
+- 來源：[Google News / Bloomberg.com，2026-07-20](https://news.google.com/rss/articles/CBMirgFBVV95cUxQZHp2bEZTR0FEa2lyTE9pbkplLVpKdkVGX3loQVIyVG1VVVpCSDhBOGFLVGtaTFNtSGxPcFhfVWxtZnRiQWVxSHR0TXlJcGpCcXhpX1h2MWhiSDZiQlFqc2ppOW15eUJ5TVVnZS1hUUlQRVhtSDJYUWJEaG5sUFQ5S3RvM2VtX0RnODZaczNPQWlxN0RNVjZIME5YTW9oZ2w5V29TMWxKcTZLMDltaUE?oc=5)（旁證：[Bloomberg，2026-07-16](https://www.bloomberg.com/news/features/2026-07-16/anthropic-and-openai-tools-transform-the-profession-of-coding)）
+
+---
 
 ### 「現在同時執行數千個 Claude Code agent」（2026-07-17，待核實）
 
@@ -125,6 +133,7 @@ Boris Cherny 的公開言論呈現兩種截然不同的社群反應：
 
 ## 歷史記錄
 
+- 2026-07-20：Bloomberg 發布影片／報導「Watch The Creator of Claude Code on The Hottest Piece of Software in the World」，標題未具名，佐以 Bloomberg 7/16 特稿與多平台「Creator of Claude Code」慣稱推測極可能為本人，暫標（待查證）（Google News / Bloomberg.com，2026-07-20）
 - 2026-07-17：Startup Fortune 報導其表示現在同時執行數千個 Claude Code agent，呼應 5/13 揭露的夜間數千子代理工作流，惟原始出處（訪談或社群貼文）未明，暫標（待核實）（Google News / Startup Fortune，2026-07-17）
 - 2026-07-08：inc.com 報導「Head of Claude Code」談新創公司需具備的 5 種員工原型（employee archetypes），原文未具名確認發言人，可能為 Boris Cherny 或 [[entities/cat-wu]]，暫標（待核實）（inc.com，2026-07-07，https://www.inc.com/ashley-couto/claude-code-startup-needs-employee-archetypes/91370409）
 - 2026-06-28：在 howborisusesclaudecode.com 公開 13 個日常 Claude Code 使用技巧，涵蓋 5 個並行實例搭配獨立 git checkout、`--teleport` 跨環境切換、iPhone 啟動電腦接力等；強調「surprisingly vanilla」setup（Hacker News，score 5）
@@ -159,3 +168,4 @@ Boris Cherny 的公開言論呈現兩種截然不同的社群反應：
 - [[news/2026-06-28]]
 - [[news/2026-07-08]]
 - [[news/2026-07-18]]
+- [[news/2026-07-20]]

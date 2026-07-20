@@ -4,8 +4,8 @@
 **狀態：** active
 **領域：** 🤖 模型
 **首次出現：** 2026-05-28
-**最後更新：** 2026-07-18
-**最後新聞更新：** 2026-07-14
+**最後更新：** 2026-07-20
+**最後新聞更新：** 2026-07-20
 
 > **最新服務狀態**（2026-07-09）
 > Claude Opus 4.8 一度出現錯誤率升高（Elevated errors），Anthropic Status 於 03:50 UTC 確認問題已解決（中性/低強度事件）；同期 Reddit 使用者反映近期使用體驗轉佳（提及剛發布時曾不穩定），屬弱訊號（score 恆 0），僅供口碑參考。
@@ -125,10 +125,13 @@ claude.ai 用戶現可調節 Claude 在任務上投入的努力程度，不再�
 
 **2026-07-13**：dev.to 作者 tokenmixai 於〈I Traced 4 Claude Opus 5 Signals. The Release Date Still Isn't Real Yet.〉一文中，比對 Anthropic 模型型錄、定價文件與過往發布節奏，認為「Opus 5」的存在具一定可信度，但強調坊間流傳的確切發布日期與跑分數字目前均缺乏佐證（"Opus 5 is plausible, but every exact date and benchmark circulating today is unsupported."）。此為單一 dev.to 分析文章，非官方訊號，亦無具體發布時間表，列「待驗證」；若後續有更多獨立來源佐證，將評估另立 entities 頁（[dev.to](https://dev.to/tokenmixai/i-traced-4-claude-opus-5-signals-the-release-date-still-isnt-real-yet-2f2j)，2026-07-13）。此連結於 2026-07-16 補齊（原始記錄僅有泛用網域連結）。
 
+**2026-07-20（市場推測，非官方公告，❓ 待查證）**：Proactive financial news（經 Google News 轉載，僅標題可用）報導〈Traders bet Anthropic will ship new Claude Opus model within days〉，指金融交易者押注 Anthropic 將於數日內推出新款 Claude Opus 模型（[Google News/Proactive financial news](https://news.google.com/rss/articles/CBMi0gFBVV95cUxQUmt3Y0UyM1FRN3RYVkFvV1VrNXlpRW9BR0t4bkh3bGZ4VTdRVTF4M3RvdkQ2LTduSjlDRW5mSV9ZVHM5SW1qNkFDZkpLYUJjMmp1R0tWNUhzLWtHd3h6cW9TcWpmNjh2ZHVNcWJuRHZhNXU5c0cwd0hkMWpyRVZNRW5CQ2o3Z2dmNVhRUFlyLWVtRENnU3dEUmtCeUl6em5OdWVHdlZXSUpERjV0b3llZVRaVTVubUxXdlJwR3hBWUE4bGZaN2NnY3d3eXdjaUoyT0E?oc=5)）。此為純市場臆測性報導，非官方公告，未提供具體型號、發布時間或依據；與上方 07-13 dev.to 分析文的「Opus 5 存在具一定可信度但無明確時間表」方向一致，但屬不同性質訊號（金融市場交易行為 vs 模型型錄/定價文件比對），**無法確認具體是哪個版本、或該模型是否真的存在**，暫不併入「Opus 5」段落標題，僅並列記錄以待後續證實。
+
 ## 歷史記錄
 
 | 日期 | 事件 |
 |------|------|
+| 2026-07-20 | **❓ 待查證：市場傳聞 Anthropic 數日內將推出新 Claude Opus 型號**：Proactive financial news 經 Google News 轉載標題報導交易者押注消息，純市場推測，非官方公告，無具體型號或發布時間佐證 |
 | 2026-07-09 | **錯誤率一度升高（同日解決）**：Anthropic Status 通報 Claude Opus 4.8 出現 Elevated errors，於 03:50 UTC 確認問題已解決；同期 Reddit 用戶反映近期使用體驗轉佳，提及發布初期曾有不穩定（弱訊號，score 恆 0） |
 | 2026-06-24 | **第三方評測：Gemini 3.5 Flash 35.4 vs Opus 4.8 34.8 略勝**：RuntimeWire 對比評測中 Gemini 在四項任務贏三項；Claude 在 messy-orders-to-json 任務因輸出 Markdown code fence（違反 JSON-only 指令）失分；分析師評論失分屬指令遵循失誤，非能力差距（[runtimewire.com](https://runtimewire.com/article/head-to-head-anthropic-claude-opus-4-8-vs-google-gemini-3-5-flash)，HN score 3） |
 | 2026-06-24 | **跨平台高錯誤率事件**：Claude Opus 4.8 出現跨 API、Claude Code 與 Console 三個平台的高錯誤率（elevated errors），Anthropic 正在調查中（[dev.to](https://dev.to/damogallagher/claude-opus-48-is-seeing-elevated-errors-across-api-claude-code-and-console-1g9a)）；範圍較 6/22 事件更廣，影響 Claude Code 工作流用戶 |

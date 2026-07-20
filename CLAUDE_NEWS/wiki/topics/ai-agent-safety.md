@@ -3,17 +3,17 @@
 **狀態：** ongoing
 **領域：** 🏛️ 政策/安全
 **開始日期：** 2026-04-27
-**最後更新：** 2026-07-18
-**最後新聞更新：** 2026-07-16
+**最後更新：** 2026-07-20
+**最後新聞更新：** 2026-07-20
 
-> **最新安全事件**（2026-07-16）
-> Simon Willison 部落格（2026-07-15）轉述資安研究者 Ayush 的文章「the-memory-heist」，展示如何透過 web fetch 誘導 Claude 洩漏使用者機密資訊，屬提示注入 / 資料外洩（exfiltration）新手法揭露，攻擊媒介與既有 GitHub repo 向量不同。另一則僅標題可用的 Google News/Security Affairs 報導稱一起「運用 Claude Code 與 DeepSeek 的中國網路間諜行動」，無法取得攻擊手法、規模或官方回應等細節，記為待查證。**中美 AI 工具信任對峙**（中國代理偵測程式碼、同形字符隱寫術指控、Alibaba/Meta 禁用、中國官方「後門」警示、Anthropic 07-10 首度公開否認）已整合為獨立頁 [[topics/safety-china-trust-dispute]]，完整逐日時序與可信度評估見該頁；本頁僅保留與 Claude Code 漏洞/提示注入主線直接相關的技術內容。
+> **最新安全事件**（2026-07-20）
+> 兩則僅標題可用的 Google News 轉址報導：TechRadar（07-19）稱 Claude AI 助理可能透過瀏覽器擴充功能遭操縱；Industrial Cyber（07-20）稱工業資安公司 Nozomi Networks 加入 Anthropic 的 Project Glasswing 計畫以強化 OT/IoT/資通物理系統安全。均無法取得攻擊手法、合作細節或官方回應，記為待查證。前一週（07-15/07-16）另有 Simon Willison 轉述「the-memory-heist」web fetch 提示注入揭露、Claude Code+DeepSeek 中國網路間諜行動指控等待查證條目。**中美 AI 工具信任對峙**（中國代理偵測程式碼、同形字符隱寫術指控、Alibaba/Meta 禁用、中國官方「後門」警示、Anthropic 07-10 首度公開否認）已整合為獨立頁 [[topics/safety-china-trust-dispute]]，完整逐日時序與可信度評估見該頁；本頁僅保留與 Claude Code 漏洞/提示注入主線直接相關的技術內容。
 
 ---
 
 ## 摘要
 
-**最新態勢（2026-07-16）：** Simon Willison 部落格轉述資安研究者 Ayush 的「the-memory-heist」文章，揭露透過 web fetch 誘導 Claude 洩漏使用者機密資訊的新提示注入/外洩手法；另一則僅標題可用的 Google News/Security Affairs 報導稱一起「運用 Claude Code 與 DeepSeek 的中國網路間諜行動」，無法取得攻擊手法或官方回應細節，記為待查證。前一日（07-15）另有兩則僅標題可用的 Google News 轉址報導——Crypto Briefing 指有人透過 Claude Code `/btw` 指令繞過 Claude Fable 5 安全限制；TechRepublic 指 Anthropic 發現駭客利用 Claude Code 使澳洲企業面臨風險——均無法取得原文技術細節，記為待查證條目。
+**最新態勢（2026-07-20）：** 兩則僅標題可用的 Google News 轉址報導——TechRadar（07-19）稱 Claude AI 助理可能透過瀏覽器擴充功能遭操縱；Industrial Cyber（07-20）稱工業資安公司 Nozomi Networks 加入 Anthropic 的 Project Glasswing 計畫以強化 OT/IoT/資通物理系統安全——均無法取得攻擊手法、合作細節或官方回應，記為待查證。前一週（07-16）Simon Willison 部落格轉述資安研究者 Ayush 的「the-memory-heist」文章，揭露透過 web fetch 誘導 Claude 洩漏使用者機密資訊的新提示注入/外洩手法；另一則僅標題可用的 Google News/Security Affairs 報導稱一起「運用 Claude Code 與 DeepSeek 的中國網路間諜行動」，無法取得攻擊手法或官方回應細節，記為待查證。
 
 **中美 AI 工具信任對峙已獨立成頁：** 中國代理偵測程式碼（06-30 起）、同形字符隱寫術指控（07-01）、Alibaba 禁用 Claude Code + Meta 限制工程師使用 Claude（07-03～07-07）、Anthropic「實驗」定調（07-07）、中國官方正式「後門」資安警示（07-08）、延燒第二/三天（07-09/07-10）、Anthropic 首度公開否認（07-10）等一系列社群/企業/政府/官方互動，已於 2026-07-12 整合拆出至 [[topics/safety-china-trust-dispute]]，本頁不再重複維護詳細敘事，僅保留與模型層/產品層漏洞直接相關的技術細節。政策/外交面完整分析仍見 [[topics/anthropic-government-policy]]。
 
@@ -38,6 +38,8 @@
 | Anthropic 發現駭客利用 Claude Code，澳洲企業面臨風險（僅標題可用） | 2026-07-15 | 待確認（若屬實，澳洲企業為主要受影響對象） | 無回應（尚無原文可查） | ❓ 待查證 |
 | Claude Web Fetch 提示注入導致使用者機密外洩（"the-memory-heist"，Simon Willison 轉述） | 2026-07-15 | 任何使用 web fetch 功能處理外部內容的使用者 | 無回應 | 🔴 未修補 |
 | Claude Code + DeepSeek 中國網路間諜行動指控（僅標題可用） | 2026-07-16 | 待確認（若屬實，涉及遭鎖定目標之政府/企業） | 無回應（尚無原文可查） | ❓ 待查證 |
+| Claude AI 助理疑透過瀏覽器擴充功能遭操縱（僅標題可用，TechRadar） | 2026-07-19 | 待確認（若屬實，涉及使用瀏覽器擴充功能之 Claude 使用者） | 無回應（尚無原文可查） | ❓ 待查證 |
+| Nozomi Networks 加入 Project Glasswing 強化 OT/IoT/CPS 安全（僅標題可用，非風險而是合作動態，暫列供追蹤） | 2026-07-20 | 待確認（若屬實，涉及 OT/IoT/資通物理系統相關產業） | 無回應（尚無原文可查） | ❓ 待查證 |
 
 ---
 
@@ -47,6 +49,8 @@
 
 | 結論 | 狀態 | 日期 |
 |------|------|------|
+| Nozomi Networks 加入 Project Glasswing 強化 OT/IoT/資通物理系統安全（僅 Google News/Industrial Cyber 標題可用，無原文細節） | ❓ 待查證，未經第三方或官方確認 | 2026-07-20 |
+| Claude AI 助理疑透過瀏覽器擴充功能遭操縱（僅 Google News/TechRadar 標題可用，無原文細節） | ❓ 待查證，未經第三方或官方確認 | 2026-07-19 |
 | Claude Code + DeepSeek 中國網路間諜行動指控（僅 Google News 標題可用，無原文細節） | ❓ 待查證，未經第三方或官方確認 | 2026-07-16 |
 | Claude Web Fetch 提示注入導致使用者機密外洩（"the-memory-heist"），新資料外洩向量，媒介與既有 GitHub repo 向量不同 | 🔴 未修補，單一研究者揭露未經第三方驗證 | 2026-07-15 |
 | Fable 5 `/btw` 指令據稱可繞過安全限制；Anthropic 發現駭客利用 Claude Code 使澳洲企業面臨風險（兩則僅 Google News 標題可用，無原文細節） | ❓ 待查證，未經第三方或官方確認 | 2026-07-15 |
@@ -85,6 +89,21 @@
 ---
 
 ## 技術彙整
+
+### Nozomi Networks 加入 Project Glasswing（2026-07-20 新增，待查證）
+
+- **揭露來源**：Industrial Cyber（經 Google News RSS 聚合連結轉載，2026-07-20 10:33 UTC）；僅標題可用，原文為 Google News 轉址連結，無法取得合作細節、技術範圍或官方聲明
+- **標題訊息**：報導標題稱工業資安公司 Nozomi Networks 加入 Anthropic 的 Project Glasswing 計畫，協助強化 OT（作業技術）、IoT 與 cyber-physical systems（資通物理系統）安全防護（"Nozomi Networks joins Anthropic's Project Glasswing to secure OT, IoT and cyber-physical systems"）
+- **事件分類**：本頁首次出現 Nozomi Networks 相關報導。Project Glasswing 為 Anthropic 主導的漏洞發現/揭露計畫（見上方 07-01 CVE-2026-55407、更早 Mythos exploit 能力評估等條目），夥伴清單與里程碑完整維護於 [[entities/mythos]]（模型記者主責）；本頁僅記錄與 OT/IoT/CPS 安全事件面向直接相關的動態
+- **可信度評估（待確認）**：僅單一媒體標題（透過 Google News RSS 聚合連結），無法取得合作具體內容、涵蓋的 OT/IoT 廠牌範圍或雙方官方聲明；待原文或第二來源確認
+- **與既有條目關聯**：詳細 Glasswing 夥伴時序建議另見 [[entities/mythos]]；本條僅記本頁首次觀察，若後續出現 OT/IoT 具體漏洞揭露案例將接續記錄於本頁
+
+### Claude AI 助理疑透過瀏覽器擴充功能遭操縱（TechRadar，2026-07-19 新增，待查證）
+
+- **揭露來源**：TechRadar（經 Google News RSS 聚合連結轉載，2026-07-19 18:05 UTC）；僅標題可用，原文為 Google News 轉址連結，無法取得具體攻擊手法、受影響擴充功能名稱或官方回應
+- **標題訊息**：報導標題稱「Claude's AI assistant could be manipulated through browser extensions」，暗示存在透過瀏覽器擴充功能操縱 Claude AI 助理的潛在風險
+- **事件分類**：若屬實，性質上可能屬提示注入（prompt injection）類別，與既有 07-15 web fetch 提示注入（"the-memory-heist"）、06-28 乾淨 GitHub repo 提示注入（Mozilla 0din）同屬「外部內容/媒介注入觸發非預期行為」大類；惟本次媒介（瀏覽器擴充功能）為本頁首次出現，與既有條目無直接技術關聯，暫記為獨立觀察
+- **可信度評估（待確認）**：僅單一媒體標題，無法取得具體攻擊手法、PoC、受影響擴充功能範圍或 Anthropic 官方回應，亦無法確認是否涉及官方瀏覽器整合或第三方擴充功能；待原文或第二來源確認
 
 ### 中美 AI 工具信任對峙（2026-06-30 起，已於 2026-07-12 整合拆出至獨立頁）
 
@@ -406,6 +425,12 @@
 > 更早期時序見 [[topics/ai-agent-safety-archive]]
 
 > **中美 AI 工具信任對峙**（06-30～07-10：中國代理偵測程式碼、隱寫術指控、Alibaba/Meta 禁用、中國官方後門警示、Anthropic 首度否認）完整逐日時序已整合至 [[topics/safety-china-trust-dispute]]，此處不再重複條目，僅保留與本頁漏洞/提示注入主線相關者。
+
+### 2026-07-20
+- **[待查證] Industrial Cyber：Nozomi Networks 加入 Project Glasswing**：Industrial Cyber（經 Google News RSS 聚合連結）標題稱工業資安公司 Nozomi Networks 加入 Anthropic 的 Project Glasswing 計畫，協助強化 OT/IoT/資通物理系統安全防護；僅標題可用，無法取得合作細節或官方聲明（Google News/Industrial Cyber，2026-07-20 10:33 UTC）
+
+### 2026-07-19
+- **[待查證] TechRadar：Claude AI 助理疑透過瀏覽器擴充功能遭操縱**：TechRadar（經 Google News RSS 聚合連結）標題稱 Claude 的 AI 助理可能透過瀏覽器擴充功能遭到操縱；僅標題可用，原文為轉址頁面，無法取得具體攻擊手法或官方回應（Google News/TechRadar，2026-07-19 18:05 UTC）
 
 ### 2026-07-16
 - **[待查證] Security Affairs：Claude Code + DeepSeek 中國網路間諜行動指控**：Security Affairs（經 Google News RSS 聚合連結）標題稱一起「運用 Claude Code 與 DeepSeek 的中國網路間諜行動」；僅標題可用，無法取得攻擊手法、規模或官方回應（Google News/Security Affairs，2026-07-16 09:27 UTC）

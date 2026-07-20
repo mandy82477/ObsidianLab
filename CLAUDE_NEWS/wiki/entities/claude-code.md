@@ -4,8 +4,8 @@
 **狀態：** active
 **領域：** 🛠️ 工具/功能
 **首次出現：** 2025（正式推出）
-**最後更新：** 2026-07-19
-**最後新聞更新：** 2026-07-19
+**最後更新：** 2026-07-20
+**最後新聞更新：** 2026-07-20
 
 > **最新版本動態**（2026-07-19）
 > **v2.1.215**（2026-07-19 02:56 UTC）：⚠️ **行為變更**——Claude 不再自動執行 `/verify` 與 `/code-review` 兩項技能，須由使用者手動呼叫 `/verify` 或 `/code-review` 指令才會觸發；依賴自動驗證/審查的既有工作流需改為顯式呼叫，無過渡期即刻生效，已提報 [[feature-radar]] 新增條目。同日 Hacker News（原文 simonwillison.net）證實 Jarred Sumner 的說法：Claude Code 自 **v2.1.181**（2026-06-17 發布）起底層執行環境已改用 Rust 重寫版 Bun runtime，Linux 平台啟動速度提升約 10%，多數使用者毫無察覺，屬底層基礎設施更新（作者以 `strings` 指令找到 563 個 `.rs` 檔名佐證）。本日新增已知問題：方案 5 小時用量限額在不到 1 小時 30 分鐘內即用罄（累積 120 則留言、31 個讚，今日互動量最高）；GitHub connector 可成功連結帳號內所有公開／私有 repository，卻無法讀取任何內容，回報為近期功能退化（累積 37 則留言、33 個讚）；功能請求新增訊息時間戳記，方便監控長時間背景 agent 工作進度（累積 36 則留言、66 個讚）；功能請求內建 Slack MCP connector 支援多 workspace，目前僅支援單一 workspace（累積 33 則留言、69 個讚）。既有已知問題更新：Desktop 版登出／重啟後 session 消失（issue #26452）補上留言數據，累積達 49 則留言；Environment Contributions 警告持續重複出現（issue #3301）反應數升至 43 則留言、81 個讚。前一重大異動為 v2.1.212（2026-07-17）`/fork` Breaking change（見「版本更新」表格）。
@@ -172,10 +172,12 @@
 - 🔴 **未修復**｜**帳號限制後申訴表單重新導向迴圈（GitHub issue #62503，累積 31 則留言、5 個讚，2026-07-07）**：帳號遭限制的使用者嘗試提交申訴表單時陷入重新導向迴圈，無法完成申訴流程，官方尚未回應。
 - 🔴 **未修復**｜**功能請求聚集：跨平台支援需求未滿足**：多項高反應數 feature request 顯示使用者對跨平台支援的強烈需求——官方 Linux（Ubuntu LTS / Debian）Desktop build（[issue #65697](https://github.com/anthropics/claude-code/issues/65697)，累積反應 651）、Desktop 於 Windows 上改用 WSL 執行指令的選項（[issue #12506](https://github.com/anthropics/claude-code/issues/12506)，累積反應 134）、Desktop 與 CLI 之間同步 Skills（[issue #20697](https://github.com/anthropics/claude-code/issues/20697)，累積反應 127）；均為社群高投票 feature request，官方尚未排入路線圖。多帳號管理相關訴求已獨立整併至「👤 帳號管理」分組
 
-### 🌐 服務穩定性（12 條已修復、3 條未修復、1 條待查證）
+### 🌐 服務穩定性（12 條已修復、5 條未修復、1 條待查證）
 
-> 2026-07-15～07-17 為近月密度最高的一段：Anthropic Status 三天內累計 9 起獨立事件（下方前 9 條），密度明顯高於近月平均；07-19 彙整時對照 07-18 日報確認全數已同日解決，07-17 那起（原 07-17 彙整時仍標記「修復實施中」）實際已於 12:21 UTC 解決。GV Wire 報導曾引用 Downdetector 錯誤回報數上升作為外部佐證，顯示使用者端在修復完成前確實感受到服務品質下降。
+> 2026-07-15～07-17 為近月密度最高的一段：Anthropic Status 三天內累計 9 起獨立事件（下方第 3～11 條），密度明顯高於近月平均；07-19 彙整時對照 07-18 日報確認全數已同日解決，07-17 那起（原 07-17 彙整時仍標記「修復實施中」）實際已於 12:21 UTC 解決。GV Wire 報導曾引用 Downdetector 錯誤回報數上升作為外部佐證，顯示使用者端在修復完成前確實感受到服務品質下降。
 
+- 🔴 **未修復（監控中，尚未見「已解決」時間戳）**｜**Anthropic Status：Opus 4.5 錯誤率升高（2026-07-20 07:57–10:57 UTC）**：07:57 UTC 標記問題已定位（Identified），10:05 UTC 更新表示持續修復中，10:57 UTC 套用修復進入監控（Monitoring - A fix has been implemented and we are monitoring the results）；狀態頁截至彙整時尚未標示「已解決」，暫列未修復，待後續日報確認。[來源](https://status.claude.com/incidents/hlt0yqp4lkww)
+- 🔴 **未修復（監控中，已有暫時解方）**｜**Anthropic Status：Fable 5 於 Max 方案被誤判需消耗使用點數（2026-07-20 07:35 UTC）**：部分 Claude Code Max 方案用戶被系統誤判須使用點數才能存取 Fable 5，但 Fable 5 存取權限實屬 Max 方案內建、不應額外扣點；官方已確認為誤判（Monitoring 狀態），建議受影響用戶重新啟動用戶端作為暫時解方，惟尚未見「已解決」時間戳確認根本修復。與 [[entities/pricing]] 現行方案內容相關，另見 [[entities/fable-5]]。[來源](https://status.claude.com/incidents/tnypgb2jbqnq)
 - ✅ **已修復（同日解決）**｜**Anthropic Status：多模型錯誤率升高（2026-07-15 15:11 UTC 確認解決）**。
 - ✅ **已修復（同日解決）**｜**Anthropic Status：Sonnet 5 錯誤率升高（2026-07-16 08:53 UTC 通報並同時確認解決）**。
 - ✅ **已修復（同日解決）**｜**Anthropic Status：企業 SSO 登入失敗（2026-07-16 10:27 UTC 確認解決）**。
@@ -331,6 +333,7 @@
 
 ## 參考來源
 
+- [[news/2026-07-20]]
 - [[news/2026-07-17]]
 - [[news/2026-07-15]]
 - [[news/2026-04-25]]
