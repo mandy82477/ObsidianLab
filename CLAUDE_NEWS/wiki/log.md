@@ -3,6 +3,25 @@
 Append-only 紀錄。每次 ingest、lint，以及**揭露缺陷或促成改動的使用者 query**，都在此追加一條（純資訊性、未促成改動的 query 不記，避免噪音）。
 格式：`## [YYYY-MM-DD] 類型 | 說明`
 
+## 2026-07-20 Ingest | news/2026-07-20.md（47 則）
+
+- 來源日報：[[news/2026-07-20]]（47 則，10/10 來源；Google News 26、dev.to 15、Reddit 15、Hacker News 11、Anthropic Status 2、Blogroll 1、GitHub Issues 0、GitHub 0、Claude API Release Notes 0、Anthropic Blog 0）
+- 分類派工：模型、功能、商業、安全政策、社群、人物（六類並行 foreground；**本環境自訂 subagent_type（wiki-reporter-*）未被此雲端 session 註冊，六位記者均改以 general-purpose agent 扮演角色、內嵌完整規則文字派工**，屬環境限制的變通做法，功能與品質未受影響，但記者間彼此無法即時轉知，跨記者轉知事項一律回頭由主編處理）
+- 更新頁面：
+  - **模型**：`entities/mythos.md`（Mythos FAQ 標題層級報導記為 ❓ 待查證，未覆寫既有 07-16 callout）、`entities/opus-4-8.md`（交易員押注新 Opus 模型傳聞併入既有觀察段落，標市場推測非官方公告）
+  - **功能**：`entities/claude-code.md`（🌐 服務穩定性新增 2 條：Opus 4.5 錯誤率上升🔴監控中已實施修復；Fable 5 Max 方案用戶誤判需點數存取🔴官方已確認誤判並提供重啟建議）
+  - **商業**：`topics/anthropic-business.md`（IPO 前瞻表新增 VC 看好上市、SpaceX 式信貸額度傳聞 2 列；戰略合作新增 UST；時序新增美國公衛機構測試、Meta $10bn 運算合作洽談、Memphis 非營利捐款等）；`entities/pricing.md`（Fable 5 免費期昨日到期後 Pro 存取結束方向趨於一致、Max 方案誤判扣點官方事件、南韓 $16.7M 疑似故障帳單）；`topics/competitor-landscape.md`（Alibaba Qwen3.8「僅次於 Fable 5」跨媒體報導、Kimi K3／Deepseek V4／Thinking Machines Inkling 等開源模型動態）
+  - **安全政策**：`topics/ai-agent-safety.md`（Nozomi Networks 加入 Project Glasswing、Claude AI 助理疑似可透過瀏覽器擴充功能遭操縱，均 ❓ 待查證）
+  - **人物**：`entities/boris-cherny.md`（Bloomberg「Claude Code 創始人」專訪報導，經記者額外查證後標「待查證，極可能為本人」）
+  - **社群**：今日 18 則條目（10 則 Show HN 分數 1–15 分、8 則 Reddit sort=new score=0 無週熱門標記）均未達收錄門檻，四個負責頁面均無異動
+  - **主編**：`feature-radar.md`（本日無新功能；⭐本週推薦 Fable 5 條目文字同步到期狀態，因內容已實質更新未觸發防霸榜輪替；⏰倒數中移除已到期的 7/19 Fable 5 列，僅保留 8/31 Sonnet 5 促銷列）；`index.md`（近期異動新增今日摘要，狀態變更／新增頁面均無）；`topics/model-comparison.md`（依商業記者轉知查核，快速選型表與情境推薦同步 Fable 5 已到期現況，移除「三度順延至 7/19」等過期措辭）；`entities/mythos.md`（依安全政策記者轉知，於「政策與存取管控」時序表新增 Nozomi Networks／Glasswing 列）
+- feature-radar：新增 0 條；本週推薦 Fable 5 條目文字更新（非輪替）；⏰倒數中移除已到期的 7/19 列
+- index.md 狀態變更：無
+- 新增頁面：無
+- 摘要：Fable 5 免費期限昨日（07-19）到期，今日多方報導指向 Pro 訂閱免費存取已結束、Max/Team 方案動向未明；同日 Anthropic Status 錄得兩起服務事件（Opus 4.5 錯誤率上升、Fable 5 Max 方案誤判扣點，均已提供處置說明）；商業面 Meta 傳評估百億美元運算合作、Anthropic 傳仿 SpaceX 模式於 IPO 前尋求信貸額度；阿里巴巴 Qwen3.8「僅次於 Fable 5」引發跨媒體報導
+- 呈現品質：六類共 8 頁全數 ✅ 通過（模型 2 頁、功能 1 頁、商業 3 頁、安全政策 1 頁、人物 1 頁；社群無異動不適用）
+- 品質備註：[商業] 記者回報 model-comparison.md 舊日期字串查核轉知模型記者，因模型記者已先行完成任務無法即時接力，改由主編親自查核並更新；[安全政策] 記者回報 Nozomi Networks／Glasswing 應轉知模型記者評估 mythos.md 補列，同理改由主編親自處理——均為本環境 subagent_type 限制下記者間無法互相轉知的已知副作用，主編收斂處理，未遺漏
+
 ## 2026-07-15 Ingest | news/2026-07-15.md（61 則）
 
 - 來源日報：[[news/2026-07-15]]（61 則，10/10 來源；Google News 36、GitHub Issues 15、dev.to 15、Hacker News 12、Reddit 11、Anthropic Blog 2、Blogroll 2、GitHub 1、Anthropic Status 1、Claude API Release Notes 0）

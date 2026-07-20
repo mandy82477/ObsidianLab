@@ -74,6 +74,7 @@ Anthropic 的官方 AI 資安能力研究計畫，Mythos Preview 為核心工具
 | ICE 加入 Glasswing | 2026-06-04 | 美國聯邦執法機構加入 |
 | Mythos 5 部分解禁（100+ 機構）| 2026-06-27 | 商務部長 Lutnick 致函確認；條件：受信任合作夥伴 + 安全措施 |
 | NSA 用 Mythos 發動攻擊 | 2026-06-05 | 防禦框架「兩用性」首次公開確認（FT 獨家）|
+| Nozomi Networks 加入 Glasswing | 2026-07-20 | 工業資安公司加入，協助強化 OT／IoT／cyber-physical systems 安全防護（Industrial Cyber，僅標題可用，❓ 待查證）|
 
 **授權費用**：企業客戶描述為「Budget Buster」，高安全能力伴隨高授權成本（The Information, 2026-06-01）。
 

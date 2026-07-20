@@ -2,11 +2,12 @@
 
 LLM 查詢此 wiki 時，**先讀這個檔案**找相關頁面，再讀具體頁面取得詳細資訊。
 
-**最後更新：** 2026-07-18
+**最後更新：** 2026-07-20
 ---
 
 ## 近期異動
 
+- **2026-07-20 Ingest**：Anthropic Status 錄得兩起服務事件——Opus 4.5 錯誤率上升（已實施修復，監控中）與 Claude Code Max 方案用戶被誤判需使用點數才能存取 Fable 5（官方確認為誤判，記入 [[entities/claude-code]] 🌐 服務穩定性）；Fable 5 免費期限已於昨日（07-19）到期，今日 SQ Magazine、The Indian Express 報導方向與 07-19 Tech Times 一致，指向 **Pro 訂閱免費存取已結束**，Max/Team 是否維持「永久」仍未見新報導佐證，[[entities/pricing]]／[[topics/model-comparison]] 同步更新；[[topics/anthropic-business]] 新增 UST 企業合作、Meta 傳評估最高 100 億美元運算合作、Anthropic 傳仿效 SpaceX 模式於 IPO 前尋求信貸額度等傳聞層級報導；[[topics/competitor-landscape]] 補入阿里巴巴 Qwen3.8「僅次於 Fable 5」的跨媒體報導（WSJ/SCMP/qz.com）與 Kimi K3／Deepseek V4／Thinking Machines Inkling 等開源模型動態；[[topics/ai-agent-safety]] 新增 Nozomi Networks 加入 Project Glasswing、Claude AI 助理疑似可透過瀏覽器擴充功能遭操縱兩則待查證事件；[[entities/boris-cherny]] 新增 Bloomberg「Claude Code 創始人」專訪報導（待查證，經查證極可能為本人）；[[entities/mythos]]／[[entities/opus-4-8]] 補入市場推測性報導（新 Opus 模型傳聞、Mythos FAQ）。今日社群條目（10 則 Show HN、8 則 Reddit sort=new）均未達收錄門檻，未產生新增條目。呈現品質全數通過，詳見 [[log]]
 - **2026-07-18 Ingest**：[[entities/claude-code]] v2.1.214（純安全性修正，未列 feature-radar）發布，新增已知問題 7 條（思考過程常駐顯示 #8477 346 讚同居首、貼上文字編輯 #3412 296 讚同等）；Anthropic Status 錄得四起錯誤率升高事件（Fable 5／Sonnet 5／Opus 4.8／Sonnet 5+Haiku 4.5）皆同日修復；AskUserQuestion 60 秒逾時機制經部落格文章證實為 07-01 刻意加入的「效率繞過」設計，社群具體案例佐證。[[topics/anthropic-business]] 新增 Meta-Anthropic 傳洽談 100 億美元運算力租賃協議（HN+Reuters+NYT 三方獨立來源）；[[entities/pricing]] 記錄 Fable 5 存取政策今日出現「收緊限制」與「@claudeai 設為永久」兩則方向相反報導，兩者並存待觀察；[[topics/competitor-landscape]] 補入 Moonshot Kimi K3 官方一手規格（2.8T 參數）。[[topics/anthropic-government-policy]] 新增 Anthropic 員工捐款 300 萬美元支持 AI 安全法規（併入既有政治獻金布局故事線，待查證）。[[entities/boris-cherny]] 新增「同時執行數千個 Claude Code agent」聲明（待核實）。呈現品質全數通過，詳見 [[log]]
 - **2026-07-18 週度 Lint（雲端排程）**：修正 3 處跨頁矛盾（anthropic-commitments/safety-china-trust-dispute 中國回應狀態不同步、ai-talent-flow John Jumper 日期錯記 06-19→06-21）；19 頁呈現品質修復（待查證標記改註、月份分組補結構、callout/數字同步等）；`community-tech-tools.md` 新增 18 工具／汰除 26 筆；`community-pattern-trends.md` 4 條趨勢更新演進節點；overview.md 全文改寫反映近兩週局勢（v2.1.212 `/fork` breaking change、Fable 5 7/19 到期倒數、IPO 敘事、中國信任對峙轉入觀察期）；ref 覆蓋率 100%；讀者模擬 3/3 通過；留 5 項待使用者確認（新實體候選 Reflect with Claude 第 3 週未決、patterns 合併建議、規則年齡審查、來源健康、6c 遵守率記錄方式）詳見 [[log]]
 - [[entities/claude-skills]] — 2026-07-17：**新頁面**，官方 Skills 產品線與生態單一入口（使用者指定追蹤官方力推項目）——六大控制層定位、31 個小企業技能包（首日 38.2 萬下載）、教師技能庫、`--safe-mode`／巢狀 subagent 支援、第三方移植（OpenCode-power-pack／Claudinho）與「官方無市集、創作者無變現」結構性缺口；設計面仍歸 [[topics/community-tech-patterns]]，兩頁互 wikilink

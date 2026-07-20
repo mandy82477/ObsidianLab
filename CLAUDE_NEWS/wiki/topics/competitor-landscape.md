@@ -3,11 +3,11 @@
 **狀態：** monitoring
 **領域：** 💼 商業
 **開始日期：** 2026-04
-**最後更新：** 2026-07-19
-**最後新聞更新：** 2026-07-19
+**最後更新：** 2026-07-20
+**最後新聞更新：** 2026-07-20
 
-> **最新競品動態**（2026-07-19，多為標題層級訊號，無重大可驗證新事件）
-> 今日新增四則競品相關報導，均僅存標題資訊、無具體數據可查證：(1) Motley Fool 再次報導 Musk「低估了 Anthropic AI 實力」，延續 07-09/10/13/14 已記錄的 Musk 表態序列，未見新引言，屬既有敘事的再擴散；(2) The New Stack 稱 Musk 開源 Grok Build 以對抗 Anthropic，標題並提及 Anthropic 每月支付對方 **12.5 億美元**，惟付款對象（Musk 本人或 xAI／Colossus 算力）與用途細節不明，不可逕自推論為支付予 Musk 個人；(3) KED Global 稱 Claude 有望受企業需求帶動在南韓生成式 AI 市場占據領先地位，無具體市佔數字；(4) Fast Company 稱新創 Thinking Machines 正在「智識調性」上對 Anthropic 構成競爭態勢，具體內容不明。07-18 已記錄的 Kimi K3 技術規格揭露仍是本月最具實質內容的競品事件，見下方「主要競品追蹤」與時序。
+> **最新競品動態**（2026-07-20）
+> 今日最具查證價值的事件是 Alibaba 預覽新模型 **Qwen3.8**，三家獨立媒體（qz.com、WSJ、South China Morning Post）同步報導其「僅次於 Anthropic Fable 5」的宣稱——這是 Alibaba 在 06-25 遭 Anthropic 正式指控蒸餾攻擊、股價單日重挫逾 33% 之後，首次以新模型名義再度公開自我定位緊追 Fable 5，兩造關係呈現「法律指控」與「公開能力宣稱」並存的矛盾態勢（推論），詳見「主要競品追蹤」Alibaba 子區塊更新。此外 r/LocalLLaMA 週熱門貼文集中反映 Kimi K3 發布相關動態（含科學類查詢排行榜居首、與 Claude Fable／GPT-5.6 的社群評測聲稱）與 Thinking Machines 首款開源模型 Inkling 發布，詳見下方「主要競品追蹤」與時序。
 
 ---
 
@@ -156,7 +156,8 @@ Claude Code 已成為 AI 輔助編碼的標竿產品，但競爭正快速升溫�
 - **現象**：中國用戶長期通過 VPN 等方式繞過 Anthropic 地理限制，實質封鎖效果存疑
 - **意義**：若管制無法實質阻隔中國用戶使用 Claude，「管制犧牲收入」的代價真實，「管制保護能力」的效果可疑（Wired https://www.wired.com/story/how-people-in-china-keep-outsmarting-anthropics-geolocation-restrictions/）
 
-### Alibaba Qwen3.7-Max / Alibaba 蒸餾攻擊
+### Alibaba Qwen3.7-Max / Alibaba 蒸餾攻擊 / Qwen3.8（2026-07-20 新增追蹤）
+- **狀態更新（07-20，三媒體同步）**：qz.com、WSJ、South China Morning Post 同步報導 Alibaba 預覽新模型 **Qwen3.8**，宣稱其能力僅次於 Anthropic Fable 5（WSJ 標題："Alibaba Says New AI Model Is Just Second to Anthropic's Fable 5"）。**對競爭格局的意涵**：是繼 Qwen3.7-Max（35 小時自主運行宣稱）之後 Alibaba 模型陣容的最新一代，本次宣稱聚焦「僅次於 Fable 5」的相對定位而非具體技術指標；三家獨立媒體同日報導顯示訊號可信度較高，但均僅標題層級資訊，未見具體 benchmark 數字、發布時程或是否開源等細節。**與既有蒸餾指控的張力（推論）**：Alibaba 目前仍身處 06-25 Anthropic 正式提出的蒸餾攻擊指控（2.5 萬假帳號、2,880 萬次對話）陰影下，此時高調宣稱新模型能力逼近 Fable 5，若外界將兩事聯繫解讀，可能加深「透過蒸餾快速追趕」的觀感，對 Alibaba 品牌信任度構成雙面效應（既展現技術實力也強化蒸餾指控的說服力）（qz.com；[WSJ](https://news.google.com/rss/articles/CBMioAFBVV95cUxQTzB1S012cHg4eEkzckQ5QndPdG14Q0FPcUpyLUdGWUZGUldBTnhYWGltdnQ5bUdLOEluV05iYkd2cm44SEYyZEtqMlctbE9PNGMtUzI3MzhDdFVwRTM4MENFalE5aUx5cklkamVvX3dsWG1SSnZYakcxeEMyWWUyVFJCaks1Y0RDR2trUldGcG5JbHFwX3lkbGh1NV9WOFA4?oc=5)；South China Morning Post）
 - **狀態**：遭 Anthropic 法律指控（2026-06-25）
 - **特點**：Qwen3.7-Max 聲稱可持續自主運行 35 小時，直接瞄準 Claude Code 的長時間自主執行場景
 - **重大事件**（2026-06-25）：Anthropic 正式指控阿里巴巴使用約 25,000 個假帳號、執行 2,880 萬次 Claude 對話，進行大規模 AI 模型蒸餾攻擊，竊取 Claude 能力輸入自家模型；阿里巴巴股價單日下跌逾 33%；Reuters、Bloomberg、WSJ、BBC、FT 多家媒體同步報導
@@ -197,6 +198,13 @@ Claude Code 已成為 AI 輔助編碼的標竿產品，但競爭正快速升溫�
 ---
 
 ## 時序
+
+### 2026-07-20
+- **[新模型宣稱，三媒體同步，重大] Alibaba 預覽 Qwen3.8，宣稱能力僅次於 Anthropic Fable 5**：詳見「主要競品追蹤」Alibaba 子區塊更新（qz.com；WSJ；South China Morning Post）
+- **[中國陣營，週熱門，社群觀感] r/LocalLLaMA：Kimi K3 在 Text Arena 科學類查詢排行榜暫居首位**：Reddit r/LocalLLaMA 週熱門貼文稱 Kimi K3 在 Text Arena 科學類查詢排行榜暫居首位。**注意**：單一社群貼文，未見獨立驗證或官方 benchmark 佐證，與既有 07-18 官方一手規格揭露（自陳「整體表現仍落後 Fable 5 與 GPT-5.6 Sol」）並列參考，不可逕自視為超越 Claude 的證據（Reddit，2026-07-18 00:28 UTC）
+- **[中國陣營，週熱門，誇大用語需審慎] r/LocalLLaMA：貼文宣稱 Kimi K3 在 arena.ai 勝過 Claude Fable 與 GPT 5.6 Sol**：Reddit r/LocalLLaMA 週熱門貼文標題誇張宣稱 Kimi K3「打敗」Claude Fable 與 GPT 5.6 Sol。**注意**：與 07-17 已記錄的同類社群宣稱（arena.ai 排行榜）方向一致，均為單一社群貼文、無評測方法論細節，且與 Moonshot AI 官方 07-18 自陳「仍落後 Fable 5/GPT-5.6 Sol」的一手說法方向相反，應以官方說法為準，本則僅記錄社群聲量持續存在（Reddit，2026-07-16 19:57 UTC）
+- **[新競品，開源模型發布] Thinking Machines 發表首款開源權重模型「Inkling」**：Reddit r/LocalLLaMA 週熱門貼文報導 Thinking Machines（見 07-19 已記錄「智識調性」品牌競爭定位，Fast Company）發表其首款開源權重模型 Inkling。**對競爭格局的意涵**：是 Thinking Machines 首次以具體開源模型產品進入競品追蹤範圍，此前僅有品牌形象層面的競爭報導（07-19 Fast Company），本次補上具體產品事實；模型能力、參數規模、benchmark 表現未見報導細節，待後續補充（Reddit，2026-07-15 18:12 UTC）
+- **[開源陣營動態彙整，週熱門] r/LocalLLaMA 彙整近期開源模型發布時程：Kimi K3、Deepseek V4、Liquid、Mistral、GLM 5.5**：Reddit r/LocalLLaMA 週熱門貼文彙整近期開源模型發布動態：Kimi K3（數小時內，後於 07-17 正式發布確認）、Deepseek V4（本週稍晚 GA）、新 Liquid 模型、新 Mistral 模型（本月稍晚）、GLM 5.5（傳聞 8 月推出）。**對競爭格局的意涵**：反映開源陣營發布節奏密集，多家廠商同期推進，與既有 DeepSeek V4 Flash（06-26 定價衝擊）、GLM-5.2（07-10/17 benchmark 逼近 Opus 4.8）等追蹤條目同屬開源模型持續逼近的整體態勢（推論）（Reddit，2026-07-14 16:47 UTC）
 
 ### 2026-07-19
 - **[競品陣營表態延續，非新事實] Motley Fool 再報 Musk 稱「低估了 Anthropic AI 實力」，建議 Amazon／Alphabet 投資人留意**：The Motley Fool 報導 Elon Musk 坦承先前低估了 Anthropic 的 AI 實力，文章建議 Amazon、Alphabet 投資人應留意此一動向。**注意**：此框架（Musk 表態 → 利多 Amazon/Alphabet 投資人）與 07-13 已記錄的 Yahoo Finance 報導幾乎一致，未見新引言或新事實，延續 07-09（首次表態）、07-10、07-13（兩獨立來源重申）、07-14（Proactive 媒體解讀）已記錄的 Musk 表態序列，屬既有敘事的再擴散（Google News/The Motley Fool，07-19 08:46 UTC）

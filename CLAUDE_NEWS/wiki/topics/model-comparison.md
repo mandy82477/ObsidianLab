@@ -3,11 +3,11 @@
 **狀態：** ongoing
 **領域：** 🤖 模型
 **開始日期：** 2026-07-02
-**最後更新：** 2026-07-19
-**最後新聞更新：** 2026-07-16
+**最後更新：** 2026-07-20
+**最後新聞更新：** 2026-07-20
 
-> **最新對照更新**（2026-07-15）
-> Anthropic 研究部落格發布〈Claude's values across models and languages〉，分析 Claude 在不同模型版本與語言間的價值觀回應差異（非選型指標，不影響本頁建議，詳見「跨模型／跨語言行為研究」）。選型面本身無變化：Fable 5 免費期限維持 7/19 不變（見 [[entities/fable-5]]），公開陣容五級維持不變：Fable 5（旗艦）> Opus 4.8 > Sonnet 5（主力）> Sonnet 4.6 > Haiku 4.5；社群持續回報 Fable 5 vs GPT-5.6 Sol 混合評價（速度／bug 數量傾向 Fable 5，額度重置頻率傾向 Sol，詳見「社群實測觀察」）。
+> **最新對照更新**（2026-07-20）
+> Fable 5 免費使用期限已於昨日（07-19）到期。今日 SQ Magazine（「Ends Free Access For Pro Subscribers」）、The Indian Express（「access plans change from July 20」）報導方向與 07-19 Tech Times「Pro 改 Credits-only」一致，指向 **Pro 訂閱用戶免費存取已結束**；Max/Team 方案是否如 07-19 Tech Times 所稱「轉為永久」仍未見今日報導佐證或反駁，懸而未決。均為標題層級資訊，詳見 [[entities/pricing]]。公開陣容五級維持不變：Fable 5（旗艦）> Opus 4.8 > Sonnet 5（主力）> Sonnet 4.6 > Haiku 4.5。
 
 ---
 
@@ -19,7 +19,7 @@
 
 | 模型 | 定位 | 定價（in/out per Mtok）| Context | 最適合 | 不適合 | 狀態 |
 |------|------|------|------|------|------|------|
-| [[entities/fable-5\|Fable 5]] | 旗艦（Mythos 級公開版） | $10 / $50 | 1M | 多步驟複雜任務、長期 agentic 工作流、安全漏洞分析 | 日常短問答（太貴）；前沿 LLM 開發（護欄靜默降級） | ✅ 已解禁（免費使用期限因 GPT-5.6 Sol 同級競爭壓力已從 7/7 三度順延至 **7/19**，到期後轉 usage-based，屆時再確認） |
+| [[entities/fable-5\|Fable 5]] | 旗艦（Mythos 級公開版） | $10 / $50 | 1M | 多步驟複雜任務、長期 agentic 工作流、安全漏洞分析 | 日常短問答（太貴）；前沿 LLM 開發（護欄靜默降級） | ✅ 已解禁（免費使用期限已於 **7/19 到期**；Pro 訂閱免費存取結束方向趨於一致，Max/Team 是否維持「永久」仍待官方公告，詳見 [[entities/pricing]]） |
 | [[entities/opus-4-8\|Opus 4.8]] | 次旗艦 | ~$5 / $25（估計） | 1M | 大型 agentic 任務、1M context 長文件、Fast Mode 省時場景 | 追求穩定性的生產環境（曾有行為退步回報） | ✅ Active |
 | [[entities/sonnet-5\|Sonnet 5]] | **主力平衡選項（Claude Code 預設）** | $2 / $10（促銷至 8/31） | 1M | agentic 工作流、Claude Code 日常、tool use 密集、成本敏感 | 需要 Mythos 級推理深度的極複雜任務 | ✅ Active（v2.1.197 預設） |
 | Sonnet 4.6 | 前代主力 | 低於 Sonnet 5 正式價 | 200K | 已驗證穩定的既有工作流；偏好其互動個性者 | 新專案（Sonnet 5 促銷期 CP 值更高） | ✅ Active |
@@ -32,7 +32,7 @@
 | 你的情境 | 建議 | 理由 |
 |---------|------|------|
 | Claude Code 日常開發 | **Sonnet 5**（預設即是） | 效能接近 Opus 4.8、成本約 60%，1M context |
-| 跨多天的複雜 agentic 任務 | **Fable 5** | 任務越複雜越長期優勢越明顯；注意免費期限已順延至 7/19，屆時轉 usage-based 計費 |
+| 跨多天的複雜 agentic 任務 | **Fable 5** | 任務越複雜越長期優勢越明顯；免費期限已於 7/19 到期，Pro 訂閱免費存取結束方向趨於一致，Max/Team 是否維持「永久」仍待官方公告 |
 | 資安審查 / 漏洞分析 | **Fable 5**（留意誤判） | 能力最強，但 07-02 起 Defense in Depth 分類器有誤判實測 |
 | 需要壓成本的批量任務 | **Haiku 4.5 做 worker + Sonnet 5 做協調** | 社群驗證的混合架構模式 |
 | 生產環境求穩 | **Sonnet 4.6 或 Sonnet 5** | Opus 4.8 曾有行為退步與 529 事件記錄 |

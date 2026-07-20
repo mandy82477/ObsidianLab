@@ -4,11 +4,11 @@
 **狀態：** active（持續調整中）
 **領域：** 💼 商業
 **首次出現：** 2026-04-25
-**最後更新：** 2026-07-19
-**最後新聞更新：** 2026-07-19
+**最後更新：** 2026-07-20
+**最後新聞更新：** 2026-07-20
 
-> **最新計費政策異動**（2026-07-19，免費期到期日當天，訊號仍分歧）
-> 就在 7/19 免費期到期日當天，Fable 5 存取政策再添**兩則方向不完全一致的報導**，且都與 07-18 已記錄的矛盾訊號有交疊：(1) Tech Times 標題稱「Max 方案轉為永久提供、Pro 方案改為 Credits-only」——若屬實，可能是 07-18「設為永久」（官方 `@claudeai` 帳號）與「Pro 導向 API 計費」（Startup Fortune／the-decoder.com）兩則看似矛盾報導的**方案別拆解**（Max 永久 vs Pro 收費，並非全面永久或全面收緊）（推論，待官方證實）；(2) Dawn 標題稱「Anthropic 將把 Fable 5 併入 Max、Team Premium 方案，用量上限為 **50%**」，與 Tech Times「Max 永久（暗示無上限）」的描述又無法完全對照。兩則原文摘要均遭 RSS 截斷，僅存標題資訊，具體限額數字與生效日期不明，**不擇一呈現**，仍待官方明確公告釐清 7/19 到期後的實際政策走向。
+> **最新計費政策異動**（2026-07-20，免費期到期後翌日）
+> Fable 5 免費期已於昨日（07-19）到期，今日 SQ Magazine（「Ends Free Access For Pro Subscribers」）、The Indian Express（「access plans change from July 20」）兩則報導方向與 07-19 Tech Times「Pro 改 Credits-only」一致，指向 Pro 訂閱用戶免費存取已結束；Max/Team 方案是否如 07-19 Tech Times 所稱「轉為永久」仍未見新報導佐證或反駁。另外，官方 Status 頁面（07-20 07:35 UTC）證實一起 Max 方案用戶被誤判需使用點數才能存取 Fable 5 的事件並已提供重啟建議（詳見下方「事故與爭議」）；KED Global 報導南韓用戶收到 $16.7M 疑似故障帳單，金額規模與 07-12/13 已證實的 1660 萬美元帳務錯誤相近，關聯待證實。四則今日新事件均為標題層級資訊或個案回報，詳見下方各節。
 
 ## 現況
 
@@ -38,7 +38,7 @@
 | 模型 | Input / Output per Mtok | 備注 |
 |------|------|------|
 | Claude Sonnet 5 | $2 / $10 | 促銷定價，有效期至 2026-08-31；Claude Code 新預設模型，相較 Opus 4.8 估計省 60% 成本 |
-| Claude Fable 5 | $10 / $50 | 免費使用期限原訂延長至 **2026-07-19**（原訂 7/12，隨 07-12 官方週用量促銷延長公告同步順延），**即為今日**；**（2026-07-18/19，訊號持續矛盾）** Startup Fortune／the-decoder.com（07-18）報導因運算資源吃緊已收緊 Max/Team Premium 配額並將 Pro 導向 API 計費，Simon Willison（07-18）引述官方帳號稱將 Fable 5「設為永久」；07-19 Tech Times 稱「Max 永久、Pro Credits-only」（可能是前兩則的方案別拆解，推論），同日 Dawn 稱「併入 Max/Team Premium、用量上限 50%」，與「永久」的描述又不完全一致。四則報導均僅標題層級資訊，到期日當天實際政策仍待官方明確公告釐清（見下方時序）|
+| Claude Fable 5 | $10 / $50 | 免費使用期限原訂延長至 **2026-07-19**（原訂 7/12，隨 07-12 官方週用量促銷延長公告同步順延），**已於昨日到期**；**（2026-07-20，Pro 免費結束方向趨於一致）** SQ Magazine（「Ends Free Access For Pro Subscribers」）、The Indian Express（「access plans change from July 20」）報導方向與 07-19 Tech Times「Pro 改 Credits-only」一致，指向 Pro 訂閱用戶免費存取 Fable 5 已隨到期日結束；Max/Team 是否確如 07-19 Tech Times 所稱「轉為永久」仍未見今日報導佐證或反駁，維持懸而未決。**（2026-07-18/19 舊訊號，仍未完全收斂）** Startup Fortune／the-decoder.com（07-18）報導因運算資源吃緊已收緊 Max/Team Premium 配額並將 Pro 導向 API 計費，Simon Willison（07-18）引述官方帳號稱將 Fable 5「設為永久」；07-19 Dawn 稱「併入 Max/Team Premium、用量上限 50%」，與「永久」的描述不完全一致。六則報導均僅標題層級資訊，實際政策仍待官方明確公告釐清（見下方時序）|
 | Claude Opus 4.8 | 未見日報明確標價 | 作為 Sonnet 5 促銷折扣的比較基準（見上）|
 
 > 模型能力與評測細節見 [[topics/model-comparison]]；此表僅列價格。
@@ -52,6 +52,7 @@
 - **訂閱配額制維持**：原定 2026-06-15 生效的 Agent SDK / `claude -p` 計費切割已於 2026-06-16 暫停，重新推行時間未定；Agent SDK、`claude -p`、第三方 Agent SDK app 用量持續計入訂閱配額，無需額外信用池（來源：2026-06-16、2026-06-18 DevOps.com）
 - **週配額 +50% 過渡期再次延長（至 2026-07-19）**：Anthropic 官方公告（2026-07-12，Hacker News/support.claude.com）將原訂 7/13 到期的週用量 +50% 促銷再延長至 **2026-07-19**；適用 Pro／Max／Team 及舊制（席位制）Enterprise 方案，**Free 方案與用量制 Enterprise 席位不適用**，5 小時額度不受影響；7/19 後是否延續未見後續公告，需留意（來源：2026-05-14、2026-07-12）
 - **Fable 5 免費使用期限原訂延至 2026-07-19（原定 7/12）**：隨 07-12 週用量促銷延長公告同步順延，Pro/Max/Team 每週配額含 50% Fable 5 用量的過渡期同步延至 7/19；競爭角度分析（Google News/The Economic Times、Simon Willison 07-12）指出與 GPT-5.6 Sol 被視為同級模型有關（推論）（來源：2026-07-01、2026-07-07/08、2026-07-12）
+- **⚠️ 2026-07-20（到期後翌日）：Pro 免費存取結束方向趨於一致，Max 方案動向仍未見新報導**：SQ Magazine（「Claude Fable 5 Ends Free Access For Pro Subscribers」）、The Indian Express（「Claude Fable 5 access plans change from July 20」）兩則報導方向與 07-19 Tech Times「Pro 改 Credits-only」一致，指向 Pro 訂閱用戶免費存取 Fable 5 已隨到期日結束；惟六則報導（含 07-18 兩則、07-19 兩則、07-20 兩則）均僅標題層級資訊，具體生效時間、計費費率、Max/Team 方案是否維持「永久」（07-19 Tech Times 說法）未見官方公告證實。The Indian Express 原文提及應查核頁面殘留舊日期字串（7/7、7/12、7/19）並更新——本頁「模型 API 定價現況」Fable 5 列已於今日同步移除「即為今日」等過期措辭；**[[topics/model-comparison]] 快速選型表比照查核事宜回報主編轉知模型記者同步**（來源：2026-07-20 Google News/SQ Magazine、Google News/The Indian Express）
 - **⚠️ 2026-07-18～19 訊號持續矛盾，到期日當天仍無官方明確公告**：07-18 Startup Fortune、the-decoder.com（source_count=2）報導 Anthropic 因運算資源吃緊，已收緊 Max／Team Premium 方案 Fable 5 配額並將 Pro 用戶導向 API 計費；同日 Simon Willison 部落格引述官方 `@claudeai` Twitter 帳號稱「將 Fable 5 設為永久」，方向相反。07-19（到期日當天）Tech Times 稱「Max 永久、Pro 改 Credits-only」（可能是前兩則的方案別拆解，推論，待證實），同日 Dawn 稱「併入 Max/Team Premium、用量上限 50%」，與「永久」描述又不完全一致。四則報導均僅標題層級資訊，不擇一呈現，需持續觀察官方後續公告（來源：2026-07-18 Startup Fortune、the-decoder.com、Blog/Simon Willison；2026-07-19 Google News/Tech Times、Google News/Dawn）
 - **交易員押注第四度延長（市場猜測，非官方，07-18 獨立來源佐證）**：Yahoo Finance UK（source_count=2，2026-07-17）獨立報導交易員押注 Anthropic 將第四度延長 Fable 5 免費期限，與 07-17 已記錄之 Proactive financial news 首報方向一致，屬市場預期而非官方公告
 - **1M context window 觸發 API 計費通道**：即使儀表板顯示 0% 訂閱用量，1M context window 仍會觸發獨立的 API 計費通道並產生額外費用（實例：2026-05-11 用戶 0% 用量下遭收取 $3.37 Extra Usage）
@@ -87,6 +88,15 @@
 依主題分組，各組內日期倒序（最新在上）。
 
 ### 事故與爭議（誤扣費、靜默計費改動、帳號安全）
+
+#### 2026-07-20：南韓用戶收到 $16.7M 帳單疑似故障，與 07-12/13 已證實帳務錯誤規模相近
+
+- **KED Global 報導南韓用戶收到 Claude 開出的 1,670 萬美元帳單**：KED Global 報導一名南韓用戶收到 Claude 系統疑似故障產生的 **$16.7 百萬美元**帳單。**與既有事件的關係（推論，待證實）**：金額規模與 07-12/13 已記錄「Anthropic 證實 1660 萬美元帳務錯誤」（Tech Times）高度接近（$16.6M vs $16.7M），不排除是同一筆已證實錯誤的具體受害個案首次被具名地區媒體揭露，但原文摘要遭 RSS 截斷，未見報導明確連結兩起事件、亦未見 Anthropic 官方就此單一用戶案例回應，**不可逕自認定為同一事件**，僅記錄金額相近之巧合或關聯待後續查證（Google News/KED Global）
+
+#### 2026-07-20：Fable 5 免費期到期後社群反映存取異常，含官方已證實的 Max 誤判事件
+
+- **Reddit r/ClaudeAI：Max 方案用戶反映無法使用 Fable 5**：Reddit 用戶（score 0，Reddit RSS 抓取機制下不可信為互動門檻，source_count=1）反映 Max 方案疑似無法存取 Fable 5。**與官方 Status 事件吻合**：時間點與 Anthropic Status 頁面同日（07-20 07:35 UTC）公告的「Max 方案用戶被誤判需使用點數才能存取 Fable 5」事件吻合，官方已確認為誤判並建議受影響用戶重啟；官方事件細節由功能記者同步記錄於 [[entities/claude-code]]（Reddit https://www.reddit.com/r/ClaudeAI/comments/1v1g5yy/so_i_cant_use_fable_with_my_max_plan_ey/；Anthropic Status https://status.claude.com/incidents/tnypgb2jbqnq）
+- **Reddit r/ClaudeAI：App 內 Pro 方案顯示異常消失（單一回報，未經證實）**：另一則 Reddit 貼文（score 0，source_count=1）反映 App 內 Pro 方案顯示異常消失/變動，原因不明。**注意**：與上則 Max 誤判事件同日出現，但官方 Status 頁面僅證實 Max 方案誤判一事，本則 Pro 方案異常未見官方對應公告或其他來源佐證，暫不推論兩者為同一根因，僅並列記錄待後續查證（Reddit https://www.reddit.com/r/ClaudeAI/comments/1v1hiu8/anthropic_nuked_the_pro_plans_on_the_app_for_some/）
 
 #### 2026-07-12/13：Anthropic 證實 1660 萬美元帳務錯誤，稽核發現企業多收 170 萬美元
 
