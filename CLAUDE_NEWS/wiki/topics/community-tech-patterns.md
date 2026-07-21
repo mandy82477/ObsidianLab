@@ -3,11 +3,11 @@
 **狀態：** monitoring
 **領域：** 🌐 社群
 **開始日期：** 2026-04-25
-**最後更新：** 2026-07-19
-**最後新聞更新：** 2026-07-19
+**最後更新：** 2026-07-21
+**最後新聞更新：** 2026-07-21
 
-> **最新工作流模式**（2026-07-19）
-> 今日最高分為 HN「Setting up your spare Mac for Claude Code to control, a step-by-step guide」（score 234，本輪最高分）：作者提供完整步驟教學，將備用 Mac 設為 Claude Code 可透過 computer use 全權控制、並可用手機或 SSH 遠端下指令的常駐環境，核心動機是隔離主力工作機開啟 `--dangerously-skip-permissions` 的風險。今日其餘 HN Show HN 條目（Shikigami、FlexInference、Talon、AI Buddy、Synapse、OpenCareLoop、Go Micro 等）分數均為個位數，未達收錄門檻。07-15 既有模式（Brainless、Agentty、OtoDock、Grepathy、Context 分支/合併工具）與 07-14 Fable 5 官方編排基準仍為近期背景。
+> **最新工作流模式**（2026-07-21）
+> 今日僅一則達 patterns 收錄門檻：dev.to 作者實測量化不同 MCP server 設計注入每輪對話的隱藏 context token 成本，屬第一手量化測量（依 dev.to 收錄規則以內容判斷、不看讚數）。今日其餘 HN Show HN 條目（10 分鐘 AI 電影 pipeline、Fable CoT 重建實驗、Amnesia、Effort Router、Claude 語氣爭議、Claudexor 配額路由）與 Reddit Synapse 本地 MCP 索引工具分數／互動數據均未達 patterns 中門檻（HN≥30 分或≥5 留言），已改記於 [[topics/community-tech-discussions]]。07-18 Spare Mac 常駐環境與 07-15 既有模式（Brainless、Agentty、OtoDock、Grepathy、Context 分支/合併工具）仍為近期背景。
 
 ---
 
@@ -55,6 +55,13 @@
 ## 技術彙整
 
 ### 2026-07
+
+#### MCP Server 設計對每輪對話隱藏 token 成本的實測比較（2026-07-21）
+
+- **核心模式：** 作者為 Claude Code 加裝多款不同設計的 MCP server，實測量化各設計注入每輪對話的隱藏 context token 量，比較不同工具清單/描述長度/回傳格式設計對 token 成本的具體影響，屬第一手量化測量而非單純教學或新聞轉述
+- **與既有模式的關係：** 補充既有「Token / 成本優化」類別下「MCP context bloat」（9 個 MCP 伺服器 = 每輪 38k tokens 冷啟動）與「Plugin / MCP 整合」類別「Plugin 反模式整理」的量化佐證，聚焦「MCP server 設計選擇」本身對 token 成本的影響，而非工具數量單一變因
+- **來源：** 「I added MCP servers to Claude Code. Here's what they cost in tokens.」— dev.to（1 讚；依 dev.to 收錄規則以內容判斷，屬第一手量化實測，非讚數）
+- **成熟度：** ⏳ 新興（單一作者實測，尚無其他來源複現比較數字）
 
 #### Spare Mac 作為 Claude Code 專屬常駐環境：隔離 --dangerously-skip-permissions 風險（2026-07-18）
 

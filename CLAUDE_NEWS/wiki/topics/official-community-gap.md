@@ -3,8 +3,8 @@
 **狀態：** monitoring
 **領域：** 🛠️ 工具/功能
 **開始日期：** 2026-05-17
-**最後更新：** 2026-07-18
-**最後新聞更新：** 2026-07-17
+**最後更新：** 2026-07-21
+**最後新聞更新：** 2026-07-21
 
 > **最新功能缺口**（2026-07-17）
 > v2.1.212 將 `/fork` 改為建立獨立**背景 session**（`claude agents` 自成一列），原本同 session 子 agent 行為更名為 `/subtask`——「多平行 agent 即時可觀測性／協調地圖」缺口的**列表管理面**再進一步（延續 v2.1.211 `--forward-subagent-text` 旗標的可觀測性補強），但仍非即時依賴關係／狀態流的 live map，矩陣狀態維持 ❌ 無官方對應。
@@ -44,7 +44,7 @@
 |---------|---------|-------------|---------|
 | 多 agent 協調管理 | ⭐⭐⭐⭐ | Managed Agents、Agent View、`/goal`、`/loop`/`/batch`、`claude agents` 旗標 | ✅ 高度對應 |
 | 輸出品質驗證 | ⭐⭐⭐⭐ | Outcomes 規格驗證、`/goal` 自動判定完成條件 | ⚡ 部分對應 |
-| 安全隔離 | ⭐⭐⭐ | Claude Code Sandboxing、`hard_deny`、Claude Security | ✅ 高度對應 |
+| 安全隔離 | ⭐⭐⭐ | Claude Code Sandboxing、`hard_deny`、Claude Security、`sandbox.filesystem.disabled`（v2.1.216，2026-07-20，可在維持網路出口控管同時跳過檔案系統隔離） | ✅ 高度對應 |
 | 跨 session 記憶歸零 | ⭐⭐⭐⭐⭐ | Dreaming（Research Preview，仍實驗性） | ⏳ 正在做但遠未解決 |
 | CLAUDE.md 規則失效 | ⭐⭐⭐ | 無 | ❌ 完全未對應 |
 | Token 成本不透明 | ⭐⭐⭐⭐ | 無（6/15 信用池改制反而使問題惡化） | ❌ 完全未對應 |

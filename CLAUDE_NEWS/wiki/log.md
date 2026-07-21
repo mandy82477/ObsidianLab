@@ -3,6 +3,23 @@
 Append-only 紀錄。每次 ingest、lint，以及**揭露缺陷或促成改動的使用者 query**，都在此追加一條（純資訊性、未促成改動的 query 不記，避免噪音）。
 格式：`## [YYYY-MM-DD] 類型 | 說明`
 
+## 2026-07-21 Ingest | news/2026-07-21.md（75 則）
+
+- 來源日報：[[news/2026-07-21]]（75 則，10/10 來源；Google News 35、Hacker News 18、Reddit 16、GitHub Issues 15、dev.to 14、Anthropic Status 7、GitHub 3、Blogroll 2、Anthropic Blog 1、Claude API Release Notes 0）
+- 分類派工：功能、商業、安全政策、社群（四類並行 foreground；今日「模型」「人物」無條目，跳過；**本環境自訂 subagent_type（wiki-reporter-*）未被此雲端 session 註冊，四位記者均改以 general-purpose agent 扮演角色、內嵌完整規則文字派工**，屬環境限制的變通做法，功能與品質未受影響，但記者間彼此無法即時轉知，跨記者轉知事項一律回頭由主編處理）
+- 更新頁面：
+  - **功能**：`entities/claude-code.md`（頂部 callout 覆寫為 v2.1.216 最新版本動態；🌐 服務穩定性新增/更新今日 Status 事件；已知問題新增 2 條 #29579、#11002，既有 6 條留言/反應數同步；🛡️ 安全與隱私新增 Tech Times Bash/Unicode 繞過修補待查證條目）、`topics/official-community-gap.md`（對照矩陣補上 `sandbox.filesystem.disabled`）
+  - **商業**：`topics/anthropic-business.md`（$1.5B 著作權和解、AI for Science 罕見疾病徵件、Infinity 融資、Anthropic 生技百日布局）、`topics/enterprise-tool-tracker.md`（阿里巴巴疑似封鎖 Claude Code，❓未確認）、`topics/competitor-landscape.md`（Qwen 3.8／Kimi K3 對 Anthropic 策略挑戰、成本效能對比）、`entities/pricing.md`（Fable 5 Max/Team Standard 計量存取、$200 Max 用戶存取停用回報）
+  - **安全政策**：`topics/ai-agent-safety.md`（新增 3 則待查證：Bash/Unicode 繞過修補、Horizon3.ai 加入 Project Glasswing、TBIJ Claude 不遵從 CEO 指令模擬測試）
+  - **社群**：`topics/community-tech-patterns.md`（dev.to MCP token 成本實測）、`topics/community-tech-discussions.md`（AI 電影 pipeline、Fable CoT 反向工程、Claudexor、Simon Willison 兩篇部落格、Synapse MCP 工具等 6 則，並清理 6 筆逾 21 天 ☄️閃現舊條目）
+  - **主編**：`feature-radar.md`（新增 v2.1.216 條目；本週推薦更新 Fable 5 文字避免「昨日」相對日期過期；升版風險同步最新版本行，風險表與建議未變）；`index.md`（近期異動新增今日摘要，狀態變更／新增頁面均無）
+- feature-radar：新增 1 條（Claude Code v2.1.216 `sandbox.filesystem.disabled`）；本週推薦文字微調（非輪替，Fable 5 熱度/推薦地位未變）；升版風險僅同步最新版本行
+- index.md 狀態變更：無
+- 新增頁面：無
+- 摘要：Anthropic 迎來 $1.5B 著作權和解重大進展，同時面臨阿里巴巴 Qwen 3.8／Kimi K3 開源模型的策略性挑戰（The New Stack 實測顯示效果相當但成本更低）；Claude Code v2.1.216 發布新沙箱設定；安全政策面新增 3 則待查證事件（Bash/Unicode 修補、Project Glasswing 新夥伴、模擬測試模型服從性報導）；GitHub Issues 高互動已知問題持續累積（Console scrolling 議題以 353 留言、821 讚居冠）
+- 呈現品質：四類共 9 頁全數 ✅ 通過（功能 2 頁、商業 4 頁、安全政策 1 頁、社群 2 頁，其中 community-tech-discussions.md ⚠️ 已修復——清理 6 筆逾期舊條目）
+- 品質備註：[安全政策] TBIJ 條目涉及 Dario Amodei 具名情境，記者回報需轉知人物記者評估 `entities/dario-amodei.md`；因本環境記者間無法互相轉知，改由主編親自判斷——該事件為「Claude 在模擬測試中不遵從指令」的模型行為報導，並非 Dario Amodei 本人的具體聲明或行動，未達人物頁「具體聲明/事件」建頁與更新門檻，故未修改 `entities/dario-amodei.md`，僅記錄於此供後續查證追蹤；[功能] 記者回報 HN 留言提及新功能 EndConversation（Claude Code 可主動結束疑似濫用/安全疑慮對話），因僅為單則留言轉述、無官方公告或版本號佐證，未達 feature-radar 准入門檻，未收錄，留待後續 ingest 有官方來源佐證後再評估
+
 ## 2026-07-20 Ingest | news/2026-07-20.md（47 則）
 
 - 來源日報：[[news/2026-07-20]]（47 則，10/10 來源；Google News 26、dev.to 15、Reddit 15、Hacker News 11、Anthropic Status 2、Blogroll 1、GitHub Issues 0、GitHub 0、Claude API Release Notes 0、Anthropic Blog 0）
