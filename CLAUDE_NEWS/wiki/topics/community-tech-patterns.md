@@ -3,7 +3,7 @@
 **狀態：** monitoring
 **領域：** 🌐 社群
 **開始日期：** 2026-04-25
-**最後更新：** 2026-07-17
+**最後更新：** 2026-07-22
 **最後新聞更新：** 2026-07-16
 
 > **最新工作流模式**（2026-07-16）
@@ -49,6 +49,25 @@
 | **行動裝置遠端控制** | ccgram（Telegram）、Android Remote Control MCP、Shellular | ⏳ 新興 | 手機作為 agent 控制介面，透過 Telegram bot / MCP / 專屬 web-app 等不同傳輸層連線並操作本機執行中的 Claude Code / Codex session |
 
 > 成熟度：✅ 成熟（社群廣泛實踐）/ ⚡ 活躍（持續演進中）/ ⏳ 新興（近期出現，尚在探索）
+
+---
+
+## 學術對照：多智能體 orchestration 術語 `[加入: 2026-07-22]`
+
+Claude Code 的三種多 agent 機制，可對應到 Anthropic《Building Effective Agents》與多智能體（MAS）綜述的既有名詞。用**兩軸**區分最清楚：**控制流**（static 寫死／dynamic 模型當場決定）與**通訊原語**（blackboard 共享記憶／direct message passing／event-driven）。
+
+| Claude Code 機制 | Anthropic《Building Effective Agents》 | MAS 綜述術語 | 控制流 | 通訊原語 |
+|---|---|---|---|---|
+| **Subagent** | Orchestrator–Workers（動態）；用於審查時＝ Evaluator–Optimizer | Centralized / 單層 hierarchical | Dynamic | 父↔子 direct message，單回合 request–response |
+| **Workflow** | 「Workflow」類（predefined code paths）：Prompt Chaining ＋ Parallelization（sectioning／voting） | Static / graph（DAG）orchestration | Static（腳本寫死、可重現） | 由程式碼中繼，agent 之間不通訊 |
+| **Agent Teams** | 「Agent」（autonomous）側的多 agent 協作 | Decentralized peer-to-peer ＋ Blackboard ＋ hierarchical lead（hybrid） | Dynamic／emergent | task list＝blackboard、mailbox＝direct message、依賴自動解鎖≈event-driven |
+
+**補充對照：** 手動開兩個 session ＋ 共享檔案協調 = 純 **blackboard architecture**（只有 shared memory 一個原語、被動輪詢），這解釋了它為何無法自動反應；Agent Teams 是在 blackboard 之上補上 message passing ＋ event-driven，才做到即時互通。
+
+**參考論文／來源：**
+- [Anthropic — Building Effective Agents](https://www.anthropic.com/engineering/building-effective-agents)（Workflow vs Agent；orchestrator-workers、routing、parallelization、evaluator-optimizer、prompt chaining 五 pattern）
+- [LLM-Based Multi-Agent Orchestration: A Survey of Frameworks, Communication Protocols, and Emerging Patterns（Future Internet, 2026）](https://doi.org/10.3390/fi18060326)（centralized／decentralized／hierarchical／blackboard；三種 communication primitives）
+- [Multi-Agent Collaboration Mechanisms: A Survey of LLMs（arXiv:2501.06322）](https://arxiv.org/pdf/2501.06322)
 
 ---
 

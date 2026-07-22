@@ -2934,3 +2934,10 @@ Append-only 紀錄。每次 ingest、lint，以及**揭露缺陷或促成改動�
 - reader-notes 消費：07-17 GLM/Qwen 開源競品差距 → ✅ 已納入（三題皆已裁定並落地，見上）；07-12 GPT-5.6 vs Claude → 連續三輪（07-16、07-19）查無官方數字，維持 ⏳ 但改為被動觸發，不再每週主動重查；📌 07-07 雜記未逾 30 天，保留
 - 聚焦校準：非本月首次週度回顧（本月已於 07-16 執行），跳過
 - 品質備註：本次執行期間雲端 pipeline 同步完成 07-18 每日 ingest 與週度 lint（詳見上方兩則），merge 時發現本次延伸與雲端更新觸及部分同一頁面（claude-code.md/anthropic-government-policy.md/competitor-landscape.md），逐檔核對後確認段落互不重疊、內容無矛盾，正常合併
+
+## 2026-07-22 Query：多智能體 orchestration 學術對照持久化
+
+- **觸發：** 使用者在一連串「大型 codebase × Claude Code」對話中問「Workflow／Agent Teams／Subagent 差異」，再追問「這三種對應到學術論文的哪幾種 orchestrator 名詞」；經 WebSearch 查證後產出對照，使用者要求把結果沉澱進 wiki 供日後對照與記者補料參考。
+- **根因（揭露的缺口）：** wiki 原本只在 `topics/community-tech-patterns.md` 的「Multi-agent 架構」記錄社群「做法」，缺一層「機制 ↔ 學術術語 ↔ 論文」的參考對照；且無任何記者常規要求在更新多 agent 模式時對照學術名詞／補論文。使用者一度以為有「orchestrator 記者」，實際無此角色——多 agent 模式歸社群記者（patterns 頁），官方 Agent Teams／Workflow 產品面沾功能記者。
+- **處置：** (a) 於 `topics/community-tech-patterns.md` 模式概覽後、技術彙整前新增 `## 學術對照：多智能體 orchestration 術語` 參考層（兩軸：控制流 × 通訊原語；Subagent＝orchestrator-workers/centralized、Workflow＝static/DAG、Agent Teams＝decentralized+blackboard；附三篇來源：Anthropic Building Effective Agents、Future Internet 2026 綜述、arXiv:2501.06322）；(b) 於 `.claude/rules/wiki-ingest-community.md` 加「multi-agent orchestration 學術對照維護」常規——新模式須判斷對應格位，需補論文時因社群記者無 web 工具，改在同步自查欄轉知主編 WebSearch 查證，屬非新聞性更新（只動最後更新）。
+- **驗證：** `python scripts/run_tests.py` 全綠（含 check_rules.py）。
