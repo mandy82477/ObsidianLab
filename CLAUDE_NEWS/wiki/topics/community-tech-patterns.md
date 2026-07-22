@@ -64,10 +64,34 @@ Claude Code 的三種多 agent 機制，可對應到 Anthropic《Building Effect
 
 **補充對照：** 手動開兩個 session ＋ 共享檔案協調 = 純 **blackboard architecture**（只有 shared memory 一個原語、被動輪詢），這解釋了它為何無法自動反應；Agent Teams 是在 blackboard 之上補上 message passing ＋ event-driven，才做到即時互通。
 
+### 誰負責拆分（decomposition）——human / 強 planner / 凍結的 skill `[加入: 2026-07-22]`
+
+「誰來拆分任務」是選用三種機制的核心軸。拆分能力有四種來源，對應不同場景：
+
+| 拆分來源 | 對應機制 | 應用場景 |
+|---|---|---|
+| 人類事先凍結成確定性流程 | **Workflow / Skill** | 同形狀改動批量（如 NVRAM parameter ×N）、每 PR 跑固定 N 維度審查——拆法穩定、要可重現 |
+| 強模型當場動態拆 | **Subagent**（orchestrator-workers） | 進陌生子系統修 bug——強模型探索完當場決定分幾支、邊界在哪，人在旁 course-correct |
+| peer 之間協商湧現 | **Agent Teams** | 跨層 feature——拆法邊做邊長出來（API 定案才知道前端要改什麼） |
+| 不拆分（單體） | 單一 session | 一句話能描述完的小改動 |
+
+**核心經驗（文獻）：**
+- **強 planner > 強 executor**：拆分（planning）才是瓶頸——弱 planner 卡死全系統且強 executor 補不回；反之強 planner 能補償弱 executor，且 planning 僅約 20% token → 把強模型／人類投在「拆分」高槓桿又便宜（PEAR）。
+- **粒度應動態、按 executor 能力決定**：先讓 executor 試、撞牆才遞迴往下拆（ADaPT）；固定粒度太粗沒效果、太細沒效率（Coarse-to-Fine）。
+- **人類介入的正確形式是「在共享計畫上持續協調 ＋ 中間步驟糾錯」**，非交一份完稿計畫（Cocoa、mixed-initiative）。
+- **重複性任務把 spec／拆法凍結成 skill**，把「靠自律」變「靠制度」；自主性缺 spec／邊界／回饋迴路會產生 confident drift 而非智能（Spec-Driven Development）。
+
+**何時必須人類凍結（四選一即是）：** 拆分知識是 tacit、不在 code 裡（唯一模型再強也代替不了）／會重複且須每次一樣／拆錯很貴或難察覺／弱模型當執行者且正確性標準模糊。其餘（一次性、拆法可從 code 或範例推得、有強 orchestrator、done-condition 客觀）可交模型動態拆。**多數真實工作在中間：人類凍結「框架＋驗證」一次，模型每次實例化。**
+
 **參考論文／來源：**
 - [Anthropic — Building Effective Agents](https://www.anthropic.com/engineering/building-effective-agents)（Workflow vs Agent；orchestrator-workers、routing、parallelization、evaluator-optimizer、prompt chaining 五 pattern）
 - [LLM-Based Multi-Agent Orchestration: A Survey of Frameworks, Communication Protocols, and Emerging Patterns（Future Internet, 2026）](https://doi.org/10.3390/fi18060326)（centralized／decentralized／hierarchical／blackboard；三種 communication primitives）
 - [Multi-Agent Collaboration Mechanisms: A Survey of LLMs（arXiv:2501.06322）](https://arxiv.org/pdf/2501.06322)
+- [PEAR: Planner-Executor Agent Robustness Benchmark（arXiv:2510.07505）](https://arxiv.org/html/2510.07505v3)（強 planner > 強 executor；planning ~20% token）
+- [ADaPT: As-Needed Decomposition and Planning with Language Models（arXiv:2311.05772）](https://arxiv.org/pdf/2311.05772)（按 executor 能力遞迴拆分）
+- [From Coarse to Fine: Self-Adaptive Hierarchical Planning for LLM Agents（arXiv:2604.23194）](https://arxiv.org/pdf/2604.23194)（拆分粒度自適應）
+- [How to Steer Your Multi-Agent System: Human-LLM Collaborative Planning（arXiv:2605.23023）](https://arxiv.org/pdf/2605.23023)、[JumpStarter（arXiv:2410.03882）](https://arxiv.org/pdf/2410.03882)（mixed-initiative／共享計畫協調）
+- [Spec-Driven Development with AI Coding Agents（2026）](https://zeroshot.ghost.io/spec-driven-development-with-ai-coding-agents/)（Spec→Plan→Tasks→Implement；skill 讓流程可重複）
 
 ---
 
