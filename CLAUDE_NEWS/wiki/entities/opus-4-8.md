@@ -4,8 +4,8 @@
 **狀態：** active
 **領域：** 🤖 模型
 **首次出現：** 2026-05-28
-**最後更新：** 2026-07-20
-**最後新聞更新：** 2026-07-20
+**最後更新：** 2026-07-22
+**最後新聞更新：** 2026-07-22
 
 > **最新服務狀態**（2026-07-09）
 > Claude Opus 4.8 一度出現錯誤率升高（Elevated errors），Anthropic Status 於 03:50 UTC 確認問題已解決（中性/低強度事件）；同期 Reddit 使用者反映近期使用體驗轉佳（提及剛發布時曾不穩定），屬弱訊號（score 恆 0），僅供口碑參考。
@@ -131,6 +131,7 @@ claude.ai 用戶現可調節 Claude 在任務上投入的努力程度，不再�
 
 | 日期 | 事件 |
 |------|------|
+| 2026-07-21 | **❓ 待核實：舊「Qwen distillation」爭議經媒體重提，冠以「蒸餾雙標」框架**：TipRanks（經 Google News 轉載，僅標題可用，無內文）報導標題稱「Claude 自稱是阿里巴巴 Qwen AI」，並將此與 Anthropic 對外蒸餾議題立場並列，稱其為「雙重標準」爭議。無法取得報導實質內容佐證是否為新事件或僅重提 2026-05-29–30 的舊爭議（當時社群主流判斷為 proxy 詐騙服務假冒 Claude，非真實 distillation，見下方 05-30 條目）；單一來源、無跨平台延燒訊號，暫記待觀察，不排除為舊事重炒（[Google News/TipRanks](https://news.google.com/rss/articles/CBMiuAFBVV95cUxPcEVadm95Um5CQ3hTNDE2cDFLVWwxUkZnYkVRaGdNcDZyZU5ZLWFKekZKZG1jblJSY1A0QlpFX2tvUDdqRmpsRHJ3S2taTkJIRVdoelBQZjM0LTRQQXRYb0R1M1YyODZtbV9iYk1ybkQzWFp1cHhuTkdOZzlUSUVxVFhNd01zeFhHc0MxOUU1QzdJaXRhbmZkMzhBVkpFampaWVBJQXZWWXdMZnhlYlVGbVduSklxUDVn)，2026-07-21） |
 | 2026-07-20 | **❓ 待查證：市場傳聞 Anthropic 數日內將推出新 Claude Opus 型號**：Proactive financial news 經 Google News 轉載標題報導交易者押注消息，純市場推測，非官方公告，無具體型號或發布時間佐證 |
 | 2026-07-09 | **錯誤率一度升高（同日解決）**：Anthropic Status 通報 Claude Opus 4.8 出現 Elevated errors，於 03:50 UTC 確認問題已解決；同期 Reddit 用戶反映近期使用體驗轉佳，提及發布初期曾有不穩定（弱訊號，score 恆 0） |
 | 2026-06-24 | **第三方評測：Gemini 3.5 Flash 35.4 vs Opus 4.8 34.8 略勝**：RuntimeWire 對比評測中 Gemini 在四項任務贏三項；Claude 在 messy-orders-to-json 任務因輸出 Markdown code fence（違反 JSON-only 指令）失分；分析師評論失分屬指令遵循失誤，非能力差距（[runtimewire.com](https://runtimewire.com/article/head-to-head-anthropic-claude-opus-4-8-vs-google-gemini-3-5-flash)，HN score 3） |
