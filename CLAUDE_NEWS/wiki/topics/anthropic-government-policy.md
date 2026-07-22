@@ -38,8 +38,8 @@
 | Anthropic 安全人力擴編（災難性風險） | Axios 報導 Anthropic 正在招募人力以應對潛在災難性風險，偏向安全團隊建置動態，僅標題式轉載，具體職位與規模待確認（2026-07-15） | 是否有更多報導揭露職位性質、規模、招募進度 |
 | 州級 AI 規則倡議 | WIRED（07-16）分析並確認 Anthropic 正積極遊說美國各州加快 AI 監管腳步（州級而非僅聯邦層級的政策遊說），延續並補強 07-15 Politico 標題式報導；具體州別、規則內容與遊說對象仍未見報導細節 | 涉及哪些州、規則具體內容、是否與聯邦出口管制/歐洲遊說形成一致的政策倡議策略；WIRED 是否釋出更完整分析全文 |
 | EU 對 Anthropic 投入度觀感 | 07-14 politico.eu 標題式報導已於 07-16 經 Hacker News 轉載 Politico 全文（19 分）確認並補足細節：歐盟政策官員點名批評 Anthropic 派遣初階員工 **Donny Greenberg**（而非資深主管）出席歐洲議會安全聽證會，回應先進 AI 能力風險疑慮 | Anthropic 是否公開回應或調整後續出席層級；是否影響「歐洲據點爭奪」進度 |
-| Mythos 風險論述跨界重新浮現（金融/監管/國會/政府內部） | 出口管制 07-01 解除後理應降溫，但 07-13～07-16 四天內同步在四個不同角色浮現：加拿大金融監管機關發函警銀行業並引用 Claude Mythos（07-13 Reuters 獨家）、JPMorgan CEO Dimon 公開稱 Mythos 風險是「真實問題」（07-16 Reuters，詳見 [[entities/mythos]]）、參議員 Mike Rounds 就 Mythos 接受五角大廈簡報（07-16 Politico，標題式轉載）、Hegseth 稱 Anthropic 為國安風險但 CISA 已在使用其產品（07-14 The National Interest，標題式轉載）；四者互相獨立、暫無協調證據，完整分析見「🚫 出口管制」戰場段落 | 是否有其他國家監管機構跟進；Rounds 簡報後續立法動作；CISA 使用範圍與 Hegseth 是否回應內部矛盾；Dimon 發言是否影響 JPMorgan 既有的 Mythos 商業摩擦（06-18 香港分行切斷存取） |
-| Anthropic 政治獻金布局 | Politico（07-16，經 Google News 轉載，僅標題可用）：Dario Amodei 個人捐款 100 萬美元予某 super PAC；SFGATE（07-17，經 Google News 轉載，僅標題可用）：Anthropic 員工另捐款 300 萬美元支持 AI 安全相關法規推動，捲入 AI 陣營之間鉅額政治獻金角力；兩筆捐款的 PAC/組織名稱、資金用途、對立陣營身分均待原文確認 | 兩筆捐款是否流向同一 PAC 或同一政策倡議；是否與州級 AI 規則倡議（07-15）構成一致的政治佈局；是否有對立陣營公開回應；人物面向詳見 [[entities/dario-amodei]] |
+| Mythos 風險論述跨界重新浮現（金融/監管/國會/政府內部） | 出口管制 07-01 解除後理應降溫，但 07-13～07-22 同步在五個不同角色浮現：加拿大金融監管機關發函警銀行業並引用 Claude Mythos（07-13 Reuters 獨家）、JPMorgan CEO Dimon 公開稱 Mythos 風險是「真實問題」（07-16 Reuters，詳見 [[entities/mythos]]）、參議員 Mike Rounds 就 Mythos 接受五角大廈簡報（07-16 Politico，標題式轉載）、Hegseth 稱 Anthropic 為國安風險但 CISA 已在使用其產品（07-14 The National Interest，標題式轉載）、**07-22 新增：** CNBC（經 Google News 轉載，僅標題可用）稱聯準會（Fed）也曾就 Mythos 發出警示但延遲數月才浮上檯面，具體內容與延遲原因未知；五者互相獨立、暫無協調證據，完整分析見「🚫 出口管制」戰場段落 | 是否有其他國家/聯邦監管機構跟進；Fed 警示的具體內容、發布時間、延遲原因；Rounds 簡報後續立法動作；CISA 使用範圍與 Hegseth 是否回應內部矛盾；Dimon 發言是否影響 JPMorgan 既有的 Mythos 商業摩擦（06-18 香港分行切斷存取） |
+| Anthropic 政治獻金布局 | Politico（07-16，僅標題可用）：Dario Amodei 個人捐款 100 萬美元予某 super PAC；SFGATE（07-17，僅標題可用）：Anthropic 員工另捐款 300 萬美元支持 AI 安全相關法規推動；**07-22 官方確認**：Anthropic 部落格宣布再捐 2000 萬美元予無黨派組織 Public First Action（累計達 4000 萬美元，首筆 02 月），聲明明確排除候選人選舉用途；同日 WSJ／The Hill／Axios 以「期中選舉支出翻倍至 4000 萬美元推動 AI 監管」「遊說支出攀升」框架報導，與官方「非選舉用途」聲明形成敘事張力；三筆捐款/支出彼此是否構成同一資金脈絡待確認 | 三筆捐款/支出是否流向同一組織或政策倡議；WSJ「4000 萬美元」框架是否涵蓋 Dario 個人與員工捐款、或僅指 Public First Action 一項；是否與州級 AI 規則倡議（07-15）構成一致的政治佈局；是否有對立陣營公開回應；人物面向詳見 [[entities/dario-amodei]] |
 | Pax Silica 政策架構與中美 AI 領先地位論戰 | 南華早報獨家專訪「Pax Silica」政策架構主要推手（姓名待確認），主張美國仍可維持 AI 領先地位，為既有「出口管制反效」論述（Bloomberg 06-26）提供首個正面反駁（2026-07-16，僅單一媒體專訪，待第三方確認） | Pax Silica 政策架構具體內容與推手身分；此論述是否獲其他政策圈人士呼應或反駁 |
 
 ---
@@ -118,6 +118,8 @@ Fable 5 發布後，Amazon 安全研究人員發現特定提示詞可讓模型�
 
 | 日期 | 方 | 動作 | 效果 |
 |------|----|------|------|
+| 2026-07-22 | 🏢 | Anthropic 官方部落格宣布再捐 2000 萬美元予無黨派組織 Public First Action（累計達 4000 萬美元，首筆 2026-02）；聲明明確排除影響任何聯邦/州/地方公職候選人選舉之用途，僅用於公眾教育與政策倡議（Anthropic Blog，2026-07-22 11:53 UTC） | WSJ／The Hill／Axios 同日跟進報導框架為「期中選舉支出翻倍至 4000 萬美元推動 AI 監管」「遊說支出攀升」，與官方「非選舉用途」聲明存在敘事張力；是否與 07-16 Dario 個人捐款 100 萬美元、07-17 員工捐款 300 萬美元屬同一資金脈絡待查證 |
+| 2026-07-22 | 🏛️🌐 | CNBC（經 Google News 轉載，僅標題可用）：聯準會（Fed）曾就 Anthropic 的 Mythos AI 模型發出警示，但相關訊息延遲數月才浮上檯面（2026-07-21 22:05 UTC） | 繼加拿大金融監管機關（07-13）、JPMorgan CEO Dimon（07-16）之後，Fed 成為第三個對 Mythos 表態的金融監管/業界角色，跨機構模式持續擴大；具體警示內容、時間點、延遲原因均未知，待查證；詳見 [[entities/mythos]]（模型記者主責） |
 | 2026-07-17 | 🏢 | SFGATE（經 Google News 轉載，僅標題可用，原文因轉址未確認）：Anthropic 員工捐款 300 萬美元，支持 AI 安全相關法規推動（2026-07-17 16:43 UTC） | 繼 07-16 Dario Amodei 個人捐款 100 萬美元予某 super PAC 後，Anthropic 員工集體捐款規模更大（300 萬美元）；是否流向同一 PAC/組織、支持哪項具體法規均待原文確認（待查證） |
 | 2026-07-16 | 🏛️🌐 | Politico（經 Google News 轉載，僅標題可用，原文因轉址未確認）：參議員 Mike Rounds 就 Anthropic 的 Mythos 接受五角大廈簡報（2026-07-16 20:12 UTC） | 國會軍事委員會層級對 Mythos 軍用能力的關注持續，暗示 05-01 DoD 排除 Anthropic、06-17 三分之二工作量轉移後，軍事戰場仍有國會層級後續動態；具體簡報內容與 Rounds 立場待確認 |
 | 2026-07-16 | 🌐 | WIRED 分析並確認 Anthropic 正積極遊說美國各州加快 AI 監管腳步（州級而非僅聯邦層級政策遊說），延續並補強 07-15 Politico 標題式報導（2026-07-16 18:35 UTC） | 州級規則倡議首度獲具分析深度的媒體（WIRED）確認，非僅標題轉載；具體州別與規則內容仍待報導揭露 |
@@ -214,6 +216,7 @@ Fable 5 發布後，Amazon 安全研究人員發現特定提示詞可讓模型�
 
 ## 參考來源
 
+- [[news/2026-07-22]]
 - [[news/2026-07-18]]
 - [[news/2026-07-16]]
 - [[news/2026-07-15]]
@@ -239,6 +242,11 @@ Fable 5 發布後，Amazon 安全研究人員發現特定提示詞可讓模型�
 - [Chris Olah Vatican Remarks](https://www.anthropic.com/news/chris-olah-pope-leo-encyclical) — Anthropic Blog
 
 ## 時序
+
+### 2026-07-22
+- **[官方確認] Anthropic 再捐 2000 萬美元予 Public First Action，累計達 4000 萬美元**：Anthropic 官方部落格宣布再捐贈 2000 萬美元給無黨派組織 Public First Action（此前已捐 2000 萬美元於 2026-02，累計達 4000 萬美元）；Public First Action 致力於教育大眾認識 AI，並與支持合理 AI 保護措施的共和黨、民主黨、無黨籍人士合作。聲明明確強調：兩筆捐款皆僅用於支持該組織的公眾教育與政策倡議使命，**不得用於影響任何聯邦、州或地方公職候選人的選舉**（Anthropic Blog，2026-07-22 11:53 UTC；https://www.anthropic.com/news/donation-public-first-action）
+- **[媒體框架張力] WSJ／The Hill／Axios 同日跟進**：WSJ 標題「Anthropic Doubles Midterm Spending to $40 Million to Push AI Regulation」；The Hill 標題「Anthropic pours another $20 million into AI safety group」；Axios 標題「Anthropic ramps up lobbying spending amid AI policy fights」；三者僅標題可用，但與官方公告同一事件，將捐款框定為「期中選舉支出」「遊說支出」，與官方聲明強調「非選舉用途」的措辭形成張力，待原文確認框架依據（Google News/WSJ、The Hill、Axios，2026-07-22）
+- **[待查證] CNBC：聯準會（Fed）曾就 Mythos 發出警示，延遲數月曝光**：CNBC（經 Google News 轉載，僅標題可用）報導聯準會（Federal Reserve）曾針對 Anthropic 的 Mythos AI 模型發出警示，但相關訊息延遲數月才浮上檯面；具體警示內容、時間點、延遲原因均未知，原文為轉址連結無法確認細節。為繼加拿大金融監管機關（07-13 Reuters）、JPMorgan CEO Dimon（07-16 Reuters）之後，第三個對 Mythos 表態的金融監管/業界角色，詳見 [[entities/mythos]]（Google News/CNBC，2026-07-21 22:05 UTC）
 
 ### 2026-07-17
 - **[待查證] SFGATE：Anthropic 員工捐款 300 萬美元支持 AI 安全法規推動**：Google News 轉載 SFGATE 標題，稱 Anthropic 員工捐款 300 萬美元，支持 AI 安全相關法規推動；僅標題可用，原文為轉址頁面，捐款對象（是否為 super PAC 或其他組織）、支持的具體法規均未展開（Google News/SFGATE，2026-07-17 16:43 UTC）

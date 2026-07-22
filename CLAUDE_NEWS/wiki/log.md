@@ -2987,3 +2987,21 @@ Append-only 紀錄。每次 ingest、lint，以及**揭露缺陷或促成改動�
 - 摘要：官方面 v2.1.215 `/verify`/`/code-review` 改為手動觸發（Breaking change，無過渡期）為今日主軸；社群面 GitHub Issues 高互動未解決需求集中出現（5 小時額度異常等 8 起，含今日互動量最高的 120 留言 issue）；商業面 Fable 5 訂閱政策再現方向不一致的媒體報導、Musk/Anthropic 競爭與金流關係持續延燒
 - 呈現品質：四類共 7 頁全數 ✅ 通過，未出現需修復或待辦項目
 - 品質備註：無
+
+## 2026-07-22 Ingest | news/2026-07-22.md（71 則）
+
+- 來源日報：[[news/2026-07-22]]（71 則，10/10 來源；Google News 45、GitHub Issues 15、Hacker News 17、dev.to 14、Anthropic Status 6、GitHub 3、Blogroll 2、Anthropic Blog 1、Reddit 6、Claude API Release Notes 0）
+- 分類派工：模型 1 則、功能 7 則、商業 15 則、安全政策 6 則、社群 17 則、人物 1 則（六類並行 foreground，model 繼承主 session。註：本次執行環境的自訂 subagent_type 註冊表未載入，改以 general-purpose agent 內嵌對應記者角色規則＋開始前必讀清單執行，功能等同六位專職記者）
+- 更新頁面：
+  - **模型**：`entities/opus-4-8.md`（新增歷史記錄：TipRanks 報導 Claude 曾自稱是阿里巴巴 Qwen AI 引發蒸餾雙標批評，比對後判定與既有 05-29～05-30 Qwen distillation 爭議為同主題疑似重炒，標 ❓ 待核實，未新建頁、未動 model-comparison.md）；補件任務另更新 `entities/mythos.md`（CNBC 報導聯準會曾就 Mythos 發出警示但延遲數月曝光，待核實，串連既有金融監管敘事）
+  - **功能**：`entities/claude-code.md`（**v2.1.217** 發布：Prompt input 表情符號 shortcode 自動完成，feature-radar 新條目；SDK python v0.117.1／typescript sdk-v0.112.5 兩則 bug-fix/chore 版本同步記錄；已知問題新增 3 條——Remote Control 自動重連失效 #34255 57 留言、--screen-reader 無障礙模式 #11002 63 留言、Opus 4.7 思考摘要遺失 #49268 49 留言；9to5Mac/MacRumors 報導 Claude Code Mac app 新增即時 iOS App 測試功能因無官方版本號佐證，僅記為待核實，未列入 feature-radar）
+  - **商業**：`topics/anthropic-business.md`（延續 15 億美元著作權和解案敘事，補上 91% 賠付申請率、律師費削減至 6.8%、Bloomsbury 分潤；新增專利侵權訴訟〔Reuters＋Bloomberg Law 兩獨立來源〕與田納西大學訴訟兩起獨立法律事件，皆標記查證狀態）；`topics/competitor-landscape.md`（中國 AI agent 自主研究任務超越 Claude Code〔SCMP，source_count=2〕、Claude 自稱 Qwen AI 蒸餾爭議之商業/競品面記錄，皆標「僅標題可用，待補充」）
+  - **安全政策**：`topics/anthropic-government-policy.md`（Anthropic 再捐 2000 萬美元予 Public First Action，政治教育/遊說捐款累計達 4000 萬美元，官方公告 + WSJ/The Hill/Axios 三則跟進併入攻防紀錄；CNBC Fed/Mythos 警示事件記入並轉知模型記者）；`topics/ai-agent-safety.md`（俄語駭客 jailbreak Claude Opus 打造滲透測試工具事件，cyberpress.org + Infosecurity Magazine 兩獨立來源，待查證細節）
+  - **社群**：`topics/community-tech-discussions.md`（太空經濟模擬器 Rust/Bevy〔HN 101〕、Orate 本地 TTS〔HN 14〕、Browser Tools SDK〔HN 11，source_count=2〕、Nativ 本地模型〔Simon Willison〕四則新增）；`topics/community-tech-patterns.md`（CodeAlmanac codebase wiki〔HN 54〕、tpu-management Claude Code skill〔dev.to〕兩則新增；MCP servers token 成本一文與既有 07-21 條目重複，未重複寫入）；分數低於門檻的 Chalk／Tokenmaxx／PMG／herdr／ESP32／desktop 替代方案／Hoop／Claude Bucks／claude-logkeeper／Nura Dev 共 10 則邊緣小工具（HN 1–8 分）未收錄
+  - **人物**：`entities/cat-wu.md`（記錄 Cat Wu 與 Thariq Shihipar 出席 AI Engineer World's Fair 爐邊對談〔Simon Willison 部落格〕，因摘要遭截斷僅記錄出席事實，不推測對談具體論述內容）
+- feature-radar：新增 1 條（Claude Code v2.1.217 表情符號自動完成，🔥／⏳ 觀察中）；最新版本行同步至 v2.1.217；本週推薦與升版風險表因無達門檻變化維持原內容，僅同步版本行；⏰ 倒數中無變化
+- index.md 狀態變更：無
+- 新增頁面：無
+- 摘要：商業/法律面為今日主軸——著作權和解案細節（91% 賠付率、律師費削減）、新增專利訴訟與大學訴訟兩起獨立法律事件、政治獻金累計 4000 萬美元；安全面新增 Fed/Mythos 警示（待核實）與 jailbreak 滲透測試工具事件；功能面 v2.1.217 為小型體驗更新，三則高互動已知問題持續追蹤；社群面 Show HN 工具數量多但多數未達收錄門檻，僅太空模擬器與 CodeAlmanac 兩則達中高門檻
+- 呈現品質：六類共 9 頁全數 ✅ 通過，未出現需修復或待辦項目
+- 品質備註：安全政策記者正確識別 CNBC Fed/Mythos 條目為 `entities/mythos.md`（模型記者主責）新事件並轉知，主編已補派模型記者完成該頁更新，跨記者轉知流程運作正常

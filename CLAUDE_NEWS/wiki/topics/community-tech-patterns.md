@@ -3,11 +3,11 @@
 **狀態：** monitoring
 **領域：** 🌐 社群
 **開始日期：** 2026-04-25
-**最後更新：** 2026-07-21
-**最後新聞更新：** 2026-07-21
+**最後更新：** 2026-07-22
+**最後新聞更新：** 2026-07-22
 
-> **最新工作流模式**（2026-07-21）
-> 今日僅一則達 patterns 收錄門檻：dev.to 作者實測量化不同 MCP server 設計注入每輪對話的隱藏 context token 成本，屬第一手量化測量（依 dev.to 收錄規則以內容判斷、不看讚數）。今日其餘 HN Show HN 條目（10 分鐘 AI 電影 pipeline、Fable CoT 重建實驗、Amnesia、Effort Router、Claude 語氣爭議、Claudexor 配額路由）與 Reddit Synapse 本地 MCP 索引工具分數／互動數據均未達 patterns 中門檻（HN≥30 分或≥5 留言），已改記於 [[topics/community-tech-discussions]]。07-18 Spare Mac 常駐環境與 07-15 既有模式（Brainless、Agentty、OtoDock、Grepathy、Context 分支/合併工具）仍為近期背景。
+> **最新工作流模式**（2026-07-22）
+> 今日新增兩則達 patterns 收錄門檻：Show HN CodeAlmanac（YC S26，HN 54 分）讓程式碼庫 wiki 隨與 Claude Code/Codex 的對話自動更新，取代手動維護的 MANUAL.md/DESIGN.md；dev.to 第一手實作記錄 tpu-management（Claude Code skill + MCP server 一鍵佈建/拆除 Cloud TPU、以 vLLM 服務 Gemma 4，依 dev.to 收錄規則以內容判斷、不看讚數）。今日其餘條目（spaceprojectsim 太空模擬器展示、Orate、Browser Tools SDK、Chalk、Tokenmaxx、PMG、herdr 對抗審查、ESP32、Nura Dev 等）分數均未達 patterns 中門檻（HN≥30 分或≥5 留言），已改記於 [[topics/community-tech-discussions]] 或僅於回報中提及。07-21 MCP token 成本實測、07-18 Spare Mac 常駐環境與 07-15 既有模式（Brainless、Agentty、OtoDock、Grepathy）仍為近期背景。
 
 ---
 
@@ -55,6 +55,20 @@
 ## 技術彙整
 
 ### 2026-07
+
+#### CodeAlmanac：從與 Claude Code / Codex 對話自動更新的 Karpathy 風格程式碼庫 Wiki（2026-07-22）
+
+- **核心模式：** YC S26 團隊釋出開源工具 CodeAlmanac，會隨著使用者與 Claude Code / Codex 的對話內容自動更新程式碼庫 wiki，取代過去需手動維護的 MANUAL.md、DESIGN.md 等文件；強調本地執行、免費、自動維護，降低文件與程式碼庫實際狀態脫節的心力
+- **與既有模式的關係：** 補充「記憶與知識管理」類別在「團隊/專案層級知識沉澱」面向的新做法——既有 ltm/NanoBrain/OKF 聚焦 agent 跨 session 記憶，CodeAlmanac 聚焦「程式碼庫本身的說明文件」隨對話自動同步；也與「CLAUDE.md 管理」類別「防腐爛機制」精神相通，皆試圖解決文件隨時間腐化的問題
+- **來源：** 「Show HN: CodeAlmanac – Karpathy-style codebase wiki from your conversations」— Hacker News（score 54，YC S26 團隊，達對照表中門檻）
+- **成熟度：** ⏳ 新興（今日首見，YC 新創團隊產品，尚待社群採用回饋）
+
+#### tpu-management：讓 Gemma 4 在 Cloud TPU 上運行的 Claude Code Skill（2026-07-22）
+
+- **核心模式：** 作者釋出 Claude Code skill 搭配 MCP server 組合，可一鍵佈建 Google Cloud TPU、以 vLLM 服務 Gemma 4 模型、執行 benchmark，並在完成後自動拆除雲端資源，將原本繁瑣的 TPU 基礎設施佈建/拆除流程封裝為 Claude Code 可呼叫的 skill
+- **與既有模式的關係：** 屬「Skills 設計」類別新型態——既有 Skills 案例多聚焦知識框架化或流程封裝，本篇將其延伸至「雲端基礎設施生命週期管理」（佈建→服務→測試→拆除全流程自動化）；與「Agent 預算控制」類別（AgentWatch）同屬降低雲端資源浪費風險的思路，但聚焦點是基礎設施自動拆除而非請求層費用攔截
+- **來源：** 「tpu-management: a Claude Code skill for running Gemma 4 on Cloud TPUs」— dev.to（7 讚；依 dev.to 收錄規則以內容判斷，屬第一手實作記錄，非讚數）
+- **成熟度：** ⏳ 新興（今日首見，單一作者實作記錄，尚無其他來源複現）
 
 #### MCP Server 設計對每輪對話隱藏 token 成本的實測比較（2026-07-21）
 

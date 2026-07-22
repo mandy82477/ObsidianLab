@@ -3,11 +3,11 @@
 **狀態：** ongoing
 **領域：** 🌐 社群
 **開始日期：** 2026-04-25
-**最後更新：** 2026-07-21
-**最後新聞更新：** 2026-07-21
+**最後更新：** 2026-07-22
+**最後新聞更新：** 2026-07-22
 
-> **最熱討論**（2026-07-21）
-> 今日新增六則條目，多數為低門檻或具名表態動態，無單一條目達廣泛社群延燒：10 分鐘 AI 電影 pipeline（HN 18 分 + source_count=2）、Fable 5 CoT 反向工程重建實驗（HN 5 分 + source_count=2）、Claudexor 跨工具配額路由（HN 3 分 + source_count=2）均以「跨 2 獨立來源」達收錄低門檻；Simon Willison 兩則具名部落格觀察（推理成本降低驅動居家設備逆向工程；轉引 Ben Thompson〈Who's Afraid of Chinese Models?〉分析）屬具名表態、無社群延燒；Synapse 本地 MCP 程式碼索引工具則以 Reddit 週熱門標記達低門檻。Amnesia、Effort Router、Claude 語氣爭議三則因分數與來源數均未達門檻不予收錄。額度焦慮系列仍為近期背景（詳見「熱門討論」對應列）。
+> **最熱討論**（2026-07-22）
+> 今日新增四則條目：Show HN spaceprojectsim（自運行太空經濟模擬器，HN 101 分，本輪最高分且今日單一最高互動條目）以單平台高互動達收錄門檻；Orate（本地 TTS 佇列，HN 14 分）達低門檻；Browser Tools SDK（HN 11 分 + source_count=2）以跨來源達低門檻；Simon Willison 具名轉介 Nativ（Mac 本地執行 AI 模型）屬具名表態、無社群延燒。Chalk、Tokenmaxx、PMG、herdr 對抗審查、ESP32、Nura Dev 等條目分數與來源數均未達門檻，未收錄（詳見回報）。清理：三則 2026-06-30 的 ☄️閃現 條目（中國代理偵測、AI 人才論、Explore subagent 鎖定 Haiku）首見已逾 21 天，依保留規則自「熱門討論」表格移除（技術彙整原文保留）。額度焦慮系列仍為近期背景（詳見「熱門討論」對應列）。
 
 ---
 
@@ -119,6 +119,10 @@ MCP 的實際成本遠超多數使用者預期，已有多個量化案例：
 
 | 討論主題 | 首見 | 熱度 | 模式 | 核心論點 | 衍生 |
 |---------|------|------|------|---------|------|
+| Show HN：自運行太空經濟模擬器 spaceprojectsim，Elixir 原型改以 Rust/Bevy 重寫 | 2026-07-22 | 🔥🔥🔥 | ☄️閃現 | 作者以 Claude Code 打造無腳本、自運行的太空經濟模擬器，數百艘自主船艦各自規劃貿易路線、進行運補與維修；專案最初以 Elixir/Phoenix 開發，因效能瓶頸改以 Rust 重寫核心模擬引擎，Bevy 客戶端直接嵌入；HN score 101，本輪最高分且單平台高互動；[GitHub](https://github.com/Kalcode/spaceprojectsim)（HN） | — |
+| Show HN：Orate — 本地端神經網路 TTS 佇列，收聽累積螢幕文字 | 2026-07-22 | 🔥 | ☄️閃現 | 讓使用者可將螢幕上任意文字加入本地端 TTS 播放佇列，方便在切換 Claude Code session 空檔「聽完」累積的待讀內容，完全離線運作；HN score 14，達收錄低門檻；[官網](https://orate.to/)（HN） | — |
+| Show HN：Browser Tools SDK — 為 AI agent 打造的瀏覽器操作 harness | 2026-07-22 | 🔥 | ☄️閃現 | 開源 TypeScript 套件，讓任何 AI agent（含 Claude）可用少量程式碼取得可靠的真實瀏覽器控制能力；HN score 11，source_count=2（跨來源達收錄低門檻）；[官網](https://libretto.sh/browser-tools)（HN） | — |
+| Simon Willison 轉介 Nativ：在 Mac 本地執行 AI 模型 | 2026-07-22 | 🔥 | ☄️閃現 | Simon Willison 部落格轉介 Prince Canuma 開發的 Nativ，可在 Mac 上本地執行 AI 模型；非 Claude 專屬工具，屬社群技術討論延伸；[原文](https://simonwillison.net/2026/Jul/21/nativ/#atom-everything)（Blog；具名表態，無社群延燒） | — |
 | Show HN：反向工程重建 Fable 5 對 Jacobian Conjecture 反例的思路鏈 | 2026-07-21 | 🔥 | ☄️閃現 | Anthropic 不公開完整 Chain of Thought，作者讓一個 Fable 生成不含答案捷徑的推導過程說明，再讓第二個 Fable 依此說明獨立重建結果，逐步調整難度取得可理解的思路重建；HN score 5，source_count=2（跨來源達收錄低門檻）；[原文](https://news.ycombinator.com/item?id=48986943)（HN） | — |
 | Claudexor：整合 Claude Code / Codex / Cursor 多組訂閱額度的配額感知路由 | 2026-07-21 | 🔥 | ☄️閃現 | 作者整合 4 組 Claude Code、3 組 Codex、2 組 Cursor 訂閱額度，打造 macOS 配額感知路由工具（IDE/CLI/MCP/plugins 形式），宣稱較純 token 計費節省約每月 1.5 萬美元，MIT 授權、無遙測；HN score 3，source_count=2（跨來源達收錄低門檻）；節省數字未經第三方驗證；[GitHub](https://github.com/razzant/claudexor)（HN） | — |
 | Show HN：Claude Code 導演 + Seedance/Nano Banana/ElevenLabs 生成 10 分鐘 AI 電影 pipeline | 2026-07-20 | 🔥 | ☄️閃現 | 作者釋出完整 markdown playbook，讓 Claude Code 擔任「導演」協調 Seedance（影片生成）、Nano Banana（圖像生成）、ElevenLabs（語音生成）三個模型完成 10 分鐘電影；首次產出約需 2.5 小時、成本約 200 美元；HN score 18，source_count=2（跨來源達收錄低門檻）；[GitHub](https://github.com/dawndrain/movie-gen)（HN） | — |
@@ -149,9 +153,6 @@ MCP 的實際成本遠超多數使用者預期，已有多個量化案例：
 | Claude Code 成本 5x 暴漲：獨立開發者單月花費 $62,021 | 2026-07-01 | 🔥🔥🔥 | ☄️閃現 | 用戶大規模回報費用無預警 5x 暴增；Reddit 出現獨立開發者單月花費 $62,021 的具名案例；社群懷疑與近期 token 計費方式或 agent 模式變更有關；多平台多用戶回報使此為成本信任議題；[原始文章](https://www.vincentschmalbach.com/claude-code-quietly-looks-5x-more-expensive/)（HN score 53） | — |
 | Claude Code 30 天自動刪除對話記錄：Anthropic 表示不修復 | 2026-07-01 | 🔥🔥 | ☄️閃現 | Claude Code 預設 30 天後自動刪除 session `.jsonl`；GitHub issue #62476 提出後 Anthropic 官方表示此為預設行為且不計畫修復；社群認為這是對用戶知識財產的無聲破壞，現有 workaround：`npx agentinit agent set claude cleanupPeriodDays 365`；[GitHub issue](https://github.com/anthropics/claude-code/issues/62476)（HN score 29） | — |
 | 企業「穴居人模式」降本：OpenAI、Nvidia、GitHub 開發者採用 | 2026-07-01 | 🔥 | ☄️閃現 | 企業透過極簡輸出插件要求 AI 以最少文字回應（「穴居人說話」風格），大幅降低 token 消耗；404 Media 報導 OpenAI、Nvidia、GitHub 開發者已採用；與社群早期 Caveman Skill 65% 降耗實測互相印證；[報導](https://www.404media.co/companies-are-making-claude-and-codex-talk-like-cavemen-to-stop-ais-soaring-costs/)（404 Media；HN score 4；媒體報導，待社群接力） | 穴居人模式 |
-| Anthropic 中國代理偵測：Claude Code 被指嵌入 spyware | 2026-06-30 | 🔥🔥 | ☄️閃現 | Reddit r/ClaudeAI 帖（HN score 13）：用戶指控 Anthropic 在 Claude Code 中嵌入代理偵測機制，在 /proc 中寫入偵測資料以識別中國 IP 並限制功能；社群兩極化：部分人視為合理出口管制合規，部分人視為侵犯隱私的 spyware；Anthropic 截至報導時尚未正式回應；[Reddit 原帖](https://old.reddit.com/r/ClaudeAI/comments/1ujila1/anthropic_embedded_spyware_in_claude_code_and/)（Reddit + HN） | — |
-| AI 時代人才論：維持「腦力努力」比聰明更重要 | 2026-06-30 | 🔥 | ☄️閃現 | The Atlantic 分析（HN score 4）：AI 時代得益者不是最聰明的人，而是願意維持主動腦力投入的人；ActivTrak 研究：採用 AI 的工作者 email/訊息使用量翻倍、業務軟體使用量增加 94%；UC Berkeley Haas 研究：使用 AI 的工作者開始接受以前不會接的任務——AI 不是讓人更懶，而是讓人承接更多；[文章](https://www.theatlantic.com/ideas/2026/06/ai-open-ai-anthropic/687689/)（The Atlantic；媒體報導，待社群接力） | — |
-| Explore subagent 鎖定 Haiku：除錯能力受限提醒 | 2026-06-30 | 🔥 | ☄️閃現 | Reddit 使用者（06-30）發現 Claude Code 原生 Explore subagent 被鎖定使用 Haiku，除錯任務能力受到明顯限制；同時分享完整 subagent 類型清單供社群對照選擇；[Reddit 原帖](https://www.reddit.com/r/ClaudeAI/comments/1ujpz0t/caution_when_using_native_subagent_explore_for/)（Reddit r/ClaudeAI；無社群延燒） | — |
 | 切換到開源模型的代價接近零：閉源護城河瓦解論 | 2026-06-22 | 🔥🔥🔥🔥 | 🌊延燒 | Andrew Marble 文章（HN score 334，最高熱度）：類比 Linux 轉移，今日切換到開源 LLM 的代價已接近零；論點：閉源模型護城河正在瓦解，平台依賴風險超過便利性收益；引發 Recall、ANMA 等工具作者呼應「本地主控」的設計方向（HN）；2026-06-23 持續延燒，熱度維持最高 | Recall |
 | Loop Engineering 哲學完整文章：「我不再 prompt Claude，我寫 loop」 | 2026-06-20 | 🔥 | 🌊延燒 | Boris Cherny 名言的完整拆解文章（techstackups.com）：PR review、測試、push 等動作如何抽象為 loop；代表 AI 輔助開發進入「設計 loop」時代（HN score 4）；延伸自 2026-06-19 Boris Cherny loop 哲學討論 | — |
 | Context Rot 修復五法 | 2026-06-20 | 🔥🔥 | 🌊延燒 | Reddit r/ClaudeAI 熱帖：解決「Claude 越用越笨」五個方法——裁剪 tool output、壓縮歷史、分 session 隔離任務、重置前保存摘要、停止添加無關 context 改裁剪 tool output；核心論點：Claude Code 是 context 工程工具，「變笨」幾乎都是 context 腐蝕而非模型退步（Reddit r/ClaudeAI） | — |
@@ -175,6 +176,30 @@ MCP 的實際成本遠超多數使用者預期，已有多個量化案例：
 ## 技術彙整
 
 ### 2026-07
+
+#### Show HN：自運行太空經濟模擬器 spaceprojectsim，Elixir 原型改以 Rust/Bevy 重寫（2026-07-22）
+
+- **來源：** 「Show HN: A self-running space economy SIM in Rust and Bevy」— Hacker News（score 101，本輪最高分）
+- **核心論點：** 作者以 Claude Code 打造無腳本、自運行的太空經濟模擬器，數百艘自主船艦各自規劃貿易路線、進行運補與維修；專案最初以 Elixir/Phoenix 開發，因效能瓶頸改以 Rust 重寫核心模擬引擎，Bevy 客戶端直接嵌入同一二進位檔
+- **收斂結論：**（無）單篇展示型專案，屬 Claude Code 建構複雜自主系統能力的案例展示，非工作流方法論本身；語言選型（Elixir→Rust）決策細節對「效能敏感型 agent 專案該選何種語言」可能有參考價值（推論），但原文未提供具體效能數字佐證
+
+#### Show HN：Orate 本地端 TTS 佇列，收聽累積螢幕文字（2026-07-22）
+
+- **來源：** 「Show HN: Orate – On-device neural text-to-speech queue for Mac」— Hacker News（score 14）
+- **核心論點：** 讓使用者可將螢幕上任意文字加入本地端神經網路 TTS 播放佇列，方便在切換 Claude Code session 空檔「聽完」累積的待讀內容，完全離線運作，不需雲端 API
+- **收斂結論：**（無）單一工具發布，HN 分數達收錄低門檻，尚無社群後續採用回饋
+
+#### Show HN：Browser Tools SDK — AI agent 瀏覽器操作 harness（2026-07-22）
+
+- **來源：** 「Show HN: Browser Tools SDK – an optimal browser harness for agents」— Hacker News（score 11，source_count=2）
+- **核心論點：** 開源 TypeScript 套件，讓任何 AI agent（含 Claude）可用少量程式碼取得可靠的真實瀏覽器控制能力，訴求降低各家 agent 自行對接瀏覽器自動化的重複工程
+- **收斂結論：**（無）今日首見，跨來源報導但單一分數偏低，尚待社群後續採用回饋
+
+#### Simon Willison 轉介 Nativ：Mac 本地執行 AI 模型（2026-07-22）
+
+- **來源：** 「Nativ: Run AI models locally on your Mac」— Simon Willison Blog
+- **核心論點：** Simon Willison 部落格轉介 Prince Canuma 開發的 Nativ，可在 Mac 上本地執行 AI 模型；非 Claude 專屬工具，但作為社群技術討論延伸收錄（具名表態）
+- **收斂結論：**（無）具名部落客轉介，無社群延燒佐證
 
 #### Fable 5 CoT 反向工程重建實驗：無官方 Chain of Thought 下的思路鏈近似重現（2026-07-21）
 
