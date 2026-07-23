@@ -3,11 +3,11 @@
 **狀態：** monitoring
 **領域：** 🌐 社群
 **開始日期：** 2026-04-25
-**最後更新：** 2026-07-22
-**最後新聞更新：** 2026-07-22
+**最後更新：** 2026-07-23
+**最後新聞更新：** 2026-07-23
 
-> **最新工作流模式**（2026-07-22）
-> 今日新增兩則達 patterns 收錄門檻：Show HN CodeAlmanac（YC S26，HN 54 分）讓程式碼庫 wiki 隨與 Claude Code/Codex 的對話自動更新，取代手動維護的 MANUAL.md/DESIGN.md；dev.to 第一手實作記錄 tpu-management（Claude Code skill + MCP server 一鍵佈建/拆除 Cloud TPU、以 vLLM 服務 Gemma 4，依 dev.to 收錄規則以內容判斷、不看讚數）。今日其餘條目（spaceprojectsim 太空模擬器展示、Orate、Browser Tools SDK、Chalk、Tokenmaxx、PMG、herdr 對抗審查、ESP32、Nura Dev 等）分數均未達 patterns 中門檻（HN≥30 分或≥5 留言），已改記於 [[topics/community-tech-discussions]] 或僅於回報中提及。07-21 MCP token 成本實測、07-18 Spare Mac 常駐環境與 07-15 既有模式（Brainless、Agentty、OtoDock、Grepathy）仍為近期背景。
+> **最新工作流模式**（2026-07-23）
+> 今日新增兩則達 patterns 收錄門檻：dev.to 第一手實作記錄 nb2lite-skill-claude（將 Gemini 圖片模型封裝為 Claude Code Skill + MCP server，支援多輪有狀態圖片編輯，依 dev.to 收錄規則以內容判斷、不看讚數）；Reddit r/ClaudeAI 週熱門開源畫布工具，讓 Claude 回應顯示於使用者手寫筆記旁（07-15 已於 [[topics/community-tech-discussions]] 記錄為展示案例，今日補上技術做法細節）。今日其餘條目（Bento、AMD 投資討論、Anthropomorphism 論文等）非工作流模式性質，已改記於 [[topics/community-tech-discussions]]；Housecat、Millwright、Promptrack、TTFT benchmark、LitigationBench、Reduck MCP、TLS Radar、nippy、PokerLLM、ContextNest 等條目分數均未達 patterns 中門檻（HN≥30 分或≥5 留言），未收錄（詳見回報）。07-22 CodeAlmanac、tpu-management 與 07-21 MCP token 成本實測、07-18 Spare Mac 常駐環境、07-15 既有模式（Brainless、Agentty、OtoDock、Grepathy）仍為近期背景。
 
 ---
 
@@ -55,6 +55,20 @@
 ## 技術彙整
 
 ### 2026-07
+
+#### nb2lite-skill-claude：以 Gemini Interactions API 打造有狀態圖片編輯 Claude Code Skill（2026-07-22）
+
+- **核心模式：** 作者將 Google gemini-3.1-flash-lite-image 封裝為 Claude Code Skill 與 MCP server（nb2lite-skill-claude），支援多輪、有狀態的圖片編輯（版本追蹤與迭代修改，而非每次重新生成獨立圖片），並提供安裝指南與 dogfood 封面圖範例
+- **與既有模式的關係：** 延伸「Skills 設計」與「模型使用策略」類別中「跨模態內容生成分工（InstantVideos）」的既有做法——不同於單次生成或單向 pipeline，此技巧強調「有狀態」的多輪編輯迴圈，補上 Skills 生態中「圖像類多輪任務狀態管理」的具體實作案例
+- **來源：** 「Teaching Claude Code to Paint: A Stateful Image-Editing Skill Built on Gemini's Interactions API and MCP」— dev.to / #claudecode（3 讚；依規則以第一手實作內容判斷，非讚數）
+- **成熟度：** ⏳ 新興（今日首見，單一開發者第一手實作，尚待社群採用回饋）
+
+#### 開源手寫畫布：Claude 回應顯示於使用者手寫筆記旁（2026-07-17，補記技術做法）
+
+- **核心模式：** 開發者釋出開源畫布工具，讓 Claude 的回應直接顯示在使用者手寫筆記旁，將 AI 輔助思考與紙本手寫筆記工作流結合，而非侷限於純聊天視窗介面
+- **與既有模式的關係：** 與 [[topics/community-tech-discussions]] 07-15 記錄的「r/ClaudeAI 週熱門三則大型個人專案展示」為同一專案（手寫畫布），本頁首次以「模式」角度補記其技術做法；概念上與「介面元件複用」類別（Brainless）同屬 AI coding 工具介面美學探索，但本模式聚焦「手寫 + AI 回應並置」的新互動形式，而非既有元件封裝
+- **來源：** 「I built an open-source canvas where Claude responds beside your handwritings」— Reddit r/ClaudeAI（週熱門，已通過收錄門檻；原貼 2026-07-17）
+- **成熟度：** ⏳ 新興（單一開源專案展示，尚無其他採用案例佐證）
 
 #### CodeAlmanac：從與 Claude Code / Codex 對話自動更新的 Karpathy 風格程式碼庫 Wiki（2026-07-22）
 
