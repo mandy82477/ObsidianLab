@@ -3,11 +3,11 @@
 **狀態：** monitoring
 **領域：** 💼 商業
 **開始日期：** 2026-04
-**最後更新：** 2026-07-22
-**最後新聞更新：** 2026-07-22
+**最後更新：** 2026-07-23
+**最後新聞更新：** 2026-07-23
 
-> **最新競品動態**（2026-07-22）
-> 今日兩則訊號皆屬標題層級但值得留意：South China Morning Post（source_count=2）報導某中國 AI agent 在自主研究任務表現上據稱超越 Claude Code——若屬實是繼 07-21 Emerging Trajectories「Kimi K3/Qwen 3.8 對 Anthropic 構成重大威脅」戰略分析後，中國陣營在「agentic 能力」而非單純模型指標上首次出現具體超越宣稱；另 TipRanks 報導 Claude 曾自稱是 Alibaba 的 Qwen AI，引發「Anthropic 蒸餾雙標」批評——與既有 06-25 Anthropic 指控 Alibaba 蒸餾 Claude 案形成敘事張力，若外界解讀為雙重標準，可能削弱 Anthropic 蒸餾指控的正當性論述（推論）。兩則均僅標題可用，無具體 benchmark 或事件細節，詳見「主要競品追蹤」Alibaba 子區塊與時序。
+> **最新競品動態**（2026-07-23）
+> 今日新增一則競品定價比較：tech-insider.org 發布《Cline vs Claude Code vs Copilot》比較文，宣稱 Cline 免費、Claude Code $20/月、GitHub Copilot $10/月（僅標題層級資訊，具體方案內容待核實），詳見「競品定價對照」表新增列。此外，07-21/22 已記錄之戰略層級動態（Emerging Trajectories 分析 Kimi K3/Qwen 3.8 對 Anthropic 構成重大威脅；中國 AI agent 於自主研究任務據稱超越 Claude Code；Claude 曾自稱為 Alibaba Qwen AI 引發蒸餾雙標批評）仍為本頁近期最重大訊號，未見進一步後續報導。
 
 ---
 
@@ -33,6 +33,7 @@ Claude Code 已成為 AI 輔助編碼的標竿產品，但競爭正快速升溫�
 
 | 工具/模型 | 定價 | vs Claude 定位 | 來源日期 |
 |---------|------|--------------|---------|
+| Cline | 免費（Free）| 開源 VS Code 擴充套件，tech-insider.org 比較文將其定位為 Claude Code（$20/月）與 GitHub Copilot（$10/月，方案版本未指明）之間的免費替代方案；僅標題層級比較，未提供各工具用量限制、功能差異等具體核實內容，**待查證** | 2026-07-22（Google News/tech-insider.org）|
 | pi-coding-agent | 未見具體掛牌價，僅稱「約為 Claude Code / Codex 之半」（DataBricks 評測，Reddit r/LocalLLaMA 轉述，單一來源未經官方交叉確認，**待查證**）| 若屬實代表低成本編碼 agent 持續逼近 Claude Code；GLM-5.2（Zhipu/Zai，753B 總參數/40B active）：Artificial Analysis Intelligence Index v4.1 外部佐證為開源模型榜首，FrontierSWE 74.4 vs Opus 4.8 75.1（僅差 0.7）、Terminal-Bench 2.1 81.0、SWE-bench Pro 62.1（**非日報進料**，來自使用者 2026-07-17 手動查證，詳見 [[log]] 2026-07-17「地端 AI server 商業評估」Query 條目；單一外部來源，非 Anthropic 官方數字，仍標**待查證**）| 2026-07-10（Reddit，pi-coding-agent 部分）／2026-07-17（GLM-5.2 部分，使用者查證）|
 | GitHub Copilot Pro+ | $39/月（含 Opus 存取，但對 Opus 使用採 **27 倍**加價換算）| 名義月費低於 Claude Max，但重度使用 Opus 時實際換算成本可能反超；作者實測建議直接用 Anthropic API 更划算 | 2026-05-06（開發者實測分析）|
 | DeepSeek V4 Flash（API） | 未見具體掛牌價，僅見「成本降低逾 100 倍」對比 Anthropic API 定價之定性描述 | 開源、低價策略正面衝擊 Anthropic「API 高價補貼 agent 服務」的商業邏輯；Microsoft 等已切換部分執行層 | 2026-06-26（rtrvr.ai）|
@@ -203,6 +204,7 @@ Claude Code 已成為 AI 輔助編碼的標竿產品，但競爭正快速升溫�
 ## 時序
 
 ### 2026-07-22
+- **[競品定價比較，標題層級] tech-insider.org：Cline vs Claude Code vs Copilot 定價比較（Free vs $20 vs $10）**：詳見「競品定價對照」表新增列（Google News/tech-insider.org）
 - **[新事件，agentic 能力對比，標題層級] 中國 AI agent 於自主研究任務據稱超越 Claude Code**：South China Morning Post（經 Google News 轉載，source_count=2）報導某中國 AI agent 在自主研究（autonomous research）任務表現上超越 Claude Code。**注意**：僅標題可用，待補充——該 agent 具體名稱、開發廠商、測試方法、量化指標均未見報導，無法確認是否為 Moonshot（07-16/17/21 追蹤中）、Alibaba、DeepSeek 或其他廠商產品，暫不歸入既有廠商子區塊，待後續補充後再分類。**對競爭格局的意涵**：若屬實，是繼 07-21 Emerging Trajectories 戰略威脅分析（Kimi K3/Qwen 3.8 效能逼近 Fable 5）之後，中國陣營首次在「agent 自主執行」而非單純模型評測指標上出現具體超越宣稱，可能代表競爭焦點正從「底層模型能力」擴散至「agent 產品層」（推論）（Google News/South China Morning Post）
 - **[蒸餾雙標爭議，詳見 Alibaba 子區塊] Claude 曾自稱是阿里巴巴 Qwen AI，引發蒸餾雙標批評**：詳見「主要競品追蹤」Alibaba 子區塊新增列（Google News/TipRanks）
 
