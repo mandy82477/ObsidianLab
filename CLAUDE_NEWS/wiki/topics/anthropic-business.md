@@ -120,6 +120,7 @@ Simon Willison（知名開發者博主）發表文章，認為 Anthropic 與 Ope
 
 | 合作方 | 類型 | 日期 | 意義 |
 |--------|------|------|------|
+| AMD（NASDAQ: AMD）| 戰略投資＋晶片協議（最高 $50 億美元）| 2026-07-22 | Reuters（經 Hacker News 討論，source_count=2）、WSJ 獨家、Yahoo Finance 三方同日報導同一事件：AMD 宣布對 Anthropic 投資最高 50 億美元，並簽署晶片暨投資協議。**對商業的意涵**：延續近期 Micron（06-22）、Samsung＋SK Hynix（05-28）等晶片供應鏈廠商同步入股 Anthropic 的模式，AMD 為又一起「晶片供應商轉為投資人」的具名案例；HN 留言以「ouroboros circle」（銜尾蛇循環）形容晶片商與 AI 實驗室互相投資、彼此推升估值與營收的模式，對其可持續性提出質疑（推論）；具體投資結構、股權比例、晶片供應規模未見細節，僅標題與市場反應層級資訊（Reuters；Google News/WSJ；Google News/Yahoo Finance）|
 | Orca Security | SDK 夥伴（資安整合） | 2026-07-21 | Business Wire 報導 Orca Security 擴充其 AI 資安平台，整合 Claude 的 Compliance API；延續近期 Varonis（07-14）、Tenable（06-29）等資安夥伴生態擴張趨勢（推論）；僅標題可用，具體規模未見細節（Business Wire）|
 | Druva | SDK 夥伴（資安整合） | 2026-07-21 | Virtualization Review 報導 Druva 將其 AI 韌性（resilience）方案擴展至 Copilot、Claude 與 MCP；為又一起資安/韌性廠商同時整合多家 AI 供應商 API 的案例，非 Anthropic 獨家；僅標題可用，具體規模未見細節（Virtualization Review）|
 | UST（IT 服務商）| 企業客戶 | 2026-07-20 | The Fast Mode 報導 UST 與 Anthropic 合作，將 Claude AI 部署至其企業平台（Enterprise Platforms）。**對商業的意涵**：是繼 07-10（實體製造業整合，訓練兩萬名工程師顧問）、07-14（Optum + UST 醫療產業深化）後 UST 與 Anthropic 合作範疇第三度擴大報導，顯示 UST 作為 Anthropic 服務通路夥伴的合作範疇正從單一垂直產業向企業平台整體擴張（推論）；具體平台功能、合約規模未見細節，僅標題層級資訊（Google News/The Fast Mode）|
@@ -191,7 +192,17 @@ Simon Willison（知名開發者博主）發表文章，認為 Anthropic 與 Ope
 
 ### 2026-07
 
+#### 2026-07-23
+- **[重大，CSR/經濟政策研究，官方公告] Anthropic 公布 Economic Futures Research Fund 研究議程，承諾投入 2 億美元支持外部研究**：Anthropic Blog 公告研究議程，聚焦勞工衝擊、AI 轉型輔助、所得支持現代化、工作者在 AI 成長中的持股五大方向；官方原文明確表態：「We're committing $200 million to the fund to support ambitious external research on interventions to prepare society for the economic impacts of AI.」詳見「財務狀況」表新增列（Anthropic Blog https://www.anthropic.com/news/economic-futures-research-fund-agenda）
+- **[產品/工具，資訊量少，與上則不同產物] Anthropic Economic Index connector 曝光**：Google News 收錄一則 Anthropic 相關報導，介紹「Anthropic Economic Index connector」。**注意**：與上則 Economic Futures Research Fund 同屬經濟研究相關動態但為不同產物（一為研究資金承諾，一為工具/連接器產品），僅標題可用，具體功能與定位未見報導細節，暫不合併記錄（Google News/Anthropic）
+- **[IPO 敘事，兩則標題層級報導，無新增查證數字] SF Chronicle、24/7 Wall St. 同日探討 Anthropic／OpenAI 兆美元估值 IPO 前景**：San Francisco Chronicle 分析 OpenAI 與 Anthropic 未來可能以數兆美元估值掛牌上市，探討舊金山當地能否受益；24/7 Wall St. 評論文章稱兆美元估值的 Anthropic IPO「已成定局」，作者表示不會投資。**注意**：兩則均僅標題可用，未見具體估值數字、時程或官方確認，延續既有「IPO 前瞻與估值追蹤」表所記錄的市場臆測層級訊號，暫不新增正式表格列（該表僅收錄有具體查證數字或事件的條目），僅記錄為既有敘事延續（Google News/San Francisco Chronicle；Google News/24/7 Wall St.）
+- **[企業成本案例，詳見 enterprise-cost-management] Business Insider：Amazon 逐步降低 Alexa 對 Anthropic 高成本模型依賴以削減 AI 支出**：詳見 [[topics/enterprise-cost-management]]（Google News/Business Insider）
+- **[著作權和解案再添細節，四媒體跟進] The Guardian：《哈利波特》系列出版商將獲數百萬美元賠付**：詳見「財務狀況」表新增列（The Wenatchee World；Jurist.org；The Guardian；WXYZ Channel 7）
+- **[競品動態，詳見 competitor-landscape] tech-insider.org：Cline vs Claude Code vs Copilot 定價比較（Free vs $20 vs $10）**：詳見 [[topics/competitor-landscape]]
+
 #### 2026-07-22
+- **[重大，晶片供應鏈＋投資，三媒體同步] AMD 宣布對 Anthropic 投資最高 50 億美元，簽署晶片暨投資協議**：詳見「戰略合作」表新增列（Reuters／Hacker News；Google News/WSJ；Google News/Yahoo Finance）
+- **[投資人效應分析，標題層級] Fortune：Anthropic 與 SpaceX 的支出讓 Google 締造公司史上獲利最高一季（帳面上）**：Fortune 分析文章指出 Anthropic 與 SpaceX 兩者的支出，如何在帳面上幫助 Google 締造公司史上獲利最高的一季。**注意**：僅標題可用，具體財報數字、Anthropic 對 Google Cloud 的支出規模未見細節；與既有 [[entities/google-investment]]（Google 對 Anthropic $400 億美元投資）、07-17 BofA 分析師觀點（Alphabet 財報可能因雲端業務與 Anthropic 投資收益優於預期）同屬「Anthropic 支出/投資回饋 Google 財報」的分析角度延伸（推論）（Google News/Fortune）
 - **[重大，法律/財務，多媒體跟進] 著作權和解案執行細節浮現：91% 賠付申請率、律師費削減至 6.8%、Bloomsbury 分潤**：延續 07-20 法院核准 15 億美元著作權集體訴訟和解案消息，今日多家媒體補充執行細節——法院文件顯示逾 48.2 萬本受涵蓋書籍中約 **91%** 已由作者或出版商提出賠付申請（每本約 3,000 美元），法官將集體訴訟律師費比例削減至 **6.8%**（原告律師 Justin Nelson 稱此為「史上最大宗已知著作權求償和解案」）；英國出版商 **Bloomsbury** 確認為受益方之一（The Times、Research Information、Reuters 均以 Bloomsbury 分潤為標題重點）。**對商業的意涵**：高達 91% 的申請率顯示和解案執行進度快速、爭議金額實質流向作者與出版商，強化「和解已進入落地階段而非僅具法律效力」的敘事；律師費比例（6.8%）遠低於美國集體訴訟常見的 25–33%，可能反映法官對過高律師費的審查趨嚴（推論）（Mashable「largest copyright class action settlement in history」；marketplace.org；nashuatelegraph.com；AnewZ；Reuters ×2；The Times；Research Information；[HN 討論](https://news.ycombinator.com/item?id=48996972)；[法院文件 PDF](https://storage.courtlistener.com/recap/gov.uscourts.cand.434709/gov.uscourts.cand.434709.680.0_4.pdf)）
 - **[新事件，獨立於著作權和解案，兩來源交叉確認] Anthropic 遭指控侵犯神經網路技術相關專利**：Reuters、Bloomberg Law 各自報導 Anthropic 因神經網路技術相關專利遭提告。**注意**：僅標題可用，待補充——原告名稱、具體專利號、求償金額均未見報導；與 07-20/07-22 著作權和解案為完全不同的法律案件（著作權涉及訓練資料來源合法性，本案涉及專利技術本身），不可混為一談（Reuters「Anthropic sued for infringing neural network technology patents」；Bloomberg Law News「Anthropic Hit With Patent Suit Over Claude AI Neural Networks」）
 - **[新事件，獨立於著作權和解案] 田納西大學對 Anthropic 提起訴訟**：Knoxville News Sentinel（經 Google News 轉載）報導田納西大學對 Anthropic 提起訴訟。**注意**：僅標題可用，待補充——具體案由、求償內容、與 Anthropic 有何業務往來均未見報導，暫不推測性質（Google News/Knoxville News Sentinel）
