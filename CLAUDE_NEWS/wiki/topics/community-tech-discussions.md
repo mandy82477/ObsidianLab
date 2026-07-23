@@ -3,11 +3,11 @@
 **狀態：** ongoing
 **領域：** 🌐 社群
 **開始日期：** 2026-04-25
-**最後更新：** 2026-07-22
-**最後新聞更新：** 2026-07-22
+**最後更新：** 2026-07-23
+**最後新聞更新：** 2026-07-23
 
-> **最熱討論**（2026-07-22）
-> 今日新增四則條目：Show HN spaceprojectsim（自運行太空經濟模擬器，HN 101 分，本輪最高分且今日單一最高互動條目）以單平台高互動達收錄門檻；Orate（本地 TTS 佇列，HN 14 分）達低門檻；Browser Tools SDK（HN 11 分 + source_count=2）以跨來源達低門檻；Simon Willison 具名轉介 Nativ（Mac 本地執行 AI 模型）屬具名表態、無社群延燒。Chalk、Tokenmaxx、PMG、herdr 對抗審查、ESP32、Nura Dev 等條目分數與來源數均未達門檻，未收錄（詳見回報）。清理：三則 2026-06-30 的 ☄️閃現 條目（中國代理偵測、AI 人才論、Explore subagent 鎖定 Haiku）首見已逾 21 天，依保留規則自「熱門討論」表格移除（技術彙整原文保留）。額度焦慮系列仍為近期背景（詳見「熱門討論」對應列）。
+> **最熱討論**（2026-07-23）
+> 今日新增六則條目：Show HN Bento（單一 HTML 檔案封裝完整簡報應用含即時協作，HN 877 分、source_count=2）為今日社群互動最高的單一條目、遠超高門檻，非 Claude 專屬工具仍屬社群技術討論延伸；Anthropomorphism in Children's Interactions with LLM Chatbots（arxiv 系統性回顧，HN 31 分）達中門檻；AMD 對 Anthropic 最高 50 億美元投資案的 HN 討論（24 分）出現「ouroboros circle」等循環投資反諷質疑，商業事實已由商業記者記錄，本頁僅記社群懷疑論調；Simon Willison 具名轉介「Are AI labs pelicanmaxxing？」屬具名表態、無社群延燒；Reddit r/ClaudeAI 週熱門補記兩則 07-16 貼文（GPT-5.6/Opus 4.8/Grok 4.5 百則前端實測對照、AI 訓練資料涵蓋自身內容的心得討論）。Housecat、Millwright、Promptrack、TTFT benchmark 等多則 Show HN/Reddit 條目分數與來源數均未達門檻，未收錄（詳見回報）。清理：四則 2026-07-01 的 ☄️閃現 條目（隱寫術、成本 5x 暴漲、30 天自動刪除、穴居人模式）首見已逾 21 天，依保留規則自「熱門討論」表格移除（技術彙整原文與「Anthropic 透明度與信任赤字」彙整索引原文保留）。額度焦慮系列仍為近期背景（詳見「熱門討論」對應列）。
 
 ---
 
