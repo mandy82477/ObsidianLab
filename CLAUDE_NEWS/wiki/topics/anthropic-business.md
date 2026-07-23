@@ -3,11 +3,11 @@
 **狀態：** ongoing
 **領域：** 💼 商業
 **開始日期：** 2026-05-28
-**最後更新：** 2026-07-22
-**最後新聞更新：** 2026-07-22
+**最後更新：** 2026-07-23
+**最後新聞更新：** 2026-07-23
 
-> **最新動態**（2026-07-22）
-> 今日著作權和解案有具體執行細節浮現：逾 48.2 萬本受涵蓋書籍中約 **91%** 已由作者或出版商提出賠付申請，法官同時將集體訴訟律師費比例削減至 **6.8%**（原告律師 Justin Nelson 稱此為「史上最大宗已知著作權求償和解案」），英國出版商 **Bloomsbury** 確認將分得賠付款（Reuters、The Times、Research Information 多家媒體跟進 07-20 核准消息，詳見「財務狀況」表與時序）。同日新增兩起**獨立**法律事件：Reuters 與 Bloomberg Law 各自報導 Anthropic 遭指控**侵犯神經網路技術相關專利**（僅標題可用，原告與專利號未知）；Knoxville News Sentinel 報導**田納西大學對 Anthropic 提起訴訟**（僅標題可用，案由未知）。兩起訴訟均與著作權和解案無關，詳見「商業風險」表新增列。競品動態（中國 AI agent 於自主研究任務據稱超越 Claude Code；Claude 曾自稱為 Alibaba Qwen AI 引發蒸餾雙標批評）詳見 [[topics/competitor-landscape]]。
+> **最新動態**（2026-07-23）
+> 今日最重大商業事件為 **AMD 宣布對 Anthropic 投資最高 50 億美元**，雙方簽署晶片暨投資協議（Reuters／Hacker News 討論、WSJ 獨家、Yahoo Finance 三方同日報導同一事件），HN 留言以「ouroboros circle」（銜尾蛇循環）質疑晶片商與 AI 實驗室互相投資的可持續性；詳見「戰略合作」表新增列。同日 Anthropic Blog 公布 **Economic Futures Research Fund** 研究議程，承諾投入 **2 億美元**支持外部研究，聚焦勞工衝擊、AI 轉型輔助、所得支持現代化、工作者在 AI 成長中的持股五大方向（原文："We're committing $200 million to the fund..."）；另有性質不同的 Economic Index connector 產品曝光，僅標題可用。IPO 兆美元估值敘事持續發酵（SF Chronicle、24/7 Wall St. 標題層級報導，尚無新增查證數字），著作權和解案續有《哈利波特》系列出版商分潤細節浮現（The Guardian 等四媒體），Fortune 分析 Anthropic 與 SpaceX 支出如何在帳面上助 Google 締造史上獲利最高一季。Amazon 傳出逐步降低旗下 Alexa 對 Anthropic 高成本模型的依賴以削減支出，詳見 [[topics/enterprise-cost-management]]。競品定價比較（Cline vs Claude Code vs Copilot）詳見 [[topics/competitor-landscape]]。
 
 ---
 
@@ -87,6 +87,8 @@ Simon Willison（知名開發者博主）發表文章，認為 Anthropic 與 Ope
 
 | 訊號 | 說明 | 來源 |
 |------|------|------|
+| Economic Futures Research Fund：承諾投入 2 億美元支持外部研究 | Anthropic Blog 公布研究議程，聚焦勞工衝擊、AI 轉型輔助、所得支持現代化、工作者在 AI 成長中的持股五大方向；原文：「We're committing $200 million to the fund to support ambitious external research on interventions to prepare society for the economic impacts of AI.」**注意**：屬對外部研究的資助承諾，非公司內部融資或商業合作，性質與 Claude Corps（$1.5 億美元非營利培力）同屬經濟政策軟性佈局路線，但聚焦研究資助而非人才派遣（推論）；具體受助機構、審核機制未見報導細節 | Anthropic Blog，2026-07-23 |
+| 著作權和解案再添細節：《哈利波特》系列出版商將獲數百萬美元賠付 | The Guardian 報導《哈利波特》系列出版商為 15 億美元著作權集體訴訟和解案受益方之一，預期獲數百萬美元賠付；The Wenatchee World、Jurist.org、WXYZ Channel 7 同期跟進和解案後續報導。**注意**：原文未明確點名是否即為 07-22 已記錄之英國出版商 Bloomsbury，或美國《哈利波特》出版商 Scholastic，暫不逕自合併認定為同一實體，僅記錄為賠付細節的又一佐證 | The Guardian 等四媒體，2026-07-22～23 |
 | Max $200/月方案隱性補貼 17 倍 | token-xray 計算：$200/月實際提供相當於 $3,400 API 用量 | 社群計算，2026-05-28 |
 | $30,983 tokens on $200/mo | 重度用戶單月在 Max 方案下消耗相當 $30,983 計算資源 | tokenflex.ing 排行榜，2026-05-23 |
 | 定價強勢期 | 企業客戶即使面對成本上漲仍持續採用 | The Information，2026-05-13 |
@@ -103,7 +105,7 @@ Simon Willison（知名開發者博主）發表文章，認為 Anthropic 與 Ope
 
 | 風險 | 當前狀況 | 嚴重度 |
 |------|---------|--------|
-| 企業因成本退出 | Microsoft 6/21 加速退出（原訂 6/30）；Uber 警戒中 | ⚠️ 高 |
+| 企業因成本退出 | Microsoft 6/21 加速退出（原訂 6/30）；Uber 警戒中；Amazon 傳出逐步降低旗下 Alexa 對高成本模型依賴以削減支出（07-23，Business Insider，僅標題可用，詳見 [[topics/enterprise-cost-management]]）| ⚠️ 高 |
 | 雲端夥伴自研模型替代（推論，未證實）| Microsoft 傳出以自研模型逐步取代部分產品中的 OpenAI/Anthropic 模型以降成本（SiliconANGLE/Bloomberg 2026-07-07）；若屬實，依賴度收斂從編碼工具層擴大至底層模型層 | ⚠️ 中高 |
 | 補貼不可持續 | 17 倍補貼規模無法長期維持 | ⚠️ 中高 |
 | 競品分流 | OpenCode 157K 用戶；DeepSeek 低成本替代 | ⚠️ 中 |
