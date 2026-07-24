@@ -369,7 +369,15 @@ SOURCE_RE = re.compile(
     r"\s*$"
 )
 FOCUS_RE    = re.compile(r"^(?:-\s+)?\*\*(.+?)\*\*\s+(.*)")
+# 舊格式：今日聚焦行內直接嵌完整 URL，如 "（ref: https://...）"。
 FOCUS_REF_RE = re.compile(r"（ref:\s*(https?://[^\s（）)]+)[）)]")
+# 新格式（2026-07-24 起，見 digest.py::reformat_presentation）：行內只留編號
+# 引用 "[N]"，完整 URL 移到檔尾「今日聚焦參考連結」清單，須另外解析還原。
+FOCUS_NUM_RE = re.compile(r"\[(\d+)\]")
+FOCUS_REF_LIST_RE = re.compile(
+    r"今日聚焦參考連結[：:]\**\s*\n((?:\d+\.\s+\S+\s*\n?)+)"
+)
+FOCUS_REF_LIST_ITEM_RE = re.compile(r"^\d+\.\s+(\S+)\s*$", re.MULTILINE)
 SOURCE_TABLE_RE = re.compile(r"^\|\s*(.+?)\s*\|\s*(✅|❌)\s*\|\s*(\d+)\s*\|")
 
 
@@ -404,6 +412,7 @@ def parse_digest(f: Path) -> dict:
     current_section: str | None = None
     current_story: dict | None = None
     current_body: list[str] = []
+    focus_ref_nums: list[list[int]] = []  # 新格式 [N] 編號，索引對齊 result["focus"]
 
     def flush_story():
         nonlocal current_story, current_body
@@ -460,9 +469,12 @@ def parse_digest(f: Path) -> dict:
                 m = FOCUS_RE.match(line)
                 if m:
                     tag, text_raw = m.group(1).strip(), m.group(2).strip()
-                    ref_urls = FOCUS_REF_RE.findall(text_raw)   # list of all URLs
-                    text = FOCUS_REF_RE.sub("", text_raw).strip()
+                    ref_urls = FOCUS_REF_RE.findall(text_raw)  # 舊格式：行內完整 URL
+                    ref_nums = [int(n) for n in FOCUS_NUM_RE.findall(text_raw)]  # 新格式：[N] 編號
+                    text = FOCUS_REF_RE.sub("", text_raw)
+                    text = FOCUS_NUM_RE.sub("", text).strip()
                     result["focus"].append({"tag": tag, "text": text, "ref_urls": ref_urls})
+                    focus_ref_nums.append(ref_nums)
                 continue
 
             # story title line: **[Title](url)** (may be preceded by ⭐ or other chars)
@@ -490,6 +502,17 @@ def parse_digest(f: Path) -> dict:
                     current_body.append(line.strip())
 
     flush_story()
+
+    # ── 新格式：解析檔尾「今日聚焦參考連結」清單，把 [N] 編號還原成實際 URL ──
+    # 舊格式檔案沒有這份清單（FOCUS_REF_LIST_RE 找不到就整段跳過），focus_ref_nums
+    # 對應的 ref_nums 全空，等同無操作。
+    ref_list_m = FOCUS_REF_LIST_RE.search(raw)
+    if ref_list_m:
+        ref_list = FOCUS_REF_LIST_ITEM_RE.findall(ref_list_m.group(1))
+        for focus_item, nums in zip(result["focus"], focus_ref_nums):
+            for n in nums:
+                if 1 <= n <= len(ref_list):
+                    focus_item["ref_urls"].append(ref_list[n - 1])
 
     # preview = first top story title
     if result["topStories"]:

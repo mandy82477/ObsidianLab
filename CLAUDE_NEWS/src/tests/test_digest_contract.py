@@ -104,6 +104,57 @@ class TestOldBacktickSentimentStillSupported(unittest.TestCase):
         self.assertEqual(sentiment, "😊 正面")
 
 
+class TestFocusRefFormatCompat(unittest.TestCase):
+    """2026-07-24 呈現優化 a）：digest.py::reformat_presentation() 把 📌 今日聚焦
+    行內的 `（ref: URL）` 換成 `[N]` 編號引用，URL 移到檔尾「今日聚焦參考連結」
+    清單。news/*.md 是唯讀資料，兩種格式都可能存在，parse_digest() 必須兩者
+    都認得，且產出的 tag / text / ref_urls / focusTags 完全等價。
+
+    fixtures/focus_refs_new_format.md 不是手刻的——是拿
+    fixtures/focus_refs_old_format.md 實際跑一次
+    news_aggregator.digest.reformat_presentation() 產生的，保證兩份 fixture
+    描述的是同一份日報的新舊兩種呈現，不是兩份湊出來、可能悄悄跑偏的樣本。
+    """
+
+    def test_new_format_focus_matches_old_format(self):
+        old = build_web.parse_digest(FIXTURES_DIR / "focus_refs_old_format.md")
+        new = build_web.parse_digest(FIXTURES_DIR / "focus_refs_new_format.md")
+
+        self.assertEqual(len(new["focus"]), len(old["focus"]))
+        for fo, fn in zip(old["focus"], new["focus"]):
+            self.assertEqual(fn["tag"], fo["tag"])
+            self.assertEqual(fn["text"], fo["text"])
+            self.assertEqual(sorted(fn["ref_urls"]), sorted(fo["ref_urls"]))
+
+    def test_new_format_focus_text_has_no_bracket_markers(self):
+        new = build_web.parse_digest(FIXTURES_DIR / "focus_refs_new_format.md")
+        for f in new["focus"]:
+            self.assertNotIn("[1]", f["text"])
+            self.assertNotRegex(f["text"], r"\[\d+\]")
+
+    def test_new_format_story_focus_tags_match_old_format(self):
+        old = build_web.parse_digest(FIXTURES_DIR / "focus_refs_old_format.md")
+        new = build_web.parse_digest(FIXTURES_DIR / "focus_refs_new_format.md")
+        for sec in ("topStories", "techUpdates", "mediaReports", "discussions", "billing"):
+            old_tags = [s["focusTags"] for s in old[sec]]
+            new_tags = [s["focusTags"] for s in new[sec]]
+            self.assertEqual(new_tags, old_tags, f"section={sec}")
+
+    def test_new_format_selection_threshold_not_misparsed_as_focus_item(self):
+        # 選材門檻 block now lives at the tail of the file, outside any
+        # SECTION_EMOJI heading — it must not leak into result["focus"] (it
+        # never did even in the old in-section placement, since its
+        # sub-bullets use "**[tag]**：" with no space, which FOCUS_RE
+        # requires; this locks in the same guarantee post-relocation).
+        new = build_web.parse_digest(FIXTURES_DIR / "focus_refs_new_format.md")
+        self.assertEqual(len(new["focus"]), 2)
+        tags = [f["tag"] for f in new["focus"]]
+        self.assertNotIn("[新工具]", tags)
+        self.assertNotIn("[風險警示]", tags)  # real focus item uses [持續追蹤], not this
+        all_text = "".join(f["text"] for f in new["focus"])
+        self.assertNotIn("門檻說明", all_text)
+
+
 class TestSearchIndexIncludesBody(unittest.TestCase):
     """search-index.json used to only index 今日聚焦 text + story titles —
     a keyword that only appears in a story's body (never in its title) was
