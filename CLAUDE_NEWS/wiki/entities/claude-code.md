@@ -4,17 +4,17 @@
 **狀態：** active
 **領域：** 🛠️ 工具/功能
 **首次出現：** 2025（正式推出）
-**最後更新：** 2026-07-23
-**最後新聞更新：** 2026-07-23
+**最後更新：** 2026-07-24
+**最後新聞更新：** 2026-07-24
 
-> **最新版本動態**（2026-07-22）
-> **v2.1.218**（2026-07-22）：`/code-review` 改為以**背景 subagent** 執行，審查工作不再佔用對話內容，並維持 stacked slash commands 作為審查對象；同版新增螢幕報讀軟體相關無障礙改善，原文於「Added screen-reade[r]…」處截斷，具體對應範圍未知，暫不視為 issue #11002（`--screen-reader` 模式功能請求）的正式回應；已提報 [[feature-radar]]（既有 `/code-review` 功能更新）。同日 anthropic-sdk-python v0.118.0 新增 **Managed Agents** 相關 API 支援（見 [[entities/managed-agents]]）、anthropic-sdk-typescript sdk-v0.113.0 新增 API 支援但原文於「add support」處截斷、具體項目未知，兩者為純 SDK 更新未各自另計 feature-radar 條目。前一重大異動為 v2.1.217（2026-07-21，表情符號 shortcode 自動完成）與 v2.1.215（2026-07-19）⚠️ **行為變更**：Claude 不再自動執行 `/verify` 與 `/code-review`，須手動呼叫指令才會觸發。GitHub Issues 高互動更新：Session 額度續行請求（issue #13354，71 則留言、182 個讚，本日互動量最高）、VS Code 停用自動附加設定請求（issue #24726，61 則留言、189 個讚）皆為既有已知問題數據更新；新增 7 則已知問題：macOS Filesystem extension `tools/call` 未派發（issue #80002）、排程 routine 對 custom connector 呼叫 MCP 工具遭要求 approval（issue #61015，回報者指出約 2026-05-20 出現回歸）、無法複製 Claude Code 輸出文字（issue #62699）、`bypassPermissions` 模式未真正跳過權限檢查的 META 彙整回報（issue #39523）、`autoMemoryEnabled=false` 未抑制約 11–16k token 記憶體前導文字（issue #63903）、API 連線中途關閉頻繁發生（issue #69415）、VS Code 擴充套件請求支援 `/btw` 指令（issue #37323）（詳見「已知問題」）。另有 Startup Fortune／Cult of Mac 兩家媒體（連同 07-21 9to5Mac／MacRumors）同步報導 Claude Code Mac app 新增 iOS App 即時建置／測試（Apple 模擬器整合）功能，仍無官方版本號或公告佐證，維持待核實、未收錄 feature-radar。infoq.com 報導 Anthropic 說明如何在 Web、Code、Cowork 三介面圍欄化（contain）Claude 行為，僅標題可用，細節待核實，與既有沙盒／`hard_deny` 安全機制主題相關。MarkTechPost 報導 Anthropic 發布 **Claude Security** 終端機內多代理漏洞掃描外掛 Beta 版，與既有 Enterprise 版 Claude Security 定位關係待查證，見 [[entities/claude-security]]。TestingCatalog 報導 Claude 語音模式（Voice Mode）將新增 Opus／Sonnet 模型選項，僅標題可用，細節待核實。Anthropic Status 於 2026-07-20～07-21 陸續發生多起服務事件，Opus 4.5／Fable 5 誤判耗點（07-20）、Opus 4.8／Haiku 4.5 錯誤率升高（07-20～07-21）皆已同日解決，唯 Fable 5 錯誤率升高（07-21 11:47 UTC）截至彙整時仍在監控中（詳見「已知問題」🌐 服務穩定性）。
+> **最新版本動態**（2026-07-24）
+> 今日無新版 Claude Code CLI 發布。SDK 端 anthropic-sdk-python v0.119.0、anthropic-sdk-typescript sdk-v0.114.0（皆 2026-07-23）新增 API stop reason **`model_continue`**（TypeScript 版 changelog 於「add new sto[p reason]」處截斷，研判為同一異動的對應版本）；已提報 [[feature-radar]] 新條目。The Verge、TechCrunch、9to5Mac、Engadget、the-decoder.com、SQ Magazine 六家媒體同步報導 **Claude 語音模式（Voice Mode）全面開放 Opus／Sonnet 模型選擇**，昨日（07-23）TestingCatalog 僅標題可用的預告報導今日獲跨媒體確認，已提報 [[feature-radar]] 新條目。Tech Times 報導確認 v2.1.216（07-20）修復解決 Auto Mode 長會話中持續累積的**二次方（quadratic）效能衰退**問題，該功能已列入 feature-radar，建議熱度 +1 格。Anthropic Status 今日發生 Opus 4.8 錯誤率升高事件（09:09 UTC 調查中 → 09:35 監控中 → 10:22 UTC 確認解決），同日解決，詳見「已知問題」🌐 服務穩定性。GitHub Issues 互動數更新：Claude Desktop/Cowork 缺 RTL 排版支援（issue #38005，34→40 則留言、93→105 個讚）、API Connection closed mid-response（issue #69415，32→33 則留言）、macOS Filesystem extension `tools/call` 未派發（issue #80002，59→61 則留言）；新增 1 則已知問題：Windows 11 Pro **CoworkVMService** 因簽章驗證初始化失敗無法啟動（issue #29941，39 則留言）。Reddit 使用者反映 **Claude Security** 外掛（Beta）目前無 Workflow tool 存取權限，單一來源待查證，見 [[entities/claude-security]]。IT Brief Australia 報導「Agent Island」工具更新後可讓 Claude Code 狀態資訊保留在本機，僅標題可用，是否為官方或第三方工具待查證，暫不收錄。
 
 ---
 
 ## 現況
 
-**最新版本動態：** 最新版本 **v2.1.218**（2026-07-22）將 `/code-review` 改為以背景 subagent 執行，不再佔用對話內容，並新增螢幕報讀軟體相關無障礙改善（細節截斷未知）；已提報 [[feature-radar]]。前一重大異動為 **v2.1.217**（2026-07-21，表情符號 shortcode 自動完成）與 **v2.1.215**（2026-07-19）⚠️ **行為變更**：Claude 不再自動執行 `/verify` 與 `/code-review` 兩項技能，須由使用者手動呼叫指令才會觸發，依賴自動驗證/審查的既有工作流需改為顯式呼叫，無過渡期即刻生效。近期各版本（含 v2.1.216 `sandbox.filesystem.disabled` 設定、v2.1.212 `/fork`／`/subtask` Breaking change）的指令、旗標與設定項異動，詳見下方「最新版本」表格與「歷史記錄」。
+**最新版本動態：** 最新版本 **v2.1.218**（2026-07-22）將 `/code-review` 改為以背景 subagent 執行，不再佔用對話內容，並新增螢幕報讀軟體相關無障礙改善（細節截斷未知）；已提報 [[feature-radar]]。前一重大異動為 **v2.1.217**（2026-07-21，表情符號 shortcode 自動完成）與 **v2.1.215**（2026-07-19）⚠️ **行為變更**：Claude 不再自動執行 `/verify` 與 `/code-review` 兩項技能，須由使用者手動呼叫指令才會觸發，依賴自動驗證/審查的既有工作流需改為顯式呼叫，無過渡期即刻生效。近期各版本（含 v2.1.216 `sandbox.filesystem.disabled` 設定、v2.1.212 `/fork`／`/subtask` Breaking change）的指令、旗標與設定項異動，詳見下方「最新版本」表格與「歷史記錄」。**2026-07-23～07-24 新增：** SDK 新增 API stop reason `model_continue`（anthropic-sdk-python v0.119.0／anthropic-sdk-typescript sdk-v0.114.0）；六家媒體同步確認 **語音模式（Voice Mode）全面開放 Opus／Sonnet 模型選擇**；Tech Times 報導確認 v2.1.216 修復的長會話二次方效能衰退問題實際生效，兩者皆已提報 [[feature-radar]]。
 
 **產品定位：** Claude Code 是 Anthropic 的 AI 編碼 CLI 工具，核心能力已從程式碼助理擴展為具備全桌面自動化、多代理管理（Managed Agents）、MCP Server 整合、Hooks 機制、AI 安全審查，以及可串接 1Password 憑證庫安全登入網站（密碼不外流至 Claude／Anthropic，2026-07-17 多家媒體報導，官方技術細節待補）的完整 agent 開發平台；GitHub Stars 達 **131,000+**。
 
@@ -128,7 +128,7 @@
 
 > 2026-07-13 集中爆發：連線認證（#5826 為當日全站互動最高條目）、token 生命週期（#5706）與計費透明度（#1785）三個面向同週同時升溫，加上既有的設定熱重載與 token 消耗問題，MCP 作為 Claude Code 核心整合機制的成熟度缺口成形。安全面的 Gmail MCP connector 黑暗設計模式批評另見「🛡️ 安全與隱私」分組。
 
-- 🔴 **未修復**｜**macOS：Claude Desktop 從未對第一方 Filesystem extension 送出 `tools/call`（`tools/list` 成功、任何 log 中皆無 `tools/call`）（GitHub issue #80002，累積 59 則留言、27 個讚，首見 2026-07-23）**：使用者回報 macOS 版 Claude Desktop 與官方第一方 Filesystem extension 整合時，`tools/list` 呼叫可正常成功，但後續實際執行工具時從未送出對應的 `tools/call`，任何 log 中皆查無紀錄；官方尚未回應。
+- 🔴 **未修復**｜**macOS：Claude Desktop 從未對第一方 Filesystem extension 送出 `tools/call`（`tools/list` 成功、任何 log 中皆無 `tools/call`）（GitHub issue #80002，累積 61 則留言、27 個讚，首見 2026-07-23，2026-07-24 留言數更新）**：使用者回報 macOS 版 Claude Desktop 與官方第一方 Filesystem extension 整合時，`tools/list` 呼叫可正常成功，但後續實際執行工具時從未送出對應的 `tools/call`，任何 log 中皆查無紀錄；官方尚未回應。
 - 🔴 **未修復**｜**排程 routine 對 custom connector 呼叫任何 MCP 工具皆顯示「MCP tool call requires approval」（GitHub issue #61015，累積 40 則留言、52 個讚，首見 2026-07-23，回報者指出約 2026-05-20 出現回歸）**：使用者回報排定執行的 routine 在呼叫 custom connector 上的任何 MCP 工具時，一律被要求「MCP tool call requires approval」而無法自動執行，回報者指出此問題約於 2026-05-20 開始出現，屬回歸性問題；官方尚未回應。
 - 🔴 **未修復**｜**功能請求：內建 Slack MCP connector 支援連結多個 workspace（GitHub Issues，累積 33 則留言、69 個讚，2026-07-19）**：內建 Slack MCP connector 目前每個 Claude 帳號僅支援連結一個 workspace，UI 或設定皆無法新增第二個 workspace；使用者呼籲支援多 workspace 切換；官方尚未回應或排入路線圖。
 - 🔴 **未修復**｜**自建 OAuth 2.1 認證 MCP Server 無法連線 Claude Desktop（GitHub issue #5826，累積 66 則留言、71 個讚，2026-07-13 為本日互動最高條目）**：使用者回報自建 OAuth 2.1 認證的 MCP 伺服器在 Claude Code CLI 上運作良好，但 Claude Desktop 完全無法連線，不論走 OAuth 2.1 或 SSE 皆然；官方尚未回應。
@@ -138,7 +138,7 @@
 - 🔴 **未修復**｜**MCP servers/hooks/plugins 設定變更需完整重啟 session（GitHub issue #24057，累積 30 則留言、15 個讚，2026-07-05）**：目前修改 MCP server、hooks 或 plugin 設定後必須重啟整個 session 才會生效，無法熱重載，中斷工作流程並遺失既有 context；社群呼籲改為設定變更後自動重載，官方尚未回應。
 - 🔴 **未修復**｜**MCP Token 消耗問題**：多個 MCP Server 併用時，每條訊息可能消耗 20,000+ tokens
 
-### 🔌 平台相容性（39 條未修復、1 條待查證）
+### 🔌 平台相容性（40 條未修復、1 條待查證）
 
 - 🔴 **未修復**｜**功能請求：VS Code 擴充套件支援終端機 CLI 已有的 `/btw` 指令（GitHub issue #37323，累積 31 則留言、196 個讚，首見 2026-07-23）**：使用者呼籲 VS Code 擴充套件比照終端機 CLI 版本支援 `/btw` 指令；官方尚未回應或排入路線圖。
 - 🔴 **未修復**｜**GitHub connector 可連結帳號內所有 repository 卻無法讀取任何內容，回報為近期功能退化（GitHub Issues，累積 37 則留言、33 個讚，2026-07-18）**：使用者回報 GitHub connector 雖能成功連結帳號內所有公開與私有 repository，Claude 卻無法讀取任何內容，帳號全域皆受影響（公開與私有 repo 皆然）；標題明確標註為近期發生的功能退化（regression）；與既有「GitHub Connector 已在 Claude Desktop 連結卻未被識別」（issue #32479）同屬 GitHub connector 可靠性問題但現象不同，暫分列追蹤；官方尚未回應。
@@ -160,7 +160,8 @@
 - 🔴 **未修復**｜**VSCode 擴充套件 `ide_selection` 缺失、`ide_opened_file` 回報錯誤（GitHub issue #8451，累積 48 則留言、35 個讚，2026-07-10）**：VSCode 擴充套件未正確回報 `ide_selection`，且 `ide_opened_file` 欄位回傳錯誤檔案資訊，影響依賴這些欄位判斷編輯器狀態的工作流；官方尚未回應。
 - 🔴 **未修復**｜**GitHub Connector 已在 Claude Desktop 連結卻未被識別（GitHub issue #32479，累積 71 則留言、120 個讚，2026-07-14）**：使用者於 Claude Desktop 完成 GitHub Connector 連結授權後，Claude 仍無法辨識該連結狀態，導致依賴 GitHub 存取的工作流無法使用；官方尚未回應。
 - 🔴 **未修復**｜**VSCode 擴充套件 UI 確認變更時未顯示 Edit 預覽/diff（GitHub issue #8660，累積 52 則留言、82 個讚，2026-07-08）**：在 VSCode extension 中確認變更時，Edit 預覽/diff 畫面未正確顯示，使用者難以在套用前檢視實際異動內容；官方尚未回應。
-- 🔴 **未修復**｜**Claude Desktop/Cowork 缺 RTL（希伯來/阿拉伯文）排版支援（GitHub issue #38005，累積 34 則留言、93 個讚，2026-07-07，功能請求）**：使用者要求 Claude Desktop 與 Cowork 介面支援 RTL（right-to-left）排版，目前不支援希伯來文、阿拉伯文等 RTL 語言的正確顯示；官方尚未回應。
+- 🔴 **未修復**｜**Claude Desktop/Cowork 缺 RTL（希伯來/阿拉伯文）排版支援（GitHub issue #38005，累積 40 則留言、105 個讚，首見 2026-07-07，2026-07-23 互動數更新，功能請求）**：使用者要求 Claude Desktop 與 Cowork 介面支援 RTL（right-to-left）排版，目前不支援希伯來文、阿拉伯文等 RTL 語言的正確顯示；官方尚未回應。
+- 🔴 **未修復**｜**Windows 11 Pro：CoworkVMService 因「signature verification initialization failed: failed to get service executable path」無法啟動（GitHub issue #29941，累積 39 則留言，首見 2026-07-23）**：使用者回報 Windows 11 Pro 上 CoworkVMService 因簽章驗證初始化失敗（找不到服務執行檔路徑）而無法啟動，導致 Cowork 功能在該平台完全無法使用；官方尚未回應。
 - 🔴 **未修復**｜**進程記憶體洩漏，增長至 120GB+ 遭 OOM Killed（GitHub issue #4953，累積 97 則留言、73 個讚，2026-07-06 首次記錄，2026-07-21 留言數更新）**：使用者回報 Claude Code 進程會持續增長至 120GB 以上記憶體，最終遭系統 OOM killed，屬嚴重穩定性缺陷；長時間執行或大型專案場景風險較高，官方尚未回應或說明成因。
 - 🔴 **未修復**｜**macOS 持續性 ECONNRESET 連線錯誤（GitHub issue #5674，累積 47 則留言、44 個讚，2026-07-06）**：僅在 macOS 上出現的持續性連線中斷問題（ECONNRESET），Windows 環境未見同樣狀況，疑為平台特定的網路層處理差異；官方尚未回應。
 - 🔴 **未修復**｜**Linux 上持續產生 Windows 換行（CRLF）檔案（GitHub issue #2805，累積 39 則留言、32 個讚，2026-07-06）**：即便 CLAUDE.md 已明確指示使用 LF 換行，Claude Code 在 Ubuntu Linux 上仍持續產生 CRLF 換行的檔案，跨平台團隊協作時易引發不必要的 diff 雜訊；官方尚未回應。
@@ -181,10 +182,11 @@
 - 🔴 **未修復**｜**帳號限制後申訴表單重新導向迴圈（GitHub issue #62503，累積 31 則留言、5 個讚，2026-07-07）**：帳號遭限制的使用者嘗試提交申訴表單時陷入重新導向迴圈，無法完成申訴流程，官方尚未回應。
 - 🔴 **未修復**｜**功能請求聚集：跨平台支援需求未滿足**：多項高反應數 feature request 顯示使用者對跨平台支援的強烈需求——官方 Linux（Ubuntu LTS / Debian）Desktop build（[issue #65697](https://github.com/anthropics/claude-code/issues/65697)，累積反應 651）、Desktop 於 Windows 上改用 WSL 執行指令的選項（[issue #12506](https://github.com/anthropics/claude-code/issues/12506)，累積反應 134）、Desktop 與 CLI 之間同步 Skills（[issue #20697](https://github.com/anthropics/claude-code/issues/20697)，累積反應 127）；均為社群高投票 feature request，官方尚未排入路線圖。多帳號管理相關訴求已獨立整併至「👤 帳號管理」分組
 
-### 🌐 服務穩定性（16 條已修復、5 條未修復、1 條待查證）
+### 🌐 服務穩定性（17 條已修復、5 條未修復、1 條待查證）
 
-> 2026-07-15～07-17 為近月密度最高的一段：Anthropic Status 三天內累計 9 起獨立事件（下方第 3～11 條），密度明顯高於近月平均；07-19 彙整時對照 07-18 日報確認全數已同日解決，07-17 那起（原 07-17 彙整時仍標記「修復實施中」）實際已於 12:21 UTC 解決。GV Wire 報導曾引用 Downdetector 錯誤回報數上升作為外部佐證，顯示使用者端在修復完成前確實感受到服務品質下降。2026-07-20～07-21 又出現一波獨立事件（下方前 5 條），多數已同日或次日解決，唯 07-21 的 Fable 5 事件截至彙整時仍在監控中。
+> 2026-07-15～07-17 為近月密度最高的一段：Anthropic Status 三天內累計 9 起獨立事件（下方第 3～11 條），密度明顯高於近月平均；07-19 彙整時對照 07-18 日報確認全數已同日解決，07-17 那起（原 07-17 彙整時仍標記「修復實施中」）實際已於 12:21 UTC 解決。GV Wire 報導曾引用 Downdetector 錯誤回報數上升作為外部佐證，顯示使用者端在修復完成前確實感受到服務品質下降。2026-07-20～07-21 又出現一波獨立事件（下方前 5 條），多數已同日或次日解決，唯 07-21 的 Fable 5 事件截至彙整時仍在監控中；2026-07-24 再度出現 Opus 4.8 錯誤率升高事件，同日解決。
 
+- ✅ **已修復（同日解決）**｜**Anthropic Status：Opus 4.8 錯誤率升高（2026-07-24 09:09 UTC 調查中 → 09:35 UTC 監控中 → 10:22 UTC 確認解決）**：與先前 07-17、07-20 的 Opus 4.8 錯誤率事件為不同批次的獨立事故。[來源](https://status.claude.com/incidents/0lbk5m7mbqk5)
 - 🔴 **未修復（監控中，尚未見「已解決」時間戳）**｜**Anthropic Status：Fable 5 錯誤率升高（2026-07-21 11:47 UTC 起）**：狀態頁標記「Monitoring - A fix has been implemented and we are monitoring the results」，套用修復後仍在觀察階段，尚未確認完全解決；與 07-17 及下方 07-20 的 Fable 5 事件為不同批次的獨立事故。[來源](https://status.claude.com/incidents/lw0sb1srtznh)
 - ✅ **已修復（同日解決）**｜**Anthropic Status：Haiku 4.5 錯誤率升高（2026-07-21 08:53 UTC 通報並確認解決）**。[來源](https://status.claude.com/incidents/v35b71rthzhp)
 - ✅ **已修復（同日解決）**｜**Anthropic Status：Opus 4.8 錯誤率升高（2026-07-20 16:16 UTC 通報並確認解決）**：與同日稍早的 Opus 4.5 錯誤率事件（見下）為不同批次的獨立事故。[來源](https://status.claude.com/incidents/4n0mmv2v41rf)
@@ -203,7 +205,7 @@
 - 🔴 **未修復**｜**OAuth 登入逾時失敗，`auth.anthropic.com` 網域無法解析（GitHub issue #33238，累積 153 則留言、47 個讚，2026-07-14 首次記錄，2026-07-21 留言數更新）**：使用者回報 Claude Code OAuth 登入逾時失敗，`auth.anthropic.com` 網域完全無法透過 DNS 解析，導致使用者完全無法完成驗證流程；官方尚未回應。
 - 🔴 **未修復**｜**claude.ai visualize 功能故障，claudemcpcontent.com 無法連線（DNS_PROBE_FINISHED_NXDOMAIN）（GitHub issue #34820，累積 94 則留言、39 個讚，2026-07-10）**：使用者回報 claude.ai 的 visualize 功能故障，依賴的 claudemcpcontent.com 網域無法解析（DNS 錯誤）；官方尚未回應。
 - 🔴 **未修復**｜**API Error: 串流閒置逾時，僅收到部分回應（GitHub issue #46987，累積 184 則留言、197 個讚，2026-07-09）**：使用者回報今日多次遇到串流閒置逾時（stream idle timeout）的 API 錯誤，僅收到部分回應即中斷；官方尚未回應或說明成因。
-- 🔴 **未修復**｜**API Error: Connection closed mid-response——頻繁發生到讓 Claude Code 幾乎無法用於任何任務（GitHub issue #69415，累積 32 則留言、69 個讚，首見 2026-07-23）**：使用者回報連線在回應中途遭關閉（Connection closed mid-response）的 API 錯誤發生頻率極高，嚴重到使 Claude Code 幾乎無法用於任何任務；與既有「串流閒置逾時」（issue #46987）同屬串流連線可靠性問題但錯誤訊息不同，暫分列追蹤；官方尚未回應。
+- 🔴 **未修復**｜**API Error: Connection closed mid-response——頻繁發生到讓 Claude Code 幾乎無法用於任何任務（GitHub issue #69415，累積 33 則留言、69 個讚，首見 2026-07-23，2026-07-24 留言數更新）**：使用者回報連線在回應中途遭關閉（Connection closed mid-response）的 API 錯誤發生頻率極高，嚴重到使 Claude Code 幾乎無法用於任何任務；與既有「串流閒置逾時」（issue #46987）同屬串流連線可靠性問題但錯誤訊息不同，暫分列追蹤；官方尚未回應。
 - ✅ **已修復（服務已恢復）**｜**Claude API / Claude Code 529 過載（2026-06-21 至 06-22 多波中斷）**：Anthropic 確認 Claude API 與 Claude Code 的 Opus 及 Sonnet 模型發生部分服務中斷，Max plan 用戶反映第一條 prompt 即觸發 529 Overloaded 錯誤，影響持續約 90 分鐘後於 UTC 19:34 恢復服務；06-22 又發生新一波激增，確認受影響模型：Opus 4.8、Opus 4.7、Opus 4.6、Sonnet 4.6；CyberSecurityNews 等多家媒體追蹤報導（見 [HN 討論](https://news.ycombinator.com/item?id=48624168)）
 - ✅ **已修復（服務已恢復）**｜**Anthropic API 大規模 500 Internal Server Error**（2026-05-16 UTC 18:08）：Anthropic 官方狀態頁確認多模型請求出現「Elevated error rates」，Claude Code 使用者陸續回報 500 錯誤，為近期少見的多模型服務中斷事件，影響範圍跨越多個模型；GitHub Issue #59743 有大量開發者回報。
 - ❓ **待查證（2026-04-27 指控，至今無後續）**｜**版本管理不透明**：執行 `claude update` 後版本從 2.1.120 降回 2.1.119，疑似靜默撤版，官方 changelog 與索引資訊不一致
@@ -220,13 +222,15 @@
 
 | 版本 | 日期 | 重點 |
 |------|------|------|
+| **anthropic-sdk-python v0.119.0** | 2026-07-23 | Features：新增 API stop reason **`model_continue`**（見 [Release](https://github.com/anthropics/anthropic-sdk-python/releases/tag/v0.119.0)）|
+| **anthropic-sdk-typescript sdk-v0.114.0** | 2026-07-23 | Features：新增 API 支援，changelog 於「add new sto[p reason]」處截斷，研判與同日 Python SDK 的 `model_continue` stop reason 為同一異動（見 [Release](https://github.com/anthropics/anthropic-sdk-typescript/releases/tag/sdk-v0.114.0)）|
 | **v2.1.218** | 2026-07-22 | 將 `/code-review` 改為以**背景 subagent** 執行，審查工作不再佔用對話內容，維持 stacked slash commands 作為審查對象；新增螢幕報讀軟體相關無障礙改善，官方 changelog 於「Added screen-reade[r]…」處截斷，具體對應範圍未知（見 [Release](https://github.com/anthropics/claude-code/releases/tag/v2.1.218)）|
 | **anthropic-sdk-python v0.118.0** | 2026-07-22 | Features：新增 **Managed Agents** 相關 API 支援（見 [[entities/managed-agents]]，見 [Release](https://github.com/anthropics/anthropic-sdk-python/releases/tag/v0.118.0)）|
 | **anthropic-sdk-typescript sdk-v0.113.0** | 2026-07-22 | Features：新增 API 支援，changelog 於「add support」處截斷，具體項目未知（見 [Release](https://github.com/anthropics/anthropic-sdk-typescript/releases/tag/sdk-v0.113.0)）|
 | **v2.1.217** | 2026-07-21 | 新增 prompt input 表情符號 shortcode 自動完成：輸入 `:heart:` 插入 ❤️，或輸入 `:hea` 顯示建議清單，可透過 `emojiCompletionEnabled` 設定關閉；官方 changelog 另提及新增警告訊息，原文於此處截斷，具體內容未知（見 [Release](https://github.com/anthropics/claude-code/releases/tag/v2.1.217)）|
 | **anthropic-sdk-python v0.117.1** | 2026-07-21 | Bug Fixes：修復 AWS 憑證處理邏輯（handle credentials correctly），純修正無使用者端功能異動（見 [Release](https://github.com/anthropics/anthropic-sdk-python/releases/tag/v0.117.1)）|
 | **anthropic-sdk-typescript sdk-v0.112.5** | 2026-07-21 | Chores：新增 API 支援項目，原文於此處截斷，屬內部維護性更新（見 [Release](https://github.com/anthropics/anthropic-sdk-typescript/releases/tag/sdk-v0.112.5)）|
-| **v2.1.216** | 2026-07-20 | 新增 `sandbox.filesystem.disabled` 設定：可在維持網路出口控管（network egress control）的同時跳過檔案系統隔離；修復長會話中訊息正規化（message normalization）造成的效能退化問題（見 [Release](https://github.com/anthropics/claude-code/releases/tag/v2.1.216)）|
+| **v2.1.216** | 2026-07-20 | 新增 `sandbox.filesystem.disabled` 設定：可在維持網路出口控管（network egress control）的同時跳過檔案系統隔離；修復長會話中訊息正規化（message normalization）造成的效能退化問題；Tech Times（2026-07-23）報導確認此修復解決了 Auto Mode 最長工作階段中持續累積的二次方（quadratic）效能衰退問題（見 [Release](https://github.com/anthropics/claude-code/releases/tag/v2.1.216)）|
 | **anthropic-sdk-typescript v0.112.4** | 2026-07-20 | Bug Fixes：修復 AWS 相關欄位保留邏輯（preserve AWS...），純修正無使用者端功能異動（見 [Release](https://github.com/anthropics/anthropic-sdk-typescript/releases/tag/sdk-v0.112.4)）|
 | **v2.1.215** | 2026-07-19 | ⚠️ **行為變更**：Claude 不再自動執行 `/verify` 與 `/code-review` 兩項技能，須由使用者手動呼叫 `/verify` 或 `/code-review` 才會觸發；依賴自動驗證/審查的既有工作流需改用顯式呼叫，無過渡期即刻生效（見 [Release](https://github.com/anthropics/claude-code/releases/tag/v2.1.215)）|
 | **v2.1.214** | 2026-07-18 | 修復 single-segment `dir/**` allow 規則（如 `Edit(src/**)`）誤自動核准樹狀結構中任意層級 `dir/` 目錄寫入的問題（原本應僅限 `<cwd>/dir`），並修復另一項相關權限問題（原文於此處被截斷，細節未知）；純安全性修正，無新指令/旗標（見 [Release](https://github.com/anthropics/claude-code/releases/tag/v2.1.214)）|
@@ -354,6 +358,7 @@
 
 ## 參考來源
 
+- [[news/2026-07-24]]
 - [[news/2026-07-22]]
 - [[news/2026-07-21]]
 - [[news/2026-07-20]]
@@ -386,6 +391,7 @@
 
 | 日期 | 事件 |
 |------|------|
+| 2026-07-24 | **今日彙整**：SDK 新增 API stop reason `model_continue`（anthropic-sdk-python v0.119.0、anthropic-sdk-typescript sdk-v0.114.0，皆 2026-07-23）；已提報 [[feature-radar]]。The Verge、TechCrunch、9to5Mac、Engadget、the-decoder.com、SQ Magazine 六家媒體同步報導 **Claude 語音模式（Voice Mode）全面開放 Opus／Sonnet 模型選擇**，昨日 TestingCatalog 預告報導今日獲跨媒體確認，已提報 feature-radar 新條目。Tech Times 報導確認 v2.1.216（07-20）修復解決 Auto Mode 長會話持續累積的二次方效能衰退問題，屬已追蹤功能的正面驗證，建議 feature-radar 熱度 +1 格。Anthropic Status：Opus 4.8 錯誤率升高（09:09 UTC 調查中，10:22 UTC 確認解決，同日修復）。新增已知問題 1 則：Windows 11 Pro CoworkVMService 簽章驗證初始化失敗無法啟動（issue #29941，39 則留言）；既有已知問題互動數更新：RTL 排版請求（issue #38005，34→40 則留言、93→105 個讚）、API Connection closed mid-response（issue #69415，32→33 則留言）、macOS Filesystem extension tools/call 未派發（issue #80002，59→61 則留言）。Reddit 使用者反映 Claude Security 外掛（Beta）無 Workflow tool 存取權限（單一來源待查證），見 [[entities/claude-security]]。IT Brief Australia 報導「Agent Island」工具更新讓 Claude Code 狀態資訊保留在本機，僅標題可用，是否為官方產物待查證，暫未收錄。 |
 | 2026-07-22 | **v2.1.217**：新增 prompt input 表情符號 shortcode 自動完成（`:heart:` 插入 ❤️、`:hea` 顯示建議清單），可透過 `emojiCompletionEnabled` 設定關閉；官方 changelog 另提及新增警告訊息，原文截斷細節未知；已提報 [[feature-radar]] 新增條目。同日 anthropic-sdk-python v0.117.1（Bug Fixes：修復 AWS 憑證處理邏輯）、anthropic-sdk-typescript sdk-v0.112.5（Chores，原文截斷）發布，皆純修正/內部維護未進 feature-radar。**v2.1.218**（同日發布，2026-07-23 彙整時補記）：`/code-review` 改為以背景 subagent 執行，不再佔用對話內容，維持 stacked slash commands 為審查對象；新增螢幕報讀軟體相關無障礙改善，原文於「Added screen-reade[r]…」處截斷細節未知；同日 anthropic-sdk-python v0.118.0 新增 Managed Agents 相關 API 支援（見 [[entities/managed-agents]]）、anthropic-sdk-typescript sdk-v0.113.0 新增 API 支援但原文於「add support」處截斷。GitHub Issues 高互動更新：Remote Control 自動重連失效（issue #34255，56→57 則留言、97→99 個讚）、Thinking summaries 於 Opus 4.7 消失（issue #49268，新增留言數 49 則，讚數持平 78）、`--screen-reader` 無障礙模式功能請求（issue #11002，58→63 則留言，讚數持平 38）皆為既有已知問題互動數更新。9to5Mac／MacRumors，及 07-23 彙整時再獲 Startup Fortune／Cult of Mac 兩家媒體同步報導稱 Claude Code Mac app 新增 iOS App 即時建置／測試功能（於 Apple 模擬器中），四家媒體同步但無官方 GitHub release 或 blog 公告佐證具體版本或發布管道，列為待核實、未收錄 feature-radar。infoq.com 報導 Anthropic 說明如何在 Web、Code、Cowork 三介面圍欄化（contain）Claude 行為，僅標題可用，細節待核實，與既有沙盒／`hard_deny` 安全機制主題相關。 |
 | 2026-07-23 | **今日彙整**：MarkTechPost 報導 Anthropic 發布 Claude Security 終端機內多代理漏洞掃描外掛 Beta 版，與既有 Enterprise 版 Claude Security 定位關係待查證，見 [[entities/claude-security]]；TestingCatalog 報導 Claude 語音模式（Voice Mode）將新增 Opus／Sonnet 模型選項，僅標題可用細節待核實；Augment Code 報導回顧 v2.1.215（已於 07-19 記錄）聚焦「誰能掌控 agent 檢查清單」討論，無新增事實。本日新增 7 則已知問題：macOS Filesystem extension `tools/call` 未派發（issue #80002，59 則留言、27 個讚）、排程 routine 對 custom connector 呼叫 MCP 工具遭要求 approval（issue #61015，40 則留言、52 個讚，約 05-20 回歸）、無法複製 Claude Code 輸出文字（issue #62699，34 則留言、51 個讚）、`bypassPermissions` 模式未真正跳過權限檢查 META 彙整（issue #39523，33 則留言、18 個讚）、`autoMemoryEnabled=false` 未抑制記憶體前導文字（issue #63903，32 則留言）、API 連線中途關閉頻繁發生（issue #69415，32 則留言、69 個讚）、VS Code 擴充套件請求支援 `/btw` 指令（issue #37323，31 則留言、196 個讚）；既有已知問題更新：Session 額度續行請求（issue #13354，71 則留言、182 個讚，本日互動量最高）、VS Code 停用自動附加設定請求（issue #24726，61 則留言、189 個讚）。 |
 | 2026-07-21 | **Anthropic Status**：Haiku 4.5 錯誤率升高（08:53 UTC，已解決）；Fable 5 錯誤率升高（11:47 UTC，仍在監控中，尚未見「已解決」時間戳）。Tech Times 報導稱 Claude Code 已修補 agentic 權限層中的 Bash 與 Unicode 繞過漏洞，惟原文未提供版本號或官方公告佐證，列為待查證（見「已知問題」🛡️ 安全與隱私）。GitHub Issues 高互動更新：Console 捲動回頂端（issue #826，353 則留言、821 個讚，本日互動量最高）、Rate limit reached 儘管訂閱 Max 且僅用 16%（issue #29579，新增，153 則留言、94 個讚）、`--screen-reader` 無障礙模式功能請求（issue #11002，新增，58 則留言、38 個讚）、記憶體洩漏 120GB+ OOM（issue #4953，97 則留言）、READ 工具檔案指示功能請求（issue #21151，133 則留言）、常駐顯示 thinking 功能請求（issue #8477，91 則留言、348 個讚）、OAuth 登入逾時（issue #33238，153 則留言）皆為既有已知問題的互動數更新。 |

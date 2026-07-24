@@ -3,11 +3,11 @@
 **狀態：** ongoing
 **領域：** 🤖 模型
 **開始日期：** 2026-07-02
-**最後更新：** 2026-07-23
-**最後新聞更新：** 2026-07-23
+**最後更新：** 2026-07-24
+**最後新聞更新：** 2026-07-24
 
-> **最新對照更新**（2026-07-20）
-> GitHub Issue #79337（10 讚、35 留言）回報，Fable 5 免費期到期後的 07-20 當天，Max 方案一度被要求額外購買 usage credits 才能執行 Fable 5、並靜默降級至 Opus 4.8；症狀與同日 Anthropic Status 已證實的 Max 誤判事件吻合，官方已確認為誤判並建議重啟。Max/Team 方案存取政策本身（「轉為永久標配」vs「轉為計量存取」）仍有分歧報導，詳見 [[entities/pricing]]。公開陣容五級維持不變：Fable 5（旗艦）> Opus 4.8 > Sonnet 5（主力）> Sonnet 4.6 > Haiku 4.5。
+> **最新對照更新**（2026-07-24）
+> GitHub Issue #79337（07-20 記錄 10 讚、35 留言 → 07-24 reaction 增至 13 個）回報，Fable 5 免費期到期後的 07-20 當天，Max 方案一度被要求額外購買 usage credits 才能執行 Fable 5、並靜默降級至 Opus 4.8；症狀與同日 Anthropic Status 已證實的 Max 誤判事件吻合，官方已確認為誤判並建議重啟。Max/Team 方案存取政策本身（「轉為永久標配」vs「轉為計量存取」）仍有分歧報導，詳見 [[entities/pricing]]。另有「Opus 5」傳聞持續增溫（HackerNoon 07-24、TestingCatalog 07-23），均未經官方證實，詳見 [[entities/opus-4-8]]。公開陣容五級維持不變：Fable 5（旗艦）> Opus 4.8 > Sonnet 5（主力）> Sonnet 4.6 > Haiku 4.5。
 
 ---
 

@@ -3,6 +3,23 @@
 Append-only 紀錄。每次 ingest、lint，以及**揭露缺陷或促成改動的使用者 query**，都在此追加一條（純資訊性、未促成改動的 query 不記，避免噪音）。
 格式：`## [YYYY-MM-DD] 類型 | 說明`
 
+## 2026-07-24 Ingest | news/2026-07-24.md（63 則）
+
+- 來源日報：[[news/2026-07-24]]（63 則，10/10 來源；Google News 24、Hacker News 16、Reddit 12、GitHub Issues 6、GitHub 2、Anthropic Status 1、dev.to 1、Blogroll 1、Claude API Release Notes 0、Anthropic Blog 0）
+- 分類派工：模型 6 則、功能 12 則、商業 10 則、安全政策 6 則、社群 24 則（五類並行 foreground，人物今日無條目跳過；**本雲端 routine 環境自訂 subagent_type（wiki-reporter-*）未載入，五位記者均改以 general-purpose agent 扮演角色、內嵌完整規則文字派工**，屬環境限制的變通做法，功能與品質未受影響）
+- 更新頁面：
+  - **模型**：`entities/opus-4-8.md`（Opus 5 傳聞截圖 vs API 合約測試、TestingCatalog 準備推出報導併記，callout 更新）、`entities/fable-5.md`（callout 覆寫為 GitHub Issue #79337 Max 方案用量點數異常＋Reddit「開源模型追平 Fable」社群觀感；Reddit「Fable 5 min cache」因單一圖片型貼文無正文可查證未收錄）、`topics/model-comparison.md`（同步 reaction 數與 Opus 5 傳聞併記，快速選型表因無實質陣容變化維持不動）
+  - **功能**：`entities/claude-code.md`（SDK typescript sdk-v0.114.0／python v0.119.0 版本記錄；Opus 4.8 Status 事件；已知問題新增 5 條——macOS Filesystem tools/call 未派發 #80002 61 留言、RTL 排版需求 #38005 105 讚同/40 留言、CoworkVMService Windows 啟動失敗 #29941 39 留言、API 連線中斷 #69415 69 讚同/33 留言、autoMemoryEnabled preamble 未抑制 #63903 32 留言〔與昨日數字相同，判定無新事實未重複更新〕；語音模式 Opus/Sonnet 選擇六媒體交叉確認記入現況）、`entities/claude-security.md`（Reddit 回報無 Workflow tool 存取權限，待查證記錄）；「Agent Island update keeps Claude Code status local」（IT Brief Australia）僅標題可用查無更多細節，暫不寫入任何頁面，待後續報導決定
+  - **商業**：`topics/anthropic-business.md`（Bloomberg 報導 Alphabet 持有 Anthropic 股權市值跳升至約 1,240 億美元，同步 [[entities/google-investment]] 時序；Cyberhaven 新增 Claude Compliance API 整合、Orca Security 07-21 整合獲二次確認；NDTV 跟進哈利波特出版商和解賠付〔非新事實〕）、`entities/pricing.md`（GitHub Issue #79337 Fable5 Max方案用量點數異常持續逾4天未解，與07-20官方「已修正」說法有落差；modelplane.ai 一手實測換算訂閱補貼倍數約13倍；Reddit 週熱門質疑官方50%用量提升宣稱與實際體驗不符）、`topics/competitor-landscape.md`（tech-insider.org Antigravity vs Cursor vs Claude Code 定價比較，Antigravity 為首次出現競品名稱）；Reddit「ANTHROPIC GOT SUED」「Got 6 months Max 20x free」因純圖片型貼文無具體細節可查證，未收錄
+  - **安全政策**：`topics/anthropic-government-policy.md`（callout 覆寫：白宮科技顧問指控中國 Moonshot AI 竊取 Anthropic 技術〔BBC，source_count=2〕、矽谷業界聯合反對 Anthropic 對中限制立場〔The Information〕、中國 AI 業者傳藉 Claude Code 外洩內容縮小差距〔digitimes，僅標題可用待查證〕）、`topics/ai-agent-safety.md`（新增 Tego AI 本週第二度揭露 Claude 相關漏洞〔Hackread，隱藏連結外洩檔案〕——記者查證頁面內未見「第一度」揭露的既有記錄，標記待補查證；Anthropic 呼籲產業界建立 AI 安全標準〔Fox Business〕；摘要段落依「現況不被時序侵蝕」規則裁至最新 2 段，07-21 舊段移出摘要並保留於時序）
+  - **社群**：`topics/community-tech-patterns.md`（新增三款同日 Show HN 高分工具：Palmier Pro 開源 AI 影片編輯器 171 分、OneCLI 憑證閘道 101 分、Claude-thermos session 保溫工具 102 分，並完成 claude-thermos 與 discussions 頁雙向連結）、`topics/community-tech-discussions.md`（OpenAI/Anthropic 開放權重立場趨同引發 HN 287 分批評聲浪、Simon Willison 轉貼「AI agent 失控」行銷噱頭質疑；4 則逾 21 天 ☄️閃現 舊條目依保留規則移除）；今日 24 則社群節錄中多數 Show HN（1–6 分，遠低於低門檻）與非週熱門 Reddit 貼文（sort=new，score 不可信且無跨來源佐證）未收錄，詳見社群記者回報「未達門檻不收錄清單」；dev.to「Teaching Claude Code to Paint」與昨日已收錄條目重複，未重複寫入
+- feature-radar：新增 2 條（Claude 語音模式 Opus／Sonnet 選擇，🔥🔥🔥🔥／⚡ 有條件推薦；API 新增 Stop Reason `model_continue`，🔥🔥／⏳ 觀望）；最新版本行未變（今日無 Claude Code 新版本，僅 SDK 更新）；本週推薦（Fable 5／Artifacts／Cowork）因語音模式與現有 Cowork 條目同熱度且現有三項推薦皆未逾 7 天，本輪保持不動，語音模式列入下一輪換榜候選；升版風險表僅同步不變內容；⏰ 倒數中無變化
+- index.md 狀態變更：無（僅新增 2026-07-24 近期異動摘要條目；另發現 2026-07-23 ingest 當時未寫入近期異動摘要，形成一天缺口，記錄供後續留意，不在本次回溯補寫以免與該日實際 log 內容有出入）
+- 新增頁面：無
+- 摘要：語音模式全面升級（開放所有使用者於 Opus／Sonnet 間選擇模型）為今日功能面主軸；商業面 Alphabet 持股 Anthropic 市值跳升至 1,240 億美元、資安生態夥伴（Cyberhaven／Orca Security）持續擴張、Fable 5 於 Max 方案的計費異常延續逾 4 天未解且與官方說法有落差；地緣政治面美中 AI 緊張延燒（Moonshot 竊取指控、矽谷反彈、Claude Code 外洩傳言）；社群面三款高分 Show HN 新工具同日亮相，OpenAI/Anthropic 開放權重立場趨同引發社群批評聲浪
+- 呈現品質：五類共 13 頁全數 ✅ 通過或已修復（ai-agent-safety.md ⚠️ 已修復現況段落時序侵蝕問題），未出現未解決待辦項目
+- 品質備註：[安全政策] Tego AI 條目稱「本週第二度」揭露 Claude 漏洞，但記者查證既有頁面未見「第一度」揭露記錄，可能是前幾日漏收的報導，建議下次 ingest 或查證時留意補齊；[社群] 記者回報 patterns 新增 OneCLI／Palmier Pro 兩則新型 agent 整合模式，建議功能記者評估 `official-community-gap.md` 產品化矩陣是否需新增對應列——本輪因記者間無法互相轉知，留待下次 ingest 由功能記者評估；index.md 於 2026-07-23 當日 ingest 未寫入「近期異動」摘要（該日 log.md 紀錄完整，僅 index.md 摘要缺漏一天），本次已為 07-24 正常補上，07-23 缺口不回溯修改
+
 ## 2026-07-23 Ingest | news/2026-07-23.md（71 則）
 
 - 來源日報：[[news/2026-07-23]]（71 則，10/10 來源；Google News 32、GitHub Issues 15、Hacker News 15、dev.to 14、Reddit 11、Anthropic Status 5、GitHub 3、Blogroll 3、Anthropic Blog 2、Claude API Release Notes 0）

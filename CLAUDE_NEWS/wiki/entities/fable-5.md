@@ -4,17 +4,17 @@
 **狀態：** active（正式發布；出口管制已解除，2026-07-01 起全球恢復存取；免費期已於 2026-07-19 到期，Max/Team 後續存取政策尚有分歧報導，見 [[entities/pricing]]）
 **領域：** 🤖 模型
 **首次出現：** 2026-06-09
-**最後更新：** 2026-07-23
-**最後新聞更新：** 2026-07-23
+**最後更新：** 2026-07-24
+**最後新聞更新：** 2026-07-24
 
-> **最新進展**（2026-07-20）
-> GitHub Issue #79337（10 讚、35 留言）回報：2026-07-20（issue 原文稱為 Fable 5 正式成為 Max 方案標準配置的第一天）當天，Claude Code 一度拒絕在 Max 方案上執行 Fable 5、要求額外購買「usage credits」，並將 session 靜默降級至 Opus 4.8。此症狀與同日 Anthropic Status 已證實的「Max 方案誤判需點數存取 Fable 5」事件高度吻合，官方已確認為誤判並建議受影響用戶重啟；惟 Max/Team 方案存取政策本身（轉為「永久標配」或「計量存取」）仍有分歧報導，詳見 [[entities/pricing]]。
+> **最新進展**（2026-07-24）
+> GitHub Issue #79337（reaction 數持續增加：07-20 記錄 10 個 → 07-24 已達 13 個，留言數維持 35 則未見更新）回報：2026-07-20（issue 原文稱為 Fable 5 正式成為 Max 方案標準配置的第一天）當天，Claude Code 一度拒絕在 Max 方案上執行 Fable 5、要求額外購買「usage credits」，並將 session 靜默降級至 Opus 4.8；受影響帳號的已儲存模型設定顯示為 `claude-fable-5[1m]`（1M context 變體）。此症狀與同日 Anthropic Status 已證實的「Max 方案誤判需點數存取 Fable 5」事件高度吻合，官方已確認為誤判並建議受影響用戶重啟；惟 Max/Team 方案存取政策本身（轉為「永久標配」或「計量存取」）仍有分歧報導，詳見 [[entities/pricing]]。同期社群另有討論質疑 Fable「太危險」分級與競品追平能力的落差，見「爭議」與「歷史記錄」。
 
 ---
 
 ## 現況
 
-**2026-07-20 最新**：GitHub Issue #79337 回報，Fable 5 免費期到期後的 07-20（issue 原文稱為 Fable 5 正式成為 Max 方案標準配置的第一天），Max 方案一度被要求額外購買 usage credits 才能執行、並靜默降級至 Opus 4.8；與同日 Anthropic Status 已證實的 Max 誤判事件高度吻合，官方已確認為誤判並建議重啟。Max/Team 方案存取政策本身（「永久標配」或「計量存取」）仍有分歧報導，詳見 [[entities/pricing]]。
+**2026-07-24 最新**：GitHub Issue #79337 追蹤的 Max 方案誤判事件持續累積關注，reaction 數由 07-20 的 10 個增至 13 個（留言數維持 35 則、未見更新資料），受影響帳號的已儲存模型設定顯示為 `claude-fable-5[1m]`；官方誤判定性與建議重啟的結論未變。同期社群另有兩則討論觸及 Fable 定位：r/ClaudeCode 使用者認為 Fable 被「削弱」後只比 Opus 4.8 聰明一點，開源模型已追上「太危險」等級模型的能力；r/ClaudeAI 週熱門貼文則有一名自稱基因學/神經科學研究者質疑 Fable「對科學研究太危險」的分類與自身用途無關。兩則均屬社群觀點、單一來源，弱訊號，分類爭議完整脈絡另見安全政策記者對應頁面。
 
 **2026-07-13**：Fable 5 存取限制維持延長至 7/19，無新截止日變動；The New Stack 報導 Anthropic 拒絕說明本次延長是否與開發者在 Cursor 中的發現有關，暗示背後可能另有隱情，但目前僅屬推測性報導，缺乏具體佐證（推論）。
 
@@ -91,7 +91,8 @@ claude --model claude-fable-5-20260609
 - ⚠️ **「失去靈魂」討論**：部分用戶認為 Fable 5 相比 Opus 4.6 更工具性、減少人本關懷深度
 - ⚠️ **「Defense in Depth」分類器誤判（2026-07-02，新）**：redeploy 後新增的資安/程式碼請求分類器出現誤判案例——合法資安審查請求被攔截、化學問題被拒（後者 2026-07-02 指控，至今無後續），攔截範圍可能超出原設計的 coding/cybersecurity 場景
 - 🔴 **Advisor 角色全面 unavailable（2026-07-10，新，未修復）**：GitHub Issue #73365 回報 Fable 5 advisor（Opus 4.8 main 底下的 advisor 角色）在所有 Claude Code session 中皆顯示「unavailable」，版本 v2.1.198，累積 50 則留言、100 個讚，情緒強烈。此為 Claude Code 功能面的呼叫失效，非模型能力本身劣化；完整 bug 追蹤見 [[entities/claude-code]] 已知問題（[GitHub Issues](https://github.com)，2026-07-10）
-- ✅ **Max 方案誤判需購買 usage credits 才能執行 Fable 5（2026-07-20，官方已證實為誤判並建議重啟）**：GitHub Issue #79337（10 讚、35 留言）回報，Fable 5 免費期到期後的 07-20 當天，Max 方案一度被要求額外購買 usage credits 才能執行 Fable 5，並將 session 靜默降級至 Opus 4.8；症狀與同日 Anthropic Status 已證實的 Max 誤判事件高度吻合，官方已確認為誤判並建議受影響用戶重啟。存取政策本身（Max/Team 是否「轉為永久標配」抑或「轉為計量存取」）仍有分歧報導，計費細節見 [[entities/pricing]]（[GitHub Issues](https://github.com/anthropics/claude-code/issues/79337)，2026-07-20）
+- ✅ **Max 方案誤判需購買 usage credits 才能執行 Fable 5（2026-07-20，官方已證實為誤判並建議重啟；07-24 reaction 增至 13 個）**：GitHub Issue #79337（07-20 記錄 10 讚、35 留言；07-24 reaction 增至 13 個，留言數未見更新）回報，Fable 5 免費期到期後的 07-20 當天，Max 方案一度被要求額外購買 usage credits 才能執行 Fable 5，並將 session 靜默降級至 Opus 4.8；受影響帳號的已儲存模型設定顯示為 `claude-fable-5[1m]`（1M context 變體）。症狀與同日 Anthropic Status 已證實的 Max 誤判事件高度吻合，官方已確認為誤判並建議受影響用戶重啟。存取政策本身（Max/Team 是否「轉為永久標配」抑或「轉為計量存取」）仍有分歧報導，計費細節見 [[entities/pricing]]（[GitHub Issues](https://github.com/anthropics/claude-code/issues/79337)，2026-07-20；追蹤至 2026-07-24）
+- ⚠️ **「太危險」分級受競品追平質疑（2026-07-24 日報收錄，社群觀點，弱訊號）**：r/ClaudeCode 使用者認為 Fable 5 被「削弱」後感覺只比 Opus 4.8 聰明一點，開源模型已追上「太危險」等級模型的能力（2026-07-24，單一來源，score 恆 0）；同期 r/ClaudeAI 週熱門貼文（原貼 2026-07-18）另有一名自稱基因學/神經科學研究者，質疑 Fable/Mythos「對科學研究太危險」的分類與自身分析 RNA 等用途完全無關。兩則均為社群主觀觀點，非量化評測；分類爭議的安全政策脈絡另見安全政策記者對應頁面，此處僅記模型定位/能力落差角度
 
 ## 出口管制：雙方立場
 
@@ -155,6 +156,13 @@ claude --model claude-fable-5-20260609
 ## 歷史記錄
 
 ### 解禁後（2026-07-01 起）
+
+#### 2026-07-24
+**GitHub Issue #79337 持續追蹤：reaction 增至 13 個 + 新技術細節「已儲存模型 claude-fable-5[1m]」**：07-20 首次回報的 Max 方案誤判事件持續有讀者互動，reaction 數由 10 個增至 13 個（留言數維持 35 則、暫無更新資料）；本次追蹤新揭露受影響帳號的已儲存模型設定為 `claude-fable-5[1m]`，即 1M context 變體，有助釐清受影響的具體模型設定範圍。官方已於 07-20 確認為誤判並建議重啟，此結論未變，計費/配額面向由商業記者於 [[entities/pricing]] 記錄（[GitHub Issues](https://github.com/anthropics/claude-code/issues/79337)，2026-07-24 01:16 UTC）。
+
+**社群觀點：「太危險」分級與競品追平能力的落差（弱訊號，社群主觀）**：Reddit r/ClaudeCode 使用者認為 Fable 5 被「削弱」後感覺只比 Opus 4.8 聰明一點，開源模型已追上原本被列為「太危險」等級的模型能力（[Reddit r/ClaudeCode](https://www.reddit.com/r/ClaudeCode/comments/1v56yic/open_source_model_at_par_with_fable/)，2026-07-24，單一來源、score 恆 0）。同期日報另收錄 r/ClaudeAI 週熱門貼文（原貼 2026-07-18），一名自稱基因學/神經科學研究者質疑 Fable/Mythos「對科學研究太危險」的分類，認為自身分析 RNA 等用途與生物恐怖主義完全無關；此則安全分級爭議主要由安全政策記者於對應頁面追蹤，本頁僅並列記錄競品/能力落差角度。兩則均為個人觀點，非量化評測，不構成能力結論。
+
+**（已排除）「Fable 5 min cache」貼文**：另有 r/ClaudeCode 圖片型貼文僅標題提及快取時間偏短，無正文內容佐證，單一來源且未達收錄門檻，本輪不予記錄。
 
 #### 2026-07-20
 **GitHub Issue #79337：Max 方案誤判需購買 usage credits 才能執行 Fable 5，session 靜默降級至 Opus 4.8（官方已證實為誤判，非未修復）**：GitHub Issue 回報，2026-07-20（issue 原文稱為 Fable 5 正式成為 Max 方案標準配置的第一天）當天，Claude Code 一度拒絕在 Max 方案上執行 Fable 5，提示需購買額外「usage credits」，並將 session 靜默降級至 Opus 4.8；累積 10 個 reaction、35 則留言（[GitHub Issues](https://github.com/anthropics/claude-code/issues/79337)，2026-07-20）。**與既有事件的關係**：時間點與症狀（Max 方案 + 要求點數 + 涉及 Fable 5）與同日 Anthropic Status 公告的「Max 方案用戶被誤判需使用點數才能存取 Fable 5」事件高度吻合，官方已證實為誤判並建議受影響用戶重啟；本則 GitHub Issue 可能是同一起誤判事件經由另一管道的獨立回報，惟兩則來源未見官方明確互相對應確認，不逕自視為同一 issue（推論）。「Fable 5 正式成為 Max 方案標準配置」一說源自 issue 原文框架，與同期 [[entities/pricing]] 記錄的 Max/Team 存取政策分歧報導（07-19 Tech Times「轉為永久」vs 07-20 Reddit 週熱門「轉為計量存取」）需並陳看待，尚無官方公告一次性釐清「標配」的具體條件與計費方式；額度與計費爭議完整脈絡見 [[entities/pricing]]。

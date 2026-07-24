@@ -4,17 +4,17 @@
 **狀態：** active
 **領域：** 🤖 模型
 **首次出現：** 2026-05-28
-**最後更新：** 2026-07-22
-**最後新聞更新：** 2026-07-22
+**最後更新：** 2026-07-24
+**最後新聞更新：** 2026-07-24
 
-> **最新服務狀態**（2026-07-09）
-> Claude Opus 4.8 一度出現錯誤率升高（Elevated errors），Anthropic Status 於 03:50 UTC 確認問題已解決（中性/低強度事件）；同期 Reddit 使用者反映近期使用體驗轉佳（提及剛發布時曾不穩定），屬弱訊號（score 恆 0），僅供口碑參考。
+> **最新進展**（2026-07-24）
+> 「Opus 5」傳聞持續增溫但仍未證實：HackerNoon（07-24）指出流傳截圖「通過截圖測試、未通過 API 合約測試」，TestingCatalog（07-23）報導 Anthropic 正為潛在推出做準備；兩者均非官方公告，詳見下方「下一代模型觀察」。Opus 4.8 本身現況不變，仍為 Fable 5 護欄觸發時的 fallback 模型。
 
 ---
 
 ## 現況
 
-**2026-07-09 最新**：Opus 4.8 一度出現錯誤率升高（Elevated errors），官方於 03:50 UTC 確認問題已解決；同期 Reddit 用戶反映使用體驗轉佳，屬弱訊號僅供參考。
+**2026-07-24 最新**：「Opus 5」傳聞增溫但仍未證實——HackerNoon 指流傳截圖僅通過視覺層面的「截圖測試」，未通過可程式化驗證的 API 合約測試；同期 TestingCatalog 報導 Anthropic 正為潛在 Opus 5 推出做準備，兩者皆為媒體報導、非官方公告，詳見「下一代模型觀察」段落。Opus 4.8 本身能力與角色未變。
 
 Claude Opus 4.8 於 2026-05-28 正式發布，同步推出 Dynamic Workflows（Research Preview）與 Fast Mode 降價，是 2026 年以來 Anthropic 發布規模最大的旗艦更新。**2026-06-09 Claude Fable 5 發布後，Opus 4.8 不再是最高階公開模型**，現作為 Fable 5 安全分類器觸發時的 fallback 模型（< 5% session 觸發）——出口管制期間（2026-06-13 至 07-01）Opus 4.8 曾是 Fable 5 全面下線時的唯一替代選項，管制已於 2026-07-01 解除，現行 fallback 角色改由 Fable 5「Defense in Depth」分類器觸發（詳見 [[entities/fable-5]]）。核心指標：SWE-bench Pro 69.2%（1M context window）；Fast Mode 速度為標準的 2.5 倍、費率降至前代的 1/3。
 
@@ -123,6 +123,10 @@ claude.ai 用戶現可調節 Claude 在任務上投入的努力程度，不再�
 
 ## 下一代模型觀察：「Opus 5」傳聞（推測性，尚未證實）
 
+**2026-07-24（❓ 待查證）**：HackerNoon 分析近期網路流傳的 Claude Opus 5 傳聞截圖，指出這些截圖「通過了截圖測試，卻未通過 API 合約層級的驗證」——意即畫面本身看似可信，但尚無人能以實際 API 呼叫驗證對應模型 ID 或行為確實存在，換言之目前僅止於視覺層面的傳聞，缺乏可程式化驗證的證據（[Google News/HackerNoon](https://news.google.com/rss/articles/CBMioAFBVV95cUxQRF9EUHUybk1zS3N5T0lNdUYyVHJ1ZVl3bktrUjZZSWVQUUU3c0t0Tzh1UFdXYTdITHpRYUJJVmJ2SVhrNko1eHdUdDNHNzRtRk1xdUd0Qk81ZkRiQUNpeVVVUHhnTDZXelFhcnNOYzhsVUxGWFUwYjZJUnk3cXRpUEExalhmVi01X0w4LTVTRmZHUmMtRkJzc0ZOelJnVkVk?oc=5)，2026-07-24）。與 07-13 dev.to 分析（「傳聞存在具可信度但無日期/跑分佐證」）方向一致，進一步強化「截圖流傳 ≠ 可驗證事實」的判斷。
+
+**2026-07-23（❓ 待查證）**：TestingCatalog AI News 報導 Anthropic 正在為可能的 Claude Opus 5 推出做準備（[Google News/TestingCatalog AI News](https://news.google.com/rss/articles/CBMikAFBVV95cUxQRWYtODJYNVFKWk5UUXlaN0UtdTl6c2tRMlBrR0IwQ0Y1Y1htUWowSWJ6N0o0d2k4aEdqdzRQM1dzZXZwT3FhNjQ5bDhxNHV4LVVpZVJyLWd0TjFtZFpkS3RCbzlHMVdjOUc4LTQzSkFSZENpd25JQTBfWmZBMk0yZFkwaW1HNEpHT3RaLTV0RDg?oc=5)，2026-07-23）。未提供具體發布時間或模型細節，與 07-20 Proactive financial news 的市場臆測方向一致，但屬獨立媒體來源，非同一報導的轉載。
+
 **2026-07-13**：dev.to 作者 tokenmixai 於〈I Traced 4 Claude Opus 5 Signals. The Release Date Still Isn't Real Yet.〉一文中，比對 Anthropic 模型型錄、定價文件與過往發布節奏，認為「Opus 5」的存在具一定可信度，但強調坊間流傳的確切發布日期與跑分數字目前均缺乏佐證（"Opus 5 is plausible, but every exact date and benchmark circulating today is unsupported."）。此為單一 dev.to 分析文章，非官方訊號，亦無具體發布時間表，列「待驗證」；若後續有更多獨立來源佐證，將評估另立 entities 頁（[dev.to](https://dev.to/tokenmixai/i-traced-4-claude-opus-5-signals-the-release-date-still-isnt-real-yet-2f2j)，2026-07-13）。此連結於 2026-07-16 補齊（原始記錄僅有泛用網域連結）。
 
 **2026-07-20（市場推測，非官方公告，❓ 待查證）**：Proactive financial news（經 Google News 轉載，僅標題可用）報導〈Traders bet Anthropic will ship new Claude Opus model within days〉，指金融交易者押注 Anthropic 將於數日內推出新款 Claude Opus 模型（[Google News/Proactive financial news](https://news.google.com/rss/articles/CBMi0gFBVV95cUxQUmt3Y0UyM1FRN3RYVkFvV1VrNXlpRW9BR0t4bkh3bGZ4VTdRVTF4M3RvdkQ2LTduSjlDRW5mSV9ZVHM5SW1qNkFDZkpLYUJjMmp1R0tWNUhzLWtHd3h6cW9TcWpmNjh2ZHVNcWJuRHZhNXU5c0cwd0hkMWpyRVZNRW5CQ2o3Z2dmNVhRUFlyLWVtRENnU3dEUmtCeUl6em5OdWVHdlZXSUpERjV0b3llZVRaVTVubUxXdlJwR3hBWUE4bGZaN2NnY3d3eXdjaUoyT0E?oc=5)）。此為純市場臆測性報導，非官方公告，未提供具體型號、發布時間或依據；與上方 07-13 dev.to 分析文的「Opus 5 存在具一定可信度但無明確時間表」方向一致，但屬不同性質訊號（金融市場交易行為 vs 模型型錄/定價文件比對），**無法確認具體是哪個版本、或該模型是否真的存在**，暫不併入「Opus 5」段落標題，僅並列記錄以待後續證實。
@@ -131,6 +135,8 @@ claude.ai 用戶現可調節 Claude 在任務上投入的努力程度，不再�
 
 | 日期 | 事件 |
 |------|------|
+| 2026-07-24 | **❓ 待查證：HackerNoon 分析「Opus 5 傳聞通過截圖測試，未通過 API 合約測試」**：指出流傳截圖看似可信，但缺乏可程式化驗證的 API 層級證據 |
+| 2026-07-23 | **❓ 待查證：TestingCatalog 報導 Anthropic 正為潛在 Opus 5 推出做準備**：未提供具體時間或型號細節，與 07-20 市場臆測方向一致 |
 | 2026-07-21 | **❓ 待核實：舊「Qwen distillation」爭議經媒體重提，冠以「蒸餾雙標」框架**：TipRanks（經 Google News 轉載，僅標題可用，無內文）報導標題稱「Claude 自稱是阿里巴巴 Qwen AI」，並將此與 Anthropic 對外蒸餾議題立場並列，稱其為「雙重標準」爭議。無法取得報導實質內容佐證是否為新事件或僅重提 2026-05-29–30 的舊爭議（當時社群主流判斷為 proxy 詐騙服務假冒 Claude，非真實 distillation，見下方 05-30 條目）；單一來源、無跨平台延燒訊號，暫記待觀察，不排除為舊事重炒（[Google News/TipRanks](https://news.google.com/rss/articles/CBMiuAFBVV95cUxPcEVadm95Um5CQ3hTNDE2cDFLVWwxUkZnYkVRaGdNcDZyZU5ZLWFKekZKZG1jblJSY1A0QlpFX2tvUDdqRmpsRHJ3S2taTkJIRVdoelBQZjM0LTRQQXRYb0R1M1YyODZtbV9iYk1ybkQzWFp1cHhuTkdOZzlUSUVxVFhNd01zeFhHc0MxOUU1QzdJaXRhbmZkMzhBVkpFampaWVBJQXZWWXdMZnhlYlVGbVduSklxUDVn)，2026-07-21） |
 | 2026-07-20 | **❓ 待查證：市場傳聞 Anthropic 數日內將推出新 Claude Opus 型號**：Proactive financial news 經 Google News 轉載標題報導交易者押注消息，純市場推測，非官方公告，無具體型號或發布時間佐證 |
 | 2026-07-09 | **錯誤率一度升高（同日解決）**：Anthropic Status 通報 Claude Opus 4.8 出現 Elevated errors，於 03:50 UTC 確認問題已解決；同期 Reddit 用戶反映近期使用體驗轉佳，提及發布初期曾有不穩定（弱訊號，score 恆 0） |

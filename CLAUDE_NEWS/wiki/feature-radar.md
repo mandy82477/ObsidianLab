@@ -4,7 +4,7 @@
 僅收錄官方 changelog、release note 或官方公告來源；社群工具見 [[topics/community-tech-tools]]。
 每次 ingest 後由 LLM 維護：新增功能、更新熱度、補充社群回饋。
 
-**最後更新：** 2026-07-23
+**最後更新：** 2026-07-24
 
 ---
 
@@ -15,6 +15,7 @@
 - **Claude Cowork 行動版 / 網頁版**（熱度 🔥🔥🔥🔥）：任務可在雲端持續執行，闔上筆電或關閉裝置也不中斷，首波開放 Max 訂閱戶，適合需要行動場景交辦長時間背景任務者
 
 > `/goal` 指令已連續推薦超過 7 天（自 07-09 起）且今日 ingest 未更新其熱度/試用價值，依防霸榜規則換下，改為 Claude Code Artifacts（上次在推薦榜為 07-07 之前）；詳細條目仍見下方全覽表。
+> 07-24 新增「Claude 語音模式 Opus／Sonnet 選擇」（🔥🔥🔥🔥／⚡），熱度與現有 Cowork 條目同級，現有三項推薦皆未逾 7 天，故本輪保持不動；語音模式列入下一輪換榜候選。
 
 ---
 
@@ -63,6 +64,8 @@
 
 | 功能 | 發布日期 | 熱度 | 試用價值 | 狀態 |
 |------|----------|------|----------|------|
+| **Claude 語音模式 Opus／Sonnet 選擇**（所有使用者開放於 Opus／Sonnet 間切換語音模式底層模型，六家媒體同步報導，無官方版本號） | 2026-07-24 | 🔥🔥🔥🔥 | ⚡ 有條件推薦 | 正式發布（全使用者開放） |
+| **API 新增 Stop Reason `model_continue`**（anthropic-sdk-python v0.119.0／anthropic-sdk-typescript sdk-v0.114.0） | 2026-07-23 | 🔥🔥 | ⏳ 觀望 | 正式發布（SDK 層） |
 | **Claude Code v2.1.218**（`/code-review` 改為背景 subagent 執行，審查工作不再佔用對話內容；同版新增螢幕報讀軟體相關無障礙改善） | 2026-07-22 | 🔥🔥 | ✅ 推薦 | 正式發布 |
 | **Claude Code v2.1.217**（Prompt input 新增表情符號 shortcode 自動完成，輸入 `:heart:` 插入 ❤️，可用 `emojiCompletionEnabled` 設定關閉；同版新增警告訊息，細節未知） | 2026-07-21 | 🔥 | ⏳ 觀察中 | 正式發布 |
 | **Claude Code v2.1.216**（新增 `sandbox.filesystem.disabled` 設定，可在維持網路出口控管下跳過檔案系統隔離；同版修復長會話訊息正規化速度變慢問題） | 2026-07-20 | 🔥🔥 | ⚡ 有條件推薦 | 正式發布 |
@@ -132,6 +135,44 @@
 ---
 
 ## 🆕 最新功能（2026-07）
+
+### Claude 語音模式 Opus／Sonnet 模型選擇
+**發布：** 2026-07-24（The Verge／TechCrunch／9to5Mac／Engadget／the-decoder.com／SQ Magazine 六家媒體同步報導，無官方版本號） | **熱度：** 🔥🔥🔥🔥 | **試用價值：** ⚡ 有條件推薦 | **狀態：** 正式發布（全使用者開放）
+
+**是什麼：** Claude 語音模式（Voice Mode）新增模型選擇功能，所有使用者現可在 Opus 與 Sonnet 之間切換語音對話所使用的底層模型。
+
+**為何熱：** 六家獨立媒體同步報導交叉印證，屬今日「重大事件」；昨日（07-23）TestingCatalog 僅標題可用的預告報導，今日獲跨媒體正式確認。
+
+**現在要試嗎：** 適合追求更高語音互動品質、願意用 Opus 換取更佳回應品質的使用者；輕度語音使用者用 Sonnet 已足夠，無需特別切換。
+
+**快速上手：**
+```
+Claude App → 語音模式設定 → 選擇 Opus 或 Sonnet
+```
+（具體 UI 路徑待官方文件確認）
+
+**注意事項：** 目前僅媒體報導交叉確認，官方部落格/changelog 尚未查得對應公告連結；語音延遲、費用是否受模型選擇影響未知。
+
+---
+
+### API 新增 Stop Reason `model_continue`
+**發布：** 2026-07-23（anthropic-sdk-python v0.119.0／anthropic-sdk-typescript sdk-v0.114.0） | **熱度：** 🔥🔥 | **試用價值：** ⏳ 觀望 | **狀態：** 正式發布（SDK 層）
+
+**是什麼：** Anthropic API 新增 stop_reason 列舉值 `model_continue`（Python release note 明確列出；TypeScript release note 於「add new sto[p reason]」處截斷，研判為同一異動的對應版本）。
+
+**為何熱：** 官方 changelog 首發，尚無社群討論或工具跟進；涉及 API 回應解析行為變更，依賴 stop_reason 分支判斷的開發者升級後需檢查涵蓋範圍。
+
+**現在要試嗎：** 直接處理 stop_reason 分支的開發者應升級 SDK 後確認程式碼涵蓋新值；一般透過 Claude Code CLI 使用者無感知差異。
+
+**快速上手：**
+```
+pip install -U anthropic  # v0.119.0+
+npm install @anthropic-ai/sdk@latest  # sdk-v0.114.0+
+```
+
+**注意事項：** TypeScript release note 原文遭截斷，具體 stop reason 名稱未 100% 確認一致，建議查閱兩個 repo 完整 release note 核實。
+
+---
 
 ### Claude Code v2.1.216 — `sandbox.filesystem.disabled` 設定
 **發布：** 2026-07-20（v2.1.216） | **熱度：** 🔥🔥 | **試用價值：** ⚡ 有條件推薦 | **狀態：** 正式發布

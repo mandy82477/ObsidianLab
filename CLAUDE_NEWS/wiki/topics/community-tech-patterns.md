@@ -3,11 +3,11 @@
 **狀態：** monitoring
 **領域：** 🌐 社群
 **開始日期：** 2026-04-25
-**最後更新：** 2026-07-23
-**最後新聞更新：** 2026-07-23
+**最後更新：** 2026-07-24
+**最後新聞更新：** 2026-07-24
 
-> **最新工作流模式**（2026-07-23）
-> 今日新增兩則達 patterns 收錄門檻：dev.to 第一手實作記錄 nb2lite-skill-claude（將 Gemini 圖片模型封裝為 Claude Code Skill + MCP server，支援多輪有狀態圖片編輯，依 dev.to 收錄規則以內容判斷、不看讚數）；Reddit r/ClaudeAI 週熱門開源畫布工具，讓 Claude 回應顯示於使用者手寫筆記旁（07-15 已於 [[topics/community-tech-discussions]] 記錄為展示案例，今日補上技術做法細節）。今日其餘條目（Bento、AMD 投資討論、Anthropomorphism 論文等）非工作流模式性質，已改記於 [[topics/community-tech-discussions]]；Housecat、Millwright、Promptrack、TTFT benchmark、LitigationBench、Reduck MCP、TLS Radar、nippy、PokerLLM、ContextNest 等條目分數均未達 patterns 中門檻（HN≥30 分或≥5 留言），未收錄（詳見回報）。07-22 CodeAlmanac、tpu-management 與 07-21 MCP token 成本實測、07-18 Spare Mac 常駐環境、07-15 既有模式（Brainless、Agentty、OtoDock、Grepathy）仍為近期背景。
+> **最新工作流模式**（2026-07-24）
+> 今日新增三則達 patterns 收錄門檻（皆 Show HN 高門檻）：Palmier Pro（開源 macOS 影片編輯器，內建 AI 生成與本機 MCP server 供 agent 連接，HN 171 分，本輪最高分）；OneCLI（憑證閘道器，讓 AI agent 呼叫服務時不接觸真實密鑰，HN 101 分）；claude-thermos（保持 Claude session 快取熱度的工具，HN 102 分，但高分留言質疑「只是把成本轉嫁給其他用戶」，爭議面已同步記於 [[topics/community-tech-discussions]]）。另補記 ZDNET 依任務分工選用 Claude 模型/Code/Cowork 一文（source_count=2，達中門檻，但僅標題可考，內容從簡）。dev.to「Teaching Claude Code to Paint」（nb2lite-skill-claude）與今日日報重複出現，惟已於 07-23 收錄，本輪不重複新增。今日其餘 Show HN 條目（Mumble Dictation、Bookshelf、Hibernate/restore、Notebooker.ai、5dive、Skim、5QL、BoE MCP、Anamne、BDFL、Fleet）分數僅 1–6 分，遠低於中門檻（HN≥30 分或≥5 留言），未收錄；Reddit r/ClaudeCode 兩則 sort=new 貼文（hooks 攔截 find/sed/cat、Day 11 遊戲心得）無週熱門標記且非跨來源佐證，score 不可信，未收錄。KDnuggets「7 Best Claude Code Alternatives」為工具列表型媒體稿、非第一手實作，未收錄。07-22 CodeAlmanac、tpu-management 與 07-21 MCP token 成本實測、07-18 Spare Mac 常駐環境、07-15 既有模式（Brainless、Agentty、OtoDock、Grepathy）仍為近期背景。
 
 ---
 
@@ -28,14 +28,15 @@
 | **CLAUDE.md 管理** | 精簡規則策略、Self-improving Rules、防腐爛機制、漸進式工具採用原則 | ✅ 成熟 | 以「規則」非「建議」撰寫，CI 攔截違反架構 PR；新增能力前先問「會不會重複使用」，procedure file → CLI → 重整合依序升級 |
 | **Hooks 與自動化** | PostToolUse 稽核、Git Hooks 品質門、/goal Fire-and-Forget、deploy/migration 保護、Pre-completion Hook、Stop Hook 音效通知、Hooks 環境感知條件觸發（Adrafinil、氛圍狀態燈） | ✅ 成熟 | 強制執行 > CLAUDE.md 建議；Stop Hook 要求可驗證完成證明；CLAUDE.md 做偏好、Hooks 做邊界；Pre-completion Hook 防模糊結束；hooks 可感知 agent 活躍狀態驅動環境副作用（螢幕喚醒、實體燈光顏色） |
 | **模型使用策略** | 分層模型（Sonnet + Opus）、多模型路由、Workweave Router、跨模態內容生成分工（InstantVideos）、Fable 5 Orchestrator-Executor（官方基準） | ⚡ 活躍 | 依任務複雜度路由，節省 60% 用量；Dragoman / Workweave 自動路由；嵌入 Claude Code / Codex / Cursor 的成本感知路由；InstantVideos 將分工路由思路延伸至內容生成（文字/圖像/影音各交專門模型）；Anthropic 官方基準證實 Fable 5 編排 + 便宜模型執行可達 46% 成本／96% 效能 |
-| **Token / 成本優化** | MCP Code Execution、Token Bloat 對策、本機圖資料庫索引、穴居人模式（Caveman）企業採用 | ⚡ 活躍 | HTML→Markdown 降 80% token；快取不跨 session 是費用主因；極簡輸出模式（穴居人）企業採用獲 404 Media 確認，OpenAI、Nvidia、GitHub 開發者使用 |
+| **Token / 成本優化** | MCP Code Execution、Token Bloat 對策、本機圖資料庫索引、穴居人模式（Caveman）企業採用、claude-thermos（session 快取保活） | ⚡ 活躍 | HTML→Markdown 降 80% token；快取不跨 session 是費用主因；極簡輸出模式（穴居人）企業採用獲 404 Media 確認，OpenAI、Nvidia、GitHub 開發者使用；claude-thermos 以保活請求維持快取不過期，但引發「成本轉嫁其他用戶」爭議 |
 | **記憶與知識管理** | ltm Core Memory Packet、本機圖資料庫、NanoBrain、OKF（物件鍵格式跨 session 記憶） | ⚡ 活躍 | 跨 session / 跨工具持久記憶；Leiden 圖譜減少 71 倍 token；OKF 標準化 agent 知識格式供團隊共用 |
 | **Plugin / MCP 整合** | Plugin 反模式整理、Claude Code 作為 MCP 協調中心 | ⚡ 活躍 | 避免不必要 context 載入；Claude Code 主導 MCP 工具鏈協作 |
 | **多代理 PR Review** | 4-agent Code Review、對抗性審查（計畫前 + 程式碼後）、Read-Only Reviewer | ⚡ 活躍 | 架構師代理協調 + 多廠商模型交叉審查；對抗性審查者讀取真實 codebase；read-only 權限約束維持對立性 |
 | **Agent 版本控制** | ADR 注入、架構決策文件先於實作 | ⏳ 新興 | 決策文件先於實作，降低代理方向偏移風險 |
 | **Context 管理** | Just-in-Time @-file、Repo-as-Memory、Context Rot 修復、對話分支/合併手動控制 | ⚡ 活躍 | 即時取回優於預先加載；repo 是記憶體、模型是工作者；避免 context 過早飽和；新增使用者可視化分支/合併對話以精準控制 context 範圍的手動操作模式 |
 | **Agent 規模化** | 20-instance 崩潰分析、批量 OSS Bug 修復、Personas vs Tool-scoping、Mac Mini 自主 agent 部署、TBD（HN 4，agent-channels 跨 worktree 通訊）、live-log-viewer-next（平行 agent 即時對話地圖） | ⏳ 新興 | 超過 10 個並行 agent 需獨立 worktree + orchestrator 協調層；工具範圍限制比角色描述更可靠的邊界守護；無人監督排程任務已有完整 Mac Mini M4 方案；可觀測性層開始補足「多 agent 進度難追蹤」的協調盲點 |
-| **安全架構** | CLAUDE.md for K8s、語意層漂移 CI 測試、Trent 內嵌評估、Grepathy（agent 未經核准決策稽核）、Spare Mac 隔離環境（--dangerously-skip-permissions 風險隔離） | ⏳ 新興 | AI 加速開發下的系統性安全防線；CI 攔截語義退化；Grepathy 偵測、追蹤 agent 自主做出但未經人工核准的決策行為；備用實體裝置作為 agent 全權控制沙箱，降低主力工作機風險 |
+| **安全架構** | CLAUDE.md for K8s、語意層漂移 CI 測試、Trent 內嵌評估、Grepathy（agent 未經核准決策稽核）、Spare Mac 隔離環境（--dangerously-skip-permissions 風險隔離）、OneCLI（憑證閘道器） | ⏳ 新興 | AI 加速開發下的系統性安全防線；CI 攔截語義退化；Grepathy 偵測、追蹤 agent 自主做出但未經人工核准的決策行為；備用實體裝置作為 agent 全權控制沙箱，降低主力工作機風險；OneCLI 在網路層攔截請求並代換真實憑證，agent 本身全程不接觸密鑰 |
+| **創意工具 Agent 整合** | Palmier Pro（開源 macOS 影片編輯器 + 本機 MCP server） | ⏳ 新興 | 將 agent 整合從純程式碼場域擴及創作工具鏈，內建 AI 生成並開放本機 MCP server 供 agent 直接操控編輯流程 |
 | **介面元件複用** | Brainless（模仿 Claude Code/Codex/Grok 介面風格的 shadcn 元件庫） | ⏳ 新興 | 將 AI coding 工具的介面美學封裝為可用單一指令（`bunx shadcn add`）安裝的前端元件，本日 HN 最高分（124） |
 | **跨環境 Agent 記憶** | Core Memory Packet、Agent 持續運作架構 | ⏳ 新興 | 跨編輯器 / 跨機器 / 跨模型的供應商中立記憶協定 |
 | **架構邊界合約** | ANMA YAML contracts、Hooks 強制驗證、ISO 29148 規格驅動 | ⏳ 新興 | 用合約與工業標準定義 AI 不可越過的架構規則；使便宜模型也能守規 |
@@ -55,6 +56,34 @@
 ## 技術彙整
 
 ### 2026-07
+
+#### Palmier Pro：開源 macOS 影片編輯器，內建 AI 生成與本機 MCP server（2026-07-23）
+
+- **核心模式：** Palmier 團隊釋出開源 macOS 影片編輯器 Palmier Pro，內建 AI 影片生成能力，並提供本機 MCP server 供使用者連接自己的 agent，讓 agent 可直接操作編輯流程，而非侷限於程式碼協作場景
+- **與既有模式的關係：** 屬本頁新出現的「創意工具 Agent 整合」類別——過往 Skills/MCP 整合案例多聚焦程式碼、雲端資源或知識管理，此案例將 agent 整合延伸至影片創作工具鏈本身，顯示 MCP 協定的應用場景正從開發者工具擴及一般創作軟體
+- **來源：** 「Show HN: Palmier Pro – Open-source macOS video editor built for AI」— Hacker News（score 171，本輪最高分，達對照表高門檻）
+- **成熟度：** ⏳ 新興（今日首見，單一團隊產品，尚待社群採用回饋）
+
+#### OneCLI：開源憑證閘道器，讓 AI agent 呼叫服務時不接觸真實密鑰（2026-07-23）
+
+- **核心模式：** OneCLI 是一個網路層閘道器，安插在 AI agent 與其呼叫的外部服務之間；依 host/path 比對請求、驗證該 agent 是否應有此存取權限後，才將請求中的佔位符換成真實憑證再放行——agent 本身全程不持有、不可見真實密鑰
+- **與既有模式的關係：** 補充本頁「安全架構」類別在「憑證/密鑰管理」面向的具體實作——既有 Grepathy 聚焦事後稽核未經核准的 agent 決策、CLAUDE.md for K8s 聚焦架構層防線，OneCLI 聚焦「請求層即時憑證替換」，把最小權限原則落實在網路層而非應用層
+- **來源：** 「Show HN: OneCLI – OSS credential gateway that keeps secrets out of AI agents」— Hacker News（score 101，達對照表高門檻）
+- **成熟度：** ⏳ 新興（今日首見，單一開源專案，尚待社群採用回饋）
+
+#### claude-thermos：保持 Claude session 快取熱度的工具，引發「成本轉嫁」爭議（2026-07-23）
+
+- **核心模式：** 作者釋出 claude-thermos，透過定期送出保活請求維持 Claude session 的 prompt cache 不過期，避免快取到期後重新產生內容所帶來的高成本；HN 討論中同時揭露 Pro/Max 方案目前快取到期時間為 1 小時，此前一度退化至僅 5 分鐘
+- **與既有模式的關係：** 直接對應本頁「Token / 成本優化」類別既有觀察「快取不跨 session 是費用主因」——此工具是社群對該痛點的具體 workaround；但 HN 高分留言同時質疑「這只是把成本轉嫁給其他用戶」，認為此類保活行為可能變相佔用共享額度/基礎設施資源，工具本身與其正當性皆有爭議，尚無社群共識（爭議面詳見 [[topics/community-tech-discussions]] 同日收錄之討論）
+- **來源：** 「Show HN: Claude-thermos keeps your Claude session warm for you」— Hacker News（score 102，達對照表高門檻）
+- **成熟度：** ⏳ 新興（今日首見，工具本身與其倫理正當性皆有爭議，尚待社群共識）
+
+#### 依任務類型分工選用 Claude 模型／Code／Cowork（2026-07-23）
+
+- **核心模式：** 媒體報導使用者依任務性質分別選用不同 Claude 產品線（模型選擇、Claude Code、Cowork），依情境切換使用工具而非單一工具包辦所有任務（僅標題可考，具體判準細節未知）
+- **與既有模式的關係：** 呼應本頁「模型使用策略」類別既有「依任務複雜度路由」思路，但本篇聚焦人工決策層面的產品線分工，而非自動化路由機制，補上使用者側手動選型的案例角度
+- **來源：** 「I use Anthropic's Claude AI tools for very different jobs: How to pick between models, Code, and Cowork」— ZDNET（Google News，source_count=2，達對照表中門檻；僅標題可用，內容細節未知，暫不深入推論）
+- **成熟度：** ⏳ 新興（媒體標題轉載，缺乏第一手操作細節，暫記以觀察後續是否有更詳細跟進報導）
 
 #### nb2lite-skill-claude：以 Gemini Interactions API 打造有狀態圖片編輯 Claude Code Skill（2026-07-22）
 
