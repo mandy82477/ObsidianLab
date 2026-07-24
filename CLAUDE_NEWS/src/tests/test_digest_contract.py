@@ -26,7 +26,10 @@ Bug 3 — "sentiment" is always "": direct consequence of bug 2 — the capture
     group for the backtick-wrapped style never matched the bare style, so it
     was always None/empty.
 """
+import json
+import tempfile
 import unittest
+from pathlib import Path
 
 from tests._helpers import load_script_module, FIXTURES_DIR
 
@@ -99,6 +102,60 @@ class TestOldBacktickSentimentStillSupported(unittest.TestCase):
         self.assertEqual(m.group(2), "04/25 14:56")
         sentiment = m.group(3) or m.group(4)
         self.assertEqual(sentiment, "😊 正面")
+
+
+class TestSearchIndexIncludesBody(unittest.TestCase):
+    """search-index.json used to only index 今日聚焦 text + story titles —
+    a keyword that only appears in a story's body (never in its title) was
+    unfindable via the web reader's search box. build()'s digest indexing
+    loop must now also fold in each story's body text."""
+
+    def setUp(self):
+        self.tmpdir = tempfile.TemporaryDirectory()
+        self.addCleanup(self.tmpdir.cleanup)
+        self.root = Path(self.tmpdir.name)
+        (self.root / "wiki" / "entities").mkdir(parents=True)
+        (self.root / "wiki" / "topics").mkdir(parents=True)
+        (self.root / "news").mkdir(parents=True)
+        (self.root / "web_reader" / "data").mkdir(parents=True)
+
+        digest_md = (
+            "# Claude Code & Anthropic 每日新聞摘要\n\n"
+            "**日期：** 2026-02-02 | **來源：** 1/10 | **文章數：** 1 | "
+            "**更新時間：** 2026-02-02 00:00 UTC\n\n---\n\n"
+            "### 🔧 技術更新\n\n"
+            "**[標題完全不含關鍵字](https://example.com/body-only)**\n"
+            "這段內文獨家提到了indexbodyonlyword這個關鍵字，標題裡完全沒有。\n"
+            "`GitHub` · 02/02 00:00 UTC\n\n"
+            "### 📡 來源狀態\n\n"
+            "| 來源 | 狀態 | 條數 |\n|------|------|------|\n| GitHub | ✅ | 1 |\n"
+        )
+        (self.root / "news" / "2026-02-02.md").write_text(digest_md, encoding="utf-8")
+
+    def _patch_paths(self):
+        patched = {
+            "ROOT": self.root,
+            "WIKI_DIR": self.root / "wiki",
+            "WIKI_ENTITIES": self.root / "wiki" / "entities",
+            "WIKI_TOPICS": self.root / "wiki" / "topics",
+            "WIKI_RADAR": self.root / "wiki" / "feature-radar.md",
+            "NEWS_DIR": self.root / "news",
+            "OUT_JS": self.root / "web_reader" / "data" / "data.js",
+            "OUT_WIKI_DIR": self.root / "web_reader" / "data" / "wiki",
+            "OUT_DIGEST_DIR": self.root / "web_reader" / "data" / "digest",
+            "OUT_SEARCH_INDEX": self.root / "web_reader" / "data" / "search-index.json",
+        }
+        originals = {k: getattr(build_web, k) for k in patched}
+        for k, v in patched.items():
+            setattr(build_web, k, v)
+        self.addCleanup(lambda: [setattr(build_web, k, v) for k, v in originals.items()])
+
+    def test_body_only_keyword_present_in_index_text(self):
+        self._patch_paths()
+        build_web.build()
+        index = json.loads(build_web.OUT_SEARCH_INDEX.read_text(encoding="utf-8"))
+        entry = next(item for item in index if item["id"] == "2026-02-02")
+        self.assertIn("indexbodyonlyword", entry["text"])
 
 
 if __name__ == "__main__":

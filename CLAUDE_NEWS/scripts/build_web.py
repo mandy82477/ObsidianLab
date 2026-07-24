@@ -674,7 +674,8 @@ def build():
             "summary": radar["summary"],
             "text":    strip_markdown_to_text(radar.get("markdown", "")),
         })
-    # Digests: index 今日聚焦 text + all story titles (compact, ~1-2 KB/day)
+    # Digests: index 今日聚焦 text + all story titles + story bodies —
+    # body 補入前索引只到標題層，關鍵字若只出現在條目內文（未出現在標題）就搜不到。
     for date_str, d in digest_all.items():
         focus_txt = "；".join(f["text"] for f in d.get("focus", []))
         titles = "；".join(
@@ -682,12 +683,18 @@ def build():
             for sec in ("topStories", "techUpdates", "mediaReports", "discussions", "billing")
             for s in d.get(sec, [])
         )
+        bodies = "；".join(
+            s["body"]
+            for sec in ("topStories", "techUpdates", "mediaReports", "discussions", "billing")
+            for s in d.get(sec, [])
+            if s.get("body")
+        )
         search_index.append({
             "id":      date_str,
             "type":    "digest",
             "name":    f"日報 {date_str}",
             "summary": (d.get("preview") or "")[:90],
-            "text":    f"{focus_txt}；{titles}",
+            "text":    f"{focus_txt}；{titles}；{bodies}",
         })
     with OUT_SEARCH_INDEX.open("w", encoding="utf-8") as fp:
         json.dump(search_index, fp, ensure_ascii=False, separators=(",", ":"))
