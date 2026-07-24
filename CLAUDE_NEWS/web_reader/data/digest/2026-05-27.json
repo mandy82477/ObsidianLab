@@ -2,7 +2,7 @@
   "date": "2026-05-27",
   "generatedAt": "2026-05-27 16:00 UTC",
   "articleCount": 86,
-  "sourceCount": "6/6 | **文章數：** 86 | **更新時間：** 2026-05-27 16:00 UTC",
+  "sourceCount": "6/6",
   "bulletin": "",
   "topStories": [
     {
@@ -90,8 +90,8 @@
       "title": "Claude Code as a Daily Driver: Claude.md, Skills, Subagents, Plugins, and MCPs",
       "url": "https://arps18.github.io/posts/claude-code-mastery/",
       "source": "Hacker News",
-      "time": "05/27 05:13 UTC  情緒：😊",
-      "sentiment": "",
+      "time": "05/27 05:13",
+      "sentiment": "😊",
       "body": "HN score 176 的完整進階指南，作者採用 Boris Cherny 「給 Claude 可自我驗證的方法」核心原則，系統性整理 CLAUDE.md 設計、Skills 客製化、並行 Subagent 工作流、MCP 整合四大主軸。目前是社群中被引用最多的 Claude Code 進階教學。",
       "focusTags": [
         "[社群趨勢]"
@@ -101,8 +101,8 @@
       "title": "Launch HN: Minicor (YC P26) – Windows desktop automations at scale",
       "url": "https://www.minicor.com/",
       "source": "Hacker News",
-      "time": "05/26 14:57 UTC  情緒：😊",
-      "sentiment": "",
+      "time": "05/26 14:57",
+      "sentiment": "😊",
       "body": "HN score 98 的 YC 新創，主打「AI 公司整合桌面應用的最後一哩路」——針對沒有 API 的 Windows 桌面系統（如醫療記錄軟體）提供可擴展 RPA 方案，與 Claude Code 的 agent 工作流高度互補。",
       "focusTags": []
     },
@@ -110,8 +110,8 @@
       "title": "How we contain Claude across products",
       "url": "https://www.anthropic.com/engineering/how-we-contain-claude",
       "source": "Hacker News / Anthropic Engineering",
-      "time": "05/26 19:33 UTC  情緒：🤔",
-      "sentiment": "",
+      "time": "05/26 19:33",
+      "sentiment": "🤔",
       "body": "HN score 6，Anthropic 工程部落格深度文章。說明 Anthropic 內部如何在給予 Claude 足夠生產力存取權限的同時，控制潛在的「爆炸半徑」——涵蓋沙盒設計、最小權限原則、代理人存取管控等架構細節。",
       "focusTags": []
     },
@@ -119,8 +119,8 @@
       "title": "Show HN: Gave Claude Code ADHD – Now it thinks 3x better",
       "url": "https://adhdstack.github.io/",
       "source": "Hacker News",
-      "time": "05/27 12:00 UTC  情緒：🤔",
-      "sentiment": "",
+      "time": "05/27 12:00",
+      "sentiment": "🤔",
       "body": "HN score 4，論文實作工具。「ADHD」方法讓 Claude 同時展開 N 條隔離的認知分支（不同視角框架），再由獨立評審合併最佳解，號稱解決 LLM 的「過早收斂」問題，在開放式設計任務上效果顯著。",
       "focusTags": []
     },
@@ -128,8 +128,8 @@
       "title": "Trading Peace for Pace: A Few Weeks with Claude Code",
       "url": "https://ronaknathani.com/blog/2026/02/trading-peace-for-pace-a-few-weeks-with-claude-code/",
       "source": "Hacker News",
-      "time": "05/26 13:18 UTC  情緒：😤",
-      "sentiment": "",
+      "time": "05/26 13:18",
+      "sentiment": "😤",
       "body": "HN score 4，作者坦承 Claude Code 讓他完全放棄舊工作流，但代價是「用平靜換取速度」——深度專注感消失、情緒獎勵從寫程式轉向提示 Claude，更多上下文切換。引發大量開發者共鳴討論。",
       "focusTags": []
     },
@@ -137,8 +137,8 @@
       "title": "Show HN: The skill to resume work on Claude Code without unnecessary context",
       "url": "https://github.com/sofumel/claude-handoff-revive",
       "source": "Hacker News",
-      "time": "05/27 11:49 UTC  情緒：😊",
-      "sentiment": "",
+      "time": "05/27 11:49",
+      "sentiment": "😊",
       "body": "HN score 3，`claude-handoff-revive`：讓新 Claude Code session 快速接手前一 session 工作，無需重新帶入全部 context。評論指出這觸及 Claude Code「缺乏持久化工程 artifacts」的根本問題。",
       "focusTags": []
     },
@@ -146,8 +146,8 @@
       "title": "Show HN: STAX IDE – A zoomable macOS canvas of terminals and tools",
       "url": "https://staxide.com",
       "source": "Hacker News",
-      "time": "05/27 04:39 UTC  情緒：😊",
-      "sentiment": "",
+      "time": "05/27 04:39",
+      "sentiment": "😊",
       "body": "HN score 2，macOS 應用，以可縮放畫布取代 tab 式終端，專為同時運行 8–10 個 Claude Code / Codex shell 設計，使用 AppKit + SwiftTerm 實作，強調視覺化並行工作流管理。",
       "focusTags": []
     },
@@ -155,8 +155,8 @@
       "title": "Show HN: Vibeshub – Git for your vibe code transcripts",
       "url": "https://vibeshub.ai/",
       "source": "Hacker News",
-      "time": "05/26 15:56 UTC  情緒：😊",
-      "sentiment": "",
+      "time": "05/26 15:56",
+      "sentiment": "😊",
       "body": "HN score 2，Claude Code Plugin，自動上傳 transcript 並在 PR 中附上可讀連結，讓 code reviewer 能看到 AI 協作的完整脈絡而非只看 diff，解決 vibe coding 的 PR review 問題。",
       "focusTags": []
     },
@@ -164,8 +164,8 @@
       "title": "Show HN: Visual composer for Claude Code multi-agent workflows",
       "url": "https://github.com/fayzan123/claude-workflow-composer",
       "source": "Hacker News",
-      "time": "05/26 21:36 UTC  情緒：😊",
-      "sentiment": "",
+      "time": "05/26 21:36",
+      "sentiment": "😊",
       "body": "HN score 2，`claude-workflow-composer`：用 `npx claude-cwc` 啟動的視覺化多代理人工作流設計工具，對不熟悉純 CLI 編排的開發者提供圖形化介面。",
       "focusTags": []
     },
@@ -173,8 +173,8 @@
       "title": "Show HN: Claude Usage Tray – Windows Tray for Claude Code Rate Limits",
       "url": "https://github.com/apexlocal-jz/claude-usage-tray",
       "source": "Hacker News",
-      "time": "05/27 14:31 UTC  情緒：😊",
-      "sentiment": "",
+      "time": "05/27 14:31",
+      "sentiment": "😊",
       "body": "HN score 1，Windows 系統列工具，即時顯示 Claude Code 使用率與 rate limit 狀態，填補 Windows 用戶的費率可視化缺口。",
       "focusTags": []
     },
@@ -182,8 +182,8 @@
       "title": "Show HN: KittyHTML – Render HTML/CSS as an inline image in your terminal",
       "url": "https://www.npmjs.com/package/kittyhtml",
       "source": "Hacker News",
-      "time": "05/27 14:53 UTC  情緒：🤔",
-      "sentiment": "",
+      "time": "05/27 14:53",
+      "sentiment": "🤔",
       "body": "HN score 1，Node.js 套件，支援將 `claude -p` 輸出的 HTML 直接在終端內渲染（需 Kitty 終端），對「用 HTML 作為 LLM 輸出格式」的討論提供實用工具支持。",
       "focusTags": []
     },
@@ -191,8 +191,8 @@
       "title": "i run claude code 6+ hours a day — 6 rules in my CLAUDE.md that stopped the rot",
       "url": "https://www.reddit.com/r/ClaudeAI/comments/1tp4kmf/i_run_claude_code_6_hours_a_day_here_are_the_6/",
       "source": "Reddit / r/ClaudeAI",
-      "time": "05/27 04:48 UTC  情緒：😊",
-      "sentiment": "",
+      "time": "05/27 04:48",
+      "sentiment": "😊",
       "body": "重度使用者整理的 CLAUDE.md 六條規則：不以文字描述替代工具呼叫、即時狀態必須重新讀取而非依賴記憶、繼承既有 owner 而非創建新物件等，是對抗 context 退化的實用操作手冊。",
       "focusTags": []
     },
@@ -200,8 +200,8 @@
       "title": "Anthropic's Latest AIs Are Making Some Customers Uneasy",
       "url": "https://news.google.com/rss/articles/CBMiwgFBVV95cUxQZ1BpZkRLWVg3bUpUb0lYcW9xRngxTU9qb3ZMUFZRSl9FaHhSZkxLa2hLQWVITVVOOV92alR2bFhhajJRU3RjUDNxSXdrR2tnVHRuZHU0OWJtVk9GNGpjWnhzOTNqRkE5bmY2UzFoaHA3cXEzQy1HdG5rVV9JZFdJYmVEa2txRnJvclJvLUdzNG56dVlJRW9vWTdvTFI4WWJYbUFTMTNYdFQwQ1BJelQ4YU9QblBuOGhhSUVTa2ptOUZodw?oc=5",
       "source": "Google News / Bloomberg",
-      "time": "05/26 20:00 UTC  情緒：😤",
-      "sentiment": "",
+      "time": "05/26 20:00",
+      "sentiment": "😤",
       "body": "Bloomberg 報導：部分 Anthropic 企業客戶對新款 Claude 模型的行為感到不安，具體原因未明，但與 Mythos 10K 漏洞爭議、能力快速提升帶來的可控性疑慮相呼應。",
       "focusTags": [
         "[持續追蹤]"

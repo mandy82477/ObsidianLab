@@ -2,7 +2,7 @@
   "date": "2026-07-11",
   "generatedAt": "2026-07-11 22:36 UTC",
   "articleCount": 51,
-  "sourceCount": "10/10 | **文章數：** 51 | **更新時間：** 2026-07-11 22:36 UTC",
+  "sourceCount": "10/10",
   "bulletin": "",
   "topStories": [
     {
@@ -84,8 +84,8 @@
       "title": "One Wikipedia page costs your AI agent 68,000 tokens",
       "url": "https://news.ycombinator.com/item?id=48867021",
       "source": "Hacker News",
-      "time": "07/11 00:12 UTC · 情緒：🤔",
-      "sentiment": "",
+      "time": "07/11 00:12 UTC ·",
+      "sentiment": "🤔",
       "body": "作者實測發現 Claude Code 內建 WebFetch 對多數頁面處理良好（如將 Wikipedia 摘要壓到約 950 tokens），但在 JS 渲染或有反爬機制的頁面上會失敗並把原始 HTML 整段塞回 context，因而動手開發開源工具因應。",
       "focusTags": [
         "[社群趨勢]"
@@ -95,8 +95,8 @@
       "title": "Anthropic hid tracking signals in Unicode apostrophes. That's not telemetry, that's steganography.",
       "url": "https://dev.to/adioof/anthropic-hid-tracking-signals-in-unicode-apostrophes-thats-not-telemetry-thats-steganography-2p3e",
       "source": "dev.to / #anthropic",
-      "time": "07/01 15:38 UTC · 情緒：😤",
-      "sentiment": "",
+      "time": "07/01 15:38 UTC ·",
+      "sentiment": "😤",
       "body": "作者指控 Claude Code 系統提示中曾出現以 Unicode 撇號變體與日期格式作為隱藏標記，並聲稱這些標記會依路由條件（如透過競品 API 網域、特定時區）觸發；此為單一部落格文章的指控，尚未見官方回應或第三方驗證。",
       "focusTags": []
     },
@@ -104,8 +104,8 @@
       "title": "I built a local reverse proxy to see what Claude Code actually sends to Anthropic",
       "url": "https://dev.to/houleixx/i-built-a-local-reverse-proxy-to-see-what-claude-code-actually-sends-to-anthropic-5foo",
       "source": "dev.to / #claudecode",
-      "time": "06/10 07:08 UTC · 情緒：🤔",
-      "sentiment": "",
+      "time": "06/10 07:08 UTC ·",
+      "sentiment": "🤔",
       "body": "作者發現 Claude Code 不遵守 `HTTP_PROXY` 環境變數，因此自建一個 loopback 上的本地反向代理，即時檢視每次請求送出的 prompt、token 與費用。",
       "focusTags": [
         "[新工具]"
@@ -115,8 +115,8 @@
       "title": "I built a set of kitty terminal overlays for the Claude Code workflow",
       "url": "https://www.reddit.com/r/ClaudeCode/comments/1utlkas/i_built_a_set_of_kitty_terminal_overlays_for_the/",
       "source": "Reddit / r/ClaudeCode",
-      "time": "07/11 14:27 UTC · 情緒：😊",
-      "sentiment": "",
+      "time": "07/11 14:27 UTC ·",
+      "sentiment": "😊",
       "body": "使用者分享一組 kitty 終端機 overlay 工具，讓 Claude Code 的 diff 可以像 IDE 一樣檢視、並方便切換 session 與瀏覽 git 歷史。",
       "focusTags": []
     },
@@ -124,8 +124,8 @@
       "title": "According to DataBricks, pi-coding-agent is ~2x cheaper than CC/Codex, GLM 5.2 on par with Opus 4.8 high",
       "url": "https://www.reddit.com/r/LocalLLaMA/comments/1usrek0/according_to_databricks_picodingagent_is_2x/",
       "source": "Reddit / r/LocalLLaMA · 週熱門",
-      "time": "07/10 15:46 UTC · 情緒：🤔",
-      "sentiment": "",
+      "time": "07/10 15:46 UTC ·",
+      "sentiment": "🤔",
       "body": "r/LocalLLaMA 週熱門貼文轉述 DataBricks 的評測，指 pi-coding-agent 成本約為 Claude Code / Codex 的一半，且 GLM 5.2 表現可比 Opus 4.8 high；為單一來源轉述，數字未見官方交叉確認。",
       "focusTags": []
     }

@@ -2,7 +2,7 @@
   "date": "2026-06-14",
   "generatedAt": "2026-06-14 23:07 UTC",
   "articleCount": 44,
-  "sourceCount": "6/6 | **文章數：** 44 | **更新時間：** 2026-06-14 23:07 UTC",
+  "sourceCount": "6/6",
   "bulletin": "",
   "topStories": [
     {
@@ -105,8 +105,8 @@
       "title": "週一起程式化用量切換至 Agent SDK 配額",
       "url": "https://www.reddit.com/r/ClaudeAI/comments/1u5nd0r/remember_monday_programmatic_usage_is_switching/",
       "source": "Reddit / r/ClaudeAI",
-      "time": "06/14 06:59 UTC 情緒：⚠️",
-      "sentiment": "",
+      "time": "06/14 06:59",
+      "sentiment": "⚠️",
       "body": "2026-06-16 起，Claude.ai 訂閱方案的程式化用量改走 Agent SDK 配額，需提前確認 API 用法是否受影響。",
       "focusTags": [
         "[風險警示]"
@@ -116,8 +116,8 @@
       "title": "Fable 消失後失去寫作動力",
       "url": "https://www.reddit.com/r/ClaudeAI/comments/1u5nhnp/asking_for_help_w_fable_gone_ive_lost_all/",
       "source": "Reddit / r/ClaudeAI",
-      "time": "06/14 07:03 UTC 情緒：😤",
-      "sentiment": "",
+      "time": "06/14 07:03",
+      "sentiment": "😤",
       "body": "用戶反映 Fable 被下架後，Opus 4.6 在書籍編輯任務上差距明顯，希望找到替代調校方法。社群熱烈討論如何用系統提示詞彌補差距。",
       "focusTags": []
     },
@@ -125,8 +125,8 @@
       "title": "不重啟 CLI 即時切換 Claude Code 模型",
       "url": "https://www.reddit.com/r/ClaudeAI/comments/1u5l9te/switch_claude_code_models_without_restarting_the/",
       "source": "Reddit / r/ClaudeAI",
-      "time": "06/14 05:31 UTC 情緒：😊",
-      "sentiment": "",
+      "time": "06/14 05:31",
+      "sentiment": "😊",
       "body": "開發者分享在 Claude Code 會話中動態切換模型的技巧，無需重啟 CLI，對測試不同模型效果很實用。",
       "focusTags": []
     },
@@ -134,8 +134,8 @@
       "title": "I built Conan：macOS HUD 即時監控 Claude Code 行為",
       "url": "https://www.reddit.com/r/ClaudeAI/comments/1u5mb9c/i_built_conan_a_native_macos_hud_that_shows_what/",
       "source": "Reddit / r/ClaudeAI",
-      "time": "06/14 06:16 UTC 情緒：😊",
-      "sentiment": "",
+      "time": "06/14 06:16",
+      "sentiment": "😊",
       "body": "開發者打造原生 macOS HUD，即時顯示 Claude Code 正在執行的工具呼叫與步驟，解決「只有帳單才知道 Claude 做了什麼」的困境。",
       "focusTags": []
     },
@@ -143,8 +143,8 @@
       "title": "5 個我在第一個 Claude Code 子 Agent Pipeline 犯的錯誤",
       "url": "https://dev.to/yureki_lab/5-mistakes-i-made-designing-my-first-claude-code-sub-agent-pipeline-1f3h",
       "source": "dev.to / #claudecode",
-      "time": "06/14 06:33 UTC 情緒：🤔",
-      "sentiment": "",
+      "time": "06/14 06:33",
+      "sentiment": "🤔",
       "body": "從單體 Prompt 到適當分工，開發者總結多 Agent pipeline 設計的常見失誤：過大的 context、缺少 checkpoint、角色邊界模糊。",
       "focusTags": []
     },
@@ -152,8 +152,8 @@
       "title": "AI Agent 為何無視你寫的規則",
       "url": "https://dev.to/arseni_1c552e9dc5349dc6b4/why-your-ai-agent-ignores-the-rules-you-wrote-9lf",
       "source": "dev.to / #claudeai",
-      "time": "06/13 23:58 UTC 情緒：😤",
-      "sentiment": "",
+      "time": "06/13 23:58",
+      "sentiment": "😤",
       "body": "實際案例：config 明確禁止使用 `pnpm add`，Agent 仍然觸發。作者分析 Agent 無視規則的機制，提出強化約束的方法。",
       "focusTags": []
     },
@@ -161,8 +161,8 @@
       "title": "Ultracode vs Max on Opus 4.8",
       "url": "https://www.reddit.com/r/ClaudeAI/comments/1u5ml99/ultracode_vs_max_on_opus_48/",
       "source": "Reddit / r/ClaudeAI",
-      "time": "06/14 06:27 UTC 情緒：🤔",
-      "sentiment": "",
+      "time": "06/14 06:27",
+      "sentiment": "🤔",
       "body": "用戶比較 Ultracode 與 Max 訂閱方案在 Opus 4.8 上的實際效能差異，探討 token 配額與品質間的取捨。",
       "focusTags": []
     },
@@ -170,8 +170,8 @@
       "title": "Claude 1M Context 用於歷史研究",
       "url": "https://www.reddit.com/r/ClaudeAI/comments/1u5mjza/accessing_claudes_1m_context_for_historical/",
       "source": "Reddit / r/ClaudeAI",
-      "time": "06/14 06:26 UTC 情緒：😊",
-      "sentiment": "",
+      "time": "06/14 06:26",
+      "sentiment": "😊",
       "body": "用戶使用百萬 token context window 彙整二戰家族史料（照片、書籍、研究文件），探討 Project 功能在長期研究工作流的實際表現。",
       "focusTags": []
     }

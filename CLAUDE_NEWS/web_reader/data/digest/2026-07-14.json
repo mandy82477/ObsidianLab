@@ -2,7 +2,7 @@
   "date": "2026-07-14",
   "generatedAt": "2026-07-14 13:11 UTC",
   "articleCount": 60,
-  "sourceCount": "10/10 | **文章數：** 60 | **更新時間：** 2026-07-14 13:11 UTC",
+  "sourceCount": "10/10",
   "bulletin": "",
   "topStories": [
     {
@@ -274,8 +274,8 @@
       "title": "Claude Code OAuth login fails with a timeout error. `auth.anthropic.com` does not resolve via DNS, making it impossible to authenticate.",
       "url": "https://github.com/anthropics/claude-code/issues/33238",
       "source": "GitHub Issues / claude-code",
-      "time": "07/13 21:01 UTC 情緒：😤",
-      "sentiment": "",
+      "time": "07/13 21:01",
+      "sentiment": "😤",
       "body": "使用者回報 Claude Code OAuth 登入逾時失敗，`auth.anthropic.com` 無法透過 DNS 解析，導致完全無法驗證，累積 150 則留言、46 個讚同反應，為本日互動量最高的條目。",
       "focusTags": [
         "[風險警示]"
@@ -285,8 +285,8 @@
       "title": "Recurring error: \"The model's tool call could not be parsed (retry also failed)\" interrupts sessions",
       "url": "https://github.com/anthropics/claude-code/issues/63875",
       "source": "GitHub Issues / claude-code",
-      "time": "07/13 19:01 UTC 情緒：😤",
-      "sentiment": "",
+      "time": "07/13 19:01",
+      "sentiment": "😤",
       "body": "使用者反映 session 過程中會間歇性中斷並顯示模型 tool call 無法被解析的錯誤，累積 75 則留言、117 個讚同反應。",
       "focusTags": [
         "[社群趨勢]"
@@ -296,8 +296,8 @@
       "title": "[BUG] API Error: Server is temporarily limiting requests (not your usage limit)",
       "url": "https://github.com/anthropics/claude-code/issues/53915",
       "source": "GitHub Issues / claude-code",
-      "time": "07/13 15:31 UTC 情緒：😤",
-      "sentiment": "",
+      "time": "07/13 15:31",
+      "sentiment": "😤",
       "body": "使用者回報收到「伺服器暫時限制請求」的錯誤訊息，強調並非用量上限所致，累積 68 則留言、26 個讚同反應。",
       "focusTags": [
         "[社群趨勢]"
@@ -307,8 +307,8 @@
       "title": "[Bug] Anthropic API Error: Model's tool call could not be parsed (retry also failed)",
       "url": "https://github.com/anthropics/claude-code/issues/62123",
       "source": "GitHub Issues / claude-code",
-      "time": "07/13 19:01 UTC 情緒：😤",
-      "sentiment": "",
+      "time": "07/13 19:01",
+      "sentiment": "😤",
       "body": "另一則獨立回報同樣的 tool call 無法解析錯誤，在 Opus 4.7 環境下多次發生，累積 63 則留言、113 個讚同反應，與前述 issue 63875 為同類問題的不同回報。",
       "focusTags": [
         "[社群趨勢]"
@@ -318,8 +318,8 @@
       "title": "Claude Code plugin that plays a Mr. Meeseeks voice line whene Claude is waiting",
       "url": "https://github.com/thephw/claude-meseeks",
       "source": "Hacker News",
-      "time": "07/13 22:03 UTC 情緒：😊",
-      "sentiment": "",
+      "time": "07/13 22:03",
+      "sentiment": "😊",
       "body": "開發者釋出小工具，讓 Claude Code 在長對話中準備結束話題時播放 Mr. Meeseeks 的語音台詞，社群回響提及類似的語音提示外掛已有多種聲音包可選。",
       "focusTags": []
     },
@@ -327,8 +327,8 @@
       "title": "Show HN: I implemented a neural network in SQL",
       "url": "https://github.com/xqlsystems/xarray-sql/blob/claude/xarray-sql-mnist-demo/benchmarks/nn.py",
       "source": "Hacker News",
-      "time": "07/13 20:00 UTC 情緒：😐",
-      "sentiment": "",
+      "time": "07/13 20:00",
+      "sentiment": "😐",
       "body": "開發者展示如何用 SQL 實作神經網路，作為陣列資料庫函式庫 Xarray-SQL 的示範案例，登上 HN 首頁。",
       "focusTags": []
     },
@@ -336,8 +336,8 @@
       "title": "A Study of Microsoft's Early 2026 Rollout of Claude Code and GitHub Copilot CLI",
       "url": "https://arxiv.org/abs/2607.01418",
       "source": "Hacker News",
-      "time": "07/13 21:43 UTC 情緒：😐",
-      "sentiment": "",
+      "time": "07/13 21:43",
+      "sentiment": "😐",
       "body": "研究論文分析微軟內部數萬名工程師採用 Claude Code 與 GitHub Copilot CLI 的擴散模式、留存率與投資報酬情況。",
       "focusTags": []
     },
@@ -345,8 +345,8 @@
       "title": "Show HN: Sx 2.0 – Share AI skills with your team through a Dropbox folder",
       "url": "https://sleuth-io.github.io/sx/2026/07/10/your-dropbox-is-now-a-skill-server.html",
       "source": "Hacker News",
-      "time": "07/13 23:26 UTC 情緒：😐",
-      "sentiment": "",
+      "time": "07/13 23:26",
+      "sentiment": "😐",
       "body": "開發者推出 Sx 2.0，讓非技術團隊也能透過 Dropbox、Google Drive 等雲端硬碟分享 Claude／Codex 的 skill，不需依賴 git。",
       "focusTags": []
     },
@@ -354,8 +354,8 @@
       "title": "$65K to work at Anthropic? Debate ensues amid IPO wave",
       "url": "https://missionlocal.org/2026/07/anthropic-sf-affordability-ipo-housing-evictions-rent/",
       "source": "Hacker News",
-      "time": "07/13 21:56 UTC 情緒：😤",
-      "sentiment": "",
+      "time": "07/13 21:56",
+      "sentiment": "😤",
       "body": "報導指出 Anthropic 開出年薪 6.5 萬至 8.5 萬美元的職缺，低於舊金山中位數收入六成，引發公眾對公司財富分配不均的爭議。",
       "focusTags": []
     },
@@ -363,8 +363,8 @@
       "title": "Show HN: Finterm.ai Bloomberg terminal for Claude Code",
       "url": "https://finterm.ai/",
       "source": "Hacker News",
-      "time": "07/13 17:52 UTC 情緒：😊",
-      "sentiment": "",
+      "time": "07/13 17:52",
+      "sentiment": "😊",
       "body": "開發者釋出 Finterm，讓 Claude Code 等編碼 agent 可直接存取股價、選擇權資料與 SEC 文件等金融資訊。",
       "focusTags": []
     },
@@ -372,8 +372,8 @@
       "title": "I Traced 4 Claude Opus 5 Signals. The Release Date Still Isn't Real Yet.",
       "url": "https://dev.to/tokenmixai/i-traced-4-claude-opus-5-signals-the-release-date-still-isnt-real-yet-2f2j",
       "source": "dev.to / #anthropic",
-      "time": "07/13 09:20 UTC 情緒：🤔",
-      "sentiment": "",
+      "time": "07/13 09:20",
+      "sentiment": "🤔",
       "body": "作者比對 Anthropic 模型型錄、定價文件與發布節奏，認為 Opus 5 的存在具有一定可信度，但坊間流傳的確切日期與跑分數字目前都缺乏佐證。",
       "focusTags": []
     },
@@ -381,8 +381,8 @@
       "title": "Show HN: ClaudeThings – your AI engineering and marketing team in one command",
       "url": "https://www.claudethings.com/",
       "source": "Hacker News",
-      "time": "07/14 07:32 UTC 情緒：😐",
-      "sentiment": "",
+      "time": "07/14 07:32",
+      "sentiment": "😐",
       "body": "開發者釋出 ClaudeThings，將 89 個專門 agent、103 個預建 skill 與 181 個 slash command 一次整合進單一指令。",
       "focusTags": []
     },
@@ -390,8 +390,8 @@
       "title": "Artifacts in Claude Code: The Operator's Guide",
       "url": "https://dev.to/max_quimby/artifacts-in-claude-code-the-operators-guide-4fb0",
       "source": "dev.to / #anthropic",
-      "time": "06/21 06:01 UTC 情緒：😐",
-      "sentiment": "",
+      "time": "06/21 06:01",
+      "sentiment": "😐",
       "body": "作者撰寫操作指南，說明 Claude Code 的 Artifacts 功能如何建立即時儀表板、圖表與可分享頁面，並搭配 Claude Design 同步程式碼庫。",
       "focusTags": []
     },
@@ -399,8 +399,8 @@
       "title": "Show HN: Giving Claude Code and codex its voice using kokoro",
       "url": "https://github.com/softcane/aloud",
       "source": "Hacker News",
-      "time": "07/14 04:35 UTC 情緒：😊",
-      "sentiment": "",
+      "time": "07/14 04:35",
+      "sentiment": "😊",
       "body": "開發者釋出 aloud，用 kokoro 語音模型讓 Claude Code 與 Codex 具備語音輸出能力。",
       "focusTags": []
     },
@@ -408,8 +408,8 @@
       "title": "Show HN: Fleet Deck – see every Claude Code session on your machine in one board",
       "url": "https://github.com/lacion/fleet-deck",
       "source": "Hacker News",
-      "time": "07/13 20:56 UTC 情緒：😊",
-      "sentiment": "",
+      "time": "07/13 20:56",
+      "sentiment": "😊",
       "body": "開發者釋出 Fleet Deck，讓同時執行多個 Claude Code session 的使用者能在單一看板上掌握每個 session 的狀態（排隊中／執行中／待輸入／閒置）。",
       "focusTags": []
     },
@@ -417,8 +417,8 @@
       "title": "Show HN: Ankole – Claude Tag open source alternative",
       "url": "https://github.com/AgentBull/ankole",
       "source": "Hacker News",
-      "time": "07/13 18:26 UTC 情緒：😐",
-      "sentiment": "",
+      "time": "07/13 18:26",
+      "sentiment": "😐",
       "body": "開發者釋出 Ankole，作為 Claude Tag（Claude in Slack）的開源替代方案。",
       "focusTags": []
     },
@@ -426,8 +426,8 @@
       "title": "Show HN: Claude Organizer, folders and search for Claude.ai, all local",
       "url": "https://chromewebstore.google.com/detail/claude-organizer-folders/pnbhfiebkknicpbljchmgibnpmlgebif",
       "source": "Hacker News",
-      "time": "07/13 16:08 UTC 情緒：😐",
-      "sentiment": "",
+      "time": "07/13 16:08",
+      "sentiment": "😐",
       "body": "開發者釋出瀏覽器擴充功能 Claude Organizer，為 claude.ai 加入資料夾、搜尋、書籤與完整對話匯出功能，所有資料保留在本機。",
       "focusTags": []
     },
@@ -435,8 +435,8 @@
       "title": "GPT-5.6 Sol vs Claude Fable 5 on the same iOS calorie-tracker brief",
       "url": "https://www.reddit.com/r/ClaudeCode/comments/1uw5ml0/gpt56_sol_vs_claude_fable_5_on_the_same_ios/",
       "source": "Reddit / r/ClaudeCode",
-      "time": "07/14 11:10 UTC 情緒：🤔",
-      "sentiment": "",
+      "time": "07/14 11:10",
+      "sentiment": "🤔",
       "body": "使用者以相同的 iOS 卡路里追蹤 App 需求，實測比較 GPT-5.6 Sol 與 Claude Fable 5 的表現。",
       "focusTags": []
     },
@@ -444,8 +444,8 @@
       "title": "I made Claude Code and Codex build the same thing. Codex was 63% cheaper but I'm still staying with Claude.",
       "url": "https://www.reddit.com/r/ClaudeCode/comments/1uw5jbr/i_made_claude_code_and_codex_build_the_same_thing/",
       "source": "Reddit / r/ClaudeCode",
-      "time": "07/14 11:05 UTC 情緒：😊",
-      "sentiment": "",
+      "time": "07/14 11:05",
+      "sentiment": "😊",
       "body": "使用者以相同任務比較 Claude Code 與 Codex，儘管 Codex 成本便宜 63%，仍決定繼續使用 Claude Code。",
       "focusTags": []
     },
@@ -453,8 +453,8 @@
       "title": "Anthropic can't remove F@ble from the subscription tier",
       "url": "https://www.reddit.com/r/ClaudeAI/comments/1usl9ov/anthropic_cant_remove_fble_from_the_subscription/",
       "source": "Reddit / r/ClaudeAI · 週熱門",
-      "time": "07/10 11:43 UTC 情緒：🤔",
-      "sentiment": "",
+      "time": "07/10 11:43",
+      "sentiment": "🤔",
       "body": "使用者推論，隨著 OpenAI Sol 上市，Anthropic 現階段將 Fable 5 移出訂閱方案的可能性不高，如同當初 Opus 4.5 上市後未被移出訂閱一樣。",
       "focusTags": []
     },
@@ -462,8 +462,8 @@
       "title": "5 hour and weekly limits have been reset. Thanks Anthropic!",
       "url": "https://www.reddit.com/r/ClaudeAI/comments/1urzmj0/5_hour_and_weekly_limits_have_been_reset_thanks/",
       "source": "Reddit / r/ClaudeAI · 週熱門",
-      "time": "07/09 19:00 UTC 情緒：😊",
-      "sentiment": "",
+      "time": "07/09 19:00",
+      "sentiment": "😊",
       "body": "使用者回報 5 小時與每週用量額度已被重置，對此表達感謝。",
       "focusTags": []
     },
@@ -471,8 +471,8 @@
       "title": "Anthropic just benchmarked \"Fable 5 orchestrates, cheap models execute\": 96% of the performance at 46% of the cost. You can run this pattern in Claude Code today",
       "url": "https://www.reddit.com/r/ClaudeAI/comments/1ur2ml9/anthropic_just_benchmarked_fable_5_orchestrates/",
       "source": "Reddit / r/ClaudeAI · 週熱門",
-      "time": "07/08 19:17 UTC 情緒：😊",
-      "sentiment": "",
+      "time": "07/08 19:17",
+      "sentiment": "😊",
       "body": "使用者整理 Anthropic 官方公布的第一手數據：「Fable 5 負責協調、便宜模型負責執行」的多模型模式，能以 46% 的成本達到 96% 的效能，且此模式已可在 Claude Code 中直接使用。",
       "focusTags": []
     }

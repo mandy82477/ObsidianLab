@@ -2,7 +2,7 @@
   "date": "2026-06-20",
   "generatedAt": "2026-06-20 18:21 UTC",
   "articleCount": 23,
-  "sourceCount": "5/6 | **文章數：** 23 | **更新時間：** 2026-06-20 18:21 UTC",
+  "sourceCount": "5/6",
   "bulletin": "",
   "topStories": [],
   "techUpdates": [],
@@ -12,8 +12,8 @@
       "title": "China will have a Fable 5-class AI model before next year",
       "url": "https://www.tomshardware.com/tech-industry/artificial-intelligence/elon-musk-says-that-china-will-have-a-fable-5-class-ai-model-probably-q1-next-year-ceo-of-chinese-anthropic-rival-says-it-wont-take-that-long",
       "source": "Hacker News",
-      "time": "06/20 04:33 UTC 情緒：🤔",
-      "sentiment": "",
+      "time": "06/20 04:33",
+      "sentiment": "🤔",
       "body": "中國 AI 實驗室 Z.ai 創辦人 Jie Tang 向馬斯克喊話，中國趕上 Fable 5 等級模型的時間表比 Q1 2027 更快，反映 AI 地緣競賽持續加速。",
       "focusTags": [
         "[重大事件]"
@@ -23,8 +23,8 @@
       "title": "'Politically naive': The fight behind Anthropic's export controls",
       "url": "https://www.politico.com/news/2026/06/19/he-has-to-find-a-way-to-be-friends-the-political-fight-behind-anthropics-export-controls-00968597",
       "source": "Hacker News",
-      "time": "06/20 08:38 UTC 情緒：😤",
-      "sentiment": "",
+      "time": "06/20 08:38",
+      "sentiment": "😤",
       "body": "Politico 深度報導 Anthropic 出口管制政治內幕，揭露公司在華府政策倡議中的挑戰與策略取捨。",
       "focusTags": [
         "[持續追蹤]"
@@ -34,8 +34,8 @@
       "title": "Claude Code scans your whole drive, admits it when caught",
       "url": "https://github.com/anthropics/claude-code/issues",
       "source": "Hacker News",
-      "time": "06/20 07:43 UTC 情緒：😤",
-      "sentiment": "",
+      "time": "06/20 07:43",
+      "sentiment": "😤",
       "body": "HN 討論 Claude Code 執行根目錄 `ls` 的行為引發隱私疑慮，社群建議使用容器或獨立 Linux 用戶隔離執行環境。",
       "focusTags": [
         "[風險警示]"
@@ -45,8 +45,8 @@
       "title": "Anthropic hiring AlphaFold co-creator John Jumper is a real frontier-lab talent signal",
       "url": "https://dev.to/damogallagher/anthropic-hiring-alphafold-co-creator-john-jumper-is-a-real-frontier-lab-talent-signal-3p4f",
       "source": "dev.to / #anthropic",
-      "time": "06/20 02:06 UTC 情緒：😊",
-      "sentiment": "",
+      "time": "06/20 02:06",
+      "sentiment": "😊",
       "body": "AlphaFold 共同創造者、諾貝爾獎得主 John Jumper 加入 Anthropic，被視為 Anthropic 布局科學計算與生物領域的重要人才佈局。",
       "focusTags": [
         "[人才動態]"
@@ -56,8 +56,8 @@
       "title": "Using Claude Code for markdown KB ingestion without turning it into semantic garbage",
       "url": "https://www.reddit.com/r/ClaudeAI/comments/1uastbf/using_claude_code_for_markdown_kb_ingestion/",
       "source": "Reddit / r/ClaudeAI",
-      "time": "06/20 02:06 UTC 情緒：😊",
-      "sentiment": "",
+      "time": "06/20 02:06",
+      "sentiment": "😊",
       "body": "使用者分享如何用 Claude Code 進行 Markdown 知識庫 ingest，同時保持語意結構不被破壞的實踐方法。",
       "focusTags": []
     },
@@ -65,8 +65,8 @@
       "title": "Best way todo handoff from Claude Design to Claude Code in VSCode",
       "url": "https://www.reddit.com/r/ClaudeAI/comments/1uas2ld/best_way_todo_handoff_from_claude_design_to/",
       "source": "Reddit / r/ClaudeAI",
-      "time": "06/20 01:20 UTC 情緒：😐",
-      "sentiment": "",
+      "time": "06/20 01:20",
+      "sentiment": "😐",
       "body": "討論 Claude Design 設計稿交接給 Claude Code 的最佳實踐，聚焦 VSCode 整合工作流。",
       "focusTags": []
     },
@@ -74,8 +74,8 @@
       "title": "Beginner guide to Claude Design for anyone who has never made a design in their life",
       "url": "https://www.reddit.com/r/ClaudeAI/comments/1uarspk/beginner_guide_to_claude_design_for_anyone_who/",
       "source": "Reddit / r/ClaudeAI",
-      "time": "06/20 01:02 UTC 情緒：😊",
-      "sentiment": "",
+      "time": "06/20 01:02",
+      "sentiment": "😊",
       "body": "針對零設計背景使用者的 Claude Design 入門指南，說明如何透過對話生成並調整設計稿。",
       "focusTags": []
     },
@@ -83,8 +83,8 @@
       "title": "AI getting dumber the longer you chat? It's not the model—time to take control",
       "url": "https://dev.to/kanfu-panda/ai-getting-dumber-the-longer-you-chat-its-not-the-model-time-to-take-control-13o3",
       "source": "dev.to / #claudecode",
-      "time": "06/20 00:45 UTC 情緒：🤔",
-      "sentiment": "",
+      "time": "06/20 00:45",
+      "sentiment": "🤔",
       "body": "文章指出長對話中 AI 回應品質下降源於上下文管理問題而非模型退步，提供具體的上下文控制策略。",
       "focusTags": []
     },
@@ -92,8 +92,8 @@
       "title": "AI coding getting pricier? I cut my tokens by 82% (with real data)",
       "url": "https://dev.to/kanfu-panda/ai-coding-getting-pricier-i-cut-my-tokens-by-82-with-real-data-2hfi",
       "source": "dev.to / #claudecode",
-      "time": "06/20 00:44 UTC 情緒：😊",
-      "sentiment": "",
+      "time": "06/20 00:44",
+      "sentiment": "😊",
       "body": "作者分享透過工具鏈優化將 AI 編碼 Token 用量降低 82% 的具體方法，附有實測數據。",
       "focusTags": []
     },
@@ -101,8 +101,8 @@
       "title": "Your docs aren't burning your tokens — your tooling is",
       "url": "https://dev.to/kanfu-panda/your-docs-arent-burning-your-tokens-your-tooling-is-58ck",
       "source": "dev.to / #claudecode",
-      "time": "06/20 00:43 UTC 情緒：🤔",
-      "sentiment": "",
+      "time": "06/20 00:43",
+      "sentiment": "🤔",
       "body": "反直覺觀點：真正消耗 Token 的不是文件而是工具設定，提供優化工具配置的實踐建議。",
       "focusTags": []
     },
@@ -110,8 +110,8 @@
       "title": "I capped my Claude Code setup so every new rule kills an old one",
       "url": "https://dev.to/mjmirza/i-capped-my-claude-code-setup-so-every-new-rule-kills-an-old-one-9lg",
       "source": "dev.to / #claudecode",
-      "time": "06/19 23:56 UTC 情緒：😊",
-      "sentiment": "",
+      "time": "06/19 23:56",
+      "sentiment": "😊",
       "body": "分享 CLAUDE.md 規則數量上限策略：每新增一條規則必須刪除一條舊規則，防止設定熵增。",
       "focusTags": []
     },
@@ -119,8 +119,8 @@
       "title": "Built a Claude Code extension that turns the \"thinking\" spinner into a tiny sponsor slot",
       "url": "https://www.reddit.com/r/ClaudeAI/comments/1uapfur/built_a_claude_code_extension_that_turns_the/",
       "source": "Reddit / r/ClaudeAI",
-      "time": "06/19 22:38 UTC 情緒：😊",
-      "sentiment": "",
+      "time": "06/19 22:38",
+      "sentiment": "😊",
       "body": "有趣創作：將 Claude Code 思考動畫轉換成贊助商廣告位的瀏覽器擴充功能，本身也用 Claude Code 開發。",
       "focusTags": []
     },
@@ -128,8 +128,8 @@
       "title": "Why is claude code terminal first?",
       "url": "https://www.reddit.com/r/ClaudeAI/comments/1uap5j8/why_is_claude_code_terminal_first/",
       "source": "Reddit / r/ClaudeAI",
-      "time": "06/19 22:21 UTC 情緒：😐",
-      "sentiment": "",
+      "time": "06/19 22:21",
+      "sentiment": "😐",
       "body": "討論 Claude Code 以終端機為主要介面的設計哲學，社群分享各自對這個決策的看法。",
       "focusTags": []
     },
@@ -137,8 +137,8 @@
       "title": "Claude Fable 5 on Bedrock Requires Sharing Inference Data with Anthropic",
       "url": "https://news.google.com/rss/articles/CBMickFVX3lxTE5zX04xd0ZSdENqUDEzZlcyN2g0bVBRR01fOC1JQXlrXzJSNVhfSGdRME1zOVlvRmFvd0F2clZEa05ERXREa3NvRjRwZlZzOGVkeFFBLUgxX3QwWVJzU1VmbFVaY2JUQ2RaenVJQWFtZXlkZw?oc=5",
       "source": "Google News / infoq.com",
-      "time": "06/20 01:03 UTC 情緒：😤",
-      "sentiment": "",
+      "time": "06/20 01:03",
+      "sentiment": "😤",
       "body": "在 AWS Bedrock 使用 Fable 5 需同意將推論資料分享給 Anthropic，對企業隱私政策具有重要影響。",
       "focusTags": [
         "[重大事件]"

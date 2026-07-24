@@ -2,7 +2,7 @@
   "date": "2026-05-26",
   "generatedAt": "2026-05-26 15:10 UTC",
   "articleCount": 83,
-  "sourceCount": "6/6 | **文章數：** 83 | **更新時間：** 2026-05-26 15:10 UTC",
+  "sourceCount": "6/6",
   "bulletin": "",
   "topStories": [
     {
@@ -69,8 +69,8 @@
       "title": "Is Claude Code Getting Worse? How to Measure Degradation with OpenTelemetry",
       "url": "https://signoz.io/blog/claude-code-measure-degradation-opentelemetry/",
       "source": "Hacker News",
-      "time": "05/26 13:16 UTC 情緒：🤔",
-      "sentiment": "",
+      "time": "05/26 13:16",
+      "sentiment": "🤔",
       "body": "提出以 token 輸出品質（而非消耗量）作為 Claude Code 效能指標，並以 OpenTelemetry 建立可量化追蹤框架——解決社群普遍存在「感覺越來越差卻無法量化」的痛點。",
       "focusTags": [
         "[社群趨勢]"
@@ -80,8 +80,8 @@
       "title": "Trading Peace for Pace: A Few Weeks with Claude Code",
       "url": "https://ronaknathani.com/blog/2026/02/trading-peace-for-pace-a-few-weeks-with-claude-code/",
       "source": "Hacker News",
-      "time": "05/26 13:18 UTC 情緒：🤔",
-      "sentiment": "",
+      "time": "05/26 13:18",
+      "sentiment": "🤔",
       "body": "作者觀察到 Claude Code 改變開發節奏的副作用：生產力提升但深度專注感消失，情緒獎勵從「寫出好程式」轉移至「讓工具正確執行」。引發社群廣泛共鳴。",
       "focusTags": []
     },
@@ -89,8 +89,8 @@
       "title": "Building the harness around our coding agents: eight failure modes, eight pillars",
       "url": "https://nimbalyst.com/blog/agent-harness-above-claude-code-codex/",
       "source": "Hacker News",
-      "time": "05/26 13:23 UTC 情緒：😊",
-      "sentiment": "",
+      "time": "05/26 13:23",
+      "sentiment": "😊",
       "body": "圍繞 Claude Code 與 Codex 建立 harness 層的八個失敗模式對應框架：harness 中的指令、工具、權限、context 和驗證機制比 model 本身更決定 agent 的實際可靠性。",
       "focusTags": []
     },
@@ -98,8 +98,8 @@
       "title": "i benchmarked Anthropic's tool-search-tool head to head against our own MCP gateway on Opus 4.7",
       "url": "https://www.reddit.com/r/ClaudeAI/comments/1to7byy/i_benchmarked_anthropics_toolsearchtool_head_to/",
       "source": "Reddit / r/ClaudeAI",
-      "time": "05/26 05:41 UTC 情緒：😊",
-      "sentiment": "",
+      "time": "05/26 05:41",
+      "sentiment": "😊",
       "body": "在 180 工具情境下，Ratel MCP gateway 對比 Anthropic 內建 tool-search-tool：準確度僅降低 1.7pp，但 input token 減少 81%——對大型 MCP 工作流有顯著成本優勢，實測數據詳實。",
       "focusTags": [
         "[社群趨勢]"
@@ -109,8 +109,8 @@
       "title": "I built toklock — the only Anthropic rate-limit proxy that queues requests instead of crashing your agents",
       "url": "https://dev.to/tamil89/i-built-toklock-the-only-anthropic-rate-limit-proxy-that-queues-requests-instead-of-crashing-your-5053",
       "source": "dev.to",
-      "time": "05/26 05:30 UTC 情緒：😊",
-      "sentiment": "",
+      "time": "05/26 05:30",
+      "sentiment": "😊",
       "body": "針對並行 Claude agent 撞上 rate limit 即崩潰的問題，toklock 改以隊列化請求取代崩潰行為，確保長時間自動化 agent 工作流穩定運行。",
       "focusTags": [
         "[社群趨勢]"
@@ -120,8 +120,8 @@
       "title": "Show HN: skills-for-humanity – 171 structured reasoning skills for Claude Code",
       "url": "https://github.com/human-avatar/skills-for-humanity",
       "source": "Hacker News",
-      "time": "05/26 05:58 UTC 情緒：😊",
-      "sentiment": "",
+      "time": "05/26 05:58",
+      "sentiment": "😊",
       "body": "社群發布 171 個結構化推理技能庫，以 skills 格式幫助 Claude Code 在不同任務類型下更有效地調用推理能力，適合複雜任務的 prompt 工程應用。",
       "focusTags": [
         "[新工具]"
@@ -131,8 +131,8 @@
       "title": "I didn't want blind multi-agent orchestration, so I built atrium",
       "url": "https://www.reddit.com/r/ClaudeAI/comments/1to69z3/i_didnt_want_blind_multiagent_orchestration_or/",
       "source": "Reddit / r/ClaudeAI",
-      "time": "05/26 05:01 UTC 情緒：😊",
-      "sentiment": "",
+      "time": "05/26 05:01",
+      "sentiment": "😊",
       "body": "atrium 是 macOS 上的 human-in-the-loop 多代理工作區，讓使用者在多個 Claude Code / CLI agent 同步執行時保留可見性與控制權，以 BMad Method + Claude Code Opus 構建。",
       "focusTags": []
     },
@@ -140,8 +140,8 @@
       "title": "Show HN: Agent Launch – One CLI for Codex, Claude Code, Cursor, Gemini, OpenCode",
       "url": "https://news.ycombinator.com/item?id=48278148",
       "source": "Hacker News",
-      "time": "05/26 11:18 UTC 情緒：😊",
-      "sentiment": "",
+      "time": "05/26 11:18",
+      "sentiment": "😊",
       "body": "統一啟動 CLI，單一指令 `agl` 可呼叫各主流 AI 編碼 agent（Codex、Claude Code、Cursor Agent、OpenCode 等），統一 agent/prompt/mode/model 等參數，簡化多工具開發者日常工作流。",
       "focusTags": []
     },
@@ -149,8 +149,8 @@
       "title": "Show HN: PrismCat – Local transparent proxy and debugging console for LLM APIs",
       "url": "https://github.com/paopaoandlingyia/PrismCat",
       "source": "Hacker News",
-      "time": "05/26 13:11 UTC 情緒：😊",
-      "sentiment": "",
+      "time": "05/26 13:11",
+      "sentiment": "😊",
       "body": "解決 LangChain 等 SDK 靜默注入 prompt 無法調試的問題，PrismCat 以 subdomain routing 實現透明代理，在本地全程記錄 LLM 請求/回應供檢視與調試。",
       "focusTags": []
     },
@@ -158,8 +158,8 @@
       "title": "Why Ctrl+V won't paste images in Claude Code on WSL, with a fix",
       "url": "https://rajveerbachkaniwala.com/blog/2026/05/24/on-the-difficulty-of-pasting-a-picture/",
       "source": "Hacker News",
-      "time": "05/25 14:41 UTC 情緒：😊",
-      "sentiment": "",
+      "time": "05/25 14:41",
+      "sentiment": "😊",
       "body": "深入剖析 WSL + Windows Terminal 環境下圖片貼上失敗的三層原因（BMP 格式問題、WSL 覆寫、Terminal 快捷鍵劫持），並提供完整修復方案。",
       "focusTags": []
     },
@@ -167,8 +167,8 @@
       "title": "Just passed the new Claude Certified Architect - Foundations (CCA-F) exam with a 985/1000!",
       "url": "https://www.reddit.com/r/ClaudeAI/comments/1to0xfc/just_passed_the_new_claude_certified_architect/",
       "source": "Reddit / r/ClaudeAI",
-      "time": "05/26 00:41 UTC 情緒：😊",
-      "sentiment": "",
+      "time": "05/26 00:41",
+      "sentiment": "😊",
       "body": "社群分享 Anthropic 官方認證考試 CCA-F 備考攻略，考試涵蓋 prompt engineering for tool use、context window 管理、Human-in-the-Loop 工作流等實務主題，附個人 Playbook 與模擬考題連結。",
       "focusTags": []
     },
@@ -176,8 +176,8 @@
       "title": "Is it too soon to build software factories?",
       "url": "https://news.ycombinator.com/item?id=48268815",
       "source": "Hacker News",
-      "time": "05/25 16:39 UTC 情緒：🤔",
-      "sentiment": "",
+      "time": "05/25 16:39",
+      "sentiment": "🤔",
       "body": "HN 討論 AI 驅動「軟體工廠」是否已成熟——Stripe、Ramp、Uber、Spotify 等大公司已有自建 background agent 基礎設施，但社群對可靠性與成熟度仍有疑慮，30%+ 失敗率被點名。",
       "focusTags": []
     },
@@ -185,8 +185,8 @@
       "title": "Color palette gives away AI slop",
       "url": "https://news.ycombinator.com/item?id=48269907",
       "source": "Hacker News",
-      "time": "05/25 18:15 UTC 情緒：😐",
-      "sentiment": "",
+      "time": "05/25 18:15",
+      "sentiment": "😐",
       "body": "開發者觀察到 Claude Code 生成網站普遍採用「奶油底 + 鈷藍/磚紅 + mono 字體 + 冗長文字」的視覺語言，形成可識別的 AI 美學模板，社群出現相關技能覆蓋方案。",
       "focusTags": []
     },
@@ -194,8 +194,8 @@
       "title": "Ask HN: How do you handle non-technical people dumping vibecoded changes on you?",
       "url": "https://news.ycombinator.com/item?id=48268918",
       "source": "Hacker News",
-      "time": "05/25 16:48 UTC 情緒：😤",
-      "sentiment": "",
+      "time": "05/25 16:48",
+      "sentiment": "😤",
       "body": "HN 熱議：非技術人員以 Claude Code 自行 vibe-code 功能後要求工程師協助 review 與 commit 的現象，討論技術債、角色邊界與 AI 輔助開發的管理挑戰。",
       "focusTags": []
     }

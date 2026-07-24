@@ -2,7 +2,7 @@
   "date": "2026-06-21",
   "generatedAt": "2026-06-21 19:38 UTC",
   "articleCount": 54,
-  "sourceCount": "5/6 | **文章數：** 54 | **更新時間：** 2026-06-21 19:38 UTC",
+  "sourceCount": "5/6",
   "bulletin": "",
   "topStories": [],
   "techUpdates": [
@@ -22,8 +22,8 @@
       "title": "Show HN: We post-trained a model that pen tests instead of refusing",
       "url": "https://www.argusred.com/cli",
       "source": "Hacker News",
-      "time": "06/20 13:49 UTC 情緒：🤔",
-      "sentiment": "",
+      "time": "06/20 13:49",
+      "sentiment": "🤔",
       "body": "Argus Red 在 CTF 資料集上 fine-tune 攻擊性模型，繞過 Anthropic / OpenAI 的 guardrails，定位在協助 SME 企業做滲透測試；限制存取，不對外公開。社群關注攻防對稱性問題。",
       "focusTags": []
     },
@@ -31,8 +31,8 @@
       "title": "Project Fetch: Phase Two",
       "url": "https://www.anthropic.com/research/project-fetch-phase-two",
       "source": "Hacker News",
-      "time": "06/21 00:00 UTC 情緒：😊",
-      "sentiment": "",
+      "time": "06/21 00:00",
+      "sentiment": "😊",
       "body": "Anthropic 公開機器狗實驗報告：有 Claude Opus 4.1 輔助的團隊，比靠自己和網路的對照組做得更多更快。",
       "focusTags": []
     },
@@ -40,8 +40,8 @@
       "title": "Trump says he no longer views Anthropic as a threat after G7 meeting",
       "url": "https://thenextweb.com/news/trump-anthropic-not-national-security-threat-axios-interview",
       "source": "Hacker News",
-      "time": "06/20 20:50 UTC 情緒：😐",
-      "sentiment": "",
+      "time": "06/20 20:50",
+      "sentiment": "😐",
       "body": "Trump 信號鬆綁，但管制令仍在效；社群對政策不確定性持觀望態度。",
       "focusTags": [
         "[重大事件]"
@@ -51,8 +51,8 @@
       "title": "NSA director: 'Mythos \"broke into almost all of our classified systems in hours\"'",
       "url": "https://www.economist.com/briefing/2026/06/14/donald-trumps-blocking-of-anthropic-is-capricious-and-chaotic",
       "source": "Hacker News",
-      "time": "06/21 09:45 UTC 情緒：🤔",
-      "sentiment": "",
+      "time": "06/21 09:45",
+      "sentiment": "🤔",
       "body": "社群質疑 NSA 說法的可信度，並指出若 Mythos 能做到，其他模型（包含開源）在更長時間後也能做到，管制模型並非真正解法。",
       "focusTags": [
         "[持續追蹤]"
@@ -62,8 +62,8 @@
       "title": "Ask HN: Is Claude Code with Fable 5 worth switching back from Codex?",
       "url": "https://news.ycombinator.com/item?id=48615488",
       "source": "Hacker News",
-      "time": "06/21 03:45 UTC 情緒：😐",
-      "sentiment": "",
+      "time": "06/21 03:45",
+      "sentiment": "😐",
       "body": "社群普遍反映 Fable 5 目前仍然封鎖，在可用模型比較下 Codex 5.5 在多數任務勝出，但 Opus 4.8 在部分任務仍有優勢，最終取決於 harness 偏好。",
       "focusTags": []
     },
@@ -71,8 +71,8 @@
       "title": "Ask HN: Do you use Claude Code, Codex, or something else?",
       "url": "https://news.ycombinator.com/item?id=48612758",
       "source": "Hacker News",
-      "time": "06/20 20:34 UTC 情緒：🤔",
-      "sentiment": "",
+      "time": "06/20 20:34",
+      "sentiment": "🤔",
       "body": "多元工具生態報告：社群出現以 OMP + Opus 4.8 為主力的設定，搭配不同模型做計畫 / 實作 / 審查三段分工，顯示 meta-harness 使用正在成熟。",
       "focusTags": []
     },
@@ -80,8 +80,8 @@
       "title": "Show HN: Maccha – Cross Agent Brain for Antigravity, Claude Code, OpenCode etc.",
       "url": "https://github.com/KarelTestSpecial/real-agent-setup",
       "source": "Hacker News",
-      "time": "06/20 22:31 UTC 情緒：🤔",
-      "sentiment": "",
+      "time": "06/20 22:31",
+      "sentiment": "🤔",
       "body": "7 層 context 架構 + Memanto 工作記憶引擎，讓不同 AI coding agent 共享 persistent 上下文；解決「每次 session 從零開始」問題，但衝突解決仍依賴人工。",
       "focusTags": [
         "[新工具]"
@@ -91,8 +91,8 @@
       "title": "Ask HN: What technique do you use to make Claude Code deterministic?",
       "url": "https://news.ycombinator.com/item?id=48610280",
       "source": "Hacker News",
-      "time": "06/20 16:05 UTC 情緒：🤔",
-      "sentiment": "",
+      "time": "06/20 16:05",
+      "sentiment": "🤔",
       "body": "社群建議：讓 agent 撰寫可重用腳本以取代 LLM 直接輸出、利用 PRNG seed 概念、明確版本鎖定。目前無內建確定性機制，屬設計取捨。",
       "focusTags": []
     },
@@ -100,8 +100,8 @@
       "title": "The seven methods for delivering instructions",
       "url": "https://claude.com/blog/steering-claude-code-skills-hooks-rules-subagents-and-more",
       "source": "Hacker News",
-      "time": "06/20 09:38 UTC 情緒：😊",
-      "sentiment": "",
+      "time": "06/20 09:38",
+      "sentiment": "😊",
       "body": "Anthropic 官方釐清七種控制層各自的載入時機、持久性與優先權，為複雜 Claude Code 設定提供決策框架。",
       "focusTags": [
         "[新工具]"
@@ -111,8 +111,8 @@
       "title": "Claude Code Issue management extension for VS Code: Forq",
       "url": "https://www.forq.ink/",
       "source": "Hacker News",
-      "time": "06/20 18:59 UTC 情緒：😊",
-      "sentiment": "",
+      "time": "06/20 18:59",
+      "sentiment": "😊",
       "body": "Forq 讓 VS Code 成為多 Claude Code session 控制台，每個 session 獨立 git worktree 並行，以 issue 觸發 agent 啟動，解決「一次只能跑一個 agent」瓶頸。",
       "focusTags": [
         "[新工具]"
@@ -122,8 +122,8 @@
       "title": "Show HN: Cc-fleet – run other LLMs as Claude Code workers",
       "url": "https://github.com/ethanhq/cc-fleet",
       "source": "Hacker News",
-      "time": "06/21 01:40 UTC 情緒：🤔",
-      "sentiment": "",
+      "time": "06/21 01:40",
+      "sentiment": "🤔",
       "body": "讓其他 LLM（包括更便宜的模型）擔任 Claude Code 的子 worker，Opus 負責設計、廉價模型負責執行；社群指出 Haiku 以下的模型效果可能仍不理想。",
       "focusTags": [
         "[新工具]"
@@ -133,8 +133,8 @@
       "title": "Connecting an MCP server gives your agent hands. It also gives a stranger a way in.",
       "url": "https://dev.to/rapls/connecting-an-mcp-server-gives-your-agent-hands-it-also-gives-a-stranger-a-way-in-3mgi",
       "source": "dev.to / #claudecode",
-      "time": "06/20 17:53 UTC 情緒：😤",
-      "sentiment": "",
+      "time": "06/20 17:53",
+      "sentiment": "😤",
       "body": "MCP 連接後 agent 可觸及外部系統，作者警告這也等同打開攻擊面，建議仔細審查每個 MCP 來源的信任等級。",
       "focusTags": [
         "[風險警示]"
@@ -144,8 +144,8 @@
       "title": "Fable disappeared overnight. That's the best ad for open-weight AI anyone could have run.",
       "url": "https://dev.to/thegatewayguy/fable-disappeared-overnight-thats-the-best-ad-for-open-weight-ai-anyone-could-have-run-5bm4",
       "source": "dev.to / #anthropic",
-      "time": "06/21 00:52 UTC 情緒：😤",
-      "sentiment": "",
+      "time": "06/21 00:52",
+      "sentiment": "😤",
       "body": "Fable 5 出口封鎖事件被視為開源 / 開放權重模型最有力的廣告：「當你依賴一個可能隨時被政府叫停的閉源模型，你才知道主權的重要性。」",
       "focusTags": []
     },
@@ -153,8 +153,8 @@
       "title": "Did Anthropic talk its way into an AI export ban?",
       "url": "https://www.ft.com/content/16ace46c-aeac-40c9-8598-3c01fa4481cb",
       "source": "Hacker News",
-      "time": "06/20 12:13 UTC 情緒：🤔",
-      "sentiment": "",
+      "time": "06/20 12:13",
+      "sentiment": "🤔",
       "body": "FT 分析 Anthropic 的安全倡導語言（強調模型危險性）是否反而為自己招來了出口管制——「你越說自己的 AI 有多危險，政府就越想管你」。",
       "focusTags": []
     },
@@ -162,8 +162,8 @@
       "title": "Microsoft to phase out Claude Code for internal engineers",
       "url": "https://news.google.com/rss/articles/CBMipANBVV95cUxOR2ZmZzRMWHI3Mm9sVDNfakR4Y3JTSnYtdFZsOU9pQl9MYTJwc2xrNi0teEpiNkRIVU9iUDZybFBYTVU4dVpkcTRuME9ZbkU0S2FKeWVSMFlSUzdmZnVkVTlQWGJYVzg3V3BXWE11bmZjNzNhR09XS3hfUW1KVEZBV2NvOGVlako5bkwxQ0hERDlrZmRjNi1EdFN2ZGVxbXRSaWprM2xWaUJfQjRuSXQ3YUxNdExRNV94NEMzbkxTNTFYOVRBaC1XV0VURlZUNTVTd1M2X1Njb2t4WUhIYUxhalNKX3ZCNU9qUnNaeEpnSVNoSmF6V3N6aWZHRXBieVhGQVR3cHpGbzRRM2puVkh2YUd6elNqMTN5WEJFLUoyZ3FOOUJJam4yWnFla0dDYmFqVkFkRVVlZ3U5VU1LMUhqNDA2SkRxUDRRVW5lb1NnZW9qSWNsSjR6Nmd2ekEweEh4TVB1M1RJajZYeTMxYUhEWUJnMjR6T1ZkeFNWZThBakFWNjVwOTVRRnlSd2RZZ3VBR3JlSlpqM0tBaUxSaGE4ZWJmX0c?oc=5",
       "source": "Google News / MSN",
-      "time": "06/20 16:48 UTC 情緒：😤",
-      "sentiment": "",
+      "time": "06/20 16:48",
+      "sentiment": "😤",
       "body": "Microsoft 決定逐步讓內部工程師退出 Claude Code，時間點正值 Fable 5 封鎖期，對企業採購決策影響待觀察。",
       "focusTags": [
         "[重大事件]"
@@ -173,8 +173,8 @@
       "title": "Artifacts in Claude Code: The Operator's Guide",
       "url": "https://dev.to/max_quimby/artifacts-in-claude-code-the-operators-guide-4fb0",
       "source": "dev.to / #claudecode",
-      "time": "06/20 22:01 UTC 情緒：😊",
-      "sentiment": "",
+      "time": "06/20 22:01",
+      "sentiment": "😊",
       "body": "6/18 Anthropic 發布 Claude Code Artifacts 功能，本文詳解 Operator 模式設定方式與應用場景。",
       "focusTags": []
     },
@@ -182,8 +182,8 @@
       "title": "Stop sleeping your agent loop for 5 minutes",
       "url": "https://dev.to/mjmirza/stop-sleeping-your-agent-loop-for-5-minutes-32i7",
       "source": "dev.to / #claudecode",
-      "time": "06/20 22:35 UTC 情緒：😊",
-      "sentiment": "",
+      "time": "06/20 22:35",
+      "sentiment": "😊",
       "body": "作者分享 agent loop 中 sleep 5 分鐘的成本陷阱，建議改用事件驅動或 webhook 設計，避免無謂的 token 消耗。",
       "focusTags": []
     },
@@ -191,8 +191,8 @@
       "title": "Dario Amodei on leaving OpenAI: Someone else will decide who was right",
       "url": "https://news.google.com/rss/articles/CBMilgJBVV95cUxNODIwVy1YbmxtSDBsaVJRLXVodURET3VPWHNQcFozY05BYkZfbVJ1U1h5ZlFyb2VQS1B6ZkFXNjZqbUp6SWV6bDVpQnRpUTBtSUJPQjZFTkVUYmdROVJfT3IydF8zYUkxNWhqUGN0TWdLald2UjEta0lTcW5JNFF3cV81TGNOeXhMWTluVmNEUW44QWljYUQ2NjdKeGZwQm5FdjN5TXFaX2pCZ1o4bkFpQkN3Q1p2RTJkV3EyNnRqbVhRT0J0ZFltQnVUX05kTmotWVItRFRveWwzRHpWVlJSXzZKYTJVaWd2WERGMWhXX2NkUktZTkNpOW45ckRxcmpVU1hiV0UwdXNKYlo5NVlnOFBYRzB3Z9IBmwJBVV95cUxPMW13RC1WQlpxSHZvZTV2eVhMbUc0QkdKSHdVa1RickZteFBrSi1fM09TLTJObnUyNWxPbURsbVB4YXRuN0F4UzV3Zkl4R183T0hnZG1YVDZ3X29Ia1A4dVNaTlBzRnFYQm4yeERGOUlndnBEZVJzWDV6bXUzVHc4b21zak5fNGd2Nk05RnpKOFlkbTV5OEN5VWQxVjVYZzgySnFsazJGLWdodVNuLVlaUXBpOHNwcW50U19tSVYzYnRieXJManN4U291cEI2Uk1HNGRHVGtlYzVkdDdlbnAzVEtNZHh4V1hLSzNadUJ5TURYVFVPUXliMzlvaVA1TExyRmh5YVN3NF94VG5vNkNubHlzbjVDb2Q1d2dj?oc=5",
       "source": "Google News / The Times of India",
-      "time": "06/21 00:34 UTC 情緒：😐",
-      "sentiment": "",
+      "time": "06/21 00:34",
+      "sentiment": "😐",
       "body": "Dario Amodei 接受 Times of India 採訪談論離開 OpenAI：「最終別人會來判斷誰是對的。」語氣審慎，維持一貫風格。",
       "focusTags": []
     },
@@ -200,8 +200,8 @@
       "title": "Claude Fable 5 on Bedrock appears to require provider data sharing",
       "url": "https://dev.to/damogallagher/claude-fable-5-on-bedrock-appears-to-require-provider-data-sharing-1a9m",
       "source": "dev.to / #anthropic",
-      "time": "06/20 14:22 UTC 情緒：😤",
-      "sentiment": "",
+      "time": "06/20 14:22",
+      "sentiment": "😤",
       "body": "AWS Bedrock 的 Claude Fable 5 model card 顯示需要客戶同意 provider data sharing（`anthropic.model-invocation-logging`），引發資料隱私討論。",
       "focusTags": []
     },
@@ -209,8 +209,8 @@
       "title": "I tested Claude Code, Codex, and Antigravity on a real electronics project — only one actually finished",
       "url": "https://news.google.com/rss/articles/CBMinAFBVV95cUxPY3V3b1RkVTlpdVNVNXhaSFlUOUhmMGcxT1dxUHlzamxxTzRyY2dUN0FGdWhKZ3FkZElvcUxqVURCQjFGOWlFNEpvMldPNUZiQkdYaUs5RGNtSU9MWTJOeUY1UWd4YUFYNjYtbm8tS3FsWUU5dGRqaHN5VkFMQnBDS3pGSWR2Mkx0MGQzQUdBTDRoQUxQRTRYMDFja3Q?oc=5",
       "source": "Google News / MakeUseOf",
-      "time": "06/21 03:00 UTC 情緒：🤔",
-      "sentiment": "",
+      "time": "06/21 03:00",
+      "sentiment": "🤔",
       "body": "三款 AI 編碼工具實際電子專案對比測試，只有其中一款完整完成任務（文章不公開具體結果，需點擊查看）。",
       "focusTags": []
     }

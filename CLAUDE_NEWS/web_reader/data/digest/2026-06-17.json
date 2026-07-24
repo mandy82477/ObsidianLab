@@ -2,7 +2,7 @@
   "date": "2026-06-17",
   "generatedAt": "2026-06-17 22:15 UTC",
   "articleCount": 81,
-  "sourceCount": "6/6 | **文章數：** 81 | **更新時間：** 2026-06-17 22:15 UTC",
+  "sourceCount": "6/6",
   "bulletin": "",
   "topStories": [
     {
@@ -70,8 +70,8 @@
       "title": "Tell HN: Anthropic walks back on Agent SDK credit changes",
       "url": "https://news.ycombinator.com/item?id=48557371",
       "source": "Hacker News",
-      "time": "06/16 16:02 UTC 情緒：😊",
-      "sentiment": "",
+      "time": "06/16 16:02",
+      "sentiment": "😊",
       "body": "Anthropic 宣布暫停原訂 6/15 生效的 Agent SDK 獨立計費方案，訂閱用戶的 Agent SDK 和 `claude -p` 使用仍走原訂閱額度。社群對此普遍正面，但對未來計費方向仍感不確定。",
       "focusTags": [
         "[重大事件]"
@@ -81,8 +81,8 @@
       "title": "Show HN: Mira – Open-source and self-hosted AI code reviewer",
       "url": "https://github.com/miracodeai/mira",
       "source": "Hacker News",
-      "time": "06/17 13:23 UTC 情緒：🤔",
-      "sentiment": "",
+      "time": "06/17 13:23",
+      "sentiment": "🤔",
       "body": "Jay 打造的開源自架 AI 程式碼審查器，支援 Anthropic / OpenAI / 本地 LLM，BYOK，平均審查 77 秒（vs Greptile 5 分鐘）。適合不想將程式碼送往外部雲端的團隊。",
       "focusTags": [
         "[新工具]"
@@ -92,8 +92,8 @@
       "title": "Show HN: AgentPace – Know when you'll run out of Claude Code/Codex usage",
       "url": "https://festudio.net/agentpace/",
       "source": "Hacker News",
-      "time": "06/16 13:58 UTC 情緒：😊",
-      "sentiment": "",
+      "time": "06/16 13:58",
+      "sentiment": "😊",
       "body": "macOS 選單列應用，可視化 Claude Code 和 Codex 的使用趨勢與「燃燒速率」，協助規劃剩餘額度。目標是讓用量一眼看清，不再心算。",
       "focusTags": [
         "[新工具]"
@@ -103,8 +103,8 @@
       "title": "Show HN: Offload, cross-device handoffs for Claude Code and Codex",
       "url": "https://github.com/ToxicPine/offloads",
       "source": "Hacker News",
-      "time": "06/16 14:13 UTC 情緒：🤔",
-      "sentiment": "",
+      "time": "06/16 14:13",
+      "sentiment": "🤔",
       "body": "`/offload` 指令前綴，自動將任務轉移到另一台設備（Mac Mini、VPS），包含 env key 安全傳輸、gh 登入確認、dev server 安全穿透等功能。",
       "focusTags": [
         "[新工具]"
@@ -114,8 +114,8 @@
       "title": "cc-reflection: teaching Claude Code to reflect",
       "url": "https://provi.me/cc-reflection",
       "source": "Hacker News",
-      "time": "06/17 07:59 UTC 情緒：🤔",
-      "sentiment": "",
+      "time": "06/17 07:59",
+      "sentiment": "🤔",
       "body": "利用 Claude Code 的 EDITOR hook（Ctrl-G）插入 fzf 控制面板，讓 Ctrl-G 不只是「編輯 prompt」，而是可以執行反思種子展開、agent 強化 prompt、IDE 編輯等操作的控制中心。",
       "focusTags": [
         "[新工具]"
@@ -125,8 +125,8 @@
       "title": "Skill to Ensure Claude Code Uses No Em Dashes",
       "url": "https://github.com/exmergo/skill-no-em-dashes",
       "source": "Hacker News",
-      "time": "06/17 12:53 UTC 情緒：😐",
-      "sentiment": "",
+      "time": "06/17 12:53",
+      "sentiment": "😐",
       "body": "透過 skill 強制 Claude Code 不使用破折號，社群回應指出 [humanizer](https://github.com/blader/humanizer) 更全面，可去除多種「Claude 語氣特徵」。",
       "focusTags": []
     },
@@ -134,8 +134,8 @@
       "title": "Show HN: Kevin – Claude talk less. Save Money",
       "url": "https://github.com/hvardhan878/kevin",
       "source": "Hacker News",
-      "time": "06/16 23:43 UTC 情緒：😊",
-      "sentiment": "",
+      "time": "06/16 23:43",
+      "sentiment": "😊",
       "body": "模仿《辦公室》角色 Kevin Malone 說話風格的 Claude Code 外掛，號稱省 90% 成本、少寫 93% 程式碼行數。適合想壓縮 token 使用量的訂閱者。",
       "focusTags": [
         "[新工具]"
@@ -145,8 +145,8 @@
       "title": "My AI agent got dumber mid-session. I measured the context window before blaming MCP.",
       "url": "https://dev.to/rapls/my-ai-agent-got-dumber-mid-session-i-measured-the-context-window-before-blaming-mcp-4c3l",
       "source": "dev.to / #claudecode",
-      "time": "06/16 18:07 UTC 情緒：🤔",
-      "sentiment": "",
+      "time": "06/16 18:07",
+      "sentiment": "🤔",
       "body": "開發者記錄 AI 在長 session 中途「變笨」的現象：不是 MCP 問題，而是 context window 逐漸填滿導致早期約束被遺忘。提醒在歸咎工具前先量測 context 用量。",
       "focusTags": []
     },
@@ -154,8 +154,8 @@
       "title": "Your CLAUDE.md is charging rent on every single prompt",
       "url": "https://dev.to/mjmirza/your-claudemd-is-charging-rent-on-every-single-prompt-1fih",
       "source": "dev.to / #claudecode",
-      "time": "06/16 13:38 UTC 情緒：🤔",
-      "sentiment": "",
+      "time": "06/16 13:38",
+      "sentiment": "🤔",
       "body": "每一條 CLAUDE.md 指令都在每次訊息消耗 token，作者分析如何精簡 CLAUDE.md 以降低隱性成本。",
       "focusTags": []
     },
@@ -163,8 +163,8 @@
       "title": "Anthropic Is Still at Odds with the White House over Claude Fable 5",
       "url": "https://www.wired.com/story/anthropic-is-still-at-odds-with-the-white-house-over-claude-fable-5/",
       "source": "Hacker News",
-      "time": "06/16 13:24 UTC 情緒：😤",
-      "sentiment": "",
+      "time": "06/16 13:24",
+      "sentiment": "😤",
       "body": "Wired 報導：週一 Commerce 部工作組會議結束，出口管制未解除。政府堅持 Fable 5 可被繞過護欄，存取 Mythos 的網路攻擊能力；Anthropic 持續否認。",
       "focusTags": [
         "[重大事件]"
@@ -174,8 +174,8 @@
       "title": "The Anthropic Fable saga proves: we have opened the AI Pandora's box",
       "url": "https://www.theguardian.com/commentisfree/2026/jun/16/anthropic-fable-ai",
       "source": "Hacker News",
-      "time": "06/16 18:45 UTC 情緒：😤",
-      "sentiment": "",
+      "time": "06/16 18:45",
+      "sentiment": "😤",
       "body": "Guardian 評論：Fable 5 被美國政府列為「危險軍火」三天後下架，說明 AI 能力擴散已不可逆，出口管制治標不治本，真正解方需要集體行動。",
       "focusTags": []
     },
@@ -183,8 +183,8 @@
       "title": "Leviathan Waking – On Anthropic/USG, and a new era in AI governance",
       "url": "https://www.hyperdimensional.co/p/leviathan-waking",
       "source": "Hacker News",
-      "time": "06/16 19:01 UTC 情緒：🤔",
-      "sentiment": "",
+      "time": "06/16 19:01",
+      "sentiment": "🤔",
       "body": "深度分析文章：以「無 FDA 時代的藥物管制」做比喻，探討 Anthropic 與美國政府衝突所代表的 AI 治理新時代意義。",
       "focusTags": []
     },
@@ -192,8 +192,8 @@
       "title": "Pentagon reduces reliance on Anthropic, switches to competitors after clash",
       "url": "https://cryptobriefing.com/pentagon-reduces-anthropic-reliance-competitors/",
       "source": "Hacker News",
-      "time": "06/16 19:18 UTC 情緒：😤",
-      "sentiment": "",
+      "time": "06/16 19:18",
+      "sentiment": "😤",
       "body": "DoD 已將至少三分之二 AI 工作量移出 Anthropic，轉向競爭對手，源於對「Claude 軍事用途政策」長達數月的爭執。",
       "focusTags": [
         "[持續追蹤]"

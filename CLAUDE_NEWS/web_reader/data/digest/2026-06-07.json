@@ -2,7 +2,7 @@
   "date": "2026-06-07",
   "generatedAt": "2026-06-07 22:10 UTC",
   "articleCount": 56,
-  "sourceCount": "6/6 | **文章數：** 56 | **更新時間：** 2026-06-07 22:10 UTC",
+  "sourceCount": "6/6",
   "bulletin": "",
   "topStories": [
     {
@@ -85,8 +85,8 @@
       "title": "Show HN: Ccgs – Collaborative Claude Code sessions, stored in Git branches",
       "url": "https://github.com/ingram-technologies/claude-git-sessions",
       "source": "Hacker News",
-      "time": "06/06 16:04 UTC 情緒：😊",
-      "sentiment": "",
+      "time": "06/06 16:04",
+      "sentiment": "😊",
       "body": "Ccgs 讓團隊可透過 Git orphan branch 分享 Claude Code session，支援跨裝置 `--resume` 接續工作，並智慧重寫絕對路徑避免損壞 transcript。解決 session 被困在單一筆電的痛點。",
       "focusTags": [
         "[新工具]"
@@ -96,8 +96,8 @@
       "title": "I'm waiting for Claude to rm rf my computer",
       "url": "https://12gramsofcarbon.com/p/agentics-local-coding-agents-are",
       "source": "Hacker News",
-      "time": "06/06 16:52 UTC 情緒：😤",
-      "sentiment": "",
+      "time": "06/06 16:52",
+      "sentiment": "😤",
       "body": "作者坦承在 YOLO 模式（`--dangerously-skip-permissions`）下使用 Claude Code，分析本地 coding agent 的安全性風險：easy + powerful + secure 三者只能得其二。引發對 agent 自主執行安全邊界的討論。",
       "focusTags": []
     },
@@ -105,8 +105,8 @@
       "title": "How are thinking efforts implemented?",
       "url": "https://news.ycombinator.com/item?id=48434240",
       "source": "Hacker News",
-      "time": "06/07 12:38 UTC 情緒：🤔",
-      "sentiment": "",
+      "time": "06/07 12:38",
+      "sentiment": "🤔",
       "body": "開發者詢問 Claude 與 ChatGPT 的 thinking effort 參數（low/medium/high/xhigh）底層機制：是不同模型還是相同模型不同參數？Claude Code 中切換 effort 會觸發「break cache」警告，引發討論。",
       "focusTags": []
     },
@@ -114,8 +114,8 @@
       "title": "Anthropic_API_key? Anthropic will bill your API account instead of your Max plan",
       "url": "https://old.reddit.com/r/ClaudeAI/comments/1tbaq2d/psa_if_your_project_has_an_anthropic_api_key_in/",
       "source": "Hacker News",
-      "time": "06/06 16:13 UTC 情緒：😤",
-      "sentiment": "",
+      "time": "06/06 16:13",
+      "sentiment": "😤",
       "body": "重要 PSA：在 Claude Code 專案中設置 `ANTHROPIC_API_KEY` 環境變數，會讓工具呼叫走 API 計費而非 Max 訂閱方案，可能導致意外帳單。需特別注意 `.env` 或環境變數的設定。",
       "focusTags": [
         "[風險警示]"
@@ -125,8 +125,8 @@
       "title": "Show HN: Lathe – Use LLMs to learn a new domain, not skip past it",
       "url": "https://github.com/devenjarvis/lathe",
       "source": "Hacker News",
-      "time": "06/07 11:16 UTC 情緒：😊",
-      "sentiment": "",
+      "time": "06/07 11:16",
+      "sentiment": "😊",
       "body": "Lathe 工具強調用 LLM 輔助「學習」而非直接代勞，讓使用者透過親手輸入程式碼深化理解，生成帶有 source 引用、side-notes 與習題的互動式教學。",
       "focusTags": []
     },
@@ -134,8 +134,8 @@
       "title": "Remote session",
       "url": "https://www.reddit.com/r/ClaudeAI/comments/1tz7vri/remote_session/",
       "source": "Reddit / r/ClaudeAI",
-      "time": "06/07 01:51 UTC 情緒：😊",
-      "sentiment": "",
+      "time": "06/07 01:51",
+      "sentiment": "😊",
       "body": "用戶分享 Claude Code Remote Session 功能實際體驗：可在離開裝置時透過其他設備無縫繼續工作，運作流暢。認為這是目前同類方案中最佳選擇。",
       "focusTags": []
     },
@@ -143,8 +143,8 @@
       "title": "Give Every AI Agent Its Own Git Worktree",
       "url": "https://dev.to/connectengine/give-every-ai-agent-its-own-git-worktree-2nlh",
       "source": "dev.to / #claudecode",
-      "time": "06/06 17:51 UTC 情緒：🤔",
-      "sentiment": "",
+      "time": "06/06 17:51",
+      "sentiment": "🤔",
       "body": "作者分享平行執行 5 個 Claude Code agent 時遭遇三次 git 衝突的教訓，建議為每個 agent 獨立使用 git worktree 隔離工作目錄，避免分支污染。",
       "focusTags": []
     },
@@ -152,8 +152,8 @@
       "title": "I built a Claude Code skill that stress-tests a pitch through 150 simulated tech personas",
       "url": "https://www.reddit.com/r/ClaudeAI/comments/1tz6vuo/i_built_a_claude_code_skill_that_stresstests_a/",
       "source": "Reddit / r/ClaudeAI",
-      "time": "06/07 00:52 UTC 情緒：😊",
-      "sentiment": "",
+      "time": "06/07 00:52",
+      "sentiment": "😊",
       "body": "開發者建立 `synth-personas` skill，以 150 個模擬科技界人物（創辦人、投資人、記者）對 pitch deck 或文件進行壓力測試，找出真實弱點。",
       "focusTags": []
     },
@@ -161,8 +161,8 @@
       "title": "5 ways your CLAUDE.md rules quietly fail",
       "url": "https://dev.to/mjmirza/5-ways-your-claudemd-rules-quietly-fail-np6",
       "source": "dev.to / #claudecode",
-      "time": "06/07 00:23 UTC 情緒：🤔",
-      "sentiment": "",
+      "time": "06/07 00:23",
+      "sentiment": "🤔",
       "body": "分析 `CLAUDE.md` 規則常見的靜默失效場景，包括規則太模糊、衝突、context 截斷、以及在子任務中失效等問題，提供改善建議。",
       "focusTags": []
     },
@@ -170,8 +170,8 @@
       "title": "Published Caveat to npm: A Long-term Memory Layer to Avoid Repeating the Same Traps",
       "url": "https://dev.to/quolu/published-caveat-to-npm-a-long-term-memory-layer-to-avoid-repeating-the-same-traps-2cc0",
       "source": "dev.to / #claudecode",
-      "time": "06/06 17:01 UTC 情緒：😊",
-      "sentiment": "",
+      "time": "06/06 17:01",
+      "sentiment": "😊",
       "body": "Caveat npm 套件：當 Claude Code 遇到問題時自動記錄「陷阱」，後續遇到相似情境會自動提醒，避免重蹈覆轍。類似結構化的長期記憶層。",
       "focusTags": []
     },
@@ -179,8 +179,8 @@
       "title": "Text-to-Speech for Claude Code — Hear What the Agent Is Doing",
       "url": "https://dev.to/souliane/text-to-speech-for-claude-code-hear-what-the-agent-is-doing-3mom",
       "source": "dev.to / #claudecode",
-      "time": "06/06 12:35 UTC 情緒：😊",
-      "sentiment": "",
+      "time": "06/06 12:35",
+      "sentiment": "😊",
       "body": "介紹如何為 Claude Code 加入 TTS 輸出，讓使用者可以「聽」agent 在做什麼，無需一直盯著螢幕。結合現有 `/voice` 指令建立雙向語音工作流。",
       "focusTags": []
     },
@@ -188,8 +188,8 @@
       "title": "Anthropic's Claude Opus 4.7 matches dedicated NMR software in chemistry tasks",
       "url": "https://news.google.com/rss/articles/CBMib0FVX3lxTFBoWkhZU2oxUTZrSXRpZmlGaFVjc3pOV3hBNlRERkVhUklreWNBdWY3eUR0TW9kVlo1ekdBRW8wQUUxa1F4dlcwZTBUSnBWT2JkeGJBcndxYWZwUE1TaWJLdmVXNjJHR0pHb2RtY0pWYw?oc=5",
       "source": "Google News / Crypto Briefing",
-      "time": "06/07 02:50 UTC 情緒：😊",
-      "sentiment": "",
+      "time": "06/07 02:50",
+      "sentiment": "😊",
       "body": "Claude Opus 4.7 在化學 NMR 分析任務上的表現與專門軟體相當，顯示 AI 在高度專業化科學工作流中的潛力。",
       "focusTags": []
     },
@@ -197,8 +197,8 @@
       "title": "LLM delegation - probing task handoff efficiency and economics",
       "url": "https://www.reddit.com/r/ClaudeAI/comments/1tzagkc/llm_delegation_probing_task_handoff_efficiency/",
       "source": "Reddit / r/ClaudeAI",
-      "time": "06/07 04:10 UTC 情緒：🤔",
-      "sentiment": "",
+      "time": "06/07 04:10",
+      "sentiment": "🤔",
       "body": "探索多 LLM 編排工作流的效率與成本：Claude Code 與 Mistral/DeepSeek 混合使用的任務分派策略分析。",
       "focusTags": []
     },
@@ -206,8 +206,8 @@
       "title": "Show HN: Minimal native macOS sandbox for Claude and Codex",
       "url": "https://github.com/sheremetyev/sandfence",
       "source": "Hacker News",
-      "time": "06/06 14:53 UTC 情緒：😊",
-      "sentiment": "",
+      "time": "06/06 14:53",
+      "sentiment": "😊",
       "body": "Sandfence：macOS 原生沙盒工具，為 Claude Code 和 Codex 提供最小化的安全隔離環境，回應 agent 本地執行的安全疑慮。",
       "focusTags": [
         "[新工具]"
@@ -217,8 +217,8 @@
       "title": "An open-source tool for validating code changes with browser recordings",
       "url": "https://www.reddit.com/r/artificial/comments/1tyuija/an_opensource_tool_for_validating_code_changes/",
       "source": "Reddit / r/artificial",
-      "time": "06/06 14:17 UTC 情緒：😊",
-      "sentiment": "",
+      "time": "06/06 14:17",
+      "sentiment": "😊",
       "body": "Canary 工具：透過瀏覽器錄影驗證 AI 生成程式碼的 UI 流程，自動識別受影響的 UI 路徑並生成 Playwright 測試腳本，兼顧驗證與可重播性。",
       "focusTags": []
     },
@@ -226,8 +226,8 @@
       "title": "Does your employer impose limits on Claude Code usage at work?",
       "url": "https://www.reddit.com/r/ClaudeAI/comments/1tzbn8u/does_your_employer_impose_limits_on_claude_code/",
       "source": "Reddit / r/ClaudeAI",
-      "time": "06/07 05:05 UTC 情緒：😐",
-      "sentiment": "",
+      "time": "06/07 05:05",
+      "sentiment": "😐",
       "body": "社群調查：企業是否對員工使用 Claude Code 設有 token 或使用量限制，反映企業 AI 工具治理的現實狀況。",
       "focusTags": []
     }

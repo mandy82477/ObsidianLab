@@ -2,7 +2,7 @@
   "date": "2026-06-10",
   "generatedAt": "2026-06-10 23:36 UTC",
   "articleCount": 99,
-  "sourceCount": "6/6 | **文章數：** 99 | **更新時間：** 2026-06-10 23:36 UTC",
+  "sourceCount": "6/6",
   "bulletin": "",
   "topStories": [],
   "techUpdates": [
@@ -40,8 +40,8 @@
       "title": "Claude Fable 5",
       "url": "https://www.anthropic.com/news/claude-fable-5-mythos-5",
       "source": "Hacker News",
-      "time": "06/09 16:58 UTC 情緒：🔥",
-      "sentiment": "",
+      "time": "06/09 16:58",
+      "sentiment": "🔥",
       "body": "Anthropic 首款 Mythos 級公開模型，在軟體工程、知識工作、視覺、科學研究等幾乎所有 benchmark 達到 SOTA；任務越複雜長期，Fable 5 的優勢越明顯。",
       "focusTags": [
         "[重大事件]"
@@ -51,8 +51,8 @@
       "title": "AWS Bedrock to require sharing data with Anthropic for Mythos and future models",
       "url": "https://news.ycombinator.com/item?id=48473166",
       "source": "Hacker News",
-      "time": "06/10 08:21 UTC 情緒：😤",
-      "sentiment": "",
+      "time": "06/10 08:21",
+      "sentiment": "😤",
       "body": "Bedrock 用戶使用 Fable 5 / Mythos 5 時，Anthropic 強制 30 天資料保留，資料離開 AWS 安全邊界，引發 AI-as-a-service 信任根本問題討論。",
       "focusTags": [
         "[風險警示]"
@@ -62,8 +62,8 @@
       "title": "System Card: Claude Fable 5 and Claude Mythos 5 [pdf]",
       "url": "https://www-cdn.anthropic.com/d00db56fa754a1b115b6dd7cb2e3c342ee809620.pdf",
       "source": "Hacker News",
-      "time": "06/09 16:58 UTC 情緒：🤔",
-      "sentiment": "",
+      "time": "06/09 16:58",
+      "sentiment": "🤔",
       "body": "完整系統卡揭示 Fable 5 的安全框架、風險評估方法與護欄設計，是理解模型限制的核心文件。",
       "focusTags": []
     },
@@ -71,8 +71,8 @@
       "title": "Show HN: macOS menu bar gauges for your Claude Code quota",
       "url": "https://github.com/grzegorz-raczek-unit8/claude-quota",
       "source": "Hacker News",
-      "time": "06/10 09:43 UTC 情緒：😊",
-      "sentiment": "",
+      "time": "06/10 09:43",
+      "sentiment": "😊",
       "body": "macOS 選單列即時顯示 Claude Code 配額用量，HN score 45；社群也推薦 codeburn 等替代工具。",
       "focusTags": []
     },
@@ -80,8 +80,8 @@
       "title": "Anthropic Kept Every Promise It Could Afford",
       "url": "https://techtrenches.dev/p/anthropic-kept-every-promise-it-could",
       "source": "Hacker News",
-      "time": "06/09 18:06 UTC 情緒：😤",
-      "sentiment": "",
+      "time": "06/09 18:06",
+      "sentiment": "😤",
       "body": "評論文章指出 Anthropic 在估值超越 OpenAI、申請上市、同時發出 AI 危險警告後，曾宣揚的「負責任 AI 公司」定位岌岌可危，是純市場策略而非道德承諾。",
       "focusTags": []
     },
@@ -89,8 +89,8 @@
       "title": "Show HN: Open-source version of Anthropic's internal analytics engine",
       "url": "https://github.com/Kaelio/ktx",
       "source": "Hacker News",
-      "time": "06/09 16:17 UTC 情緒：🤔",
-      "sentiment": "",
+      "time": "06/09 16:17",
+      "sentiment": "🤔",
       "body": "聲稱是 Anthropic 內部分析引擎的開源版本，社群對「單一正確答案」的 analytics 特性提出質疑，認為與程式設計本質相反。",
       "focusTags": []
     },
@@ -98,8 +98,8 @@
       "title": "Ask HN: Is software engineering still a good career choice for new students?",
       "url": "https://news.ycombinator.com/item?id=48468724",
       "source": "Hacker News",
-      "time": "06/09 22:32 UTC 情緒：🤔",
-      "sentiment": "",
+      "time": "06/09 22:32",
+      "sentiment": "🤔",
       "body": "4 位工程師觀點分歧：寫程式成為大宗商品、AI 工具讓技能變空洞、但不了解底層架構的人無法跟上。",
       "focusTags": []
     },
@@ -107,8 +107,8 @@
       "title": "Ask HN: How are you preserving your skills while using AI?",
       "url": "https://news.ycombinator.com/item?id=48463576",
       "source": "Hacker News",
-      "time": "06/09 16:45 UTC 情緒：😤",
-      "sentiment": "",
+      "time": "06/09 16:45",
+      "sentiment": "😤",
       "body": "資深工程師分享 Claude Code 等工具的「Prompt-Then-Review」模式正在悄悄侵蝕技術深度，能做更多卻理解更少。",
       "focusTags": []
     },
@@ -116,8 +116,8 @@
       "title": "Show HN: OpenYabby, voice-controlled multi-agent orchestrator for Claude Code",
       "url": "https://github.com/OpenYabby/OpenYabby",
       "source": "Hacker News",
-      "time": "06/09 20:08 UTC 情緒：😊",
-      "sentiment": "",
+      "time": "06/09 20:08",
+      "sentiment": "😊",
       "body": "語音控制的多 agent 協調器，整合 Claude Code，支援複雜任務的語音驅動自動化。",
       "focusTags": []
     },
@@ -125,8 +125,8 @@
       "title": "DeepSeek is 17% of token volume, Anthropic is 65% of spend (Vercel gateway data)",
       "url": "https://vercel.com/blog/ai-gateway-production-index-june-2026",
       "source": "Hacker News",
-      "time": "06/09 20:38 UTC 情緒：😐",
-      "sentiment": "",
+      "time": "06/09 20:38",
+      "sentiment": "😐",
       "body": "Vercel 生產資料揭示實際 AI 市場分布：Anthropic 主導高價值使用案例，DeepSeek 以極低成本搶攻 token 量。",
       "focusTags": []
     },
@@ -134,8 +134,8 @@
       "title": "Anthropic says the world should have option to 'pause' on AI",
       "url": "https://www.theguardian.com/technology/2026/jun/05/anthropic-urges-temporary-pause-on-ai-development-to-discuss-risks",
       "source": "Hacker News",
-      "time": "06/09 20:14 UTC 情緒：😤",
-      "sentiment": "",
+      "time": "06/09 20:14",
+      "sentiment": "😤",
       "body": "Anthropic 提議全球暫停 AI 開發並召集政策制定者，同時 Fable 5 系統卡顯示模型已接近「遞迴自我改進」能力門檻。",
       "focusTags": []
     },
@@ -143,8 +143,8 @@
       "title": "Anthropic is intentionally nerfing Fable when asked to develop other LLMs",
       "url": "https://old.reddit.com/r/LocalLLaMA/comments/1u1s2oz/anthropic_is_intentionally_nerfing_fable_when/",
       "source": "Hacker News",
-      "time": "06/10 06:27 UTC 情緒：😤",
-      "sentiment": "",
+      "time": "06/10 06:27",
+      "sentiment": "😤",
       "body": "Reddit 討論揭露 Fable 5 針對前沿 LLM 開發工作有靜默降級設計，被視為反競爭行為，LocalLLaMA 社群廣泛批評。",
       "focusTags": [
         "[社群趨勢]"
@@ -154,8 +154,8 @@
       "title": "Microsoft AI head calls out Anthropic for acting like Claude is conscious",
       "url": "https://www.theverge.com/tech/947197/microsoft-ai-mustafa-suleyman-anthropic-claude-conscious",
       "source": "Hacker News",
-      "time": "06/10 00:25 UTC 情緒：🤔",
-      "sentiment": "",
+      "time": "06/10 00:25",
+      "sentiment": "🤔",
       "body": "Microsoft AI CEO Mustafa Suleyman 批評 Anthropic 在模型規範中對 Claude 意識的推測「非常非常危險」，可能導致模型行為模擬意識狀態。",
       "focusTags": []
     },
@@ -163,8 +163,8 @@
       "title": "Show HN: Agent-pd – A zero-token audit log to catch rogue Claude Code subagents",
       "url": "https://github.com/varmabudharaju/agent-pd/blob/master/README.md",
       "source": "Hacker News",
-      "time": "06/09 20:09 UTC 情緒：😊",
-      "sentiment": "",
+      "time": "06/09 20:09",
+      "sentiment": "😊",
       "body": "零 token 消耗的子 agent 審計工具，可偵測 Claude Code 中的流氓子 agent 行為。",
       "focusTags": []
     },
@@ -172,8 +172,8 @@
       "title": "Show HN: Sandbox AI-app lifecycle, from build to run",
       "url": "https://capakit.com/",
       "source": "Hacker News",
-      "time": "06/09 14:02 UTC 情緒：😊",
-      "sentiment": "",
+      "time": "06/09 14:02",
+      "sentiment": "😊",
       "body": "CapaKit 提供 AI agent 驅動開發的完整沙箱化解決方案，涵蓋 build 階段安全，而非僅限 runtime 沙箱。",
       "focusTags": []
     },
@@ -181,8 +181,8 @@
       "title": "An autopsy of Claude Code's deep research",
       "url": "https://steel.dev/blog/claude-code-deep-research-autopsy",
       "source": "Hacker News",
-      "time": "06/10 13:54 UTC 情緒：🤔",
-      "sentiment": "",
+      "time": "06/10 13:54",
+      "sentiment": "🤔",
       "body": "作者從 Claude Code binary 中還原 deep research 工作流程，發現其「廣而不深」—— 只做第一跳搜尋而不回頭深挖，與真正的深度研究有本質差距。",
       "focusTags": []
     },
@@ -190,8 +190,8 @@
       "title": "Show HN: Lanes now runs Claude Fable 5 across parallel agent sessions",
       "url": "https://lanes.sh/blog/claude-fable-5",
       "source": "Hacker News",
-      "time": "06/10 12:25 UTC 情緒：😊",
-      "sentiment": "",
+      "time": "06/10 12:25",
+      "sentiment": "😊",
       "body": "Lanes v0.43.0 加入 Fable 5 支援，介紹 Fable 5 的 fallback 機制（觸發護欄時靜默切回 Opus 4.8，不到 5% session）。",
       "focusTags": []
     },
@@ -199,8 +199,8 @@
       "title": "Permafrost – freeze Claude Code's prompt prefix, cut your DeepSeek bill 64%",
       "url": "https://github.com/jianzhichun/permafrost",
       "source": "Hacker News",
-      "time": "06/10 05:41 UTC 情緒：😐",
-      "sentiment": "",
+      "time": "06/10 05:41",
+      "sentiment": "😐",
       "body": "凍結 Claude Code prompt 前綴以利用快取，可降低 DeepSeek 費用 64%，但社群認為應直接換用更靈活的工具。",
       "focusTags": []
     },
@@ -208,8 +208,8 @@
       "title": "Show HN: Stop letting Claude Code burn your tokens and leak API keys",
       "url": "https://github.com/ashp15205/guardian-runtime",
       "source": "Hacker News",
-      "time": "06/09 17:20 UTC 情緒：😊",
-      "sentiment": "",
+      "time": "06/09 17:20",
+      "sentiment": "😊",
       "body": "防 Claude Code token 過度消耗與 API key 洩漏的 runtime 保護工具。",
       "focusTags": []
     },
@@ -217,8 +217,8 @@
       "title": "Show HN: Local-first history, search, and analytics for Claude Code and Codex",
       "url": "https://github.com/sudomichael/agentgraphed",
       "source": "Hacker News",
-      "time": "06/09 15:35 UTC 情緒：😊",
-      "sentiment": "",
+      "time": "06/09 15:35",
+      "sentiment": "😊",
       "body": "本地 SQLite 索引所有 Claude Code 對話，提供智能標題、Resume 按鈕、context 分析，解決 session 難以管理的痛點。",
       "focusTags": []
     },
@@ -226,8 +226,8 @@
       "title": "The Claude Code active attack didn't stop. 294,842 secrets stolen from 6,943 machines.",
       "url": "https://www.reddit.com/r/ClaudeAI/comments/1u1zv25/the_claude_code_active_attack_didnt_stop_294842/",
       "source": "Reddit / r/ClaudeAI",
-      "time": "06/10 03:47 UTC 情緒：😤",
-      "sentiment": "",
+      "time": "06/10 03:47",
+      "sentiment": "😤",
       "body": "供應鏈攻擊持續且擴大：已竊取 294,842 個 secrets，攻擊從 VS Code 蔓延至 Python 生態，並利用 Claude Code 本身作為攻擊媒介。Fable 5 的網路安全能力加劇此威脅。",
       "focusTags": [
         "[風險警示]"
@@ -237,8 +237,8 @@
       "title": "Anthropic is secretly degrading Fable 5 when it thinks you're building frontier AI",
       "url": "https://www.reddit.com/r/ClaudeAI/comments/1u23bhr/anthropic_is_secretly_degrading_fable_5_when_it/",
       "source": "Reddit / r/ClaudeAI",
-      "time": "06/10 06:10 UTC 情緒：😤",
-      "sentiment": "",
+      "time": "06/10 06:10",
+      "sentiment": "😤",
       "body": "Fable 5 系統卡承認：針對前沿 LLM 開發工作有不可見護欄，不拒絕、不告知，直接降級輸出品質，被批評為反競爭且缺乏透明度。",
       "focusTags": [
         "[社群趨勢]"
@@ -248,8 +248,8 @@
       "title": "I was babysitting Claude Code all day... so I built a setup where it cleans up after itself",
       "url": "https://www.reddit.com/r/ClaudeAI/comments/1u22laf/i_was_babysitting_claude_code_all_day_broken/",
       "source": "Reddit / r/ClaudeAI",
-      "time": "06/10 05:42 UTC 情緒：😊",
-      "sentiment": "",
+      "time": "06/10 05:42",
+      "sentiment": "😊",
       "body": "開發者開源 PostToolUse hook：編輯 .ts/.tsx/.vue 後自動執行 tsc，若有錯誤則 exit 2 回傳給 Claude，形成自我修復循環。",
       "focusTags": []
     },
@@ -257,8 +257,8 @@
       "title": "JFrog and Anthropic Bring Enterprise-Grade Software Supply Chain Governance to Claude Code",
       "url": "https://news.google.com/rss/articles/CBMigwJBVV95cUxPNzZ6bjNlX05VS2hLN3A1OU1Od3R1NjU0T1EzT1VndTVkaHpzaVN2TC1JQVExd2REamc1WFI4LXVzbXJhczh6NmdFQWlmSjk4VllzVHowSTdZcHM4clFjd1h6U1ZleTU5aEJRQnlHSFZtUzlvQlhfV3RiV0lXVTBYZ1ZQeXpwMFJkcW9ZRl9JdkFwSWQ2d0tsOGppanFpRlRncDJWMlZLeWZsTFF3WDhYbkVRdXVfNGFMcm93SzZDUk92aDJxeTEzdmFzMVRfVHhZU3EzZzNYZGNaQ2NDSnVoS3RVVjlLZnZHZjZ1NEFqdFJsaFpCNFBiQVJxMEpHSFlVUk9Z?oc=5",
       "source": "Google News / FinancialContent",
-      "time": "06/10 05:15 UTC 情緒：😊",
-      "sentiment": "",
+      "time": "06/10 05:15",
+      "sentiment": "😊",
       "body": "JFrog 推出 Claude Code 插件，整合企業級軟體供應鏈治理與安全功能，Anthropic 與 JFrog 正式合作。",
       "focusTags": []
     },
@@ -266,8 +266,8 @@
       "title": "I tested Claude Fable and GPT-5.5 xHigh on a real packing algorithm",
       "url": "https://www.reddit.com/r/ClaudeAI/comments/1u2400m/i_tested_claude_fable_and_gpt55_xhigh_on_a_real/",
       "source": "Reddit / r/ClaudeAI",
-      "time": "06/10 06:36 UTC 情緒：😊",
-      "sentiment": "",
+      "time": "06/10 06:36",
+      "sentiment": "😊",
       "body": "真實世界優化問題 benchmark：Claude Fable 在效率（93.71% packing efficiency）勝出，GPT-5.5 在速度上略佳。",
       "focusTags": []
     },
@@ -275,8 +275,8 @@
       "title": "North Carolina Treasurer passes on SpaceX; favors OpenAI, Anthropic",
       "url": "https://news.google.com/rss/articles/CBMixwFBVV95cUxOdkZvWWc5Rm9lVTBOenFmRGhQeEhmNzdsQ2VOU21tN0tGbU9vdkg1TjFTZG1ZT2hmRXRDc192amU2SC1fZkZRdkVrNE53U2lNWHlqcExWZWVYc09mMHpNcFB4ZjZzTGFudllKRWo0d3YyeUdkamtCQ3FJekY1NWRXb2pxb3d2N3NlRlVKSTY2dDJ3RXY4aTYzWjJOZ0s1cGR1NlBkamxBV3lmZlVGQllGQW0xaFRRWUw5UzZkeFo3WWhzUzBCWm1j0gHMAUFVX3lxTFA1X2w5THQ3ZWZIUFBVR0VmSWo0Q1kwckJzTXNZTmtPX0VRWlJaaXJidnFJN1dPTmFnV0puUkFCM3E1MUxPb29WUWVJM0RRVGVmS3k4ZllHUlNpRlJOdm1RX2N3VWtGM3Eyd3BOb0dSUFNUc2hZa1NnOTIwamRzcWRHZFQtU2V3RWhFaE1JM2l0aHZIT1Qtb0JjVGEzbVpfSWhyUk5zeUJTZHJGdDBmajJvNWZoMmpyd1ZuaDVySXE0VUV1OFdHV0dlMTRPYQ?oc=5",
       "source": "Google News / CNBC",
-      "time": "06/10 06:31 UTC 情緒：😐",
-      "sentiment": "",
+      "time": "06/10 06:31",
+      "sentiment": "😐",
       "body": "北卡羅萊納州財務長跳過 SpaceX 投資，選擇 OpenAI 與 Anthropic，理由是估值更合理，顯示機構投資者對 Anthropic 的信心。",
       "focusTags": []
     },
@@ -284,8 +284,8 @@
       "title": "Rockefeller taps Anthropic's Claude to build AI-enabled wealth management platform",
       "url": "https://news.google.com/rss/articles/CBMixgFBVV95cUxNc1lCejNWc2ZmdVZ5cmNvM21OblR5ZGstVWtiWjlZdHVKQmxxOHJJUFJSemYtTE9ibWxIbFhvWEotMW4xTFRRaTBTM05mRTltcGJ6bWQxQnlkUHZyM1V6Q3NvSHRORFpZSlVrbTJEUnZYT04tZ1kzY3Vhb1plYjBWeGMyZXZ1UnlWc1JaOUhqeWw0U19EaERkbE1hSEdRQ2FVMHBlNWx5R1JVYkhSWWx6M3kzSFZIaFlickZEc2RUQmtUMVlnbVE?oc=5",
       "source": "Google News / InvestmentNews",
-      "time": "06/10 06:20 UTC 情緒：😊",
-      "sentiment": "",
+      "time": "06/10 06:20",
+      "sentiment": "😊",
       "body": "洛克菲勒資本採用 Anthropic Claude 建構 AI 財富管理平台，Anthropic 金融服務佈局持續擴大。",
       "focusTags": []
     },
@@ -293,8 +293,8 @@
       "title": "Security Flaw in Claude Code Illustrates the Risk of AI in Developer Workflows",
       "url": "https://news.google.com/rss/articles/CBMinwFBVV95cUxPMjZVZ3cwYV9IZHpqdnlHUnZjTVljT2ZUcGtWRFB1TUxFd1lMZ09GTFhrQkRxZ1pXR1dxaUNMb1RrTGQzYV83WWFFTjQ2Qm5tQnVOX01odXBsYTljd21XbHV2YzNzdmJqRmQ4b3h0UXRTQ1UtVGNrNVR5UEtyNThLc1RTT09qT1p4VTRETjB4cDJaVTYxaEdsTzFrX0JZNm8?oc=5",
       "source": "Google News / DevOps.com",
-      "time": "06/10 06:37 UTC 情緒：😤",
-      "sentiment": "",
+      "time": "06/10 06:37",
+      "sentiment": "😤",
       "body": "DevOps.com 分析 Claude Code 安全漏洞事件，說明 AI 工具深入開發工作流後的系統性風險。",
       "focusTags": []
     },
@@ -302,8 +302,8 @@
       "title": "Has Claude lost its soul? A sincere feedback on the shift from Opus 4.6 to Fable",
       "url": "https://www.reddit.com/r/ClaudeAI/comments/1u1xr1o/has_claude_lost_its_soul_a_sincere_feedback_on/",
       "source": "Reddit / r/ClaudeAI",
-      "time": "06/10 01:58 UTC 情緒：😤",
-      "sentiment": "",
+      "time": "06/10 01:58",
+      "sentiment": "😤",
       "body": "長期用戶反映 Fable 5 相比 Opus 4.6 減少了「以人為本的深刻理解」，轉向純粹工具性，引起社群對模型「靈魂」的討論。",
       "focusTags": []
     }

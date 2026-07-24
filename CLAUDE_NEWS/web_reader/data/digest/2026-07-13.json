@@ -2,7 +2,7 @@
   "date": "2026-07-13",
   "generatedAt": "2026-07-13 15:16 UTC（補充抓取回填時間：2026-07-13 23:50 UTC）",
   "articleCount": 39,
-  "sourceCount": "10/10 | **文章數：** 39 + 25 補充（見「🔄 補充抓取」，含 2 則既有 issue 留言數更新、8 則低互動未收錄） | **更新時間：** 2026-07-13 15:16 UTC（補充抓取回填時間：2026-07-13 23:50 UTC）",
+  "sourceCount": "10/10",
   "bulletin": "",
   "topStories": [
     {
@@ -257,8 +257,8 @@
       "title": "[BUG] Claude Desktop doesn't connect to Custom MCPs altogether (not with OAuth 2.1 nor with SSE)",
       "url": "https://github.com/anthropics/claude-code/issues/5826",
       "source": "GitHub Issues / claude-code",
-      "time": "07/13 14:58 UTC 情緒：😤",
-      "sentiment": "",
+      "time": "07/13 14:58",
+      "sentiment": "😤",
       "body": "使用者回報自建的 OAuth 2.1 認證 MCP 伺服器無法連上 Claude Desktop。",
       "focusTags": [
         "[社群趨勢]"
@@ -268,8 +268,8 @@
       "title": "[BUG] Cowork: virtiofs FUSE mount serves truncated/stale files — host-side file changes not reflected in VM",
       "url": "https://github.com/anthropics/claude-code/issues/38993",
       "source": "GitHub Issues / claude-code",
-      "time": "07/12 14:31 UTC 情緒：😤",
-      "sentiment": "",
+      "time": "07/12 14:31",
+      "sentiment": "😤",
       "body": "使用者回報 Cowork 的 virtiofs FUSE 掛載提供過期或截斷檔案，host 端變更未同步進 VM。",
       "focusTags": [
         "[社群趨勢]"
@@ -279,8 +279,8 @@
       "title": "Missing Token Refresh Mechanism for MCP Server Integrations",
       "url": "https://github.com/anthropics/claude-code/issues/5706",
       "source": "GitHub Issues / claude-code",
-      "time": "07/13 15:02 UTC 情緒：😐",
-      "sentiment": "",
+      "time": "07/13 15:02",
+      "sentiment": "😐",
       "body": "使用者指出 Claude Code 目前沒有為 MCP 伺服器刷新 token 的機制，只能改用較長效期的 token 作為替代。",
       "focusTags": []
     },
@@ -288,8 +288,8 @@
       "title": "Allow scrolling back to view full conversation history in CLI TUI",
       "url": "https://github.com/anthropics/claude-code/issues/28077",
       "source": "GitHub Issues / claude-code",
-      "time": "07/13 14:22 UTC 情緒：😤",
-      "sentiment": "",
+      "time": "07/13 14:22",
+      "sentiment": "😤",
       "body": "使用者反映 CLI TUI 模式下，較舊訊息會變成無法捲動回看，即使尚未觸發 context 壓縮。",
       "focusTags": []
     },
@@ -297,8 +297,8 @@
       "title": "Enable Remote Control for Claude Code sessions in Claude Desktop App",
       "url": "https://github.com/anthropics/claude-code/issues/29006",
       "source": "GitHub Issues / claude-code",
-      "time": "07/12 17:14 UTC 情緒：😐",
-      "sentiment": "",
+      "time": "07/12 17:14",
+      "sentiment": "😐",
       "body": "社群請求讓 Claude Desktop App 能遠端控制 Claude Code session，獲得大量讚同。",
       "focusTags": []
     },
@@ -306,8 +306,8 @@
       "title": "/remote-control (/rc) not recognized as built-in command in existing session",
       "url": "https://github.com/anthropics/claude-code/issues/28322",
       "source": "GitHub Issues / claude-code",
-      "time": "07/13 13:29 UTC 情緒：😤",
-      "sentiment": "",
+      "time": "07/13 13:29",
+      "sentiment": "😤",
       "body": "使用者回報在既有 session 中輸入 `/remote-control`（或 `/rc`）會被判定為未知指令，須開新 session 才可用。",
       "focusTags": []
     },
@@ -315,8 +315,8 @@
       "title": "Show HN: Kote – Capture and reuse engineering context from AI chats and Git",
       "url": "https://github.com/pedroaugusto04/Kote",
       "source": "Hacker News",
-      "time": "07/12 18:56 UTC 情緒：😐",
-      "sentiment": "",
+      "time": "07/12 18:56",
+      "sentiment": "😐",
       "body": "開發者釋出 Kote，自動擷取 Claude Code、Antigravity、Codex 等 AI 對話與 Git 紀錄的工程脈絡供日後搜尋。",
       "focusTags": []
     },
@@ -324,8 +324,8 @@
       "title": "Show HN: Harpist – convert any website into a refined and documented API",
       "url": "https://harpist.site",
       "source": "Hacker News",
-      "time": "07/13 14:50 UTC 情緒：😐",
-      "sentiment": "",
+      "time": "07/13 14:50",
+      "sentiment": "😐",
       "body": "作者釋出 Harpist，可將任意網站轉換為附文件的 API，並提供 Claude／Codex 可用的 agent skill 協助整理流程。",
       "focusTags": []
     },
@@ -333,8 +333,8 @@
       "title": "Show HN: Costbase – See what each of your AI apps costs, without a proxy",
       "url": "https://costbase.co",
       "source": "Hacker News",
-      "time": "07/13 12:38 UTC 情緒：😐",
-      "sentiment": "",
+      "time": "07/13 12:38",
+      "sentiment": "😐",
       "body": "作者釋出 Costbase，不需 proxy 即可依 app 拆分追蹤 AI 帳單成本，含 Anthropic API 費用。",
       "focusTags": []
     },
@@ -342,8 +342,8 @@
       "title": "Show HN: Call to Control AI Agents via the Web",
       "url": "https://diffforge.ai/",
       "source": "Hacker News",
-      "time": "07/13 10:04 UTC 情緒：😐",
-      "sentiment": "",
+      "time": "07/13 10:04",
+      "sentiment": "😐",
       "body": "作者釋出 diffforge，讓使用者可透過網頁與電話系統遠端操控 Claude Code、Codex 等編碼 agent。",
       "focusTags": []
     },
@@ -351,8 +351,8 @@
       "title": "Show HN: Learn OCaml, exercises checked by WASM in browser",
       "url": "https://ocamllearn.vercel.app",
       "source": "Hacker News",
-      "time": "07/13 14:17 UTC 情緒：😊",
-      "sentiment": "",
+      "time": "07/13 14:17",
+      "sentiment": "😊",
       "body": "作者藉助 Claude Code 製作互動式 OCaml 學習課程，在瀏覽器內用 WASM 執行編譯器檢查練習答案。",
       "focusTags": []
     },
@@ -360,8 +360,8 @@
       "title": "Show HN: Topsoil – a notch dashboard for coding agents, music, and files",
       "url": "https://topsoil-two.vercel.app/",
       "source": "Hacker News",
-      "time": "07/13 00:52 UTC 情緒：😊",
-      "sentiment": "",
+      "time": "07/13 00:52",
+      "sentiment": "😊",
       "body": "作者釋出 macOS 原生應用 Topsoil，將筆電瀏海變成可監看 Claude Code、Codex 等編碼 agent 即時終端機的面板。",
       "focusTags": []
     },
@@ -369,8 +369,8 @@
       "title": "Anthropic needs to work on their communication strategy",
       "url": "https://www.reddit.com/r/ClaudeCode/comments/1uvec4f/anthropic_needs_to_work_on_their_communication/",
       "source": "Reddit / r/ClaudeCode",
-      "time": "07/13 15:12 UTC 情緒：😤",
-      "sentiment": "",
+      "time": "07/13 15:12",
+      "sentiment": "😤",
       "body": "使用者抱怨希望能付費取得 Fable 存取權與目前用量資訊（含 50% 增量），對官方溝通方式表達不滿。",
       "focusTags": []
     },
@@ -378,8 +378,8 @@
       "title": "usage limits getting lower",
       "url": "https://www.reddit.com/r/ClaudeCode/comments/1uve90h/usage_limits_getting_lower/",
       "source": "Reddit / r/ClaudeCode",
-      "time": "07/13 15:08 UTC 情緒：😤",
-      "sentiment": "",
+      "time": "07/13 15:08",
+      "sentiment": "😤",
       "body": "Max 5x 訂閱用戶回報近一週用量額度消耗速度明顯變快，5 小時額度約 2 小時就用完。",
       "focusTags": []
     },
@@ -387,8 +387,8 @@
       "title": "Can someone please give me 1 week guest pass?",
       "url": "https://www.reddit.com/r/ClaudeCode/comments/1uvdvys/can_someone_please_give_me_1_week_guest_pass/",
       "source": "Reddit / r/ClaudeCode",
-      "time": "07/13 14:56 UTC 情緒：😐",
-      "sentiment": "",
+      "time": "07/13 14:56",
+      "sentiment": "😐",
       "body": "一名學生請求他人提供一週的 guest pass 以完成緊急作業。",
       "focusTags": []
     },
@@ -396,8 +396,8 @@
       "title": "I want to complain - to be happy - but I can't. Fable 5 is great. I'm almost shedding a tear.",
       "url": "https://www.reddit.com/r/ClaudeCode/comments/1uvdngg/i_want_to_complain_to_be_happy_but_i_cant_fable_5/",
       "source": "Reddit / r/ClaudeCode",
-      "time": "07/13 14:47 UTC 情緒：😊",
-      "sentiment": "",
+      "time": "07/13 14:47",
+      "sentiment": "😊",
       "body": "使用者分享用 Fable 5 度過高效週末、一口氣解決多個問題的正面體驗。",
       "focusTags": []
     },
@@ -405,8 +405,8 @@
       "title": "How can I stop Claude from guessing?",
       "url": "https://www.reddit.com/r/ClaudeCode/comments/1uvd4h7/how_can_i_stop_claude_from_guessing/",
       "source": "Reddit / r/ClaudeCode",
-      "time": "07/13 14:27 UTC 情緒：😤",
-      "sentiment": "",
+      "time": "07/13 14:27",
+      "sentiment": "😤",
       "body": "使用者反映即使提供完整文件，Claude 在實作前仍會用猜測方式進行，導致錯誤實作。",
       "focusTags": []
     },
@@ -414,8 +414,8 @@
       "title": "Angry af - vibe coding",
       "url": "https://www.reddit.com/r/ClaudeCode/comments/1uvcz7o/angry_af_vibe_coding/",
       "source": "Reddit / r/ClaudeCode",
-      "time": "07/13 14:21 UTC 情緒：😤",
-      "sentiment": "",
+      "time": "07/13 14:21",
+      "sentiment": "😤",
       "body": "使用者自述自從開始「vibe coding」後容易對同時操作的多個 agent 感到焦躁易怒。",
       "focusTags": []
     },
@@ -423,8 +423,8 @@
       "title": "Compressed Version of Qwen-3.6-27B coming from PrismML - Khosla-Backed Startup Claims Breakthrough With Largest-Ever AI Model on an iPhone",
       "url": "https://www.reddit.com/r/LocalLLaMA/comments/1uv54fv/compressed_version_of_qwen3627b_coming_from/",
       "source": "Reddit / r/LocalLLaMA",
-      "time": "07/13 07:59 UTC 情緒：😐",
-      "sentiment": "",
+      "time": "07/13 07:59",
+      "sentiment": "😐",
       "body": "討論串提及新創公司 PrismML 宣稱在 iPhone 上運行史上最大壓縮版 AI 模型 Qwen-3.6-27B。",
       "focusTags": []
     }

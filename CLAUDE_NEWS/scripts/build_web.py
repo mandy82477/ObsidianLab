@@ -358,7 +358,16 @@ SECTION_EMOJI = {"🔔": "bulletin", "⭐": "topStories", "🔧": "techUpdates",
 SENTIMENT_RE = re.compile(r"`情緒：(.+?)`")
 # star stories start with "⭐ **[Title](url)**" — strip any leading emoji/chars before **
 STORY_RE = re.compile(r"\*\*\[(.+?)\]\((.+?)\)\*\*")
-SOURCE_RE = re.compile(r"^`(.+?)`\s*·\s*(.+?)(?:\s*UTC)?(?:\s*·\s*`情緒：(.+?)`)?$")
+# source/timestamp line — two sentiment styles observed in real news/*.md:
+#   舊格式（如 2026-04-26/27）：`Source` · MM/DD HH:MM UTC · `情緒：😊 正面`（反引號包住、前有額外 ·）
+#   現行格式（2026-07 起）：    `Source` · MM/DD HH:MM UTC 情緒：😤          （裸文字，無反引號、無額外 ·）
+# group(3) = 舊格式的情緒值，group(4) = 現行格式的情緒值；兩者最多命中一個。
+SOURCE_RE = re.compile(
+    r"^`(.+?)`\s*·\s*(.+?)(?:\s*UTC)?"
+    r"(?:\s*·\s*`情緒[：:]\s*(.+?)`"
+    r"|\s*情緒[：:]\s*(.+?))?"
+    r"\s*$"
+)
 FOCUS_RE    = re.compile(r"^(?:-\s+)?\*\*(.+?)\*\*\s+(.*)")
 FOCUS_REF_RE = re.compile(r"（ref:\s*(https?://[^\s（）)]+)[）)]")
 SOURCE_TABLE_RE = re.compile(r"^\|\s*(.+?)\s*\|\s*(✅|❌)\s*\|\s*(\d+)\s*\|")
@@ -386,9 +395,11 @@ def parse_digest(f: Path) -> dict:
     }
 
     # header line: **日期：** … | **來源：** … | **文章數：** … | **更新時間：** …
+    # 分隔符實際上有兩種：真實 news/*.md 一律用純 "|"；digest.py 原始碼另有一支
+    # "&nbsp;|&nbsp;" 版本（目前尚未有任何實檔採用，但保留相容不吃虧）——兩者都要停。
     header_re = re.compile(r"\*\*文章數[：:]\*\*\s*(\d+)")
     gen_re = re.compile(r"\*\*更新時間[：:]\*\*\s*(.+)")
-    src_count_re = re.compile(r"\*\*來源[：:]\*\*\s*(.+?)(?:\s*&|$)")
+    src_count_re = re.compile(r"\*\*來源[：:]\*\*\s*(.+?)(?:\s*[|&]|$)")
 
     current_section: str | None = None
     current_story: dict | None = None
@@ -469,8 +480,9 @@ def parse_digest(f: Path) -> dict:
                 if m:
                     current_story["source"] = m.group(1).strip()
                     current_story["time"] = m.group(2).strip()
-                    if m.group(3):
-                        current_story["sentiment"] = m.group(3).strip()
+                    sentiment = m.group(3) or m.group(4)
+                    if sentiment:
+                        current_story["sentiment"] = sentiment.strip()
                     flush_story()
                     continue
                 # body text

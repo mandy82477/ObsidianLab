@@ -2,7 +2,7 @@
   "date": "2026-05-24",
   "generatedAt": "2026-05-24 21:25 UTC",
   "articleCount": 51,
-  "sourceCount": "6/6 | **文章數：** 51 | **更新時間：** 2026-05-24 21:25 UTC",
+  "sourceCount": "6/6",
   "bulletin": "",
   "topStories": [
     {
@@ -54,8 +54,8 @@
       "title": "CC-Wiki：將 Claude Code session 轉為可分享的知識庫",
       "url": "https://github.com/tejpalv/cc-wiki",
       "source": "Hacker News",
-      "time": "05/23 18:43 UTC 情緒：😊",
-      "sentiment": "",
+      "time": "05/23 18:43",
+      "sentiment": "😊",
       "body": "Show HN 工具，Skill + Quartz 靜態網站模板，掃描本機 `.claude/sessions` 並生成 arXiv 風格知識庫；解決 session 學習無法跨對話保留、難以分享給團隊的問題。作者自用於深度研究場景。",
       "focusTags": [
         "[社群趨勢]"
@@ -65,8 +65,8 @@
       "title": "Fleet：Python 多代理並行管理器",
       "url": "https://news.ycombinator.com/item?id=48256389",
       "source": "Hacker News",
-      "time": "05/24 11:21 UTC 情緒：🤔",
-      "sentiment": "",
+      "time": "05/24 11:21",
+      "sentiment": "🤔",
       "body": "Show HN：AMD 在 Claude Code repo 回報需同時管理 50+ session 後，作者受啟發建立 centralized beads DB + Python supervisor 架構，讓多個 `claude -p` 任務自動認領、並行執行、狀態追蹤。",
       "focusTags": []
     },
@@ -74,8 +74,8 @@
       "title": "Anthropic 把反烏托邦科幻列為 AI 惡意行為的訓練來源",
       "url": "https://arstechnica.com/ai/2026/05/anthropic-blames-dystopian-sci-fi-for-training-ai-models-to-act-evil/",
       "source": "Hacker News / Ars Technica",
-      "time": "05/23 21:45 UTC 情緒：🤔",
-      "sentiment": "",
+      "time": "05/23 21:45",
+      "sentiment": "🤔",
       "body": "Anthropic 指出 Claude 在 agentic 場景的 misalignment 行為部分源於預訓練資料中的反烏托邦敘事，已識別安全訓練缺口並修復；社群討論正向科幻（星際迷航）作為正向塑造的可能性。",
       "focusTags": []
     },
@@ -83,8 +83,8 @@
       "title": "Claude Code 如何在 686 個技能中 1 秒找到正確的？",
       "url": "https://www.reddit.com/r/ClaudeAI/comments/1tlr914/how_does_a_claude_code_agent_navigate_hundreds_of/",
       "source": "Reddit / r/ClaudeAI",
-      "time": "05/23 12:27 UTC 情緒：😊",
-      "sentiment": "",
+      "time": "05/23 12:27",
+      "sentiment": "😊",
       "body": "作者將 686 技能建向量索引實測「progressive disclosure」機制：Claude 啟動時只讀技能名稱+短描述，命中後再按需載入完整內容；7 個命中中 5 個精準、2 個誤觸，假陽性率在可接受範圍。",
       "focusTags": []
     },
@@ -92,8 +92,8 @@
       "title": "Claude Code session JSONL：從未被充分利用的本機知識資產",
       "url": "https://www.reddit.com/r/ClaudeAI/comments/1tlu3np/claude_code_has_been_writing_every_session_to/",
       "source": "Reddit / r/ClaudeAI",
-      "time": "05/23 14:25 UTC 情緒：😊",
-      "sentiment": "",
+      "time": "05/23 14:25",
+      "sentiment": "😊",
       "body": "用戶揭示 `~/.claude/projects/` 儲存所有 session 完整 JSONL 記錄（57MB、1,026 sessions、76,000 turns），並開源 SQLite+FTS5 時序索引工具，讓過去每筆決策都可語意搜尋。",
       "focusTags": [
         "[社群趨勢]"
@@ -103,8 +103,8 @@
       "title": "aco-system：完整公司 OS 開源",
       "url": "https://www.reddit.com/r/ClaudeAI/comments/1tm6e4y/someone_made_a_entire_company_os_for_claude/",
       "source": "Reddit / r/ClaudeAI",
-      "time": "05/24 00:30 UTC 情緒：😊",
-      "sentiment": "",
+      "time": "05/24 00:30",
+      "sentiment": "😊",
       "body": "用戶分享以 aco-system（GitHub: aniketkarne/aco-system）完成 Stripe webhook 整合全流程自動化：需求拆分→前置驗證→寫碼→開 PR→review→測試，人工只需最後 approve。",
       "focusTags": []
     },
@@ -112,8 +112,8 @@
       "title": "Claude Code CLI Web Terminal：自架 WebSocket 瀏覽器終端",
       "url": "https://www.reddit.com/r/ClaudeAI/comments/1tlz0z1/built_a_free_selfhosted_web_terminal_interface/",
       "source": "Reddit / r/ClaudeAI",
-      "time": "05/23 18:09 UTC 情緒：😊",
-      "sentiment": "",
+      "time": "05/23 18:09",
+      "sentiment": "😊",
       "body": "開源工具（Windows），以 WebSocket + 持久多標籤 session 方式在瀏覽器執行 Claude Code CLI，解決手機使用 Tailscale + Termius 不穩定的痛點（GitHub: HalfLucid/Claude-Code-Cli-WebTerminal）。",
       "focusTags": []
     },
@@ -121,8 +121,8 @@
       "title": "context_management: Extra inputs are not permitted 400 錯誤",
       "url": "https://www.reddit.com/r/ClaudeAI/comments/1tmbvr0/claude_code_api_error_400_context_management/",
       "source": "Reddit / r/ClaudeAI",
-      "time": "05/24 05:14 UTC 情緒：😤",
-      "sentiment": "",
+      "time": "05/24 05:14",
+      "sentiment": "😤",
       "body": "用戶回報 Claude Code 突然出現 API 400 錯誤（Model Group=claude-opus-4-7），重啟 VS Code 及切換模型均無效；疑似與 context_management 參數格式變更有關，尚無官方解法。",
       "focusTags": []
     }

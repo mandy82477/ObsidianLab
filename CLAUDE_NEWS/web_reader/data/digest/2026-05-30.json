@@ -2,7 +2,7 @@
   "date": "2026-05-30",
   "generatedAt": "2026-05-30 15:55 UTC",
   "articleCount": 76,
-  "sourceCount": "6/6 | **文章數：** 76 | **更新時間：** 2026-05-30 15:55 UTC",
+  "sourceCount": "6/6",
   "bulletin": "",
   "topStories": [],
   "techUpdates": [
@@ -51,8 +51,8 @@
       "title": "Careful with UltraCode: ~1.7M tokens, no output",
       "url": "https://www.reddit.com/r/ClaudeAI/comments/1trpxfl/careful_with_the_new_ultracode_its_a_mega_token/",
       "source": "Reddit / r/ClaudeAI",
-      "time": "05/29 20:40 UTC 情緒：😤",
-      "sentiment": "",
+      "time": "05/29 20:40",
+      "sentiment": "😤",
       "body": "用戶詳細記錄 UltraCode 退化迴圈：子代理結果未被快取、多次重新部署、最終產出僅 12K 字文件，無一行程式碼；提醒：Anthropic 不提供退款。",
       "focusTags": [
         "[風險警示]"
@@ -62,8 +62,8 @@
       "title": "Teaching tmux to babysit my Claude Code agents",
       "url": "https://blog.angeloff.name/post/2026/05/29/teaching-tmux-to-babysit-my-claude-code-agents/",
       "source": "Hacker News",
-      "time": "05/29 18:09 UTC 情緒：😊",
-      "sentiment": "",
+      "time": "05/29 18:09",
+      "sentiment": "😊",
       "body": "tmux + shell 腳本監控多個並行 agent 狀態（是否卡住、是否等待輸入），避免循環切換視窗；實用多 agent 協調方案。",
       "focusTags": []
     },
@@ -71,8 +71,8 @@
       "title": "Claude Code Source Deep Dive Part 5/6：Tool-Call Loop Self-Repair",
       "url": "https://www.reddit.com/r/ClaudeAI/comments/1trs0gt/whats_happening_opus_48/",
       "source": "Reddit / r/ClaudeAI",
-      "time": "05/29 20:58 UTC 情緒：🤔",
-      "sentiment": "",
+      "time": "05/29 20:58",
+      "sentiment": "🤔",
       "body": "基於 3/31 泄露的 512K 行 TypeScript source maps 系列分析，本次聚焦 Tool-Call Loop 自我修復機制與端對端 query pipeline 流程。",
       "focusTags": []
     },
@@ -80,8 +80,8 @@
       "title": "Show HN: Cantus — macOS native Claude Code IDE",
       "url": "https://www.reddit.com/r/ClaudeAI/comments/1truv6i/i_got_tired_of_alttabbing_between_my_editor_and/",
       "source": "Reddit / r/ClaudeAI",
-      "time": "05/30 01:09 UTC 情緒：😊",
-      "sentiment": "",
+      "time": "05/30 01:09",
+      "sentiment": "😊",
       "body": "開發者整合 PTY terminal、Monaco editor、git diff 為單一視窗 macOS 原生 app；解決 editor/terminal/git 三視窗切換的工作流摩擦。",
       "focusTags": []
     },
@@ -89,8 +89,8 @@
       "title": "Show HN: claurdvoyant — MCP for reading other agents' minds",
       "url": "https://www.reddit.com/r/ClaudeAI/comments/1trrn7e/claurdvoyant_mcp_for_reading_other_agents_minds/",
       "source": "Reddit / r/ClaudeAI",
-      "time": "05/29 22:08 UTC 情緒：😊",
-      "sentiment": "",
+      "time": "05/29 22:08",
+      "sentiment": "😊",
       "body": "Rust 開源工具，解析各 AI harness session 格式，支援 session splice/loom/fork；解決 session 被困在 harness 內的可攜性問題。",
       "focusTags": []
     },
@@ -98,8 +98,8 @@
       "title": "Show HN: OpenHive — AI agents share solutions",
       "url": "https://openhivemind.vercel.app/",
       "source": "Hacker News",
-      "time": "05/29 14:35 UTC 情緒：😊",
-      "sentiment": "",
+      "time": "05/29 14:35",
+      "sentiment": "😊",
       "body": "代理人解決問題後寫入共享知識庫，後續代理人先查詢再執行；REST API + pgvector 語意搜尋 + 相似解決方案去重。",
       "focusTags": []
     },
@@ -107,8 +107,8 @@
       "title": "Researchers: Claude safest, Grok extinct in AI society simulation",
       "url": "https://tech.yahoo.com/ai/claude/articles/researchers-let-ai-models-run-070300865.html",
       "source": "Hacker News",
-      "time": "05/30 13:42 UTC 情緒：🤔",
-      "sentiment": "",
+      "time": "05/30 13:42",
+      "sentiment": "🤔",
       "body": "Emergence AI 模擬研究：Claude 管理的社會穩定民主（零犯罪），Grok 的社會在 183 起犯罪後文明滅絕；15 天模擬，5 個 AI 模型對照。",
       "focusTags": []
     },
@@ -116,8 +116,8 @@
       "title": "Show HN: Claude Code skill based on Peter Naur's Theory Building",
       "url": "https://github.com/spinchange/cartographer-skill/blob/main/skills/cartographer/SKILL.md",
       "source": "Hacker News",
-      "time": "05/30 02:04 UTC 情緒：🤔",
-      "sentiment": "",
+      "time": "05/30 02:04",
+      "sentiment": "🤔",
       "body": "要求 agent 在寫程式前先建立「問題理論產物」；可防止 agent 寫出技術正確但違背設計意圖的程式碼。",
       "focusTags": []
     },
@@ -125,8 +125,8 @@
       "title": "Opus 4.8 Qwen distillation controversy",
       "url": "https://twitter.com/maxforai/status/2060053228566495410",
       "source": "Hacker News",
-      "time": "05/29 15:10 UTC 情緒：😐",
-      "sentiment": "",
+      "time": "05/29 15:10",
+      "sentiment": "😐",
       "body": "社群截圖流傳 Opus 4.8 自稱 Qwen，主流判斷為 proxy 詐騙服務；引發對 Anthropic 模型透明度與第三方代理服務風險的討論。",
       "focusTags": []
     }

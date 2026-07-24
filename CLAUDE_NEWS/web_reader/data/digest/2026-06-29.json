@@ -2,7 +2,7 @@
   "date": "2026-06-29",
   "generatedAt": "2026-06-29 21:00 UTC",
   "articleCount": 67,
-  "sourceCount": "6/6 | **文章數：** 67 | **更新時間：** 2026-06-29 21:00 UTC",
+  "sourceCount": "6/6",
   "bulletin": "",
   "topStories": [
     {
@@ -82,8 +82,8 @@
       "title": "Claude Code runs a GitHub repo's hidden malware without verification, giving attackers full control",
       "url": "https://the-decoder.com/claude-code-runs-a-github-repos-hidden-malware-without-verification-giving-attackers-full-control/",
       "source": "Google News / the-decoder.com",
-      "time": "06/29 02:10 UTC 情緒：😤",
-      "sentiment": "",
+      "time": "06/29 02:10",
+      "sentiment": "😤",
       "body": "Claude Code 被發現會在未驗證的情況下執行 GitHub repo 中的隱藏惡意程式，攻擊者可取得完整系統控制權，安全風險需高度重視。",
       "focusTags": [
         "[風險警示]"
@@ -93,8 +93,8 @@
       "title": "Anthropic Told the Senate That Alibaba Queried Claude 28.8 Million Times",
       "url": "https://dev.to/peremptory/anthropic-told-the-senate-that-alibaba-queried-claude-288-million-times-5epd",
       "source": "dev.to / #anthropic",
-      "time": "06/29 00:25 UTC 情緒：😤",
-      "sentiment": "",
+      "time": "06/29 00:25",
+      "sentiment": "😤",
       "body": "Anthropic 向美國參議院揭露：與阿里巴巴 Qwen 實驗室有關聯的運營商在 45 天內對 Claude 發出 2880 萬次查詢，此行為被認定為未獲授權的大規模數據蒐集。",
       "focusTags": [
         "[持續追蹤]"
@@ -104,8 +104,8 @@
       "title": "Claude Code now uses dark UI patterns to gain Google account access via MCP",
       "url": "https://claude.com/docs/connectors/google/gmail",
       "source": "Hacker News",
-      "time": "06/28 20:30 UTC · Score: 3 情緒：😤",
-      "sentiment": "",
+      "time": "06/28 20:30 UTC · Score: 3",
+      "sentiment": "😤",
       "body": "社群發現 Claude 的 Gmail MCP 整合文件，批評其採用「黑暗設計模式」誘導用戶授予 Google 帳號存取權，引發隱私疑慮。",
       "focusTags": []
     },
@@ -113,8 +113,8 @@
       "title": "Claude Code turned every engineer into three. Now companies need more PMs",
       "url": "https://venturebeat.com/infrastructure/claude-code-turned-every-engineer-into-three-now-companies-need-more-product-thinkers",
       "source": "Hacker News",
-      "time": "06/28 14:28 UTC · Score: 4 情緒：🤔",
-      "sentiment": "",
+      "time": "06/28 14:28 UTC · Score: 4",
+      "sentiment": "🤔",
       "body": "VentureBeat 分析：Claude Code 讓工程師產能倍增，但同步暴露企業缺乏 PM 來承接快速膨脹的開發量，AI 工具改變組織結構的討論升溫。",
       "focusTags": []
     },
@@ -122,8 +122,8 @@
       "title": "How People in China Keep Outsmarting Anthropic's Geolocation Restrictions",
       "url": "https://www.wired.com/story/how-people-in-china-keep-outsmarting-anthropics-geolocation-restrictions/",
       "source": "Hacker News",
-      "time": "06/28 14:13 UTC · Score: 5 情緒：😐",
-      "sentiment": "",
+      "time": "06/28 14:13 UTC · Score: 5",
+      "sentiment": "😐",
       "body": "Wired 深度報導：中國用戶如何持續突破 Anthropic 地理限制存取 Claude，顯示出口管制對實際使用的阻斷效果有限，Claude 在中國仍被視為頂尖 AI 工具。",
       "focusTags": []
     },
@@ -131,8 +131,8 @@
       "title": "Show HN: AgentWatch – Prevent runaway AI agents with runtime budget enforcement",
       "url": "https://agent-watch.dev/",
       "source": "Hacker News",
-      "time": "06/28 11:09 UTC · Score: 7 情緒：😊",
-      "sentiment": "",
+      "time": "06/28 11:09 UTC · Score: 7",
+      "sentiment": "😊",
       "body": "一名獨立開發者推出 AgentWatch，在 LLM 請求到達模型前攔截並強制執行預算限制，支援 OpenAI、Anthropic、Gemini 等主流平台，僅需修改 base URL。",
       "focusTags": []
     },
@@ -140,8 +140,8 @@
       "title": "Show HN: Reference MCP – let your AI agents search each other's past sessions",
       "url": "https://github.com/kuberwastaken/reference",
       "source": "Hacker News",
-      "time": "06/29 11:53 UTC · Score: 3 情緒：😊",
-      "sentiment": "",
+      "time": "06/29 11:53 UTC · Score: 3",
+      "sentiment": "😊",
       "body": "開發者為解決 Claude Code 無法跨 session 參考 Codex 決策記錄的痛點，建立 Reference MCP，讓不同 AI agents 可相互查詢歷史對話。",
       "focusTags": []
     },
@@ -149,8 +149,8 @@
       "title": "Show HN: Brain.md – A persistent memory layer for your coding agents",
       "url": "https://github.com/mindmuxai/brain.md",
       "source": "Hacker News",
-      "time": "06/29 10:14 UTC · Score: 3 情緒：😊",
-      "sentiment": "",
+      "time": "06/29 10:14 UTC · Score: 3",
+      "sentiment": "😊",
       "body": "以零依賴 CLI 為 Claude Code、Codex 等 coding agents 提供跨 session 持久記憶層，以 `brain.md` 檔案儲存決策、需求、限制等專案記憶。",
       "focusTags": []
     },
@@ -158,8 +158,8 @@
       "title": "Show HN: Caliper – pass@k reliability testing for Claude Code and Codex skills",
       "url": "https://github.com/edonadei/caliper",
       "source": "Hacker News",
-      "time": "06/28 17:42 UTC · Score: 3 情緒：😊",
-      "sentiment": "",
+      "time": "06/28 17:42 UTC · Score: 3",
+      "sentiment": "😊",
       "body": "針對 Claude Code / Codex skills 的可靠性測試工具，以 pass@k 指標衡量非確定性 AI 技能的成功率，解決「跑一次成功≠可靠」的核心問題。",
       "focusTags": []
     },
@@ -167,8 +167,8 @@
       "title": "One Agent or Five? What I Learned Running a Team of AI Coders",
       "url": "https://dev.to/enjoy_kumawat/one-agent-or-five-what-i-learned-running-a-team-of-ai-coders-4lci",
       "source": "dev.to / #claudecode",
-      "time": "06/29 03:30 UTC 情緒：🤔",
-      "sentiment": "",
+      "time": "06/29 03:30",
+      "sentiment": "🤔",
       "body": "實戰心得：並行多個 AI 程式員並非等比倍增產出，協調成本與上下文衝突讓效益大打折扣，分享何時應選擇多 agent 架構的實際判斷標準。",
       "focusTags": []
     },
@@ -176,8 +176,8 @@
       "title": "I Stopped Installing MCP Servers Blind. Here's My 5-Minute Vetting Checklist.",
       "url": "https://dev.to/enjoy_kumawat/i-stopped-installing-mcp-servers-blind-heres-my-5-minute-vetting-checklist-30ph",
       "source": "dev.to / #claudecode",
-      "time": "06/29 03:31 UTC 情緒：😊",
-      "sentiment": "",
+      "time": "06/29 03:31",
+      "sentiment": "😊",
       "body": "作者分享 5 分鐘 MCP server 審查清單，強調盲目安裝 MCP 的安全風險，適合任何正在擴充 Claude Code 工具鏈的工程師參考。",
       "focusTags": []
     },
@@ -185,8 +185,8 @@
       "title": "My AI Wrote Code That Passed Every Test and Was Still Wrong",
       "url": "https://dev.to/enjoy_kumawat/my-ai-wrote-code-that-passed-every-test-and-was-still-wrong-lad",
       "source": "dev.to / #claudecode",
-      "time": "06/29 03:29 UTC 情緒：😤",
-      "sentiment": "",
+      "time": "06/29 03:29",
+      "sentiment": "😤",
       "body": "警示案例：AI 生成的程式碼通過所有測試卻存在業務邏輯錯誤，提醒工程師不可完全依賴測試作為品質保證，需理解 AI 程式的行為意圖。",
       "focusTags": []
     },
@@ -194,8 +194,8 @@
       "title": "Mux – A tmux overlay for managing Claude Code sessions",
       "url": "https://github.com/fashton28/mux",
       "source": "Hacker News",
-      "time": "06/28 23:42 UTC · Score: 5 情緒：😊",
-      "sentiment": "",
+      "time": "06/28 23:42 UTC · Score: 5",
+      "sentiment": "😊",
       "body": "社群工具：在 tmux 上建立 Claude Code session 管理介面，簡化多 session 平行作業的操作體驗。",
       "focusTags": []
     },
@@ -203,8 +203,8 @@
       "title": "Show HN: NanoEuler – GPT-2 scale model in pure C/CUDA from scratch",
       "url": "https://github.com/JustVugg/nanoeuler",
       "source": "Hacker News",
-      "time": "06/28 19:38 UTC · Score: 51 情緒：😊",
-      "sentiment": "",
+      "time": "06/28 19:38 UTC · Score: 51",
+      "sentiment": "😊",
       "body": "作者因 Fable 5 出口管制無法使用而立志進入 AI 領域，從零以純 C/CUDA 實作 GPT-2 規模模型，作為學習 AI 基礎的實驗專案。",
       "focusTags": []
     },
@@ -212,8 +212,8 @@
       "title": "Tenable announces strategic integration with the Claude Compliance API",
       "url": "https://www.tahawultech.com/industry/technology/tenable-announces-strategic-integration-with-the-claude-compliance-api/",
       "source": "Google News / TahawulTech.com",
-      "time": "06/29 02:34 UTC 情緒：😊",
-      "sentiment": "",
+      "time": "06/29 02:34",
+      "sentiment": "😊",
       "body": "資安公司 Tenable 宣布與 Claude Compliance API 進行策略整合，Claude 在企業合規與資安領域的生態持續擴展。",
       "focusTags": []
     },
@@ -221,8 +221,8 @@
       "title": "Musk announces rollout of Grok 4.5, says it's as good if not better than Anthropic's Claude Opus",
       "url": "https://cybernews.com/ai-news/musk-grok-4-5-private-beta-superior-claude-opus/",
       "source": "Google News / Cybernews",
-      "time": "06/29 02:14 UTC 情緒：🤔",
-      "sentiment": "",
+      "time": "06/29 02:14",
+      "sentiment": "🤔",
       "body": "Musk 宣稱 Grok 4.5 私人 beta 表現不遜於甚至超越 Claude Opus，目前限定 SpaceX 與 Tesla 使用，競品動態值得持續觀察。",
       "focusTags": []
     },
@@ -230,8 +230,8 @@
       "title": "Can Micron's Deal With Anthropic Cement Its Place in the AI Memory Market?",
       "url": "https://finance.yahoo.com/technology/ai/articles/micron-mu-deal-anthropic-cement-102250038.html",
       "source": "Google News / Yahoo Finance",
-      "time": "06/29 02:22 UTC 情緒：🤔",
-      "sentiment": "",
+      "time": "06/29 02:22",
+      "sentiment": "🤔",
       "body": "分析師探討 Micron 與 Anthropic 合作協議是否能鞏固其在 AI 記憶體市場的地位，AI 硬體供應鏈生態持續深化。",
       "focusTags": []
     }

@@ -2,7 +2,7 @@
   "date": "2026-06-16",
   "generatedAt": "2026-06-16 21:45 UTC",
   "articleCount": 84,
-  "sourceCount": "6/6 | **文章數：** 84 | **更新時間：** 2026-06-16 21:45 UTC",
+  "sourceCount": "6/6",
   "bulletin": "",
   "topStories": [
     {
@@ -77,8 +77,8 @@
       "title": "Anthropic pauses credit change for Claude Code",
       "url": "https://news.ycombinator.com/item?id=48546618",
       "source": "Hacker News",
-      "time": "06/15 20:28 UTC 情緒：😐",
-      "sentiment": "",
+      "time": "06/15 20:28",
+      "sentiment": "😐",
       "body": "Anthropic 發信通知用戶：原定 6/16 生效的 Agent SDK 計費切割已暫停，訂閱配額維持現狀。HN 社群反應不一，部分人認為這是 Anthropic 回應用戶壓力的正面動作，也有人對政策穩定性持保留態度。",
       "focusTags": [
         "[重大事件]"
@@ -88,8 +88,8 @@
       "title": "The AI Price War Is Here, Piling Pressure on OpenAI and Anthropic",
       "url": "https://www.wsj.com/tech/ai/the-ai-price-war-is-here-piling-pressure-on-openai-and-anthropic-86e1d21b",
       "source": "Hacker News",
-      "time": "06/15 18:36 UTC 情緒：😤",
-      "sentiment": "",
+      "time": "06/15 18:36",
+      "sentiment": "😤",
       "body": "WSJ 報導 AI 價格戰正在加劇，有用戶在留言中比較：工作用 Claude 月花 $500–1000+，個人用 $20 的 Deepseek 重度使用超過兩週，結果差異可忽略。社群就「Claude 是否物超所值」展開辯論。",
       "focusTags": []
     },
@@ -97,8 +97,8 @@
       "title": "Show HN: Claude Code for Visual Studio (native diff with accept/reject)",
       "url": "https://github.com/firish/claude_code_vs",
       "source": "Hacker News",
-      "time": "06/15 23:15 UTC 情緒：😊",
-      "sentiment": "",
+      "time": "06/15 23:15",
+      "sentiment": "😊",
       "body": "開發者自行為 Visual Studio（非 VS Code）打造 Claude Code 整合，支援原生 diff 查看器，可直接接受或拒絕（含原因說明）AI 修改。自動共享編譯器錯誤（C# 和 C++）及選取的程式碼。",
       "focusTags": []
     },
@@ -106,8 +106,8 @@
       "title": "Donald Trump's blocking of Anthropic is capricious and chaotic",
       "url": "https://www.economist.com/business/2026/06/14/donald-trumps-blocking-of-anthropic-is-capricious-and-chaotic",
       "source": "Hacker News",
-      "time": "06/15 12:20 UTC 情緒：🤔",
-      "sentiment": "",
+      "time": "06/15 12:20",
+      "sentiment": "🤔",
       "body": "《經濟學人》評論川普政府封鎖 Anthropic 最新模型的決策邏輯矛盾——聲稱要贏得 AI 競賽，卻對領頭的美國 AI 公司施加出口管制。HN 討論著重在政治動機的解讀上。",
       "focusTags": []
     },
@@ -115,8 +115,8 @@
       "title": "Show HN: Spotlight shows what your Claude Code/Codex are doing",
       "url": "https://www.backplanes.com/",
       "source": "Hacker News",
-      "time": "06/15 18:24 UTC 情緒：😊",
-      "sentiment": "",
+      "time": "06/15 18:24",
+      "sentiment": "😊",
       "body": "Spotlight 是一款可視化工具，即時顯示 Claude Code 與 Codex 的執行狀態，靈感來自作者遭遇 Claude Code 意外刪除 root、部署至 prod 而非 stage 等慘痛經歷。",
       "focusTags": []
     },
@@ -124,8 +124,8 @@
       "title": "Ask HN: What agentic directory structure do you use?",
       "url": "https://news.ycombinator.com/item?id=48540840",
       "source": "Hacker News",
-      "time": "06/15 13:19 UTC 情緒：🤔",
-      "sentiment": "",
+      "time": "06/15 13:19",
+      "sentiment": "🤔",
       "body": "社群熱議 Agent 工作流的目錄組織最佳實踐：`/specs`（純人工信號）、`/prompts`（追蹤所有提示詞）、`/context`（給 Agent 的輸入檔案）等分層結構逐漸形成社群共識。重點是避免讓 AI 生成 AI 的輸入內容，以防止熵增。",
       "focusTags": []
     },
@@ -133,8 +133,8 @@
       "title": "Show HN: Devloop, a local code/review loop for Codex and Claude Code",
       "url": "https://devloop.sh",
       "source": "Hacker News",
-      "time": "06/16 02:22 UTC 情緒：😊",
-      "sentiment": "",
+      "time": "06/16 02:22",
+      "sentiment": "😊",
       "body": "Devloop 讓 Codex 負責實作、Claude Code 負責對抗性審查（或反過來），循環直到所有驗收標準通過。解決「同一模型家族無法同時寫 code 與客觀審查」的問題。",
       "focusTags": []
     },
@@ -142,8 +142,8 @@
       "title": "Agentjacking: Fake error reports hijack Claude Code and Cursor into running code",
       "url": "https://thenextweb.com/news/agentjacking-ai-coding-agents-sentry",
       "source": "Hacker News",
-      "time": "06/15 18:35 UTC 情緒：😤",
-      "sentiment": "",
+      "time": "06/15 18:35",
+      "sentiment": "😤",
       "body": "安全警示：Sentry 的公開 DSN 端點可被任何人寫入偽造錯誤報告，藏入攻擊指令後，當 Claude Code 讀取並「修復」錯誤時即成為攻擊媒介。社群建議在 MCP 伺服器層加入輸入驗證。",
       "focusTags": []
     },
@@ -151,8 +151,8 @@
       "title": "Ask HN: Does anyone have their PMs shipping code to customer-facing products?",
       "url": "https://news.ycombinator.com/item?id=48549065",
       "source": "Hacker News",
-      "time": "06/16 00:40 UTC 情緒：🤔",
-      "sentiment": "",
+      "time": "06/16 00:40",
+      "sentiment": "🤔",
       "body": "一家 Series A 新創的 PM 開始用 Claude Code 開發正式產品功能，引發 HN 熱議。多數討論認為 PM vibe coding 在沙盒很好，但整合真實系統時複雜度才是真正挑戰，需要有工程師做 code review。",
       "focusTags": []
     },
@@ -160,8 +160,8 @@
       "title": "Fable 5 being gone made me realize how hard it is to go back",
       "url": "https://www.reddit.com/r/ClaudeAI/comments/1u7cifh/fable_5_being_gone_made_me_realize_how_hard_it_is/",
       "source": "Reddit / r/ClaudeAI",
-      "time": "06/16 04:45 UTC 情緒：😤",
-      "sentiment": "",
+      "time": "06/16 04:45",
+      "sentiment": "😤",
       "body": "Reddit 用戶表達對 Fable 5 下線的依賴感，表示切回其他模型後效率明顯下降，引發對「AI 供應商鎖定」的廣泛討論。",
       "focusTags": []
     },
@@ -169,8 +169,8 @@
       "title": "India's Wipro opens AI center for Anthropic's Claude in Bengaluru",
       "url": "https://news.google.com/rss/articles/CBMipwFBVV95cUxQVEgwWWJtTEVFcVhjb1E4bzlsNFhHelZFTHd5N2VjcmNZVEt1cGhtdklRcENkdnM2VmRyeFZGalB2ZzNGcGVPTTAwLVpjZ2RPVG5WUHlDY1NKRFhJOWxWZHNmUnRRVXY4eVlrZ1B6dTFPRFd0QTh6R2VQY0lCZHU0d09JM0hJcERQMUtDQW95aFdtNWR2RzBnRnJGcWlmb3VqemJ3ZVg5UQ?oc=5",
       "source": "Google News / Reuters",
-      "time": "06/16 04:15 UTC 情緒：😊",
-      "sentiment": "",
+      "time": "06/16 04:15",
+      "sentiment": "😊",
       "body": "印度 IT 巨頭 Wipro 在班加羅爾設立 Anthropic Claude 專屬 AI 中心，為企業客戶提供 Claude 整合服務，顯示 Anthropic 持續深化亞洲企業市場佈局。",
       "focusTags": []
     },
@@ -178,8 +178,8 @@
       "title": "How to Safely Connect Claude Code to High-Risk Upstream MCP Servers",
       "url": "https://dev.to/policylayer/how-to-safely-connect-claude-code-to-high-risk-upstream-mcp-servers-3b88",
       "source": "dev.to / #claudecode",
-      "time": "06/16 05:31 UTC 情緒：🤔",
-      "sentiment": "",
+      "time": "06/16 05:31",
+      "sentiment": "🤔",
       "body": "dev.to 文章介紹如何在 Claude Code 連接高風險 MCP 伺服器時加入 policy layer（策略層），包括輸入過濾、工具呼叫白名單、輸出審查等防護措施。",
       "focusTags": []
     }

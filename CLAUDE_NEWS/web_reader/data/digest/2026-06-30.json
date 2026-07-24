@@ -2,7 +2,7 @@
   "date": "2026-06-30",
   "generatedAt": "2026-06-30 22:46 UTC",
   "articleCount": 46,
-  "sourceCount": "6/6 | **文章數：** 46 | **更新時間：** 2026-06-30 22:46 UTC",
+  "sourceCount": "6/6",
   "bulletin": "",
   "topStories": [
     {
@@ -52,8 +52,8 @@
       "title": "Anthropic embedded spyware in Claude Code – and attempted to hide it from you",
       "url": "https://old.reddit.com/r/ClaudeAI/comments/1ujila1/anthropic_embedded_spyware_in_claude_code_and/",
       "source": "Hacker News",
-      "time": "06/30 08:22 UTC 情緒：😤",
-      "sentiment": "",
+      "time": "06/30 08:22",
+      "sentiment": "😤",
       "body": "最高熱度討論：指控 Claude Code 自 v2.1.91 嵌入偵測中國代理的隱藏程式碼，Anthropic 更混淆程式碼試圖掩蓋。代理使用者在逆向工程 v2.1.196 的「遠端控制封鎖」時意外發現。",
       "focusTags": [
         "[重大事件]"
@@ -63,8 +63,8 @@
       "title": "Claude Code Is Quietly Fingerprinting China-Linked API Routers",
       "url": "https://www.vincentschmalbach.com/claude-code-china-router-fingerprint/",
       "source": "Hacker News",
-      "time": "06/30 11:07 UTC 情緒：🤔",
-      "sentiment": "",
+      "time": "06/30 11:07",
+      "sentiment": "🤔",
       "body": "獨立技術部落格深入分析 Claude Code 的中國路由器指紋識別機制；社群指出另有 Reddit 更完整的討論串，並推測 Anthropic 可能透過系統提示修改或模型權重調整（類似 Fable 做法）防止蒸餾。",
       "focusTags": [
         "[重大事件]"
@@ -74,8 +74,8 @@
       "title": "Another Claude Code attack allows full takeover of developers' systems",
       "url": "https://cybernews.com/security/claude-code-attack-prompt-injection-mozilla/",
       "source": "Google News / Cybernews",
-      "time": "06/30 05:18 UTC 情緒：😤",
-      "sentiment": "",
+      "time": "06/30 05:18",
+      "sentiment": "😤",
       "body": "Mozilla 研究員演示：看似乾淨的 GitHub repo 可作為 prompt injection 攻擊載體，完整接管開發者系統。Cybernews 報導此類攻擊型態仍在持續增加。",
       "focusTags": [
         "[風險警示]"
@@ -85,8 +85,8 @@
       "title": "Show HN: Agentic Orchestrator, a TUI for long-running coding agents",
       "url": "https://github.com/doordash-oss/agentic-orchestrator",
       "source": "Hacker News",
-      "time": "06/30 01:14 UTC 情緒：😊",
-      "sentiment": "",
+      "time": "06/30 01:14",
+      "sentiment": "😊",
       "body": "DoorDash 開源的 agent 編排 TUI 工具，以 Go 語言實作確定性編排框架（需求釐清 → 研究 → 設計 → 多階段規劃 → 實作 → 審查），加入人工審查閘門。強調「確定性框架 + 非確定性 agent」的混合架構。",
       "focusTags": []
     },
@@ -94,8 +94,8 @@
       "title": "People Who Will Thrive in the AI Age",
       "url": "https://www.theatlantic.com/ideas/2026/06/ai-open-ai-anthropic/687689/",
       "source": "Hacker News",
-      "time": "06/30 12:09 UTC 情緒：🤔",
-      "sentiment": "",
+      "time": "06/30 12:09",
+      "sentiment": "🤔",
       "body": "The Atlantic 分析：AI 時代真正得益者並非最聰明的人，而是願意維持「腦力努力」的人。調查顯示採用 AI 的工作者反而工作量增加，email/訊息使用量翻倍，業務軟體使用量增加 94%。",
       "focusTags": []
     },
@@ -103,8 +103,8 @@
       "title": "Caution when using native subagent \"Explore\" for debugging",
       "url": "https://www.reddit.com/r/ClaudeAI/comments/1ujpz0t/caution_when_using_native_subagent_explore_for/",
       "source": "Reddit / r/ClaudeAI",
-      "time": "06/30 05:56 UTC 情緒：🤔",
-      "sentiment": "",
+      "time": "06/30 05:56",
+      "sentiment": "🤔",
       "body": "深入分析 Claude Code 內建 subagent 類型完整清單，特別提醒 `Explore` subagent 被鎖定使用 Haiku 模型，用於除錯時可能因模型能力不足導致問題。",
       "focusTags": []
     },
@@ -112,8 +112,8 @@
       "title": "Running Claude in a loop is the easy part. Getting it to stop at the right time is the part nobody writes about.",
       "url": "https://www.reddit.com/r/ClaudeAI/comments/1ujqht2/running_claude_in_a_loop_is_the_easy_part_getting/",
       "source": "Reddit / r/ClaudeAI",
-      "time": "06/30 06:17 UTC 情緒：😊",
-      "sentiment": "",
+      "time": "06/30 06:17",
+      "sentiment": "😊",
       "body": "社群討論：讓 Claude 跑 loop 很容易，但在正確時機停下是真正的挑戰。分享了各種 exit condition 設計模式與實戰心得。",
       "focusTags": []
     },
@@ -121,8 +121,8 @@
       "title": "Show HN: Statuslin.es – a community library of custom Claude Code status lines",
       "url": "https://statuslin.es",
       "source": "Hacker News",
-      "time": "06/30 13:15 UTC 情緒：😊",
-      "sentiment": "",
+      "time": "06/30 13:15",
+      "sentiment": "😊",
       "body": "社群自建的 Claude Code status line 分享網站，所有 status line 都在真實容器中渲染並截圖驗證，使用者可瀏覽、提交自訂狀態列設定。",
       "focusTags": []
     },
@@ -130,8 +130,8 @@
       "title": "My agent kept destroying its own memory file with regex. So I built a structural editor for Markdown",
       "url": "https://www.reddit.com/r/ClaudeAI/comments/1ujqbwy/my_agent_kept_destroying_its_own_memory_file_with/",
       "source": "Reddit / r/ClaudeAI",
-      "time": "06/30 06:10 UTC 情緒：😊",
-      "sentiment": "",
+      "time": "06/30 06:10",
+      "sentiment": "😊",
       "body": "開發者分享 agent 因 regex 反覆破壞自身記憶檔案的問題，並開源了一個結構化 Markdown 編輯器，以及提供無本地磁碟的託管版本供 agent 使用。",
       "focusTags": []
     },
@@ -139,8 +139,8 @@
       "title": "Anthropic has bucked the rules of Trump's Washington. It's cost them.",
       "url": "https://fortune.com/2026/06/30/anthropic-clash-with-u-s-government-shows-its-failure-to-play-by-trump-administration-playbook/",
       "source": "Google News / Fortune",
-      "time": "06/30 05:42 UTC 情緒：😤",
-      "sentiment": "",
+      "time": "06/30 05:42",
+      "sentiment": "😤",
       "body": "Fortune 深度報導 Anthropic 如何因拒絕配合 Trump 政府遊戲規則而付出代價，與多數科技巨頭配合態度形成對比。",
       "focusTags": [
         "[重大事件]"
@@ -150,8 +150,8 @@
       "title": "White House AI crackdown opens door for Chinese model makers to close gap",
       "url": "https://www.cnbc.com/2026/06/30/white-house-ai-china-crackdown.html",
       "source": "Google News / CNBC",
-      "time": "06/30 04:00 UTC 情緒：😤",
-      "sentiment": "",
+      "time": "06/30 04:00",
+      "sentiment": "😤",
       "body": "CNBC：白宮對 AI 的打壓正為中國模型廠商創造追趕機會，出口管制政策實際效果受質疑。",
       "focusTags": []
     },
@@ -159,8 +159,8 @@
       "title": "Anthropic ban raises eyebrows among AI experts",
       "url": "https://www.sfexaminer.com/news/technology/experts-say-ai-rules-needed-but-question-anthropic-ban/article_d80dd346-dbd6-47b5-b0f3-f4870d9ad6f2.html",
       "source": "Google News / San Francisco Examiner",
-      "time": "06/30 04:00 UTC 情緒：🤔",
-      "sentiment": "",
+      "time": "06/30 04:00",
+      "sentiment": "🤔",
       "body": "舊金山 Examiner：AI 專家普遍認為 AI 需要監管，但對 Anthropic 遭遇的特定封禁方式提出質疑。",
       "focusTags": []
     },
@@ -168,8 +168,8 @@
       "title": "Claude Code Officially Announces Next Major Upgrade: System Completes All Tasks in the Background While You Chat",
       "url": "https://eu.36kr.com/en/p/3875342287876097",
       "source": "Google News / 36Kr",
-      "time": "06/30 02:22 UTC 情緒：😊",
-      "sentiment": "",
+      "time": "06/30 02:22",
+      "sentiment": "😊",
       "body": "36Kr 報導 Claude Code 下一個重大升級：讓系統在背景完成所有任務，同時使用者繼續對話互動，實現真正的非同步工作流。（待確認：官方尚未正式公告）",
       "focusTags": []
     },
@@ -177,8 +177,8 @@
       "title": "How Okta & Anthropic Are Partnering on XAA, MCP & Glasswing",
       "url": "https://cybermagazine.com/news/how-okta-anthropic-are-partnering-on-xaa-mcp-glasswing",
       "source": "Google News / Cyber Magazine",
-      "time": "06/30 01:44 UTC 情緒：😊",
-      "sentiment": "",
+      "time": "06/30 01:44",
+      "sentiment": "😊",
       "body": "Okta 與 Anthropic 在 XAA（跨應用 agent 認證）、MCP 協定整合及 Glasswing 安全框架上展開合作，為 agentic 工作流提供身份驗證基礎建設。",
       "focusTags": []
     },
@@ -186,8 +186,8 @@
       "title": "Rubrik introduces AI agent and security layer for Claude Code",
       "url": "https://www.techzine.eu/news/security/142561/rubrik-introduces-ai-agent-and-security-layer-for-claude-code/",
       "source": "Google News / Techzine Global",
-      "time": "06/30 01:20 UTC 情緒：😊",
-      "sentiment": "",
+      "time": "06/30 01:20",
+      "sentiment": "😊",
       "body": "Rubrik 發布 Claude Code 專用 AI agent 與安全層，強化企業環境中 Claude Code 的安全防護能力。",
       "focusTags": []
     },
@@ -195,8 +195,8 @@
       "title": "Anthropic to provide California government with AI tools",
       "url": "https://mashable.com/tech/anthropic-claude-california-ai-government-partnership",
       "source": "Google News / Mashable",
-      "time": "06/29 23:46 UTC 情緒：😊",
-      "sentiment": "",
+      "time": "06/29 23:46",
+      "sentiment": "😊",
       "body": "Anthropic 宣布與加州政府合作，提供 AI 工具，這是 Anthropic 與美國聯邦政府關係緊張背景下值得關注的州政府合作案例。",
       "focusTags": []
     },
@@ -204,8 +204,8 @@
       "title": "Globant Announces an Alliance with Anthropic to Redefine Enterprise AI Delivery with Claude-Powered AI Pods",
       "url": "https://www.prnewswire.com/news-releases/globant-announces-an-alliance-with-anthropic-to-redefine-enterprise-ai-delivery-with-claude-powered-ai-pods-302813858.html",
       "source": "Google News / PR Newswire",
-      "time": "06/30 05:00 UTC 情緒：😊",
-      "sentiment": "",
+      "time": "06/30 05:00",
+      "sentiment": "😊",
       "body": "Globant 宣布與 Anthropic 結盟，推出 Claude 驅動的 AI Pods，重新定義企業 AI 交付模式。",
       "focusTags": []
     },
@@ -213,8 +213,8 @@
       "title": "DataArt Joins Anthropic's Claude Partner Network as a Select Partner in the Services Track",
       "url": "https://natlawreview.com/press-releases/dataart-joins-anthropics-claude-partner-network-select-partner-services",
       "source": "Google News / The National Law Review",
-      "time": "06/30 06:11 UTC 情緒：😊",
-      "sentiment": "",
+      "time": "06/30 06:11",
+      "sentiment": "😊",
       "body": "DataArt 加入 Anthropic Claude 夥伴網絡，成為服務軌道精選合作夥伴，持續擴大 Anthropic 企業服務生態圈。",
       "focusTags": []
     },
@@ -222,8 +222,8 @@
       "title": "Show HN: Second opinion – A skill to query different models",
       "url": "https://github.com/kmcheung12/second-opinion",
       "source": "Hacker News",
-      "time": "06/30 14:20 UTC 情緒：😊",
-      "sentiment": "",
+      "time": "06/30 14:20",
+      "sentiment": "😊",
       "body": "Claude Code skill：在 session 中途對其他模型（Claude、opencode）諮詢第二意見，自動整合相關 context 並支援追問。支援 claude-to-claude、claude-to-opencode、opencode-to-claude 呼叫。",
       "focusTags": []
     },
@@ -231,8 +231,8 @@
       "title": "Show HN: Autoharness – a self-learning, maintaining skill layer for Claude Code",
       "url": "https://github.com/tigerless-labs/autoharness",
       "source": "Hacker News",
-      "time": "06/30 13:53 UTC 情緒：😊",
-      "sentiment": "",
+      "time": "06/30 13:53",
+      "sentiment": "😊",
       "body": "自學習、自維護的 Claude Code skill 層，旨在讓 agent 能持續優化自身工作流程。",
       "focusTags": []
     },
@@ -240,8 +240,8 @@
       "title": "My AI cried 'prompt injection!' — and I believed it. Then it turned out to be a false alarm",
       "url": "https://dev.to/kanfu-panda/my-ai-cried-prompt-injection-and-i-believed-it-then-it-turned-out-to-be-a-false-alarm-14f1",
       "source": "dev.to / #claudecode",
-      "time": "06/30 06:38 UTC 情緒：😐",
-      "sentiment": "",
+      "time": "06/30 06:38",
+      "sentiment": "😐",
       "body": "dev.to 分享：AI 誤報 prompt injection 警告導致工作中斷的經驗，探討 false positive 的成本與影響。",
       "focusTags": []
     },
@@ -249,8 +249,8 @@
       "title": "Building Reliable Claude Code Workflows with MCP Servers",
       "url": "https://dev.to/ursula_harrell_32416a7c42/building-reliable-claude-code-workflows-with-mcp-servers-pon",
       "source": "dev.to / #claudecode",
-      "time": "06/30 01:08 UTC 情緒：😊",
-      "sentiment": "",
+      "time": "06/30 01:08",
+      "sentiment": "😊",
       "body": "深入探討 MCP server 在 Claude Code 長時間 session 中的三大常見失效模式，以及對應的穩健化策略。",
       "focusTags": []
     }

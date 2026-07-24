@@ -2,7 +2,7 @@
   "date": "2026-06-19",
   "generatedAt": "2026-06-19 16:32 UTC",
   "articleCount": 77,
-  "sourceCount": "6/6 | **文章數：** 77 | **更新時間：** 2026-06-19 16:32 UTC",
+  "sourceCount": "6/6",
   "bulletin": "",
   "topStories": [
     {
@@ -92,8 +92,8 @@
       "title": "Ask HN: Do you find vibe coding / agentic engineering to be fulfilling?",
       "url": "https://news.ycombinator.com/item?id=48588648",
       "source": "Hacker News",
-      "time": "06/18 17:27 UTC 情緒：🤔",
-      "sentiment": "",
+      "time": "06/18 17:27",
+      "sentiment": "🤔",
       "body": "開發者分享使用 Claude Code 的「失落感」：能快速產出軟體，但缺乏親手建造的成就感；討論如何重新找回 builder zone。",
       "focusTags": []
     },
@@ -101,8 +101,8 @@
       "title": "LLM biased against accessible code (Claude Code issue #56079)",
       "url": "https://www.aaron-gustafson.com/notebook/2026-06-17-llm-biased-against-accessible-code/",
       "source": "Hacker News",
-      "time": "06/18 16:01 UTC 情緒：😤",
-      "sentiment": "",
+      "time": "06/18 16:01",
+      "sentiment": "😤",
       "body": "Bug 回報：即使 CLAUDE.md 明定 WCAG 2.2 AA 為硬性要求，Claude Code 仍將無障礙修復視為可選項目，顯示模型存在價值觀優先序問題，而非技術能力不足。",
       "focusTags": []
     },
@@ -110,8 +110,8 @@
       "title": "JPMorgan Chase cuts off Anthropic access for its Hong Kong staff",
       "url": "https://www.ft.com/content/de83d303-6a03-456b-bfb9-7b11dd502ab3",
       "source": "Hacker News",
-      "time": "06/18 06:43 UTC 情緒：😤",
-      "sentiment": "",
+      "time": "06/18 06:43",
+      "sentiment": "😤",
       "body": "因 Mythos / Fable 5 出口管制令，JPMorgan Chase 切斷香港員工的 Anthropic 服務存取，為首批明確採取行動的企業案例之一。",
       "focusTags": []
     },
@@ -119,8 +119,8 @@
       "title": "How I cut my token usage in half and more (OSS, benchmarks included)",
       "url": "https://www.reddit.com/r/ClaudeAI/comments/1u9rys0/how_i_cut_my_token_usage_in_half_and_more_oss/",
       "source": "Reddit / r/ClaudeAI",
-      "time": "06/18 20:22 UTC 情緒：😊",
-      "sentiment": "",
+      "time": "06/18 20:22",
+      "sentiment": "😊",
       "body": "開源工具 Repowise 作者分享實測：透過精準控制 context 品質，在 Claude Code 上達成 50%+ token 節省，附基準測試數據。",
       "focusTags": []
     },
@@ -128,8 +128,8 @@
       "title": "Fixing Claude Code's amnesia without hoarding everything in memory",
       "url": "https://www.reddit.com/r/ClaudeAI/comments/1u9vk5m/fixing_claude_codes_amnesia_without_hoarding/",
       "source": "Reddit / r/ClaudeAI",
-      "time": "06/18 23:42 UTC 情緒：🤔",
-      "sentiment": "",
+      "time": "06/18 23:42",
+      "sentiment": "🤔",
       "body": "社群分享 Claude Code session 記憶管理技巧：在不堆積所有內容進 memory 的前提下解決遺忘問題的工作流設計。",
       "focusTags": []
     },
@@ -137,8 +137,8 @@
       "title": "What It Took to Actually Govern Claude Code Across Our Engineering Team",
       "url": "https://dev.to/sahajmeet_kaur_/what-it-took-to-actually-govern-claude-code-across-our-engineering-team-4jp6",
       "source": "dev.to / #claudecode",
-      "time": "06/18 11:01 UTC 情緒：😤",
-      "sentiment": "",
+      "time": "06/18 11:01",
+      "sentiment": "😤",
       "body": "工程團隊治理實踐：2026 年初兩個 CVE 顯示 clone 一個 repo 就可能導致 API key 洩漏；文中分享跨團隊治理 Claude Code 的具體做法。",
       "focusTags": []
     },
@@ -146,8 +146,8 @@
       "title": "I lost a week to the bugs my AI created while fixing one",
       "url": "https://dev.to/mjmirza/i-lost-a-week-to-the-bugs-my-ai-created-while-fixing-one-50mk",
       "source": "dev.to / #claudecode",
-      "time": "06/18 21:42 UTC 情緒：😤",
-      "sentiment": "",
+      "time": "06/18 21:42",
+      "sentiment": "😤",
       "body": "開發者親歷：請 AI agent 修一個 bug，結果引入更多問題，前後耗費一週清理；關於 agentic coding 的範疇管理挑戰。",
       "focusTags": []
     },
@@ -155,8 +155,8 @@
       "title": "Show HN: Pagecast – Publish Markdown/HTML Reports to Cloudflare Pages",
       "url": "https://github.com/Amal-David/pagecast",
       "source": "Hacker News",
-      "time": "06/18 19:42 UTC 情緒：😊",
-      "sentiment": "",
+      "time": "06/18 19:42",
+      "sentiment": "😊",
       "body": "開源 CLI 工具：一鍵將 Claude Code / Codex 產出的 HTML / Markdown 報告發布到 Cloudflare Pages，可作為 Claude Artifacts 的自架替代方案。",
       "focusTags": []
     },
@@ -164,8 +164,8 @@
       "title": "Show HN: AI Commander – TeamViewer for AI Agents, No VPN or SSH",
       "url": "https://aicommander.dev/",
       "source": "Hacker News",
-      "time": "06/18 19:24 UTC 情緒：😊",
-      "sentiment": "",
+      "time": "06/18 19:24",
+      "sentiment": "😊",
       "body": "無需 VPN / SSH 的遠端 AI agent 控制工具，支援 Claude Code、Codex 等；提供 Windows tray / Mac menu bar / Linux CLI 各平台 app。",
       "focusTags": []
     },
@@ -173,8 +173,8 @@
       "title": "New AI optimization framework beats Claude Code and Codex by 2.5x on the same compute budget",
       "url": "https://news.google.com/rss/articles/CBMiygFBVV95cUxOaWVIREg5UjNuVFhzWUYzbm5CWDROdGUtYk50YnI4TVIzR1RQcFN4MGVTY29BSlJRY1Bhbjc5ZW5OR3NPV3M5Q1FkRVhrZmFuaWRBdmlPY3RWbzdjSTJZUDZ1dzdHa2RCTEZaVzdpSWxicVNONUpGMnZkOU13UnFHcDZHd1VqWDh1VUtxR0hJcUVON1l1NVB4OThIaG94UmEtV2ZUSjFkdUJEai0wUFBBY2tsN0RSUGpZWmFMdkdLUWIwb0hIemEyTlRB?oc=5",
       "source": "Google News / VentureBeat",
-      "time": "06/18 10:13 UTC 情緒：🤔",
-      "sentiment": "",
+      "time": "06/18 10:13",
+      "sentiment": "🤔",
       "body": "新優化框架聲稱在同等算力下，代碼生成任務比 Claude Code 和 Codex 快 2.5 倍，VentureBeat 報導但細節待查驗。",
       "focusTags": []
     }

@@ -2,7 +2,7 @@
   "date": "2026-06-12",
   "generatedAt": "2026-06-12 22:54 UTC",
   "articleCount": 74,
-  "sourceCount": "6/6 | **文章數：** 74 | **更新時間：** 2026-06-12 22:54 UTC",
+  "sourceCount": "6/6",
   "bulletin": "",
   "topStories": [
     {
@@ -65,8 +65,8 @@
       "title": "Running Claude Code Offline on an M3 Pro with Qwen3.6",
       "url": "https://har-ki.github.io/claude-code-sre-handbook/handbook/06-air-gapped/",
       "source": "HN",
-      "time": "06/11 16:32 UTC · 情緒：🤔",
-      "sentiment": "",
+      "time": "06/11 16:32 UTC ·",
+      "sentiment": "🤔",
       "body": "作者記錄在 Air-gapped 環境下（M3 Pro + 本地 Qwen3）運行 Claude Code 的完整過程，包含四個關鍵 fix，最終實現從事件調查到 PR 提交全流程閉環，對資安敏感環境有高度參考價值。",
       "focusTags": []
     },
@@ -74,8 +74,8 @@
       "title": "Yserver: Modern X11 Server Written in Rust with Claude Code",
       "url": "https://www.phoronix.com/news/YSERVER-Rust-X11-Server",
       "source": "HN",
-      "time": "06/11 15:17 UTC · 情緒：😊",
-      "sentiment": "",
+      "time": "06/11 15:17 UTC ·",
+      "sentiment": "😊",
       "body": "開發者 Jos Dehaes 以 Claude Code 協助從頭撰寫全新 Rust X11 伺服器，已能運行完整 MATE、Xfce、Cinnamon 桌面環境，支援 RandR、DRI3、GLX 等主要擴充。展示 Claude Code 在系統程式開發的實際應用潛力。",
       "focusTags": []
     },
@@ -83,8 +83,8 @@
       "title": "Show HN: agent-pd – A police department for your Claude Code agents",
       "url": "https://github.com/varmabudharaju/agent-pd/blob/master/README.md",
       "source": "HN",
-      "time": "06/11 17:47 UTC · 情緒：🤔",
-      "sentiment": "",
+      "time": "06/11 17:47 UTC ·",
+      "sentiment": "🤔",
       "body": "新工具提供 Claude Code agent 的行為管控框架，但社群討論主要質疑：Claude Code 原生的 allow/deny 權限列表已能達成相同效果，此工具的差異化定位不夠清晰。",
       "focusTags": []
     },
@@ -92,8 +92,8 @@
       "title": "Show HN: Workplane – collaborative files for agents (and humans)",
       "url": "https://workplane.co",
       "source": "HN",
-      "time": "06/11 13:15 UTC · 情緒：😊",
-      "sentiment": "",
+      "time": "06/11 13:15 UTC ·",
+      "sentiment": "😊",
       "body": "兩人側專案，解決 Claude/Codex 輸出的 .md/.html 檔案難以分享的問題，提供一個可讓 agent 和人類共同協作的檔案共享平台，支援版本回滾與 MCP 整合。",
       "focusTags": []
     },
@@ -101,8 +101,8 @@
       "title": "OpenAI 研議大幅降價，預判與 Anthropic 的用戶爭奪戰",
       "url": "https://www.wsj.com/tech/ai/openai-considers-drastic-price-cuts-anticipating-war-for-users-with-anthropic-9b8c178e",
       "source": "HN",
-      "time": "06/12 04:56 UTC · 情緒：😤",
-      "sentiment": "",
+      "time": "06/12 04:56 UTC ·",
+      "sentiment": "😤",
       "body": "WSJ 報導 OpenAI 內部正討論大幅降低 API 定價策略，以因應與 Anthropic 的正面競爭；另有報導指 AI 定價戰整體態勢讓 Google 與 Amazon 作為基礎設施供應商反而坐收漁翁之利。",
       "focusTags": [
         "[社群趨勢]"
@@ -112,8 +112,8 @@
       "title": "Show HN: AVP – an agent can't leak a secret it never had",
       "url": "https://github.com/inflightsec/agent-vault-proxy",
       "source": "HN",
-      "time": "06/11 19:10 UTC · 情緒：😊",
-      "sentiment": "",
+      "time": "06/11 19:10 UTC ·",
+      "sentiment": "😊",
       "body": "針對 Claude Code、Codex 等 coding agent 需要持有 API key 的安全風險，AVP 提出「placeholder + 最後一刻注入」方案，agent 環境中只保存 placeholder，真實金鑰由代理在 wire 層面即時替換，從根本上消除洩露風險。",
       "focusTags": []
     },
@@ -121,8 +121,8 @@
       "title": "Show HN: Claustrophobic – multi-account harness for Claude Code",
       "url": "https://claustrophobic.xyz",
       "source": "HN",
-      "time": "06/11 17:55 UTC · 情緒：😊",
-      "sentiment": "",
+      "time": "06/11 17:55 UTC ·",
+      "sentiment": "😊",
       "body": "解決 Claude Code 單一訂閱用量上限問題的工具，將多個 Claude 訂閱視為「房間」，自動切換至剩餘額度最多的帳號繼續同一 session，無需重新設定環境。",
       "focusTags": []
     },
@@ -130,8 +130,8 @@
       "title": "Tested 5 token reduction tools for coding agents",
       "url": "https://www.reddit.com/r/ClaudeAI/comments/1u3wntn/tested_5_token_reduction_tools_for_coding_agents/",
       "source": "Reddit / r/ClaudeAI",
-      "time": "06/12 06:21 UTC · 情緒：🤔",
-      "sentiment": "",
+      "time": "06/12 06:21 UTC ·",
+      "sentiment": "🤔",
       "body": "Reddit 用戶實測五款 token 壓縮工具（包含 rtk 等），針對大型 codebase 的效果比較，提供 token 優化的實用參考。",
       "focusTags": []
     },
@@ -139,8 +139,8 @@
       "title": "Tested Claude Fable 5 and Opus 4.8 across 917 coding-agent scenarios",
       "url": "https://www.reddit.com/r/ClaudeAI/comments/1u3vyk7/tested_claude_fable_5_and_opus_48_across_917/",
       "source": "Reddit / r/ClaudeAI",
-      "time": "06/12 05:54 UTC · 情緒：🤔",
-      "sentiment": "",
+      "time": "06/12 05:54 UTC ·",
+      "sentiment": "🤔",
       "body": "用戶以 917 個 coding-agent 場景對比 Fable 5 與 Opus 4.8，Fable 5 以 0.9 分之差勝出，結果接近暗示兩者在一般任務上差距不大，但 Fable 5 token 消耗約 2 倍。",
       "focusTags": []
     },
@@ -148,8 +148,8 @@
       "title": "CLAUDE.md After an Audit: 296 to 142 Lines, and My Agent Codes Better Than Before",
       "url": "https://dev.to/ohugonnot/claudemd-after-an-audit-296-to-142-lines-and-my-agent-codes-better-than-before-2084",
       "source": "dev.to / #claudecode",
-      "time": "06/12 01:00 UTC · 情緒：😊",
-      "sentiment": "",
+      "time": "06/12 01:00 UTC ·",
+      "sentiment": "😊",
       "body": "實戰案例：將 CLAUDE.md 從 296 行精簡至 142 行後，agent 的編碼品質反而提升。印證「規則精簡化」的設計原則——過多指令反而產生干擾。",
       "focusTags": []
     },
@@ -157,8 +157,8 @@
       "title": "How I Built a Self-Improving Coding Agent with Claude Code: 5 Lessons After 6 Months",
       "url": "https://dev.to/yureki_lab/how-i-built-a-self-improving-coding-agent-with-claude-code-5-lessons-after-6-months-2a8p",
       "source": "dev.to / #claudecode",
-      "time": "06/12 06:47 UTC · 情緒：😊",
-      "sentiment": "",
+      "time": "06/12 06:47 UTC ·",
+      "sentiment": "😊",
       "body": "六個月建構自我改進 coding agent 的心得：採用主 orchestrator + 子 agent 架構，持久化狀態管理，agent 可自我修改提示與工作流，提供完整架構設計經驗。",
       "focusTags": []
     },
@@ -166,8 +166,8 @@
       "title": "Claude Code Chose a Stock Ticker Over Someone's Life. We Investigated.",
       "url": "https://dev.to/hammermei/claude-code-chose-a-stock-ticker-over-someones-life-we-investigated-57li",
       "source": "dev.to / #claudecode",
-      "time": "06/12 02:08 UTC · 情緒：😤",
-      "sentiment": "",
+      "time": "06/12 02:08 UTC ·",
+      "sentiment": "😤",
       "body": "透過注入衝突規則的實驗，探討 Claude Code 在優先序衝突時的決策邊界，結果揭示當商業邏輯與人身安全產生衝突時，模型行為存在不確定性。引發 AI 系統可靠性討論。",
       "focusTags": []
     },
@@ -175,8 +175,8 @@
       "title": "Rubrik Launches Agent Cloud for Anthropic Claude Code & Claude Cowork to Secure AI Agents",
       "url": "https://news.google.com/rss/articles/CBMi2gFBVV95cUxPc0RLU1luV2E3VVB4MnZaUWJlYTc2UkRWNUNKVk05NUlOUVFlWUFTVTRTOFJnbFZOUm1mVGF0XzU4MmRNSmxoLWxIZ1hlVVlVaGtrdGtfUkVjV09seE9TX2o3bUU3Mkg2TW5yMjdtdGt2REFJTGx6amJZaTUtT0hLOHZ1TDRRTkZoRGNId0RCSHE4M0tuM3B4Y0pmYkRKRHM4MDZUTEkyMDQ3N3JGbzItZDRxSFpEdjZmY2ZJeWtiQ1FMLThFV1pPZXBBUkNPMHR6NzVRbWpxZndpdw",
       "source": "Google News / The Fast Mode",
-      "time": "06/11 16:50 UTC · 情緒：😐",
-      "sentiment": "",
+      "time": "06/11 16:50 UTC ·",
+      "sentiment": "😐",
       "body": "Rubrik 針對 Claude Code 與 Claude Cowork 推出 Agent Cloud 安全產品，為 AI agent 提供資料保護與存取控管，顯示 AI 安全生態系工具正快速成熟。",
       "focusTags": []
     },
@@ -184,8 +184,8 @@
       "title": "Anthropic Blindsides Its Business Partners",
       "url": "https://news.google.com/rss/articles/CBMihAFBVV95cUxNZFd5RENQSG5HcURocGQ4RFh6UXVtQ3dWX0lDTFBGMW50NG5UUTFJdDVwdHVwNGd4dHFBcEI1eEE3T3lDa2YxSGdkVlRTZnVwc2c4WnVQeERIN195SzFHRm1UMWFsTm9BQktPUnh3b3VzNDJnUFdmVWVfUUpJU0VWV3NUWjE",
       "source": "Google News / The Information",
-      "time": "06/11 13:23 UTC · 情緒：😤",
-      "sentiment": "",
+      "time": "06/11 13:23 UTC ·",
+      "sentiment": "😤",
       "body": "The Information 報導指 Anthropic 在產品與合作安排上的快速調整令部分商業合作夥伴措手不及，折射出快速迭代與合作穩定性之間的張力。",
       "focusTags": []
     }

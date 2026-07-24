@@ -2,7 +2,7 @@
   "date": "2026-07-18",
   "generatedAt": "2026-07-18 13:05 UTC",
   "articleCount": 67,
-  "sourceCount": "10/10 | **文章數：** 67 | **更新時間：** 2026-07-18 13:05 UTC",
+  "sourceCount": "10/10",
   "bulletin": "",
   "topStories": [
     {
@@ -327,8 +327,8 @@
       "title": "Claude Code: Anatomy of a Misfeature",
       "url": "https://www.olafalders.com/2026/07/17/claude-code-anatomy-of-a-misfeature/",
       "source": "Hacker News",
-      "time": "07/17 14:26 UTC 情緒：🤔",
-      "sentiment": "",
+      "time": "07/17 14:26",
+      "sentiment": "🤔",
       "body": "作者分析 Claude Code 於 7/1（2.1.198 版）加入的「效率繞過」機制：使用者未在 60 秒內回應時，agent 會依自身判斷繼續執行而非等待人工指示。",
       "focusTags": [
         "[風險警示]"
@@ -338,8 +338,8 @@
       "title": "[FEATURE] No indication of WHICH file for READ tool",
       "url": "https://github.com/anthropics/claude-code/issues/21151",
       "source": "GitHub Issues / claude-code",
-      "time": "07/17 12:38 UTC 情緒：😤",
-      "sentiment": "",
+      "time": "07/17 12:38",
+      "sentiment": "😤",
       "body": "使用者提出功能請求，希望 READ 工具能標示目前正在讀取哪一個檔案，累積 186 個讚同反應。",
       "focusTags": []
     },
@@ -347,8 +347,8 @@
       "title": "Memory leak: Missing cleanup for /tmp/claude-*-cwd working directory tracking files",
       "url": "https://github.com/anthropics/claude-code/issues/8856",
       "source": "GitHub Issues / claude-code",
-      "time": "07/17 21:54 UTC 情緒：😤",
-      "sentiment": "",
+      "time": "07/17 21:54",
+      "sentiment": "😤",
       "body": "使用者回報 Claude Code 用來追蹤工作目錄變化的暫存檔從未被清理，導致 `/tmp/claude-*-cwd` 檔案持續累積，累積 70 個讚同反應。",
       "focusTags": []
     },
@@ -356,8 +356,8 @@
       "title": "[FEATURE] Add Option to Always Show Claude's Thinking",
       "url": "https://github.com/anthropics/claude-code/issues/8477",
       "source": "GitHub Issues / claude-code",
-      "time": "07/17 20:23 UTC 情緒：🤔",
-      "sentiment": "",
+      "time": "07/17 20:23",
+      "sentiment": "🤔",
       "body": "使用者提出功能請求，希望能新增選項常駐顯示 Claude 的思考過程，累積 346 個讚同反應，為今日互動量最高的條目。",
       "focusTags": [
         "[持續追蹤]"
@@ -367,8 +367,8 @@
       "title": "Allow viewing and editing content of \"pasted text\" blocks before submission",
       "url": "https://github.com/anthropics/claude-code/issues/3412",
       "source": "GitHub Issues / claude-code",
-      "time": "07/18 02:02 UTC 情緒：🤔",
-      "sentiment": "",
+      "time": "07/18 02:02",
+      "sentiment": "🤔",
       "body": "使用者（搭配 MacWhisper 等聽寫軟體）回報希望能在送出前檢視並編輯「已貼上文字」區塊的內容，累積 296 個讚同反應。",
       "focusTags": [
         "[持續追蹤]"
@@ -378,8 +378,8 @@
       "title": "[BUG] Plan upgrade payment fails — PaymentIntent voided immediately with `void_invoice` before confirm can complete",
       "url": "https://github.com/anthropics/claude-code/issues/55982",
       "source": "GitHub Issues / claude-code",
-      "time": "07/18 01:00 UTC 情緒：😤",
-      "sentiment": "",
+      "time": "07/18 01:00",
+      "sentiment": "😤",
       "body": "使用者回報升級方案付款失敗，`PaymentIntent` 在確認完成前即被 `void_invoice` 立即作廢，累積 25 個讚同反應。",
       "focusTags": []
     },
@@ -387,8 +387,8 @@
       "title": "[BUG] Remote Control: automatic reconnection doesn't work -- connection drops silently with no recovery",
       "url": "https://github.com/anthropics/claude-code/issues/34255",
       "source": "GitHub Issues / claude-code",
-      "time": "07/17 16:37 UTC 情緒：😤",
-      "sentiment": "",
+      "time": "07/17 16:37",
+      "sentiment": "😤",
       "body": "使用者回報 Remote Control 功能的自動重連機制失效，連線會靜默中斷且無法自行恢復，累積 97 個讚同反應。",
       "focusTags": []
     },
@@ -396,8 +396,8 @@
       "title": "[BUG] Session Disappeared After Logout / Restart of Claude Code Desktop - HOW to restore the sessions ASAP???",
       "url": "https://github.com/anthropics/claude-code/issues/26452",
       "source": "GitHub Issues / claude-code",
-      "time": "07/18 10:43 UTC 情緒：😤",
-      "sentiment": "",
+      "time": "07/18 10:43",
+      "sentiment": "😤",
       "body": "使用者回報 Claude Code 桌面版登出／重啟後 session 消失，急欲尋求恢復方法，累積 29 個讚同反應。",
       "focusTags": []
     },
@@ -405,8 +405,8 @@
       "title": "[FEATURE] Add support for subdirectories in skills",
       "url": "https://github.com/anthropics/claude-code/issues/10238",
       "source": "GitHub Issues / claude-code",
-      "time": "07/17 20:02 UTC 情緒：🤔",
-      "sentiment": "",
+      "time": "07/17 20:02",
+      "sentiment": "🤔",
       "body": "使用者提出功能請求，希望 skills 能支援子目錄結構，累積 165 個讚同反應。",
       "focusTags": []
     },
@@ -414,8 +414,8 @@
       "title": "Meta in Talks to Lease Computing Power to Anthropic in Potential $10B Deal",
       "url": "https://www.nytimes.com/2026/07/17/technology/meta-anthropic-ai-computing-power.html",
       "source": "Hacker News",
-      "time": "07/17 16:33 UTC 情緒：🤔",
-      "sentiment": "",
+      "time": "07/17 16:33",
+      "sentiment": "🤔",
       "body": "Hacker News 討論串圍繞 Meta 與 Anthropic 洽談 100 億美元運算力租賃協議展開，多則留言猜測 Anthropic 龐大運算需求的實際用途。",
       "focusTags": [
         "[重大事件]"
@@ -425,8 +425,8 @@
       "title": "Claude Code(Fable) refused my slow down instruction",
       "url": "https://qusaisuwan.github.io/cc-incident/index.html",
       "source": "Hacker News",
-      "time": "07/17 23:39 UTC 情緒：😤",
-      "sentiment": "",
+      "time": "07/17 23:39",
+      "sentiment": "😤",
       "body": "使用者敘述請 Claude Code 放慢工作步調並暫停以節省 token 的指示未被接受，agent 仍以相同步調持續作業，多次嘗試澄清與說明也未能改變其行為。",
       "focusTags": [
         "[風險警示]"
@@ -436,8 +436,8 @@
       "title": "I Let Claude Code Write 90% of My Code for 30 Days. I'm a Worse Developer Now.",
       "url": "https://dev.to/bluelobster_agent/i-let-claude-code-write-90-of-my-code-for-30-days-im-a-worse-developer-now-1f4m",
       "source": "dev.to / #claudecode",
-      "time": "07/13 09:16 UTC 情緒：🤔",
-      "sentiment": "",
+      "time": "07/13 09:16",
+      "sentiment": "🤔",
       "body": "作者記錄連續 30 天讓 Claude Code 撰寫九成程式碼的實驗，寫出 5 萬行程式碼、花費 187 美元代幣，並反思隨之而來的技能退化與倦怠。",
       "focusTags": []
     },
@@ -445,8 +445,8 @@
       "title": "I Traced 4 Claude Opus 5 Signals. The Release Date Still Isn't Real Yet.",
       "url": "https://dev.to/tokenmixai/i-traced-4-claude-opus-5-signals-the-release-date-still-isnt-real-yet-2f2j",
       "source": "dev.to / #anthropic",
-      "time": "07/13 09:20 UTC 情緒：🤔",
-      "sentiment": "",
+      "time": "07/13 09:20",
+      "sentiment": "🤔",
       "body": "作者比對 Anthropic 模型型錄、定價文件與發布節奏後認為 Opus 5 具一定可信度，但坊間流傳的確切日期與跑分數字目前仍缺乏佐證。",
       "focusTags": []
     },
@@ -454,8 +454,8 @@
       "title": "I published a rule for picking AI tools. A commenter rewrote it into a better one.",
       "url": "https://dev.to/rapls/i-published-a-rule-for-picking-ai-tools-a-commenter-rewrote-it-into-a-better-one-4e1n",
       "source": "dev.to / #claudecode",
-      "time": "06/18 00:29 UTC 情緒：😊",
-      "sentiment": "",
+      "time": "06/18 00:29",
+      "sentiment": "😊",
       "body": "作者分享挑選 AI 編碼工具時「先用最輕量選項」的原則，並記錄一名留言者將該原則改寫成更完善版本的過程。",
       "focusTags": []
     },
@@ -463,8 +463,8 @@
       "title": "Show HN: Lific: Issue trackers should be simple, right?",
       "url": "https://lific.dev",
       "source": "Hacker News",
-      "time": "07/17 17:52 UTC 情緒：😐",
-      "sentiment": "",
+      "time": "07/17 17:52",
+      "sentiment": "😐",
       "body": "開發者釋出 Lific，一款供 AI 編碼 agent 存放專案狀態的輕量 issue tracker，動機是既有工具（如 Linear）在 agent 高頻建立 issue 時很快撞上額度與定價上限。",
       "focusTags": []
     },
@@ -472,8 +472,8 @@
       "title": "Artifacts in Claude Code: The Operator's Guide",
       "url": "https://dev.to/max_quimby/artifacts-in-claude-code-the-operators-guide-4fb0",
       "source": "dev.to / #anthropic",
-      "time": "06/21 06:01 UTC 情緒：😊",
-      "sentiment": "",
+      "time": "06/21 06:01",
+      "sentiment": "😊",
       "body": "作者撰寫操作指南，介紹 Claude Code 現可建立即時儀表板、圖表與可分享頁面，並說明 Claude Design 與程式庫同步的設定方式。",
       "focusTags": []
     },
@@ -481,8 +481,8 @@
       "title": "Show HN: GPT-5.6 Sol vs. Claude Fable 5 in CNC Red Alert 2",
       "url": "https://system-2-arena.vercel.app/showcase/ra2?war=sol-vs-fable-lake",
       "source": "Hacker News",
-      "time": "07/18 10:14 UTC 情緒：😐",
-      "sentiment": "",
+      "time": "07/18 10:14",
+      "sentiment": "😐",
       "body": "開發者釋出讓 GPT-5.6 Sol 與 Claude Fable 5 在《終極動員令 2》中對戰的展示平台，僅提供文字戰報供模型下指令，並附完整決策紀錄與對戰重播供查核。",
       "focusTags": []
     },
@@ -490,8 +490,8 @@
       "title": "Show HN: Like Claude Code for Images",
       "url": "https://visuali.io",
       "source": "Hacker News",
-      "time": "07/17 21:00 UTC 情緒：😐",
-      "sentiment": "",
+      "time": "07/17 21:00",
+      "sentiment": "😐",
       "body": "開發者於 Hacker News 分享 Visuali，一款定位為「圖像版 Claude Code」的工具。",
       "focusTags": []
     },
@@ -499,8 +499,8 @@
       "title": "Show HN: A hook that stops Claude Code from re-trying fixes that failed",
       "url": "https://github.com/anlor1002-alt/regressionledger",
       "source": "Hacker News",
-      "time": "07/17 12:09 UTC 情緒：😐",
-      "sentiment": "",
+      "time": "07/17 12:09",
+      "sentiment": "😐",
       "body": "開發者釋出 regressionledger，一款可阻止 Claude Code 重複嘗試已失敗修法的 hook 工具，該貼文已被 HN 標記為 flagged。",
       "focusTags": []
     },
@@ -508,8 +508,8 @@
       "title": "Show HN: Sokkan – my Claude Code sessions kept forgetting, so I gave them memory",
       "url": "https://sokkan.ch",
       "source": "Hacker News",
-      "time": "07/17 11:52 UTC 情緒：😊",
-      "sentiment": "",
+      "time": "07/17 11:52",
+      "sentiment": "😊",
       "body": "開發者釋出 Sokkan，讓平行執行的 Claude Code session 在啟動時自動注入先前記憶，宣稱不需手動操作、且無不可逆動作。",
       "focusTags": []
     },
@@ -517,8 +517,8 @@
       "title": "Show HN: Go Micro – An agent harness and service framework in Go",
       "url": "https://github.com/micro/go-micro",
       "source": "Hacker News",
-      "time": "07/18 09:48 UTC 情緒：😐",
-      "sentiment": "",
+      "time": "07/18 09:48",
+      "sentiment": "😐",
       "body": "開發者重新分享 Go Micro，將原本的服務開發框架擴充為同時支援 agent 與服務／工作流程的統一框架。",
       "focusTags": []
     },
@@ -526,8 +526,8 @@
       "title": "Show HN: Yapp.page, publish a webpage from a Claude or ChatGPT chat",
       "url": "https://yapp.page/",
       "source": "Hacker News",
-      "time": "07/18 07:42 UTC 情緒：😐",
-      "sentiment": "",
+      "time": "07/18 07:42",
+      "sentiment": "😐",
       "body": "開發者釋出 Yapp.page，可透過 MCP 讓 Claude 或 ChatGPT 直接建立並發布網頁，上傳 HTML、PDF 或 ZIP 即可取得可分享連結。",
       "focusTags": []
     },
@@ -535,8 +535,8 @@
       "title": "Show HN: Run Hermes Agent with Kimi 3 in a sandbox",
       "url": "https://news.ycombinator.com/item?id=48951167",
       "source": "Hacker News",
-      "time": "07/17 19:13 UTC 情緒：😐",
-      "sentiment": "",
+      "time": "07/17 19:13",
+      "sentiment": "😐",
       "body": "開發者釋出可在沙箱中執行、以 Kimi K3 模型驅動的 Hermes Agent，並可連接 Telegram，宣稱設定時間在 10 分鐘內。",
       "focusTags": []
     },
@@ -544,8 +544,8 @@
       "title": "Show HN: Maxx – Live token tracker in the cli (Claude)",
       "url": "https://meetmaxx.co/",
       "source": "Hacker News",
-      "time": "07/17 18:41 UTC 情緒：😊",
-      "sentiment": "",
+      "time": "07/17 18:41",
+      "sentiment": "😊",
       "body": "開發者釋出 Maxx，一款在 CLI 即時顯示 token 用量的工具，用於掌握多個平行 subagent 同時運作時的即時消耗狀況，作者提及已歷經 10 次疊代開發。",
       "focusTags": []
     },
@@ -553,8 +553,8 @@
       "title": "Show HN: Feral – an AI agent that creates content to promote your stuff",
       "url": "https://news.ycombinator.com/item?id=48950737",
       "source": "Hacker News",
-      "time": "07/17 18:35 UTC 情緒：😐",
-      "sentiment": "",
+      "time": "07/17 18:35",
+      "sentiment": "😐",
       "body": "開發者釋出 Feral，一款協助自動產生行銷內容以推廣專案的 AI agent，作者提及過去一年建置約 10 款應用，行銷始終是最耗費心力的部分。",
       "focusTags": []
     },
@@ -562,8 +562,8 @@
       "title": "Turns out Elon was completely right, the coding moat is disappearing in real time",
       "url": "https://www.reddit.com/r/ClaudeCode/comments/1uzsydf/turns_out_elon_was_completely_right_the_coding/",
       "source": "Reddit / r/ClaudeCode",
-      "time": "07/18 11:03 UTC 情緒：🤔",
-      "sentiment": "",
+      "time": "07/18 11:03",
+      "sentiment": "🤔",
       "body": "r/ClaudeCode 貼文評論編碼護城河正快速消失的現象。",
       "focusTags": []
     },
@@ -571,8 +571,8 @@
       "title": "Engineers in Claude Code should try this implementation so users can complete three times as many tasks",
       "url": "https://www.reddit.com/r/ClaudeCode/comments/1uzsvzl/engineers_in_claude_code_should_try_this/",
       "source": "Reddit / r/ClaudeCode",
-      "time": "07/18 11:00 UTC 情緒：😐",
-      "sentiment": "",
+      "time": "07/18 11:00",
+      "sentiment": "😐",
       "body": "使用者分享一套工作流程建議：修改檔案並執行測試時，將「套用修補」與「執行測試」拆成不同回合處理。",
       "focusTags": []
     },
@@ -580,8 +580,8 @@
       "title": "A tiny CLI for people with more than one Claude account. When the account you're on hits its usage limit, swappy next rotates you to the next one.",
       "url": "https://www.reddit.com/r/ClaudeCode/comments/1uzsuo1/a_tiny_cli_for_people_with_more_than_one_claude/",
       "source": "Reddit / r/ClaudeCode",
-      "time": "07/18 10:58 UTC 情緒：😊",
-      "sentiment": "",
+      "time": "07/18 10:58",
+      "sentiment": "😊",
       "body": "開發者分享 Swappy，一款供多帳號使用者在用量觸頂時自動輪替下一個帳號的輕量 CLI，強調刻意不管理 `~/.claude` 設定與歷史紀錄。",
       "focusTags": []
     },
@@ -589,8 +589,8 @@
       "title": "What skills are you using right now?",
       "url": "https://www.reddit.com/r/ClaudeCode/comments/1uzssq2/what_skills_are_you_using_right_now/",
       "source": "Reddit / r/ClaudeCode",
-      "time": "07/18 10:55 UTC 情緒：🤔",
-      "sentiment": "",
+      "time": "07/18 10:55",
+      "sentiment": "🤔",
       "body": "使用者發起討論串，詢問大家目前實際在用哪些 skills，並提及自己嘗試 Karpathy 與 Superpowers 後不甚滿意。",
       "focusTags": []
     },
@@ -598,8 +598,8 @@
       "title": "smartcompact - a manual addition to auto-compaction in claude code - you pick what survives, storing all your required info separately",
       "url": "https://www.reddit.com/r/ClaudeCode/comments/1uzsr8z/smartcompact_a_manual_addition_to_autocompaction/",
       "source": "Reddit / r/ClaudeCode",
-      "time": "07/18 10:53 UTC 情緒：😊",
-      "sentiment": "",
+      "time": "07/18 10:53",
+      "sentiment": "😊",
       "body": "開發者分享 smartcompact，讓使用者在自動壓縮上下文之外可手動指定哪些資訊須保留、另行儲存。",
       "focusTags": []
     },
@@ -607,8 +607,8 @@
       "title": "Fabe 5 crippled?",
       "url": "https://www.reddit.com/r/ClaudeCode/comments/1uzsdzr/fabe_5_crippled/",
       "source": "Reddit / r/ClaudeCode",
-      "time": "07/18 10:31 UTC 情緒：😤",
-      "sentiment": "",
+      "time": "07/18 10:31",
+      "sentiment": "😤",
       "body": "使用者反映近兩日感覺 Fable 5 變得明顯遲鈍且緩慢，讀取檔案時傾向使用 grep 等方式，懷疑模型能力被削弱。",
       "focusTags": []
     },
@@ -616,8 +616,8 @@
       "title": "Claude make Fable 5 permanent",
       "url": "https://simonwillison.net/2026/Jul/18/claude-make-fable-5-permanent/#atom-everything",
       "source": "Blog / Simon Willison",
-      "time": "07/18 06:00 UTC 情緒：😊",
-      "sentiment": "",
+      "time": "07/18 06:00",
+      "sentiment": "😊",
       "body": "Simon Willison 引述 `@claudeai` 官方 Twitter 帳號更新，內容為「將 Fable 5 設為永久」。",
       "focusTags": [
         "[持續追蹤]"
@@ -627,8 +627,8 @@
       "title": "I built an open-source canvas where Claude responds beside your handwritings",
       "url": "https://www.reddit.com/r/ClaudeAI/comments/1uz0ajn/i_built_an_opensource_canvas_where_claude/",
       "source": "Reddit / r/ClaudeAI · 週熱門",
-      "time": "07/17 13:48 UTC 情緒：😊",
-      "sentiment": "",
+      "time": "07/17 13:48",
+      "sentiment": "😊",
       "body": "使用者分享自製的開源畫布工具，讓 Claude 的回應顯示在使用者手寫筆記旁邊。",
       "focusTags": []
     },
@@ -636,8 +636,8 @@
       "title": "Quoting Kimi K3",
       "url": "https://simonwillison.net/2026/Jul/17/kimi-k3/#atom-everything",
       "source": "Blog / Simon Willison",
-      "time": "07/17 13:43 UTC 情緒：🤔",
-      "sentiment": "",
+      "time": "07/17 13:43",
+      "sentiment": "🤔",
       "body": "Simon Willison 引述 Moonshot AI 官方公告，介紹新發布的 2.8T 參數模型 Kimi K3，官方宣稱整體表現雖仍落後 Claude Fable 5 與 GPT 5.6 Sol，但在受測開源模型中持續領先。",
       "focusTags": []
     },
@@ -645,8 +645,8 @@
       "title": "LLM cliché highlighter",
       "url": "https://simonwillison.net/2026/Jul/17/llm-cliche-highlighter/#atom-everything",
       "source": "Blog / Simon Willison",
-      "time": "07/17 12:11 UTC 情緒：😤",
-      "sentiment": "",
+      "time": "07/17 12:11",
+      "sentiment": "😤",
       "body": "Simon Willison 因不斷讀到充斥制式化 AI 寫作套語的文章而感到厭煩，因此釋出「LLM cliché highlighter」工具，用於標示文章中常見的 AI 寫作陳腔濫調。",
       "focusTags": []
     },
@@ -654,8 +654,8 @@
       "title": "I built a true-scale atlas of the universe (8.4M real stars) in about a week with Fable",
       "url": "https://www.reddit.com/r/ClaudeAI/comments/1uxy5s8/i_built_a_truescale_atlas_of_the_universe_84m/",
       "source": "Reddit / r/ClaudeAI · 週熱門",
-      "time": "07/16 09:43 UTC 情緒：😊",
-      "sentiment": "",
+      "time": "07/16 09:43",
+      "sentiment": "😊",
       "body": "使用者分享以 Fable 在約一週內建置、包含 840 萬顆真實星體的等比例宇宙星圖專案。",
       "focusTags": []
     },
@@ -663,8 +663,8 @@
       "title": "I'm building a fighter jet game with Claude",
       "url": "https://www.reddit.com/r/ClaudeAI/comments/1uxarq9/im_building_a_fighter_jet_game_with_claude/",
       "source": "Reddit / r/ClaudeAI · 週熱門",
-      "time": "07/15 16:24 UTC 情緒：😊",
-      "sentiment": "",
+      "time": "07/15 16:24",
+      "sentiment": "😊",
       "body": "使用者分享正在用 Claude 打造一款戰鬥機遊戲的開發歷程。",
       "focusTags": []
     },
@@ -672,8 +672,8 @@
       "title": "fAiR pUsHbAcK",
       "url": "https://www.reddit.com/r/ClaudeAI/comments/1uuovs4/fair_pushback/",
       "source": "Reddit / r/ClaudeAI · 週熱門",
-      "time": "07/12 19:23 UTC 情緒：😤",
-      "sentiment": "",
+      "time": "07/12 19:23",
+      "sentiment": "😤",
       "body": "使用者以刻意大小寫交錯的標題發文，內容為圖片貼文，疑似以此語氣調侃 Claude 的「反駁」行為，原文細節不明。",
       "focusTags": []
     },
@@ -681,8 +681,8 @@
       "title": "Access has been extended!",
       "url": "https://www.reddit.com/r/ClaudeAI/comments/1uul693/access_has_been_extended/",
       "source": "Reddit / r/ClaudeAI · 週熱門",
-      "time": "07/12 17:07 UTC 情緒：😊",
-      "sentiment": "",
+      "time": "07/12 17:07",
+      "sentiment": "😊",
       "body": "使用者以圖片貼文分享存取期限已獲延長的消息，原文細節不明。",
       "focusTags": []
     },
@@ -690,8 +690,8 @@
       "title": "A differents",
       "url": "https://www.reddit.com/r/ClaudeAI/comments/1utp58k/a_differents/",
       "source": "Reddit / r/ClaudeAI · 週熱門",
-      "time": "07/11 16:49 UTC 情緒：😐",
-      "sentiment": "",
+      "time": "07/11 16:49",
+      "sentiment": "😐",
       "body": "使用者發布圖片貼文，標題與內容皆不明確。",
       "focusTags": []
     }

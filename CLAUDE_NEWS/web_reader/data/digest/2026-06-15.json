@@ -2,7 +2,7 @@
   "date": "2026-06-15",
   "generatedAt": "2026-06-15 21:32 UTC",
   "articleCount": 77,
-  "sourceCount": "6/6 | **文章數：** 77 | **更新時間：** 2026-06-15 21:32 UTC",
+  "sourceCount": "6/6",
   "bulletin": "",
   "topStories": [
     {
@@ -79,8 +79,8 @@
       "title": "Anthropic 詢問了這件事嗎？",
       "url": "https://www.verysane.ai/p/did-anthropic-ask-for-this",
       "source": "Hacker News",
-      "time": "06/14 22:23 UTC 情緒：🤔",
-      "sentiment": "",
+      "time": "06/14 22:23",
+      "sentiment": "🤔",
       "body": "分析認為 Anthropic CEO Dario Amodei 數天前發表政策文章，呼籲政府有「封鎖模型」的能力，可能間接促成了此次出口管制。作者認為 Anthropic 是「自食其果」。HN 186 分最熱討論。",
       "focusTags": []
     },
@@ -88,8 +88,8 @@
       "title": "Tell HN：Claude 對生物學研究完全無法使用",
       "url": "https://news.ycombinator.com/item?id=48538686",
       "source": "Hacker News",
-      "time": "06/15 09:17 UTC 情緒：😤",
-      "sentiment": "",
+      "time": "06/15 09:17",
+      "sentiment": "😤",
       "body": "生物研究者抱怨：基本免疫學問題被過度攔截，但用 Claude Code 串接 RFdiffusion、AlphaFold 進行實際蛋白質設計卻不受限制，安全護欄存在嚴重邏輯矛盾。",
       "focusTags": []
     },
@@ -97,8 +97,8 @@
       "title": "Ask HN：AI Agent 開發中你用什麼目錄結構？",
       "url": "https://news.ycombinator.com/item?id=48540840",
       "source": "Hacker News",
-      "time": "06/15 13:19 UTC 情緒：🤔",
-      "sentiment": "",
+      "time": "06/15 13:19",
+      "sentiment": "🤔",
       "body": "工程師分享以 Claude Code 生成大型系統的實踐：建議用 `/specs`（純人類信號）組織專案，嚴格管控 context window 輸入品質，避免 AI 生成內容再餵回 AI 造成「entropy 噪音」。",
       "focusTags": []
     },
@@ -106,8 +106,8 @@
       "title": "LLM 工具說明改一個句子導致 Gemini 精準度從 93% 跌至 20%",
       "url": "https://www.reddit.com/r/ClaudeAI/comments/1u6ez9v/changing_one_sentence_in_a_tools_description_made/",
       "source": "Reddit / r/ClaudeAI",
-      "time": "06/15 04:19 UTC 情緒：🤔",
-      "sentiment": "",
+      "time": "06/15 04:19",
+      "sentiment": "🤔",
       "body": "實驗：修改 tool description 中一個句子，Gemini 完全跳過一個必要計算器（精準度崩潰），但 GPT-4o-mini 對同樣修改無感。跨 6 個模型的比較測試結果。",
       "focusTags": []
     },
@@ -115,8 +115,8 @@
       "title": "非技術人員用 Claude Code 兩個月的成果",
       "url": "https://news.ycombinator.com/item?id=48537722",
       "source": "Hacker News",
-      "time": "06/15 07:22 UTC 情緒：😊",
-      "sentiment": "",
+      "time": "06/15 07:22",
+      "sentiment": "😊",
       "body": "一位 Series B 新創 PMM 分享：60 天內獨立完成 WordPress 主題、Next.js SaaS（45 位使用者）等多個專案，收入 $4K，對 Claude Code 降低技術門檻的感受非常直接。",
       "focusTags": []
     },
@@ -124,8 +124,8 @@
       "title": "AI 生成程式碼審查的困境",
       "url": "https://news.ycombinator.com/item?id=48538778",
       "source": "Hacker News",
-      "time": "06/15 09:27 UTC 情緒：😤",
-      "sentiment": "",
+      "time": "06/15 09:27",
+      "sentiment": "😤",
       "body": "工程師反映審查 AI 生成的千行 Rust PR 時，難以維持高層架構理解，LLM 生成的 commit message 也無法真正幫助理解全局變更邏輯。",
       "focusTags": []
     },
@@ -133,8 +133,8 @@
       "title": "Show HN：The Engineer – 從 GitHub Issue 到 Merged PR 的全流程 Agent",
       "url": "https://github.com/FarzamMohammadi/the-engineer",
       "source": "Hacker News",
-      "time": "06/14 17:35 UTC 情緒：😊",
-      "sentiment": "",
+      "time": "06/14 17:35",
+      "sentiment": "😊",
       "body": "作者厭倦反覆糾正 AI agent 的工作流，打造了整合 Claude Code、OpenCode、Codex 的端對端軟體工程 agent。",
       "focusTags": [
         "[新工具]"
@@ -144,8 +144,8 @@
       "title": "Claude 被生物學研究者稱讚/抱怨的矛盾現象",
       "url": "https://dev.to/docdavkitty/anthropic-vs-trump-the-escalation-fable-5-and-mythos-5-disabled-after-federal-ban-2p0a",
       "source": "dev.to / #anthropic",
-      "time": "06/15 04:04 UTC 情緒：😤",
-      "sentiment": "",
+      "time": "06/15 04:04",
+      "sentiment": "😤",
       "body": "出口管制事件完整紀錄：Fable 5、Mythos 5 於 2026-06-13 下架，目前仍無明確復原時程。企業正在重新評估 AI 供應商依賴風險。",
       "focusTags": []
     }

@@ -2,7 +2,7 @@
   "date": "2026-05-29",
   "generatedAt": "2026-05-29 23:22 UTC",
   "articleCount": 97,
-  "sourceCount": "6/6 | **文章數：** 97 | **更新時間：** 2026-05-29 23:22 UTC",
+  "sourceCount": "6/6",
   "bulletin": "",
   "topStories": [],
   "techUpdates": [
@@ -71,8 +71,8 @@
       "title": "Claude Code – Everything You Can Configure That the Docs Don't Tell You",
       "url": "https://buildingbetter.tech/p/i-read-the-claude-code-source-code",
       "source": "Hacker News",
-      "time": "05/29 02:13 UTC 情緒：🤔",
-      "sentiment": "",
+      "time": "05/29 02:13",
+      "sentiment": "🤔",
       "body": "作者深入 claude-code node_modules，挖出 YOLO Classifier（可用自然語言設定 auto-approve 規則）、persistent agent memory、hook 指令改寫欄位等數十個未文件化設定，全部提供 copy-paste 範例。",
       "focusTags": [
         "[新工具]"
@@ -82,8 +82,8 @@
       "title": "Claude Code Degraded Before Opus 4.8 Release",
       "url": "https://marginlab.ai/blog/claude-code-degraded-before-opus-4-8/",
       "source": "Hacker News",
-      "time": "05/29 12:43 UTC 情緒：😤",
-      "sentiment": "",
+      "time": "05/29 12:43",
+      "sentiment": "😤",
       "body": "SWE-bench-Pro 每日追蹤發現：Opus 4.7 在 Opus 4.8 發布前一週統計顯著下降，發布後立即恢復。作者指出這類靜默的日常效能變化是 launch benchmark 無法捕捉的盲點。",
       "focusTags": [
         "[社群趨勢]"
@@ -93,8 +93,8 @@
       "title": "Show HN: AISlop – CLI for catching AI generated code smells",
       "url": "https://github.com/scanaislop/aislop",
       "source": "Hacker News",
-      "time": "05/29 13:37 UTC 情緒：😊",
-      "sentiment": "",
+      "time": "05/29 13:37",
+      "sentiment": "😊",
       "body": "偵測 AI 生成的 code smells（空 catch block、無用注釋、重複 helper、dead code 等），可掛載到 Claude Code hooks，每次 tool call 後自動掃描。",
       "focusTags": [
         "[新工具]"
@@ -104,8 +104,8 @@
       "title": "Show HN: Ktx – Open-source executable context layer for data agents",
       "url": "https://github.com/Kaelio/ktx",
       "source": "Hacker News",
-      "time": "05/28 15:05 UTC 情緒：🤔",
-      "sentiment": "",
+      "time": "05/28 15:05",
+      "sentiment": "🤔",
       "body": "解決 AI 代理在 data warehouse 中生成「valid 但 incorrect SQL」的問題，提供可執行的 context 層讓代理了解 deprecated columns、隱性業務規則。",
       "focusTags": [
         "[新工具]"
@@ -115,8 +115,8 @@
       "title": "Show HN: Headroom – Reduce Claude Code token usage ~50%",
       "url": "https://extraheadroom.com/",
       "source": "Hacker News",
-      "time": "05/29 11:59 UTC 情緒：😊",
-      "sentiment": "",
+      "time": "05/29 11:59",
+      "sentiment": "😊",
       "body": "Mac Menu Bar app，在本機靜默優化 Claude Code prompt 輸入（修剪 bloat、壓縮文件），號稱省下 50% token，60 DAU 已累計省下約 $35k。",
       "focusTags": [
         "[新工具]"
@@ -126,8 +126,8 @@
       "title": "Python utility package for building Claude Code hooks",
       "url": "https://github.com/RasmusGodske/claude-hook-utils",
       "source": "Hacker News",
-      "time": "05/29 04:18 UTC 情緒：🤔",
-      "sentiment": "",
+      "time": "05/29 04:18",
+      "sentiment": "🤔",
       "body": "提供 Claude Code hook 開發工具包，HN 討論重點在 deny-with-reason 機制：回傳拒絕原因給 Claude context 可大幅縮短 retry 循環。",
       "focusTags": []
     },
@@ -135,8 +135,8 @@
       "title": "Show HN: Claude Code AskUserQuestion for subagents/teams/workflows",
       "url": "https://news.ycombinator.com/item?id=48320233",
       "source": "Hacker News",
-      "time": "05/29 07:38 UTC 情緒：🤔",
-      "sentiment": "",
+      "time": "05/29 07:38",
+      "sentiment": "🤔",
       "body": "修復 Claude Code subagents 中無法使用 AskUserQuestion 的限制，以 SQLite + MCP 實作跨 session 阻塞式問答，支援 CLI 或 web 介面作答。",
       "focusTags": []
     },
@@ -144,8 +144,8 @@
       "title": "4.8 Is A Dumpster Fire",
       "url": "https://www.reddit.com/r/ClaudeAI/comments/1tr3y72/48_is_a_dumpster_fire/",
       "source": "Reddit / r/ClaudeAI",
-      "time": "05/29 06:40 UTC 情緒：😤",
-      "sentiment": "",
+      "time": "05/29 06:40",
+      "sentiment": "😤",
       "body": "Reddit 社群批評 Opus 4.8 比 4.7 差，使用 \"pecl scripts\" 做簡單文件修改、obsessive tool use 傾向；另有 thinking blocks 400 錯誤需要 /exit + resume 才能解決。",
       "focusTags": [
         "[社群趨勢]"
@@ -155,8 +155,8 @@
       "title": "After months of \"better prompts,\" what actually 10x'd my Claude Code was treating it like an OS",
       "url": "https://www.reddit.com/r/ClaudeAI/comments/1tr2337/after_months_of_better_prompts_what_actually_10xd/",
       "source": "Reddit / r/ClaudeAI",
-      "time": "05/29 05:34 UTC 情緒：😊",
-      "sentiment": "",
+      "time": "05/29 05:34",
+      "sentiment": "😊",
       "body": "作者分享：把 Claude Code 理解為有五個層次的「OS」而非 chatbot 是關鍵突破，提示工程不是瓶頸。",
       "focusTags": []
     },
@@ -164,8 +164,8 @@
       "title": "Ask HN: What happened with Eureka Labs, Karpathy's startup?",
       "url": "https://news.ycombinator.com/item?id=48320822",
       "source": "Hacker News",
-      "time": "05/29 09:07 UTC 情緒：🤔",
-      "sentiment": "",
+      "time": "05/29 09:07",
+      "sentiment": "🤔",
       "body": "HN 用戶注意到 Karpathy 的 Eureka Labs GitHub org 停止活動，他已從 LinkedIn 移除相關資訊並正式加入 Anthropic。",
       "focusTags": [
         "[持續追蹤]"
@@ -175,8 +175,8 @@
       "title": "Spent 1,156,308,524 input tokens in May",
       "url": "https://www.reddit.com/r/ClaudeAI/comments/1tqx8q5/spent_1156308524_input_tokens_in_may_sharing_what/",
       "source": "Reddit / r/ClaudeAI",
-      "time": "05/29 02:09 UTC 情緒：🤔",
-      "sentiment": "",
+      "time": "05/29 02:09",
+      "sentiment": "🤔",
       "body": "Reddit 用戶分享單月消耗超過 11 億輸入 tokens 的使用心得與成本管理實踐，引發廣泛討論。",
       "focusTags": []
     },
@@ -184,8 +184,8 @@
       "title": "Ask HN: Does Claude Code remove the need for front-end frameworks?",
       "url": "https://news.ycombinator.com/item?id=48315680",
       "source": "Hacker News",
-      "time": "05/28 21:22 UTC 情緒：😐",
-      "sentiment": "",
+      "time": "05/28 21:22",
+      "sentiment": "😐",
       "body": "開發者分享：使用 Claude Code 後傾向改用純 HTML/CSS/JS 而非 React，認為框架選擇成為「實作細節」而非核心決策。",
       "focusTags": []
     }

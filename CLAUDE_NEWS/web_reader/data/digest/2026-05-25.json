@@ -2,7 +2,7 @@
   "date": "2026-05-25",
   "generatedAt": "2026-05-25 23:00 UTC",
   "articleCount": 70,
-  "sourceCount": "6/6 | **文章數：** 70 | **更新時間：** 2026-05-25 23:00 UTC",
+  "sourceCount": "6/6",
   "bulletin": "",
   "topStories": [
     {
@@ -69,8 +69,8 @@
       "title": "Claude Code 遠端注入：v2.1.150 允許 Anthropic 動態修改系統提示",
       "url": "https://news.ycombinator.com/item?id=48259288",
       "source": "Hacker News",
-      "time": "05/24 17:34 UTC 情緒：😤",
-      "sentiment": "",
+      "time": "05/24 17:34",
+      "sentiment": "😤",
       "body": "研究者披露 Claude Code 的兩個網路端點注入機制（bootstrap API + GrowthBook 60 秒刷新），社群討論隱私與安全含義：Anthropic 技術上可在任何時間為任何用戶的 session 插入任意指令，控制範圍包括 shell 存取權限。",
       "focusTags": [
         "[風險警示]"
@@ -80,8 +80,8 @@
       "title": "Mac 喚醒詞 + 多代理語音系統「Yabby」",
       "url": "https://www.reddit.com/r/ClaudeAI/comments/1tn6k38/my_mac_now_has_a_wake_word_for_claude_code/",
       "source": "Reddit / r/ClaudeAI",
-      "time": "05/25 03:37 UTC 情緒：😊",
-      "sentiment": "",
+      "time": "05/25 03:37",
+      "sentiment": "😊",
       "body": "開發者為 Claude Code 設計喚醒詞「Yabby」+ WebRTC 語音迴圈，兩週後演變為：lead agent 拆解任務 → 招募 manager + sub-agent 並行執行 → 完成後觸發自動 review（5 秒 debounce），每次 agent 操作前顯示計劃確認視窗，是語音啟動多代理架構的早期完整案例。",
       "focusTags": []
     },
@@ -89,8 +89,8 @@
       "title": "archmcp：讓 Claude 從架構快照而非盲目爬檔案開始",
       "url": "https://www.reddit.com/r/ClaudeAI/comments/1tn6jfh/stop_claude_from_wasting_tokens_exploring_your/",
       "source": "Reddit / r/ClaudeAI",
-      "time": "05/25 03:37 UTC 情緒：😊",
-      "sentiment": "",
+      "time": "05/25 03:37",
+      "sentiment": "😊",
       "body": "本地 MCP server，在 agent 讀取任何檔案前先生成 repo 的緊湊架構快照（模組、符號、依賴、路由、架構模式），解決 Claude Code 每次 session 重新探索 codebase 的 token 浪費問題；支援多 repo 跨系統架構感知。（ref: https://github.com/dejo13...）",
       "focusTags": []
     },
@@ -98,8 +98,8 @@
       "title": "Show HN: Smriti — Claude Code 和 Codex 的共享推理狀態",
       "url": "https://github.com/himanshudongre/smriti/",
       "source": "Hacker News",
-      "time": "05/25 14:28 UTC 情緒：🤔",
-      "sentiment": "",
+      "time": "05/25 14:28",
+      "sentiment": "🤔",
       "body": "Show HN 工具，讓 Claude Code 和 Codex 在同一工作流中共享推理狀態，解決多 agent 各自維護獨立推理脈絡的隔離問題；定位類似 VIR 的跨工具記憶橋接。",
       "focusTags": []
     },
@@ -107,8 +107,8 @@
       "title": "Claude Code Session 靜默遺失 PSA：Windows/Mac 備份腳本",
       "url": "https://www.reddit.com/r/ClaudeAI/comments/1tn6em7/psa_claude_code_silently_loses_session_data_here/",
       "source": "Reddit / r/ClaudeAI",
-      "time": "05/25 03:30 UTC 情緒：😤",
-      "sentiment": "",
+      "time": "05/25 03:30",
+      "sentiment": "😤",
       "body": "多名用戶回報 session 標題保留但內容消失（可能在 context 壓縮或非預期退出時發生），作者提供每日自動備份腳本（OS 排程器獨立運行，複製所有 session transcript），「付費產品竟無備份機制」是社群普遍批評點。",
       "focusTags": []
     },
@@ -116,8 +116,8 @@
       "title": "我告訴 Claude Code 要做 TDD，但 60% 機率它先寫程式再補測試",
       "url": "https://dev.to/kenimo49/i-told-claude-code-to-do-tdd-it-wrote-the-test-after-the-code-6-out-of-10-times-31kd",
       "source": "dev.to",
-      "time": "05/25 03:00 UTC 情緒：😤",
-      "sentiment": "",
+      "time": "05/25 03:00",
+      "sentiment": "😤",
       "body": "作者對 30 天提交紀錄進行審計：CLAUDE.md 有六行明確的 `## TDD First` 規則，但統計後 Claude 有 60% 情況仍先寫程式後補測試；呼應「CLAUDE.md 規則被選擇性忽略」的持續痛點，也是最具量化說服力的案例之一。",
       "focusTags": []
     },
@@ -125,8 +125,8 @@
       "title": "Kimi K2.6 vs Claude Opus 4.7：不熟悉基礎設施整合測試",
       "url": "https://www.reddit.com/r/ClaudeAI/comments/1tn9fpq/i_stresstested_kimi_k26_against_claude_opus_47_on/",
       "source": "Reddit / r/ClaudeAI",
-      "time": "05/25 05:37 UTC 情緒：🤔",
-      "sentiment": "",
+      "time": "05/25 05:37",
+      "sentiment": "🤔",
       "body": "作者以「構建 AI Fix Runner，在遠端沙盒執行測試並修補」為任務（Tensorlake API 較新，測推理能力非語法補全），Claude Opus 4.7 透過 Claude Code、Kimi K2.6 透過 OpenCode + OpenRouter 執行；重點測對不熟悉整合路徑的推理能力。",
       "focusTags": []
     },
@@ -134,8 +134,8 @@
       "title": "Claude Code 作為動態圖形引擎：Remotion JSX 工作流",
       "url": "https://www.reddit.com/r/ClaudeAI/comments/1tn9tyy/ive_been_using_claude_code_as_a_motion_graphics/",
       "source": "Reddit / r/ClaudeAI",
-      "time": "05/25 05:52 UTC 情緒：😊",
-      "sentiment": "",
+      "time": "05/25 05:52",
+      "sentiment": "😊",
       "body": "用戶利用 Remotion（React for video）架構，讓 Claude Code 生成所有動態圖形 JSX 元件（下方字幕、片頭、overlay），剪輯時間減半；元件可跨影片重複使用，視覺風格達到一致性，是 Claude Code 非程式開發場景的完整應用案例。",
       "focusTags": []
     },
@@ -143,8 +143,8 @@
       "title": "Anthropic 探索 Microsoft Maia 晶片用於雲端算力",
       "url": "https://news.google.com/rss/articles/CBMijwFBVV95cUxPUTNGbEZDWDUzVDNYR2gydWp6QzJNMDh5VHhyUmxnaWtFa0t0LXJJUnFJS3V0bGJNNUxJejRJS3ZoLXdaMlBzVmFRaWN0SHBxUHJYaWJOYUpBWDZBSXZXMHBJNFlMOGpsRlp0Xzc4OE5lNzFrNzVjbUVlbW1KWk9YSGxFSEtZSUR6b1FGTWNrdw",
       "source": "Google News / Cloud Computing News",
-      "time": "05/25 04:02 UTC 情緒：🤔",
-      "sentiment": "",
+      "time": "05/25 04:02",
+      "sentiment": "🤔",
       "body": "Anthropic 據報正測試微軟自研 Maia AI 晶片，顯示其算力來源策略已超越單一 AWS 依賴；在 AI 晶片競爭加劇背景下，此舉也是 Anthropic 為 IPO 準備多元化供應鏈的訊號。",
       "focusTags": []
     },
@@ -152,8 +152,8 @@
       "title": "Anthropic 積極招募文案寫作者",
       "url": "https://news.google.com/rss/articles/CBMivwFBVV95cUxQeEZlWFNmSnhNOFNJT2lJSWdtVnV6Wk8yS0hVT1VLUzhQYjdqTzdWR09VUG5ielVmV2IzTVpmZDhtNUw0cTVrTUN3a3lNLW1FR1B5cjI5Qk1XQ3QzeFRTTk9hN1p5X1RFT3NsWmlwQ0FDbnhyU0xLR3VhbFVlQ3daWVNtSEFBdElZM3pCQWVtd183cG5aQ1BUSGNSdGpkZVF4dk4wMnZJOS1PS3U2ZlQtYXJQcmNEaDN0ZVBSa0psUQ",
       "source": "Google News / Forbes",
-      "time": "05/25 02:30 UTC 情緒：🤔",
-      "sentiment": "",
+      "time": "05/25 02:30",
+      "sentiment": "🤔",
       "body": "Forbes 報導 Anthropic 反向操作——以「AI 替代文案寫作者」論述盛行之際反而大量招募人類文案，指出 AI 輔助創作仍需資深人類編輯把控品牌聲音與法律合規；折射 Anthropic 仍重視人機協作。",
       "focusTags": []
     }

@@ -2,7 +2,7 @@
   "date": "2026-06-09",
   "generatedAt": "2026-06-09 22:44 UTC",
   "articleCount": 85,
-  "sourceCount": "6/6 | **文章數：** 85 | **更新時間：** 2026-06-09 22:44 UTC",
+  "sourceCount": "6/6",
   "bulletin": "",
   "topStories": [],
   "techUpdates": [
@@ -24,8 +24,8 @@
       "title": "June 15: your Pro plan stops subsidizing agent runs — quoted from the help center",
       "url": "https://www.reddit.com/r/ClaudeAI/comments/1u0y424/june_15_your_pro_plan_stops_subsidizing_agent/",
       "source": "Reddit / r/ClaudeAI",
-      "time": "06/08 23:29 UTC · 情緒：😤",
-      "sentiment": "",
+      "time": "06/08 23:29 UTC ·",
+      "sentiment": "😤",
       "body": "Anthropic 說明中心確認：互動式終端使用不受影響；`claude -p`/排程腳本/CI 使用移入獨立月度預算，超出可選擇「usage credits」（API 費率）或自動停止。開發者須在 15 日前確認設定，否則 pipeline 中斷。",
       "focusTags": [
         "[風險警示]"
@@ -35,8 +35,8 @@
       "title": "Spent a whole weekend convinced Opus 4.7 had gotten worse. It was my MCP setup the entire time.",
       "url": "https://www.reddit.com/r/ClaudeAI/comments/1u155k2/spent_a_whole_weekend_convinced_opus_47_had/",
       "source": "Reddit / r/ClaudeAI",
-      "time": "06/09 05:33 UTC · 情緒：🤔",
-      "sentiment": "",
+      "time": "06/09 05:33 UTC ·",
+      "sentiment": "🤔",
       "body": "開發者積累 6 個以上 MCP server 後 Claude 工具選擇開始混亂（問 PR 跑 Notion、問 ticket 跑 Slack），移除未使用 MCP 後恢復正常。實用教訓：MCP 掛載越精簡越好。",
       "focusTags": []
     },
@@ -44,8 +44,8 @@
       "title": "Show HN: Rayline routes Claude Code subagents to on-device and cheaper models",
       "url": "https://rayline.ai/",
       "source": "Hacker News",
-      "time": "06/08 17:32 UTC · 情緒：🤔",
-      "sentiment": "",
+      "time": "06/08 17:32 UTC ·",
+      "sentiment": "🤔",
       "body": "作為 Claude Code 相容 LLM gateway，Rayline 攔截內部路由，讓主 agent 跑 Opus、subagent 跑便宜模型或本地模型，使用確定性設定而非 LLM 決策路由，潛在成本優化明顯。",
       "focusTags": []
     },
@@ -53,8 +53,8 @@
       "title": "How to have Claude Code run 28× longer before auto-compaction",
       "url": "https://github.com/wiztek-llc/context-ledger/tree/main",
       "source": "Hacker News",
-      "time": "06/09 01:30 UTC · 情緒：😊",
-      "sentiment": "",
+      "time": "06/09 01:30 UTC ·",
+      "sentiment": "😊",
       "body": "context-ledger 工具透過外部 ledger 保存關鍵上下文，聲稱可讓 Claude Code 在觸發自動壓縮前運作 28 倍更長時間。",
       "focusTags": []
     },
@@ -62,8 +62,8 @@
       "title": "Show HN: Built an open-source local firewall for AI coding agents",
       "url": "https://news.ycombinator.com/item?id=48456339",
       "source": "Hacker News",
-      "time": "06/09 04:19 UTC · 情緒：😊",
-      "sentiment": "",
+      "time": "06/09 04:19 UTC ·",
+      "sentiment": "😊",
       "body": "Guardian Runtime：本地 FinOps 與安全 proxy，提供硬性預算上限（防 retry 暴衝）、API key/PII 洩漏偵測、Terse Mode（宣稱降低輸出 token 成本 40–70%），支援 OpenAI/Anthropic/Gemini。",
       "focusTags": []
     },
@@ -71,8 +71,8 @@
       "title": "Anthropic: Measuring LLMs' impact on N-day exploits",
       "url": "https://red.anthropic.com/2026/n-days/",
       "source": "Hacker News",
-      "time": "06/08 18:52 UTC · 情緒：😐",
-      "sentiment": "",
+      "time": "06/08 18:52 UTC ·",
+      "sentiment": "😐",
       "body": "Anthropic 安全研究顯示 LLM 已顯著降低 N-day 漏洞利用門檻，patch diff 技術讓攻擊者能快速重建利用鏈，安全社群需加速修補部署速度以縮短 patch gap。",
       "focusTags": []
     },
@@ -80,8 +80,8 @@
       "title": "'Godfather of AI' Geoffrey Hinton says Anthropic has strayed from safety-first mission",
       "url": "https://news.google.com/rss/articles/CBMitAFBVV95cUxPb3JoOWlrSzI2N0tSQXl4ZDQzaGNPRldseWlFYTFhd2hpNml3SXZYYTVtVUN6Ti1HX0ZmZ19aMGoydWFwaWI0UFZLbXdtZnk4UEIwT1lha0IyLU9DN3RVaUoxYmpaaVBhVUJIVk9kRzk0aWtWSXZURzhWNWlZajBESkppaV84b21ES09EN3kxeWJ3ems4YmJ0Zmd5cDgxbnBubFM5bWVQak1wdHd6OTFSOVVIWUQ?oc=5",
       "source": "Google News / NBC News",
-      "time": "06/09 05:33 UTC · 情緒：😤",
-      "sentiment": "",
+      "time": "06/09 05:33 UTC ·",
+      "sentiment": "😤",
       "body": "AI 教父 Geoffrey Hinton 公開批評 Anthropic 偏離安全優先使命，引發社群對頂尖 AI 實驗室能否維持安全核心的廣泛討論。",
       "focusTags": []
     },
@@ -89,8 +89,8 @@
       "title": "Claude Code CLI burned 5.4 Million tokens on 2 simple queries, crashed internally, and locked my Max plan for 5 hours",
       "url": "https://www.reddit.com/r/ClaudeAI/comments/1u0ztzf/claude_code_cli_burned_54_million_tokens_on_2/",
       "source": "Reddit / r/ClaudeAI",
-      "time": "06/09 01:13 UTC · 情緒：😤",
-      "sentiment": "",
+      "time": "06/09 01:13 UTC ·",
+      "sentiment": "😤",
       "body": "非技術用戶使用 Deep Research 處理兩個一般查詢，並行執行後消耗 540 萬 token 觸發 5 小時封鎖。提醒：Deep Research 並行任務會呈指數級擴大 token 使用量。",
       "focusTags": []
     },
@@ -98,8 +98,8 @@
       "title": "Claude Sonnet hits 100% comprehension on a data format it's never seen. Opus scores 96.2%.",
       "url": "https://www.reddit.com/r/ClaudeAI/comments/1u0w4pp/claude_sonnet_hits_100_comprehension_on_a_data/",
       "source": "Reddit / r/ClaudeAI",
-      "time": "06/08 21:36 UTC · 情緒：😊",
-      "sentiment": "",
+      "time": "06/08 21:36 UTC ·",
+      "sentiment": "😊",
       "body": "自訂 GCF 格式（圖結構資料）測試：Claude Sonnet 4.6 達 100% 理解率（JSON 僅 53.8%），Opus 4.6 達 96.2%，顯示 Claude 系列在非訓練格式上的強泛化能力。",
       "focusTags": []
     },
@@ -107,8 +107,8 @@
       "title": "Autonomous Claude Code loop running my open-source app 24/7 - triages, codes, merges itself",
       "url": "https://www.reddit.com/r/ClaudeAI/comments/1u10kpx/autonomous_claude_code_loop_running_my_opensource/",
       "source": "Reddit / r/ClaudeAI",
-      "time": "06/09 01:58 UTC · 情緒：🤔",
-      "sentiment": "",
+      "time": "06/09 01:58 UTC ·",
+      "sentiment": "🤔",
       "body": "開發者讓 Claude Code 自主執行 triage → 撰碼 → 合併的完整循環，在真實開源 codebase 持續運作，探索 autonomous agent loop 的實際邊界與穩定性。",
       "focusTags": []
     },
@@ -116,8 +116,8 @@
       "title": "Model routing is a fix for AI overspending, a problem for OpenAI and Anthropic",
       "url": "https://www.cnbc.com/2026/06/05/model-routing-on-ai-is-a-problem-for-openai-and-anthropic.html",
       "source": "Hacker News",
-      "time": "06/09 11:26 UTC · 情緒：😐",
-      "sentiment": "",
+      "time": "06/09 11:26 UTC ·",
+      "sentiment": "😐",
       "body": "企業 CFO 推動 model routing，簡單查詢導向便宜模型，對 OpenAI 和 Anthropic 的 frontier 模型訂閱構成潛在壓力；Rayline 等工具應運而生。",
       "focusTags": []
     },
@@ -125,8 +125,8 @@
       "title": "Surge in Demand for Claude Code Specialists on Fiverr Highlights Shifting Business Focus",
       "url": "https://news.google.com/rss/articles/CBMi9wFBVV95cUxPZk9tNTlzVUVfWENaaEVLSDdkdmdGM1NrZkFrWWEwX1RldllsRV9aRU1pTkxGSEJnSHlXV2ZrWnNaN2h5MUdnZHNtc2paY1FtZjZTWEwxWG9qY0x2XzlIMWVHWkpMcHdOMUNSS01mbjdFRmFhRHd5RWMxcm82ZTBIb284a2hSUlBRZ1l3ai1VRUhQZlNlNGRRVmdyY09XZnlpTEpMVEJ2aUR4c0lSNWFfZ1lHbk1mbVZ5VFNQV0N1Zm53X1I2SHV6TVk3ZGhnNndGWDl1OU5SY3poeVY2M3BNTl91Sm5mQUtSYmZHaEh5R2M1NjNlcXJF?oc=5",
       "source": "Google News / Quiver Quantitative",
-      "time": "06/09 05:01 UTC · 情緒：😊",
-      "sentiment": "",
+      "time": "06/09 05:01 UTC ·",
+      "sentiment": "😊",
       "body": "Fiverr 數據顯示 Claude Code 相關服務需求爆增 938%，反映企業加速採用 AI 自動化後對懂得操作 Claude Code 的工程師需求大增。",
       "focusTags": [
         "[重大事件]"
@@ -136,8 +136,8 @@
       "title": "Rubrik Launches Rubrik Agent Cloud for Anthropic's Claude Code",
       "url": "https://news.google.com/rss/articles/CBMiugFBVV95cUxQZGgtYnVSTmpneWhYOVNwM2lhZ2gyNk5FclNPSTZES1ptYzdVRHJwQ0hSanktT3RnRVpFblpkQkdXTzhTVHF2alhVYlgwTFVZcjRhanlvT0k3b1Z1NjgxUzc0bXBvTW9IQnF6eXo3eUNyWEd3SzZfdTRXREg5YzJXdWVpNW5qR1BSR3dhQ29OSDJtUHVlbnJUUzU2c3FYeXdCWFJwQnNKM2NoMmxkMnBjVnVsTG9kM0VMa1E?oc=5",
       "source": "Google News / Business Wire",
-      "time": "06/09 05:00 UTC · 情緒：😊",
-      "sentiment": "",
+      "time": "06/09 05:00 UTC ·",
+      "sentiment": "😊",
       "body": "Rubrik 將其平台轉型為 AI agent，推出 Agent Cloud for Claude Code，讓 Claude Code 可直接調用 Rubrik 資料保護能力，全球系統整合商同步加入合作夥伴計畫。",
       "focusTags": [
         "[新工具]"
@@ -147,8 +147,8 @@
       "title": "AppFolio Connects Realm-X to Anthropic's Claude",
       "url": "https://news.google.com/rss/articles/CBMi_AFBVV95cUxOQTdQLTVSV3hXMGpXUmVSSl9zQlVQWXlmLTR4a3VISUd6TUZHenllVjNTU09ReWM4c1otQlhSdmZLcktWeWlxTHYzT2Z3WG94TF9XbE14R19xeUlpanU2VFhUcjlrY3FxNkJNR0JGUzg1a0xZd3VnbWZiU0hZSWNseGpDdjFaOVIyVV9rSUFsRDJUdW8tVzhxMEhWTXA0Vld4UnlfR1doQmtrSnFqeFpOVm9xVklPbDZSdlRlcDBuUGRoSFphTVhyNktXeFVkZDBYQXoyMEdHRlJBSVRvRG9LaHQwcXRKRGE5YUhIRHRoZTVMSTFkWnJjSGY0cHQ?oc=5",
       "source": "Google News / markets.businessinsider.com",
-      "time": "06/09 05:50 UTC · 情緒：😊",
-      "sentiment": "",
+      "time": "06/09 05:50 UTC ·",
+      "sentiment": "😊",
       "body": "房地產管理平台 AppFolio 將 Realm-X AI 套件接入 Anthropic Claude，提供 agent-to-agent 架構讓 Claude 直接觸發房地產績效管理流程。",
       "focusTags": []
     },
@@ -156,8 +156,8 @@
       "title": "Anthropic's Claude to Be Adopted Across LG Group Affiliates",
       "url": "https://news.google.com/rss/articles/CBMiZ0FVX3lxTFAwZGRQY2E2aHdtLUw2Qkh3VlVHd29yRHpOZUFlTkNVRnFVenlObGxrVW0zRFp4d2VQU3R5VUFwQjR1Mnc5Y3dZeW9FUmNLSUNZb3dtUnpmSy1tYmE2OE5xa0ZxMkVNV28?oc=5",
       "source": "Google News / thelec.net",
-      "time": "06/09 02:04 UTC · 情緒：😊",
-      "sentiment": "",
+      "time": "06/09 02:04 UTC ·",
+      "sentiment": "😊",
       "body": "LG 集團旗下各關聯企業宣布全面採用 Anthropic Claude，顯示韓國大型財閥積極布局企業 AI 解決方案。",
       "focusTags": [
         "[新工具]"
@@ -167,8 +167,8 @@
       "title": "Trump administration denies unlawful retaliation in Anthropic AI blacklisting",
       "url": "https://news.google.com/rss/articles/CBMixgFBVV95cUxNbnRRSW9XMG5QOUVzUno4SnZYOTVoUVZiSGN0R1VNR3VsdGxjTWJWdC1qWklFbUl1RkdnS0dwMjhTN3JHSmt5cDkxNzdfc3FZY0lUemNlVW10Y0ltdWNnY2I5UkY0ZnE1bGZQWGN2bkVtcDQxTjczZmVxMlVzVDNKMXpwVmNCbGVvcmxvN2ZtSkhfNjU0YS1kZkUzOV9tMTk3Z2pzQk1xOTFsMTE3STRRaXZjd0I0bS0xUENIajNUalRvN0g3QWc?oc=5",
       "source": "Google News / Reuters",
-      "time": "06/08 17:20 UTC · 情緒：😐",
-      "sentiment": "",
+      "time": "06/08 17:20 UTC ·",
+      "sentiment": "😐",
       "body": "川普政府否認對 Anthropic AI 列入黑名單一事存在非法報復，持續引發外界對政府 AI 採購政策透明度的關注。",
       "focusTags": []
     }

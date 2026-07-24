@@ -2,7 +2,7 @@
   "date": "2026-05-28",
   "generatedAt": "2026-05-28 22:00 UTC",
   "articleCount": 75,
-  "sourceCount": "6/6 | **文章數：** 75 | **更新時間：** 2026-05-28 22:00 UTC",
+  "sourceCount": "6/6",
   "bulletin": "",
   "topStories": [
     {
@@ -83,8 +83,8 @@
       "title": "I think Anthropic and OpenAI have found product-market fit",
       "url": "https://simonwillison.net/2026/May/27/product-market-fit/",
       "source": "Hacker News",
-      "time": "05/27 16:39 UTC  情緒：😊",
-      "sentiment": "",
+      "time": "05/27 16:39",
+      "sentiment": "😊",
       "body": "HN score 970，Simon Willison 長文分析：企業 API 採購已不再是「試試看」，而是規模化部署；Anthropic 首次盈利季傳言、訂閱用量爆發、企業帳單驚訝感，都是 PMF 已到達的信號。被社群視為對 AI 商業化趨勢最具說服力的近期論述。",
       "focusTags": [
         "[重大事件]"
@@ -94,8 +94,8 @@
       "title": "Show HN: Approve Claude CLI prompts from the browser, phone, or tablet",
       "url": "https://notifai.net/",
       "source": "Hacker News",
-      "time": "05/27 15:33 UTC  情緒：😊",
-      "sentiment": "",
+      "time": "05/27 15:33",
+      "sentiment": "😊",
       "body": "HN score 3，NotifAI：解決「AI 工作時需要人在旁邊批准」的問題，讓用戶可從手機、平板或瀏覽器遠端批准 Claude Code 等 AI 工具的敏感操作；支援 E2E 加密，適配 Claude Code、Copilot CLI、Gemini CLI。",
       "focusTags": []
     },
@@ -103,8 +103,8 @@
       "title": "Show HN: Workplane – collaborative filesystem for humans and AI",
       "url": "https://workplane.co",
       "source": "Hacker News",
-      "time": "05/27 16:22 UTC  情緒：😊",
-      "sentiment": "",
+      "time": "05/27 16:22",
+      "sentiment": "😊",
       "body": "HN score 5，瀏覽器協作工作空間，HTML/Markdown 直接渲染、版本自動控制、可分享連結；MCP 相容，Claude Desktop、Claude Code、OpenClaw 均可存取共享資料夾——填補 AI 與人類「同一個工作空間」的缺口。",
       "focusTags": []
     },
@@ -112,8 +112,8 @@
       "title": "We Benchmarked Claude Code, Codex, Semgrep, CodeQL, Trent on 28 CWE-Bench CVEs",
       "url": "https://trent.ai/blog/claude-code-codex-semgrep-codeql-trent-vs-cwe-bench-cve/",
       "source": "Hacker News",
-      "time": "05/28 12:39 UTC  情緒：🤔",
-      "sentiment": "",
+      "time": "05/28 12:39",
+      "sentiment": "🤔",
       "body": "HN score 4，真實生產 CVE 壓測：Claude Code（Opus 4.7）漏洞識別率 65%、Semgrep 43%；但 LLM 難以提供可重現的精確修補路徑，靜態分析仍有其不可替代性。是少見的 LLM vs 傳統安全工具的直接對比實測。",
       "focusTags": []
     },
@@ -121,8 +121,8 @@
       "title": "Show HN: Generate Claude Code Workflows using Spec Driven Development approach",
       "url": "https://news.ycombinator.com/item?id=48306730",
       "source": "Hacker News",
-      "time": "05/28 09:44 UTC  情緒：😊",
-      "sentiment": "",
+      "time": "05/28 09:44",
+      "sentiment": "😊",
       "body": "HN score 5，`CCW`（Claude Code Workflow）：Spec-Driven Development workflow 產生器，讓團隊可依需求客製化線性 SDD 工作流插件（含行銷研究等非程式碼場景），已在 Google Poland 等公司展示。",
       "focusTags": []
     },
@@ -130,8 +130,8 @@
       "title": "Show HN: Hm – a task runner with a Python DSL, growing into a CI/CD system",
       "url": "https://github.com/harmont-dev/harmont-cli",
       "source": "Hacker News",
-      "time": "05/27 16:41 UTC  情緒：🤔",
-      "sentiment": "",
+      "time": "05/27 16:41",
+      "sentiment": "🤔",
       "body": "HN score 11，作者因「所有 Claude 都等超過一小時」而離職創業，用 Python DSL 打造無 YAML 的 CI/CD 系統，解決 GHA 無狀態慢、Jenkins 不可水平擴展的問題，Claude agent 工作流的 CI/CD 痛點被具象化。",
       "focusTags": []
     },
@@ -139,8 +139,8 @@
       "title": "Show HN: Claude Code's $200 plan is a 17× subsidy on the raw API",
       "url": "https://github.com/Coral-Bricks-AI/coral-ai/tree/main/claude-code-token-xray",
       "source": "Hacker News",
-      "time": "05/27 17:25 UTC  情緒：🤔",
-      "sentiment": "",
+      "time": "05/27 17:25",
+      "sentiment": "🤔",
       "body": "HN score 9，分析工具揭示：Claude Code Max $200/月方案相當於 raw API 成本的 17 分之一，Anthropic 在用戶量成長期大幅補貼開發者——社群討論 AI 實驗室的商業可持續性與未來定價走向。",
       "focusTags": [
         "[社群趨勢]"
@@ -150,8 +150,8 @@
       "title": "Claude Code Rendering Elvish",
       "url": "https://github.com/anthropics/claude-code/issues/63096",
       "source": "Hacker News",
-      "time": "05/28 11:14 UTC  情緒：😊",
-      "sentiment": "",
+      "time": "05/28 11:14",
+      "sentiment": "😊",
       "body": "HN score 4，GitHub issue：Claude Code 顯示精靈語（Elvish）文字的罕見 bug，引發社群幽默討論，同時反映終端機字元渲染邊緣案例問題。",
       "focusTags": []
     },
@@ -159,8 +159,8 @@
       "title": "Anthropic takes 8 spots in top 10 most secure LLMs",
       "url": "https://www.thedeepview.com/articles/anthropic-takes-8-spots-in-top-10-most-secure-llms",
       "source": "Hacker News / The Deep View",
-      "time": "05/28 02:35 UTC  情緒：😊",
-      "sentiment": "",
+      "time": "05/28 02:35",
+      "sentiment": "😊",
       "body": "HN score 3，Cisco LLM Security Leaderboard 首次發布：Anthropic 模型以 8/10 的席次主導安全榜，83% 的企業計畫部署 agentic AI 但只有 29% 認為已準備好安全管控——這一數字直接推動 Claude Security 產品需求。",
       "focusTags": []
     },
@@ -168,8 +168,8 @@
       "title": "Show HN: Zorilla – vibe-code a 3D game in the browser",
       "url": "https://www.zoril.la/",
       "source": "Hacker News",
-      "time": "05/27 14:59 UTC  情緒：😊",
-      "sentiment": "",
+      "time": "05/27 14:59",
+      "sentiment": "😊",
       "body": "HN score 3，瀏覽器 3D 遊戲 remixer，用英文描述即可即時修改 Three.js 世界；同時展示 Claude API 驅動「每日決策簡報」自動化工作流，是 Anthropic API 用於非傳統場景的有趣案例。",
       "focusTags": []
     },
@@ -177,8 +177,8 @@
       "title": "The Uber claude code budget story is the most claude code thing possible",
       "url": "https://www.reddit.com/r/ClaudeAI/comments/1tpyq06/the_uber_claude_code_budget_story_is_the_most/",
       "source": "Reddit / r/ClaudeAI",
-      "time": "05/28 01:41 UTC  情緒：🤔",
-      "sentiment": "",
+      "time": "05/28 01:41",
+      "sentiment": "🤔",
       "body": "Reddit 高質量分析：「Uber 4 個月燒完全年預算不代表 Claude Code 不好，代表用法從 autocomplete 變成了不睡覺的同事，訂閱模式數學就此失效。解法是邊界，不是退出。」精準點出企業大規模採用的核心結構性問題。",
       "focusTags": []
     },
@@ -186,8 +186,8 @@
       "title": "I stopped using the app store. claude builds exactly what I need and installs it on my phone.",
       "url": "https://www.reddit.com/r/ClaudeAI/comments/1tq3tlf/i_stopped_using_the_app_store_claude_builds/",
       "source": "Reddit / r/ClaudeAI",
-      "time": "05/28 05:34 UTC  情緒：😤",
-      "sentiment": "",
+      "time": "05/28 05:34",
+      "sentiment": "😤",
       "body": "用戶描述：讓 Claude 寫 SwiftUI、用 xcodebuild 編譯、模擬器截圖、視覺 bug 修復、wireless push 至 iPhone，全程 90 秒——但 Apple $99/年 開發者費用讓 sideload 每 7 天過期，揭示「個人 AI 軟體」與平台護城河的張力。",
       "focusTags": []
     }

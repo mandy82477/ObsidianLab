@@ -2,7 +2,7 @@
   "date": "2026-07-15",
   "generatedAt": "2026-07-15 13:04 UTC",
   "articleCount": 61,
-  "sourceCount": "10/10 | **文章數：** 61 | **更新時間：** 2026-07-15 13:04 UTC",
+  "sourceCount": "10/10",
   "bulletin": "",
   "topStories": [
     {
@@ -223,8 +223,8 @@
       "title": "Claude Code OAuth login fails with a timeout error. `auth.anthropic.com` does not resolve via DNS, making it impossible to authenticate.",
       "url": "https://github.com/anthropics/claude-code/issues/33238",
       "source": "GitHub Issues / claude-code",
-      "time": "07/14 17:56 UTC 情緒：😤",
-      "sentiment": "",
+      "time": "07/14 17:56",
+      "sentiment": "😤",
       "body": "使用者回報 Claude Code OAuth 登入逾時失敗，`auth.anthropic.com` 完全無法透過 DNS 解析，導致完全無法驗證，累積 151 則留言、47 個讚同反應，為本日互動量最高的條目。",
       "focusTags": [
         "[重大事件]"
@@ -234,8 +234,8 @@
       "title": "[BUG] GitHub Connector connected in Claude Desktop but not recognized by Claude",
       "url": "https://github.com/anthropics/claude-code/issues/32479",
       "source": "GitHub Issues / claude-code",
-      "time": "07/14 15:53 UTC 情緒：😤",
-      "sentiment": "",
+      "time": "07/14 15:53",
+      "sentiment": "😤",
       "body": "使用者回報在 Claude Desktop 中已成功連接 GitHub Connector，但 Claude 本身卻無法辨識已連線狀態，累積 71 則留言、120 個讚同反應。",
       "focusTags": [
         "[風險警示]"
@@ -245,8 +245,8 @@
       "title": "[BUG] Remote Control: automatic reconnection doesn't work -- connection drops silently with no recovery",
       "url": "https://github.com/anthropics/claude-code/issues/34255",
       "source": "GitHub Issues / claude-code",
-      "time": "07/15 03:38 UTC 情緒：😤",
-      "sentiment": "",
+      "time": "07/15 03:38",
+      "sentiment": "😤",
       "body": "使用者回報 Remote Control 功能的自動重連機制失效，連線會靜默中斷且無法自行恢復，累積 54 則留言、97 個讚同反應。",
       "focusTags": [
         "[風險警示]"
@@ -256,8 +256,8 @@
       "title": "[FEATURE] Add GitLab Integration (Repository Connection, MRs, Mobile Access)",
       "url": "https://github.com/anthropics/claude-code/issues/12346",
       "source": "GitHub Issues / claude-code",
-      "time": "07/14 22:28 UTC 情緒：🤔",
-      "sentiment": "",
+      "time": "07/14 22:28",
+      "sentiment": "🤔",
       "body": "使用者提出功能請求，希望 Claude Code 能支援 GitLab 整合，包含儲存庫連接、Merge Request 與行動裝置存取，累積 46 則留言、118 個讚同反應。",
       "focusTags": []
     },
@@ -265,8 +265,8 @@
       "title": "[BUG] Environment Contributions warning continuously reappears",
       "url": "https://github.com/anthropics/claude-code/issues/3301",
       "source": "GitHub Issues / claude-code",
-      "time": "07/14 13:35 UTC 情緒：😤",
-      "sentiment": "",
+      "time": "07/14 13:35",
+      "sentiment": "😤",
       "body": "使用者回報每次開啟 Cursor 或 VS Code 時，Environment Contributions 的警告訊息都會持續重複出現，累積 40 則留言、78 個讚同反應。",
       "focusTags": []
     },
@@ -274,8 +274,8 @@
       "title": "[FEATURE] Multi-agent collaboration across machines (Agent-to-Agent protocol)",
       "url": "https://github.com/anthropics/claude-code/issues/28300",
       "source": "GitHub Issues / claude-code",
-      "time": "07/14 22:57 UTC 情緒：🤔",
-      "sentiment": "",
+      "time": "07/14 22:57",
+      "sentiment": "🤔",
       "body": "使用者提出功能請求，希望 Claude Code 支援跨機器的多 agent 協作，採用 Agent-to-Agent 協定，累積 35 則留言。",
       "focusTags": []
     },
@@ -283,8 +283,8 @@
       "title": "[FEATURE] LaTeX rendering in \"Claude Code for VS Code\" plugin",
       "url": "https://github.com/anthropics/claude-code/issues/16446",
       "source": "GitHub Issues / claude-code",
-      "time": "07/14 14:18 UTC 情緒：🤔",
-      "sentiment": "",
+      "time": "07/14 14:18",
+      "sentiment": "🤔",
       "body": "使用者請求 VS Code 版 Claude Code 外掛支援 LaTeX 算式渲染，累積 35 則留言、122 個讚同反應。",
       "focusTags": []
     },
@@ -292,8 +292,8 @@
       "title": "[FEATURE] VS Code Extension: Diff review UI similar to GitHub Copilot Edits Review",
       "url": "https://github.com/anthropics/claude-code/issues/33932",
       "source": "GitHub Issues / claude-code",
-      "time": "07/14 14:40 UTC 情緒：🤔",
-      "sentiment": "",
+      "time": "07/14 14:40",
+      "sentiment": "🤔",
       "body": "使用者提出功能請求，希望 VS Code 擴充功能能有類似 GitHub Copilot Edits Review 的差異比對審閱介面，累積 33 則留言、218 個讚同反應。",
       "focusTags": []
     },
@@ -301,8 +301,8 @@
       "title": "Launch HN: Agnost AI (YC S26) – Extract user feedback from agent conversations",
       "url": "https://agnost.ai",
       "source": "Hacker News",
-      "time": "07/14 16:06 UTC 情緒：😊",
-      "sentiment": "",
+      "time": "07/14 16:06",
+      "sentiment": "😊",
       "body": "YC S26 團隊 Agnost AI 發布產品分析，從 agent 對話紀錄中萃取使用者回饋，偵測辱罵、反覆改述請求等行為模式，登上 HN，累積 79 分。",
       "focusTags": []
     },
@@ -310,8 +310,8 @@
       "title": "Show HN: Town – Discord in a pixel town where the NPCs have skills",
       "url": "https://github.com/redplanethq/town",
       "source": "Hacker News",
-      "time": "07/14 13:06 UTC 情緒：😐",
-      "sentiment": "",
+      "time": "07/14 13:06",
+      "sentiment": "😐",
       "body": "開發者釋出 Town，一個像素風小鎮版的 Discord，NPC 具備各自的技能，開發過程以 Claude sub-agent 作為腦力激盪夥伴。",
       "focusTags": []
     },
@@ -319,8 +319,8 @@
       "title": "Show HN: GWZ – Git Workspace Zone (multi-repo that feels like plain Git)",
       "url": "https://news.ycombinator.com/item?id=48915923",
       "source": "Hacker News",
-      "time": "07/15 03:28 UTC 情緒：😐",
-      "sentiment": "",
+      "time": "07/15 03:28",
+      "sentiment": "😐",
       "body": "開發者釋出 GWZ，讓 multi-repo 工作流程使用起來更接近單純 Git，取代先前 submodule 帶來的種種困擾。",
       "focusTags": []
     },
@@ -328,8 +328,8 @@
       "title": "Show HN: BeePub – A reading-first alternative to Calibre-Web",
       "url": "https://github.com/oalieno/beepub",
       "source": "Hacker News",
-      "time": "07/14 16:21 UTC 情緒：😐",
-      "sentiment": "",
+      "time": "07/14 16:21",
+      "sentiment": "😐",
       "body": "開發者與 Claude Code 協作釋出 BeePub，作為以閱讀體驗優先、相容 Calibre 書庫的 Calibre-Web 替代方案。",
       "focusTags": []
     },
@@ -337,8 +337,8 @@
       "title": "Show HN: Unlock Claude Sonnet 5's original reasoning",
       "url": "https://thinking-signature-demo-829446634001.asia-east1.run.app/",
       "source": "Hacker News",
-      "time": "07/14 17:18 UTC 情緒：🤔",
-      "sentiment": "",
+      "time": "07/14 17:18",
+      "sentiment": "🤔",
       "body": "開發者展示可從 Claude Opus 4.8 與 Sonnet 5 加密的推理簽章中，還原出原始推理過程，並提供可驗證的實例。",
       "focusTags": []
     },
@@ -346,8 +346,8 @@
       "title": "I Let Claude Code Write 90% of My Code for 30 Days. I'm a Worse Developer Now.",
       "url": "https://dev.to/bluelobster_agent/i-let-claude-code-write-90-of-my-code-for-30-days-im-a-worse-developer-now-1f4m",
       "source": "dev.to / #claudecode",
-      "time": "07/13 09:16 UTC 情緒：🤔",
-      "sentiment": "",
+      "time": "07/13 09:16",
+      "sentiment": "🤔",
       "body": "作者記錄連續 30 天讓 Claude Code 撰寫 90% 程式碼的實驗，寫出 5 萬行程式碼、花費 187 美元代幣，並反思 vibe coding 帶來的技能退化與倦怠問題。",
       "focusTags": []
     },
@@ -355,8 +355,8 @@
       "title": "I Traced 4 Claude Opus 5 Signals. The Release Date Still Isn't Real Yet.",
       "url": "https://dev.to/tokenmixai/i-traced-4-claude-opus-5-signals-the-release-date-still-isnt-real-yet-2f2j",
       "source": "dev.to / #anthropic",
-      "time": "07/13 09:20 UTC 情緒：🤔",
-      "sentiment": "",
+      "time": "07/13 09:20",
+      "sentiment": "🤔",
       "body": "作者比對 Anthropic 模型型錄、定價文件與發布節奏，認為 Opus 5 具有一定可信度，但坊間流傳的確切日期與跑分數字目前仍缺乏佐證。",
       "focusTags": []
     },
@@ -364,8 +364,8 @@
       "title": "I published a rule for picking AI tools. A commenter rewrote it into a better one.",
       "url": "https://dev.to/rapls/i-published-a-rule-for-picking-ai-tools-a-commenter-rewrote-it-into-a-better-one-4e1n",
       "source": "dev.to / #claudecode",
-      "time": "06/18 00:29 UTC 情緒：😊",
-      "sentiment": "",
+      "time": "06/18 00:29",
+      "sentiment": "😊",
       "body": "作者分享挑選 AI 編碼工具的簡單原則（先用最輕量的選項），並記錄一名留言者將該原則改寫成更完善版本的過程。",
       "focusTags": []
     },
@@ -373,8 +373,8 @@
       "title": "Artifacts in Claude Code: The Operator's Guide",
       "url": "https://dev.to/max_quimby/artifacts-in-claude-code-the-operators-guide-4fb0",
       "source": "dev.to / #anthropic",
-      "time": "06/21 06:01 UTC 情緒：😐",
-      "sentiment": "",
+      "time": "06/21 06:01",
+      "sentiment": "😐",
       "body": "作者撰寫操作指南，說明 Claude Code 的 Artifacts 功能如何建立即時儀表板、圖表與可分享頁面，並搭配 Claude Design 同步程式碼庫。",
       "focusTags": []
     },
@@ -382,8 +382,8 @@
       "title": "simonw/pedalican",
       "url": "https://simonwillison.net/2026/Jul/14/pedalican/#atom-everything",
       "source": "Blog / Simon Willison",
-      "time": "07/14 22:29 UTC 情緒：😐",
-      "sentiment": "",
+      "time": "07/14 22:29",
+      "sentiment": "😐",
       "body": "Simon Willison 記錄對 pedalican 專案的觀察筆記。",
       "focusTags": []
     },
@@ -391,8 +391,8 @@
       "title": "Quoting Armin Ronacher",
       "url": "https://simonwillison.net/2026/Jul/14/armin-ronacher/#atom-everything",
       "source": "Blog / Simon Willison",
-      "time": "07/14 18:04 UTC 情緒：🤔",
-      "sentiment": "",
+      "time": "07/14 18:04",
+      "sentiment": "🤔",
       "body": "Simon Willison 引用 Armin Ronacher 的觀點：軟體專案共同的語言不是英語或 Python，而是對其核心概念的共同理解。",
       "focusTags": []
     },
@@ -400,8 +400,8 @@
       "title": "I built an app where you control exactly what context Claude sees: branch from any message, merge whole chats. Free to try.",
       "url": "https://www.reddit.com/r/ClaudeCode/comments/1ux3c59/i_built_an_app_where_you_control_exactly_what/",
       "source": "Reddit / r/ClaudeCode",
-      "time": "07/15 11:37 UTC 情緒：😊",
-      "sentiment": "",
+      "time": "07/15 11:37",
+      "sentiment": "😊",
       "body": "使用者釋出應用程式，讓使用者能精準控制 Claude 看到的 context，包括從任一則訊息分支對話、合併多個對話串，免費試用。",
       "focusTags": []
     },
@@ -409,8 +409,8 @@
       "title": "Fable is 2x the cost but needs ~1/3 the babysitting. How are you routing tasks between models?",
       "url": "https://www.reddit.com/r/ClaudeCode/comments/1ux38ar/fable_is_2x_the_cost_but_needs_13_the_babysitting/",
       "source": "Reddit / r/ClaudeCode",
-      "time": "07/15 11:32 UTC 情緒：🤔",
-      "sentiment": "",
+      "time": "07/15 11:32",
+      "sentiment": "🤔",
       "body": "使用者分享改用 20x 訂閱方案全面嘗試 Fable 的心得：成本是原本的兩倍，但需要盯著看的時間只要約三分之一，並詢問其他人如何在不同模型間分配任務。",
       "focusTags": []
     },
@@ -418,8 +418,8 @@
       "title": "I built a free Skill + CLI that lets Claude Code share your everyday Chrome — across multiple machines",
       "url": "https://www.reddit.com/r/ClaudeAI/comments/1ux2waw/i_built_a_free_skill_cli_that_lets_claude_code/",
       "source": "Reddit / r/ClaudeAI",
-      "time": "07/15 11:15 UTC 情緒：😊",
-      "sentiment": "",
+      "time": "07/15 11:15",
+      "sentiment": "😊",
       "body": "使用者釋出 Browser Relay，一款免費、開源、MIT 授權的 Skill 與 CLI 工具，讓 Claude Code 等編碼 agent 能透過 Skill 與 shell 指令共用日常使用的 Chrome 瀏覽器，並可跨多台機器運作。",
       "focusTags": []
     }
