@@ -195,6 +195,13 @@ Simon Willison（知名開發者博主）發表文章，認為 Anthropic 與 Ope
 
 ### 2026-07
 
+#### 2026-07-25
+- **[著作權和解案，媒體擴散，非新事實] CNN 跟進報導 Anthropic 將支付《哈利波特》系列出版商和解賠款**：與 07-22～24 已記錄事實相同，未見新增金額或細節，詳見「財務狀況」表更新（Google News/CNN）
+- **[戰略合作，單一來源跟進，非新事實] MarketScale 重申 Blackstone／Ode 合資公司「企業 AI 價值在於實作而非模型」定位**：與既有 07-15/16 TechCrunch／Technology Org 報導方向一致，本則單一來源，尚待其他媒體佐證，詳見「戰略合作」表更新（Google News/MarketScale）
+- **[IPO 前瞻，新增] Yahoo Finance：Anthropic 被類比為「ETF 發行商版 SpaceX」**：詳見「IPO 前瞻與估值追蹤」表新增列（Google News/Yahoo Finance）
+- **[模型/計費，詳見 pricing] Claude Opus 5 正式發布；GitHub Issue #79337 互動量攀升並新增「靜默降級 Opus 4.8」細節**：詳見 [[entities/pricing]]、[[entities/opus-5]]
+- **[競品動態，詳見 competitor-landscape] SitePoint：Codex 5.3 生產工作流 vs Claude 複雜重構取捨比較**：詳見 [[topics/competitor-landscape]]
+
 #### 2026-07-24
 - **[估值訊號，新增] Bloomberg：Alphabet 持有 Anthropic 股權市值跳升至約 1,240 億美元**：詳見「IPO 前瞻與估值追蹤」表新增列、[[entities/google-investment]] 時序（Google News/Bloomberg.com）
 - **[戰略合作，資安生態擴張] Cyberhaven 新增支援 ChatGPT Enterprise 與 Claude Compliance API 整合；Orca Security 07-21 整合再獲二次確認**：詳見「戰略合作」表新增列/更新（Google News/PR Newswire；Google News/Security Info Watch）
