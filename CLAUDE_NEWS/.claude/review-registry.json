@@ -2,7 +2,7 @@
   "_doc": "check_rules.py 讀取的專案設定。新增同步配對/錨點/allowlist 時登記於此，不改引擎（scripts/check_rules.py）。",
 
   "bare_references": {
-    "globs": [".claude/commands/*.md", ".claude/rules/*.md"],
+    "globs": [".claude/commands/*.md", ".claude/rules/*.md", "docs/cloud-runbooks/*.md"],
     "pattern": "CLAUDE\\.md",
     "exempt_files": [
       ".claude/rules/claude-md-edit.md"
@@ -14,14 +14,16 @@
       {"file": ".claude/commands/wiki-lint.md", "pattern": "CLAUDE\\.md 健檢"},
       {"file": ".claude/commands/wiki-lint.md", "pattern": "根目錄 `CLAUDE\\.md`"},
       {"file": ".claude/commands/wiki-weekly-review.md", "pattern": "根目錄 `CLAUDE\\.md`"},
-      {"file": ".claude/rules/wiki-ingest-people.md", "pattern": "CLAUDE\\.md 論述"}
+      {"file": ".claude/rules/wiki-ingest-people.md", "pattern": "CLAUDE\\.md 論述"},
+      {"file": "docs/cloud-runbooks/weekly-lint.md", "pattern": "CLAUDE\\.md 健檢"}
     ]
   },
 
   "path_existence": {
-    "globs": [".claude/commands/*.md", ".claude/rules/*.md"],
+    "globs": [".claude/commands/*.md", ".claude/rules/*.md", "docs/cloud-runbooks/*.md"],
     "extensions": [".md", ".py", ".json", ".jsonl"],
     "allowlist_patterns": [
+      "^\\.claude/rules/wiki-ingest-\\[.+\\]\\.md$",
       "^news/YYYY-MM-DD\\.md$",
       "^news/TARGET_DATE\\.md$",
       "^news/YESTERDAY\\.md$",
@@ -204,6 +206,51 @@
         "# Phase C 步驟",
         "Step 6：寫入 task_scheduler\\.log"
       ]
+    },
+    {
+      "name": "雲端 daily runbook <-> news-pipeline-steps.md：步驟標題錨點逐字相符（改步驟標題必須同步 runbook）",
+      "assertion": "all_contain",
+      "files": ["docs/cloud-runbooks/daily.md", ".claude/commands/news-pipeline-steps.md"],
+      "patterns": [
+        "Step 0：昨日缺跑檢查",
+        "Step 1a：新聞抓取",
+        "Step 1b：生成日報",
+        "Step 1c：確認 emitted-cache",
+        "Step 2：Wiki Ingest",
+        "Step 3：Commit Wiki 變更",
+        "Step 4：建置 Web Reader",
+        "Step 5：Commit Web 並統一推送",
+        "Step 6：寫入 task_scheduler\\.log"
+      ]
+    },
+    {
+      "name": "雲端 weekly runbook <-> wiki-lint.md：步驟標題錨點逐字相符（改步驟標題必須同步 runbook）",
+      "assertion": "all_contain",
+      "files": ["docs/cloud-runbooks/weekly-lint.md", ".claude/commands/wiki-lint.md"],
+      "patterns": [
+        "1\\. 載入 wiki 全貌",
+        "2\\. 並行派工",
+        "3\\. 處理語意分岔／死案歸檔候選",
+        "4\\. 建議並建立新實體頁",
+        "5\\. 更新 wiki/overview\\.md",
+        "6\\. CLAUDE\\.md 健檢",
+        "7\\. 讀者模擬驗收",
+        "8\\. 記錄本次 lint",
+        "9\\. 更新 wiki/index\\.md",
+        "10\\. 收尾閉迴路"
+      ]
+    },
+    {
+      "name": "trigger 鏡像 JSON 仍指向對應 runbook（薄殼規約：prompt 只指路，不含步驟細節）",
+      "assertion": "all_contain",
+      "files": ["docs/cloud-runbooks/triggers/daily-news-pipeline-cloud.json"],
+      "patterns": ["docs/cloud-runbooks/_shared\\.md", "docs/cloud-runbooks/daily\\.md"]
+    },
+    {
+      "name": "trigger 鏡像 JSON（weekly）仍指向對應 runbook",
+      "assertion": "all_contain",
+      "files": ["docs/cloud-runbooks/triggers/weekly-wiki-lint-cloud.json"],
+      "patterns": ["docs/cloud-runbooks/_shared\\.md", "docs/cloud-runbooks/weekly-lint\\.md"]
     }
   ],
 

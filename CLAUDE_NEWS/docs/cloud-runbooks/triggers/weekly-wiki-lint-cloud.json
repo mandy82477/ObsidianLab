@@ -1,0 +1,28 @@
+{
+  "_mirror_note": "claude.ai trigger 定義鏡像備份，非執行檔。改雲端後同步更新本檔（見 ../README.md）。最後同步：2026-07-25",
+  "id": "trig_01E41amaGSNuL8jeUhCR8iUw",
+  "name": "weekly-wiki-lint-cloud",
+  "cron_expression": "0 1 * * 6",
+  "_cron_note": "UTC，= 台北每週六 09:00；與每日 routine（13:00 UTC）不重疊",
+  "enabled": true,
+  "job_config": {
+    "ccr": {
+      "environment_id": "env_01CLGfKzve6yQYRPMPd3988i",
+      "events": [
+        {
+          "data": {
+            "message": {
+              "role": "user",
+              "content": "你是 CLAUDE_NEWS 每週 wiki 品質維護的雲端排程 agent。你在 Anthropic 雲端 Linux 環境對 ObsidianLab repo 有完整 git checkout 與 push 權限，沒有互動使用者可即時確認。全程使用繁體中文。\n\n1. cd 到 repo 的 CLAUDE_NEWS 子目錄。\n2. 讀 `docs/cloud-runbooks/_shared.md`（雲端共用規則：環境覆寫、收尾閉迴路、無人值守原則）。\n3. 讀 `docs/cloud-runbooks/weekly-lint.md`，完全依照該 runbook 執行，並輸出該 runbook 要求的完成摘要。\n\n本 prompt 刻意不描述任何步驟細節——執行規範全部在 runbook 內，跟著 pipeline 一起版本控管（理由見 `_shared.md`「為什麼 trigger prompt 要是薄殼」）。\n\n失效保護：若上述任一 runbook 檔案不存在或讀取失敗，不要自行猜測流程、不要憑印象執行 lint。改為 append 一行 `[cloud weekly lint ABORTED <date>] runbook 缺失：<檔名>` 到 `src/logs/task_scheduler.log`，git add 該檔後 commit 並 push，然後結束。"
+            }
+          }
+        }
+      ],
+      "session_context": {
+        "allowed_tools": ["Bash", "Read", "Write", "Edit", "Glob", "Grep", "Task"],
+        "model": "claude-sonnet-5",
+        "sources": [{ "git_repository": { "url": "https://github.com/mandy82477/ObsidianLab" } }]
+      }
+    }
+  }
+}
