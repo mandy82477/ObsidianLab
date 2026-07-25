@@ -38,11 +38,15 @@ import tarfile
 import tempfile
 from pathlib import Path
 
-# Windows 主控台預設 cp950，印不出 ✅／⚠️ 這類字元會直接 UnicodeEncodeError。
-# 本腳本兩邊環境都會跑（雲端 Linux/UTF-8、本機 Windows/cp950），統一把輸出
-# 轉成 UTF-8 且遇到無法編碼的字元以替代字元帶過，不讓「印字」搞掛「裝套件」。
-if hasattr(sys.stdout, "buffer"):
-    sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding="utf-8", errors="replace")
+def _use_utf8_stdout() -> None:
+    """Windows 主控台預設 cp950，印不出 ✅／⚠️ 會 UnicodeEncodeError。
+
+    只在直接執行時呼叫，**不可**放在模組層級：模組層級換掉 sys.stdout 會在本檔
+    被 import 時連帶關掉呼叫端的輸出流（實際踩過：unittest discover 匯入姊妹腳本
+    後噴 `ValueError: I/O operation on closed file`）。
+    """
+    if hasattr(sys.stdout, "buffer"):
+        sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding="utf-8", errors="replace")
 
 
 def print(*args, **kwargs):  # noqa: A001 - 蓋掉內建 print，確保永不因編碼中斷
@@ -131,6 +135,7 @@ def ensure_sgmllib() -> None:
 
 
 def main() -> int:
+    _use_utf8_stdout()
     print("=== 雲端環境自備補丁（冪等；本機通常全部跳過）===")
     ensure_pip_packages()
     ensure_sgmllib()

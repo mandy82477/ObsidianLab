@@ -14,6 +14,7 @@
       {"file": ".claude/commands/wiki-lint.md", "pattern": "CLAUDE\\.md 健檢"},
       {"file": ".claude/commands/wiki-lint.md", "pattern": "根目錄 `CLAUDE\\.md`"},
       {"file": ".claude/commands/wiki-weekly-review.md", "pattern": "根目錄 `CLAUDE\\.md`"},
+      {"file": ".claude/commands/news-pipeline-steps.md", "pattern": "根目錄 `CLAUDE\\.md`"},
       {"file": ".claude/rules/wiki-ingest-people.md", "pattern": "CLAUDE\\.md 論述"},
       {"file": "docs/cloud-runbooks/weekly-lint.md", "pattern": "CLAUDE\\.md 健檢"}
     ]

@@ -41,8 +41,15 @@ FAIL_SOURCES = 4   # 10 個來源掛掉 4 個（四成）→ 那天的日報必�
 WARN_SOURCES = 2
 FAIL_ITEMS = 10    # 實績最低 34 則；低到 10 以下已非淡日而是管線異常
 
-if hasattr(sys.stdout, "buffer"):
-    sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding="utf-8", errors="replace")
+def _use_utf8_stdout() -> None:
+    """Windows 主控台預設 cp950，印不出 ✅／⚠️ 會 UnicodeEncodeError。
+
+    只在直接執行時呼叫，**不可**放在模組層級：本檔會被測試 import，模組層級換掉
+    sys.stdout 會連帶關掉 unittest runner 的輸出流（實際踩過：
+    `ValueError: I/O operation on closed file`）。
+    """
+    if hasattr(sys.stdout, "buffer"):
+        sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding="utf-8", errors="replace")
 
 
 def evaluate(data: dict) -> tuple[int, list[str]]:
@@ -78,6 +85,7 @@ def evaluate(data: dict) -> tuple[int, list[str]]:
 
 
 def main() -> int:
+    _use_utf8_stdout()
     p = argparse.ArgumentParser()
     p.add_argument("--file", default=str(DEFAULT_FILE))
     args = p.parse_args()

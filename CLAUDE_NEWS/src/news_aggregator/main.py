@@ -201,7 +201,32 @@ def main() -> None:
     if args.confirm_digest:
         gather_path = LOG_DIR.parent / "gathered_items.json"
         gathered = json.loads(gather_path.read_text(encoding="utf-8"))
-        urls = [it["url"] for it in gathered.get("items", [])]
+        all_urls = [it["url"] for it in gathered.get("items", []) if it.get("url")]
+
+        # 只確認「真的出現在日報裡」的 URL。
+        #
+        # 確認＝「這則已經露出過，別再提供了」。若把 gathered 裡的每則都確認掉，
+        # 那些被日報漏收的條目就會被永久靜默丟棄——這正是兩階段確認要防的失敗，
+        # 只是發生在另一層。2026-07-25 實際踩到：抓料 73 則、日報只收 38 則，
+        # 另外 35 則（含 61 留言與 47 留言的 GitHub Issue）全被確認掉。
+        digest_path = NEWS_DIR / f"{target_date.isoformat()}.md"
+        if digest_path.exists():
+            text = digest_path.read_text(encoding="utf-8")
+            urls = [u for u in all_urls if u in text]
+            skipped = len(all_urls) - len(urls)
+            if skipped:
+                logger.warning(
+                    "--confirm-digest: %d/%d 則未出現在 %s，不予確認（將於下次重新提供）",
+                    skipped, len(all_urls), digest_path.name,
+                )
+        else:
+            # 日報不存在就代表沒有任何一則真的露出過，一則都不該確認
+            urls = []
+            logger.warning(
+                "--confirm-digest: 找不到 %s，不確認任何項目（全部保留待下次提供）",
+                digest_path.name,
+            )
+
         cache = confirm_digest(load_cache(), urls, today=target_date)
         save_cache(cache)
         logger.info("--confirm-digest: confirmed %d item(s) from %s", len(urls), gather_path)
