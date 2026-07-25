@@ -203,22 +203,18 @@ def main() -> None:
         gathered = json.loads(gather_path.read_text(encoding="utf-8"))
         all_urls = [it["url"] for it in gathered.get("items", []) if it.get("url")]
 
-        # 只確認「真的出現在日報裡」的 URL。
+        # 確認的判準是「這批原料有沒有真的被 pipeline 處理過」，不是「有沒有印進
+        # 日報」。日報只留讀者要讀的重點，本來就會篩掉一部分；被篩掉的條目仍會
+        # 經由 `scripts/list_digest_omissions.py` 進入 wiki ingest 的分類與派工，
+        # 由記者判斷收不收（見 `.claude/commands/wiki-ingest.md`）。
         #
-        # 確認＝「這則已經露出過，別再提供了」。若把 gathered 裡的每則都確認掉，
-        # 那些被日報漏收的條目就會被永久靜默丟棄——這正是兩階段確認要防的失敗，
-        # 只是發生在另一層。2026-07-25 實際踩到：抓料 73 則、日報只收 38 則，
-        # 另外 35 則（含 61 留言與 47 留言的 GitHub Issue）全被確認掉。
+        # 2026-07-25 曾短暫改成「只確認出現在日報裡的 URL」，但那會讓每天被日報
+        # 篩掉的條目永遠處於未確認狀態、日復一日被重新提供，直到 14 天 TTL 過期
+        # ——是 churn 而不是保護。真正該保證的是 wiki 看得到全量，已改在 ingest
+        # 的輸入端解決。
         digest_path = NEWS_DIR / f"{target_date.isoformat()}.md"
         if digest_path.exists():
-            text = digest_path.read_text(encoding="utf-8")
-            urls = [u for u in all_urls if u in text]
-            skipped = len(all_urls) - len(urls)
-            if skipped:
-                logger.warning(
-                    "--confirm-digest: %d/%d 則未出現在 %s，不予確認（將於下次重新提供）",
-                    skipped, len(all_urls), digest_path.name,
-                )
+            urls = all_urls
         else:
             # 日報不存在就代表沒有任何一則真的露出過，一則都不該確認
             urls = []

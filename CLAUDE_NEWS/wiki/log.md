@@ -3071,7 +3071,7 @@ Append-only 紀錄。每次 ingest、lint，以及**揭露缺陷或促成改動�
 
 - **觸發：** 使用者問「SCHEDULE 現在會指定 PIPELINE 要執行哪一行不好，pipeline 一更新就容易出問題」，並要求整體 review 雲端排程、思考 corner case 與擴充性。
 - **根因（揭露的缺口）：** 雲端 trigger 的 prompt 存在 claude.ai API、不在 repo 內，卻寫死了 11 個步驟座標（daily 的 `Step 0/1a/1b/3/4/5/6`、weekly 的 `Step 3/4/6a/6c/6d/6f`）。`scripts/check_rules.py` 掃不到雲端內容，等於專案最強的防再犯機制對最危險的耦合點完全盲區。缺口已實際存在：**舊 daily prompt 的步驟列舉裡沒有 `Step 1c`**（`--confirm-digest`），雲端沒漏做純粹是 agent 讀檔時順著往下做，不是 prompt 要求的。
-- **第二個（更嚴重的）發現：** 雲端 routine 從不 commit `src/news_aggregator/emitted_items.json`，Step 1c 的確認結果每天隨容器銷毀。committed 檔案逐日確認率佐證：07-14~07-24 雲端日幾乎全為 0（3/60、5/58、1/58、1/56、3/59、0/45、3/68、0/68、0/54），僅本機手動執行的 07-19、07-22 為 100%。**2026-07-13 漏失 25 則新聞後建立的兩階段確認防線，整個自動化時期沒有生效過**，跨日去重全靠 `seen_urls.json` 獨撐。
+- **第二個（更嚴重的）發現：** 雲端 routine 從不 commit `src/news_aggregator/emitted_items.json`，Step 1c 的確認結果每天隨容器銷毀。committed 檔案逐日確認率佐證：07-14~07-24 雲端日幾乎全為 0（3/60、5/58、1/58、1/56、3/59、0/45、3/68、0/68、0/54），僅本機手動執行的 07-19、07-22 為 100%。**2026-07-13 漏失 25 則新聞後建立的兩階段確認防線，整個自動化時期沒有生效過**。（2026-07-26 更正：原記「跨日去重全靠 `seen_urls.json` 獨撐」有誤——`seen_urls.json` 只有 `anthropic_blog.py` 一個來源在用，不是全域去重層，emitted-cache 才是跨日去重的唯一防線，此缺口比原判斷更關鍵。）
 - **處置（兩波）：**
   - 第一波：新增 `docs/cloud-runbooks/`（`_shared.md` / `daily.md` / `weekly-lint.md`），執行規範進 repo 並改用步驟標題錨點引用；trigger prompt 縮成薄殼（只指路 + runbook 缺失時的失效保護）；trigger 定義鏡像存進 `docs/cloud-runbooks/triggers/`；runbook 納入 `.claude/review-registry.json` 的裸露引用／路徑存在性／同步配對檢查。
   - 第二波：Step 1c 明文要求 commit `emitted_items.json` 並隨統一 push 上站；runbook 前置閘改兩道（新增「日報已存在則中止」的冪等閘）；push 加 `pull --rebase` 重試與 detached HEAD 檢查，並定義唯一可自動解的衝突（`emitted_items.json` 讓給遠端）；新增 `.github/workflows/daily-watchdog.yml`（15:00 UTC）檢查抓料／日報／網站三件當日產出，缺件則 job 失敗，以 GitHub 排程失敗通知當告警管道。
@@ -3079,3 +3079,14 @@ Append-only 紀錄。每次 ingest、lint，以及**揭露缺陷或促成改動�
 - **驗證：** `python scripts/run_tests.py` 全綠；三項負向測試皆確認會變紅（改步驟標題 → 同步配對紅、塞入禁字 → `max_count` 紅、watchdog 缺件 → job fail），watchdog 另以 07-24 為基準日乾跑綠燈。
 - **待驗證：** 薄殼架構尚未經過真實雲端執行，已登記 `docs/workaround-register.md`（複查日 2026-07-26）。
 - **順帶處理：** 本機 master 落後 origin 七天且雙方各有獨有 commit（本機 15 個未推送），已 merge 並解衝突（web_reader 生成物取雲端版、`log.md` 依時序保留雙方、`community-tech-patterns.md` 標頭取較新日期）後推送。
+
+## 2026-07-26 Query：日報漏收近半 → 釐清呈現層與沉澱層的分工
+
+- **觸發：** 使用者問「為什麼今日聚焦變少了」。查證發現不只聚焦：07-25 抓料 73 則、日報只收 38 則（漏 48%），前一日同流程只漏 2/63（3%）；漏掉的含 61 留言與 47 留言的 GitHub Issue。時間點正對上 07-24 把「選材門檻」搬到檔尾的改版。
+- **第一版判斷（錯誤）：** 認定日報是「原始資料層」、應收錄全部條目，於是加了 90% 覆蓋率閘擋下並要求補齊，同時把 `--confirm-digest` 改成只確認真的印進日報的 URL。
+- **使用者更正：** 日報不必留全部 raw，只留讀者要讀的重點；要考慮全部的是 wiki 沉澱層。
+- **根因（依更正後的模型重新定位）：** 日報篩選本身沒錯，錯的是 **wiki ingest 的輸入只有日報**——過濾發生在呈現層，沉澱層就跟著失明，那 35 則從此沒有任何記者看過。原先的覆蓋率閘是修在錯的地方；`--confirm-digest` 的改動更會讓每天被篩掉的條目永遠處於未確認狀態、日復一日重新提供直到 TTL 過期，是 churn 不是保護。
+- **處置：** (a) `scripts/check_digest_coverage.py` 改名並改寫為 `scripts/list_digest_omissions.py`——不再擋流程，改為列出「抓到但沒進日報」的差集（依互動分數排序）；(b) `.claude/commands/wiki-ingest.md` Step 1 強制執行該指令，Step 2 分類涵蓋「日報條目 + 未收錄條目」，未收錄者標記註明摘要較簡略，原則寫為「不收可以，沒看過不行」；(c) `main.py` 的 `--confirm-digest` 還原為確認整批（保留「日報不存在則一則都不確認」的安全網）；(d) `news-pipeline-steps.md` Step 3d 由檢查改為分層原則說明，明確授權日報篩選，並限定「選材門檻」只作用於今日聚焦。
+- **資料修復：** 07-25 那 35 則已改回未確認，會在次日抓料重新提供並經由新路徑進入 wiki 評估。
+- **驗證：** 123 個測試全綠（含 omissions 清單的 6 個新測試）；`list_digest_omissions.py` 對 07-25 實跑列出 35 則、最高互動兩則排在最前。
+- **教訓：** 這是「修對現象、修錯層」的個案——覆蓋率不足只是表徵，真正的不變量是「沉澱層必須看得到全量」。定位缺陷時要先問這個不變量該由哪一層保證。
