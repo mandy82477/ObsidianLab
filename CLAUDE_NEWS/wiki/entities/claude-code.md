@@ -162,7 +162,7 @@
 - 🔴 **未修復**｜**功能請求：Claude Code Desktop 多視窗支援（GitHub issue #30154，累積 60 則留言、202 個讚，2026-07-09）**：使用者呼籲 Desktop app 支援多視窗同時操作；官方尚未回應。
 - 🔴 **未修復**｜**Opus 4.7 thinking summaries 未在 VS Code 擴充套件正確渲染（GitHub issue #49322，累積 50 則留言、42 個讚，2026-07-09）**：使用者回報使用 Opus 4.7 時，VS Code 擴充套件無法正確渲染 thinking summaries 內容；官方尚未回應。見 [[entities/opus-4-7]]。
 - 🔴 **未修復**｜**VSCode 擴充套件 `ide_selection` 缺失、`ide_opened_file` 回報錯誤（GitHub issue #8451，累積 48 則留言、35 個讚，2026-07-10）**：VSCode 擴充套件未正確回報 `ide_selection`，且 `ide_opened_file` 欄位回傳錯誤檔案資訊，影響依賴這些欄位判斷編輯器狀態的工作流；官方尚未回應。
-- 🔴 **未修復**｜**GitHub Connector 已在 Claude Desktop 連結卻未被識別（GitHub issue #32479，累積 71 則留言、120 個讚，2026-07-14）**：使用者於 Claude Desktop 完成 GitHub Connector 連結授權後，Claude 仍無法辨識該連結狀態，導致依賴 GitHub 存取的工作流無法使用；官方尚未回應。
+- 🔴 **未修復**｜**GitHub Connector 已在 Claude Desktop 連結卻未被識別（GitHub issue #32479，累積 72 則留言、127 個讚，首見 2026-07-14，2026-07-25 互動數更新）**：使用者於 Claude Desktop 完成 GitHub Connector 連結授權後，Claude 仍無法辨識該連結狀態，導致依賴 GitHub 存取的工作流無法使用；官方尚未回應。
 - 🔴 **未修復**｜**VSCode 擴充套件 UI 確認變更時未顯示 Edit 預覽/diff（GitHub issue #8660，累積 52 則留言、82 個讚，2026-07-08）**：在 VSCode extension 中確認變更時，Edit 預覽/diff 畫面未正確顯示，使用者難以在套用前檢視實際異動內容；官方尚未回應。
 - 🔴 **未修復**｜**Claude Desktop/Cowork 缺 RTL（希伯來/阿拉伯文）排版支援（GitHub issue #38005，累積 40 則留言、105 個讚，首見 2026-07-07，2026-07-23 互動數更新，功能請求）**：使用者要求 Claude Desktop 與 Cowork 介面支援 RTL（right-to-left）排版，目前不支援希伯來文、阿拉伯文等 RTL 語言的正確顯示；官方尚未回應。
 - 🔴 **未修復**｜**Windows 11 Pro：CoworkVMService 因「signature verification initialization failed: failed to get service executable path」無法啟動（GitHub issue #29941，累積 39 則留言，首見 2026-07-23）**：使用者回報 Windows 11 Pro 上 CoworkVMService 因簽章驗證初始化失敗（找不到服務執行檔路徑）而無法啟動，導致 Cowork 功能在該平台完全無法使用；官方尚未回應。
@@ -186,11 +186,12 @@
 - 🔴 **未修復**｜**帳號限制後申訴表單重新導向迴圈（GitHub issue #62503，累積 31 則留言、5 個讚，2026-07-07）**：帳號遭限制的使用者嘗試提交申訴表單時陷入重新導向迴圈，無法完成申訴流程，官方尚未回應。
 - 🔴 **未修復**｜**功能請求聚集：跨平台支援需求未滿足**：多項高反應數 feature request 顯示使用者對跨平台支援的強烈需求——官方 Linux（Ubuntu LTS / Debian）Desktop build（[issue #65697](https://github.com/anthropics/claude-code/issues/65697)，累積反應 651）、Desktop 於 Windows 上改用 WSL 執行指令的選項（[issue #12506](https://github.com/anthropics/claude-code/issues/12506)，累積反應 134）、Desktop 與 CLI 之間同步 Skills（[issue #20697](https://github.com/anthropics/claude-code/issues/20697)，累積反應 127）；均為社群高投票 feature request，官方尚未排入路線圖。多帳號管理相關訴求已獨立整併至「👤 帳號管理」分組
 
-### 🌐 服務穩定性（17 條已修復、5 條未修復、1 條待查證）
+### 🌐 服務穩定性（18 條已修復、5 條未修復、1 條待查證）
 
 > 2026-07-15～07-17 為近月密度最高的一段：Anthropic Status 三天內累計 9 起獨立事件（下方第 3～11 條），密度明顯高於近月平均；07-19 彙整時對照 07-18 日報確認全數已同日解決，07-17 那起（原 07-17 彙整時仍標記「修復實施中」）實際已於 12:21 UTC 解決。GV Wire 報導曾引用 Downdetector 錯誤回報數上升作為外部佐證，顯示使用者端在修復完成前確實感受到服務品質下降。2026-07-20～07-21 又出現一波獨立事件（下方前 5 條），多數已同日或次日解決，唯 07-21 的 Fable 5 事件截至彙整時仍在監控中；2026-07-24 再度出現 Opus 4.8 錯誤率升高事件，同日解決。
 
 - ✅ **已修復（同日解決）**｜**Anthropic Status：Opus 4.8 錯誤率升高（2026-07-24 09:09 UTC 調查中 → 09:35 UTC 監控中 → 10:22 UTC 確認解決）**：與先前 07-17、07-20 的 Opus 4.8 錯誤率事件為不同批次的獨立事故。[來源](https://status.claude.com/incidents/0lbk5m7mbqk5)
+- ✅ **已修復（跨日解決）**｜**Anthropic Status：Microsoft Office 附加元件安裝異常（2026-07-22 17:56 UTC 首次識別 → 2026-07-24 15:36 UTC 確認解決）**：Office 版 Claude 附加元件安裝流程出現異常，非 Claude Code CLI 本身問題，屬 Anthropic Status 頁面涵蓋的生態系其他用戶端事故，補記於此供跨產品穩定性對照。[來源](https://status.claude.com/incidents/yc7mr2gvl914)
 - 🔴 **未修復（監控中，尚未見「已解決」時間戳）**｜**Anthropic Status：Fable 5 錯誤率升高（2026-07-21 11:47 UTC 起）**：狀態頁標記「Monitoring - A fix has been implemented and we are monitoring the results」，套用修復後仍在觀察階段，尚未確認完全解決；與 07-17 及下方 07-20 的 Fable 5 事件為不同批次的獨立事故。[來源](https://status.claude.com/incidents/lw0sb1srtznh)
 - ✅ **已修復（同日解決）**｜**Anthropic Status：Haiku 4.5 錯誤率升高（2026-07-21 08:53 UTC 通報並確認解決）**。[來源](https://status.claude.com/incidents/v35b71rthzhp)
 - ✅ **已修復（同日解決）**｜**Anthropic Status：Opus 4.8 錯誤率升高（2026-07-20 16:16 UTC 通報並確認解決）**：與同日稍早的 Opus 4.5 錯誤率事件（見下）為不同批次的獨立事故。[來源](https://status.claude.com/incidents/4n0mmv2v41rf)
@@ -226,6 +227,7 @@
 
 | 版本 | 日期 | 重點 |
 |------|------|------|
+| **v2.1.220** | 2026-07-25 | Bug fixes and reliability improvements，官方 changelog 未列具體項目，純可靠性修正，無使用者端功能異動（見 [Release](https://github.com/anthropics/claude-code/releases/tag/v2.1.220)）|
 | **anthropic-sdk-python v0.119.0** | 2026-07-23 | Features：新增 API stop reason **`model_continue`**（見 [Release](https://github.com/anthropics/anthropic-sdk-python/releases/tag/v0.119.0)）|
 | **anthropic-sdk-typescript sdk-v0.114.0** | 2026-07-23 | Features：新增 API 支援，changelog 於「add new sto[p reason]」處截斷，研判與同日 Python SDK 的 `model_continue` stop reason 為同一異動（見 [Release](https://github.com/anthropics/anthropic-sdk-typescript/releases/tag/sdk-v0.114.0)）|
 | **v2.1.218** | 2026-07-22 | 將 `/code-review` 改為以**背景 subagent** 執行，審查工作不再佔用對話內容，維持 stacked slash commands 作為審查對象；新增螢幕報讀軟體相關無障礙改善，官方 changelog 於「Added screen-reade[r]…」處截斷，具體對應範圍未知（見 [Release](https://github.com/anthropics/claude-code/releases/tag/v2.1.218)）|

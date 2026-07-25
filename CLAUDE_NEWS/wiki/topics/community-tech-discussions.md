@@ -3,11 +3,11 @@
 **狀態：** ongoing
 **領域：** 🌐 社群
 **開始日期：** 2026-04-25
-**最後更新：** 2026-07-24
-**最後新聞更新：** 2026-07-24
+**最後更新：** 2026-07-25
+**最後新聞更新：** 2026-07-25
 
-> **最熱討論**（2026-07-24）
-> 今日新增三則條目：OpenAI 與 Anthropic 對開放權重模型風險立場趨同（原文 Axios，HN score 287，本輪最高分），HN 高分留言批評此舉更像是自利心態包裝成使命宣稱，並質疑 Anthropic「競爭一出現就向政府打小報告」的溝通風格；Show HN claude-thermos（保持 Claude session 快取熱度的工具，HN score 102）引發「這只是把成本轉嫁給其他用戶」的批評，留言並揭露 Pro/Max 方案快取到期時間現為 1 小時、此前一度退化至 5 分鐘（工具本身已於 [[topics/community-tech-patterns]] 收錄）；Simon Willison 轉介 Martin Alderson 對「首起已知 runaway AI agent」事件的評論，質疑究竟是真實事故還是拙劣行銷噱頭（具名表態，無社群延燒）。今日其餘 Show HN 條目（Mumble Dictation、Bookshelf、Hibernate/restore、Notebooker.ai、5dive、Skim、5QL、BoE MCP、Anamne、BDFL、Fleet）分數僅 1–6 分，遠低於低門檻（HN≥10 分），未收錄；Reddit r/ClaudeCode 兩則 sort=new 貼文（Web agency 建議分享、hooks 攔截 find/sed/cat）與 r/ClaudeAI 週熱門「Claude usage as reward」，經主題相關性判斷後認定非屬「思想碰撞」型技術討論，未收錄；KDnuggets／ZDNET 兩則 Google News 媒體稿內容從簡或已改記於 [[topics/community-tech-patterns]]。清理：四則 2026-07-02 的 ☄️閃現 條目（VS Code 使用率下降、Anthropic 動態插入系統訊息、390M tokens session 紀錄、thinking 停頓分心）首見已逾 21 天，依保留規則自「熱門討論」表格移除（技術彙整原文保留）。額度焦慮系列仍為近期背景（詳見「熱門討論」對應列）。
+> **最熱討論**（2026-07-25）
+> 今日新增一則達收錄門檻：Show HN promptster.ai（分析 Claude Code/Codex 工程師實際用法而非僅費用儀表板，HN score 14，source_count=2，同篇提及開源本機工具 cc-audit），訊號強度標為 🔥（單篇 Show HN 展示，尚無社群交鋒紀錄）。dev.to「I built a multi-agent loop where an adversarial Claude reviewer reads your actual codebase before approving plans」（execute25，#claudeai）與「Teaching Claude Code to Paint」（nb2lite-skill-claude）今日在日報中第三度重複出現，兩者皆已分別於 2026-07-10、2026-07-22 收錄於 [[topics/community-tech-patterns]]，本輪不重複新增（⚠️ 建議主編檢查日報 dedup 機制，同一 dev.to URL 疑似被重複抓取）。Reddit 兩則第一手分享——「確定性 CLAUDE.md 編譯器降 55.82% 指令 token」（r/ClaudeCode）與「開源多智能體 SDLC harness 比冷啟動 `claude -p` 省 7–75% 成本」（r/MachineLearning）——皆為單一來源、0 留言、無「週熱門」標記，依規則 RSS score 不可信且無跨平台佐證，未達收錄門檻，未收錄；「play DOOM in claudecode」純趣味小工具，0 留言遠低於門檻，未收錄；「Kimi-K3 isn't quite better than Fable yet」（r/LocalLLaMA 週熱門）屬模型能力比較，判斷歸模型記者 [[topics/model-comparison]] 頁面範疇，本頁不重複記錄。清理：「Ask HN：跳脫 Prompt-Response 迴圈的 AI 編碼互動模式」（首見 2026-07-03）距今已 22 天，超過 ☄️閃現 21 天保留期限，自「熱門討論」表格移除（技術彙整原文保留）。額度焦慮系列仍為近期背景（詳見「熱門討論」對應列）。
 
 ---
 
@@ -119,6 +119,7 @@ MCP 的實際成本遠超多數使用者預期，已有多個量化案例：
 
 | 討論主題 | 首見 | 熱度 | 模式 | 核心論點 | 衍生 |
 |---------|------|------|------|---------|------|
+| Show HN：promptster.ai 分析 Claude Code/Codex 實際使用模式而非僅費用儀表板 | 2026-07-25 | 🔥 | ☄️閃現 | 作者指出企業常有自建的 OTel 花費儀表板（顯示花費+席位），卻缺乏真正分析工程師實際用法與改善空間的工具；發布 promptster.ai，manager 端可看程式碼品質與團隊工作流彙整視角，engineer 端取得個人化教練建議節省 token 同時維持產出品質；同篇提及開源本機工具 cc-audit 供稽核本機 Claude Code 設定；HN score 14，source_count=2（跨來源佐證），達收錄低門檻；[原文](https://news.ycombinator.com/item?id=49042653)（HN） | cc-audit |
 | OpenAI 與 Anthropic 對開放權重模型風險立場趨同，引發「自利心態包裝使命宣稱」批評 | 2026-07-23 | 🔥🔥🔥 | ☄️閃現 | Axios 報導兩家公司對開放權重模型風險的立場趨於一致；HN 討論（score 287，本輪最高分）高分留言批評此舉更像自利心態包裝成使命宣稱：「Anthropic 尤其有種傲慢的溝通風格……競爭一出現，就突然變成向政府打小報告的抓耙仔」；單平台高互動、議題共鳴深，尚無跨平台佐證；[原文](https://www.axios.com/2026/07/22/openai-anthropic-open-models-trump-china)（HN） | — |
 | Show HN：claude-thermos 保活工具引發「成本轉嫁」爭議，意外揭露快取到期時間曾退化至 5 分鐘 | 2026-07-23 | 🔥🔥🔥 | ☄️閃現 | 作者釋出可讓 Claude session 保持 prompt cache 熱度的工具；HN 討論（score 102，達高門檻）聚焦此類「保活」行為是否只是把快取到期重算的成本轉嫁給其他共用資源的使用者，留言並指出 Pro/Max 方案快取到期時間現為 1 小時、此前一度退化至僅 5 分鐘；工具本身已於 [[topics/community-tech-patterns]] 收錄；[GitHub](https://github.com/izeigerman/claude-thermos)（HN） | claude-thermos |
 | Simon Willison 轉介：第一起「AI agent 失控」事件，還是一場拙劣行銷噱頭？ | 2026-07-23 | 🔥 | ☄️閃現 | Simon Willison 部落格轉介 Martin Alderson 對一起號稱「首起已知 runaway AI agent」事件的評論，質疑其真實性，認為更可能是一場拙劣的行銷噱頭而非真實事故；[原文](https://simonwillison.net/2026/Jul/23/the-first-known-runaway-ai-agent/#atom-everything)（Blog；具名表態，無社群延燒） | — |
@@ -152,7 +153,6 @@ MCP 的實際成本遠超多數使用者預期，已有多個量化案例：
 | Geosql：地理空間 Skill 宣稱 4 倍改善數據被質疑不一致 | 2026-07-08 | 🔥🔥🔥 | ☄️閃現 | 開發者發布 Geosql，供 Claude/Codex 使用的地理空間資料 skill，宣稱整體效能較基準提升約 4 倍；HN 討論者比對作者自己公布的細部任務成功率數據，指出逐項成功率加總後難以支撐「4 倍」這個整體宣稱數字，質疑基準測試方法論或呈現方式有誇大之嫌；[GitHub](https://github.com/dekart-xyz/geosql)（HN score 55） | — |
 | Anthropic API 穩定性與訂閱鎖定引發好感度流失論 | 2026-07-06 | 🔥🔥🔥 | ☄️閃現 | 部落格作者實測多款 agent harness 後批評 Anthropic API 穩定性不佳，且訂閱制與 API 額度綁定造成 vendor lock-in；認為在開源模型日益競爭下，此舉正流失開發者好感（HN score 97）；與同期「API 大規模錯誤」「額度上限焦慮」等穩定性/鎖定相關痛點呼應，但本篇核心論點聚焦「商業設計選擇」而非單純技術故障；[原文](https://raheeljunaid.com/blog/anthropics-method-to-losing-goodwill-in-a-few-easy-steps/)（HN） | — |
 | 額度焦慮系列：Fable 5 集中爆發後跨方案／跨語言持續延燒，07-13 新增 Max 5x 消耗變快回報 | 2026-07-03 | 🔥🔥🔥 | 🌊延燒 | r/ClaudeCode 同一晚（UTC 深夜）集中出現四則 Fable 5 額度相關貼文：① 用戶兩天內燒光額度並反問 Opus 4.8「感覺還好嗎」；② 大型基因體分析管線因額度限制嚴重受影響；③ 額度週一重置規則討論；④ 對「Claude 誠實承認錯誤原因」的觀察串（[帖1](https://www.reddit.com/r/ClaudeCode/comments/1umtox4/i_burned_through_my_fable_5_usage_in_2_days_so_i/) [帖2](https://www.reddit.com/r/ClaudeCode/comments/1umtlqh/sad_about_fable_restrictions/) [帖3](https://www.reddit.com/r/ClaudeCode/comments/1umt5h5/fable_resets_on_monday_if_you_held_a_plan_already/)）；07-06 德語 r/ClaudeCode 貼文延續同一焦慮但轉移到「Pro 方案團隊多人共用額度」場景（[07-06 原帖](https://www.reddit.com/r/ClaudeCode/comments/1uoyfhk/claude_als_team_oder_lieber_einzeln/)，Reddit r/ClaudeCode，互動數據不明）；07-08 出現兩則量化異常比例回報：「Max 20x 方案週額度不到一天用盡」（[原帖](https://www.reddit.com/r/ClaudeCode/comments/1uqs99q/claude_max_20x_weekly_limit_exhausted_in_less/)）與「cache 命中率下降 20% 導致 agent 帳單翻倍」的技術機制觀察（[原帖](https://www.reddit.com/r/ClaudeCode/comments/1uqsah2/cache_hit_rate_dropping_by_20_doubles_your_agents_bills/)）；07-09 再添「單一 session 27% 時間消耗掉整週額度 7%」的具體比例回報（[原帖](https://www.reddit.com/r/ClaudeAI/comments/1urqgqx/claude_max_20x_why_did_27_of_one_session_consume/)），同日 GitHub issue #38335（Max 方案額度異常消耗）留言數增至 791 則、536 個讚，跨 GitHub + Reddit 兩平台交叉佐證；07-13 新增「Usage limits getting lower」：Max 5x 訂閱用戶回報近一週用量額度消耗速度變快，5 小時額度約 2 小時用完（[原帖](https://www.reddit.com/r/ClaudeCode/comments/1uve90h/usage_limits_getting_lower/)，單一貼文、無評論數據佐證）；07-13 另有 r/ClaudeCode 週熱門貼文「Dear Anthropic, This Has to STOP.」，抱怨額度／點數政策朝令夕改（原文：「每隔一天就有新花樣：『我們又延長了限額幾天』、這裡發點數、那裡發點數……」）；07-12 週熱門貼文「Anthropic, I think you really need to react. You're slowly losing ground.」呼籲 Anthropic 正視公司正逐漸流失優勢的處境（僅標題可考，圖片貼文無文字內文）；兩則週熱門貼文皆無具體技術數據，但顯示既有焦慮情緒已從「回報消耗異常」擴展為「要求官方正視政策」的直接公開訴求；八個時間點（06-27 手動 continue automation gap、07-03 集中爆發、07-06 團隊場景延伸、07-08 量化異常比例+技術機制、07-09 GitHub 交叉佐證、07-12 公開訴求前奏、07-13 Max 5x 消耗變快回報 + 直接訴求貼文）跨 17 天持續出現同一「額度不足引發使用者焦慮」主題，符合熱度延燒條件但新增節點多為情緒性貼文、無新技術數據，暫不上調熱度（詳見 [[code-quality-decline]] 對應訊號群）（推論：額度政策若不調整，此類焦慮可能持續週期性出現） | CCLimitPing, LimitBar |
-| Ask HN：跳脫 Prompt-Response 迴圈的 AI 編碼互動模式 | 2026-07-03 | 🔥🔥🔥 | ☄️閃現 | Ask HN 討論（score 129）：提問是否有人在嘗試 prompt-response 問答迴圈之外、更貼近「心流」的 AI 編碼互動模式；多則回應分享 Claude Code 使用心得與挫折點，代表性比喻包括「不像手寫程式碼那樣進入心流」「像一輛會突然煞車的腳踏車」；與既有「Vibe coding 成就感缺失」（06-18）、「Loop Engineering 哲學」（06-20）形成同一問題意識的延續討論，但聚焦點從「成就感」轉向「互動模式設計本身」；[原文](https://news.ycombinator.com/item?id=48771515)（HN） | — |
 | Claude Code AskUserQuestion 60 秒逾時自動代答引發體驗爭議：07-17 正式定調為「效率繞過」misfeature | 2026-07-02 | 🔥🔥🔥 | 🌊延燒 | Reddit 貼文指出 Claude Code 互動詢問（AskUserQuestion）新增 60 秒逾時，逾時未答會自動代答繼續執行；此變更早已存在（[GitHub issue #30740](https://github.com/anthropics/claude-code/issues/30740)）但今日才被大量注意到；部分使用者認為此舉破壞了「決策分岔點詢問」的體驗品質；[Reddit 原帖](https://www.reddit.com/r/ClaudeAI/comments/1ulh0ic/claude_code_started_to_use_timeout_on/)（Reddit r/ClaudeAI）；07-03 新增 [GitHub Issue #73125](https://github.com/anthropics/claude-code/issues/73125) 具體數據：留言 109、👍 375，顯示此爭議已從單一 Reddit 帖擴大為 GitHub 具名積壓問題，跨平台佐證增強；同日 Show HN 出現終端機變色提示工具（claude-needs-input）明確關聯此逾時痛點；07-04 Reddit r/ClaudeCode 再度出現用戶反映 plan mode 逾時自動代答的抱怨（source_count 2），詳見 [[code-quality-decline]]；07-17 部落格文章「Claude Code: Anatomy of a Misfeature」（HN score 140，本輪最高分）將此正式定調為 7/1（v2.1.198）加入的「效率繞過（efficiency bypass）」機制，並提供版本號來源；同日另一 HN 貼文（score 23）具體描述使用者請求 Claude Code(Fable) 放慢步調以節省 token 遭拒的案例，與此機制屬同一「agent 優先自主執行而非等待人工指示」問題的延續驗證；議題自首見已延燒 15 天仍無官方回應，熱度上調 | claude-needs-input |
 | 切換到開源模型的代價接近零：閉源護城河瓦解論 | 2026-06-22 | 🔥🔥🔥🔥 | 🌊延燒 | Andrew Marble 文章（HN score 334，最高熱度）：類比 Linux 轉移，今日切換到開源 LLM 的代價已接近零；論點：閉源模型護城河正在瓦解，平台依賴風險超過便利性收益；引發 Recall、ANMA 等工具作者呼應「本地主控」的設計方向（HN）；2026-06-23 持續延燒，熱度維持最高 | Recall |
 | Loop Engineering 哲學完整文章：「我不再 prompt Claude，我寫 loop」 | 2026-06-20 | 🔥 | 🌊延燒 | Boris Cherny 名言的完整拆解文章（techstackups.com）：PR review、測試、push 等動作如何抽象為 loop；代表 AI 輔助開發進入「設計 loop」時代（HN score 4）；延伸自 2026-06-19 Boris Cherny loop 哲學討論 | — |
@@ -177,6 +177,13 @@ MCP 的實際成本遠超多數使用者預期，已有多個量化案例：
 ## 技術彙整
 
 ### 2026-07
+
+#### Show HN：promptster.ai — 分析 Claude Code/Codex 實際用法而非僅費用儀表板（2026-07-25）
+
+- **來源：** 「Show HN: How well do you use Claude Code?」— Hacker News（score 14，source_count=2）
+- **核心論點：** 作者指出企業常有自建的 OTel 花費儀表板（顯示花費+席位），卻缺乏真正分析工程師實際用法與改善空間的工具；因此打造 promptster.ai，manager 端可看程式碼品質與團隊工作流程的彙整視角，engineer 端則取得個人化教練建議，目標在節省 token 同時維持產出品質；同篇另提及開源本機工具 [cc-audit](https://github.com/pa-arth/cc-audit)，用於稽核本機 Claude Code 設定
+- **關鍵回響：**（無，score 14 屬低門檻單篇，尚無社群交鋒紀錄可考）
+- **收斂結論：**（無）單篇 Show HN 展示，訊號強度低，暫記觀察
 
 #### OpenAI 與 Anthropic 對開放權重模型風險立場趨同，引發「自利心態包裝使命宣稱」批評（2026-07-23）
 

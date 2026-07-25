@@ -43,12 +43,13 @@
 
 | 指標 | Fable 5 | Opus 4.8 | Sonnet 5 | 備注 |
 |------|---------|----------|----------|------|
-| SWE-bench Pro | SOTA（官方） | 69.2% | 接近 Opus 4.8（社群評測） | Sonnet 5 官方對比圖表有修改爭議（2026-07-02） |
+| Opus 5 綜合定位（2026-07-25 發布，新） | 逼近但未超越（Frontier-Bench、GDPval-AA 編碼/知識工作評測，官方稱） | 已被取代（次旗艦地位由 Opus 5 接手，官方稱相同成本下效能大幅提升） | — | 資安任務上 Opus 5 仍落後 Mythos 5（官方自陳）；定價定位見 [[entities/pricing]]，the-decoder.com 稱為 Fable 5 一半、MarkTechPost 稱維持原 Opus 定價，兩者方向不完全一致 |
+| SWE-bench Pro | SOTA（官方） | 69.2% | 接近 Opus 4.8（社群評測） | Sonnet 5 官方對比圖表有修改爭議（2026-07-02）；Opus 5 官方評測改用 Frontier-Bench/GDPval-AA，尚無 SWE-bench Pro 數字對照 |
 | 綜合定位 | 幾乎所有 benchmark SOTA | 第三方評測曾小輸 Gemini 3.5 Flash（35.4 vs 34.8，主因指令遵循） | agentic / tool use 接近次旗艦 | 各數據測試日期與條件見各模型頁 |
 | token 消耗／每任務成本 | 917 個 coding-agent 場景中以 0.9 分之差略勝 Opus 4.8，但 token 消耗約 2 倍（Reddit r/ClaudeAI，2026-06-12） | 基準對照組 | — | 「小勝」需連成本一起讀：分差小、代價大 |
 | 多模型協作成本效益（orchestrator 模式）| Fable 5 調度 + 便宜模型執行：**46% 成本達 96% 效能**（官方基準，Reddit r/ClaudeAI 整理轉載，週熱門標記，來源貼文 2026-07-08，原始官方連結未附）| — | — | 與上一列「Fable 5 單獨執行 token 消耗約 2 倍」形成對照：協作模式可望大幅壓低整體成本，惟原始 benchmark 頁面尚未直接查證 |
 
-> 數據截至 2026-07-09；詳細評測條件與矛盾結果並陳原則見各模型 entities 頁。
+> 數據截至 2026-07-09（Opus 5 綜合定位列例外，為 2026-07-25 發布當日資料）；詳細評測條件與矛盾結果並陳原則見各模型 entities 頁。
 >
 > **延伸閱讀（待補充量化數字）**：MarkTechPost（2026-07-14）發布 Sonnet 5 / Sonnet 4.6 / Opus 4.8 三模型 agentic coding benchmark、API 定價、成本效益取捨的完整對照文章，惟日報摘要僅標題級資訊、未附具體評測數字，暫列為外部延伸閱讀資源，待補充查證後再納入下方表格（Google News／MarkTechPost，2026-07-14；詳見 [[entities/sonnet-5]] 歷史記錄）。
 
@@ -88,12 +89,13 @@ wiki 內建的模型評測數字有時效性限制（見上方各表格「數據
 
 ## 相關實體
 
-- [[entities/fable-5]] · [[entities/opus-4-8]] · [[entities/sonnet-5]] · [[entities/opus-4-7]] · [[entities/mythos]]
+- [[entities/fable-5]] · [[entities/opus-5]] · [[entities/opus-4-8]] · [[entities/sonnet-5]] · [[entities/opus-4-7]] · [[entities/mythos]]
 - 功能熱度與升版建議：[[feature-radar]]
 - 定價細節：[[entities/pricing]]
 
 ## 時序（陣容變化）
 
+- 2026-07-25：**Opus 5 發布**，取代 Opus 4.8 成為次旗艦、Claude Max 新預設模型、Claude Pro 最強模型
 - 2026-07-01：Sonnet 5 發布（Claude Code 預設）；Fable 5 / Mythos 5 解禁
 - 2026-06-13：Fable 5 / Mythos 5 出口管制停用（至 06-30）
 - 2026-06-09：Fable 5 發布，Opus 4.8 退居次旗艦
