@@ -3,6 +3,25 @@
 Append-only 紀錄。每次 ingest、lint，以及**揭露缺陷或促成改動的使用者 query**，都在此追加一條（純資訊性、未促成改動的 query 不記，避免噪音）。
 格式：`## [YYYY-MM-DD] 類型 | 說明`
 
+## 2026-07-25 Ingest | news/2026-07-25.md（73 則）
+
+- 來源日報：[[news/2026-07-25]]（73 則，10/10 來源；Google News 33、Hacker News 15、GitHub Issues 15、dev.to 13、Reddit 12、GitHub 4、Anthropic Status 2、Blogroll 2、Anthropic Blog 1、Claude API Release Notes 0）
+- 分類派工：模型 8 則、功能 14 則、商業 8 則、安全政策 2 則、社群 7 則、人物 1 則（六類並行 foreground；**本雲端 routine 環境自訂 subagent_type（wiki-reporter-*）未載入，六位記者均改以 general-purpose agent 扮演角色、內嵌完整規則文字派工**，屬環境限制的變通做法，功能與品質未受影響）
+- 更新頁面：
+  - **模型**：**新建 `entities/opus-5.md`**——Anthropic 正式發布 Claude Opus 5，官方稱編碼與知識工作評測（Frontier-Bench、GDPval-AA）逼近 Fable 5、資安任務仍落後 Mythos 5，定價官方稱為 Fable 5 一半（the-decoder.com）但 MarkTechPost 稱維持原 Opus 定價，兩說法方向不完全一致、留給商業記者彙整；現為 Claude Max 新預設模型、Claude Pro 最強模型，取代 Opus 4.8。`entities/opus-4-8.md`（callout／現況改寫為「已被 Opus 5 取代」，「下一代模型觀察：Opus 5 傳聞」段落標記已證實並加連結，避免全站殘留舊「傳聞未證實」敘述）、`entities/sonnet-5.md`（dev.to 重申 60% Opus 折扣促銷「real but temporary」，僅記方向不寫數字；同步 Opus 5 發布不影響其定位）、`topics/model-comparison.md`（陣容重大變化：Fable 5 > Opus 5（次旗艦，新）> Sonnet 5 > Sonnet 4.6 > Haiku 4.5；快速選型表、情境推薦、benchmark 對照、時序全數同步）
+  - **功能**：`entities/claude-code.md`（新增 v2.1.220 版本記錄，純 bug fix 不進 feature-radar；新增 4 條已知問題——context compaction 間缺乏持久記憶 #34556 61 留言、自陳分析缺口未阻擋輸出 #60226 47 留言、Fable 5 於 Max 方案持續要求 usage credits #79337 42 留言〔與 07-20 已解決的 Status 事件疑似同根源但未真正解決〕、Opus 5 xhigh 推理強度於 Desktop 失效〔Reddit 單一來源，Opus 5 上線當天新增問題，待更多佐證〕；5 條既有已知問題互動數更新（#38335 Max 額度異常耗盡 790→807 留言，今日已知問題留言數最高／#73365 Fable5 advisor unavailable 50→87 留言／#15942 VS2026 整合 139→144 留言／#32479 GitHub Connector 71→72 留言／#36151 Mobile 多帳號 123→140 留言）；補記 Microsoft Office 附加元件安裝異常已於 07-24 解決；Hacker News 轉述「移除 80% 系統提示詞」推文，因互動低（16 分）、細節有限，標註待查證不視為確定事實；GitHub Copilot 上線 Opus 5 於「市場與競爭」段落一句帶過並轉知模型/商業記者評估）
+  - **商業**：`entities/pricing.md`（Opus 5 定價定位、Sonnet 5 促銷 $2/$10 至 8/31 重申、Fable 5 於 Max 方案計費異常 #79337 三則同步）、`topics/anthropic-business.md`（新增 Anthropic／Blackstone 15 億美元合資企業 Ode，MarketScale 單一來源，標註待其他媒體佐證；查核後確認 Harry Potter 出版商和解案為既有記錄的後續進度，未重複新增）、`topics/competitor-landscape.md`（SitePoint Codex 5.3 vs Claude 複雜重構工作流程比較，無具體公開定價數字，僅記事件不動定價對照表）；同步自查提醒主編確認 Sonnet 5 促銷倒數列到期日已於 feature-radar 一致
+  - **安全政策**：兩則候選經查證均判定不寫入——Unicode 撇號隱寫追蹤指控（dev.to/adioof）查核後確認為 2026-07-01 舊文重複出現，與 [[topics/safety-china-trust-dispute]] 第 57-59 行既有記錄完全相同，非新披露；$1.5B 著作權和解案 Reddit 評論查核後確認核心事實已由商業記者完整記錄於 [[topics/anthropic-business]]，該貼文僅為社群對已知事實的立場質疑，未達政策面新事實門檻，兩案均未寫入頁面
+  - **社群**：`topics/community-tech-discussions.md`（新增 promptster.ai 使用分析平台，HN 14 分＋source_count 2，達低門檻，訊號強度標 🔥，單篇展示尚無社群交鋒；依保留規則清理 1 筆逾 21 天 ☄️閃現 舊條目「Ask HN：跳脫 Prompt-Response 迴圈」）；記者查核發現 dev.to「Teaching Claude Code to Paint」與「adversarial Claude reviewer loop」兩篇文章今日已是第 3 次出現在日報（與 07-10、07-22 已收錄條目同 URL），疑似日報抓取/去重機制未攔下同一 dev.to URL 的重複抓取，轉知主編建議檢查 `dedup.py` 邏輯；CLAUDE.md 確定性編譯器、multi-agent SDLC harness、DOOM 小工具三則因單一 Reddit 來源（0 留言、無週熱門標記）未達收錄門檻，未收錄
+  - **人物**：`entities/boris-cherny.md`（新增公開聲明：「比起評測分數，更讓我興奮的是 Opus 5 是我們目前最難被提示注入攻破的模型」，出處 Simon Willison 部落格轉引推文，加註待社群驗證，並加 [[entities/opus-5]]、[[topics/ai-agent-safety]] 關聯 wikilink）
+- feature-radar：新增 1 條（Claude Opus 5，🔥🔥🔥🔥🔥／⚡ 有條件推薦，直接進入本週推薦榜，換下熱度較低的「Claude Cowork 行動版／網頁版」🔥🔥🔥🔥）；最新版本行更新為 v2.1.220（純 bug fix）；升版風險表因既有 3 條 🔴 風險皆未解決且無新增更嚴重項目，維持不動僅同步版本行；⏰ 倒數中無變化（Sonnet 5 促銷到期日 8/31 一致）
+- index.md 狀態變更：`entities/opus-4-8`: active → active（已被取代，次旗艦地位由 Opus 5 接手）
+- 新增頁面：`wiki/entities/opus-5.md`
+- overview.md：因屬重大事件（新旗艦級模型發布），於「當前局勢」頂部新增 delta-first callout 摘要 Opus 5 發布；「主要模型現況」表格同步新增 Opus 5 列、Opus 4.8 狀態改為「已被取代」；本頁其餘內容仍為 07-18 週更存檔，待下次 `/wiki-lint` 全文改寫時完整反映此次陣容變化
+- 摘要：**Claude Opus 5 發布為今日絕對主軸**——HN 1587 分為今日全站最高，六類記者中四類（模型/功能/商業/人物）均圍繞此事件展開，橫跨模型定位、SDK 支援、GitHub Copilot 整合、Boris Cherny 安全聲明、定價定位查證；功能面另有多筆高互動 GitHub Issues 穩定性/帳務回報延燒（Max 額度異常耗盡累積 807 留言為今日之最）；安全政策記者展現良好查證紀律，正確識別兩則候選新聞分屬「舊文重浮」與「已被覆蓋的事實」而不重複寫入；社群記者發現的 dev.to 重複抓取疑慮已轉知供後續排查
+- 呈現品質：六類共 8 頁全數 ✅ 通過或已修復（opus-4-8.md／sonnet-5.md／model-comparison.md ⚠️ 已修復：分別為已證實狀態更新、現況時序侵蝕清理、陣容重大變化同步），未出現未解決待辦項目
+- 品質備註：[社群] dev.to「Teaching Claude Code to Paint」「adversarial Claude reviewer loop」疑似被日報重複抓取（與 07-10/07-22 已收錄條目同 URL），建議檢查 `src/news_aggregator/dedup.py` 是否正確攔下跨日重複的 dev.to URL，非本次 ingest 範圍內修復；[商業] Anthropic／Blackstone $1.5B 合資企業 Ode 僅 MarketScale 單一來源報導，已在頁面標註待其他媒體佐證，下次 ingest 應留意是否有其他媒體跟進確認
+
 ## 2026-07-24 Ingest | news/2026-07-24.md（63 則）
 
 - 來源日報：[[news/2026-07-24]]（63 則，10/10 來源；Google News 24、Hacker News 16、Reddit 12、GitHub Issues 6、GitHub 2、Anthropic Status 1、dev.to 1、Blogroll 1、Claude API Release Notes 0、Anthropic Blog 0）

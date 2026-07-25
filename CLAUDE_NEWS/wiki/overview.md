@@ -7,6 +7,8 @@
 
 ## 當前局勢
 
+> **2026-07-25 重大更新：** Anthropic 正式發布 **Claude Opus 5**，取代 Opus 4.8 成為次旗艦、Claude Max 新預設模型、Claude Pro 最強模型；官方稱編碼與知識工作評測逼近 Fable 5、定價為其一半（另有報導稱維持原 Opus 定價，兩說法方向不完全一致），資安任務仍落後 Mythos 5。HN 1587 分為今日全站最高，SDK 與 GitHub Copilot 同步支援。詳見 [[entities/opus-5]]、[[topics/model-comparison]]。本段以下內容為 07-18 週更存檔，尚未反映此次陣容變化，下次 `/wiki-lint` 全文改寫時納入。
+
 **中國信任對峙進入觀察期，Anthropic 07-10 首度公開否認後暫無新進展**：「中美 AI 工具信任對峙」（社群逆向工程指控 → Alibaba/Meta 企業禁用 → 中國官方 07-08 政府層級「後門」警示 → Anthropic 07-10 首度公開反駁）自 07-11 起未見雙方新表態，議題轉入低頻觀察，惟 07-16 又新增一則待查證的「Claude Code + DeepSeek 中國網路間諜行動」報導（僅標題可用），顯示信任摩擦的餘震仍不時浮現。詳見 [[topics/safety-china-trust-dispute]]。
 
 **Claude Code v2.1.212 帶來本月最大升版風險**：`/fork` 指令行為改變——不再於同一 session 啟動子 agent，改為將對話複製進新背景 session，原功能改名 `/subtask`，**⚠️ Breaking Change 且無過渡期**，依賴舊行為的 skill/hook 需立即改寫。同時 Cowork 已知問題累積為 🔴 資料完整性風險：10GB VM bundle 導致效能持續劣化，Edit/Write 工具因緩衝區上限靜默截斷檔案（任何檔案大小可重現）。07-17 另新增 Claude 與 1Password 憑證整合（免密碼登入）。Anthropic Status 過去 24 小時累計 4 起事件通報（Sonnet 5／Haiku 4.5 錯誤率升高「修復實施中」，另 3 起已解決），為近期最密集的一次。
@@ -28,7 +30,8 @@
 | **Claude Fable 5** | 🟢 全面恢復 | Defense in Depth 安全分類器（高風險 coding 請求 fallback 至 Opus 4.8）；免費期限＋週配額 +50% 促銷第四度延長至 **7/19**，到期後轉 usage-based billing；$10/$50 per M token；JPMorgan/加拿大監管機關點名為風險指標 |
 | **Claude Sonnet 5** | 🟢 預設模型 | Claude Code 預設；1M context；$2/$10 per Mtok（促銷至 8/31）；07-17 Anthropic Status 通報錯誤率升高，修復實施中 |
 | **Claude Mythos 5** | 🟢 全面恢復（政策限定）| 僅限授權機構/安全研究用途；持續被第三方（Dimon、加拿大監管機關）點名為風險評估對象 |
-| Claude Opus 4.8 | ✅ Active | SWE-bench Pro 69.2%、1M context；Fable 5 高風險請求 fallback 目的地；競品 Kimi 3 據稱有望縮小差距 |
+| **Claude Opus 5** | 🟢 新次旗艦（2026-07-25）| Claude Max 新預設模型、Claude Pro 最強模型；編碼/知識工作評測逼近 Fable 5，資安任務仍落後 Mythos 5；定價定位見 [[entities/pricing]] |
+| Claude Opus 4.8 | ⚠️ 已被取代 | SWE-bench Pro 69.2%、1M context；次旗艦地位已由 Opus 5 接手；仍為 Fable 5 高風險請求 fallback 目的地 |
 | Claude Sonnet 4.6 | ✅ Active | 仍可選用；社群部分懷念其互動個性 |
 | Claude Haiku 4.5 | ✅ Active | 07-17 與 Sonnet 5 同步出現錯誤率升高通報 |
 

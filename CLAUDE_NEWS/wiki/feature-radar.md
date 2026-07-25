@@ -4,24 +4,23 @@
 僅收錄官方 changelog、release note 或官方公告來源；社群工具見 [[topics/community-tech-tools]]。
 每次 ingest 後由 LLM 維護：新增功能、更新熱度、補充社群回饋。
 
-**最後更新：** 2026-07-24
+**最後更新：** 2026-07-25
 
 ---
 
 ## ⭐ 本週推薦
 
+- **Claude Opus 5**（熱度 🔥🔥🔥🔥🔥）：2026-07-25 正式發布，編碼與知識工作評測逼近 Fable 5、官方稱定價為其一半，現為 Claude Max 新預設模型、Claude Pro 最強模型，適合日常 agentic 使用與知識工作任務
 - **Claude Fable 5（免費期限已於 7/19 到期）**（熱度 🔥🔥🔥🔥🔥）：旗艦模型全球恢復，免費使用期限已於 7/19 到期；Max/Team 後續存取政策（永久標配／計量存取）仍有分歧報導，07-20 一度出現 Max 方案誤判需購買 usage credits 的 bug（官方已證實並建議重啟），詳見 [[entities/pricing]]
 - **Claude Code Artifacts**（熱度 🔥🔥🔥🔥🔥）：工作階段可即時輸出互動式儀表板、圖表與可分享頁面，適合需要展示中間產出或建立輕量工具的開發者
-- **Claude Cowork 行動版 / 網頁版**（熱度 🔥🔥🔥🔥）：任務可在雲端持續執行，闔上筆電或關閉裝置也不中斷，首波開放 Max 訂閱戶，適合需要行動場景交辦長時間背景任務者
 
-> `/goal` 指令已連續推薦超過 7 天（自 07-09 起）且今日 ingest 未更新其熱度/試用價值，依防霸榜規則換下，改為 Claude Code Artifacts（上次在推薦榜為 07-07 之前）；詳細條目仍見下方全覽表。
-> 07-24 新增「Claude 語音模式 Opus／Sonnet 選擇」（🔥🔥🔥🔥／⚡），熱度與現有 Cowork 條目同級，現有三項推薦皆未逾 7 天，故本輪保持不動；語音模式列入下一輪換榜候選。
+> Claude Opus 5 為今日新發布、熱度 🔥🔥🔥🔥🔥，依規則優先進入推薦榜。「Claude Cowork 行動版／網頁版」（🔥🔥🔥🔥，07-07 上榜，未逾 7 天但熱度較低）依排序規則換下，詳細條目仍見下方全覽表。
 
 ---
 
 ## ⚠️ 升版風險（每次 ingest 更新）
 
-**最新版本：** v2.1.218（2026-07-22，`/code-review` 改為背景 subagent 執行，審查工作不再佔用對話內容並保留 stacked slash commands 作為審查對象；同版新增螢幕報讀軟體相關無障礙改善，具體對應範圍未知）。前一異動為 v2.1.217（2026-07-21，Prompt input 新增表情符號 shortcode 自動完成，可用 `emojiCompletionEnabled` 設定關閉）
+**最新版本：** v2.1.220（2026-07-25，純 bug fix / reliability 更新，官方未列具體項目，無使用者端功能異動）。最後一次具體功能異動為 v2.1.218（2026-07-22，`/code-review` 改為背景 subagent 執行，審查工作不再佔用對話內容並保留 stacked slash commands 作為審查對象；同版新增螢幕報讀軟體相關無障礙改善，具體對應範圍未知）
 
 | 風險 | 嚴重度 | 說明 |
 |------|--------|------|
@@ -64,6 +63,7 @@
 
 | 功能 | 發布日期 | 熱度 | 試用價值 | 狀態 |
 |------|----------|------|----------|------|
+| **Claude Opus 5**（新次旗艦模型，可用 `--model` 選用，編碼/知識工作評測逼近 Fable 5、官方稱定價為其一半，現為 Claude Max 新預設模型、Claude Pro 最強模型） | 2026-07-25 | 🔥🔥🔥🔥🔥 | ⚡ 有條件推薦 | 正式發布 |
 | **Claude 語音模式 Opus／Sonnet 選擇**（所有使用者開放於 Opus／Sonnet 間切換語音模式底層模型，六家媒體同步報導，無官方版本號） | 2026-07-24 | 🔥🔥🔥🔥 | ⚡ 有條件推薦 | 正式發布（全使用者開放） |
 | **API 新增 Stop Reason `model_continue`**（anthropic-sdk-python v0.119.0／anthropic-sdk-typescript sdk-v0.114.0） | 2026-07-23 | 🔥🔥 | ⏳ 觀望 | 正式發布（SDK 層） |
 | **Claude Code v2.1.218**（`/code-review` 改為背景 subagent 執行，審查工作不再佔用對話內容；同版新增螢幕報讀軟體相關無障礙改善） | 2026-07-22 | 🔥🔥 | ✅ 推薦 | 正式發布 |
@@ -135,6 +135,25 @@
 ---
 
 ## 🆕 最新功能（2026-07）
+
+### Claude Opus 5
+**發布：** 2026-07-25（官方公告） | **熱度：** 🔥🔥🔥🔥🔥 | **試用價值：** ⚡ 有條件推薦 | **狀態：** 正式發布
+
+**是什麼：** Anthropic 新一代次旗艦模型，可用 `--model` 選用。官方稱編碼與知識工作評測（Frontier-Bench、GDPval-AA）逼近 Fable 5 的 frontier intelligence，資安任務上仍落後 Mythos 5；現為 Claude Max 新預設模型、Claude Pro 最強模型，取代 Opus 4.8。
+
+**為何熱：** HN 1587 分（今日全站最高）、source_count 3；六家以上媒體同步報導；SDK（Python v0.120.0／TypeScript sdk-v0.115.0）同日新增模型支援；GitHub Copilot 同步上線。Claude Code 創辦人 Boris Cherny 公開稱其為目前最難被提示注入攻破的模型（待社群驗證）。
+
+**現在要試嗎：** 適合日常 agentic 使用、編碼與知識工作任務、Claude Max/Pro 用戶；資安/滲透測試等安全導向任務仍建議用 Mythos 5。發布首日，長期穩定性與定價數字（官方稱「Fable 5 一半」，另有報導稱「維持原 Opus 定價」，兩說法方向不完全一致）待觀察，詳見 [[entities/pricing]]。
+
+**快速上手：**
+```
+claude --model claude-opus-5
+```
+（正式模型 ID 待官方文件確認）
+
+**注意事項：** 發布當天已有單一 Reddit 回報指出 Claude Code Desktop 上 xhigh 推理強度因思考功能被強制關閉而失效，尚待更多來源佐證；定價數字兩方報導不一致，詳見 [[entities/opus-5]]。
+
+---
 
 ### Claude 語音模式 Opus／Sonnet 模型選擇
 **發布：** 2026-07-24（The Verge／TechCrunch／9to5Mac／Engadget／the-decoder.com／SQ Magazine 六家媒體同步報導，無官方版本號） | **熱度：** 🔥🔥🔥🔥 | **試用價值：** ⚡ 有條件推薦 | **狀態：** 正式發布（全使用者開放）
