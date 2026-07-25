@@ -56,7 +56,11 @@
       "Bash(\"C:\\\\Users\\\\Mandy\\\\AppData\\\\Local\\\\Programs\\\\Python\\\\Python313\\\\python.exe\" -m news_aggregator.main --gather-only --date 2026-07-09)",
       "Bash(\"C:/Users/Mandy/AppData/Local/Programs/Python/Python313/python.exe\" scripts/run_tests.py)",
       "Bash(git fetch *)",
-      "Bash(\"C:\\\\Users\\\\Mandy\\\\AppData\\\\Local\\\\Programs\\\\Python\\\\Python313\\\\python.exe\" -m news_aggregator.main --gather-only --date 2026-07-10)"
+      "Bash(\"C:\\\\Users\\\\Mandy\\\\AppData\\\\Local\\\\Programs\\\\Python\\\\Python313\\\\python.exe\" -m news_aggregator.main --gather-only --date 2026-07-10)",
+      "WebFetch(domain:github.com)",
+      "WebSearch",
+      "WebFetch(domain:foreverwebs.com)",
+      "Bash(cat >> *)"
     ]
   },
   "hooks": {

@@ -10,35 +10,21 @@ TARGET_DATE = `date -u +%F`。
 
 ---
 
-## 第一步：前置閘（兩道，務必先做）
+## 前置閘與失敗處理：不在本檔
 
-### 1-1 冪等閘：今天是不是已經跑過了
+`Step 0b：冪等閘`（日報已存在則中止）、`Step 1b` 開頭的新鮮度防線（資料非目標日期則中止）、以及 `Step 5` 的 push 失敗重試，全部定義在 `.claude/commands/news-pipeline-steps.md`，**本機與雲端行為完全相同**，照該檔執行即可。
 
-檢查 `news/<TARGET_DATE>.md` 是否已存在：
+本檔不重複這些邏輯——兩處各寫一份就會失步，而失步的那一份會在無人值守時生效。
 
-- **已存在** → **立即中止**，照下方中止程序寫 log，理由填 `digest already exists`。
-  重跑會覆寫日報、並讓 wiki 記者對同一批新聞重複 prepend 條目——**日報覆寫還能重生，wiki 重複條目要人工逐頁挑，代價高得多**。
-  會走到這裡的情境：手動 `RemoteTrigger run` 撞上排程、當日已由使用者本機 `/news-pipeline` 補跑過、或前次執行已完成日報但在後段失敗。
-  若確實需要重生當日日報，由使用者本機執行 `/news-pipeline <date>` 處理，不由無人值守的排程決定覆寫。
-- **不存在** → 進入 1-2
-
-### 1-2 新鮮度防線：資料是不是今天的
-
-讀取 `src/gathered_items.json`，檢查 `date` 欄位是否等於 TARGET_DATE，且 `items` 陣列長度 > 0：
-
-- **兩者皆滿足** → 繼續執行完整 pipeline
-- **任一不滿足** → 代表 GitHub Actions 的 daily-gather 今天尚未成功推上新資料（延遲、失敗，或還沒到執行時間）。**立即中止，不生成假日報**：
-### 中止程序（兩道閘共用）
+**雲端專屬的只有中止時的落地方式：** 中止時把該步驟要求的訊息 append 到 `src/logs/task_scheduler.log`，並 commit + push 出去：
 
 ```
-append 一行到 src/logs/task_scheduler.log：
-[cloud routine ABORTED TARGET_DATE] <理由：digest already exists ／ gathered_items.json date=<實際值> items=<數量>>，中止
 git add src/logs/task_scheduler.log
 git commit -m "chore: cloud routine abort log TARGET_DATE"
-git push        # 失敗時照 _shared.md 的 push 重試程序處理
+git push        # 失敗時照 Step 5 的 push 重試程序處理
 ```
 
-然後結束，不執行後續任何步驟。中止**不是**錯誤——它是設計上的正確行為，摘要照常輸出，但要寫清楚是哪一道閘擋下的。
+否則在沒有互動使用者的環境下，中止理由會跟著容器一起消失。中止**不是**錯誤，是設計上的正確行為，摘要照常輸出，但要寫清楚是哪一道閘擋下的。
 
 ---
 
@@ -49,7 +35,8 @@ git push        # 失敗時照 _shared.md 的 push 重試程序處理
 | 該檔中的步驟標題 | 雲端如何處理 |
 |------|------|
 | `Step 0：昨日缺跑檢查` | 照做（TARGET_DATE 為今日，不是 backfill 模式） |
-| `Step 1a：新聞抓取` | **跳過**——GitHub Actions 已完成，`gathered_items.json` 已存在且通過新鮮度防線 |
+| `Step 0b：冪等閘` | 照做（TARGET_DATE 為今日，非 backfill，所以「日報已存在」一律中止） |
+| `Step 1a：新聞抓取` | **跳過**——GitHub Actions 已完成，`gathered_items.json` 已存在（新鮮度由 Step 1b 開頭的防線把關） |
 | `Step 1b：生成日報` | 照做，完成後 commit（**不 push**） |
 | `Step 1c：確認 emitted-cache` | **照做，不可跳過，且必須 commit `src/news_aggregator/emitted_items.json`**（該 Step 已明文要求）——你是全新 checkout、結束後容器銷毀，不 commit 等於沒改過。2026-07-14～07-24 雲端每日確認率幾乎為 0 就是漏了這個 commit。失敗只記警告，繼續後續步驟 |
 | `Step 2：Wiki Ingest` | 照做，但規範在別的檔案，見下方「Wiki Ingest」段落 |

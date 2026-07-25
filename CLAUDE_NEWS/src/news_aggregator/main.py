@@ -206,13 +206,21 @@ def main() -> None:
         save_cache(cache)
         logger.info("--confirm-digest: confirmed %d item(s) from %s", len(urls), gather_path)
         return
-        if args.gather_only:
-            # Gap recovery: if yesterday's digest is missing or empty, extend the
-            # lookback window to cover the hole left by a failed previous run.
-            gap_reason = check_gap_lookback(target_date)
-            if gap_reason and _cfg.LOOKBACK_HOURS < 50:
-                _cfg.LOOKBACK_HOURS = 50
-                logger.info("失敗補撈：%s → LOOKBACK_HOURS 延長為 50h", gap_reason)
+
+    if args.gather_only:
+        # Gap recovery: if yesterday's digest is missing or empty, extend the
+        # lookback window to cover the hole left by a failed previous run.
+        #
+        # 2026-07-25: this block used to sit *inside* the --confirm-digest branch
+        # above, after its `return` — i.e. unreachable dead code, so gap recovery
+        # never ran once since it was written. The exact scenario it exists for
+        # (cloud routine missed a day → next day's gather should widen the window
+        # to cover the hole) was therefore silently unprotected. Covered by
+        # tests/test_gap_lookback.py so it cannot regress into the same shape.
+        gap_reason = check_gap_lookback(target_date)
+        if gap_reason and _cfg.LOOKBACK_HOURS < 50:
+            _cfg.LOOKBACK_HOURS = 50
+            logger.info("失敗補撈：%s → LOOKBACK_HOURS 延長為 50h", gap_reason)
 
     NEWS_DIR.mkdir(parents=True, exist_ok=True)
 

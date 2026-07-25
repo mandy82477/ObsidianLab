@@ -11,12 +11,14 @@ routine 的 trigger prompt 只是薄殼（「cd 到 CLAUDE_NEWS，讀某份 runb
 
 2026-07-25 review 發現：舊的 trigger prompt 直接把步驟編號寫死（`Step 0 / 1a / 1b / 3 / 4 / 5 / 6`、`Step 6a / 6c / 6d / 6f`），而 prompt 存在雲端 API、不在 repo 內，`scripts/check_rules.py` 掃不到。後果已經實際發生：**舊 daily prompt 的列舉裡沒有 `Step 1c`**（`--confirm-digest`，2026-07-13 漏失 25 則新聞後才補的防線），雲端沒漏做純粹是因為 agent 讀檔時順著往下做了，不是 prompt 要求的。
 
-因此定下兩條規約：
+因此定下三條規約：
 
 1. **trigger prompt 不得包含任何步驟編號、步驟標題或執行細節**，只能指向 runbook
 2. **runbook 引用步驟時用標題錨點（含中文標題全稱），不用純編號**，並登記進 `.claude/review-registry.json` 由測試套件保護
+3. **runbook 只承載環境差異，不承載行為** `[加入: 2026-07-25]`——閘門、檢查、重試、失敗處理一律寫在 command 檔（`.claude/commands/news-pipeline-steps.md`、`.claude/commands/wiki-lint.md`），讓**本機 `/news-pipeline` 與雲端排程跑出完全相同的行為**。允許/不允許寫在 runbook 的分界，見 `news-pipeline-steps.md` 的「本機與雲端的行為必須一致」表
 
-> 判斷標準：這份 prompt 在 pipeline 改版後會不會靜默走偏？若會，把它搬進 repo。
+> 判斷標準一：這份 prompt 在 pipeline 改版後會不會靜默走偏？若會，把它搬進 repo。
+> 判斷標準二：這條規則換到另一個環境還成立嗎？成立 → 寫進 command 檔，不寫在 runbook。
 
 ---
 
@@ -39,32 +41,19 @@ routine 的 trigger prompt 只是薄殼（「cd 到 CLAUDE_NEWS，讀某份 runb
 
 ---
 
-## 收尾閉迴路（共用）
+## 收尾閉迴路
 
-1. `git add` 對應目錄 → `git commit`（無變更則跳過，不視為失敗）
-2. `python3 scripts/run_tests.py` — 失敗則跳過 web build，但**仍要推送已完成的 commit**，並在 log 記 `Tests FAILED - web build skipped`
-3. `python3 scripts/build_web.py` → `git add web_reader/` → commit
-4. **單一 `git push`** 推送本次全部 commit（失敗時照下方重試程序）
+**實際步驟不在本檔**：每日走 `.claude/commands/news-pipeline-steps.md` 的 `Step 3` / `Step 4` / `Step 5`，每週走 `.claude/commands/wiki-lint.md` 的 `10. 收尾閉迴路`。本檔只記共用理由。
+
+形狀相同：commit（無變更則跳過，不算失敗）→ 跑測試套件（失敗則跳過 web build 但**仍推送已完成的 commit**）→ build → **單一 `git push`**。
 
 **為何只能 push 一次：** 每次 push 觸發一個 GitHub Pages 部署，多次 push 會讓部署互相搶佔（concurrency race），最後那個關鍵的 web 部署可能被取消，線上停在舊版而 pipeline 無從得知。一次推送 = 一個部署 = 無 race。
 
-### push 失敗重試（強制）`[加入: 2026-07-25]`
+### push 失敗重試：見 `.claude/commands/news-pipeline-steps.md` 的 `Step 5`
 
-**你的 commit 只存在這個容器裡，push 不成功就跟著容器一起消失，而且下次是全新 checkout，救不回來。** push 被拒最常見的原因是 non-fast-forward——GitHub Actions 的 `daily-gather` 或使用者本機在你執行期間也 push 了（Actions 排程實測延遲過 2 小時 42 分，緩衝不保證不撞）。
+重試程序（重試上限、detached HEAD 檢查、唯一可自動解的衝突）是**本機與雲端共用的行為**，因此完整定義在該步驟內，本檔不重複也不摘要具體指令——摘要一久就會與正本失步。
 
-**push 前先確認在 master 上**（2026-07-14 曾因 session 啟動時 `origin/master` 快取落後而處於 detached HEAD，detached 狀態下 push 不會更新遠端分支）：
-
-```
-git rev-parse --abbrev-ref HEAD        # 不是 master 就先 git checkout -B master
-git push || {
-  git pull --rebase origin master && git push
-}
-```
-
-- 最多重試 **2 次**，每次都先 `pull --rebase` 再 push
-- **唯一允許自動解的衝突：`src/news_aggregator/emitted_items.json`。** 這個檔現在有兩個寫者（GitHub Actions 加入未確認條目、本 routine 翻確認欄位），Actions 嚴重延遲時可能撞上。解法固定：**放棄我方那個 confirm commit，保留遠端版本**（`git checkout --theirs` 該檔後續 rebase），因為日報上站遠比確認欄位重要，而未確認的條目只會被重新提供一次，是良性退化。處理後在摘要標「emitted-cache 確認本次放棄，項目將於次日重新提供」
-- **其他任何檔案的衝突 → 不要自行解**（無人值守下猜錯比不做更糟）。中止 rebase（`git rebase --abort`），在摘要與 `src/logs/task_scheduler.log` 標 `Push FAILED - rebase conflict，本次產出未上站，需人工處理`，並把衝突檔案清單寫進 log
-- 兩次都失敗 → 同樣記 `Push FAILED`，摘要明確標示**本次產出全部未上站**，不可寫成完成
+**為何在雲端特別致命：** 你的 commit 只存在這個容器裡，push 不成功就跟著容器一起消失，而且下次是全新 checkout，救不回來。本機至少 commit 還在，隔天還能補推。**但兩邊照同一套程序處理**——差別只在後果嚴重度，不在做法。
 
 ---
 

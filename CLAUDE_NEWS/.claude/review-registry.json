@@ -214,6 +214,7 @@
       "files": ["docs/cloud-runbooks/daily.md", ".claude/commands/news-pipeline-steps.md"],
       "patterns": [
         "Step 0：昨日缺跑檢查",
+        "Step 0b：冪等閘",
         "Step 1a：新聞抓取",
         "Step 1b：生成日報",
         "Step 1c：確認 emitted-cache",
@@ -240,6 +241,25 @@
         "9\\. 更新 wiki/index\\.md",
         "10\\. 收尾閉迴路"
       ]
+    },
+    {
+      "name": "本機/雲端行為一致：閘門・重試・補跑規則必須在共用步驟檔內",
+      "assertion": "all_contain",
+      "files": [".claude/commands/news-pipeline-steps.md"],
+      "patterns": [
+        "本機與雲端的行為必須一致",
+        "Step 0b：冪等閘",
+        "新鮮度防線",
+        "push 失敗重試",
+        "補跑（backfill）注意事項"
+      ]
+    },
+    {
+      "name": "雲端 runbook 不得自行實作 push 重試（行為必須來自共用步驟檔，兩份會失步）",
+      "assertion": "max_count",
+      "files": ["docs/cloud-runbooks/daily.md", "docs/cloud-runbooks/_shared.md"],
+      "patterns": ["pull --rebase"],
+      "max": 0
     },
     {
       "name": "trigger 鏡像 JSON 仍指向對應 runbook（薄殼規約：prompt 只指路，不含步驟細節）",

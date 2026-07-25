@@ -22,6 +22,23 @@ TARGET_DATE 由 Agent prompt 傳入。
 
 # Phase A 步驟（Step 0 / 1a / 1b）
 
+## 本機與雲端的行為必須一致 `[加入: 2026-07-25]`
+
+**本檔是唯一的步驟語意來源。** 本機 `/news-pipeline` 與雲端 routine 跑出來的行為必須相同——同樣的閘門、同樣的失敗處理、同樣的重試、同樣的產物。
+
+雲端 runbook（`docs/cloud-runbooks/daily.md`）**只允許承載環境差異**，共三類，其餘一律寫在本檔：
+
+| 允許出現在 runbook 的 | 不允許（必須寫在本檔） |
+|------|------|
+| 環境值（路徑、`python3` vs `python.exe`、日期取得方式） | 任何閘門、檢查、重試、失敗處理邏輯 |
+| 哪些步驟不適用該環境（雲端跳過 Step 1a，因抓料由 GitHub Actions 完成） | 步驟本身的做法與判準 |
+| 無人值守政策（需使用者確認的動作改寫成待辦） | 需要確認的是哪些動作 |
+
+> 判斷標準：這條規則換到另一個環境還成立嗎？成立 → 寫在本檔。只在特定環境成立 → 才進 runbook。
+> 反例（2026-07-25 曾犯）：冪等閘、push 重試最初只寫進雲端 runbook，等於本機跑同一條 pipeline 卻少了兩道保護。
+
+---
+
 ## Step 0：昨日缺跑檢查
 
 **僅當 TARGET_DATE 為今日時執行**（backfill 模式，即 TARGET_DATE 非今日時跳過本步驟——補跑歷史日期時「昨天」無意義）。
@@ -29,6 +46,18 @@ TARGET_DATE 由 Agent prompt 傳入。
 計算 TARGET_DATE 的前一天 YESTERDAY，檢查 `news/YESTERDAY.md` 是否存在：
 - 存在 → 一行帶過，繼續 Step 1a
 - 不存在 → 記錄缺失，於完成摘要表加一列「⚠️ 昨日（YESTERDAY）日報缺失」，並提示使用者可執行 `/news-pipeline` 帶日期參數手動補跑；Step 6 log 寫入 `WARN: yesterday digest missing (YESTERDAY)`。**不自動補跑**（避免排程場景下連鎖跑兩天造成時間不可控）
+
+---
+
+## Step 0b：冪等閘 `[加入: 2026-07-25]`
+
+檢查 `news/TARGET_DATE.md` 是否已存在：
+
+- **不存在** → 正常繼續
+- **已存在，且 TARGET_DATE 是今日（排程／無參數模式）** → **中止**，理由 `digest already exists`，寫入 Step 6 log 後結束。重跑會覆寫日報並讓 wiki 記者對同一批新聞重複 prepend——日報覆寫還能重生，**wiki 重複條目要人工逐頁挑，代價高得多**
+- **已存在，但 TARGET_DATE 由參數明確指定（backfill 模式）** → 使用者已明示覆寫意圖，**不中止**，但在完成摘要標一行 `⚠️ 覆寫既有日報 TARGET_DATE`，並提醒 wiki ingest 可能產生重複條目、需人工核對
+
+會觸發此閘的情境：手動觸發撞上排程、當日已補跑過、或前次執行日報已產出但後段失敗。
 
 ---
 
@@ -47,7 +76,31 @@ PYTHON -m news_aggregator.main --gather-only [--date TARGET_DATE]
 
 ---
 
+### 補跑（backfill）注意事項 `[加入: 2026-07-25]`
+
+雲端漏跑後在本機 `/news-pipeline <date>` 補，有四個已知摩擦點：
+
+**1. 別把 `src/gathered_items.json` commit 上去。** 補跑會**覆寫**這個檔（它沒有按日期分檔），寫進去的是補跑那天的資料。這個檔同時是雲端 routine 的輸入——雲端啟動時讀到的若不是當日資料，新鮮度防線會中止當天執行。也就是**一次本機補跑可能連帶讓當天的雲端排程空跑**。
+- 只有 GitHub Actions 的 `daily-gather` 該 commit 這個檔
+- 補跑收尾時執行 `git -C REPO_ROOT checkout -- src/gathered_items.json` 還原，避免不小心被 `git add` 帶上車
+- 絕不要在補跑流程裡用 `git add -A` / `git add .`
+
+**2. 能補回來的洞有上限。** 來源多是 RSS／API 的近期視窗，撈不到幾天前的內容。gather 的失敗補撈機制把回看窗口最多拉到 **50 小時**（約兩天），`--date` 補跑則以「目標日 00:00 UTC 到現在」為窗口再裁切回目標日——**離現在越遠，補出來的日報越空，超過兩三天基本上補不回來**。這是來源特性，不是 bug；漏超過兩天就接受那幾天較稀疏，不要為了填滿而放寬收錄門檻。
+
+**3. 補跑不套用跨日去重快取**（`main.py` 明文：backfill 不碰 cache，否則會拿今日的快取去誤刪過去的項目）。因此補出來的日報**可能與前後日的日報有重複條目**，屬預期行為，wiki ingest 端由 `wiki-ingest.md` 的「確認最近是否已處理過同一份日報」把關。
+
+**4. 補跑日報已存在時**：`Step 0b：冪等閘` 會因為你明確給了日期參數而放行覆寫，但 wiki 那邊會產生重複條目，需人工核對——見該步驟說明。
+
+---
+
 ## Step 1b：生成日報
+
+**0. 新鮮度防線（強制，生成前先做）`[加入: 2026-07-25]`**：讀取 `src/gathered_items.json`，確認 `date` 等於 TARGET_DATE 且 `items` 非空。
+
+- 兩者皆滿足 → 繼續生成
+- 任一不滿足 → **中止，不生成假日報**。Step 6 log 寫 `ABORTED: gathered_items.json date=<實際值> items=<數量>，非目標日期的新鮮資料`，結束
+
+本機剛跑完 Step 1a 時這道檢查通常必然通過（資料才剛產生）；它真正保護的是**跳過 Step 1a 的情境**（雲端由 GitHub Actions 供料，可能延遲、失敗或還沒跑），以及本機重跑時誤讀到舊資料。兩種環境都執行，不因「本機應該不會發生」而略過。
 
 1. 讀取 `src/gathered_items.json`
 2. 依照以下 prompt 格式，**直接**用繁體中文生成日報 Markdown（不呼叫任何外部 API）：
@@ -240,7 +293,24 @@ git -C REPO_ROOT push
 ```
 
 - 若 web build 無變更，仍須執行 `git -C REPO_ROOT push` 推送先前的 news / wiki commit
-- 若 push 失敗，回報錯誤並在 Step 6 log 記錄 `Push FAILED`
+- **backfill 模式收尾（強制）**：push 完成後執行 `git -C REPO_ROOT checkout -- src/gathered_items.json`，把該檔還原成 repo 版本。理由見「補跑注意事項」第 1 點——補跑會覆寫這個雲端 routine 賴以判斷新鮮度的輸入檔
+
+**push 失敗重試（強制）`[加入: 2026-07-25]`**
+
+push 被拒最常見的原因是 non-fast-forward——GitHub Actions 的 `daily-gather` 或另一個環境在你執行期間也 push 了（Actions 排程實測延遲過 2 小時 42 分，時間緩衝不保證不撞）。**在雲端，未推送的 commit 會隨容器銷毀且下次是全新 checkout，救不回來**；本機雖然 commit 還在，仍應照同樣程序處理，兩邊行為一致。
+
+```
+git -C REPO_ROOT rev-parse --abbrev-ref HEAD   # 不是 master 就先 git checkout -B master
+git -C REPO_ROOT push || {
+  git -C REPO_ROOT pull --rebase origin master && git -C REPO_ROOT push
+}
+```
+
+- 最多重試 **2 次**，每次都先 `pull --rebase` 再 push
+- 先確認在 master 上：2026-07-14 曾因 session 啟動時 `origin/master` 快取落後而處於 detached HEAD，該狀態下 push 不會更新遠端分支
+- **唯一允許自動解的衝突：`src/news_aggregator/emitted_items.json`**——此檔有兩個寫者（GitHub Actions 加入未確認條目、pipeline 翻確認欄位）。解法固定：**放棄我方的 confirm commit、保留遠端版本**，因為日報上站遠比確認欄位重要，未確認的條目只會被重新提供一次，是良性退化。處理後標「emitted-cache 確認本次放棄，項目將於次日重新提供」
+- **其他任何檔案的衝突 → 不自行解**：`git rebase --abort`，Step 6 log 記 `Push FAILED - rebase conflict`，並列出衝突檔案清單
+- 兩次都失敗 → Step 6 log 記 `Push FAILED`，完成摘要明確標示**本次產出全部未上站**，不可寫成完成
 
 ---
 
