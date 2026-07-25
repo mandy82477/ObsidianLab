@@ -280,6 +280,28 @@ def _assert_min_count(pair: dict) -> list[str]:
     return failures
 
 
+def _assert_max_count(pair: dict) -> list[str]:
+    """出現次數上限 — 用來斷言「這段文字不該出現」。
+
+    min_count 做不到這件事：它的條件是 count < min 才失敗，所以 min: 0 恆為真，
+    寫成 min_count + min: 0 的「不該出現」檢查其實什麼都沒檢查（2026-07-25 發現
+    registry 中「wiki-ingest.md 無『精簡複本』殘留字樣」一直是假綠）。
+    """
+    failures = []
+    n = pair.get("max", 0)
+    for f in pair["files"]:
+        target = REPO_ROOT / f
+        if not target.exists():
+            failures.append(f"{f}：檔案不存在")
+            continue
+        text = read_text(target)
+        for pattern in pair["patterns"]:
+            count = len(re.findall(pattern, text))
+            if count > n:
+                failures.append(f"{f}：`{pattern}` 出現 {count} 次（上限 {n}）")
+    return failures
+
+
 def _assert_equal_values(pair: dict) -> list[str]:
     failures = []
     pattern = pair["pattern"]
@@ -308,6 +330,7 @@ def _assert_equal_values(pair: dict) -> list[str]:
 ASSERTION_HANDLERS = {
     "all_contain": _assert_all_contain,
     "min_count": _assert_min_count,
+    "max_count": _assert_max_count,
     "equal_values": _assert_equal_values,
 }
 

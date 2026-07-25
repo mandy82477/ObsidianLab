@@ -86,10 +86,11 @@
     },
     {
       "name": "wiki-ingest.md 無「精簡複本」殘留字樣",
-      "assertion": "min_count",
+      "assertion": "max_count",
       "files": [".claude/commands/wiki-ingest.md"],
       "patterns": ["精簡複本"],
-      "min": 0
+      "max": 0,
+      "_note": "2026-07-25 由 min_count/min:0 改為 max_count/max:0——前者的條件是 count < min 才失敗，min:0 恆為真，這條「不該出現」的檢查一直是假綠。"
     },
     {
       "name": "wiki-ingest.md / wiki-lint.md / rules/wiki-ingest.md：六類 subagent_type 名稱一致 + model: \"sonnet\"",

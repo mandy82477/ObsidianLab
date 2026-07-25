@@ -14,6 +14,7 @@
 
 | 繞路內容 | 真解 | owner | 複查日 | 狀態 |
 |---|---|---|---|---|
+| 雲端排程改薄殼架構（2026-07-25）：trigger prompt 只指向 `docs/cloud-runbooks/` 的 runbook，並同步修入冪等閘、push `pull --rebase` 重試、Step 1c 必須 commit `emitted_items.json`、watchdog 告警。所有變更皆已本機驗證（測試綠＋錨點負向測試＋watchdog 雙向乾跑），但**尚未經過一次真實雲端執行**——薄殼 prompt 能否讓雲端 agent 正確照 runbook 跑完，只有實跑才知道 | 2026-07-25 13:00 UTC 那次 daily routine 跑完後核對：(a) `news/2026-07-25.md` 產出且格式符合新 Step 1b 規格、(b) 該日 commit 含 `data: confirm emitted-cache`、(c) `emitted_items.json` 當日確認率回到接近 100%、(d) 15:00 UTC watchdog 綠燈。四項全過即移入已收斂 | Claude（次日 session） | 2026-07-26 | 🟡 待首跑驗證 |
 | Reddit RSS 走 `sort=top&t=week` 加「· 週熱門」標記，wiki 視標記為達低門檻（RSS 天生無分數 → score 恆 0） | 設 Reddit OAuth 憑證（環境變數 `REDDIT_CLIENT_ID` / `REDDIT_CLIENT_SECRET`）→ `reddit.py` OAuth 路徑取真實 `ups`；之後退役「週熱門」特例 | 使用者（reddit.com/prefs/apps 建 script app） | 2026-07-24 | 🟡 繞路中 |
 | GitHub API 走匿名（60 req/hr、搜尋 10 req/min），GitHub Search 常撞限流回 0 | 設 GitHub PAT（環境變數 `GITHUB_TOKEN`，classic token 免勾 scope）→ 60/hr 升 5000/hr，`github_releases.py` 已備 Authorization 路徑 | 使用者（github.com Settings→Developer settings→Tokens classic） | 2026-08-10 | 🟡 繞路中（選配，非資料殘缺） |
 | Blogroll RSS 名單已於 2026-07-11 確認上線（simonwillison / jessevincent / arminronacher / antirez，皆 probation）；煙霧測試 0 命中已診斷為 (a) 26h 窗內無 Claude/Anthropic 相關新文，非技術問題（4 個 feed HTTP 200、bozo=False、時間解析正常，Simon Willison 窗內僅 1 篇且與主題無關已正確被關鍵字擋下）。剩餘待辦：probation 首月觀察（汰換節奏已定：來源記分卡 2026-07-16 上線，每週隨 `/wiki-lint` 6e 執行，見 `docs/source-scoring-optimization.md`） | 30 天 probation 期滿（2026-08-11）後以記分卡數據檢視命中率決定去留 | 使用者 | 2026-08-11 | 🟡 繞路中 |

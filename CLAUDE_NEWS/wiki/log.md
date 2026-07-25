@@ -3047,3 +3047,16 @@ Append-only 紀錄。每次 ingest、lint，以及**揭露缺陷或促成改動�
 - **處置：** (a) 於 `topics/community-tech-patterns.md` 模式概覽後、技術彙整前新增 `## 學術對照：多智能體 orchestration 術語` 參考層（兩軸：控制流 × 通訊原語；Subagent＝orchestrator-workers/centralized、Workflow＝static/DAG、Agent Teams＝decentralized+blackboard；附三篇來源：Anthropic Building Effective Agents、Future Internet 2026 綜述、arXiv:2501.06322）；(b) 於 `.claude/rules/wiki-ingest-community.md` 加「multi-agent orchestration 學術對照維護」常規——新模式須判斷對應格位，需補論文時因社群記者無 web 工具，改在同步自查欄轉知主編 WebSearch 查證，屬非新聞性更新（只動最後更新）。
 - **驗證：** `python scripts/run_tests.py` 全綠（含 check_rules.py）。
 - **延伸（同日）：** 於學術對照節新增子區塊「誰負責拆分（decomposition）——human／強 planner／凍結的 skill」，含四種拆分來源 × 應用場景表、核心經驗（PEAR 強 planner>強 executor、ADaPT 遞迴拆分、Coarse-to-Fine 粒度自適應、mixed-initiative、SDD）與「何時必須人類凍結」四選一判準；擴充參考來源至 8 筆。觸發自使用者追問「弱模型分工是否需人類先拆 skill／何時模型自判拆分」與「目前有無這方面討論」。
+
+## 2026-07-25 Query：雲端排程整體 review — trigger 與 pipeline 的耦合
+
+- **觸發：** 使用者問「SCHEDULE 現在會指定 PIPELINE 要執行哪一行不好，pipeline 一更新就容易出問題」，並要求整體 review 雲端排程、思考 corner case 與擴充性。
+- **根因（揭露的缺口）：** 雲端 trigger 的 prompt 存在 claude.ai API、不在 repo 內，卻寫死了 11 個步驟座標（daily 的 `Step 0/1a/1b/3/4/5/6`、weekly 的 `Step 3/4/6a/6c/6d/6f`）。`scripts/check_rules.py` 掃不到雲端內容，等於專案最強的防再犯機制對最危險的耦合點完全盲區。缺口已實際存在：**舊 daily prompt 的步驟列舉裡沒有 `Step 1c`**（`--confirm-digest`），雲端沒漏做純粹是 agent 讀檔時順著往下做，不是 prompt 要求的。
+- **第二個（更嚴重的）發現：** 雲端 routine 從不 commit `src/news_aggregator/emitted_items.json`，Step 1c 的確認結果每天隨容器銷毀。committed 檔案逐日確認率佐證：07-14~07-24 雲端日幾乎全為 0（3/60、5/58、1/58、1/56、3/59、0/45、3/68、0/68、0/54），僅本機手動執行的 07-19、07-22 為 100%。**2026-07-13 漏失 25 則新聞後建立的兩階段確認防線，整個自動化時期沒有生效過**，跨日去重全靠 `seen_urls.json` 獨撐。
+- **處置（兩波）：**
+  - 第一波：新增 `docs/cloud-runbooks/`（`_shared.md` / `daily.md` / `weekly-lint.md`），執行規範進 repo 並改用步驟標題錨點引用；trigger prompt 縮成薄殼（只指路 + runbook 缺失時的失效保護）；trigger 定義鏡像存進 `docs/cloud-runbooks/triggers/`；runbook 納入 `.claude/review-registry.json` 的裸露引用／路徑存在性／同步配對檢查。
+  - 第二波：Step 1c 明文要求 commit `emitted_items.json` 並隨統一 push 上站；runbook 前置閘改兩道（新增「日報已存在則中止」的冪等閘）；push 加 `pull --rebase` 重試與 detached HEAD 檢查，並定義唯一可自動解的衝突（`emitted_items.json` 讓給遠端）；新增 `.github/workflows/daily-watchdog.yml`（15:00 UTC）檢查抓料／日報／網站三件當日產出，缺件則 job 失敗，以 GitHub 排程失敗通知當告警管道。
+  - 順手修掉 `check_rules.py` 的假綠：`min_count` + `min: 0` 的條件是 `count < min`，恆為真，「wiki-ingest.md 無『精簡複本』殘留字樣」這條一直什麼都沒檢查。新增 `max_count` 斷言型別並改用之。
+- **驗證：** `python scripts/run_tests.py` 全綠；三項負向測試皆確認會變紅（改步驟標題 → 同步配對紅、塞入禁字 → `max_count` 紅、watchdog 缺件 → job fail），watchdog 另以 07-24 為基準日乾跑綠燈。
+- **待驗證：** 薄殼架構尚未經過真實雲端執行，已登記 `docs/workaround-register.md`（複查日 2026-07-26）。
+- **順帶處理：** 本機 master 落後 origin 七天且雙方各有獨有 commit（本機 15 個未推送），已 merge 並解衝突（web_reader 生成物取雲端版、`log.md` 依時序保留雙方、`community-tech-patterns.md` 標頭取較新日期）後推送。
