@@ -33,7 +33,12 @@
 ## 為什麼快取檔要 commit（與 CLAUDE.md 資料檔例外的關係）
 
 `seen_urls.json` / `emitted_items.json` 是**跨日去重快取**。本機跑時它們留在磁碟自然持久;但 GitHub Actions **每次全新 checkout**,不 commit 回去的話隔天去重就失效、重複出舊聞。故 ① **必須** commit 這兩個檔 + `gathered_items.json`。
-CLAUDE.md 說資料檔「不需 commit」是指手動流程無此義務,非禁止;自動流程基於持久化需要而 commit,不違反。單一寫者=① Actions（手動 `--date` 補救不碰快取,見 `main.py` line 178）。
+CLAUDE.md 說資料檔「不需 commit」是指手動流程無此義務,非禁止;自動流程基於持久化需要而 commit,不違反。
+
+**寫者分工 `[改版: 2026-07-25]`：** 原本記載「單一寫者=① Actions」,但那導致 ② 的 `--confirm-digest` 結果從未進 repo——② 在容器內把 `emitted_items.json` 標記為已確認,容器一銷毀就沒了,下次全新 checkout 讀到的仍是未確認。實測 2026-07-14～07-24 雲端期間每日確認率幾乎為 0（僅本機手動執行的 07-19、07-22 為 100%）,兩階段確認機制形同空轉,跨日去重全靠 `seen_urls.json` 獨撐。現改為:
+- ① Actions 寫 `gathered_items.json` / `seen_urls.json` / `emitted_items.json`（新增未確認條目）
+- ② 雲端 routine **只寫 `emitted_items.json` 的確認欄位**,並與日報同批 push（見 `.claude/commands/news-pipeline-steps.md` 的 `Step 1c：確認 emitted-cache`）
+- 兩者時間錯開 3 小時且都走 push 重試,不構成競態;手動 `--date` 補救不碰快取,見 `main.py`
 
 ## 出問題時如何補救
 
@@ -47,7 +52,8 @@ CLAUDE.md 說資料檔「不需 commit」是指手動流程無此義務,非禁�
 
 ## 監控與驗證
 
-- **Actions**：https://github.com/mandy82477/ObsidianLab/actions → `daily-gather`
+- **看門狗（告警層）`[加入: 2026-07-25]`**：`.github/workflows/daily-watchdog.yml`,每日 15:00 UTC / 23:00 台北檢查當日 `gathered_items.json` 與 `news/<date>.md` 是否齊全,缺件則 job 失敗——GitHub 對失敗的排程 workflow 會寄信,這是本系統唯一的主動告警管道。紅燈時看 job summary 判斷是哪一段缺件,依下方補救路徑處理。
+- **Actions**：https://github.com/mandy82477/ObsidianLab/actions → `daily-gather` / `daily-watchdog`
 - **雲端 routine**：https://claude.ai/code/routines/trig_01AWf2wwmVeL3ykPCSyxyvzw
 - **是否上站**：master 每天應出現 `data: daily gather`（①）+ `news/wiki/web`（②）共約 4 筆 commit;網站 Pages 自動重建。
 - **首跑結果（2026-07-11）**：❌ 失敗。① 實際延遲至 14:02 UTC 才 push（設計 12:30 UTC），② 於 13:00 UTC 開跑時讀不到當日資料，新鮮度防線正確中止、未生假日報。已本機補跑並將 ① 排程提早至 10:00 UTC（3 小時緩衝），見 `docs/workaround-register.md` 對應列。

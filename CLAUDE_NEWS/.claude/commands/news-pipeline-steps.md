@@ -176,6 +176,13 @@ PYTHON -m news_aggregator.main --confirm-digest [--date TARGET_DATE]
 
 - 把 Step 1a 篩出的項目標記 `digest_confirmed: true`；未確認的項目視同未出現過，下次重跑會重新提供、不會被永久靜默丟棄（2026-07-13 曾因日報未產出導致 25 則新聞永久漏失，詳見當日 log）
 - 失敗只記警告，不影響已完成的 news commit，繼續後續步驟
+- **確認結果必須進 git（強制）`[加入: 2026-07-25]`**：`--confirm-digest` 改的是 `src/news_aggregator/emitted_items.json`，這個檔不 commit 就等於沒改過——GitHub Actions 與雲端 routine 都是全新 checkout，讀的是 repo 版本。執行完 append 下列指令，讓它跟著 Step 5 的統一 push 一起上去：
+  ```
+  git -C REPO_ROOT add src/news_aggregator/emitted_items.json
+  git -C REPO_ROOT commit -m "data: confirm emitted-cache TARGET_DATE"
+  ```
+  （無變更則跳過。**不要單獨 push**，一律留給 Step 5。這樣「日報上站」與「快取確認」同批推送，要嘛一起成功、要嘛一起回到未確認狀態，不會出現「確認了但日報沒上站」的不一致）
+- 漏做的實際後果：2026-07-14～07-24 雲端自動化期間，每日確認率幾乎為 0（僅本機手動執行的 07-19、07-22 為 100%），兩階段確認機制形同空轉，跨日去重完全靠 `seen_urls.json` 獨撐
 
 ---
 

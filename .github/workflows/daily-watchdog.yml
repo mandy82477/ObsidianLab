@@ -1,0 +1,79 @@
+# 每日產出看門狗（自動化流水線的告警層）
+#
+# 問題：分裂架構的兩段（① GH Actions 抓料、② 雲端 routine 產日報/wiki/網站）
+# 任一段失敗時，整個系統沒有任何告警管道——ABORT 只 append 一行 log 再 commit，
+# 而那行 log 沒人看。歷史前科：2026-07-12 追查才發現雲端 routine「從未被建立」，
+# 連續兩天無聲空轉；GitHub 也會在高負載時直接丟棄 scheduled workflow（不是延遲，
+# 是不跑），疊加起來就是「那天就是沒有，而且沒人知道」。
+#
+# 解法：本 workflow 在兩段都該完成之後檢查當日產出，缺件就讓 job 失敗——
+# GitHub 對失敗的排程 workflow 會寄信給 workflow 檔的最後修改者，這是現成的
+# 告警管道，不需要任何額外憑證或第三方服務。
+#
+# 判讀方式：綠燈＝當日日報已上站；紅燈＝看 summary 指出是哪一段缺件，
+# 依 CLAUDE_NEWS/docs/daily-automation.md 的補救路徑本機補跑。
+name: daily-watchdog
+
+on:
+  schedule:
+    # 15:00 UTC = 23:00 台北。① 為 10:00 UTC、② 為 13:00 UTC，
+    # 留 2 小時給雲端 routine 跑完（實測完整 pipeline 約 30–60 分鐘）。
+    - cron: "0 15 * * *"
+  workflow_dispatch: {}
+
+permissions:
+  contents: read
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+
+      - name: 檢查當日產出是否齊全
+        run: |
+          TODAY=$(date -u +%F)
+          DIGEST="CLAUDE_NEWS/news/${TODAY}.md"
+          GATHERED="CLAUDE_NEWS/src/gathered_items.json"
+          FAILED=0
+
+          echo "## 每日產出檢查 ${TODAY} (UTC)" >> "$GITHUB_STEP_SUMMARY"
+
+          # 第 ① 段：GitHub Actions 抓料
+          # encoding 明寫 utf-8：日報資料含中文，預設編碼非 UTF-8 的環境會讀失敗而誤報缺件
+          GATHER_DATE=$(python3 -c "import json;print(json.load(open('${GATHERED}',encoding='utf-8'))['date'])" 2>/dev/null || echo "讀取失敗")
+          GATHER_N=$(python3 -c "import json;print(len(json.load(open('${GATHERED}',encoding='utf-8'))['items']))" 2>/dev/null || echo 0)
+          if [ "$GATHER_DATE" = "$TODAY" ] && [ "$GATHER_N" -gt 0 ]; then
+            echo "- ✅ ① 抓料：${GATHER_N} 則" >> "$GITHUB_STEP_SUMMARY"
+          else
+            echo "- ❌ ① 抓料缺件：gathered_items.json date=${GATHER_DATE} items=${GATHER_N}（daily-gather 失敗或被 GitHub 丟棄）" >> "$GITHUB_STEP_SUMMARY"
+            FAILED=1
+          fi
+
+          # 第 ② 段：雲端 routine 產日報
+          if [ -f "$DIGEST" ]; then
+            echo "- ✅ ② 日報已上站：${DIGEST}" >> "$GITHUB_STEP_SUMMARY"
+          else
+            echo "- ❌ ② 日報缺件：${DIGEST} 不存在（雲端 routine 未執行、中止、或 push 失敗）" >> "$GITHUB_STEP_SUMMARY"
+            FAILED=1
+          fi
+
+          # 第 ② 段後半：web reader 是否也重建了
+          # 分開檢查的理由：測試套件失敗時流程「跳過 build 但仍推送 news/wiki」是設計行為，
+          # 此時日報在 repo 裡但網站停在舊版——只檢查日報會漏掉這種半成品狀態。
+          WEB="CLAUDE_NEWS/web_reader/data/digest/${TODAY}.json"
+          if [ -f "$WEB" ]; then
+            echo "- ✅ ② web reader 已重建" >> "$GITHUB_STEP_SUMMARY"
+          elif [ -f "$DIGEST" ]; then
+            echo "- ❌ ② 日報有但網站沒重建：${WEB} 不存在（多半是 run_tests.py 失敗導致跳過 build）" >> "$GITHUB_STEP_SUMMARY"
+            FAILED=1
+          fi
+
+          if [ "$FAILED" = "1" ]; then
+            echo "" >> "$GITHUB_STEP_SUMMARY"
+            echo "**補救**：本機執行 \`/news-pipeline ${TODAY}\`（見 CLAUDE_NEWS/docs/daily-automation.md）" >> "$GITHUB_STEP_SUMMARY"
+            echo "當日產出缺件，見 job summary。"
+            exit 1
+          fi
+          echo "當日產出齊全。"
