@@ -4,11 +4,11 @@
 **狀態：** active
 **領域：** 👤 人物
 **首次出現：** 2026-04-23（事後報告發布）
-**最後更新：** 2026-07-20
-**最後新聞更新：** 2026-07-20
+**最後更新：** 2026-07-25
+**最後新聞更新：** 2026-07-25
 
-> **最新動態**（2026-07-17，待核實）
-> Startup Fortune 報導 Boris Cherny 表示他現在同時執行數千個 Claude Code agent。報導僅為標題層級資訊，未展開原始出處（訪談或社群貼文未明），呼應他先前（2026-05-13）揭露的夜間數千子代理深度工作工作流，暫標待核實。
+> **最新動態**（2026-07-25）
+> Claude Opus 5 於 2026-07-24 正式發布後，Boris Cherny 於 X 發文表示：「比起這些評測分數，更讓我興奮的是其他事：Opus 5 是我們目前最難被提示注入（prompt injection）攻破的模型。」是他對新模型安全性面向的首次公開評論。
 
 ---
 
@@ -21,6 +21,14 @@ Boris Cherny 是 Anthropic Claude Code 的創始人與負責人（Head of Claude
 ---
 
 ## 公開言論與主張
+
+### Opus 5 抗提示注入能力公開評論（2026-07-25）
+
+Claude Opus 5 於 2026-07-24 正式發布後，Boris Cherny 在 X 發文評論新模型的安全性面向：「比起這些評測分數，更讓我興奮的是其他事：Opus 5 是我們目前最難被提示注入（prompt injection）攻破的模型。」此為他繼「coding is solved」「Loops 是未來」等能力／效率導向宣言後，首次公開聚焦於模型**安全性**面向的表態，可與 [[entities/opus-5]] 及 [[topics/ai-agent-safety]] 對照。
+
+- 來源：[Boris Cherny / X，經 Simon Willison 部落格轉引，2026-07-25](https://simonwillison.net/2026/Jul/25/boris-cherny/#atom-everything)（原推文：[X](https://twitter.com/bcherny/status/2080713091688583312)）
+
+---
 
 ### Bloomberg「Claude Code 創造者」影片報導（2026-07-20，待查證）
 
@@ -123,6 +131,7 @@ Boris Cherny 的公開言論呈現兩種截然不同的社群反應：
 
 ## 相關實體
 
+- [[entities/opus-5]]（其提示注入抵抗力公開評論之對象模型）
 - [[entities/claude-code]]（Boris Cherny 主導的產品）
 - [[entities/pricing]]（第三方工具邊界聲明）
 - [[entities/openclaw]]（第三方工具管控政策）
@@ -133,6 +142,7 @@ Boris Cherny 的公開言論呈現兩種截然不同的社群反應：
 
 ## 歷史記錄
 
+- 2026-07-25：Boris Cherny 公開表示 Opus 5 是目前最難被提示注入攻破的模型（Simon Willison 部落格轉引 X 貼文，https://simonwillison.net/2026/Jul/25/boris-cherny/#atom-everything）
 - 2026-07-20：Bloomberg 發布影片／報導「Watch The Creator of Claude Code on The Hottest Piece of Software in the World」，標題未具名，佐以 Bloomberg 7/16 特稿與多平台「Creator of Claude Code」慣稱推測極可能為本人，暫標（待查證）（Google News / Bloomberg.com，2026-07-20）
 - 2026-07-17：Startup Fortune 報導其表示現在同時執行數千個 Claude Code agent，呼應 5/13 揭露的夜間數千子代理工作流，惟原始出處（訪談或社群貼文）未明，暫標（待核實）（Google News / Startup Fortune，2026-07-17）
 - 2026-07-08：inc.com 報導「Head of Claude Code」談新創公司需具備的 5 種員工原型（employee archetypes），原文未具名確認發言人，可能為 Boris Cherny 或 [[entities/cat-wu]]，暫標（待核實）（inc.com，2026-07-07，https://www.inc.com/ashley-couto/claude-code-startup-needs-employee-archetypes/91370409）
@@ -169,3 +179,4 @@ Boris Cherny 的公開言論呈現兩種截然不同的社群反應：
 - [[news/2026-07-08]]
 - [[news/2026-07-18]]
 - [[news/2026-07-20]]
+- [[news/2026-07-25]]

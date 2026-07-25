@@ -1,20 +1,20 @@
 # Claude Opus 4.8
 
 **類型：** model
-**狀態：** active
+**狀態：** active（已被取代，次旗艦地位由 Opus 5 接手）
 **領域：** 🤖 模型
 **首次出現：** 2026-05-28
-**最後更新：** 2026-07-24
-**最後新聞更新：** 2026-07-24
+**最後更新：** 2026-07-25
+**最後新聞更新：** 2026-07-25
 
-> **最新進展**（2026-07-24）
-> 「Opus 5」傳聞持續增溫但仍未證實：HackerNoon（07-24）指出流傳截圖「通過截圖測試、未通過 API 合約測試」，TestingCatalog（07-23）報導 Anthropic 正為潛在推出做準備；兩者均非官方公告，詳見下方「下一代模型觀察」。Opus 4.8 本身現況不變，仍為 Fable 5 護欄觸發時的 fallback 模型。
+> **最新進展**（2026-07-25）
+> 近兩週流傳的「Opus 5」傳聞已由官方證實：Anthropic 於 2026-07-25 正式發布 [[entities/opus-5|Claude Opus 5]]，官方稱「相同成本下效能大幅提升」，取代 Opus 4.8 成為次旗艦，並成為 Claude Max 新預設模型、Claude Pro 最強模型。Opus 4.8 本身能力不變，但已非 Anthropic 當前最推薦的次旗艦選項，詳見 [[entities/opus-5]] 與下方「下一代模型觀察」。
 
 ---
 
 ## 現況
 
-**2026-07-24 最新**：「Opus 5」傳聞增溫但仍未證實——HackerNoon 指流傳截圖僅通過視覺層面的「截圖測試」，未通過可程式化驗證的 API 合約測試；同期 TestingCatalog 報導 Anthropic 正為潛在 Opus 5 推出做準備，兩者皆為媒體報導、非官方公告，詳見「下一代模型觀察」段落。Opus 4.8 本身能力與角色未變。
+**2026-07-25 最新**：Claude Opus 5 正式發布，取代 Opus 4.8 成為次旗艦、Claude Max 新預設模型、Claude Pro 最強模型（詳見 [[entities/opus-5]]）。近兩週的「Opus 5」傳聞（HackerNoon 07-24、TestingCatalog 07-23 等，見下方「下一代模型觀察」歷史記錄）就此獲得官方證實。Opus 4.8 本身能力與規格未變，仍是 Fable 5 護欄觸發時的 fallback 模型，但已不再是次高階公開模型的首選。
 
 Claude Opus 4.8 於 2026-05-28 正式發布，同步推出 Dynamic Workflows（Research Preview）與 Fast Mode 降價，是 2026 年以來 Anthropic 發布規模最大的旗艦更新。**2026-06-09 Claude Fable 5 發布後，Opus 4.8 不再是最高階公開模型**，現作為 Fable 5 安全分類器觸發時的 fallback 模型（< 5% session 觸發）——出口管制期間（2026-06-13 至 07-01）Opus 4.8 曾是 Fable 5 全面下線時的唯一替代選項，管制已於 2026-07-01 解除，現行 fallback 角色改由 Fable 5「Defense in Depth」分類器觸發（詳見 [[entities/fable-5]]）。核心指標：SWE-bench Pro 69.2%（1M context window）；Fast Mode 速度為標準的 2.5 倍、費率降至前代的 1/3。
 
@@ -108,6 +108,7 @@ claude.ai 用戶現可調節 Claude 在任務上投入的努力程度，不再�
 ---
 
 ## 相關議題
+- [[entities/opus-5]]（2026-07-25 發布，取代 Opus 4.8 成為次旗艦，官方稱相同成本下效能大幅提升）
 - [[entities/fable-5]]（現任最高階公開模型；Opus 4.8 為其護欄觸發時的 fallback）
 - [[entities/sonnet-5]]（2026-07-01 發布，效能接近 Opus 4.8 但成本低約 60%）
 - [[topics/code-quality-decline]]（升版前效能下降事件）
@@ -121,7 +122,9 @@ claude.ai 用戶現可調節 Claude 在任務上投入的努力程度，不再�
 - [Claude Opus 4.8 官方公告](https://www.anthropic.com/news/claude-opus-4-8)
 - [Dynamic Workflows in Claude Code](https://claude.com/blog/introducing-dynamic-workflows-in-claude-code)
 
-## 下一代模型觀察：「Opus 5」傳聞（推測性，尚未證實）
+## 下一代模型觀察：「Opus 5」傳聞（✅ 已於 2026-07-25 獲官方證實，詳見 [[entities/opus-5]]）
+
+以下歷史記錄保留傳聞階段的原始查證過程，供時序參考；Opus 5 現況與能力細節請見 [[entities/opus-5]]，不在此頁重複維護。
 
 **2026-07-24（❓ 待查證）**：HackerNoon 分析近期網路流傳的 Claude Opus 5 傳聞截圖，指出這些截圖「通過了截圖測試，卻未通過 API 合約層級的驗證」——意即畫面本身看似可信，但尚無人能以實際 API 呼叫驗證對應模型 ID 或行為確實存在，換言之目前僅止於視覺層面的傳聞，缺乏可程式化驗證的證據（[Google News/HackerNoon](https://news.google.com/rss/articles/CBMioAFBVV95cUxQRF9EUHUybk1zS3N5T0lNdUYyVHJ1ZVl3bktrUjZZSWVQUUU3c0t0Tzh1UFdXYTdITHpRYUJJVmJ2SVhrNko1eHdUdDNHNzRtRk1xdUd0Qk81ZkRiQUNpeVVVUHhnTDZXelFhcnNOYzhsVUxGWFUwYjZJUnk3cXRpUEExalhmVi01X0w4LTVTRmZHUmMtRkJzc0ZOelJnVkVk?oc=5)，2026-07-24）。與 07-13 dev.to 分析（「傳聞存在具可信度但無日期/跑分佐證」）方向一致，進一步強化「截圖流傳 ≠ 可驗證事實」的判斷。
 
@@ -135,6 +138,7 @@ claude.ai 用戶現可調節 Claude 在任務上投入的努力程度，不再�
 
 | 日期 | 事件 |
 |------|------|
+| 2026-07-25 | **✅ 官方證實：Claude Opus 5 正式發布**，取代 Opus 4.8 成為次旗艦、Claude Max 新預設模型、Claude Pro 最強模型；終結近兩週傳聞（詳見 [[entities/opus-5]]） |
 | 2026-07-24 | **❓ 待查證：HackerNoon 分析「Opus 5 傳聞通過截圖測試，未通過 API 合約測試」**：指出流傳截圖看似可信，但缺乏可程式化驗證的 API 層級證據 |
 | 2026-07-23 | **❓ 待查證：TestingCatalog 報導 Anthropic 正為潛在 Opus 5 推出做準備**：未提供具體時間或型號細節，與 07-20 市場臆測方向一致 |
 | 2026-07-21 | **❓ 待核實：舊「Qwen distillation」爭議經媒體重提，冠以「蒸餾雙標」框架**：TipRanks（經 Google News 轉載，僅標題可用，無內文）報導標題稱「Claude 自稱是阿里巴巴 Qwen AI」，並將此與 Anthropic 對外蒸餾議題立場並列，稱其為「雙重標準」爭議。無法取得報導實質內容佐證是否為新事件或僅重提 2026-05-29–30 的舊爭議（當時社群主流判斷為 proxy 詐騙服務假冒 Claude，非真實 distillation，見下方 05-30 條目）；單一來源、無跨平台延燒訊號，暫記待觀察，不排除為舊事重炒（[Google News/TipRanks](https://news.google.com/rss/articles/CBMiuAFBVV95cUxPcEVadm95Um5CQ3hTNDE2cDFLVWwxUkZnYkVRaGdNcDZyZU5ZLWFKekZKZG1jblJSY1A0QlpFX2tvUDdqRmpsRHJ3S2taTkJIRVdoelBQZjM0LTRQQXRYb0R1M1YyODZtbV9iYk1ybkQzWFp1cHhuTkdOZzlUSUVxVFhNd01zeFhHc0MxOUU1QzdJaXRhbmZkMzhBVkpFampaWVBJQXZWWXdMZnhlYlVGbVduSklxUDVn)，2026-07-21） |

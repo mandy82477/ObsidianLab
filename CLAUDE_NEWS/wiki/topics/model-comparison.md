@@ -3,39 +3,41 @@
 **狀態：** ongoing
 **領域：** 🤖 模型
 **開始日期：** 2026-07-02
-**最後更新：** 2026-07-24
-**最後新聞更新：** 2026-07-24
+**最後更新：** 2026-07-25
+**最後新聞更新：** 2026-07-25
 
-> **最新對照更新**（2026-07-24）
-> GitHub Issue #79337（07-20 記錄 10 讚、35 留言 → 07-24 reaction 增至 13 個）回報，Fable 5 免費期到期後的 07-20 當天，Max 方案一度被要求額外購買 usage credits 才能執行 Fable 5、並靜默降級至 Opus 4.8；症狀與同日 Anthropic Status 已證實的 Max 誤判事件吻合，官方已確認為誤判並建議重啟。Max/Team 方案存取政策本身（「轉為永久標配」vs「轉為計量存取」）仍有分歧報導，詳見 [[entities/pricing]]。另有「Opus 5」傳聞持續增溫（HackerNoon 07-24、TestingCatalog 07-23），均未經官方證實，詳見 [[entities/opus-4-8]]。公開陣容五級維持不變：Fable 5（旗艦）> Opus 4.8 > Sonnet 5（主力）> Sonnet 4.6 > Haiku 4.5。
+> **最新對照更新**（2026-07-25）
+> **陣容重大變化**：Anthropic 於 2026-07-25 正式發布 [[entities/opus-5|Claude Opus 5]]，終結近兩週的傳聞（詳見 [[entities/opus-4-8]] 歷史記錄），取代 Opus 4.8 成為次旗艦——官方稱編碼與知識工作評測（Frontier-Bench、GDPval-AA）逼近 Fable 5、資安任務仍落後 Mythos 5、定價為 Fable 5 一半（另有報導稱維持原 Opus 定價，兩說法方向不完全一致，見 [[entities/pricing]]），現為 Claude Max 新預設模型、Claude Pro 最強模型。公開陣容更新為：Fable 5（旗艦）> **Opus 5（次旗艦，新）** > Sonnet 5（主力）> Sonnet 4.6 > Haiku 4.5；Opus 4.8 降級為已被取代。
 
 ---
 
 ## 摘要
 
-**目前公開陣容五級維持不變（Fable 5 > Opus 4.8 > Sonnet 5 > Sonnet 4.6 > Haiku 4.5），07-08 官方公布的多模型協作基準是最新橫向比較資訊。** 本頁回答一個問題：**「我該用哪個 Claude 模型？」** 各模型的深度資訊（爭議、時序、已知問題）在各自的 entities 頁；本頁只做橫向對照與情境推薦，模型陣容變化時同步更新。
+**2026-07-25，Anthropic 發布 Claude Opus 5，取代 Opus 4.8 成為次旗艦**——公開陣容更新為 Fable 5 > Opus 5 > Sonnet 5 > Sonnet 4.6 > Haiku 4.5（Opus 4.8 / Opus 4.7 皆已被取代）。Opus 5 官方稱編碼與知識工作評測逼近 Fable 5、資安任務仍落後 Mythos 5，定價定位見下方表格與 [[entities/pricing]]。本頁回答一個問題：**「我該用哪個 Claude 模型？」** 各模型的深度資訊（爭議、時序、已知問題）在各自的 entities 頁；本頁只做橫向對照與情境推薦，模型陣容變化時同步更新。
 
 ## 快速選型表
 
 | 模型 | 定位 | 定價（in/out per Mtok）| Context | 最適合 | 不適合 | 狀態 |
 |------|------|------|------|------|------|------|
 | [[entities/fable-5\|Fable 5]] | 旗艦（Mythos 級公開版） | $10 / $50 | 1M | 多步驟複雜任務、長期 agentic 工作流、安全漏洞分析 | 日常短問答（太貴）；前沿 LLM 開發（護欄靜默降級） | ✅ 已解禁（免費期已於 **7/19 到期**；07-20 一度出現 Max 方案誤判需購買 credits 的 bug，官方已證實並建議重啟；Max/Team 後續存取政策（永久標配／計量存取）仍分歧，詳見 [[entities/pricing]]） |
-| [[entities/opus-4-8\|Opus 4.8]] | 次旗艦 | ~$5 / $25（估計） | 1M | 大型 agentic 任務、1M context 長文件、Fast Mode 省時場景 | 追求穩定性的生產環境（曾有行為退步回報） | ✅ Active |
+| [[entities/opus-5\|Opus 5]] | **次旗艦（新，2026-07-25 發布，新 SOTA）** | 官方稱 Fable 5 一半；另有報導稱維持原 Opus 定價，兩說法未完全一致，見 [[entities/pricing]] | 1M | 日常 agentic 使用、編碼與知識工作、Claude Max/Pro 主力 | 資安/滲透測試等安全導向任務（仍不及 Mythos 5） | ✅ Active（Claude Max 新預設、Claude Pro 最強模型） |
 | [[entities/sonnet-5\|Sonnet 5]] | **主力平衡選項（Claude Code 預設）** | $2 / $10（促銷至 8/31） | 1M | agentic 工作流、Claude Code 日常、tool use 密集、成本敏感 | 需要 Mythos 級推理深度的極複雜任務 | ✅ Active（v2.1.197 預設） |
 | Sonnet 4.6 | 前代主力 | 低於 Sonnet 5 正式價 | 200K | 已驗證穩定的既有工作流；偏好其互動個性者 | 新專案（Sonnet 5 促銷期 CP 值更高） | ✅ Active |
 | Haiku 4.5 | 輕量 worker | 最低 | 200K | 混合架構低成本 subagent、批量簡單任務 | 複雜推理、長鏈 agentic 任務 | ✅ Active |
-| [[entities/opus-4-7\|Opus 4.7]] | 已被取代（第三階） | 同 4.8 | 200K | agentic coding 仍有口碑 | 新採用（已有兩代後繼） | ⚠️ 已被取代 |
+| [[entities/opus-4-8\|Opus 4.8]] | 已被取代（第三階，次旗艦地位由 Opus 5 接手） | ~$5 / $25（估計） | 1M | 既有工作流延續、Fast Mode 省時場景 | 新採用（已有 Opus 5 後繼） | ⚠️ 已被取代 |
+| [[entities/opus-4-7\|Opus 4.7]] | 已被取代（第四階） | 同 4.8 | 200K | agentic coding 仍有口碑 | 新採用（已有多代後繼） | ⚠️ 已被取代 |
 | [[entities/mythos\|Mythos 5]] | 無護欄完整版 | — | — | 授權機構的安全研究 | 一般開發用途（非此定位） | ✅ 已解禁（僅限授權機構/安全研究用途，非一般消費市場） |
 
 ## 情境推薦
 
 | 你的情境 | 建議 | 理由 |
 |---------|------|------|
-| Claude Code 日常開發 | **Sonnet 5**（預設即是） | 效能接近 Opus 4.8、成本約 60%，1M context |
+| Claude Code 日常開發 | **Sonnet 5**（預設即是） | 成本最低，1M context，agentic 效能足夠日常使用 |
+| 想要接近旗艦效能但成本減半 | **Opus 5**（新） | 官方稱編碼/知識工作評測逼近 Fable 5、定價為其一半（定價數字待彙整，見 [[entities/pricing]]）；發布首日，長期穩定性待觀察 |
 | 跨多天的複雜 agentic 任務 | **Fable 5** | 任務越複雜越長期優勢越明顯；免費期已於 7/19 到期，Max/Team 後續存取政策仍分歧（見 [[entities/pricing]]）；07-20 曾一度出現 Max 方案誤判需購買 credits 的 bug，官方已證實並建議重啟 |
-| 資安審查 / 漏洞分析 | **Fable 5**（留意誤判） | 能力最強，但 07-02 起 Defense in Depth 分類器有誤判實測 |
+| 資安審查 / 漏洞分析 | **Fable 5**（留意誤判） | 能力最強，但 07-02 起 Defense in Depth 分類器有誤判實測；Opus 5 官方自陳資安任務仍落後 Mythos 5，非此情境首選 |
 | 需要壓成本的批量任務 | **Haiku 4.5 做 worker + Sonnet 5 做協調** | 社群驗證的混合架構模式 |
-| 生產環境求穩 | **Sonnet 4.6 或 Sonnet 5** | Opus 4.8 曾有行為退步與 529 事件記錄 |
+| 生產環境求穩 | **Sonnet 4.6 或 Sonnet 5** | Opus 4.8 曾有行為退步與 529 事件記錄；Opus 5 發布僅一天，暫無穩定性資料 |
 
 ## Benchmark 對照（有來源者才列）
 

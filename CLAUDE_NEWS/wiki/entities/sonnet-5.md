@@ -4,19 +4,19 @@
 **狀態：** active（正式發布）
 **領域：** 🤖 模型
 **首次出現：** 2026-07-01
-**最後更新：** 2026-07-18
-**最後新聞更新：** 2026-07-14
+**最後更新：** 2026-07-25
+**最後新聞更新：** 2026-07-25
 
-> **最新動態**（2026-07-14）
-> MarkTechPost 發布 Sonnet 5 vs Sonnet 4.6 vs Opus 4.8 三模型深度比較文章，涵蓋 agentic coding benchmark、API 定價與成本效益取捨，惟原文摘要僅標題級資訊，具體數字待查證；07-09 tech-insider.org 提及的「評測 57 分、API 成本減半」等數字仍缺乏獨立佐證，維持「待查證」（定價細節見 [[entities/pricing]]）。
+> **最新動態**（2026-07-25）
+> dev.to（tokenmixai）分析文章重申 Sonnet 5 促銷定價的 60% Opus 折扣「real but temporary」，與既有 $2/$10 per Mtok（至 2026-08-31）促銷資訊一致，未提供新數字，定價細節見 [[entities/pricing]]。同日 Anthropic 正式發布 [[entities/opus-5|Claude Opus 5]]，Sonnet 5 本身的 Claude Code 預設模型定位、主力平衡選項角色不受影響。
 
 ---
 
 ## 現況
 
-**2026-07-14 最新**：MarkTechPost 發布 Sonnet 5 / Sonnet 4.6 / Opus 4.8 三模型 agentic coding benchmark、API 定價、成本效益比較的深度文章，具體數字待查證（詳見「歷史記錄」）。
+**2026-07-25 最新**：dev.to 分析文章重申 Sonnet 5 促銷定價的 60% 折扣「real but temporary」，未提供新數字（[[entities/pricing]] 有完整定價細節）；同日 [[entities/opus-5|Claude Opus 5]] 正式發布，Sonnet 5 本身定位不受影響。
 
-**2026-07-09**：Mashable 報導 Anthropic「正式發布」Sonnet 5，與 07-01 官方公告日期重疊，疑為媒體遲來報導；另有評測分數 57 分、API 成本減半的傳聞數字未見佐證，列「待查證」。
+**2026-07-14**：MarkTechPost 發布 Sonnet 5 / Sonnet 4.6 / Opus 4.8 三模型 agentic coding benchmark、API 定價、成本效益比較的深度文章，具體數字待查證（詳見「歷史記錄」）。
 
 Claude Sonnet 5 於 2026-07-01 正式發布，定位為 Anthropic **最 agentic 的 Sonnet 模型**，在 reasoning、tool use、coding、knowledge work 等多個面向均有顯著提升，效能接近 Opus 4.8。
 
@@ -73,7 +73,8 @@ claude --model claude-sonnet-5-20260701
 ## 相關議題
 
 - [[entities/fable-5]] — 現任最高階公開模型；Sonnet 5 為次階平衡選項，定位差異見上方「現況」
-- [[entities/opus-4-8]] — Opus 4.8 能力對比（Sonnet 5 效能接近 Opus 4.8）
+- [[entities/opus-4-8]] — Opus 4.8 能力對比（Sonnet 5 效能接近 Opus 4.8，Opus 4.8 已於 2026-07-25 被 [[entities/opus-5|Opus 5]] 取代次旗艦地位）
+- [[entities/opus-5]] — 2026-07-25 發布的新次旗艦，與 Sonnet 5 分屬不同定位（次旗艦 vs 主力平衡選項）
 - [[entities/pricing]] — 完整定價與促銷方案細節
 - [[entities/claude-code]] — Claude Code v2.1.197 更新
 
@@ -83,6 +84,9 @@ claude --model claude-sonnet-5-20260701
 - [[news/2026-07-01]]
 
 ## 歷史記錄
+
+### 2026-07-25
+**dev.to 重申促銷折扣「real but temporary」+ Opus 5 同日發布**：dev.to 作者 tokenmixai 於〈I Did the Math on Claude Sonnet 5. The 60% Opus Discount Is Real, But Temporary.〉一文中指出，Anthropic 已將 Sonnet 5 以促銷定價廣泛開放至 2026-08-31，與既有 $2/$10 per Mtok 資訊一致，未提供新的定價數字（定價細節見 [[entities/pricing]]）。同日 Anthropic 正式發布 [[entities/opus-5|Claude Opus 5]]，取代 Opus 4.8 成為次旗艦；Sonnet 5 本身的 Claude Code 預設模型定位不受影響。
 
 ### 2026-07-14
 **MarkTechPost 三模型深度比較（Sonnet 5 vs Sonnet 4.6 vs Opus 4.8）**：MarkTechPost 發布文章〈Anthropic Claude Sonnet 5 vs Sonnet 4.6 vs Opus 4.8: Agentic Coding Benchmarks, API Pricing, and Cost-Performance Tradeoffs Compared〉，涵蓋三模型的 agentic coding 基準測試、API 定價與成本效益取捨分析；本則日報摘要僅提供標題級資訊，未附具體評測數字，暫列為外部延伸閱讀資源，待後續補充量化內容時再擴寫（Google News／MarkTechPost，2026-07-14）。完整選型對照見 [[topics/model-comparison]]。
