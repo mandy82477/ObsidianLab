@@ -11,6 +11,18 @@ __pycache__/
 # Logs (keep locally, don't commit)
 logs/
 
+# 例外：task_scheduler.log 是 pipeline 的執行紀錄，雲端 routine 每次執行與中止都
+# 必須把它 commit + push——容器銷毀後「保留在本機」沒有意義，那是唯一能事後追查
+# 「那天到底跑了沒、為什麼中止」的證據。
+#
+# 上面的 `logs/` 沒有前導斜線，會比對任意深度的 logs 目錄，因此也擋住了
+# CLAUDE_NEWS/src/logs/。git 規定「父目錄被排除時無法單獨 re-include 子檔案」，
+# 所以要先把該目錄放行、再排除目錄內容、最後單獨放行這一個檔。
+# （2026-07-25 雲端執行被此規則擋下，當次改用 git add -f 繞過後回報登記。）
+!CLAUDE_NEWS/src/logs/
+CLAUDE_NEWS/src/logs/*
+!CLAUDE_NEWS/src/logs/task_scheduler.log
+
 # OS
 Thumbs.db
 desktop.ini

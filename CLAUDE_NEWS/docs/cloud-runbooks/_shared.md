@@ -35,7 +35,15 @@ routine 的 trigger prompt 只是薄殼（「cd 到 CLAUDE_NEWS，讀某份 runb
 
 測試用 `python3 scripts/run_tests.py`，建置用 `python3 scripts/build_web.py`。
 
-**已知環境缺口：** 雲端沙盒預設缺 `feedparser` / `sgmllib3k`，且 `pip install -r src/requirements_news.txt` 會因 `sgmllib3k` 的 `setup.py install` 觸發 Python 3.11 distutils 相容性錯誤而失敗。遇到時的繞路見 `docs/workaround-register.md` 對應列（`pip download --no-deps sgmllib3k` 取原始碼、手動把 `sgmllib.py` 複製進 site-packages）。此繞路是 session-local，每個新容器都要重做。
+**環境自備補丁（第一件事，先於任何步驟）`[加入: 2026-07-25]`：**
+
+```
+python3 scripts/cloud_bootstrap.py
+```
+
+雲端沙盒預設缺 `python-dotenv`（`main.py` 匯入鏈第一步就撞）、`feedparser`、以及 `sgmllib3k`（其 `setup.py install` 在 Python 3.11 觸發 distutils 相容性錯誤，導致 `pip install -r src/requirements_news.txt` 整包失敗）。這三個缺口自 2026-07-14 起**每次雲端執行都復現**（至少 07-14、07-21、07-22、07-23、07-24 五次），過去都靠當場手動修，容器一回收就沒了。
+
+上述腳本把那套手動修法固化：冪等（已存在就跳過）、不致命（失敗只印警告、退出碼恆為 0）。**它是 workaround 不是真解**——真解是雲端基礎映像預裝這些套件，見 `docs/workaround-register.md` 對應列。
 
 **egress 限制：** 雲端沙盒封鎖一般外部網域（Reddit / HN / Google News 全回 403），因此**任何需要抓取外部新聞的步驟都不在雲端執行**，由 GitHub Actions 負責（見 `docs/daily-automation.md`）。
 
