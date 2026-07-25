@@ -52,12 +52,28 @@ jobs:
       - name: Gather news (Python only, no LLM)
         run: python -m news_aggregator.main --gather-only
 
+      # 把當日抓到的原料存一份按日期分檔的副本。
+      #
+      # 為什麼需要：gathered_items.json 沒有按日分檔，隔天這個 job 會直接覆寫它。
+      # 若某天第 ② 段（雲端 routine）失敗，那天「已經抓到手」的新聞會在隔天 10:00
+      # 被覆蓋掉，之後本機補跑只能回頭重抓——但來源多是近期視窗的 RSS/API，
+      # 幾天前的內容早已滾出視窗，等於那天的新聞永久漏失。
+      #
+      # 有了這份副本，補跑可以直接replay當天的真實原料（見 news-pipeline-steps.md
+      # 的「補跑（backfill）注意事項」），補得回來且與原本會產出的內容一致。
+      # 保留 14 天，與 emitted-cache 的 TTL 一致。
+      # 實作在 scripts/archive_gathered.py（本機 Step 1a 呼叫同一支，行為一致）
+      - name: Archive today's gathered items (for backfill replay)
+        working-directory: CLAUDE_NEWS
+        run: python scripts/archive_gathered.py
+
       - name: Commit gathered data + dedup caches
         working-directory: .  # repo root
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
           git add CLAUDE_NEWS/src/gathered_items.json \
+                  CLAUDE_NEWS/src/gathered_archive \
                   CLAUDE_NEWS/src/news_aggregator/emitted_items.json \
                   CLAUDE_NEWS/src/news_aggregator/seen_urls.json \
                   CLAUDE_NEWS/data/source_funnel.jsonl

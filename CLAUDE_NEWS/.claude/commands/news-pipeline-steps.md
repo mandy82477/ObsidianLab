@@ -74,6 +74,14 @@ PYTHON -m news_aggregator.main --gather-only [--date TARGET_DATE]
 - 成功後寫出 `src/gathered_items.json`（含 items、date、source_status）
 - 若失敗（exit code 非 0），停止並回報錯誤，不繼續後續步驟
 
+**抓完立刻歸檔（強制）`[加入: 2026-07-25]`：**
+
+```
+PYTHON REPO_ROOT\scripts\archive_gathered.py
+```
+
+把原料存一份到 `src/gathered_archive/<date>.json`（保留 14 天）。`gathered_items.json` 沒有按日分檔、每次抓料直接覆寫，沒有這份副本的話，**日報沒產出的那天、已經抓到手的原料會在隔天被蓋掉，之後補跑只能回頭重抓，而來源視窗早已滾過去——那天就永久漏了**。GitHub Actions 的 `daily-gather` 呼叫的是同一支腳本，兩邊行為一致。
+
 ---
 
 ### 補跑（backfill）注意事項 `[加入: 2026-07-25]`
@@ -85,7 +93,10 @@ PYTHON -m news_aggregator.main --gather-only [--date TARGET_DATE]
 - 補跑收尾時執行 `git -C REPO_ROOT checkout -- src/gathered_items.json` 還原，避免不小心被 `git add` 帶上車
 - 絕不要在補跑流程裡用 `git add -A` / `git add .`
 
-**2. 能補回來的洞有上限。** 來源多是 RSS／API 的近期視窗，撈不到幾天前的內容。gather 的失敗補撈機制把回看窗口最多拉到 **50 小時**（約兩天），`--date` 補跑則以「目標日 00:00 UTC 到現在」為窗口再裁切回目標日——**離現在越遠，補出來的日報越空，超過兩三天基本上補不回來**。這是來源特性，不是 bug；漏超過兩天就接受那幾天較稀疏，不要為了填滿而放寬收錄門檻。
+**2. 先找當日原料副本，找不到才重抓。** `src/gathered_archive/<date>.json` 是抓料當下存的原料副本（保留 14 天，由 GitHub Actions 與本機 Step 1a 各自寫入）：
+
+- **副本存在** → **跳過 Step 1a**，直接 `cp src/gathered_archive/<date>.json src/gathered_items.json`，然後從 Step 1b 開始。這是 replay 當天的真實原料，補出來的日報與原本該產出的一致
+- **副本不存在**（超過 14 天，或那天連抓料都失敗）→ 才走 Step 1a 重抓。此時要有心理準備：來源多是 RSS／API 的近期視窗，撈不到幾天前的內容。gather 的失敗補撈機制把回看窗口最多拉到 **50 小時**（約兩天），`--date` 補跑則以「目標日 00:00 UTC 到現在」為窗口再裁切回目標日——**離現在越遠，補出來的日報越空，超過兩三天基本上補不回來**。這是來源特性不是 bug；接受那幾天較稀疏，不要為了填滿而放寬收錄門檻
 
 **3. 補跑不套用跨日去重快取**（`main.py` 明文：backfill 不碰 cache，否則會拿今日的快取去誤刪過去的項目）。因此補出來的日報**可能與前後日的日報有重複條目**，屬預期行為，wiki ingest 端由 `wiki-ingest.md` 的「確認最近是否已處理過同一份日報」把關。
 

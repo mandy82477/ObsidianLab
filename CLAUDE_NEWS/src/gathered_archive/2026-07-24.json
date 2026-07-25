@@ -1,0 +1,741 @@
+{
+  "date": "2026-07-24",
+  "article_count": 63,
+  "source_status": {
+    "Anthropic Status": {
+      "ok": true,
+      "count": 1
+    },
+    "dev.to": {
+      "ok": true,
+      "count": 14
+    },
+    "Hacker News": {
+      "ok": true,
+      "count": 17
+    },
+    "GitHub Issues": {
+      "ok": true,
+      "count": 15
+    },
+    "GitHub": {
+      "ok": true,
+      "count": 2
+    },
+    "Google News": {
+      "ok": true,
+      "count": 31
+    },
+    "Claude API Release Notes": {
+      "ok": true,
+      "count": 0
+    },
+    "Blogroll": {
+      "ok": true,
+      "count": 1
+    },
+    "Anthropic Blog": {
+      "ok": true,
+      "count": 0
+    },
+    "Reddit": {
+      "ok": true,
+      "count": 12
+    }
+  },
+  "items": [
+    {
+      "title": "[Status] Elevated error rate on Opus 4.8",
+      "url": "https://status.claude.com/incidents/0lbk5m7mbqk5",
+      "source": "Anthropic Status",
+      "published": "07/24 10:22 UTC",
+      "score": 0,
+      "score_unit": "",
+      "source_count": 1,
+      "summary": "Jul 24 , 10:22 UTC Resolved - This incident has been resolved. Jul 24 , 09:35 UTC Monitoring - A fix has been implemented and we are monitoring the results. Jul 24 , 09:09 UTC Investigating - We are c",
+      "category": "official"
+    },
+    {
+      "title": "[anthropics/anthropic-sdk-typescript] sdk: v0.114.0",
+      "url": "https://github.com/anthropics/anthropic-sdk-typescript/releases/tag/sdk-v0.114.0",
+      "source": "GitHub / anthropics/anthropic-sdk-typescript",
+      "published": "07/23 17:34 UTC",
+      "score": 0,
+      "score_unit": "",
+      "source_count": 1,
+      "summary": "## 0.114.0 (2026-07-23)  Full Changelog: [sdk-v0.113.0...sdk-v0.114.0](https://github.com/anthropics/anthropic-sdk-typescript/compare/sdk-v0.113.0...sdk-v0.114.0)  ### Features  * **api:** add new sto",
+      "category": "official"
+    },
+    {
+      "title": "[anthropics/anthropic-sdk-python] v0.119.0",
+      "url": "https://github.com/anthropics/anthropic-sdk-python/releases/tag/v0.119.0",
+      "source": "GitHub / anthropics/anthropic-sdk-python",
+      "published": "07/23 17:34 UTC",
+      "score": 0,
+      "score_unit": "",
+      "source_count": 1,
+      "summary": "## 0.119.0 (2026-07-23)  Full Changelog: [v0.118.0...v0.119.0](https://github.com/anthropics/anthropic-sdk-python/compare/v0.118.0...v0.119.0)  ### Features  * **api:** add new stop reason 'model_cont",
+      "category": "official"
+    },
+    {
+      "title": "OpenAI and Anthropic unite against open-weight AI risks to their bottom line",
+      "url": "https://www.axios.com/2026/07/22/openai-anthropic-open-models-trump-china",
+      "source": "Hacker News",
+      "published": "07/23 13:00 UTC",
+      "score": 287,
+      "score_unit": "分",
+      "source_count": 1,
+      "summary": "💬 I’m in a bubble so I may not see the big picture, but I feel like these guys are completely destroying any kind of credibility they had. Anthropic especially has this arrogant, “we’re smarter than you”, communication style, and acts like they’re serving some higher purpose (to the point of absurdity in some cases like “model welfare”) - I think part of all this might be the EA roots but I’m not sure. But then they get a little competition and suddenly they’re a little tattle-tale running to the government looking to artificially preserve their advantage. I’ve seen nobody who doesn’t see the naked self interest. There’s no mission, not higher purpose, not even competitive spirit, just some people that were on top and can’t handle the idea that they weren’t as special as they thought. It’s",
+      "category": "community"
+    },
+    {
+      "title": "Show HN: Palmier Pro – Open-source macOS video editor built for AI",
+      "url": "https://github.com/palmier-io/palmier-pro",
+      "source": "Hacker News",
+      "published": "07/23 15:11 UTC",
+      "score": 171,
+      "score_unit": "分",
+      "source_count": 1,
+      "summary": "Hi HN, we are Marcos and Harrison, cofounders of Palmier ( https://palmier.io ). We are building Palmier Pro, an open source macOS video editor, with built-in AI generation and a local MCP server that connects to your agent. Here are a few demos: - Making some AI transitions: https://www.youtube.com/watch?v=hbM_-eR1GX4 - Multicam editing with Codex: https://www.youtube.com/watch?v=SjS2q2LT1q8 - Cutting long form clips into shorts: https://www.youtube.com/watch?v=PR66eN2ouuQ We built Palmier Pro as an internal tool when we were making AI launch videos for other startups. The main problem it solved in the beginning was the back-and-forth between AI generation platform and video editor. The iteration loop was awkward: AI videos → download → import to editor → edit → realize we need to change ",
+      "category": "community"
+    },
+    {
+      "title": "Show HN: Claude-thermos keeps your Claude session warm for you",
+      "url": "https://github.com/izeigerman/claude-thermos",
+      "source": "Hacker News",
+      "published": "07/23 17:06 UTC",
+      "score": 102,
+      "score_unit": "分",
+      "source_count": 1,
+      "summary": "💬 This is just making it more expensive for everyone else, right? How Claude handles its sessions is none of my business. I'm going to let them do the best they can to provide good service for everyone, and if they can't/won't, I'll switch to a provider that can. Using these massive models is already pretty danged extravagant, I'm not going to demand to be at the front of the queue at all times, too.\n\n💬 I've directly inspected calls for pro/Max plans and as of today they have 1hr cache expiries. This has definitely degraded to 5 min in the past but that's the behavior today. If you're paying API rates, you can choose 5m or 1hr yourself (and pay different rates). Keeping a 1hr cache warm could still be useful, sure, but outside that, I don't see much use of this today.",
+      "category": "community"
+    },
+    {
+      "title": "Show HN: OneCLI – OSS credential gateway that keeps secrets out of AI agents",
+      "url": "https://github.com/onecli/onecli",
+      "source": "Hacker News",
+      "published": "07/23 15:42 UTC",
+      "score": 101,
+      "score_unit": "分",
+      "source_count": 1,
+      "summary": "hey HN, Jonathan and Guy here, creators of OneCLI ( https://onecli.sh/ ). OneCLI is an open source vault for AI Agents. Traditional vaults are used to store your secrets and, on demand, provide them to you all in a secure way, trusting the person to keep them safe. We figured that in the agent's world, this is not the case, as you don't know what happens with the secret after it's delivered to the agent, or where it was saved. Or maybe someone even manipulated them to hand them over... From that understanding, we decided to build a network gateway that sits between your AI agents and the services they call. OneCLI matches the request by host/path, verifies the agent should have access, swaps the placeholder for the real credential, and forwards the request. the secrets set inside the OneCL",
+      "category": "community"
+    },
+    {
+      "title": "[BUG] macOS: Claude Desktop never dispatches tools/call to the first-party Filesystem extension (tools/list succeeds, no tools/call in any log)",
+      "url": "https://github.com/anthropics/claude-code/issues/80002",
+      "source": "GitHub Issues / claude-code",
+      "published": "07/23 18:19 UTC",
+      "score": 61,
+      "score_unit": "留言",
+      "source_count": 1,
+      "summary": "### Preflight Checklist\n\n- [x] I have searched [existing issues](https://github.com/anthropics/claude-code/issues?q=is%3Aissue%20state%3Aopen%20label%3Abug) and this hasn't been reported yet\n- [x] Thi（👍 27 reactions）",
+      "category": "community"
+    },
+    {
+      "title": "[BUG] Fable 5 prompts 'usage credits required' on Max plan from 2026-07-20, the day it became standard on Max (saved model claude-fable-5[1m])",
+      "url": "https://github.com/anthropics/claude-code/issues/79337",
+      "source": "GitHub Issues / claude-code",
+      "published": "07/24 01:16 UTC",
+      "score": 40,
+      "score_unit": "留言",
+      "source_count": 1,
+      "summary": "### What's Wrong?\n\nOn **2026-07-20** — the first day Fable 5 becomes a standard part of Max plans — Claude Code refuses to run Fable 5 on a **Max** plan, silently downgrades the session to Opus 4.8, a（👍 13 reactions）",
+      "category": "community"
+    },
+    {
+      "title": "RTL (Right-to-Left) Support for Hebrew & Arabic in Claude Desktop / Cowork",
+      "url": "https://github.com/anthropics/claude-code/issues/38005",
+      "source": "GitHub Issues / claude-code",
+      "published": "07/23 20:56 UTC",
+      "score": 40,
+      "score_unit": "留言",
+      "source_count": 1,
+      "summary": "### Preflight Checklist\n\n- [x] I have searched [existing requests](https://github.com/anthropics/claude-code/issues?q=is%3Aissue%20label%3Aenhancement) and this feature hasn't been requested yet\n- [x]（👍 105 reactions）",
+      "category": "community"
+    },
+    {
+      "title": "[BUG] CoworkVMService fails to start — \"signature verification initialization failed: failed to get service executable path\" (Windows 11 Pro)",
+      "url": "https://github.com/anthropics/claude-code/issues/29941",
+      "source": "GitHub Issues / claude-code",
+      "published": "07/23 14:46 UTC",
+      "score": 39,
+      "score_unit": "留言",
+      "source_count": 1,
+      "summary": "### Preflight Checklist\n\n- [x] I have searched [existing issues](https://github.com/anthropics/claude-code/issues?q=is%3Aissue%20state%3Aopen%20label%3Abug) and this hasn't been reported yet\n- [x] Thi（👍 3 reactions）",
+      "category": "community"
+    },
+    {
+      "title": "[BUG] API Error: Connection closed mid-response ==> frequent enough to make Claude Code unusable for any task",
+      "url": "https://github.com/anthropics/claude-code/issues/69415",
+      "source": "GitHub Issues / claude-code",
+      "published": "07/24 01:04 UTC",
+      "score": 33,
+      "score_unit": "留言",
+      "source_count": 1,
+      "summary": "### Preflight Checklist\n\n- [x] I have searched [existing issues](https://github.com/anthropics/claude-code/issues?q=is%3Aissue%20state%3Aopen%20label%3Abug) and this hasn't been reported yet\n- [x] Thi（👍 69 reactions）",
+      "category": "community"
+    },
+    {
+      "title": "[BUG] autoMemoryEnabled=false does not suppress the ~11-16k memory preamble (re: closed #44829)",
+      "url": "https://github.com/anthropics/claude-code/issues/63903",
+      "source": "GitHub Issues / claude-code",
+      "published": "07/23 11:10 UTC",
+      "score": 32,
+      "score_unit": "留言",
+      "source_count": 1,
+      "summary": "## Summary\n\nSetting `autoMemoryEnabled: false` in `~/.claude/settings.json` correctly disables auto-memory writes and stops Claude from attempting them, but the hardcoded memory preamble (instructiona",
+      "category": "community"
+    },
+    {
+      "title": "Anthropic is subsidizing our AI coding at 13x. How long will it last?",
+      "url": "https://modelplane.ai/blog/ai-coding-subsidy-multiple",
+      "source": "Hacker News",
+      "published": "07/23 13:13 UTC",
+      "score": 19,
+      "score_unit": "分",
+      "source_count": 1,
+      "summary": "We are on Anthropic's Team plan at Upbound, and we are about as AI-pilled as a company gets. All of our engineers write code with Claude Code every day, on a bundled seat. It's a flat monthly price with limits, and you don't really see the token meter.\nThen one of our engineers switched to opencode and started running Opus 4.8 straight through the API instead of on his bundled plan. I looked at his usage a few weeks in. He was averaging about $5,500 a month. Same person, same work, roughly what he had been doing on the bundled plan at $125/mo. The only thing that changed was that we could suddenly see the token meter.\nThat made me want to know what it would cost us if everyone moved off bundled seats and onto per-token pricing. It is not just hypothetical. Anthropic moved its Enterprise cu",
+      "category": "community"
+    },
+    {
+      "title": "Show HN: Mumble Dictation – local dictation that learns your vocabulary",
+      "url": "https://news.ycombinator.com/item?id=49028737",
+      "source": "Hacker News",
+      "published": "07/23 22:10 UTC",
+      "score": 6,
+      "score_unit": "分",
+      "source_count": 1,
+      "summary": "Hey HN! It’s Wen from Narya.ai. We build Mumble Dictation, a local-first and privacy-focused dictation app on Mac. Homepage and Download: https://heymumble.com/dictation YouTube： https://youtu.be/Bma59TrR62c?si=DM-LyjZY5GZ9-f64 Two things kept bugging us about the dictation products on the market: 1. Most of them ship your audio to the cloud, and those who is claiming to be private are often just a thin wrapper of cloud APIs with a privacy policy. 2. Those general-purpose ASR models are terrible at your vocabulary: library names, co-workers' names, project codenames, etc. Mumble Dictation is built around those problems. Its full pipeline including ASR and transcript cleanup is running on your device with local models. Your audio never leaves your machine. Plus, it collects the hot words in",
+      "category": "community"
+    },
+    {
+      "title": "Show HN: Bookshelf – book quotes that appear between Claude Code and Codex turns",
+      "url": "https://github.com/Amal-David/bookshelf",
+      "source": "Hacker News",
+      "published": "07/23 22:06 UTC",
+      "score": 6,
+      "score_unit": "分",
+      "source_count": 1,
+      "summary": "This is a small quality of life project i built for myself and using it for 3+ months now, decided to fork it out and publish as a skill separately. Instead of seeing terminals filled with code and tool calls, seeing a book quote felt like a breath of fresh air considering all of us are glued to it day and night. Hope the random quotes that pop up in your terminals lets you have a moment of pause or happiness every now and then while the agents keep churning out stuff for us. Please feel free to give it a spin and let me know your thoughts and feedback!\n\n💬 [dead]",
+      "category": "community"
+    },
+    {
+      "title": "Show HN: Hibernate and restore Claude Code sessions across reboots",
+      "url": "https://github.com/SteveVitali/claude-hibernate",
+      "source": "Hacker News",
+      "published": "07/23 15:24 UTC",
+      "score": 6,
+      "score_unit": "分",
+      "source_count": 1,
+      "summary": "💬 this is cool tech and i like the use case but I'm always afraid of building against these internal JSONL apis that claude code uses since they change all the time / not a formal product interface\n\n💬 This is very cool",
+      "category": "community"
+    },
+    {
+      "title": "Show HN: Notebooker.ai – NotebookLM alternative, your own models, keys, storage",
+      "url": "https://notebooker.ai/",
+      "source": "Hacker News",
+      "published": "07/23 19:02 UTC",
+      "score": 3,
+      "score_unit": "分",
+      "source_count": 1,
+      "summary": "Hi HN. This is a personal side project I've been building for about six months on top of the open-source Open Notebook platform ( https://github.com/lfnovo/open-notebook ). Notebooker saves the stuff you'd otherwise lose in tabs and bookmarks - links, PDFs, audio, video - and makes it useful later: chat with a notebook and get answers that cite the exact source, turn a reading list into a podcast episode (private RSS feed, works in any player), or generate study material from your own sources. The part I've had the most fun with is a plugin engine for creation types - flashcards, charts, infographics, mindmaps, textbooks, essays, slideshows, timelines, wikis are each plugins, and new ones can be added without touching the core. Everything I've built on top of open-notebook has either been ",
+      "category": "community"
+    },
+    {
+      "title": "Show HN: 5dive – Run a Company of Claude Code/Codex Agents (Written in Bash)",
+      "url": "https://github.com/5dive-ai/5dive",
+      "source": "Hacker News",
+      "published": "07/23 14:45 UTC",
+      "score": 3,
+      "score_unit": "分",
+      "source_count": 1,
+      "summary": "HN discussion: https://news.ycombinator.com/item?id=49022492",
+      "category": "community"
+    },
+    {
+      "title": "Teaching Claude Code to Paint: A Stateful Image-Editing Skill Built on Gemini's Interactions API and MCP",
+      "url": "https://dev.to/gde/teaching-claude-code-to-paint-a-stateful-image-editing-skill-built-on-geminis-interactions-api-17g",
+      "source": "dev.to / #claudecode",
+      "published": "07/22 22:44 UTC",
+      "score": 3,
+      "score_unit": "讚",
+      "source_count": 1,
+      "summary": "How nb2lite-skill-claude packages Google's gemini-3.1-flash-lite-image as a Claude Code skill + MCP server — with multi-turn stateful edits, an idiot-proof install guide, and a dogfooded cover image.",
+      "category": "community"
+    },
+    {
+      "title": "Show HN: Skim – a minimalist open-source email client for Windows (MIT)",
+      "url": "https://skim-tech.com/",
+      "source": "Hacker News",
+      "published": "07/23 21:12 UTC",
+      "score": 2,
+      "score_unit": "分",
+      "source_count": 1,
+      "summary": "I built Skim because I was super dissatisfied with all existing Windows clients. I mean, it's not a rocket science, there should be some lightweight modern solution, isn't it? So I decided to create a client that just, you know, MAKES SENSE and has design younger than dinosaurs. Key points: * Obsessed with installer size: it should be under 5Mb. * BYOK AI. Cowriter, agentic search, summarization and other AI stuff is powered by your own key for Anthropic/Openrouter, or you can connect your own OpenAI-compatible server (including local) * No bloat. It should be as contextual as possible: gives you right button when you need it. No menu at all. No integrations. Just email. * Instant startup, super modest on resources * Cool warm zine design with paper colors and really calming vibes It's MIT",
+      "category": "community"
+    },
+    {
+      "title": "Show HN: 5QL A bidirectional SQL editor with a Claude.md table for your database",
+      "url": "https://fiveql.com",
+      "source": "Hacker News",
+      "published": "07/23 17:09 UTC",
+      "score": 2,
+      "score_unit": "分",
+      "source_count": 1,
+      "summary": "HN discussion: https://news.ycombinator.com/item?id=49024934",
+      "category": "community"
+    },
+    {
+      "title": "Show HN: Remortgaging with Claude, so I built a MCP for Bank of England",
+      "url": "https://github.com/moureauf/boe-mcp",
+      "source": "Hacker News",
+      "published": "07/23 15:49 UTC",
+      "score": 2,
+      "score_unit": "分",
+      "source_count": 1,
+      "summary": "The time had come to renew my mortgage, while exploring different scenarios I found myself keeping asking Claude Code the same questions. \"What's the base rate\", \"when's the next MPC meeting\", \"how has it moved over the last year\" etc. Doing that by hand a few times made me wonder if an MCP server wouldn't be a good fit for this, so I built one. Partly to solve the actual problem and partly because I hadn't built an MCP server before and wanted to try it out. It wraps the Bank of England's public (no auth or API key)IADB statistical database. Tools for the current base rate, rate history/stats over any range, the next MPC meeting date, and generic access to any IADB series by code (SONIA, exchange rates, quoted mortgage rates). Any feedback welcome!",
+      "category": "community"
+    },
+    {
+      "title": "Show HN: Local-first archive of your ChatGPT/Claude chats",
+      "url": "https://chromewebstore.google.com/detail/anamne-â-your-ai-conversa/famgjpiggdaenmgnemmcjobbogdmghlj",
+      "source": "Hacker News",
+      "published": "07/23 15:05 UTC",
+      "score": 2,
+      "score_unit": "分",
+      "source_count": 1,
+      "summary": "Capture your ChatGPT & Claude chats into a private, searchable archive you own, and sync them to Obsidian. Local-first.\n\nOverview\nCapture your ChatGPT & Claude chats into a private, searchable archive you own — and sync them to Obsidian. Local-first.\nAnamne — capture, search, and own your ChatGPT & Claude conversations. Your AI chats are full of answers you'll never find again. Anamne turns ChatGPT and Claude into one private, searchable memory you own, and keeps a copy in your own Obsidian vault. Everything you've asked is one search away. 🟢 THE PROBLEM You've had hundreds of conversations across ChatGPT and Claude. The answer you need is in there somewhere, buried across two sites and two histories you can't really search. Your AI history is a goldmine you can't dig into, and it lives on",
+      "category": "community"
+    },
+    {
+      "title": "Show HN: BDFL – Open-source supervisor for Codex and Claude Code",
+      "url": "https://usebdfl.com/",
+      "source": "Hacker News",
+      "published": "07/23 17:27 UTC",
+      "score": 1,
+      "score_unit": "分",
+      "source_count": 1,
+      "summary": "BDFL is an open-source terminal supervisor for Codex, Claude Code, and Ollama sessions. Work with a planning agent, compare and approve versioned plans or individual sections of it, then let isolated worker agents implement the approved work while BDFL handles scheduling, checks, review, verification, integration, and recovery.\n\nTalk\nWork with a planning agent that can inspect the repository but cannot edit it.\nBenevolent Delegator for LLMs\nBDFL is a terminal supervisor for AI agents. Create versioned plans, review diffs, approve whole plans or individual sections, delegate work to isolated workers, review every result, and stay in control.\nOne supervisor. Your choice of agents. More coming soon.\n01 / THE IDEA\nUse Codex, Claude Code, or Ollama independently for planning and worker roles. W",
+      "category": "community"
+    },
+    {
+      "title": "Show HN: Fleet – drive a fleet of Claude Code/Codex agents from Telegram",
+      "url": "https://github.com/sand0vvv/fleet",
+      "source": "Hacker News",
+      "published": "07/23 17:03 UTC",
+      "score": 1,
+      "score_unit": "分",
+      "source_count": 1,
+      "summary": "I built this on a day off - didn't want to get out of bed, and the laptop with all my agents was across the room. So I made them come to me. fleet runs a fleet of AI coding agents (Claude Code or Codex) from one Telegram supergroup - each agent in its own topic. Voice or text, code/diffs/files come back to the chat. Headless (fires per message) or a live CLI session you steer mid-run. Everything runs on your own machine. Telegram is just the remote, reached via long-polling so it works behind any NAT. Been running everything through it daily for a month. It's early and rough in places — happy to answer anything.",
+      "category": "community"
+    },
+    {
+      "title": "Claude's voice mode now runs on Anthropic's most capable models across all platforms - the-decoder.com",
+      "url": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxOVDJsaTJjRnFUblJtaENzRS1zZWNYdTJXNVJJXzBQR280c3Z4VVp4YUVZRldWVXhCb0R2bXBWNlVMdERtandPNkNOeXdUZUZzTm9EdDZwSVlpMlNSVXBxVmh4Vi1fdGlEVnI3YTRBV3Vsd3RoYnBiQW81MG5USUhTYl9yYndYWldFcWE5Y3ZPYkJDWWgxVXBJLW9URm9fN3ZCQmQ0YkpiRVFGVUk?oc=5",
+      "source": "Google News / the-decoder.com",
+      "published": "07/24 11:33 UTC",
+      "score": 0,
+      "score_unit": "",
+      "source_count": 1,
+      "summary": "<a href=\"https://news.google.com/rss/articles/CBMiqwFBVV95cUxOVDJsaTJjRnFUblJtaENzRS1zZWNYdTJXNVJJXzBQR280c3Z4VVp4YUVZRldWVXhCb0R2bXBWNlVMdERtandPNkNOeXdUZUZzTm9EdDZwSVlpMlNSVXBxVmh4Vi1fdGlEVnI3YTRBV3",
+      "category": "media"
+    },
+    {
+      "title": "The Best Advice Another Web Agency Owner Ever Gave Me",
+      "url": "https://www.reddit.com/r/ClaudeCode/comments/1v58hvl/the_best_advice_another_web_agency_owner_ever/",
+      "source": "Reddit / r/ClaudeCode",
+      "published": "07/24 11:18 UTC",
+      "score": 0,
+      "score_unit": "留言",
+      "source_count": 1,
+      "summary": "<!-- SC_OFF --><div class=\"md\"><p>When I first got into web development, I thought finding clients would be simple. My plan was to go on Google Maps, find businesses without websites, and offer to bui",
+      "category": "community"
+    },
+    {
+      "title": "Tego AI Discloses Second Claude Flaw in a Week: Hidden Link Silently Sends Files to Attackers - Hackread",
+      "url": "https://news.google.com/rss/articles/CBMitAFBVV95cUxQR3JtZE5BdTZzQ2JWcUJTMGd2Rl9JUzlaZFRnaG55a3dLaTZRenJWQmN2dVBCaEVPc1YtTzBVanpJeFNneHdUVWtPOUtma2hxT1ZneklzNlJteENPVzNjZUM0cnJWZjVsM3RDd2VhUXZNU2FlWENhVFN1ajlsbi1IcjlHRkM4TlFBWjRWaFFfNXBocFV3MkNIR3FHczR1QjVyeUpnT2ZoUXZhVnhYQXA1RlBxa2I?oc=5",
+      "source": "Google News / Hackread",
+      "published": "07/24 11:15 UTC",
+      "score": 0,
+      "score_unit": "",
+      "source_count": 1,
+      "summary": "<a href=\"https://news.google.com/rss/articles/CBMitAFBVV95cUxQR3JtZE5BdTZzQ2JWcUJTMGd2Rl9JUzlaZFRnaG55a3dLaTZRenJWQmN2dVBCaEVPc1YtTzBVanpJeFNneHdUVWtPOUtma2hxT1ZneklzNlJteENPVzNjZUM0cnJWZjVsM3RDd2VhUX",
+      "category": "media"
+    },
+    {
+      "title": "Fable 5 min cache",
+      "url": "https://www.reddit.com/r/ClaudeCode/comments/1v58ebj/fable_5_min_cache/",
+      "source": "Reddit / r/ClaudeCode",
+      "published": "07/24 11:13 UTC",
+      "score": 0,
+      "score_unit": "留言",
+      "source_count": 1,
+      "summary": "<table> <tr><td> <a href=\"https://www.reddit.com/r/ClaudeCode/comments/1v58ebj/fable_5_min_cache/\"> <img alt=\"Fable 5 min cache\" src=\"https://preview.redd.it/gq3flvr7v5fh1.jpg?width=140&amp;height=78&",
+      "category": "community"
+    },
+    {
+      "title": "Claude Code hooks that block find/sed/cat, redirect to native tools",
+      "url": "https://www.reddit.com/r/ClaudeCode/comments/1v57szn/claude_code_hooks_that_block_findsedcat_redirect/",
+      "source": "Reddit / r/ClaudeCode",
+      "published": "07/24 10:43 UTC",
+      "score": 0,
+      "score_unit": "留言",
+      "source_count": 1,
+      "summary": "<!-- SC_OFF --><div class=\"md\"><p>Everyday, I launch Claude on a task, come back some time later and see that it has been waiting for me to approve a bash command, doing nothing in the meantime.</p> <",
+      "category": "community"
+    },
+    {
+      "title": "Claude Security doesn't have access to Workflow tool",
+      "url": "https://www.reddit.com/r/ClaudeCode/comments/1v57iyl/claude_security_doesnt_have_access_to_workflow/",
+      "source": "Reddit / r/ClaudeCode",
+      "published": "07/24 10:28 UTC",
+      "score": 0,
+      "score_unit": "留言",
+      "source_count": 1,
+      "summary": "<!-- SC_OFF --><div class=\"md\"><p>I've burnt way too many tokens to get through this, but ok, I'm still learning (it's my first month with Claude and Claude Code).</p> <p>So I've stumbled into a wall ",
+      "category": "community"
+    },
+    {
+      "title": "Day 11 building a game with Claude Code: someone has played my game for over 70 hours. I'm in shock.",
+      "url": "https://www.reddit.com/r/ClaudeCode/comments/1v573fy/day_11_building_a_game_with_claude_code_someone/",
+      "source": "Reddit / r/ClaudeCode",
+      "published": "07/24 10:05 UTC",
+      "score": 0,
+      "score_unit": "留言",
+      "source_count": 1,
+      "summary": "<!-- SC_OFF --><div class=\"md\"><p>I checked my admin dashboard this morning and had to read the number twice. The game has been out for eleven days, and someone has played it for over seventy hours. S",
+      "category": "community"
+    },
+    {
+      "title": "Open source model at par with Fable",
+      "url": "https://www.reddit.com/r/ClaudeCode/comments/1v56yic/open_source_model_at_par_with_fable/",
+      "source": "Reddit / r/ClaudeCode",
+      "published": "07/24 09:58 UTC",
+      "score": 0,
+      "score_unit": "留言",
+      "source_count": 1,
+      "summary": "<!-- SC_OFF --><div class=\"md\"><p>Fable feels just a little bit smarter than opus 4.8 since they nerfed it.</p> <p>Now that open source models already caught the &quot;too dangerous&quot; models. Can ",
+      "category": "community"
+    },
+    {
+      "title": "The Claude Opus 5 Rumor Passed the Screenshot Test, Not the API Contract Test - HackerNoon",
+      "url": "https://news.google.com/rss/articles/CBMioAFBVV95cUxQRF9EUHUybk1zS3N5T0lNdUYyVHJ1ZVl3bktrUjZZSWVQUUU3c0t0Tzh1UFdXYTdITHpRYUJJVmJ2SVhrNko1eHdUdDNHNzRtRk1xdUd0Qk81ZkRiQUNpeVVVUHhnTDZXelFhcnNOYzhsVUxGWFUwYjZJUnk3cXRpUEExalhmVi01X0w4LTVTRmZHUmMtRkJzc0ZOelJnVkVk?oc=5",
+      "source": "Google News / HackerNoon",
+      "published": "07/24 07:01 UTC",
+      "score": 0,
+      "score_unit": "",
+      "source_count": 1,
+      "summary": "<a href=\"https://news.google.com/rss/articles/CBMioAFBVV95cUxQRF9EUHUybk1zS3N5T0lNdUYyVHJ1ZVl3bktrUjZZSWVQUUU3c0t0Tzh1UFdXYTdITHpRYUJJVmJ2SVhrNko1eHdUdDNHNzRtRk1xdUd0Qk81ZkRiQUNpeVVVUHhnTDZXelFhcnNOYz",
+      "category": "media"
+    },
+    {
+      "title": "Anthropic Adds Model Choice to Claude Voice Mode For All Users - SQ Magazine",
+      "url": "https://news.google.com/rss/articles/CBMibEFVX3lxTE1QSlZsSldpc0JHWXhES21SMHhFMzFjWVY5SGdUcEpFTWZUQWRBYWxzZWxIclh3bG9GMTFWZTdoZ1hCYzdCa3p1YTVsMjR2Y3J2TjI1X1VJZDhNOEtqVmNOYlVSS1BXSFdfMWtucQ?oc=5",
+      "source": "Google News / SQ Magazine",
+      "published": "07/24 06:41 UTC",
+      "score": 0,
+      "score_unit": "",
+      "source_count": 1,
+      "summary": "<a href=\"https://news.google.com/rss/articles/CBMibEFVX3lxTE1QSlZsSldpc0JHWXhES21SMHhFMzFjWVY5SGdUcEpFTWZUQWRBYWxzZWxIclh3bG9GMTFWZTdoZ1hCYzdCa3p1YTVsMjR2Y3J2TjI1X1VJZDhNOEtqVmNOYlVSS1BXSFdfMWtucQ?oc=",
+      "category": "media"
+    },
+    {
+      "title": "Harry Potter Publisher To Get Millions In Settlement From Anthropic - NDTV",
+      "url": "https://news.google.com/rss/articles/CBMivgFBVV95cUxQY2ZQT3VjT3htZkhSN3l5MEVFZEU0YUVIYV96VmxjS0ZLcDRYdHpGS0JYSUxGdl9BX21MRklRdWllSWZja0xYQ21MN0RRZkM5YVZnYURnaHVXd2FpUE11LTRnZDFfQ0JRZHdTV080dXFMQkZOc2pUcTlNYXk2eDJVRTh6M1ZiT0oyR0hkQUsyQ1l2LUFoN0VMSkVfNUpvWVA0ZkE1bldBUE1oQzhFaEhXNmZOMnJVb2l0V2E4TmNB0gHGAUFVX3lxTE4yLVdxb0VfM0U0MGJ1RHJMaUg2Uk4yOEVPbktPMnE1WHZSMjhxNy1SdG05RlViZHh0anRxWkZROUpEYUx6QXZ5eUc5bGk0RzJPLXZfODNMUnNUNTgyUGs2ZlpzYnNzcnpGMzFsSmJXUWVQejJRbWdzZUF6OWJrWDFXYVZ0Z18wNkFnaHF3c0VEMUhMMnhvT0hzWU5CeVhwY04xUnNvQ2tFM3Y1THl0NmIwQ21seFBaOW1mNEhISzlYa3NEUFRtZw?oc=5",
+      "source": "Google News / NDTV",
+      "published": "07/24 05:38 UTC",
+      "score": 0,
+      "score_unit": "",
+      "source_count": 1,
+      "summary": "<a href=\"https://news.google.com/rss/articles/CBMivgFBVV95cUxQY2ZQT3VjT3htZkhSN3l5MEVFZEU0YUVIYV96VmxjS0ZLcDRYdHpGS0JYSUxGdl9BX21MRklRdWllSWZja0xYQ21MN0RRZkM5YVZnYURnaHVXd2FpUE11LTRnZDFfQ0JRZHdTV080dX",
+      "category": "media"
+    },
+    {
+      "title": "Agent Island update keeps Claude Code status local - IT Brief Australia",
+      "url": "https://news.google.com/rss/articles/CBMihgFBVV95cUxNT1A5b05YajlmLWFlWkhhaVl3LWYzTTV3cnVROGZwQ3VKNVVUX0NhYXRXT3owYllnQTZRVGRvVTlkaFFWSFI3MGRlYzd3bU1oa09hM1ZXR1JfLTRnaHZLWEYtWFN3LWJLY3J3dF9SRGZjdzJNUGhIa1dPRUJOYmhIZndLN1IwZw?oc=5",
+      "source": "Google News / IT Brief Australia",
+      "published": "07/24 05:06 UTC",
+      "score": 0,
+      "score_unit": "",
+      "source_count": 1,
+      "summary": "<a href=\"https://news.google.com/rss/articles/CBMihgFBVV95cUxNT1A5b05YajlmLWFlWkhhaVl3LWYzTTV3cnVROGZwQ3VKNVVUX0NhYXRXT3owYllnQTZRVGRvVTlkaFFWSFI3MGRlYzd3bU1oa09hM1ZXR1JfLTRnaHZLWEYtWFN3LWJLY3J3dF9SRG",
+      "category": "media"
+    },
+    {
+      "title": "China's Moonshot AI stole from Anthropic, Trump tech adviser says - BBC",
+      "url": "https://news.google.com/rss/articles/CBMiWkFVX3lxTE1iWFdWWk1rRjktUk5wZnBrNHBnd0xhU01XRmo1dTV0aHpGWmRDcTJhWndnUzV3R25aT2VjSHZxaWNzUUhWZF9MeVZnSkRZZUlJYXJrc3RBM2Vvdw?oc=5",
+      "source": "Google News / BBC",
+      "published": "07/23 23:50 UTC",
+      "score": 0,
+      "score_unit": "",
+      "source_count": 2,
+      "summary": "<a href=\"https://news.google.com/rss/articles/CBMiWkFVX3lxTE1iWFdWWk1rRjktUk5wZnBrNHBnd0xhU01XRmo1dTV0aHpGWmRDcTJhWndnUzV3R25aT2VjSHZxaWNzUUhWZF9MeVZnSkRZZUlJYXJrc3RBM2Vvdw?oc=5\" target=\"_blank\">China",
+      "category": "media"
+    },
+    {
+      "title": "The first known runaway AI agent - or a very bad marketing stunt?",
+      "url": "https://simonwillison.net/2026/Jul/23/the-first-known-runaway-ai-agent/#atom-everything",
+      "source": "Blog / Simon Willison",
+      "published": "07/23 22:53 UTC",
+      "score": 0,
+      "score_unit": "",
+      "source_count": 1,
+      "summary": "<p><strong><a href=\"https://martinalderson.com/posts/huggingface-openai-exploit/\">The first known runaway AI agent - or a very bad marketing stunt?</a></strong></p>\nMartin Alderson's commentary on the",
+      "category": "community"
+    },
+    {
+      "title": "Chinese AI labs close gap with Anthropic after Claude Code leak - digitimes",
+      "url": "https://news.google.com/rss/articles/CBMilwFBVV95cUxNSEdJN19sX2s0bEJWWlBHQllSb3hxaFRLSEVvSWlQNnJubDlLd0tqdU9veUtFZmVPcVVRVFFqU0NoSW1oTmRyZlRaOG9KTS1YVUVIQjNwcnlmaTgyMUhDQlJIREhocXJRWG5vLVdQeHkySHFaLUlQalpLUGszNHppUExGU3ZJM3lzczJLczIxS0s0dmFuX0h3?oc=5",
+      "source": "Google News / digitimes",
+      "published": "07/23 22:29 UTC",
+      "score": 0,
+      "score_unit": "",
+      "source_count": 1,
+      "summary": "<a href=\"https://news.google.com/rss/articles/CBMilwFBVV95cUxNSEdJN19sX2s0bEJWWlBHQllSb3hxaFRLSEVvSWlQNnJubDlLd0tqdU9veUtFZmVPcVVRVFFqU0NoSW1oTmRyZlRaOG9KTS1YVUVIQjNwcnlmaTgyMUhDQlJIREhocXJRWG5vLVdQeH",
+      "category": "media"
+    },
+    {
+      "title": "Cyberhaven Extends Data and AI Security Platform with Support for ChatGPT Enterprise and Claude Compliance API Integrations - PR Newswire",
+      "url": "https://news.google.com/rss/articles/CBMiiwJBVV95cUxPdWtCT3BmTUNnTHVkMDNMNWNFb25yekRMS3NlUVFFZjRfZEFRRTdnTXI3SUFRZHBwVjREUmtORVdBWVZTek8taGFPZno1cVAwOHdza0tWX0NrZEtSaUtqODRyWWVrVjJTa2FuVzNqd05GMGpNcXJ1RUtGSDdDMTNXWDVMMllEek1xenBwWHlxRzh4Y3VYbjhDR245UzItaURndEpsQ0Jpb1AydzR4NzN6THJqRGU0NnJmS0FHNTFQcUZjTGVvZ3h3UWpIN29WbkR1Q0tIUVBhRVZPYjFGV21IZVBSOXdDWUVMRk1hNV8wcUlYN2pDTmYxTzdFVWIySlhMSjktcFhQd3BrX3M?oc=5",
+      "source": "Google News / PR Newswire",
+      "published": "07/23 20:30 UTC",
+      "score": 0,
+      "score_unit": "",
+      "source_count": 1,
+      "summary": "<a href=\"https://news.google.com/rss/articles/CBMiiwJBVV95cUxPdWtCT3BmTUNnTHVkMDNMNWNFb25yekRMS3NlUVFFZjRfZEFRRTdnTXI3SUFRZHBwVjREUmtORVdBWVZTek8taGFPZno1cVAwOHdza0tWX0NrZEtSaUtqODRyWWVrVjJTa2FuVzNqd0",
+      "category": "media"
+    },
+    {
+      "title": "Alphabet’s Anthropic Stake Jumps to Around $124 Billion - Bloomberg.com",
+      "url": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxNNW9Jb3NIQ2dSYlpFaC1hMVcwMHctaFRYa0dsemNDTFZjTHZncU9QR3lCeUpsNHpVLXdoMy0wN2FwQXdUWGtiY1E5MzhyaUVVUVk5Zm81WG83aDZjUG1OMnJqTHphZTktR3g3NUc1bFlOR2N3VE1KZ0Zsck9wenhkVWM0OFRMQTZ3TUk2N2JhVmItZHVHdEJib1FuaEYzMWlFQ2c0RDEtZ00?oc=5",
+      "source": "Google News / Bloomberg.com",
+      "published": "07/23 19:53 UTC",
+      "score": 0,
+      "score_unit": "",
+      "source_count": 1,
+      "summary": "<a href=\"https://news.google.com/rss/articles/CBMiqAFBVV95cUxNNW9Jb3NIQ2dSYlpFaC1hMVcwMHctaFRYa0dsemNDTFZjTHZncU9QR3lCeUpsNHpVLXdoMy0wN2FwQXdUWGtiY1E5MzhyaUVVUVk5Zm81WG83aDZjUG1OMnJqTHphZTktR3g3NUc1bF",
+      "category": "media"
+    },
+    {
+      "title": "Anthropic upgrades Claude voice mode with more powerful models - 9to5Mac",
+      "url": "https://news.google.com/rss/articles/CBMimgFBVV95cUxQZi1wWGxRMHF0dVJ2VFcxWVN0TS05RlpBcnQ4N3dobGp4TVBOU3k2TlphWVRQaWpEY09tazhxNG9Tc05tblVabmZZaFE2dmVXNjNvVE5ZVXk0ck8xUXNweEdBbVpuTS1sSFJKX3MwaWdVelRyRTVBdUEzR2RIZjl4eExmUXBYY2dYZ2wtNG5udDZobEVwdFgyLTB3?oc=5",
+      "source": "Google News / 9to5Mac",
+      "published": "07/23 19:16 UTC",
+      "score": 0,
+      "score_unit": "",
+      "source_count": 1,
+      "summary": "<a href=\"https://news.google.com/rss/articles/CBMimgFBVV95cUxQZi1wWGxRMHF0dVJ2VFcxWVN0TS05RlpBcnQ4N3dobGp4TVBOU3k2TlphWVRQaWpEY09tazhxNG9Tc05tblVabmZZaFE2dmVXNjNvVE5ZVXk0ck8xUXNweEdBbVpuTS1sSFJKX3MwaW",
+      "category": "media"
+    },
+    {
+      "title": "Anthropic updates Claude voice mode with more capable models - TechCrunch",
+      "url": "https://news.google.com/rss/articles/CBMimwFBVV95cUxPTlo0bXJZb1JaV0MteE1fQkhUNU1uRjlpN2lxcmd5aVM0eTZfbjMwYldQWXdxU2EzLWhOcXdnQkh5WnJmTzRoZEk1c3laczdESFpOQmUwRkl6SmJVTHhVYVdqS1AyTFpSVkhIdkNTMFNPQUJVNzJITU9hQzBrQnJ1cjY0cjZ0aG9VVEdCTVl6R0NjcmtSbFM0M3ZhWQ?oc=5",
+      "source": "Google News / TechCrunch",
+      "published": "07/23 19:00 UTC",
+      "score": 0,
+      "score_unit": "",
+      "source_count": 2,
+      "summary": "<a href=\"https://news.google.com/rss/articles/CBMimwFBVV95cUxPTlo0bXJZb1JaV0MteE1fQkhUNU1uRjlpN2lxcmd5aVM0eTZfbjMwYldQWXdxU2EzLWhOcXdnQkh5WnJmTzRoZEk1c3laczdESFpOQmUwRkl6SmJVTHhVYVdqS1AyTFpSVkhIdkNTMF",
+      "category": "media"
+    },
+    {
+      "title": "Claude's Voice Mode Just Got Smarter - Engadget",
+      "url": "https://news.google.com/rss/articles/CBMid0FVX3lxTE92XzdFXzdGamNKUWV2MHVxRnZiWm1EWlRBMnFUQm1Kb0JjQlJpRkNhZ2FnNEd2a3Q4LTFUaUc5X2NMdVJ1TDZOLWJ0eF9GQ2JocjJBejE0MHVHQWlHbnV2c1dnQktpVk9hYzNscDdUTGFZdW5LYnFR?oc=5",
+      "source": "Google News / Engadget",
+      "published": "07/23 19:00 UTC",
+      "score": 0,
+      "score_unit": "",
+      "source_count": 1,
+      "summary": "<a href=\"https://news.google.com/rss/articles/CBMid0FVX3lxTE92XzdFXzdGamNKUWV2MHVxRnZiWm1EWlRBMnFUQm1Kb0JjQlJpRkNhZ2FnNEd2a3Q4LTFUaUc5X2NMdVJ1TDZOLWJ0eF9GQ2JocjJBejE0MHVHQWlHbnV2c1dnQktpVk9hYzNscDdUTG",
+      "category": "media"
+    },
+    {
+      "title": "Claude’s voice mode is now available for Opus and Sonnet - The Verge",
+      "url": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxQMloybkxVSTh1eldxMkdOa0M2LWJaejlqYThGMHB6Y28xdDN6RHpRcV85aG56Y3R3THowcFE5YUxROWFyWXk4ZldPci05eUV1Y2Q0R2RSWmdDNm9fdnBJclpuMnZiNk1ZLW90ZmJ4T0UwZDh3c3hXNHNyMDloUWJ5U2Nqd0lTUW9lT0l3d0JBMndXWlhIalFKV1UybE14LTJvbi1nclNETGVoV00?oc=5",
+      "source": "Google News / The Verge",
+      "published": "07/23 19:00 UTC",
+      "score": 0,
+      "score_unit": "",
+      "source_count": 1,
+      "summary": "<a href=\"https://news.google.com/rss/articles/CBMiqwFBVV95cUxQMloybkxVSTh1eldxMkdOa0M2LWJaejlqYThGMHB6Y28xdDN6RHpRcV85aG56Y3R3THowcFE5YUxROWFyWXk4ZldPci05eUV1Y2Q0R2RSWmdDNm9fdnBJclpuMnZiNk1ZLW90ZmJ4T0",
+      "category": "media"
+    },
+    {
+      "title": "Anthropic calls for industry-wide AI safety standards to keep models from wreaking havoc - Fox Business",
+      "url": "https://news.google.com/rss/articles/CBMivAFBVV95cUxPTjgyaWlPVldPYUgtTUhxNXhSTHZFZnd3ZzlCSERNLUxIN2dickx4ZGpST2gtbXF2d2xpOFFaekN2QlVORXB5MV9MSEVBUFJoTWhDOHFRX3k3OVBpREJjOXk0NTlTVUhEd2ppMXdyNkRibTBhbG8zMEJxQjFPT0l0ZTczeDUtMHlmZ1lUQ2RlYkt5VTdmcTRESXBQM2x2dWxVVzM0dDhiai1FbU5peXU1bDhHQTBWMU1wbUQ0Z9IBwgFBVV95cUxOOHgtX3VLREtLVTB6MHdWdjJISjEza0FEc3ZsX1ZRMjlDamk5TFVCVjZzQjM1Z1Z2X2tJVW9qRzRCdHhxeGVaVVRLVHVTaGlSVERWTFFhYlYwQzNDQTJOYjQ0T2gxTFJpRFFFOERCbDk2dmNCZ3pIWXR3djZOWWhkM1ZIOTBjdVoxWnZoWHB3cThGQWFvazRrTzh1SG9TQ3N1elFHWE1DNEFGeWpGQ2tVVXdtbmtVR2s3OG1pXzludmZTZw?oc=5",
+      "source": "Google News / Fox Business",
+      "published": "07/23 18:19 UTC",
+      "score": 0,
+      "score_unit": "",
+      "source_count": 1,
+      "summary": "<a href=\"https://news.google.com/rss/articles/CBMivAFBVV95cUxPTjgyaWlPVldPYUgtTUhxNXhSTHZFZnd3ZzlCSERNLUxIN2dickx4ZGpST2gtbXF2d2xpOFFaekN2QlVORXB5MV9MSEVBUFJoTWhDOHFRX3k3OVBpREJjOXk0NTlTVUhEd2ppMXdyNk",
+      "category": "media"
+    },
+    {
+      "title": "A side-by-side comparison shows stark differences between Meta and Anthropic's AI ad campaigns - Business Insider",
+      "url": "https://news.google.com/rss/articles/CBMigwFBVV95cUxOYVdBVlUtTlgyMHB3WjhVYzZRRXpicEZ1R3hKZ1hQZ2pPRVlWbnFiSmRvT01EeGpBS0JrS3pTODdJcmp5N01jMzVHNUUxNllaU1FTdVpnQTVQMi1BSjVtbzNjUWdhNnRIZjBHcC11Vm9XRXJOLVNIbkRqMHUtSjd0X2w4Yw?oc=5",
+      "source": "Google News / Business Insider",
+      "published": "07/23 16:48 UTC",
+      "score": 0,
+      "score_unit": "",
+      "source_count": 1,
+      "summary": "<a href=\"https://news.google.com/rss/articles/CBMigwFBVV95cUxOYVdBVlUtTlgyMHB3WjhVYzZRRXpicEZ1R3hKZ1hQZ2pPRVlWbnFiSmRvT01EeGpBS0JrS3pTODdJcmp5N01jMzVHNUUxNllaU1FTdVpnQTVQMi1BSjVtbzNjUWdhNnRIZjBHcC11Vm",
+      "category": "media"
+    },
+    {
+      "title": "Silicon Valley Unites Against Anthropic Over Chinese AI Restrictions - The Information",
+      "url": "https://news.google.com/rss/articles/CBMimwFBVV95cUxQcEVxN1FUYkkzUVlKVjJGejVuNFMxSUZ1ZVhVbDNCWU9qbmlidUtvWENWUHVYZWxjMlUyOFRTZGxpV0ZCS3ZYUHlEcVV2bkJqUHhZeGZjWWNOUm0tOHlIM2R1RlR5VkdzUmJQWTlFQjYwZ25HOUxjb3VBTmcyQWJsSzNUQWZ2cnVTQUVPWTBOOFhELWpZSW9KNW5vdw?oc=5",
+      "source": "Google News / The Information",
+      "published": "07/23 15:30 UTC",
+      "score": 0,
+      "score_unit": "",
+      "source_count": 1,
+      "summary": "<a href=\"https://news.google.com/rss/articles/CBMimwFBVV95cUxQcEVxN1FUYkkzUVlKVjJGejVuNFMxSUZ1ZVhVbDNCWU9qbmlidUtvWENWUHVYZWxjMlUyOFRTZGxpV0ZCS3ZYUHlEcVV2bkJqUHhZeGZjWWNOUm0tOHlIM2R1RlR5VkdzUmJQWTlFQj",
+      "category": "media"
+    },
+    {
+      "title": "Antigravity vs Cursor vs Claude Code: Free vs $200 [2026] - tech-insider.org",
+      "url": "https://news.google.com/rss/articles/CBMidkFVX3lxTE5Wd0JTUktyVXFWQ0lFNXZBSFlGa1k2bUtIUGRMTTN0OE9UUkNRWkgzN3J4eGFlLXVNOGxwN3RabWZvdUJDMXdaaVRlOXNpeFpnUEd0UlBIbGNWb1VaN19jbVIwTG56cldLVno5YXczX2JhejVqOUE?oc=5",
+      "source": "Google News / tech-insider.org",
+      "published": "07/23 14:52 UTC",
+      "score": 0,
+      "score_unit": "",
+      "source_count": 1,
+      "summary": "<a href=\"https://news.google.com/rss/articles/CBMidkFVX3lxTE5Wd0JTUktyVXFWQ0lFNXZBSFlGa1k2bUtIUGRMTTN0OE9UUkNRWkgzN3J4eGFlLXVNOGxwN3RabWZvdUJDMXdaaVRlOXNpeFpnUEd0UlBIbGNWb1VaN19jbVIwTG56cldLVno5YXczX2",
+      "category": "media"
+    },
+    {
+      "title": "Orca Security Integrates With Claude Compliance API to Expand AI Governance for Enterprise Users - Security Info Watch",
+      "url": "https://news.google.com/rss/articles/CBMiggJBVV95cUxNSUV1SHlrQjRSV2hKMWFrV1RLTFVKNVRCeFhfTEt6UmlrWXpxaENoenNmM3lDcml5cWMxMVJCd1dFZDRmeXJNR29LODZOcDR6ckh4ZTMxME5CT25aQTJySUxObk9Xa1RUd1NyT01DT0dQNUYyc20zT216dFpQSFdmaFpReVh6a0xvMUpHNWJ2ZlMtN3RmX09HYmVxbzU0WUNRdzhsTUgzUkQzV0JISU5TeXRzUlFTX0tiUGMzandYQzNKRUk2X1hSQkVCbXhwaVNLSFNBVl9CSU9HMVpyMnJmMEdKUVJ6b0RKRTFSM2RUcmx3UG1lNzk0YS13Q1JWNkVjRmc?oc=5",
+      "source": "Google News / Security Info Watch",
+      "published": "07/23 14:11 UTC",
+      "score": 0,
+      "score_unit": "",
+      "source_count": 1,
+      "summary": "<a href=\"https://news.google.com/rss/articles/CBMiggJBVV95cUxNSUV1SHlrQjRSV2hKMWFrV1RLTFVKNVRCeFhfTEt6UmlrWXpxaENoenNmM3lDcml5cWMxMVJCd1dFZDRmeXJNR29LODZOcDR6ckh4ZTMxME5CT25aQTJySUxObk9Xa1RUd1NyT01DT0",
+      "category": "media"
+    },
+    {
+      "title": "7 Best Claude Code Alternatives for CLI Agentic Coding - KDnuggets",
+      "url": "https://news.google.com/rss/articles/CBMihwFBVV95cUxQamlqYkIwRktfeHdET25sR0xKRHYyQ0NXZXYwT3FfODhTaFRjLXhEU21lNFlCUHdJMm1wTEZEdFhyZ0dJdVJSa2dEc1ZyZGZ0TmlSUFRwSFpZX2xIbkw4STh0MEJrMkRYNVRJMms1d0tQelhrMWFDYTlqM2Z0anRuM1NMYmFZamM?oc=5",
+      "source": "Google News / KDnuggets",
+      "published": "07/23 12:32 UTC",
+      "score": 0,
+      "score_unit": "",
+      "source_count": 1,
+      "summary": "<a href=\"https://news.google.com/rss/articles/CBMihwFBVV95cUxQamlqYkIwRktfeHdET25sR0xKRHYyQ0NXZXYwT3FfODhTaFRjLXhEU21lNFlCUHdJMm1wTEZEdFhyZ0dJdVJSa2dEc1ZyZGZ0TmlSUFRwSFpZX2xIbkw4STh0MEJrMkRYNVRJMms1d0",
+      "category": "media"
+    },
+    {
+      "title": "I use Anthropic's Claude AI tools for very different jobs: How to pick between models, Code, and Cowork - ZDNET",
+      "url": "https://news.google.com/rss/articles/CBMiekFVX3lxTE55UU8zYzdOWEdjOHUtMUszNmJLbEZVaFVEbzV1V2xmZXd0VUl4UGc3RFRRbHkzS0NRcUNLT1k4T3R1ellRVHhmWmRWLTh1MXc0WElJTWpFRm05V3JMVDJUdC1TNnBxLWlSaG4xeThxcTJ6S1JwY0F3UDdn?oc=5",
+      "source": "Google News / ZDNET",
+      "published": "07/23 12:26 UTC",
+      "score": 0,
+      "score_unit": "",
+      "source_count": 2,
+      "summary": "<a href=\"https://news.google.com/rss/articles/CBMiekFVX3lxTE55UU8zYzdOWEdjOHUtMUszNmJLbEZVaFVEbzV1V2xmZXd0VUl4UGc3RFRRbHkzS0NRcUNLT1k4T3R1ellRVHhmWmRWLTh1MXc0WElJTWpFRm05V3JMVDJUdC1TNnBxLWlSaG4xeThxcT",
+      "category": "media"
+    },
+    {
+      "title": "OpenAI and Anthropic could go public for trillions. Will S.F. cash in? - San Francisco Chronicle",
+      "url": "https://news.google.com/rss/articles/CBMiggFBVV95cUxPSmNEOXJObHh3QUQ0SXdvUlhMWW10SktKbXhlaG01UUNXc0ExR29FS1BfWTdpT3RwNVJhV3lCUGptOUozSjh0UVhQUXMwWC0wUDdYR2ZybjR0cVhmS0o0S0pDbUtwV25xMURseEloeDhkRDVtVzR0a0FRcWw0ekNveTd3?oc=5",
+      "source": "Google News / San Francisco Chronicle",
+      "published": "07/23 11:04 UTC",
+      "score": 0,
+      "score_unit": "",
+      "source_count": 1,
+      "summary": "<a href=\"https://news.google.com/rss/articles/CBMiggFBVV95cUxPSmNEOXJObHh3QUQ0SXdvUlhMWW10SktKbXhlaG01UUNXc0ExR29FS1BfWTdpT3RwNVJhV3lCUGptOUozSjh0UVhQUXMwWC0wUDdYR2ZybjR0cVhmS0o0S0pDbUtwV25xMURseEloeD",
+      "category": "media"
+    },
+    {
+      "title": "Anthropic preparing for potential Claude Opus 5 rollout - TestingCatalog AI News",
+      "url": "https://news.google.com/rss/articles/CBMikAFBVV95cUxQRWYtODJYNVFKWk5UUXlaN0UtdTl6c2tRMlBrR0IwQ0Y1Y1htUWowSWJ6N0o0d2k4aEdqdzRQM1dzZXZwT3FhNjQ5bDhxNHV4LVVpZVJyLWd0TjFtZFpkS3RCbzlHMVdjOUc4LTQzSkFSZENpd25JQTBfWmZBMk0yZFkwaW1HNEpHT3RaLTV0RDg?oc=5",
+      "source": "Google News / TestingCatalog AI News",
+      "published": "07/23 10:47 UTC",
+      "score": 0,
+      "score_unit": "",
+      "source_count": 1,
+      "summary": "<a href=\"https://news.google.com/rss/articles/CBMikAFBVV95cUxQRWYtODJYNVFKWk5UUXlaN0UtdTl6c2tRMlBrR0IwQ0Y1Y1htUWowSWJ6N0o0d2k4aEdqdzRQM1dzZXZwT3FhNjQ5bDhxNHV4LVVpZVJyLWd0TjFtZFpkS3RCbzlHMVdjOUc4LTQzSk",
+      "category": "media"
+    },
+    {
+      "title": "Claude Code Update Kills Quadratic Slowdown That Compounded in Auto Mode's Longest Sessions - Tech Times",
+      "url": "https://news.google.com/rss/articles/CBMi2gFBVV95cUxQc1VhTmRVMC1abkQ0ZTJqNDFoVkpJR0lXaV9KWGhxQzlTS2RXakpLc0lMNWpWWVBPdGdrM1E0NzNwUkJNQnhoMXdTT1pjS2U4VldkS3dULTZmaU5EQmJMc2ZueHVwdG10cFhoNlNwR01BVzhZSHFWc0lhMEJKS25maVJDNEpJQmhPY1didkxNX3FPUjFMMS1jcmpKUmxmZ0pna1hyV25jS3RMZmhBMk1md2dIeER5S1pLaFlkS01hbW5pcXBZaE1DSGk5dHFxNnN2aFdyZGhPWTRpUQ?oc=5",
+      "source": "Google News / Tech Times",
+      "published": "07/23 09:58 UTC",
+      "score": 0,
+      "score_unit": "",
+      "source_count": 1,
+      "summary": "<a href=\"https://news.google.com/rss/articles/CBMi2gFBVV95cUxQc1VhTmRVMC1abkQ0ZTJqNDFoVkpJR0lXaV9KWGhxQzlTS2RXakpLc0lMNWpWWVBPdGdrM1E0NzNwUkJNQnhoMXdTT1pjS2U4VldkS3dULTZmaU5EQmJMc2ZueHVwdG10cFhoNlNwR0",
+      "category": "media"
+    },
+    {
+      "title": "Anthropic Claims 50% usage boost that doesn't exist :)",
+      "url": "https://www.reddit.com/r/ClaudeAI/comments/1v3d8iz/anthropic_claims_50_usage_boost_that_doesnt_exist/",
+      "source": "Reddit / r/ClaudeAI · 週熱門",
+      "published": "07/22 11:21 UTC",
+      "score": 0,
+      "score_unit": "留言",
+      "source_count": 1,
+      "summary": "<table> <tr><td> <a href=\"https://www.reddit.com/r/ClaudeAI/comments/1v3d8iz/anthropic_claims_50_usage_boost_that_doesnt_exist/\"> <img alt=\"Anthropic Claims 50% usage boost that doesn't exist :)\" src=",
+      "category": "community"
+    },
+    {
+      "title": "ANTHROPIC GOT SUED",
+      "url": "https://www.reddit.com/r/ClaudeAI/comments/1v2cc6o/anthropic_got_sued/",
+      "source": "Reddit / r/ClaudeAI · 週熱門",
+      "published": "07/21 08:24 UTC",
+      "score": 0,
+      "score_unit": "留言",
+      "source_count": 1,
+      "summary": "<table> <tr><td> <a href=\"https://www.reddit.com/r/ClaudeAI/comments/1v2cc6o/anthropic_got_sued/\"> <img alt=\"ANTHROPIC GOT SUED\" src=\"https://preview.redd.it/6e1sejz6mjeh1.jpeg?width=640&amp;crop=smar",
+      "category": "community"
+    },
+    {
+      "title": "Claude usage as reward",
+      "url": "https://www.reddit.com/r/ClaudeAI/comments/1v1s4tz/claude_usage_as_reward/",
+      "source": "Reddit / r/ClaudeAI · 週熱門",
+      "published": "07/20 17:31 UTC",
+      "score": 0,
+      "score_unit": "留言",
+      "source_count": 1,
+      "summary": "<table> <tr><td> <a href=\"https://www.reddit.com/r/ClaudeAI/comments/1v1s4tz/claude_usage_as_reward/\"> <img alt=\"Claude usage as reward\" src=\"https://preview.redd.it/tf314zbx6feh1.png?width=640&amp;cr",
+      "category": "community"
+    },
+    {
+      "title": "Scientist's view - the BS of F@ble \"too dangerous for science\" now that Sol and Kimi K3 available",
+      "url": "https://www.reddit.com/r/ClaudeAI/comments/1uzxcyt/scientists_view_the_bs_of_fble_too_dangerous_for/",
+      "source": "Reddit / r/ClaudeAI · 週熱門",
+      "published": "07/18 14:28 UTC",
+      "score": 0,
+      "score_unit": "留言",
+      "source_count": 1,
+      "summary": "<!-- SC_OFF --><div class=\"md\"><p>I'm a scientist (genetics, neuroscience). Claude has full cross-chat access, and it's obvious that I don’t do anything even remotely bioterror adjacent. I analyze RNA",
+      "category": "community"
+    },
+    {
+      "title": "Got 6 months of Claude Max 20x for free — thanks Anthropic and OpenSource",
+      "url": "https://www.reddit.com/r/ClaudeAI/comments/1uz5gtz/got_6_months_of_claude_max_20x_for_free_thanks/",
+      "source": "Reddit / r/ClaudeAI · 週熱門",
+      "published": "07/17 16:59 UTC",
+      "score": 0,
+      "score_unit": "留言",
+      "source_count": 1,
+      "summary": "<table> <tr><td> <a href=\"https://www.reddit.com/r/ClaudeAI/comments/1uz5gtz/got_6_months_of_claude_max_20x_for_free_thanks/\"> <img alt=\"Got 6 months of Claude Max 20x for free — thanks Anthropic and ",
+      "category": "community"
+    },
+    {
+      "title": "I built an open-source canvas where Claude responds beside your handwritings",
+      "url": "https://www.reddit.com/r/ClaudeAI/comments/1uz0ajn/i_built_an_opensource_canvas_where_claude/",
+      "source": "Reddit / r/ClaudeAI · 週熱門",
+      "published": "07/17 13:48 UTC",
+      "score": 0,
+      "score_unit": "留言",
+      "source_count": 1,
+      "summary": "<table> <tr><td> <a href=\"https://www.reddit.com/r/ClaudeAI/comments/1uz0ajn/i_built_an_opensource_canvas_where_claude/\"> <img alt=\"I built an open-source canvas where Claude responds beside your hand",
+      "category": "community"
+    }
+  ]
+}

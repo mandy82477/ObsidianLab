@@ -70,6 +70,25 @@ jobs:
             FAILED=1
           fi
 
+          # 回看 7 天的洞：Step 0 只檢查「昨天」，連續漏好幾天時你不會知道總共缺哪些。
+          # 一併列出哪些日子還能用原料副本 replay 補回（副本保留 14 天），
+          # 哪些已經只能重抓（來源視窗多半已滾過去，補出來會很稀疏）。
+          echo "" >> "$GITHUB_STEP_SUMMARY"
+          echo "### 近 7 天缺口" >> "$GITHUB_STEP_SUMMARY"
+          HOLES=0
+          for i in $(seq 1 7); do
+            D=$(date -u -d "-${i} day" +%F)
+            if [ ! -f "CLAUDE_NEWS/news/${D}.md" ]; then
+              HOLES=$((HOLES+1))
+              if [ -f "CLAUDE_NEWS/src/gathered_archive/${D}.json" ]; then
+                echo "- ⚠️ ${D} 缺日報（**有原料副本，可完整 replay 補回**：\`/news-pipeline ${D}\`）" >> "$GITHUB_STEP_SUMMARY"
+              else
+                echo "- ⚠️ ${D} 缺日報（無原料副本，只能重抓，內容會偏稀疏）" >> "$GITHUB_STEP_SUMMARY"
+              fi
+            fi
+          done
+          [ "$HOLES" = "0" ] && echo "- ✅ 近 7 天無缺口" >> "$GITHUB_STEP_SUMMARY"
+
           if [ "$FAILED" = "1" ]; then
             echo "" >> "$GITHUB_STEP_SUMMARY"
             echo "**補救**：本機執行 \`/news-pipeline ${TODAY}\`（見 CLAUDE_NEWS/docs/daily-automation.md）" >> "$GITHUB_STEP_SUMMARY"
