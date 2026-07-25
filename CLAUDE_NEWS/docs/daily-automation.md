@@ -5,6 +5,9 @@
 每日日報改為**全自動、關機也跑**,採「GitHub Actions 抓料 + 雲端 routine 做 LLM」分裂架構。
 手動 `/news-pipeline` 完整保留為**補救路徑**,不受本架構影響。
 
+> **雲端 routine 的執行規範不在本檔** `[加入: 2026-07-25]`
+> 本檔講「為什麼這樣拆」；雲端 routine 實際照什麼步驟跑，見 `docs/cloud-runbooks/daily.md`（每日）與 `docs/cloud-runbooks/weekly-lint.md`（每週），共用規則見 `docs/cloud-runbooks/_shared.md`。trigger 本身的定義鏡像與維護規約見 `docs/cloud-runbooks/README.md`。
+
 ---
 
 ## 為什麼要拆兩段
