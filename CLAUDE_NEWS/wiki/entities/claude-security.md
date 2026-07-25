@@ -4,17 +4,19 @@
 **狀態：** beta（公開測試版）
 **領域：** 🛠️ 工具/功能
 **首次出現：** 2026-04-30
-**最後更新：** 2026-07-01
-**最後新聞更新：** 2026-05-28
+**最後更新：** 2026-07-24
+**最後新聞更新：** 2026-07-24
 
-> **最新資安產品動態**（2026-05-28）
-> Cisco LLM Security Leaderboard 發布，Anthropic 模型佔前十名 8 席；調查顯示 83% 企業計畫部署 agentic AI，但僅 29% 認為已具備足夠安全管控能力，直接推動 Claude Security 產品採購需求。
+> **最新資安產品動態**（2026-07-23）
+> MarkTechPost 報導 Anthropic 發布「Claude Security 外掛（plugin）」Beta 版，強調為**可在終端機內執行的多代理（multi-agent）漏洞掃描工具**；報導僅有標題可用，與本頁既有已於 2026-04-30 推出、2026-05-01 向全部 Enterprise 客戶開放的 Claude Security 是否為同一產品的最新包裝說法、或另一獨立的外掛發布形式，待查證。
 
 ## 現況
 
 Claude Security 於 2026-04-30 宣布推出公開測試版，並於 2026-05-01 正式向**全部 Enterprise 客戶**開放。ZDNET、SecurityWeek、SiliconANGLE、CRN、Pulse 2.0 等多家媒體報導。這是 Anthropic 首次以**獨立資安產品形式**跨足 AI 輔助資安市場，直接整合於 Claude Code 開發環境。
 
 核心運作方式：以類安全研究員的方式**讀取 Git 歷史**、**跨檔案追蹤資料流**，目標大幅降低傳統規則掃描的誤報率。多位開發者指出「**推理式驗證（reasoned verification）**」才是本次發布真正的差異化設計決策——工具可自動確認漏洞真實性並提出修復建議，而非僅標記疑似問題。
+
+**社群回饋（待查證）：** 2026-07-24 一則 Reddit 貼文反映新手使用者花費大量 token 才發現 Claude Security 目前無法存取 Workflow tool；僅單一來源、非官方文件確認，是否為既有設計限制或待補功能尚待查證。
 
 ---
 
@@ -65,6 +67,8 @@ Claude Security 於 2026-04-30 宣布推出公開測試版，並於 2026-05-01 �
 
 | 日期 | 事件 |
 |------|------|
+| 2026-07-24 | **社群反映無 Workflow tool 存取權限**：Reddit 使用者（自稱使用 Claude Code 未滿一個月）反映摸索過程燒費大量 token 才發現 Claude Security 沒有 Workflow tool 的存取權限；單一來源、無官方確認，是否為既有設計限制或待補功能尚待查證；來源：Reddit / r/ClaudeCode |
+| 2026-07-23 | **MarkTechPost 報導「Claude Security Plugin」Beta 版**：標題強調「終端機內執行的多代理漏洞掃描工具」，僅標題可用、無正文細節；與既有 2026-04-30 推出、2026-05-01 對全部 Enterprise 客戶開放的 Claude Security 定位關係（同一產品重新包裝／再報導，或另一獨立外掛發布）待查證；來源：Google News / MarkTechPost |
 | 2026-05-28 | **Cisco LLM Security Leaderboard 首次發布**：Anthropic 模型佔前十名 8 個席位（8/10），成為企業採購 AI 工具時最強的第三方安全背書；調查同時顯示 83% 企業計畫部署 agentic AI，但僅 29% 認為已具備足夠安全管控能力——此數字直接推動 Claude Security 產品採購需求；來源：Cisco / The Deep View（HN score 3） |
 | 2026-05-26 | Anthropic 宣布 28 項企業安全整合（Anthropic + 28 security vendors），Varonis 將 Claude Compliance API 整合至 Atlas 企業安全平台（AI 治理 + 資料存取合規追蹤）；Forcepoint 將統一 AI 與資料安全防護延伸至 Claude Enterprise（Stopping Risk Before Agents Act 定位）；企業安全生態迅速擴張 |
 | 2026-05-24 | 社群發現 app 字串洩露「Access to the Claude Mythos model in Claude Code and Claude Security」，顯示 Anthropic 計畫將更強大的 Mythos 模型整合至 Claude Security；Anthropic 聲明一般用戶不保證獲得存取 |

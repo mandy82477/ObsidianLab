@@ -4,11 +4,11 @@
 **狀態：** active（已被取代，第三階旗艦）
 **領域：** 🤖 模型
 **首次出現：** 2026-04-24
-**最後更新：** 2026-07-14
-**最後新聞更新：** 2026-07-14
+**最後更新：** 2026-07-19
+**最後新聞更新：** 2026-07-19
 
-> **最新研究發現**（2026-07-13）
-> Anthropic 研究團隊以 J-lens 工具在 **Claude Opus 4.6** 內部發現名為「J-space」的隱藏推理空間，可能揭露模型接下來要輸出的概念；MIT Technology Review 07-13 發文對此發現採審慎解讀，區分「證明了什麼／還未證明什麼」（詳見「研究發現」）。此為 Opus 4.6 而非 4.7 本身的發現，記錄於本頁因 4.6 尚無獨立 entities 頁。
+> **最新已知問題**（2026-07-18）
+> GitHub Issue 回報 Opus 4.7 在處理較長 payload 時，會把舊版 XML tool-use 格式混入 JSON tool call 中，累積 33 則留言、34 個讚同反應，尚無官方回應（[GitHub Issue #49747](https://github.com/anthropics/claude-code/issues/49747)，詳見「已知問題與爭議」）。
 
 ---
 
@@ -36,6 +36,9 @@ Claude Opus 4.7 於 2026-04-24 正式發布，已相繼被 Opus 4.8（2026-05-28
 ---
 
 ## 已知問題與爭議
+
+### XML tool-use 格式混入 JSON tool call（2026-07-18 回報）（🔴 未修復）
+GitHub Issue 回報 Opus 4.7 在處理較長 payload 時，會把舊版 XML tool-use 格式混入 JSON tool call 中，造成工具呼叫解析異常；累積 33 則留言、34 個讚同反應，尚無官方回應（[GitHub Issue #49747](https://github.com/anthropics/claude-code/issues/49747)）。
 
 ### 529 Overloaded 大規模中斷（2026-06-21~22）
 Anthropic 官方確認 Opus 4.7（及 Opus 4.8、4.6、Sonnet 4.6）於 2026-06-21 至 22 間出現 elevated error rates（HTTP 529 Overloaded）；另有全球約 90 分鐘完整中斷。Max Plan 用戶反映自上週起錯誤持續激增，尤以 coding tasks 與 Claude Code 受影響最重。此為 Opus 4.7 仍在線期間受影響的大規模服務事件（[cybersecuritynews.com](https://cybersecuritynews.com/anthropic-claude-ai-outage/)）。
@@ -178,3 +181,4 @@ Reddit r/ClaudeAI 實測分享：Opus 4.7 在 **Claude Code 搭配 max effort �
 - [[news/2026-05-05]]
 - [[news/2026-05-11]]
 - [[news/2026-05-17]]
+- [[news/2026-07-19]]

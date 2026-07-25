@@ -4,31 +4,32 @@
 僅收錄官方 changelog、release note 或官方公告來源；社群工具見 [[topics/community-tech-tools]]。
 每次 ingest 後由 LLM 維護：新增功能、更新熱度、補充社群回饋。
 
-**最後更新：** 2026-07-18
+**最後更新：** 2026-07-24
 
 ---
 
 ## ⭐ 本週推薦
 
-- **Claude Fable 5（免費期限延至 7/19）**（熱度 🔥🔥🔥🔥🔥）：旗艦模型全球恢復，免費使用期限因 GPT-5.6 Sol 被視為同級競品再度延長至 7/19（原 7/12），到期後轉 usage-based billing，想試 Mythos 級推理者把握視窗
+- **Claude Fable 5（免費期限已於 7/19 到期）**（熱度 🔥🔥🔥🔥🔥）：旗艦模型全球恢復，免費使用期限已於 7/19 到期；Max/Team 後續存取政策（永久標配／計量存取）仍有分歧報導，07-20 一度出現 Max 方案誤判需購買 usage credits 的 bug（官方已證實並建議重啟），詳見 [[entities/pricing]]
 - **Claude Code Artifacts**（熱度 🔥🔥🔥🔥🔥）：工作階段可即時輸出互動式儀表板、圖表與可分享頁面，適合需要展示中間產出或建立輕量工具的開發者
 - **Claude Cowork 行動版 / 網頁版**（熱度 🔥🔥🔥🔥）：任務可在雲端持續執行，闔上筆電或關閉裝置也不中斷，首波開放 Max 訂閱戶，適合需要行動場景交辦長時間背景任務者
 
 > `/goal` 指令已連續推薦超過 7 天（自 07-09 起）且今日 ingest 未更新其熱度/試用價值，依防霸榜規則換下，改為 Claude Code Artifacts（上次在推薦榜為 07-07 之前）；詳細條目仍見下方全覽表。
+> 07-24 新增「Claude 語音模式 Opus／Sonnet 選擇」（🔥🔥🔥🔥／⚡），熱度與現有 Cowork 條目同級，現有三項推薦皆未逾 7 天，故本輪保持不動；語音模式列入下一輪換榜候選。
 
 ---
 
 ## ⚠️ 升版風險（每次 ingest 更新）
 
-**最新版本：** v2.1.214（2026-07-18，純安全性修正——修復 single-segment `dir/**` allow 規則誤自動核准樹狀結構中任意層級 `dir/` 目錄寫入的權限漏洞，並修復另一項相關權限問題；無新指令/旗標，未列入本頁。前一重大異動為 v2.1.212（2026-07-17）`/fork` 改為將對話複製進背景 session、原同 session 子 agent 功能改名 `/subtask`）
+**最新版本：** v2.1.218（2026-07-22，`/code-review` 改為背景 subagent 執行，審查工作不再佔用對話內容並保留 stacked slash commands 作為審查對象；同版新增螢幕報讀軟體相關無障礙改善，具體對應範圍未知）。前一異動為 v2.1.217（2026-07-21，Prompt input 新增表情符號 shortcode 自動完成，可用 `emojiCompletionEnabled` 設定關閉）
 
 | 風險 | 嚴重度 | 說明 |
 |------|--------|------|
 | Cowork 已知問題（VM bundle 效能劣化 + 檔案靜默截斷） | 🔴 | Cowork 功能會建立高達 10GB 的 VM bundle，導致啟動變慢、UI 延遲、效能隨時間持續劣化（#22543，76 留言）；Edit/Write 工具另因緩衝區容量上限（byte-conservation buffer cap）靜默截斷檔案，任何檔案大小皆可重現（#53940，累計 16 個讚同反應），屬資料完整性風險，非邊緣情況 |
 | `/fork` 語意變更（⚠️ Breaking Change，無過渡期） | 🔴 | v2.1.212 起 `/fork` 不再於同一 session 內啟動子 agent，改為複製對話進新背景 session；依賴舊行為撰寫的 skill/hook/巨集需立即改用 `/subtask`，官方 release note 未附完整遷移指南 |
-| Fable 5 Defense in Depth 誤判 | 🟡 | 解禁後新安全分類器將高風險 coding 請求 fallback 至 Opus 4.8，首日已有誤判實測案例 |
+| `/verify` `/code-review` 不再自動觸發（⚠️ Breaking Change，無過渡期） | 🔴 | v2.1.215 起 Claude 不再於背景自動執行 `/verify` 與 `/code-review`，須使用者手動呼叫指令；依賴自動驗證/審查隱性保護的既有工作流（CI、hook、慣例流程）升級後會失去這層保護，官方未附遷移指南 |
 
-**建議：** 升級前確認是否有依賴 `/fork` 舊行為（同 session 子 agent 委派）撰寫的 skill/hook/巨集，若有需立即改寫為 `/subtask`；**重度依賴 Cowork 的使用者近期應避免處理大型檔案或大量寫入操作**，Edit/Write 靜默截斷問題目前無官方修復時程；Fable 5 defense-in-depth 誤判問題持續，敏感任務建議留意。
+**建議：** 升級前確認是否有依賴 `/fork` 舊行為（同 session 子 agent 委派）撰寫的 skill/hook/巨集，若有需立即改寫為 `/subtask`；同時確認既有流程是否依賴 Claude 自動觸發 `/verify` `/code-review`，若有須在 CI 或 hook 中新增顯式呼叫；**重度依賴 Cowork 的使用者近期應避免處理大型檔案或大量寫入操作**，Edit/Write 靜默截斷問題目前無官方修復時程。Fable 5 Defense in Depth 誤判問題持續存在，詳見 [[entities/fable-5]]，非版本升級可解決，本表暫不重複列出。
 
 ---
 
@@ -36,8 +37,9 @@
 
 | 截止日 | 事件 | 到期後 | 你該做的決定 |
 |--------|------|--------|------------|
-| **2026-07-19** | Fable 5 免費使用期限＋週配額 +50% 促銷（原分列 7/12、7/13，已統一順延至 7/19，因 GPT-5.6 Sol 被視為同級競品）| 是否再延或轉 usage-based billing 尚無官方明確說法 | Pro/Max/Team 及舊制 Enterprise 用戶：7/19 前把握加成額度視窗；Free 與用量制 Enterprise 不受影響；留意到期後是否再延 |
 | **2026-08-31** | Sonnet 5 促銷價 $2/$10 per Mtok 結束 | 正式定價未公布，成本可能上升 | 依賴 Sonnet 5 的自動化流程：8 月底前關注正式定價公告 |
+
+> Fable 5 免費期限（原訂 7/19）已到期並移出本表；今日報導方向趨於一致指向 Pro 訂閱免費存取已結束、Max/Team 動向未明，詳見 [[entities/pricing]]「當前生效的計費規則」與時序。
 
 ---
 
@@ -62,6 +64,12 @@
 
 | 功能 | 發布日期 | 熱度 | 試用價值 | 狀態 |
 |------|----------|------|----------|------|
+| **Claude 語音模式 Opus／Sonnet 選擇**（所有使用者開放於 Opus／Sonnet 間切換語音模式底層模型，六家媒體同步報導，無官方版本號） | 2026-07-24 | 🔥🔥🔥🔥 | ⚡ 有條件推薦 | 正式發布（全使用者開放） |
+| **API 新增 Stop Reason `model_continue`**（anthropic-sdk-python v0.119.0／anthropic-sdk-typescript sdk-v0.114.0） | 2026-07-23 | 🔥🔥 | ⏳ 觀望 | 正式發布（SDK 層） |
+| **Claude Code v2.1.218**（`/code-review` 改為背景 subagent 執行，審查工作不再佔用對話內容；同版新增螢幕報讀軟體相關無障礙改善） | 2026-07-22 | 🔥🔥 | ✅ 推薦 | 正式發布 |
+| **Claude Code v2.1.217**（Prompt input 新增表情符號 shortcode 自動完成，輸入 `:heart:` 插入 ❤️，可用 `emojiCompletionEnabled` 設定關閉；同版新增警告訊息，細節未知） | 2026-07-21 | 🔥 | ⏳ 觀察中 | 正式發布 |
+| **Claude Code v2.1.216**（新增 `sandbox.filesystem.disabled` 設定，可在維持網路出口控管下跳過檔案系統隔離；同版修復長會話訊息正規化速度變慢問題） | 2026-07-20 | 🔥🔥 | ⚡ 有條件推薦 | 正式發布 |
+| **Claude Code v2.1.215**（Claude 不再自動執行 `/verify` 與 `/code-review` 兩項技能，須手動呼叫指令觸發；⚠️ Breaking change 無過渡期） | 2026-07-19 | 🔥🔥 | ⚡ 有條件推薦 | 正式發布 |
 | **Claude Code v2.1.212**（`/fork` 改為背景 session 化，原同 session 子 agent 功能改名 `/subtask`；⚠️ Breaking change 無過渡期） | 2026-07-17 | 🔥🔥🔥 | ⚡ 有條件推薦 | 正式發布 |
 | **Claude 1Password 整合**（透過已存 1Password 憑證登入網站免暴露密碼，官方一手公告未附） | 2026-07-17 | 🔥🔥 | ⏳ 觀望 | 官方新功能（狀態未明） |
 | **Claude for Teachers**（美國通過認證 K-12 教師免費開放進階 Claude 功能與教學技能庫，對接全美 50 州學術標準） | 2026-07-15 | 🔥🔥🔥 | ⏳ 觀望 | 正式發布（限定對象） |
@@ -127,6 +135,61 @@
 ---
 
 ## 🆕 最新功能（2026-07）
+
+### Claude 語音模式 Opus／Sonnet 模型選擇
+**發布：** 2026-07-24（The Verge／TechCrunch／9to5Mac／Engadget／the-decoder.com／SQ Magazine 六家媒體同步報導，無官方版本號） | **熱度：** 🔥🔥🔥🔥 | **試用價值：** ⚡ 有條件推薦 | **狀態：** 正式發布（全使用者開放）
+
+**是什麼：** Claude 語音模式（Voice Mode）新增模型選擇功能，所有使用者現可在 Opus 與 Sonnet 之間切換語音對話所使用的底層模型。
+
+**為何熱：** 六家獨立媒體同步報導交叉印證，屬今日「重大事件」；昨日（07-23）TestingCatalog 僅標題可用的預告報導，今日獲跨媒體正式確認。
+
+**現在要試嗎：** 適合追求更高語音互動品質、願意用 Opus 換取更佳回應品質的使用者；輕度語音使用者用 Sonnet 已足夠，無需特別切換。
+
+**快速上手：**
+```
+Claude App → 語音模式設定 → 選擇 Opus 或 Sonnet
+```
+（具體 UI 路徑待官方文件確認）
+
+**注意事項：** 目前僅媒體報導交叉確認，官方部落格/changelog 尚未查得對應公告連結；語音延遲、費用是否受模型選擇影響未知。
+
+---
+
+### API 新增 Stop Reason `model_continue`
+**發布：** 2026-07-23（anthropic-sdk-python v0.119.0／anthropic-sdk-typescript sdk-v0.114.0） | **熱度：** 🔥🔥 | **試用價值：** ⏳ 觀望 | **狀態：** 正式發布（SDK 層）
+
+**是什麼：** Anthropic API 新增 stop_reason 列舉值 `model_continue`（Python release note 明確列出；TypeScript release note 於「add new sto[p reason]」處截斷，研判為同一異動的對應版本）。
+
+**為何熱：** 官方 changelog 首發，尚無社群討論或工具跟進；涉及 API 回應解析行為變更，依賴 stop_reason 分支判斷的開發者升級後需檢查涵蓋範圍。
+
+**現在要試嗎：** 直接處理 stop_reason 分支的開發者應升級 SDK 後確認程式碼涵蓋新值；一般透過 Claude Code CLI 使用者無感知差異。
+
+**快速上手：**
+```
+pip install -U anthropic  # v0.119.0+
+npm install @anthropic-ai/sdk@latest  # sdk-v0.114.0+
+```
+
+**注意事項：** TypeScript release note 原文遭截斷，具體 stop reason 名稱未 100% 確認一致，建議查閱兩個 repo 完整 release note 核實。
+
+---
+
+### Claude Code v2.1.216 — `sandbox.filesystem.disabled` 設定
+**發布：** 2026-07-20（v2.1.216） | **熱度：** 🔥🔥 | **試用價值：** ⚡ 有條件推薦 | **狀態：** 正式發布
+
+**是什麼：** 新增 `sandbox.filesystem.disabled` 設定，可在維持網路出口控管（network egress control）的同時跳過檔案系統隔離。
+
+**為何熱：** 屬 GitHub Release Note 首發，尚無社群討論或工具跟進；同版另修復長會話中訊息正規化造成的效能退化問題（純可靠性修正，未計入本條目熱度）。
+
+**現在要試嗎：** 適合信任本機檔案系統、但仍需限制對外連線的沙箱使用情境；一般使用者可維持預設不動。
+
+**快速上手：**
+```
+# 於設定檔中啟用
+"sandbox": { "filesystem": { "disabled": true } }
+```
+
+**注意事項：** 停用檔案系統隔離會降低沙箱防護層級，僅建議在已信任本機檔案系統存取的前提下使用。
 
 ### `/fork` 背景 Session 化與 `/subtask` 語意拆分
 **發布：** 2026-07-17（v2.1.212） | **熱度：** 🔥🔥🔥 | **試用價值：** ⚡ 有條件推薦 | **狀態：** 正式發布

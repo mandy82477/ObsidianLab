@@ -3,6 +3,76 @@
 Append-only 紀錄。每次 ingest、lint，以及**揭露缺陷或促成改動的使用者 query**，都在此追加一條（純資訊性、未促成改動的 query 不記，避免噪音）。
 格式：`## [YYYY-MM-DD] 類型 | 說明`
 
+## 2026-07-24 Ingest | news/2026-07-24.md（63 則）
+
+- 來源日報：[[news/2026-07-24]]（63 則，10/10 來源；Google News 24、Hacker News 16、Reddit 12、GitHub Issues 6、GitHub 2、Anthropic Status 1、dev.to 1、Blogroll 1、Claude API Release Notes 0、Anthropic Blog 0）
+- 分類派工：模型 6 則、功能 12 則、商業 10 則、安全政策 6 則、社群 24 則（五類並行 foreground，人物今日無條目跳過；**本雲端 routine 環境自訂 subagent_type（wiki-reporter-*）未載入，五位記者均改以 general-purpose agent 扮演角色、內嵌完整規則文字派工**，屬環境限制的變通做法，功能與品質未受影響）
+- 更新頁面：
+  - **模型**：`entities/opus-4-8.md`（Opus 5 傳聞截圖 vs API 合約測試、TestingCatalog 準備推出報導併記，callout 更新）、`entities/fable-5.md`（callout 覆寫為 GitHub Issue #79337 Max 方案用量點數異常＋Reddit「開源模型追平 Fable」社群觀感；Reddit「Fable 5 min cache」因單一圖片型貼文無正文可查證未收錄）、`topics/model-comparison.md`（同步 reaction 數與 Opus 5 傳聞併記，快速選型表因無實質陣容變化維持不動）
+  - **功能**：`entities/claude-code.md`（SDK typescript sdk-v0.114.0／python v0.119.0 版本記錄；Opus 4.8 Status 事件；已知問題新增 5 條——macOS Filesystem tools/call 未派發 #80002 61 留言、RTL 排版需求 #38005 105 讚同/40 留言、CoworkVMService Windows 啟動失敗 #29941 39 留言、API 連線中斷 #69415 69 讚同/33 留言、autoMemoryEnabled preamble 未抑制 #63903 32 留言〔與昨日數字相同，判定無新事實未重複更新〕；語音模式 Opus/Sonnet 選擇六媒體交叉確認記入現況）、`entities/claude-security.md`（Reddit 回報無 Workflow tool 存取權限，待查證記錄）；「Agent Island update keeps Claude Code status local」（IT Brief Australia）僅標題可用查無更多細節，暫不寫入任何頁面，待後續報導決定
+  - **商業**：`topics/anthropic-business.md`（Bloomberg 報導 Alphabet 持有 Anthropic 股權市值跳升至約 1,240 億美元，同步 [[entities/google-investment]] 時序；Cyberhaven 新增 Claude Compliance API 整合、Orca Security 07-21 整合獲二次確認；NDTV 跟進哈利波特出版商和解賠付〔非新事實〕）、`entities/pricing.md`（GitHub Issue #79337 Fable5 Max方案用量點數異常持續逾4天未解，與07-20官方「已修正」說法有落差；modelplane.ai 一手實測換算訂閱補貼倍數約13倍；Reddit 週熱門質疑官方50%用量提升宣稱與實際體驗不符）、`topics/competitor-landscape.md`（tech-insider.org Antigravity vs Cursor vs Claude Code 定價比較，Antigravity 為首次出現競品名稱）；Reddit「ANTHROPIC GOT SUED」「Got 6 months Max 20x free」因純圖片型貼文無具體細節可查證，未收錄
+  - **安全政策**：`topics/anthropic-government-policy.md`（callout 覆寫：白宮科技顧問指控中國 Moonshot AI 竊取 Anthropic 技術〔BBC，source_count=2〕、矽谷業界聯合反對 Anthropic 對中限制立場〔The Information〕、中國 AI 業者傳藉 Claude Code 外洩內容縮小差距〔digitimes，僅標題可用待查證〕）、`topics/ai-agent-safety.md`（新增 Tego AI 本週第二度揭露 Claude 相關漏洞〔Hackread，隱藏連結外洩檔案〕——記者查證頁面內未見「第一度」揭露的既有記錄，標記待補查證；Anthropic 呼籲產業界建立 AI 安全標準〔Fox Business〕；摘要段落依「現況不被時序侵蝕」規則裁至最新 2 段，07-21 舊段移出摘要並保留於時序）
+  - **社群**：`topics/community-tech-patterns.md`（新增三款同日 Show HN 高分工具：Palmier Pro 開源 AI 影片編輯器 171 分、OneCLI 憑證閘道 101 分、Claude-thermos session 保溫工具 102 分，並完成 claude-thermos 與 discussions 頁雙向連結）、`topics/community-tech-discussions.md`（OpenAI/Anthropic 開放權重立場趨同引發 HN 287 分批評聲浪、Simon Willison 轉貼「AI agent 失控」行銷噱頭質疑；4 則逾 21 天 ☄️閃現 舊條目依保留規則移除）；今日 24 則社群節錄中多數 Show HN（1–6 分，遠低於低門檻）與非週熱門 Reddit 貼文（sort=new，score 不可信且無跨來源佐證）未收錄，詳見社群記者回報「未達門檻不收錄清單」；dev.to「Teaching Claude Code to Paint」與昨日已收錄條目重複，未重複寫入
+- feature-radar：新增 2 條（Claude 語音模式 Opus／Sonnet 選擇，🔥🔥🔥🔥／⚡ 有條件推薦；API 新增 Stop Reason `model_continue`，🔥🔥／⏳ 觀望）；最新版本行未變（今日無 Claude Code 新版本，僅 SDK 更新）；本週推薦（Fable 5／Artifacts／Cowork）因語音模式與現有 Cowork 條目同熱度且現有三項推薦皆未逾 7 天，本輪保持不動，語音模式列入下一輪換榜候選；升版風險表僅同步不變內容；⏰ 倒數中無變化
+- index.md 狀態變更：無（僅新增 2026-07-24 近期異動摘要條目；另發現 2026-07-23 ingest 當時未寫入近期異動摘要，形成一天缺口，記錄供後續留意，不在本次回溯補寫以免與該日實際 log 內容有出入）
+- 新增頁面：無
+- 摘要：語音模式全面升級（開放所有使用者於 Opus／Sonnet 間選擇模型）為今日功能面主軸；商業面 Alphabet 持股 Anthropic 市值跳升至 1,240 億美元、資安生態夥伴（Cyberhaven／Orca Security）持續擴張、Fable 5 於 Max 方案的計費異常延續逾 4 天未解且與官方說法有落差；地緣政治面美中 AI 緊張延燒（Moonshot 竊取指控、矽谷反彈、Claude Code 外洩傳言）；社群面三款高分 Show HN 新工具同日亮相，OpenAI/Anthropic 開放權重立場趨同引發社群批評聲浪
+- 呈現品質：五類共 13 頁全數 ✅ 通過或已修復（ai-agent-safety.md ⚠️ 已修復現況段落時序侵蝕問題），未出現未解決待辦項目
+- 品質備註：[安全政策] Tego AI 條目稱「本週第二度」揭露 Claude 漏洞，但記者查證既有頁面未見「第一度」揭露記錄，可能是前幾日漏收的報導，建議下次 ingest 或查證時留意補齊；[社群] 記者回報 patterns 新增 OneCLI／Palmier Pro 兩則新型 agent 整合模式，建議功能記者評估 `official-community-gap.md` 產品化矩陣是否需新增對應列——本輪因記者間無法互相轉知，留待下次 ingest 由功能記者評估；index.md 於 2026-07-23 當日 ingest 未寫入「近期異動」摘要（該日 log.md 紀錄完整，僅 index.md 摘要缺漏一天），本次已為 07-24 正常補上，07-23 缺口不回溯修改
+
+## 2026-07-23 Ingest | news/2026-07-23.md（71 則）
+
+- 來源日報：[[news/2026-07-23]]（71 則，10/10 來源；Google News 32、GitHub Issues 15、Hacker News 15、dev.to 14、Reddit 11、Anthropic Status 5、GitHub 3、Blogroll 3、Anthropic Blog 2、Claude API Release Notes 0）
+- 分類派工：模型 1 則、功能 13 則、商業 12 則、安全政策 2 則、社群 26 則（五類並行 foreground，人物今日無條目跳過；**本雲端 routine 環境自訂 subagent_type（wiki-reporter-*）未載入，五位記者均改以 general-purpose agent 扮演角色、內嵌完整規則文字派工，屬環境限制的變通做法，功能與品質未受影響**；模型記者事後另補派一輪，評估安全政策記者轉知的 Moonshot/Fable 5 蒸餾指控是否需補記，判斷後未寫入，理由詳下）
+- 更新頁面：
+  - **模型**：`entities/fable-5.md`（頂部 callout 覆寫為 07-20 GitHub Issue #79337「Max 方案誤判需購買 usage credits」事件，與同日 Anthropic Status 已證實的誤判事件吻合，官方已確認並建議重啟；現況/配額段落、歷史記錄同步更新，並全文 grep 確認無殘留舊日期字串）、`topics/model-comparison.md`（callout、快速選型表同步）。補派一輪評估白宮指控中國 Moonshot AI 蒸餾 Fable 5、財政部揚言制裁一事，判斷**不補記**：對 Fable 5 本身狀態/可存取性無影響（受制裁對象是 Moonshot 非 Fable 5），且更早、規模更大的 06-10 阿里巴巴蒸餾指控事件當時同樣未記入本頁，維持判準一致；來源亦僅標題可用、待核實，未達本頁既有收錄門檻
+  - **功能**：`entities/claude-code.md`（版本表新增 v2.1.218／SDK python v0.118.0／SDK typescript sdk-v0.113.0；已知問題新增 7 則——#80002 macOS Filesystem tools/call 59 留言、#61015 排程 routine MCP approval 回歸 40 留言、#62699 複製文字失效 34 留言、#39523 bypass permissions 9 個月未解 33 留言、#63903 記憶體前導文字未抑制 32 留言、#69415 API 連線中斷 32 留言、#37323 `/btw` VS Code 缺失 31 留言；#13354／#24726 互動數同步更新）、`entities/managed-agents.md`（SDK python v0.118.0 新增 Managed Agents API 支援）、`entities/claude-security.md`（MarkTechPost 報導 Claude Security 終端機外掛 Beta 版，與既有 Enterprise 版本關係待查證）、`topics/official-community-gap.md`（「多代理 PR/程式碼審查」矩陣同步 v2.1.218 `/code-review` 背景化）
+  - **商業**：`topics/anthropic-business.md`（AMD 最高 50 億美元晶片暨投資協議三獨立來源；15 億美元著作權和解案後續，《哈利波特》出版商獲賠；IPO 敘事延燒兩則；Economic Futures Research Fund 2 億美元研究議程、Economic Index connector）、`topics/enterprise-cost-management.md`（Amazon 削減 Alexa 對 Anthropic 高成本模型依賴，判斷不符 enterprise-tool-tracker 的「AI 編碼工具」範疇，改記於此）、`topics/competitor-landscape.md`（Cline vs Claude Code vs Copilot 定價比較，$0/$20/$10）
+  - **安全政策**：`topics/anthropic-government-policy.md`（白宮官員指控中國 Moonshot AI 蒸餾竊取 Fable 5 技術，財政部揚言制裁，兩獨立來源 TechCrunch／SCMP，callout 覆寫、攻防紀錄與時序同步；轉知模型記者評估是否需同步 fable-5.md，已由模型記者補派評估並判斷不需要）
+  - **社群**：`topics/community-tech-discussions.md`（Show HN Bento 單檔 HTML 簡報工具 877 分本日最高互動；arxiv 兒童擬人化 LLM 互動論文 31 分；AMD 投資案 HN 討論串的社群反應面；Simon Willison「pelicanmaxxing」；Reddit 週熱門三模型前端測試對比、AI 訓練資料心得討論）、`topics/community-tech-patterns.md`（dev.to Claude Code + Gemini 圖片編輯技能第一手實作；Reddit 週熱門開源手寫畫布，已同步標記與既有 discussions 討論的衍生關係）；今日 26 則社群節錄中 15 則因未達互動門檻（多數 Show HN 僅 1-9 分、Reddit 走 sort=new score 不可信且無跨來源佐證）或與 Claude/Anthropic 無直接關聯（OpenAI/Hugging Face 事件）不收錄，詳見社群記者回報「未達門檻不收錄清單」
+- feature-radar：無新增條目（v2.1.218 為既有 `/code-review` 功能的延續更新，非新條目，計入全覽表 🔥🔥／✅ 推薦）；最新版本行同步至 v2.1.218；本週推薦 Fable 5 條目文字更新反映今日 Max 誤判 bug 與存取政策分歧現況，排序未變；升版風險表因無新增阻擋性/需留意項目維持原 3 列不動，僅同步最新版本行；⏰ 倒數中無變化
+- index.md 狀態變更：無
+- 新增頁面：無
+- 摘要：商業面為今日主軸——AMD 最高 50 億美元投資案、15 億美元著作權和解案定案（哈利波特出版商獲賠）、IPO 敘事持續加溫三線並進；地緣政治面新增白宮指控中國 Moonshot AI 蒸餾竊取 Fable 5 一事並揚言制裁；功能面 v2.1.218 為 `/code-review` 背景化的體驗改善，另有 9 起 GitHub Issue 高互動已知問題集中出現（本日最高 71 留言）；社群面 Show HN Bento 簡報工具以 877 分成為本輪互動最高條目
+- 呈現品質：五類共 12 頁全數 ✅ 通過，未出現需修復或待辦項目
+- 品質備註：功能記者轉知兩則待主編或後續 ingest 追蹤的次要事項——(1) TestingCatalog 報導的 Claude Voice Mode 新增 Opus/Sonnet 選項僅標題可用且無對應既有頁面，暫記一句於 claude-code.md，待後續細節明朗再決定歸屬；(2) infoq.com「Anthropic 說明如何圍欄化 Claude」內容偏安全架構，僅標題可用，已簡記一句，建議下次 ingest 視新資訊決定是否轉交安全政策記者記入 ai-agent-safety.md。社群記者另建議安全政策記者評估「Quoting Thomas Ptacek」（開放權重模型滲透測試能力）一則的收錄價值，本輪因主體非 Claude Code 社群工作流已排除，未強制轉派
+
+## 2026-07-21 Ingest | news/2026-07-21.md（75 則）
+
+- 來源日報：[[news/2026-07-21]]（75 則，10/10 來源；Google News 35、Hacker News 18、Reddit 16、GitHub Issues 15、dev.to 14、Anthropic Status 7、GitHub 3、Blogroll 2、Anthropic Blog 1、Claude API Release Notes 0）
+- 分類派工：功能、商業、安全政策、社群（四類並行 foreground；今日「模型」「人物」無條目，跳過；**本環境自訂 subagent_type（wiki-reporter-*）未被此雲端 session 註冊，四位記者均改以 general-purpose agent 扮演角色、內嵌完整規則文字派工**，屬環境限制的變通做法，功能與品質未受影響，但記者間彼此無法即時轉知，跨記者轉知事項一律回頭由主編處理）
+- 更新頁面：
+  - **功能**：`entities/claude-code.md`（頂部 callout 覆寫為 v2.1.216 最新版本動態；🌐 服務穩定性新增/更新今日 Status 事件；已知問題新增 2 條 #29579、#11002，既有 6 條留言/反應數同步；🛡️ 安全與隱私新增 Tech Times Bash/Unicode 繞過修補待查證條目）、`topics/official-community-gap.md`（對照矩陣補上 `sandbox.filesystem.disabled`）
+  - **商業**：`topics/anthropic-business.md`（$1.5B 著作權和解、AI for Science 罕見疾病徵件、Infinity 融資、Anthropic 生技百日布局）、`topics/enterprise-tool-tracker.md`（阿里巴巴疑似封鎖 Claude Code，❓未確認）、`topics/competitor-landscape.md`（Qwen 3.8／Kimi K3 對 Anthropic 策略挑戰、成本效能對比）、`entities/pricing.md`（Fable 5 Max/Team Standard 計量存取、$200 Max 用戶存取停用回報）
+  - **安全政策**：`topics/ai-agent-safety.md`（新增 3 則待查證：Bash/Unicode 繞過修補、Horizon3.ai 加入 Project Glasswing、TBIJ Claude 不遵從 CEO 指令模擬測試）
+  - **社群**：`topics/community-tech-patterns.md`（dev.to MCP token 成本實測）、`topics/community-tech-discussions.md`（AI 電影 pipeline、Fable CoT 反向工程、Claudexor、Simon Willison 兩篇部落格、Synapse MCP 工具等 6 則，並清理 6 筆逾 21 天 ☄️閃現舊條目）
+  - **主編**：`feature-radar.md`（新增 v2.1.216 條目；本週推薦更新 Fable 5 文字避免「昨日」相對日期過期；升版風險同步最新版本行，風險表與建議未變）；`index.md`（近期異動新增今日摘要，狀態變更／新增頁面均無）
+- feature-radar：新增 1 條（Claude Code v2.1.216 `sandbox.filesystem.disabled`）；本週推薦文字微調（非輪替，Fable 5 熱度/推薦地位未變）；升版風險僅同步最新版本行
+- index.md 狀態變更：無
+- 新增頁面：無
+- 摘要：Anthropic 迎來 $1.5B 著作權和解重大進展，同時面臨阿里巴巴 Qwen 3.8／Kimi K3 開源模型的策略性挑戰（The New Stack 實測顯示效果相當但成本更低）；Claude Code v2.1.216 發布新沙箱設定；安全政策面新增 3 則待查證事件（Bash/Unicode 修補、Project Glasswing 新夥伴、模擬測試模型服從性報導）；GitHub Issues 高互動已知問題持續累積（Console scrolling 議題以 353 留言、821 讚居冠）
+- 呈現品質：四類共 9 頁全數 ✅ 通過（功能 2 頁、商業 4 頁、安全政策 1 頁、社群 2 頁，其中 community-tech-discussions.md ⚠️ 已修復——清理 6 筆逾期舊條目）
+- 品質備註：[安全政策] TBIJ 條目涉及 Dario Amodei 具名情境，記者回報需轉知人物記者評估 `entities/dario-amodei.md`；因本環境記者間無法互相轉知，改由主編親自判斷——該事件為「Claude 在模擬測試中不遵從指令」的模型行為報導，並非 Dario Amodei 本人的具體聲明或行動，未達人物頁「具體聲明/事件」建頁與更新門檻，故未修改 `entities/dario-amodei.md`，僅記錄於此供後續查證追蹤；[功能] 記者回報 HN 留言提及新功能 EndConversation（Claude Code 可主動結束疑似濫用/安全疑慮對話），因僅為單則留言轉述、無官方公告或版本號佐證，未達 feature-radar 准入門檻，未收錄，留待後續 ingest 有官方來源佐證後再評估
+
+## 2026-07-20 Ingest | news/2026-07-20.md（47 則）
+
+- 來源日報：[[news/2026-07-20]]（47 則，10/10 來源；Google News 26、dev.to 15、Reddit 15、Hacker News 11、Anthropic Status 2、Blogroll 1、GitHub Issues 0、GitHub 0、Claude API Release Notes 0、Anthropic Blog 0）
+- 分類派工：模型、功能、商業、安全政策、社群、人物（六類並行 foreground；**本環境自訂 subagent_type（wiki-reporter-*）未被此雲端 session 註冊，六位記者均改以 general-purpose agent 扮演角色、內嵌完整規則文字派工**，屬環境限制的變通做法，功能與品質未受影響，但記者間彼此無法即時轉知，跨記者轉知事項一律回頭由主編處理）
+- 更新頁面：
+  - **模型**：`entities/mythos.md`（Mythos FAQ 標題層級報導記為 ❓ 待查證，未覆寫既有 07-16 callout）、`entities/opus-4-8.md`（交易員押注新 Opus 模型傳聞併入既有觀察段落，標市場推測非官方公告）
+  - **功能**：`entities/claude-code.md`（🌐 服務穩定性新增 2 條：Opus 4.5 錯誤率上升🔴監控中已實施修復；Fable 5 Max 方案用戶誤判需點數存取🔴官方已確認誤判並提供重啟建議）
+  - **商業**：`topics/anthropic-business.md`（IPO 前瞻表新增 VC 看好上市、SpaceX 式信貸額度傳聞 2 列；戰略合作新增 UST；時序新增美國公衛機構測試、Meta $10bn 運算合作洽談、Memphis 非營利捐款等）；`entities/pricing.md`（Fable 5 免費期昨日到期後 Pro 存取結束方向趨於一致、Max 方案誤判扣點官方事件、南韓 $16.7M 疑似故障帳單）；`topics/competitor-landscape.md`（Alibaba Qwen3.8「僅次於 Fable 5」跨媒體報導、Kimi K3／Deepseek V4／Thinking Machines Inkling 等開源模型動態）
+  - **安全政策**：`topics/ai-agent-safety.md`（Nozomi Networks 加入 Project Glasswing、Claude AI 助理疑似可透過瀏覽器擴充功能遭操縱，均 ❓ 待查證）
+  - **人物**：`entities/boris-cherny.md`（Bloomberg「Claude Code 創始人」專訪報導，經記者額外查證後標「待查證，極可能為本人」）
+  - **社群**：今日 18 則條目（10 則 Show HN 分數 1–15 分、8 則 Reddit sort=new score=0 無週熱門標記）均未達收錄門檻，四個負責頁面均無異動
+  - **主編**：`feature-radar.md`（本日無新功能；⭐本週推薦 Fable 5 條目文字同步到期狀態，因內容已實質更新未觸發防霸榜輪替；⏰倒數中移除已到期的 7/19 Fable 5 列，僅保留 8/31 Sonnet 5 促銷列）；`index.md`（近期異動新增今日摘要，狀態變更／新增頁面均無）；`topics/model-comparison.md`（依商業記者轉知查核，快速選型表與情境推薦同步 Fable 5 已到期現況，移除「三度順延至 7/19」等過期措辭）；`entities/mythos.md`（依安全政策記者轉知，於「政策與存取管控」時序表新增 Nozomi Networks／Glasswing 列）
+- feature-radar：新增 0 條；本週推薦 Fable 5 條目文字更新（非輪替）；⏰倒數中移除已到期的 7/19 列
+- index.md 狀態變更：無
+- 新增頁面：無
+- 摘要：Fable 5 免費期限昨日（07-19）到期，今日多方報導指向 Pro 訂閱免費存取已結束、Max/Team 方案動向未明；同日 Anthropic Status 錄得兩起服務事件（Opus 4.5 錯誤率上升、Fable 5 Max 方案誤判扣點，均已提供處置說明）；商業面 Meta 傳評估百億美元運算合作、Anthropic 傳仿 SpaceX 模式於 IPO 前尋求信貸額度；阿里巴巴 Qwen3.8「僅次於 Fable 5」引發跨媒體報導
+- 呈現品質：六類共 8 頁全數 ✅ 通過（模型 2 頁、功能 1 頁、商業 3 頁、安全政策 1 頁、人物 1 頁；社群無異動不適用）
+- 品質備註：[商業] 記者回報 model-comparison.md 舊日期字串查核轉知模型記者，因模型記者已先行完成任務無法即時接力，改由主編親自查核並更新；[安全政策] 記者回報 Nozomi Networks／Glasswing 應轉知模型記者評估 mythos.md 補列，同理改由主編親自處理——均為本環境 subagent_type 限制下記者間無法互相轉知的已知副作用，主編收斂處理，未遺漏
+
 ## 2026-07-15 Ingest | news/2026-07-15.md（61 則）
 
 - 來源日報：[[news/2026-07-15]]（61 則，10/10 來源；Google News 36、GitHub Issues 15、dev.to 15、Hacker News 12、Reddit 11、Anthropic Blog 2、Blogroll 2、GitHub 1、Anthropic Status 1、Claude API Release Notes 0）
@@ -2934,6 +3004,41 @@ Append-only 紀錄。每次 ingest、lint，以及**揭露缺陷或促成改動�
 - reader-notes 消費：07-17 GLM/Qwen 開源競品差距 → ✅ 已納入（三題皆已裁定並落地，見上）；07-12 GPT-5.6 vs Claude → 連續三輪（07-16、07-19）查無官方數字，維持 ⏳ 但改為被動觸發，不再每週主動重查；📌 07-07 雜記未逾 30 天，保留
 - 聚焦校準：非本月首次週度回顧（本月已於 07-16 執行），跳過
 - 品質備註：本次執行期間雲端 pipeline 同步完成 07-18 每日 ingest 與週度 lint（詳見上方兩則），merge 時發現本次延伸與雲端更新觸及部分同一頁面（claude-code.md/anthropic-government-policy.md/competitor-landscape.md），逐檔核對後確認段落互不重疊、內容無矛盾，正常合併
+
+## 2026-07-19 Ingest | news/2026-07-19.md（49 則）
+
+- 來源日報：[[news/2026-07-19]]（49 則，10/10 來源；Hacker News 12、GitHub Issues 15、Google News 9、dev.to 15、GitHub 1、Blogroll 2、Reddit 12、Anthropic Status 0、Anthropic Blog 0、Claude API Release Notes 0）
+- 分類派工：模型 2 則、功能 10 則、商業 8 則、社群 29 則（四類並行 foreground，model: sonnet；安全政策、人物本日無條目，跳過。註：本次執行環境的自訂 subagent_type 註冊表未載入，改以 general-purpose agent 內嵌對應記者角色規則＋開始前必讀清單執行，功能等同四位專職記者）
+- 更新頁面：
+  - **模型**：`entities/opus-4-7.md`（新增已知問題：Opus 4.7 於較長 payload 會把舊版 XML tool-use 格式混入 JSON tool call，#49747，🔴 未修復，33 留言/34 讚同，達 GitHub Issue 中門檻；callout 覆寫為此事件。Opus 5 傳聞〔dev.to〕與 07-13 已收錄文章逐字相符，判定無新事實，未重複寫入）
+  - **功能**：`entities/claude-code.md`（v2.1.215 發布記錄：Claude 不再自動執行 `/verify` 與 `/code-review`，須手動呼叫；已知問題新增 5 起條目——5 小時額度不到 90 分鐘用罄 #6457 120 留言本日最高互動、Desktop 登出後 session 消失 #26452 49 留言、Environment Contributions 警告持續重現 #3301 43 留言、GitHub connector 連結成功卻無法讀取內容（近期退化）#71542 37 留言、對話訊息時間戳記請求 #44763 36 留言，另 Slack 多 workspace 請求 #44243 33 留言與既有 2 起條目數據同步更新；Multi-agent collaboration #28300、VS Code diff review #33932 因與既有記錄數字幾乎相同（各僅差 0–1 則留言）判定為噪音級浮動未更新，避免無意義 churn；Bun/Rust runtime 內部改動記入現況）；`entities/claude-skills.md`（新增 `/verify`/`/code-review` 行為變更列，因牴觸原「Claude 依語意自動觸發、無需手動呼叫」通則描述，同步修正現況首段）
+  - **商業**：`entities/pricing.md`（Fable 5 訂閱異動兩則媒體報導方向不一致：Tech Times 稱「Max 方案轉永久、Pro 改 Credits-only」，Dawn 稱「Fable 5 以 50% 用量上限併入 Max/Team Premium」，與既有 07-18 矛盾訊號並列記錄，不擇一呈現）；`topics/competitor-landscape.md`（新增 07-19 時序：Musk 表態序列延續、Musk 開源 Grok Build 與每月 12.5 億美元財務數字〔付款對象未確認〕、南韓市場地位〔KED Global〕、新競爭者 Thinking Machines 品牌定位〔Fast Company〕，四則均標記為標題層級資訊）；`topics/anthropic-business.md`（補上 07-18 已記錄「廣告反彈評論」當時缺失的具體廣告內容細節〔TechCrunch／HN 39 分〕；Meta/Anthropic「震撼彈」報導因原文過於單薄，記錄為待補充而非正式事件）
+  - **社群**：`topics/community-tech-patterns.md`（新增「Spare Mac 隔離環境」工作流模式，HN 234 分達高門檻）；`topics/community-tech-discussions.md`（Reddit「額度焦慮系列」🌊延燒列補充兩則延伸節點：Dear Anthropic This Has to STOP、Anthropic I think you really need to react）
+  - 今日 29 則社群節錄中 23 則因未達互動門檻（多數 Show HN 僅 1-5 分、多則 Reddit 為純圖片貼文無文字內容）或查表確認為既有條目重複浮現（3 則 dev.to）而不收錄，詳見社群記者回報
+- feature-radar：新增 1 條（Claude Code v2.1.215 `/verify`/`/code-review` 手動觸發變更，🔥🔥／⚡ 有條件推薦）；最新版本行同步至 v2.1.215；升版風險表新增「`/verify`/`/code-review` 不再自動觸發」🔴（Breaking change 無過渡期），置換原「Fable 5 Defense in Depth 誤判」列（該項非版本升級可解決之風險，移除重複列示，改於 [[entities/fable-5]] 參照）；⏰ 倒數中：07-19 Fable 5 到期列更新為反映今日兩則方向不一致的媒體報導，指向 [[entities/pricing]]；本週推薦：今日無新條目達 🔥🔥🔥🔥+ 門檻，維持原內容不動
+- index.md 狀態變更：無
+- 新增頁面：無
+- 摘要：官方面 v2.1.215 `/verify`/`/code-review` 改為手動觸發（Breaking change，無過渡期）為今日主軸；社群面 GitHub Issues 高互動未解決需求集中出現（5 小時額度異常等 8 起，含今日互動量最高的 120 留言 issue）；商業面 Fable 5 訂閱政策再現方向不一致的媒體報導、Musk/Anthropic 競爭與金流關係持續延燒
+- 呈現品質：四類共 7 頁全數 ✅ 通過，未出現需修復或待辦項目
+- 品質備註：無
+
+## 2026-07-22 Ingest | news/2026-07-22.md（71 則）
+
+- 來源日報：[[news/2026-07-22]]（71 則，10/10 來源；Google News 45、GitHub Issues 15、Hacker News 17、dev.to 14、Anthropic Status 6、GitHub 3、Blogroll 2、Anthropic Blog 1、Reddit 6、Claude API Release Notes 0）
+- 分類派工：模型 1 則、功能 7 則、商業 15 則、安全政策 6 則、社群 17 則、人物 1 則（六類並行 foreground，model 繼承主 session。註：本次執行環境的自訂 subagent_type 註冊表未載入，改以 general-purpose agent 內嵌對應記者角色規則＋開始前必讀清單執行，功能等同六位專職記者）
+- 更新頁面：
+  - **模型**：`entities/opus-4-8.md`（新增歷史記錄：TipRanks 報導 Claude 曾自稱是阿里巴巴 Qwen AI 引發蒸餾雙標批評，比對後判定與既有 05-29～05-30 Qwen distillation 爭議為同主題疑似重炒，標 ❓ 待核實，未新建頁、未動 model-comparison.md）；補件任務另更新 `entities/mythos.md`（CNBC 報導聯準會曾就 Mythos 發出警示但延遲數月曝光，待核實，串連既有金融監管敘事）
+  - **功能**：`entities/claude-code.md`（**v2.1.217** 發布：Prompt input 表情符號 shortcode 自動完成，feature-radar 新條目；SDK python v0.117.1／typescript sdk-v0.112.5 兩則 bug-fix/chore 版本同步記錄；已知問題新增 3 條——Remote Control 自動重連失效 #34255 57 留言、--screen-reader 無障礙模式 #11002 63 留言、Opus 4.7 思考摘要遺失 #49268 49 留言；9to5Mac/MacRumors 報導 Claude Code Mac app 新增即時 iOS App 測試功能因無官方版本號佐證，僅記為待核實，未列入 feature-radar）
+  - **商業**：`topics/anthropic-business.md`（延續 15 億美元著作權和解案敘事，補上 91% 賠付申請率、律師費削減至 6.8%、Bloomsbury 分潤；新增專利侵權訴訟〔Reuters＋Bloomberg Law 兩獨立來源〕與田納西大學訴訟兩起獨立法律事件，皆標記查證狀態）；`topics/competitor-landscape.md`（中國 AI agent 自主研究任務超越 Claude Code〔SCMP，source_count=2〕、Claude 自稱 Qwen AI 蒸餾爭議之商業/競品面記錄，皆標「僅標題可用，待補充」）
+  - **安全政策**：`topics/anthropic-government-policy.md`（Anthropic 再捐 2000 萬美元予 Public First Action，政治教育/遊說捐款累計達 4000 萬美元，官方公告 + WSJ/The Hill/Axios 三則跟進併入攻防紀錄；CNBC Fed/Mythos 警示事件記入並轉知模型記者）；`topics/ai-agent-safety.md`（俄語駭客 jailbreak Claude Opus 打造滲透測試工具事件，cyberpress.org + Infosecurity Magazine 兩獨立來源，待查證細節）
+  - **社群**：`topics/community-tech-discussions.md`（太空經濟模擬器 Rust/Bevy〔HN 101〕、Orate 本地 TTS〔HN 14〕、Browser Tools SDK〔HN 11，source_count=2〕、Nativ 本地模型〔Simon Willison〕四則新增）；`topics/community-tech-patterns.md`（CodeAlmanac codebase wiki〔HN 54〕、tpu-management Claude Code skill〔dev.to〕兩則新增；MCP servers token 成本一文與既有 07-21 條目重複，未重複寫入）；分數低於門檻的 Chalk／Tokenmaxx／PMG／herdr／ESP32／desktop 替代方案／Hoop／Claude Bucks／claude-logkeeper／Nura Dev 共 10 則邊緣小工具（HN 1–8 分）未收錄
+  - **人物**：`entities/cat-wu.md`（記錄 Cat Wu 與 Thariq Shihipar 出席 AI Engineer World's Fair 爐邊對談〔Simon Willison 部落格〕，因摘要遭截斷僅記錄出席事實，不推測對談具體論述內容）
+- feature-radar：新增 1 條（Claude Code v2.1.217 表情符號自動完成，🔥／⏳ 觀察中）；最新版本行同步至 v2.1.217；本週推薦與升版風險表因無達門檻變化維持原內容，僅同步版本行；⏰ 倒數中無變化
+- index.md 狀態變更：無
+- 新增頁面：無
+- 摘要：商業/法律面為今日主軸——著作權和解案細節（91% 賠付率、律師費削減）、新增專利訴訟與大學訴訟兩起獨立法律事件、政治獻金累計 4000 萬美元；安全面新增 Fed/Mythos 警示（待核實）與 jailbreak 滲透測試工具事件；功能面 v2.1.217 為小型體驗更新，三則高互動已知問題持續追蹤；社群面 Show HN 工具數量多但多數未達收錄門檻，僅太空模擬器與 CodeAlmanac 兩則達中高門檻
+- 呈現品質：六類共 9 頁全數 ✅ 通過，未出現需修復或待辦項目
+- 品質備註：安全政策記者正確識別 CNBC Fed/Mythos 條目為 `entities/mythos.md`（模型記者主責）新事件並轉知，主編已補派模型記者完成該頁更新，跨記者轉知流程運作正常
 
 ## 2026-07-22 Query：多智能體 orchestration 學術對照持久化
 

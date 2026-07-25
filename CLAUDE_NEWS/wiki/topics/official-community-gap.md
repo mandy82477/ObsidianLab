@@ -3,11 +3,11 @@
 **狀態：** monitoring
 **領域：** 🛠️ 工具/功能
 **開始日期：** 2026-05-17
-**最後更新：** 2026-07-18
-**最後新聞更新：** 2026-07-17
+**最後更新：** 2026-07-23
+**最後新聞更新：** 2026-07-23
 
-> **最新功能缺口**（2026-07-17）
-> v2.1.212 將 `/fork` 改為建立獨立**背景 session**（`claude agents` 自成一列），原本同 session 子 agent 行為更名為 `/subtask`——「多平行 agent 即時可觀測性／協調地圖」缺口的**列表管理面**再進一步（延續 v2.1.211 `--forward-subagent-text` 旗標的可觀測性補強），但仍非即時依賴關係／狀態流的 live map，矩陣狀態維持 ❌ 無官方對應。
+> **最新功能缺口**（2026-07-22）
+> v2.1.218 將 `/code-review` 改為以背景 subagent 執行，審查不再佔用對話內容，「多代理 PR/程式碼審查」官方對應再進一步，矩陣狀態維持 🧪 部分產品化；07-17 v2.1.212 將 `/fork` 改為建立獨立背景 session、原同 session 子 agent 更名 `/subtask`，「多平行 agent 即時可觀測性／協調地圖」缺口的列表管理面同步再進一步，但仍非即時依賴關係／狀態流的 live map，矩陣狀態維持 ❌ 無官方對應。
 
 ## 摘要
 
@@ -29,7 +29,7 @@
 | Agent 需要輸入時的通知 | 2026-06-28 Stop Hook 音效通知；2026-07-02 氛圍狀態燈；2026-07-03 claude-needs-input | claude-needs-input（終端機標籤變色）、氛圍狀態燈（實體 LED） | `waitingFor` 可見性（v2.1.162，2026-06-04） | 🧪 部分產品化 | 官方僅提供被動可見性（需主動查看畫面），社群工具補上主動提醒（變色、聲音、實體燈號），官方尚未涉足 |
 | 破壞性指令防護 | 長期社群關注（沙盒隔離、git 安全腳本） | SmolVM、Sandfence、CapaKit | 破壞性 Git 指令自動封鎖（v2.1.183，2026-06-19）；Claude Code Sandboxing（2026-05-10）、`hard_deny`（2026-05-09） | ✅ 已產品化 | 官方對 git 層級防護已完整覆蓋且評價高（🔥🔥🔥 ✅ 推薦）；社群沙盒工具仍在更廣泛的資源限制場景（非僅 git）補位 |
 | 跨 session 記憶持久化 | 2026-05-05 起記憶工具浪潮；2026-06-28 OKF 格式 | ltm（Core Memory Packet）、VIR、CoreMem、OKF | Dreaming 記憶整合（2026-05-07，Research Preview）＋ anthropic-sdk-python v0.117.0（2026-07-16）新增「dreaming」API 支援 | 🧪 部分產品化 | Dreaming 兩個月後仍為 Research Preview、試用價值「⏳ 觀望」；社群工具（OKF）跨工具跨模型，Dreaming（僅限 Anthropic 生態）無法取代；v0.117.0 的 SDK 級「dreaming」支援用途未明（[[entities/managed-agents]] 標記待更多資訊確認是既有機制正式曝光還是新能力），狀態暫不變動 |
-| 多代理 PR/程式碼審查 | 2026-05-08 4-agent Code Review；2026-05-11 adamsreview | adamsreview、Read-Only Reviewer Agent（2026-06-26）、Mira | `/code-review`（原 `/simplify`，v2.1.146）+ `/code-review --fix`（v2.1.152） | 🧪 部分產品化 | 官方 `/code-review` 已評 ✅ 推薦，但社群「adversarial 多模型審查抓到更多真實 bug」的說法尚無雙方公開對照數據佐證 |
+| 多代理 PR/程式碼審查 | 2026-05-08 4-agent Code Review；2026-05-11 adamsreview | adamsreview、Read-Only Reviewer Agent（2026-06-26）、Mira | `/code-review`（原 `/simplify`，v2.1.146）+ `/code-review --fix`（v2.1.152）+ 背景 subagent 化（v2.1.218，2026-07-22） | 🧪 部分產品化 | 官方 `/code-review` 已評 ✅ 推薦，v2.1.218 進一步改為背景 subagent 執行、不再佔用對話內容，並維持 stacked slash commands 作為審查對象，易用性再提升；但社群「adversarial 多模型審查抓到更多真實 bug」的說法尚無雙方公開對照數據佐證，狀態未變 |
 | 成本感知模型路由 | 2026-06-27，Opus 4.7 tokenizer 改版成本大漲後爆發 | Workweave Router（HN 181，實測降 40%+）、Dragoman、Rayline | 無 | ❌ 無官方對應 | feature-radar 全覽表無任何路由/成本最佳化功能；社群工具是唯一解法 |
 | 額度/用量監控 | 2026-05 起持續累積，2026-07-03 因 7/7 計費轉換臨近急遽爆發 | LimitBar、CCLimitPing、claude-needs-input | 企業版 Spend Controls（2026-07-04 宣布，控管粒度未公開，見 [[topics/enterprise-cost-management]]）；個人用戶仍無官方儀表板/告警 UI | 🧪 部分產品化（僅企業版） | 個人重度使用者缺口依舊，迫切性隨計費轉換 deadline 逼近而升高，見 [[feature-radar]] ⏰ 倒數中 |
 | Slack 內 AI 隊友 | 弱社群前驅（Ano 等輕量 Slack + Claude 整合，2026-06-04） | Ano | [[entities/claude-tag\|Claude Tag]]（2026-06-24，Slack-native，Anthropic 內部 65% 程式碼由其生成） | ✅ 已產品化 | 此列較弱屬「社群發明」框架——官方主導色彩強，社群前驅稀薄，列入僅供對照參考 |
@@ -44,7 +44,7 @@
 |---------|---------|-------------|---------|
 | 多 agent 協調管理 | ⭐⭐⭐⭐ | Managed Agents、Agent View、`/goal`、`/loop`/`/batch`、`claude agents` 旗標 | ✅ 高度對應 |
 | 輸出品質驗證 | ⭐⭐⭐⭐ | Outcomes 規格驗證、`/goal` 自動判定完成條件 | ⚡ 部分對應 |
-| 安全隔離 | ⭐⭐⭐ | Claude Code Sandboxing、`hard_deny`、Claude Security | ✅ 高度對應 |
+| 安全隔離 | ⭐⭐⭐ | Claude Code Sandboxing、`hard_deny`、Claude Security、`sandbox.filesystem.disabled`（v2.1.216，2026-07-20，可在維持網路出口控管同時跳過檔案系統隔離） | ✅ 高度對應 |
 | 跨 session 記憶歸零 | ⭐⭐⭐⭐⭐ | Dreaming（Research Preview，仍實驗性） | ⏳ 正在做但遠未解決 |
 | CLAUDE.md 規則失效 | ⭐⭐⭐ | 無 | ❌ 完全未對應 |
 | Token 成本不透明 | ⭐⭐⭐⭐ | 無（6/15 信用池改制反而使問題惡化） | ❌ 完全未對應 |
@@ -128,6 +128,9 @@ v2.1.196（2026-06-29）新增 org default model 功能，企業管理員可在 
 - [[topics/community-tech-discussions]] — 社群技術辯論
 
 ## 時序
+
+### 2026-07-22
+- **v2.1.218：`/code-review` 改為背景 subagent 執行**：「多代理 PR/程式碼審查」的官方對應再進一步——審查工作不再佔用對話內容，且維持 stacked slash commands 作為審查對象；矩陣狀態維持 🧪 部分產品化，社群「adversarial 多模型審查」說法的對照數據仍缺
 
 ### 2026-07-17
 - **v2.1.212：`/fork` 改為背景 session 化，`/subtask` 承接同 session 子 agent 語意**：「Subagent 派工/編排」的指令介面更明確拆分為「多開背景 session」與「同 session 委派」；「多平行 agent 即時可觀測性」缺口的列表管理面再進一步，但仍非即時依賴關係 live map，矩陣狀態維持 ❌ 無官方對應

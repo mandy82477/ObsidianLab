@@ -4,17 +4,17 @@
 **狀態：** active（出口管制解除，2026-07-01 起全球恢復存取）
 **領域：** 🤖 模型
 **首次出現：** 2026-04（限定夥伴 Preview）
-**最後更新：** 2026-07-18
-**最後新聞更新：** 2026-07-16
+**最後更新：** 2026-07-22
+**最後新聞更新：** 2026-07-22
 
-> **最新進展**（2026-07-16）
-> 摩根大通執行長 Jamie Dimon 公開表示，Anthropic Mythos 模型所涉及的 AI 風險是「真實的問題」（real issue）（Reuters via Google News，僅標題可用，內文細節待查證）。這是繼 07-13 加拿大金融監管機關引用 Mythos 作為銀行業網路風險警告佐證後，金融業界對 Mythos 級模型風險認知持續升溫的最新一例——從監管機構正式文件延伸到具名金融業高管公開表態；政策/監管面完整分析見 [[topics/anthropic-government-policy]]，本頁僅記錄模型能力認知面動態。
+> **最新進展（待核實）**（2026-07-21）
+> CNBC 報導（經 Google News RSS 轉載，僅標題可用）指美國聯邦準備系統（Fed）曾針對 Anthropic Mythos AI 模型發出警示，但相關訊息延遲數月才浮上檯面；具體警示內容、發布時間點與影響範圍均待查證。若屬實，這是繼 07-13 加拿大金融監管機關引用案例、07-16 摩根大通執行長 Dimon 公開表態後，金融監管/業界對 Mythos 風險示警擴散至美國央行層級的最新一例；政策/監管面完整分析見 [[topics/anthropic-government-policy]]，本頁僅記錄模型能力認知面動態。
 
 ---
 
 ## 現況
 
-**2026-07-16 最新**：摩根大通執行長 Jamie Dimon 公開表示 Mythos AI 風險是「真實問題」（Reuters／Google News，僅標題可用，無法取得完整內文）；延續 07-13 加拿大金融監管機關引用案例，顯示金融業界對 Mythos 風險認知持續累積（詳見下方「時序」）。
+**2026-07-21 最新（待核實）**：CNBC 報導（經 Google News RSS 轉載，僅標題可用，無法取得完整內文）指美國聯邦準備系統（Fed）曾針對 Mythos 發出警示，但相關訊息延遲數月才浮上檯面；具體警示內容、時間點與影響範圍均待查證，暫不排除與 07-13／07-16 已知事件系出同源、由不同媒體以不同角度報導的可能性（詳見下方「時序」）。
 
 **當前狀態（2026-07-01 起）**：出口管制已全面解除，Mythos 5 可用範圍從機構白名單擴大為全球一般用戶；解禁交換條件為 Anthropic 承諾主動偵測安全風險、配合標準協議、通報惡意活動。管制事件歷時 18 天（2026-06-13 至 2026-07-01），完整經過見下方「時序」。
 
@@ -74,6 +74,7 @@ Anthropic 的官方 AI 資安能力研究計畫，Mythos Preview 為核心工具
 | ICE 加入 Glasswing | 2026-06-04 | 美國聯邦執法機構加入 |
 | Mythos 5 部分解禁（100+ 機構）| 2026-06-27 | 商務部長 Lutnick 致函確認；條件：受信任合作夥伴 + 安全措施 |
 | NSA 用 Mythos 發動攻擊 | 2026-06-05 | 防禦框架「兩用性」首次公開確認（FT 獨家）|
+| Nozomi Networks 加入 Glasswing | 2026-07-20 | 工業資安公司加入，協助強化 OT／IoT／cyber-physical systems 安全防護（Industrial Cyber，僅標題可用，❓ 待查證）|
 
 **授權費用**：企業客戶描述為「Budget Buster」，高安全能力伴隨高授權成本（The Information, 2026-06-01）。
 
@@ -90,6 +91,16 @@ Anthropic 的官方 AI 資安能力研究計畫，Mythos Preview 為核心工具
 ## 時序
 
 ### 解禁後（2026-06-27 起）
+
+#### 2026-07-21
+**CNBC：Fed 曾就 Mythos AI 模型發出警示，但延遲數月才浮現（僅標題可用，待核實）**：
+- Google News 轉載 CNBC 標題「The Fed rang the alarm about Anthropic's Mythos AI model — but had to go months without it」（[Google News/CNBC](https://news.google.com/rss/articles/CBMikgFBVV95cUxOejZuVHE3NHBKYnY4N0VFS0U3M3JXd3pQeEJBemUyQ21BRTF6U3Vvc2JWVXdQQkdlUDVPYnN0OUZJRnpUNVh4NkhTUTRNT3NyTlhwaTJ1YmpBcm1PSUF5MUZhNjU0SnlLZ3VwdWR4X1MzalF1UDRjcWszR0daUmVtV01ibDQ1MWxBaVFfTWhJWmVpZ9IBlwFBVV95cUxPSmNOa05qbkpGTjB1YkFBZE5rNEZaMFcteW81SlRldGFvckpHRE0tdVI3RHlEa1FSWDVFSnRNbnNLSTBjQlRJSWpJZTZOSEhwU09lb1paM051X2k3ZzcyWXNPYTRrai1tRHdFSndVbS15MUlVWXNFQWtFZGNwM0ZIUVcxTmdPNUVWY2FrS0RWajJucGpDSk9v?oc=5)）；RSS 僅提供標題與轉址連結，無正文摘要，無法取得具體警示內容、發布時間點、延遲原因或影響範圍，暫列為待核實事件
+- 若屬實，顯示金融監管機構對 Mythos 風險的關注已從加拿大金融監管機關（07-13）、摩根大通執行長 Dimon 公開表態（07-16），進一步擴散至美國聯邦準備系統層級；惟因僅有標題可用，不排除與已知的 07-13／07-16 事件系出同源、經不同媒體以不同角度報導的可能性，具體警示內容與時間軸待後續報導補充確認（待核實）
+
+#### 2026-07-20
+**csoonline.com：Mythos FAQ 專文（能力／存取／競爭者／影響），僅標題可用（❓ 待查證）**：
+- Google News 轉載 csoonline.com 標題「Claude Mythos FAQ: Capabilities, access, competitors, implications」（[Google News/csoonline.com](https://news.google.com/rss/articles/CBMirgFBVV95cUxOaE10YjdGU2JoM2xVRC02Q3VRQkVOX3ZBVmVMY1hXbTUxNDgwTUZ5OVBMUUdLdWNPcEtfYUZVMS0xaTRYMWFWckU2eUNuZ251VHV2aF9wcU5GNUtReHE3QUlYODdPU2ZTN3pfaDhHWG84Ti1GZV9IMC05QWNrUVNqZHg5OUY2TEExWmZuQURTMi1Tb1duVUpyTW5uVVZfa0RFRnRjQVBPRFpmekxHQlE?oc=5)）；RSS 僅提供標題與轉址連結，無正文內容可用，無法取得具體 FAQ 問答內容
+- 顯示主流資安科技媒體持續以整理性 FAQ 形式報導 Mythos 現況（能力、存取方式、競爭者、影響），惟本則缺乏可驗證的新事實，暫僅記錄標題存在，待內容曝光或後續報導再補充分析
 
 #### 2026-07-16
 **摩根大通執行長 Dimon：Mythos AI 風險是「真實問題」（Reuters／Google News，僅標題可用）**：

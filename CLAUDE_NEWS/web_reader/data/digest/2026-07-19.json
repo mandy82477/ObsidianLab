@@ -1,0 +1,616 @@
+{
+  "date": "2026-07-19",
+  "generatedAt": "2026-07-19 13:04 UTC",
+  "articleCount": 49,
+  "sourceCount": "10/10 | **文章數：** 49 | **更新時間：** 2026-07-19 13:04 UTC",
+  "bulletin": "",
+  "topStories": [
+    {
+      "title": "Setting up your spare Mac for Claude Code to control, a step-by-step guide",
+      "url": "https://ykdojo.github.io/claude-controls-mac/",
+      "source": "Hacker News",
+      "time": "07/18 16:12",
+      "sentiment": "",
+      "body": "作者撰寫完整教學，示範如何把備用 Mac 設為 Claude Code 可透過 computer use 全權控制的常駐環境，可透過手機或 SSH 下指令；作者指出在主力機器開啟 `--dangerously-skip-permissions` 有風險，獨立環境可用來隔離研究與開發任務的風險。",
+      "focusTags": []
+    },
+    {
+      "title": "Claude Code uses Bun written in Rust now",
+      "url": "https://simonwillison.net/2026/Jul/19/claude-code-in-bun-in-rust/",
+      "source": "Hacker News",
+      "time": "07/19 10:03",
+      "sentiment": "",
+      "body": "Simon Willison 透過字串比對驗證 Jarred Sumner 的說法：Claude Code 自 v2.1.181（6/17 發布）起，底層改用 Rust 重寫版的 Bun runtime，Linux 平台啟動速度提升約 10%，但多數使用者對此毫無察覺。",
+      "focusTags": [
+        "[持續追蹤]"
+      ]
+    },
+    {
+      "title": "GitHub Issues 高互動未解決需求集中出現",
+      "url": "https://github.com/anthropics/claude-code/issues/6457",
+      "source": "GitHub Issues / claude-code",
+      "time": "07/19 07:58",
+      "sentiment": "",
+      "body": "Claude Code 倉庫今日同時出現多筆高互動未解決 issue：5 小時額度不到 90 分鐘用罄（120 留言）、Session 登出後消失（49 留言）、Environment Contributions 警告持續重現（43 留言）、GitHub connector 連結成功卻無法讀取內容（37 留言）、對話訊息時間戳記請求（36 留言）、跨機器 multi-agent 協作協定請求（35 留言）、Slack 多 workspace 支援請求（33 留言）、Opus 4.7 XML 格式混入 JSON tool call（33 留言）、VS Code diff review 介面請求（32 留言，218 個讚同反應），跨主題呈現社群對既有痛點的持續累積關注。",
+      "focusTags": [
+        "[持續追蹤]"
+      ]
+    },
+    {
+      "title": "Claude Fable 5 Ends Subscription Limbo: Permanent for Max, Credits-Only for Pro",
+      "url": "https://news.google.com/rss/articles/CBMiwgFBVV95cUxOZ0pnQUJvcE51TUxiU2JEWXBQeFdSYllaMVd5bkoxOTRYWEM4MUJHRG5NZ29GMUV5bDZVVVpzLVA1ckJlZzdPVW9kMWplRjE2WVdFeWJfNzJUOFFsVkJlbGxVQWx2c1BFZS13azBEU0hfaTdFc00zcFlhVEx0bEdwRjRwUEh3QW9Ta1NNUUJpRUZidlVOSEUxU3hVM2lua0VjMWJLUldLNXdVY09pT3IyN3N2d0V0Tkp6SG5RNTk4OUJBUQ?oc=5",
+      "source": "Google News / Tech Times",
+      "time": "07/18 12:56",
+      "sentiment": "",
+      "body": "Tech Times 報導 Claude Fable 5 訂閱限制調整為 Max 方案永久提供、Pro 方案改為 Credits-only；同日 Dawn 另一篇報導則稱 Fable 5 將以 50% 用量上限併入 Max、Team Premium 方案，兩篇報導摘要因原文截斷細節有限，暫無官方公告可完整對照確認。",
+      "focusTags": [
+        "[社群趨勢]"
+      ]
+    }
+  ],
+  "techUpdates": [
+    {
+      "title": "[anthropics/claude-code] v2.1.215",
+      "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.215",
+      "source": "GitHub / anthropics/claude-code",
+      "time": "07/19 02:56",
+      "sentiment": "",
+      "body": "Claude Code 發布 v2.1.215，變更內容為：不再自動執行 `/verify` 與 `/code-review` 兩項技能，須由使用者手動呼叫指令觸發。",
+      "focusTags": [
+        "[持續追蹤]"
+      ]
+    }
+  ],
+  "mediaReports": [
+    {
+      "title": "Thinking Machines is coming for Anthropic's intellectual vibe - Fast Company",
+      "url": "https://news.google.com/rss/articles/CBMingFBVV95cUxPdUVVWms0dFdvZU83QlJiZVdQdzZBSWhVTjZlelljT2E3eHZ6cUo2ZlVEd2ZXOV9OU3ByRlB6aU5MMHpna1BGQlB6VDFJaExVRWpUdnpLTHJyMEdGRFVtVjVhbFUxaEFNR01RbXlvWWQ1NllwQV90LVlwenFob0djT2hzbUtTVDZYbXg3alBkZF85NzlBM2dGWkJZUmhrdw?oc=5",
+      "source": "Google News / Fast Company",
+      "time": "07/19 11:08",
+      "sentiment": "",
+      "body": "Fast Company 報導提到，新創公司 Thinking Machines 正被視為在「智識調性」上對 Anthropic 構成競爭態勢的對象，惟原文摘要遭截斷，具體內容不明。",
+      "focusTags": []
+    },
+    {
+      "title": "Claude poised to command S.Korea's generative AI market on enterprise demand - KED Global",
+      "url": "https://news.google.com/rss/articles/CBMif0FVX3lxTE1qVGRxV3NRUGUwYVRQWXUwbFdpQ045OXhDTHAtZmJydnh5M2IycHpiUVRkODI5TmtWLVZMY3l6d19pSWlRQXVfRUxaaFBIc25wT096d1llYmdUbzNZWnJGRzNWV3BWdkpfUlR3OW5adlV5THZxY2hZRjVLUF9zWDQ?oc=5",
+      "source": "Google News / KED Global",
+      "time": "07/19 10:21",
+      "sentiment": "",
+      "body": "KED Global 報導指出，受企業端需求帶動，Claude 有望在南韓生成式 AI 市場占據領先地位，惟原文摘要遭截斷，具體數據不明。",
+      "focusTags": []
+    },
+    {
+      "title": "Elon Musk Admits He Underestimated Anthropic's AI, and Amazon and Alphabet Investors Should Take Notice - The Motley Fool",
+      "url": "https://news.google.com/rss/articles/CBMimAFBVV95cUxQYmV4Wjc1MDRmdThrZWM1a1lLdUpOZnJfUWV5azVMaktyeDlxWTNYei1udFB5THVWUkpabi1FZ2VlU0YyTTZia2ZKNGM2Sjd3R0ZacUFpQW1HNXpvbFFWNEhPYWdpMFM1dm0wRkR5TDFLRmRkbEZFS2lWTjR6VHl3VnJkcmVKVkJBdi1SVUU0T2Z6MzBsWDNIaQ?oc=5",
+      "source": "Google News / The Motley Fool",
+      "time": "07/19 08:46",
+      "sentiment": "",
+      "body": "The Motley Fool 報導 Elon Musk 坦承先前低估了 Anthropic 的 AI 實力，文章並建議 Amazon、Alphabet 投資人應留意此一動向。",
+      "focusTags": []
+    },
+    {
+      "title": "Meta, Anthropic drop bombshell news on AI market - Yahoo Finance Australia",
+      "url": "https://news.google.com/rss/articles/CBMiiwFBVV95cUxPWmNwNm1kNXFqbEE0S19iZEc4aEsxQUpqVjZBVHJWYXVhd1RlbnVsQVhlMlJIOWEwVHNBY0lPY2NOQl82YW1vN2VYS2RXMktSUDNHOERLWllOMFBwR2tXNl9VRWRCXzJhNkZxYko1eW9GRElYOVE0WGQ1X1BRVHZudnU3QmUwRUxnMTJV?oc=5",
+      "source": "Google News / Yahoo Finance Australia",
+      "time": "07/18 17:47",
+      "sentiment": "",
+      "body": "Yahoo Finance Australia 以「投下震撼彈」形容 Meta 與 Anthropic 近期針對 AI 市場的相關消息，惟原文摘要遭截斷，具體內容不明。",
+      "focusTags": []
+    },
+    {
+      "title": "Claude Fable 5 Ends Subscription Limbo: Permanent for Max, Credits-Only for Pro - Tech Times",
+      "url": "https://news.google.com/rss/articles/CBMiwgFBVV95cUxOZ0pnQUJvcE51TUxiU2JEWXBQeFdSYllaMVd5bkoxOTRYWEM4MUJHRG5NZ29GMUV5bDZVVVpzLVA1ckJlZzdPVW9kMWplRjE2WVdFeWJfNzJUOFFsVkJlbGxVQWx2c1BFZS13azBEU0hfaTdFc00zcFlhVEx0bEdwRjRwUEh3QW9Ta1NNUUJpRUZidlVOSEUxU3hVM2lua0VjMWJLUldLNXdVY09pT3IyN3N2d0V0Tkp6SG5RNTk4OUJBUQ?oc=5",
+      "source": "Google News / Tech Times",
+      "time": "07/18 12:56",
+      "sentiment": "",
+      "body": "Tech Times 報導 Claude Fable 5 訂閱限制調整為 Max 方案永久提供、Pro 方案改為 Credits-only，惟原文摘要遭截斷，具體限額數字不明。",
+      "focusTags": [
+        "[社群趨勢]"
+      ]
+    },
+    {
+      "title": "Anthropic to add Claude's Fable 5 model to Max, Team Premium plans at 50pc of usage limits - Dawn",
+      "url": "https://news.google.com/rss/articles/CBMiSEFVX3lxTE53WFNCTm9NMTRGdzNMMHpQTEJVRTZ6NkJsM2N0Rzc4R0pYYy00Y2VrWGFtNGEwV3BET2ZNQ0pXTnBGMHpxcmFMNw?oc=5",
+      "source": "Google News / Dawn",
+      "time": "07/18 12:50",
+      "sentiment": "",
+      "body": "Dawn 報導 Anthropic 將把 Fable 5 模型以 50% 用量上限的方式併入 Max、Team Premium 方案，惟原文摘要遭截斷，適用時程與其他限制細節不明。",
+      "focusTags": [
+        "[社群趨勢]"
+      ]
+    },
+    {
+      "title": "Musk open-sourced Grok Build to fight Anthropic. Anthropic pays him $1.25 billion a month. - The New Stack",
+      "url": "https://news.google.com/rss/articles/CBMiZEFVX3lxTE84WXg0TXBDbzhRdHFEQ3lDLUd0OHB2c0dpemlncE5xQ3hjWVI5cWdpMkJ3ZHpXZVFwZ3FtT2d0a1RhS1FYYlBlMGFDbTNYb0NKOXBKYVJHc3RUNkdOS0NWQmtUUUw?oc=5",
+      "source": "Google News / The New Stack",
+      "time": "07/18 10:39",
+      "sentiment": "",
+      "body": "The New Stack 報導 Elon Musk 開源 Grok Build 以對抗 Anthropic，標題並提及 Anthropic 目前每月支付對方 12.5 億美元，惟原文摘要遭截斷，付款對象與用途細節不明。",
+      "focusTags": []
+    }
+  ],
+  "discussions": [
+    {
+      "title": "Setting up your spare Mac for Claude Code to control, a step-by-step guide",
+      "url": "https://ykdojo.github.io/claude-controls-mac/",
+      "source": "Hacker News",
+      "time": "07/18 16:12 UTC 情緒：😊",
+      "sentiment": "",
+      "body": "作者撰寫完整教學，示範如何把備用 Mac 設為 Claude Code 可透過 computer use 全權控制的常駐環境，可透過手機或 SSH 下指令，藉此隔離在主力機器開啟 `--dangerously-skip-permissions` 的風險。",
+      "focusTags": []
+    },
+    {
+      "title": "[BUG] 5-hour limit reached in less than 1h30",
+      "url": "https://github.com/anthropics/claude-code/issues/6457",
+      "source": "GitHub Issues / claude-code",
+      "time": "07/19 07:58 UTC 情緒：😤",
+      "sentiment": "",
+      "body": "使用者回報方案 5 小時用量限額在不到 1 小時 30 分鐘內即用罄，累積 120 則留言與 31 個讚同反應。",
+      "focusTags": [
+        "[持續追蹤]"
+      ]
+    },
+    {
+      "title": "Claude Code uses Bun written in Rust now",
+      "url": "https://simonwillison.net/2026/Jul/19/claude-code-in-bun-in-rust/",
+      "source": "Hacker News",
+      "time": "07/19 10:03 UTC 情緒：🤔",
+      "sentiment": "",
+      "body": "Simon Willison 透過字串比對驗證：Claude Code 自 v2.1.181（6/17 發布）起底層改用 Rust 重寫版 Bun runtime，Linux 平台啟動速度提升約 10%。",
+      "focusTags": [
+        "[持續追蹤]"
+      ]
+    },
+    {
+      "title": "[BUG] Session Disappeared After Logout / Restart of Claude Code Desktop - HOW to restore the sessions ASAP???",
+      "url": "https://github.com/anthropics/claude-code/issues/26452",
+      "source": "GitHub Issues / claude-code",
+      "time": "07/18 10:43 UTC 情緒：😤",
+      "sentiment": "",
+      "body": "使用者回報 Claude Code Desktop 登出／重啟後 session 消失，急欲尋求恢復方法，累積 49 則留言與 29 個讚同反應。",
+      "focusTags": []
+    },
+    {
+      "title": "[BUG] Environment Contributions warning continuously reappears",
+      "url": "https://github.com/anthropics/claude-code/issues/3301",
+      "source": "GitHub Issues / claude-code",
+      "time": "07/18 11:42 UTC 情緒：😤",
+      "sentiment": "",
+      "body": "使用者回報在 Cursor、VS Code 等 IDE 每次開啟時，「Environment Contributions」警告訊息持續重複出現，累積 43 則留言與 81 個讚同反應。",
+      "focusTags": []
+    },
+    {
+      "title": "Anthropic's newest ad is creeping people out",
+      "url": "https://techcrunch.com/2026/07/14/anthropics-newest-ad-is-creeping-people-out/",
+      "source": "Hacker News",
+      "time": "07/18 23:50 UTC 情緒：😐",
+      "sentiment": "",
+      "body": "TechCrunch 報導 Anthropic 最新廣告《There's hope in hard questions》以陰暗意象（監控人群、街友、墓地、礦工）搭配旁白提問，讓部分觀眾感到不安。",
+      "focusTags": []
+    },
+    {
+      "title": "GitHub connector links repositories successfully but Claude cannot access content for ANY repository (account-wide, public and private alike) — recent regression",
+      "url": "https://github.com/anthropics/claude-code/issues/71542",
+      "source": "GitHub Issues / claude-code",
+      "time": "07/18 20:57 UTC 情緒：😤",
+      "sentiment": "",
+      "body": "使用者回報 GitHub connector 雖能成功連結帳號內所有公開與私有 repository，Claude 卻無法讀取任何內容，回報為近期的功能退化，累積 37 則留言與 33 個讚同反應。",
+      "focusTags": []
+    },
+    {
+      "title": "Show timestamps on conversation messages",
+      "url": "https://github.com/anthropics/claude-code/issues/44763",
+      "source": "GitHub Issues / claude-code",
+      "time": "07/18 21:48 UTC 情緒：🤔",
+      "sentiment": "",
+      "body": "使用者提出功能請求，希望能在對話訊息上顯示時間戳記，方便監控長時間背景工作進度，累積 36 則留言與 66 個讚同反應。",
+      "focusTags": []
+    },
+    {
+      "title": "[FEATURE] Multi-agent collaboration across machines (Agent-to-Agent protocol)",
+      "url": "https://github.com/anthropics/claude-code/issues/28300",
+      "source": "GitHub Issues / claude-code",
+      "time": "07/18 22:04 UTC 情緒：🤔",
+      "sentiment": "",
+      "body": "使用者提出跨機器 multi-agent 協作協定（Agent-to-Agent）的功能請求，累積 35 則留言。",
+      "focusTags": []
+    },
+    {
+      "title": "Feature request: Support multiple Slack workspaces in the built-in Slack connector",
+      "url": "https://github.com/anthropics/claude-code/issues/44243",
+      "source": "GitHub Issues / claude-code",
+      "time": "07/19 05:09 UTC 情緒：🤔",
+      "sentiment": "",
+      "body": "使用者提出功能請求，希望內建 Slack MCP connector 能支援單一帳號連結多個 workspace，累積 33 則留言與 69 個讚同反應。",
+      "focusTags": []
+    },
+    {
+      "title": "[BUG] Opus 4.7 mixes legacy XML tool-use format into JSON tool calls on longer payloads",
+      "url": "https://github.com/anthropics/claude-code/issues/49747",
+      "source": "GitHub Issues / claude-code",
+      "time": "07/18 22:04 UTC 情緒：😤",
+      "sentiment": "",
+      "body": "使用者回報 Opus 4.7 在處理較長 payload 時，會把舊版 XML tool-use 格式混入 JSON tool call 中，累積 33 則留言與 34 個讚同反應。",
+      "focusTags": []
+    },
+    {
+      "title": "[FEATURE] VS Code Extension: Diff review UI similar to GitHub Copilot Edits Review",
+      "url": "https://github.com/anthropics/claude-code/issues/33932",
+      "source": "GitHub Issues / claude-code",
+      "time": "07/18 15:42 UTC 情緒：🤔",
+      "sentiment": "",
+      "body": "使用者提出功能請求，希望 VS Code 擴充功能能有類似 GitHub Copilot Edits Review 的差異審閱介面，累積 32 則留言與 218 個讚同反應，為今日互動量最高的功能請求。",
+      "focusTags": []
+    },
+    {
+      "title": "I Let Claude Code Write 90% of My Code for 30 Days. I'm a Worse Developer Now.",
+      "url": "https://dev.to/bluelobster_agent/i-let-claude-code-write-90-of-my-code-for-30-days-im-a-worse-developer-now-1f4m",
+      "source": "dev.to / #claudecode",
+      "time": "07/13 09:16 UTC 情緒：🤔",
+      "sentiment": "",
+      "body": "作者記錄連續 30 天讓 Claude Code 撰寫九成程式碼的實驗，累積 5 萬行程式碼、花費 187 美元代幣，並反思隨之而來的技能退化與倦怠。",
+      "focusTags": []
+    },
+    {
+      "title": "Show HN: Peek-CLI: Let Claude Code iterate on front end designs",
+      "url": "https://github.com/puffinsoft/peek-cli",
+      "source": "Hacker News",
+      "time": "07/18 19:02 UTC 情緒：😐",
+      "sentiment": "",
+      "body": "開發者釋出 Peek-CLI，讓 Claude Code 能疊代前端設計外觀，原文說明有限。",
+      "focusTags": []
+    },
+    {
+      "title": "I Traced 4 Claude Opus 5 Signals. The Release Date Still Isn't Real Yet.",
+      "url": "https://dev.to/tokenmixai/i-traced-4-claude-opus-5-signals-the-release-date-still-isnt-real-yet-2f2j",
+      "source": "dev.to / #anthropic",
+      "time": "07/13 09:20 UTC 情緒：🤔",
+      "sentiment": "",
+      "body": "作者比對 Anthropic 模型型錄、定價文件與發布節奏後認為 Opus 5 發布具一定可信度，但坊間流傳的確切日期與跑分數字目前仍缺乏佐證。",
+      "focusTags": []
+    },
+    {
+      "title": "How I Auto-Resume a Rate-Limited Claude Code Session with PROGRESS.md and Retries",
+      "url": "https://dev.to/bokuwalily/how-i-auto-resume-a-rate-limited-claude-code-session-with-progressmd-and-retries-5cl5",
+      "source": "dev.to / #claudecode",
+      "time": "07/17 05:00 UTC 情緒：😊",
+      "sentiment": "",
+      "body": "作者分享用約 20 行 shell script 打造 resume-on-ratelimit.sh，在 headless Claude Code 任務因用量限制中斷後自動喚醒續跑，避免忘記先前進度。",
+      "focusTags": []
+    },
+    {
+      "title": "The Promotion Doc That Writes Itself",
+      "url": "https://dev.to/ohkpond/the-promotion-doc-that-writes-itself-2g1i",
+      "source": "dev.to / #claudecode",
+      "time": "07/03 00:45 UTC 情緒：😊",
+      "sentiment": "",
+      "body": "作者分享用 Claude Code 建立每日工作日誌，自動記錄平時容易被遺忘的工作成果，作為績效考核、升遷與求職的佐證素材。",
+      "focusTags": []
+    },
+    {
+      "title": "Artifacts in Claude Code: The Operator's Guide",
+      "url": "https://dev.to/max_quimby/artifacts-in-claude-code-the-operators-guide-4fb0",
+      "source": "dev.to / #anthropic",
+      "time": "06/21 06:01 UTC 情緒：😊",
+      "sentiment": "",
+      "body": "作者撰寫操作指南，介紹 Claude Code 現可建立即時儀表板、圖表與可分享頁面，並說明與 Claude Design 同步程式庫的設定方式。",
+      "focusTags": []
+    },
+    {
+      "title": "Show HN: Shikigami, run AI coding agents in parallel, each in a Git worktree",
+      "url": "https://shikigami.dev/",
+      "source": "Hacker News",
+      "time": "07/19 08:48 UTC 情緒：😐",
+      "sentiment": "",
+      "body": "開發者釋出桌面應用 Shikigami，讓多個 AI coding agent（含 Claude、Codex）各自在獨立 git worktree 中並行執行，避免多 agent 共用分支互相覆寫檔案的問題。",
+      "focusTags": []
+    },
+    {
+      "title": "Show HN: FlexInference LLM Router",
+      "url": "https://www.flexinference.com",
+      "source": "Hacker News",
+      "time": "07/19 06:44 UTC 情緒：😐",
+      "sentiment": "",
+      "body": "開發者為 FlexInference LLM Router 新增 Bedrock、Vertex 支援，可在 OpenAI、Anthropic、Google、Vertex、Bedrock 之間依 429／5xx 錯誤自動 failover，尋找更低成本的推論管道。",
+      "focusTags": []
+    },
+    {
+      "title": "Show HN: Talon – a self-hosted harness for long-lived AI agents",
+      "url": "https://github.com/dylanneve1/talon",
+      "source": "Hacker News",
+      "time": "07/18 16:24 UTC 情緒：😐",
+      "sentiment": "",
+      "body": "開發者釋出 Talon，一款自架式長時間運作 AI agent harness；該貼文於 Hacker News 已被標記 flagged，原文說明有限。",
+      "focusTags": []
+    },
+    {
+      "title": "Show HN: GPT-5.6 Sol vs. Claude Fable 5 in CNC Red Alert 2",
+      "url": "https://system-2-arena.vercel.app/showcase/ra2?war=sol-vs-fable-lake",
+      "source": "Hacker News",
+      "time": "07/18 10:14 UTC 情緒：😐",
+      "sentiment": "",
+      "body": "開發者釋出讓 GPT-5.6 Sol 與 Claude Fable 5 在《終極動員令 2》中對戰的展示平台，模型僅憑文字戰報下指令，並附完整決策紀錄與對戰重播供查核。",
+      "focusTags": []
+    },
+    {
+      "title": "Show HN: AI Buddy – Free STT and Screenshot Tool for Mac (Requires Gemini)",
+      "url": "https://claudete.co/ai-buddy",
+      "source": "Hacker News",
+      "time": "07/19 10:29 UTC 情緒：😐",
+      "sentiment": "",
+      "body": "開發者釋出 AI Buddy，一款 Mac 免費語音轉文字與螢幕截圖工具（依賴 Gemini），可用於搭配 Claude Code 擷取畫面。",
+      "focusTags": []
+    },
+    {
+      "title": "Show HN: Synapse – local codebase indexer and MCP server for Claude Code",
+      "url": "https://github.com/nrkoka786/synapse",
+      "source": "Hacker News",
+      "time": "07/19 03:35 UTC 情緒：😐",
+      "sentiment": "",
+      "body": "開發者釋出 Synapse，一款供 Claude Code 使用的本機程式碼庫索引器與 MCP server。",
+      "focusTags": []
+    },
+    {
+      "title": "Show HN: OpenCareLoop - Solve your family's health, one loop at a time.",
+      "url": "https://karankurani.github.io/OpenCareLoop/",
+      "source": "Hacker News",
+      "time": "07/18 16:17 UTC 情緒：😐",
+      "sentiment": "",
+      "body": "開發者釋出 OpenCareLoop，一款協助管理家庭健康紀錄的 agent 工具，提供結構化的生活型態／用藥／習慣追蹤迴圈。",
+      "focusTags": []
+    },
+    {
+      "title": "Show HN: Go Micro – An agent harness and service framework in Go",
+      "url": "https://github.com/micro/go-micro",
+      "source": "Hacker News",
+      "time": "07/18 09:48 UTC 情緒：😐",
+      "sentiment": "",
+      "body": "開發者重新分享 Go Micro，將原本的服務框架擴充為 agent harness，讓已註冊的服務自動成為 agent 可透過 MCP 呼叫的工具。",
+      "focusTags": []
+    },
+    {
+      "title": "The token is valid, but your headless Claude Code agent just 401'd forever",
+      "url": "https://dev.to/drickon/the-token-is-valid-but-your-headless-claude-code-agent-just-401d-forever-48ip",
+      "source": "dev.to / #claudecode",
+      "time": "06/28 09:03 UTC 情緒：😤",
+      "sentiment": "",
+      "body": "作者記錄長時間運作、使用靜態 OAuth token 的 headless Claude Code 在特定時刻會遭遇 401 且無法自行恢復，須重啟程序，單純檢查 token 有效性的探測方式對此問題結構性地失效。",
+      "focusTags": []
+    },
+    {
+      "title": "\"Personas vs. tool-scoping: where I landed differently from gstack\"",
+      "url": "https://dev.to/greymothjp/personas-vs-tool-scoping-where-i-landed-differently-from-gstack-gld",
+      "source": "dev.to / #claudecode",
+      "time": "06/26 08:25 UTC 情緒：🤔",
+      "sentiment": "",
+      "body": "作者分享數月運行 multi-agent 設定的心得：單純賦予 agent 人設（如 CEO、QA）對行為影響有限，真正改變行為的是限制 agent 的工具權限（如唯讀），而非人設本身。",
+      "focusTags": []
+    },
+    {
+      "title": "SQLite Query Explainer",
+      "url": "https://simonwillison.net/2026/Jul/18/sqlite-query-explainer/#atom-everything",
+      "source": "Blog / Simon Willison",
+      "time": "07/18 17:19 UTC 情緒：😐",
+      "sentiment": "",
+      "body": "Simon Willison 分享新工具 SQLite Query Explainer，並引用 Julia Evans 部落格文章的相關討論。",
+      "focusTags": []
+    },
+    {
+      "title": "Is Claude worth using again for coding projects and AI agents?",
+      "url": "https://www.reddit.com/r/ClaudeCode/comments/1v0ne6h/is_claude_worth_using_again_for_coding_projects/",
+      "source": "Reddit / r/ClaudeCode",
+      "time": "07/19 10:50 UTC 情緒：🤔",
+      "sentiment": "",
+      "body": "使用者表示先前因服務調整而停用 Claude，因目前其他 AI workflow 選擇受限，正考慮是否值得重新評估回歸使用。",
+      "focusTags": []
+    },
+    {
+      "title": "I Sold over 200 Websites in 1 Year",
+      "url": "https://www.reddit.com/r/ClaudeCode/comments/1v0n40h/i_sold_over_200_websites_in_1_year/",
+      "source": "Reddit / r/ClaudeCode",
+      "time": "07/19 10:33 UTC 情緒：😊",
+      "sentiment": "",
+      "body": "使用者分享一年內售出超過 200 個網站的銷售流程心得，指出許多網頁設計師把銷售流程過度複雜化，原文摘要有限。",
+      "focusTags": []
+    },
+    {
+      "title": "Claude Code Rate limit didn't reset (bug)?",
+      "url": "https://www.reddit.com/r/ClaudeCode/comments/1v0mx6l/claude_code_rate_limit_didnt_reset_bug/",
+      "source": "Reddit / r/ClaudeCode",
+      "time": "07/19 10:22 UTC 情緒：😤",
+      "sentiment": "",
+      "body": "使用者回報 Claude Code 用量限額到期後未如預期重置，貼出畫面佐證，懷疑為系統性錯誤，原文摘要有限。",
+      "focusTags": []
+    },
+    {
+      "title": "Claude code as a senior developer",
+      "url": "https://www.reddit.com/r/ClaudeCode/comments/1v0mkwk/claude_code_as_a_senior_developer/",
+      "source": "Reddit / r/ClaudeCode",
+      "time": "07/19 10:02 UTC 情緒：🤔",
+      "sentiment": "",
+      "body": "使用者分享近一年使用 Claude Code 的心得，坦言最初抱持懷疑、認為其能力不如初階工程師，原文摘要於後續看法轉折處遭截斷。",
+      "focusTags": []
+    },
+    {
+      "title": "Fable safety is ridiculous. Moschitoes are a bioweapon 🤷🏻‍♂️",
+      "url": "https://www.reddit.com/r/ClaudeCode/comments/1v0m49h/fable_safety_is_ridiculous_moschitoes_are_a/",
+      "source": "Reddit / r/ClaudeCode",
+      "time": "07/19 09:35 UTC 情緒：😤",
+      "sentiment": "",
+      "body": "使用者對 Fable 5 安全審查機制的判定結果表達不滿，以「蚊子被判定為生物武器」為題質疑安全機制過度敏感，原文摘要有限。",
+      "focusTags": []
+    },
+    {
+      "title": "Slop time is over!!! time to build real stuff",
+      "url": "https://www.reddit.com/r/ClaudeCode/comments/1v0lifj/slop_time_is_over_time_to_build_real_stuff/",
+      "source": "Reddit / r/ClaudeCode",
+      "time": "07/19 08:58 UTC 情緒：😐",
+      "sentiment": "",
+      "body": "使用者以「玩票時間結束、該來做點真的東西」為題發文，內容以圖片呈現，原文細節不明。",
+      "focusTags": []
+    },
+    {
+      "title": "As predicted",
+      "url": "https://www.reddit.com/r/ClaudeCode/comments/1uzjbeh/as_predicted/",
+      "source": "Reddit / r/ClaudeCode · 週熱門",
+      "time": "07/18 02:17 UTC 情緒：😐",
+      "sentiment": "",
+      "body": "使用者發布「一如預期」為題的貼文，內容以圖片呈現，原文細節不明。",
+      "focusTags": []
+    },
+    {
+      "title": "A normal day for me",
+      "url": "https://www.reddit.com/r/ClaudeCode/comments/1uy8kwa/a_normal_day_for_me/",
+      "source": "Reddit / r/ClaudeCode · 週熱門",
+      "time": "07/16 16:58 UTC 情緒：😐",
+      "sentiment": "",
+      "body": "使用者發布「我的日常」為題的貼文，內容以圖片呈現，原文細節不明。",
+      "focusTags": []
+    },
+    {
+      "title": "Dear Anthropic, This Has to STOP.",
+      "url": "https://www.reddit.com/r/ClaudeCode/comments/1uv6ns4/dear_anthropic_this_has_to_stop/",
+      "source": "Reddit / r/ClaudeCode · 週熱門",
+      "time": "07/13 09:29 UTC 情緒：😤",
+      "sentiment": "",
+      "body": "使用者對 Anthropic 近期用量限額政策頻繁調整（「這裡多一點額度、那裡多一點額度」）表達強烈不滿，要求正視問題。",
+      "focusTags": []
+    },
+    {
+      "title": "Anthropic, I think you really need to react. You're slowly losing ground.",
+      "url": "https://www.reddit.com/r/ClaudeCode/comments/1uuqz4l/anthropic_i_think_you_really_need_to_react_youre/",
+      "source": "Reddit / r/ClaudeCode · 週熱門",
+      "time": "07/12 20:43 UTC 情緒：😤",
+      "sentiment": "",
+      "body": "使用者呼籲 Anthropic 正視其認為公司正逐漸流失優勢的處境，內容以圖片呈現，原文細節不明。",
+      "focusTags": []
+    },
+    {
+      "title": "See y'all next week",
+      "url": "https://www.reddit.com/r/ClaudeCode/comments/1uumz7i/see_yall_next_week/",
+      "source": "Reddit / r/ClaudeCode · 週熱門",
+      "time": "07/12 18:13 UTC 情緒：😐",
+      "sentiment": "",
+      "body": "使用者發布「下週見」為題的貼文，內容以圖片呈現，原文細節不明。",
+      "focusTags": []
+    },
+    {
+      "title": "Here we go again!!!",
+      "url": "https://www.reddit.com/r/ClaudeCode/comments/1uul766/here_we_go_again/",
+      "source": "Reddit / r/ClaudeCode · 週熱門",
+      "time": "07/12 17:08 UTC 情緒：😐",
+      "sentiment": "",
+      "body": "使用者發布「又來了」為題的貼文，內容以圖片呈現，原文細節不明。",
+      "focusTags": []
+    }
+  ],
+  "billing": [
+    {
+      "title": "Claude Fable 5 Ends Subscription Limbo: Permanent for Max, Credits-Only for Pro",
+      "url": "https://news.google.com/rss/articles/CBMiwgFBVV95cUxOZ0pnQUJvcE51TUxiU2JEWXBQeFdSYllaMVd5bkoxOTRYWEM4MUJHRG5NZ29GMUV5bDZVVVpzLVA1ckJlZzdPVW9kMWplRjE2WVdFeWJfNzJUOFFsVkJlbGxVQWx2c1BFZS13azBEU0hfaTdFc00zcFlhVEx0bEdwRjRwUEh3QW9Ta1NNUUJpRUZidlVOSEUxU3hVM2lua0VjMWJLUldLNXdVY09pT3IyN3N2d0V0Tkp6SG5RNTk4OUJBUQ?oc=5",
+      "source": "Google News / Tech Times",
+      "time": "07/18 12:56",
+      "sentiment": "",
+      "body": "Tech Times 報導 Claude Fable 5 訂閱限制調整為 Max 方案永久提供、Pro 方案改為 Credits-only，惟原文摘要遭截斷，具體限額數字不明。",
+      "focusTags": [
+        "[社群趨勢]"
+      ]
+    },
+    {
+      "title": "Anthropic to add Claude's Fable 5 model to Max, Team Premium plans at 50pc of usage limits",
+      "url": "https://news.google.com/rss/articles/CBMiSEFVX3lxTE53WFNCTm9NMTRGdzNMMHpQTEJVRTZ6NkJsM2N0Rzc4R0pYYy00Y2VrWGFtNGEwV3BET2ZNQ0pXTnBGMHpxcmFMNw?oc=5",
+      "source": "Google News / Dawn",
+      "time": "07/18 12:50",
+      "sentiment": "",
+      "body": "Dawn 報導 Anthropic 將把 Fable 5 模型以 50% 用量上限的方式併入 Max、Team Premium 方案，惟原文摘要遭截斷，適用時程與其他限制細節不明。",
+      "focusTags": [
+        "[社群趨勢]"
+      ]
+    }
+  ],
+  "focus": [
+    {
+      "tag": "[持續追蹤]",
+      "text": "Claude Code v2.1.215 發布：不再自動執行 `/verify` 與 `/code-review` 兩項技能，須由使用者手動呼叫指令觸發。",
+      "ref_urls": [
+        "https://github.com/anthropics/claude-code/releases/tag/v2.1.215"
+      ]
+    },
+    {
+      "tag": "[持續追蹤]",
+      "text": "使用者回報方案 5 小時用量限額在不到 1 小時 30 分鐘內即用罄，GitHub Issue 累積 120 則留言與 31 個讚同反應。",
+      "ref_urls": [
+        "https://github.com/anthropics/claude-code/issues/6457"
+      ]
+    },
+    {
+      "tag": "[持續追蹤]",
+      "text": "Simon Willison 透過字串比對驗證：Claude Code 自 v2.1.181（6/17 發布）起，底層改用 Rust 重寫版的 Bun runtime，Linux 平台啟動速度提升約 10%，但多數使用者對此毫無察覺。",
+      "ref_urls": [
+        "https://simonwillison.net/2026/Jul/19/claude-code-in-bun-in-rust/"
+      ]
+    },
+    {
+      "tag": "[社群趨勢]",
+      "text": "兩家媒體分別報導 Claude Fable 5 訂閱方案異動：Tech Times 稱 Max 方案轉為永久提供、Pro 方案改為 Credits-only；Dawn 則稱 Fable 5 將以 50% 用量上限併入 Max、Team Premium 方案，兩篇報導原文摘要遭截斷、細節有限，暫無官方公告可完整對照確認。",
+      "ref_urls": [
+        "https://news.google.com/rss/articles/CBMiwgFBVV95cUxOZ0pnQUJvcE51TUxiU2JEWXBQeFdSYllaMVd5bkoxOTRYWEM4MUJHRG5NZ29GMUV5bDZVVVpzLVA1ckJlZzdPVW9kMWplRjE2WVdFeWJfNzJUOFFsVkJlbGxVQWx2c1BFZS13azBEU0hfaTdFc00zcFlhVEx0bEdwRjRwUEh3QW9Ta1NNUUJpRUZidlVOSEUxU3hVM2lua0VjMWJLUldLNXdVY09pT3IyN3N2d0V0Tkp6SG5RNTk4OUJBUQ?oc=5",
+        "https://news.google.com/rss/articles/CBMiSEFVX3lxTE53WFNCTm9NMTRGdzNMMHpQTEJVRTZ6NkJsM2N0Rzc4R0pYYy00Y2VrWGFtNGEwV3BET2ZNQ0pXTnBGMHpxcmFMNw?oc=5"
+      ]
+    }
+  ],
+  "sourceStatus": [
+    {
+      "name": "Anthropic Status",
+      "ok": true,
+      "count": 0
+    },
+    {
+      "name": "Hacker News",
+      "ok": true,
+      "count": 12
+    },
+    {
+      "name": "GitHub Issues",
+      "ok": true,
+      "count": 15
+    },
+    {
+      "name": "Google News",
+      "ok": true,
+      "count": 9
+    },
+    {
+      "name": "Claude API Release Notes",
+      "ok": true,
+      "count": 0
+    },
+    {
+      "name": "dev.to",
+      "ok": true,
+      "count": 15
+    },
+    {
+      "name": "GitHub",
+      "ok": true,
+      "count": 1
+    },
+    {
+      "name": "Blogroll",
+      "ok": true,
+      "count": 2
+    },
+    {
+      "name": "Anthropic Blog",
+      "ok": true,
+      "count": 0
+    },
+    {
+      "name": "Reddit",
+      "ok": true,
+      "count": 12
+    }
+  ],
+  "preview": "Setting up your spare Mac for Claude Code to control, a step-by-step guide"
+}

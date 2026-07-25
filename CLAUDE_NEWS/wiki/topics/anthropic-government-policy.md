@@ -3,11 +3,11 @@
 **狀態：** monitoring（出口管制主線已解除，剩餘承諾落實與衍生支線持續觀察；中美 AI 工具信任對峙已獨立成頁）
 **領域：** 🏛️ 政策/安全
 **開始日期：** 2026-05-01
-**最後更新：** 2026-07-19
-**最後新聞更新：** 2026-07-18
+**最後更新：** 2026-07-24
+**最後新聞更新：** 2026-07-24
 
-> **最新動態**（2026-07-13～07-17）
-> 出口管制解除（07-01）後理應降溫的 Mythos 風險論述，07-13～07-16 同步在金融監管（加拿大監管機關引用 Mythos 警告銀行業，07-13 Reuters）、金融業高管（JPMorgan CEO Dimon 稱 Mythos 風險「真實問題」，07-16 Reuters，詳見 [[entities/mythos]]）、國會/軍方（參議員 Rounds 就 Mythos 接受五角大廈簡報，07-16 Politico）、政府內部矛盾（Hegseth 稱 Anthropic 國安風險但 CISA 已在使用其產品，07-14 The National Interest）四個角色跨界重新浮現，四者互相獨立、暫無協調證據，完整綜合敘事見「🚫 出口管制」戰場段落。同期政治獻金布局持續加碼：Dario Amodei 個人捐款 100 萬美元予某 super PAC（07-16 Politico），緊接 Anthropic 員工再捐款 300 萬美元支持 AI 安全相關法規推動（07-17 SFGATE，僅標題可用，兩筆捐款是否同一 PAC 待查證）。同期並行事件：南華早報獨家專訪「Pax Silica」政策架構推手論美國仍可維持 AI 領先地位（07-16 SCMP，首個正面反駁「管制反效」論述）、WIRED 確認 Anthropic 積極遊說美國各州加快 AI 監管（07-16）、HN 轉載 Politico 全文揭露 Anthropic 派遣初階員工出席歐盟聽證（07-16）；詳見下方「## 攻防紀錄」。出口管制主線本身已於 07-01 落幕（詳見「## 摘要」）；中美 AI 工具信任對峙已於 2026-07-12 整合拆出至獨立頁 [[topics/safety-china-trust-dispute]]。
+> **最新動態**（2026-07-23）
+> BBC（source_count=2，另一媒體同步報導）補足 07-22 TechCrunch／南華早報標題式報導：白宮「川普科技顧問」（姓名未指明）指控中國 Moonshot AI 從 Anthropic 的 Fable 模型「蒸餾」竊取技術，美國財政部揚言祭出制裁；消息來源層級較 07-22「白宮官員」泛稱更具體，但制裁對象、範圍與法源依據仍待核實。同日另兩則新訊號：The Information（僅標題可用）報導矽谷科技業界聯合反對 Anthropic 對中國 AI 的限制立場，為出口管制落幕後首見「業界」層級的集體反彈；digitimes（僅標題可用，用詞保守處理）稱中國 AI 實驗室透過 Claude Code 相關外洩內容縮小與 Anthropic 技術差距，外洩性質與涉及實驗室均未確認。出口管制主線本身已於 07-01 落幕（詳見「## 摘要」）；中美 AI 工具信任對峙已於 2026-07-12 整合拆出至獨立頁 [[topics/safety-china-trust-dispute]]；07-13～07-22 Mythos 跨界表態完整綜合敘事見「🚫 出口管制」戰場段落。
 
 ---
 
@@ -38,9 +38,12 @@
 | Anthropic 安全人力擴編（災難性風險） | Axios 報導 Anthropic 正在招募人力以應對潛在災難性風險，偏向安全團隊建置動態，僅標題式轉載，具體職位與規模待確認（2026-07-15） | 是否有更多報導揭露職位性質、規模、招募進度 |
 | 州級 AI 規則倡議 | WIRED（07-16）分析並確認 Anthropic 正積極遊說美國各州加快 AI 監管腳步（州級而非僅聯邦層級的政策遊說），延續並補強 07-15 Politico 標題式報導；具體州別、規則內容與遊說對象仍未見報導細節 | 涉及哪些州、規則具體內容、是否與聯邦出口管制/歐洲遊說形成一致的政策倡議策略；WIRED 是否釋出更完整分析全文 |
 | EU 對 Anthropic 投入度觀感 | 07-14 politico.eu 標題式報導已於 07-16 經 Hacker News 轉載 Politico 全文（19 分）確認並補足細節：歐盟政策官員點名批評 Anthropic 派遣初階員工 **Donny Greenberg**（而非資深主管）出席歐洲議會安全聽證會，回應先進 AI 能力風險疑慮 | Anthropic 是否公開回應或調整後續出席層級；是否影響「歐洲據點爭奪」進度 |
-| Mythos 風險論述跨界重新浮現（金融/監管/國會/政府內部） | 出口管制 07-01 解除後理應降溫，但 07-13～07-16 四天內同步在四個不同角色浮現：加拿大金融監管機關發函警銀行業並引用 Claude Mythos（07-13 Reuters 獨家）、JPMorgan CEO Dimon 公開稱 Mythos 風險是「真實問題」（07-16 Reuters，詳見 [[entities/mythos]]）、參議員 Mike Rounds 就 Mythos 接受五角大廈簡報（07-16 Politico，標題式轉載）、Hegseth 稱 Anthropic 為國安風險但 CISA 已在使用其產品（07-14 The National Interest，標題式轉載）；四者互相獨立、暫無協調證據，完整分析見「🚫 出口管制」戰場段落 | 是否有其他國家監管機構跟進；Rounds 簡報後續立法動作；CISA 使用範圍與 Hegseth 是否回應內部矛盾；Dimon 發言是否影響 JPMorgan 既有的 Mythos 商業摩擦（06-18 香港分行切斷存取） |
-| Anthropic 政治獻金布局 | Politico（07-16，經 Google News 轉載，僅標題可用）：Dario Amodei 個人捐款 100 萬美元予某 super PAC；SFGATE（07-17，經 Google News 轉載，僅標題可用）：Anthropic 員工另捐款 300 萬美元支持 AI 安全相關法規推動，捲入 AI 陣營之間鉅額政治獻金角力；兩筆捐款的 PAC/組織名稱、資金用途、對立陣營身分均待原文確認 | 兩筆捐款是否流向同一 PAC 或同一政策倡議；是否與州級 AI 規則倡議（07-15）構成一致的政治佈局；是否有對立陣營公開回應；人物面向詳見 [[entities/dario-amodei]] |
+| Mythos 風險論述跨界重新浮現（金融/監管/國會/政府內部） | 出口管制 07-01 解除後理應降溫，但 07-13～07-22 同步在五個不同角色浮現：加拿大金融監管機關發函警銀行業並引用 Claude Mythos（07-13 Reuters 獨家）、JPMorgan CEO Dimon 公開稱 Mythos 風險是「真實問題」（07-16 Reuters，詳見 [[entities/mythos]]）、參議員 Mike Rounds 就 Mythos 接受五角大廈簡報（07-16 Politico，標題式轉載）、Hegseth 稱 Anthropic 為國安風險但 CISA 已在使用其產品（07-14 The National Interest，標題式轉載）、**07-22 新增：** CNBC（經 Google News 轉載，僅標題可用）稱聯準會（Fed）也曾就 Mythos 發出警示但延遲數月才浮上檯面，具體內容與延遲原因未知；五者互相獨立、暫無協調證據，完整分析見「🚫 出口管制」戰場段落 | 是否有其他國家/聯邦監管機構跟進；Fed 警示的具體內容、發布時間、延遲原因；Rounds 簡報後續立法動作；CISA 使用範圍與 Hegseth 是否回應內部矛盾；Dimon 發言是否影響 JPMorgan 既有的 Mythos 商業摩擦（06-18 香港分行切斷存取） |
+| Anthropic 政治獻金布局 | Politico（07-16，僅標題可用）：Dario Amodei 個人捐款 100 萬美元予某 super PAC；SFGATE（07-17，僅標題可用）：Anthropic 員工另捐款 300 萬美元支持 AI 安全相關法規推動；**07-22 官方確認**：Anthropic 部落格宣布再捐 2000 萬美元予無黨派組織 Public First Action（累計達 4000 萬美元，首筆 02 月），聲明明確排除候選人選舉用途；同日 WSJ／The Hill／Axios 以「期中選舉支出翻倍至 4000 萬美元推動 AI 監管」「遊說支出攀升」框架報導，與官方「非選舉用途」聲明形成敘事張力；三筆捐款/支出彼此是否構成同一資金脈絡待確認 | 三筆捐款/支出是否流向同一組織或政策倡議；WSJ「4000 萬美元」框架是否涵蓋 Dario 個人與員工捐款、或僅指 Public First Action 一項；是否與州級 AI 規則倡議（07-15）構成一致的政治佈局；是否有對立陣營公開回應；人物面向詳見 [[entities/dario-amodei]] |
 | Pax Silica 政策架構與中美 AI 領先地位論戰 | 南華早報獨家專訪「Pax Silica」政策架構主要推手（姓名待確認），主張美國仍可維持 AI 領先地位，為既有「出口管制反效」論述（Bloomberg 06-26）提供首個正面反駁（2026-07-16，僅單一媒體專訪，待第三方確認） | Pax Silica 政策架構具體內容與推手身分；此論述是否獲其他政策圈人士呼應或反駁 |
+| Moonshot 蒸餾指控與財政部制裁威脅 | 白宮官員指控中國 Moonshot AI 從 Fable「蒸餾」竊取技術，財政部揚言祭出制裁；TechCrunch、南華早報（07-22）兩則標題式報導後，BBC（07-23，source_count=2，另一媒體同步報導同一消息）確認並補足，消息來源具體化為「川普科技顧問」（姓名未指明），制裁對象、範圍、法源依據仍均未見報導 | Moonshot 是否回應；財政部是否公布具體制裁措施；「川普科技顧問」具體身分；是否與 06-10 阿里巴巴蒸餾指控構成同一政策脈絡或屬獨立案件；模型面詳見 [[entities/fable-5]] |
+| 矽谷產業對 Anthropic 對中 AI 限制立場的反彈（新增） | The Information（經 Google News 轉載，僅標題可用）報導矽谷科技業界聯合反對 Anthropic 對中國 AI 的限制立場，具體反對名單、訴求焦點與後續行動均未見報導（2026-07-23） | 是否有具名企業或人士表態；反對訴求鎖定出口管制、蒸餾指控或整體對中鷹派立場；是否影響 Anthropic 州級/聯邦遊說策略 |
+| 中國 AI 實驗室據稱透過 Claude Code 外洩內容縮小差距（新增，待查證） | digitimes（經 Google News 轉載，僅標題可用）報導中國 AI 實驗室透過 Claude Code 相關外洩內容縮小與 Anthropic 的技術差距；外洩內容性質（原始碼／使用紀錄／其他）、涉及哪些實驗室、外洩機制均未見報導，用詞保守處理（2026-07-23） | 外洩內容具體性質與來源；涉及哪些中國 AI 實驗室；是否與既有蒸餾指控（阿里巴巴、Moonshot）構成同一脈絡；技術/安全面待 [[topics/ai-agent-safety]] 補充查證 |
 
 ---
 
@@ -94,6 +97,10 @@ Fable 5 發布後，Amazon 安全研究人員發現特定提示詞可讓模型�
 
 **2026-07-13～07-16，Mythos 風險論述四路同步重新浮現：** 出口管制已於 07-01 全面解除，理論上風險論述應隨解禁降溫，但本週內 Mythos 的風險認知同時在四個彼此獨立的角色浮現，共構同一圖像。**監管機構**：07-13 Reuters 獨家報導（source_count=2），加拿大金融監管機關發給銀行業的網路風險警告信中明確引用 Claude Mythos 作為佐證（電郵內容為報導依據），為出口管制解禁後監管機構首次在正式文件中點名 Mythos 進行風險評估。**金融業高管**：07-16 Reuters 報導摩根大通執行長 Jamie Dimon 公開表示 Mythos 的 AI 風險是「真實的問題」（real issue，僅標題可用，內文待查證），與 06-18 JPMorgan 香港分行因出口管制切斷 Anthropic 存取的既有商業摩擦相呼應，顯示 Mythos 風險認知已從監管文件延伸至金融業高管公開表態（詳見 [[entities/mythos]]）。**國會與軍方**：07-16 Politico（經 Google News 轉載，僅標題可用）報導參議員 Mike Rounds 就 Mythos 接受五角大廈簡報，顯示儘管 06-17 DoD 已將三分之二 AI 工作量移出 Anthropic，國會軍事委員會層級對 Mythos 軍用能力的關注並未消退，具體簡報內容與 Rounds 立場待確認。**政府內部立場矛盾**：07-14 The National Interest（僅標題式轉載）報導國防部長 Hegseth 曾稱 Anthropic 為「國家安全風險」，但 CISA（網路安全暨基礎設施安全局）現正使用其產品，呼應 06-05 Hegseth 首次確認風險標籤的既有敘事，具體使用範圍與官方回應待確認。四則報導來源、角色與傳播管道各自獨立，目前無證據顯示彼此協調或存在因果關聯，且多數（Rounds、Dimon、Hegseth/CISA 三則）僅為標題式轉載，細節待查證；但四方在同一週窗口內同步浮現風險論述，構成「出口管制解除≠風險論述降溫」的具體反例，值得持續觀察是否延燒為更廣泛的跨界監管動作。
 
+**2026-07-22，白宮指控 Moonshot AI 蒸餾 Fable，財政部揚言制裁：** TechCrunch 與南華早報兩獨立媒體（皆經 Google News 轉載，僅標題可用）報導，白宮官員指控中國 Moonshot AI 從 Anthropic 的 Fable 模型「蒸餾」竊取技術，美國財政部隨後揚言對 Moonshot 祭出制裁。此為繼 2026-06-10 Anthropic 自行致函參議院指控阿里巴巴 2,880 萬次蒸餾攻擊（見上文）後第二起蒸餾攻擊指控，但性質不同：前者是 Anthropic 單方對國會提出的企業指控，本次則是白宮官員主動點名並升級至財政部制裁層級，屬「政府對政府」的正式攻防動作，也呼應「阿里巴巴蒸餾指控」在「出口管制必要性論述」中的角色——中國行為者持續蒸餾提取受管制模型能力，為管制/制裁政策提供論述基礎。兩則報導均僅標題可用，制裁具體對象（Moonshot 公司本身或關聯個人/實體）、法源依據（IEEPA／出口管制法規／其他）與範圍均未見報導，Moonshot 方面尚無回應，列為待查證。
+
+**2026-07-23，BBC 確認並具體化消息來源：** BBC（source_count=2，另一媒體同步報導同一消息）就上述 Moonshot 蒸餾指控補充報導，將消息來源具體化為「川普科技顧問」（Trump tech adviser，姓名未指明），而非 07-22 報導的泛稱「白宮官員」；兩獨立媒體確認同一指控存在，但顧問具體身分、財政部制裁進展仍待查證。同日，The Information（經 Google News 轉載，僅標題可用）報導矽谷科技業界聯合反對 Anthropic 對中國 AI 的限制立場——為出口管制主線於 07-01 落幕後，首見「業界」（而非政府或媒體）層級對 Anthropic 對中鷹派立場的集體反彈訊號；具體反對名單、訴求焦點（鎖定出口管制、蒸餾指控或整體對中立場）與後續行動均未見報導，待查證。另有 digitimes（經 Google News 轉載，僅標題可用）報導中國 AI 實驗室透過 Claude Code 相關外洩內容縮小與 Anthropic 的技術差距；此說法若屬實將呼應既有「中國追趕」敘事（WSJ 06-28、Bloomberg 06-26），但「外洩」的具體性質、機制與涉及實驗室均未見報導，用詞保守處理，暫不併入蒸餾指控（阿里巴巴、Moonshot）脈絡，技術安全面待查證見 [[topics/ai-agent-safety]]。
+
 ### 🌍 策略選擇：Anthropic 換戰場而非退讓
 
 面對政府市場持續碰壁，Anthropic 選擇強化其他方向而非妥協：
@@ -118,6 +125,12 @@ Fable 5 發布後，Amazon 安全研究人員發現特定提示詞可讓模型�
 
 | 日期 | 方 | 動作 | 效果 |
 |------|----|------|------|
+| 2026-07-23 | 🏛️🌐 | BBC（source_count=2，另一媒體同步報導）：白宮「川普科技顧問」指控中國 Moonshot AI 從 Anthropic 竊取技術，確認並補足 07-22 TechCrunch/南華早報標題式報導 | 兩獨立媒體確認同一指控，消息來源具體化為「川普科技顧問」（姓名未指明），而非泛稱「白宮官員」；顧問具體身分、財政部制裁進展仍待查證 |
+| 2026-07-23 | 🌐 | The Information（經 Google News 轉載，僅標題可用）：矽谷科技業界聯合反對 Anthropic 對中國 AI 的限制立場 | 出口管制主線落幕後首見「業界」層級對 Anthropic 對中立場的集體反彈訊號；具體反對名單、訴求焦點與後續行動均未見報導，待原文確認 |
+| 2026-07-23 | 🌐 | digitimes（經 Google News 轉載，僅標題可用，用詞保守處理）：中國 AI 實驗室透過 Claude Code 相關外洩內容縮小與 Anthropic 技術差距 | 未經證實的標題式報導，外洩內容性質、涉及實驗室與機制均未見報導；若屬實可能呼應「中國追趕」既有敘事，但暫不併入蒸餾指控脈絡；技術安全面待查證見 [[topics/ai-agent-safety]] |
+| 2026-07-22 | 🏛️🌐 | 白宮官員指控中國 Moonshot AI 從 Anthropic 的 Fable 模型「蒸餾」竊取技術，美國財政部隨後揚言祭出制裁（TechCrunch、南華早報 經 Google News 轉載，僅標題可用，2026-07-22） | 繼 06-10 Anthropic 自行致函參議院指控阿里巴巴 2,880 萬次蒸餾攻擊後，第二起蒸餾攻擊指控，且首次由白宮官員直接點名並升級至財政部制裁威脅，性質從「企業指控」升級為「政府對政府」攻防；制裁具體對象、法源依據、範圍均未見報導，兩則報導僅標題可用，待原文確認 |
+| 2026-07-22 | 🏢 | Anthropic 官方部落格宣布再捐 2000 萬美元予無黨派組織 Public First Action（累計達 4000 萬美元，首筆 2026-02）；聲明明確排除影響任何聯邦/州/地方公職候選人選舉之用途，僅用於公眾教育與政策倡議（Anthropic Blog，2026-07-22 11:53 UTC） | WSJ／The Hill／Axios 同日跟進報導框架為「期中選舉支出翻倍至 4000 萬美元推動 AI 監管」「遊說支出攀升」，與官方「非選舉用途」聲明存在敘事張力；是否與 07-16 Dario 個人捐款 100 萬美元、07-17 員工捐款 300 萬美元屬同一資金脈絡待查證 |
+| 2026-07-22 | 🏛️🌐 | CNBC（經 Google News 轉載，僅標題可用）：聯準會（Fed）曾就 Anthropic 的 Mythos AI 模型發出警示，但相關訊息延遲數月才浮上檯面（2026-07-21 22:05 UTC） | 繼加拿大金融監管機關（07-13）、JPMorgan CEO Dimon（07-16）之後，Fed 成為第三個對 Mythos 表態的金融監管/業界角色，跨機構模式持續擴大；具體警示內容、時間點、延遲原因均未知，待查證；詳見 [[entities/mythos]]（模型記者主責） |
 | 2026-07-17 | 🏢 | SFGATE（經 Google News 轉載，僅標題可用，原文因轉址未確認）：Anthropic 員工捐款 300 萬美元，支持 AI 安全相關法規推動（2026-07-17 16:43 UTC） | 繼 07-16 Dario Amodei 個人捐款 100 萬美元予某 super PAC 後，Anthropic 員工集體捐款規模更大（300 萬美元）；是否流向同一 PAC/組織、支持哪項具體法規均待原文確認（待查證） |
 | 2026-07-16 | 🏛️🌐 | Politico（經 Google News 轉載，僅標題可用，原文因轉址未確認）：參議員 Mike Rounds 就 Anthropic 的 Mythos 接受五角大廈簡報（2026-07-16 20:12 UTC） | 國會軍事委員會層級對 Mythos 軍用能力的關注持續，暗示 05-01 DoD 排除 Anthropic、06-17 三分之二工作量轉移後，軍事戰場仍有國會層級後續動態；具體簡報內容與 Rounds 立場待確認 |
 | 2026-07-16 | 🌐 | WIRED 分析並確認 Anthropic 正積極遊說美國各州加快 AI 監管腳步（州級而非僅聯邦層級政策遊說），延續並補強 07-15 Politico 標題式報導（2026-07-16 18:35 UTC） | 州級規則倡議首度獲具分析深度的媒體（WIRED）確認，非僅標題轉載；具體州別與規則內容仍待報導揭露 |
@@ -214,6 +227,9 @@ Fable 5 發布後，Amazon 安全研究人員發現特定提示詞可讓模型�
 
 ## 參考來源
 
+- [[news/2026-07-24]]
+- [[news/2026-07-23]]
+- [[news/2026-07-22]]
 - [[news/2026-07-18]]
 - [[news/2026-07-16]]
 - [[news/2026-07-15]]
@@ -239,6 +255,17 @@ Fable 5 發布後，Amazon 安全研究人員發現特定提示詞可讓模型�
 - [Chris Olah Vatican Remarks](https://www.anthropic.com/news/chris-olah-pope-leo-encyclical) — Anthropic Blog
 
 ## 時序
+
+### 2026-07-23
+- **[待查證，source_count=2] BBC：川普科技顧問指控 Moonshot AI 從 Anthropic 竊取技術**：BBC（經 Google News 轉載，另一媒體同步報導同一消息，source_count=2）報導白宮「川普科技顧問」指控中國 Moonshot AI 從 Anthropic 竊取技術；確認並補足 07-22 TechCrunch／南華早報標題式報導，消息來源具體化為「川普科技顧問」（姓名未指明）；財政部制裁具體措施與顧問身分仍待查證（Google News/BBC，2026-07-23 23:50 UTC）
+- **[待查證] digitimes：中國 AI 實驗室據稱透過 Claude Code 外洩內容縮小技術差距**：Google News 轉載 digitimes 標題，稱中國 AI 實驗室透過 Claude Code 相關外洩內容縮小與 Anthropic 的技術差距；僅標題可用，外洩內容性質、涉及實驗室與具體機制均未見報導，用詞保守處理（Google News/digitimes，2026-07-23 22:29 UTC）
+- **[待查證] The Information：矽谷科技業界聯合反對 Anthropic 對中國 AI 限制立場**：Google News 轉載 The Information 標題，稱矽谷科技業界聯合反對 Anthropic 對中國 AI 的限制立場；僅標題可用，具體反對名單、訴求焦點與後續行動均未見報導（Google News/The Information，2026-07-23 15:30 UTC）
+- **[待查證] 白宮指控 Moonshot AI 蒸餾 Fable，財政部揚言制裁**：TechCrunch（經 Google News 轉載）報導白宮官員指控中國 Moonshot AI 從 Anthropic 的 Fable 模型「蒸餾」竊取技術，美國財政部隨後揚言祭出制裁；同日南華早報（經 Google News 轉載）獨立報導同一事件，稱川普政府科技官員（未具名職稱細節）指控 Moonshot AI 從 Anthropic 竊取技術。兩則報導均僅標題可用，制裁具體對象、範圍與法源依據待核實。此為繼 2026-06-10 Anthropic 指控阿里巴巴 2,880 萬次蒸餾攻擊後第二起蒸餾攻擊指控，首度由白宮官員直接點名並升級至財政部制裁層級（Google News/TechCrunch，2026-07-22；Google News/South China Morning Post，2026-07-22）
+
+### 2026-07-22
+- **[官方確認] Anthropic 再捐 2000 萬美元予 Public First Action，累計達 4000 萬美元**：Anthropic 官方部落格宣布再捐贈 2000 萬美元給無黨派組織 Public First Action（此前已捐 2000 萬美元於 2026-02，累計達 4000 萬美元）；Public First Action 致力於教育大眾認識 AI，並與支持合理 AI 保護措施的共和黨、民主黨、無黨籍人士合作。聲明明確強調：兩筆捐款皆僅用於支持該組織的公眾教育與政策倡議使命，**不得用於影響任何聯邦、州或地方公職候選人的選舉**（Anthropic Blog，2026-07-22 11:53 UTC；https://www.anthropic.com/news/donation-public-first-action）
+- **[媒體框架張力] WSJ／The Hill／Axios 同日跟進**：WSJ 標題「Anthropic Doubles Midterm Spending to $40 Million to Push AI Regulation」；The Hill 標題「Anthropic pours another $20 million into AI safety group」；Axios 標題「Anthropic ramps up lobbying spending amid AI policy fights」；三者僅標題可用，但與官方公告同一事件，將捐款框定為「期中選舉支出」「遊說支出」，與官方聲明強調「非選舉用途」的措辭形成張力，待原文確認框架依據（Google News/WSJ、The Hill、Axios，2026-07-22）
+- **[待查證] CNBC：聯準會（Fed）曾就 Mythos 發出警示，延遲數月曝光**：CNBC（經 Google News 轉載，僅標題可用）報導聯準會（Federal Reserve）曾針對 Anthropic 的 Mythos AI 模型發出警示，但相關訊息延遲數月才浮上檯面；具體警示內容、時間點、延遲原因均未知，原文為轉址連結無法確認細節。為繼加拿大金融監管機關（07-13 Reuters）、JPMorgan CEO Dimon（07-16 Reuters）之後，第三個對 Mythos 表態的金融監管/業界角色，詳見 [[entities/mythos]]（Google News/CNBC，2026-07-21 22:05 UTC）
 
 ### 2026-07-17
 - **[待查證] SFGATE：Anthropic 員工捐款 300 萬美元支持 AI 安全法規推動**：Google News 轉載 SFGATE 標題，稱 Anthropic 員工捐款 300 萬美元，支持 AI 安全相關法規推動；僅標題可用，原文為轉址頁面，捐款對象（是否為 super PAC 或其他組織）、支持的具體法規均未展開（Google News/SFGATE，2026-07-17 16:43 UTC）
