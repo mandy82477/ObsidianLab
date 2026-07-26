@@ -1166,6 +1166,15 @@ code {
 .detail__body p { margin-bottom: 14px; color: var(--ink-1); }
 .detail__body p:last-child { margin-bottom: 0; }
 .detail__body strong { color: var(--ink-1); font-weight: var(--fw-medium); }
+/* Run-in lead — 段首粗體導語（如「產品定位：」）錨點樣式，長文節奏落點（美感 review P1-6）。
+   渲染層判準見 app.js markRunInLeads()：段落開頭 <strong> 且以全形冒號結尾。 */
+.detail__body strong.run-in-lead {
+  font-family: var(--font-sans);
+  color: var(--ochre-9);
+  font-size: 13px;
+  letter-spacing: 0.03em;
+  font-weight: var(--fw-medium);
+}
 .detail__body h2 {
   font-family: var(--font-mono);
   font-size: 13px; font-weight: var(--fw-medium);
@@ -2200,6 +2209,9 @@ code {
   letter-spacing: 0.14em; color: var(--ink-3);
   text-transform: uppercase;
 }
+/* Today feed rhythm reinforcement — scoped to #view-today only (weekly page
+   reuses .section__h + .weekly-section__h and must stay untouched, P1-6). */
+#view-today .section__h { border-top-width: 1.5px; border-top-color: var(--border-strong); }
 
 /* ============================================================
    Source ribbon — one-line mono source counts

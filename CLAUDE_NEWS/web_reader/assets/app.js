@@ -84,9 +84,15 @@
   // a plain entity/topic — purely a presentation-layer label, data layer untouched
   const KB_COMPARISON_SLUGS = ['model-comparison', 'anthropic-commitments', 'feature-radar', 'official-community-gap'];
 
-  const KB_TYPE_LABEL = { entity: '檔案', topic: '議題', comparison: '對照' };
+  const KB_TYPE_LABEL = { entity: '檔案', topic: '議題', comparison: '對照', weekly: '週更' };
   function kbTypeOf(item) {
     return KB_COMPARISON_SLUGS.includes(item.id) ? 'comparison' : item._kbBaseType;
+  }
+  // Sort-only grouping: weekly-cadence pages (updateFreq set) cluster into their
+  // own group regardless of underlying entity/topic/comparison type. Display-layer
+  // kbTypeOf() above is untouched — this only feeds the kbType sort comparator.
+  function kbSortGroupOf(item) {
+    return item.updateFreq ? 'weekly' : kbTypeOf(item);
   }
 
   // Status sort priority (lower = higher priority / shown first in desc)
@@ -106,8 +112,8 @@
         av = statusPriority(a.status);
         bv = statusPriority(b.status);
       } else if (key === 'kbType') {
-        av = kbTypeOf(a);
-        bv = kbTypeOf(b);
+        av = kbSortGroupOf(a);
+        bv = kbSortGroupOf(b);
       } else if (key === 'lastUpdated') {
         av = a.lastUpdated || a.startDate || a.firstSeen || '';
         bv = b.lastUpdated || b.startDate || b.firstSeen || '';
@@ -122,6 +128,13 @@
       // date fields default desc; missing dates sort to end
       const emptyLast = (!a[key] ? 1 : 0) - (!b[key] ? 1 : 0);
       if (emptyLast !== 0) return emptyLast;
+      // kbType groups (含週更自成一組) sort by name within a tied group
+      if (key === 'kbType' && cmp === 0) {
+        const an = (a.name || a.id || '').toLowerCase();
+        const bn = (b.name || b.id || '').toLowerCase();
+        const nameCmp = an < bn ? -1 : an > bn ? 1 : 0;
+        return dir === 'asc' ? nameCmp : -nameCmp;
+      }
       return dir === 'asc' ? cmp : -cmp;
     });
   }
@@ -448,12 +461,14 @@
     const filtered = activeDomain === 'all' ? sorted : sorted.filter(i => i.domain === activeDomain);
     container.innerHTML = filtered.map(item => {
       const kbType = kbTypeOf(item);
-      const typeLabel = KB_TYPE_LABEL[kbType] || '檔案';
+      const isWeeklyCadence = !!item.updateFreq;
+      const typeLabel = isWeeklyCadence ? KB_TYPE_LABEL.weekly : (KB_TYPE_LABEL[kbType] || '檔案');
+      const typePillCls = isWeeklyCadence ? 'weekly' : kbType;
       const rowCls = kbType === 'topic' ? 'entity-row entity-row--topic' : 'entity-row';
       return `
 <div class="${rowCls}" onclick="openWikiPage('${esc(item.id)}','${item._kbBaseType}')">
   <div class="entity-row__name"><span class="entity-row__slug">${esc(item.id)}</span></div>
-  <div><span class="kb-type-pill kb-type-pill--${kbType}">${esc(typeLabel)}</span>${item.updateFreq ? ' <span class="kb-type-pill kb-type-pill--weekly">🗓️ 週更</span>' : ''}</div>
+  <div><span class="kb-type-pill kb-type-pill--${typePillCls}">${isWeeklyCadence ? '<svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:-1px;margin-right:3px"><rect x="3" y="5" width="18" height="16" rx="1"></rect><line x1="3" y1="9" x2="21" y2="9"></line><line x1="8" y1="3" x2="8" y2="7"></line><line x1="16" y1="3" x2="16" y2="7"></line></svg>' : ''}${esc(typeLabel)}</span></div>
   <div><span class="pill pill--${item.pill}">${esc(statusLabelShort(item.status))}</span></div>
   <div class="entity-row__summary">${esc(item.latestHeadline || '')}</div>
   <div class="entity-row__updated">${item.lastNewsUpdate === today ? '<span class="badge-new">今日</span>' : ''}${esc(item.lastNewsUpdate || item.lastUpdated || item.startDate || item.firstSeen || '')}</div>
@@ -765,6 +780,12 @@
     return (stripped && stripped !== title) ? stripped : '';
   }
 
+  // 段首粗體導語（如「**產品定位：**…」）升級為 run-in 錨點樣式——純渲染層處理，
+  // 不動 wiki markdown 來源。判準：段落開頭 <strong> 且內容以全形冒號結尾。
+  function markRunInLeads(html) {
+    return html.replace(/<p><strong>([^<]*：)<\/strong>/g, '<p><strong class="run-in-lead">$1</strong>');
+  }
+
   function renderMarkdownBody(raw, opts = {}) {
     let md = raw || '';
     md = md.replace(/^#[^#][^\n]*\n/, '');
@@ -775,7 +796,7 @@
       return `<pre style="white-space:pre-wrap;font-size:13px">${esc(md)}</pre>`;
     }
     md = md.replace(/\[\[([^\]]+)\]\]/g, (_, p) => `<WIKILINK>${p}</WIKILINK>`);
-    return linkifyWikilinks(marked.parse(md));
+    return markRunInLeads(linkifyWikilinks(marked.parse(md)));
   }
 
   // ── Weekly reports — journal layout（期刊版面，見 web-reader-design.md）──────
