@@ -3090,3 +3090,17 @@ Append-only 紀錄。每次 ingest、lint，以及**揭露缺陷或促成改動�
 - **資料修復：** 07-25 那 35 則已改回未確認，會在次日抓料重新提供並經由新路徑進入 wiki 評估。
 - **驗證：** 123 個測試全綠（含 omissions 清單的 6 個新測試）；`list_digest_omissions.py` 對 07-25 實跑列出 35 則、最高互動兩則排在最前。
 - **教訓：** 這是「修對現象、修錯層」的個案——覆蓋率不足只是表徵，真正的不變量是「沉澱層必須看得到全量」。定位缺陷時要先問這個不變量該由哪一層保證。
+
+## 2026-07-26 週度延伸回顧
+
+- 範圍：`news/2026-07-19.md` ～ `news/2026-07-25.md`；六記者並行判斷（`model: sonnet`），使用者確認 4/4 全部執行
+- 延伸（皆已落地）：
+  - **新增頁面** `topics/community-large-codebase-workflow.md`（社群記者）：把 `topics/community-tech-patterns.md` 中散落 05-02～07-22 的節點，依「並行規模的極限與對策／Context 與 Token 管理／Codebase 索引與記憶／除錯與分工架構」四條線縫成主線，附主線概覽表與 delta-first callout；官方機制只以 wikilink 指向 [[entities/claude-code]]、[[entities/managed-agents]]，不重寫官方文件；與 patterns 頁互加 wikilink（摘要段 + 相關實體）
+  - `topics/competitor-landscape.md`（商業記者）：Kimi K3 vs Fable 5 的量化成本比（效果相當、成本約 1/3、速度慢約 4 倍，The New Stack 07-20）從敘事段落補進「競品定價對照」表，與既有「換算成本倍數」列並排；敘事段落保留
+  - `entities/boris-cherny.md`（人物記者）：`## 公開言論與主張` 前加開結構化摘要表（日期／主題分類／一句話論述／立場延續或轉折），納入 14 則；排除已查明實為 Fiona Fung 發言的「工程師更孤獨」一則，Bloomberg 未具名報導維持待查證、轉折欄誠實標「—」
+  - `topics/model-comparison.md`（模型記者）：補記 07-23 Reddit 三方實測（同 100 則前端需求測 GPT-5.6 Sol／Opus 4.8／Grok 4.5，公開 300 筆產出），附時效性 warning——Opus 4.8 已於 07-25 被 Opus 5 取代次旗艦定位
+- 使用者跳過項目：無（記者曾建議跳過 model-comparison 那條因時效性下降，使用者裁定仍執行）
+- 回報「無」的領域：功能、安全政策。兩者各留一個觀察哨——功能：`/code-review` 若再出現第三次行為變更，可評估在 `entities/claude-code.md` 開「演進小節」單一入口；安全政策：「矽谷業界聯合反對對中限制」若出現具名企業表態或具體訴求，可從表格列升格為獨立段落
+- reader-notes 消費：07-22「大型 codebase 效率」→ ✅ 已納入（建頁落地）；07-12「GPT-5.6 vs Claude」→ 模型與商業記者本週再查仍無官方對比數字（Opus 5 發布僅稱「matching or beating Fable 5」，未對比 GPT-5.6 Sol），維持 ⏳ 被動觸發；📌 07-07 雜記未逾 30 天，保留
+- 聚焦校準：本月已於 07-16 執行（命中率 36%），依 `metrics.md` 產出物判斷，跳過
+- 使用者另提需求：`topics/model-comparison.md`「適合／不適合做什麼」品質不佳，已另派深度評價 review（含體裁範本並排比對），結果待回報後決定改寫範圍

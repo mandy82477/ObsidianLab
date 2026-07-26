@@ -3,7 +3,7 @@
 **狀態：** monitoring
 **領域：** 🌐 社群
 **開始日期：** 2026-04-25
-**最後更新：** 2026-07-24
+**最後更新：** 2026-07-26
 **最後新聞更新：** 2026-07-24
 
 > **最新工作流模式**（2026-07-24）
@@ -16,6 +16,8 @@
 追蹤 Claude Code 社群在實際開發中累積的**工作流與應用模式**。本頁收錄的模式類型包括 Multi-agent 架構、Skills 設計、CLAUDE.md 管理、Hooks 與自動化、模型使用策略、Token 成本優化、記憶與知識管理、Plugin/MCP 整合等，持續累積形成社群最佳實踐知識庫。
 
 工具目錄（活躍度 / 採用狀態）見 [[topics/community-tech-tools]]。概念辯論、設計哲學與技術反思見 [[topics/community-tech-discussions]]。本頁模式萃取出的**宏觀趨勢 + 對現有設計的啟示**見 [[topics/community-pattern-trends]]（週更）。技術彙整已按月份分組，可由月份標題快速跳轉。
+
+大型 codebase 上的規模化開發（並行規模極限、Context/Token 管理、Codebase 索引與記憶、除錯與分工架構）已縫成主題式主線，見 [[topics/community-large-codebase-workflow]]。
 
 ---
 
@@ -1126,6 +1128,7 @@ Claude Code 的三種多 agent 機制，可對應到 Anthropic《Building Effect
 - [[entities/claude-design]]（AI 設計工具，與 Claude Code + Figma MCP 工作流有定位重疊）
 - [[topics/community-tech-discussions]]（概念辯論、設計哲學、實證研究）
 - [[topics/community-tech-timeline]]（2026-04-25 至今完整時序記錄，從本頁拆分）
+- [[topics/community-large-codebase-workflow]]（大型 codebase 規模化開發主題式主線：並行規模、Context/Token 管理、索引與記憶、除錯與分工，從本頁節點縫成）
 
 ## 參考來源
 

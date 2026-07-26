@@ -3,7 +3,7 @@
 **狀態：** monitoring
 **領域：** 💼 商業
 **開始日期：** 2026-04
-**最後更新：** 2026-07-25
+**最後更新：** 2026-07-26
 **最後新聞更新：** 2026-07-25
 
 > **最新競品動態**（2026-07-25）
@@ -36,6 +36,7 @@ Claude Code 已成為 AI 輔助編碼的標竿產品，但競爭正快速升溫�
 | Antigravity | 待查證（tech-insider.org 比較文僅稱方案範圍涵蓋「免費至 $200」，未逐一指明各工具個別對應價格）| 本頁首次出現的競品名稱；與 Cursor、Claude Code 並列比較，資訊量過少，無法判斷其產品定位或市佔，待後續報導補充 | 2026-07-23（Google News/tech-insider.org）|
 | Cline | 免費（Free）| 開源 VS Code 擴充套件，tech-insider.org 比較文將其定位為 Claude Code（$20/月）與 GitHub Copilot（$10/月，方案版本未指明）之間的免費替代方案；僅標題層級比較，未提供各工具用量限制、功能差異等具體核實內容，**待查證** | 2026-07-22（Google News/tech-insider.org）|
 | pi-coding-agent | 未見具體掛牌價，僅稱「約為 Claude Code / Codex 之半」（DataBricks 評測，Reddit r/LocalLLaMA 轉述，單一來源未經官方交叉確認，**待查證**）| 若屬實代表低成本編碼 agent 持續逼近 Claude Code；GLM-5.2（Zhipu/Zai，753B 總參數/40B active）：Artificial Analysis Intelligence Index v4.1 外部佐證為開源模型榜首，FrontierSWE 74.4 vs Opus 4.8 75.1（僅差 0.7）、Terminal-Bench 2.1 81.0、SWE-bench Pro 62.1（**非日報進料**，來自使用者 2026-07-17 手動查證，詳見 [[log]] 2026-07-17「地端 AI server 商業評估」Query 條目；單一外部來源，非 Anthropic 官方數字，仍標**待查證**）| 2026-07-10（Reddit，pi-coding-agent 部分）／2026-07-17（GLM-5.2 部分，使用者查證）|
+| Kimi K3（Moonshot AI）| 未見具體掛牌價，僅見與 Fable 5 的相對成本對比：實測成本約為 Fable 5 的**三分之一**，但速度慢約**4 倍** | 效果與 Fable 5 相當，「性價比」而非「速度」維度構成直接威脅；速度落後可能限制其在時間敏感型 agent 工作流的替代性 | 2026-07-20（The New Stack）|
 | GitHub Copilot Pro+ | $39/月（含 Opus 存取，但對 Opus 使用採 **27 倍**加價換算）| 名義月費低於 Claude Max，但重度使用 Opus 時實際換算成本可能反超；作者實測建議直接用 Anthropic API 更划算 | 2026-05-06（開發者實測分析）|
 | DeepSeek V4 Flash（API） | 未見具體掛牌價，僅見「成本降低逾 100 倍」對比 Anthropic API 定價之定性描述 | 開源、低價策略正面衝擊 Anthropic「API 高價補貼 agent 服務」的商業邏輯；Microsoft 等已切換部分執行層 | 2026-06-26（rtrvr.ai）|
 | DeepSeek（Lindy 案例，API 整體遷移）| 未見換算後月費數字，僅見「每月省下數百萬美元」（Lindy 全公司規模）| 「最省錢 > 最強模型」具名案例，屬企業級大規模用量的相對節省，非單一訂閱價格對比 | 2026-06-29（CNBC）|

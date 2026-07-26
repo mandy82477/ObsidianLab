@@ -3,7 +3,7 @@
 **狀態：** ongoing
 **領域：** 🤖 模型
 **開始日期：** 2026-07-02
-**最後更新：** 2026-07-25
+**最後更新：** 2026-07-26
 **最後新聞更新：** 2026-07-25
 
 > **最新對照更新**（2026-07-25）
@@ -62,6 +62,16 @@
 | 相同 iOS 卡路里追蹤 App brief 對比（影片） | 無文字結論，僅影片示範，未附文字評測摘要 | 同一需求、不同模型輸出的並排展示 | Reddit r/ClaudeCode「GPT-5.6 Sol vs Claude Fable 5 on the same iOS calorie-tracker brief」，2026-07-14 |
 
 **小結**：GPT-5.6 Sol vs Fable 5 的社群實測持續出現，本輪均為 r/ClaudeCode 單一使用者觀點，Reddit RSS score 恆 0（非跨平台佐證），訊號強度偏弱；速度與 bug 數量的主觀評價傾向 Fable 5 勝出，但 Sol 5.6 額度重置頻率被使用者視為明顯優勢——兩者呈現「能力 vs 配額體驗」的不同勝負軸，不構成單一結論，需更多獨立來源與量化 benchmark 佐證。
+
+### 社群實測觀察：GPT-5.6 Sol vs Opus 4.8 vs Grok 4.5（三方同題，⚠️ 時效性下降）
+
+> **⚠️ 時效性提示**：本輪測試對象 Opus 4.8 已於 **2026-07-25** 被 [[entities/opus-5|Opus 5]] 取代次旗艦定位（詳見上方陣容變化）。此筆數據反映的是**舊陣容**下的表現，讀者不應把 Opus 4.8 的結果誤讀為當前 Claude 陣容（Fable 5 / Opus 5 / Sonnet 5）的代表，僅作為歷史對照保留。
+
+| 觀察 | 結論 | 樣本條件 | 來源與日期 |
+|------|------|---------|-----------|
+| 相同 100 則前端需求，三模型同題測試 | 作者公開全部 300 筆產出供比較，未見文字版總結論（僅並陳結果） | 使用者以相同 100 則前端 brief 分別測試 GPT-5.6 Sol、Claude Opus 4.8、Grok 4.5，公開全部 300 筆產出，屬並排展示非量化 benchmark；Reddit RSS score 恆 0，非跨平台佐證 | Reddit r/ClaudeAI「[I gave GPT-5.6 Sol, Claude Opus 4.8, and Grok 4.5 the same 100 frontend briefs—here are all 300 results](https://www.reddit.com/r/ClaudeAI/comments/1uyb1i9/i_gave_gpt56_sol_claude_opus_48_and_grok_45_the/)」（週熱門），2026-07-23 |
+
+**小結**：此為單一作者的並排產出展示，非評分式 benchmark，訊號強度偏弱（Reddit 週熱門標記但無量化結論文字）；且測試對象 Opus 4.8 已因 Opus 5 發布退居「已被取代」狀態，此筆數據的參考價值隨陣容更新而下降，僅供歷史對照。
 
 ### token 成本：兩個方向相反的實測結果（並陳，不選邊）
 

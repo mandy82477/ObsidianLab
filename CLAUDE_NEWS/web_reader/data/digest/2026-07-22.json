@@ -684,6 +684,11 @@
       "id": "mythos",
       "name": "Claude Mythos",
       "pageType": "entity"
+    },
+    {
+      "id": "community-large-codebase-workflow",
+      "name": "大型 Codebase 規模化開發：社群工作流主線",
+      "pageType": "topic"
     }
   ]
 }
