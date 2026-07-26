@@ -9,3 +9,13 @@
 [週日 2026/07/26 13:05:23.00] Step 1a: SKIPPED（雲端由 GitHub Actions 負責抓料）
 [週日 2026/07/26 13:05:23.00] ABORTED: gathered_items.json date=2026-07-25 items=73，非目標日期的新鮮資料
 [週日 2026/07/26 13:05:23.00] === Pipeline complete (agent) ===
+[週日 2026/07/26 22:30:00.00] === Agent pipeline start (2026-07-26, 本機補跑) ===
+[週日 2026/07/26 22:30:00.00] Step 0: 昨日日報存在 (2026-07-25) - OK
+[週日 2026/07/26 22:30:00.00] Aggregator OK - 51 則 10/10 來源，日報 27 則已 commit，emitted-cache 已確認並 commit，原料已歸檔 gathered_archive/2026-07-26.json
+[週日 2026/07/26 22:30:00.00] Wiki ingest OK - 雙輸入（日報 27＋未收錄 24）五類記者並行完成，更新 9 頁；index.md/log.md/source_attribution.jsonl 已彙整（27 筆歸因）；feature-radar 本日無變更；另完成 model-comparison 快速選型表排版修復
+[週日 2026/07/26 22:44:44.00] Step 3: Wiki commit OK (18d5ecb) - wiki/ + data/source_attribution.jsonl
+[週日 2026/07/26 22:44:44.00] Step 4: run_tests.py OK (144 tests + check_rules + check_arch_docs 全通過)
+[週日 2026/07/26 22:44:44.00] Building web reader... OK (31 entities, 20 topics, 92 digests, 1 weekly)
+[週日 2026/07/26 22:44:44.00] Step 5: Web commit OK (7a593f6)
+[週日 2026/07/26 22:44:44.00] Single push done (news + wiki + web) - 首次嘗試即成功，無需重試
+[週日 2026/07/26 22:44:44.00] === Pipeline complete (agent) ===
