@@ -83,6 +83,7 @@
 
 - ❌ gradient（background 和 border 都不行）
 - ❌ box-shadow（除非是 focus ring）
+  - `[裁決: 2026-07-26]` 品牌 token 檔（`.claude/skills/claude-news-llm-wiki-design/colors_and_type.css`）定義的 `--shadow-1/--shadow-2`（"one whisper for elevated paper"）在本站**刻意不使用**——2026-07-26 美感 review 曾提議放寬給三處抬升容器，使用者裁決維持全面禁用。此為已裁決事項，後續 review 不需再提
 - ❌ 平台 emoji 作為 UI 圖示
 - ❌ `--font-mono` 用在 UI 控制元件
 - ❌ 第二強調色（只有 ochre）
