@@ -247,6 +247,20 @@
       ]
     },
     {
+      "name": "model-comparison 選型品質審核六條規則齊全（決策可用性的單一真相源）",
+      "assertion": "all_contain",
+      "files": [".claude/rules/wiki-ingest-models.md"],
+      "patterns": [
+        "model-comparison 選型品質審核",
+        "禁止同義反覆",
+        "不可用讀者取不到的模型當唯一淘汰基準",
+        "社群效能討論一律留數字",
+        "決策層的嚴謹度不得低於證據層",
+        "陣容換代時同步骨架",
+        "3 跳自檢"
+      ]
+    },
+    {
       "name": "本機/雲端行為一致：閘門・重試・補跑規則必須在共用步驟檔內",
       "assertion": "all_contain",
       "files": [".claude/commands/news-pipeline-steps.md"],
