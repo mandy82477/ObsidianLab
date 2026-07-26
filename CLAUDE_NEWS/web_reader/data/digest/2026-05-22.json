@@ -11,5 +11,17 @@
   "billing": [],
   "focus": [],
   "sourceStatus": [],
-  "preview": ""
+  "preview": "",
+  "sedimentedToday": [
+    {
+      "id": "opencode",
+      "name": "OpenCode",
+      "pageType": "entity"
+    },
+    {
+      "id": "community-tech-timeline",
+      "name": "社群技術應用趨勢 — 時序記錄",
+      "pageType": "topic"
+    }
+  ]
 }

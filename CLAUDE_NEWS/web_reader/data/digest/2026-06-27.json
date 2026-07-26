@@ -168,5 +168,12 @@
     }
   ],
   "sourceStatus": [],
-  "preview": ""
+  "preview": "",
+  "sedimentedToday": [
+    {
+      "id": "ai-agent-safety-archive",
+      "name": "AI Agent 安全與可靠性 — 時序存檔",
+      "pageType": "topic"
+    }
+  ]
 }

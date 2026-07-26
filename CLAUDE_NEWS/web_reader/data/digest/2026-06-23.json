@@ -166,5 +166,12 @@
     }
   ],
   "sourceStatus": [],
-  "preview": "[anthropics/claude-code] v2.1.186"
+  "preview": "[anthropics/claude-code] v2.1.186",
+  "sedimentedToday": [
+    {
+      "id": "fiona-fung",
+      "name": "Fiona Fung",
+      "pageType": "entity"
+    }
+  ]
 }

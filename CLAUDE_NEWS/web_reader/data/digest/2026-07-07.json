@@ -115,7 +115,13 @@
       "time": "07/07 09:04",
       "sentiment": "",
       "body": "FedScoop 報導 Anthropic 延攬曾任職 Microsoft、AWS 的 Teresa Carlson，主導公部門業務。",
-      "focusTags": []
+      "focusTags": [],
+      "sedimented": [
+        {
+          "id": "teresa-carlson",
+          "pageType": "entity"
+        }
+      ]
     },
     {
       "title": "Anthropic found Claude's hidden workspace",
@@ -528,5 +534,12 @@
       "count": 10
     }
   ],
-  "preview": "[anthropics/claude-code] v2.1.202"
+  "preview": "[anthropics/claude-code] v2.1.202",
+  "sedimentedToday": [
+    {
+      "id": "teresa-carlson",
+      "name": "Teresa Carlson",
+      "pageType": "entity"
+    }
+  ]
 }

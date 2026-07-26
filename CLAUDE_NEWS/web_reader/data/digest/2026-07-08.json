@@ -40,7 +40,13 @@
       "time": "07/07 15:52",
       "sentiment": "",
       "body": "Claude Tag 的 GitHub 操作一度出現錯誤率升高，官方調整後觀察到錯誤率下降，於 15:52 UTC 解決。",
-      "focusTags": []
+      "focusTags": [],
+      "sedimented": [
+        {
+          "id": "claude-tag",
+          "pageType": "entity"
+        }
+      ]
     }
   ],
   "mediaReports": [
@@ -788,5 +794,12 @@
       "count": 12
     }
   ],
-  "preview": "[anthropics/claude-code] v2.1.204"
+  "preview": "[anthropics/claude-code] v2.1.204",
+  "sedimentedToday": [
+    {
+      "id": "claude-tag",
+      "name": "Claude Tag",
+      "pageType": "entity"
+    }
+  ]
 }

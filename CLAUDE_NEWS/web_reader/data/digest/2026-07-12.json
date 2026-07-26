@@ -537,5 +537,6 @@
       "count": 10
     }
   ],
-  "preview": "Claude Code sends 33k tokens before reading the prompt; OpenCode sends 7k"
+  "preview": "Claude Code sends 33k tokens before reading the prompt; OpenCode sends 7k",
+  "sedimentedToday": []
 }

@@ -144,6 +144,12 @@
       "body": "報導稱 Anthropic 聘請 Monzo 共同創辦人 Tom Blomfield。",
       "focusTags": [
         "[持續追蹤]"
+      ],
+      "sedimented": [
+        {
+          "id": "tom-blomfield",
+          "pageType": "entity"
+        }
       ]
     },
     {
@@ -692,5 +698,27 @@
       "count": 7
     }
   ],
-  "preview": "[BUG] Claude Desktop doesn't connect to Custom MCPs altogether (not with OAuth 2.1 nor with SSE)"
+  "preview": "[BUG] Claude Desktop doesn't connect to Custom MCPs altogether (not with OAuth 2.1 nor with SSE)",
+  "sedimentedToday": [
+    {
+      "id": "tom-blomfield",
+      "name": "Tom Blomfield",
+      "pageType": "entity"
+    },
+    {
+      "id": "ai-talent-flow",
+      "name": "AI 實驗室人才流動",
+      "pageType": "topic"
+    },
+    {
+      "id": "code-quality-decline",
+      "name": "Claude Code 效能退步事件",
+      "pageType": "topic"
+    },
+    {
+      "id": "recursive-self-improvement",
+      "name": "AI 遞歸自我改進與全球暫停呼籲",
+      "pageType": "topic"
+    }
+  ]
 }

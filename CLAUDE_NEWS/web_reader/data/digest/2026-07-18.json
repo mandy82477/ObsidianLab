@@ -198,7 +198,13 @@
       "time": "07/17 20:15",
       "sentiment": "",
       "body": "Education Week 報導 Anthropic 推出面向教師族群的 Claude 版本，並指出部分評論者對此表達疑慮。",
-      "focusTags": []
+      "focusTags": [],
+      "sedimented": [
+        {
+          "id": "claude-for-teachers",
+          "pageType": "entity"
+        }
+      ]
     },
     {
       "title": "Anthropic Says Chatbots Have What May Be a Key Feature of Consciousness. Are They Right? - SingularityHub",
@@ -796,5 +802,12 @@
       "count": 12
     }
   ],
-  "preview": "Meta in Talks to Lease Computing Power to Anthropic in Potential $10 Billion Deal - The New York Times"
+  "preview": "Meta in Talks to Lease Computing Power to Anthropic in Potential $10 Billion Deal - The New York Times",
+  "sedimentedToday": [
+    {
+      "id": "claude-for-teachers",
+      "name": "Claude for Teachers",
+      "pageType": "entity"
+    }
+  ]
 }

@@ -85,6 +85,12 @@
       "body": "諾貝爾化學獎得主 John Jumper 帶頭，Google 市值蒸發 2,700 億美元，Gemini 3.5 延期，Anthropic 趁 Mythos 危機期間逆勢吸引頂尖人才。",
       "focusTags": [
         "[重大事件]"
+      ],
+      "sedimented": [
+        {
+          "id": "john-jumper",
+          "pageType": "entity"
+        }
       ]
     },
     {
@@ -232,5 +238,17 @@
     }
   ],
   "sourceStatus": [],
-  "preview": "[anthropics/claude-code] v2.1.193"
+  "preview": "[anthropics/claude-code] v2.1.193",
+  "sedimentedToday": [
+    {
+      "id": "john-jumper",
+      "name": "John Jumper",
+      "pageType": "entity"
+    },
+    {
+      "id": "tom-brown",
+      "name": "Tom Brown",
+      "pageType": "entity"
+    }
+  ]
 }

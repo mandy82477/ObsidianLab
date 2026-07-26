@@ -2186,6 +2186,7 @@ window.WIKI_DATA = {
       "topCount": 4
     }
   ],
+  "weeklyIndex": [],
   "radar": {
     "id": "feature-radar",
     "pageType": "radar",

@@ -569,7 +569,13 @@
       "time": "07/21 12:54 UTC 🤔",
       "sentiment": "",
       "body": "Simon Willison 整理他在 AI Engineer World's Fair 主持的爐邊對談紀要，與談人為 Anthropic 的 Cat Wu 與 Thariq Shihipar。",
-      "focusTags": []
+      "focusTags": [],
+      "sedimented": [
+        {
+          "id": "cat-wu",
+          "pageType": "entity"
+        }
+      ]
     }
   ],
   "billing": [],
@@ -667,5 +673,17 @@
       "count": 6
     }
   ],
-  "preview": "Show HN: A self-running space economy SIM in Rust and Bevy"
+  "preview": "Show HN: A self-running space economy SIM in Rust and Bevy",
+  "sedimentedToday": [
+    {
+      "id": "cat-wu",
+      "name": "Cat Wu",
+      "pageType": "entity"
+    },
+    {
+      "id": "mythos",
+      "name": "Claude Mythos",
+      "pageType": "entity"
+    }
+  ]
 }

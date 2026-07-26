@@ -340,7 +340,13 @@
       "time": "07/24 10:28",
       "sentiment": "😤",
       "body": "新手使用者反映燒了不少 token 才發現 Claude Security 沒有 Workflow tool 的存取權限，卡在使用上的困惑。",
-      "focusTags": []
+      "focusTags": [],
+      "sedimented": [
+        {
+          "id": "claude-security",
+          "pageType": "entity"
+        }
+      ]
     },
     {
       "title": "Day 11 building a game with Claude Code: someone has played my game for over 70 hours. I'm in shock.",
@@ -707,5 +713,37 @@
       "count": 12
     }
   ],
-  "preview": "Show HN: Palmier Pro – Open-source macOS video editor built for AI"
+  "preview": "Show HN: Palmier Pro – Open-source macOS video editor built for AI",
+  "sedimentedToday": [
+    {
+      "id": "claude-security",
+      "name": "Claude Security",
+      "pageType": "entity"
+    },
+    {
+      "id": "fable-5",
+      "name": "Claude Fable 5",
+      "pageType": "entity"
+    },
+    {
+      "id": "google-investment",
+      "name": "Google 投資 Anthropic 400 億美元",
+      "pageType": "entity"
+    },
+    {
+      "id": "ai-agent-safety",
+      "name": "AI Agent 安全與可靠性",
+      "pageType": "topic"
+    },
+    {
+      "id": "anthropic-government-policy",
+      "name": "Anthropic 政府與軍事政策",
+      "pageType": "topic"
+    },
+    {
+      "id": "community-tech-patterns",
+      "name": "社群實戰模式庫",
+      "pageType": "topic"
+    }
+  ]
 }

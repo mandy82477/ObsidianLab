@@ -266,5 +266,17 @@
     }
   ],
   "sourceStatus": [],
-  "preview": "[anthropics/claude-code] v2.1.156"
+  "preview": "[anthropics/claude-code] v2.1.156",
+  "sedimentedToday": [
+    {
+      "id": "andrej-karpathy",
+      "name": "Andrej Karpathy",
+      "pageType": "entity"
+    },
+    {
+      "id": "chris-olah",
+      "name": "Chris Olah",
+      "pageType": "entity"
+    }
+  ]
 }

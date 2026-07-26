@@ -68,7 +68,13 @@
       "time": "07/25 01:35",
       "sentiment": "",
       "body": "Claude Code 釋出 v2.1.220，官方僅說明為錯誤修正與穩定性改善，未列出具體新功能。",
-      "focusTags": []
+      "focusTags": [],
+      "sedimented": [
+        {
+          "id": "claude-code",
+          "pageType": "entity"
+        }
+      ]
     },
     {
       "title": "[anthropics/anthropic-sdk-python] v0.120.0",
@@ -119,7 +125,13 @@
       "time": "07/24 17:00",
       "sentiment": "",
       "body": "Anthropic 官方公告正式推出 Claude Opus 5，另有 3 家媒體同步轉載。",
-      "focusTags": []
+      "focusTags": [],
+      "sedimented": [
+        {
+          "id": "opus-5",
+          "pageType": "entity"
+        }
+      ]
     },
     {
       "title": "Claude Opus 5 is now available in GitHub Copilot - The GitHub Blog",
@@ -130,6 +142,12 @@
       "body": "The GitHub Blog 宣布 Claude Opus 5 已在 GitHub Copilot 上線。",
       "focusTags": [
         "[重大事件]"
+      ],
+      "sedimented": [
+        {
+          "id": "opus-5",
+          "pageType": "entity"
+        }
       ]
     },
     {
@@ -139,7 +157,13 @@
       "time": "07/25 09:37",
       "sentiment": "",
       "body": "the-decoder.com 報導 Claude Opus 5 定價遠低於 Fable 5，但在多數基準測試上表現相當或更好。",
-      "focusTags": []
+      "focusTags": [],
+      "sedimented": [
+        {
+          "id": "opus-5",
+          "pageType": "entity"
+        }
+      ]
     },
     {
       "title": "Meet the New Claude Opus 5: Frontier-Class Agentic Coding and Computer Use at Unchanged Opus Pricing - MarkTechPost",
@@ -148,7 +172,13 @@
       "time": "07/24 21:50",
       "sentiment": "",
       "body": "MarkTechPost 指出 Opus 5 在維持原 Opus 定價下，達到 frontier 級的程式撰寫與電腦操作能力。",
-      "focusTags": []
+      "focusTags": [],
+      "sedimented": [
+        {
+          "id": "opus-5",
+          "pageType": "entity"
+        }
+      ]
     },
     {
       "title": "Anthropic rolls out Opus 5 AI model in efficiency upgrade - Reuters",
@@ -222,7 +252,13 @@
       "time": "07/25 02:18",
       "sentiment": "🤔",
       "body": "有開發者轉述推文指出，Anthropic 為 Opus 5 與 Fable 5 移除超過 80% 的 Claude Code 系統提示詞，並指向 Anthropic 官方部落格談新版 context engineering 原則的文章；原推文與細節尚待查證。",
-      "focusTags": []
+      "focusTags": [],
+      "sedimented": [
+        {
+          "id": "claude-code",
+          "pageType": "entity"
+        }
+      ]
     },
     {
       "title": "Introducing Claude Opus 5",
@@ -231,7 +267,13 @@
       "time": "07/24 23:48",
       "sentiment": "😊",
       "body": "Simon Willison 分享對 Claude Opus 5 發布的第一手觀察與個人心得。",
-      "focusTags": []
+      "focusTags": [],
+      "sedimented": [
+        {
+          "id": "opus-5",
+          "pageType": "entity"
+        }
+      ]
     },
     {
       "title": "Show HN: How well do you use Claude Code?",
@@ -240,7 +282,13 @@
       "time": "07/24 23:00",
       "sentiment": "😐",
       "body": "作者分享自建的 Claude Code／Codex 使用分析儀表板 Promptster，指出多數企業雖有 OTel 花費儀表板，卻缺乏對工程師實際用法與改善空間的分析。",
-      "focusTags": []
+      "focusTags": [],
+      "sedimented": [
+        {
+          "id": "claude-code",
+          "pageType": "entity"
+        }
+      ]
     },
     {
       "title": "Teaching Claude Code to Paint: A Stateful Image-Editing Skill Built on Gemini's Interactions API and MCP",
@@ -249,7 +297,13 @@
       "time": "07/22 22:44",
       "sentiment": "😊",
       "body": "作者示範如何將 Google gemini-3.1-flash-lite-image 包裝成 Claude Code skill 加 MCP server，實現多輪、可持續狀態的圖片編輯。",
-      "focusTags": []
+      "focusTags": [],
+      "sedimented": [
+        {
+          "id": "claude-code",
+          "pageType": "entity"
+        }
+      ]
     },
     {
       "title": "I built a multi-agent loop where an adversarial Claude reviewer reads your actual codebase before approving plans",
@@ -267,7 +321,13 @@
       "time": "07/01 15:38",
       "sentiment": "🤔",
       "body": "一篇部落格文章指控 Claude Code 系統提示詞中利用 Unicode 撇號變體與日期格式作為隱藏追蹤標記；此為單一作者主張，互動數不高，尚無其他來源佐證，細節有待查證。",
-      "focusTags": []
+      "focusTags": [],
+      "sedimented": [
+        {
+          "id": "claude-code",
+          "pageType": "entity"
+        }
+      ]
     },
     {
       "title": "Opus 5 xhigh effort broken in Claude Code Desktop because thinking is forced off",
@@ -276,7 +336,13 @@
       "time": "07/25 10:54",
       "sentiment": "😤",
       "body": "使用者回報 Claude Code Desktop 上 Opus 5 的 xhigh 推理強度失效，因為思考功能被強制關閉。",
-      "focusTags": []
+      "focusTags": [],
+      "sedimented": [
+        {
+          "id": "claude-code",
+          "pageType": "entity"
+        }
+      ]
     },
     {
       "title": "I built an open-source multi-agent SDLC harness that beats a cold Claude Code run on large repos, by learning the repo once. Real benchmarks (incl. where it loses) inside. [P]",
@@ -285,7 +351,13 @@
       "time": "07/24 12:15",
       "sentiment": "😊",
       "body": "開發者發布開源多智能體 SDLC harness，聲稱透過先學習目標 repo 一次，在 6 個定位明確的任務上比冷啟動的 `claude -p` 執行省下 7%–75% 成本（涵蓋最大約 8.2 萬行的程式庫）。",
-      "focusTags": []
+      "focusTags": [],
+      "sedimented": [
+        {
+          "id": "claude-code",
+          "pageType": "entity"
+        }
+      ]
     },
     {
       "title": "play DOOM in claudecode when claude is thinking!",
@@ -294,7 +366,13 @@
       "time": "07/25 10:53",
       "sentiment": "😊",
       "body": "使用者分享讓 DOOM 在 Claude Code 思考期間於終端機內執行的小工具。",
-      "focusTags": []
+      "focusTags": [],
+      "sedimented": [
+        {
+          "id": "claude-code",
+          "pageType": "entity"
+        }
+      ]
     },
     {
       "title": "Anthropic claims local models are stealing from it, meanwhile it pays $1.5B for theft",
@@ -323,7 +401,13 @@
       "time": "07/25 03:22",
       "sentiment": "",
       "body": "回報指出 Fable 5 成為 Max 方案標準模型的第一天（2026-07-20）起，Claude Code 反而在 Max 方案上要求額外用量點數，並靜默降級為 Opus 4.8，累積 15 個 reaction。",
-      "focusTags": []
+      "focusTags": [],
+      "sedimented": [
+        {
+          "id": "claude-code",
+          "pageType": "entity"
+        }
+      ]
     },
     {
       "title": "I Did the Math on Claude Sonnet 5. The 60% Opus Discount Is Real, But Temporary.",
@@ -332,7 +416,13 @@
       "time": "07/02 05:55",
       "sentiment": "",
       "body": "作者計算後認為 Anthropic 將 Sonnet 5 以 $2/$10（每百萬 token）定價開放至 8 月 31 日的「60% Opus 折扣」是真實但暫時的優惠，建議設為預設而非上限。",
-      "focusTags": []
+      "focusTags": [],
+      "sedimented": [
+        {
+          "id": "sonnet-5",
+          "pageType": "entity"
+        }
+      ]
     }
   ],
   "focus": [
@@ -413,5 +503,57 @@
       "count": 12
     }
   ],
-  "preview": "Add support for Visual Studio 2026 Integration"
+  "preview": "Add support for Visual Studio 2026 Integration",
+  "sedimentedToday": [
+    {
+      "id": "boris-cherny",
+      "name": "Boris Cherny",
+      "pageType": "entity"
+    },
+    {
+      "id": "claude-code",
+      "name": "Claude Code",
+      "pageType": "entity"
+    },
+    {
+      "id": "opus-4-8",
+      "name": "Claude Opus 4.8",
+      "pageType": "entity"
+    },
+    {
+      "id": "opus-5",
+      "name": "Claude Opus 5",
+      "pageType": "entity"
+    },
+    {
+      "id": "pricing",
+      "name": "Anthropic 訂閱方案與計費政策",
+      "pageType": "entity"
+    },
+    {
+      "id": "sonnet-5",
+      "name": "Claude Sonnet 5",
+      "pageType": "entity"
+    },
+    {
+      "id": "anthropic-business",
+      "name": "﻿# Anthropic 商業健康度",
+      "pageType": "topic"
+    },
+    {
+      "id": "community-tech-discussions",
+      "name": "社群技術討論趨勢",
+      "pageType": "topic"
+    },
+    {
+      "id": "competitor-landscape",
+      "name": "AI 編碼工具競品動態",
+      "pageType": "topic"
+    },
+    {
+      "id": "model-comparison",
+      "name": "Claude 模型選型對照",
+      "pageType": "topic"
+    }
+  ]
 }

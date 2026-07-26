@@ -301,5 +301,6 @@
       "count": 24
     }
   ],
-  "preview": "Claude Code refuses requests or charges extra if your commits mention \"OpenClaw\""
+  "preview": "Claude Code refuses requests or charges extra if your commits mention \"OpenClaw\"",
+  "sedimentedToday": []
 }

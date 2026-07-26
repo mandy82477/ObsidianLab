@@ -612,5 +612,17 @@
       "count": 12
     }
   ],
-  "preview": "Setting up your spare Mac for Claude Code to control, a step-by-step guide"
+  "preview": "Setting up your spare Mac for Claude Code to control, a step-by-step guide",
+  "sedimentedToday": [
+    {
+      "id": "claude-skills",
+      "name": "Claude Skills",
+      "pageType": "entity"
+    },
+    {
+      "id": "opus-4-7",
+      "name": "Claude Opus 4.7",
+      "pageType": "entity"
+    }
+  ]
 }

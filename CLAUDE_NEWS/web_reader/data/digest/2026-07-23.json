@@ -83,6 +83,12 @@
       "body": "Python SDK 釋出 0.118.0 版，新增功能面向 Managed Agents 相關支援。",
       "focusTags": [
         "[持續追蹤]"
+      ],
+      "sedimented": [
+        {
+          "id": "managed-agents",
+          "pageType": "entity"
+        }
       ]
     },
     {
@@ -704,5 +710,22 @@
       "count": 11
     }
   ],
-  "preview": "[FEATURE] Continue when the session limit reached"
+  "preview": "[FEATURE] Continue when the session limit reached",
+  "sedimentedToday": [
+    {
+      "id": "managed-agents",
+      "name": "Managed Agents",
+      "pageType": "entity"
+    },
+    {
+      "id": "enterprise-cost-management",
+      "name": "﻿# 企業規模 Claude 成本管理",
+      "pageType": "topic"
+    },
+    {
+      "id": "official-community-gap",
+      "name": "官方功能 vs 社群痛點缺口分析",
+      "pageType": "topic"
+    }
+  ]
 }
