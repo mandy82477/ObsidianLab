@@ -783,6 +783,165 @@ code {
   font-size: 15px; color: var(--ink-1);
 }
 
+/* ============================================================
+   Weekly journal layout — 期刊版面（web-reader-design.md §weekly）
+   閱讀縱寬 760px；signature 是「下週看什麼」的預告回收帳（bets ledger）；
+   lede 與深挖專欄是視覺錨點，但不與 ledger 搶重量；數字牆是安靜的 colophon。
+   零動效：hover 只用既有 background transition，不加其他動畫。
+   ============================================================ */
+.weekly-journal,
+.weekly-journal--legacy { max-width: 760px; margin: 0 auto; }
+
+.weekly-masthead { margin-bottom: 8px; }
+.weekly-masthead__kicker {
+  font-family: var(--font-mono); font-size: 12px;
+  letter-spacing: 0.2em; color: var(--ink-3);
+  text-transform: uppercase; margin-bottom: 10px;
+}
+.weekly-masthead__title {
+  font-family: var(--font-display); font-size: clamp(32px, 5vw, 46px);
+  font-weight: var(--fw-medium); color: var(--ink-1);
+  line-height: 1.1; margin: 0 0 8px;
+}
+.weekly-masthead__title em {
+  color: var(--ochre-9); font-style: italic; font-weight: var(--fw-regular);
+}
+
+/* 本週一句話 — 開場錨點，刻意不加額外裝飾（signature 留給下方 ledger） */
+.weekly-lede {
+  border-left: 2px solid var(--ochre-9);
+  padding: 4px 0 4px 20px;
+  margin: 32px 0 40px;
+}
+.weekly-lede__kicker {
+  font-family: var(--font-mono); font-size: 11px;
+  letter-spacing: 0.2em; color: var(--ink-4);
+  text-transform: uppercase; margin-bottom: 8px;
+}
+.weekly-lede__text {
+  font-family: var(--font-display); font-style: italic;
+  font-size: 23px; line-height: 1.6; color: var(--ink-1);
+  margin: 0; border: 0; padding: 0; background: none;
+}
+
+.weekly-section { margin: 40px 0; }
+.weekly-section__h { margin-bottom: 20px; }
+
+/* 頭條敘事 — 純長文，視覺重量留給其他區塊 */
+.weekly-headline {
+  font-family: var(--font-cjk); font-size: 16px; line-height: 1.9; color: var(--ink-1);
+}
+.weekly-headline p { margin: 0 0 16px; }
+.weekly-headline p:last-child { margin-bottom: 0; }
+
+/* 本週版本 — 窄條 callout，不用大框 */
+.weekly-version {
+  display: flex; align-items: flex-start; gap: 12px;
+  padding-bottom: 16px; margin-bottom: 20px;
+  border-bottom: 1px solid var(--border-1);
+}
+.weekly-version__pill {
+  flex-shrink: 0; margin-top: 1px;
+  font-family: var(--font-body); font-size: 11px; font-weight: var(--fw-medium);
+  padding: 3px 9px; border: 1px solid var(--border-2); border-radius: var(--radius-2);
+  color: var(--ink-2); white-space: nowrap;
+}
+.weekly-version__text { font-family: var(--font-cjk); font-size: 15px; line-height: 1.7; color: var(--ink-1); }
+.weekly-version__text p { margin: 0; }
+
+.weekly-roundup { font-family: var(--font-cjk); font-size: 15px; line-height: 1.8; color: var(--ink-2); margin-bottom: 8px; }
+.weekly-roundup ul, .weekly-roundup ol { padding-left: 22px; margin: 8px 0; }
+.weekly-roundup li { margin: 8px 0; }
+
+/* 深挖專欄 — 本頁視覺最重的容器（但非 signature，signature 是下方 ledger） */
+.weekly-deepdive {
+  background: var(--bg-1); border: 1px solid var(--border-2);
+  border-left: 2px solid var(--ochre-9);
+  border-radius: var(--radius-2);
+  padding: 26px 28px; margin-top: 24px;
+}
+.weekly-deepdive__kicker {
+  font-family: var(--font-mono); font-size: 11px;
+  letter-spacing: 0.25em; color: var(--ochre-9);
+  text-transform: uppercase; margin-bottom: 12px;
+}
+.weekly-deepdive__title {
+  font-family: var(--font-display); font-size: 23px; font-weight: var(--fw-medium);
+  color: var(--ink-1); margin: 0 0 14px;
+}
+.weekly-deepdive__body { font-family: var(--font-cjk); font-size: 16px; line-height: 1.85; color: var(--ink-1); }
+.weekly-deepdive__body p { margin: 0 0 14px; }
+.weekly-deepdive__body p:last-child { margin-bottom: 0; }
+.weekly-deepdive__body strong { color: var(--ink-1); font-weight: var(--fw-medium); }
+
+/* 下週看什麼 → 預告回收帳（bets ledger）— 本頁 signature，視覺重量集中在此 */
+.weekly-bets {
+  display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px;
+}
+@media (max-width: 700px) { .weekly-bets { grid-template-columns: 1fr; } }
+.weekly-bet {
+  border: 1px solid var(--border-2); border-radius: var(--radius-2);
+  padding: 16px; transition: background 150ms ease;
+}
+.weekly-bet:hover { background: var(--bg-1); }
+.weekly-bet__type {
+  display: inline-block; font-family: var(--font-body); font-size: 11px; font-weight: var(--fw-medium);
+  color: var(--ochre-9); border: 1px solid var(--ochre-7); border-radius: var(--radius-2);
+  padding: 3px 9px; margin-bottom: 10px;
+}
+.weekly-bet__forecast { font-family: var(--font-cjk); font-size: 15px; line-height: 1.65; color: var(--ink-1); margin-bottom: 12px; }
+.weekly-bet__rule { border-top: 1px solid var(--border-1); margin-bottom: 10px; }
+.weekly-bet__criterion { font-size: 13px; line-height: 1.6; color: var(--ink-2); }
+.weekly-bet__criterion-label {
+  font-family: var(--font-mono); font-size: 11px; color: var(--ink-3);
+  letter-spacing: 0.06em; margin-right: 8px;
+}
+/* 回收槽 — 等下週開欄蓋章的空位，可證偽預告→回收對錯機制的視覺外顯 */
+.weekly-bet__ledger {
+  display: flex; align-items: center; gap: 8px;
+  margin-top: 14px; padding-top: 12px; border-top: 1px solid var(--border-1);
+  font-family: var(--font-mono); font-size: 11px; color: var(--ink-4);
+  letter-spacing: 0.04em;
+}
+.weekly-bet__ledger-mark {
+  width: 12px; height: 12px; border-radius: 99px;
+  border: 1px solid var(--border-strong); background: transparent;
+  flex-shrink: 0; display: inline-block;
+}
+
+/* 本週數字 → 安靜的 colophon（文末版權頁，非 hero） */
+.weekly-colophon {
+  border-top: 3px double var(--border-strong);
+  border-bottom: 1px solid var(--border-1);
+  padding: 20px 0 24px;
+}
+.weekly-colophon .weekly-section__h { border-top: 0; padding-top: 0; }
+.weekly-stats {
+  display: grid; grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  gap: 20px;
+}
+.weekly-stat__value {
+  font-family: var(--font-display); font-size: clamp(32px, 4vw, 40px);
+  font-weight: var(--fw-medium); color: var(--ink-1); line-height: 1;
+  margin-bottom: 6px;
+}
+.weekly-stat__desc {
+  font-family: var(--font-mono); font-size: 11.5px; line-height: 1.5; color: var(--ink-3);
+}
+
+.weekly-section--extra .weekly-extra {
+  font-family: var(--font-cjk); font-size: 15px; line-height: 1.8; color: var(--ink-2);
+}
+
+.weekly-footer {
+  margin-top: 40px; padding-top: 16px; border-top: 1px solid var(--border-1);
+  font-family: var(--font-mono); font-size: 11px; color: var(--ink-4); line-height: 1.6;
+}
+
+@media (max-width: 480px) {
+  .weekly-deepdive { padding: 20px; }
+}
+
 .entity-row__name {
   display: inline-flex; align-items: baseline; gap: 0;
   font-family: var(--font-mono); font-size: 13px;

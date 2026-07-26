@@ -698,6 +698,42 @@
   }
 
   // ── Markdown → HTML (+ wikilink resolution) — shared by wiki 詳頁與週報 ───────
+  function wikilinkButtonHtml(p) {
+    // news/ links have no detail page — render as plain span
+    if (p.startsWith('news/')) return `<span class="detail__wikilink">${esc(p)}</span>`;
+    // resolve id + type from path prefix
+    let wiId, wiType;
+    if (p.startsWith('entities/')) { wiId = p.slice(9); wiType = 'entity'; }
+    else if (p.startsWith('topics/')) { wiId = p.slice(7); wiType = 'topic'; }
+    else if (p === 'feature-radar')  { wiId = 'feature-radar'; wiType = 'radar'; }
+    else {
+      const wdata = window.WIKI_DATA || {};
+      wiId = p;
+      wiType = (wdata.topics || []).some(t => t.id === p) ? 'topic' : 'entity';
+    }
+    const safeId = wiId.replace(/\\/g, '\\\\').replace(/'/g, "\\'");
+    return `<button class="detail__wikilink detail__wikilink--link" onclick="openWikiPage('${safeId}','${wiType}')">${esc(p)}</button>`;
+  }
+
+  function linkifyWikilinks(html) {
+    return html.replace(/<WIKILINK>([^<]+)<\/WIKILINK>/g, (_, p) => wikilinkButtonHtml(p));
+  }
+
+  // 純內文片段（無 H1／無 meta 前綴）→ HTML，供週報期刊版面各段落使用
+  function mdToHtml(md) {
+    if (!md) return '';
+    if (typeof marked === 'undefined') {
+      return `<pre style="white-space:pre-wrap;font-size:13px">${esc(md)}</pre>`;
+    }
+    const src = md.replace(/\[\[([^\]]+)\]\]/g, (_, p) => `<WIKILINK>${p}</WIKILINK>`);
+    return linkifyWikilinks(marked.parse(src));
+  }
+
+  // 表格儲存格等單行文字（不包 <p>）：跳脫＋解析 wikilink，不跑完整 marked
+  function weeklyInlineText(text) {
+    return esc(text || '').replace(/\[\[([^\]]+)\]\]/g, (_, p) => wikilinkButtonHtml(p));
+  }
+
   function renderMarkdownBody(raw, opts = {}) {
     let md = raw || '';
     md = md.replace(/^#[^#][^\n]*\n/, '');
@@ -708,27 +744,171 @@
       return `<pre style="white-space:pre-wrap;font-size:13px">${esc(md)}</pre>`;
     }
     md = md.replace(/\[\[([^\]]+)\]\]/g, (_, p) => `<WIKILINK>${p}</WIKILINK>`);
-    let bodyHtml = marked.parse(md);
-    bodyHtml = bodyHtml.replace(/<WIKILINK>([^<]+)<\/WIKILINK>/g, (_, p) => {
-      // news/ links have no detail page — render as plain span
-      if (p.startsWith('news/')) return `<span class="detail__wikilink">${esc(p)}</span>`;
-      // resolve id + type from path prefix
-      let wiId, wiType;
-      if (p.startsWith('entities/')) { wiId = p.slice(9); wiType = 'entity'; }
-      else if (p.startsWith('topics/')) { wiId = p.slice(7); wiType = 'topic'; }
-      else if (p === 'feature-radar')  { wiId = 'feature-radar'; wiType = 'radar'; }
-      else {
-        const wdata = window.WIKI_DATA || {};
-        wiId = p;
-        wiType = (wdata.topics || []).some(t => t.id === p) ? 'topic' : 'entity';
-      }
-      const safeId = wiId.replace(/\\/g, '\\\\').replace(/'/g, "\\'");
-      return `<button class="detail__wikilink detail__wikilink--link" onclick="openWikiPage('${safeId}','${wiType}')">${esc(p)}</button>`;
-    });
-    return bodyHtml;
+    return linkifyWikilinks(marked.parse(md));
   }
 
-  // ── Weekly reports ───────────────────────────────────────────────────────────
+  // ── Weekly reports — journal layout（期刊版面，見 web-reader-design.md）──────
+  function weeklySectionHeader(labelChars, en) {
+    const spaced = esc(labelChars.split('').join(' '));
+    const enHtml = en ? `<span class="section__h-en">${esc(en)}</span>` : '';
+    return `<div class="section__h weekly-section__h"><span class="section__h-label">${spaced}</span>${enHtml}</div>`;
+  }
+
+  // 從 H1（如「本週深挖 · 2026-W30（07-20 ～ 07-26）」）萃取括號內日期區間；
+  // 找不到就回傳空字串，masthead 優雅省略那一段（不強求所有週報標題都帶日期）。
+  function weeklyDateRangeFromName(name) {
+    const m = /[（(]([^）)]+)[）)]/.exec(name || '');
+    return m ? m[1] : '';
+  }
+
+  // 由本期 id 推算下一週 id，供「回收槽」顯示——純前端字串運算，非真正的曆法
+  // 換算（ISO 週偶有 53 週，這裡不處理，UI 標籤用途足夠）。
+  function weeklyNextWeekId(id) {
+    const m = /^(\d{4})-W(\d{2})$/.exec(id || '');
+    if (!m) return '';
+    let year = parseInt(m[1], 10);
+    let week = parseInt(m[2], 10) + 1;
+    if (week > 52) { week = 1; year += 1; }
+    return `${year}-W${String(week).padStart(2, '0')}`;
+  }
+
+  // 「本週數字」說明文字取第一個句號之前；無句號的長文字才硬截斷。
+  function weeklyTruncateStat(desc) {
+    const d = desc || '';
+    const periodIdx = d.indexOf('。');
+    if (periodIdx !== -1) {
+      const head = d.slice(0, periodIdx + 1);
+      return { text: head, truncated: head.length < d.length };
+    }
+    if (d.length > 48) return { text: d.slice(0, 48) + '…', truncated: true };
+    return { text: d, truncated: false };
+  }
+
+  // w：fetchWeekly() 回傳的單期週報物件。有結構化欄位（§A）時走期刊版面；
+  // 舊 build（無 sections／無 lede）時 fallback 回整段 markdown 渲染，不可白屏。
+  function renderWeeklyJournal(w) {
+    const s = w.sections || {};
+    const hasStructured = !!(w.lede || s.headline || s.discussion || s.nextweek || s.numbers);
+    if (!hasStructured) {
+      return `<div class="weekly-journal weekly-journal--legacy">
+  <div class="weekly-card weekly-card--latest">
+    <div class="weekly-card__id">${esc(w.id)}</div>
+    <h2 class="weekly-card__title">${esc(w.name)}</h2>
+    <div class="detail__body">${renderMarkdownBody(w.markdown)}</div>
+  </div>
+</div>`;
+    }
+
+    const dateRange = weeklyDateRangeFromName(w.name);
+    const parts = [];
+
+    parts.push(`<div class="weekly-journal">
+  <div class="weekly-masthead">
+    <div class="weekly-masthead__kicker">WEEKLY · ${esc(w.id)}${dateRange ? ' · ' + esc(dateRange) : ''}</div>
+    <h1 class="weekly-masthead__title">本週<em>深挖</em></h1>
+  </div>`);
+
+    if (w.lede) {
+      parts.push(`
+  <div class="weekly-lede">
+    <div class="weekly-lede__kicker">本週一句話</div>
+    <blockquote class="weekly-lede__text">${esc(w.lede)}</blockquote>
+  </div>`);
+    }
+
+    if (s.headline) {
+      parts.push(`
+  <div class="weekly-section">
+    ${weeklySectionHeader('頭條敘事', 'headline')}
+    <div class="weekly-headline">${mdToHtml(s.headline.body)}</div>
+  </div>`);
+    }
+
+    if (s.discussion) {
+      const d = s.discussion;
+      parts.push(`
+  <div class="weekly-section">
+    ${weeklySectionHeader('技術討論', 'discussion & deep dive')}`);
+      if (d.versionNote) {
+        parts.push(`
+    <div class="weekly-version">
+      <span class="weekly-version__pill">本週版本</span>
+      <div class="weekly-version__text">${mdToHtml(d.versionNote)}</div>
+    </div>`);
+      }
+      if (d.roundup) {
+        parts.push(`
+    <div class="weekly-roundup">${mdToHtml(d.roundup)}</div>`);
+      }
+      if (d.deepDive) {
+        parts.push(`
+    <div class="weekly-deepdive">
+      <div class="weekly-deepdive__kicker">深挖專欄 · DEEP DIVE</div>
+      <h3 class="weekly-deepdive__title">${esc(d.deepDive.title)}</h3>
+      <div class="weekly-deepdive__body">${mdToHtml(d.deepDive.body)}</div>
+    </div>`);
+      }
+      parts.push(`
+  </div>`);
+    }
+
+    if (s.nextweek) {
+      const nextId = weeklyNextWeekId(w.id);
+      parts.push(`
+  <div class="weekly-section">
+    ${weeklySectionHeader('下週看什麼', 'next week')}
+    <div class="weekly-bets">`);
+      (s.nextweek.forecasts || []).forEach(fc => {
+        parts.push(`
+      <div class="weekly-bet">
+        <span class="weekly-bet__type">${weeklyInlineText(fc.type)}</span>
+        <div class="weekly-bet__forecast">${weeklyInlineText(fc.forecast)}</div>
+        <div class="weekly-bet__rule"></div>
+        <div class="weekly-bet__criterion"><span class="weekly-bet__criterion-label">判準</span>${weeklyInlineText(fc.criterion)}</div>
+        <div class="weekly-bet__ledger"><span class="weekly-bet__ledger-mark"></span>回收 · ${esc(nextId)}</div>
+      </div>`);
+      });
+      parts.push(`
+    </div>
+  </div>`);
+    }
+
+    if (s.numbers) {
+      parts.push(`
+  <div class="weekly-section weekly-colophon">
+    ${weeklySectionHeader('本週數字', 'numbers')}
+    <div class="weekly-stats">`);
+      (s.numbers.stats || []).forEach(st => {
+        const { text, truncated } = weeklyTruncateStat(st.desc);
+        parts.push(`
+      <div class="weekly-stat"${truncated ? ` title="${esc(st.desc)}"` : ''}>
+        <div class="weekly-stat__value">${esc(st.value)}</div>
+        <div class="weekly-stat__desc">${weeklyInlineText(text)}</div>
+      </div>`);
+      });
+      parts.push(`
+    </div>
+  </div>`);
+    }
+
+    (w.extraSections || []).forEach(ex => {
+      parts.push(`
+  <div class="weekly-section weekly-section--extra">
+    ${weeklySectionHeader(ex.title, '')}
+    <div class="weekly-extra">${mdToHtml(ex.body)}</div>
+  </div>`);
+    });
+
+    if (w.footer) {
+      parts.push(`
+  <div class="weekly-footer">${esc(w.footer)}</div>`);
+    }
+
+    parts.push(`
+</div>`);
+    return parts.join('');
+  }
+
   async function renderWeekly() {
     const container = $('#weekly-content');
     if (!container) return;
@@ -754,11 +934,7 @@ ${older.length ? `<div class="weekly-list-h">歷週</div><div class="weekly-list
     slot.innerHTML = `<div style="padding:40px;text-align:center;color:var(--ink-3);font-family:var(--font-mono);font-size:12px">載入中…</div>`;
     try {
       const w = await fetchWeekly(latest.id);
-      slot.innerHTML = `<div class="weekly-card weekly-card--latest">
-  <div class="weekly-card__id">${esc(w.id)}</div>
-  <h2 class="weekly-card__title">${esc(w.name)}</h2>
-  <div class="detail__body">${renderMarkdownBody(w.markdown)}</div>
-</div>`;
+      slot.innerHTML = renderWeeklyJournal(w);
       makeTablesSortable(slot);
     } catch (e) {
       slot.innerHTML = `<div style="padding:40px;text-align:center;color:var(--ink-3);font-family:var(--font-mono);font-size:12px">載入失敗：${esc(latest.id)}.json</div>`;
@@ -785,9 +961,7 @@ ${older.length ? `<div class="weekly-list-h">歷週</div><div class="weekly-list
       return;
     }
 
-    $('#detail-content').innerHTML = `
-<h1 class="detail__h1">${esc(w.name)}</h1>
-<div class="detail__body">${renderMarkdownBody(w.markdown)}</div>`;
+    $('#detail-content').innerHTML = renderWeeklyJournal(w);
     makeTablesSortable($('#detail-content'));
   };
 
