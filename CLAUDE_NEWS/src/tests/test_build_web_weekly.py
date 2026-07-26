@@ -96,6 +96,10 @@ class TestParseWeeklyStructured(unittest.TestCase):
         self.assertIn("8/1", first["forecast"])
         self.assertIn("Opus 使用量", first["criterion"])
 
+    def test_nextweek_intro_extracted_before_table(self):
+        nw = self.w["sections"]["nextweek"]
+        self.assertEqual(nw["intro"], "每條都立了判準，下週開欄先回收對錯。")
+
     def test_numbers_stats(self):
         nums = self.w["sections"]["numbers"]
         self.assertIsNotNone(nums)
@@ -160,6 +164,7 @@ class TestParseWeeklyGracefulDegradation(unittest.TestCase):
             self.assertIn("順序不影響分類", w["sections"]["headline"]["title"])
             self.assertEqual(w["sections"]["numbers"]["stats"][0]["value"], "99")
             self.assertEqual(len(w["sections"]["nextweek"]["forecasts"]), 1)
+            self.assertEqual(w["sections"]["nextweek"]["intro"], "")  # 表格緊接標題，無引言
             self.assertIsNone(w["sections"]["discussion"])
 
     def test_unrecognized_h2_goes_to_extra_sections(self):

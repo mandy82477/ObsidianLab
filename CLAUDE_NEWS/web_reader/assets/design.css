@@ -769,6 +769,12 @@ code {
   font-family: var(--font-display); font-size: 26px; font-weight: var(--fw-medium);
   color: var(--ink-1); margin: 0 0 16px;
 }
+/* 「共 N 份週報」計數——只在有歷週列表（多期）時才有意義，移到列表區塊上方
+   （P1-1，取代原本殼層 wiki__sub 位置，見 web-reader-design.md 修復記錄）*/
+.weekly-list-count {
+  font-family: var(--font-mono); font-size: 12px; color: var(--ink-3);
+  letter-spacing: 0.04em; margin: 0 0 24px;
+}
 .weekly-list-h {
   font-family: var(--font-mono); font-size: 12px; letter-spacing: 0.2em;
   text-transform: uppercase; color: var(--ink-3);
@@ -836,6 +842,12 @@ code {
 .weekly-section__h { margin-bottom: 20px; }
 
 /* 頭條敘事 — 純長文，視覺重量留給其他區塊 */
+/* deck 行：眉標之下、正文之上，取自 §H2 title 冒號後半（P1-2） */
+.weekly-headline__deck {
+  font-family: var(--font-display); font-size: clamp(20px, 2.6vw, 22px);
+  font-weight: var(--fw-regular); line-height: 1.4; color: var(--ink-1);
+  margin: 0 0 18px;
+}
 .weekly-headline {
   font-family: var(--font-cjk); font-size: 16px; line-height: 1.9; color: var(--ink-1);
 }
@@ -883,11 +895,17 @@ code {
 .weekly-deepdive__body strong { color: var(--ink-1); font-weight: var(--fw-medium); }
 
 /* 下週看什麼 → 預告回收帳（bets ledger）— 本頁 signature，視覺重量集中在此 */
+/* 引言段（表格前一句話，如「每條都立了判準…」）— 表格上方一行，非結構化文字 */
+.weekly-nextweek__intro {
+  font-family: var(--font-cjk); font-size: 15px; line-height: 1.7; color: var(--ink-2);
+  margin: 0 0 16px;
+}
 .weekly-bets {
   display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px;
 }
 @media (max-width: 700px) { .weekly-bets { grid-template-columns: 1fr; } }
 .weekly-bet {
+  display: flex; flex-direction: column;
   border: 1px solid var(--border-2); border-radius: var(--radius-2);
   padding: 16px; transition: background 150ms ease;
 }
@@ -904,16 +922,21 @@ code {
   font-family: var(--font-mono); font-size: 11px; color: var(--ink-3);
   letter-spacing: 0.06em; margin-right: 8px;
 }
-/* 回收槽 — 等下週開欄蓋章的空位，可證偽預告→回收對錯機制的視覺外顯 */
+/* 判準欄內 wikilink 收斂為末段名稱、縮小字級、收斂裝飾（P2-2）——只在此情境套用 */
+.weekly-bet__criterion .detail__wikilink--short { font-size: 12px; }
+.weekly-bet__criterion .detail__wikilink--short::before,
+.weekly-bet__criterion .detail__wikilink--short::after { display: none; }
+/* 回收槽 — 等下週開欄蓋章的空位，可證偽預告→回收對錯機制的視覺外顯；
+   flex column 卡片下沉底對齊，等高 grid 中每排貼齊底邊（P2-1） */
 .weekly-bet__ledger {
   display: flex; align-items: center; gap: 8px;
-  margin-top: 14px; padding-top: 12px; border-top: 1px solid var(--border-1);
+  margin-top: auto; padding-top: 12px; border-top: 1px solid var(--border-1);
   font-family: var(--font-mono); font-size: 11px; color: var(--ink-4);
   letter-spacing: 0.04em;
 }
 .weekly-bet__ledger-mark {
   width: 12px; height: 12px; border-radius: 99px;
-  border: 1px solid var(--border-strong); background: transparent;
+  border: 1px dashed var(--border-strong); background: transparent;
   flex-shrink: 0; display: inline-block;
 }
 
@@ -922,6 +945,10 @@ code {
   border-top: 3px double var(--border-strong);
   border-bottom: 1px solid var(--border-1);
   padding: 20px 0 24px;
+}
+/* 暗色下 double rule 兩線難辨——沿用暗色 ink 色相，alpha 提到 0.4（P2-4） */
+:root[data-theme="dark"] .weekly-colophon {
+  border-top-color: rgba(237,231,216,0.4);
 }
 .weekly-colophon .weekly-section__h { border-top: 0; padding-top: 0; }
 .weekly-stats {

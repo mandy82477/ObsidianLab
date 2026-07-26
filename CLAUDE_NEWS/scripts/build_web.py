@@ -396,6 +396,21 @@ def _parse_weekly_stats(body: str) -> list[dict]:
     ]
 
 
+def _parse_weekly_nextweek_intro(body: str) -> str:
+    """『下週看什麼』表格前的引言段（如「每條都立了判準，下週開欄先回收對錯。」）。
+
+    取到第一個 `|` 開頭行之前的非空文字；無引言（表格緊接標題）時回傳空字串。
+    """
+    intro_lines: list[str] = []
+    for line in body.splitlines():
+        ls = line.strip()
+        if ls.startswith("|"):
+            break
+        if ls:
+            intro_lines.append(_weekly_strip_bold(ls))
+    return " ".join(intro_lines).strip()
+
+
 def parse_weekly(f: Path) -> dict:
     """週報頁解析（weekly/YYYY-Wnn.md）。
 
@@ -479,11 +494,15 @@ def parse_weekly(f: Path) -> dict:
                 result["sections"]["discussion"] = disc
 
             elif kind == "nextweek":
-                nw = {"title": title, "body": body, "forecasts": []}
+                nw = {"title": title, "body": body, "forecasts": [], "intro": ""}
                 try:
                     nw["forecasts"] = _parse_weekly_forecasts(body)
                 except Exception as e:
                     print(f"  [warn] weekly {f.name}: forecasts 表格解析失敗：{e}")
+                try:
+                    nw["intro"] = _parse_weekly_nextweek_intro(body)
+                except Exception as e:
+                    print(f"  [warn] weekly {f.name}: nextweek intro 解析失敗：{e}")
                 result["sections"]["nextweek"] = nw
 
             elif kind == "numbers":

@@ -709,7 +709,10 @@
   }
 
   // ── Markdown → HTML (+ wikilink resolution) — shared by wiki 詳頁與週報 ───────
-  function wikilinkButtonHtml(p) {
+  // opts.short：只顯示末段名稱（如 topics/model-comparison → model-comparison）並加
+  // detail__wikilink--short class（收斂裝飾、縮小字級），供週報卡片判準欄使用
+  // （見 web-reader-design.md 修復記錄，只影響該情境，不動其他頁 wikilink 樣式）。
+  function wikilinkButtonHtml(p, opts = {}) {
     // news/ links have no detail page — render as plain span
     if (p.startsWith('news/')) return `<span class="detail__wikilink">${esc(p)}</span>`;
     // resolve id + type from path prefix
@@ -723,7 +726,9 @@
       wiType = (wdata.topics || []).some(t => t.id === p) ? 'topic' : 'entity';
     }
     const safeId = wiId.replace(/\\/g, '\\\\').replace(/'/g, "\\'");
-    return `<button class="detail__wikilink detail__wikilink--link" onclick="openWikiPage('${safeId}','${wiType}')">${esc(p)}</button>`;
+    const label = opts.short ? p.split('/').pop() : p;
+    const cls = 'detail__wikilink detail__wikilink--link' + (opts.short ? ' detail__wikilink--short' : '');
+    return `<button class="${cls}" onclick="openWikiPage('${safeId}','${wiType}')">${esc(label)}</button>`;
   }
 
   function linkifyWikilinks(html) {
@@ -743,6 +748,21 @@
   // 表格儲存格等單行文字（不包 <p>）：跳脫＋解析 wikilink，不跑完整 marked
   function weeklyInlineText(text) {
     return esc(text || '').replace(/\[\[([^\]]+)\]\]/g, (_, p) => wikilinkButtonHtml(p));
+  }
+
+  // 判準欄專用：wikilink 收斂為末段名稱＋收斂裝飾（P2-2，見 web-reader-design.md）
+  function weeklyCriterionText(text) {
+    return esc(text || '').replace(/\[\[([^\]]+)\]\]/g, (_, p) => wikilinkButtonHtml(p, { short: true }));
+  }
+
+  // 頭條敘事 deck：取 §H2 title 冒號後半（如「一、頭條敘事：X」→「X」）；
+  // 無冒號則去掉「頭條敘事」前綴後渲染；再取不到就不渲染（淡週容忍，見 P1-2）。
+  function weeklyHeadlineDeck(title) {
+    if (!title) return '';
+    const idx = title.search(/[：:]/);
+    if (idx !== -1 && idx < title.length - 1) return title.slice(idx + 1).trim();
+    const stripped = title.replace(/^[一二三四五六七八九十百]+[、.]?\s*頭條敘事\s*/, '').trim();
+    return (stripped && stripped !== title) ? stripped : '';
   }
 
   function renderMarkdownBody(raw, opts = {}) {
@@ -828,9 +848,11 @@
     }
 
     if (s.headline) {
+      const deck = weeklyHeadlineDeck(s.headline.title);
       parts.push(`
   <div class="weekly-section">
-    ${weeklySectionHeader('頭條敘事', 'headline')}
+    ${weeklySectionHeader('頭條敘事', 'headline')}${deck ? `
+    <div class="weekly-headline__deck">${esc(deck)}</div>` : ''}
     <div class="weekly-headline">${mdToHtml(s.headline.body)}</div>
   </div>`);
     }
@@ -867,7 +889,8 @@
       const nextId = weeklyNextWeekId(w.id);
       parts.push(`
   <div class="weekly-section">
-    ${weeklySectionHeader('下週看什麼', 'next week')}
+    ${weeklySectionHeader('下週看什麼', 'next week')}${s.nextweek.intro ? `
+    <div class="weekly-nextweek__intro">${esc(s.nextweek.intro)}</div>` : ''}
     <div class="weekly-bets">`);
       (s.nextweek.forecasts || []).forEach(fc => {
         parts.push(`
@@ -875,8 +898,8 @@
         <span class="weekly-bet__type">${weeklyInlineText(fc.type)}</span>
         <div class="weekly-bet__forecast">${weeklyInlineText(fc.forecast)}</div>
         <div class="weekly-bet__rule"></div>
-        <div class="weekly-bet__criterion"><span class="weekly-bet__criterion-label">判準</span>${weeklyInlineText(fc.criterion)}</div>
-        <div class="weekly-bet__ledger"><span class="weekly-bet__ledger-mark"></span>回收 · ${esc(nextId)}</div>
+        <div class="weekly-bet__criterion"><span class="weekly-bet__criterion-label">判準</span>${weeklyCriterionText(fc.criterion)}</div>
+        <div class="weekly-bet__ledger"><span class="weekly-bet__ledger-mark"></span>待回收 · ${esc(nextId)}</div>
       </div>`);
       });
       parts.push(`
@@ -923,18 +946,23 @@
   async function renderWeekly() {
     const container = $('#weekly-content');
     if (!container) return;
+    const shellHead = document.getElementById('weekly-shell-head');
     const index = (window.WIKI_DATA || {}).weeklyIndex || [];
     const subEl = $('#weekly-sub');
     if (!index.length) {
+      // 空狀態：沒有期刊 masthead 可顯示，殼層大標留著才不會整頁空白
+      if (shellHead) shellHead.style.display = '';
       if (subEl) subEl.textContent = '';
       container.innerHTML = `<div class="weekly-empty">尚無週報 — 週報機制已建置，第一份將於本週產出後顯示於此。</div>`;
       return;
     }
-    if (subEl) subEl.textContent = `共 ${index.length} 份週報 · 最新一份預設展開`;
+    // 最新一期已自帶期刊 masthead（「本週深挖」），與殼層大標重複——整組隱藏（P1-1）
+    if (shellHead) shellHead.style.display = 'none';
+    if (subEl) subEl.textContent = '';
     const [latest, ...older] = index;
     container.innerHTML = `
 <div class="weekly-latest" id="weekly-latest-slot"></div>
-${older.length ? `<div class="weekly-list-h">歷週</div><div class="weekly-list">${older.map(w => `
+${older.length ? `<div class="weekly-list-count">共 ${index.length} 份週報 · 最新一份預設展開</div><div class="weekly-list-h">歷週</div><div class="weekly-list">${older.map(w => `
   <a href="#${esc(w.id)}" class="weekly-row" onclick="event.preventDefault();openWeeklyPage('${esc(w.id)}')">
     <div class="weekly-row__id">${esc(w.id)}</div>
     <div class="weekly-row__preview">${esc(w.preview || '')}</div>
