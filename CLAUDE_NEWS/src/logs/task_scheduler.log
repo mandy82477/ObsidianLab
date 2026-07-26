@@ -4,3 +4,8 @@
 [週六 2026/07/25 13:29:45.00] Building web reader...
 [週六 2026/07/25 13:30:20.00] Single push done (news + wiki + web)
 [週六 2026/07/25 13:30:20.00] === Pipeline complete (agent) ===
+[週日 2026/07/26 13:05:23.00] === Agent pipeline start (2026-07-26) ===
+[週日 2026/07/26 13:05:23.00] Step 0: 昨日日報存在 (2026-07-25) - OK
+[週日 2026/07/26 13:05:23.00] Step 1a: SKIPPED（雲端由 GitHub Actions 負責抓料）
+[週日 2026/07/26 13:05:23.00] ABORTED: gathered_items.json date=2026-07-25 items=73，非目標日期的新鮮資料
+[週日 2026/07/26 13:05:23.00] === Pipeline complete (agent) ===
