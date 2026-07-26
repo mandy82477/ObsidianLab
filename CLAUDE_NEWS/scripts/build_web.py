@@ -313,15 +313,102 @@ def attach_sedimented_badges(digest_all: dict, entities: list, topics: list) -> 
                     ]
 
 
+# ── Weekly 結構化解析（journal 版面用，§A）──────────────────────────────────
+# 週報是自由行文的四段式 markdown；解析器用內容關鍵字對應四大段（頭條/技術討論/
+# 下週/數字），不依賴「一、二、三、四、」編號（編號可能改版），任一段缺失時
+# 對應欄位為 None/[]，不報錯（淡週容忍）。解析失敗的段落仍保留在整段 `markdown`
+# 供前端 fallback 走舊的 marked 渲染路徑。
+
+WEEKLY_LEDE_RE = re.compile(r'^>\s*\*\*本週一句話\*\*[：:]\s*(.+)$', re.MULTILINE)
+WEEKLY_H2_RE = re.compile(r'^##\s+(.+?)\s*$', re.MULTILINE)
+WEEKLY_H3_RE = re.compile(r'^###\s+(.+?)\s*$', re.MULTILINE)
+WEEKLY_FOOTER_RE = re.compile(r'\n-{3,}\s*\n+(\*\*素材涵蓋窗.*)\Z', re.DOTALL)
+WEEKLY_FORECAST_HEADER_RE = re.compile(r'^\|\s*類型\s*\|\s*預告\s*\|\s*判準\s*\|\s*$', re.MULTILINE)
+WEEKLY_STAT_RE = re.compile(r'^-\s*\*\*(.+?)\*\*\s*——\s*(.+)$', re.MULTILINE)
+
+
+def _weekly_strip_bold(text: str) -> str:
+    return re.sub(r'\*{1,3}([^*\n]+)\*{1,3}', r'\1', text)
+
+
+def _weekly_clean_trailing_hr(text: str) -> str:
+    """移除區塊尾端殘留的 '---' 分隔線（H2/H3 切段後，前一段結尾常留下它）。"""
+    return re.sub(r'\n?-{3,}\s*\Z', '', text).strip()
+
+
+def _split_by_heading(body: str, heading_re: re.Pattern) -> list[tuple[str, str]]:
+    """依標題 regex 切段，回傳 [(標題文字, 段落內文), …]，內文含到下一個同層標題前。"""
+    matches = list(heading_re.finditer(body))
+    parts: list[tuple[str, str]] = []
+    for i, m in enumerate(matches):
+        title = m.group(1).strip()
+        start = m.end()
+        end = matches[i + 1].start() if i + 1 < len(matches) else len(body)
+        parts.append((title, body[start:end]))
+    return parts
+
+
+def _classify_weekly_h2(title: str) -> str | None:
+    if "頭條" in title:
+        return "headline"
+    if "技術討論" in title or "深挖" in title:
+        return "discussion"
+    if "下週" in title:
+        return "nextweek"
+    if "數字" in title:
+        return "numbers"
+    return None
+
+
+def _parse_weekly_forecasts(body: str) -> list[dict]:
+    """解析『下週看什麼』段落內的三欄表格（類型/預告/判準），依表頭順序輸出。"""
+    header_m = WEEKLY_FORECAST_HEADER_RE.search(body)
+    if not header_m:
+        return []
+    rest = body[header_m.end():].splitlines()
+    forecasts: list[dict] = []
+    started = False
+    for line in rest:
+        ls = line.strip()
+        if not ls.startswith("|"):
+            if started:
+                break
+            continue
+        if re.match(r"^\|[-: |]+\|$", ls):
+            started = True
+            continue
+        if not started:
+            # 表頭與分隔線之間不該有其他內容，但保守略過非分隔線的雜訊行
+            continue
+        cells = [c.strip() for c in ls.strip("|").split("|")]
+        if len(cells) < 3:
+            continue
+        cells = [_weekly_strip_bold(c) for c in cells]
+        forecasts.append({"type": cells[0], "forecast": cells[1], "criterion": cells[2]})
+    return forecasts
+
+
+def _parse_weekly_stats(body: str) -> list[dict]:
+    """解析『本週數字』段落內的 bullet（格式：- **數值**——說明）。"""
+    return [
+        {"value": m.group(1).strip(), "desc": m.group(2).strip()}
+        for m in WEEKLY_STAT_RE.finditer(body)
+    ]
+
+
 def parse_weekly(f: Path) -> dict:
-    """週報頁解析（weekly/YYYY-Wnn.md）——結構是自由行文的四段式 markdown，
-    照 parse_digest 的輕量模式：只萃取 id / 標題 / 預覽文字，正文交給前端用
-    marked 渲染（與 wiki 詳頁相同模式），不逐段結構化解析。"""
+    """週報頁解析（weekly/YYYY-Wnn.md）。
+
+    保留原有欄位（id/pageType/name/preview/markdown）向下相容；額外萃取結構化
+    欄位供期刊版面渲染：lede、sections.{headline,discussion,nextweek,numbers}、
+    extraSections、footer。任一段解析失敗只印警告、留 None/[]，不中斷整體 build。
+    """
     raw = f.read_text(encoding="utf-8-sig")
     lines = raw.splitlines()
     week_id = f.stem  # e.g. "2026-W30"
     name = lines[0].lstrip("# ").strip() if lines else week_id
 
+    # ── 既有欄位：preview（原邏輯不動，向下相容）──────────────────────────────
     preview = ""
     for line in lines[1:]:
         ls = line.strip()
@@ -332,13 +419,87 @@ def parse_weekly(f: Path) -> dict:
         if preview:
             break
 
-    return {
+    result: dict = {
         "id": week_id,
         "pageType": "weekly",
         "name": name,
         "preview": preview,
         "markdown": raw,
+        "lede": None,
+        "sections": {"headline": None, "discussion": None, "nextweek": None, "numbers": None},
+        "extraSections": [],
+        "footer": None,
     }
+
+    # ── lede：H1 後第一個 "> **本週一句話**：…" ───────────────────────────────
+    try:
+        m = WEEKLY_LEDE_RE.search(raw)
+        if m:
+            result["lede"] = _weekly_strip_bold(m.group(1)).strip()
+    except Exception as e:
+        print(f"  [warn] weekly {f.name}: lede 解析失敗：{e}")
+
+    # ── footer：檔尾『素材涵蓋窗』——先切掉，避免混進「本週數字」段落 body ──────
+    content_for_sections = raw
+    try:
+        fm = WEEKLY_FOOTER_RE.search(raw)
+        if fm:
+            footer_text = fm.group(1).strip()
+            footer_text = _weekly_strip_bold(footer_text)
+            footer_text = re.sub(r'`([^`]+)`', r'\1', footer_text)
+            result["footer"] = footer_text.strip()
+            content_for_sections = raw[:fm.start()]
+    except Exception as e:
+        print(f"  [warn] weekly {f.name}: footer 解析失敗：{e}")
+
+    # ── 四大段（依內容關鍵字分類，非編號）──────────────────────────────────────
+    try:
+        for title, body in _split_by_heading(content_for_sections, WEEKLY_H2_RE):
+            body = _weekly_clean_trailing_hr(body)
+            kind = _classify_weekly_h2(title)
+
+            if kind == "headline":
+                result["sections"]["headline"] = {"title": title, "body": body}
+
+            elif kind == "discussion":
+                disc = {"title": title, "body": body,
+                        "versionNote": None, "roundup": None, "deepDive": None}
+                try:
+                    for sub_title, sub_body in _split_by_heading(body, WEEKLY_H3_RE):
+                        sub_body = _weekly_clean_trailing_hr(sub_body)
+                        if "本週版本" in sub_title:
+                            disc["versionNote"] = sub_body
+                        elif "討論綜述" in sub_title:
+                            disc["roundup"] = sub_body
+                        elif sub_title.startswith("深挖"):
+                            dd_title = re.sub(r'^深挖[：:]\s*', '', sub_title).strip()
+                            disc["deepDive"] = {"title": dd_title, "body": sub_body}
+                except Exception as e:
+                    print(f"  [warn] weekly {f.name}: discussion 子段解析失敗：{e}")
+                result["sections"]["discussion"] = disc
+
+            elif kind == "nextweek":
+                nw = {"title": title, "body": body, "forecasts": []}
+                try:
+                    nw["forecasts"] = _parse_weekly_forecasts(body)
+                except Exception as e:
+                    print(f"  [warn] weekly {f.name}: forecasts 表格解析失敗：{e}")
+                result["sections"]["nextweek"] = nw
+
+            elif kind == "numbers":
+                nums = {"title": title, "body": body, "stats": []}
+                try:
+                    nums["stats"] = _parse_weekly_stats(body)
+                except Exception as e:
+                    print(f"  [warn] weekly {f.name}: stats 解析失敗：{e}")
+                result["sections"]["numbers"] = nums
+
+            else:
+                result["extraSections"].append({"title": title, "body": body})
+    except Exception as e:
+        print(f"  [warn] weekly {f.name}: 段落切分失敗：{e}")
+
+    return result
 
 
 def collect_weekly(weekly_dir: Path) -> tuple[dict, list]:
