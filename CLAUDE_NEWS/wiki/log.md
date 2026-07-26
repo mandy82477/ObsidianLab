@@ -3122,3 +3122,47 @@ Append-only 紀錄。每次 ingest、lint，以及**揭露缺陷或促成改動�
 - 摘要：Opus 5 全平台上線次日——媒體評測措辭（Tops Benchmark Index）與官方自述（逼近未超越）出現落差、上線首日 4 起錯誤率事件皆速修；官方揭露系統提示詞縮減逾 80% 成社群最大討論（HN 393）；AGENTS.md 支援請求達 5760 讚；晶片線三向延燒（AMD 股價、SK 自製晶片訊號、Nvidia 開放權重連署 50 家）
 - 呈現品質：五類共 9 頁全數 ✅ 通過
 - 品質備註：無
+
+## 2026-07-26 Lint
+
+- 修正矛盾：2 處——(1) `topics/model-comparison.md` 五處寫 Opus 5 定價「$5/$25（官方文件確認）」並宣稱兩則報導「實為同一數字」，與 `entities/pricing.md`「讀者端推算、非官方逐字確認」矛盾；以較嚴謹的 pricing.md 為準改寫 5 處（callout／選型表定價欄／定價備注／情境推薦／benchmark 備注），移除過度確信結論。(2) `entities/opus-5.md` 發布日 07-25 vs `pricing.md` 07-24 一天落差，查 `news/2026-07-25.md` 原文確認官方 RSS 時間戳為 07-24 17:00 UTC、07-25 為日報收錄日，已在 opus-5.md 補「日期說明」澄清為收錄時序差異而非事實矛盾。其餘五類記者交叉核對（中國對峙三頁敘事、john-jumper 加入日期、claude-code 互動數 vs official-community-gap 引述、Google 投資金額 vs Alphabet 持股市值）皆一致。
+- 補連結：無（六類共 47 頁逐一 grep 反向 wikilink，全數至少被 1 個非 index.md 頁面連入；人物 12 頁、功能 13 頁、社群 7 頁、商業 7 頁、安全政策 6 頁、模型 7 頁）
+- 狀態更新：`topics/safety-china-trust-dispute` ongoing→monitoring（核心「後門」敘事自 07-10 Anthropic 首度否認後 16 天無新進展；07-22 起 Moonshot 蒸餾／digitimes 外洩指控屬性質不同的獨立事件，已在頁內註明改追蹤於 anthropic-government-policy）、`topics/anthropic-commitments` ongoing→monitoring（5 項追蹤中承諾自 07-10 起無新官方動作）
+- resolved 收尾：無（各類別範圍內無 resolved 狀態 topics 頁；`entities/google-investment` 為 resolved entities 頁，抽查確認摘要已載明結案事實）
+- 新增 entities：無（見下方待使用者確認第 1 項）
+- 呈現品質：⚠️ 已修復 9 頁——`entities/fable-5.md`（熱度表格違反「緊接摘要」規則，自「配額與計費過渡」後移至現況之後）、`entities/opus-5.md`（補日期落差澄清）、`entities/sonnet-5.md`（07-09 待查證逾 14 天改註無後續）、`topics/model-comparison.md`（定價過度確信措辭）、`entities/opencode.md`（摘要非 delta-first，補「最新動態（2026-05-22）」開頭句）、`entities/claude-code.md`（#69238 待查證標記補標準格式）、`topics/enterprise-tool-tracker.md`（Meta 未確認列改註無後續）、`topics/competitor-landscape.md`（時序連續 18 個無分組日期條目，補「近期單日動態彙整」錨點）、`topics/community-tech-discussions.md`（2 筆 07-05 標記改註無後續）；人物 4 頁（cat-wu／dario-amodei／teresa-carlson／andrej-karpathy）同步日期欄位。其餘全數通過。
+- 入口層健檢：5 頁 > 500 行全數具備入口層、無需補結構、無語意分岔或死案候選——`community-tech-discussions.md`（1201 行）、`community-tech-patterns.md`（1165 行）、`ai-agent-safety.md`（611 行）、`anthropic-business.md`（519 行）、`claude-code.md`（515 行）。>200 行但 <500 行者（fable-5 301、mythos 247、community-tech-timeline 318、community-tech-tools 273、community-pattern-trends 205、boris-cherny 203）皆已有 callout ＋ 分組，依「一頁一故事」不拆分。
+- 待查證回訪：
+  - 已改註「至今無後續」：`entities/sonnet-5.md`（07-09「57 分／API 減半」評測）、`entities/claude-code.md` #69238（07-06 Advisor 無回應）、`topics/enterprise-tool-tracker.md` Meta 限用列（07-06）、`topics/community-tech-discussions.md` 2 筆（07-05 Microsoft Fast Context 下架原因、Anthropic 疑似 prompt injection 單方指控）、`entities/teresa-carlson`（07-07 加入報導）、`entities/dario-amodei`（07-06 STAT 專訪）、`entities/boris-cherny`／`entities/cat-wu`（07-08「5 種員工原型」發言人歸屬）、`entities/andrej-karpathy`（05-29 加入傳聞，查核日期由 07-11 更新至 07-26）
+  - 已更新（跨頁補鏈）：`topics/ai-agent-safety.md` 阿里巴巴 2.5 萬假帳號蒸餾指控（06-26，補 07-13 NY Post 重申的跨頁狀態，未見新證據）
+  - 維持不動（14 天查證期內）：安全政策 7 則（Tego AI、俄語駭客越獄、Bash/Unicode 繞過、Nozomi/Horizon3.ai、TBIJ、Moonshot 蒸餾、Nvidia 連署）、商業 4 則（專利訴訟、田納西大學提告、pricing 多筆、蒸餾指控擴大）、功能 3 則（claude-design 07-16、claude-security 07-23/24）、人物 3 則（dario super PAC 07-16、tom-blomfield 07-13、boris-cherny 07-17/20）、模型 8 則
+- 規則檔健檢：
+  - 矛盾：無（`wiki/CLAUDE.md`、`.claude/rules/wiki-ingest.md`、`.claude/rules/wiki-ingest-format.md` 三檔逐段掃描未見同一行為的相反指示）
+  - 引用驗證：全部通過（7 個錨點逐一 grep 命中——`| 首次出現 |`、`## 痛點洞察`、`近期工具` 於 community-tech-tools.md；`## 技術彙整`、`熱門討論`、`衍生` 於 community-tech-discussions.md；`全覽表` 於 feature-radar.md）
+  - 遵守率：全部通過（近 3 次 ingest = 07-24／07-25／07-26：呈現品質審查 3/3 皆有標記、feature-radar 明確點名 3/3、log 格式 3/3）。惟發現 `wiki-lint.md` 6c 表中「新工具加入時更新痛點洞察近期工具欄」一列已不適用於 ingest——`community-tech-tools.md` 自 2026-06-19 改為 lint 專用，每日 ingest 不再更新該頁，此列應改為 lint 自查項或移除（見待確認第 5 項）
+  - 過期規則（> 60 天）：5 項——`topics/ 頁面格式模板`〔04-25，92 天，連續第 4 週〕、`entities/ 頁面格式模板`〔04-25，92 天，連續第 4 週〕、`Wiki 頁面呈現品質標準`〔05-15，72 天，連續第 2 週〕、`patterns ↔ discussions 雙向連結規則`〔05-16，71 天，連續第 2 週〕、`enterprise-tool-tracker 更新規則`〔05-26，61 天，本週首度越線〕。全部 27 個帶標記區塊中 22 個在閾值內（最舊 45 天）。
+  - 來源健康：⚠️ `Claude API Release Notes` 連續 7 天（16 天觀測窗內全期）count=0，已達第 4 週（07-11 lint 首報、07-18 lint 再報）；其餘 9 來源 7 天總量 Google News 220、Hacker News 103、dev.to 96、GitHub Issues 90、Reddit 84、Anthropic Status 27、GitHub 15、Blogroll 12、Anthropic Blog 5，無連續 3 天歸零。單日歸零（GitHub Issues 07-20、GitHub 07-20/07-26、Anthropic Blog 07-24/07-26）未達告警門檻。
+  - 來源記分卡：無「未註冊 slug」告警；Google News 低信譽桶（pc1 < 0.4）0 筆（高信譽 172、中間 10、未知 10），無需人工覆核；HHI 0.239（接近 0.25 高度集中門檻，Google News 占 Presence 41%）。觀察名單：`dev.to`（樣本充足 16 天，Wilson 下界 24%、Presence 4% 雙低）——惟記分卡自身標註其跨日重覆視窗抓法使收錄率結構性偏低、不可與 26h 窗來源比較，故僅列觀察不建議汰換。
+  - 跨檔案語意矛盾（6f）：`python scripts/check_rules.py` 全部確定性檢查通過（23 組 sync_pair 含雲端 weekly runbook 對 wiki-lint.md 錨點逐字相符、model-comparison 六條規則齊全等）；13 組 coupling hints 為 warn-only 未阻塞。惟人工語意比對發現 1 處實質矛盾：`.claude/commands/wiki-lint.md` 6g 指標一要求 grep `（ref:`，但 `.claude/commands/news-pipeline-steps.md:152` 自 07-25 起明訂聚焦引用改用 `[N]` 註腳 + 檔尾「今日聚焦參考連結」清單，兩者未同步，舊 grep 對 07-25/07-26 讀成 0（見品質指標段）。此配對未登記於 review-registry.json。
+  - 成長迴路（月度）：非本月首次 lint（本月已有 07-04／07-10／07-11／07-18 Lint 紀錄），跳過月度蒸餾
+- 品質指標（6g）：
+  - ref 覆蓋率（每週）：97%（07-20~07-26，33 條列／32 有歸因，閾值 80% 通過）；缺 ref 日期：07-22 有 1 條列無歸因。注意：舊 grep 模式會誤報 71%，原因為日報格式改版（詳見上方 6f）
+  - 採用驗證率（月度）：非本月首次 lint，跳過
+  - 外部死鏈（月度）：非本月首次 lint，跳過
+  - 趨勢判讀：持平（連續 5 期 97% 以上）；但量測工具本身曾靜默失效，屬需修規則而非資料劣化
+- 讀者模擬：
+  - Claude Code 重度使用者「Opus 5 出了，我該不該切過去？」→ ⚠️ 已修復：index → model-comparison → 快速選型表 3 跳內命中單一建議（適合數小時自主編碼／跨數十檔 refactor），但該列未提及同日社群發現的 Opus 5 硬編碼工具限制（AgentTool／workflows／deep-research），對重度 subagent 使用者是決策關鍵。已在 Opus 5 列「不適合」欄補「重度 subagent／workflow 工作流先實測」與 wikilink 至 claude-code。
+  - AI 系統開發者「官方說移除 80% 系統提示詞，我自己寫 agent 能複用什麼？」→ ⚠️ 已修復：原內容僅存於 `entities/claude-code.md` 現況的長段 callout 內，`community-tech-patterns.md`（開發者的自然入口）零提及。已在 patterns 頁摘要區補「官方指引對照（2026-07-26）」段落，說明此為本頁長期「最小必要 context」社群直覺首度獲廠商側一手依據，並 wikilink 至 claude-code 與 discussions。
+  - Anthropic 生態追蹤者「15 億美元著作權和解案現在進展到哪？」→ 通過：index → anthropic-business → 財務狀況表 3 跳內得到 91% 賠付申請率、律師費削至 6.8%、Bloomsbury 分潤、48.2 萬本受涵蓋書籍等具體數字，並區分了同期兩起獨立新訴訟。
+- lint 自我遵守率：6/6 位記者回報一次過（3a–3g 七項在六份回報中各有具體頁名與結論，無缺項或含糊，無退回）
+- 社群 lint 專屬策展：`community-tech-tools.md` 新增 0 筆（07-16~07-26 Show HN 互動普遍未達中門檻，唯一高分 Bento HN 877 與 Claude 無關聯不收錄）／汰除 12 筆逾 30 天觀察中條目（Prompt Foundry、Sqim、Everything Claude Code microVM、Pi Extension、BeamWeaver、job-search、LegalRabbit DOCX、AI Commander、Gorchestra、Pagecast、Parcle、token-warden）／精選層提拔 0／痛點洞察清理「Token 成本不透明」「多 agent 協調混亂」兩列失效引用；`community-pattern-trends.md` 本輪無新趨勢節點，依規則未動頁；discussions 保留規則清理 0 筆（閃現最舊 07-06 僅 20 天，無落幕條目）
+- overview.md：已全文改寫（上次全文改寫為 07-18 lint。本輪反映 07-18~07-26 局勢：Opus 5 陣容重排與定價未收斂、官方 context engineering 80% 縮減 vs Opus 5 硬編碼限制的核心張力、Fable 5 促銷 07-19 到期後倒數焦點轉 Sonnet 5 8/31、15 億美元和解案由「會不會賠」轉「怎麼分」、中國對峙本體轉 monitoring 而戰場移至出口管制對立、Alphabet 持股 1,240 億美元；模型現況表以 Opus 5 為首列重排、近兩週事件表更新至 07-18~07-26、社群工具生態誠實記錄本輪新增 0 筆、情緒指標工具活躍度改標回落）
+
+### 📋 待使用者確認（lint 自主安全部分已完成，以下需人工決定）
+
+1. **新實體頁候選**：(a) `Reflect with Claude`——連續第 4 週提出，但本輪查證顯示自 07-09 發布後 17 天無新報導、僅存在於 `claude-code.md` 歷史記錄 1 處與 `feature-radar.md` 3 處，熱度未成長（HN 僅 29 分）→ 建議結案不建頁，請確認是否同意撤下此候選以停止每週重複提出。(b) `Project Glasswing`——出現於 4 個頁面且內容已具規模（約 50 個夥伴、10,000+ 高危漏洞、ENISA/ICE/Nozomi Networks/Horizon3.ai 夥伴名單持續擴充），目前寄居於 `entities/mythos.md` 的 `## Project Glasswing` 區塊 → 是否獨立建頁？（考量：夥伴名單是持續更新的獨立敘事，但拆出會使 mythos 頁的安全能力故事斷裂）
+2. **6g 指標一 grep 模式過時（建議優先處理）**：`.claude/commands/wiki-lint.md` 的 grep `（ref:` 與 `news-pipeline-steps.md:152` 現行 `[N]` 註腳格式不同步，導致回歸偵測器本身靜默失效（本輪若照舊 grep 會誤報 71%，實際 97%）→ 是否授權改寫為雙格式（同時計 `（ref:` 與 `[N]`），並將此配對登記進 `.claude/review-registry.json` 的 sync_pairs 以防再犯？
+3. **來源健康（第 4 週）**：`Claude API Release Notes` 連續 4 週 count=0 → 是否授權查修抓取邏輯（URL 失效或格式改版）？此項已連續三次 lint 提出未決。
+4. **規則年齡審查（6d）**：5 項超過 60 天——`topics/ 頁面格式模板`／`entities/ 頁面格式模板`（各 92 天，第 4 週）、`Wiki 頁面呈現品質標準`（72 天，第 2 週）、`patterns 對 discussions 雙向連結規則`（71 天，第 2 週）、`enterprise-tool-tracker 更新規則`（61 天，首度越線）→ 是否逐項審視，或標記為「已審閱，長期有效」以停止重複列出？（前三項已重複多週未決，建議一次裁決）
+5. **6c 遵守率表過時列**：`wiki-lint.md` 6c 的「新工具加入時更新痛點洞察近期工具欄」一列，因 `community-tech-tools.md` 自 06-19 改為 lint 專用、每日 ingest 不再更新該頁而已不適用 → 是否改寫為 lint 自查項或移除該列？
+6. **patterns 淘汰審查 dry run 結果**：建議淘汰 0 條、建議合併 0 組（`Loop Exit Condition` vs `Agent Loop 事件驅動` 焦點不同，暫不建議合併）、保留全部；1 項無法判斷——「Multi-agent 架構」類別與官方 Managed Agents 高度重疊（official-community-gap 已標「高度對應」），是否需拆分「官方已覆蓋的協調基礎設施」與「社群仍獨有的自架/打包/UX 價值」兩部分？

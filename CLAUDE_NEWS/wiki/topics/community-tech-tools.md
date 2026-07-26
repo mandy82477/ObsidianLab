@@ -173,18 +173,6 @@
 | [**Workweave Router**](https://github.com/workweave/router) | 模型路由 | ⚡ | 2026-06-27 | 成本感知模型路由器，作為 Anthropic/OpenAI 相容 endpoint 運作，依請求難度自動路由模型；起因 Opus 4.7 tokenizer 改版後成本大漲；實測成本降 40%+；Show HN score 181 |
 | [**Verity**](https://verity.md) | 工作流 | ⏳ | 2026-06-27 | Codacy 開源的自癒式 Claude Code review gate，每次 agent 執行後自動修復不安全或不乾淨的代碼，並將學習記憶用於下一次 run；`npm install -g @codacy/verity-cli`；Show HN |
 | [**TBD**](https://github.com/cheapsteak/tbd) | 多 Agent | ⏳ | 2026-06-27 | Mac 原生 CLI-forward coding agent multiplexer，強調「使用者能手動做的，都要能透過 CLI 讓 agent 自動做」，可搭配 agent-channels 實現跨 worktree 通訊；Show HN |
-| [**Prompt Foundry**](https://marketplace.visualstudio.com/items?itemName=sdevries.prompt-foundry) | context 管理工具 | ⏳ | 2026-06-19 | VS Code / Cursor 擴充套件，透過子 prompt 組合 + MCP server 保持 context 新鮮，解決大型 codebase 中 AI 遵循慣有模式導致 context 失效的問題；Show HN |
-| [**Sqim**](https://www.sqim.dev/) | 行動開發工具 | ⏳ | 2026-06-19 | 支援 Claude Code、Codex 等 coding agent 從 CLI 直接安裝 iOS 建置到 iPhone，無需 VPN；Show HN |
-| [**Everything Claude Code microVM**](https://www.jurniti.com/templates/ecc) | 部署模板 | ⏳ | 2026-06-19 | 一鍵將 @affaan 的 Everything Claude Code 設定（64 agents、261 skills）部署到獨立 microVM，約 3 分鐘內可用；Show HN |
-| [**Pi Extension**](https://github.com/sathish316/pi-omniagent-extensions/) | 成本管理工具 | ⏳ | 2026-06-19 | 跨 Cursor、Codex、Claude Code 最大化 AI credits 的瀏覽器擴充套件，使用 ACP 協定；Show HN |
-| [**BeamWeaver**](https://github.com/caudena/beam_weaver) | Agent 框架 | ⏳ | 2026-06-19 | Elixir 原生 agent 框架（OTP-native），支援 agents/tool calling/graph workflow/checkpoints/retries，內建 Anthropic adapter，含 WeaveScope 可觀測性；Show HN |
-| [**job-search**](https://github.com/agent-data/job-search) | Skills | ⏳ | 2026-06-18 | 開源 Claude Code 插件：學習使用者求職偏好、從 LinkedIn 抓取即時職缺並生成個人化日報，選配每日排程自動執行；Show HN |
-| [**LegalRabbit DOCX**](https://github.com/LegalRabbit-AI/legalrabbit-docx-claude-plugin) | 整合工具 | ⏳ | 2026-06-18 | Cowork/Codex DOCX 插件；透過 docx↔HTML 雙向轉換讓 AI 只操作 HTML，減少 2-5 倍 token 消耗，特別適合法律文件紅線審閱；Show HN |
-| [**AI Commander**](https://aicommander.dev/) | 整合工具 | ⏳ | 2026-06-18 | 讓 Claude Code 等 AI Agent 以 TeamViewer 方式遠端連線並在使用者機器執行 shell 指令，無需開放 SSH 端口或 VPN；支援 Windows/Mac/Linux；Show HN |
-| [**Gorchestra**](https://github.com/jgennari/gorchestra) | 多 Agent | ⏳ | 2026-06-18 | 手機遠端控制無限量 Codex / Claude agents；WebServer + SQLite 持久化；支援 Codex 圖片上傳；macOS brew 安裝；Show HN |
-| [**Pagecast**](https://github.com/Amal-David/pagecast) | 整合工具 | ⏳ | 2026-06-18 | Claude Code / Codex 生成的 HTML/Markdown 報告一鍵發布至 Cloudflare Pages，支援穩定 URL、重新發布、watch mode；可替代 Claude Artifacts；Show HN |
-| [**Parcle**](https://parcle.ai/) | 費用監測 | ⏳ | 2026-06-18 | Agent 共享記憶層：索引操作情境，讓 agent 在每個任務取得小範圍相關記憶而非重讀全部 context，宣稱減少 60%+ token 消耗；Show HN |
-| [**token-warden**](https://github.com/vukkt/token-warden) | 費用監測 | ⏳ | 2026-06-18 | Claude Code token 節省插件；HN score 4（flagged）|
 | [**machine0**](https://machine0.io) | 整合工具 | ⏳ | 2026-06-16 | 一鍵建立、配置、快照持久化 NixOS/Ubuntu VM（CLI 操作）；對 NixOS-as-code 有一流支援；適合 Claude Code 雲端開發環境；Show HN score 88 |
 | [**bulk-delete-claude-chat**](https://github.com/MatteoLeonesi/bulk-delete-claude-chat) | UI 工具 | ⚡ | 2026-06-13 | 解決 Claude 網頁版缺乏批量刪除對話功能的痛點；自動捲動、全選、刪除（對比 ChatGPT 已有內建批量刪除）；HN score 56 |
 | [**AVP（Agent Vault Proxy）**](https://github.com/inflightsec/agent-vault-proxy) | 安全工具 | ⚡ | 2026-06-12 | 解決 coding agent 持有 API key 的安全風險；placeholder + 最後一刻注入方案，agent 環境中只保存 placeholder，真實金鑰由代理在 wire 層面即時替換；從根本上消除洩露風險；HN Show HN |

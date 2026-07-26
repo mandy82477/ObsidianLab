@@ -20,7 +20,7 @@
 | 模型 | 定位 | 定價（in/out per Mtok）| Context | 最適合 | 不適合 | 狀態 |
 |------|------|------|------|------|------|------|
 | [[entities/fable-5\|Fable 5]] | 旗艦（Mythos 級公開版） | $10 / $50 | 1M | 跨多天長期 agentic 工作流、deep reasoning、安全漏洞分析 | 日常短問答改 Sonnet 5；前沿 LLM 開發（護欄降級）| ✅ 已解禁（免費期 7/19 已到期，見下方註記） |
-| [[entities/opus-5\|Opus 5]] | 次旗艦（新，2026-07-25 發布） | ~$5 / $25（推算，非官方逐字確認） | 1M | 數小時自主編碼、跨數十檔 refactor、複雜系統工程 | 資安首選讓給 Fable 5；日常小任務改 Sonnet 5 | ✅ Active（Max 新預設、Pro 最強） |
+| [[entities/opus-5\|Opus 5]] | 次旗艦（新，2026-07-25 發布） | ~$5 / $25（推算，非官方逐字確認） | 1M | 數小時自主編碼、跨數十檔 refactor、複雜系統工程 | 資安首選讓給 Fable 5；日常小任務改 Sonnet 5；**重度 subagent／workflow 工作流先實測**（Claude Code 2.1.219/220 疑有僅針對 Opus 5 的硬編碼工具限制，未經官方證實，見 [[entities/claude-code]]）| ✅ Active（Max 新預設、Pro 最強） |
 | [[entities/sonnet-5\|Sonnet 5]] | 主力平衡選項（Claude Code 預設） | $2 / $10（促銷至 8/31） | 1M | 日常規模開發、tool use 密集、成本敏感 | 大型 refactor／數小時 agent 改 Opus 5；高頻批次改 Haiku 4.5 | ✅ Active（v2.1.197 預設） |
 | Sonnet 4.6 | 前代主力 | 低於 Sonnet 5 正式價 | 200K | 已驗證穩定的既有工作流 | 新專案啟動改 Sonnet 5 | ✅ Active |
 | Haiku 4.5 | 輕量 worker | 最低 | 200K | 即時互動、高頻批量分類、延遲成本敏感 | 多步驟規劃／跨檔案推理改 Sonnet 5 起 | ✅ Active |

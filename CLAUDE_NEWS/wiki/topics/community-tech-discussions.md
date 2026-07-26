@@ -392,14 +392,14 @@ MCP 的實際成本遠超多數使用者預期，已有多個量化案例：
 - **來源：** [Why did Microsoft pull Fast Context from public domain?](https://www.reddit.com/r/ClaudeCode/comments/1unz1s5/why_did_microsoft_pull_fast_context_from_public/)（Reddit r/ClaudeCode，07-05；原專案含 arXiv 論文、GitHub repo、自訓練模型）
 - **核心論點：** 使用者重新測試 Microsoft 已下架的 Fast Context 專案——將程式碼探索工作委派給本地小型 LLM（local-Ollama task router）分流，聲稱可節省 50–60% context token，代價是執行時間增加；貼文討論該專案為何被無預警從公開領域下架
 - **關鍵回響：**
-  - 🧪 跟進實測：貼文作者重新測試已下架版本，確認節省幅度數字，但下架原因仍未有官方說明（尚待查證）
+  - 🧪 跟進實測：貼文作者重新測試已下架版本，確認節省幅度數字，但下架原因仍未有官方說明（2026-07-05 指控，至今無後續，07-12～07-26 news 查無跟進）
 - **收斂結論：** 尚無共識；「本地小模型分流節省 context」的機制本身具參考價值，已同步記錄至 [[topics/community-tech-patterns]] 技術彙整；下架原因（License 爭議／內部政策／效果不如預期）目前僅為社群猜測，無官方回應（推論）
 
 #### Anthropic 疑似對使用者執行 Prompt Injection：單一 Reddit 指控（2026-07-05）
 
 - **來源：** [Just got this response from Claude, what is going on?](https://old.reddit.com/r/LLMDevs/comments/1udpw9h/just_got_this_response_from_claude_what_is_going_on/)（Reddit r/LLMDevs via Hacker News，HN score 20，07-05）
 - **核心論點：** 使用者質疑 Claude 疑似對自己執行了未告知的 prompt injection，貼出疑似證據並引發討論串內正反回應
-- **收斂結論：** 細節與可信度尚待查證，屬單方指控，暫無第二來源交叉驗證或官方回應（推論：與 07-02 已記錄的「Anthropic 疑似動態插入未公開系統訊息」屬同類型「透明度信任」疑慮，但為獨立事件，證據力均弱，暫不合併；同軸事件彙整索引見長期議題「Anthropic 透明度與信任赤字」子區塊）
+- **收斂結論：** 細節與可信度尚待查證，屬單方指控（2026-07-05 指控，至今無後續，07-12～07-26 news 查無跟進），暫無第二來源交叉驗證或官方回應（推論：與 07-02 已記錄的「Anthropic 疑似動態插入未公開系統訊息」屬同類型「透明度信任」疑慮，但為獨立事件，證據力均弱，暫不合併；同軸事件彙整索引見長期議題「Anthropic 透明度與信任赤字」子區塊）
 
 #### Sonnet 5 Orchestrator 實測與 Fable 5／Opus 4.8 免費期彙整帖（2026-07-05，簡記）
 

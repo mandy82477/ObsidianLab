@@ -1,25 +1,23 @@
 # Claude / Anthropic 生態系概覽
 
-**最後更新：** 2026-07-18
+**最後更新：** 2026-07-26
 **更新頻率：** 🗓️ 週更（`/wiki-lint` 時更新）
 
 ---
 
 ## 當前局勢
 
-> **2026-07-25 重大更新：** Anthropic 正式發布 **Claude Opus 5**，取代 Opus 4.8 成為次旗艦、Claude Max 新預設模型、Claude Pro 最強模型；官方稱編碼與知識工作評測逼近 Fable 5、定價為其一半（另有報導稱維持原 Opus 定價，兩說法方向不完全一致），資安任務仍落後 Mythos 5。HN 1587 分為今日全站最高，SDK 與 GitHub Copilot 同步支援。詳見 [[entities/opus-5]]、[[topics/model-comparison]]。本段以下內容為 07-18 週更存檔，尚未反映此次陣容變化，下次 `/wiki-lint` 全文改寫時納入。
+**Opus 5 發布重排模型陣容，是本週唯一的結構性變化**：Anthropic 於 07-24/07-25 正式推出 **Claude Opus 5** 並全平台上線，取代 Opus 4.8 成為次旗艦、Claude Max 新預設模型、Claude Pro 最強模型。官方稱其編碼與知識工作評測逼近 Fable 5、**定價為 Fable 5 一半**（讀者端推算約 $5/$25，非官方逐字確認；另有 MarkTechPost 07-14 報導稱維持原 Opus 定價，兩說法並存未收斂），資安任務仍落後 Mythos 5。HN 1587 分為該日全站最高，SDK（python v0.120.0／typescript sdk-v0.115.0）與 GitHub Copilot 同步支援。詳見 [[entities/opus-5]]、[[topics/model-comparison]]。
 
-**中國信任對峙進入觀察期，Anthropic 07-10 首度公開否認後暫無新進展**：「中美 AI 工具信任對峙」（社群逆向工程指控 → Alibaba/Meta 企業禁用 → 中國官方 07-08 政府層級「後門」警示 → Anthropic 07-10 首度公開反駁）自 07-11 起未見雙方新表態，議題轉入低頻觀察，惟 07-16 又新增一則待查證的「Claude Code + DeepSeek 中國網路間諜行動」報導（僅標題可用），顯示信任摩擦的餘震仍不時浮現。詳見 [[topics/safety-china-trust-dispute]]。
+**同日官方揭露「系統提示詞縮減逾 80%」，是本週最值得工程師讀的一手材料**：Anthropic 部落格〈Claude 5 世代模型的 context engineering 新規則〉說明針對更先進模型已移除超過 80% 的 Claude Code 系統提示詞，並給出將此經驗套用於自訂 agent 的建議（HN 393 分）。與之對照，社群在 Claude Code 2.1.219/220 二進位中發現一段**僅針對 Opus 5 的硬編碼限制**（未經使用者明確要求不得呼叫 AgentTool、不得使用 workflows／deep-research），討論者認為可能不成比例地限制 Opus 5 發揮——屬社群觀察，官方未證實。兩者並置構成本週的核心張力：官方一邊宣稱「少即是多」，一邊被發現對新模型加了額外約束。
 
-**Claude Code v2.1.212 帶來本月最大升版風險**：`/fork` 指令行為改變——不再於同一 session 啟動子 agent，改為將對話複製進新背景 session，原功能改名 `/subtask`，**⚠️ Breaking Change 且無過渡期**，依賴舊行為的 skill/hook 需立即改寫。同時 Cowork 已知問題累積為 🔴 資料完整性風險：10GB VM bundle 導致效能持續劣化，Edit/Write 工具因緩衝區上限靜默截斷檔案（任何檔案大小可重現）。07-17 另新增 Claude 與 1Password 憑證整合（免密碼登入）。Anthropic Status 過去 24 小時累計 4 起事件通報（Sonnet 5／Haiku 4.5 錯誤率升高「修復實施中」，另 3 起已解決），為近期最密集的一次。
+**Fable 5 免費期限已於 07-19 到期，倒數焦點轉為 Sonnet 5 促銷 8/31**：Pro 訂閱免費存取確認結束，Max/Team 是否維持「永久」仍無新報導佐證；Fable 5 另有 Max 方案被誤判需購買 usage credits 的計費異常（#79337）持續未解。Opus 5 上線首日 Anthropic Status 接連出現 4 起錯誤率升高事件（Opus 5／Sonnet 5／Fable 5／Mythos 5），皆在數十分鐘至約一小時內排除。詳見 [[entities/pricing]]。
 
-**Fable 5 免費期限第四度延長至 7/19，即將到期**：因 GPT-5.6 Sol 被視為同級競品，促銷window 從 07-07 一路延至 07-12→07-19；到期後轉 usage-based billing、是否再延尚無官方說法，為本週「⏰ 倒數中」最迫切事件。同時 Mythos 5 持續被第三方點名為風險指標——JPMorgan CEO Dimon 稱其風險「真實」、加拿大金融監管機關已在銀行網路風險警告信中引用其能力。競爭面：Moonshot AI 正式發布 Kimi K3（2.8 兆參數）自稱匹敵 OpenAI/Anthropic，TechCrunch 稱即將推出的 Kimi 3 有望縮小與 Opus 4.8 差距；Microsoft Nadella 再度公開批評 Fable「受編輯控制」。
+**$1.5B 著作權和解案落地執行，法律戰線由「會不會賠」轉為「怎麼分」**：美國法官 07-21 核准 15 億美元集體訴訟和解案（首宗達成和解的重大 AI 著作權案件），07-22 補上執行細節——逾 48.2 萬本受涵蓋書籍中約 91% 已提出賠付申請、法院將集體訴訟律師費削減至 6.8%、Bloomsbury 與《哈利波特》出版商確認獲分潤。同期另起兩樁獨立訴訟：神經網路技術專利侵權指控（Reuters／Bloomberg Law）、田納西大學提告（待查證）。詳見 [[topics/anthropic-business]]。
 
-**IPO 敘事持續加溫**：Anthropic 揭露將支付 60 萬美元徵才協助形塑 IPO 前「敘事故事」（Business Insider），與 Blackstone 共組 15 億美元 AI 實作公司 Ode、三家財經媒體同步報導上市前投資人會議安排、前聯準會主席 Bernanke 已加入長期利益信託董事會強化治理公信力——多線並進指向同一結論：市場正在為上市預作準備。同時 Anthropic 證實 1660 萬美元帳務錯誤（企業客戶被多收 170 萬美元），與新上線的 Spend Controls 功能形成可信度對比。Claude Corps 首度揭露具體薪資（8.5 萬美元／1,000 名早期職涯專業人士）並開放申請。
+**中國信任對峙本體轉入 monitoring，但戰場移到出口管制與人才/技術外流**：核心「後門」敘事自 07-10 Anthropic 首度否認後 16 天無新進展，本輪 lint 已將 [[topics/safety-china-trust-dispute]] 由 ongoing 改為 monitoring。取而代之的是三條新支線：白宮科技顧問指控中國 Moonshot AI 竊取 Anthropic 技術、矽谷業界聯合反對 Anthropic 對中限制立場（The Information）、Nvidia 號召的開放權重連署擴大至 50 家企業但**不含 Amazon 與 Anthropic**——Anthropic 在出口管制議題上與 Nvidia 陣營正面對立的位置越來越清楚。政治布局同步加碼：再捐 2000 萬美元給 Public First Action，政治教育／遊說相關捐款累計達 4000 萬美元。詳見 [[topics/anthropic-government-policy]]。
 
-**政策面延伸戰線**：EU 官員批評 Anthropic 僅派初階員工出席歐洲議會安全聽證；執行長捐款 100 萬美元予 super PAC 捲入 AI 陣營政治獻金角力（待核實）；WIRED 確認 Anthropic 正推動州級 AI 監管遊說；美國參議員 Mike Rounds 就 Mythos 接受五角大廈簡報（待確認）；澳洲著作權遊說（210 億美元投資綁定著作權法規明確性）延續「投資換政策」互動模式。詳見 [[topics/anthropic-government-policy]]、[[topics/anthropic-commitments]]。
-
-**官方生態擴張**：新增 `entities/claude-skills` 作為官方 Skills 產品線單一入口（六大控制層之一，31 個小企業技能包首日 38.2 萬下載、教師技能庫、第三方移植動態）；`entities/claude-for-teachers`（07-15）向美國認證 K-12 教師開放。社群面持續高熱度：額度/成本焦慮系列已延燒逾 2 週（🔥🔥🔥）、「Anthropic 透明度與信任赤字」長期討論串彙整 8 起分散事件、模式趨勢庫本輪驗證「Fable 5 編排、便宜模型執行」官方基準首度背書社群直覺（46% 成本／96% 效能）。
+**估值與商業面：Alphabet 帳上的 Anthropic 已值 1,240 億美元**：Bloomberg 報導 Alphabet 持有股權市值跳升至該水位，與 IPO 前敘事整備（60 萬美元徵才）、Blackstone 15 億美元合資公司 Ode（單一來源待佐證）、Bernanke 加入長期利益信託構成同一條上市準備鏈。企業側新增 Cyberhaven／Orca Security 兩家資安廠商整合 Claude Compliance API。競爭面壓力未減：阿里 Qwen 3.8／Moonshot Kimi K3 被跨媒體評為重大策略挑戰（The New Stack 實測：效果相當、成本僅三分之一、速度慢 4 倍），SCMP 另報導中國 AI agent 在自主研究任務表現超越 Claude Code。
 
 ---
 
@@ -27,13 +25,13 @@
 
 | 模型 | 狀態 | 備注 |
 |------|------|------|
-| **Claude Fable 5** | 🟢 全面恢復 | Defense in Depth 安全分類器（高風險 coding 請求 fallback 至 Opus 4.8）；免費期限＋週配額 +50% 促銷第四度延長至 **7/19**，到期後轉 usage-based billing；$10/$50 per M token；JPMorgan/加拿大監管機關點名為風險指標 |
-| **Claude Sonnet 5** | 🟢 預設模型 | Claude Code 預設；1M context；$2/$10 per Mtok（促銷至 8/31）；07-17 Anthropic Status 通報錯誤率升高，修復實施中 |
-| **Claude Mythos 5** | 🟢 全面恢復（政策限定）| 僅限授權機構/安全研究用途；持續被第三方（Dimon、加拿大監管機關）點名為風險評估對象 |
-| **Claude Opus 5** | 🟢 新次旗艦（2026-07-25）| Claude Max 新預設模型、Claude Pro 最強模型；編碼/知識工作評測逼近 Fable 5，資安任務仍落後 Mythos 5；定價定位見 [[entities/pricing]] |
+| **Claude Opus 5** | 🟢 次旗艦（2026-07-25 發布）| Claude Max 新預設模型、Claude Pro 最強模型；編碼/知識工作評測逼近 Fable 5，資安任務仍落後 Mythos 5；定價「官方稱為 Fable 5 一半」（推算約 $5/$25，非官方逐字確認，見 [[entities/pricing]]）；社群發現 Claude Code 內對其有硬編碼工具限制（待證實）|
+| **Claude Fable 5** | 🟢 全面恢復（促銷已結束）| Defense in Depth 安全分類器（高風險 coding 請求 fallback 至 Opus 4.8）；**免費期限已於 07-19 到期**，Pro 免費存取結束、Max/Team 是否維持「永久」無新佐證；$10/$50 per M token；Max 方案 usage credits 誤判（#79337）未解 |
+| **Claude Sonnet 5** | 🟢 Claude Code 預設 | 1M context；$2/$10 per Mtok（**促銷至 8/31，現為最迫切倒數項**）；agentic 效能接近 Opus 4.8 |
+| **Claude Mythos 5** | 🟢 全面恢復（政策限定）| 僅限授權機構／安全研究用途；持續被第三方點名為風險指標（Dimon、加拿大金融監管機關、聯準會警示延遲曝光）|
 | Claude Opus 4.8 | ⚠️ 已被取代 | SWE-bench Pro 69.2%、1M context；次旗艦地位已由 Opus 5 接手；仍為 Fable 5 高風險請求 fallback 目的地 |
 | Claude Sonnet 4.6 | ✅ Active | 仍可選用；社群部分懷念其互動個性 |
-| Claude Haiku 4.5 | ✅ Active | 07-17 與 Sonnet 5 同步出現錯誤率升高通報 |
+| Claude Haiku 4.5 | ✅ Active | 低延遲／高頻批量任務的現行選項 |
 
 > 快速選型與情境推薦見 **[[topics/model-comparison]]**
 
@@ -43,85 +41,89 @@
 
 ### 🔴 高度關注
 
-1. **[[topics/safety-china-trust-dispute]] — 中美 AI 工具信任對峙（觀察期）**
-   - 07-10 Anthropic 首度公開否認後未見新表態；07-16 新增一則待查證的 DeepSeek 網路間諜報導
-   - 企業面：Alibaba 已退出（改用 Qoder）；Meta 限用未確認
+1. **[[entities/opus-5]] — 新次旗艦上線首週，定價與工具限制兩處未收斂**
+   - 定價「Fable 5 一半」為官方措辭，具體數字未逐字確認；兩則媒體報導方向不一致
+   - Claude Code 2.1.219/220 對 Opus 5 的硬編碼工具限制（AgentTool／workflows／deep-research）待官方說明
 
-2. **[[entities/claude-code]] — v2.1.212 `/fork` Breaking Change ＋ Cowork 資料完整性風險**
-   - `/fork` 語意變更無過渡期（🔴）；Cowork VM bundle 效能劣化 + Edit/Write 靜默截斷（🔴）
-   - 詳見 [[feature-radar]]「升版風險」
+2. **[[entities/claude-code]] — 已知問題以帳務與連線為主**
+   - Max 額度異常快速耗盡（#38335，807 留言，全站互動最高）、API 連線中斷致無法完成任務（#69415）
+   - Cowork Edit/Write 靜默截斷檔案（#53940）仍為 🔴 資料完整性風險
+   - AGENTS.md 標準支援訴求（#6235）累積 5760 讚，長期未獲官方回應
 
-3. **[[entities/pricing]] — Fable 5 免費期限 7/19 到期倒數**
-   - 第四度延長，到期後轉 usage-based billing，是否再延無官方說法
+3. **[[topics/anthropic-business]] — $1.5B 和解案執行 ＋ 兩起新訴訟**
+   - 91% 受涵蓋書籍已申請賠付、律師費削至 6.8%；專利侵權與田納西大學提告為新增戰線
+   - Alphabet 持股市值 1,240 億美元，IPO 準備鏈條多線並進
 
-4. **[[topics/anthropic-business]] — IPO 敘事加溫 ＋ 治理與成本爭議並行**
-   - 60 萬美元敘事整備徵才、Blackstone Ode 合資、Bernanke 治理信託、$16.6M 帳務錯誤 vs Spend Controls
+4. **[[topics/anthropic-government-policy]] — 出口管制立場對立化**
+   - Nvidia 開放權重連署 50 家企業不含 Anthropic；矽谷業界反對其對中限制立場
+   - 政治獻金累計 4,000 萬美元；聯準會 Mythos 警示延遲數月曝光（待核實）
 
 ### 🟡 持續追蹤
 
-5. **[[topics/anthropic-government-policy]] — 政策戰線延伸**
-   - EU 聽證批評、super PAC 捐款（待核實）、州級監管遊說、澳洲著作權遊說、五角大廈簡報（待確認）
+5. **[[topics/safety-china-trust-dispute]] — 中美信任對峙（monitoring，本輪降級）**
+   - 核心「後門」敘事 07-10 後 16 天無新進展；新支線（Moonshot 竊取指控、外洩縮小差距）已分流至政策頁
 
-6. **[[topics/competitor-landscape]] — 競爭壓力持續**
-   - Kimi K3 正式發布、Kimi 3 據稱縮小與 Opus 4.8 差距、Nadella 批評 Fable「受編輯控制」
+6. **[[topics/anthropic-commitments]] — 承諾兌現追蹤（monitoring，本輪降級）**
+   - 5 項追蹤中承諾自 07-10 起無新官方動作（隱寫術修復、Agent SDK 計費切割、退款均維持原狀）
 
-7. **[[topics/code-quality-decline]] / 額度焦慮系列** — 延燒逾 2 週，🔥🔥🔥
-   - Max 額度異常耗盡、cache 命中率下降等訊號群持續
+7. **[[topics/competitor-landscape]] — 競爭壓力持續**
+   - Qwen 3.8／Kimi K3 效果相當而成本三分之一；SCMP 稱中國 AI agent 自主研究任務超越 Claude Code
 
-8. **[[topics/recursive-self-improvement]] — AI 遞歸自我改進**（monitoring）
+8. **[[topics/code-quality-decline]] / 額度焦慮系列** — 🔥🔥🔥
+   - Max 額度異常耗盡訊號群持續累積，官方無正面說明
+
+9. **[[topics/recursive-self-improvement]] — AI 遞歸自我改進**（monitoring）
    - Claude 已負責 Anthropic 80–90% 生產程式碼；全球「煞車踏板」呼籲無新進展
 
 ---
 
-## 近兩週重大事件（2026-07-04 至 2026-07-17）
+## 近兩週重大事件（2026-07-18 至 2026-07-26）
 
 | 日期 | 事件 | 影響 |
 |------|------|------|
-| 07-17 | **Claude Code v2.1.212**：`/fork` 改為背景 session 化，`/subtask` 語意拆分（⚠️ Breaking Change）；**Claude 1Password 整合上線** | 🔴 升版需檢視相依 skill/hook；🛠️ 新功能 |
-| 07-17 | Anthropic Status 24 小時內累計 4 起事件（Sonnet 5／Haiku 4.5 錯誤率升高修復中）；Kimi K3 正式發布 | 🟡 平台穩定性；💼 競爭壓力延續 |
-| 07-16 | **Anthropic 與 Blackstone 成立 15 億美元 AI 實作公司 Ode**；Yahoo/CNBC/Bloomberg 同步報導 IPO 前投資人會議安排 | 💼 IPO 敘事升溫 |
-| 07-16 | Cowork 已知問題（10GB VM bundle 效能劣化＋Edit/Write 靜默截斷）列入 feature-radar 升版風險 | 🔴 資料完整性風險 |
-| 07-15 | **Claude for Teachers 發布**，向美國認證 K-12 教師開放進階功能與教學技能庫 | 🛠️ 新產品線（🔥🔥🔥） |
-| 07-14 | **Anthropic 於印度啟動盧比計價**（Pro 方案 Rs 2,000/月），回應長期未回應的 GitHub Issue 需求 | 💼 在地化定價 |
-| 07-14 | Reuters 獨家：加拿大金融監管機關銀行網路風險警告信引用 Claude Mythos 能力 | 🏛️ 解禁後首見監管案例 |
-| 07-13 | Anthropic 證實 1660 萬美元帳務錯誤，企業客戶被多收 170 萬美元 | 💼 計費可信度爭議 |
-| 07-13 | Tom Blomfield（前 Monzo 共同創辦人）加入 Anthropic（待核實） | 💼 人才佈局延續 |
-| 07-12 | **新建 [[topics/safety-china-trust-dispute]]**，整合中美信任對峙五階段敘事 | 🔴 結構性彙整 |
-| 07-11 | Claude API Release Notes 來源連續 7+ 天無產出（追蹤中，尚待排查） | 🛠️ 資料管線觀察 |
-| 07-10 | **Anthropic 首度公開否認中國「後門」指控**；同日發布「Inviting hard questions」聲明 | 🔴→🟡 信任危機首度正面回應 |
-| 07-10 | 前聯準會主席 Ben Bernanke 加入 Anthropic 長期利益信託董事會 | 🟢 治理公信力強化 |
-| 07-08 | 中國官方首度政府層級指控 Claude Code「後門」（8+ 家媒體同步） | 🔴 信任爭議升為國家級對峙 |
-| 07-08 | Claude Cowork 擴展至行動/網頁版（雲端持續執行，首波限 Max） | 🛠️ 官方新功能（🔥🔥🔥🔥） |
-| 07-07 | Anthropic 定調「隱藏追蹤器」為內部實驗、非惡意 | 🔴→🟡 spyware 指控首次官方回應 |
-| 07-07 | Fable 5 免費期限延至 7/12（後續再延至 7/19） | 💼 促銷延長序列起點 |
-| 07-06 | Alibaba 禁令多媒體確認＋Meta 同日限用 Claude | 🔴 企業安全審查擴散 |
-| 07-04 | Alibaba 禁用 Claude Code 生效日確認（The Indian Express） | 🔴 首個安全信任驅動的企業退出落地 |
+| 07-26 | **Anthropic 部落格：Claude 5 世代 context engineering 新規則**，Claude Code 系統提示詞已移除逾 80%（HN 393 分）| 🛠️ 自訂 agent 設計可直接參考的一手材料 |
+| 07-26 | 社群發現 Claude Code 2.1.219/220 對 Opus 5 有硬編碼工具限制（未經要求不得用 AgentTool／workflows／deep-research）| 🟡 待官方證實，涉及新模型可用性 |
+| 07-26 | Opus 5 上線首日 Status 連續 4 起錯誤率事件（Opus 5／Sonnet 5／Fable 5／Mythos 5），皆已排除 | 🟡 上線期平台穩定性 |
+| 07-26 | Nvidia 開放權重連署擴大至 50 家企業，**不含 Amazon 與 Anthropic** | 🏛️ 出口管制立場對立公開化 |
+| 07-25 | **Claude Opus 5 正式發布**：取代 Opus 4.8 成次旗艦、Max 新預設、Pro 最強；官方稱定價為 Fable 5 一半（HN 1587 分）| 🔴 陣容重排，選型全面受影響 |
+| 07-25 | v2.1.220 發布（純 bug fix）；Fable 5 於 Max 方案要求 usage credits（#79337）新增為已知問題 | 🟡 計費異常未解 |
+| 07-24 | **Claude 語音模式全面升級**：新增 Opus／Sonnet 模型選擇並開放所有使用者（六家媒體同步）| 🛠️ 官方新功能（🔥🔥🔥🔥）|
+| 07-24 | Bloomberg：Alphabet 持有 Anthropic 股權市值跳升至約 1,240 億美元 | 💼 估值敘事 |
+| 07-24 | 白宮科技顧問指控中國 Moonshot AI 竊取 Anthropic 技術；矽谷業界聯合反對 Anthropic 對中限制立場 | 🏛️ 政策戰線移轉 |
+| 07-24 | SDK 新增 API stop reason `model_continue`；Cyberhaven／Orca Security 整合 Claude Compliance API | 🛠️ SDK 變更；💼 生態整合 |
+| 07-22 | **$1.5B 和解案執行細節**：91% 受涵蓋書籍已申請賠付、律師費削至 6.8%、Bloomsbury 獲分潤 | 💼 法律風險定價化 |
+| 07-22 | Anthropic 再捐 2,000 萬美元給 Public First Action（累計 4,000 萬）；CNBC：聯準會 Mythos 警示延遲數月曝光 | 🏛️ 政治布局；🟡 待核實 |
+| 07-22 | v2.1.217 發布（Prompt input 表情符號 shortcode 自動完成）| 🛠️ 小幅功能 |
+| 07-21 | **法官核准 15 億美元著作權集體訴訟和解案**（首宗重大 AI 著作權和解）| 🔴→🟢 最大法律不確定性落地 |
+| 07-21 | v2.1.216（新增 `sandbox.filesystem.disabled` 設定）；阿里巴巴疑似封鎖 Claude Code（2.5 萬假帳號，❓未確認）| 🛠️ 新設定項；🟡 單一來源 |
+| 07-20 | **Fable 5 免費期限（07-19）到期**，Pro 免費存取結束；Max/Team 是否永久無新佐證 | 💼 促銷序列終點 |
+| 07-18 | v2.1.214（純安全性修正）；Anthropic Status 四起錯誤率事件同日修復 | 🟡 平台穩定性 |
 
-> 07-04 前完整事件時序見各 topics 頁面「時序」區塊；[[log]] 含每日 ingest 完整紀錄。
+> 07-18 前完整事件時序見各 topics 頁面「時序」區塊；[[log]] 含每日 ingest 完整紀錄。
 
 ---
 
 ## 社群工具生態
 
-社群工具目錄（[[topics/community-tech-tools]]）本輪（2026-07-18 lint）新增 18 筆（Brainless／Agentty／OtoDock／Grepathy／Sx 2.0／claude-meseeks 等，涵蓋 07-06～07-15 news）、汰除 26 筆逾 30 天無後續的 ⏳ 條目；精選層新增 Brainless（HN 124，UI 工具庫）與 claude-meseeks（HN 130，新增通知/語音子分類）。
+社群工具目錄（[[topics/community-tech-tools]]）本輪（2026-07-26 lint）**新增 0 筆**——07-16～07-26 的 Show HN 條目互動數普遍未達中門檻（多為個位數分數），唯一高分例外 Bento（HN 877）與 Claude／Claude Code 無關聯故不收錄；同時汰除 12 筆逾 30 天無後續的 ⏳ 條目，並清理「Token 成本不透明」「多 agent 協調混亂」兩列痛點洞察中已失效的工具引用。精選層本輪無提拔。
 
-- 🔥🔥🔥 **額度/成本監控** — 延燒逾 2 週，Max 額度異常耗盡與 cache 命中率下降訊號群持續
-- 🔥🔥🔥 **模型路由自動化** — Anthropic 官方基準首度背書「Fable 5 編排、便宜模型執行」（46% 成本／96% 效能），社群直覺首獲廠商量化數據支持
-- 🔥🔥 **Multi-agent 隔離工程化** — 新增套件化/伺服器化部署節點（ccteams、OtoDock），重心轉向配置可重用性
-- 🌊延燒 **Anthropic 透明度與信任赤字** — 長期討論串彙整 8 起分散事件（帳號封禁無申訴、spyware 指控、隱寫、成本暴增等）
+- 🔥🔥🔥 **額度/成本焦慮** — Max 額度異常耗盡（#38335 達 807 留言）持續累積，為全站互動最高議題
+- 🔥🔥🔥 **多 agent／多視窗管理** — 07-26 單日同時出現 Termic、Argus、terminai 三款獨立工具切入同一痛點，反映「單一終端機難管多個平行 agent session」是普遍痛點
+- 🔥🔥 **Context engineering 精簡化** — 官方「移除 80% 系統提示詞」為社群長期「少即是多」直覺首度提供廠商側依據
+- 🌊延燒 **Anthropic 透明度與信任赤字** — 長期討論串持續（帳號封禁無申訴、隱寫、成本暴增、Opus 5 硬編碼限制等）
 
-> 功能熱度評分與試用推薦見 **[[feature-radar]]**；社群趨勢週更見 **[[topics/community-pattern-trends]]**
+> 功能熱度評分與試用推薦見 **[[feature-radar]]**；社群趨勢週更見 **[[topics/community-pattern-trends]]**（本輪無新趨勢節點，依規則未動頁）
 
 ---
 
 ## 商業動態
 
-- **信任面**：中國信任對峙轉入觀察期（07-10 官方否認後無新進展），惟 07-16 新增待查證 DeepSeek 網路間諜報導；Alibaba 已退出（改用 Qoder）
-- **IPO 敘事**：60 萬美元敘事整備徵才、Blackstone Ode 合資（15 億美元）、三家財經媒體報導上市前投資人會議、Bernanke 治理信託任命
-- **計費爭議**：1660 萬美元帳務錯誤（企業多收 170 萬）vs 新上線 Spend Controls 的可信度對比；印度盧比在地化定價落地
-- **競爭夾擊**：Kimi K3 正式發布、Kimi 3 據稱縮小與 Opus 4.8 差距、Nadella 批評 Fable「受編輯控制」
-- **新合作**：FIS 延長合作、Deloitte 安全平台、Optum 醫療、Varonis runtime 安全、Claude Corps（8.5 萬美元／1,000 人）開放申請
-- **人才**：Tom Blomfield（前 Monzo）加入（待核實）；[[topics/ai-talent-flow]] 追蹤 DeepMind 人才淨流失延續
+- **法律**：15 億美元著作權和解案獲法院核准並進入執行（91% 申請率、律師費 6.8%）；新增專利侵權與田納西大學兩起訴訟
+- **估值與 IPO**：Alphabet 持股市值約 1,240 億美元；60 萬美元敘事整備徵才、Blackstone Ode 合資（15 億美元，單一來源）、Bernanke 治理信託
+- **計費**：Fable 5 促銷 07-19 到期；Max 方案 usage credits 誤判（#79337）未解；Sonnet 5 促銷 8/31 為現行最迫切倒數
+- **競爭夾擊**：Qwen 3.8／Kimi K3 效果相當而成本三分之一（速度慢 4 倍）；SCMP 稱中國 AI agent 自主研究超越 Claude Code
+- **新合作**：Cyberhaven／Orca Security 整合 Claude Compliance API；FIS／Deloitte／Optum／Varonis 既有合作延續
+- **人才**：[[topics/ai-talent-flow]] 追蹤 DeepMind 淨流失延續；Tom Blomfield（前 Monzo）加入仍為單一來源待核實
 
 ---
 
@@ -129,11 +131,11 @@
 
 | 功能 | 熱度 | 推薦 |
 |------|------|------|
-| Claude Fable 5（免費期至 7/19）| 🔥🔥🔥🔥🔥 | ⚡ 把握到期前視窗，之後轉 usage-based billing |
+| Claude Opus 5 | 🔥🔥🔥🔥🔥 | ⚡ 有條件推薦——Max/Pro 已為預設或最強選項，惟 Claude Code 內對其有未證實的硬編碼工具限制，重度 subagent 工作流先實測 |
 | Claude Code Artifacts | 🔥🔥🔥🔥🔥 | ✅ 推薦（即時互動式儀表板/圖表/可分享頁面）|
-| Claude Cowork（行動/網頁版）| 🔥🔥🔥🔥 | ⚠️ 有條件推薦——VM bundle 效能劣化 + Edit/Write 靜默截斷為 🔴 資料完整性風險，避免處理大型檔案 |
-| `/fork` → `/subtask`（v2.1.212）| 🔥🔥🔥 | ⚠️ Breaking Change，升級前確認相依 skill/hook 是否需要改寫 |
-| Claude 1Password 整合 | 🔥🔥 | ⏳ 觀望（僅媒體報導，尚無官方一手來源）|
+| Claude 語音模式（Opus／Sonnet 可選）| 🔥🔥🔥🔥 | ⚡ 有條件推薦——已對所有使用者開放 |
+| Claude Cowork（行動/網頁版）| 🔥🔥🔥🔥 | ⚠️ 有條件推薦——Edit/Write 靜默截斷為 🔴 資料完整性風險，避免處理大型檔案 |
+| Claude Sonnet 5（$2/$10 促銷至 8/31）| 🔥🔥🔥🔥 | ✅ 推薦——成本敏感的常規任務首選，促銷到期前為最佳性價比視窗 |
 
 > 完整功能熱度評分、升版風險與倒數中事件見 **[[feature-radar]]**
 
@@ -141,8 +143,8 @@
 
 ## 社群情緒指標
 
-- HN 討論熱度：🔥🔥🔥 中高（額度焦慮系列 + Brainless/claude-meseeks 等工具熱議，中國信任對峙討論已降溫）
-- Reddit 情緒：😤 額度/成本焦慮持續；對信任危機的關注度較兩週前趨緩
-- 開發者工具活躍度：📈 持續高（本輪策展新增 18 筆工具）
-- 信任指標：→ 持平（官方否認後無新進展，亦無新指控推翻其表態）
-- 競爭壓力：🔴 高（Kimi K3/Kimi 3 追趕敘事 + Microsoft 持續公開批評）
+- HN 討論熱度：🔥🔥🔥🔥 高（Opus 5 發布 1587 分、context engineering 文 393 分，為近兩週雙高峰）
+- Reddit 情緒：😤 額度/成本焦慮持續；新增對 Opus 5 工具限制的疑慮
+- 開發者工具活躍度：📉 本輪回落（策展新增 0 筆，Show HN 工具互動普遍未達門檻）
+- 信任指標：→ 持平（中國對峙本體降溫轉 monitoring，但出口管制立場對立公開化）
+- 競爭壓力：🔴 高（Qwen 3.8／Kimi K3 成本優勢 + 中國 agent 自主研究超越報導）

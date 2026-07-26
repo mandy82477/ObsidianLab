@@ -2,10 +2,12 @@
 
 LLM 查詢此 wiki 時，**先讀這個檔案**找相關頁面，再讀具體頁面取得詳細資訊。
 
-**最後更新：** 2026-07-25
+**最後更新：** 2026-07-26
 ---
 
 ## 近期異動
+
+- **2026-07-26 週度 Lint**：修正 2 處矛盾（`model-comparison` Opus 5 定價「官方文件確認 $5/$25」與 `pricing` 的「讀者端推算、非官方逐字確認」不一致，以較嚴謹者為準改寫 5 處；`opus-5` 發布日 07-24/07-25 落差經查為官方 RSS 時間戳 vs 日報收錄日，已補說明）；2 頁狀態降級（[[topics/safety-china-trust-dispute]]、[[topics/anthropic-commitments]] ongoing→monitoring，核心敘事 07-10 後 16 天無新進展）；9 頁呈現品質修復＋4 頁人物日期同步；5 頁 > 500 行入口層健檢全數通過不拆分；11 處逾期「待查證」改註「至今無後續」；`community-tech-tools.md` 新增 0 筆（Show HN 互動普遍未達門檻）／汰除 12 筆逾期條目／清理 2 列痛點洞察失效引用；`community-pattern-trends.md` 無新趨勢節點依規則未動頁；[[overview]] 全文改寫反映 07-18~07-26 局勢（Opus 5 陣容重排、官方 context engineering 80% 縮減 vs Opus 5 硬編碼限制的張力、Fable 5 促銷 07-19 到期、$1.5B 和解案進入執行、出口管制立場對立）。**ref 覆蓋率 97%**——本輪發現 6g 量測 grep 模式因日報 07-25 改用 `[N]` 註腳而靜默失效（照舊 grep 會誤報 71%）；讀者模擬 3 題中 2 題已修復（Opus 5 硬編碼限制未進選型表、官方 context engineering 指引未進 patterns 入口）。lint 自我遵守率 6/6 一次過。留 6 項待使用者確認（新實體候選、6g grep 修正、來源健康第 4 週、規則年齡 5 項、6c 過時列、patterns 審查）詳見 [[log]]
 
 - **2026-07-26 Ingest**（本機補跑：GH Actions 靜默丟棄本日排程、雲端防線正確中止）：Opus 5 上線次日媒體評測措辭與官方自述出現落差記入 [[entities/opus-5]]；官方揭露系統提示詞縮減逾 80%（HN 393 分）記入 [[entities/claude-code]] 與 [[topics/community-tech-discussions]]；AGENTS.md 支援請求達 5760 讚為全站互動最高；[[topics/anthropic-business]] 新增 SK 自製晶片供應訊號、[[topics/anthropic-government-policy]] 新增 Nvidia 開放權重連署擴至 50 家（Amazon/Anthropic 未加入）；[[topics/model-comparison]] 快速選型表完成排版修復（儲存格短語化＋選型細節區）。詳見 [[log]]
 - **2026-07-25 Ingest**：**Claude Opus 5 正式發布為今日主軸**——官方稱編碼與知識工作評測逼近 Fable 5、定價為其一半（另有 MarkTechPost 報導稱維持原 Opus 定價，兩說法不完全一致），取代 Opus 4.8 成為次旗艦、Claude Max 新預設模型、Claude Pro 最強模型（HN 1587 分，今日全站最高）；新建 [[entities/opus-5]]，同步更新 [[entities/opus-4-8]]（狀態改為已被取代）、[[entities/sonnet-5]]、[[topics/model-comparison]]（快速選型表與情境推薦已納入 Opus 5）；feature-radar 新增條目並進入本週推薦。SDK（anthropic-sdk-python v0.120.0／anthropic-sdk-typescript sdk-v0.115.0）同步支援新模型；GitHub Copilot 同日上線 Opus 5。[[entities/boris-cherny]] 記錄其公開聲明「Opus 5 是目前最難被提示注入攻破的模型」（待社群驗證）。功能面：[[entities/claude-code]] 新增 v2.1.220（純 bug fix）版本記錄與 4 條新已知問題（context compaction 間缺乏持久記憶 #34556、自陳分析缺口未阻擋輸出 #60226、Fable 5 於 Max 方案持續要求 usage credits #79337、Opus 5 xhigh 推理強度於 Desktop 失效，單一來源待佐證），5 條既有已知問題互動數更新（Max 額度異常耗盡 #38335 累積 807 留言為今日已知問題之最）；Hacker News 轉述「移除 80% 系統提示詞」傳聞因互動低、細節有限標註待查證。商業面：[[topics/anthropic-business]] 新增 Anthropic／Blackstone 15 億美元合資企業 Ode（單一來源待佐證）；[[entities/pricing]] 同步 Sonnet 5 促銷折扣重申（$2/$10 至 8/31）與 Fable 5 計費異常（#79337）；[[topics/competitor-landscape]] 記錄 Codex 5.3 vs Claude 重構工作流程比較報導。安全政策面：今日兩則候選（Unicode 撇號隱寫指控、$1.5B 著作權和解案評論）經核查均判定不寫入——前者為 2026-07-01 舊文重複出現，已收錄於 [[topics/safety-china-trust-dispute]]；後者核心事實已由商業記者完整覆蓋，社群評論本身無新政策事實。社群面：[[topics/community-tech-discussions]] 新增 promptster.ai 使用分析工具（HN 14 分＋source_count 2），並依保留規則清理 1 筆逾期 ☄️閃現 舊條目；記者另發現 2 篇 dev.to 文章（paint skill、adversarial reviewer loop）疑似被日報重複抓取（與 07-10/07-22 已收錄條目相同 URL），已轉知供後續檢查 dedup 邏輯。呈現品質全數通過，詳見 [[log]]
@@ -196,7 +198,7 @@ LLM 查詢此 wiki 時，**先讀這個檔案**找相關頁面，再讀具體頁
 | 頁面 | 領域 | 狀態 | 摘要 |
 |------|------|------|------|
 | [[topics/model-comparison]] | 🤖 模型 | ongoing | 模型選型對照：「我該用哪個模型」單一入口——快速選型表、情境推薦、benchmark 對照（陣容變化時同步更新） |
-| [[topics/anthropic-commitments]] | 🏛️ 政策/安全 | ongoing | 承諾兌現追蹤：「Anthropic 說過要做的事做了嗎」——官方承諾/拒絕建檔，狀態變化時由每日 ingest 更新 |
+| [[topics/anthropic-commitments]] | 🏛️ 政策/安全 | monitoring | 承諾兌現追蹤：「Anthropic 說過要做的事做了嗎」——官方承諾/拒絕建檔，狀態變化時由每日 ingest 更新 |
 | [[topics/code-quality-decline]] | 🛠️ 工具/功能 | monitoring | Claude Code 效能退步事件，Anthropic 已承認工程疏失 |
 | [[topics/competitor-landscape]] | 💼 商業 | monitoring | Google 祕密開發競品 + OpenCode 157K 分流 + DeepSeek clone 低成本替代生態 |
 | [[topics/community-tech-tools]] | 🌐 社群 | ongoing | 🗓️ 週更策展：社群工具目錄——189 工具的活躍度、採用狀態追蹤（每日 ingest 不更新） |
@@ -204,7 +206,7 @@ LLM 查詢此 wiki 時，**先讀這個檔案**找相關頁面，再讀具體頁
 | [[topics/community-large-codebase-workflow]] | 🌐 社群 | ongoing | 大型 codebase 規模化開發主線——把模式庫散落的節點依並行規模／Context 管理／索引記憶／除錯分工四條線縫成可讀主線 |
 | [[topics/community-pattern-trends]] | 🌐 社群 | ongoing | 🗓️ 週更：社群趨勢觀察——從模式庫萃取的宏觀層，5 條成形趨勢的熱度曲線 + 對現有設計的啟示 |
 | [[topics/community-tech-discussions]] | 🌐 社群 | ongoing | 社群技術討論趨勢：設計哲學辯論、實證研究、架構反思（HTML vs MD、Skill Atrophy 等） |
-| [[topics/safety-china-trust-dispute]] | 🏛️ 政策/安全 | ongoing | 中美 AI 工具信任對峙：中國代理偵測程式碼/隱寫術指控 → Alibaba/Meta 禁用 → 中國官方「後門」警示 vs Anthropic 07-10 首度公開否認（2026-07-12 自 ai-agent-safety / government-policy 拆出）|
+| [[topics/safety-china-trust-dispute]] | 🏛️ 政策/安全 | monitoring | 中美 AI 工具信任對峙：中國代理偵測程式碼/隱寫術指控 → Alibaba/Meta 禁用 → 中國官方「後門」警示 vs Anthropic 07-10 首度公開否認（2026-07-12 自 ai-agent-safety / government-policy 拆出）|
 | [[topics/ai-agent-safety]] | 🏛️ 政策/安全 | ongoing | AI agent 安全：GitHub Repo prompt injection 多媒體確認 + 假冒安裝包 + CVE/DoS 漏洞（中國信任對峙已分流至 [[topics/safety-china-trust-dispute]]）|
 | [[topics/ai-agent-safety-archive]] | 🏛️ 政策/安全 | monitoring | AI Agent 安全時序歷史存檔（2026-05-22 以前）；主頁 [[topics/ai-agent-safety]] 瘦身分流 |
 | [[topics/anthropic-government-policy]] | 🏛️ 政策/安全 | monitoring | Anthropic 政府政策攻防：出口管制主線已於 2026-07-01 解除，剩餘承諾落實、歐洲據點爭奪、Legion 訴訟等衍生支線持續觀察（中國信任對峙已分流至 [[topics/safety-china-trust-dispute]]）|

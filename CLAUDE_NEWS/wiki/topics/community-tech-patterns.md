@@ -19,6 +19,8 @@
 
 大型 codebase 上的規模化開發（並行規模極限、Context/Token 管理、Codebase 索引與記憶、除錯與分工架構）已縫成主題式主線，見 [[topics/community-large-codebase-workflow]]。
 
+**官方指引對照（2026-07-26）：** Anthropic 部落格〈Claude 5 世代模型的 context engineering 新規則〉揭露官方已移除逾 80% 的 Claude Code 系統提示詞，並給出將此原則套用於**自訂 agent** 的建議（HN 393 分）——這是本頁長期累積的「少即是多／最小必要 context」社群直覺首度獲得廠商側一手依據。原文摘要與同日發現的 Opus 5 硬編碼工具限制爭議，見 [[entities/claude-code]]「現況」；社群辯論見 [[topics/community-tech-discussions]]。
+
 ---
 
 ## 模式概覽
