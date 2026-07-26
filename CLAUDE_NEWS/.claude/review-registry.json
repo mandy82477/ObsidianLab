@@ -290,6 +290,18 @@
       "assertion": "all_contain",
       "files": ["docs/cloud-runbooks/triggers/weekly-wiki-lint-cloud.json"],
       "patterns": ["docs/cloud-runbooks/_shared\\.md", "docs/cloud-runbooks/weekly-lint\\.md"]
+    },
+    {
+      "name": "日報歸因格式 <-> wiki-lint 6g 量測：產出端與量測端都必須認得現行 [N] 註腳格式（改日報歸因格式必須同步 6g，否則回歸偵測器自己讀成 0）",
+      "assertion": "all_contain",
+      "files": [".claude/commands/news-pipeline-steps.md", ".claude/commands/wiki-lint.md"],
+      "patterns": ["今日聚焦參考連結", "\\[N\\]"]
+    },
+    {
+      "name": "wiki-lint 6g 指標一：量測必須同時計兩種歸因格式，且先限縮今日聚焦區塊（防灌大分母）",
+      "assertion": "all_contain",
+      "files": [".claude/commands/wiki-lint.md"],
+      "patterns": ["兩種歸因格式，必須同時計", "必須先限縮到「今日聚焦」區塊再數", "news-pipeline-steps\\.md"]
     }
   ],
 

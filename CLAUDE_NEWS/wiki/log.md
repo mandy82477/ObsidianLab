@@ -3166,3 +3166,15 @@ Append-only 紀錄。每次 ingest、lint，以及**揭露缺陷或促成改動�
 4. **規則年齡審查（6d）**：5 項超過 60 天——`topics/ 頁面格式模板`／`entities/ 頁面格式模板`（各 92 天，第 4 週）、`Wiki 頁面呈現品質標準`（72 天，第 2 週）、`patterns 對 discussions 雙向連結規則`（71 天，第 2 週）、`enterprise-tool-tracker 更新規則`（61 天，首度越線）→ 是否逐項審視，或標記為「已審閱，長期有效」以停止重複列出？（前三項已重複多週未決，建議一次裁決）
 5. **6c 遵守率表過時列**：`wiki-lint.md` 6c 的「新工具加入時更新痛點洞察近期工具欄」一列，因 `community-tech-tools.md` 自 06-19 改為 lint 專用、每日 ingest 不再更新該頁而已不適用 → 是否改寫為 lint 自查項或移除該列？
 6. **patterns 淘汰審查 dry run 結果**：建議淘汰 0 條、建議合併 0 組（`Loop Exit Condition` vs `Agent Loop 事件驅動` 焦點不同，暫不建議合併）、保留全部；1 項無法判斷——「Multi-agent 架構」類別與官方 Managed Agents 高度重疊（official-community-gap 已標「高度對應」），是否需拆分「官方已覆蓋的協調基礎設施」與「社群仍獨有的自架/打包/UX 價值」兩部分？
+
+## 2026-07-27 Query：修 6g 量測失效 + 登記防再犯配對（07-26 lint 待確認第 2 項結案）
+
+- **點出什麼**：使用者裁決執行 07-26 lint 回報的待確認第 2 項——6g 指標一的 ref 覆蓋率 grep 與現行日報格式不同步。
+- **根因**：日報歸因格式於 2026-07-25 由行內 `（ref: url）` 改為 `[N]` 註腳 ＋ 檔尾「今日聚焦參考連結」清單（`.claude/commands/news-pipeline-steps.md`「Step 1b：生成日報」），但 `.claude/commands/wiki-lint.md` 6g 的量測 grep 未同步。**回歸偵測器自己失效**：07-25/07-26 兩天被讀成 0 ref，照舊 grep 會誤報覆蓋率 71%（實際 97%）。此類失效無聲——指標數字照樣產出，只是變成假的。
+- **另發現第二個灌水源**：檔尾「選材門檻」附錄使用與今日聚焦相同的 `- **[...]**` 條列形狀，未限縮區塊就數會灌大分母（2026-07-26 實例：未限縮 7 條，實際 5 條）。原規則寫「分子分母皆取今日聚焦區塊內」但給的指令並未限縮，屬規則文字與指令不一致。
+- **處置**：
+  1. `.claude/commands/wiki-lint.md` 6g 指標一改寫（標記更新為 `[加入: 2026-07-05，改版: 2026-07-27]`）：改為 awk 限縮「今日聚焦」區塊後再數，分子同時計 `（ref:` 與 `[N]` 兩種格式；寫入兩則 ⚠️ 警語（含 07-26 誤報實例與灌水實例）與分母為 0 的處理方式。新指令已對 07-20~07-26 逐日實測，結果與人工核算完全吻合（07-22 為 5/4、07-25 為 3/3、07-26 為 5/5）。
+  2. `.claude/review-registry.json` 新增 2 組 sync_pair（總數 23→25）防再犯：一組要求 `news-pipeline-steps.md` 與 `wiki-lint.md` 都必須認得現行 `[N]` 格式與「今日聚焦參考連結」；一組要求 6g 段落必須保留「兩種歸因格式，必須同時計」與「必須先限縮到「今日聚焦」區塊再數」兩條語意錨點。
+  3. **反向測試**：刻意破壞 6g 措辭後 `check_rules.py` 確實回報 ❌ exit 1，還原後回 ✅——確認新配對不是永遠會過的空檢查。
+- **驗證**：`python scripts/check_rules.py` 零 ❌（25 組配對全過）、`python scripts/run_tests.py` exit 0、`/review-commands` 完成報告零錯誤。
+- **未一併處理（留待使用者裁決）**：雲端 weekly lint 的 08-01 首跑驗證仍有缺口——`docs/cloud-runbooks/_shared.md` 只規定「中止時」必須 commit abort log，未規定成功／no-op 也要留紀錄，而收尾又允許「無變更則跳過 commit」。因此一次順利但無事可改的 lint 產出為零 artifact，與靜默死亡在 GitHub 上無法分辨。建議補「無論成功／no-op／中止都 append 一行結果到 `src/logs/task_scheduler.log` 並 push」。
