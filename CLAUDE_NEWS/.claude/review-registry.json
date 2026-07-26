@@ -33,7 +33,9 @@
       "^emitted_items\\.json$",
       "^seen_urls\\.json$",
       "^src/gathered_items\\.json$",
-      "^src/logs/pipeline_baseline\\.json$"
+      "^src/logs/pipeline_baseline\\.json$",
+      "^weekly/YYYY-Wnn\\.md$",
+      "^scripts/weekly_stats\\.py$"
     ],
     "_allowlist_note": "以上為 placeholder 或執行期才產生的產物檔，不強制存在。",
     "bare_name_search_dirs": {

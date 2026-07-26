@@ -97,6 +97,7 @@
 | `/wiki-backfill` | 補跑一或多個過去日期的 wiki ingest，適用於排程失敗或日報重新抓取後 | 按需（排程失敗／日報重抓後）| `.claude/commands/wiki-backfill.md` |
 | `/wiki-lint` | 每週品質檢查：矛盾頁面、孤立頁面、過期議題、規則檔健檢 | 🟡 每週 | `.claude/commands/wiki-lint.md` |
 | `/wiki-weekly-review` | 每週判斷值得加碼追蹤的主題（建頁/加開子區塊/升熱度），經確認後執行 | 🟡 每週（每月首次含聚焦校準 30 天回看）| `.claude/commands/wiki-weekly-review.md` |
+| `/weekly` | 產生本週深度週報（頭條敘事＋技術討論深挖＋下週看什麼＋檔尾數字），輸出 `weekly/YYYY-Wnn.md` | 🟡 每週（對外交付，與 `/wiki-weekly-review` 對內策展分工） | `.claude/commands/weekly.md` |
 | `/wiki-readability` | 低成本可讀性掃描：單一 agent 取樣每頁開頭與結構，回報後經確認修復 | 按需 | `.claude/commands/wiki-readability.md` |
 | `/pipeline-change-check` | 改版前後品質對照：baseline 記錄基線、compare 對照差異＋舊資料回歸 | 改 pipeline／日報格式／收錄門檻**前後**各一次 | `.claude/commands/pipeline-change-check.md` |
 | `/review-commands` | 修改 commands/rules/CLAUDE.md 後強制執行，確認所有指令仍可正確運作 | 改完 commands/rules/CLAUDE.md **後** | `.claude/commands/review-commands.md` |
