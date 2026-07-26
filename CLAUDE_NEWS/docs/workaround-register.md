@@ -14,7 +14,6 @@
 
 | 繞路內容 | 真解 | owner | 複查日 | 狀態 |
 |---|---|---|---|---|
-| 雲端排程改薄殼架構（2026-07-25）：trigger prompt 只指向 `docs/cloud-runbooks/` 的 runbook，並同步修入冪等閘、push `pull --rebase` 重試、Step 1c 必須 commit `emitted_items.json`、watchdog 告警。所有變更皆已本機驗證（測試綠＋錨點負向測試＋watchdog 雙向乾跑），但**尚未經過一次真實雲端執行**——薄殼 prompt 能否讓雲端 agent 正確照 runbook 跑完，只有實跑才知道 | 2026-07-25 13:00 UTC 那次 daily routine 跑完後核對：(a) `news/2026-07-25.md` 產出且格式符合新 Step 1b 規格、(b) 該日 commit 含 `data: confirm emitted-cache`、(c) `emitted_items.json` 當日確認率回到接近 100%、(d) 15:00 UTC watchdog 綠燈。四項全過即移入已收斂 | Claude（次日 session） | 2026-07-26 | 🟡 首跑已通過 3/4：(a)(b)(c) 皆確認（日報含 6 個 [N] 編號引用＋檔尾清單、有 `data: confirm emitted-cache 2026-07-25` commit、確認率 66/66=100%），(d) watchdog 首次執行於 15:00 UTC 尚未發生，待次日核對 |
 | Reddit RSS 走 `sort=top&t=week` 加「· 週熱門」標記，wiki 視標記為達低門檻（RSS 天生無分數 → score 恆 0） | 設 Reddit OAuth 憑證（環境變數 `REDDIT_CLIENT_ID` / `REDDIT_CLIENT_SECRET`）→ `reddit.py` OAuth 路徑取真實 `ups`；之後退役「週熱門」特例 | 使用者（reddit.com/prefs/apps 建 script app） | 2026-07-24 | 🟡 繞路中 |
 | GitHub API 走匿名（60 req/hr、搜尋 10 req/min），GitHub Search 常撞限流回 0 | 設 GitHub PAT（環境變數 `GITHUB_TOKEN`，classic token 免勾 scope）→ 60/hr 升 5000/hr，`github_releases.py` 已備 Authorization 路徑 | 使用者（github.com Settings→Developer settings→Tokens classic） | 2026-08-10 | 🟡 繞路中（選配，非資料殘缺） |
 | Blogroll RSS 名單已於 2026-07-11 確認上線（simonwillison / jessevincent / arminronacher / antirez，皆 probation）；煙霧測試 0 命中已診斷為 (a) 26h 窗內無 Claude/Anthropic 相關新文，非技術問題（4 個 feed HTTP 200、bozo=False、時間解析正常，Simon Willison 窗內僅 1 篇且與主題無關已正確被關鍵字擋下）。剩餘待辦：probation 首月觀察（汰換節奏已定：來源記分卡 2026-07-16 上線，每週隨 `/wiki-lint` 6e 執行，見 `docs/source-scoring-optimization.md`） | 30 天 probation 期滿（2026-08-11）後以記分卡數據檢視命中率決定去留 | 使用者 | 2026-08-11 | 🟡 繞路中 |
@@ -25,6 +24,8 @@
 | 雲端 routine 的自訂 `subagent_type` 註冊表（`.claude/agents/wiki-reporter-*.md` 六份）未載入進 Agent tool，呼叫時回傳「Agent type not found」：已至少於 07-18、07-19、07-22、07-24 四次雲端 routine 執行中復現，每次皆改用 `general-purpose` agent 內嵌對應記者角色規則＋開始前必讀清單（讀 `wiki-reporter-shared.md` + 對應 `wiki-ingest-[category].md`）繞過，功能等同專職記者但需在派工 prompt 手動塞入完整規則路徑與邊界提醒，較原生 subagent_type 派工囉唆且容易遺漏細節 | 需要環境層級的持久解：確認雲端 routine 執行環境是否讀取專案層 `.claude/agents/` 目錄（可能是路徑掃描範圍或載入時機問題），或改為 repo 內建機制自動偵測並注入這六份 agent 定義 | 使用者（確認雲端 routine agent 註冊表載入機制） | 2026-07-29 | 🟡 繞路中 |
 
 ## 已收斂
+
+- ✅ **雲端排程薄殼架構首跑驗證**（收斂於 2026-07-26）：07-25 13:02 UTC 首次真實執行四項驗收全過——(a) 日報產出且符合新 Step 1b 格式（6 個 [N] 編號引用＋檔尾參考清單）；(b) 有 `data: confirm emitted-cache 2026-07-25` commit；(c) `emitted_items.json` 當日確認率 66/66=100%（對比前一日 1/54）；(d) watchdog 首跑（run #1）於 07-26 以 origin 內容重算四項判準全綠、無 GitHub 失敗通知信。薄殼 trigger → runbook 執行路徑確認可用。
 
 - ✅ **雲端 routine 無法 commit `task_scheduler.log`**（2026-07-25 雲端回報、同日收斂）：根目錄 `.gitignore` 的 `logs/`（無前導斜線）連帶忽略 `CLAUDE_NEWS/src/logs/`，而 runbook 明文要求該檔必須 commit + push。已改用「放行目錄 → 排除目錄內容 → 單獨放行 task_scheduler.log」三行寫法（git 規定父目錄被排除時無法單獨 re-include 子檔案），並以 `git check-ignore` 驗證三種情境：目標檔可加入、同目錄其他 log 仍忽略、其他專案的 logs/ 仍忽略。雲端不再需要 `git add -f`。
 

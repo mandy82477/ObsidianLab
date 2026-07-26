@@ -12,8 +12,8 @@ If the user invokes this skill without any other guidance, ask them what they wa
 
 - **Brand:** CLAUDE NEWS · LLM-WIKI — informative, technical, automated daily digest of Claude/Anthropic news, plus a wiki-style entity graph.
 - **Voice:** documentary, terse, source-cited. CJK + English mixed prose. Mono for metadata, serif for prose.
-- **Colors:** dark-first (`--bg-0: #15161F`); muted purple primary (`#7C6CDC`), warm tan accent (`#D4A574`); semantic success/warn/danger/info pulled from terminal palettes.
-- **Type:** IBM Plex Sans (display/UI), IBM Plex Serif (long prose), JetBrains Mono (metadata, code, sourcelines), Noto Sans TC (Traditional Chinese).
+- **Colors:** paper/sumi editorial, light-first (`--bg-0: #F7F4ED` warm bone paper; sumi ink ladder `#1A1814` → `#B8B2A4`); **single ochre accent** (`--ochre-9: #8E5F3D`), hairline ink-tinted borders. Dark theme via `data-theme` token swap. No second accent hue. *(Updated 2026-07-26 — the previous quick-ref described the pre-redesign dark/purple system and contradicted both `colors_and_type.css` and the deployed site; the token file is authoritative.)*
+- **Type:** Cormorant Garamond + Noto Serif (display/long prose), Inter + Noto Sans TC (UI), JetBrains Mono (metadata, code, sourcelines). Scale in `colors_and_type.css` (`--fs-micro` 12 → `--fs-monumental` 96).
 - **Iconography:** Lucide via CDN (`https://unpkg.com/lucide-static@latest/icons/<name>.svg`). Sparingly. Repo's own brand glyph in `assets/logo.svg`.
 - **Surfaces:**
   - `ui_kits/vault/` — Obsidian-style three-pane editor for the curator
