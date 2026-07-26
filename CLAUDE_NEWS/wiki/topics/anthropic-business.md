@@ -3,11 +3,11 @@
 **狀態：** ongoing
 **領域：** 💼 商業
 **開始日期：** 2026-05-28
-**最後更新：** 2026-07-25
-**最後新聞更新：** 2026-07-25
+**最後更新：** 2026-07-26
+**最後新聞更新：** 2026-07-26
 
-> **最新動態**（2026-07-25）
-> 著作權和解案再添跟進：CNN 報導 Anthropic 將支付《哈利波特》系列出版商和解賠款，與 07-22～24 已記錄之《哈利波特》出版商分潤事實相同，未見新增金額或細節（詳見「財務狀況」表更新）。Blackstone／Ode 15 億美元合資實作公司再獲 MarketScale（單一來源）報導呼應「企業 AI 價值在於導入實作、而非模型本身」論點，與既有 07-15/16 TechCrunch／Technology Org 報導方向一致，惟本則為單一來源，尚待其他媒體佐證（詳見「戰略合作」表）。IPO 前瞻新增訊號：Yahoo Finance 將 Anthropic 類比為「ETF 發行商版 SpaceX」，分析其對 ETF 商品設計的意涵（詳見「IPO 前瞻與估值追蹤」表新增列）。模型/計費面：Anthropic 正式發布 **Claude Opus 5**（官方稱定價為 Fable 5 一半），GitHub Issue #79337 追蹤之 Fable 5 於 Max 方案用量點數異常互動量攀升並新增「靜默降級 Opus 4.8」細節，詳見 [[entities/pricing]]、[[entities/opus-5]]。
+> **最新動態**（2026-07-26）
+> 晶片自主布局新增一則訊號：Fortune 報導 SK 集團董事長崔泰源（Chey Tae-won）透露 Anthropic 曾接洽尋求自製晶片所需的供應，是繼 Samsung 代工洽談（07-02/06，尚未升級確定性）之後首次出現「Anthropic 主動尋求自製晶片」措辭的訊號，詳見「戰略合作」表新增列（推論，僅標題層級資訊）。07-25 記錄：著作權和解案再添跟進：CNN 報導 Anthropic 將支付《哈利波特》系列出版商和解賠款，與 07-22～24 已記錄之《哈利波特》出版商分潤事實相同，未見新增金額或細節（詳見「財務狀況」表更新）。Blackstone／Ode 15 億美元合資實作公司再獲 MarketScale（單一來源）報導呼應「企業 AI 價值在於導入實作、而非模型本身」論點，與既有 07-15/16 TechCrunch／Technology Org 報導方向一致，惟本則為單一來源，尚待其他媒體佐證（詳見「戰略合作」表）。IPO 前瞻新增訊號：Yahoo Finance 將 Anthropic 類比為「ETF 發行商版 SpaceX」，分析其對 ETF 商品設計的意涵（詳見「IPO 前瞻與估值追蹤」表新增列）。模型/計費面：Anthropic 正式發布 **Claude Opus 5**（官方稱定價為 Fable 5 一半），GitHub Issue #79337 追蹤之 Fable 5 於 Max 方案用量點數異常互動量攀升並新增「靜默降級 Opus 4.8」細節，詳見 [[entities/pricing]]、[[entities/opus-5]]。
 
 ---
 
@@ -122,8 +122,9 @@ Simon Willison（知名開發者博主）發表文章，認為 Anthropic 與 Ope
 
 | 合作方 | 類型 | 日期 | 意義 |
 |--------|------|------|------|
+| SK 集團（SK Hynix 母公司）| 晶片供應洽談（自製晶片信號，推論）| 2026-07-26 | Fortune 報導 SK 集團董事長崔泰源（Chey Tae-won）透露 Anthropic 曾接洽尋求自製晶片所需的供應。**對商業的意涵**：延續近期 Samsung 代工洽談（07-02/06，The Information／TechRepublic，尚未升級確定性）、Samsung＋SK Hynix 以投資人身份入股（05-28 Series H）等訊號，本次首次出現「Anthropic 主動尋求自製晶片」的具體措辭（而非單純委託代工或投資關係）；若屬實，顯示 Anthropic 硬體自主布局野心可能從「委託代工」進一步延伸至「自行設計晶片、尋求供應鏈支援」，與 AMD（07-22，$50 億美元投資＋晶片協議）、TeraWulf（07-06，$19B 算力租約）同屬近期算力/晶片自主佈局系列信號（推論，僅標題層級資訊，具體晶片類型、供應規模、時程未見細節）（Google News/Fortune https://fortune.com/2026/07/25/sk-chair-chey-tae-won-anthropic-chip-supplies-skhynix/）|
 | Cyberhaven | SDK 夥伴（資安整合） | 2026-07-23 | PR Newswire 報導 Cyberhaven 擴充其資料與 AI 安全平台，新增支援 ChatGPT Enterprise 與 Claude Compliance API 整合。**對商業的意涵**：延續近期 Orca Security（07-21，07-23 二次確認）、Varonis（07-14）、Tenable（06-29）等資安夥伴生態擴張趨勢（推論）；同時整合 ChatGPT Enterprise，顯示 Cyberhaven 採多供應商並行策略，非 Anthropic 獨家夥伴；具體規模、商業條款未見細節，僅標題層級資訊（PR Newswire）|
-| AMD（NASDAQ: AMD）| 戰略投資＋晶片協議（最高 $50 億美元）| 2026-07-22 | Reuters（經 Hacker News 討論，source_count=2）、WSJ 獨家、Yahoo Finance 三方同日報導同一事件：AMD 宣布對 Anthropic 投資最高 50 億美元，並簽署晶片暨投資協議。**對商業的意涵**：延續近期 Micron（06-22）、Samsung＋SK Hynix（05-28）等晶片供應鏈廠商同步入股 Anthropic 的模式，AMD 為又一起「晶片供應商轉為投資人」的具名案例；HN 留言以「ouroboros circle」（銜尾蛇循環）形容晶片商與 AI 實驗室互相投資、彼此推升估值與營收的模式，對其可持續性提出質疑（推論）；具體投資結構、股權比例、晶片供應規模未見細節，僅標題與市場反應層級資訊（Reuters；Google News/WSJ；Google News/Yahoo Finance）|
+| AMD（NASDAQ: AMD）| 戰略投資＋晶片協議（最高 $50 億美元）| 2026-07-22 | Reuters（經 Hacker News 討論，source_count=2）、WSJ 獨家、Yahoo Finance 三方同日報導同一事件：AMD 宣布對 Anthropic 投資最高 50 億美元，並簽署晶片暨投資協議。**對商業的意涵**：延續近期 Micron（06-22）、Samsung＋SK Hynix（05-28）等晶片供應鏈廠商同步入股 Anthropic 的模式，AMD 為又一起「晶片供應商轉為投資人」的具名案例；HN 留言以「ouroboros circle」（銜尾蛇循環）形容晶片商與 AI 實驗室互相投資、彼此推升估值與營收的模式，對其可持續性提出質疑（推論）；具體投資結構、股權比例、晶片供應規模未見細節，僅標題與市場反應層級資訊（Reuters；Google News/WSJ；Google News/Yahoo Finance）。**07-26 跟進（單一來源，股價分析延伸，非新事實）**：Barchart 發表分析文章，探討此合作對 AMD 股價的潛在影響，未見新增交易條款或規模數字，屬既有事件的股價分析延伸（Google News/Barchart.com）|
 | Orca Security | SDK 夥伴（資安整合） | 2026-07-21 | Business Wire 報導 Orca Security 擴充其 AI 資安平台，整合 Claude 的 Compliance API；延續近期 Varonis（07-14）、Tenable（06-29）等資安夥伴生態擴張趨勢（推論）；07-23 Security Info Watch 獨立跟進報導同一整合（source_count=2），僅標題可用，具體規模未見細節（Business Wire；Google News/Security Info Watch）|
 | Druva | SDK 夥伴（資安整合） | 2026-07-21 | Virtualization Review 報導 Druva 將其 AI 韌性（resilience）方案擴展至 Copilot、Claude 與 MCP；為又一起資安/韌性廠商同時整合多家 AI 供應商 API 的案例，非 Anthropic 獨家；僅標題可用，具體規模未見細節（Virtualization Review）|
 | UST（IT 服務商）| 企業客戶 | 2026-07-20 | The Fast Mode 報導 UST 與 Anthropic 合作，將 Claude AI 部署至其企業平台（Enterprise Platforms）。**對商業的意涵**：是繼 07-10（實體製造業整合，訓練兩萬名工程師顧問）、07-14（Optum + UST 醫療產業深化）後 UST 與 Anthropic 合作範疇第三度擴大報導，顯示 UST 作為 Anthropic 服務通路夥伴的合作範疇正從單一垂直產業向企業平台整體擴張（推論）；具體平台功能、合約規模未見細節，僅標題層級資訊（Google News/The Fast Mode）|

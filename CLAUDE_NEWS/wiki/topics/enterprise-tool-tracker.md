@@ -3,7 +3,7 @@
 **狀態：** ongoing
 **領域：** 💼 商業
 **開始日期：** 2026-05-26
-**最後更新：** 2026-07-21
+**最後更新：** 2026-07-26
 **最後新聞更新：** 2026-07-21
 
 > **最新企業採用異動**（2026-07-21）
@@ -29,7 +29,7 @@
 |------|------|-----------|------|---------|------|---------|
 | Grasshopper Bank | 中型（銀行，聚焦金融科技產業）| Claude API（MCP 整合） | ✅ | 2026-07-15 | Financial IT 報導 Grasshopper Bank 成為首家列入 Anthropic MCP（Model Context Protocol）目錄的銀行，象徵金融業對 MCP 生態系統的具名採用起點；具體整合規模、應用場景未見細節（僅標題可用，Google News 轉址）| 2026-07-15 |
 | Alberta 省政府（加拿大） | 政府（省級） | Claude Code | ✅ | 2025 | 加拿大 Alberta 省技術與創新部門自 2025 年起使用 Claude Code（含 Opus、Sonnet 模型）審查系統；20 小時內掃描 4.66 億行程式碼，完成資安漏洞盤點與修補、建立新工具；Anthropic Blog 官方案例研究，為具名政府採用新增一筆（Digital Watch Observatory 跟進） | 2026-07-07 |
-| Meta | 頂尖 | Claude | ❓ | — | 傳出限制工程師使用 Claude，原文節錄未提供具體來源連結、規模範圍或生效日期，暫標未確認，待後續媒體報導補充細節後確認狀態 | 2026-07-06 |
+| Meta | 頂尖 | Claude | ❓ | — | 傳出限制工程師使用 Claude，原文節錄未提供具體來源連結、規模範圍或生效日期（2026-07-06 指控，至今無後續——近 14 天日報未見獨立媒體跟進確認或反駁）| 2026-07-06 |
 | Alibaba | 頂尖 | Claude Code → Qoder（內部工具） | ❌ | 2026-07-10 | 傳出以「疑似後門風險」/ 資安疑慮為由禁止員工職場使用 Claude Code，生效日確認為 2026-07-10（The Indian Express 07-05 跟進報導提供具體生效日期）；PYMNTS、Benzinga、BeInCrypto 三獨立媒體（07-07）確認**明確改用內部工具 Qoder**，此前僅知禁令未知替代方案；來源指控未經 Anthropic 證實，多家媒體跟進（American Bazaar、Seeking Alpha、Crypto News、WTVB、TechCrunch 07-04）；首個以「安全疑慮」為由退出的具名企業案例，區別於此前的成本（Microsoft）與出口管制（JPMorgan）兩類退出理由；安全指控本身詳見 [[topics/ai-agent-safety]]；**（07-21 待查證）**tech-insider.org 另稱因偵測 2.5萬假帳號而封鎖，惟此數字與 06-25 Anthropic 蒸餾攻擊指控中的假帳號數字相同，可能為單一非主流媒體混淆兩起不同事件，暫不採信為封鎖新理由 | 2026-07-07 |
 | Lindy | 中型（AI 新創） | Claude API → DeepSeek | 🔄 | 2026-06-29 | CEO Flo Crivello 公開宣告 100% 流量從 Claude 切換至 DeepSeek，每月省下數百萬美元；「最省錢 > 最強模型」趨勢最具名案例，屬 API 客戶成本敏感度案例（詳見 [[topics/enterprise-cost-management]]、[[topics/competitor-landscape]]） | 2026-06-29 |
 | 加州州政府 | 政府（州級） | Claude API | ✅ | 2026-06-29 | 州長 Newsom 與 Anthropic 正式簽署協議，Claude 進入加州州政府應用；迄今最明確的美國地方政府採用案例（詳見 [[topics/anthropic-business]]） | 2026-06-29 |

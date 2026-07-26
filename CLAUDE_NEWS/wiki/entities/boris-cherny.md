@@ -166,7 +166,7 @@ Boris Cherny 的公開言論呈現兩種截然不同的社群反應：
 - 2026-07-25：Boris Cherny 公開表示 Opus 5 是目前最難被提示注入攻破的模型（Simon Willison 部落格轉引 X 貼文，https://simonwillison.net/2026/Jul/25/boris-cherny/#atom-everything）
 - 2026-07-20：Bloomberg 發布影片／報導「Watch The Creator of Claude Code on The Hottest Piece of Software in the World」，標題未具名，佐以 Bloomberg 7/16 特稿與多平台「Creator of Claude Code」慣稱推測極可能為本人，暫標（待查證）（Google News / Bloomberg.com，2026-07-20）
 - 2026-07-17：Startup Fortune 報導其表示現在同時執行數千個 Claude Code agent，呼應 5/13 揭露的夜間數千子代理工作流，惟原始出處（訪談或社群貼文）未明，暫標（待核實）（Google News / Startup Fortune，2026-07-17）
-- 2026-07-08：inc.com 報導「Head of Claude Code」談新創公司需具備的 5 種員工原型（employee archetypes），原文未具名確認發言人，可能為 Boris Cherny 或 [[entities/cat-wu]]，暫標（待核實）（inc.com，2026-07-07，https://www.inc.com/ashley-couto/claude-code-startup-needs-employee-archetypes/91370409）
+- 2026-07-08：inc.com 報導「Head of Claude Code」談新創公司需具備的 5 種員工原型（employee archetypes），原文未具名確認發言人，可能為 Boris Cherny 或 [[entities/cat-wu]]（2026-07-08 報導，至今無後續：近 14 天日報無獨立確認發言人身分的報導）（inc.com，2026-07-07，https://www.inc.com/ashley-couto/claude-code-startup-needs-employee-archetypes/91370409）
 - 2026-06-28：在 howborisusesclaudecode.com 公開 13 個日常 Claude Code 使用技巧，涵蓋 5 個並行實例搭配獨立 git checkout、`--teleport` 跨環境切換、iPhone 啟動電腦接力等；強調「surprisingly vanilla」setup（Hacker News，score 5）
 - 2026-06-24：Times of India 報導其承認「AI 寫 100% 程式碼正在變得有問題」，與早前「coding is solved」立場形成對比，呼應企業端過度依賴反彈聲浪
 - 2026-06-23：Business Insider 報導其對企業 AI 投資的立場：支持 ROI 導向，但反對完全不留實驗預算

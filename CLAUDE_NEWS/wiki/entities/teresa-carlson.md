@@ -4,17 +4,17 @@
 **狀態：** active（待核實）
 **領域：** 👤 人物
 **首次出現：** 2026-07-07
-**最後更新：** 2026-07-16
+**最後更新：** 2026-07-26
 **最後新聞更新：** 2026-07-07
 
-> **最新動態**（2026-07-07）
-> Teresa Carlson（曾任職 Microsoft、AWS）加入 Anthropic，主導公部門（public sector）業務（待核實：確切職稱與到任日期，日報僅標題層級報導）。
+> **最新動態**（2026-07-07 報導，至今無後續）
+> Teresa Carlson（曾任職 Microsoft、AWS）加入 Anthropic，主導公部門（public sector）業務；確切職稱與到任日期日報僅標題層級報導，近 14 天（截至 2026-07-26）日報無進一步後續確認。
 
 ---
 
 ## 現況
 
-2026-07-07，FedScoop 報導 Anthropic 延攬 Teresa Carlson 主導公部門業務。Carlson 曾任職 Microsoft 與 AWS，在雲端服務公部門業務領域有豐富經驗（待核實：Anthropic 內部確切職稱）。
+2026-07-07，FedScoop 報導 Anthropic 延攬 Teresa Carlson 主導公部門業務。Carlson 曾任職 Microsoft 與 AWS，在雲端服務公部門業務領域有豐富經驗（2026-07-07 報導，至今無後續：確切職稱迄今無其他媒體或官方確認）。
 
 此為事件層級記錄，日報僅標題報導，尚無 Carlson 本人公開聲明可引用。
 
@@ -37,4 +37,4 @@
 
 ## 歷史記錄
 
-- 2026-07-07：加入 Anthropic，主導公部門業務，此前曾任職 Microsoft、AWS（FedScoop）（待核實：確切職稱與到任日期）
+- 2026-07-07：加入 Anthropic，主導公部門業務，此前曾任職 Microsoft、AWS（FedScoop）（2026-07-07 報導，至今無後續：確切職稱與到任日期迄今無其他來源確認）

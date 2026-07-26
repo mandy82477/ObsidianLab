@@ -3104,3 +3104,21 @@ Append-only 紀錄。每次 ingest、lint，以及**揭露缺陷或促成改動�
 - reader-notes 消費：07-22「大型 codebase 效率」→ ✅ 已納入（建頁落地）；07-12「GPT-5.6 vs Claude」→ 模型與商業記者本週再查仍無官方對比數字（Opus 5 發布僅稱「matching or beating Fable 5」，未對比 GPT-5.6 Sol），維持 ⏳ 被動觸發；📌 07-07 雜記未逾 30 天，保留
 - 聚焦校準：本月已於 07-16 執行（命中率 36%），依 `metrics.md` 產出物判斷，跳過
 - 使用者另提需求：`topics/model-comparison.md`「適合／不適合做什麼」品質不佳，已另派深度評價 review（含體裁範本並排比對），結果待回報後決定改寫範圍
+
+## 2026-07-26 Ingest | news/2026-07-26.md（51 則，本機補跑）
+
+- 背景：GH Actions daily-gather 本日被 GitHub 靜默丟棄（Actions 頁查無 run），雲端 routine 13:05 UTC 新鮮度防線正確中止並留 abort log（fd87c55）。本機 22:30 起走文件化補救路徑（/news-pipeline），Phase A 抓料 51 則、10/10 來源正常，日報收錄 27 則
+- **雙輸入路徑首次實戰**：wiki ingest 分類涵蓋「日報 27 則 + 未收錄清單 24 則」（scripts/list_digest_omissions.py），五類並行 foreground 派工（model: sonnet；人物本日無條目跳過）
+- 更新頁面：
+  - **模型**：`entities/opus-5.md`（MLQ.ai／PCMag 媒體標題與官方「逼近未超越」框架的措辭落差標待驗證）；`entities/mythos.md`（Mashable「Mythos 或類似模型可能公開發布」傳聞，待核實）；`topics/model-comparison.md`（Opus 5 對照欄補媒體措辭差異；**並完成快速選型表排版修復**——使用者回報七欄儲存格塞散文致網頁瘦長條，儲存格收斂為 ≤25 字短語、細節搬入新增的「選型細節」區、狀態欄瘦身，3 跳自檢重跑兩題皆單一命中）
+  - **功能**：`entities/claude-code.md`（官方部落格「Claude 5 世代 context engineering 新規則／系統提示詞縮減逾 80%」記入現況〔HN 393 分，判非可操作異動不進 feature-radar〕；HN「硬編碼指示 Opus 5 不用 subagent」記已知問題〔社群觀察待證實〕；新增已知問題 5 條（#69415、#1669、#20469、#50246、#45937）、同步互動數 5 條（AGENTS.md #6235 達 5760 讚為全站最高）；服務穩定性新增 Opus 5 上線首日 4 起事件皆已解決，組頭統計 🧠30→32、MCP 9→10、平台 40→41、穩定性 18→22 逐一同步）
+  - **商業**：`topics/anthropic-business.md`（SK 集團自製晶片供應訊號〔Fortune，與 Samsung 代工洽談明確區分，推論標記〕；AMD 列補 07-26 股價分析）；`topics/competitor-landscape.md`（David Sacks 公開批評 Anthropic 反競爭）
+  - **安全政策**：`topics/anthropic-government-policy.md`（Nvidia 開放權重連署擴至 50 家、Amazon 與 Anthropic 未加入〔Forbes〕；India Today「矽谷分裂」；補強 07-23 業界反彈支線，攻防紀錄 +2、時序 +2）
+  - **社群**：`topics/community-tech-discussions.md`（系統提示詞縮減 80% 社群反應〔HN 393 高門檻〕；硬編碼 subagent 限制〔Reddit→HN 跨平台，低門檻〕）；`topics/community-tech-patterns.md`（dev.to「Use Fable 5 where it pays for itself」第一手成本策略）
+  - 社群不收錄：Show HN 三工具（1–3 分遠低門檻）、Reddit spec-driven（無週熱門標記）、Ruff v0.16.0（與主題無關）
+- 跨記者轉知閉合：dev.to Fable 5 成本文——模型記者讓渡、社群記者已收 patterns ✅；Android Police「不讓 Claude 碰密碼」——安全政策轉知社群，**主編裁定不收**（單一專欄主觀質疑、無社群延燒，未達「重要媒體深度報導」門檻）
+- feature-radar：無新條目；最新版本行維持 v2.1.220 未變，本週推薦／升版風險／⏰倒數皆不動
+- index.md 狀態變更：無；新增頁面：無
+- 摘要：Opus 5 全平台上線次日——媒體評測措辭（Tops Benchmark Index）與官方自述（逼近未超越）出現落差、上線首日 4 起錯誤率事件皆速修；官方揭露系統提示詞縮減逾 80% 成社群最大討論（HN 393）；AGENTS.md 支援請求達 5760 讚；晶片線三向延燒（AMD 股價、SK 自製晶片訊號、Nvidia 開放權重連署 50 家）
+- 呈現品質：五類共 9 頁全數 ✅ 通過
+- 品質備註：無

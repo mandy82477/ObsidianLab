@@ -4,17 +4,19 @@
 **狀態：** active（出口管制解除，2026-07-01 起全球恢復存取）
 **領域：** 🤖 模型
 **首次出現：** 2026-04（限定夥伴 Preview）
-**最後更新：** 2026-07-22
-**最後新聞更新：** 2026-07-22
+**最後更新：** 2026-07-26
+**最後新聞更新：** 2026-07-26
 
-> **最新進展（待核實）**（2026-07-21）
-> CNBC 報導（經 Google News RSS 轉載，僅標題可用）指美國聯邦準備系統（Fed）曾針對 Anthropic Mythos AI 模型發出警示，但相關訊息延遲數月才浮上檯面；具體警示內容、發布時間點與影響範圍均待查證。若屬實，這是繼 07-13 加拿大金融監管機關引用案例、07-16 摩根大通執行長 Dimon 公開表態後，金融監管/業界對 Mythos 風險示警擴散至美國央行層級的最新一例；政策/監管面完整分析見 [[topics/anthropic-government-policy]]，本頁僅記錄模型能力認知面動態。
+> **最新進展（待核實）**（2026-07-25）
+> Mashable 標題稱「Claude Mythos，或類似模型，可能對外公開發布」（僅標題可用，無內文），若屬實將是 Mythos 級模型首次脫離「授權機構限定」而走向一般大眾發布——目前公開陣容中扮演 Mythos 級公開角色的仍是 Fable 5（無護欄完整版 Mythos 5 僅限授權機構）。此說法尚無第二來源佐證，暫列為傳聞待核實；07-21 CNBC 報導稱 Fed 曾就 Mythos 發出警示但延遲數月才浮現，具體內容與時間點同樣待查證，政策/監管面完整分析見 [[topics/anthropic-government-policy]]，本頁僅記錄模型能力認知面動態。
 
 ---
 
 ## 現況
 
-**2026-07-21 最新（待核實）**：CNBC 報導（經 Google News RSS 轉載，僅標題可用，無法取得完整內文）指美國聯邦準備系統（Fed）曾針對 Mythos 發出警示，但相關訊息延遲數月才浮上檯面；具體警示內容、時間點與影響範圍均待查證，暫不排除與 07-13／07-16 已知事件系出同源、由不同媒體以不同角度報導的可能性（詳見下方「時序」）。
+**2026-07-25 最新（待核實）**：Mashable 標題稱「Claude Mythos，或類似模型，可能對外公開發布」（[Google News/Mashable](https://mashable.com/tech/anthropic-mythos-might-get-public-release)），僅標題與轉址連結可用，無正文摘要，無法確認具體時程、是否為完整無護欄版本、或僅是 Fable 5 之外的另一款「Mythos 級但附加護欄」新版本。若屬實將是重大政策轉向——目前 Mythos 5（無護欄完整版）僅限授權機構，一般用戶的 Mythos 級入口只有 Fable 5；此則暫無第二來源佐證，列為傳聞待核實，後續有具體內容時再擴寫。
+
+**2026-07-21（待核實）**：CNBC 報導（經 Google News RSS 轉載，僅標題可用，無法取得完整內文）指美國聯邦準備系統（Fed）曾針對 Mythos 發出警示，但相關訊息延遲數月才浮上檯面；具體警示內容、時間點與影響範圍均待查證，暫不排除與 07-13／07-16 已知事件系出同源、由不同媒體以不同角度報導的可能性（詳見下方「時序」）。
 
 **當前狀態（2026-07-01 起）**：出口管制已全面解除，Mythos 5 可用範圍從機構白名單擴大為全球一般用戶；解禁交換條件為 Anthropic 承諾主動偵測安全風險、配合標準協議、通報惡意活動。管制事件歷時 18 天（2026-06-13 至 2026-07-01），完整經過見下方「時序」。
 
@@ -91,6 +93,11 @@ Anthropic 的官方 AI 資安能力研究計畫，Mythos Preview 為核心工具
 ## 時序
 
 ### 解禁後（2026-06-27 起）
+
+#### 2026-07-25
+**Mashable：Claude Mythos 或類似模型可能對外公開發布（僅標題可用，待核實）**：
+- Google News 轉載 Mashable 標題「Anthropic's Claude Mythos, or a model like it, to get public release」（[Google News/Mashable](https://mashable.com/tech/anthropic-mythos-might-get-public-release)）；RSS 僅提供標題與轉址連結，無正文摘要，無法確認具體時程、版本形態（完整無護欄版 vs 附加護欄新版本）或與現有 Fable 5 的關係
+- 若屬實將是繼 Fable 5（2026-06-09，Mythos 架構附加護欄公開版）後，Mythos 級能力進一步向大眾開放的重大政策轉向；暫無第二來源佐證，待後續報導補充具體內容再擴寫分析
 
 #### 2026-07-21
 **CNBC：Fed 曾就 Mythos AI 模型發出警示，但延遲數月才浮現（僅標題可用，待核實）**：
@@ -236,3 +243,5 @@ Mythos 遭駭客存取事件（KRON4 等媒體）。⚠️ 細節尚待官方聲
 - [Anthropic's Argument for Mythos SWE-bench improvement contains a fatal error](https://www.philosophicalhacker.com/post/anthropic-error/) — The Philosophical Hacker
 - [Exploit Evaluation Report](https://red.anthropic.com/2026/exploit-evals/) — Anthropic Security
 - [CVD Dashboard](https://red.anthropic.com/2026/cvd/) — Anthropic
+- [Mashable：Claude Mythos, or a model like it, to get public release](https://mashable.com/tech/anthropic-mythos-might-get-public-release)（2026-07-25，僅標題可用，待核實）
+- [[news/2026-07-26]]

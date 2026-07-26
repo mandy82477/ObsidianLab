@@ -4,11 +4,11 @@
 **領域：** 🌐 社群
 **更新頻率：** 🗓️ 週更（`/wiki-lint` 策展維護，每日 ingest 不更新此頁）
 **開始日期：** 2026-04-25
-**最後更新：** 2026-07-18
+**最後更新：** 2026-07-26
 **最後新聞更新：** 2026-07-15
 
-> **最新工具動態**（2026-07-15）
-> 新增 18 筆達門檻工具（涵蓋 07-06～07-15 news）：Brainless（HN 124，shadcn 元件庫模仿 Claude Code/Codex/Grok 介面）、claude-meseeks／Mr. Meeseeks（HN 130，語音完成提示）、Agentty（HN 38，C++26 版 drop-in 替代品）、Sx 2.0（HN 39，達精選層鄰近門檻的免 git skill 分享工具，標記 ⚡）、OtoDock／Grepathy（皆 source_count 2，跨來源報導）、Fleet Deck、aloud、cc-session-recover、Cc-hindsight、Topsoil、Kastra、Papercrane-CLI、Agent Sessions、Tilion、Atelier、claude-code-live-memory、live-log-viewer-next。Brainless 與 claude-meseeks（HN≥50）同步提拔至「值得關注的工具」精選層（新增「通知／語音」子分類）。汰除 26 筆逾 30 天無後續的 ⏳ 條目（06-10～06-17 首次出現的 AgentPace、Mira、cc-reflection、Offload、Kevin、AptSelect、claude_code_vs、Spotlight、Devloop、HashMeterAi、The Engineer、Canopy、Conan、zero-1、cc-pool、Janus、TaskPrio、Claustrophobic、Claumon、Foyer、ShellShot、5dive、Vaportrail、agentgraphed、context-analyzer、permafrost；ktx／AISlop／machine0 同批次但因仍被「值得關注的工具」精選層引用而保留）。同步清除「痛點洞察」Token 成本不透明列中已汰除的 6 個工具名稱殘留引用，並更新該列與跨 session 記憶、多 agent 協調、輸出品質三列的近期工具日期。
+> **最新工具動態**（2026-07-15；2026-07-26 lint 僅執行汰除，07-16～07-26 news 無新工具達門檻，見下方策展說明）
+> 新增 18 筆達門檻工具（涵蓋 07-06～07-15 news）：Brainless（HN 124，shadcn 元件庫模仿 Claude Code/Codex/Grok 介面）、claude-meseeks／Mr. Meeseeks（HN 130，語音完成提示）、Agentty（HN 38，C++26 版 drop-in 替代品）、Sx 2.0（HN 39，達精選層鄰近門檻的免 git skill 分享工具，標記 ⚡）、OtoDock／Grepathy（皆 source_count 2，跨來源報導）、Fleet Deck、aloud、cc-session-recover、Cc-hindsight、Topsoil、Kastra、Papercrane-CLI、Agent Sessions、Tilion、Atelier、claude-code-live-memory、live-log-viewer-next。Brainless 與 claude-meseeks（HN≥50）同步提拔至「值得關注的工具」精選層（新增「通知／語音」子分類）。2026-07-26 lint 再汰除 12 筆逾 30 天無後續的 ⏳ 條目（06-18～06-19 首次出現的 Prompt Foundry、Sqim、Everything Claude Code microVM、Pi Extension、BeamWeaver、job-search、LegalRabbit DOCX、AI Commander、Gorchestra、Pagecast、Parcle、token-warden），同步清除「痛點洞察」Token 成本不透明列（Parcle／token-warden／Pi Extension，另清除已無對應條目的 token-xray／Costbase 殘留引用）與多 agent 協調混亂列（BeamWeaver）的殘留引用。
 
 ---
 
@@ -28,9 +28,9 @@
 
 | 痛點主題 | 代表工具 | 本質問題 | 狀態 | 近期工具 |
 |---------|---------|---------|------|---------|
-| Token 成本不透明 | Tokenyst、CostHawk、TokenShield、PrismoDev、engramx、agent-estimate、token-xray、Parcle、token-warden、Pi Extension、LimitBar、Atelier、Costbase | 自主 agent 讓帳單不可預測；Parcle 新增 agent 共享記憶層減少重複 context；LimitBar 新增 Fable 專屬額度即時顯示；Atelier／Costbase 延續額度焦慮情緒串，分別提供實測基準節省驗證與跨 app 費用拆分 | 🔥 持續升溫 | 2026-07-13 |
+| Token 成本不透明 | Tokenyst、CostHawk、TokenShield、PrismoDev、engramx、agent-estimate、LimitBar、Atelier | 自主 agent 讓帳單不可預測；LimitBar 新增 Fable 專屬額度即時顯示；Atelier 延續額度焦慮情緒串，提供實測基準節省驗證 | 🔥 持續升溫 | 2026-07-13 |
 | 跨 session 記憶歸零 | ltm、Memex、draft CLI、LockedIn、VIR、CoreMem、Cc-hindsight | 無官方標準，每個新 session 從零開始；Cc-hindsight 將過往對話轉為可重複使用的 prompt 庫 | 🔥 持續升溫 | 2026-07-15 |
-| 多 agent 協調混亂 | agent-baton、cdesktop、AnyFrame、agent-teamflow、Superset、BeamWeaver、OtoDock、Fleet Deck | 官方 Managed Agents 已部分解決，但社群仍補缺口；BeamWeaver 以 Elixir OTP 原生提供 graph workflow 與 checkpoint 機制；OtoDock 將 Claude Code + Codex 團隊化伺服器部署，Fleet Deck 補足多 session 單一看板可視化 | 🔥 持續升溫 | 2026-07-15 |
+| 多 agent 協調混亂 | agent-baton、cdesktop、AnyFrame、agent-teamflow、Superset、OtoDock、Fleet Deck | 官方 Managed Agents 已部分解決，但社群仍補缺口；OtoDock 將 Claude Code + Codex 團隊化伺服器部署，Fleet Deck 補足多 session 單一看板可視化 | 🔥 持續升溫 | 2026-07-15 |
 | CLAUDE.md 規則失效 | Writ、Caliber、Patina | 規則被忽略、過多規則耗 token、跨工具無標準 | 🌙 冷卻觀望 | 2026-05-12 |
 | 多模型鎖定防禦 | Dragoman、Claudy、claudely、clarp、vibe-skill | 6/15 計費切割後供應商依賴防禦反應加速 | 🌙 冷卻觀望 | 2026-05-21 |
 | 輸出品質不可信 | Groundtruth、EvanFlow、Relay plugin、Proof Loop、Grepathy | 信任邊界未建立，需在流程層強制插入驗證點；Proof Loop 加入建構者/驗證者分離機制；Grepathy 將驗證範疇延伸至「agent 未經核准的自主決策」可追溯性 | 🔥 持續升溫 | 2026-07-15 |

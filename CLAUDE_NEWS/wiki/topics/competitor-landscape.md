@@ -4,10 +4,10 @@
 **領域：** 💼 商業
 **開始日期：** 2026-04
 **最後更新：** 2026-07-26
-**最後新聞更新：** 2026-07-25
+**最後新聞更新：** 2026-07-26
 
-> **最新競品動態**（2026-07-25）
-> 今日新增一則工作流層級比較文：SitePoint 發表《Codex 5.3 Production Workflow》，討論複雜程式碼重構情境下該選用 OpenAI Codex 5.3 或 Claude 的取捨；僅標題/內容層級資訊，未見具體量化比較或定價數字，單一來源，故僅記於「時序」，不更新「競品定價對照」表。07-24 已記錄之 Antigravity vs Cursor vs Claude Code 定價比較（tech-insider.org）、07-21/22 已記錄之戰略層級動態（Emerging Trajectories 分析 Kimi K3/Qwen 3.8 對 Anthropic 構成重大威脅；中國 AI agent 於自主研究任務據稱超越 Claude Code；Claude 曾自稱為 Alibaba Qwen AI 引發蒸餾雙標批評）仍為本頁近期最重大訊號，未見進一步後續報導。
+> **最新競品動態**（2026-07-26）
+> 開放權重陣營對立公開化：Benzinga 報導白宮 AI 政策顧問 David Sacks 公開批評 Anthropic 在開源生態議題上的立場，稱其恐「刺穿美國整個開源生態系的心臟」；與 07-25 已記錄之 Forbes 報導（Nvidia 開放權重連署擴大至 50 家企業，但不含 Amazon 與 Anthropic）、同日 India Today 報導（Nvidia 等傾向開放存取、Anthropic 推動對中國模型限制）共同構成「Anthropic vs 開放權重陣營」對立敘事首次由具名重量級人士公開點名批評的事件，詳見下方「時序」（政策/出口管制角度另見 [[topics/anthropic-government-policy]]）。07-25 已記錄事項：SitePoint《Codex 5.3 Production Workflow》比較文、07-24 Antigravity vs Cursor vs Claude Code 定價比較（tech-insider.org）、07-21/22 戰略層級動態（Emerging Trajectories 分析 Kimi K3/Qwen 3.8 對 Anthropic 構成重大威脅；中國 AI agent 於自主研究任務據稱超越 Claude Code；Claude 曾自稱為 Alibaba Qwen AI 引發蒸餾雙標批評）仍為本頁近期最重大訊號，未見進一步後續報導。
 
 ---
 
@@ -204,6 +204,13 @@ Claude Code 已成為 AI 輔助編碼的標竿產品，但競爭正快速升溫�
 ---
 
 ## 時序
+
+#### 近期單日動態彙整（2026-07-02 至 2026-07-26）
+
+> 逐日條目按主題可另見上方「主要競品追蹤」對應廠商子區塊；此區塊保留完整時序供追溯查證。
+
+### 2026-07-26
+- **[重大，具名重量級人士公開批評] David Sacks 警告 Anthropic 開源生態立場恐傷害美國生態系**：Benzinga 報導白宮 AI 政策顧問 David Sacks 公開批評 Anthropic，稱其在開源議題上的立場「將把一把匕首刺進美國整個開源生態系的心臟」。**與既有訊號的關係**：延續 07-25 已記錄之 Forbes 報導（Nvidia 開放權重連署擴大至 50 家企業，Amazon 與 Anthropic 未加入）、同日 India Today 報導（Nvidia 等傾向對中國 AI 模型開放存取，Anthropic 則推動限制），本次是「Anthropic vs 開放權重陣營」對立敘事首次由具名重量級人士（白宮 AI 政策顧問，見 [[topics/anthropic-government-policy]] 既有紀錄）公開點名批評，可能加大 Anthropic 在出口管制／開源政策辯論中的輿論壓力（推論）；具體政策訴求、Anthropic 官方回應未見報導細節（Google News/Benzinga https://www.benzinga.com/markets/tech/26/07/60685709/david-sacks-warns-anthropic-doesnt-want-competition-youre-going-to-basically-put-a-dagger-through-the-heart-of-the-entire-american-open-source-ecosystem）
 
 ### 2026-07-25
 - **[競品工作流比較，標題層級，單一來源] SitePoint：Codex 5.3 生產環境工作流——何時該選它而非 Claude 做複雜重構**：SitePoint 發表比較文章，討論在複雜程式碼重構情境下，何時該選擇 OpenAI Codex 5.3 而非 Claude 進行工作流編排。**注意**：無具體公開定價數字，本則僅記事件不更新「競品定價對照」表；亦未見文章方法論或量化比較細節，單一來源，待後續補充（Google News/SitePoint）

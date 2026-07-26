@@ -3,11 +3,11 @@
 **狀態：** ongoing
 **領域：** 🌐 社群
 **開始日期：** 2026-04-25
-**最後更新：** 2026-07-25
-**最後新聞更新：** 2026-07-25
+**最後更新：** 2026-07-26
+**最後新聞更新：** 2026-07-26
 
-> **最熱討論**（2026-07-25）
-> 今日新增一則達收錄門檻：Show HN promptster.ai（分析 Claude Code/Codex 工程師實際用法而非僅費用儀表板，HN score 14，source_count=2，同篇提及開源本機工具 cc-audit），訊號強度標為 🔥（單篇 Show HN 展示，尚無社群交鋒紀錄）。dev.to「I built a multi-agent loop where an adversarial Claude reviewer reads your actual codebase before approving plans」（execute25，#claudeai）與「Teaching Claude Code to Paint」（nb2lite-skill-claude）今日在日報中第三度重複出現，兩者皆已分別於 2026-07-10、2026-07-22 收錄於 [[topics/community-tech-patterns]]，本輪不重複新增（⚠️ 建議主編檢查日報 dedup 機制，同一 dev.to URL 疑似被重複抓取）。Reddit 兩則第一手分享——「確定性 CLAUDE.md 編譯器降 55.82% 指令 token」（r/ClaudeCode）與「開源多智能體 SDLC harness 比冷啟動 `claude -p` 省 7–75% 成本」（r/MachineLearning）——皆為單一來源、0 留言、無「週熱門」標記，依規則 RSS score 不可信且無跨平台佐證，未達收錄門檻，未收錄；「play DOOM in claudecode」純趣味小工具，0 留言遠低於門檻，未收錄；「Kimi-K3 isn't quite better than Fable yet」（r/LocalLLaMA 週熱門）屬模型能力比較，判斷歸模型記者 [[topics/model-comparison]] 頁面範疇，本頁不重複記錄。清理：「Ask HN：跳脫 Prompt-Response 迴圈的 AI 編碼互動模式」（首見 2026-07-03）距今已 22 天，超過 ☄️閃現 21 天保留期限，自「熱門討論」表格移除（技術彙整原文保留）。額度焦慮系列仍為近期背景（詳見「熱門討論」對應列）。
+> **最熱討論**（2026-07-26）
+> 今日新增兩則達收錄門檻：① Anthropic 部落格〈context engineering 新規則〉揭露 Claude 5 世代模型已移除逾 80% 的 Claude Code 系統提示詞，HN score 393（本輪最高分，遠超高門檻），社群熱議「更少提示詞反而更精準」對 context engineering 設計理念的衝擊，訊號強度標為 🔥🔥🔥🔥；② 討論指出 Claude Code 二進位對 Opus 5 存在硬編碼限制（除非使用者明確要求，否則禁用 AgentTool／workflows／deep-research），HN score 18（原始討論源自 Reddit，經 HN 轉載延燒，跨平台佐證），訊號強度標為 🔥（未經官方證實的社群觀察）。三款 Show HN 多 agent 管理工具（Termic、Argus、terminai）分數僅 1–3 分，遠低於中門檻，未收錄；「Transitioning to Spec-Driven Development via AWS Step Functions」（Reddit r/ClaudeCode）score 0、無「週熱門」標記、單一來源，依規則 RSS score 不可信，未收錄；dev.to「Use Fable 5 where it pays for itself」為第一手成本控制實作案例，依內容判斷原則歸入 [[topics/community-tech-patterns]]（分層模型策略延伸案例），本頁不重複收錄；Simon Willison〈Ruff v0.16.0〉純 Python linter 更新，與 Claude/Anthropic 無直接關聯，未收錄。額度焦慮系列與既有長期議題仍為近期背景（詳見「熱門討論」對應列）。
 
 ---
 
@@ -31,6 +31,7 @@
 
 當前持續延燒的議題（🌊延燒狀態），依熱度排列：
 
+- **Claude 5 世代 context engineering 新規則**（🔥🔥🔥🔥，2026-07-26，HN score 393）：Anthropic 官方揭露針對更先進模型已移除逾 80% 的 Claude Code 系統提示詞，社群熱議「精簡提示詞反而更精準」對 context engineering 設計理念的衝擊，呼應既有「CLAUDE.md 設計哲學」長期議題「精簡反而更好」的既有共識
 - **Extended Thinking 透明度揭露**（🔥🔥🔥🔥，2026-06-23，HN score 312）：thinking blocks 只有加密簽名、API 僅回摘要、完整輸出需企業協議——「審計軌跡」技術上無法自行核驗；引爆 AI 透明度承諾的根本質疑
 - **開源 LLM 遷移零代價論**（🔥🔥🔥🔥，2026-06-22，HN score 334）：閉源護城河瓦解論引發廣泛討論，平台依賴風險意識升高
 - **OpenAI vs Anthropic 定價戰**（🔥🔥🔥🔥，2026-06-11+）：AI 定價競爭從技術競爭正式轉向成本競爭；WSJ/CNBC 報導讓 Google、Amazon 坐收漁利的態勢持續延燒
@@ -119,6 +120,8 @@ MCP 的實際成本遠超多數使用者預期，已有多個量化案例：
 
 | 討論主題 | 首見 | 熱度 | 模式 | 核心論點 | 衍生 |
 |---------|------|------|------|---------|------|
+| Claude 5 世代模型 context engineering 新規則：Claude Code 系統提示詞縮減逾 80% | 2026-07-26 | 🔥🔥🔥🔥 | ☄️閃現 | Anthropic 部落格說明針對更先進模型已移除超過 80% 的 Claude Code 系統提示詞，並提供將此經驗應用於自訂 agent 的 context engineering 建議；HN score 393（本輪最高分，遠超高門檻），社群熱議「精簡提示詞反而更精準」對既有 context engineering 假設的衝擊；官方功能發布面已由功能記者記錄；[原文](https://claude.com/blog/the-new-rules-of-context-engineering-for-claude-5-generation-models)（HN） | — |
+| Claude Code 二進位對 Opus 5 存在硬編碼行為限制，禁用 AgentTool／workflows／deep-research | 2026-07-26 | 🔥 | ☄️閃現 | 討論指出 Claude Code 2.1.219／220 版編譯二進位中，內建僅針對 Opus 5 的兩行系統提示：除非使用者明確要求，否則不得呼叫 AgentTool、不得使用 workflows 或 deep-research；討論者認為此舉可能不成比例限制 Opus 5 能力發揮，屬未經官方證實的社群觀察；原始討論源自 Reddit、經 HN 轉載延燒，跨平台佐證；HN score 18，達收錄低門檻；[原文](https://old.reddit.com/r/ClaudeCode/comments/1v6y5q2/claude_code_has_a_hardcoded_instruction_telling/)（HN） | — |
 | Show HN：promptster.ai 分析 Claude Code/Codex 實際使用模式而非僅費用儀表板 | 2026-07-25 | 🔥 | ☄️閃現 | 作者指出企業常有自建的 OTel 花費儀表板（顯示花費+席位），卻缺乏真正分析工程師實際用法與改善空間的工具；發布 promptster.ai，manager 端可看程式碼品質與團隊工作流彙整視角，engineer 端取得個人化教練建議節省 token 同時維持產出品質；同篇提及開源本機工具 cc-audit 供稽核本機 Claude Code 設定；HN score 14，source_count=2（跨來源佐證），達收錄低門檻；[原文](https://news.ycombinator.com/item?id=49042653)（HN） | cc-audit |
 | OpenAI 與 Anthropic 對開放權重模型風險立場趨同，引發「自利心態包裝使命宣稱」批評 | 2026-07-23 | 🔥🔥🔥 | ☄️閃現 | Axios 報導兩家公司對開放權重模型風險的立場趨於一致；HN 討論（score 287，本輪最高分）高分留言批評此舉更像自利心態包裝成使命宣稱：「Anthropic 尤其有種傲慢的溝通風格……競爭一出現，就突然變成向政府打小報告的抓耙仔」；單平台高互動、議題共鳴深，尚無跨平台佐證；[原文](https://www.axios.com/2026/07/22/openai-anthropic-open-models-trump-china)（HN） | — |
 | Show HN：claude-thermos 保活工具引發「成本轉嫁」爭議，意外揭露快取到期時間曾退化至 5 分鐘 | 2026-07-23 | 🔥🔥🔥 | ☄️閃現 | 作者釋出可讓 Claude session 保持 prompt cache 熱度的工具；HN 討論（score 102，達高門檻）聚焦此類「保活」行為是否只是把快取到期重算的成本轉嫁給其他共用資源的使用者，留言並指出 Pro/Max 方案快取到期時間現為 1 小時、此前一度退化至僅 5 分鐘；工具本身已於 [[topics/community-tech-patterns]] 收錄；[GitHub](https://github.com/izeigerman/claude-thermos)（HN） | claude-thermos |
@@ -177,6 +180,21 @@ MCP 的實際成本遠超多數使用者預期，已有多個量化案例：
 ## 技術彙整
 
 ### 2026-07
+
+#### Anthropic 揭露 Claude 5 世代模型 context engineering 新規則：Claude Code 系統提示詞縮減逾 80%（2026-07-26）
+
+- **來源：** 「The new rules of context engineering for Claude 5 generation models」— Anthropic Blog，經 Hacker News 討論（score 393，本輪最高分，遠超高門檻）
+- **核心論點：** Anthropic 官方部落格說明，針對 Claude 5 世代更先進模型，已移除超過 80% 的 Claude Code 系統提示詞；文章並提供將此經驗應用於自訂 agent context engineering 的建議，強調 prompt 只是 context 的一小部分，context 多由系統提示、Skills、CLAUDE.md、記憶等組成
+- **關鍵回響：**
+  - 📝 呼應：HN 討論熱烈（393 分），多聚焦「精簡提示詞反而帶來更精準行為」是否顛覆既有 context engineering 直覺
+- **收斂結論：**（推論）與本頁「CLAUDE.md 設計哲學」長期議題既有共識「精簡反而更好」方向一致，本篇是官方首度以 Claude Code 自身系統提示為具體案例佐證此原則；官方功能發布面（模型能力本身）已由功能／模型記者記錄，本頁僅記錄社群對此設計哲學轉向的反應
+
+#### 討論指出 Claude Code 二進位對 Opus 5 存在硬編碼行為限制（2026-07-26）
+
+- **來源：** 「Claude Code has a hardcoded instruction telling Opus 5 not to use subagents」— 原始討論見 Reddit r/ClaudeCode，經 Hacker News 轉載延燒（score 18，達收錄低門檻，跨平台佐證）
+- **核心論點：** 討論指出 Claude Code 2.1.219／220 版編譯二進位中，內建僅針對 Opus 5 的兩行系統提示：除非使用者明確要求，否則不得呼叫 AgentTool、不得使用 workflows 或 deep-research；討論者認為此舉可能不成比例限制 Opus 5 的能力發揮
+- **關鍵回響：**（無，屬未經官方證實的單一社群觀察，尚無正反交鋒紀錄）
+- **收斂結論：**（無）官方未證實此硬編碼限制的存在或用意，暫記為社群觀察；若後續有官方回應或跨平台延燒，可能收斂為獨立議題
 
 #### Show HN：promptster.ai — 分析 Claude Code/Codex 實際用法而非僅費用儀表板（2026-07-25）
 

@@ -4,7 +4,7 @@
 **狀態：** active
 **領域：** 👤 人物
 **首次出現：** 2026-04-25
-**最後更新：** 2026-07-18
+**最後更新：** 2026-07-26
 **最後新聞更新：** 2026-07-16
 
 > **最新動態**（2026-07-16，待核實）
@@ -57,7 +57,7 @@ Dario Amodei 是 Anthropic 共同創辦人兼執行長（CEO），與 Chris Olah
 
 ## 參考來源
 
-- [STAT News，2026-07-06](https://www.statnews.com/2026/07/06/anthropic-ai-biotech-impact/)：專訪談 AI 對生技產業的潛在影響（待核實，僅標題層級資訊）
+- [STAT News，2026-07-06](https://www.statnews.com/2026/07/06/anthropic-ai-biotech-impact/)：專訪談 AI 對生技產業的潛在影響（2026-07-06 報導，至今無後續：僅標題層級資訊，近 14 天日報無具體論述內容補充）
 - [WIRED，2026-06-26](https://www.wired.com/story/the-trump-white-house-is-over-anthropics-dario-amodei/)：Trump 政府不再信任 Amodei，Tom Brown 全面接管政府溝通
 - [WIRED，2026-06-24](https://www.wired.com/story/the-trump-white-house-is-over-anthropics-dario-amodei/)：白宮關係緊張；退出談判由 Tom Brown 接管
 - Bloomberg 訪談（2026-06-11）：政府監管 + 組織架構
@@ -67,7 +67,7 @@ Dario Amodei 是 Anthropic 共同創辦人兼執行長（CEO），與 Chris Olah
 ## 歷史記錄
 
 - 2026-07-16：Politico 報導（經 Google News 轉載）指「Anthropic 執行長」捐款 100 萬美元予某 super PAC，捲入 AI 陣營之間鉅額政治獻金角力戰局；原文標題未具名確認捐款人身分，現任執行長為 Dario Amodei，惟此事實歸屬本人尚待核實（待核實）（政策/政治角力面向另見安全政策記者相關頁面）（來源：Politico）
-- 2026-07-06：接受 STAT News 專訪，談 AI 對生技（biotech）產業的潛在影響；日報僅提供標題層級資訊，具體論述內容待後續報導補充（待核實）（來源：STAT News）
+- 2026-07-06：接受 STAT News 專訪，談 AI 對生技（biotech）產業的潛在影響；日報僅提供標題層級資訊（2026-07-06 報導，至今無後續：近 14 天日報無具體論述內容補充）（來源：STAT News）
 - 2026-06-26：Wired 延伸報導確認 Trump 政府已不再信任 Amodei，改由 Tom Brown（GPT-3 共同研發者、Anthropic 聯合創辦人）全面接管政府溝通；Dario 以商業成功推動 AI 安全的政策立場持續受到質疑（來源：WIRED）
 - 2026-06-25：WIRED 報導 Amodei 退出與白宮 Fable 5 出口管制談判，由聯合創辦人 Tom Brown 接管；白宮人士批評其「行為怪異」無法有效與 Trump 政府溝通（來源：WIRED）
 - 2026-06-24：WIRED 報導白宮與 Dario Amodei 的關係趨於緊張，為 Fable 出口管制爭議持續發酵下的政治維度，顯示 Anthropic 與現任行政當局關係惡化

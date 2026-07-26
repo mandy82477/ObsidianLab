@@ -3,11 +3,11 @@
 **狀態：** monitoring（出口管制主線已解除，剩餘承諾落實與衍生支線持續觀察；中美 AI 工具信任對峙已獨立成頁）
 **領域：** 🏛️ 政策/安全
 **開始日期：** 2026-05-01
-**最後更新：** 2026-07-24
-**最後新聞更新：** 2026-07-24
+**最後更新：** 2026-07-26
+**最後新聞更新：** 2026-07-26
 
-> **最新動態**（2026-07-23）
-> BBC（source_count=2，另一媒體同步報導）補足 07-22 TechCrunch／南華早報標題式報導：白宮「川普科技顧問」（姓名未指明）指控中國 Moonshot AI 從 Anthropic 的 Fable 模型「蒸餾」竊取技術，美國財政部揚言祭出制裁；消息來源層級較 07-22「白宮官員」泛稱更具體，但制裁對象、範圍與法源依據仍待核實。同日另兩則新訊號：The Information（僅標題可用）報導矽谷科技業界聯合反對 Anthropic 對中國 AI 的限制立場，為出口管制落幕後首見「業界」層級的集體反彈；digitimes（僅標題可用，用詞保守處理）稱中國 AI 實驗室透過 Claude Code 相關外洩內容縮小與 Anthropic 技術差距，外洩性質與涉及實驗室均未確認。出口管制主線本身已於 07-01 落幕（詳見「## 摘要」）；中美 AI 工具信任對峙已於 2026-07-12 整合拆出至獨立頁 [[topics/safety-china-trust-dispute]]；07-13～07-22 Mythos 跨界表態完整綜合敘事見「🚫 出口管制」戰場段落。
+> **最新動態**（2026-07-26）
+> Forbes（07-25）與 India Today（07-26）為 07-23「The Information：矽谷業界聯合反對 Anthropic 對中限制立場」提供具名細節：Nvidia 發起的開放權重（open weights）連署簽署企業已擴大至 50 家，但 Amazon 與 Anthropic 明確未加入；India Today 進一步將此定性為「矽谷分裂——Nvidia 等陣營主張對中國模型開放存取，Anthropic 則持續推動限制/禁令」。兩則報導首度將先前僅具標題的「業界反彈」訊號具體化為可辨識的陣營與規模（50 家 vs. 缺席的 Amazon/Anthropic），強化「矽谷產業對 Anthropic 對中 AI 限制立場的反彈」支線；具體連署名單、Anthropic 官方回應仍未見報導。出口管制主線本身已於 07-01 落幕（詳見「## 摘要」）；中美 AI 工具信任對峙已於 2026-07-12 整合拆出至獨立頁 [[topics/safety-china-trust-dispute]]；07-13～07-22 Mythos 跨界表態完整綜合敘事見「🚫 出口管制」戰場段落。
 
 ---
 
@@ -42,7 +42,7 @@
 | Anthropic 政治獻金布局 | Politico（07-16，僅標題可用）：Dario Amodei 個人捐款 100 萬美元予某 super PAC；SFGATE（07-17，僅標題可用）：Anthropic 員工另捐款 300 萬美元支持 AI 安全相關法規推動；**07-22 官方確認**：Anthropic 部落格宣布再捐 2000 萬美元予無黨派組織 Public First Action（累計達 4000 萬美元，首筆 02 月），聲明明確排除候選人選舉用途；同日 WSJ／The Hill／Axios 以「期中選舉支出翻倍至 4000 萬美元推動 AI 監管」「遊說支出攀升」框架報導，與官方「非選舉用途」聲明形成敘事張力；三筆捐款/支出彼此是否構成同一資金脈絡待確認 | 三筆捐款/支出是否流向同一組織或政策倡議；WSJ「4000 萬美元」框架是否涵蓋 Dario 個人與員工捐款、或僅指 Public First Action 一項；是否與州級 AI 規則倡議（07-15）構成一致的政治佈局；是否有對立陣營公開回應；人物面向詳見 [[entities/dario-amodei]] |
 | Pax Silica 政策架構與中美 AI 領先地位論戰 | 南華早報獨家專訪「Pax Silica」政策架構主要推手（姓名待確認），主張美國仍可維持 AI 領先地位，為既有「出口管制反效」論述（Bloomberg 06-26）提供首個正面反駁（2026-07-16，僅單一媒體專訪，待第三方確認） | Pax Silica 政策架構具體內容與推手身分；此論述是否獲其他政策圈人士呼應或反駁 |
 | Moonshot 蒸餾指控與財政部制裁威脅 | 白宮官員指控中國 Moonshot AI 從 Fable「蒸餾」竊取技術，財政部揚言祭出制裁；TechCrunch、南華早報（07-22）兩則標題式報導後，BBC（07-23，source_count=2，另一媒體同步報導同一消息）確認並補足，消息來源具體化為「川普科技顧問」（姓名未指明），制裁對象、範圍、法源依據仍均未見報導 | Moonshot 是否回應；財政部是否公布具體制裁措施；「川普科技顧問」具體身分；是否與 06-10 阿里巴巴蒸餾指控構成同一政策脈絡或屬獨立案件；模型面詳見 [[entities/fable-5]] |
-| 矽谷產業對 Anthropic 對中 AI 限制立場的反彈（新增） | The Information（經 Google News 轉載，僅標題可用）報導矽谷科技業界聯合反對 Anthropic 對中國 AI 的限制立場，具體反對名單、訴求焦點與後續行動均未見報導（2026-07-23） | 是否有具名企業或人士表態；反對訴求鎖定出口管制、蒸餾指控或整體對中鷹派立場；是否影響 Anthropic 州級/聯邦遊說策略 |
+| 矽谷產業對 Anthropic 對中 AI 限制立場的反彈 | The Information（07-23，僅標題可用）首見報導矽谷業界聯合反對 Anthropic 對中國 AI 限制立場；Forbes（07-25）與 India Today（07-26）補足具名細節：Nvidia 發起的開放權重連署已擴大至 50 家企業，Amazon 與 Anthropic 明確未加入，India Today 將此定性為「矽谷分裂——Nvidia 陣營主張開放存取，Anthropic 推動限制」 | Anthropic 官方是否回應被點名缺席；50 家連署企業完整名單；此陣營對立是否影響 Anthropic 州級/聯邦遊說策略或蒸餾指控論述 |
 | 中國 AI 實驗室據稱透過 Claude Code 外洩內容縮小差距（新增，待查證） | digitimes（經 Google News 轉載，僅標題可用）報導中國 AI 實驗室透過 Claude Code 相關外洩內容縮小與 Anthropic 的技術差距；外洩內容性質（原始碼／使用紀錄／其他）、涉及哪些實驗室、外洩機制均未見報導，用詞保守處理（2026-07-23） | 外洩內容具體性質與來源；涉及哪些中國 AI 實驗室；是否與既有蒸餾指控（阿里巴巴、Moonshot）構成同一脈絡；技術/安全面待 [[topics/ai-agent-safety]] 補充查證 |
 
 ---
@@ -99,6 +99,8 @@ Fable 5 發布後，Amazon 安全研究人員發現特定提示詞可讓模型�
 
 **2026-07-22，白宮指控 Moonshot AI 蒸餾 Fable，財政部揚言制裁：** TechCrunch 與南華早報兩獨立媒體（皆經 Google News 轉載，僅標題可用）報導，白宮官員指控中國 Moonshot AI 從 Anthropic 的 Fable 模型「蒸餾」竊取技術，美國財政部隨後揚言對 Moonshot 祭出制裁。此為繼 2026-06-10 Anthropic 自行致函參議院指控阿里巴巴 2,880 萬次蒸餾攻擊（見上文）後第二起蒸餾攻擊指控，但性質不同：前者是 Anthropic 單方對國會提出的企業指控，本次則是白宮官員主動點名並升級至財政部制裁層級，屬「政府對政府」的正式攻防動作，也呼應「阿里巴巴蒸餾指控」在「出口管制必要性論述」中的角色——中國行為者持續蒸餾提取受管制模型能力，為管制/制裁政策提供論述基礎。兩則報導均僅標題可用，制裁具體對象（Moonshot 公司本身或關聯個人/實體）、法源依據（IEEPA／出口管制法規／其他）與範圍均未見報導，Moonshot 方面尚無回應，列為待查證。
 
+**2026-07-25～07-26，Nvidia 開放權重連署具體化「業界反彈」陣營：** Forbes（07-25）報導 Nvidia 發起、號召開放權重存取的連署企業已擴大至 50 家，但 Amazon 與 Anthropic 明確未加入；India Today（07-26）延續此訊號並將其定性為「矽谷分裂」——Nvidia 等陣營主張對中國 AI 模型開放存取，Anthropic 則持續推動限制/禁令。兩則報導首次為 07-23 The Information「矽谷業界聯合反對 Anthropic 對中限制立場」的標題式訊號補上具名規模與陣營輪廓，呼應「根本矛盾」段落中 Anthropic 一貫的護欄優先立場與產業界（尤其 Nvidia 為首的開源/開放存取陣營）的路線分歧；Anthropic 官方尚未就連署缺席或分裂框架公開回應，連署完整名單亦未見報導，列為待查證。
+
 **2026-07-23，BBC 確認並具體化消息來源：** BBC（source_count=2，另一媒體同步報導同一消息）就上述 Moonshot 蒸餾指控補充報導，將消息來源具體化為「川普科技顧問」（Trump tech adviser，姓名未指明），而非 07-22 報導的泛稱「白宮官員」；兩獨立媒體確認同一指控存在，但顧問具體身分、財政部制裁進展仍待查證。同日，The Information（經 Google News 轉載，僅標題可用）報導矽谷科技業界聯合反對 Anthropic 對中國 AI 的限制立場——為出口管制主線於 07-01 落幕後，首見「業界」（而非政府或媒體）層級對 Anthropic 對中鷹派立場的集體反彈訊號；具體反對名單、訴求焦點（鎖定出口管制、蒸餾指控或整體對中立場）與後續行動均未見報導，待查證。另有 digitimes（經 Google News 轉載，僅標題可用）報導中國 AI 實驗室透過 Claude Code 相關外洩內容縮小與 Anthropic 的技術差距；此說法若屬實將呼應既有「中國追趕」敘事（WSJ 06-28、Bloomberg 06-26），但「外洩」的具體性質、機制與涉及實驗室均未見報導，用詞保守處理，暫不併入蒸餾指控（阿里巴巴、Moonshot）脈絡，技術安全面待查證見 [[topics/ai-agent-safety]]。
 
 ### 🌍 策略選擇：Anthropic 換戰場而非退讓
@@ -125,6 +127,8 @@ Fable 5 發布後，Amazon 安全研究人員發現特定提示詞可讓模型�
 
 | 日期 | 方 | 動作 | 效果 |
 |------|----|------|------|
+| 2026-07-26 | 🌐 | India Today：矽谷對中國 AI 模型立場分裂，Nvidia 等主張開放存取，Anthropic 推動禁令 | 將 07-23 The Information「業界反彈」與 07-25 Forbes「連署缺席」訊號整合定性為陣營對立框架；Anthropic 官方尚無回應，待查證 |
+| 2026-07-25 | 🌐 | Forbes：Nvidia 開放權重連署擴大至 50 家企業，Amazon 與 Anthropic 未加入 | 首次具名量化「業界反彈」規模（50 家），並明確點名 Amazon、Anthropic 缺席；連署完整名單與 Anthropic 是否回應待查證 |
 | 2026-07-23 | 🏛️🌐 | BBC（source_count=2，另一媒體同步報導）：白宮「川普科技顧問」指控中國 Moonshot AI 從 Anthropic 竊取技術，確認並補足 07-22 TechCrunch/南華早報標題式報導 | 兩獨立媒體確認同一指控，消息來源具體化為「川普科技顧問」（姓名未指明），而非泛稱「白宮官員」；顧問具體身分、財政部制裁進展仍待查證 |
 | 2026-07-23 | 🌐 | The Information（經 Google News 轉載，僅標題可用）：矽谷科技業界聯合反對 Anthropic 對中國 AI 的限制立場 | 出口管制主線落幕後首見「業界」層級對 Anthropic 對中立場的集體反彈訊號；具體反對名單、訴求焦點與後續行動均未見報導，待原文確認 |
 | 2026-07-23 | 🌐 | digitimes（經 Google News 轉載，僅標題可用，用詞保守處理）：中國 AI 實驗室透過 Claude Code 相關外洩內容縮小與 Anthropic 技術差距 | 未經證實的標題式報導，外洩內容性質、涉及實驗室與機制均未見報導；若屬實可能呼應「中國追趕」既有敘事，但暫不併入蒸餾指控脈絡；技術安全面待查證見 [[topics/ai-agent-safety]] |
@@ -227,6 +231,7 @@ Fable 5 發布後，Amazon 安全研究人員發現特定提示詞可讓模型�
 
 ## 參考來源
 
+- [[news/2026-07-26]]
 - [[news/2026-07-24]]
 - [[news/2026-07-23]]
 - [[news/2026-07-22]]
@@ -255,6 +260,12 @@ Fable 5 發布後，Amazon 安全研究人員發現特定提示詞可讓模型�
 - [Chris Olah Vatican Remarks](https://www.anthropic.com/news/chris-olah-pope-leo-encyclical) — Anthropic Blog
 
 ## 時序
+
+### 2026-07-26
+- **[待查證] India Today：矽谷對中國 AI 模型立場分裂，Nvidia 主張開放存取、Anthropic 推動禁令**：India Today 報導矽谷科技業對中國 AI 模型的態度出現分裂——Nvidia 等公司傾向開放存取，Anthropic 則持續推動限制/禁令；延續並定性 07-23 The Information「業界反彈」訊號與 07-25 Forbes「連署缺席」報導，Anthropic 官方尚無回應（Google News/India Today，2026-07-26 06:48 UTC）
+
+### 2026-07-25
+- **[待查證] Forbes：Nvidia 開放權重連署擴大至 50 家企業，Amazon 與 Anthropic 未加入**：Forbes 報導 Nvidia 發起號召開放權重（open weights）存取的連署企業已擴大一倍達 50 家，但 Amazon 與 Anthropic 明確未加入；為 07-23 The Information「矽谷業界聯合反對 Anthropic 對中限制立場」標題式訊號首度提供具名規模細節，連署完整名單與 Anthropic 回應待查證（Google News/Forbes，2026-07-25 20:23 UTC）
 
 ### 2026-07-23
 - **[待查證，source_count=2] BBC：川普科技顧問指控 Moonshot AI 從 Anthropic 竊取技術**：BBC（經 Google News 轉載，另一媒體同步報導同一消息，source_count=2）報導白宮「川普科技顧問」指控中國 Moonshot AI 從 Anthropic 竊取技術；確認並補足 07-22 TechCrunch／南華早報標題式報導，消息來源具體化為「川普科技顧問」（姓名未指明）；財政部制裁具體措施與顧問身分仍待查證（Google News/BBC，2026-07-23 23:50 UTC）

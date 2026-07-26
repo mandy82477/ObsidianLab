@@ -4,11 +4,11 @@
 **狀態：** active
 **領域：** 🤖 模型
 **首次出現：** 2026-07-25
-**最後更新：** 2026-07-25
-**最後新聞更新：** 2026-07-25
+**最後更新：** 2026-07-26
+**最後新聞更新：** 2026-07-26
 
-> **最新進展**（2026-07-25）
-> Anthropic 於 2026-07-25 正式推出 Claude Opus 5，終結了近兩週的「Opus 5」傳聞（詳見 [[entities/opus-4-8]] 歷史記錄）。定位為 thoughtful and proactive 的新一代模型，在編碼與知識工作評測（Frontier-Bench、GDPval-AA）上逼近 Fable 5 的 frontier intelligence，官方稱定價為 Fable 5 的一半；現為 Claude Max 新預設模型、Claude Pro 最強模型，取代 Opus 4.8 成為次旗艦。資安任務上仍落後 Mythos 5。
+> **最新進展**（2026-07-26）
+> Anthropic 於 2026-07-25 正式推出 Claude Opus 5，終結了近兩週的「Opus 5」傳聞（詳見 [[entities/opus-4-8]] 歷史記錄）。定位為 thoughtful and proactive 的新一代模型，在編碼與知識工作評測（Frontier-Bench、GDPval-AA）上逼近 Fable 5 的 frontier intelligence，官方稱定價為 Fable 5 的一半；現為 Claude Max 新預設模型、Claude Pro 最強模型，取代 Opus 4.8 成為次旗艦。資安任務上仍落後 Mythos 5。07-26 MLQ.ai／PCMag 標題另稱 Opus 5 在特定測試（AI Benchmark Index、agentic search）「tops」Fable 5，與官方「逼近未超越」框架略有出入，僅標題層級，待驗證。
 
 ---
 
@@ -19,6 +19,8 @@ Anthropic 於 2026-07-25 正式發布 Claude Opus 5，是繼 2026-07-13 起多�
 **能力定位：** 在編碼與知識工作評測基準 Frontier-Bench、GDPval-AA 上逼近 Fable 5 的 frontier intelligence，是新的 state-of-the-art——但在資安任務上仍落後 [[entities/mythos|Mythos 5]]。相較前代 [[entities/opus-4-8|Opus 4.8]]，官方稱「相同成本下效能大幅提升」，取代 Opus 4.8 成為次旗艦地位。
 
 **定價定位：** 官方宣稱定價為 Fable 5 的一半（[the-decoder.com](https://news.google.com/rss/articles/CBMixAFBVV95cUxQd3dndnBYZjY0MVBWTjAtNGFYMmFkVUFEUHZmMkZpWVBscjh2VGlRNlJSREdfV3ZmNURtcWVWeTNhYnRudEU3eUhMMkt6bTBRNGRkS2I3WTMwWU5IcmxLdGFXcm56cGJMcmZoWjlpeWdwSjZlRVpRelhFcTkza01tdkZjcGNOQjBKa0JlOFV1bGtRSGJwVkRDb2h3STRKRVN5NEJmM1Q3aVZtUzBRQURlaXpxUENyWHFQZVk0LVBrdUM2QlZm?oc=5)，2026-07-25）；另有 MarkTechPost 報導稱 Opus 5 是在**維持原 Opus 定價**下達到 frontier 級的程式撰寫與電腦操作能力（[Google News/MarkTechPost](https://news.google.com/rss/articles/CBMi1wFBVV95cUxOS0JSUzdUZmhBMVJ3bkFpcXFINFdKalE4NU1YZ1lxSnpBazVRWkl4SUx1RTlEYmI3azJKUFJTbXJGYUxzQTM2UkNjektPMGJxVGdRSTNoSE93SkJZTmFrekFiTjEwdEhxMjZkenBDMGx6cDU0OS1zTzhwWWhpX3RqYWY3TUlCaVg5ZmFJZW5meU04Y09kNDdnTXhjTG1mYXlHTG1hY1lTd3NuUlhwZGJ3VFI0M2VjWUQ2eDF0WVBuYXFuOUVfTTVtRWl6N1A3ZG1DMENraWtCNNIB3AFBVV95cUxPdExPRlliYXRNMjVRVTFJY0xEcFllWjJkdHRmNnNuUDgyMXNOd0VlckNjNmxsaTdpTUtpeklJUEdfMjdGekpPbGl6ZjFTb0tfYVpJbUlEX18tQjlwalQ4amNJcHAwUmZoUm1BWmpLSFY5bS1ibTY1WmlqX0FTUG1LZkdKd01mUjdYSFg0ZFVaNVJ4aHZGaHE1OEM0RHdmUXd6R0dpeVM0SjhPdzF2UTloTTdGaHVpZ2dEUG8wdUIzWmhyQVNnMUtaQ2d4Tk1mMXdCRFdhaXhmcmJ3X3Yz?oc=5)，2026-07-24）。兩則報導對「定價相對前代是否維持不變或砍半」的敘述方向不完全一致，**具體定價數字留給** [[entities/pricing]] 查證彙整。
+
+**07-26 媒體標題層級補充（尚無完整內文佐證）：** MLQ.ai 標題稱 Opus 5「Tops AI Benchmark Index」、PCMag 標題稱 Opus 5「Tops Fable 5 on Agentic Search」（[MLQ.ai](https://mlq.ai/news/anthropic-launches-claude-opus-5-tops-ai-benchmark-index-at-half-the-cost-of-fable-5/)、[PCMag](https://www.pcmag.com/news/anthropics-newest-ai-model-opus-5-is-now-available)，均 2026-07-26 經 Google News 收錄）。兩則標題用詞為「tops」（領先），與官方系統卡「逼近但未超越 Fable 5」的整體框架略有出入——不排除是特定子項（agentic search、綜合指數排序方式）Opus 5 確實領先，但整體評測仍是 Fable 5 為 SOTA；兩篇報導僅摘要層級可用、無完整評測數字，此差異暫列為待驗證的措辭落差，不改寫上方官方定位。
 
 **預設模型變化：** 現為 Claude Max 新預設模型、Claude Pro 最強模型，取代 Opus 4.8 的角色。
 
@@ -69,10 +71,13 @@ Anthropic 於 2026-07-25 正式發布 Claude Opus 5，是繼 2026-07-13 起多�
 - [Claude Opus 5 System Card](https://www.anthropic.com/claude-opus-5-system-card)
 - [anthropic-sdk-python v0.120.0](https://github.com/anthropics/anthropic-sdk-python/releases/tag/v0.120.0)
 - [anthropic-sdk-typescript sdk-v0.115.0](https://github.com/anthropics/anthropic-sdk-typescript/releases/tag/sdk-v0.115.0)
-- [[news/2026-07-25]]
+- [MLQ.ai：Tops AI Benchmark Index at Half the Cost of Fable 5](https://mlq.ai/news/anthropic-launches-claude-opus-5-tops-ai-benchmark-index-at-half-the-cost-of-fable-5/)（2026-07-26）
+- [PCMag：Tops Fable 5 on Agentic Search](https://www.pcmag.com/news/anthropics-newest-ai-model-opus-5-is-now-available)（2026-07-26）
+- [[news/2026-07-25]]、[[news/2026-07-26]]
 
 ## 歷史記錄
 
 | 日期 | 事件 |
 |------|------|
+| 2026-07-26 | MLQ.ai／PCMag 媒體標題分別稱 Opus 5「Tops AI Benchmark Index」「Tops Fable 5 on Agentic Search」——與官方「逼近但未超越」框架略有出入，僅標題層級，列為待驗證措辭差異 |
 | 2026-07-25 | 正式發布，取代 Opus 4.8 成為 Claude Max 新預設模型、Claude Pro 最強模型；HN score 1587；SDK（Python/TypeScript）同步加入模型支援；Boris Cherny 稱其為最難被提示注入攻破的模型 |

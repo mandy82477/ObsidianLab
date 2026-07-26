@@ -4,7 +4,7 @@
 **狀態：** active
 **領域：** 👤 人物
 **首次出現：** 2026-05-14
-**最後更新：** 2026-07-22
+**最後更新：** 2026-07-26
 **最後新聞更新：** 2026-07-22
 
 > **最新動態**（2026-06-22）
@@ -63,6 +63,6 @@ Cat Wu 接受公開訪問，指出：
 ## 歷史記錄
 
 - 2026-07-22：Simon Willison 發布紀要，確認本月稍早於 AI Engineer World's Fair 曾主持一場爐邊對談，與談人為 Cat Wu 與 Thariq Shihipar（Anthropic Claude Code 團隊）；原文對談具體內容未完整揭露，暫僅記錄參與事實，不推測發言內容
-- 2026-07-08：inc.com 報導「Head of Claude Code」談新創公司需具備的 5 種員工原型（employee archetypes），原文未具名確認發言人，可能為 Cat Wu 或 [[entities/boris-cherny]]，暫標（待核實）（inc.com，2026-07-07，https://www.inc.com/ashley-couto/claude-code-startup-needs-employee-archetypes/91370409）
+- 2026-07-08：inc.com 報導「Head of Claude Code」談新創公司需具備的 5 種員工原型（employee archetypes），原文未具名確認發言人，可能為 Cat Wu 或 [[entities/boris-cherny]]（2026-07-08 報導，至今無後續：近 14 天日報無獨立確認發言人身分的報導）（inc.com，2026-07-07，https://www.inc.com/ashley-couto/claude-code-startup-needs-employee-archetypes/91370409）
 - 2026-06-22：「engineering leader 讓工程師更孤獨」一說，後續具名來源確認發言人為 Anthropic 工程副總裁 Fiona Fung（[[entities/fiona-fung]]），非 Cat Wu；本頁解除待核實
 - 2026-05-14：公開訪問中提出「AI 主動性（proactivity）是下一個重大躍進」，闡述 Claude Code 從互動工具轉向自主代理平台的產品定位

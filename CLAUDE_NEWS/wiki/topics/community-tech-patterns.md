@@ -4,10 +4,10 @@
 **領域：** 🌐 社群
 **開始日期：** 2026-04-25
 **最後更新：** 2026-07-26
-**最後新聞更新：** 2026-07-24
+**最後新聞更新：** 2026-07-26
 
-> **最新工作流模式**（2026-07-24）
-> 今日新增三則達 patterns 收錄門檻（皆 Show HN 高門檻）：Palmier Pro（開源 macOS 影片編輯器，內建 AI 生成與本機 MCP server 供 agent 連接，HN 171 分，本輪最高分）；OneCLI（憑證閘道器，讓 AI agent 呼叫服務時不接觸真實密鑰，HN 101 分）；claude-thermos（保持 Claude session 快取熱度的工具，HN 102 分，但高分留言質疑「只是把成本轉嫁給其他用戶」，爭議面已同步記於 [[topics/community-tech-discussions]]）。另補記 ZDNET 依任務分工選用 Claude 模型/Code/Cowork 一文（source_count=2，達中門檻，但僅標題可考，內容從簡）。dev.to「Teaching Claude Code to Paint」（nb2lite-skill-claude）與今日日報重複出現，惟已於 07-23 收錄，本輪不重複新增。今日其餘 Show HN 條目（Mumble Dictation、Bookshelf、Hibernate/restore、Notebooker.ai、5dive、Skim、5QL、BoE MCP、Anamne、BDFL、Fleet）分數僅 1–6 分，遠低於中門檻（HN≥30 分或≥5 留言），未收錄；Reddit r/ClaudeCode 兩則 sort=new 貼文（hooks 攔截 find/sed/cat、Day 11 遊戲心得）無週熱門標記且非跨來源佐證，score 不可信，未收錄。KDnuggets「7 Best Claude Code Alternatives」為工具列表型媒體稿、非第一手實作，未收錄。07-22 CodeAlmanac、tpu-management 與 07-21 MCP token 成本實測、07-18 Spare Mac 常駐環境、07-15 既有模式（Brainless、Agentty、OtoDock、Grepathy）仍為近期背景。
+> **最新工作流模式**（2026-07-26）
+> 今日新增一則達 dev.to 內容判斷門檻：「Use Fable 5 where it pays for itself」（dev.to / #claudecode，第一手成本控制實作：只在需要頂尖判斷力的任務用 Fable 5，其餘實作/測試/雜務交由較便宜的 subagent 處理），屬既有「模型使用策略」分層模型思路在 Fable 5 世代的延伸案例，非全新模式。三款 Show HN 多 agent 管理工具（Termic 1 分、Argus 3 分、terminai 2 分）遠低於中門檻，未收錄；「hardcoded instruction Opus 5 not to use subagents」（HN score 18）屬社群觀察與辯論，已改收錄於 [[topics/community-tech-discussions]]，本頁不重複；Reddit「Spec-Driven Development via AWS Step Functions」score 0、無週熱門標記、單一來源，未收錄。07-24 Palmier Pro、OneCLI、claude-thermos 與 07-23 既有模式仍為近期背景。
 
 ---
 
@@ -101,6 +101,13 @@ Claude Code 的三種多 agent 機制，可對應到 Anthropic《Building Effect
 ## 技術彙整
 
 ### 2026-07
+
+#### 只在需要頂尖判斷力任務用 Fable 5，其餘交給便宜 subagent 控制成本（2026-07-26）
+
+- **核心模式：** 作者分享實務作法：僅在需要頂尖判斷力的任務（架構決策、疑難排解）呼叫 Fable 5，其餘實作、測試、雜務等交由較便宜的 subagent 處理，藉此控制整體 token 成本
+- **與既有模式的關係：** 呼應本頁「模型使用策略」類別既有「分層模型（Sonnet + Opus）」「依任務複雜度路由」思路，屬同一分層成本策略在 Fable 5 世代的具體延伸案例，非新機制
+- **來源：** 「Use Fable 5 where it pays for itself」— dev.to / #claudecode（依 dev.to 內容判斷原則收錄：第一手成本控制實作經驗，非行銷/SEO 稿；讚數 9 不作為判斷依據）
+- **成熟度：** ⚡ 活躍（既有分層模型策略的延伸案例）
 
 #### Palmier Pro：開源 macOS 影片編輯器，內建 AI 生成與本機 MCP server（2026-07-23）
 
