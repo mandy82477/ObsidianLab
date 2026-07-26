@@ -357,9 +357,10 @@ python scripts/check_links.py
    - 失敗（exit≠0）→ 跳過 build 與 web commit，仍執行步驟 4 推送已完成的 wiki commit；log 記 `Tests FAILED - web build skipped`
    - 全過（exit 0）→ 續步驟 3
 3. **建置 web 並 commit**：`PYTHON REPO_ROOT\scripts\build_web.py` → `git -C REPO_ROOT add web_reader/` → `git -C REPO_ROOT commit -m "web: rebuild YYYY-MM-DD（週更 lint 上站）"`
-4. **單一 push**：`git -C REPO_ROOT push`（本次所有 commit 一次推送，一次 push = 一個 Pages 部署，避免並發競爭；理由同 `.claude/commands/news-pipeline-steps.md` Step 5）
+4. **心跳紀錄（無論成功／no-op／中止都必須寫）`[加入: 2026-07-27]`**：append 一行結果到 `src/logs/task_scheduler.log`（格式沿用該檔既有慣例，如 `[週六 YYYY/MM/DD hh:mm:ss.00] Weekly lint OK - 修 N 頁，M 項待確認，測試/build/push 結果`；no-op 寫 `Weekly lint OK (no-op) - 無頁面需修正`；中途失敗寫 `Weekly lint FAILED - <卡在哪一步>`）→ `git -C REPO_ROOT add src/logs/task_scheduler.log` → `git -C REPO_ROOT commit -m "chore: weekly lint heartbeat YYYY-MM-DD"`。**這一步是本步驟序列中唯一保證產生 commit 的步驟**——目的是讓「跑了但無事可改」與「靜默死亡」在 GitHub 上可分辨（2026-07-25 雲端 lint 無聲失敗、死因不可考的教訓：當時成功與死亡的 artifact 都是零）。對應每日 pipeline 的 `.claude/commands/news-pipeline-steps.md`「Step 6」（無論前面成敗都必須寫），本機與雲端行為一致。
+5. **單一 push**：`git -C REPO_ROOT push`（本次所有 commit 一次推送，一次 push = 一個 Pages 部署，避免並發競爭；理由同 `.claude/commands/news-pipeline-steps.md` Step 5）
 
-> 本步 commit 為實質改動閉迴路的一部分，**不可只留在對話裡**（同 SessionStart hook 的未 commit 提醒對象）。
+> 本步 commit 為實質改動閉迴路的一部分，**不可只留在對話裡**（同 SessionStart hook 的未 commit 提醒對象）。心跳紀錄在中止情境下照樣執行——lint 中途放棄時，先寫 FAILED 心跳並 commit push 再結束，不可靜默離開。
 
 ## 注意事項
 

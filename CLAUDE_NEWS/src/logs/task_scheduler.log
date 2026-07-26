@@ -19,3 +19,5 @@
 [週日 2026/07/26 22:44:44.00] Step 5: Web commit OK (7a593f6)
 [週日 2026/07/26 22:44:44.00] Single push done (news + wiki + web) - 首次嘗試即成功，無需重試
 [週日 2026/07/26 22:44:44.00] === Pipeline complete (agent) ===
+[週日 2026/07/26 23:59:00.00] Weekly lint OK - 六記者並行 6/6 一次過，修 2 矛盾 + 9 頁品質 + 2 頁狀態降級，overview 全文改寫，ref 覆蓋率 97%，測試綠，push 成功（心跳規則 07-27 才上線，本行為隔日補記）
+[週一 2026/07/27 00:14:25.00] Weekly lint follow-up OK - 6g 量測改雙格式 + 心跳紀錄規則上線（wiki-lint.md 步驟4 / _shared.md 無人值守），registry 25→26 組，反向測試通過

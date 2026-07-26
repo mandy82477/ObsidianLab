@@ -71,5 +71,5 @@ python3 scripts/cloud_bootstrap.py
 
 - **凡 command 檔標示「需使用者確認」的動作，一律不得自行執行**，改寫成待辦留在 `wiki/log.md` 本次紀錄的「📋 待使用者確認」清單
 - **不可為了讓流程跑完而降低品質門檻**（例如資料不新鮮就硬生日報）
-- 中止時必須留下可追查的證據：append 一行到 `src/logs/task_scheduler.log` 並 commit push，不可靜默結束
+- **每次執行都必須留下可追查的證據——無論成功／no-op／中止** `[改版: 2026-07-27]`：append 一行結果到 `src/logs/task_scheduler.log` 並隨收尾一起 commit push（每日走 `news-pipeline-steps.md`「Step 6」、每週走 `wiki-lint.md`「10. 收尾閉迴路」的心跳紀錄步驟，本檔不重複步驟細節）。中止時同樣先寫 FAILED/ABORTED 心跳再結束，不可靜默。**為什麼 no-op 也要寫：** 2026-07-25 weekly lint 無聲失敗、死因不可考——若只規定中止留證據，「順利跑完但無事可改」與「靜默死亡」在 GitHub 上都是零 artifact，無從分辨，驗證等於白等
 - 全程繁體中文輸出

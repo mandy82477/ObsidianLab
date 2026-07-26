@@ -302,6 +302,12 @@
       "assertion": "all_contain",
       "files": [".claude/commands/wiki-lint.md"],
       "patterns": ["兩種歸因格式，必須同時計", "必須先限縮到「今日聚焦」區塊再數", "news-pipeline-steps\\.md"]
+    },
+    {
+      "name": "weekly lint 心跳紀錄：wiki-lint.md 收尾與 _shared.md 無人值守原則都必須要求成功/no-op/中止一律寫 task_scheduler.log（07-25 無聲失敗死因不可考的防再犯——只規定中止留證據時，no-op 與死亡無法分辨）",
+      "assertion": "all_contain",
+      "files": [".claude/commands/wiki-lint.md", "docs/cloud-runbooks/_shared.md"],
+      "patterns": ["task_scheduler\\.log", "無論成功／no-op／中止"]
     }
   ],
 
