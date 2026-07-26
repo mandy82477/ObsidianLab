@@ -251,7 +251,7 @@ window.WIKI_DATA = {
       "pill": "active",
       "firstSeen": "2026-06-09",
       "startDate": "",
-      "lastUpdated": "2026-07-24",
+      "lastUpdated": "2026-07-26",
       "lastNewsUpdate": "2026-07-24",
       "updateFreq": "",
       "summary": "**2026-07-24 最新**：GitHub Issue #79337 追蹤的 Max 方案誤判事件持續累積關注，reaction 數由 07-20 的 10 個增至 13 個（留言數維持 35 則、未見更新資料），受影響帳號的已儲存模型設定顯示為 `claude-fable-5[1m]`；官方誤判定性與建議重啟的…",
