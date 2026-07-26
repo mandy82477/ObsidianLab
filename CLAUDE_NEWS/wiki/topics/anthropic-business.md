@@ -1,4 +1,4 @@
-﻿# Anthropic 商業健康度
+# Anthropic 商業健康度
 
 **狀態：** ongoing
 **領域：** 💼 商業

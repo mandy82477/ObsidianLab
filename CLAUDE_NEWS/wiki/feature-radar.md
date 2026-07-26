@@ -1,4 +1,4 @@
-﻿# 官方功能熱度雷達
+# 官方功能熱度雷達
 
 追蹤 Anthropic 官方發布的 Claude / Claude Code 功能熱度、試用價值與快速上手方式。
 僅收錄官方 changelog、release note 或官方公告來源；社群工具見 [[topics/community-tech-tools]]。

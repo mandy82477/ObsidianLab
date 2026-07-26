@@ -193,3 +193,22 @@ class TestCheckWikilinks(unittest.TestCase):
 
 if __name__ == "__main__":
     unittest.main()
+
+
+class TestBomTolerance(unittest.TestCase):
+    """帶 UTF-8 BOM 的 wiki 檔不可讓頁名解析走樣。
+
+    2026-07-26 實際踩到：4 份 wiki 檔帶 BOM（含 feature-radar.md 與 index.md），
+    BOM 擋在 `#` 前面使 `lstrip('# ')` 失效，頁名被解析成 `\ufeff# Anthropic 商業健康度`，
+    並直接顯示在日報新增的「今日 wiki 動態」清單裡。已把解析端改為 utf-8-sig，
+    BOM 從此無害；本測試防止改回 utf-8 而重現。
+    """
+
+    def test_page_name_parsed_correctly_with_bom(self):
+        with tempfile.TemporaryDirectory() as d:
+            f = Path(d) / "bom-page.md"
+            f.write_bytes("\ufeff# 商業健康度\n\n**類型：** topic\n**狀態：** ongoing\n".encode("utf-8"))
+            page = build_web.parse_wiki(f, "topic")
+            self.assertEqual(page["name"], "商業健康度")
+            self.assertFalse(page["name"].startswith("\ufeff"))
+            self.assertFalse(page["name"].startswith("#"))

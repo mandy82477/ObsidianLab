@@ -180,7 +180,7 @@ def check_wikilinks(all_md_files: list[Path]) -> None:
 
     for f in all_md_files:
         try:
-            raw = f.read_text(encoding="utf-8")
+            raw = f.read_text(encoding="utf-8-sig")
         except Exception:
             continue
         headings = set(re.findall(r'^##\s+(.+?)\s*$', raw, flags=re.MULTILINE))
@@ -197,7 +197,7 @@ def parse_enterprise_tracker(f: Path) -> dict | None:
     """Parse enterprise-tool-tracker.md table → structured matrix JSON."""
     if not f.exists():
         return None
-    raw = f.read_text(encoding="utf-8")
+    raw = f.read_text(encoding="utf-8-sig")
 
     STATUS_MAP = {"✅": "active", "⚠️": "warning", "🔄": "switching", "❌": "exited", "❓": "unknown"}
 
@@ -261,7 +261,7 @@ def parse_enterprise_tracker(f: Path) -> dict | None:
 
 
 def parse_radar(f: Path) -> dict:
-    raw = f.read_text(encoding="utf-8")
+    raw = f.read_text(encoding="utf-8-sig")
     lines = raw.splitlines()
     name = lines[0].lstrip("# ").strip() if lines else f.stem
 
@@ -317,7 +317,7 @@ def parse_weekly(f: Path) -> dict:
     """週報頁解析（weekly/YYYY-Wnn.md）——結構是自由行文的四段式 markdown，
     照 parse_digest 的輕量模式：只萃取 id / 標題 / 預覽文字，正文交給前端用
     marked 渲染（與 wiki 詳頁相同模式），不逐段結構化解析。"""
-    raw = f.read_text(encoding="utf-8")
+    raw = f.read_text(encoding="utf-8-sig")
     lines = raw.splitlines()
     week_id = f.stem  # e.g. "2026-W30"
     name = lines[0].lstrip("# ").strip() if lines else week_id
@@ -362,7 +362,7 @@ def collect_weekly(weekly_dir: Path) -> tuple[dict, list]:
 
 
 def parse_wiki(f: Path, page_type: str) -> dict:
-    raw = f.read_text(encoding="utf-8")
+    raw = f.read_text(encoding="utf-8-sig")
     lines = raw.splitlines()
 
     name = lines[0].lstrip("# ").strip() if lines else f.stem
@@ -458,7 +458,7 @@ SOURCE_TABLE_RE = re.compile(r"^\|\s*(.+?)\s*\|\s*(✅|❌)\s*\|\s*(\d+)\s*\|")
 
 
 def parse_digest(f: Path) -> dict:
-    raw = f.read_text(encoding="utf-8")
+    raw = f.read_text(encoding="utf-8-sig")
     lines = raw.splitlines()
     date_str = f.stem  # YYYY-MM-DD
 

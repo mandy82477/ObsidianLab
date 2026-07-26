@@ -350,8 +350,12 @@
 <div class="section__h"><span class="section__h-label">${spaced}</span><span class="section__h-en">${en}</span><span class="section__h-count">${d[key].length} items</span></div>`);
       if (key === 'techUpdates') {
         const items = d[key];
-        const actionable = items.filter(isActionableTechUpdate);
-        const rest = items.filter(s => !isActionableTechUpdate(s));
+        let actionable = items.filter(isActionableTechUpdate);
+        let rest = items.filter(s => !isActionableTechUpdate(s));
+        // 退化案例：整區沒有任何 actionable 條目時全部展開，不摺疊。
+        // 否則讀者看到的是「官方公告 5 ITEMS」底下只有一顆按鈕的空區塊，
+        // 而「今天官方有沒有動靜」正是本站目標讀者的核心問題，不該預設藏起來。
+        if (!actionable.length) { actionable = rest; rest = []; }
         actionable.forEach(s => parts.push(storyHtml(s, star, focusUrlMap[s.url] || '')));
         if (rest.length) {
           parts.push(`<div class="section__toggle-wrap">

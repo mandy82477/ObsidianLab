@@ -1,4 +1,4 @@
-﻿# 企業規模 Claude 成本管理
+# 企業規模 Claude 成本管理
 
 **狀態：** monitoring
 **領域：** 💼 商業
