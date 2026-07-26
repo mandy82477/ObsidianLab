@@ -3178,3 +3178,16 @@ Append-only 紀錄。每次 ingest、lint，以及**揭露缺陷或促成改動�
   3. **反向測試**：刻意破壞 6g 措辭後 `check_rules.py` 確實回報 ❌ exit 1，還原後回 ✅——確認新配對不是永遠會過的空檢查。
 - **驗證**：`python scripts/check_rules.py` 零 ❌（25 組配對全過）、`python scripts/run_tests.py` exit 0、`/review-commands` 完成報告零錯誤。
 - **未一併處理（留待使用者裁決）**：雲端 weekly lint 的 08-01 首跑驗證仍有缺口——`docs/cloud-runbooks/_shared.md` 只規定「中止時」必須 commit abort log，未規定成功／no-op 也要留紀錄，而收尾又允許「無變更則跳過 commit」。因此一次順利但無事可改的 lint 產出為零 artifact，與靜默死亡在 GitHub 上無法分辨。建議補「無論成功／no-op／中止都 append 一行結果到 `src/logs/task_scheduler.log` 並 push」。
+
+## 2026-07-27 Query：雲端 lint 自主 review — 08-01 首跑前攔下兩個結構性問題
+
+- **點出什麼**：使用者要求對雲端排程自主 review 潛在問題直到解決。以 RemoteTrigger list 核對雲端實況（兩 trigger enabled、薄殼 prompt 與鏡像一致、writeback probe 已停用、weekly next_run = 08-01 01:02 UTC）後，發現兩個 08-01 會實際發生的問題。
+- **問題 1（必然事故）**：08-01 恰為 8 月首次 lint → 月度項觸發，「外部死鏈」`check_links.py` 對 wiki 全部外部連結發 HEAD 請求——但雲端 egress 封鎖一切外網，**全部連結會被誤判為死鏈（403/timeout），且後續「記者標註（原文已失效）」動作會用假結果污染大量頁面**。runbook 健檢分項原將「品質指標」歸為「純機械→自主執行」，無 egress 防護。
+- **問題 2（觀測盲區）**：07-27 稍早加的心跳只在收尾寫——07-25 無聲失敗最可能死在中途（session 被殺不留任何東西），這種死法收尾心跳照樣是零 artifact，與「根本沒跑」無法分辨。
+- **處置**：
+  1. `docs/cloud-runbooks/weekly-lint.md` 健檢分項新增「外部死鏈檢查（月度）在雲端一律跳過」：不執行、不標註任何頁面，改寫待辦留本機月度執行；月度蒸餾歸「要求確認」寫待辦、採用驗證率（本地統計）雲端可自主跑——月度三項的雲端處理首次明確化。
+  2. `docs/cloud-runbooks/_shared.md` 無人值守原則新增「STARTED 開跑標記」：環境補丁後、任何步驟前，append `[cloud <routine> STARTED <UTC>]` 到 `src/logs/task_scheduler.log` 並立即 commit push。判定從三態變四態：`STARTED+OK`＝成功／`STARTED+FAILED`＝可追查／**`STARTED 無後續`＝中途死（07-25 的死法，首次可診斷）**／`完全無 STARTED`＝trigger 未觸發或環境起不來。與單一 push 原則不衝突（開跑與收尾 push 相隔整個 routine 時長，無並發競爭）。daily routine 同樣受惠（規則在 _shared 層）。
+  3. `docs/workaround-register.md` 08-01 複查標準更新為四態判定，並加「確認沒有大量假死鏈標註出現」為防護生效證據。
+  4. `.claude/review-registry.json` +2 sync_pair（→28 組），兩組均通過反向測試（破壞措辭→❌ exit 1→還原→✅）。
+- **驗證**：`check_rules.py` 零 ❌、`run_tests.py` exit 0。
+- **記錄但不動**：(a) 兩 trigger 掛著 Spotify/Notion MCP connections，headless 執行不需要但無失敗證據，暫不動 trigger；(b) 六記者並行派工仍是 07-25 死因首要假說，但依「本機雲端行為一致」規約不改派工方式，改靠 STARTED 標記讓下次卡死可診斷。

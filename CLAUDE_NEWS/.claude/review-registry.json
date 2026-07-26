@@ -308,6 +308,18 @@
       "assertion": "all_contain",
       "files": [".claude/commands/wiki-lint.md", "docs/cloud-runbooks/_shared.md"],
       "patterns": ["task_scheduler\\.log", "無論成功／no-op／中止"]
+    },
+    {
+      "name": "雲端 STARTED 開跑標記：_shared.md 無人值守原則必須保留開跑即 push 的規定與四態判定（收尾心跳涵蓋不了中途死——07-25 的死法）",
+      "assertion": "all_contain",
+      "files": ["docs/cloud-runbooks/_shared.md"],
+      "patterns": ["STARTED 開跑標記", "STARTED 無後續", "完全無 STARTED"]
+    },
+    {
+      "name": "雲端外部死鏈防護：weekly-lint.md 必須保留「雲端一律跳過死鏈檢查」規定（egress 封鎖會產生假死鏈並污染頁面標註；08-01 為月度首跑首當其衝）",
+      "assertion": "all_contain",
+      "files": ["docs/cloud-runbooks/weekly-lint.md"],
+      "patterns": ["外部死鏈檢查（月度）在雲端一律跳過", "egress", "check_links\\.py"]
     }
   ],
 
