@@ -183,16 +183,20 @@
     };
   }
 
-  const SENTIMENT_MAP = {
-    '正面': ['positive', '😊 正面'],
-    '負面': ['negative', '😤 負面'],
-    '中性': ['neutral',  '😐 中性'],
-    '褒貶不一': ['mixed', '🤔 褒貶不一'],
-  };
+  // 情緒徽章：單色 mono 符號取代平台 emoji（沿用既有 hairline chip 慣例）。
+  // 同時比對 emoji 與中文詞──日報原始資料兩種格式皆可能出現（見 build_web.py 註解）。
+  const SENTIMENT_MAP = [
+    { match: /😊|正面/,     cls: 'positive', symbol: '+', text: '正面' },
+    { match: /😤|負面/,     cls: 'negative', symbol: '−', text: '負面' },
+    { match: /😐|中性/,     cls: 'neutral',  symbol: '~', text: '中性' },
+    { match: /🤔|褒貶不一/, cls: 'mixed',    symbol: '?', text: '褒貶不一' },
+  ];
   function sentimentHtml(raw) {
     if (!raw) return '';
-    for (const [k, [cls, label]] of Object.entries(SENTIMENT_MAP)) {
-      if (raw.includes(k)) return `<span class="sentiment sentiment--${cls}">${label}</span>`;
+    for (const { match, cls, symbol, text } of SENTIMENT_MAP) {
+      if (match.test(raw)) {
+        return `<span class="sentiment sentiment--${cls}" title="社群情緒：${text}">${symbol} ${text}</span>`;
+      }
     }
     return `<span class="sentiment sentiment--neutral">${esc(raw)}</span>`;
   }
@@ -292,6 +296,15 @@
     const _idx = (window.WIKI_DATA || {}).digestIndex || [];
     const _latestDate = _idx.length ? _idx.slice().sort((a,b) => b.date.localeCompare(a.date))[0].date : null;
     const isLatest = _latestDate === d.date;
+    const metaTopItems = [
+      `<span><b>${d.articleCount}</b> articles</span>`,
+      isLatest ? '<span class="pulse-dot">fresh</span>' : '',
+    ].filter(Boolean);
+    const metaBottomItems = [
+      esc(d.date),
+      d.sourceCount ? `${esc(d.sourceCount)} sources` : '',
+      d.generatedAt ? `generated ${esc(d.generatedAt)}` : '',
+    ].filter(Boolean);
     parts.push(`<div class="feed__header">
   <div class="day-badge">
     <div class="day-badge__y">${esc(dp.y)}</div>
@@ -301,12 +314,10 @@
   <div class="feed__meta">
     <h1>每日新聞摘要 · Claude Code &amp; Anthropic</h1>
     <div class="feed__metarow">
-      <span><b>${d.articleCount}</b> articles</span>
-      <span class="sep">·</span>
-      ${isLatest ? '<span class="pulse-dot">fresh</span>' : ''}
+      ${metaTopItems.join('<span class="sep">·</span>')}
     </div>
     <div class="feed__metarow" style="margin-top:4px;font-size:11px">
-      <span>${esc(d.date)} · ${esc(d.sourceCount || '')} sources · generated ${esc(d.generatedAt)}</span>
+      <span>${metaBottomItems.join(' · ')}</span>
     </div>
   </div>
 </div>`);
@@ -441,7 +452,7 @@
       const rowCls = kbType === 'topic' ? 'entity-row entity-row--topic' : 'entity-row';
       return `
 <div class="${rowCls}" onclick="openWikiPage('${esc(item.id)}','${item._kbBaseType}')">
-  <div class="entity-row__name"><span class="bracket">[[</span>${esc(item.id)}<span class="bracket">]]</span></div>
+  <div class="entity-row__name"><span class="entity-row__slug">${esc(item.id)}</span></div>
   <div><span class="kb-type-pill kb-type-pill--${kbType}">${esc(typeLabel)}</span>${item.updateFreq ? ' <span class="kb-type-pill kb-type-pill--weekly">🗓️ 週更</span>' : ''}</div>
   <div><span class="pill pill--${item.pill}">${esc(statusLabelShort(item.status))}</span></div>
   <div class="entity-row__summary">${esc(item.latestHeadline || '')}</div>
