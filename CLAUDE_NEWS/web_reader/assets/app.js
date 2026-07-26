@@ -5,12 +5,13 @@
 
   const $ = s => document.querySelector(s);
   const $$ = s => document.querySelectorAll(s);
-  let rendered = { today: false, wiki: false, archive: false, about: false };
+  let rendered = { today: false, wiki: false, archive: false, about: false, weekly: false };
   let detailReturnView = 'wiki';
 
   // ── On-demand fetch caches ───────────────────────────────────────────────────
   const _wikiCache   = {};   // id   → full wiki object
   const _digestCache = {};   // date → full digest object
+  const _weeklyCache = {};   // week id → full weekly object
 
   async function fetchWiki(id) {
     if (_wikiCache[id]) return _wikiCache[id];
@@ -27,6 +28,15 @@
     if (!res.ok) throw new Error(`digest/${date}: HTTP ${res.status}`);
     const data = await res.json();
     _digestCache[date] = data;
+    return data;
+  }
+
+  async function fetchWeekly(id) {
+    if (_weeklyCache[id]) return _weeklyCache[id];
+    const res = await fetch(`data/weekly/${encodeURIComponent(id)}.json`);
+    if (!res.ok) throw new Error(`weekly/${id}: HTTP ${res.status}`);
+    const data = await res.json();
+    _weeklyCache[id] = data;
     return data;
   }
 
@@ -149,6 +159,7 @@
     if (id === 'wiki'    && !rendered.wiki)     { renderWiki();         rendered.wiki    = true; }
     if (id === 'archive' && !rendered.archive)  { renderArchive();      rendered.archive = true; }
     if (id === 'about'   && !rendered.about)    { renderTransparency(); rendered.about   = true; }
+    if (id === 'weekly'  && !rendered.weekly)   { renderWeekly();       rendered.weekly  = true; }
   };
 
   // ── Helpers ─────────────────────────────────────────────────────────────────
@@ -188,6 +199,27 @@
 
   const FOCUS_TAG_MAP = { '重大事件':'major','持續追蹤':'track','新工具':'tool','社群趨勢':'trend','風險警示':'risk' };
   function focusTagCls(tag) { return FOCUS_TAG_MAP[tag.replace(/^\[|\]$/g, '')] || 'track'; }
+
+  // ── 技術更新區摺疊 ────────────────────────────────────────────────────────────
+  // 只有 breaking change／安全修補屬於「actionable」，預設展開；其餘收合，
+  // 使用者點「顯示其餘 N 則」才展開。純渲染層判斷，不影響 build_web.py 資料結構。
+  const TECH_ACTIONABLE_RE = /breaking change|breaking|安全性?修補|漏洞|CVE-|棄用|弃用|deprecat|vulnerab|hotfix|緊急修復|重大缺陷/i;
+  function isActionableTechUpdate(s) {
+    return TECH_ACTIONABLE_RE.test(`${s.title || ''} ${s.body || ''}`);
+  }
+
+  window.toggleSection = function (id, btn) {
+    const el = document.getElementById(id);
+    if (!el) return;
+    const isHidden = el.hasAttribute('hidden');
+    if (isHidden) {
+      el.removeAttribute('hidden');
+      btn.textContent = '收合';
+    } else {
+      el.setAttribute('hidden', '');
+      btn.textContent = `顯示其餘 ${btn.dataset.count} 則`;
+    }
+  };
 
   function shortStatus(s) {
     return (s || '').replace(/[（(][^）)]*[）)]/g, '').trim();
@@ -235,8 +267,12 @@
     const focusBadge = effectiveTag
       ? `<span class="focus-tag focus-tag--${focusTagCls(effectiveTag)} story__focus-badge">${esc(effectiveTag)}</span>`
       : '';
+    // 「已沉澱」徽章 — build_web.py 依 lastNewsUpdate 比對出的今日已沉澱 wiki 頁
+    const sedimentBadges = (s.sedimented || []).map(w =>
+      `<button type="button" class="sediment-chip" title="今日已沉澱至 wiki：${esc(w.id)}" onclick="event.stopPropagation();openWikiPage('${esc(w.id)}','${esc(w.pageType)}')">已沉澱</button>`
+    ).join('');
     return `<div class="${cls}">
-  <div class="story__title"><a href="${esc(s.url)}" target="_blank" rel="noopener">${esc(s.title)}</a>${focusBadge}</div>
+  <div class="story__title"><a href="${esc(s.url)}" target="_blank" rel="noopener">${esc(s.title)}</a>${focusBadge}${sedimentBadges}</div>
   ${s.body ? `<div class="story__body">${esc(s.body)}</div>` : ''}
   <div class="sourceline">
     ${s.source ? `<code>${esc(s.source)}</code>` : ''}
@@ -312,7 +348,22 @@
       const spaced = label.split('').join(' ');
       parts.push(`<div class="section">
 <div class="section__h"><span class="section__h-label">${spaced}</span><span class="section__h-en">${en}</span><span class="section__h-count">${d[key].length} items</span></div>`);
-      d[key].forEach(s => parts.push(storyHtml(s, star, focusUrlMap[s.url] || '')));
+      if (key === 'techUpdates') {
+        const items = d[key];
+        const actionable = items.filter(isActionableTechUpdate);
+        const rest = items.filter(s => !isActionableTechUpdate(s));
+        actionable.forEach(s => parts.push(storyHtml(s, star, focusUrlMap[s.url] || '')));
+        if (rest.length) {
+          parts.push(`<div class="section__toggle-wrap">
+  <button class="section__toggle-btn" type="button" data-count="${rest.length}" onclick="toggleSection('tech-updates-collapsed', this)">顯示其餘 ${rest.length} 則</button>
+</div>
+<div class="section__collapsed" id="tech-updates-collapsed" hidden>`);
+          rest.forEach(s => parts.push(storyHtml(s, star, focusUrlMap[s.url] || '')));
+          parts.push('</div>');
+        }
+      } else {
+        d[key].forEach(s => parts.push(storyHtml(s, star, focusUrlMap[s.url] || '')));
+      }
       parts.push('</div>');
     });
 
@@ -326,6 +377,17 @@
         parts.push(`<span class="source-ribbon__item"><span class="src-name">${esc(s.name.toLowerCase())}</span><span class="src-n${zero}">${s.count}</span></span>`);
       });
       parts.push('</aside>');
+    }
+
+    // 今日 wiki 動態 — 頁尾小節，列出今天有新內容沉澱的 wiki 頁（lastNewsUpdate === 日報日期）
+    if (d.sedimentedToday?.length) {
+      parts.push(`<div class="section section--wiki-today">
+<div class="section__h"><span class="section__h-label">今 日 W I K I 動 態</span><span class="section__h-en">wiki updates today</span><span class="section__h-count">${d.sedimentedToday.length} pages</span></div>
+<div class="wiki-today-list">`);
+      d.sedimentedToday.forEach(p => {
+        parts.push(`<button type="button" class="wiki-today-chip" onclick="openWikiPage('${esc(p.id)}','${esc(p.pageType)}')">${esc(p.name)}</button>`);
+      });
+      parts.push('</div></div>');
     }
 
     container.innerHTML = parts.join('\n');
@@ -631,6 +693,100 @@
 </div>`;
   }
 
+  // ── Markdown → HTML (+ wikilink resolution) — shared by wiki 詳頁與週報 ───────
+  function renderMarkdownBody(raw, opts = {}) {
+    let md = raw || '';
+    md = md.replace(/^#[^#][^\n]*\n/, '');
+    if (opts.stripMeta !== false) {
+      md = md.replace(/^(\s*\*\*[^*]+[：:]\*\*[^\n]*\n|\s*\n)*/m, '');
+    }
+    if (typeof marked === 'undefined') {
+      return `<pre style="white-space:pre-wrap;font-size:13px">${esc(md)}</pre>`;
+    }
+    md = md.replace(/\[\[([^\]]+)\]\]/g, (_, p) => `<WIKILINK>${p}</WIKILINK>`);
+    let bodyHtml = marked.parse(md);
+    bodyHtml = bodyHtml.replace(/<WIKILINK>([^<]+)<\/WIKILINK>/g, (_, p) => {
+      // news/ links have no detail page — render as plain span
+      if (p.startsWith('news/')) return `<span class="detail__wikilink">${esc(p)}</span>`;
+      // resolve id + type from path prefix
+      let wiId, wiType;
+      if (p.startsWith('entities/')) { wiId = p.slice(9); wiType = 'entity'; }
+      else if (p.startsWith('topics/')) { wiId = p.slice(7); wiType = 'topic'; }
+      else if (p === 'feature-radar')  { wiId = 'feature-radar'; wiType = 'radar'; }
+      else {
+        const wdata = window.WIKI_DATA || {};
+        wiId = p;
+        wiType = (wdata.topics || []).some(t => t.id === p) ? 'topic' : 'entity';
+      }
+      const safeId = wiId.replace(/\\/g, '\\\\').replace(/'/g, "\\'");
+      return `<button class="detail__wikilink detail__wikilink--link" onclick="openWikiPage('${safeId}','${wiType}')">${esc(p)}</button>`;
+    });
+    return bodyHtml;
+  }
+
+  // ── Weekly reports ───────────────────────────────────────────────────────────
+  async function renderWeekly() {
+    const container = $('#weekly-content');
+    if (!container) return;
+    const index = (window.WIKI_DATA || {}).weeklyIndex || [];
+    const subEl = $('#weekly-sub');
+    if (!index.length) {
+      if (subEl) subEl.textContent = '';
+      container.innerHTML = `<div class="weekly-empty">尚無週報 — 週報機制已建置，第一份將於本週產出後顯示於此。</div>`;
+      return;
+    }
+    if (subEl) subEl.textContent = `共 ${index.length} 份週報 · 最新一份預設展開`;
+    const [latest, ...older] = index;
+    container.innerHTML = `
+<div class="weekly-latest" id="weekly-latest-slot"></div>
+${older.length ? `<div class="weekly-list-h">歷週</div><div class="weekly-list">${older.map(w => `
+  <a href="#${esc(w.id)}" class="weekly-row" onclick="event.preventDefault();openWeeklyPage('${esc(w.id)}')">
+    <div class="weekly-row__id">${esc(w.id)}</div>
+    <div class="weekly-row__preview">${esc(w.preview || '')}</div>
+  </a>`).join('')}</div>` : ''}`;
+
+    const slot = $('#weekly-latest-slot');
+    if (!slot) return;
+    slot.innerHTML = `<div style="padding:40px;text-align:center;color:var(--ink-3);font-family:var(--font-mono);font-size:12px">載入中…</div>`;
+    try {
+      const w = await fetchWeekly(latest.id);
+      slot.innerHTML = `<div class="weekly-card weekly-card--latest">
+  <div class="weekly-card__id">${esc(w.id)}</div>
+  <h2 class="weekly-card__title">${esc(w.name)}</h2>
+  <div class="detail__body">${renderMarkdownBody(w.markdown)}</div>
+</div>`;
+      makeTablesSortable(slot);
+    } catch (e) {
+      slot.innerHTML = `<div style="padding:40px;text-align:center;color:var(--ink-3);font-family:var(--font-mono);font-size:12px">載入失敗：${esc(latest.id)}.json</div>`;
+      console.error(e);
+    }
+  }
+
+  window.openWeeklyPage = async function (id) {
+    detailReturnView = 'weekly';
+    const backLabel = $('#detail-back-label');
+    if (backLabel) backLabel.textContent = '週報';
+    const crumb = $('#detail-breadcrumb');
+    if (crumb) { crumb.textContent = id; crumb.style.cssText = 'font-family:var(--font-mono);font-size:12px;color:var(--tan-7)'; }
+
+    switchView('detail', null);
+    setDetailLoading('載入中…');
+
+    let w;
+    try {
+      w = await fetchWeekly(id);
+    } catch (e) {
+      setDetailLoading(`載入失敗：${esc(id)}.json`);
+      console.error(e);
+      return;
+    }
+
+    $('#detail-content').innerHTML = `
+<h1 class="detail__h1">${esc(w.name)}</h1>
+<div class="detail__body">${renderMarkdownBody(w.markdown)}</div>`;
+    makeTablesSortable($('#detail-content'));
+  };
+
   // ── Open wiki entity/topic as full page ──────────────────────────────────────
   window.openWikiPage = async function (id, type) {
     detailReturnView = 'wiki';
@@ -657,34 +813,8 @@
       }
     }
 
-    // strip H1 + front-matter metadata
-    let md = (item.markdown || '');
-    md = md.replace(/^#[^#][^\n]*\n/, '');
-    md = md.replace(/^(\s*\*\*[^*]+[：:]\*\*[^\n]*\n|\s*\n)*/m, '');
-
-    let bodyHtml;
-    if (typeof marked !== 'undefined') {
-      md = md.replace(/\[\[([^\]]+)\]\]/g, (_, p) => `<WIKILINK>${p}</WIKILINK>`);
-      bodyHtml = marked.parse(md);
-      bodyHtml = bodyHtml.replace(/<WIKILINK>([^<]+)<\/WIKILINK>/g, (_, p) => {
-        // news/ links have no detail page — render as plain span
-        if (p.startsWith('news/')) return `<span class="detail__wikilink">${esc(p)}</span>`;
-        // resolve id + type from path prefix
-        let wiId, wiType;
-        if (p.startsWith('entities/')) { wiId = p.slice(9); wiType = 'entity'; }
-        else if (p.startsWith('topics/')) { wiId = p.slice(7); wiType = 'topic'; }
-        else if (p === 'feature-radar')  { wiId = 'feature-radar'; wiType = 'radar'; }
-        else {
-          const wdata = window.WIKI_DATA || {};
-          wiId = p;
-          wiType = (wdata.topics || []).some(t => t.id === p) ? 'topic' : 'entity';
-        }
-        const safeId = wiId.replace(/\\/g, '\\\\').replace(/'/g, "\\'");
-        return `<button class="detail__wikilink detail__wikilink--link" onclick="openWikiPage('${safeId}','${wiType}')">${esc(p)}</button>`;
-      });
-    } else {
-      bodyHtml = `<pre style="white-space:pre-wrap;font-size:13px">${esc(md)}</pre>`;
-    }
+    // strip H1 + front-matter metadata, render markdown + wikilinks
+    const bodyHtml = renderMarkdownBody(item.markdown || '');
 
     const metaRows = [];
     if (item.entityType) metaRows.push({ label: '類型',     val: item.entityType });
@@ -718,6 +848,7 @@ ${metaRows.length ? `<div class="detail__meta">${metaHtml}</div>` : ''}
 ${trackerHtml}
 <div class="detail__body">${bodyHtml}</div>`;
     makeTablesSortable($('#detail-content'));
+    enhanceCallout($('#detail-content'));
     if (id === 'community-tech-tools') injectToolsInsights($('#detail-content'));
   };
 
@@ -953,8 +1084,9 @@ ${trackerHtml}
       const pageType  = item.type || item.pageType || 'entity';
       const isRadar   = pageType === 'radar';
       const isDigest  = pageType === 'digest';
-      const typeCls   = (pageType === 'topic' || isDigest) ? 'topic' : 'entity';
-      const typeLabel = isDigest ? '日報' : (isRadar ? '雷達' : (pageType === 'topic' ? '議題' : '實體'));
+      const isWeekly  = pageType === 'weekly';
+      const typeCls   = (pageType === 'topic' || isDigest || isWeekly) ? 'topic' : 'entity';
+      const typeLabel = isDigest ? '日報' : (isWeekly ? '週報' : (isRadar ? '雷達' : (pageType === 'topic' ? '議題' : '實體')));
 
       // For name/summary hits show summary; for content hits show match context
       let snippetHtml = '';
@@ -999,6 +1131,7 @@ ${trackerHtml}
   window.pickSearch = function (id, pageType) {
     closeSearch();
     if (pageType === 'digest') { openDigestPage(id); return; }
+    if (pageType === 'weekly') { openWeeklyPage(id); return; }
     openWikiPage(id, pageType);
   };
 
@@ -1127,6 +1260,86 @@ ${trackerHtml}
     if (ths.length > 2) {
       ths[2].classList.add('sort-asc'); // prime for descending on first call
       sortTable(table, 2, ths[2], ths);
+    }
+  }
+
+  // ── Callout 顯示修正 ─────────────────────────────────────────────────────────
+  // 頁首 delta-first callout（"> **標題**（YYYY-MM-DD）\n> 說明…"）經 marked 轉出
+  // 後是單一 <p>，描述文字過長時讀起來是一堵文字牆。這裡把標題行之後的描述
+  // 依「；」拆成條列；沒有「；」可拆但仍過長時，改成可摺疊（預設收合前 3 行）。
+  const CALLOUT_DESC_THRESHOLD = 120;
+
+  function enhanceCallout(container) {
+    const bq = container.querySelector('.detail__body > blockquote:first-of-type');
+    if (!bq) return;
+    const p = bq.querySelector('p');
+    if (!p) return;
+    const br = p.querySelector('br');
+    if (!br) return;
+
+    // 收集 <br> 之後的節點（=標題／日期之後的描述文字）——可能混雜文字節點與
+    // 內嵌元素（如 wikilink 按鈕），拆條列／摺疊時必須保留這些元素節點本身，
+    // 不能只取 textContent 重建（那樣會把 wikilink 按鈕壓扁成純文字）。
+    const descNodes = [];
+    for (let node = br.nextSibling; node; node = node.nextSibling) descNodes.push(node);
+    if (!descNodes.length) return;
+    const totalLen = descNodes.map(n => n.textContent || '').join('').trim().length;
+    if (totalLen <= CALLOUT_DESC_THRESHOLD) return;
+
+    // 攤平成 token 序列：文字節點依「；」切開（保留分隔符本身），元素節點整個複製保留
+    const tokens = [];
+    descNodes.forEach(node => {
+      if (node.nodeType === Node.TEXT_NODE) {
+        const segs = (node.textContent || '').split('；');
+        segs.forEach((seg, i) => {
+          if (seg) tokens.push({ text: seg });
+          if (i < segs.length - 1) tokens.push({ text: '；', isBreak: true });
+        });
+      } else {
+        tokens.push({ node: node.cloneNode(true) });
+      }
+    });
+
+    // 依「；」分組——每個 isBreak token 之後另起一組
+    const groups = [[]];
+    tokens.forEach(tok => {
+      groups[groups.length - 1].push(tok);
+      if (tok.isBreak) groups.push([]);
+    });
+    while (groups.length && groups[groups.length - 1].length === 0) groups.pop();
+
+    descNodes.forEach(n => n.remove());
+    br.remove();
+
+    const appendTokens = (host, group) => {
+      group.forEach(tok => host.appendChild(tok.node ? tok.node : document.createTextNode(tok.text)));
+    };
+
+    if (groups.length > 1) {
+      const ul = document.createElement('ul');
+      ul.className = 'callout-list';
+      groups.forEach(group => {
+        const li = document.createElement('li');
+        appendTokens(li, group);
+        ul.appendChild(li);
+      });
+      bq.appendChild(ul);
+    } else {
+      const span = document.createElement('span');
+      span.className = 'callout__desc';
+      appendTokens(span, groups[0] || []);
+      p.appendChild(document.createElement('br'));
+      p.appendChild(span);
+      bq.classList.add('is-foldable');
+      const toggle = document.createElement('button');
+      toggle.type = 'button';
+      toggle.className = 'callout__toggle';
+      toggle.textContent = '展開全文 ▾';
+      toggle.onclick = () => {
+        const expanded = bq.classList.toggle('is-expanded');
+        toggle.textContent = expanded ? '收合 ▴' : '展開全文 ▾';
+      };
+      bq.appendChild(toggle);
     }
   }
 

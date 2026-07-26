@@ -20,9 +20,11 @@ WIKI_ENTITIES = ROOT / "wiki" / "entities"
 WIKI_TOPICS   = ROOT / "wiki" / "topics"
 WIKI_RADAR    = ROOT / "wiki" / "feature-radar.md"
 NEWS_DIR      = ROOT / "news"
+WEEKLY_DIR    = ROOT / "weekly"
 OUT_JS           = ROOT / "web_reader" / "data" / "data.js"
 OUT_WIKI_DIR     = ROOT / "web_reader" / "data" / "wiki"
 OUT_DIGEST_DIR   = ROOT / "web_reader" / "data" / "digest"
+OUT_WEEKLY_DIR   = ROOT / "web_reader" / "data" / "weekly"
 OUT_SEARCH_INDEX = ROOT / "web_reader" / "data" / "search-index.json"
 
 # ── Markdown → plain text (for search index) ────────────────────────────────
@@ -283,6 +285,80 @@ def parse_radar(f: Path) -> dict:
         "markdown": strip_llm_sections(raw),
         "summary": "追蹤 Claude / Claude Code 每個新發布功能的社群熱度、試用價值與快速上手方式。",
     }
+
+
+def attach_sedimented_badges(digest_all: dict, entities: list, topics: list) -> None:
+    """為每篇日報標記「已沉澱」——沿用 wiki 頁既有的 lastNewsUpdate 欄位（不新增
+    資料管線）：若某 wiki 頁 lastNewsUpdate 等於日報日期，且該頁「name」出現在
+    某條目的標題/內文中，該條目附上 sedimented 徽章；同時彙整當日全部已沉澱頁
+    為 sedimentedToday，供前端「今日 wiki 動態」小節使用。"""
+    all_pages = entities + topics
+    for date_str, d in digest_all.items():
+        today_pages = [p for p in all_pages
+                       if p.get("lastNewsUpdate") == date_str and p.get("name")]
+        if not today_pages:
+            d["sedimentedToday"] = []
+            continue
+        d["sedimentedToday"] = [
+            {"id": p["id"], "name": p["name"], "pageType": p["pageType"]}
+            for p in today_pages
+        ]
+        for sec in ("topStories", "techUpdates", "mediaReports", "discussions", "billing"):
+            for s in d.get(sec, []):
+                text = f"{s.get('title', '')} {s.get('body', '')}"
+                hits = [p for p in today_pages if p["name"] in text]
+                if hits:
+                    s["sedimented"] = [
+                        {"id": p["id"], "pageType": p["pageType"]} for p in hits[:2]
+                    ]
+
+
+def parse_weekly(f: Path) -> dict:
+    """週報頁解析（weekly/YYYY-Wnn.md）——結構是自由行文的四段式 markdown，
+    照 parse_digest 的輕量模式：只萃取 id / 標題 / 預覽文字，正文交給前端用
+    marked 渲染（與 wiki 詳頁相同模式），不逐段結構化解析。"""
+    raw = f.read_text(encoding="utf-8")
+    lines = raw.splitlines()
+    week_id = f.stem  # e.g. "2026-W30"
+    name = lines[0].lstrip("# ").strip() if lines else week_id
+
+    preview = ""
+    for line in lines[1:]:
+        ls = line.strip()
+        if not ls or ls.startswith("#") or ls.startswith(">") or ls.startswith("---"):
+            continue
+        preview = re.sub(r'\*{1,3}([^*\n]+)\*{1,3}', r'\1', ls)
+        preview = re.sub(r'\[\[.*?\]\]', '', preview).strip()[:160]
+        if preview:
+            break
+
+    return {
+        "id": week_id,
+        "pageType": "weekly",
+        "name": name,
+        "preview": preview,
+        "markdown": raw,
+    }
+
+
+def collect_weekly(weekly_dir: Path) -> tuple[dict, list]:
+    """Parse all weekly/*.md under weekly_dir into (weekly_all, weekly_index).
+
+    Returns empty containers when weekly_dir doesn't exist — this is the
+    contract the front-end's "尚無週報" empty state depends on (no weekly/
+    directory yet is a normal, expected state, not an error)."""
+    weekly_all: dict = {}
+    weekly_index: list = []
+    if not weekly_dir.exists():
+        return weekly_all, weekly_index
+    for f in sorted(weekly_dir.glob("*.md"), reverse=True):
+        try:
+            w = parse_weekly(f)
+            weekly_all[w["id"]] = w
+            weekly_index.append({"id": w["id"], "name": w["name"], "preview": w["preview"]})
+        except Exception as e:
+            print(f"  [warn] weekly {f.name}: {e}")
+    return weekly_all, weekly_index
 
 
 def parse_wiki(f: Path, page_type: str) -> dict:
@@ -577,6 +653,12 @@ def build():
         except Exception as e:
             print(f"  [warn] digest {f.name}: {e}")
 
+    # ── 已沉澱徽章／今日 wiki 動態（用既有 lastNewsUpdate 欄位比對，不新增管線）──
+    attach_sedimented_badges(digest_all, entities, topics)
+
+    # ── Parse weekly reports (weekly/YYYY-Wnn.md) ─────────────────────────────
+    weekly_all, weekly_index = collect_weekly(WEEKLY_DIR)
+
     # ── Parse feature radar (root-level wiki doc) ─────────────────────────────
     radar = None
     if WIKI_RADAR.exists():
@@ -621,6 +703,17 @@ def build():
         with (OUT_DIGEST_DIR / f"{date_str}.json").open("w", encoding="utf-8") as fp:
             json.dump(d, fp, ensure_ascii=False, indent=2)
 
+    # ── Write per-weekly JSON files ────────────────────────────────────────────
+    OUT_WEEKLY_DIR.mkdir(parents=True, exist_ok=True)
+    existing_weekly_ids = {f.stem for f in OUT_WEEKLY_DIR.glob("*.json")}
+    current_weekly_ids  = set(weekly_all.keys())
+    for stale in existing_weekly_ids - current_weekly_ids:
+        (OUT_WEEKLY_DIR / f"{stale}.json").unlink()
+        print(f"  [clean] removed stale weekly/{stale}.json")
+    for week_id, w in weekly_all.items():
+        with (OUT_WEEKLY_DIR / f"{week_id}.json").open("w", encoding="utf-8") as fp:
+            json.dump(w, fp, ensure_ascii=False, indent=2)
+
     # ── Write slim data.js (no markdown, no DIGEST_ALL) ───────────────────────
     def slim(item):
         return {k: v for k, v in item.items() if k != "markdown"}
@@ -629,6 +722,7 @@ def build():
         "entities":    [slim(e) for e in entities],
         "topics":      [slim(t) for t in topics],
         "digestIndex": digest_index,
+        "weeklyIndex": weekly_index,
         "radar": radar if radar else None,  # include markdown — rendered inline, no fetch needed
     }
 
@@ -719,15 +813,24 @@ def build():
             "summary": (d.get("preview") or "")[:90],
             "text":    f"{focus_txt}；{titles}；{bodies}",
         })
+    for week_id, w in weekly_all.items():
+        search_index.append({
+            "id":      week_id,
+            "type":    "weekly",
+            "name":    w["name"],
+            "summary": w.get("preview", ""),
+            "text":    strip_markdown_to_text(w.get("markdown", "")),
+        })
     with OUT_SEARCH_INDEX.open("w", encoding="utf-8") as fp:
         json.dump(search_index, fp, ensure_ascii=False, separators=(",", ":"))
 
-    print(f"OK: {len(entities)} entities, {len(topics)} topics, {len(digest_all)} digests" +
-          (" + radar" if radar else ""))
+    print(f"OK: {len(entities)} entities, {len(topics)} topics, {len(digest_all)} digests, "
+          f"{len(weekly_all)} weekly reports" + (" + radar" if radar else ""))
     print(f"    -> {OUT_JS} ({OUT_JS.stat().st_size//1024} KB)")
     print(f"    -> {OUT_SEARCH_INDEX} ({OUT_SEARCH_INDEX.stat().st_size//1024} KB)")
     print(f"    -> {OUT_WIKI_DIR}/ ({len(entities)+len(topics)} files)")
     print(f"    -> {OUT_DIGEST_DIR}/ ({len(digest_all)} files)")
+    print(f"    -> {OUT_WEEKLY_DIR}/ ({len(weekly_all)} files)")
 
 
 if __name__ == "__main__":
