@@ -80,6 +80,28 @@ argument-hint: [YYYY-Wnn]
 
 寫入 `weekly/YYYY-Wnn.md` 後視為當週凍結版本，不因後續 ingest 回頭修改（下週報若要回收上週對錯，於新一期第 (3) 段處理，不修舊檔）。
 
+### 6. 收尾閉迴路 `[加入: 2026-07-26]`
+
+**沒有這一步，週報只會躺在工作目錄裡**：未 commit（違反根目錄 `CLAUDE.md` 的完工定義）、未 build（web reader 的「週報」分頁仍顯示「尚無週報」）、未 push（線上看不到）。形狀與 `.claude/commands/news-pipeline-steps.md` 的 `Step 4`／`Step 5` 一致：
+
+```
+git -C REPO_ROOT add weekly/
+git -C REPO_ROOT commit -m "weekly: YYYY-Wnn 週報"
+
+PYTHON REPO_ROOT\scripts\run_tests.py
+# 失敗 → 跳過 build，但仍推送已完成的 weekly commit，並在回報標「Tests FAILED - build skipped」
+
+PYTHON REPO_ROOT\scripts\build_web.py
+git -C REPO_ROOT add web_reader/
+git -C REPO_ROOT commit -m "web: rebuild YYYY-Wnn 週報上站"
+
+git -C REPO_ROOT push        # 單一 push
+```
+
+- **單一 push**：每次 push 觸發一個 GitHub Pages 部署，分多次會互相搶佔導致線上停在舊版
+- **push 失敗**：照 `.claude/commands/news-pipeline-steps.md` 的 `Step 5` push 失敗重試程序處理（`pull --rebase` 上限 2 次），不要另寫一套
+- **與排程的關係**：`/weekly` 沒有雲端排程，不會與 `daily-news-pipeline-cloud`（每日 13:00 UTC）或 `weekly-wiki-lint-cloud`（每週六 01:00 UTC）衝突；產出檔在 `weekly/`，與那兩者會動的 `news/`、`wiki/` 不重疊。若執行時間逼近排程時點，靠上述 push 重試化解
+
 ---
 
 ## 編輯守則
