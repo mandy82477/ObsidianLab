@@ -1,0 +1,465 @@
+{
+  "date": "2026-07-26",
+  "generatedAt": "2026-07-26 14:30 UTC",
+  "articleCount": 51,
+  "sourceCount": "10/10",
+  "bulletin": "",
+  "topStories": [],
+  "techUpdates": [
+    {
+      "title": "Opus 5 錯誤率升高（已解決）",
+      "url": "https://status.claude.com/incidents/zftg3gqkmv18",
+      "source": "Anthropic Status",
+      "time": "07/26 10:44",
+      "sentiment": "",
+      "body": "7/26 上午 Opus 5 請求錯誤率升高，約 16 分鐘後排除。",
+      "focusTags": [
+        "[持續追蹤]"
+      ]
+    },
+    {
+      "title": "Fable 5／Sonnet 5／Haiku 4.5 等模型錯誤率升高（已解決）",
+      "url": "https://status.claude.com/incidents/j6gv862066n7",
+      "source": "Anthropic Status",
+      "time": "07/25 22:08",
+      "sentiment": "",
+      "body": "7/25 晚間多款模型同時出現請求錯誤率升高，約 34 分鐘後排除。",
+      "focusTags": [
+        "[持續追蹤]"
+      ]
+    },
+    {
+      "title": "Mythos 5／Fable 5／Opus 5／Haiku 4.5 錯誤率升高（已解決）",
+      "url": "https://status.claude.com/incidents/f1q2wvw4qj4j",
+      "source": "Anthropic Status",
+      "time": "07/25 19:44",
+      "sentiment": "",
+      "body": "7/25 傍晚同批模型出現錯誤率升高，約 1 小時後排除。",
+      "focusTags": [
+        "[持續追蹤]"
+      ]
+    },
+    {
+      "title": "Sonnet 4.6／Sonnet 5 錯誤率升高（已解決）",
+      "url": "https://status.claude.com/incidents/1019wwb67615",
+      "source": "Anthropic Status",
+      "time": "07/25 18:13",
+      "sentiment": "",
+      "body": "7/25 稍早 Sonnet 4.6 與 Sonnet 5 錯誤率升高約 10 分鐘後恢復正常。",
+      "focusTags": [
+        "[持續追蹤]"
+      ]
+    }
+  ],
+  "mediaReports": [
+    {
+      "title": "Anthropic Launches Claude Opus 5, Tops AI Benchmark Index at Half the Cost of Fable 5",
+      "url": "https://mlq.ai/news/anthropic-launches-claude-opus-5-tops-ai-benchmark-index-at-half-the-cost-of-fable-5/",
+      "source": "Google News / MLQ.ai",
+      "time": "07/26 09:16",
+      "sentiment": "",
+      "body": "報導 Anthropic 發布 Opus 5，官方稱其在 AI 基準測試指數表現領先，成本約為 Fable 5 的一半。",
+      "focusTags": [
+        "[重大事件]"
+      ],
+      "sedimented": [
+        {
+          "id": "opus-5",
+          "pageType": "entity"
+        }
+      ]
+    },
+    {
+      "title": "Claude Opus 5 Is Here, Tops Fable 5 on Agentic Search, Anthropic Says",
+      "url": "https://www.pcmag.com/news/anthropics-newest-ai-model-opus-5-is-now-available",
+      "source": "Google News / PCMag",
+      "time": "07/25 19:00",
+      "sentiment": "",
+      "body": "PCMag 報導 Anthropic 宣稱 Opus 5 在 agentic search 表現優於 Fable 5。",
+      "focusTags": [
+        "[重大事件]"
+      ],
+      "sedimented": [
+        {
+          "id": "opus-5",
+          "pageType": "entity"
+        }
+      ]
+    },
+    {
+      "title": "What a Major Anthropic Chip Deal Really Means for AMD Stock",
+      "url": "https://www.barchart.com/story/news/3469164/what-a-major-anthropic-chip-deal-really-means-for-amd-stock",
+      "source": "Google News / Barchart.com",
+      "time": "07/26 13:00",
+      "sentiment": "",
+      "body": "分析 Anthropic 近期晶片採購合作對 AMD 股價的潛在影響。",
+      "focusTags": []
+    },
+    {
+      "title": "David Sacks Warns Anthropic Doesn't Want Competition",
+      "url": "https://www.benzinga.com/markets/tech/26/07/60685709/david-sacks-warns-anthropic-doesnt-want-competition-youre-going-to-basically-put-a-dagger-through-the-heart-of-the-entire-american-open-source-ecosystem",
+      "source": "Google News / Benzinga",
+      "time": "07/26 08:46",
+      "sentiment": "",
+      "body": "David Sacks 公開批評 Anthropic 在開源生態議題上的立場，稱其恐傷害美國開源生態系。",
+      "focusTags": []
+    },
+    {
+      "title": "Chinese AI models split Silicon Valley, Nvidia and others want open access while Anthropic pushes for ban",
+      "url": "https://www.indiatoday.in/technology/news/story/chinese-ai-models-split-silicon-valley-nvidia-and-others-want-open-access-while-anthropic-pushes-for-ban-2956551-2026-07-26",
+      "source": "Google News / India Today",
+      "time": "07/26 06:48",
+      "sentiment": "",
+      "body": "報導矽谷對中國 AI 模型的態度分歧：Nvidia 等傾向開放存取，Anthropic 則推動限制。",
+      "focusTags": [
+        "[持續追蹤]"
+      ]
+    },
+    {
+      "title": "Nvidia Open Weights Letter Doubled To 50 Without Amazon And Anthropic",
+      "url": "https://www.forbes.com/sites/sandycarter/2026/07/25/huangs-open-weights-letter-doubled-to-50-without-amazon-and-anthropic/",
+      "source": "Google News / Forbes",
+      "time": "07/25 20:23",
+      "sentiment": "",
+      "body": "Nvidia 發起的開放權重連署簽署企業增至 50 家，但 Amazon 與 Anthropic 並未加入。",
+      "focusTags": [
+        "[持續追蹤]"
+      ]
+    },
+    {
+      "title": "SK chair says Anthropic asked for supplies to make its own chips",
+      "url": "https://fortune.com/2026/07/25/sk-chair-chey-tae-won-anthropic-chip-supplies-skhynix/",
+      "source": "Google News / Fortune",
+      "time": "07/25 20:23",
+      "sentiment": "",
+      "body": "SK 集團董事長透露 Anthropic 曾接洽尋求自製晶片所需的供應。",
+      "focusTags": []
+    },
+    {
+      "title": "I'm not letting Claude touch my passwords, no matter how safe Anthropic claims it is",
+      "url": "https://www.androidpolice.com/claude-wants-my-passwords/",
+      "source": "Google News / Android Police",
+      "time": "07/25 17:00",
+      "sentiment": "",
+      "body": "評論質疑 Anthropic 對 Claude 存取密碼類敏感資料的安全性宣稱。",
+      "focusTags": []
+    },
+    {
+      "title": "Anthropic's Claude Mythos, or a model like it, to get public release",
+      "url": "https://mashable.com/tech/anthropic-mythos-might-get-public-release",
+      "source": "Google News / Mashable",
+      "time": "07/25 14:43",
+      "sentiment": "",
+      "body": "報導指出 Claude Mythos 或類似模型可能對外公開發布。",
+      "focusTags": [],
+      "sedimented": [
+        {
+          "id": "mythos",
+          "pageType": "entity"
+        }
+      ]
+    }
+  ],
+  "discussions": [
+    {
+      "title": "Feature Request: Support AGENTS.md.",
+      "url": "https://github.com/anthropics/claude-code/issues/6235",
+      "source": "GitHub Issues / claude-code",
+      "time": "07/26 01:12 UTC ·",
+      "sentiment": "😐",
+      "body": "呼籲 Claude Code 支援 Codex、Amp、Cursor 等工具已逐漸標準化的 AGENTS.md 格式，該 issue 已累積 5760 個讚。",
+      "focusTags": [
+        "[持續追蹤]"
+      ],
+      "sedimented": [
+        {
+          "id": "claude-code",
+          "pageType": "entity"
+        }
+      ]
+    },
+    {
+      "title": "BUG] API Error: Connection closed mid-response ==> frequent enough to make Claude Code unusable for any task",
+      "url": "https://github.com/anthropics/claude-code/issues/69415",
+      "source": "GitHub Issues / claude-code",
+      "time": "07/25 14:01 UTC ·",
+      "sentiment": "😤",
+      "body": "回報者稱 API 連線中斷頻繁到讓 Claude Code 無法完成任何任務。",
+      "focusTags": [
+        "[持續追蹤]"
+      ],
+      "sedimented": [
+        {
+          "id": "claude-code",
+          "pageType": "entity"
+        }
+      ]
+    },
+    {
+      "title": "BUG] Claude Code frequently loses track of which directory it is in",
+      "url": "https://github.com/anthropics/claude-code/issues/1669",
+      "source": "GitHub Issues / claude-code",
+      "time": "07/25 22:07 UTC ·",
+      "sentiment": "😤",
+      "body": "回報 Claude Code 經常誤判自己所在目錄，導致指令失敗並需多輪自我排查才能發現問題。",
+      "focusTags": [
+        "[持續追蹤]"
+      ],
+      "sedimented": [
+        {
+          "id": "claude-code",
+          "pageType": "entity"
+        }
+      ]
+    },
+    {
+      "title": "BUG] Claude Code Desktop fails to Relaunch on Windows due to orphaned process file lock",
+      "url": "https://github.com/anthropics/claude-code/issues/42776",
+      "source": "GitHub Issues / claude-code",
+      "time": "07/25 18:30 UTC ·",
+      "sentiment": "😤",
+      "body": "Windows 版 Desktop 應用因孤兒行程檔案鎖定導致無法重新啟動。",
+      "focusTags": [],
+      "sedimented": [
+        {
+          "id": "claude-code",
+          "pageType": "entity"
+        }
+      ]
+    },
+    {
+      "title": "Claude Code has a hardcoded instruction telling Opus 5 not to use subagents",
+      "url": "https://old.reddit.com/r/ClaudeCode/comments/1v6y5q2/claude_code_has_a_hardcoded_instruction_telling/",
+      "source": "Hacker News",
+      "time": "07/26 08:45 UTC ·",
+      "sentiment": "🤔",
+      "body": "討論指出 Claude Code 二進位中內建限制 Opus 5 使用 AgentTool／workflows／deep-research 的系統提示，除非使用者明確要求。",
+      "focusTags": [],
+      "sedimented": [
+        {
+          "id": "claude-code",
+          "pageType": "entity"
+        }
+      ]
+    },
+    {
+      "title": "Show HN: Termic – desktop app for running CLI coding agents (Claude Code, Codex)",
+      "url": "https://termic.dev/",
+      "source": "Hacker News",
+      "time": "07/26 09:36 UTC ·",
+      "sentiment": "😊",
+      "body": "開源桌面應用程式，用於統一管理 Claude Code、Codex 等 CLI coding agent session 與 worktree。",
+      "focusTags": [],
+      "sedimented": [
+        {
+          "id": "claude-code",
+          "pageType": "entity"
+        }
+      ]
+    },
+    {
+      "title": "Show HN: Argus – VSCode Worktree Agent Session Manager",
+      "url": "https://marketplace.visualstudio.com/items?itemName=petar-s-dimov.argus-worktree-agent-sessions",
+      "source": "Hacker News",
+      "time": "07/26 00:58 UTC ·",
+      "sentiment": "😊",
+      "body": "VS Code 擴充套件，將跨 worktree 平行執行的 Claude Code／Codex agent session 整合進單一視窗管理。",
+      "focusTags": [],
+      "sedimented": [
+        {
+          "id": "claude-code",
+          "pageType": "entity"
+        }
+      ]
+    },
+    {
+      "title": "Show HN: Integrate any CLI agent into any terminal",
+      "url": "https://terminai.app",
+      "source": "Hacker News",
+      "time": "07/26 06:06 UTC ·",
+      "sentiment": "😊",
+      "body": "讓使用者在終端機中直接呼叫 AI 協助解讀輸出或組出指令，省去在聊天視窗與終端機間複製貼上的步驟。",
+      "focusTags": []
+    },
+    {
+      "title": "Use Fable 5 where it pays for itself",
+      "url": "https://dev.to/toffy/use-fable-5-where-it-pays-for-itself-1809",
+      "source": "dev.to / #claudecode",
+      "time": "07/02 19:56 UTC ·",
+      "sentiment": "😊",
+      "body": "作者分享實務作法：只在需要頂尖判斷力的任務用 Fable 5，其餘實作、測試、雜務交給較便宜的 subagent 處理以控制成本。",
+      "focusTags": []
+    },
+    {
+      "title": "Transitioning to Spec-Driven Development via AWS Step Functions",
+      "url": "https://www.reddit.com/r/ClaudeCode/comments/1v74vlv/transitioning_to_specdriven_development_via_aws/",
+      "source": "Reddit / r/ClaudeCode",
+      "time": "07/26 14:07 UTC ·",
+      "sentiment": "😐",
+      "body": "一名資深工程師分享將日常使用 Claude Code 的方式，逐步轉向以 AWS Step Functions 落實 spec-driven development 的實務經驗。",
+      "focusTags": [],
+      "sedimented": [
+        {
+          "id": "claude-code",
+          "pageType": "entity"
+        }
+      ]
+    },
+    {
+      "title": "Ruff v0.16.0",
+      "url": "https://simonwillison.net/2026/Jul/25/ruff/#atom-everything",
+      "source": "Blog / Simon Willison",
+      "time": "07/25 22:44 UTC ·",
+      "sentiment": "😐",
+      "body": "Simon Willison 記錄 Astral 於 7/23 發布的 Ruff Python linter 新版重點功能。",
+      "focusTags": []
+    }
+  ],
+  "billing": [],
+  "focus": [
+    {
+      "tag": "[重大事件]",
+      "text": "Anthropic 正式發布 Opus 5 並全平台上線，官方稱其在多項基準測試（含 agentic search）表現優於 Fable 5，成本僅約後者一半。",
+      "ref_urls": [
+        "https://mlq.ai/news/anthropic-launches-claude-opus-5-tops-ai-benchmark-index-at-half-the-cost-of-fable-5/",
+        "https://www.pcmag.com/news/anthropics-newest-ai-model-opus-5-is-now-available",
+        "https://www.testingcatalog.com/anthropic-launched-claude-opus-5-across-all-platforms/",
+        "https://www.chosun.com/english/industry-en/2026/07/26/CEBZ5CRUSBDG3OHX2MVH7CX5MQ/"
+      ]
+    },
+    {
+      "tag": "[重大事件]",
+      "text": "Anthropic 部落格發文說明「Claude 5 世代模型的 context engineering 新規則」，揭露針對更先進模型已移除超過 80% 的 Claude Code 系統提示詞，並提供將此經驗應用於自訂 agent 的建議；該文在 Hacker News 獲 393 分討論熱度。",
+      "ref_urls": [
+        "https://claude.com/blog/the-new-rules-of-context-engineering-for-claude-5-generation-models"
+      ]
+    },
+    {
+      "tag": "[持續追蹤]",
+      "text": "Opus 5 上線首日，Anthropic Status 頁面接連出現 4 起 Opus 5／Sonnet 5／Fable 5／Mythos 5 等模型錯誤率升高事件，皆在數十分鐘至約一小時內排除。",
+      "ref_urls": [
+        "https://status.claude.com/incidents/zftg3gqkmv18",
+        "https://status.claude.com/incidents/j6gv862066n7",
+        "https://status.claude.com/incidents/f1q2wvw4qj4j",
+        "https://status.claude.com/incidents/1019wwb67615"
+      ]
+    },
+    {
+      "tag": "[持續追蹤]",
+      "text": "社群長期訴求持續累積：要求支援 AGENTS.md 標準的 issue 互動熱烈，已累積 5760 個讚；另有使用者回報 API 連線中斷「嚴重到讓 Claude Code 無法完成任何任務」，以及頻繁迷失所在目錄等穩定性問題持續被提出。",
+      "ref_urls": [
+        "https://github.com/anthropics/claude-code/issues/6235",
+        "https://github.com/anthropics/claude-code/issues/69415",
+        "https://github.com/anthropics/claude-code/issues/1669"
+      ]
+    },
+    {
+      "tag": "[持續追蹤]",
+      "text": "晶片與出口管制角力升溫：Nvidia 號召的開放權重連署已擴大到 50 家企業，但不含 Amazon 與 Anthropic；同時有報導指出 Anthropic 持續傾向推動對中國 AI 模型的出口限制，與 Nvidia 陣營立場對立。",
+      "ref_urls": [
+        "https://www.forbes.com/sites/sandycarter/2026/07/25/huangs-open-weights-letter-doubled-to-50-without-amazon-and-anthropic/",
+        "https://www.indiatoday.in/technology/news/story/chinese-ai-models-split-silicon-valley-nvidia-and-others-want-open-access-while-anthropic-pushes-for-ban-2956551-2026-07-26"
+      ]
+    }
+  ],
+  "sourceStatus": [
+    {
+      "name": "Anthropic Status",
+      "ok": true,
+      "count": 4
+    },
+    {
+      "name": "GitHub Issues",
+      "ok": true,
+      "count": 15
+    },
+    {
+      "name": "Hacker News",
+      "ok": true,
+      "count": 10
+    },
+    {
+      "name": "Anthropic Blog",
+      "ok": true,
+      "count": 0
+    },
+    {
+      "name": "Claude API Release Notes",
+      "ok": true,
+      "count": 0
+    },
+    {
+      "name": "dev.to",
+      "ok": true,
+      "count": 12
+    },
+    {
+      "name": "GitHub",
+      "ok": true,
+      "count": 0
+    },
+    {
+      "name": "Google News",
+      "ok": true,
+      "count": 18
+    },
+    {
+      "name": "Blogroll",
+      "ok": true,
+      "count": 1
+    },
+    {
+      "name": "Reddit",
+      "ok": true,
+      "count": 12
+    }
+  ],
+  "preview": "Opus 5 錯誤率升高（已解決）",
+  "sedimentedToday": [
+    {
+      "id": "claude-code",
+      "name": "Claude Code",
+      "pageType": "entity"
+    },
+    {
+      "id": "mythos",
+      "name": "Claude Mythos",
+      "pageType": "entity"
+    },
+    {
+      "id": "opus-5",
+      "name": "Claude Opus 5",
+      "pageType": "entity"
+    },
+    {
+      "id": "anthropic-business",
+      "name": "Anthropic 商業健康度",
+      "pageType": "topic"
+    },
+    {
+      "id": "anthropic-government-policy",
+      "name": "Anthropic 政府與軍事政策",
+      "pageType": "topic"
+    },
+    {
+      "id": "community-tech-discussions",
+      "name": "社群技術討論趨勢",
+      "pageType": "topic"
+    },
+    {
+      "id": "community-tech-patterns",
+      "name": "社群實戰模式庫",
+      "pageType": "topic"
+    },
+    {
+      "id": "competitor-landscape",
+      "name": "AI 編碼工具競品動態",
+      "pageType": "topic"
+    },
+    {
+      "id": "model-comparison",
+      "name": "Claude 模型選型對照",
+      "pageType": "topic"
+    }
+  ]
+}

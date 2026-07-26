@@ -734,16 +734,6 @@
       "id": "ai-agent-safety",
       "name": "AI Agent 安全與可靠性",
       "pageType": "topic"
-    },
-    {
-      "id": "anthropic-government-policy",
-      "name": "Anthropic 政府與軍事政策",
-      "pageType": "topic"
-    },
-    {
-      "id": "community-tech-patterns",
-      "name": "社群實戰模式庫",
-      "pageType": "topic"
     }
   ]
 }

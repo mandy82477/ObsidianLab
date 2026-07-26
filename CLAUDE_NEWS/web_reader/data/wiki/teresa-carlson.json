@@ -8,10 +8,10 @@
   "pill": "active",
   "firstSeen": "2026-07-07",
   "startDate": "",
-  "lastUpdated": "2026-07-16",
+  "lastUpdated": "2026-07-26",
   "lastNewsUpdate": "2026-07-07",
   "updateFreq": "",
-  "summary": "2026-07-07，FedScoop 報導 Anthropic 延攬 Teresa Carlson 主導公部門業務。Carlson 曾任職 Microsoft 與 AWS，在雲端服務公部門業務領域有豐富經驗（待核實：Anthropic 內部確切職稱）。 此為事件層級記錄，日報僅標題報導，尚無 Carlson 本人公開…",
-  "latestHeadline": "加入 Anthropic，主導公部門業務，此前曾任職 Microsoft、AWS（FedScoop）（待核實：確切職稱與到任日期）",
-  "markdown": "# Teresa Carlson\n\n**類型：** person\n**狀態：** active（待核實）\n**領域：** 👤 人物\n**首次出現：** 2026-07-07\n**最後更新：** 2026-07-16\n**最後新聞更新：** 2026-07-07\n\n> **最新動態**（2026-07-07）\n> Teresa Carlson（曾任職 Microsoft、AWS）加入 Anthropic，主導公部門（public sector）業務（待核實：確切職稱與到任日期，日報僅標題層級報導）。\n\n---\n\n## 現況\n\n2026-07-07，FedScoop 報導 Anthropic 延攬 Teresa Carlson 主導公部門業務。Carlson 曾任職 Microsoft 與 AWS，在雲端服務公部門業務領域有豐富經驗（待核實：Anthropic 內部確切職稱）。\n\n此為事件層級記錄，日報僅標題報導，尚無 Carlson 本人公開聲明可引用。\n\n---\n\n## 相關議題\n\n- [[topics/anthropic-business]] — Anthropic 商業拓展與人才佈局\n- [[topics/ai-talent-flow]] — AI 實驗室間人才流動追蹤\n- [[entities/bernanke]] — 近期同批加入 Anthropic 治理/顧問層的知名外部人士案例（2026-07-09，長期利益信託董事會）\n- [[entities/tom-blomfield]] — 近期同批加入 Anthropic 的知名外部人士案例（2026-07-13，待核實）\n\n---\n\n## 參考來源\n\n- 「Anthropic taps Microsoft, AWS alum Teresa Carlson to lead public sector work」（FedScoop，2026-07-07）https://fedscoop.com/anthropic-taps-microsoft-aws-teresa-carlson-lead-public-sector/\n\n---\n\n## 歷史記錄\n\n- 2026-07-07：加入 Anthropic，主導公部門業務，此前曾任職 Microsoft、AWS（FedScoop）（待核實：確切職稱與到任日期）\n"
+  "summary": "2026-07-07，FedScoop 報導 Anthropic 延攬 Teresa Carlson 主導公部門業務。Carlson 曾任職 Microsoft 與 AWS，在雲端服務公部門業務領域有豐富經驗（2026-07-07 報導，至今無後續：確切職稱迄今無其他媒體或官方確認）。 此為事件層級記錄，日報僅標題報導…",
+  "latestHeadline": "加入 Anthropic，主導公部門業務，此前曾任職 Microsoft、AWS（FedScoop）（2026-07-07 報導，至今無後續：確切職稱與到任日期迄今無其他來源確認）",
+  "markdown": "# Teresa Carlson\n\n**類型：** person\n**狀態：** active（待核實）\n**領域：** 👤 人物\n**首次出現：** 2026-07-07\n**最後更新：** 2026-07-26\n**最後新聞更新：** 2026-07-07\n\n> **最新動態**（2026-07-07 報導，至今無後續）\n> Teresa Carlson（曾任職 Microsoft、AWS）加入 Anthropic，主導公部門（public sector）業務；確切職稱與到任日期日報僅標題層級報導，近 14 天（截至 2026-07-26）日報無進一步後續確認。\n\n---\n\n## 現況\n\n2026-07-07，FedScoop 報導 Anthropic 延攬 Teresa Carlson 主導公部門業務。Carlson 曾任職 Microsoft 與 AWS，在雲端服務公部門業務領域有豐富經驗（2026-07-07 報導，至今無後續：確切職稱迄今無其他媒體或官方確認）。\n\n此為事件層級記錄，日報僅標題報導，尚無 Carlson 本人公開聲明可引用。\n\n---\n\n## 相關議題\n\n- [[topics/anthropic-business]] — Anthropic 商業拓展與人才佈局\n- [[topics/ai-talent-flow]] — AI 實驗室間人才流動追蹤\n- [[entities/bernanke]] — 近期同批加入 Anthropic 治理/顧問層的知名外部人士案例（2026-07-09，長期利益信託董事會）\n- [[entities/tom-blomfield]] — 近期同批加入 Anthropic 的知名外部人士案例（2026-07-13，待核實）\n\n---\n\n## 參考來源\n\n- 「Anthropic taps Microsoft, AWS alum Teresa Carlson to lead public sector work」（FedScoop，2026-07-07）https://fedscoop.com/anthropic-taps-microsoft-aws-teresa-carlson-lead-public-sector/\n\n---\n\n## 歷史記錄\n\n- 2026-07-07：加入 Anthropic，主導公部門業務，此前曾任職 Microsoft、AWS（FedScoop）（2026-07-07 報導，至今無後續：確切職稱與到任日期迄今無其他來源確認）\n"
 }
