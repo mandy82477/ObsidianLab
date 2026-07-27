@@ -23,3 +23,8 @@
 [週一 2026/07/27 00:14:25.00] Weekly lint follow-up OK - 6g 量測改雙格式 + 心跳紀錄規則上線（wiki-lint.md 步驟4 / _shared.md 無人值守），registry 25→26 組，反向測試通過
 [週一 2026/07/27 00:22:02.00] Cloud review OK - 攔下 08-01 兩問題：月度死鏈雲端跳過（egress 假死鏈防污染）+ STARTED 開跑標記（四態判定，中途死首次可診斷）；registry 28 組，反向測試通過
 [cloud daily-news-pipeline-cloud STARTED 2026-07-27T13:05:26Z]
+[週一 2026/07/27 13:06:58.00] === Agent pipeline start (2026-07-27) ===
+[週一 2026/07/27 13:06:58.00] Step 0: 昨日日報存在 (2026-07-26) - OK
+[週一 2026/07/27 13:06:58.00] Step 1a: SKIPPED（雲端由 GitHub Actions 負責抓料）
+[週一 2026/07/27 13:06:58.00] ABORTED: gathered_items.json date=2026-07-25 items=73，非目標日期的新鮮資料
+[週一 2026/07/27 13:06:58.00] === Pipeline complete (agent) ===
