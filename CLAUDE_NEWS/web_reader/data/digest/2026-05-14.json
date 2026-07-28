@@ -303,7 +303,7 @@
       "count": 19
     }
   ],
-  "preview": "Anthropic reinstates OpenClaw and third-party agent usage on Claude subscriptions — with a catch",
+  "preview": "Anthropic 宣布 6 月 15 日起，`claude -p`、Agent SDK、Claude Code GitHub Actions 及第三方 Agent SDK 用量將從訂閱方案中剝離，改為按 API 費率計費的獨立信用池。此舉引發開發者強烈反彈，多人宣告取消訂閱。",
   "sedimentedToday": [
     {
       "id": "openclaw",

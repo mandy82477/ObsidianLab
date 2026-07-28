@@ -6,7 +6,7 @@
   "bulletin": "",
   "topStories": [
     {
-      "title": "Wired] [The Korean telecom giant at the center of Anthropic's Mythos controversy",
+      "title": "[Wired] [The Korean telecom giant at the center of Anthropic's Mythos controversy",
       "url": "https://www.wired.com/story/sk-telecom-anthropic-mythos-export-controls/",
       "source": "Hacker News",
       "time": "06/18 12:44",
@@ -17,7 +17,7 @@
       ]
     },
     {
-      "title": "Politico] [White House talks with Anthropic shift to setting AI security rules",
+      "title": "[Politico] [White House talks with Anthropic shift to setting AI security rules",
       "url": "https://www.politico.com/news/2026/06/18/white-house-talks-with-anthropic-shift-to-setting-ai-security-rules-00967758",
       "source": "Hacker News",
       "time": "06/19 04:54",
@@ -26,7 +26,7 @@
       "focusTags": []
     },
     {
-      "title": "Fortune] [The week that changed AI: Inside Trump's Anthropic crackdown",
+      "title": "[Fortune] [The week that changed AI: Inside Trump's Anthropic crackdown",
       "url": "https://news.google.com/rss/articles/CBMitAFBVV95cUxQZlM3Y055NnRLQzc4OVZ5am1fSldMSEc5VTJZS2pNQll6VjEtRjRKS2JrSDRNbzBXcHJXbUtVZzljaVd2WFVSNVhaamlkbWVCbUc4VHdtcXp2Z1F5UkdyZFdQY05WQkt5WTZ1TlZOQV91VldOcDM1UHBpQ0U5aEpuRmJEdWoxZm9pU2c0QjFsZk5QNHpXeS1DakE2N3JITDZvRDVfTDJHc21GZHJjdFd3ZVpIOUQ?oc=5",
       "source": "Google News / Fortune",
       "time": "06/18 16:22",
@@ -35,7 +35,7 @@
       "focusTags": []
     },
     {
-      "title": "Claude.com] [Claude Code now supports artifacts",
+      "title": "[Claude.com] [Claude Code now supports artifacts",
       "url": "https://claude.com/blog/artifacts-in-claude-code",
       "source": "Hacker News",
       "time": "06/18 18:17",
@@ -46,7 +46,7 @@
       ]
     },
     {
-      "title": "Anthropic] [Project Fetch: Phase Two",
+      "title": "[Anthropic] [Project Fetch: Phase Two",
       "url": "https://www.anthropic.com/research/project-fetch-phase-two",
       "source": "Hacker News",
       "time": "06/18 16:55",
@@ -249,6 +249,6 @@
     }
   ],
   "sourceStatus": [],
-  "preview": "Wired] [The Korean telecom giant at the center of Anthropic's Mythos controversy",
+  "preview": "Anthropic Mythos / Fable 5 出口管制持續發酵：SK Telecom 涉嫌中國連結是觸發點，Amazon 研究人員向白宮舉報 Fable 5 越獄漏洞，局勢仍在演進。",
   "sedimentedToday": []
 }

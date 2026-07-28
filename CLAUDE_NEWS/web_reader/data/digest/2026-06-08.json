@@ -306,6 +306,6 @@
     }
   ],
   "sourceStatus": [],
-  "preview": "Anthropic Mythos 軍事應用與安全爭議",
+  "preview": "npm 惡意套件攻擊鏈擴及 Claude Code 使用者：32 個 `@redhat-cloud-services` 套件遭植入後門，若已安裝受影響版本，npm 憑證可能已洩漏；同時有研究揭露 Claude Code MCP 流量可被劫持以竊取 OAuth Token。立即審查依賴並輪換憑證。",
   "sedimentedToday": []
 }

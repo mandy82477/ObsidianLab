@@ -286,7 +286,7 @@
       : '';
     // 「已沉澱」徽章 — build_web.py 依 lastNewsUpdate 比對出的今日已沉澱 wiki 頁
     const sedimentBadges = (s.sedimented || []).map(w =>
-      `<button type="button" class="sediment-chip" title="今日已沉澱至 wiki：${esc(w.id)}" onclick="event.stopPropagation();openWikiPage('${esc(w.id)}','${esc(w.pageType)}')">已沉澱</button>`
+      `<button type="button" class="sediment-chip" title="這則新聞的內容已整理進 wiki 頁「${esc(w.name || w.id)}」，點擊開啟" onclick="event.stopPropagation();openWikiPage('${esc(w.id)}','${esc(w.pageType)}')">已沉澱</button>`
     ).join('');
     return `<div class="${cls}">
   <div class="story__title"><a href="${esc(s.url)}" target="_blank" rel="noopener">${esc(s.title)}</a>${focusBadge}${sedimentBadges}</div>
@@ -309,9 +309,16 @@
     const _idx = (window.WIKI_DATA || {}).digestIndex || [];
     const _latestDate = _idx.length ? _idx.slice().sort((a,b) => b.date.localeCompare(a.date))[0].date : null;
     const isLatest = _latestDate === d.date;
+    // fresh 只在「日報日期＝今天」才成立；最新一份但已隔天以上時改標相對天數，
+    // 避免讀者把 2 天前的資料誤信為當日（2026-07-28 讀者 review）
+    const _t = new Date(); const _todayStr = `${_t.getFullYear()}-${String(_t.getMonth()+1).padStart(2,'0')}-${String(_t.getDate()).padStart(2,'0')}`;
+    const _ageDays = Math.max(0, Math.round((new Date(_todayStr + 'T00:00:00Z') - new Date(d.date + 'T00:00:00Z')) / 86400000));
+    const freshHtml = !isLatest ? '' :
+      _ageDays === 0 ? '<span class="pulse-dot">fresh</span>' :
+      `<span class="digest-age">${_ageDays === 1 ? '1 day ago' : _ageDays + ' days ago'}</span>`;
     const metaTopItems = [
       `<span><b>${d.articleCount}</b> articles</span>`,
-      isLatest ? '<span class="pulse-dot">fresh</span>' : '',
+      freshHtml,
     ].filter(Boolean);
     const metaBottomItems = [
       esc(d.date),
@@ -349,7 +356,11 @@
         const cls = focusTagCls(f.tag);
         parts.push(`<li class="focus-item"><span class="focus-tag focus-tag--${cls}">${esc(f.tag)}</span><span>${esc(f.text)}</span></li>`);
       });
-      parts.push('</ul></div>');
+      parts.push('</ul>');
+      // 常駐導流：重度使用者的核心問題「該不該升版」答案在熱度雷達頁，
+      // 但從日報頁原本沒有任何入口（2026-07-28 讀者 review 高影響項）
+      parts.push(`<div class="focus-radar-cta">該不該升版？<button type="button" class="focus-radar-cta__link" onclick="openWikiPage('feature-radar','radar')">看功能熱度雷達的升版風險與建議 →</button></div>`);
+      parts.push('</div>');
     }
 
     // build focus URL → tag map (for badge injection on matching stories)
@@ -461,7 +472,11 @@
     const filtered = activeDomain === 'all' ? sorted
       : activeDomain === 'weekly' ? sorted.filter(i => !!i.updateFreq)
       : sorted.filter(i => i.domain === activeDomain);
-    container.innerHTML = filtered.map(item => {
+    // 週更篩選時置頂一行說明：日期停留數天是策展節奏，不是漏更新
+    const weeklyNote = activeDomain === 'weekly'
+      ? '<div class="kb-filter-note">這些頁面採每週策展維護，更新日期停留數天屬正常節奏，並非漏更新。</div>'
+      : '';
+    container.innerHTML = weeklyNote + filtered.map(item => {
       const kbType = kbTypeOf(item);
       const isWeeklyCadence = !!item.updateFreq;
       const typeLabel = isWeeklyCadence ? KB_TYPE_LABEL.weekly : (KB_TYPE_LABEL[kbType] || '檔案');
@@ -469,7 +484,7 @@
       const rowCls = kbType === 'topic' ? 'entity-row entity-row--topic' : 'entity-row';
       return `
 <div class="${rowCls}" onclick="openWikiPage('${esc(item.id)}','${item._kbBaseType}')">
-  <div class="entity-row__name"><span class="entity-row__slug">${esc(item.id)}</span></div>
+  <div class="entity-row__name"><span class="entity-row__zh">${esc(item.name || item.id)}</span><span class="entity-row__slug">${esc(item.id)}</span></div>
   <div><span class="kb-type-pill kb-type-pill--${typePillCls}">${isWeeklyCadence ? '<svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:-1px;margin-right:3px"><rect x="3" y="5" width="18" height="16" rx="1"></rect><line x1="3" y1="9" x2="21" y2="9"></line><line x1="8" y1="3" x2="8" y2="7"></line><line x1="16" y1="3" x2="16" y2="7"></line></svg>' : ''}${esc(typeLabel)}</span></div>
   <div><span class="pill pill--${item.pill}">${esc(statusLabelShort(item.status))}</span></div>
   <div class="entity-row__summary">${esc(item.latestHeadline || '')}</div>
@@ -571,9 +586,7 @@
         <tbody>${wlRows}</tbody>
       </table></div>
       ${domainLine}
-      <div class="trans__note">收錄率與 wiki 率為 Bayesian 平滑值；指標定義與公道性規則見
-        <a href="https://github.com/mandy82477/ObsidianLab/blob/master/CLAUDE_NEWS/docs/source-scoring-optimization.md"
-           target="_blank" rel="noreferrer">source-scoring-optimization.md ↗</a></div>`;
+      <div class="trans__note">收錄率與 wiki 率為 Bayesian 平滑值（小樣本向整體先驗收縮，避免極端值誤導）。</div>`;
   }
 
   function renderArchive() {
@@ -729,6 +742,15 @@
   // opts.short：只顯示末段名稱（如 topics/model-comparison → model-comparison）並加
   // detail__wikilink--short class（收斂裝飾、縮小字級），供週報卡片判準欄使用
   // （見 web-reader-design.md 修復記錄，只影響該情境，不動其他頁 wikilink 樣式）。
+  // slug → 中文頁名（查無則回傳 null）；wikilink 按鈕優先顯示中文名，
+  // 冷讀者不需自己完成 slug ↔ 中文名的對映（2026-07-28 讀者 review）
+  function wikiPageName(id) {
+    const wdata = window.WIKI_DATA || {};
+    if (id === 'feature-radar') return '功能熱度雷達';
+    const hit = (wdata.entities || []).find(e => e.id === id) || (wdata.topics || []).find(t => t.id === id);
+    return (hit && hit.name) ? hit.name : null;
+  }
+
   function wikilinkButtonHtml(p, opts = {}) {
     // news/ links have no detail page — render as plain span
     if (p.startsWith('news/')) return `<span class="detail__wikilink">${esc(p)}</span>`;
@@ -743,7 +765,7 @@
       wiType = (wdata.topics || []).some(t => t.id === p) ? 'topic' : 'entity';
     }
     const safeId = wiId.replace(/\\/g, '\\\\').replace(/'/g, "\\'");
-    const label = opts.short ? p.split('/').pop() : p;
+    const label = wikiPageName(wiId) || (opts.short ? p.split('/').pop() : p);
     const cls = 'detail__wikilink detail__wikilink--link' + (opts.short ? ' detail__wikilink--short' : '');
     return `<button class="${cls}" onclick="openWikiPage('${safeId}','${wiType}')">${esc(label)}</button>`;
   }
@@ -1292,7 +1314,12 @@ ${trackerHtml}
     }
 
     if (!_searchCorpus) {
-      results.innerHTML = '<div class="search-empty">索引載入中，請稍候再試…</div>';
+      results.innerHTML = '<div class="search-empty">索引載入中…</div>';
+      // 補一次載入並在完成後重跑當前查詢，避免訊息永遠停在「載入中」
+      loadSearchCorpus().then(() => {
+        const cur = $('#search-input');
+        if (_searchCorpus && cur && cur.value.trim() === q.trim()) runSearch(q);
+      });
       return;
     }
 

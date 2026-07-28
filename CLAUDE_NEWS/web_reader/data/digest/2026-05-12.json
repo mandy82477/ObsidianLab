@@ -342,6 +342,6 @@
       "count": 15
     }
   ],
-  "preview": "Agent View in Claude Code",
+  "preview": "Claude Code v2.1.139 同時推出 Agent View 與 `/goal` 指令：前者提供統一面板管理所有並行 Agent 工作階段，後者讓 Claude 自動持續執行直到完成條件成立，是 Claude Code 邁向真正非同步工作流程的關鍵里程碑，值得所有重度用戶立即升級。",
   "sedimentedToday": []
 }

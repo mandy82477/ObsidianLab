@@ -2,9 +2,9 @@
 
 **狀態：** ongoing
 **領域：** 🌐 社群
-**更新頻率：** 🗓️ 週更（`/wiki-lint` 策展維護，每日 ingest 不更新此頁）
+**更新頻率：** 🗓️ 週更（每週策展一次；更新日期停留數天屬正常節奏）
 **開始日期：** 2026-04-25
-**最後更新：** 2026-07-26
+**最後更新：** 2026-07-28
 **最後新聞更新：** 2026-07-15
 
 > **最新工具動態**（2026-07-15；2026-07-26 lint 僅執行汰除，07-16～07-26 news 無新工具達門檻，見下方策展說明）
@@ -14,7 +14,7 @@
 
 ## 摘要
 
-追蹤 Claude Code 社群發布的工具、插件與 skill 專案。此頁為 lint 專用，由 /wiki-lint 定期策展；每日 ingest 不更新此頁。日常工作流模式見 [[topics/community-tech-patterns]]，概念辯論見 [[topics/community-tech-discussions]]。
+追蹤 Claude Code 社群發布的工具、插件與 skill 專案。本頁採每週策展：彙整近兩週日報中達收錄門檻的工具，並汰除長期無後續者，因此更新日期停留數天屬正常。日常工作流模式見 [[topics/community-tech-patterns]]，概念辯論見 [[topics/community-tech-discussions]]。
 
 官方功能見 [[feature-radar]]。
 

@@ -179,7 +179,7 @@
       ]
     },
     {
-      "title": "BUG] API Error: Connection closed mid-response ==> frequent enough to make Claude Code unusable for any task",
+      "title": "[BUG] API Error: Connection closed mid-response ==> frequent enough to make Claude Code unusable for any task",
       "url": "https://github.com/anthropics/claude-code/issues/69415",
       "source": "GitHub Issues / claude-code",
       "time": "07/25 14:01 UTC ·",
@@ -196,7 +196,7 @@
       ]
     },
     {
-      "title": "BUG] Claude Code frequently loses track of which directory it is in",
+      "title": "[BUG] Claude Code frequently loses track of which directory it is in",
       "url": "https://github.com/anthropics/claude-code/issues/1669",
       "source": "GitHub Issues / claude-code",
       "time": "07/25 22:07 UTC ·",
@@ -213,7 +213,7 @@
       ]
     },
     {
-      "title": "BUG] Claude Code Desktop fails to Relaunch on Windows due to orphaned process file lock",
+      "title": "[BUG] Claude Code Desktop fails to Relaunch on Windows due to orphaned process file lock",
       "url": "https://github.com/anthropics/claude-code/issues/42776",
       "source": "GitHub Issues / claude-code",
       "time": "07/25 18:30 UTC ·",
@@ -414,7 +414,7 @@
       "count": 12
     }
   ],
-  "preview": "Opus 5 錯誤率升高（已解決）",
+  "preview": "Anthropic 正式發布 Opus 5 並全平台上線，官方稱其在多項基準測試（含 agentic search）表現優於 Fable 5，成本僅約後者一半。",
   "sedimentedToday": [
     {
       "id": "claude-code",

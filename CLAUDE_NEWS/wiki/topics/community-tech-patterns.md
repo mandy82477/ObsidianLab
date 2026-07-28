@@ -7,7 +7,7 @@
 **最後新聞更新：** 2026-07-28
 
 > **最新工作流模式**（2026-07-28）
-> 今日新增三則：① dev.to「Too many Claude Code skills?」拆解 skills 清單載入的字元預算機制（單一 skill description+when_to_use 上限 1,536 字元，整體清單依 context window 1% 計算，超額會使既有 skill 悄悄失效且無錯誤訊息），補充「Skills 設計」類別的觸發邊界知識；② dev.to「session-indexer」以本地 SQLite 索引 Claude Code session transcript、語意檢索跨專案記憶（文章原始發布日 2026-07-04，本輪日報始收錄），補充「記憶與知識管理」類別；③ HN Show HN「Anyclaude-SDK」（score 4，source_count=2，達對照表中門檻「其他」欄），讓 Claude Code 風格 SDK 可接 OpenAI/Anthropic 端點，內容有限暫記觀察。其餘 Show HN 條目（AI Usage macOS 選單列 2 分、ITR-wala 報稅工具 2 分、Agentic Cloud Computer Telegram bot 2 分、ContextSpy 2 分、Agent Console 2 分已 flag、Relay 2 分已 flag、dont-kick-me-out 2 分已 dead、Brain Kit 1 分、llm-spend 1 分、Claudaholic 8 分、60 行 .env hook 6 分已 flag）分數遠低於中門檻，未收錄。07-26 官方指引對照與 07-23 既有模式仍為近期背景。
+> 今日新增三則：① dev.to「Too many Claude Code skills?」拆解 skills 清單載入的字元預算機制（單一 skill description+when_to_use 上限 1,536 字元，整體清單依 context window 1% 計算，超額會使既有 skill 悄悄失效且無錯誤訊息），補充「Skills 設計」類別的觸發邊界知識；② dev.to「session-indexer」以本地 SQLite 索引 Claude Code session transcript、語意檢索跨專案記憶（文章原始發布日 2026-07-04，本輪日報始收錄），補充「記憶與知識管理」類別；③ Show HN「Anyclaude-SDK」讓 Claude Code 風格 SDK 可接 OpenAI／Anthropic 端點（跨兩來源報導），內容有限暫記觀察。
 
 ---
 

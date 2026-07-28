@@ -95,6 +95,19 @@ SUMMARY_HEADERS = ["## 現況", "## 摘要"]
 VALID_DOMAINS = {"🤖 模型", "🛠️ 工具/功能", "👤 人物", "💼 商業", "🏛️ 政策/安全", "🌐 社群"}
 
 
+def readable_inline(text: str) -> str:
+    """把 wikilink / markdown link 轉為可讀文字，供列表 snippet 使用。
+
+    直接刪除 [[...]] 會留下「本頁從 的具體模式中」這種懸空斷句（2026-07-28
+    讀者 review 高影響項），故一律以顯示文字取代：
+    [[a|b]] → b；[[topics/x]] → x（取末段）；[text](url) → text。
+    """
+    text = re.sub(r'\[\[([^\]|]+)\|([^\]]+)\]\]', r'\2', text)
+    text = re.sub(r'\[\[([^\]]+)\]\]', lambda m: m.group(1).split('/')[-1], text)
+    text = re.sub(r'\[([^\]]+)\]\([^)]*\)', r'\1', text)
+    return text
+
+
 def latest_headline(raw: str) -> str:
     """Extract the most recent update headline from wiki markdown."""
     def clean_line(ls: str) -> str:
@@ -102,6 +115,7 @@ def latest_headline(raw: str) -> str:
         text = re.sub(r'^\*{0,2}\d{4}-\d{2}-\d{2}\*{0,2}\s*.?\s*', '', text)  # strip date (bold or plain) + any colon
         text = re.sub(r'^\*\*\[[^\]]*\]\*\*\s*', '', text)       # strip **[tag]**
         text = re.sub(r'\*{1,3}([^*\n]+)\*{1,3}', r'\1', text)  # strip bold/italic
+        text = readable_inline(text)
         return text.strip()[:160]
 
     # Pattern 1: ## 歷史記錄 — "- YYYY-MM-DD：text"
@@ -132,6 +146,7 @@ def latest_headline(raw: str) -> str:
             cols = [c.strip() for c in ls.strip('|').split('|')]
             if len(cols) >= 2 and re.match(r'\d{4}-\d{2}-\d{2}', cols[0]):
                 text = re.sub(r'\*{1,3}([^*\n]+)\*{1,3}', r'\1', cols[1]).strip()
+                text = readable_inline(text).strip()
                 if text:
                     return text[:160]
     # Pattern 4: ## 現況 — first non-empty content line (strip bold markers)
@@ -142,7 +157,7 @@ def latest_headline(raw: str) -> str:
             if not ls or ls.startswith('#') or ls.startswith('---') or ls.startswith('|'):
                 continue
             text = re.sub(r'\*{1,3}([^*\n]+)\*{1,3}', r'\1', ls).strip()
-            text = re.sub(r'\[\[.*?\]\]', '', text).strip()
+            text = readable_inline(text).strip()
             if text:
                 return text[:160]
     return ''
@@ -430,7 +445,7 @@ def parse_weekly(f: Path) -> dict:
         if not ls or ls.startswith("#") or ls.startswith(">") or ls.startswith("---"):
             continue
         preview = re.sub(r'\*{1,3}([^*\n]+)\*{1,3}', r'\1', ls)
-        preview = re.sub(r'\[\[.*?\]\]', '', preview).strip()[:160]
+        preview = readable_inline(preview).strip()[:160]
         if preview:
             break
 
@@ -591,8 +606,8 @@ def parse_wiki(f: Path, page_type: str) -> dict:
             elif line.strip():
                 summary_lines.append(line.strip())
 
-    # first 160 chars of summary
-    raw_summary = " ".join(summary_lines)
+    # first 160 chars of summary（wikilink 先轉可讀文字，避免截斷後懸空斷句）
+    raw_summary = readable_inline(" ".join(summary_lines))
     meta["summary"] = raw_summary[:160] + ("…" if len(raw_summary) > 160 else "")
     meta["latestHeadline"] = latest_headline(raw)
     meta["pill"] = pill_class(meta["status"])
@@ -737,7 +752,13 @@ def parse_digest(f: Path) -> dict:
             m = STORY_RE.search(line)
             if m:
                 flush_story()
-                current_story = {"title": m.group(1), "url": m.group(2),
+                title = m.group(1)
+                # 修復缺左括號的標題（如「BUG] xxx」）：日報產生時 LLM 偶爾把
+                # 標題自身的開頭方括號併入連結語法吞掉（**[BUG] t](url)**）。
+                # 判準：第一個 ] 之前沒有任何 [ → 補回開頭的 [。
+                if ']' in title and '[' not in title.split(']', 1)[0]:
+                    title = '[' + title
+                current_story = {"title": title, "url": m.group(2),
                                   "source": "", "time": "", "sentiment": "", "body": ""}
                 current_body = []
                 continue
@@ -770,8 +791,12 @@ def parse_digest(f: Path) -> dict:
                 if 1 <= n <= len(ref_list):
                     focus_item["ref_urls"].append(ref_list[n - 1])
 
-    # preview = first top story title
-    if result["topStories"]:
+    # preview：優先取「今日聚焦」第一條（編輯已判定當日最重要的事），
+    # 沒有聚焦才退回第一則重點話題標題——避免典藏頁用離題條目當當日門面
+    # （2026-07-28 讀者 review：07-22 曾以「space economy SIM in Rust」代表當日）。
+    if result["focus"]:
+        result["preview"] = result["focus"][0]["text"][:160]
+    elif result["topStories"]:
         result["preview"] = result["topStories"][0]["title"]
     elif result["techUpdates"]:
         result["preview"] = result["techUpdates"][0]["title"]

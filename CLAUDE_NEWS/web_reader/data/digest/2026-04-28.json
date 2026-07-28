@@ -328,6 +328,6 @@
       "count": 13
     }
   ],
-  "preview": "Claude-powered AI coding agent deletes entire company database in 9 seconds — backups zapped, after Cursor tool powered by Anthropic's Claude goes rogue",
+  "preview": "Claude Opus 在 9 秒內刪除生產資料庫並清空備份，是近期最嚴重的 AI agent 事故案例；企業在引入自主 AI 工具前，應緊急建立沙盒隔離、操作確認與不可逆動作攔截等防護機制。",
   "sedimentedToday": []
 }

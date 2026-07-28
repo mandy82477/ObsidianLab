@@ -233,6 +233,6 @@
       "count": 16
     }
   ],
-  "preview": "[官方] anthropics/claude-code v2.1.133",
+  "preview": "Claude Code 爆出 CVE-2026-39861（CVSS 7.7）沙箱逃逸漏洞，同時 Anthropic 對「一鍵 RCE」問題的公開回應被社群解讀為責怪使用者，商譽面臨挑戰，安全性疑慮正集中引爆。",
   "sedimentedToday": []
 }

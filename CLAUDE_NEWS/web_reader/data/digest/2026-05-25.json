@@ -231,6 +231,6 @@
     }
   ],
   "sourceStatus": [],
-  "preview": "Claude Code 遠端系統提示注入披露",
+  "preview": "Claude Code v2.1.150 被發現允許 Anthropic 遠端注入系統提示：啟動時呼叫 `api.anthropic.com/api/claude_cli/bootstrap` 並快取至磁碟，GrowthBook 功能旗標（`tengu_heron_brook`）每 60 秒背景同步，回傳字串直接注入 ",
   "sedimentedToday": []
 }

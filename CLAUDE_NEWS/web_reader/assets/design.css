@@ -442,6 +442,21 @@ code {
   font-weight: var(--fw-regular);
 }
 .focus-item:last-child { border-bottom: 0; }
+/* 今日聚焦下方的常駐導流：「該不該升版」→ 熱度雷達 */
+.focus-radar-cta {
+  margin-top: 4px; padding-top: 10px;
+  border-top: 1px solid var(--border-1);
+  font-family: var(--font-sans); font-size: 12px; color: var(--ink-3);
+  display: flex; align-items: baseline; gap: 8px; flex-wrap: wrap;
+}
+.focus-radar-cta__link {
+  background: transparent; border: none; padding: 0; cursor: pointer;
+  font-family: var(--font-sans); font-size: 12px;
+  color: var(--ochre-9); border-bottom: 1px solid var(--ochre-5);
+}
+.focus-radar-cta__link:hover { border-bottom-color: var(--ochre-9); }
+/* 非當日的最新日報：以相對天數取代 fresh 脈動點 */
+.digest-age { font-family: var(--font-mono); font-size: 12px; color: var(--ink-3); }
 .focus-tag {
   font-family: var(--font-mono); font-size: 11px; font-weight: var(--fw-medium);
   padding: 3px 8px; border-radius: var(--radius-2);
@@ -641,6 +656,15 @@ code {
   width: 1px; align-self: center; height: 14px;
   background: var(--border-2); flex-shrink: 0;
   margin: 0 6px;
+}
+/* 窄幅時 chips 改換行——「週更」在列尾，橫捲會讓它初始不可見（讀者 review） */
+@media (max-width: 640px) {
+  .domain-chips { flex-wrap: wrap; overflow-x: visible; }
+}
+/* 週更篩選啟用時的置頂說明行 */
+.kb-filter-note {
+  font-family: var(--font-sans); font-size: 12px; color: var(--ink-3);
+  padding: 10px 8px; border-bottom: 1px solid var(--border-1);
 }
 
 /* Pinned cards (radar + gap + comparison + commitments) — hairline editorial chips */
@@ -988,6 +1012,17 @@ code {
   font-weight: var(--fw-medium); color: var(--ink-1);
   letter-spacing: 0.01em;
 }
+/* 中文頁名為主、slug 為輔——與今日頁「WIKI 動態」的中文命名一致，
+   冷讀者不需自己做中英對映（2026-07-28 讀者 review） */
+.entity-row__zh {
+  display: block;
+  font-family: var(--font-sans); font-size: 14px;
+  font-weight: var(--fw-medium); color: var(--ink-1);
+  line-height: 1.4; margin-bottom: 2px;
+}
+.entity-row__name .entity-row__slug {
+  font-size: 11px; font-weight: var(--fw-regular); color: var(--ink-3);
+}
 /* 括號用 ::before/::after 生成，與 slug 文字同一個 inline 內容流，
    不會像獨立 <span> 那樣在換行時與文字斷開（見 web-reader-design.md 修復記錄）。
    長 slug 本身仍可正常換行，只是首尾括號永遠貼著首尾字。 */
@@ -999,6 +1034,8 @@ code {
 }
 .entity-row__name .entity-row__slug::before { content: "[["; }
 .entity-row__name .entity-row__slug::after  { content: "]]"; }
+.entity-row__name .entity-row__slug::before,
+.entity-row__name .entity-row__slug::after { font-size: 15px; }
 .entity-row__summary {
   font-family: var(--font-display); font-style: italic;
   font-size: 16px; font-weight: var(--fw-regular);
@@ -1207,6 +1244,11 @@ code {
   width: 100%; border-collapse: collapse;
   font-size: 14px; margin: 16px 0;
 }
+/* 窄幅時寬表格改在自身容器內橫捲，不得撐爆頁面 viewport
+   （2026-07-28 讀者 review：375px 下 feature-radar 表格把 layout viewport 撐到 1037px） */
+@media (max-width: 720px) {
+  .detail__body table { display: block; overflow-x: auto; max-width: 100%; }
+}
 .detail__body th {
   font-family: var(--font-mono);
   font-size: 10px; font-weight: var(--fw-medium);
@@ -1231,6 +1273,9 @@ code {
 }
 .detail__body tr:hover td { background: var(--bg-1); }
 .detail__body code { font-size: 13px; }
+/* code fence 不得撐爆窄幅 viewport：在自身容器內橫捲（同表格處理，讀者 review） */
+.detail__body pre { overflow-x: auto; max-width: 100%; }
+.detail__body pre code { display: block; min-width: 0; }
 .detail__body blockquote {
   border-left: 1px solid var(--ink-3);
   padding: 4px 18px;

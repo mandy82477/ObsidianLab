@@ -7,7 +7,10 @@
 **最後新聞更新：** 2026-07-28
 
 > **最新動態**（2026-07-28）
-> Anthropic 官方部落格宣布與 Cognizant 擴大既有合作：Cognizant 將把 Claude 用於自身建置並為客戶運行的系統，橫跨製造業、生命科學、保險等產業，並將 Claude 嵌入自身商業與工程平台、打造「Claude 認證」（Frontier Certified）人才梯隊，同步升級為 Claude Partner Network 的全球首要夥伴（Global Premier Partner），詳見「戰略合作」表新增列（Seeking Alpha 等財經媒體同日同步報導同一事件，未見新增細節）。同日 Axios 報導 Anthropic 市值已超越 Starbucks 與 McDonald's，反映近期 AI 熱潮下估值快速攀升，是本鏈條首次以「知名消費品牌市值」作為對照基準的估值敘事，詳見「IPO 前瞻與估值追蹤」表新增列（原文正文未能完整擷取，僅標題與導言可用）。著作權和解案新增讀者反應報導：NPR 報導作家群體對已核准的 15 億美元和解案反應不一，未見新增賠付金額或條款細節，詳見「財務狀況」表更新。07-26 已記錄之 SK 集團晶片供應洽談訊號仍為近期重點。
+> - **Cognizant 擴大合作**：官方部落格宣布 Cognizant 將把 Claude 用於自身及客戶系統（製造、生命科學、保險等），嵌入自身商業與工程平台並打造「Claude 認證」（Frontier Certified）人才梯隊，升級為 Claude Partner Network 全球首要夥伴（詳見「戰略合作」表）。
+> - **估值敘事**：Axios 報導 Anthropic 市值已超越 Starbucks 與 McDonald's——本鏈條首次以知名消費品牌市值作為對照基準（詳見「IPO 前瞻與估值追蹤」表）。
+> - **著作權和解**：NPR 報導作家群體對已核准的 15 億美元和解案反應不一，未見新增賠付金額或條款細節（詳見「財務狀況」表）。
+> - 07-26 已記錄之 SK 集團晶片供應洽談訊號仍為近期重點。
 
 ---
 

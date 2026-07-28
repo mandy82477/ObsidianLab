@@ -297,6 +297,6 @@
       "count": 16
     }
   ],
-  "preview": "Anthropic Moves Claude Code SDK and claude -p Out of Subscription Plans",
+  "preview": "Anthropic 宣布 6 月 15 日起將 Agent SDK 與 `claude -p` 用量從訂閱配額獨立拆分，建立月額信用池，社群負評逾六成，直接衝擊所有基於 Agent SDK 建構的第三方工具開發者。",
   "sedimentedToday": []
 }

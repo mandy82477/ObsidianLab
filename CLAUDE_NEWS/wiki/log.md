@@ -3202,3 +3202,12 @@ Append-only 紀錄。每次 ingest、lint，以及**揭露缺陷或促成改動�
 - 品質備註：
   - 因六記者並行執行、完成順序非同步，三則跨記者轉知在目標記者已交卷後才送達（安全政策提醒功能記者評估 gbhackers/EIN News 漏洞是否列入已知問題；商業提醒安全政策記者交叉確認 Nvidia/Microsoft 聯盟未見 Anthropic 一事；社群提醒模型記者評估 Simon Willison「AI 該用哪個」導覽文是否收錄 model-comparison）——三者皆屬低急迫性、資訊量有限的候選項目，主編判斷不值得為此另開一輪派工，留待下次 ingest 若有更多細節時自然浮現，非遺漏
   - 雲端 `wiki-reporter-*` 六個自訂 subagent_type 本次仍無法解析（Agent 工具可用清單未列出），全數以 general-purpose 內嵌規則降級執行，功能等同，詳見完成摘要
+
+## 2026-07-28 Query：讀者視角網站 review — 15 項閱讀友善修正一次落地
+
+- **點出什麼**：使用者派冷讀者 agent 以三種目標讀者動線 review 網站後要求全修。三條動線皆 3 跳可達，但高影響問題 4 項：列表摘要 wikilink 剝除斷句、ingest/lint 維運術語裸露給讀者、行動版詳頁寬表格/code fence 撐爆 viewport、「該不該升版」入口不可發現。
+- **根因**：(a) `build_web.py` 產 snippet 時把 `[[wikilink]]` 刪成空字串而非轉顯示文字；(b) wiki 頁 callout／標頭把編輯部維運語言（「每次 ingest 更新」「此頁為 lint 專用」「未收錄清單」）直接寫進讀者可見正文——違反 wiki-ingest-format.md 自己的「無 LLM 專屬指令」條款但該條款未涵蓋維運術語；(c) 日報 LLM 產出把 `[BUG]` 標題的開頭方括號併入連結語法吞掉。
+- **處置（網站端）**：`build_web.py` 新增 `readable_inline()`（wikilink/md link → 顯示文字，用於 latestHeadline/summary/preview 全部 snippet 路徑）＋ `[BUG]` 缺左括號自動修復＋典藏代表標題改取「今日聚焦」第一條；`app.js` wiki 列表改中文頁名為主/slug 為輔、詳頁 wikilink 按鈕顯示中文頁名、今日頁新增「該不該升版→熱度雷達」常駐導流、fresh 徽章隔日降級為相對天數、搜尋索引未載入時補載重跑、透明度區移除內部文件外鏈、沉澱 chip tooltip 改白話；`design.css` 窄幅表格/code fence 改容器內橫捲、375px chips 改換行（週更 chip 初始可見）、週更篩選置頂說明行；`index.html` 雷達卡副標補「升版風險判讀」、about 來源數 6→10 管道、wiki footer 改讀者語言。
+- **處置（內容端）**：feature-radar 三處「每次 ingest 更新」與兩處「下次 ingest 應…」改讀者語言；community-tech-patterns callout 改 delta-first（未收錄決策移出正文）；community-tech-tools／community-pattern-trends／overview 的更新頻率欄改讀者導向節奏說明；anthropic-business 巨型 callout 拆條列。
+- **防再犯**：`wiki-ingest-format.md` 新增「無維運術語洩漏」必修項＋「callout 寫發生了什麼、不寫收錄決策」規則＋更新頻率欄位範例改讀者語言（此欄會原樣上站）；`analyzer.py` prompt 新增方括號標題保留規則。
+- **驗證**：`run_tests.py` 144 綠（含 check_rules 28 組配對）；本機 preview 實測：snippet 無斷句、[BUG] 帶括號、375px 頁寬 385、wikilink 顯示中文名、週更篩選+說明行正常。

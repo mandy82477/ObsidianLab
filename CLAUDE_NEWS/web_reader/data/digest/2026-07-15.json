@@ -532,7 +532,7 @@
       "count": 11
     }
   ],
-  "preview": "Introducing Claude for Teachers",
+  "preview": "Claude Code OAuth 登入因 `auth.anthropic.com` 完全無法透過 DNS 解析而逾時失敗，該則 issue 累積 151 則留言，為本日互動量最高的條目。",
   "sedimentedToday": [
     {
       "id": "claude-science",

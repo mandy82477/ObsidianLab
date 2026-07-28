@@ -6,7 +6,7 @@
   "bulletin": "",
   "topStories": [
     {
-      "title": "Bloomberg] [Read the Lutnick Letter That Led Anthropic to Disable Mythos",
+      "title": "[Bloomberg] [Read the Lutnick Letter That Led Anthropic to Disable Mythos",
       "url": "https://www.bloomberg.com/news/articles/2026-06-16/read-the-lutnick-letter-that-led-anthropic-to-disable-mythos",
       "source": "Bloomberg",
       "time": "06/16 19:27",
@@ -15,7 +15,7 @@
       "focusTags": []
     },
     {
-      "title": "TechCrunch] [Anthropic's latest feud with the admin may help it, sales data suggests",
+      "title": "[TechCrunch] [Anthropic's latest feud with the admin may help it, sales data suggests",
       "url": "https://techcrunch.com/2026/06/16/anthropics-latest-feud-with-the-trump-admin-may-actually-help-it-sales-data-suggests/",
       "source": "Hacker News",
       "time": "06/17 00:43",
@@ -24,7 +24,7 @@
       "focusTags": []
     },
     {
-      "title": "9to5mac] [SpaceX Purchases Cursor, a Claude Code and OpenAI Codex Competitor",
+      "title": "[9to5mac] [SpaceX Purchases Cursor, a Claude Code and OpenAI Codex Competitor",
       "url": "https://9to5mac.com/2026/06/16/spacex-lands-deal-to-likely-purchase-claude-code-and-openai-codex-competitor/",
       "source": "Hacker News",
       "time": "06/16 15:45",
@@ -33,7 +33,7 @@
       "focusTags": []
     },
     {
-      "title": "CNBC] ['A signal of where power sits': Trump and world leaders joined by OpenAI, Anthropic, Google at G7",
+      "title": "[CNBC] ['A signal of where power sits': Trump and world leaders joined by OpenAI, Anthropic, Google at G7",
       "url": "https://news.google.com/rss/articles/CBMijgFBVV95cUxOZE9yRkF4ZWRCUXlTM3JoR0RKVDE4Q1VfS2xNdHBZODdUTjNrcF9OVVFlMXpvZHg5REFaYy1IdGxvSkhGTGlkcWU2WjNZWEY4N0VZZWdyNWtDMG5BN3RaamlfcXlEYzl0M1Npc1ZZN0dkYXphQzVrU1RGMFk3ZE92eGZsSkJVMDd3bUJMRUhB0gGTAUFVX3lxTE9QVktTTi1feHFDS21EU2ozTTV1UTdoNS1JdEVJMURhQWxjdVVudnVMZUplWGQ5N21Yd0ZfcFZsTE9JOWxNVWNnT3JlLXRkWTU5T2R2cFdaREgwUlg2MTd3TDJjTXctRVdJRVhsX1h3NHhTYldvUzFRZUh2RUR2THpKcmJndXl1c0hWNHZRblRFVG14UQ",
       "source": "Google News / CNBC",
       "time": "06/16 23:09",
@@ -42,7 +42,7 @@
       "focusTags": []
     },
     {
-      "title": "Wipro] [Wipro Advances Enterprise AI Leadership with an Applied AI Center of Excellence for Claude Models",
+      "title": "[Wipro] [Wipro Advances Enterprise AI Leadership with an Applied AI Center of Excellence for Claude Models",
       "url": "https://news.google.com/rss/articles/CBMi_wFBVV95cUxQdDNUdEJ5THNvSlk1ZHNhWUdUV2VId0VLT2hGSWsxcnIwYm13SkZvUmFzX1g2S1RobklSSmlQQ0R5S1lPdnhsY2ozZzdxZGQzQUNEOVdjNFdtMTRSTV9xV2w3d3NMeHJEVHFzbnBmcXNOX1dUeTQzN3MzQV9BeHNhYXZZajFuWUcyZ3NaczV1NkpsaGMtSHpaWVZBZ3l0NVphRmVpTEJRc013NGQxS2pxa1NiWm5UdnVRWlhVZDFJaUhEWlNvb3lWcWNnc3VKaXZDcWhwMmJldUVBVVQ3TVNfRnZDWXA0NEhramRLMTFoNTdaSEJ3Y1owZ0E2X1BkVmc",
       "source": "Google News / Wipro",
       "time": "06/16 17:58",
@@ -258,6 +258,6 @@
     }
   ],
   "sourceStatus": [],
-  "preview": "Bloomberg] [Read the Lutnick Letter That Led Anthropic to Disable Mythos",
+  "preview": "Fable 5 / Mythos 出口管制危機持續延燒：Trump 政府以國家安全為由，禁止所有境外使用者（含 G7 盟國）存取 Anthropic 最先進模型，Anthropic 被迫全面下架，與白宮談判破裂。",
   "sedimentedToday": []
 }

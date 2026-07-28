@@ -324,6 +324,6 @@
       "count": 20
     }
   ],
-  "preview": "Microsoft moves engineers from Claude Code to GitHub Copilot CLI",
+  "preview": "Claude Code 被揭露存在 RCE 安全漏洞，攻擊者可透過惡意 deeplink 執行任意指令，使用者應立即關注官方修補進度。",
   "sedimentedToday": []
 }

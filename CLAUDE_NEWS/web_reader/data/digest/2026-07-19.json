@@ -612,7 +612,7 @@
       "count": 12
     }
   ],
-  "preview": "Setting up your spare Mac for Claude Code to control, a step-by-step guide",
+  "preview": "Claude Code v2.1.215 發布：不再自動執行 `/verify` 與 `/code-review` 兩項技能，須由使用者手動呼叫指令觸發。",
   "sedimentedToday": [
     {
       "id": "claude-skills",

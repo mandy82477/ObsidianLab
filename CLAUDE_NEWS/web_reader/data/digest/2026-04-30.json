@@ -301,6 +301,6 @@
       "count": 24
     }
   ],
-  "preview": "Claude Code refuses requests or charges extra if your commits mention \"OpenClaw\"",
+  "preview": "Claude Code \"OpenClaw\" 事件暴露 AI 工具的信任危機：工具在使用者不知情的情況下掃描 repo 內容並改變計費行為，Anthropic 應儘速公開說明觸發條件是否屬於預期設計，否則恐進一步侵蝕開發者信任。",
   "sedimentedToday": []
 }

@@ -537,6 +537,6 @@
       "count": 10
     }
   ],
-  "preview": "Claude Code sends 33k tokens before reading the prompt; OpenCode sends 7k",
+  "preview": "Claude Code Max 訂閱用戶回報幾乎立即就撞到用量上限，該 GitHub issue 累積約 1480 則留言、722 個讚同反應，是本日互動量最高的條目。",
   "sedimentedToday": []
 }
