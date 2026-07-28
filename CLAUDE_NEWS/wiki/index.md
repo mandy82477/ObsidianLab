@@ -2,10 +2,12 @@
 
 LLM 查詢此 wiki 時，**先讀這個檔案**找相關頁面，再讀具體頁面取得詳細資訊。
 
-**最後更新：** 2026-07-26
+**最後更新：** 2026-07-28
 ---
 
 ## 近期異動
+
+- **2026-07-28 Ingest**：**Dario Amodei 公開澄清開源權重立場為今日主軸**——部落格聲明「Our position on open-weights models」（HN 972 分，本日全站互動最高）澄清 Anthropic 從未主張禁止開源權重模型，呼籲加強對中國晶片出口管制，Axios／TechCrunch／Politico／Benzinga／Computerworld／Yahoo Tech 六家媒體同步跟進，記入 [[topics/anthropic-government-policy]] 與 [[entities/dario-amodei]]；同日跨最多獨立媒體來源的隱私事件——Claude「分享對話」外流至 Google 搜尋結果、部分含 API 金鑰與個資（BBC/IBT/Axios/Fortune/Futurism/Mashable/PCMag/Notebookcheck 8+ 家媒體），記入 [[topics/ai-agent-safety]]；另有 gbhackers.com 揭露 Claude Code symlink 瑕疵、EIN News 稱 Phoenix Security 發現關鍵漏洞（皆標「待查證」）。商業面：Anthropic 宣布擴大與 Cognizant 合作（製造/生命科學/保險產業導入 Claude），記入 [[topics/anthropic-business]] 與 [[topics/enterprise-tool-tracker]]；Axios 報導市值超越 Starbucks/McDonald's；Moonshot AI 開源 Kimi-K3 權重、Nvidia/Microsoft 開放 AI 安全聯盟未見 Anthropic，記入 [[topics/competitor-landscape]]。功能面：[[entities/claude-code]] 新增/更新 5 條 GitHub Issues 已知問題（多帳號 connector 請求 452 讚居首、hanging/freezing 149 讚）、Anthropic Status 記錄 Opus 5/Haiku 4.5 錯誤率升高事件（已解決）。人物面：Business Insider 報導 Boris Cherny 呼籲使用者停止微管理 AI，記入 [[entities/boris-cherny]]。社群面：[[topics/community-tech-patterns]]／[[topics/community-tech-discussions]] 新增 7 則達門檻條目（skill 清單字元預算機制、session-indexer 記憶工具等第一手 dev.to 實作優先收錄）。**雲端記者降級執行**：6 個 `wiki-reporter-*` 自訂 subagent_type 於本環境無法解析（Agent 工具可用清單中未列出），全數改用 general-purpose 內嵌規則執行，功能等同原生記者。呈現品質：功能／人物記者各修復 1 處「現況不被時序侵蝕」違規（claude-code.md、dario-amodei.md 現況段落超過 2 段上限）；其餘頁面呈現品質全數通過。詳見 [[log]]
 
 - **2026-07-26 週度 Lint**：修正 2 處矛盾（`model-comparison` Opus 5 定價「官方文件確認 $5/$25」與 `pricing` 的「讀者端推算、非官方逐字確認」不一致，以較嚴謹者為準改寫 5 處；`opus-5` 發布日 07-24/07-25 落差經查為官方 RSS 時間戳 vs 日報收錄日，已補說明）；2 頁狀態降級（[[topics/safety-china-trust-dispute]]、[[topics/anthropic-commitments]] ongoing→monitoring，核心敘事 07-10 後 16 天無新進展）；9 頁呈現品質修復＋4 頁人物日期同步；5 頁 > 500 行入口層健檢全數通過不拆分；11 處逾期「待查證」改註「至今無後續」；`community-tech-tools.md` 新增 0 筆（Show HN 互動普遍未達門檻）／汰除 12 筆逾期條目／清理 2 列痛點洞察失效引用；`community-pattern-trends.md` 無新趨勢節點依規則未動頁；[[overview]] 全文改寫反映 07-18~07-26 局勢（Opus 5 陣容重排、官方 context engineering 80% 縮減 vs Opus 5 硬編碼限制的張力、Fable 5 促銷 07-19 到期、$1.5B 和解案進入執行、出口管制立場對立）。**ref 覆蓋率 97%**——本輪發現 6g 量測 grep 模式因日報 07-25 改用 `[N]` 註腳而靜默失效（照舊 grep 會誤報 71%）；讀者模擬 3 題中 2 題已修復（Opus 5 硬編碼限制未進選型表、官方 context engineering 指引未進 patterns 入口）。lint 自我遵守率 6/6 一次過。留 6 項待使用者確認（新實體候選、6g grep 修正、來源健康第 4 週、規則年齡 5 項、6c 過時列、patterns 審查）詳見 [[log]]
 

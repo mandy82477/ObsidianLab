@@ -3191,3 +3191,14 @@ Append-only 紀錄。每次 ingest、lint，以及**揭露缺陷或促成改動�
   4. `.claude/review-registry.json` +2 sync_pair（→28 組），兩組均通過反向測試（破壞措辭→❌ exit 1→還原→✅）。
 - **驗證**：`check_rules.py` 零 ❌、`run_tests.py` exit 0。
 - **記錄但不動**：(a) 兩 trigger 掛著 Spotify/Notion MCP connections，headless 執行不需要但無失敗證據，暫不動 trigger；(b) 六記者並行派工仍是 07-25 死因首要假說，但依「本機雲端行為一致」規約不改派工方式，改靠 STARTED 標記讓下次卡死可診斷。
+
+## 2026-07-28 Ingest
+
+- 來源日報：[[news/2026-07-28]]
+- 更新頁面：`entities/claude-code`、`entities/boris-cherny`、`entities/dario-amodei`、`entities/opus-5`、`topics/anthropic-business`、`topics/anthropic-government-policy`、`topics/ai-agent-safety`、`topics/competitor-landscape`、`topics/enterprise-tool-tracker`、`topics/community-tech-patterns`、`topics/community-tech-discussions`、`topics/model-comparison`
+- 新增頁面：無
+- 摘要：Dario Amodei 公開澄清 Anthropic 從未主張禁止開源權重模型、呼籲加強中國晶片管制（HN 972 分＋6 家媒體跟進）與 Claude 分享對話外流至 Google 搜尋結果的隱私事件（8+ 家媒體），為今日兩大主軸；另有 Cognizant 企業合作擴大、Moonshot Kimi-K3 開源、多則 Claude Code 已知問題與 Boris Cherny 公開言論。
+- 呈現品質：功能／人物記者各修復 1 處「現況不被時序侵蝕」違規（`claude-code.md`、`dario-amodei.md`），其餘全數通過
+- 品質備註：
+  - 因六記者並行執行、完成順序非同步，三則跨記者轉知在目標記者已交卷後才送達（安全政策提醒功能記者評估 gbhackers/EIN News 漏洞是否列入已知問題；商業提醒安全政策記者交叉確認 Nvidia/Microsoft 聯盟未見 Anthropic 一事；社群提醒模型記者評估 Simon Willison「AI 該用哪個」導覽文是否收錄 model-comparison）——三者皆屬低急迫性、資訊量有限的候選項目，主編判斷不值得為此另開一輪派工，留待下次 ingest 若有更多細節時自然浮現，非遺漏
+  - 雲端 `wiki-reporter-*` 六個自訂 subagent_type 本次仍無法解析（Agent 工具可用清單未列出），全數以 general-purpose 內嵌規則降級執行，功能等同，詳見完成摘要
