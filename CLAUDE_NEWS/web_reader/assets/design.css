@@ -636,6 +636,12 @@ code {
 .domain-chip--active:hover { color: var(--ochre-9); border-bottom-color: var(--ochre-9); }
 .domain-chip svg { opacity: 0.7; flex-shrink: 0; transition: opacity 0.15s; }
 .domain-chip--active svg { opacity: 1; }
+/* 週更 cadence filter sits after a hairline divider — it filters by 更新頻率, not 領域 */
+.domain-chips__divider {
+  width: 1px; align-self: center; height: 14px;
+  background: var(--border-2); flex-shrink: 0;
+  margin: 0 6px;
+}
 
 /* Pinned cards (radar + gap + comparison + commitments) — hairline editorial chips */
 .pinned-cards { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin-bottom: 8px; }

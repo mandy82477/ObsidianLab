@@ -458,7 +458,9 @@
     if (!all.length) return;
     const _d = new Date(); const today = `${_d.getFullYear()}-${String(_d.getMonth()+1).padStart(2,'0')}-${String(_d.getDate()).padStart(2,'0')}`;
     const sorted = sortItems(all, kbSort.key, kbSort.dir);
-    const filtered = activeDomain === 'all' ? sorted : sorted.filter(i => i.domain === activeDomain);
+    const filtered = activeDomain === 'all' ? sorted
+      : activeDomain === 'weekly' ? sorted.filter(i => !!i.updateFreq)
+      : sorted.filter(i => i.domain === activeDomain);
     container.innerHTML = filtered.map(item => {
       const kbType = kbTypeOf(item);
       const isWeeklyCadence = !!item.updateFreq;
