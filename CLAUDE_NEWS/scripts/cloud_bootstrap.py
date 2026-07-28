@@ -134,13 +134,45 @@ def ensure_sgmllib() -> None:
     print(f"✅ sgmllib：已放入 {site_dir / 'sgmllib.py'}")
 
 
+def ensure_feedparser_vendored_sgmllib() -> None:
+    """feedparser 6.0.13 起 `feedparser/sgml.py` 改為 `import feedparser.sgmllib`
+    （要求套件**內部**有 `feedparser/sgmllib.py`），與頂層 `sgmllib` 是兩個不同
+    路徑——只補頂層的舊修法對新版失效（2026-07-28 雲端復現，見
+    docs/workaround-register.md）。此函式把同一份 sgmllib.py 複製進 feedparser
+    套件目錄，兩個路徑都補齊；舊版 feedparser 只認頂層路徑，多出的套件內副本
+    不會被 import，無副作用。"""
+    if not _have("feedparser"):
+        return  # feedparser 本身沒裝好，上面已警告過，這裡不重複
+    if _have("feedparser.sgmllib"):
+        print("✅ feedparser.sgmllib：已存在，跳過")
+        return
+
+    try:
+        spec = importlib.util.find_spec("feedparser")
+        pkg_dirs = list(spec.submodule_search_locations or []) if spec else []
+    except (ImportError, ValueError):
+        pkg_dirs = []
+    site = sysconfig.get_paths().get("purelib")
+    src = Path(site) / "sgmllib.py" if site else None
+    if not pkg_dirs or not src or not src.exists():
+        print("⚠️ feedparser.sgmllib：找不到 feedparser 套件目錄或頂層 sgmllib.py，跳過")
+        return
+    try:
+        dest = Path(pkg_dirs[0]) / "sgmllib.py"
+        dest.write_bytes(src.read_bytes())
+        print(f"✅ feedparser.sgmllib：已複製至 {dest}")
+    except Exception as e:
+        print(f"⚠️ feedparser.sgmllib：複製失敗（{e}）")
+
+
 def main() -> int:
     _use_utf8_stdout()
     print("=== 雲端環境自備補丁（冪等；本機通常全部跳過）===")
     ensure_pip_packages()
     ensure_sgmllib()
+    ensure_feedparser_vendored_sgmllib()
     ok = all(_have(m) for m, _ in PIP_PACKAGES) and _have("sgmllib")
-    print("=== 結果：" + ("三個依賴皆就緒" if ok else "仍有依賴缺失，後續步驟可能失敗（見上方警告）") + " ===")
+    print("=== 結果：" + ("依賴皆就緒" if ok else "仍有依賴缺失，後續步驟可能失敗（見上方警告）") + " ===")
     return 0  # 恆為 0：輔助腳本不該擋掉 pipeline
 
 
