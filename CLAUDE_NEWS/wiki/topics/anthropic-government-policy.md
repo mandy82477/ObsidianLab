@@ -3,11 +3,11 @@
 **狀態：** monitoring（出口管制主線已解除，剩餘承諾落實與衍生支線持續觀察；中美 AI 工具信任對峙已獨立成頁）
 **領域：** 🏛️ 政策/安全
 **開始日期：** 2026-05-01
-**最後更新：** 2026-07-26
-**最後新聞更新：** 2026-07-26
+**最後更新：** 2026-07-28
+**最後新聞更新：** 2026-07-28
 
-> **最新動態**（2026-07-26）
-> Forbes（07-25）與 India Today（07-26）為 07-23「The Information：矽谷業界聯合反對 Anthropic 對中限制立場」提供具名細節：Nvidia 發起的開放權重（open weights）連署簽署企業已擴大至 50 家，但 Amazon 與 Anthropic 明確未加入；India Today 進一步將此定性為「矽谷分裂——Nvidia 等陣營主張對中國模型開放存取，Anthropic 則持續推動限制/禁令」。兩則報導首度將先前僅具標題的「業界反彈」訊號具體化為可辨識的陣營與規模（50 家 vs. 缺席的 Amazon/Anthropic），強化「矽谷產業對 Anthropic 對中 AI 限制立場的反彈」支線；具體連署名單、Anthropic 官方回應仍未見報導。出口管制主線本身已於 07-01 落幕（詳見「## 摘要」）；中美 AI 工具信任對峙已於 2026-07-12 整合拆出至獨立頁 [[topics/safety-china-trust-dispute]]；07-13～07-22 Mythos 跨界表態完整綜合敘事見「🚫 出口管制」戰場段落。
+> **最新動態**（2026-07-28）
+> Anthropic CEO Dario Amodei 於官方部落格發表「Our position on open-weights models」（2026-07-27 22:03 UTC，經 Hacker News 轉載達 972 分，本日全站互動最高，src_count=2），首度正面回應 07-23～07-26 延燒的「矽谷業界反彈」與「Nvidia 50 家開放權重連署缺席 Anthropic」爭議：Amodei 明確聲明 Anthropic 從未主張禁止開源權重模型，無危險能力的開源模型屬公共財（原文摘要於此處中斷，完整論述細節待查證）。Axios、TechCrunch、Politico 等媒體同日跟進，核心共識為 Amodei 反對禁止開源權重模型，但呼籲加強對中國的晶片出口管制與安全測試；Yahoo Tech 報導指出 Anthropic 因此立場仍受業界批評，被視為「唯一不支持開源模型的主要 AI 實驗室」。出口管制主線本身已於 07-01 落幕（詳見「## 摘要」）；中美 AI 工具信任對峙已於 2026-07-12 整合拆出至獨立頁 [[topics/safety-china-trust-dispute]]；07-13～07-22 Mythos 跨界表態完整綜合敘事見「🚫 出口管制」戰場段落。
 
 ---
 
@@ -42,7 +42,7 @@
 | Anthropic 政治獻金布局 | Politico（07-16，僅標題可用）：Dario Amodei 個人捐款 100 萬美元予某 super PAC；SFGATE（07-17，僅標題可用）：Anthropic 員工另捐款 300 萬美元支持 AI 安全相關法規推動；**07-22 官方確認**：Anthropic 部落格宣布再捐 2000 萬美元予無黨派組織 Public First Action（累計達 4000 萬美元，首筆 02 月），聲明明確排除候選人選舉用途；同日 WSJ／The Hill／Axios 以「期中選舉支出翻倍至 4000 萬美元推動 AI 監管」「遊說支出攀升」框架報導，與官方「非選舉用途」聲明形成敘事張力；三筆捐款/支出彼此是否構成同一資金脈絡待確認 | 三筆捐款/支出是否流向同一組織或政策倡議；WSJ「4000 萬美元」框架是否涵蓋 Dario 個人與員工捐款、或僅指 Public First Action 一項；是否與州級 AI 規則倡議（07-15）構成一致的政治佈局；是否有對立陣營公開回應；人物面向詳見 [[entities/dario-amodei]] |
 | Pax Silica 政策架構與中美 AI 領先地位論戰 | 南華早報獨家專訪「Pax Silica」政策架構主要推手（姓名待確認），主張美國仍可維持 AI 領先地位，為既有「出口管制反效」論述（Bloomberg 06-26）提供首個正面反駁（2026-07-16，僅單一媒體專訪，待第三方確認） | Pax Silica 政策架構具體內容與推手身分；此論述是否獲其他政策圈人士呼應或反駁 |
 | Moonshot 蒸餾指控與財政部制裁威脅 | 白宮官員指控中國 Moonshot AI 從 Fable「蒸餾」竊取技術，財政部揚言祭出制裁；TechCrunch、南華早報（07-22）兩則標題式報導後，BBC（07-23，source_count=2，另一媒體同步報導同一消息）確認並補足，消息來源具體化為「川普科技顧問」（姓名未指明），制裁對象、範圍、法源依據仍均未見報導 | Moonshot 是否回應；財政部是否公布具體制裁措施；「川普科技顧問」具體身分；是否與 06-10 阿里巴巴蒸餾指控構成同一政策脈絡或屬獨立案件；模型面詳見 [[entities/fable-5]] |
-| 矽谷產業對 Anthropic 對中 AI 限制立場的反彈 | The Information（07-23，僅標題可用）首見報導矽谷業界聯合反對 Anthropic 對中國 AI 限制立場；Forbes（07-25）與 India Today（07-26）補足具名細節：Nvidia 發起的開放權重連署已擴大至 50 家企業，Amazon 與 Anthropic 明確未加入，India Today 將此定性為「矽谷分裂——Nvidia 陣營主張開放存取，Anthropic 推動限制」 | Anthropic 官方是否回應被點名缺席；50 家連署企業完整名單；此陣營對立是否影響 Anthropic 州級/聯邦遊說策略或蒸餾指控論述 |
+| 矽谷產業對 Anthropic 對中 AI 限制立場的反彈 | The Information（07-23，僅標題可用）首見報導矽谷業界聯合反對 Anthropic 對中國 AI 限制立場；Forbes（07-25）與 India Today（07-26）補足具名細節：Nvidia 發起的開放權重連署已擴大至 50 家企業，Amazon 與 Anthropic 明確未加入，India Today 將此定性為「矽谷分裂——Nvidia 陣營主張開放存取，Anthropic 推動限制」；**07-28 新增：** Anthropic CEO Dario Amodei 部落格文章「Our position on open-weights models」（HN 972 分）首度正面回應，明確聲明從未主張禁止開源權重模型，但呼籲加強對中國晶片出口管制與安全測試；Axios/TechCrunch/Politico 等媒體跟進，Yahoo Tech 稱 Anthropic 因此仍被批評為「唯一不支持開源模型的主要 AI 實驗室」 | Anthropic 官方聲明是否平息業界反彈或反而使孤立位置更具體化；50 家連署企業完整名單；Nvidia 陣營是否對 Amodei 聲明再表態；此陣營對立是否影響 Anthropic 州級/聯邦遊說策略或蒸餾指控論述 |
 | 中國 AI 實驗室據稱透過 Claude Code 外洩內容縮小差距（新增，待查證） | digitimes（經 Google News 轉載，僅標題可用）報導中國 AI 實驗室透過 Claude Code 相關外洩內容縮小與 Anthropic 的技術差距；外洩內容性質（原始碼／使用紀錄／其他）、涉及哪些實驗室、外洩機制均未見報導，用詞保守處理（2026-07-23） | 外洩內容具體性質與來源；涉及哪些中國 AI 實驗室；是否與既有蒸餾指控（阿里巴巴、Moonshot）構成同一脈絡；技術/安全面待 [[topics/ai-agent-safety]] 補充查證 |
 
 ---
@@ -103,6 +103,8 @@ Fable 5 發布後，Amazon 安全研究人員發現特定提示詞可讓模型�
 
 **2026-07-23，BBC 確認並具體化消息來源：** BBC（source_count=2，另一媒體同步報導同一消息）就上述 Moonshot 蒸餾指控補充報導，將消息來源具體化為「川普科技顧問」（Trump tech adviser，姓名未指明），而非 07-22 報導的泛稱「白宮官員」；兩獨立媒體確認同一指控存在，但顧問具體身分、財政部制裁進展仍待查證。同日，The Information（經 Google News 轉載，僅標題可用）報導矽谷科技業界聯合反對 Anthropic 對中國 AI 的限制立場——為出口管制主線於 07-01 落幕後，首見「業界」（而非政府或媒體）層級對 Anthropic 對中鷹派立場的集體反彈訊號；具體反對名單、訴求焦點（鎖定出口管制、蒸餾指控或整體對中立場）與後續行動均未見報導，待查證。另有 digitimes（經 Google News 轉載，僅標題可用）報導中國 AI 實驗室透過 Claude Code 相關外洩內容縮小與 Anthropic 的技術差距；此說法若屬實將呼應既有「中國追趕」敘事（WSJ 06-28、Bloomberg 06-26），但「外洩」的具體性質、機制與涉及實驗室均未見報導，用詞保守處理，暫不併入蒸餾指控（阿里巴巴、Moonshot）脈絡，技術安全面待查證見 [[topics/ai-agent-safety]]。
 
+**2026-07-27～07-28，Amodei 公開回應「業界反彈」爭議：** 針對 07-23 The Information 首見的「矽谷業界反彈」與 07-25～07-26 Forbes／India Today 具體化的「Nvidia 50 家開放權重連署、Amazon 與 Anthropic 缺席」爭議，Anthropic CEO Dario Amodei 於官方部落格發表「Our position on open-weights models」（2026-07-27 22:03 UTC；https://www.anthropic.com/news/position-open-weights-models），經 Hacker News 轉載達 972 分（本日全站互動最高，src_count=2）。Amodei 明確聲明 Anthropic 從未主張禁止開源權重模型，並表示沒有危險能力的開源權重模型屬公共財（原文摘要於此處中斷，完整論述細節待查證，不可推測補完）。Axios、TechCrunch、Politico、Benzinga、Computerworld、Yahoo Tech 等媒體同步跟進，核心共識為：Amodei 反對禁止開源權重模型，但呼籲加強對中國的晶片出口管制與安全測試（TechCrunch 標題為「doesn't oppose open-weight models, but fears Chinese AI」；Politico 標題為「Don't ban cheap AI — but clamp down on China」）。Yahoo Tech 則指出 Anthropic 因此立場仍受業界批評，被視為「唯一不支持開源模型的主要 AI 實驗室」，顯示聲明並未完全化解「矽谷分裂」敘事，反而使 Anthropic 的孤立位置更加具體化。此為出口管制主線落幕後，Anthropic 首次就開放權重/中國模型議題做出正面、具名的官方回應；Amodei 個人聲明性質，建議另見人物頁 [[entities/dario-amodei]]（待人物記者補充）。
+
 ### 🌍 策略選擇：Anthropic 換戰場而非退讓
 
 面對政府市場持續碰壁，Anthropic 選擇強化其他方向而非妥協：
@@ -127,6 +129,8 @@ Fable 5 發布後，Amazon 安全研究人員發現特定提示詞可讓模型�
 
 | 日期 | 方 | 動作 | 效果 |
 |------|----|------|------|
+| 2026-07-28 | 🏢 | Anthropic 官方部落格：Dario Amodei 發表「Our position on open-weights models」，明確否認曾主張禁止開源權重模型（Anthropic Blog／Hacker News，972 分，本日全站互動最高，src_count=2） | 首度正面回應 07-23～07-26 延燒的「Nvidia 開放權重連署缺席」爭議；Amodei 主張無危險能力的開源模型屬公共財，但呼籲加強對中國晶片出口管制與安全測試；立場從「未表態」轉為「公開澄清＋提出替代訴求」 |
+| 2026-07-28 | 🌐 | Axios／TechCrunch／Politico／Benzinga／Computerworld／Yahoo Tech 等多家媒體跟進 Amodei「Our position on open-weights models」聲明，聚焦「不支持開源禁令但主張抑制中國」框架 | Yahoo Tech 特別指出 Anthropic 因此立場受業界批評，被視為「唯一不支持開源模型的主要 AI 實驗室」；顯示聲明未完全平息「矽谷分裂」敘事，反而具體化 Anthropic 的孤立位置 |
 | 2026-07-26 | 🌐 | India Today：矽谷對中國 AI 模型立場分裂，Nvidia 等主張開放存取，Anthropic 推動禁令 | 將 07-23 The Information「業界反彈」與 07-25 Forbes「連署缺席」訊號整合定性為陣營對立框架；Anthropic 官方尚無回應，待查證 |
 | 2026-07-25 | 🌐 | Forbes：Nvidia 開放權重連署擴大至 50 家企業，Amazon 與 Anthropic 未加入 | 首次具名量化「業界反彈」規模（50 家），並明確點名 Amazon、Anthropic 缺席；連署完整名單與 Anthropic 是否回應待查證 |
 | 2026-07-23 | 🏛️🌐 | BBC（source_count=2，另一媒體同步報導）：白宮「川普科技顧問」指控中國 Moonshot AI 從 Anthropic 竊取技術，確認並補足 07-22 TechCrunch/南華早報標題式報導 | 兩獨立媒體確認同一指控，消息來源具體化為「川普科技顧問」（姓名未指明），而非泛稱「白宮官員」；顧問具體身分、財政部制裁進展仍待查證 |
@@ -231,6 +235,8 @@ Fable 5 發布後，Amazon 安全研究人員發現特定提示詞可讓模型�
 
 ## 參考來源
 
+- [[news/2026-07-28]]
+- [[news/2026-07-27]]
 - [[news/2026-07-26]]
 - [[news/2026-07-24]]
 - [[news/2026-07-23]]
@@ -260,6 +266,10 @@ Fable 5 發布後，Amazon 安全研究人員發現特定提示詞可讓模型�
 - [Chris Olah Vatican Remarks](https://www.anthropic.com/news/chris-olah-pope-leo-encyclical) — Anthropic Blog
 
 ## 時序
+
+### 2026-07-27～07-28
+- **[官方澄清] Anthropic Blog／HN 972 分：Dario Amodei「Our position on open-weights models」**：Amodei 官方部落格文章明確聲明 Anthropic 從未主張禁止開源權重模型，無危險能力的開源模型屬公共財（原文摘要中斷，細節待查證）；經 Hacker News 轉載達 972 分，為本日全站互動最高條目（src_count=2）（Anthropic Blog／Hacker News，2026-07-27 22:03 UTC；https://www.anthropic.com/news/position-open-weights-models）
+- **[媒體跟進] Axios／TechCrunch／Politico／Benzinga／Computerworld／Yahoo Tech 跟進報導**：多家媒體同步報導 Amodei 聲明，核心共識為反對禁止開源權重模型但呼籲加強對中國晶片出口管制與安全測試；Yahoo Tech 指出 Anthropic 因此仍受業界批評，為「唯一不支持開源模型的主要 AI 實驗室」（Axios，2026-07-28 10:05；TechCrunch，2026-07-28 00:13；Politico，2026-07-28 01:07；Benzinga，2026-07-28 10:04；Computerworld，2026-07-28 11:15；Yahoo Tech，2026-07-27 12:54）
 
 ### 2026-07-26
 - **[待查證] India Today：矽谷對中國 AI 模型立場分裂，Nvidia 主張開放存取、Anthropic 推動禁令**：India Today 報導矽谷科技業對中國 AI 模型的態度出現分裂——Nvidia 等公司傾向開放存取，Anthropic 則持續推動限制/禁令；延續並定性 07-23 The Information「業界反彈」訊號與 07-25 Forbes「連署缺席」報導，Anthropic 官方尚無回應（Google News/India Today，2026-07-26 06:48 UTC）

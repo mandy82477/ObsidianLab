@@ -3,11 +3,11 @@
 **狀態：** monitoring
 **領域：** 💼 商業
 **開始日期：** 2026-04
-**最後更新：** 2026-07-26
-**最後新聞更新：** 2026-07-26
+**最後更新：** 2026-07-28
+**最後新聞更新：** 2026-07-28
 
-> **最新競品動態**（2026-07-26）
-> 開放權重陣營對立公開化：Benzinga 報導白宮 AI 政策顧問 David Sacks 公開批評 Anthropic 在開源生態議題上的立場，稱其恐「刺穿美國整個開源生態系的心臟」；與 07-25 已記錄之 Forbes 報導（Nvidia 開放權重連署擴大至 50 家企業，但不含 Amazon 與 Anthropic）、同日 India Today 報導（Nvidia 等傾向開放存取、Anthropic 推動對中國模型限制）共同構成「Anthropic vs 開放權重陣營」對立敘事首次由具名重量級人士公開點名批評的事件，詳見下方「時序」（政策/出口管制角度另見 [[topics/anthropic-government-policy]]）。07-25 已記錄事項：SitePoint《Codex 5.3 Production Workflow》比較文、07-24 Antigravity vs Cursor vs Claude Code 定價比較（tech-insider.org）、07-21/22 戰略層級動態（Emerging Trajectories 分析 Kimi K3/Qwen 3.8 對 Anthropic 構成重大威脅；中國 AI agent 於自主研究任務據稱超越 Claude Code；Claude 曾自稱為 Alibaba Qwen AI 引發蒸餾雙標批評）仍為本頁近期最重大訊號，未見進一步後續報導。
+> **最新競品動態**（2026-07-28）
+> 開源陣營壓力再添具體進展：Moonshot AI 於 07-27 正式開源 Kimi-K3 權重（Tom's Hardware；Simon Willison 部落格），宣稱效能接近前沿模型，運算成本僅前沿模型 **2–3 分之一**；延續本頁已追蹤之 Kimi K3 系列威脅敘事（07-18 官方規格揭露 2.8 兆參數；07-21 Emerging Trajectories 戰略威脅分析），本次為「權重公開釋出」的具體後續進展，被視為對 OpenAI 與 Anthropic 開源模型立場的又一波壓力，詳見「主要競品追蹤」Moonshot AI 子區塊與下方「時序」。同日 The Verge 報導 Nvidia 與 Microsoft 發起新的開放 AI 安全聯盟，OpenAI、Google、Anthropic 均未列名參與，具體未參與原因報導中未說明，詳見下方「時序」。07-26 已記錄之 David Sacks 公開批評 Anthropic 開源生態立場等事件仍為近期重大訊號。
 
 ---
 
@@ -134,8 +134,9 @@ Claude Code 已成為 AI 輔助編碼的標竿產品，但競爭正快速升溫�
 - **策略**：以開源路線滲透出口管制無法觸及的市場，類似 DeepSeek 以「免費壁壘」繞開競爭管制；2026-07-06 更進一步推出免費 IDE/CLI 工具 ZCode，正面對標 Cursor 與 Claude Code 的產品層，而非僅停留在底層模型競爭
 - **意義**：管制空窗期是中國廠商能力追趕的加速器；Anthropic 若無法有效解封中國及受管制市場，Zhipu 等廠商受惠；ZCode 以「免費」直接衝擊 Claude Code 的訂閱/API 雙軌計費模式，對價格敏感的個人開發者與新創構成潛在分流壓力（推論）（CNBC https://www.cnbc.com/2026/06/26/china-zhipu-z-ai-open-source-anthropic-openai.html；Techzine Global https://www.techzine.eu/news/devops/142702/z-ai-takes-on-cursor-and-claude-code-with-free-zcode/）
 
-### Moonshot AI 🔴（Kimi K3 正式發布，2026-07-16/17；官方規格揭露 07-18）
-- **狀態**：Active——07-16 Financial Times 首報「即將發布」，07-17 CNBC、TechCrunch、FT 確認正式發布 **Kimi K3**（官方部落格自稱該公司「最強模型」），07-18 官方一手技術規格經 Simon Willison 引述完整揭露
+### Moonshot AI 🔴（Kimi K3 正式發布，2026-07-16/17；官方規格揭露 07-18；權重開源 07-27）
+- **狀態**：Active——07-16 Financial Times 首報「即將發布」，07-17 CNBC、TechCrunch、FT 確認正式發布 **Kimi K3**（官方部落格自稱該公司「最強模型」），07-18 官方一手技術規格經 Simon Willison 引述完整揭露，07-27 正式開源模型權重
+- **權重開源（2026-07-27，重大）**：Tom's Hardware、Simon Willison 部落格報導 Moonshot AI 正式開源 Kimi-K3 權重，宣稱效能接近前沿模型、運算成本僅前沿模型 **2–3 分之一**。**對競爭格局的意涵**：是繼官方規格揭露（07-18）、Emerging Trajectories 戰略威脅分析（07-21，HN score 341）之後，Kimi K3 系列威脅敘事的最新具體進展——從「模型能力逼近」升級為「權重公開可下載」，讀者/開發者可直接取用而非僅依賴 API，被視為對 OpenAI 與 Anthropic 開源模型立場的又一波壓力（推論）；具體開源授權條款、下載規模未見細節（Tom's Hardware；Blog/Simon Willison https://simonwillison.net/2026/Jul/27/kimi-k3/#atom-everything）
 - **背景**：中國 AI 新創，本頁 07-16 新增追蹤之競爭者
 - **官方規格（2026-07-18，一手來源）**：Moonshot AI 官方公告確認 Kimi K3 為 **2.8 兆參數**模型，採用自研 **Kimi Delta Attention** 與 **Attention Residuals** 架構，具原生視覺能力與 **100 萬 token** context window；官方自陳定位：「整體表現仍落後 Claude Fable 5 與 GPT-5.6 Sol，但在受測開源模型中持續居於領先」（原文："While its overall performance still trails the most powerful proprietary models, Claude Fable 5 and GPT 5.6 Sol, Kimi K3 demonstrated frontier-level performance across our evaluation suite, consistently outperforming other tested models."）——是官方首次明確自我定位於 Claude/GPT 旗艦模型之下、開源陣營之上，較 TechCrunch 07-17 的第三方分析（「有望縮小與 Opus 4.8 差距」）更保守但更具查證價值（Blog/Simon Willison，引述 Moonshot AI 官方公告）
 - **媒體擴散跟進（07-18，非新事實）**：BBC、Forbes（source_count=2）、The Globe and Mail 同步報導 Kimi K3 能力逼近 Claude／ChatGPT，多聚焦「令美國科技業意外」的敘事角度，屬 07-17 發布事件的媒體擴散而非新增訊息
@@ -208,6 +209,10 @@ Claude Code 已成為 AI 輔助編碼的標竿產品，但競爭正快速升溫�
 #### 近期單日動態彙整（2026-07-02 至 2026-07-26）
 
 > 逐日條目按主題可另見上方「主要競品追蹤」對應廠商子區塊；此區塊保留完整時序供追溯查證。
+
+### 2026-07-27
+- **[重大，開源陣營具體進展] Moonshot AI 正式開源 Kimi-K3 權重，宣稱運算成本僅前沿模型 2–3 分之一**：詳見「主要競品追蹤」Moonshot AI 子區塊新增說明（Google News/Tom's Hardware；Blog/Simon Willison https://simonwillison.net/2026/Jul/27/kimi-k3/#atom-everything）
+- **[生態聯盟，Anthropic 未參與] The Verge：Nvidia、Microsoft 發起開放 AI 安全聯盟，OpenAI、Google、Anthropic 均未列名**：The Verge 報導 Nvidia 與 Microsoft 發起新的開放 AI 安全聯盟，OpenAI、Google、Anthropic 均未加入。**注意**：具體未參與原因報導中未說明，可能與競品/生態格局有關，也可能屬安全政策議題（推論，待後續補充）；與 07-25/26 已記錄之「Anthropic vs 開放權重陣營」對立敘事（Nvidia 開放權重連署 50 家企業不含 Anthropic、David Sacks 公開批評）方向一致，本次是又一個 Anthropic 缺席重要產業聯盟的具名案例（推論）（Google News/The Verge）
 
 ### 2026-07-26
 - **[重大，具名重量級人士公開批評] David Sacks 警告 Anthropic 開源生態立場恐傷害美國生態系**：Benzinga 報導白宮 AI 政策顧問 David Sacks 公開批評 Anthropic，稱其在開源議題上的立場「將把一把匕首刺進美國整個開源生態系的心臟」。**與既有訊號的關係**：延續 07-25 已記錄之 Forbes 報導（Nvidia 開放權重連署擴大至 50 家企業，Amazon 與 Anthropic 未加入）、同日 India Today 報導（Nvidia 等傾向對中國 AI 模型開放存取，Anthropic 則推動限制），本次是「Anthropic vs 開放權重陣營」對立敘事首次由具名重量級人士（白宮 AI 政策顧問，見 [[topics/anthropic-government-policy]] 既有紀錄）公開點名批評，可能加大 Anthropic 在出口管制／開源政策辯論中的輿論壓力（推論）；具體政策訴求、Anthropic 官方回應未見報導細節（Google News/Benzinga https://www.benzinga.com/markets/tech/26/07/60685709/david-sacks-warns-anthropic-doesnt-want-competition-youre-going-to-basically-put-a-dagger-through-the-heart-of-the-entire-american-open-source-ecosystem）

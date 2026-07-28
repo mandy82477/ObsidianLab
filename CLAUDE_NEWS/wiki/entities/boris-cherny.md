@@ -4,11 +4,11 @@
 **狀態：** active
 **領域：** 👤 人物
 **首次出現：** 2026-04-23（事後報告發布）
-**最後更新：** 2026-07-26
-**最後新聞更新：** 2026-07-25
+**最後更新：** 2026-07-28
+**最後新聞更新：** 2026-07-28
 
-> **最新動態**（2026-07-25）
-> Claude Opus 5 於 2026-07-24 正式發布後，Boris Cherny 於 X 發文表示：「比起這些評測分數，更讓我興奮的是其他事：Opus 5 是我們目前最難被提示注入（prompt injection）攻破的模型。」是他對新模型安全性面向的首次公開評論。
+> **最新動態**（2026-07-27，待查證）
+> Business Insider 報導 Boris Cherny 呼籲使用者停止「微管理」（micromanaging）AI，延續其一貫「Loops 是未來」設計哲學——放手讓 agent 自主工作而非逐步下指令。原文正文未能擷取，僅標題可確認核心主張，具體論述細節待查證。
 
 ---
 
@@ -24,6 +24,7 @@ Boris Cherny 是 Anthropic Claude Code 的創始人與負責人（Head of Claude
 
 | 日期 | 主題分類 | 一句話論述 | 立場延續/轉折 |
 |------|---------|-----------|--------------|
+| 2026-07-27 | 哲學（待查證） | 呼籲使用者停止「微管理」AI，僅標題可確認核心主張 | 延續——與「Loops 是未來」「我寫 loop 讓 loop 去 prompt Claude」一脈相承 |
 | 2026-07-25 | 安全 | Opus 5 是目前最難被提示注入攻破的模型，比評測分數更讓他興奮 | 轉折——首次公開聚焦模型安全性面向，此前宣言多聚焦能力／效率 |
 | 2026-07-20 | 商業 | Bloomberg 影片報導「Claude Code 創造者」畫面，展示其以英文向多個 Claude 實例下指令，原文未具名確認受訪者身分（待查證） | — |
 | 2026-07-17 | 操作 | 據報現在同時執行數千個 Claude Code agent（待核實） | 延續（推論）——呼應 5/13 揭露的夜間數千子代理工作流，若屬實顯示已從「夜間批次」擴展為「同時執行」的常態實踐 |
@@ -42,6 +43,14 @@ Boris Cherny 是 Anthropic Claude Code 的創始人與負責人（Head of Claude
 ---
 
 ## 公開言論與主張
+
+### 呼籲停止「微管理」AI（2026-07-27，待查證）
+
+Business Insider 標題指出 Boris Cherny 呼籲使用者停止「微管理」（micromanaging）AI，延續其既有「Loops 是未來」設計哲學——即放手讓 agent 自主迴圈執行，而非逐步下指令干預。日報僅擷取到標題與導言，原文完整內容未能取得，**僅記標題可確認的核心主張（呼籲減少微管理、放手讓 agent 自主工作），不推測或杜撰標題以外的具體論述細節**。若屬實，此說法與他 2026-06-20「我寫 loop 讓 loop 去 prompt Claude」的哲學表態一脈相承。
+
+- 來源：[Google News / Business Insider，2026-07-27](https://news.google.com/rss/articles/CBMiqAFBVV95cUxOWE9HZ3gzNnZRMTEyWkc5RXVRT0RWMjB4MHcxZDZzX0lzMHVGbi15cU5HQUFteFpwdXBGUGFDQ3JhbmhLbVZ6VkZPU1lHR01PVzJhV0RRVW52ODQ0R3JrOFFmMmVuRWpXNmJjaHNLV1Z1ckxqWU10LUxfbThhVFB6TFV4ZkN6N0t0SDZjSFZ5WVVoR0ZlYWRYZ0NiTXgxcnlvcHViNHFHalI?oc=5)（src_count=3，跨多來源，惟正文未能擷取）
+
+---
 
 ### Opus 5 抗提示注入能力公開評論（2026-07-25）
 
@@ -163,6 +172,7 @@ Boris Cherny 的公開言論呈現兩種截然不同的社群反應：
 
 ## 歷史記錄
 
+- 2026-07-27：Business Insider 報導呼籲使用者停止「微管理」（micromanaging）AI，延續其「Loops 是未來」設計哲學；原文正文未能擷取，僅標題可確認核心主張（待查證）（Google News / Business Insider，2026-07-27）
 - 2026-07-25：Boris Cherny 公開表示 Opus 5 是目前最難被提示注入攻破的模型（Simon Willison 部落格轉引 X 貼文，https://simonwillison.net/2026/Jul/25/boris-cherny/#atom-everything）
 - 2026-07-20：Bloomberg 發布影片／報導「Watch The Creator of Claude Code on The Hottest Piece of Software in the World」，標題未具名，佐以 Bloomberg 7/16 特稿與多平台「Creator of Claude Code」慣稱推測極可能為本人，暫標（待查證）（Google News / Bloomberg.com，2026-07-20）
 - 2026-07-17：Startup Fortune 報導其表示現在同時執行數千個 Claude Code agent，呼應 5/13 揭露的夜間數千子代理工作流，惟原始出處（訪談或社群貼文）未明，暫標（待核實）（Google News / Startup Fortune，2026-07-17）
@@ -201,3 +211,4 @@ Boris Cherny 的公開言論呈現兩種截然不同的社群反應：
 - [[news/2026-07-18]]
 - [[news/2026-07-20]]
 - [[news/2026-07-25]]
+- [[news/2026-07-28]]

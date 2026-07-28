@@ -3,11 +3,11 @@
 **狀態：** ongoing
 **領域：** 💼 商業
 **開始日期：** 2026-05-28
-**最後更新：** 2026-07-26
-**最後新聞更新：** 2026-07-26
+**最後更新：** 2026-07-28
+**最後新聞更新：** 2026-07-28
 
-> **最新動態**（2026-07-26）
-> 晶片自主布局新增一則訊號：Fortune 報導 SK 集團董事長崔泰源（Chey Tae-won）透露 Anthropic 曾接洽尋求自製晶片所需的供應，是繼 Samsung 代工洽談（07-02/06，尚未升級確定性）之後首次出現「Anthropic 主動尋求自製晶片」措辭的訊號，詳見「戰略合作」表新增列（推論，僅標題層級資訊）。07-25 記錄：著作權和解案再添跟進：CNN 報導 Anthropic 將支付《哈利波特》系列出版商和解賠款，與 07-22～24 已記錄之《哈利波特》出版商分潤事實相同，未見新增金額或細節（詳見「財務狀況」表更新）。Blackstone／Ode 15 億美元合資實作公司再獲 MarketScale（單一來源）報導呼應「企業 AI 價值在於導入實作、而非模型本身」論點，與既有 07-15/16 TechCrunch／Technology Org 報導方向一致，惟本則為單一來源，尚待其他媒體佐證（詳見「戰略合作」表）。IPO 前瞻新增訊號：Yahoo Finance 將 Anthropic 類比為「ETF 發行商版 SpaceX」，分析其對 ETF 商品設計的意涵（詳見「IPO 前瞻與估值追蹤」表新增列）。模型/計費面：Anthropic 正式發布 **Claude Opus 5**（官方稱定價為 Fable 5 一半），GitHub Issue #79337 追蹤之 Fable 5 於 Max 方案用量點數異常互動量攀升並新增「靜默降級 Opus 4.8」細節，詳見 [[entities/pricing]]、[[entities/opus-5]]。
+> **最新動態**（2026-07-28）
+> Anthropic 官方部落格宣布與 Cognizant 擴大既有合作：Cognizant 將把 Claude 用於自身建置並為客戶運行的系統，橫跨製造業、生命科學、保險等產業，並將 Claude 嵌入自身商業與工程平台、打造「Claude 認證」（Frontier Certified）人才梯隊，同步升級為 Claude Partner Network 的全球首要夥伴（Global Premier Partner），詳見「戰略合作」表新增列（Seeking Alpha 等財經媒體同日同步報導同一事件，未見新增細節）。同日 Axios 報導 Anthropic 市值已超越 Starbucks 與 McDonald's，反映近期 AI 熱潮下估值快速攀升，是本鏈條首次以「知名消費品牌市值」作為對照基準的估值敘事，詳見「IPO 前瞻與估值追蹤」表新增列（原文正文未能完整擷取，僅標題與導言可用）。著作權和解案新增讀者反應報導：NPR 報導作家群體對已核准的 15 億美元和解案反應不一，未見新增賠付金額或條款細節，詳見「財務狀況」表更新。07-26 已記錄之 SK 集團晶片供應洽談訊號仍為近期重點。
 
 ---
 
@@ -35,6 +35,7 @@ Anthropic 在技術聲譽與企業採用率上持續上升（企業採用率 34.
 
 | 日期 | 事件 | 對 IPO/估值的意涵 | 來源 |
 |------|------|------|------|
+| 2026-07-28 | Axios 報導 Anthropic 市值已超越 Starbucks 與 McDonald's | 是本鏈條首次出現以「知名消費品牌市值」作為對照基準的估值敘事，區別於此前慣用的「Series H 估值」「次級市場報價」「同業比較（OpenAI/SpaceX）」等基準，改用大眾更有感的品牌對照凸顯 AI 估值攀升速度之快（推論）；文章正文未能完整擷取，僅標題與導言可用，具體市值數字、換算基準未見細節，待後續補充 | Google News/Axios |
 | 2026-07-24 | Yahoo Finance 發表分析文章，將 Anthropic 類比為「ETF 發行商版的 SpaceX」 | 延續既有「私人公司透過次級市場/特殊工具供散戶間接曝險」敘事（呼應 07-09 次級市場估值 $1.2 兆美元、惜售心態報導），本次從「ETF 商品設計」角度切入，顯示金融業者正嘗試將 Anthropic 這類尚未上市的超高估值公司包裝進零售可及的投資產品；具體 ETF 名稱、產品結構、Anthropic 股權曝險比例未見細節，僅標題層級資訊（推論，待補充）| Google News/Yahoo Finance |
 | 2026-07-23 | Bloomberg 報導 Alphabet 持有 Anthropic 股權市值已跳升至約 **1,240 億美元** | 為股權市值（帳面評估），非新一輪投資金額，與 2026-04-24 官方投資額（最高 $400 億美元，當時估值 $3,500 億美元）為不同性質數字；市值跳升反映 Anthropic 整體估值自 04-24 以來持續墊高，與既有 Series H $965B、次級市場 $1.2 兆美元等估值訊號同屬「估值持續攀升」敘事的外部佐證，惟具體換算基準與 Google 持股比例未見報導細節（推論）；詳見 [[entities/google-investment]] 時序 | Google News/Bloomberg.com |
 | 2026-07-20 | Yahoo Finance UK 報導一位創投人士公開表態，看好 Anthropic IPO 前景優於對 OpenAI 之評價 | 是本鏈條首次出現「創投機構投資人明確選邊表態」的具體信號；若此類機構觀點擴散，可能影響未來認購熱度與市場對兩大 AI 巨頭 IPO 相對定價的預期（推論）；原文摘要遭 RSS 截斷，未見創投身分、具體理由與資金規模等細節，僅標題層級資訊 | [Google News/Yahoo Finance UK](https://news.google.com/rss/articles/CBMilgFBVV95cUxOZ2tsUWpzTFRkTjVjb3E1dTFJTTdzMHdiT2JVTi1PRzRFUTJZU0o4MHh1VXAwelR3cnh1SEN6dnR4dkZ1b2pBM2w3dUIyVjRQRzFBbjdCYi1pS3F4SjMySUxlNTVNXzFLNzltTW0yd1J3eEltejctWEFoSU1lRkpTUFV4cVlsRVFZTFVkY3hHMlhxYzhUQ3c?oc=5) |
@@ -97,6 +98,7 @@ Simon Willison（知名開發者博主）發表文章，認為 Anthropic 與 Ope
 | 3Q26 獲利 > $10 億美元 | 首度被第三方揭露正獲利數據，IPO 財務前瞻指標 | SemiAnalysis，2026-07-08 |
 | 著作權集體訴訟 15 億美元和解獲法院核准 | 美國法官正式核准，Engadget 稱「創紀錄」和解金額，New York Post 稱「AI 著作權訴訟首宗達成和解的重大案件」；著作權訴訟風險首次獲司法定案結果，IPO 前瞻敘事整備背景下降低法律不確定性（推論）| Reuters，2026-07-20 |
 | 著作權和解案執行細節：91% 賠付申請率、律師費削減至 6.8%、Bloomsbury 分潤 | 逾 48.2 萬本受涵蓋書籍中約 91% 已由作者或出版商提出賠付申請（每本約 3,000 美元）；法院文件顯示法官將集體訴訟律師費比例削減至 6.8%；英國出版商 Bloomsbury 確認為受益方之一。原告律師 Justin Nelson 稱此為「史上最大宗已知著作權求償和解案」| Reuters、The Times、Research Information，2026-07-22（經 Hacker News 討論；courtlistener.com 法院文件 PDF） |
+| 著作權和解案讀者反應報導（非新增賠付事實）| NPR 報導作家群體對已核准的 15 億美元 Anthropic 著作權侵權集體訴訟和解案反應不一；與既有 91% 賠付申請率、6.8% 律師費削減、Bloomsbury 分潤等執行細節（見上列）屬同一和解案的後續讀者反應報導，未見新增賠付金額或條款細節 | NPR，2026-07-27 |
 | 未公開獲利時程 | Anthropic 從未公告盈虧平衡預期完整細節 | — |
 
 **結構性問題**：訂閱方案補貼規模龐大（17 倍），6/15 政策是 Anthropic 收窄補貼的第一步。社群討論「未來必然漲價」但 Anthropic 無官方回應。
@@ -122,6 +124,7 @@ Simon Willison（知名開發者博主）發表文章，認為 Anthropic 與 Ope
 
 | 合作方 | 類型 | 日期 | 意義 |
 |--------|------|------|------|
+| Cognizant | 企業客戶（Global Premier Partner）| 2026-07-28 | Anthropic Blog 宣布雙方擴大既有合作：Cognizant 將 Claude 用於自身建置並為客戶運行的系統，橫跨製造業、生命科學、保險等產業，並將 Claude 嵌入自身商業與工程平台、打造「Claude 認證」（Frontier Certified）人才梯隊，同步升級為 Claude Partner Network 的全球首要夥伴（Global Premier Partner）。**對商業的意涵**：延續近期 TCS（06-11，5 萬員工部署 + Global Premier Partnership）、DXC（06-12，多年全球聯盟，數萬名認證工程師）等大型 IT 服務商全面深化合作的既有模式，Cognizant 是又一起頂尖 IT 服務商將 Claude 嵌入自身平台並打造認證人才梯隊的具名案例（推論）；具體合約規模、財務條款未見細節，僅官方公告層級資訊（Anthropic Blog https://www.anthropic.com/news/cognizant-anthropic；Google News/Seeking Alpha 同日報導同一事件，未見新增細節）|
 | SK 集團（SK Hynix 母公司）| 晶片供應洽談（自製晶片信號，推論）| 2026-07-26 | Fortune 報導 SK 集團董事長崔泰源（Chey Tae-won）透露 Anthropic 曾接洽尋求自製晶片所需的供應。**對商業的意涵**：延續近期 Samsung 代工洽談（07-02/06，The Information／TechRepublic，尚未升級確定性）、Samsung＋SK Hynix 以投資人身份入股（05-28 Series H）等訊號，本次首次出現「Anthropic 主動尋求自製晶片」的具體措辭（而非單純委託代工或投資關係）；若屬實，顯示 Anthropic 硬體自主布局野心可能從「委託代工」進一步延伸至「自行設計晶片、尋求供應鏈支援」，與 AMD（07-22，$50 億美元投資＋晶片協議）、TeraWulf（07-06，$19B 算力租約）同屬近期算力/晶片自主佈局系列信號（推論，僅標題層級資訊，具體晶片類型、供應規模、時程未見細節）（Google News/Fortune https://fortune.com/2026/07/25/sk-chair-chey-tae-won-anthropic-chip-supplies-skhynix/）|
 | Cyberhaven | SDK 夥伴（資安整合） | 2026-07-23 | PR Newswire 報導 Cyberhaven 擴充其資料與 AI 安全平台，新增支援 ChatGPT Enterprise 與 Claude Compliance API 整合。**對商業的意涵**：延續近期 Orca Security（07-21，07-23 二次確認）、Varonis（07-14）、Tenable（06-29）等資安夥伴生態擴張趨勢（推論）；同時整合 ChatGPT Enterprise，顯示 Cyberhaven 採多供應商並行策略，非 Anthropic 獨家夥伴；具體規模、商業條款未見細節，僅標題層級資訊（PR Newswire）|
 | AMD（NASDAQ: AMD）| 戰略投資＋晶片協議（最高 $50 億美元）| 2026-07-22 | Reuters（經 Hacker News 討論，source_count=2）、WSJ 獨家、Yahoo Finance 三方同日報導同一事件：AMD 宣布對 Anthropic 投資最高 50 億美元，並簽署晶片暨投資協議。**對商業的意涵**：延續近期 Micron（06-22）、Samsung＋SK Hynix（05-28）等晶片供應鏈廠商同步入股 Anthropic 的模式，AMD 為又一起「晶片供應商轉為投資人」的具名案例；HN 留言以「ouroboros circle」（銜尾蛇循環）形容晶片商與 AI 實驗室互相投資、彼此推升估值與營收的模式，對其可持續性提出質疑（推論）；具體投資結構、股權比例、晶片供應規模未見細節，僅標題與市場反應層級資訊（Reuters；Google News/WSJ；Google News/Yahoo Finance）。**07-26 跟進（單一來源，股價分析延伸，非新事實）**：Barchart 發表分析文章，探討此合作對 AMD 股價的潛在影響，未見新增交易條款或規模數字，屬既有事件的股價分析延伸（Google News/Barchart.com）|
