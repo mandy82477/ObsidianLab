@@ -29,3 +29,16 @@
 [週一 2026/07/27 13:06:58.00] ABORTED: gathered_items.json date=2026-07-25 items=73，非目標日期的新鮮資料
 [週一 2026/07/27 13:06:58.00] === Pipeline complete (agent) ===
 [cloud daily-news-pipeline-cloud STARTED 2026-07-28T13:06:03Z]
+[週二 2026/07/28 13:38:09.00] === Agent pipeline start (2026-07-28) ===
+[週二 2026/07/28 13:38:09.00] Step 0: 昨日日報缺失 (2026-07-27，前日雲端因新鮮度防線中止) - WARN
+[週二 2026/07/28 13:38:09.00] WARN: yesterday digest missing (2026-07-27)
+[週二 2026/07/28 13:38:09.00] Step 0b: 冪等閘通過（今日日報不存在）
+[週二 2026/07/28 13:38:09.00] Step 1a: SKIPPED（雲端由 GitHub Actions 負責抓料）
+[週二 2026/07/28 13:38:09.00] Step 1b: 新鮮度通過（date=2026-07-28, items=78），原料健康 10/10 來源、無警示，日報生成 OK（3a 格式自檢 27 處、3b 來源狀態表 10 列），忠實度自檢：抽 9 條、改寫 1 條（Cognizant 合作段落「life sciences」誤譯「壽險」已修正為「生命科學」）
+[週二 2026/07/28 13:38:09.00] Step 1c: confirm-digest FAILED（feedparser 6.0.13 內部改為 import feedparser.sgmllib，與 cloud_bootstrap.py 修法安裝的頂層 sgmllib 路徑不符，ModuleNotFoundError；已登記 docs/workaround-register.md 新復現樣態並順延複查日至 08-04），僅記警告，不影響已完成的 news commit，繼續後續步驟
+[週二 2026/07/28 13:38:09.00] Aggregator OK - 10/10 來源，78 則抓取，日報收錄 27 則已 commit（645b06b）
+[週二 2026/07/28 13:38:09.00] Wiki ingest OK - 六類記者並行完成（雲端 wiki-reporter-* 自訂 subagent_type 本次仍無法解析，全數降級為 general-purpose 內嵌規則執行，功能等同原生記者，已於摘要與 log.md 明確標注）；更新 12 頁（entities/claude-code、boris-cherny、dario-amodei、opus-5；topics/anthropic-business、anthropic-government-policy、ai-agent-safety、competitor-landscape、enterprise-tool-tracker、community-tech-patterns、community-tech-discussions、model-comparison）；index.md/log.md/source_attribution.jsonl（+38 筆）已彙整；feature-radar 本日無新增（六記者皆回報無）
+[週二 2026/07/28 13:38:09.00] Step 3: Wiki commit OK (c76e69c) - wiki/ + data/source_attribution.jsonl
+[週二 2026/07/28 13:38:09.00] Step 4: Tests FAILED - web build skipped（tests.test_blogroll/test_gap_lookback/test_source_funnel 因同一 feedparser sgmllib 環境缺口 ImportError；check_rules.py 28 組同步配對全過、check_arch_docs.py 全過，非新增回歸）
+[週二 2026/07/28 13:38:09.00] Step 5: Single push done (news + wiki，無 web 變更) - 首次嘗試即成功，無需重試 (3c4848d..c76e69c)
+[週二 2026/07/28 13:38:09.00] === Pipeline complete (agent) ===
