@@ -616,11 +616,6 @@
       "id": "claude-design",
       "name": "Claude Design",
       "pageType": "entity"
-    },
-    {
-      "id": "dario-amodei",
-      "name": "Dario Amodei",
-      "pageType": "entity"
     }
   ]
 }

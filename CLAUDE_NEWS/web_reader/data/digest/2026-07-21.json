@@ -537,11 +537,5 @@
     }
   ],
   "preview": "美國法官正式核准 Anthropic 15億美元著作權集體訴訟和解案，多家媒體稱其為 AI 著作權訴訟中規模最大、首宗達成和解的案件。",
-  "sedimentedToday": [
-    {
-      "id": "enterprise-tool-tracker",
-      "name": "大型企業 AI 編碼工具使用追蹤",
-      "pageType": "topic"
-    }
-  ]
+  "sedimentedToday": []
 }

@@ -61,12 +61,6 @@
       "body": "報導 Anthropic 發布 Opus 5，官方稱其在 AI 基準測試指數表現領先，成本約為 Fable 5 的一半。",
       "focusTags": [
         "[重大事件]"
-      ],
-      "sedimented": [
-        {
-          "id": "opus-5",
-          "pageType": "entity"
-        }
       ]
     },
     {
@@ -78,12 +72,6 @@
       "body": "PCMag 報導 Anthropic 宣稱 Opus 5 在 agentic search 表現優於 Fable 5。",
       "focusTags": [
         "[重大事件]"
-      ],
-      "sedimented": [
-        {
-          "id": "opus-5",
-          "pageType": "entity"
-        }
       ]
     },
     {
@@ -170,12 +158,6 @@
       "body": "呼籲 Claude Code 支援 Codex、Amp、Cursor 等工具已逐漸標準化的 AGENTS.md 格式，該 issue 已累積 5760 個讚。",
       "focusTags": [
         "[持續追蹤]"
-      ],
-      "sedimented": [
-        {
-          "id": "claude-code",
-          "pageType": "entity"
-        }
       ]
     },
     {
@@ -187,12 +169,6 @@
       "body": "回報者稱 API 連線中斷頻繁到讓 Claude Code 無法完成任何任務。",
       "focusTags": [
         "[持續追蹤]"
-      ],
-      "sedimented": [
-        {
-          "id": "claude-code",
-          "pageType": "entity"
-        }
       ]
     },
     {
@@ -204,12 +180,6 @@
       "body": "回報 Claude Code 經常誤判自己所在目錄，導致指令失敗並需多輪自我排查才能發現問題。",
       "focusTags": [
         "[持續追蹤]"
-      ],
-      "sedimented": [
-        {
-          "id": "claude-code",
-          "pageType": "entity"
-        }
       ]
     },
     {
@@ -219,13 +189,7 @@
       "time": "07/25 18:30 UTC ·",
       "sentiment": "😤",
       "body": "Windows 版 Desktop 應用因孤兒行程檔案鎖定導致無法重新啟動。",
-      "focusTags": [],
-      "sedimented": [
-        {
-          "id": "claude-code",
-          "pageType": "entity"
-        }
-      ]
+      "focusTags": []
     },
     {
       "title": "Claude Code has a hardcoded instruction telling Opus 5 not to use subagents",
@@ -234,13 +198,7 @@
       "time": "07/26 08:45 UTC ·",
       "sentiment": "🤔",
       "body": "討論指出 Claude Code 二進位中內建限制 Opus 5 使用 AgentTool／workflows／deep-research 的系統提示，除非使用者明確要求。",
-      "focusTags": [],
-      "sedimented": [
-        {
-          "id": "claude-code",
-          "pageType": "entity"
-        }
-      ]
+      "focusTags": []
     },
     {
       "title": "Show HN: Termic – desktop app for running CLI coding agents (Claude Code, Codex)",
@@ -249,13 +207,7 @@
       "time": "07/26 09:36 UTC ·",
       "sentiment": "😊",
       "body": "開源桌面應用程式，用於統一管理 Claude Code、Codex 等 CLI coding agent session 與 worktree。",
-      "focusTags": [],
-      "sedimented": [
-        {
-          "id": "claude-code",
-          "pageType": "entity"
-        }
-      ]
+      "focusTags": []
     },
     {
       "title": "Show HN: Argus – VSCode Worktree Agent Session Manager",
@@ -264,13 +216,7 @@
       "time": "07/26 00:58 UTC ·",
       "sentiment": "😊",
       "body": "VS Code 擴充套件，將跨 worktree 平行執行的 Claude Code／Codex agent session 整合進單一視窗管理。",
-      "focusTags": [],
-      "sedimented": [
-        {
-          "id": "claude-code",
-          "pageType": "entity"
-        }
-      ]
+      "focusTags": []
     },
     {
       "title": "Show HN: Integrate any CLI agent into any terminal",
@@ -297,13 +243,7 @@
       "time": "07/26 14:07 UTC ·",
       "sentiment": "😐",
       "body": "一名資深工程師分享將日常使用 Claude Code 的方式，逐步轉向以 AWS Step Functions 落實 spec-driven development 的實務經驗。",
-      "focusTags": [],
-      "sedimented": [
-        {
-          "id": "claude-code",
-          "pageType": "entity"
-        }
-      ]
+      "focusTags": []
     },
     {
       "title": "Ruff v0.16.0",
@@ -417,49 +357,9 @@
   "preview": "Anthropic 正式發布 Opus 5 並全平台上線，官方稱其在多項基準測試（含 agentic search）表現優於 Fable 5，成本僅約後者一半。",
   "sedimentedToday": [
     {
-      "id": "claude-code",
-      "name": "Claude Code",
-      "pageType": "entity"
-    },
-    {
       "id": "mythos",
       "name": "Claude Mythos",
       "pageType": "entity"
-    },
-    {
-      "id": "opus-5",
-      "name": "Claude Opus 5",
-      "pageType": "entity"
-    },
-    {
-      "id": "anthropic-business",
-      "name": "Anthropic 商業健康度",
-      "pageType": "topic"
-    },
-    {
-      "id": "anthropic-government-policy",
-      "name": "Anthropic 政府與軍事政策",
-      "pageType": "topic"
-    },
-    {
-      "id": "community-tech-discussions",
-      "name": "社群技術討論趨勢",
-      "pageType": "topic"
-    },
-    {
-      "id": "community-tech-patterns",
-      "name": "社群實戰模式庫",
-      "pageType": "topic"
-    },
-    {
-      "id": "competitor-landscape",
-      "name": "AI 編碼工具競品動態",
-      "pageType": "topic"
-    },
-    {
-      "id": "model-comparison",
-      "name": "Claude 模型選型對照",
-      "pageType": "topic"
     }
   ]
 }

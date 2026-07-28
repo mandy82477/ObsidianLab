@@ -3,7 +3,7 @@
 **狀態：** monitoring
 **領域：** 🛠️ 工具/功能
 **開始日期：** 2026-05-17
-**最後更新：** 2026-07-23
+**最後更新：** 2026-07-28
 **最後新聞更新：** 2026-07-23
 
 > **最新功能缺口**（2026-07-22）
@@ -58,7 +58,7 @@
 
 ### ✅ 高度對應：多 agent 執行能力
 
-4/28 至 5/16 幾乎每次 ingest 都有 agent 相關功能（Managed Agents、`/goal`、Agent View、`/loop`/`/batch`/`/background`、`claude agents` 細粒度旗標）。官方與社群在此痛點上罕見同步，但方向略有差異：
+4/28 至 5/16 幾乎每天都有 agent 相關功能（Managed Agents、`/goal`、Agent View、`/loop`/`/batch`/`/background`、`claude agents` 細粒度旗標）。官方與社群在此痛點上罕見同步，但方向略有差異：
 
 - **官方**著重「讓 agent 能自主執行更久、更可靠」
 - **社群**著重「讓人能監控和控制 agent」（Omar、HiveTerm、CC-Canary）

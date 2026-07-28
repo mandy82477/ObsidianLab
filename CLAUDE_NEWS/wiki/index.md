@@ -150,7 +150,7 @@ LLM 查詢此 wiki 時，**先讀這個檔案**找相關頁面，再讀具體頁
 ## 概覽
 
 - [[overview]] — 當前 Claude / Anthropic 生態系整體局勢（🗓️ 週更）
-- [[feature-radar]] — 新功能熱度追蹤、試用推薦與快速上手（每次 ingest 更新）
+- [[feature-radar]] — 新功能熱度追蹤、試用推薦與快速上手（每日更新）
 - [[feature-radar-archive-2026-05]] — 2026-05 功能詳細條目封存
 
 ---
