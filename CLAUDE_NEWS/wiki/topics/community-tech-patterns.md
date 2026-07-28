@@ -3,11 +3,11 @@
 **狀態：** monitoring
 **領域：** 🌐 社群
 **開始日期：** 2026-04-25
-**最後更新：** 2026-07-26
-**最後新聞更新：** 2026-07-26
+**最後更新：** 2026-07-28
+**最後新聞更新：** 2026-07-28
 
-> **最新工作流模式**（2026-07-26）
-> 今日新增一則達 dev.to 內容判斷門檻：「Use Fable 5 where it pays for itself」（dev.to / #claudecode，第一手成本控制實作：只在需要頂尖判斷力的任務用 Fable 5，其餘實作/測試/雜務交由較便宜的 subagent 處理），屬既有「模型使用策略」分層模型思路在 Fable 5 世代的延伸案例，非全新模式。三款 Show HN 多 agent 管理工具（Termic 1 分、Argus 3 分、terminai 2 分）遠低於中門檻，未收錄；「hardcoded instruction Opus 5 not to use subagents」（HN score 18）屬社群觀察與辯論，已改收錄於 [[topics/community-tech-discussions]]，本頁不重複；Reddit「Spec-Driven Development via AWS Step Functions」score 0、無週熱門標記、單一來源，未收錄。07-24 Palmier Pro、OneCLI、claude-thermos 與 07-23 既有模式仍為近期背景。
+> **最新工作流模式**（2026-07-28）
+> 今日新增三則：① dev.to「Too many Claude Code skills?」拆解 skills 清單載入的字元預算機制（單一 skill description+when_to_use 上限 1,536 字元，整體清單依 context window 1% 計算，超額會使既有 skill 悄悄失效且無錯誤訊息），補充「Skills 設計」類別的觸發邊界知識；② dev.to「session-indexer」以本地 SQLite 索引 Claude Code session transcript、語意檢索跨專案記憶（文章原始發布日 2026-07-04，本輪日報始收錄），補充「記憶與知識管理」類別；③ HN Show HN「Anyclaude-SDK」（score 4，source_count=2，達對照表中門檻「其他」欄），讓 Claude Code 風格 SDK 可接 OpenAI/Anthropic 端點，內容有限暫記觀察。其餘 Show HN 條目（AI Usage macOS 選單列 2 分、ITR-wala 報稅工具 2 分、Agentic Cloud Computer Telegram bot 2 分、ContextSpy 2 分、Agent Console 2 分已 flag、Relay 2 分已 flag、dont-kick-me-out 2 分已 dead、Brain Kit 1 分、llm-spend 1 分、Claudaholic 8 分、60 行 .env hook 6 分已 flag）分數遠低於中門檻，未收錄。07-26 官方指引對照與 07-23 既有模式仍為近期背景。
 
 ---
 
@@ -103,6 +103,27 @@ Claude Code 的三種多 agent 機制，可對應到 Anthropic《Building Effect
 ## 技術彙整
 
 ### 2026-07
+
+#### Claude Code Skills 清單字元預算機制：description 超額會讓既有 skill 悄悄失效（2026-07-28）
+
+- **核心模式：** 拆解 Claude Code skills 清單載入的字元預算機制：單一 skill 的 description + when_to_use 合計上限 1,536 字元；整體 skills 清單的字元預算則依 context window 的 1% 計算——新增 skill 數量一多，既有 skill 可能悄悄被排出清單、不再被模型觸發使用，且過程中不會出現任何錯誤訊息
+- **與既有模式的關係：** 補充本頁「Skills 設計」類別既有「description 自動觸發」機制的邊界條件：過去記錄的是「怎麼設計 skill 讓它被觸發」，本篇補上「觸發預算有硬上限、超額會靜默失效」這項使用者需知曉的限制，屬機制補完而非全新類別
+- **來源：** 「Too many Claude Code skills? How the listing budget decides which descriptions Claude sees」— dev.to / rulestack（依 dev.to 內容判斷原則收錄：第一手技術實作拆解，非行銷/SEO 稿；讚數 2 不作為判斷依據）
+- **成熟度：** ⚡ 活躍（既有 Skills 設計類別的機制補完）
+
+#### session-indexer：以本地 SQLite 索引 Claude Code session transcript，跨專案語意檢索記憶（2026-07-28）
+
+- **核心模式：** 作者自製 Go 工具 session-indexer，將 Claude Code session transcript 索引進本地 SQLite 資料庫，於新 session 開始時以語意相似度取回相關歷史片段，作為輕量記憶層
+- **與既有模式的關係：** 呼應本頁「記憶與知識管理」類別既有跨 session 記憶思路（ltm Core Memory Packet、本機圖資料庫、OKF），核心論點聚焦「集中式記憶工具＝單點故障」的風險，主張本地輕量索引優於依賴單一集中服務
+- **來源：** 「session-indexer: giving Claude Code a memory that doesn't die with the project next door」— dev.to / valpere（依 dev.to 內容判斷原則收錄：第一手實作工具，非行銷/SEO 稿；讚數 3 不作為判斷依據；文章原始發布日 2026-07-04，本輪日報始收錄）
+- **成熟度：** ⏳ 新興（單一開發者工具，尚待社群採用回饋）
+
+#### Anyclaude-SDK：讓 OpenAI/Anthropic 端點都能使用 Claude Code 風格 SDK（2026-07-28）
+
+- **核心模式：** 開源 SDK，讓開發者可用 Claude Code 風格介面呼叫 OpenAI 或 Anthropic 端點，降低切換供應商時的介面改寫成本（僅有標題可考，具體實作細節未知）
+- **與既有模式的關係：** 呼應本頁「模型使用策略」類別既有多模型路由思路，但聚焦「介面層一致化」而非「路由決策」，補上供應商切換降低改寫成本的角度
+- **來源：** 「Show HN: Anyclaude-SDK – Claude Code-Style SDK for OpenAI/Anthropic Endpoints」— Hacker News（score 4，source_count=2，達對照表中門檻「其他」欄）
+- **成熟度：** ⏳ 新興（今日首見，說明有限，暫記觀察）
 
 #### 只在需要頂尖判斷力任務用 Fable 5，其餘交給便宜 subagent 控制成本（2026-07-26）
 

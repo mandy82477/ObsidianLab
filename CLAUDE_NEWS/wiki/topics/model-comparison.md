@@ -3,8 +3,8 @@
 **狀態：** ongoing
 **領域：** 🤖 模型
 **開始日期：** 2026-07-02
-**最後更新：** 2026-07-26
-**最後新聞更新：** 2026-07-26
+**最後更新：** 2026-07-28
+**最後新聞更新：** 2026-07-28
 
 > **最新對照更新**（2026-07-25）
 > **陣容重大變化**：Anthropic 於 2026-07-25 正式發布 [[entities/opus-5|Claude Opus 5]]，終結近兩週的傳聞（詳見 [[entities/opus-4-8]] 歷史記錄），取代 Opus 4.8 成為次旗艦——官方稱編碼與知識工作評測（Frontier-Bench、GDPval-AA）逼近 Fable 5、資安任務仍落後 Mythos 5、定價官方稱為 Fable 5 一半（推算約 $5/$25，非官方逐字確認數字；MarkTechPost 07-14「維持原價」說法方向不一致，兩者是否指向同一數字待官方定價頁證實，見 [[entities/pricing]]），現為 Claude Max 新預設模型、Claude Pro 最強模型。公開陣容更新為：Fable 5（旗艦）> **Opus 5（次旗艦，新）** > Sonnet 5（主力）> Sonnet 4.6 > Haiku 4.5；Opus 4.8 降級為已被取代。
@@ -88,6 +88,15 @@
 | 相同 100 則前端需求，三模型同題測試 | 作者公開全部 300 筆產出供比較，未見文字版總結論（僅並陳結果） | 使用者以相同 100 則前端 brief 分別測試 GPT-5.6 Sol、Claude Opus 4.8、Grok 4.5，公開全部 300 筆產出，屬並排展示非量化 benchmark；Reddit RSS score 恆 0，非跨平台佐證 | Reddit r/ClaudeAI「[I gave GPT-5.6 Sol, Claude Opus 4.8, and Grok 4.5 the same 100 frontend briefs—here are all 300 results](https://www.reddit.com/r/ClaudeAI/comments/1uyb1i9/i_gave_gpt56_sol_claude_opus_48_and_grok_45_the/)」（週熱門），2026-07-23 |
 
 **小結**：此為單一作者的並排產出展示，非評分式 benchmark，訊號強度偏弱（Reddit 週熱門標記但無量化結論文字）；且測試對象 Opus 4.8 已因 Opus 5 發布退居「已被取代」狀態，此筆數據的參考價值隨陣容更新而下降，僅供歷史對照。
+
+### 社群實測觀察：Opus 5 早期社群反應（發布首日起，弱訊號、無量化數字）
+
+| 觀察 | 結論 | 樣本條件 | 來源與日期 |
+|------|------|---------|-----------|
+| 使用者稱 Opus 5 於長時間任務（long-horizon task）表現最佳，Low effort 設定下成本效益極高 | 主觀正面評價，**無具體 benchmark 數字佐證** | 單一 Reddit 使用者心得分享，非量化測試；Reddit RSS score 恆 0，週熱門標記 | Reddit r/ClaudeAI「Opus 5 results are really shocking!!」（週熱門），2026-07-24 |
+| 第三方 benchmark 平台 MineBench.ai 出現 Fable 5 vs Opus 5 差異討論 | **具體分數/差異細節待查證**——日報僅擷取到標題與縮圖，無法確認測試方法或數字，不可推算 | 僅標題可用，正文未擷取 | Reddit r/ClaudeAI「Differences Between Fable 5 and Opus 5 on MineBench.ai」（週熱門），2026-07-26 |
+
+**小結**：Opus 5 發布首日（07-24）起社群陸續出現效能相關討論，惟本輪兩則均為標題層級或無量化佐證的主觀回報，訊號強度弱，不構成可決策的評測依據。正式評測數字仍以官方 Frontier-Bench／GDPval-AA（見 [[entities/opus-5]]）與上方對照表為準；本表僅記錄社群觀感存在此一動向，不進入快速選型表或情境推薦。
 
 ### token 成本：兩個方向相反的實測結果（並陳，不選邊）
 

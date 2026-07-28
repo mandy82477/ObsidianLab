@@ -3,11 +3,11 @@
 **狀態：** ongoing
 **領域：** 🌐 社群
 **開始日期：** 2026-04-25
-**最後更新：** 2026-07-26
-**最後新聞更新：** 2026-07-26
+**最後更新：** 2026-07-28
+**最後新聞更新：** 2026-07-28
 
-> **最熱討論**（2026-07-26）
-> 今日新增兩則達收錄門檻：① Anthropic 部落格〈context engineering 新規則〉揭露 Claude 5 世代模型已移除逾 80% 的 Claude Code 系統提示詞，HN score 393（本輪最高分，遠超高門檻），社群熱議「更少提示詞反而更精準」對 context engineering 設計理念的衝擊，訊號強度標為 🔥🔥🔥🔥；② 討論指出 Claude Code 二進位對 Opus 5 存在硬編碼限制（除非使用者明確要求，否則禁用 AgentTool／workflows／deep-research），HN score 18（原始討論源自 Reddit，經 HN 轉載延燒，跨平台佐證），訊號強度標為 🔥（未經官方證實的社群觀察）。三款 Show HN 多 agent 管理工具（Termic、Argus、terminai）分數僅 1–3 分，遠低於中門檻，未收錄；「Transitioning to Spec-Driven Development via AWS Step Functions」（Reddit r/ClaudeCode）score 0、無「週熱門」標記、單一來源，依規則 RSS score 不可信，未收錄；dev.to「Use Fable 5 where it pays for itself」為第一手成本控制實作案例，依內容判斷原則歸入 [[topics/community-tech-patterns]]（分層模型策略延伸案例），本頁不重複收錄；Simon Willison〈Ruff v0.16.0〉純 Python linter 更新，與 Claude/Anthropic 無直接關聯，未收錄。額度焦慮系列與既有長期議題仍為近期背景（詳見「熱門討論」對應列）。
+> **最熱討論**（2026-07-28）
+> 今日新增四則：① Tell HN「付費 Claude AI Team 訂閱逾一週不可用、客服僅 Fin AI Chatbot 可聯絡」（HN score 24，達收錄低門檻），討論串中其他使用者分享類似誤扣費/客服糾紛經驗（Fin AI 逕行判定爭議並關閉申訴案）；② Show HN「Cursor Bridge」透過 Cursor 訂閱執行 Claude Code（HN score 19，達收錄低門檻），討論質疑此類「無限」訂閱模式終將被廠商限縮範圍以防濫用；③ Reddit r/ClaudeCode「Sol vs Fable/Opus - best setup」（source_count=2，達對照表中門檻），詢問 Codex（GPT-5.6 Sol）與 Claude（Fable/Opus）組合偏好，內容僅為徵詢式提問、尚無具體結論；④ Reddit r/ClaudeAI 週熱門「Opus 5 results are really shocking!!」，使用者分享 Opus 5 於長時間任務表現最佳、Low effort 設定下成本效益極高的正面體驗（未附具體量化數字）。另有 Reddit r/ClaudeAI 週熱門「Anthropic cut 80% of Claude Code's system prompt...」與本頁 07-26 已收錄事實（Claude 5 世代 context engineering 新規則，HN 393 分）為同一官方揭露的社群轉述重複報導，未重複收錄；同帳號週熱門「Differences Between Fable 5 and Opus 5 on MineBench.ai」與「I don't know if anyone else has this impression of how Anthropic treats Haiku」僅有標題、內容無法擷取，資訊量不足未收錄；「Introducing Claude Opus 5」為 07-25 已記錄 Opus 5 發布舊聞的 Reddit 轉貼，無新增社群觀點，未收錄。r/ClaudeCode「Debugging agents」「quota meter」「Webcmd」「what's your thing that makes working with Claude cooler」四則無週熱門標記、無 source_count 佐證，依規則 RSS score 不可信，未收錄；其餘低分 Show HN（Claudaholic 8 分、60 行 .env hook 6 分已 flag 等）遠低於門檻，未收錄。額度焦慮系列與既有長期議題仍為近期背景（詳見「熱門討論」對應列）。
 
 ---
 
@@ -120,9 +120,13 @@ MCP 的實際成本遠超多數使用者預期，已有多個量化案例：
 
 | 討論主題 | 首見 | 熱度 | 模式 | 核心論點 | 衍生 |
 |---------|------|------|------|---------|------|
-| Claude 5 世代模型 context engineering 新規則：Claude Code 系統提示詞縮減逾 80% | 2026-07-26 | 🔥🔥🔥🔥 | ☄️閃現 | Anthropic 部落格說明針對更先進模型已移除超過 80% 的 Claude Code 系統提示詞，並提供將此經驗應用於自訂 agent 的 context engineering 建議；HN score 393（本輪最高分，遠超高門檻），社群熱議「精簡提示詞反而更精準」對既有 context engineering 假設的衝擊；官方功能發布面已由功能記者記錄；[原文](https://claude.com/blog/the-new-rules-of-context-engineering-for-claude-5-generation-models)（HN） | — |
+| Tell HN：付費 Claude AI Team 訂閱逾一週不可用，客服僅 Fin AI Chatbot 可聯絡引發求助無門疑慮 | 2026-07-28 | 🔥 | ☄️閃現 | 企業用戶反映已付清 Claude AI Team 方案帳單但服務不可用超過一週，僅能透過 Fin AI Chatbot 聯絡客服、求助無門；討論串中其他使用者分享類似誤扣費/客服糾紛經驗（Fin AI 逕行判定爭議並關閉申訴案），反映社群對 Anthropic 客服升級管道與人工介入機制不足的疑慮；HN score 24，達收錄低門檻；[原文](https://news.ycombinator.com/item?id=49080775)（HN） | — |
+| Reddit r/ClaudeCode：Sol vs Fable/Opus - best setup（Codex 與 Claude 組合偏好徵詢） | 2026-07-28 | 🔥 | ☄️閃現 | 使用者詢問同時使用 Codex（GPT-5.6 Sol）與 Claude（Fable/Opus）的比較與偏好；source_count=2，達對照表中門檻「其他」欄；內容僅為徵詢式提問，尚無具體結論可考；[原文](https://www.reddit.com/r/ClaudeCode/comments/1v8vzry/sol_vs_fableopus_best_setup_for_now/)（Reddit） | — |
+| Show HN：Cursor Bridge — 透過 Cursor 訂閱執行「無限」Claude Code，討論質疑「無限」終將被限縮 | 2026-07-26 | 🔥 | ☄️閃現 | 工具讓使用者透過 Cursor 訂閱執行 Claude Code；討論中有留言指出此類「無限」訂閱模式終將被廠商限縮範圍以防濫用，呼應社群對訂閱制配額政策反覆調整的既有疑慮；HN score 19，達收錄低門檻；[GitHub](https://github.com/hkc5/cursor-bridge)（HN） | — |
+| Claude 5 世代模型 context engineering 新規則：Claude Code 系統提示詞縮減逾 80% | 2026-07-26 | 🔥🔥🔥🔥 | ☄️閃現 | Anthropic 部落格說明針對更先進模型已移除超過 80% 的 Claude Code 系統提示詞，並提供將此經驗應用於自訂 agent 的 context engineering 建議；HN score 393（本輪最高分，遠超高門檻），社群熱議「精簡提示詞反而更精準」對既有 context engineering 假設的衝擊；官方功能發布面已由功能記者記錄；07-28 Reddit r/ClaudeAI 週熱門貼文轉述同一事實，未重複收錄；[原文](https://claude.com/blog/the-new-rules-of-context-engineering-for-claude-5-generation-models)（HN） | — |
 | Claude Code 二進位對 Opus 5 存在硬編碼行為限制，禁用 AgentTool／workflows／deep-research | 2026-07-26 | 🔥 | ☄️閃現 | 討論指出 Claude Code 2.1.219／220 版編譯二進位中，內建僅針對 Opus 5 的兩行系統提示：除非使用者明確要求，否則不得呼叫 AgentTool、不得使用 workflows 或 deep-research；討論者認為此舉可能不成比例限制 Opus 5 能力發揮，屬未經官方證實的社群觀察；原始討論源自 Reddit、經 HN 轉載延燒，跨平台佐證；HN score 18，達收錄低門檻；[原文](https://old.reddit.com/r/ClaudeCode/comments/1v6y5q2/claude_code_has_a_hardcoded_instruction_telling/)（HN） | — |
 | Show HN：promptster.ai 分析 Claude Code/Codex 實際使用模式而非僅費用儀表板 | 2026-07-25 | 🔥 | ☄️閃現 | 作者指出企業常有自建的 OTel 花費儀表板（顯示花費+席位），卻缺乏真正分析工程師實際用法與改善空間的工具；發布 promptster.ai，manager 端可看程式碼品質與團隊工作流彙整視角，engineer 端取得個人化教練建議節省 token 同時維持產出品質；同篇提及開源本機工具 cc-audit 供稽核本機 Claude Code 設定；HN score 14，source_count=2（跨來源佐證），達收錄低門檻；[原文](https://news.ycombinator.com/item?id=49042653)（HN） | cc-audit |
+| Reddit r/ClaudeAI 週熱門：Opus 5 results are really shocking!!（長時間任務表現與 Low effort 成本效益正面體驗） | 2026-07-24 | 🔥 | ☄️閃現 | 使用者分享 Opus 5 使用心得：認為在長時間任務（long-horizon task）表現最佳，且在 Low effort 設定下成本效益極高；未附具體量化數字；Reddit r/ClaudeAI 週熱門標記，達收錄低門檻；[原帖](https://www.reddit.com/r/ClaudeAI/comments/1v5le69/opus_5_results_are_really_shocking/)（Reddit · 週熱門） | — |
 | OpenAI 與 Anthropic 對開放權重模型風險立場趨同，引發「自利心態包裝使命宣稱」批評 | 2026-07-23 | 🔥🔥🔥 | ☄️閃現 | Axios 報導兩家公司對開放權重模型風險的立場趨於一致；HN 討論（score 287，本輪最高分）高分留言批評此舉更像自利心態包裝成使命宣稱：「Anthropic 尤其有種傲慢的溝通風格……競爭一出現，就突然變成向政府打小報告的抓耙仔」；單平台高互動、議題共鳴深，尚無跨平台佐證；[原文](https://www.axios.com/2026/07/22/openai-anthropic-open-models-trump-china)（HN） | — |
 | Show HN：claude-thermos 保活工具引發「成本轉嫁」爭議，意外揭露快取到期時間曾退化至 5 分鐘 | 2026-07-23 | 🔥🔥🔥 | ☄️閃現 | 作者釋出可讓 Claude session 保持 prompt cache 熱度的工具；HN 討論（score 102，達高門檻）聚焦此類「保活」行為是否只是把快取到期重算的成本轉嫁給其他共用資源的使用者，留言並指出 Pro/Max 方案快取到期時間現為 1 小時、此前一度退化至僅 5 分鐘；工具本身已於 [[topics/community-tech-patterns]] 收錄；[GitHub](https://github.com/izeigerman/claude-thermos)（HN） | claude-thermos |
 | Simon Willison 轉介：第一起「AI agent 失控」事件，還是一場拙劣行銷噱頭？ | 2026-07-23 | 🔥 | ☄️閃現 | Simon Willison 部落格轉介 Martin Alderson 對一起號稱「首起已知 runaway AI agent」事件的評論，質疑其真實性，認為更可能是一場拙劣的行銷噱頭而非真實事故；[原文](https://simonwillison.net/2026/Jul/23/the-first-known-runaway-ai-agent/#atom-everything)（Blog；具名表態，無社群延燒） | — |

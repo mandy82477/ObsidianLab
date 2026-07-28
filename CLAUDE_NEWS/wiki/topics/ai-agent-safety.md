@@ -29,6 +29,10 @@
 
 | 風險 / 指控 | 披露日 | 影響範圍 | 官方回應 | 狀態 |
 |------------|--------|---------|---------|------|
+| EIN News（轉載）稱 Phoenix Security 平台發現 Anthropic Claude Code「關鍵漏洞」（標題嚴重截斷，資訊量不足） | 2026-07-28 | 待確認（標題稱「關鍵漏洞」，具體攻擊鏈、受影響範圍完全未知，不推測補完） | 無回應（原文無法擷取） | ❓ 待查證（資訊嚴重不足） |
+| Claude「分享對話」功能公開紀錄遭 Google 搜尋索引外流，含 API 金鑰與個人資料（BBC/IBT/Fortune/Axios/Futurism/Mashable/PCMag/Notebookcheck 等至少 8 家獨立媒體） | 2026-07-26～07-28 | 所有使用過「分享對話」功能且未察覺其可被搜尋引擎索引的使用者；已確認外洩內容含 API 金鑰與個人資料 | 無回應（尚無 Anthropic 官方公告） | 🔴 未修補（產品設計/預設值層隱私外洩，非攻擊者利用漏洞） |
+| gbhackers.com 報導 Claude Code 存在 symlink 相關瑕疵，可能致敏感檔案未經核准外流（僅標題可用） | 2026-07-27 | 待確認（若屬實，涉及所有使用 symlink 相關功能的 Claude Code 使用者；與既有 CVE-2026-39861 symlink 沙箱逃逸關聯待確認） | 無回應（尚無原文可查） | ❓ 待查證 |
+| 假冒 Claude App 詐騙透過 Bing 廣告投放，最終導向 Anthropic 官方網站（Notebookcheck，僅標題可用） | 2026-07-27 | 待確認（若屬實，涉及透過 Bing 搜尋尋找 Claude App 的使用者） | 無回應（尚無原文可查） | ❓ 待查證 |
 | 資安研究機構 Tego AI 揭露本週第二個 Claude 漏洞：隱藏連結悄悄將檔案傳送給攻擊者（Hackread，僅標題可用） | 2026-07-24 | 待確認（若屬實，涉及任何可能被誘導點擊隱藏連結的 Claude 使用情境） | 無回應（尚無原文可查） | ❓ 待查證 |
 | 中國 AI 實驗室據稱透過 Claude Code 相關外洩內容縮小與 Anthropic 差距（digitimes，僅標題可用，用詞保守處理） | 2026-07-23 | 待確認（若屬實，外洩內容性質與範圍未知；政策/競爭面見 [[topics/anthropic-government-policy]]） | 無回應（尚無原文可查） | ❓ 待查證 |
 | 俄語駭客據稱透過 jailbreak 繞過 Claude Opus 安全限制，打造 AI 滲透測試工具（cyberpress.org / Infosecurity Magazine，僅標題可用，兩獨立來源） | 2026-07-21/22 | 待確認（若屬實，涉及被鎖定滲透測試目標範圍） | 無回應（尚無原文可查） | ❓ 待查證 |
@@ -56,6 +60,10 @@
 
 | 結論 | 狀態 | 日期 |
 |------|------|------|
+| EIN News（轉載）稱 Phoenix Security 平台發現 Anthropic Claude Code「關鍵漏洞」，標題嚴重截斷，可用資訊極少 | ❓ 待查證，資訊嚴重不足，無法確認任何攻擊鏈或漏洞細節 | 2026-07-28 |
+| Claude「分享對話」功能外流至 Google 搜尋結果，含 API 金鑰與個人資料，本日跨最多獨立媒體來源的單一安全事件（BBC/IBT/Fortune/Axios/Futurism/Mashable/PCMag/Notebookcheck 等至少 8 家） | 🔴 已確認發生（8+ 獨立媒體交叉確認），Anthropic 官方尚無回應 | 2026-07-26～07-28 |
+| gbhackers.com：Claude Code symlink 相關瑕疵可能致敏感檔案未經核准外流（僅標題可用） | ❓ 待查證，未經第三方或官方確認 | 2026-07-27 |
+| Notebookcheck：假冒 Claude App 詐騙透過 Bing 廣告投放，最終導向官方網站（僅標題可用） | ❓ 待查證，未經第三方或官方確認 | 2026-07-27 |
 | Tego AI 揭露本週第二個 Claude 漏洞：隱藏連結悄悄將檔案傳送給攻擊者（Hackread，僅標題可用；Tego AI 本週稍早的第一則揭露尚未見於本頁記錄，待補查證） | ❓ 待查證，未經第三方或官方確認 | 2026-07-24 |
 | Anthropic 呼籲業界建立跨公司統一 AI 安全標準，避免模型失控（Fox Business，僅標題可用） | 🛠️ 官方安全政策表態 | 2026-07-23 |
 | digitimes（僅標題可用，用詞保守處理）稱中國 AI 實驗室透過 Claude Code 相關外洩內容縮小與 Anthropic 差距；政策/競爭面完整分析見 [[topics/anthropic-government-policy]] | ❓ 待查證，未經第三方或官方確認 | 2026-07-23 |
@@ -104,6 +112,37 @@
 ---
 
 ## 技術彙整
+
+### Phoenix Security 聲稱發現 Claude Code「關鍵漏洞」（2026-07-28 新增，資訊嚴重不足，待查證）
+
+- **揭露來源**：EIN News（經 Google News RSS 聚合連結轉載，2026-07-28 11:21 UTC）；標題為「The platform that found critical vulnerability in Anthropic Claude Code Phoenix Security - Purple an Agentic code scan」，原文僅剩截斷的 HTML 片段，可用資訊極少
+- **可用資訊**：僅能確認報導聲稱資安平台 Phoenix Security（Purple，一個 agentic code scan 工具）發現 Anthropic Claude Code 存在「關鍵漏洞」（critical vulnerability）；具體漏洞內容、攻擊鏈、CVE 編號、揭露時間、Anthropic 官方回應**完全無法從現有資料確認**
+- **處理原則**：依規則不杜撰未經證實的細節，本條僅記錄「有此標題存在」之事實，不推測漏洞性質或影響範圍；待原文或第二來源出現後再補充
+- **可信度評估**：資訊量嚴重不足，無法評估可信度；待查證
+
+### Claude「分享對話」功能外流至 Google 搜尋結果，含 API 金鑰與個人資料（2026-07-28 新增，跨最多獨立媒體來源）
+
+- **揭露來源（至少 8 家獨立媒體，2026-07-26～07-28）**：BBC「Some people's chats with Claude AI found to be publicly available online」（2026-07-28 07:10 UTC，source_count=2）；International Business Times「Claude Shared Chats Surface in Search Results Containing API Keys and Personal Data」（2026-07-26 18:00 UTC）；Axios「Your public Claude app may be searchable on Google」（2026-07-27 23:19 UTC）；Fortune「Users' seemingly private conversations with Anthropic's Claude showed up in Google search results」（2026-07-27 17:20 UTC）；Futurism「A Whole Bunch of People's Claude Chats Are Publicly Accessible Online, and There's Some Wildly Private Stuff in There」（2026-07-27 15:10 UTC，source_count=2）；Mashable「Shared a Claude conversation? Google may have seen it.」（2026-07-27 18:23 UTC）；PCMag「Claude Chats Popped Up in Google Search Results. Who's to Blame?」（2026-07-27 22:01 UTC）；Notebookcheck「Anthropic's Claude AI shared chats appear in Google searches, raising privacy concerns」（2026-07-28 02:07 UTC）
+- **事件機制**：使用者透過 Claude「分享對話」（shared chat）功能公開的紀錄，可被 Google 搜尋引擎索引並直接透過搜尋結果找到，形同使用者可能未充分意識到「分享」等同於「公開可被搜尋引擎索引」
+- **外洩內容**：International Business Times 明確指出外流內容含 API 金鑰（API keys）與個人資料（personal data）；Futurism 標題形容外流內容「相當私密」（wildly private stuff），具體私密內容類型未見更多細節
+- **事件分類**：與既有「提示注入 + 資料外洩」類別（如 07-15 the-memory-heist、06-28 Mozilla 0din GitHub repo 向量）性質不同——本次非攻擊者主動利用漏洞誘導模型外洩，而是**產品設計/預設值層面**造成的隱私外洩：分享功能的可見範圍設定與搜尋引擎索引行為之間的落差
+- **究責角度**：PCMag 標題聚焦「Who's to Blame?」，顯示媒體已開始討論責任歸屬（使用者分享設定 vs. 平台預設值 vs. Google 索引機制），但具體結論未見報導
+- **可信度評估**：高——至少 8 家獨立媒體（含 BBC、Fortune、Axios 等主流媒體）跨兩日交叉報導，其中 BBC 與 Futurism 各自標註 source_count=2；惟 Anthropic 官方回應、外洩對話總量、是否已下架/修復均未見報導，待查證
+- **與既有條目關聯**：與 2026-07-15「Claude Web Fetch 提示注入導致使用者機密外洩」（the-memory-heist）同屬「使用者機密資料外洩」大類，但外洩機制與觸發方（使用者主動分享公開 vs. 提示注入攻擊）截然不同，不可混為同一手法
+
+### gbhackers.com：Claude Code Symlink 相關瑕疵（2026-07-27 新增，待查證）
+
+- **揭露來源**：gbhackers.com（經 Google News RSS 聚合連結轉載，2026-07-27 06:04 UTC）；僅標題可用，原文無法擷取完整內容
+- **標題訊息**：報導揭露 Claude Code 存在 symlink 相關瑕疵，可能導致敏感檔案在未經使用者核准下外流
+- **事件分類**：若屬實，攻擊模式（symlink 觸發敏感檔案外洩）與既有 CVE-2026-39861（symlink 沙箱逃逸，2026-05-08 揭露）性質相近；惟無法確認是否為同一漏洞的後續追蹤報導、或全新披露，兩者關聯待查證，不推測合併
+- **可信度評估（待確認）**：僅單一媒體標題可用，無法取得具體攻擊鏈、CVE 編號、受影響版本或 Anthropic 官方回應；待原文或第二來源確認
+
+### Notebookcheck：假冒 Claude App 詐騙透過 Bing 廣告投放（2026-07-27 新增，待查證）
+
+- **揭露來源**：Notebookcheck（經 Google News RSS 聚合連結轉載，2026-07-27 07:17 UTC）；僅標題可用，內文未能完整擷取
+- **標題訊息**：報導一起透過 Bing 廣告投放的假冒 Claude App 詐騙案例，該廣告最終導向 Anthropic 官方網站
+- **事件分類**：屬「假冒安裝包/詐騙」類別，與既有 2026-05-10「Google 搜尋廣告仿冒官網植入木馬」（排名高於官網）性質相近，但本次投放平台為 Bing 而非 Google，且廣告最終導向官方網站——與 05-10 案例導向惡意木馬不同，實際風險程度（廣告本身是否為詐騙陷阱、抑或僅誤導性但終點無害）現有資訊不足以判斷，不推測補完
+- **可信度評估（待確認）**：僅單一媒體標題可用，無法取得廣告投放者身分、具體詐騙手法或使用者實際受害情形；待原文確認
 
 ### Tego AI 揭露第二個 Claude 漏洞：隱藏連結外洩檔案（2026-07-24 新增，待查證）
 
@@ -458,6 +497,8 @@
 
 ## 參考來源
 
+- [[news/2026-07-28]]
+- [[news/2026-07-27]]
 - [[news/2026-07-24]]
 - [[news/2026-07-23]]
 - [[news/2026-07-22]]
@@ -496,6 +537,14 @@
 > 更早期時序見 [[topics/ai-agent-safety-archive]]
 
 > **中美 AI 工具信任對峙**（06-30～07-10：中國代理偵測程式碼、隱寫術指控、Alibaba/Meta 禁用、中國官方後門警示、Anthropic 首度否認）完整逐日時序已整合至 [[topics/safety-china-trust-dispute]]，此處不再重複條目，僅保留與本頁漏洞/提示注入主線相關者。
+
+### 2026-07-28
+- **[待查證，資訊嚴重不足] EIN News：Phoenix Security 聲稱發現 Claude Code「關鍵漏洞」**：標題為「The platform that found critical vulnerability in Anthropic Claude Code Phoenix Security - Purple an Agentic code scan」，原文僅剩截斷 HTML 片段，無法確認任何具體攻擊鏈或漏洞內容，不推測補完（Google News/EIN News，2026-07-28 11:21 UTC）
+- **[隱私外洩，跨最多獨立媒體來源] BBC 等至少 8 家媒體：Claude「分享對話」功能外流至 Google 搜尋結果，含 API 金鑰與個人資料**：BBC（source_count=2）、International Business Times、Axios、Fortune、Futurism（source_count=2）、Mashable、PCMag、Notebookcheck 等至少 8 家獨立媒體於 07-26～07-28 跨日報導，使用者「分享對話」公開紀錄遭 Google 搜尋引擎索引；International Business Times 確認外流內容含 API 金鑰與個人資料，Futurism 標題形容「相當私密」，PCMag 聚焦究責角度；Anthropic 官方尚無回應（詳見「## 技術彙整」）
+
+### 2026-07-27
+- **[待查證] gbhackers.com：Claude Code Symlink 相關瑕疵**：報導揭露 Claude Code 存在 symlink 相關瑕疵，可能導致敏感檔案未經核准外流；僅標題可用，與既有 CVE-2026-39861 symlink 沙箱逃逸關聯待確認（Google News/gbhackers.com，2026-07-27 06:04 UTC）
+- **[待查證] Notebookcheck：假冒 Claude App 詐騙透過 Bing 廣告投放**：報導一起透過 Bing 廣告投放的假冒 Claude App 案例，該廣告最終導向 Anthropic 官方網站；僅標題可用，實際風險程度待釐清（Google News/Notebookcheck，2026-07-27 07:17 UTC）
 
 ### 2026-07-24
 - **[待查證] Hackread：Tego AI 揭露本週第二個 Claude 漏洞，隱藏連結悄悄外洩檔案**：Hackread（經 Google News RSS 聚合連結）標題稱資安研究機構 Tego AI 本週第二度揭露 Claude 相關漏洞，指一個隱藏連結可悄悄將受害者檔案傳送給攻擊者；僅標題可用，無法取得攻擊鏈細節、披露單位或 Anthropic 官方回應；Tego AI 本週稍早的第一則揭露尚未見於本頁記錄，待補查證（Google News/Hackread，2026-07-24 11:15 UTC）
