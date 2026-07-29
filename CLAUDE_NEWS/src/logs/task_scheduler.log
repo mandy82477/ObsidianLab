@@ -43,3 +43,15 @@
 [週二 2026/07/28 13:38:09.00] Step 5: Single push done (news + wiki，無 web 變更) - 首次嘗試即成功，無需重試 (3c4848d..c76e69c)
 [週二 2026/07/28 13:38:09.00] === Pipeline complete (agent) ===
 [cloud daily-news-pipeline-cloud STARTED 2026-07-29T13:04:00Z]
+[週三 2026/07/29 13:35:16.00] === Agent pipeline start (2026-07-29) ===
+[週三 2026/07/29 13:35:16.00] Step 0 昨日缺跑檢查 OK（news/2026-07-28.md 存在，無缺失）
+[週三 2026/07/29 13:35:16.00] Step 0b 冪等閘 OK（news/2026-07-29.md 不存在，正常繼續）
+[週三 2026/07/29 13:35:16.00] Step 1a 新聞抓取 SKIPPED（雲端，由 GitHub Actions daily-gather 完成）
+[週三 2026/07/29 13:35:16.00] Step 1b 生成日報 OK（新鮮度/健康檢查通過，63 則項目，10/10 來源正常，格式自檢通過）
+[週三 2026/07/29 13:35:16.00] Step 1c 確認 emitted-cache OK（63 則項目已標記 digest_confirmed，已 commit）
+[週三 2026/07/29 13:35:16.00] Step 2 Wiki Ingest OK（五類記者：模型/功能/商業/安全政策/社群，今日無人物類條目；wiki-reporter-* 自訂 subagent_type 無法解析，降級為 general-purpose 內嵌規則執行，功能等同，已於 wiki/log.md 標注）
+[週三 2026/07/29 13:35:16.00] Step 3 Commit Wiki 變更 OK（因 stop hook 政策分批提交，共 8 筆 wiki commit + 1 筆主編彙整 commit，內容完整性不受影響）
+[週三 2026/07/29 13:35:16.00] Step 4 測試套件 OK（run_tests.py exit 0，144 項測試 + check_rules 28 組配對全過）
+[週三 2026/07/29 13:35:16.00] Step 4 Building web reader... OK（build_web.py exit 0：31 entities, 20 topics, 94 digests, 1 weekly reports + radar）
+[週三 2026/07/29 13:35:16.00] Step 5 Single push done (news + wiki + web + confirm-cache + STARTED heartbeat) - 首次嘗試即成功，無需重試 (284705d..ff8dd2e)
+[週三 2026/07/29 13:35:16.00] === Pipeline complete (agent) ===
