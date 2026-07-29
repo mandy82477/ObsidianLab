@@ -3,11 +3,11 @@
 **狀態：** ongoing
 **領域：** 🏛️ 政策/安全
 **開始日期：** 2026-04-27
-**最後更新：** 2026-07-28
-**最後新聞更新：** 2026-07-28
+**最後更新：** 2026-07-29
+**最後新聞更新：** 2026-07-29
 
-> **最新安全事件**（2026-07-28）
-> 本日最受關注：使用者透過 Claude「分享對話」功能公開的紀錄，遭 Google 搜尋引擎索引並可直接搜尋找到，至少 8 家獨立媒體（BBC、International Business Times、Axios、Fortune、Futurism、Mashable、PCMag、Notebookcheck）於 07-26～07-28 獨立跟進報導，為本日跨最多來源的單一安全事件；International Business Times 明確指出外流內容含 API 金鑰與個人資料，Futurism 標題形容內容「相當私密」。另有 gbhackers.com（07-27，僅標題）報導 Claude Code 存在 symlink 相關瑕疵，可能致敏感檔案未經核准外流；Notebookcheck（07-27，僅標題）報導一起透過 Bing 廣告投放的假冒 Claude App 詐騙案例，廣告最終導向 Anthropic 官方網站；EIN News（07-28，標題嚴重截斷）稱 Phoenix Security 平台發現 Anthropic Claude Code「關鍵漏洞」，可用資訊極少，列為待查證，不推測補完細節。以上四則事件均待 Anthropic 官方回應或第三方進一步確認。**中美 AI 工具信任對峙**（中國代理偵測程式碼、同形字符隱寫術指控、Alibaba/Meta 禁用、中國官方「後門」警示、Anthropic 07-10 首度公開否認）已整合為獨立頁 [[topics/safety-china-trust-dispute]]，完整逐日時序與可信度評估見該頁；本頁僅保留與 Claude Code 漏洞/提示注入主線直接相關的技術內容。
+> **最新安全事件**（2026-07-29）
+> 本日新增五則：(1) Anthropic 官方研究部落格「Discovering Cryptographic Weaknesses with Claude」（HN 221分／5來源，另有 NYT/ProPublica/CyberScoop/Quantum Insider 跟進）——使用 Claude Mythos Preview 發現改進的 HAWK 後量子簽章與 round-reduced AES 密碼分析攻擊法，**為官方主動研究成果，非漏洞、非攻擊事件**，官方明確聲明目前不影響任何正式系統；同日 ProPublica 報導 Anthropic 模型找出軟體漏洞速度已超越 Microsoft 修補速度（僅標題可用）。(2) Simon Willison 部落格引用「前沿實驗室 Agent 入侵事件技術時間軸」一文，**原文摘要嚴重截斷，受影響廠商完全未經確認，本頁不推定為 Anthropic/Claude**，保守記錄為「業界觀察到的前沿實驗室 agent 安全事件時間軸分析，受影響廠商待確認」。(3) Decrypt 以「繼 ChatGPT 後，Claude 也出現沙盒逃脫案例」為題報導，僅標題可用，無 CVE 或攻擊鏈細節。(4) Oxide 加入 Anthropic Project Glasswing，將 Claude Mythos 5 用於自家程式碼庫主動漏洞掃描，屬合作動態非漏洞事件。(5) 延續 07-26～07-28 Claude「分享對話」外流至 Google 搜尋結果事件，PCMag（「How to See If Yours Are Public」）與 The Guardian 於 07-28 追加使用者自保教學報導。以上除 Anthropic 官方研究與 Oxide 合作外，其餘均待官方回應或第三方進一步確認。**中美 AI 工具信任對峙**（中國代理偵測程式碼、同形字符隱寫術指控、Alibaba/Meta 禁用、中國官方「後門」警示、Anthropic 07-10 首度公開否認）已整合為獨立頁 [[topics/safety-china-trust-dispute]]，完整逐日時序與可信度評估見該頁；本頁僅保留與 Claude Code 漏洞/提示注入主線直接相關的技術內容。
 
 ---
 
