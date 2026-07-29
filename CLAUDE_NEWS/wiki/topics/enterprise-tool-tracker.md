@@ -3,11 +3,11 @@
 **狀態：** ongoing
 **領域：** 💼 商業
 **開始日期：** 2026-05-26
-**最後更新：** 2026-07-28
-**最後新聞更新：** 2026-07-28
+**最後更新：** 2026-07-29
+**最後新聞更新：** 2026-07-29
 
-> **最新企業採用異動**（2026-07-28）
-> Anthropic Blog 官方公告：Cognizant 與 Anthropic 擴大既有合作，將 Claude 用於自身建置並為客戶運行的系統，橫跨製造業、生命科學、保險等產業，並將 Claude 嵌入自身商業與工程平台、打造「Claude 認證」（Frontier Certified）人才梯隊，同步升級為 Claude Partner Network 的全球首要夥伴（Global Premier Partner），詳見下方「企業工具使用現況」表新增列。07-21 記錄之阿里巴巴 2.5萬假帳號封鎖說（❓ 未確認，疑似與蒸餾指控混淆）、07-15 Grasshopper Bank（首家列入 Anthropic MCP 目錄的具名銀行）案例仍為近期重點。
+> **最新企業採用異動**（2026-07-29）
+> 臨床試驗服務商 ICON 宣布與 Anthropic 合作，將 Claude AI 整合進臨床試驗流程（Clinical Trials Arena，source_count=2），為醫療研究（CRO）產業首個具名案例，詳見下方「企業工具使用現況」表新增列。另外，TipRanks 報導 Cognizant（CTSH）股價在 07-28 合作公告後第二日再漲 8%，屬既有 07-28 Cognizant 合作案的市場反應追蹤，非新增合作事實。07-28 記錄之 Cognizant 全球首要夥伴升級、07-21 阿里巴巴 2.5萬假帳號封鎖說（❓ 未確認，疑似與蒸餾指控混淆）仍為近期重點。
 
 ## 摘要
 
@@ -15,7 +15,7 @@
 
 追蹤各大型企業目前正在使用的 AI 編碼工具，以及工具選擇的變化軌跡。資料來源為公開報導與內部消息洩露，僅記錄有明確來源佐證的事實。
 
-目前追蹤 32 家具名企業/機構（新增 Cognizant——升級為 Claude Partner Network 全球首要夥伴 Global Premier Partner；此前新增 Grasshopper Bank——首家列入 Anthropic MCP 目錄的具名銀行），其中多數狀態為使用中（✅），4 家退出/切換（❌🔄，Microsoft 停用 Claude Code、JPMorgan Chase 香港分行因出口管制被迫退出、Lindy 100% 切換至 DeepSeek、Alibaba 因資安疑慮禁用 Claude Code 並明確改用內部工具 Qoder），Uber 縮減中（⚠️，成本管控）。新增 Alberta 省政府（加拿大）具名政府採用案例，20 小時掃描 4.66 億行程式碼完成資安審查，是繼加州州政府後另一個地方政府層級具體成效案例。整體趨勢：Claude API 企業與政府採用持續擴大，TCS、DXC、LG 等頂尖企業相繼全面入局；2026-06-29–06-30 單日/隔日湧現 Globant、DataArt、Okta、Rubrik、加州州政府等新一波具名案例，Partner Network 密集擴張（詳見 [[topics/anthropic-business]]）。同期 Lindy 案例顯示 API 客戶對成本敏感度高、可能因競品定價優勢流失。2026-06-21 Microsoft 確認在 Fable 5 封鎖期間加速退出 Claude Code，2026-06-22 The Jerusalem Post 跟進確認 Microsoft 正系統性降低對 Claude 依賴，GitHub Copilot 為主要替代方案。出口管制 + 成本壓力雙重因素持續影響頂尖企業工具選擇。
+目前追蹤 33 家具名企業/機構（新增 ICON——臨床試驗/醫療研究產業首個具名採用案例；此前新增 Cognizant——升級為 Claude Partner Network 全球首要夥伴 Global Premier Partner），其中多數狀態為使用中（✅），4 家退出/切換（❌🔄，Microsoft 停用 Claude Code、JPMorgan Chase 香港分行因出口管制被迫退出、Lindy 100% 切換至 DeepSeek、Alibaba 因資安疑慮禁用 Claude Code 並明確改用內部工具 Qoder），Uber 縮減中（⚠️，成本管控）。新增 Alberta 省政府（加拿大）具名政府採用案例，20 小時掃描 4.66 億行程式碼完成資安審查，是繼加州州政府後另一個地方政府層級具體成效案例。整體趨勢：Claude API 企業與政府採用持續擴大，TCS、DXC、LG 等頂尖企業相繼全面入局；2026-06-29–06-30 單日/隔日湧現 Globant、DataArt、Okta、Rubrik、加州州政府等新一波具名案例，Partner Network 密集擴張（詳見 [[topics/anthropic-business]]）。同期 Lindy 案例顯示 API 客戶對成本敏感度高、可能因競品定價優勢流失。2026-06-21 Microsoft 確認在 Fable 5 封鎖期間加速退出 Claude Code，2026-06-22 The Jerusalem Post 跟進確認 Microsoft 正系統性降低對 Claude 依賴，GitHub Copilot 為主要替代方案。出口管制 + 成本壓力雙重因素持續影響頂尖企業工具選擇。
 
 ---
 
@@ -27,6 +27,7 @@
 
 | 企業 | 規模 | AI 編碼工具 | 狀態 | 事件日期 | 備註 | 確認日期 |
 |------|------|-----------|------|---------|------|---------|
+| ICON（NASDAQ: ICLR） | 大型（全球臨床研究委外機構 CRO）| Claude API | ✅ | 2026-07-29 | Clinical Trials Arena（source_count=2）報導 ICON 與 Anthropic 合作，將 Claude AI 整合進臨床試驗流程；為醫療研究/CRO 產業首個具名採用案例，延續近期 Optum（07-14，健康服務業）之後醫療垂直產業另一深化案例（推論）；具體整合範疇、合約規模未見細節，僅標題層級資訊（Google News/Clinical Trials Arena） | 2026-07-29 |
 | Cognizant | 頂尖 | Claude API | ✅ | 2026-07-28 | Anthropic Blog 官方公告：雙方擴大既有合作，Cognizant 將 Claude 用於自身建置並為客戶運行的系統，橫跨製造業、生命科學、保險等產業；將 Claude 嵌入自身商業與工程平台、打造「Claude 認證」（Frontier Certified）人才梯隊，並升級為 Claude Partner Network 的全球首要夥伴（Global Premier Partner）；延續近期 TCS、DXC 等頂尖 IT 服務商全面深化合作模式（推論）；具體合約規模未見細節（Anthropic Blog https://www.anthropic.com/news/cognizant-anthropic；Google News/Seeking Alpha 同日跟進） | 2026-07-28 |
 | Grasshopper Bank | 中型（銀行，聚焦金融科技產業）| Claude API（MCP 整合） | ✅ | 2026-07-15 | Financial IT 報導 Grasshopper Bank 成為首家列入 Anthropic MCP（Model Context Protocol）目錄的銀行，象徵金融業對 MCP 生態系統的具名採用起點；具體整合規模、應用場景未見細節（僅標題可用，Google News 轉址）| 2026-07-15 |
 | Alberta 省政府（加拿大） | 政府（省級） | Claude Code | ✅ | 2025 | 加拿大 Alberta 省技術與創新部門自 2025 年起使用 Claude Code（含 Opus、Sonnet 模型）審查系統；20 小時內掃描 4.66 億行程式碼，完成資安漏洞盤點與修補、建立新工具；Anthropic Blog 官方案例研究，為具名政府採用新增一筆（Digital Watch Observatory 跟進） | 2026-07-07 |
@@ -75,7 +76,7 @@
 | 工具 | 企業採用數 | 趨勢 | 主要阻力 |
 |------|----------|------|---------|
 | Claude Code | 6 使用中（Amazon、UiPath、Rubrik、JFrog、Salesforce、Alberta 省政府）+ 1 縮減中（Uber）+ 2 退出（Microsoft、Alibaba → Qoder） | ⚠️ 成本壓力 + Fable 5 封鎖衝擊 + 安全疑慮新增退出理由；✅ 政府採用具體成效案例增加（Alberta 4.66 億行/20hr） | 缺乏企業層級預算管控；Fable 5 出口管制加速部分企業評估替代方案；Alibaba 案例顯示「疑似後門」指控也可能成為退出理由（指控未經證實），且已確認具體替代方案（Qoder） |
-| Claude API | 24（Apple、KPMG、iCapital、哈佛、Fujitsu、Travelport、Nimble Gravity、ZoomInfo、LG Group、AppFolio、Salesforce Claude API、TCS、DXC Technology、Atlassian、JPMorgan Chase 美國本部、Charleston Hospitality Group、Notion、加州州政府、Globant、DataArt、Okta、Grasshopper Bank、Cognizant）+ 1 退出中（Lindy → DeepSeek） | 🟢 快速擴張（政府/合規/服務業縱深加深，新增金融科技銀行、大型 IT 服務商全球首要夥伴）；⚠️ 部分 API 客戶因成本敏感轉向競品 | — |
+| Claude API | 25（Apple、KPMG、iCapital、哈佛、Fujitsu、Travelport、Nimble Gravity、ZoomInfo、LG Group、AppFolio、Salesforce Claude API、TCS、DXC Technology、Atlassian、JPMorgan Chase 美國本部、Charleston Hospitality Group、Notion、加州州政府、Globant、DataArt、Okta、Grasshopper Bank、Cognizant、ICON）+ 1 退出中（Lindy → DeepSeek） | 🟢 快速擴張（政府/合規/服務業縱深加深，新增醫療研究 CRO 產業、金融科技銀行、大型 IT 服務商全球首要夥伴）；⚠️ 部分 API 客戶因成本敏感轉向競品 | — |
 | GitHub Copilot | 1（Microsoft） | 🟢 Microsoft 背書 | 生態鎖定 |
 | OpenAI Codex | 2（Amazon、UiPath） | 🟢 快速成長 | — |
 | Cursor | 1（Uber） | ⚠️ 新創份額下滑 | 成本管控困難；企業級功能不如 Claude Code |

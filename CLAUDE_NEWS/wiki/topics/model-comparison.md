@@ -3,8 +3,8 @@
 **狀態：** ongoing
 **領域：** 🤖 模型
 **開始日期：** 2026-07-02
-**最後更新：** 2026-07-28
-**最後新聞更新：** 2026-07-28
+**最後更新：** 2026-07-29
+**最後新聞更新：** 2026-07-29
 
 > **最新對照更新**（2026-07-25）
 > **陣容重大變化**：Anthropic 於 2026-07-25 正式發布 [[entities/opus-5|Claude Opus 5]]，終結近兩週的傳聞（詳見 [[entities/opus-4-8]] 歷史記錄），取代 Opus 4.8 成為次旗艦——官方稱編碼與知識工作評測（Frontier-Bench、GDPval-AA）逼近 Fable 5、資安任務仍落後 Mythos 5、定價官方稱為 Fable 5 一半（推算約 $5/$25，非官方逐字確認數字；MarkTechPost 07-14「維持原價」說法方向不一致，兩者是否指向同一數字待官方定價頁證實，見 [[entities/pricing]]），現為 Claude Max 新預設模型、Claude Pro 最強模型。公開陣容更新為：Fable 5（旗艦）> **Opus 5（次旗艦，新）** > Sonnet 5（主力）> Sonnet 4.6 > Haiku 4.5；Opus 4.8 降級為已被取代。
@@ -28,7 +28,7 @@
 | [[entities/opus-4-7\|Opus 4.7]] | 已被取代 | 同 4.8 | 200K | 既有 agentic coding 工作流延續 | 新採用改 Opus 5／Sonnet 5 | ⚠️ 已被取代 |
 | [[entities/mythos\|Mythos 5]] | 無護欄完整版 | — | — | 授權機構安全研究、滲透測試 | 一般開發用途（非公開陣容，改選 Fable 5） | ✅ 已解禁（僅限授權機構） |
 
-> **換模型不是唯一旋鈕**：官方文件明載「調整 effort 通常比換模型更有效」（[choosing-a-model](https://platform.claude.com/docs/en/about-claude/models/choosing-a-model)）。Opus 5 起手建議用預設 `effort: high`，只有最吃重的編碼／agentic 任務才需上探 `xhigh`——升級模型前，先確認是否該先調 effort。
+> **換模型不是唯一旋鈕**：官方文件明載「調整 effort 通常比換模型更有效」（[choosing-a-model](https://platform.claude.com/docs/en/about-claude/models/choosing-a-model)）。Opus 5 起手建議用預設 `effort: high`，只有最吃重的編碼／agentic 任務才需上探 `xhigh`——升級模型前，先確認是否該先調 effort。**`effort` 並非「越高越好」**：官方 migration guide（[migration-guide](https://platform.claude.com/docs/en/about-claude/models/migration-guide)，2026-07-29 查核）明載 `max` 效果「可能出現報酬遞減，且在較簡單任務上容易 overthinking」，並建議「換模型前先針對自己的 evals 重新跑一次 effort sweep，而非沿用舊模型的設定」；Reddit 社群 07-25 一則週熱門貼文提出更強烈說法——「超過 high 後（即 xhigh／max）程式碼任務分數會下降」，並稱官方 migration guide 本身即有此說明。經查證，migration guide 原文僅止於「報酬遞減／overthinking」的**定性**描述，未見具體分數或「高於 high 即單調下降」的明確文字，兩者存在措辭落差；具體下降幅度待查證，不可推算。詳見下方「Opus 5 早期社群反應」表格。
 
 ### 選型細節
 
@@ -95,8 +95,9 @@
 |------|------|---------|-----------|
 | 使用者稱 Opus 5 於長時間任務（long-horizon task）表現最佳，Low effort 設定下成本效益極高 | 主觀正面評價，**無具體 benchmark 數字佐證** | 單一 Reddit 使用者心得分享，非量化測試；Reddit RSS score 恆 0，週熱門標記 | Reddit r/ClaudeAI「Opus 5 results are really shocking!!」（週熱門），2026-07-24 |
 | 第三方 benchmark 平台 MineBench.ai 出現 Fable 5 vs Opus 5 差異討論 | **具體分數/差異細節待查證**——日報僅擷取到標題與縮圖，無法確認測試方法或數字，不可推算 | 僅標題可用，正文未擷取 | Reddit r/ClaudeAI「Differences Between Fable 5 and Opus 5 on MineBench.ai」（週熱門），2026-07-26 |
+| 使用者稱 Opus 5 的 effort 旋鈕「非單調」——超過 `high`（即 `xhigh`／`max`）後編碼任務分數反而下降，並稱官方 migration guide 本身即說明此現象 | **具體下降幅度待查證**（原文於「至少在程式碼任務上看起來這樣做...」處截斷）；經查證官方 migration guide（2026-07-29 查核）僅載明 `max` 效果「可能報酬遞減、在較簡單任務上容易 overthinking」，屬**定性**描述，未見具體分數或「高於 high 即單調下降」的明確文字——社群措辭比官方原文更強烈，此落差待驗證，不可逕自採信社群版本的因果強度 | 單一 Reddit 貼文（週熱門標記），內容於關鍵處截斷；已比對官方 migration guide 原文 | Reddit r/artificial「Opus 5's effort dial is not monotonic above "high"...」（週熱門），2026-07-25；[官方 migration guide](https://platform.claude.com/docs/en/about-claude/models/migration-guide)，查核日 2026-07-29 |
 
-**小結**：Opus 5 發布首日（07-24）起社群陸續出現效能相關討論，惟本輪兩則均為標題層級或無量化佐證的主觀回報，訊號強度弱，不構成可決策的評測依據。正式評測數字仍以官方 Frontier-Bench／GDPval-AA（見 [[entities/opus-5]]）與上方對照表為準；本表僅記錄社群觀感存在此一動向，不進入快速選型表或情境推薦。
+**小結**：Opus 5 發布首日（07-24）起社群陸續出現效能相關討論，本輪三則均為標題層級、截斷內容或無量化佐證的主觀回報，訊號強度弱，不構成可決策的評測依據。effort 非單調一說經比對官方 migration guide 原文，僅能確認「`max` 效果報酬遞減、易 overthinking」的定性描述，社群「高於 high 即單調下降」的具體措辭尚未見官方數字佐證，兩者落差已於上方「換模型不是唯一旋鈕」callout 註明。正式評測數字仍以官方 Frontier-Bench／GDPval-AA（見 [[entities/opus-5]]）與上方對照表為準；本表僅記錄社群觀感存在此一動向，不進入快速選型表或情境推薦。
 
 ### token 成本：兩個方向相反的實測結果（並陳，不選邊）
 

@@ -4,11 +4,12 @@
 **狀態：** active（持續調整中）
 **領域：** 💼 商業
 **首次出現：** 2026-04-25
-**最後更新：** 2026-07-25
-**最後新聞更新：** 2026-07-25
+**最後更新：** 2026-07-29
+**最後新聞更新：** 2026-07-29
 
-> **最新計費政策異動**（2026-07-25）
-> Anthropic 於 07-24 正式發布 **Claude Opus 5**（[官方公告](https://www.anthropic.com/news/claude-opus-5)，Hacker News 1587 分）：官方稱其定價為 Fable 5 的一半，相同成本下效能較 Opus 4.8 大幅提升，現為 Max 方案新預設模型、Pro 方案最強模型；惟 MarkTechPost（07-14）此前曾稱 Opus 5 將「維持原 Opus 定價」，與官方「砍半」說法方向不同，官方公告未提供具體 $/Mtok 數字，詳見下方「模型 API 定價現況」與「重要政策變動紀錄」07-24 條目（能力面詳見 [[entities/opus-5]]）。GitHub Issue #79337 互動量持續攀升（07-25 查證：**42 留言、15 reactions**，較 07-24 的 13 reactions 明顯增加），新增回報細節：Fable 5 於 Max 方案要求額外用量點數之餘，還會**靜默降級為 Opus 4.8**執行請求，問題距 07-20 官方「Max 誤判、重啟可解決」的說法已逾 5 天未見根本修復，詳見下方「當前生效的計費規則」與「重要政策變動紀錄」07-25 條目。（07-21 已記錄之 Reddit 週熱門 Fable 5 延期歷程彙整、07-23 modelplane.ai 補貼倍數估算等既有事件不重複列出，見下方時序原條目）
+> **最新計費政策異動**（2026-07-29）
+> GitHub Issue #17432（印度盧比在地化定價訴求）互動量持續攀升：留言數由 205 增至 **210**、reactions 由 👍598 增至 **613**（GitHub Issues，source_count=1）。**注意**：此議題已於 2026-07-13 因 Anthropic 正式推出印度盧比計價（Pro 方案 Rs 2,000/月）一度視為獲得官方回應（見下方「重要政策變動紀錄」07-13/14 條目），但互動量在官方回應後仍持續攀升，可能反映範圍缺口（如訴求原文明確提及 Claude Code 而非僅 Claude Pro 訂閱，或 Max/Team/Enterprise 方案尚未同步在地化），亦可能只是舊留言持續被按讚，暫不足以判定為「訴求未被滿足」，僅屬使用者訴求延續，非官方政策異動，詳見下方時序新增條目。
+> Anthropic 於 07-24 正式發布 **Claude Opus 5**（[官方公告](https://www.anthropic.com/news/claude-opus-5)，Hacker News 1587 分）：官方稱其定價為 Fable 5 的一半，相同成本下效能較 Opus 4.8 大幅提升，現為 Max 方案新預設模型、Pro 方案最強模型；惟 MarkTechPost（07-14）此前曾稱 Opus 5 將「維持原 Opus 定價」，與官方「砍半」說法方向不同，官方公告未提供具體 $/Mtok 數字，詳見下方「模型 API 定價現況」與「重要政策變動紀錄」07-24 條目（能力面詳見 [[entities/opus-5]]）。GitHub Issue #79337 互動量持續攀升（07-25 查證：**42 留言、15 reactions**，較 07-24 的 13 reactions 明顯增加），新增回報細節：Fable 5 於 Max 方案要求額外用量點數之餘，還會**靜默降級為 Opus 4.8**執行請求，問題距 07-20 官方「Max 誤判、重啟可解決」的說法已逾 5 天未見根本修復，詳見下方「當前生效的計費規則」與「重要政策變動紀錄」07-25 條目。
 
 ## 現況
 
@@ -152,6 +153,12 @@ git commit 歷史出現大寫字串「HERMES.md」會觸發靜默切換至 API �
 來源：[GitHub Issue #53262](https://github.com/anthropics/claude-code/issues/53262)
 
 ### 定價與促銷（模型定價、方案設計）
+
+#### 2026-07-29：印度盧比定價訴求 GitHub Issue #17432 互動持續攀升，距官方 07-13 回應已 16 天
+
+- **互動量新高**：GitHub Issue #17432〈Feature Request: India-Specific Pricing Plans (INR) for Claude & Claude Code〉留言數由 07-09 查證的 205 增至 **210**、reactions 由 **598** 增至 **613**，維持高互動門檻（互動門檻對照表「高」：GitHub Issue ≥50 留言即達標，本則遠超）。
+- **與已回應事實的張力（需留意，非官方政策異動）**：本頁已記錄 Anthropic 於 07-13 正式推出印度盧比計價（Pro 方案 Rs 2,000/月，見下方 07-13/14 條目），當時視為對此 issue 訴求的官方首度回應。惟本 issue 標題與原始訴求同時提及 **Claude 與 Claude Code** 兩者，07-13 官方公告目前僅確認 Pro 方案訂閱定價，Max/Team/Enterprise 及 Claude Code 本身是否同步在地化未見報導；互動量在官方回應後仍持續攀升，可能反映此範圍缺口，也可能只是舊討論串持續累積讚數，兩種可能性均無法從現有資料確認（不可推測，僅記錄現象）。
+- **用詞界定**：本則為使用者訴求延續，**非**「Anthropic 將推出新方案」——尚無官方聲明承諾進一步異動（GitHub https://github.com/anthropics/claude-code/issues/17432）。
 
 #### 2026-07-24：Claude Opus 5 發布，官方稱定價為 Fable 5 的一半，與此前 MarkTechPost「維持原定價」說法方向不一致
 
