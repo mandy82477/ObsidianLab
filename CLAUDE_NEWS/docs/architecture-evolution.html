@@ -11,7 +11,7 @@
     <div class="wrap" style="padding-top: 1.25rem; padding-bottom: 1.25rem;">
       <div>
         <h1 class="arch-title">自動化新聞知識庫系統<span class="arch-title__sub"> / 架構演進</span></h1>
-        <p class="arch-subtitle">SCRIPT &middot; LLM 呼叫點 &middot; AGENT 設計 &mdash; 三條線的時間軸（2026-04-25 &rarr; 2026-07-17）</p>
+        <p class="arch-subtitle">SCRIPT &middot; LLM 呼叫點 &middot; AGENT 設計 &mdash; 三條線的時間軸（2026-04-25 &rarr; 2026-07-29）</p>
       </div>
       <nav class="arch-nav">
         <a href="architecture-evolution-v2.html" class="arch-tab arch-tab--active">架構演進</a>
@@ -1082,6 +1082,58 @@ llm 呼叫從「一支 prompt 生成一份文件」演變為「多個獨立 llm 
 <p><strong>公道性三規則：</strong> whitelist（官方源／Blogroll）不參與排名、跨日重覆視窗抓法標 † 不跨來源比較、零樣本顯示「—」不回吐平滑先驗，防止指標冤枉特定來源。</p>
 <p>輸出掛進 <code>/wiki-lint</code> 6e 週跑附記分卡表，以及 <code>build_web.py</code> 嵌入 web reader 的資料透明度頁。</p>
 <p><strong>原則：</strong> Phase 1 純監控，分數不回饋 pipeline 任何行為；enforcement（汰換／門檻調整／黑名單下放）待累積 ≥ 60 天資料且逐項走 <code>/pipeline-change-check</code>。</p>
+    </div>
+  </button>
+</div>
+<div class="event-card-wrap" data-track="script" data-search="雲端排程薄殼化：runbook 進 repo、trigger 鏡像備份與看門狗
+雲端 routine 的定義只存在 claude.ai 的 trigger API，repo 內沒有備份就等於沒有 source of truth——2026-07-12 曾發生文件記載的 trigger ID 根本不存在、routine 連續兩天沒跑而無人察覺；2026-07-25 又發現 weekly lint 無聲失敗、死因不可考（成功與死亡的 artifact 都是零）。
+做法：trigger prompt 縮成薄殼、只指向 repo 內 runbook（docs/cloud-runbooks/daily.md、weekly-lint.md，共用規則 _shared.md）；trigger 定義 JSON 鏡像備份到 docs/cloud-runbooks/triggers/ 供比對與還原；新增 daily-watchdog GitHub Actions 每日檢查當日產物齊全、缺件寄信告警；心跳紀錄（07-27）讓成功、no-op、中止都留下 commit。
+原則：雲端執行的每一段都要在 GitHub 上留下可分辨的痕跡；步驟細節留在 repo 內受版控與測試保護，trigger 只是入口。
+">
+  <span class="event-card-wrap__dot" style="background-color: var(--info);"></span>
+  <button class="event-card event-card--script" onclick="toggleEvent(this)">
+    <div class="event-card__head">
+      <div>
+        <div>
+          <span class="event-date">2026.07.25</span>
+          <span class="event-tag event-tag--script">可觀測性</span>
+
+        </div>
+        <h3 class="event-title">雲端排程薄殼化：runbook 進 repo、trigger 鏡像備份與看門狗</h3>
+      </div>
+      <span class="event-toggle">+</span>
+    </div>
+    <div class="event-body" hidden>
+
+      <p>雲端 routine 的定義只存在 claude.ai 的 trigger API，repo 內沒有備份就等於沒有 source of truth——2026-07-12 曾發生文件記載的 trigger ID 根本不存在、routine 連續兩天沒跑而無人察覺；2026-07-25 又發現 weekly lint 無聲失敗、死因不可考（成功與死亡的 artifact 都是零）。</p>
+<p><strong>做法：</strong> trigger prompt 縮成薄殼、只指向 repo 內 runbook（<code>docs/cloud-runbooks/daily.md</code>、<code>weekly-lint.md</code>，共用規則 <code>_shared.md</code>）；trigger 定義 JSON 鏡像備份到 <code>docs/cloud-runbooks/triggers/</code> 供比對與還原；新增 daily-watchdog GitHub Actions 每日檢查當日產物齊全、缺件寄信告警；心跳紀錄（07-27）讓成功、no-op、中止都留下 commit。</p>
+<p><strong>原則：</strong> 雲端執行的每一段都要在 GitHub 上留下可分辨的痕跡；步驟細節留在 repo 內受版控與測試保護，trigger 只是入口。</p>
+    </div>
+  </button>
+</div>
+<div class="event-card-wrap" data-track="llm" data-search="週報產品線上線：/weekly 教學式深挖 + web reader 週報頁
+日報與 wiki 分別覆蓋「今天發生什麼」與「長期沉澱」，但缺一個對外分享的中間層：把當週最有料的技術題講到冷讀者也能懂。
+做法：/weekly 產出 weekly/YYYY-Wnn.md 四段式——頭條敘事（300–500 字因果敘事）、技術討論＋深挖專欄（400–600 字教學式）、下週看什麼（可證偽預告，下週開欄回收對錯）、檔尾數字；防重複機制掃描既有深挖題目清單，撞題須有新角度；收尾閉迴路 commit → 測試 → build → 單一 push。build_web.py 結構化解析週報，web reader 新增週報頁籤。
+原則：對外交付（/weekly）與對內策展（/wiki-weekly-review）分工；深挖入選判準是能教出機制層的東西，達不到就換題或省略，不硬寫。
+">
+  <span class="event-card-wrap__dot" style="background-color: var(--ochre-9);"></span>
+  <button class="event-card event-card--llm" onclick="toggleEvent(this)">
+    <div class="event-card__head">
+      <div>
+        <div>
+          <span class="event-date">2026.07.26</span>
+          <span class="event-tag event-tag--llm">新交付物</span>
+
+        </div>
+        <h3 class="event-title">週報產品線上線：/weekly 教學式深挖 + web reader 週報頁</h3>
+      </div>
+      <span class="event-toggle">+</span>
+    </div>
+    <div class="event-body" hidden>
+
+      <p>日報與 wiki 分別覆蓋「今天發生什麼」與「長期沉澱」，但缺一個對外分享的中間層：把當週最有料的技術題講到冷讀者也能懂。</p>
+<p><strong>做法：</strong> <code>/weekly</code> 產出 <code>weekly/YYYY-Wnn.md</code> 四段式——頭條敘事（300–500 字因果敘事）、技術討論＋深挖專欄（400–600 字教學式）、下週看什麼（可證偽預告，下週開欄回收對錯）、檔尾數字；防重複機制掃描既有深挖題目清單，撞題須有新角度；收尾閉迴路 commit → 測試 → build → 單一 push。<code>build_web.py</code> 結構化解析週報，web reader 新增週報頁籤。</p>
+<p><strong>原則：</strong> 對外交付（<code>/weekly</code>）與對內策展（<code>/wiki-weekly-review</code>）分工；深挖入選判準是能教出機制層的東西，達不到就換題或省略，不硬寫。</p>
     </div>
   </button>
 </div>

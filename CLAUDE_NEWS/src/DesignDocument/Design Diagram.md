@@ -1,6 +1,6 @@
 # Design Diagram — 現況架構（維運用）
 
-**最後更新：** 2026-07-17
+**最後更新：** 2026-07-29
 **文件定位：** 這份是「**系統現在怎麼運作**」的操作/維運架構圖，給要執行或維護 pipeline 的人看。
 「**系統怎麼演變成現在這樣**」的演進敘事，另見 `docs/architecture-evolution.html`（互動時間軸），兩者分工不重疊。
 
@@ -14,6 +14,8 @@
 ## 全流程總覽（`/news-pipeline`，三段式）
 
 三段拆分的原因：Step 2 要用 Agent tool 派記者，而「背景 agent 再派 agent」會導致完成通知迷路（巢狀背景的系統性限制），所以 Step 2 必須由呼叫 skill 的 session 親自跑。
+
+> 每日自動線（GitHub Actions 抓料 + 雲端 routine 產日報/wiki/web 的分裂架構）另見 `docs/daily-automation.md` 與 `docs/cloud-runbooks/`；本圖描述的手動 `/news-pipeline` 為補救路徑，兩者步驟一致。
 
 ```mermaid
 flowchart TD
@@ -124,7 +126,9 @@ flowchart TD
 
 ---
 
-## Wiki Lint（`/wiki-lint`，每週手動，10 步）
+## Wiki Lint（`/wiki-lint`，每週，10 步）
+
+排程：雲端 routine `weekly-wiki-lint-cloud`（每週六 09:00 台北，runbook 見 `docs/cloud-runbooks/weekly-lint.md`）；本機手動執行為補救路徑。
 
 ```mermaid
 flowchart TD
@@ -141,6 +145,23 @@ flowchart TD
 ```
 
 **6e 來源健康 + 記分卡 `[改版: 2026-07-16]`：** 除既有「連續 3 天 count=0」抓取告警外，每週執行 `python scripts/source_scorecard.py` 附記分卡表；樣本充足且 Wilson 下界與 Presence 雙低者列觀察名單回報使用者，不自行動 pipeline。
+
+**心跳紀錄 `[加入: 2026-07-27]`：** 成功／no-op／中止一律 append `src/logs/task_scheduler.log` 並 commit——讓「跑了但無事可改」與「靜默死亡」在 GitHub 上可分辨（2026-07-25 雲端 lint 無聲失敗、死因不可考的教訓）。
+
+---
+
+## 週報（`/weekly`，每週對外交付）
+
+`[加入: 2026-07-26]` 當週技術新聞的教學式深挖專欄，輸出 `weekly/YYYY-Wnn.md`，全文 5 分鐘讀完；與 `/wiki-weekly-review`（對內策展）分工。
+
+```mermaid
+flowchart TD
+    W1["1. 蒐集素材\n近 7 日 news/*.md（唯讀）\n+ wiki/log.md 同期 ingest\n+ index.md 近期異動 + feature-radar.md"] --> W2
+    W2["2. 防重複檢查\n掃描既有 weekly/*.md 的深挖題目\n撞題須有新角度才准再上"] --> W3
+    W3["3. 四段式撰寫\n(1) 頭條敘事（300–500 字，不列清單）\n(2) 技術討論 + 深挖專欄（400–600 字，教學式）\n(3) 下週看什麼（可證偽預告，下週回收對錯）\n(4) 檔尾數字"] --> W4
+    W4["4. 收尾閉迴路\ncommit → 測試 → build web → 單一 push"] --> W5
+    W5["build_web.py 結構化解析 weekly/\n→ web_reader/data/weekly/\n→ web reader 週報頁籤"]
+```
 
 ---
 
@@ -196,9 +217,11 @@ flowchart LR
         C["wiki/feature-radar.md, index.md, overview.md, metrics.md"]
         D["wiki/log.md（append only）"]
         E["web_reader/data/（build 產物）"]
+        W["weekly/YYYY-Wnn.md（/weekly 產出）"]
     end
-    B & C & D --> BUILD["scripts/build_web.py\n（wikilink 斷鏈檢查 + 領域欄位防呆\n+ 剝除 [[sources/*]] 分析標記不外洩 web\n+ 嵌來源記分卡 window.TRANSPARENCY）"]
+    B & C & D --> BUILD["scripts/build_web.py\n（wikilink 斷鏈檢查 + 領域欄位防呆\n+ 剝除 [[sources/*]] 分析標記不外洩 web\n+ 嵌來源記分卡 window.TRANSPARENCY\n+ 週報結構化解析）"]
     A --> BUILD
+    W --> BUILD
     BUILD --> E
 ```
 
@@ -215,6 +238,7 @@ flowchart LR
 | 調來源品質標籤 / 看來源效益 | `data/source_registry.json`（標籤）＋ `python scripts/source_scorecard.py`（記分卡，隨 `/wiki-lint` 6e 週跑） |
 | 改過濾規則 | `src/news_aggregator/filter.py`（純規則，無 LLM） |
 | 改日報格式 | `.claude/commands/news-pipeline-steps.md` Step 1b |
+| 改週報格式 | `.claude/commands/weekly.md` |
 | 改記者職責/規則 | `.claude/rules/wiki-ingest-[category].md` |
 | 改 web 呈現 | `web_reader/`（設計規範見 `.claude/rules/web-reader-design.md`）+ `scripts/build_web.py` |
 | 改任何規則/指令後驗證 | `/review-commands`（判讀 `scripts/check_rules.py` 失敗並修復；機械檢查已掛進 `run_tests.py`） |

@@ -6,10 +6,13 @@
 
 ```
 news/           ← 每日日報（YYYY-MM-DD.md）
+weekly/         ← 每週深度週報（YYYY-Wnn.md，/weekly 產出）
 wiki/           ← LLM 維護的知識庫（entities/ topics/）
 src/            ← Python 新聞聚合器
 web_reader/     ← 靜態網頁閱讀器
 scripts/        ← 建置工具（build_web.py）
+data/           ← 來源評分 ledger（registry / funnel / attribution）
+docs/           ← 架構文件、雲端 runbook、workaround 登記
 ```
 
 完整流程設計：`src/DesignDocument/Design Diagram.md`
@@ -32,6 +35,9 @@ scripts/        ← 建置工具（build_web.py）
 | 補跑指定日期 | `/news-pipeline 2026-05-01` |
 | 單獨更新 wiki | `/wiki-ingest` |
 | 每週 wiki 品質檢查 | `/wiki-lint` |
+| 產生本週深度週報 | `/weekly` |
+
+日常不需手動跑：每日自動線由 GitHub Actions（抓料）＋雲端 routine（日報／wiki／web）分裂執行，`/wiki-lint` 亦有雲端排程（每週六），詳見 `docs/daily-automation.md` 與 `docs/cloud-runbooks/`；上述指令為補救與按需路徑。
 
 ---
 
