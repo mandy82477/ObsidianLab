@@ -212,6 +212,9 @@ Claude Code 已成為 AI 輔助編碼的標竿產品，但競爭正快速升溫�
 
 > 逐日條目按主題可另見上方「主要競品追蹤」對應廠商子區塊；此區塊保留完整時序供追溯查證。
 
+### 2026-07-29
+- **[市場地位，跨 3 來源] The Information：儘管 Codex／開源模型討論度上升，Claude Code 採用黏著度仍領先**：詳見上方「主要競品追蹤」OpenAI Codex CLI 子區塊新增說明（Google News/The Information，source_count=3）
+
 ### 2026-07-27
 - **[重大，開源陣營具體進展] Moonshot AI 正式開源 Kimi-K3 權重，宣稱運算成本僅前沿模型 2–3 分之一**：詳見「主要競品追蹤」Moonshot AI 子區塊新增說明（Google News/Tom's Hardware；Blog/Simon Willison https://simonwillison.net/2026/Jul/27/kimi-k3/#atom-everything）
 - **[生態聯盟，Anthropic 未參與] The Verge：Nvidia、Microsoft 發起開放 AI 安全聯盟，OpenAI、Google、Anthropic 均未列名**：The Verge 報導 Nvidia 與 Microsoft 發起新的開放 AI 安全聯盟，OpenAI、Google、Anthropic 均未加入。**注意**：具體未參與原因報導中未說明，可能與競品/生態格局有關，也可能屬安全政策議題（推論，待後續補充）；與 07-25/26 已記錄之「Anthropic vs 開放權重陣營」對立敘事（Nvidia 開放權重連署 50 家企業不含 Anthropic、David Sacks 公開批評）方向一致，本次是又一個 Anthropic 缺席重要產業聯盟的具名案例（推論）（Google News/The Verge）
