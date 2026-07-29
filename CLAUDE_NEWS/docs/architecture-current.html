@@ -174,9 +174,14 @@
       </div>
 
       <div class="mt-6" style="font-family: var(--font-sans); font-size: 12px; color: var(--ink-2); line-height: 1.7;">
+        <div style="color: var(--ink-3); font-family: var(--font-mono); font-size: 10.5px; letter-spacing: 0.04em; margin-bottom: 4px;">emitted_cache 的兩道機制</div>
+        <ul style="padding-left: 16px; list-style: disc; margin-bottom: 14px;">
+          <li><strong style="color: var(--ink-1); font-weight: 500;">兩階段確認（digest_confirmed）：</strong><code style="font-family: var(--font-mono);">--gather-only</code>（GH Actions）只標「暫定收錄」，日報實際生成後由 <code style="font-family: var(--font-mono);">--confirm-digest</code>（雲端 Step 1c）翻正；未確認條目視同不在快取、持續重新供片——防止「抓料成功但日報沒生成」時條目被永久黑洞（2026-07-13 教訓；寫者分工見 <code style="font-family: var(--font-mono);">docs/daily-automation.md</code>）</li>
+          <li><strong style="color: var(--ink-1); font-weight: 500;">重燃（reignite）：</strong>已確認條目分數翻倍且增量 ≥ 10 → 重新收錄——讓後來才起飛的條目（如 GitHub Search「上升中」repo 帶回的最新星數）能再次浮上日報</li>
+        </ul>
         <div style="color: var(--ink-3); font-family: var(--font-mono); font-size: 10.5px; letter-spacing: 0.04em; margin-bottom: 4px;">關鍵欄位</div>
         <ul style="padding-left: 16px; list-style: disc;">
-          <li><code style="font-family: var(--font-mono);">score_unit</code>：分（HN）／讚（Reddit、dev.to）／留言 —— 跨來源比熱度時單位不同，不可直接比大小</li>
+          <li><code style="font-family: var(--font-mono);">score_unit</code>：分（HN）／讚（Reddit、dev.to）／星（GitHub Search）／留言 —— 跨來源比熱度時單位不同，不可直接比大小</li>
           <li><code style="font-family: var(--font-mono);">source_count</code>：同一事件被幾個獨立來源報導，&gt; 1 視為重要度加權</li>
           <li><code style="font-family: var(--font-mono);">source_status</code>：每個來源本次抓到幾筆（餵給日報「📡 來源狀態」表 + wiki-lint 6f 來源健康檢查）</li>
           <li><code style="font-family: var(--font-mono);">source_funnel.jsonl</code>：跨日漏斗統計，與 <code style="font-family: var(--font-mono);">source_attribution.jsonl</code> 一起餵給來源記分卡（<code style="font-family: var(--font-mono);">scripts/source_scorecard.py</code>）（GH Actions 每日 commit）</li>

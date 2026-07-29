@@ -84,8 +84,12 @@ flowchart TD
     FILTER --> FUNNEL["data/source_funnel.jsonl\n（append：每次執行各來源\ngathered/filtered/emitted 漏斗數）"]
 ```
 
+**emitted_cache 的兩道機制**（詳細註解見 `src/news_aggregator/emitted_cache.py`）：
+- **兩階段確認（digest_confirmed）**：`--gather-only`（GH Actions）只把條目標為「暫定收錄」，日報實際生成後由 `--confirm-digest`（雲端 Step 1c）翻正；未確認條目視同不在快取、持續重新供片——防止「抓料成功但日報沒生成」時條目被永久黑洞（2026-07-13 教訓；確認結果由雲端寫回 repo 的寫者分工見 `docs/daily-automation.md`）。
+- **重燃（reignite）**：已確認條目若分數翻倍且增量 ≥ 10，重新收錄——讓後來才起飛的條目（如 GitHub Search「上升中」repo 帶回的最新星數）能再次浮上日報。
+
 **關鍵欄位：**
-- `score_unit`：分（HN）/ 讚（Reddit、dev.to）/ 留言 —— 跨來源比熱度時單位不同，不可直接比大小
+- `score_unit`：分（HN）/ 讚（Reddit、dev.to）/ 星（GitHub Search）/ 留言 —— 跨來源比熱度時單位不同，不可直接比大小
 - `source_count`：同一事件被幾個獨立來源報導，> 1 視為重要度加權
 - `source_status`：每個來源本次抓到幾筆（餵給日報「📡 來源狀態」表 + wiki-lint 6f 來源健康檢查）
 - `source_funnel.jsonl`：跨日累積的來源漏斗統計（gathered→filtered→emitted），與 `source_attribution.jsonl` 一起餵給**來源記分卡**（見下方「來源評分」節；GH Actions 每日 commit）
