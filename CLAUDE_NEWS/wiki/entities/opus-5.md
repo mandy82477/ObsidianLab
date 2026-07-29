@@ -4,8 +4,8 @@
 **狀態：** active
 **領域：** 🤖 模型
 **首次出現：** 2026-07-25
-**最後更新：** 2026-07-28
-**最後新聞更新：** 2026-07-28
+**最後更新：** 2026-07-29
+**最後新聞更新：** 2026-07-29
 
 > **最新進展**（2026-07-26）
 > Anthropic 於 2026-07-25 正式推出 Claude Opus 5，終結了近兩週的「Opus 5」傳聞（詳見 [[entities/opus-4-8]] 歷史記錄）。定位為 thoughtful and proactive 的新一代模型，在編碼與知識工作評測（Frontier-Bench、GDPval-AA）上逼近 Fable 5 的 frontier intelligence，官方稱定價為 Fable 5 的一半；現為 Claude Max 新預設模型、Claude Pro 最強模型，取代 Opus 4.8 成為次旗艦。資安任務上仍落後 Mythos 5。07-26 MLQ.ai／PCMag 標題另稱 Opus 5 在特定測試（AI Benchmark Index、agentic search）「tops」Fable 5，與官方「逼近未超越」框架略有出入，僅標題層級，待驗證。
@@ -76,7 +76,9 @@ Anthropic 於 2026-07-25 正式發布 Claude Opus 5，是繼 2026-07-13 起多�
 - [MLQ.ai：Tops AI Benchmark Index at Half the Cost of Fable 5](https://mlq.ai/news/anthropic-launches-claude-opus-5-tops-ai-benchmark-index-at-half-the-cost-of-fable-5/)（2026-07-26）
 - [PCMag：Tops Fable 5 on Agentic Search](https://www.pcmag.com/news/anthropics-newest-ai-model-opus-5-is-now-available)（2026-07-26）
 - [EdTech Innovation Hub：Anthropic releases Claude Opus 5 at same price as Opus 4.8](https://news.google.com/rss/articles/CBMinwFBVV95cUxOUExpODBocm5KMzF1WjlIREJrZEFFWG9KZVVqQVpZeVhBQndwbm9xZ19VQm5CODNfc2xvd0hfd18weDNON2pKV3JWOGQ0bEd5X2VMMzdqaXlfTzZnX1FSa3NERWxNa0ctWkx4YVctMGZKUDlkVUFrU0hMUjVDU1VKb0lkazlrckZXUFB6OVpOWGxYOVpqODJqY25qZlZYNDA?oc=5)（2026-07-26）
-- [[news/2026-07-25]]、[[news/2026-07-26]]、[[news/2026-07-28]]
+- [Reddit r/artificial：Opus 5's effort dial is not monotonic above "high"](https://www.reddit.com/r/artificial/comments/1v60pga/opus_5s_effort_dial_is_not_monotonic_above_high/)（週熱門，2026-07-25）
+- [官方 migration guide](https://platform.claude.com/docs/en/about-claude/models/migration-guide)（查核日 2026-07-29）
+- [[news/2026-07-25]]、[[news/2026-07-26]]、[[news/2026-07-28]]、[[news/2026-07-29]]
 
 ## 歷史記錄
 

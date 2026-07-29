@@ -101,6 +101,10 @@ Claude Code 是工程師日常編碼工具（CLI），成本隨使用量線性�
 
 ### 2026-07
 
+#### 2026-07-29
+- **ICON 與 Anthropic 合作，將 Claude AI 整合進臨床試驗流程**：Clinical Trials Arena（source_count=2）報導，詳見上方使用現況表新增列（Google News/Clinical Trials Arena）
+- **[市場反應追蹤，非新增合作事實] Cognizant（CTSH）股價於 07-28 合作公告後第二日再漲 8%**：TipRanks 報導 Cognizant 股價在與 Anthropic 的 Claude 合作宣布後第二天上漲 8%，為既有 07-28 Cognizant 全球首要夥伴升級案（見上方使用現況表 Cognizant 列）的投資人反應追蹤，僅標題可用，具體合作細節未見新增（Google News/TipRanks）
+
 #### 2026-07-28
 - **Cognizant 與 Anthropic 擴大既有合作，升級為 Global Premier Partner**：Anthropic Blog 官方公告，Cognizant 將 Claude 用於自身建置並為客戶運行的系統，橫跨製造業、生命科學、保險等產業，並將 Claude 嵌入自身商業與工程平台、打造「Claude 認證」（Frontier Certified）人才梯隊，同步升級為 Claude Partner Network 的全球首要夥伴（Global Premier Partner）；延續近期 TCS（06-11）、DXC（06-12）等頂尖 IT 服務商全面深化合作模式（推論），詳見上方使用現況表新增列與 [[topics/anthropic-business]]（Anthropic Blog https://www.anthropic.com/news/cognizant-anthropic；Google News/Seeking Alpha 同日跟進，未見新增細節）
 
