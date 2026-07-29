@@ -139,13 +139,7 @@
       "time": "07/25 14:43",
       "sentiment": "",
       "body": "報導指出 Claude Mythos 或類似模型可能對外公開發布。",
-      "focusTags": [],
-      "sedimented": [
-        {
-          "id": "mythos",
-          "pageType": "entity"
-        }
-      ]
+      "focusTags": []
     }
   ],
   "discussions": [
@@ -355,11 +349,5 @@
     }
   ],
   "preview": "Anthropic 正式發布 Opus 5 並全平台上線，官方稱其在多項基準測試（含 agentic search）表現優於 Fable 5，成本僅約後者一半。",
-  "sedimentedToday": [
-    {
-      "id": "mythos",
-      "name": "Claude Mythos",
-      "pageType": "entity"
-    }
-  ]
+  "sedimentedToday": []
 }

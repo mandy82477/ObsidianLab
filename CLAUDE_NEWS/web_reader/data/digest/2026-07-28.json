@@ -30,13 +30,7 @@
       "time": "07/24 20:08",
       "sentiment": "",
       "body": "Reddit 討論指出 Anthropic 針對 Claude 5 系列模型將 Claude Code 系統提示詞精簡約 80%，並整理官方建議使用者仍應寫入 CLAUDE.md 與 skills 的內容範圍。",
-      "focusTags": [],
-      "sedimented": [
-        {
-          "id": "claude-code",
-          "pageType": "entity"
-        }
-      ]
+      "focusTags": []
     }
   ],
   "techUpdates": [
@@ -58,13 +52,7 @@
       "time": "07/27 14:36",
       "sentiment": "",
       "body": "Anthropic Status 記錄一起影響 Claude Opus 5 與 Haiku 4.5 的錯誤率升高事件，事件於 UTC 14:34 恢復基準值後結案。",
-      "focusTags": [],
-      "sedimented": [
-        {
-          "id": "opus-5",
-          "pageType": "entity"
-        }
-      ]
+      "focusTags": []
     }
   ],
   "mediaReports": [
@@ -158,12 +146,6 @@
       "body": "gbhackers.com 揭露 Claude Code 存在 symlink 相關瑕疵，可能導致敏感檔案在未經使用者核准下外流。",
       "focusTags": [
         "[風險警示]"
-      ],
-      "sedimented": [
-        {
-          "id": "claude-code",
-          "pageType": "entity"
-        }
       ]
     },
     {
@@ -215,13 +197,7 @@
       "time": "07/26 20:35",
       "sentiment": "",
       "body": "使用者要求 Claude 與 Claude Code on the web 支援同一 connector 掛載多組帳號，累積 452 個 👍 反應，是本日互動數最高的單一 issue。情緒：🤔",
-      "focusTags": [],
-      "sedimented": [
-        {
-          "id": "claude-code",
-          "pageType": "entity"
-        }
-      ]
+      "focusTags": []
     },
     {
       "title": "[BUG] API Error: Rate limit reached despite Claude Max subscription and only 16% usage",
@@ -239,13 +215,7 @@
       "time": "07/26 20:21",
       "sentiment": "",
       "body": "使用者回報 Claude Code 在部分場景下會卡住 5–20 分鐘以上，累積 149 個 👍 反應。情緒：😤",
-      "focusTags": [],
-      "sedimented": [
-        {
-          "id": "claude-code",
-          "pageType": "entity"
-        }
-      ]
+      "focusTags": []
     },
     {
       "title": "[FEATURE] Add Option to Always Show Claude's Thinking",
@@ -272,13 +242,7 @@
       "time": "07/26 10:42",
       "sentiment": "",
       "body": "討論聚焦 Anthropic 官方資料使用政策頁面，釐清消費版與商用版方案在資料訓練上的差異。情緒：😐",
-      "focusTags": [],
-      "sedimented": [
-        {
-          "id": "claude-code",
-          "pageType": "entity"
-        }
-      ]
+      "focusTags": []
     },
     {
       "title": "Too many Claude Code skills? How the listing budget decides which descriptions Claude sees",
@@ -287,13 +251,7 @@
       "time": "07/27 16:30",
       "sentiment": "",
       "body": "第一手實作文章拆解 Claude Code skills 清單的字元預算機制（單一 skill 說明上限 1,536 字元、整體清單依 context window 1% 計算），說明為何新增 skill 可能讓既有 skill 悄悄不再被觸發。情緒：🤔",
-      "focusTags": [],
-      "sedimented": [
-        {
-          "id": "claude-code",
-          "pageType": "entity"
-        }
-      ]
+      "focusTags": []
     },
     {
       "title": "session-indexer: giving Claude Code a memory that doesn't die with the project next door",
@@ -302,13 +260,7 @@
       "time": "07/04 07:54",
       "sentiment": "",
       "body": "作者分享自製的 Go 工具，將 Claude Code 的 session transcript 索引進本地 SQLite 資料庫，並以語意相似度在新 session 開始時取回相關片段。情緒：😊",
-      "focusTags": [],
-      "sedimented": [
-        {
-          "id": "claude-code",
-          "pageType": "entity"
-        }
-      ]
+      "focusTags": []
     },
     {
       "title": "Anthropic cut 80% of Claude Code's system prompt for the Claude 5 models and published what should still go in your CLAUDE.md and skills",
@@ -317,13 +269,7 @@
       "time": "07/24 20:08",
       "sentiment": "",
       "body": "社群整理指出 Anthropic 針對 Claude 5 系列模型大幅精簡 Claude Code 系統提示詞（約 80%），並說明官方建議使用者仍應寫入 CLAUDE.md 與 skills 的內容範圍。情緒：🤔",
-      "focusTags": [],
-      "sedimented": [
-        {
-          "id": "claude-code",
-          "pageType": "entity"
-        }
-      ]
+      "focusTags": []
     },
     {
       "title": "The real AI risk is inside the labs",
@@ -436,59 +382,9 @@
       "pageType": "entity"
     },
     {
-      "id": "claude-code",
-      "name": "Claude Code",
-      "pageType": "entity"
-    },
-    {
       "id": "dario-amodei",
       "name": "Dario Amodei",
       "pageType": "entity"
-    },
-    {
-      "id": "opus-5",
-      "name": "Claude Opus 5",
-      "pageType": "entity"
-    },
-    {
-      "id": "ai-agent-safety",
-      "name": "AI Agent 安全與可靠性",
-      "pageType": "topic"
-    },
-    {
-      "id": "anthropic-business",
-      "name": "Anthropic 商業健康度",
-      "pageType": "topic"
-    },
-    {
-      "id": "anthropic-government-policy",
-      "name": "Anthropic 政府與軍事政策",
-      "pageType": "topic"
-    },
-    {
-      "id": "community-tech-discussions",
-      "name": "社群技術討論趨勢",
-      "pageType": "topic"
-    },
-    {
-      "id": "community-tech-patterns",
-      "name": "社群實戰模式庫",
-      "pageType": "topic"
-    },
-    {
-      "id": "competitor-landscape",
-      "name": "AI 編碼工具競品動態",
-      "pageType": "topic"
-    },
-    {
-      "id": "enterprise-tool-tracker",
-      "name": "大型企業 AI 編碼工具使用追蹤",
-      "pageType": "topic"
-    },
-    {
-      "id": "model-comparison",
-      "name": "Claude 模型選型對照",
-      "pageType": "topic"
     }
   ]
 }

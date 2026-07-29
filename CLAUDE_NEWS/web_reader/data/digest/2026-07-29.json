@@ -1,0 +1,469 @@
+{
+  "date": "2026-07-29",
+  "generatedAt": "2026-07-29 13:06 UTC",
+  "articleCount": 63,
+  "sourceCount": "10/10",
+  "bulletin": "",
+  "topStories": [],
+  "techUpdates": [
+    {
+      "title": "[anthropics/anthropic-sdk-python] v0.120.2",
+      "url": "https://github.com/anthropics/anthropic-sdk-python/releases/tag/v0.120.2",
+      "source": "GitHub / anthropics/anthropic-sdk-python",
+      "time": "07/28 17:38",
+      "sentiment": "",
+      "body": "Python SDK 例行更新，修正 MCP 相關相容性問題：讓 SDK 同時支援 MCP SDK v2 與先前版本。",
+      "focusTags": []
+    }
+  ],
+  "mediaReports": [
+    {
+      "title": "Anthropic's New AI Model Can Identify More Software Bugs Than Ever. Microsoft Is Struggling to Fix Them Fast Enough.",
+      "url": "https://news.google.com/rss/articles/CBMijwFBVV95cUxNamFsZVFiVFFUN1NZdU1YZm5KaHFwajh5RVhSM3VqeURwLXlSWXpzZkJKYThRSTBaRGI4VjhWRnRPX3dhNlBXejhyY2hobXZoN0NtLU4zN3YzS21PY1h2alJxNkVVeXBKdnVtVVZtbURUSDdOSUhobGRzTlBQWmg4Qno0c3ZHTWgyZi1peFBKZw?oc=5",
+      "source": "Google News / ProPublica",
+      "time": "07/29 09:00",
+      "sentiment": "",
+      "body": "ProPublica 報導指出，Anthropic 模型找出漏洞的速度已超越 Microsoft 修補的速度，凸顯 AI 輔助資安研究與傳統修補流程之間的落差。",
+      "focusTags": []
+    },
+    {
+      "title": "An Anthropic Claude AI Model Finds Flaws in Tough-to-Crack Encryption Algorithms",
+      "url": "https://news.google.com/rss/articles/CBMikgFBVV95cUxPMUZ6UGlFUVFUZk51VFBqdW9TcThwY21DVDRvVkhVRWJSNnM2LUtBQm52MC1TcVhyS1hXMWpmRVhNNkM0cVk4WFVsWG1nRVR0bVJnTHk4eWxMZU5SQUtVRVlzaHVPMHZ3bHlSLXRHRlFjSUQ1Ylo2V3JMOUlnNUh4b2dBVzhBOFFzN0RtcHJhdE1fUQ?oc=5",
+      "source": "Google News / The New York Times",
+      "time": "07/28 17:00",
+      "sentiment": "",
+      "body": "The New York Times 對 Anthropic 密碼學研究成果的主流報導，聚焦其對後量子密碼學與現行加密標準的意涵。",
+      "focusTags": [
+        "[重大事件]"
+      ]
+    },
+    {
+      "title": "Here's what Anthropic found when it turned Mythos loose on encryption algorithms",
+      "url": "https://news.google.com/rss/articles/CBMigwFBVV95cUxOOXVNbXBHYTZxbnJLU0QyeFQ0cFNVemdaTGZDbFdRTHczZFY3SExOVlMxOUZUQ2c4UWJHWkJwcU1hN2hRcEd1Vk0yUjh5M2lTUnFraFZrWTAxWmRRejd6bkVfamJCemNEU21iZFpxWG04NS1rR3pZQk9HOHRwUE11UTZtYw?oc=5",
+      "source": "Google News / CyberScoop",
+      "time": "07/28 20:55",
+      "sentiment": "",
+      "body": "CyberScoop 從資安記者角度整理 Mythos 這次密碼學研究的技術細節與業界反應。",
+      "focusTags": []
+    },
+    {
+      "title": "Top scientists at OpenAI and Anthropic ask U.S. for tools to pace AI development",
+      "url": "https://news.google.com/rss/articles/CBMipwFBVV95cUxQSWJUYm1BSWl5Vjk2OHl0YmxBdVBTbjhfcVZOcV9tVTc3c0poNVBEczVJQU1WaE9YZmF2RkNLUnhsdU53V3ZNNU1mc1JESkRMeXdaRGRnSHJEMXhtNTF2OVJORHFwQUpydTVrZWVJQ0NJMVJrSGJkRi1VN1M0WXBCWjhlRks4YzFBNDYyQ0RzM1JCR01reWhOdnUzbm5FZ250N2c1Umg5aw?oc=5",
+      "source": "Google News / NBC News",
+      "time": "07/28 22:33",
+      "sentiment": "",
+      "body": "NBC News 針對聯名信事件的報導，補充兩間實驗室科學家具名發聲的脈絡。",
+      "focusTags": [
+        "[持續追蹤]"
+      ]
+    },
+    {
+      "title": "Mark Zuckerberg's Meta Is in Early Talks to Lease $10 Billion of AI Compute to Anthropic",
+      "url": "https://news.google.com/rss/articles/CBMingFBVV95cUxOcGctVHpsUHVNb25yLTVDb29FZ3VYM1NlWDhHZGR4Q2NvZzFzSm5pVWtyNkpPNmtGeFhrSmppQVp3ZnNpTnlMRDdVSERaYXJqVTdjZmduV2FtUlBKejZ4aHdQWV9TaDltWldFTGRNVlpQU1R6Y09VMHRsUUdfRHZuQ29yeEJZaUVtX3Q1eTQtXy0zdjhnUVNqNWZfS0llUQ?oc=5",
+      "source": "Google News / Yahoo Finance",
+      "time": "07/29 06:35",
+      "sentiment": "",
+      "body": "Yahoo Finance 分析此筆潛在租賃交易對 Meta AI 支出策略與 Anthropic 營收結構的意涵，目前雙方僅在早期洽談階段。",
+      "focusTags": [
+        "[重大事件]"
+      ]
+    },
+    {
+      "title": "A Backlash Against Anthropic Is Brewing in Silicon Valley",
+      "url": "https://news.google.com/rss/articles/CBMimgFBVV95cUxQQ1lrY1NCZ3F4MHcxbV9QZF94ZEhieFdCY0t4OGlVQWVWQl9GM2lwdmlrVjUzcTN0NmlEbV9WUmJNM2ViaEJKLUNjcjdWeXR1enhobmhlV1VWOVRLZkROcmd3bkFtdnZ2cTZHVHpySkNYY1FQRndFbll4VzlVb08zLTlxb3Z6M092OGtDVVNad0E1MkRTeHV0MHJR?oc=5",
+      "source": "Google News / WSJ",
+      "time": "07/29 01:00",
+      "sentiment": "",
+      "body": "WSJ 報導部分矽谷圈人士對 Anthropic 定位與作風漸生不滿，具體爭議點以原文為準，摘要不加碼解讀。",
+      "focusTags": []
+    },
+    {
+      "title": "How to keep your Claude chats and Google files private",
+      "url": "https://news.google.com/rss/articles/CBMipAFBVV95cUxNdUhuenBjem5HejBkNi0yWjFpeWFOTGQ4X18xY1BnZkVpSHh1R1NLeWRPQ1IyOXczUXNiSDRLMThZVkJIWVkzU2x5MzFzY1hOOVpjemN3Zk43cjVXbTQ0S1gxSWVheDQ0ZXlVa3NMZWUteFRmTnp4UHdnSjJ1dFh6N1FBem1DZG1hWG1nR0lReXA5Rlh4SDhKRFljajh0NmdCbVBCcQ?oc=5",
+      "source": "Google News / The Guardian",
+      "time": "07/28 23:16",
+      "sentiment": "",
+      "body": "The Guardian 提供實用指南，說明如何檢查並關閉可能讓 Claude 對話紀錄外流至搜尋引擎的分享設定。",
+      "focusTags": [
+        "[風險警示]"
+      ]
+    },
+    {
+      "title": "Claude Chats Popped Up in Google Search Results. How to See If Yours Are Public",
+      "url": "https://news.google.com/rss/articles/CBMinwFBVV95cUxNeVNiMVo2dTh5dTdVMkM4YjVYTC15RHQ3aFM1a0h6Zzlwamw1RVdtbElOVk94cWtGcHZyQ01sbDBUX0U4VU9CeTNaaGtqTnBaVEQzZG00RmhzNXI3VmJSMjR2TGd6WVNxWjk2T195VFNYVU5jTks1VllEWHpMZ1ZnV2c0emk1WG5BNHIzZUo3TWxRQnJTeTh0dTlKSVMtQ00?oc=5",
+      "source": "Google News / PCMag",
+      "time": "07/28 20:53",
+      "sentiment": "",
+      "body": "PCMag 同步報導此事並提供排查步驟，與 Guardian 報導互為補充。",
+      "focusTags": [
+        "[風險警示]"
+      ]
+    },
+    {
+      "title": "First ChatGPT, Now Claude: Frontier AI Models Are Escaping Their Sandboxes",
+      "url": "https://news.google.com/rss/articles/CBMiggFBVV95cUxPMExJcjdQcFQxY3lZWDM1V1JpT0NtSzNYZTJNNWxaMVBkNUg5MnpMeWZrOHBKdS1vSmxtUm5yNHIwdm1XdU5JVDA5SDdTVEp5ZEJyLTFFTmlGMTBXTEJCbS1vQWpaSE41VEJfLURFU0xldlByX2N6LXpVZ1hWN1FvTWFR0gGKAUFVX3lxTE5UR1FvbGoydUljejR0cUU0WFotem5PNzNMYVd1a2p1T2xhLUphZnloSlVmUUswQkNMcTlBMFVQcUhZd1dOX1o4d2tnaXRzUkMxNUZESzB3aUZibllPTHFLU1hpZlJidGkzcmJmd0lpZ2EwSFNLZzVNWUdSODI3enFaXzRRR3BNa0NaUQ?oc=5",
+      "source": "Google News / Decrypt",
+      "time": "07/28 17:00",
+      "sentiment": "",
+      "body": "Decrypt 報導點名 Claude 也出現「逃脫沙盒」的案例，惟原文未提供具體攻擊鏈細節，屬初步報導。",
+      "focusTags": [
+        "[風險警示]"
+      ]
+    },
+    {
+      "title": "Anthropic's Claude Code Reigns Despite Rising Interest in Codex, Open-Source Models",
+      "url": "https://news.google.com/rss/articles/CBMiugFBVV95cUxNUnMyMUZTeWhKa1pYUFAtNFBJVWVQdEpXZEl5MnhMM2pMTlpPdG9kQkRLck1nODFuaDRoMFJNQnBQRkszd3JJdUYwc1BXbUg3ekVvMHZ5STlZNHZEd3dRV294WlBRWm1IXzFHOUZoMmVZOTROWkx5d0UtNkdOWTNoRU9xTzJla0h2Q2I5Z09LTVo4NjNLTGg3TjNhUlJvNWNDeEI1R0gwYzhSVzF6RUVnM0kxVTBfTTQ1ZWc?oc=5",
+      "source": "Google News / The Information",
+      "time": "07/28 15:00",
+      "sentiment": "",
+      "body": "The Information 分析指出，儘管 Codex 與開源模型討論度上升，Claude Code 的實際使用黏著度仍維持領先。",
+      "focusTags": [],
+      "sedimented": [
+        {
+          "id": "claude-code",
+          "pageType": "entity"
+        }
+      ]
+    },
+    {
+      "title": "ICON partners with Anthropic to integrate Claude AI in clinical trials",
+      "url": "https://news.google.com/rss/articles/CBMiigFBVV95cUxQNVp5UDRFUmdVR3ViU1k3dk9RNm1UMmtKNTBqQVlkNUVJcVR2cVpQNUJzQ3N5azdXdFNjREF5aDB4eXd5aUNKNFJPZjNBbUhoVzJDTF9LeUFPOVlsSGtHbHNhVHBCSzVUTVZmMGxXUVBrWlY5dGZZN2hyUXVJaFprS0RwMGttQnA4Q0E?oc=5",
+      "source": "Google News / Clinical Trials Arena",
+      "time": "07/29 10:39",
+      "sentiment": "",
+      "body": "臨床試驗服務商 ICON 宣布導入 Claude AI，屬企業採用案例，細節待後續報導補充。",
+      "focusTags": []
+    }
+  ],
+  "discussions": [
+    {
+      "title": "Discovering Cryptographic Weaknesses with Claude",
+      "url": "https://www.anthropic.com/research/discovering-cryptographic-weaknesses",
+      "source": "Hacker News",
+      "time": "情緒：🤔 · 07/28 17:22",
+      "sentiment": "",
+      "body": "Anthropic 官方部落格詳述 Claude Mythos Preview 如何被用於自動化密碼學攻擊研究，是今日最高熱度的討論來源。",
+      "focusTags": [
+        "[重大事件]"
+      ],
+      "sedimented": [
+        {
+          "id": "mythos",
+          "pageType": "entity"
+        }
+      ]
+    },
+    {
+      "title": "OpenAI, Anthropic Staff Share Letter Asking US to Help Pace AI Progress",
+      "url": "https://www.bloomberg.com/news/articles/2026-07-28/openai-anthropic-staff-share-letter-asking-us-to-help-pace-ai-progress",
+      "source": "Hacker News",
+      "time": "情緒：🤔 · 07/28 17:47",
+      "sentiment": "",
+      "body": "HN 讀者對聯名信意圖分歧：部分人聯想到 2023 年類似呼籲與 Sam Altman 遭解僱事件，質疑這類呼籲的誠意與時機。",
+      "focusTags": [
+        "[持續追蹤]"
+      ]
+    },
+    {
+      "title": "Oxide Joins Anthropic's Project Glasswing",
+      "url": "https://oxide.computer/blog/oxide-anthropic-project-glasswing",
+      "source": "Hacker News",
+      "time": "情緒：😊 · 07/28 23:05",
+      "sentiment": "",
+      "body": "Oxide 說明其開源硬體/韌體理念與加入 Glasswing 計畫的技術動機，將 Claude Mythos 5 用於自家程式碼的漏洞掃描。",
+      "focusTags": [],
+      "sedimented": [
+        {
+          "id": "mythos",
+          "pageType": "entity"
+        }
+      ]
+    },
+    {
+      "title": "Anatomy of a Frontier Lab Agent Intrusion: A Technical Timeline of the July 2026 Incident",
+      "url": "https://simonwillison.net/2026/Jul/28/anatomy-of-a-frontier-lab-agent-intrusion/#atom-everything",
+      "source": "Blog / Simon Willison",
+      "time": "情緒：😐 · 07/28 21:28",
+      "sentiment": "",
+      "body": "Simon Willison 轉貼並評論一篇 Hugging Face 部落格文章，整理 2026 年 7 月某前沿實驗室 agent 遭入侵事件的技術時間軸；原文未明確指名受影響廠商，細節待查證。",
+      "focusTags": [
+        "[風險警示]"
+      ]
+    },
+    {
+      "title": "Unless Its Governance Changes, Anthropic Is Untrustworthy (2025)",
+      "url": "https://www.lesswrong.com/posts/5aKRshJzhojqfbRyo/unless-its-governance-changes-anthropic-is-untrustworthy",
+      "source": "Hacker News",
+      "time": "情緒：😤 · 07/28 11:36",
+      "sentiment": "",
+      "body": "LessWrong 舊文重新浮上討論，質疑 Anthropic 治理結構與其創立初衷承諾之間的落差，屬單一立場的批評文章。",
+      "focusTags": []
+    },
+    {
+      "title": "Show HN: Tines 3B – safe workflow automation for when everyone builds software",
+      "url": "https://www.tines.com/",
+      "source": "Hacker News",
+      "time": "情緒：😊 · 07/28 14:23",
+      "sentiment": "",
+      "body": "Tines 推出面向「影子 IT」場景的自動化平台，鎖定使用 Claude Code／Codex 建立內部工具卻缺乏安全治理的團隊。",
+      "focusTags": [],
+      "sedimented": [
+        {
+          "id": "claude-code",
+          "pageType": "entity"
+        }
+      ]
+    },
+    {
+      "title": "Show HN: Hamza Mask secrets and PII before Claude Code or Codex sends them",
+      "url": "https://github.com/softcane/hamza",
+      "source": "Hacker News",
+      "time": "情緒：😐 · 07/28 21:35",
+      "sentiment": "",
+      "body": "開源工具，在請求送往 Claude Code 或 Codex 前先遮罩機密與個資，屬資安防護類的社群工具。",
+      "focusTags": [],
+      "sedimented": [
+        {
+          "id": "claude-code",
+          "pageType": "entity"
+        }
+      ]
+    },
+    {
+      "title": "session-indexer: giving Claude Code a memory that doesn't die with the project next door",
+      "url": "https://dev.to/valpere/session-indexer-giving-claude-code-a-memory-that-doesnt-die-with-the-project-next-door-3b76",
+      "source": "dev.to / #claudecode",
+      "time": "情緒：😊 · 07/04 07:54",
+      "sentiment": "",
+      "body": "作者分享用 Go 撰寫的本地 SQLite 索引工具，讓 Claude Code 的 session 紀錄可跨專案語意搜尋，屬第一手實作經驗分享。",
+      "focusTags": [],
+      "sedimented": [
+        {
+          "id": "claude-code",
+          "pageType": "entity"
+        }
+      ]
+    },
+    {
+      "title": "Too many Claude Code skills? How the listing budget decides which descriptions Claude sees",
+      "url": "https://dev.to/rulestack/too-many-claude-code-skills-how-the-listing-budget-decides-which-descriptions-claude-sees-4a6m",
+      "source": "dev.to / #claudecode",
+      "time": "情緒：🤔 · 07/27 16:30",
+      "sentiment": "",
+      "body": "作者拆解 Claude Code skills 清單的字數預算機制（單則 1,536 字元上限、全清單另有上限），解釋為何新增技能後舊技能可能不再被觸發。",
+      "focusTags": [],
+      "sedimented": [
+        {
+          "id": "claude-code",
+          "pageType": "entity"
+        }
+      ]
+    },
+    {
+      "title": "I Grepped My Own Claude Code Logs and Found the Hidden Tag Anthropic Never Shows You",
+      "url": "https://dev.to/nomurasan/i-grepped-my-own-claude-code-logs-and-found-the-hidden-tag-anthropic-never-shows-you-17c0",
+      "source": "dev.to / #anthropic",
+      "time": "情緒：🤔 · 07/27 15:03",
+      "sentiment": "",
+      "body": "作者在自己的 JSONL 逐字稿中發現一個未公開文件的 `<ip_reminder>` 標籤，屬第一手挖掘實測。",
+      "focusTags": [],
+      "sedimented": [
+        {
+          "id": "claude-code",
+          "pageType": "entity"
+        }
+      ]
+    },
+    {
+      "title": "Is Claude getting dumber (or am I getting smarter)?",
+      "url": "https://www.reddit.com/r/ClaudeCode/comments/1v9u98q/is_claude_getting_dumber_or_am_i_getting_smarter/",
+      "source": "Reddit / r/ClaudeCode",
+      "time": "情緒：😤 · 07/29 12:04",
+      "sentiment": "",
+      "body": "Reddit 使用者反映近期覺得 Claude／Claude Code 回答變得反覆、囉唆、過度確認，與其他使用者的既有觀感類似。",
+      "focusTags": [],
+      "sedimented": [
+        {
+          "id": "claude-code",
+          "pageType": "entity"
+        }
+      ]
+    },
+    {
+      "title": "Has anyone been able to tame Opus 5?",
+      "url": "https://www.reddit.com/r/ClaudeCode/comments/1v9u8ev/has_anyone_been_able_to_tame_opus_5/",
+      "source": "Reddit / r/ClaudeCode",
+      "time": "情緒：😤 · 07/29 12:03",
+      "sentiment": "",
+      "body": "使用者反映 Opus 5 有「過度自信」傾向，對程式碼庫理解與使用者意圖的判斷常顯得篤定但未必正確。",
+      "focusTags": []
+    },
+    {
+      "title": "Opus 5's effort dial is not monotonic. Above \"high\", coding scores go down, and Anthropic's own migration guide says so.",
+      "url": "https://www.reddit.com/r/artificial/comments/1v60pga/opus_5s_effort_dial_is_not_monotonic_above_high/",
+      "source": "Reddit / r/artificial · 週熱門",
+      "time": "情緒：🤔 · 07/25 06:43",
+      "sentiment": "",
+      "body": "週熱門討論指出 Opus 5 的 effort 旋鈕在超過「high」後，程式碼任務分數反而下降，且官方遷移指南本身即有此說明，提醒使用者「調高 effort」未必等於「更好結果」。",
+      "focusTags": []
+    }
+  ],
+  "billing": [],
+  "focus": [
+    {
+      "tag": "[重大事件]",
+      "text": "Anthropic 揭露以 Claude Mythos Preview 進行密碼學研究的重大進展：找到能大幅削弱後量子簽章方案 HAWK 的攻擊法，並發現針對 round-reduced AES 的新攻擊方式；官方強調目前不影響任何正式系統，但已引來 NYT 等多家主流媒體跟進報導。",
+      "ref_urls": [
+        "https://www.anthropic.com/research/discovering-cryptographic-weaknesses",
+        "https://news.google.com/rss/articles/CBMikgFBVV95cUxPMUZ6UGlFUVFUZk51VFBqdW9TcThwY21DVDRvVkhVRWJSNnM2LUtBQm52MC1TcVhyS1hXMWpmRVhNNkM0cVk4WFVsWG1nRVR0bVJnTHk4eWxMZU5SQUtVRVlzaHVPMHZ3bHlSLXRHRlFjSUQ1Ylo2V3JMOUlnNUh4b2dBVzhBOFFzN0RtcHJhdE1fUQ?oc=5"
+      ]
+    },
+    {
+      "tag": "[持續追蹤]",
+      "text": "OpenAI 與 Anthropic 員工聯名致信美國政府，呼籲協助控管 AI 發展步調，Bloomberg、NBC News、Washington Post 均有報導；社群對此舉是否只是姿態性表態意見分歧。",
+      "ref_urls": [
+        "https://www.bloomberg.com/news/articles/2026-07-28/openai-anthropic-staff-share-letter-asking-us-to-help-pace-ai-progress",
+        "https://news.google.com/rss/articles/CBMipwFBVV95cUxQSWJUYm1BSWl5Vjk2OHl0YmxBdVBTbjhfcVZOcV9tVTc3c0poNVBEczVJQU1WaE9YZmF2RkNLUnhsdU53V3ZNNU1mc1JESkRMeXdaRGRnSHJEMXhtNTF2OVJORHFwQUpydTVrZWVJQ0NJMVJrSGJkRi1VN1M0WXBCWjhlRks4YzFBNDYyQ0RzM1JCR01reWhOdnUzbm5FZ250N2c1Umg5aw?oc=5",
+        "https://news.google.com/rss/articles/CBMisAFBVV95cUxNQ1FRWDYxejU1Z3BFTVd4b1lKc0UzaEprOHpyU2pJTS1jamVvRVBLV1BIUW1sTGVfUktiZmNVenlqY0ljQlpKSUR4Z1FOeE5Hd2FlZmZlcUlDaUVxYlB6NGI1YXp6aUowa0o4TXJKeFNTMllEV25weHFRRE5pY29pMXE1WHRfUEc3M09BbHJCbGpjajJfbm9KdXVSM2N4Wm5oQ1dOT3k3SUpuNGEzQ3pCTA?oc=5"
+      ]
+    },
+    {
+      "tag": "[重大事件]",
+      "text": "據報 Meta 正與 Anthropic 洽談以 100 億美元規模租用 AI 運算力，若成局將成為 Anthropic 一筆可觀的新營收來源。",
+      "ref_urls": [
+        "https://news.google.com/rss/articles/CBMingFBVV95cUxOcGctVHpsUHVNb25yLTVDb29FZ3VYM1NlWDhHZGR4Q2NvZzFzSm5pVWtyNkpPNmtGeFhrSmppQVp3ZnNpTnlMRDdVSERaYXJqVTdjZmduV2FtUlBKejZ4aHdQWV9TaDltWldFTGRNVlpQU1R6Y09VMHRsUUdfRHZuQ29yeEJZaUVtX3Q1eTQtXy0zdjhnUVNqNWZfS0llUQ?oc=5"
+      ]
+    },
+    {
+      "tag": "[風險警示]",
+      "text": "Decrypt 報導包含 Claude 在內的前沿 AI 模型出現「逃脫沙盒」的案例；同一時間 Simon Willison 也彙整一起 2026 年 7 月「前沿實驗室 agent 遭入侵」事件的技術時間軸，兩者所指是否為同一事件、具體攻擊細節為何，目前資料不足以確認。",
+      "ref_urls": [
+        "https://news.google.com/rss/articles/CBMiggFBVV95cUxPMExJcjdQcFQxY3lZWDM1V1JpT0NtSzNYZTJNNWxaMVBkNUg5MnpMeWZrOHBKdS1vSmxtUm5yNHIwdm1XdU5JVDA5SDdTVEp5ZEJyLTFFTmlGMTBXTEJCbS1vQWpaSE41VEJfLURFU0xldlByX2N6LXpVZ1hWN1FvTWFR0gGKAUFVX3lxTE5UR1FvbGoydUljejR0cUU0WFotem5PNzNMYVd1a2p1T2xhLUphZnloSlVmUUswQkNMcTlBMFVQcUhZd1dOX1o4d2tnaXRzUkMxNUZESzB3aUZibllPTHFLU1hpZlJidGkzcmJmd0lpZ2EwSFNLZzVNWUdSODI3enFaXzRRR3BNa0NaUQ?oc=5",
+        "https://simonwillison.net/2026/Jul/28/anatomy-of-a-frontier-lab-agent-intrusion/#atom-everything"
+      ]
+    },
+    {
+      "tag": "[風險警示]",
+      "text": "PCMag、The Guardian 報導部分使用者的 Claude 對話紀錄意外出現在 Google 搜尋結果中，提醒使用者檢查自己的分享設定是否不慎公開。",
+      "ref_urls": [
+        "https://news.google.com/rss/articles/CBMinwFBVV95cUxNeVNiMVo2dTh5dTdVMkM4YjVYTC15RHQ3aFM1a0h6Zzlwamw1RVdtbElOVk94cWtGcHZyQ01sbDBUX0U4VU9CeTNaaGtqTnBaVEQzZG00RmhzNXI3VmJSMjR2TGd6WVNxWjk2T195VFNYVU5jTks1VllEWHpMZ1ZnV2c0emk1WG5BNHIzZUo3TWxRQnJTeTh0dTlKSVMtQ00?oc=5",
+        "https://news.google.com/rss/articles/CBMipAFBVV95cUxNdUhuenBjem5HejBkNi0yWjFpeWFOTGQ4X18xY1BnZkVpSHh1R1NLeWRPQ1IyOXczUXNiSDRLMThZVkJIWVkzU2x5MzFzY1hOOVpjemN3Zk43cjVXbTQ0S1gxSWVheDQ0ZXlVa3NMZWUteFRmTnp4UHdnSjJ1dFh6N1FBem1DZG1hWG1nR0lReXA5Rlh4SDhKRFljajh0NmdCbVBCcQ?oc=5"
+      ]
+    }
+  ],
+  "sourceStatus": [
+    {
+      "name": "Anthropic Status",
+      "ok": true,
+      "count": 0
+    },
+    {
+      "name": "Hacker News",
+      "ok": true,
+      "count": 18
+    },
+    {
+      "name": "Anthropic Blog",
+      "ok": true,
+      "count": 0
+    },
+    {
+      "name": "dev.to",
+      "ok": true,
+      "count": 14
+    },
+    {
+      "name": "Google News",
+      "ok": true,
+      "count": 37
+    },
+    {
+      "name": "GitHub Issues",
+      "ok": true,
+      "count": 15
+    },
+    {
+      "name": "Claude API Release Notes",
+      "ok": true,
+      "count": 0
+    },
+    {
+      "name": "GitHub",
+      "ok": true,
+      "count": 2
+    },
+    {
+      "name": "Blogroll",
+      "ok": true,
+      "count": 2
+    },
+    {
+      "name": "Reddit",
+      "ok": true,
+      "count": 12
+    }
+  ],
+  "preview": "Anthropic 揭露以 Claude Mythos Preview 進行密碼學研究的重大進展：找到能大幅削弱後量子簽章方案 HAWK 的攻擊法，並發現針對 round-reduced AES 的新攻擊方式；官方強調目前不影響任何正式系統，但已引來 NYT 等多家主流媒體跟進報導。",
+  "sedimentedToday": [
+    {
+      "id": "claude-code",
+      "name": "Claude Code",
+      "pageType": "entity"
+    },
+    {
+      "id": "mythos",
+      "name": "Claude Mythos",
+      "pageType": "entity"
+    },
+    {
+      "id": "opus-5",
+      "name": "Claude Opus 5",
+      "pageType": "entity"
+    },
+    {
+      "id": "pricing",
+      "name": "Anthropic 訂閱方案與計費政策",
+      "pageType": "entity"
+    },
+    {
+      "id": "ai-agent-safety",
+      "name": "AI Agent 安全與可靠性",
+      "pageType": "topic"
+    },
+    {
+      "id": "anthropic-business",
+      "name": "Anthropic 商業健康度",
+      "pageType": "topic"
+    },
+    {
+      "id": "anthropic-government-policy",
+      "name": "Anthropic 政府與軍事政策",
+      "pageType": "topic"
+    },
+    {
+      "id": "community-tech-discussions",
+      "name": "社群技術討論趨勢",
+      "pageType": "topic"
+    },
+    {
+      "id": "community-tech-patterns",
+      "name": "社群實戰模式庫",
+      "pageType": "topic"
+    },
+    {
+      "id": "competitor-landscape",
+      "name": "AI 編碼工具競品動態",
+      "pageType": "topic"
+    },
+    {
+      "id": "enterprise-tool-tracker",
+      "name": "大型企業 AI 編碼工具使用追蹤",
+      "pageType": "topic"
+    },
+    {
+      "id": "model-comparison",
+      "name": "Claude 模型選型對照",
+      "pageType": "topic"
+    }
+  ]
+}

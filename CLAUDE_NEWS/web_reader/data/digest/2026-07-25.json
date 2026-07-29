@@ -427,11 +427,6 @@
       "pageType": "entity"
     },
     {
-      "id": "pricing",
-      "name": "Anthropic 訂閱方案與計費政策",
-      "pageType": "entity"
-    },
-    {
       "id": "sonnet-5",
       "name": "Claude Sonnet 5",
       "pageType": "entity"
