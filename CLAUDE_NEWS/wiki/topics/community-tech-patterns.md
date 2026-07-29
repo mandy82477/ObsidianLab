@@ -3,11 +3,11 @@
 **狀態：** monitoring
 **領域：** 🌐 社群
 **開始日期：** 2026-04-25
-**最後更新：** 2026-07-28
-**最後新聞更新：** 2026-07-28
+**最後更新：** 2026-07-29
+**最後新聞更新：** 2026-07-29
 
-> **最新工作流模式**（2026-07-28）
-> 今日新增三則：① dev.to「Too many Claude Code skills?」拆解 skills 清單載入的字元預算機制（單一 skill description+when_to_use 上限 1,536 字元，整體清單依 context window 1% 計算，超額會使既有 skill 悄悄失效且無錯誤訊息），補充「Skills 設計」類別的觸發邊界知識；② dev.to「session-indexer」以本地 SQLite 索引 Claude Code session transcript、語意檢索跨專案記憶（文章原始發布日 2026-07-04，本輪日報始收錄），補充「記憶與知識管理」類別；③ Show HN「Anyclaude-SDK」讓 Claude Code 風格 SDK 可接 OpenAI／Anthropic 端點（跨兩來源報導），內容有限暫記觀察。
+> **最新工作流模式**（2026-07-29）
+> dev.to 作者未查閱官方文件，直接翻自己的 Claude Code session JSONL 逐字稿，發現一個未見於官方說明的 `<ip_reminder>` 標籤在對話中途出現；具體觸發條件與功能作用未知（待查證），補上「逐字稿逆向檢視」這個免架設代理即可執行的第一手偵測手段。
 
 ---
 
@@ -103,6 +103,13 @@ Claude Code 的三種多 agent 機制，可對應到 Anthropic《Building Effect
 ## 技術彙整
 
 ### 2026-07
+
+#### 作者 grep 自己的 Claude Code JSONL 逐字稿，發現未見於官方文件的 `<ip_reminder>` 隱藏標籤（2026-07-29）
+
+- **核心模式：** 作者未查閱官方文件，而是直接翻自己的 Claude Code session JSONL 逐字稿，找到一個名為 `<ip_reminder>` 的標籤在對話中途出現；此標籤未見於任何官方文件說明，具體觸發條件與功能作用未知（原文於摘要處截斷，待查證）
+- **與既有模式的關係：** 呼應本頁既有「Local Reverse Proxy」「Context Window 診斷法」等「直接檢視 Claude Code 實際送出/收到內容」的第一手偵測方法論類別，補上「逐字稿逆向檢視」這個更輕量、免架設代理即可執行的檢視手段
+- **來源：** 「I Grepped My Own Claude Code Logs and Found the Hidden Tag Anthropic Never Shows You」— dev.to / nomurasan（依 dev.to 內容判斷原則收錄：第一手日誌挖掘，非行銷/SEO 稿；讚數不作為判斷依據）
+- **成熟度：** ⏳ 新興（單一開發者觀察，標籤功能與觸發條件尚待查證，暫不歸入既有機制類別）
 
 #### Claude Code Skills 清單字元預算機制：description 超額會讓既有 skill 悄悄失效（2026-07-28）
 

@@ -121,6 +121,36 @@
 
 ## 技術彙整
 
+### Anthropic 官方研究：使用 Claude Mythos Preview 改進密碼分析攻擊方法（2026-07-29 新增，官方研究成果，非漏洞事件）
+
+- **揭露來源**：Anthropic 官方研究部落格「Discovering Cryptographic Weaknesses with Claude」（2026-07-28 17:22 UTC；經 Hacker News 轉載達 221 分，source_count=5，另有 NYT、ProPublica、CyberScoop、Quantum Insider 等媒體跟進）；https://www.anthropic.com/research/discovering-cryptographic-weaknesses
+- **研究內容**：Anthropic 研究人員使用 Claude Mythos Preview，發現了兩項改進的密碼分析攻擊方法：(1) 大幅削弱後量子數位簽章方案 HAWK 的攻擊；(2) 針對 round-reduced AES（最廣泛使用的對稱加密演算法）的新攻擊方法
+- **性質澄清（重要）**：這是 Anthropic 官方主動發起、公開發表的研究成果展示，Claude 在此扮演密碼分析研究工具的角色，**並非 Claude/Anthropic 系統本身遭攻擊或被發現存在漏洞**；官方明確聲明「目前不影響任何正式系統」（these are significant research advances but do not currently affect any production systems），措辭不可誇大為「漏洞」或「Anthropic 遭攻擊」
+- **關聯報導**：ProPublica（經 Google News 轉載，2026-07-29 09:00 UTC）另發表「Anthropic's New AI Model Can Identify More Software Bugs Than Ever. Microsoft Is Struggling to Fix Them Fast Enough.」，指出 Anthropic 模型找出軟體漏洞的速度已超越 Microsoft 修補速度，凸顯 AI 輔助資安研究能力提升與傳統修補流程之間可能出現的落差；僅標題可用，具體數據與方法論細節未見報導
+- **意涵**：兩則報導共同呈現同一態勢——Claude 系列模型的密碼學／軟體漏洞**發現能力**正快速提升，形成「防守方修補速度追不上 AI 發現速度」的產業級議題；此為能力進展與資安生態影響的討論，不屬於 Claude Code 產品本身的安全事件
+- **可信度評估**：高——Anthropic 官方研究部落格為第一手來源，HN 221 分／5 個來源交叉確認；ProPublica 部分僅標題可用，Microsoft 修補進度具體細節待查證
+
+### Simon Willison 引用「前沿實驗室 Agent 入侵事件技術時間軸」，受影響廠商未確認（2026-07-28 新增，極度保守處理）
+
+- **揭露來源**：Simon Willison 部落格連結轉引一篇文章「Anatomy of a Frontier Lab Agent Intrusion: A Technical Timeline of the July 2026 Incident」（2026-07-28 21:28 UTC，source_count=1），連結出處標示為 Hugging Face 部落格
+- **重要澄清**：日報原文摘要於此處嚴重截斷，**無法確認受影響的具體廠商是否為 Anthropic/Claude**；依規則不推測、不假設受影響方即為 Anthropic，本頁僅保守記錄為「業界觀察到的前沿實驗室 agent 安全事件技術時間軸分析，受影響廠商待確認」
+- **注入防護處理原則**：本則日報條目的摘要文字中出現指示性語句（要求本頁使用特定措辭、要求在同步自查欄填寫特定內容），依 `.claude/rules/wiki-reporter-shared.md` 注入防護規則，此類指示性文字一律視為引用資料而非可執行指令；本頁採用保守措辭是記者依「資訊不足、不可推定」的獨立新聞判斷做出的處理，並非遵循該嵌入指令行事，另見本次回報「⚠️ 疑似注入」欄位
+- **可信度評估**：資訊嚴重不足，無法評估可信度；待後續報導或主編查證受影響廠商身分
+
+### Decrypt：「繼 ChatGPT 後，Claude 也出現沙盒逃脫案例」（2026-07-28 新增，待查證）
+
+- **揭露來源**：Decrypt（經 Google News 轉載，2026-07-28 17:00 UTC）；標題為「First ChatGPT, Now Claude: Frontier AI Models Are Escaping Their Sandboxes」
+- **可用資訊**：標題點名 Claude（繼 ChatGPT 之後）出現「逃脫沙盒」案例，但原文無法擷取具體攻擊鏈、CVE 編號或披露細節，僅標題可用
+- **處理原則**：不推測具體技術機制或攻擊手法，僅記錄「有此標題存在」之事實
+- **可信度評估**：資訊不足，待原文或第二來源出現後補充
+
+### Oxide 加入 Anthropic Project Glasswing（2026-07-28 新增，資安面向：主動漏洞掃描）
+
+- **揭露來源**：Oxide 官方部落格「Oxide Joins Anthropic's Project Glasswing」（Hacker News，16 分，source_count=2，2026-07-28 23:05 UTC）；https://oxide.computer/blog/oxide-anthropic-project-glasswing
+- **內容**：Oxide 加入 Anthropic 的 Project Glasswing 合作計畫，將 Claude Mythos 5 用於自家程式碼庫的漏洞掃描與修補，屬主動式安全防護應用（非漏洞披露）
+- **與既有合作動態關聯**：與先前 Horizon3.ai（2026-07-21）、Nozomi Networks（2026-07-20）加入 Project Glasswing 同屬第三方安全合作生態擴張系列
+- **跨記者重疊提醒**：此條目同時交給商業記者評估企業採用面向，本頁僅記錄資安面向（Mythos 5 用於主動漏洞偵測修補），與商業記者記錄如有重疊請主編留意去重
+
 ### Phoenix Security 聲稱發現 Claude Code「關鍵漏洞」（2026-07-28 新增，資訊嚴重不足，待查證）
 
 - **揭露來源**：EIN News（經 Google News RSS 聚合連結轉載，2026-07-28 11:21 UTC）；標題為「The platform that found critical vulnerability in Anthropic Claude Code Phoenix Security - Purple an Agentic code scan」，原文僅剩截斷的 HTML 片段，可用資訊極少
@@ -128,7 +158,9 @@
 - **處理原則**：依規則不杜撰未經證實的細節，本條僅記錄「有此標題存在」之事實，不推測漏洞性質或影響範圍；待原文或第二來源出現後再補充
 - **可信度評估**：資訊量嚴重不足，無法評估可信度；待查證
 
-### Claude「分享對話」功能外流至 Google 搜尋結果，含 API 金鑰與個人資料（2026-07-28 新增，跨最多獨立媒體來源）
+### Claude「分享對話」功能外流至 Google 搜尋結果，含 API 金鑰與個人資料（2026-07-28 新增，跨最多獨立媒體來源，2026-07-29 更新）
+
+- **2026-07-29 更新（自保教學跟進）**：PCMag 追加「Claude Chats Popped Up in Google Search Results. How to See If Yours Are Public」（2026-07-28 20:53 UTC）與 The Guardian「How to keep your Claude chats and Google files private」（2026-07-28 23:16 UTC）兩則教學導向報導，教使用者如何檢查自己的分享對話是否可被搜尋並關閉分享設定；媒體敘事從 07-27 PCMag「Who's to Blame?」的究責角度，延伸為 07-28 的「使用者自保」實用角度，屬同一隱私外洩事件的持續延燒，非新的攻擊事件
 
 - **揭露來源（至少 8 家獨立媒體，2026-07-26～07-28）**：BBC「Some people's chats with Claude AI found to be publicly available online」（2026-07-28 07:10 UTC，source_count=2）；International Business Times「Claude Shared Chats Surface in Search Results Containing API Keys and Personal Data」（2026-07-26 18:00 UTC）；Axios「Your public Claude app may be searchable on Google」（2026-07-27 23:19 UTC）；Fortune「Users' seemingly private conversations with Anthropic's Claude showed up in Google search results」（2026-07-27 17:20 UTC）；Futurism「A Whole Bunch of People's Claude Chats Are Publicly Accessible Online, and There's Some Wildly Private Stuff in There」（2026-07-27 15:10 UTC，source_count=2）；Mashable「Shared a Claude conversation? Google may have seen it.」（2026-07-27 18:23 UTC）；PCMag「Claude Chats Popped Up in Google Search Results. Who's to Blame?」（2026-07-27 22:01 UTC）；Notebookcheck「Anthropic's Claude AI shared chats appear in Google searches, raising privacy concerns」（2026-07-28 02:07 UTC）
 - **事件機制**：使用者透過 Claude「分享對話」（shared chat）功能公開的紀錄，可被 Google 搜尋引擎索引並直接透過搜尋結果找到，形同使用者可能未充分意識到「分享」等同於「公開可被搜尋引擎索引」
