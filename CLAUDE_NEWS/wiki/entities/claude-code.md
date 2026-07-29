@@ -4,17 +4,17 @@
 **狀態：** active
 **領域：** 🛠️ 工具/功能
 **首次出現：** 2025（正式推出）
-**最後更新：** 2026-07-28
-**最後新聞更新：** 2026-07-28
+**最後更新：** 2026-07-29
+**最後新聞更新：** 2026-07-29
 
-> **最新動態**（2026-07-28）
-> 無新版本號更新（維持 v2.1.220）。Anthropic Status 通報 Opus 5／Haiku 4.5 錯誤率升高事件（07-27 13:42–約 14:34 UTC，約 52 分鐘後恢復基準值，詳見「服務穩定性」）。已知問題互動數更新：Claude／Claude Code on the web 同一 connector 多帳號支援訴求（issue #27302）讚數自 419 增至 452，居本日全站已知問題互動量之冠；常駐顯示 thinking 過程功能請求（issue #8477）讚數自 348 增至 351。新增已知問題：Claude Code 於部分場景卡住/凍結 5–20 分鐘以上（issue #26224，149 個讚）、Windows 11 Pro 因缺少 HCS 服務 vfpext 無法使用 Cowork（issue #74649，6 個讚）、Cowork VM 在 Windows ARM64（Snapdragon 機型）無法啟動（issue #40198，13 個讚）。Hacker News 討論官方資料使用政策文件，釐清消費版／商用版訓練資料使用差異，已補充於「Session 歷史 30 天自動刪除」條目（見「已知問題」📂 Session 與資料管理）。
+> **最新動態**（2026-07-29）
+> anthropic-sdk-python 發布 **v0.120.2**（MCP SDK v2 與 v1 相容性修正，純 bug fix，詳見「版本更新」）。已知問題互動數更新：Claude／Claude Code on the web 同一 connector 多帳號支援訴求（issue #27302）留言增至 222、讚數增至 454，居本日全站已知問題互動量之冠；印度地區專屬定價功能請求（issue #17432）留言增至 210、讚數增至 613；Windows 11 Pro 缺少 HCS 服務 vfpext 導致 Cowork 無法運作（issue #74649）留言數達 84；`autoMemoryEnabled=false` 未能抑制記憶體前導文字（issue #63903）留言增至 35。新增已知問題：Cowork 工作區啟動失敗「Failed to start Claude's workspace」、VM service not running，重開機後仍未解決（issue #27801）；Linux（Ubuntu）無法從剪貼簿貼上圖片（issue #8324）；claude.exe 列出目錄時（`NtQueryDirectoryFileEx`）疑似透過 Wof.sys 觸發 Windows 藍屏（issue #32870）。
 
 ---
 
 ## 現況
 
-**最新版本動態：** 最新版本號為 **v2.1.220**（2026-07-25），純 bug fix / reliability 更新，無使用者端具體功能異動。最後一次具體功能異動為 **v2.1.218**（2026-07-22）將 `/code-review` 改為以背景 subagent 執行，不再佔用對話內容，並新增螢幕報讀軟體相關無障礙改善（細節截斷未知）；已提報 [[feature-radar]]。前一重大異動為 **v2.1.217**（2026-07-21，表情符號 shortcode 自動完成）與 **v2.1.215**（2026-07-19）⚠️ **行為變更**：Claude 不再自動執行 `/verify` 與 `/code-review` 兩項技能，須由使用者手動呼叫指令才會觸發，依賴自動驗證/審查的既有工作流需改為顯式呼叫，無過渡期即刻生效。近期各版本（含 v2.1.216 `sandbox.filesystem.disabled` 設定、v2.1.212 `/fork`／`/subtask` Breaking change）的指令、旗標與設定項異動，詳見下方「最新版本」表格與「歷史記錄」。**2026-07-23～07-26 事件已移入歷史記錄**（SDK 新增 stop reason、語音模式模型選擇擴展、Opus 5 全平台上線與系統提示詞縮減官方證實、4 起模型錯誤率事件、多筆已知問題新增與互動數更新，詳見「歷史記錄」表格與「已知問題」）。**2026-07-27～07-28 新增：** Anthropic Status 通報 Opus 5／Haiku 4.5 錯誤率升高（07-27 13:42–約 14:34 UTC，約 52 分鐘後恢復基準值，詳見「服務穩定性」）；已知問題互動數更新：跨平台多帳號連結訴求（issue #27302）讚數增至 452，居本日全站已知問題互動量之冠，常駐顯示 thinking 過程功能請求（issue #8477）讚數增至 351；新增已知問題：Claude Code 卡住/凍結 5–20 分鐘以上（issue #26224，149 個讚）、Windows 11 Pro 缺少 HCS 服務 vfpext 導致 Cowork 無法使用（issue #74649）、Cowork VM 在 Windows ARM64（Snapdragon）無法啟動（issue #40198）；Hacker News 討論官方資料使用政策文件，釐清消費版／商用版訓練資料使用差異，已補充於「Session 歷史 30 天自動刪除」已知問題條目。
+**最新版本動態：** 最新版本號為 **v2.1.220**（2026-07-25），純 bug fix / reliability 更新，無使用者端具體功能異動。最後一次具體功能異動為 **v2.1.218**（2026-07-22）將 `/code-review` 改為以背景 subagent 執行，不再佔用對話內容，並新增螢幕報讀軟體相關無障礙改善（細節截斷未知）；已提報 [[feature-radar]]。前一重大異動為 **v2.1.217**（2026-07-21，表情符號 shortcode 自動完成）與 **v2.1.215**（2026-07-19）⚠️ **行為變更**：Claude 不再自動執行 `/verify` 與 `/code-review` 兩項技能，須由使用者手動呼叫指令才會觸發，依賴自動驗證/審查的既有工作流需改為顯式呼叫，無過渡期即刻生效。近期各版本（含 v2.1.216 `sandbox.filesystem.disabled` 設定、v2.1.212 `/fork`／`/subtask` Breaking change）的指令、旗標與設定項異動，詳見下方「最新版本」表格與「歷史記錄」。**2026-07-27～07-28 事件已移入歷史記錄**（Anthropic Status 通報 Opus 5／Haiku 4.5 錯誤率升高事件、多筆已知問題新增與互動數更新，詳見「歷史記錄」表格與「已知問題」）。**2026-07-29 新增：** anthropic-sdk-python 發布 v0.120.2（MCP SDK v2/v1 相容性修正，純 bug fix，見「版本更新」）；已知問題互動數更新：跨平台多帳號連結訴求（issue #27302）留言增至 222、讚數增至 454，居本日全站已知問題互動量之冠；印度地區專屬定價功能請求（issue #17432）留言增至 210、讚數增至 613；Windows 11 Pro 缺少 HCS 服務 vfpext 導致 Cowork 無法運作（issue #74649）留言數達 84；`autoMemoryEnabled=false` 未能抑制記憶體前導文字（issue #63903）留言增至 35；新增已知問題：Cowork 工作區啟動失敗「VM service not running」重開機未解（issue #27801）、Linux（Ubuntu）無法從剪貼簿貼上圖片（issue #8324）、claude.exe 列目錄時疑似透過 Wof.sys 觸發 Windows 藍屏（issue #32870）。
 
 **產品定位：** Claude Code 是 Anthropic 的 AI 編碼 CLI 工具，核心能力已從程式碼助理擴展為具備全桌面自動化、多代理管理（Managed Agents）、MCP Server 整合、Hooks 機制、AI 安全審查，以及可串接 1Password 憑證庫安全登入網站（密碼不外流至 Claude／Anthropic，2026-07-17 多家媒體報導，官方技術細節待補）的完整 agent 開發平台；GitHub Stars 達 **131,000+**。
 
@@ -61,7 +61,7 @@
 - 🔴 **未修復**｜**「Server is temporarily limiting requests」錯誤與用量上限無關（GitHub issue #53915，累積 68 則留言、26 個讚，2026-07-13）**：使用者回報收到「伺服器暫時限制請求」的速率限制錯誤，官方訊息明確標註並非使用者用量上限所致；成因與是否可緩解官方尚未說明。
 - 🔴 **未修復**｜**Max 訂閱方案立即觸及用量上限（GitHub issue #16157，累積 1480 則留言、722 個讚，2026-07-12 仍為互動量最高條目）**：使用者回報訂閱 Max 方案後幾乎立即觸及用量上限，反應量持續居冠；官方尚未回應。
 - 🔴 **未修復**｜**圖片處理失敗導致 token 大量浪費（GitHub issue #60334，2026-07-12 回報）**：使用者回報一次圖片處理失敗即耗掉五小時額度約 70%；Anthropic API 端圖片處理錯誤直接反映為使用者額度損失，官方尚未回應。
-- 🔴 **未修復**｜**功能請求：印度地區專屬定價方案（INR 計價）（GitHub issue #17432，累積 205 則留言、598 個讚，2026-07-10）**：使用者要求提供印度盧比計價的地區專屬訂閱方案，降低匯率轉換造成的實際負擔；官方尚未回應。定價/計費層面另見 [[entities/pricing]]。
+- 🔴 **未修復**｜**功能請求：印度地區專屬定價方案（INR 計價）（GitHub issue #17432，累積 210 則留言、613 個讚，首見 2026-07-10，2026-07-29 互動數更新）**：使用者要求提供印度盧比計價的地區專屬訂閱方案，降低匯率轉換造成的實際負擔，類似 OpenAI（ChatGPT）與 Google（Gemini）已提供的方案；官方尚未回應。定價/計費層面另見 [[entities/pricing]]。
 - 🔴 **未修復**｜**付款訂閱 Max 5x 方案後帳號反遭停用（GitHub issue #5088，累積 180 則留言、65 個讚，2026-07-10）**：使用者回報完成 Claude Code Max 5x 方案付款訂閱後，帳號反而遭到停用；官方尚未回應，定價/帳務退款層面另見 [[entities/pricing]]。
 - 🔴 **未修復**｜**Max 方案額度自 3 月起異常快速耗盡（GitHub issue #38335，累積 807 則留言、538 個讚，首見 2026-07-08，2026-07-25 互動數更新，全站已知問題本日留言數最高、持續居配額爭議討論度之冠）**：使用者回報 Max 方案 session 額度自 2026-03-23 起消耗速度異常加快（CLI 使用情境），互動量持續攀升，是配額爭議中討論度最高的單一 issue；官方尚未回應或說明原因，見 [issue #38335](https://github.com/anthropics/claude-code/issues/38335)
 - 🔴 **未修復**｜**HERMES.md 計費路由 bug（GitHub issue #53262，累積 93 則留言、533 個讚，2026-07-11 再度延燒）**：git commit 歷史中含大小寫敏感字串「HERMES.md」會觸發靜默切換至 API 額外計費，完全繞過 Max 方案內含額度；問題自 2026-04-25 首次回報以來持續未解，2026-07-11 以正式 issue 形式重新獲得大量社群回響；Anthropic 先前確認為 bug 但拒絕退款，修復狀態不明，已知損失達 $200。見 [[entities/pricing]]、[[topics/anthropic-commitments]]
@@ -81,7 +81,7 @@
 - 🔴 **未修復**｜**功能請求：新增 `--screen-reader` 模式改善 NVDA／JAWS 無障礙體驗（GitHub issue #11002，累積 63 則留言、38 個讚，首見 2026-07-21，2026-07-21 22:04 UTC 留言數更新）**：使用者希望新增專用的螢幕報讀器（screen reader）模式，改善視障使用者搭配 NVDA、JAWS 等輔助工具的操作體驗；官方尚未回應或排入路線圖。v2.1.218（2026-07-22）changelog 提及新增螢幕報讀軟體相關無障礙改善，惟原文於「Added screen-reade[r]…」處截斷，具體對應範圍未知，暫不視為此功能請求的正式回應，待後續版本確認是否涵蓋此議題。
 - 🔴 **未修復**｜**無法用 `Ctrl+Shift+C` 或右鍵選單複製 Claude Code 輸出文字（GitHub issue #62699，累積 36 則留言、55 個讚，首見 2026-07-23，2026-07-26 互動數更新）**：使用者回報完全無法透過 `Ctrl+Shift+C` 或右鍵選單複製 Claude Code 輸出的文字內容；與既有「終端機複製夾帶多餘縮排與行尾空白」（issue #18170）同屬複製功能相關問題但現象不同（一為完全無法複製、一為複製內容格式不整潔），暫分列追蹤；官方尚未回應。
 - 🔴 **未修復**｜**［META］`bypassPermissions` 模式並未真正略過權限檢查——9 個月未解、12+ 則重複回報（GitHub issue #39523，累積 33 則留言、18 個讚，首見 2026-07-23）**：回報者指出 `bypassPermissions` 模式並未如預期真正跳過權限檢查，此問題已延續 9 個月，累積 12 則以上重複回報仍無解決；與既有「`--dangerously-skip-permissions` 於 v2.1.77 後所有版本失效」（issue #36168）同屬權限跳過機制失效訴求但涵蓋範圍不同（此則為長期 META 彙整回報），暫分列追蹤；官方尚未回應。
-- 🔴 **未修復**｜**`autoMemoryEnabled=false` 未能抑制約 11–16k token 的記憶體前導文字（關聯已關閉的 issue #44829）（GitHub issue #63903，累積 32 則留言，首見 2026-07-23）**：使用者回報將 `autoMemoryEnabled` 設為 `false` 後，系統仍固定注入約 11,000–16,000 token 的記憶體前導文字（memory preamble），設定未如預期生效；回報標題註明與先前已關閉的 issue #44829 相關；官方尚未回應。
+- 🔴 **未修復**｜**`autoMemoryEnabled=false` 未能抑制約 11–16k token 的記憶體前導文字（關聯已關閉的 issue #44829）（GitHub issue #63903，累積 35 則留言，首見 2026-07-23，2026-07-29 留言數更新）**：使用者回報將 `autoMemoryEnabled` 設為 `false` 後，系統確實不再嘗試寫入 auto-memory，但寫死的記憶體前導文字（memory preamble，約 11,000–16,000 token）仍未被抑制，設定未如預期完全生效；回報標題註明與先前已關閉的 issue #44829 相關；官方尚未回應。
 - 🔴 **未修復**｜**「The model's tool call could not be parsed (retry also failed)」間歇性中斷 session（issue #63875，累積 75 則留言、117 個讚；issue #62123，累積 63 則留言、113 個讚，皆 2026-07-13 回報，屬同一 bug 兩則獨立高互動回報，合併追蹤）**：session 進行中間歇性中斷並顯示「The model's tool call could not be parsed (retry also failed)」錯誤；issue #62123 回報者指出在 Opus 4.7 環境下多次發生；官方尚未回應或說明成因。
 - 🔴 **未修復**｜**`--dangerously-skip-permissions` 於 v2.1.77 後所有版本失效（GitHub issue #36168，2026-07-12 回報，regression）**：使用者回報 v2.1.77 之後的所有 Claude Code 版本，`--dangerously-skip-permissions`（跳過權限確認旗標）皆無法正常運作，影響依賴此旗標進行無人值守自動化的工作流；官方尚未回應或說明成因。
 - 🔴 **未修復**｜**回應超過 32000 output token 上限觸發 API 錯誤（GitHub issue #24055，累積 137 則留言、85 個讚，2026-07-11）**：多名使用者回報回應長度超過 32000 output token 上限時觸發「API Error: Claude's response exceeded the 32000 output token maximum」；官方尚未回應。
@@ -129,7 +129,7 @@
 > 三個獨立平台（Mobile、Desktop、Web connector）在 2026-07-05～07-10 一週內各自湧現高互動的多帳號管理訴求，指向同一個 Claude 全平台共通的帳號架構缺口。
 
 - 🔴 **未修復**｜**手機號碼驗證機制異常（GitHub issue #34229，累積 741 則留言、892 個讚，2026-07-16，全站已知問題今日互動量最高）**：使用者回報 Claude 帳號的手機號碼驗證流程出現問題；原文摘要於 preflight checklist 處被截斷，具體異常現象未知，僅能確認高互動量與「手機驗證」主題；官方尚未回應。見 [issue](https://github.com/anthropics/claude-code/issues/34229)
-- 🔴 **未修復**｜**Claude 全平台共通的帳號架構缺口——三平台各自提出多帳號管理訴求**：Mobile app 缺乏免共用 email 的多帳號切換（[issue #36151](https://github.com/anthropics/claude-code/issues/36151)，累積 140 則留言、661 個讚，首見 2026-07-08，2026-07-25 互動數更新）；Desktop app 缺乏多帳號管理與快速切換（[issue #18435](https://github.com/anthropics/claude-code/issues/18435)，累積 126 則留言、705 個讚，2026-07-10 該日反應數最高）；Claude／Claude Code on the web 缺乏同一 Connector 掛載多個帳號的支援（[issue #27302](https://github.com/anthropics/claude-code/issues/27302)，累積 212 則留言、452 個讚，首見 2026-07-10，2026-07-28 讚數更新，全站已知問題本日互動量最高）；三則 issue 分屬不同介面、互不重複，卻在同一週集中出現，共同反映 Claude 帳號模型尚未針對多身份使用情境（如工作／個人帳號分離、多客戶服務）設計統一的跨平台身份層；官方尚未於任一平台回應或排入路線圖。
+- 🔴 **未修復**｜**Claude 全平台共通的帳號架構缺口——三平台各自提出多帳號管理訴求**：Mobile app 缺乏免共用 email 的多帳號切換（[issue #36151](https://github.com/anthropics/claude-code/issues/36151)，累積 140 則留言、661 個讚，首見 2026-07-08，2026-07-25 互動數更新）；Desktop app 缺乏多帳號管理與快速切換（[issue #18435](https://github.com/anthropics/claude-code/issues/18435)，累積 126 則留言、705 個讚，2026-07-10 該日反應數最高）；Claude／Claude Code on the web 缺乏同一 Connector 掛載多個帳號的支援（[issue #27302](https://github.com/anthropics/claude-code/issues/27302)，累積 222 則留言、454 個讚，首見 2026-07-10，2026-07-29 互動數更新，全站已知問題本日互動量最高）；三則 issue 分屬不同介面、互不重複，卻在同一週集中出現，共同反映 Claude 帳號模型尚未針對多身份使用情境（如工作／個人帳號分離、多客戶服務）設計統一的跨平台身份層；官方尚未於任一平台回應或排入路線圖。
 
 ### 🔌 MCP 整合（10 條未修復）
 
@@ -146,7 +146,7 @@
 - 🔴 **未修復**｜**MCP servers/hooks/plugins 設定變更需完整重啟 session（GitHub issue #24057，累積 30 則留言、15 個讚，2026-07-05）**：目前修改 MCP server、hooks 或 plugin 設定後必須重啟整個 session 才會生效，無法熱重載，中斷工作流程並遺失既有 context；社群呼籲改為設定變更後自動重載，官方尚未回應。
 - 🔴 **未修復**｜**MCP Token 消耗問題**：多個 MCP Server 併用時，每條訊息可能消耗 20,000+ tokens
 
-### 🔌 平台相容性（43 條未修復、1 條待查證）
+### 🔌 平台相容性（46 條未修復、1 條待查證）
 
 - 🔴 **未修復**｜**Dispatch 主對話持續顯示離線，儘管 Cowork 任務正常運作（GitHub issue #45937，累積 37 則留言，2026-07-26）**：使用者回報 Dispatch 主對話在行動裝置端持續顯示「This desktop appears offline」，即使直接從桌面端發起提示也一樣；然而個別 Cowork 任務仍能正常運作，顯示問題限於主對話的連線狀態顯示；官方尚未回應。
 - 🔴 **未修復**｜**功能請求：VS Code 擴充套件支援終端機 CLI 已有的 `/btw` 指令（GitHub issue #37323，累積 31 則留言、196 個讚，首見 2026-07-23）**：使用者呼籲 VS Code 擴充套件比照終端機 CLI 版本支援 `/btw` 指令；官方尚未回應或排入路線圖。
@@ -171,8 +171,11 @@
 - 🔴 **未修復**｜**VSCode 擴充套件 UI 確認變更時未顯示 Edit 預覽/diff（GitHub issue #8660，累積 52 則留言、82 個讚，2026-07-08）**：在 VSCode extension 中確認變更時，Edit 預覽/diff 畫面未正確顯示，使用者難以在套用前檢視實際異動內容；官方尚未回應。
 - 🔴 **未修復**｜**Claude Desktop/Cowork 缺 RTL（希伯來/阿拉伯文）排版支援（GitHub issue #38005，累積 40 則留言、105 個讚，首見 2026-07-07，2026-07-23 互動數更新，功能請求）**：使用者要求 Claude Desktop 與 Cowork 介面支援 RTL（right-to-left）排版，目前不支援希伯來文、阿拉伯文等 RTL 語言的正確顯示；官方尚未回應。
 - 🔴 **未修復**｜**Windows 11 Pro：CoworkVMService 因「signature verification initialization failed: failed to get service executable path」無法啟動（GitHub issue #29941，累積 39 則留言，首見 2026-07-23）**：使用者回報 Windows 11 Pro 上 CoworkVMService 因簽章驗證初始化失敗（找不到服務執行檔路徑）而無法啟動，導致 Cowork 功能在該平台完全無法使用；官方尚未回應。
-- 🔴 **未修復**｜**Windows 11 Pro：缺少 HCS 服務 vfpext 導致 Cowork 無法運作（GitHub issue #74649，累積 6 個讚，2026-07-27）**：使用者回報 Windows 11 Pro 環境因缺少 Host Compute Service（HCS）的 vfpext 服務，導致 Cowork 功能無法正常運作；與既有 CoworkVMService 簽章驗證失敗（issue #29941）同屬 Windows 平台 Cowork 啟動障礙但成因不同，暫分列追蹤；官方尚未回應。
+- 🔴 **未修復**｜**Windows 11 Pro：缺少 HCS 服務 vfpext 導致 Cowork 無法運作（GitHub issue #74649，累積 84 則留言、6 個讚，首見 2026-07-27，2026-07-29 留言數更新）**：使用者回報 Windows 11 Pro 環境因缺少 Host Compute Service（HCS）的 vfpext 服務，導致 Cowork 功能無法正常運作；與既有 CoworkVMService 簽章驗證失敗（issue #29941）同屬 Windows 平台 Cowork 啟動障礙但成因不同，暫分列追蹤；官方尚未回應。
 - 🔴 **未修復**｜**Cowork VM 在 Windows ARM64（Samsung Galaxy Book4 Edge、Snapdragon）無法啟動（GitHub issue #40198，累積 13 個讚，2026-07-28）**：使用者回報在搭載 Snapdragon 處理器的 Windows ARM64 裝置（Samsung Galaxy Book4 Edge）上，Cowork VM 無法啟動；顯示 Cowork 對 Windows ARM64 架構的支援尚不完整，官方尚未回應。
+- 🔴 **未修復**｜**Cowork 工作區啟動失敗「Failed to start Claude's workspace」，VM service not running，重開機後問題依然存在（GitHub issue #27801，累積 71 則留言、40 個讚，2026-07-28）**：使用者回報 Cowork 嘗試啟動工作區時失敗，顯示 VM service not running 錯誤，即便重新開機仍無法解決；與既有 Windows 平台 Cowork 啟動障礙（issue #29941、#74649、#40198）同屬 Cowork VM 啟動失敗但成因與平台細節不同，暫分列追蹤；官方尚未回應。
+- 🔴 **未修復**｜**Linux（Ubuntu）無法從剪貼簿貼上圖片（GitHub issue #8324，累積 43 則留言、41 個讚，2026-07-29）**：使用者回報在 Linux（Ubuntu）環境下，無法透過剪貼簿貼上圖片至 Claude Code；官方尚未回應。
+- 🔴 **未修復**｜**claude.exe 列出目錄時（`NtQueryDirectoryFileEx`）疑似透過 Wof.sys 觸發 Windows 藍屏（BSOD）（GitHub issue #32870，累積 36 則留言，2026-07-29）**：使用者回報 claude.exe 在列出目錄內容（`NtQueryDirectoryFileEx`）時，疑似透過 Windows 系統的 Wof.sys（Windows Overlay Filter driver）觸發系統藍屏當機；屬嚴重穩定性問題，官方尚未回應。
 - 🔴 **未修復**｜**進程記憶體洩漏，增長至 120GB+ 遭 OOM Killed（GitHub issue #4953，累積 97 則留言、73 個讚，2026-07-06 首次記錄，2026-07-21 留言數更新）**：使用者回報 Claude Code 進程會持續增長至 120GB 以上記憶體，最終遭系統 OOM killed，屬嚴重穩定性缺陷；長時間執行或大型專案場景風險較高，官方尚未回應或說明成因。
 - 🔴 **未修復**｜**macOS 持續性 ECONNRESET 連線錯誤（GitHub issue #5674，累積 47 則留言、44 個讚，2026-07-06）**：僅在 macOS 上出現的持續性連線中斷問題（ECONNRESET），Windows 環境未見同樣狀況，疑為平台特定的網路層處理差異；官方尚未回應。
 - 🔴 **未修復**｜**Linux 上持續產生 Windows 換行（CRLF）檔案（GitHub issue #2805，累積 39 則留言、32 個讚，2026-07-06）**：即便 CLAUDE.md 已明確指示使用 LF 換行，Claude Code 在 Ubuntu Linux 上仍持續產生 CRLF 換行的檔案，跨平台團隊協作時易引發不必要的 diff 雜訊；官方尚未回應。
@@ -239,6 +242,7 @@
 
 | 版本 | 日期 | 重點 |
 |------|------|------|
+| **anthropic-sdk-python v0.120.2** | 2026-07-28 | Bug Fixes：**mcp** 支援 MCP SDK v2 與 v1 並存，純相容性修正，無使用者端功能異動（見 [Release](https://github.com/anthropics/anthropic-sdk-python/releases/tag/v0.120.2)）|
 | **v2.1.220** | 2026-07-25 | Bug fixes and reliability improvements，官方 changelog 未列具體項目，純可靠性修正，無使用者端功能異動（見 [Release](https://github.com/anthropics/claude-code/releases/tag/v2.1.220)）|
 | **anthropic-sdk-python v0.119.0** | 2026-07-23 | Features：新增 API stop reason **`model_continue`**（見 [Release](https://github.com/anthropics/anthropic-sdk-python/releases/tag/v0.119.0)）|
 | **anthropic-sdk-typescript sdk-v0.114.0** | 2026-07-23 | Features：新增 API 支援，changelog 於「add new sto[p reason]」處截斷，研判與同日 Python SDK 的 `model_continue` stop reason 為同一異動（見 [Release](https://github.com/anthropics/anthropic-sdk-typescript/releases/tag/sdk-v0.114.0)）|
@@ -409,6 +413,7 @@
 
 | 日期 | 事件 |
 |------|------|
+| 2026-07-29 | **今日彙整**：anthropic-sdk-python 發布 **v0.120.2**（Bug Fixes：mcp 支援 MCP SDK v2 與 v1 並存），純相容性修正，不進 feature-radar，僅記版本表。新增已知問題 3 則：Cowork 工作區啟動失敗「Failed to start Claude's workspace」、VM service not running，重開機後問題依然存在（issue #27801，71 則留言、40 個讚）、Linux（Ubuntu）無法從剪貼簿貼上圖片（issue #8324，43 則留言、41 個讚）、claude.exe 列出目錄時（`NtQueryDirectoryFileEx`）疑似透過 Wof.sys 觸發 Windows 藍屏（issue #32870，36 則留言）；既有已知問題互動數更新：跨平台多帳號連結訴求（issue #27302，212→222 則留言、452→454 個讚，本日全站互動量最高）、印度地區專屬定價功能請求（issue #17432，205→210 則留言、598→613 個讚）、Windows 11 Pro 缺少 HCS 服務 vfpext 導致 Cowork 無法運作（issue #74649，留言數增至 84）、`autoMemoryEnabled=false` 未抑制記憶體前導文字（issue #63903，32→35 則留言）。The Information（經 Google News 轉載）報導 Claude Code 採用黏著度領先 Codex／開源模型討論熱度，屬市場競爭層面觀察，與 [[topics/competitor-landscape]] 相關，非本頁功能異動範圍，暫不記錄細節。 |
 | 2026-07-28 | **今日彙整**：Anthropic Status 通報 Opus 5／Haiku 4.5 錯誤率升高（07-27 13:42–約 14:34 UTC，約 52 分鐘後恢復基準值）；已知問題互動數更新：跨平台多帳號連結訴求（issue #27302，419→452 個讚，本日全站互動量最高）、常駐顯示 thinking 功能請求（issue #8477，348→351 個讚）；新增已知問題 3 則：Claude Code 部分場景卡住/凍結 5–20 分鐘以上（issue #26224，149 個讚）、Windows 11 Pro 缺少 HCS 服務 vfpext 導致 Cowork 無法使用（issue #74649，6 個讚）、Cowork VM 在 Windows ARM64（Snapdragon）無法啟動（issue #40198，13 個讚）；Hacker News 討論官方資料使用政策文件（`code.claude.com/docs/en/data-usage`），釐清消費版（Free/Pro/Max）與商用版（Team/Enterprise/API/第三方平台/Claude Gov）訓練資料使用差異，已補充於「Session 歷史 30 天自動刪除」條目。 |
 | 2026-07-26 | **今日彙整**：Anthropic 官方部落格正式證實 Claude 5 世代模型（含 Opus 5）已移除逾 80% 的 Claude Code 系統提示詞、改採新版 context engineering 原則（HN 393 分，前日僅為低互動傳聞，今日轉為官方正式敘述，仍非具體可設定功能不進 feature-radar）；同日 Hacker News 另有討論指出二進位中含僅針對 Opus 5 的兩行硬編碼限制（非經請求不得用 AgentTool／workflows／deep-research），未經官方證實。Opus 5 全平台正式上線首日，Anthropic Status 接連出現 4 起模型錯誤率事件（Opus 5／Fable 5／Sonnet 5／Sonnet 4.6／Haiku 4.5 等組合），均於 10 分鐘至約 1 小時內排除。新增已知問題 5 則：API 連線頻繁中途中斷（issue #69415）、經常誤判所在工作目錄（issue #1669）、Microsoft 365 Connector 僅限 Team／Enterprise 方案（issue #20469，60 則留言、105 個讚）、訊息佇列模式功能請求（issue #50246，40 則留言、182 個讚）、Dispatch 主對話持續顯示離線（issue #45937，37 則留言）；互動數更新：AGENTS.md 支援訴求（issue #6235）攀升至 5760 個讚，居全站已知問題讚數之冠。 |
 | 2026-07-25 | **今日彙整**：**v2.1.220** 為純 bug fix / reliability 版本，不進 feature-radar，僅記版本表；新增已知問題 3 則：自陳分析缺口未真正阻擋輸出（issue #60226，47 則留言）、Fable 5 於 Max 方案持續要求 usage credits（issue #79337，42 則留言、15 個讚）、context compaction 間缺乏持久記憶（issue #34556，61 則留言、5 個讚）；Reddit 單一來源回報 Opus 5 於 Claude Code Desktop 的 xhigh 推理強度因思考功能被強制關閉而失效（上線當天新增問題，待更多佐證）；Hacker News 轉述一則低互動（16 分）推文稱 Anthropic 為 Opus 5／Fable 5 移除逾 80% 系統提示詞，列為待查證傳聞。 |

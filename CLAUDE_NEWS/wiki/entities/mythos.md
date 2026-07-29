@@ -4,19 +4,20 @@
 **狀態：** active（出口管制解除，2026-07-01 起全球恢復存取）
 **領域：** 🤖 模型
 **首次出現：** 2026-04（限定夥伴 Preview）
-**最後更新：** 2026-07-26
-**最後新聞更新：** 2026-07-26
+**最後更新：** 2026-07-29
+**最後新聞更新：** 2026-07-29
 
-> **最新進展（待核實）**（2026-07-25）
-> Mashable 標題稱「Claude Mythos，或類似模型，可能對外公開發布」（僅標題可用，無內文），若屬實將是 Mythos 級模型首次脫離「授權機構限定」而走向一般大眾發布——目前公開陣容中扮演 Mythos 級公開角色的仍是 Fable 5（無護欄完整版 Mythos 5 僅限授權機構）。此說法尚無第二來源佐證，暫列為傳聞待核實；07-21 CNBC 報導稱 Fed 曾就 Mythos 發出警示但延遲數月才浮現，具體內容與時間點同樣待查證，政策/監管面完整分析見 [[topics/anthropic-government-policy]]，本頁僅記錄模型能力認知面動態。
+> **最新進展**（2026-07-28）
+> - **密碼學研究突破**：Anthropic 使用 Claude Mythos Preview 發現攻擊密碼學演算法的改進方法——大幅削弱後量子數位簽章方案 HAWK，並找到攻擊 round-reduced AES（最廣泛使用的對稱加密演算法）的新方法；官方稱屬重大研究進展，**目前不影響任何正式系統**（[Anthropic Research](https://www.anthropic.com/research/discovering-cryptographic-weaknesses)，HN score 221，source_count=5）。同日 GitHub 上出現對 HAWK-256 的實際可行金鑰恢復攻擊示範（HN score 57）。
+> - **Project Glasswing 新夥伴**：Oxide Computer 宣布加入 Project Glasswing，將 Claude Mythos 5 應用於主動掃描自家開源程式碼庫（韌體、作業系統、控制平面、網路堆疊）尋找並修補漏洞（[Oxide Blog](https://oxide.computer/blog/oxide-anthropic-project-glasswing)，HN score 16）。
 
 ---
 
 ## 現況
 
-**2026-07-25 最新（待核實）**：Mashable 標題稱「Claude Mythos，或類似模型，可能對外公開發布」（[Google News/Mashable](https://mashable.com/tech/anthropic-mythos-might-get-public-release)），僅標題與轉址連結可用，無正文摘要，無法確認具體時程、是否為完整無護欄版本、或僅是 Fable 5 之外的另一款「Mythos 級但附加護欄」新版本。若屬實將是重大政策轉向——目前 Mythos 5（無護欄完整版）僅限授權機構，一般用戶的 Mythos 級入口只有 Fable 5；此則暫無第二來源佐證，列為傳聞待核實，後續有具體內容時再擴寫。
+**2026-07-28 最新**：Anthropic 研究部落格披露 Claude Mythos Preview 在密碼學研究上的兩項改進攻擊法——大幅削弱後量子數位簽章方案 HAWK、以及攻擊 round-reduced AES 的新方法，官方強調屬重大研究進展但**目前不影響任何正式系統**（[Anthropic Research](https://www.anthropic.com/research/discovering-cryptographic-weaknesses)，2026-07-28，HN score 221，source_count=5）；同日 GitHub 出現對 HAWK-256 的實際可行金鑰恢復攻擊示範（HN score 57）。這延續 Mythos Preview 先前展示的「自主完成密碼學研究任務」能力路線。同日，Oxide Computer 宣布加入 Project Glasswing，導入 Claude Mythos 5 主動掃描自家開源程式碼庫（韌體、作業系統、控制平面、網路堆疊）尋找並修補漏洞（[Oxide Blog](https://oxide.computer/blog/oxide-anthropic-project-glasswing)，HN score 16），為 Glasswing 又一具名企業夥伴案例。
 
-**2026-07-21（待核實）**：CNBC 報導（經 Google News RSS 轉載，僅標題可用，無法取得完整內文）指美國聯邦準備系統（Fed）曾針對 Mythos 發出警示，但相關訊息延遲數月才浮上檯面；具體警示內容、時間點與影響範圍均待查證，暫不排除與 07-13／07-16 已知事件系出同源、由不同媒體以不同角度報導的可能性（詳見下方「時序」）。
+**2026-07-25（待核實）**：Mashable 標題稱「Claude Mythos，或類似模型，可能對外公開發布」（[Google News/Mashable](https://mashable.com/tech/anthropic-mythos-might-get-public-release)），僅標題與轉址連結可用，無正文摘要，無法確認具體時程、是否為完整無護欄版本、或僅是 Fable 5 之外的另一款「Mythos 級但附加護欄」新版本。若屬實將是重大政策轉向——目前 Mythos 5（無護欄完整版）僅限授權機構，一般用戶的 Mythos 級入口只有 Fable 5；此則暫無第二來源佐證，列為傳聞待核實，後續有具體內容時再擴寫。
 
 **當前狀態（2026-07-01 起）**：出口管制已全面解除，Mythos 5 可用範圍從機構白名單擴大為全球一般用戶；解禁交換條件為 Anthropic 承諾主動偵測安全風險、配合標準協議、通報惡意活動。管制事件歷時 18 天（2026-06-13 至 2026-07-01），完整經過見下方「時序」。
 
@@ -93,6 +94,12 @@ Anthropic 的官方 AI 資安能力研究計畫，Mythos Preview 為核心工具
 ## 時序
 
 ### 解禁後（2026-06-27 起）
+
+#### 2026-07-28
+**Anthropic 公開密碼學研究攻擊成果 + GitHub 實作展示 + Oxide 加入 Project Glasswing**：
+- **密碼學研究**：Anthropic 研究團隊使用 Claude Mythos Preview，發現兩項改進的密碼學演算法攻擊法：第一項大幅削弱 HAWK（後量子世界設計的數位簽章方案）；第二項識別出攻擊 round-reduced AES（最廣泛使用的對稱加密演算法）的新方法。官方稱這是重大研究進展，但**目前不影響任何正式系統**（[Anthropic Research](https://www.anthropic.com/research/discovering-cryptographic-weaknesses)，HN score 221，source_count=5）。文章並提及 Mythos Preview 先前已展示能自主完成密碼學研究任務的能力。
+- **GitHub 實作展示**：GitHub 上出現針對 HAWK-256 的實際可行金鑰恢復攻擊示範（[repo](https://github.com/anthropics/cryptography-research-demo)，HN score 57），與上述研究成果相呼應，HN 讀者留言稱「這個類別（HAWK）本來就被認為有問題，但這次很酷因為是實際可行的」。
+- **Oxide 加入 Project Glasswing**：Oxide Computer 宣布加入 Project Glasswing，將 Claude Mythos 5 應用於主動識別並修補自家開源程式碼庫（韌體、作業系統、控制平面、網路堆疊）中的潛在漏洞（[Oxide Blog](https://oxide.computer/blog/oxide-anthropic-project-glasswing)，HN score 16）。Oxide 強調其一貫信念「所有關鍵軟體都應可被檢視」，故開源自身全部程式碼；此為 Project Glasswing 又一具名企業夥伴案例，能力面詳見本頁，商業/安全政策面另見對應記者頁面。
 
 #### 2026-07-25
 **Mashable：Claude Mythos 或類似模型可能對外公開發布（僅標題可用，待核實）**：
@@ -244,4 +251,7 @@ Mythos 遭駭客存取事件（KRON4 等媒體）。⚠️ 細節尚待官方聲
 - [Exploit Evaluation Report](https://red.anthropic.com/2026/exploit-evals/) — Anthropic Security
 - [CVD Dashboard](https://red.anthropic.com/2026/cvd/) — Anthropic
 - [Mashable：Claude Mythos, or a model like it, to get public release](https://mashable.com/tech/anthropic-mythos-might-get-public-release)（2026-07-25，僅標題可用，待核實）
-- [[news/2026-07-26]]
+- [Discovering Cryptographic Weaknesses with Claude](https://www.anthropic.com/research/discovering-cryptographic-weaknesses) — Anthropic Research（2026-07-28）
+- [Anthropic cryptography-research-demo（HAWK-256 key-recovery attack）](https://github.com/anthropics/cryptography-research-demo) — GitHub（2026-07-28）
+- [Oxide Joins Anthropic's Project Glasswing](https://oxide.computer/blog/oxide-anthropic-project-glasswing) — Oxide Computer Blog（2026-07-28）
+- [[news/2026-07-26]]、[[news/2026-07-29]]

@@ -3,14 +3,14 @@
 **狀態：** ongoing
 **領域：** 💼 商業
 **開始日期：** 2026-05-28
-**最後更新：** 2026-07-28
-**最後新聞更新：** 2026-07-28
+**最後更新：** 2026-07-29
+**最後新聞更新：** 2026-07-29
 
-> **最新動態**（2026-07-28）
-> - **Cognizant 擴大合作**：官方部落格宣布 Cognizant 將把 Claude 用於自身及客戶系統（製造、生命科學、保險等），嵌入自身商業與工程平台並打造「Claude 認證」（Frontier Certified）人才梯隊，升級為 Claude Partner Network 全球首要夥伴（詳見「戰略合作」表）。
-> - **估值敘事**：Axios 報導 Anthropic 市值已超越 Starbucks 與 McDonald's——本鏈條首次以知名消費品牌市值作為對照基準（詳見「IPO 前瞻與估值追蹤」表）。
-> - **著作權和解**：NPR 報導作家群體對已核准的 15 億美元和解案反應不一，未見新增賠付金額或條款細節（詳見「財務狀況」表）。
-> - 07-26 已記錄之 SK 集團晶片供應洽談訊號仍為近期重點。
+> **最新動態**（2026-07-29）
+> - **Oxide 加入 Project Glasswing**：Oxide 官方部落格宣布加入 Anthropic 主導的軟體供應鏈安全合作計畫 Project Glasswing（詳見「戰略合作」表新增列）。
+> - **Meta 運算力租賃，媒體再次報導、無新增事實**：Yahoo Finance（07-29）重申 Meta 與 Anthropic 早期洽談租用約 100 億美元運算力一事，金額與洽談階段皆與 07-17 已記錄事實一致，未見新增條款或進展，仍屬早期洽談、非定案。
+> - **待查證（僅標題可用）**：Axios〈Anthropic's lonely island〉、WSJ〈A Backlash Against Anthropic Is Brewing in Silicon Valley〉兩篇分析文章今日出現，具體論點未展開，不可推測內容，列入時序追蹤後續是否有跟進報導補充細節。
+> - 07-28 已記錄之 Cognizant 全球首要夥伴升級、SK 集團晶片供應洽談訊號仍為近期重點。
 
 ---
 
@@ -127,6 +127,8 @@ Simon Willison（知名開發者博主）發表文章，認為 Anthropic 與 Ope
 
 | 合作方 | 類型 | 日期 | 意義 |
 |--------|------|------|------|
+| Oxide | SDK 夥伴（供應鏈安全）| 2026-07-29 | Oxide 官方部落格（Hacker News，score 16，source_count=2）宣布加入 Anthropic 主導的 Project Glasswing——一項致力於保護全球關鍵軟體安全的合作計畫；Oxide 同時將 Claude Mythos 5 應用於自家程式碼庫的漏洞掃描（模型能力面詳見模型記者對應頁面）。**對商業的意涵**：延續近期 Okta（06-30，XAA/MCP/Glasswing 安全框架合作）、TCS（06-11，取得 Mythos Preview／Project Glasswing 存取）等既有 Glasswing 生態參與者，Oxide 是又一具名加入此安全合作計畫的科技公司，顯示 Glasswing 夥伴圈持續擴張（推論）；具體合作範疇、商業條款未見細節，僅部落格公告層級資訊（Oxide 官方部落格 https://oxide.computer/blog/oxide-anthropic-project-glasswing；Hacker News）|
+| Surf AI | SDK 夥伴（資安/合規整合） | 2026-07-28 | Yahoo Finance 報導 Surf AI 宣布整合 Claude 的 Compliance API，將其「暴露削減」（exposure reduction）業務擴展至 AI 模型連接性領域。**注意**：屬 Surf AI 自身業務公告性質（企業新聞稿），非 Anthropic 官方主導事件，延續近期 Cyberhaven（07-23）、Orca Security（07-21）、Tenable（06-29）等資安廠商整合 Claude Compliance API 的既有生態擴張模式（推論）；具體規模、商業條款未見細節，僅標題層級資訊（Google News/Yahoo Finance）|
 | Cognizant | 企業客戶（Global Premier Partner）| 2026-07-28 | Anthropic Blog 宣布雙方擴大既有合作：Cognizant 將 Claude 用於自身建置並為客戶運行的系統，橫跨製造業、生命科學、保險等產業，並將 Claude 嵌入自身商業與工程平台、打造「Claude 認證」（Frontier Certified）人才梯隊，同步升級為 Claude Partner Network 的全球首要夥伴（Global Premier Partner）。**對商業的意涵**：延續近期 TCS（06-11，5 萬員工部署 + Global Premier Partnership）、DXC（06-12，多年全球聯盟，數萬名認證工程師）等大型 IT 服務商全面深化合作的既有模式，Cognizant 是又一起頂尖 IT 服務商將 Claude 嵌入自身平台並打造認證人才梯隊的具名案例（推論）；具體合約規模、財務條款未見細節，僅官方公告層級資訊（Anthropic Blog https://www.anthropic.com/news/cognizant-anthropic；Google News/Seeking Alpha 同日報導同一事件，未見新增細節）|
 | SK 集團（SK Hynix 母公司）| 晶片供應洽談（自製晶片信號，推論）| 2026-07-26 | Fortune 報導 SK 集團董事長崔泰源（Chey Tae-won）透露 Anthropic 曾接洽尋求自製晶片所需的供應。**對商業的意涵**：延續近期 Samsung 代工洽談（07-02/06，The Information／TechRepublic，尚未升級確定性）、Samsung＋SK Hynix 以投資人身份入股（05-28 Series H）等訊號，本次首次出現「Anthropic 主動尋求自製晶片」的具體措辭（而非單純委託代工或投資關係）；若屬實，顯示 Anthropic 硬體自主布局野心可能從「委託代工」進一步延伸至「自行設計晶片、尋求供應鏈支援」，與 AMD（07-22，$50 億美元投資＋晶片協議）、TeraWulf（07-06，$19B 算力租約）同屬近期算力/晶片自主佈局系列信號（推論，僅標題層級資訊，具體晶片類型、供應規模、時程未見細節）（Google News/Fortune https://fortune.com/2026/07/25/sk-chair-chey-tae-won-anthropic-chip-supplies-skhynix/）|
 | Cyberhaven | SDK 夥伴（資安整合） | 2026-07-23 | PR Newswire 報導 Cyberhaven 擴充其資料與 AI 安全平台，新增支援 ChatGPT Enterprise 與 Claude Compliance API 整合。**對商業的意涵**：延續近期 Orca Security（07-21，07-23 二次確認）、Varonis（07-14）、Tenable（06-29）等資安夥伴生態擴張趨勢（推論）；同時整合 ChatGPT Enterprise，顯示 Cyberhaven 採多供應商並行策略，非 Anthropic 獨家夥伴；具體規模、商業條款未見細節，僅標題層級資訊（PR Newswire）|
@@ -201,6 +203,15 @@ Simon Willison（知名開發者博主）發表文章，認為 Anthropic 與 Ope
 ## 時序
 
 ### 2026-07
+
+#### 2026-07-29
+- **[戰略合作，新增] Oxide 加入 Project Glasswing**：詳見「戰略合作」表新增列（Oxide 官方部落格；Hacker News，score 16，source_count=2）
+- **[戰略合作，媒體重複報導，非新事實] Yahoo Finance 重申 Meta 與 Anthropic 早期洽談 100 億美元運算力租賃**：與 07-17 已記錄之 Reuters／NYT／Hacker News 三方報導事實一致（金額、洽談階段均未變），未見新增條款或進展，維持既有「戰略合作」表 Meta 列不動，用詞保守——仍屬早期洽談，非確定簽約（Google News/Yahoo Finance）
+- **[戰略合作，資安/合規生態擴張] Surf AI 宣布整合 Claude Compliance API**：詳見「戰略合作」表新增列（Google News/Yahoo Finance）
+- **[企業採用，詳見 enterprise-tool-tracker] ICON 與 Anthropic 合作將 Claude AI 整合進臨床試驗流程；Cognizant（CTSH）股價因 07-28 合作公告第二日再漲 8%**：詳見 [[topics/enterprise-tool-tracker]]
+- **[競品動態，詳見 competitor-landscape] The Information（source_count=3）：儘管 Codex 與開源模型討論度上升，Claude Code 採用黏著度仍領先**：詳見 [[topics/competitor-landscape]]
+- **[待查證，僅標題可用，不可推測內容] Axios〈Anthropic's lonely island〉**：Axios 分析文章標題暗示 Anthropic 在產業中的孤立處境，具體論點未展開，待後續報導補充細節後再判斷是否影響「商業風險」相關記載（Google News/Axios，source_count=2）
+- **[待查證，僅標題可用，不可推測內容] WSJ〈A Backlash Against Anthropic Is Brewing in Silicon Valley〉**：WSJ 報導矽谷圈人士對 Anthropic 定位與作風漸生不滿，具體爭議點未展開，待後續報導補充細節（Google News/WSJ）
 
 #### 2026-07-25
 - **[著作權和解案，媒體擴散，非新事實] CNN 跟進報導 Anthropic 將支付《哈利波特》系列出版商和解賠款**：與 07-22～24 已記錄事實相同，未見新增金額或細節，詳見「財務狀況」表更新（Google News/CNN）
