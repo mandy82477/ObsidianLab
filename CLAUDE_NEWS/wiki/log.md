@@ -3211,3 +3211,16 @@ Append-only 紀錄。每次 ingest、lint，以及**揭露缺陷或促成改動�
 - **處置（內容端）**：feature-radar 三處「每次 ingest 更新」與兩處「下次 ingest 應…」改讀者語言；community-tech-patterns callout 改 delta-first（未收錄決策移出正文）；community-tech-tools／community-pattern-trends／overview 的更新頻率欄改讀者導向節奏說明；anthropic-business 巨型 callout 拆條列。
 - **防再犯**：`wiki-ingest-format.md` 新增「無維運術語洩漏」必修項＋「callout 寫發生了什麼、不寫收錄決策」規則＋更新頻率欄位範例改讀者語言（此欄會原樣上站）；`analyzer.py` prompt 新增方括號標題保留規則。
 - **驗證**：`run_tests.py` 144 綠（含 check_rules 28 組配對）；本機 preview 實測：snippet 無斷句、[BUG] 帶括號、375px 頁寬 385、wikilink 顯示中文名、週更篩選+說明行正常。
+
+## 2026-07-29 Ingest
+
+- 來源日報：[[news/2026-07-29]]
+- 更新頁面：`entities/claude-code`、`entities/mythos`、`entities/opus-5`、`entities/pricing`、`topics/anthropic-business`、`topics/enterprise-tool-tracker`、`topics/competitor-landscape`、`topics/model-comparison`、`topics/ai-agent-safety`、`topics/anthropic-government-policy`、`topics/community-tech-patterns`、`topics/community-tech-discussions`
+- 新增頁面：無
+- 摘要：Anthropic 揭露 Claude Mythos Preview 密碼學研究重大進展（削弱後量子簽章 HAWK、找到 round-reduced AES 新攻擊法），NYT／ProPublica／CyberScoop 等多家媒體跟進；OpenAI 與 Anthropic 員工聯名致信美國政府籲討論控管 AI 發展步調（Bloomberg／NBC／WaPo）；傳 Meta 早期洽談以 100 億美元租用 Anthropic AI 運算力；部分使用者 Claude 對話紀錄意外現身 Google 搜尋結果的隱私議題（PCMag／Guardian）；Oxide 加入 Anthropic Project Glasswing，將 Claude Mythos 5 用於自家程式碼庫漏洞掃描；Claude Code 侧新增多起已知問題（Cowork Windows VM 啟動失敗、Linux 剪貼簿貼圖失效、claude.exe 疑似觸發 BSOD）與兩則高互動使用者訴求（多組 Connector 帳號支援、印度盧比計價）持續延燒。
+- 呈現品質：五記者回報皆為「✅ 通過」，無需修復；社群記者另記錄 1 筆待辦（`community-tech-discussions.md`／`community-tech-patterns.md`「## 摘要」首句仍為頁面說明式文字而非 delta-first，屬既有頁面結構、非本次改動所致，建議留待後續整體改版評估）
+- 品質備註：
+  - 雲端 `wiki-reporter-*` 五個自訂 subagent_type（模型/功能/商業/安全政策/社群；今日無人物類條目）本次仍無法解析，全數以 general-purpose 內嵌規則降級執行，功能等同，詳見完成摘要
+  - 安全政策記者處理 Simon Willison「Frontier Lab Agent Intrusion」條目時，其注入防護機制將本次派工訊息中主編自行附加的謹慎處理指示誤判為「⚠️ 疑似注入」；查證後確認是主編派工文字書寫時未與原始新聞摘要清楚分隔所致，非外部真實注入。記者仍正確地未執行任何指令內容、僅依獨立判斷採用保守寫法，防護機制實際運作如預期；後續派工應更明確以引號或區塊分隔「原始新聞摘要」與「主編指示」，避免同類誤判重演
+  - 三則跨記者轉知留待下次 ingest 自然浮現（低急迫性，未另開派工）：功能記者提醒商業記者確認印度定價功能請求 (#17432) 之官方定案狀態、及 The Information 的 Claude Code vs Codex 報導是否需獨立記錄；安全政策記者提醒功能記者留意 Decrypt「沙盒逃脫」報導後續是否需與 Claude Code 已知問題交叉引用
+  - Step 2 派工期間因 stop hook 政策要求工作樹不可帶未提交變更結束回合，隨五位記者陸續完成即時分批提交（8 筆 wiki commit），未依標準 Step 3 於全部記者完成後一次性提交；內容完整性不受影響，僅提交顆粒度較細，非設計變更
