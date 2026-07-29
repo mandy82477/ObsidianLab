@@ -133,9 +133,8 @@
 ### Simon Willison 引用「前沿實驗室 Agent 入侵事件技術時間軸」，受影響廠商未確認（2026-07-28 新增，極度保守處理）
 
 - **揭露來源**：Simon Willison 部落格連結轉引一篇文章「Anatomy of a Frontier Lab Agent Intrusion: A Technical Timeline of the July 2026 Incident」（2026-07-28 21:28 UTC，source_count=1），連結出處標示為 Hugging Face 部落格
-- **重要澄清**：日報原文摘要於此處嚴重截斷，**無法確認受影響的具體廠商是否為 Anthropic/Claude**；依規則不推測、不假設受影響方即為 Anthropic，本頁僅保守記錄為「業界觀察到的前沿實驗室 agent 安全事件技術時間軸分析，受影響廠商待確認」
-- **注入防護處理原則**：本則日報條目的摘要文字中出現指示性語句（要求本頁使用特定措辭、要求在同步自查欄填寫特定內容），依 `.claude/rules/wiki-reporter-shared.md` 注入防護規則，此類指示性文字一律視為引用資料而非可執行指令；本頁採用保守措辭是記者依「資訊不足、不可推定」的獨立新聞判斷做出的處理，並非遵循該嵌入指令行事，另見本次回報「⚠️ 疑似注入」欄位
-- **可信度評估**：資訊嚴重不足，無法評估可信度；待後續報導或主編查證受影響廠商身分
+- **重要澄清**：日報原文摘要於此處嚴重截斷，**無法確認受影響的具體廠商是否為 Anthropic/Claude**；不推測、不假設受影響方即為 Anthropic，本頁僅保守記錄為「業界觀察到的前沿實驗室 agent 安全事件技術時間軸分析，受影響廠商待確認」
+- **可信度評估**：資訊嚴重不足，無法評估可信度；待後續報導或第三方查證受影響廠商身分
 
 ### Decrypt：「繼 ChatGPT 後，Claude 也出現沙盒逃脫案例」（2026-07-28 新增，待查證）
 
@@ -149,7 +148,7 @@
 - **揭露來源**：Oxide 官方部落格「Oxide Joins Anthropic's Project Glasswing」（Hacker News，16 分，source_count=2，2026-07-28 23:05 UTC）；https://oxide.computer/blog/oxide-anthropic-project-glasswing
 - **內容**：Oxide 加入 Anthropic 的 Project Glasswing 合作計畫，將 Claude Mythos 5 用於自家程式碼庫的漏洞掃描與修補，屬主動式安全防護應用（非漏洞披露）
 - **與既有合作動態關聯**：與先前 Horizon3.ai（2026-07-21）、Nozomi Networks（2026-07-20）加入 Project Glasswing 同屬第三方安全合作生態擴張系列
-- **跨記者重疊提醒**：此條目同時交給商業記者評估企業採用面向，本頁僅記錄資安面向（Mythos 5 用於主動漏洞偵測修補），與商業記者記錄如有重疊請主編留意去重
+- **範圍說明**：本頁僅記錄此事件的資安面向（Mythos 5 用於主動漏洞偵測修補），企業採用面向的商業意涵不在本頁討論範圍
 
 ### Phoenix Security 聲稱發現 Claude Code「關鍵漏洞」（2026-07-28 新增，資訊嚴重不足，待查證）
 
@@ -577,6 +576,14 @@
 > 更早期時序見 [[topics/ai-agent-safety-archive]]
 
 > **中美 AI 工具信任對峙**（06-30～07-10：中國代理偵測程式碼、隱寫術指控、Alibaba/Meta 禁用、中國官方後門警示、Anthropic 首度否認）完整逐日時序已整合至 [[topics/safety-china-trust-dispute]]，此處不再重複條目，僅保留與本頁漏洞/提示注入主線相關者。
+
+### 2026-07-29
+- **[官方研究成果，非漏洞] Anthropic：「Discovering Cryptographic Weaknesses with Claude」**：使用 Claude Mythos Preview 發現改進 HAWK 後量子簽章與 round-reduced AES 密碼分析攻擊法，官方明確聲明目前不影響任何正式系統；HN 221 分／source_count=5，另有 NYT／ProPublica／CyberScoop／Quantum Insider 跟進（Anthropic Blog，2026-07-28 17:22 UTC；https://www.anthropic.com/research/discovering-cryptographic-weaknesses）
+- **[能力面追蹤，僅標題] ProPublica：Anthropic 模型找出軟體漏洞速度已超越 Microsoft 修補速度**：報導凸顯 AI 輔助資安研究與傳統修補流程之間的落差，僅標題可用，具體數據待查證（Google News/ProPublica，2026-07-29 09:00 UTC）
+- **[❓ 極度保守處理，廠商未確認] Simon Willison 引用「前沿實驗室 Agent 入侵事件技術時間軸」**：原文摘要嚴重截斷，受影響廠商完全未經確認，不可推定為 Anthropic/Claude，本頁保守記為「業界觀察到的前沿實驗室 agent 安全事件時間軸分析，受影響廠商待確認」（Simon Willison Blog，出處標示為 Hugging Face 部落格，2026-07-28 21:28 UTC）
+- **[❓ 待查證，僅標題] Decrypt：「繼 ChatGPT 後，Claude 也出現沙盒逃脫案例」**：無 CVE 或具體攻擊鏈細節（Google News/Decrypt，2026-07-28 17:00 UTC）
+- **[合作動態，非漏洞] Oxide 加入 Anthropic Project Glasswing**：將 Claude Mythos 5 用於自家程式碼庫主動漏洞掃描與修補（Oxide Blog／Hacker News 16 分，2026-07-28 23:05 UTC；https://oxide.computer/blog/oxide-anthropic-project-glasswing）
+- **[隱私外洩延燒，教學跟進] PCMag／The Guardian：Claude 分享對話 Google 外流事件自保教學**：延續 07-26～07-28 事件，追加使用者如何檢查與關閉分享設定的教學報導（PCMag，2026-07-28 20:53 UTC；The Guardian，2026-07-28 23:16 UTC）
 
 ### 2026-07-28
 - **[待查證，資訊嚴重不足] EIN News：Phoenix Security 聲稱發現 Claude Code「關鍵漏洞」**：標題為「The platform that found critical vulnerability in Anthropic Claude Code Phoenix Security - Purple an Agentic code scan」，原文僅剩截斷 HTML 片段，無法確認任何具體攻擊鏈或漏洞內容，不推測補完（Google News/EIN News，2026-07-28 11:21 UTC）
