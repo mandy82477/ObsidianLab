@@ -40,6 +40,20 @@ CLAUDE.md 說資料檔「不需 commit」是指手動流程無此義務,非禁�
 - ② 雲端 routine **只寫 `emitted_items.json` 的確認欄位**,並與日報同批 push（見 `.claude/commands/news-pipeline-steps.md` 的 `Step 1c：確認 emitted-cache`）
 - 兩者時間錯開 3 小時且都走 push 重試,不構成競態;手動 `--date` 補救不碰快取,見 `main.py`
 
+## 本機同步（每日固定 pull）`[加入: 2026-07-29]`
+
+自動線每天由雲端往 master 寫入約 4 筆 commit（① 抓料 + ② news/wiki/web），本機平常不跑就會持續落後；久未同步後手動補跑或跑 `/weekly` 時容易撞 rebase 衝突或拿舊快取誤判（07-14 也曾因 `origin/master` 快取落後出現 detached HEAD）。故本機排一個**每日固定 pull**：
+
+- **腳本**：`scripts/daily_pull.bat` —— 只在 `master` 分支上執行 `git pull --ff-only origin master`（非 master 記 SKIP 不動；ff-only 保證不自動產生 merge commit，本機有未推分岔時會 FAILED 並提示手動 `git pull --rebase`）。結果 append 至 `%USERPROFILE%\ObsidianLab-daily-pull.log`。
+- **註冊（一次性，Windows 工作排程器）**：
+
+```
+schtasks /Create /TN "ObsidianLab Daily Pull" /TR "\"C:\Users\Mandy\CLAUDE_OBSIDIAN\ObsidianLab\CLAUDE_NEWS\scripts\daily_pull.bat\"" /SC DAILY /ST 09:00 /F
+```
+
+- **時間選 09:00 台北**：② 雲端 routine 每晚 21:00 push、看門狗 23:00 檢查，隔天早上拉一次剛好收齊前一天全部 commit。
+- 此排程**只做 git pull，不含任何 LLM 呼叫**，不違反「禁止 `.bat` + 排程呼叫 `claude -p`」的環境鐵則；Obsidian Git 插件的 `pullBeforePush` 行為維持不變。
+
 ## 出問題時如何補救
 
 自動線任一段失敗（Actions 紅叉 / 雲端 routine ABORTED / 某天沒上站），**用手動路徑補**:
