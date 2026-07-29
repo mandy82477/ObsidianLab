@@ -13,9 +13,9 @@
 
 ## 摘要
 
-**最新態勢（2026-07-28）：** 使用者透過 Claude「分享對話」功能公開的紀錄，遭 Google 搜尋引擎索引並可直接搜尋找到，至少 8 家獨立媒體（BBC、International Business Times、Axios、Fortune、Futurism、Mashable、PCMag、Notebookcheck）於 07-26～07-28 獨立跟進報導，International Business Times 確認外流內容含 API 金鑰與個人資料，為本日跨最多來源的單一安全事件；另有 gbhackers.com（07-27）Claude Code symlink 相關瑕疵、Notebookcheck（07-27）假冒 Claude App Bing 廣告詐騙、EIN News（07-28，資訊嚴重不足）Phoenix Security 聲稱發現 Claude Code「關鍵漏洞」等三則待查證事件，均僅標題可用，詳見「## 未修補風險現況」與「## 技術彙整」。
+**最新態勢（2026-07-29）：** Anthropic 官方研究部落格發表「Discovering Cryptographic Weaknesses with Claude」，使用 Claude Mythos Preview 發現改進 HAWK 後量子簽章與 round-reduced AES 密碼分析攻擊法（HN 221分／5來源，另有 NYT/ProPublica/CyberScoop/Quantum Insider 跟進）；官方明確聲明「目前不影響任何正式系統」，**屬研究成果、非漏洞事件**。同日 ProPublica 報導 Anthropic 模型找出軟體漏洞速度已超越 Microsoft 修補速度（僅標題可用）。另有 Decrypt（僅標題可用）稱「繼 ChatGPT 後 Claude 也出現沙盒逃脫案例」，無 CVE 或攻擊鏈細節；以及一則出處為 Hugging Face 部落格、經 Simon Willison 引用的「前沿實驗室 Agent 入侵事件技術時間軸」文章，**原文對受影響廠商未有可查證確認，不可推定為 Anthropic/Claude**，本頁保守記為「業界觀察到的前沿實驗室 agent 安全事件時間軸分析，受影響廠商待確認」。Oxide 加入 Anthropic Project Glasswing，將 Claude Mythos 5 用於自家程式碼庫漏洞掃描（合作動態，非漏洞）。Claude「分享對話」外流至 Google 搜尋結果事件持續延燒，PCMag／The Guardian 於 07-28 追加自保教學報導。詳見「## 未修補風險現況」與「## 技術彙整」。
 
-**前一態勢（2026-07-24）：** Hackread（經 Google News 轉載，僅標題可用）報導資安研究機構 Tego AI 本週第二度揭露 Claude 相關漏洞——一個隱藏連結可悄悄將受害者檔案傳送給攻擊者；具體攻擊鏈、受影響範圍與披露單位細節均未知，待查證。
+**前一態勢（2026-07-28）：** 使用者透過 Claude「分享對話」功能公開的紀錄，遭 Google 搜尋引擎索引並可直接搜尋找到，至少 8 家獨立媒體（BBC、International Business Times、Axios、Fortune、Futurism、Mashable、PCMag、Notebookcheck）於 07-26～07-28 獨立跟進報導，International Business Times 確認外流內容含 API 金鑰與個人資料，為本日跨最多來源的單一安全事件；另有 gbhackers.com（07-27）Claude Code symlink 相關瑕疵、Notebookcheck（07-27）假冒 Claude App Bing 廣告詐騙、EIN News（07-28，資訊嚴重不足）Phoenix Security 聲稱發現 Claude Code「關鍵漏洞」等三則待查證事件，均僅標題可用，詳見「## 未修補風險現況」與「## 技術彙整」。
 
 **中美 AI 工具信任對峙已獨立成頁：** 中國代理偵測程式碼（06-30 起）、同形字符隱寫術指控（07-01）、Alibaba 禁用 Claude Code + Meta 限制工程師使用 Claude（07-03～07-07）、Anthropic「實驗」定調（07-07）、中國官方正式「後門」資安警示（07-08）、延燒第二/三天（07-09/07-10）、Anthropic 首度公開否認（07-10）等一系列社群/企業/政府/官方互動，已於 2026-07-12 整合拆出至 [[topics/safety-china-trust-dispute]]，本頁不再重複維護詳細敘事，僅保留與模型層/產品層漏洞直接相關的技術細節。政策/外交面完整分析仍見 [[topics/anthropic-government-policy]]。
 
@@ -29,6 +29,9 @@
 
 | 風險 / 指控 | 披露日 | 影響範圍 | 官方回應 | 狀態 |
 |------------|--------|---------|---------|------|
+| Simon Willison 引用「前沿實驗室 Agent 入侵事件技術時間軸」部落格文章（出處標示為 Hugging Face 部落格），受影響廠商完全未經確認，**不可推定為 Anthropic/Claude** | 2026-07-28 | 待確認（廠商身分完全未知，原文摘要嚴重截斷） | 無回應（無法確認事件是否與 Anthropic 相關） | ❓ 待查證（廠商身分未確認，保守處理） |
+| Decrypt（經 Google News 轉載）稱「繼 ChatGPT 後，Claude 也出現沙盒逃脫案例」，僅標題可用，無 CVE 或具體攻擊鏈細節 | 2026-07-28 | 待確認（若屬實，涉及相關沙盒環境的 Claude 使用者） | 無回應（尚無原文可查） | ❓ 待查證 |
+| Oxide 加入 Anthropic Project Glasswing，將 Claude Mythos 5 用於自家程式碼庫主動漏洞掃描與修補（非風險而是合作動態，暫列供追蹤） | 2026-07-28 | 待確認（合作動態，非漏洞事件） | 無回應（原文為 Oxide 官方部落格，屬合作宣布） | ❓ 待查證（合作動態，非漏洞） |
 | EIN News（轉載）稱 Phoenix Security 平台發現 Anthropic Claude Code「關鍵漏洞」（標題嚴重截斷，資訊量不足） | 2026-07-28 | 待確認（標題稱「關鍵漏洞」，具體攻擊鏈、受影響範圍完全未知，不推測補完） | 無回應（原文無法擷取） | ❓ 待查證（資訊嚴重不足） |
 | Claude「分享對話」功能公開紀錄遭 Google 搜尋索引外流，含 API 金鑰與個人資料（BBC/IBT/Fortune/Axios/Futurism/Mashable/PCMag/Notebookcheck 等至少 8 家獨立媒體） | 2026-07-26～07-28 | 所有使用過「分享對話」功能且未察覺其可被搜尋引擎索引的使用者；已確認外洩內容含 API 金鑰與個人資料 | 無回應（尚無 Anthropic 官方公告） | 🔴 未修補（產品設計/預設值層隱私外洩，非攻擊者利用漏洞） |
 | gbhackers.com 報導 Claude Code 存在 symlink 相關瑕疵，可能致敏感檔案未經核准外流（僅標題可用） | 2026-07-27 | 待確認（若屬實，涉及所有使用 symlink 相關功能的 Claude Code 使用者；與既有 CVE-2026-39861 symlink 沙箱逃逸關聯待確認） | 無回應（尚無原文可查） | ❓ 待查證 |
@@ -60,6 +63,11 @@
 
 | 結論 | 狀態 | 日期 |
 |------|------|------|
+| Anthropic 官方研究：使用 Claude Mythos Preview 改進 HAWK 後量子簽章與 round-reduced AES 密碼分析攻擊法；ProPublica 稱模型漏洞發現速度已超越 Microsoft 修補速度 | 🔬 官方研究成果，非漏洞事件，官方明確聲明不影響正式系統 | 2026-07-29 |
+| Simon Willison 引用「前沿實驗室 Agent 入侵事件技術時間軸」部落格文章，受影響廠商未經確認，不可推定為 Anthropic | ❓ 待查證，廠商身分不明，保守處理 | 2026-07-28 |
+| Decrypt：「繼 ChatGPT 後，Claude 也出現沙盒逃脫案例」，僅標題可用 | ❓ 待查證，未經第三方或官方確認 | 2026-07-28 |
+| Oxide 加入 Project Glasswing，將 Claude Mythos 5 用於自家程式碼庫漏洞掃描 | 🛠️ 第三方安全合作生態擴張 | 2026-07-28 |
+| PCMag／The Guardian 追加「如何檢查與保護 Claude 分享對話隱私」教學報導，延續 07-26～07-28 Google 搜尋外流事件 | 📋 媒體持續跟進，教育使用者角度 | 2026-07-28 |
 | EIN News（轉載）稱 Phoenix Security 平台發現 Anthropic Claude Code「關鍵漏洞」，標題嚴重截斷，可用資訊極少 | ❓ 待查證，資訊嚴重不足，無法確認任何攻擊鏈或漏洞細節 | 2026-07-28 |
 | Claude「分享對話」功能外流至 Google 搜尋結果，含 API 金鑰與個人資料，本日跨最多獨立媒體來源的單一安全事件（BBC/IBT/Fortune/Axios/Futurism/Mashable/PCMag/Notebookcheck 等至少 8 家） | 🔴 已確認發生（8+ 獨立媒體交叉確認），Anthropic 官方尚無回應 | 2026-07-26～07-28 |
 | gbhackers.com：Claude Code symlink 相關瑕疵可能致敏感檔案未經核准外流（僅標題可用） | ❓ 待查證，未經第三方或官方確認 | 2026-07-27 |
