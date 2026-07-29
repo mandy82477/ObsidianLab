@@ -10,6 +10,7 @@
 |------|----|------|------|--------|---------|
 | `daily-news-pipeline-cloud` | `trig_01AWf2wwmVeL3ykPCSyxyvzw` | `0 13 * * *` | 每日 21:00 | `docs/cloud-runbooks/triggers/daily-news-pipeline-cloud.json` | `docs/cloud-runbooks/daily.md` |
 | `weekly-wiki-lint-cloud` | `trig_01E41amaGSNuL8jeUhCR8iUw` | `0 1 * * 6` | 每週六 09:00 | `docs/cloud-runbooks/triggers/weekly-wiki-lint-cloud.json` | `docs/cloud-runbooks/weekly-lint.md` |
+| `claude-code-daily-tip` | `trig_01RKBaFd9zKAGjHxHhcDdJxn` | `0 0 * * *` | 每日 08:00 | `docs/cloud-runbooks/triggers/claude-code-daily-tip.json` | —（自包含 prompt，非新聞 pipeline；例外理由見鏡像 JSON `note` 欄）|
 
 另有 `cloud-writeback-probe`（`trig_01KYk75uTSqLsXcmTNaawmLL`）為 2026-07-10 的寫回測試殘留，已 disabled，未納入備份。
 
