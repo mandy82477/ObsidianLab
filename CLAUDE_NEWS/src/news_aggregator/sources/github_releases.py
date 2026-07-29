@@ -22,6 +22,16 @@ REPO_SEARCH_QUERIES = [
     "mcp-server claude in:name,description",
 ]
 
+# Rising window — the created:>{26h} pass only sees brand-new repos, which are
+# almost always at 0-5 stars, so "popular" repos that take off weeks after
+# creation never enter the pipeline and the emitted-cache reignite check
+# (score 2x and delta >= 10) never gets a fresh star count to compare against.
+# This second pass re-queries repos created within RISING_WINDOW_DAYS that
+# already crossed RISING_MIN_STARS: takeoffs get gathered again with current
+# stars, letting reignite decide whether they resurface.
+RISING_WINDOW_DAYS = 30
+RISING_MIN_STARS = 50
+
 
 class GitHubReleases(BaseSource):
     def fetch(self) -> list[FeedItem]:
@@ -69,15 +79,22 @@ class GitHubReleases(BaseSource):
                     logger.warning("GitHubReleases repo '%s' failed: %s", repo, e)
 
             # ── Community repo search ─────────────────────────────────────────
+            # Two passes per keyword query: brand-new repos (created within the
+            # lookback window) and rising repos (see RISING_WINDOW_DAYS above).
             cutoff_date = cutoff.strftime("%Y-%m-%d")
-            for query in REPO_SEARCH_QUERIES:
+            rising_date = (datetime.now(tz=timezone.utc) - timedelta(days=RISING_WINDOW_DAYS)).strftime("%Y-%m-%d")
+            searches = [(f"{q} created:>{cutoff_date}", False) for q in REPO_SEARCH_QUERIES] + [
+                (f"{q} created:>{rising_date} stars:>={RISING_MIN_STARS}", True) for q in REPO_SEARCH_QUERIES
+            ]
+            seen_search_urls: set[str] = set()
+            for query, is_rising in searches:
                 try:
                     resp = requests.get(
                         "https://api.github.com/search/repositories",
                         headers=headers,
                         timeout=REQUEST_TIMEOUT,
                         params={
-                            "q": f"{query} created:>{cutoff_date}",
+                            "q": query,
                             "sort": "stars",
                             "order": "desc",
                             "per_page": 8,
@@ -89,17 +106,27 @@ class GitHubReleases(BaseSource):
                         break
                     resp.raise_for_status()
                     for repo in resp.json().get("items", []):
+                        url = repo["html_url"]
+                        if url in seen_search_urls:
+                            continue
+                        seen_search_urls.add(url)
+                        # rising repos surface because of current traction, so
+                        # date them by last push, not creation (up to 30d ago)
+                        pub_str = (repo.get("pushed_at") if is_rising else repo.get("created_at")) or repo.get("created_at", "")
                         try:
-                            pub = datetime.fromisoformat(repo["created_at"].replace("Z", "+00:00"))
+                            pub = datetime.fromisoformat(pub_str.replace("Z", "+00:00"))
                         except Exception:
                             pub = datetime.now(tz=timezone.utc)
                         desc = (repo.get("description") or "")[:300]
+                        if is_rising:
+                            desc = f"📈 上升中（{RISING_WINDOW_DAYS} 天內建立、已達 ★{RISING_MIN_STARS}+）｜{desc}"
                         items.append(FeedItem(
                             title=repo["full_name"],
-                            url=repo["html_url"],
+                            url=url,
                             source="GitHub Search",
                             published=pub,
                             score=repo.get("stargazers_count", 0),
+                            score_unit="星",
                             summary=desc,
                             category="community",
                         ))
