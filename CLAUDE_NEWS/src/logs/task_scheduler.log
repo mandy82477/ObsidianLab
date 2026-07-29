@@ -42,3 +42,4 @@
 [週二 2026/07/28 13:38:09.00] Step 4: Tests FAILED - web build skipped（tests.test_blogroll/test_gap_lookback/test_source_funnel 因同一 feedparser sgmllib 環境缺口 ImportError；check_rules.py 28 組同步配對全過、check_arch_docs.py 全過，非新增回歸）
 [週二 2026/07/28 13:38:09.00] Step 5: Single push done (news + wiki，無 web 變更) - 首次嘗試即成功，無需重試 (3c4848d..c76e69c)
 [週二 2026/07/28 13:38:09.00] === Pipeline complete (agent) ===
+[cloud daily-news-pipeline-cloud STARTED 2026-07-29T13:04:00Z]
