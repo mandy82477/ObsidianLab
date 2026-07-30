@@ -327,7 +327,7 @@
   "https://github.com/anthropics/claude-code/issues/24726": {
     "first_emitted": "2026-07-17",
     "score_at_emit": 63,
-    "digest_confirmed": false
+    "digest_confirmed": true
   },
   "https://github.com/anthropics/claude-code/issues/30112": {
     "first_emitted": "2026-07-17",
@@ -1317,7 +1317,7 @@
   "https://github.com/anthropics/claude-code/issues/826": {
     "first_emitted": "2026-07-21",
     "score_at_emit": 354,
-    "digest_confirmed": false
+    "digest_confirmed": true
   },
   "https://www.emergingtrajectories.com/lh/frontier-lab-economics": {
     "first_emitted": "2026-07-21",
@@ -3932,171 +3932,171 @@
   "https://status.claude.com/incidents/fsh2zzzl2c4l": {
     "first_emitted": "2026-07-30",
     "score_at_emit": 0,
-    "digest_confirmed": false
+    "digest_confirmed": true
   },
   "https://blog.cryptographyengineering.com/2026/07/29/some-notes-about-anthropics-new-results": {
     "first_emitted": "2026-07-30",
     "score_at_emit": 168,
-    "digest_confirmed": false
+    "digest_confirmed": true
   },
   "https://github.com/anthropics/claude-code/issues/18435": {
     "first_emitted": "2026-07-30",
     "score_at_emit": 154,
-    "digest_confirmed": false
+    "digest_confirmed": true
   },
   "https://github.com/anthropics/claude-code/issues/32479": {
     "first_emitted": "2026-07-30",
     "score_at_emit": 76,
-    "digest_confirmed": false
+    "digest_confirmed": true
   },
   "https://usetokenless.com": {
     "first_emitted": "2026-07-30",
     "score_at_emit": 66,
-    "digest_confirmed": false
+    "digest_confirmed": true
   },
   "https://github.com/anthropics/claude-code/issues/1455": {
     "first_emitted": "2026-07-30",
     "score_at_emit": 62,
-    "digest_confirmed": false
+    "digest_confirmed": true
   },
   "https://github.com/anthropics/claude-code/issues/30154": {
     "first_emitted": "2026-07-30",
     "score_at_emit": 61,
-    "digest_confirmed": false
+    "digest_confirmed": true
   },
   "https://github.com/anthropics/claude-code/issues/2511": {
     "first_emitted": "2026-07-30",
     "score_at_emit": 49,
-    "digest_confirmed": false
+    "digest_confirmed": true
   },
   "https://github.com/anthropics/claude-code/issues/14828": {
     "first_emitted": "2026-07-30",
     "score_at_emit": 47,
-    "digest_confirmed": false
+    "digest_confirmed": true
   },
   "https://github.com/funador/claude-code-merge-queue": {
     "first_emitted": "2026-07-30",
     "score_at_emit": 39,
-    "digest_confirmed": false
+    "digest_confirmed": true
   },
   "https://www.techdirt.com/2026/07/29/anthropic-says-its-against-a-ban-on-open-weight-models-it-just-wants-to-ban-everything-that-makes-them-good": {
     "first_emitted": "2026-07-30",
     "score_at_emit": 38,
-    "digest_confirmed": false
+    "digest_confirmed": true
   },
   "https://github.com/YoanWai/agent-manager": {
     "first_emitted": "2026-07-30",
     "score_at_emit": 11,
-    "digest_confirmed": false
+    "digest_confirmed": true
   },
   "https://dev.to/bluelobster_agent/i-let-claude-code-write-90-of-my-code-for-30-days-im-a-worse-developer-now-1f4m": {
     "first_emitted": "2026-07-30",
     "score_at_emit": 9,
-    "digest_confirmed": false
+    "digest_confirmed": true
   },
   "https://www.cadencemoney.com": {
     "first_emitted": "2026-07-30",
     "score_at_emit": 7,
-    "digest_confirmed": false
+    "digest_confirmed": true
   },
   "https://chromewebstore.google.com/detail/tab-genie/cjbnpcocgkomljkgfhgadolphbeicddh": {
     "first_emitted": "2026-07-30",
     "score_at_emit": 5,
-    "digest_confirmed": false
+    "digest_confirmed": true
   },
   "https://github.com/toshipepe/tokimeter": {
     "first_emitted": "2026-07-30",
     "score_at_emit": 4,
-    "digest_confirmed": false
+    "digest_confirmed": true
   },
   "https://github.com/KonghaYao/peri": {
     "first_emitted": "2026-07-30",
     "score_at_emit": 3,
-    "digest_confirmed": false
+    "digest_confirmed": true
   },
   "https://github.com/vincentping/claudeFS": {
     "first_emitted": "2026-07-30",
     "score_at_emit": 3,
-    "digest_confirmed": false
+    "digest_confirmed": true
   },
   "https://github.com/blagoySimandov/asd-ste100-writer-skill": {
     "first_emitted": "2026-07-30",
     "score_at_emit": 2,
-    "digest_confirmed": false
+    "digest_confirmed": true
   },
   "https://extraheadroom.com": {
     "first_emitted": "2026-07-30",
     "score_at_emit": 2,
-    "digest_confirmed": false
+    "digest_confirmed": true
   },
   "https://github.com/pradipta/wallfacer": {
     "first_emitted": "2026-07-30",
     "score_at_emit": 2,
-    "digest_confirmed": false
+    "digest_confirmed": true
   },
   "https://github.com/rekol-io/rekol": {
     "first_emitted": "2026-07-30",
     "score_at_emit": 1,
-    "digest_confirmed": false
+    "digest_confirmed": true
   },
   "https://www.reddit.com/r/ClaudeCode/comments/1var9bh/why_does_claude_stop_in_the_middle_of_executing_a": {
     "first_emitted": "2026-07-30",
     "score_at_emit": 0,
-    "digest_confirmed": false
+    "digest_confirmed": true
   },
   "https://www.reddit.com/r/ClaudeCode/comments/1var15k/opus_5_is_not_as_good_as_i_thought": {
     "first_emitted": "2026-07-30",
     "score_at_emit": 0,
-    "digest_confirmed": false
+    "digest_confirmed": true
   },
   "https://www.reddit.com/r/ClaudeCode/comments/1vaqxni/if_you_havent_updated_ccstatusline_in_a_while": {
     "first_emitted": "2026-07-30",
     "score_at_emit": 0,
-    "digest_confirmed": false
+    "digest_confirmed": true
   },
   "https://www.reddit.com/r/ClaudeCode/comments/1vaqkwc/i_created_a_free_chrome_extension_to_help_when": {
     "first_emitted": "2026-07-30",
     "score_at_emit": 0,
-    "digest_confirmed": false
+    "digest_confirmed": true
   },
   "https://www.reddit.com/r/ClaudeCode/comments/1vaqkn8/ai_scale_image_generation": {
     "first_emitted": "2026-07-30",
     "score_at_emit": 0,
-    "digest_confirmed": false
+    "digest_confirmed": true
   },
   "https://www.reddit.com/r/ClaudeCode/comments/1vaq1g3/built_a_free_opensource_app_the_macbook_notch": {
     "first_emitted": "2026-07-30",
     "score_at_emit": 0,
-    "digest_confirmed": false
+    "digest_confirmed": true
   },
   "https://simonwillison.net/2026/Jul/29/ai-worming-through-word": {
     "first_emitted": "2026-07-30",
     "score_at_emit": 0,
-    "digest_confirmed": false
+    "digest_confirmed": true
   },
   "https://simonwillison.net/2026/Jul/29/matthew-green": {
     "first_emitted": "2026-07-30",
     "score_at_emit": 0,
-    "digest_confirmed": false
+    "digest_confirmed": true
   },
   "https://www.reddit.com/r/ClaudeCode/comments/1v9qy0s/talk_to_me_bro": {
     "first_emitted": "2026-07-30",
     "score_at_emit": 0,
-    "digest_confirmed": false
+    "digest_confirmed": true
   },
   "https://www.reddit.com/r/ClaudeCode/comments/1v981g8/so_this_is_what_coding_without_claude_feels_like": {
     "first_emitted": "2026-07-30",
     "score_at_emit": 0,
-    "digest_confirmed": false
+    "digest_confirmed": true
   },
   "https://www.reddit.com/r/ClaudeCode/comments/1v75sns/vibecoded_apps_that_work": {
     "first_emitted": "2026-07-30",
     "score_at_emit": 0,
-    "digest_confirmed": false
+    "digest_confirmed": true
   },
   "https://www.reddit.com/r/ClaudeCode/comments/1v5h6pr/introducing_claude_opus_5": {
     "first_emitted": "2026-07-30",
     "score_at_emit": 0,
-    "digest_confirmed": false
+    "digest_confirmed": true
   }
 }
