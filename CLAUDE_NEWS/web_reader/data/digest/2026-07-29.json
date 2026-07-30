@@ -117,13 +117,7 @@
       "time": "07/28 15:00",
       "sentiment": "",
       "body": "The Information 分析指出，儘管 Codex 與開源模型討論度上升，Claude Code 的實際使用黏著度仍維持領先。",
-      "focusTags": [],
-      "sedimented": [
-        {
-          "id": "claude-code",
-          "pageType": "entity"
-        }
-      ]
+      "focusTags": []
     },
     {
       "title": "ICON partners with Anthropic to integrate Claude AI in clinical trials",
@@ -145,12 +139,6 @@
       "body": "Anthropic 官方部落格詳述 Claude Mythos Preview 如何被用於自動化密碼學攻擊研究，是今日最高熱度的討論來源。",
       "focusTags": [
         "[重大事件]"
-      ],
-      "sedimented": [
-        {
-          "id": "mythos",
-          "pageType": "entity"
-        }
       ]
     },
     {
@@ -171,13 +159,7 @@
       "time": "情緒：😊 · 07/28 23:05",
       "sentiment": "",
       "body": "Oxide 說明其開源硬體/韌體理念與加入 Glasswing 計畫的技術動機，將 Claude Mythos 5 用於自家程式碼的漏洞掃描。",
-      "focusTags": [],
-      "sedimented": [
-        {
-          "id": "mythos",
-          "pageType": "entity"
-        }
-      ]
+      "focusTags": []
     },
     {
       "title": "Anatomy of a Frontier Lab Agent Intrusion: A Technical Timeline of the July 2026 Incident",
@@ -206,13 +188,7 @@
       "time": "情緒：😊 · 07/28 14:23",
       "sentiment": "",
       "body": "Tines 推出面向「影子 IT」場景的自動化平台，鎖定使用 Claude Code／Codex 建立內部工具卻缺乏安全治理的團隊。",
-      "focusTags": [],
-      "sedimented": [
-        {
-          "id": "claude-code",
-          "pageType": "entity"
-        }
-      ]
+      "focusTags": []
     },
     {
       "title": "Show HN: Hamza Mask secrets and PII before Claude Code or Codex sends them",
@@ -221,13 +197,7 @@
       "time": "情緒：😐 · 07/28 21:35",
       "sentiment": "",
       "body": "開源工具，在請求送往 Claude Code 或 Codex 前先遮罩機密與個資，屬資安防護類的社群工具。",
-      "focusTags": [],
-      "sedimented": [
-        {
-          "id": "claude-code",
-          "pageType": "entity"
-        }
-      ]
+      "focusTags": []
     },
     {
       "title": "session-indexer: giving Claude Code a memory that doesn't die with the project next door",
@@ -236,13 +206,7 @@
       "time": "情緒：😊 · 07/04 07:54",
       "sentiment": "",
       "body": "作者分享用 Go 撰寫的本地 SQLite 索引工具，讓 Claude Code 的 session 紀錄可跨專案語意搜尋，屬第一手實作經驗分享。",
-      "focusTags": [],
-      "sedimented": [
-        {
-          "id": "claude-code",
-          "pageType": "entity"
-        }
-      ]
+      "focusTags": []
     },
     {
       "title": "Too many Claude Code skills? How the listing budget decides which descriptions Claude sees",
@@ -251,13 +215,7 @@
       "time": "情緒：🤔 · 07/27 16:30",
       "sentiment": "",
       "body": "作者拆解 Claude Code skills 清單的字數預算機制（單則 1,536 字元上限、全清單另有上限），解釋為何新增技能後舊技能可能不再被觸發。",
-      "focusTags": [],
-      "sedimented": [
-        {
-          "id": "claude-code",
-          "pageType": "entity"
-        }
-      ]
+      "focusTags": []
     },
     {
       "title": "I Grepped My Own Claude Code Logs and Found the Hidden Tag Anthropic Never Shows You",
@@ -266,13 +224,7 @@
       "time": "情緒：🤔 · 07/27 15:03",
       "sentiment": "",
       "body": "作者在自己的 JSONL 逐字稿中發現一個未公開文件的 `<ip_reminder>` 標籤，屬第一手挖掘實測。",
-      "focusTags": [],
-      "sedimented": [
-        {
-          "id": "claude-code",
-          "pageType": "entity"
-        }
-      ]
+      "focusTags": []
     },
     {
       "title": "Is Claude getting dumber (or am I getting smarter)?",
@@ -281,13 +233,7 @@
       "time": "情緒：😤 · 07/29 12:04",
       "sentiment": "",
       "body": "Reddit 使用者反映近期覺得 Claude／Claude Code 回答變得反覆、囉唆、過度確認，與其他使用者的既有觀感類似。",
-      "focusTags": [],
-      "sedimented": [
-        {
-          "id": "claude-code",
-          "pageType": "entity"
-        }
-      ]
+      "focusTags": []
     },
     {
       "title": "Has anyone been able to tame Opus 5?",
@@ -406,21 +352,6 @@
   "preview": "Anthropic 揭露以 Claude Mythos Preview 進行密碼學研究的重大進展：找到能大幅削弱後量子簽章方案 HAWK 的攻擊法，並發現針對 round-reduced AES 的新攻擊方式；官方強調目前不影響任何正式系統，但已引來 NYT 等多家主流媒體跟進報導。",
   "sedimentedToday": [
     {
-      "id": "claude-code",
-      "name": "Claude Code",
-      "pageType": "entity"
-    },
-    {
-      "id": "mythos",
-      "name": "Claude Mythos",
-      "pageType": "entity"
-    },
-    {
-      "id": "opus-5",
-      "name": "Claude Opus 5",
-      "pageType": "entity"
-    },
-    {
       "id": "pricing",
       "name": "Anthropic 訂閱方案與計費政策",
       "pageType": "entity"
@@ -436,18 +367,8 @@
       "pageType": "topic"
     },
     {
-      "id": "anthropic-government-policy",
-      "name": "Anthropic 政府與軍事政策",
-      "pageType": "topic"
-    },
-    {
       "id": "community-tech-discussions",
       "name": "社群技術討論趨勢",
-      "pageType": "topic"
-    },
-    {
-      "id": "community-tech-patterns",
-      "name": "社群實戰模式庫",
       "pageType": "topic"
     },
     {

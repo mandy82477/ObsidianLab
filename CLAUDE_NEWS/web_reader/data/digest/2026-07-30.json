@@ -1,0 +1,367 @@
+{
+  "date": "2026-07-30",
+  "generatedAt": "2026-07-30 13:09 UTC",
+  "articleCount": 36,
+  "sourceCount": "10/10",
+  "bulletin": "",
+  "topStories": [
+    {
+      "title": "Some thoughts about Anthropic's new cryptanalysis results",
+      "url": "https://blog.cryptographyengineering.com/2026/07/29/some-notes-about-anthropics-new-results/",
+      "source": "Hacker News",
+      "time": "07/29 16:42",
+      "sentiment": "",
+      "body": "密碼學工程背景作者分析 Anthropic 用 Claude Mythos 產出的兩項密碼分析結果：針對 HAWK 簽章方案的攻擊，以及縮減輪數 AES 的改進攻擊，並比較兩者的成熟度與意義落差。",
+      "focusTags": [
+        "[重大事件]"
+      ],
+      "sedimented": [
+        {
+          "id": "mythos",
+          "pageType": "entity"
+        }
+      ]
+    },
+    {
+      "title": "Quoting Matthew Green",
+      "url": "https://simonwillison.net/2026/Jul/29/matthew-green/#atom-everything",
+      "source": "Blog / Simon Willison",
+      "time": "07/29 18:18",
+      "sentiment": "",
+      "body": "Simon Willison 引述密碼學家 Matthew Green 對上述 Anthropic 密碼分析研究的評論，指出這是公鑰密碼演算法邁向後量子轉型的歷史性過渡期一環。",
+      "focusTags": [
+        "[重大事件]"
+      ]
+    },
+    {
+      "title": "Show HN: A local merge queue for parallel Claude Code agents",
+      "url": "https://github.com/funador/claude-code-merge-queue",
+      "source": "Hacker News",
+      "time": "07/30 00:20",
+      "sentiment": "",
+      "body": "作者以 4–5 個平行 Claude Code agent 每天推送近 90 次 commit，為避免 8GB 機器同時建置測試而當機，打造本地合併佇列讓提交依序落地並完整測試。",
+      "focusTags": [
+        "[新工具]"
+      ],
+      "sedimented": [
+        {
+          "id": "claude-code",
+          "pageType": "entity"
+        }
+      ]
+    }
+  ],
+  "techUpdates": [
+    {
+      "title": "[Status] Elevated errors across many models",
+      "url": "https://status.claude.com/incidents/fsh2zzzl2c4l",
+      "source": "Anthropic Status",
+      "time": "07/30 10:48",
+      "sentiment": "",
+      "body": "Anthropic 於今日通報多個模型出現錯誤率上升，包含 Opus 4.7 與 Opus 4.5，事件已於 10:48 UTC 解決。",
+      "focusTags": []
+    }
+  ],
+  "mediaReports": [],
+  "discussions": [
+    {
+      "title": "[BUG] Console scrolling top of history when claude add text to the console",
+      "url": "https://github.com/anthropics/claude-code/issues/826",
+      "source": "GitHub Issues",
+      "time": "07/29 18:08",
+      "sentiment": "",
+      "body": "使用者回報 Claude 在主控台輸出文字時會把捲軸拉回歷史紀錄頂端，干擾正在進行中的工作流程，是今日互動數最高的問題回報。",
+      "focusTags": [
+        "[持續追蹤]"
+      ]
+    },
+    {
+      "title": "[FEATURE] Add the ability to manage multiple Claude accounts within the Claude Desktop app with easy switching between profiles.",
+      "url": "https://github.com/anthropics/claude-code/issues/18435",
+      "source": "GitHub Issues",
+      "time": "07/29 18:11",
+      "sentiment": "",
+      "body": "社群要求 Claude Desktop 支援多帳號設定檔快速切換，此需求獲得大量反應支持，反映多身分（個人／工作）使用情境普遍。",
+      "focusTags": [
+        "[持續追蹤]"
+      ]
+    },
+    {
+      "title": "[BUG] GitHub Connector connected in Claude Desktop but not recognized by Claude",
+      "url": "https://github.com/anthropics/claude-code/issues/32479",
+      "source": "GitHub Issues",
+      "time": "07/30 10:53",
+      "sentiment": "",
+      "body": "使用者反映 GitHub Connector 已在 Claude Desktop 完成連接設定，但 Claude 實際對話中卻辨識不到，造成串接功能形同虛設。",
+      "focusTags": []
+    },
+    {
+      "title": "Claude Code does not respect the XDG Base Directory specification",
+      "url": "https://github.com/anthropics/claude-code/issues/1455",
+      "source": "GitHub Issues",
+      "time": "07/30 01:52",
+      "sentiment": "",
+      "body": "Linux 使用者指出 Claude Code 把快取與設定檔寫入 `~/.claude.json`、`~/.claude`，未遵循 XDG Base Directory 慣例，造成家目錄混亂。",
+      "focusTags": [],
+      "sedimented": [
+        {
+          "id": "claude-code",
+          "pageType": "entity"
+        }
+      ]
+    },
+    {
+      "title": "FEATURE: Multi-window support in Claude Code Desktop",
+      "url": "https://github.com/anthropics/claude-code/issues/30154",
+      "source": "GitHub Issues",
+      "time": "07/29 16:40",
+      "sentiment": "",
+      "body": "社群要求 Claude Code Desktop 支援同時開啟多個視窗，取代目前單視窗＋側邊欄的 session 管理方式。",
+      "focusTags": [
+        "[持續追蹤]"
+      ],
+      "sedimented": [
+        {
+          "id": "claude-code",
+          "pageType": "entity"
+        }
+      ]
+    },
+    {
+      "title": "Feature request: Connect Claude code to Claude projects",
+      "url": "https://github.com/anthropics/claude-code/issues/2511",
+      "source": "GitHub Issues",
+      "time": "07/29 18:41",
+      "sentiment": "",
+      "body": "使用者希望 Claude Code 能直接存取 Claude.ai Projects 的知識庫，讓開發時能沿用專案既有的背景資料，此需求獲高度共鳴。",
+      "focusTags": [
+        "[持續追蹤]"
+      ],
+      "sedimented": [
+        {
+          "id": "claude-code",
+          "pageType": "entity"
+        }
+      ]
+    },
+    {
+      "title": "Windows: Console window flashing when executing tools",
+      "url": "https://github.com/anthropics/claude-code/issues/14828",
+      "source": "GitHub Issues",
+      "time": "07/30 11:42",
+      "sentiment": "",
+      "body": "Windows 使用者回報 Claude Code 執行工具時主控台視窗會閃爍，影響操作體驗。",
+      "focusTags": [],
+      "sedimented": [
+        {
+          "id": "claude-code",
+          "pageType": "entity"
+        }
+      ]
+    },
+    {
+      "title": "AI Worming through Word",
+      "url": "https://simonwillison.net/2026/Jul/29/ai-worming-through-word/#atom-everything",
+      "source": "Blog / Simon Willison",
+      "time": "07/29 18:43",
+      "sentiment": "",
+      "body": "研究者 Håkon Måløy 展示一種透過 Word 文件觸發的新型 prompt injection 變種手法，Simon Willison 摘要其攻擊思路並連結原始研究。",
+      "focusTags": [
+        "[風險警示]"
+      ]
+    },
+    {
+      "title": "Anthropic Doesn't Want Open Weight Models Banned. Just All That Makes Them Good",
+      "url": "https://www.techdirt.com/2026/07/29/anthropic-says-its-against-a-ban-on-open-weight-models-it-just-wants-to-ban-everything-that-makes-them-good/",
+      "source": "Hacker News",
+      "time": "07/29 18:42",
+      "sentiment": "",
+      "body": "文章分析 Anthropic 在美國考慮以國安理由限制中國開放權重模型的討論中的立場：表態反對全面禁令，但同時支持限縮讓開放權重模型具競爭力的關鍵能力，作者對此提出質疑。",
+      "focusTags": []
+    },
+    {
+      "title": "I Let Claude Code Write 90% of My Code for 30 Days. I'm a Worse Developer Now.",
+      "url": "https://dev.to/bluelobster_agent/i-let-claude-code-write-90-of-my-code-for-30-days-im-a-worse-developer-now-1f4m",
+      "source": "dev.to",
+      "time": "07/13 09:16",
+      "sentiment": "",
+      "body": "作者記錄 30 天讓 Claude Code 主導約 90% 程式撰寫的實驗，累積 5 萬行程式碼與 187 美元 token 花費後，反思過度依賴造成的技能退化與職業倦怠。",
+      "focusTags": [],
+      "sedimented": [
+        {
+          "id": "claude-code",
+          "pageType": "entity"
+        }
+      ]
+    },
+    {
+      "title": "Opus 5 is not as good as i thought",
+      "url": "https://www.reddit.com/r/ClaudeCode/comments/1var15k/opus_5_is_not_as_good_as_i_thought/",
+      "source": "Reddit",
+      "time": "07/30 11:32",
+      "sentiment": "",
+      "body": "使用者原先參考跑分認為 Opus 5 優於 Fable，實際使用後認為 Opus 5 仍有落差，並提及遇到的具體狀況。",
+      "focusTags": []
+    },
+    {
+      "title": "Why does Claude stop in the middle of executing a plan?",
+      "url": "https://www.reddit.com/r/ClaudeCode/comments/1var9bh/why_does_claude_stop_in_the_middle_of_executing_a/",
+      "source": "Reddit",
+      "time": "07/30 11:43",
+      "sentiment": "",
+      "body": "使用者對比 Codex 的 Plan Mode 會持續執行至計畫完成，質疑 Claude Code 的 plan 模式為何會中途停下，尋求原因與對策。",
+      "focusTags": [],
+      "sedimented": [
+        {
+          "id": "claude-code",
+          "pageType": "entity"
+        }
+      ]
+    },
+    {
+      "title": "If you haven't updated ccstatusline in a while, there's a nifty feature for those constantly fighting against usage ceilings.",
+      "url": "https://www.reddit.com/r/ClaudeCode/comments/1vaqxni/if_you_havent_updated_ccstatusline_in_a_while/",
+      "source": "Reddit",
+      "time": "07/30 11:27",
+      "sentiment": "",
+      "body": "社群提醒常用的狀態列工具 ccstatusline 新增了因應用量上限的實用功能，適合經常擔心配額用盡的使用者更新查看。",
+      "focusTags": []
+    },
+    {
+      "title": "Built a free open-source app: the MacBook notch drops down when Claude Code or the API has an outage (so you stop blaming your prompt)",
+      "url": "https://www.reddit.com/r/ClaudeCode/comments/1vaq1g3/built_a_free_opensource_app_the_macbook_notch/",
+      "source": "Reddit",
+      "time": "07/30 10:41",
+      "sentiment": "",
+      "body": "開發者釋出開源小工具，在 Claude Code 或 API 發生中斷時於 MacBook 瀏海顯示提示，呼應今日稍早 Anthropic 官方通報的多模型錯誤率上升事件，協助使用者判斷問題出在服務端而非自己的提示詞。",
+      "focusTags": [],
+      "sedimented": [
+        {
+          "id": "claude-code",
+          "pageType": "entity"
+        }
+      ]
+    }
+  ],
+  "billing": [],
+  "focus": [
+    {
+      "tag": "[重大事件]",
+      "text": "Anthropic 公開兩項由 Claude Mythos（尚未發布的進階模型）產出的密碼分析研究成果，成功攻破 HAWK 簽章方案並對縮減輪數 AES 提出改進攻擊，密碼學界正在消化其意義。",
+      "ref_urls": [
+        "https://blog.cryptographyengineering.com/2026/07/29/some-notes-about-anthropics-new-results/",
+        "https://simonwillison.net/2026/Jul/29/matthew-green/#atom-everything"
+      ]
+    },
+    {
+      "tag": "[持續追蹤]",
+      "text": "Claude Code Desktop 多筆高聲量 GitHub Issue 反映使用體驗痛點：多帳號快速切換（769 反應）、多視窗支援（215 反應）、串接 Claude.ai Projects 知識庫（575 反應）需求強烈。",
+      "ref_urls": [
+        "https://github.com/anthropics/claude-code/issues/18435",
+        "https://github.com/anthropics/claude-code/issues/30154",
+        "https://github.com/anthropics/claude-code/issues/2511"
+      ]
+    },
+    {
+      "tag": "[持續追蹤]",
+      "text": "Claude Code 主控台輸出文字時捲軸被拉回歷史頂端的 bug，累積 821 個反應與 354 則留言，是今日社群互動量最高的單一問題回報。",
+      "ref_urls": [
+        "https://github.com/anthropics/claude-code/issues/826"
+      ]
+    },
+    {
+      "tag": "[風險警示]",
+      "text": "資安研究者 Håkon Måløy 揭露透過 Word 文件觸發的新型 prompt injection 攻擊變種，具體描述攻擊思路。",
+      "ref_urls": [
+        "https://simonwillison.net/2026/Jul/29/ai-worming-through-word/#atom-everything"
+      ]
+    },
+    {
+      "tag": "[新工具]",
+      "text": "開發者釋出本地合併佇列工具，讓多個平行執行的 Claude Code agent 依序合併並完整測試提交，緩解低規格機器同時建置的資源競爭，獲跨來源關注。",
+      "ref_urls": [
+        "https://github.com/funador/claude-code-merge-queue"
+      ]
+    }
+  ],
+  "sourceStatus": [
+    {
+      "name": "Anthropic Status",
+      "ok": true,
+      "count": 2
+    },
+    {
+      "name": "Hacker News",
+      "ok": true,
+      "count": 15
+    },
+    {
+      "name": "dev.to",
+      "ok": true,
+      "count": 14
+    },
+    {
+      "name": "Anthropic Blog",
+      "ok": true,
+      "count": 0
+    },
+    {
+      "name": "GitHub Issues",
+      "ok": true,
+      "count": 15
+    },
+    {
+      "name": "Claude API Release Notes",
+      "ok": true,
+      "count": 0
+    },
+    {
+      "name": "GitHub",
+      "ok": true,
+      "count": 0
+    },
+    {
+      "name": "Blogroll",
+      "ok": true,
+      "count": 2
+    },
+    {
+      "name": "Google News",
+      "ok": true,
+      "count": 0
+    },
+    {
+      "name": "Reddit",
+      "ok": true,
+      "count": 12
+    }
+  ],
+  "preview": "Anthropic 公開兩項由 Claude Mythos（尚未發布的進階模型）產出的密碼分析研究成果，成功攻破 HAWK 簽章方案並對縮減輪數 AES 提出改進攻擊，密碼學界正在消化其意義。",
+  "sedimentedToday": [
+    {
+      "id": "claude-code",
+      "name": "Claude Code",
+      "pageType": "entity"
+    },
+    {
+      "id": "mythos",
+      "name": "Claude Mythos",
+      "pageType": "entity"
+    },
+    {
+      "id": "opus-5",
+      "name": "Claude Opus 5",
+      "pageType": "entity"
+    },
+    {
+      "id": "anthropic-government-policy",
+      "name": "Anthropic 政府與軍事政策",
+      "pageType": "topic"
+    },
+    {
+      "id": "community-tech-patterns",
+      "name": "社群實戰模式庫",
+      "pageType": "topic"
+    }
+  ]
+}
