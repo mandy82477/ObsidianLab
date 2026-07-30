@@ -4,12 +4,13 @@
 **狀態：** active（出口管制解除，2026-07-01 起全球恢復存取）
 **領域：** 🤖 模型
 **首次出現：** 2026-04（限定夥伴 Preview）
-**最後更新：** 2026-07-29
-**最後新聞更新：** 2026-07-29
+**最後更新：** 2026-07-30
+**最後新聞更新：** 2026-07-30
 
-> **最新進展**（2026-07-28）
+> **最新進展**（2026-07-29）
 > - **密碼學研究突破**：Anthropic 使用 Claude Mythos Preview 發現攻擊密碼學演算法的改進方法——大幅削弱後量子數位簽章方案 HAWK，並找到攻擊 round-reduced AES（最廣泛使用的對稱加密演算法）的新方法；官方稱屬重大研究進展，**目前不影響任何正式系統**（[Anthropic Research](https://www.anthropic.com/research/discovering-cryptographic-weaknesses)，HN score 221，source_count=5）。同日 GitHub 上出現對 HAWK-256 的實際可行金鑰恢復攻擊示範（HN score 57）。
 > - **Project Glasswing 新夥伴**：Oxide Computer 宣布加入 Project Glasswing，將 Claude Mythos 5 應用於主動掃描自家開源程式碼庫（韌體、作業系統、控制平面、網路堆疊）尋找並修補漏洞（[Oxide Blog](https://oxide.computer/blog/oxide-anthropic-project-glasswing)，HN score 16）。
+> - **密碼學界後續反應**：Cryptography Engineering 部落格（密碼工程背景作者，HN score 168）評論上述兩項攻擊在成熟度與意義上的落差；密碼學家 Matthew Green 經 Simon Willison 引述，將此研究放入後量子密碼演算法轉型過渡期的脈絡討論（2026-07-29）。
 
 ---
 
@@ -17,7 +18,7 @@
 
 **2026-07-28 最新**：Anthropic 研究部落格披露 Claude Mythos Preview 在密碼學研究上的兩項改進攻擊法——大幅削弱後量子數位簽章方案 HAWK、以及攻擊 round-reduced AES 的新方法，官方強調屬重大研究進展但**目前不影響任何正式系統**（[Anthropic Research](https://www.anthropic.com/research/discovering-cryptographic-weaknesses)，2026-07-28，HN score 221，source_count=5）；同日 GitHub 出現對 HAWK-256 的實際可行金鑰恢復攻擊示範（HN score 57）。這延續 Mythos Preview 先前展示的「自主完成密碼學研究任務」能力路線。同日，Oxide Computer 宣布加入 Project Glasswing，導入 Claude Mythos 5 主動掃描自家開源程式碼庫（韌體、作業系統、控制平面、網路堆疊）尋找並修補漏洞（[Oxide Blog](https://oxide.computer/blog/oxide-anthropic-project-glasswing)，HN score 16），為 Glasswing 又一具名企業夥伴案例。
 
-**2026-07-25（待核實）**：Mashable 標題稱「Claude Mythos，或類似模型，可能對外公開發布」（[Google News/Mashable](https://mashable.com/tech/anthropic-mythos-might-get-public-release)），僅標題與轉址連結可用，無正文摘要，無法確認具體時程、是否為完整無護欄版本、或僅是 Fable 5 之外的另一款「Mythos 級但附加護欄」新版本。若屬實將是重大政策轉向——目前 Mythos 5（無護欄完整版）僅限授權機構，一般用戶的 Mythos 級入口只有 Fable 5；此則暫無第二來源佐證，列為傳聞待核實，後續有具體內容時再擴寫。
+**2026-07-29 密碼學界後續反應**：密碼工程背景作者於 Cryptography Engineering 部落格分析上述兩項攻擊成果，評論兩者在成熟度與意義上的落差（HN score 168）（[Cryptography Engineering](https://blog.cryptographyengineering.com/2026/07/29/some-notes-about-anthropics-new-results/)，2026-07-29）；密碼學家 Matthew Green 經 Simon Willison 引述評論，將此次研究放入公鑰密碼演算法邁向後量子轉型過渡期的脈絡討論（[Simon Willison](https://simonwillison.net/2026/Jul/29/matthew-green/#atom-everything)，2026-07-29）。兩則皆為密碼學專業社群對 07-28 研究成果的第一波深度反應，具體技術落差內容原摘要未進一步展開，待後續報導補充。
 
 **當前狀態（2026-07-01 起）**：出口管制已全面解除，Mythos 5 可用範圍從機構白名單擴大為全球一般用戶；解禁交換條件為 Anthropic 承諾主動偵測安全風險、配合標準協議、通報惡意活動。管制事件歷時 18 天（2026-06-13 至 2026-07-01），完整經過見下方「時序」。
 
@@ -95,6 +96,12 @@ Anthropic 的官方 AI 資安能力研究計畫，Mythos Preview 為核心工具
 ## 時序
 
 ### 解禁後（2026-06-27 起）
+
+#### 2026-07-29
+**密碼學界對 07-28 密碼分析研究的第一波深度反應**：
+- **密碼工程背景部落客評論**（HN score 168）：Cryptography Engineering 部落格作者評論 Anthropic 07-28 公布的兩項 Claude Mythos Preview 密碼分析成果（HAWK 簽章方案攻擊、round-reduced AES 改進攻擊），指出兩者在「成熟度」與「意義」上有落差；原文摘要未進一步展開具體落差內容，細節待查證（[Cryptography Engineering](https://blog.cryptographyengineering.com/2026/07/29/some-notes-about-anthropics-new-results/)，2026-07-29）
+- **Matthew Green 觀點（經 Simon Willison 引述）**：密碼學家 Matthew Green 將此次研究成果放入「公鑰密碼演算法邁向後量子轉型過渡期」的脈絡評論（[Simon Willison](https://simonwillison.net/2026/Jul/29/matthew-green/#atom-everything)，2026-07-29，原文引自 blog.cryptographyengineering.com）
+- 兩則皆為密碼學專業社群對 07-28 研究成果的第一波深度反應，顯示該研究已進入專家圈層討論，非僅止於一般科技媒體轉述
 
 #### 2026-07-28
 **Anthropic 公開密碼學研究攻擊成果 + GitHub 實作展示 + Oxide 加入 Project Glasswing**：
@@ -255,4 +262,6 @@ Mythos 遭駭客存取事件（KRON4 等媒體）。⚠️ 細節尚待官方聲
 - [Discovering Cryptographic Weaknesses with Claude](https://www.anthropic.com/research/discovering-cryptographic-weaknesses) — Anthropic Research（2026-07-28）
 - [Anthropic cryptography-research-demo（HAWK-256 key-recovery attack）](https://github.com/anthropics/cryptography-research-demo) — GitHub（2026-07-28）
 - [Oxide Joins Anthropic's Project Glasswing](https://oxide.computer/blog/oxide-anthropic-project-glasswing) — Oxide Computer Blog（2026-07-28）
-- [[news/2026-07-26]]、[[news/2026-07-29]]
+- [Some thoughts about Anthropic's new cryptanalysis results](https://blog.cryptographyengineering.com/2026/07/29/some-notes-about-anthropics-new-results/) — Cryptography Engineering（2026-07-29）
+- [Quoting Matthew Green](https://simonwillison.net/2026/Jul/29/matthew-green/#atom-everything) — Simon Willison（2026-07-29）
+- [[news/2026-07-26]]、[[news/2026-07-29]]、[[news/2026-07-30]]
