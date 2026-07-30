@@ -3224,3 +3224,17 @@ Append-only 紀錄。每次 ingest、lint，以及**揭露缺陷或促成改動�
   - 安全政策記者處理 Simon Willison「Frontier Lab Agent Intrusion」條目時，其注入防護機制將本次派工訊息中主編自行附加的謹慎處理指示誤判為「⚠️ 疑似注入」；查證後確認是主編派工文字書寫時未與原始新聞摘要清楚分隔所致，非外部真實注入。記者仍正確地未執行任何指令內容、僅依獨立判斷採用保守寫法，防護機制實際運作如預期；後續派工應更明確以引號或區塊分隔「原始新聞摘要」與「主編指示」，避免同類誤判重演
   - 三則跨記者轉知留待下次 ingest 自然浮現（低急迫性，未另開派工）：功能記者提醒商業記者確認印度定價功能請求 (#17432) 之官方定案狀態、及 The Information 的 Claude Code vs Codex 報導是否需獨立記錄；安全政策記者提醒功能記者留意 Decrypt「沙盒逃脫」報導後續是否需與 Claude Code 已知問題交叉引用
   - Step 2 派工期間因 stop hook 政策要求工作樹不可帶未提交變更結束回合，隨五位記者陸續完成即時分批提交（8 筆 wiki commit），未依標準 Step 3 於全部記者完成後一次性提交；內容完整性不受影響，僅提交顆粒度較細，非設計變更
+
+## 2026-07-30 Ingest
+
+- 來源日報：[[news/2026-07-30]]
+- 更新頁面：`entities/claude-code`、`entities/mythos`、`entities/opus-5`、`topics/anthropic-government-policy`、`topics/community-tech-patterns`
+- 新增頁面：無
+- 摘要：Anthropic Mythos 密碼分析研究延燒為社群後續反應（HN 168 分分析文＋Simon Willison 引述 Matthew Green），Claude Code Desktop 多筆高聲量體驗痛點同日集中出現（主控台捲動 bug 全站互動最高、多帳號切換、多視窗、Claude Projects 串接），Anthropic Status 記錄一起 45 分鐘內解決的模型錯誤率事件；另有 techdirt 對 Anthropic 開放權重出口管制立場的批評分析，以及一款跨來源佐證的平行 agent 本地合併佇列工具。
+- 呈現品質：模型記者修復 1 處 `entities/mythos.md` 現況段落超過「不被時序侵蝕」上限（3 段收攏為 2 段）；其餘頁面（`claude-code.md`、`opus-5.md`、`anthropic-government-policy.md`、`community-tech-patterns.md`）呈現品質全數通過
+- 品質備註：
+  - 雲端 `wiki-reporter-*` 自訂 subagent_type 本次仍無法解析（今日僅功能/模型/安全政策/社群四類有條目；商業/人物無條目未派工），全數以 general-purpose 內嵌規則降級執行，功能等同，詳見完成摘要
+  - 安全政策記者對 Simon Willison「AI Worming through Word」（Word 文件觸發的 prompt injection 變種）做出保守判斷：原文摘要未點名 Claude/Anthropic，是通用手法示範而非 Claude 專屬漏洞，為避免在 `ai-agent-safety.md` 製造誤導性關聯，選擇不記錄。此為記者依規則做出的判斷取捨，非遺漏，若後續有更明確與 Claude 使用情境的關聯性佐證可再收錄
+  - 社群記者轉知功能記者評估 `official-community-gap.md` 產品化矩陣是否為新增的「本地合併佇列」模式新增對應列；主編查核該矩陣觸發條件為「官方發布新功能時」檢查，今日無官方功能發布，且矩陣現無合併佇列相關列可更新，依規則「無對應列則略過，不強制新增」，本次無需動作
+  - 兩則今日主要跨來源事件（密碼分析研究、開放權重政策分析）皆判定不重複收錄進 `community-tech-discussions.md`：社群記者確認僅有單一 HN 貼文分數、無跨平台社群交鋒佐證，收錄僅會複製模型/安全政策記者已主責的主題而非新增社群訊號
+  - Step 2 派工期間因 stop hook 政策要求工作樹不可帶未提交變更結束回合，四位記者完成後即時分批提交（1 筆彙整 commit，涵蓋全部 5 個頁面變更），與昨日做法一致，非設計變更
