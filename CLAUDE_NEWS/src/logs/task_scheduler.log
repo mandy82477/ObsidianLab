@@ -69,3 +69,14 @@
 [週四 2026/07/30 13:30:00.00] Step 5 Single push done (news + wiki + web + confirm-cache + STARTED heartbeat) - 首次嘗試即成功，無需重試 (af5d9f8..7e47613)
 [週四 2026/07/30 13:30:00.00] === Pipeline complete (agent) ===
 [cloud daily-news-pipeline-cloud STARTED [2026/07/31 13:05:01.93]]
+[週五 2026/07/31 13:27:59.00] === Agent pipeline start (2026-07-31) ===
+[週五 2026/07/31 13:27:59.00] Step 0 昨日缺跑檢查 OK（news/2026-07-30.md 存在，無缺失）
+[週五 2026/07/31 13:27:59.00] Step 0b 冪等閘 OK（news/2026-07-31.md 不存在，正常繼續）
+[週五 2026/07/31 13:27:59.00] Step 1a 新聞抓取 SKIPPED（雲端，由 GitHub Actions daily-gather 完成）
+[週五 2026/07/31 13:27:59.00] Step 1b 生成日報 OK（新鮮度/健康檢查通過，73 則項目 10/10 來源正常，格式自檢 3a=18/3b=10，忠實度自檢抽 14 條改寫 1 條）
+[週五 2026/07/31 13:27:59.00] Step 1c 確認 emitted-cache FAILED（feedparser 6.0.14 改為 import feedparser_sgmllib 獨立套件，cloud_bootstrap.py 舊修法未涵蓋此路徑，ModuleNotFoundError；已登記 docs/workaround-register.md 第三種復現樣態，順延複查日 08-04），僅記警告，不影響已完成的 news commit，繼續後續步驟
+[週五 2026/07/31 13:27:59.00] Step 2 Wiki Ingest OK（六類記者：模型/功能/商業/安全政策/社群/人物全數有條目並派工；wiki-reporter-* 自訂 subagent_type 本次仍無法解析，降級為 general-purpose 內嵌規則執行，功能等同，已於 wiki/log.md 標注）
+[週五 2026/07/31 13:27:59.00] Step 3 Commit Wiki 變更 OK（因 stop hook 政策分批提交，共 2 筆記者頁面提交 + 1 筆主編彙整提交，含 log.md 與 source_attribution.jsonl）
+[週五 2026/07/31 13:27:59.00] Step 4 測試套件 FAILED（run_tests.py exit 1，3 個 ImportError 均為已知 feedparser_sgmllib 依賴缺口，非新增回歸；check_rules.py 28 組同步配對全過、check_arch_docs.py 全過）- web build skipped
+[週五 2026/07/31 13:27:59.00] Step 5 Single push done (news + docs + wiki，無 web 變更) - 首次嘗試即成功，無需重試 (43aaafe..6c335d4)
+[週五 2026/07/31 13:27:59.00] === Pipeline complete (agent) ===
