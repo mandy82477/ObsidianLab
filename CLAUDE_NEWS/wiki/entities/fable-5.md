@@ -4,19 +4,20 @@
 **狀態：** active（正式發布；出口管制已解除，2026-07-01 起全球恢復存取；免費期已於 2026-07-19 到期，Max/Team 後續存取政策尚有分歧報導，見 [[entities/pricing]]）
 **領域：** 🤖 模型
 **首次出現：** 2026-06-09
-**最後更新：** 2026-07-26
-**最後新聞更新：** 2026-07-24
+**最後更新：** 2026-07-31
+**最後新聞更新：** 2026-07-31
 
-> **最新進展**（2026-07-24）
-> GitHub Issue #79337（reaction 數持續增加：07-20 記錄 10 個 → 07-24 已達 13 個，留言數維持 35 則未見更新）回報：2026-07-20（issue 原文稱為 Fable 5 正式成為 Max 方案標準配置的第一天）當天，Claude Code 一度拒絕在 Max 方案上執行 Fable 5、要求額外購買「usage credits」，並將 session 靜默降級至 Opus 4.8；受影響帳號的已儲存模型設定顯示為 `claude-fable-5[1m]`（1M context 變體）。此症狀與同日 Anthropic Status 已證實的「Max 方案誤判需點數存取 Fable 5」事件高度吻合，官方已確認為誤判並建議受影響用戶重啟；惟 Max/Team 方案存取政策本身（轉為「永久標配」或「計量存取」）仍有分歧報導，詳見 [[entities/pricing]]。同期社群另有討論質疑 Fable「太危險」分級與競品追平能力的落差，見「爭議」與「歷史記錄」。
+> **最新進展**（2026-07-31）
+> - **訴訟動態（待核實與 Fable 5 出口管制的直接關聯）**：Hacker News 轉載 Bloomberg 報導，一名美國法官對政府禁用 Anthropic AI 的正當性提出質疑（2026-07-30/31）。我方抓取資料未提供禁令的具體法律依據或是否明確涉及「國安理由」，也未提供文章全文，僅有標題與 HN 連結；鑑於 Fable 5 出口管制已於 2026-07-01 正式解除，此案是否直接針對 Fable 5 出口管制、抑或涉及其他對 Anthropic 的政府限制措施，尚無法判斷，標記「待核實」。完整法律脈絡由安全政策記者於 [[topics/anthropic-government-policy]] 追蹤，詳見「歷史記錄」。
+> - **GitHub Issue #79337**（07-20 記錄 10 讚 → 07-24 增至 13 個，留言數維持 35 則）：Max 方案誤判需購買 usage credits 才能執行 Fable 5、session 靜默降級至 Opus 4.8，官方已確認為誤判並建議重啟；Max/Team 存取政策本身（永久標配／計量存取）仍分歧報導中，詳見 [[entities/pricing]]。
 
 ---
 
 ## 現況
 
-**2026-07-24 最新**：GitHub Issue #79337 追蹤的 Max 方案誤判事件持續累積關注，reaction 數由 07-20 的 10 個增至 13 個（留言數維持 35 則、未見更新資料），受影響帳號的已儲存模型設定顯示為 `claude-fable-5[1m]`；官方誤判定性與建議重啟的結論未變。同期社群另有兩則討論觸及 Fable 定位：r/ClaudeCode 使用者認為 Fable 被「削弱」後只比 Opus 4.8 聰明一點，開源模型已追上「太危險」等級模型的能力；r/ClaudeAI 週熱門貼文則有一名自稱基因學/神經科學研究者質疑 Fable「對科學研究太危險」的分類與自身用途無關。兩則均屬社群觀點、單一來源，弱訊號，分類爭議完整脈絡另見安全政策記者對應頁面。
+**2026-07-31 最新**：Hacker News／Bloomberg 報導一名美國法官對政府禁用 Anthropic AI 的正當性提出質疑（2026-07-30/31）；我方抓取資料未提供禁令具體法律依據，也未明確此案是否與 Fable 5 出口管制直接相關，暫列歷史記錄並標記「待核實」，完整脈絡以安全政策記者對應頁面為主（詳見「歷史記錄」）。
 
-**2026-07-13**：Fable 5 存取限制維持延長至 7/19，無新截止日變動；The New Stack 報導 Anthropic 拒絕說明本次延長是否與開發者在 Cursor 中的發現有關，暗示背後可能另有隱情，但目前僅屬推測性報導，缺乏具體佐證（推論）。
+**2026-07-24**：GitHub Issue #79337 追蹤的 Max 方案誤判事件持續累積關注，reaction 數由 07-20 的 10 個增至 13 個（留言數維持 35 則、未見更新資料），受影響帳號的已儲存模型設定顯示為 `claude-fable-5[1m]`；官方誤判定性與建議重啟的結論未變。同期社群另有兩則討論觸及 Fable 定位：r/ClaudeCode 使用者認為 Fable 被「削弱」後只比 Opus 4.8 聰明一點，開源模型已追上「太危險」等級模型的能力；r/ClaudeAI 週熱門貼文則有一名自稱基因學/神經科學研究者質疑 Fable「對科學研究太危險」的分類與自身用途無關。兩則均屬社群觀點、單一來源，弱訊號，分類爭議完整脈絡另見安全政策記者對應頁面。
 
 Claude Fable 5 是 Anthropic 於 2026-06-09 發布的旗艦模型，為**史上首款向大眾開放的 Mythos 級模型**。Fable 5 與 Claude Mythos 5 共用相同的模型權重，差異在於 Fable 5 前置安全分類器——觸發時 fallback 至 Claude Opus 4.8（Anthropic 稱不到 5% 的 session 受影響）。核心定位：任務越複雜越長期，Fable 5 的優勢越明顯；在軟體工程、知識工作、視覺、科學研究等幾乎所有 benchmark 達到 SOTA。
 
@@ -156,6 +157,9 @@ claude --model claude-fable-5-20260609
 ## 歷史記錄
 
 ### 解禁後（2026-07-01 起）
+
+#### 2026-07-31
+**法官質疑美國政府對 Anthropic AI 禁令正當性（待核實：是否與 Fable 5 出口管制直接相關）**：Hacker News 轉載 Bloomberg 報導《Judge Voices Doubt US Has Justified Its Ban on Anthropic AI》，指一名美國法官對政府禁用 Anthropic AI 的正當性提出質疑（[Bloomberg](https://www.bloomberg.com/news/articles/2026-07-30/judge-voices-doubt-us-has-justified-its-ban-on-anthropic-ai)、[HN 討論](https://news.ycombinator.com/item?id=49117486)，2026-07-30/31）。我方抓取資料僅有標題與 HN 連結，未提供禁令的具體法律依據、是否明確涉及「國安理由」，也未提供文章全文內容；鑑於 Fable 5 出口管制已於 2026-07-01 正式解除（見上方「出口管制：雙方立場」），此訴訟進展**是否直接針對 Fable 5 出口管制本身、或涉及其他對 Anthropic 的政府限制措施，尚無法從現有資料判斷，標記「待核實」**。可能與 2026-06-24 Legion 法律科技新創對美國政府提告出口管制令一案有關聯（同屬挑戰政府對 Anthropic AI 限制的訴訟；[[topics/anthropic-government-policy]] 亦記錄「管制解除後訴訟是否失去標的、撤案或轉為求償」的待觀察問題），但兩案是否為同一訴訟程序未經證實，不可逕自合併記錄。完整法律論證內容與政策脈絡由安全政策記者於 [[topics/anthropic-government-policy]] 追蹤。
 
 #### 2026-07-24
 **GitHub Issue #79337 持續追蹤：reaction 增至 13 個 + 新技術細節「已儲存模型 claude-fable-5[1m]」**：07-20 首次回報的 Max 方案誤判事件持續有讀者互動，reaction 數由 10 個增至 13 個（留言數維持 35 則、暫無更新資料）；本次追蹤新揭露受影響帳號的已儲存模型設定為 `claude-fable-5[1m]`，即 1M context 變體，有助釐清受影響的具體模型設定範圍。官方已於 07-20 確認為誤判並建議重啟，此結論未變，計費/配額面向由商業記者於 [[entities/pricing]] 記錄（[GitHub Issues](https://github.com/anthropics/claude-code/issues/79337)，2026-07-24 01:16 UTC）。

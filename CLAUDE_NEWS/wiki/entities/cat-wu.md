@@ -4,8 +4,8 @@
 **狀態：** active
 **領域：** 👤 人物
 **首次出現：** 2026-05-14
-**最後更新：** 2026-07-26
-**最後新聞更新：** 2026-07-22
+**最後更新：** 2026-07-31
+**最後新聞更新：** 2026-07-31
 
 > **最新動態**（2026-06-22）
 > 2026-06-22「讓工程師更孤獨」一說後續具名確認為 Anthropic 工程副總裁 Fiona Fung，非 Cat Wu，見 [[entities/fiona-fung]]。Cat Wu 最後一次公開論述為 2026-05-14 提出 AI 下一個重大躍進是「主動性（proactivity）」。
@@ -62,6 +62,7 @@ Cat Wu 接受公開訪問，指出：
 
 ## 歷史記錄
 
+- 2026-07-30（待核實）：媒體報導 Anthropic Claude Code 團隊負責人公開表示 prompt engineering 的重要性不如外界想像；報導僅有標題、無正文可查證，具體發言者身分與原文內容待查證——與 07-08「Head of Claude Code」未具名案例同類，可能為 Cat Wu 本人或 [[entities/boris-cherny]]（來源：Google News / Search Engine Journal，2026-07-30，僅標題無法確認全文，https://news.google.com/rss/articles/CBMiuAFBVV95cUxNREg2RVZEOC1CYUhWemhjUGtZSkxsLWdvcjJmTzhIV0Y1TnE1YUlaREpWTUdvVHIwS3Y2SUs5a0xnTVV1eHc0TURKTlVHS0hkRlVuSnFzWV9SWXFZYUk3US14Uzc4QmI3cnZOdWhqYmdLbVFTSHl4bzJoby1sSGFTenUyX2dlYmJvV0s4OWJRcDVOOVV5U29vcjY3NUpxdjZleVE2UmhlQ2ZnQXhwQWFvRV9wZkZPMWtf?oc=5)
 - 2026-07-22：Simon Willison 發布紀要，確認本月稍早於 AI Engineer World's Fair 曾主持一場爐邊對談，與談人為 Cat Wu 與 Thariq Shihipar（Anthropic Claude Code 團隊）；原文對談具體內容未完整揭露，暫僅記錄參與事實，不推測發言內容
 - 2026-07-08：inc.com 報導「Head of Claude Code」談新創公司需具備的 5 種員工原型（employee archetypes），原文未具名確認發言人，可能為 Cat Wu 或 [[entities/boris-cherny]]（2026-07-08 報導，至今無後續：近 14 天日報無獨立確認發言人身分的報導）（inc.com，2026-07-07，https://www.inc.com/ashley-couto/claude-code-startup-needs-employee-archetypes/91370409）
 - 2026-06-22：「engineering leader 讓工程師更孤獨」一說，後續具名來源確認發言人為 Anthropic 工程副總裁 Fiona Fung（[[entities/fiona-fung]]），非 Cat Wu；本頁解除待核實

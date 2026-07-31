@@ -4,19 +4,19 @@
 **狀態：** active（正式發布）
 **領域：** 🤖 模型
 **首次出現：** 2026-07-01
-**最後更新：** 2026-07-26
-**最後新聞更新：** 2026-07-25
+**最後更新：** 2026-07-31
+**最後新聞更新：** 2026-07-31
 
-> **最新動態**（2026-07-25）
-> dev.to（tokenmixai）分析文章重申 Sonnet 5 促銷定價的 60% Opus 折扣「real but temporary」，與既有 $2/$10 per Mtok（至 2026-08-31）促銷資訊一致，未提供新數字，定價細節見 [[entities/pricing]]。同日 Anthropic 正式發布 [[entities/opus-5|Claude Opus 5]]，Sonnet 5 本身的 Claude Code 預設模型定位、主力平衡選項角色不受影響。
+> **最新動態**（2026-07-31）
+> Anthropic Status 通報 Claude Sonnet 5 效能降級（degraded performance），06:18 UTC 起偵測、07:04 UTC 確認事件已解決，歷時約 46 分鐘，無需採取行動。Reddit r/ClaudeAI 出現對應事件 Megathread，內容與官方一致，屬社群對同一事件的跟進，非獨立事件。定價與 Opus 5 發布後的定位變化未受影響，詳見下方「現況」。
 
 ---
 
 ## 現況
 
-**2026-07-25 最新**：dev.to 分析文章重申 Sonnet 5 促銷定價的 60% 折扣「real but temporary」，未提供新數字（[[entities/pricing]] 有完整定價細節）；同日 [[entities/opus-5|Claude Opus 5]] 正式發布，Sonnet 5 本身定位不受影響。
+**2026-07-31 最新**：Anthropic Status 通報 Sonnet 5 效能降級，06:18 UTC 起偵測、07:04 UTC 確認已解決，歷時約 46 分鐘；Reddit r/ClaudeAI 出現對應事件 Megathread（0 留言，可能因剛發布尚未累積），內容與官方一致，屬社群對同一事件的跟進，非獨立事件。事件不影響模型能力或定價，屬穩定性範疇。
 
-**2026-07-14**：MarkTechPost 發布 Sonnet 5 / Sonnet 4.6 / Opus 4.8 三模型 agentic coding benchmark、API 定價、成本效益比較的深度文章，具體數字待查證（詳見「歷史記錄」）。
+**2026-07-25**：dev.to 分析文章重申 Sonnet 5 促銷定價的 60% 折扣「real but temporary」，未提供新數字（[[entities/pricing]] 有完整定價細節）；同日 [[entities/opus-5|Claude Opus 5]] 正式發布，Sonnet 5 本身定位不受影響。
 
 Claude Sonnet 5 於 2026-07-01 正式發布，定位為 Anthropic **最 agentic 的 Sonnet 模型**，在 reasoning、tool use、coding、knowledge work 等多個面向均有顯著提升，效能接近 Opus 4.8。
 
@@ -84,6 +84,9 @@ claude --model claude-sonnet-5-20260701
 - [[news/2026-07-01]]
 
 ## 歷史記錄
+
+### 2026-07-31
+**Degraded performance 事件（同日解決，約 46 分鐘）**：Anthropic Status 通報 Claude Sonnet 5 效能降級，2026-07-31 06:18 UTC 起偵測，07:04 UTC 確認事件已解決，無需採取行動（[Anthropic Status](https://status.claude.com/)）。Reddit r/ClaudeAI 同步出現對應 Megathread「Megathread for New Claude Incident: Degraded performance on Claude Sonnet 5 on Jul 31, 2026」，互動 0 留言（可能因剛發布尚未累積），內容與官方 Status 一致，屬社群對同一事件的跟進討論，非獨立事件。屬穩定性事件，非能力或定價變化，與本頁 07-07、07-08 已記錄的同類型錯誤率事件屬同一模式。
 
 ### 2026-07-25
 **dev.to 重申促銷折扣「real but temporary」+ Opus 5 同日發布**：dev.to 作者 tokenmixai 於〈I Did the Math on Claude Sonnet 5. The 60% Opus Discount Is Real, But Temporary.〉一文中指出，Anthropic 已將 Sonnet 5 以促銷定價廣泛開放至 2026-08-31，與既有 $2/$10 per Mtok 資訊一致，未提供新的定價數字（定價細節見 [[entities/pricing]]）。同日 Anthropic 正式發布 [[entities/opus-5|Claude Opus 5]]，取代 Opus 4.8 成為次旗艦；Sonnet 5 本身的 Claude Code 預設模型定位不受影響。

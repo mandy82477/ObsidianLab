@@ -3,11 +3,11 @@
 **狀態：** monitoring
 **領域：** 🌐 社群
 **開始日期：** 2026-04-25
-**最後更新：** 2026-07-30
-**最後新聞更新：** 2026-07-30
+**最後更新：** 2026-07-31
+**最後新聞更新：** 2026-07-31
 
-> **最新工作流模式**（2026-07-30）
-> 開發者以 4–5 個平行 Claude Code agent 每天推送近 90 次 commit，為避免 8GB MacBook Air 因同時建置測試而當機、又不想為 90 次推送支付 CI 分鐘數，打造本地合併佇列讓提交依序落地並完整測試後才合併。
+> **最新工作流模式**（2026-07-31）
+> 社群本日新增數則第一手實作與踩坑記錄：subagent 平行任務「回報完成不代表真的完成」的靜默失敗模式踩坑（dev.to）、agent 失敗後自動復原機制、夜間 API 500 錯誤自動等待接續的排程工具，以及開源 Claude Cowork 替代品 Agenta；多則來自低互動 Reddit 貼文，訊號強度較弱，依內容價值收錄。
 
 ---
 
@@ -103,6 +103,41 @@ Claude Code 的三種多 agent 機制，可對應到 Anthropic《Building Effect
 ## 技術彙整
 
 ### 2026-07
+
+#### 自製 agent 失敗自動復原（auto-undo）機制，處理多工具連續呼叫中途失敗留下的混亂狀態（2026-07-31）
+
+- **核心模式：** 作者針對 agent 連續呼叫多個工具的工作流中途失敗、遺留部分完成狀態導致環境混亂的問題，打造自動偵測並復原（undo）到失敗前狀態的機制
+- **與既有模式的關係：** 呼應本頁「MCP 長 Session 穩健化」「破壞性操作安全閘門工具（GrapeRoot Pro）」類別對「失敗後如何收拾」面向的既有關注，本篇聚焦「失敗發生後自動回滾」而非「失敗前攔截」或「失敗中重試」，是本頁首次出現的自動復原（rollback）具體實作
+- **來源：** 「I built a way to auto-undo the mess when an AI agent fails mid-task」— Reddit r/ClaudeCode（0 留言，無「週熱門」標記，score 不可信；單一貼文，尚無跨平台佐證，訊號強度較弱，依內容判斷收錄）
+- **成熟度：** ⏳ 新興（單一開發者工具，機制細節與可靠性尚待驗證）
+
+#### nightshift：夜間遭遇跨模型 API 500 錯誤時自動等待錯誤解除並接續原對話（2026-07-31）
+
+- **核心模式：** 作者本週遭遇跨模型錯誤率升高的情況，打造夜間排程工具 nightshift，遇到 `API Error: 500` 時不中斷任務，而是等待錯誤解除後自動 resume 回同一對話繼續執行，取代人工守夜重試
+- **與既有模式的關係：** 延伸本頁「MCP 長 Session 穩健化」類別「心跳檢查、超時重試、session 狀態快照」等因應長 session 失效模式的既有做法，補上「API 層級錯誤等待 + 自動 resume」這個更貼近 Claude Code 本身（而非 MCP）錯誤處理的具體實作
+- **來源：** 「Claude Code hits "API Error: 500" at 3 AM? nightshift now waits it out and resumes the same conversation」— Reddit r/ClaudeCode（0 留言，無「週熱門」標記，score 不可信；單一貼文，訊號強度較弱，依內容判斷收錄）
+- **成熟度：** ⏳ 新興
+
+#### 準備 Anthropic 新版架構師認證考試歸納出的 12 種常見架構決策錯誤（2026-07-31）
+
+- **核心模式：** 作者為準備 Anthropic 新推出的 Claude Certified Architect: Professional 認證考試，系統性整理出準備過程中歸納的 12 種常見 Claude 架構決策錯誤（具體 12 條內容原文未詳列，待查證原文補全）
+- **與既有模式的關係：** 呼應本頁「架構邊界合約」「Agent 版本控制」等強調「決策先於實作、降低方向偏移」的既有類別，本篇以官方認證考試為切入點系統化整理常見錯誤，是社群將官方認證教材轉化為實戰檢查清單的首個案例
+- **來源：** 「12 ways a Claude architecture decision goes wrong (learned these prepping for Anthropic's new Professional cert)」— Reddit r/ClaudeAI（0 留言；單一貼文，訊號強度較弱，依內容判斷收錄；具體 12 條錯誤內容待查證原文）
+- **成熟度：** ⏳ 新興
+
+#### 「你的 AI Subagent 在騙你」：317 色碼平行清理任務揭露 4 種 subagent 靜默失敗模式（2026-07-29）
+
+- **核心模式：** 作者將一項含 317 個硬編碼色碼的 design-token 清理工作拆給多個 Claude Code subagent 平行處理，各自分到一批檔案並回報「完成」，但實際檢查發現多種靜默失敗模式（各 agent 回報乾淨卻結果不然）
+- **與既有模式的關係：** 呼應本頁「安全架構」類別中 Grepathy（agent 未經核准決策稽核）對「agent 自主決策是否可信」的既有關注，本篇聚焦「回報完成」本身不可信的具體案例，是對「orchestrator 分派後如何驗證真的完成」這一環節的第一手踩坑記錄
+- **來源：** 「Your AI Subagents Are Lying to You: 4 Silent Failure Modes」— dev.to / #claudecode（依 dev.to 內容判斷原則收錄：第一手實作與踩坑記錄，讚數不作為判斷依據；3 讚）
+- **成熟度：** ⏳ 新興（單一案例，四種失敗模式細節待查證原文）
+
+#### Agenta：開源、可自架模型的 Claude Cowork 替代品，支援任意 harness（2026-07-28）
+
+- **核心模式：** 開源專案 Agenta 提供與 Claude Cowork 相似的協作體驗，但可搭配自架（self-hosted）模型與任意 harness，不綁定單一廠商模型
+- **與既有模式的關係：** 呼應本頁「介面元件複用」「模型使用策略」等類別中「降低廠商鎖定」的既有關注，是社群對官方 Cowork 產品提出開源平替方向的首個具體實作
+- **來源：** 「Agenta: an open-source Claude Cowork alternative where you can use self-hosted models (and any harness)」— Reddit r/LocalLLaMA · 週熱門（達收錄低門檻）
+- **成熟度：** ⏳ 新興
 
 #### 本地合併佇列：讓多個平行 Claude Code agent 的 commit 依序落地、避免同時建置測試拖垮機器與 CI 帳單（2026-07-30）
 

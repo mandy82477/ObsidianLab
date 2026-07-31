@@ -3,12 +3,12 @@
 **狀態：** monitoring
 **領域：** 💼 商業
 **開始日期：** 2026-04
-**最後更新：** 2026-07-29
-**最後新聞更新：** 2026-07-29
+**最後更新：** 2026-07-31
+**最後新聞更新：** 2026-07-31
 
-> **最新競品動態**（2026-07-29）
-> The Information（source_count=3，跨 3 個獨立來源報導）：儘管社群對 OpenAI Codex 與開源模型的討論度上升，Claude Code 的實際採用黏著度仍維持領先地位，詳見「主要競品追蹤」OpenAI Codex CLI 子區塊新增說明。**注意**：僅標題可用，具體黏著度數字（如留存率、切換率）未見報導細節。
-> 07-28 已記錄之 Moonshot AI 正式開源 Kimi-K3 權重（效能接近前沿模型、成本僅 2–3 分之一）、Nvidia/Microsoft 開放 AI 安全聯盟不含 Anthropic 等事件仍為近期重大訊號。
+> **最新競品動態**（2026-07-31）
+> OpenAI 官方發布「Advancing the price-performance frontier with GPT-5.6」，宣布大幅調降 GPT-5.6 價格（經 Simon Willison 摘要轉述「huge price drop」）；我方抓取資料未提供具體折扣百分比或新舊價格數字，僅定性描述，詳見下方「競品定價對照」新增列與「時序」2026-07-30 條目。
+> 07-29 已記錄之 The Information（跨 3 來源）「Claude Code 採用黏著度仍領先」、07-28 Moonshot AI 開源 Kimi-K3 權重、Nvidia/Microsoft 開放 AI 安全聯盟不含 Anthropic 等事件仍為近期重大訊號。
 
 ---
 
@@ -43,6 +43,7 @@ Claude Code 已成為 AI 輔助編碼的標竿產品，但競爭正快速升溫�
 | DeepSeek（Lindy 案例，API 整體遷移）| 未見換算後月費數字，僅見「每月省下數百萬美元」（Lindy 全公司規模）| 「最省錢 > 最強模型」具名案例，屬企業級大規模用量的相對節省，非單一訂閱價格對比 | 2026-06-29（CNBC）|
 | Cursor（IDE 整合，SpaceX 收購後）| 待查證（日報未見具體訂閱價格更新）| 收購後資源結構改變，但定價策略尚未見公開異動報導 | 2026-06-17（收購確認）|
 | OpenAI Codex CLI | 待查證（日報未見具體訂閱/API 掛牌價）| 下載量與熱度數據充分（+1,397%），但定價面向未見具體數字 | — |
+| GPT-5.6（OpenAI API） | 大幅調降（確切幅度待查證原文 https://openai.com/index/advancing-the-price-performance-frontier-with-gpt-5-6/ ）| OpenAI 官方公告「Advancing the price-performance frontier with GPT-5.6」，明確訴求以更低價格/更高性價比對打 Anthropic；經 Simon Willison 摘要轉述「huge price drop」，但我方抓取資料無具體折扣百分比或新舊 $/Mtok 數字，僅標題+定性描述，不可推算 | 2026-07-30（Blog/Simon Willison）|
 | Gemini CLI / Gemini 系列 | 待查證（日報未見具體掛牌價）| 多次作為多模型混用/路由方案的一環出現，未見獨立定價報導 | — |
 
 **觀察：** 目前日報實際查證到的競品定價訊號集中在「相對成本換算」（Copilot 27 倍加價、DeepSeek 100 倍降價），而非可直接比較的掛牌月費；多數競品定價仍待後續日報補上具體數字。
@@ -211,6 +212,9 @@ Claude Code 已成為 AI 輔助編碼的標竿產品，但競爭正快速升溫�
 #### 近期單日動態彙整（2026-07-02 至 2026-07-26）
 
 > 逐日條目按主題可另見上方「主要競品追蹤」對應廠商子區塊；此區塊保留完整時序供追溯查證。
+
+### 2026-07-30
+- **[定價變動，官方公告，數字待查證] OpenAI 官方發布 GPT-5.6 大幅降價公告「Advancing the price-performance frontier with GPT-5.6」**：Simon Willison 部落格轉貼並簡評 OpenAI 官方公告，內容提及大幅調降 GPT-5.6 價格（「huge price drop from OpenAI」）。**對競爭格局的意涵**：延續 07-09 已記錄之 ChatGPT Work / GPT-5.6 發布時「明確訴求在價格、速度、生產力三面向超越 Anthropic」的定位，本次是該定位在定價面的具體後續行動；惟我方抓取資料僅有 Simon Willison 的定性轉述，未提供具體折扣百分比或新舊 $/Mtok 數字，暫不可推算，詳見「競品定價對照」新增列（Blog/Simon Willison https://simonwillison.net/2026/Jul/30/luna-price-drop/#atom-everything；原始公告 https://openai.com/index/advancing-the-price-performance-frontier-with-gpt-5-6/）
 
 ### 2026-07-29
 - **[市場地位，跨 3 來源] The Information：儘管 Codex／開源模型討論度上升，Claude Code 採用黏著度仍領先**：詳見上方「主要競品追蹤」OpenAI Codex CLI 子區塊新增說明（Google News/The Information，source_count=3）
