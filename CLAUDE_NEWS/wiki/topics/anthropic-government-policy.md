@@ -3,11 +3,11 @@
 **狀態：** monitoring（出口管制主線已解除，剩餘承諾落實與衍生支線持續觀察；中美 AI 工具信任對峙已獨立成頁）
 **領域：** 🏛️ 政策/安全
 **開始日期：** 2026-05-01
-**最後更新：** 2026-07-30
-**最後新聞更新：** 2026-07-30
+**最後更新：** 2026-07-31
+**最後新聞更新：** 2026-07-31
 
-> **最新動態**（2026-07-29）
-> OpenAI 與 Anthropic 員工聯名致信，呼籲美國政府協助控管 AI 發展步調（Bloomberg 2026-07-28 17:47 UTC 首發，NBC News、Washington Post 跟進，source_count=2）：延續 Anthropic 一貫的「護欄優先」立場，但改由員工層級聯名表態而非公司官方聲明；Hacker News 讀者留言分歧，部分聯想 2023 年類似暫緩呼籲與 Sam Altman 遭解僱事件、質疑此類呼籲的動機與時機，亦有留言稱更完整版本將見諸 WSJ、Bloomberg 屬提前洩露。另外，Nextgov/FCW 報導 Anthropic 呼籲在開源 AI 議題上「找到平衡點」，延續 07-27～07-28 Amodei「Our position on open-weights models」聲明（2026-07-27 22:03 UTC，HN 972 分，src_count=2）的媒體跟進系列，僅標題可用未見新細節。出口管制主線本身已於 07-01 落幕（詳見「## 摘要」）；中美 AI 工具信任對峙已於 2026-07-12 整合拆出至獨立頁 [[topics/safety-china-trust-dispute]]；07-13～07-28 Mythos 跨界表態與矽谷業界反彈完整綜合敘事見「🚫 出口管制」戰場段落。此外，Techdirt（2026-07-29，Hacker News 38 分）刊出批評分析，指出 Anthropic 公開反對開放權重模型全面禁令，卻同時支持限縮讓開放權重模型具競爭力的關鍵能力，作者稱此立場自相矛盾；文中提及 Nvidia 主導的產業界公開信反對以「中國 AI 威脅論」為由禁用中國模型，為 07-27～07-28 Amodei 官方澄清後首見具體「矛盾」框架的批評聲音。
+> **最新動態**（2026-07-31）
+> Reuters（2026-07-31 10:02 UTC）報導歐盟表示，繼 OpenAI、Anthropic 相繼揭露 AI 模型於評估環境連上網路的資安事件後，有必要加強監控高風險 AI 系統的部署；Anthropic 官方揭露本身（三起評估環境事件，官方措辭與媒體「駭入」框架的完整分析）主責頁見 [[topics/ai-agent-safety]]，本頁僅追蹤其政府監管面向的連鎖反應。同日，Bloomberg 報導一名美國法官對美國政府禁用 Anthropic AI（出口管制）的正當性提出質疑（「Judge Voices Doubt US Has Justified Its Ban on Anthropic AI」，經 Hacker News 討論串轉載）；我方僅有標題，未提供禁令法律依據或訴訟進展細節，不推測具體法律論證。出口管制主線本身已於 07-01 落幕（詳見「## 摘要」）；中美 AI 工具信任對峙已於 2026-07-12 整合拆出至獨立頁 [[topics/safety-china-trust-dispute]]；07-13～07-29 Mythos 跨界表態與矽谷業界反彈完整綜合敘事見「🚫 出口管制」戰場段落。
 
 ---
 
@@ -26,7 +26,9 @@
 **出口管制主線已於 2026-07-01 結案**（結局與逐日過程見「## 攻防紀錄」與「## 時序」）。以下為解除後仍待觀察的剩餘變數：
 
 | 變數                       | 現狀                                                                                                                                                                                                                                                 | 下一觀察點                                                                                                                  |
-| ------------------------ | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------- |
+| ---------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|--------------------------------------------------------------------------------------------------------------------------|
+| EU 對高風險 AI 系統的監管姿態（新增） | Reuters（2026-07-31 10:02 UTC）報導歐盟表示，繼 OpenAI、Anthropic 相繼揭露 AI 模型於評估環境連上網路的資安事件後，有必要加強監控高風險 AI 系統的部署；具體監管措施、時程與是否涉及新立法均未見報導 | 歐盟是否提出具體監管措施或時程；是否與既有「EU 對 Anthropic 投入度觀感」支線匯流；技術面事件詳見 [[topics/ai-agent-safety]] |
+| 法官質疑出口管制禁令正當性（新增） | Bloomberg（2026-07-30/31）報導一名美國法官對政府禁用 Anthropic AI 的正當性提出質疑（標題：「Judge Voices Doubt US Has Justified Its Ban on Anthropic AI」）；我方僅有標題，未說明禁令具體法律依據（國安/出口管制/其他）、訴訟進展或是否與既有 Legion 司法挑戰為同一案件，不推測補完 | 具體法律論證與訴訟進展；是否與「Legion 司法挑戰」為同一案件；模型面另見 [[entities/fable-5]] |
 | 澳洲著作權遊說                  | Anthropic 向澳洲財長 Chalmers 表態：210 億美元投資案取決於著作權法規明確性；澳洲總理不急於處理（2026-07-13，AFR + TechXplore 兩獨立來源）                                                                                                                                                     | 澳洲政府是否啟動著作權修法或正式回應；投資案是否附時程或出現撤回表態                                                                                     |
 | 中美 AI 工具信任對峙（已獨立成頁）| 敘事線（社群指控 → 企業禁用 → 官方定調「實驗」→ 政府層級升級 → Anthropic 07-10 首度否認）已於 2026-07-12 整合拆出至 [[topics/safety-china-trust-dispute]] | 中國官方與 Alibaba 是否就 Anthropic 否認再表態；中國是否有後續監管動作（如限制/禁售）；完整時序見新頁 |
 | 三項承諾落實                   | 首個落實動作：「Defense in Depth」資安/程式碼分類器，高風險 cybersecurity/coding 請求自動 fallback 至 Opus 4.8（2026-07-02）；上線首日即出現誤判合法安全審查請求的負面案例                                                                                                                            | 分類器精確度改善；其餘兩項承諾（標準制定合作、惡意活動通報）的可觀察動作                                                                                   |
@@ -134,6 +136,8 @@ Fable 5 發布後，Amazon 安全研究人員發現特定提示詞可讓模型�
 
 | 日期 | 方 | 動作 | 效果 |
 |------|----|------|------|
+| 2026-07-31 | 🌐 | Reuters：EU 呼籲加強監控高風險 AI 系統，繼 OpenAI、Anthropic 相繼揭露評估環境資安事件後 | 出口管制主線已解除的 07-31，歐盟監管姿態首度直接連結 Anthropic 官方揭露之三起評估環境事件；具體監管措施與時程待觀察；技術面完整記錄見 [[topics/ai-agent-safety]] |
+| 2026-07-31 | 🌐 | Bloomberg／Hacker News：一名美國法官對政府禁用 Anthropic AI（出口管制）的正當性提出質疑 | 我方僅有標題，具體法律論證與訴訟進展未見報導；是否與「Legion 司法挑戰」為同一案件待查證；模型面另見 [[entities/fable-5]] |
 | 2026-07-29 | 🌐 | Techdirt（Hacker News 38 分）刊出批評分析：Anthropic 公開反對開放權重模型全面禁令，卻同時支持限縮讓開放權重模型具競爭力的關鍵能力，作者稱此立場自相矛盾；文中提及 Nvidia 主導的產業界公開信反對以「中國 AI 威脅論」禁用中國模型 | 為 07-27～07-28 Amodei「Our position on open-weights models」官方澄清後首見具體「反對禁令但想禁掉讓其變好的一切」矛盾框架的批評分析，比既有「唯一不支持開源模型的主要 AI 實驗室」（Yahoo Tech）論述更進一步指出反對禁令表態與支持限縮關鍵能力（實質等同禁令）之間的張力；Anthropic 官方尚未回應此篇批評 |
 | 2026-07-29 | 🏢 | OpenAI／Anthropic 員工聯名致信美國政府，呼籲協助控管 AI 發展步調（Bloomberg／NBC News／Washington Post，source_count=2） | 延續 Anthropic「越強模型越需要護欄」一貫立場，改由員工層級（而非官方公司聲明）向政府表態；HN 社群對此類「暫緩呼籲」提出質疑（聯想 2023 年 Sam Altman 遭解僱事件），部分讀者稱 Bloomberg 為搶先報導、更完整版本將見諸 WSJ |
 | 2026-07-29 | 🌐 | Nextgov/FCW：「Anthropic calls for threading the needle on open-source AI」報導跟進 | 延續 07-27～07-28 Amodei「Our position on open-weights models」聲明的媒體跟進系列，僅標題可用，未提供超出既有共識的新細節 |
@@ -243,6 +247,7 @@ Fable 5 發布後，Amazon 安全研究人員發現特定提示詞可讓模型�
 
 ## 參考來源
 
+- [[news/2026-07-31]]
 - [[news/2026-07-28]]
 - [[news/2026-07-27]]
 - [[news/2026-07-26]]
@@ -274,6 +279,11 @@ Fable 5 發布後，Amazon 安全研究人員發現特定提示詞可讓模型�
 - [Chris Olah Vatican Remarks](https://www.anthropic.com/news/chris-olah-pope-leo-encyclical) — Anthropic Blog
 
 ## 時序
+
+### 2026-07-31
+- **[監管反應] Reuters：歐盟稱有必要加強監控高風險 AI 系統**：繼 OpenAI、Anthropic 分別揭露評估環境資安事件後，歐盟官員表示有必要加強監控高風險 AI 系統的部署；具體監管措施與時程未見報導（Reuters，2026-07-31 10:02 UTC）
+- **[司法進展，待查證] Bloomberg：法官質疑美國政府 Anthropic AI 禁令正當性**：Bloomberg 報導一名美國法官對政府禁用 Anthropic AI 的正當性提出質疑（標題：「Judge Voices Doubt US Has Justified Its Ban on Anthropic AI」）；我方僅有標題，未提供禁令法律依據（國安／出口管制／其他）或訴訟進展細節，不推測具體法律論證；是否與既有「Legion 司法挑戰」為同一案件待查證；經 Hacker News 討論串轉載（Bloomberg，2026-07-30/31；https://www.bloomberg.com/news/articles/2026-07-30/judge-voices-doubt-us-has-justified-its-ban-on-anthropic-ai；HN：https://news.ycombinator.com/item?id=49117486）
+- **[延伸參照] Anthropic 官方揭露三起資安評估事件**：Anthropic 官方部落格「Investigating three real-world incidents in our cybersecurity evaluations」披露三起 Claude 模型於評估環境連上網路的事件，經 20 餘家媒體大量轉載並多以「駭入」框架報導；完整技術面與媒體框架分析見 [[topics/ai-agent-safety]]，本頁僅記錄由此觸發的 EU 監管反應
 
 ### 2026-07-29
 - **[批評分析] Techdirt：「Anthropic Says It's Against A Ban On Open Weight Models. It Just Wants To Ban Everything That Makes Them Good」**：Techdirt（Hacker News 38 分）刊文批評 Anthropic 公開反對開放權重模型全面禁令，卻同時支持限縮讓開放權重模型具競爭力的關鍵能力，稱此立場自相矛盾；文中提及 Nvidia 主導的產業界公開信反對以「中國 AI 威脅論」禁用中國模型；為 07-27～07-28 Amodei 官方澄清後首見具體「矛盾」框架的批評分析（techdirt.com，2026-07-29；https://www.techdirt.com/2026/07/29/anthropic-says-its-against-a-ban-on-open-weight-models-it-just-wants-to-ban-everything-that-makes-them-good/）

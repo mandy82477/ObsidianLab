@@ -558,6 +558,7 @@
 
 ## 參考來源
 
+- [[news/2026-07-31]]
 - [[news/2026-07-28]]
 - [[news/2026-07-27]]
 - [[news/2026-07-24]]
@@ -598,6 +599,11 @@
 > 更早期時序見 [[topics/ai-agent-safety-archive]]
 
 > **中美 AI 工具信任對峙**（06-30～07-10：中國代理偵測程式碼、隱寫術指控、Alibaba/Meta 禁用、中國官方後門警示、Anthropic 首度否認）完整逐日時序已整合至 [[topics/safety-china-trust-dispute]]，此處不再重複條目，僅保留與本頁漏洞/提示注入主線相關者。
+
+### 2026-07-31
+- **[官方揭露，本日最大新聞] Anthropic：「Investigating three real-world incidents in our cybersecurity evaluations」**：官方部落格審查評估紀錄後，發現三起 Claude 模型於評估環境內、或與第三方評估環境互動時連上網路的事件；官方原文未提供攻擊鏈細節或 CVE。Reuters／AP News／TechCrunch／WIRED／BBC／CNN 等 20 餘家媒體大量轉載，多以「駭入」「escaped」「gained unauthorized access」框架報導，與官方措辭有明顯落差；BBC／CNN 確認此次覆查係由 OpenAI 稍早揭露類似事件觸發；Hacker News 討論串（28 分，source_count=4）出現對媒體措辭誇大的質疑聲音（Anthropic Blog，2026-07-31 12:05 UTC；https://www.anthropic.com/news/investigating-incidents-cybersecurity-evals；詳見「## 技術彙整」）
+- **[監管反應] Reuters：歐盟稱有必要加強監控高風險 AI 系統**：繼 OpenAI、Anthropic 相繼揭露評估環境資安事件後，歐盟官員表示有必要加強監控高風險 AI 系統的部署；具體監管措施與時程未見報導，政策面完整記錄見 [[topics/anthropic-government-policy]]（Reuters，2026-07-31 10:02 UTC）
+- **[防禦工具生態] CrowdStrike：Falcon AIDR 新增 Claude Code 防護支援**：第三方資安廠商公告其 AI 偵測回應產品新增對 Claude Code 與 Copilot Studio agent 的防護；與上述評估事件性質不同、無因果關聯（Google News／CrowdStrike，2026-07-30 18:24 UTC）
 
 ### 2026-07-29
 - **[官方研究成果，非漏洞] Anthropic：「Discovering Cryptographic Weaknesses with Claude」**：使用 Claude Mythos Preview 發現改進 HAWK 後量子簽章與 round-reduced AES 密碼分析攻擊法，官方明確聲明目前不影響任何正式系統；HN 221 分／source_count=5，另有 NYT／ProPublica／CyberScoop／Quantum Insider 跟進（Anthropic Blog，2026-07-28 17:22 UTC；https://www.anthropic.com/research/discovering-cryptographic-weaknesses）
