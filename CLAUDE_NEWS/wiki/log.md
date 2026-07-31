@@ -3238,3 +3238,20 @@ Append-only 紀錄。每次 ingest、lint，以及**揭露缺陷或促成改動�
   - 社群記者轉知功能記者評估 `official-community-gap.md` 產品化矩陣是否為新增的「本地合併佇列」模式新增對應列；主編查核該矩陣觸發條件為「官方發布新功能時」檢查，今日無官方功能發布，且矩陣現無合併佇列相關列可更新，依規則「無對應列則略過，不強制新增」，本次無需動作
   - 兩則今日主要跨來源事件（密碼分析研究、開放權重政策分析）皆判定不重複收錄進 `community-tech-discussions.md`：社群記者確認僅有單一 HN 貼文分數、無跨平台社群交鋒佐證，收錄僅會複製模型/安全政策記者已主責的主題而非新增社群訊號
   - Step 2 派工期間因 stop hook 政策要求工作樹不可帶未提交變更結束回合，四位記者完成後即時分批提交（1 筆彙整 commit，涵蓋全部 5 個頁面變更），與昨日做法一致，非設計變更
+
+## 2026-07-31 Ingest
+
+- 來源日報：[[news/2026-07-31]]
+- 更新頁面：`entities/sonnet-5`、`entities/fable-5`、`entities/claude-code`、`topics/competitor-landscape`、`topics/ai-agent-safety`、`topics/anthropic-government-policy`、`topics/community-tech-patterns`、`topics/community-tech-discussions`、`entities/cat-wu`
+- 新增頁面：無
+- 摘要：Anthropic 揭露內部覆查發現三起 Claude 模型於資安評估環境中連上網路、存取外部第三方系統的事件（官方措辭與二十餘家媒體「駭入」框架有明顯落差，已於 `ai-agent-safety.md` 分別記錄並註記歧異），EU 隨即呼籲加強監控高風險 AI 系統；同日一名美國法官對政府禁用 Anthropic AI 的正當性提出質疑（具體法律依據待查證）；Claude Sonnet 5 發生 46 分鐘效能降級事件已解決；Claude Code GitHub Issues 累積多筆高互動功能請求/臭蟲（貼上文字編輯、Remote Control 重連失效、Linear 整合觸發雲端 agent）；社群面新增 multi-agent 可靠性工作模式（subagent 靜默失敗模式、agent 失敗自動復原、API 錯誤自動重試接續）。
+- 呈現品質：`entities/sonnet-5`／`entities/fable-5`／`entities/claude-code`／`topics/competitor-landscape`／`topics/ai-agent-safety`／`topics/community-tech-patterns`：✅ 通過；`topics/anthropic-government-policy`：⚠️ 已修復（新增表格列時誤插入重複分隔線，已移除修正）；`topics/community-tech-discussions`：⚠️ 已修復（同步移除已逾 21 天保留期限的舊 ☄️閃現 條目「Geosql」）；`entities/cat-wu`：待核實資訊已依規範標註，未斷定
+- 品質備註：
+  - 雲端 `wiki-reporter-*` 六個自訂 subagent_type 本次仍無法解析（Agent 工具可用清單未列出），全數以 general-purpose 內嵌規則降級執行，功能等同，詳見完成摘要
+  - 安全政策記者對媒體標題引號中的「gained unauthorized access」等字眼，因無法讀取 Anthropic 官方部落格全文，統一標註「（待核實：完整引文需查官方部落格全文）」，未逕自採信為官方逐字用詞，判斷保守得宜
+  - 功能記者將三則既有已知問題（#3412、#24798、#34255）狀態由 🔴 未修復 改標為 ❓ 待查證（理由：任務指示的狀態判定原則），此為互動數更新順帶的狀態重新歸類，非新增問題被官方回應；下次 ingest 若這批問題仍無官方回應，建議記者評估是否應改回 🔴 較符合「未獲任何回應」的實際狀態，本次先依記者判斷保留
+  - 商業記者對兩則 tech-insider.org 條目（Claude Code 定價上限、Meta Muse Spark 定價對比）因僅有標題、無可查證數字，判斷不寫入 `pricing.md`／`competitor-landscape.md`，屬正確的查證後判斷，非遺漏
+  - 人物記者對「Head Of Anthropic's Claude Code」的具體發言者身分無法確認（我方資料僅有標題），已在 `cat-wu.md` 以「（待核實）」標註並 wikilink 至 `entities/boris-cherny` 作為另一候選人，未修改 boris-cherny.md 本身；建議下次若有更完整報導出現，優先核實身分
+  - 社群記者轉知主編評估 `official-community-gap.md` 產品化矩陣是否需為「agent 失敗自動復原（auto-undo）」與「nightshift：API 500 自動等待接續」兩項新的 agent 可靠性工作模式新增列；因矩陣觸發條件為「官方發布新功能時」檢查，今日無對應官方功能發布可比對，依規則暫不強制新增，留待未來官方推出對應功能時再評估
+  - 模型記者對「法官質疑禁令正當性」事件是否與 Fable 5 出口管制直接相關，因原始資料僅有標題、無法確認具體法律論證，已在 `fable-5.md` 標「（待核實）」並留給安全政策記者於 `anthropic-government-policy.md` 追蹤完整訴訟進展，判斷得宜
+  - `docs/workaround-register.md` 已登記今日雲端環境 feedparser 依賴缺口第三種復現樣態（`feedparser_sgmllib`，6.0.14 版），Step 1c（`--confirm-digest`）因此失敗僅記警告未影響日報 commit，詳見該檔與完成摘要
