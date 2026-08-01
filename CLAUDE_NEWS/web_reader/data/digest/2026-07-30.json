@@ -42,12 +42,6 @@
       "body": "作者以 4–5 個平行 Claude Code agent 每天推送近 90 次 commit，為避免 8GB 機器同時建置測試而當機，打造本地合併佇列讓提交依序落地並完整測試。",
       "focusTags": [
         "[新工具]"
-      ],
-      "sedimented": [
-        {
-          "id": "claude-code",
-          "pageType": "entity"
-        }
       ]
     }
   ],
@@ -102,13 +96,7 @@
       "time": "07/30 01:52",
       "sentiment": "",
       "body": "Linux 使用者指出 Claude Code 把快取與設定檔寫入 `~/.claude.json`、`~/.claude`，未遵循 XDG Base Directory 慣例，造成家目錄混亂。",
-      "focusTags": [],
-      "sedimented": [
-        {
-          "id": "claude-code",
-          "pageType": "entity"
-        }
-      ]
+      "focusTags": []
     },
     {
       "title": "FEATURE: Multi-window support in Claude Code Desktop",
@@ -119,12 +107,6 @@
       "body": "社群要求 Claude Code Desktop 支援同時開啟多個視窗，取代目前單視窗＋側邊欄的 session 管理方式。",
       "focusTags": [
         "[持續追蹤]"
-      ],
-      "sedimented": [
-        {
-          "id": "claude-code",
-          "pageType": "entity"
-        }
       ]
     },
     {
@@ -136,12 +118,6 @@
       "body": "使用者希望 Claude Code 能直接存取 Claude.ai Projects 的知識庫，讓開發時能沿用專案既有的背景資料，此需求獲高度共鳴。",
       "focusTags": [
         "[持續追蹤]"
-      ],
-      "sedimented": [
-        {
-          "id": "claude-code",
-          "pageType": "entity"
-        }
       ]
     },
     {
@@ -151,13 +127,7 @@
       "time": "07/30 11:42",
       "sentiment": "",
       "body": "Windows 使用者回報 Claude Code 執行工具時主控台視窗會閃爍，影響操作體驗。",
-      "focusTags": [],
-      "sedimented": [
-        {
-          "id": "claude-code",
-          "pageType": "entity"
-        }
-      ]
+      "focusTags": []
     },
     {
       "title": "AI Worming through Word",
@@ -186,13 +156,7 @@
       "time": "07/13 09:16",
       "sentiment": "",
       "body": "作者記錄 30 天讓 Claude Code 主導約 90% 程式撰寫的實驗，累積 5 萬行程式碼與 187 美元 token 花費後，反思過度依賴造成的技能退化與職業倦怠。",
-      "focusTags": [],
-      "sedimented": [
-        {
-          "id": "claude-code",
-          "pageType": "entity"
-        }
-      ]
+      "focusTags": []
     },
     {
       "title": "Opus 5 is not as good as i thought",
@@ -210,13 +174,7 @@
       "time": "07/30 11:43",
       "sentiment": "",
       "body": "使用者對比 Codex 的 Plan Mode 會持續執行至計畫完成，質疑 Claude Code 的 plan 模式為何會中途停下，尋求原因與對策。",
-      "focusTags": [],
-      "sedimented": [
-        {
-          "id": "claude-code",
-          "pageType": "entity"
-        }
-      ]
+      "focusTags": []
     },
     {
       "title": "If you haven't updated ccstatusline in a while, there's a nifty feature for those constantly fighting against usage ceilings.",
@@ -234,13 +192,7 @@
       "time": "07/30 10:41",
       "sentiment": "",
       "body": "開發者釋出開源小工具，在 Claude Code 或 API 發生中斷時於 MacBook 瀏海顯示提示，呼應今日稍早 Anthropic 官方通報的多模型錯誤率上升事件，協助使用者判斷問題出在服務端而非自己的提示詞。",
-      "focusTags": [],
-      "sedimented": [
-        {
-          "id": "claude-code",
-          "pageType": "entity"
-        }
-      ]
+      "focusTags": []
     }
   ],
   "billing": [],
@@ -339,11 +291,6 @@
   "preview": "Anthropic 公開兩項由 Claude Mythos（尚未發布的進階模型）產出的密碼分析研究成果，成功攻破 HAWK 簽章方案並對縮減輪數 AES 提出改進攻擊，密碼學界正在消化其意義。",
   "sedimentedToday": [
     {
-      "id": "claude-code",
-      "name": "Claude Code",
-      "pageType": "entity"
-    },
-    {
       "id": "mythos",
       "name": "Claude Mythos",
       "pageType": "entity"
@@ -354,13 +301,13 @@
       "pageType": "entity"
     },
     {
-      "id": "anthropic-government-policy",
-      "name": "Anthropic 政府與軍事政策",
+      "id": "community-pattern-trends",
+      "name": "社群趨勢觀察（週更）",
       "pageType": "topic"
     },
     {
-      "id": "community-tech-patterns",
-      "name": "社群實戰模式庫",
+      "id": "community-tech-tools",
+      "name": "社群工具目錄",
       "pageType": "topic"
     }
   ]

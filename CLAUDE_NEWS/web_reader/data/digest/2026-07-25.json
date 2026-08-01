@@ -332,13 +332,7 @@
       "time": "07/02 05:55",
       "sentiment": "",
       "body": "作者計算後認為 Anthropic 將 Sonnet 5 以 $2/$10（每百萬 token）定價開放至 8 月 31 日的「60% Opus 折扣」是真實但暫時的優惠，建議設為預設而非上限。",
-      "focusTags": [],
-      "sedimented": [
-        {
-          "id": "sonnet-5",
-          "pageType": "entity"
-        }
-      ]
+      "focusTags": []
     }
   ],
   "focus": [
@@ -424,11 +418,6 @@
     {
       "id": "opus-4-8",
       "name": "Claude Opus 4.8",
-      "pageType": "entity"
-    },
-    {
-      "id": "sonnet-5",
-      "name": "Claude Sonnet 5",
       "pageType": "entity"
     }
   ]

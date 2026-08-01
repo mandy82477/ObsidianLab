@@ -721,11 +721,6 @@
       "pageType": "entity"
     },
     {
-      "id": "fable-5",
-      "name": "Claude Fable 5",
-      "pageType": "entity"
-    },
-    {
       "id": "google-investment",
       "name": "Google 投資 Anthropic 400 億美元",
       "pageType": "entity"
