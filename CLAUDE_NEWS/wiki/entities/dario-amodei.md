@@ -4,11 +4,11 @@
 **狀態：** active
 **領域：** 👤 人物
 **首次出現：** 2026-04-25
-**最後更新：** 2026-07-28
+**最後更新：** 2026-08-01
 **最後新聞更新：** 2026-07-28
 
 > **最新動態**（2026-07-28）
-> Dario Amodei 於 Anthropic Blog 發表聲明「Our position on open-weights models」，澄清 Anthropic 從未主張禁止開源權重模型，並呼籲加強對中國晶片出口管制；政策面完整分析見 [[topics/anthropic-government-policy]]，本頁僅記其個人具名表態。此前 2026-06-26 Wired 報導的白宮信任危機、2026-07-16 政治獻金傳聞（待核實）仍待後續觀察，尚無報導顯示信任關係已修復。
+> Dario Amodei 於 Anthropic Blog 發表聲明「Our position on open-weights models」，澄清 Anthropic 從未主張禁止開源權重模型，並呼籲加強對中國晶片出口管制；政策面完整分析見 [[topics/anthropic-government-policy]]，本頁僅記其個人具名表態。此前白宮信任危機仍待後續觀察，尚無報導顯示信任關係已修復；2026-07-16 政治獻金傳聞（待核實）後續已有 07-22 官方部分證實（詳見下方現況）。
 
 ---
 
@@ -16,9 +16,9 @@
 
 2026-07-28，Dario Amodei 於 Anthropic Blog 發表聲明「Our position on open-weights models」，澄清 Anthropic 從未主張禁止開源權重模型，並呼籲加強對中國晶片出口管制（政策面完整分析見 [[topics/anthropic-government-policy]]，本頁僅記個人具名表態）。
 
-2026-07-16，Politico 報導「Anthropic 執行長」捐款 100 萬美元予某 super PAC，捲入 AI 陣營之間鉅額政治獻金角力戰局；原文標題未具名確認捐款人身分，現任執行長為 Dario Amodei，但此事實歸屬本人尚待核實（政策/政治角力面向另見安全政策記者相關頁面）。
+2026-07-16，Politico 報導「Anthropic 執行長」捐款 100 萬美元予某 super PAC，捲入 AI 陣營之間鉅額政治獻金角力戰局；原文標題未具名確認捐款人身分，現任執行長為 Dario Amodei，此事實歸屬本人仍待核實（待核實）。**後續：** 07-17 Anthropic 員工另集體捐款 300 萬美元支持 AI 安全相關法規推動（SFGATE，僅標題可用）；07-22 Anthropic 官方部落格證實再捐 2000 萬美元予無黨派組織 Public First Action（累計達 4000 萬美元，首筆 2026-02），聲明明確排除候選人選舉用途，惟 WSJ／The Hill／Axios 同日以「期中選舉支出翻倍至 4000 萬美元推動 AI 監管」框架報導，與官方說法形成敘事張力；三筆捐款/支出是否構成同一資金脈絡，安全政策記者頁面 [[topics/anthropic-government-policy]] 仍標待確認，本頁僅記個人具名表態面向。
 
-Dario Amodei 是 Anthropic 共同創辦人兼執行長（CEO），與 Chris Olah、Daniela Amodei 等人從 OpenAI 出走後創立 Anthropic。主導公司整體策略與安全定位，在 AI 治理、政府政策、企業文化三條線高度活躍。2026-06-26 Wired 曾報導 Trump 政府一度不再信任 Amodei，改由聯合創辦人 Tom Brown 接管 Fable/Mythos 出口管制談判，該談判已於 2026-07-01 促成管制正式解除（見 [[entities/tom-brown]]、[[entities/fable-5]]），但 Dario 本人與白宮的信任關係修復與否尚無報導確認。
+Dario Amodei 是 Anthropic 共同創辦人兼執行長（CEO），與 Chris Olah、Daniela Amodei 等人從 OpenAI 出走後創立 Anthropic。主導公司整體策略與安全定位，在 AI 治理、政府政策、企業文化三條線高度活躍。白宮一度對其失去信任、談判改由聯合創辦人 Tom Brown 接管一事已收斂（出口管制已解除，見 [[entities/tom-brown]]、[[entities/fable-5]]、下方歷史記錄）；惟 Dario 本人與白宮的信任關係修復與否，尚無報導確認。
 
 2026 年上半年公開言論集中在：（1）呼籲政府有權阻止危險 AI 模型發布（尤指中國競爭者）；（2）主張企業文化是 AI 競賽決勝關鍵，個人花費 40% 工作時間於文化建設；（3）出席 Code with Claude 大會現場宣布 Pro/Max 速率翻倍政策。
 
@@ -67,7 +67,7 @@ Dario Amodei 是 Anthropic 共同創辦人兼執行長（CEO），與 Chris Olah
 ## 歷史記錄
 
 - 2026-07-28：於 Anthropic Blog 發表聲明「Our position on open-weights models」，澄清 Anthropic 從未主張禁止開源權重模型，並呼籲加強對中國晶片出口管制；人物角度僅記個人具名立場表態，政策細節詳見 [[topics/anthropic-government-policy]]（來源：Anthropic Blog）
-- 2026-07-16：Politico 報導（經 Google News 轉載）指「Anthropic 執行長」捐款 100 萬美元予某 super PAC，捲入 AI 陣營之間鉅額政治獻金角力戰局；原文標題未具名確認捐款人身分，現任執行長為 Dario Amodei，惟此事實歸屬本人尚待核實（待核實）（政策/政治角力面向另見安全政策記者相關頁面）（來源：Politico）
+- 2026-07-16：Politico 報導（經 Google News 轉載）指「Anthropic 執行長」捐款 100 萬美元予某 super PAC，捲入 AI 陣營之間鉅額政治獻金角力戰局；原文標題未具名確認捐款人身分，現任執行長為 Dario Amodei，此事實歸屬本人仍待核實（待核實）（來源：Politico）。**後續**：07-17 員工集體捐款 300 萬美元（SFGATE）；07-22 官方證實再捐 2000 萬美元予 Public First Action（累計 4000 萬美元），WSJ／The Hill／Axios 框架為「期中選舉支出翻倍推動 AI 監管」，與官方非選舉用途聲明有敘事張力；三筆捐款是否同一資金脈絡待確認，詳見 [[topics/anthropic-government-policy]]（來源：Anthropic Blog、WSJ、The Hill、Axios，2026-07-22）
 - 2026-07-06：接受 STAT News 專訪，談 AI 對生技（biotech）產業的潛在影響；日報僅提供標題層級資訊（2026-07-06 報導，至今無後續：近 14 天日報無具體論述內容補充）（來源：STAT News）
 - 2026-06-26：Wired 延伸報導確認 Trump 政府已不再信任 Amodei，改由 Tom Brown（GPT-3 共同研發者、Anthropic 聯合創辦人）全面接管政府溝通；Dario 以商業成功推動 AI 安全的政策立場持續受到質疑（來源：WIRED）
 - 2026-06-25：WIRED 報導 Amodei 退出與白宮 Fable 5 出口管制談判，由聯合創辦人 Tom Brown 接管；白宮人士批評其「行為怪異」無法有效與 Trump 政府溝通（來源：WIRED）
