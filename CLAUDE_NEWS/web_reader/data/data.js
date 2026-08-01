@@ -2286,6 +2286,11 @@ window.WIKI_DATA = {
   ],
   "weeklyIndex": [
     {
+      "id": "2026-W31",
+      "name": "本週深挖 · 2026-W31（07-26 ～ 08-01）",
+      "preview": "這一週從一則很硬的技術成果開始。7 月 28 至 29 日，Anthropic 公布用尚未發布的 Claude Mythos Preview 做密碼分析的結果：找到能大幅削弱後量子簽章方案 HAWK 的攻擊法，並對縮減輪數的 AES 提出改進攻擊。密碼學家 Matthew Green 把它放進「公鑰密碼邁向後量子轉型」"
+    },
+    {
       "id": "2026-W30",
       "name": "本週深挖 · 2026-W30（07-20 ～ 07-26）",
       "preview": "這一週要從價格看起。週一 The New Stack 實測給出一個難以忽視的數字：Moonshot 的 Kimi K3 與 Anthropic 旗艦 Fable 5 效果相當，成本只要三分之一，代價是慢四倍；同日阿里巴巴 Qwen3.8 被多家媒體報導為「僅次於 Fable 5」。對一個靠能力差距收 $10/$50 的"
