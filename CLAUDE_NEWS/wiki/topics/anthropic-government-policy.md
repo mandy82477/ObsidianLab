@@ -315,14 +315,14 @@ Fable 5 發布後，Amazon 安全研究人員發現特定提示詞可讓模型�
 - **[待查證] SFGATE：Anthropic 員工捐款 300 萬美元支持 AI 安全法規推動**：Google News 轉載 SFGATE 標題，稱 Anthropic 員工捐款 300 萬美元，支持 AI 安全相關法規推動；僅標題可用，原文為轉址頁面，捐款對象（是否為 super PAC 或其他組織）、支持的具體法規均未展開（Google News/SFGATE，2026-07-17 16:43 UTC）
 
 ### 2026-07-16
-- **[軍事監督] Politico：參議員 Mike Rounds 就 Mythos 接受五角大廈簡報**：Google News 轉載 Politico 標題，稱美國參議員 Mike Rounds 就 Anthropic 的 Mythos 接受五角大廈（Pentagon）簡報；僅標題可用，原文為轉址頁面，無法取得簡報具體內容或 Rounds 立場（Google News/Politico，2026-07-16 20:12 UTC）
+- **[軍事監督] Politico：參議員 Mike Rounds 就 Mythos 接受五角大廈簡報**：Google News 轉載 Politico 標題，稱美國參議員 Mike Rounds 就 Anthropic 的 Mythos 接受五角大廈（Pentagon）簡報；僅標題可用，原文為轉址頁面，無法取得簡報具體內容或 Rounds 立場（2026-07-16 報導，至今無後續）（Google News/Politico，2026-07-16 20:12 UTC）
 - **[政策倡議確認] WIRED：Anthropic 積極遊說各州加快 AI 監管**：WIRED（經 Google News 轉載）分析報導指出 Anthropic 正積極推動美國各州加快 AI 監管腳步（州級而非僅聯邦層級的政策遊說），確認並補強 07-15 Politico 標題式報導（Google News/WIRED，2026-07-16 18:35 UTC）
-- **[中美論戰新觀點] 南華早報獨家：Pax Silica 政策架構推手論美國可維持 AI 領先地位**：南華早報（SCMP）獨家專訪「Pax Silica」政策架構的主要推手（姓名待確認），探討 Anthropic 與中國之間的競合關係，並論述美國仍可維持 AI 領先地位；為 Bloomberg（06-26）「管制反效」論述後首見的正面反駁觀點，惟目前僅單一媒體專訪，待其他來源確認（Google News/South China Morning Post，2026-07-16 15:00 UTC）
+- **[中美論戰新觀點] 南華早報獨家：Pax Silica 政策架構推手論美國可維持 AI 領先地位**：南華早報（SCMP）獨家專訪「Pax Silica」政策架構的主要推手（姓名待確認），探討 Anthropic 與中國之間的競合關係，並論述美國仍可維持 AI 領先地位；為 Bloomberg（06-26）「管制反效」論述後首見的正面反駁觀點，惟目前僅單一媒體專訪（2026-07-16 報導，至今無其他來源跟進）（Google News/South China Morning Post，2026-07-16 15:00 UTC）
 - **[EU 施壓具體化] HN 轉載 Politico 全文：確認 Anthropic 派遣初階員工 Donny Greenberg 出席歐盟安全聽證**：Hacker News（累積 19 分）轉載 Politico 全文報導，確認並補足 07-14 politico.eu 標題式報導：布魯塞爾政策官員批評 Anthropic 週二未派遣資深主管，僅派遣初階員工 Donny Greenberg 出席歐洲議會，回應對先進 AI 能力風險的疑慮（Hacker News/Politico，2026-07-16 05:08 UTC；https://www.politico.eu/article/anthropic-european-parliament-donny-greenberg-artificial-intelligence-ai/）
 - **[待查證] Politico：Anthropic CEO 捐款 100 萬美元予 super PAC**：Google News 轉載 Politico 標題，指 Anthropic CEO（Dario Amodei）捐款 100 萬美元予某 super PAC，捲入 AI 陣營之間鉅額政治獻金角力；僅標題可用，原文為轉址頁面，PAC 名稱與資金用途待確認（Google News/Politico，2026-07-16 06:04 UTC）
 
 ### 2026-07-15
-- **[待查證] Axios：Anthropic 招募人力應對災難性風險**：Axios（經 Google News 轉載）標題指出 Anthropic 正在招募人力以應對潛在災難性風險（catastrophic risk），偏向安全團隊建置動態；僅標題可用，原文為轉址頁面，無法取得具體職位、規模或時間表（Google News/Axios，2026-07-15 09:10 UTC）
+- **（2026-07-15 報導，至今無後續）Axios：Anthropic 招募人力應對災難性風險**：Axios（經 Google News 轉載）標題指出 Anthropic 正在招募人力以應對潛在災難性風險（catastrophic risk），偏向安全團隊建置動態；僅標題可用，原文為轉址頁面，無法取得具體職位、規模或時間表（Google News/Axios，2026-07-15 09:10 UTC）
 - **[待查證] Politico：Anthropic 逐州加強 AI 規則計畫**：Politico（經 Google News 轉載）標題指出 Anthropic 正推動一項逐州加強 AI 監管規則的計畫（美國州層級政策倡議）；僅標題可用，原文為轉址頁面，無法取得具體州別或規則內容（Google News/Politico，2026-07-15 08:45 UTC）
 
 ### 2026-07-14
