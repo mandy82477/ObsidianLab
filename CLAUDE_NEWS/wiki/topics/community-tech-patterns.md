@@ -7,7 +7,7 @@
 **最後新聞更新：** 2026-07-31
 
 > **最新工作流模式**（2026-07-31）
-> 社群本日新增數則第一手實作與踩坑記錄：subagent 平行任務「回報完成不代表真的完成」的靜默失敗模式踩坑（dev.to）、agent 失敗後自動復原機制、夜間 API 500 錯誤自動等待接續的排程工具，以及開源 Claude Cowork 替代品 Agenta；多則來自低互動 Reddit 貼文，訊號強度較弱，依內容價值收錄。
+> 社群本日新增數則第一手實作與踩坑記錄：subagent 平行任務「回報完成不代表真的完成」的靜默失敗模式踩坑（dev.to）、agent 失敗後自動復原機制、夜間 API 500 錯誤自動等待接續的排程工具、開源 Claude Cowork 替代品 Agenta，以及 Simon Willison 分享 Stateless MCP 設計啟發打造的 mcp-explorer／datasette-mcp 兩個小工具；多則來自低互動 Reddit 貼文，訊號強度較弱，依內容價值收錄。
 
 ---
 
@@ -103,6 +103,13 @@ Claude Code 的三種多 agent 機制，可對應到 Anthropic《Building Effect
 ## 技術彙整
 
 ### 2026-07
+
+#### Simon Willison：Stateless MCP 設計啟發打造 mcp-explorer 與 datasette-mcp 兩個小工具（2026-07-31）
+
+- **核心模式：** Simon Willison 討論 MCP 2.0 推行的 Stateless MCP 設計方向，並分享受此啟發打造的 mcp-explorer 與 datasette-mcp 兩個小工具，聚焦「MCP server/tool 本身設計為無狀態」這個協定層設計面向
+- **與既有模式的關係：** 呼應本頁「Plugin / MCP 整合」類別既有「避免不必要 context 載入」「Claude Code 主導 MCP 工具鏈協作」的關注，本篇補上更底層的協定設計面向——伺服器端無狀態化與 Claude Code 常用的 MCP 生態直接相關
+- **來源：** 「Stateless MCP has recaptured my interest (and inspired mcp-explorer and datasette-mcp)」— Simon Willison Blog（具名知名開發者第一手實作記錄）
+- **成熟度：** ⏳ 新興（單一開發者早期工具，尚待社群採用驗證）
 
 #### 自製 agent 失敗自動復原（auto-undo）機制，處理多工具連續呼叫中途失敗留下的混亂狀態（2026-07-31）
 

@@ -4,7 +4,7 @@
 **領域：** 💼 商業
 **開始日期：** 2026-04
 **最後更新：** 2026-08-01
-**最後新聞更新：** 2026-07-31
+**最後新聞更新：** 2026-08-01
 
 > **最新競品動態**（2026-07-31）
 > OpenAI 官方發布「Advancing the price-performance frontier with GPT-5.6」，宣布大幅調降 GPT-5.6 價格（經 Simon Willison 摘要轉述「huge price drop」）；我方抓取資料未提供具體折扣百分比或新舊價格數字，僅定性描述，詳見下方「競品定價對照」新增列與「時序」2026-07-30 條目。
@@ -212,6 +212,9 @@ Claude Code 已成為 AI 輔助編碼的標竿產品，但競爭正快速升溫�
 #### 近期單日動態彙整（2026-07-02 至 2026-07-26）
 
 > 逐日條目按主題可另見上方「主要競品追蹤」對應廠商子區塊；此區塊保留完整時序供追溯查證。
+
+### 2026-08-01
+- **[新評測工具，標題層級，待查證：無具體分數，僅知有此比較/評測工具發布] Supabase 推出開源評測套件 Evals，以真實 Supabase 任務對 Claude Code、Codex、OpenCode 評分比較**：MarkTechPost 報導 Supabase 推出開源基準測試套件 Evals，以真實 Supabase 任務對三款編碼 agent 工具（Claude Code、OpenAI Codex、OpenCode）進行評分比較。**注意**：標題僅說明有此開源評測工具推出，未附具體分數、排名或方法論細節，（待查證：無具體分數，僅知有此比較/評測工具發布）。**對競爭格局的意涵**：與既有 07-15 HackerNoon 三方比較文、07-25 SitePoint「Codex vs Claude 工作流」比較文同屬「開發者社群將 Claude Code 與 Codex／OpenCode 常態並列評測」的既有態勢延伸；差異在於本次評測方為第三方基礎設施服務商（Supabase）主導並開源方法論，而非單純評論文章，具備後續產出量化數據的潛力（推論）（Google News/MarkTechPost）
 
 ### 2026-07-30
 - **[定價變動，官方公告，數字待查證] OpenAI 官方發布 GPT-5.6 大幅降價公告「Advancing the price-performance frontier with GPT-5.6」**：Simon Willison 部落格轉貼並簡評 OpenAI 官方公告，內容提及大幅調降 GPT-5.6 價格（「huge price drop from OpenAI」）。**對競爭格局的意涵**：延續 07-09 已記錄之 ChatGPT Work / GPT-5.6 發布時「明確訴求在價格、速度、生產力三面向超越 Anthropic」的定位，本次是該定位在定價面的具體後續行動；惟我方抓取資料僅有 Simon Willison 的定性轉述，未提供具體折扣百分比或新舊 $/Mtok 數字，暫不可推算，詳見「競品定價對照」新增列（Blog/Simon Willison https://simonwillison.net/2026/Jul/30/luna-price-drop/#atom-everything；原始公告 https://openai.com/index/advancing-the-price-performance-frontier-with-gpt-5-6/）
