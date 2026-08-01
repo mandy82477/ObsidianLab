@@ -353,9 +353,11 @@ python scripts/check_links.py
 依序執行（`REPO_ROOT` = `C:\Users\Mandy\CLAUDE_OBSIDIAN\ObsidianLab\CLAUDE_NEWS`，`PYTHON` = `C:\Users\Mandy\AppData\Local\Programs\Python\Python313\python.exe`）：
 
 1. **Commit wiki 變更**（先不 push）：`git -C REPO_ROOT add wiki/` → `git -C REPO_ROOT commit -m "wiki: weekly lint YYYY-MM-DD"`（wiki 無變更則跳過 commit，續下一步）
-2. **強制測試套件**：`PYTHON REPO_ROOT\scripts\run_tests.py`
-   - 失敗（exit≠0）→ 跳過 build 與 web commit，仍執行步驟 4 推送已完成的 wiki commit；log 記 `Tests FAILED - web build skipped`
-   - 全過（exit 0）→ 續步驟 3
+2. **強制 web build gate**：`PYTHON REPO_ROOT\scripts\gate_web_build.py`（此腳本代跑完整測試套件，不要另外自己跑 `run_tests.py` 再自行判斷——判準集中在腳本裡，才不會與 `.claude/commands/news-pipeline-steps.md` Step 4 失步）
+   - 擋下（exit≠0）→ 跳過 build 與 web commit，仍執行步驟 4 推送已完成的 wiki commit
+   - 放行（exit 0，含「測試失敗但全屬 `docs/known-test-gaps.json` 已登記缺口」）→ 續步驟 3
+   - 兩種結果都在步驟 4 的心跳紀錄抄上腳本輸出的**最後一行摘要**，不要自己改寫措辭
+   - 放寬理由與邊界見 `.claude/commands/news-pipeline-steps.md` Step 4 的說明區塊（2026-07-31 教訓：抓料端依賴缺口不該讓整站停更）
 3. **建置 web 並 commit**：`PYTHON REPO_ROOT\scripts\build_web.py` → `git -C REPO_ROOT add web_reader/` → `git -C REPO_ROOT commit -m "web: rebuild YYYY-MM-DD（週更 lint 上站）"`
 4. **心跳紀錄（無論成功／no-op／中止都必須寫）`[加入: 2026-07-27]`**：append 一行結果到 `src/logs/task_scheduler.log`（格式沿用該檔既有慣例，如 `[週六 YYYY/MM/DD hh:mm:ss.00] Weekly lint OK - 修 N 頁，M 項待確認，測試/build/push 結果`；no-op 寫 `Weekly lint OK (no-op) - 無頁面需修正`；中途失敗寫 `Weekly lint FAILED - <卡在哪一步>`）→ `git -C REPO_ROOT add src/logs/task_scheduler.log` → `git -C REPO_ROOT commit -m "chore: weekly lint heartbeat YYYY-MM-DD"`。**這一步是本步驟序列中唯一保證產生 commit 的步驟**——目的是讓「跑了但無事可改」與「靜默死亡」在 GitHub 上可分辨（2026-07-25 雲端 lint 無聲失敗、死因不可考的教訓：當時成功與死亡的 artifact 都是零）。對應每日 pipeline 的 `.claude/commands/news-pipeline-steps.md`「Step 6」（無論前面成敗都必須寫），本機與雲端行為一致。
 5. **單一 push**：`git -C REPO_ROOT push`（本次所有 commit 一次推送，一次 push = 一個 Pages 部署，避免並發競爭；理由同 `.claude/commands/news-pipeline-steps.md` Step 5）

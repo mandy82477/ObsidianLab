@@ -293,14 +293,22 @@ git -C REPO_ROOT commit -m "wiki: auto-ingest TARGET_DATE"
 
 ## Step 4：建置 Web Reader
 
-**建置前先跑確定性測試套件（強制）：**
+**建置前先跑 web build gate（強制，內含完整測試套件）：**
 
 ```
-PYTHON REPO_ROOT\scripts\run_tests.py
+PYTHON REPO_ROOT\scripts\gate_web_build.py
 ```
 
-- 測試失敗（exit code 非 0）→ 視同 Step 4 失敗：跳過 web build 與 web commit，但仍繼續 Step 5（推送已完成的 news / wiki commit）與 Step 6（記錄 log）；Step 6 log 寫 `Tests FAILED - web build skipped`
-- 測試全過（exit code 0）→ 繼續執行：
+此腳本會代跑 `scripts/run_tests.py`，再依 `docs/known-test-gaps.json` 判定該不該擋。**不要另外自己跑 `run_tests.py` 再自行判斷**——判準集中在腳本裡，才不會兩處失步。
+
+- **exit 0** → 放行，繼續執行 build（可能是「全綠」，也可能是「失敗但全屬已登記缺口」；後者腳本會印出放行理由）
+- **exit 非 0** → 視同 Step 4 失敗：跳過 web build 與 web commit，但仍繼續 Step 5（推送已完成的 news / wiki commit）與 Step 6（記錄 log）
+
+Step 6 的 log 一律抄腳本輸出的**最後一行摘要**（例如 `測試失敗 3 案，全屬已登記缺口（feedparser-sgmllib）- web build 放行`），不要自己改寫措辭——log 是日後判斷「哪天為什麼沒上站」的唯一證據。
+
+> **為何是 gate 而不是直接看測試結果 `[加入: 2026-08-01]`：** 舊規則是「整包測試過才建 web」。2026-07-31 雲端日更因 3 個抓料端的 `ModuleNotFoundError` 判定失敗而跳過 build，網站整天停在前一天——但日報與 wiki 都已正常產出並 commit，那 3 個案例跟 `build_web.py` 的輸入毫無關係。過緊的 gate 用「正確性」的名義製造「可用性」的損失。放寬的邊界很嚴格：**只有登記在 `docs/known-test-gaps.json`、且錯誤訊息也對得上的失敗才放行，出現任何一個沒登記的失敗就照舊全擋**；允許清單空的時候，行為等同舊規則。
+
+- 放行後執行：
 
 ```
 PYTHON REPO_ROOT\scripts\build_web.py
@@ -371,7 +379,7 @@ REPO_ROOT\src\logs\task_scheduler.log
 - Step 0 昨日缺跑時，額外寫一行 `WARN: yesterday digest missing (YESTERDAY)`
 - Step 1 失敗時，寫 `Aggregator FAILED - stopping`，之後不繼續（此情況下由呼叫 session 直接寫入，見上方例外）
 - Step 2 失敗時，寫 `Wiki ingest FAILED`
-- Step 4 測試套件失敗時，寫 `Tests FAILED - web build skipped`
+- Step 4 gate 判定時，抄 `scripts/gate_web_build.py` 輸出的最後一行摘要（放行與擋下都要寫，例如 `測試全綠 - web build 放行`／`測試失敗含未登記案例（...）- web build 擋下`）
 - Step 4 build_web 失敗時，寫 `build_web FAILED - pushing news/wiki only`
 - Step 5 push 失敗時，寫 `Push FAILED`
 - 時間戳使用系統當前時間（`Get-Date` 或 `date` 指令取得），格式 `[週X YYYY/MM/DD HH:MM:SS.SS]`
@@ -401,7 +409,7 @@ REPO_ROOT\src\logs\task_scheduler.log
 - Step 0 僅在 TARGET_DATE 為今日時執行；backfill 模式（TARGET_DATE 非今日）跳過
 - Step 1 失敗時停止整個 pipeline（Phase A agent 立即停止，不進入 Phase B / Phase C，Step 6 log 改由呼叫 session 直接寫入）
 - Step 2（wiki ingest，由呼叫 session 親自執行，不在背景 agent 內）失敗時記錄並仍進入 Phase C（Step 4 不依賴 wiki）
-- Step 4 測試套件（`scripts/run_tests.py`）失敗時跳過 web build 與 web commit，仍須執行 Step 5 的統一 push
+- Step 4 web build gate（`scripts/gate_web_build.py`）擋下時跳過 web build 與 web commit，仍須執行 Step 5 的統一 push；gate 放行（含「失敗全屬已登記缺口」）時照常 build
 - Step 4（web build）失敗時跳過 web commit，但仍須執行 Step 5 的統一 push（推送已完成的 news / wiki commit）
 - **所有 git push 集中在 Step 5 一次完成**；中途步驟（1b、3）一律只 commit 不 push，避免 Pages 部署並發競爭
 - **Step 6 log 寫入必須執行**，即使前面步驟失敗也不能跳過

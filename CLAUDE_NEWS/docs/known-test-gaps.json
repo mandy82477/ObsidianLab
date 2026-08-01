@@ -1,0 +1,29 @@
+{
+  "_readme": [
+    "web build gate 的允許清單，由 scripts/gate_web_build.py 讀取。",
+    "登記在此的測試失敗不會擋掉 web build——因為它們與 build_web.py 的輸入無關，",
+    "擋下只會讓網站停更，不會讓任何東西變正確（2026-07-31 教訓，見 workaround-register.md）。",
+    "",
+    "每筆必填：",
+    "  id            短代號，會出現在 pipeline log",
+    "  test          比對失敗案例名稱的 regex",
+    "  error         比對錯誤訊息的 regex（與 test 兩者都命中才放行——只比對名稱的話，",
+    "                同一個測試日後真的壞掉也會被誤放行）",
+    "  register_row  指回 docs/workaround-register.md 的對應列，缺口必須有登記",
+    "  review_date   複查日；逾期仍放行但會印警告（擋網站不是懲罰逾期的正確手段）",
+    "  why_safe      一句話說明為什麼這個失敗影響不到 web build 的產出",
+    "",
+    "缺口修好後直接從 gaps 移除即可，不需要動 gate_web_build.py。",
+    "新增前先問：這個失敗真的影響不到 news/*.md 與 wiki/*.md 的內容嗎？答不出來就不要登記。"
+  ],
+  "gaps": [],
+  "_example": {
+    "id": "feedparser-sgmllib",
+    "test": "^test_(blogroll|source_funnel|gap_lookback)\\b",
+    "error": "No module named 'feedparser",
+    "register_row": "雲端 sandbox 缺 feedparser／sgmllib3k 依賴鏈",
+    "review_date": "2026-08-08",
+    "why_safe": "抓料端 RSS 解析依賴；build_web.py 只讀已 commit 的 news/*.md 與 wiki/*.md，不經過 feedparser",
+    "_note": "此筆為格式範例，非生效項目——該缺口已於 2026-08-01 由上游修復並收斂。gate 只讀 gaps 陣列。"
+  }
+}

@@ -15,11 +15,16 @@ import sys
 from datetime import date
 from pathlib import Path
 
-# Windows 主控台預設 cp950，印不出 ⚠️ 會 UnicodeEncodeError——而這個腳本正是「有逾期
-# workaround 時才印 ⚠️」，等於愈該示警愈會當掉（2026-08-01 實際踩到：掃描在列出 4 筆
-# 逾期項目的當下 traceback 中止）。與 cloud_bootstrap.py 用同一招把 stdout 轉 UTF-8。
-if hasattr(sys.stdout, "buffer"):
-    sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding="utf-8", errors="replace")
+def _use_utf8_stdout() -> None:
+    """Windows 主控台預設 cp950，印不出 ⚠️ 會 UnicodeEncodeError——而這個腳本正是
+    「有逾期 workaround 時才印 ⚠️」，等於愈該示警愈會當掉（2026-08-01 實際踩到：
+    掃描在列出 4 筆逾期項目的當下 traceback 中止）。
+
+    **只在 `__main__` 路徑呼叫，不可放模組層級**（理由見 `daily_health_check.py`
+    同名函式；`scripts/test_no_module_level_stdout_swap` 會擋回來）。
+    """
+    if hasattr(sys.stdout, "buffer"):
+        sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding="utf-8", errors="replace")
 
 REPO = Path(__file__).resolve().parent.parent          # CLAUDE_NEWS/
 REGISTER = REPO / "docs" / "workaround-register.md"
@@ -69,6 +74,7 @@ def overdue_workarounds(today: date) -> list[str]:
 
 
 def main() -> int:
+    _use_utf8_stdout()
     today = date.today()
     changes = uncommitted_real_changes()
     overdue = overdue_workarounds(today)

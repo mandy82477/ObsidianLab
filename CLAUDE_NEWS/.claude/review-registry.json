@@ -1,29 +1,67 @@
 {
   "_doc": "check_rules.py 讀取的專案設定。新增同步配對/錨點/allowlist 時登記於此，不改引擎（scripts/check_rules.py）。",
-
   "bare_references": {
-    "globs": [".claude/commands/*.md", ".claude/rules/*.md", "docs/cloud-runbooks/*.md"],
+    "globs": [
+      ".claude/commands/*.md",
+      ".claude/rules/*.md",
+      "docs/cloud-runbooks/*.md"
+    ],
     "pattern": "CLAUDE\\.md",
     "exempt_files": [
       ".claude/rules/claude-md-edit.md"
     ],
     "_exempt_files_note": "claude-md-edit.md 全篇在示範/講解裸露 CLAUDE.md 規則本身，不適用此檢查。",
     "line_allowlist": [
-      {"file": ".claude/commands/review-commands.md", "pattern": "commands / rules / CLAUDE\\.md"},
-      {"file": ".claude/commands/review-commands.md", "pattern": "根目錄 `CLAUDE\\.md`"},
-      {"file": ".claude/commands/wiki-lint.md", "pattern": "CLAUDE\\.md 健檢"},
-      {"file": ".claude/commands/wiki-lint.md", "pattern": "根目錄 `CLAUDE\\.md`"},
-      {"file": ".claude/commands/wiki-weekly-review.md", "pattern": "根目錄 `CLAUDE\\.md`"},
-      {"file": ".claude/commands/news-pipeline-steps.md", "pattern": "根目錄 `CLAUDE\\.md`"},
-      {"file": ".claude/commands/weekly.md", "pattern": "根目錄 `CLAUDE\\.md`"},
-      {"file": ".claude/rules/wiki-ingest-people.md", "pattern": "CLAUDE\\.md 論述"},
-      {"file": "docs/cloud-runbooks/weekly-lint.md", "pattern": "CLAUDE\\.md 健檢"}
+      {
+        "file": ".claude/commands/review-commands.md",
+        "pattern": "commands / rules / CLAUDE\\.md"
+      },
+      {
+        "file": ".claude/commands/review-commands.md",
+        "pattern": "根目錄 `CLAUDE\\.md`"
+      },
+      {
+        "file": ".claude/commands/wiki-lint.md",
+        "pattern": "CLAUDE\\.md 健檢"
+      },
+      {
+        "file": ".claude/commands/wiki-lint.md",
+        "pattern": "根目錄 `CLAUDE\\.md`"
+      },
+      {
+        "file": ".claude/commands/wiki-weekly-review.md",
+        "pattern": "根目錄 `CLAUDE\\.md`"
+      },
+      {
+        "file": ".claude/commands/news-pipeline-steps.md",
+        "pattern": "根目錄 `CLAUDE\\.md`"
+      },
+      {
+        "file": ".claude/commands/weekly.md",
+        "pattern": "根目錄 `CLAUDE\\.md`"
+      },
+      {
+        "file": ".claude/rules/wiki-ingest-people.md",
+        "pattern": "CLAUDE\\.md 論述"
+      },
+      {
+        "file": "docs/cloud-runbooks/weekly-lint.md",
+        "pattern": "CLAUDE\\.md 健檢"
+      }
     ]
   },
-
   "path_existence": {
-    "globs": [".claude/commands/*.md", ".claude/rules/*.md", "docs/cloud-runbooks/*.md"],
-    "extensions": [".md", ".py", ".json", ".jsonl"],
+    "globs": [
+      ".claude/commands/*.md",
+      ".claude/rules/*.md",
+      "docs/cloud-runbooks/*.md"
+    ],
+    "extensions": [
+      ".md",
+      ".py",
+      ".json",
+      ".jsonl"
+    ],
     "allowlist_patterns": [
       "^\\.claude/rules/wiki-ingest-\\[.+\\]\\.md$",
       "^news/YYYY-MM-DD\\.md$",
@@ -40,59 +78,116 @@
     ],
     "_allowlist_note": "以上為 placeholder 或執行期才產生的產物檔，不強制存在。",
     "bare_name_search_dirs": {
-      "community-tech-tools.md": ["wiki/topics"],
-      "community-tech-discussions.md": ["wiki/topics"],
-      "community-pattern-trends.md": ["wiki/topics"],
-      "community-tech-patterns.md": ["wiki/topics"]
+      "community-tech-tools.md": [
+        "wiki/topics"
+      ],
+      "community-tech-discussions.md": [
+        "wiki/topics"
+      ],
+      "community-pattern-trends.md": [
+        "wiki/topics"
+      ],
+      "community-tech-patterns.md": [
+        "wiki/topics"
+      ]
     }
   },
-
   "anchors": [
-    {"label": "首次出現 欄", "pattern": "\\| 首次出現 \\|", "file": "wiki/topics/community-tech-tools.md"},
-    {"label": "痛點洞察 區塊", "pattern": "## 痛點洞察", "file": "wiki/topics/community-tech-tools.md"},
-    {"label": "近期工具 欄", "pattern": "近期工具", "file": "wiki/topics/community-tech-tools.md"},
-    {"label": "技術彙整 區塊", "pattern": "## 技術彙整", "file": "wiki/topics/community-tech-discussions.md"},
-    {"label": "熱門討論 表格", "pattern": "熱門討論", "file": "wiki/topics/community-tech-discussions.md"},
-    {"label": "衍生 欄", "pattern": "衍生", "file": "wiki/topics/community-tech-discussions.md"},
-    {"label": "全覽表 區塊", "pattern": "全覽表", "file": "wiki/feature-radar.md"}
+    {
+      "label": "首次出現 欄",
+      "pattern": "\\| 首次出現 \\|",
+      "file": "wiki/topics/community-tech-tools.md"
+    },
+    {
+      "label": "痛點洞察 區塊",
+      "pattern": "## 痛點洞察",
+      "file": "wiki/topics/community-tech-tools.md"
+    },
+    {
+      "label": "近期工具 欄",
+      "pattern": "近期工具",
+      "file": "wiki/topics/community-tech-tools.md"
+    },
+    {
+      "label": "技術彙整 區塊",
+      "pattern": "## 技術彙整",
+      "file": "wiki/topics/community-tech-discussions.md"
+    },
+    {
+      "label": "熱門討論 表格",
+      "pattern": "熱門討論",
+      "file": "wiki/topics/community-tech-discussions.md"
+    },
+    {
+      "label": "衍生 欄",
+      "pattern": "衍生",
+      "file": "wiki/topics/community-tech-discussions.md"
+    },
+    {
+      "label": "全覽表 區塊",
+      "pattern": "全覽表",
+      "file": "wiki/feature-radar.md"
+    }
   ],
-
   "sync_pairs": [
     {
       "name": "news-pipeline.md <-> news-pipeline-steps.md：REPO_ROOT/PYTHON 逐字相同 + 不可背景",
       "assertion": "equal_values",
-      "files": [".claude/commands/news-pipeline.md", ".claude/commands/news-pipeline-steps.md"],
+      "files": [
+        ".claude/commands/news-pipeline.md",
+        ".claude/commands/news-pipeline-steps.md"
+      ],
       "pattern": "REPO_ROOT\\s*=\\s*(\\S+)"
     },
     {
       "name": "news-pipeline.md <-> news-pipeline-steps.md：PYTHON 逐字相同",
       "assertion": "equal_values",
-      "files": [".claude/commands/news-pipeline.md", ".claude/commands/news-pipeline-steps.md"],
+      "files": [
+        ".claude/commands/news-pipeline.md",
+        ".claude/commands/news-pipeline-steps.md"
+      ],
       "pattern": "PYTHON\\s*=\\s*(\\S+)"
     },
     {
       "name": "news-pipeline.md <-> news-pipeline-steps.md：皆明文「不可包進背景 agent」語意",
       "assertion": "all_contain",
-      "files": [".claude/commands/news-pipeline.md", ".claude/commands/news-pipeline-steps.md"],
-      "patterns": ["不可.*背景"]
+      "files": [
+        ".claude/commands/news-pipeline.md",
+        ".claude/commands/news-pipeline-steps.md"
+      ],
+      "patterns": [
+        "不可.*背景"
+      ]
     },
     {
       "name": "news-pipeline.md Phase B <-> wiki-ingest.md：互相參照，無精簡複本殘留",
       "assertion": "all_contain",
-      "files": [".claude/commands/news-pipeline.md"],
-      "patterns": ["wiki-ingest\\.md"]
+      "files": [
+        ".claude/commands/news-pipeline.md"
+      ],
+      "patterns": [
+        "wiki-ingest\\.md"
+      ]
     },
     {
       "name": "wiki-ingest.md 提及被 news-pipeline.md Phase B 呼叫，無精簡複本殘留",
       "assertion": "all_contain",
-      "files": [".claude/commands/wiki-ingest.md"],
-      "patterns": ["news-pipeline\\.md"]
+      "files": [
+        ".claude/commands/wiki-ingest.md"
+      ],
+      "patterns": [
+        "news-pipeline\\.md"
+      ]
     },
     {
       "name": "wiki-ingest.md 無「精簡複本」殘留字樣",
       "assertion": "max_count",
-      "files": [".claude/commands/wiki-ingest.md"],
-      "patterns": ["精簡複本"],
+      "files": [
+        ".claude/commands/wiki-ingest.md"
+      ],
+      "patterns": [
+        "精簡複本"
+      ],
       "max": 0,
       "_note": "2026-07-25 由 min_count/min:0 改為 max_count/max:0——前者的條件是 count < min 才失敗，min:0 恆為真，這條「不該出現」的檢查一直是假綠。"
     },
@@ -117,20 +212,34 @@
     {
       "name": "wiki-ingest-community.md <-> wiki-ingest-community-lint.md：lint-only 邊界（共用「每日 ingest 不」語意標記）",
       "assertion": "all_contain",
-      "files": [".claude/rules/wiki-ingest-community.md", ".claude/rules/wiki-ingest-community-lint.md"],
-      "patterns": ["每日 ingest 不"]
+      "files": [
+        ".claude/rules/wiki-ingest-community.md",
+        ".claude/rules/wiki-ingest-community-lint.md"
+      ],
+      "patterns": [
+        "每日 ingest 不"
+      ]
     },
     {
       "name": "wiki-ingest-community.md 明文 lint 專用",
       "assertion": "all_contain",
-      "files": [".claude/rules/wiki-ingest-community.md"],
-      "patterns": ["lint 專用"]
+      "files": [
+        ".claude/rules/wiki-ingest-community.md"
+      ],
+      "patterns": [
+        "lint 專用"
+      ]
     },
     {
       "name": "wiki-ingest-community-lint.md 承接 tools 頁策展",
       "assertion": "all_contain",
-      "files": [".claude/rules/wiki-ingest-community-lint.md"],
-      "patterns": ["已脫離每日 ingest", "策展規則"]
+      "files": [
+        ".claude/rules/wiki-ingest-community-lint.md"
+      ],
+      "patterns": [
+        "已脫離每日 ingest",
+        "策展規則"
+      ]
     },
     {
       "name": "六份記者回報格式段皆含六欄（更新頁面/feature-radar 新增/index.md 狀態變更/新增頁面/同步自查/來源歸因）",
@@ -156,7 +265,9 @@
     {
       "name": "主編指南（rules/wiki-ingest.md）回報格式段同步六欄",
       "assertion": "all_contain",
-      "files": [".claude/rules/wiki-ingest.md"],
+      "files": [
+        ".claude/rules/wiki-ingest.md"
+      ],
       "patterns": [
         "更新頁面：",
         "feature-radar 新增：",
@@ -169,7 +280,9 @@
     {
       "name": "wiki-ingest.md（command）關鍵步驟：feature-radar 彙整 + 呈現品質 log 欄位 + 完成前核對清單",
       "assertion": "all_contain",
-      "files": [".claude/commands/wiki-ingest.md"],
+      "files": [
+        ".claude/commands/wiki-ingest.md"
+      ],
       "patterns": [
         "wiki/feature-radar\\.md",
         "\\.claude/rules/wiki-ingest-features\\.md",
@@ -180,7 +293,9 @@
     {
       "name": "wiki-lint.md 關鍵步驟：載入鏈 + 呈現品質標準引用 + 規則引用驗證 + 規則年齡審查",
       "assertion": "all_contain",
-      "files": [".claude/commands/wiki-lint.md"],
+      "files": [
+        ".claude/commands/wiki-lint.md"
+      ],
       "patterns": [
         "wiki/CLAUDE\\.md",
         "\\.claude/rules/wiki-ingest\\.md",
@@ -192,7 +307,9 @@
     {
       "name": "news-pipeline.md 關鍵步驟：三段 Phase 齊全 + 已知結果 + 禁止背景包裹",
       "assertion": "all_contain",
-      "files": [".claude/commands/news-pipeline.md"],
+      "files": [
+        ".claude/commands/news-pipeline.md"
+      ],
       "patterns": [
         "## Phase A",
         "## Phase B",
@@ -204,7 +321,9 @@
     {
       "name": "news-pipeline-steps.md 關鍵步驟：Step 2 不在本檔 + Phase A/C 步驟劃分 + Step 6 log 寫入",
       "assertion": "all_contain",
-      "files": [".claude/commands/news-pipeline-steps.md"],
+      "files": [
+        ".claude/commands/news-pipeline-steps.md"
+      ],
       "patterns": [
         "Step 2.*不在本檔案",
         "# Phase A 步驟",
@@ -215,7 +334,10 @@
     {
       "name": "雲端 daily runbook <-> news-pipeline-steps.md：步驟標題錨點逐字相符（改步驟標題必須同步 runbook）",
       "assertion": "all_contain",
-      "files": ["docs/cloud-runbooks/daily.md", ".claude/commands/news-pipeline-steps.md"],
+      "files": [
+        "docs/cloud-runbooks/daily.md",
+        ".claude/commands/news-pipeline-steps.md"
+      ],
       "patterns": [
         "Step 0：昨日缺跑檢查",
         "Step 0b：冪等閘",
@@ -232,7 +354,10 @@
     {
       "name": "雲端 weekly runbook <-> wiki-lint.md：步驟標題錨點逐字相符（改步驟標題必須同步 runbook）",
       "assertion": "all_contain",
-      "files": ["docs/cloud-runbooks/weekly-lint.md", ".claude/commands/wiki-lint.md"],
+      "files": [
+        "docs/cloud-runbooks/weekly-lint.md",
+        ".claude/commands/wiki-lint.md"
+      ],
       "patterns": [
         "1\\. 載入 wiki 全貌",
         "2\\. 並行派工",
@@ -249,7 +374,9 @@
     {
       "name": "model-comparison 選型品質審核六條規則齊全（決策可用性的單一真相源）",
       "assertion": "all_contain",
-      "files": [".claude/rules/wiki-ingest-models.md"],
+      "files": [
+        ".claude/rules/wiki-ingest-models.md"
+      ],
       "patterns": [
         "model-comparison 選型品質審核",
         "禁止同義反覆",
@@ -263,7 +390,9 @@
     {
       "name": "本機/雲端行為一致：閘門・重試・補跑規則必須在共用步驟檔內",
       "assertion": "all_contain",
-      "files": [".claude/commands/news-pipeline-steps.md"],
+      "files": [
+        ".claude/commands/news-pipeline-steps.md"
+      ],
       "patterns": [
         "本機與雲端的行為必須一致",
         "Step 0b：冪等閘",
@@ -275,57 +404,129 @@
     {
       "name": "雲端 runbook 不得自行實作 push 重試（行為必須來自共用步驟檔，兩份會失步）",
       "assertion": "max_count",
-      "files": ["docs/cloud-runbooks/daily.md", "docs/cloud-runbooks/_shared.md"],
-      "patterns": ["pull --rebase"],
+      "files": [
+        "docs/cloud-runbooks/daily.md",
+        "docs/cloud-runbooks/_shared.md"
+      ],
+      "patterns": [
+        "pull --rebase"
+      ],
       "max": 0
     },
     {
       "name": "trigger 鏡像 JSON 仍指向對應 runbook（薄殼規約：prompt 只指路，不含步驟細節）",
       "assertion": "all_contain",
-      "files": ["docs/cloud-runbooks/triggers/daily-news-pipeline-cloud.json"],
-      "patterns": ["docs/cloud-runbooks/_shared\\.md", "docs/cloud-runbooks/daily\\.md"]
+      "files": [
+        "docs/cloud-runbooks/triggers/daily-news-pipeline-cloud.json"
+      ],
+      "patterns": [
+        "docs/cloud-runbooks/_shared\\.md",
+        "docs/cloud-runbooks/daily\\.md"
+      ]
     },
     {
       "name": "trigger 鏡像 JSON（weekly）仍指向對應 runbook",
       "assertion": "all_contain",
-      "files": ["docs/cloud-runbooks/triggers/weekly-wiki-lint-cloud.json"],
-      "patterns": ["docs/cloud-runbooks/_shared\\.md", "docs/cloud-runbooks/weekly-lint\\.md"]
+      "files": [
+        "docs/cloud-runbooks/triggers/weekly-wiki-lint-cloud.json"
+      ],
+      "patterns": [
+        "docs/cloud-runbooks/_shared\\.md",
+        "docs/cloud-runbooks/weekly-lint\\.md"
+      ]
     },
     {
       "name": "日報歸因格式 <-> wiki-lint 6g 量測：產出端與量測端都必須認得現行 [N] 註腳格式（改日報歸因格式必須同步 6g，否則回歸偵測器自己讀成 0）",
       "assertion": "all_contain",
-      "files": [".claude/commands/news-pipeline-steps.md", ".claude/commands/wiki-lint.md"],
-      "patterns": ["今日聚焦參考連結", "\\[N\\]"]
+      "files": [
+        ".claude/commands/news-pipeline-steps.md",
+        ".claude/commands/wiki-lint.md"
+      ],
+      "patterns": [
+        "今日聚焦參考連結",
+        "\\[N\\]"
+      ]
     },
     {
       "name": "wiki-lint 6g 指標一：量測必須同時計兩種歸因格式，且先限縮今日聚焦區塊（防灌大分母）",
       "assertion": "all_contain",
-      "files": [".claude/commands/wiki-lint.md"],
-      "patterns": ["兩種歸因格式，必須同時計", "必須先限縮到「今日聚焦」區塊再數", "news-pipeline-steps\\.md"]
+      "files": [
+        ".claude/commands/wiki-lint.md"
+      ],
+      "patterns": [
+        "兩種歸因格式，必須同時計",
+        "必須先限縮到「今日聚焦」區塊再數",
+        "news-pipeline-steps\\.md"
+      ]
     },
     {
       "name": "weekly lint 心跳紀錄：wiki-lint.md 收尾與 _shared.md 無人值守原則都必須要求成功/no-op/中止一律寫 task_scheduler.log（07-25 無聲失敗死因不可考的防再犯——只規定中止留證據時，no-op 與死亡無法分辨）",
       "assertion": "all_contain",
-      "files": [".claude/commands/wiki-lint.md", "docs/cloud-runbooks/_shared.md"],
-      "patterns": ["task_scheduler\\.log", "無論成功／no-op／中止"]
+      "files": [
+        ".claude/commands/wiki-lint.md",
+        "docs/cloud-runbooks/_shared.md"
+      ],
+      "patterns": [
+        "task_scheduler\\.log",
+        "無論成功／no-op／中止"
+      ]
     },
     {
       "name": "雲端 STARTED 開跑標記：_shared.md 無人值守原則必須保留開跑即 push 的規定與四態判定（收尾心跳涵蓋不了中途死——07-25 的死法）",
       "assertion": "all_contain",
-      "files": ["docs/cloud-runbooks/_shared.md"],
-      "patterns": ["STARTED 開跑標記", "STARTED 無後續", "完全無 STARTED"]
+      "files": [
+        "docs/cloud-runbooks/_shared.md"
+      ],
+      "patterns": [
+        "STARTED 開跑標記",
+        "STARTED 無後續",
+        "完全無 STARTED"
+      ]
     },
     {
       "name": "雲端外部死鏈防護：weekly-lint.md 必須保留「雲端一律跳過死鏈檢查」規定（egress 封鎖會產生假死鏈並污染頁面標註；08-01 為月度首跑首當其衝）",
       "assertion": "all_contain",
-      "files": ["docs/cloud-runbooks/weekly-lint.md"],
-      "patterns": ["外部死鏈檢查（月度）在雲端一律跳過", "egress", "check_links\\.py"]
+      "files": [
+        "docs/cloud-runbooks/weekly-lint.md"
+      ],
+      "patterns": [
+        "外部死鏈檢查（月度）在雲端一律跳過",
+        "egress",
+        "check_links\\.py"
+      ]
+    },
+    {
+      "name": "news-pipeline-steps.md <-> wiki-lint.md：兩處 web build gate 都必須走 gate_web_build.py",
+      "assertion": "all_contain",
+      "files": [
+        ".claude/commands/news-pipeline-steps.md",
+        ".claude/commands/wiki-lint.md"
+      ],
+      "patterns": [
+        "scripts.gate_web_build\\.py"
+      ],
+      "_note": "2026-08-01 加入。web build 的放行判準集中在腳本裡；任一處退回自己跑 run_tests.py 再判斷，兩處就會失步（日更放行、週更擋下之類）。"
+    },
+    {
+      "name": "web build gate 舊措辭已退場（不得殘留 Tests FAILED - web build skipped）",
+      "assertion": "max_count",
+      "files": [
+        ".claude/commands/news-pipeline-steps.md",
+        ".claude/commands/wiki-lint.md"
+      ],
+      "patterns": [
+        "Tests FAILED - web build skipped"
+      ],
+      "max": 0,
+      "_note": "2026-08-01 加入。舊 log 措辭對應「測試失敗一律跳過 build」的舊規則，留著會讓 agent 抄回舊行為。"
     }
   ],
-
   "coupling_hints": {
     "enabled": true,
-    "globs": [".claude/commands/*.md", ".claude/rules/*.md"],
+    "globs": [
+      ".claude/commands/*.md",
+      ".claude/rules/*.md"
+    ],
     "min_mutual_references": 2
   }
 }

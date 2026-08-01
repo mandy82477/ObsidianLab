@@ -12,6 +12,11 @@
 #
 # 判讀方式：綠燈＝當日日報已上站；紅燈＝看 summary 指出是哪一段缺件，
 # 依 CLAUDE_NEWS/docs/daily-automation.md 的補救路徑本機補跑。
+#
+# 判準本身不寫在這裡，統一由 CLAUDE_NEWS/scripts/daily_health_check.py 定義
+# （2026-08-01 抽出）——因為雲端 routine `daily-watchdog-push` 也要用同一套判準
+# 決定要不要推播到手機。兩邊各寫一套的話，遲早會出現「信說壞了、推播說好」，
+# 那時你會兩邊都不信。本 workflow 只負責呼叫與把摘要寫進 job summary。
 name: daily-watchdog
 
 on:
@@ -33,66 +38,8 @@ jobs:
 
       - name: 檢查當日產出是否齊全
         run: |
-          TODAY=$(date -u +%F)
-          DIGEST="CLAUDE_NEWS/news/${TODAY}.md"
-          GATHERED="CLAUDE_NEWS/src/gathered_items.json"
-          FAILED=0
-
-          echo "## 每日產出檢查 ${TODAY} (UTC)" >> "$GITHUB_STEP_SUMMARY"
-
-          # 第 ① 段：GitHub Actions 抓料
-          # encoding 明寫 utf-8：日報資料含中文，預設編碼非 UTF-8 的環境會讀失敗而誤報缺件
-          GATHER_DATE=$(python3 -c "import json;print(json.load(open('${GATHERED}',encoding='utf-8'))['date'])" 2>/dev/null || echo "讀取失敗")
-          GATHER_N=$(python3 -c "import json;print(len(json.load(open('${GATHERED}',encoding='utf-8'))['items']))" 2>/dev/null || echo 0)
-          if [ "$GATHER_DATE" = "$TODAY" ] && [ "$GATHER_N" -gt 0 ]; then
-            echo "- ✅ ① 抓料：${GATHER_N} 則" >> "$GITHUB_STEP_SUMMARY"
-          else
-            echo "- ❌ ① 抓料缺件：gathered_items.json date=${GATHER_DATE} items=${GATHER_N}（daily-gather 失敗或被 GitHub 丟棄）" >> "$GITHUB_STEP_SUMMARY"
-            FAILED=1
-          fi
-
-          # 第 ② 段：雲端 routine 產日報
-          if [ -f "$DIGEST" ]; then
-            echo "- ✅ ② 日報已上站：${DIGEST}" >> "$GITHUB_STEP_SUMMARY"
-          else
-            echo "- ❌ ② 日報缺件：${DIGEST} 不存在（雲端 routine 未執行、中止、或 push 失敗）" >> "$GITHUB_STEP_SUMMARY"
-            FAILED=1
-          fi
-
-          # 第 ② 段後半：web reader 是否也重建了
-          # 分開檢查的理由：測試套件失敗時流程「跳過 build 但仍推送 news/wiki」是設計行為，
-          # 此時日報在 repo 裡但網站停在舊版——只檢查日報會漏掉這種半成品狀態。
-          WEB="CLAUDE_NEWS/web_reader/data/digest/${TODAY}.json"
-          if [ -f "$WEB" ]; then
-            echo "- ✅ ② web reader 已重建" >> "$GITHUB_STEP_SUMMARY"
-          elif [ -f "$DIGEST" ]; then
-            echo "- ❌ ② 日報有但網站沒重建：${WEB} 不存在（多半是 run_tests.py 失敗導致跳過 build）" >> "$GITHUB_STEP_SUMMARY"
-            FAILED=1
-          fi
-
-          # 回看 7 天的洞：Step 0 只檢查「昨天」，連續漏好幾天時你不會知道總共缺哪些。
-          # 一併列出哪些日子還能用原料副本 replay 補回（副本保留 14 天），
-          # 哪些已經只能重抓（來源視窗多半已滾過去，補出來會很稀疏）。
-          echo "" >> "$GITHUB_STEP_SUMMARY"
-          echo "### 近 7 天缺口" >> "$GITHUB_STEP_SUMMARY"
-          HOLES=0
-          for i in $(seq 1 7); do
-            D=$(date -u -d "-${i} day" +%F)
-            if [ ! -f "CLAUDE_NEWS/news/${D}.md" ]; then
-              HOLES=$((HOLES+1))
-              if [ -f "CLAUDE_NEWS/src/gathered_archive/${D}.json" ]; then
-                echo "- ⚠️ ${D} 缺日報（**有原料副本，可完整 replay 補回**：\`/news-pipeline ${D}\`）" >> "$GITHUB_STEP_SUMMARY"
-              else
-                echo "- ⚠️ ${D} 缺日報（無原料副本，只能重抓，內容會偏稀疏）" >> "$GITHUB_STEP_SUMMARY"
-              fi
-            fi
-          done
-          [ "$HOLES" = "0" ] && echo "- ✅ 近 7 天無缺口" >> "$GITHUB_STEP_SUMMARY"
-
-          if [ "$FAILED" = "1" ]; then
-            echo "" >> "$GITHUB_STEP_SUMMARY"
-            echo "**補救**：本機執行 \`/news-pipeline ${TODAY}\`（見 CLAUDE_NEWS/docs/daily-automation.md）" >> "$GITHUB_STEP_SUMMARY"
-            echo "當日產出缺件，見 job summary。"
-            exit 1
-          fi
-          echo "當日產出齊全。"
+          set -o pipefail
+          cd CLAUDE_NEWS
+          # 摘要同時寫進 job summary 與 stdout：summary 給人看，stdout 讓失敗信裡
+          # 直接帶到原因，不必再點進 Actions 頁面
+          python3 scripts/daily_health_check.py --format md | tee -a "$GITHUB_STEP_SUMMARY"

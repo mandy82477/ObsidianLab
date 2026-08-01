@@ -10,10 +10,13 @@
 |------|----|------|------|--------|---------|
 | `daily-news-pipeline-cloud` | `trig_01AWf2wwmVeL3ykPCSyxyvzw` | `0 13 * * *` | 每日 21:00 | `docs/cloud-runbooks/triggers/daily-news-pipeline-cloud.json` | `docs/cloud-runbooks/daily.md` |
 | `weekly-wiki-lint-cloud` | `trig_01E41amaGSNuL8jeUhCR8iUw` | `0 1 * * 6` | 每週六 09:00 | `docs/cloud-runbooks/triggers/weekly-wiki-lint-cloud.json` | `docs/cloud-runbooks/weekly-lint.md` |
+| `daily-watchdog-push` | `trig_01FqjE53JVAKTnPxnt8iJCb6` | `0 23 * * *` | 隔日 07:00 | `docs/cloud-runbooks/triggers/daily-watchdog-push.json` | `docs/cloud-runbooks/watchdog-push.md` |
 
 另有 `cloud-writeback-probe`（`trig_01KYk75uTSqLsXcmTNaawmLL`）為 2026-07-10 的寫回測試殘留，已 disabled，未納入備份。
 
-上游第一段 GitHub Actions `daily-gather`（`.github/workflows/daily-gather.yml`，`0 10 * * *` UTC）在 repo 內，不需鏡像。
+上游第一段 GitHub Actions `daily-gather`（`.github/workflows/daily-gather.yml`，`0 10 * * *` UTC）與告警層 `daily-watchdog`（`0 15 * * *` UTC）都在 repo 內，不需鏡像。
+
+`daily-watchdog`（寄信）與 `daily-watchdog-push`（推手機）是**同一套判準的兩個送達管道**，共用 `scripts/daily_health_check.py`；判準不可分別改寫在 workflow 或 runbook 裡（理由見 `docs/cloud-runbooks/watchdog-push.md`）。
 
 ## 維護規約
 
