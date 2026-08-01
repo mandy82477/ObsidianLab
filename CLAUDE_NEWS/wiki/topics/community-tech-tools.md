@@ -4,11 +4,11 @@
 **領域：** 🌐 社群
 **更新頻率：** 🗓️ 週更（每週策展一次；更新日期停留數天屬正常節奏）
 **開始日期：** 2026-04-25
-**最後更新：** 2026-07-28
-**最後新聞更新：** 2026-07-15
+**最後更新：** 2026-08-01
+**最後新聞更新：** 2026-07-30
 
-> **最新工具動態**（2026-07-15；2026-07-26 lint 僅執行汰除，07-16～07-26 news 無新工具達門檻，見下方策展說明）
-> 新增 18 筆達門檻工具（涵蓋 07-06～07-15 news）：Brainless（HN 124，shadcn 元件庫模仿 Claude Code/Codex/Grok 介面）、claude-meseeks／Mr. Meeseeks（HN 130，語音完成提示）、Agentty（HN 38，C++26 版 drop-in 替代品）、Sx 2.0（HN 39，達精選層鄰近門檻的免 git skill 分享工具，標記 ⚡）、OtoDock／Grepathy（皆 source_count 2，跨來源報導）、Fleet Deck、aloud、cc-session-recover、Cc-hindsight、Topsoil、Kastra、Papercrane-CLI、Agent Sessions、Tilion、Atelier、claude-code-live-memory、live-log-viewer-next。Brainless 與 claude-meseeks（HN≥50）同步提拔至「值得關注的工具」精選層（新增「通知／語音」子分類）。2026-07-26 lint 再汰除 12 筆逾 30 天無後續的 ⏳ 條目（06-18～06-19 首次出現的 Prompt Foundry、Sqim、Everything Claude Code microVM、Pi Extension、BeamWeaver、job-search、LegalRabbit DOCX、AI Commander、Gorchestra、Pagecast、Parcle、token-warden），同步清除「痛點洞察」Token 成本不透明列（Parcle／token-warden／Pi Extension，另清除已無對應條目的 token-xray／Costbase 殘留引用）與多 agent 協調混亂列（BeamWeaver）的殘留引用。
+> **最新工具動態**（2026-07-30；涵蓋 07-16～07-30 news）
+> 新增 5 筆達門檻工具：Claude-thermos（HN 102，session 快取保活工具，引發「成本轉嫁」爭議）、OneCLI（HN 101，開源憑證閘道器）、Palmier Pro（HN 171，本輪最高分，開源 macOS 影片編輯器＋本機 MCP server）、CodeAlmanac（HN 54，YC S26，對話自動更新 codebase wiki）、Claude Code Merge Queue（HN 39，source_count 2，多平行 agent 本地合併佇列）。前四者達精選層高門檻（HN≥50），同步提拔至「值得關注的工具」。同步汰除 10 筆逾 30 天無後續的 ⏳ 條目（autoharness／second-opinion／Statuslin.es／06-30；ai-whisper／Adrafinil／AgentWatch／06-28；TBD／06-27；machine0／06-16；ktx／06-10；AISlop／05-29），其中 machine0、ktx、AISlop 同步自「值得關注的工具」精選層移出。
 
 ---
 
@@ -28,9 +28,9 @@
 
 | 痛點主題 | 代表工具 | 本質問題 | 狀態 | 近期工具 |
 |---------|---------|---------|------|---------|
-| Token 成本不透明 | Tokenyst、CostHawk、TokenShield、PrismoDev、engramx、agent-estimate、LimitBar、Atelier | 自主 agent 讓帳單不可預測；LimitBar 新增 Fable 專屬額度即時顯示；Atelier 延續額度焦慮情緒串，提供實測基準節省驗證 | 🔥 持續升溫 | 2026-07-13 |
-| 跨 session 記憶歸零 | ltm、Memex、draft CLI、LockedIn、VIR、CoreMem、Cc-hindsight | 無官方標準，每個新 session 從零開始；Cc-hindsight 將過往對話轉為可重複使用的 prompt 庫 | 🔥 持續升溫 | 2026-07-15 |
-| 多 agent 協調混亂 | agent-baton、cdesktop、AnyFrame、agent-teamflow、Superset、OtoDock、Fleet Deck | 官方 Managed Agents 已部分解決，但社群仍補缺口；OtoDock 將 Claude Code + Codex 團隊化伺服器部署，Fleet Deck 補足多 session 單一看板可視化 | 🔥 持續升溫 | 2026-07-15 |
+| Token 成本不透明 | Tokenyst、CostHawk、TokenShield、PrismoDev、engramx、agent-estimate、LimitBar、Atelier | 自主 agent 讓帳單不可預測；LimitBar 新增 Fable 專屬額度即時顯示；Atelier 延續額度焦慮情緒串，提供實測基準節省驗證；Claude-thermos 以保活請求維持快取不過期，但引發「成本轉嫁其他用戶」爭議，尚無社群共識 | 🔥 持續升溫 | 2026-07-23 |
+| 跨 session 記憶歸零 | ltm、Memex、draft CLI、LockedIn、VIR、CoreMem、Cc-hindsight | 無官方標準，每個新 session 從零開始；Cc-hindsight 將過往對話轉為可重複使用的 prompt 庫；CodeAlmanac 將記憶對象從「agent 個人記憶」擴大至「codebase 說明文件隨對話自動更新」 | 🔥 持續升溫 | 2026-07-22 |
+| 多 agent 協調混亂 | agent-baton、cdesktop、AnyFrame、agent-teamflow、Superset、OtoDock、Fleet Deck | 官方 Managed Agents 已部分解決，但社群仍補缺口；OtoDock 將 Claude Code + Codex 團隊化伺服器部署，Fleet Deck 補足多 session 單一看板可視化；Claude Code Merge Queue 補上「多 agent 產出的 commit 如何序列化落地」的下游整合缺口 | 🔥 持續升溫 | 2026-07-30 |
 | CLAUDE.md 規則失效 | Writ、Caliber、Patina | 規則被忽略、過多規則耗 token、跨工具無標準 | 🌙 冷卻觀望 | 2026-05-12 |
 | 多模型鎖定防禦 | Dragoman、Claudy、claudely、clarp、vibe-skill | 6/15 計費切割後供應商依賴防禦反應加速 | 🌙 冷卻觀望 | 2026-05-21 |
 | 輸出品質不可信 | Groundtruth、EvanFlow、Relay plugin、Proof Loop、Grepathy | 信任邊界未建立，需在流程層強制插入驗證點；Proof Loop 加入建構者/驗證者分離機制；Grepathy 將驗證範疇延伸至「agent 未經核准的自主決策」可追溯性 | 🔥 持續升溫 | 2026-07-15 |
@@ -66,7 +66,7 @@
 | **Claude Usage Widget** | ✅ | 跨 Windows/macOS 桌面小工具，即時顯示 session 用量、週配額與 token 統計 |
 | **Usage4Claude 3.0.0** | ✅ | macOS 選單列用量追蹤，新增 Codex 支援，憑證存 Keychain |
 | **Chrome 用量監控擴充** | ✅ | 瀏覽器即時顯示 token、context、cache 倒數與速率限制 |
-| [**ktx**](https://github.com/Kaelio/ktx) | ⏳（HN 79）| Data agent context 層，補足 data warehouse 隱性知識，降低 SQL 幻覺 |
+| [**Claude-thermos**](https://github.com/izeigerman/claude-thermos) | ⏳（HN 102）| 定期送出保活請求維持 prompt cache 不過期，但 HN 高分留言質疑是否為「成本轉嫁其他用戶」，尚無社群共識 |
 
 ### 多 Agent / 並行協調
 
