@@ -4,17 +4,17 @@
 **狀態：** active（待核實）
 **領域：** 👤 人物
 **首次出現：** 2026-07-13
-**最後更新：** 2026-07-13
+**最後更新：** 2026-08-01
 **最後新聞更新：** 2026-07-13
 
-> **最新動態**（2026-07-13）
-> Business Insider 報導 Anthropic 聘請英國數位銀行 Monzo 共同創辦人 Tom Blomfield，報導涉及 AI compute 與 Y Combinator 背景，惟目前僅單一媒體來源，職稱與具體職掌尚未明朗（待核實）。
+> **最新動態**（2026-07-13 報導，至今無後續）
+> Business Insider 報導 Anthropic 聘請英國數位銀行 Monzo 共同創辦人 Tom Blomfield，報導涉及 AI compute 與 Y Combinator 背景，惟目前僅單一媒體來源，職稱與具體職掌尚未明朗；近 14 天日報無其他媒體或官方跟進確認。
 
 ---
 
 ## 現況
 
-2026-07-13，Business Insider 報導 Anthropic 新聘 Monzo（英國數位銀行）共同創辦人 Tom Blomfield 加入公司，報導提及此事與 AI compute、Y Combinator 背景相關，但未提供明確職稱或具體職掌說明（待核實）。Blomfield 先前為 Y Combinator 合夥人，並曾共同創辦 Monzo 與 GoCardless。此為單一媒體來源報導，尚待其他媒體或 Anthropic 官方確認。
+2026-07-13，Business Insider 報導 Anthropic 新聘 Monzo（英國數位銀行）共同創辦人 Tom Blomfield 加入公司，報導提及此事與 AI compute、Y Combinator 背景相關，但未提供明確職稱或具體職掌說明（待核實）。Blomfield 先前為 Y Combinator 合夥人，並曾共同創辦 Monzo 與 GoCardless。此為單一媒體來源報導（2026-07-13 報導，至今無後續：近 14 天日報無其他媒體或 Anthropic 官方確認）。
 
 ## 核心論述
 
@@ -33,4 +33,4 @@
 
 ## 歷史記錄
 
-- 2026-07-13：Business Insider 報導 Anthropic 新聘 Monzo 共同創辦人 Tom Blomfield，涉及 AI compute、Y Combinator 背景，職稱與職掌待核實（來源：Business Insider）
+- 2026-07-13：Business Insider 報導 Anthropic 新聘 Monzo 共同創辦人 Tom Blomfield，涉及 AI compute、Y Combinator 背景，職稱與職掌待核實（2026-07-13 報導，至今無後續：近 14 天日報無其他來源確認）（來源：Business Insider）

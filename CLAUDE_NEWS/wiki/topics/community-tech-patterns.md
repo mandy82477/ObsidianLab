@@ -160,13 +160,6 @@ Claude Code 的三種多 agent 機制，可對應到 Anthropic《Building Effect
 - **來源：** 「Too many Claude Code skills? How the listing budget decides which descriptions Claude sees」— dev.to / rulestack（依 dev.to 內容判斷原則收錄：第一手技術實作拆解，非行銷/SEO 稿；讚數 2 不作為判斷依據）
 - **成熟度：** ⚡ 活躍（既有 Skills 設計類別的機制補完）
 
-#### session-indexer：以本地 SQLite 索引 Claude Code session transcript，跨專案語意檢索記憶（2026-07-28）
-
-- **核心模式：** 作者自製 Go 工具 session-indexer，將 Claude Code session transcript 索引進本地 SQLite 資料庫，於新 session 開始時以語意相似度取回相關歷史片段，作為輕量記憶層
-- **與既有模式的關係：** 呼應本頁「記憶與知識管理」類別既有跨 session 記憶思路（ltm Core Memory Packet、本機圖資料庫、OKF），核心論點聚焦「集中式記憶工具＝單點故障」的風險，主張本地輕量索引優於依賴單一集中服務
-- **來源：** 「session-indexer: giving Claude Code a memory that doesn't die with the project next door」— dev.to / valpere（依 dev.to 內容判斷原則收錄：第一手實作工具，非行銷/SEO 稿；讚數 3 不作為判斷依據；文章原始發布日 2026-07-04，本輪日報始收錄）
-- **成熟度：** ⏳ 新興（單一開發者工具，尚待社群採用回饋）
-
 #### Anyclaude-SDK：讓 OpenAI/Anthropic 端點都能使用 Claude Code 風格 SDK（2026-07-28）
 
 - **核心模式：** 開源 SDK，讓開發者可用 Claude Code 風格介面呼叫 OpenAI 或 Anthropic 端點，降低切換供應商時的介面改寫成本（僅有標題可考，具體實作細節未知）
@@ -290,7 +283,7 @@ Claude Code 的三種多 agent 機制，可對應到 Anthropic《Building Effect
 
 - **核心模式：** Anthropic 官方（透過 ClaudeDevs 討論串）公布多模型工作流的第一方基準數據：由 Fable 5 負責任務協調（orchestrate）、便宜模型負責實際執行（execute）的分工架構，可在僅 46% 成本下達到 96% 的效能表現；此模式並非未來規劃，而是可直接在 Claude Code 中設定使用的現行做法
 - **與既有模式的關係：** 與既有「模型使用策略」類別下社群自建的分層模型路由（Sonnet + Opus）、Workweave Router 同屬「依任務複雜度分流節省成本」思路，差異在於這是 Anthropic 官方發布的第一方基準數據，將社群長期實務直覺量化為具體數字（46% 成本／96% 效能），並明確定調為「編排者–執行者」（orchestrator-executor）角色分工架構，而非單純模型選型
-- **來源：** 「Anthropic just benchmarked "Fable 5 orchestrates, cheap models execute": 96% of the performance at 46% of the cost. You can run this pattern in Claude Code today」— Reddit r/ClaudeAI（週熱門；轉述原始 ClaudeDevs 討論串發布的官方第一方數據，本頁未直接讀取 ClaudeDevs 原始貼文全文，細節數字待查證）
+- **來源：** 「Anthropic just benchmarked "Fable 5 orchestrates, cheap models execute": 96% of the performance at 46% of the cost. You can run this pattern in Claude Code today」— Reddit r/ClaudeAI（週熱門；轉述原始 ClaudeDevs 討論串發布的官方第一方數據，本頁未直接讀取 ClaudeDevs 原始貼文全文，細節數字待查證；07-15～07-31 news 查無跟進，至今無後續）
 - **成熟度：** ⚡ 活躍（官方背書 + 量化基準數據，可直接複現於 Claude Code；今日首見，尚待後續社群跟進實測驗證）
 
 #### 語音提示／語音輸出小趨勢觀察：Mr. Meeseeks 語音提示外掛（HN 130，本日最高分）與 aloud TTS 輸出工具並現（2026-07-14）
@@ -768,7 +761,7 @@ Claude Code 的三種多 agent 機制，可對應到 Anthropic《Building Effect
   - 保留「最近 N 輪」原始內容以維持短期連貫性，更早的歷史則壓縮
 - **解決的問題：** 傳統 agent loop 設計將全量 transcript 傳遞，隨輪數增加 token 成本呈平方增長；大型多輪任務中成本不可控
 - **與既有模式的關係：** 呼應 Context Rot 修復五法中的「壓縮歷史」策略；比 /compact 指令更系統化，可程式化控制壓縮時機與粒度
-- **注意事項：** 摘要過於激進可能造成語意失真，需設計摘要品質驗證機制；benchmark 為社群個人測試，大規模驗證待確認
+- **注意事項：** 摘要過於激進可能造成語意失真，需設計摘要品質驗證機制；benchmark 為社群個人測試，大規模驗證待確認（07-18～07-31 news 查無跟進，至今無後續）
 - **來源：** "The Hidden O(N²) Tax in AI Agent Loops: Measured with a Benchmark You Can Run"（dev.to/saihmadmin，06-23）
 
 #### Hooks 強制執行取代 CLAUDE.md 規則：從建議層到強制層（2026-06-23）
@@ -859,7 +852,7 @@ Claude Code 的三種多 agent 機制，可對應到 Anthropic《Building Effect
 - **解決的問題：** 「Claude 越用越笨」現象；3 小時以上任務中途失憶、計劃漂移
 - **適用場景：** 長 session 的 agentic 任務、多工具協同工作流、CI/CD 自動化 agent
 - **注意：** 與 spec-driven development 結合效果更好——先有規格文件，再讓 agent 在精簡 context 下執行（dev.to/kenimo49；Reddit r/ClaudeAI）
-- **大型 Repo 優化（HN 9）：** Git Lazy Mount（github.com/mohsen1/git-lazy-mount）——AI session 按需 fetch 大型 repo，附 sgrep 繞過全量 grep；HN score 9，適用 1GB+ monorepo，採用訊號待確認，附記待觀察。
+- **大型 Repo 優化（HN 9）：** Git Lazy Mount（github.com/mohsen1/git-lazy-mount）——AI session 按需 fetch 大型 repo，附 sgrep 繞過全量 grep；HN score 9，適用 1GB+ monorepo，採用訊號待確認，附記待觀察（07-18～07-31 news 查無跟進，至今無後續）。
 
 #### Loop Engineering：條件觸發的 Claude 執行設計（2026-06-19，更新 2026-06-20）
 
@@ -1012,7 +1005,7 @@ Claude Code 的三種多 agent 機制，可對應到 Anthropic《Building Effect
 - **Local stack MCP 整合、39ms 檢索**：開發者分享自建本機持久化記憶層：本地向量資料庫 + MCP 整合，實現 39ms 快速檢索；同時解決每次對話從零開始，以及記憶庫成長後大量消耗 token 的雙重痛點
 - **架構核心原則**：避免將全部記憶注入 context（token 消耗過高），改以語義查詢按需取回相關片段；本機方案同時解決雲端記憶的隱私疑慮，與 Memex 思路相近但強調自建可控性
 - **意義**：是對 Managed Agents Dreaming 官方解法的社群自建補充，在等待官方成熟前已形成可用架構
-- **輕量替代（HN 6）：** Iantha（kiloloop.com/iantha/）——純 Markdown + git 存儲，自動提取時間性任務跨 session 持久保存，無需向量 DB；HN score 6，識別準確度待驗證，附記待觀察。
+- **輕量替代（HN 6）：** Iantha（kiloloop.com/iantha/）——純 Markdown + git 存儲，自動提取時間性任務跨 session 持久保存，無需向量 DB；HN score 6，識別準確度待驗證，附記待觀察（07-18～07-31 news 查無跟進，至今無後續）。
 
 
 #### Managed Agents 架構模式（2026-05-07）

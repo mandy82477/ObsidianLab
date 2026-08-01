@@ -4,7 +4,7 @@
 **狀態：** active（正式發布；出口管制已解除，2026-07-01 起全球恢復存取；免費期已於 2026-07-19 到期，Max/Team 後續存取政策尚有分歧報導，見 [[entities/pricing]]）
 **領域：** 🤖 模型
 **首次出現：** 2026-06-09
-**最後更新：** 2026-07-31
+**最後更新：** 2026-08-01
 **最後新聞更新：** 2026-07-31
 
 > **最新進展**（2026-07-31）
@@ -214,21 +214,21 @@ claude --model claude-fable-5-20260609
 ### 出口管制期（2026-06-13 至 06-30）
 
 #### 2026-06-29
-**美國政府正式許可恢復 Mythos 存取 + Fable 5 可能本週回歸（待核實）**：
+**美國政府正式許可恢復 Mythos 存取 + Fable 5 可能本週回歸（後於 2026-07-01 官方證實回歸，見上方「2026-07-01」條目）**：
 - **政府正式許可（qz.com）**：Anthropic 獲得美國政府許可，可向特定信任合作夥伴恢復 Mythos 存取，Fable 5 全面回歸在望（[qz.com](https://qz.com/anthropic-mythos-5-clearance-trusted-partners-commerce-062926)）；這是繼 6/27 Mythos 5 部分解禁後，政府立場進一步鬆動的具體信號
-- **Axios：Fable 5 可能本週回歸（待核實）**（HN score 8）：Axios 報導 Fable 5「on track to return soon, possibly this week」，Washington 軟化立場（[Axios](https://www.axios.com/2026/06/27/anthropic-fable-5-return-soon)）；HN score 8 訊號偏弱，「possibly this week」為消息人士說法，尚無官方確認
+- **Axios：Fable 5 可能本週回歸**（HN score 8，後於 07-01 獲官方證實）：Axios 報導 Fable 5「on track to return soon, possibly this week」，Washington 軟化立場（[Axios](https://www.axios.com/2026/06/27/anthropic-fable-5-return-soon)）；HN score 8 訊號偏弱，「possibly this week」為消息人士說法，發稿當時尚無官方確認，實際於 07-01 全球恢復存取
 - **Washington 軟化立場（Yellow.com）**：Google News 報導確認談判進展，與 qz.com / Axios 方向一致（[Yellow.com](https://yellow.com/news/claude-fable-5-return)）
 - **社群回顧：音樂影片展示**（Reddit，score 不詳）：用戶分享在 Fable 5 下架前使用其製作音樂影片的體驗，展示視頻編輯與創意能力，說明即使在管制期間社群仍持續記錄 Fable 5 的多模態使用案例（[Reddit r/ClaudeAI](https://www.reddit.com/r/ClaudeAI/comments/1uipova/)）
 - **工程師實測：新版 Claude 燒更多 token 但每任務成本更低**（HN score 5）：signoz.io 工程師儀器化實測顯示，新版 Claude 模型 token 使用量顯著高於舊版，但每個成功解決任務的實際成本反而下降；分析強調評測指標需同時考量 token 用量與任務完成率，而非僅看成本或速度（[signoz.io](https://signoz.io/blog/claude-code-model-comparison/)）；HN score 5 訊號弱，結論「待驗證」
 
 #### 2026-06-28
-**Fable 5 協議接近完成（待核實）+ 競品效應分析**：
-- **Axios 報導 Fable 5 on track（待核實）**（HN score 4）：Axios 報導 Fable 5 正走向全面回歸一般市場，美方協議接近完成；TechCrunch 同步補充「Fable 5 on track to return soon」（[Axios](https://www.axios.com/2026/06/27/anthropic-fable-5-return-soon)）。訊號弱（HN score 4），「接近完成」不等於已批准，尚待官方確認
+**Fable 5 協議接近完成（後於 2026-07-01 官方證實回歸）+ 競品效應分析**：
+- **Axios 報導 Fable 5 on track**（HN score 4，後於 07-01 獲官方證實）：Axios 報導 Fable 5 正走向全面回歸一般市場，美方協議接近完成；TechCrunch 同步補充「Fable 5 on track to return soon」（[Axios](https://www.axios.com/2026/06/27/anthropic-fable-5-return-soon)）。訊號弱（HN score 4），「接近完成」發稿當時不等於已批准，實際於 07-01 全球恢復存取
 - **HN 社群反應：競品急追佐證封鎖無效**：HN 評論普遍認為 Tulongfeng / Fugu 等競品急追 Mythos / Fable 5 的聲明，反而對 Anthropic 有利——強化「封鎖只讓競爭對手有時間填補市場」論點，媒體密集報導同時提升 Anthropic 品牌效應
 
 #### 2026-06-27
-**接近批准 Fable 5 重新上線（待核實）+ Mythos 5 先行部分解禁**：
-- **Fable 5 接近協議（待核實）**：Reuters / Axios 報導美方接近批准 Fable 5 重新上線，尚未獲得 Anthropic 或商務部官方確認（[Reuters](https://www.reuters.com/business/us-close-allowing-anthropic-restore-fable-5-model-axios-reports-2026-06-27/)）；訊號強度：兩家主流媒體同步報導，但「接近」不等於已批准，應持保留態度
+**接近批准 Fable 5 重新上線（後於 2026-07-01 官方證實回歸）+ Mythos 5 先行部分解禁**：
+- **Fable 5 接近協議**（後於 07-01 獲官方證實）：Reuters / Axios 報導美方接近批准 Fable 5 重新上線，發稿當時尚未獲得 Anthropic 或商務部官方確認（[Reuters](https://www.reuters.com/business/us-close-allowing-anthropic-restore-fable-5-model-axios-reports-2026-06-27/)）；訊號強度：兩家主流媒體同步報導，「接近」發稿當時不等於已批准，實際於 07-01 全球恢復存取
 - **Mythos 5 先行部分解禁**：同日，商務部長 Howard Lutnick 在致 Anthropic 聯合創辦人、chief compute officer Tom Brown 的信中確認，Mythos 5 已獲批向 100+ 美國受信任機構（企業 + 聯邦機構）有限釋出（Semafor、CNBC）；Fable 5 與 Mythos 5 的解禁為獨立決定，不可相互推論
 
 #### 2026-06-24

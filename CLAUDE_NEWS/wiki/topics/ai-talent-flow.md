@@ -1,13 +1,14 @@
 # AI 實驗室人才流動
 
-**狀態：** ongoing
+**狀態：** monitoring
 **領域：** 💼 商業
 **開始日期：** 2026-06-21
-**最後更新：** 2026-07-18
+**最後更新：** 2026-08-01
 **最後新聞更新：** 2026-07-13
 
 > **最新動態**（2026-07-13）
 > Business Insider 報導 Anthropic 新聘 Monzo 共同創辦人 Tom Blomfield（AI compute / Y Combinator 背景）——與此前 Google DeepMind 研究員流入案例不同，此為金融科技創業者跨界加入 AI 實驗室的執行層人才佈局，非傳統「AI 實驗室之間」流動（詳見下方時序說明）。核心格局仍延續：兩週內 Google DeepMind 連失 4–5 位頂尖研究員至 Anthropic（含諾貝爾化學獎得主 John Jumper），市值蒸發約 $2,700 億（推論）；最值得注意的是流失方向（AI coding）正是 Google 自己落後的領域（推論）。
+> **轉入 monitoring（2026-08-01）**：自 07-13 起近 3 週日報未見新的跨實驗室人才流動事件，議題本身未見結案訊號（Google/Anthropic/OpenAI 人才競逐格局仍在持續），故由 ongoing 轉為低頻觀察，非結案。
 
 ## 摘要
 

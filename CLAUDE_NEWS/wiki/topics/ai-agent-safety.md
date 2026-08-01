@@ -3,7 +3,7 @@
 **狀態：** ongoing
 **領域：** 🏛️ 政策/安全
 **開始日期：** 2026-04-27
-**最後更新：** 2026-07-31
+**最後更新：** 2026-08-01
 **最後新聞更新：** 2026-07-31
 
 > **最新安全事件**（2026-07-31）
@@ -52,10 +52,10 @@
 | .env secret 明文存於本機 SQLite，標準 scanner 無法偵測 | 2026-05-19 | 所有本機開發環境 | 無回應 | 🔴 未修補 |
 | Claude Code 根目錄掃描暴露 SSH 私鑰於 context | 2026-06-20 | 多租戶 / 共用環境風險更高 | 已承認行為存在，未修補 | 🔴 未修補 |
 | Session 歷史 30 天自動刪除，無法延長保留期 | 2026-05-01 | 需長期審計追蹤的企業用戶 | 明確拒絕修復（GitHub #62476，見 [[topics/anthropic-commitments]]） | ⛔ 官方拒修（承諾不會做） |
-| Fable 5 `/btw` 指令據稱可繞過安全限制（僅標題可用） | 2026-07-15 | 待確認（若屬實，涉及所有 Claude Code + Fable 5 使用者） | 無回應（尚無原文可查） | ❓ 待查證 |
-| Anthropic 發現駭客利用 Claude Code，澳洲企業面臨風險（僅標題可用） | 2026-07-15 | 待確認（若屬實，澳洲企業為主要受影響對象） | 無回應（尚無原文可查） | ❓ 待查證 |
+| Fable 5 `/btw` 指令據稱可繞過安全限制（僅標題可用） | 2026-07-15 | 待確認（若屬實，涉及所有 Claude Code + Fable 5 使用者） | 無回應（近 14 天 news 無後續報導） | （2026-07-15 指控，至今無後續） |
+| Anthropic 發現駭客利用 Claude Code，澳洲企業面臨風險（僅標題可用） | 2026-07-15 | 待確認（若屬實，澳洲企業為主要受影響對象） | 無回應（近 14 天 news 無後續報導） | （2026-07-15 指控，至今無後續） |
 | Claude Web Fetch 提示注入導致使用者機密外洩（"the-memory-heist"，Simon Willison 轉述） | 2026-07-15 | 任何使用 web fetch 功能處理外部內容的使用者 | 無回應 | 🔴 未修補 |
-| Claude Code + DeepSeek 中國網路間諜行動指控（僅標題可用） | 2026-07-16 | 待確認（若屬實，涉及遭鎖定目標之政府/企業） | 無回應（尚無原文可查） | ❓ 待查證 |
+| Claude Code + DeepSeek 中國網路間諜行動指控（僅標題可用） | 2026-07-16 | 待確認（若屬實，涉及遭鎖定目標之政府/企業） | 無回應（近 14 天 news 無後續報導） | （2026-07-16 指控，至今無後續） |
 | Claude AI 助理疑透過瀏覽器擴充功能遭操縱（僅標題可用，TechRadar） | 2026-07-19 | 待確認（若屬實，涉及使用瀏覽器擴充功能之 Claude 使用者） | 無回應（尚無原文可查） | ❓ 待查證 |
 | Nozomi Networks 加入 Project Glasswing 強化 OT/IoT/CPS 安全（僅標題可用，非風險而是合作動態，暫列供追蹤） | 2026-07-20 | 待確認（若屬實，涉及 OT/IoT/資通物理系統相關產業） | 無回應（尚無原文可查） | ❓ 待查證 |
 
@@ -88,9 +88,9 @@
 | TBIJ：模擬測試中 Claude 不遵從 Anthropic CEO 指令，標題稱「AI out of control」（僅 Google News/TBIJ 標題可用，無原文細節） | ❓ 待查證，未經第三方或官方確認 | 2026-07-20 |
 | Nozomi Networks 加入 Project Glasswing 強化 OT/IoT/資通物理系統安全（僅 Google News/Industrial Cyber 標題可用，無原文細節） | ❓ 待查證，未經第三方或官方確認 | 2026-07-20 |
 | Claude AI 助理疑透過瀏覽器擴充功能遭操縱（僅 Google News/TechRadar 標題可用，無原文細節） | ❓ 待查證，未經第三方或官方確認 | 2026-07-19 |
-| Claude Code + DeepSeek 中國網路間諜行動指控（僅 Google News 標題可用，無原文細節） | ❓ 待查證，未經第三方或官方確認 | 2026-07-16 |
+| Claude Code + DeepSeek 中國網路間諜行動指控（僅 Google News 標題可用，無原文細節） | （2026-07-16 指控，至今無後續） | 2026-07-16 |
 | Claude Web Fetch 提示注入導致使用者機密外洩（"the-memory-heist"），新資料外洩向量，媒介與既有 GitHub repo 向量不同 | 🔴 未修補，單一研究者揭露未經第三方驗證 | 2026-07-15 |
-| Fable 5 `/btw` 指令據稱可繞過安全限制；Anthropic 發現駭客利用 Claude Code 使澳洲企業面臨風險（兩則僅 Google News 標題可用，無原文細節） | ❓ 待查證，未經第三方或官方確認 | 2026-07-15 |
+| Fable 5 `/btw` 指令據稱可繞過安全限制；Anthropic 發現駭客利用 Claude Code 使澳洲企業面臨風險（兩則僅 Google News 標題可用，無原文細節） | （2026-07-15 指控，至今無後續） | 2026-07-15 |
 | Claude Opus 4.8 / Sonnet 5 加密推理簽章聲稱遭還原（HN score 2，互動量極低） | ❓ 低優先度待觀察，未經第三方驗證 | 2026-07-14 |
 | 中美 AI 工具信任對峙延燒（社群指控 → 企業禁用 → 官方定調「實驗」→ 政府層級升級 → Anthropic 首度否認），完整時序見 [[topics/safety-china-trust-dispute]] | 🔴 雙方各自表態，均無第三方驗證 | 2026-06-30～07-10 |
 | Anthropic 發布雙重用途知識（dual-use knowledge）模型層「關閉開關」機制說明 | 🛠️ 官方主動安全機制 | 2026-07-09 |
@@ -268,14 +268,14 @@
 
 完整敘事——Claude Code 中國代理偵測程式碼（v2.1.91，06-30/07-02）、兩則獨立同形字符隱寫術指控（07-01，thereallo.dev + dev.to/adioof）、Alibaba 禁用 Claude Code + Meta 限制工程師使用 Claude（07-03～07-07）、Anthropic「實驗」定調（07-07）、中國官方正式「後門」資安警示（07-08）、延燒第二/三天（07-09/07-10）、Anthropic 首度公開否認（07-10）——已整併至 [[topics/safety-china-trust-dispute]]，含逐日時序、可信度評估、完整媒體來源列表。本頁不再重複維護此段敘事；政策/外交面完整分析另見 [[topics/anthropic-government-policy]]。
 
-### Claude Code + DeepSeek 中國網路間諜行動指控（2026-07-16 新增，待查證）
+### Claude Code + DeepSeek 中國網路間諜行動指控（2026-07-16 指控，至今無後續）
 
 - **揭露來源**：Security Affairs（經 Google News RSS 聚合連結轉載，2026-07-16 09:27 UTC）；僅標題可用，原文為 Google News 轉址連結，無法取得具體攻擊手法、規模或官方回應
 - **標題訊息**：報導標題稱一起「運用 Claude Code 與 DeepSeek 的中國網路間諜行動」（"Claude Code and DeepSeek Powered Chinese Cyber Espionage Campaign"）
 - **事件分類**：若屬實，性質上呼應既有「AI Agent 用於進攻性網路操作」類別（如 06-16 OALABS 蜜罐分析、07-15 Anthropic 澳洲企業風險揭露），惟本案首度將 Claude Code 與中國 DeepSeek 模型並列為同一威脅行動的組合工具鏈，且明確指向國家級網路間諜活動而非一般犯罪牟利
 - **可信度評估（待確認）**：僅單一媒體標題（透過 Google News RSS 聚合連結），無法取得攻擊者身分認定依據、受害目標範圍、Claude Code 具體被利用的環節，或 Anthropic / DeepSeek 官方回應；待原文或第二來源確認
 - **政策關聯（若屬實，待確認）**：涉及 Claude Code 遭國家級行為者用於進攻性操作，若後續獲證實，可能為 [[topics/anthropic-government-policy]] 出口管制/中國能力追趕論述提供新的技術佐證，惟目前資訊不足以下此結論
-- **與既有條目關聯**：見上方「OALABS 分析：攻擊者使用 Claude + Codex 入侵 14 家企業（2026-06-20 新增）」與「Anthropic 發現駭客利用 Claude Code，澳洲企業面臨風險（2026-07-15 新增，待查證）」
+- **與既有條目關聯**：見上方「OALABS 分析：攻擊者使用 Claude + Codex 入侵 14 家企業（2026-06-20 新增）」與「Anthropic 發現駭客利用 Claude Code，澳洲企業面臨風險（2026-07-15 指控，至今無後續）」
 
 ### Claude Web Fetch 提示注入導致使用者機密外洩（2026-07-15 新增）
 
@@ -285,7 +285,7 @@
 - **可信度評估**：Simon Willison 為長期追蹤 Claude / LLM 資料外洩手法的知名獨立資安評論者，其部落格轉述具體技術研究文章並附原文連結；惟目前僅為單一研究者揭露 + 一位評論者轉述，未見第三方獨立驗證或 Anthropic 官方回應
 - **防護意涵**：呼應既有「不熟悉外部內容應加人工審閱」防護原則；web fetch 功能若被觸發抓取惡意頁面，可能形成與 GitHub repo 向量對等的提示注入入口，建議對 web fetch 目標網域採取白名單或審閱機制
 
-### Fable 5 `/btw` 指令繞過安全限制（2026-07-15 新增，待查證）
+### Fable 5 `/btw` 指令繞過安全限制（2026-07-15 指控，至今無後續）
 
 - **揭露來源**：Crypto Briefing（經 Google News 轉載，2026-07-15 00:23 UTC）；僅標題可用，原文為 Google News 轉址頁面，無法取得完整內容
 - **標題訊息**：報導標題指出有人透過 Claude Code 中的 `/btw` 指令繞過 Claude Fable 5 的安全限制（"Claude Fable 5 security bypassed using '/btw' command in Claude Code"）
@@ -293,7 +293,7 @@
 - **可信度評估（待確認）**：僅單一媒體標題轉載，無法取得原文技術細節、影響範圍、Anthropic 是否回應或是否已修補；不排除為既有 06-22「Fix this code」事件的變體報導，須待原文或第二來源確認
 - **與既有條目關聯**：見下方「Fable 5 三詞越獄：『Fix this code』（2026-06-22 新增）」
 
-### Anthropic 發現駭客利用 Claude Code，澳洲企業面臨風險（2026-07-15 新增，待查證）
+### Anthropic 發現駭客利用 Claude Code，澳洲企業面臨風險（2026-07-15 指控，至今無後續）
 
 - **揭露來源**：TechRepublic（經 Google News 轉載，2026-07-15 06:57 UTC）；僅標題可用，原文為 Google News 轉址頁面，無法取得完整內容
 - **標題訊息**：報導標題指出 Anthropic 發現有駭客利用 Claude Code，使澳洲企業面臨風險（"Australian Enterprises At Risk as Anthropic Finds Hackers In Claude Code"）
