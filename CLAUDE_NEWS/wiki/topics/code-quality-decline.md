@@ -4,10 +4,10 @@
 **領域：** 🛠️ 工具/功能
 **開始日期：** 2026-03（推測）
 **最後更新：** 2026-08-01
-**最後新聞更新：** 2026-07-13
+**最後新聞更新：** 2026-08-01
 
-> **最近效能退步事件**（2026-07-13）
-> Token 消耗異常訊號群自 06-27（quota 重置需手動 continue 的早期焦慮訊號，見 [[topics/community-tech-discussions]]）延燒至 07-13，共 17 天持續出現同方向訊號，累計已達九個獨立來源：GitHub issue #38335（Max 方案額度異常消耗，截至 07-09 累積 791 則留言、536 個讚，社群互動量最高條目之一）、issue #41506（3-5 倍消耗異常）、issue #16856（2.1.1 版 4 倍消耗）、HN「5x 更貴」、$62,021 具名案例、07-08~07-09 三則訊號（cache 命中率下降 20%、Max 20x 週額度不到一天用盡、單一 session 27% 時間耗掉週額度 7%），加上 07-13 新訊號：Reddit r/ClaudeCode 回報 Max 5x 訂閱近一週額度消耗速度變快，5 小時額度約 2 小時即用完（單一貼文，尚待第三方覆核）。仍無法排除是計費/計量問題而非模型能力退步（詳見下方子區塊）。
+> **最近效能退步事件**（2026-07-30）
+> Opus 5 上線後浮現一條獨立於既有「token 消耗異常」訊號群的新分析線：Anthropic 官方 migration guide 自承 effort dial 非單調——超過「high」後編碼分數反而下降（2026-07-25，官方確認等級證據）；同日社群另指出 Claude Code 二進位對 Opus 5 存在硬編碼限制 AgentTool／workflows／deep-research（2026-07-26，單一社群觀察）；07-29～07-30 再添三則社群回報：「越用越笨」「過度自信、對 codebase 與使用者意圖判斷篤定但常錯」「不如跑分預期」。此為訊號鏈首次出現官方確認等級證據支持「模型行為本身有變化」，可能挑戰社群既有「多為 context rot 而非模型退步」的共識（詳見「Opus 5 上線後品質感知訊號群」子區塊）。Token 消耗異常訊號群（06-27～07-13，九個獨立來源）仍未解，兩條分析線並行追蹤。
 
 ---
 
@@ -47,6 +47,24 @@ Claude Code 在 2026 年 3 月至 4 月間出現長達約一個月的效能明�
 
 ---
 
+## Opus 5 上線後品質感知訊號群（2026-07-25 起）
+
+[[entities/opus-5]] 於 2026-07-24 上線後，一週內累積五則獨立訊號，構成**第三條分析線**——與上方「token 消耗異常」訊號群（聚焦帳單/計費）、以及 [[topics/community-tech-discussions]] 記錄的「Context Rot 修復五法」社群共識（聚焦「越用越笨幾乎都是 context 腐蝕，非模型退步」）皆不同，這條線聚焦**模型本身的能力/行為特性**，且首次出現官方確認等級的證據。
+
+| 日期 | 訊號 | 來源 | 訊號強度 |
+|------|------|------|---------|
+| 2026-07-25 | 「Opus 5's effort dial is not monotonic. Above "high", coding scores go down, and Anthropic's own migration guide says so.」：effort 旋鈕超過「high」後，編碼任務分數反而下降，**Anthropic 官方 migration guide 自承此現象** | Reddit r/artificial（[原文](https://www.reddit.com/r/artificial/comments/1v60pga/opus_5s_effort_dial_is_not_monotonic_above_high/)，週熱門，見 [[news/2026-07-29]]） | **官方確認**（官方文件自承，非社群推測或猜測性 benchmark）|
+| 2026-07-26 | 討論指出 Claude Code 2.1.219／220 版編譯二進位內建僅針對 Opus 5 的兩行系統提示：除非使用者明確要求，否則不得呼叫 AgentTool、不得使用 workflows 或 deep-research；討論者認為此舉可能不成比例限制 Opus 5 能力發揮 | Reddit r/ClaudeCode，經 HN 轉載延燒（score 18，達收錄低門檻，跨平台佐證）；已收錄於 [[topics/community-tech-discussions]]「討論指出 Claude Code 二進位對 Opus 5 存在硬編碼行為限制」，本頁不重複展開細節 | 單一社群觀察（未經官方證實）|
+| 2026-07-29 | 「Is Claude getting dumber (or am I getting smarter)?」：使用者反映 Claude／Claude Code 回答變得反覆、囉唆、過度確認 | Reddit r/ClaudeCode（[原文](https://www.reddit.com/r/ClaudeCode/comments/1v9u98q/is_claude_getting_dumber_or_am_i_getting_smarter/)，無「週熱門」標記、score 不可信，見 [[news/2026-07-29]]） | 單一社群回報 |
+| 2026-07-29 | 「Has anyone been able to tame Opus 5?」：使用者反映 Opus 5 有「過度自信」傾向，對 codebase 理解與使用者意圖判斷常顯得篤定但未必正確 | Reddit r/ClaudeCode（[原文](https://www.reddit.com/r/ClaudeCode/comments/1v9u8ev/has_anyone_been_able_to_tame_opus_5/)，見 [[news/2026-07-29]]） | 單一社群回報 |
+| 2026-07-30 | 「Opus 5 is not as good as i thought」：使用者原先依跑分預期 Opus 5 優於 Fable 5，實際使用後認為仍有落差 | Reddit r/ClaudeCode（[原文](https://www.reddit.com/r/ClaudeCode/comments/1var15k/opus_5_is_not_as_good_as_i_thought/)，見 [[news/2026-07-30]]） | 單一社群回報 |
+
+**第三種假說的定位：** 上方「三種假說」表格圍繞 token 消耗展開（模型真退步／計費計量／context 工具配置），且截至 07-13 三者均無官方確認等級證據。本訊號群提供的是**不同維度**的證據——不是「消耗了多少 token」，而是「模型行為本身是否有可驗證的特性變化」。07-25 的 effort dial 非單調現象尤其關鍵：這是**目前全頁唯一一筆官方自己承認的行為特性變化**（其餘皆為社群主張或用戶主觀感受），性質上比既有三種假說的證據都更硬。
+
+**（推論）這條線可能挑戰的既有共識：** [[topics/community-tech-discussions]] 記錄的社群共識「Claude 越用越笨幾乎都是 context 腐蝕而非模型退步」，隱含假設「模型本身沒有變」，變化只在使用者端的 context 管理。但 07-25 的官方確認顯示，至少在 effort 設定這個維度上，模型行為本身確有非直覺、非單調的特性——若使用者誤以為「調高 effort＝更好」而觸發此現象，表面上會呈現與 context rot 相同的「感覺變笨」症狀，但根因是模型設定使用不當，而非 context 管理問題，也不是模型「退步」。三者現階段仍難以區分：07-29～07-30 的三則主觀感受回報，無法排除是 context rot、也無法排除是 effort dial 誤用、更無法排除是單純的模型能力落差感（相對 Fable 5 跑分預期）。截至 08-01，樣本量小（5 則訊號，其中 3 則為單一 Reddit 貼文、score 不可信），尚不足以推翻既有 context rot 共識，僅提示「並非所有『變笨』投訴都能簡化為 context 管理問題」，需持續觀察。
+
+---
+
 ## 技術彙整
 
 - **自訂編排路由失效（Reddit r/ClaudeAI，2026-06-26）**：用戶反映相同的自訂 orchestration 設定，OpenCode 能穩定路由到自訂 providers 的 agents，但 Claude Code 無法可靠執行相同路由；問題未見官方說明；此為工具行為不一致問題，非模型能力退步，但影響依賴自訂 agent 編排的工作流（來源：[Reddit r/ClaudeAI](https://www.reddit.com/r/ClaudeAI/comments/1ug7sz4/claude_code_ignores_my_custom_orchestration_and/)）
@@ -67,6 +85,7 @@ Claude Code 在 2026 年 3 月至 4 月間出現長達約一個月的效能明�
 - 🔴 Stop hooks 失效為獨立問題，[[entities/claude-code]] 已知問題列表確認截至 2026-07-11 仍未修復（非僅社群指控）
 - ⚠️ 信任侵蝕已從「效能品質」擴大至「定價透明度、計量準確性、基礎設施可靠性」，形成結構性問題
 - 🔴 「token 消耗異常」訊號群自 06-27 延燒至 07-13（共 17 天，九個獨立來源），密度已達「結構性未解問題」，尚無法判定模型真退步 vs 計費/計量問題 vs context/工具配置問題，Anthropic 未回應
+- 🟡 Opus 5 上線後（07-25～07-30）浮現第三條分析線「模型行為特性本身」，首見官方確認等級證據（effort dial 非單調），（推論）可能局部挑戰既有「多為 context rot」共識，惟樣本量小（5 則，3 則單一 Reddit 貼文），尚待更多獨立來源覆核
 - 📊 CC-Canary 可作為持續監測工具
 
 ---
@@ -84,7 +103,9 @@ Claude Code 在 2026 年 3 月至 4 月間出現長達約一個月的效能明�
 - [[entities/claude-code]]
 - [[entities/opus-4-7]]
 - [[entities/opus-4-8]]
+- [[entities/opus-5]]
 - [[entities/pricing]]
+- [[topics/model-comparison]]
 
 ## 參考來源
 
@@ -99,12 +120,27 @@ Claude Code 在 2026 年 3 月至 4 月間出現長達約一個月的效能明�
 - [[news/2026-07-03]]
 - [[news/2026-07-08]]
 - [[news/2026-07-09]]
+- [[news/2026-07-26]]
+- [[news/2026-07-29]]
+- [[news/2026-07-30]]
 - [CC-Canary GitHub](https://github.com/delta-hq/cc-canary)
 - [Anthropic's definition of safety is too narrow](https://jonathannen.com/anthropic-safety-too-narrow/)
 
 ## 時序（最新在上，按月分組）
 
 ### 2026-07
+
+#### 2026-07-30
+- **「Opus 5 is not as good as i thought」**：使用者原先依跑分預期 Opus 5 優於 Fable 5，實際使用後認為仍有落差；單一 Reddit 貼文，屬「Opus 5 上線後品質感知訊號群」第五則訊號（來源：[Reddit r/ClaudeCode](https://www.reddit.com/r/ClaudeCode/comments/1var15k/opus_5_is_not_as_good_as_i_thought/)）
+
+#### 2026-07-29
+- **「越用越笨」與「過度自信」雙投訴同日出現**：r/ClaudeCode 兩則獨立貼文——「Is Claude getting dumber (or am I getting smarter)?」反映回答變得反覆、囉唆、過度確認；「Has anyone been able to tame Opus 5?」反映 Opus 5 對 codebase 理解與使用者意圖判斷過度自信、常篤定但錯；均為單一貼文、score 不可信，屬「Opus 5 上線後品質感知訊號群」（來源：[Reddit「getting dumber」](https://www.reddit.com/r/ClaudeCode/comments/1v9u98q/is_claude_getting_dumber_or_am_i_getting_smarter/)、[Reddit「tame Opus 5」](https://www.reddit.com/r/ClaudeCode/comments/1v9u8ev/has_anyone_been_able_to_tame_opus_5/)）
+
+#### 2026-07-26
+- **Claude Code 二進位對 Opus 5 硬編碼行為限制**：討論指出 2.1.219／220 版編譯二進位內建僅針對 Opus 5 的系統提示，除非使用者明確要求否則不得呼叫 AgentTool、workflows、deep-research；社群觀察，未經官方證實；已完整收錄於 [[topics/community-tech-discussions]]，本頁列為「Opus 5 上線後品質感知訊號群」第二則訊號（來源：Reddit r/ClaudeCode，經 HN 轉載 score 18）
+
+#### 2026-07-25
+- **Opus 5 effort dial 非單調，官方 migration guide 自承**：週熱門討論指出 effort 旋鈕超過「high」後編碼分數反而下降，Anthropic 官方 migration guide 本身即載明此現象；為「Opus 5 上線後品質感知訊號群」中唯一官方確認等級證據，詳見「Opus 5 上線後品質感知訊號群」子區塊（來源：[Reddit r/artificial · 週熱門](https://www.reddit.com/r/artificial/comments/1v60pga/opus_5s_effort_dial_is_not_monotonic_above_high/)）
 
 #### 2026-07-09
 - **Max 20x 額度異常比例回報**：Reddit 用戶質疑 Max 20x 方案中單一 session 27% 的時間即消耗掉整週額度 7%，與同期 GitHub #38335 額度異常回報呼應（該 issue 累積留言數同日增至 791 則）；訊號鏈持續延燒（來源：[Reddit r/ClaudeAI](https://www.reddit.com/r/ClaudeAI/comments/1urqgqx/claude_max_20x_why_did_27_of_one_session_consume/)）

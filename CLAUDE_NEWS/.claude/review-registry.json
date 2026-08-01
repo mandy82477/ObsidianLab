@@ -508,6 +508,20 @@
       "_note": "2026-08-01 加入。web build 的放行判準集中在腳本裡；任一處退回自己跑 run_tests.py 再判斷，兩處就會失步（日更放行、週更擋下之類）。"
     },
     {
+      "name": "今日聚焦選材門檻三條在 news-pipeline-steps.md 內同時存在於「判斷用」與「檔尾附錄」兩份（校準加新門檻時只改一份 → LLM 照抄的那份會失步）",
+      "assertion": "min_count",
+      "files": [
+        ".claude/commands/news-pipeline-steps.md"
+      ],
+      "patterns": [
+        "\\*\\*\\[新工具\\]\\*\\*：",
+        "\\*\\*\\[風險警示\\]\\*\\*：",
+        "\\*\\*\\[持續追蹤\\]\\*\\*："
+      ],
+      "min": 2,
+      "_note": "2026-08-01 加入。第二次月度聚焦校準新增 [持續追蹤] 門檻時發現：同一份門檻文字在檔內存在兩份（Step 1b 判斷用 + 檔尾附錄格式範本），只改一份不會被任何檢查抓到。"
+    },
+    {
       "name": "web build gate 舊措辭已退場（不得殘留 Tests FAILED - web build skipped）",
       "assertion": "max_count",
       "files": [

@@ -121,7 +121,7 @@
 - 🔴 **未修復**｜**功能請求：跨 context compaction 的持久記憶（回報者已自建 59 次 compaction 的替代方案）（GitHub issue #34556，累積 61 則留言、5 個讚，2026-07-25）**：使用者反映 context compaction 之間缺乏持久記憶機制，每次壓縮都會遺失外部未儲存的資訊；回報者表示已自行建構經歷 59 次 compaction 迭代的替代方案因應此缺口；與既有 Auto Compact 失效、多 session 直接通訊等需求同屬 context/記憶延續性缺口，暫分列追蹤；官方尚未回應或排入路線圖。
 - 🔴 **未修復**｜**對話壓縮（compaction）間歇性失敗或卡死（GitHub issue #20696，累積 61 則留言，2026-07-12 回報，regression）**：claude.ai 網頁版／行動版對話壓縮功能自 2026-01-15 起偶發失敗或卡死，回報者稱此為回歸性問題（先前版本未見）；官方尚未回應。與已列「Auto Compact 失效」為不同介面（此為 claude.ai web/mobile，另一為 Claude Code CLI），暫分列追蹤。
 - 🔴 **未修復**｜**Desktop 版登出／重啟後 session 消失（GitHub issue #26452，累積 49 則留言、29 個讚，2026-07-18，使用者急尋恢復方法）**：使用者回報 Claude Code Desktop 登出或重新啟動後，先前的 session 記錄消失，標題以「HOW to restore the sessions ASAP???」呈現急迫程度；官方尚未回應。
-- ❓ **待查證（尚待官方受理，非已修復或拒絕）**｜**功能請求：多 Claude session 間直接通訊（GitHub issue #24798，累積 60 則留言、20 個讚，首見 2026-07-08，2026-07-30 互動數更新）**：使用者呼籲支援 multi-Claude 工作流中大型專案裡各自獨立執行的工作流程能有更直接的溝通機制以串接依賴關係排序，避免需透過檔案系統或外部工具中繼協調；官方尚未回應或排入路線圖。
+- ❓ **待查證（尚待官方受理，非已修復或拒絕）**｜**功能請求：多 Claude session 間直接通訊（GitHub issue #24798，累積 60 則留言、20 個讚，首見 2026-07-08，2026-07-30 互動數更新）**：使用者呼籲支援 multi-Claude 工作流中大型專案裡各自獨立執行的工作流程能有更直接的溝通機制以串接依賴關係排序，避免需透過檔案系統或外部工具中繼協調；與 [issue #28300](https://github.com/anthropics/claude-code/issues/28300)（跨機器多 agent 協作 A2A 協定）同屬 agent 間直接通訊缺口；官方尚未回應或排入路線圖。
 
 - ⛔ **官方拒修**｜**Session 歷史 30 天自動刪除（Anthropic 明確拒絕修復）**（2026-05-01 確認，2026-06-30 更新，2026-07-28 補充資料使用政策說明）：Claude Code 預設在 30 天後自動刪除 session `.jsonl` 歷史檔；Anthropic 官方在 [GitHub issue #62476](https://github.com/anthropics/claude-code/issues/62476) 明確表示不會修復此行為。社群建議替代方案：用 CLAUDE.md 記錄關鍵決策，或建立 `.claude/changelog` 手動保留對話摘要。延長保留期間的臨時解法：`npx agentinit agent set claude cleanupPeriodDays 365`。**2026-07-28 Hacker News 討論補充：** 本地 30 天刪除為裝置端保留機制，與訓練資料使用政策為不同議題——依官方[資料使用政策文件](https://code.claude.com/docs/en/data-usage)，消費版（Free/Pro/Max）預設可自行選擇是否讓對話用於模型訓練；商用版（Team/Enterprise/API/第三方平台/Claude Gov）維持不用客戶程式碼訓練模型，除非客戶主動選擇加入（如 Development Partner Program）；即刪除時程與訓練授權為兩條獨立規則，不可混為一談。
 - ❓ **待查證（2026-04-30 指控，至今無後續）**｜**Claude Projects 對話消失**：重度使用者三度遭遇整天的創作對話無故消失，在記錄中留下日期空白，且無法透過搜尋找回
@@ -154,6 +154,8 @@
 
 ### 🔌 平台相容性（48 條未修復、3 條待查證）
 
+> Windows 上 Cowork VM 啟動失敗於 8 天內至少 5 起獨立事件湧現：#29941 Windows 11 Pro CoworkVMService 簽章驗證初始化失敗（07-23）、#74649 缺少 HCS vfpext 服務導致無法運作（07-27～07-29）、#27801 workspace 啟動顯示「VM service not running」、重開機亦無法解決（07-28）、#40198 Windows ARM64（Snapdragon）無法啟動（07-28）、#40175 Cowork Global instructions 儲存後靜默還原舊版本（08-01）；五起成因各異（簽章驗證、服務缺失、VM 啟動、架構相容、設定持久化），疑指向 Cowork Windows VM 層本身不穩定，而非個別 driver 問題；官方尚未回應或確認共同成因，此為推論。
+
 - 🔴 **未修復**｜**Bedrock：Claude Opus 4.7 回傳 permission_error，儘管帳號權限狀態顯示 AUTHORIZED（GitHub issue #51183，累積 37 則留言，2026-07-31）**：在 AWS Bedrock 環境下，即使帳號權限狀態顯示為 AUTHORIZED（已授權），呼叫 Opus 4.7 仍回傳 permission_error 錯誤；回報者已確認搜尋過現有 issue 未見重複回報；與既有「Bedrock 功能相容性落差（持續）」同屬 Bedrock 接入層問題，官方尚未回應。
 - 🔴 **未修復**｜**Cowork：儲存 Global instructions 後靜默還原成舊版本（GitHub issue #40175，累積 30 則留言、20 個讚，2026-08-01）**：在 Cowork 中儲存 Global instructions（全域指示）後，會靜默還原成較舊版本，使用者不會收到任何警告或錯誤提示，屬資料遺失類 bug；官方尚未回應。
 - 🔴 **未修復**｜**Claude Code 未遵循 XDG Base Directory 規範（GitHub issue #1455，累積 62 則留言、423 個讚，2026-07-30）**：Linux 使用者指出 Claude Code 將快取資料與設定寫入 `~/.claude.json`、`~/.claude`，未依循 XDG Base Directory 規範分別寫入 `$XDG_CACHE_HOME`、`$XDG_CONFIG_HOME` 等標準路徑，影響習慣遵循該規範管理 dotfiles 的 Linux 使用者；官方尚未回應。
@@ -167,7 +169,7 @@
 - 🔴 **未修復**｜**Cowork 網路對外連線白名單失效（GitHub issue #30112，累積 49 個讚，2026-07-17）**：Cowork 的網路對外連線白名單機制失效，自訂網域即使已列入允許清單仍遭以 403 blocked-by-allowlist 擋下；官方尚未回應。
 - 🔴 **未修復**｜**功能請求：VS Code 擴充套件新增停用自動附加開啟檔案/選取範圍設定（GitHub issue #24726，累積 63 則留言、197 個讚，首見 2026-07-17，2026-07-30 互動數更新）**：使用者希望 VS Code 擴充套件提供選項，可停用自動將目前開啟檔案或選取範圍附加進對話 context 的行為；官方尚未回應或提供設定選項。
 - ❓ **待查證（尚待官方受理，非已修復或拒絕）**｜**Remote Control 自動重連機制失效，靜默斷線且無法自行恢復（GitHub issue #34255，累積 59 則留言、100 個讚，首見 2026-07-16，2026-07-31 互動數更新，已達高門檻）**：使用者回報 Remote Control 功能連線中斷後不會自動重連，且無任何提示告知已斷線，需手動介入才能恢復；與下列 `/remote-control` 相關問題（issue #28322、#29006）同屬 Remote Control 功能仍不穩定的訊號；官方尚未回應。
-- 🔴 **未修復**｜**功能請求：跨機器多 agent 協作（Agent-to-Agent 協定）（GitHub issue #28300，累積 35 則留言，2026-07-14）**：使用者呼籲 Claude Code 支援跨機器的多 agent 協作，採用 Agent-to-Agent 協定；與 [[entities/managed-agents]] 現有多代理協調能力相關，官方尚未回應或排入路線圖。
+- 🔴 **未修復**｜**功能請求：跨機器多 agent 協作（Agent-to-Agent 協定）（GitHub issue #28300，累積 35 則留言，2026-07-14）**：使用者呼籲 Claude Code 支援跨機器的多 agent 協作，採用 Agent-to-Agent 協定；與 [[entities/managed-agents]] 現有多代理協調能力相關，並與 [issue #24798](https://github.com/anthropics/claude-code/issues/24798)（多 Claude session 間直接通訊）同屬 agent 間直接通訊缺口；官方尚未回應或排入路線圖。
 - 🔴 **未修復**｜**功能請求：GitLab 整合（儲存庫連接、Merge Request、行動裝置存取）（GitHub issue #12346，累積 47 則留言、118 個讚，2026-07-15）**：使用者呼籲 Claude Code 支援 GitLab 整合，比照現有 GitHub 整合提供儲存庫連接、Merge Request 操作與行動裝置存取；官方尚未回應或排入路線圖。
 - ❓ **待查證（尚待官方受理，非已修復或拒絕）**｜**功能請求：Linear 整合——指派 issue 給 Claude Code 觸發雲端 agent session（GitHub issue #12925，累積 39 則留言、131 個讚，2026-07-30）**：使用者呼籲支援將 Linear issue 指派給 Claude Code 即可觸發雲端 agent session，比照現有 GitHub Issues 指派觸發雲端工作流的模式擴展至 Linear；官方尚未回應或排入路線圖。
 - 🔴 **未修復**｜**功能請求：VS Code 擴充功能比照 GitHub Copilot Edits Review 的差異審閱介面（GitHub issue #33932，累積 33 則留言、218 個讚，2026-07-14）**：使用者呼籲 VS Code 擴充功能提供類似 GitHub Copilot Edits Review 的 diff 審閱 UI；官方尚未回應或排入路線圖。

@@ -208,7 +208,7 @@ MCP 的實際成本遠超多數使用者預期，已有多個量化案例：
 - **來源：** 「Claude Code has a hardcoded instruction telling Opus 5 not to use subagents」— 原始討論見 Reddit r/ClaudeCode，經 Hacker News 轉載延燒（score 18，達收錄低門檻，跨平台佐證）
 - **核心論點：** 討論指出 Claude Code 2.1.219／220 版編譯二進位中，內建僅針對 Opus 5 的兩行系統提示：除非使用者明確要求，否則不得呼叫 AgentTool、不得使用 workflows 或 deep-research；討論者認為此舉可能不成比例限制 Opus 5 的能力發揮
 - **關鍵回響：**（無，屬未經官方證實的單一社群觀察，尚無正反交鋒紀錄）
-- **收斂結論：**（無）官方未證實此硬編碼限制的存在或用意，暫記為社群觀察；若後續有官方回應或跨平台延燒，可能收斂為獨立議題
+- **收斂結論：**（無）官方未證實此硬編碼限制的存在或用意，暫記為社群觀察；若後續有官方回應或跨平台延燒，可能收斂為獨立議題；已與 [[topics/code-quality-decline]]「Opus 5 上線後品質感知訊號群」互相引用
 
 #### Show HN：promptster.ai — 分析 Claude Code/Codex 實際用法而非僅費用儀表板（2026-07-25）
 

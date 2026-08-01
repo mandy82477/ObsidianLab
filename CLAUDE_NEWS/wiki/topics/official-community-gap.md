@@ -3,7 +3,7 @@
 **狀態：** monitoring
 **領域：** 🛠️ 工具/功能
 **開始日期：** 2026-05-17
-**最後更新：** 2026-07-28
+**最後更新：** 2026-08-01
 **最後新聞更新：** 2026-07-23
 
 > **最新功能缺口**（2026-07-22）
@@ -35,6 +35,7 @@
 | Slack 內 AI 隊友 | 弱社群前驅（Ano 等輕量 Slack + Claude 整合，2026-06-04） | Ano | [[entities/claude-tag\|Claude Tag]]（2026-06-24，Slack-native，Anthropic 內部 65% 程式碼由其生成） | ✅ 已產品化 | 此列較弱屬「社群發明」框架——官方主導色彩強，社群前驅稀薄，列入僅供對照參考 |
 | 跨工具 agent 設定標準（AGENTS.md） | 2026-05-02 起，[GitHub issue #6235](https://github.com/anthropics/claude-code/issues/6235) 累積 335 則留言、5634 個讚（2026-07-10，全站已知問題讚數之最）| Codex、Amp、Cursor（均已採用 AGENTS.md 標準） | 無 | ❌ 無官方對應 | Claude Code 仍不支援 AGENTS.md，多工具並用者需為 Claude Code 額外維護 CLAUDE.md，造成配置互通痛點；反應數持續攀升顯示壓力未見緩解；v2.1.206（2026-07-10）`/doctor` 新增建議精簡 CLAUDE.md 內容的檢查項，屬維護性提示而非互操作標準對應，缺口性質未變 |
 | 多平行 agent 即時可觀測性／協調地圖 | 2026-07-06 Show HN live-log-viewer-next（讀本機 JSONL transcript 呈現即時對話地圖）；既有 1000 Subagents Fan-out、20-instance 崩潰分析持續堆疊 | live-log-viewer-next、（fan-out/多 instance 分析工具鏈） | Agent View（`claude agents` 多 session 列表管理，v2.1.139）＋ `--forward-subagent-text` 旗標（v2.1.211，2026-07-15）＋ `/fork` 背景 session 化（v2.1.212，2026-07-17） | ❌ 無官方對應 | 官方 Agent View 為**列表式** session 管理，非跨 agent 即時狀態流的 live map；當數十至上千平行 agent 併跑時「誰卡住、誰在等、彼此依賴」缺乏即時可觀測面，社群自建地圖式檢視器補位，官方無對應方向。2026-07-15 v2.1.211 新增 `--forward-subagent-text` 旗標與 `CLAUDE_CODE_FORWARD_SUBAGENT_TEXT` 環境變數，讓 `stream-json` 輸出包含 subagent 文字與思考內容，為社群建構觀測工具提供官方資料來源；2026-07-17 v2.1.212 將 `/fork` 改為建立獨立背景 session（`claude agents` 自成一列），原同 session 子 agent 行為更名 `/subtask`，使多開背景任務與同 session 委派的列表可見度更清楚拆分，但本身仍非官方 live map 產品，狀態未變 |
+| Agent 間直接通訊協定 | 2026-07-08 [GitHub issue #24798](https://github.com/anthropics/claude-code/issues/24798)（多 Claude session 間直接通訊，累積 60 則留言）；2026-07-14 [issue #28300](https://github.com/anthropics/claude-code/issues/28300)（跨機器多 agent 協作 A2A 協定） | 無專屬社群工具，訴求以 GitHub issue 形式累積 | 無 | ❌ 無官方對應 | 與上一列「即時可觀測性／協調地圖」的區別：協調地圖是**被動觀測**（讀 transcript/log 呈現狀態，agent 本身不互相收送訊息）；本列是**主動通訊**（agent 之間或跨機器直接交換訊息以協調依賴順序），目前僅能透過檔案系統或外部工具中繼，官方尚無 A2A 協定或 session 間訊息通道對應方向 |
 
 ---
 

@@ -3319,3 +3319,21 @@ Append-only 紀錄。每次 ingest、lint，以及**揭露缺陷或促成改動�
   - 商業記者對 quasa.io「Claude Code vs OpenAI Codex」比較文，因與既有 07-15／07-25 兩則性質相近條目高度重疊、無新數字，判斷不重複收錄，僅收錄 Supabase Evals 一則
   - 安全政策記者對 9 則同一核心事實的重複媒體轉載（BBC/ABC/AP/SiliconANGLE/UPI/cbn.com/The Week/Decrypt/nextgov.com）正確判定為無新增細節，僅於時序一行帶過不逐一記錄，避免頁面被重複轉載污染
   - 社群記者對 Reddit r/ClaudeCode 六則 sort=new（score=0、無週熱門標記）貼文與 Simon Willison 三則通用 LLM/eval 工具發布（llm-mcp-client／datasette-agent／smevals，無 Claude 專屬角度）依規則全數判斷排除，僅收錄 2 則達門檻條目
+
+---
+
+## 2026-08-01 週度延伸回顧
+
+- 延伸（使用者全選確認後執行）：
+  - **[[topics/code-quality-decline]]**：新增「Opus 5 上線後品質感知訊號群（2026-07-25 起）」子區塊，收 5 則訊號（07-25 effort dial 非單調＋官方 migration guide 自承／07-26 硬編碼限制 AgentTool／07-29「越用越笨」與「過度自信」兩則／07-30「不如跑分預期」），定位為有別於既有兩條主線（token 消耗計費假說、context rot 共識）的**第三條分析線**，並標「（推論）」說明其可能挑戰 context rot 共識但樣本不足以推翻；與 [[topics/community-tech-discussions]] 互加 wikilink。頁面新聞更新原停滯 18 天（07-13）
+  - **[[entities/claude-code]]**：🔌 平台相容性子群加彙整 callout——8 天內 5 起 Windows Cowork VM 獨立失敗（#29941 / #74649 / #27801 / #40198 / #40175），疑指向 Cowork Windows VM 層本身不穩定（官方未確認，保留推論措辭）；另 #24798（多 session 通訊，留言增至 60）與 #28300（跨機 A2A 協定）互加「同屬 agent 間直接通訊缺口」交叉引用
+  - **[[topics/official-community-gap]]**：產品化矩陣新增「Agent 間直接通訊協定」列，並與既有「即時可觀測性／協調地圖」列區分（被動觀測 vs 主動通訊）
+  - **[[topics/competitor-landscape]]**：加開「Claude Code vs Codex 頭對頭比較彙整」子區塊（6 篇收攏成表：07-15 HackerNoon／07-22 SCMP／07-25 SitePoint／07-29 The Information／08-01 Supabase Evals／08-01 quasa.io，逐列標明有無量化數字），開頭寫明共識尚未收斂、末段附讀者速答；**補漏**當日 ingest 判定重疊而未收的 quasa.io 一則（週度回顧改判：單則重疊，但作為比較文密度訊號的一員有彙整價值；如實標「無具體分數」）
+- 使用者跳過項目：無（全選）。安全政策記者提出的「法官質疑出口管制禁令」與「Legion 司法挑戰」是否同一訴訟，屬純觀察項、無足夠資訊判定，不列為本次執行項
+- reader-notes 處置：2026-08-01 條 **(b) 標 ✅ 已納入**（[[topics/model-comparison]] 已有「換模型不是唯一旋鈕」callout，引官方 choosing-a-model，本週 ingest 已主動實作）；**(a) 保留 ⏳**（社群記者逐篇比對六日新聞，router／降階關鍵字本週零新訊號；[[topics/community-pattern-trends]]「趨勢四」結構已等同成熟子區塊，依「一頁一故事」不拆）
+- 聚焦校準（8 月首次）：**命中率 76%（17.5/23）**，回看 06-29~07-05 聚焦 → 30 天，較首期 36% 大幅改善。命中 17／半命中 1／誤報 5；**無漏報**，舊偏誤「具名資安揭露漏選」未重現（CVE-2026-55407 正確落入討論區並被追蹤）
+  - 新偏誤：**[持續追蹤] 標籤被用在單一弱訊號**（Sonnet 5 圖表爭議 HN score 3、Fable/Mythos 錯誤率為當日已修復的監控事件，兩者 30 天後續產出 0/2）→ 已於 `.claude/commands/news-pipeline-steps.md` Step 1b 新增第三條選材門檻（兩份複本同步），並在 `.claude/review-registry.json` 登記 min_count 配對防止日後只改一份而失步（`python scripts/check_rules.py` 31/31 綠）
+  - 「新工具單日亮相高估」重現（Crew／Mycelium 從未進策展層），但該週早於 07-16 門檻規則生效，屬對既有規則必要性的追溯驗證，不另修規則
+  - **非選材問題的流程斷點**：session/cache 跨帳號洩漏（#74066）兩度被標「轉知安全政策記者」，30 天內 [[topics/ai-agent-safety]] 查無記錄——轉知＝發出即忘、無人驗收。已登記 `docs/workaround-register.md`（複查日 2026-08-08，真解方向：轉知寫入 log 獨立欄位＋`/wiki-lint` 每週掃殘留）
+  - 命中率已 append 至 `wiki/metrics.md`
+- 品質備註：無

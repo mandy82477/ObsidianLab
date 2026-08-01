@@ -6,9 +6,9 @@
 **最後更新：** 2026-08-01
 **最後新聞更新：** 2026-08-01
 
-> **最新競品動態**（2026-07-31）
-> OpenAI 官方發布「Advancing the price-performance frontier with GPT-5.6」，宣布大幅調降 GPT-5.6 價格（經 Simon Willison 摘要轉述「huge price drop」）；我方抓取資料未提供具體折扣百分比或新舊價格數字，僅定性描述，詳見下方「競品定價對照」新增列與「時序」2026-07-30 條目。
-> 07-29 已記錄之 The Information（跨 3 來源）「Claude Code 採用黏著度仍領先」、07-28 Moonshot AI 開源 Kimi-K3 權重、Nvidia/Microsoft 開放 AI 安全聯盟不含 Anthropic 等事件仍為近期重大訊號。
+> **最新競品動態**（2026-08-01）
+> Supabase 推出開源評測套件 Evals、quasa.io 發表 Claude Code vs Codex 公開測試彙整文，均為標題層級、無具體分數；已收攏進「OpenAI Codex CLI」子區塊新增小節「Claude Code vs Codex 頭對頭比較彙整」（累積 6 篇，共識尚未收斂）。
+> 07-30 OpenAI 官方發布「Advancing the price-performance frontier with GPT-5.6」，宣布大幅調降 GPT-5.6 價格（經 Simon Willison 摘要轉述「huge price drop」，我方抓取資料無具體折扣數字）；07-29 The Information「Claude Code 採用黏著度仍領先」、07-28 Moonshot AI 開源 Kimi-K3 權重、Nvidia/Microsoft 開放 AI 安全聯盟不含 Anthropic 等事件仍為近期重大訊號。
 
 ---
 
@@ -74,6 +74,21 @@ Claude Code 已成為 AI 輔助編碼的標竿產品，但競爭正快速升溫�
 - **下載數**：8,610 萬次（週增 +1,397%）vs Claude Code 720 萬次（-38%）
 - **互通**：社群工具 `claude-anyteam` 已讓 Codex 加入 Claude Code Agent Teams
 - **黏著度對比（2026-07-29，The Information，跨 3 個獨立來源）**：儘管社群對 Codex 與開源模型的討論度上升，報導指出 Claude Code 的實際採用黏著度仍維持領先地位；僅標題可用，具體黏著度量化數字（留存率、活躍用戶數等）未見報導細節，暫不覆寫上方「下載數」指標（該指標數據截至 2026-05-18，待後續補充新一輪具體數字）
+
+#### Claude Code vs Codex 頭對頭比較彙整
+
+> 目前累積 6 篇比較文（07-15 起），**共識尚未收斂**——多數僅為標題層級評論或工作流選型建議，缺乏具體公開分數；直到 08-01 才首次出現第三方開源評測套件，具備後續產出量化數據的潛力，但截至目前仍無實測分數可引用。
+
+| 日期 | 來源 | 內容 | 量化數字 |
+|------|------|------|---------|
+| 2026-07-15 | HackerNoon（source_count=2） | 「Claude Code vs Codex vs OpenCode：全端工程師誠實裁決」，三方比較文 | 待查證：無具體分數，僅標題可用 |
+| 2026-07-22 | South China Morning Post（source_count=2） | 中國某 AI agent 於自主研究任務據稱超越 Claude Code；agent 名稱、測試方法未揭露 | 待查證：無具體分數 |
+| 2026-07-25 | SitePoint | 「Codex 5.3 生產環境工作流——何時該選它而非 Claude 做複雜重構」，工作流選型建議文 | 待查證：無具體分數，方法論未見細節 |
+| 2026-07-29 | The Information（跨 3 來源） | 儘管 Codex／開源模型討論度上升，Claude Code 採用黏著度仍領先 | 待查證：留存率、活躍用戶數等量化數字未見報導 |
+| 2026-08-01 | MarkTechPost | Supabase 推出開源評測套件 Evals，以真實 Supabase 任務對 Claude Code、Codex、OpenCode 評分比較 | 待查證：套件剛發布，尚無具體分數 |
+| 2026-08-01 | [quasa.io](https://news.google.com/rss/articles/CBMilwFBVV95cUxQc3VGQXhIUWNkSElXb2swMFRjVlFscUE1ZTNuTXlwNjdTVGlVNmcyN0dMNk05NnJKdjZkeXpZa2dWdHkwYzRIdEh1LUFDelo5UTNPVjdWQm9lQmxRSTV3N0dWUUdsd3Y5Wk5tS1dnSEh3VTVwd3VlY0s5Mnk2VEVBX2EwOWpRbG9BOHQyVjNYWFZGd2tfYXlR?oc=5)（2026-07-31 22:00 UTC） | 「Claude Code vs OpenAI Codex: What Published Coding Tests Actually Show」——整理目前已公開的程式碼測試結果比較兩者實測表現 | 待查證：無具體分數，日報摘要為對該文章的定性轉述，未列出所引用測試名稱、樣本條件或原始分數 |
+
+**讀者速答**：截至 2026-08-01，尚無可信賴的具體公開分數能直接判定 Claude Code 與 Codex 孰優孰劣；Supabase Evals 是第一個公開方法論的第三方評測套件，值得後續追蹤其產出的實測數字。
 
 ### OpenCode（[[entities/opencode]]）
 - **狀態**：Active（開源替代，快速成長）
@@ -214,7 +229,8 @@ Claude Code 已成為 AI 輔助編碼的標竿產品，但競爭正快速升溫�
 > 逐日條目按主題可另見上方「主要競品追蹤」對應廠商子區塊；此區塊保留完整時序供追溯查證。
 
 ### 2026-08-01
-- **[新評測工具，標題層級，待查證：無具體分數，僅知有此比較/評測工具發布] Supabase 推出開源評測套件 Evals，以真實 Supabase 任務對 Claude Code、Codex、OpenCode 評分比較**：MarkTechPost 報導 Supabase 推出開源基準測試套件 Evals，以真實 Supabase 任務對三款編碼 agent 工具（Claude Code、OpenAI Codex、OpenCode）進行評分比較。**注意**：標題僅說明有此開源評測工具推出，未附具體分數、排名或方法論細節，（待查證：無具體分數，僅知有此比較/評測工具發布）。**對競爭格局的意涵**：與既有 07-15 HackerNoon 三方比較文、07-25 SitePoint「Codex vs Claude 工作流」比較文同屬「開發者社群將 Claude Code 與 Codex／OpenCode 常態並列評測」的既有態勢延伸；差異在於本次評測方為第三方基礎設施服務商（Supabase）主導並開源方法論，而非單純評論文章，具備後續產出量化數據的潛力（推論）（Google News/MarkTechPost）
+- **[新評測工具，標題層級，待查證：無具體分數，僅知有此比較/評測工具發布] Supabase 推出開源評測套件 Evals，以真實 Supabase 任務對 Claude Code、Codex、OpenCode 評分比較**：MarkTechPost 報導 Supabase 推出開源基準測試套件 Evals，以真實 Supabase 任務對三款編碼 agent 工具（Claude Code、OpenAI Codex、OpenCode）進行評分比較。**注意**：標題僅說明有此開源評測工具推出，未附具體分數、排名或方法論細節（待查證：無具體分數，僅知有此比較/評測工具發布）。**對競爭格局的意涵**：本次評測方為第三方基礎設施服務商（Supabase）主導並開源方法論，而非單純評論文章，具備後續產出量化數據的潛力（推論）；累積脈絡見上方「OpenAI Codex CLI」子區塊新增「Claude Code vs Codex 頭對頭比較彙整」小節（Google News/MarkTechPost）
+- **[競品評測彙整，標題層級，待查證：無具體分數，僅為彙整轉述] quasa.io：Claude Code vs OpenAI Codex——已公開程式碼測試結果實際顯示什麼**：quasa.io 發表文章，整理目前已公開的程式碼測試結果，比較 Claude Code 與 OpenAI Codex 的實測表現差異。**注意**：日報摘要為對該文章的定性轉述，未提供具體測試名稱、分數、樣本條件或方法論細節，（待查證：無具體分數，僅為彙整轉述）。**對競爭格局的意涵**：是繼 Supabase Evals（同日）之後又一篇將 Claude Code 與 Codex 常態並列評測的文章，累積脈絡見上方「OpenAI Codex CLI」子區塊「Claude Code vs Codex 頭對頭比較彙整」小節（Google News/quasa.io，2026-07-31 22:00 UTC）
 
 ### 2026-07-30
 - **[定價變動，官方公告，數字待查證] OpenAI 官方發布 GPT-5.6 大幅降價公告「Advancing the price-performance frontier with GPT-5.6」**：Simon Willison 部落格轉貼並簡評 OpenAI 官方公告，內容提及大幅調降 GPT-5.6 價格（「huge price drop from OpenAI」）。**對競爭格局的意涵**：延續 07-09 已記錄之 ChatGPT Work / GPT-5.6 發布時「明確訴求在價格、速度、生產力三面向超越 Anthropic」的定位，本次是該定位在定價面的具體後續行動；惟我方抓取資料僅有 Simon Willison 的定性轉述，未提供具體折扣百分比或新舊 $/Mtok 數字，暫不可推算，詳見「競品定價對照」新增列（Blog/Simon Willison https://simonwillison.net/2026/Jul/30/luna-price-drop/#atom-everything；原始公告 https://openai.com/index/advancing-the-price-performance-frontier-with-gpt-5-6/）
@@ -230,11 +246,11 @@ Claude Code 已成為 AI 輔助編碼的標竿產品，但競爭正快速升溫�
 - **[重大，具名重量級人士公開批評] David Sacks 警告 Anthropic 開源生態立場恐傷害美國生態系**：Benzinga 報導白宮 AI 政策顧問 David Sacks 公開批評 Anthropic，稱其在開源議題上的立場「將把一把匕首刺進美國整個開源生態系的心臟」。**與既有訊號的關係**：延續 07-25 已記錄之 Forbes 報導（Nvidia 開放權重連署擴大至 50 家企業，Amazon 與 Anthropic 未加入）、同日 India Today 報導（Nvidia 等傾向對中國 AI 模型開放存取，Anthropic 則推動限制），本次是「Anthropic vs 開放權重陣營」對立敘事首次由具名重量級人士（白宮 AI 政策顧問，見 [[topics/anthropic-government-policy]] 既有紀錄）公開點名批評，可能加大 Anthropic 在出口管制／開源政策辯論中的輿論壓力（推論）；具體政策訴求、Anthropic 官方回應未見報導細節（Google News/Benzinga https://www.benzinga.com/markets/tech/26/07/60685709/david-sacks-warns-anthropic-doesnt-want-competition-youre-going-to-basically-put-a-dagger-through-the-heart-of-the-entire-american-open-source-ecosystem）
 
 ### 2026-07-25
-- **[競品工作流比較，標題層級，單一來源] SitePoint：Codex 5.3 生產環境工作流——何時該選它而非 Claude 做複雜重構**：SitePoint 發表比較文章，討論在複雜程式碼重構情境下，何時該選擇 OpenAI Codex 5.3 而非 Claude 進行工作流編排。**注意**：無具體公開定價數字，本則僅記事件不更新「競品定價對照」表；亦未見文章方法論或量化比較細節，單一來源，待後續補充（Google News/SitePoint）
+- **[競品工作流比較，標題層級，單一來源] SitePoint：Codex 5.3 生產環境工作流——何時該選它而非 Claude 做複雜重構**：SitePoint 發表比較文章，討論在複雜程式碼重構情境下，何時該選擇 OpenAI Codex 5.3 而非 Claude 進行工作流編排。**注意**：無具體公開定價數字，本則僅記事件不更新「競品定價對照」表；亦未見文章方法論或量化比較細節，單一來源，待後續補充。累積脈絡見上方「OpenAI Codex CLI」子區塊「Claude Code vs Codex 頭對頭比較彙整」小節（Google News/SitePoint）
 
 ### 2026-07-22
 - **[競品定價比較，標題層級] tech-insider.org：Cline vs Claude Code vs Copilot 定價比較（Free vs $20 vs $10）**：詳見「競品定價對照」表新增列（Google News/tech-insider.org）
-- **[新事件，agentic 能力對比，標題層級] 中國 AI agent 於自主研究任務據稱超越 Claude Code**：South China Morning Post（經 Google News 轉載，source_count=2）報導某中國 AI agent 在自主研究（autonomous research）任務表現上超越 Claude Code。**注意**：僅標題可用，待補充——該 agent 具體名稱、開發廠商、測試方法、量化指標均未見報導，無法確認是否為 Moonshot（07-16/17/21 追蹤中）、Alibaba、DeepSeek 或其他廠商產品，暫不歸入既有廠商子區塊，待後續補充後再分類。**對競爭格局的意涵**：若屬實，是繼 07-21 Emerging Trajectories 戰略威脅分析（Kimi K3/Qwen 3.8 效能逼近 Fable 5）之後，中國陣營首次在「agent 自主執行」而非單純模型評測指標上出現具體超越宣稱，可能代表競爭焦點正從「底層模型能力」擴散至「agent 產品層」（推論）（Google News/South China Morning Post）
+- **[新事件，agentic 能力對比，標題層級] 中國 AI agent 於自主研究任務據稱超越 Claude Code**：South China Morning Post（經 Google News 轉載，source_count=2）報導某中國 AI agent 在自主研究（autonomous research）任務表現上超越 Claude Code。**注意**：僅標題可用，待補充——該 agent 具體名稱、開發廠商、測試方法、量化指標均未見報導，無法確認是否為 Moonshot（07-16/17/21 追蹤中）、Alibaba、DeepSeek 或其他廠商產品，暫不歸入既有廠商子區塊，待後續補充後再分類。**對競爭格局的意涵**：若屬實，是繼 07-21 Emerging Trajectories 戰略威脅分析（Kimi K3/Qwen 3.8 效能逼近 Fable 5）之後，中國陣營首次在「agent 自主執行」而非單純模型評測指標上出現具體超越宣稱，可能代表競爭焦點正從「底層模型能力」擴散至「agent 產品層」（推論）；亦收入上方「OpenAI Codex CLI」子區塊「Claude Code vs Codex 頭對頭比較彙整」小節（Google News/South China Morning Post）
 - **[蒸餾雙標爭議，詳見 Alibaba 子區塊] Claude 曾自稱是阿里巴巴 Qwen AI，引發蒸餾雙標批評**：詳見「主要競品追蹤」Alibaba 子區塊新增列（Google News/TipRanks）
 
 ### 2026-07-21
@@ -270,7 +286,7 @@ Claude Code 已成為 AI 輔助編碼的標竿產品，但競爭正快速升溫�
 
 ### 2026-07-15
 - **[雲端夥伴銷售話術，傳聞] Microsoft 據報訓練業務團隊淡化 OpenAI 與 Anthropic 優勢**：Yahoo Finance 報導 Microsoft 正訓練其業務團隊向客戶淡化 OpenAI 與 Anthropic 的競爭優勢。**對競爭格局的意涵**：詳見「主要競品追蹤」新增子區塊（Google News/Yahoo Finance）
-- **[工具比較文] Claude Code vs Codex vs OpenCode：全端工程師觀點的「誠實裁決」**：HackerNoon（source_count=2，另有獨立來源同步轉載）發表比較文章，從全端工程師視角評比 Claude Code、Codex、OpenCode 三款編碼 agent 工具的優劣。**對競爭格局的意涵**：三方比較文的存在本身即反映 OpenCode（見「主要競品追蹤」）已與 Codex 一同被視為 Claude Code 的常態對照組，延續既有「開發者社群主動做三方選型比較」的競爭態勢；僅標題可用，具體評比結論與方法論未見細節（Google News/HackerNoon）
+- **[工具比較文] Claude Code vs Codex vs OpenCode：全端工程師觀點的「誠實裁決」**：HackerNoon（source_count=2，另有獨立來源同步轉載）發表比較文章，從全端工程師視角評比 Claude Code、Codex、OpenCode 三款編碼 agent 工具的優劣；僅標題可用，具體評比結論與方法論未見細節。累積脈絡見上方「OpenAI Codex CLI」子區塊「Claude Code vs Codex 頭對頭比較彙整」小節（Google News/HackerNoon）
 - **[內部設計解讀，Alibaba 對照] Claude Code 的「隱藏邏輯」凸顯 Anthropic 與阿里巴巴的競爭關係**：Technology Org 發表分析文章，解讀 Claude Code 的內部邏輯設計，稱其凸顯 Anthropic 與阿里巴巴之間的競爭關係。**對競爭格局的意涵**：延續 06-25 已記錄的 Anthropic 對阿里巴巴蒸餾攻擊的正式法律指控（見「主要競品追蹤」Alibaba Qwen3.7-Max 條目），本次為第三方媒體從產品技術設計角度切入同一競爭敘事，僅標題可用，未見具體技術細節或新事實（Google News/Technology Org）
 
 ### 2026-07-14
