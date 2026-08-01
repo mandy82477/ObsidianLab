@@ -3,11 +3,11 @@
 **狀態：** monitoring（官方已說明，待驗證恢復）
 **領域：** 🛠️ 工具/功能
 **開始日期：** 2026-03（推測）
-**最後更新：** 2026-07-18
+**最後更新：** 2026-08-01
 **最後新聞更新：** 2026-07-13
 
 > **最近效能退步事件**（2026-07-13）
-> Token 消耗異常訊號群自 06-27（quota 重置需手動 continue 的早期焦慮訊號，見 [[community-tech-discussions]]）延燒至 07-13，共 17 天持續出現同方向訊號，累計已達九個獨立來源：GitHub issue #38335（Max 方案額度異常消耗，截至 07-09 累積 791 則留言、536 個讚，社群互動量最高條目之一）、issue #41506（3-5 倍消耗異常）、issue #16856（2.1.1 版 4 倍消耗）、HN「5x 更貴」、$62,021 具名案例、07-08~07-09 三則訊號（cache 命中率下降 20%、Max 20x 週額度不到一天用盡、單一 session 27% 時間耗掉週額度 7%），加上 07-13 新訊號：Reddit r/ClaudeCode 回報 Max 5x 訂閱近一週額度消耗速度變快，5 小時額度約 2 小時即用完（單一貼文，尚待第三方覆核）。仍無法排除是計費/計量問題而非模型能力退步（詳見下方子區塊）。
+> Token 消耗異常訊號群自 06-27（quota 重置需手動 continue 的早期焦慮訊號，見 [[topics/community-tech-discussions]]）延燒至 07-13，共 17 天持續出現同方向訊號，累計已達九個獨立來源：GitHub issue #38335（Max 方案額度異常消耗，截至 07-09 累積 791 則留言、536 個讚，社群互動量最高條目之一）、issue #41506（3-5 倍消耗異常）、issue #16856（2.1.1 版 4 倍消耗）、HN「5x 更貴」、$62,021 具名案例、07-08~07-09 三則訊號（cache 命中率下降 20%、Max 20x 週額度不到一天用盡、單一 session 27% 時間耗掉週額度 7%），加上 07-13 新訊號：Reddit r/ClaudeCode 回報 Max 5x 訂閱近一週額度消耗速度變快，5 小時額度約 2 小時即用完（單一貼文，尚待第三方覆核）。仍無法排除是計費/計量問題而非模型能力退步（詳見下方子區塊）。
 
 ---
 
@@ -21,7 +21,7 @@ Claude Code 在 2026 年 3 月至 4 月間出現長達約一個月的效能明�
 
 ## Token 消耗異常訊號群（2026-06 下旬起）
 
-**訊號鏈自 06-27 延燒至 07-13（共 17 天），累計九個獨立訊號**（06-27 為早期 quota 焦慮訊號，見 [[community-tech-discussions]]「額度焦慮系列」；07-01 起為明確的 token/成本異常主張）：
+**訊號鏈自 06-27 延燒至 07-13（共 17 天），累計九個獨立訊號**（06-27 為早期 quota 焦慮訊號，見 [[topics/community-tech-discussions]]「額度焦慮系列」；07-01 起為明確的 token/成本異常主張）：
 
 | 日期 | 訊號 | 來源 | 強度 |
 |------|------|------|------|
@@ -40,10 +40,10 @@ Claude Code 在 2026 年 3 月至 4 月間出現長達約一個月的效能明�
 | 假說 | 支持證據 | 尚無法排除的部分 |
 |------|---------|-----------------|
 | **模型真退步**（同任務需要更多輪次 / token 才能完成）| 若 4.8 或近期模型版本在等量任務上確實需要更多 tool call 或更長 thinking，將直接反映為 token 消耗上升；#16856 明確指向版本號（2.1.1）而非泛稱時間點，較貼近「版本行為改變」框架 | 缺乏官方或第三方在同一 prompt 集合上做版本前後 token 用量對照（benchmark 層級證據）；目前全部是用戶主觀感受 + 帳單金額，非受控實驗（推論）|
-| **計費／計量問題**（token 計數方式改變，而非實際用量增加）| $62,021 案例與「5x 更貴」報導都聚焦帳單/配額消耗速度而非任務品質下降；07-08「cache 命中率下降 20% 帳單翻倍」首度提供具體技術機制——若 prompt caching 命中率因 context 結構變化或後端調度改變而下降，重複計算的 token 會直接反映為帳單增加，不需模型能力真的變差；07-09「單一 session 27% 時間耗掉週額度 7%」進一步指向額度計算本身可能存在非線性放大；[[community-tech-discussions]] 技術彙整已記錄社群懷疑「agent 模式的 token 計費方式變更」與「subagent 呼叫計費細節未透明揭示」| Anthropic 未就計費機制或 cache 命中率變化做出官方說明；cache 命中率下降的根因（使用者 context 結構改變 vs 後端調度變更）尚未釐清；無法排除只是使用習慣改變（如更多 subagent/parallel session）導致實際消耗上升（推論）|
-| **Context／工具配置問題**（用戶端 orchestration、MCP 工具或 context 管理不當導致的浪費）| #38335 的「Max 方案額度異常消耗」與本頁 2026-06-26「自訂編排路由失效」屬同類型「工具行為不一致」訊號；multi-agent／MCP 工具調用疊加成本是 [[community-tech-discussions]] 已記錄的系統性問題；cache 命中率下降若源於使用者端 context 結構變化（如頻繁插入不同前綴內容），亦可能是配置問題而非後端變更 | 若確為 context 腐蝕或配置問題，理論上應可透過調整 CLAUDE.md／減少 subagent 層級緩解，但目前無用戶回報「調整配置後消耗恢復正常」的驗證案例（推論）|
+| **計費／計量問題**（token 計數方式改變，而非實際用量增加）| $62,021 案例與「5x 更貴」報導都聚焦帳單/配額消耗速度而非任務品質下降；07-08「cache 命中率下降 20% 帳單翻倍」首度提供具體技術機制——若 prompt caching 命中率因 context 結構變化或後端調度改變而下降，重複計算的 token 會直接反映為帳單增加，不需模型能力真的變差；07-09「單一 session 27% 時間耗掉週額度 7%」進一步指向額度計算本身可能存在非線性放大；[[topics/community-tech-discussions]] 技術彙整已記錄社群懷疑「agent 模式的 token 計費方式變更」與「subagent 呼叫計費細節未透明揭示」| Anthropic 未就計費機制或 cache 命中率變化做出官方說明；cache 命中率下降的根因（使用者 context 結構改變 vs 後端調度變更）尚未釐清；無法排除只是使用習慣改變（如更多 subagent/parallel session）導致實際消耗上升（推論）|
+| **Context／工具配置問題**（用戶端 orchestration、MCP 工具或 context 管理不當導致的浪費）| #38335 的「Max 方案額度異常消耗」與本頁 2026-06-26「自訂編排路由失效」屬同類型「工具行為不一致」訊號；multi-agent／MCP 工具調用疊加成本是 [[topics/community-tech-discussions]] 已記錄的系統性問題；cache 命中率下降若源於使用者端 context 結構變化（如頻繁插入不同前綴內容），亦可能是配置問題而非後端變更 | 若確為 context 腐蝕或配置問題，理論上應可透過調整 CLAUDE.md／減少 subagent 層級緩解，但目前無用戶回報「調整配置後消耗恢復正常」的驗證案例（推論）|
 
-**目前立場：** 訊號鏈自 06-27（quota 焦慮早期訊號）延燒至 07-13，跨 17 天持續出現同方向訊號且來源獨立，密度已足以將定調從「值得觀察」上調為**「結構性未解問題」**——三種假說均有部分支持證據且互不排斥，07-08 起新增的 cache 命中率機制觀察與兩則額度異常比例回報，首度讓「計費/計量問題」假說有了具體技術描述，07-13 再添一則 Max 5x 額度消耗變快回報但仍屬單一貼文，但仍缺乏官方說明或受控實驗佐證。截至 2026-07-13，Anthropic 尚未對此訊號群做出官方回應。與 [[community-tech-discussions]] 對應的「Claude Code 成本 5x 暴漲」與「額度焦慮系列」條目互相引用，細節不重複展開。
+**目前立場：** 訊號鏈自 06-27（quota 焦慮早期訊號）延燒至 07-13，跨 17 天持續出現同方向訊號且來源獨立，密度已足以將定調從「值得觀察」上調為**「結構性未解問題」**——三種假說均有部分支持證據且互不排斥，07-08 起新增的 cache 命中率機制觀察與兩則額度異常比例回報，首度讓「計費/計量問題」假說有了具體技術描述，07-13 再添一則 Max 5x 額度消耗變快回報但仍屬單一貼文，但仍缺乏官方說明或受控實驗佐證。截至 2026-07-13，Anthropic 尚未對此訊號群做出官方回應。與 [[topics/community-tech-discussions]] 對應的「Claude Code 成本 5x 暴漲」與「額度焦慮系列」條目互相引用，細節不重複展開。
 
 ---
 
@@ -113,13 +113,13 @@ Claude Code 在 2026 年 3 月至 4 月間出現長達約一個月的效能明�
 - **訊號群補上具體技術機制與兩則異常比例回報**：Reddit「cache 命中率下降 20% 導致 agent 帳單翻倍」首度為「計費/計量問題」假說提供技術描述；同日另有「Max 20x 方案週額度不到一天用盡」回報；加上 GitHub issue #41506 回報 Max 方案（$100/月）token 消耗量自 3 月底起在未變更設定下增加約 3-5 倍（累積 54 則留言、29 個讚）；三者與 07-03 的 #38335、07-01 的兩則社群訊號方向一致，訊號密度使定調上調為「結構性未解問題」；官方尚未回應（來源：[GitHub Issues #41506](https://github.com/anthropics/claude-code/issues/41506)、[Reddit cache 命中率](https://www.reddit.com/r/ClaudeCode/comments/1uqsah2/cache_hit_rate_dropping_by_20_doubles_your_agents_bills/)、[Reddit Max 20x 週額度](https://www.reddit.com/r/ClaudeCode/comments/1uqs99q/claude_max_20x_weekly_limit_exhausted_in_less/)）
 
 #### 2026-07-04
-- **Plan mode 逾時自動代答 + 整體變慢投訴延續**：Reddit r/ClaudeCode 用戶（source_count 2）反映 plan mode 逾時後自動選擇非預期選項，並主觀感受近期回應變慢、能力下降；與 07-02 已記錄的 AskUserQuestion 60 秒逾時自動代答爭議（見 [[community-tech-discussions]]）屬同一「逾時代答破壞決策體驗」機制的延續投訴，「變慢/能力下降」部分仍屬主觀感受，無 benchmark 或版本號佐證（來源：[Reddit r/ClaudeCode](https://www.reddit.com/r/ClaudeCode/comments/1und5g7/claude_code_cli_is_getting_harder_to_use_plus/)）
+- **Plan mode 逾時自動代答 + 整體變慢投訴延續**：Reddit r/ClaudeCode 用戶（source_count 2）反映 plan mode 逾時後自動選擇非預期選項，並主觀感受近期回應變慢、能力下降；與 07-02 已記錄的 AskUserQuestion 60 秒逾時自動代答爭議（見 [[topics/community-tech-discussions]]）屬同一「逾時代答破壞決策體驗」機制的延續投訴，「變慢/能力下降」部分仍屬主觀感受，無 benchmark 或版本號佐證（來源：[Reddit r/ClaudeCode](https://www.reddit.com/r/ClaudeCode/comments/1und5g7/claude_code_cli_is_getting_harder_to_use_plus/)）
 
 #### 2026-07-03
 - **Token 消耗異常訊號群成形**：GitHub issue #16856（2.1.1 版 token 消耗達 4 倍以上）與 issue #38335（Max 方案額度自 3/23 起異常消耗，大量留言）同日浮上，與 07-01 的兩則社群訊號（HN「5x 更貴」、$62,021 具名案例）共同構成四個獨立來源的成本異常訊號群；詳見「Token 消耗異常訊號群」子區塊；官方尚未回應（GitHub Issues）
 
 #### 2026-07-01
-- **Claude Code 成本暴漲討論爆發**：Vincent Schmalbach 發文「Claude Code Just Got 5x More Expensive」登上 HN（score 53），同日 Reddit 出現獨立開發者單月燒 $62,021 token 的具名案例；社群懷疑與模型切換或計費方式變更有關；詳見 [[community-tech-discussions]] 對應條目
+- **Claude Code 成本暴漲討論爆發**：Vincent Schmalbach 發文「Claude Code Just Got 5x More Expensive」登上 HN（score 53），同日 Reddit 出現獨立開發者單月燒 $62,021 token 的具名案例；社群懷疑與模型切換或計費方式變更有關；詳見 [[topics/community-tech-discussions]] 對應條目
 
 ### 2026-06
 
