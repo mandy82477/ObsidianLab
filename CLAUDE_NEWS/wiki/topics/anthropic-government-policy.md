@@ -157,7 +157,7 @@ Fable 5 發布後，Amazon 安全研究人員發現特定提示詞可讓模型�
 | 2026-07-16 | 🌐 | 南華早報獨家專訪「Pax Silica」政策架構主要推手（姓名待確認），論述美國仍可維持 AI 領先地位（2026-07-16 15:00 UTC） | 為既有「出口管制反效，恐助長中國開源模型」論述（Bloomberg 06-26）首度出現的正面反駁觀點；論者身分與政策架構具體內容（2026-07-16 報導，至今無第三方跟進） |
 | 2026-07-16 | 🌐🏛️ | Hacker News 轉載 Politico 全文報導（累積 19 分），確認並補足 07-14 politico.eu 標題式報導：具名初階員工 Donny Greenberg 出席歐洲議會安全聽證會，回應先進 AI 能力風險疑慮（原文：politico.eu/article/anthropic-european-parliament-donny-greenberg-artificial-intelligence-ai） | 07-14 headline 首度取得全文與具名細節確認；歐盟對 Anthropic 政府關係投入層級的不滿具體化（點名基層員工代表出席），可能影響「歐洲據點爭奪」進度 |
 | 2026-07-16 | 🏢 | Anthropic CEO Dario Amodei 捐款 100 萬美元予某 super PAC，捲入 AI 陣營之間鉅額政治獻金角力（Google News/Politico，僅標題式轉載，原文因轉址未確認） | Anthropic 高層首度出現具金額的美國政治獻金動作；與 07-15 州級 AI 規則倡議是否構成一致政治佈局待觀察；人物面向詳見 [[entities/dario-amodei]] |
-| 2026-07-15 | 🏢 | Axios 報導 Anthropic 正在招募人力以應對潛在災難性風險（catastrophic risk），偏向安全團隊建置動態（Google News/Axios，僅標題式轉載，原文因轉址未確認） | 顯示 Anthropic 持續擴大安全/災難性風險相關人力編制；具體職位、規模、時間表待確認 |
+| 2026-07-15 | 🏢 | Axios 報導 Anthropic 正在招募人力以應對潛在災難性風險（catastrophic risk），偏向安全團隊建置動態（Google News/Axios，僅標題式轉載，原文因轉址未確認） | 顯示 Anthropic 持續擴大安全/災難性風險相關人力編制；具體職位、規模、時間表（2026-07-15 報導，至今無後續） |
 | 2026-07-15 | 🏢 | Politico 報導 Anthropic 正推動一項逐州加強 AI 監管規則的計畫（美國州層級政策倡議）（Google News/Politico，僅標題式轉載，原文因轉址未確認） | Anthropic 主動遊說州級 AI 監管收緊，與其一貫「越強模型越需要護欄」立場一致；具體州別、規則內容、遊說對象待確認 |
 | 2026-07-14 | 🌐🏛️ | politico.eu 報導歐盟官員對 Anthropic 僅派遣一名初階員工出席安全聽證會表達不滿，稱其「不重視歐洲」（Google News/politico.eu，僅標題式轉載，原文因轉址未確認） | 歐盟對 Anthropic 政府關係投入程度出現具體負面評價，呼應「歐洲據點爭奪」變數中歐洲對 Anthropic 重視度的觀察角度；具體聽證會場合、官員身分、後續外交效應待確認 |
 | 2026-07-14 | 🏛️ | The National Interest 報導：國防部長 Hegseth 曾稱 Anthropic 為「國家安全風險」，CISA（網路安全暨基礎設施安全局）現正使用其產品（Google News/The National Interest，僅標題式轉載，未附引言細節） | 呈現美國政府內部對 Anthropic 風險評估的立場矛盾（國防部 vs CISA）；延續 06-05 Hegseth 首次確認風險標籤事件的後續發展，具體使用範圍與時間點待確認 |
@@ -179,7 +179,7 @@ Fable 5 發布後，Amazon 安全研究人員發現特定提示詞可讓模型�
 | 2026-06-29 | 🌐 | The National Interest：呼籲防止 Mythos 事件成為 AI 權力集中契機（The National Interest） | 第三方論述：出口管制爭端可能被少數公司利用以鞏固市場壟斷，反托拉斯視角進入 AI 政策討論 |
 | 2026-06-28 | 🌐 | WSJ 報導中國 AI 已在網路安全領域追上 Anthropic，根本質疑 Mythos 出口管制戰略效果（WSJ） | 管制正當性再度受挑戰；「封閉頂尖模型能維持 AI 領先地位」的政策假設在主流財經媒體遭直接否定 |
 | 2026-06-28 | 🌐 | Sakana AI 發布 Fugu，聲稱與 Fable 5 / Mythos Preview 比肩，支援 multi-agent API 協調；中國 360 Tulongfeng 同期推出（TechCrunch、Reuters） | 亞洲競品雙線同步出現，管制期間競品窗口效應加速兌現；Anthropic 競爭格局惡化 |
-| 2026-06-28 | 🌐 | Axios 報導 Fable 5 正走向全面回歸，美方協議接近完成；HN 評論指大量媒體曝光對 Anthropic 有利（Axios，待核實） | （待核實）若屬實為出口管制爭端進入收尾階段的訊號；HN 社群認為此事整體對 Anthropic 有利，競品追趕反而證明封鎖無效 |
+| 2026-06-28 | 🌐 | Axios 報導 Fable 5 正走向全面回歸，美方協議接近完成；HN 評論指大量媒體曝光對 Anthropic 有利（Axios） | ✅ 已由 07-01 官方全面解除出口管制證實（見下方 07-01 條目）；HN 社群認為此事整體對 Anthropic 有利，競品追趕反而證明封鎖無效 |
 | 2026-06-28 | 🌐 | Legion LegalTech 向哥倫比亞特區聯邦法院提訴，要求撤銷 BIS 原始指令並申請禁制令（The Next Web） | 司法挑戰細節升級：不只要求宣告無效，並申請緊急禁制令阻止繼續執行；對政府管制時程構成法律壓力 |
 | 2026-06-27 | 🏛️ | Lutnick 致函 Tom Brown：批准 Mythos 5 向 100+ 美國受信任合作夥伴有限釋出；Fable 5 接近協議（Semafor、CNBC、Reuters） | 6/13 全面封鎖後首次重大解封；Fable 5 尚未納入但談判接近尾聲；Tom Brown 主導談判取得具體成果 |
 | 2026-06-26 | 🌐 | Bloomberg 分析：限制 Anthropic 頂尖模型出口管制可能反推中國開源模型國際採用（Bloomberg） | 出口管制「適得其反」論述獲主流財經媒體背書；削弱管制正當性的戰略效果論據 |
