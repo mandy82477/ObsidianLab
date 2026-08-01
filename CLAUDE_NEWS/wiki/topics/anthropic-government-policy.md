@@ -3,7 +3,7 @@
 **狀態：** monitoring（出口管制主線已解除，剩餘承諾落實與衍生支線持續觀察；中美 AI 工具信任對峙已獨立成頁）
 **領域：** 🏛️ 政策/安全
 **開始日期：** 2026-05-01
-**最後更新：** 2026-07-31
+**最後更新：** 2026-08-01
 **最後新聞更新：** 2026-07-31
 
 > **最新動態**（2026-07-31）
@@ -326,7 +326,7 @@ Fable 5 發布後，Amazon 安全研究人員發現特定提示詞可讓模型�
 - **[待查證] Politico：Anthropic 逐州加強 AI 規則計畫**：Politico（經 Google News 轉載）標題指出 Anthropic 正推動一項逐州加強 AI 監管規則的計畫（美國州層級政策倡議）；僅標題可用，原文為轉址頁面，無法取得具體州別或規則內容（Google News/Politico，2026-07-15 08:45 UTC）
 
 ### 2026-07-14
-- **[待查證] politico.eu：EU 官員不滿 Anthropic 派遣初階員工出席安全聽證會**：politico.eu（經 Google News 轉載）標題指出歐盟官員對 Anthropic 僅派遣一名初階員工出席安全聽證會表達不滿，稱其「不重視歐洲」；僅標題可用，原文為轉址頁面，無法取得聽證會場合或官員身分等細節（Google News/politico.eu，2026-07-14 21:48 UTC）
+- **（已於 07-16 確認，見上方）politico.eu：EU 官員不滿 Anthropic 派遣初階員工出席安全聽證會**：politico.eu（經 Google News 轉載）標題指出歐盟官員對 Anthropic 僅派遣一名初階員工出席安全聽證會表達不滿，稱其「不重視歐洲」；僅標題可用，原文為轉址頁面，無法取得聽證會場合或官員身分等細節（Google News/politico.eu，2026-07-14 21:48 UTC；2026-07-16 Hacker News 轉載 Politico 全文已確認具名員工為 Donny Greenberg，見上方 07-16 條目）
 - **[政府內部矛盾] Hegseth 稱國安風險，CISA 卻在用**：The National Interest 報導標題指出，美國國防部長 Pete Hegseth 曾稱 Anthropic 為「國家安全風險」，但美國網路安全暨基礎設施安全局（CISA）現已在使用其產品；報導僅為標題式轉載，未提供具體使用範圍、時間點或官方回應等細節（Google News/The National Interest，2026-07-14，待確認細節）
 - **[監管首見] Reuters 獨家：加拿大金融監管機關引用 Claude Mythos 警告銀行網路風險**：Reuters 獨家報導（source_count=2），加拿大金融監管機關發給銀行業的網路風險警告信中，明確引用 Claude Mythos 作為佐證，電郵內容為報導依據；為 Mythos 2026-07-01 出口管制解禁後，監管機構首次在正式監管文件中點名其能力進行風險評估，值得追蹤是否有其他國家監管機構跟進類似警告（Reuters，2026-07-13；詳見 [[entities/mythos]]）
 
