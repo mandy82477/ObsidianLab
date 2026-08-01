@@ -82,3 +82,4 @@
 [週五 2026/07/31 13:27:59.00] === Pipeline complete (agent) ===
 [cloud weekly-wiki-lint-cloud STARTED [2026/08/01 01:04:08.00]]
 [週六 2026/08/01 01:37:55.70] Weekly lint OK - 修 20 頁，10 項待確認（含新實體候選/來源健康2項/規則年齡4項/月度蒸餾提案/patterns淘汰審查/index狀態判準/code-quality-decline歸屬/外部死鏈跳過），測試 FAILED（已知 feedparser_sgmllib 依賴缺口第4次復現，非新增回歸，已登記 workaround-register.md 待 08-04 複查）- web build skipped - push 待執行
+[週六 2026/08/01 03:33:11.00] Watchdog push SENT - 每日新聞 2026-08-01 缺件：抓料、日報。本機跑 /news-pipeline 2026-08-01 補（另有近 7 天 1 個舊缺口）
