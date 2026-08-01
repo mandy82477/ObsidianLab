@@ -82,3 +82,17 @@
 [週五 2026/07/31 13:27:59.00] === Pipeline complete (agent) ===
 [cloud weekly-wiki-lint-cloud STARTED [2026/08/01 01:04:08.00]]
 [週六 2026/08/01 01:37:55.70] Weekly lint OK - 修 20 頁，10 項待確認（含新實體候選/來源健康2項/規則年齡4項/月度蒸餾提案/patterns淘汰審查/index狀態判準/code-quality-decline歸屬/外部死鏈跳過），測試 FAILED（已知 feedparser_sgmllib 依賴缺口第4次復現，非新增回歸，已登記 workaround-register.md 待 08-04 複查）- web build skipped - push 待執行
+[週六 2026/08/01 03:33:11.00] Watchdog push SENT - 每日新聞 2026-08-01 缺件：抓料、日報。本機跑 /news-pipeline 2026-08-01 補（另有近 7 天 1 個舊缺口）
+[cloud daily-news-pipeline-cloud STARTED 2026-08-01 13:04:20 UTC]
+[週六 2026/08/01 13:28:43.43] === Agent pipeline start (2026-08-01) ===
+[週六 2026/08/01 13:28:43.43] Step 0 昨日缺跑檢查 OK（news/2026-07-31.md 存在，無缺失）
+[週六 2026/08/01 13:28:43.43] Step 0b 冪等閘 OK（news/2026-08-01.md 不存在，正常繼續）
+[週六 2026/08/01 13:28:43.43] Step 1a 新聞抓取 SKIPPED（雲端，由 GitHub Actions daily-gather 完成）
+[週六 2026/08/01 13:28:43.43] Step 1b 生成日報 OK（新鮮度/健康檢查通過，56 則項目，10/10 來源正常，格式自檢 3a=13/3b=10［注意：預設 POSIX locale 下 grep bracket 比對 emoji 曾誤報 0，改用 LC_ALL=C.utf8 復現正確值，屬環境 locale 問題非內容問題］，忠實度自檢抽 6 條改寫 0 條）
+[週六 2026/08/01 13:28:43.43] Step 1c 確認 emitted-cache OK（56 則項目已標記 digest_confirmed，已 commit）
+[週六 2026/08/01 13:28:43.43] Step 2 Wiki Ingest OK（五類記者：模型/功能/商業/安全政策/社群，今日人物類無條目未派工；wiki-reporter-* 自訂 subagent_type 本次仍無法解析，降級為 general-purpose 內嵌規則執行，功能等同，已於 wiki/log.md 標注）
+[週六 2026/08/01 13:28:43.43] Step 3 Commit Wiki 變更 OK（1 筆主編彙整 commit，含 claude-code/competitor-landscape/ai-agent-safety/anthropic-government-policy/community-tech-patterns/community-tech-discussions 六頁 + log.md/index.md/source_attribution.jsonl）
+[週六 2026/08/01 13:28:43.43] Step 4 測試全綠 - web build 放行
+[週六 2026/08/01 13:28:43.43] Step 4 Building web reader... OK（build_web.py exit 0：31 entities, 20 topics, 97 digests, 1 weekly reports + radar；既有斷鏈 wikilink 警告 8 則與本次改動無關，未新增）
+[週六 2026/08/01 13:28:43.43] Step 5 Single push done (news + wiki + web + confirm-cache + STARTED heartbeat) - 首次嘗試即成功，無需重試 (fd8e953..d93036e)
+[週六 2026/08/01 13:28:43.43] === Pipeline complete (agent) ===

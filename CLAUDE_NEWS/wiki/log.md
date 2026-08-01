@@ -3305,3 +3305,17 @@ Append-only 紀錄。每次 ingest、lint，以及**揭露缺陷或促成改動�
 8. **人物記者建議 index.md 狀態調整**：`entities/boris-cherny` 現列 `active（待核實）`，人物記者本輪建議因「創始人身分無疑義，僅個別發言待查證」改為 `active`；主編核查頁面仍有 1 處明確 `（待核實）` 標記（cat-wu「Head of Claude Code」發言人身分候選），依既有慣例「頁面尚有待核實內容則索引維持 active（待核實）」保留現狀未調整 → 是否同意調整判準（例如僅整體身分待核實才標記，個別聲明待查證不影響索引狀態）？
 9. **社群記者發現：`topics/code-quality-decline.md` 領域歸屬疑義**——`wiki/index.md` 與頁面標頭皆標 🛠️ 工具/功能，但 `.claude/rules/wiki-ingest-community.md` 觸發條件表將此頁列為社群記者負責範圍，本輪依派工實際指派（社群）完成 lint，未生成錯誤，但建議釐清歸屬避免未來派工混淆或重複/遺漏 → 是否需修訂規則檔明確歸屬（社群 vs 功能）？
 10. **外部死鏈檢查（月度，本輪應執行）**：雲端 egress 封鎖一律跳過，未執行、未標註任何頁面 → 待辦：留待本機月度執行 `python scripts/check_links.py`。
+
+## 2026-08-01 Ingest（雲端排程執行）
+
+- 來源日報：[[news/2026-08-01]]
+- 更新頁面：wiki/entities/claude-code.md（8 則已知問題新增/更新）、wiki/topics/competitor-landscape.md、wiki/topics/ai-agent-safety.md、wiki/topics/anthropic-government-policy.md、wiki/topics/community-tech-patterns.md、wiki/topics/community-tech-discussions.md
+- 新增頁面：無
+- 摘要：Anthropic 資安評估連網事件進入媒體擴散第二天，新增「人為疏失」肇因與 WIRED 法律定性討論兩項有意義新細節（其餘近十家媒體轉載判定為重複報導未逐一記錄）；Claude Code GitHub Issues 罕見密集回報潮，8 起臭蟲/功能請求同日累積可觀留言數（macOS ECONNRESET 51 則居首）；一則單一匿名 Reddit 貼文聲稱「公司收到美國政府指示停用 Anthropic 產品」，因無官方或媒體佐證，已以「待查證、未經證實」語氣記入 anthropic-government-policy.md，未當作既定事實
+- 呈現品質：`entities/claude-code`／`topics/competitor-landscape`／`topics/ai-agent-safety`／`topics/anthropic-government-policy`／`topics/community-tech-patterns`／`topics/community-tech-discussions`：✅ 通過
+- 品質備註：
+  - 雲端 `wiki-reporter-*` 六個自訂 subagent_type 本次仍無法解析（Agent 工具可用清單未列出 wiki-reporter-models/features/commercial/safety-policy/community/people），5 個有條目類別（模型／功能／商業／安全政策／社群；人物今日無條目未派工）全數以 general-purpose 內嵌規則降級執行，功能等同原生記者
+  - 模型記者判定今日僅有的 1 則條目（Fable 5 vs Opus 5 MineBench.ai 比較）與既有 `model-comparison.md`／`opus-5.md` 07-26 記錄逐項重複、無新資訊，正確判斷略過不重複寫入
+  - 商業記者對 quasa.io「Claude Code vs OpenAI Codex」比較文，因與既有 07-15／07-25 兩則性質相近條目高度重疊、無新數字，判斷不重複收錄，僅收錄 Supabase Evals 一則
+  - 安全政策記者對 9 則同一核心事實的重複媒體轉載（BBC/ABC/AP/SiliconANGLE/UPI/cbn.com/The Week/Decrypt/nextgov.com）正確判定為無新增細節，僅於時序一行帶過不逐一記錄，避免頁面被重複轉載污染
+  - 社群記者對 Reddit r/ClaudeCode 六則 sort=new（score=0、無週熱門標記）貼文與 Simon Willison 三則通用 LLM/eval 工具發布（llm-mcp-client／datasette-agent／smevals，無 Claude 專屬角度）依規則全數判斷排除，僅收錄 2 則達門檻條目
