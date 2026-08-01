@@ -81,13 +81,13 @@
 | 工具 | 採用 | 亮點 |
 | --- | --- | --- |
 | **CC-Canary** | ✅ | 讀 session log 自動偵測效能漂移，HERMES.md bug 後受重視 |
-| [**AISlop**](https://github.com/scanaislop/aislop) | ⏳（HN 61）| hook 每次 tool call 後自動掃 AI code smells（空 catch、dead code） |
 
 ### 記憶 / 知識圖譜
 
 | 工具 | 採用 | 亮點 |
 | --- | --- | --- |
 | **graphify** | ✅ | Leiden 偵測建程式碼知識圖譜，71 倍 token 減少，40k stars |
+| [**CodeAlmanac**](https://github.com/AlmanacCode/codealmanac/) | ⏳（HN 54）| YC S26，隨與 Claude Code / Codex 對話自動更新 codebase wiki，取代手動維護的 MANUAL.md／DESIGN.md |
 
 ### IDE / 終端
 
@@ -105,7 +105,6 @@
 
 | 工具 | 採用 | 亮點 |
 | --- | --- | --- |
-| [**machine0**](https://machine0.io) | ⏳（HN 88）| 一鍵建立/快照持久化 NixOS/Ubuntu VM，適合雲端開發環境 |
 | [**Minicor**](https://www.minicor.com/) | ⚡（HN 98）| YC P26，AI 整合無 API 桌面系統（Windows RPA）的可擴展基礎設施 |
 
 ### UI 工具
