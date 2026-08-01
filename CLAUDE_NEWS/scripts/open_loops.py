@@ -8,11 +8,18 @@
 不呼叫任何 LLM，純本地 git + 檔案解析（符合本專案無 API key 前提）。
 用法：python scripts/open_loops.py
 """
+import io
 import re
 import subprocess
 import sys
 from datetime import date
 from pathlib import Path
+
+# Windows 主控台預設 cp950，印不出 ⚠️ 會 UnicodeEncodeError——而這個腳本正是「有逾期
+# workaround 時才印 ⚠️」，等於愈該示警愈會當掉（2026-08-01 實際踩到：掃描在列出 4 筆
+# 逾期項目的當下 traceback 中止）。與 cloud_bootstrap.py 用同一招把 stdout 轉 UTF-8。
+if hasattr(sys.stdout, "buffer"):
+    sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding="utf-8", errors="replace")
 
 REPO = Path(__file__).resolve().parent.parent          # CLAUDE_NEWS/
 REGISTER = REPO / "docs" / "workaround-register.md"

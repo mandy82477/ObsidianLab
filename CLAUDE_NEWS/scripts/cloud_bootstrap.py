@@ -57,7 +57,10 @@ def print(*args, **kwargs):  # noqa: A001 - 蓋掉內建 print，確保永不因
 
 PIP_PACKAGES = [
     ("dotenv", "python-dotenv"),
-    ("feedparser", "feedparser"),
+    # feedparser 6.0.14 起把依賴從壞掉的 sgmllib3k 換成正常出 wheel 的
+    # feedparser-sgmllib（見 ensure_pip_packages 說明），所以這裡鎖下界並讓 pip
+    # 正常解析依賴，不再 --no-deps
+    ("feedparser", "feedparser>=6.0.14"),
 ]
 
 
@@ -83,17 +86,25 @@ def _pip(*args: str) -> bool:
 
 
 def ensure_pip_packages() -> None:
-    for module, dist in PIP_PACKAGES:
+    """正常安裝（含依賴）。
+
+    2026-08-01 查證：feedparser 6.0.14 已把依賴從壞掉的 `sgmllib3k` 換成
+    `feedparser-sgmllib`（純 python wheel、無依賴、requires_python >=3.10），
+    乾淨 venv 實測 `pip install feedparser>=6.0.14` 一次成功、`feedparser.sgml`
+    可 import、實際 parse 正常。也就是說本檔存在的根因已由上游移除。
+
+    舊版曾用 `--no-deps` 躲開壞掉的 sgmllib3k——那個旗標同時也讓 pip 永遠看不到
+    上游換掉依賴這件事，是這個 workaround 遲遲沒退場的直接原因，故一併移除。
+    """
+    for module, spec in PIP_PACKAGES:
         if _have(module):
-            print(f"✅ {dist}：已存在，跳過")
+            print(f"✅ {spec}：已存在，跳過")
             continue
-        print(f"📦 {dist}：缺少，安裝中")
-        # --no-deps：feedparser 會把壞掉的 sgmllib3k 拉進來一起裝而整包失敗，
-        # sgmllib3k 交給下面的專用流程處理
-        if _pip("install", "--no-deps", dist) and _have(module):
-            print(f"✅ {dist}：安裝完成")
+        print(f"📦 {spec}：缺少，安裝中")
+        if _pip("install", spec) and _have(module):
+            print(f"✅ {spec}：安裝完成")
         else:
-            print(f"⚠️ {dist}：安裝未成功，後續步驟可能失敗")
+            print(f"⚠️ {spec}：安裝未成功，後續步驟可能失敗")
 
 
 def ensure_sgmllib() -> None:
@@ -197,9 +208,25 @@ def main() -> int:
     _use_utf8_stdout()
     print("=== 雲端環境自備補丁（冪等；本機通常全部跳過）===")
     ensure_pip_packages()
-    ensure_sgmllib()
-    ensure_feedparser_vendored_sgmllib()
-    ok = all(_have(m) for m, _ in PIP_PACKAGES) and _have("sgmllib") and verify_feedparser_import()
+
+    # 主路徑：上游 6.0.14 起已自備可正常安裝的 sgmllib，正常裝完就該直接通過。
+    ok = all(_have(m) for m, _ in PIP_PACKAGES) and verify_feedparser_import()
+
+    if not ok:
+        # 退路一：環境預裝了 6.0.14 以前的 feedparser，`_have()` 會判定「已存在」
+        # 而不升版，於是又回到舊症狀。這裡明確升上去再驗一次。
+        print("↩️ 退路一：嘗試升級 feedparser 至 6.0.14 以上")
+        if _pip("install", "--upgrade", "feedparser>=6.0.14"):
+            ok = verify_feedparser_import()
+
+    if not ok:
+        # 退路二：離線或 PyPI 不可達等情況，退回 2026-07 的手動 vendoring 修法。
+        # 保留是因為它是唯一不需要網路裝新套件就能救回來的路；正常情況不會走到。
+        print("↩️ 退路二：改用手動 vendoring 修法（sgmllib 三路徑鋪設）")
+        ensure_sgmllib()
+        ensure_feedparser_vendored_sgmllib()
+        ok = verify_feedparser_import()
+
     print("=== 結果：" + ("依賴皆就緒" if ok else "仍有依賴缺失，後續步驟可能失敗（見上方警告）") + " ===")
     return 0  # 恆為 0：輔助腳本不該擋掉 pipeline
 
