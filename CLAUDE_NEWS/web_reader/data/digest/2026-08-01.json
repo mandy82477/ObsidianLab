@@ -256,6 +256,11 @@
       "pageType": "topic"
     },
     {
+      "id": "code-quality-decline",
+      "name": "Claude Code 效能退步事件",
+      "pageType": "topic"
+    },
+    {
       "id": "competitor-landscape",
       "name": "AI 編碼工具競品動態",
       "pageType": "topic"
