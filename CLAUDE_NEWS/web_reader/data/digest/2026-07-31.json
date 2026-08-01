@@ -88,13 +88,7 @@
       "time": "07/30 18:24",
       "sentiment": "",
       "body": "CrowdStrike 宣布其 Falcon AIDR 安全防護產品新增對 Claude Code 與 Copilot Studio agent 的支援。",
-      "focusTags": [],
-      "sedimented": [
-        {
-          "id": "claude-code",
-          "pageType": "entity"
-        }
-      ]
+      "focusTags": []
     },
     {
       "title": "Head Of Anthropic's Claude Code Says Prompt Engineering Not That Important - Search Engine Journal",
@@ -103,13 +97,7 @@
       "time": "07/30 12:30",
       "sentiment": "",
       "body": "Search Engine Journal 報導 Claude Code 團隊負責人公開表示，prompt engineering 的重要性不如外界想像。",
-      "focusTags": [],
-      "sedimented": [
-        {
-          "id": "claude-code",
-          "pageType": "entity"
-        }
-      ]
+      "focusTags": []
     },
     {
       "title": "I let Claude customize my Linux PC—and it did a better job than I ever could - How-To Geek",
@@ -129,13 +117,7 @@
       "time": "情緒：🤔",
       "sentiment": "",
       "body": "作者將一項含 317 個硬編碼色碼的 design-token 清理工作拆給多個 Claude Code subagent 平行處理，發現各 agent 回報「完成」但實際結果存在多種靜默失敗模式，值得多 agent 工作流設計者留意。",
-      "focusTags": [],
-      "sedimented": [
-        {
-          "id": "claude-code",
-          "pageType": "entity"
-        }
-      ]
+      "focusTags": []
     },
     {
       "title": "Inter-session communication for multi-Claude workflows",
@@ -144,13 +126,7 @@
       "time": "情緒：🤔",
       "sentiment": "",
       "body": "社群提出功能請求，希望多個 Claude Code session 之間能有更直接的溝通機制，以串接大型專案中各自獨立執行的工作流程。",
-      "focusTags": [],
-      "sedimented": [
-        {
-          "id": "claude-code",
-          "pageType": "entity"
-        }
-      ]
+      "focusTags": []
     },
     {
       "title": "Post/PreToolUse Hooks Not Executing in Claude Code",
@@ -159,13 +135,7 @@
       "time": "情緒：😤",
       "sentiment": "",
       "body": "用戶回報 PreToolUse 與 PostToolUse hooks 未如預期觸發的臭蟲。",
-      "focusTags": [],
-      "sedimented": [
-        {
-          "id": "claude-code",
-          "pageType": "entity"
-        }
-      ]
+      "focusTags": []
     },
     {
       "title": "12 ways a Claude architecture decision goes wrong (learned these prepping for Anthropic's new Professional cert)",
@@ -183,13 +153,7 @@
       "time": "情緒：😤",
       "sentiment": "",
       "body": "使用者分享本週遭遇跨模型錯誤率升高的情況，並描述其自建的夜間排程工具如何等待錯誤解除後自動接續原本的對話繼續執行。",
-      "focusTags": [],
-      "sedimented": [
-        {
-          "id": "claude-code",
-          "pageType": "entity"
-        }
-      ]
+      "focusTags": []
     },
     {
       "title": "Does anyone else find Claude's visible reasoning weirdly exhausting to read?",
@@ -216,13 +180,7 @@
       "time": "情緒：🤔",
       "sentiment": "",
       "body": "r/LocalLLaMA 週熱門貼文比較 Claude Code、OpenCode 與 Pi 三種 harness 搭配 DeepSeek V4 Flash 模型執行時的表現差異。",
-      "focusTags": [],
-      "sedimented": [
-        {
-          "id": "claude-code",
-          "pageType": "entity"
-        }
-      ]
+      "focusTags": []
     }
   ],
   "billing": [],
@@ -318,11 +276,6 @@
       "pageType": "entity"
     },
     {
-      "id": "claude-code",
-      "name": "Claude Code",
-      "pageType": "entity"
-    },
-    {
       "id": "fable-5",
       "name": "Claude Fable 5",
       "pageType": "entity"
@@ -333,16 +286,6 @@
       "pageType": "entity"
     },
     {
-      "id": "ai-agent-safety",
-      "name": "AI Agent 安全與可靠性",
-      "pageType": "topic"
-    },
-    {
-      "id": "anthropic-government-policy",
-      "name": "Anthropic 政府與軍事政策",
-      "pageType": "topic"
-    },
-    {
       "id": "community-tech-discussions",
       "name": "社群技術討論趨勢",
       "pageType": "topic"
@@ -350,11 +293,6 @@
     {
       "id": "community-tech-patterns",
       "name": "社群實戰模式庫",
-      "pageType": "topic"
-    },
-    {
-      "id": "competitor-landscape",
-      "name": "AI 編碼工具競品動態",
       "pageType": "topic"
     }
   ]
