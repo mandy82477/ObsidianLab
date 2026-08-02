@@ -3337,3 +3337,23 @@ Append-only 紀錄。每次 ingest、lint，以及**揭露缺陷或促成改動�
   - **非選材問題的流程斷點**：session/cache 跨帳號洩漏（#74066）兩度被標「轉知安全政策記者」，30 天內 [[topics/ai-agent-safety]] 查無記錄——轉知＝發出即忘、無人驗收。已登記 `docs/workaround-register.md`（複查日 2026-08-08，真解方向：轉知寫入 log 獨立欄位＋`/wiki-lint` 每週掃殘留）
   - 命中率已 append 至 `wiki/metrics.md`
 - 品質備註：無
+
+## 2026-08-02 Ingest（雲端排程執行）
+
+- 來源日報：[[news/2026-08-02]]（36 則，10/10 來源；GitHub Issues 15、Hacker News 13、dev.to 13、Google News 10、Reddit 7、Blogroll 4，Anthropic Status／Anthropic Blog／Claude API Release Notes／GitHub 皆 0；日報收錄 20/36，16 則未收錄條目經 `list_digest_omissions.py` 一併納入分類與派工）
+- 更新頁面：wiki/entities/claude-code.md（4 則已知問題新增、2 則互動數更新）、wiki/entities/pricing.md、wiki/topics/anthropic-business.md、wiki/topics/competitor-landscape.md、wiki/entities/andrej-karpathy.md、wiki/topics/community-tech-patterns.md、wiki/topics/community-tech-discussions.md
+- 新增頁面：無
+- 摘要：無官方新發布（official 來源全數 0 則），今日以 Claude Code GitHub Issues 高互動已知問題（訂閱升級失敗、Cowork 私有 marketplace、MCP OAuth Entra ID 驗證、主題/歡迎畫面請求）與 Morgan Stanley 領投 Anthropic 德州校園 150 億美元投資案為主軸；Karpathy 談 Claude Opus 3D 魔戒展示、Fable 5 促銷計費爭議、OpenCode vs Claude Code 下載量比較三則單一媒體來源條目均以「待查證/待核實」保守措辭收錄
+- 呈現品質：`entities/claude-code`／`entities/pricing`／`topics/anthropic-business`／`topics/competitor-landscape`／`entities/andrej-karpathy`／`topics/community-tech-patterns`／`topics/community-tech-discussions`：✅ 通過
+- 品質備註：
+  - 雲端 `wiki-reporter-*` 六個自訂 subagent_type 本次仍無法解析（Agent 工具可用清單未列出 wiki-reporter-models/features/commercial/safety-policy/community/people），六類全數以 general-purpose 內嵌規則降級執行，功能等同原生記者（模型、安全政策兩類今日經審核後判定「不收錄」，正確走完流程未強行湊數）
+  - 模型記者對 Reddit「Fable 唯一可用模型」單一偏好陳述（無週熱門標記、score=0、source_count=1、無任何量化數字）正確判斷不收錄，未寫入 model-comparison.md
+  - 安全政策記者對「Claude's Steganographic Request Marking」（SitePoint 單一媒體標題、無正文、機制性質未定）正確判斷三個負責頁面觸發條件皆不符，不記錄、不做待觀察註記
+  - 人物記者對 Karpathy／Claude Opus 3D 魔戒報導（Benzinga 單一二手轉述）以「（待核實：Benzinga 二手轉述）」標注收錄，未當作逐字引言
+  - 商業記者對 Reddit「Claude subs 划算」心得（score=0、無週熱門標記、source_count=1、原文截斷）正確判斷不足以獨立收錄
+  - **feature-radar.md 本輪未更新**：今日無新官方功能／新版本（最新版本仍為 v2.1.220，07-25），依規則「今日 ingest 無新功能且現有推薦均未超過 7 天，保持原內容不動」處理；但主編複核時發現 `## ⭐ 本週推薦` 三項（Opus 5／Fable 5 免費到期／Artifacts）自 07-25 起已連續 **8 天**未變動，已超過「防霸榜規則」7 天門檻，且全覽表另有多個 🔥🔥🔥🔥🔥＋✅ 候選（Sonnet 5、Fable 5 基礎條目、`/goal` 指令）熱度/試用價值排序上理論應優先於現有 ⚡ 項目——因涉及對整頁歷史與排序意圖的判斷、且今日新聞未提供任何實質依據佐證應如何取捨，本輪未自行執行輪替，已列入下方「📋 待使用者確認」
+
+## 📋 待使用者確認（2026-08-02 ingest）
+
+1. **feature-radar.md「⭐ 本週推薦」7 天防霸榜規則觸發但未執行**：現有 3 項（Opus 5、Fable 5 免費到期版、Claude Code Artifacts，皆 🔥🔥🔥🔥🔥／⚡）已連續掛榜 8 天（07-25→08-02）超過規則門檻；全覽表另有 Claude Sonnet 5、Claude Fable 5（基礎條目）、`/goal` 指令三項同為 🔥🔥🔥🔥🔥 但試用價值為 ✅（依規則同熱度 ✅ 優先於 ⚡，理論排序應更高）。是否要依機械排序規則整批替換，或現有 3 項因「較新/較當前」仍應優先於機械排序結果（可能代表規則本身需要補一條「新發布優先」條款）？請裁示後我再執行或修規則。
+2. **reader-notes.md 逾期提醒**：2026-07-12 一條 ⏳「GPT-5.6 vs Claude 第一手跑分比較」已逾 14 天（現為第 21 天，第三輪查證已空手轉被動觸發），距上次查證已過兩週，是否於下次 `/wiki-weekly-review` 再查一輪或繼續維持被動等待？
