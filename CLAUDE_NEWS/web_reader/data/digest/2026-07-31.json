@@ -284,16 +284,6 @@
       "id": "sonnet-5",
       "name": "Claude Sonnet 5",
       "pageType": "entity"
-    },
-    {
-      "id": "community-tech-discussions",
-      "name": "社群技術討論趨勢",
-      "pageType": "topic"
-    },
-    {
-      "id": "community-tech-patterns",
-      "name": "社群實戰模式庫",
-      "pageType": "topic"
     }
   ]
 }

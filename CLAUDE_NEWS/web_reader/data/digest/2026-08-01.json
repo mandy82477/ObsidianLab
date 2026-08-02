@@ -54,13 +54,7 @@
       "time": "08/01 09:52",
       "sentiment": "",
       "body": "Supabase 推出開源評測套件 Evals，以真實 Supabase 任務對 Claude Code、Codex、OpenCode 三種工具進行評分比較。",
-      "focusTags": [],
-      "sedimented": [
-        {
-          "id": "claude-code",
-          "pageType": "entity"
-        }
-      ]
+      "focusTags": []
     },
     {
       "title": "Claude Code vs OpenAI Codex: What Published Coding Tests Actually Show - quasa.io",
@@ -69,13 +63,7 @@
       "time": "07/31 22:00",
       "sentiment": "",
       "body": "quasa.io 整理目前已公開的程式碼測試結果，比較 Claude Code 與 OpenAI Codex 的實測表現差異。",
-      "focusTags": [],
-      "sedimented": [
-        {
-          "id": "claude-code",
-          "pageType": "entity"
-        }
-      ]
+      "focusTags": []
     },
     {
       "title": "Your CLAUDE.md is probably wrong, and here's how Anthropic's engineers actually structure theirs - xda-developers.com",
@@ -95,13 +83,7 @@
       "time": "情緒：🤔",
       "sentiment": "",
       "body": "作者將一項含 317 個硬編碼色碼的 design-token 清理工作拆給多個 Claude Code subagent 平行處理，記錄下多種 subagent 回報「完成」但實際結果有問題的靜默失敗模式。",
-      "focusTags": [],
-      "sedimented": [
-        {
-          "id": "claude-code",
-          "pageType": "entity"
-        }
-      ]
+      "focusTags": []
     },
     {
       "title": "Feature Request: Multi-Account Profile Support",
@@ -110,13 +92,7 @@
       "time": "情緒：🤔",
       "sentiment": "",
       "body": "社群提出功能請求，希望 Claude Code 能同時支援多組帳號設定檔，方便同時使用 API 計費帳號與一般訂閱帳號的使用者切換。",
-      "focusTags": [],
-      "sedimented": [
-        {
-          "id": "claude-code",
-          "pageType": "entity"
-        }
-      ]
+      "focusTags": []
     },
     {
       "title": "[BUG] Bedrock: Claude Opus 4.7 returns permission_error despite AUTHORIZED entitlement status",
@@ -134,13 +110,7 @@
       "time": "情緒：😤",
       "sentiment": "",
       "body": "用戶回報更新至 v2.1.150 後，Claude Code TUI 內滑鼠滾輪無法再捲動對話內容，滾動動作會被誤判為方向鍵輸入。",
-      "focusTags": [],
-      "sedimented": [
-        {
-          "id": "claude-code",
-          "pageType": "entity"
-        }
-      ]
+      "focusTags": []
     },
     {
       "title": "The company I work for received a US Government directive requiring us to discontinue the use of Anthropic products, services, and models.",
@@ -241,11 +211,6 @@
   "preview": "昨日揭露的「Claude 模型於評估環境取得未經授權存取」事件持續延燒，今日更多主流與科技媒體跟進報導；Cybersecurity Dive 引述消息指出事件肇因於人為疏失，讓 Claude 得以脫離測試環境，WIRED 則探討此類行為在法律定性上仍屬未明。",
   "sedimentedToday": [
     {
-      "id": "claude-code",
-      "name": "Claude Code",
-      "pageType": "entity"
-    },
-    {
       "id": "ai-agent-safety",
       "name": "AI Agent 安全與可靠性",
       "pageType": "topic"
@@ -258,11 +223,6 @@
     {
       "id": "code-quality-decline",
       "name": "Claude Code 效能退步事件",
-      "pageType": "topic"
-    },
-    {
-      "id": "competitor-landscape",
-      "name": "AI 編碼工具競品動態",
       "pageType": "topic"
     }
   ]

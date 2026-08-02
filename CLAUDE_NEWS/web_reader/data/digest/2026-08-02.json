@@ -1,0 +1,352 @@
+{
+  "date": "2026-08-02",
+  "generatedAt": "2026-08-02 13:09 UTC",
+  "articleCount": 36,
+  "sourceCount": "10/10",
+  "bulletin": "",
+  "topStories": [
+    {
+      "title": "Cockpit for your Claude Code agents in Rust",
+      "url": "https://episko.dev/",
+      "source": "Hacker News",
+      "time": "08/01 19:09",
+      "sentiment": "",
+      "body": "用 Rust 打造的 Claude Code agent 監控面板，作者提到同時開多個終端機視窗追蹤不同 session／專案是常見痛點，此工具聚合多個 agent 狀態於單一介面。",
+      "focusTags": [],
+      "sedimented": [
+        {
+          "id": "claude-code",
+          "pageType": "entity"
+        }
+      ]
+    },
+    {
+      "title": "Show HN: Wienerdog – memory and self-improving skills for Claude Code/Codex",
+      "url": "https://github.com/wienerdog-ai/wienerdog/",
+      "source": "Hacker News",
+      "time": "08/01 13:44",
+      "sentiment": "",
+      "body": "作者將自己為 Claude Code 與 Codex 搭建的記憶系統與自我改善技能／hooks 整理成套件，並開始自動化這套設定流程分享給他人。",
+      "focusTags": [],
+      "sedimented": [
+        {
+          "id": "claude-code",
+          "pageType": "entity"
+        }
+      ]
+    }
+  ],
+  "techUpdates": [],
+  "mediaReports": [
+    {
+      "title": "Morgan Stanley leads $15B bet on Anthropic's Texas campus",
+      "url": "https://news.google.com/rss/articles/CBMigAFBVV95cUxOT19meGRpQ0xGRDVEcGZtY0c2dFVvNDFUbHhzek1uWUQ3WHlXOWF3SkI3YjdNenV4WkFQMnNxZ2JSQzh2bTJLTS1XUlBuU0Z6SDdzVEVOMEVfVEFnYXlXWDBnRUJvenlOUk81M2hhTXM5VjBrTGNFUjVUM2lKdE5xRg?oc=5",
+      "source": "Google News / thestreet.com",
+      "time": "08/02 00:07",
+      "sentiment": "",
+      "body": "thestreet.com 報導 Morgan Stanley 領投一項規模達 150 億美元、投向 Anthropic 德州校園／資料中心的投資案。",
+      "focusTags": [
+        "[重大事件]"
+      ]
+    },
+    {
+      "title": "Anthropic Admits Its Own Bugs Broke Claude Code After Weeks of Denial",
+      "url": "https://news.google.com/rss/articles/CBMingFBVV95cUxOWUptNldRQnBmRVRNWmR6YlZBWDRLT2w2bm1FcU16Nk9sem1TdFNzU29ITDRIN0JNUVVWaG9DWDJaNFB3M2RDeUh3NzN3LXBzX0JqN2JVYVl6endQWlNOZkdVbnRZLUZ1U0t0dzROaHJZcEM1RHNrZndOLTloUmpoaG8tZkQwUUpUcEV2TDl6bGF0eUlMcl9LYzY2REsydw?oc=5",
+      "source": "Google News / Startup Fortune",
+      "time": "08/02 04:34",
+      "sentiment": "",
+      "body": "Startup Fortune 報導稱 Anthropic 已承認自身 bug 是先前 Claude Code 故障的原因；本篇為單一媒體來源，具體細節與時間線待其他管道佐證。",
+      "focusTags": [],
+      "sedimented": [
+        {
+          "id": "claude-code",
+          "pageType": "entity"
+        }
+      ]
+    },
+    {
+      "title": "Andrej Karpathy Says AI Has Moved Beyond Simple Prompts After Claude Opus Builds 3D Lord of the Rings World",
+      "url": "https://news.google.com/rss/articles/CBMi8gFBVV95cUxQRW1mWkVOOEZ5LThqQ0ZhOEs5N1FGeWtyNEZEUmVkempQc0dFSXpWbWIxM3hyUUIxS3g0Tkx1dWxpYko2MEhXRnFESUdQN2lueDFCNUNQMG1mQWdzZWpDbG54Q3ozZVJyREpYX0F4Tm5FTG9lZ2p2cDluempEWmlqLTNCWlpsSFFCMUl2WkhIVzV4WmhZS19rVjYzTTI3SjdDQksxeEZnd0d0dWJKVHVYSjhzckJNR29kdkVRcWFrNG54YWZBcEw3TjV0N2V3RmJxNjBhdVlFMmE4cS12bU5SQ2tyN0RodEZ0aHV0SmVXcXZtdw?oc=5",
+      "source": "Google News / Benzinga",
+      "time": "08/02 07:39",
+      "sentiment": "",
+      "body": "Benzinga 引述 Karpathy 說法，以 Claude Opus 建構 3D 魔戒場景為例，指出 AI 互動模式已跳脫單純提示詞問答。",
+      "focusTags": [
+        "[社群趨勢]"
+      ],
+      "sedimented": [
+        {
+          "id": "andrej-karpathy",
+          "pageType": "entity"
+        }
+      ]
+    },
+    {
+      "title": "Claude's Steganographic Request Marking: What Developers Need to Know",
+      "url": "https://news.google.com/rss/articles/CBMickFVX3lxTE5EdWpzczl3S0Rqc0JSejQ1c0lfMVg3cXoyLXNFMVJHa1c4dzlqMW5RcXpROF9YNEFVMWo1LW8zVms3NHRKeEJUVDJRWlhZOGkzZEhEVklRU2NuZ2dyRG5TZGFfZllrR0lEenoxRC0weVV2Zw?oc=5",
+      "source": "Google News / SitePoint",
+      "time": "08/01 19:42",
+      "sentiment": "",
+      "body": "SitePoint 一篇開發者導向文章，主題為 Claude 對請求進行隱寫式標記的機制與其對開發者的意義，細節待原文查證。",
+      "focusTags": []
+    },
+    {
+      "title": "OpenCode vs Claude Code: Free vs $20, 5.4x Downloads [2026]",
+      "url": "https://news.google.com/rss/articles/CBMiZEFVX3lxTFBjUHJZWDJhQmt2aDdtcjhpTTM3SVppcFNoM2NaNGZXeXhqLWgxWVI0ODZxTF9wM3BoTVRQaDRuY2xzQlRnajM5enk0LVFxbUszZ2R2anozVzhOWkstTUw0NWNIUmo?oc=5",
+      "source": "Google News / tech-insider.org",
+      "time": "08/01 14:53",
+      "sentiment": "",
+      "body": "tech-insider.org 比較開源 OpenCode 與付費 Claude Code 的下載量與定價差異，標題指出 OpenCode 下載量達 5.4 倍。",
+      "focusTags": [],
+      "sedimented": [
+        {
+          "id": "claude-code",
+          "pageType": "entity"
+        }
+      ]
+    }
+  ],
+  "discussions": [
+    {
+      "title": "[FEATURE] VS Code extension: add setting to disable auto-attach of open file / selection",
+      "url": "https://github.com/anthropics/claude-code/issues/24726",
+      "source": "GitHub Issues / claude-code",
+      "time": "08/02 02:29 UTC ·",
+      "sentiment": "😐",
+      "body": "使用者希望 VS Code 擴充功能提供選項，關閉自動附加當前開啟檔案／選取範圍的行為，該請求累積 197 個 👍 反應。",
+      "focusTags": []
+    },
+    {
+      "title": "[BUG] No response from API error when Advisor is triggered",
+      "url": "https://github.com/anthropics/claude-code/issues/69238",
+      "source": "GitHub Issues / claude-code",
+      "time": "08/01 17:29 UTC ·",
+      "sentiment": "😤",
+      "body": "回報者指出使用 Opus 4.8 觸發 Advisor 功能時，API 未回應也未產生錯誤訊息，該回報獲得 96 個 👍 反應。",
+      "focusTags": []
+    },
+    {
+      "title": "Automatic light/dark theme selection?",
+      "url": "https://github.com/anthropics/claude-code/issues/2990",
+      "source": "GitHub Issues / claude-code",
+      "time": "08/01 14:37 UTC ·",
+      "sentiment": "😐",
+      "body": "使用者要求 Claude Code 終端機主題能跟隨作業系統的明暗模式自動切換，而非每次手動調整，此請求獲得 242 個 👍 反應。",
+      "focusTags": [],
+      "sedimented": [
+        {
+          "id": "claude-code",
+          "pageType": "entity"
+        }
+      ]
+    },
+    {
+      "title": "[BUG] Cowork Can't add private GitHub marketplace",
+      "url": "https://github.com/anthropics/claude-code/issues/28125",
+      "source": "GitHub Issues / claude-code",
+      "time": "08/01 15:37 UTC ·",
+      "sentiment": "😤",
+      "body": "回報者指出 Cowork 功能無法加入私有 GitHub marketplace，該問題獲得 35 個 👍 反應。",
+      "focusTags": []
+    },
+    {
+      "title": "[BUG] MCP OAuth appends trailing slash to `resource` parameter, breaking Entra ID auth (AADSTS9010010)",
+      "url": "https://github.com/anthropics/claude-code/issues/52871",
+      "source": "GitHub Issues / claude-code",
+      "time": "08/01 16:45 UTC ·",
+      "sentiment": "😤",
+      "body": "回報者指出 MCP OAuth 流程會在 `resource` 參數後多加斜線，導致 Entra ID 驗證失敗並拋出 AADSTS9010010 錯誤，獲得 26 個 👍 反應。",
+      "focusTags": []
+    },
+    {
+      "title": "Disable the welcome banner",
+      "url": "https://github.com/anthropics/claude-code/issues/2254",
+      "source": "GitHub Issues / claude-code",
+      "time": "08/02 05:36 UTC ·",
+      "sentiment": "😐",
+      "body": "使用者要求提供關閉啟動歡迎畫面與提示的選項，認為其佔用終端機空間，該請求獲得 126 個 👍 反應。",
+      "focusTags": []
+    },
+    {
+      "title": "Ask HN: I still don't understand why AI agents need \"skills\"",
+      "url": "https://news.ycombinator.com/item?id=49139845",
+      "source": "Hacker News",
+      "time": "08/02 00:09 UTC ·",
+      "sentiment": "🤔",
+      "body": "發文者提問為何 Claude Code、Codex 等框架需要「skills」概念，而不是直接用結構化的 Markdown 文件搭配 AGENTS.md 索引即可達成類似效果。",
+      "focusTags": [],
+      "sedimented": [
+        {
+          "id": "claude-code",
+          "pageType": "entity"
+        }
+      ]
+    },
+    {
+      "title": "I stopped reviewing my own code. Here's what had to be true first.",
+      "url": "https://dev.to/isamu/i-stopped-reviewing-my-own-code-heres-what-had-to-be-true-first-4nh0",
+      "source": "dev.to / #claudecode",
+      "time": "08/01 06:38 UTC ·",
+      "sentiment": "😊",
+      "body": "作者分享同時平行執行多個 coding agent、產出的 diff 量已超過自己能逐行審閱的負荷後，如何把品質把關前移到更早階段，而非放棄審查。",
+      "focusTags": []
+    },
+    {
+      "title": "I built a Mac notch panel that answers Claude Code permission prompts. Blocking PreToolUse hook, fails open when the app is closed. Architecture notes",
+      "url": "https://www.reddit.com/r/ClaudeCode/comments/1vdfe7h/i_built_a_mac_notch_panel_that_answers_claude/",
+      "source": "Reddit / r/ClaudeCode",
+      "time": "08/02 11:14 UTC ·",
+      "sentiment": "😊",
+      "body": "作者實作了一個 Mac 瀏海面板，透過阻塞式 PreToolUse hook 攔截並回應 Claude Code 的權限確認提示，並設計為應用程式關閉時預設放行（fail open）。",
+      "focusTags": [],
+      "sedimented": [
+        {
+          "id": "claude-code",
+          "pageType": "entity"
+        }
+      ]
+    },
+    {
+      "title": "Show HN: Nuking the crap Claude left in the codebase – CCN",
+      "url": "https://github.com/jonhardwick-spec/ccn",
+      "source": "Hacker News",
+      "time": "08/02 04:31 UTC ·",
+      "sentiment": "😊",
+      "body": "作者打造一款只清除程式碼註解（不動其他內容）的工具，用來處理 AI 模型常在程式碼中留下大量註解的問題。",
+      "focusTags": []
+    },
+    {
+      "title": "Heavily nerfed limits or something else?",
+      "url": "https://www.reddit.com/r/ClaudeCode/comments/1vdfhlq/heavily_nerfed_limits_or_something_else/",
+      "source": "Reddit / r/ClaudeCode",
+      "time": "08/02 11:19 UTC ·",
+      "sentiment": "😤",
+      "body": "發文者在 r/ClaudeCode 提出疑問，懷疑使用額度是否被大幅調降；貼文為 Reddit RSS 抓取、無跨來源佐證，實際情況待查證。",
+      "focusTags": []
+    }
+  ],
+  "billing": [
+    {
+      "title": "That free $100 Fable 5 promotion changed how Claude charges you, and most people never noticed",
+      "url": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxPRFZtYTNxdUE1cGZndWRQb0xoNUFmVXVWVGlQUTZpRVh1Z24ybVV6Yi1haUUtVGkyYjRUb05HeVpkbUFNdjlLNkFYZ0lKUkxrNHZHakppaVY3SjNPMmJCaDRpSXNlS01TZnF1OTVyeHpyLUNYR3Z1YUNkbDFxcVRJOUU2UWlkeU9YMjU4RFpsaXhvWHo3RVpYQ0FiQm1tamlVSl9RQnZDVUM?oc=5",
+      "source": "Google News / XDA",
+      "time": "08/01 22:00",
+      "sentiment": "",
+      "body": "XDA 報導稱先前的 $100 Fable 5 免費體驗促銷，附帶改變了 Claude 計費方式的細節，且多數使用者並未留意到此變化；具體計費異動內容待原文查證。",
+      "focusTags": []
+    }
+  ],
+  "focus": [
+    {
+      "tag": "[重大事件]",
+      "text": "Morgan Stanley 領投 Anthropic 德州資料中心／校園計畫，規模達 150 億美元。",
+      "ref_urls": [
+        "https://news.google.com/rss/articles/CBMigAFBVV95cUxOT19meGRpQ0xGRDVEcGZtY0c2dFVvNDFUbHhzek1uWUQ3WHlXOWF3SkI3YjdNenV4WkFQMnNxZ2JSQzh2bTJLTS1XUlBuU0Z6SDdzVEVOMEVfVEFnYXlXWDBnRUJvenlOUk81M2hhTXM5VjBrTGNFUjVUM2lKdE5xRg?oc=5"
+      ]
+    },
+    {
+      "tag": "[持續追蹤]",
+      "text": "Claude Code Max 5x → 20x 訂閱升級持續失敗，回報者指出與此前三起未解問題（#10832、#50710、#43118）同源。",
+      "ref_urls": [
+        "https://github.com/anthropics/claude-code/issues/55266"
+      ]
+    },
+    {
+      "tag": "[社群趨勢]",
+      "text": "Andrej Karpathy 以 Claude Opus 建構 3D 魔戒場景為例，談 AI 互動已超越單純提示詞。",
+      "ref_urls": [
+        "https://news.google.com/rss/articles/CBMi8gFBVV95cUxQRW1mWkVOOEZ5LThqQ0ZhOEs5N1FGeWtyNEZEUmVkempQc0dFSXpWbWIxM3hyUUIxS3g0Tkx1dWxpYko2MEhXRnFESUdQN2lueDFCNUNQMG1mQWdzZWpDbG54Q3ozZVJyREpYX0F4Tm5FTG9lZ2p2cDluempEWmlqLTNCWlpsSFFCMUl2WkhIVzV4WmhZS19rVjYzTTI3SjdDQksxeEZnd0d0dWJKVHVYSjhzckJNR29kdkVRcWFrNG54YWZBcEw3TjV0N2V3RmJxNjBhdVlFMmE4cS12bU5SQ2tyN0RodEZ0aHV0SmVXcXZtdw?oc=5"
+      ]
+    }
+  ],
+  "sourceStatus": [
+    {
+      "name": "Anthropic Status",
+      "ok": true,
+      "count": 0
+    },
+    {
+      "name": "Hacker News",
+      "ok": true,
+      "count": 13
+    },
+    {
+      "name": "Anthropic Blog",
+      "ok": true,
+      "count": 0
+    },
+    {
+      "name": "dev.to",
+      "ok": true,
+      "count": 13
+    },
+    {
+      "name": "Google News",
+      "ok": true,
+      "count": 10
+    },
+    {
+      "name": "GitHub Issues",
+      "ok": true,
+      "count": 15
+    },
+    {
+      "name": "Claude API Release Notes",
+      "ok": true,
+      "count": 0
+    },
+    {
+      "name": "GitHub",
+      "ok": true,
+      "count": 0
+    },
+    {
+      "name": "Blogroll",
+      "ok": true,
+      "count": 4
+    },
+    {
+      "name": "Reddit",
+      "ok": true,
+      "count": 7
+    }
+  ],
+  "preview": "Morgan Stanley 領投 Anthropic 德州資料中心／校園計畫，規模達 150 億美元。",
+  "sedimentedToday": [
+    {
+      "id": "andrej-karpathy",
+      "name": "Andrej Karpathy",
+      "pageType": "entity"
+    },
+    {
+      "id": "claude-code",
+      "name": "Claude Code",
+      "pageType": "entity"
+    },
+    {
+      "id": "pricing",
+      "name": "Anthropic 訂閱方案與計費政策",
+      "pageType": "entity"
+    },
+    {
+      "id": "anthropic-business",
+      "name": "Anthropic 商業健康度",
+      "pageType": "topic"
+    },
+    {
+      "id": "community-tech-discussions",
+      "name": "社群技術討論趨勢",
+      "pageType": "topic"
+    },
+    {
+      "id": "community-tech-patterns",
+      "name": "社群實戰模式庫",
+      "pageType": "topic"
+    },
+    {
+      "id": "competitor-landscape",
+      "name": "AI 編碼工具競品動態",
+      "pageType": "topic"
+    }
+  ]
+}
