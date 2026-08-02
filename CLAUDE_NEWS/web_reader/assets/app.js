@@ -848,6 +848,15 @@
     return `${year}-W${String(week).padStart(2, '0')}`;
   }
 
+  function weeklyPrevWeekId(id) {
+    const m = /^(\d{4})-W(\d{2})$/.exec(id || '');
+    if (!m) return '';
+    let year = parseInt(m[1], 10);
+    let week = parseInt(m[2], 10) - 1;
+    if (week < 1) { week = 52; year -= 1; }
+    return `${year}-W${String(week).padStart(2, '0')}`;
+  }
+
   // 「本週數字」說明文字取第一個句號之前；無句號的長文字才硬截斷。
   function weeklyTruncateStat(desc) {
     const d = desc || '';
@@ -932,10 +941,39 @@
 
     if (s.nextweek) {
       const nextId = weeklyNextWeekId(w.id);
+      const prevId = weeklyPrevWeekId(w.id);
+      const recap = s.nextweek.recap || [];
       parts.push(`
   <div class="weekly-section">
     ${weeklySectionHeader('下週看什麼', 'next week')}${s.nextweek.intro ? `
-    <div class="weekly-nextweek__intro">${esc(s.nextweek.intro)}</div>` : ''}
+    <div class="weekly-nextweek__intro">${esc(s.nextweek.intro)}</div>` : ''}`);
+
+      // 回收（回頭看上一期）與新預告（往前看）必須一眼分得開——兩者同段並列時，
+      // 缺少方向標示會讓讀者無從判斷哪張表是哪個方向（2026-W31 實際回報的問題）。
+      if (recap.length) {
+        parts.push(`
+    <div class="weekly-ledger">
+      <div class="weekly-ledger__head">
+        <span class="weekly-ledger__dir">← 回頭對帳</span>
+        <span class="weekly-ledger__title">上一期（${esc(prevId)}）預告的結果</span>
+      </div>`);
+        recap.forEach(rc => {
+          parts.push(`
+      <div class="weekly-ledger__row">
+        <div class="weekly-ledger__forecast">${weeklyInlineText(rc.forecast)}</div>
+        <div class="weekly-ledger__result">${weeklyInlineText(rc.result)}</div>
+        <div class="weekly-ledger__criterion"><span class="weekly-bet__criterion-label">當時判準</span>${weeklyCriterionText(rc.criterion)}</div>
+      </div>`);
+        });
+        parts.push(`
+    </div>`);
+      }
+
+      parts.push(`
+    <div class="weekly-bets__head">
+      <span class="weekly-bets__dir">→ 往前下注</span>
+      <span class="weekly-bets__title">本期新立的預告 · 待 ${esc(nextId)} 回收</span>
+    </div>
     <div class="weekly-bets">`);
       (s.nextweek.forecasts || []).forEach(fc => {
         parts.push(`

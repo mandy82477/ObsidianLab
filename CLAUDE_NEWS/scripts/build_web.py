@@ -339,6 +339,9 @@ WEEKLY_H2_RE = re.compile(r'^##\s+(.+?)\s*$', re.MULTILINE)
 WEEKLY_H3_RE = re.compile(r'^###\s+(.+?)\s*$', re.MULTILINE)
 WEEKLY_FOOTER_RE = re.compile(r'\n-{3,}\s*\n+(\*\*素材涵蓋窗.*)\Z', re.DOTALL)
 WEEKLY_FORECAST_HEADER_RE = re.compile(r'^\|\s*類型\s*\|\s*預告\s*\|\s*判準\s*\|\s*$', re.MULTILINE)
+# 回收表（回頭看上一期預告的結果）——欄名與 forecasts 表刻意不同，兩張表才能在同段共存。
+# 欄名若改動，`.claude/commands/weekly.md` 第 (3) 段的欄位定義必須同步（見 review-registry sync_pair）。
+WEEKLY_RECAP_HEADER_RE = re.compile(r'^\|\s*上週預告\s*\|\s*判準\s*\|\s*本週結果\s*\|\s*$', re.MULTILINE)
 WEEKLY_STAT_RE = re.compile(r'^-\s*\*\*(.+?)\*\*\s*——\s*(.+)$', re.MULTILINE)
 
 
@@ -403,6 +406,46 @@ def _parse_weekly_forecasts(body: str) -> list[dict]:
     return forecasts
 
 
+def _parse_weekly_recap(body: str) -> list[dict]:
+    """解析『下週看什麼』段落內的**回收表**（上週預告/判準/本週結果），依表頭順序輸出。
+
+    與 _parse_weekly_forecasts 的差別是方向：回收表講「上一期預告的結果」（回頭看），
+    forecasts 表講「這一期新立的預告」（往前看）。兩張表同段並列時，若只解析後者，
+    回收表會被整張吃掉不進 JSON——2026-W31 首次出現回收表時即如此（網站看不到對帳，
+    且回收小標被 _parse_weekly_nextweek_intro 誤當引言印在新預告卡片上方）。
+    """
+    header_m = WEEKLY_RECAP_HEADER_RE.search(body)
+    if not header_m:
+        return []
+    rest = body[header_m.end():].splitlines()
+    recap: list[dict] = []
+    started = False
+    for line in rest:
+        ls = line.strip()
+        if not ls.startswith("|"):
+            if started:
+                break
+            continue
+        if re.match(r"^\|[-: |]+\|$", ls):
+            started = True
+            continue
+        if not started:
+            continue
+        cells = [c.strip() for c in ls.strip("|").split("|")]
+        if len(cells) < 3:
+            continue
+        cells = [_weekly_strip_bold(c) for c in cells]
+        result = cells[2]
+        mark_m = re.match(r"^([^\w\s一-鿿]+)\s*", result)
+        recap.append({
+            "forecast": cells[0],
+            "criterion": cells[1],
+            "result": result,
+            "mark": mark_m.group(1).strip() if mark_m else "",
+        })
+    return recap
+
+
 def _parse_weekly_stats(body: str) -> list[dict]:
     """解析『本週數字』段落內的 bullet（格式：- **數值**——說明）。"""
     return [
@@ -415,12 +458,16 @@ def _parse_weekly_nextweek_intro(body: str) -> str:
     """『下週看什麼』表格前的引言段（如「每條都立了判準，下週開欄先回收對錯。」）。
 
     取到第一個 `|` 開頭行之前的非空文字；無引言（表格緊接標題）時回傳空字串。
+    **跳過 `#` 開頭的子標題行**——段內子標題（如「### 先回收上週的六條」）是結構，不是引言；
+    2026-W31 曾因此把回收小標印在新預告卡片上方，讀者無從分辨哪張表是回頭看、哪張是往前看。
     """
     intro_lines: list[str] = []
     for line in body.splitlines():
         ls = line.strip()
         if ls.startswith("|"):
             break
+        if ls.startswith("#"):
+            continue
         if ls:
             intro_lines.append(_weekly_strip_bold(ls))
     return " ".join(intro_lines).strip()
@@ -509,11 +556,15 @@ def parse_weekly(f: Path) -> dict:
                 result["sections"]["discussion"] = disc
 
             elif kind == "nextweek":
-                nw = {"title": title, "body": body, "forecasts": [], "intro": ""}
+                nw = {"title": title, "body": body, "forecasts": [], "recap": [], "intro": ""}
                 try:
                     nw["forecasts"] = _parse_weekly_forecasts(body)
                 except Exception as e:
                     print(f"  [warn] weekly {f.name}: forecasts 表格解析失敗：{e}")
+                try:
+                    nw["recap"] = _parse_weekly_recap(body)
+                except Exception as e:
+                    print(f"  [warn] weekly {f.name}: recap 表格解析失敗：{e}")
                 try:
                     nw["intro"] = _parse_weekly_nextweek_intro(body)
                 except Exception as e:

@@ -930,6 +930,37 @@ code {
   font-family: var(--font-cjk); font-size: 15px; line-height: 1.7; color: var(--ink-2);
   margin: 0 0 16px;
 }
+/* 方向標示 — 同一段內「回頭對帳」與「往前下注」必須一眼分得開（W31 讀者回報：
+   兩張表長得一樣，看不出哪張是上期結果、哪張是本期新預告）。回收走安靜的左界線清單，
+   新預告維持 signature 卡片；方向詞用 mono 小字，不引入第二強調色。 */
+.weekly-ledger__head, .weekly-bets__head {
+  display: flex; align-items: baseline; gap: 10px; flex-wrap: wrap;
+  margin: 0 0 12px;
+}
+.weekly-ledger__dir, .weekly-bets__dir {
+  font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.06em;
+  border: 1px solid var(--border-2); border-radius: var(--radius-2);
+  padding: 2px 8px; color: var(--ink-3); flex-shrink: 0;
+}
+.weekly-bets__dir { color: var(--ochre-9); border-color: var(--ochre-7); }
+.weekly-ledger__title, .weekly-bets__title {
+  font-family: var(--font-cjk); font-size: 13px; color: var(--ink-2);
+}
+.weekly-ledger { margin: 0 0 26px; }
+.weekly-ledger__row {
+  border-left: 2px solid var(--border-2); padding: 0 0 0 14px; margin-bottom: 14px;
+}
+.weekly-ledger__row:last-child { margin-bottom: 0; }
+.weekly-ledger__forecast {
+  font-family: var(--font-cjk); font-size: 14px; line-height: 1.6; color: var(--ink-2);
+}
+.weekly-ledger__result {
+  font-family: var(--font-cjk); font-size: 15px; line-height: 1.65; color: var(--ink-1);
+  margin-top: 3px;
+}
+.weekly-ledger__criterion {
+  font-size: 12px; line-height: 1.6; color: var(--ink-4); margin-top: 5px;
+}
 .weekly-bets {
   display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px;
 }
