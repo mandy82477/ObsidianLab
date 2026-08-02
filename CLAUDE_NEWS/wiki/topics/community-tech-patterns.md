@@ -3,11 +3,11 @@
 **狀態：** monitoring
 **領域：** 🌐 社群
 **開始日期：** 2026-04-25
-**最後更新：** 2026-08-01
-**最後新聞更新：** 2026-07-31
+**最後更新：** 2026-08-02
+**最後新聞更新：** 2026-08-02
 
-> **最新工作流模式**（2026-07-31）
-> 社群本日新增數則第一手實作與踩坑記錄：subagent 平行任務「回報完成不代表真的完成」的靜默失敗模式踩坑（dev.to）、agent 失敗後自動復原機制、夜間 API 500 錯誤自動等待接續的排程工具、開源 Claude Cowork 替代品 Agenta，以及 Simon Willison 分享 Stateless MCP 設計啟發打造的 mcp-explorer／datasette-mcp 兩個小工具；多則來自低互動 Reddit 貼文，訊號強度較弱，依內容價值收錄。
+> **最新工作流模式**（2026-08-02）
+> 社群本日新增四則工具/實作記錄：Rust 打造的 Claude Code 多 agent 監控主控台 Cockpit（跨管道佐證）、把程式碼審查品質把關前移到更早階段的第一手心得（dev.to）、攔截並回應 Claude Code 權限提示的 Mac 瀏海面板（fail open 設計）、只清除 AI 遺留程式碼註解的清理工具 CCN（聲稱經 2,700 次迭代測試）；多則單一來源、訊號強度弱，依內容判斷收錄。
 
 ---
 
@@ -101,6 +101,36 @@ Claude Code 的三種多 agent 機制，可對應到 Anthropic《Building Effect
 ---
 
 ## 技術彙整
+
+### 2026-08
+
+#### Cockpit（episko.dev）：Rust 打造的 Claude Code 多 Agent 監控主控台（2026-08-02）
+
+- **核心模式：** 開發者以 Rust 打造 Cockpit，將多個 Claude Code agent／session／專案的執行狀態彙整於單一介面，取代開多個終端機視窗追蹤進度的做法
+- **與既有模式的關係：** 呼應本頁「Agent 規模化」類別中「可觀測性層開始補足『多 agent 進度難追蹤』的協調盲點」的既有關注（如 live-log-viewer-next），本篇以 Rust 實作提供另一個可觀測性主控台的具體實作案例
+- **來源：** 「Show HN: Cockpit for your Claude Code agents in Rust」— Hacker News（score 11，source_count=2，跨管道佐證達對照表中門檻「其他」欄）
+- **成熟度：** ⏳ 新興（今日首見，單一開發者工具，尚待社群採用回饋）
+
+#### 把品質把關前移到更早階段：多個平行 coding agent 產出的 diff 量超過個人逐行審查負荷後的因應（2026-08-02）
+
+- **核心模式：** 作者同時平行執行多個 coding agent 後，產出 diff 量已超過自己能逐行審閱的負荷；並非放棄審查，而是把品質把關前移到更早階段（如更嚴謹的任務拆解與驗收條件設計），讓下游少了逐行複核的必要性
+- **與既有模式的關係：** 補充本頁「多代理 PR Review」類別在「審查負荷過載」面向的因應之道——既有記錄多聚焦「審查者角色如何設計」（4-agent Code Review、對抗性審查），本篇聚焦「審查者本人放棄逐行審查後，品質把關該往流程哪一端移動」，是對審查瓶頸的上游解法
+- **來源：** 「I stopped reviewing my own code. Here's what had to be true first.」— dev.to / isamu（依 dev.to 內容判斷原則收錄：第一手工作流實作經驗，非行銷/SEO 稿；3 讚不作為判斷依據）
+- **成熟度：** ⏳ 新興（單一作者第一手實作記錄，具體「前移」機制細節待查證原文）
+
+#### Mac 瀏海面板攔截並回應 Claude Code 權限確認提示，關閉時預設放行（fail open）（2026-08-02）
+
+- **核心模式：** 作者打造 Mac 瀏海（notch）面板應用，透過阻塞式 PreToolUse hook 攔截 Claude Code 的權限確認提示並可於面板直接回應，設計上當該應用程式關閉時預設放行（fail open）而非卡住等待
+- **與既有模式的關係：** 補充本頁「Hooks 與自動化」類別在「使用者互動介面層」面向的新實作——既有記錄多聚焦 hooks 的稽核／強制執行／環境感知副作用，本篇聚焦「把阻塞式權限確認提示搬到系統層 UI（瀏海面板）」這個互動層設計，並附上「fail open」的失效模式設計考量
+- **來源：** 「I built a Mac notch panel that answers Claude Code permission prompts. Blocking PreToolUse hook, fails open when the app is closed. Architecture notes」— Reddit r/ClaudeCode（0 留言，無「週熱門」標記，score 不可信；單一貼文，尚無跨平台佐證，但屬具體技術實作與架構筆記分享而非泛泛抱怨，依內容判斷收錄）
+- **成熟度：** ⏳ 新興（單一開發者工具，fail open 設計的實際安全邊界尚待社群驗證）
+
+#### CCN：只清除程式碼中 AI 遺留註解、不動其他內容的清理工具（2026-08-02）
+
+- **核心模式：** 針對 AI 模型常在程式碼留下大量註解、佔用 context 的問題，作者打造 CCN，只清除程式碼中的註解，不變動其他任何內容；作者聲稱經過 2,700 次迭代測試
+- **與既有模式的關係：** 補充本頁「Token / 成本優化」類別既有「HTML→Markdown 降 80% token」「Token Bloat 對策」等做法在「程式碼本體」面向的新實作——既有做法多聚焦工具輸出/文件層級的 token 精簡，本篇聚焦「AI 留下的程式碼註解本身」這個較少被關注的 context 膨脹來源
+- **來源：** 「Show HN: Nuking the crap Claude left in the codebase – CCN」— Hacker News（score 2，source_count=1；訊號強度弱，但具體清理機制與 2,700 次迭代測試的量化聲稱有具體技術實質，依內容判斷收錄）
+- **成熟度：** ⏳ 新興（今日首見，單一開發者工具，2,700 次迭代測試聲稱未經第三方驗證）
 
 ### 2026-07
 
