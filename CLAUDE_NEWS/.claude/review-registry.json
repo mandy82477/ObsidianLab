@@ -565,6 +565,19 @@
       ],
       "max": 0,
       "_note": "2026-08-01 加入。舊 log 措辭對應「測試失敗一律跳過 build」的舊規則，留著會讓 agent 抄回舊行為。"
+    },
+    {
+      "name": "wiki/index.md 為純路由表：異動日誌區塊不得再長回來（2026-08-02 瘦身：83% 是 log.md 的重複副本，路由成本 42k→8k）",
+      "assertion": "max_count",
+      "files": ["wiki/index.md"],
+      "patterns": ["## 近期異動"],
+      "max": 0
+    },
+    {
+      "name": "wiki/CLAUDE.md 查詢分流四路徑齊全（index 瘦身後的配套：專有名詞 grep／概念走 index／結構性盤點 grep 標頭／近況走 log 或日報）",
+      "assertion": "all_contain",
+      "files": ["wiki/CLAUDE.md"],
+      "patterns": ["搜尋策略（查詢分流）", "直接 Grep", "目錄表挑頁", "Grep 頁面標頭欄位", "不可整讀"]
     }
   ],
   "coupling_hints": {

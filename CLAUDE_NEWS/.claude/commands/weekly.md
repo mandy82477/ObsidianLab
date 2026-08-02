@@ -27,7 +27,7 @@ argument-hint: [YYYY-Wnn]
 
 ### 2. 蒐集素材
 
-固定涵蓋窗：**近 7 日** `news/*.md`（唯讀，不可修改）＋ `wiki/log.md` 同期 ingest 紀錄＋ `wiki/index.md` 近期異動＋ `wiki/feature-radar.md`。
+固定涵蓋窗：**近 7 日** `news/*.md`（唯讀，不可修改）＋ `wiki/log.md` 同期 ingest 紀錄＋ `wiki/feature-radar.md`。
 
 ### 3. 檢查已深挖題目清單（防重複）
 
