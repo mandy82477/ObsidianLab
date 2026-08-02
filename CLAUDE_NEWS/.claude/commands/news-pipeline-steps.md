@@ -244,6 +244,16 @@ grep -c "^| .* | [✅❌] | [0-9]" news/TARGET_DATE.md
 - 結果記入本 Step 回報（「忠實度自檢：抽 N 條，改寫 M 條」）；**M ≥ 3 視為摘要品質異常**，除改寫外須在回報中標 ⚠️ 供使用者判斷是否深查
 - 判斷原則：這是「忠實」檢查不是「精彩」檢查——語氣、取捨、詳略不管，只管事實有沒有依據
 
+3d. **週報未結案預告偵測（機械，非 LLM）`[加入: 2026-08-02]`**：用 Bash 執行
+
+```
+PYTHON REPO_ROOT\scripts\scan_open_forecasts.py TARGET_DATE
+```
+
+- 讀 `weekly/` 最新一期的未結案預告，取其判準結尾的「｜查證：關鍵字」對今日日報做字串比對，命中則 append 至 `weekly/open-signals.jsonl`，供下期 `/weekly` 回收時取用（免去憑記憶重讀七天日報）
+- **純字串比對，不做判斷、不改日報**；命中與否都不影響本日產出，失敗只記錄不阻斷 pipeline
+- ⚠️ **此步驟必須留在選材與寫入之後**：若讓選材階段知道週報正在賭什麼，會產生確認偏誤——選材傾向撿能證實預告的條目，命中率虛高，並連帶破壞每月聚焦校準的獨立性（校準量測的正是選材品質，兩者不得互相知情）。規格見 `.claude/commands/weekly.md` 第 (3) 段
+
 4. 用 Bash git 暫存並 commit（**先不 push**，本次所有變更於 Step 5 統一推送，避免多次 push 觸發 Pages 部署並發競爭）：
 ```
 git -C REPO_ROOT add news/TARGET_DATE.md

@@ -15,8 +15,9 @@ run_tests.py — 執行 src/tests/ 下所有確定性單元測試（unittest dis
 測試失敗時視同 Step 4 失敗，跳過 web build 與 web commit。
 
 跑完 unittest 全數通過後，另外執行 scripts/check_rules.py（.claude/commands、
-.claude/rules 的規則一致性機械檢查）與 scripts/check_arch_docs.py（架構文件
-來源清單/日期/charset/CSS token 漂移檢查）；任一失敗都會讓本腳本整體 exit 1。
+.claude/rules 的規則一致性機械檢查）、scripts/check_arch_docs.py（架構文件
+來源清單/日期/charset/CSS token 漂移檢查）與 scripts/check_weekly_ledger.py
+（週報預告帳本：漏收/判準遭改寫/殭屍條目/跳期）；任一失敗都會讓本腳本整體 exit 1。
 """
 import io
 import subprocess
@@ -28,6 +29,7 @@ REPO_ROOT = Path(__file__).resolve().parent.parent
 SRC_DIR = REPO_ROOT / "src"
 CHECK_RULES = REPO_ROOT / "scripts" / "check_rules.py"
 CHECK_ARCH_DOCS = REPO_ROOT / "scripts" / "check_arch_docs.py"
+CHECK_WEEKLY_LEDGER = REPO_ROOT / "scripts" / "check_weekly_ledger.py"
 
 
 def main() -> int:
@@ -85,7 +87,21 @@ def main() -> int:
         stream.write(f"\nWARN: {CHECK_ARCH_DOCS} 不存在，跳過架構文件漂移檢查\n")
     stream.flush()
 
-    return 0 if (unit_ok and rules_ok and arch_docs_ok) else 1
+    # 週報預告帳本一致性（漏收 / 判準遭改寫 / 殭屍條目 / 跳期 / 條數與查證線索）
+    weekly_ledger_ok = True
+    if CHECK_WEEKLY_LEDGER.exists():
+        proc = subprocess.run(
+            [sys.executable, str(CHECK_WEEKLY_LEDGER)], capture_output=True, text=True, encoding="utf-8"
+        )
+        stream.write("\n" + proc.stdout + "\n")
+        if proc.stderr:
+            stream.write(proc.stderr + "\n")
+        weekly_ledger_ok = proc.returncode == 0
+    else:
+        stream.write(f"\nWARN: {CHECK_WEEKLY_LEDGER} 不存在，跳過週報帳本檢查\n")
+    stream.flush()
+
+    return 0 if (unit_ok and rules_ok and arch_docs_ok and weekly_ledger_ok) else 1
 
 
 if __name__ == "__main__":

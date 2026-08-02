@@ -512,7 +512,9 @@
       "assertion": "all_contain",
       "files": [
         ".claude/commands/weekly.md",
-        "scripts/build_web.py"
+        "scripts/build_web.py",
+        "scripts/check_weekly_ledger.py",
+        "scripts/scan_open_forecasts.py"
       ],
       "patterns": [
         "上週預告",
@@ -522,6 +524,20 @@
         "判準"
       ],
       "_note": "2026-08-02 加入。W31 首次出現回收表時，build_web.py 只認得 forecasts 表頭，回收表被整張吃掉——網站上看不到對帳，且回收小標被誤當引言印在新預告卡片上方，讀者無從分辨兩張表的方向。"
+    },
+    {
+      "name": "週報預告偵測的反確認偏誤護欄：weekly.md 與 news-pipeline-steps.md 都必須明載掃描在選材之後、且只偵測不判定",
+      "assertion": "all_contain",
+      "files": [
+        ".claude/commands/weekly.md",
+        ".claude/commands/news-pipeline-steps.md"
+      ],
+      "patterns": [
+        "open-signals\\.jsonl",
+        "確認偏誤",
+        "選材"
+      ],
+      "_note": "2026-08-02 加入。若哪天把掃描前移到選材階段，日報會傾向撿能證實週報預告的條目——命中率虛高，且每月聚焦校準（量測的正是選材品質）失去獨立性。這條護欄是設計意圖，不是實作細節，兩份文件都要留住。"
     },
     {
       "name": "今日聚焦選材門檻三條在 news-pipeline-steps.md 內同時存在於「判斷用」與「檔尾附錄」兩份（校準加新門檻時只改一份 → LLM 照抄的那份會失步）",
