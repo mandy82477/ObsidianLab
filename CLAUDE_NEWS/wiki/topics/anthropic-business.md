@@ -3,14 +3,11 @@
 **狀態：** ongoing
 **領域：** 💼 商業
 **開始日期：** 2026-05-28
-**最後更新：** 2026-07-29
-**最後新聞更新：** 2026-07-29
+**最後更新：** 2026-08-02
+**最後新聞更新：** 2026-08-02
 
-> **最新動態**（2026-07-29）
-> - **Oxide 加入 Project Glasswing**：Oxide 官方部落格宣布加入 Anthropic 主導的軟體供應鏈安全合作計畫 Project Glasswing（詳見「戰略合作」表新增列）。
-> - **Meta 運算力租賃，媒體再次報導、無新增事實**：Yahoo Finance（07-29）重申 Meta 與 Anthropic 早期洽談租用約 100 億美元運算力一事，金額與洽談階段皆與 07-17 已記錄事實一致，未見新增條款或進展，仍屬早期洽談、非定案。
-> - **待查證（僅標題可用）**：Axios〈Anthropic's lonely island〉、WSJ〈A Backlash Against Anthropic Is Brewing in Silicon Valley〉兩篇分析文章今日出現，具體論點未展開，不可推測內容，列入時序追蹤後續是否有跟進報導補充細節。
-> - 07-28 已記錄之 Cognizant 全球首要夥伴升級、SK 集團晶片供應洽談訊號仍為近期重點。
+> **最新動態**（2026-08-02）
+> **Morgan Stanley 領投 150 億美元 Anthropic 德州資料中心校園投資案**：thestreet.com 報導 Morgan Stanley 領投一項規模達 150 億美元、投向 Anthropic 德州校園/資料中心的投資案，延續近期 TeraWulf（07-06，$19B 20 年租約）、Meta（07-17/18，潛在 $100 億美元運算力租賃洽談）等基礎設施擴張系列信號（詳見「戰略合作」表新增列）；具體投資結構（股權/債權比例）、參與方細節、校園規模與時程未見報導，僅標題層級資訊，待後續補充。
 
 ---
 
@@ -127,6 +124,7 @@ Simon Willison（知名開發者博主）發表文章，認為 Anthropic 與 Ope
 
 | 合作方 | 類型 | 日期 | 意義 |
 |--------|------|------|------|
+| Morgan Stanley | 基礎設施擴張（$150 億美元，領投）| 2026-08-02 | thestreet.com 報導 Morgan Stanley 領投一項規模達 150 億美元、投向 Anthropic 德州校園/資料中心的投資案。**對商業的意涵**：延續近期 TeraWulf（07-06，$19B 20 年租約）、Meta（07-17/18，潛在 $100 億美元運算力租賃洽談）、澳洲資料中心採購（07-05，1.4GW）等算力/基礎設施擴張系列信號，Morgan Stanley 是又一起金融機構領投 Anthropic 實體資料中心建設的具名案例，顯示 Anthropic 算力自建佈局持續吸引大型金融機構參與融資（推論）；具體投資結構（股權/債權比例）、參與方細節、德州校園規模與時程未見報導，僅標題層級資訊，待後續補充（Google News/thestreet.com）|
 | Oxide | SDK 夥伴（供應鏈安全）| 2026-07-29 | Oxide 官方部落格（Hacker News，score 16，source_count=2）宣布加入 Anthropic 主導的 Project Glasswing——一項致力於保護全球關鍵軟體安全的合作計畫；Oxide 同時將 Claude Mythos 5 應用於自家程式碼庫的漏洞掃描（模型能力面詳見模型記者對應頁面）。**對商業的意涵**：延續近期 Okta（06-30，XAA/MCP/Glasswing 安全框架合作）、TCS（06-11，取得 Mythos Preview／Project Glasswing 存取）等既有 Glasswing 生態參與者，Oxide 是又一具名加入此安全合作計畫的科技公司，顯示 Glasswing 夥伴圈持續擴張（推論）；具體合作範疇、商業條款未見細節，僅部落格公告層級資訊（Oxide 官方部落格 https://oxide.computer/blog/oxide-anthropic-project-glasswing；Hacker News）|
 | Surf AI | SDK 夥伴（資安/合規整合） | 2026-07-28 | Yahoo Finance 報導 Surf AI 宣布整合 Claude 的 Compliance API，將其「暴露削減」（exposure reduction）業務擴展至 AI 模型連接性領域。**注意**：屬 Surf AI 自身業務公告性質（企業新聞稿），非 Anthropic 官方主導事件，延續近期 Cyberhaven（07-23）、Orca Security（07-21）、Tenable（06-29）等資安廠商整合 Claude Compliance API 的既有生態擴張模式（推論）；具體規模、商業條款未見細節，僅標題層級資訊（Google News/Yahoo Finance）|
 | Cognizant | 企業客戶（Global Premier Partner）| 2026-07-28 | Anthropic Blog 宣布雙方擴大既有合作：Cognizant 將 Claude 用於自身建置並為客戶運行的系統，橫跨製造業、生命科學、保險等產業，並將 Claude 嵌入自身商業與工程平台、打造「Claude 認證」（Frontier Certified）人才梯隊，同步升級為 Claude Partner Network 的全球首要夥伴（Global Premier Partner）。**對商業的意涵**：延續近期 TCS（06-11，5 萬員工部署 + Global Premier Partnership）、DXC（06-12，多年全球聯盟，數萬名認證工程師）等大型 IT 服務商全面深化合作的既有模式，Cognizant 是又一起頂尖 IT 服務商將 Claude 嵌入自身平台並打造認證人才梯隊的具名案例（推論）；具體合約規模、財務條款未見細節，僅官方公告層級資訊（Anthropic Blog https://www.anthropic.com/news/cognizant-anthropic；Google News/Seeking Alpha 同日報導同一事件，未見新增細節）|
@@ -201,6 +199,11 @@ Simon Willison（知名開發者博主）發表文章，認為 Anthropic 與 Ope
 - [[news/2026-05-13]]（The Information：定價強勢期）
 
 ## 時序
+
+### 2026-08
+
+#### 2026-08-02
+- **[戰略合作，基礎設施擴張，新增] Morgan Stanley 領投 150 億美元 Anthropic 德州資料中心校園投資案**：詳見「戰略合作」表新增列（Google News/thestreet.com）
 
 ### 2026-07
 

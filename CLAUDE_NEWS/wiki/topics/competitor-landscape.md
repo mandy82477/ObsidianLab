@@ -3,12 +3,12 @@
 **狀態：** monitoring
 **領域：** 💼 商業
 **開始日期：** 2026-04
-**最後更新：** 2026-08-01
-**最後新聞更新：** 2026-08-01
+**最後更新：** 2026-08-02
+**最後新聞更新：** 2026-08-02
 
-> **最新競品動態**（2026-08-01）
-> Supabase 推出開源評測套件 Evals、quasa.io 發表 Claude Code vs Codex 公開測試彙整文，均為標題層級、無具體分數；已收攏進「OpenAI Codex CLI」子區塊新增小節「Claude Code vs Codex 頭對頭比較彙整」（累積 6 篇，共識尚未收斂）。
-> 07-30 OpenAI 官方發布「Advancing the price-performance frontier with GPT-5.6」，宣布大幅調降 GPT-5.6 價格（經 Simon Willison 摘要轉述「huge price drop」，我方抓取資料無具體折扣數字）；07-29 The Information「Claude Code 採用黏著度仍領先」、07-28 Moonshot AI 開源 Kimi-K3 權重、Nvidia/Microsoft 開放 AI 安全聯盟不含 Anthropic 等事件仍為近期重大訊號。
+> **最新競品動態**（2026-08-02）
+> tech-insider.org（source_count=2）發表 OpenCode vs Claude Code 比較文，稱 OpenCode 下載量達 Claude Code 的 **5.4 倍**（標題並列 Free vs $20 定價落差）；統計方法與時間範圍未見細節，待查證，詳見「競品定價對照」表新增列與「OpenCode」子區塊。
+> 08-01 已記錄之 Supabase Evals 開源評測套件、quasa.io Claude Code vs Codex 比較彙整文（累積 6 篇，共識尚未收斂）、07-30 OpenAI GPT-5.6 大幅降價公告等近期重點仍具參考價值，詳見下方時序。
 
 ---
 
@@ -34,6 +34,7 @@ Claude Code 已成為 AI 輔助編碼的標竿產品，但競爭正快速升溫�
 
 | 工具/模型 | 定價 | vs Claude 定位 | 來源日期 |
 |---------|------|--------------|---------|
+| OpenCode | 免費（開源）| tech-insider.org（source_count=2）稱其下載量達 Claude Code 的 **5.4 倍**，標題以「Free vs $20」凸顯定價落差對開發者選擇的影響；具體統計方法、時間範圍未見細節，需與既有 157,000 名開發者轉向（The New Stack，05-18）數據並列解讀，不可逕自加總或取代，待查證 | 2026-08-01（Google News/tech-insider.org）|
 | Antigravity | 待查證（tech-insider.org 比較文僅稱方案範圍涵蓋「免費至 $200」，未逐一指明各工具個別對應價格）| 本頁首次出現的競品名稱；與 Cursor、Claude Code 並列比較，資訊量過少，無法判斷其產品定位或市佔，待後續報導補充 | 2026-07-23（Google News/tech-insider.org）|
 | Cline | 免費（Free）| 開源 VS Code 擴充套件，tech-insider.org 比較文將其定位為 Claude Code（$20/月）與 GitHub Copilot（$10/月，方案版本未指明）之間的免費替代方案；僅標題層級比較，未提供各工具用量限制、功能差異等具體核實內容，**待查證** | 2026-07-22（Google News/tech-insider.org）|
 | pi-coding-agent | 未見具體掛牌價，僅稱「約為 Claude Code / Codex 之半」（DataBricks 評測，Reddit r/LocalLLaMA 轉述，單一來源未經官方交叉確認，**2026-07-10 指控，至今無後續**）| 若屬實代表低成本編碼 agent 持續逼近 Claude Code；GLM-5.2（Zhipu/Zai，753B 總參數/40B active）：Artificial Analysis Intelligence Index v4.1 外部佐證為開源模型榜首，FrontierSWE 74.4 vs Opus 4.8 75.1（僅差 0.7）、Terminal-Bench 2.1 81.0、SWE-bench Pro 62.1（**非日報進料**，來自使用者 2026-07-17 手動查證，詳見 [[log]] 2026-07-17「地端 AI server 商業評估」Query 條目；單一外部來源，非 Anthropic 官方數字，**2026-07-17 指控，至今無後續**）| 2026-07-10（Reddit，pi-coding-agent 部分）／2026-07-17（GLM-5.2 部分，使用者查證）|
@@ -95,6 +96,7 @@ Claude Code 已成為 AI 輔助編碼的標竿產品，但競爭正快速升溫�
 - **規模**：157,000 名開發者轉向（The New Stack，2026-05-12）
 - **定位**：開源替代 Claude Code；XDA 評測認為功能與體驗相當
 - **插件**：`OpenCode-power-pack` 已移植 Anthropic 官方 11 個 skills
+- **下載量比較（2026-08-01，待查證）**：tech-insider.org（source_count=2）稱 OpenCode 下載量達 Claude Code 的 **5.4 倍**，凸顯開源免費 vs 訂閱付費（$20/月）模式的採用落差；具體統計來源、時間範圍、下載量定義（累計/月活）未見報導細節，暫不覆寫上方「157,000 名開發者轉向」（05-18 數據），僅並列記錄待後續核實（Google News/tech-insider.org）
 
 ### Microsoft 自研模型 🔴（傳聞，2026-07-07）
 - **狀態**：傳聞階段（SiliconANGLE、Bloomberg 兩獨立來源 2026-07-07 同步報導，未經 Microsoft/Anthropic 官方證實）
@@ -227,6 +229,9 @@ Claude Code 已成為 AI 輔助編碼的標竿產品，但競爭正快速升溫�
 #### 近期單日動態彙整（2026-07-02 至 2026-07-26）
 
 > 逐日條目按主題可另見上方「主要競品追蹤」對應廠商子區塊；此區塊保留完整時序供追溯查證。
+
+### 2026-08-02
+- **[競品下載量比較，標題層級，待查證] tech-insider.org：OpenCode vs Claude Code 下載量與定價比較（Free vs $20，稱 OpenCode 下載量達 5.4 倍）**：詳見「競品定價對照」表新增列與「主要競品追蹤」OpenCode 子區塊（Google News/tech-insider.org，source_count=2）
 
 ### 2026-08-01
 - **[新評測工具，標題層級，待查證：無具體分數，僅知有此比較/評測工具發布] Supabase 推出開源評測套件 Evals，以真實 Supabase 任務對 Claude Code、Codex、OpenCode 評分比較**：MarkTechPost 報導 Supabase 推出開源基準測試套件 Evals，以真實 Supabase 任務對三款編碼 agent 工具（Claude Code、OpenAI Codex、OpenCode）進行評分比較。**注意**：標題僅說明有此開源評測工具推出，未附具體分數、排名或方法論細節（待查證：無具體分數，僅知有此比較/評測工具發布）。**對競爭格局的意涵**：本次評測方為第三方基礎設施服務商（Supabase）主導並開源方法論，而非單純評論文章，具備後續產出量化數據的潛力（推論）；累積脈絡見上方「OpenAI Codex CLI」子區塊新增「Claude Code vs Codex 頭對頭比較彙整」小節（Google News/MarkTechPost）
