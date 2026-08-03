@@ -110,3 +110,4 @@
 [週日 2026/08/02 13:29:29.00] Step 5 Single push done (news + wiki + web + confirm-cache + STARTED heartbeat) - 首次嘗試即成功，無需重試 (4f5b632..ddfbf56)
 [週日 2026/08/02 13:29:29.00] === Pipeline complete (agent) ===
 [cloud daily-news-pipeline-cloud STARTED 2026-08-03T13:07:49Z]
+[cloud daily-news-pipeline-cloud ABORTED 2026-08-03T13:08:29Z] ABORTED: gathered_items.json date=2026-08-02 items=36，非目標日期(2026-08-03)的新鮮資料 - GitHub Actions daily-gather 尚未產出今日資料
