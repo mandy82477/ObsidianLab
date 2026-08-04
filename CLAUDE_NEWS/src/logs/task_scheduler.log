@@ -114,3 +114,15 @@
 [2026-08-03 15:02 UTC] index-ban-check: SKIP（日更未跑，daily-news-pipeline-cloud 於 Step 1b 新鮮度檢查即 ABORTED，未到達 Step 2 Wiki Ingest，wiki/index.md 今日無 ingest commit，無法判定是否守規）
 [週一 2026/08/03 23:11:10.00] Watchdog push SENT - 每日新聞 2026-08-03 缺件：日報。本機跑 /news-pipeline 2026-08-03 補（另有近 7 天 1 個舊缺口）
 [cloud daily-news-pipeline-cloud STARTED 2026-08-04T13:04:32Z]
+[週二 2026/08/04 13:32:08.00] === Agent pipeline start (2026-08-04) ===
+[週二 2026/08/04 13:32:08.00] Step 0 昨日缺跑檢查：⚠️ 昨日（2026-08-03）日報缺失（GitHub Actions 抓料延遲導致 08-03 雲端 routine 於新鮮度檢查 ABORTED，已由 watchdog 通知本機補跑，尚未補；不影響今日繼續執行）
+[週二 2026/08/04 13:32:08.00] Step 0b 冪等閘：OK（news/2026-08-04.md 不存在，正常繼續）
+[週二 2026/08/04 13:32:08.00] Step 1a 新聞抓取：SKIPPED（雲端環境，GitHub Actions daily-gather 已完成，65 則項目）
+[週二 2026/08/04 13:32:08.00] 原料健康檢查：來源 10/10 正常，條數 65 - 正常生成
+[週二 2026/08/04 13:32:08.00] Aggregator OK（日報 news/2026-08-04.md 生成，格式自檢 3a=30/3b=10［LC_ALL=C.utf8 復現，POSIX locale 下 bracket 比對 emoji 誤報 0 之既有環境問題，非內容問題］，摘要忠實度自檢抽 10 條改寫 0 條）
+[週二 2026/08/04 13:32:08.00] Step 1c 確認 emitted-cache：OK（65 則確認，已 commit）
+[週二 2026/08/04 13:32:08.00] Wiki ingest OK（五類記者完成：功能/商業/安全政策/社群/人物，模型今日無條目未派工；雲端 wiki-reporter-* 六個自訂 subagent_type 本次仍無法解析，全數降級為 general-purpose 內嵌規則執行，功能等同，已於 wiki/log.md 標注）
+[週二 2026/08/04 13:32:08.00] Step 4 web build gate：測試全綠 - web build 放行
+[週二 2026/08/04 13:32:08.00] Building web reader... OK（31 entities, 20 topics, 99 digests, 2 weekly reports + radar；既有斷鏈 wikilink 警告 8 則與本次改動無關，未新增）
+[週二 2026/08/04 13:32:08.00] Step 5 Single push done (news + wiki + web + confirm-cache + STARTED heartbeat) - 首次嘗試即成功，無需重試 (0152bd9..80862c1)
+[週二 2026/08/04 13:32:08.00] === Pipeline complete (agent) ===
