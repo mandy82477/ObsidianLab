@@ -493,6 +493,11 @@
       "pageType": "topic"
     },
     {
+      "id": "community-tech-tools",
+      "name": "社群工具目錄",
+      "pageType": "topic"
+    },
+    {
       "id": "competitor-landscape",
       "name": "AI 編碼工具競品動態",
       "pageType": "topic"
