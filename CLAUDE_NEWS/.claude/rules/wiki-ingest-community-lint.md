@@ -72,6 +72,19 @@
 
 ---
 
+## community-large-codebase-workflow 主線大縫 `[加入: 2026-08-05]`
+
+日更 ingest 對 `community-large-codebase-workflow.md` 只做**小縫**（單節點掛線，規則見 `.claude/rules/wiki-ingest-community.md`「主線縫合規則」）。每次 `/wiki-lint` 補做**大縫**：
+
+1. **結論健檢**：逐線（並行規模／Context 管理／索引記憶／除錯分工）檢查「這條線現在走到哪」的敘事是否被近 14 天累積節點推翻或超越（單節點小縫看不見累積效應）
+2. **漏縫補縫**：比對近 14 天 patterns 新節點，屬四條線但未被縫入者補縫
+3. **腐蝕檢查**：主線頁若長出 `### YYYY-MM-DD` 時序條列或段尾 append 痕跡，重構回敘事
+4. **第五條線評估**：patterns 中反覆出現、無線可歸的節點群 → 回報主編轉知 weekly-review 評估開線
+
+無新節點且結論未變 → 不動頁面（不必要的更新日期會誤導讀者）。
+
+---
+
 ## community-pattern-trends 趨勢頁週更 `[加入: 2026-06-29]`
 
 每次 `/wiki-lint` 時更新 `wiki/topics/community-pattern-trends.md`（週更，非每日）。

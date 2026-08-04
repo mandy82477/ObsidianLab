@@ -12,6 +12,7 @@
 | `wiki/topics/community-tech-discussions.md` | HN / Reddit 熱門技術討論 |
 | `wiki/topics/community-tech-timeline.md` | 社群技術應用趨勢時序 |
 | `wiki/topics/code-quality-decline.md` | Claude Code 效能退步事件 |
+| `wiki/topics/community-large-codebase-workflow.md` | patterns 新節點屬四條主線（並行規模／Context 管理／索引記憶／除錯分工）之一時，同步縫合（見下方主線縫合規則）|
 
 > 上表為核心頁面與觸發條件；此外 `wiki/index.md` 中領域為 🌐 社群 的所有頁面（含日後新增）皆由本記者負責維護與 lint。
 
@@ -27,6 +28,20 @@
 - ❌ **排除**：`Complete Guide` / `Everything you need to know` 型 SEO 農場文（常來自 `ai_made_tools`、`tokenmixai` 等內容農場帳號）；純新聞轉述（定價、發布、事件解釋——這些已由媒體/HN 來源覆蓋，dev.to 版本無獨特價值）；純帶貨 / growth hacking 自我推銷
 
 > 判斷原則：dev.to 的獨特價值是「工程師第一手實作經驗」，不是新聞或教學索引。內容答不出「作者具體做了什麼、學到什麼機制」→ 不收。
+
+---
+
+## community-large-codebase-workflow 主線縫合規則（daily）`[加入: 2026-08-05]`
+
+`community-large-codebase-workflow.md` 是把 patterns 模式庫的散落節點縫成主線的頁；patterns 收「節點」（append 即可），主線做「縫合」（判斷歸屬、更新該線敘事）。**縫合時機在 ingest 當下**——你剛寫完該節點、內容還在手上，歸線判斷成本最低；留到事後策展會貴一個數量級（2026-07-26 建頁後因無此規則孤兒化 10 天的教訓）。
+
+**每次為 `community-tech-patterns.md` 新增節點後，多做一步：**
+1. 判斷該節點是否屬四條主線之一——並行規模／Context 管理／索引記憶／除錯分工。不屬於 → 主線頁不動，結束
+2. 屬於 → **改寫**該線對應段落（把新節點的意義縫進敘事，不是在段落尾 append 一句）；節點細節與來源留在 patterns 頁，主線只寫「這條線現在走到哪」＋ wikilink 回 patterns
+3. 覆寫頂部 callout（單一最新、不疊加），更新「最後更新」「最後新聞更新」
+4. **主線頁不設時序區塊**——它的價值是綜合敘事，長出 `### YYYY-MM-DD` 條列即為腐蝕訊號，發現即重構回敘事
+
+第五條主線的誕生：某類節點反覆出現卻無線可歸 → 不自行開線，回報主編轉知 weekly-review 評估。
 
 ---
 

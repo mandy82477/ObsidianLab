@@ -621,8 +621,8 @@ window.WIKI_DATA = {
       "pill": "active",
       "firstSeen": "",
       "startDate": "2026-05-02",
-      "lastUpdated": "2026-07-26",
-      "lastNewsUpdate": "2026-07-22",
+      "lastUpdated": "2026-08-05",
+      "lastNewsUpdate": "2026-08-05",
       "updateFreq": "",
       "summary": "Claude Code 熟手在小型專案上已經摸熟的做法——單一 CLAUDE.md、單一 session、讀完整檔案——一旦搬進大型 codebase 就開始失靈：並行 agent 數量一多就互踩、context window 被 40k+ token 的工具輸出擠爆、agent 記不住昨天已經做過的架構決策、多 ag…",
       "latestHeadline": "Claude Code 熟手在小型專案上已經摸熟的做法——單一 CLAUDE.md、單一 session、讀完整檔案——一旦搬進大型 codebase 就開始失靈：並行 agent 數量一多就互踩、context window 被 40k+ token 的工具輸出擠爆、agent 記不住昨天已經做過的架構決策、多 ag"

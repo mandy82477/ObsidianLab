@@ -668,11 +668,5 @@
     }
   ],
   "preview": "美國聯邦法官正式核准 Anthropic 15 億美元著作權集體訴訟和解案，逾 48 萬本受涵蓋書籍中已有約 91% 由作者或出版商提出賠付申請，原告律師稱其為「史上最大宗已知著作權求償和解案」。",
-  "sedimentedToday": [
-    {
-      "id": "community-large-codebase-workflow",
-      "name": "大型 Codebase 規模化開發：社群工作流主線",
-      "pageType": "topic"
-    }
-  ]
+  "sedimentedToday": []
 }

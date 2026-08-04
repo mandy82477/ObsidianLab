@@ -527,6 +527,20 @@
       "_note": "2026-08-02 加入。W31 首次出現回收表時，build_web.py 只認得 forecasts 表頭，回收表被整張吃掉——網站上看不到對帳，且回收小標被誤當引言印在新預告卡片上方，讀者無從分辨兩張表的方向。"
     },
     {
+      "name": "large-codebase 主線頁小縫/大縫兩側規則齊全（daily 掛線在 community.md、weekly 健檢在 community-lint.md——只有一側時主線頁會再次孤兒化）",
+      "assertion": "all_contain",
+      "files": [
+        ".claude/rules/wiki-ingest-community.md",
+        ".claude/rules/wiki-ingest-community-lint.md"
+      ],
+      "patterns": [
+        "community-large-codebase-workflow",
+        "並行規模",
+        "縫合"
+      ],
+      "_note": "2026-08-05 加入。頁面 07-26 建立後因日更與 lint 兩側都無觸發規則而孤兒化 10 天——patterns 持續進節點、主線零縫合。"
+    },
+    {
       "name": "週報預告偵測的反確認偏誤護欄：weekly.md 與 news-pipeline-steps.md 都必須明載掃描在選材之後、且只偵測不判定",
       "assertion": "all_contain",
       "files": [
