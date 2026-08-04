@@ -3,11 +3,13 @@
 **狀態：** ongoing
 **領域：** 💼 商業
 **開始日期：** 2026-05-28
-**最後更新：** 2026-08-02
-**最後新聞更新：** 2026-08-02
+**最後更新：** 2026-08-04
+**最後新聞更新：** 2026-08-04
 
-> **最新動態**（2026-08-02）
-> **Morgan Stanley 領投 150 億美元 Anthropic 德州資料中心校園投資案**：thestreet.com 報導 Morgan Stanley 領投一項規模達 150 億美元、投向 Anthropic 德州校園/資料中心的投資案，延續近期 TeraWulf（07-06，$19B 20 年租約）、Meta（07-17/18，潛在 $100 億美元運算力租賃洽談）等基礎設施擴張系列信號（詳見「戰略合作」表新增列）；具體投資結構（股權/債權比例）、參與方細節、校園規模與時程未見報導，僅標題層級資訊，待後續補充。
+> **最新動態**（2026-08-04）
+> - **Google 主導近 2000 億美元華爾街融資機制**：Financial Times 報導 Google 為 Anthropic 牽線/主導一項規模近 **2000 億美元**的華爾街融資安排（"Wall Street finance machine"），延續近期 Morgan Stanley（08-02，$150 億美元資料中心投資）、TeraWulf、Meta 等基礎設施融資系列信號；具體交易結構、參與銀行、資金用途未見報導細節，僅標題層級資訊，詳見「戰略合作」表新增列。
+> - **印度市場布局擴大**：ndtv.com 報導 Anthropic 宣布擴大印度市場布局，稱 Claude 在當地「更加普及」；呼應既有 07-13 印度盧比在地化定價（見 [[entities/pricing]]），具體擴張內容未見細節，僅標題層級資訊，詳見「戰略合作」表新增列。
+> - 08-02 已記錄之 Morgan Stanley $150 億美元德州資料中心投資案仍具參考價值，詳見下方「戰略合作」表。
 
 ---
 
@@ -100,6 +102,7 @@ Simon Willison（知名開發者博主）發表文章，認為 Anthropic 與 Ope
 | 著作權和解案執行細節：91% 賠付申請率、律師費削減至 6.8%、Bloomsbury 分潤 | 逾 48.2 萬本受涵蓋書籍中約 91% 已由作者或出版商提出賠付申請（每本約 3,000 美元）；法院文件顯示法官將集體訴訟律師費比例削減至 6.8%；英國出版商 Bloomsbury 確認為受益方之一。原告律師 Justin Nelson 稱此為「史上最大宗已知著作權求償和解案」| Reuters、The Times、Research Information，2026-07-22（經 Hacker News 討論；courtlistener.com 法院文件 PDF） |
 | 著作權和解案讀者反應報導（非新增賠付事實）| NPR 報導作家群體對已核准的 15 億美元 Anthropic 著作權侵權集體訴訟和解案反應不一；與既有 91% 賠付申請率、6.8% 律師費削減、Bloomsbury 分潤等執行細節（見上列）屬同一和解案的後續讀者反應報導，未見新增賠付金額或條款細節 | NPR，2026-07-27 |
 | 未公開獲利時程 | Anthropic 從未公告盈虧平衡預期完整細節 | — |
+| 「Anthropic Tops $47B」報導（待查證，可能與既有 ARR 數字重疊，非確認新增長）| tech-insider.org 標題稱「Anthropic Tops $47B」，未指明是估值、ARR 或其他財務指標。本頁已於 2026-05-29 記錄 Simon Willison 追蹤之 ARR **$47B**（見上方指標表），本則是否為同一數字的媒體重提、或代表新的成長里程碑，無法從標題判斷，**不可逕自認定為新增長數字**，待後續報導釐清具體指標與時間點；同篇報導另提及一次 5 小時 44 分鐘的 Claude 服務中斷，屬可靠度事件非商業本業範疇，⚠️ 已回報主編轉知功能記者評估是否需記入 `claude-code.md` 已知問題 | Google News/tech-insider.org，2026-08-03 |
 
 **結構性問題**：訂閱方案補貼規模龐大（17 倍），6/15 政策是 Anthropic 收窄補貼的第一步。社群討論「未來必然漲價」但 Anthropic 無官方回應。
 
@@ -124,6 +127,8 @@ Simon Willison（知名開發者博主）發表文章，認為 Anthropic 與 Ope
 
 | 合作方 | 類型 | 日期 | 意義 |
 |--------|------|------|------|
+| Google | 基礎設施融資（近 $2000 億美元，推論性質待證）| 2026-08-04 | Financial Times 報導 Google 為 Anthropic 主導/牽線一項規模近 **2000 億美元**的華爾街融資機制（原文標題："Inside Google's $200bn Wall Street finance machine for Anthropic"）。**對商業的意涵**：延續近期 Morgan Stanley（08-02，$150 億美元資料中心投資案）、TeraWulf（07-06，$19B 20 年租約）、Meta（07-17/18，潛在 $100 億美元運算力租賃洽談）等基礎設施擴張系列信號，若屬實將是目前已知規模最大的單一金融安排，顯示 Google 除既有 $400 億美元直接投資（見 [[entities/google-investment]]）外，可能進一步扮演資本市場中介／促成者角色（推論）；具體交易結構（債權/股權比例）、參與銀行團、資金確切用途未見報導細節，僅標題層級資訊，待後續補充（Google News/Financial Times）|
+| Anthropic（印度市場）| 市場擴張（在地化布局）| 2026-08-04 | ndtv.com 報導 Anthropic 宣布擴大印度市場布局，稱 AI agent Claude 在當地「更加普及」（more accessible）。**對商業的意涵**：延續 07-13 印度盧比在地化定價（Pro 方案 Rs 2,000/月，見 [[entities/pricing]]）之後，是印度市場布局的進一步擴大信號；具體擴張內容（新辦公室、在地團隊、新功能、合作夥伴）未見報導細節，僅標題層級資訊，待後續補充（Google News/ndtv.com）|
 | Morgan Stanley | 基礎設施擴張（$150 億美元，領投）| 2026-08-02 | thestreet.com 報導 Morgan Stanley 領投一項規模達 150 億美元、投向 Anthropic 德州校園/資料中心的投資案。**對商業的意涵**：延續近期 TeraWulf（07-06，$19B 20 年租約）、Meta（07-17/18，潛在 $100 億美元運算力租賃洽談）、澳洲資料中心採購（07-05，1.4GW）等算力/基礎設施擴張系列信號，Morgan Stanley 是又一起金融機構領投 Anthropic 實體資料中心建設的具名案例，顯示 Anthropic 算力自建佈局持續吸引大型金融機構參與融資（推論）；具體投資結構（股權/債權比例）、參與方細節、德州校園規模與時程未見報導，僅標題層級資訊，待後續補充（Google News/thestreet.com）|
 | Oxide | SDK 夥伴（供應鏈安全）| 2026-07-29 | Oxide 官方部落格（Hacker News，score 16，source_count=2）宣布加入 Anthropic 主導的 Project Glasswing——一項致力於保護全球關鍵軟體安全的合作計畫；Oxide 同時將 Claude Mythos 5 應用於自家程式碼庫的漏洞掃描（模型能力面詳見模型記者對應頁面）。**對商業的意涵**：延續近期 Okta（06-30，XAA/MCP/Glasswing 安全框架合作）、TCS（06-11，取得 Mythos Preview／Project Glasswing 存取）等既有 Glasswing 生態參與者，Oxide 是又一具名加入此安全合作計畫的科技公司，顯示 Glasswing 夥伴圈持續擴張（推論）；具體合作範疇、商業條款未見細節，僅部落格公告層級資訊（Oxide 官方部落格 https://oxide.computer/blog/oxide-anthropic-project-glasswing；Hacker News）|
 | Surf AI | SDK 夥伴（資安/合規整合） | 2026-07-28 | Yahoo Finance 報導 Surf AI 宣布整合 Claude 的 Compliance API，將其「暴露削減」（exposure reduction）業務擴展至 AI 模型連接性領域。**注意**：屬 Surf AI 自身業務公告性質（企業新聞稿），非 Anthropic 官方主導事件，延續近期 Cyberhaven（07-23）、Orca Security（07-21）、Tenable（06-29）等資安廠商整合 Claude Compliance API 的既有生態擴張模式（推論）；具體規模、商業條款未見細節，僅標題層級資訊（Google News/Yahoo Finance）|

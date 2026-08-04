@@ -4,11 +4,11 @@
 **狀態：** active
 **領域：** 👤 人物
 **首次出現：** 2026-04-23（事後報告發布）
-**最後更新：** 2026-08-01
-**最後新聞更新：** 2026-07-28
+**最後更新：** 2026-08-04
+**最後新聞更新：** 2026-08-04
 
-> **最新動態**（2026-07-27，待查證）
-> Business Insider 報導 Boris Cherny 呼籲使用者停止「微管理」（micromanaging）AI，延續其一貫「Loops 是未來」設計哲學——放手讓 agent 自主工作而非逐步下指令。原文正文未能擷取，僅標題可確認核心主張，具體論述細節待查證。
+> **最新動態**（2026-08-03）
+> Boris Cherny 在 Y Combinator Startup School 2026 訪談中表示，引導 Claude 完成困難任務的關鍵已從 prompt engineering 轉向「讓 Claude 能沿途驗證自己的工作」——「verification 大概是人們最容易做錯的一件事」，並以團隊嘗試用 Claude 重寫 Electron 版 Claude 桌面應用為例（重寫細節與結果待查證）。
 
 ---
 
@@ -24,6 +24,7 @@ Boris Cherny 是 Anthropic Claude Code 的創始人與負責人（Head of Claude
 
 | 日期 | 主題分類 | 一句話論述 | 立場延續/轉折 |
 |------|---------|-----------|--------------|
+| 2026-08-03 | 方法論 | 引導 Claude 完成困難任務的關鍵已從 prompt engineering 轉向「讓 Claude 能沿途驗證自己的工作」；以團隊嘗試用 Claude 重寫 Electron 版 Claude 桌面應用為例 | 深化——將「Loops 是未來」的自主執行哲學具體化為可操作的「驗證優先」方法論 |
 | 2026-07-27 | 哲學（待查證） | 呼籲使用者停止「微管理」AI，僅標題可確認核心主張 | 延續——與「Loops 是未來」「我寫 loop 讓 loop 去 prompt Claude」一脈相承 |
 | 2026-07-25 | 安全 | Opus 5 是目前最難被提示注入攻破的模型，比評測分數更讓他興奮 | 轉折——首次公開聚焦模型安全性面向，此前宣言多聚焦能力／效率 |
 | 2026-07-20 | 商業 | Bloomberg 影片報導「Claude Code 創造者」畫面，展示其以英文向多個 Claude 實例下指令，原文未具名確認受訪者身分（待查證） | — |
@@ -43,6 +44,14 @@ Boris Cherny 是 Anthropic Claude Code 的創始人與負責人（Head of Claude
 ---
 
 ## 公開言論與主張
+
+### 驗證方法論與 Electron 桌面應用重寫嘗試（2026-08-03）
+
+Boris Cherny 在 Y Combinator Startup School 2026 由 Diana Hu 主持的現場訪談中（影片約 20:30 起）表示，如今引導 Claude 完成困難任務的關鍵，重點已不再是 prompt engineering，而是「如何給 Claude 一個看起來有點太難的任務，然後讓 Claude 有辦法沿途驗證自己的工作」。原話：「Verification 大概是人們最容易做錯的一件事。」他舉一個例子：團隊嘗試讓 Claude 重寫用 Electron 打造的 Claude 桌面應用（並提及已讓它變快）。日報擷取的原文在此例描述中途被截斷（"...We've made it quite fast. Now it" 後未完），重寫採用的具體技術路徑與最終結果**未能確認（待查證）**。此說法可視為其一貫「Loops 是未來」自主執行哲學的具體化——不是放棄監督，而是把監督重心從逐步下指令轉移到「事後可驗證」的機制設計，可與 [[topics/community-tech-patterns]] 的 agentic 工作流討論對照。
+
+- 來源：[daringfireball.net，John Gruber，2026-08-02](https://daringfireball.net/linked/2026/08/02/cherny-claude-swift)（轉引自 YC Startup School 2026 現場訪談，Hacker News 收錄，69 分）
+
+---
 
 ### 呼籲停止「微管理」AI（2026-07-27，待查證）
 
@@ -172,6 +181,7 @@ Boris Cherny 的公開言論呈現兩種截然不同的社群反應：
 
 ## 歷史記錄
 
+- 2026-08-03：於 YC Startup School 2026 訪談中表示，引導 Claude 完成困難任務的關鍵已從 prompt engineering 轉向「讓 Claude 能沿途驗證自己的工作」（「verification 大概是人們最容易做錯的一件事」），並以團隊嘗試用 Claude 重寫 Electron 版 Claude 桌面應用為例；重寫細節與結果未能確認（待查證）（daringfireball.net 轉引 John Gruber，Hacker News 69 分，2026-08-02）
 - 2026-07-27：Business Insider 報導呼籲使用者停止「微管理」（micromanaging）AI，延續其「Loops 是未來」設計哲學；原文正文未能擷取，僅標題可確認核心主張（待查證）（Google News / Business Insider，2026-07-27）
 - 2026-07-25：Boris Cherny 公開表示 Opus 5 是目前最難被提示注入攻破的模型（Simon Willison 部落格轉引 X 貼文，https://simonwillison.net/2026/Jul/25/boris-cherny/#atom-everything）
 - 2026-07-20：Bloomberg 發布影片／報導「Watch The Creator of Claude Code on The Hottest Piece of Software in the World」，標題未具名，佐以 Bloomberg 7/16 特稿與多平台「Creator of Claude Code」慣稱推測極可能為本人，暫標（待查證）（Google News / Bloomberg.com，2026-07-20）
@@ -212,3 +222,4 @@ Boris Cherny 的公開言論呈現兩種截然不同的社群反應：
 - [[news/2026-07-20]]
 - [[news/2026-07-25]]
 - [[news/2026-07-28]]
+- [[news/2026-08-04]]
