@@ -66,9 +66,11 @@ Dario Amodei 是 Anthropic 共同創辦人兼執行長（CEO），與 Chris Olah
 - Bloomberg 訪談（2026-06-11）：政府監管 + 組織架構
 - Fortune 訪談（2026-06-08）：企業文化論述
 - Code with Claude 大會（2026-05-12）：速率政策現場宣布
+- [[news/2026-08-04]]
 
 ## 歷史記錄
 
+- 2026-08-03：公開表態憂心部分員工是為金錢而非公司使命加入 Anthropic；Hacker News（經 Twitter/Techmeme，11 分）討論反應兩極——有人認為多數人本就為錢工作，也有人認為這是科技業近 30 年被資本侵蝕的縮影；The Next Web 同步以「Anthropic's CEO says staff want money over mission」為題報導，與 Techmeme 互為佐證；具體發言場合與逐字稿未能取得（待查證）（來源：Hacker News/Techmeme、The Next Web，2026-08-03）
 - 2026-07-28：於 Anthropic Blog 發表聲明「Our position on open-weights models」，澄清 Anthropic 從未主張禁止開源權重模型，並呼籲加強對中國晶片出口管制；人物角度僅記個人具名立場表態，政策細節詳見 [[topics/anthropic-government-policy]]（來源：Anthropic Blog）
 - 2026-07-16：Politico 報導（經 Google News 轉載）指「Anthropic 執行長」捐款 100 萬美元予某 super PAC，捲入 AI 陣營之間鉅額政治獻金角力戰局；原文標題未具名確認捐款人身分，現任執行長為 Dario Amodei，此事實歸屬本人仍待核實（待核實）（來源：Politico）。**後續**：07-17 員工集體捐款 300 萬美元（SFGATE）；07-22 官方證實再捐 2000 萬美元予 Public First Action（累計 4000 萬美元），WSJ／The Hill／Axios 框架為「期中選舉支出翻倍推動 AI 監管」，與官方非選舉用途聲明有敘事張力；三筆捐款是否同一資金脈絡待確認，詳見 [[topics/anthropic-government-policy]]（來源：Anthropic Blog、WSJ、The Hill、Axios，2026-07-22）
 - 2026-07-06：接受 STAT News 專訪，談 AI 對生技（biotech）產業的潛在影響；日報僅提供標題層級資訊（2026-07-06 報導，至今無後續：近 14 天日報無具體論述內容補充）（來源：STAT News）

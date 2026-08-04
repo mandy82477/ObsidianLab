@@ -3,12 +3,12 @@
 **狀態：** monitoring
 **領域：** 💼 商業
 **開始日期：** 2026-04
-**最後更新：** 2026-08-02
-**最後新聞更新：** 2026-08-02
+**最後更新：** 2026-08-04
+**最後新聞更新：** 2026-08-04
 
-> **最新競品動態**（2026-08-02）
-> tech-insider.org（source_count=2）發表 OpenCode vs Claude Code 比較文，稱 OpenCode 下載量達 Claude Code 的 **5.4 倍**（標題並列 Free vs $20 定價落差）；統計方法與時間範圍未見細節，待查證，詳見「競品定價對照」表新增列與「OpenCode」子區塊。
-> 08-01 已記錄之 Supabase Evals 開源評測套件、quasa.io Claude Code vs Codex 比較彙整文（累積 6 篇，共識尚未收斂）、07-30 OpenAI GPT-5.6 大幅降價公告等近期重點仍具參考價值，詳見下方時序。
+> **最新競品動態**（2026-08-04）
+> tech-insider.org 發表 Kiro vs Claude Code 比較文，標題並列 **80.8% SWE-bench** 與 **$200 費用上限**兩項數字，但未指明各對應哪一方；Kiro 為本頁首次出現的競品名稱，資訊量過少，詳見「競品定價對照」表新增列與「主要競品追蹤」Kiro 子區塊，待後續報導補充。
+> 08-02 已記錄之 tech-insider.org OpenCode vs Claude Code 下載量比較（稱 5.4 倍）、08-01 Supabase Evals 開源評測套件、quasa.io Claude Code vs Codex 比較彙整文（累積 6 篇，共識尚未收斂）等近期重點仍具參考價值，詳見下方時序。
 
 ---
 
@@ -34,6 +34,7 @@ Claude Code 已成為 AI 輔助編碼的標竿產品，但競爭正快速升溫�
 
 | 工具/模型 | 定價 | vs Claude 定位 | 來源日期 |
 |---------|------|--------------|---------|
+| Kiro | 待查證（tech-insider.org 標題稱「$200 Cap」，未指明是 Kiro 自身費用上限或 Claude Code Max 方案 $200/月上限的並列比較，見 [[entities/pricing]]「現行方案一覽」Max 20x 列）| 本頁首次出現的競品名稱；標題另稱「80.8% SWE-bench」，同樣未指明對應 Kiro 或 Claude Code，僅標題層級比較，資訊量過少，無法判斷產品定位或市佔，待後續報導補充 | 2026-08-03（Google News/tech-insider.org）|
 | OpenCode | 免費（開源）| tech-insider.org（source_count=2）稱其下載量達 Claude Code 的 **5.4 倍**，標題以「Free vs $20」凸顯定價落差對開發者選擇的影響；具體統計方法、時間範圍未見細節，需與既有 157,000 名開發者轉向（The New Stack，05-18）數據並列解讀，不可逕自加總或取代，待查證 | 2026-08-01（Google News/tech-insider.org）|
 | Antigravity | 待查證（tech-insider.org 比較文僅稱方案範圍涵蓋「免費至 $200」，未逐一指明各工具個別對應價格）| 本頁首次出現的競品名稱；與 Cursor、Claude Code 並列比較，資訊量過少，無法判斷其產品定位或市佔，待後續報導補充 | 2026-07-23（Google News/tech-insider.org）|
 | Cline | 免費（Free）| 開源 VS Code 擴充套件，tech-insider.org 比較文將其定位為 Claude Code（$20/月）與 GitHub Copilot（$10/月，方案版本未指明）之間的免費替代方案；僅標題層級比較，未提供各工具用量限制、功能差異等具體核實內容，**待查證** | 2026-07-22（Google News/tech-insider.org）|
@@ -90,6 +91,12 @@ Claude Code 已成為 AI 輔助編碼的標竿產品，但競爭正快速升溫�
 | 2026-08-01 | [quasa.io](https://news.google.com/rss/articles/CBMilwFBVV95cUxQc3VGQXhIUWNkSElXb2swMFRjVlFscUE1ZTNuTXlwNjdTVGlVNmcyN0dMNk05NnJKdjZkeXpZa2dWdHkwYzRIdEh1LUFDelo5UTNPVjdWQm9lQmxRSTV3N0dWUUdsd3Y5Wk5tS1dnSEh3VTVwd3VlY0s5Mnk2VEVBX2EwOWpRbG9BOHQyVjNYWFZGd2tfYXlR?oc=5)（2026-07-31 22:00 UTC） | 「Claude Code vs OpenAI Codex: What Published Coding Tests Actually Show」——整理目前已公開的程式碼測試結果比較兩者實測表現 | 待查證：無具體分數，日報摘要為對該文章的定性轉述，未列出所引用測試名稱、樣本條件或原始分數 |
 
 **讀者速答**：截至 2026-08-01，尚無可信賴的具體公開分數能直接判定 Claude Code 與 Codex 孰優孰劣；Supabase Evals 是第一個公開方法論的第三方評測套件，值得後續追蹤其產出的實測數字。
+
+### Kiro（新競品，資訊量過少，2026-08-03 新增追蹤）
+- **狀態**：本頁首次出現，資訊量不足以判定威脅等級
+- **來源**：tech-insider.org 發表「Kiro vs Claude Code」比較文，標題並列 **80.8% SWE-bench** 分數與 **$200 費用上限**兩項數字
+- **注意（待查證）**：標題未指明兩項數字分別對應 Kiro 或 Claude Code，無法確認是「Kiro 的 SWE-bench 為 80.8%」或反之，「$200 Cap」亦可能單純是既有 Claude Code Max 20x 方案月費（見 [[entities/pricing]]）的並列引用而非 Kiro 自身定價；文章僅有標題可用，無法讀取本文查證，暫不推算或假設歸屬
+- **待補充**：Kiro 開發廠商、產品定位、發布時間均未見報導細節
 
 ### OpenCode（[[entities/opencode]]）
 - **狀態**：Active（開源替代，快速成長）
@@ -229,6 +236,9 @@ Claude Code 已成為 AI 輔助編碼的標竿產品，但競爭正快速升溫�
 #### 近期單日動態彙整（2026-07-02 至 2026-07-26）
 
 > 逐日條目按主題可另見上方「主要競品追蹤」對應廠商子區塊；此區塊保留完整時序供追溯查證。
+
+### 2026-08-03
+- **[新競品，標題層級，待查證] tech-insider.org：Kiro vs Claude Code 比較文，並列 80.8% SWE-bench 與 $200 費用上限**：詳見「競品定價對照」表新增列與「主要競品追蹤」新增 Kiro 子區塊（Google News/tech-insider.org）
 
 ### 2026-08-02
 - **[競品下載量比較，標題層級，待查證] tech-insider.org：OpenCode vs Claude Code 下載量與定價比較（Free vs $20，稱 OpenCode 下載量達 5.4 倍）**：詳見「競品定價對照」表新增列與「主要競品追蹤」OpenCode 子區塊（Google News/tech-insider.org，source_count=2）
