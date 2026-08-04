@@ -36,7 +36,7 @@ wiki/
 2. **概念／選型／主題**（「哪頁在講 X」）→ 讀 `wiki/index.md` 目錄表挑頁 → 讀該頁（頁面頂部 callout 即最新動態）
 3. **結構性盤點**（哪些頁某狀態／某領域／多久沒更新）→ Grep 頁面標頭欄位（如 `最後新聞更新`、`狀態`），不需逐頁閱讀
 4. **「最近發生什麼」**→ `wiki/log.md`（append-only，先 Grep 日期定位再讀該段，不可整讀）或 `news/` 日報
-5. **「誰負責某頁／某頁何時更新」**→ 讀維護註冊表，不做全檔案查找：六份 `.claude/rules/wiki-ingest-[category].md` 的「負責頁面」表（含觸發條件與衍生頁節奏規則）＋ `.claude/rules/wiki-ingest.md` 第三步的主編彙整清單（feature-radar／index／log／overview／anthropic-commitments／source_attribution）。全庫 grep 只保留給兩種情況：**否定證明**（「X 有沒有被收錄過」須全掃零命中）與**診斷註冊表本身失效**（頁面該更新而沒更新，活動記錄裡不會有缺席證據）
+5. **「誰負責某頁／某頁何時更新」**→ 讀維護註冊表，不做全檔案查找：六份 `.claude/rules/wiki-ingest-[category].md` 的「負責頁面」表（含觸發條件與衍生頁節奏規則）＋ `.claude/rules/wiki-ingest.md` 第三步的主編彙整清單（feature-radar／index／log／overview／anthropic-commitments／source_attribution）。**讀表時必須確認處理條件**：頁面以明確列＋觸發條件出現 → 可信「會被更新」；只被「領域＝X 的所有頁面歸本記者」概括條款覆蓋 → 那只是所有權，無執行機制，「會被更新」未經證實（2026-08-05 教訓：large-codebase-workflow 僅有概括覆蓋，孤兒化 10 天）。全庫 grep 只保留給兩種情況：**否定證明**（「X 有沒有被收錄過」須全掃零命中）與**診斷註冊表本身失效**（頁面該更新而沒更新，活動記錄裡不會有缺席證據）
 
 ---
 
