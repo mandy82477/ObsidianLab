@@ -215,7 +215,7 @@
 
 ### 🌐 服務穩定性（24 條已修復、5 條未修復、1 條待查證）
 
-> 2026-07-15～07-17 為近月密度最高的一段：Anthropic Status 三天內累計 9 起獨立事件（下方第 4～12 條），密度明顯高於近月平均；07-19 彙整時對照 07-18 日報確認全數已同日解決，07-17 那起（原 07-17 彙整時仍標記「修復實施中」）實際已於 12:21 UTC 解決。GV Wire 報導曾引用 Downdetector 錯誤回報數上升作為外部佐證，顯示使用者端在修復完成前確實感受到服務品質下降。2026-07-20～07-21 又出現一波獨立事件（下方前 5 條），多數已同日或次日解決，唯 07-21 的 Fable 5 事件截至彙整時仍在監控中；2026-07-24 再度出現 Opus 4.8 錯誤率升高事件，同日解決。**2026-07-25～07-26：** Opus 5 全平台正式上線首日，Anthropic Status 密集出現 4 起模型錯誤率事件，皆於 10 分鐘至約 1 小時內排除，屬新模型上線常見的短暫陣痛，非長期性問題。**2026-07-27：** Opus 5 上線後再度出現錯誤率升高事件，稍後 Haiku 4.5 亦開始回報錯誤，約 52 分鐘後恢復基準值。**2026-07-30：** Opus 4.7／Opus 4.5 錯誤率升高，約 45 分鐘後解決。**2026-08-03～08-04：** 再出現 3 起短暫錯誤率事件（Sonnet 5 兩起、跨多模型一起），皆於 15–52 分鐘內套用修復並確認解決，屬短暫陣痛未列個別條目。
+> 2026-07-15～07-17 為近月密度最高的一段：Anthropic Status 三天內累計 9 起獨立事件（下方第 4～12 條），密度明顯高於近月平均；07-19 彙整時對照 07-18 日報確認全數已同日解決，07-17 那起（原 07-17 彙整時仍標記「修復實施中」）實際已於 12:21 UTC 解決。GV Wire 報導曾引用 Downdetector 錯誤回報數上升作為外部佐證，顯示使用者端在修復完成前確實感受到服務品質下降。2026-07-20～07-21 又出現一波獨立事件（下方前 5 條），多數已同日或次日解決，唯 07-21 的 Fable 5 事件截至彙整時仍在監控中；2026-07-24 再度出現 Opus 4.8 錯誤率升高事件，同日解決。**2026-07-25～07-26：** Opus 5 全平台正式上線首日，Anthropic Status 密集出現 4 起模型錯誤率事件，皆於 10 分鐘至約 1 小時內排除，屬新模型上線常見的短暫陣痛，非長期性問題。**2026-07-27：** Opus 5 上線後再度出現錯誤率升高事件，稍後 Haiku 4.5 亦開始回報錯誤，約 52 分鐘後恢復基準值。**2026-07-30：** Opus 4.7／Opus 4.5 錯誤率升高，約 45 分鐘後解決。**2026-08-03～08-04：** 再出現 3 起短暫錯誤率事件（Sonnet 5 兩起、跨多模型一起），最長約 85 分鐘、最短約 7 分鐘即套用修復並確認解決，屬短暫陣痛未列個別條目。
 
 - ✅ **已修復（約 45 分鐘後解決）**｜**Anthropic Status：多模型錯誤率升高，含 Opus 4.7／Opus 4.5（2026-07-30 10:03 UTC 進入監控，10:23 UTC 更新調查範圍納入 Opus 4.7／Opus 4.5，10:48 UTC 確認解決）**：官方通報多個模型錯誤率上升，10:23 UTC 更新確認調查範圍包含 Opus 4.7 與 Opus 4.5。[來源](https://status.claude.com/incidents/fsh2zzzl2c4l)
 - ✅ **已修復（約 52 分鐘後解決）**｜**Anthropic Status：Opus 5 與 Haiku 4.5 錯誤率升高（2026-07-27 13:42 UTC 通報，Haiku 4.5 稍後開始回報錯誤，14:34 UTC 恢復基準值後解決）**：Opus 5 全平台上線後第二起錯誤率事件（首起見 07-26 10:44 UTC），本次同時波及 Haiku 4.5。[來源](https://status.claude.com/incidents/rkk5x44tndw9)
@@ -260,6 +260,7 @@
 
 | 版本 | 日期 | 重點 |
 |------|------|------|
+| **v2.1.221** | 2026-08-04 | **[VSCode] 新增 Focus view**：chat-menu 切換選項，將工具活動摺疊為可展開的每輪摘要並附即時執行指示，可用 `Ctrl+Alt+F` 或選單切換（見 [Release](https://github.com/anthropics/claude-code/releases/tag/v2.1.221)）|
 | **anthropic-sdk-python v0.120.2** | 2026-07-28 | Bug Fixes：**mcp** 支援 MCP SDK v2 與 v1 並存，純相容性修正，無使用者端功能異動（見 [Release](https://github.com/anthropics/anthropic-sdk-python/releases/tag/v0.120.2)）|
 | **v2.1.220** | 2026-07-25 | Bug fixes and reliability improvements，官方 changelog 未列具體項目，純可靠性修正，無使用者端功能異動（見 [Release](https://github.com/anthropics/claude-code/releases/tag/v2.1.220)）|
 | **anthropic-sdk-python v0.119.0** | 2026-07-23 | Features：新增 API stop reason **`model_continue`**（見 [Release](https://github.com/anthropics/anthropic-sdk-python/releases/tag/v0.119.0)）|
@@ -398,6 +399,7 @@
 
 ## 參考來源
 
+- [[news/2026-08-04]]
 - [[news/2026-07-24]]
 - [[news/2026-07-22]]
 - [[news/2026-07-21]]
@@ -431,6 +433,7 @@
 
 | 日期 | 事件 |
 |------|------|
+| 2026-08-04 | **今日彙整**：v2.1.221 為 VSCode 擴充新增 Focus view（`Ctrl+Alt+F` 切換，已提報 [[feature-radar]]）。已知問題新增 1 則：使用者反映幾乎每天都須重新透過網頁驗證登入（issue #1757，74 個讚）。互動數更新 6 則：Max 訂閱瞬間觸及用量上限（issue #16157，1480→1483 則留言，今日聚焦頭條）；提示卡住 5–20 分鐘以上（issue #26224，149→150 個讚，新補 128 則留言，今日聚焦頭條）；Session 額度上限自動續行功能請求（issue #13354，182→193 個讚）；claude.ai visualize 功能故障（issue #34820，94→96 則留言）；Cowork 網路白名單失效（issue #30112，49→51 個讚，新補 54 則留言）；GitHub connector 帳號全域讀不到內容的迴歸問題確認為 issue #71542（37→48 則留言、33→43 個讚）；Linux 上持續產生 Windows 換行檔案（issue #2805，39→47 則留言、32→33 個讚）。另 Anthropic Status 於 08-03～08-04 出現 3 起短暫錯誤率事件，均同日確認解決，未列個別條目。 |
 | 2026-08-02 | **今日彙整**：新增已知問題 4 則：Max 5x 升級至 Max 20x 失敗「Unable to update subscription」，回報者稱與 #10832／#50710／#43118 同屬相同模式（issue #55266，39 則留言、1 個讚）、Cowork 無法加入私有 GitHub marketplace（issue #28125，35 個讚）、MCP OAuth `resource` 參數多加尾端斜線導致 Microsoft Entra ID 驗證失敗 AADSTS9010010（issue #52871，26 個讚）、功能請求：提供選項關閉啟動歡迎畫面（issue #2254，126 個讚）；已知問題互動數更新 2 則：Advisor 觸發「No response from API」錯誤（issue #69238，69→96 個讚）、主題模式不隨系統自動切換明暗（issue #2990，新補讚數 242，本日已知問題讚數最高）。Google News（經 Startup Fortune 轉載）報導稱 Anthropic 已承認自身 bug 為先前 Claude Code 故障成因、此前曾「否認數週」；惟該報導僅有標題可讀、無具體時間線或官方聲明原文佐證，且屬單一低知名度媒體來源，暫不列入已知問題，待更多來源確認。 |
 | 2026-08-01 | **今日彙整**：已知問題互動數更新 2 則：macOS 持續性 ECONNRESET 連線錯誤（issue #5674，47→51 則留言，今日全站互動最高）、CLI TUI 無法捲動回看對話歷史（issue #28077，留言增至 37、讚數增至 75）；新增已知問題 6 則：v2.1.150 起滑鼠滾輪失效、滾動動作誤判為方向鍵（issue #65833，35 則留言，今日互動次高）、多帳號設定檔支援功能請求（issue #20131，39 則留言）、Bedrock Opus 4.7 回傳 permission_error 儘管 AUTHORIZED（issue #51183，37 則留言）、Session 重新命名後第二次退出即消失（issue #25090，32 則留言）、Cowork Global instructions 儲存後靜默還原（issue #40175，30 則留言）、CLI 與 Desktop app 同步對話歷史功能請求（issue #28791，30 則留言）。 |
 | 2026-07-31 | **今日彙整**：已知問題互動數更新（今日聚焦 GitHub Issues 三則）：送出前檢視/編輯「已貼上文字」功能請求（issue #3412）留言增至 82、讚數增至 305；多 Claude session 直接通訊功能請求（issue #24798）留言增至 60、讚數增至 20；Remote Control 自動重連失效（issue #34255）留言增至 59、讚數增至 100，達高互動門檻；新增已知問題：Linear 整合觸發雲端 agent session 功能請求（issue #12925，39 則留言、131 個讚）、Post/PreToolUse Hooks 未如預期觸發（issue #6305，38 則留言、16 個讚）。 |

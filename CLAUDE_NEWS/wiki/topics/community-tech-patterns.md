@@ -3,11 +3,11 @@
 **狀態：** monitoring
 **領域：** 🌐 社群
 **開始日期：** 2026-04-25
-**最後更新：** 2026-08-02
-**最後新聞更新：** 2026-08-02
+**最後更新：** 2026-08-04
+**最後新聞更新：** 2026-08-04
 
-> **最新工作流模式**（2026-08-02）
-> 社群本日新增四則工具/實作記錄：Rust 打造的 Claude Code 多 agent 監控主控台 Cockpit（跨管道佐證）、把程式碼審查品質把關前移到更早階段的第一手心得（dev.to）、攔截並回應 Claude Code 權限提示的 Mac 瀏海面板（fail open 設計）、只清除 AI 遺留程式碼註解的清理工具 CCN（聲稱經 2,700 次迭代測試）；多則單一來源、訊號強度弱，依內容判斷收錄。
+> **最新工作流模式**（2026-08-04）
+> 社群本日新增四則記錄：以 PROGRESS.md + 重試腳本自動恢復限速中斷的 Claude Code session（dev.to 第一手實作）、CLAUDE.md／skills／hooks／docs 四層 guidance 歸屬判準（dev.to）、Skill 不觸發的 session 啟動索引機制根因（dev.to）、Boris Cherny 在 YC Startup School 訪談中談「給 Claude 略嫌太難的任務並讓它能沿途驗證」的心法（Hacker News 69 分）。
 
 ---
 
@@ -103,6 +103,34 @@ Claude Code 的三種多 agent 機制，可對應到 Anthropic《Building Effect
 ## 技術彙整
 
 ### 2026-08
+
+#### 難任務 + 沿途可驗證性：Boris Cherny 談「給 Claude 略嫌太難的任務」的心法（2026-08-04）
+
+- **核心模式：** Boris Cherny 在 YC Startup School 2026 訪談中指出，如今駕馭 Claude 的關鍵技巧已從 prompt engineering 轉為「如何交給 Claude 一個看似有點太難的任務，並讓它有辦法沿途驗證自己的工作」；他認為「驗證」是多數人做得最不到位的一環，並以團隊將 Claude 桌面應用（Electron）重寫加速的實務為例說明此心法的應用場景
+- **與既有模式的關係：** 呼應本頁既有多個「可驗證性」相關做法（Pre-completion Hook 防模糊結束、多代理 PR Review 的對抗性審查等），本篇補上更上游的心法：先確保任務本身「可沿途驗證」，再談具體驗證機制設計
+- **來源：** daringfireball.net（John Gruber）引述 Boris Cherny 於 YC Startup School 2026 訪談 — Hacker News（score 69，達高門檻）；人物背景與訪談完整脈絡見 [[entities/boris-cherny]]（本頁僅收錄其中的技術心法面向，避免與人物頁重複）
+- **成熟度：** ⚡ 活躍（創始人具名心法，尚待具體量化案例佐證）
+
+#### resume-on-ratelimit.sh：以 PROGRESS.md + 20 行 shell script 自動恢復被限速中斷的 Claude Code Session（2026-08-04）
+
+- **核心模式：** 針對「長任務跑到一半撞上 5 小時／7 天用量限制、process 以非零狀態退出、手動重啟又常忘記先前進度」的痛點，作者寫成 20 行的 resume-on-ratelimit.sh：搭配持續寫入進度的 PROGRESS.md，偵測到限速中斷後自動重試並帶著既有進度紀錄接續執行，取代人工守著電腦手動重啟
+- **與既有模式的關係：** 補充本頁「Token / 成本優化」類別既有做法在「限速中斷復原」面向的具體實作——既有記錄多聚焦事前的用量監控/節流，本篇聚焦「撞牆後如何自動接續」的下游解法
+- **來源：** 「How I Auto-Resume a Rate-Limited Claude Code Session with PROGRESS.md and Retries」— dev.to / bokuwalily（依 dev.to 內容判斷原則收錄：第一手實作記錄，含具體腳本與踩坑細節；3 讚不作為判斷依據）
+- **成熟度：** ⏳ 新興（單一開發者工具，20 行 shell script，尚待社群採用回饋）
+
+#### CLAUDE.md 該裝什麼、不該裝什麼：以「context 稅」與四層寄放地判斷內容歸屬（2026-08-04）
+
+- **核心模式：** 作者指出 CLAUDE.md 會被自動載入每次請求的 context，因此每一行都是對每個請求課的「稅」，且指令本質上只是建議、越多條反而讓每條的約束力越弱；提出應以「這條規則值不值得永久佔一個 context 席位」取代籠統的「CLAUDE.md 該寫什麼」提問，並整理 Claude Code 提供的四種寄放 guidance 位置（CLAUDE.md／skills／hooks／docs），各自有不同的成本模型
+- **與既有模式的關係：** 呼應本頁「CLAUDE.md 管理」類別既有「精簡規則策略」「防腐爛機制」的既有共識，本篇補上更系統化的判準——依「guidance 該多常觸發、值不值得常駐 context」決定放進 CLAUDE.md、skill、hook 或 docs 四者之一，而非籠統的「精簡」原則
+- **來源：** 「What actually belongs in CLAUDE.md — and what to move to skills, hooks, or docs」— dev.to / rulestack（依 dev.to 內容判斷原則收錄：第一手工程判準與具體機制說明，非行銷稿；0 讚不作為排除理由）
+- **成熟度：** ⚡ 活躍（延續既有「CLAUDE.md 設計哲學」長期議題，補上可操作的四層判準框架）
+
+#### Skill 不觸發的根因：session 啟動只索引 name+description，本體不預先載入（2026-08-04）
+
+- **核心模式：** 作者說明 Claude Code 在 session 啟動時只掃描 skill 目錄，把每個 skill 的 name 與 YAML frontmatter 的 description 建成索引並注入 system prompt；SKILL.md 完整內容並不會預先載入，只有在 Claude 判斷 description 與使用者提示夠接近時才會載入——因此 description 才是實際的「觸發器」而非文件說明，寫得太籠統（如「helps with code quality」）永遠不會被真實提示語句匹配到
+- **與既有模式的關係：** 補充本頁「Skills 設計」類別既有「description 自動觸發」機制的根因層說明——既有記錄多聚焦如何封裝內容為 skill，本篇解釋觸發失效的具體機制與如何寫出可被匹配的 description
+- **來源：** 「Claude Code Skill Not Triggering? Here Are the 5 Actual Causes」— dev.to / dev_encyclopedia（依 dev.to 內容判斷原則收錄：具體揭露 skill 索引/觸發機制的第一手技術說明；0 讚不作為排除理由）
+- **成熟度：** ⚡ 活躍（補充既有 Skills 設計最佳實踐的觸發機制細節）
 
 #### Cockpit（episko.dev）：Rust 打造的 Claude Code 多 Agent 監控主控台（2026-08-02）
 

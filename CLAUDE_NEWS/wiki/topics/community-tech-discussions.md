@@ -3,11 +3,11 @@
 **狀態：** ongoing
 **領域：** 🌐 社群
 **開始日期：** 2026-04-25
-**最後更新：** 2026-08-02
-**最後新聞更新：** 2026-08-02
+**最後更新：** 2026-08-04
+**最後新聞更新：** 2026-08-04
 
-> **最熱討論**（2026-08-02）
-> Ask HN 提問「為何 AI agent 需要 skills」，質疑此概念是否只是結構化 Markdown + AGENTS.md 索引的另一種包裝；HN score 12 達收錄低門檻，單一來源、訊號強度弱，尚無跟進回應。
+> **最熱討論**（2026-08-04）
+> 兩則 Reddit 週熱門貼文：社群感謝「對抗式審查者（adversarial reviewer）」skill 模式解決了 Claude 自己批改自己作業總給高分的問題；以及以客製 harness + agentic loop 打造的 GTA 6 首次嘗試 demo。兩者均為單一來源、訊號強度弱（🔥）。
 
 ---
 
@@ -120,6 +120,8 @@ MCP 的實際成本遠超多數使用者預期，已有多個量化案例：
 
 | 討論主題 | 首見 | 熱度 | 模式 | 核心論點 | 衍生 |
 |---------|------|------|------|---------|------|
+| Reddit r/ClaudeAI 週熱門：感謝文回顧「對抗式審查者（adversarial reviewer）」skill 模式，稱解決了 Claude 自己批改自己作業總給高分的問題 | 2026-07-31 | 🔥 | ☄️閃現 | 使用者發表感謝文，指出長期以來「Claude 自己批改自己的作業還打甲上」的問題，唯獨採用「對抗式審查者」skill 模式後才真正解決；帖文性質為對既有模式（見本頁 2026-07 技術彙整與 [[topics/community-tech-patterns]] Agent-plan-review-loop 條目）的延遲驗證與感謝，非新工具發布；Reddit r/ClaudeAI 週熱門標記，達收錄低門檻；[原文](https://www.reddit.com/r/ClaudeAI/comments/1vc11nl/whoever_popularized_the_adversarial_reviewer/)（Reddit · 週熱門） | — |
+| Reddit r/ClaudeAI 週熱門：以「合適的 harness + agentic loop」打造 GTA 6 首次嘗試 demo | 2026-08-03 | 🔥 | ☄️閃現 | 使用者展示以 agentic loop 與客製 harness 打造的 GTA 6 風格遊戲首次嘗試，作者自陳「遠非完美，但令人印象深刻」，反映社群持續將 Claude 應用於大型、高複雜度創作專案（呼應本頁「創意工具 Agent 整合」「Agent 規模化」等既有模式關注）；僅有標題與截圖可考，具體技術實作細節未知；Reddit r/ClaudeAI 週熱門標記，達收錄低門檻；[原文](https://www.reddit.com/r/ClaudeAI/comments/1ve7u9r/gta_6_first_attempt_far_from_perfect_but_its/)（Reddit · 週熱門） | — |
 | Ask HN：為何 AI agent 需要「skills」而非只用結構化 Markdown + AGENTS.md 索引 | 2026-08-02 | 🔥 | ☄️閃現 | 發文者提問為何 Claude Code、Codex 等框架需要獨立的「skills」概念，而非直接以結構化 Markdown 文件搭配 AGENTS.md 索引達成類似效果；HN score 12，達收錄低門檻（≥10分）；單一來源，尚無跨平台佐證，訊號強度弱；[原文](https://news.ycombinator.com/item?id=49139845)（HN） | — |
 | Show HN：claude-account — 因需在工作/個人帳號間切換 Claude Code 帳號的痛點，開發輕量 CLI（`claude account add/use/current`） | 2026-07-30 | 🔥🔥🔥 | ☄️閃現 | 開發者因帳號切換痛點寫出簡單 CLI 工具，免重新登入即可切換多組 Claude Code 帳號；HN score 50，達高門檻，source_count=2（跨來源佐證）；功能面已由功能記者於今日重點話題提及，本頁僅記錄社群工具本身的技術討論角度；[GitHub](https://github.com/hamzarehmandeveloper/claude-account)（HN） | — |
 | 使用者請 Claude 重新實作 Apple LZRAVEN codec（C 語言）並做 conformance 測試，討論延伸至「AI 降低逆向工程門檻」 | 2026-07-30 | 🔥 | ☄️閃現 | 使用者以 Claude 重新實作 Apple 專有 LZRAVEN codec，並完成 conformance 測試；討論串聚焦「這種逆向工程要花多久」與「生成式技術大幅降低複製輸出門檻，此類重新實作作品接下來幾年會越來越多」；HN score 11，達收錄低門檻（≥10分）；單平台，未見跨平台佐證；[GitHub](https://github.com/anat0m1a/liblzraven)（HN） | — |
