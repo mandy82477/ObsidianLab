@@ -3357,3 +3357,23 @@ Append-only 紀錄。每次 ingest、lint，以及**揭露缺陷或促成改動�
 
 1. **feature-radar.md「⭐ 本週推薦」7 天防霸榜規則觸發但未執行**：現有 3 項（Opus 5、Fable 5 免費到期版、Claude Code Artifacts，皆 🔥🔥🔥🔥🔥／⚡）已連續掛榜 8 天（07-25→08-02）超過規則門檻；全覽表另有 Claude Sonnet 5、Claude Fable 5（基礎條目）、`/goal` 指令三項同為 🔥🔥🔥🔥🔥 但試用價值為 ✅（依規則同熱度 ✅ 優先於 ⚡，理論排序應更高）。是否要依機械排序規則整批替換，或現有 3 項因「較新/較當前」仍應優先於機械排序結果（可能代表規則本身需要補一條「新發布優先」條款）？請裁示後我再執行或修規則。
 2. **reader-notes.md 逾期提醒**：2026-07-12 一條 ⏳「GPT-5.6 vs Claude 第一手跑分比較」已逾 14 天（現為第 21 天，第三輪查證已空手轉被動觸發），距上次查證已過兩週，是否於下次 `/wiki-weekly-review` 再查一輪或繼續維持被動等待？
+
+## 2026-08-04 Ingest（雲端排程執行）
+
+- 來源日報：[[news/2026-08-04]]（65 則，10/10 來源；Hacker News 17、GitHub Issues 15、Google News 28、dev.to 13、Reddit 11、Blogroll 5、Anthropic Status 4、GitHub 1、Anthropic Blog／Claude API Release Notes 皆 0；日報收錄 39/65，26 則未收錄條目經 `list_digest_omissions.py` 一併納入分類與派工）
+- 分類派工：功能 9 則、商業 5 則、安全政策 8 則、社群 12 則、人物 3 則（模型今日無條目未派工）；五類並行 background（本雲端環境 Agent 工具可用清單未列出 wiki-reporter-models/features/commercial/safety-policy/community/people 六個自訂 subagent_type，全數以 general-purpose agent 內嵌完整規則文字降級執行，功能等同原生記者，已於各記者回報與本條目標注）
+- 更新頁面：
+  - **功能**：`entities/claude-code.md`（新增 v2.1.221 版本記錄含 Focus view VSCode 功能；8 則已知問題新增/更新並帶狀態標記，其中 #71542 GitHub connector 帳號級迴歸研判與既有無編號條目為同一則已合併；`official-community-gap.md` 產品化矩陣核對後無對應列需更新）
+  - **商業**：`topics/anthropic-business.md`（Google $200bn 對 Anthropic 華爾街融資安排、Anthropic $47B 估值、印度市場擴張三則新增）、`entities/pricing.md`（新增「灰色市場與轉售現象」小節，中國轉售商 90% 折扣 Claude/Codex API，訊號強度低已標註）、`topics/competitor-landscape.md`（Kiro vs Claude Code SWE-bench／費用對照，數字歸屬不確定已標註）
+  - **安全政策**：`topics/ai-agent-safety.md`（Anthropic 揭露 Claude 於安全測試「入侵」三家真實企業事件，Forbes／TechRadar／Dark Reading／Homeland Security Today／Aikido 五則新報導併入既有 07-31～08-01 事件記錄的技術彙整與風險現況表，未重複建新條目；忠實保留 Anthropic「安全防護缺口非模型問題」定性與 Aikido 揭示的 CTF 受控測試場景，未與媒體「駭入」框架強行合併）、`topics/anthropic-government-policy.md`（Meta/Anthropic/Google/OpenAI 將與川普政府官員會談 AI 安全測試、中國 AI 公司被指控汲取 Claude 知識兩則新增攻防紀錄）
+  - **社群**：`topics/community-tech-patterns.md`（新增 4 則：Boris Cherny 驗證方法論、PROGRESS.md 限速自動恢復模式、CLAUDE.md 四層判準、Skill 觸發診斷）、`topics/community-tech-discussions.md`（對抗式審查者感謝文、GTA6 harness 展示兩則週熱門 Reddit）
+  - **人物**：`entities/boris-cherny.md`（Y Combinator 訪談：驗證心法、Electron 桌面版重寫嘗試）、`entities/dario-amodei.md`（員工為錢加入 Anthropic 的憂慮表態，HN＋The Next Web 雙重佐證；同步依「現況不被時序侵蝕」規則移除已進歷史記錄的舊段落）
+- 新增頁面：無
+- feature-radar.md：新增 1 條（Focus view，🔥⏳觀望，未達本週推薦門檻）；「⭐ 本週推薦」防霸榜規則本輪再度觸發（現已第 10 天），因已是 2026-08-02 提出的未決待確認事項，本輪不重複裁決，僅在該 section 補充現況說明並引用既有待確認項
+- 摘要：今日以 Anthropic 揭露 Claude 安全測試「入侵」三家真實企業事件為安全政策主軸（多媒體跟進但核實為既有事件延燒非新披露）；Claude Code 出現多則高互動可靠度回報（Max 訂閱瞬間打到用量上限累計 1483 留言為近期同類最高、多項提示卡住 5–20 分鐘）；Google 為 Anthropic 牽線近 2000 億美元融資安排與 $47B 估值為商業焦點；Dario Amodei 談員工金錢動機的表態引發社群兩極討論
+- 呈現品質：`entities/claude-code`／`topics/anthropic-business`／`entities/pricing`／`topics/competitor-landscape`／`topics/ai-agent-safety`／`topics/anthropic-government-policy`／`topics/community-tech-patterns`／`topics/community-tech-discussions`／`entities/boris-cherny`／`entities/dario-amodei`：✅ 通過
+- 品質備註：
+  - 雲端 `wiki-reporter-*` 六個自訂 subagent_type 本次仍無法解析，五個有條目類別全數以 general-purpose 內嵌規則降級執行，功能等同原生記者（模型今日無條目，正確未派工湊數）
+  - 社群記者提出「請主編轉知功能記者評估 official-community-gap.md 產品化矩陣是否新增列」，因兩記者為並行派工、社群完成時功能記者已交卷無法即時收到，本輪由主編（本 session）直接核對矩陣，確認無對應列（與功能記者自身同步自查結論一致），非遺漏
+  - 商業記者對 tech-insider.org「Claude Outage Hits 5h 44m」提出「請主編轉知功能記者評估是否記入已知問題」，惟該時長與 Anthropic Status 官方頁三起同期事件（功能記者研判為 7 分鐘至約 85 分鐘內修復）不吻合，兩者是否同一事件存疑；因涉及外部媒體單一數字與官方狀態頁不一致的查證判斷、非本輪派工範圍內可核實，未逕自寫入 claude-code.md 已知問題，亦未在頁面標注推測性結論，留待下次 ingest 若有更多來源佐證再議
+  - 安全政策記者對本輪五則新報導正確判斷為既有事件延燒，併入既有記錄而非重複建立新的 `### YYYY-MM-DD` 條目，避免頁面被同一事件的媒體轉載污染
