@@ -1274,11 +1274,12 @@ code {
 .detail__body table {
   width: 100%; border-collapse: collapse;
   font-size: 14px; margin: 16px 0;
-}
-/* 窄幅時寬表格改在自身容器內橫捲，不得撐爆頁面 viewport
-   （2026-07-28 讀者 review：375px 下 feature-radar 表格把 layout viewport 撐到 1037px） */
-@media (max-width: 720px) {
-  .detail__body table { display: block; overflow-x: auto; max-width: 100%; }
+  /* 寬表格一律在自身容器內橫捲，不得裁切或撐爆 viewport。
+     2026-07-28 只在 ≤720px 修過一次；2026-08-04 讀者回報桌面版 model-comparison
+     多欄表格右側欄位被裁掉不可見（overflow visible 溢出無捲軸）——同一病，
+     桌面也會發作（多欄＋不可斷行的 URL/代號把 min-content 撐超過容器），
+     故改為全幅寬適用，不再限窄幅 */
+  display: block; overflow-x: auto; max-width: 100%;
 }
 .detail__body th {
   font-family: var(--font-mono);

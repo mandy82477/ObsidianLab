@@ -1645,7 +1645,7 @@ window.WIKI_DATA = {
       "pill": "active",
       "firstSeen": "",
       "startDate": "2026-07-02",
-      "lastUpdated": "2026-07-29",
+      "lastUpdated": "2026-08-04",
       "lastNewsUpdate": "2026-07-29",
       "updateFreq": "",
       "summary": "**2026-07-25，Anthropic 發布 Claude Opus 5，取代 Opus 4.8 成為次旗艦**——公開陣容更新為 Fable 5 > Opus 5 > Sonnet 5 > Sonnet 4.6 > Haiku 4.5（Opus 4.8 / Opus 4.7 皆已被取代）。Opus 5 官方稱編…",
