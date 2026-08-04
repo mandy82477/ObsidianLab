@@ -71,7 +71,7 @@ def parse_args() -> argparse.Namespace:
 # source returns items but ALL of them score 0 while claiming one of these units,
 # the metric is silently broken (e.g. Reddit RSS has no vote count → always 0),
 # which lets the whole source slip past downstream interaction gates unnoticed.
-_REAL_SCORE_UNITS = {"分", "讚", "留言"}
+_REAL_SCORE_UNITS = {"分", "讚", "留言", "星"}
 
 
 def _warn_if_scores_all_zero(name: str, items: list, logger) -> None:

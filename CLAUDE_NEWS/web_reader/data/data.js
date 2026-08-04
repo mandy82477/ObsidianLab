@@ -701,8 +701,8 @@ window.WIKI_DATA = {
       "pill": "active",
       "firstSeen": "",
       "startDate": "2026-04-25",
-      "lastUpdated": "2026-08-01",
-      "lastNewsUpdate": "2026-07-30",
+      "lastUpdated": "2026-08-04",
+      "lastNewsUpdate": "2026-08-04",
       "updateFreq": "🗓️ 週更（每週策展一次；更新日期停留數天屬正常節奏）",
       "summary": "追蹤 Claude Code 社群發布的工具、插件與 skill 專案。本頁採每週策展：彙整近兩週日報中達收錄門檻的工具，並汰除長期無後續者，因此更新日期停留數天屬正常。日常工作流模式見 community-tech-patterns，概念辯論見 community-tech-discussions。 官方功能見 fe…",
       "latestHeadline": "追蹤 Claude Code 社群發布的工具、插件與 skill 專案。本頁採每週策展：彙整近兩週日報中達收錄門檻的工具，並汰除長期無後續者，因此更新日期停留數天屬正常。日常工作流模式見 community-tech-patterns，概念辯論見 community-tech-discussions。"

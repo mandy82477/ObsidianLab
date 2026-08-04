@@ -304,11 +304,6 @@
       "id": "community-pattern-trends",
       "name": "社群趨勢觀察（週更）",
       "pageType": "topic"
-    },
-    {
-      "id": "community-tech-tools",
-      "name": "社群工具目錄",
-      "pageType": "topic"
     }
   ]
 }

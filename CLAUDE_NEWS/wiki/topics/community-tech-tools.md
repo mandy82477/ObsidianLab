@@ -4,11 +4,11 @@
 **領域：** 🌐 社群
 **更新頻率：** 🗓️ 週更（每週策展一次；更新日期停留數天屬正常節奏）
 **開始日期：** 2026-04-25
-**最後更新：** 2026-08-01
-**最後新聞更新：** 2026-07-30
+**最後更新：** 2026-08-04
+**最後新聞更新：** 2026-08-04
 
-> **最新工具動態**（2026-07-30；涵蓋 07-16～07-30 news）
-> 新增 5 筆達門檻工具：Claude-thermos（HN 102，session 快取保活工具，引發「成本轉嫁」爭議）、OneCLI（HN 101，開源憑證閘道器）、Palmier Pro（HN 171，本輪最高分，開源 macOS 影片編輯器＋本機 MCP server）、CodeAlmanac（HN 54，YC S26，對話自動更新 codebase wiki）、Claude Code Merge Queue（HN 39，source_count 2，多平行 agent 本地合併佇列）。前四者達精選層高門檻（HN≥50），同步提拔至「值得關注的工具」。同步汰除 10 筆逾 30 天無後續的 ⏳ 條目（autoharness／second-opinion／Statuslin.es／06-30；ai-whisper／Adrafinil／AgentWatch／06-28；TBD／06-27；machine0／06-16；ktx／06-10；AISlop／05-29），其中 machine0、ktx、AISlop 同步自「值得關注的工具」精選層移出。
+> **最新工具動態**（2026-08-04）
+> 人工收錄 claude-workflow-v2（通用工作流插件，1.4k 星／188 forks，「已證明採用」）——非 pipeline 進料，經人工查證後收錄；此案例暴露 GitHub Search 只偵測新生 repo 的盲點，已同步改為成長偵測器。上一輪（07-30）策展：新增 5 筆達門檻工具：Claude-thermos（HN 102，session 快取保活工具，引發「成本轉嫁」爭議）、OneCLI（HN 101，開源憑證閘道器）、Palmier Pro（HN 171，本輪最高分，開源 macOS 影片編輯器＋本機 MCP server）、CodeAlmanac（HN 54，YC S26，對話自動更新 codebase wiki）、Claude Code Merge Queue（HN 39，source_count 2，多平行 agent 本地合併佇列）。前四者達精選層高門檻（HN≥50），同步提拔至「值得關注的工具」。同步汰除 10 筆逾 30 天無後續的 ⏳ 條目（autoharness／second-opinion／Statuslin.es／06-30；ai-whisper／Adrafinil／AgentWatch／06-28；TBD／06-27；machine0／06-16；ktx／06-10；AISlop／05-29），其中 machine0、ktx、AISlop 同步自「值得關注的工具」精選層移出。
 
 ---
 
@@ -148,6 +148,7 @@
 
 | 工具 | 類型 | 採用 | 首次出現 | 簡介 |
 | --- | --- | --- | --- | --- |
+| [**claude-workflow-v2**](https://github.com/CloudAI-X/claude-workflow-v2) | 工作流 | ⚡ | 2026-08-04 | 通用 Claude Code 工作流插件（7 agents＋26 commands＋14 skills＋14 hooks），走 skills.sh 生態發行；1.4k 星／188 forks／半年持續 commit，達「已證明採用」。非 pipeline 進料——使用者提供、人工查證收錄（此案例促成 GitHub Search 改為成長偵測器） |
 | [**Claude Code Merge Queue**](https://github.com/funador/claude-code-merge-queue) | 多 Agent | ⏳ | 2026-07-30 | 讓多個平行 Claude Code agent 的 commit 排隊依序落地、逐一完整建置測試後才合併，取代各分支即時觸發 CI 的做法，緩解低規格機器同時建置的資源競爭與 CI 帳單；Show HN score 39，source_count 2 |
 | [**Palmier Pro**](https://github.com/palmier-io/palmier-pro) | 其他 | ⏳ | 2026-07-23 | 開源 macOS 影片編輯器，內建 AI 生成並提供本機 MCP server 供 agent 直接操作編輯流程；Show HN score 171（本輪最高分） |
 | [**Claude-thermos**](https://github.com/izeigerman/claude-thermos) | 費用監測 | ⏳ | 2026-07-23 | 定期送出保活請求維持 Claude session 的 prompt cache 不過期；HN 高分留言質疑是否為「成本轉嫁其他用戶」，並揭露 Pro/Max 方案快取到期時間曾一度退化至僅 5 分鐘；Show HN score 102 |
