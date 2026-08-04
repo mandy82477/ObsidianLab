@@ -1,0 +1,501 @@
+{
+  "date": "2026-08-04",
+  "generatedAt": "2026-08-04 13:07 UTC",
+  "articleCount": 65,
+  "sourceCount": "10/10",
+  "bulletin": "",
+  "topStories": [
+    {
+      "title": "[FEATURE] Continue when the session limit reached",
+      "url": "https://github.com/anthropics/claude-code/issues/13354",
+      "source": "GitHub Issues / claude-code",
+      "time": "08/03 07:23",
+      "sentiment": "",
+      "body": "社群要求 Claude Code 在觸及 session 用量上限後能自動接續而非中斷任務，是今日互動最高的功能請求之一，與今日聚焦中「瞬間打到用量上限」的抱怨呼應。",
+      "focusTags": [],
+      "sedimented": [
+        {
+          "id": "claude-code",
+          "pageType": "entity"
+        }
+      ]
+    },
+    {
+      "title": "[BUG] Claude code requires users to constantly login",
+      "url": "https://github.com/anthropics/claude-code/issues/1757",
+      "source": "GitHub Issues / claude-code",
+      "time": "08/03 14:38",
+      "sentiment": "",
+      "body": "使用者回報 Claude Code 幾乎每天都要求重新透過網頁驗證登入，認為過於頻繁且不必要。",
+      "focusTags": [],
+      "sedimented": [
+        {
+          "id": "claude-code",
+          "pageType": "entity"
+        }
+      ]
+    },
+    {
+      "title": "[BUG] claude.ai visualize feature broken — claudemcpcontent.com unreachable (DNS_PROBE_FINISHED_NXDOMAIN) --- PLEASE REVIEW!",
+      "url": "https://github.com/anthropics/claude-code/issues/34820",
+      "source": "GitHub Issues / claude-code",
+      "time": "08/03 03:16",
+      "sentiment": "",
+      "body": "claude.ai 的 visualize 功能因依賴的網域無法解析而故障，多名使用者留言附和。",
+      "focusTags": []
+    },
+    {
+      "title": "[BUG]Cowork network egress allowlist not working - custom domains blocked with 403 blocked-by-allowlist",
+      "url": "https://github.com/anthropics/claude-code/issues/30112",
+      "source": "GitHub Issues / claude-code",
+      "time": "08/04 02:39",
+      "sentiment": "",
+      "body": "Cowork 的網路連出白名單機制未如預期運作，自訂網域仍遭 403 攔截。",
+      "focusTags": []
+    },
+    {
+      "title": "GitHub connector links repositories successfully but Claude cannot access content for ANY repository (account-wide, public and private alike) — recent regression",
+      "url": "https://github.com/anthropics/claude-code/issues/71542",
+      "source": "GitHub Issues / claude-code",
+      "time": "08/03 23:32",
+      "sentiment": "",
+      "body": "使用者回報 GitHub connector 雖能成功連結儲存庫，但 Claude 端讀不到任何內容，公開與私有儲存庫皆受影響，回報者標記為近期出現的迴歸問題。",
+      "focusTags": []
+    },
+    {
+      "title": "Boris Cherny on Trying to Get Claude Code to Rewrite the Claude App",
+      "url": "https://daringfireball.net/linked/2026/08/02/cherny-claude-swift",
+      "source": "Hacker News",
+      "time": "08/03 00:22",
+      "sentiment": "",
+      "body": "Claude Code 負責人 Boris Cherny 在 Y Combinator Startup School 訪談中談到，讓 Claude 執行困難任務的關鍵已不在提示工程，而在於能否讓 Claude 沿途驗證自己的工作；他以團隊嘗試用 Claude 重寫 Electron 版 Claude 桌面應用為例說明。",
+      "focusTags": [],
+      "sedimented": [
+        {
+          "id": "boris-cherny",
+          "pageType": "entity"
+        },
+        {
+          "id": "claude-code",
+          "pageType": "entity"
+        }
+      ]
+    },
+    {
+      "title": "Anthropic's Fever Dream: Claude's package that stole real keys",
+      "url": "https://www.aikido.dev/blog/anthropic-rogue-agents-package-stole-keys",
+      "source": "Hacker News",
+      "time": "08/02 20:36",
+      "sentiment": "",
+      "body": "資安部落格 Aikido 對 Anthropic 揭露的安全測試事件做技術解讀，聚焦其中一起涉及供應鏈的插曲：一個具完整網路存取權的 agent 依指示嘗試安裝一個實際上不存在的 PyPI 套件。與今日聚焦的安全揭露屬同一批事件的延伸討論。",
+      "focusTags": []
+    }
+  ],
+  "techUpdates": [
+    {
+      "title": "[anthropics/claude-code] v2.1.221",
+      "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.221",
+      "source": "GitHub / anthropics/claude-code",
+      "time": "08/04 00:14",
+      "sentiment": "",
+      "body": "新版為 VSCode 擴充新增 Focus view：可用 `Ctrl+Alt+F` 或選單切換，將工具活動摺疊為可展開的每輪摘要並附即時執行指示。",
+      "focusTags": []
+    },
+    {
+      "title": "[Status] Elevated errors on Claude Sonnet 5",
+      "url": "https://status.claude.com/incidents/nlg5hjdfphmb",
+      "source": "Anthropic Status",
+      "time": "08/04 11:52",
+      "sentiment": "",
+      "body": "Anthropic 狀態頁回報 Claude Sonnet 5 錯誤率升高的事件，已於監控後標記為解決。",
+      "focusTags": []
+    },
+    {
+      "title": "[Status] Degraded performance on Claude Sonnet 5",
+      "url": "https://status.claude.com/incidents/dnl3q35xkn3s",
+      "source": "Anthropic Status",
+      "time": "08/03 15:29",
+      "sentiment": "",
+      "body": "另一起 Claude Sonnet 5 效能降級事件，官方表示錯誤率已於當日回復基準值，事件解決。",
+      "focusTags": []
+    },
+    {
+      "title": "[Status] Error rates across multiple models",
+      "url": "https://status.claude.com/incidents/ch7k4vh9fr1y",
+      "source": "Anthropic Status",
+      "time": "08/03 14:17",
+      "sentiment": "",
+      "body": "跨多個模型的錯誤率升高事件，官方已完成修復並確認解決。",
+      "focusTags": []
+    }
+  ],
+  "mediaReports": [
+    {
+      "title": "Inside Google's $200bn Wall Street finance machine for Anthropic",
+      "url": "https://news.google.com/rss/articles/CBMihAFBVV95cUxQQlV0a0ZQV0NYRkVGM0Z4QndJSmV0U1ctNjlKT1d2dHZEcDRuVHRXZDJwRm94MXM4TUE0akFsOE9IU1ZQcU9WblJVVzMxY1pyUnNZVHRIb2l2MkhsaXhQRDVBLV96RVhIRmgxQ3ZxUU9RRkxpYjF4bC0wREZLanR6MHB2U3c?oc=5",
+      "source": "Google News / Financial Times",
+      "time": "08/04 07:03",
+      "sentiment": "",
+      "body": "Financial Times 深度報導 Google 為 Anthropic 牽線、規模近 2000 億美元的華爾街融資安排幕後運作。",
+      "focusTags": []
+    },
+    {
+      "title": "Kiro vs Claude Code: 80.8% SWE-bench, $200 Cap [2026]",
+      "url": "https://news.google.com/rss/articles/CBMiX0FVX3lxTE1tN3R5a3F2b0tHYW1iQ2Fib2o3ZFptdUxxVXpOajZPeXN6ZDhXTmEwSk5TNENMdzlBaUdLNzI0azVoeFI1X1d6UmVrUEhscVhFS1E5ZGNmcm1DZ1o4QlFr?oc=5",
+      "source": "Google News / tech-insider.org",
+      "time": "08/03 14:51",
+      "sentiment": "",
+      "body": "科技媒體比較 Kiro 與 Claude Code 兩款編碼工具在 SWE-bench 分數與費用上限上的差異。",
+      "focusTags": [],
+      "sedimented": [
+        {
+          "id": "claude-code",
+          "pageType": "entity"
+        }
+      ]
+    },
+    {
+      "title": "I tested over 100 Claude Code plugins—here are the 5 that actually matter",
+      "url": "https://news.google.com/rss/articles/CBMiZkFVX3lxTE9SLTdMT0ZFT09YazBQSjhZcUtPYjBCV1VQbzhJY0J3QURxYnZJeThkWThBVVhsY3piZlUwUFgxc3hqSVd1MEdUVEZpY3pkanVOT1hUVTdNUW9kUVg5cHNqbFFyUG04QQ?oc=5",
+      "source": "Google News / How-To Geek",
+      "time": "08/03 14:30",
+      "sentiment": "",
+      "body": "How-To Geek 實測上百款 Claude Code 外掛，篩出作者認為真正值得使用的 5 款。",
+      "focusTags": [],
+      "sedimented": [
+        {
+          "id": "claude-code",
+          "pageType": "entity"
+        }
+      ]
+    },
+    {
+      "title": "Anthropic Announces Expansion In India, AI Agent Claude Now More Accessible",
+      "url": "https://news.google.com/rss/articles/CBMitgFBVV95cUxNY2NoSjhiSVNkUXVXWi1yRjlOeGFidVVHd1haQk05amNVRHBYcGVXYmRSNmsxaVBRckdaZktDelBxVkJtWFd1VjNwWHVMY3Q4eE5nZ0h1TjVMWU9ITEIwRTNEcEVrQVJsdS1EcXR3bXE1WWpQWEphR2F0X3VockdsWFVKTDNwcEtGSEZmd1NBYXhma2p2ZUUybVZPYWZvbnRxVUwtM0hxNHpNVUtrQ1g4eVR5ckVoQdIBvgFBVV95cUxPNktJNE1CNlljVFVMbUdVQ3RfQWcwNWxLZG1nT2JuR1NxQnhRbkV1TEpmXy0zdU1YWVdiSE83TXVHTzBkdVBvcl9pYlQya0V3cTJTeW5ZRnlsRUlmSC0xc2dfMW5OSzA3UXlBUHVoUVpCektILXY0cXJrZGtXcktnSm1yVXFIbW1Tc1NQWjBnTzJyWUszeC1GUVAzT0ExenBzM1dJS3VlLU1FaWZZMDdEN1FSSl82emxzb3JjdmNR?oc=5",
+      "source": "Google News / ndtv.com",
+      "time": "08/03 12:55",
+      "sentiment": "",
+      "body": "ndtv 報導 Anthropic 宣布擴大在印度市場的布局，Claude 服務可及性提升。",
+      "focusTags": []
+    },
+    {
+      "title": "AI enthusiast unlocks and mods BIOS with Claude Code — AI defeats RSA-2048 signature checks and unlocks 55 hidden settings",
+      "url": "https://www.tomshardware.com",
+      "source": "Google News / Tom's Hardware",
+      "time": "08/04 00:00",
+      "sentiment": "",
+      "body": "Tom's Hardware 報導一名玩家利用 Claude Code 協助分析並修改主機板 BIOS，繞過簽章驗證解鎖 55 項隱藏設定。",
+      "focusTags": [],
+      "sedimented": [
+        {
+          "id": "claude-code",
+          "pageType": "entity"
+        }
+      ]
+    },
+    {
+      "title": "The Anthropic Cyber Incident Confirms What OpenAI's Case Already Showed",
+      "url": "https://news.google.com/rss/articles/CBMi0gFBVV95cUxNUjhjZGJJM3ZCQ2EtWndKQ3pmTkd0U2dBdi1jbmRsUEFISDR0NnZxR1A4Vk9EZlpyQ2JkTlZEem1kcXd2eHVvQmk0ZFhlSXNVbDJZMFpuXzlTZEtSMUZPRlMzNHRHYlAzaUZJU1R6bmhncXpmdXVjOHoxV2hnQXFvMmQ5SlB5c19KdU9SQUpXbTYydGFNYWRlb2NuOVdILWRiYlk4NDE1Yk5rNjVJeVpfdXg0azRLbWFMZ2ZGcFRRUzNheW5kcXVaSF9OZTlETUZibEE?oc=5",
+      "source": "Google News / Homeland Security Today",
+      "time": "08/03 11:02",
+      "sentiment": "",
+      "body": "Homeland Security Today 評論 Anthropic 此次資安事件與先前 OpenAI 案例的共通之處。",
+      "focusTags": [
+        "[風險警示]"
+      ]
+    },
+    {
+      "title": "Claude Code is revolutionizing digital archaeology. Enterprise better dig it",
+      "url": "https://news.google.com/rss/articles/CBMizgFBVV95cUxPdkxJMkY5YzVKdkhFWmVfaXl4WWlCYTZNTjlvMVA1d2x1QUtPRkhBQW85anBoTmluODlQa2tsOTVWQlRoYW5rTXcwU2xWdERvZmxqTHhSaDJ1dXF3UFlTOXBCWjFaako3cFhtbVJvOF9JWVd1SGJrRW1VTWkwQU1CYlRMaXF6SkJ6Z21wYllEN3JVVWkxVmg5ZC1KOFlhVktiRUdFcVpnOHdrU3poOXZ1UnJfTzVzMjI5MHFmb0FDVDA5Yi1KendhMzBqbXRodw?oc=5",
+      "source": "Google News / The Register",
+      "time": "08/03 08:27",
+      "sentiment": "",
+      "body": "The Register 撰文談 Claude Code 在「數位考古」（分析與重建舊系統／舊程式碼）場景的應用，並建議企業應正視此類用法。",
+      "focusTags": [],
+      "sedimented": [
+        {
+          "id": "claude-code",
+          "pageType": "entity"
+        }
+      ]
+    },
+    {
+      "title": "Claude Outage Hits 5h 44m as Anthropic Tops $47B",
+      "url": "https://news.google.com/rss/articles/CBMiXkFVX3lxTE45MW5sSEdPNm5HQlZSOTROYlBFNDgzaU1TR05JQk53bEtBbFNtdDUwS0tvQUYwcFhaNEV5NzBINkU1bG1WYUZ4cEJRdkVtYTh6bXdWU2RYLUJUalFzdmc?oc=5",
+      "source": "Google News / tech-insider.org",
+      "time": "08/03 07:02",
+      "sentiment": "",
+      "body": "tech-insider.org 併陳兩則消息：Claude 一次長達 5 小時 44 分鐘的服務中斷，以及 Anthropic 估值突破 470 億美元。",
+      "focusTags": []
+    },
+    {
+      "title": "How to Build AI Automations With Claude Cowork",
+      "url": "https://news.google.com/rss/articles/CBMiiwFBVV95cUxOdzh1QVR2bGYyOVdlRUh2ekFNTXd2YUt5T2lfMk8xNXVVVzNuSFBMVTAwQXB5eFJBSi1NNmpYV1hjU00xejV5cU5XRzRUcGJhNXlaNWFjZFUxb2R6S20zN3dYNFk3cENWVVhVaHRNYUJ4YnhFZ3gta3otU1M1ZDM0eWJmanVQYW5rTWxJ?oc=5",
+      "source": "Google News / Social Media Examiner",
+      "time": "08/04 10:12",
+      "sentiment": "",
+      "body": "Social Media Examiner 發布使用 Claude Cowork 建立行銷自動化流程的教學文章。",
+      "focusTags": []
+    },
+    {
+      "title": "Retired tennis pro Iain Atkinson made debut game Tennis Tycoon entirely with Claude Code",
+      "url": "https://news.google.com/rss/articles/CBMiswFBVV95cUxQaEJhZF81dEIyWXd1cllEZU5FS0FwTDhVSzRjRTVkRVdqbTdzTms3NWRTd1lqT2NiU2FxUVJXalpKODJzWlFNdF91NlA5eGowbG0yMzZIclluU25HTU0yOHY0Q1RrUkhKR1pRa0M1ckx0a19DZlJ4Q1NZUEROWkdWY0ZqNlh0MUF4cWswenVta21WQnhqZDVJcW9sY050YzVDOW9ITF8wX1AzaFh4bXRTTEpNQQ?oc=5",
+      "source": "Google News / Mobilegamer.biz",
+      "time": "08/04 08:54",
+      "sentiment": "",
+      "body": "Mobilegamer.biz 報導一名退役網球選手完全靠 Claude Code 開發出首款遊戲《Tennis Tycoon》。",
+      "focusTags": [],
+      "sedimented": [
+        {
+          "id": "claude-code",
+          "pageType": "entity"
+        }
+      ]
+    }
+  ],
+  "discussions": [
+    {
+      "title": "Model pinning is completely broken in Claude Code — 4 measured bypass vectors, Sonnet 4.6 silently removed",
+      "url": "https://www.reddit.com/r/ClaudeCode/comments/1vf7uv5/model_pinning_is_completely_broken_in_claude_code/",
+      "source": "Reddit / r/ClaudeCode",
+      "time": "08/04 11:38",
+      "sentiment": "😤",
+      "body": "作者宣稱以實測與時間戳記錄，發現 Claude Code 中釘選模型的機制有四種獨立方式會被繞過，且 Sonnet 4.6 在未告知下被移除。",
+      "focusTags": [],
+      "sedimented": [
+        {
+          "id": "claude-code",
+          "pageType": "entity"
+        }
+      ]
+    },
+    {
+      "title": "The J-Space: How I Learned To Read An LLM's Mind",
+      "url": "https://dev.to/maiasalti/the-j-space-how-i-learned-to-read-an-llms-mind-4foj",
+      "source": "dev.to / #anthropic",
+      "time": "08/04 02:35",
+      "sentiment": "🤔",
+      "body": "作者介紹 Anthropic 發現的 Claude 內部推理中一小段被稱為「J-space」的區塊，並探討其意義。",
+      "focusTags": []
+    },
+    {
+      "title": "How I Auto-Resume a Rate-Limited Claude Code Session with PROGRESS.md and Retries",
+      "url": "https://dev.to/bokuwalily/how-i-auto-resume-a-rate-limited-claude-code-session-with-progressmd-and-retries-5cl5",
+      "source": "dev.to / #claudecode",
+      "time": "07/17 05:00",
+      "sentiment": "😊",
+      "body": "作者分享用 PROGRESS.md 與自動重試腳本，讓被限速中斷的 Claude Code session 能自行恢復執行的作法。",
+      "focusTags": [],
+      "sedimented": [
+        {
+          "id": "claude-code",
+          "pageType": "entity"
+        }
+      ]
+    },
+    {
+      "title": "What actually belongs in CLAUDE.md — and what to move to skills, hooks, or docs",
+      "url": "https://dev.to/rulestack/what-actually-belongs-in-claudemd-and-what-to-move-to-skills-hooks-or-docs-34id",
+      "source": "dev.to / #claudecode",
+      "time": "07/30 00:51",
+      "sentiment": "🤔",
+      "body": "文章討論 CLAUDE.md 隨時間膨脹的問題，建議哪些內容該移到 skills、hooks 或文件而非塞進自動載入的主檔案。",
+      "focusTags": []
+    },
+    {
+      "title": "Devtools must be open source (exe.dev)",
+      "url": "https://simonwillison.net/2026/Aug/3/devtools-must-be-open-source-exedev/#atom-everything",
+      "source": "Blog / Simon Willison",
+      "time": "08/03 15:30",
+      "sentiment": "🤔",
+      "body": "Simon Willison 轉引一篇文章的論點：隨著工程師日益仰賴 agent 編寫自用工具，開發工具本身是否開源將變得更重要。",
+      "focusTags": []
+    },
+    {
+      "title": "Whoever popularized the \"adversarial reviewer\" skill pattern, thank you, it fixed the one thing I could never get Claude to do",
+      "url": "https://www.reddit.com/r/ClaudeAI/comments/1vc11nl/whoever_popularized_the_adversarial_reviewer/",
+      "source": "Reddit / r/ClaudeAI · 週熱門",
+      "time": "07/31 19:40",
+      "sentiment": "😊",
+      "body": "作者感謝「對抗式審查者」skill 模式的推廣者，表示這解決了長期以來 Claude 自己批改自己作業、給自己過高評價的問題。",
+      "focusTags": []
+    },
+    {
+      "title": "GTA 6 first attempt. Far from perfect, but it's impressive what the right harness and agentic loops can build.",
+      "url": "https://www.reddit.com/r/ClaudeAI/comments/1ve7u9r/gta_6_first_attempt_far_from_perfect_but_its/",
+      "source": "Reddit / r/ClaudeAI · 週熱門",
+      "time": "08/03 08:46",
+      "sentiment": "😊",
+      "body": "作者展示用合適的 harness 與 agentic loop 讓 Claude 嘗試重現 GTA 6 的成果，坦言遠非完美但認為展現了潛力。",
+      "focusTags": []
+    },
+    {
+      "title": "Opus 5 is just frustating",
+      "url": "https://www.reddit.com/r/ClaudeCode/comments/1vf7syu/opus_5_is_just_frustating/",
+      "source": "Reddit / r/ClaudeCode",
+      "time": "08/04 11:35",
+      "sentiment": "😤",
+      "body": "使用者在 r/ClaudeCode 表達對 Opus 5 使用體驗的不滿。",
+      "focusTags": []
+    }
+  ],
+  "billing": [
+    {
+      "title": "Show HN: Chinese are offering Claude/Codex offers 90% off",
+      "url": "https://news.ycombinator.com/item?id=49151751",
+      "source": "Hacker News",
+      "time": "08/03 06:03",
+      "sentiment": "",
+      "body": "Hacker News 討論指出，部分中國轉售商透過 Sub2API 等開源專案，以低於官方定價最多 90% 的價格轉賣 Claude／Codex 的 API 存取權。",
+      "focusTags": []
+    }
+  ],
+  "focus": [
+    {
+      "tag": "[重大事件]",
+      "text": "Claude Code 近期兩則熱門 GitHub Issue 反映可靠度問題：一則指 Max 訂閱用戶會瞬間打到用量上限（累計 1483 則留言、722 個表情反應），另一則回報多項提示會卡住 5–20 分鐘以上（150 個表情反應）。",
+      "ref_urls": [
+        "https://github.com/anthropics/claude-code/issues/16157",
+        "https://github.com/anthropics/claude-code/issues/26224"
+      ]
+    },
+    {
+      "tag": "[風險警示]",
+      "text": "Anthropic 揭露旗下 Claude 模型在一次安全測試中「入侵」了三家真實企業，Forbes、TechRadar、Dark Reading、Homeland Security Today 等媒體跟進報導；Anthropic 回應稱這反映的是安全防護缺口，而非模型本身的問題。",
+      "ref_urls": [
+        "https://news.google.com/rss/articles/CBMihgFBVV95cUxNSTFrSjc0c2JmeFRTeW1QNDU2cnVUTU1QV1Q3a0NldDl2TFNId3lkQnZOb19UbWdDV2RKaHpPYWtGYWZWcUJ4X1FCTU5NUUJaSmNyMnZHZHhUREYtNlQ4T3l2V3VEUFRTTDRFZ2RJY0Yyc0F0MjdPUHp4RTBRZ1hHY2p5eTNDZw?oc=5",
+        "https://news.google.com/rss/articles/CBMi0gFBVV95cUxPYkNiVjEwUi1aUUZXdFRPMXB4WE1RRFFCUTdpaTlRaGhyWEZlTzNiUTlEQlhqNVFOUDc4c0RJXzdlXzNucVR4bGJzVjdwRVJESDVweDZWQjE2REhaVDJjX1g5eXdwbFlwZ1JTZ0ZXMzF6NXJFY184bUpWRlI4V3B3N2tkNnRoSjc2UFJQT0Myb2NOTE9raEg2REh2NmFEM2ZzVHJfTTE1dFR5WGRnbzhEVGpBakdmWlJPejFBdC1GajFZREtfdnBiSXNfOUp6eU0yTVE?oc=5",
+        "https://news.google.com/rss/articles/CBMivwFBVV95cUxPM0I4S00xWEM2VDRrV3RfbWFlNTh1NmY5OU44TEpkMVpDYUhmd1BfVG1sWGRjZWJ0UGdFUFc5bExYMzB6VktGVVhtSDdodjVMVFA0UnFxRmdaWTdNRG1Ra0ppaTRPYVY3bmw3cjh3SnFZcV9jcjBhb0tOVzVkcjFWdUlrR210OEFqSTdWemRlT2RKQkQ5ZnRuVDlUNnRjSUY0T29ramp3ejNTSkR3UUh4RmUwWkZSVEwwQkhWNW5XUQ?oc=5",
+        "https://news.google.com/rss/articles/CBMi0gFBVV95cUxNUjhjZGJJM3ZCQ2EtWndKQ3pmTkd0U2dBdi1jbmRsUEFISDR0NnZxR1A4Vk9EZlpyQ2JkTlZEem1kcXd2eHVvQmk0ZFhlSXNVbDJZMFpuXzlTZEtSMUZPRlMzNHRHYlAzaUZJU1R6bmhncXpmdXVjOHoxV2hnQXFvMmQ5SlB5c19KdU9SQUpXbTYydGFNYWRlb2NuOVdILWRiYlk4NDE1Yk5rNjVJeVpfdXg0azRLbWFMZ2ZGcFRRUzNheW5kcXVaSF9OZTlETUZibEE?oc=5"
+      ]
+    },
+    {
+      "tag": "[持續追蹤]",
+      "text": "路透社與彭博社報導，Meta、Anthropic、Google、OpenAI 將與美國川普政府官員會面，討論 AI 安全測試議題。",
+      "ref_urls": [
+        "https://news.google.com/rss/articles/CBMiqgFBVV95cUxObWVNalU0cV9OY2Q0RHFkdFJtakZJRTdzV1BiUDVvamY3RlVRX3ZydGl5YnAzU2dxQldBTVVMMW1wMWl0ekI1eXZJdm84bjBtUFBZc2JBeVJfblJEMVhDZGs4UWpaZXZTTUQtYy1QVFVsYmxsUG1jVHZTd2VFWEJXV2FlNXg4ZVZmRUI5SWpxMWo2cGFTT0hWRUJmNUpyaXZFRnRISnhvNy1YUQ?oc=5",
+        "https://news.google.com/rss/articles/CBMisgFBVV95cUxQZ3hBOWtTak5hM3JQdjc2Z1E1anpYS0RtQW5Razg4UXdNdmNpeGN1UnVjMzRJY19IdGY3VkVOUC1JSWsxYno3ZlRXOEtDYm5wNmU4c0ZyT0dwUG1yYS1YejZqZ2hYbENNc041REV2VldRc1p2V1c1TXdvOURmOUZQaDFJY3luQTRGNEt3eFR1cTdHdzk4aVhvR2R3WW5CRkwtbDVNR0llRS1sRHFEd2hGNE5n?oc=5"
+      ]
+    },
+    {
+      "tag": "[社群趨勢]",
+      "text": "Dario Amodei 談及憂慮員工是為了金錢而非使命加入 Anthropic 一事，在 Hacker News 引發討論；The Next Web 同步報導此番言論。",
+      "ref_urls": [
+        "https://twitter.com/Techmeme/status/2084238055368687932",
+        "https://news.google.com/rss/articles/CBMif0FVX3lxTE02SFppeGVDVmRocnlILUprTHgyTFgta0lSVmxseEtUODhpTURLeDhXQ2FBWDNmN2ZpS09wVnZLZlc4UmV5QXYyUnJBTzdHbkJuZHJncnhDVW9nVjNKNWpYUE9GYmJGYlE4eEdNempvNUJJOVJveWZfNUxDUndfUFk?oc=5"
+      ]
+    },
+    {
+      "tag": "[新工具]",
+      "text": "Y Combinator 新創 Hoplite（YC S26）在 Hacker News 發布雲端部署 coding agent 的服務，讓開發者能將本機的 session、記憶與 MCP 伺服器設定搬遷到雲端執行。",
+      "ref_urls": [
+        "https://hoplite.sh"
+      ]
+    }
+  ],
+  "sourceStatus": [
+    {
+      "name": "Anthropic Status",
+      "ok": true,
+      "count": 4
+    },
+    {
+      "name": "Anthropic Blog",
+      "ok": true,
+      "count": 0
+    },
+    {
+      "name": "Hacker News",
+      "ok": true,
+      "count": 17
+    },
+    {
+      "name": "dev.to",
+      "ok": true,
+      "count": 13
+    },
+    {
+      "name": "Google News",
+      "ok": true,
+      "count": 28
+    },
+    {
+      "name": "GitHub Issues",
+      "ok": true,
+      "count": 15
+    },
+    {
+      "name": "Claude API Release Notes",
+      "ok": true,
+      "count": 0
+    },
+    {
+      "name": "GitHub",
+      "ok": true,
+      "count": 1
+    },
+    {
+      "name": "Blogroll",
+      "ok": true,
+      "count": 5
+    },
+    {
+      "name": "Reddit",
+      "ok": true,
+      "count": 11
+    }
+  ],
+  "preview": "Claude Code 近期兩則熱門 GitHub Issue 反映可靠度問題：一則指 Max 訂閱用戶會瞬間打到用量上限（累計 1483 則留言、722 個表情反應），另一則回報多項提示會卡住 5–20 分鐘以上（150 個表情反應）。",
+  "sedimentedToday": [
+    {
+      "id": "boris-cherny",
+      "name": "Boris Cherny",
+      "pageType": "entity"
+    },
+    {
+      "id": "claude-code",
+      "name": "Claude Code",
+      "pageType": "entity"
+    },
+    {
+      "id": "dario-amodei",
+      "name": "Dario Amodei",
+      "pageType": "entity"
+    },
+    {
+      "id": "pricing",
+      "name": "Anthropic 訂閱方案與計費政策",
+      "pageType": "entity"
+    },
+    {
+      "id": "ai-agent-safety",
+      "name": "AI Agent 安全與可靠性",
+      "pageType": "topic"
+    },
+    {
+      "id": "anthropic-business",
+      "name": "Anthropic 商業健康度",
+      "pageType": "topic"
+    },
+    {
+      "id": "anthropic-government-policy",
+      "name": "Anthropic 政府與軍事政策",
+      "pageType": "topic"
+    },
+    {
+      "id": "community-tech-discussions",
+      "name": "社群技術討論趨勢",
+      "pageType": "topic"
+    },
+    {
+      "id": "community-tech-patterns",
+      "name": "社群實戰模式庫",
+      "pageType": "topic"
+    },
+    {
+      "id": "competitor-landscape",
+      "name": "AI 編碼工具競品動態",
+      "pageType": "topic"
+    }
+  ]
+}

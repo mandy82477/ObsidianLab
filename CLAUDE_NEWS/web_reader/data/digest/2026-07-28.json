@@ -87,12 +87,6 @@
       "body": "Axios 報導 Amodei 公開表態反對禁止開源權重模型，同時呼籲加強對中國的晶片出口管制。",
       "focusTags": [
         "[重大事件]"
-      ],
-      "sedimented": [
-        {
-          "id": "dario-amodei",
-          "pageType": "entity"
-        }
       ]
     },
     {
@@ -102,13 +96,7 @@
       "time": "07/28 00:13",
       "sentiment": "",
       "body": "TechCrunch 從另一角度報導同一聲明，聚焦 Amodei 對中國 AI 發展的疑慮。",
-      "focusTags": [],
-      "sedimented": [
-        {
-          "id": "dario-amodei",
-          "pageType": "entity"
-        }
-      ]
+      "focusTags": []
     },
     {
       "title": "Anthropic CEO: Don't ban cheap AI — but clamp down on China",
@@ -375,16 +363,5 @@
     }
   ],
   "preview": "Anthropic 執行長 Dario Amodei 在部落格澄清，公司從未主張禁止 open-weights 模型，但呼籲對中國實施更嚴格的晶片出口管制；聲明起因於近期部分美國官員考慮禁用中國開源模型引發的爭議。",
-  "sedimentedToday": [
-    {
-      "id": "boris-cherny",
-      "name": "Boris Cherny",
-      "pageType": "entity"
-    },
-    {
-      "id": "dario-amodei",
-      "name": "Dario Amodei",
-      "pageType": "entity"
-    }
-  ]
+  "sedimentedToday": []
 }

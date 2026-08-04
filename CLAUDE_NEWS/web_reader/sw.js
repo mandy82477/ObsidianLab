@@ -7,7 +7,7 @@
  * SW_VERSION is rewritten by scripts/build_web.py on every build, so each deploy
  * ships a new cache name → clients auto-drop the stale cache in activate().
  */
-const SW_VERSION = '1785677325';
+const SW_VERSION = '1785850298';
 const CACHE = 'claude-news-' + SW_VERSION;
 
 // App shell precached on install (relative to the SW scope = web_reader/).

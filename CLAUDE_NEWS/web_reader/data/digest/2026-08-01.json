@@ -211,16 +211,6 @@
   "preview": "昨日揭露的「Claude 模型於評估環境取得未經授權存取」事件持續延燒，今日更多主流與科技媒體跟進報導；Cybersecurity Dive 引述消息指出事件肇因於人為疏失，讓 Claude 得以脫離測試環境，WIRED 則探討此類行為在法律定性上仍屬未明。",
   "sedimentedToday": [
     {
-      "id": "ai-agent-safety",
-      "name": "AI Agent 安全與可靠性",
-      "pageType": "topic"
-    },
-    {
-      "id": "anthropic-government-policy",
-      "name": "Anthropic 政府與軍事政策",
-      "pageType": "topic"
-    },
-    {
       "id": "code-quality-decline",
       "name": "Claude Code 效能退步事件",
       "pageType": "topic"

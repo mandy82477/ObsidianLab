@@ -12,13 +12,7 @@
       "time": "08/01 19:09",
       "sentiment": "",
       "body": "用 Rust 打造的 Claude Code agent 監控面板，作者提到同時開多個終端機視窗追蹤不同 session／專案是常見痛點，此工具聚合多個 agent 狀態於單一介面。",
-      "focusTags": [],
-      "sedimented": [
-        {
-          "id": "claude-code",
-          "pageType": "entity"
-        }
-      ]
+      "focusTags": []
     },
     {
       "title": "Show HN: Wienerdog – memory and self-improving skills for Claude Code/Codex",
@@ -27,13 +21,7 @@
       "time": "08/01 13:44",
       "sentiment": "",
       "body": "作者將自己為 Claude Code 與 Codex 搭建的記憶系統與自我改善技能／hooks 整理成套件，並開始自動化這套設定流程分享給他人。",
-      "focusTags": [],
-      "sedimented": [
-        {
-          "id": "claude-code",
-          "pageType": "entity"
-        }
-      ]
+      "focusTags": []
     }
   ],
   "techUpdates": [],
@@ -56,13 +44,7 @@
       "time": "08/02 04:34",
       "sentiment": "",
       "body": "Startup Fortune 報導稱 Anthropic 已承認自身 bug 是先前 Claude Code 故障的原因；本篇為單一媒體來源，具體細節與時間線待其他管道佐證。",
-      "focusTags": [],
-      "sedimented": [
-        {
-          "id": "claude-code",
-          "pageType": "entity"
-        }
-      ]
+      "focusTags": []
     },
     {
       "title": "Andrej Karpathy Says AI Has Moved Beyond Simple Prompts After Claude Opus Builds 3D Lord of the Rings World",
@@ -97,13 +79,7 @@
       "time": "08/01 14:53",
       "sentiment": "",
       "body": "tech-insider.org 比較開源 OpenCode 與付費 Claude Code 的下載量與定價差異，標題指出 OpenCode 下載量達 5.4 倍。",
-      "focusTags": [],
-      "sedimented": [
-        {
-          "id": "claude-code",
-          "pageType": "entity"
-        }
-      ]
+      "focusTags": []
     }
   ],
   "discussions": [
@@ -132,13 +108,7 @@
       "time": "08/01 14:37 UTC ·",
       "sentiment": "😐",
       "body": "使用者要求 Claude Code 終端機主題能跟隨作業系統的明暗模式自動切換，而非每次手動調整，此請求獲得 242 個 👍 反應。",
-      "focusTags": [],
-      "sedimented": [
-        {
-          "id": "claude-code",
-          "pageType": "entity"
-        }
-      ]
+      "focusTags": []
     },
     {
       "title": "[BUG] Cowork Can't add private GitHub marketplace",
@@ -174,13 +144,7 @@
       "time": "08/02 00:09 UTC ·",
       "sentiment": "🤔",
       "body": "發文者提問為何 Claude Code、Codex 等框架需要「skills」概念，而不是直接用結構化的 Markdown 文件搭配 AGENTS.md 索引即可達成類似效果。",
-      "focusTags": [],
-      "sedimented": [
-        {
-          "id": "claude-code",
-          "pageType": "entity"
-        }
-      ]
+      "focusTags": []
     },
     {
       "title": "I stopped reviewing my own code. Here's what had to be true first.",
@@ -198,13 +162,7 @@
       "time": "08/02 11:14 UTC ·",
       "sentiment": "😊",
       "body": "作者實作了一個 Mac 瀏海面板，透過阻塞式 PreToolUse hook 攔截並回應 Claude Code 的權限確認提示，並設計為應用程式關閉時預設放行（fail open）。",
-      "focusTags": [],
-      "sedimented": [
-        {
-          "id": "claude-code",
-          "pageType": "entity"
-        }
-      ]
+      "focusTags": []
     },
     {
       "title": "Show HN: Nuking the crap Claude left in the codebase – CCN",
@@ -317,36 +275,6 @@
       "id": "andrej-karpathy",
       "name": "Andrej Karpathy",
       "pageType": "entity"
-    },
-    {
-      "id": "claude-code",
-      "name": "Claude Code",
-      "pageType": "entity"
-    },
-    {
-      "id": "pricing",
-      "name": "Anthropic 訂閱方案與計費政策",
-      "pageType": "entity"
-    },
-    {
-      "id": "anthropic-business",
-      "name": "Anthropic 商業健康度",
-      "pageType": "topic"
-    },
-    {
-      "id": "community-tech-discussions",
-      "name": "社群技術討論趨勢",
-      "pageType": "topic"
-    },
-    {
-      "id": "community-tech-patterns",
-      "name": "社群實戰模式庫",
-      "pageType": "topic"
-    },
-    {
-      "id": "competitor-landscape",
-      "name": "AI 編碼工具競品動態",
-      "pageType": "topic"
     }
   ]
 }
