@@ -628,5 +628,11 @@
     }
   ],
   "preview": "Claude Code 新增內建瀏覽器功能，讓 AI 可直接在外部網站上讀取、點擊與輸入文字，兩個獨立媒體來源皆有報導。",
-  "sedimentedToday": []
+  "sedimentedToday": [
+    {
+      "id": "recursive-self-improvement",
+      "name": "AI 遞歸自我改進與全球暫停呼籲",
+      "pageType": "topic"
+    }
+  ]
 }
