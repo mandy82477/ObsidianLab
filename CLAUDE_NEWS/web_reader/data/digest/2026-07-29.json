@@ -350,11 +350,5 @@
     }
   ],
   "preview": "Anthropic 揭露以 Claude Mythos Preview 進行密碼學研究的重大進展：找到能大幅削弱後量子簽章方案 HAWK 的攻擊法，並發現針對 round-reduced AES 的新攻擊方式；官方強調目前不影響任何正式系統，但已引來 NYT 等多家主流媒體跟進報導。",
-  "sedimentedToday": [
-    {
-      "id": "model-comparison",
-      "name": "Claude 模型選型對照",
-      "pageType": "topic"
-    }
-  ]
+  "sedimentedToday": []
 }

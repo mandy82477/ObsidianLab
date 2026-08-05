@@ -408,6 +408,11 @@
       "id": "community-tech-tools",
       "name": "社群工具目錄",
       "pageType": "topic"
+    },
+    {
+      "id": "model-comparison",
+      "name": "Claude 模型選型對照",
+      "pageType": "topic"
     }
   ]
 }
