@@ -126,3 +126,11 @@
 [週二 2026/08/04 13:32:08.00] Building web reader... OK（31 entities, 20 topics, 99 digests, 2 weekly reports + radar；既有斷鏈 wikilink 警告 8 則與本次改動無關，未新增）
 [週二 2026/08/04 13:32:08.00] Step 5 Single push done (news + wiki + web + confirm-cache + STARTED heartbeat) - 首次嘗試即成功，無需重試 (0152bd9..80862c1)
 [週二 2026/08/04 13:32:08.00] === Pipeline complete (agent) ===
+[cloud daily-news-pipeline-cloud STARTED 2026-08-05T13:08:59Z]
+[週三 2026/08/05 13:53:33.56] === Agent pipeline start (2026-08-05) ===
+[週三 2026/08/05 13:53:33.56] Aggregator OK
+[週三 2026/08/05 13:53:33.56] Wiki ingest OK
+[週三 2026/08/05 13:53:33.56] 測試全綠 - web build 放行
+[週三 2026/08/05 13:53:33.56] Building web reader...
+[週三 2026/08/05 13:53:33.56] Single push done (news + wiki + web + confirm-cache + STARTED heartbeat) - 首次嘗試即成功，無需重試
+[週三 2026/08/05 13:53:33.56] === Pipeline complete (agent) ===

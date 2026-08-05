@@ -3,11 +3,11 @@
 **狀態：** monitoring
 **領域：** 🛠️ 工具/功能
 **開始日期：** 2026-05-17
-**最後更新：** 2026-08-01
-**最後新聞更新：** 2026-07-23
+**最後更新：** 2026-08-05
+**最後新聞更新：** 2026-08-05
 
-> **最新功能缺口**（2026-07-22）
-> v2.1.218 將 `/code-review` 改為以背景 subagent 執行，審查不再佔用對話內容，「多代理 PR/程式碼審查」官方對應再進一步，矩陣狀態維持 🧪 部分產品化；07-17 v2.1.212 將 `/fork` 改為建立獨立背景 session、原同 session 子 agent 更名 `/subtask`，「多平行 agent 即時可觀測性／協調地圖」缺口的列表管理面同步再進一步，但仍非即時依賴關係／狀態流的 live map，矩陣狀態維持 ❌ 無官方對應。
+> **最新功能缺口**（2026-08-04）
+> v2.1.222 修復 worktree-isolated session 與其 subagent 可對主 checkout 執行破壞性 git 指令的隔離漏洞，隔離範圍擴大至每個 session 的檔案編輯與 Bash 執行，「安全隔離」列的官方對應清單新增此修復，矩陣狀態維持 ✅ 高度對應。
 
 ## 摘要
 
@@ -45,7 +45,7 @@
 |---------|---------|-------------|---------|
 | 多 agent 協調管理 | ⭐⭐⭐⭐ | Managed Agents、Agent View、`/goal`、`/loop`/`/batch`、`claude agents` 旗標 | ✅ 高度對應 |
 | 輸出品質驗證 | ⭐⭐⭐⭐ | Outcomes 規格驗證、`/goal` 自動判定完成條件 | ⚡ 部分對應 |
-| 安全隔離 | ⭐⭐⭐ | Claude Code Sandboxing、`hard_deny`、Claude Security、`sandbox.filesystem.disabled`（v2.1.216，2026-07-20，可在維持網路出口控管同時跳過檔案系統隔離） | ✅ 高度對應 |
+| 安全隔離 | ⭐⭐⭐ | Claude Code Sandboxing、`hard_deny`、Claude Security、`sandbox.filesystem.disabled`（v2.1.216，2026-07-20，可在維持網路出口控管同時跳過檔案系統隔離）、worktree session 隔離修復（v2.1.222，2026-08-04，隔離範圍擴大至檔案編輯與 Bash） | ✅ 高度對應 |
 | 跨 session 記憶歸零 | ⭐⭐⭐⭐⭐ | Dreaming（Research Preview，仍實驗性） | ⏳ 正在做但遠未解決 |
 | CLAUDE.md 規則失效 | ⭐⭐⭐ | 無 | ❌ 完全未對應 |
 | Token 成本不透明 | ⭐⭐⭐⭐ | 無（6/15 信用池改制反而使問題惡化） | ❌ 完全未對應 |
@@ -129,6 +129,9 @@ v2.1.196（2026-06-29）新增 org default model 功能，企業管理員可在 
 - [[topics/community-tech-discussions]] — 社群技術辯論
 
 ## 時序
+
+### 2026-08-04
+- **v2.1.222：worktree session 隔離漏洞修復**：修復 worktree-isolated session 與其 subagent 可對主 checkout 執行破壞性 git 指令的問題，隔離範圍擴大至每個 session 的檔案編輯與 Bash 執行；「安全隔離」對照矩陣列的官方對應清單新增此修復，矩陣狀態維持 ✅ 高度對應
 
 ### 2026-07-22
 - **v2.1.218：`/code-review` 改為背景 subagent 執行**：「多代理 PR/程式碼審查」的官方對應再進一步——審查工作不再佔用對話內容，且維持 stacked slash commands 作為審查對象；矩陣狀態維持 🧪 部分產品化，社群「adversarial 多模型審查」說法的對照數據仍缺

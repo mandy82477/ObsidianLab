@@ -3,13 +3,14 @@
 **狀態：** ongoing
 **領域：** 💼 商業
 **開始日期：** 2026-05-28
-**最後更新：** 2026-08-04
-**最後新聞更新：** 2026-08-04
+**最後更新：** 2026-08-05
+**最後新聞更新：** 2026-08-05
 
 > **最新動態**（2026-08-04）
+> - **Anthropic 與新創雲端運算商 Volta 簽署 100 億美元運算協議**：TechCrunch 報導，The Telegraph 補充 Volta 為僅成立八個月的英國新創，TipRanks 補充其獲 Nvidia 支持；延續近期算力基礎設施擴張系列信號，詳見「戰略合作」表新增列。
+> - **SpaceX 財報揭露 Anthropic／Google 運算合作推升營收翻倍**：TechCrunch 報導 SpaceX 營收較去年翻倍，成長動能含與 Anthropic、Google 的運算合作及 Starlink 業務成長；具體合作內容未見細節，詳見「戰略合作」表新增列。
 > - **Google 主導近 2000 億美元華爾街融資機制**：Financial Times 報導 Google 為 Anthropic 牽線/主導一項規模近 **2000 億美元**的華爾街融資安排（"Wall Street finance machine"），延續近期 Morgan Stanley（08-02，$150 億美元資料中心投資）、TeraWulf、Meta 等基礎設施融資系列信號；具體交易結構、參與銀行、資金用途未見報導細節，僅標題層級資訊，詳見「戰略合作」表新增列。
 > - **印度市場布局擴大**：ndtv.com 報導 Anthropic 宣布擴大印度市場布局，稱 Claude 在當地「更加普及」；呼應既有 07-13 印度盧比在地化定價（見 [[entities/pricing]]），具體擴張內容未見細節，僅標題層級資訊，詳見「戰略合作」表新增列。
-> - 08-02 已記錄之 Morgan Stanley $150 億美元德州資料中心投資案仍具參考價值，詳見下方「戰略合作」表。
 
 ---
 
@@ -127,6 +128,8 @@ Simon Willison（知名開發者博主）發表文章，認為 Anthropic 與 Ope
 
 | 合作方 | 類型 | 日期 | 意義 |
 |--------|------|------|------|
+| Volta（新創雲端運算商）| 雲端整合（運算協議，$100 億美元）| 2026-08-04 | TechCrunch 報導 Anthropic 與 AI 雲端運算新創 Volta 簽署規模達 100 億美元的運算協議；The Telegraph 補充 Volta 為僅成立八個月的英國新創；TipRanks 補充其獲 Nvidia 支持（三方報導同一事件，合併記錄）。**對商業的意涵**：延續近期 Morgan Stanley（08-02，150 億美元德州資料中心投資）、TeraWulf（07-06，190 億美元 20 年租約）、Meta（07-17，潛在 100 億美元運算力租賃）等基礎設施擴張系列信號，Volta 是又一起新興 AI 雲端運算商加入 Anthropic 算力供應鏈的具名案例，且合作對象成立僅八個月即簽下十億美元級合約，反映 Anthropic 算力採購對象持續向新興專營商擴散（推論）；具體交易結構、運算容量、生效時程未見報導細節，僅標題層級資訊（Google News/TechCrunch；Google News/The Telegraph；Google News/TipRanks）|
+| SpaceX | 運算合作（Anthropic／Google 客戶關係，推論）| 2026-08-04 | TechCrunch 報導 SpaceX 財報揭露營收較去年翻倍，成長動能含與 Anthropic、Google 的運算合作及 Starlink 業務成長。**對商業的意涵**：顯示 SpaceX 已成為 Anthropic（與 Google）運算基礎設施供應鏈的一環，是繼 TeraWulf、Volta 等新興算力供應商後又一起非傳統雲端商參與 Anthropic 算力佈局的案例（推論）；具體合作內容、金額、SpaceX 提供之運算類型（資料中心電力、衛星鏈路或其他）未見報導細節，僅標題層級資訊（Google News/TechCrunch）|
 | Google | 基礎設施融資（近 $2000 億美元，推論性質待證）| 2026-08-04 | Financial Times 報導 Google 為 Anthropic 主導/牽線一項規模近 **2000 億美元**的華爾街融資機制（原文標題："Inside Google's $200bn Wall Street finance machine for Anthropic"）。**對商業的意涵**：延續近期 Morgan Stanley（08-02，$150 億美元資料中心投資案）、TeraWulf（07-06，$19B 20 年租約）、Meta（07-17/18，潛在 $100 億美元運算力租賃洽談）等基礎設施擴張系列信號，若屬實將是目前已知規模最大的單一金融安排，顯示 Google 除既有 $400 億美元直接投資（見 [[entities/google-investment]]）外，可能進一步扮演資本市場中介／促成者角色（推論）；具體交易結構（債權/股權比例）、參與銀行團、資金確切用途未見報導細節，僅標題層級資訊，待後續補充（Google News/Financial Times）|
 | Anthropic（印度市場）| 市場擴張（在地化布局）| 2026-08-03 | ndtv.com 報導 Anthropic 宣布擴大印度市場布局，稱 AI agent Claude 在當地「更加普及」（more accessible）。**對商業的意涵**：延續 07-13 印度盧比在地化定價（Pro 方案 Rs 2,000/月，見 [[entities/pricing]]）之後，是印度市場布局的進一步擴大信號；具體擴張內容（新辦公室、在地團隊、新功能、合作夥伴）未見報導細節，僅標題層級資訊，待後續補充（Google News/ndtv.com）|
 | Morgan Stanley | 基礎設施擴張（$150 億美元，領投）| 2026-08-02 | thestreet.com 報導 Morgan Stanley 領投一項規模達 150 億美元、投向 Anthropic 德州校園/資料中心的投資案。**對商業的意涵**：延續近期 TeraWulf（07-06，$19B 20 年租約）、Meta（07-17/18，潛在 $100 億美元運算力租賃洽談）、澳洲資料中心採購（07-05，1.4GW）等算力/基礎設施擴張系列信號，Morgan Stanley 是又一起金融機構領投 Anthropic 實體資料中心建設的具名案例，顯示 Anthropic 算力自建佈局持續吸引大型金融機構參與融資（推論）；具體投資結構（股權/債權比例）、參與方細節、德州校園規模與時程未見報導，僅標題層級資訊，待後續補充（Google News/thestreet.com）|
@@ -206,6 +209,11 @@ Simon Willison（知名開發者博主）發表文章，認為 Anthropic 與 Ope
 ## 時序
 
 ### 2026-08
+
+#### 2026-08-04
+- **[戰略合作，新增] Anthropic 與新創雲端運算商 Volta 簽署 100 億美元運算協議**：TechCrunch、The Telegraph（補充：僅成立八個月的英國新創）、TipRanks（補充：獲 Nvidia 支持）三方同日報導同一事件，詳見「戰略合作」表新增列（Google News/TechCrunch；Google News/The Telegraph；Google News/TipRanks）
+- **[戰略合作，新增] SpaceX 財報揭露 Anthropic／Google 運算合作推升營收翻倍**：TechCrunch 報導，詳見「戰略合作」表新增列（Google News/TechCrunch）
+- **[企業採用，詳見 enterprise-tool-tracker，非新增合作事實] Fierce Biotech 二次報導 ICON 與 Anthropic 臨床試驗合作**：延續 07-29 已記錄之 ICON（Clinical Trials Arena）合作案，詳見 [[topics/enterprise-tool-tracker]]
 
 #### 2026-08-02
 - **[戰略合作，基礎設施擴張，新增] Morgan Stanley 領投 150 億美元 Anthropic 德州資料中心校園投資案**：詳見「戰略合作」表新增列（Google News/thestreet.com）

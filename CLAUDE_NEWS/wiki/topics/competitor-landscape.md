@@ -3,12 +3,12 @@
 **狀態：** monitoring
 **領域：** 💼 商業
 **開始日期：** 2026-04
-**最後更新：** 2026-08-04
-**最後新聞更新：** 2026-08-04
+**最後更新：** 2026-08-05
+**最後新聞更新：** 2026-08-05
 
 > **最新競品動態**（2026-08-04）
-> tech-insider.org 發表 Kiro vs Claude Code 比較文，標題並列 **80.8% SWE-bench** 與 **$200 費用上限**兩項數字，但未指明各對應哪一方；Kiro 為本頁首次出現的競品名稱，資訊量過少，詳見「競品定價對照」表新增列與「主要競品追蹤」Kiro 子區塊，待後續報導補充。
-> 08-02 已記錄之 tech-insider.org OpenCode vs Claude Code 下載量比較（稱 5.4 倍）、08-01 Supabase Evals 開源評測套件、quasa.io Claude Code vs Codex 比較彙整文（累積 6 篇，共識尚未收斂）等近期重點仍具參考價值，詳見下方時序。
+> Decrypt 報導阿里巴巴免費開放其「最強」AI 模型，宣稱效能幾乎追平 Claude 與 ChatGPT；報導未指明模型名稱與具體 benchmark 數字，僅標題層級資訊，詳見「競品定價對照」表新增列與「主要競品追蹤」Alibaba 子區塊。
+> 08-03 已記錄之 tech-insider.org Kiro vs Claude Code 比較文（80.8% SWE-bench、$200 費用上限，兩數字未指明對應方）、08-02 OpenCode vs Claude Code 下載量比較（稱 5.4 倍）等近期重點仍具參考價值，詳見下方時序。
 
 ---
 
@@ -34,6 +34,7 @@ Claude Code 已成為 AI 輔助編碼的標竿產品，但競爭正快速升溫�
 
 | 工具/模型 | 定價 | vs Claude 定位 | 來源日期 |
 |---------|------|--------------|---------|
+| Alibaba「最強」模型（名稱未指明）| 免費開放 | Decrypt 稱效能「幾乎追平」Claude 與 ChatGPT，未提供具體 benchmark 數字或模型名稱，待查證是否為 07-20 已報導之 Qwen3.8 | 2026-08-04（Google News/Decrypt）|
 | Kiro | 待查證（tech-insider.org 標題稱「$200 Cap」，未指明是 Kiro 自身費用上限或 Claude Code Max 方案 $200/月上限的並列比較，見 [[entities/pricing]]「現行方案一覽」Max 20x 列）| 本頁首次出現的競品名稱；標題另稱「80.8% SWE-bench」，同樣未指明對應 Kiro 或 Claude Code，僅標題層級比較，資訊量過少，無法判斷產品定位或市佔，待後續報導補充 | 2026-08-03（Google News/tech-insider.org）|
 | OpenCode | 免費（開源）| tech-insider.org（source_count=2）稱其下載量達 Claude Code 的 **5.4 倍**，標題以「Free vs $20」凸顯定價落差對開發者選擇的影響；具體統計方法、時間範圍未見細節，需與既有 157,000 名開發者轉向（The New Stack，05-18）數據並列解讀，不可逕自加總或取代，待查證 | 2026-08-01（Google News/tech-insider.org）|
 | Antigravity | 待查證（tech-insider.org 比較文僅稱方案範圍涵蓋「免費至 $200」，未逐一指明各工具個別對應價格）| 本頁首次出現的競品名稱；與 Cursor、Claude Code 並列比較，資訊量過少，無法判斷其產品定位或市佔，待後續報導補充 | 2026-07-23（Google News/tech-insider.org）|
@@ -189,6 +190,7 @@ Claude Code 已成為 AI 輔助編碼的標竿產品，但競爭正快速升溫�
 - **意義**：若管制無法實質阻隔中國用戶使用 Claude，「管制犧牲收入」的代價真實，「管制保護能力」的效果可疑（Wired https://www.wired.com/story/how-people-in-china-keep-outsmarting-anthropics-geolocation-restrictions/）
 
 ### Alibaba Qwen3.7-Max / Alibaba 蒸餾攻擊 / Qwen3.8（2026-07-20 新增追蹤）
+- **免費釋出「最強」模型，宣稱追平 Claude／ChatGPT（08-04，Decrypt，僅標題可用）**：Decrypt 報導阿里巴巴免費開放其「最強」AI 模型，宣稱效能幾乎追平 Claude 與 ChatGPT。**注意**：報導未指明模型名稱（是否為 07-20 已報導、宣稱「僅次於 Fable 5」的 Qwen3.8，或另一新模型），亦未提供具體 benchmark 數字，僅標題層級資訊，待後續報導補充。**對競爭格局的意涵**：若確為 Qwen3.8，則呼應該模型持續以「免費＋高性能」策略正面對打 Anthropic 訂閱付費模式，與既有蒸餾指控（06-25）並置解讀時，外界可能將「免費卻高性能」再度視為蒸餾疑慮的佐證（推論）（Google News/Decrypt）
 - **蒸餾雙標爭議（07-21，TipRanks，僅標題可用）**：TipRanks 報導 Claude 曾自稱是阿里巴巴的 Qwen AI，引發「Anthropic 蒸餾雙標」（distillation hypocrisy）批評。**注意**：僅標題可用，待補充——具體是在何種提問情境下自稱、多次或單次發生、Anthropic 是否已回應均未見報導。**對競爭格局的意涵**：與 06-25 Anthropic 正式指控 Alibaba 蒸餾 Claude 案（2.5 萬假帳號、2,880 萬次對話）形成敘事張力——若 Claude 自身也會誤稱為 Qwen，外界可能質疑蒸餾指控的舉證標準是否雙重，對 Anthropic 在中美模型蒸餾爭議中的道德制高點論述構成潛在削弱（推論）（Google News/TipRanks）
 - **狀態更新（07-20，三媒體同步）**：qz.com、WSJ、South China Morning Post 同步報導 Alibaba 預覽新模型 **Qwen3.8**，宣稱其能力僅次於 Anthropic Fable 5（WSJ 標題："Alibaba Says New AI Model Is Just Second to Anthropic's Fable 5"）。**對競爭格局的意涵**：是繼 Qwen3.7-Max（35 小時自主運行宣稱）之後 Alibaba 模型陣容的最新一代，本次宣稱聚焦「僅次於 Fable 5」的相對定位而非具體技術指標；三家獨立媒體同日報導顯示訊號可信度較高，但均僅標題層級資訊，未見具體 benchmark 數字、發布時程或是否開源等細節。**與既有蒸餾指控的張力（推論）**：Alibaba 目前仍身處 06-25 Anthropic 正式提出的蒸餾攻擊指控（2.5 萬假帳號、2,880 萬次對話）陰影下，此時高調宣稱新模型能力逼近 Fable 5，若外界將兩事聯繫解讀，可能加深「透過蒸餾快速追趕」的觀感，對 Alibaba 品牌信任度構成雙面效應（既展現技術實力也強化蒸餾指控的說服力）
 - **thestreet.com：阿里巴巴此舉標誌 AI 編程競爭態勢轉變（07-20）**：thestreet.com 報導稱阿里巴巴 Qwen 3.8 預覽「標誌著 AI 編程競爭態勢的轉變」，與同日 qz.com/WSJ/SCMP 已記錄的「僅次於 Fable 5」宣稱同屬今日 Qwen 3.8 報導潮的一環，從「編程競爭格局」角度補充另一媒體視角，並與同日 Emerging Trajectories 威脅分析（見「Moonshot AI」子區塊）方向呼應（thestreet.com）
@@ -236,6 +238,9 @@ Claude Code 已成為 AI 輔助編碼的標竿產品，但競爭正快速升溫�
 #### 近期單日動態彙整（2026-07-02 至 2026-07-26）
 
 > 逐日條目按主題可另見上方「主要競品追蹤」對應廠商子區塊；此區塊保留完整時序供追溯查證。
+
+### 2026-08-04
+- **[競品發布，免費釋出，標題層級，待查證] Decrypt：阿里巴巴免費開放「最強」AI 模型，宣稱追平 Claude／ChatGPT**：詳見「競品定價對照」表新增列與「主要競品追蹤」Alibaba 子區塊（Google News/Decrypt）
 
 ### 2026-08-03
 - **[新競品，標題層級，待查證] tech-insider.org：Kiro vs Claude Code 比較文，並列 80.8% SWE-bench 與 $200 費用上限**：詳見「競品定價對照」表新增列與「主要競品追蹤」新增 Kiro 子區塊（Google News/tech-insider.org）

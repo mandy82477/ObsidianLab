@@ -3,11 +3,11 @@
 **狀態：** ongoing
 **領域：** 💼 商業
 **開始日期：** 2026-05-26
-**最後更新：** 2026-07-29
-**最後新聞更新：** 2026-07-29
+**最後更新：** 2026-08-05
+**最後新聞更新：** 2026-08-05
 
-> **最新企業採用異動**（2026-07-29）
-> 臨床試驗服務商 ICON 宣布與 Anthropic 合作，將 Claude AI 整合進臨床試驗流程（Clinical Trials Arena，source_count=2），為醫療研究（CRO）產業首個具名案例，詳見下方「企業工具使用現況」表新增列。另外，TipRanks 報導 Cognizant（CTSH）股價在 07-28 合作公告後第二日再漲 8%，屬既有 07-28 Cognizant 合作案的市場反應追蹤，非新增合作事實。07-28 記錄之 Cognizant 全球首要夥伴升級、07-21 阿里巴巴 2.5萬假帳號封鎖說（❓ 未確認，疑似與蒸餾指控混淆）仍為近期重點。
+> **最新企業採用異動**（2026-08-04）
+> Fierce Biotech（source_count=2）二次報導 ICON 與 Anthropic 臨床試驗合作，與 07-29 Clinical Trials Arena 首報同一事件，屬媒體二次確認、非新增合作事實，詳見下方「企業工具使用現況」表 ICON 列備註更新。07-29 記錄之 ICON 首報、Cognizant 全球首要夥伴升級（07-28）、07-21 阿里巴巴 2.5萬假帳號封鎖說（❓ 未確認，疑似與蒸餾指控混淆）仍為近期重點。
 
 ## 摘要
 
@@ -27,7 +27,7 @@
 
 | 企業 | 規模 | AI 編碼工具 | 狀態 | 事件日期 | 備註 | 確認日期 |
 |------|------|-----------|------|---------|------|---------|
-| ICON（NASDAQ: ICLR） | 大型（全球臨床研究委外機構 CRO）| Claude API | ✅ | 2026-07-29 | Clinical Trials Arena（source_count=2）報導 ICON 與 Anthropic 合作，將 Claude AI 整合進臨床試驗流程；為醫療研究/CRO 產業首個具名採用案例，延續近期 Optum（07-14，健康服務業）之後醫療垂直產業另一深化案例（推論）；具體整合範疇、合約規模未見細節，僅標題層級資訊（Google News/Clinical Trials Arena） | 2026-07-29 |
+| ICON（NASDAQ: ICLR） | 大型（全球臨床研究委外機構 CRO）| Claude API | ✅ | 2026-07-29 | Clinical Trials Arena（source_count=2）報導 ICON 與 Anthropic 合作，將 Claude AI 整合進臨床試驗流程；為醫療研究/CRO 產業首個具名採用案例，延續近期 Optum（07-14，健康服務業）之後醫療垂直產業另一深化案例（推論）；具體整合範疇、合約規模未見細節，僅標題層級資訊（Google News/Clinical Trials Arena）。**08-04 二次確認**：Fierce Biotech（source_count=2）跟進報導同一合作案，未見新增細節，屬媒體二次確認（Google News/Fierce Biotech） | 2026-08-04（首見 2026-07-29）|
 | Cognizant | 頂尖 | Claude API | ✅ | 2026-07-28 | Anthropic Blog 官方公告：雙方擴大既有合作，Cognizant 將 Claude 用於自身建置並為客戶運行的系統，橫跨製造業、生命科學、保險等產業；將 Claude 嵌入自身商業與工程平台、打造「Claude 認證」（Frontier Certified）人才梯隊，並升級為 Claude Partner Network 的全球首要夥伴（Global Premier Partner）；延續近期 TCS、DXC 等頂尖 IT 服務商全面深化合作模式（推論）；具體合約規模未見細節（Anthropic Blog https://www.anthropic.com/news/cognizant-anthropic；Google News/Seeking Alpha 同日跟進） | 2026-07-28 |
 | Grasshopper Bank | 中型（銀行，聚焦金融科技產業）| Claude API（MCP 整合） | ✅ | 2026-07-15 | Financial IT 報導 Grasshopper Bank 成為首家列入 Anthropic MCP（Model Context Protocol）目錄的銀行，象徵金融業對 MCP 生態系統的具名採用起點；具體整合規模、應用場景未見細節（僅標題可用，Google News 轉址）| 2026-07-15 |
 | Alberta 省政府（加拿大） | 政府（省級） | Claude Code | ✅ | 2025 | 加拿大 Alberta 省技術與創新部門自 2025 年起使用 Claude Code（含 Opus、Sonnet 模型）審查系統；20 小時內掃描 4.66 億行程式碼，完成資安漏洞盤點與修補、建立新工具；Anthropic Blog 官方案例研究，為具名政府採用新增一筆（Digital Watch Observatory 跟進） | 2026-07-07 |
@@ -98,6 +98,11 @@ Claude Code 是工程師日常編碼工具（CLI），成本隨使用量線性�
 ---
 
 ## 時序
+
+### 2026-08
+
+#### 2026-08-04
+- **[媒體二次確認，非新增合作事實] Fierce Biotech 跟進報導 ICON 與 Anthropic 臨床試驗合作**：Fierce Biotech（source_count=2）報導與 07-29 Clinical Trials Arena 首報同一事件，未見新增合作細節，詳見上方使用現況表 ICON 列更新（Google News/Fierce Biotech）
 
 ### 2026-07
 
