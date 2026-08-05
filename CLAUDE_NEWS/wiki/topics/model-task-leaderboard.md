@@ -33,6 +33,9 @@
 | 文件解析／OCR | MiniMax M3（其餘排名未公開） | 08 月 | [OmniDocBench](https://llm-stats.com/benchmarks/omnidocbench-1.5) |
 | 音樂生成 | 快照待補（下週補抓） | — | [AA Music Arena](https://artificialanalysis.ai/music/leaderboard/vocals) |
 | Embedding（自建 RAG） | Gemini Embedding 001 > Voyage-3.1 > Cohere embed-v4 | 04~07 月 | [MTEB](https://huggingface.co/spaces/mteb/leaderboard) |
+| 聊天陪伴／情商 | Claude Fable 5 > Kimi K3 > GPT-5.5 | 07-20 | [EQ-Bench](https://eqbench.com/) |
+| 放多長的任務給 agent | Claude Opus 4.5 > GPT-5 > o3（⚠️ 量測落後現役陣容） | 2026-01 | [METR](https://metr.org/) |
+| 讀文件不胡說（幻覺率低） | finix_s1_32b > gpt-5.4-nano > gemini-2.5-flash-lite | 05-11 | [Vectara 幻覺榜](https://github.com/vectara/hallucination-leaderboard) |
 | 大家實際在用什麼 | DeepSeek V4 Flash > 腾訊 Hy3 > GPT 5.6 Luna | 08-02 | [OpenRouter](https://openrouter.ai/rankings) |
 
 ## 快照細節與注意事項
@@ -51,6 +54,9 @@
 - **文件解析／OCR**（二手報導）：OmniDocBench 綜合 MiniMax M3 0.916（16 模型中），其餘排名未公開。
 - **Embedding**（二手報導）：MTEB 英文榜 Gemini Embedding 001 68.32、Voyage-3.1 ~67、Cohere embed-v4 65.2；開放權重首選 Qwen3-Embedding-8B（~75）；多語系榜第一為騰訊 KaLM-Embedding-Gemma3-12B（72.32，2026-07）。v2 與 v1 分數不可直接比較。
 - **OpenRouter**（二手報導）：用量占比具體數字抓不到（頁面截斷），僅知排名；此榜反映價格敏感的真實流量，與能力榜天然不同溫。
+- **METR time horizon**（直接抓取）：非傳統排行榜，量測「50% 成功率下模型可自主完成的任務時長（換算人類工時）」——Time Horizon 1.1（2026-01-29）：Claude Opus 4.5 320 分鐘（信心區間 170–729）、GPT-5 214 分鐘、o3 121 分鐘。此即「agent 自主時長每 7 個月翻倍」曲線的最新公開量測點；**現役陣容（Fable 5 / Opus 5）尚未入測**，數字僅供尺度感，待 METR 下次發布更新。
+- **幻覺率**（直接抓取）：Vectara 摘要任務幻覺榜（05-11）：antgroup finix_s1_32b 1.8%、gpt-5.4-nano 3.1%、gemini-2.5-flash-lite 3.3%。注意榜首是螞蟻集團的 32B 小模型——**主流旗艦不必然低幻覺**，選「拿來讀文件／摘要」的模型時，看此榜比看能力榜實用。
+- **情商／個性**（二手報導）：EQ-Bench 4 主榜 Fable 5 1349.5、Kimi K3 1349.2、GPT-5.5 1325.8；Creative Writing 子榜第一為 Claude Opus 5（2430）。⚠️ 另一鏡像站（llm-stats，08 月）稱榜首為 Grok 4.1 Thinking（1586），與本輪 BenchLM 快照（07-20）不一致，疑為不同快照日期或子榜版本，待直抓官方站核實。情商高分有「靠討好刷分」的已知疑慮（共情與諂媚同源），解讀時留意。
 
 ## 相關實體
 

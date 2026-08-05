@@ -62,7 +62,7 @@
 | 頁面 | 領域 | 狀態 | 摘要 |
 |------|------|------|------|
 | [[topics/model-comparison]] | 🤖 模型 | ongoing | 模型選型對照：「我該用哪個模型」單一入口——快速選型表、情境推薦、benchmark 對照（陣容變化時同步更新） |
-| [[topics/model-task-leaderboard]] | 🤖 模型 | ongoing | 🗓️ 週更 任務 × 跨家模型領先者快照：「做某類任務目前哪家最強」——寫 code／文案／畫圖／影片等 14 類任務的活榜單每週速讀 |
+| [[topics/model-task-leaderboard]] | 🤖 模型 | ongoing | 🗓️ 週更 任務 × 跨家模型領先者快照：「做某類任務目前哪家最強」——寫 code／文案／畫圖／影片／情商／幻覺率等 17 類任務的活榜單每週速讀 |
 | [[topics/anthropic-commitments]] | 🏛️ 政策/安全 | monitoring | 承諾兌現追蹤：「Anthropic 說過要做的事做了嗎」——官方承諾/拒絕建檔，狀態變化時由每日 ingest 更新 |
 | [[topics/code-quality-decline]] | 🛠️ 工具/功能 | monitoring | Claude Code 效能退步事件，Anthropic 已承認工程疏失 |
 | [[topics/competitor-landscape]] | 💼 商業 | monitoring | Google 祕密開發競品 + OpenCode 157K 分流 + DeepSeek clone 低成本替代生態 |
