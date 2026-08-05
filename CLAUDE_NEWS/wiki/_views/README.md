@@ -25,10 +25,28 @@ python scripts/gen_wiki_frontmatter.py
 | 週更頁節奏監控 | 有「更新頻率」欄的頁面上次策展多久前 |
 | 全頁總表 | 所有欄位的總覽，可自行排序篩選 |
 
-## 為什麼是 Bases 而不是 Dataview
+## DataviewJS 表格視圖
 
-此 vault 未安裝 Dataview，Bases 則是已啟用的核心外掛，能力足夠（屬性篩選＋表格視圖）。
+Bases 只讀 frontmatter properties，**讀不到散文與 markdown 表格**。頁面內那些真正像資料庫
+的大表（工具目錄、企業追蹤）要變成可排序可篩選的視圖，只能靠 DataviewJS——它能
+`dv.io.load()` 讀原始檔自行解析。
 
-差別在於：Bases 只讀 frontmatter properties，**讀不到散文與 markdown 表格**。若日後想把
-`community-tech-tools` 的工具目錄、`enterprise-tool-tracker` 的企業表變成可排序視圖，
-需要安裝 Dataview 並改用 DataviewJS（`dv.io.load()` 讀原始檔自行解析），Bases 做不到。
+關鍵是**不必把 121 個工具拆成 121 個檔案**：原表仍是唯一的家，視圖只是即時解析它。
+拆檔才是違反「一頁一故事」的做法。
+
+| 檔案 | 內容 |
+|------|------|
+| `table-explorer.js` | 共用實作：解析指定頁面指定區塊的 markdown 表格 → 篩選框＋點欄排序＋統計行。兩個視圖共用，不留兩份副本 |
+| `tools-explorer.md` | `community-tech-tools.md` 的 `## 工具目錄`（121 列 × 5 欄），統計採用與類型 |
+| `enterprise-explorer.md` | `enterprise-tool-tracker.md` 的 `## 企業工具使用現況`（39 列 × 7 欄），統計狀態與工具；備註欄截斷至 120 字以便橫向比較 |
+
+要為其他表格加視圖，複製一個 .md 改 `page` / `section` / `truncate` / `tally` 即可，
+不需要動 JS。
+
+**路徑以 vault 根目錄為基準**（即 `ObsidianLab/`），所以帶 `CLAUDE_NEWS/` 前綴；
+若 vault 根不同，改各 .md 裡的 `page` 與 `dv.view()` 路徑。
+
+### 兩者分工
+
+- **Bases**（`wiki-health.base`）：查頁面層級的 metadata——哪頁停滯、哪頁沒人指向
+- **DataviewJS**（`*-explorer.md`）：查頁面**內**的表格資料——哪個工具、哪家企業
