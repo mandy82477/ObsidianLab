@@ -116,13 +116,15 @@ Anthropic 研究部落格於 2026-07-15 發布〈Claude's values across models a
 
 ## 外部評測榜單
 
-Claude 家內選型看上方情境推薦；跨家比較（GLM、Qwen、Kimi 等開源模型與 GPT-5.6 等非 Anthropic 閉源模型）本頁不記快照分數（會過期誤導），改給「任務 → 該看哪個活榜單」的對照：
+Claude 家內選型看上方情境推薦；跨家比較（GLM、Qwen、Kimi 等開源模型與 GPT-5.6 等非 Anthropic 閉源模型，含畫圖／影片等非文字模型）本頁不記快照分數（會過期誤導），改按任務類型給「該看哪個活榜單」的對照：
 
-| 你想知道的 | 該看的榜 | 訊號類型 |
+| 你想做的任務 | 該看的榜 | 訊號類型 |
 |---|---|---|
-| agentic coding 哪家最強 | [SWE-bench 官方榜](https://www.swebench.com/)、[Aider Polyglot](https://aider.chat/docs/leaderboards/) | 官方 benchmark／coding 實戰 |
-| 對話與寫作品質偏好 | [LMArena](https://lmarena.ai/) | 人類盲測 Elo |
-| 能力×價格×速度綜合權衡 | [Artificial Analysis](https://artificialanalysis.ai/) | 綜合指數 |
+| 寫 code、改專案（coding agent） | [SWE-bench 官方榜](https://www.swebench.com/)、[Aider Polyglot](https://aider.chat/docs/leaderboards/) | 官方 benchmark／coding 實戰 |
+| 寫文案、聊天、翻譯等文字工作 | [LMArena](https://lmarena.ai/) | 人類盲測 Elo |
+| 畫圖（文生圖） | [Artificial Analysis 圖像榜](https://artificialanalysis.ai/image/leaderboard/text-to-image)（LMArena 亦有圖像 Arena） | 人類盲測 Elo |
+| 生成影片／語音 | [Artificial Analysis 影片榜](https://artificialanalysis.ai/video/leaderboard/text-to-video)、同站 Speech Arena | 人類盲測 Elo |
+| 選 API：能力×價格×速度權衡 | [Artificial Analysis](https://artificialanalysis.ai/) | 綜合指數 |
 | 大家實際在用什麼 | [OpenRouter Rankings](https://openrouter.ai/rankings) | 真實 API 用量（用錢投票） |
 
 > 外部連結僅供參考，非本 wiki 收錄事實；數字會隨時間變動，wiki 不記錄快照分數以免過期誤導。本 wiki 聚焦 Claude/Anthropic 生態系內的評測與定位分析。
