@@ -39,6 +39,10 @@ Bases 只讀 frontmatter properties，**讀不到散文與 markdown 表格**。�
 | `table-explorer.js` | 共用實作：解析指定頁面指定區塊的 markdown 表格 → 篩選框＋點欄排序＋統計行。兩個視圖共用，不留兩份副本 |
 | `tools-explorer.md` | `community-tech-tools.md` 的 `## 工具目錄`（121 列 × 5 欄），統計採用與類型 |
 | `enterprise-explorer.md` | `enterprise-tool-tracker.md` 的 `## 企業工具使用現況`（39 列 × 7 欄），統計狀態與工具；備註欄截斷至 120 字以便橫向比較 |
+| `source-health.md` | **零產出告警**：讀 `data/source_funnel.jsonl` + `source_registry.json`，列出每個來源的連續零產出天數、最後有產出日、30 天收錄率。不解析表格，直接吃 JSONL |
+
+> `dv.io.load()` 讀得到 vault 內**任何檔案**，不限 markdown——所以 `data/*.jsonl` 不需要
+> 先物化成筆記就能查。`source-health.md` 即為此例。
 
 要為其他表格加視圖，複製一個 .md 改 `page` / `section` / `truncate` / `tally` 即可，
 不需要動 JS。
