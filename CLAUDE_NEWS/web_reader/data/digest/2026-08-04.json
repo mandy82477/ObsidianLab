@@ -12,13 +12,7 @@
       "time": "08/03 07:23",
       "sentiment": "",
       "body": "社群要求 Claude Code 在觸及 session 用量上限後能自動接續而非中斷任務，是今日互動最高的功能請求之一，與今日聚焦中「瞬間打到用量上限」的抱怨呼應。",
-      "focusTags": [],
-      "sedimented": [
-        {
-          "id": "claude-code",
-          "pageType": "entity"
-        }
-      ]
+      "focusTags": []
     },
     {
       "title": "[BUG] Claude code requires users to constantly login",
@@ -27,13 +21,7 @@
       "time": "08/03 14:38",
       "sentiment": "",
       "body": "使用者回報 Claude Code 幾乎每天都要求重新透過網頁驗證登入，認為過於頻繁且不必要。",
-      "focusTags": [],
-      "sedimented": [
-        {
-          "id": "claude-code",
-          "pageType": "entity"
-        }
-      ]
+      "focusTags": []
     },
     {
       "title": "[BUG] claude.ai visualize feature broken — claudemcpcontent.com unreachable (DNS_PROBE_FINISHED_NXDOMAIN) --- PLEASE REVIEW!",
@@ -73,10 +61,6 @@
       "sedimented": [
         {
           "id": "boris-cherny",
-          "pageType": "entity"
-        },
-        {
-          "id": "claude-code",
           "pageType": "entity"
         }
       ]
@@ -146,13 +130,7 @@
       "time": "08/03 14:51",
       "sentiment": "",
       "body": "科技媒體比較 Kiro 與 Claude Code 兩款編碼工具在 SWE-bench 分數與費用上限上的差異。",
-      "focusTags": [],
-      "sedimented": [
-        {
-          "id": "claude-code",
-          "pageType": "entity"
-        }
-      ]
+      "focusTags": []
     },
     {
       "title": "I tested over 100 Claude Code plugins—here are the 5 that actually matter",
@@ -161,13 +139,7 @@
       "time": "08/03 14:30",
       "sentiment": "",
       "body": "How-To Geek 實測上百款 Claude Code 外掛，篩出作者認為真正值得使用的 5 款。",
-      "focusTags": [],
-      "sedimented": [
-        {
-          "id": "claude-code",
-          "pageType": "entity"
-        }
-      ]
+      "focusTags": []
     },
     {
       "title": "Anthropic Announces Expansion In India, AI Agent Claude Now More Accessible",
@@ -185,13 +157,7 @@
       "time": "08/04 00:00",
       "sentiment": "",
       "body": "Tom's Hardware 報導一名玩家利用 Claude Code 協助分析並修改主機板 BIOS，繞過簽章驗證解鎖 55 項隱藏設定。",
-      "focusTags": [],
-      "sedimented": [
-        {
-          "id": "claude-code",
-          "pageType": "entity"
-        }
-      ]
+      "focusTags": []
     },
     {
       "title": "The Anthropic Cyber Incident Confirms What OpenAI's Case Already Showed",
@@ -211,13 +177,7 @@
       "time": "08/03 08:27",
       "sentiment": "",
       "body": "The Register 撰文談 Claude Code 在「數位考古」（分析與重建舊系統／舊程式碼）場景的應用，並建議企業應正視此類用法。",
-      "focusTags": [],
-      "sedimented": [
-        {
-          "id": "claude-code",
-          "pageType": "entity"
-        }
-      ]
+      "focusTags": []
     },
     {
       "title": "Claude Outage Hits 5h 44m as Anthropic Tops $47B",
@@ -244,13 +204,7 @@
       "time": "08/04 08:54",
       "sentiment": "",
       "body": "Mobilegamer.biz 報導一名退役網球選手完全靠 Claude Code 開發出首款遊戲《Tennis Tycoon》。",
-      "focusTags": [],
-      "sedimented": [
-        {
-          "id": "claude-code",
-          "pageType": "entity"
-        }
-      ]
+      "focusTags": []
     }
   ],
   "discussions": [
@@ -261,13 +215,7 @@
       "time": "08/04 11:38",
       "sentiment": "😤",
       "body": "作者宣稱以實測與時間戳記錄，發現 Claude Code 中釘選模型的機制有四種獨立方式會被繞過，且 Sonnet 4.6 在未告知下被移除。",
-      "focusTags": [],
-      "sedimented": [
-        {
-          "id": "claude-code",
-          "pageType": "entity"
-        }
-      ]
+      "focusTags": []
     },
     {
       "title": "The J-Space: How I Learned To Read An LLM's Mind",
@@ -285,13 +233,7 @@
       "time": "07/17 05:00",
       "sentiment": "😊",
       "body": "作者分享用 PROGRESS.md 與自動重試腳本，讓被限速中斷的 Claude Code session 能自行恢復執行的作法。",
-      "focusTags": [],
-      "sedimented": [
-        {
-          "id": "claude-code",
-          "pageType": "entity"
-        }
-      ]
+      "focusTags": []
     },
     {
       "title": "What actually belongs in CLAUDE.md — and what to move to skills, hooks, or docs",
@@ -453,11 +395,6 @@
       "pageType": "entity"
     },
     {
-      "id": "claude-code",
-      "name": "Claude Code",
-      "pageType": "entity"
-    },
-    {
       "id": "dario-amodei",
       "name": "Dario Amodei",
       "pageType": "entity"
@@ -468,38 +405,8 @@
       "pageType": "entity"
     },
     {
-      "id": "ai-agent-safety",
-      "name": "AI Agent 安全與可靠性",
-      "pageType": "topic"
-    },
-    {
-      "id": "anthropic-business",
-      "name": "Anthropic 商業健康度",
-      "pageType": "topic"
-    },
-    {
-      "id": "anthropic-government-policy",
-      "name": "Anthropic 政府與軍事政策",
-      "pageType": "topic"
-    },
-    {
-      "id": "community-tech-discussions",
-      "name": "社群技術討論趨勢",
-      "pageType": "topic"
-    },
-    {
-      "id": "community-tech-patterns",
-      "name": "社群實戰模式庫",
-      "pageType": "topic"
-    },
-    {
       "id": "community-tech-tools",
       "name": "社群工具目錄",
-      "pageType": "topic"
-    },
-    {
-      "id": "competitor-landscape",
-      "name": "AI 編碼工具競品動態",
       "pageType": "topic"
     }
   ]
