@@ -7,6 +7,7 @@
 
 **最後更新：** 2026-08-05
 
+
 ---
 
 ## 概覽
@@ -52,6 +53,7 @@
 | [[entities/fable-5]] | model | 🤖 模型 | active（已解禁）| Claude Fable 5：首款 Mythos 級公開模型，$10/$50 per M token；7/1 解禁，Pro/Max/Team 7/7 前享 50% 配額，7/7 後 usage-based billing |
 | [[entities/tom-blomfield]] | person | 👤 人物 | active（待核實）| 前 Monzo 共同創辦人，2026-07-13 加入 Anthropic（Business Insider 單一來源，AI compute／Y Combinator 背景）|
 | [[entities/claude-for-teachers]] | product | 🛠️ 工具/功能 | active | Anthropic 面向美國通過認證 K-12 教師的免費方案，開放進階 Claude 功能與教學技能庫，對接全美 50 州學術標準 |
+| [[entities/tino-cuellar]] | person | 👤 人物 | active | Anthropic 首任 Chief Global Affairs Officer（2026-08-05 到任），前 Carnegie Endowment for International Peace 總裁、加州最高法院大法官 |
 
 ---
 

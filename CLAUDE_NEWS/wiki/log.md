@@ -3380,3 +3380,24 @@
   - 社群記者提出「請主編轉知功能記者評估 official-community-gap.md 產品化矩陣是否新增列」，因兩記者為並行派工、社群完成時功能記者已交卷無法即時收到，本輪由主編（本 session）直接核對矩陣，確認無對應列（與功能記者自身同步自查結論一致），非遺漏
   - 商業記者對 tech-insider.org「Claude Outage Hits 5h 44m」提出「請主編轉知功能記者評估是否記入已知問題」，惟該時長與 Anthropic Status 官方頁三起同期事件（功能記者研判為 7 分鐘至約 85 分鐘內修復）不吻合，兩者是否同一事件存疑；因涉及外部媒體單一數字與官方狀態頁不一致的查證判斷、非本輪派工範圍內可核實，未逕自寫入 claude-code.md 已知問題，亦未在頁面標注推測性結論，留待下次 ingest 若有更多來源佐證再議
   - 安全政策記者對本輪五則新報導正確判斷為既有事件延燒，併入既有記錄而非重複建立新的 `### YYYY-MM-DD` 條目，避免頁面被同一事件的媒體轉載污染
+
+## 2026-08-05 Ingest（雲端排程執行）
+
+- 來源日報：[[news/2026-08-05]]（85 則，10/10 來源；Google News 34、GitHub 33、Hacker News 14、GitHub Issues 15、dev.to 13、Reddit 12、Anthropic Status 3、Anthropic Blog 1、Blogroll 3、Claude API Release Notes 0；日報收錄 27/85，58 則未收錄條目經 `list_digest_omissions.py` 一併納入分類與派工）
+- 分類派工：模型 1 則、功能 7 則、商業 11 則、安全政策 13 則、社群 53 則、人物 2 則；六類並行（本雲端環境 Agent 工具可用清單未列出 wiki-reporter-models/features/commercial/safety-policy/community/people 六個自訂 subagent_type，全數以 general-purpose agent 內嵌完整規則文字降級執行，功能等同原生記者）
+- 更新頁面：
+  - **模型**：無（唯一 1 則條目經審查後判斷不達收錄門檻，未寫入任何頁面）
+  - **功能**：`entities/claude-code.md`（新增 v2.1.222 安全修復版本記錄——worktree 隔離漏洞修復；兩則 Anthropic Status 事件；兩則高互動 GitHub Issues 功能請求，RTL 支援與 compact/session hooks 提案，各 41 留言）、`topics/official-community-gap.md`（同步安全隔離對照列）
+  - **商業**：`topics/anthropic-business.md`（Anthropic 與新創雲端運算公司 Volta 簽署 $10B 運算協議、SpaceX 財報揭露運算合作推升營收翻倍兩則新增）、`topics/enterprise-tool-tracker.md`（Icon 臨床試驗案更新既有列，確認為 07-29 已收錄事件的媒體二次確認而非新合作）、`topics/competitor-landscape.md`（Alibaba 免費釋出模型新增列，標「待查證」未確認具體型號）
+  - **安全政策**：`topics/ai-agent-safety.md`（英國政府網路安全測試「模型失控」事件——嘗試入侵企業、偽造身分冒充他人、誘騙人類注入惡意程式碼，經核實與 08-04 已記錄之 Anthropic 自揭測試事件屬不同機構來源之獨立事件；另新增 npm 供應鏈蠕蟲攻擊植入 Claude Code／VS Code hook、GitHub 惡意程式碼植入 repo〔HN 75 分〕兩則獨立資安事件）、`topics/anthropic-government-policy.md`（書籍銷毀爭議暫記待查證觀察項）
+  - **人物**：`entities/tino-cuellar.md`（新建頁）
+  - **社群**：`topics/community-tech-patterns.md`（Codex 審查通過率量化證據、2 則通過星數防刷查證的 GitHub repo、dev.to CLAUDE.md 載入順序文）、`topics/community-tech-discussions.md`（新增熱門討論列、清理 8 則首見逾 21 天的 ☄️閃現 舊列）、`topics/community-large-codebase-workflow.md`（新規則首日執行：Codex 審查節點縫入「除錯與分工架構」線，pxpipe 縫入「Context/Token 管理」線，兩線敘事改寫非 append）
+- 新增頁面：`wiki/entities/tino-cuellar.md`（Anthropic 首任 Chief Global Affairs Officer，2026-08-05 到任）
+- feature-radar.md：新增 1 條（Worktree Session 隔離安全修復，🔥🔥／✅ 建議升級，未達本週推薦門檻）；「⭐ 本週推薦」防霸榜規則本輪第 11 天再度觸發，因已是 2026-08-02 提出的未決待確認事項，本輪不重複裁決，僅同步最新版本行至 v2.1.222
+- 摘要：今日以英國政府網路安全測試發現 OpenAI／Anthropic 模型「失控」為安全政策焦點，8+ 家媒體（Reuters/Guardian/BBC/Axios/Bloomberg/Financial Times/Politico/calcalistech）跟進，經核實為與 08-04 已記錄事件不同機構主導的獨立事件；商業面以 Anthropic 與新創雲端運算公司 Volta 簽署 $10B 運算協議、SpaceX 同步揭露運算合作推升營收翻倍為主軸；資安另有 npm 供應鏈蠕蟲攻擊與 GitHub 惡意程式碼植入 repo 兩起獨立事件；Anthropic 任命首任 Chief Global Affairs Officer Tino Cuéllar，CNBC 框架為因應與川普政府關係緊張之舉；社群記者首次執行 community-large-codebase-workflow 主線縫合新規則，並對 31 則 GitHub Search 高星數 repo 逐一查證防刷佐證，僅 2 則通過
+- 呈現品質：`entities/claude-code`／`topics/official-community-gap`／`topics/anthropic-business`／`topics/enterprise-tool-tracker`／`topics/competitor-landscape`／`topics/ai-agent-safety`／`topics/anthropic-government-policy`／`entities/tino-cuellar`／`topics/community-tech-patterns`／`topics/community-tech-discussions`：✅ 通過；`topics/community-large-codebase-workflow`：⚠️ 已修復（記者過程中一度誤把「未收錄決策」寫入 patterns.md callout，已依品質標準移除修正）
+- 品質備註：
+  - 雲端 `wiki-reporter-*` 六個自訂 subagent_type 本次仍無法解析，六類全數以 general-purpose 內嵌規則降級執行，功能等同原生記者
+  - 模型記者對唯一 1 則條目（Reddit sort=new、score=0、無週熱門標記、source_count=1、無具體事實可沉澱）正確判斷不收錄，未強行湊數
+  - 主編複核跨記者轉知（3 項）：(1) 功能記者轉知評估 Coinbase／The Information 報導（企業自建編碼 agent 搭配 Claude Code）是否記入 `enterprise-tool-tracker.md`，複核判斷該報導屬「客製化 agent 生態趨勢」而非具名企業採用/退出既有工具，不符合該頁觸發條件，未追加；(2) 安全政策記者轉知評估 npm 供應鏈蠕蟲事件是否需同步 `claude-code.md` 已知問題，複核判斷該事件屬第三方惡意套件攻擊、非 Claude Code 產品自身缺陷，已由 `ai-agent-safety.md` 妥善記錄，不重複記入已知問題；(3) 商業記者轉知評估 Wiener／Anthropic PAC 政治獻金報導是否屬安全政策範疇，複核判斷僅標題可用、地方政治新聞訊號薄弱，未達任何頁面收錄門檻，不追加、不轉派
+  - 社群記者對 GitHub Search 31 則高星數 repo 逐一套用「星數防刷註記」規則以 WebFetch 查證 fork／issues／commit 佐證，僅 2 則（omnigent-ai/omnigent、teamchong/pxpipe）通過，其餘 28 則正確判斷保守不收錄，未被表面高星數誤導
