@@ -3,11 +3,11 @@
 **狀態：** monitoring
 **領域：** 🌐 社群
 **開始日期：** 2026-04-25
-**最後更新：** 2026-08-04
-**最後新聞更新：** 2026-08-04
+**最後更新：** 2026-08-05
+**最後新聞更新：** 2026-08-05
 
-> **最新工作流模式**（2026-08-04）
-> 社群本日新增四則記錄：以 PROGRESS.md + 重試腳本自動恢復限速中斷的 Claude Code session（dev.to 第一手實作）、CLAUDE.md／skills／hooks／docs 四層 guidance 歸屬判準（dev.to）、Skill 不觸發的 session 啟動索引機制根因（dev.to）、Boris Cherny 在 YC Startup School 訪談中談「給 Claude 略嫌太難的任務並讓它能沿途驗證」的心法（Hacker News 69 分）。
+> **最新工作流模式**（2026-08-05）
+> 社群本日新增：Reddit 週熱門回報「讓 Claude 審查 Codex 產出的程式碼，通過率從 71.6% 提升至 89.7%」，為多代理 PR Review 補上量化證據；GitHub Search 批次快照中經 fork／issue／commit 驗證非刷星的兩個工具——omnigent（harness 無關的 meta-harness，可換底層 agent 不必重寫協作邏輯）與 pxpipe（把文字 context 轉成圖片以降低 token 用量）；另補記 dev.to 一篇對照官方文件查證的「CLAUDE.md 四層記憶範圍載入順序」技術拆解（原文 07-31 發布）。今日 GitHub Search 抓取到的其餘 29 個高星專案，因僅有星數且無法逐一驗證真實互動佐證，依規則不予收錄。
 
 ---
 
