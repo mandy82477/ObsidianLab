@@ -3393,3 +3393,14 @@
 - **觸發邊登記**（衍生頁鐵則）：`.claude/commands/wiki-lint.md` 新增步驟 5b「跨家任務榜單週更（主編派 Haiku 抓取）」＋ log 模板對應行；`.claude/rules/wiki-ingest-models.md` 註明此頁每日 ingest 不更新、記者僅 lint 品質檢查；`.claude/rules/wiki-ingest-format.md` 週更頁清單已加入
 - **首輪快照**：2026-08-05，12/14 榜取得資料（TTS 與音樂待下週補）；Aider Polyglot 榜發現疑似 2025-08 起停更，已在頁面標註、連續無更新將汰換
 - **設計要點**：快照只住這一頁（覆寫式，不 prepend 歷史），不回寫 model-comparison 或模型頁，避免過期數字擴散；每列標「資料日期・取得方式（直接／二手報導）」
+
+## 2026-08-05 Query：新鮮度宣稱無人對帳 → 修 1 筆漏更＋交叉檢查入測試
+
+- **點出什麼**：使用者問「Dataview / Bases 有沒有適合的地方」，追問過程中我誤稱「最後新聞更新會因格式修正而刷新」，使用者反問「這是不是 BUG」。實查後**該指控不成立**——51 頁中 23 頁兩個日期不同（極端例 `entities/openclaw` 相差 57 天），雙欄分離設計實務上守住了；但對帳過程另外揪出兩件真的
+- **根因**：`data/source_attribution.jsonl`（哪則新聞哪天寫進哪頁）與頁面標頭「最後新聞更新」是同一件事的兩份獨立記錄，本該對得上，但**從無任何流程對過帳**。手填欄位填錯不會有症狀：頁面照常渲染、鏈結照常有效、lint 看日期只覺得新，唯一的錯誤訊號藏在另一份沒人讀的檔案裡。欄位語意本身也有歧義——`wiki-reporter-shared.md` 要的是**日報日**，欄名「最後新聞更新」卻讀起來像**事件發生日**，每日 ingest 兩者重合所以看不出來，補跑與縫合才分岔
+- **處置**：
+  - 修 `topics/recursive-self-improvement` 最後新聞更新 07-13 → 07-14（07-14 日報帶進 Decrypt 抗議報導，記者填成事件日）。內容本身在頁上，純欄位錯填
+  - 新增 `scripts/check_wiki_freshness.py` 並掛入 `scripts/run_tests.py`：三類機械檢查——**漏更**（歸因比宣稱新）、**無從對照**（宣稱近 14 天有新聞更新卻歷史零歸因）、**欄位缺失**。已用還原日期做回歸驗證，確認抓得到本次這筆
+  - 白名單 `DERIVED_PAGES` 即**觸發邊清冊的機器可讀版**：不吃新聞條目的頁面必須登記，且 `rule` 欄位要填得出規則檔出處，填不出來就不得列入。目前 6 頁（community-tech-tools／community-pattern-trends／community-large-codebase-workflow／official-community-gap／anthropic-commitments／model-task-leaderboard），全部有明文出處
+- **順帶驗證**：檢查首跑即攔下本日稍早新建的 `model-task-leaderboard`（零歸因），確認其觸發邊已登記於 `wiki-ingest-models.md` 後納入白名單——建頁與登記之間的縫現在有機械保險
+- **未解**：衍生頁的新鮮度仍只能相信、無法對照（它們的內容來自別的頁面或 lint 直讀日報，不經記者歸因）。日更頁有兩道防線，衍生頁只有「有沒有登記」這一道
