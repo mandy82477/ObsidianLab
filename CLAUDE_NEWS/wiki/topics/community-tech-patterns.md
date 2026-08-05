@@ -7,7 +7,7 @@
 **最後新聞更新：** 2026-08-05
 
 > **最新工作流模式**（2026-08-05）
-> 社群本日新增：Reddit 週熱門回報「讓 Claude 審查 Codex 產出的程式碼，通過率從 71.6% 提升至 89.7%」，為多代理 PR Review 補上量化證據；GitHub Search 批次快照中經 fork／issue／commit 驗證非刷星的兩個工具——omnigent（harness 無關的 meta-harness，可換底層 agent 不必重寫協作邏輯）與 pxpipe（把文字 context 轉成圖片以降低 token 用量）；另補記 dev.to 一篇對照官方文件查證的「CLAUDE.md 四層記憶範圍載入順序」技術拆解（原文 07-31 發布）。今日 GitHub Search 抓取到的其餘 29 個高星專案，因僅有星數且無法逐一驗證真實互動佐證，依規則不予收錄。
+> 社群本日新增：Reddit 週熱門回報「讓 Claude 審查 Codex 產出的程式碼，通過率從 71.6% 提升至 89.7%」，為多代理 PR Review 補上量化證據；經 fork／issue／commit 交叉驗證的兩個工具——omnigent（harness 無關的 meta-harness，可換底層 agent 不必重寫協作邏輯）與 pxpipe（把文字 context 轉成圖片以降低 token 用量）；另補記 dev.to 一篇對照官方文件查證的「CLAUDE.md 四層記憶範圍載入順序」技術拆解（原文 07-31 發布）。
 
 ---
 
@@ -27,15 +27,15 @@
 
 | 類別 | 代表技巧 | 成熟度 | 核心概念 |
 |------|---------|--------|---------|
-| **Multi-agent 架構** | Claude Squad、Speculative Parallelism、ccteams（套件化團隊配置）、OtoDock（自架伺服器 Claude Code + Codex 團隊） | ✅ 成熟 | orchestrator 分派 + 獨立 git worktree，防答案塌縮；ccteams 將驗證良好的 subagent 組合打包為可跨專案安裝的套件；OtoDock 將 Claude Code 與 Codex 組成協作團隊部署於自有伺服器 |
+| **Multi-agent 架構** | Claude Squad、Speculative Parallelism、ccteams（套件化團隊配置）、OtoDock（自架伺服器 Claude Code + Codex 團隊）、omnigent（harness 無關 meta-harness） | ✅ 成熟 | orchestrator 分派 + 獨立 git worktree，防答案塌縮；ccteams 將驗證良好的 subagent 組合打包為可跨專案安裝的套件；OtoDock 將 Claude Code 與 Codex 組成協作團隊部署於自有伺服器；omnigent 把協調邏輯與底層 harness（Claude Code／Codex／Cursor／Pi）解耦，換 harness 不必重寫協作邏輯 |
 | **Skills 設計** | 知識框架化、流程 skill 化、免 git 雲端硬碟分享（Sx 2.0） | ✅ 成熟 | description 自動觸發，將書籍/流程封裝為可複用 skill；Sx 2.0 將分享管道從 git 延伸至 Dropbox/Drive/iCloud，降低非技術團隊採用門檻 |
 | **CLAUDE.md 管理** | 精簡規則策略、Self-improving Rules、防腐爛機制、漸進式工具採用原則 | ✅ 成熟 | 以「規則」非「建議」撰寫，CI 攔截違反架構 PR；新增能力前先問「會不會重複使用」，procedure file → CLI → 重整合依序升級 |
 | **Hooks 與自動化** | PostToolUse 稽核、Git Hooks 品質門、/goal Fire-and-Forget、deploy/migration 保護、Pre-completion Hook、Stop Hook 音效通知、Hooks 環境感知條件觸發（Adrafinil、氛圍狀態燈） | ✅ 成熟 | 強制執行 > CLAUDE.md 建議；Stop Hook 要求可驗證完成證明；CLAUDE.md 做偏好、Hooks 做邊界；Pre-completion Hook 防模糊結束；hooks 可感知 agent 活躍狀態驅動環境副作用（螢幕喚醒、實體燈光顏色） |
 | **模型使用策略** | 分層模型（Sonnet + Opus）、多模型路由、Workweave Router、跨模態內容生成分工（InstantVideos）、Fable 5 Orchestrator-Executor（官方基準） | ⚡ 活躍 | 依任務複雜度路由，節省 60% 用量；Dragoman / Workweave 自動路由；嵌入 Claude Code / Codex / Cursor 的成本感知路由；InstantVideos 將分工路由思路延伸至內容生成（文字/圖像/影音各交專門模型）；Anthropic 官方基準證實 Fable 5 編排 + 便宜模型執行可達 46% 成本／96% 效能 |
-| **Token / 成本優化** | MCP Code Execution、Token Bloat 對策、本機圖資料庫索引、穴居人模式（Caveman）企業採用、claude-thermos（session 快取保活） | ⚡ 活躍 | HTML→Markdown 降 80% token；快取不跨 session 是費用主因；極簡輸出模式（穴居人）企業採用獲 404 Media 確認，OpenAI、Nvidia、GitHub 開發者使用；claude-thermos 以保活請求維持快取不過期，但引發「成本轉嫁其他用戶」爭議 |
+| **Token / 成本優化** | MCP Code Execution、Token Bloat 對策、本機圖資料庫索引、穴居人模式（Caveman）企業採用、claude-thermos（session 快取保活）、pxpipe（圖片化 context） | ⚡ 活躍 | HTML→Markdown 降 80% token；快取不跨 session 是費用主因；極簡輸出模式（穴居人）企業採用獲 404 Media 確認，OpenAI、Nvidia、GitHub 開發者使用；claude-thermos 以保活請求維持快取不過期，但引發「成本轉嫁其他用戶」爭議；pxpipe 反其道而行，把文字 context 渲染成圖片傳遞以降低 token 用量 |
 | **記憶與知識管理** | ltm Core Memory Packet、本機圖資料庫、NanoBrain、OKF（物件鍵格式跨 session 記憶） | ⚡ 活躍 | 跨 session / 跨工具持久記憶；Leiden 圖譜減少 71 倍 token；OKF 標準化 agent 知識格式供團隊共用 |
 | **Plugin / MCP 整合** | Plugin 反模式整理、Claude Code 作為 MCP 協調中心 | ⚡ 活躍 | 避免不必要 context 載入；Claude Code 主導 MCP 工具鏈協作 |
-| **多代理 PR Review** | 4-agent Code Review、對抗性審查（計畫前 + 程式碼後）、Read-Only Reviewer | ⚡ 活躍 | 架構師代理協調 + 多廠商模型交叉審查；對抗性審查者讀取真實 codebase；read-only 權限約束維持對立性 |
+| **多代理 PR Review** | 4-agent Code Review、對抗性審查（計畫前 + 程式碼後）、Read-Only Reviewer、Claude 審查 Codex（71.6%→89.7% 通過率） | ⚡ 活躍 | 架構師代理協調 + 多廠商模型交叉審查；對抗性審查者讀取真實 codebase；read-only 權限約束維持對立性；社群回報跨模型交叉審查可量化提升通過率，惟樣本條件待查證 |
 | **Agent 版本控制** | ADR 注入、架構決策文件先於實作 | ⏳ 新興 | 決策文件先於實作，降低代理方向偏移風險 |
 | **Context 管理** | Just-in-Time @-file、Repo-as-Memory、Context Rot 修復、對話分支/合併手動控制 | ⚡ 活躍 | 即時取回優於預先加載；repo 是記憶體、模型是工作者；避免 context 過早飽和；新增使用者可視化分支/合併對話以精準控制 context 範圍的手動操作模式 |
 | **Agent 規模化** | 20-instance 崩潰分析、批量 OSS Bug 修復、Personas vs Tool-scoping、Mac Mini 自主 agent 部署、TBD（HN 4，agent-channels 跨 worktree 通訊）、live-log-viewer-next（平行 agent 即時對話地圖） | ⏳ 新興 | 超過 10 個並行 agent 需獨立 worktree + orchestrator 協調層；工具範圍限制比角色描述更可靠的邊界守護；無人監督排程任務已有完整 Mac Mini M4 方案；可觀測性層開始補足「多 agent 進度難追蹤」的協調盲點 |
@@ -104,6 +104,27 @@ Claude Code 的三種多 agent 機制，可對應到 Anthropic《Building Effect
 
 ### 2026-08
 
+#### omnigent：harness 無關的 meta-harness，可換底層 agent 不必重寫協作邏輯（2026-08-05）
+
+- **核心模式：** 開源 AI agent 框架，把「協調 agent」與「底層 harness（Claude Code／Codex／Cursor／Pi／自訂 agent）」解耦——換底層 harness 不需重寫協作邏輯，並內建政策執行、沙盒化與跨裝置即時協作
+- **與既有模式的關係：** 補充本頁「Multi-agent 架構」類別既有做法（Claude Squad、ccteams、OtoDock 皆綁定特定 harness 組合）之外的 harness 無關抽象層取向，把「orchestrator 分派」邏輯從特定工具中抽離
+- **來源：** GitHub Search 批次抓取（非今日新發布，星數為累積值；本頁收錄時間點＝今日查證通過日）；星數 8,150（達對照表高門檻），已查證 fork 1,200（比例 14.7%，高於防刷佐證基準約 1/10）、open issues 352（真實往來）、累計 commit 2,357 次，corroboration 充分，判斷非刷星
+- **成熟度：** ⚡ 活躍（開源專案有實質開發與 issue 往來，但缺乏第一手使用心得或社群討論佐證實際協作效果）
+
+#### pxpipe：把文字 context 轉成圖片以降低 Claude Code token 用量（2026-08-05）
+
+- **核心模式：** 將原本以文字形式送入的 context 改以圖片渲染後傳遞，藉此降低 Claude Code 的 token 用量——與本頁既有「HTML→Markdown 降 80% token」等既有做法方向相反（既有做法把非文字格式轉為更精簡文字，此作法反其道而行改用圖片承載資訊）
+- **與既有模式的關係：** 為「Token / 成本優化」類別補上一個尚未出現過的技巧方向；具體降耗比例、適用 context 類型（截圖／表格／長文字）未見於摘要，待查證原文
+- **來源：** GitHub Search 批次抓取（非今日新發布，星數為累積值）；星數 6,955（達高門檻），已查證 fork 598（比例 8.5%，接近防刷佐證基準）、open issues 25、累計 commit 402 次，corroboration 尚可，判斷非刷星
+- **成熟度：** ⏳ 新興（技巧方向具新意，但缺乏第一手使用心得、量化降耗數字或社群討論佐證實際效果）
+
+#### Claude 審查 Codex 產出程式碼：通過率從 71.6% 提升至 89.7%（2026-08-04）
+
+- **核心模式：** Reddit 貼文指出，讓 Claude 審查 Codex 產出的程式碼後，通過率由 71.6% 提升至 89.7%；貼文標題即為量化結論，具體測試方法與樣本規模未見於摘要，待查證原文
+- **與既有模式的關係：** 為本頁「多代理 PR Review」類別既有「Multi-model Pipeline：Claude + Codex + ChatGPT 三角色明確分工」「對抗性審查設計」等做法補上一筆具體量化證據，呼應 [[topics/community-tech-discussions]] 07-31 收錄的「對抗式審查者解決 Claude 自評過寬」感謝文——同主軸的第二個獨立訊號，惟相隔僅 5 天，未達 🌊延燒天數門檻
+- **來源：** 「Claude reviewing Codex's code lifted the pass rate from 71.6% to 89.7%」— Reddit r/ClaudeAI（週熱門標記，達收錄低門檻；0 留言可見，具體方法論待查證原文）
+- **成熟度：** ⚡ 活躍（量化數字具體但樣本條件未知，屬單一來源未經第三方驗證的自陳數據）
+
 #### 難任務 + 沿途可驗證性：Boris Cherny 談「給 Claude 略嫌太難的任務」的心法（2026-08-04）
 
 - **核心模式：** Boris Cherny 在 YC Startup School 2026 訪談中指出，如今駕馭 Claude 的關鍵技巧已從 prompt engineering 轉為「如何交給 Claude 一個看似有點太難的任務，並讓它有辦法沿途驗證自己的工作」；他認為「驗證」是多數人做得最不到位的一環，並以團隊將 Claude 桌面應用（Electron）重寫加速的實務為例說明此心法的應用場景
@@ -161,6 +182,13 @@ Claude Code 的三種多 agent 機制，可對應到 Anthropic《Building Effect
 - **成熟度：** ⏳ 新興（今日首見，單一開發者工具，2,700 次迭代測試聲稱未經第三方驗證）
 
 ### 2026-07
+
+#### CLAUDE.md 載入順序：四層記憶範圍完整拆解（2026-07-31，補記）
+
+- **核心模式：** 作者指出「Claude Code 忽略我的規則」的常見根因是規則寫在 Claude Code 根本沒有載入的檔案裡；文章依官方文件（2026-07-31 查證）整理四種記憶範圍與其載入順序，並指出兩個容易忽略的細節：CLAUDE.local.md 在同層級的共用 CLAUDE.md 之後載入，適合放個人化覆寫（沙盒網址、個人測試篩選條件）而不動團隊共用檔案；受管理原則檔（managed policy file）在 Linux／Windows 上也存在，位置不同於 macOS
+- **與既有模式的關係：** 補充本頁「CLAUDE.md 管理」類別既有「精簡規則策略」「防腐爛機制」之外的載入機制層細節——既有記錄多聚焦「該寫什麼、多寫會怎樣」，本篇補上「寫了會不會真的被讀到」這個更上游的前提，與 2026-08-04 已收錄的「四層寄放地判斷內容歸屬」互補（該篇談歸屬判準，本篇談載入順序機制）
+- **來源：** 「Which CLAUDE.md Files Claude Code Actually Loads (and in What Order)」— dev.to / rulestack（依 dev.to 內容判斷原則收錄：對照官方文件查證的第一手技術拆解，非行銷稿；0 讚不作為排除理由）
+- **成熟度：** ✅ 成熟（記憶範圍機制為官方既有設計，本篇是查證後的完整說明整理）
 
 #### Simon Willison：Stateless MCP 設計啟發打造 mcp-explorer 與 datasette-mcp 兩個小工具（2026-07-31）
 
