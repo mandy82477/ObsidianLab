@@ -1,3 +1,19 @@
+---
+page: "topics/recursive-self-improvement"
+kind: "topic"
+status: "monitoring（無新進展，議題未結案，暫轉低頻觀察）"
+domain: "🏛️ 政策/安全"
+last_updated: "2026-07-14"
+last_news_update: "2026-07-14"
+status_main: "monitoring"
+days_since_news: 22
+inbound_links: 5
+attribution_count: 1
+attribution_last: "2026-07-14"
+top_source: "google-news"
+signal: "休眠"
+generated_by: "scripts/gen_wiki_frontmatter.py"
+---
 # AI 遞歸自我改進與全球暫停呼籲
 
 **狀態：** monitoring（無新進展，議題未結案，暫轉低頻觀察）

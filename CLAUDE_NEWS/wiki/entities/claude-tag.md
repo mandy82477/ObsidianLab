@@ -1,3 +1,20 @@
+---
+page: "entities/claude-tag"
+kind: "entity"
+type: "product"
+status: "active"
+domain: "🛠️ 工具/功能"
+last_updated: "2026-08-01"
+last_news_update: "2026-07-08"
+status_main: "active"
+days_since_news: 28
+inbound_links: 1
+attribution_count: 0
+attribution_last: null
+top_source: null
+signal: "休眠"
+generated_by: "scripts/gen_wiki_frontmatter.py"
+---
 # Claude Tag
 
 **類型：** product

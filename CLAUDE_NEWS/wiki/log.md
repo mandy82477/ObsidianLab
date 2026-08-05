@@ -3424,3 +3424,21 @@
   - 模型記者對唯一 1 則條目（Reddit sort=new、score=0、無週熱門標記、source_count=1、無具體事實可沉澱）正確判斷不收錄，未強行湊數
   - 主編複核跨記者轉知（3 項）：(1) 功能記者轉知評估 Coinbase／The Information 報導（企業自建編碼 agent 搭配 Claude Code）是否記入 `enterprise-tool-tracker.md`，複核判斷該報導屬「客製化 agent 生態趨勢」而非具名企業採用/退出既有工具，不符合該頁觸發條件，未追加；(2) 安全政策記者轉知評估 npm 供應鏈蠕蟲事件是否需同步 `claude-code.md` 已知問題，複核判斷該事件屬第三方惡意套件攻擊、非 Claude Code 產品自身缺陷，已由 `ai-agent-safety.md` 妥善記錄，不重複記入已知問題；(3) 商業記者轉知評估 Wiener／Anthropic PAC 政治獻金報導是否屬安全政策範疇，複核判斷僅標題可用、地方政治新聞訊號薄弱，未達任何頁面收錄門檻，不追加、不轉派
   - 社群記者對 GitHub Search 31 則高星數 repo 逐一套用「星數防刷註記」規則以 WebFetch 查證 fork／issues／commit 佐證，僅 2 則（omnigent-ai/omnigent、teamchong/pxpipe）通過，其餘 28 則正確判斷保守不收錄，未被表面高星數誤導
+
+## 2026-08-05 Query：三項資料層建置（publisher／frontmatter／Bases）＋修 Release Notes 靜默失效
+
+- **緣起**：使用者問「專案有沒有適合用 Dataview 或 Base 的地方」，追問中補三題——Google News「來源其實很多」、「Dataview 沒辦法抓文字嗎」、「有什麼有趣的 insight」。盤點發現三份資料在累積卻無任何消費者（`source_attribution.jsonl` 658 筆、`source_funnel.jsonl` 26 天、`source_registry.json`）
+- **算出來的四件事**：
+  - **Google News 不是來源是聚合器**——662 則來自 **253 家出版者**，143 家只出現一次，前 20 大僅佔 36%；Reuters／WSJ／FT 與 tech-insider.org／Yogonet 共用同一組品質標籤，等於沒有標籤
+  - **每條 beat 幾乎由單一來源支撐**——`anthropic-business` 81 筆有 70 筆來自 Google News、`claude-code` 203 筆有 140 筆來自 GitHub Issues；只有 discussions／patterns 真正多來源（恰是規則要求跨來源驗證的兩頁）
+  - **入鏈 × 供料四象限**——「高鏈低料」是靜默失效的形狀（頁面沒壞、鏈結沒斷，讀者卻被導去看舊東西）
+  - **Claude API Release Notes 連續 26 天 gathered:0 且 ok:true**
+- **處置**：
+  - `sources/api_docs.py`：cutoff 拿條目 00:00 UTC 比 lookback 窗，但條目只有日期沒有時刻、官方常在美國時間稍晚發布——發布當天還沒上線，隔天 cutoff 已越過其 00:00，永久排除。改比「當日結束」給一天寬限。驗證：時鐘固定在歷史上產出 0 筆的 08-02 11:22:54 UTC，修後正確抓到 August 1 條目
+  - `scripts/enrich_attribution_publisher.py`：出版者從未遺失（日報來源標記原樣保留），是歸因規則「取斜線前半段」丟的。從日報回推補回，不動上游與記者契約。回填 477 筆／142 家，google-news 涵蓋率 93%
+  - `scripts/gen_wiki_frontmatter.py` + `scripts/build_web.py`：53 頁生成 frontmatter 供 Bases 查詢。**frontmatter 是機器投影不是第二份手抄**（粗體標頭仍是唯一的家），同 `web_reader/data/` 屬建置產物。build_web 新增 `read_md()` 統一剝除 frontmatter——原本 `^---+$` 規則只會抹掉分隔線、把欄位留在正文外洩到網站。驗證：加完 53 頁 frontmatter 後網站資料產物零差異、搜尋索引零外洩
+  - `wiki/_views/wiki-health.base`：六個 Bases 視圖（高引用但停滯／陳舊排行／孤島／供料來源分布／週更頁監控／全頁總表）。`_views/` 不在 build_web 掃描範圍，不上網站
+  - 三支腳本掛入 `.claude/commands/news-pipeline-steps.md` Step 4，否則 frontmatter 會停在生成日
+- **首輪 signal 分布**：健康 28／休眠 17／孤島 7／⚠️ 高引用但停滯 1（`safety-china-trust-dispute`，18 入鏈、25 天無新聞）。孤島含當日新建的 `tino-cuellar`（0 入鏈）與 `model-task-leaderboard`（1 入鏈）——新頁尚無人指向，補 wikilink 即可脫離
+- **未採用**：Dataview 未安裝，Bases 為已啟用核心外掛且能力足夠。惟 Bases 只讀 frontmatter，若日後要把 `community-tech-tools` 工具目錄、`enterprise-tool-tracker` 企業表變成可排序視圖，需安裝 Dataview 改用 DataviewJS（`dv.io.load()` 自行解析 markdown 表格），Bases 做不到
+- **過程事故**：作業期間 obsidian-git 自動 `pull --rebase --autostash` 撞上雲端 pipeline 當日 ingest，git 狀態在 rebase／merge 間反覆數次，一度沖掉兩項未 commit 的改動（publisher 回填、api_docs 修復），均已重做。教訓：背景自動 git 與長時間本地作業並存時，改動應盡早 commit

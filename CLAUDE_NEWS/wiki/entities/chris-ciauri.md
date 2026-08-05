@@ -1,3 +1,20 @@
+---
+page: "entities/chris-ciauri"
+kind: "entity"
+type: "person"
+status: "active"
+domain: "👤 人物"
+last_updated: "2026-07-10"
+last_news_update: "2026-06-18"
+status_main: "active"
+days_since_news: 48
+inbound_links: 1
+attribution_count: 0
+attribution_last: null
+top_source: null
+signal: "休眠"
+generated_by: "scripts/gen_wiki_frontmatter.py"
+---
 # Chris Ciauri
 
 **類型：** person

@@ -1,3 +1,20 @@
+---
+page: "entities/claude-code"
+kind: "entity"
+type: "product"
+status: "active"
+domain: "🛠️ 工具/功能"
+last_updated: "2026-08-05"
+last_news_update: "2026-08-05"
+status_main: "active"
+days_since_news: 0
+inbound_links: 52
+attribution_count: 209
+attribution_last: "2026-08-05"
+top_source: "github-issues"
+signal: "健康"
+generated_by: "scripts/gen_wiki_frontmatter.py"
+---
 # Claude Code
 
 **類型：** product

@@ -1,3 +1,19 @@
+---
+page: "topics/enterprise-tool-tracker"
+kind: "topic"
+status: "ongoing"
+domain: "💼 商業"
+last_updated: "2026-08-05"
+last_news_update: "2026-08-05"
+status_main: "ongoing"
+days_since_news: 0
+inbound_links: 17
+attribution_count: 6
+attribution_last: "2026-08-05"
+top_source: "google-news"
+signal: "健康"
+generated_by: "scripts/gen_wiki_frontmatter.py"
+---
 # 大型企業 AI 編碼工具使用追蹤
 
 **狀態：** ongoing

@@ -1,3 +1,19 @@
+---
+page: "topics/ai-talent-flow"
+kind: "topic"
+status: "monitoring"
+domain: "💼 商業"
+last_updated: "2026-08-01"
+last_news_update: "2026-07-13"
+status_main: "monitoring"
+days_since_news: 23
+inbound_links: 13
+attribution_count: 1
+attribution_last: "2026-07-13"
+top_source: "google-news"
+signal: "休眠"
+generated_by: "scripts/gen_wiki_frontmatter.py"
+---
 # AI 實驗室人才流動
 
 **狀態：** monitoring

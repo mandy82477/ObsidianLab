@@ -1,3 +1,20 @@
+---
+page: "entities/opus-5"
+kind: "entity"
+type: "model"
+status: "active"
+domain: "🤖 模型"
+last_updated: "2026-07-30"
+last_news_update: "2026-07-30"
+status_main: "active"
+days_since_news: 6
+inbound_links: 27
+attribution_count: 12
+attribution_last: "2026-07-30"
+top_source: "google-news"
+signal: "健康"
+generated_by: "scripts/gen_wiki_frontmatter.py"
+---
 # Claude Opus 5
 
 **類型：** model

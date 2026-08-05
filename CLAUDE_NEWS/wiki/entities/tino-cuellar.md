@@ -1,3 +1,20 @@
+---
+page: "entities/tino-cuellar"
+kind: "entity"
+type: "person"
+status: "active"
+domain: "👤 人物"
+last_updated: "2026-08-05"
+last_news_update: "2026-08-05"
+status_main: "active"
+days_since_news: 0
+inbound_links: 0
+attribution_count: 2
+attribution_last: "2026-08-05"
+top_source: "anthropic-blog"
+signal: "孤島"
+generated_by: "scripts/gen_wiki_frontmatter.py"
+---
 # Tino Cuéllar
 
 **類型：** person

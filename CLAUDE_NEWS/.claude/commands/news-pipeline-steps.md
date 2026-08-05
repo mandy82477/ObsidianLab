@@ -320,13 +320,18 @@ Step 6 的 log 一律抄腳本輸出的**最後一行摘要**（例如 `測試�
 
 > **為何是 gate 而不是直接看測試結果 `[加入: 2026-08-01]`：** 舊規則是「整包測試過才建 web」。2026-07-31 雲端日更因 3 個抓料端的 `ModuleNotFoundError` 判定失敗而跳過 build，網站整天停在前一天——但日報與 wiki 都已正常產出並 commit，那 3 個案例跟 `build_web.py` 的輸入毫無關係。過緊的 gate 用「正確性」的名義製造「可用性」的損失。放寬的邊界很嚴格：**只有登記在 `docs/known-test-gaps.json`、且錯誤訊息也對得上的失敗才放行，出現任何一個沒登記的失敗就照舊全擋**；允許清單空的時候，行為等同舊規則。
 
-- 放行後執行：
+- 放行後依序執行（frontmatter 必須先於 build_web，兩者都吃當日已寫完的 wiki）：
 
 ```
+PYTHON REPO_ROOT\scripts\enrich_attribution_publisher.py
+PYTHON REPO_ROOT\scripts\gen_wiki_frontmatter.py
 PYTHON REPO_ROOT\scripts\build_web.py
 ```
 
-- 成功後繼續；若失敗，回報錯誤並跳過推送
+- 前兩支皆為冪等的衍生資料重算，失敗不擋 build：
+  - `enrich_attribution_publisher.py` 補當日新歸因的 `publisher` 欄位（記者回報的 slug 只有斜線前半段，`google-news` 底下實際有 250+ 家出版者）
+  - `gen_wiki_frontmatter.py` 重算頁面 frontmatter（入鏈數、供料數、停滯天數、signal），供 Obsidian Bases 查詢；不跑則 `wiki/_views/wiki-health.base` 的數字會停在上次生成日
+- `build_web.py` 成功後繼續；若失敗，回報錯誤並跳過推送
 
 ---
 

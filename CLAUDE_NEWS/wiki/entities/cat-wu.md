@@ -1,3 +1,20 @@
+---
+page: "entities/cat-wu"
+kind: "entity"
+type: "person"
+status: "active"
+domain: "👤 人物"
+last_updated: "2026-07-31"
+last_news_update: "2026-07-31"
+status_main: "active"
+days_since_news: 5
+inbound_links: 9
+attribution_count: 2
+attribution_last: "2026-07-31"
+top_source: "blog"
+signal: "健康"
+generated_by: "scripts/gen_wiki_frontmatter.py"
+---
 # Cat Wu
 
 **類型：** person

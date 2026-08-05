@@ -1,3 +1,20 @@
+---
+page: "entities/bugcrawl"
+kind: "entity"
+type: "feature"
+status: "beta（未公開測試）"
+domain: "🛠️ 工具/功能"
+last_updated: "2026-07-10"
+last_news_update: "2026-06-20"
+status_main: "beta"
+days_since_news: 46
+inbound_links: 3
+attribution_count: 0
+attribution_last: null
+top_source: null
+signal: "休眠"
+generated_by: "scripts/gen_wiki_frontmatter.py"
+---
 # Bugcrawl
 
 **類型：** feature

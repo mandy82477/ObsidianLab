@@ -1,3 +1,19 @@
+---
+page: "topics/community-tech-discussions"
+kind: "topic"
+status: "ongoing"
+domain: "🌐 社群"
+last_updated: "2026-08-05"
+last_news_update: "2026-08-05"
+status_main: "ongoing"
+days_since_news: 0
+inbound_links: 39
+attribution_count: 62
+attribution_last: "2026-08-05"
+top_source: "hacker-news"
+signal: "健康"
+generated_by: "scripts/gen_wiki_frontmatter.py"
+---
 # 社群技術討論趨勢
 
 **狀態：** ongoing

@@ -1,3 +1,20 @@
+---
+page: "entities/opus-4-8"
+kind: "entity"
+type: "model"
+status: "active（已被取代，次旗艦地位由 Opus 5 接手）"
+domain: "🤖 模型"
+last_updated: "2026-07-25"
+last_news_update: "2026-07-25"
+status_main: "active"
+days_since_news: 11
+inbound_links: 12
+attribution_count: 6
+attribution_last: "2026-07-25"
+top_source: "google-news"
+signal: "健康"
+generated_by: "scripts/gen_wiki_frontmatter.py"
+---
 # Claude Opus 4.8
 
 **類型：** model

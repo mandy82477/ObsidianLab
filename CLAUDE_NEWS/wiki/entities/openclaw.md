@@ -1,3 +1,20 @@
+---
+page: "entities/openclaw"
+kind: "entity"
+type: "product（第三方工具）"
+status: "active（信用池計費，不含訂閱）"
+domain: "🛠️ 工具/功能"
+last_updated: "2026-07-10"
+last_news_update: "2026-05-14"
+status_main: "active"
+days_since_news: 83
+inbound_links: 7
+attribution_count: 0
+attribution_last: null
+top_source: null
+signal: "休眠"
+generated_by: "scripts/gen_wiki_frontmatter.py"
+---
 # OpenClaw
 
 **類型：** product（第三方工具）

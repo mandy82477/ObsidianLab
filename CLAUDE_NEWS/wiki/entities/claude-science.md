@@ -1,3 +1,20 @@
+---
+page: "entities/claude-science"
+kind: "entity"
+type: "product"
+status: "active"
+domain: "🛠️ 工具/功能"
+last_updated: "2026-07-15"
+last_news_update: "2026-07-15"
+status_main: "active"
+days_since_news: 21
+inbound_links: 2
+attribution_count: 1
+attribution_last: "2026-07-15"
+top_source: "google-news"
+signal: "孤島"
+generated_by: "scripts/gen_wiki_frontmatter.py"
+---
 # Claude Science
 
 **類型：** product

@@ -1,3 +1,19 @@
+---
+page: "topics/community-tech-timeline"
+kind: "topic"
+status: "monitoring"
+domain: "🌐 社群"
+last_updated: "2026-07-18"
+last_news_update: "2026-05-22"
+status_main: "monitoring"
+days_since_news: 75
+inbound_links: 3
+attribution_count: 0
+attribution_last: null
+top_source: null
+signal: "休眠"
+generated_by: "scripts/gen_wiki_frontmatter.py"
+---
 # 社群技術應用趨勢 — 時序記錄
 
 **狀態：** monitoring

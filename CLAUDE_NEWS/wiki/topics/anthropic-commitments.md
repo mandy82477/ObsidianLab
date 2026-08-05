@@ -1,3 +1,19 @@
+---
+page: "topics/anthropic-commitments"
+kind: "topic"
+status: "monitoring（16 天無新兌現動態，追蹤項目均無官方後續，轉低頻觀察）"
+domain: "🏛️ 政策/安全"
+last_updated: "2026-08-01"
+last_news_update: "2026-07-10"
+status_main: "monitoring"
+days_since_news: 26
+inbound_links: 7
+attribution_count: 0
+attribution_last: null
+top_source: null
+signal: "休眠"
+generated_by: "scripts/gen_wiki_frontmatter.py"
+---
 # Anthropic 承諾兌現追蹤
 
 **狀態：** monitoring（16 天無新兌現動態，追蹤項目均無官方後續，轉低頻觀察）

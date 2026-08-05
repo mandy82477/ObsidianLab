@@ -1,3 +1,20 @@
+---
+page: "entities/claude-design"
+kind: "entity"
+type: "feature"
+status: "active（初期，體驗粗糙）"
+domain: "🛠️ 工具/功能"
+last_updated: "2026-08-01"
+last_news_update: "2026-07-16"
+status_main: "active"
+days_since_news: 20
+inbound_links: 2
+attribution_count: 1
+attribution_last: "2026-07-16"
+top_source: "devto"
+signal: "孤島"
+generated_by: "scripts/gen_wiki_frontmatter.py"
+---
 # Claude Design
 
 **類型：** feature

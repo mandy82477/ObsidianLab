@@ -1,3 +1,20 @@
+---
+page: "topics/community-tech-tools"
+kind: "topic"
+status: "ongoing"
+domain: "🌐 社群"
+last_updated: "2026-08-04"
+last_news_update: "2026-08-04"
+update_freq: "🗓️ 週更（每週策展一次；更新日期停留數天屬正常節奏）"
+status_main: "ongoing"
+days_since_news: 1
+inbound_links: 10
+attribution_count: 0
+attribution_last: null
+top_source: null
+signal: "健康"
+generated_by: "scripts/gen_wiki_frontmatter.py"
+---
 # 社群工具目錄
 
 **狀態：** ongoing

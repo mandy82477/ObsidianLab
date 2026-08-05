@@ -27,6 +27,24 @@ OUT_DIGEST_DIR   = ROOT / "web_reader" / "data" / "digest"
 OUT_WEEKLY_DIR   = ROOT / "web_reader" / "data" / "weekly"
 OUT_SEARCH_INDEX = ROOT / "web_reader" / "data" / "search-index.json"
 
+# ── Markdown 讀取（統一剝除 YAML frontmatter）──────────────────────────────
+
+FRONTMATTER_RE = re.compile(r"\A---\r?\n.*?\r?\n---\r?\n", re.DOTALL)
+
+
+def read_md(f: Path) -> str:
+    """讀 markdown 並剝掉檔頭 YAML frontmatter。
+
+    wiki 頁面的 frontmatter 由 scripts/gen_wiki_frontmatter.py 生成，是給 Obsidian
+    Bases 查詢用的機器投影，**不是給讀者看的內容**。若不在此剝除，下游 md_to_text()
+    的 `^---+$` 規則只會抹掉兩條分隔線、把 `type: model` 這類欄位留在正文裡，直接
+    外洩到網站頁面與搜尋索引。
+
+    對沒有 frontmatter 的檔案（news/、weekly/、以及尚未生成的頁面）為 no-op。
+    """
+    return FRONTMATTER_RE.sub("", f.read_text(encoding="utf-8-sig"), count=1)
+
+
 # ── Markdown → plain text (for search index) ────────────────────────────────
 
 def strip_markdown_to_text(md: str) -> str:
@@ -195,7 +213,7 @@ def check_wikilinks(all_md_files: list[Path]) -> None:
 
     for f in all_md_files:
         try:
-            raw = f.read_text(encoding="utf-8-sig")
+            raw = read_md(f)
         except Exception:
             continue
         headings = set(re.findall(r'^##\s+(.+?)\s*$', raw, flags=re.MULTILINE))
@@ -212,7 +230,7 @@ def parse_enterprise_tracker(f: Path) -> dict | None:
     """Parse enterprise-tool-tracker.md table → structured matrix JSON."""
     if not f.exists():
         return None
-    raw = f.read_text(encoding="utf-8-sig")
+    raw = read_md(f)
 
     STATUS_MAP = {"✅": "active", "⚠️": "warning", "🔄": "switching", "❌": "exited", "❓": "unknown"}
 
@@ -276,7 +294,7 @@ def parse_enterprise_tracker(f: Path) -> dict | None:
 
 
 def parse_radar(f: Path) -> dict:
-    raw = f.read_text(encoding="utf-8-sig")
+    raw = read_md(f)
     lines = raw.splitlines()
     name = lines[0].lstrip("# ").strip() if lines else f.stem
 
@@ -480,7 +498,7 @@ def parse_weekly(f: Path) -> dict:
     欄位供期刊版面渲染：lede、sections.{headline,discussion,nextweek,numbers}、
     extraSections、footer。任一段解析失敗只印警告、留 None/[]，不中斷整體 build。
     """
-    raw = f.read_text(encoding="utf-8-sig")
+    raw = read_md(f)
     lines = raw.splitlines()
     week_id = f.stem  # e.g. "2026-W30"
     name = lines[0].lstrip("# ").strip() if lines else week_id
@@ -608,7 +626,7 @@ def collect_weekly(weekly_dir: Path) -> tuple[dict, list]:
 
 
 def parse_wiki(f: Path, page_type: str) -> dict:
-    raw = f.read_text(encoding="utf-8-sig")
+    raw = read_md(f)
     lines = raw.splitlines()
 
     name = lines[0].lstrip("# ").strip() if lines else f.stem
@@ -704,7 +722,7 @@ SOURCE_TABLE_RE = re.compile(r"^\|\s*(.+?)\s*\|\s*(✅|❌)\s*\|\s*(\d+)\s*\|")
 
 
 def parse_digest(f: Path) -> dict:
-    raw = f.read_text(encoding="utf-8-sig")
+    raw = read_md(f)
     lines = raw.splitlines()
     date_str = f.stem  # YYYY-MM-DD
 

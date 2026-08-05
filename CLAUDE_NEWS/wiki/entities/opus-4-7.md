@@ -1,3 +1,20 @@
+---
+page: "entities/opus-4-7"
+kind: "entity"
+type: "model"
+status: "active（已被取代，第三階旗艦）"
+domain: "🤖 模型"
+last_updated: "2026-07-19"
+last_news_update: "2026-07-19"
+status_main: "active"
+days_since_news: 17
+inbound_links: 11
+attribution_count: 4
+attribution_last: "2026-07-19"
+top_source: "hacker-news"
+signal: "健康"
+generated_by: "scripts/gen_wiki_frontmatter.py"
+---
 # Claude Opus 4.7
 
 **類型：** model

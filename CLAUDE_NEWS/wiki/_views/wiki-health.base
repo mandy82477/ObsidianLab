@@ -1,0 +1,88 @@
+filters:
+  and:
+    - 'generated_by == "scripts/gen_wiki_frontmatter.py"'
+views:
+  - type: table
+    name: "⚠️ 高引用但停滯"
+    filters:
+      and:
+        - 'signal == "⚠️ 高引用但停滯"'
+    order:
+      - file.name
+      - inbound_links
+      - days_since_news
+      - last_news_update
+      - domain
+      - status_main
+    sort:
+      - property: inbound_links
+        direction: DESC
+
+  - type: table
+    name: "陳舊排行"
+    order:
+      - file.name
+      - days_since_news
+      - last_news_update
+      - inbound_links
+      - attribution_count
+      - domain
+    sort:
+      - property: days_since_news
+        direction: DESC
+
+  - type: table
+    name: "孤島（沒人指向）"
+    filters:
+      and:
+        - 'signal == "孤島"'
+    order:
+      - file.name
+      - inbound_links
+      - days_since_news
+      - attribution_count
+      - top_source
+    sort:
+      - property: inbound_links
+        direction: ASC
+
+  - type: table
+    name: "供料來源分布"
+    order:
+      - file.name
+      - top_source
+      - attribution_count
+      - attribution_last
+      - domain
+    sort:
+      - property: attribution_count
+        direction: DESC
+
+  - type: table
+    name: "週更頁節奏監控"
+    filters:
+      and:
+        - 'update_freq != null'
+    order:
+      - file.name
+      - update_freq
+      - last_updated
+      - days_since_news
+    sort:
+      - property: days_since_news
+        direction: DESC
+
+  - type: table
+    name: "全頁總表"
+    order:
+      - file.name
+      - kind
+      - domain
+      - status_main
+      - signal
+      - inbound_links
+      - attribution_count
+      - days_since_news
+    sort:
+      - property: signal
+        direction: ASC

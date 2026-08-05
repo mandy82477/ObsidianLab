@@ -1,3 +1,20 @@
+---
+page: "entities/google-investment"
+kind: "entity"
+type: "event"
+status: "resolved（已完成，後續新輪融資進行中）"
+domain: "💼 商業"
+last_updated: "2026-07-24"
+last_news_update: "2026-07-24"
+status_main: "resolved"
+days_since_news: 12
+inbound_links: 8
+attribution_count: 1
+attribution_last: "2026-07-24"
+top_source: "google-news"
+signal: "健康"
+generated_by: "scripts/gen_wiki_frontmatter.py"
+---
 # Google 投資 Anthropic 400 億美元
 
 **類型：** event

@@ -1,3 +1,20 @@
+---
+page: "entities/fable-5"
+kind: "entity"
+type: "model"
+status: "active（正式發布；出口管制已解除，2026-07-01 起全球恢復存取；免費期已於 2026-07-19 到期，Max/Team 後續存取政策尚有分歧報導，見 [[entities/pricing]]）"
+domain: "🤖 模型"
+last_updated: "2026-08-01"
+last_news_update: "2026-07-31"
+status_main: "active"
+days_since_news: 5
+inbound_links: 30
+attribution_count: 11
+attribution_last: "2026-07-31"
+top_source: "google-news"
+signal: "健康"
+generated_by: "scripts/gen_wiki_frontmatter.py"
+---
 # Claude Fable 5
 
 **類型：** model

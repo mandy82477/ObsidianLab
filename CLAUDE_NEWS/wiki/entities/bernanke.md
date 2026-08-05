@@ -1,3 +1,20 @@
+---
+page: "entities/bernanke"
+kind: "entity"
+type: "person"
+status: "active"
+domain: "👤 人物"
+last_updated: "2026-07-16"
+last_news_update: "2026-07-10"
+status_main: "active"
+days_since_news: 26
+inbound_links: 6
+attribution_count: 0
+attribution_last: null
+top_source: null
+signal: "休眠"
+generated_by: "scripts/gen_wiki_frontmatter.py"
+---
 # Ben Bernanke
 
 **類型：** person

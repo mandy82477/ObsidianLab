@@ -1,3 +1,19 @@
+---
+page: "topics/code-quality-decline"
+kind: "topic"
+status: "monitoring（官方已說明，待驗證恢復）"
+domain: "🛠️ 工具/功能"
+last_updated: "2026-08-01"
+last_news_update: "2026-08-01"
+status_main: "monitoring"
+days_since_news: 4
+inbound_links: 24
+attribution_count: 11
+attribution_last: "2026-08-01"
+top_source: "reddit"
+signal: "健康"
+generated_by: "scripts/gen_wiki_frontmatter.py"
+---
 # Claude Code 效能退步事件
 
 **狀態：** monitoring（官方已說明，待驗證恢復）

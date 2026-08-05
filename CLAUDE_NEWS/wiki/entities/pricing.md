@@ -1,3 +1,20 @@
+---
+page: "entities/pricing"
+kind: "entity"
+type: "policy"
+status: "active（持續調整中）"
+domain: "💼 商業"
+last_updated: "2026-08-04"
+last_news_update: "2026-08-04"
+status_main: "active"
+days_since_news: 1
+inbound_links: 92
+attribution_count: 38
+attribution_last: "2026-08-04"
+top_source: "google-news"
+signal: "健康"
+generated_by: "scripts/gen_wiki_frontmatter.py"
+---
 # Anthropic 訂閱方案與計費政策
 
 **類型：** policy

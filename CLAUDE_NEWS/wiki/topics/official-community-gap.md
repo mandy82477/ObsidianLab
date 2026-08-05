@@ -1,3 +1,19 @@
+---
+page: "topics/official-community-gap"
+kind: "topic"
+status: "monitoring"
+domain: "🛠️ 工具/功能"
+last_updated: "2026-08-05"
+last_news_update: "2026-08-05"
+status_main: "monitoring"
+days_since_news: 0
+inbound_links: 10
+attribution_count: 0
+attribution_last: null
+top_source: null
+signal: "健康"
+generated_by: "scripts/gen_wiki_frontmatter.py"
+---
 # 官方功能 vs 社群痛點缺口分析
 
 **狀態：** monitoring

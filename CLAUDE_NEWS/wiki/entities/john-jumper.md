@@ -1,3 +1,20 @@
+---
+page: "entities/john-jumper"
+kind: "entity"
+type: "person"
+status: "active"
+domain: "👤 人物"
+last_updated: "2026-07-18"
+last_news_update: "2026-06-26"
+status_main: "active"
+days_since_news: 40
+inbound_links: 2
+attribution_count: 0
+attribution_last: null
+top_source: null
+signal: "休眠"
+generated_by: "scripts/gen_wiki_frontmatter.py"
+---
 # John Jumper
 
 **類型：** person

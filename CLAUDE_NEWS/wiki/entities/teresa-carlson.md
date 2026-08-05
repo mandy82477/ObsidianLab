@@ -1,3 +1,20 @@
+---
+page: "entities/teresa-carlson"
+kind: "entity"
+type: "person"
+status: "active（待核實）"
+domain: "👤 人物"
+last_updated: "2026-08-01"
+last_news_update: "2026-07-07"
+status_main: "active"
+days_since_news: 29
+inbound_links: 4
+attribution_count: 0
+attribution_last: null
+top_source: null
+signal: "休眠"
+generated_by: "scripts/gen_wiki_frontmatter.py"
+---
 # Teresa Carlson
 
 **類型：** person

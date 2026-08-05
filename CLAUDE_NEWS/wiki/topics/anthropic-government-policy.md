@@ -1,3 +1,19 @@
+---
+page: "topics/anthropic-government-policy"
+kind: "topic"
+status: "monitoring（出口管制主線已解除，剩餘承諾落實與衍生支線持續觀察；中美 AI 工具信任對峙已獨立成頁）"
+domain: "🏛️ 政策/安全"
+last_updated: "2026-08-05"
+last_news_update: "2026-08-05"
+status_main: "monitoring"
+days_since_news: 0
+inbound_links: 60
+attribution_count: 36
+attribution_last: "2026-08-05"
+top_source: "google-news"
+signal: "健康"
+generated_by: "scripts/gen_wiki_frontmatter.py"
+---
 # Anthropic 政府與軍事政策
 
 **狀態：** monitoring（出口管制主線已解除，剩餘承諾落實與衍生支線持續觀察；中美 AI 工具信任對峙已獨立成頁）

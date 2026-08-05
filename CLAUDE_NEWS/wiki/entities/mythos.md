@@ -1,3 +1,20 @@
+---
+page: "entities/mythos"
+kind: "entity"
+type: "model"
+status: "active（出口管制解除，2026-07-01 起全球恢復存取）"
+domain: "🤖 模型"
+last_updated: "2026-07-30"
+last_news_update: "2026-07-30"
+status_main: "active"
+days_since_news: 6
+inbound_links: 24
+attribution_count: 10
+attribution_last: "2026-07-30"
+top_source: "google-news"
+signal: "健康"
+generated_by: "scripts/gen_wiki_frontmatter.py"
+---
 # Claude Mythos
 
 **類型：** model

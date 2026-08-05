@@ -1,3 +1,20 @@
+---
+page: "entities/andrej-karpathy"
+kind: "entity"
+type: "person"
+status: "active（待核實）"
+domain: "👤 人物"
+last_updated: "2026-08-02"
+last_news_update: "2026-08-02"
+status_main: "active"
+days_since_news: 3
+inbound_links: 3
+attribution_count: 1
+attribution_last: "2026-08-02"
+top_source: "google-news"
+signal: "孤島"
+generated_by: "scripts/gen_wiki_frontmatter.py"
+---
 # Andrej Karpathy
 
 **類型：** person

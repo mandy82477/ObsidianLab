@@ -1,3 +1,19 @@
+---
+page: "topics/competitor-landscape"
+kind: "topic"
+status: "monitoring"
+domain: "💼 商業"
+last_updated: "2026-08-05"
+last_news_update: "2026-08-05"
+status_main: "monitoring"
+days_since_news: 0
+inbound_links: 47
+attribution_count: 49
+attribution_last: "2026-08-05"
+top_source: "google-news"
+signal: "健康"
+generated_by: "scripts/gen_wiki_frontmatter.py"
+---
 # AI 編碼工具競品動態
 
 **狀態：** monitoring

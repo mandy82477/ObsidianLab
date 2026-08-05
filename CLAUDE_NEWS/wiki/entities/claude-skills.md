@@ -1,3 +1,20 @@
+---
+page: "entities/claude-skills"
+kind: "entity"
+type: "feature"
+status: "active"
+domain: "🛠️ 工具/功能"
+last_updated: "2026-07-19"
+last_news_update: "2026-07-19"
+status_main: "active"
+days_since_news: 17
+inbound_links: 2
+attribution_count: 6
+attribution_last: "2026-07-17"
+top_source: "github"
+signal: "孤島"
+generated_by: "scripts/gen_wiki_frontmatter.py"
+---
 # Claude Skills
 
 **類型：** feature

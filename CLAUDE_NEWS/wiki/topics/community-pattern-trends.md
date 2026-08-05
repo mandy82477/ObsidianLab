@@ -1,3 +1,20 @@
+---
+page: "topics/community-pattern-trends"
+kind: "topic"
+status: "ongoing"
+domain: "🌐 社群"
+last_updated: "2026-08-01"
+last_news_update: "2026-07-30"
+update_freq: "🗓️ 週更（無新趨勢節點時刻意不動——日期停留＝趨勢層無變化，非漏更新）"
+status_main: "ongoing"
+days_since_news: 6
+inbound_links: 7
+attribution_count: 0
+attribution_last: null
+top_source: null
+signal: "健康"
+generated_by: "scripts/gen_wiki_frontmatter.py"
+---
 # 社群趨勢觀察（週更）
 
 **狀態：** ongoing

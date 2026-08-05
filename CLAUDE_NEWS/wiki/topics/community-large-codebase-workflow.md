@@ -1,3 +1,19 @@
+---
+page: "topics/community-large-codebase-workflow"
+kind: "topic"
+status: "ongoing"
+domain: "🌐 社群"
+last_updated: "2026-08-05"
+last_news_update: "2026-08-05"
+status_main: "ongoing"
+days_since_news: 0
+inbound_links: 3
+attribution_count: 2
+attribution_last: "2026-08-05"
+top_source: "reddit"
+signal: "孤島"
+generated_by: "scripts/gen_wiki_frontmatter.py"
+---
 # 大型 Codebase 規模化開發：社群工作流主線
 
 **狀態：** ongoing

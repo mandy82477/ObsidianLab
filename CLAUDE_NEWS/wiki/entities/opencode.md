@@ -1,3 +1,20 @@
+---
+page: "entities/opencode"
+kind: "entity"
+type: "product"
+status: "active（快速成長）"
+domain: "🛠️ 工具/功能"
+last_updated: "2026-07-26"
+last_news_update: "2026-05-22"
+status_main: "active"
+days_since_news: 75
+inbound_links: 3
+attribution_count: 0
+attribution_last: null
+top_source: null
+signal: "休眠"
+generated_by: "scripts/gen_wiki_frontmatter.py"
+---
 # OpenCode
 
 **類型：** product

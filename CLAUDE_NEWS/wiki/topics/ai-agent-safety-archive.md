@@ -1,3 +1,20 @@
+---
+page: "topics/ai-agent-safety-archive"
+kind: "topic"
+type: "event"
+status: "monitoring"
+domain: "🏛️ 政策/安全"
+last_updated: "2026-08-01"
+last_news_update: "2026-06-27"
+status_main: "monitoring"
+days_since_news: 39
+inbound_links: 7
+attribution_count: 0
+attribution_last: null
+top_source: null
+signal: "休眠"
+generated_by: "scripts/gen_wiki_frontmatter.py"
+---
 # AI Agent 安全與可靠性 — 時序存檔
 
 **類型：** event
