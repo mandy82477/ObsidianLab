@@ -17,6 +17,8 @@
 
 > 上表為核心頁面與觸發條件；此外 `wiki/index.md` 中領域為 🤖 模型 的所有頁面（含日後新增）皆由本記者負責維護與 lint。
 
+> **`wiki/topics/model-task-leaderboard.md` 例外 `[加入: 2026-08-05]`**：此頁為跨家榜單週快照，吃外部榜單網站而非新聞條目，由 `/wiki-lint` 步驟 5b（主編派 Haiku 抓取）維護；每日 ingest **不更新**此頁，模型記者僅在 lint 時做呈現品質檢查、不自行抓榜（記者無 web 工具）。
+
 > `wiki/entities/pricing.md` 由**商業記者主責**（見 `.claude/rules/wiki-ingest-commercial.md`）。模型記者遇模型定價時，將定價細節留給商業記者，僅在模型頁記能力並加 wikilink 至 pricing。
 
 新模型發布時，依 `.claude/rules/wiki-ingest-format.md` 建立新 entities/ 頁。

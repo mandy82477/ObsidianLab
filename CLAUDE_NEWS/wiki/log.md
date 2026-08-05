@@ -3386,3 +3386,10 @@
 - **點出什麼**：使用者要求以讀者角度 review `topics/model-comparison.md` 可讀性，追問中補兩點——表格 column 太多難讀；想查「最近哪些 model（含跨家）適合哪些任務」
 - **根因**：(a) 查證防衛語無「單一權威位置」概念，同一免責聲明複製 5–6 處（推算定價 6 處、免費期 5 處）；(b) 規則 G 只管格內長度、不管欄數，快速選型表長到 7 欄且含全 ✅ 低資訊狀態欄；(c) effort 查證過程塞進頂部 callout（約 500 字）；(d) benchmark 表把 Opus 5 硬塞成列（E 條違規形態）；(e) 07-25 為錨的現在式時效句（「發布僅 1 天」）過期 11 天無人掃
 - **處置**：規則檔 `.claude/rules/wiki-ingest-models.md` 新增 **H 條**（對照表 ≤5 欄／快速選型表 ≤4 欄、低資訊欄禁止、淘汰項不佔列、callout ≤3 句）；派 Opus 記者重構全頁（156→143 行）：免責去重至單一權威位置、callout 拆解、選型表 7→4 欄、benchmark 表修 E 條、社群實測四區塊合併為一、以 07-26～08-04 日報封閉時效句並補 Opus 5 穩定性事件與社群風向轉分歧、外部榜單改「任務→活榜單」對照表（移除已退役的 HF Open LLM Leaderboard，新增 LMArena／SWE-bench／Aider Polyglot／OpenRouter Rankings，主編 web 查證）。G 條腳本零違規、H 條欄數全達標、F 條 3 跳自檢兩題皆單一命中
+
+## 2026-08-05 建頁：model-task-leaderboard（任務 × 跨家榜單週快照）
+
+- **緣起**：使用者對「各榜現況查詢報告」（本日稍早 Haiku 一次性抓取）反應正面，決定制度化為週更頁；並指定任務分類用一般語言（寫 code／寫文案／畫圖），涵蓋原 6 榜＋新增 7 類應用（查資料、前端、STT、電腦操作、OCR、音樂、Embedding），共 14 列
+- **觸發邊登記**（衍生頁鐵則）：`.claude/commands/wiki-lint.md` 新增步驟 5b「跨家任務榜單週更（主編派 Haiku 抓取）」＋ log 模板對應行；`.claude/rules/wiki-ingest-models.md` 註明此頁每日 ingest 不更新、記者僅 lint 品質檢查；`.claude/rules/wiki-ingest-format.md` 週更頁清單已加入
+- **首輪快照**：2026-08-05，12/14 榜取得資料（TTS 與音樂待下週補）；Aider Polyglot 榜發現疑似 2025-08 起停更，已在頁面標註、連續無更新將汰換
+- **設計要點**：快照只住這一頁（覆寫式，不 prepend 歷史），不回寫 model-comparison 或模型頁，避免過期數字擴散；每列標「資料日期・取得方式（直接／二手報導）」
