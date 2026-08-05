@@ -14,7 +14,7 @@ wiki ingest 時的來源歸因 ledger。主編收齊記者回報後，把各記�
 Schema（每行一筆）：
 
 ```json
-{"date": "2026-07-11", "source": "hacker-news", "category": "社群", "page": "topics/community-tech-patterns", "item_url": "https://...", "item_title": "..."}
+{"date": "2026-07-11", "source": "hacker-news", "category": "社群", "page": "topics/community-tech-patterns", "item_url": "https://...", "item_title": "...", "publisher": "Financial Times"}
 ```
 
 | 欄位 | 說明 |
@@ -25,6 +25,18 @@ Schema（每行一筆）：
 | `page` | 寫入的 wiki 相對路徑，不含 `.md`（如 `topics/ai-agent-safety`） |
 | `item_url` | 日報條目原始連結 |
 | `item_title` | 日報條目標題 |
+| `publisher` | **選填**，來源標記斜線後半段（出版者／子版／站名）。記者回報的 `source` 只有斜線前半段，而 `google-news` 底下實際有 250+ 個出版者、品質從 Reuters 到內容農場都有，單一 slug 的品質標籤對它沒有意義。由 `scripts/enrich_attribution_publisher.py` 從日報回推補上（不改記者契約）；日報查無對應 URL、或來源本身無斜線（如 `Hacker News`）時不帶此欄 |
+
+### publisher 回填
+
+`scripts/enrich_attribution_publisher.py` 掃 `news/*.md` 建 URL → 來源標記對照，為缺 `publisher` 的行補值。**冪等**，可隨時重跑；新歸因 append 後執行一次即可補齊。
+
+```bash
+python scripts/enrich_attribution_publisher.py --dry-run   # 只報告
+python scripts/enrich_attribution_publisher.py             # 實際寫入
+```
+
+首次回填（2026-08-05）：466 筆補上、涵蓋 141 家；`google-news` 涵蓋率 93%（229/247，127 家出版者）。未匹配多為語意差異（HN 條目記原文網址、日報連討論串），非解析錯誤。
 
 ## source_funnel.jsonl
 

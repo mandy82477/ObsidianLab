@@ -56,7 +56,14 @@ class ApiDocs(BaseSource):
                     day = datetime.strptime(date_str, "%B %d, %Y").replace(tzinfo=timezone.utc)
                 except ValueError:
                     continue
-                if day < cutoff:
+                # 條目只有日期沒有時刻，`day` 因此是當日 00:00 UTC——但 Anthropic 常在
+                # 美國時間稍晚才發布，晚於本 pipeline 當天的抓取時刻。若拿 00:00 比
+                # cutoff，該條目在自己發布當天還沒上線（抓不到），隔天再抓時 cutoff
+                # 已經越過它的 00:00（被永久排除），於是每天都 gathered: 0——2026-07-11
+                # 起連續 26 天零產出即由此而來，且不會報錯，完全靜默。
+                # 改比「當日結束」，給每個只有日期的條目一整天的寬限，確保它至少能被
+                # 下一輪抓取看見。
+                if day + timedelta(hours=23, minutes=59, seconds=59) < cutoff:
                     continue
                 summary = _strip_html(body)[:200]
                 items.append(FeedItem(
