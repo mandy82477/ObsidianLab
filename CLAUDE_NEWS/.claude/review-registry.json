@@ -527,6 +527,32 @@
       "_note": "2026-08-02 加入。W31 首次出現回收表時，build_web.py 只認得 forecasts 表頭，回收表被整張吃掉——網站上看不到對帳，且回收小標被誤當引言印在新預告卡片上方，讀者無從分辨兩張表的方向。"
     },
     {
+      "name": "資訊架構哲學三處錨定：wiki/CLAUDE.md 哲學段 + index.md/log.md 檔頭契約互相指回（哲學失去錨點後，操作規則會退化成無 why 的禁令，擋不住新形態的同類錯誤）",
+      "assertion": "all_contain",
+      "files": [
+        "wiki/CLAUDE.md",
+        "wiki/index.md",
+        "wiki/log.md"
+      ],
+      "patterns": [
+        "資訊架構哲學"
+      ],
+      "_note": "2026-08-05 加入。wiki/CLAUDE.md 另須含「每個事實只有一個家」判斷式（見下一條）。"
+    },
+    {
+      "name": "wiki/CLAUDE.md 哲學段核心判斷式存在",
+      "assertion": "all_contain",
+      "files": [
+        "wiki/CLAUDE.md"
+      ],
+      "patterns": [
+        "每個事實只有一個家",
+        "地圖",
+        "被策展的現在",
+        "不會遺忘的過去"
+      ]
+    },
+    {
       "name": "large-codebase 主線頁小縫/大縫兩側規則齊全（daily 掛線在 community.md、weekly 健檢在 community-lint.md——只有一側時主線頁會再次孤兒化）",
       "assertion": "all_contain",
       "files": [
