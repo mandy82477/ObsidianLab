@@ -31,7 +31,7 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 
 ## 摘要
 
-回答「**做某類任務，目前哪家模型最強？**」——按任務類型列出各活榜單的本週領先者快照，涵蓋跨家模型（OpenAI、Google、開源等）與非文字生成（畫圖、影片、語音）。每列標資料日期與取得方式；即時精確數字請點榜單連結（活榜單永遠最新，本頁只是每週速讀）。Claude 家內選型見 [[topics/model-comparison]]。
+回答「**做某類任務，目前哪家模型最強？**」——按任務類型列出各活榜單的本週領先者快照，涵蓋跨家模型（OpenAI、Google、開源等）與非文字生成（畫圖、影片、語音）。每列標資料日期；即時精確數字請點榜單連結（活榜單永遠最新，本頁只是每週速讀），各榜怎麼算分見下方評比方式索引。Claude 家內選型見 [[topics/model-comparison]]。
 
 ## 本週快照
 
@@ -52,30 +52,15 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 | [音樂生成](#eval-music) | 快照待補（下週補抓） | — | [AA Music Arena](https://artificialanalysis.ai/music/leaderboard/vocals) |
 | [Embedding（自建 RAG）](#eval-mteb) | Gemini Embedding 001 > Voyage-3.1 > Cohere embed-v4 | 04~07 月 | [MTEB](https://huggingface.co/spaces/mteb/leaderboard) |
 | [聊天陪伴／情商](#eval-eqbench) | Claude Fable 5 > Kimi K3 > GPT-5.5 | 07-20 | [EQ-Bench](https://eqbench.com/) |
-| [放多長的任務給 agent](#eval-metr) | Claude Opus 4.5 > GPT-5 > o3（⚠️ 量測落後現役陣容） | 2026-01 | [METR](https://metr.org/) |
+| [放多長的任務給 agent](#eval-metr) | Claude Opus 4.5（320 分鐘@50%）> GPT-5 > o3（⚠️ 量測過期，見本週註記） | 2026-01 | [METR](https://metr.org/) |
 | [讀文件不胡說（幻覺率低）](#eval-vectara) | finix_s1_32b > gpt-5.4-nano > gemini-2.5-flash-lite | 05-11 | [Vectara 幻覺榜](https://github.com/vectara/hallucination-leaderboard) |
 | [大家實際在用什麼](#eval-openrouter) | DeepSeek V4 Flash > 腾訊 Hy3 > GPT 5.6 Luna | 08-02 | [OpenRouter](https://openrouter.ai/rankings) |
 
-## 快照細節與注意事項
+## 本週註記（僅列異常）
 
-具體分數、取得方式（當週直接抓取或二手報導彙整）與逐榜注意事項如下；要即時精確數字請點表中榜單連結。
-
-- **SWE-bench**（二手報導）：Verified 子榜 Opus 5 96%、Mythos 5 95.5%、Fable 5 95%；Pro 子榜 Fable 5 80.3%。官方站 JS 渲染抓不到，數字為報導拼湊。
-- **Aider Polyglot**（直接抓取）：gpt-5 (high) 88.0%、gpt-5 (medium) 86.7%、o3-pro 84.9%——榜首仍是 2025-08 陣容，一年未見新模型入榜，**疑似停止維護**，若持續無更新將汰換此列。
-- **LMArena 文字榜**（二手報導）：Fable 5 Elo ~1525、Opus 4.8 ~1510、GPT-5.5 Pro ~1510；平台 2026-07-12 重新基準化 Elo（重算 07-01 後投票）。
-- **Search Arena**（直接抓取）：Opus 4-6 Search 1253、GPT-5.5 Search 1240、Fable 5 1237。
-- **WebDev Arena**（直接抓取）：Opus 5 Max 1705、Kimi K3 Max 1676、Opus 5 High 1669。
-- **畫圖**（直接抓取）：GPT Image 2 (high) Elo 1339、Reve 2.1 1299、MAI-Image-2.5 1270。
-- **改圖**（直接抓取）：Reve 2.1 Elo 1259、GPT Image 2 (high) 1258、MAI-Image-2.5 1254——前三僅差 5 分實質同級。與文生圖榜排名不同（該榜 GPT Image 2 領先 40 分），印證「生圖」與「改圖」是兩種能力，選工具時分開查。
-- **影片**（直接抓取）：Gemini Omni Flash Elo 1243、MiniMax H3 1237、Dreamina Seedance 2.0 1224。
-- **語音轉文字**（直接抓取）：字錯率 Fun-Realtime-ASR-preview 1.7%、ElevenLabs Scribe v2 2.2%、MAI-Transcribe-1.5 2.4%。
-- **電腦操作 agent**（二手報導）：Terminal-Bench 2.1 上 GPT-5.6 Sol 91.9%、Opus 5 89.1%、Mythos 5 88.0%。OSWorld 官方站排行表未公開（僅知最佳模型 12.24% vs 人類 72.36%），故採 Terminal-Bench；此領域整體離人類水準仍遠。
-- **文件解析／OCR**（二手報導）：OmniDocBench 綜合 MiniMax M3 0.916（16 模型中），其餘排名未公開。
-- **Embedding**（二手報導）：MTEB 英文榜 Gemini Embedding 001 68.32、Voyage-3.1 ~67、Cohere embed-v4 65.2；開放權重首選 Qwen3-Embedding-8B（~75）；多語系榜第一為騰訊 KaLM-Embedding-Gemma3-12B（72.32，2026-07）。v2 與 v1 分數不可直接比較。
-- **OpenRouter**（二手報導）：用量占比具體數字抓不到（頁面截斷），僅知排名；此榜反映價格敏感的真實流量，與能力榜天然不同溫。
-- **METR time horizon**（直接抓取）：非傳統排行榜，量測「50% 成功率下模型可自主完成的任務時長（換算人類工時）」——Time Horizon 1.1（2026-01-29）：Claude Opus 4.5 320 分鐘（信心區間 170–729）、GPT-5 214 分鐘、o3 121 分鐘。此即「agent 自主時長每 7 個月翻倍」曲線的最新公開量測點；**現役陣容（Fable 5 / Opus 5）尚未入測**，數字僅供尺度感，待 METR 下次發布更新。
-- **幻覺率**（直接抓取）：Vectara 摘要任務幻覺榜（05-11）：antgroup finix_s1_32b 1.8%、gpt-5.4-nano 3.1%、gemini-2.5-flash-lite 3.3%。注意榜首是螞蟻集團的 32B 小模型——**主流旗艦不必然低幻覺**，選「拿來讀文件／摘要」的模型時，看此榜比看能力榜實用。
-- **情商／個性**（二手報導）：EQ-Bench 4 主榜 Fable 5 1349.5、Kimi K3 1349.2、GPT-5.5 1325.8；Creative Writing 子榜第一為 Claude Opus 5（2430）。⚠️ 另一鏡像站（llm-stats，08 月）稱榜首為 Grok 4.1 Thinking（1586），與本輪 BenchLM 快照（07-20）不一致，疑為不同快照日期或子榜版本，待直抓官方站核實。情商高分有「靠討好刷分」的已知疑慮（共情與諂媚同源），解讀時留意。
+- **Aider Polyglot 疑似停更**：榜首仍是 2025-08 陣容，一年未見新模型入榜；持續無更新將汰換該列。
+- **METR 量測過期**：最近一次發布為 2026-01-29（Opus 4.5 領先），現役陣容（Fable 5 / Opus 5）尚未入測，數字僅供尺度感。
+- **EQ-Bench 兩來源歧異**：BenchLM（07-20）稱榜首 Fable 5、llm-stats（08 月）稱 Grok 4.1 Thinking，疑為不同快照或子榜版本，待直抓官方站核實。
 
 ## 評比方式索引（每榜比什麼、分數怎麼來）
 
@@ -107,7 +92,7 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 ### 錯誤率組——越低越好
 
 - <a id="eval-stt"></a>**語音轉文字（AA STT 榜）**：非投票、純客觀量測。**WER 字錯率＝（替換＋插入＋刪除的詞數）÷ 參考逐字稿總詞數**。題庫約 8 小時音檔、三資料集加權：語音助理情境 50%、多口音議會錄音 25%、財報電話會議（滿滿術語）25%；另量批次速度（音檔時長 ÷ 處理時間）與串流延遲（首字／定稿時間）。
-- <a id="eval-vectara"></a>**幻覺率（Vectara）**：**7,700+ 篇**跨領域文章（法律、醫療、金融…，50–24,000 字），要求模型「只根據原文摘要、不得外加知識」，再由專門的幻覺偵測模型 HHEM 逐篇檢查摘要有沒有原文沒講的內容；幻覺率＝有幻覺的摘要數 ÷ 總數。題庫刻意不公開（防模型針對性過擬合）。注意它測的是「忠於原文」，不是模型知識的全面正確性。
+- <a id="eval-vectara"></a>**幻覺率（Vectara）**：**7,700+ 篇**跨領域文章（法律、醫療、金融…，50–24,000 字），要求模型「只根據原文摘要、不得外加知識」，再由專門的幻覺偵測模型 HHEM 逐篇檢查摘要有沒有原文沒講的內容；幻覺率＝有幻覺的摘要數 ÷ 總數。題庫刻意不公開（防模型針對性過擬合）。注意它測的是「忠於原文」，不是模型知識的全面正確性；且小模型可能贏過主流旗艦——選「讀文件／摘要」用途時，看此榜比看能力榜實用。
 
 ### 特殊機制組——不是傳統分數
 
