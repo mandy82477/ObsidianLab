@@ -138,3 +138,4 @@
 [Thu 2026/08/06 13:11:01.00] === Agent pipeline start (2026-08-06) ===
 [Thu 2026/08/06 13:11:01.00] ABORTED: gathered_items.json date=2026-08-05 items=85，非目標日期的新鮮資料
 [Thu 2026/08/06 13:11:01.00] === Pipeline complete (agent) ===
+[Thu 2026/08/06 23:11:14.00] Watchdog push SENT - 每日新聞 2026-08-06 缺件：抓料、日報。本機跑 /news-pipeline 2026-08-06 補（另有近 7 天 1 個舊缺口）
