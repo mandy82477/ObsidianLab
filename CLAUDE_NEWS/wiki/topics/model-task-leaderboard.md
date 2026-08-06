@@ -43,6 +43,7 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 | [查資料（AI 搜尋）](#eval-search) | Claude Opus 4-6 Search > GPT-5.5 Search > Fable 5 | 08-05 | [Search Arena](https://arena.ai/leaderboard) |
 | [做網頁／前端](#eval-webdev) | Claude Opus 5 Max > Kimi K3 Max > Opus 5 High | 08-05 | [WebDev Arena](https://arena.ai/leaderboard) |
 | [畫圖（文生圖）](#eval-image) | GPT Image 2 > Reve 2.1 > MAI-Image-2.5 | 08-05 | [AA 圖像榜](https://artificialanalysis.ai/image/leaderboard/text-to-image) |
+| [改圖（圖像編輯）](#eval-imageedit) | Reve 2.1 > GPT Image 2 > MAI-Image-2.5（前三僅差 5 分） | 08-05 | [AA 編輯榜](https://artificialanalysis.ai/image/leaderboard/editing) |
 | [生成影片](#eval-video) | Gemini Omni Flash > MiniMax H3 > Seedance 2.0 | 08-05 | [AA 影片榜](https://artificialanalysis.ai/video/leaderboard/text-to-video) |
 | [語音合成（TTS）](#eval-tts) | 快照待補（下週補抓） | — | [AA TTS 榜](https://artificialanalysis.ai/text-to-speech/leaderboard) |
 | [語音轉文字（逐字稿）](#eval-stt) | Fun-Realtime-ASR > Scribe v2 > MAI-Transcribe-1.5 | 08-05 | [AA STT 榜](https://artificialanalysis.ai/speech-to-text) |
@@ -65,6 +66,7 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 - **Search Arena**（直接抓取）：Opus 4-6 Search 1253、GPT-5.5 Search 1240、Fable 5 1237。
 - **WebDev Arena**（直接抓取）：Opus 5 Max 1705、Kimi K3 Max 1676、Opus 5 High 1669。
 - **畫圖**（直接抓取）：GPT Image 2 (high) Elo 1339、Reve 2.1 1299、MAI-Image-2.5 1270。
+- **改圖**（直接抓取）：Reve 2.1 Elo 1259、GPT Image 2 (high) 1258、MAI-Image-2.5 1254——前三僅差 5 分實質同級。與文生圖榜排名不同（該榜 GPT Image 2 領先 40 分），印證「生圖」與「改圖」是兩種能力，選工具時分開查。
 - **影片**（直接抓取）：Gemini Omni Flash Elo 1243、MiniMax H3 1237、Dreamina Seedance 2.0 1224。
 - **語音轉文字**（直接抓取）：字錯率 Fun-Realtime-ASR-preview 1.7%、ElevenLabs Scribe v2 2.2%、MAI-Transcribe-1.5 2.4%。
 - **電腦操作 agent**（二手報導）：Terminal-Bench 2.1 上 GPT-5.6 Sol 91.9%、Opus 5 89.1%、Mythos 5 88.0%。OSWorld 官方站排行表未公開（僅知最佳模型 12.24% vs 人類 72.36%），故採 Terminal-Bench；此領域整體離人類水準仍遠。
@@ -79,38 +81,39 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 
 查快照表看到「誰贏」後，這裡回答「贏在什麼題目上」。各榜按計分機制分四組。
 
-### 盲測 Elo 組——人類投票，分數是相對的
+### 盲測投票組——人類投票，分數是相對的
 
-同一題丟給兩個**匿名**模型，人類看產出投票誰好，勝負像棋類等級分一樣累積成 Elo。測的是「大眾偏好」，且分數只在同一個榜內可比。
+同一題丟給兩個**匿名**模型，人類看產出投票誰好。多數榜實際用 Bradley-Terry 統計模型（棋類 Elo 的嚴謹版，不會過度加權近期比賽）把幾萬場勝負摺算成分數，再換算成 Elo 風格數字呈現。分數是相對的，**只在同一個榜內可比**。
 
-- <a id="eval-lmarena"></a>**寫文案、聊天（LMArena）**：題目就是真實使用者當下輸入的任何問題，不設題庫——最貼近日常使用，但也最受「討喜程度」影響。
-- <a id="eval-search"></a>**查資料（Search Arena）**：需要上網查證的問題（新聞、事實、時效資訊），比查得準不準、引用對不對。
-- <a id="eval-webdev"></a>**做網頁（WebDev Arena）**：同一個網頁需求，兩個模型各自生出可執行網頁並排渲染，投票哪個更好用好看。
-- <a id="eval-image"></a>**畫圖**：同一段文字描述（人物、場景、藝術風格、圖中文字等各類 prompt），兩張生成圖並排投票哪張更符合描述、更好看——測的是描述還原度＋大眾審美。
-- <a id="eval-video"></a>**生成影片**：同一段描述生成短片並排投票，看動作合理性與畫面品質。
-- <a id="eval-tts"></a>**語音合成（TTS）**：同一段文字唸出來，盲聽投票哪個更自然。
-- <a id="eval-music"></a>**音樂生成**：同一段風格描述生成音樂，盲聽投票。
+- <a id="eval-lmarena"></a>**寫文案、聊天（LMArena）**：題目＝真實使用者當下輸入的任何問題，不設題庫；累積 **680 萬+ 盲測票、360+ 模型**，是全球最大的人類偏好榜。有 style control 機制——把「回答比較長、排版比較漂亮」這類寫法討喜因素從內容品質中統計拆離，另有位置偏差（左邊容易被選）與組織偏差修正。已知弱點：仍傾向偏好長回答；2026-07-12 重新基準化＝Fable 5 解禁後只計 07-01 之後的票，排除舊資料污染。
+- <a id="eval-search"></a>**查資料（Search Arena）**：使用者真實的查證需求（市場分析、健康、購物推薦、時事…），比查得準不準、引用對不對；已公開 2.4 萬筆對話資料。有趣發現：投票者偏好引用部落格與程式碼來源，引 Wikipedia 反而不討喜——榜測的是「使用者滿意」，不完全等於「來源權威」。
+- <a id="eval-webdev"></a>**做網頁（WebDev Arena）**：自由輸入網頁需求（網站設計約 15%、遊戲 12%、仿製既有網站 12%…），兩模型各自生出**可實際互動**的網頁，試用後投票；累積 8 萬+ 票。有「兩個都爛」選項且佔比達 26%——這個數字本身就說明前端生成還不成熟。
+- <a id="eval-image"></a>**畫圖（AA 圖像榜）**：約 **900 條策劃 prompt**，按「用途（行銷、零售、遊戲、UI/UX）× 能力（文字渲染、人體結構、佈局、推理）」二軸設計，每月汰換辨別度低的題目防過擬合；累積 4.5 萬+ 票。測的是描述還原度＋大眾審美——榜首是「最多人覺得好」，不等於最適合你的風格。
+- <a id="eval-imageedit"></a>**改圖（AA 編輯榜）**：給**原圖＋修改指令**（移除背景、改風格、換元素…），投票比誰改得準又自然。與文生圖是獨立的榜、排名不同——「生得好」與「改得好」是兩種能力，選工具時分開查。
+- <a id="eval-video"></a>**生成影片（AA 影片榜）**：策劃 prompt 隨機抽題，生成參數統一（1080p、24fps、10 秒、固定 seed）排除設定差異；榜每小時更新。另有 image-to-video（圖生影片）與 video editing 子榜，各分含音訊／無音訊版本。
+- <a id="eval-tts"></a>**語音合成（AA TTS 榜）**：約 500 字元的實境情境文本（客服應答、數位助理、知識講解、娛樂），用 8 個標準聲音＋各家自有聲音分開測——防止「喜歡某個音色」污染對合成品質的評估；每日 4 次隨機時段測試。
+- <a id="eval-music"></a>**音樂生成（AA Music Arena）**：分流派（Pop、Hip-Hop、EDM、古典、爵士）的策劃 prompt，所有音檔先統一響度到 -16 LUFS 再盲聽——防「比較大聲聽起來比較好」的心理效應；分純樂器與含人聲兩榜，也有流派別排名。
 
 ### 任務通過率組——固定題庫，過就得分（%）
 
-有客觀對錯，靠測試或驗收腳本判定，不靠人類感覺。要留意題庫版本（如 SWE-bench Verified 與 Pro 是不同題庫，分數不能互比）。
+有客觀對錯，靠測試或驗收腳本判定，不靠人類感覺。要留意題庫版本——同名 benchmark 的不同子集分數不能互比。
 
-- <a id="eval-swebench"></a>**寫 code（SWE-bench）**：真實 GitHub 專案的 issue，給模型整個 repo 要它寫修復 patch，跑該專案測試通過才算解決；Verified 是人工複核過的題目子集。
-- <a id="eval-aider"></a>**寫 code（Aider）**：多語言（Python/Rust/Go 等）偏難程式練習題，限次數內通過測試算對，同時記每題成本。
-- <a id="eval-terminal"></a>**電腦操作（Terminal-Bench）**：在真實終端機沙盒自主完成任務（編譯、除錯、資料處理、系統管理），驗收腳本判定成敗。
-- <a id="eval-docparse"></a>**文件解析（OmniDocBench）**：各類真實 PDF（論文、表格、公式、掃描件）轉結構化文字，對照人工標註算還原準確度，綜合分 0–1。
-- <a id="eval-mteb"></a>**Embedding（MTEB）**：檢索、分類、聚類、語意相似度等多類任務各算標準指標後取平均。
+- <a id="eval-swebench"></a>**寫 code（SWE-bench）**：真實 GitHub 專案的 issue，給模型整個 repo 要它寫出修復 patch，跑該專案的 unit tests 通過才算解決，**Pass@1 一次定生死（無重試）**。兩個主要子集性質不同：**Verified**＝500 題、經工程師人工確認可解、多數單檔案可解決（頂級模型已達 9 成以上，接近飽和）；**Pro**＝1,865 題、跨 41 個活躍 repo、需跨檔案修改與更長 context（頂級模型也僅兩三成，鑑別度高）。看到「SWE-bench XX%」先問是哪個子集。
+- <a id="eval-aider"></a>**寫 code（Aider Polyglot）**：**225 題**選自 Exercism 練習庫、特挑「連頂級模型都常錯」的難題，涵蓋 C++/Go/Java/JS/Python/Rust 六語言。允許兩次嘗試（第一次失敗會拿到測試錯誤訊息再改），且必須用 Aider 的結構化編輯格式實際改檔——同時測「會不會寫」和「能不能乖乖照格式改」。每題成本一併記錄（同題 o3-pro 跑一輪 $146 vs gpt-5 $29，成本差距就是這樣量出來的）。
+- <a id="eval-terminal"></a>**電腦操作（Terminal-Bench）**：**89 題**真實終端機任務（系統管理、資安、資料科學、模型訓練），agent 自主操作到完成，驗收腳本檢查產出檔案或執行結果。2.1 版修復了 28 題的評估問題（依賴失效、資源預算不足、題意與測試不符），所以 2.0 與 2.1 分數不能直接比。
+- <a id="eval-docparse"></a>**文件解析（OmniDocBench）**：**1,651 頁真實 PDF**，涵蓋 10 類文件（論文、財報、新聞、教科書、手寫筆記）× 5 種版型 × 5 種語言。分項計分：文字用編輯距離、表格用 TEDS（樹結構比對，同時看結構與內容）、公式用 CDM、閱讀順序用序列比對；綜合分＝（文字＋表格＋公式）三項平均，0–1。
+- <a id="eval-mteb"></a>**Embedding（MTEB）**：8 大類任務（檢索、分類、聚類、重排、語意相似度…）共 58 個資料集（多語版擴至 500+ 資料集、250+ 語言），各任務用各自的標準指標（檢索 nDCG@10、分類 accuracy、相似度 Spearman）再彙總排名。已知：彙總方式不同會改變模型排序，v1 與 v2 分數不可互比。
 
 ### 錯誤率組——越低越好
 
-- <a id="eval-stt"></a>**語音轉文字（STT）**：字錯率 WER＝轉錯／漏／多的字佔比；榜上另計速度與價格。
-- <a id="eval-vectara"></a>**幻覺率（Vectara）**：給一批短文請模型摘要，用偵測模型量「摘要中原文沒有的內容」佔比。
+- <a id="eval-stt"></a>**語音轉文字（AA STT 榜）**：非投票、純客觀量測。**WER 字錯率＝（替換＋插入＋刪除的詞數）÷ 參考逐字稿總詞數**。題庫約 8 小時音檔、三資料集加權：語音助理情境 50%、多口音議會錄音 25%、財報電話會議（滿滿術語）25%；另量批次速度（音檔時長 ÷ 處理時間）與串流延遲（首字／定稿時間）。
+- <a id="eval-vectara"></a>**幻覺率（Vectara）**：**7,700+ 篇**跨領域文章（法律、醫療、金融…，50–24,000 字），要求模型「只根據原文摘要、不得外加知識」，再由專門的幻覺偵測模型 HHEM 逐篇檢查摘要有沒有原文沒講的內容；幻覺率＝有幻覺的摘要數 ÷ 總數。題庫刻意不公開（防模型針對性過擬合）。注意它測的是「忠於原文」，不是模型知識的全面正確性。
 
 ### 特殊機制組——不是傳統分數
 
-- <a id="eval-eqbench"></a>**情商（EQ-Bench）**：給有張力的多輪對話（衝突、安慰、談判場景），模型判讀角色情緒或扮演調解者，與參考答案／評審模型比對計分。
-- <a id="eval-metr"></a>**agent 自主時長（METR）**：用一批人類完成時間已知的真實工程任務，找出「模型成功率恰好 50%」的任務時長——能撐越久越強，單位是分鐘／小時，不是分數。
-- <a id="eval-openrouter"></a>**實際用量（OpenRouter）**：根本不是評測，是平台上各模型被真實呼叫的 token 量占比——「大家用錢投票」的結果，與能力無直接關係。
+- <a id="eval-eqbench"></a>**情商（EQ-Bench）**：**120 個各有雷點的虛擬人物**（有人重溫暖、有人厭惡虛偽，含刻意刁難的場景與權力關係），受測模型要跟每個人物進行 **16 輪對話**、建立信任並實際幫上忙。由不同家族的 LLM 分飾人物與評審（防「自家模型互相加分」），按六維度打 0–10 分：建立關係、真誠、感知對方、滿足需求、情緒理解、情緒管理。長對話設計是關鍵——單輪問答測不出真情商，撐到第 16 輪還不翻車才算數。
+- <a id="eval-metr"></a>**agent 自主時長（METR）**：任務集來自 HCAST／RE-Bench／SWAA 的真實工程任務（軟體、ML、資安），先由人類專家實測每題要花多久；模型每題跑約 8 次得成功率，把「人類耗時 vs 模型成功率」擬合成曲線，取**成功率恰好 50% 的交點時長**——能撐越久越強，單位是分鐘／小時，不是分數。這條「每 7 個月翻倍」的曲線是 AGI 進度討論的核心圖表。
+- <a id="eval-openrouter"></a>**實際用量（OpenRouter）**：根本不是評測——統計經 OpenRouter 路由的真實 API token 用量（輸入＋輸出），可切日／週／月窗口，另有「趨勢」排序（近期增量 vs 過去平均）。只計該平台流量、深受價格與延遲影響——測的是**採用**，不是品質；跟能力榜對照著看才有意思。
 
 > 讀榜提醒：所有榜都測不到「跟你的實際工作流合不合」，最終仍以自己的任務實測為準。
 
