@@ -37,23 +37,23 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 
 | 你想做的任務 | 本週前三名 | 資料日期 | 榜單 |
 |---|---|---|---|
-| 寫 code（agent 解 issue） | Claude Opus 5 > Mythos 5 > Fable 5 | 08-04 | [SWE-bench](https://www.swebench.com/) |
-| 寫 code（Aider 實戰） | gpt-5 (high) > gpt-5 (medium) > o3-pro（⚠️ 榜疑停更） | 2025-08 | [Aider Polyglot](https://aider.chat/docs/leaderboards/) |
-| 寫文案、聊天、翻譯 | Claude Fable 5 > Opus 4.8 > GPT-5.5 Pro | 08-01 | [LMArena](https://lmarena.ai/) |
-| 查資料（AI 搜尋） | Claude Opus 4-6 Search > GPT-5.5 Search > Fable 5 | 08-05 | [Search Arena](https://arena.ai/leaderboard) |
-| 做網頁／前端 | Claude Opus 5 Max > Kimi K3 Max > Opus 5 High | 08-05 | [WebDev Arena](https://arena.ai/leaderboard) |
-| 畫圖（文生圖） | GPT Image 2 > Reve 2.1 > MAI-Image-2.5 | 08-05 | [AA 圖像榜](https://artificialanalysis.ai/image/leaderboard/text-to-image) |
-| 生成影片 | Gemini Omni Flash > MiniMax H3 > Seedance 2.0 | 08-05 | [AA 影片榜](https://artificialanalysis.ai/video/leaderboard/text-to-video) |
-| 語音合成（TTS） | 快照待補（下週補抓） | — | [AA TTS 榜](https://artificialanalysis.ai/text-to-speech/leaderboard) |
-| 語音轉文字（逐字稿） | Fun-Realtime-ASR > Scribe v2 > MAI-Transcribe-1.5 | 08-05 | [AA STT 榜](https://artificialanalysis.ai/speech-to-text) |
-| 電腦操作 agent | GPT-5.6 Sol > Claude Opus 5 > Mythos 5 | 07~08 月 | [Terminal-Bench](https://www.tbench.ai/) |
-| 文件解析／OCR | MiniMax M3（其餘排名未公開） | 08 月 | [OmniDocBench](https://llm-stats.com/benchmarks/omnidocbench-1.5) |
-| 音樂生成 | 快照待補（下週補抓） | — | [AA Music Arena](https://artificialanalysis.ai/music/leaderboard/vocals) |
-| Embedding（自建 RAG） | Gemini Embedding 001 > Voyage-3.1 > Cohere embed-v4 | 04~07 月 | [MTEB](https://huggingface.co/spaces/mteb/leaderboard) |
-| 聊天陪伴／情商 | Claude Fable 5 > Kimi K3 > GPT-5.5 | 07-20 | [EQ-Bench](https://eqbench.com/) |
-| 放多長的任務給 agent | Claude Opus 4.5 > GPT-5 > o3（⚠️ 量測落後現役陣容） | 2026-01 | [METR](https://metr.org/) |
-| 讀文件不胡說（幻覺率低） | finix_s1_32b > gpt-5.4-nano > gemini-2.5-flash-lite | 05-11 | [Vectara 幻覺榜](https://github.com/vectara/hallucination-leaderboard) |
-| 大家實際在用什麼 | DeepSeek V4 Flash > 腾訊 Hy3 > GPT 5.6 Luna | 08-02 | [OpenRouter](https://openrouter.ai/rankings) |
+| [寫 code（agent 解 issue）](#eval-swebench) | Claude Opus 5 > Mythos 5 > Fable 5 | 08-04 | [SWE-bench](https://www.swebench.com/) |
+| [寫 code（Aider 實戰）](#eval-aider) | gpt-5 (high) > gpt-5 (medium) > o3-pro（⚠️ 榜疑停更） | 2025-08 | [Aider Polyglot](https://aider.chat/docs/leaderboards/) |
+| [寫文案、聊天、翻譯](#eval-lmarena) | Claude Fable 5 > Opus 4.8 > GPT-5.5 Pro | 08-01 | [LMArena](https://lmarena.ai/) |
+| [查資料（AI 搜尋）](#eval-search) | Claude Opus 4-6 Search > GPT-5.5 Search > Fable 5 | 08-05 | [Search Arena](https://arena.ai/leaderboard) |
+| [做網頁／前端](#eval-webdev) | Claude Opus 5 Max > Kimi K3 Max > Opus 5 High | 08-05 | [WebDev Arena](https://arena.ai/leaderboard) |
+| [畫圖（文生圖）](#eval-image) | GPT Image 2 > Reve 2.1 > MAI-Image-2.5 | 08-05 | [AA 圖像榜](https://artificialanalysis.ai/image/leaderboard/text-to-image) |
+| [生成影片](#eval-video) | Gemini Omni Flash > MiniMax H3 > Seedance 2.0 | 08-05 | [AA 影片榜](https://artificialanalysis.ai/video/leaderboard/text-to-video) |
+| [語音合成（TTS）](#eval-tts) | 快照待補（下週補抓） | — | [AA TTS 榜](https://artificialanalysis.ai/text-to-speech/leaderboard) |
+| [語音轉文字（逐字稿）](#eval-stt) | Fun-Realtime-ASR > Scribe v2 > MAI-Transcribe-1.5 | 08-05 | [AA STT 榜](https://artificialanalysis.ai/speech-to-text) |
+| [電腦操作 agent](#eval-terminal) | GPT-5.6 Sol > Claude Opus 5 > Mythos 5 | 07~08 月 | [Terminal-Bench](https://www.tbench.ai/) |
+| [文件解析／OCR](#eval-docparse) | MiniMax M3（其餘排名未公開） | 08 月 | [OmniDocBench](https://llm-stats.com/benchmarks/omnidocbench-1.5) |
+| [音樂生成](#eval-music) | 快照待補（下週補抓） | — | [AA Music Arena](https://artificialanalysis.ai/music/leaderboard/vocals) |
+| [Embedding（自建 RAG）](#eval-mteb) | Gemini Embedding 001 > Voyage-3.1 > Cohere embed-v4 | 04~07 月 | [MTEB](https://huggingface.co/spaces/mteb/leaderboard) |
+| [聊天陪伴／情商](#eval-eqbench) | Claude Fable 5 > Kimi K3 > GPT-5.5 | 07-20 | [EQ-Bench](https://eqbench.com/) |
+| [放多長的任務給 agent](#eval-metr) | Claude Opus 4.5 > GPT-5 > o3（⚠️ 量測落後現役陣容） | 2026-01 | [METR](https://metr.org/) |
+| [讀文件不胡說（幻覺率低）](#eval-vectara) | finix_s1_32b > gpt-5.4-nano > gemini-2.5-flash-lite | 05-11 | [Vectara 幻覺榜](https://github.com/vectara/hallucination-leaderboard) |
+| [大家實際在用什麼](#eval-openrouter) | DeepSeek V4 Flash > 腾訊 Hy3 > GPT 5.6 Luna | 08-02 | [OpenRouter](https://openrouter.ai/rankings) |
 
 ## 快照細節與注意事項
 
@@ -83,34 +83,34 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 
 同一題丟給兩個**匿名**模型，人類看產出投票誰好，勝負像棋類等級分一樣累積成 Elo。測的是「大眾偏好」，且分數只在同一個榜內可比。
 
-- **寫文案、聊天（LMArena）**：題目就是真實使用者當下輸入的任何問題，不設題庫——最貼近日常使用，但也最受「討喜程度」影響。
-- **查資料（Search Arena）**：需要上網查證的問題（新聞、事實、時效資訊），比查得準不準、引用對不對。
-- **做網頁（WebDev Arena）**：同一個網頁需求，兩個模型各自生出可執行網頁並排渲染，投票哪個更好用好看。
-- **畫圖**：同一段文字描述（人物、場景、藝術風格、圖中文字等各類 prompt），兩張生成圖並排投票哪張更符合描述、更好看——測的是描述還原度＋大眾審美。
-- **生成影片**：同一段描述生成短片並排投票，看動作合理性與畫面品質。
-- **語音合成（TTS）**：同一段文字唸出來，盲聽投票哪個更自然。
-- **音樂生成**：同一段風格描述生成音樂，盲聽投票。
+- <a id="eval-lmarena"></a>**寫文案、聊天（LMArena）**：題目就是真實使用者當下輸入的任何問題，不設題庫——最貼近日常使用，但也最受「討喜程度」影響。
+- <a id="eval-search"></a>**查資料（Search Arena）**：需要上網查證的問題（新聞、事實、時效資訊），比查得準不準、引用對不對。
+- <a id="eval-webdev"></a>**做網頁（WebDev Arena）**：同一個網頁需求，兩個模型各自生出可執行網頁並排渲染，投票哪個更好用好看。
+- <a id="eval-image"></a>**畫圖**：同一段文字描述（人物、場景、藝術風格、圖中文字等各類 prompt），兩張生成圖並排投票哪張更符合描述、更好看——測的是描述還原度＋大眾審美。
+- <a id="eval-video"></a>**生成影片**：同一段描述生成短片並排投票，看動作合理性與畫面品質。
+- <a id="eval-tts"></a>**語音合成（TTS）**：同一段文字唸出來，盲聽投票哪個更自然。
+- <a id="eval-music"></a>**音樂生成**：同一段風格描述生成音樂，盲聽投票。
 
 ### 任務通過率組——固定題庫，過就得分（%）
 
 有客觀對錯，靠測試或驗收腳本判定，不靠人類感覺。要留意題庫版本（如 SWE-bench Verified 與 Pro 是不同題庫，分數不能互比）。
 
-- **寫 code（SWE-bench）**：真實 GitHub 專案的 issue，給模型整個 repo 要它寫修復 patch，跑該專案測試通過才算解決；Verified 是人工複核過的題目子集。
-- **寫 code（Aider）**：多語言（Python/Rust/Go 等）偏難程式練習題，限次數內通過測試算對，同時記每題成本。
-- **電腦操作（Terminal-Bench）**：在真實終端機沙盒自主完成任務（編譯、除錯、資料處理、系統管理），驗收腳本判定成敗。
-- **文件解析（OmniDocBench）**：各類真實 PDF（論文、表格、公式、掃描件）轉結構化文字，對照人工標註算還原準確度，綜合分 0–1。
-- **Embedding（MTEB）**：檢索、分類、聚類、語意相似度等多類任務各算標準指標後取平均。
+- <a id="eval-swebench"></a>**寫 code（SWE-bench）**：真實 GitHub 專案的 issue，給模型整個 repo 要它寫修復 patch，跑該專案測試通過才算解決；Verified 是人工複核過的題目子集。
+- <a id="eval-aider"></a>**寫 code（Aider）**：多語言（Python/Rust/Go 等）偏難程式練習題，限次數內通過測試算對，同時記每題成本。
+- <a id="eval-terminal"></a>**電腦操作（Terminal-Bench）**：在真實終端機沙盒自主完成任務（編譯、除錯、資料處理、系統管理），驗收腳本判定成敗。
+- <a id="eval-docparse"></a>**文件解析（OmniDocBench）**：各類真實 PDF（論文、表格、公式、掃描件）轉結構化文字，對照人工標註算還原準確度，綜合分 0–1。
+- <a id="eval-mteb"></a>**Embedding（MTEB）**：檢索、分類、聚類、語意相似度等多類任務各算標準指標後取平均。
 
 ### 錯誤率組——越低越好
 
-- **語音轉文字（STT）**：字錯率 WER＝轉錯／漏／多的字佔比；榜上另計速度與價格。
-- **幻覺率（Vectara）**：給一批短文請模型摘要，用偵測模型量「摘要中原文沒有的內容」佔比。
+- <a id="eval-stt"></a>**語音轉文字（STT）**：字錯率 WER＝轉錯／漏／多的字佔比；榜上另計速度與價格。
+- <a id="eval-vectara"></a>**幻覺率（Vectara）**：給一批短文請模型摘要，用偵測模型量「摘要中原文沒有的內容」佔比。
 
 ### 特殊機制組——不是傳統分數
 
-- **情商（EQ-Bench)**：給有張力的多輪對話（衝突、安慰、談判場景），模型判讀角色情緒或扮演調解者，與參考答案／評審模型比對計分。
-- **agent 自主時長（METR）**：用一批人類完成時間已知的真實工程任務，找出「模型成功率恰好 50%」的任務時長——能撐越久越強，單位是分鐘／小時，不是分數。
-- **實際用量（OpenRouter）**：根本不是評測，是平台上各模型被真實呼叫的 token 量占比——「大家用錢投票」的結果，與能力無直接關係。
+- <a id="eval-eqbench"></a>**情商（EQ-Bench）**：給有張力的多輪對話（衝突、安慰、談判場景），模型判讀角色情緒或扮演調解者，與參考答案／評審模型比對計分。
+- <a id="eval-metr"></a>**agent 自主時長（METR）**：用一批人類完成時間已知的真實工程任務，找出「模型成功率恰好 50%」的任務時長——能撐越久越強，單位是分鐘／小時，不是分數。
+- <a id="eval-openrouter"></a>**實際用量（OpenRouter）**：根本不是評測，是平台上各模型被真實呼叫的 token 量占比——「大家用錢投票」的結果，與能力無直接關係。
 
 > 讀榜提醒：所有榜都測不到「跟你的實際工作流合不合」，最終仍以自己的任務實測為準。
 
