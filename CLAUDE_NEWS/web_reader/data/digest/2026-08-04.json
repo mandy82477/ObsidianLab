@@ -395,16 +395,6 @@
       "pageType": "entity"
     },
     {
-      "id": "dario-amodei",
-      "name": "Dario Amodei",
-      "pageType": "entity"
-    },
-    {
-      "id": "pricing",
-      "name": "Anthropic 訂閱方案與計費政策",
-      "pageType": "entity"
-    },
-    {
       "id": "community-tech-tools",
       "name": "社群工具目錄",
       "pageType": "topic"

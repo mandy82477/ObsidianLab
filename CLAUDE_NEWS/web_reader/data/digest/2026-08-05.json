@@ -30,13 +30,7 @@
       "time": "08/04 17:03",
       "sentiment": "",
       "body": "The Information 報導 Coinbase 等企業正在自行打造編碼 agent 以搭配 Anthropic 的 Claude Code 使用，此報導同時被三個獨立來源轉載。",
-      "focusTags": [],
-      "sedimented": [
-        {
-          "id": "claude-code",
-          "pageType": "entity"
-        }
-      ]
+      "focusTags": []
     }
   ],
   "techUpdates": [
@@ -103,13 +97,7 @@
       "time": "08/04 12:34",
       "sentiment": "",
       "body": "The Times of India 報導 Cisco 提出警示，指出攻擊者已在利用 Claude Code、Codex、Cursor 與 Gemini 等 AI 編碼工具。",
-      "focusTags": [],
-      "sedimented": [
-        {
-          "id": "claude-code",
-          "pageType": "entity"
-        }
-      ]
+      "focusTags": []
     }
   ],
   "discussions": [
@@ -120,13 +108,7 @@
       "time": "08/05 11:58",
       "sentiment": "😤",
       "body": "標題描述一次專案經驗：Claude Code 起初一次就完成 97% 的工作，但後續卻徹底失敗；貼文細節未見於摘要。",
-      "focusTags": [],
-      "sedimented": [
-        {
-          "id": "claude-code",
-          "pageType": "entity"
-        }
-      ]
+      "focusTags": []
     },
     {
       "title": "Opus 5 WTF moments compilation",
@@ -153,13 +135,7 @@
       "time": "08/02 14:54",
       "sentiment": "🤔",
       "body": "使用者調侃 Claude Code 已連續 7 天沒有版本更新。",
-      "focusTags": [],
-      "sedimented": [
-        {
-          "id": "claude-code",
-          "pageType": "entity"
-        }
-      ]
+      "focusTags": []
     },
     {
       "title": "I added MCP servers to Claude Code. Here's what they cost in tokens.",
@@ -168,13 +144,7 @@
       "time": "07/21 01:02",
       "sentiment": "🤔",
       "body": "作者實測 MCP 工具會在每輪 agent 對話中注入隱藏 context，量化不同 MCP server 設計的 token 成本高低。",
-      "focusTags": [],
-      "sedimented": [
-        {
-          "id": "claude-code",
-          "pageType": "entity"
-        }
-      ]
+      "focusTags": []
     },
     {
       "title": "Which CLAUDE.md Files Claude Code Actually Loads (and in What Order)",
@@ -183,13 +153,7 @@
       "time": "07/31 02:33",
       "sentiment": "🤔",
       "body": "作者指出「Claude Code 忽略我的規則」多半是因為規則寫在 Claude Code 根本沒載入的檔案裡，並整理出完整的載入順序與規則。",
-      "focusTags": [],
-      "sedimented": [
-        {
-          "id": "claude-code",
-          "pageType": "entity"
-        }
-      ]
+      "focusTags": []
     },
     {
       "title": "llm-anthropic 0.26",
@@ -209,13 +173,7 @@
       "time": "08/05 09:18",
       "sentiment": "",
       "body": "H2S Media 發文解析 Claude Code 用量上限為何容易被快速用完，並提供延長用量的建議做法。",
-      "focusTags": [],
-      "sedimented": [
-        {
-          "id": "claude-code",
-          "pageType": "entity"
-        }
-      ]
+      "focusTags": []
     }
   ],
   "focus": [
@@ -308,54 +266,9 @@
   "preview": "Anthropic 與新創雲端運算公司 Volta 簽署一筆 100 億美元的運算協議，TechCrunch 報導；同日 TechCrunch 另報導 SpaceX 財報顯示因與 Anthropic、Google 的運算合作及 Starlink 成長，營收較去年翻倍。",
   "sedimentedToday": [
     {
-      "id": "claude-code",
-      "name": "Claude Code",
-      "pageType": "entity"
-    },
-    {
       "id": "tino-cuellar",
       "name": "Tino Cuéllar",
       "pageType": "entity"
-    },
-    {
-      "id": "ai-agent-safety",
-      "name": "AI Agent 安全與可靠性",
-      "pageType": "topic"
-    },
-    {
-      "id": "anthropic-business",
-      "name": "Anthropic 商業健康度",
-      "pageType": "topic"
-    },
-    {
-      "id": "anthropic-government-policy",
-      "name": "Anthropic 政府與軍事政策",
-      "pageType": "topic"
-    },
-    {
-      "id": "community-large-codebase-workflow",
-      "name": "大型 Codebase 規模化開發：社群工作流主線",
-      "pageType": "topic"
-    },
-    {
-      "id": "community-tech-discussions",
-      "name": "社群技術討論趨勢",
-      "pageType": "topic"
-    },
-    {
-      "id": "community-tech-patterns",
-      "name": "社群實戰模式庫",
-      "pageType": "topic"
-    },
-    {
-      "id": "competitor-landscape",
-      "name": "AI 編碼工具競品動態",
-      "pageType": "topic"
-    },
-    {
-      "id": "enterprise-tool-tracker",
-      "name": "大型企業 AI 編碼工具使用追蹤",
-      "pageType": "topic"
     },
     {
       "id": "model-task-leaderboard",
