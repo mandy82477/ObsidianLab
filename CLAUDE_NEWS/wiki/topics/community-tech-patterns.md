@@ -19,11 +19,11 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 **狀態：** monitoring
 **領域：** 🌐 社群
 **開始日期：** 2026-04-25
-**最後更新：** 2026-08-05
-**最後新聞更新：** 2026-08-05
+**最後更新：** 2026-08-07
+**最後新聞更新：** 2026-08-07
 
-> **最新工作流模式**（2026-08-05）
-> 社群本日新增：Reddit 週熱門回報「讓 Claude 審查 Codex 產出的程式碼，通過率從 71.6% 提升至 89.7%」，為多代理 PR Review 補上量化證據；經 fork／issue／commit 交叉驗證的兩個工具——omnigent（harness 無關的 meta-harness，可換底層 agent 不必重寫協作邏輯）與 pxpipe（把文字 context 轉成圖片以降低 token 用量）；另補記 dev.to 一篇對照官方文件查證的「CLAUDE.md 四層記憶範圍載入順序」技術拆解（原文 07-31 發布）。
+> **最新工作流模式**（2026-08-07）
+> 社群本日新增兩則 dev.to 第一手實測：「headless Claude Code（`claude -p`）未加 `--bare` 時冷啟動約載入 15 萬 token」補上 headless 呼叫固定成本的量化數字；「agent 重新實作團隊已否決方案」點出已否決決策未被結構化索引時的隱形重工成本。
 
 ---
 
@@ -48,8 +48,8 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 | **CLAUDE.md 管理** | 精簡規則策略、Self-improving Rules、防腐爛機制、漸進式工具採用原則 | ✅ 成熟 | 以「規則」非「建議」撰寫，CI 攔截違反架構 PR；新增能力前先問「會不會重複使用」，procedure file → CLI → 重整合依序升級 |
 | **Hooks 與自動化** | PostToolUse 稽核、Git Hooks 品質門、/goal Fire-and-Forget、deploy/migration 保護、Pre-completion Hook、Stop Hook 音效通知、Hooks 環境感知條件觸發（Adrafinil、氛圍狀態燈） | ✅ 成熟 | 強制執行 > CLAUDE.md 建議；Stop Hook 要求可驗證完成證明；CLAUDE.md 做偏好、Hooks 做邊界；Pre-completion Hook 防模糊結束；hooks 可感知 agent 活躍狀態驅動環境副作用（螢幕喚醒、實體燈光顏色） |
 | **模型使用策略** | 分層模型（Sonnet + Opus）、多模型路由、Workweave Router、跨模態內容生成分工（InstantVideos）、Fable 5 Orchestrator-Executor（官方基準） | ⚡ 活躍 | 依任務複雜度路由，節省 60% 用量；Dragoman / Workweave 自動路由；嵌入 Claude Code / Codex / Cursor 的成本感知路由；InstantVideos 將分工路由思路延伸至內容生成（文字/圖像/影音各交專門模型）；Anthropic 官方基準證實 Fable 5 編排 + 便宜模型執行可達 46% 成本／96% 效能 |
-| **Token / 成本優化** | MCP Code Execution、Token Bloat 對策、本機圖資料庫索引、穴居人模式（Caveman）企業採用、claude-thermos（session 快取保活）、pxpipe（圖片化 context） | ⚡ 活躍 | HTML→Markdown 降 80% token；快取不跨 session 是費用主因；極簡輸出模式（穴居人）企業採用獲 404 Media 確認，OpenAI、Nvidia、GitHub 開發者使用；claude-thermos 以保活請求維持快取不過期，但引發「成本轉嫁其他用戶」爭議；pxpipe 反其道而行，把文字 context 渲染成圖片傳遞以降低 token 用量 |
-| **記憶與知識管理** | ltm Core Memory Packet、本機圖資料庫、NanoBrain、OKF（物件鍵格式跨 session 記憶） | ⚡ 活躍 | 跨 session / 跨工具持久記憶；Leiden 圖譜減少 71 倍 token；OKF 標準化 agent 知識格式供團隊共用 |
+| **Token / 成本優化** | MCP Code Execution、Token Bloat 對策、本機圖資料庫索引、穴居人模式（Caveman）企業採用、claude-thermos（session 快取保活）、pxpipe（圖片化 context）、headless 呼叫冷啟動成本 | ⚡ 活躍 | HTML→Markdown 降 80% token；快取不跨 session 是費用主因；極簡輸出模式（穴居人）企業採用獲 404 Media 確認，OpenAI、Nvidia、GitHub 開發者使用；claude-thermos 以保活請求維持快取不過期，但引發「成本轉嫁其他用戶」爭議；pxpipe 反其道而行，把文字 context 渲染成圖片傳遞以降低 token 用量；`claude -p` 未加 `--bare` 冷啟動實測約耗 15 萬 token |
+| **記憶與知識管理** | ltm Core Memory Packet、本機圖資料庫、NanoBrain、OKF（物件鍵格式跨 session 記憶）、已否決方案索引 | ⚡ 活躍 | 跨 session / 跨工具持久記憶；Leiden 圖譜減少 71 倍 token；OKF 標準化 agent 知識格式供團隊共用；已否決方案未結構化記錄會導致 agent 重新實作已被殺掉的方案 |
 | **Plugin / MCP 整合** | Plugin 反模式整理、Claude Code 作為 MCP 協調中心 | ⚡ 活躍 | 避免不必要 context 載入；Claude Code 主導 MCP 工具鏈協作 |
 | **多代理 PR Review** | 4-agent Code Review、對抗性審查（計畫前 + 程式碼後）、Read-Only Reviewer、Claude 審查 Codex（71.6%→89.7% 通過率） | ⚡ 活躍 | 架構師代理協調 + 多廠商模型交叉審查；對抗性審查者讀取真實 codebase；read-only 權限約束維持對立性；社群回報跨模型交叉審查可量化提升通過率，惟樣本條件待查證 |
 | **Agent 版本控制** | ADR 注入、架構決策文件先於實作 | ⏳ 新興 | 決策文件先於實作，降低代理方向偏移風險 |
@@ -119,6 +119,20 @@ Claude Code 的三種多 agent 機制，可對應到 Anthropic《Building Effect
 ## 技術彙整
 
 ### 2026-08
+
+#### headless Claude Code（`claude -p`）冷啟動實測：未加 `--bare` 約載入 15 萬 token（2026-08-07）
+
+- **核心模式：** 作者實測 headless 模式（`claude -p`）在未加 `--bare` 旗標時，冷啟動會預先載入約 15 萬 token 的系統提示、工具定義與預設 context，構成每次呼叫的固定成本；加上 `--bare` 可跳過這些非必要載入，文章給出「何時該用 `--bare`」的具體判準，適合 CI pipeline、批次任務等大量 headless 呼叫場景
+- **與既有模式的關係：** 補充「Token / 成本優化」類別，聚焦「headless / 非互動呼叫」這個此前未被記錄過的固定成本來源，與 05-07「MCP Code Execution Token 效率」、06-21「MCP Server 信任邊界審查」（9 個 server = 每輪 38k tokens 冷啟動）同屬「摸清楚 Claude Code 各種呼叫模式底層固定成本」系列量化實測，這次對象是 headless 呼叫本身而非 MCP 配置；也與 [[topics/community-large-codebase-workflow]] Context / Token 管理主線相關，大量 headless 呼叫常見於多 agent pipeline 場景
+- **來源：** 「claude -p: what headless Claude Code actually loads (and when --bare is the right call)」— dev.to（1 讚；依規則以第一手實測內容判斷，非讚數）；確切 token 數與測試版本未見官方文件佐證，待查證
+- **成熟度：** ⏳ 新興（今日首見，單一作者實測，尚無其他來源複現驗證）
+
+#### 已否決方案的隱形重工成本：agent 不記得團隊已經殺掉的做法（2026-08-07）
+
+- **核心模式：** 文章指出一種代價高昂卻常被忽視的失敗模式——agent 重新實作一個團隊先前已明確否決（killed）的方案，因為「這個方案已被否決」這件事只存在於人類記憶或散落的討論串中，未被結構化記錄進 agent 可讀取的知識來源，導致重工與後續信任成本
+- **與既有模式的關係：** 呼應「記憶與知識管理」類別既有 Repo-as-Memory／CodeAlmanac 等「把決策外化成 agent 可讀文件」的既有方向，補上更具體的失敗案例類型：不是「agent 不記得怎麼做」，而是「agent 不記得什麼不該再做一次」——已否決方案的索引，是既有記憶方案目前較少著墨的子類別；與 [[topics/community-large-codebase-workflow]] Codebase 索引與記憶主線相關
+- **來源：** 「The expensive failure is an agent re-implementing something your team already killed」— dev.to（1 讚；依規則以第一手實作討論內容判斷，非讚數）
+- **成熟度：** ⏳ 新興（今日首見，概念性觀察討論，尚無具體工具或量化案例佐證）
 
 #### omnigent：harness 無關的 meta-harness，可換底層 agent 不必重寫協作邏輯（2026-08-05）
 

@@ -19,11 +19,11 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 **狀態：** ongoing
 **領域：** 🌐 社群
 **開始日期：** 2026-04-25
-**最後更新：** 2026-08-05
-**最後新聞更新：** 2026-08-05
+**最後更新：** 2026-08-07
+**最後新聞更新：** 2026-08-07
 
-> **最熱討論**（2026-08-05）
-> Reddit r/ClaudeAI 週熱門貼文回報「讓 Claude 審查 Codex 產出的程式碼，通過率從 71.6% 提升至 89.7%」，與 07-31 收錄的「對抗式審查者解決 Claude 自評過寬」感謝文同屬一個正在延燒的主軸——社群持續驗證跨模型交叉審查的實際效益，惟具體測試方法尚待查證原文（🔥，單一來源）。
+> **最熱討論**（2026-08-07）
+> 同日兩則 Show HN 終端管理／UI 工具（Wallfacer、HUD）皆達跨來源佐證門檻，HUD 透過官方 CLI JSON event stream 運作、以 hook 取得狀態不額外耗 token；Simon Willison 部落格發布以 Fable 5 一次到位打造「浣熊搶案」（Raccoon Heist）遊戲的創意展示案例。
 
 ---
 
@@ -136,6 +136,9 @@ MCP 的實際成本遠超多數使用者預期，已有多個量化案例：
 
 | 討論主題 | 首見 | 熱度 | 模式 | 核心論點 | 衍生 |
 |---------|------|------|------|---------|------|
+| Simon Willison：以 Claude Fable 5 一次到位（one-shot）打造「浣熊搶案」（Raccoon Heist）遊戲 | 2026-08-07 | 🔥 | ☄️閃現 | Simon Willison 部落格展示以 Fable 5 一次生成完整可玩小遊戲的創意案例，延續其一貫的模型能力實測展示風格；具體 prompt 與生成過程細節見原文；具名表態，無社群延燒；[原文](https://simonwillison.net/2026/Aug/5/raccoon-heist/#atom-everything)（Blog） | — |
+| Show HN：Wallfacer — Claude Code 專用終端機 session 管理工具 | 2026-08-07 | 🔥 | ☄️閃現 | 作者釋出終端機 session 管理工具 Wallfacer，鎖定 Claude Code 多 session 切換與管理的痛點；HN score 35，達對照表中門檻（≥30分），source_count=2（跨來源佐證）；與同日 Show HN：HUD（見下一列）同屬終端管理/UI 工具同日湧現的趨勢，具體功能細節與差異化賣點待查證原文；[GitHub](https://github.com/pradipta/wallfacer)（HN） | — |
+| Show HN：HUD — 面向 Claude Code / Codex / OpenCode 的開源極簡終端 UI | 2026-08-07 | 🔥 | ☄️閃現 | 作者釋出開源極簡終端 UI「HUD」，同時支援 Claude Code、Codex、OpenCode 三種 CLI 工具；技術亮點是透過官方 CLI JSON event stream 運作（而非螢幕截取或包裝終端輸出），並用 UserPromptSubmit hook 取得狀態、不額外消耗 token；HN score 25，達對照表低門檻（≥10分），source_count=2（跨來源佐證）；與同日 Show HN：Wallfacer（見上一列）同屬終端管理/UI 工具同日湧現的趨勢；[GitHub](https://github.com/adrida/hud-mode)（HN） | — |
 | Reddit r/ClaudeAI 週熱門：讓 Claude 審查 Codex 產出的程式碼，通過率從 71.6% 提升至 89.7% | 2026-08-04 | 🔥 | ☄️閃現 | 貼文標題即為量化結論，具體測試方法與樣本規模未見於摘要；與 07-31 收錄的「對抗式審查者解決 Claude 自評過寬」感謝文同屬跨模型交叉審查效益主軸的第二個獨立訊號，惟相隔僅 5 天，未達「第 3 天以上持續出現」的 🌊延燒天數門檻，暫標 ☄️閃現；技術面量化證據已同步收錄於 [[topics/community-tech-patterns]]「多代理 PR Review」類別；Reddit r/ClaudeAI 週熱門標記，達收錄低門檻；[原文](https://www.reddit.com/r/ClaudeAI/comments/1vf4apv/claude_reviewing_codexs_code_lifted_the_pass_rate/)（Reddit · 週熱門） | — |
 | Reddit r/ClaudeAI 週熱門：感謝文回顧「對抗式審查者（adversarial reviewer）」skill 模式，稱解決了 Claude 自己批改自己作業總給高分的問題 | 2026-07-31 | 🔥 | ☄️閃現 | 使用者發表感謝文，指出長期以來「Claude 自己批改自己的作業還打甲上」的問題，唯獨採用「對抗式審查者」skill 模式後才真正解決；帖文性質為對既有模式（見本頁 2026-07 技術彙整與 [[topics/community-tech-patterns]] Agent-plan-review-loop 條目）的延遲驗證與感謝，非新工具發布；Reddit r/ClaudeAI 週熱門標記，達收錄低門檻；[原文](https://www.reddit.com/r/ClaudeAI/comments/1vc11nl/whoever_popularized_the_adversarial_reviewer/)（Reddit · 週熱門） | — |
 | Reddit r/ClaudeAI 週熱門：以「合適的 harness + agentic loop」打造 GTA 6 首次嘗試 demo | 2026-08-03 | 🔥 | ☄️閃現 | 使用者展示以 agentic loop 與客製 harness 打造的 GTA 6 風格遊戲首次嘗試，作者自陳「遠非完美，但令人印象深刻」，反映社群持續將 Claude 應用於大型、高複雜度創作專案（呼應本頁「創意工具 Agent 整合」「Agent 規模化」等既有模式關注）；僅有標題與截圖可考，具體技術實作細節未知；Reddit r/ClaudeAI 週熱門標記，達收錄低門檻；[原文](https://www.reddit.com/r/ClaudeAI/comments/1ve7u9r/gta_6_first_attempt_far_from_perfect_but_its/)（Reddit · 週熱門） | — |

@@ -4,8 +4,8 @@ kind: "entity"
 type: "model"
 status: "active（正式發布；出口管制已解除，2026-07-01 起全球恢復存取；免費期已於 2026-07-19 到期，Max/Team 後續存取政策尚有分歧報導，見 [[entities/pricing]]）"
 domain: "🤖 模型"
-last_updated: "2026-08-01"
-last_news_update: "2026-07-31"
+last_updated: "2026-08-07"
+last_news_update: "2026-08-07"
 status_main: "active"
 days_since_news: 5
 inbound_links: 30
@@ -21,20 +21,19 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 **狀態：** active（正式發布；出口管制已解除，2026-07-01 起全球恢復存取；免費期已於 2026-07-19 到期，Max/Team 後續存取政策尚有分歧報導，見 [[entities/pricing]]）
 **領域：** 🤖 模型
 **首次出現：** 2026-06-09
-**最後更新：** 2026-08-01
-**最後新聞更新：** 2026-07-31
+**最後更新：** 2026-08-07
+**最後新聞更新：** 2026-08-07
 
-> **最新進展**（2026-07-31）
-> - **訴訟動態（待核實與 Fable 5 出口管制的直接關聯）**：Hacker News 轉載 Bloomberg 報導，一名美國法官對政府禁用 Anthropic AI 的正當性提出質疑（2026-07-30/31）。我方抓取資料未提供禁令的具體法律依據或是否明確涉及「國安理由」，也未提供文章全文，僅有標題與 HN 連結；鑑於 Fable 5 出口管制已於 2026-07-01 正式解除，此案是否直接針對 Fable 5 出口管制、抑或涉及其他對 Anthropic 的政府限制措施，尚無法判斷，標記「待核實」。完整法律脈絡由安全政策記者於 [[topics/anthropic-government-policy]] 追蹤，詳見「歷史記錄」。
-> - **GitHub Issue #79337**（07-20 記錄 10 讚 → 07-24 增至 13 個，留言數維持 35 則）：Max 方案誤判需購買 usage credits 才能執行 Fable 5、session 靜默降級至 Opus 4.8，官方已確認為誤判並建議重啟；Max/Team 存取政策本身（永久標配／計量存取）仍分歧報導中，詳見 [[entities/pricing]]。
+> **最新進展**（2026-08-07）
+> **生物安全防護更新**：Anthropic 官方部落格宣布更新 Fable 5 的生物安全防護（biology safeguards），測試顯示各產品面「生物相關降級」（fallback 至 Opus 4.8）情形減少約 85%；官方並表示醫療專業人員在臨床任務上將能獲得 Fable 5 更多協助。詳見「爭議」與「歷史記錄」。
 
 ---
 
 ## 現況
 
-**2026-07-31 最新**：Hacker News／Bloomberg 報導一名美國法官對政府禁用 Anthropic AI 的正當性提出質疑（2026-07-30/31）；我方抓取資料未提供禁令具體法律依據，也未明確此案是否與 Fable 5 出口管制直接相關，暫列歷史記錄並標記「待核實」，完整脈絡以安全政策記者對應頁面為主（詳見「歷史記錄」）。
+**2026-08-07 最新**：Anthropic 官方部落格宣布更新 Fable 5 的生物安全防護（biology safeguards），測試顯示各產品面「生物相關降級」（誤判觸發 fallback 至 Opus 4.8）情形減少約 85%；官方表示日常健康／教育類問題（如判讀檢驗報告、理解症狀、學習生物學）預期更少被誤判降級，醫療專業人員也能在臨床任務上獲得 Fable 5 更多協助（[Anthropic Blog](https://www.anthropic.com/news/improving-fable-5-s-biology-safeguards)，2026-08-07）。
 
-**2026-07-24**：GitHub Issue #79337 追蹤的 Max 方案誤判事件持續累積關注，reaction 數由 07-20 的 10 個增至 13 個（留言數維持 35 則、未見更新資料），受影響帳號的已儲存模型設定顯示為 `claude-fable-5[1m]`；官方誤判定性與建議重啟的結論未變。同期社群另有兩則討論觸及 Fable 定位：r/ClaudeCode 使用者認為 Fable 被「削弱」後只比 Opus 4.8 聰明一點，開源模型已追上「太危險」等級模型的能力；r/ClaudeAI 週熱門貼文則有一名自稱基因學/神經科學研究者質疑 Fable「對科學研究太危險」的分類與自身用途無關。兩則均屬社群觀點、單一來源，弱訊號，分類爭議完整脈絡另見安全政策記者對應頁面。
+**2026-07-31**：Hacker News／Bloomberg 報導一名美國法官對政府禁用 Anthropic AI 的正當性提出質疑（2026-07-30/31）；我方抓取資料未提供禁令具體法律依據，也未明確此案是否與 Fable 5 出口管制直接相關，暫列歷史記錄並標記「待核實」，完整脈絡以安全政策記者對應頁面為主（詳見「歷史記錄」）。
 
 Claude Fable 5 是 Anthropic 於 2026-06-09 發布的旗艦模型，為**史上首款向大眾開放的 Mythos 級模型**。Fable 5 與 Claude Mythos 5 共用相同的模型權重，差異在於 Fable 5 前置安全分類器——觸發時 fallback 至 Claude Opus 4.8（Anthropic 稱不到 5% 的 session 受影響）。核心定位：任務越複雜越長期，Fable 5 的優勢越明顯；在軟體工程、知識工作、視覺、科學研究等幾乎所有 benchmark 達到 SOTA。
 
@@ -99,6 +98,7 @@ claude --model claude-fable-5-20260609
 
 ## 爭議
 
+- ✅ **生物安全防護誤判大幅降低（2026-08-07，官方）**：Anthropic 官方部落格宣布更新生物安全分類器，測試顯示各產品面「生物相關降級」（誤判 fallback 至 Opus 4.8）情形減少約 85%；呼應下方「資安研究者護欄過激」等既有護欄過敏爭議，本次為官方對其中生物領域誤判的具體修復進展，資安領域的過敏問題是否同步改善未提及（[Anthropic Blog](https://www.anthropic.com/news/improving-fable-5-s-biology-safeguards)，2026-08-07）
 - ✅ **靜默降級競爭 LLM 開發（已部分撤回）**：Fable 5 初版在偵測到前沿 LLM 開發工作時靜默降級，系統卡承認「These safeguards will not be visible to the user」；2026-06-11 Anthropic 道歉撤回，改為「可見防護」——觸發時用戶將明確得知
 - ⚠️ **資安研究者護欄過激**：Fable 5 安全分類器過度敏感，連讀取資安部落格、分析 GitHub profile 等無害操作也被攔截；IBM X-Force 知名研究員 Valentina Palmiotti 公開批評（TechCrunch，HN score 512）
 - ⚠️ **「Fix this code」三詞越獄機制公開（2026-06-22）**：dev.to 文章《The Fable 5 Jailbreak Was Three Words Long》揭露引發出口管制的具體越獄機制——「Fix this code」三個字即可繞過 Fable 5 安全控制（[dev.to](https://dev.to/peremptory/the-fable-5-jailbreak-was-three-words-long-457j)）；此事件直接呼應美國政府「護欄不可靠」的管制論點，亦是 Amazon 研究人員向白宮通報的漏洞細節首次公開
@@ -174,6 +174,9 @@ claude --model claude-fable-5-20260609
 ## 歷史記錄
 
 ### 解禁後（2026-07-01 起）
+
+#### 2026-08-07
+**官方更新生物安全防護，「生物相關降級」減少約 85%**：Anthropic 官方部落格公告《Improving Fable 5's biology safeguards》，宣布更新 Fable 5 的生物安全防護（biology safeguards）。測試顯示，此次更新使各產品面「生物相關降級」（誤判觸發 fallback 至 Opus 4.8）情形減少約 85%（官方原文：「this update reduced biology-related fallbacks by about 85% across our product surfaces」）。實務影響：日常健康／教育類問題（判讀檢驗報告、理解症狀、學習生物學教育內容）預期更少被誤判降級；醫療專業人員在臨床任務上將能獲得 Fable 5 更多協助（官方原文：「Healthcare professionals will be able to receive more support from Fable 5 on clinical tasks」）。此為官方對「資安研究者護欄過激」「Defense in Depth 分類器誤判」等既有護欄過敏爭議中，生物領域面向的具體修復進展；資安/程式碼領域的過敏問題官方本次公告未提及是否同步改善（[Anthropic Blog](https://www.anthropic.com/news/improving-fable-5-s-biology-safeguards)，2026-08-07）。
 
 #### 2026-07-31
 **法官質疑美國政府對 Anthropic AI 禁令正當性（待核實：是否與 Fable 5 出口管制直接相關）**：Hacker News 轉載 Bloomberg 報導《Judge Voices Doubt US Has Justified Its Ban on Anthropic AI》，指一名美國法官對政府禁用 Anthropic AI 的正當性提出質疑（[Bloomberg](https://www.bloomberg.com/news/articles/2026-07-30/judge-voices-doubt-us-has-justified-its-ban-on-anthropic-ai)、[HN 討論](https://news.ycombinator.com/item?id=49117486)，2026-07-30/31）。我方抓取資料僅有標題與 HN 連結，未提供禁令的具體法律依據、是否明確涉及「國安理由」，也未提供文章全文內容；鑑於 Fable 5 出口管制已於 2026-07-01 正式解除（見上方「出口管制：雙方立場」），此訴訟進展**是否直接針對 Fable 5 出口管制本身、或涉及其他對 Anthropic 的政府限制措施，尚無法從現有資料判斷，標記「待核實」**。可能與 2026-06-24 Legion 法律科技新創對美國政府提告出口管制令一案有關聯（同屬挑戰政府對 Anthropic AI 限制的訴訟；[[topics/anthropic-government-policy]] 亦記錄「管制解除後訴訟是否失去標的、撤案或轉為求償」的待觀察問題），但兩案是否為同一訴訟程序未經證實，不可逕自合併記錄。完整法律論證內容與政策脈絡由安全政策記者於 [[topics/anthropic-government-policy]] 追蹤。

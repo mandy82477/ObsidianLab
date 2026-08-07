@@ -19,12 +19,13 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 **狀態：** monitoring
 **領域：** 💼 商業
 **開始日期：** 2026-04
-**最後更新：** 2026-08-05
-**最後新聞更新：** 2026-08-05
+**最後更新：** 2026-08-07
+**最後新聞更新：** 2026-08-07
 
-> **最新競品動態**（2026-08-04）
-> Decrypt 報導阿里巴巴免費開放其「最強」AI 模型，宣稱效能幾乎追平 Claude 與 ChatGPT；報導未指明模型名稱與具體 benchmark 數字，僅標題層級資訊，詳見「競品定價對照」表新增列與「主要競品追蹤」Alibaba 子區塊。
-> 08-03 已記錄之 tech-insider.org Kiro vs Claude Code 比較文（80.8% SWE-bench、$200 費用上限，兩數字未指明對應方）、08-02 OpenCode vs Claude Code 下載量比較（稱 5.4 倍）等近期重點仍具參考價值，詳見下方時序。
+> **最新競品動態**（2026-08-07）
+> - **Meta 正式發布程式碼撰寫 agent「Muse Code」（及 Muse Spark 1.2），加入 Claude Code／Codex 競爭賽道**：WSJ（08-07）、CNET、Basic Tutorials（皆 08-05）三方媒體報導，Simon Willison 部落格（08-05，轉引 Meta 官方部落格）同步收錄；本頁 07-09 已追蹤之「Meta AI 程式輔助工具」傳聞至此正式落地為具名產品，詳見「主要競品追蹤」Meta 子區塊更新。
+> - **the-decoder.com：Claude Code 速度最快但成本近最便宜對手三倍**：報導未提供測試方法、具體 $ 數字或對手名稱，僅標題層級資訊，詳見「競品定價對照」表新增列（標「待查證」）。
+> - 08-04 已記錄之阿里巴巴免費開放「最強」模型、08-03 Kiro vs Claude Code 比較文等近期重點仍具參考價值，詳見下方時序。
 
 ---
 
@@ -50,6 +51,8 @@ Claude Code 已成為 AI 輔助編碼的標竿產品，但競爭正快速升溫�
 
 | 工具/模型 | 定價 | vs Claude 定位 | 來源日期 |
 |---------|------|--------------|---------|
+| Claude Code（自身，成本倍數宣稱）| 待查證（the-decoder.com 稱速度最快但成本「接近最便宜對手的三倍」，未指明對手名稱、測試方法或具體 $ 數字）| 若屬實顯示 Claude Code 的「速度」優勢伴隨「成本」代價，與既有 GitHub Copilot Pro+（27 倍 Opus 加價）、DeepSeek（100 倍降價）等對比同屬「Claude 陣營溢價」敘事的一環；惟本則僅標題可用，倍數與對手身分均未經查證，**不可推算或杜撰具體對手與數字** | 2026-08-06（Google News/the-decoder.com）|
+| Muse Code / Muse Spark 1.2（Meta）| 待查證（WSJ、CNET、Basic Tutorials 均未提供訂閱/API 掛牌價）| Meta 正式推出的程式碼撰寫 agent，明確對標 Claude Code 與 OpenAI Codex；為本頁 07-09「Meta AI 程式輔助工具」傳聞的正式落地產品，詳見「主要競品追蹤」Meta 子區塊 | 2026-08-05（Google News/CNET；Google News/Basic Tutorials；Blog/Simon Willison）／2026-08-07（Google News/WSJ）|
 | Alibaba「最強」模型（名稱未指明）| 免費開放 | Decrypt 稱效能「幾乎追平」Claude 與 ChatGPT，未提供具體 benchmark 數字或模型名稱，待查證是否為 07-20 已報導之 Qwen3.8 | 2026-08-04（Google News/Decrypt）|
 | Kiro | 待查證（tech-insider.org 標題稱「$200 Cap」，未指明是 Kiro 自身費用上限或 Claude Code Max 方案 $200/月上限的並列比較，見 [[entities/pricing]]「現行方案一覽」Max 20x 列）| 本頁首次出現的競品名稱；標題另稱「80.8% SWE-bench」，同樣未指明對應 Kiro 或 Claude Code，僅標題層級比較，資訊量過少，無法判斷產品定位或市佔，待後續報導補充 | 2026-08-03（Google News/tech-insider.org）|
 | OpenCode | 免費（開源）| tech-insider.org（source_count=2）稱其下載量達 Claude Code 的 **5.4 倍**，標題以「Free vs $20」凸顯定價落差對開發者選擇的影響；具體統計方法、時間範圍未見細節，需與既有 157,000 名開發者轉向（The New Stack，05-18）數據並列解讀，不可逕自加總或取代，待查證 | 2026-08-01（Google News/tech-insider.org）|
@@ -144,10 +147,11 @@ Claude Code 已成為 AI 輔助編碼的標竿產品，但競爭正快速升溫�
 - **動態**：Cursor 正在打造名為「Sand」的 AI agent，直接對標 Anthropic 的 Claude Cowork
 - **意義**：Cursor 此前定位為 IDE 整合型工具，若切入 agentic 工作台賽道，代表其在 SpaceX 收購（2026-06-17 完成）後正積極擴張產品線，從「編碼輔助」延伸至「自主任務執行」，與 Claude Cowork 直接競爭；代號曝光顯示產品開發已進入具體階段，非僅停留在傳聞（推論，功能細節與上市時程仍未公開）（TweakTown https://www.tweaktown.com/news/112601/cursor-builds-ai-agent-sand-to-rival-anthropics-claude-cowork/index.html；The Information「Cursor Is Developing an AI Agent to Compete With Claude Cowork」）
 
-### Meta AI 程式輔助工具（傳聞開發中，2026-07-09）
-- **狀態**：傳聞階段（CNBC 2026-07-09 報導）
-- **動態**：Meta 正跨入 AI 程式輔助工具市場，意圖追趕 Anthropic 與 OpenAI
-- **意義**：繼 Perplexity（07-07）之後，又一家非傳統編碼工具背景的科技巨頭傳出進軍 AI 編碼賽道；若 Meta 憑藉自有 Llama 模型與龐大開發者生態切入，可能為 Claude Code 帶來新一輪「大廠免費/低價捆綁」壓力，類似 Microsoft Copilot CLI 路徑（推論，細節與時程未公開）（CNBC）
+### Meta「Muse Code」🔴（正式發布，2026-08-05）
+- **狀態**：正式發布（WSJ 08-07；CNET、Basic Tutorials 08-05；Simon Willison 部落格 08-05 轉引 Meta 官方部落格 https://research.meta.ai/blog/introducing-muse-code-and-muse-spark-1-2）——07-09 CNBC 首報的「傳聞開發中」至此正式落地為具名產品
+- **動態**：Meta 發布新的程式碼撰寫 agent「Muse Code」，同步推出「Muse Spark 1.2」；WSJ 標題直指「Meta Releases Coding Agent to Compete With OpenAI and Anthropic」，CNET、Basic Tutorials 標題均明確點名對標 **Claude Code 與 Codex**
+- **意義**：是繼 07-13 Cursor「Sand」代號確認、07-09 OpenAI ChatGPT Work/GPT-5.6 之後，又一家科技巨頭正式推出（而非僅傳聞）直接對標 Claude Code 的產品，且四家獨立媒體/管道（WSJ、CNET、Basic Tutorials、Simon Willison 轉引 Meta 官方部落格）於 08-05～08-07 三天內密集報導同一事件，為近期跨來源訊號最強的競品發布之一；若 Meta 憑藉自有 Llama 模型與龐大開發者生態切入，可能為 Claude Code 帶來新一輪「大廠免費/低價捆綁」壓力，類似 Microsoft Copilot CLI 路徑（推論）
+- **待補充**：Muse Code 具體定價、發布形式（獨立產品/Meta AI 內建）、能力評測數字均未見報導細節，僅標題與官方部落格公告層級資訊，詳見「競品定價對照」新增列（Google News/WSJ；Google News/CNET；Google News/Basic Tutorials；Blog/Simon Willison https://simonwillison.net/2026/Aug/5/muse-code-and-muse-spark-12/#atom-everything）
 
 ### Perplexity AI 編碼工具（傳聞開發中，2026-07-07）
 - **狀態**：傳聞階段（Business Insider 2026-07-07 報導）
@@ -254,6 +258,15 @@ Claude Code 已成為 AI 輔助編碼的標竿產品，但競爭正快速升溫�
 #### 近期單日動態彙整（2026-07-02 至 2026-07-26）
 
 > 逐日條目按主題可另見上方「主要競品追蹤」對應廠商子區塊；此區塊保留完整時序供追溯查證。
+
+### 2026-08-07
+- **[重大，競品正式發布，跨 4 來源] WSJ：Meta 發布程式碼撰寫 agent「Muse Code」，明確對標 OpenAI 與 Anthropic**：WSJ 標題直指「Meta Releases Coding Agent to Compete With OpenAI and Anthropic」，與 08-05 CNET、Basic Tutorials、Simon Willison 部落格報導同一事件；詳見「主要競品追蹤」Meta「Muse Code」子區塊更新與「競品定價對照」表新增列（Google News/WSJ）
+
+### 2026-08-06
+- **[競品成本宣稱，標題層級，待查證] the-decoder.com：Claude Code 是速度最快的 agent 框架，但成本近最便宜對手三倍**：報導未提供測試方法、具體 $ 數字或對手名稱，僅標題可用，詳見「競品定價對照」表新增列，標「待查證」，不可推算或杜撰具體倍數對應對手（Google News/the-decoder.com）
+
+### 2026-08-05
+- **[重大，競品正式發布，跨 3 來源] CNET、Basic Tutorials、Simon Willison 部落格：Meta 正式發布「Muse Code」（及 Muse Spark 1.2），明確對標 Claude Code 與 Codex**：三方同日報導 Meta 官方部落格公告（Simon Willison 轉引 https://research.meta.ai/blog/introducing-muse-code-and-muse-spark-1-2），為 07-09 CNBC 首報「Meta AI 程式輔助工具」傳聞的正式落地；詳見「主要競品追蹤」Meta「Muse Code」子區塊更新與「競品定價對照」表新增列（Google News/CNET；Google News/Basic Tutorials；Blog/Simon Willison）
 
 ### 2026-08-04
 - **[競品發布，免費釋出，標題層級，待查證] Decrypt：阿里巴巴免費開放「最強」AI 模型，宣稱追平 Claude／ChatGPT**：詳見「競品定價對照」表新增列與「主要競品追蹤」Alibaba 子區塊（Google News/Decrypt）

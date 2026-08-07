@@ -19,11 +19,11 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 **狀態：** ongoing
 **領域：** 💼 商業
 **開始日期：** 2026-05-26
-**最後更新：** 2026-08-05
-**最後新聞更新：** 2026-08-05
+**最後更新：** 2026-08-07
+**最後新聞更新：** 2026-08-07
 
-> **最新企業採用異動**（2026-08-04）
-> Fierce Biotech（source_count=2）二次報導 ICON 與 Anthropic 臨床試驗合作，與 07-29 Clinical Trials Arena 首報同一事件，屬媒體二次確認、非新增合作事實，詳見下方「企業工具使用現況」表 ICON 列備註更新。07-29 記錄之 ICON 首報、Cognizant 全球首要夥伴升級（07-28）、07-21 阿里巴巴 2.5萬假帳號封鎖說（❓ 未確認，疑似與蒸餾指控混淆）仍為近期重點。
+> **最新企業採用異動**（2026-08-07）
+> Syracuse University 官方宣布擴大 Claude Enterprise 授權，納入 Claude Code 與 Claude Cowork，為繼哈佛 FAS（04-28）後另一具名高等教育機構案例，詳見下方使用現況表新增列。另 The Times of India 報導 Microsoft 內部備忘錄再傳對 Anthropic 不利訊息，惟僅標題可用、無新增具體事實，不改變既有 Microsoft ❌ 已退出狀態（見下方時序）。08-04 記錄之 ICON 臨床試驗合作二次確認、Cognizant 全球首要夥伴升級（07-28）仍為近期重點。
 
 ## 摘要
 
@@ -31,7 +31,7 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 
 追蹤各大型企業目前正在使用的 AI 編碼工具，以及工具選擇的變化軌跡。資料來源為公開報導與內部消息洩露，僅記錄有明確來源佐證的事實。
 
-目前追蹤 33 家具名企業/機構（新增 ICON——臨床試驗/醫療研究產業首個具名採用案例；此前新增 Cognizant——升級為 Claude Partner Network 全球首要夥伴 Global Premier Partner），其中多數狀態為使用中（✅），4 家退出/切換（❌🔄，Microsoft 停用 Claude Code、JPMorgan Chase 香港分行因出口管制被迫退出、Lindy 100% 切換至 DeepSeek、Alibaba 因資安疑慮禁用 Claude Code 並明確改用內部工具 Qoder），Uber 縮減中（⚠️，成本管控）。新增 Alberta 省政府（加拿大）具名政府採用案例，20 小時掃描 4.66 億行程式碼完成資安審查，是繼加州州政府後另一個地方政府層級具體成效案例。整體趨勢：Claude API 企業與政府採用持續擴大，TCS、DXC、LG 等頂尖企業相繼全面入局；2026-06-29–06-30 單日/隔日湧現 Globant、DataArt、Okta、Rubrik、加州州政府等新一波具名案例，Partner Network 密集擴張（詳見 [[topics/anthropic-business]]）。同期 Lindy 案例顯示 API 客戶對成本敏感度高、可能因競品定價優勢流失。2026-06-21 Microsoft 確認在 Fable 5 封鎖期間加速退出 Claude Code，2026-06-22 The Jerusalem Post 跟進確認 Microsoft 正系統性降低對 Claude 依賴，GitHub Copilot 為主要替代方案。出口管制 + 成本壓力雙重因素持續影響頂尖企業工具選擇。
+目前追蹤 34 家具名企業/機構（新增 Syracuse University——繼哈佛 FAS 後另一具名高等教育機構案例；此前新增 ICON——臨床試驗/醫療研究產業首個具名採用案例；此前新增 Cognizant——升級為 Claude Partner Network 全球首要夥伴 Global Premier Partner），其中多數狀態為使用中（✅），4 家退出/切換（❌🔄，Microsoft 停用 Claude Code、JPMorgan Chase 香港分行因出口管制被迫退出、Lindy 100% 切換至 DeepSeek、Alibaba 因資安疑慮禁用 Claude Code 並明確改用內部工具 Qoder），Uber 縮減中（⚠️，成本管控）。新增 Alberta 省政府（加拿大）具名政府採用案例，20 小時掃描 4.66 億行程式碼完成資安審查，是繼加州州政府後另一個地方政府層級具體成效案例。整體趨勢：Claude API 企業與政府採用持續擴大，TCS、DXC、LG 等頂尖企業相繼全面入局；2026-06-29–06-30 單日/隔日湧現 Globant、DataArt、Okta、Rubrik、加州州政府等新一波具名案例，Partner Network 密集擴張（詳見 [[topics/anthropic-business]]）。同期 Lindy 案例顯示 API 客戶對成本敏感度高、可能因競品定價優勢流失。2026-06-21 Microsoft 確認在 Fable 5 封鎖期間加速退出 Claude Code，2026-06-22 The Jerusalem Post 跟進確認 Microsoft 正系統性降低對 Claude 依賴，GitHub Copilot 為主要替代方案。出口管制 + 成本壓力雙重因素持續影響頂尖企業工具選擇。
 
 ---
 
@@ -43,6 +43,7 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 
 | 企業 | 規模 | AI 編碼工具 | 狀態 | 事件日期 | 備註 | 確認日期 |
 |------|------|-----------|------|---------|------|---------|
+| Syracuse University | 大型（高等教育機構）| Claude Code + Claude Cowork | ✅ | 2026-08-05 | Syracuse University Today 官方報導校方擴大 Claude Enterprise 授權，納入 Claude Code 與 Claude Cowork；為繼哈佛 FAS（04-28，取代 ChatGPT Edu）後另一具名高等教育機構擴大採用案例，顯示學術機構對 Claude Enterprise 的採用正從「單一授權」擴展至「含編碼與協作工具的完整套件」（推論）；具體授權規模、部署範圍未見細節，僅標題層級資訊（Google News/Syracuse University Today）| 2026-08-05 |
 | ICON（NASDAQ: ICLR） | 大型（全球臨床研究委外機構 CRO）| Claude API | ✅ | 2026-07-29 | Clinical Trials Arena（source_count=2）報導 ICON 與 Anthropic 合作，將 Claude AI 整合進臨床試驗流程；為醫療研究/CRO 產業首個具名採用案例，延續近期 Optum（07-14，健康服務業）之後醫療垂直產業另一深化案例（推論）；具體整合範疇、合約規模未見細節，僅標題層級資訊（Google News/Clinical Trials Arena）。**08-04 二次確認**：Fierce Biotech（source_count=2）跟進報導同一合作案，未見新增細節，屬媒體二次確認（Google News/Fierce Biotech） | 2026-08-04（首見 2026-07-29）|
 | Cognizant | 頂尖 | Claude API | ✅ | 2026-07-28 | Anthropic Blog 官方公告：雙方擴大既有合作，Cognizant 將 Claude 用於自身建置並為客戶運行的系統，橫跨製造業、生命科學、保險等產業；將 Claude 嵌入自身商業與工程平台、打造「Claude 認證」（Frontier Certified）人才梯隊，並升級為 Claude Partner Network 的全球首要夥伴（Global Premier Partner）；延續近期 TCS、DXC 等頂尖 IT 服務商全面深化合作模式（推論）；具體合約規模未見細節（Anthropic Blog https://www.anthropic.com/news/cognizant-anthropic；Google News/Seeking Alpha 同日跟進） | 2026-07-28 |
 | Grasshopper Bank | 中型（銀行，聚焦金融科技產業）| Claude API（MCP 整合） | ✅ | 2026-07-15 | Financial IT 報導 Grasshopper Bank 成為首家列入 Anthropic MCP（Model Context Protocol）目錄的銀行，象徵金融業對 MCP 生態系統的具名採用起點；具體整合規模、應用場景未見細節（僅標題可用，Google News 轉址）| 2026-07-15 |
@@ -116,6 +117,12 @@ Claude Code 是工程師日常編碼工具（CLI），成本隨使用量線性�
 ## 時序
 
 ### 2026-08
+
+#### 2026-08-07
+- **[新增企業採用，具名高等教育機構] Syracuse University 擴大 Claude Enterprise 授權，納入 Claude Code 與 Claude Cowork**：Syracuse University Today 官方報導，詳見上方使用現況表新增列（Google News/Syracuse University Today）
+
+#### 2026-08-06
+- **[媒體後續報導，無新增具體事實，不改變既有狀態] The Times of India：Microsoft 內部備忘錄再傳對 Anthropic 更多「壞消息」**：報導標題提及 Microsoft 稍早已要求員工停用 Claude Code（呼應上方使用現況表 Microsoft 列，狀態 ❌ 已退出，事件日期 2026-06-21），如今內部備忘錄再度傳出對 Anthropic 不利訊息。**注意**：原文摘要僅提供標題層級資訊，未見備忘錄具體內容或新增事實，本則視為既有「Microsoft 減少對 Claude 依賴」敘事的後續媒體關注度延續，非獨立新增退出/縮減事件，不更新使用現況表狀態（Google News/The Times of India）
 
 #### 2026-08-04
 - **[媒體二次確認，非新增合作事實] Fierce Biotech 跟進報導 ICON 與 Anthropic 臨床試驗合作**：Fierce Biotech（source_count=2）報導與 07-29 Clinical Trials Arena 首報同一事件，未見新增合作細節，詳見上方使用現況表 ICON 列更新（Google News/Fierce Biotech）

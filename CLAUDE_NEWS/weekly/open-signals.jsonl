@@ -9,3 +9,5 @@
 {"date": "2026-08-05", "week": "2026-W31", "forecast": "Windows Cowork VM 啟動失敗叢集（#29941／#74649／#27801／#40198／#40175）", "origin": "新立", "probe": "Cowork", "entries": [{"title": "RTL (Right-to-Left) Support for Hebrew & Arabic in Claude Desktop / Cowork", "url": "https://github.com/anthropics/claude-code/issues/38005"}]}
 {"date": "2026-08-05", "week": "2026-W31", "forecast": "Opus 5「品質感知」第三假說", "origin": "新立", "probe": "Opus 5", "entries": [{"title": "Opus 5 WTF moments compilation", "url": "https://www.reddit.com/r/ClaudeCode/comments/1vg57i9/opus_5_wtf_moments_compilation/"}]}
 {"date": "2026-08-05", "week": "2026-W31", "forecast": "Opus 5 是否真被硬編碼禁用 subagent", "origin": "新立", "probe": "subagent", "entries": []}
+{"date": "2026-08-07", "week": "2026-W31", "forecast": "Windows Cowork VM 啟動失敗叢集（#29941／#74649／#27801／#40198／#40175）", "origin": "新立", "probe": "Cowork", "entries": []}
+{"date": "2026-08-07", "week": "2026-W31", "forecast": "Opus 5「品質感知」第三假說", "origin": "新立", "probe": "Opus 5", "entries": [{"title": "[Status] Degraded performance for Claude Opus 5", "url": "https://status.claude.com/incidents/mgp99sn4ynd4"}]}
