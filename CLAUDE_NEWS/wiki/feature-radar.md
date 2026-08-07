@@ -4,7 +4,7 @@
 僅收錄官方 changelog、release note 或官方公告來源；社群工具見 [[topics/community-tech-tools]]。
 每日更新：新增功能、更新熱度、補充社群回饋。
 
-**最後更新：** 2026-08-05
+**最後更新：** 2026-08-07
 
 ---
 
@@ -20,7 +20,7 @@
 
 ## ⚠️ 升版風險
 
-**最新版本：** v2.1.222（2026-08-04，安全修復：worktree 隔離 session 及其 subagent 原可對主 checkout 執行破壞性 git 指令的漏洞已修復，隔離範圍現擴及每個 session 中的檔案編輯與 Bash 執行）。前一版 v2.1.221 新增 Focus view：VSCode 擴充 chat-menu 切換選項，可用 `Ctrl+Alt+F` 或選單將工具活動摺疊為可展開的每輪摘要並附即時執行指示。最後一次重大 breaking change 仍為 v2.1.212／v2.1.215（見下表）
+**最新版本：** v2.1.224（2026-08-07，新增 `claude self-hosted-runner`：可將自有機器或容器變成 Claude Code web／mobile／desktop session 的執行環境，Team／Enterprise 方案適用）。前一版 v2.1.222（08-04）為 worktree 隔離 session 安全修復。最後一次重大 breaking change 仍為 v2.1.212／v2.1.215（見下表）
 
 | 風險 | 嚴重度 | 說明 |
 |------|--------|------|
@@ -63,6 +63,8 @@
 
 | 功能 | 發布日期 | 熱度 | 試用價值 | 狀態 |
 |------|----------|------|----------|------|
+| **Claude Code v2.1.224**（新增 `claude self-hosted-runner`，可將自有機器或容器變成 Claude Code web／mobile／desktop session 執行環境，Team／Enterprise 適用） | 2026-08-07 | 🔥🔥 | ⚡ 有條件推薦 | 正式發布 |
+| **API Inference Hooks**（Enterprise 組織 beta，claude.ai／Cowork／Claude Code 上受管治 prompt 可導向企業自有 AI 安全伺服器） | 2026-08-05 | 🔥🔥 | ⏳ 觀望 | Beta（Enterprise） |
 | **Claude Code v2.1.222**（安全修復：worktree 隔離 session 及其 subagent 可對主 checkout 執行破壞性 git 指令的漏洞，隔離範圍擴及檔案編輯與 Bash 執行） | 2026-08-04 | 🔥🔥 | ✅ 建議升級 | 正式發布（安全修復） |
 | **Claude Code v2.1.221**（VSCode 新增 Focus view：chat-menu 切換選項，將工具活動摺疊為可展開的每輪摘要並附即時執行指示，`Ctrl+Alt+F` 開關） | 2026-08-04 | 🔥 | ⏳ 觀望 | 正式發布 |
 | **Claude Opus 5**（新次旗艦模型，可用 `--model` 選用，編碼/知識工作評測逼近 Fable 5、官方稱定價為其一半，現為 Claude Max 新預設模型、Claude Pro 最強模型） | 2026-07-25 | 🔥🔥🔥🔥🔥 | ⚡ 有條件推薦 | 正式發布 |
@@ -137,6 +139,37 @@
 ---
 
 ## 🆕 最新功能（2026-08）
+
+### Claude Code v2.1.224 — self-hosted-runner
+**發布：** 2026-08-07（v2.1.224） | **熱度：** 🔥🔥 | **試用價值：** ⚡ 有條件推薦 | **狀態：** 正式發布
+
+**是什麼：** 新增 `claude self-hosted-runner` 指令，可將使用者自有的機器或容器變成 Claude Code web、mobile、desktop session 的執行環境，開放給 Team 與 Enterprise 方案。
+
+**為何熱：** 官方 GitHub Release 首發，回應企業對「Claude Code session 要在自己掌控的基礎設施上跑」的需求（資料落地、網路隔離等場景）；與同日 AWS 官方發文的 Bedrock 單一區域資料落地方案屬同一類需求的不同解法。
+
+**現在要試嗎：** 適合有資料落地、網路隔離或既有自架基礎設施需求的 Team／Enterprise 客戶；一般個人開發者無需關注。
+
+**快速上手：**
+```
+claude self-hosted-runner   # 具體設定步驟待官方文件補充（原文於此處截斷）
+```
+
+**注意事項：** 官方 release note 原文於「on Team and E」處截斷，Enterprise 一詞為合理推斷但未逐字確認；具體部署步驟、支援的容器/機器規格待官方文件補齊。
+
+---
+
+### API Inference Hooks（Enterprise Beta）
+**發布：** 2026-08-05（Claude API Release Notes） | **熱度：** 🔥🔥 | **試用價值：** ⏳ 觀望 | **狀態：** Beta（Enterprise 組織）
+
+**是什麼：** Inference Hooks 進入 Enterprise 組織的 beta 階段，可將 claude.ai、Cowork、Claude Code 上每一次受管治的 prompt 導向企業自有的 AI 安全伺服器。
+
+**為何熱：** 直接回應企業對「AI 呼叫要能被自己的安全基礎設施攔截／稽核」的治理需求，與 v2.1.224 的 self-hosted-runner 同屬本週企業控管/自架能力的一組更新。
+
+**現在要試嗎：** 僅 Enterprise 組織可用；適合已有自建 AI 安全閘道、需要對受管治 prompt 做集中稽核的企業。一般使用者無感知差異。
+
+**注意事項：** Beta 階段，具體設定步驟與涵蓋範圍待官方文件補齊；僅標題層級摘要，細節有限。
+
+---
 
 ### Worktree Session 隔離安全修復
 **發布：** 2026-08-04（v2.1.222） | **熱度：** 🔥🔥 | **試用價值：** ✅ 建議升級 | **狀態：** 正式發布（安全修復）
