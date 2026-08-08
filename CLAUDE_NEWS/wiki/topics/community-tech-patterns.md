@@ -20,10 +20,10 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 **領域：** 🌐 社群
 **開始日期：** 2026-04-25
 **最後更新：** 2026-08-08
-**最後新聞更新：** 2026-08-07
+**最後新聞更新：** 2026-08-08
 
-> **最新工作流模式**（2026-08-07）
-> 社群本日新增兩則 dev.to 第一手實測：「headless Claude Code（`claude -p`）未加 `--bare` 時冷啟動約載入 15 萬 token」補上 headless 呼叫固定成本的量化數字；「agent 重新實作團隊已否決方案」點出已否決決策未被結構化索引時的隱形重工成本。
+> **最新工作流模式**（2026-08-08）
+> 社群本日新增跨 agent CLI 的 system prompt 版本追蹤工具 phistory（同時支援 Claude Code、Codex、OpenClaw、Hermes），把「直接檢視 CLI 實際送出內容」的既有第一手偵測手法系統化為可跨版本比對的自動封存機制。
 
 ---
 
@@ -119,6 +119,13 @@ Claude Code 的三種多 agent 機制，可對應到 Anthropic《Building Effect
 ## 技術彙整
 
 ### 2026-08
+
+#### phistory：跨 agent CLI（Claude Code／Codex／OpenClaw／Hermes）system prompt 版本快照自動封存工具（2026-08-08）
+
+- **核心模式：** 開源工具 Phistory 自動追蹤並封存多款 agent CLI（Claude Code、Codex、OpenClaw、Hermes）的 system prompt 版本快照，讓使用者可跨版本比對各工具 system prompt 的變動歷程，而非侷限於單一工具的單次檢視
+- **與既有模式的關係：** 呼應本頁既有「作者 grep 自己的 Claude Code JSONL 逐字稿，發現隱藏標籤 `<ip_reminder>`」（2026-07-29）等「直接檢視 Claude Code 實際送出/收到內容」第一手偵測方法論，本工具把單次、單一工具的檢視動作系統化為跨工具、跨版本的自動封存與比對機制
+- **來源：** GitHub Search（今日日報「⭐ 重點話題」已收錄）；星數 502（達對照表中門檻 ≥300 星），fork／open issues／近期 commit 等難造假佐證數據未見於本次摘要，待查證是否為刷星
+- **成熟度：** ⏳ 新興（今日首見，單一開源專案，尚無第一手使用心得或社群討論佐證實際採用效果）
 
 #### headless Claude Code（`claude -p`）冷啟動實測：未加 `--bare` 約載入 15 萬 token（2026-08-07）
 
