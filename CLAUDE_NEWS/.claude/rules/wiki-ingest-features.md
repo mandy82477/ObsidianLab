@@ -16,6 +16,7 @@
 | `wiki/entities/claude-security.md` | Claude Security 資安產品動態 |
 | `wiki/entities/claude-skills.md` | Skills 官方產品線與生態：官方技能包、平台支援、分享機制、第三方移植（設計面歸社群記者 patterns 頁） |
 | `wiki/topics/official-community-gap.md` | 官方功能 vs 社群痛點缺口變化 |
+| `wiki/topics/engineering-skill-playbook.md` | 🗓️ 週更，吃技能清冊非新聞條目——見下方「工程流程 Skill 指南維護」|
 | `wiki/feature-radar.md` | 新增/更新功能條目（**須回報主編彙整**，不直接寫入） |
 
 > 上表為核心頁面與觸發條件；此外 `wiki/index.md` 中領域為 🛠️ 工具/功能 的所有頁面（含日後新增）皆由本記者負責維護與 lint。
@@ -35,6 +36,22 @@ GitHub Issues 來源的高互動 bug/issue 條目歸功能記者，記入 claude
 ## official-community-gap 產品化矩陣同步 `[加入: 2026-07-04]`
 
 官方發布新功能時，檢查 `wiki/topics/official-community-gap.md` 的「Agent 工作模式產品化追蹤」矩陣是否有對應模式列：有則更新該列「官方對應」與「狀態」欄；無對應列則略過，不強制新增。此檢查納入回報的同步自查欄。
+
+---
+
+## 工程流程 Skill 指南維護 `[加入: 2026-08-08]`
+
+`wiki/topics/engineering-skill-playbook.md` 回答「我現在在做這件事，該下哪個 skill」。它**吃技能清冊與社群工具策展，不吃新聞條目**——類別路由接不到，本節即其觸發邊，於 `/wiki-lint` 執行，每日 ingest 不更新。
+
+**軸線鐵則：** 以**工程流程階段**為軸（設計→實作→審查→測試→部署→事故→償還），**不得改以開發領域（嵌入式／遊戲／資料工程）分欄或分列**。官方技能本身就不是按領域切的，照領域組織會產出大量空格；領域差異只放在「領域注意」欄，且**僅在有具體依據時填寫，無依據留 `—`**——此欄最容易被通用工程常識灌水，而通用常識不是本庫查證所得，不得寫成像有來源的樣子。
+
+**週更動作：**
+1. 讀 `Official Skills` 來源近 7 天條目（`src/news_aggregator/sources/official_skills_repos.py` 偵測到的清冊異動）；有新增／移除的 skill → 更新對應表列，並同步 `entities/claude-skills` 生態動態
+2. 官方新 skill 若屬工程流程階段 → 補入流程表；屬產出物格式 → 補入格式表；屬非工程用途 → 只記在 `entities/claude-skills`，不進本頁
+3. 檢查「官方涵蓋不到的地方」是否已被新官方 skill 覆蓋；已覆蓋者從該節移除並回報主編同步 `official-community-gap` 矩陣
+4. 清冊查證日更新於「參考來源」；本頁為清冊性更新，**不動「最後新聞更新」**
+
+**不做的事：** 不從通用工程知識補內容（無來源、不會被更新，且會讓讀者誤以為經查證）；不記錄各 skill 的內部實作細節（那屬上游 repo，會腐爛）。
 
 ---
 

@@ -89,6 +89,8 @@ description: 在 PR 或 diff review 前，依團隊規範檢查命名、測試�
 
 ## 相關議題
 
+- [[topics/engineering-skill-playbook]] — 工程流程各階段該下哪個官方 skill 的實戰對照
+
 - [[topics/community-tech-patterns]]（skill 設計模式、踩坑經驗與社群自製 skill 案例——如何寫 skill、何時該封裝、實測「74 個 skill 只有 3 個真正改變行為」等一手心得皆記錄於該頁，本頁不重複收錄）
 - [[entities/claude-code]]（Skills 為六大控制層之一；版本更新與已知問題見該頁版本表）
 - [[entities/opencode]]（OpenCode-power-pack 移植官方 skills 案例）

@@ -1,0 +1,609 @@
+{
+  "date": "2026-07-26",
+  "article_count": 51,
+  "source_status": {
+    "Anthropic Status": {
+      "ok": true,
+      "count": 4
+    },
+    "GitHub Issues": {
+      "ok": true,
+      "count": 15
+    },
+    "Hacker News": {
+      "ok": true,
+      "count": 10
+    },
+    "Anthropic Blog": {
+      "ok": true,
+      "count": 0
+    },
+    "Claude API Release Notes": {
+      "ok": true,
+      "count": 0
+    },
+    "dev.to": {
+      "ok": true,
+      "count": 12
+    },
+    "GitHub": {
+      "ok": true,
+      "count": 0
+    },
+    "Google News": {
+      "ok": true,
+      "count": 18
+    },
+    "Blogroll": {
+      "ok": true,
+      "count": 1
+    },
+    "Reddit": {
+      "ok": true,
+      "count": 12
+    }
+  },
+  "items": [
+    {
+      "title": "[Status] Elevated errors for Opus 5",
+      "url": "https://status.claude.com/incidents/zftg3gqkmv18",
+      "source": "Anthropic Status",
+      "published": "07/26 10:44 UTC",
+      "score": 0,
+      "score_unit": "",
+      "source_count": 1,
+      "summary": "Jul 26 , 10:44 UTC Resolved - This incident has been resolved. Jul 26 , 10:34 UTC Monitoring - A fix has been implemented and we are monitoring the results. Jul 26 , 10:28 UTC Update - We are continui",
+      "category": "official"
+    },
+    {
+      "title": "[Status] Elevated errors for Claude Fable 5, Claude Sonnet 5, Claude Haiku 4.5, and other models",
+      "url": "https://status.claude.com/incidents/j6gv862066n7",
+      "source": "Anthropic Status",
+      "published": "07/25 22:08 UTC",
+      "score": 0,
+      "score_unit": "",
+      "source_count": 1,
+      "summary": "Jul 25 , 22:08 UTC Resolved - This incident has been resolved. Jul 25 , 21:34 UTC Investigating - We are investigating elevated errors on requests to Claude Fable 5, Claude Sonnet 5, Claude Haiku 4.5,",
+      "category": "official"
+    },
+    {
+      "title": "[Status] Elevated errors for Mythos 5, Fable 5, Opus 5 and Claude Haiku 4.5",
+      "url": "https://status.claude.com/incidents/f1q2wvw4qj4j",
+      "source": "Anthropic Status",
+      "published": "07/25 19:44 UTC",
+      "score": 0,
+      "score_unit": "",
+      "source_count": 1,
+      "summary": "Jul 25 , 19:44 UTC Resolved - This incident has been resolved. Jul 25 , 18:44 UTC Identified - The issue has been identified and a fix is being implemented. Jul 25 , 18:40 UTC Investigating - We are i",
+      "category": "official"
+    },
+    {
+      "title": "[Status] Sonnet 4.6 and Sonnet 5 errors elevated",
+      "url": "https://status.claude.com/incidents/1019wwb67615",
+      "source": "Anthropic Status",
+      "published": "07/25 18:13 UTC",
+      "score": 0,
+      "score_unit": "",
+      "source_count": 1,
+      "summary": "Jul 25 , 18:13 UTC Resolved - For approximately 10 minutes, error rates on Sonnet 4.6 and 5 were elevated. Service returned to normal at approximately 11:07a PDT.",
+      "category": "official"
+    },
+    {
+      "title": "The new rules of context engineering for Claude 5 generation models",
+      "url": "https://claude.com/blog/the-new-rules-of-context-engineering-for-claude-5-generation-models",
+      "source": "Hacker News",
+      "published": "07/25 20:42 UTC",
+      "score": 393,
+      "score_unit": "分",
+      "source_count": 1,
+      "summary": "The new rules of context engineering for Claude 5 generation models\nWe removed over 80% of Claude Code's system prompt for more advanced models. How to apply the lessons we learned to your own context engineering in Claude Code and with your own agents.\nBut when you send a message to Claude, the prompt is only a small part of the context it gets. Much of your context is assembled from your system prompt, Skills, CLAUDE.md files, memory, and other sources. We call this context engineering, and it makes a big impact on the results you generate when using Claude Code or in building your own agents.\nUnlike a prompt, context is used generally across many requests, so it cannot be as specific. How do you build these general prompts and guidance for Claude, especially when you don’t know what a u",
+      "category": "community"
+    },
+    {
+      "title": "Feature Request: Support AGENTS.md.",
+      "url": "https://github.com/anthropics/claude-code/issues/6235",
+      "source": "GitHub Issues / claude-code",
+      "published": "07/26 01:12 UTC",
+      "score": 344,
+      "score_unit": "留言",
+      "source_count": 1,
+      "summary": "Codex, Amp, Cursor, and others are starting to standardize around AGENTS.md (https://agents.md/) — a unified Markdown file that coding agents can use to understand a codebase.\n\nBy contrast, CLAUDE.md （👍 5760 reactions）",
+      "category": "community"
+    },
+    {
+      "title": "[BUG] Claude Code Desktop fails to Relaunch on Windows due to orphaned process file lock",
+      "url": "https://github.com/anthropics/claude-code/issues/42776",
+      "source": "GitHub Issues / claude-code",
+      "published": "07/25 18:30 UTC",
+      "score": 116,
+      "score_unit": "留言",
+      "source_count": 1,
+      "summary": "### Preflight Checklist\n\n- [x] I have searched [existing issues](https://github.com/anthropics/claude-code/issues?q=is%3Aissue%20state%3Aopen%20label%3Abug) and this hasn't been reported yet\n- [x] Thi（👍 50 reactions）",
+      "category": "community"
+    },
+    {
+      "title": "Model behavior: /goal Stop-hook directive cited as authorization for unrequested actions; absence-from-search treated as evidence of absence; structure-as-substance under pushback",
+      "url": "https://github.com/anthropics/claude-code/issues/60705",
+      "source": "GitHub Issues / claude-code",
+      "published": "07/26 07:43 UTC",
+      "score": 77,
+      "score_unit": "留言",
+      "source_count": 1,
+      "summary": "## Summary\n\nSingle-session observations of three repeating Claude Code model behaviors that user-side rules in `~/.claude/CLAUDE.md` did not catch. Reporting because the patterns appear to be model-si",
+      "category": "community"
+    },
+    {
+      "title": "Feature Request: Microsoft 365 Connector for Max Plan Individual Users",
+      "url": "https://github.com/anthropics/claude-code/issues/20469",
+      "source": "GitHub Issues / claude-code",
+      "published": "07/26 11:35 UTC",
+      "score": 60,
+      "score_unit": "留言",
+      "source_count": 1,
+      "summary": "## Summary\n\nThe Microsoft 365 connector is currently restricted to Team and Enterprise plans only. Individual users on the Max plan ($100/month or $200/month) cannot access this integration, despite p（👍 105 reactions）",
+      "category": "community"
+    },
+    {
+      "title": "[BUG] Claude Code frequently loses track of which directory it is in",
+      "url": "https://github.com/anthropics/claude-code/issues/1669",
+      "source": "GitHub Issues / claude-code",
+      "published": "07/25 22:07 UTC",
+      "score": 49,
+      "score_unit": "留言",
+      "source_count": 1,
+      "summary": "Claude Code frequently assumes it is in a different directory than the one it is in. A command will fail, and sometimes it takes several rounds of its own troubleshooting before it realizes the proble（👍 84 reactions）",
+      "category": "community"
+    },
+    {
+      "title": "Feature Request: Message queue mode — queue messages instead of interrupting active tasks",
+      "url": "https://github.com/anthropics/claude-code/issues/50246",
+      "source": "GitHub Issues / claude-code",
+      "published": "07/26 12:24 UTC",
+      "score": 40,
+      "score_unit": "留言",
+      "source_count": 1,
+      "summary": "## Problem\n\nWhen Claude is actively working on a task, the only option is to interrupt it. If I think of a follow-up mid-task I either have to interrupt and potentially derail the current work, or try（👍 182 reactions）",
+      "category": "community"
+    },
+    {
+      "title": "[BUG] Cowork tab missing in desktop app v1.2581.0 on Windows 11",
+      "url": "https://github.com/anthropics/claude-code/issues/48407",
+      "source": "GitHub Issues / claude-code",
+      "published": "07/25 15:30 UTC",
+      "score": 40,
+      "score_unit": "留言",
+      "source_count": 1,
+      "summary": "### Preflight Checklist\n\n- [x] I have searched [existing issues](https://github.com/anthropics/claude-code/issues?q=is%3Aissue%20state%3Aopen%20label%3Abug) and this hasn't been reported yet\n- [x] Thi（👍 16 reactions）",
+      "category": "community"
+    },
+    {
+      "title": "Dispatch main conversation permanently offline despite working Cowork tasks",
+      "url": "https://github.com/anthropics/claude-code/issues/45937",
+      "source": "GitHub Issues / claude-code",
+      "published": "07/26 08:24 UTC",
+      "score": 37,
+      "score_unit": "留言",
+      "source_count": 1,
+      "summary": "## Bug Description\n\nThe main Dispatch conversation shows \"This desktop appears offline\" on the mobile client, even when prompting directly from the desktop itself. However, **individual Cowork tasks w（👍 15 reactions）",
+      "category": "community"
+    },
+    {
+      "title": "[BUG] Text cannot be copied from Claude Code's output using `Ctrl+Shift+C` or right-click context menu.",
+      "url": "https://github.com/anthropics/claude-code/issues/62699",
+      "source": "GitHub Issues / claude-code",
+      "published": "07/26 13:29 UTC",
+      "score": 36,
+      "score_unit": "留言",
+      "source_count": 1,
+      "summary": "### Preflight Checklist\n\n- [x] I have searched [existing issues](https://github.com/anthropics/claude-code/issues?q=is%3Aissue%20state%3Aopen%20label%3Abug) and this hasn't been reported yet\n- [x] Thi（👍 55 reactions）",
+      "category": "community"
+    },
+    {
+      "title": "[BUG] API Error: Connection closed mid-response ==> frequent enough to make Claude Code unusable for any task",
+      "url": "https://github.com/anthropics/claude-code/issues/69415",
+      "source": "GitHub Issues / claude-code",
+      "published": "07/25 14:01 UTC",
+      "score": 35,
+      "score_unit": "留言",
+      "source_count": 1,
+      "summary": "### Preflight Checklist\n\n- [x] I have searched [existing issues](https://github.com/anthropics/claude-code/issues?q=is%3Aissue%20state%3Aopen%20label%3Abug) and this hasn't been reported yet\n- [x] Thi（👍 70 reactions）",
+      "category": "community"
+    },
+    {
+      "title": "Claude Code has a hardcoded instruction telling Opus 5 not to use subagents",
+      "url": "https://old.reddit.com/r/ClaudeCode/comments/1v6y5q2/claude_code_has_a_hardcoded_instruction_telling/",
+      "source": "Hacker News",
+      "published": "07/26 08:45 UTC",
+      "score": 18,
+      "score_unit": "分",
+      "source_count": 1,
+      "summary": "Anthropic has a two line system prompt that was being remotely injected but now is a part of the compiled binary in 2.1.219, and 220 targeting only Opus 5:\nDo not call the AgentTool unless the user requested it\nDo not use workflows or deep-research unless the user requested it\nThis disproportionately affects skills that are designed to use subagents. The prompt is enough for Opus 5 to choose to run agents' work inline (or silently not perform their work) and produces output that looks like a normal run.\nFor example, I found one session that ran a self-audit non-blind because it couldn't spawn the auditor agent. Opus noticed this was a problem but let it slide undermining the entire point of the independent audit of its work.\nI searched issues and found someone already filed it with binary ",
+      "category": "community"
+    },
+    {
+      "title": "Show HN: Minesweeper Raycasted",
+      "url": "https://claude.ai/public/artifacts/725f961b-09dc-4a66-8dac-8fefeeb69a1f",
+      "source": "Hacker News",
+      "published": "07/25 19:39 UTC",
+      "score": 18,
+      "score_unit": "分",
+      "source_count": 1,
+      "summary": "💬 The \"flag\" button doesn't seem to do anything, it just shows a flag on the screen for half a second and nothing happens\n\n💬 This is the most honest Show HN I have seen here in recent times.",
+      "category": "community"
+    },
+    {
+      "title": "Use Fable 5 where it pays for itself",
+      "url": "https://dev.to/toffy/use-fable-5-where-it-pays-for-itself-1809",
+      "source": "dev.to / #claudecode",
+      "published": "07/02 19:56 UTC",
+      "score": 9,
+      "score_unit": "讚",
+      "source_count": 1,
+      "summary": "Fable 5 is excellent, but expensive. Here's how I use it in Claude Code for the work that needs frontier-level judgment, while cheaper subagents handle implementation, tests, and chores.",
+      "category": "community"
+    },
+    {
+      "title": "Show HN: I built a blind taste test for Claude and Codex designs",
+      "url": "https://taste.rubenflamshepherd.com/",
+      "source": "Hacker News",
+      "published": "07/25 18:07 UTC",
+      "score": 4,
+      "score_unit": "分",
+      "source_count": 1,
+      "summary": "Hey HN! A while back I asked Codex to generate a companion site for a book I was enjoying. It ended up generating a landing page for the book that was ...actually good? I went down a bit of a rabbit hole prompting different models to generate landing pages for different books and this is the result. The site runs you through a series of blind \"taste\" tests to help you figure out which model's designs you prefer. Would love any feedback you have if you try it out!\n\nIt’s a matter of taste.\nWe’ve asked Claude and Codex to generate some landing pages. Choose which ones you prefer to help figure out which model has better taste.\nWe’ve asked Claude and Codex to generate some landing pages. Choose which ones you prefer to help figure out which model has better taste.",
+      "category": "community"
+    },
+    {
+      "title": "Show HN: Argus – VSCode Worktree Agent Session Manager",
+      "url": "https://marketplace.visualstudio.com/items?itemName=petar-s-dimov.argus-worktree-agent-sessions",
+      "source": "Hacker News",
+      "published": "07/26 00:58 UTC",
+      "score": 3,
+      "score_unit": "分",
+      "source_count": 1,
+      "summary": "Running parallel Claude Code/Codex agents across worktrees in vscode is annoying. You need different vscode windows open and have to run around terminals and dev servers. Argus is a free VS Code extension that puts all of it in one window. It uses the native Claude/Codex extensions (so a bit buggy, I'm hacking around their internals), and sorry about the shit onboarding, it's a preview. T3 Code looks like a very good alternative if you'd rather have a standalone app; this one's for staying inside VS Code. If folks like this I'll put some more effort getting it in good shape (this version was good enough for me rn lol)\n\nArgus - Worktree Agent Session Manager\nArgus is a worktree-first VS Code cockpit for Claude Code and Codex. Keep your\nprojects, Git worktrees, native agent tabs, changed fil",
+      "category": "community"
+    },
+    {
+      "title": "Claude Sonnet 5: Complete Guide to Benchmarks, Pricing, and Features (2026)",
+      "url": "https://dev.to/ai_made_tools/claude-sonnet-5-complete-guide-to-benchmarks-pricing-and-features-2026-1n5b",
+      "source": "dev.to / #anthropic",
+      "published": "07/01 09:50 UTC",
+      "score": 3,
+      "score_unit": "讚",
+      "source_count": 1,
+      "summary": "Claude Sonnet 5 scores 63.2% on SWE-bench Pro and 81.2% on OSWorld with a 1M context window, launching at $2/$10 per million tokens. Full breakdown of benchmarks, pricing, effort levels, and how it co",
+      "category": "community"
+    },
+    {
+      "title": "Show HN: Integrate any CLI agent into any terminal",
+      "url": "https://terminai.app",
+      "source": "Hacker News",
+      "published": "07/26 06:06 UTC",
+      "score": 2,
+      "score_unit": "分",
+      "source_count": 1,
+      "summary": "Whether at work as a software engineer or in my private life, I kept running into the same problem: While working in my terminal, I’d wish I could use AI to make sense of recent output or compose a command. Copying and pasting context between a chat and the terminal was tedious and preemptively running a full CLI coding agent threw away all the efficiency of working in a shell. Both workflows were far from ideal. What I really wanted was for the coding agents I already used to pop into my terminal when needed, staying invisible the rest of the time. I couldn't find any existing tools that fit. iTerm2’s AI features don't let me use my existing AI subscriptions, Warp requires changing your entire terminal emulator and workflow (and a new subscription). I wanted a transparent wrapper that cou",
+      "category": "community"
+    },
+    {
+      "title": "Show HN: Rules that stop AI coding agents from breaking working code",
+      "url": "https://github.com/avenna01-ceo/claude-code-survival-kr",
+      "source": "Hacker News",
+      "published": "07/26 02:30 UTC",
+      "score": 2,
+      "score_unit": "分",
+      "source_count": 1,
+      "summary": "💬 [flagged]",
+      "category": "community"
+    },
+    {
+      "title": "Show HN: Lemmings in HTML in Canvas",
+      "url": "https://github.com/VorticonCmdr/lemmings",
+      "source": "Hacker News",
+      "published": "07/26 12:23 UTC",
+      "score": 1,
+      "score_unit": "分",
+      "source_count": 1,
+      "summary": "For fun I decided I wanted to reimplement Lemmings using HTML-in-cavas and a DOM-based Entity-Component-System. I made heavy use of Claude Code (using only Sonnet 5 High) and I used everything already published on this topic. I used already existing HTML ports (like DHTML Lemmings, LemmingsJS and Lemmings.ts) to kickstart development. Even though I was able to add some new stuff like EGA, CGA and Tandy as well as Adlib, Tandy and PC Speaker that wasn't documented (or I didn't find it). I, or rather Sonnet, was able to do so because I hooked it up to a Ghidra MCP and a DOSBox MCP. At some point feature creep set in so I am guessing there are still a few things not working as intended. I'd love to hear all about it.\n\n💬 Thanks 4 the code, but I have the last chrome and i can't play it. The br",
+      "category": "community"
+    },
+    {
+      "title": "Show HN: Termic – desktop app for running CLI coding agents (Claude Code, Codex)",
+      "url": "https://termic.dev/",
+      "source": "Hacker News",
+      "published": "07/26 09:36 UTC",
+      "score": 1,
+      "score_unit": "分",
+      "source_count": 2,
+      "summary": "So, https://termic.dev open source desktop app for managing claude code / codex / agt / etc coding sessions. main checkout or worktrees. Here's the story: a couple of months ago Anthropic announced pricing changes over the programatic use of Claude code (Agent SDK + including -p), i suspected tools like Conductor will stop working. Started building a clone myself, which uses the CLI binaries in PTY terminals as first class citizens, not custom agent sdk. This is the most bulletproof way of always being up to date with latest improvements of the cli agents + and never have this pricing issue again for 3rd party tools, and you get the flexibility of using any CLI agent. That's how https://termic.dev was launched. Also has some pain points with conductor which i adressed in termic: launch in ",
+      "category": "community"
+    },
+    {
+      "title": "Using Claude and Codex together",
+      "url": "https://www.reddit.com/r/ClaudeCode/comments/1v758bz/using_claude_and_codex_together/",
+      "source": "Reddit / r/ClaudeCode",
+      "published": "07/26 14:21 UTC",
+      "score": 0,
+      "score_unit": "留言",
+      "source_count": 1,
+      "summary": "&#32; submitted by &#32; <a href=\"https://www.reddit.com/user/Negative-Grape4608\"> /u/Negative-Grape4608 </a> <br /> <span><a href=\"/r/FoundersBuildAI/comments/1v756wd/using_claude_and_codex_together/",
+      "category": "community"
+    },
+    {
+      "title": "Is this the context warning that people were asking for ?",
+      "url": "https://www.reddit.com/r/ClaudeCode/comments/1v752qy/is_this_the_context_warning_that_people_were/",
+      "source": "Reddit / r/ClaudeCode",
+      "published": "07/26 14:15 UTC",
+      "score": 0,
+      "score_unit": "留言",
+      "source_count": 1,
+      "summary": "I just got this warning, never seen it before \n\nhttps://preview.redd.it/3h96agob1lfh1.png?width=874&amp;format=png&amp;auto=webp&amp;s=4865c4e02b6d02bec10d50a3af8f718f67aa92c6",
+      "category": "community"
+    },
+    {
+      "title": "Transitioning to Spec-Driven Development via AWS Step Functions",
+      "url": "https://www.reddit.com/r/ClaudeCode/comments/1v74vlv/transitioning_to_specdriven_development_via_aws/",
+      "source": "Reddit / r/ClaudeCode",
+      "published": "07/26 14:07 UTC",
+      "score": 0,
+      "score_unit": "留言",
+      "source_count": 1,
+      "summary": "# 1.0 - Introduction\n\n**Background**: I've been a software engineer for almost a decade now. I've been using Claude Code \"casually\" for the last year or two. I would still write the vast majority of the code, but I would use Claude extensively for a variety of tasks, fitting well into the \"AI assisted\" coding paradigm. Recently I've wanted to transition into spec-driven development, mostly because I think it's an important skill set to master. I went into this project mostly of the opinion that I would not trust AI to actually implement changes at scale in a manner that I was happy with. Spoiler, this shifted somewhat towards the end.\n\nMost of my engineering career has been spent working with sensitive data, including health data. A fair chunk of that has been spent developing ETL pipeline",
+      "category": "community"
+    },
+    {
+      "title": "What is PieX? Why create it instead of just using OMP?",
+      "url": "https://www.reddit.com/r/ClaudeCode/comments/1v74uno/what_is_piex_why_create_it_instead_of_just_using/",
+      "source": "Reddit / r/ClaudeCode",
+      "published": "07/26 14:06 UTC",
+      "score": 0,
+      "score_unit": "留言",
+      "source_count": 1,
+      "summary": "<table> <tr><td> <a href=\"https://www.reddit.com/r/ClaudeCode/comments/1v74uno/what_is_piex_why_create_it_instead_of_just_using/\"> <img alt=\"What is PieX? Why create it instead of just using OMP?\" src",
+      "category": "community"
+    },
+    {
+      "title": "80 - 20 rule with claudecode",
+      "url": "https://www.reddit.com/r/ClaudeCode/comments/1v74shg/80_20_rule_with_claudecode/",
+      "source": "Reddit / r/ClaudeCode",
+      "published": "07/26 14:04 UTC",
+      "score": 0,
+      "score_unit": "留言",
+      "source_count": 1,
+      "summary": "Probably unpopular opinion here but i feel like the 80-20 rule heavily applies here:\n\n\\-there will  be a few thing, like a .md file and skills etc, that provide the most benefit for claude and then a large handful of things that provide minor benefit, and I believe it is enough to just have all of the 80s and not go down the rabbit hole of overcomplicating it.",
+      "category": "community"
+    },
+    {
+      "title": "The last six months in LLMs in five minutes",
+      "url": "https://www.reddit.com/r/ClaudeCode/comments/1v74q6j/the_last_six_months_in_llms_in_five_minutes/",
+      "source": "Reddit / r/ClaudeCode",
+      "published": "07/26 14:01 UTC",
+      "score": 0,
+      "score_unit": "留言",
+      "source_count": 1,
+      "summary": "<table> <tr><td> <a href=\"https://www.reddit.com/r/ClaudeCode/comments/1v74q6j/the_last_six_months_in_llms_in_five_minutes/\"> <img alt=\"The last six months in LLMs in five minutes\" src=\"https://extern",
+      "category": "community"
+    },
+    {
+      "title": "What a Major Anthropic Chip Deal Really Means for AMD Stock - Barchart.com",
+      "url": "https://www.barchart.com/story/news/3469164/what-a-major-anthropic-chip-deal-really-means-for-amd-stock",
+      "source": "Google News / Barchart.com",
+      "published": "07/26 13:00 UTC",
+      "score": 0,
+      "score_unit": "",
+      "source_count": 1,
+      "summary": "<a href=\"https://news.google.com/rss/articles/CBMipgFBVV95cUxPbHFONkJNTmtXUmprdGptQWtZNmJWc0p0cjFpRjd3a1dwUkN5eEhFU1RwbGMxYm5nZkdlcXBKSk5CQWdNd1RRdGczWDN5SUp3LTJPUk9ycHlVbnFqbGlDWWhsWmdhU05iRE01aHh0T2",
+      "category": "media"
+    },
+    {
+      "title": "How Anthropic’s AI Growth Strategy Reflects Long-Term Market Potential - Eye On Annapolis",
+      "url": "https://www.eyeonannapolis.net/2026/07/how-anthropics-ai-growth-strategy-reflects-long-term-market-potential/",
+      "source": "Google News / Eye On Annapolis",
+      "published": "07/26 12:00 UTC",
+      "score": 0,
+      "score_unit": "",
+      "source_count": 1,
+      "summary": "<a href=\"https://news.google.com/rss/articles/CBMirgFBVV95cUxNQi0zZmx3UzRiSXo2SElUZ2pMNFRET2o0UmtUbk4ydDJKZFlxT1RiaVcyU2FYWGJzTWNWSS16UEZUdXdQeFZDM2FlaVVGYWVyOHVsY29Dck5WY01FZ0ZtalRwS0V0dTVnRWhycVJrU1",
+      "category": "media"
+    },
+    {
+      "title": "Anthropic Launches Claude Opus 5, Tops AI Benchmark Index at Half the Cost of Fable 5 - MLQ.ai",
+      "url": "https://mlq.ai/news/anthropic-launches-claude-opus-5-tops-ai-benchmark-index-at-half-the-cost-of-fable-5/",
+      "source": "Google News / MLQ.ai",
+      "published": "07/26 09:16 UTC",
+      "score": 0,
+      "score_unit": "",
+      "source_count": 1,
+      "summary": "<a href=\"https://news.google.com/rss/articles/CBMiqAFBVV95cUxObzZobWZBdTZUb05XbGxHLTNYRnFsekxWSFU5aTlKRl9ZOFlzM3k0NC1lSFlaS3c4bDJJNndNb1Q2YXhNbXRUeUdlbDMwQXJVZ3F4NUdUaVI0dE9zMUxqdEw2OElOcHRuUHJISkRxZG",
+      "category": "media"
+    },
+    {
+      "title": "David Sacks Warns Anthropic Doesn't Want Competition: 'You're Going to Basically Put a Dagger Through the - Benzinga",
+      "url": "https://www.benzinga.com/markets/tech/26/07/60685709/david-sacks-warns-anthropic-doesnt-want-competition-youre-going-to-basically-put-a-dagger-through-the-heart-of-the-entire-american-open-source-ecosystem",
+      "source": "Google News / Benzinga",
+      "published": "07/26 08:46 UTC",
+      "score": 0,
+      "score_unit": "",
+      "source_count": 1,
+      "summary": "<a href=\"https://news.google.com/rss/articles/CBMirgJBVV95cUxOQzc2VkZ2ZzFmLXl6S2gzdWpUanhiWHBwN1dnNWd6TjVzUEtHbnFZamo2dVRodHlhT2tKeWtyaVlmQVlONjRrdGVNeEVCU1M0dXZXQnBOZUQyYkNSakJMZnczdXJqNmplRHZMQl85ZG",
+      "category": "media"
+    },
+    {
+      "title": "Anthropic launched Claude Opus 5 across all platforms - TestingCatalog AI News",
+      "url": "https://www.testingcatalog.com/anthropic-launched-claude-opus-5-across-all-platforms/",
+      "source": "Google News / TestingCatalog AI News",
+      "published": "07/26 07:58 UTC",
+      "score": 0,
+      "score_unit": "",
+      "source_count": 1,
+      "summary": "<a href=\"https://news.google.com/rss/articles/CBMijgFBVV95cUxOV1ZTV3gyUWxZRGJJa2U5MmozQy1mMVUta2t2UTFGcnd3TC1wNzhRTDUtTll2ZGkwdjRnQ2pXY2pmMVNkQlZvQXc2a2hPa0Z2akwwaFJoam5EWFl2WEt3ZGZIajJaSUdMNUJIMW9rVX",
+      "category": "media"
+    },
+    {
+      "title": "Anthropic's Claude Opus 5: Cheaper, Lighter AI Model - 조선일보",
+      "url": "https://www.chosun.com/english/industry-en/2026/07/26/CEBZ5CRUSBDG3OHX2MVH7CX5MQ/",
+      "source": "Google News / 조선일보",
+      "published": "07/26 07:13 UTC",
+      "score": 0,
+      "score_unit": "",
+      "source_count": 1,
+      "summary": "<a href=\"https://news.google.com/rss/articles/CBMiiAFBVV95cUxQZC00WVdfZDFfd2JTcE9LWkdFOUkwU2JsYXdEV3ZvbG1Zb0RZRjdHeXhDUUN5MG1OSkFJQjNYaS1kQUlsWElnY3ZIMmRiUVNsSmFYTlhsaFB5REREd004TF9ob2pGSXNJOEdnd1NkcV",
+      "category": "media"
+    },
+    {
+      "title": "Chinese AI models split Silicon Valley, Nvidia and others want open access while Anthropic pushes for ban - India Today",
+      "url": "https://www.indiatoday.in/technology/news/story/chinese-ai-models-split-silicon-valley-nvidia-and-others-want-open-access-while-anthropic-pushes-for-ban-2956551-2026-07-26",
+      "source": "Google News / India Today",
+      "published": "07/26 06:48 UTC",
+      "score": 0,
+      "score_unit": "",
+      "source_count": 1,
+      "summary": "<a href=\"https://news.google.com/rss/articles/CBMigAJBVV95cUxQSTk0UHFKX1o3RU9tRTg2X05yVlBHYTUzVjE1dlY0VEw2NzlWNmFtb245WnI5STR4aTV3X0w5bXRkRWxBZWJYQlhMeXpuakNXT1NJZEFVR0dDZ2lpNnFMdHZ2aGtEcmdqejVDWk9tWE",
+      "category": "media"
+    },
+    {
+      "title": "Nvidia Open Weights Letter Doubled To 50 Without Amazon And Anthropic - Forbes",
+      "url": "https://www.forbes.com/sites/sandycarter/2026/07/25/huangs-open-weights-letter-doubled-to-50-without-amazon-and-anthropic/",
+      "source": "Google News / Forbes",
+      "published": "07/26 01:19 UTC",
+      "score": 0,
+      "score_unit": "",
+      "source_count": 1,
+      "summary": "<a href=\"https://news.google.com/rss/articles/CBMivwFBVV95cUxOdDdqVzNsSGsyVVZtcHQ5U2RQZlNBVE13X0xjNjBxVmw1WUl1QkRTZUpwbWoxb1VvZGRKU190cUFiS0VHZTZMTHY2cW9QVDBrWGFsLVd5SzRXVjZsczVjeFJZRjJwamo0eXJ2bkF1Q3",
+      "category": "media"
+    },
+    {
+      "title": "Ruff v0.16.0",
+      "url": "https://simonwillison.net/2026/Jul/25/ruff/#atom-everything",
+      "source": "Blog / Simon Willison",
+      "published": "07/25 22:44 UTC",
+      "score": 0,
+      "score_unit": "",
+      "source_count": 1,
+      "summary": "<p><strong><a href=\"https://astral.sh/blog/ruff-v0.16.0\">Ruff v0.16.0</a></strong></p>\nAstral shipped a significant new version of their Ruff Python linting tool a few days ago on July 23rd. I noticed",
+      "category": "community"
+    },
+    {
+      "title": "SK chair says Anthropic asked for supplies to make its own chips - Fortune",
+      "url": "https://fortune.com/2026/07/25/sk-chair-chey-tae-won-anthropic-chip-supplies-skhynix/",
+      "source": "Google News / Fortune",
+      "published": "07/25 20:23 UTC",
+      "score": 0,
+      "score_unit": "",
+      "source_count": 1,
+      "summary": "<a href=\"https://news.google.com/rss/articles/CBMijgFBVV95cUxOd3hFa0tQbzhjVkFsTUlBNHVJdHh1YTZFRWdlWEZkcEpSZlVpMU13Tk53S1JOMTFmUGxHSEU0Qm9heFZhd09mRHlsV2YtTklDQUNldnVqb0kta3U2cTFJY0FTd0syRUl1cXFEeURUN2",
+      "category": "media"
+    },
+    {
+      "title": "Claude Opus 5 Is Here, Tops Fable 5 on Agentic Search, Anthropic Says - PCMag",
+      "url": "https://www.pcmag.com/news/anthropics-newest-ai-model-opus-5-is-now-available",
+      "source": "Google News / PCMag",
+      "published": "07/25 19:00 UTC",
+      "score": 0,
+      "score_unit": "",
+      "source_count": 2,
+      "summary": "<a href=\"https://news.google.com/rss/articles/CBMigwFBVV95cUxQMVNjM3JtRF9OaDFYVWdnaTlEMHVuTjd6bzdseDBnNF9uN2xubm44dXVac3k4SUFJT2hxMFZmVlVwWjVUOWh2dkJVWEVHS28wbnYwT0JCUjhFc1RnSzlVX2pxQk9ydGZfOEh1Y3lHYi",
+      "category": "media"
+    },
+    {
+      "title": "I'm not letting Claude touch my passwords, no matter how safe Anthropic claims it is - Android Police",
+      "url": "https://www.androidpolice.com/claude-wants-my-passwords/",
+      "source": "Google News / Android Police",
+      "published": "07/25 17:00 UTC",
+      "score": 0,
+      "score_unit": "",
+      "source_count": 2,
+      "summary": "<a href=\"https://news.google.com/rss/articles/CBMiZ0FVX3lxTFA0LUlaUWtMVjFGdksyTkY4N2xSaDlrQ2lsN3lGQnBmRzRXWXdaT0hYVHlRT2VLQnQ0bkdJelNWQmlDQWlXcnYtX1NFNHB2OWNlbDFiZ2p1Qm5MVWlHNmxENEd2bWV2ZWs?oc=5\" targ",
+      "category": "media"
+    },
+    {
+      "title": "Anthropic releases Claude Opus 4.7: How to try it, benchmarks, safety - Mashable",
+      "url": "https://mashable.com/article/anthropic-releases-claude-opus-4-7",
+      "source": "Google News / Mashable",
+      "published": "07/25 14:43 UTC",
+      "score": 0,
+      "score_unit": "",
+      "source_count": 1,
+      "summary": "<a href=\"https://news.google.com/rss/articles/CBMicEFVX3lxTFBoQkkwMnB2b0tyeFllX3Iwa2FrRXNZbW5Dem5ERGlLVzFkbGNycUN1UXVEMnhYVlVmaGNTNDZuSTVWZ3d3alpjN29LbkprZV9qTjg1QVFKdURnYk9FYlFTQWFReVRNdEJPaHdTWlhGUT",
+      "category": "media"
+    },
+    {
+      "title": "Anthropic's Claude Mythos, or a model like it, to get public release - Mashable",
+      "url": "https://mashable.com/tech/anthropic-mythos-might-get-public-release",
+      "source": "Google News / Mashable",
+      "published": "07/25 14:43 UTC",
+      "score": 0,
+      "score_unit": "",
+      "source_count": 1,
+      "summary": "<a href=\"https://news.google.com/rss/articles/CBMidkFVX3lxTFBwNUtpeTNOcWVyWHRSOGRRQkpYdGhKQ1cxd0M5MEs5cFVoQ1QwZnZPQ1gtWk5zbWMtTjR6a0lmR2FxN1hXWHh3YTBBcGVDdWN2cktDM2lkLWdfcm9kbEZsN2NMb19SdEJYVTM2VXRPak",
+      "category": "media"
+    },
+    {
+      "title": "Is Claude AI Free? Understanding Claude's Pricing & Access - StartupHub.ai",
+      "url": "https://www.startuphub.ai/ai-news/insights/2026/is-claude-ai-free-understanding-claude-s-pricing-access",
+      "source": "Google News / StartupHub.ai",
+      "published": "07/25 14:00 UTC",
+      "score": 0,
+      "score_unit": "",
+      "source_count": 1,
+      "summary": "<a href=\"https://news.google.com/rss/articles/CBMipgFBVV95cUxOV3BHYUd1N3BKYWw2SXBXc0lTaTk5MV9YeUl1b0lxSnU3TExHOFU4dXlrN1d1QjBXSjNLQlgzNzg1dE94T3pGS3RDZDVheUJHMW1ZeE5wc0RkZmItdkpQdVViek5OLU5kNkZjSU1iMG",
+      "category": "media"
+    },
+    {
+      "title": "so which is it",
+      "url": "https://www.reddit.com/r/ClaudeCode/comments/1v6110q/so_which_is_it/",
+      "source": "Reddit / r/ClaudeCode · 週熱門",
+      "published": "07/25 07:00 UTC",
+      "score": 0,
+      "score_unit": "留言",
+      "source_count": 1,
+      "summary": "<table> <tr><td> <a href=\"https://www.reddit.com/r/ClaudeCode/comments/1v6110q/so_which_is_it/\"> <img alt=\"so which is it\" src=\"https://preview.redd.it/qtona79xqbfh1.jpeg?width=640&amp;crop=smart&amp;",
+      "category": "community"
+    },
+    {
+      "title": "This sub is an absolute dumpster fire.",
+      "url": "https://www.reddit.com/r/ClaudeCode/comments/1v60oyl/this_sub_is_an_absolute_dumpster_fire/",
+      "source": "Reddit / r/ClaudeCode · 週熱門",
+      "published": "07/25 06:42 UTC",
+      "score": 0,
+      "score_unit": "留言",
+      "source_count": 1,
+      "summary": "I came here hoping to find tips and tricks to optimize and maximize my usage of Claude code.\n\nInstead, I find a sub that is dominated by the absolute dregs of users who couldn't engineer their way out of a wet paper sack. \n\nConstant complaining about token usage without ANY empirical evidence. \n\nConstant whining about \"poor performance\", against without any evidence at all. \n\nVibe-coders who have had more success with a single prompt against another model immediately dismissing Claude as inferior. \n\nI use Claude at work. Admittedly, because that's what they pay for. I've been at this for 20 years and Claude code has been an ABSOLUTE F\\*\\*\\*\\*\\*\\* REVOLUTION for my day to day workflow. \n\nIt's a damn shame that this sub is so toxic and useless.",
+      "category": "community"
+    },
+    {
+      "title": "Important Update to Claude Usage Limits",
+      "url": "https://www.reddit.com/r/ClaudeCode/comments/1v2yoe4/important_update_to_claude_usage_limits/",
+      "source": "Reddit / r/ClaudeCode · 週熱門",
+      "published": "07/21 23:18 UTC",
+      "score": 0,
+      "score_unit": "留言",
+      "source_count": 1,
+      "summary": "Effective immediately, Anthropic is introducing a simpler, more transparent usage system, consisting of only seventeen interlocking limits, three ceremonial limits, and one limit that cannot be observed directly without altering it.\n\nUnder the new system:\n\nClaude Pro users will receive five times the usage of Free users, except on Tuesdays, when Free users receive one-fifth the confusion of Pro users.\n\nMax 5× users may send up to five messages per five-hour window, provided each message contains no more than five vowels and is witnessed by a licensed notary.\n\nMax 20× users may send twenty times as many messages as Max 5× users, but only after completing the Max 20× Usage Eligibility Maze and defeating the Anthropic Billing Minotaur.\n\nAll plans now include:\n\n* A five-hour rolling limit.\n* A",
+      "category": "community"
+    },
+    {
+      "title": "I built a tool that tells you who already tried your startup idea, and how they died",
+      "url": "https://www.reddit.com/r/ClaudeCode/comments/1v2jy6z/i_built_a_tool_that_tells_you_who_already_tried/",
+      "source": "Reddit / r/ClaudeCode · 週熱門",
+      "published": "07/21 14:24 UTC",
+      "score": 0,
+      "score_unit": "留言",
+      "source_count": 1,
+      "summary": "Every time I had a “new” idea, I’d eventually discover three dead startups around the exact same thing. Usually **after** days :) So I built Déjà View. You describe an idea, and it researches its real-world predecessors: companies that tried it before, when they operated, when they shut down and who survived.  \nIt’s live at [https://dejaview.bsct.so](https://dejaview.bsct.so) Try it on your current idea and tell me if the report found anything you didn’t know about!",
+      "category": "community"
+    },
+    {
+      "title": "tokenmaxing and successmaxing not the same",
+      "url": "https://www.reddit.com/r/ClaudeCode/comments/1v0tw4s/tokenmaxing_and_successmaxing_not_the_same/",
+      "source": "Reddit / r/ClaudeCode · 週熱門",
+      "published": "07/19 15:44 UTC",
+      "score": 0,
+      "score_unit": "留言",
+      "source_count": 1,
+      "summary": "<table> <tr><td> <a href=\"https://www.reddit.com/r/ClaudeCode/comments/1v0tw4s/tokenmaxing_and_successmaxing_not_the_same/\"> <img alt=\"tokenmaxing and successmaxing not the same\" src=\"https://preview.",
+      "category": "community"
+    }
+  ]
+}

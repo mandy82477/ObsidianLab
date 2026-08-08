@@ -1,0 +1,110 @@
+# 工程流程 Skill 實戰指南
+
+**狀態：** ongoing
+**開始日期：** 2026-08-08
+**領域：** 🛠️ 工具/功能
+**更新頻率：** 🗓️ 週更（隨官方技能清冊異動與社群工具策展更新；日期停留數天屬正常節奏）
+**最後更新：** 2026-08-08
+**最後新聞更新：** 2026-08-08
+
+> **本頁在回答什麼**（2026-08-08 建立）
+> 「我現在在做這件事，該下哪個 skill、它實際會做什麼、有什麼坑」。官方技能不是按開發領域切的（沒有嵌入式、後端、資料工程之分），是按**工程流程階段**與**產出物格式**切——所以本頁以流程階段為軸，領域差異放在「領域注意」欄。
+
+---
+
+## 摘要
+
+官方目前提供 27 個 skill，分屬兩個 repo：[`anthropics/skills`](https://github.com/anthropics/skills)（17 個，Skills 格式本身的家，含 spec 與 template）與 [`anthropics/knowledge-work-plugins`](https://github.com/anthropics/knowledge-work-plugins)（18 個職能外掛，`engineering` 底下 10 個）。**沒有任何一個是特定開發領域專屬的**——最接近的 `frontend-design`、`webapp-testing`、`mcp-builder`、`claude-api` 四個全落在 web／agent 那一側。
+
+因此「我做嵌入式／遊戲／資料工程，有哪些 skill 可以下」在官方體系裡沒有直接答案；能問的是「**我在這個專案的哪個階段**」。本頁按此組織。
+
+**兩個 repo 都不發 GitHub release**，版本追蹤靠目錄成員差異偵測（見「本頁如何維護」）。
+
+---
+
+## 寫程式時的流程階段對照
+
+下表的 skill 全部來自官方 `engineering` 外掛（`/architecture` 這類斜線指令即其呼叫方式）。「領域注意」欄記錄該階段在不同開發領域會遇到的落差，**僅在有具體依據時填寫，無依據留 `—`**。
+
+| 你正在做什麼 | 下這個 | 它實際會做什麼 | 領域注意 |
+|---|---|---|---|
+| 要在兩個技術方案之間選一個，或要把設計決策留下紀錄 | `/architecture` | 產出 ADR：選項分析、取捨、建議 | 限制條件要寫進 constraints（記憶體上限、即時性、離線、法遵），否則預設會給出雲端服務取向的答案 |
+| 新元件要從需求與限制設計出來；API 形狀、資料模型、服務邊界未定 | `/system-design` | 系統／服務架構設計 | — |
+| 改動寫完了，合併前要自審 | `/code-review` | 審安全、效能、正確性——N+1 查詢、注入風險、遺漏的邊界條件、錯誤處理缺口 | — |
+| 行為與預期不符且原因不明顯；「staging 好的 prod 壞」「上版後就爆」 | `/debug` | 重現 → 隔離 → 診斷 → 修復的結構化流程 | 無法在本機重現的場景（硬體在迴路、生產限定），此流程第一步即卡住，需先解決重現手段 |
+| 要決定測什麼、測到什麼程度 | `/testing-strategy` | 測試策略與測試計畫：覆蓋範圍、測試架構 | — |
+| 準備上線，尤其帶 DB migration 或 feature flag | `/deploy-checklist` | 驗證測試狀態、CI、審核、依賴，並要求事先寫下 rollback 觸發條件 | — |
+| 線上出事了 | `/incident-response` | 分級 → 對外溝通 → 時間軸追蹤 → 事後 blameless postmortem | — |
+| 要盤點與排序技術債 | `/tech-debt` | 辨識、分類、排優先序 | — |
+| 要寫 README／runbook／onboarding／API 文件 | `/documentation` | 各類技術寫作 | — |
+| 要生每日進度同步 | `/standup` | 從近期 commit、PR、ticket 變動整理成 yesterday／today／blockers | — |
+
+> `/code-review` 與 `/debug` 另有 Claude Code **內建**同名技能（隨 CLI 發布，非上述外掛）。兩者來源不同、行為可能有差異，載入外掛時注意名稱衝突。
+
+---
+
+## 產出物格式類 skill
+
+與流程階段無關，按「你要生出什麼檔案」選用（全部來自 `anthropics/skills`）：
+
+| 你要產出 | skill |
+|---|---|
+| Word 文件 | `docx` |
+| Excel 試算表 | `xlsx` |
+| 簡報 | `pptx` |
+| PDF（讀取、合併、拆分、填表、OCR） | `pdf` |
+| 可分享的互動網頁 artifact | `web-artifacts-builder` |
+| 前端視覺設計方向 | `frontend-design` |
+| 網頁應用的測試 | `webapp-testing` |
+| MCP server | `mcp-builder` |
+| 呼叫 Claude API 的程式 | `claude-api` |
+| 新的 skill 本身 | `skill-creator` |
+
+其餘 `algorithmic-art`、`brand-guidelines`、`canvas-design`、`doc-coauthoring`、`internal-comms`、`slack-gif-creator`、`theme-factory` 屬非工程用途，本頁不展開。
+
+---
+
+## 官方涵蓋不到的地方
+
+官方 skill 停在「單人單流程」的層級。社群投入最多的三塊——**多 agent 編排、context／token 管理、大型 codebase 的並行規模**——官方目前沒有對應 skill，做法散在社群模式庫：
+
+- 多 agent 協作與對抗式審查 → [[topics/community-tech-patterns]]「Multi-agent 架構」「多代理 PR Review」
+- Context 管理、Token 成本 → [[topics/community-tech-patterns]]「Context 管理」「Token / 成本優化」
+- 大型 codebase 的四條主線（並行規模／Context／索引記憶／除錯分工）→ [[topics/community-large-codebase-workflow]]
+- 該用哪個模型與 effort → [[topics/model-comparison]]
+
+> 官方與社群的缺口全貌見 [[topics/official-community-gap]]；官方 Skills 產品線動態見 [[entities/claude-skills]]。
+
+---
+
+## 目前結論
+
+- **選 skill 的問法是「我在哪個階段」，不是「我做哪個領域」**——官方分類法本身就是這樣切的，照領域找會找不到。
+- 官方 `engineering` 十個 skill 覆蓋的是**團隊工程流程**（設計、審查、測試、部署、事故、技術債、文件、同步），對「怎麼把 Claude 用得更強」這件事著墨很少——那部分目前只有社群答案。
+- 領域差異（嵌入式、遊戲、資料工程）在官方 skill 中沒有對應設計；能做的是把領域限制寫進 `/architecture` 的 constraints，以及注意 `/debug` 在無法本機重現的場景會卡在第一步。
+
+---
+
+## 本頁如何維護
+
+本頁吃的是**技能清冊與社群工具策展**，不是每日新聞條目——不會有新聞路由到它，故觸發邊登記於 `.claude/rules/wiki-ingest-features.md`「工程流程 Skill 指南維護」，由功能記者於 `/wiki-lint` 週更。
+
+清冊異動由 `Official Skills` 來源偵測（`src/news_aggregator/sources/official_skills_repos.py`，以目錄成員差異取代 release 追蹤——兩個 repo 皆不發 release）。
+
+---
+
+## 相關實體
+
+- [[entities/claude-skills]] — 官方 Skills 產品線與生態動態
+- [[topics/community-tech-patterns]] — 社群模式庫（官方未覆蓋的部分）
+- [[topics/community-large-codebase-workflow]] — 大型 codebase 的四條主線
+- [[topics/model-comparison]] — 選模型與 effort
+- [[topics/official-community-gap]] — 官方功能與社群痛點的缺口全貌
+
+---
+
+## 參考來源
+
+- [anthropics/skills](https://github.com/anthropics/skills) — 官方技能庫（2025-09-22 建立），清冊 2026-08-08 查證
+- [anthropics/knowledge-work-plugins](https://github.com/anthropics/knowledge-work-plugins) — 職能外掛（2026-01-23 建立，`engineering/` 最早 commit 2026-02-24），清冊 2026-08-08 查證
+- [Engineering Plugin | Claude](https://claude.com/plugins/engineering) — 官方外掛說明頁

@@ -677,6 +677,18 @@
         "官方頁面未查證",
         "措辭鐵則"
       ]
+    },
+    {
+      "name": "engineering-skill-playbook 觸發邊與軸線鐵則（吃技能清冊非新聞，類別路由接不到；且不得改以開發領域分欄——官方技能本身不按領域切，照領域組織會產出大量空格）",
+      "assertion": "all_contain",
+      "files": [
+        ".claude/rules/wiki-ingest-features.md"
+      ],
+      "patterns": [
+        "engineering-skill-playbook",
+        "工程流程 Skill 指南維護",
+        "不得改以開發領域"
+      ]
     }
   ],
   "coupling_hints": {

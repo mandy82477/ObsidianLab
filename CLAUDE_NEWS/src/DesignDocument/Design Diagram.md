@@ -52,7 +52,7 @@ flowchart TD
 
 ```mermaid
 flowchart TD
-    subgraph SRC["11 個來源（ThreadPoolExecutor 並行抓取）"]
+    subgraph SRC["12 個來源（ThreadPoolExecutor 並行抓取）"]
         direction LR
         S1["Anthropic Blog\n(/news + /engineering)"]
         S2["Anthropic Status\n(status RSS)"]
@@ -65,6 +65,9 @@ flowchart TD
         S9["Claude API\nRelease Notes"]
         S10["Blogroll\n(權威部落客 RSS\n4 位 probation)"]
         S11["Official Docs
+        S12["Official Skills
+(官方技能 repo 目錄差異
+skills / knowledge-work-plugins)"]
 (官方靜態頁 hash diff
 方案/配額/計費)"]
     end

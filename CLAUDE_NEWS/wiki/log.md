@@ -3584,3 +3584,16 @@
 **剩餘 289 筆**：集中在 ai-agent-safety／anthropic-government-policy／competitor-landscape／claude-code 四頁，多為單方指控與媒體標題級報導，下輪 lint 續清。
 
 **首跑觀察**：10 筆中有 **2 筆的原始記載方向是錯的**（effort dial 反轉官方原意、MineBench 引用了與該議題無關的榜單），不只是「缺數字」。這說明待查證存量不是單純的資訊缺口，而是**含錯誤資訊的存量**——289 筆裡估計還有同類，優先清決策頁的判斷是對的。
+
+## 2026-08-08 建頁：engineering-skill-playbook（工程流程 × 該下哪個 skill）＋官方技能 repo 來源
+
+- **使用者需求**：「目前最大的困擾是 code 開發的實戰策略，目前頁面似乎無法直接給這樣的建議」；後續指定「開一個專頁，要很具體、有 guide 的感覺」，範圍收斂為 engineering
+- **診斷（為何既有頁面給不出實戰建議）**：全部頁面都照「資訊從哪來」組織，不是照「讀者要做什麼」。`community-tech-patterns` 模式概覽的分類軸是**機制**（Multi-agent 架構／Skills 設計／CLAUDE.md 管理／Hooks…），讀者若問「我要重構 40 檔的模組怎麼開工」，得自己知道答案散在三格裡再自行拼裝——拼裝正是最難的部分。最接近實戰的 `community-large-codebase-workflow`，其「目前結論」寫的是「社群做法多半是…」「值得後續觀察是否有第二個獨立案例佐證」，那是編輯在描述討論走到哪，不是給讀者的指示。**每頁的收尾都是「社群現在講到哪」，沒有一頁的收尾是「所以你該怎麼做」**；唯一例外是 `model-comparison`，正因它被逼著回答一個具體決策才被修到堪用
+- **建頁前的否決與改軸**：使用者原提議以**開發領域**（嵌入式）開頁。查證後否決該軸——(a) 官方 27 個 skill **沒有任何一個是領域專屬的**，最接近的 `frontend-design`／`webapp-testing`／`mcp-builder`／`claude-api` 四個全落在 web／agent 側；官方是按**工程流程階段**＋**產出物格式**切的；(b) 嵌入式在 101 份日報中僅 7 份提及（`embedded` 9 次、`ESP32` 6 次、`韌體` 2 次），實質為零。若照原軸建頁，內容九成將來自通用工程知識而非本庫查證，且無新聞餵養（無觸發邊，違建頁鐵則）。改以流程階段為軸、領域差異降為「領域注意」欄後建頁，經使用者確認
+- **新頁** `wiki/topics/engineering-skill-playbook.md`：流程階段對照表（10 個 engineering skill：何時下、實際會做什麼、領域注意）＋產出物格式表（10 個）＋「官方涵蓋不到的地方」（多 agent 編排／context 管理／大型 codebase 並行規模，導流至社群模式庫）＋目前結論
+- **觸發邊登記（衍生頁鐵則）**：`.claude/rules/wiki-ingest-features.md` 新增「工程流程 Skill 指南維護」節（週更、四步動作、不做的事），含**軸線鐵則**：不得改以開發領域分欄、「領域注意」欄無依據留 `—`（此欄最易被通用常識灌水）；同步登記進 `scripts/check_wiki_freshness.py` 的 `DERIVED_PAGES`（首跑即被該檢查攔下「歸因記錄從無此頁」，補登記後通過，衍生頁 6 → 7）
+- **新增第 12 個來源 `Official Skills`**：`src/news_aggregator/sources/official_skills_repos.py`——兩個官方 repo（`anthropics/skills` 建立 2025-09-22、166,939 星；`anthropics/knowledge-work-plugins` 建立 2026-01-23、23,363 星）**皆不發 GitHub release**（`/releases` 實測皆回空陣列），`github_releases.py` 結構上看不到它們。改以**目錄成員差異**偵測：新增／消失一個技能才是新聞，內文 typo 不是。防假警報四點：首見只記基線、非 `dir` 與 dotdir 不計、抓取失敗與非 list payload（404／rate limit 回 dict）皆不覆寫既有集合（否則會噴出整批假「新增」或假「刪除」）、rate limit 低於 15 即停手（與 github_releases 共用配額）。12 筆測試
+- **兩個 repo 先前在全庫零命中**：`anthropics/skills` 早於本專案收錄起點（2026-04-25）七個月，屬「起點之前就存在的既有事實」，日報只看「今天發生什麼」對此全盲——與路由失敗不同類，但同樣是缺口
+- **架構文件同步再次由機械檢查攔下**：`check_arch_docs.py` 檢查 1 報缺 `Official Skills`，已補 S12 節點與 HTML chip、來源數 11 → 12
+- **命名慣例待議**：新 slug `engineering-skill-playbook` 不落在既有四類前綴（community-／enterprise-／anthropic-／safety-）內。本輪未擅改慣例，記此待使用者裁示是否新增第五類前綴或維持例外
+- 一條 sync_pair 入 review-registry（觸發邊＋軸線鐵則）；測試綠、規則檢查零錯誤

@@ -1,0 +1,29 @@
+{
+  "_doc": "官方 Skills／Plugin repo 的目錄成員監看。兩個 repo 都不發 GitHub release（/releases 皆回空陣列），故 github_releases.py 結構上看不到它們；改以『目錄成員差異』偵測——新增或消失一個技能／外掛才是新聞，內文 typo 修正不是。每個 watch 每次執行耗 1 次 GitHub API 呼叫，新增前先評估配額（未設 GITHUB_TOKEN 時每小時僅 60 次，且與 github_releases 的 repo search 共用）。status 設 retired 即停止監看但保留紀錄。",
+  "watches": [
+    {
+      "repo": "anthropics/skills",
+      "path": "skills",
+      "label": "anthropics/skills 官方技能庫",
+      "url": "https://github.com/anthropics/skills/tree/main/skills",
+      "status": "active",
+      "why": "Skills 格式本身的家（含 spec/ 與 template/），2025-09-22 建立，星數遠高於 knowledge-work-plugins"
+    },
+    {
+      "repo": "anthropics/knowledge-work-plugins",
+      "path": "",
+      "label": "knowledge-work-plugins 職能外掛清單",
+      "url": "https://github.com/anthropics/knowledge-work-plugins",
+      "status": "active",
+      "why": "18 個職能外掛（engineering／finance／legal…）的頂層清單；新增一個職能即代表官方擴張覆蓋面，也是官方職能分類法的權威來源"
+    },
+    {
+      "repo": "anthropics/knowledge-work-plugins",
+      "path": "engineering/skills",
+      "label": "engineering 外掛技能清單",
+      "url": "https://github.com/anthropics/knowledge-work-plugins/tree/main/engineering/skills",
+      "status": "active",
+      "why": "本專案讀者最相關的職能；其餘 17 個職能暫不逐一監看以節省 API 配額，頂層清單已可偵測職能層級的擴張"
+    }
+  ]
+}
