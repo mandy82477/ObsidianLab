@@ -21,6 +21,7 @@ from news_aggregator.git_push import GitError, commit_and_push
 from news_aggregator.sources.anthropic_blog import AnthropicBlog
 from news_aggregator.sources.anthropic_status import AnthropicStatus
 from news_aggregator.sources.api_docs import ApiDocs
+from news_aggregator.sources.official_docs_watch import OfficialDocsWatch
 from news_aggregator.sources.blogroll import Blogroll
 from news_aggregator.sources.devto import DevTo
 from news_aggregator.sources.github_releases import GitHubReleases
@@ -256,6 +257,7 @@ def main() -> None:
         ("dev.to", DevTo()),
         ("Claude API Release Notes", ApiDocs()),
         ("Blogroll", Blogroll()),
+        ("Official Docs", OfficialDocsWatch()),
     ]
 
     all_items = []

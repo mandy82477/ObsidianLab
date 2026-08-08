@@ -654,6 +654,29 @@
       "patterns": [
         "待使用者裁示"
       ]
+    },
+    {
+      "name": "wiki-lint.md <-> 雲端 weekly runbook：5c 逾期待查證清算兩側齊全且明載雲端跳過（記者無 web 工具，此步驟是 299 筆待查證的唯一消化端；只留一側會再次孤兒化）",
+      "assertion": "all_contain",
+      "files": [
+        ".claude/commands/wiki-lint.md",
+        "docs/cloud-runbooks/weekly-lint.md"
+      ],
+      "patterns": [
+        "5c",
+        "逾期待查證清算"
+      ]
+    },
+    {
+      "name": "待查證回訪措辭鐵則：不得寫成「至今無後續」（只掃日報就宣稱世界沒有，會讓懸置被讀成已確認——2026-08-08 pricing 懸置 20 天的防再犯）",
+      "assertion": "all_contain",
+      "files": [
+        ".claude/commands/wiki-lint.md"
+      ],
+      "patterns": [
+        "官方頁面未查證",
+        "措辭鐵則"
+      ]
     }
   ],
   "coupling_hints": {

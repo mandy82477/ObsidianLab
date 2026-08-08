@@ -1,0 +1,41 @@
+{
+  "_doc": "官方靜態文件監看清單。這些頁面沒有 feed，但方案/配額/計費事實只寫在這裡——2026-08-08 教訓：07-20 旗艦計費分界只存在於方案說明頁，Help Center 自己的 Release notes 都沒收，任何 feed 型來源都抓不到。新增前先確認該頁確實承載會變動的事實，不要把靜態說明頁全掃進來（噪音會淹掉訊號）。status 設為 retired 即停止監看但保留紀錄。",
+  "pages": [
+    {
+      "name": "方案與定價（Plans & Pricing）",
+      "url": "https://claude.com/pricing",
+      "status": "active",
+      "why": "訂閱月費、年繳折扣、各方案模型可用性"
+    },
+    {
+      "name": "Claude Fable 5 on your plan",
+      "url": "https://support.claude.com/en/articles/15424964-claude-fable-5-on-your-plan",
+      "status": "active",
+      "why": "旗艦模型在各 seat 層級的存取與計費分界（2026-08-08 查證的那一頁）"
+    },
+    {
+      "name": "Manage usage credits for paid Claude plans",
+      "url": "https://support.claude.com/en/articles/12429409-manage-usage-credits-for-paid-claude-plans",
+      "status": "active",
+      "why": "usage credits 開關語意、auto-reload、兌換上限"
+    },
+    {
+      "name": "How do usage and length limits work?",
+      "url": "https://support.claude.com/en/articles/11647753-how-do-usage-and-length-limits-work",
+      "status": "active",
+      "why": "用量與長度上限規則，配額爭議的判準來源"
+    },
+    {
+      "name": "Use Claude Code with your Pro or Max plan",
+      "url": "https://support.claude.com/en/articles/11145838-use-claude-code-with-your-pro-or-max-plan",
+      "status": "active",
+      "why": "Claude Code 在訂閱方案下的額度規則"
+    },
+    {
+      "name": "Claude Help Center release notes",
+      "url": "https://support.claude.com/en/articles/12138966-release-notes",
+      "status": "active",
+      "why": "消費端功能與模型異動的官方 changelog（不含計費，故無法單靠此頁）"
+    }
+  ]
+}

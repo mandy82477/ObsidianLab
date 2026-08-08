@@ -1,6 +1,6 @@
 # Design Diagram — 現況架構（維運用）
 
-**最後更新：** 2026-07-17
+**最後更新：** 2026-08-08
 **文件定位：** 這份是「**系統現在怎麼運作**」的操作/維運架構圖，給要執行或維護 pipeline 的人看。
 「**系統怎麼演變成現在這樣**」的演進敘事，另見 `docs/architecture-evolution.html`（互動時間軸），兩者分工不重疊。
 
@@ -52,7 +52,7 @@ flowchart TD
 
 ```mermaid
 flowchart TD
-    subgraph SRC["10 個來源（ThreadPoolExecutor 並行抓取）"]
+    subgraph SRC["11 個來源（ThreadPoolExecutor 並行抓取）"]
         direction LR
         S1["Anthropic Blog\n(/news + /engineering)"]
         S2["Anthropic Status\n(status RSS)"]
@@ -64,6 +64,9 @@ flowchart TD
         S8["dev.to\n(API + reactions)"]
         S9["Claude API\nRelease Notes"]
         S10["Blogroll\n(權威部落客 RSS\n4 位 probation)"]
+        S11["Official Docs
+(官方靜態頁 hash diff
+方案/配額/計費)"]
     end
 
     SRC --> DEDUP["dedup.py\nURL 正規化 + 模糊標題去重\n官方來源優先"]

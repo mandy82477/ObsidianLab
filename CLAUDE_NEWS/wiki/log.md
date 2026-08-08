@@ -3540,3 +3540,17 @@
   - 連帶修正跨頁矛盾：`entities/fable-5.md` 對 GitHub #79337 標 `✅ 已解決`（停在 07-24 追蹤）與 pricing 標「延燒逾 18 天未解」（08-07 查證 67 留言）相衝，已更正為 🔴 並註明更正緣由；fable-5 與 `topics/model-comparison` 的「分歧報導中」敘述同步為已確認分界
 - **可攜教訓**：(1) **骨架只放讀者的問題，不放當下的答案**——具體模型名／產品名成為欄位標題或排序鍵，換代即整表報廢（本日第三次同源發作：本週推薦排序鍵、models E 條陣容骨架、本次 pricing 表）；(2) 「查過了」與「沒人查」在頁面上必須長得不一樣，否則靜默懸置會被讀成已確認
 - **未解**：299 筆存量待查證無人消化；`/wiki-lint` 尚未新增「逾期待查證由主編實際查證」步驟；官方頁 watchlist source（內容 hash diff）尚未建置。三項均待使用者裁示是否進行
+
+## 2026-08-08 三項流程修復：待查證消化端＋官方頁 watchlist＋回訪措辭
+
+承同日「官方查證解開懸置 20 天計費矛盾」條目診斷的三層缺陷，使用者裁示全做。
+
+- **缺陷 2（待查證是死路）→ `/wiki-lint` 新增步驟 `5c. 逾期待查證清算（主編親查）`**：記者無 web 工具，標下的待查證全庫累積 299 筆無人消化；本步驟為唯一消化端。盤點 `grep -rn 待查證 wiki/`（排除 log.md）→ 決策頁優先 → 每輪至多 10 筆 → 以官方一手來源查證（support.claude.com → docs.claude.com → anthropic.com/claude.com → 官方社群 → 具名媒體）→ 三選一寫回（查實／`官方未載（日期 查證）`／失效移除），不得留原狀。**編號用 5c 而非 6b**：步驟 6 底下已有 6a–6g 子項，6b 已被「規則引用驗證」佔用
+- **雲端限制寫進規則**：本步驟需外部網域，雲端 egress 封鎖（08-08 lint 實測 `www.swebench.com` 回 `EGRESS_BLOCKED`），故明載雲端一律跳過並寫待辦，同外部死鏈檢查與 5b 榜單抓取。**順帶補上 08-08 lint 自己回報的 `⚠️ runbook 步驟表與 wiki-lint.md 不同步`**——`docs/cloud-runbooks/weekly-lint.md` 步驟表補入 5b 與 5c 兩列及跳過理由
+- **缺陷 3（回訪只回訪日報）→ 措辭鐵則**：3g 待查證回訪禁止寫「至今無後續」，改為「已掃日報至 YYYY-MM-DD 無後續；**官方頁面未查證**」。只掃日報就只能宣稱日報沒有；寫成「至今無後續」讀起來像已確認，而答案可能一直躺在官方文件（pricing 那筆誠實回報了 20 次）。把「沒查」講出來，該筆才會被 5c 撈去真查
+- **缺陷 1（來源缺口）→ 新增第 11 個來源 `Official Docs`（watchlist 型）**：`src/news_aggregator/sources/official_docs_watch.py` — 對 `official_watch.json` 列的官方靜態頁做可見文字 hash diff，有變動才產出條目。設計要點：首次見到某 URL 只記基線不發條目（否則每次加頁都是假警報）、剝除 script/style/標籤（避免 asset hash churn 誤判）、變動 < 40 字元視為雜訊、抓取失敗不覆寫既有 hash（否則恢復連線會被誤判成內容變更）、state 檔毀損則重置不拋錯。初始清單 6 頁：pricing、Fable 5 on your plan、Manage usage credits、usage/length limits、Claude Code with Pro/Max、Help Center release notes
+  - **為何是 watchlist 而非 feed**：實查 Help Center 自己的 Release notes 只記模型發布與功能（07-24 Opus 5、07-09 Reflect、07-01 Fable 5 恢復），**07-20 計費改制不在其上**——該事實只存在於靜態方案說明頁，任何 feed 型來源都抓不到
+  - 新增 12 筆測試（`src/tests/test_official_docs_watch.py`），涵蓋基線靜默、真變更發條目、次門檻與純標記變動不發、單頁失敗不擋其他頁、失敗保留舊 hash、設定與 state 毀損不拋錯
+  - **架構文件同步由既有機械檢查攔下**：`check_arch_docs.py` 檢查 1 立即報「Design Diagram.md／architecture-current.html 缺少來源 Official Docs」，已補 S11 節點與 HTML chip、來源數 10 → 11、三處日期同步至 08-08
+- **防再犯**：兩條 sync_pair 入 `.claude/review-registry.json`（5c 兩側齊全、回訪措辭鐵則）
+- **測試**：`run_tests.py` 綠、`check_rules.py` 零錯誤
