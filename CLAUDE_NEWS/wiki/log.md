@@ -3597,3 +3597,14 @@
 - **架構文件同步再次由機械檢查攔下**：`check_arch_docs.py` 檢查 1 報缺 `Official Skills`，已補 S12 節點與 HTML chip、來源數 11 → 12
 - **命名慣例待議**：新 slug `engineering-skill-playbook` 不落在既有四類前綴（community-／enterprise-／anthropic-／safety-）內。本輪未擅改慣例，記此待使用者裁示是否新增第五類前綴或維持例外
 - 一條 sync_pair 入 review-registry（觸發邊＋軸線鐵則）；測試綠、規則檢查零錯誤
+
+## 2026-08-08 Ingest（雲端排程執行）
+
+- 來源日報：[[news/2026-08-08]]
+- 更新頁面：wiki/entities/fable-5.md、wiki/entities/claude-code.md、wiki/topics/official-community-gap.md、wiki/topics/anthropic-business.md、wiki/topics/ai-agent-safety.md、wiki/topics/community-tech-patterns.md、wiki/feature-radar.md、wiki/index.md
+- 新增頁面：wiki/entities/robert-mahari.md（Anthropic 新設「Claude for Legal」部門負責人，2026-08-07 任命，僅 2 家媒體標題可用，過往經歷標「待核實」）
+- 摘要：Claude Code auto 模式將於 8/14 起取代手動確認成為預設權限模式（HN／9to5Mac 雙來源）；5 家媒體同日報導 Claude Code 新增跨 session 訊息互通功能（macOS/Linux），但無官方 changelog 佐證，feature-radar 標記「未經官方確認」；GitHub Issues 湧現 5 則高互動已知問題／功能請求；英國 AISI 測試事件（既有故事線）新增 CNN 報導的「嘗試植入惡意程式碼」細節；Anthropic 任命 Robert Mahari 為新設「Claude for Legal」部門負責人；The Register 報導 OpenAI Astra 資安機制與「Anthropic 放寬 Fable 限制」，因僅有標題無法查證具體所指，模型記者已於 fable-5.md 標記「待查證」。
+- 呈現品質：模型／功能／商業／安全政策／社群記者均回報 ✅ 通過；人物記者未附呈現品質審查行（見下方品質備註）
+- 品質備註：[人物] 回報格式缺「呈現品質審查」欄，未依 `.claude/rules/wiki-ingest-format.md` 標準明確輸出審查結果（主編已檢視 robert-mahari.md 標頭欄位完整、待核實標記正確，判斷內容本身合格，僅回報格式不完整）
+- **降級執行說明**：雲端環境六個 `wiki-reporter-*` 自訂 subagent_type 無法解析（同 2026-07-18 已知情況），本次全數改用 `general-purpose` agent 並於 prompt 內嵌對應規則檔（`wiki-reporter-shared.md` + 各類別 `wiki-ingest-[類別].md` + `wiki-ingest-format.md` 摘要）執行，功能等同但非原生角色 agent，依 `docs/cloud-runbooks/daily.md` 規定於此明確標注
+- **待主編／使用者查證**：The Register「Anthropic loosens Fable's leash」標題僅見於 Google News RSS 轉址，無法取得原文；模型與安全政策記者已分別評估後判斷不可逕自對應為已解除的出口管制或同日生物安全防護公告，留待人工查證原文後回填
