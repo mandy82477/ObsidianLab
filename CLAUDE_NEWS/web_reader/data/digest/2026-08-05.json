@@ -274,11 +274,6 @@
       "id": "model-task-leaderboard",
       "name": "任務 × 跨家模型領先者週快照",
       "pageType": "topic"
-    },
-    {
-      "id": "official-community-gap",
-      "name": "官方功能 vs 社群痛點缺口分析",
-      "pageType": "topic"
     }
   ]
 }

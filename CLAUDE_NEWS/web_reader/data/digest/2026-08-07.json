@@ -12,13 +12,7 @@
       "time": "08/07 10:24",
       "sentiment": "",
       "body": "Meta 發布新的程式碼撰寫 agent「Muse Code」，加入與 OpenAI Codex、Anthropic Claude Code 競爭的行列；同一消息同時被 CNET、Basic Tutorials 與 Simon Willison 部落格轉載討論。",
-      "focusTags": [],
-      "sedimented": [
-        {
-          "id": "claude-code",
-          "pageType": "entity"
-        }
-      ]
+      "focusTags": []
     },
     {
       "title": "Discounted Claude access bought on the gray market may expose every prompt you send - Help Net Security",
@@ -36,13 +30,7 @@
       "time": "08/06 03:36",
       "sentiment": "",
       "body": "標題指出 Microsoft 稍早曾要求員工停用 Claude Code，如今內部備忘錄又傳出對 Anthropic 更多的負面訊息；原文摘要未提供具體細節。",
-      "focusTags": [],
-      "sedimented": [
-        {
-          "id": "claude-code",
-          "pageType": "entity"
-        }
-      ]
+      "focusTags": []
     },
     {
       "title": "AWS partners with Anthropic and OpenAI to bring AWS Continuum into developer workflows - Amazon Web Services (AWS)",
@@ -86,13 +74,7 @@
       "time": "08/07 10:59",
       "sentiment": "",
       "body": "Anthropic 官方部落格宣布更新 Claude Fable 5 的生物安全防護機制，聲稱大幅降低誤判：測試顯示各產品面的生物相關「降級」（fallback 至較弱模型）情形減少約 85%，使一般健康、教育類問題（如判讀檢驗報告、了解症狀）更少被降級處理，醫療專業人員也能在臨床任務上獲得更多協助。",
-      "focusTags": [],
-      "sedimented": [
-        {
-          "id": "fable-5",
-          "pageType": "entity"
-        }
-      ]
+      "focusTags": []
     },
     {
       "title": "[anthropics/claude-code] v2.1.224",
@@ -103,12 +85,6 @@
       "body": "新版新增 `claude self-hosted-runner`，讓使用者可將自己的機器或容器變成 Claude Code web、mobile、desktop session 的執行環境，此功能開放給 Team 與 Enterprise 方案。",
       "focusTags": [
         "[新工具]"
-      ],
-      "sedimented": [
-        {
-          "id": "claude-code",
-          "pageType": "entity"
-        }
       ]
     },
     {
@@ -127,13 +103,7 @@
       "time": "08/05 00:00",
       "sentiment": "",
       "body": "API release notes 公告 Inference Hooks 進入 Enterprise 組織的 beta 階段，可將 claude.ai、Cowork、Claude Code 上的每一次受管治 prompt 導向企業自身的 AI 安全伺服器。",
-      "focusTags": [],
-      "sedimented": [
-        {
-          "id": "claude-code",
-          "pageType": "entity"
-        }
-      ]
+      "focusTags": []
     }
   ],
   "mediaReports": [
@@ -166,12 +136,6 @@
       "body": "即今日聚焦提及的 Claude Code／Gemini CLI 漏洞報導，指出攻擊者可透過 GitHub Issue 內容觸及 CI workflow 的 secrets，原文摘要未提供更多攻擊細節。",
       "focusTags": [
         "[風險警示]"
-      ],
-      "sedimented": [
-        {
-          "id": "claude-code",
-          "pageType": "entity"
-        }
       ]
     },
     {
@@ -208,13 +172,7 @@
       "time": "08/05",
       "sentiment": "",
       "body": "AWS 官方發文說明如何在 Amazon Bedrock 上以單一區域執行 Claude Code，滿足企業資料落地（data residency）要求。",
-      "focusTags": [],
-      "sedimented": [
-        {
-          "id": "claude-code",
-          "pageType": "entity"
-        }
-      ]
+      "focusTags": []
     }
   ],
   "discussions": [
@@ -225,13 +183,7 @@
       "time": "08/06 16:36",
       "sentiment": "😤",
       "body": "使用者回報從 Claude Code 終端機輸出複製文字時，會夾帶多餘的縮排與行尾空白，累計 283 個表情反應，是今日互動量最高的已知問題回報。",
-      "focusTags": [],
-      "sedimented": [
-        {
-          "id": "claude-code",
-          "pageType": "entity"
-        }
-      ]
+      "focusTags": []
     },
     {
       "title": "[BUG] Oversized image breaks conversation permanently - no way to recover without starting new chat",
@@ -267,13 +219,7 @@
       "time": "08/06 03:52",
       "sentiment": "😊",
       "body": "開發者發布終端機 session 管理工具 Wallfacer，討論串中也有人分享自製的類似 session 搜尋／管理工具（Rust／Tantivy 搜尋、trim context 等功能）。",
-      "focusTags": [],
-      "sedimented": [
-        {
-          "id": "claude-code",
-          "pageType": "entity"
-        }
-      ]
+      "focusTags": []
     },
     {
       "title": "Show HN: HUD, an open-source minimal terminal UI for ClaudeCode, Codex, OpenCode",
@@ -291,13 +237,7 @@
       "time": "08/06 02:48",
       "sentiment": "🤔",
       "body": "作者實測發現用排程執行 `claude -p` 時，冷啟動在尚未開始工作前就先耗掉約 15 萬 token，文章解析 `-p` 實際載入的內容，以及何時該搭配 `--bare` 旗標降低成本。",
-      "focusTags": [],
-      "sedimented": [
-        {
-          "id": "claude-code",
-          "pageType": "entity"
-        }
-      ]
+      "focusTags": []
     },
     {
       "title": "Teaching Claude Code to Paint: A Stateful Image-Editing Skill Built on Gemini's Interactions API and MCP",
@@ -306,13 +246,7 @@
       "time": "07/22 22:44",
       "sentiment": "😊",
       "body": "作者分享如何將 Google Gemini 的圖片模型包裝成 Claude Code skill 與 MCP server，支援多輪、具狀態的圖片編輯。",
-      "focusTags": [],
-      "sedimented": [
-        {
-          "id": "claude-code",
-          "pageType": "entity"
-        }
-      ]
+      "focusTags": []
     }
   ],
   "billing": [
@@ -323,13 +257,7 @@
       "time": "08/07 09:19",
       "sentiment": "",
       "body": "使用者回報自 2026-07-20 起（Fable 5 正式成為 Max 方案標配的當天），Claude Code 在 Max 方案上執行 Fable 5 時會被要求額外「usage credits」，並靜默降級為 Opus 4.8，累計 67 則留言。",
-      "focusTags": [],
-      "sedimented": [
-        {
-          "id": "claude-code",
-          "pageType": "entity"
-        }
-      ]
+      "focusTags": []
     },
     {
       "title": "Claude Code is the fastest agent framework but costs nearly three times more than the cheapest rival - the-decoder.com",
@@ -338,13 +266,7 @@
       "time": "08/06 17:38",
       "sentiment": "",
       "body": "the-decoder.com 報導測試結果指出 Claude Code 是速度最快的 agent 框架，但成本接近最便宜對手的三倍；原文摘要未提供測試方法與具體數字。",
-      "focusTags": [],
-      "sedimented": [
-        {
-          "id": "claude-code",
-          "pageType": "entity"
-        }
-      ]
+      "focusTags": []
     }
   ],
   "focus": [
@@ -435,34 +357,14 @@
   "preview": "Anthropic 正式證實成立內部晶片設計團隊，將為 Claude 客製化推理硬體以降低對 Nvidia GPU 的依賴；公司發言人強調仍會維持「多晶片」策略，AWS、Google、Nvidia、AMD 的硬體仍是擴展運算的核心。路透社、TechCrunch、Business Insider 等媒體同步報導。",
   "sedimentedToday": [
     {
-      "id": "claude-code",
-      "name": "Claude Code",
-      "pageType": "entity"
-    },
-    {
       "id": "dario-amodei",
       "name": "Dario Amodei",
-      "pageType": "entity"
-    },
-    {
-      "id": "fable-5",
-      "name": "Claude Fable 5",
       "pageType": "entity"
     },
     {
       "id": "pricing",
       "name": "Anthropic 訂閱方案與計費政策",
       "pageType": "entity"
-    },
-    {
-      "id": "ai-agent-safety",
-      "name": "AI Agent 安全與可靠性",
-      "pageType": "topic"
-    },
-    {
-      "id": "anthropic-business",
-      "name": "Anthropic 商業健康度",
-      "pageType": "topic"
     },
     {
       "id": "anthropic-government-policy",
@@ -472,11 +374,6 @@
     {
       "id": "community-tech-discussions",
       "name": "社群技術討論趨勢",
-      "pageType": "topic"
-    },
-    {
-      "id": "community-tech-patterns",
-      "name": "社群實戰模式庫",
       "pageType": "topic"
     },
     {
