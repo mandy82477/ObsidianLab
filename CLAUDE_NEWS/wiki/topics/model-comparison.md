@@ -37,7 +37,7 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 | 模型 | 一句定位 | 定價（$/Mtok in/out）· Context | 最適合 |
 |------|---------|------------------------------|--------|
 | [[entities/fable-5\|Fable 5]] | 旗艦（Mythos 級公開版） | $10 / $50 · 1M | 跨多天的長期 agentic 工作流、deep reasoning、安全漏洞分析 |
-| [[entities/opus-5\|Opus 5]] | 次旗艦（Max 預設 / Pro 最強） | ~$5 / $25（推算，見定價備注）· 1M | 數小時自主編碼、跨數十檔 refactor、複雜系統工程 |
+| [[entities/opus-5\|Opus 5]] | 次旗艦（Max 預設 / Pro 最強） | $5 / $25（官方確認）· 1M | 數小時自主編碼、跨數十檔 refactor、複雜系統工程 |
 | [[entities/sonnet-5\|Sonnet 5]] | 主力平衡（Claude Code 預設） | $2 / $10（促銷至 8/31）· 1M | 日常規模開發（分鐘～1 小時級）、tool use 密集、成本敏感 |
 | Sonnet 4.6 | 前代主力 | 低於 Sonnet 5 正式價 · 200K | 已驗證穩定、尚未遷移的既有工作流 |
 | Haiku 4.5 | 輕量 worker | 最低 · 200K | 即時互動、高頻批量分類、延遲與成本敏感的 sub-agent |
@@ -62,7 +62,7 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 | 你的情境 | 建議 | 依據 |
 |---------|------|------|
 | Claude Code 日常開發 | **Sonnet 5**（預設即是） | 官方 coding／agents 主力定位；v2.1.197 起預設 |
-| 想接近旗艦效能但成本減半 | **Opus 5** | 官方稱評測逼近 Fable 5、定價約半價（推算） |
+| 想接近旗艦效能但成本減半 | **Opus 5** | 官方稱評測逼近 Fable 5；$5/$25 為 Fable 5 的一半（2026-08-08 官方確認）|
 | 跨多天的複雜 agentic 任務 | **Fable 5** | 917 場景以 0.9 分險勝 Opus 4.8，但 token 約 2 倍 |
 | 資安審查 / 漏洞分析 | **Fable 5**（首選）→ 次選 **Opus 5** | Fable 5 能力最強惟有分類器誤判；Mythos 5 非公開選項 |
 | 需要壓成本的批量任務 | **Haiku 4.5 + Sonnet 5 協調**，或 **Fable 5 調度 + 便宜模型執行** | 官方基準：Fable 5 調度 46% 成本達 96% 效能 |
@@ -107,8 +107,8 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 | Fable 5 vs GPT-5.6 Sol（多小時個人使用） | Fable 5 速度更快、bug 更少；但 Sol 5.6 額度重置更頻繁（甚至每日兩次）——「能力 vs 配額體驗」兩軸各勝，非量化。單一使用者，弱 | Reddit r/ClaudeCode「Fable > Sol 5.6 Ultra」，2026-07-14 |
 | 同一 iOS 卡路里 App brief 並排（影片） | 僅影片示範，無文字評測結論。單一使用者，弱 | Reddit r/ClaudeCode，2026-07-14 |
 | Opus 5 長時任務心得 | 稱 long-horizon 表現最佳、low effort 成本效益高，**無 benchmark 數字**。單一使用者（週熱門），弱 | Reddit r/ClaudeAI「Opus 5 results are really shocking!!」，2026-07-24 |
-| Opus 5 effort dial 非單調 | 稱超過 `high` 後編碼分數下降，**幅度待查證**；社群措辭強於官方原文（見下方細節）。單一貼文（週熱門），弱 | Reddit r/artificial，2026-07-25；[官方 migration guide](https://platform.claude.com/docs/en/about-claude/models/migration-guide)，查核 2026-07-29 |
-| MineBench.ai 上 Fable 5 vs Opus 5 差異 | 分數與測試方法**待查證**（日報僅擷取標題與縮圖）。單一貼文（週熱門），弱 | Reddit r/ClaudeAI，2026-07-26 |
+| Opus 5 effort dial 非單調 | ❌ **官方文件反證**（2026-08-08 查證）：官方載明 effort 提高可更可靠轉換為更好結果、直到 `max`，未見任何「高於 high 即下降」敘述。社群說法不成立 | Reddit r/artificial，2026-07-25；[官方 migration guide](https://platform.claude.com/docs/en/about-claude/models/migration-guide)，查核 2026-07-29 |
+| MineBench.ai 上 Fable 5 vs Opus 5 差異 | ⚠️ **查證後不可採信**（2026-08-08）：MineBench 測 3D voxel 空間推理（文字→JSON 座標，人類配對投票算 Elo），與編碼／agentic 能力無關；榜上**查無 Fable 5 或 Opus 5**（現列 GPT-5 4215／Claude 4 2108／Gemini 3 Pro 2091，無資料日期）。單一貼文（週熱門），弱 | Reddit r/ClaudeAI，2026-07-26；[minebench.ai](https://minebench.ai/) 2026-08-08 查證 |
 | Opus 5 上線兩週後的體感回饋 | 三則負向回報：「過度自信」（07-29）、「不如跑分預期」（07-30）、「令人挫折」（08-04），皆無量化數字。多則獨立貼文但同平台，弱～中 | Reddit r/ClaudeCode，2026-07-29 / 07-30 / 08-04 |
 
 **Effort dial 細節：** 原始貼文於「至少在程式碼任務上看起來這樣做…」處截斷；經查證官方 migration guide（2026-07-29 查核）僅載明 `max` 效果「可能報酬遞減、在較簡單任務上容易 overthinking」，屬**定性**描述，未見具體分數或「高於 high 即單調下降」的文字——社群措辭比官方原文更強烈，此落差待驗證，不可逕自採信社群版本的因果強度，亦不可推算下降幅度。

@@ -3554,3 +3554,33 @@
   - **架構文件同步由既有機械檢查攔下**：`check_arch_docs.py` 檢查 1 立即報「Design Diagram.md／architecture-current.html 缺少來源 Official Docs」，已補 S11 節點與 HTML chip、來源數 10 → 11、三處日期同步至 08-08
 - **防再犯**：兩條 sync_pair 入 `.claude/review-registry.json`（5c 兩側齊全、回訪措辭鐵則）
 - **測試**：`run_tests.py` 綠、`check_rules.py` 零錯誤
+
+## 2026-08-08 Lint 5c：逾期待查證清算首跑（本機）
+
+雲端 08-08 lint 因 egress 封鎖跳過 5c，使用者要求本機補跑。**只跑 5c，不重跑整輪**（當日六記者與其餘步驟已於雲端執行完畢，重跑會產生第二筆 lint 紀錄）。
+
+**盤點**：全庫 299 筆待查證標記，分佈 22 頁；最大宗為 `topics/ai-agent-safety`（66）、`topics/anthropic-government-policy`（39）、`topics/competitor-landscape`（29）、`entities/claude-code`（27）。依規則優先決策頁，本輪處理 **10 筆**（規則上限）。
+
+**查實（7 筆）：**
+- **Team 方案月費**：standard $20／premium $100（年繳），月繳各 $25／$125，可混搭席位型別，未見最低席位數（claude.com/pricing）
+- **Free 月費**：$0
+- **Enterprise 定價**：未公開完整報價，標示為「席位費＋依 API 費率計量」並提及 $20／席，需洽業務
+- **Opus 5 定價**：**$5 / $25 per Mtok**，官方逐字載明「unchanged from Claude Opus 4.8」；Fast mode（research preview，僅 Claude API）另計 $10/$50
+- **Opus 4.8 定價**：同為 $5／$25（由上述官方句反推）
+- **「定價歧異」實為假矛盾**：官方「為 Fable 5 的一半」（$5 vs $10）與 MarkTechPost「維持原 Opus 定價」（與 4.8 相同）**同時成立**，講的是同一組數字的兩個對照對象——與 07-18～21 那四則「矛盾」報導同一種病：各自省略了對照基準／適用層級
+- **轉售 ToS**：明確違反消費者條款第 3 條（禁止 resell the Services）與第 2 條（禁止分享帳號登入資訊、API key、帳號憑證）
+
+**反證（1 筆，最有價值的一筆）：**
+- **Opus 5「effort dial 非單調」不成立**：07-29 Reddit 週熱門稱超過 `high` 後編碼分數下降、且稱官方 migration guide 有此說明。查官方 [What's new in Claude Opus 5](https://platform.claude.com/docs/en/about-claude/models/whats-new-opus-5)：明載「converts additional effort into better results more reliably than any earlier Opus model」，並將 test-time compute scaling（效果隨 effort 提升直到 `max`）列為主要能力改進。官方對 `xhigh`／`max` 的唯一告誡是「須設較大 `max_tokens`」，以及 `thinking: disabled` 在該層級回 400。**社群說法反轉了官方原意**，已在 model-comparison 標 ❌ 反證、opus-5 記錄查證原文
+
+**查證後不可採信（1 筆）：**
+- **MineBench.ai Fable 5 vs Opus 5**：該榜測 **3D voxel 空間推理**（文字→JSON 座標，人類配對投票算 Elo），與編碼／agentic 能力無關；榜上查無 Fable 5 或 Opus 5（現列 GPT-5 4215／Claude 4 2108／Gemini 3 Pro 2091，無資料日期）。原條目被引為模型能力對照屬誤用
+
+**確認官方未載（1 筆）：**
+- 中國轉售灰色市場的折扣普遍性、轉售規模、Anthropic 是否已知悉或執法——均無官方聲明或第三方佐證，改標「2026-08-08 查證，官方未載」
+
+**連帶同步**：`model-comparison` 快速選型表 Opus 5 列由「~$5/$25（推算）」改為「$5/$25（官方確認）」；情境推薦「成本減半」列補官方確認；三頁「最後更新」同步 08-08（本輪為查證性更新，不動「最後新聞更新」）。
+
+**剩餘 289 筆**：集中在 ai-agent-safety／anthropic-government-policy／competitor-landscape／claude-code 四頁，多為單方指控與媒體標題級報導，下輪 lint 續清。
+
+**首跑觀察**：10 筆中有 **2 筆的原始記載方向是錯的**（effort dial 反轉官方原意、MineBench 引用了與該議題無關的榜單），不只是「缺數字」。這說明待查證存量不是單純的資訊缺口，而是**含錯誤資訊的存量**——289 筆裡估計還有同類，優先清決策頁的判斷是對的。
