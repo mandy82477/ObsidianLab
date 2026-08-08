@@ -251,7 +251,7 @@ window.WIKI_DATA = {
       "pill": "active",
       "firstSeen": "2026-06-09",
       "startDate": "",
-      "lastUpdated": "2026-08-07",
+      "lastUpdated": "2026-08-08",
       "lastNewsUpdate": "2026-08-07",
       "updateFreq": "",
       "summary": "**2026-08-07 最新**：Anthropic 官方部落格宣布更新 Fable 5 的生物安全防護（biology safeguards），測試顯示各產品面「生物相關降級」（誤判觸發 fallback 至 Opus 4.8）情形減少約 85%；官方表示日常健康／教育類問題（如判讀檢驗報告、理解症狀、學習生物學）…",
@@ -430,8 +430,8 @@ window.WIKI_DATA = {
       "lastUpdated": "2026-08-08",
       "lastNewsUpdate": "2026-08-07",
       "updateFreq": "",
-      "summary": "**2026-07-04 官方推出企業支出控管（spend controls）功能**，回應企業 agentic AI 帳單頻繁超支的普遍痛點，是官方首次針對成本失控問題推出產品化解法（詳見下方時序）。目前所有付費方案用量仍維持原訂閱配額制——原定 2026-06-15 實施的「程式化用量（Agent SDK、`cla…",
-      "latestHeadline": "2026-07-04 官方推出企業支出控管（spend controls）功能，回應企業 agentic AI 帳單頻繁超支的普遍痛點，是官方首次針對成本失控問題推出產品化解法（詳見下方時序）。目前所有付費方案用量仍維持原訂閱配額制——原定 2026-06-15 實施的「程式化用量（Agent SDK、`claude "
+      "summary": "**2026-07-20 起，旗艦模型（現為 Fable 5）在訂閱體系中被切成兩層**：Max 與 Team premium 席位維持標配、上限為週用量的 50%；Pro 與 Team standard 席位改以 usage credits 按 API 費率付費，並發放一次性過渡 credit。此分界於 2026-0…",
+      "latestHeadline": "2026-07-20 起，旗艦模型（現為 Fable 5）在訂閱體系中被切成兩層：Max 與 Team premium 席位維持標配、上限為週用量的 50%；Pro 與 Team standard 席位改以 usage credits 按 API 費率付費，並發放一次性過渡 credit。此分界於 2026-08-08"
     },
     {
       "id": "sonnet-5",
@@ -1685,7 +1685,7 @@ window.WIKI_DATA = {
       "pill": "active",
       "firstSeen": "",
       "startDate": "2026-07-02",
-      "lastUpdated": "2026-08-05",
+      "lastUpdated": "2026-08-08",
       "lastNewsUpdate": "2026-08-04",
       "updateFreq": "",
       "summary": "**現行公開陣容：Fable 5 > Opus 5 > Sonnet 5 > Sonnet 4.6 > Haiku 4.5**（Opus 4.8 / Opus 4.7 已被取代，Mythos 5 僅限授權機構）。本頁回答一個問題：**「我該用哪個 Claude 模型？」**——只做橫向對照、情境推薦與可驗證的選型分界；…",

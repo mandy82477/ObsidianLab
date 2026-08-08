@@ -2,7 +2,7 @@
 page: "entities/fable-5"
 kind: "entity"
 type: "model"
-status: "active（正式發布；出口管制已解除，2026-07-01 起全球恢復存取；免費期已於 2026-07-19 到期，Max/Team 後續存取政策尚有分歧報導，見 [[entities/pricing]]）"
+status: "active（正式發布；出口管制已解除，2026-07-01 起全球恢復存取；免費期已於 2026-07-19 到期，07-20 起 Max／Team premium 標配（週用量 50% 內）、Pro／Team standard 改走 usage credits，見 [[entities/pricing]]）"
 domain: "🤖 模型"
 last_updated: "2026-08-07"
 last_news_update: "2026-08-07"
@@ -21,7 +21,7 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 **狀態：** active（正式發布；出口管制已解除，2026-07-01 起全球恢復存取；免費期已於 2026-07-19 到期，Max/Team 後續存取政策尚有分歧報導，見 [[entities/pricing]]）
 **領域：** 🤖 模型
 **首次出現：** 2026-06-09
-**最後更新：** 2026-08-07
+**最後更新：** 2026-08-08
 **最後新聞更新：** 2026-08-07
 
 > **最新進展**（2026-08-07）
@@ -37,7 +37,7 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 
 Claude Fable 5 是 Anthropic 於 2026-06-09 發布的旗艦模型，為**史上首款向大眾開放的 Mythos 級模型**。Fable 5 與 Claude Mythos 5 共用相同的模型權重，差異在於 Fable 5 前置安全分類器——觸發時 fallback 至 Claude Opus 4.8（Anthropic 稱不到 5% 的 session 受影響）。核心定位：任務越複雜越長期，Fable 5 的優勢越明顯；在軟體工程、知識工作、視覺、科學研究等幾乎所有 benchmark 達到 SOTA。
 
-**當前狀態（2026-07-20 起）**：出口管制（2026-06-13 至 2026-07-01，歷時 18 天）已正式解除，全球恢復存取。免費使用期限已於 **2026-07-19 到期**；07-20 起 Max/Team 方案存取政策出現分歧報導——07-19 Tech Times 稱轉為永久標配，07-20 Reddit 週熱門稱轉為計量存取（metered），孰是孰非尚待官方公告釐清，詳見 [[entities/pricing]]。Redeploy 同步導入「Defense in Depth」安全機制——更嚴格的資安/程式碼請求分類器，判定高風險時自動 fallback 至 Opus 4.8，首日已有誤判實測回報。管制事件完整經過見「出口管制：雙方立場」與「歷史記錄」。
+**當前狀態（2026-07-20 起）**：出口管制（2026-06-13 至 2026-07-01，歷時 18 天）已正式解除，全球恢復存取。免費使用期限已於 **2026-07-19 23:59:59 PT 到期**；07-20 起訂閱存取分為兩層——Max 方案／Team premium seats 為標配（可用至多週用量上限的 50%，不額外收費），Pro 方案／Team standard seats 不計入方案用量、改以 usage credits 按 API 費率付費，合格 Pro／Team standard 另有一次性過渡 credit。此分界 2026-08-08 經官方 Help Center 查證確認，先前四則矛盾報導就此收斂，詳見 [[entities/pricing]]。Redeploy 同步導入「Defense in Depth」安全機制——更嚴格的資安/程式碼請求分類器，判定高風險時自動 fallback 至 Opus 4.8，首日已有誤判實測回報。管制事件完整經過見「出口管制：雙方立場」與「歷史記錄」。
 
 | 指標 | 數值 |
 |------|------|
@@ -45,7 +45,7 @@ Claude Fable 5 是 Anthropic 於 2026-06-09 發布的旗艦模型，為**史上�
 | Output 定價 | $50 / 百萬 token |
 | Context Window | 1,000,000 token |
 | 最大 Output | 128,000 token |
-| 免費期限 | 已於 2026-07-19 到期；Max/Team 後續存取政策（永久標配／計量存取）分歧報導中，見 [[entities/pricing]]（原至 06-22，經多次延長，見「歷史記錄」）|
+| 免費期限 | 已於 2026-07-19 到期；此後 Max／Team premium 標配（週用量 50% 內）、Pro／Team standard 走 usage credits（官方已確認），見 [[entities/pricing]]（原至 06-22，經多次延長，見「歷史記錄」）|
 
 ## 熱度與試用價值
 
@@ -58,9 +58,9 @@ Claude Fable 5 是 Anthropic 於 2026-06-09 發布的旗艦模型，為**史上�
 
 > 詳細最新熱度見 [[feature-radar]]
 
-## 配額與計費過渡（原訂 7/7，已於 7/19 到期，後續政策分歧中）
+## 配額與計費過渡（原訂 7/7，已於 7/19 到期；後續分界已確認）
 
-**規則（2026-07-01 原始公告）：** Pro/Max/Team 方案 7/7 前維持每週配額 50%（含 Fable 5 用量），7/7 後改依用量計費（usage-based billing），定價另行公布；Enterprise 方案需聯繫帳戶主管（[Anthropic Blog](https://www.anthropic.com/news/redeploying-fable-5)，2026-07-01）。**此 7/7 節點已因免費期限三度順延而延至 2026-07-19 才到期，免費期目前已結束**；07-20 起 Max/Team 存取政策本身出現分歧報導（永久標配 vs 計量存取），詳見上方「現況」、頁首 callout 與 [[entities/pricing]]。
+**規則（2026-07-01 原始公告）：** Pro/Max/Team 方案 7/7 前維持每週配額 50%（含 Fable 5 用量），7/7 後改依用量計費（usage-based billing），定價另行公布；Enterprise 方案需聯繫帳戶主管（[Anthropic Blog](https://www.anthropic.com/news/redeploying-fable-5)，2026-07-01）。**此 7/7 節點已因免費期限三度順延而延至 2026-07-19 才到期，免費期目前已結束**；07-20 起的實際分界（Max／Team premium 標配 50% 上限、Pro／Team standard 走 usage credits）已於 2026-08-08 由官方 Help Center 確認，詳見上方「現況」、頁首 callout 與 [[entities/pricing]]。
 
 **配額重置時間因訂閱起始日而異**：Reddit 社群 07-03 釐清，Fable 5 額度重置規則並非統一週期，而是依各用戶訂閱方案的起始時間點各自輪轉（「Fable resets on Monday if you held a plan already」），並非所有人同一天重置（[Reddit r/ClaudeCode](https://www.reddit.com/r/ClaudeCode/comments/1umt5h5/fable_resets_on_monday_if_you_held_a_plan_already/)，2026-07-03）。
 
@@ -109,7 +109,7 @@ claude --model claude-fable-5-20260609
 - ⚠️ **「失去靈魂」討論**：部分用戶認為 Fable 5 相比 Opus 4.6 更工具性、減少人本關懷深度
 - ⚠️ **「Defense in Depth」分類器誤判（2026-07-02，新）**：redeploy 後新增的資安/程式碼請求分類器出現誤判案例——合法資安審查請求被攔截、化學問題被拒（後者 2026-07-02 指控，至今無後續），攔截範圍可能超出原設計的 coding/cybersecurity 場景
 - 🔴 **Advisor 角色全面 unavailable（2026-07-10，新，未修復）**：GitHub Issue #73365 回報 Fable 5 advisor（Opus 4.8 main 底下的 advisor 角色）在所有 Claude Code session 中皆顯示「unavailable」，版本 v2.1.198，累積 50 則留言、100 個讚，情緒強烈。此為 Claude Code 功能面的呼叫失效，非模型能力本身劣化；完整 bug 追蹤見 [[entities/claude-code]] 已知問題（[GitHub Issues](https://github.com)，2026-07-10）
-- ✅ **Max 方案誤判需購買 usage credits 才能執行 Fable 5（2026-07-20，官方已證實為誤判並建議重啟；07-24 reaction 增至 13 個）**：GitHub Issue #79337（07-20 記錄 10 讚、35 留言；07-24 reaction 增至 13 個，留言數未見更新）回報，Fable 5 免費期到期後的 07-20 當天，Max 方案一度被要求額外購買 usage credits 才能執行 Fable 5，並將 session 靜默降級至 Opus 4.8；受影響帳號的已儲存模型設定顯示為 `claude-fable-5[1m]`（1M context 變體）。症狀與同日 Anthropic Status 已證實的 Max 誤判事件高度吻合，官方已確認為誤判並建議受影響用戶重啟。存取政策本身（Max/Team 是否「轉為永久標配」抑或「轉為計量存取」）仍有分歧報導，計費細節見 [[entities/pricing]]（[GitHub Issues](https://github.com/anthropics/claude-code/issues/79337)，2026-07-20；追蹤至 2026-07-24）
+- 🔴 **Max 方案誤判需購買 usage credits 才能執行 Fable 5（2026-07-20 起，官方 07-20 定性為誤判並建議重啟，但社群回報持續至 08-07 未解，留言數 35 → 67）**：GitHub Issue #79337（07-20 記錄 10 讚、35 留言；07-24 reaction 增至 13 個，留言數未見更新）回報，Fable 5 免費期到期後的 07-20 當天，Max 方案一度被要求額外購買 usage credits 才能執行 Fable 5，並將 session 靜默降級至 Opus 4.8；受影響帳號的已儲存模型設定顯示為 `claude-fable-5[1m]`（1M context 變體）。症狀與同日 Anthropic Status 已證實的 Max 誤判事件高度吻合，官方 07-20 已定性為誤判並建議重啟——**但該建議未解決問題**：留言數自 07-20 的 35 則增至 08-07 的 67 則，社群回報延燒逾 18 天仍無官方修復或說明（以 [[entities/pricing]] 08-07 查證為準；本頁先前標為「已解決」係停在 07-24 追蹤，2026-08-08 更正）。存取政策本身已於 2026-08-08 由官方文件釐清（Max／Team premium 標配、Pro／Team standard 走 credits），計費細節見 [[entities/pricing]]（[GitHub Issues](https://github.com/anthropics/claude-code/issues/79337)，2026-07-20；追蹤至 2026-08-07）
 - ⚠️ **「太危險」分級受競品追平質疑（2026-07-24 日報收錄，社群觀點，弱訊號）**：r/ClaudeCode 使用者認為 Fable 5 被「削弱」後感覺只比 Opus 4.8 聰明一點，開源模型已追上「太危險」等級模型的能力（2026-07-24，單一來源，score 恆 0）；同期 r/ClaudeAI 週熱門貼文（原貼 2026-07-18）另有一名自稱基因學/神經科學研究者，質疑 Fable/Mythos「對科學研究太危險」的分類與自身分析 RNA 等用途完全無關。兩則均為社群主觀觀點，非量化評測；分類爭議的安全政策脈絡另見安全政策記者對應頁面，此處僅記模型定位/能力落差角度
 
 ## 出口管制：雙方立場
