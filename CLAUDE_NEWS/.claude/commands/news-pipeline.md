@@ -80,7 +80,7 @@ Phase B 結束後（無論成功或失敗，皆須進入本階段以完成 Step 
 讀取 `C:\Users\Mandy\CLAUDE_OBSIDIAN\ObsidianLab\CLAUDE_NEWS\.claude\commands\news-pipeline-steps.md`，只執行「Phase C 步驟」（Step 3、Step 4、Step 5、Step 6），不呼叫 Agent tool 派工任何 sub-agent。Step 6 log 需整合上述已知結果與本階段（Step 3/4/5）實際結果。使用繁體中文輸出。
 ```
 
-Phase C agent 完成後自動通知本 session；本 session 彙整 Phase A + B + C 結果，輸出完整完成摘要（格式見 `.claude/commands/news-pipeline-steps.md`「完成摘要」）。
+Phase C agent 完成後自動通知本 session；本 session 彙整 Phase A + B + C 結果，輸出完整完成摘要（格式見 `.claude/commands/news-pipeline-steps.md`「完成摘要」）。完成摘要**必含「📋 待使用者裁示」區塊**（同檔案該小節），把 `wiki/log.md` 當日待確認事項接出來給使用者看，無未決項也要寫「無」。
 
 ---
 

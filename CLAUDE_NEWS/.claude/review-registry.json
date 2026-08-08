@@ -610,15 +610,50 @@
     {
       "name": "wiki/index.md 為純路由表：異動日誌區塊不得再長回來（2026-08-02 瘦身：83% 是 log.md 的重複副本，路由成本 42k→8k）",
       "assertion": "max_count",
-      "files": ["wiki/index.md"],
-      "patterns": ["## 近期異動"],
+      "files": [
+        "wiki/index.md"
+      ],
+      "patterns": [
+        "## 近期異動"
+      ],
       "max": 0
     },
     {
       "name": "wiki/CLAUDE.md 查詢分流四路徑齊全（index 瘦身後的配套：專有名詞 grep／概念走 index／結構性盤點 grep 標頭／近況走 log 或日報）",
       "assertion": "all_contain",
-      "files": ["wiki/CLAUDE.md"],
-      "patterns": ["搜尋策略（查詢分流）", "直接 Grep", "目錄表挑頁", "Grep 頁面標頭欄位", "不可整讀"]
+      "files": [
+        "wiki/CLAUDE.md"
+      ],
+      "patterns": [
+        "搜尋策略（查詢分流）",
+        "直接 Grep",
+        "目錄表挑頁",
+        "Grep 頁面標頭欄位",
+        "不可整讀"
+      ]
+    },
+    {
+      "name": "本週推薦選取邏輯必須保留時間閘（熱度只加不減，無時間項時候選池會固化成歷代名人堂——2026-08-08 凍結 14 天的防再犯）",
+      "assertion": "all_contain",
+      "files": [
+        ".claude/rules/wiki-ingest-features.md"
+      ],
+      "patterns": [
+        "時間閘",
+        "不補舊條目湊數",
+        "本週無新達標功能"
+      ]
+    },
+    {
+      "name": "news-pipeline.md <-> news-pipeline-steps.md：完成摘要必須接出「待使用者裁示」（待確認事項只寫進 log.md 等於靜默丟棄——2026-08-02 裁示擱置 6 天的防再犯）",
+      "assertion": "all_contain",
+      "files": [
+        ".claude/commands/news-pipeline.md",
+        ".claude/commands/news-pipeline-steps.md"
+      ],
+      "patterns": [
+        "待使用者裁示"
+      ]
     }
   ],
   "coupling_hints": {
