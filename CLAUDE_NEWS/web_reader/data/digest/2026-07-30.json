@@ -299,11 +299,6 @@
       "id": "opus-5",
       "name": "Claude Opus 5",
       "pageType": "entity"
-    },
-    {
-      "id": "community-pattern-trends",
-      "name": "社群趨勢觀察（週更）",
-      "pageType": "topic"
     }
   ]
 }
