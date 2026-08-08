@@ -21,7 +21,7 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 **狀態：** active（出口管制解除，2026-07-01 起全球恢復存取）
 **領域：** 🤖 模型
 **首次出現：** 2026-04（限定夥伴 Preview）
-**最後更新：** 2026-07-30
+**最後更新：** 2026-08-08
 **最後新聞更新：** 2026-07-30
 
 > **最新進展**（2026-07-29）
@@ -33,9 +33,9 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 
 ## 現況
 
-**2026-07-28 最新**：Anthropic 研究部落格披露 Claude Mythos Preview 在密碼學研究上的兩項改進攻擊法——大幅削弱後量子數位簽章方案 HAWK、以及攻擊 round-reduced AES 的新方法，官方強調屬重大研究進展但**目前不影響任何正式系統**（[Anthropic Research](https://www.anthropic.com/research/discovering-cryptographic-weaknesses)，2026-07-28，HN score 221，source_count=5）；同日 GitHub 出現對 HAWK-256 的實際可行金鑰恢復攻擊示範（HN score 57）。這延續 Mythos Preview 先前展示的「自主完成密碼學研究任務」能力路線。同日，Oxide Computer 宣布加入 Project Glasswing，導入 Claude Mythos 5 主動掃描自家開源程式碼庫（韌體、作業系統、控制平面、網路堆疊）尋找並修補漏洞（[Oxide Blog](https://oxide.computer/blog/oxide-anthropic-project-glasswing)，HN score 16），為 Glasswing 又一具名企業夥伴案例。
+**2026-07-29 最新（密碼學界後續反應）**：密碼工程背景作者於 Cryptography Engineering 部落格分析 07-28 研究成果（見下），評論兩項攻擊在成熟度與意義上的落差（HN score 168）（[Cryptography Engineering](https://blog.cryptographyengineering.com/2026/07/29/some-notes-about-anthropics-new-results/)，2026-07-29）；密碼學家 Matthew Green 經 Simon Willison 引述評論，將此次研究放入公鑰密碼演算法邁向後量子轉型過渡期的脈絡討論（[Simon Willison](https://simonwillison.net/2026/Jul/29/matthew-green/#atom-everything)，2026-07-29）。兩則皆為密碼學專業社群對 07-28 研究成果的第一波深度反應，具體技術落差內容原摘要未進一步展開，待後續報導補充。
 
-**2026-07-29 密碼學界後續反應**：密碼工程背景作者於 Cryptography Engineering 部落格分析上述兩項攻擊成果，評論兩者在成熟度與意義上的落差（HN score 168）（[Cryptography Engineering](https://blog.cryptographyengineering.com/2026/07/29/some-notes-about-anthropics-new-results/)，2026-07-29）；密碼學家 Matthew Green 經 Simon Willison 引述評論，將此次研究放入公鑰密碼演算法邁向後量子轉型過渡期的脈絡討論（[Simon Willison](https://simonwillison.net/2026/Jul/29/matthew-green/#atom-everything)，2026-07-29）。兩則皆為密碼學專業社群對 07-28 研究成果的第一波深度反應，具體技術落差內容原摘要未進一步展開，待後續報導補充。
+**2026-07-28**：Anthropic 研究部落格披露 Claude Mythos Preview 在密碼學研究上的兩項改進攻擊法——大幅削弱後量子數位簽章方案 HAWK、以及攻擊 round-reduced AES 的新方法，官方強調屬重大研究進展但**目前不影響任何正式系統**（[Anthropic Research](https://www.anthropic.com/research/discovering-cryptographic-weaknesses)，2026-07-28，HN score 221，source_count=5）；同日 GitHub 出現對 HAWK-256 的實際可行金鑰恢復攻擊示範（HN score 57）。這延續 Mythos Preview 先前展示的「自主完成密碼學研究任務」能力路線。同日，Oxide Computer 宣布加入 Project Glasswing，導入 Claude Mythos 5 主動掃描自家開源程式碼庫（韌體、作業系統、控制平面、網路堆疊）尋找並修補漏洞（[Oxide Blog](https://oxide.computer/blog/oxide-anthropic-project-glasswing)，HN score 16），為 Glasswing 又一具名企業夥伴案例。
 
 **當前狀態（2026-07-01 起）**：出口管制已全面解除，Mythos 5 可用範圍從機構白名單擴大為全球一般用戶；解禁交換條件為 Anthropic 承諾主動偵測安全風險、配合標準協議、通報惡意活動。管制事件歷時 18 天（2026-06-13 至 2026-07-01），完整經過見下方「時序」。
 
@@ -95,7 +95,7 @@ Anthropic 的官方 AI 資安能力研究計畫，Mythos Preview 為核心工具
 | ICE 加入 Glasswing | 2026-06-04 | 美國聯邦執法機構加入 |
 | Mythos 5 部分解禁（100+ 機構）| 2026-06-27 | 商務部長 Lutnick 致函確認；條件：受信任合作夥伴 + 安全措施 |
 | NSA 用 Mythos 發動攻擊 | 2026-06-05 | 防禦框架「兩用性」首次公開確認（FT 獨家）|
-| Nozomi Networks 加入 Glasswing | 2026-07-20 | 工業資安公司加入，協助強化 OT／IoT／cyber-physical systems 安全防護（Industrial Cyber，僅標題可用，❓ 待查證）|
+| Nozomi Networks 加入 Glasswing | 2026-07-20 | 工業資安公司加入，協助強化 OT／IoT／cyber-physical systems 安全防護（Industrial Cyber，2026-07-20 報導，僅標題可用，至今無後續內容）|
 | Oxide Computer 加入 Glasswing | 2026-07-28 | 應用 Mythos 5 主動掃描自家開源程式碼庫（韌體/OS/控制平面/網路堆疊），強調關鍵軟體應可被檢視（Oxide Blog）|
 
 **授權費用**：企業客戶描述為「Budget Buster」，高安全能力伴隨高授權成本（The Information, 2026-06-01）。
@@ -132,14 +132,14 @@ Anthropic 的官方 AI 資安能力研究計畫，Mythos Preview 為核心工具
 - 若屬實將是繼 Fable 5（2026-06-09，Mythos 架構附加護欄公開版）後，Mythos 級能力進一步向大眾開放的重大政策轉向；暫無第二來源佐證，待後續報導補充具體內容再擴寫分析
 
 #### 2026-07-21
-**CNBC：Fed 曾就 Mythos AI 模型發出警示，但延遲數月才浮現（僅標題可用，待核實）**：
-- Google News 轉載 CNBC 標題「The Fed rang the alarm about Anthropic's Mythos AI model — but had to go months without it」（[Google News/CNBC](https://news.google.com/rss/articles/CBMikgFBVV95cUxOejZuVHE3NHBKYnY4N0VFS0U3M3JXd3pQeEJBemUyQ21BRTF6U3Vvc2JWVXdQQkdlUDVPYnN0OUZJRnpUNVh4NkhTUTRNT3NyTlhwaTJ1YmpBcm1PSUF5MUZhNjU0SnlLZ3VwdWR4X1MzalF1UDRjcWszR0daUmVtV01ibDQ1MWxBaVFfTWhJWmVpZ9IBlwFBVV95cUxPSmNOa05qbkpGTjB1YkFBZE5rNEZaMFcteW81SlRldGFvckpHRE0tdVI3RHlEa1FSWDVFSnRNbnNLSTBjQlRJSWpJZTZOSEhwU09lb1paM051X2k3ZzcyWXNPYTRrai1tRHdFSndVbS15MUlVWXNFQWtFZGNwM0ZIUVcxTmdPNUVWY2FrS0RWajJucGpDSk9v?oc=5)）；RSS 僅提供標題與轉址連結，無正文摘要，無法取得具體警示內容、發布時間點、延遲原因或影響範圍，暫列為待核實事件
-- 若屬實，顯示金融監管機構對 Mythos 風險的關注已從加拿大金融監管機關（07-13）、摩根大通執行長 Dimon 公開表態（07-16），進一步擴散至美國聯邦準備系統層級；惟因僅有標題可用，不排除與已知的 07-13／07-16 事件系出同源、經不同媒體以不同角度報導的可能性，具體警示內容與時間軸待後續報導補充確認（待核實）
+**CNBC：Fed 曾就 Mythos AI 模型發出警示，但延遲數月才浮現（2026-07-21 報導，僅標題可用，至今無後續內容）**：
+- Google News 轉載 CNBC 標題「The Fed rang the alarm about Anthropic's Mythos AI model — but had to go months without it」（[Google News/CNBC](https://news.google.com/rss/articles/CBMikgFBVV95cUxOejZuVHE3NHBKYnY4N0VFS0U3M3JXd3pQeEJBemUyQ21BRTF6U3Vvc2JWVXdQQkdlUDVPYnN0OUZJRnpUNVh4NkhTUTRNT3NyTlhwaTJ1YmpBcm1PSUF5MUZhNjU0SnlLZ3VwdWR4X1MzalF1UDRjcWszR0daUmVtV01ibDQ1MWxBaVFfTWhJWmVpZ9IBlwFBVV95cUxPSmNOa05qbkpGTjB1YkFBZE5rNEZaMFcteW81SlRldGFvckpHRE0tdVI3RHlEa1FSWDVFSnRNbnNLSTBjQlRJSWpJZTZOSEhwU09lb1paM051X2k3ZzcyWXNPYTRrai1tRHdFSndVbS15MUlVWXNFQWtFZGNwM0ZIUVcxTmdPNUVWY2FrS0RWajJucGpDSk9v?oc=5)）；RSS 僅提供標題與轉址連結，無正文摘要，無法取得具體警示內容、發布時間點、延遲原因或影響範圍。近 14 天日報無相關後續報導，暫無法進一步驗證
+- 若屬實，顯示金融監管機構對 Mythos 風險的關注已從加拿大金融監管機關（07-13）、摩根大通執行長 Dimon 公開表態（07-16），進一步擴散至美國聯邦準備系統層級；惟因僅有標題可用，不排除與已知的 07-13／07-16 事件系出同源、經不同媒體以不同角度報導的可能性，具體警示內容與時間軸至今無後續報導補充確認
 
 #### 2026-07-20
-**csoonline.com：Mythos FAQ 專文（能力／存取／競爭者／影響），僅標題可用（❓ 待查證）**：
-- Google News 轉載 csoonline.com 標題「Claude Mythos FAQ: Capabilities, access, competitors, implications」（[Google News/csoonline.com](https://news.google.com/rss/articles/CBMirgFBVV95cUxOaE10YjdGU2JoM2xVRC02Q3VRQkVOX3ZBVmVMY1hXbTUxNDgwTUZ5OVBMUUdLdWNPcEtfYUZVMS0xaTRYMWFWckU2eUNuZ251VHV2aF9wcU5GNUtReHE3QUlYODdPU2ZTN3pfaDhHWG84Ti1GZV9IMC05QWNrUVNqZHg5OUY2TEExWmZuQURTMi1Tb1duVUpyTW5uVVZfa0RFRnRjQVBPRFpmekxHQlE?oc=5)）；RSS 僅提供標題與轉址連結，無正文內容可用，無法取得具體 FAQ 問答內容
-- 顯示主流資安科技媒體持續以整理性 FAQ 形式報導 Mythos 現況（能力、存取方式、競爭者、影響），惟本則缺乏可驗證的新事實，暫僅記錄標題存在，待內容曝光或後續報導再補充分析
+**csoonline.com：Mythos FAQ 專文（能力／存取／競爭者／影響），2026-07-20 報導，僅標題可用，至今無後續內容**：
+- Google News 轉載 csoonline.com 標題「Claude Mythos FAQ: Capabilities, access, competitors, implications」（[Google News/csoonline.com](https://news.google.com/rss/articles/CBMirgFBVV95cUxOaE10YjdGU2JoM2xVRC02Q3VRQkVOX3ZBVmVMY1hXbTUxNDgwTUZ5OVBMUUdLdWNPcEtfYUZVMS0xaTRYMWFWckU2eUNuZ251VHV2aF9wcU5GNUtReHE3QUlYODdPU2ZTN3pfaDhHWG84Ti1GZV9IMC05QWNrUVNqZHg5OUY2TEExWmZuQURTMi1Tb1duVUpyTW5uVVZfa0RFRnRjQVBPRFpmekxHQlE?oc=5)）；RSS 僅提供標題與轉址連結，無正文內容可用，無法取得具體 FAQ 問答內容。近 14 天日報無相關後續報導，暫無法進一步驗證
+- 顯示主流資安科技媒體持續以整理性 FAQ 形式報導 Mythos 現況（能力、存取方式、競爭者、影響），惟本則缺乏可驗證的新事實，暫僅記錄標題存在
 
 #### 2026-07-16
 **摩根大通執行長 Dimon：Mythos AI 風險是「真實問題」（Reuters／Google News，僅標題可用）**：

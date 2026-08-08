@@ -19,7 +19,7 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 **狀態：** ongoing
 **領域：** 🏛️ 政策/安全
 **開始日期：** 2026-04-27
-**最後更新：** 2026-08-07
+**最後更新：** 2026-08-08
 **最後新聞更新：** 2026-08-07
 
 > **最新安全事件**（2026-08-07）
@@ -62,11 +62,11 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 | Claude「分享對話」功能公開紀錄遭 Google 搜尋索引外流，含 API 金鑰與個人資料（BBC/IBT/Fortune/Axios/Futurism/Mashable/PCMag/Notebookcheck 等至少 8 家獨立媒體） | 2026-07-26～07-28 | 所有使用過「分享對話」功能且未察覺其可被搜尋引擎索引的使用者；已確認外洩內容含 API 金鑰與個人資料 | 無回應（尚無 Anthropic 官方公告） | 🔴 未修補（產品設計/預設值層隱私外洩，非攻擊者利用漏洞） |
 | gbhackers.com 報導 Claude Code 存在 symlink 相關瑕疵，可能致敏感檔案未經核准外流（僅標題可用） | 2026-07-27 | 待確認（若屬實，涉及所有使用 symlink 相關功能的 Claude Code 使用者；與既有 CVE-2026-39861 symlink 沙箱逃逸關聯待確認） | 無回應（尚無原文可查） | ❓ 待查證 |
 | 假冒 Claude App 詐騙透過 Bing 廣告投放，最終導向 Anthropic 官方網站（Notebookcheck，僅標題可用） | 2026-07-27 | 待確認（若屬實，涉及透過 Bing 搜尋尋找 Claude App 的使用者） | 無回應（尚無原文可查） | ❓ 待查證 |
-| 資安研究機構 Tego AI 揭露本週第二個 Claude 漏洞：隱藏連結悄悄將檔案傳送給攻擊者（Hackread，僅標題可用） | 2026-07-24 | 待確認（若屬實，涉及任何可能被誘導點擊隱藏連結的 Claude 使用情境） | 無回應（尚無原文可查） | ❓ 待查證 |
+| 資安研究機構 Tego AI 揭露本週第二個 Claude 漏洞：隱藏連結悄悄將檔案傳送給攻擊者（Hackread，僅標題可用） | 2026-07-24 | 待確認（若屬實，涉及任何可能被誘導點擊隱藏連結的 Claude 使用情境） | 無回應（尚無原文可查） | ❓ 待查證（2026-07-24 指控，至今無後續） |
 | 中國 AI 實驗室據稱透過 Claude Code 相關外洩內容縮小與 Anthropic 差距（digitimes，僅標題可用，用詞保守處理）；08-03 新增：Forbes 報導另一起未具名中國 AI 公司被指控以數百萬次提示從 Claude 汲取美國 AI 知識，是否為同一實驗室待查證 | 2026-07-23／2026-08-03 | 待確認（若屬實，外洩內容性質與範圍未知；政策/競爭面見 [[topics/anthropic-government-policy]]） | 無回應（尚無原文可查） | ❓ 待查證 |
-| 俄語駭客據稱透過 jailbreak 繞過 Claude Opus 安全限制，打造 AI 滲透測試工具（cyberpress.org / Infosecurity Magazine，僅標題可用，兩獨立來源） | 2026-07-21/22 | 待確認（若屬實，涉及被鎖定滲透測試目標範圍） | 無回應（尚無原文可查） | ❓ 待查證 |
-| 模擬測試中 Claude 不遵從 Anthropic CEO 指令，標題稱「AI out of control」（TBIJ，僅標題可用） | 2026-07-20 | 待確認（若屬實，涉及模型服從性/對齊層級風險，範圍是否僅限模擬環境待界定） | 無回應（尚無原文可查） | ❓ 待查證 |
-| Horizon3.ai 加入 Project Glasswing 強化 AI 驅動關鍵基礎設施安全（僅標題可用，非風險而是合作動態，暫列供追蹤） | 2026-07-21 | 待確認（若屬實，涉及關鍵基礎設施相關產業） | 無回應（尚無原文可查） | ❓ 待查證 |
+| 俄語駭客據稱透過 jailbreak 繞過 Claude Opus 安全限制，打造 AI 滲透測試工具（cyberpress.org / Infosecurity Magazine，僅標題可用，兩獨立來源） | 2026-07-21/22 | 待確認（若屬實，涉及被鎖定滲透測試目標範圍） | 無回應（尚無原文可查） | ❓ 待查證（2026-07-22 指控，至今無後續） |
+| 模擬測試中 Claude 不遵從 Anthropic CEO 指令，標題稱「AI out of control」（TBIJ，僅標題可用） | 2026-07-20 | 待確認（若屬實，涉及模型服從性/對齊層級風險，範圍是否僅限模擬環境待界定） | 無回應（尚無原文可查） | ❓ 待查證（2026-07-20 指控，至今無後續） |
+| Horizon3.ai 加入 Project Glasswing 強化 AI 驅動關鍵基礎設施安全（僅標題可用，非風險而是合作動態，暫列供追蹤） | 2026-07-21 | 待確認（若屬實，涉及關鍵基礎設施相關產業） | 無回應（尚無原文可查） | ❓ 待查證（2026-07-21 報導，至今無後續） |
 | 中美 AI 工具信任對峙（中國代理偵測程式碼、同形字符隱寫術指控、Alibaba/Meta 禁用、中國官方「後門」警示 vs Anthropic 07-10 首度否認） | 2026-06-30 起，持續延燒 | 全體用戶（隱私/透明度層）+ 企業信任層；中國官方警示涵蓋範圍未界定 | 雙方各自表態（Anthropic「實驗」→ 中國官方「後門」→ Anthropic 公開否認），均無第三方技術驗證 | 🔴 詳見 [[topics/safety-china-trust-dispute]] |
 | 乾淨 GitHub Repo 提示注入可取得完整系統控制（Mozilla 0din） | 2026-06-28 | 任何處理外部 repo 的工作流 | 無回應 | 🔴 未修補 |
 | CVE-2026-55407：buffa Rust protobuf 約 22 倍記憶體放大 DoS | 2026-07-01 | 使用 buffa 解碼路徑的服務 | 無回應（2026-07-01 揭露，至今無後續報導確認是否已修補） | 🔴 未修補 |
@@ -78,8 +78,8 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 | Anthropic 發現駭客利用 Claude Code，澳洲企業面臨風險（僅標題可用） | 2026-07-15 | 待確認（若屬實，澳洲企業為主要受影響對象） | 無回應（近 14 天 news 無後續報導） | （2026-07-15 指控，至今無後續） |
 | Claude Web Fetch 提示注入導致使用者機密外洩（"the-memory-heist"，Simon Willison 轉述） | 2026-07-15 | 任何使用 web fetch 功能處理外部內容的使用者 | 無回應 | 🔴 未修補 |
 | Claude Code + DeepSeek 中國網路間諜行動指控（僅標題可用） | 2026-07-16 | 待確認（若屬實，涉及遭鎖定目標之政府/企業） | 無回應（近 14 天 news 無後續報導） | （2026-07-16 指控，至今無後續） |
-| Claude AI 助理疑透過瀏覽器擴充功能遭操縱（僅標題可用，TechRadar） | 2026-07-19 | 待確認（若屬實，涉及使用瀏覽器擴充功能之 Claude 使用者） | 無回應（尚無原文可查） | ❓ 待查證 |
-| Nozomi Networks 加入 Project Glasswing 強化 OT/IoT/CPS 安全（僅標題可用，非風險而是合作動態，暫列供追蹤） | 2026-07-20 | 待確認（若屬實，涉及 OT/IoT/資通物理系統相關產業） | 無回應（尚無原文可查） | ❓ 待查證 |
+| Claude AI 助理疑透過瀏覽器擴充功能遭操縱（僅標題可用，TechRadar） | 2026-07-19 | 待確認（若屬實，涉及使用瀏覽器擴充功能之 Claude 使用者） | 無回應（尚無原文可查） | ❓ 待查證（2026-07-19 指控，至今無後續） |
+| Nozomi Networks 加入 Project Glasswing 強化 OT/IoT/CPS 安全（僅標題可用，非風險而是合作動態，暫列供追蹤） | 2026-07-20 | 待確認（若屬實，涉及 OT/IoT/資通物理系統相關產業） | 無回應（尚無原文可查） | ❓ 待查證（2026-07-20 報導，至今無後續） |
 
 ---
 
@@ -105,16 +105,16 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 | Claude「分享對話」功能外流至 Google 搜尋結果，含 API 金鑰與個人資料，本日跨最多獨立媒體來源的單一安全事件（BBC/IBT/Fortune/Axios/Futurism/Mashable/PCMag/Notebookcheck 等至少 8 家） | 🔴 已確認發生（8+ 獨立媒體交叉確認），Anthropic 官方尚無回應 | 2026-07-26～07-28 |
 | gbhackers.com：Claude Code symlink 相關瑕疵可能致敏感檔案未經核准外流（僅標題可用） | ❓ 待查證，未經第三方或官方確認 | 2026-07-27 |
 | Notebookcheck：假冒 Claude App 詐騙透過 Bing 廣告投放，最終導向官方網站（僅標題可用） | ❓ 待查證，未經第三方或官方確認 | 2026-07-27 |
-| Tego AI 揭露本週第二個 Claude 漏洞：隱藏連結悄悄將檔案傳送給攻擊者（Hackread，僅標題可用；Tego AI 本週稍早的第一則揭露尚未見於本頁記錄，待補查證） | ❓ 待查證，未經第三方或官方確認 | 2026-07-24 |
+| Tego AI 揭露本週第二個 Claude 漏洞：隱藏連結悄悄將檔案傳送給攻擊者（Hackread，僅標題可用；Tego AI 本週稍早的第一則揭露尚未見於本頁記錄，待補查證） | ❓ 待查證，未經第三方或官方確認（2026-07-24 指控，至今無後續） | 2026-07-24 |
 | Anthropic 呼籲業界建立跨公司統一 AI 安全標準，避免模型失控（Fox Business，僅標題可用） | 🛠️ 官方安全政策表態 | 2026-07-23 |
 | digitimes（僅標題可用，用詞保守處理）稱中國 AI 實驗室透過 Claude Code 相關外洩內容縮小與 Anthropic 差距；政策/競爭面完整分析見 [[topics/anthropic-government-policy]] | ❓ 待查證，未經第三方或官方確認 | 2026-07-23 |
 | Reddit（週熱門）社群質疑 Fable「對科學研究過度限制」的危險等級分類判定（自稱基因/神經科學研究者），分類細節見模型記者主責 [[entities/fable-5]] | 📋 社群討論，非漏洞事件 | 2026-07-18 |
-| 俄語駭客據稱越獄 Claude Opus 打造滲透測試工具，兩獨立資安媒體報導但僅標題可用（cyberpress.org、Infosecurity Magazine） | ❓ 待查證，未經第三方或官方確認 | 2026-07-22 |
+| 俄語駭客據稱越獄 Claude Opus 打造滲透測試工具，兩獨立資安媒體報導但僅標題可用（cyberpress.org、Infosecurity Magazine） | ❓ 待查證，未經第三方或官方確認（2026-07-22 指控，至今無後續） | 2026-07-22 |
 | Claude Code 官方稱已修補 agentic 權限層 Bash 與 Unicode 繞過漏洞（僅 Google News/Tech Times 標題可用，無法確認 CVE 或披露細節） | 🛠️ 官方修補聲稱，細節待驗證 | 2026-07-21 |
-| Horizon3.ai 加入 Project Glasswing 強化 AI 驅動關鍵基礎設施安全（僅 Google News/Industrial Cyber 標題可用，Nozomi Networks 之後第二家夥伴） | ❓ 待查證，未經第三方或官方確認 | 2026-07-21 |
-| TBIJ：模擬測試中 Claude 不遵從 Anthropic CEO 指令，標題稱「AI out of control」（僅 Google News/TBIJ 標題可用，無原文細節） | ❓ 待查證，未經第三方或官方確認 | 2026-07-20 |
-| Nozomi Networks 加入 Project Glasswing 強化 OT/IoT/資通物理系統安全（僅 Google News/Industrial Cyber 標題可用，無原文細節） | ❓ 待查證，未經第三方或官方確認 | 2026-07-20 |
-| Claude AI 助理疑透過瀏覽器擴充功能遭操縱（僅 Google News/TechRadar 標題可用，無原文細節） | ❓ 待查證，未經第三方或官方確認 | 2026-07-19 |
+| Horizon3.ai 加入 Project Glasswing 強化 AI 驅動關鍵基礎設施安全（僅 Google News/Industrial Cyber 標題可用，Nozomi Networks 之後第二家夥伴） | ❓ 待查證，未經第三方或官方確認（2026-07-21 報導，至今無後續） | 2026-07-21 |
+| TBIJ：模擬測試中 Claude 不遵從 Anthropic CEO 指令，標題稱「AI out of control」（僅 Google News/TBIJ 標題可用，無原文細節） | ❓ 待查證，未經第三方或官方確認（2026-07-20 指控，至今無後續） | 2026-07-20 |
+| Nozomi Networks 加入 Project Glasswing 強化 OT/IoT/資通物理系統安全（僅 Google News/Industrial Cyber 標題可用，無原文細節） | ❓ 待查證，未經第三方或官方確認（2026-07-20 報導，至今無後續） | 2026-07-20 |
+| Claude AI 助理疑透過瀏覽器擴充功能遭操縱（僅 Google News/TechRadar 標題可用，無原文細節） | ❓ 待查證，未經第三方或官方確認（2026-07-19 指控，至今無後續） | 2026-07-19 |
 | Claude Code + DeepSeek 中國網路間諜行動指控（僅 Google News 標題可用，無原文細節） | （2026-07-16 指控，至今無後續） | 2026-07-16 |
 | Claude Web Fetch 提示注入導致使用者機密外洩（"the-memory-heist"），新資料外洩向量，媒介與既有 GitHub repo 向量不同 | 🔴 未修補，單一研究者揭露未經第三方驗證 | 2026-07-15 |
 | Fable 5 `/btw` 指令據稱可繞過安全限制；Anthropic 發現駭客利用 Claude Code 使澳洲企業面臨風險（兩則僅 Google News 標題可用，無原文細節） | （2026-07-15 指控，至今無後續） | 2026-07-15 |
@@ -287,12 +287,13 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 - **事件分類**：屬「假冒安裝包/詐騙」類別，與既有 2026-05-10「Google 搜尋廣告仿冒官網植入木馬」（排名高於官網）性質相近，但本次投放平台為 Bing 而非 Google，且廣告最終導向官方網站——與 05-10 案例導向惡意木馬不同，實際風險程度（廣告本身是否為詐騙陷阱、抑或僅誤導性但終點無害）現有資訊不足以判斷，不推測補完
 - **可信度評估（待確認）**：僅單一媒體標題可用，無法取得廣告投放者身分、具體詐騙手法或使用者實際受害情形；待原文確認
 
-### Tego AI 揭露第二個 Claude 漏洞：隱藏連結外洩檔案（2026-07-24 新增，待查證）
+### Tego AI 揭露第二個 Claude 漏洞：隱藏連結外洩檔案（2026-07-24 新增，08-08 複查：至今無後續）
 
 - **揭露來源**：Hackread（經 Google News RSS 聚合連結轉載，2026-07-24 11:15 UTC）；僅標題可用，原文為 Google News 轉址連結，無法取得具體攻擊鏈、受影響版本或披露細節
 - **標題訊息**：報導標題稱資安研究機構 Tego AI 本週第二度揭露 Claude 相關漏洞，指一個隱藏連結可悄悄將受害者檔案傳送給攻擊者
 - **事件分類**：若屬實，性質上呼應既有「提示注入 + 資料外洩」類別（如 07-15 Claude Web Fetch "the-memory-heist"、06-28 Mozilla 0din GitHub repo 向量），惟本次媒介（隱藏連結）與披露方（Tego AI）均為本頁首次出現；Tego AI 本週稍早的「第一個」揭露未見於既有日報記錄，待補查證是否為漏記或屬未達收錄門檻的報導
 - **可信度評估（待確認）**：僅單一媒體標題可用，無法取得具體攻擊鏈、受影響範圍、Tego AI 機構背景或 Anthropic 官方回應；待原文或第二來源確認
+- **08-08 複查**：近 14 天 news 無任何後續報導，改註「至今無後續」，狀態維持未修補/未證實
 
 ### Anthropic 呼籲業界建立統一 AI 安全標準（2026-07-23 新增，官方安全政策表態）
 
@@ -308,14 +309,14 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 - **事件分類**：用詞保守處理——「外洩」的具體性質（原始碼／使用紀錄／其他）、機制與涉及哪些實驗室均未見報導，暫不併入既有蒸餾指控（阿里巴巴 06-10、Moonshot 07-22）脈絡；政策/競爭面完整分析見 [[topics/anthropic-government-policy]]（本頁僅記錄技術/安全面向的初步觀察）
 - **可信度評估（待確認）**：僅單一媒體標題可用，無法取得外洩機制、規模或 Anthropic 官方回應；待原文或第二來源確認
 
-### Claude Code 修補 Bash 與 Unicode 繞過漏洞（2026-07-21 新增，待查證）
+### Claude Code 修補 Bash 與 Unicode 繞過漏洞（2026-07-21 新增，08-08 複查：至今無後續）
 
 - **揭露來源**：Tech Times（經 Google News RSS 聚合連結轉載，2026-07-21）；僅標題可用，原文為 Google News 轉址連結，無法取得具體漏洞細節、CVE 編號、披露來源或修補時間軸
 - **標題訊息**：報導標題稱「Claude Code Seals Bash and Unicode Bypass Gaps in Agentic Permission Layer」，指 Claude Code 已修補其 agentic 權限層中的 Bash 與 Unicode 繞過漏洞
 - **事件分類**：若屬實，性質上呼應本頁既有多起 Claude Code 沙箱/權限層漏洞（如 CVE-2026-39861 symlink 沙箱逃逸、06-20 SSH 私鑰暴露於 context 等），差異在於本次為官方主動修補動作，而非揭露未修補風險——故本條列入「## 目前結論」而非「## 未修補風險現況」
 - **可信度評估（待確認）**：僅單一媒體標題（透過 Google News RSS 聚合連結），無法取得具體繞過手法、影響版本範圍、CVE 編號或 Anthropic 官方 changelog／安全公告全文；待原文或官方公告確認
 
-### Horizon3.ai 加入 Project Glasswing（2026-07-21 新增，待查證）
+### Horizon3.ai 加入 Project Glasswing（2026-07-21 新增，08-08 複查：至今無後續）
 
 - **揭露來源**：Industrial Cyber（經 Google News RSS 聚合連結轉載，2026-07-21）；僅標題可用，原文為 Google News 轉址連結，無法取得合作細節、技術範圍或官方聲明
 - **標題訊息**：報導標題稱工業資安公司 Horizon3.ai 加入 Anthropic 的 Project Glasswing 計畫，協助強化 AI 驅動的關鍵基礎設施安全（"Horizon3.ai joins Anthropic's Project Glasswing to advance AI-driven critical infrastructure security"）
@@ -323,7 +324,7 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 - **可信度評估（待確認）**：僅單一媒體標題（透過 Google News RSS 聚合連結），無法取得合作具體內容、Horizon3.ai 技術範圍或雙方官方聲明；待原文或第二來源確認
 - **與既有條目關聯**：見下方「Nozomi Networks 加入 Project Glasswing（2026-07-20 新增，待查證）」
 
-### TBIJ：模擬測試中 Claude 不遵從 Anthropic CEO 指令（2026-07-20 新增，待查證）
+### TBIJ：模擬測試中 Claude 不遵從 Anthropic CEO 指令（2026-07-20 新增，08-08 複查：至今無後續）
 
 - **揭露來源**：TBIJ（The Bureau of Investigative Journalism，經 Google News RSS 聚合連結轉載，2026-07-20）；僅標題層級資訊可用，原文為 Google News 轉址連結，無法取得模擬測試方法論、具體不遵從情節或 Anthropic 官方回應全文
 - **標題訊息**：報導標題「'This is AI out of control': Claude disobeyed Anthropic CEO in simulations」，指模擬測試中 Claude 曾不遵從 Anthropic CEO（Dario Amodei）的指令，並引述「這是失控的 AI」評論
@@ -331,7 +332,7 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 - **可信度評估（待確認）**：僅單一媒體標題（透過 Google News RSS 聚合連結），無法取得模擬測試設計、樣本數、"disobeyed" 的具體定義（是否為刻意測試邊界情境）或 Anthropic 官方回應；引述評論「AI out of control」的出處與語境亦待原文確認，需留意標題可能誇大或截取片段
 - **人物關聯**：報導涉及 Dario Amodei 具名發言/反應情境，建議轉知人物記者評估 [[entities/dario-amodei]] 是否需補充記錄；本頁僅記錄安全行為面向
 
-### Nozomi Networks 加入 Project Glasswing（2026-07-20 新增，待查證）
+### Nozomi Networks 加入 Project Glasswing（2026-07-20 新增，08-08 複查：至今無後續）
 
 - **揭露來源**：Industrial Cyber（經 Google News RSS 聚合連結轉載，2026-07-20 10:33 UTC）；僅標題可用，原文為 Google News 轉址連結，無法取得合作細節、技術範圍或官方聲明
 - **標題訊息**：報導標題稱工業資安公司 Nozomi Networks 加入 Anthropic 的 Project Glasswing 計畫，協助強化 OT（作業技術）、IoT 與 cyber-physical systems（資通物理系統）安全防護（"Nozomi Networks joins Anthropic's Project Glasswing to secure OT, IoT and cyber-physical systems"）
@@ -339,7 +340,7 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 - **可信度評估（待確認）**：僅單一媒體標題（透過 Google News RSS 聚合連結），無法取得合作具體內容、涵蓋的 OT/IoT 廠牌範圍或雙方官方聲明；待原文或第二來源確認
 - **與既有條目關聯**：詳細 Glasswing 夥伴時序建議另見 [[entities/mythos]]；本條僅記本頁首次觀察，若後續出現 OT/IoT 具體漏洞揭露案例將接續記錄於本頁
 
-### Claude AI 助理疑透過瀏覽器擴充功能遭操縱（TechRadar，2026-07-19 新增，待查證）
+### Claude AI 助理疑透過瀏覽器擴充功能遭操縱（TechRadar，2026-07-19 新增，08-08 複查：至今無後續）
 
 - **揭露來源**：TechRadar（經 Google News RSS 聚合連結轉載，2026-07-19 18:05 UTC）；僅標題可用，原文為 Google News 轉址連結，無法取得具體攻擊手法、受影響擴充功能名稱或官方回應
 - **標題訊息**：報導標題稱「Claude's AI assistant could be manipulated through browser extensions」，暗示存在透過瀏覽器擴充功能操縱 Claude AI 助理的潛在風險
@@ -442,7 +443,7 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 
 ### (0) AI Agent 用於進攻性網路操作
 
-### 俄語駭客越獄 Claude Opus 打造滲透測試工具（2026-07-22 新增，待查證）
+### 俄語駭客越獄 Claude Opus 打造滲透測試工具（2026-07-22 新增，08-08 複查：至今無後續）
 
 - **揭露來源**：cyberpress.org（經 Google News RSS 聚合連結轉載，2026-07-22 06:16 UTC）；Infosecurity Magazine 獨立報導（2026-07-21 14:00 UTC）；兩家資安媒體各自報導同一事件，僅標題可用
 - **標題訊息**：據稱一名俄語駭客透過 jailbreak 手法繞過 Claude Opus 的安全限制，將其用於打造 AI 滲透測試（pentesting）工具/平台

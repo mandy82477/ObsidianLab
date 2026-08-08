@@ -19,7 +19,7 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 **狀態：** ongoing
 **領域：** 💼 商業
 **開始日期：** 2026-05-28
-**最後更新：** 2026-08-07
+**最後更新：** 2026-08-08
 **最後新聞更新：** 2026-08-07
 
 > **最新動態**（2026-08-07）
@@ -84,7 +84,7 @@ Anthropic 的收入來自兩條軌道（2026-06-15 後正式成文化）：
 
 **商業邏輯轉變**：6/15 政策是 Anthropic 從「訂閱補貼一切」走向「人工使用用訂閱，自動化使用按量付費」的明確信號。這讓 Anthropic 的收入結構更接近雲端供應商而非 SaaS 公司。
 
-**2026-07-01 新增：Sonnet 5 促銷定價**：Anthropic 宣布 Claude Sonnet 5 促銷定價 $2/Mtok（輸入）、$10/Mtok（輸出），有效期至 2026-08-31，相較 Opus 4.8 估計省 60% 成本；Claude Code 用戶以此定價使用新預設模型。若預設路由切換至 Sonnet 5，重度使用者月均 API 費用可能顯著降低，有助緩解近期配額縮減引發的訂閱留存壓力（推論）；同日 Fable 5 計費架構亦調整為 7/7 起 usage-based billing。定價細節見 [[entities/pricing]]。
+**2026-07-01 新增：Sonnet 5 促銷定價**：Anthropic 宣布 Claude Sonnet 5 促銷定價 $2/Mtok（輸入）、$10/Mtok（輸出），有效期至 2026-08-31，相較 Opus 4.8 估計省 60% 成本；Claude Code 用戶以此定價使用新預設模型。若預設路由切換至 Sonnet 5，重度使用者月均 API 費用可能顯著降低，有助緩解近期配額縮減引發的訂閱留存壓力（推論）；同日曾宣布 Fable 5 計費架構將於 7/7 起轉為 usage-based billing，惟該免費期後續多次延長（7/12→7/19），實際轉換時間點與 Pro/Max/Team 各方案細節仍有分歧報導，最新狀態見 [[entities/pricing]]「當前生效的計費規則」。定價細節見 [[entities/pricing]]。
 
 **2026-08-05～07 新增：自研晶片團隊正式證實**：Reuters（08-05）率先報導 Anthropic 正籌建內部晶片設計團隊並招募工程師；TechCrunch、Business Insider、Tom's Hardware（皆 08-05）、arstechnica（08-06）、Fstoppers（08-07）陸續跟進同一事件。Business Insider 引述 Anthropic 發言人證實：「Anthropic would co-design hardware and models, allowing Claude to run faster and more efficiently 'at the scale our customers need.'」，同時公司明確表態：「Anthropic has taken and will continue to take a 'multi-chip approach' in which hardware from AWS, Google, Nvidia, and AMD will remain central」——即自研晶片是**補充**既有多雲/多晶片供應鏈，非取代（見上方「戰略合作」表 AMD $50 億投資、Micron 多年協議、SK 集團供應鏈接洽等既有紀錄）。**對商業的意涵**：延續近期 Samsung 代工洽談（07-02/06，The Information／TechRepublic，確定性未升級）、SK 集團供應鏈接洽（07-26，Fortune，「Anthropic 主動尋求自製晶片供應」措辭）等自研硬體布局系列信號，本次是首次由公司正式證實「成立內部晶片設計團隊」（而非單純委外代工洽談），代表硬體自主布局從「向外尋求供應」進一步深化至「自行設計」，意在降低對 Nvidia GPU 的長期成本與供給依賴（推論）；具體晶片類型、量產時程、投入規模未見細節，僅標題與公司聲明層級資訊（Google News/Reuters；Google News/TechCrunch；Google News/Business Insider；Google News/Tom's Hardware；Google News/arstechnica；Google News/Fstoppers；同日 Wccftech 報導將此事與 ByteDance 禁止員工蒸餾美國 AI 模型並列為同篇文章之兩則獨立新聞，蒸餾禁令部分屬出口管制/安全政策議題，已交由安全政策記者處理，此處僅取晶片團隊部分作為又一佐證來源）
 
@@ -120,7 +120,7 @@ Simon Willison（知名開發者博主）發表文章，認為 Anthropic 與 Ope
 | 著作權和解案執行細節：91% 賠付申請率、律師費削減至 6.8%、Bloomsbury 分潤 | 逾 48.2 萬本受涵蓋書籍中約 91% 已由作者或出版商提出賠付申請（每本約 3,000 美元）；法院文件顯示法官將集體訴訟律師費比例削減至 6.8%；英國出版商 Bloomsbury 確認為受益方之一。原告律師 Justin Nelson 稱此為「史上最大宗已知著作權求償和解案」| Reuters、The Times、Research Information，2026-07-22（經 Hacker News 討論；courtlistener.com 法院文件 PDF） |
 | 著作權和解案讀者反應報導（非新增賠付事實）| NPR 報導作家群體對已核准的 15 億美元 Anthropic 著作權侵權集體訴訟和解案反應不一；與既有 91% 賠付申請率、6.8% 律師費削減、Bloomsbury 分潤等執行細節（見上列）屬同一和解案的後續讀者反應報導，未見新增賠付金額或條款細節 | NPR，2026-07-27 |
 | 未公開獲利時程 | Anthropic 從未公告盈虧平衡預期完整細節 | — |
-| 「Anthropic Tops $47B」報導（待查證，可能與既有 ARR 數字重疊，非確認新增長）| tech-insider.org 標題稱「Anthropic Tops $47B」，未指明是估值、ARR 或其他財務指標。本頁已於 2026-05-29 記錄 Simon Willison 追蹤之 ARR **$47B**（見上方指標表），本則是否為同一數字的媒體重提、或代表新的成長里程碑，無法從標題判斷，**不可逕自認定為新增長數字**，待後續報導釐清具體指標與時間點；同篇報導另提及一次 5 小時 44 分鐘的 Claude 服務中斷，屬可靠度事件非商業本業範疇，⚠️ 已回報主編轉知功能記者評估是否需記入 `claude-code.md` 已知問題 | Google News/tech-insider.org，2026-08-03 |
+| 「Anthropic Tops $47B」報導（待查證，可能與既有 ARR 數字重疊，非確認新增長）| tech-insider.org 標題稱「Anthropic Tops $47B」，未指明是估值、ARR 或其他財務指標。本頁已於 2026-05-29 記錄 Simon Willison 追蹤之 ARR **$47B**（見上方指標表），本則是否為同一數字的媒體重提、或代表新的成長里程碑，無法從標題判斷，**不可逕自認定為新增長數字**，待後續報導釐清具體指標與時間點；同篇報導另提及一次 5 小時 44 分鐘的 Claude 服務中斷，屬可靠度事件而非商業本業範疇，詳見 [[entities/claude-code]] 已知問題（若已收錄）| Google News/tech-insider.org，2026-08-03 |
 
 **結構性問題**：訂閱方案補貼規模龐大（17 倍），6/15 政策是 Anthropic 收窄補貼的第一步。社群討論「未來必然漲價」但 Anthropic 無官方回應。
 
@@ -136,8 +136,8 @@ Simon Willison（知名開發者博主）發表文章，認為 Anthropic 與 Ope
 | 競品分流 | OpenCode 157K 用戶；DeepSeek 低成本替代 | ⚠️ 中 |
 | 定價透明度危機 | 多次靜默計費改動損傷信任 | ⚠️ 中 |
 | API key 無 = 無財務數據 | 個人開發者無從追蹤 Anthropic 真實財務 | ℹ️ 資訊缺口 |
-| 專利侵權訴訟（新事件，2026-07-22）| Reuters、Bloomberg Law 各自報導 Anthropic 遭指控侵犯神經網路技術相關專利；原告名稱、具體專利號未知（僅標題可用，待補充）| ⚠️ 待查證 |
-| 田納西大學提告（新事件，2026-07-22）| Knoxville News Sentinel（經 Google News）報導田納西大學對 Anthropic 提起訴訟；具體案由未知（僅標題可用，待補充）| ⚠️ 待查證 |
+| 專利侵權訴訟（2026-07-22 指控，至今無後續——近 14 天日報未見原告名稱、專利號或案件進展）| Reuters、Bloomberg Law 各自報導 Anthropic 遭指控侵犯神經網路技術相關專利；原告名稱、具體專利號未知（僅標題可用，待補充）| ⚠️ 待查證 |
+| 田納西大學提告（2026-07-22 指控，至今無後續——近 14 天日報未見案由或進展報導）| Knoxville News Sentinel（經 Google News）報導田納西大學對 Anthropic 提起訴訟；具體案由未知（僅標題可用，待補充）| ⚠️ 待查證 |
 
 ---
 

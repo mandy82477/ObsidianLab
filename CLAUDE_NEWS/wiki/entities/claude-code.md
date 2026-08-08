@@ -21,7 +21,7 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 **狀態：** active
 **領域：** 🛠️ 工具/功能
 **首次出現：** 2025（正式推出）
-**最後更新：** 2026-08-07
+**最後更新：** 2026-08-08
 **最後新聞更新：** 2026-08-07
 
 > **最新動態**（2026-08-07）
@@ -58,7 +58,7 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 
 ### 🛡️ 安全與隱私（5 條未修復、4 條待查證）
 
-- ❓ **待查證（2026-07-21 報導，無版本號佐證）**｜**Bash 與 Unicode 繞過修補（Tech Times 報導）**：Tech Times 報導稱 Claude Code 已修補 agentic 權限層中的 Bash 與 Unicode 繞過漏洞，惟原文未提供具體版本號、修復細節或官方公告/GitHub Release 連結佐證；暫列待查證，待後續版本更新或官方說明確認具體範圍，及是否與既有隱寫術／同形字符機制（見下條）相關；已請安全政策記者評估是否於 [[topics/ai-agent-safety]] 雙記。
+- ❓ **待查證（2026-07-21 報導，至今無後續）**｜**Bash 與 Unicode 繞過修補（Tech Times 報導）**：Tech Times 報導稱 Claude Code 已修補 agentic 權限層中的 Bash 與 Unicode 繞過漏洞，惟原文未提供具體版本號、修復細節或官方公告/GitHub Release 連結佐證；近 14 天無後續版本更新或官方說明確認具體範圍，亦未確認是否與既有隱寫術／同形字符機制（見下條）相關；已請安全政策記者評估是否於 [[topics/ai-agent-safety]] 雙記。
 - 🔴 **未修復**｜**隱寫術標記／代理偵測指控（2026-06-30 至 07-01，待查證）**：Reddit 貼文（2026-06-30）指控 Claude Code 自 v2.1.91 起嵌入偵測中國代理／地區的隱藏程式碼，並疑似混淆程式碼掩蓋此行為；此為社群單方指控，Anthropic 尚未就此回應或證實。2026-07-01 安全研究者進一步發現 Claude Code 2.1.196 binary 含隱寫術（steganography）機制，將日期字串中的撇號與分隔符替換為外觀相同的同形字符（homoglyphs），HN 熱度達 2263 分，36Kr 報導確認此機制針對時區資訊及中國 AI Lab 連線者注入額外系統提示，與 06-30 事件屬同一偵測基礎架構的延伸；Anthropic 已就隱寫術部分承諾修復（2026-07-01），但截至目前修復版尚未發布。事件完整細節見 [[topics/ai-agent-safety]]；承諾兌現進度見 [[topics/anthropic-commitments]]
 - ❓ **待查證（2026-05-19 指控，至今無後續）**｜**Claude Code RCE via 惡意 Deeplink**：安全研究人員揭露攻擊者可透過惡意 Deeplink 觸發 Claude Code 在受害者端執行任意指令（RCE），CyberSecurityNews 已發布詳細技術報導；屬高嚴重性安全問題，修補狀態待 Anthropic 確認；所有使用者應避免開啟不明來源的 deeplink；見 [[topics/ai-agent-safety]]
 - ❓ **待查證（2026-04-27 指控，至今無後續）**｜**API 金鑰外洩漏洞**：Claude Code 在自動化流程中可能將 API 金鑰洩漏至公開套件倉庫（npm 等），TechTalks 報導，等待 Anthropic 官方回應
@@ -403,7 +403,7 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 
 ## 實用工具（社群開發）
 
-社群工具的完整目錄、活躍度與採用狀態，集中維護於 [[topics/community-tech-tools]]（每週 lint 策展）。本頁不再平行維護工具清單。
+社群工具的完整目錄、活躍度與採用狀態，集中維護於 [[topics/community-tech-tools]]（每週策展）。本頁不再平行維護工具清單。
 
 ---
 

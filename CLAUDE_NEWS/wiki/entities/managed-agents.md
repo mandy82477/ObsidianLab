@@ -176,7 +176,7 @@ while (!['completed', 'failed'].includes(task.status)) {
 | 日期 | 事件 |
 |------|------|
 | 2026-07-22 | **anthropic-sdk-python v0.118.0** 新增 Managed Agents 相關 API 支援，changelog 未列出具體項目，是否與前次 v0.117.0 的 dreaming API 支援屬同批次擴充待確認（見 [Release](https://github.com/anthropics/anthropic-sdk-python/releases/tag/v0.118.0)）|
-| 2026-07-16 | **anthropic-sdk-python v0.117.0** 新增「api: add support for dreaming」，changelog 未提供技術細節；命名疑似對應本頁 Dreaming 記憶整合功能的 API 化，待後續 ingest 確認具體用途（見 [Release](https://github.com/anthropics/anthropic-sdk-python/releases/tag/v0.117.0)）|
+| 2026-07-16 | **anthropic-sdk-python v0.117.0** 新增「api: add support for dreaming」，changelog 未提供技術細節；命名疑似對應本頁 Dreaming 記憶整合功能的 API 化，待後續更新確認具體用途（見 [Release](https://github.com/anthropics/anthropic-sdk-python/releases/tag/v0.117.0)）|
 | 2026-07-01 | **anthropic-sdk-python v0.115.0** 新增 Managed Agents API 支援，Python SDK 正式跟進框架更新，開發者可透過官方 SDK 直接操作 Managed Agents（見 [Release](https://github.com/anthropics/anthropic-sdk-python/releases/tag/v0.115.0)）|
 | 2026-05-22 | **自架沙箱完整參考文件發布**（via Reddit r/ClaudeAI 報告 v2.1.145 新增）：完整文件涵蓋 worker 輪詢機制、環境金鑰管理、webhook 喚醒設定、監控方案及客戶自管安全責任；企業可在完全自有基礎設施上部署受管代理，標誌 Claude Code 企業化部署從「支援」走向「完整文件化」 |
 | 2026-05-19 | 新增**自架沙箱（self-hosted sandboxes）**與 **MCP 隧道（MCP tunnels）**：企業客戶可在自有基礎設施執行 agent 工作流，私有 MCP 伺服器無需公開即可連接 Claude Code；the-decoder.com 報導 |

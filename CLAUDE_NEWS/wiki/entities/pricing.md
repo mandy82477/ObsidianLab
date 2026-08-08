@@ -21,7 +21,7 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 **狀態：** active（持續調整中）
 **領域：** 💼 商業
 **首次出現：** 2026-04-25
-**最後更新：** 2026-08-07
+**最後更新：** 2026-08-08
 **最後新聞更新：** 2026-08-07
 
 > **最新計費政策異動**（2026-08-07）
@@ -74,7 +74,8 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 - **訂閱配額制維持**：原定 2026-06-15 生效的 Agent SDK / `claude -p` 計費切割已於 2026-06-16 暫停，重新推行時間未定；Agent SDK、`claude -p`、第三方 Agent SDK app 用量持續計入訂閱配額，無需額外信用池（來源：2026-06-16、2026-06-18 DevOps.com）
 - **週配額 +50% 過渡期再次延長（至 2026-07-19）**：Anthropic 官方公告（2026-07-12，Hacker News/support.claude.com）將原訂 7/13 到期的週用量 +50% 促銷再延長至 **2026-07-19**；適用 Pro／Max／Team 及舊制（席位制）Enterprise 方案，**Free 方案與用量制 Enterprise 席位不適用**，5 小時額度不受影響；7/19 後是否延續未見後續公告，需留意（來源：2026-05-14、2026-07-12）
 - **Fable 5 免費使用期限原訂延至 2026-07-19（原定 7/12）**：隨 07-12 週用量促銷延長公告同步順延，Pro/Max/Team 每週配額含 50% Fable 5 用量的過渡期同步延至 7/19；競爭角度分析（Google News/The Economic Times、Simon Willison 07-12）指出與 GPT-5.6 Sol 被視為同級模型有關（推論）（來源：2026-07-01、2026-07-07/08、2026-07-12）
-- **⚠️ 2026-07-20（到期後翌日）：Pro 免費存取結束方向趨於一致，Max 方案動向仍未見新報導**：SQ Magazine（「Claude Fable 5 Ends Free Access For Pro Subscribers」）、The Indian Express（「Claude Fable 5 access plans change from July 20」）兩則報導方向與 07-19 Tech Times「Pro 改 Credits-only」一致，指向 Pro 訂閱用戶免費存取 Fable 5 已隨到期日結束；惟六則報導（含 07-18 兩則、07-19 兩則、07-20 兩則）均僅標題層級資訊，具體生效時間、計費費率、Max/Team 方案是否維持「永久」（07-19 Tech Times 說法）未見官方公告證實。The Indian Express 原文提及應查核頁面殘留舊日期字串（7/7、7/12、7/19）並更新——本頁「模型 API 定價現況」Fable 5 列已於今日同步移除「即為今日」等過期措辭；**[[topics/model-comparison]] 快速選型表比照查核事宜回報主編轉知模型記者同步**（來源：2026-07-20 Google News/SQ Magazine、Google News/The Indian Express）
+- **（2026-08-08 待查證回訪，至今無後續）Pro/Max/Team Fable 5 計費方案訊號矛盾（07-18～21）逾 14 天未見官方澄清**：近 14 天日報（07-25～08-07）未見任何新報導針對「Max/Team Premium 是否永久／計量存取 50% 上限」「Pro 是否確定改為 Credits-only」提供官方確認或反駁，07-21 Reddit 社群觀察仍是本議題最新記錄；08-02 XDA 報導「$100 免費促銷附帶靜默計費異動」與本議題關聯待證實（見下方「重要政策變動紀錄」2026-08-01 條目），未直接解答本議題懸置的方案別歸屬問題
+- **⚠️ 2026-07-20（到期後翌日）：Pro 免費存取結束方向趨於一致，Max 方案動向仍未見新報導**：SQ Magazine（「Claude Fable 5 Ends Free Access For Pro Subscribers」）、The Indian Express（「Claude Fable 5 access plans change from July 20」）兩則報導方向與 07-19 Tech Times「Pro 改 Credits-only」一致，指向 Pro 訂閱用戶免費存取 Fable 5 已隨到期日結束；惟六則報導（含 07-18 兩則、07-19 兩則、07-20 兩則）均僅標題層級資訊，具體生效時間、計費費率、Max/Team 方案是否維持「永久」（07-19 Tech Times 說法）未見官方公告證實。The Indian Express 原文提及應查核頁面殘留舊日期字串（7/7、7/12、7/19）並更新——本頁「模型 API 定價現況」Fable 5 列已於今日同步移除「即為今日」等過期措辭；[[topics/model-comparison]] 快速選型表同步反映免費期已過期、Max/Team 存取政策仍分歧（來源：2026-07-20 Google News/SQ Magazine、Google News/The Indian Express）
 - **⚠️ 2026-07-21（社群補充，非官方）：Reddit 週熱門貼文稱 Max、Team Premium 已轉為計量存取**：r/artificial 週熱門貼文（2026-07-20 07:56 UTC）彙整 Fable 5 免費期延後歷程（6/22→7/7→7/12→7/19）並稱 7/20 起 Max 與 Team Premium 方案轉為**計量存取（metered）**，方向較接近 07-19 Dawn「用量上限 50%」而非 Tech Times「Max 永久」；同則貼文另提醒 Claude Code 本身另有 **2026-08-19** 到期的獨立延伸方案值得關注，具體內容未見報導細節。本則為 Reddit 社群觀察（達互動門檻對照表「低」門檻），非官方公告，與既有官方層級矛盾報導並列記錄，不可視為官方定案（來源：2026-07-20 Reddit r/artificial）
 - **⚠️ 2026-07-18～19 訊號持續矛盾，到期日當天仍無官方明確公告**：07-18 Startup Fortune、the-decoder.com（source_count=2）報導 Anthropic 因運算資源吃緊，已收緊 Max／Team Premium 方案 Fable 5 配額並將 Pro 用戶導向 API 計費；同日 Simon Willison 部落格引述官方 `@claudeai` Twitter 帳號稱「將 Fable 5 設為永久」，方向相反。07-19（到期日當天）Tech Times 稱「Max 永久、Pro 改 Credits-only」（可能是前兩則的方案別拆解，推論，待證實），同日 Dawn 稱「併入 Max/Team Premium、用量上限 50%」，與「永久」描述又不完全一致。四則報導均僅標題層級資訊，不擇一呈現，需持續觀察官方後續公告（來源：2026-07-18 Startup Fortune、the-decoder.com、Blog/Simon Willison；2026-07-19 Google News/Tech Times、Google News/Dawn）
 - **交易員押注第四度延長（市場猜測，非官方，07-18 獨立來源佐證）**：Yahoo Finance UK（source_count=2，2026-07-17）獨立報導交易員押注 Anthropic 將第四度延長 Fable 5 免費期限，與 07-17 已記錄之 Proactive financial news 首報方向一致，屬市場預期而非官方公告
@@ -292,7 +293,7 @@ The Information 報導企業客戶即使面對成本上漲仍持續採用；Anth
 
 ### 配額與速率
 
-#### 2026-07-22：Reddit 週熱門質疑 Anthropic 宣稱的用量提升未反映於實際體驗（單一貼文，待查證）
+#### 2026-07-22：Reddit 週熱門質疑 Anthropic 宣稱的用量提升未反映於實際體驗（單一貼文，2026-07-22 指控，至今無後續——近 14 天日報未見其他來源佐證或官方回應）
 
 - **r/ClaudeAI 週熱門貼文**：貼文標題稱「Anthropic Claims 50% usage boost that doesn't exist」，質疑官方宣稱的 50% 用量提升並未實際反映在使用體驗中；純圖片型貼文，未附具體帳號數據或官方公告連結佐證。**與既有 +50% 促銷的關係（推論，待證實）**：不確定是否指涉上方「當前生效的計費規則」已記錄、已於 07-19 到期的「週配額 +50% 過渡期促銷」，或另一項未見於日報的官方宣稱；若指涉前者，則與 05-16 已記錄「Max 20x 用量上限未生效（數學實證）」同屬「官方宣告與實際體驗存在落差」的重複性模式（推論）。本則達互動門檻對照表 Reddit 週熱門「低」門檻，但無具體數據佐證，暫不視為新增可查證事實，僅記錄為既有落差模式的又一社群訊號（Reddit https://www.reddit.com/r/ClaudeAI/comments/1v3d8iz/anthropic_claims_50_usage_boost_that_doesnt_exist/）
 

@@ -19,7 +19,7 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 **狀態：** monitoring
 **領域：** 💼 商業
 **開始日期：** 2026-04
-**最後更新：** 2026-08-07
+**最後更新：** 2026-08-08
 **最後新聞更新：** 2026-08-07
 
 > **最新競品動態**（2026-08-07）
@@ -63,7 +63,7 @@ Claude Code 已成為 AI 輔助編碼的標竿產品，但競爭正快速升溫�
 | GitHub Copilot Pro+ | $39/月（含 Opus 存取，但對 Opus 使用採 **27 倍**加價換算）| 名義月費低於 Claude Max，但重度使用 Opus 時實際換算成本可能反超；作者實測建議直接用 Anthropic API 更划算 | 2026-05-06（開發者實測分析）|
 | DeepSeek V4 Flash（API） | 未見具體掛牌價，僅見「成本降低逾 100 倍」對比 Anthropic API 定價之定性描述 | 開源、低價策略正面衝擊 Anthropic「API 高價補貼 agent 服務」的商業邏輯；Microsoft 等已切換部分執行層 | 2026-06-26（rtrvr.ai）|
 | DeepSeek（Lindy 案例，API 整體遷移）| 未見換算後月費數字，僅見「每月省下數百萬美元」（Lindy 全公司規模）| 「最省錢 > 最強模型」具名案例，屬企業級大規模用量的相對節省，非單一訂閱價格對比 | 2026-06-29（CNBC）|
-| Cursor（IDE 整合，SpaceX 收購後）| 待查證（日報未見具體訂閱價格更新）| 收購後資源結構改變，但定價策略尚未見公開異動報導 | 2026-06-17（收購確認）|
+| Cursor（IDE 整合，SpaceX 收購後）| 待查證，2026-06-17 指控，至今無後續（近 14 天日報未見具體訂閱價格更新報導）| 收購後資源結構改變，但定價策略尚未見公開異動報導 | 2026-06-17（收購確認）|
 | OpenAI Codex CLI | 待查證（日報未見具體訂閱/API 掛牌價）| 下載量與熱度數據充分（+1,397%），但定價面向未見具體數字 | — |
 | GPT-5.6（OpenAI API） | 大幅調降（確切幅度待查證原文 https://openai.com/index/advancing-the-price-performance-frontier-with-gpt-5-6/ ）| OpenAI 官方公告「Advancing the price-performance frontier with GPT-5.6」，明確訴求以更低價格/更高性價比對打 Anthropic；經 Simon Willison 摘要轉述「huge price drop」，但我方抓取資料無具體折扣百分比或新舊 $/Mtok 數字，僅標題+定性描述，不可推算 | 2026-07-30（Blog/Simon Willison）|
 | Gemini CLI / Gemini 系列 | 待查證（日報未見具體掛牌價）| 多次作為多模型混用/路由方案的一環出現，未見獨立定價報導 | — |
@@ -211,14 +211,14 @@ Claude Code 已成為 AI 輔助編碼的標竿產品，但競爭正快速升溫�
 
 ### Alibaba Qwen3.7-Max / Alibaba 蒸餾攻擊 / Qwen3.8（2026-07-20 新增追蹤）
 - **免費釋出「最強」模型，宣稱追平 Claude／ChatGPT（08-04，Decrypt，僅標題可用）**：Decrypt 報導阿里巴巴免費開放其「最強」AI 模型，宣稱效能幾乎追平 Claude 與 ChatGPT。**注意**：報導未指明模型名稱（是否為 07-20 已報導、宣稱「僅次於 Fable 5」的 Qwen3.8，或另一新模型），亦未提供具體 benchmark 數字，僅標題層級資訊，待後續報導補充。**對競爭格局的意涵**：若確為 Qwen3.8，則呼應該模型持續以「免費＋高性能」策略正面對打 Anthropic 訂閱付費模式，與既有蒸餾指控（06-25）並置解讀時，外界可能將「免費卻高性能」再度視為蒸餾疑慮的佐證（推論）（Google News/Decrypt）
-- **蒸餾雙標爭議（07-21，TipRanks，僅標題可用）**：TipRanks 報導 Claude 曾自稱是阿里巴巴的 Qwen AI，引發「Anthropic 蒸餾雙標」（distillation hypocrisy）批評。**注意**：僅標題可用，待補充——具體是在何種提問情境下自稱、多次或單次發生、Anthropic 是否已回應均未見報導。**對競爭格局的意涵**：與 06-25 Anthropic 正式指控 Alibaba 蒸餾 Claude 案（2.5 萬假帳號、2,880 萬次對話）形成敘事張力——若 Claude 自身也會誤稱為 Qwen，外界可能質疑蒸餾指控的舉證標準是否雙重，對 Anthropic 在中美模型蒸餾爭議中的道德制高點論述構成潛在削弱（推論）（Google News/TipRanks）
+- **蒸餾雙標爭議（07-21，TipRanks，僅標題可用，2026-07-21 指控，至今無後續——近 14 天日報未見其他來源佐證、Anthropic 回應或更多細節）**：TipRanks 報導 Claude 曾自稱是阿里巴巴的 Qwen AI，引發「Anthropic 蒸餾雙標」（distillation hypocrisy）批評。**注意**：僅標題可用，待補充——具體是在何種提問情境下自稱、多次或單次發生、Anthropic 是否已回應均未見報導。**對競爭格局的意涵**：與 06-25 Anthropic 正式指控 Alibaba 蒸餾 Claude 案（2.5 萬假帳號、2,880 萬次對話）形成敘事張力——若 Claude 自身也會誤稱為 Qwen，外界可能質疑蒸餾指控的舉證標準是否雙重，對 Anthropic 在中美模型蒸餾爭議中的道德制高點論述構成潛在削弱（推論）（Google News/TipRanks）
 - **狀態更新（07-20，三媒體同步）**：qz.com、WSJ、South China Morning Post 同步報導 Alibaba 預覽新模型 **Qwen3.8**，宣稱其能力僅次於 Anthropic Fable 5（WSJ 標題："Alibaba Says New AI Model Is Just Second to Anthropic's Fable 5"）。**對競爭格局的意涵**：是繼 Qwen3.7-Max（35 小時自主運行宣稱）之後 Alibaba 模型陣容的最新一代，本次宣稱聚焦「僅次於 Fable 5」的相對定位而非具體技術指標；三家獨立媒體同日報導顯示訊號可信度較高，但均僅標題層級資訊，未見具體 benchmark 數字、發布時程或是否開源等細節。**與既有蒸餾指控的張力（推論）**：Alibaba 目前仍身處 06-25 Anthropic 正式提出的蒸餾攻擊指控（2.5 萬假帳號、2,880 萬次對話）陰影下，此時高調宣稱新模型能力逼近 Fable 5，若外界將兩事聯繫解讀，可能加深「透過蒸餾快速追趕」的觀感，對 Alibaba 品牌信任度構成雙面效應（既展現技術實力也強化蒸餾指控的說服力）
 - **thestreet.com：阿里巴巴此舉標誌 AI 編程競爭態勢轉變（07-20）**：thestreet.com 報導稱阿里巴巴 Qwen 3.8 預覽「標誌著 AI 編程競爭態勢的轉變」，與同日 qz.com/WSJ/SCMP 已記錄的「僅次於 Fable 5」宣稱同屬今日 Qwen 3.8 報導潮的一環，從「編程競爭格局」角度補充另一媒體視角，並與同日 Emerging Trajectories 威脅分析（見「Moonshot AI」子區塊）方向呼應（thestreet.com）
 - **狀態**：遭 Anthropic 法律指控（2026-06-25）
 - **特點**：Qwen3.7-Max 聲稱可持續自主運行 35 小時，直接瞄準 Claude Code 的長時間自主執行場景
 - **重大事件**（2026-06-25）：Anthropic 正式指控阿里巴巴使用約 25,000 個假帳號、執行 2,880 萬次 Claude 對話，進行大規模 AI 模型蒸餾攻擊，竊取 Claude 能力輸入自家模型；阿里巴巴股價單日下跌逾 33%；Reuters、Bloomberg、WSJ、BBC、FT 多家媒體同步報導
 - **意義**：競品行為從「公開宣稱相容」升級至「非法蒸餾」層面，Anthropic 首次採取法律手段直接對中國科技巨頭提出正式指控，開創 AI 能力保護的新型法律戰場
-- **指控範圍疑似擴大（2026-07-18，待查證）**：The Times of India 報導 Anthropic 與 OpenAI 指控「中國 AI 公司」（複數）從事蒸餾行為，投資人 Chamath Palihapitiy 就此加入評論；報導未點名具體公司名單，無法確認是否為 06-25 Alibaba 指控案的延伸報導或新增其他廠商，具體評論內容原文亦未展開，待後續補充（Google News/The Times of India）
+- **指控範圍疑似擴大（2026-07-18，待查證，2026-07-18 指控，至今無後續——近 14 天日報未見具體公司名單或後續報導）**：The Times of India 報導 Anthropic 與 OpenAI 指控「中國 AI 公司」（複數）從事蒸餾行為，投資人 Chamath Palihapitiy 就此加入評論；報導未點名具體公司名單，無法確認是否為 06-25 Alibaba 指控案的延伸報導或新增其他廠商，具體評論內容原文亦未展開，待後續補充（Google News/The Times of India）
 
 ---
 

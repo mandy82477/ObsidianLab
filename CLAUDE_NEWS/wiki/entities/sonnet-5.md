@@ -21,7 +21,7 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 **狀態：** active（正式發布）
 **領域：** 🤖 模型
 **首次出現：** 2026-07-01
-**最後更新：** 2026-07-31
+**最後更新：** 2026-08-08
 **最後新聞更新：** 2026-07-31
 
 > **最新動態**（2026-07-31）
@@ -41,7 +41,7 @@ Claude Sonnet 5 於 2026-07-01 正式發布，定位為 Anthropic **最 agentic 
 
 **Claude Code 預設模型**：Claude Code v2.1.197 起已將 Sonnet 5 設為預設模型，取代前一代 Sonnet 版本。
 
-**定價**：促銷定價 $2/$10 per Mtok（input/output）有效期至 2026-08-31。相較 Opus 4.8（$5/$25，估計）成本差距約 60%，社群稱此為「cost reset for AI agents」。
+**定價**：促銷定價 $2/$10 per Mtok（input/output）有效期至 2026-08-31。社群稱此定價較 Opus 4.8 省約 60% 成本，形成「cost reset for AI agents」的討論；Opus 4.8 本身 API 定價未見官方逐項公布數字，完整定價彙整見 [[entities/pricing]]。
 
 **1M context window**：原生支援 100 萬 token 上下文，與 Fable 5 / Opus 4.8 相同。
 

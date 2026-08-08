@@ -21,7 +21,7 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 **狀態：** active（待核實）
 **領域：** 👤 人物
 **首次出現：** 2026-07-07
-**最後更新：** 2026-08-01
+**最後更新：** 2026-08-08
 **最後新聞更新：** 2026-07-07
 
 > **最新動態**（2026-07-07 報導，至今無後續）
@@ -43,6 +43,7 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 - [[topics/ai-talent-flow]] — AI 實驗室間人才流動追蹤
 - [[entities/bernanke]] — 近期同批加入 Anthropic 治理/顧問層的知名外部人士案例（2026-07-09，長期利益信託董事會）
 - [[entities/tom-blomfield]] — 近期同批加入 Anthropic 的知名外部人士案例（2026-07-13，待核實）
+- [[entities/tino-cuellar]] — 近期同批加入 Anthropic 的知名外部高管案例（2026-08-05，首任 Chief Global Affairs Officer）
 
 ---
 

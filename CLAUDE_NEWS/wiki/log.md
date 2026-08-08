@@ -3461,3 +3461,53 @@
 - **首輪 signal 分布**：健康 28／休眠 17／孤島 7／⚠️ 高引用但停滯 1（`safety-china-trust-dispute`，18 入鏈、25 天無新聞）。孤島含當日新建的 `tino-cuellar`（0 入鏈）與 `model-task-leaderboard`（1 入鏈）——新頁尚無人指向，補 wikilink 即可脫離
 - **未採用**：Dataview 未安裝，Bases 為已啟用核心外掛且能力足夠。惟 Bases 只讀 frontmatter，若日後要把 `community-tech-tools` 工具目錄、`enterprise-tool-tracker` 企業表變成可排序視圖，需安裝 Dataview 改用 DataviewJS（`dv.io.load()` 自行解析 markdown 表格），Bases 做不到
 - **過程事故**：作業期間 obsidian-git 自動 `pull --rebase --autostash` 撞上雲端 pipeline 當日 ingest，git 狀態在 rebase／merge 間反覆數次，一度沖掉兩項未 commit 的改動（publisher 回填、api_docs 修復），均已重做。教訓：背景自動 git 與長時間本地作業並存時，改動應盡早 commit
+
+## 2026-08-08 Lint（雲端排程執行）
+
+- 修正矛盾：6 處——(1) `entities/sonnet-5.md`「相較 Opus 4.8（$5/$25，估計）」誤植，該數字實為 Opus 5（Fable 5 半價推算）之估計值，已改寫為不帶具體數字並加 [[entities/pricing]] wikilink；(2) `entities/mythos.md` 現況段「07-28 最新」標籤早於實際更新的 07-29 段落，順序與標籤矛盾，已對調重標；(3) `topics/anthropic-business.md` Fable 5 計費架構「7/7 起 usage-based billing」與 `pricing.md` 記載的多次延長（07-12/07-19）不一致，已改寫為指向 pricing.md 最新狀態；(4) `entities/tom-brown.md` 現況／歷史記錄未反映其主導的 Fable 5/Mythos 出口管制談判已於 07-01 全面解除，仍停留在「接管談判」階段，已補寫結局與 wikilink；(5)`topics/community-tech-tools.md` claude-workflow-v2 簡介載明「已證明採用」但採用符號誤標 ⚡，修正為 ✅ 並提拔精選層；(6) `topics/community-large-codebase-workflow.md` 與 patterns/discussions 間一則事件日期誤植（08-05→應為08-04）及「並行規模」線觀測性子敘事被本輪新趨勢超越未更新，均已修正
+- 補孤立連結：`entities/tino-cuellar.md`（僅 index.md 反向連結）→ 已於 `bernanke.md`／`teresa-carlson.md`／`tom-blomfield.md`「相關議題」補回連 wikilink；其餘六類負責頁面逐一 grep 反向 wikilink 檢查全數 ≥1，無其他孤立頁
+- 狀態更新：無 topics 狀態變更（`ai-talent-flow`／`safety-china-trust-dispute`／`anthropic-commitments` 等維持既有 monitoring，最後新聞更新皆未達 14 天過期門檻或近期已由日報更新）
+- resolved 收尾：無（六類負責範圍內無 resolved 狀態頁面待收尾）
+- 新增 entities：無（本輪未建立新頁；候選見下方「📋 待使用者確認」第 1 項）
+- 呈現品質：⚠️ 已修復約 25 頁——詳見六類記者回報逐頁說明（懸置標記逾期改註「至今無後續」約 20+ 筆、維運術語洩漏修正 4 處、矛盾修正 6 處、孤立連結補齊 1 頁），其餘全數 ✅ 通過
+- 入口層健檢：無新增 >500 行拆分候選；`claude-code.md`（584行）、`pricing.md`（520行）、`competitor-landscape.md`（509行）、`anthropic-business.md`（577行）、`ai-agent-safety.md`（844行）、`anthropic-government-policy.md`（519行）、`community-tech-patterns.md`（1353行）、`community-tech-discussions.md`（1223行）均已確認入口層完整（callout+概覽表/分組），無語意分岔或死案候選，本輪 Step 3 因無候選直接跳過
+- 待查證回訪：六類共計已改註「至今無後續」／延伸查證窗口約 30+ 筆懸置標記，詳見各記者回報；其餘距今 ≤14 天者維持不動
+- 規則檔健檢：
+  - 矛盾：無（`wiki/CLAUDE.md`、`.claude/rules/wiki-ingest.md`、`.claude/rules/wiki-ingest-format.md` 三檔逐段複查未見同一行為的相反指示）
+  - 引用驗證：全部通過（7 個錨點逐一 grep 命中，同 08-01 結果）
+  - 遵守率：呈現品質審查 3/3（08-02／08-04／08-05 log 皆含 ✅/⚠️/📋 標記）；feature-radar 明確提及 3/3（08-02「未更新」附理由、08-04／08-05 各新增 1 條）；log 格式正確 3/3。`wiki-lint.md` 6c 表「新工具加入時更新痛點洞察近期工具欄」一列因 `community-tech-tools.md` 已改 lint 專用而不適用於 ingest 抽樣，此為延續案（見待確認第 2 項）
+  - 過期規則（> 60 天）：4 項，天數較 08-01 lint 各 +7 天——`entities/`／`topics/ 頁面格式模板`〔04-25，105 天，連續第 6 週〕、`Wiki 頁面呈現品質標準`〔05-15，85 天，連續第 4 週〕、`patterns↔discussions 雙向連結規則`〔05-16，84 天，連續第 4 週〕、`enterprise-tool-tracker 更新規則`〔05-26，74 天，連續第 3 週〕。`命名與分類規則`〔06-11〕本輪 58 天，仍在 60 天閾值內但下週將跨越，先行提醒
+  - 來源健康：近 7 個運行日（07-30～08-07）逐日核對——**`Claude API Release Notes` 出現轉機**：連續 26+ 天 count=0 後，08-07 首次出現 count=1，是否為真實抓取恢復待下週確認（延續觀察，見待確認第 3 項）；**`GitHub`（repo 來源）已恢復**：08-04=1、08-05=33、08-07=34，連續 4 天 0 的告警解除，上輪待確認第 4 項可視為已解決；其餘來源（Google News／Hacker News／Reddit／dev.to／Anthropic Status／Anthropic Blog／Blogroll／GitHub Issues）均未觸發連續 3 天 count=0 告警
+  - 來源記分卡：`python scripts/source_scorecard.py`（26 天窗口）無「未註冊 slug」告警；Google News 低信譽桶（pc1 < 0.4）0 筆；HHI 0.231（未達 0.25 高度集中門檻）；dev.to／Reddit 標「untrusted」延續為抓取機制結構性因素，非品質劣化
+  - 跨檔案語意矛盾（6f）：`python scripts/check_rules.py` 全部確定性檢查通過（38 組 sync_pair 全數符合，含雲端 weekly runbook 對 wiki-lint.md 錨點逐字相符、model-comparison 六條規則齊全、外部死鏈雲端跳過規定保留等）；11 組 coupling hints 為 warn-only 未阻塞。人工複查本輪未發現新的實質矛盾，✅ 全部配對語意一致
+  - 成長迴路（月度）：**非本月首次 lint（`wiki/log.md` 08 月已有 08-01 Lint 記錄），跳過月度蒸餾**；延續案：08-01 lint 提出的立法提案（「低急迫性跨記者轉知於送達時目標記者已交卷，非遺漏」明文寫入 `.claude/rules/wiki-ingest.md`）仍待使用者裁示，見待確認第 7 項
+- 品質指標（6g）：
+  - ref 覆蓋率（每週）：**100%**（08-01～08-07，19 條列/19 有歸因；08-03／08-06 當日無 news 檔案不計入分母，閾值 80% 通過）
+  - 採用驗證率（月度）：**非本月首次 lint，跳過**
+  - 外部死鏈（月度）：**非本月首次 lint，跳過**（上輪 08-01 因雲端 egress 封鎖已跳過並留待辦，本輪非月度執行窗口不重複判斷）
+  - 趨勢判讀：持平（連續 3 期 ≥97%：07-18 100%／07-26 97%／08-08 100%，高位穩定）
+- 跨家榜單週更（5b）：**本輪未執行**——`model-task-leaderboard.md` 抓取需存取外部榜單網站（swebench.com 等），雲端 egress 一律封鎖外部網域（實測 `www.swebench.com` 回傳 `EGRESS_BLOCKED`），與 `_shared.md`「egress 限制」條款同理，本輪跳過，留待本機或下次有 web 存取能力的環境執行。**⚠️ runbook 步驟表與 wiki-lint.md 不同步**：`docs/cloud-runbooks/weekly-lint.md` 的步驟對照表未列出 `5b`（2026-08-05 新增於 wiki-lint.md，runbook 表格尚未同步收錄），本輪依「用標題找步驟」原則正常判讀執行（判定為需跳過的外部抓取步驟），但建議使用者回頭在 runbook 表格補上 5b 這一列並註明雲端跳過理由
+- 讀者模擬：
+  - Claude Code 重度使用者「Claude Code 現在有沒有新的已知問題要注意？」→ ✅ 通過：index → `entities/claude-code.md` → 「已知問題」分組表（含統計行與狀態標記），2 跳內取得完整現況
+  - AI 系統開發者「社群現在流行用什麼工具追蹤多個 agent 的執行進度？」→ ✅ 通過：index → `topics/community-tech-tools.md` → 頂部 callout 直接列出 Wallfacer／HUD／Cockpit 三款新工具與「多 agent 進度難追蹤」痛點對應，2 跳內取得結論
+  - Anthropic 生態追蹤者「英國政府對 Anthropic 模型的資安測試結果如何，跟其他家比較起來呢？」→ ✅ 通過：index → `topics/ai-agent-safety.md` → 頂部 callout 直接說明 AISI 報告與跨三實驗室（Anthropic/OpenAI/Meta）框架升級，2 跳內取得結論
+- lint 自我遵守率：6/6 位記者回報一次過（3a–3g 各項在六份回報中皆有具體頁名與結論，無缺項或含糊，無退回）；安全政策記者於初次執行 3g 時自行發現並修正 15 處維運術語洩漏（「lint 回訪」等內部字眼），過程自我修正記入此列供觀察，不計入退回
+- overview.md：已全文改寫（上次全文改寫為 08-01 lint，08-07 daily ingest 曾局部新增兩則 callout）。本輪反映 08-01～08-07 局勢：英國 AISI 官方報告將安全事件框架升級為跨三實驗室（Anthropic/OpenAI/Meta）產業性揭露、Anthropic 證實成立內部晶片設計團隊＋Volta/AWS Continuum/Millennium/SpaceX 商業合作密集落地、Meta 正式發布 Muse Code 對標 Claude Code、Anthropic 任命首任 Chief Global Affairs Officer Tino Cuéllar；「近期重大事件」表格窗口由 07-26~08-01 更新為 08-01~08-07；社群工具生態新增「多 agent 可觀測性儀表板化」趨勢六
+- **品質備註**：
+  - **[環境]** 雲端 `wiki-reporter-*` 六個自訂 subagent_type 本次仍無法解析（Agent 工具可用清單未列出），六類全數以 general-purpose 內嵌完整規則文字降級執行，功能等同原生記者，已於各記者回報標注
+  - **[結構性發現]** `wiki/log.md` 的 `2026-08-07 Ingest` 條目被寫在檔案**最上方**（第 9 行）而非檔尾，違反 `wiki-lint.md` Step 8／`wiki/CLAUDE.md`「append-only」慣例（本檔其餘條目仍依時序遞增排列，08-05 相關條目在檔案末端）；本輪主編**未搬動任何既有內容**（避免在不確定寫入邏輯的情況下誤刪或錯序），僅在此註記異常、並將本次 08-08 Lint 條目正確 append 於檔案真正末端。建議使用者複查 08-07 當次 daily ingest（雲端或補跑腳本）的寫入邏輯是否誤用了 prepend
+  - **[跨記者轉知延續]** 商業記者本輪再度提出 tech-insider.org 08-03「Claude Outage Hits 5h 44m」報導是否應記入 `claude-code.md` 已知問題——與 08-04 lint 已核實的判斷一致（該時長與 Anthropic Status 官方頁記錄的同期事件〔7 分鐘至約 85 分鐘內修復〕不吻合，兩者是否同一事件存疑），本輪查無新佐證，維持不寫入、不推測，與上次處置一致
+  - **[延續]** 社群記者重新評估 2026-08-01 lint 提出的 patterns 淘汰審查合併建議（「Agent 版本控制」→「Repo-as-Memory」），結論不變仍成立；並新發現一組「跨環境 Agent 記憶」→「記憶與知識管理」合併建議（模式概覽表本身已重複列出代表技巧），兩組合併建議一併列入待確認第 6 項
+
+### 📋 待使用者確認（2026-08-08 lint，含延續案）
+
+1. **新實體頁候選**：延續案 (a) `Reflect with Claude`——**連續第 6 週提出**，自 07-09 發布至今 30 天仍無新報導，強烈建議確認結案不建頁。(b) `Project Glasswing`——持續累積夥伴數，是否獨立建頁（拆出會使 mythos 頁安全能力故事斷裂）？新提出（本輪 Step 4 全站掃描，被提及 3 次以上但無專頁）：(c) `Kimi K3`（Moonshot AI 開源模型，35 次提及，威脅敘事持續升溫）(d) `Zhipu Z.AI / ZCode`（中國開源 AI 公司，Zhipu 28 次＋ZCode 9 次，免費工具對標 Cursor/Claude Code）(e) `Kiro`（新興 AI 編碼工具競品，13 次，宣稱 80.8% SWE-bench，定價待查證）(f) `Muse Code`（Meta 正式發布的程式碼撰寫 agent，9 次，本輪已由商業記者記入 competitor-landscape，是否再獨立建頁？）(g) `Simon Willison`（獨立 AI 部落客，101 次橫跨 12 個頁面，全 wiki 最常被引用的第一手觀點來源，是否建人物頁？）→ 何者要建頁？
+2. **6c 遵守率表過時列（延續案）**：`wiki-lint.md` 6c「新工具加入時更新痛點洞察近期工具欄」一列因 `community-tech-tools.md` 自 06-19 改 lint 專用、每日 ingest 不再更新該頁而不適用 → 是否改寫為 lint 自查項或移除該列？
+3. **來源健康：`Claude API Release Notes` 出現轉機**——連續 26+ 天 count=0 後 08-07 首次出現 count=1，是真實抓取恢復還是單次巧合，建議下週再觀察一次確認趨勢，暫不視為已解決
+4. ~~來源健康：`GitHub`（repo 來源）連續 4 個運行日 count=0~~ **已解決**：08-04 起強勁恢復（1／33／34），無需使用者裁示，僅記錄於此供追蹤
+5. **規則年齡審查（6d）**：4 項超過 60 天，天數持續增加——`entities/`／`topics/ 頁面格式模板`（105 天，第 6 週）、`Wiki 頁面呈現品質標準`（85 天，第 4 週）、`patterns 對 discussions 雙向連結規則`（84 天，第 4 週）、`enterprise-tool-tracker 更新規則`（74 天，第 3 週）→ 是否逐項審視，或標記為「已審閱，長期有效」以停止重複列出？
+6. **patterns 淘汰審查 dry run 結果**：建議合併 2 組——(a)「Agent 版本控制」→ 併入「Context 管理／Repo-as-Memory」（延續 08-01 提案，本輪重新評估結論不變）；(b) 新發現「跨環境 Agent 記憶」→ 併入「記憶與知識管理」（模式概覽表本身已重複列出代表技巧）。7 條「無法判斷」需下週期複查（延續 6 條：Agent 預算控制／確定性 Agent 框架／Agent Loop 終止條件／Agent 記憶保護／跨 Repo 依賴可視化／可靠性測試；新增 1 條：Plugin/MCP 整合類別內「Plugin 反模式整理」技巧日期歸屬不確定）→ 是否同意本輪 2 組合併建議？
+7. **月度蒸餾立法提案（延續案，08-01 提出尚未裁示）**：是否採納「低急迫性、資訊量有限的跨記者轉知，若送達時目標記者已完成當次任務，留待下次 ingest 自然浮現，非遺漏」明文寫入 `.claude/rules/wiki-ingest.md` 第三步？（全部／部分／皆否）
+8. **社群記者發現：`topics/code-quality-decline.md` 領域歸屬疑義（延續案）**——`wiki/index.md` 與頁面標頭皆標 🛠️ 工具/功能，但 `.claude/rules/wiki-ingest-community.md` 觸發條件表將此頁列為社群記者負責範圍；本輪依派工實際指派（社群）完成 lint，未生成錯誤，但建議釐清歸屬避免未來派工混淆或重複/遺漏 → 是否需修訂規則檔明確歸屬（社群 vs 功能）？
+9. **外部死鏈檢查（月度，延續案）**：雲端一律跳過，待辦「留待本機月度執行 `python scripts/check_links.py`」仍未執行，繼續延續至下次本機可執行時段
+10. **結構性發現：`wiki/log.md` 的 `2026-08-07 Ingest` 條目被寫在檔案最上方而非檔尾**（見上方品質備註），違反 append-only 慣例；本輪未搬動既有內容，建議複查該次寫入來源的腳本／流程邏輯是否誤用了 prepend，避免未來 append 定位持續錯亂

@@ -19,11 +19,11 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 **狀態：** monitoring（核心「後門」敘事自 07-10 雙方首度正面否認後未見新進展，轉低頻觀察；新出現的相關但獨立事件見下方說明）
 **領域：** 🏛️ 政策/安全
 **開始日期：** 2026-06-30
-**最後更新：** 2026-08-01
+**最後更新：** 2026-08-08
 **最後新聞更新：** 2026-07-11
 
 > **最新動態**（2026-07-10，議題轉入低頻觀察）
-> 中國「後門」指控延燒第三天，UC Today、BankInfoSecurity、Technology Org、TechRepublic、TechRadar、CISO Series、Fox Business 等多家獨立媒體續報導；**Anthropic 今日首度公開反駁該指控**——為本議題自 06-30 起追蹤以來，官方第一次正面回應「中國官方層級」指控本身（此前 07-07「實驗」定調僅回應社群層級的原始指控，未直接對應中國官方警示的用詞與框架）。同日 Anthropic Blog 另發布「Inviting hard questions」回應外界安全疑慮的立場聲明，兩者關聯待查證（推論）。雙方框架仍各執一詞，均無第三方技術驗證。**截至 2026-07-26，本頁核心「後門」敘事線已 16 天無新進展**（中國官方與 Alibaba 均未就 Anthropic 的否認再表態），故狀態轉為 monitoring；07-22 起浮現的 Moonshot AI 蒸餾指控與財政部制裁威脅、07-23 digitimes「Claude Code 外洩內容縮小差距」指控，雖同屬中美 AI 信任/能力落差的廣義敘事，但性質與本頁「Claude Code 後門/隱寫術」主線不同（前者為模型蒸餾與外洩指控，非 Claude Code 產品層機制指控），依主歸屬原則追蹤於 [[topics/anthropic-government-policy]]，本頁不重複收錄。
+> 中國「後門」指控延燒第三天，UC Today、BankInfoSecurity、Technology Org、TechRepublic、TechRadar、CISO Series、Fox Business 等多家獨立媒體續報導；**Anthropic 今日首度公開反駁該指控**——為本議題自 06-30 起追蹤以來，官方第一次正面回應「中國官方層級」指控本身（此前 07-07「實驗」定調僅回應社群層級的原始指控，未直接對應中國官方警示的用詞與框架）。同日 Anthropic Blog 另發布「Inviting hard questions」回應外界安全疑慮的立場聲明，兩者關聯（推論，08-08 複查：近 14 天無後續報導，改註至今無後續）。雙方框架仍各執一詞，均無第三方技術驗證。**截至 2026-07-26，本頁核心「後門」敘事線已 16 天無新進展**（中國官方與 Alibaba 均未就 Anthropic 的否認再表態），故狀態轉為 monitoring；07-22 起浮現的 Moonshot AI 蒸餾指控與財政部制裁威脅、07-23 digitimes「Claude Code 外洩內容縮小差距」指控，雖同屬中美 AI 信任/能力落差的廣義敘事，但性質與本頁「Claude Code 後門/隱寫術」主線不同（前者為模型蒸餾與外洩指控，非 Claude Code 產品層機制指控），依主歸屬原則追蹤於 [[topics/anthropic-government-policy]]，本頁不重複收錄。
 
 ---
 

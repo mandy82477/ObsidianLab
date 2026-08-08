@@ -21,7 +21,7 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 **狀態：** active
 **領域：** 👤 人物
 **首次出現：** 2026-07-10
-**最後更新：** 2026-07-16
+**最後更新：** 2026-08-08
 **最後新聞更新：** 2026-07-10
 
 > **最新動態**（2026-07-09）
@@ -44,6 +44,7 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 - [[entities/dario-amodei]] — Anthropic CEO，長期利益信託所監督對象
 - [[entities/teresa-carlson]] — 近期同批加入 Anthropic 的外部高管案例（2026-07-07，公部門業務，待核實）
 - [[entities/tom-blomfield]] — 近期同批加入 Anthropic 的知名外部人士案例（2026-07-13，待核實）
+- [[entities/tino-cuellar]] — 近期同批加入 Anthropic 治理/顧問層的知名外部人士案例（2026-08-05，首任 Chief Global Affairs Officer）
 
 ## 參考來源
 

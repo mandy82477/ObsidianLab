@@ -19,7 +19,7 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 **狀態：** monitoring（出口管制主線已解除，剩餘承諾落實與衍生支線持續觀察；中美 AI 工具信任對峙已獨立成頁）
 **領域：** 🏛️ 政策/安全
 **開始日期：** 2026-05-01
-**最後更新：** 2026-08-07
+**最後更新：** 2026-08-08
 **最後新聞更新：** 2026-08-07
 
 > **最新動態**（2026-08-07）
@@ -175,26 +175,26 @@ Fable 5 發布後，Amazon 安全研究人員發現特定提示詞可讓模型�
 | 2026-07-28 | 🌐 | Axios／TechCrunch／Politico／Benzinga／Computerworld／Yahoo Tech 等多家媒體跟進 Amodei「Our position on open-weights models」聲明，聚焦「不支持開源禁令但主張抑制中國」框架 | Yahoo Tech 特別指出 Anthropic 因此立場受業界批評，被視為「唯一不支持開源模型的主要 AI 實驗室」；顯示聲明未完全平息「矽谷分裂」敘事，反而具體化 Anthropic 的孤立位置 |
 | 2026-07-26 | 🌐 | India Today：矽谷對中國 AI 模型立場分裂，Nvidia 等主張開放存取，Anthropic 推動禁令 | 將 07-23 The Information「業界反彈」與 07-25 Forbes「連署缺席」訊號整合定性為陣營對立框架；Anthropic 官方尚無回應，待查證 |
 | 2026-07-25 | 🌐 | Forbes：Nvidia 開放權重連署擴大至 50 家企業，Amazon 與 Anthropic 未加入 | 首次具名量化「業界反彈」規模（50 家），並明確點名 Amazon、Anthropic 缺席；連署完整名單與 Anthropic 是否回應待查證 |
-| 2026-07-23 | 🏛️🌐 | BBC（source_count=2，另一媒體同步報導）：白宮「川普科技顧問」指控中國 Moonshot AI 從 Anthropic 竊取技術，確認並補足 07-22 TechCrunch/南華早報標題式報導 | 兩獨立媒體確認同一指控，消息來源具體化為「川普科技顧問」（姓名未指明），而非泛稱「白宮官員」；顧問具體身分、財政部制裁進展仍待查證 |
+| 2026-07-23 | 🏛️🌐 | BBC（source_count=2，另一媒體同步報導）：白宮「川普科技顧問」指控中國 Moonshot AI 從 Anthropic 竊取技術，確認並補足 07-22 TechCrunch/南華早報標題式報導 | 兩獨立媒體確認同一指控，消息來源具體化為「川普科技顧問」（姓名未指明），而非泛稱「白宮官員」；顧問具體身分、財政部制裁進展仍待查證（2026-07-23 報導，08-08 複查：近 14 天無後續，改註至今無後續） |
 | 2026-07-23 | 🌐 | The Information（經 Google News 轉載，僅標題可用）：矽谷科技業界聯合反對 Anthropic 對中國 AI 的限制立場 | 出口管制主線落幕後首見「業界」層級對 Anthropic 對中立場的集體反彈訊號；具體反對名單、訴求焦點與後續行動均未見報導，待原文確認 |
 | 2026-07-23 | 🌐 | digitimes（經 Google News 轉載，僅標題可用，用詞保守處理）：中國 AI 實驗室透過 Claude Code 相關外洩內容縮小與 Anthropic 技術差距 | 未經證實的標題式報導，外洩內容性質、涉及實驗室與機制均未見報導；若屬實可能呼應「中國追趕」既有敘事，但暫不併入蒸餾指控脈絡；技術安全面待查證見 [[topics/ai-agent-safety]] |
 | 2026-07-22 | 🏛️🌐 | 白宮官員指控中國 Moonshot AI 從 Anthropic 的 Fable 模型「蒸餾」竊取技術，美國財政部隨後揚言祭出制裁（TechCrunch、南華早報 經 Google News 轉載，僅標題可用，2026-07-22） | 繼 06-10 Anthropic 自行致函參議院指控阿里巴巴 2,880 萬次蒸餾攻擊後，第二起蒸餾攻擊指控，且首次由白宮官員直接點名並升級至財政部制裁威脅，性質從「企業指控」升級為「政府對政府」攻防；制裁具體對象、法源依據、範圍均未見報導，兩則報導僅標題可用，待原文確認 |
 | 2026-07-22 | 🏢 | Anthropic 官方部落格宣布再捐 2000 萬美元予無黨派組織 Public First Action（累計達 4000 萬美元，首筆 2026-02）；聲明明確排除影響任何聯邦/州/地方公職候選人選舉之用途，僅用於公眾教育與政策倡議（Anthropic Blog，2026-07-22 11:53 UTC） | WSJ／The Hill／Axios 同日跟進報導框架為「期中選舉支出翻倍至 4000 萬美元推動 AI 監管」「遊說支出攀升」，與官方「非選舉用途」聲明存在敘事張力；是否與 07-16 Dario 個人捐款 100 萬美元、07-17 員工捐款 300 萬美元屬同一資金脈絡待查證 |
-| 2026-07-22 | 🏛️🌐 | CNBC（經 Google News 轉載，僅標題可用）：聯準會（Fed）曾就 Anthropic 的 Mythos AI 模型發出警示，但相關訊息延遲數月才浮上檯面（2026-07-21 22:05 UTC） | 繼加拿大金融監管機關（07-13）、JPMorgan CEO Dimon（07-16）之後，Fed 成為第三個對 Mythos 表態的金融監管/業界角色，跨機構模式持續擴大；具體警示內容、時間點、延遲原因均未知，待查證；詳見 [[entities/mythos]]（模型記者主責） |
-| 2026-07-17 | 🏢 | SFGATE（經 Google News 轉載，僅標題可用，原文因轉址未確認）：Anthropic 員工捐款 300 萬美元，支持 AI 安全相關法規推動（2026-07-17 16:43 UTC） | 繼 07-16 Dario Amodei 個人捐款 100 萬美元予某 super PAC 後，Anthropic 員工集體捐款規模更大（300 萬美元）；是否流向同一 PAC/組織、支持哪項具體法規均待原文確認（待查證） |
+| 2026-07-22 | 🏛️🌐 | CNBC（經 Google News 轉載，僅標題可用）：聯準會（Fed）曾就 Anthropic 的 Mythos AI 模型發出警示，但相關訊息延遲數月才浮上檯面（2026-07-21 22:05 UTC） | 繼加拿大金融監管機關（07-13）、JPMorgan CEO Dimon（07-16）之後，Fed 成為第三個對 Mythos 表態的金融監管/業界角色，跨機構模式持續擴大；具體警示內容、時間點、延遲原因均未知（2026-07-22 報導，08-08 複查：近 14 天無後續，改註至今無後續）；詳見 [[entities/mythos]]（模型記者主責） |
+| 2026-07-17 | 🏢 | SFGATE（經 Google News 轉載，僅標題可用，原文因轉址未確認）：Anthropic 員工捐款 300 萬美元，支持 AI 安全相關法規推動（2026-07-17 16:43 UTC） | 繼 07-16 Dario Amodei 個人捐款 100 萬美元予某 super PAC 後，Anthropic 員工集體捐款規模更大（300 萬美元）；是否流向同一 PAC/組織、支持哪項具體法規均未見報導（2026-07-17 報導，08-08 複查：近 14 天無後續，改註至今無後續） |
 | 2026-07-16 | 🏛️🌐 | Politico（經 Google News 轉載，僅標題可用，原文因轉址未確認）：參議員 Mike Rounds 就 Anthropic 的 Mythos 接受五角大廈簡報（2026-07-16 20:12 UTC） | 國會軍事委員會層級對 Mythos 軍用能力的關注持續，暗示 05-01 DoD 排除 Anthropic、06-17 三分之二工作量轉移後，軍事戰場仍有國會層級後續動態；具體簡報內容與 Rounds 立場（2026-07-16 報導，至今無後續） |
 | 2026-07-16 | 🌐 | WIRED 分析並確認 Anthropic 正積極遊說美國各州加快 AI 監管腳步（州級而非僅聯邦層級政策遊說），延續並補強 07-15 Politico 標題式報導（2026-07-16 18:35 UTC） | 州級規則倡議首度獲具分析深度的媒體（WIRED）確認，非僅標題轉載；具體州別與規則內容仍待報導揭露 |
 | 2026-07-16 | 🌐 | 南華早報獨家專訪「Pax Silica」政策架構主要推手（姓名待確認），論述美國仍可維持 AI 領先地位（2026-07-16 15:00 UTC） | 為既有「出口管制反效，恐助長中國開源模型」論述（Bloomberg 06-26）首度出現的正面反駁觀點；論者身分與政策架構具體內容（2026-07-16 報導，至今無第三方跟進） |
 | 2026-07-16 | 🌐🏛️ | Hacker News 轉載 Politico 全文報導（累積 19 分），確認並補足 07-14 politico.eu 標題式報導：具名初階員工 Donny Greenberg 出席歐洲議會安全聽證會，回應先進 AI 能力風險疑慮（原文：politico.eu/article/anthropic-european-parliament-donny-greenberg-artificial-intelligence-ai） | 07-14 headline 首度取得全文與具名細節確認；歐盟對 Anthropic 政府關係投入層級的不滿具體化（點名基層員工代表出席），可能影響「歐洲據點爭奪」進度 |
-| 2026-07-16 | 🏢 | Anthropic CEO Dario Amodei 捐款 100 萬美元予某 super PAC，捲入 AI 陣營之間鉅額政治獻金角力（Google News/Politico，僅標題式轉載，原文因轉址未確認） | Anthropic 高層首度出現具金額的美國政治獻金動作；與 07-15 州級 AI 規則倡議是否構成一致政治佈局待觀察；人物面向詳見 [[entities/dario-amodei]] |
+| 2026-07-16 | 🏢 | Anthropic CEO Dario Amodei 捐款 100 萬美元予某 super PAC，捲入 AI 陣營之間鉅額政治獻金角力（Google News/Politico，僅標題式轉載，原文因轉址未確認） | Anthropic 高層首度出現具金額的美國政治獻金動作；與 07-15 州級 AI 規則倡議是否構成一致政治佈局待觀察；PAC 名稱與資金用途細節（2026-07-16 報導，08-08 複查：近 14 天無後續，改註至今無後續）；人物面向詳見 [[entities/dario-amodei]] |
 | 2026-07-15 | 🏢 | Axios 報導 Anthropic 正在招募人力以應對潛在災難性風險（catastrophic risk），偏向安全團隊建置動態（Google News/Axios，僅標題式轉載，原文因轉址未確認） | 顯示 Anthropic 持續擴大安全/災難性風險相關人力編制；具體職位、規模、時間表（2026-07-15 報導，至今無後續） |
 | 2026-07-15 | 🏢 | Politico 報導 Anthropic 正推動一項逐州加強 AI 監管規則的計畫（美國州層級政策倡議）（Google News/Politico，僅標題式轉載，原文因轉址未確認） | Anthropic 主動遊說州級 AI 監管收緊，與其一貫「越強模型越需要護欄」立場一致；具體州別、規則內容、遊說對象待確認 |
 | 2026-07-14 | 🌐🏛️ | politico.eu 報導歐盟官員對 Anthropic 僅派遣一名初階員工出席安全聽證會表達不滿，稱其「不重視歐洲」（Google News/politico.eu，僅標題式轉載，原文因轉址未確認） | 歐盟對 Anthropic 政府關係投入程度出現具體負面評價，呼應「歐洲據點爭奪」變數中歐洲對 Anthropic 重視度的觀察角度；具體聽證會場合、官員身分、後續外交效應待確認 |
-| 2026-07-14 | 🏛️ | The National Interest 報導：國防部長 Hegseth 曾稱 Anthropic 為「國家安全風險」，CISA（網路安全暨基礎設施安全局）現正使用其產品（Google News/The National Interest，僅標題式轉載，未附引言細節） | 呈現美國政府內部對 Anthropic 風險評估的立場矛盾（國防部 vs CISA）；延續 06-05 Hegseth 首次確認風險標籤事件的後續發展，具體使用範圍與時間點待確認 |
+| 2026-07-14 | 🏛️ | The National Interest 報導：國防部長 Hegseth 曾稱 Anthropic 為「國家安全風險」，CISA（網路安全暨基礎設施安全局）現正使用其產品（Google News/The National Interest，僅標題式轉載，未附引言細節） | 呈現美國政府內部對 Anthropic 風險評估的立場矛盾（國防部 vs CISA）；延續 06-05 Hegseth 首次確認風險標籤事件的後續發展，具體使用範圍與時間點（2026-07-14 報導，08-08 複查：近 14 天無後續，改註至今無後續） |
 | 2026-07-13 | 🏛️ | Reuters 獨家報導（source_count=2）：加拿大金融監管機關發函警告銀行業網路風險，內容明確引用 Claude Mythos 作為佐證（電郵內容為報導依據） | Mythos 07-01 出口管制解禁後，監管機構首見的具體風險評估案例，顯示金融監管開始將 Mythos 級模型的網路攻擊協助能力納入產業風險框架；詳見 [[entities/mythos]] |
 | 2026-07-13 | 🏢 | Anthropic 向澳洲政府（財長 Chalmers）表態：210 億美元投資案取決於著作權法規的明確性，遊說澳洲修改著作權法；澳洲總理不急於處理（AFR、TechXplore） | 繼奧地利遊說歐盟邀設據點（06-28）後第二個具名國家層級政府互動；「投資規模綁定政策讓步」談判模式首次出現在美國以外戰場；遊說結果未定，澳方無讓步跡象 |
 | 2026-07-13 | 🌐 | 《紐約時報》刊出分析文章〈What the Government's Fight With Anthropic Reveals About Free Speech in America〉，將政府與 Anthropic 的法律攻防（出口管制/監理互動）折射為美國言論自由議題的觀察案例（NYT，經 Google News 轉載，原文網址因轉址未確認） | 論述類報導，非新事件；首次將本頁攻防主線明確納入「言論自由」框架，與既有「安全論述雙面刃」「AI 主權之爭」等框架併列，屬第三個觀察角度；無新事實或技術細節 |
-| 2026-07-13 | 🌐 | New York Post（經 Google News 轉載）刊文指控中國「複製」Anthropic/OpenAI 前沿 AI 技術並定性為美國國安威脅，未提供新技術證據，論調呼應既有阿里巴巴蒸餾指控（06-10 致參議院信）（New York Post） | 單一媒體來源、無第三方或官方確認，僅延續既有「中國竊取/複製前沿 AI 能力」敘事框架，未新增具體事實或機制細節 |
+| 2026-07-13 | 🌐 | New York Post（經 Google News 轉載）刊文指控中國「複製」Anthropic/OpenAI 前沿 AI 技術並定性為美國國安威脅，未提供新技術證據，論調呼應既有阿里巴巴蒸餾指控（06-10 致參議院信）（New York Post） | 單一媒體來源、無第三方或官方確認，僅延續既有「中國竊取/複製前沿 AI 能力」敘事框架，未新增具體事實或機制細節（2026-07-13 刊文，08-08 複查：近 14 天無後續，改註至今無後續） |
 | 2026-06-30～07-10 | 🌐🏢🏛️ | 中美 AI 工具信任對峙（中國代理偵測程式碼 → 隱寫術指控 → Alibaba/Meta 禁用 → Anthropic「實驗」定調 → 中國官方後門警示 → Anthropic 首度否認），逐日事件與可信度評估已整合拆出至 [[topics/safety-china-trust-dispute]] | 完整敘事、來源列表見新頁；本表僅保留出口管制主線事件 |
 | 2026-07-03 | 🌐 | MarketScale 延遲報導確認 7/1 出口管制解除，封鎖期精確為 19 天（MarketScale） | 對既有 7/1 事件的媒體確認，補充精確天數；非新增事件 |
 | 2026-07-02 | 🏢 | Anthropic 為 7/1 重新部署的 Fable 5 新增「Defense in Depth」機制：新資安/程式碼分類器對高風險 cybersecurity/coding 請求自動 fallback 至 Opus 4.8（Reddit r/ClaudeAI）；WSJ 分析：解封只是「馴服 AI」戰役的開始（WSJ） | 「主動偵測安全風險」承諾首次有可觀察的技術落實；但使用者實測（dev.to）已出現分類器誤判合法請求案例，顯示落實品質仍待觀察 |
@@ -351,7 +351,7 @@ Fable 5 發布後，Amazon 安全研究人員發現特定提示詞可讓模型�
 - **[待查證] Forbes：Nvidia 開放權重連署擴大至 50 家企業，Amazon 與 Anthropic 未加入**：Forbes 報導 Nvidia 發起號召開放權重（open weights）存取的連署企業已擴大一倍達 50 家，但 Amazon 與 Anthropic 明確未加入；為 07-23 The Information「矽谷業界聯合反對 Anthropic 對中限制立場」標題式訊號首度提供具名規模細節，連署完整名單與 Anthropic 回應待查證（Google News/Forbes，2026-07-25 20:23 UTC）
 
 ### 2026-07-23
-- **[待查證，source_count=2] BBC：川普科技顧問指控 Moonshot AI 從 Anthropic 竊取技術**：BBC（經 Google News 轉載，另一媒體同步報導同一消息，source_count=2）報導白宮「川普科技顧問」指控中國 Moonshot AI 從 Anthropic 竊取技術；確認並補足 07-22 TechCrunch／南華早報標題式報導，消息來源具體化為「川普科技顧問」（姓名未指明）；財政部制裁具體措施與顧問身分仍待查證（Google News/BBC，2026-07-23 23:50 UTC）
+- **[待查證，source_count=2，08-08 複查：至今無後續] BBC：川普科技顧問指控 Moonshot AI 從 Anthropic 竊取技術**：BBC（經 Google News 轉載，另一媒體同步報導同一消息，source_count=2）報導白宮「川普科技顧問」指控中國 Moonshot AI 從 Anthropic 竊取技術；確認並補足 07-22 TechCrunch／南華早報標題式報導，消息來源具體化為「川普科技顧問」（姓名未指明）；財政部制裁具體措施與顧問身分近 14 天無後續報導（Google News/BBC，2026-07-23 23:50 UTC）
 - **[待查證] digitimes：中國 AI 實驗室據稱透過 Claude Code 外洩內容縮小技術差距**：Google News 轉載 digitimes 標題，稱中國 AI 實驗室透過 Claude Code 相關外洩內容縮小與 Anthropic 的技術差距；僅標題可用，外洩內容性質、涉及實驗室與具體機制均未見報導，用詞保守處理（Google News/digitimes，2026-07-23 22:29 UTC）
 - **[待查證] The Information：矽谷科技業界聯合反對 Anthropic 對中國 AI 限制立場**：Google News 轉載 The Information 標題，稱矽谷科技業界聯合反對 Anthropic 對中國 AI 的限制立場；僅標題可用，具體反對名單、訴求焦點與後續行動均未見報導（Google News/The Information，2026-07-23 15:30 UTC）
 - **[待查證] 白宮指控 Moonshot AI 蒸餾 Fable，財政部揚言制裁**：TechCrunch（經 Google News 轉載）報導白宮官員指控中國 Moonshot AI 從 Anthropic 的 Fable 模型「蒸餾」竊取技術，美國財政部隨後揚言祭出制裁；同日南華早報（經 Google News 轉載）獨立報導同一事件，稱川普政府科技官員（未具名職稱細節）指控 Moonshot AI 從 Anthropic 竊取技術。兩則報導均僅標題可用，制裁具體對象、範圍與法源依據待核實。此為繼 2026-06-10 Anthropic 指控阿里巴巴 2,880 萬次蒸餾攻擊後第二起蒸餾攻擊指控，首度由白宮官員直接點名並升級至財政部制裁層級（Google News/TechCrunch，2026-07-22；Google News/South China Morning Post，2026-07-22）
@@ -359,17 +359,17 @@ Fable 5 發布後，Amazon 安全研究人員發現特定提示詞可讓模型�
 ### 2026-07-22
 - **[官方確認] Anthropic 再捐 2000 萬美元予 Public First Action，累計達 4000 萬美元**：Anthropic 官方部落格宣布再捐贈 2000 萬美元給無黨派組織 Public First Action（此前已捐 2000 萬美元於 2026-02，累計達 4000 萬美元）；Public First Action 致力於教育大眾認識 AI，並與支持合理 AI 保護措施的共和黨、民主黨、無黨籍人士合作。聲明明確強調：兩筆捐款皆僅用於支持該組織的公眾教育與政策倡議使命，**不得用於影響任何聯邦、州或地方公職候選人的選舉**（Anthropic Blog，2026-07-22 11:53 UTC；https://www.anthropic.com/news/donation-public-first-action）
 - **[媒體框架張力] WSJ／The Hill／Axios 同日跟進**：WSJ 標題「Anthropic Doubles Midterm Spending to $40 Million to Push AI Regulation」；The Hill 標題「Anthropic pours another $20 million into AI safety group」；Axios 標題「Anthropic ramps up lobbying spending amid AI policy fights」；三者僅標題可用，但與官方公告同一事件，將捐款框定為「期中選舉支出」「遊說支出」，與官方聲明強調「非選舉用途」的措辭形成張力，待原文確認框架依據（Google News/WSJ、The Hill、Axios，2026-07-22）
-- **[待查證] CNBC：聯準會（Fed）曾就 Mythos 發出警示，延遲數月曝光**：CNBC（經 Google News 轉載，僅標題可用）報導聯準會（Federal Reserve）曾針對 Anthropic 的 Mythos AI 模型發出警示，但相關訊息延遲數月才浮上檯面；具體警示內容、時間點、延遲原因均未知，原文為轉址連結無法確認細節。為繼加拿大金融監管機關（07-13 Reuters）、JPMorgan CEO Dimon（07-16 Reuters）之後，第三個對 Mythos 表態的金融監管/業界角色，詳見 [[entities/mythos]]（Google News/CNBC，2026-07-21 22:05 UTC）
+- **[待查證，08-08 複查：至今無後續] CNBC：聯準會（Fed）曾就 Mythos 發出警示，延遲數月曝光**：CNBC（經 Google News 轉載，僅標題可用）報導聯準會（Federal Reserve）曾針對 Anthropic 的 Mythos AI 模型發出警示，但相關訊息延遲數月才浮上檯面；具體警示內容、時間點、延遲原因近 14 天無後續報導，原文為轉址連結無法確認細節。為繼加拿大金融監管機關（07-13 Reuters）、JPMorgan CEO Dimon（07-16 Reuters）之後，第三個對 Mythos 表態的金融監管/業界角色，詳見 [[entities/mythos]]（Google News/CNBC，2026-07-21 22:05 UTC）
 
 ### 2026-07-17
-- **[待查證] SFGATE：Anthropic 員工捐款 300 萬美元支持 AI 安全法規推動**：Google News 轉載 SFGATE 標題，稱 Anthropic 員工捐款 300 萬美元，支持 AI 安全相關法規推動；僅標題可用，原文為轉址頁面，捐款對象（是否為 super PAC 或其他組織）、支持的具體法規均未展開（Google News/SFGATE，2026-07-17 16:43 UTC）
+- **[待查證，08-08 複查：至今無後續] SFGATE：Anthropic 員工捐款 300 萬美元支持 AI 安全法規推動**：Google News 轉載 SFGATE 標題，稱 Anthropic 員工捐款 300 萬美元，支持 AI 安全相關法規推動；僅標題可用，原文為轉址頁面，捐款對象（是否為 super PAC 或其他組織）、支持的具體法規近 14 天均無後續報導（Google News/SFGATE，2026-07-17 16:43 UTC）
 
 ### 2026-07-16
 - **[軍事監督] Politico：參議員 Mike Rounds 就 Mythos 接受五角大廈簡報**：Google News 轉載 Politico 標題，稱美國參議員 Mike Rounds 就 Anthropic 的 Mythos 接受五角大廈（Pentagon）簡報；僅標題可用，原文為轉址頁面，無法取得簡報具體內容或 Rounds 立場（2026-07-16 報導，至今無後續）（Google News/Politico，2026-07-16 20:12 UTC）
 - **[政策倡議確認] WIRED：Anthropic 積極遊說各州加快 AI 監管**：WIRED（經 Google News 轉載）分析報導指出 Anthropic 正積極推動美國各州加快 AI 監管腳步（州級而非僅聯邦層級的政策遊說），確認並補強 07-15 Politico 標題式報導（Google News/WIRED，2026-07-16 18:35 UTC）
 - **[中美論戰新觀點] 南華早報獨家：Pax Silica 政策架構推手論美國可維持 AI 領先地位**：南華早報（SCMP）獨家專訪「Pax Silica」政策架構的主要推手（姓名待確認），探討 Anthropic 與中國之間的競合關係，並論述美國仍可維持 AI 領先地位；為 Bloomberg（06-26）「管制反效」論述後首見的正面反駁觀點，惟目前僅單一媒體專訪（2026-07-16 報導，至今無其他來源跟進）（Google News/South China Morning Post，2026-07-16 15:00 UTC）
 - **[EU 施壓具體化] HN 轉載 Politico 全文：確認 Anthropic 派遣初階員工 Donny Greenberg 出席歐盟安全聽證**：Hacker News（累積 19 分）轉載 Politico 全文報導，確認並補足 07-14 politico.eu 標題式報導：布魯塞爾政策官員批評 Anthropic 週二未派遣資深主管，僅派遣初階員工 Donny Greenberg 出席歐洲議會，回應對先進 AI 能力風險的疑慮（Hacker News/Politico，2026-07-16 05:08 UTC；https://www.politico.eu/article/anthropic-european-parliament-donny-greenberg-artificial-intelligence-ai/）
-- **[待查證] Politico：Anthropic CEO 捐款 100 萬美元予 super PAC**：Google News 轉載 Politico 標題，指 Anthropic CEO（Dario Amodei）捐款 100 萬美元予某 super PAC，捲入 AI 陣營之間鉅額政治獻金角力；僅標題可用，原文為轉址頁面，PAC 名稱與資金用途待確認（Google News/Politico，2026-07-16 06:04 UTC）
+- **[待查證，08-08 複查：至今無後續] Politico：Anthropic CEO 捐款 100 萬美元予 super PAC**：Google News 轉載 Politico 標題，指 Anthropic CEO（Dario Amodei）捐款 100 萬美元予某 super PAC，捲入 AI 陣營之間鉅額政治獻金角力；僅標題可用，原文為轉址頁面，PAC 名稱與資金用途近 14 天無後續報導（Google News/Politico，2026-07-16 06:04 UTC）
 
 ### 2026-07-15
 - **（2026-07-15 報導，至今無後續）Axios：Anthropic 招募人力應對災難性風險**：Axios（經 Google News 轉載）標題指出 Anthropic 正在招募人力以應對潛在災難性風險（catastrophic risk），偏向安全團隊建置動態；僅標題可用，原文為轉址頁面，無法取得具體職位、規模或時間表（Google News/Axios，2026-07-15 09:10 UTC）
