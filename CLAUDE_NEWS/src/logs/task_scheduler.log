@@ -151,3 +151,10 @@
 [cloud weekly-wiki-lint-cloud STARTED Sat 2026/08/08 01:05:06.00]
 [Sat 2026/08/08 01:36:43.00] Weekly lint OK（雲端）- 六類記者 lint 完成（general-purpose fallback）、29+1 頁 wiki 修正、overview.md 全文改寫、index.md 1 項狀態變更、10 項待使用者確認、5b 榜單週更因 egress 封鎖跳過、測試全綠、web build 放行、單一 push 待執行
 [cloud daily-news-pipeline-cloud STARTED Sat 2026/08/08 13:03:38.]
+[Sat 2026/08/08 13:36:40.00] === Agent pipeline start (2026-08-08) ===
+[Sat 2026/08/08 13:36:40.00] Aggregator OK（GitHub Actions 已抓料，45 items，來源 11/11 正常；日報 21/45 條收錄）
+[Sat 2026/08/08 13:36:40.00] Wiki ingest OK（降級：六名記者以 general-purpose + 內嵌規則執行，wiki-reporter-* 自訂 subagent_type 雲端無法解析；新增頁 entities/robert-mahari.md；feature-radar 新增 2 條候選）
+[Sat 2026/08/08 13:36:40.00] Building web reader...
+[Sat 2026/08/08 13:36:40.00] 測試全綠 - web build 放行（修復 1 項既有規則登記缺口：scripts/check_wiki_freshness.py DERIVED_PAGES 補登 topics/engineering-skill-playbook，該頁已於今日稍早建立但漏登記）
+[Sat 2026/08/08 13:36:40.00] Single push done (news + wiki + web + confirm-cache) - 首次嘗試即成功，無需重試
+[Sat 2026/08/08 13:36:40.00] === Pipeline complete (agent) ===
