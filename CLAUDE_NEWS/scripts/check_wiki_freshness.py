@@ -66,6 +66,9 @@ DERIVED_PAGES = {
     "topics/model-task-leaderboard":
         ".claude/rules/wiki-ingest-models.md 例外條（吃外部榜單網站，"
         "由 /wiki-lint 步驟 5b 抓取；每日 ingest 不更新）",
+    "topics/engineering-skill-playbook":
+        ".claude/rules/wiki-ingest-features.md「工程流程 Skill 指南維護」"
+        "（週更，讀官方 skills repo 清冊，非新聞條目；每日 ingest 不更新）",
 }
 
 LAST_NEWS_RE = re.compile(r"^\*\*最後新聞更新：\*\*\s*(\d{4}-\d{2}-\d{2})\s*$", re.MULTILINE)
