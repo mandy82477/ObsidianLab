@@ -148,3 +148,4 @@
 [Fri 2026/08/07 13:44:15.00] WARN: gen_wiki_frontmatter.py FAILED (Python 3.11 incompatible with Path.read_text(newline=) — requires 3.13+); non-blocking, build_web proceeded
 [Fri 2026/08/07 13:45:02.60] Single push done (news + wiki + web)
 [Fri 2026/08/07 13:45:02.60] === Pipeline complete (agent) ===
+[cloud weekly-wiki-lint-cloud STARTED Sat 2026/08/08 01:05:06.00]
