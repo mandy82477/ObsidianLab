@@ -21,11 +21,10 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 **狀態：** active
 **領域：** 👤 人物
 **首次出現：** 2026-06-19（Twitter 傳出，06-21 經 Reuters 獨立確認）
-**最後更新：** 2026-08-08
+**最後更新：** 2026-08-10
 **最後新聞更新：** 2026-06-26
 
-> **最新動態**（2026-06-26，近 14 天日報無進一步報導）
-> dev.to 多篇報導總結 Google AI 人才出走潮：一週內 4 位頂尖研究員離開 Google DeepMind 加入 Anthropic（含 Jumper），Alphabet 市值蒸發約 2,700 億美元、Gemini 3.5 延期（皆推論，未經官方確認）。Jumper 本人加入一事已於 2026-06-21 經 Reuters 獨立確認。
+> ❓ **待查證**（標 2026-08-10｜查 Alphabet、Gemini 3.5）｜**人才出走潮市場影響推論**（2026-06-26 報導）：dev.to 多篇報導總結 Google AI 人才出走潮，稱一週內 4 位頂尖研究員離開 Google DeepMind 加入 Anthropic（含 Jumper），並將 Alphabet 市值蒸發約 2,700 億美元、Gemini 3.5 延期歸因於此波出走（社群推論，官方尚無回應）。Jumper 本人加入一事已於 2026-06-21 經 Reuters 獨立確認，不屬本則懸置範圍。
 
 ---
 
@@ -54,7 +53,7 @@ John Jumper 以 AlphaFold 系列模型的開發著稱，AlphaFold 2 解決了困
 ## 參考來源
 
 - [[news/2026-06-20]]
-- [HN 討論](https://twitter.com/i/status/2068001285173834106)（HN score: 4，原始消息來自 Twitter；同一事實已於 2026-06-21 獲 Reuters 獨立確認，見下方歷史記錄，待核實標記解除）
+- [HN 討論](https://twitter.com/i/status/2068001285173834106)（HN score: 4，原始消息來自 Twitter；同一事實已於 2026-06-21 獲 Reuters 獨立確認，見下方歷史記錄）
 - [Anthropic hiring AlphaFold co-creator John Jumper is a real frontier-lab talent signal](https://dev.to/damogallagher/anthropic-hiring-alphafold-co-creator-john-jumper-is-a-real-frontier-lab-talent-signal-3p4f)（dev.to，2026-06-20，社群分析文）
 - [The Nobel Laureate Who Joined Anthropic Mid-Crisis](https://dev.to/peremptory/the-nobel-laureate-who-joined-anthropic-mid-crisis-5cfh)（dev.to，2026-06-26）
 - [Google's AI Brain Drain: 4 Top Researchers Leave for Anthropic in One Week](https://dev.to/doremonai/googles-ai-brain-drain-4-top-researchers-leave-for-anthropic-in-one-week-270b-wiped-gemini-35-5ffl)（dev.to，2026-06-26）

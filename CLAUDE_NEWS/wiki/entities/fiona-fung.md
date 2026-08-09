@@ -21,7 +21,7 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 **狀態：** active
 **領域：** 👤 人物
 **首次出現：** 2026-06-23
-**最後更新：** 2026-06-30
+**最後更新：** 2026-08-10
 **最後新聞更新：** 2026-06-23
 
 > **最新論述**（2026-06-22）
@@ -35,7 +35,7 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 
 Fiona Fung 是 Anthropic 工程副總裁（VP of Engineering）。
 
-> **歸屬釐清：** 此「工程師更孤獨」論述初期報導僅稱「engineering leader」，一度於 [[entities/boris-cherny]] 與 [[entities/cat-wu]] 標記待核實；具名 Business Insider 來源確認發言人為 Fiona Fung，兩頁待核實已解除。
+> **歸屬釐清：** 此「工程師更孤獨」論述初期報導僅稱「engineering leader」，一度在 [[entities/boris-cherny]] 與 [[entities/cat-wu]] 頁面標記為身分未經確認；具名 Business Insider 來源確認發言人為 Fiona Fung，兩頁標記已解除。
 
 ---
 

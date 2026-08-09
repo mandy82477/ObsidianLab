@@ -21,20 +21,17 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 **狀態：** active（待核實）
 **領域：** 👤 人物
 **首次出現：** 2026-05-17（CLAUDE.md 維護討論中被引用）
-**最後更新：** 2026-08-02
+**最後更新：** 2026-08-10
 **最後新聞更新：** 2026-08-02
 
-> **最新動態**（2026-08-02）
-> Benzinga 報導引述 Karpathy 說法，稱以 Claude Opus 建構 3D《魔戒》（Lord of the Rings）場景為例，主張 AI 互動模式已跳脫單純提示詞問答（待核實：Benzinga 單一媒體二手轉述，非本人一手貼文或官方逐字稿，具體發言原文、發言場合與該次示範技術細節均待查證）。
-> 加入 Anthropic 一事仍為（待核實）：截至 2026-08-02 日報仍無獨立確認報導，僅見「Karpathy-style」作為技能命名慣稱出現，與本人動態無關（2026-05-29 首見，詳見歷史記錄）。
+> ❓ **待查證**（標 2026-08-10｜查 Benzinga、《魔戒》）｜**Claude Opus 3D 建構案例引述**（2026-08-02 報導）：Benzinga 報導引述 Karpathy 說法，稱以 Claude Opus 建構 3D《魔戒》（Lord of the Rings）場景為例，主張 AI 互動模式已跳脫單純提示詞問答；為單一媒體二手轉述，具體發言原文、發言場合與示範技術細節均未確認。
+> ❓ **待查證**（標 2026-08-10｜查 Karpathy、Eureka Labs）｜**加入 Anthropic 傳聞**（2026-05-29 首見）：截至 2026-08-02 日報仍無獨立確認報導，僅見「Karpathy-style」作為技能命名慣稱出現，與本人動態無關。
 
 ---
 
 ## 現況
 
-Andrej Karpathy 為知名 AI 研究者，傳已加入 Anthropic（2026-05-29，至今無後續：來源僅 HN 討論，逾兩個月未見進一步獨立確認）。以 OpenAI 聯合創始人/研究總監及 Tesla AI/Autopilot 負責人身份廣為人知。若加入屬實，其分享的「CLAUDE.md 四條規則」中強調「不讓 agent 讀超過必要內容（最小必要 context）」原則——此原則在 $6,000 徹夜帳單事件廣傳後，成為社群費用控管的重要共識依據，被 engramx 等工具作者直接引用。另，Karpathy 創立的 Eureka Labs（AI 教育新創）或已停止活動（2026-05-29，至今無後續，依據：GitHub org 停更、LinkedIn 資訊移除）。2026-08-02 另有 Benzinga 單一媒體報導引述其對 Claude Opus 3D 建構案例的評論（待核實：二手轉述，非本人一手貼文，詳見歷史記錄）。
-
-（標註（待核實）者為尚未獨立確認的資訊；截至 2026-08-02 日報仍無進一步獨立確認「已加入 Anthropic」的報導，僅見「Karpathy-style」作為技能／工具命名慣稱出現，與本人動態無關。）
+Andrej Karpathy 為知名 AI 研究者，傳已加入 Anthropic（2026-05-29 首見，來源僅 HN 討論，逾兩個月未見進一步獨立確認，詳見上方標記）。以 OpenAI 聯合創始人/研究總監及 Tesla AI/Autopilot 負責人身份廣為人知。若加入屬實，其分享的「CLAUDE.md 四條規則」中強調「不讓 agent 讀超過必要內容（最小必要 context）」原則——此原則在 $6,000 徹夜帳單事件廣傳後，成為社群費用控管的重要共識依據，被 engramx 等工具作者直接引用。另，Karpathy 創立的 Eureka Labs（AI 教育新創）或已停止活動（依據：GitHub org 停更、LinkedIn 資訊移除，2026-05-29）。2026-08-02 另有 Benzinga 單一媒體報導引述其對 Claude Opus 3D 建構案例的評論，查證狀態見上方標記。
 
 ---
 
@@ -62,11 +59,11 @@ Andrej Karpathy 為知名 AI 研究者，傳已加入 Anthropic（2026-05-29，�
 
 - [[news/2026-05-17]]（CLAUDE.md 維護討論首次引用）
 - [[news/2026-05-22]]（engramx 工具引用 Karpathy 加入 Anthropic 後的規則）
-- [[news/2026-08-02]]（Benzinga 報導 Karpathy 對 Claude Opus 3D 建構案例的評論，待核實：單一媒體二手轉述）
+- [[news/2026-08-02]]（Benzinga 報導 Karpathy 對 Claude Opus 3D 建構案例的評論；查證狀態見上方標記）
 
 ## 歷史記錄
 
-- 2026-08-02：Benzinga 報導引述 Karpathy 說法，以 Claude Opus 建構 3D《魔戒》（Lord of the Rings）場景為例，稱 AI 互動模式已跳脫單純提示詞問答（待核實：單一媒體二手轉述，非本人一手貼文或官方逐字稿，發言原文、發言場合、Claude Opus 該次示範的技術細節均待查證）
+- 2026-08-02：Benzinga 報導引述 Karpathy 說法，以 Claude Opus 建構 3D《魔戒》（Lord of the Rings）場景為例，稱 AI 互動模式已跳脫單純提示詞問答（查證狀態見上方標記）
 - 2026-05-29：HN 社群討論確認 Karpathy 已正式加入 Anthropic，Eureka Labs GitHub org 停更、LinkedIn 資訊移除，推測已解散（2026-05-29，至今無後續：近 14 天日報無進一步報導）
 - 2026-05-22：engramx 作者在 Reddit 引用「Karpathy 剛加入 Anthropic 後發表的 CLAUDE.md 四條規則」；最小必要 context 原則成為費用控管社群共識依據
 - 2026-05-17：HN 討論 CLAUDE.md 維護效益時提及「Karpathy 等知名開發者積極公開自己的設定」

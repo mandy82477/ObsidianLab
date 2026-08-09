@@ -21,7 +21,7 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 **狀態：** active
 **領域：** 👤 人物
 **首次出現：** 2026-08-05
-**最後更新：** 2026-08-05
+**最後更新：** 2026-08-10
 **最後新聞更新：** 2026-08-05
 
 > **最新動態**（2026-08-05）
@@ -44,7 +44,7 @@ Cuéllar 的職涯橫跨法律、科技、國際安全與公部門機構，歷�
 - [[topics/anthropic-government-policy]] — CNBC 將此任命置於 Anthropic 與美國政府關係緊張的脈絡下報導（僅標題，待後續報導補充細節）
 - [[entities/bernanke]] — 近期同批加入 Anthropic 治理/顧問層的知名外部人士案例（2026-07-09，長期利益信託董事會）
 - [[entities/teresa-carlson]] — 近期同批加入 Anthropic 主導特定業務線的知名外部高管案例（2026-07-07，公部門業務）
-- [[entities/tom-blomfield]] — 近期同批加入 Anthropic 的知名外部人士案例（2026-07-13，待核實）
+- [[entities/tom-blomfield]] — 近期同批加入 Anthropic 的知名外部人士案例（2026-07-13；查證狀態見該頁標記）
 - [[entities/dario-amodei]] — Anthropic CEO
 
 ## 參考來源
