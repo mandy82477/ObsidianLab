@@ -751,9 +751,41 @@
     return (hit && hit.name) ? hit.name : null;
   }
 
-  function wikilinkButtonHtml(p, opts = {}) {
+  // 內嵌到 onclick 屬性裡的 JS 字面值：反斜線／引號／< 都得中和，
+  // 否則錨點含引號的頁面會把整段 handler 打斷。
+  function jsStr(s) {
+    return String(s)
+      .replace(/\\/g, '\\\\')
+      .replace(/'/g, "\\'")
+      .replace(/"/g, '\\x22')
+      .replace(/</g, '\\x3C');
+  }
+
+  // [[頁面#錨點|別名]] 三段拆解。marked 在表格內會把 \| 還原成 |，表格外則原樣
+  // 留著反斜線，兩種都要吃掉（語法契約見 CLAUDE.md「連結與嵌入語法」）。
+  function parseWikilink(raw) {
+    const s = String(raw).replace(/\\([|#])/g, '$1');
+    const bar    = s.indexOf('|');
+    const alias  = bar >= 0 ? s.slice(bar + 1).trim() : '';
+    const target = (bar >= 0 ? s.slice(0, bar) : s).trim();
+    const hash   = target.indexOf('#');
+    return {
+      page:   (hash >= 0 ? target.slice(0, hash) : target).trim(),
+      anchor: hash >= 0 ? target.slice(hash + 1).trim() : '',
+      alias,
+    };
+  }
+
+  function wikilinkButtonHtml(raw, opts = {}) {
+    const { page: p, anchor, alias } = parseWikilink(raw);
+    const cls = 'detail__wikilink detail__wikilink--link' + (opts.short ? ' detail__wikilink--short' : '');
+    // [[#標題]] — 同頁段落跳轉，不離開目前頁面
+    if (!p) {
+      if (!anchor) return '';
+      return `<button class="${cls}" onclick="scrollToAnchor('${jsStr(anchor)}')">${esc(alias || anchor)}</button>`;
+    }
     // news/ links have no detail page — render as plain span
-    if (p.startsWith('news/')) return `<span class="detail__wikilink">${esc(p)}</span>`;
+    if (p.startsWith('news/')) return `<span class="detail__wikilink">${esc(alias || p)}</span>`;
     // resolve id + type from path prefix
     let wiId, wiType;
     if (p.startsWith('entities/')) { wiId = p.slice(9); wiType = 'entity'; }
@@ -764,10 +796,9 @@
       wiId = p;
       wiType = (wdata.topics || []).some(t => t.id === p) ? 'topic' : 'entity';
     }
-    const safeId = wiId.replace(/\\/g, '\\\\').replace(/'/g, "\\'");
-    const label = wikiPageName(wiId) || (opts.short ? p.split('/').pop() : p);
-    const cls = 'detail__wikilink detail__wikilink--link' + (opts.short ? ' detail__wikilink--short' : '');
-    return `<button class="${cls}" onclick="openWikiPage('${safeId}','${wiType}')">${esc(label)}</button>`;
+    const label = alias || wikiPageName(wiId) || (opts.short ? p.split('/').pop() : p);
+    const anchorArg = anchor ? `,'${jsStr(anchor)}'` : '';
+    return `<button class="${cls}" onclick="openWikiPage('${jsStr(wiId)}','${wiType}'${anchorArg})">${esc(label)}</button>`;
   }
 
   function linkifyWikilinks(html) {
@@ -847,6 +878,22 @@
       return `<h${level} id="${id}">${inner}</h${level}>`;
     });
   }
+
+  // [[頁面#錨點]] 的落地點：錨點文字走 headingSlug 對上 addHeadingIds 產的 id。
+  // 對不上就不捲（頁面標題改名是常態，讀者停在頁首仍讀得到內容）。
+  window.scrollToAnchor = function (anchorText) {
+    const id = headingSlug(String(anchorText || ''));
+    if (!id) return false;
+    const el = document.getElementById(id);
+    if (!el) return false;
+    // 刻意用瞬移不用 smooth：跨頁跳段常是數千 px，平滑動畫既慢又暈。
+    // 扣掉 sticky topbar 高度，否則標題會被壓在工具列底下。
+    const bar = document.querySelector('.detail__topbar');
+    const pad = (bar ? bar.getBoundingClientRect().height : 0) + 12;
+    const top = el.getBoundingClientRect().top + window.scrollY - pad;
+    window.scrollTo(0, Math.max(0, Math.round(top)));
+    return true;
+  };
 
   // ── Weekly reports — journal layout（期刊版面，見 web-reader-design.md）──────
   function weeklySectionHeader(labelChars, en) {
@@ -1113,7 +1160,7 @@ ${older.length ? `<div class="weekly-list-count">共 ${index.length} 份週報 �
   };
 
   // ── Open wiki entity/topic as full page ──────────────────────────────────────
-  window.openWikiPage = async function (id, type) {
+  window.openWikiPage = async function (id, type, anchor) {
     detailReturnView = 'wiki';
     const backLabel = $('#detail-back-label');
     if (backLabel) backLabel.textContent = 'Wiki 知識庫';
@@ -1175,6 +1222,9 @@ ${trackerHtml}
     makeTablesSortable($('#detail-content'));
     enhanceCallout($('#detail-content'));
     if (id === 'community-tech-tools') injectToolsInsights($('#detail-content'));
+    // innerHTML 是同步的，直接捲即可；表格增強改動高度時第一次可能落空，補一次重試。
+    // 不用 requestAnimationFrame——分頁在背景時 rAF 會被節流到不觸發。
+    if (anchor && !scrollToAnchor(anchor)) setTimeout(() => scrollToAnchor(anchor), 80);
   };
 
   // ── Open archive digest as full page ─────────────────────────────────────────

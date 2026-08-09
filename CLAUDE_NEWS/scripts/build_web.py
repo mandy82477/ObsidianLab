@@ -248,6 +248,56 @@ def _clean_wikilink_target(raw_target: str) -> str:
     return raw_target.rstrip('\\').strip()
 
 
+ANCHORED_WIKILINK_RE = re.compile(r'\[\[([^\]|#]+?)\\?#([^\]|]+?)(?:\\?\|[^\]]*)?\]\]')
+
+HEADING_RE = re.compile(r'^#{2,4}\s+(.+?)\s*$', flags=re.MULTILINE)
+
+
+def _page_file(target: str) -> Path | None:
+    """Resolve a wikilink target (with or without directory prefix) to its .md file."""
+    target = target.strip()
+    candidates = [
+        WIKI_DIR / f"{target}.md",
+        WIKI_ENTITIES / f"{target}.md",
+        WIKI_TOPICS / f"{target}.md",
+    ]
+    for c in candidates:
+        if c.exists():
+            return c
+    return None
+
+
+def _headings_of(target: str) -> set[str] | None:
+    """所有 h2–h4 標題文字（去掉粗體標記），查無頁面回傳 None。"""
+    f = _page_file(target)
+    if f is None:
+        return None
+    try:
+        raw = read_md(f)
+    except Exception:
+        return None
+    return {re.sub(r'\*{1,3}([^*]+)\*{1,3}', r'\1', h).strip() for h in HEADING_RE.findall(raw)}
+
+
+def check_wikilink_anchors(all_md_files: list[Path]) -> None:
+    """[[頁面#錨點]] 的錨點必須真的是目標頁的 h2–h4 標題，否則讀者點過去只會落在頁首。
+    純頁面斷鏈由 check_wikilinks 負責，本函式只管錨點；同樣不中斷建置。"""
+    for f in all_md_files:
+        try:
+            raw = read_md(f)
+        except Exception:
+            continue
+        for m in ANCHORED_WIKILINK_RE.finditer(raw):
+            target = _clean_wikilink_target(m.group(1))
+            anchor = m.group(2).replace('\\', '').strip()
+            if not anchor.startswith('^'):  # 區塊 id 不在本檢查範圍
+                headings = _headings_of(target)
+                if headings is None:
+                    continue  # 頁面本身斷鏈 → 交給 check_wikilinks 報
+                if anchor not in headings:
+                    print(f"WARN: {f.relative_to(ROOT)} 的 [[{target}#{anchor}]] 錨點不存在於該頁標題")
+
+
 def check_wikilinks(all_md_files: list[Path]) -> None:
     """Scan wiki/*.md for [[target]] / [[target|alias]] wikilinks and print a
     WARN for any target that doesn't resolve to a real page. Never raises —
@@ -956,6 +1006,7 @@ def build():
     # ── Internal wikilink dead-link check (free, runs every build) ───────────
     all_wiki_md = sorted(WIKI_DIR.glob("*.md")) + sorted(WIKI_ENTITIES.glob("*.md")) + sorted(WIKI_TOPICS.glob("*.md"))
     check_wikilinks(all_wiki_md)
+    check_wikilink_anchors(all_wiki_md)
 
     # 解析失敗 = 該頁在網站上直接消失。原本只印一行 [warn] 就繼續，build 照樣 exit 0，
     # 於是「少了一頁」沒有任何人會發現（2026-08-08：標頭領域欄一個全形斜線就讓整頁蒸發，

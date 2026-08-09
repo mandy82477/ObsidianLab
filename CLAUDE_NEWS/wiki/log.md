@@ -3651,3 +3651,16 @@
 **轉知閉環（同日）：** 社群記者回報「⚠️ 需主編轉知功能記者」→ 已轉知並執行，`entities/claude-code.md`「🧠 行為與品質」新增 #27892（⛔ 官方拒修）與 #46221（❓ 待查證，已關閉為 duplicate，明令不得標 ✅），組頭統計同步為「34 條未修復、1 條拒修、7 條待查證」，兩則標明「主編 web 查證，非日報進料」。此為 08-08 lint 5c 診斷「待查證是死路」後，轉知鏈路首次當日閉合。
 
 **收尾修正兩則（機械檢查攔下）：** (1) 主編一度把兩則 GitHub issue 以 `date: 2026-08-09` 寫入 `data/source_attribution.jsonl`——但該欄語意是**日報日期**（`data/README.md`），而 08-09 無日報、這兩則來自主編 web 查證，屬非日報進料，歸因表無此槽位，四列已移除（查證軌跡留在本 log）。(2) `check_wiki_freshness.py` 據此連帶抓出真問題：`topics/code-quality-decline` 確實吸收了 08-04 日報的 Reddit 節點，記者卻把「最後新聞更新」一路退回 08-01——該欄應為 **08-04**（本次查證性補強不推進它，但當初那筆日報節點要算），已更正。**教訓：非日報進料不要硬塞歸因表，塞了會同時汙染帳本與新鮮度檢查的分母。**
+
+## 2026-08-09 Query：Obsidian 連結語法盤點 → 揪出 18 條別名／錨點 wikilink 在網站上全是死連結
+
+- **點出什麼**：使用者問「目前有沒有 obsidian 常見語法」，要求把「連結與嵌入」寫進 `CLAUDE.md`，並 review 專案有哪些地方可用這些語法優化。盤點時實查 renderer，發現的不是「還沒用」而是「用了會壞」
+- **根因**：`web_reader/assets/app.js` 的 `wikilinkButtonHtml(p)` 把整段 `[[...]]` 內容當 slug，不切 `|` 也不切 `#`。因此 `[[entities/opus-5|Opus 5]]` 在站上按鈕標籤印出原始字串 `entities/opus-5|Opus 5`（表格內還多一個跳脫反斜線），點擊 `openWikiPage('opus-5|Opus 5')` 必然載入失敗。全庫 1460 條 wikilink 中 18 條踩到（16 條 `|`、2 條 `#`），其中 5 條在 `topics/model-comparison`——含快速選型表三列的模型名，是「我該用哪個模型」入口表上讀者最常走的一跳
+- **為什麼沒被發現**：`build_web.py` 的 `WIKILINK_RE` 早已正確剝掉 `#` 與 `|`，斷鏈檢查因此全綠；壞的只有前端渲染層，而渲染層沒有對應檢查。**建置綠燈只證明資料層對，不證明讀者看到的東西對**
+- **處置**：
+  - `app.js` 新增 `parseWikilink()`（三段拆解 `頁面#錨點|別名`，同時吃掉表格內外兩種反斜線寫法）與 `jsStr()`（onclick 屬性字面值中和）；`wikilinkButtonHtml` 改用別名優先、錨點傳入 `openWikiPage(id, type, anchor)`
+  - 新增 `window.scrollToAnchor()`：錨點文字走既有的 `headingSlug()` 對上 `addHeadingIds()` 產的 h2–h4 id，扣掉 57px sticky topbar 高度再捲。刻意用瞬移不用 smooth（跨頁跳段常達數千 px），且**不用 `requestAnimationFrame`**——分頁在背景時 rAF 會被節流到不觸發（實測踩到）
+  - `build_web.py` 新增 `check_wikilink_anchors()`：`[[頁面#錨點]]` 的錨點必須真的是目標頁 h2–h4 標題。**上線即抓到既有 2 條 `#` 連結全是死錨點**——`feature-radar#Dynamic Workflows` 的條目早已封存至 `feature-radar-archive-2026-05`、`community-tech-patterns#時序` 該頁根本沒有 `## 時序`（正確目標是 `#技術彙整`），兩條皆已修
+  - `CLAUDE.md` 新增「🔗 連結與嵌入語法」：明列可用（裸路徑、別名、錨點）與禁用（`![[嵌入]]`、`^區塊 id` — renderer 無支援），並註明要放寬得先改解析器
+- **不做的事**：嵌入語法全庫 0 條且 renderer 不支援；查 `index.md` / `overview.md` 後確認它們與各頁的「重複」是刻意的分層改寫（路由鉤子 vs 週度敘事），用嵌入會把三種編輯意圖壓成同一份文字，故不推
+- **可攜教訓**：**寫進規則的語法必須先確認渲染端吃得下**。本次是「wiki 寫得對、建置檢查也綠、但站上是死連結」的靜默失效——任何跨層語法（Markdown 方言、frontmatter 欄位、自訂標記）都該有一條檢查落在**最終呈現層**，不能只驗到資料層

@@ -323,7 +323,7 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 | **v2.1.207** | 2026-07-11 | **Auto mode 在 Bedrock/Vertex AI/Foundry 三平台預設開啟**：不再需要 `CLAUDE_CODE_ENABLE_AUTO_MODE` 環境變數 opt-in，可透過設定中的 `disableAutoMode` 關閉；同版修復終端機凍結問題（見 [Release](https://github.com/anthropics/claude-code/releases/tag/v2.1.207)）|
 | **v2.1.206** | 2026-07-10 | `/cd` 新增目錄路徑建議（比照 `/add-dir` 的自動完成體驗）；`/doctor` 新增檢查項目，會建議精簡已 checked-in 的 CLAUDE.md 內容（見 [Release](https://github.com/anthropics/claude-code/releases/tag/v2.1.206)）|
 | **v2.1.204** | 2026-07-08 | Bug fix：修復 headless session 中 SessionStart hook 事件無法即時串流的問題；此問題先前可能導致遠端 worker 在 hook 執行中途被系統誤判為閒置而回收（見 [Release](https://github.com/anthropics/claude-code/releases/tag/v2.1.204)）|
-| **v2.1.202** | 2026-07-07 | `/config` 新增 **Dynamic workflow size** 設定：可調整動態工作流（[[feature-radar#Dynamic Workflows\|Dynamic Workflows]] / `ultracode`）的 agent 數量規模（小/中/大），屬建議性引導值（非硬上限）（見 [Release](https://github.com/anthropics/claude-code/releases/tag/v2.1.202)）|
+| **v2.1.202** | 2026-07-07 | `/config` 新增 **Dynamic workflow size** 設定：可調整動態工作流（Dynamic Workflows / `ultracode`，見 [[feature-radar]]）的 agent 數量規模（小/中/大），屬建議性引導值（非硬上限）（見 [Release](https://github.com/anthropics/claude-code/releases/tag/v2.1.202)）|
 | **v2.1.201** | 2026-07-03 | Claude Sonnet 5 session 不再使用對話中途的 system role 插入 harness 提醒訊息（改變 reminder 注入機制的行為調整）；其餘為一般性小幅修正（見 [Release](https://github.com/anthropics/claude-code/releases/tag/v2.1.201)）|
 | **anthropic-sdk-python v0.115.0** | 2026-07-01 | 新增對 Managed Agents 的 API 支援（見 [[entities/managed-agents]]）|
 | **anthropic-sdk-typescript vertex-sdk v0.19.0** | 2026-07-01 | Vertex SDK TypeScript 版本更新 |
