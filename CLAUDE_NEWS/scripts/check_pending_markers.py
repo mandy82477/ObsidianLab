@@ -10,9 +10,8 @@ parser，只做「這筆標記合不合規格」的判定。
     python scripts/check_pending_markers.py            # 全庫語法檢查
     python scripts/check_pending_markers.py --queue     # 逾期佇列（供 5c 用）
 
-**尚未掛進 `scripts/run_tests.py`**——回填全庫 388 筆之前掛上去，測試會立刻紅
-（目前新語法命中數為 0），所以先讓它獨立可跑，供每批回填後的手動驗收；掛載留待
-回填完成後另一階段處理。
+已掛進 `scripts/run_tests.py`（回填完成、全庫 0 FAIL 後掛載），亦可獨立執行供單批
+回填後的手動驗收。
 
 檢查項對照 `.claude/rules/wiki-ingest-format.md`「懸置標記語法」節：
 
