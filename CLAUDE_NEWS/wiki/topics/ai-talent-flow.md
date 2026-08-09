@@ -19,7 +19,7 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 **狀態：** monitoring
 **領域：** 💼 商業
 **開始日期：** 2026-06-21
-**最後更新：** 2026-08-01
+**最後更新：** 2026-08-10
 **最後新聞更新：** 2026-07-13
 
 > **最新動態**（2026-07-13）
@@ -36,9 +36,12 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 
 | 公司 | 角色 | 具體影響 | 評估 |
 |------|------|---------|------|
-| **Google DeepMind** | 淨流失方 | 兩週內連失 Jumper（科學/生物）、Adler（AI 編碼）、Pritzel（訓練）、額外 2 位資深研究員（6/28），另有一名研究員轉投 OpenAI；市值蒸發約 $2,700 億美元；Gemini 3.5 Pro 延期至七月（推論）；被迫重組 AI 編碼突擊隊 | 🔴 傷在痛點：流失方向與其落後領域（coding）重疊，複利式傷害（推論）；市值衝擊與 Gemini 延期為分析師推論或未經官方確認（推論）|
+| **Google DeepMind** | 淨流失方 | 兩週內連失 Jumper（科學/生物）、Adler（AI 編碼）、Pritzel（訓練）、額外 2 位資深研究員（6/28），另有一名研究員轉投 OpenAI；市值蒸發約 $2,700 億美元；Gemini 3.5 Pro 延期至七月（推論）；被迫重組 AI 編碼突擊隊 | 🔴 傷在痛點：流失方向與其落後領域（coding）重疊，複利式傷害（推論）；❓ 待查證 ⟨Q-01⟩ |
 | **Anthropic** | 主要承接方 | 補強科學計算（Jumper / AlphaFold）、AI 編碼（Adler）、模型訓練（Pritzel）、安全/經濟（FT 經濟學家）等多方向縱深 | 🟢 訊號 > 實質：對模型能力直接拉抬有限（Claude 已寫 80–90% 程式碼），真正價值在招募飛輪與動能訊號（推論）|
 | **OpenAI** | 次要承接方 | 獲得一名 Google 頂尖研究員（6/23 SEJ 報導，姓名未具名）| 🟡 同步受惠於 Google 人才外流，規模小於 Anthropic |
+
+**懸置細節**
+- ⟨Q-01⟩ ❓ **待查證**（標 2026-08-10｜查 Gemini 3.5、市值蒸發）｜**市值衝擊與 Gemini 延期歸因**：$2,700 億市值蒸發與 Gemini 3.5 Pro 延期是否直接肇因於人才流失，屬分析師推論，未見官方確認
 
 **關鍵判讀（推論）：**
 - 人才流向是「市場相信前沿在哪裡」的領先指標；連續多波頂尖人才選 Anthropic，本身會自我強化（好的人吸引更好的人）。
@@ -72,8 +75,8 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 ## 相關實體
 
 - [[entities/john-jumper]] — 諾貝爾獎得主，DeepMind → Anthropic（6/21 Reuters 確認）
-- [[entities/andrej-karpathy]] — 近期加入 Anthropic（待核實）
-- [[entities/teresa-carlson]] — 前 Microsoft/AWS 高管，2026-07-07 加入 Anthropic 主導公部門業務（待核實，非研究職但屬同期人才佈局）
+- [[entities/andrej-karpathy]] — ❓ **待查證**（標 2026-08-10｜查 [[entities/andrej-karpathy]]）｜**加入 Anthropic 傳聞**：近期傳聞加入 Anthropic，尚未見官方確認
+- [[entities/teresa-carlson]] — 前 Microsoft/AWS 高管，2026-07-07 加入 Anthropic 主導公部門業務；❓ **待查證**（標 2026-08-10｜查 [[entities/teresa-carlson]]）｜**是否屬同期人才佈局**：非研究職，時序與人才流動潮相近，是否屬同一佈局尚未見官方或報導明確定性
 - [[topics/competitor-landscape]] — Google / OpenAI 競品格局
 - [[topics/anthropic-business]] — Anthropic 商業與人才動態
 - [[topics/recursive-self-improvement]] — Claude 已寫 80–90% Anthropic 程式碼，人才邊際效益的背景

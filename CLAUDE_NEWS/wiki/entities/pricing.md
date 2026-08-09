@@ -21,7 +21,7 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 **狀態：** active（持續調整中）
 **領域：** 💼 商業
 **首次出現：** 2026-04-25
-**最後更新：** 2026-08-09
+**最後更新：** 2026-08-10
 **最後新聞更新：** 2026-08-09
 
 > **最新計費政策異動**（2026-08-09）
@@ -91,7 +91,7 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 
 一條一規則，附來源日期；失效規則移除，計費事故與爭議見下方「事故與爭議」分組。
 
-- **✅ 2026-07-20 生效｜旗艦模型的訂閱分界（官方文件已確認）**：Max 方案、Team premium seats、舊制席位制 Enterprise premium seats — Fable 5 為標配，可用至多**每週用量上限的 50%**，不額外收費；Pro 方案、Team standard seats、Enterprise standard seats — Fable 5 **不計入方案用量**，需以 usage credits 按 API 費率（$10/$50 per Mtok）付費。合格 Pro 與 Team standard seats 另有**一次性過渡 credit**（官方未載金額與到期日）。先前將 Fable 5 納入方案週用量的促銷結束於 2026-07-19 23:59:59 PT（來源：[Claude Fable 5 on your plan](https://support.claude.com/en/articles/15424964-claude-fable-5-on-your-plan)，2026-08-08 查證）
+- **✅ 2026-07-20 生效｜旗艦模型的訂閱分界（官方文件已確認）**：Max 方案、Team premium seats、舊制席位制 Enterprise premium seats — Fable 5 為標配，可用至多**每週用量上限的 50%**，不額外收費；Pro 方案、Team standard seats、Enterprise standard seats — Fable 5 **不計入方案用量**，需以 usage credits 按 API 費率（$10/$50 per Mtok）付費。合格 Pro 與 Team standard seats 另有**一次性過渡 credit**；🔎 **查無官方**（標 2026-08-10｜查 過渡 credit、standard seat）｜**過渡 credit 金額與到期日**：官方文件未載具體金額與到期日。先前將 Fable 5 納入方案週用量的促銷結束於 2026-07-19 23:59:59 PT（來源：[Claude Fable 5 on your plan](https://support.claude.com/en/articles/15424964-claude-fable-5-on-your-plan)，2026-08-08 查證）
 - **⚠️ usage credits 開啟後，方案用量上限不再是硬停止**：credits 為 opt-in、預設關閉，於 `Settings > Usage` 開關，可設 auto-reload（每日兌換上限 $2,000）。開啟後 Claude 會在額度用盡後繼續回答並從 credits 扣款，體感與額度內無異，但每則超額回應皆計費——靠方案硬上限控管支出者需主動確認此開關（來源：[Manage usage credits](https://support.claude.com/en/articles/12429409-manage-usage-credits-for-paid-claude-plans)，2026-08-08 查證）
 - **⏰ 2026-08-31 到期：Claude Sonnet 5 促銷定價（$2/$10 per Mtok）**：官方明確定性為「temporary」促銷，相較 Opus 4.8 估計省 60% 成本；dev.to 第三方實測（2026-07-02）確認此定價並建議設為預設路由模型。8/31 後定價走向未見公告（來源：2026-07-01、2026-07-02）
 - **訂閱配額制維持**：原定 2026-06-15 生效的 Agent SDK／`claude -p` 計費切割已於 2026-06-16 暫停，重新推行時間未定；Agent SDK、`claude -p`、第三方 Agent SDK app 用量持續計入訂閱配額，無需額外信用池（來源：2026-06-16、2026-06-18 DevOps.com）
@@ -140,7 +140,7 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 #### 2026-08-03：Show HN 揭露中國轉售商以最高 90% 折扣轉賣 Claude/Codex API 存取權（社群觀察，低度信號，未達收錄門檻）
 
 - **貼文內容**：Hacker News Show HN 貼文（score 4、source_count=2，**未達互動門檻對照表「低」門檻 ≥10 分**，收錄僅因涉及計費灰色地帶而具警示價值，非達標準收錄）指出，中國轉售商正以最高 **90%** 折扣轉賣 Claude 與 OpenAI Codex 的 API 存取權；發文者稱部分業者使用開源專案（如 Sub2API）將批量購買的訂閱方案轉換為 API 存取權出售，並列舉數個轉售平台名稱（如 ddshub.cc、yunwu.api）。
-- **ToS 已查證（2026-08-08）**：轉售行為明確違反 Anthropic 消費者條款——第 3 條禁止「resell the Services」，第 2 條禁止分享帳號登入資訊、API key 或帳號憑證（[consumer terms](https://www.anthropic.com/legal/consumer-terms)）。**仍未查得**：具體折扣百分比是否普遍、轉售規模、Anthropic 是否已知悉或採取執法行動，均未見官方聲明或第三方媒體佐證（2026-08-08 查證，官方未載），**僅為單一低互動 HN 貼文的一手陳述，不可視為確認事實**；「90% off」為原貼文自述，非日報查證數字。
+- **ToS 已查證（2026-08-08）**：轉售行為明確違反 Anthropic 消費者條款——第 3 條禁止「resell the Services」，第 2 條禁止分享帳號登入資訊、API key 或帳號憑證（[consumer terms](https://www.anthropic.com/legal/consumer-terms)）。🔎 **查無官方**（標 2026-08-10｜查 [[topics/ai-agent-safety]]、resale scope）｜**轉售規模與 Anthropic 執法回應**：具體折扣百分比是否普遍、轉售規模、Anthropic 是否已知悉或採取執法行動，均未見官方聲明或第三方媒體佐證，**僅為單一低互動 HN 貼文的一手陳述，不可視為確認事實**；「90% off」為原貼文自述，非日報查證數字。
 - **與既有計費邏輯的潛在張力（推論）**：若此類轉售規模擴大，可能繞開 Anthropic「訂閱補貼人工使用、程式化用量按 API 費率」的雙軌計費邏輯（見下方「計費架構」節），以訂閱價格取得 API 存取權轉售牟利，形同套利灰色地帶；惟目前僅一則低分社群貼文，尚無規模或官方回應佐證，需持續觀察是否有後續報導佐證（Hacker News https://news.ycombinator.com/item?id=49151751）
 
 ### 事故與爭議（誤扣費、靜默計費改動、帳號安全）
@@ -244,7 +244,7 @@ git commit 歷史出現大寫字串「HERMES.md」會觸發靜默切換至 API �
 
 #### 2026-07-19：免費期到期日當天，Fable 5 存取政策再添兩則標題層級報導，仍未消解矛盾
 
-- **Tech Times：「Max 永久、Pro Credits-only」**：標題稱 Claude Fable 5 訂閱限制調整為「Max 方案轉為永久提供、Pro 方案改為 Credits-only」。**與 07-18 訊號的可能關係（推論，待證實）**：若屬實，可能是 07-18 兩則看似矛盾報導的「方案別拆解」——官方 `@claudeai` 帳號稱「設為永久」，可能特指 Max 方案；Startup Fortune／the-decoder.com 稱「Pro 導向 API 計費」，與本則「Pro 改 Credits-only」方向一致。惟原文摘要遭 RSS 截斷，僅存標題資訊，具體限額數字與生效日期不明，此推論本身也未經官方確認（Google News/Tech Times，07-18 12:56 UTC）
+- **Tech Times：「Max 永久、Pro Credits-only」**：標題稱 Claude Fable 5 訂閱限制調整為「Max 方案轉為永久提供、Pro 方案改為 Credits-only」。**與 07-18 訊號的可能關係（推論，待證實）**：若屬實，可能是 07-18 兩則看似矛盾報導的「方案別拆解」——官方 `@claudeai` 帳號稱「設為永久」，可能特指 Max 方案；Startup Fortune／the-decoder.com 稱「Pro 導向 API 計費」，與本則「Pro 改 Credits-only」方向一致。❓ **待查證**（標 2026-08-10｜查 Tech Times、RSS 截斷）｜**Tech Times 報導的原文細節**：摘要遭 RSS 截斷，僅存標題資訊，具體限額數字與生效日期不明，此推論本身也未經證實（Google News/Tech Times，07-18 12:56 UTC）
 - **Dawn：「併入 Max、Team Premium，用量上限 50%」**：標題稱 Anthropic 將把 Fable 5 模型以「50% 用量上限」的方式併入 Max、Team Premium 方案。**與 Tech Times 報導的落差**：若 Max 方案是「永久提供」（Tech Times），與本則「50% 用量上限」的描述無法完全對照——「永久」可能指存取權限本身不下架，「50% 上限」則可能指配額分配比例，兩者未必互斥，但缺乏官方公告確認具體機制（Google News/Dawn，07-18 12:50 UTC）
 - **⚠️ 不擇一呈現**：本頁採「如實記錄矛盾」原則，兩則新報導均為標題層級資訊，與 07-18 已記錄的矛盾訊號一併保留，待官方於免費期到期後進一步公告釐清。
 

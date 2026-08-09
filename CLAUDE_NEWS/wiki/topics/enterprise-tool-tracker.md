@@ -19,7 +19,7 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 **狀態：** ongoing
 **領域：** 💼 商業
 **開始日期：** 2026-05-26
-**最後更新：** 2026-08-08
+**最後更新：** 2026-08-10
 **最後新聞更新：** 2026-08-07
 
 > **最新企業採用異動**（2026-08-07）
@@ -49,7 +49,7 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 | Grasshopper Bank | 中型（銀行，聚焦金融科技產業）| Claude API（MCP 整合） | ✅ | 2026-07-15 | Financial IT 報導 Grasshopper Bank 成為首家列入 Anthropic MCP（Model Context Protocol）目錄的銀行，象徵金融業對 MCP 生態系統的具名採用起點；具體整合規模、應用場景未見細節（僅標題可用，Google News 轉址）| 2026-07-15 |
 | Alberta 省政府（加拿大） | 政府（省級） | Claude Code | ✅ | 2025 | 加拿大 Alberta 省技術與創新部門自 2025 年起使用 Claude Code（含 Opus、Sonnet 模型）審查系統；20 小時內掃描 4.66 億行程式碼，完成資安漏洞盤點與修補、建立新工具；Anthropic Blog 官方案例研究，為具名政府採用新增一筆（Digital Watch Observatory 跟進） | 2026-07-07 |
 | Meta | 頂尖 | Claude | ❓ | — | 傳出限制工程師使用 Claude，原文節錄未提供具體來源連結、規模範圍或生效日期（2026-07-06 指控，至今無後續——近 14 天日報未見獨立媒體跟進確認或反駁）| 2026-07-06 |
-| Alibaba | 頂尖 | Claude Code → Qoder（內部工具） | ❌ | 2026-07-10 | 傳出以「疑似後門風險」/ 資安疑慮為由禁止員工職場使用 Claude Code，生效日確認為 2026-07-10（The Indian Express 07-05 跟進報導提供具體生效日期）；PYMNTS、Benzinga、BeInCrypto 三獨立媒體（07-07）確認**明確改用內部工具 Qoder**，此前僅知禁令未知替代方案；來源指控未經 Anthropic 證實，多家媒體跟進（American Bazaar、Seeking Alpha、Crypto News、WTVB、TechCrunch 07-04）；首個以「安全疑慮」為由退出的具名企業案例，區別於此前的成本（Microsoft）與出口管制（JPMorgan）兩類退出理由；安全指控本身詳見 [[topics/ai-agent-safety]]；**（07-21 待查證）**tech-insider.org 另稱因偵測 2.5萬假帳號而封鎖，惟此數字與 06-25 Anthropic 蒸餾攻擊指控中的假帳號數字相同，可能為單一非主流媒體混淆兩起不同事件，暫不採信為封鎖新理由 | 2026-07-07 |
+| Alibaba | 頂尖 | Claude Code → Qoder（內部工具） | ❌ | 2026-07-10 | 傳出以「疑似後門風險」/ 資安疑慮為由禁止員工職場使用 Claude Code，生效日確認為 2026-07-10（The Indian Express 07-05 跟進報導提供具體生效日期）；PYMNTS、Benzinga、BeInCrypto 三獨立媒體（07-07）確認**明確改用內部工具 Qoder**，此前僅知禁令未知替代方案；來源指控未經 Anthropic 證實，多家媒體跟進（American Bazaar、Seeking Alpha、Crypto News、WTVB、TechCrunch 07-04）；首個以「安全疑慮」為由退出的具名企業案例，區別於此前的成本（Microsoft）與出口管制（JPMorgan）兩類退出理由；安全指控本身詳見 [[topics/ai-agent-safety]]；❓ 待查證 ⟨Q-01⟩ | 2026-07-07 |
 | Lindy | 中型（AI 新創） | Claude API → DeepSeek | 🔄 | 2026-06-29 | CEO Flo Crivello 公開宣告 100% 流量從 Claude 切換至 DeepSeek，每月省下數百萬美元；「最省錢 > 最強模型」趨勢最具名案例，屬 API 客戶成本敏感度案例（詳見 [[topics/enterprise-cost-management]]、[[topics/competitor-landscape]]） | 2026-06-29 |
 | 加州州政府 | 政府（州級） | Claude API | ✅ | 2026-06-29 | 州長 Newsom 與 Anthropic 正式簽署協議，Claude 進入加州州政府應用；迄今最明確的美國地方政府採用案例（詳見 [[topics/anthropic-business]]） | 2026-06-29 |
 | Globant（NYSE: GLOB） | 頂尖 | Claude API | ✅ | 2026-06-30 | 與 Anthropic 結盟推出 Claude 驅動的 AI Pods，重新定義企業 AI 交付模式；上市公司，覆蓋全球多行業客戶（詳見 [[topics/anthropic-business]]） | 2026-06-30 |
@@ -83,6 +83,9 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 | KPMG | 大型 | Claude API | ✅ | 2026-05-25 | 戰略合作，重新定義客戶服務 | 2026-05-25 |
 | iCapital | 大型 | Claude API | ✅ | 2026-05-01 | 替代資產平台，為客戶建立 AI 工具 | 2026-05-01 |
 | 哈佛 FAS | 大型 | Claude API | ✅ | 2026-04-28 | 取代 ChatGPT Edu，學術授權 | 2026-04-28 |
+
+**懸置細節**
+- ⟨Q-01⟩ ❓ **待查證**（標 2026-08-10｜查 tech-insider.org、2.5萬假帳號）｜**是否為封鎖新理由**（2026-07-21 報導）：tech-insider.org 另稱因偵測 2.5 萬假帳號而封鎖 Alibaba，惟此數字與 06-25 Anthropic 蒸餾攻擊指控中的假帳號數字相同，可能為單一非主流媒體混淆兩起不同事件，暫不採信為封鎖新理由
 
 ---
 
@@ -137,7 +140,7 @@ Claude Code 是工程師日常編碼工具（CLI），成本隨使用量線性�
 - **Cognizant 與 Anthropic 擴大既有合作，升級為 Global Premier Partner**：Anthropic Blog 官方公告，Cognizant 將 Claude 用於自身建置並為客戶運行的系統，橫跨製造業、生命科學、保險等產業，並將 Claude 嵌入自身商業與工程平台、打造「Claude 認證」（Frontier Certified）人才梯隊，同步升級為 Claude Partner Network 的全球首要夥伴（Global Premier Partner）；延續近期 TCS（06-11）、DXC（06-12）等頂尖 IT 服務商全面深化合作模式（推論），詳見上方使用現況表新增列與 [[topics/anthropic-business]]（Anthropic Blog https://www.anthropic.com/news/cognizant-anthropic；Google News/Seeking Alpha 同日跟進，未見新增細節）
 
 #### 2026-07-21
-- **[❓ 未確認，單一非主流媒體，疑似與蒸餾指控混淆] tech-insider.org：阿里巴巴據稱因偵測 2.5萬假帳號封鎖 Claude Code**：tech-insider.org（source_count=2）報導阿里巴巴以偵測到 2.5 萬個虛假帳號為由封鎖 Claude Code 存取。**注意**：阿里巴巴已於 07-03/07-10 因「疑似後門風險」封鎖 Claude Code 並改用 Qoder（見上方使用現況表 Alibaba 列，狀態 ❌ 已退出）；本則報導的「2.5萬假帳號」數字與 06-25 Anthropic 指控阿里巴巴蒸餾攻擊所用的假帳號數字（詳見 [[topics/competitor-landscape]]）完全相同，高度疑似報導方將「Alibaba 封鎖 Claude Code」與「Anthropic 指控 Alibaba 蒸餾攻擊」兩起不同事件的細節混淆或誤植；來源為單一非主流媒體且細節有限，暫不視為新增獨立事件或狀態變更，僅於既有 Alibaba 列備註補充待查證標記（tech-insider.org）
+- **[❓ 未確認，單一非主流媒體，疑似與蒸餾指控混淆] tech-insider.org：阿里巴巴據稱因偵測 2.5萬假帳號封鎖 Claude Code**：tech-insider.org（source_count=2）報導阿里巴巴以偵測到 2.5 萬個虛假帳號為由封鎖 Claude Code 存取。**注意**：阿里巴巴已於 07-03/07-10 因「疑似後門風險」封鎖 Claude Code 並改用 Qoder（見上方使用現況表 Alibaba 列，狀態 ❌ 已退出）；本則報導的「2.5萬假帳號」數字與 06-25 Anthropic 指控阿里巴巴蒸餾攻擊所用的假帳號數字（詳見 [[topics/competitor-landscape]]）完全相同，高度疑似報導方將「Alibaba 封鎖 Claude Code」與「Anthropic 指控 Alibaba 蒸餾攻擊」兩起不同事件的細節混淆或誤植；來源為單一非主流媒體且細節有限，暫不視為新增獨立事件或狀態變更，僅於既有 Alibaba 列備註補充查證註記（tech-insider.org）
 
 #### 2026-07-15
 - **Grasshopper Bank 成為首家列入 Anthropic MCP 目錄的銀行**：Financial IT 報導 Grasshopper Bank 成為首家列入 Anthropic MCP（Model Context Protocol）目錄的銀行，為金融業具名採用 MCP 生態系的起點案例；具體整合規模、應用場景未見細節（僅標題可用，Google News 轉址）（Google News/Financial IT）
