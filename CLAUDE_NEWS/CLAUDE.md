@@ -127,19 +127,20 @@
 
 ### 🔗 連結與嵌入語法
 
-`wiki/` 正文只使用**裸路徑 wikilink**，其餘 Obsidian 連結語法一律不得寫入——web reader 的解析器（`web_reader/assets/app.js` 的 `wikilinkButtonHtml()`）只認裸路徑，其他寫法在 Obsidian 正常、在網站上壞掉：
+wiki 正文的連結寫法以 web reader 解析器（`web_reader/assets/app.js` 的 `parseWikilink()`）吃得下的為準——下表以外的 Obsidian 語法在 Obsidian 正常、在網站上壞掉，一律不得寫入 `wiki/`：
 
 | 語法 | 用途 | 判斷 |
 |------|------|------|
-| `[[entities/x]]`、`[[topics/x]]` | 內部連結（含目錄前綴）| ✅ 標準寫法；網站自動顯示中文頁名，**不需手寫別名** |
+| `[[entities/x]]`、`[[topics/x]]` | 內部連結（含目錄前綴）| ✅ 預設寫法；網站自動顯示中文頁名，**不必為了好看手寫別名** |
 | `[[feature-radar]]`、`[[news/YYYY-MM-DD]]` | 根頁面、日報連結 | ✅ |
-| `[[頁面\|別名]]` | 別名顯示 | ❌ 解析器不切 `\|`，整串當 slug → 顯示原始字串且點擊 404 |
-| `[[頁面#標題]]`、`[[頁面#^區塊]]` | 錨點連結 | ❌ 同上；且建置會誤報「斷鏈 wikilink」 |
+| `[[頁面\|別名]]` | 別名顯示 | ✅ 只在句子需要特定措辭時用（如「取代 [[entities/opus-4-8\|Opus 4.8]] 成為次旗艦」）|
+| `[[頁面#標題]]`、`[[#本頁標題]]` | 跳到該頁某段 | ✅ 錨點須為目標頁的 **h2–h4 標題原文**；建置的 `check_wikilink_anchors()` 會驗，打錯或標題改名會 WARN |
 | `![[頁面]]`、`![[圖片.png\|300]]` | 嵌入 / 轉引 | ❌ 網站無嵌入渲染，原樣輸出 `![[...]]` |
+| `[[頁面#^區塊id]]`、段落尾 `^區塊id` | 區塊引用 | ❌ 同上，解析器不支援 |
 
-指向某頁特定段落時，寫 `詳見 [[topics/x]] 的「快速選型表」`，不用 `#` 錨點。
+指向長頁面的特定段落時**優先用錨點**（`詳見 [[topics/model-comparison#快速選型表]]`），不要只寫頁名讓讀者自己在數百行裡找。
 
-> 要改用別名、錨點或嵌入 → 先擴充 `web_reader/assets/app.js` 的 `wikilinkButtonHtml()` 與 `scripts/build_web.py` 的 `check_wikilinks()`，不可只改 wiki 內文。
+> 要改用嵌入或區塊 id → 先擴充 `parseWikilink()` / `wikilinkButtonHtml()` 與 `scripts/build_web.py` 的 `check_wikilinks()`，不可只改 wiki 內文。
 
 ### ✏️ 修改 rules 或 commands 時的注意事項
 
