@@ -52,6 +52,8 @@ RECENT_DAYS = 14
 # 衍生頁：不吃新聞條目，吃別的頁面或 lint 策展，故天生零歸因。
 # rule 欄位＝該頁觸發邊的明文出處，登記時必須填得出來，否則不得列入。
 DERIVED_PAGES = {
+    "topics/coding-workflow-guide":
+        ".claude/rules/wiki-ingest-features.md（週更，吃官方技能清冊與社群工具策展，非新聞條目）",
     "topics/community-tech-tools":
         ".claude/rules/wiki-ingest-community-lint.md（週策展，讀近 7–14 天日報）",
     "topics/community-pattern-trends":

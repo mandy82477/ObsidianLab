@@ -14,12 +14,6 @@
       "body": "密碼學工程背景作者分析 Anthropic 用 Claude Mythos 產出的兩項密碼分析結果：針對 HAWK 簽章方案的攻擊，以及縮減輪數 AES 的改進攻擊，並比較兩者的成熟度與意義落差。",
       "focusTags": [
         "[重大事件]"
-      ],
-      "sedimented": [
-        {
-          "id": "mythos",
-          "pageType": "entity"
-        }
       ]
     },
     {
@@ -290,11 +284,6 @@
   ],
   "preview": "Anthropic 公開兩項由 Claude Mythos（尚未發布的進階模型）產出的密碼分析研究成果，成功攻破 HAWK 簽章方案並對縮減輪數 AES 提出改進攻擊，密碼學界正在消化其意義。",
   "sedimentedToday": [
-    {
-      "id": "mythos",
-      "name": "Claude Mythos",
-      "pageType": "entity"
-    },
     {
       "id": "opus-5",
       "name": "Claude Opus 5",

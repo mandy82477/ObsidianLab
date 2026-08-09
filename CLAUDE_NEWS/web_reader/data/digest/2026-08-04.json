@@ -395,6 +395,11 @@
       "pageType": "entity"
     },
     {
+      "id": "code-quality-decline",
+      "name": "Claude Code 效能退步事件",
+      "pageType": "topic"
+    },
+    {
       "id": "model-comparison",
       "name": "Claude 模型選型對照",
       "pageType": "topic"

@@ -820,7 +820,32 @@
       return `<pre style="white-space:pre-wrap;font-size:13px">${esc(md)}</pre>`;
     }
     md = md.replace(/\[\[([^\]]+)\]\]/g, (_, p) => `<WIKILINK>${p}</WIKILINK>`);
-    return markRunInLeads(linkifyWikilinks(marked.parse(md)));
+    return addHeadingIds(markRunInLeads(linkifyWikilinks(marked.parse(md))));
+  }
+
+  // 這版 marked 不產生標題 id（headerIds 已移除），所以 md 內的 `[文字](#錨點)` 在站上
+  // 全部是死連結。長頁面若要有可點的目錄就得自己補 id——slug 規則對齊 GitHub：
+  // 轉小寫、去標點、空白換連字號，中日韓字元原樣保留。
+  function headingSlug(text) {
+    return text
+      .replace(/<[^>]*>/g, '')
+      .trim()
+      .toLowerCase()
+      .replace(/[^\w一-鿿\- ]/g, '')
+      .trim()
+      .replace(/\s+/g, '-');
+  }
+
+  function addHeadingIds(html) {
+    const seen = new Set();
+    return html.replace(/<h([2-4])>([\s\S]*?)<\/h\1>/g, (m, level, inner) => {
+      let id = headingSlug(inner);
+      if (!id) return m;
+      let n = 1;
+      while (seen.has(id)) id = `${headingSlug(inner)}-${n++}`;
+      seen.add(id);
+      return `<h${level} id="${id}">${inner}</h${level}>`;
+    });
   }
 
   // ── Weekly reports — journal layout（期刊版面，見 web-reader-design.md）──────

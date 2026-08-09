@@ -11,6 +11,7 @@ Output:
 
 import json
 import re
+import sys
 import time
 from pathlib import Path
 
@@ -180,6 +181,57 @@ def latest_headline(raw: str) -> str:
                 return text[:160]
     return ''
 
+
+def _fallback_summary_lines(raw: str) -> list[str]:
+    """`## 現況`／`## 摘要` 都不在時的後備摘要來源。
+
+    先取頂部 delta-first callout（`>` 引用區塊，格式規則要求 ongoing/monitoring 頁必備），
+    取不到再退到第一段正文。兩者皆跳過標頭欄位、分隔線、標題、表格與程式碼區塊。
+    """
+    lines = raw.splitlines()
+    callout: list[str] = []
+    prose: list[str] = []
+    in_code = False
+
+    for line in lines:
+        s = line.strip()
+        if s.startswith("```"):
+            in_code = not in_code
+            continue
+        if in_code or not s:
+            # callout 收完就停：只要第一個引用區塊，不把後面的也吃進來
+            if callout:
+                break
+            continue
+        if s.startswith("#") or s.startswith("---") or s.startswith("|"):
+            continue
+        if re.match(r"\*\*[^*]+：\*\*", s):        # 標頭欄位（**狀態：** …）
+            continue
+        if s.startswith(">"):
+            body = s.lstrip("> ").strip()
+            # callout 首行是標籤（**最新動態**（2026-08-08）），內容在第二行起——標籤進了卡片
+            # 只會佔掉 160 字裡的前 20 字卻不說明任何事
+            if re.fullmatch(r"\*\*[^*]+\*\*(?:（[^）]*）|\([^)]*\))?", body):
+                continue
+            if body and not body.startswith("-"):
+                callout.append(re.sub(r"\*{1,3}([^*\n]+)\*{1,3}", r"\1", body))
+            continue
+        if callout:
+            break
+        prose.append(s)
+        if len(" ".join(prose)) >= 160:
+            break
+
+    return callout or prose
+
+
+
+def safe_console(text: str) -> str:
+    """把主控台編不出來的字元換掉。Windows 預設 cp950，訊息裡只要有 emoji 就會
+    在 print 當下再拋一次例外，把原本的錯誤訊息整個蓋掉——2026-08-08 的頁面消失事故
+    就是這樣變得無從診斷的。"""
+    enc = (sys.stdout.encoding or "utf-8")
+    return text.encode(enc, errors="replace").decode(enc, errors="replace")
 
 def strip_llm_sections(md: str) -> str:
     """Remove any H2 section whose title contains '給 LLM' (and everything after it)."""
@@ -675,6 +727,13 @@ def parse_wiki(f: Path, page_type: str) -> dict:
             elif line.strip():
                 summary_lines.append(line.strip())
 
+    # 後備：SUMMARY_HEADERS 只認「## 現況 / ## 摘要」兩個標題名，任何用其他首節標題的頁面
+    # 都會靜默產出空摘要，在 wiki 列表頁變成一張空卡（2026-08-08 發現，當時全庫已有 2 頁中招）。
+    # 改為往下退：頂部 delta-first callout → 第一段正文。頁面該叫什麼標題是編輯決定，
+    # 不該為了餵這支腳本而被限定。
+    if not summary_lines:
+        summary_lines = _fallback_summary_lines(raw)
+
     # first 160 chars of summary（wikilink 先轉可讀文字，避免截斷後懸空斷句）
     raw_summary = readable_inline(" ".join(summary_lines))
     meta["summary"] = raw_summary[:160] + ("…" if len(raw_summary) > 160 else "")
@@ -898,19 +957,30 @@ def build():
     all_wiki_md = sorted(WIKI_DIR.glob("*.md")) + sorted(WIKI_ENTITIES.glob("*.md")) + sorted(WIKI_TOPICS.glob("*.md"))
     check_wikilinks(all_wiki_md)
 
+    # 解析失敗 = 該頁在網站上直接消失。原本只印一行 [warn] 就繼續，build 照樣 exit 0，
+    # 於是「少了一頁」沒有任何人會發現（2026-08-08：標頭領域欄一個全形斜線就讓整頁蒸發，
+    # 而輸出只差在 53 vs 54 個檔）。改為蒐集後統一致命，讓 gate_web_build 攔得到。
+    wiki_parse_failures: list[str] = []
+
     entities = []
     for f in sorted(WIKI_ENTITIES.glob("*.md")):
         try:
             entities.append(parse_wiki(f, "entity"))
         except Exception as e:
-            print(f"  [warn] entity {f.name}: {e}")
+            wiki_parse_failures.append(f"entity {f.name}: {e}")
 
     topics = []
     for f in sorted(WIKI_TOPICS.glob("*.md")):
         try:
             topics.append(parse_wiki(f, "topic"))
         except Exception as e:
-            print(f"  [warn] topic {f.name}: {e}")
+            wiki_parse_failures.append(f"topic {f.name}: {e}")
+
+    if wiki_parse_failures:
+        print("ERROR: 下列 wiki 頁面解析失敗，會從網站上整頁消失：")
+        for msg in wiki_parse_failures:
+            print(f"  - {safe_console(msg)}")
+        sys.exit(1)
 
     digest_all: dict = {}
     digest_index: list = []
