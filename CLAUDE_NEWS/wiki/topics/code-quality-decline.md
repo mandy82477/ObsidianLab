@@ -1,16 +1,20 @@
 ---
 page: "topics/code-quality-decline"
 kind: "topic"
-status: "monitoring（官方已說明，待驗證恢復）"
+status: "monitoring（官方已說明工程疏失，恢復情況見下方摘要）"
 domain: "🛠️ 工具/功能"
-last_updated: "2026-08-01"
-last_news_update: "2026-08-01"
+last_updated: "2026-08-10"
+last_news_update: "2026-08-04"
 status_main: "monitoring"
-days_since_news: 4
-inbound_links: 24
-attribution_count: 11
-attribution_last: "2026-08-01"
+days_since_news: 6
+inbound_links: 28
+attribution_count: 12
+attribution_last: "2026-08-04"
 top_source: "reddit"
+pending_count: 2
+pending_overdue: 0
+pending_next_review: "2026-08-24"
+pending_signalled: 0
 signal: "健康"
 generated_by: "scripts/gen_wiki_frontmatter.py"
 ---

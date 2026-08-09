@@ -7,11 +7,15 @@ domain: "🛠️ 工具/功能"
 last_updated: "2026-07-10"
 last_news_update: "2026-05-14"
 status_main: "active"
-days_since_news: 83
+days_since_news: 88
 inbound_links: 7
 attribution_count: 0
 attribution_last: null
 top_source: null
+pending_count: 0
+pending_overdue: 0
+pending_next_review: null
+pending_signalled: 0
 signal: "休眠"
 generated_by: "scripts/gen_wiki_frontmatter.py"
 ---

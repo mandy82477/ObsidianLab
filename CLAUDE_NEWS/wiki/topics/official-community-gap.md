@@ -3,14 +3,18 @@ page: "topics/official-community-gap"
 kind: "topic"
 status: "monitoring"
 domain: "🛠️ 工具/功能"
-last_updated: "2026-08-05"
-last_news_update: "2026-08-05"
+last_updated: "2026-08-10"
+last_news_update: "2026-08-09"
 status_main: "monitoring"
-days_since_news: 0
-inbound_links: 10
-attribution_count: 0
-attribution_last: null
-top_source: null
+days_since_news: 1
+inbound_links: 18
+attribution_count: 5
+attribution_last: "2026-08-09"
+top_source: "github-issues"
+pending_count: 2
+pending_overdue: 0
+pending_next_review: "2026-08-24"
+pending_signalled: 0
 signal: "健康"
 generated_by: "scripts/gen_wiki_frontmatter.py"
 ---

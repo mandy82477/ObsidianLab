@@ -3,15 +3,19 @@ page: "topics/community-large-codebase-workflow"
 kind: "topic"
 status: "ongoing"
 domain: "🌐 社群"
-last_updated: "2026-08-05"
-last_news_update: "2026-08-05"
+last_updated: "2026-08-10"
+last_news_update: "2026-08-08"
 status_main: "ongoing"
-days_since_news: 0
-inbound_links: 3
+days_since_news: 2
+inbound_links: 8
 attribution_count: 2
 attribution_last: "2026-08-05"
 top_source: "reddit"
-signal: "孤島"
+pending_count: 1
+pending_overdue: 0
+pending_next_review: "2026-08-24"
+pending_signalled: 0
+signal: "健康"
 generated_by: "scripts/gen_wiki_frontmatter.py"
 ---
 # 大型 Codebase 規模化開發：社群工作流主線

@@ -3,14 +3,18 @@ page: "topics/community-tech-discussions"
 kind: "topic"
 status: "ongoing"
 domain: "🌐 社群"
-last_updated: "2026-08-05"
-last_news_update: "2026-08-05"
+last_updated: "2026-08-10"
+last_news_update: "2026-08-07"
 status_main: "ongoing"
-days_since_news: 0
-inbound_links: 39
-attribution_count: 62
-attribution_last: "2026-08-05"
+days_since_news: 3
+inbound_links: 40
+attribution_count: 65
+attribution_last: "2026-08-07"
 top_source: "hacker-news"
+pending_count: 5
+pending_overdue: 0
+pending_next_review: "2026-08-24"
+pending_signalled: 0
 signal: "健康"
 generated_by: "scripts/gen_wiki_frontmatter.py"
 ---

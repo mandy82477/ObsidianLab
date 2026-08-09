@@ -3,14 +3,18 @@ page: "topics/competitor-landscape"
 kind: "topic"
 status: "monitoring"
 domain: "💼 商業"
-last_updated: "2026-08-05"
-last_news_update: "2026-08-05"
+last_updated: "2026-08-10"
+last_news_update: "2026-08-07"
 status_main: "monitoring"
-days_since_news: 0
-inbound_links: 47
-attribution_count: 49
-attribution_last: "2026-08-05"
+days_since_news: 3
+inbound_links: 48
+attribution_count: 54
+attribution_last: "2026-08-07"
 top_source: "google-news"
+pending_count: 31
+pending_overdue: 0
+pending_next_review: "2026-08-24"
+pending_signalled: 0
 signal: "健康"
 generated_by: "scripts/gen_wiki_frontmatter.py"
 ---

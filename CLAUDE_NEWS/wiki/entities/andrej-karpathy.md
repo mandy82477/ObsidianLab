@@ -4,14 +4,18 @@ kind: "entity"
 type: "person"
 status: "active（待核實）"
 domain: "👤 人物"
-last_updated: "2026-08-02"
+last_updated: "2026-08-10"
 last_news_update: "2026-08-02"
 status_main: "active"
-days_since_news: 3
+days_since_news: 8
 inbound_links: 3
 attribution_count: 1
 attribution_last: "2026-08-02"
 top_source: "google-news"
+pending_count: 2
+pending_overdue: 0
+pending_next_review: "2026-08-24"
+pending_signalled: 0
 signal: "孤島"
 generated_by: "scripts/gen_wiki_frontmatter.py"
 ---

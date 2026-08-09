@@ -3,14 +3,18 @@ page: "topics/safety-china-trust-dispute"
 kind: "topic"
 status: "monitoring（核心「後門」敘事自 07-10 雙方首度正面否認後未見新進展，轉低頻觀察；新出現的相關但獨立事件見下方說明）"
 domain: "🏛️ 政策/安全"
-last_updated: "2026-08-01"
+last_updated: "2026-08-10"
 last_news_update: "2026-07-11"
 status_main: "monitoring"
-days_since_news: 25
+days_since_news: 30
 inbound_links: 18
 attribution_count: 0
 attribution_last: null
 top_source: null
+pending_count: 1
+pending_overdue: 0
+pending_next_review: "2026-08-24"
+pending_signalled: 0
 signal: "⚠️ 高引用但停滯"
 generated_by: "scripts/gen_wiki_frontmatter.py"
 ---

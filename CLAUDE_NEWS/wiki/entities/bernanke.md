@@ -4,14 +4,18 @@ kind: "entity"
 type: "person"
 status: "active"
 domain: "👤 人物"
-last_updated: "2026-07-16"
+last_updated: "2026-08-10"
 last_news_update: "2026-07-10"
 status_main: "active"
-days_since_news: 26
+days_since_news: 31
 inbound_links: 6
 attribution_count: 0
 attribution_last: null
 top_source: null
+pending_count: 0
+pending_overdue: 0
+pending_next_review: null
+pending_signalled: 0
 signal: "休眠"
 generated_by: "scripts/gen_wiki_frontmatter.py"
 ---

@@ -7,12 +7,16 @@ domain: "🛠️ 工具/功能"
 last_updated: "2026-07-19"
 last_news_update: "2026-07-19"
 status_main: "active"
-days_since_news: 17
-inbound_links: 2
+days_since_news: 22
+inbound_links: 3
 attribution_count: 6
 attribution_last: "2026-07-17"
 top_source: "github"
-signal: "孤島"
+pending_count: 0
+pending_overdue: 0
+pending_next_review: null
+pending_signalled: 0
+signal: "休眠"
 generated_by: "scripts/gen_wiki_frontmatter.py"
 ---
 # Claude Skills

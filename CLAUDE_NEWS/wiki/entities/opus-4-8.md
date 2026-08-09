@@ -4,14 +4,18 @@ kind: "entity"
 type: "model"
 status: "active（已被取代，次旗艦地位由 Opus 5 接手）"
 domain: "🤖 模型"
-last_updated: "2026-07-25"
+last_updated: "2026-08-10"
 last_news_update: "2026-07-25"
 status_main: "active"
-days_since_news: 11
-inbound_links: 12
+days_since_news: 16
+inbound_links: 13
 attribution_count: 6
 attribution_last: "2026-07-25"
 top_source: "google-news"
+pending_count: 8
+pending_overdue: 0
+pending_next_review: "2026-08-24"
+pending_signalled: 0
 signal: "健康"
 generated_by: "scripts/gen_wiki_frontmatter.py"
 ---
