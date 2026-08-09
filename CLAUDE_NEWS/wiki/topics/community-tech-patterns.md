@@ -19,11 +19,11 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 **狀態：** monitoring
 **領域：** 🌐 社群
 **開始日期：** 2026-04-25
-**最後更新：** 2026-08-08
-**最後新聞更新：** 2026-08-08
+**最後更新：** 2026-08-09
+**最後新聞更新：** 2026-08-09
 
-> **最新工作流模式**（2026-08-08）
-> 社群本日新增跨 agent CLI 的 system prompt 版本追蹤工具 phistory（同時支援 Claude Code、Codex、OpenClaw、Hermes），把「直接檢視 CLI 實際送出內容」的既有第一手偵測手法系統化為可跨版本比對的自動封存機制。
+> **最新工作流模式**（2026-08-09）
+> 社群同日出現兩款鎖定跨 coding agent 的協調工具 loopx、HarnessFlow，延續 08-05 omnigent 的「harness 無關」取向，但星數（3641／516）目前缺乏 fork／issue／commit 佐證，依防刷規則標「待查證」；另收錄兩篇 dev.to 第一手實作／反思文（生產環境 memory leak 系統化除錯、筆記系統半年演化回顧）。
 
 ---
 
@@ -119,6 +119,27 @@ Claude Code 的三種多 agent 機制，可對應到 Anthropic《Building Effect
 ## 技術彙整
 
 ### 2026-08
+
+#### loopx + HarnessFlow：同日兩款跨 harness 協作／狀態管理工具亮相，星數缺乏佐證（2026-08-09）
+
+- **核心模式：** GitHub Search 同日抓到兩款鎖定跨 coding agent 通用的協作工具：huangruiteng/loopx 自稱「輕量級 loop 工程狀態核心」，提供持久目標、配額感知自動喚醒、可執行待辦、證據紀錄與可驗證交接，鎖定長任務多 agent 團隊場景，agent-loop agnostic 橫跨 Codex、Claude Code 等工具；HangYu8123/HarnessFlow 則是鎖定 Codex、Claude、GitHub Copilot 的通用 coding workflow harness
+- **與既有模式的關係：** 與本頁「Multi-agent 架構」既有的 harness 無關取向（omnigent，2026-08-05：把協調邏輯與底層 harness 解耦）同屬同一趨勢下的後續獨立實作；loopx 的「證據紀錄／可驗證交接」概念與 [[topics/community-large-codebase-workflow]]「除錯與分工架構」主線既有的可觀測性/驗證缺口討論有主題重疊，但因星數尚未查證，暫不視為該主線的縫合節點
+- **來源：** GitHub Search（今日日報「⭐ 重點話題」已收錄）；loopx 顯示 3641 顆星（達對照表高門檻 ≥1000 星）、HarnessFlow 顯示 516 顆星（達中門檻 ≥300 星）；依「GitHub repo 星數防刷註記」，兩者的 forks／open issues 真實往來／近 30 天 commit 等難造假佐證數據皆未見於本次摘要，本記者亦無工具可自行查證，**依規則標「待查證」，不視為高信度節點**
+- **成熟度：** ⏳ 新興（今日首見，星數存在但缺乏佐證，實際採用情形有待觀察）
+
+#### 生產環境 memory leak 除錯：從盲猜到用 Claude Code 系統化排查 heap snapshot（2026-08-08）
+
+- **核心模式：** 作者記錄一次凌晨兩點的生產記憶體洩漏事故：前一小時憑直覺盲猜排查未果，第二小時改用 Claude Code 系統化梳理 heap snapshot 才真正定位問題；文章整理出 4 條「用 AI coding agent 做真實生產除錯（而非玩具範例）」的心得
+- **與既有模式的關係：** 呼應 [[topics/community-large-codebase-workflow]]「除錯與分工架構」主線既有的「先測量、再究責」方法論（見該主線 Context/Token 管理線 07-10 節點）在**事故現場除錯**場景的對應版本——同樣是「先系統化蒐證再下結論」取代「憑直覺猜測」，但對象是生產事故而非 context 配置；本則屬單人事故排查而非多 agent 協作分工，內容也非「大型 codebase」特有問題，暫不視為該主線的縫合節點
+- **來源：** 「How I Used Claude Code to Hunt Down a Memory Leak That Took Down Prod」— dev.to（3 讚；依規則以第一手實作內容判斷，非讚數）
+- **成熟度：** ⏳ 新興（今日首見，單一作者第一手事故記錄，尚無其他來源複現或延伸應用）
+
+#### 「留麵包屑而非寫筆記」：回顧半年筆記系統演化的第一手反思（2026-08-07）
+
+- **核心模式：** 作者回頭讀自己過去六個月的工作日誌，發現期間累積了三套不同的筆記系統，其中只有一套是自己「有意識決定要建立」的——文章反思大量資訊輸入實際上如何改變了個人筆記習慣，而非事先設計的結果
+- **與既有模式的關係：** 補充「記憶與知識管理」類別既有偏工具／架構取向的節點（ltm、OKF、CodeAlmanac 等）之外的**個人層面**視角——既有節點多談「agent 如何記得住」，本篇談的是「人類自己的筆記習慣如何被 AI 加速開發帶來的資訊量牽著走」；性質更接近反思隨筆而非可複用工具或架構，與 [[topics/community-tech-discussions]]「Skill Atrophy 與技藝認同」長期議題的個人反思取向相近，但主題聚焦筆記系統而非能力退化，暫記於此、非該議題的正式收斂
+- **來源：** 「The Year I Started Leaving Breadcrumbs Instead of Notes」— dev.to（24 讚；依規則以第一手反思內容判斷，非讚數）
+- **成熟度：** ⏳ 新興（第一手個人反思，無具體工具或量化數據，較適合作為現象觀察而非可複用模式）
 
 #### phistory：跨 agent CLI（Claude Code／Codex／OpenClaw／Hermes）system prompt 版本快照自動封存工具（2026-08-08）
 

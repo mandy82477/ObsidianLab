@@ -4,17 +4,17 @@
 僅收錄官方 changelog、release note 或官方公告來源；社群工具見 [[topics/community-tech-tools]]。
 每日更新：新增功能、更新熱度、補充社群回饋。
 
-**最後更新：** 2026-08-08
+**最後更新：** 2026-08-09
 
 ---
 
 ## ⭐ 本週推薦
 
 - **Claude Opus 5**（熱度 🔥🔥🔥🔥🔥）：2026-07-25 正式發布，編碼與知識工作評測逼近 Fable 5、官方稱定價為其一半，現為 Claude Max 新預設模型、Claude Pro 最強模型，適合日常 agentic 使用與知識工作任務
-- **Claude 語音模式 Opus／Sonnet 選擇**（熱度 🔥🔥🔥🔥）：2026-07-24 對所有使用者開放，可自行切換語音對話的底層模型；重度語音使用者選 Opus 換回應品質，輕度使用 Sonnet 已足夠
-- **Reflect with Claude**（熱度 🔥🔥🔥🔥）：2026-07-09 起 Settings 內的使用模式儀表板（提問類型、時段、模式），想盤點自己怎麼用 Claude 的人可直接打開看；對「變相鼓勵使用」有疑慮者可先觀望
+- **Claude Code 跨 session 訊息互通**（熱度 🔥🔥🔥🔥）：2026-08-08 官方文件確認（需 v2.1.224+、macOS/Linux），用 `ListAgents`+`SendMessage` 跨 session 傳訊；已在平行跑多個 session 的使用者可直接試用
+- **Claude Code Auto 模式 8/14 起預設化**（熱度 🔥🔥🔥🔥）：2026-08-14 起成為 Pro/Max/Team 方案預設權限模式，取代手動確認流程；依賴手動確認做安全把關者應在生效日前確認是否要主動關閉
 
-> 本週輪替：2026-08-08（Fable 5 免費到期、Claude Code Artifacts 因發布逾 30 天退出候選池）。
+> 本週輪替：2026-08-09（語音模式 Opus／Sonnet 選擇、Reflect with Claude 因今日無新熱度異動、被本輪更新的兩項功能擠出候選池）。
 
 ---
 
@@ -142,28 +142,35 @@
 ## 🆕 最新功能（2026-08）
 
 ### Claude Code Auto 模式將於 8/14 起成為預設權限模式
-**發布：** 2026-08-14 生效（2026-08-07 公告） | **熱度：** 🔥🔥🔥 | **試用價值：** ⚡ 有條件推薦 | **狀態：** 官方公告（尚未生效，⚠️ Breaking change）
+**發布：** 2026-08-14 生效（2026-08-07 公告） | **熱度：** 🔥🔥🔥🔥 | **試用價值：** ⚡ 有條件推薦 | **狀態：** 官方公告（尚未生效，⚠️ Breaking change，適用 Pro/Max/Team；Enterprise 與 API/雲端平台仍選用制，預計約一個月後跟進）
 
-**是什麼：** Anthropic 宣布 Claude Code 將於 2026 年 8 月 14 日起，把「auto 模式」設為預設權限模式，取代目前預設的手動確認流程。
+**是什麼：** Anthropic 宣布 Claude Code 將於 2026 年 8 月 14 日起，把「auto 模式」設為 Pro、Max、Team 方案的預設權限模式，取代目前預設的手動確認流程；Enterprise 與 API／雲端平台目前仍維持選用制。
 
-**為何熱：** Hacker News（轉引 @ClaudeDevs 官方推文）與 9to5Mac 兩獨立來源互相驗證；HN 討論串高分留言認為新款模型已大幅降低破壞性操作風險，有使用者提到已用 auto 模式執行數月系統管理任務未出過重大差錯。
+**為何熱：** Hacker News（轉引 @ClaudeDevs 官方推文、the newstack.io）、simonwillison.net、the-decoder.com 多來源互相驗證；Anthropic 產品負責人 Cat Wu 受訪表示「We've pretty much mitigated every attack [...] for the main categories of risks that we're concerned about」，並將於近期公布評測數據；同一受訪內容提到「Broadly within Anthropic, almost every single person uses auto mode」。HN 討論串高分留言認為新款模型已大幅降低破壞性操作風險。
 
 **現在要試嗎：** 屬即將生效的預設行為變更，非選用功能；依賴目前手動確認流程做安全把關的使用者，應在 8/14 前確認是否要主動關閉 auto 模式（設定方式待官方文件補齊）。一般使用者可持觀望態度等生效日到來。
 
-**注意事項：** 目前僅公告尚未生效，具體關閉/設定方式與影響範圍（是否所有帳號/方案皆適用）待官方 changelog 或部落格正式公告確認；原始 HN 摘要為社群留言而非官方原文，需留意查證。
+**注意事項：** 目前僅公告尚未生效，具體關閉/設定方式待官方 changelog 或部落格正式公告確認；官方評測數據尚未發布（Cat Wu 稱「未來數週內」公布），現階段「已緩解主要風險」為官方單方陳述，未經第三方驗證。
 
 ---
 
-### Claude Code 新增跨 session 訊息互通功能（macOS/Linux，⚠️ 未經官方確認）
-**發布：** 待確認（2026-08-08 媒體廣泛報導） | **熱度：** 🔥🔥🔥 | **試用價值：** ⏳ 觀望（官方一手來源未查得）| **狀態：** 待確認（僅媒體報導，無對應 GitHub release/changelog 佐證）
+### Claude Code 新增跨 session 訊息互通功能（macOS/Linux）
+**發布：** 2026-08-08（官方文件確認：code.claude.com/docs/en/cross-session-messaging） | **熱度：** 🔥🔥🔥🔥 | **試用價值：** ⚡ 有條件推薦 | **狀態：** 正式發布
 
-**是什麼：** MacRumors、The Mac Observer、finance.biggo.com、Inshorts、9to5Mac 等 5 家科技媒體同日報導，稱 Claude Code 新增跨 session 訊息互通功能，讓多個 agent session 之間可直接通訊；多數報導聚焦 macOS，Inshorts 並提及 Linux 亦支援。
+**是什麼：** Anthropic 官方文件確認 Claude Code 新增跨 session 訊息功能，需 Claude Code v2.1.224 以上、支援 macOS 與 Linux。條件滿足時該功能預設開啟、無需額外設定；用 `ListAgents` 探索可連線的其他 session，並以 `SendMessage` 指定名稱跨 session 傳訊；同一機制也涵蓋單一 session／team 內對 subagent 與隊友傳訊。
 
-**為何熱：** 5 家獨立媒體同日報導，訊號密度高；若屬實，將是 multi-agent 協作基礎設施的重要一步，與 [[topics/official-community-gap]]「Agent 間直接通訊協定」列直接相關。
+**為何熱：** 原先僅有 MacRumors、The Mac Observer、finance.biggo.com、Inshorts、9to5Mac 等 5 家媒體同日報導（未經官方確認），今日查得官方文件正式驗證，是 multi-agent 協作基礎設施的重要一步，與 [[topics/official-community-gap]]「Agent 間直接通訊協定」列直接相關。
 
-**現在要試嗎：** ⚠️ 尚未經官方一手來源（GitHub release、Anthropic Blog、changelog）確認——當日 GitHub release（v2.1.226）僅標示 bug 修復，無對應條目；原文摘要均為 Google News RSS 轉址連結，無法取得實際內容。建議先觀望，待官方確認後再評估導入。
+**現在要試嗎：** 適合已在平行跑多個 Claude Code session、需要跨 session 交接工作的使用者，滿足版本與平台需求後直接可用；Windows 使用者暫不適用。
 
-**注意事項：** 主編標記「未經官方確認」，後續 ingest 若查得官方一手來源（release note、部落格），應更新本條目狀態並補上版本號；若持續查無官方佐證，下一輪 lint 應評估降級或移除。
+**快速上手：**
+```
+# 於任一符合需求的 session 中
+ListAgents        # 探索可連線的其他 session
+SendMessage        # 依名稱傳訊給指定 session／subagent／team 隊友
+```
+
+**注意事項：** 需 Claude Code v2.1.224 以上，僅支援 macOS 與 Linux；官方文件未說明訊息內容是否受任何隔離或稽核限制。
 
 ---
 

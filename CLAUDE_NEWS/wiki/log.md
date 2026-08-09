@@ -3664,3 +3664,22 @@
   - `CLAUDE.md` 新增「🔗 連結與嵌入語法」：明列可用（裸路徑、別名、錨點）與禁用（`![[嵌入]]`、`^區塊 id` — renderer 無支援），並註明要放寬得先改解析器
 - **不做的事**：嵌入語法全庫 0 條且 renderer 不支援；查 `index.md` / `overview.md` 後確認它們與各頁的「重複」是刻意的分層改寫（路由鉤子 vs 週度敘事），用嵌入會把三種編輯意圖壓成同一份文字，故不推
 - **可攜教訓**：**寫進規則的語法必須先確認渲染端吃得下**。本次是「wiki 寫得對、建置檢查也綠、但站上是死連結」的靜默失效——任何跨層語法（Markdown 方言、frontmatter 欄位、自訂標記）都該有一條檢查落在**最終呈現層**，不能只驗到資料層
+
+## 2026-08-09 Ingest
+
+- 來源日報：[[news/2026-08-09]]
+- 更新頁面：wiki/entities/claude-code.md、wiki/topics/official-community-gap.md、wiki/topics/community-tech-patterns.md、wiki/feature-radar.md（主編彙整）
+- 新增頁面：無
+- 摘要：Claude Code Auto Mode 將於 8/14 起成為 Pro/Max/Team 預設權限模式；跨 session 訊息功能經官方文件確認轉為正式功能；社群持續關注 context/記憶持久化痛點與多款 agent harness 工具同批亮相。
+- 呈現品質：claude-code.md ✅ 通過；official-community-gap.md ✅ 通過；community-tech-patterns.md ✅ 通過；商業／安全政策記者本日皆判斷無足夠事實更新頁面，未產出頁面異動（不適用）
+- 品質備註：[商業] 記者回報中判斷 #41581（Max 訂閱被降級為 Free）應轉知功能記者記入已知問題，但功能記者為同批並行派工、未及收到此轉知，已由主編直接補寫入 `claude-code.md`「💰 計費與配額」組；後續同類情境建議先收攏跨類別轉知內容再派工，或於彙整階段安排補派
+
+**降級執行說明**：雲端環境四個 `wiki-reporter-*` 自訂 subagent_type 不在本 session 可用 agent 清單中（同 2026-07-18、2026-08-08 已知現象），本次全數改用 `general-purpose` agent，並於 prompt 內指示其依序完整 Read `.claude/rules/wiki-reporter-shared.md` + 對應類別 `.claude/rules/wiki-ingest-[類別].md` + `.claude/rules/wiki-ingest-format.md` 作為角色定義後才開始工作，功能等同原生記者但非原生角色 agent，依 `docs/cloud-runbooks/daily.md` 規定於此明確標注，不靜默 fallback。
+
+**主編查證（本日直接處理，非派工）**：功能記者的兩則 feature-radar 更新請求（跨 session 訊息互通功能移除「未經官方確認」標記並補上版本需求；Auto Mode 8/14 補充 Cat Wu 訪談重點）已由主編寫入 `feature-radar.md`，兩條目熱度各 +1（🔥🔥🔥→🔥🔥🔥🔥），`## ⭐ 本週推薦` 依時間閘與熱度重新排序覆寫（Opus 5、跨 session 訊息互通、Auto Mode 8/14 三項；語音模式選擇與 Reflect with Claude 因今日無熱度異動且已被更高優先序候選擠出，非違反防霸榜規則的強制輪替）。
+
+**📋 待使用者確認**：
+- [安全政策] The Register「Devs to Anthropic, OpenAI, Cursor, and friends: Make security and privacy the default」——僅有標題（Google News RSS 限制），需查證原文才能確認是否涉及具體資安事件或純屬一般性倡議文章
+- [安全政策] The Times of India「Geoffrey Hinton on OpenAI, Meta and Anthropic AI models hacking other companies」——僅有標題，記者判斷可能與 `entities/mythos.md` 已記錄的英國 AISI 測試事件（自建假身分、隱藏證據）相關，也可能是泛論性警告，需 WebFetch 原文後決定是否寫入 `topics/ai-agent-safety.md` 或 `topics/anthropic-government-policy.md`
+- [社群] Google News/XDA「I changed one setting in Claude Code, and my token burn dropped by 45%」——僅有標題，需查證原文確認具體是哪項設定，若查得屬 token/成本優化技巧，值得回頭補入 `community-tech-patterns.md`
+- [社群] huangruiteng/loopx（3641★）、HangYu8123/HarnessFlow（516★）——依 GitHub repo 星數防刷註記，記者無工具查證 forks／issues／近期 commit 等難造假佐證，本日僅記為「待查證」節點，未列為高信度收錄，下次 ingest 或 lint 若有工具可查證應回頭核實

@@ -20,11 +20,11 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 **領域：** 🛠️ 工具/功能
 **開始日期：** 2026-05-17
 **最後更新：** 2026-08-09
-**最後新聞更新：** 2026-08-08
+**最後新聞更新：** 2026-08-09
 
-> **最新功能缺口**（2026-08-08）
-> - **Agent 間直接通訊協定**：五家媒體（MacRumors、The Mac Observer、biggo.com、Inshorts、9to5Mac）同步報導 Claude Code 新增跨 session 訊息互通功能（macOS/Linux），直接對應社群長期訴求（issue #24798、#28300）；惟 GitHub release 無對應 changelog 佐證，該列暫升為 🧪 部分產品化（媒體報導，未經官方 changelog 證實）。
-> - **跨 session 記憶**：GitHub issue [#47023](https://github.com/anthropics/claude-code/issues/47023)（08-04）彙整 5 個既有開放 issue，提出開放 compact／session 生命週期 hook 供外部記憶層串接，是此訴求首次收斂為單一具體 API 提案；官方尚無回應，該列維持 ⏳ 正在做但不夠。
+> **最新功能缺口**（2026-08-09）
+> - **Agent 間直接通訊協定**：官方文件（code.claude.com/docs/en/cross-session-messaging）正式確認 Claude Code 跨 session 訊息互通功能，需 v2.1.224 以上版本、限 macOS／Linux，工具為 `ListAgents`＋`SendMessage`；解除昨日「媒體報導、未經官方 changelog 證實」的暫定狀態，該列狀態更新為官方文件確認（同機通訊已確認，跨機器 A2A 需求 #28300 涵蓋範圍仍未載明）。
+> - **跨 session 記憶**：新增 GitHub issue [#14227](https://github.com/anthropics/claude-code/issues/14227)（跨 session 持久記憶，34 則留言）作為既有 #47023 彙整清單成員的獨立訴求範例，與 #34556（跨 compaction 記憶）合計 96 則留言，凸顯此缺口仍缺乏官方直接對應；該列維持 ⏳ 正在做但不夠。
 
 ## 摘要
 
@@ -52,7 +52,7 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 | Slack 內 AI 隊友 | 弱社群前驅（Ano 等輕量 Slack + Claude 整合，2026-06-04） | Ano | [[entities/claude-tag\|Claude Tag]]（2026-06-24，Slack-native，Anthropic 內部 65% 程式碼由其生成） | ✅ 已產品化 | 此列較弱屬「社群發明」框架——官方主導色彩強，社群前驅稀薄，列入僅供對照參考 |
 | 跨工具 agent 設定標準（AGENTS.md） | 2026-05-02 起，[GitHub issue #6235](https://github.com/anthropics/claude-code/issues/6235) 累積 335 則留言、5634 個讚（2026-07-10，全站已知問題讚數之最）| Codex、Amp、Cursor（均已採用 AGENTS.md 標準） | 無 | ❌ 無官方對應 | Claude Code 仍不支援 AGENTS.md，多工具並用者需為 Claude Code 額外維護 CLAUDE.md，造成配置互通痛點；反應數持續攀升顯示壓力未見緩解；v2.1.206（2026-07-10）`/doctor` 新增建議精簡 CLAUDE.md 內容的檢查項，屬維護性提示而非互操作標準對應，缺口性質未變 |
 | 多平行 agent 即時可觀測性／協調地圖 | 2026-07-06 Show HN live-log-viewer-next（讀本機 JSONL transcript 呈現即時對話地圖）；既有 1000 Subagents Fan-out、20-instance 崩潰分析持續堆疊 | live-log-viewer-next、（fan-out/多 instance 分析工具鏈） | Agent View（`claude agents` 多 session 列表管理，v2.1.139）＋ `--forward-subagent-text` 旗標（v2.1.211，2026-07-15）＋ `/fork` 背景 session 化（v2.1.212，2026-07-17） | ❌ 無官方對應 | 官方 Agent View 為**列表式** session 管理，非跨 agent 即時狀態流的 live map；當數十至上千平行 agent 併跑時「誰卡住、誰在等、彼此依賴」缺乏即時可觀測面，社群自建地圖式檢視器補位，官方無對應方向。2026-07-15 v2.1.211 新增 `--forward-subagent-text` 旗標與 `CLAUDE_CODE_FORWARD_SUBAGENT_TEXT` 環境變數，讓 `stream-json` 輸出包含 subagent 文字與思考內容，為社群建構觀測工具提供官方資料來源；2026-07-17 v2.1.212 將 `/fork` 改為建立獨立背景 session（`claude agents` 自成一列），原同 session 子 agent 行為更名 `/subtask`，使多開背景任務與同 session 委派的列表可見度更清楚拆分，但本身仍非官方 live map 產品，狀態未變 |
-| Agent 間直接通訊協定 | 2026-07-08 [GitHub issue #24798](https://github.com/anthropics/claude-code/issues/24798)（多 Claude session 間直接通訊，累積 60 則留言）；2026-07-14 [issue #28300](https://github.com/anthropics/claude-code/issues/28300)（跨機器多 agent 協作 A2A 協定） | 無專屬社群工具，訴求以 GitHub issue 形式累積 | 2026-08-08：MacRumors、The Mac Observer、biggo.com、Inshorts、9to5Mac 五家媒體同步報導 Claude Code 新增跨 session 訊息互通功能（macOS/Linux） | 🧪 部分產品化（媒體報導，未經官方 changelog 證實） | 與上一列「即時可觀測性／協調地圖」的區別：協調地圖是**被動觀測**（讀 transcript/log 呈現狀態，agent 本身不互相收送訊息）；本列是**主動通訊**（agent 之間或跨機器直接交換訊息以協調依賴順序），先前僅能透過檔案系統或外部工具中繼；2026-08-08 五家媒體同步報導 Claude Code 已新增跨 session 訊息互通功能，若屬實將直接對應 issue #24798 的訴求，惟 GitHub release 資料查無對應 changelog 條目，無法確認具體版本號或正式發布範圍，暫列部分產品化並待後續官方公告或版本紀錄佐證，見 [[entities/claude-code]] 已知問題 #24798 條目 |
+| Agent 間直接通訊協定 | 2026-07-08 [GitHub issue #24798](https://github.com/anthropics/claude-code/issues/24798)（多 Claude session 間直接通訊，累積 60 則留言）；2026-07-14 [issue #28300](https://github.com/anthropics/claude-code/issues/28300)（跨機器多 agent 協作 A2A 協定） | 無專屬社群工具，訴求以 GitHub issue 形式累積 | 官方文件（2026-08-09 查證，[code.claude.com/docs/en/cross-session-messaging](https://code.claude.com/docs/en/cross-session-messaging)）：Cross-session messaging，需 v2.1.224 以上版本、限 macOS／Linux，工具為 `ListAgents`＋`SendMessage`，同機制涵蓋 subagent／team 內部訊息 | 🧪 部分產品化（官方文件確認同機 session 通訊；跨機器 A2A 需求 #28300 涵蓋範圍未載明） | 與上一列「即時可觀測性／協調地圖」的區別：協調地圖是**被動觀測**（讀 transcript/log 呈現狀態，agent 本身不互相收送訊息）；本列是**主動通訊**（agent 之間或跨機器直接交換訊息以協調依賴順序），先前僅能透過檔案系統或外部工具中繼；2026-08-09 官方文件正式確認跨 session 訊息互通功能存在，直接對應 issue #24798 的訴求（已於 [[entities/claude-code]] 已知問題轉為 ✅ 已修復 v2.1.224）；惟官方文件未明確說明是否涵蓋**跨機器**場景，issue #28300（A2A 協定）訴求範圍是否被涵蓋仍待確認，故狀態暫不升至完全產品化 |
 
 ---
 
@@ -96,6 +96,8 @@ Outcomes 規格驗證與 `/goal` 解決了「任務是否完成」的機器可�
 Dreaming 定位是「任務間隙自動鞏固記憶」，仍為 Research Preview，且不等於「每次開新對話可以繼續上次」。社群 8+ 記憶工具在 Dreaming 公布後沒有減少，說明兩者解決的不是同一個問題。差距仍大。
 
 **2026-08-04 社群訴求成型：** GitHub issue [#47023](https://github.com/anthropics/claude-code/issues/47023)「Expose compact/session lifecycle hooks for external memory layers」彙整 5 個既有開放 issue（#14227、#32627、#34192、#34556、#46138），指出社群已自行拼湊三層式 markdown 架構、知識圖譜等替代方案，訴求官方開放 compact／session 生命週期 hook 供外部記憶層串接——這是社群首次把散落的持久化記憶需求收斂為單一具體 API 訴求（hook 介面），而非各自繼續造輪子；截至目前官方尚無公開回應，Dreaming（Anthropic 生態內建）與此提案（開放外部串接）方向不同，不構成回應。
+
+**2026-08-09 缺口的兩個切面各自累積：** #47023 彙整清單中的兩個成員本日各自延燒——跨 session 記憶訴求 [#14227](https://github.com/anthropics/claude-code/issues/14227) 累積至 34 則留言、跨 compaction 記憶訴求 #34556 累積至 62 則留言，合計 96 則留言；兩者訴求範圍不同（跨 session vs. 單一 session 內跨壓縮），但同屬本缺口，官方仍無回應，狀態不變。
 
 ### ❌ 結構性未解：成本透明度
 
@@ -148,6 +150,10 @@ v2.1.196（2026-06-29）新增 org default model 功能，企業管理員可在 
 - [[topics/community-tech-discussions]] — 社群技術辯論
 
 ## 時序
+
+### 2026-08-09
+- **「Agent 間直接通訊協定」列官方文件確認（取代媒體報導階段）**：官方文件（code.claude.com/docs/en/cross-session-messaging）正式確認 Claude Code 跨 session 訊息互通功能，需 v2.1.224 以上版本、限 macOS／Linux，工具為 `ListAgents`＋`SendMessage`；已知問題 #24798 狀態自待查證轉為 ✅ 已修復 v2.1.224，矩陣狀態維持 🧪 部分產品化（同機通訊已確認，跨機器 A2A 需求 #28300 涵蓋範圍未載明）
+- **「跨 session 記憶」缺口新增獨立訴求範例**：GitHub issue #14227（跨 session 持久記憶，34 則留言）與既有 #34556（跨 compaction 記憶，62 則留言）合計 96 則留言，凸顯此缺口官方仍無直接對應；矩陣狀態維持 ⏳ 正在做但不夠
 
 ### 2026-08-08
 - **「Agent 間直接通訊協定」列首度出現官方對應線索（未經 changelog 證實）**：MacRumors、The Mac Observer、biggo.com、Inshorts、9to5Mac 五家媒體同步報導 Claude Code 新增跨 session 訊息互通功能（macOS/Linux），直接呼應 issue #24798、#28300 的長期訴求；GitHub release 資料查無對應 changelog 條目，暫無法確認具體版本號，矩陣狀態從 ❌ 升為 🧪 部分產品化（媒體報導，未經官方 changelog 證實）
