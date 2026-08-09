@@ -40,3 +40,10 @@ desktop.ini
 
 # Ignore Smart Environment folder
 .smart-env
+
+# Obsidian UI 狀態：Obsidian 開著就會持續改寫，永遠處於「已修改但不該 commit」，
+# 每次推送撞車 rebase 都得為它 stash 一次——2026-08-09 就這樣把同批 stash 裡的
+# community-plugins.json（dataview 啟用狀態）一起弄丟。設定類（app / appearance /
+# core-plugins / community-plugins）與外掛本體仍追蹤，只排除這兩個純 UI 檔。
+.obsidian/workspace.json
+.obsidian/graph.json
