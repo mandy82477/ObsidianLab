@@ -26,6 +26,14 @@ python scripts/list_digest_omissions.py --date $ARGUMENTS
 
 （2026-07-25 踩過：抓料 73 則、日報收 38 則，其餘 35 則因為 ingest 的輸入只有日報，包含 61 留言與 47 留言的 GitHub Issue 在內，沒有任何記者看過。）
 
+**再取懸置標記命中偵測結果 `[加入: 2026-08-10]`：** 若當日 `/news-pipeline` 已跑過 Step 3f，直接取用其 stdout 印出的派工附件（依記者分組的「待查證命中」清單）；若無此輸出（如單獨補跑 `/wiki-ingest`），自行執行：
+
+```
+python scripts/scan_pending_verifications.py $ARGUMENTS
+```
+
+輸出依記者類別分組，供下一步派工時原樣附在對應記者的訊息裡；某類別無命中則該記者派工訊息此區塊寫「無」。規格見 `.claude/rules/wiki-ingest-format.md`「懸置標記語法」節。
+
 同時讀取：
 - `wiki/CLAUDE.md` — wiki 目錄結構與基本限制
 - `.claude/rules/wiki-ingest.md` — 分類標準與派工流程（主編指南）
@@ -77,7 +85,13 @@ python scripts/list_digest_omissions.py --date $ARGUMENTS
 你負責的分類條目原文節錄：
 
 [貼入 Step 2 整理好的該類別條目區塊]
+
+你負責頁面今日命中的待查證項目（機械偵測，可能誤判；無則寫「無」）：
+
+[貼入掃描器輸出中該類別的區塊，無命中該類別則寫「無」]
 ```
+
+**防偏誤說明（隨每次派工附上，不可省略）：** 此清單僅供比對——若今日條目足以作為某筆懸置的後續，在該標記加 `｜訊 YYYY-MM-DD` 並更新內文；證據不足則不動並在回報說明。**不可為了消化懸置而過度解讀新聞；不可刪標記、改狀態符號或宣告結案**（結案屬 `/wiki-lint` 5c）。
 
 記者的角色、規則引用、回報格式已定義在各 agent 的 system prompt（`.claude/agents/wiki-reporter-[category].md`）中。
 
@@ -120,6 +134,7 @@ python scripts/list_digest_omissions.py --date $ARGUMENTS
 **在宣告完成之前，逐項確認所有項目已完成。**
 
 - [ ] 每個有條目的類別均已派工，記者回報已收齊
+- [ ] 六記者回報的「待查證命中處置」欄皆有值（已標訊／證據不足不動／無命中，三選一，不可空白或省略）
 - [ ] feature-radar.md 已彙整更新（無新功能則標「本日無新功能」）
 - [ ] wiki/index.md 狀態已全部同步（含所有記者回報的狀態變更）
 - [ ] wiki/log.md 已 append 本次 ingest 紀錄（含品質審查彙整，未修改既有條目）
