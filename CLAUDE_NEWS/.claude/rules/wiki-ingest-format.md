@@ -179,8 +179,8 @@ callout 放在標頭欄位（最後更新、最後新聞更新）之後，`---` 
 - **能在 `news/*.md` grep 到的字串**：產品名、issue 編號、版本號、機構名、英文術語。不可是形容詞
 - **至少 2 個**（掃描要求 ≥2 個同時命中才算，單探針偵測力不足）。唯一例外是 wikilink 探針或長度 ≥ 6 字元的字串
 - **長度地板**：英數 ≥ 4 字元、中文 ≥ 3 字元
-- **禁用過寬詞**：`Claude`、`Anthropic`、`AI`、`Code`、`API`、`agent`、`model`、`Opus`、`Sonnet`、`Cowork` 這類天天出現的詞會每日命中、把真訊號淹掉
-- **`[[wikilink]]` 優先**：指向實體頁時探針詞自動取自該頁（改名時跟著更新），且建置會驗證目標存在
+- **禁用過寬詞**：`Claude`、`Anthropic`、`AI`、`Code`、`API`、`agent`、`model`、`Opus`、`Sonnet`、`Cowork` 這類天天出現的詞，以及 `Reddit`、`GitHub`、`Hacker News`、`ClaudeCode`、`Show HN`、`dev.to`、`lobsters`、`Google News` 這類每則條目必帶的平台/來源名，會每日命中、把真訊號淹掉
+- **`[[wikilink]]` 優先**：指向實體頁時探針詞自動取自該頁（改名時跟著更新），且建置會驗證目標存在。**樞紐頁（`claude-code`、`ai-agent-safety` 這類高頻詞頁）的 wikilink 不具偵測力，僅作語意連結**——展開出的別名（slug、H1 標題）本身就是通用詞，會落在上述禁用過寬詞清單，不參與比對；偵測力須靠另外 ≥2 個具體探針撐起（2026-08-10 教訓：`[[entities/claude-code]]` 單獨一個探針曾讓任何標題含「Claude Code」的條目都誤判命中）
 
 ### 誰可以動這個標記
 

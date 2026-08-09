@@ -73,10 +73,21 @@ PROBE_MIN_CJK = 3
 
 # 天天出現的詞當探針＝每日命中、把真訊號淹掉。原型實測 `Cowork` 一個詞就在 16 筆
 # 命中裡貢獻 4 筆雜訊。
+#
+# 平台/來源名 `[加入: 2026-08-10]`：這些詞是來源固有標記（每則 Reddit/HN 條目
+# 必帶），不是內容訊號——`Reddit`、`ClaudeCode`（subreddit 名）雖然長度過門檻，
+# 天天出現的性質與模型名/專有名詞無異，同樣會把真訊號淹掉。
 PROBE_STOPLIST = {
     "claude", "anthropic", "ai", "code", "api", "agent", "model",
     "opus", "sonnet", "haiku", "fable", "cowork", "claude code",
+    "reddit", "github", "hacker news", "hackernews", "claudecode",
+    "show hn", "dev.to", "devto", "lobsters", "google news",
 }
+
+# 單探針放行門檻（scanner 的「單一具偵測力探針可放行」與 checker 的「探針過短」
+# WARN 共用此地板）。與 `probe_too_weak()` 的 PROBE_MIN_ASCII/CJK 不同——那是
+# 「探針合不合法」的最低地板，這裡是「單獨一個探針夠不夠格自己扛命中」的更高地板。
+PROBE_DETECTIVE_LEN_FLOOR = 6
 
 DOMAIN_TO_REPORTER = {
     "🤖 模型": "wiki-reporter-models",
@@ -169,6 +180,19 @@ def normalize_probe(text: str) -> str:
     return unicodedata.normalize("NFKC", text).casefold().strip()
 
 
+def _stoplist_key(text: str) -> str:
+    """比對 PROBE_STOPLIST 專用的正規化：連字號/底線視同空白。
+
+    `wiki-ingest.claude-code` 展開出的 slug 別名是 `claude-code`（連字號），
+    `normalize_probe()` 不動連字號，若直接比對會與 STOPLIST 的 `claude code`
+    （空白）錯開，讓同一個詞換個寫法就繞過封鎖——這正是 2026-08-09 樞紐頁
+    wikilink 誤放行事件的根因之一。
+    """
+    norm = normalize_probe(text)
+    norm = re.sub(r"[-_]+", " ", norm)
+    return re.sub(r"\s+", " ", norm).strip()
+
+
 def probe_is_wikilink(probe: str) -> bool:
     return bool(WIKILINK_RE.match(probe.strip()))
 
@@ -185,7 +209,7 @@ def probe_too_weak(probe: str) -> str | None:
     norm = normalize_probe(probe)
     if not norm:
         return "空探針"
-    if norm in PROBE_STOPLIST:
+    if _stoplist_key(probe) in PROBE_STOPLIST:
         return f"「{probe}」屬過寬詞（天天出現，會把真訊號淹掉）"
     has_cjk = any("一" <= c <= "鿿" for c in norm)
     if has_cjk:
@@ -194,6 +218,56 @@ def probe_too_weak(probe: str) -> str | None:
     elif len(norm) < PROBE_MIN_ASCII:
         return f"「{probe}」英數探針需 ≥ {PROBE_MIN_ASCII} 字元"
     return None
+
+
+def wikilink_aliases(target: str, wiki_dir: Path | None = None) -> list[str]:
+    """wikilink 探針展開的別名：slug 末段 + 目標頁 H1 標題文字。
+
+    讀不到目標頁（不存在或非 utf-8）時只回傳 slug 末段。scanner／checker 共用
+    此函式，確保兩邊對「這個 wikilink 展開成什麼」永遠是同一份答案。
+    """
+    wiki_dir = wiki_dir or WIKI_DIR
+    aliases = [target.rstrip("/").split("/")[-1]]
+    path = wiki_dir / f"{target}.md"
+    try:
+        text = path.read_text(encoding="utf-8-sig")
+    except OSError:
+        return aliases
+    m = re.search(r"^#\s+(.+)\s*$", text, re.MULTILINE)
+    if m:
+        aliases.append(m.group(1).strip())
+    return aliases
+
+
+def detective_aliases(probe: str, wiki_dir: Path | None = None) -> list[str]:
+    """回傳這個探針實際具偵測力的別名集合；空集合＝這個探針偵測不到任何東西。
+
+    scanner（比對日報）與 checker（判定探針組是否合格）共用此函式，讓兩邊對
+    「這個探針到底偵測得到什麼」永遠是同一份答案——這是 2026-08-09 事件的
+    核心修復：舊版 scanner 對 wikilink 展開別名後沒有複檢 STOPLIST，導致
+    `[[entities/claude-code]]` 這類樞紐頁連結展開出「claude-code」「Claude Code」
+    後，後者精準落在 STOPLIST 卻仍被拿去比對，任何標題含「Claude Code」的條目
+    都命中，且 wikilink 探針享有單探針放行特權，等於一根萬用鑰匙。
+
+    注意這裡判斷的是「這個探針能不能參與 AND 比對」，用的是 `probe_too_weak()`
+    的合法門檻（ASCII ≥4／CJK ≥3 + 不落在 STOPLIST）——不是 scanner 另外用的
+    「單一探針能不能自己扛命中」的更高地板（`PROBE_DETECTIVE_LEN_FLOOR`／
+    `SINGLE_PROBE_LEN_FLOOR` = 6）。兩者是不同問題：一個 4 字元的合法探針
+    （如「出口管制」）仍能貢獻一次 AND 命中，只是不能單獨扛命中。
+
+      - **plain 探針**：`probe_too_weak(probe)` 合格才回傳 `[normalize_probe(probe)]`；
+        否則回傳 `[]`。
+      - **wikilink 探針**：展開為「slug 末段 + 目標頁 H1」，逐一剔除落在
+        STOPLIST 的別名（比對走 `_stoplist_key()`，連字號視同空白），回傳
+        剩餘別名；全數落在 STOPLIST（樞紐頁的典型情況）則回傳 `[]`。
+    """
+    if probe_is_wikilink(probe):
+        target = wikilink_target(probe)
+        if not target:
+            return []
+        aliases = wikilink_aliases(target, wiki_dir)
+        return [a for a in aliases if _stoplist_key(a) not in PROBE_STOPLIST]
+    return [] if probe_too_weak(probe) else [normalize_probe(probe)]
 
 
 class Doc:

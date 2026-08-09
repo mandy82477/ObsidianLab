@@ -25,7 +25,13 @@ parser，只做「這筆標記合不合規格」的判定。
   5. wikilink 探針目標存在（FAIL） `wikilink_target()` 解出的頁面必須在 wiki/ 下實際存在
   6. ⟨Q-nn⟩ 雙向對帳（FAIL） 表格短標記 (SHORT_RE) 與細節區定義 (Marker.qid) 一一對應，
                           同頁 qid 不重複
-  7. 探針數不足（WARN）   單探針、非 wikilink、長度 < 6
+  6b. 探針偵測力（FAIL／WARN）`[加入: 2026-08-10]` 用 `detective_aliases()`（與
+                          scanner 共用同一份判定）算出每筆標記「有非空偵測別名的
+                          探針數」——0 個 FAIL（整組探針無偵測力，樞紐頁 wikilink
+                          與過寬詞不計）；探針數 >1 但偵測力只剩 1 個時併入下方
+                          檢查 7 的 WARN
+  7. 探針數不足（WARN）   單探針、非 wikilink、長度 < 6（含 6b 併入的多探針
+                          僅剩 1 個有偵測力的情形）
   8. 語意反轉殘留（WARN） 標記同行出現「解除／結案／轉為」+ ✅
   9. 逾期（WARN，明確不得 FAIL） 複查日（或標記日+14 天）≤ 今日——專案拒絕機械棘輪，
                           見 `scripts/gate_web_build.py` 的註解哲學：逾期是排程訊號，
@@ -47,8 +53,9 @@ from pathlib import Path
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 
 from pending_markers import (  # noqa: E402
-    Doc, WIKI_DIR, iter_legacy, iter_pending, probe_is_wikilink,
-    probe_too_weak, wikilink_target, wiki_pages, SHORT_RE, SYM_TO_KIND,
+    Doc, WIKI_DIR, detective_aliases, iter_legacy, iter_pending,
+    probe_is_wikilink, probe_too_weak, wikilink_target, wiki_pages,
+    SHORT_RE, SYM_TO_KIND,
 )
 
 REVIEW_DEFAULT_DAYS = 14
@@ -132,10 +139,19 @@ def _page_report(path: Path, text: str, wiki_dir: Path, today: date) -> tuple[li
             if target and not _wikilink_path(target, wiki_dir).exists():
                 fails.append(f"  ❌ {loc}：wikilink 探針指向不存在的頁面「{target}」")
 
+        # ── 6b. 探針偵測力：與 scanner 共用 detective_aliases() 的判定 ──
+        detective = [p for p in probes if detective_aliases(p, wiki_dir)]
+        if probes and not detective:
+            fails.append(f"  ❌ {loc}：整組探針無偵測力（樞紐頁 wikilink 與過寬詞不計）")
+
         # ── 7. 探針數不足（WARN）──
         if (len(probes) == 1 and not probe_is_wikilink(probes[0])
                 and len(probes[0].strip()) < SHORT_PROBE_LEN):
             warns.append(f"  ⚠️ {loc}：單一探針「{probes[0]}」過短，偵測力不足（建議補第二個或改長）")
+        elif len(probes) > 1 and len(detective) == 1 and not probe_is_wikilink(detective[0]):
+            warns.append(
+                f"  ⚠️ {loc}：探針組實際偵測力僅剩「{detective[0]}」，其餘探針無偵測力（建議補足或改長）"
+            )
 
         # ── 8. 語意反轉殘留（WARN）──
         line = doc.line_text(mk.start)

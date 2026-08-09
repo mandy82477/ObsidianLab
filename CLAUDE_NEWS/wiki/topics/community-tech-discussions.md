@@ -429,7 +429,7 @@ MCP 的實際成本遠超多數使用者預期，已有多個量化案例：
 
 - **來源：** [Just got this response from Claude, what is going on?](https://old.reddit.com/r/LLMDevs/comments/1udpw9h/just_got_this_response_from_claude_what_is_going_on/)（Reddit r/LLMDevs via Hacker News，HN score 20，07-05）
 - **核心論點：** 使用者質疑 Claude 疑似對自己執行了未告知的 prompt injection，貼出疑似證據並引發討論串內正反回應
-- **收斂結論：** ❓ **待查證**（標 2026-08-10｜查 Reddit、LLMDevs）｜**Prompt Injection 指控可信度**：僅一方說法（2026-07-05 提出，07-12～08-07 news 查無跟進），暫無第二來源交叉驗證或官方回應（推論：與 07-02 已記錄的「Anthropic 疑似動態插入未公開系統訊息」屬同類型「透明度信任」疑慮，但為獨立事件，證據力均弱，暫不合併；同軸事件彙整索引見長期議題「Anthropic 透明度與信任赤字」子區塊）
+- **收斂結論：** ❓ **待查證**（標 2026-08-10｜查 Prompt Injection、LLMDevs）｜**Prompt Injection 指控可信度**：僅一方說法（2026-07-05 提出，07-12～08-07 news 查無跟進），暫無第二來源交叉驗證或官方回應（推論：與 07-02 已記錄的「Anthropic 疑似動態插入未公開系統訊息」屬同類型「透明度信任」疑慮，但為獨立事件，證據力均弱，暫不合併；同軸事件彙整索引見長期議題「Anthropic 透明度與信任赤字」子區塊）
 
 #### Sonnet 5 Orchestrator 實測與 Fable 5／Opus 4.8 免費期彙整帖（2026-07-05，簡記）
 

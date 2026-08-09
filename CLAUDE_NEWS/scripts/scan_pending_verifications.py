@@ -3,7 +3,7 @@
 派工的附件。
 
 語法與 parser 全部複用 `scripts/pending_markers.py`（`iter_pending()` /
-`normalize_probe()` / `probe_is_wikilink()` / `wikilink_target()` /
+`normalize_probe()` / `probe_is_wikilink()` / `detective_aliases()` /
 `wiki_pages()` / `page_slug()` / `reporter_of()` / `DOMAIN_TO_REPORTER`），
 本檔不重新發明比對邏輯以外的任何東西。
 
@@ -18,9 +18,12 @@
   1. 條目切分：`ENTRY_RE` 把日報切成 entry，比對範圍是 entry.title 與
      entry.body 兩個獨立欄位，不是全檔 substring。
   2. 探針正規化：NFKC + casefold；純 ASCII 探針加 word boundary；wikilink
-     探針展開為別名集合（slug 末段 + 目標頁 H1 標題）。
+     探針展開為別名集合（slug 末段 + 目標頁 H1 標題），再經
+     `detective_aliases()` 剔除落在 `PROBE_STOPLIST` 的別名——樞紐頁（如
+     `claude-code`）展開出的別名多半是頁面本身的通用詞，過濾後不參與比對
+     `[加入: 2026-08-10]`。
   3. 多探針 AND：≥2 個不同探針同時出現在該 entry 才算命中；單探針放行例外
-     ＝該探針是 wikilink 或正規化後長度 ≥6。
+     ＝該探針是 wikilink 且展開後仍有非空偵測別名，或正規化後長度 ≥6。
   4. 分級：S＝≥2 探針命中且至少一個在 title，或 1 個 wikilink 探針在
      title；A＝≥2 探針同 entry（title 或 body）；B＝僅 1 探針且僅在
      body（含「單探針放行但不在 title」的殘餘情況）→ 記入 jsonl 但不進
@@ -43,8 +46,8 @@ from pathlib import Path
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 
 from pending_markers import (  # noqa: E402
-    WIKI_DIR, DOMAIN_TO_REPORTER, Marker,
-    iter_pending, normalize_probe, probe_is_wikilink, wikilink_target,
+    WIKI_DIR, DOMAIN_TO_REPORTER, Marker, PROBE_DETECTIVE_LEN_FLOOR,
+    detective_aliases, iter_pending, normalize_probe, probe_is_wikilink,
     wiki_pages, page_domain, reporter_of,
 )
 
@@ -58,7 +61,7 @@ ENTRY_RE = re.compile(r"^\*\*\[(.+?)\]\((https?://[^)]+)\)\*\*", re.MULTILINE)
 SECTION_HEADER_RE = re.compile(r"^#{2,3}[ \t]", re.MULTILINE)
 
 TOPIC_LEN = 24
-SINGLE_PROBE_LEN_FLOOR = 6
+SINGLE_PROBE_LEN_FLOOR = PROBE_DETECTIVE_LEN_FLOOR  # 與 pending_markers.detective_aliases() 同一地板
 SUPPRESS_AFTER = 3
 
 REPORTER_LABEL = {
@@ -105,24 +108,13 @@ def _term_hit(term: str, text_norm: str) -> bool:
     return norm in text_norm
 
 
-def get_wikilink_aliases(target: str, wiki_dir: Path) -> list[str]:
-    """slug 末段 + 目標頁 H1 標題文字（讀不到目標頁時只回傳 slug 末段）。"""
-    aliases = [target.rstrip("/").split("/")[-1]]
-    path = wiki_dir / f"{target}.md"
-    try:
-        text = path.read_text(encoding="utf-8-sig")
-    except OSError:
-        return aliases
-    m = re.search(r"^#\s+(.+)\s*$", text, re.MULTILINE)
-    if m:
-        aliases.append(m.group(1).strip())
-    return aliases
-
-
 def probe_search_terms(probe: str, wiki_dir: Path) -> list[str]:
+    """實際拿去比對日報文字的詞——wikilink 探針走 `detective_aliases()`，只留
+    非 STOPLIST 別名；被剔除的別名（如樞紐頁展開出的「Claude Code」）不參與
+    比對，這是 2026-08-10 修復的核心：舊版直接用展開後的全部別名比對，等於
+    讓樞紐頁 wikilink 對任何含頁名的條目都放行。"""
     if probe_is_wikilink(probe):
-        target = wikilink_target(probe)
-        return get_wikilink_aliases(target, wiki_dir) if target else []
+        return detective_aliases(probe, wiki_dir)
     return [probe]
 
 
@@ -185,7 +177,13 @@ def classify(mk: Marker, entry: dict, wiki_dir: Path) -> dict | None:
         tier = "S" if any_title else "A"
     else:
         probe, th, _bh = hits[0]
-        qualifies = probe_is_wikilink(probe) or len(normalize_probe(probe)) >= SINGLE_PROBE_LEN_FLOOR
+        # wikilink 探針的單探針放行特權，收緊為「展開後仍有非 STOPLIST 別名」
+        # 才成立——樞紐頁 wikilink 展開全落在 STOPLIST 時 `probe_search_terms()`
+        # 已回傳空集合，不會出現在 hits 裡；這裡再擋一次是防禦性重複檢查。
+        qualifies = (
+            (probe_is_wikilink(probe) and probe_search_terms(probe, wiki_dir))
+            or len(normalize_probe(probe)) >= SINGLE_PROBE_LEN_FLOOR
+        )
         if not qualifies:
             return None
         any_title = th
