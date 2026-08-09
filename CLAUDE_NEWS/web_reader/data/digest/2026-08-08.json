@@ -89,12 +89,6 @@
       "body": "使用者回報 API 連線頻繁在回應途中中斷，情況嚴重到讓 Claude Code 幾乎無法用於任何任務，累計 44 則留言、82 個👍反應。",
       "focusTags": [
         "[社群趨勢]"
-      ],
-      "sedimented": [
-        {
-          "id": "claude-code",
-          "pageType": "entity"
-        }
       ]
     },
     {
@@ -106,12 +100,6 @@
       "body": "使用者回報即使關閉 `autoMemoryEnabled`，Claude Code 仍會載入約 11–16k token 的硬編碼記憶前導文字，累計 40 則留言。",
       "focusTags": [
         "[社群趨勢]"
-      ],
-      "sedimented": [
-        {
-          "id": "claude-code",
-          "pageType": "entity"
-        }
       ]
     },
     {
@@ -123,12 +111,6 @@
       "body": "功能請求：希望 Claude Code 支援與 main 以外分支進行 diff 比較，累計 38 則留言、120 個👍反應，是今日互動量最高的功能請求。",
       "focusTags": [
         "[社群趨勢]"
-      ],
-      "sedimented": [
-        {
-          "id": "claude-code",
-          "pageType": "entity"
-        }
       ]
     },
     {
@@ -162,12 +144,6 @@
       "body": "Hacker News 討論串聚焦今日聚焦提到的 auto 模式預設化消息，高分留言認為新款模型已大幅降低破壞性操作風險，作者提到已用 auto 模式跑數月的系統管理任務未出過重大差錯。",
       "focusTags": [
         "[重大事件]"
-      ],
-      "sedimented": [
-        {
-          "id": "claude-code",
-          "pageType": "entity"
-        }
       ]
     },
     {
@@ -273,11 +249,6 @@
   "preview": "Anthropic 宣布 Claude Code 將於 8 月 14 日起把「auto 模式」設為預設權限模式；Hacker News 討論串中社群回饋多偏正面，有留言指出新款模型已大幅降低破壞性操作風險，作者提到已用 auto 模式執行數月的系統管理任務未出過重大差錯。",
   "sedimentedToday": [
     {
-      "id": "claude-code",
-      "name": "Claude Code",
-      "pageType": "entity"
-    },
-    {
       "id": "fable-5",
       "name": "Claude Fable 5",
       "pageType": "entity"
@@ -313,18 +284,8 @@
       "pageType": "topic"
     },
     {
-      "id": "community-tech-patterns",
-      "name": "社群實戰模式庫",
-      "pageType": "topic"
-    },
-    {
       "id": "community-tech-tools",
       "name": "社群工具目錄",
-      "pageType": "topic"
-    },
-    {
-      "id": "official-community-gap",
-      "name": "官方功能 vs 社群痛點缺口分析",
       "pageType": "topic"
     }
   ]
