@@ -35,11 +35,11 @@ import io
 import json
 import re
 import sys
-from datetime import date
+from datetime import date, timedelta
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
-from pending_markers import PENDING_RE  # noqa: E402
+from pending_markers import PENDING_RE, iter_pending  # noqa: E402
 
 REPO_ROOT = Path(__file__).resolve().parent.parent
 WIKI_DIR = REPO_ROOT / "wiki"
@@ -48,6 +48,7 @@ ATTRIBUTION = REPO_ROOT / "data" / "source_attribution.jsonl"
 INBOUND_HIGH = 15
 STALE_DAYS = 21
 ISLAND_INBOUND = 3
+PENDING_REVIEW_DEFAULT_DAYS = 14  # 與 scripts/check_pending_markers.py 的 REVIEW_DEFAULT_DAYS 對齊
 
 FRONTMATTER_RE = re.compile(r"\A---\r?\n.*?\r?\n---\r?\n", re.DOTALL)
 WIKILINK_RE = re.compile(r"\[\[([^\]|#]+)")
@@ -170,6 +171,28 @@ def main(argv: list[str]) -> int:
         meta["attribution_last"] = att_last.get(slug) or None
         top = att_srcs.get(slug)
         meta["top_source"] = top.most_common(1)[0][0] if top else None
+
+        # ── 懸置標記彙總：逐頁解析 ❓/🔎，供 Bases 排序篩選 ──
+        markers = iter_pending(body, path)
+        meta["pending_count"] = len(markers)
+        overdue = 0
+        next_review: date | None = None
+        signalled = 0
+        for mk in markers:
+            marked_date = date.fromisoformat(mk.marked)
+            review_date = (
+                date.fromisoformat(mk.review) if mk.review
+                else marked_date + timedelta(days=PENDING_REVIEW_DEFAULT_DAYS)
+            )
+            if review_date <= today:
+                overdue += 1
+            elif next_review is None or review_date < next_review:
+                next_review = review_date
+            if mk.signal:
+                signalled += 1
+        meta["pending_overdue"] = overdue
+        meta["pending_next_review"] = next_review.isoformat() if next_review else None
+        meta["pending_signalled"] = signalled
 
         stale = days is not None and days > STALE_DAYS
         if ib >= INBOUND_HIGH and stale:

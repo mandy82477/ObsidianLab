@@ -175,10 +175,9 @@ index.md 狀態變更：[page: 舊狀態→新狀態 or 無]
 
 **本機執行步驟：**
 
-1. **盤點**：`grep -rn "待查證" wiki/ --include=*.md`，排除 `log.md`（歷史紀錄不清算）
-2. **排序**：優先決策頁（`entities/pricing`、`topics/model-comparison`、`feature-radar` 相關頁）→ 其次高 inbound_links 頁 → 其餘。**每輪至多處理 10 筆**，避免單次 lint 膨脹
-3. **查證**：對每筆用 WebFetch／WebSearch 查**官方一手來源**（優先序：`support.claude.com` 說明中心 → `docs.claude.com` → `anthropic.com`／`claude.com` → 官方社群帳號 → 具名媒體）
-4. **寫回**（三選一，不得留原狀）：
+1. **盤點＋排序**：`python scripts/check_pending_markers.py --queue`，輸出即逾期佇列，排序已內建（訊欄優先→逾期天數降序），上限 10 筆即本輪處理額度，不需另外手動排序
+2. **查證**：對每筆用 WebFetch／WebSearch 查**官方一手來源**（優先序：`support.claude.com` 說明中心 → `docs.claude.com` → `anthropic.com`／`claude.com` → 官方社群帳號 → 具名媒體）
+3. **寫回**（三選一，不得留原狀）：
 
    | 查證結果 | 寫法 |
    |---------|------|
@@ -188,7 +187,7 @@ index.md 狀態變更：[page: 舊狀態→新狀態 or 無]
 
    標記語法見 `.claude/rules/wiki-ingest-format.md`「懸置標記語法」節。**你是唯一有權移除標記或改狀態符號的角色**（記者只能加 `訊`）。
 
-5. **金額／數字分級**：官方文件未載而僅媒體有數字者，寫「媒體稱（媒體名）」，不得升格為官方數字
+4. **金額／數字分級**：官方文件未載而僅媒體有數字者，寫「媒體稱（媒體名）」，不得升格為官方數字
 
 **回報格式（納入步驟 8 的 lint 紀錄）：**
 ```
