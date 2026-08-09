@@ -63,8 +63,11 @@ wiki/
 ## 連結慣例
 
 - 頁面間：`[[entities/claude-code]]`
+- 指向長頁面的某一段：`[[topics/model-comparison#快速選型表]]`（錨點須為該頁 h2–h4 標題原文，建置會驗）
+- 需要特定措辭時才用別名：`[[entities/opus-4-8|Opus 4.8]]`（否則網站會自動顯示中文頁名）
 - 引用日報：`[[news/2026-04-25]]`
 - 外部：`[標題](url)`
+- **不可使用**嵌入 `![[頁面]]` 與區塊 id `^id`（網站無渲染支援）；完整語法契約見專案根目錄 `CLAUDE.md`「🔗 連結與嵌入語法」
 - 來源歸因不寫入 wiki 正文：記者在回報訊息的「來源歸因」欄回報，由主編 append 至 `data/source_attribution.jsonl`，規則見 `.claude/rules/wiki-reporter-shared.md`
 
 ---
