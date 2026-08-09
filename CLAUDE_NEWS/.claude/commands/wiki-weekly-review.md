@@ -4,6 +4,9 @@ description: 每週判斷本週有哪些主題值得加碼追蹤（建頁/加開
 
 # Wiki 週度延伸回顧
 
+> **這是每週工作的第二段，不是入口。** 平常跑 `/weekly`（總指揮，會先跑 `.claude/commands/weekly-report.md` 再跑本指令）；單獨執行本指令只在補做策展那一段時使用。
+> 單獨執行時，收尾（步驟 6）由本指令自己負責；由 `/weekly` 帶起時，**步驟 6 一律跳過**，收尾交給總指揮統一做（單一 push）。
+
 每週執行一次，建議在週末或週一執行，可與 `.claude/commands/wiki-lint.md` 同一天跑。
 
 **與 `.claude/commands/wiki-lint.md` 的分工：** wiki-lint 處理結構性正確性與精簡（矛盾、孤立頁面、過期狀態、過長頁面重構）；本指令只做**延伸判斷**——找出值得加碼追蹤的主題，是主觀取捨，需要使用者確認才能執行。
@@ -104,6 +107,8 @@ description: 每週判斷本週有哪些主題值得加碼追蹤（建頁/加開
 ```
 
 ### 6. 收尾閉迴路：commit wiki + build web + 單一 push `[加入: 2026-07-10]`
+
+> **由 `/weekly` 帶起時跳過本步驟**（`.claude/commands/weekly.md` 會在兩個子指令都跑完後統一收尾）。只有單獨執行本指令時才執行以下內容。
 
 **僅當步驟 4 實際執行了頁面修改時才需要**（使用者「都不要」且無 log 以外變更 → 仍須 commit log.md 這一筆，照走本步）。理由同 `.claude/commands/wiki-lint.md` 步驟 10：本指令改 `wiki/*.md` 不會自動上站，web build 僅發生於本步與 `/news-pipeline`。
 

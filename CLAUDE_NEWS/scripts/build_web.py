@@ -410,7 +410,7 @@ WEEKLY_H3_RE = re.compile(r'^###\s+(.+?)\s*$', re.MULTILINE)
 WEEKLY_FOOTER_RE = re.compile(r'\n-{3,}\s*\n+(\*\*素材涵蓋窗.*)\Z', re.DOTALL)
 WEEKLY_FORECAST_HEADER_RE = re.compile(r'^\|\s*類型\s*\|\s*預告\s*\|\s*判準\s*\|\s*$', re.MULTILINE)
 # 回收表（回頭看上一期預告的結果）——欄名與 forecasts 表刻意不同，兩張表才能在同段共存。
-# 欄名若改動，`.claude/commands/weekly.md` 第 (3) 段的欄位定義必須同步（見 review-registry sync_pair）。
+# 欄名若改動，`.claude/commands/weekly-report.md` 第 (3) 段的欄位定義必須同步（見 review-registry sync_pair）。
 WEEKLY_RECAP_HEADER_RE = re.compile(r'^\|\s*上週預告\s*\|\s*判準\s*\|\s*本週結果\s*\|\s*$', re.MULTILINE)
 WEEKLY_STAT_RE = re.compile(r'^-\s*\*\*(.+?)\*\*\s*——\s*(.+)$', re.MULTILINE)
 

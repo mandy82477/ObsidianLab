@@ -12,7 +12,7 @@
   5. 湊數    硬湊條數，混進沒把握怎麼驗的題目
 
 檢查對象是 weekly/ 內**最新兩期**（更早的已凍結，不重複檢查）。
-規格見 `.claude/commands/weekly.md` 第 (3) 段；欄名與標題為兩者共用錨點。
+規格見 `.claude/commands/weekly-report.md` 第 (3) 段；欄名與標題為兩者共用錨點。
 """
 
 from __future__ import annotations
