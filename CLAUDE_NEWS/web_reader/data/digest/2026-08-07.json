@@ -74,13 +74,7 @@
       "time": "08/07 10:59",
       "sentiment": "",
       "body": "Anthropic 官方部落格宣布更新 Claude Fable 5 的生物安全防護機制，聲稱大幅降低誤判：測試顯示各產品面的生物相關「降級」（fallback 至較弱模型）情形減少約 85%，使一般健康、教育類問題（如判讀檢驗報告、了解症狀）更少被降級處理，醫療專業人員也能在臨床任務上獲得更多協助。",
-      "focusTags": [],
-      "sedimented": [
-        {
-          "id": "fable-5",
-          "pageType": "entity"
-        }
-      ]
+      "focusTags": []
     },
     {
       "title": "[anthropics/claude-code] v2.1.224",
@@ -368,21 +362,6 @@
       "pageType": "entity"
     },
     {
-      "id": "fable-5",
-      "name": "Claude Fable 5",
-      "pageType": "entity"
-    },
-    {
-      "id": "ai-agent-safety",
-      "name": "AI Agent 安全與可靠性",
-      "pageType": "topic"
-    },
-    {
-      "id": "anthropic-business",
-      "name": "Anthropic 商業健康度",
-      "pageType": "topic"
-    },
-    {
       "id": "anthropic-government-policy",
       "name": "Anthropic 政府與軍事政策",
       "pageType": "topic"
@@ -390,11 +369,6 @@
     {
       "id": "community-tech-discussions",
       "name": "社群技術討論趨勢",
-      "pageType": "topic"
-    },
-    {
-      "id": "community-tech-patterns",
-      "name": "社群實戰模式庫",
       "pageType": "topic"
     },
     {

@@ -298,6 +298,11 @@
       "pageType": "topic"
     },
     {
+      "id": "coding-workflow-guide",
+      "name": "程式開發實戰手冊",
+      "pageType": "topic"
+    },
+    {
       "id": "community-large-codebase-workflow",
       "name": "大型 Codebase 規模化開發：社群工作流主線",
       "pageType": "topic"
@@ -315,11 +320,6 @@
     {
       "id": "community-tech-tools",
       "name": "社群工具目錄",
-      "pageType": "topic"
-    },
-    {
-      "id": "engineering-skill-playbook",
-      "name": "工程流程 Skill 實戰指南",
       "pageType": "topic"
     },
     {
