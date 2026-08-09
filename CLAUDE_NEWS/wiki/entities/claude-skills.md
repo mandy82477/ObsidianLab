@@ -78,7 +78,7 @@ description: 在 PR 或 diff review 前，依團隊規範檢查命名、測試�
 | | v2.1.178：Skills 在巢狀子 Agent 中可正常運作（搭配新版 `Tool(param:value)` permission 語法） | 2026-06-16 |
 | 官方設計指南 | 《Lessons from building Claude Code: How we use skills》——內部數百個 Skills 的實戰心得 | 2026-06-05 |
 | | 《七種指令傳遞方法》——Skills 與 CLAUDE.md/rules/subagents/hooks/output styles/system prompt append 六層控制的定位框架 | 2026-06-21 |
-| 分享／同步機制 | 官方尚無正式 skill 市集或分享平台；第三方 Claudinho 提供探索與安裝介面，但創作者變現機制仍缺（見下方） | 持續（無官方時程） |
+| 分享／同步機制 | ✅ **已有官方市集**（2026-08-08 查證官方文件更正）：`claude-plugins-official`（Anthropic 策展，首次互動啟動時自動註冊）與 `claude-plugins-community`（第三方送審後上架，需自行 `/plugin marketplace add`）；目錄另可於 [claude.com/plugins](https://claude.com/plugins) 瀏覽，送審有自動驗證與安全篩查。**創作者變現機制仍缺** | 市集已就位；變現無官方時程 |
 | 行為變更 | v2.1.215：`/verify` 與 `/code-review` 兩項官方技能不再由 Claude 自動觸發，須使用者手動呼叫指令才會執行；與上方「機制本身」列所述「依描述語意自動觸發、無需手動呼叫」的通則產生例外，依賴自動驗證/審查的既有工作流需改為顯式呼叫，無過渡期即刻生效。詳見 [[entities/claude-code]] 版本表 | 2026-07-19 |
 
 ## 第三方生態動態
@@ -89,7 +89,7 @@ description: 在 PR 或 diff review 前，依團隊規範檢查命名、測試�
 
 ## 相關議題
 
-- [[topics/engineering-skill-playbook]] — 工程流程各階段該下哪個官方 skill 的實戰對照
+- [[topics/coding-workflow-guide]] — 開發流程各階段該下哪個 skill、探索 codebase 與寫下結果的實戰對照
 
 - [[topics/community-tech-patterns]]（skill 設計模式、踩坑經驗與社群自製 skill 案例——如何寫 skill、何時該封裝、實測「74 個 skill 只有 3 個真正改變行為」等一手心得皆記錄於該頁，本頁不重複收錄）
 - [[entities/claude-code]]（Skills 為六大控制層之一；版本更新與已知問題見該頁版本表）

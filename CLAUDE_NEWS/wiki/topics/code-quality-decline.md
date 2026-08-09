@@ -19,7 +19,7 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 **狀態：** monitoring（官方已說明，待驗證恢復）
 **領域：** 🛠️ 工具/功能
 **開始日期：** 2026-03（推測）
-**最後更新：** 2026-08-01
+**最後更新：** 2026-08-09
 **最後新聞更新：** 2026-08-01
 
 > **最近效能退步事件**（2026-07-30）
@@ -81,6 +81,21 @@ Claude Code 在 2026 年 3 月至 4 月間出現長達約一個月的效能明�
 
 ---
 
+## 模型釘選／靜默降級 訊號群（2026-02 起）`[2026-08-09 查證新增]`
+
+**這不是單一 bug，是「使用者宣告的模型選擇不被保證」在四種不同機制上重複發生**——缺乏鎖版能力（設計面）、picker 狀態不保持（實作面）、計費驅動降級（商業面）、能力靜默移除（產品面）。四個節點橫跨 2026-02 至 2026-07，彼此獨立、來源不同，構成同一主題的重複證據：
+
+- **設計面缺口（2026-02-23，GitHub issue #27892，⛔ 官方以 not planned 關閉）**：`--model` 旗標僅接受 family 名稱（如 opus / sonnet），不接受版本 pin id；`.claude/settings.json` 亦無鎖版設定；使用者一旦被自動升版即無回退路徑。Anthropic 將此 issue 標記 not planned 並關閉，機制層面自始未規劃鎖版能力（[GitHub #27892](https://github.com/anthropics/claude-code/issues/27892)）。
+- **實作面缺口（2026-04-10，GitHub issue #46221，已關閉為 #45978 重複）**：Opus 4.6 1M context 變體從 model picker 消失、被 Opus 4.6 200k 取代；預設在使用者未操作下靜默改為 Sonnet 4.6；進行中的 session 遭中途降級；即使手動選回 1M 變體，下次 `/model` 該選項仍會消失——選定狀態無法保持（[GitHub #46221](https://github.com/anthropics/claude-code/issues/46221)）。
+- **商業面驅動（2026-07-25）**：Fable 5 計費壓力下，Opus 4.8 被靜默降級處理，細節見 [[entities/pricing]]。
+- **產品面移除（2026-05-21）**：extended thinking 能力在未預告情況下自 Claude Code 移除，細節見 [[entities/claude-code]] 已知問題。
+
+**未經佐證的具體宣稱（2026-08-04，單一 Reddit 來源，待觀察）：** r/ClaudeCode 貼文宣稱以實測記錄四種繞過模型釘選機制的方式，並稱 Sonnet 4.6 遭靜默移除；此貼文所指的「模型釘選不可靠／靜默降級」**現象**方向與上述四則已獨立佐證的節點一致，但貼文獨有的「4 measured bypass vectors」與「Sonnet 4.6 silently removed」**具體技術細節**仍僅有單一 Reddit 來源、無「週熱門」標記、近 14 天 news 查無第二來源覆核——佐證及於現象，不及於該貼文的具體量化宣稱，措辭上不可視為對其全部內容的背書（來源：[Reddit r/ClaudeCode](https://www.reddit.com/r/ClaudeCode/comments/1vf7uv5/model_pinning_is_completely_broken_in_claude_code/)）。
+
+**目前定位：** 四種機制橫跨六個月，均指向「使用者宣告的模型選擇不被保證兌現」這一系統性缺口，而非單次意外。08-04 的 Reddit 貼文延續同一現象方向，但其量化宣稱仍待驗證，本頁僅計入現象層級的第五個獨立訊號，不採計其具體技術細節。
+
+---
+
 ## 技術彙整
 
 - **自訂編排路由失效（Reddit r/ClaudeAI，2026-06-26）**：用戶反映相同的自訂 orchestration 設定，OpenCode 能穩定路由到自訂 providers 的 agents，但 Claude Code 無法可靠執行相同路由；問題未見官方說明；此為工具行為不一致問題，非模型能力退步，但影響依賴自訂 agent 編排的工作流（來源：[Reddit r/ClaudeAI](https://www.reddit.com/r/ClaudeAI/comments/1ug7sz4/claude_code_ignores_my_custom_orchestration_and/)）
@@ -88,7 +103,7 @@ Claude Code 在 2026 年 3 月至 4 月間出現長達約一個月的效能明�
 - **Session log 路徑**：`~/.claude/projects/` 存放 JSONL 格式的 session log，CC-Canary 透過此路徑讀取歷史資料進行效能比對
 - **CC-Canary 判定等級**：`HOLDING`（穩定）／`SUSPECTED REGRESSION`（疑似退步）／`CONFIRMED REGRESSION`（確認退步）
 - **Stop hooks 失效**：Claude 4.7 起無視自訂 stop hooks，與整體效能退步為獨立問題，機制層面尚未公開說明
-- **靜默模型切換（Silent Model Switching）**：開發者記錄 36 天使用數據，發現模型有時在無明確通知的情況下靜默切換，用戶無法確知實際使用的模型版本；不同模型間效率差距高達 11.5 倍，靜默切換可能導致效率和成本的非預期變化；與 2026-04-27「版本管理不透明」（執行 claude update 靜默撤版）議題相呼應，顯示 Anthropic 在模型與版本透明度上的系統性不足
+- **靜默模型切換（Silent Model Switching）**：開發者記錄 36 天使用數據，發現模型有時在無明確通知的情況下靜默切換，用戶無法確知實際使用的模型版本；不同模型間效率差距高達 11.5 倍，靜默切換可能導致效率和成本的非預期變化；與 2026-04-27「版本管理不透明」（執行 claude update 靜默撤版）議題相呼應，顯示 Anthropic 在模型與版本透明度上的系統性不足；此現象已於 08-09 查證取得跨機制獨立佐證，詳見「模型釘選／靜默降級 訊號群」子區塊
 - **Anthropic 說明原因**：engineering missteps（工程疏失），非刻意的模型行為調整（非 RLHF 過度修正）
 
 ---
@@ -143,6 +158,11 @@ Claude Code 在 2026 年 3 月至 4 月間出現長達約一個月的效能明�
 - [Anthropic's definition of safety is too narrow](https://jonathannen.com/anthropic-safety-too-narrow/)
 
 ## 時序（最新在上，按月分組）
+
+### 2026-08
+
+#### 2026-08-04
+- **模型釘選繞過主張（現象已獲跨機制佐證，具體宣稱仍單一來源）**：Reddit r/ClaudeCode 貼文宣稱記錄四種繞過 Claude Code 模型釘選機制的方式，並稱 Sonnet 4.6 遭靜默移除；2026-08-09 查證發現「模型釘選不可靠／靜默降級」現象已有兩則早於此貼文的獨立 GitHub issue 佐證（#27892、#46221），詳見「模型釘選／靜默降級 訊號群」子區塊；但該貼文獨有的「4 measured bypass vectors」量化宣稱仍僅單一 Reddit 來源、無「週熱門」標記，未經覆核（來源：[Reddit r/ClaudeCode](https://www.reddit.com/r/ClaudeCode/comments/1vf7uv5/model_pinning_is_completely_broken_in_claude_code/)）
 
 ### 2026-07
 

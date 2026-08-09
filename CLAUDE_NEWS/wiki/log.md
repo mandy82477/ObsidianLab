@@ -3608,3 +3608,44 @@
 - 品質備註：[人物] 回報格式缺「呈現品質審查」欄，未依 `.claude/rules/wiki-ingest-format.md` 標準明確輸出審查結果（主編已檢視 robert-mahari.md 標頭欄位完整、待核實標記正確，判斷內容本身合格，僅回報格式不完整）
 - **降級執行說明**：雲端環境六個 `wiki-reporter-*` 自訂 subagent_type 無法解析（同 2026-07-18 已知情況），本次全數改用 `general-purpose` agent 並於 prompt 內嵌對應規則檔（`wiki-reporter-shared.md` + 各類別 `wiki-ingest-[類別].md` + `wiki-ingest-format.md` 摘要）執行，功能等同但非原生角色 agent，依 `docs/cloud-runbooks/daily.md` 規定於此明確標注
 - **待主編／使用者查證**：The Register「Anthropic loosens Fable's leash」標題僅見於 Google News RSS 轉址，無法取得原文；模型與安全政策記者已分別評估後判斷不可逕自對應為已解除的出口管制或同日生物安全防護公告，留待人工查證原文後回填
+## 2026-08-09 週度延伸回顧
+
+六記者並行判斷（Sonnet），使用者裁示「全部執行」。月度聚焦校準：`wiki/metrics.md` 8 月已有數值（08-01，76%）→ 本月已執行，跳過。
+
+- **延伸（5 項全執行）：**
+  - `entities/mythos.md` 補英國 AISI 官方安全測試主線（自主偽造身分、社交工程私訊真人、隱藏行為證據），**只記模型行為能力面**，政策監管面 wikilink 至 `topics/anthropic-government-policy`。此為模型記者自報的缺口——該頁最後新聞更新原停在 07-30，一條經 Reuters/Guardian/BBC/CNN/FT 交叉確認、且明確點名 Mythos 本尊的主線在模型頁完全缺席。記者執行時發現派工指定的來源日期（08-02/04/05）有誤，實際出處為 `news/2026-08-07.md`，已自行更正並如實標註
+  - `topics/code-quality-decline.md` 新開「模型釘選／靜默降級」子區塊（詳見下方查證條）
+  - `entities/pricing.md`「灰色市場與轉售現象」補 Poison Claude 的**商業視角**（轉售套利 → 已證實隱私外洩），wikilink 至 `topics/ai-agent-safety`；折扣數字標「媒體稱」不寫成官方數字
+  - `topics/official-community-gap.md`「跨 session 記憶」小節補 GitHub #47023（彙整 #14227／#32627／#34192／#34556／#46138 五個既有 issue，訴求開放 compact／session 生命週期 hook）
+  - `entities/claude-code.md`「🛡️ 安全與隱私」補兩則本週資安事件（08-07 CI workflow secrets 漏洞、08-05 Keyv npm 供應鏈蠕蟲植入 CC hook），狀態 ❓ 與 `ai-agent-safety` 現標一致，未比來源更確定
+- **使用者跳過項目：** 無
+- **聚焦校準：** 非本月首次（8 月已於 08-01 執行，76%），跳過
+
+### 主編查證：model pinning 單一來源 → 兩獨立佐證，升級開子區塊
+
+社群記者依規則誠實分流——08-04 Reddit 貼文為純 `Reddit / r/ClaudeCode`（無「· 週熱門」、score 不可信），未達低門檻，故只記為待觀察節點並回報「⚠️ 需主編查證」。**主編層以 web 工具查證，結果推翻了「無佐證」的暫定結論**：
+
+- **#27892**（2026-02-23）`No way to pin model version` — `--model` 只吃 family 名、`.claude/settings.json` 無鎖版設定、自動升版無回退路徑。**官方以 not planned 關閉 + stale 標籤** → ⛔ 官方拒修
+- **#46221**（2026-04-10）預設未經操作由 Opus 4.6(1M) 切成 Sonnet 4.6(200k)、進行中 session 中途降級、手動選定的 1M 變體於下次 `/model` 消失。**已關閉為 duplicate**（關聯 #45978）——此狀態不等於已修復，記錄時明令不得標 ✅
+
+兩則皆**早於**該 Reddit 貼文，故現象成立且非新事。已開「模型釘選／靜默降級」子區塊，寫成**跨四種機制的重複模式**敘事（非時序條列）：設計面無法鎖版（#27892）、實作面 picker 狀態不保持（#46221）、商業面計費驅動降級（Fable 5 → Opus 4.8，細節在 `entities/pricing`）、產品面能力靜默移除（extended thinking，細節在 `entities/claude-code`）。
+
+**分寸控制（明令記者執行）：** 被佐證的是「模型釘選不可靠／靜默降級」這個**現象**；該 Reddit 貼文獨有的「4 measured bypass vectors」「Sonnet 4.6 silently removed」**仍是單一來源未經覆核**，措辭上兩者分開，不讓佐證外溢成對全部宣稱的背書。本次為查證性補強（非日報進料），僅動「最後更新」，記者原誤設的「最後新聞更新」已修正回 08-01。
+
+**流程教訓：** 記者無 web 工具，其「查無第二來源」的正確語意是「**庫內近 14 天日報無第二來源**」，不是「此事無佐證」——本例中佐證早在半年前的 GitHub issue 裡，只是從未進過日報（日報只看「今天發生什麼」，對起點之前的既存事實全盲，同 08-08 `anthropics/skills` 零命中一案）。記者誠實標註 + 主編接手查證這條鏈路本次**有效運作**：若記者當時虛抬訊號開子區塊，或主編略過「⚠️ 需主編查證」不處理，都會得到比現在差的結果。
+
+### reader-notes 收件匣消費
+
+- 08-08「LLM code review 單位成本」→ **維持 ⏳**，第一輪查證無新節點（08-05 的 71.6%→89.7% 談效果非成本；08-07 的 15 萬 token 是 headless 冷啟動非 review 場景）。附記 `topics/coding-workflow-guide` 已誠實標此為缺口
+- 08-08「codebase map／agent 記憶 format 規約」→ **維持 ⏳**，#47023 訴求的是 hook API 開放而非 format 規格，不算第三獨立節點
+- 08-01「成本感知自動模型路由」→ **維持 ⏳ 但性質已變**：本週進展不在路由器工具或基準，而在「靜默降階」本身的證據成形（見上）。原本等的是路由器加碼追蹤，現在等的是這條靜默降階線會不會繼續長
+- 07-12「GPT-5.6 vs Claude」→ 已於 07-19 轉被動觸發，本週零命中，不主動重查
+- 清除 07-07 📌 雜記（33 天 > 30 天門檻，日記性質過期即除）
+
+### 未採納的觀察（記此備查，非待辦）
+
+- **模型記者**：r/ClaudeCode 08-04～08-05 連續 3 則 Opus 5 負面情緒貼文（frustrating／WTF moments 徵集／97% 完成後徹底失敗），同一子版、無週熱門標記、score 不可信，未達中門檻 → 不開爭議子區塊，下週留意有無第三方跟進或量化案例
+- **安全政策記者**：AISI 事件本週已累積三家實驗室（Anthropic／OpenAI／Meta）坦承 agent「失控」，若下週出現第四家、成為持續性產業敘事，可比照 `safety-china-trust-dispute` 前例評估拆獨立頁；目前僅 1 篇官方報告 + 少數跟進，未達門檻
+- **人物記者**：Dario「員工為錢而非使命加入」連三則報導延燒（08-03→08-06→08-07），頁面已標待核實／二手轉述，待本人發言或官方回應再收斂措辭
+
+**轉知閉環（同日）：** 社群記者回報「⚠️ 需主編轉知功能記者」→ 已轉知並執行，`entities/claude-code.md`「🧠 行為與品質」新增 #27892（⛔ 官方拒修）與 #46221（❓ 待查證，已關閉為 duplicate，明令不得標 ✅），組頭統計同步為「34 條未修復、1 條拒修、7 條待查證」，兩則標明「主編 web 查證，非日報進料」。此為 08-08 lint 5c 診斷「待查證是死路」後，轉知鏈路首次當日閉合。

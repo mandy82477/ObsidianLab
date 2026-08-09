@@ -19,11 +19,12 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 **狀態：** monitoring
 **領域：** 🛠️ 工具/功能
 **開始日期：** 2026-05-17
-**最後更新：** 2026-08-08
+**最後更新：** 2026-08-09
 **最後新聞更新：** 2026-08-08
 
 > **最新功能缺口**（2026-08-08）
-> MacRumors、The Mac Observer、biggo.com、Inshorts、9to5Mac 五家媒體同步報導 Claude Code 新增跨 session 訊息互通功能（macOS/Linux），直接對應「Agent 間直接通訊協定」列社群長期訴求（issue #24798、#28300）；惟 GitHub release 尚無對應 changelog 條目佐證，該列狀態暫升為 🧪 部分產品化（媒體報導，未經官方 changelog 證實），詳見「Agent 工作模式產品化追蹤」表。
+> - **Agent 間直接通訊協定**：五家媒體（MacRumors、The Mac Observer、biggo.com、Inshorts、9to5Mac）同步報導 Claude Code 新增跨 session 訊息互通功能（macOS/Linux），直接對應社群長期訴求（issue #24798、#28300）；惟 GitHub release 無對應 changelog 佐證，該列暫升為 🧪 部分產品化（媒體報導，未經官方 changelog 證實）。
+> - **跨 session 記憶**：GitHub issue [#47023](https://github.com/anthropics/claude-code/issues/47023)（08-04）彙整 5 個既有開放 issue，提出開放 compact／session 生命週期 hook 供外部記憶層串接，是此訴求首次收斂為單一具體 API 提案；官方尚無回應，該列維持 ⏳ 正在做但不夠。
 
 ## 摘要
 
@@ -93,6 +94,8 @@ Outcomes 規格驗證與 `/goal` 解決了「任務是否完成」的機器可�
 ### ⏳ 正在做但不夠：跨 session 記憶
 
 Dreaming 定位是「任務間隙自動鞏固記憶」，仍為 Research Preview，且不等於「每次開新對話可以繼續上次」。社群 8+ 記憶工具在 Dreaming 公布後沒有減少，說明兩者解決的不是同一個問題。差距仍大。
+
+**2026-08-04 社群訴求成型：** GitHub issue [#47023](https://github.com/anthropics/claude-code/issues/47023)「Expose compact/session lifecycle hooks for external memory layers」彙整 5 個既有開放 issue（#14227、#32627、#34192、#34556、#46138），指出社群已自行拼湊三層式 markdown 架構、知識圖譜等替代方案，訴求官方開放 compact／session 生命週期 hook 供外部記憶層串接——這是社群首次把散落的持久化記憶需求收斂為單一具體 API 訴求（hook 介面），而非各自繼續造輪子；截至目前官方尚無公開回應，Dreaming（Anthropic 生態內建）與此提案（開放外部串接）方向不同，不構成回應。
 
 ### ❌ 結構性未解：成本透明度
 

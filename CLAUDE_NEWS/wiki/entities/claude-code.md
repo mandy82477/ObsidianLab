@@ -21,11 +21,15 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 **狀態：** active
 **領域：** 🛠️ 工具/功能
 **首次出現：** 2025（正式推出）
-**最後更新：** 2026-08-08
+**最後更新：** 2026-08-09
 **最後新聞更新：** 2026-08-08
 
 > **最新動態**（2026-08-08）
-> Anthropic 宣布將於 **2026-08-14** 起把「auto 模式」設為 Claude Code 預設權限模式（HN 轉引 @ClaudeDevs 推文／9to5Mac PSA 同步報導），已提報 [[feature-radar]]。同日 MacRumors、The Mac Observer、biggo.com、Inshorts、9to5Mac 五家媒體同步報導 Claude Code 新增跨 session 訊息互通功能（macOS/Linux），惟 GitHub release 無對應 changelog 條目佐證，已同步更新 [[topics/official-community-gap]] 並提報 feature-radar 供主編評估。v2.1.226（2026-08-08）為純 bug fix／穩定性版本；anthropic-sdk-python v0.121.0、anthropic-sdk-typescript google-cloud-sdk v0.0.7、vertex-sdk v0.19.1（皆 2026-08-07）三則 SDK 更新原文遭截斷，細節待查證。已知問題新增功能請求 1 則（跨分支 diff 比較 issue #23626，今日互動最高功能請求）、互動數更新 4 則（API 連線中途中斷 issue #69415 累積至 44 則留言、82 個讚，本日全站互動量最高）。
+> - **預設權限模式將變更**：Anthropic 宣布 **2026-08-14** 起把「auto 模式」設為 Claude Code 預設權限模式（HN 轉引 @ClaudeDevs 推文／9to5Mac PSA 同步報導），已提報 [[feature-radar]]。
+> - **跨 session 訊息互通（未經官方確認）**：MacRumors、The Mac Observer、biggo.com、Inshorts、9to5Mac 五家媒體同日報導此功能（macOS/Linux），惟 GitHub release 無對應 changelog 佐證，已同步 [[topics/official-community-gap]]。
+> - **資安**：已知問題新增 2 則 ❓ 待查證——Claude Code 與 Gemini CLI 漏洞可經 GitHub Issue 內容觸及 CI workflow secrets（The Hacker News，08-07）；Keyv 關聯 npm 供應鏈蠕蟲在受害環境植入 Claude Code 與 VS Code hook（08-05）。標記與 [[topics/ai-agent-safety]] 一致。
+> - **模型釘選**：新增 #27892（⛔ 官方以 not planned 關閉）與 #46221（❓ 已關閉為 duplicate），跨機制敘事見 [[topics/code-quality-decline]]（主編 web 查證 2026-08-09，非日報進料）。
+> - v2.1.226（08-08）為純 bug fix／穩定性版本；三則 SDK 更新原文遭截斷，細節待查證。
 
 ---
 
@@ -56,8 +60,10 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 
 > 按主題分組；各組內大致依回報時間倒序。每條開頭的狀態標記回答「現在還會發生嗎」：🔴 未修復 / ✅ 已修復（註明修復版本）/ ⛔ 官方拒修 / ❓ 待查證。
 
-### 🛡️ 安全與隱私（5 條未修復、4 條待查證）
+### 🛡️ 安全與隱私（5 條未修復、6 條待查證）
 
+- ❓ **待查證（2026-08-07 報導，僅標題）**｜**Claude Code 與 Gemini CLI 漏洞：GitHub Issue 內容可觸及 CI workflow secrets**：The Hacker News（08-07 08:18 UTC）報導 Claude Code 與 Gemini CLI 存在漏洞，攻擊者可透過 GitHub Issue 的內容觸及 CI workflow 的 secrets；目前僅標題可用，具體攻擊鏈（Issue 內容如何被 agent 讀入並外洩至 workflow、是否需特定權限設定）與是否已修補均無法確認；官方尚未回應。事件細節見 [[topics/ai-agent-safety]]
+- ❓ **待查證（2026-08-04 報導，僅標題）**｜**Keyv 關聯 npm 供應鏈蠕蟲攻擊，植入 Claude Code 與 VS Code hook**：thehackernews.com（08-04 13:30 UTC）報導一起與 Keyv 套件相關的 npm 供應鏈蠕蟲攻擊，已感染數百個套件，並在受害環境植入 Claude Code 與 VS Code 的 hook；目前僅標題可用，具體攻擊鏈、受害套件清單、hook 植入機制與目的均無法確認；官方尚未回應。事件細節見 [[topics/ai-agent-safety]]
 - ❓ **待查證（2026-07-21 報導，至今無後續）**｜**Bash 與 Unicode 繞過修補（Tech Times 報導）**：Tech Times 報導稱 Claude Code 已修補 agentic 權限層中的 Bash 與 Unicode 繞過漏洞，惟原文未提供具體版本號、修復細節或官方公告/GitHub Release 連結佐證；近 14 天無後續版本更新或官方說明確認具體範圍，亦未確認是否與既有隱寫術／同形字符機制（見下條）相關；已請安全政策記者評估是否於 [[topics/ai-agent-safety]] 雙記。
 - 🔴 **未修復**｜**隱寫術標記／代理偵測指控（2026-06-30 至 07-01，待查證）**：Reddit 貼文（2026-06-30）指控 Claude Code 自 v2.1.91 起嵌入偵測中國代理／地區的隱藏程式碼，並疑似混淆程式碼掩蓋此行為；此為社群單方指控，Anthropic 尚未就此回應或證實。2026-07-01 安全研究者進一步發現 Claude Code 2.1.196 binary 含隱寫術（steganography）機制，將日期字串中的撇號與分隔符替換為外觀相同的同形字符（homoglyphs），HN 熱度達 2263 分，36Kr 報導確認此機制針對時區資訊及中國 AI Lab 連線者注入額外系統提示，與 06-30 事件屬同一偵測基礎架構的延伸；Anthropic 已就隱寫術部分承諾修復（2026-07-01），但截至目前修復版尚未發布。事件完整細節見 [[topics/ai-agent-safety]]；承諾兌現進度見 [[topics/anthropic-commitments]]
 - ❓ **待查證（2026-05-19 指控，至今無後續）**｜**Claude Code RCE via 惡意 Deeplink**：安全研究人員揭露攻擊者可透過惡意 Deeplink 觸發 Claude Code 在受害者端執行任意指令（RCE），CyberSecurityNews 已發布詳細技術報導；屬高嚴重性安全問題，修補狀態待 Anthropic 確認；所有使用者應避免開啟不明來源的 deeplink；見 [[topics/ai-agent-safety]]
@@ -89,9 +95,12 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 - 🔴 **未修復**｜**Session 額度上限時無法順暢接續／功能請求自動續行（GitHub issue #13354，累積 72 則留言、193 個讚，首見 2026-07-07，2026-08-04 互動數更新，今日互動最高功能請求之一）**：使用者希望 session 達到額度上限時能有更順暢的接續機制（如自動排隊、無縫轉續、自動恢復），而非直接中斷工作流程；2026-08-04 日報標記此為當日互動最高功能請求之一，與同日「瞬間打到用量上限」抱怨（issue #16157）呼應；官方尚未回應或提供替代方案。（此前曾被誤列為兩則獨立條目，本次合併統一追蹤）
 - 🔴 **未修復**｜**升級方案付款失敗，`PaymentIntent` 於確認完成前即遭 `void_invoice` 作廢（GitHub issue #55982，累積 25 個讚，2026-07-18）**：使用者回報升級訂閱方案時付款流程失敗，`PaymentIntent` 在確認（confirm）尚未完成前就被 `void_invoice` 動作立即作廢，導致升級無法完成；官方尚未回應。定價/計費層面另見 [[entities/pricing]]。
 
-### 🧠 行為與品質（35 條未修復、6 條待查證）
+### 🧠 行為與品質（35 條未修復、1 條拒修、7 條待查證）
 
 - 🔴 **未修復**｜**功能請求：支援與 main 以外分支進行 diff 比較（GitHub issue #23626，累積 38 則留言、120 個讚，2026-08-07，今日互動量最高功能請求）**：使用者希望 Claude Code 支援與 main 以外分支進行 diff 比較；官方尚未回應或排入路線圖。
+
+- ⛔ **官方拒修**｜**無法釘選 model version：`--model` 只接受 family 名，不接受帶日期版本 id（GitHub issue #27892，2026-02-23 開立）**：使用者反映 `--model` 僅接受 family 名稱（opus／sonnet），無法指定帶日期的 pinned version id（如 claude-opus-4-5 vs 4-6），`.claude/settings.json` 亦無鎖版設定，導致被自動升版且無回退路徑；官方以 not planned 關閉並標記 stale。跨機制敘事（模型釘選／靜默降級）見 [[topics/code-quality-decline]]。（主編 web 查證，查證日 2026-08-09，非日報進料）
+- ❓ **待查證（已關閉為 duplicate，實際修復狀態未確認）**｜**Opus 4.6 1M context 從模型選單消失，被 Opus 4.6 200k 取代；預設無預警切為 Sonnet（GitHub issue #46221，2026-04-10 開立，關聯 #45978）**：使用者回報預設在未操作下由 Opus 4.6(1M) 切成 Sonnet 4.6(200k)、進行中 session 被中途降級，手動選 1M 變體後下次 `/model` 該選項即消失；issue 已關閉為 duplicate（關聯 #45978），此狀態不等於已修復。跨機制敘事（模型釘選／靜默降級）見 [[topics/code-quality-decline]]。（主編 web 查證，查證日 2026-08-09，非日報進料）
 - 🔴 **未修復**｜**功能請求：提供選項關閉啟動時歡迎畫面與提示（GitHub issue #2254，累積 126 個讚，2026-08-02）**：使用者希望能關閉 Claude Code 啟動時顯示的歡迎畫面與提示訊息，認為每次啟動都佔用終端機顯示空間；官方尚未回應或提供設定選項。
 - 🔴 **未修復**｜**v2.1.150 起滑鼠滾輪失效，滾動動作誤判為方向鍵輸入（GitHub issue #65833，累積 35 則留言，2026-07-31，今日全站 GitHub Issues 互動次高）**：升級至 v2.1.150 後，滑鼠滾輪在 TUI 中不再能捲動對話輸出內容，滾動動作反而被誤判為方向鍵輸入，改變對話中游標／選取位置，屬版本更新後的回歸性 bug；與既有「CLI TUI 模式下無法捲動回看完整對話歷史」（issue #28077）同屬 TUI 捲動相關問題但成因不同，暫分列追蹤；官方尚未回應。
 - 🔴 **未修復**｜**Claude Code 在部分提示上卡住/凍結 5–20 分鐘以上（GitHub issue #26224，累積 128 則留言、150 個讚，首見 2026-07-26，2026-08-04 互動數更新，今日聚焦頭條之一）**：使用者回報 Claude Code 在大量提示的情境下會出現卡住／凍結現象，持續時間可達 5 至 20 分鐘以上，嚴重影響工作流程節奏；回報標題以「URGENT」標註緊急程度；2026-08-04 日報今日聚焦將此與用量上限問題（issue #16157）並列為近期兩則反映可靠度問題的熱門條目；官方尚未回應或說明成因。
