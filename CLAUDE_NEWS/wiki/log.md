@@ -3695,3 +3695,17 @@
   3. **補機械檢查**：新增 `scripts/check_feature_radar.py`（掛進 `run_tests.py`），對帳**當月**詳細條目數與全覽表列數，不等即 exit 1。只對帳當月——舊月份詳細條目會封存而表列保留，比對舊月會誤報
 - **為什麼三層都要**：本次失敗的正是「靠記者記得」那一層，所以只補規則不夠。規則負責說清楚怎麼寫，檢查負責保證沒漏
 - **可攜教訓**：**同一份資料有「索引層 + 內文層」兩個入口時，兩者必須有機械對帳**。索引缺漏是最難自己發現的缺陷型態——內文寫得再完整，讀者從索引掃不到就等於不存在，而寫的人因為剛寫完內文，主觀上覺得「這條已經有了」
+
+## 2026-08-10 Query：「有跨 session 傳送功能嗎？wiki 有寫嗎」→ 揭出懸置標記無消化端的結構缺口，建成全鏈偵測機制
+
+- **提問**：使用者 08-09 問「是不是有新推出跨 session 傳送的功能」「這 wiki 有寫嗎」。wiki 有寫（feature-radar 08-08 收錄），但標著「⚠️ 未經官方確認／待確認」，而官方文件（code.claude.com/docs/en/cross-session-messaging）從第一天就存在。使用者追問「為什麼要我問才有更新」。
+- **根因**（兩層）：(1) **來源層**：該功能官方文件在 code.claude.com/docs，11 個既有來源零覆蓋，且不進 CLI changelog、不發部落格；(2) **機制層**：條目正文寫著「後續 ingest 若查得官方一手來源應更新」——沒有任何流程會讀那句話。全庫盤點 436 筆同類懸置字樣，消化端只有每週 lint 的 3g/5c（每輪 10 筆，清完要 36 週），「今天的新聞正好解掉某筆懸置」這條路徑完全沒有人走。
+- **處置**：
+  1. **來源層**：official_docs_watch 新增 index 模式監看 code.claude.com/docs/llms.txt（頁面集合 diff，新功能上線必然新增一頁，不需事先知道功能名即可偵測）＋ desktop.md；changelog.md 評估後標 retired（483KB 每日發版，hash 模式純噪音）。實測回放 08-08 情境可正確報出 cross-session-messaging 新增（`70e9104`）
+  2. **懸置標記語法**：定案機器錨點語法 `❓ **待查證**（標 YYYY-MM-DD｜查 探針…）`——錨點是散文不可能出現的 metadata 區塊而非「待查證」字樣，語意反轉句／圖例／計數標頭／目錄 anchor 天生不誤命中（`2d45e23`）
+  3. **盤點與回填**：audit 腳本分四類（真懸置/元層級/已解除/偵測不了），437 筆中 384 筆由六記者＋主編代理並行回填為 323 個新語法標記，存量降至 35 筆（每筆有據）（`3344af5`、`f627cc1`、`bfa312f` 等 9 commits）
+  4. **檢查器**：check_pending_markers 掛進 run_tests（缺探針/過寬探針/⟨Q-nn⟩ 對帳失衡即 FAIL；逾期只 WARN 進 5c 佇列，不設機械棘輪）（`ff943f7`、`c7a71ae`）
+  5. **每日掃描**：scan_pending_verifications 於 pipeline Step 3f 拿探針比對當日日報（entry 切分＋STOPLIST＋多探針 AND＋S/A/B 分級＋去重），命中產出按記者分組的派工附件；順修 steps.md 兩個 3d 編號碰撞（`60fe44a`）。乾跑抓到樞紐頁 wikilink 探針無偵測力的雜訊（`[[entities/claude-code]]` 形同萬用鑰匙），收緊別名 STOPLIST 複檢並修 7 筆懶探針（`301f538`）
+  6. **契約閉環**：派工 prompt 加第三區塊（附防偏誤說明：記者只可加 `訊` 欄，不可宣告結案）、記者回報加「待查證命中處置」欄、10 檔同步、registry sync_pairs 更新（`621d6a7`）
+  7. **視圖與彙總**：frontmatter 四欄（pending_count/overdue/next_review/signalled）＋ wiki/_views/pending.md（Obsidian dataview，即時解析不存資料）＋ lint 5c 改用 --queue 佇列（`563b72a`、`dfa7779`）
+- **驗收**：255 測試案例全綠；乾跑三日 S+A 命中逐筆複判全數主題相關；checker 全庫 0 FAIL。
