@@ -170,6 +170,133 @@ class TestResilience(unittest.TestCase):
                 self.assertEqual(OfficialDocsWatch().fetch(), [])
 
 
+INDEX_URL = "https://code.claude.com/docs/llms.txt"
+
+
+def _index_page(**kw):
+    base = {
+        "name": "Claude Code 文件索引",
+        "url": INDEX_URL,
+        "status": "active",
+        "mode": "index",
+    }
+    base.update(kw)
+    return base
+
+
+def _index(entries):
+    """Render an llms.txt body from (title, path, description) triples."""
+    head = "# Claude Code Docs\n\n"
+    return head + "\n".join(
+        f"- [{t}](https://code.claude.com/docs/en/{p}.md): {d}" for t, p, d in entries
+    )
+
+
+BASE_INDEX = [
+    ("Manage sessions", "sessions", "Name, resume, branch."),
+    ("Settings", "settings", "Configure Claude Code."),
+]
+
+
+class TestIndexMode(unittest.TestCase):
+    """llms.txt 是 280 行的頁面索引：整檔雜湊只會天天說『變了』。這個模式的價值
+    在於只回答『多了哪一頁』——新功能上線必然新增一頁。"""
+
+    def test_index_baseline_records_silently(self):
+        with _Ctx([_index_page()]) as ctx:
+            with patch.object(mod.requests, "get", return_value=_resp(_index(BASE_INDEX))):
+                self.assertEqual(OfficialDocsWatch().fetch(), [])
+            state = json.loads(ctx.state.read_text(encoding="utf-8"))
+            self.assertEqual(len(state[INDEX_URL]["pages"]), 2)
+
+    def test_added_page_is_reported_with_its_title(self):
+        """本 source 存在的唯一理由：官方悄悄多了一頁，要在當天講出來。"""
+        with _Ctx([_index_page()]):
+            with patch.object(mod.requests, "get", return_value=_resp(_index(BASE_INDEX))):
+                OfficialDocsWatch().fetch()
+            grown = BASE_INDEX + [
+                ("Message your other Claude Code sessions", "cross-session-messaging", "Let Claude message sessions."),
+            ]
+            with patch.object(mod.requests, "get", return_value=_resp(_index(grown))):
+                items = OfficialDocsWatch().fetch()
+        self.assertEqual(len(items), 1)
+        self.assertIn("新增 1 頁", items[0].title)
+        self.assertIn("Message your other Claude Code sessions", items[0].summary)
+        self.assertIn("cross-session-messaging", items[0].summary)
+        self.assertEqual(items[0].category, "official")
+
+    def test_description_reword_stays_silent(self):
+        """描述改寫每天都在發生。它若觸發，讀者三天內就學會忽略這個來源。"""
+        with _Ctx([_index_page()]):
+            with patch.object(mod.requests, "get", return_value=_resp(_index(BASE_INDEX))):
+                OfficialDocsWatch().fetch()
+            reworded = [
+                ("Manage sessions", "sessions", "Completely rewritten description, much longer than before."),
+                ("Settings", "settings", "Another totally different blurb here."),
+            ]
+            with patch.object(mod.requests, "get", return_value=_resp(_index(reworded))):
+                items = OfficialDocsWatch().fetch()
+        self.assertEqual(items, [])
+
+    def test_removed_page_is_reported(self):
+        with _Ctx([_index_page()]):
+            with patch.object(mod.requests, "get", return_value=_resp(_index(BASE_INDEX))):
+                OfficialDocsWatch().fetch()
+            with patch.object(mod.requests, "get", return_value=_resp(_index(BASE_INDEX[:1]))):
+                items = OfficialDocsWatch().fetch()
+        self.assertEqual(len(items), 1)
+        self.assertIn("移除 1 頁", items[0].title)
+        self.assertIn("Settings", items[0].summary)
+
+    def test_unparseable_index_keeps_prior_pages(self):
+        """抓到錯誤頁時若把 state 寫成空集合，下次正常抓取會謊報『新增 280 頁』。"""
+        with _Ctx([_index_page()]) as ctx:
+            with patch.object(mod.requests, "get", return_value=_resp(_index(BASE_INDEX))):
+                OfficialDocsWatch().fetch()
+            before = json.loads(ctx.state.read_text(encoding="utf-8"))[INDEX_URL]
+
+            with patch.object(mod.requests, "get", return_value=_resp("<html>502 Bad Gateway</html>")):
+                self.assertEqual(OfficialDocsWatch().fetch(), [])
+            after = json.loads(ctx.state.read_text(encoding="utf-8"))[INDEX_URL]
+            self.assertEqual(before, after)
+
+            with patch.object(mod.requests, "get", return_value=_resp(_index(BASE_INDEX))):
+                self.assertEqual(OfficialDocsWatch().fetch(), [])
+
+    def test_index_mode_does_not_strip_markup(self):
+        """index 模式吃純文字：若沿用 HTML 剝除，行結構會被壓成一行而解析失敗。"""
+        with _Ctx([_index_page()]):
+            captured = {}
+
+            def _get(url, **kw):
+                captured["url"] = url
+                return _resp(_index(BASE_INDEX))
+
+            with patch.object(mod.requests, "get", side_effect=_get):
+                OfficialDocsWatch().fetch()
+            self.assertEqual(captured["url"], INDEX_URL)
+
+    def test_hash_mode_is_unaffected_by_index_support(self):
+        """既有 hash 模式頁面不得因新增 index 模式而改變行為。"""
+        with _Ctx([_page(), _index_page()]):
+            def _get(url, **kw):
+                if url == INDEX_URL:
+                    return _resp(_index(BASE_INDEX))
+                return _resp("<p>" + "a" * 500 + "</p>")
+
+            with patch.object(mod.requests, "get", side_effect=_get):
+                OfficialDocsWatch().fetch()
+
+            def _get2(url, **kw):
+                if url == INDEX_URL:
+                    return _resp(_index(BASE_INDEX))
+                return _resp("<p>" + "a" * 500 + "b" * 200 + "</p>")
+
+            with patch.object(mod.requests, "get", side_effect=_get2):
+                items = OfficialDocsWatch().fetch()
+        self.assertEqual([i.url for i in items], [URL])
+
+
 class TestVisibleText(unittest.TestCase):
     def test_scripts_and_styles_are_stripped(self):
         html = "<style>.a{color:red}</style><script>var t=1</script><p>Real text</p>"

@@ -1,6 +1,26 @@
 {
   "_doc": "官方靜態文件監看清單。這些頁面沒有 feed，但方案/配額/計費事實只寫在這裡——2026-08-08 教訓：07-20 旗艦計費分界只存在於方案說明頁，Help Center 自己的 Release notes 都沒收，任何 feed 型來源都抓不到。新增前先確認該頁確實承載會變動的事實，不要把靜態說明頁全掃進來（噪音會淹掉訊號）。status 設為 retired 即停止監看但保留紀錄。",
+  "_mode": "mode 省略＝hash（整頁內容雜湊比對，適合承載事實的說明頁）；mode=index 專供 llms.txt 型文件索引，只比對頁面清單的增減，描述文字改寫不觸發。",
   "pages": [
+    {
+      "name": "Claude Code 文件索引（llms.txt）",
+      "url": "https://code.claude.com/docs/llms.txt",
+      "status": "active",
+      "mode": "index",
+      "why": "全站頁面清單（~280 頁）。新功能上線必然新增一頁，這是唯一不需事先知道功能名稱就能偵測到它的來源——2026-08-08 跨 session 訊息互通被 5 家媒體報導、日報卻標『查無官方佐證』，當天索引其實已有 /en/cross-session-messaging"
+    },
+    {
+      "name": "Claude Code 官方 changelog",
+      "url": "https://code.claude.com/docs/en/changelog.md",
+      "status": "retired",
+      "why": "（2026-08-09 加入即退場）483KB 且幾乎每日發版，hash 模式只能說『變了』說不出變什麼，而版本發布已由 GitHubReleases 覆蓋——留著只會產生每日固定噪音，把整個 Official Docs 來源訓練成可忽略。要監看版本敘述差異需改做版本標題行的集合 diff，屆時再開"
+    },
+    {
+      "name": "Claude Code 桌面版",
+      "url": "https://code.claude.com/docs/en/desktop.md",
+      "status": "active",
+      "why": "桌面 app 功能（並行 session、session 管理）。桌面版功能不進 CLI changelog 也不發部落格，11 個既有來源零覆蓋"
+    },
     {
       "name": "方案與定價（Plans & Pricing）",
       "url": "https://claude.com/pricing",
