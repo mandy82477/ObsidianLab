@@ -21,7 +21,7 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 **狀態：** active（正式發布）
 **領域：** 🤖 模型
 **首次出現：** 2026-07-01
-**最後更新：** 2026-08-08
+**最後更新：** 2026-08-10
 **最後新聞更新：** 2026-07-31
 
 > **最新動態**（2026-07-31）
@@ -79,7 +79,7 @@ claude --model claude-sonnet-5-20260701
 - **1M token context**：原生支援，無需外部管理
 - **Claude Code 預設**：v2.1.197 起為 Claude Code 預設模型
 
-**待驗證：** 社群評測提及 Sonnet 5 在 Terminal-Bench 2.1（2026-06）leaderboard 有排名，且「#1 仍為外界無法取用的型號」，但缺乏具體名次數字與來源連結，暫不列為已確認核心能力。
+❓ **待查證**（標 2026-08-10｜查 Terminal-Bench、leaderboard）｜**Sonnet 5 Terminal-Bench 排名未確認**：社群評測提及 Sonnet 5 在 Terminal-Bench 2.1（2026-06）leaderboard 有排名，且「#1 仍為外界無法取用的型號」，但缺乏具體名次數字與來源連結，暫不列為已確認核心能力。
 
 ## 爭議
 

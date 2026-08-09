@@ -21,7 +21,7 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 **狀態：** active（正式發布；出口管制已解除，2026-07-01 起全球恢復存取；免費期已於 2026-07-19 到期，Max/Team 後續存取政策尚有分歧報導，見 [[entities/pricing]]）
 **領域：** 🤖 模型
 **首次出現：** 2026-06-09
-**最後更新：** 2026-08-08
+**最後更新：** 2026-08-10
 **最後新聞更新：** 2026-08-08
 
 > **最新進展**（2026-08-07）
@@ -33,7 +33,7 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 
 **2026-08-07 最新**：Anthropic 官方部落格宣布更新 Fable 5 的生物安全防護（biology safeguards），測試顯示各產品面「生物相關降級」（誤判觸發 fallback 至 Opus 4.8）情形減少約 85%；官方表示日常健康／教育類問題（如判讀檢驗報告、理解症狀、學習生物學）預期更少被誤判降級，醫療專業人員也能在臨床任務上獲得 Fable 5 更多協助（[Anthropic Blog](https://www.anthropic.com/news/improving-fable-5-s-biology-safeguards)，2026-08-07）。
 
-**2026-07-31**：Hacker News／Bloomberg 報導一名美國法官對政府禁用 Anthropic AI 的正當性提出質疑（2026-07-30/31）；我方抓取資料未提供禁令具體法律依據，也未明確此案是否與 Fable 5 出口管制直接相關，暫列歷史記錄並標記「待核實」，完整脈絡以安全政策記者對應頁面為主（詳見「歷史記錄」）。
+**2026-07-31**：❓ **待查證**（標 2026-08-10｜查 [[topics/anthropic-government-policy]]、法官質疑）｜**美國法官質疑政府禁用 Anthropic AI 正當性**（2026-07-30/31 報導）：Hacker News／Bloomberg 報導，我方抓取資料未提供禁令具體法律依據，也未明確此案是否與 Fable 5 出口管制直接相關，完整脈絡以安全政策記者對應頁面為主（詳見「歷史記錄」）。
 
 Claude Fable 5 是 Anthropic 於 2026-06-09 發布的旗艦模型，為**史上首款向大眾開放的 Mythos 級模型**。Fable 5 與 Claude Mythos 5 共用相同的模型權重，差異在於 Fable 5 前置安全分類器——觸發時 fallback 至 Claude Opus 4.8（Anthropic 稱不到 5% 的 session 受影響）。核心定位：任務越複雜越長期，Fable 5 的優勢越明顯；在軟體工程、知識工作、視覺、科學研究等幾乎所有 benchmark 達到 SOTA。
 
@@ -178,10 +178,10 @@ claude --model claude-fable-5-20260609
 #### 2026-08-07
 **官方更新生物安全防護，「生物相關降級」減少約 85%**：Anthropic 官方部落格公告《Improving Fable 5's biology safeguards》，宣布更新 Fable 5 的生物安全防護（biology safeguards）。測試顯示，此次更新使各產品面「生物相關降級」（誤判觸發 fallback 至 Opus 4.8）情形減少約 85%（官方原文：「this update reduced biology-related fallbacks by about 85% across our product surfaces」）。實務影響：日常健康／教育類問題（判讀檢驗報告、理解症狀、學習生物學教育內容）預期更少被誤判降級；醫療專業人員在臨床任務上將能獲得 Fable 5 更多協助（官方原文：「Healthcare professionals will be able to receive more support from Fable 5 on clinical tasks」）。此為官方對「資安研究者護欄過激」「Defense in Depth 分類器誤判」等既有護欄過敏爭議中，生物領域面向的具體修復進展；資安/程式碼領域的過敏問題官方本次公告未提及是否同步改善（[Anthropic Blog](https://www.anthropic.com/news/improving-fable-5-s-biology-safeguards)，2026-08-07）。
 
-**媒體另標題稱 Anthropic「放寬 Fable 5 限制」，具體所指無法查證（待查證）**：The Register 同日報導《OpenAI pledges to add Astra security as Anthropic loosens Fable's leash》，標題指稱 Anthropic 正「放寬」（loosens leash）對 Fable 5 的限制措施。我方僅取得 Google News RSS 轉址連結，無法讀取原文內容，故無從確認「放寬」具體所指為何。Fable 5 出口管制已於 2026-07-01 解除逾一個月（見上方「現況」），若此標題確有所指的新事件，較可能與同日的生物安全防護護欄調整（見上一則）或其他 guardrail 面向有關，但兩者是否為同一事件、抑或另有所指，**未經證實，不可逕自合併認定**，標記「待查證」（[Google News/The Register](https://news.google.com/rss/articles/CBMixgFBVV95cUxPeTNZYm52T1Z4akI4NHhscUZSWGZWZkVNd0VlRlk3WWhXQk9xanUtck1DV3BnVF93SHNnUnNtZjdmRUVHM0x4ZmdpUmtVeTgwSEJvTWZRVDRISFhybGtiSUY1N2EzSXBfZGZkWENwWVdrWXdTVWVzczFmUnhZakNZSWNpN2l4am1FX2w5eUFSSk9LRnpSOHRJNEEzRHhyWHFfdmhmbGYxMzBNbEdwN3pialg5MW13U05CY2tVVWNoT0V2Mm90bnc?oc=5)，2026-08-07）。
+❓ **待查證**（標 2026-08-10｜查 Astra security、The Register）｜**Anthropic「放寬 Fable 5 限制」具體所指無法查證**（2026-08-07 報導）：The Register 同日報導《OpenAI pledges to add Astra security as Anthropic loosens Fable's leash》，標題指稱 Anthropic 正「放寬」（loosens leash）對 Fable 5 的限制措施。我方僅取得 Google News RSS 轉址連結，無法讀取原文內容，故無從確認「放寬」具體所指為何。Fable 5 出口管制已於 2026-07-01 解除逾一個月（見上方「現況」），若此標題確有所指的新事件，較可能與同日的生物安全防護護欄調整（見上一則）或其他 guardrail 面向有關，但兩者是否為同一事件、抑或另有所指均未經證實，不可逕自合併認定（[Google News/The Register](https://news.google.com/rss/articles/CBMixgFBVV95cUxPeTNZYm52T1Z4akI4NHhscUZSWGZWZkVNd0VlRlk3WWhXQk9xanUtck1DV3BnVF93SHNnUnNtZjdmRUVHM0x4ZmdpUmtVeTgwSEJvTWZRVDRISFhybGtiSUY1N2EzSXBfZGZkWENwWVdrWXdTVWVzczFmUnhZakNZSWNpN2l4am1FX2w5eUFSSk9LRnpSOHRJNEEzRHhyWHFfdmhmbGYxMzBNbEdwN3pialg5MW13U05CY2tVVWNoT0V2Mm90bnc?oc=5)，2026-08-07）。
 
 #### 2026-07-31
-**法官質疑美國政府對 Anthropic AI 禁令正當性（待核實：是否與 Fable 5 出口管制直接相關）**：Hacker News 轉載 Bloomberg 報導《Judge Voices Doubt US Has Justified Its Ban on Anthropic AI》，指一名美國法官對政府禁用 Anthropic AI 的正當性提出質疑（[Bloomberg](https://www.bloomberg.com/news/articles/2026-07-30/judge-voices-doubt-us-has-justified-its-ban-on-anthropic-ai)、[HN 討論](https://news.ycombinator.com/item?id=49117486)，2026-07-30/31）。我方抓取資料僅有標題與 HN 連結，未提供禁令的具體法律依據、是否明確涉及「國安理由」，也未提供文章全文內容；鑑於 Fable 5 出口管制已於 2026-07-01 正式解除（見上方「出口管制：雙方立場」），此訴訟進展**是否直接針對 Fable 5 出口管制本身、或涉及其他對 Anthropic 的政府限制措施，尚無法從現有資料判斷，標記「待核實」**。可能與 2026-06-24 Legion 法律科技新創對美國政府提告出口管制令一案有關聯（同屬挑戰政府對 Anthropic AI 限制的訴訟；[[topics/anthropic-government-policy]] 亦記錄「管制解除後訴訟是否失去標的、撤案或轉為求償」的待觀察問題），但兩案是否為同一訴訟程序未經證實，不可逕自合併記錄。完整法律論證內容與政策脈絡由安全政策記者於 [[topics/anthropic-government-policy]] 追蹤。
+❓ **待查證**（標 2026-08-10｜查 [[topics/anthropic-government-policy]]、Judge Voices Doubt）｜**法官質疑美國政府對 Anthropic AI 禁令正當性，是否與 Fable 5 出口管制直接相關未定**：Hacker News 轉載 Bloomberg 報導《Judge Voices Doubt US Has Justified Its Ban on Anthropic AI》，指一名美國法官對政府禁用 Anthropic AI 的正當性提出質疑（[Bloomberg](https://www.bloomberg.com/news/articles/2026-07-30/judge-voices-doubt-us-has-justified-its-ban-on-anthropic-ai)、[HN 討論](https://news.ycombinator.com/item?id=49117486)，2026-07-30/31）。我方抓取資料僅有標題與 HN 連結，未提供禁令的具體法律依據、是否明確涉及「國安理由」，也未提供文章全文內容；鑑於 Fable 5 出口管制已於 2026-07-01 正式解除（見上方「出口管制：雙方立場」），此訴訟進展是否直接針對 Fable 5 出口管制本身、或涉及其他對 Anthropic 的政府限制措施，尚無法從現有資料判斷。可能與 2026-06-24 Legion 法律科技新創對美國政府提告出口管制令一案有關聯（同屬挑戰政府對 Anthropic AI 限制的訴訟；[[topics/anthropic-government-policy]] 亦記錄「管制解除後訴訟是否失去標的、撤案或轉為求償」的待觀察問題），但兩案是否為同一訴訟程序未經證實，不可逕自合併記錄。完整法律論證內容與政策脈絡由安全政策記者於 [[topics/anthropic-government-policy]] 追蹤。
 
 #### 2026-07-24
 **GitHub Issue #79337 持續追蹤：reaction 增至 13 個 + 新技術細節「已儲存模型 claude-fable-5[1m]」**：07-20 首次回報的 Max 方案誤判事件持續有讀者互動，reaction 數由 10 個增至 13 個（留言數維持 35 則、暫無更新資料）；本次追蹤新揭露受影響帳號的已儲存模型設定為 `claude-fable-5[1m]`，即 1M context 變體，有助釐清受影響的具體模型設定範圍。官方已於 07-20 確認為誤判並建議重啟，此結論未變，計費/配額面向由商業記者於 [[entities/pricing]] 記錄（[GitHub Issues](https://github.com/anthropics/claude-code/issues/79337)，2026-07-24 01:16 UTC）。
@@ -241,7 +241,7 @@ claude --model claude-fable-5-20260609
 - **Axios：Fable 5 可能本週回歸**（HN score 8，後於 07-01 獲官方證實）：Axios 報導 Fable 5「on track to return soon, possibly this week」，Washington 軟化立場（[Axios](https://www.axios.com/2026/06/27/anthropic-fable-5-return-soon)）；HN score 8 訊號偏弱，「possibly this week」為消息人士說法，發稿當時尚無官方確認，實際於 07-01 全球恢復存取
 - **Washington 軟化立場（Yellow.com）**：Google News 報導確認談判進展，與 qz.com / Axios 方向一致（[Yellow.com](https://yellow.com/news/claude-fable-5-return)）
 - **社群回顧：音樂影片展示**（Reddit，score 不詳）：用戶分享在 Fable 5 下架前使用其製作音樂影片的體驗，展示視頻編輯與創意能力，說明即使在管制期間社群仍持續記錄 Fable 5 的多模態使用案例（[Reddit r/ClaudeAI](https://www.reddit.com/r/ClaudeAI/comments/1uipova/)）
-- **工程師實測：新版 Claude 燒更多 token 但每任務成本更低**（HN score 5）：signoz.io 工程師儀器化實測顯示，新版 Claude 模型 token 使用量顯著高於舊版，但每個成功解決任務的實際成本反而下降；分析強調評測指標需同時考量 token 用量與任務完成率，而非僅看成本或速度（[signoz.io](https://signoz.io/blog/claude-code-model-comparison/)）；HN score 5 訊號弱，結論「待驗證」
+- **工程師實測：新版 Claude 燒更多 token 但每任務成本更低**（HN score 5）：signoz.io 工程師儀器化實測顯示，新版 Claude 模型 token 使用量顯著高於舊版，但每個成功解決任務的實際成本反而下降；分析強調評測指標需同時考量 token 用量與任務完成率，而非僅看成本或速度（[signoz.io](https://signoz.io/blog/claude-code-model-comparison/)）。❓ **待查證**（標 2026-08-10｜查 signoz.io、token 用量）｜**HN score 5 訊號弱，結論尚無法驗證**：token 增加但單任務成本下降的因果關係尚未經多方來源驗證
 
 #### 2026-06-28
 **Fable 5 協議接近完成（後於 2026-07-01 官方證實回歸）+ 競品效應分析**：

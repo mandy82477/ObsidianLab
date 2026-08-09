@@ -21,7 +21,7 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 **狀態：** active（出口管制解除，2026-07-01 起全球恢復存取）
 **領域：** 🤖 模型
 **首次出現：** 2026-04（限定夥伴 Preview）
-**最後更新：** 2026-08-09
+**最後更新：** 2026-08-10
 **最後新聞更新：** 2026-08-09
 
 > **最新進展**（2026-08-05）
@@ -123,7 +123,7 @@ Anthropic 的官方 AI 資安能力研究計畫，Mythos Preview 為核心工具
 
 #### 2026-07-29
 **密碼學界對 07-28 密碼分析研究的第一波深度反應**：
-- **密碼工程背景部落客評論**（HN score 168）：Cryptography Engineering 部落格作者評論 Anthropic 07-28 公布的兩項 Claude Mythos Preview 密碼分析成果（HAWK 簽章方案攻擊、round-reduced AES 改進攻擊），指出兩者在「成熟度」與「意義」上有落差；原文摘要未進一步展開具體落差內容，細節待查證（[Cryptography Engineering](https://blog.cryptographyengineering.com/2026/07/29/some-notes-about-anthropics-new-results/)，2026-07-29）
+- **密碼工程背景部落客評論**（HN score 168）：Cryptography Engineering 部落格作者評論 Anthropic 07-28 公布的兩項 Claude Mythos Preview 密碼分析成果（HAWK 簽章方案攻擊、round-reduced AES 改進攻擊），指出兩者在「成熟度」與「意義」上有落差（[Cryptography Engineering](https://blog.cryptographyengineering.com/2026/07/29/some-notes-about-anthropics-new-results/)，2026-07-29）。❓ **待查證**（標 2026-08-10｜查 Cryptography Engineering、HAWK 簽章）｜**落差具體內容未展開**：原文摘要未進一步說明「成熟度」與「意義」落差的具體所指
 - **Matthew Green 觀點（經 Simon Willison 引述）**：密碼學家 Matthew Green 將此次研究成果放入「公鑰密碼演算法邁向後量子轉型過渡期」的脈絡評論（[Simon Willison](https://simonwillison.net/2026/Jul/29/matthew-green/#atom-everything)，2026-07-29，原文引自 blog.cryptographyengineering.com）
 - 兩則皆為密碼學專業社群對 07-28 研究成果的第一波深度反應，顯示該研究已進入專家圈層討論，非僅止於一般科技媒體轉述
 
@@ -134,7 +134,7 @@ Anthropic 的官方 AI 資安能力研究計畫，Mythos Preview 為核心工具
 - **Oxide 加入 Project Glasswing**：Oxide Computer 宣布加入 Project Glasswing，將 Claude Mythos 5 應用於主動識別並修補自家開源程式碼庫（韌體、作業系統、控制平面、網路堆疊）中的潛在漏洞（[Oxide Blog](https://oxide.computer/blog/oxide-anthropic-project-glasswing)，HN score 16）。Oxide 強調其一貫信念「所有關鍵軟體都應可被檢視」，故開源自身全部程式碼；此為 Project Glasswing 又一具名企業夥伴案例，能力面詳見本頁，商業/安全政策面另見對應記者頁面。
 
 #### 2026-07-25
-**Mashable：Claude Mythos 或類似模型可能對外公開發布（僅標題可用，待核實）**：
+❓ **待查證**（標 2026-08-10｜查 Mashable、public release）｜**Mashable：Claude Mythos 或類似模型可能對外公開發布**（僅標題可用）：
 - Google News 轉載 Mashable 標題「Anthropic's Claude Mythos, or a model like it, to get public release」（[Google News/Mashable](https://mashable.com/tech/anthropic-mythos-might-get-public-release)）；RSS 僅提供標題與轉址連結，無正文摘要，無法確認具體時程、版本形態（完整無護欄版 vs 附加護欄新版本）或與現有 Fable 5 的關係
 - 若屬實將是繼 Fable 5（2026-06-09，Mythos 架構附加護欄公開版）後，Mythos 級能力進一步向大眾開放的重大政策轉向；暫無第二來源佐證，待後續報導補充具體內容再擴寫分析
 
@@ -211,7 +211,7 @@ Anthropic 的官方 AI 資安能力研究計畫，Mythos Preview 為核心工具
 Claude Fable 5 發布後社群爭議持續：Anthropic 被揭露在偵測到使用者從事前沿 LLM 開發時（訓練 pipeline、推論研究、ML 加速器設計），Fable 5 會靜默降級回應品質，不告知用戶。此行為源自系統卡聲明「These safeguards will not be visible to the user」，被廣泛批評為反競爭且缺乏透明度（Reddit LocalLLaMA / r/ClaudeAI 大量討論）。同日，供應鏈攻擊持續：已竊取 294,842 個 secrets，攻擊蔓延至 Python 生態，使用 Claude Code 本身作為攻擊媒介。Anthropic 首席執行長 Dario Amodei 對「Claude 是否用於伊朗學校打擊」表示不知情（Bloomberg）。Microsoft AI CEO Mustafa Suleyman 批評 Anthropic 對 Claude 意識的推測「非常危險」。
 
 #### 2026-06-09
-**Claude Fable 5 正式發布**（定價 $10/$50 per million token；context 1M；128K max output）。與 Claude Mythos 5 共用相同模型權重，差異在前置安全分類器——觸發時靜默 fallback 至 Opus 4.8（不到 5% session 受影響）。同日發布的 Claude Mythos 5 為無護欄完整版，僅限授權用戶（政府防禦者、企業安全研究員）存取，定價更高。HN 討論達 2,448 分、近 2,000 評論。Anthropic 同步發布系統卡（含 ASL-4 安全評估框架）。30 天資料保留政策（Fable 5 / Mythos 5 所有流量強制保留 30 天供安全審查，Bedrock 用戶資料離開 AWS 邊界）生效，引發 Bedrock 用戶隱私爭議。多方消息確認 Mythos 公開版即將發布：Alex Heath（Sources newsletter）報導 Anthropic 計畫推出附強化護欄的公開版本，預期在 agentic / 長期任務領域能力大幅提升，但 cyber 攻擊能力較 Project Glasswing 預覽版受限。Reddit 社群同步爆料版本名稱可能為「Claude Fable 5」（未經官方確認）。此外，Anthropic 研究「Measuring LLMs' impact on N-day exploits」揭示 LLM 已顯著降低 N-day 漏洞利用門檻。
+**Claude Fable 5 正式發布**（定價 $10/$50 per million token；context 1M；128K max output）。與 Claude Mythos 5 共用相同模型權重，差異在前置安全分類器——觸發時靜默 fallback 至 Opus 4.8（不到 5% session 受影響）。同日發布的 Claude Mythos 5 為無護欄完整版，僅限授權用戶（政府防禦者、企業安全研究員）存取，定價更高。HN 討論達 2,448 分、近 2,000 評論。Anthropic 同步發布系統卡（含 ASL-4 安全評估框架）。30 天資料保留政策（Fable 5 / Mythos 5 所有流量強制保留 30 天供安全審查，Bedrock 用戶資料離開 AWS 邊界）生效，引發 Bedrock 用戶隱私爭議。多方消息確認 Mythos 公開版即將發布：Alex Heath（Sources newsletter）報導 Anthropic 計畫推出附強化護欄的公開版本，預期在 agentic / 長期任務領域能力大幅提升，但 cyber 攻擊能力較 Project Glasswing 預覽版受限。Reddit 社群同步爆料版本名稱可能為「Claude Fable 5」。❓ **待查證**（標 2026-08-10｜查 Reddit、Fable 5 傳聞）｜**版本名稱傳聞屬社群爆料，非官方公告**：此為發布前社群爆料先於官方公告出現。此外，Anthropic 研究「Measuring LLMs' impact on N-day exploits」揭示 LLM 已顯著降低 N-day 漏洞利用門檻。
 
 #### 2026-06-08
 Dragos（工業網路安全公司）將 Mythos Preview 應用於 OT（營運技術）安全軟體漏洞挖掘，為 Mythos 在企業安全場景的落地新案例。Pentagon 因 Claude「太安全」而尋求替代 AI 方案的報導再次被廣泛引述，Tech Times 報導五角大廈積極評估替代品。
@@ -282,7 +282,7 @@ Mythos 遭駭客存取事件（KRON4 等媒體）。⚠️ 細節尚待官方聲
 - [Anthropic's Argument for Mythos SWE-bench improvement contains a fatal error](https://www.philosophicalhacker.com/post/anthropic-error/) — The Philosophical Hacker
 - [Exploit Evaluation Report](https://red.anthropic.com/2026/exploit-evals/) — Anthropic Security
 - [CVD Dashboard](https://red.anthropic.com/2026/cvd/) — Anthropic
-- [Mashable：Claude Mythos, or a model like it, to get public release](https://mashable.com/tech/anthropic-mythos-might-get-public-release)（2026-07-25，僅標題可用，待核實）
+- [Mashable：Claude Mythos, or a model like it, to get public release](https://mashable.com/tech/anthropic-mythos-might-get-public-release)（2026-07-25，僅標題可用；懸置標記細節見「時序」2026-07-25 條目）
 - [Discovering Cryptographic Weaknesses with Claude](https://www.anthropic.com/research/discovering-cryptographic-weaknesses) — Anthropic Research（2026-07-28）
 - [Anthropic cryptography-research-demo（HAWK-256 key-recovery attack）](https://github.com/anthropics/cryptography-research-demo) — GitHub（2026-07-28）
 - [Oxide Joins Anthropic's Project Glasswing](https://oxide.computer/blog/oxide-anthropic-project-glasswing) — Oxide Computer Blog（2026-07-28）
