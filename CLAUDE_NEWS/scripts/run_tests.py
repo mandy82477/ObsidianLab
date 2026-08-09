@@ -17,8 +17,9 @@ run_tests.py — 執行 src/tests/ 下所有確定性單元測試（unittest dis
 跑完 unittest 全數通過後，另外執行 scripts/check_rules.py（.claude/commands、
 .claude/rules 的規則一致性機械檢查）、scripts/check_arch_docs.py（架構文件
 來源清單/日期/charset/CSS token 漂移檢查）、scripts/check_weekly_ledger.py
-（週報預告帳本：漏收/判準遭改寫/殭屍條目/跳期）與 scripts/check_wiki_freshness.py
-（頁面「最後新聞更新」宣稱 × 歸因記錄交叉比對：漏更/無從對照/欄位缺失）；
+（週報預告帳本：漏收/判準遭改寫/殭屍條目/跳期）、scripts/check_wiki_freshness.py
+（頁面「最後新聞更新」宣稱 × 歸因記錄交叉比對：漏更/無從對照/欄位缺失）與
+scripts/check_feature_radar.py（feature-radar 當月詳細條目 ↔ 全覽表列對帳）；
 任一失敗都會讓本腳本整體 exit 1。
 """
 import io
@@ -33,6 +34,7 @@ CHECK_RULES = REPO_ROOT / "scripts" / "check_rules.py"
 CHECK_ARCH_DOCS = REPO_ROOT / "scripts" / "check_arch_docs.py"
 CHECK_WEEKLY_LEDGER = REPO_ROOT / "scripts" / "check_weekly_ledger.py"
 CHECK_WIKI_FRESHNESS = REPO_ROOT / "scripts" / "check_wiki_freshness.py"
+CHECK_FEATURE_RADAR = REPO_ROOT / "scripts" / "check_feature_radar.py"
 
 
 def main() -> int:
@@ -118,7 +120,22 @@ def main() -> int:
         stream.write(f"\nWARN: {CHECK_WIKI_FRESHNESS} 不存在，跳過 wiki 新鮮度檢查\n")
     stream.flush()
 
-    return 0 if (unit_ok and rules_ok and arch_docs_ok and weekly_ledger_ok and freshness_ok) else 1
+    # feature-radar 索引層對帳（當月詳細條目 ↔ 全覽表列）
+    radar_ok = True
+    if CHECK_FEATURE_RADAR.exists():
+        proc = subprocess.run(
+            [sys.executable, str(CHECK_FEATURE_RADAR)], capture_output=True, text=True, encoding="utf-8"
+        )
+        stream.write("\n" + proc.stdout + "\n")
+        if proc.stderr:
+            stream.write(proc.stderr + "\n")
+        radar_ok = proc.returncode == 0
+    else:
+        stream.write(f"\nWARN: {CHECK_FEATURE_RADAR} 不存在，跳過 feature-radar 對帳\n")
+    stream.flush()
+
+    return 0 if (unit_ok and rules_ok and arch_docs_ok and weekly_ledger_ok
+                 and freshness_ok and radar_ok) else 1
 
 
 if __name__ == "__main__":

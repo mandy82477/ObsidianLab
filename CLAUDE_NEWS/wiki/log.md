@@ -3683,3 +3683,15 @@
 - [安全政策] The Times of India「Geoffrey Hinton on OpenAI, Meta and Anthropic AI models hacking other companies」——僅有標題，記者判斷可能與 `entities/mythos.md` 已記錄的英國 AISI 測試事件（自建假身分、隱藏證據）相關，也可能是泛論性警告，需 WebFetch 原文後決定是否寫入 `topics/ai-agent-safety.md` 或 `topics/anthropic-government-policy.md`
 - [社群] Google News/XDA「I changed one setting in Claude Code, and my token burn dropped by 45%」——僅有標題，需查證原文確認具體是哪項設定，若查得屬 token/成本優化技巧，值得回頭補入 `community-tech-patterns.md`
 - [社群] huangruiteng/loopx（3641★）、HangYu8123/HarnessFlow（516★）——依 GitHub repo 星數防刷註記，記者無工具查證 forks／issues／近期 commit 等難造假佐證，本日僅記為「待查證」節點，未列為高信度收錄，下次 ingest 或 lint 若有工具可查證應回頭核實
+
+## 2026-08-09 Query：全覽表漏了當月最重要的兩條 → 補列＋規則補洞＋機械檢查
+
+- **點出什麼**：使用者說「我看了一下功能全覽表怎麼沒有你說的 sessions」。實查 `wiki/feature-radar.md`：跨 session 訊息互通確實**只在**「⭐ 本週推薦」與「🆕 最新功能（2026-08）」詳細條目裡，`## 📋 功能全覽表` 查無此列。連帶查出 Auto 模式預設化（8/14 生效的 breaking change）同樣缺列
+- **規模**：08 月 6 條詳細條目只有 4 條進表，缺的正是當月最重要的兩條（雙雙是今日日報「重大事件」，且一條在本週推薦、一條在 ⏰ 倒數中——**唯獨索引查無**）。07/06 月表列多於詳細條目屬正常（舊詳細條目已封存，表列長期保留），非缺漏
+- **根因（規則從未涵蓋）**：`.claude/rules/wiki-ingest-features.md` 對 feature-radar 的維護規則寫得很細——准入定義、動作表、新條目格式、本週推薦選取邏輯、升版風險、⏰ 倒數中——但**通篇沒有一個字提到 `📋 功能全覽表`**。全庫僅 `.claude/commands/wiki-ingest.md` 一句「同步更新全覽表的熱度與試用價值」，那管的是既有列的欄位更新，不是新功能要補列。也就是說：新條目補表列這件事，一直只靠記者模仿既有版面，沒有任何規則或檢查保證
+- **處置（三層）**：
+  1. **補列**：全覽表新增跨 session 訊息互通（2026-08-08 🔥🔥🔥🔥 ⚡）與 Auto 模式預設化（2026-08-14 生效 🔥🔥🔥🔥 ⚡，狀態「官方公告（尚未生效）」）
+  2. **補規則**：`.claude/rules/wiki-ingest-features.md` 新增「新條目必須同時補全覽表一列」——含五欄格式、未生效公告的日期欄寫法、熱度／試用價值須與詳細條目標頭逐字一致，並要求 ingest 結尾對帳當月兩邊數量
+  3. **補機械檢查**：新增 `scripts/check_feature_radar.py`（掛進 `run_tests.py`），對帳**當月**詳細條目數與全覽表列數，不等即 exit 1。只對帳當月——舊月份詳細條目會封存而表列保留，比對舊月會誤報
+- **為什麼三層都要**：本次失敗的正是「靠記者記得」那一層，所以只補規則不夠。規則負責說清楚怎麼寫，檢查負責保證沒漏
+- **可攜教訓**：**同一份資料有「索引層 + 內文層」兩個入口時，兩者必須有機械對帳**。索引缺漏是最難自己發現的缺陷型態——內文寫得再完整，讀者從索引掃不到就等於不存在，而寫的人因為剛寫完內文，主觀上覺得「這條已經有了」

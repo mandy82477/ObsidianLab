@@ -64,6 +64,8 @@
 
 | 功能 | 發布日期 | 熱度 | 試用價值 | 狀態 |
 |------|----------|------|----------|------|
+| **Claude Code 跨 session 訊息互通**（需 v2.1.224+、macOS／Linux，`ListAgents` 探索可連線 session、`SendMessage` 指定名稱傳訊，亦適用 subagent 與 team 隊友） | 2026-08-08 | 🔥🔥🔥🔥 | ⚡ 有條件推薦 | 正式發布 |
+| **Claude Code Auto 模式預設化**（⚠️ Breaking change：8/14 起 auto 成為 Pro／Max／Team 預設權限模式，取代手動確認流程；Enterprise 與 API／雲端平台仍選用制） | 2026-08-14 生效（08-07 公告） | 🔥🔥🔥🔥 | ⚡ 有條件推薦 | 官方公告（尚未生效） |
 | **Claude Code v2.1.224**（新增 `claude self-hosted-runner`，可將自有機器或容器變成 Claude Code web／mobile／desktop session 執行環境，Team／Enterprise 適用） | 2026-08-07 | 🔥🔥 | ⚡ 有條件推薦 | 正式發布 |
 | **API Inference Hooks**（Enterprise 組織 beta，claude.ai／Cowork／Claude Code 上受管治 prompt 可導向企業自有 AI 安全伺服器） | 2026-08-05 | 🔥🔥 | ⏳ 觀望 | Beta（Enterprise） |
 | **Claude Code v2.1.222**（安全修復：worktree 隔離 session 及其 subagent 可對主 checkout 執行破壞性 git 指令的漏洞，隔離範圍擴及檔案編輯與 Bash 執行） | 2026-08-04 | 🔥🔥 | ✅ 建議升級 | 正式發布（安全修復） |
