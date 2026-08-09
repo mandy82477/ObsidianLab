@@ -38,6 +38,9 @@ import sys
 from datetime import date
 from pathlib import Path
 
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+from pending_markers import PENDING_RE  # noqa: E402
+
 REPO_ROOT = Path(__file__).resolve().parent.parent
 WIKI_DIR = REPO_ROOT / "wiki"
 ATTRIBUTION = REPO_ROOT / "data" / "source_attribution.jsonl"
@@ -80,6 +83,19 @@ def strip_body(text: str) -> str:
     return FRONTMATTER_RE.sub("", text, count=1)
 
 
+def strip_pending_probes(text: str) -> str:
+    """移除懸置標記 metadata 區塊（`（標 …｜查 …）`），只留下 `❓**待查證**` 本身。
+
+    metadata 括號段裡的 wikilink 是偵測用探針，不是內容引用（見
+    `.claude/rules/wiki-ingest-format.md`「懸置標記語法」節），入鏈統計不該算它。
+    標記後方的第四段（`｜**題目**：內文`）不在 PENDING_RE 的 match 範圍內，故
+    這裡整段替換掉 match 不會動到它，內文若有 wikilink 仍照常留給 findall 計入。
+    """
+    return PENDING_RE.sub(
+        lambda m: f"{m.group('sym')}**{m.group('kind')}**", text
+    )
+
+
 def main(argv: list[str]) -> int:
     stream = _stdout()
     dry_run = "--dry-run" in argv
@@ -99,7 +115,8 @@ def main(argv: list[str]) -> int:
         me = f.relative_to(WIKI_DIR).as_posix()[:-3]
         if me in ("index", "log"):
             continue
-        for target in WIKILINK_RE.findall(strip_body(f.read_text(encoding="utf-8-sig"))):
+        page_text = strip_pending_probes(strip_body(f.read_text(encoding="utf-8-sig")))
+        for target in WIKILINK_RE.findall(page_text):
             target = target.strip()
             if target in slugs and target != me:
                 inbound[target] += 1
