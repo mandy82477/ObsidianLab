@@ -32,7 +32,7 @@ argument-hint: [YYYY-Wnn]
 |---|---|
 | **確認閘相反** | `/wiki-weekly-review` 明訂未經使用者確認不得修改任何頁面（延伸判斷屬主觀取捨）；`/weekly-report` 是自主產出。合併後只會二選一：週報被卡在確認閘後面，或策展變成自動執行——後者等於廢掉那條規則 |
 | **凍結語義衝突** | `/weekly-report` 步驟 5 明訂寫入後即凍結、不因後續 ingest 回頭修改；`/wiki-weekly-review` 則主動改 wiki。若策展先跑，週報會引用到同一次執行中剛被改出來的頁面狀態 |
-| **帳本獨立性** | 週報第 (3) 段的帳本有機械檢查（`scripts/check_weekly_ledger.py`）與反確認偏誤護欄。策展若先知道本週開了哪些預告，會傾向加碼「能讓預告成真」的主題——與 `.claude/commands/news-pipeline-steps.md` Step 3d 對選材的警告同源 |
+| **帳本獨立性** | 週報第 (3) 段的帳本有機械檢查（`scripts/check_weekly_ledger.py`）與反確認偏誤護欄。策展若先知道本週開了哪些預告，會傾向加碼「能讓預告成真」的主題——與 `.claude/commands/news-pipeline-steps.md` Step 3e 對選材的警告同源 |
 
 > 判斷式：**這一步會不會讓後面那步「已經知道答案」？** 會 → 順序錯了。
 

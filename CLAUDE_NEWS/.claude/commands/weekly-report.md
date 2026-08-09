@@ -98,7 +98,7 @@ argument-hint: [YYYY-Wnn]
 …判準文字…｜查證：關鍵字1、關鍵字2
 ```
 
-關鍵字須是**能在 `news/*.md` 直接 grep 到的字串**（產品名、issue 編號、版本號、機構名），不可是形容詞。日更 pipeline 會在**選材完成後**用這些關鍵字掃當日條目，命中則 append 至 `weekly/open-signals.jsonl` 供下期回收取用（見 `.claude/commands/news-pipeline-steps.md` Step 3d）。
+關鍵字須是**能在 `news/*.md` 直接 grep 到的字串**（產品名、issue 編號、版本號、機構名），不可是形容詞。日更 pipeline 會在**選材完成後**用這些關鍵字掃當日條目，命中則 append 至 `weekly/open-signals.jsonl` 供下期回收取用（見 `.claude/commands/news-pipeline-steps.md` Step 3e）。
 
 續盯條目若沿用的是舊判準（無查證線索），回收時補上——`scan_open_forecasts.py` 會對缺線索者印 ⚠️，那是提醒不是錯誤。
 

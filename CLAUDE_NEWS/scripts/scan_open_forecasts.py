@@ -11,7 +11,7 @@
 2. **只讀不寫日報** —— 不修改 news/，不影響當日產出；失敗只記錄不阻斷 pipeline。
 3. **必須在選材之後執行** —— 若選材階段知道週報正在賭什麼，會產生確認偏誤（選材傾向撿
    能證實預告的條目），命中率虛高，並破壞每月聚焦校準的獨立性（校準量測的正是選材品質，
-   兩者不得互相知情）。呼叫點固定在 `.claude/commands/news-pipeline-steps.md` Step 3d。
+   兩者不得互相知情）。呼叫點固定在 `.claude/commands/news-pipeline-steps.md` Step 3e。
 
 用法：
     python scripts/scan_open_forecasts.py 2026-08-02
