@@ -4,7 +4,7 @@
 僅收錄官方 changelog、release note 或官方公告來源；社群工具見 [[topics/community-tech-tools]]。
 每日更新：新增功能、更新熱度、補充社群回饋。
 
-**最後更新：** 2026-08-09
+**最後更新：** 2026-08-10
 
 ---
 
@@ -83,7 +83,7 @@
 | **Claude Code v2.1.211**（`--forward-subagent-text` 旗標，stream-json 輸出含 subagent 文字與思考內容） | 2026-07-15 | 🔥🔥 | ⚡ 有條件推薦 | 正式發布 |
 | **Claude Code v2.1.210**（收合工具摘要列即時耗時計數器、`Write(path)` 啟動警告） | 2026-07-14 | 🔥 | ⚡ 有條件推薦 | 正式發布 |
 | **Claude Code v2.1.207**（Auto mode 在 Bedrock/Vertex/Foundry 改預設開啟、修復終端機凍結） | 2026-07-11 | 🔥🔥 | ⚡ 有條件推薦 | 正式發布 |
-| **Claude Code Desktop 內建瀏覽器**（AI 可在外部網站讀取/點擊/輸入文字，雙方媒體來源，官方版本號待確認） | 2026-07-11 | 🔥🔥 | ⏳ 待驗證 | 待確認（雙方媒體，官方版本號仍未公布） |
+| **Claude Code Desktop 內建瀏覽器**（AI 可在外部網站讀取/點擊/輸入文字，雙方媒體來源，細節見下方詳情） | 2026-07-11 | 🔥🔥 | ⏳ 觀望 | 官方新功能（狀態未明，雙方媒體來源） |
 | **Claude Code v2.1.206**（`/cd` 目錄路徑建議、`/doctor` CLAUDE.md 精簡檢查） | 2026-07-10 | 🔥🔥 | ⚡ 有條件推薦 | 正式發布 |
 | **Reflect with Claude**（Settings 內使用模式儀表板，媒體廣泛報導但 HN 僅 29 分） | 2026-07-09 | 🔥🔥🔥🔥 | ⚡ 有條件推薦 | Preview |
 | **Claude Cowork 行動版 / 網頁版**（雲端持續執行，闔上裝置任務不中斷，首波 Max 訂閱戶，涵蓋政府客戶） | 2026-07-07 | 🔥🔥🔥🔥 | ⚡ 有條件推薦 | Preview（限 Max） |
@@ -161,7 +161,7 @@
 
 **是什麼：** Anthropic 官方文件確認 Claude Code 新增跨 session 訊息功能，需 Claude Code v2.1.224 以上、支援 macOS 與 Linux。條件滿足時該功能預設開啟、無需額外設定；用 `ListAgents` 探索可連線的其他 session，並以 `SendMessage` 指定名稱跨 session 傳訊；同一機制也涵蓋單一 session／team 內對 subagent 與隊友傳訊。
 
-**為何熱：** 原先僅有 MacRumors、The Mac Observer、finance.biggo.com、Inshorts、9to5Mac 等 5 家媒體同日報導（未經官方確認），今日查得官方文件正式驗證，是 multi-agent 協作基礎設施的重要一步，與 [[topics/official-community-gap]]「Agent 間直接通訊協定」列直接相關。
+**為何熱：** 原先僅有 MacRumors、The Mac Observer、finance.biggo.com、Inshorts、9to5Mac 等 5 家媒體同日報導（當時尚無官方佐證），今日查得官方文件正式驗證，是 multi-agent 協作基礎設施的重要一步，與 [[topics/official-community-gap]]「Agent 間直接通訊協定」列直接相關。
 
 **現在要試嗎：** 適合已在平行跑多個 Claude Code session、需要跨 session 交接工作的使用者，滿足版本與平台需求後直接可用；Windows 使用者暫不適用。
 
@@ -409,13 +409,13 @@ claude config set disableAutoMode true
 ---
 
 ### Claude Code Desktop 內建瀏覽器（待確認）
-**發布：** 2026-07-11（媒體報導，官方版本號待確認） | **熱度：** 🔥 | **試用價值：** ⏳ 待驗證 | **狀態：** 待確認（單一媒體來源）
+**發布：** 2026-07-11（媒體報導，官方版本號見下方注意事項） | **熱度：** 🔥 | **試用價值：** ⏳ 觀望 | **狀態：** 官方新功能（狀態未明，單一媒體來源）
 
 **是什麼：** The Mac Observer 報導 Anthropic 為 Claude Code Desktop 新增內建瀏覽器功能，讓使用者無需切離桌面應用即可瀏覽網頁內容。
 
 **為何熱：** 目前僅單一媒體來源，尚無官方 changelog / release notes 或社群討論佐證，熱度保守標記；後續若仍無官方或社群佐證，將降級或移除。
 
-**注意事項：** 功能存在與具體操作方式待官方確認。
+**注意事項：** ❓ **待查證**（標 2026-08-10｜查 Claude Code Desktop、內建瀏覽器）｜**功能是否存在與官方版本號**：僅 The Mac Observer 單一媒體來源，無官方 changelog／release notes 或社群討論佐證，具體操作方式與官方版本號尚未確認。
 
 ---
 
@@ -760,7 +760,7 @@ https://claude.com/blog/artifacts-in-claude-code
 
 **為何熱：** HN 2,448 分，近 2,000 評論。幾乎所有 benchmark SOTA，任務越長期越複雜優勢越大。首次讓開發者在一般工作流中使用 Mythos 等級推理能力。
 
-**注意事項：** 2026-07-01 起出口管制已解除，全球恢復存取；Pro/Max/Team 用戶 7/7 前享 50% 配額，之後配額政策待確認。詳見 [[entities/fable-5]]。
+**注意事項：** 2026-07-01 起出口管制已解除，全球恢復存取；Pro/Max/Team 用戶 7/7 前享 50% 配額；❓ **待查證**（標 2026-08-10｜查 [[entities/fable-5]]、7/7 後配額政策）｜**7/7 後配額政策**：官方尚未公布 7/7 期限後的配額規則。詳見 [[entities/fable-5]]。
 
 ---
 

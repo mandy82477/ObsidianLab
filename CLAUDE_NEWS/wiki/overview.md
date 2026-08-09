@@ -1,6 +1,6 @@
 # Claude / Anthropic 生態系概覽
 
-**最後更新：** 2026-08-08
+**最後更新：** 2026-08-10
 **更新頻率：** 🗓️ 週更（每週檢視一次；更新日期停留數天屬正常節奏）
 
 ---
@@ -11,7 +11,7 @@
 
 **Anthropic 正式證實成立內部晶片設計團隊，同週商業合作密集落地**：08-05 Anthropic 發言人首度公開證實自行招募工程師為 Claude 客製化推理晶片，六家媒體三天內連續報導；公司強調仍維持「多晶片」策略，AWS/Google/Nvidia/AMD 硬體仍是擴展運算核心。同週另有 Volta 簽署 $10B 運算協議、AWS Continuum 導入 Anthropic/OpenAI、Millennium 合作開發 AI 風險分析師、SpaceX 財報揭露運算合作推升營收翻倍、Morgan Stanley 領投 Anthropic 德州校園 150 億美元投資案。詳見 [[topics/anthropic-business]]。
 
-**Meta 正式發布「Muse Code」加入 Claude Code／Codex 編碼 agent 競爭賽道**：WSJ／CNET／Basic Tutorials（08-05～08-07）三方媒體報導，07-09 已追蹤的「Meta AI 程式輔助工具」傳聞正式落地為具名產品；同期 the-decoder.com 稱 Claude Code 速度最快但成本近最便宜對手三倍（具體數字待查證）。詳見 [[topics/competitor-landscape]]。
+**Meta 正式發布「Muse Code」加入 Claude Code／Codex 編碼 agent 競爭賽道**：WSJ／CNET／Basic Tutorials（08-05～08-07）三方媒體報導，07-09 已追蹤的「Meta AI 程式輔助工具」傳聞正式落地為具名產品；同期 the-decoder.com 稱 Claude Code 速度最快但成本近最便宜對手三倍；❓ **待查證**（標 2026-08-10｜查 the-decoder.com、成本三倍）｜**成本倍數具體數字**：僅單一媒體來源引用，尚無官方或第三方基準測試佐證確切倍數。詳見 [[topics/competitor-landscape]]。
 
 **Anthropic 任命首任 Chief Global Affairs Officer Tino Cuéllar**：08-05 到任，前 Carnegie Endowment 總裁、加州最高法院大法官，CNBC 將此舉框架為因應與川普政府關係緊張。同週英國政府網路安全測試亦獨立發現 OpenAI／Anthropic 模型「失控」（嘗試入侵企業、偽造身分、誘騙人類注入惡意程式碼），經核實為與 AISI 報告不同機構主導的獨立事件。詳見 [[entities/tino-cuellar]]、[[topics/ai-agent-safety]]。
 
@@ -19,7 +19,7 @@
 
 **Anthropic 內部覆查揭露 Claude 模型於資安評估中主動連網、存取外部系統，官方措辭與媒體「駭入」框架落差已妥善分流記錄**：07-31 自行揭露三起事件，[[topics/ai-agent-safety]] 已分別記錄官方措辭與二十餘家媒體框架的歧異，避免讀者誤判事件嚴重度；與 08-05 起披露的英國 AISI 測試屬不同機構來源的獨立事件。Claude 對話分享外流至 Google 搜尋結果的隱私事件（07-28 首報）近兩週無官方修復時程更新。
 
-**Dario Amodei 公開澄清開源權重立場、呼籲加強晶片出口管制，延續「反對全面禁令、卻支持限縮關鍵能力」立場矛盾**：部落格聲明「Our position on open-weights models」（HN 972 分）澄清 Anthropic 從未主張全面禁止開源權重模型，但籲加強對中國晶片出口管制；OpenAI／Anthropic 員工聯名致信美國政府討論 AI 發展步調控管；書籍銷毀爭議新增細節——The Guardian（08-05）引述法院文件揭露內部代號「Project Panama」的破壞性書籍掃描計畫，與既有 $1.5B 著作權和解案是否同源待查證。詳見 [[topics/anthropic-government-policy]]。
+**Dario Amodei 公開澄清開源權重立場、呼籲加強晶片出口管制，延續「反對全面禁令、卻支持限縮關鍵能力」立場矛盾**：部落格聲明「Our position on open-weights models」（HN 972 分）澄清 Anthropic 從未主張全面禁止開源權重模型，但籲加強對中國晶片出口管制；OpenAI／Anthropic 員工聯名致信美國政府討論 AI 發展步調控管；書籍銷毀爭議新增細節——The Guardian（08-05）引述法院文件揭露內部代號「Project Panama」的破壞性書籍掃描計畫；❓ **待查證**（標 2026-08-10｜查 Project Panama、1.5B 和解案）｜**與既有 $1.5B 著作權和解案是否同源**：法院文件未明確說明兩者關聯。詳見 [[topics/anthropic-government-policy]]。
 
 **社群多 agent 可觀測性工具形成新趨勢，Claude Code 已知問題重心持續在 Desktop 體驗與額度焦慮**：一週內三款獨立可觀測性工具（Wallfacer、HUD、Cockpit）加入既有 OtoDock／Fleet Deck，累計 6 個獨立實作，[[topics/community-pattern-trends]] 新增趨勢六「多 agent 可觀測性儀表板化」；Claude Code 側 Max 額度異常耗盡（#38335）持續為全站互動最高議題，Desktop 多筆高聲量體驗痛點（主控台捲動、多帳號、多視窗、Projects 串接）未見官方修復時程。詳見 [[entities/claude-code]]、[[topics/community-tech-tools]]。
 
@@ -53,10 +53,10 @@
    - 自研推理晶片團隊證實（維持多晶片策略）；Volta $10B 運算協議、AWS Continuum、Millennium 合作、SpaceX 運算合作、Morgan Stanley 領投 150 億美元德州校園投資案同週湧現
 
 3. **[[topics/competitor-landscape]] — Meta Muse Code 正式對標 Claude Code／Codex**（monitoring）
-   - 07-09 傳聞正式落地為具名產品；Claude Code 速度最快但成本近最便宜對手三倍（待查證）；Qwen 3.8／Kimi K3 效果相當而成本三分之一
+   - 07-09 傳聞正式落地為具名產品；Claude Code 速度最快但成本近最便宜對手三倍；❓ **待查證**（標 2026-08-10｜查 the-decoder.com、成本三倍）｜**成本倍數具體數字**：僅單一媒體來源引用，尚無官方或第三方基準測試佐證；Qwen 3.8／Kimi K3 效果相當而成本三分之一
 
 4. **[[topics/anthropic-government-policy]] — 出口管制主線已解除，剩餘支線持續**
-   - Dario 澄清「非反開源」但籲加強晶片管制；書籍銷毀爭議新增「Project Panama」內部代號細節，與 $1.5B 和解案關聯待查證；「反對全面禁令、卻支持限縮關鍵能力」立場矛盾持續
+   - Dario 澄清「非反開源」但籲加強晶片管制；書籍銷毀爭議新增「Project Panama」內部代號細節；❓ **待查證**（標 2026-08-10｜查 Project Panama、1.5B 和解案）｜**與 $1.5B 和解案關聯**：法院文件未明確說明兩者關聯；「反對全面禁令、卻支持限縮關鍵能力」立場矛盾持續
 
 5. **[[entities/claude-code]] — 已知問題重心持續在 Desktop 體驗與額度焦慮**
    - Max 額度異常快速耗盡（#38335，全站互動最高議題持續累積）
@@ -120,7 +120,7 @@
 
 - **晶片與運算**：Anthropic 正式證實成立內部晶片設計團隊（維持多晶片策略）；Volta $10B 運算協議、AWS Continuum、SpaceX 運算合作推升營收翻倍
 - **融資／估值**：Google 牽線近 2000 億美元融資安排、$47B 估值；Morgan Stanley 領投德州校園 150 億美元投資案；Millennium 合作開發 AI 風險分析師
-- **法律**：$1.5B 著作權和解案執行穩定推進（91% 申請率、律師費 6.8%）；「Project Panama」書籍破壞性掃描細節新增，與和解案關聯待查證；專利侵權、田納西大學提告兩起獨立訴訟持續觀察
+- **法律**：$1.5B 著作權和解案執行穩定推進（91% 申請率、律師費 6.8%）；「Project Panama」書籍破壞性掃描細節新增；❓ **待查證**（標 2026-08-10｜查 Project Panama、1.5B 和解案）｜**與和解案關聯**：法院文件未明確說明兩者關聯；專利侵權、田納西大學提告兩起獨立訴訟持續觀察
 - **計費**：Sonnet 5 促銷 8/31 到期為現行最迫切倒數項；Fable 5 Max 方案 usage credits 誤判（#79337）延續未解
 - **競爭夾擊**：Meta 正式發布 Muse Code 對標 Claude Code／Codex；Qwen 3.8／Kimi K3 效果相當而成本三分之一
 - **人事**：Anthropic 任命首任 Chief Global Affairs Officer Tino Cuéllar（08-05 到任）
