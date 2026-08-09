@@ -358,6 +358,10 @@ def iter_legacy(text: str, path: Path | None = None) -> list[LegacyHit]:
     """掃描舊字樣並分類。已是新語法者不重複計入。"""
     doc = Doc(text, path)
     new_spans = [(mk.start, mk.end) for mk in iter_pending(text, path)]
+    new_spans += [
+        mm.span() for mm in SHORT_RE.finditer(text)
+        if not doc.in_code(mm.start()) and not doc.in_frontmatter(mm.start())
+    ]
     out: list[LegacyHit] = []
     for m in LEGACY_RE.finditer(text):
         if any(a <= m.start() < b for a, b in new_spans):

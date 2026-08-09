@@ -63,6 +63,25 @@ class TestNewSyntaxParsing(unittest.TestCase):
         self.assertEqual(mod.iter_pending(text), [])
 
 
+class TestShortMarkerExcludedFromLegacy(unittest.TestCase):
+    """表格短標記 ❓ 待查證 ⟨Q-nn⟩ 是新語法，不該被 iter_legacy() 算成舊字樣。
+
+    2026-08-09 起 iter_legacy() 排除清單只含 iter_pending()（完整標準式）的 span，
+    漏排 SHORT_RE 的 span，導致已回填的表格短標記被 audit 誤計為「P 未回填」，
+    與 checker（只認新語法，判定合規）打架。"""
+
+    def test_table_short_marker_not_counted_as_legacy(self):
+        text = "| 某議題 | ❓ 待查證 ⟨Q-07⟩ | 2026-08-07 |\n"
+        self.assertEqual(mod.iter_legacy(text), [])
+
+    def test_short_marker_inside_code_block_stays_meta(self):
+        """code block 內的字樣本就走 M（code span）分類，與本次修復的排除邏輯無關；
+        這裡只確認 SHORT_RE 排除不會在 in_code 情境下拋錯或誤判成別的類別。"""
+        text = "```\n❓ 待查證 ⟨Q-01⟩\n```\n"
+        (hit,) = mod.iter_legacy(text)
+        self.assertEqual(hit.cls, "M")
+
+
 class TestSemanticInversion(unittest.TestCase):
     """字面相同、意思相反。誤判成待辦會讓已收斂的成功案例算成未結負債。"""
 

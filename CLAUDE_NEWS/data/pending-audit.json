@@ -2,12 +2,12 @@
   "tool": "scripts/audit_pending_markers.py",
   "pages_scanned": 60,
   "totals": {
-    "legacy_total": 436,
-    "already_new_syntax": 0,
-    "P": 388,
+    "legacy_total": 398,
+    "already_new_syntax": 33,
+    "P": 352,
     "M": 11,
     "R": 10,
-    "U": 27
+    "U": 25
   },
   "records": [
     {
@@ -502,26 +502,6 @@
       "backfilled": false
     },
     {
-      "id": "442169fa",
-      "page": "entities/claude-code",
-      "file": "wiki/entities/claude-code.md",
-      "line": 31,
-      "word": "待查證",
-      "cls": "P",
-      "cls_reason": "",
-      "shape": "callout",
-      "in_table_cell": false,
-      "cell_len": null,
-      "segment": "> - **資安**：已知問題新增 2 則 ❓ 待查證——Claude Code 與 Gemini CLI 漏洞可經 GitHub Issue 內容觸及 CI work",
-      "event_dates": [],
-      "wikilinks": [
-        "topics/ai-agent-safety"
-      ],
-      "domain": "🛠️ 工具/功能",
-      "reporter": "wiki-reporter-features",
-      "backfilled": false
-    },
-    {
       "id": "d6aec642",
       "page": "entities/claude-code",
       "file": "wiki/entities/claude-code.md",
@@ -533,38 +513,6 @@
       "in_table_cell": false,
       "cell_len": null,
       "segment": "解除 08-08 媒體報導階段「未經官方確認」的暫定狀態，已同步更新 [[topics/official-community-gap]]「Agent 間",
-      "event_dates": [
-        "2026-08-08",
-        "2026-08-07",
-        "2026-08-04",
-        "2026-08-04",
-        "2026-08-05",
-        "2026-08-09",
-        "2026-08-14"
-      ],
-      "wikilinks": [
-        "feature-radar",
-        "feature-radar",
-        "topics/official-community-gap",
-        "feature-radar",
-        "feature-radar"
-      ],
-      "domain": "🛠️ 工具/功能",
-      "reporter": "wiki-reporter-features",
-      "backfilled": false
-    },
-    {
-      "id": "3cace78e",
-      "page": "entities/claude-code",
-      "file": "wiki/entities/claude-code.md",
-      "line": 38,
-      "word": "待查證",
-      "cls": "P",
-      "cls_reason": "",
-      "shape": "prose",
-      "in_table_cell": false,
-      "cell_len": null,
-      "segment": "另依互動門檻自行收錄 1 則日報未選之待查證問題（GitHub Issue 處理時 prompt 過長，issue #23377，累積 43 則留言、38 個",
       "event_dates": [
         "2026-08-08",
         "2026-08-07",
@@ -622,72 +570,6 @@
       "backfilled": false
     },
     {
-      "id": "449fc9a9",
-      "page": "entities/claude-code",
-      "file": "wiki/entities/claude-code.md",
-      "line": 65,
-      "word": "待查證",
-      "cls": "P",
-      "cls_reason": "",
-      "shape": "list",
-      "in_table_cell": false,
-      "cell_len": null,
-      "segment": "- ❓ **待查證（2026-08-07 報導，僅標題）**",
-      "event_dates": [
-        "2026-08-07"
-      ],
-      "wikilinks": [
-        "topics/ai-agent-safety"
-      ],
-      "domain": "🛠️ 工具/功能",
-      "reporter": "wiki-reporter-features",
-      "backfilled": false
-    },
-    {
-      "id": "5e721177",
-      "page": "entities/claude-code",
-      "file": "wiki/entities/claude-code.md",
-      "line": 66,
-      "word": "待查證",
-      "cls": "P",
-      "cls_reason": "",
-      "shape": "list",
-      "in_table_cell": false,
-      "cell_len": null,
-      "segment": "- ❓ **待查證（2026-08-04 報導，僅標題）**",
-      "event_dates": [
-        "2026-08-04"
-      ],
-      "wikilinks": [
-        "topics/ai-agent-safety"
-      ],
-      "domain": "🛠️ 工具/功能",
-      "reporter": "wiki-reporter-features",
-      "backfilled": false
-    },
-    {
-      "id": "584d484a",
-      "page": "entities/claude-code",
-      "file": "wiki/entities/claude-code.md",
-      "line": 67,
-      "word": "待查證",
-      "cls": "P",
-      "cls_reason": "",
-      "shape": "list",
-      "in_table_cell": false,
-      "cell_len": null,
-      "segment": "- ❓ **待查證（2026-07-21 報導，至今無後續）**",
-      "event_dates": [
-        "2026-07-21"
-      ],
-      "wikilinks": [
-        "topics/ai-agent-safety"
-      ],
-      "domain": "🛠️ 工具/功能",
-      "reporter": "wiki-reporter-features",
-      "backfilled": false
-    },
-    {
       "id": "5fc343d2",
       "page": "entities/claude-code",
       "file": "wiki/entities/claude-code.md",
@@ -740,70 +622,6 @@
       "backfilled": false
     },
     {
-      "id": "2e7c39d7",
-      "page": "entities/claude-code",
-      "file": "wiki/entities/claude-code.md",
-      "line": 69,
-      "word": "待查證",
-      "cls": "P",
-      "cls_reason": "",
-      "shape": "list",
-      "in_table_cell": false,
-      "cell_len": null,
-      "segment": "- ❓ **待查證（2026-05-19 指控，至今無後續）**",
-      "event_dates": [
-        "2026-05-19"
-      ],
-      "wikilinks": [
-        "topics/ai-agent-safety"
-      ],
-      "domain": "🛠️ 工具/功能",
-      "reporter": "wiki-reporter-features",
-      "backfilled": false
-    },
-    {
-      "id": "b4e8d3da",
-      "page": "entities/claude-code",
-      "file": "wiki/entities/claude-code.md",
-      "line": 70,
-      "word": "待查證",
-      "cls": "P",
-      "cls_reason": "",
-      "shape": "list",
-      "in_table_cell": false,
-      "cell_len": null,
-      "segment": "- ❓ **待查證（2026-04-27 指控，至今無後續）**",
-      "event_dates": [
-        "2026-04-27"
-      ],
-      "wikilinks": [],
-      "domain": "🛠️ 工具/功能",
-      "reporter": "wiki-reporter-features",
-      "backfilled": false
-    },
-    {
-      "id": "3f79364d",
-      "page": "entities/claude-code",
-      "file": "wiki/entities/claude-code.md",
-      "line": 71,
-      "word": "待查證",
-      "cls": "P",
-      "cls_reason": "",
-      "shape": "list",
-      "in_table_cell": false,
-      "cell_len": null,
-      "segment": "- ❓ **待查證（2026-05-20 指控，至今無後續）**",
-      "event_dates": [
-        "2026-05-20"
-      ],
-      "wikilinks": [
-        "topics/ai-agent-safety"
-      ],
-      "domain": "🛠️ 工具/功能",
-      "reporter": "wiki-reporter-features",
-      "backfilled": false
-    },
-    {
       "id": "02fa212e",
       "page": "entities/claude-code",
       "file": "wiki/entities/claude-code.md",
@@ -816,218 +634,6 @@
       "cell_len": null,
       "segment": "### 🧠 行為與品質（35 條未修復、1 條拒修、8 條待查證）",
       "event_dates": [],
-      "wikilinks": [],
-      "domain": "🛠️ 工具/功能",
-      "reporter": "wiki-reporter-features",
-      "backfilled": false
-    },
-    {
-      "id": "f2e2105b",
-      "page": "entities/claude-code",
-      "file": "wiki/entities/claude-code.md",
-      "line": 101,
-      "word": "待查證",
-      "cls": "P",
-      "cls_reason": "",
-      "shape": "list",
-      "in_table_cell": false,
-      "cell_len": null,
-      "segment": "- ❓ **待查證（僅標題可判斷，細節有限）**",
-      "event_dates": [
-        "2026-08-08",
-        "2026-08-09"
-      ],
-      "wikilinks": [],
-      "domain": "🛠️ 工具/功能",
-      "reporter": "wiki-reporter-features",
-      "backfilled": false
-    },
-    {
-      "id": "43742972",
-      "page": "entities/claude-code",
-      "file": "wiki/entities/claude-code.md",
-      "line": 105,
-      "word": "待查證",
-      "cls": "P",
-      "cls_reason": "",
-      "shape": "list",
-      "in_table_cell": false,
-      "cell_len": null,
-      "segment": "- ❓ **待查證（已關閉為 duplicate，實際修復狀態未確認）**",
-      "event_dates": [
-        "2026-04-10",
-        "2026-08-09"
-      ],
-      "wikilinks": [
-        "topics/code-quality-decline"
-      ],
-      "domain": "🛠️ 工具/功能",
-      "reporter": "wiki-reporter-features",
-      "backfilled": false
-    },
-    {
-      "id": "86ac55b0",
-      "page": "entities/claude-code",
-      "file": "wiki/entities/claude-code.md",
-      "line": 129,
-      "word": "待查證",
-      "cls": "P",
-      "cls_reason": "",
-      "shape": "list",
-      "in_table_cell": false,
-      "cell_len": null,
-      "segment": "- ❓ **待查證（尚待官方受理，非已修復或拒絕）**",
-      "event_dates": [
-        "2026-07-18",
-        "2026-07-30"
-      ],
-      "wikilinks": [],
-      "domain": "🛠️ 工具/功能",
-      "reporter": "wiki-reporter-features",
-      "backfilled": false
-    },
-    {
-      "id": "86ac55b0",
-      "page": "entities/claude-code",
-      "file": "wiki/entities/claude-code.md",
-      "line": 130,
-      "word": "待查證",
-      "cls": "P",
-      "cls_reason": "",
-      "shape": "list",
-      "in_table_cell": false,
-      "cell_len": null,
-      "segment": "- ❓ **待查證（尚待官方受理，非已修復或拒絕）**",
-      "event_dates": [
-        "2026-07-31",
-        "2026-04-24"
-      ],
-      "wikilinks": [],
-      "domain": "🛠️ 工具/功能",
-      "reporter": "wiki-reporter-features",
-      "backfilled": false
-    },
-    {
-      "id": "bc2ac716",
-      "page": "entities/claude-code",
-      "file": "wiki/entities/claude-code.md",
-      "line": 133,
-      "word": "待查證",
-      "cls": "P",
-      "cls_reason": "",
-      "shape": "list",
-      "in_table_cell": false,
-      "cell_len": null,
-      "segment": "- ❓ **待查證（2026-07-03 指控，至今無後續）**",
-      "event_dates": [
-        "2026-07-03"
-      ],
-      "wikilinks": [],
-      "domain": "🛠️ 工具/功能",
-      "reporter": "wiki-reporter-features",
-      "backfilled": false
-    },
-    {
-      "id": "37e2576e",
-      "page": "entities/claude-code",
-      "file": "wiki/entities/claude-code.md",
-      "line": 136,
-      "word": "待查證",
-      "cls": "P",
-      "cls_reason": "",
-      "shape": "list",
-      "in_table_cell": false,
-      "cell_len": null,
-      "segment": "- ❓ **待查證（2026-06-22 指控，至今無後續）**",
-      "event_dates": [
-        "2026-06-22"
-      ],
-      "wikilinks": [
-        "topics/code-quality-decline"
-      ],
-      "domain": "🛠️ 工具/功能",
-      "reporter": "wiki-reporter-features",
-      "backfilled": false
-    },
-    {
-      "id": "f177f2e7",
-      "page": "entities/claude-code",
-      "file": "wiki/entities/claude-code.md",
-      "line": 143,
-      "word": "待查證",
-      "cls": "P",
-      "cls_reason": "",
-      "shape": "list",
-      "in_table_cell": false,
-      "cell_len": null,
-      "segment": "- ❓ **待查證（2026-07-06 指控，至今無後續，2026-08-02 讚數更新）**",
-      "event_dates": [
-        "2026-07-06",
-        "2026-08-02"
-      ],
-      "wikilinks": [],
-      "domain": "🛠️ 工具/功能",
-      "reporter": "wiki-reporter-features",
-      "backfilled": false
-    },
-    {
-      "id": "2318110c",
-      "page": "entities/claude-code",
-      "file": "wiki/entities/claude-code.md",
-      "line": 143,
-      "word": "待確認",
-      "cls": "P",
-      "cls_reason": "",
-      "shape": "list",
-      "in_table_cell": false,
-      "cell_len": null,
-      "segment": "r 功能觸發後偶發 API 無回應錯誤，官方尚未回應或說明原因，成因是否與 Advisor 功能本身或底層 API 相關待確認",
-      "event_dates": [
-        "2026-07-06",
-        "2026-08-02"
-      ],
-      "wikilinks": [],
-      "domain": "🛠️ 工具/功能",
-      "reporter": "wiki-reporter-features",
-      "backfilled": false
-    },
-    {
-      "id": "4162b83d",
-      "page": "entities/claude-code",
-      "file": "wiki/entities/claude-code.md",
-      "line": 144,
-      "word": "待查證",
-      "cls": "U",
-      "cls_reason": "脈絡過短（11 字元）",
-      "shape": "list",
-      "in_table_cell": false,
-      "cell_len": null,
-      "segment": "- ❓ **待查證**",
-      "event_dates": [
-        "2026-07-07",
-        "2026-07-26"
-      ],
-      "wikilinks": [],
-      "domain": "🛠️ 工具/功能",
-      "reporter": "wiki-reporter-features",
-      "backfilled": false
-    },
-    {
-      "id": "39584b50",
-      "page": "entities/claude-code",
-      "file": "wiki/entities/claude-code.md",
-      "line": 144,
-      "word": "待查證",
-      "cls": "P",
-      "cls_reason": "",
-      "shape": "list",
-      "in_table_cell": false,
-      "cell_len": null,
-      "segment": "留言數自 39 增至 77，顯示社群開始大量驗證此觀察，仍暫列待查證",
-      "event_dates": [
-        "2026-07-07",
-        "2026-07-26"
-      ],
       "wikilinks": [],
       "domain": "🛠️ 工具/功能",
       "reporter": "wiki-reporter-features",
@@ -1052,31 +658,6 @@
       "backfilled": false
     },
     {
-      "id": "f6dd3b8b",
-      "page": "entities/claude-code",
-      "file": "wiki/entities/claude-code.md",
-      "line": 157,
-      "word": "待確認",
-      "cls": "P",
-      "cls_reason": "",
-      "shape": "list",
-      "in_table_cell": false,
-      "cell_len": null,
-      "segment": "協定）同屬 agent 間直接通訊缺口，本則同機 session 訴求已由官方對應，#28300 的跨機器範圍是否涵蓋仍待確認",
-      "event_dates": [
-        "2026-07-08",
-        "2026-07-30",
-        "2026-08-08",
-        "2026-08-09"
-      ],
-      "wikilinks": [
-        "topics/official-community-gap"
-      ],
-      "domain": "🛠️ 工具/功能",
-      "reporter": "wiki-reporter-features",
-      "backfilled": false
-    },
-    {
       "id": "b5109cb4",
       "page": "entities/claude-code",
       "file": "wiki/entities/claude-code.md",
@@ -1091,6 +672,7 @@
       "event_dates": [
         "2026-07-08",
         "2026-07-30",
+        "2026-08-09",
         "2026-08-08",
         "2026-08-09"
       ],
@@ -1116,32 +698,13 @@
       "event_dates": [
         "2026-07-08",
         "2026-07-30",
+        "2026-08-09",
         "2026-08-08",
         "2026-08-09"
       ],
       "wikilinks": [
         "topics/official-community-gap"
       ],
-      "domain": "🛠️ 工具/功能",
-      "reporter": "wiki-reporter-features",
-      "backfilled": false
-    },
-    {
-      "id": "5c8f8864",
-      "page": "entities/claude-code",
-      "file": "wiki/entities/claude-code.md",
-      "line": 161,
-      "word": "待查證",
-      "cls": "P",
-      "cls_reason": "",
-      "shape": "list",
-      "in_table_cell": false,
-      "cell_len": null,
-      "segment": "- ❓ **待查證（2026-04-30 指控，至今無後續）**",
-      "event_dates": [
-        "2026-04-30"
-      ],
-      "wikilinks": [],
       "domain": "🛠️ 工具/功能",
       "reporter": "wiki-reporter-features",
       "backfilled": false
@@ -1159,68 +722,6 @@
       "cell_len": null,
       "segment": "### 🔌 平台相容性（49 條未修復、3 條待查證）",
       "event_dates": [],
-      "wikilinks": [],
-      "domain": "🛠️ 工具/功能",
-      "reporter": "wiki-reporter-features",
-      "backfilled": false
-    },
-    {
-      "id": "86ac55b0",
-      "page": "entities/claude-code",
-      "file": "wiki/entities/claude-code.md",
-      "line": 208,
-      "word": "待查證",
-      "cls": "P",
-      "cls_reason": "",
-      "shape": "list",
-      "in_table_cell": false,
-      "cell_len": null,
-      "segment": "- ❓ **待查證（尚待官方受理，非已修復或拒絕）**",
-      "event_dates": [
-        "2026-07-16",
-        "2026-07-31"
-      ],
-      "wikilinks": [],
-      "domain": "🛠️ 工具/功能",
-      "reporter": "wiki-reporter-features",
-      "backfilled": false
-    },
-    {
-      "id": "86ac55b0",
-      "page": "entities/claude-code",
-      "file": "wiki/entities/claude-code.md",
-      "line": 211,
-      "word": "待查證",
-      "cls": "P",
-      "cls_reason": "",
-      "shape": "list",
-      "in_table_cell": false,
-      "cell_len": null,
-      "segment": "- ❓ **待查證（尚待官方受理，非已修復或拒絕）**",
-      "event_dates": [
-        "2026-07-30"
-      ],
-      "wikilinks": [],
-      "domain": "🛠️ 工具/功能",
-      "reporter": "wiki-reporter-features",
-      "backfilled": false
-    },
-    {
-      "id": "d117c1d9",
-      "page": "entities/claude-code",
-      "file": "wiki/entities/claude-code.md",
-      "line": 237,
-      "word": "待查證",
-      "cls": "P",
-      "cls_reason": "",
-      "shape": "list",
-      "in_table_cell": false,
-      "cell_len": null,
-      "segment": "- ❓ **待查證（2026-05-07 指控，至今無後續）**",
-      "event_dates": [
-        "2026-05-07",
-        "2026-07-07"
-      ],
       "wikilinks": [],
       "domain": "🛠️ 工具/功能",
       "reporter": "wiki-reporter-features",
@@ -1245,70 +746,10 @@
       "backfilled": false
     },
     {
-      "id": "b4e8d3da",
-      "page": "entities/claude-code",
-      "file": "wiki/entities/claude-code.md",
-      "line": 283,
-      "word": "待查證",
-      "cls": "P",
-      "cls_reason": "",
-      "shape": "list",
-      "in_table_cell": false,
-      "cell_len": null,
-      "segment": "- ❓ **待查證（2026-04-27 指控，至今無後續）**",
-      "event_dates": [
-        "2026-04-27"
-      ],
-      "wikilinks": [],
-      "domain": "🛠️ 工具/功能",
-      "reporter": "wiki-reporter-features",
-      "backfilled": false
-    },
-    {
-      "id": "228fb1d6",
-      "page": "entities/claude-code",
-      "file": "wiki/entities/claude-code.md",
-      "line": 298,
-      "word": "待查證",
-      "cls": "P",
-      "cls_reason": "",
-      "shape": "table",
-      "in_table_cell": true,
-      "cell_len": 169,
-      "segment": "`mid-conversation-tool-chan[nel]` 相關的 API 功能，原文於此處截斷，完整名稱與細節待查證，請勿臆測（見 [Release](https://github.com/anthropics/anthropic",
-      "event_dates": [
-        "2026-08-07"
-      ],
-      "wikilinks": [],
-      "domain": "🛠️ 工具/功能",
-      "reporter": "wiki-reporter-features",
-      "backfilled": false
-    },
-    {
-      "id": "6c236bb7",
-      "page": "entities/claude-code",
-      "file": "wiki/entities/claude-code.md",
-      "line": 299,
-      "word": "待查證",
-      "cls": "P",
-      "cls_reason": "",
-      "shape": "table",
-      "in_table_cell": true,
-      "cell_len": 164,
-      "segment": "Changelog 於顯示異動類別前遭截斷，無法判斷屬 Features 或 Bug Fixes，暫記版本表待查證（見 [Release](https://github.com/anthropics/anthropic-sdk-",
-      "event_dates": [
-        "2026-08-07"
-      ],
-      "wikilinks": [],
-      "domain": "🛠️ 工具/功能",
-      "reporter": "wiki-reporter-features",
-      "backfilled": false
-    },
-    {
       "id": "2d6c07be",
       "page": "entities/claude-code",
       "file": "wiki/entities/claude-code.md",
-      "line": 477,
+      "line": 481,
       "word": "未經官方確認",
       "cls": "R",
       "cls_reason": "PRE「解除」",
@@ -1333,7 +774,7 @@
       "id": "77edf0ba",
       "page": "entities/claude-code",
       "file": "wiki/entities/claude-code.md",
-      "line": 477,
+      "line": 481,
       "word": "待查證",
       "cls": "R",
       "cls_reason": "POST「轉為」",
@@ -1350,276 +791,6 @@
         "feature-radar",
         "feature-radar"
       ],
-      "domain": "🛠️ 工具/功能",
-      "reporter": "wiki-reporter-features",
-      "backfilled": false
-    },
-    {
-      "id": "c9359e46",
-      "page": "entities/claude-code",
-      "file": "wiki/entities/claude-code.md",
-      "line": 477,
-      "word": "待查證",
-      "cls": "U",
-      "cls_reason": "巨型儲存格（934 字元，含多筆）",
-      "shape": "table",
-      "in_table_cell": true,
-      "cell_len": 934,
-      "segment": "另依互動門檻自行收錄 1 則日報未選之待查證問題：GitHub Issue 處理時 prompt 過長（issue #23377，43 則留言、38 個讚，僅",
-      "event_dates": [
-        "2026-08-09",
-        "2026-08-14"
-      ],
-      "wikilinks": [
-        "topics/official-community-gap",
-        "feature-radar",
-        "feature-radar"
-      ],
-      "domain": "🛠️ 工具/功能",
-      "reporter": "wiki-reporter-features",
-      "backfilled": false
-    },
-    {
-      "id": "103119f2",
-      "page": "entities/claude-code",
-      "file": "wiki/entities/claude-code.md",
-      "line": 478,
-      "word": "待查證",
-      "cls": "P",
-      "cls_reason": "",
-      "shape": "table",
-      "in_table_cell": true,
-      "cell_len": 908,
-      "segment": "1.0（Features，`mid-conversation-tool-chan[nel]` 相關 API，原文截斷細節待查證）、anthropic-sdk-typescript google-cloud-sdk v0.0.7（異動類別遭截",
-      "event_dates": [
-        "2026-08-08",
-        "2026-08-07",
-        "2026-08-14"
-      ],
-      "wikilinks": [
-        "feature-radar",
-        "topics/official-community-gap"
-      ],
-      "domain": "🛠️ 工具/功能",
-      "reporter": "wiki-reporter-features",
-      "backfilled": false
-    },
-    {
-      "id": "d68cb25a",
-      "page": "entities/claude-code",
-      "file": "wiki/entities/claude-code.md",
-      "line": 489,
-      "word": "待查證",
-      "cls": "P",
-      "cls_reason": "",
-      "shape": "table",
-      "in_table_cell": true,
-      "cell_len": 399,
-      "segment": "轉述一則低互動（16 分）推文稱 Anthropic 為 Opus 5／Fable 5 移除逾 80% 系統提示詞，列為待查證傳聞",
-      "event_dates": [
-        "2026-07-25"
-      ],
-      "wikilinks": [],
-      "domain": "🛠️ 工具/功能",
-      "reporter": "wiki-reporter-features",
-      "backfilled": false
-    },
-    {
-      "id": "df12b5c8",
-      "page": "entities/claude-code",
-      "file": "wiki/entities/claude-code.md",
-      "line": 490,
-      "word": "待查證",
-      "cls": "P",
-      "cls_reason": "",
-      "shape": "table",
-      "in_table_cell": true,
-      "cell_len": 940,
-      "segment": "ddit 使用者反映 Claude Security 外掛（Beta）無 Workflow tool 存取權限（單一來源待查證），見 [[entities/claude-security]]",
-      "event_dates": [
-        "2026-07-24",
-        "2026-07-23"
-      ],
-      "wikilinks": [
-        "feature-radar",
-        "entities/claude-security"
-      ],
-      "domain": "🛠️ 工具/功能",
-      "reporter": "wiki-reporter-features",
-      "backfilled": false
-    },
-    {
-      "id": "741ac876",
-      "page": "entities/claude-code",
-      "file": "wiki/entities/claude-code.md",
-      "line": 490,
-      "word": "待查證",
-      "cls": "P",
-      "cls_reason": "",
-      "shape": "table",
-      "in_table_cell": true,
-      "cell_len": 940,
-      "segment": "ia 報導「Agent Island」工具更新讓 Claude Code 狀態資訊保留在本機，僅標題可用，是否為官方產物待查證，暫未收錄",
-      "event_dates": [
-        "2026-07-24",
-        "2026-07-23"
-      ],
-      "wikilinks": [
-        "feature-radar",
-        "entities/claude-security"
-      ],
-      "domain": "🛠️ 工具/功能",
-      "reporter": "wiki-reporter-features",
-      "backfilled": false
-    },
-    {
-      "id": "910f2360",
-      "page": "entities/claude-code",
-      "file": "wiki/entities/claude-code.md",
-      "line": 491,
-      "word": "待核實",
-      "cls": "P",
-      "cls_reason": "",
-      "shape": "table",
-      "in_table_cell": true,
-      "cell_len": 1152,
-      "segment": "pple 模擬器中），四家媒體同步但無官方 GitHub release 或 blog 公告佐證具體版本或發布管道，列為待核實、未收錄 feature-radar",
-      "event_dates": [
-        "2026-07-22",
-        "2026-07-23"
-      ],
-      "wikilinks": [
-        "feature-radar",
-        "entities/managed-agents"
-      ],
-      "domain": "🛠️ 工具/功能",
-      "reporter": "wiki-reporter-features",
-      "backfilled": false
-    },
-    {
-      "id": "2c033d1b",
-      "page": "entities/claude-code",
-      "file": "wiki/entities/claude-code.md",
-      "line": 491,
-      "word": "待核實",
-      "cls": "P",
-      "cls_reason": "",
-      "shape": "table",
-      "in_table_cell": true,
-      "cell_len": 1152,
-      "segment": "opic 說明如何在 Web、Code、Cowork 三介面圍欄化（contain）Claude 行為，僅標題可用，細節待核實，與既有沙盒／`hard_deny` 安全機制主題相關",
-      "event_dates": [
-        "2026-07-22",
-        "2026-07-23"
-      ],
-      "wikilinks": [
-        "feature-radar",
-        "entities/managed-agents"
-      ],
-      "domain": "🛠️ 工具/功能",
-      "reporter": "wiki-reporter-features",
-      "backfilled": false
-    },
-    {
-      "id": "b832026c",
-      "page": "entities/claude-code",
-      "file": "wiki/entities/claude-code.md",
-      "line": 492,
-      "word": "待查證",
-      "cls": "P",
-      "cls_reason": "",
-      "shape": "table",
-      "in_table_cell": true,
-      "cell_len": 841,
-      "segment": "y 終端機內多代理漏洞掃描外掛 Beta 版，與既有 Enterprise 版 Claude Security 定位關係待查證，見 [[entities/claude-security]]",
-      "event_dates": [
-        "2026-07-23"
-      ],
-      "wikilinks": [
-        "entities/claude-security"
-      ],
-      "domain": "🛠️ 工具/功能",
-      "reporter": "wiki-reporter-features",
-      "backfilled": false
-    },
-    {
-      "id": "93542bce",
-      "page": "entities/claude-code",
-      "file": "wiki/entities/claude-code.md",
-      "line": 492,
-      "word": "待核實",
-      "cls": "P",
-      "cls_reason": "",
-      "shape": "table",
-      "in_table_cell": true,
-      "cell_len": 841,
-      "segment": "talog 報導 Claude 語音模式（Voice Mode）將新增 Opus／Sonnet 模型選項，僅標題可用細節待核實",
-      "event_dates": [
-        "2026-07-23"
-      ],
-      "wikilinks": [
-        "entities/claude-security"
-      ],
-      "domain": "🛠️ 工具/功能",
-      "reporter": "wiki-reporter-features",
-      "backfilled": false
-    },
-    {
-      "id": "740110c0",
-      "page": "entities/claude-code",
-      "file": "wiki/entities/claude-code.md",
-      "line": 493,
-      "word": "待查證",
-      "cls": "P",
-      "cls_reason": "",
-      "shape": "table",
-      "in_table_cell": true,
-      "cell_len": 564,
-      "segment": "de 已修補 agentic 權限層中的 Bash 與 Unicode 繞過漏洞，惟原文未提供版本號或官方公告佐證，列為待查證（見「已知問題」🛡️ 安全與隱私）",
-      "event_dates": [
-        "2026-07-21"
-      ],
-      "wikilinks": [],
-      "domain": "🛠️ 工具/功能",
-      "reporter": "wiki-reporter-features",
-      "backfilled": false
-    },
-    {
-      "id": "348c7f49",
-      "page": "entities/claude-code",
-      "file": "wiki/entities/claude-code.md",
-      "line": 532,
-      "word": "待確認",
-      "cls": "P",
-      "cls_reason": "",
-      "shape": "table",
-      "in_table_cell": true,
-      "cell_len": 132,
-      "segment": "-has-come（配額將至時自動收尾任務）、Ungate（Claude Max 訂閱路由至 Cursor，ToS 風險待確認）",
-      "event_dates": [
-        "2026-05-15"
-      ],
-      "wikilinks": [],
-      "domain": "🛠️ 工具/功能",
-      "reporter": "wiki-reporter-features",
-      "backfilled": false
-    },
-    {
-      "id": "ff7af7b6",
-      "page": "entities/claude-code",
-      "file": "wiki/entities/claude-code.md",
-      "line": 576,
-      "word": "存疑",
-      "cls": "P",
-      "cls_reason": "",
-      "shape": "table",
-      "in_table_cell": true,
-      "cell_len": 94,
-      "segment": "新工具：Governor（token 浪費優化插件，HN 社群存疑）、Caliber（888 stars，統一管理 CLAUDE.md/.cursor/rules/AGENTS.md",
-      "event_dates": [
-        "2026-05-02"
-      ],
-      "wikilinks": [],
       "domain": "🛠️ 工具/功能",
       "reporter": "wiki-reporter-features",
       "backfilled": false
