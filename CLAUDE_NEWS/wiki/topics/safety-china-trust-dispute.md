@@ -19,7 +19,7 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 **狀態：** monitoring（核心「後門」敘事自 07-10 雙方首度正面否認後未見新進展，轉低頻觀察；新出現的相關但獨立事件見下方說明）
 **領域：** 🏛️ 政策/安全
 **開始日期：** 2026-06-30
-**最後更新：** 2026-08-08
+**最後更新：** 2026-08-10
 **最後新聞更新：** 2026-07-11
 
 > **最新動態**（2026-07-10，議題轉入低頻觀察）
@@ -97,7 +97,7 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 ### 「embedded spyware」指控：Anthropic 定調為內部「實驗」（2026-07-07）
 
 - **揭露來源**：Malwarebytes「Claude Code's hidden tracker was an "experiment," says Anthropic」；The Neuron Daily「Anthropic found Claude's hidden workspace」；Axios（06-07-06）
-- **狀態轉折**：Anthropic 對 06-30 起追蹤的「embedded spyware」單方指控首次正式回應，將先前被指控的「隱藏追蹤器」定調為內部**實驗**（experiment）性質，非惡意設計
+- **狀態轉折**：Anthropic 對 06-30 起追蹤的「embedded spyware」指控首次正式回應，將先前被指控的「隱藏追蹤器」定調為內部**實驗**（experiment）性質，非惡意設計。❓ **待查證**（標 2026-08-10｜查 embedded spyware、hidden tracker）：指控是否經第三方資安機構驗證，抑或僅為 Anthropic 單方主張，尚未確認
 - **附帶機制說明**：Anthropic 同時說明 Claude 內部存在「隱藏工作空間」（hidden workspace）機制（「Claude has carved out its own space to ponder」）；此說明與先前指控的關聯性未完全釐清
 - **可信度評估**：官方（Anthropic）首次正式回應，屬「官方確認」等級，但「實驗」是官方單方框架，不等於指控內容或動機已獲第三方資安機構驗證；社群（原指控發起者）是否接受此說法尚未見後續回應
 
