@@ -125,6 +125,22 @@
 **新增 wiki 頁面時的判斷標準：**
 > 這個主題已有足夠的具體資訊（名稱 + 狀態 + 至少一個事件）嗎？若今日首見，先附記在相關頁面的歷史記錄，明天再評估是否建頁。
 
+### 🔗 連結與嵌入語法
+
+`wiki/` 正文只使用**裸路徑 wikilink**，其餘 Obsidian 連結語法一律不得寫入——web reader 的解析器（`web_reader/assets/app.js` 的 `wikilinkButtonHtml()`）只認裸路徑，其他寫法在 Obsidian 正常、在網站上壞掉：
+
+| 語法 | 用途 | 判斷 |
+|------|------|------|
+| `[[entities/x]]`、`[[topics/x]]` | 內部連結（含目錄前綴）| ✅ 標準寫法；網站自動顯示中文頁名，**不需手寫別名** |
+| `[[feature-radar]]`、`[[news/YYYY-MM-DD]]` | 根頁面、日報連結 | ✅ |
+| `[[頁面\|別名]]` | 別名顯示 | ❌ 解析器不切 `\|`，整串當 slug → 顯示原始字串且點擊 404 |
+| `[[頁面#標題]]`、`[[頁面#^區塊]]` | 錨點連結 | ❌ 同上；且建置會誤報「斷鏈 wikilink」 |
+| `![[頁面]]`、`![[圖片.png\|300]]` | 嵌入 / 轉引 | ❌ 網站無嵌入渲染，原樣輸出 `![[...]]` |
+
+指向某頁特定段落時，寫 `詳見 [[topics/x]] 的「快速選型表」`，不用 `#` 錨點。
+
+> 要改用別名、錨點或嵌入 → 先擴充 `web_reader/assets/app.js` 的 `wikilinkButtonHtml()` 與 `scripts/build_web.py` 的 `check_wikilinks()`，不可只改 wiki 內文。
+
 ### ✏️ 修改 rules 或 commands 時的注意事項
 
 **修改任何 `CLAUDE.md`、`.claude/commands/`、`.claude/rules/` 中的檔案後，必須確保所有相關指令仍可正確執行，執行 `/review-commands` 直到零錯誤為止。**
