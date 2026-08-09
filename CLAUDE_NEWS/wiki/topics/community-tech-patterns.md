@@ -14,16 +14,18 @@ top_source: "devto"
 signal: "健康"
 generated_by: "scripts/gen_wiki_frontmatter.py"
 ---
+
+
 # 社群實戰模式庫
 
 **狀態：** monitoring
 **領域：** 🌐 社群
 **開始日期：** 2026-04-25
-**最後更新：** 2026-08-09
+**最後更新：** 2026-08-10
 **最後新聞更新：** 2026-08-09
 
 > **最新工作流模式**（2026-08-09）
-> 社群同日出現兩款鎖定跨 coding agent 的協調工具 loopx、HarnessFlow，延續 08-05 omnigent 的「harness 無關」取向，但星數（3641／516）目前缺乏 fork／issue／commit 佐證，依防刷規則標「待查證」；另收錄兩篇 dev.to 第一手實作／反思文（生產環境 memory leak 系統化除錯、筆記系統半年演化回顧）。
+> 社群同日出現兩款鎖定跨 coding agent 的協調工具 loopx、HarnessFlow，延續 08-05 omnigent 的「harness 無關」取向；❓ **待查證**（標 2026-08-10｜查 loopx、HarnessFlow）｜**星數真實性**：星數（3641／516）目前缺乏 fork／issue／commit 佐證，依防刷規則標記；另收錄兩篇 dev.to 第一手實作／反思文（生產環境 memory leak 系統化除錯、筆記系統半年演化回顧）。
 
 ---
 
@@ -51,7 +53,7 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 | **Token / 成本優化** | MCP Code Execution、Token Bloat 對策、本機圖資料庫索引、穴居人模式（Caveman）企業採用、claude-thermos（session 快取保活）、pxpipe（圖片化 context）、headless 呼叫冷啟動成本 | ⚡ 活躍 | HTML→Markdown 降 80% token；快取不跨 session 是費用主因；極簡輸出模式（穴居人）企業採用獲 404 Media 確認，OpenAI、Nvidia、GitHub 開發者使用；claude-thermos 以保活請求維持快取不過期，但引發「成本轉嫁其他用戶」爭議；pxpipe 反其道而行，把文字 context 渲染成圖片傳遞以降低 token 用量；`claude -p` 未加 `--bare` 冷啟動實測約耗 15 萬 token |
 | **記憶與知識管理** | ltm Core Memory Packet、本機圖資料庫、NanoBrain、OKF（物件鍵格式跨 session 記憶）、已否決方案索引 | ⚡ 活躍 | 跨 session / 跨工具持久記憶；Leiden 圖譜減少 71 倍 token；OKF 標準化 agent 知識格式供團隊共用；已否決方案未結構化記錄會導致 agent 重新實作已被殺掉的方案 |
 | **Plugin / MCP 整合** | Plugin 反模式整理、Claude Code 作為 MCP 協調中心 | ⚡ 活躍 | 避免不必要 context 載入；Claude Code 主導 MCP 工具鏈協作 |
-| **多代理 PR Review** | 4-agent Code Review、對抗性審查（計畫前 + 程式碼後）、Read-Only Reviewer、Claude 審查 Codex（71.6%→89.7% 通過率） | ⚡ 活躍 | 架構師代理協調 + 多廠商模型交叉審查；對抗性審查者讀取真實 codebase；read-only 權限約束維持對立性；社群回報跨模型交叉審查可量化提升通過率，惟樣本條件待查證 |
+| **多代理 PR Review** | 4-agent Code Review、對抗性審查（計畫前 + 程式碼後）、Read-Only Reviewer、Claude 審查 Codex（71.6%→89.7% 通過率） | ⚡ 活躍 | 架構師代理協調 + 多廠商模型交叉審查；對抗性審查者讀取真實 codebase；read-only 權限約束維持對立性；社群回報跨模型交叉審查可量化提升通過率，惟樣本條件 ❓ 待查證 ⟨Q-01⟩ |
 | **Agent 版本控制** | ADR 注入、架構決策文件先於實作 | ⏳ 新興 | 決策文件先於實作，降低代理方向偏移風險 |
 | **Context 管理** | Just-in-Time @-file、Repo-as-Memory、Context Rot 修復、對話分支/合併手動控制 | ⚡ 活躍 | 即時取回優於預先加載；repo 是記憶體、模型是工作者；避免 context 過早飽和；新增使用者可視化分支/合併對話以精準控制 context 範圍的手動操作模式 |
 | **Agent 規模化** | 20-instance 崩潰分析、批量 OSS Bug 修復、Personas vs Tool-scoping、Mac Mini 自主 agent 部署、TBD（HN 4，agent-channels 跨 worktree 通訊）、live-log-viewer-next（平行 agent 即時對話地圖） | ⏳ 新興 | 超過 10 個並行 agent 需獨立 worktree + orchestrator 協調層；工具範圍限制比角色描述更可靠的邊界守護；無人監督排程任務已有完整 Mac Mini M4 方案；可觀測性層開始補足「多 agent 進度難追蹤」的協調盲點 |
@@ -70,6 +72,9 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 | **行動裝置遠端控制** | ccgram（Telegram）、Android Remote Control MCP、Shellular | ⏳ 新興 | 手機作為 agent 控制介面，透過 Telegram bot / MCP / 專屬 web-app 等不同傳輸層連線並操作本機執行中的 Claude Code / Codex session |
 
 > 成熟度：✅ 成熟（社群廣泛實踐）/ ⚡ 活躍（持續演進中）/ ⏳ 新興（近期出現，尚在探索）
+
+**懸置細節**
+- ⟨Q-01⟩ ❓ **待查證**（標 2026-08-10｜查 Codex、71.6%）：多代理 PR Review「Claude 審查 Codex」通過率 71.6%→89.7% 的樣本條件（測試方法、樣本規模）未見於原摘要，暫視為單一來源自陳數據
 
 ---
 
@@ -124,7 +129,7 @@ Claude Code 的三種多 agent 機制，可對應到 Anthropic《Building Effect
 
 - **核心模式：** GitHub Search 同日抓到兩款鎖定跨 coding agent 通用的協作工具：huangruiteng/loopx 自稱「輕量級 loop 工程狀態核心」，提供持久目標、配額感知自動喚醒、可執行待辦、證據紀錄與可驗證交接，鎖定長任務多 agent 團隊場景，agent-loop agnostic 橫跨 Codex、Claude Code 等工具；HangYu8123/HarnessFlow 則是鎖定 Codex、Claude、GitHub Copilot 的通用 coding workflow harness
 - **與既有模式的關係：** 與本頁「Multi-agent 架構」既有的 harness 無關取向（omnigent，2026-08-05：把協調邏輯與底層 harness 解耦）同屬同一趨勢下的後續獨立實作；loopx 的「證據紀錄／可驗證交接」概念與 [[topics/community-large-codebase-workflow]]「除錯與分工架構」主線既有的可觀測性/驗證缺口討論有主題重疊，但因星數尚未查證，暫不視為該主線的縫合節點
-- **來源：** GitHub Search（今日日報「⭐ 重點話題」已收錄）；loopx 顯示 3641 顆星（達對照表高門檻 ≥1000 星）、HarnessFlow 顯示 516 顆星（達中門檻 ≥300 星）；依「GitHub repo 星數防刷註記」，兩者的 forks／open issues 真實往來／近 30 天 commit 等難造假佐證數據皆未見於本次摘要，本記者亦無工具可自行查證，**依規則標「待查證」，不視為高信度節點**
+- **來源：** GitHub Search（今日日報「⭐ 重點話題」已收錄）；loopx 顯示 3641 顆星（達對照表高門檻 ≥1000 星）、HarnessFlow 顯示 516 顆星（達中門檻 ≥300 星）；依「GitHub repo 星數防刷註記」，兩者的 forks／open issues 真實往來／近 30 天 commit 等難造假佐證數據皆未見於本次摘要；❓ **待查證**（標 2026-08-10｜查 loopx、HarnessFlow）｜**星數真實性**：本記者無工具可自行查證，不視為高信度節點
 - **成熟度：** ⏳ 新興（今日首見，星數存在但缺乏佐證，實際採用情形有待觀察）
 
 #### 生產環境 memory leak 除錯：從盲猜到用 Claude Code 系統化排查 heap snapshot（2026-08-08）
@@ -145,14 +150,14 @@ Claude Code 的三種多 agent 機制，可對應到 Anthropic《Building Effect
 
 - **核心模式：** 開源工具 Phistory 自動追蹤並封存多款 agent CLI（Claude Code、Codex、OpenClaw、Hermes）的 system prompt 版本快照，讓使用者可跨版本比對各工具 system prompt 的變動歷程，而非侷限於單一工具的單次檢視
 - **與既有模式的關係：** 呼應本頁既有「作者 grep 自己的 Claude Code JSONL 逐字稿，發現隱藏標籤 `<ip_reminder>`」（2026-07-29）等「直接檢視 Claude Code 實際送出/收到內容」第一手偵測方法論，本工具把單次、單一工具的檢視動作系統化為跨工具、跨版本的自動封存與比對機制
-- **來源：** GitHub Search（今日日報「⭐ 重點話題」已收錄）；星數 502（達對照表中門檻 ≥300 星），fork／open issues／近期 commit 等難造假佐證數據未見於本次摘要，待查證是否為刷星
+- **來源：** GitHub Search（今日日報「⭐ 重點話題」已收錄）；星數 502（達對照表中門檻 ≥300 星）；❓ **待查證**（標 2026-08-10｜查 Phistory、fork）｜**星數真實性**：fork／open issues／近期 commit 等難造假佐證數據未見於本次摘要，刷星可能性無從排除
 - **成熟度：** ⏳ 新興（今日首見，單一開源專案，尚無第一手使用心得或社群討論佐證實際採用效果）
 
 #### headless Claude Code（`claude -p`）冷啟動實測：未加 `--bare` 約載入 15 萬 token（2026-08-07）
 
 - **核心模式：** 作者實測 headless 模式（`claude -p`）在未加 `--bare` 旗標時，冷啟動會預先載入約 15 萬 token 的系統提示、工具定義與預設 context，構成每次呼叫的固定成本；加上 `--bare` 可跳過這些非必要載入，文章給出「何時該用 `--bare`」的具體判準，適合 CI pipeline、批次任務等大量 headless 呼叫場景
 - **與既有模式的關係：** 補充「Token / 成本優化」類別，聚焦「headless / 非互動呼叫」這個此前未被記錄過的固定成本來源，與 05-07「MCP Code Execution Token 效率」、06-21「MCP Server 信任邊界審查」（9 個 server = 每輪 38k tokens 冷啟動）同屬「摸清楚 Claude Code 各種呼叫模式底層固定成本」系列量化實測，這次對象是 headless 呼叫本身而非 MCP 配置；也與 [[topics/community-large-codebase-workflow]] Context / Token 管理主線相關，大量 headless 呼叫常見於多 agent pipeline 場景
-- **來源：** 「claude -p: what headless Claude Code actually loads (and when --bare is the right call)」— dev.to（1 讚；依規則以第一手實測內容判斷，非讚數）；確切 token 數與測試版本未見官方文件佐證，待查證
+- **來源：** 「claude -p: what headless Claude Code actually loads (and when --bare is the right call)」— dev.to（1 讚；依規則以第一手實測內容判斷，非讚數）；❓ **待查證**（標 2026-08-10｜查 headless、--bare）｜**token 數與測試版本**：確切 token 數與測試版本未見官方文件佐證
 - **成熟度：** ⏳ 新興（今日首見，單一作者實測，尚無其他來源複現驗證）
 
 #### 已否決方案的隱形重工成本：agent 不記得團隊已經殺掉的做法（2026-08-07）
@@ -172,15 +177,15 @@ Claude Code 的三種多 agent 機制，可對應到 Anthropic《Building Effect
 #### pxpipe：把文字 context 轉成圖片以降低 Claude Code token 用量（2026-08-05）
 
 - **核心模式：** 將原本以文字形式送入的 context 改以圖片渲染後傳遞，藉此降低 Claude Code 的 token 用量——與本頁既有「HTML→Markdown 降 80% token」等既有做法方向相反（既有做法把非文字格式轉為更精簡文字，此作法反其道而行改用圖片承載資訊）
-- **與既有模式的關係：** 為「Token / 成本優化」類別補上一個尚未出現過的技巧方向；具體降耗比例、適用 context 類型（截圖／表格／長文字）未見於摘要，待查證原文
+- **與既有模式的關係：** 為「Token / 成本優化」類別補上一個尚未出現過的技巧方向；❓ **待查證**（標 2026-08-10｜查 pxpipe、渲染成圖片）｜**降耗比例與適用場景**：具體降耗比例、適用 context 類型（截圖／表格／長文字）未見於摘要
 - **來源：** GitHub Search 批次抓取（非今日新發布，星數為累積值）；星數 6,955（達高門檻），已查證 fork 598（比例 8.5%，接近防刷佐證基準）、open issues 25、累計 commit 402 次，corroboration 尚可，判斷非刷星
 - **成熟度：** ⏳ 新興（技巧方向具新意，但缺乏第一手使用心得、量化降耗數字或社群討論佐證實際效果）
 
 #### Claude 審查 Codex 產出程式碼：通過率從 71.6% 提升至 89.7%（2026-08-04）
 
-- **核心模式：** Reddit 貼文指出，讓 Claude 審查 Codex 產出的程式碼後，通過率由 71.6% 提升至 89.7%；貼文標題即為量化結論，具體測試方法與樣本規模未見於摘要，待查證原文
+- **核心模式：** Reddit 貼文指出，讓 Claude 審查 Codex 產出的程式碼後，通過率由 71.6% 提升至 89.7%；貼文標題即為量化結論；❓ **待查證**（標 2026-08-10｜查 Codex、71.6%）｜**測試方法與樣本規模**：具體測試方法與樣本規模未見於摘要
 - **與既有模式的關係：** 為本頁「多代理 PR Review」類別既有「Multi-model Pipeline：Claude + Codex + ChatGPT 三角色明確分工」「對抗性審查設計」等做法補上一筆具體量化證據，呼應 [[topics/community-tech-discussions]] 07-31 收錄的「對抗式審查者解決 Claude 自評過寬」感謝文——同主軸的第二個獨立訊號，惟相隔僅 5 天，未達 🌊延燒天數門檻
-- **來源：** 「Claude reviewing Codex's code lifted the pass rate from 71.6% to 89.7%」— Reddit r/ClaudeAI（週熱門標記，達收錄低門檻；0 留言可見，具體方法論待查證原文）
+- **來源：** 「Claude reviewing Codex's code lifted the pass rate from 71.6% to 89.7%」— Reddit r/ClaudeAI（週熱門標記，達收錄低門檻；0 留言可見；❓ **待查證**（標 2026-08-10｜查 Codex、71.6%）｜**方法論**：具體方法論未見原文）
 - **成熟度：** ⚡ 活躍（量化數字具體但樣本條件未知，屬單一來源未經第三方驗證的自陳數據）
 
 #### 難任務 + 沿途可驗證性：Boris Cherny 談「給 Claude 略嫌太難的任務」的心法（2026-08-04）
@@ -223,7 +228,7 @@ Claude Code 的三種多 agent 機制，可對應到 Anthropic《Building Effect
 - **核心模式：** 作者同時平行執行多個 coding agent 後，產出 diff 量已超過自己能逐行審閱的負荷；並非放棄審查，而是把品質把關前移到更早階段（如更嚴謹的任務拆解與驗收條件設計），讓下游少了逐行複核的必要性
 - **與既有模式的關係：** 補充本頁「多代理 PR Review」類別在「審查負荷過載」面向的因應之道——既有記錄多聚焦「審查者角色如何設計」（4-agent Code Review、對抗性審查），本篇聚焦「審查者本人放棄逐行審查後，品質把關該往流程哪一端移動」，是對審查瓶頸的上游解法
 - **來源：** 「I stopped reviewing my own code. Here's what had to be true first.」— dev.to / isamu（依 dev.to 內容判斷原則收錄：第一手工作流實作經驗，非行銷/SEO 稿；3 讚不作為判斷依據）
-- **成熟度：** ⏳ 新興（單一作者第一手實作記錄，具體「前移」機制細節待查證原文）
+- **成熟度：** ⏳ 新興（單一作者第一手實作記錄）；❓ **待查證**（標 2026-08-10｜查 diff量、驗收條件）｜**「前移」機制細節**：具體機制未見原文
 
 #### Mac 瀏海面板攔截並回應 Claude Code 權限確認提示，關閉時預設放行（fail open）（2026-08-02）
 
@@ -260,7 +265,7 @@ Claude Code 的三種多 agent 機制，可對應到 Anthropic《Building Effect
 - **核心模式：** 作者針對 agent 連續呼叫多個工具的工作流中途失敗、遺留部分完成狀態導致環境混亂的問題，打造自動偵測並復原（undo）到失敗前狀態的機制
 - **與既有模式的關係：** 呼應本頁「MCP 長 Session 穩健化」「破壞性操作安全閘門工具（GrapeRoot Pro）」類別對「失敗後如何收拾」面向的既有關注，本篇聚焦「失敗發生後自動回滾」而非「失敗前攔截」或「失敗中重試」，是本頁首次出現的自動復原（rollback）具體實作
 - **來源：** 「I built a way to auto-undo the mess when an AI agent fails mid-task」— Reddit r/ClaudeCode（0 留言，無「週熱門」標記，score 不可信；單一貼文，尚無跨平台佐證，訊號強度較弱，依內容判斷收錄）
-- **成熟度：** ⏳ 新興（單一開發者工具，機制細節與可靠性尚待驗證）
+- **成熟度：** ⏳ 新興（單一開發者工具）；❓ **待查證**（標 2026-08-10｜查 auto-undo、rollback）｜**機制細節與可靠性**：尚無法驗證
 
 #### nightshift：夜間遭遇跨模型 API 500 錯誤時自動等待錯誤解除並接續原對話（2026-07-31）
 
@@ -271,9 +276,9 @@ Claude Code 的三種多 agent 機制，可對應到 Anthropic《Building Effect
 
 #### 準備 Anthropic 新版架構師認證考試歸納出的 12 種常見架構決策錯誤（2026-07-31）
 
-- **核心模式：** 作者為準備 Anthropic 新推出的 Claude Certified Architect: Professional 認證考試，系統性整理出準備過程中歸納的 12 種常見 Claude 架構決策錯誤（具體 12 條內容原文未詳列，待查證原文補全）
+- **核心模式：** 作者為準備 Anthropic 新推出的 Claude Certified Architect: Professional 認證考試，系統性整理出準備過程中歸納的 12 種常見 Claude 架構決策錯誤；❓ **待查證**（標 2026-08-10｜查 Certified Architect、12 種）｜**12 條內容原文**：原文未詳列具體條目
 - **與既有模式的關係：** 呼應本頁「架構邊界合約」「Agent 版本控制」等強調「決策先於實作、降低方向偏移」的既有類別，本篇以官方認證考試為切入點系統化整理常見錯誤，是社群將官方認證教材轉化為實戰檢查清單的首個案例
-- **來源：** 「12 ways a Claude architecture decision goes wrong (learned these prepping for Anthropic's new Professional cert)」— Reddit r/ClaudeAI（0 留言；單一貼文，訊號強度較弱，依內容判斷收錄；具體 12 條錯誤內容待查證原文）
+- **來源：** 「12 ways a Claude architecture decision goes wrong (learned these prepping for Anthropic's new Professional cert)」— Reddit r/ClaudeAI（0 留言；單一貼文，訊號強度較弱，依內容判斷收錄；❓ **待查證**（標 2026-08-10｜查 Certified Architect、12 種）｜**12 條錯誤內容**：原文未列出）
 - **成熟度：** ⏳ 新興
 
 #### 「你的 AI Subagent 在騙你」：317 色碼平行清理任務揭露 4 種 subagent 靜默失敗模式（2026-07-29）
@@ -281,7 +286,7 @@ Claude Code 的三種多 agent 機制，可對應到 Anthropic《Building Effect
 - **核心模式：** 作者將一項含 317 個硬編碼色碼的 design-token 清理工作拆給多個 Claude Code subagent 平行處理，各自分到一批檔案並回報「完成」，但實際檢查發現多種靜默失敗模式（各 agent 回報乾淨卻結果不然）
 - **與既有模式的關係：** 呼應本頁「安全架構」類別中 Grepathy（agent 未經核准決策稽核）對「agent 自主決策是否可信」的既有關注，本篇聚焦「回報完成」本身不可信的具體案例，是對「orchestrator 分派後如何驗證真的完成」這一環節的第一手踩坑記錄
 - **來源：** 「Your AI Subagents Are Lying to You: 4 Silent Failure Modes」— dev.to / #claudecode（依 dev.to 內容判斷原則收錄：第一手實作與踩坑記錄，讚數不作為判斷依據；3 讚）
-- **成熟度：** ⏳ 新興（單一案例，四種失敗模式細節待查證原文）
+- **成熟度：** ⏳ 新興（單一案例）；❓ **待查證**（標 2026-08-10｜查 subagent、silent failure）｜**四種失敗模式細節**：原文未詳列
 
 #### Agenta：開源、可自架模型的 Claude Cowork 替代品，支援任意 harness（2026-07-28）
 
@@ -299,10 +304,10 @@ Claude Code 的三種多 agent 機制，可對應到 Anthropic《Building Effect
 
 #### 作者 grep 自己的 Claude Code JSONL 逐字稿，發現未見於官方文件的 `<ip_reminder>` 隱藏標籤（2026-07-29）
 
-- **核心模式：** 作者未查閱官方文件，而是直接翻自己的 Claude Code session JSONL 逐字稿，找到一個名為 `<ip_reminder>` 的標籤在對話中途出現；此標籤未見於任何官方文件說明，具體觸發條件與功能作用未知（原文於摘要處截斷，待查證）
+- **核心模式：** 作者未查閱官方文件，而是直接翻自己的 Claude Code session JSONL 逐字稿，找到一個名為 `<ip_reminder>` 的標籤在對話中途出現；此標籤未見於任何官方文件說明；❓ **待查證**（標 2026-08-10｜查 ip_reminder、JSONL）｜**觸發條件與功能作用**：原文於摘要處截斷，具體內容未知
 - **與既有模式的關係：** 呼應本頁既有「Local Reverse Proxy」「Context Window 診斷法」等「直接檢視 Claude Code 實際送出/收到內容」的第一手偵測方法論類別，補上「逐字稿逆向檢視」這個更輕量、免架設代理即可執行的檢視手段
 - **來源：** 「I Grepped My Own Claude Code Logs and Found the Hidden Tag Anthropic Never Shows You」— dev.to / nomurasan（依 dev.to 內容判斷原則收錄：第一手日誌挖掘，非行銷/SEO 稿；讚數不作為判斷依據）
-- **成熟度：** ⏳ 新興（單一開發者觀察，標籤功能與觸發條件尚待查證，暫不歸入既有機制類別）
+- **成熟度：** ⏳ 新興（單一開發者觀察，暫不歸入既有機制類別）；❓ **待查證**（標 2026-08-10｜查 ip_reminder、JSONL）｜**標籤功能與觸發條件**：尚無法查證
 
 #### Claude Code Skills 清單字元預算機制：description 超額會讓既有 skill 悄悄失效（2026-07-28）
 
@@ -434,7 +439,7 @@ Claude Code 的三種多 agent 機制，可對應到 Anthropic《Building Effect
 
 - **核心模式：** Anthropic 官方（透過 ClaudeDevs 討論串）公布多模型工作流的第一方基準數據：由 Fable 5 負責任務協調（orchestrate）、便宜模型負責實際執行（execute）的分工架構，可在僅 46% 成本下達到 96% 的效能表現；此模式並非未來規劃，而是可直接在 Claude Code 中設定使用的現行做法
 - **與既有模式的關係：** 與既有「模型使用策略」類別下社群自建的分層模型路由（Sonnet + Opus）、Workweave Router 同屬「依任務複雜度分流節省成本」思路，差異在於這是 Anthropic 官方發布的第一方基準數據，將社群長期實務直覺量化為具體數字（46% 成本／96% 效能），並明確定調為「編排者–執行者」（orchestrator-executor）角色分工架構，而非單純模型選型
-- **來源：** 「Anthropic just benchmarked "Fable 5 orchestrates, cheap models execute": 96% of the performance at 46% of the cost. You can run this pattern in Claude Code today」— Reddit r/ClaudeAI（週熱門；轉述原始 ClaudeDevs 討論串發布的官方第一方數據，本頁未直接讀取 ClaudeDevs 原始貼文全文，細節數字待查證；07-15～08-07 news 查無跟進，至今無後續）
+- **來源：** 「Anthropic just benchmarked "Fable 5 orchestrates, cheap models execute": 96% of the performance at 46% of the cost. You can run this pattern in Claude Code today」— Reddit r/ClaudeAI（週熱門；轉述原始 ClaudeDevs 討論串發布的官方第一方數據，本頁未直接讀取 ClaudeDevs 原始貼文全文；❓ **待查證**（標 2026-08-10｜查 ClaudeDevs、orchestrator-executor）｜**細節數字**：07-15～08-07 news 查無跟進）
 - **成熟度：** ⚡ 活躍（官方背書 + 量化基準數據，可直接複現於 Claude Code；今日首見，尚待後續社群跟進實測驗證）
 
 #### 語音提示／語音輸出小趨勢觀察：Mr. Meeseeks 語音提示外掛（HN 130，本日最高分）與 aloud TTS 輸出工具並現（2026-07-14）
@@ -912,7 +917,7 @@ Claude Code 的三種多 agent 機制，可對應到 Anthropic《Building Effect
   - 保留「最近 N 輪」原始內容以維持短期連貫性，更早的歷史則壓縮
 - **解決的問題：** 傳統 agent loop 設計將全量 transcript 傳遞，隨輪數增加 token 成本呈平方增長；大型多輪任務中成本不可控
 - **與既有模式的關係：** 呼應 Context Rot 修復五法中的「壓縮歷史」策略；比 /compact 指令更系統化，可程式化控制壓縮時機與粒度
-- **注意事項：** 摘要過於激進可能造成語意失真，需設計摘要品質驗證機制；benchmark 為社群個人測試，大規模驗證待確認（07-18～08-07 news 查無跟進，至今無後續）
+- **注意事項：** 摘要過於激進可能造成語意失真，需設計摘要品質驗證機制；❓ **待查證**（標 2026-08-10｜查 compact memory、context token）｜**大規模驗證**：benchmark 為社群個人測試（07-18～08-07 news 查無跟進）
 - **來源：** "The Hidden O(N²) Tax in AI Agent Loops: Measured with a Benchmark You Can Run"（dev.to/saihmadmin，06-23）
 
 #### Hooks 強制執行取代 CLAUDE.md 規則：從建議層到強制層（2026-06-23）
@@ -1003,7 +1008,7 @@ Claude Code 的三種多 agent 機制，可對應到 Anthropic《Building Effect
 - **解決的問題：** 「Claude 越用越笨」現象；3 小時以上任務中途失憶、計劃漂移
 - **適用場景：** 長 session 的 agentic 任務、多工具協同工作流、CI/CD 自動化 agent
 - **注意：** 與 spec-driven development 結合效果更好——先有規格文件，再讓 agent 在精簡 context 下執行（dev.to/kenimo49；Reddit r/ClaudeAI）
-- **大型 Repo 優化（HN 9）：** Git Lazy Mount（github.com/mohsen1/git-lazy-mount）——AI session 按需 fetch 大型 repo，附 sgrep 繞過全量 grep；HN score 9，適用 1GB+ monorepo，採用訊號待確認，附記待觀察（07-18～08-07 news 查無跟進，至今無後續）。
+- **大型 Repo 優化（HN 9）：** Git Lazy Mount（github.com/mohsen1/git-lazy-mount）——AI session 按需 fetch 大型 repo，附 sgrep 繞過全量 grep；HN score 9，適用 1GB+ monorepo；❓ **待查證**（標 2026-08-10｜查 git-lazy-mount、monorepo）｜**採用訊號**：附記待觀察（07-18～08-07 news 查無跟進）。
 
 #### Loop Engineering：條件觸發的 Claude 執行設計（2026-06-19，更新 2026-06-20）
 
@@ -1156,7 +1161,7 @@ Claude Code 的三種多 agent 機制，可對應到 Anthropic《Building Effect
 - **Local stack MCP 整合、39ms 檢索**：開發者分享自建本機持久化記憶層：本地向量資料庫 + MCP 整合，實現 39ms 快速檢索；同時解決每次對話從零開始，以及記憶庫成長後大量消耗 token 的雙重痛點
 - **架構核心原則**：避免將全部記憶注入 context（token 消耗過高），改以語義查詢按需取回相關片段；本機方案同時解決雲端記憶的隱私疑慮，與 Memex 思路相近但強調自建可控性
 - **意義**：是對 Managed Agents Dreaming 官方解法的社群自建補充，在等待官方成熟前已形成可用架構
-- **輕量替代（HN 6）：** Iantha（kiloloop.com/iantha/）——純 Markdown + git 存儲，自動提取時間性任務跨 session 持久保存，無需向量 DB；HN score 6，識別準確度待驗證，附記待觀察（07-18～07-31 news 查無跟進，至今無後續）。
+- **輕量替代（HN 6）：** Iantha（kiloloop.com/iantha/）——純 Markdown + git 存儲，自動提取時間性任務跨 session 持久保存，無需向量 DB；HN score 6；❓ **待查證**（標 2026-08-10｜查 Iantha、kiloloop）｜**識別準確度**：附記待觀察（07-18～07-31 news 查無跟進）。
 
 
 #### Managed Agents 架構模式（2026-05-07）

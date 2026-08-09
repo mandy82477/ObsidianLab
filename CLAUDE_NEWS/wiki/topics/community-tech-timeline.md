@@ -19,7 +19,7 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 **狀態：** monitoring
 **領域：** 🌐 社群
 **開始日期：** 2026-04-25
-**最後更新：** 2026-07-18
+**最後更新：** 2026-08-10
 **最後新聞更新：** 2026-05-22
 
 > **最近時序紀錄**（2026-05-22）
@@ -254,7 +254,7 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 #### 2026-05-02
 - **PreToolUse Hooks 四種 exit code**：深度解析 Block/Allow/Modify/Error 四種 exit code 在攔截、放行、修改工具調用等場景的實際差異，官方文件嚴重低估其複雜度
 - **Token 路由降成本**：開發者透過 CLAUDE.md 路由規則將繁瑣任務委派給 Kimi K2.5 等 $0.02/call 低成本模型，不升級訂閱即可大幅提升 Pro 額度效率（解決每週三就耗盡配額的問題）
-- **Governor — token 優化插件（存疑）**：宣稱可減少 Claude Code token 浪費，但 HN 社群質疑基準測試粗糙，僅統計 token 數量未評估輸出品質，需更嚴謹評測
+- ❓ **待查證**（標 2026-08-10｜查 Governor、token 優化）｜**Governor — token 優化插件**：宣稱可減少 Claude Code token 浪費，但 HN 社群質疑基準測試粗糙，僅統計 token 數量未評估輸出品質，需更嚴謹評測
 - **Caliber — 跨工具 AI config 統一管理**：開源工具統一版控 CLAUDE.md、.cursor/rules、AGENTS.md 等跨平台配置，本週突破 888 stars，社群徵集功能需求
 - **記憶體防漂移框架**：agent 記憶未版本控制時會隨規模增長產生可量測的行為偏移；具體審計框架：定期 prune、版本控制記憶文件、標記衝突條目
 - **規格驅動開發**：呼應 Karpathy 演講，主張以嚴謹規格文件取代 vibe coding，人類主導規格設計，AI 負責實作執行
