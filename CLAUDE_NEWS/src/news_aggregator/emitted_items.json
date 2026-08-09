@@ -3277,7 +3277,7 @@
   "https://dev.to/cseeman/the-year-i-started-leaving-breadcrumbs-instead-of-notes-fe0": {
     "first_emitted": "2026-08-08",
     "score_at_emit": 24,
-    "digest_confirmed": false
+    "digest_confirmed": true
   },
   "https://mirafold.com": {
     "first_emitted": "2026-08-08",
@@ -3442,171 +3442,171 @@
   "https://github.com/huangruiteng/loopx": {
     "first_emitted": "2026-08-09",
     "score_at_emit": 3641,
-    "digest_confirmed": false
+    "digest_confirmed": true
   },
   "https://github.com/HangYu8123/HarnessFlow": {
     "first_emitted": "2026-08-09",
     "score_at_emit": 516,
-    "digest_confirmed": false
+    "digest_confirmed": true
   },
   "https://code.claude.com/docs/en/cross-session-messaging": {
     "first_emitted": "2026-08-09",
     "score_at_emit": 132,
-    "digest_confirmed": false
+    "digest_confirmed": true
   },
   "https://github.com/anthropics/claude-code/issues/60334": {
     "first_emitted": "2026-08-09",
     "score_at_emit": 72,
-    "digest_confirmed": false
+    "digest_confirmed": true
   },
   "https://github.com/anthropics/claude-code/issues/34556": {
     "first_emitted": "2026-08-09",
     "score_at_emit": 62,
-    "digest_confirmed": false
+    "digest_confirmed": true
   },
   "https://github.com/anthropics/claude-code/issues/23377": {
     "first_emitted": "2026-08-09",
     "score_at_emit": 43,
-    "digest_confirmed": false
+    "digest_confirmed": true
   },
   "https://github.com/anthropics/claude-code/issues/41581": {
     "first_emitted": "2026-08-09",
     "score_at_emit": 39,
-    "digest_confirmed": false
+    "digest_confirmed": true
   },
   "https://github.com/anthropics/claude-code/issues/29006": {
     "first_emitted": "2026-08-09",
     "score_at_emit": 36,
-    "digest_confirmed": false
+    "digest_confirmed": true
   },
   "https://github.com/anthropics/claude-code/issues/37323": {
     "first_emitted": "2026-08-09",
     "score_at_emit": 35,
-    "digest_confirmed": false
+    "digest_confirmed": true
   },
   "https://github.com/anthropics/claude-code/issues/14227": {
     "first_emitted": "2026-08-09",
     "score_at_emit": 34,
-    "digest_confirmed": false
+    "digest_confirmed": true
   },
   "https://thenewstack.io/claude-code-auto-mode": {
     "first_emitted": "2026-08-09",
     "score_at_emit": 19,
-    "digest_confirmed": false
+    "digest_confirmed": true
   },
   "https://simonwillison.net/2026/Aug/8/auto-mode": {
     "first_emitted": "2026-08-09",
     "score_at_emit": 15,
-    "digest_confirmed": false
+    "digest_confirmed": true
   },
   "https://benzi.fly.dev/about": {
     "first_emitted": "2026-08-09",
     "score_at_emit": 8,
-    "digest_confirmed": false
+    "digest_confirmed": true
   },
   "https://dev.to/yureki_lab/how-i-used-claude-code-to-hunt-down-a-memory-leak-that-took-down-prod-2cpf": {
     "first_emitted": "2026-08-09",
     "score_at_emit": 3,
-    "digest_confirmed": false
+    "digest_confirmed": true
   },
   "https://vibsync.com": {
     "first_emitted": "2026-08-09",
     "score_at_emit": 3,
-    "digest_confirmed": false
+    "digest_confirmed": true
   },
   "https://github.com/howieyoung/cli-times": {
     "first_emitted": "2026-08-09",
     "score_at_emit": 2,
-    "digest_confirmed": false
+    "digest_confirmed": true
   },
   "https://github.com/tohid4n/qwen3.8-max-local-coding": {
     "first_emitted": "2026-08-09",
     "score_at_emit": 2,
-    "digest_confirmed": false
+    "digest_confirmed": true
   },
   "https://github.com/hetpatel-11/agent-hop": {
     "first_emitted": "2026-08-09",
     "score_at_emit": 2,
-    "digest_confirmed": false
+    "digest_confirmed": true
   },
   "https://github.com/josipmusa/greenbatch": {
     "first_emitted": "2026-08-09",
     "score_at_emit": 1,
-    "digest_confirmed": false
+    "digest_confirmed": true
   },
   "https://anona-labs.github.io/mirror": {
     "first_emitted": "2026-08-09",
     "score_at_emit": 1,
-    "digest_confirmed": false
+    "digest_confirmed": true
   },
   "https://www.reddit.com/r/ClaudeCode/comments/1vjmjh3/real_use_caseslimitations": {
     "first_emitted": "2026-08-09",
     "score_at_emit": 0,
-    "digest_confirmed": false
+    "digest_confirmed": true
   },
   "https://www.reddit.com/r/ClaudeCode/comments/1vjmhut/thought_i_knew_better": {
     "first_emitted": "2026-08-09",
     "score_at_emit": 0,
-    "digest_confirmed": false
+    "digest_confirmed": true
   },
   "https://www.reddit.com/r/ClaudeCode/comments/1vjmddx/i_built_an_agent_skill_that_sets_up_real_backends": {
     "first_emitted": "2026-08-09",
     "score_at_emit": 0,
-    "digest_confirmed": false
+    "digest_confirmed": true
   },
   "https://www.reddit.com/r/ClaudeCode/comments/1vjluwr/how_do_i_know_which_model_to_use": {
     "first_emitted": "2026-08-09",
     "score_at_emit": 0,
-    "digest_confirmed": false
+    "digest_confirmed": true
   },
   "https://www.reddit.com/r/ClaudeCode/comments/1vjky54/is_claude_opus_5_unlimited": {
     "first_emitted": "2026-08-09",
     "score_at_emit": 0,
-    "digest_confirmed": false
+    "digest_confirmed": true
   },
   "https://www.reddit.com/r/ClaudeCode/comments/1vjkdz2/git_worktrees_isolate_branches_not_every": {
     "first_emitted": "2026-08-09",
     "score_at_emit": 0,
-    "digest_confirmed": false
+    "digest_confirmed": true
   },
   "https://news.google.com/rss/articles/CBMioAFBVV95cUxOOHBPay1zRUpMck81VjhnUFlRU1FtcDZGUkplSlR6eE95T0hrbTV6TU5hY1M0RnhCdDZDb2YwMmNpWUJJU2J0VWJ1djhIV2xJMS1sMGhiTFRYbGRPMV9Nd0FFbEpVOFE2Rmt3SEtEd3lDczlCNkVsM3hZOTRrMmhfWlA4bUtaSF9WODRNQUxaLWM4SlZWTzlvZTZtSWt6OFJn?oc=5": {
     "first_emitted": "2026-08-09",
     "score_at_emit": 0,
-    "digest_confirmed": false
+    "digest_confirmed": true
   },
   "https://news.google.com/rss/articles/CBMijgFBVV95cUxOa1o3aVVHUHVPU1NvTGRrSVNFSDBHS0lHTXdFanFWU1RSU09MMW9vMXM3dWh1QU12cFJaTFhWUThlT1gyM1NfcDlKWFJyS2Yyd0E0WjNFRGhWSElnRWIwODlUcV9jeDlZNWlxdFpRaVpRcHFldUIyWTFGMTlLZDM1SUpGRWVpN0FkV3Z2S0N3?oc=5": {
     "first_emitted": "2026-08-09",
     "score_at_emit": 0,
-    "digest_confirmed": false
+    "digest_confirmed": true
   },
   "https://news.google.com/rss/articles/CBMikAFBVV95cUxOWDhEWllMN2tzeUJxS2pJOFdBNzViaC15S3FFeGlUOWk4UTBFSzRMa1c1TVhvekxOYnRVRWpxR0F6OVVGallyQ2hiNjh6Z3RmRUVNWW1rUjZDLW0tY01lY3pZdlJyWnBQQTRoREI5WFVQXzVCOEFxU3V4dWczQWVIc05Fb2RFX1ZTRzRvcGtMWGI?oc=5": {
     "first_emitted": "2026-08-09",
     "score_at_emit": 0,
-    "digest_confirmed": false
+    "digest_confirmed": true
   },
   "https://news.google.com/rss/articles/CBMitwFBVV95cUxNUlFvQ0M3SkQ0ZlQ4RzI1OUpBWno2Y3JSQTEwd01qS01CdVRkeTdLR2VOdmd0a0UzQ2M0UzF0UG9kUlA1SzBzeXJyU0U1QUN4RVRmakxCcVdoTG0wRGVMdTVTUTEwVVhWODZWNEdwYVQwR1plVDloVVk1T0ROc3M4ZVFVMmFuTjhTd21sc3RfNzNHS1I0TGxFSHgxMmZzei05VjhYTXh2LWg5YTNKaHlJdTFsdjgwelk?oc=5": {
     "first_emitted": "2026-08-09",
     "score_at_emit": 0,
-    "digest_confirmed": false
+    "digest_confirmed": true
   },
   "https://news.google.com/rss/articles/CBMingFBVV95cUxQZmZ5X1pETmlnejRYYXlsbHNyY2FER3o5QlNGZUpsUkNnQVAxQ1lwWlkxVkhXYU5Uajd4N0FGVGZkVUV1U0FKeVVwVmd0VjZLR2ZWQ09DaFhKT2FrYXE4dzNQV1QwWUktYmI0SFR2VmczTkE5WGlZMlNqcnRKYW9yVkI5SVB5N3Fka2M2YzFFaXlNbGh0SkZxYXdYQWZ5QQ?oc=5": {
     "first_emitted": "2026-08-09",
     "score_at_emit": 0,
-    "digest_confirmed": false
+    "digest_confirmed": true
   },
   "https://simonwillison.net/2026/Aug/8/now-we-have-a-timeline-of-the-openai-accidental-attack-against-h": {
     "first_emitted": "2026-08-09",
     "score_at_emit": 0,
-    "digest_confirmed": false
+    "digest_confirmed": true
   },
   "https://news.google.com/rss/articles/CBMi1AFBVV95cUxOVnFrWkZJdVpXcDZPVTN6d2h2WEp5LWtsOVl4eENvUGY0ZGhpcWYtbXdpTWs5YkVhMmFtY01JVTBuT1pjcVZxbUVBQ0RUZUFYdllRWG9oRHNoeGdMeDYtQW11QTJkVUpOVG1jQnZtcTB2emMwR2YxS2dmVjllTDBwR2FTQ2xDUzNvRzVEUVJ6cTdsekR3WWtPOTdvQWtWTkwzZlNOUGQ1YmRrVDZETTNyWmQ3a3VFT2RsdUhaLURPZXVyNEtwU1NQMVFJVnp3UDZ4RjdCag?oc=5": {
     "first_emitted": "2026-08-09",
     "score_at_emit": 0,
-    "digest_confirmed": false
+    "digest_confirmed": true
   },
   "https://news.google.com/rss/articles/CBMipgJBVV95cUxNbDJCdXY4MGwyT3RFMzItTFRCZzFUeUZVblZlMUt1eDFXY2pGc0ZMQl9uc3ZsZ3lWaU5xY3hKem1GRGRGa25kNDljY1JtZzVCbnNoU0tnMkZob3Q0ZjZrYkF5cWRkVG1GeFM3T25kcmRjZGtkZTdZbU9oUlY4TjZQRDBYUEhaNWUxUVdZcXFmUUR3ODlQcmhUNWZyRUNVaFNXQU45MEZYMEx0V2dfb2YxcThZa1NNYVZ4UnAxRzBXdVBEbGhXQWtGZERFdTZ0NXAtWWZpa18xOC1QZElwZ2F2MzlDb2RqRmYyaHRQd3AxbTBJNGFZVXBKSko1YjcwSER1WkRGaXlQU1UzX3ZJSUJ2aU9RdzJVZTNTbmNXd3dWSXNjT2ZSVlHSAasCQVVfeXFMT1d0Y1k0T1RGSG9wbDdUYnFlYjFyXzExTlR0SlhHNVdfQmNEQ2t0eVQ3N3V3X0ExU1ZMQWEyTHNKS1NVNEFPR3JOcXAxZHFkdE9EcEl0elMxSDk4Mmt1VWJZLUhvQ1pEQXZWNGdlODM3Zm4xazhrcHVHOEU1SUJEdDM0YVE1dEo5NTl3RUxSc05tSWdVaDFKcmVXNmlfOHBRbGZhV1JLcHdPek9ya19saU5WRmcyU1BsZ2dpYkItRUdTT2w5XzVHSjd0Z2Zpcm52dWJtNEE1VVNqdUZGOHgxc01jYkJabi0tdHJxcVlNSEpLYXFnM0JtZUluM3pJbUQ4ekZtQ1N0T2ZlWEVlaXpDQmtIYzhBRlBrNmVjN3pYOHZxdVdhUUEtdktnX00?oc=5": {
     "first_emitted": "2026-08-09",
     "score_at_emit": 0,
-    "digest_confirmed": false
+    "digest_confirmed": true
   }
 }
