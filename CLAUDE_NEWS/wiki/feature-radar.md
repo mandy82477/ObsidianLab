@@ -73,6 +73,7 @@
 | **Claude Opus 5**（新次旗艦模型，可用 `--model` 選用，編碼/知識工作評測逼近 Fable 5、官方稱定價為其一半，現為 Claude Max 新預設模型、Claude Pro 最強模型） | 2026-07-25 | 🔥🔥🔥🔥🔥 | ⚡ 有條件推薦 | 正式發布 |
 | **Claude 語音模式 Opus／Sonnet 選擇**（所有使用者開放於 Opus／Sonnet 間切換語音模式底層模型，六家媒體同步報導，無官方版本號） | 2026-07-24 | 🔥🔥🔥🔥 | ⚡ 有條件推薦 | 正式發布（全使用者開放） |
 | **API 新增 Stop Reason `model_continue`**（anthropic-sdk-python v0.119.0／anthropic-sdk-typescript sdk-v0.114.0） | 2026-07-23 | 🔥🔥 | ⏳ 觀望 | 正式發布（SDK 層） |
+| **Claude Code Desktop iOS Simulator**（Mac app 內建 iOS Simulator 面板，即時建置／執行／除錯 iPhone App，需已安裝 Xcode iOS 平台） | 2026-07-22（08-10 官方文件查證確認） | 🔥🔥 | ⚡ 有條件推薦 | 公開測試（Pro／Max／Team） |
 | **Claude Code v2.1.218**（`/code-review` 改為背景 subagent 執行，審查工作不再佔用對話內容；同版新增螢幕報讀軟體相關無障礙改善） | 2026-07-22 | 🔥🔥 | ✅ 推薦 | 正式發布 |
 | **Claude Code v2.1.217**（Prompt input 新增表情符號 shortcode 自動完成，輸入 `:heart:` 插入 ❤️，可用 `emojiCompletionEnabled` 設定關閉；同版新增警告訊息，細節未知） | 2026-07-21 | 🔥 | ⏳ 觀察中 | 正式發布 |
 | **Claude Code v2.1.216**（新增 `sandbox.filesystem.disabled` 設定，可在維持網路出口控管下跳過檔案系統隔離；同版修復長會話訊息正規化速度變慢問題） | 2026-07-20 | 🔥🔥 | ⚡ 有條件推薦 | 正式發布 |
@@ -279,7 +280,7 @@ Claude App → 語音模式設定 → 選擇 Opus 或 Sonnet
 ```
 （具體 UI 路徑待官方文件確認）
 
-**注意事項：** 目前僅媒體報導交叉確認，官方部落格/changelog 尚未查得對應公告連結；語音延遲、費用是否受模型選擇影響未知。
+**注意事項：** 目前僅媒體報導交叉確認，官方部落格/changelog 尚未查得對應公告連結；語音延遲、費用是否受模型選擇影響未知。2026-08-10 查證確認：模型選擇器介面先前已掛上約 3 週，但當時選 Opus 或 Sonnet 皆固定跑 Haiku（純裝飾、未生效），自 07-23 起選擇才真正生效路由至對應模型；媒體報導的「開放模型選擇」實質是「選擇器開始生效」而非「新增選擇器 UI」。
 
 ---
 
@@ -299,6 +300,25 @@ npm install @anthropic-ai/sdk@latest  # sdk-v0.114.0+
 ```
 
 **注意事項：** TypeScript release note 原文遭截斷，具體 stop reason 名稱未 100% 確認一致，建議查閱兩個 repo 完整 release note 核實。
+
+---
+
+### Claude Code Desktop iOS Simulator
+**發布：** 2026-07-22（9to5Mac／MacRumors 首見，07-23 Startup Fortune／Cult of Mac 補足；2026-08-10 官方文件查證確認） | **熱度：** 🔥🔥 | **試用價值：** ⚡ 有條件推薦（限 macOS 桌面版＋iOS 開發者） | **狀態：** 公開測試（Pro／Max／Team）
+
+**是什麼：** Claude Code Desktop（Mac app）新增內建 iOS Simulator 面板，可在應用內即時建置、執行、除錯 iPhone App，無需另外切換至 Xcode。
+
+**為何熱：** 07-22 首見兩家媒體同步報導，07-23 再獲兩家媒體補充確認，但四家媒體報導期間皆無官方 GitHub release 或部落格公告佐證具體版本／發布管道，長期停留「媒體報導、官方未確認」狀態；2026-08-10 查證官方文件 [code.claude.com/docs/en/desktop-ios-simulator](https://code.claude.com/docs/en/desktop-ios-simulator) 確認功能存在且為 Pro／Max／Team 方案的公開 Beta。
+
+**現在要試嗎：** 適合使用 Claude Code Desktop 開發 iOS App、已安裝 Xcode 的 macOS 使用者；非 iOS 開發者或使用 CLI／非 macOS 平台者不適用。
+
+**快速上手：**
+```
+Claude Code Desktop（macOS）→ 開啟專案 → iOS Simulator 面板
+```
+（需已安裝 Xcode iOS 平台；具體開啟路徑以官方文件為準）
+
+**注意事項：** 僅限 macOS 本機 session，不支援 CLI 或遠端執行；需已安裝 Xcode 及對應 iOS 平台。
 
 ---
 
