@@ -21,14 +21,14 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 **狀態：** active（持續調整中）
 **領域：** 💼 商業
 **首次出現：** 2026-04-25
-**最後更新：** 2026-08-09
-**最後新聞更新：** 2026-08-09
+**最後更新：** 2026-08-10
+**最後新聞更新：** 2026-08-10
 
-> **最新計費政策異動**（2026-08-09）
+> **最新計費政策異動**（2026-08-10）
 > - **旗艦模型的訂閱分界已由官方文件確認，07-18～21 的四方矛盾報導就此收斂**：Max／Team premium 為標配（上限週用量 50%）、Pro／Team standard 改走 usage credits，2026-07-20 生效；合格 Pro／Team standard 另有一次性過渡 credit。詳見「我的方案現在有什麼」。
 > - **usage credits 開啟後，方案用量上限不再是硬停止**——會繼續回答並計費，靠硬上限控管支出者需自行確認 `Settings > Usage` 開關。
-> - GitHub Issue #79337（Fable 5 於 Max 方案誤要求購點）延燒逾 18 天、留言 67 則仍未解，詳見「事故與爭議」。
-> - **灰市轉售套利已證實有隱私外洩代價**：「Poison Claude」轉售管道營運者可讀取每位客戶的所有 prompt（08-05～08-06 兩獨立媒體確認），詳見 [[topics/ai-agent-safety]]。
+> - **Max 20x 用量異常回報再添一例**：Reddit 使用者回報用量在未使用期間半小時內從 0% 衝到 100%（08-04，週熱門），與功能記者已記錄之 GitHub Issue #41788（版本迴歸 bug）症狀相似，詳見「事故與爭議」。
+> - GitHub Issue #79337（Fable 5 於 Max 方案誤要求購點）延燒逾 18 天、留言 67 則仍未解，同屬「事故與爭議」。
 
 ## 現況
 
@@ -148,6 +148,10 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 #### 2026-08-07：Fable 5 Max 方案用量點數異常追蹤更新——留言數攀升至 67，延燒逾 18 天
 
 - **GitHub Issue #79337 互動量持續攀升**：GitHub Issue（08-07 查證：**67 留言**，較 07-25 查證時的 42 留言持續攀升）延續追蹤自 07-20 Fable 5 成為 Max 方案標準模型第一天起爆發的用量點數異常，含此前已記錄之「靜默降級 Opus 4.8」細節。**與既有事件的關係**：問題自 07-20 首次曝光起已延燒超過 18 天，橫跨官方 07-20 Status「Max 誤判、重啟可解決」定性、07-24（13 reactions）、07-25（42 留言、15 reactions）多輪查證，留言數持續攀升顯示問題規模與影響持續擴大而非收斂，是本頁目前追蹤時間最長的未解計費/配額爭議（推論，官方是否已著手修復或此問題與既有「誤判」定性的關係，均未見新公告釐清）（GitHub https://github.com/anthropics/claude-code/issues/79337）
+
+#### 2026-08-04：Reddit 回報 Max 20x 用量在未使用期間半小時內從 0% 衝到 100%，疑似配額計算異常
+
+- **Reddit r/ClaudeAI 週熱門回報**：使用者發文指出 Max 20x 方案用量在**未使用 Claude 的情況下**，半小時內從 0% 攀升至 100%（Reddit，週熱門，達互動門檻對照表「低」門檻，2026-08-04）。**與既有已知問題的關聯（推論，待證實同源）**：症狀與功能記者已記錄於 [[entities/claude-code]] 已知問題的 GitHub Issue #41788〈Max 20 plan: rate limit 100% exhausted within ~70 minutes after reset〉（版本迴歸 bug）高度相似——皆描述用量上限在短時間、無明顯使用下被耗盡；惟本則 Reddit 貼文與該 GitHub Issue 是否為同一根因、同一批受影響用戶，均未見報導或貼文本身交叉確認，不可逕自合併認定為單一事件（Reddit https://www.reddit.com/r/ClaudeAI/comments/1vf6i4y/max_20x_usage_went_from_0_to_100_in_half_an_hour/）
 
 #### 2026-08-02：Max 5x → Max 20x 訂閱升級持續失敗，與此前三起已知 issue 同源
 
