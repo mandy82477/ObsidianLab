@@ -4,13 +4,13 @@ kind: "entity"
 type: "model"
 status: "active"
 domain: "🤖 模型"
-last_updated: "2026-07-30"
-last_news_update: "2026-07-30"
+last_updated: "2026-08-10"
+last_news_update: "2026-08-10"
 status_main: "active"
-days_since_news: 6
-inbound_links: 27
-attribution_count: 12
-attribution_last: "2026-07-30"
+days_since_news: 0
+inbound_links: 25
+attribution_count: 13
+attribution_last: "2026-08-10"
 top_source: "google-news"
 signal: "健康"
 generated_by: "scripts/gen_wiki_frontmatter.py"

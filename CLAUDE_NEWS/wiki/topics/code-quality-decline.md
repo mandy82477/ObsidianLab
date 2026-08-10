@@ -3,13 +3,13 @@ page: "topics/code-quality-decline"
 kind: "topic"
 status: "monitoring（官方已說明，待驗證恢復）"
 domain: "🛠️ 工具/功能"
-last_updated: "2026-08-01"
-last_news_update: "2026-08-01"
+last_updated: "2026-08-09"
+last_news_update: "2026-08-04"
 status_main: "monitoring"
-days_since_news: 4
-inbound_links: 24
-attribution_count: 11
-attribution_last: "2026-08-01"
+days_since_news: 6
+inbound_links: 27
+attribution_count: 12
+attribution_last: "2026-08-04"
 top_source: "reddit"
 signal: "健康"
 generated_by: "scripts/gen_wiki_frontmatter.py"

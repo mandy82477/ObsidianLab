@@ -4,10 +4,10 @@ kind: "entity"
 type: "person"
 status: "active（待核實）"
 domain: "👤 人物"
-last_updated: "2026-08-01"
+last_updated: "2026-08-08"
 last_news_update: "2026-07-07"
 status_main: "active"
-days_since_news: 29
+days_since_news: 34
 inbound_links: 4
 attribution_count: 0
 attribution_last: null

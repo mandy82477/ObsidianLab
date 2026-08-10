@@ -7,10 +7,10 @@ domain: "🤖 模型"
 last_updated: "2026-08-09"
 last_news_update: "2026-08-09"
 status_main: "active"
-days_since_news: 0
+days_since_news: 1
 inbound_links: 24
-attribution_count: 10
-attribution_last: "2026-07-30"
+attribution_count: 11
+attribution_last: "2026-08-07"
 top_source: "google-news"
 signal: "健康"
 generated_by: "scripts/gen_wiki_frontmatter.py"

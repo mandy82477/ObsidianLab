@@ -7,12 +7,12 @@ domain: "🛠️ 工具/功能"
 last_updated: "2026-08-01"
 last_news_update: "2026-07-16"
 status_main: "active"
-days_since_news: 20
+days_since_news: 25
 inbound_links: 2
 attribution_count: 1
 attribution_last: "2026-07-16"
 top_source: "devto"
-signal: "孤島"
+signal: "休眠"
 generated_by: "scripts/gen_wiki_frontmatter.py"
 ---
 # Claude Design

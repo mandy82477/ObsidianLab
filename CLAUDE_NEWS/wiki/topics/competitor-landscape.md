@@ -3,13 +3,13 @@ page: "topics/competitor-landscape"
 kind: "topic"
 status: "monitoring"
 domain: "💼 商業"
-last_updated: "2026-08-05"
-last_news_update: "2026-08-05"
+last_updated: "2026-08-10"
+last_news_update: "2026-08-10"
 status_main: "monitoring"
 days_since_news: 0
-inbound_links: 47
-attribution_count: 49
-attribution_last: "2026-08-05"
+inbound_links: 49
+attribution_count: 55
+attribution_last: "2026-08-10"
 top_source: "google-news"
 signal: "健康"
 generated_by: "scripts/gen_wiki_frontmatter.py"

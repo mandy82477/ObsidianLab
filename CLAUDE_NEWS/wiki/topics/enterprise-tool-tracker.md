@@ -3,13 +3,13 @@ page: "topics/enterprise-tool-tracker"
 kind: "topic"
 status: "ongoing"
 domain: "💼 商業"
-last_updated: "2026-08-05"
-last_news_update: "2026-08-05"
+last_updated: "2026-08-10"
+last_news_update: "2026-08-10"
 status_main: "ongoing"
 days_since_news: 0
-inbound_links: 17
-attribution_count: 6
-attribution_last: "2026-08-05"
+inbound_links: 19
+attribution_count: 9
+attribution_last: "2026-08-10"
 top_source: "google-news"
 signal: "健康"
 generated_by: "scripts/gen_wiki_frontmatter.py"

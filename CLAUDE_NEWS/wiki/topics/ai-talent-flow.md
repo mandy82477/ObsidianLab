@@ -6,7 +6,7 @@ domain: "💼 商業"
 last_updated: "2026-08-01"
 last_news_update: "2026-07-13"
 status_main: "monitoring"
-days_since_news: 23
+days_since_news: 28
 inbound_links: 13
 attribution_count: 1
 attribution_last: "2026-07-13"

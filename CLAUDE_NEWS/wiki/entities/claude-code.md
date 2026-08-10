@@ -4,13 +4,13 @@ kind: "entity"
 type: "product"
 status: "active"
 domain: "🛠️ 工具/功能"
-last_updated: "2026-08-07"
-last_news_update: "2026-08-07"
+last_updated: "2026-08-10"
+last_news_update: "2026-08-10"
 status_main: "active"
 days_since_news: 0
-inbound_links: 52
-attribution_count: 209
-attribution_last: "2026-08-05"
+inbound_links: 60
+attribution_count: 253
+attribution_last: "2026-08-10"
 top_source: "github-issues"
 signal: "健康"
 generated_by: "scripts/gen_wiki_frontmatter.py"

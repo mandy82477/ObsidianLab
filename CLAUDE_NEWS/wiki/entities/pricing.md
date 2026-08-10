@@ -4,13 +4,13 @@ kind: "entity"
 type: "policy"
 status: "active（持續調整中）"
 domain: "💼 商業"
-last_updated: "2026-08-04"
-last_news_update: "2026-08-04"
+last_updated: "2026-08-10"
+last_news_update: "2026-08-10"
 status_main: "active"
-days_since_news: 1
-inbound_links: 92
-attribution_count: 38
-attribution_last: "2026-08-04"
+days_since_news: 0
+inbound_links: 95
+attribution_count: 41
+attribution_last: "2026-08-10"
 top_source: "google-news"
 signal: "健康"
 generated_by: "scripts/gen_wiki_frontmatter.py"

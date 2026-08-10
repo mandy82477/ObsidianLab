@@ -3,13 +3,13 @@ page: "topics/model-comparison"
 kind: "topic"
 status: "ongoing"
 domain: "🤖 模型"
-last_updated: "2026-08-05"
-last_news_update: "2026-08-04"
+last_updated: "2026-08-10"
+last_news_update: "2026-08-10"
 status_main: "ongoing"
-days_since_news: 1
-inbound_links: 19
-attribution_count: 14
-attribution_last: "2026-08-04"
+days_since_news: 0
+inbound_links: 20
+attribution_count: 15
+attribution_last: "2026-08-10"
 top_source: "reddit"
 signal: "健康"
 generated_by: "scripts/gen_wiki_frontmatter.py"

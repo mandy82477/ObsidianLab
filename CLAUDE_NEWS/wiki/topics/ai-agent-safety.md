@@ -7,9 +7,9 @@ last_updated: "2026-08-10"
 last_news_update: "2026-08-10"
 status_main: "ongoing"
 days_since_news: 0
-inbound_links: 58
-attribution_count: 52
-attribution_last: "2026-08-05"
+inbound_links: 71
+attribution_count: 68
+attribution_last: "2026-08-10"
 top_source: "google-news"
 signal: "健康"
 generated_by: "scripts/gen_wiki_frontmatter.py"

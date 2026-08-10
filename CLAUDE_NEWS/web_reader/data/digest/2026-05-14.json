@@ -12,13 +12,7 @@
       "time": "05/13 14:15",
       "sentiment": "",
       "body": "這是繼「Hermes gate」爭議後，Anthropic 第二次大幅調整 programmatic 用量政策：恢復允許 OpenClaw 與第三方 Agent SDK，但代價是這些用量全數脫離訂閱方案，改為按完整 API 費率計費的獨立信用池。為何是重點：此舉等同宣告訂閱方案僅涵蓋互動式人工使用，自動化工作流必須付 API 費用。",
-      "focusTags": [],
-      "sedimented": [
-        {
-          "id": "openclaw",
-          "pageType": "entity"
-        }
-      ]
+      "focusTags": []
     },
     {
       "title": "New Claude Code programmatic usage restrictions",
@@ -304,11 +298,5 @@
     }
   ],
   "preview": "Anthropic 宣布 6 月 15 日起，`claude -p`、Agent SDK、Claude Code GitHub Actions 及第三方 Agent SDK 用量將從訂閱方案中剝離，改為按 API 費率計費的獨立信用池。此舉引發開發者強烈反彈，多人宣告取消訂閱。",
-  "sedimentedToday": [
-    {
-      "id": "openclaw",
-      "name": "OpenClaw",
-      "pageType": "entity"
-    }
-  ]
+  "sedimentedToday": []
 }
