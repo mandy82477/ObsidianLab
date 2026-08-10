@@ -660,6 +660,11 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 
 ## 參考來源
 
+- [[news/2026-08-10]]
+- [ABC News：AI assistant hacks gym website](https://www.abc.net.au/news/2026-08-10/ai-assistant-hacks-gym-website-aus-cyber-attack/107007986)（2026-08-10）
+- [Simon Willison：Quoting OpenClaw](https://simonwillison.net/2026/Aug/10/openclaw/#atom-everything)（2026-08-10）
+- [GitHub Issue claude-code #60705](https://github.com/anthropics/claude-code/issues/60705)
+- [[news/2026-08-09]]
 - [[news/2026-08-07]]
 - [[news/2026-08-06]]
 - [[news/2026-08-05]]
