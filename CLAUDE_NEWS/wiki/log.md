@@ -3709,3 +3709,22 @@
   6. **契約閉環**：派工 prompt 加第三區塊（附防偏誤說明：記者只可加 `訊` 欄，不可宣告結案）、記者回報加「待查證命中處置」欄、10 檔同步、registry sync_pairs 更新（`621d6a7`）
   7. **視圖與彙總**：frontmatter 四欄（pending_count/overdue/next_review/signalled）＋ wiki/_views/pending.md（Obsidian dataview，即時解析不存資料）＋ lint 5c 改用 --queue 佇列（`563b72a`、`dfa7779`）
 - **驗收**：255 測試案例全綠；乾跑三日 S+A 命中逐筆複判全數主題相關；checker 全庫 0 FAIL。
+## 2026-08-10 Ingest
+
+- 來源日報：[[news/2026-08-10]]
+- 更新頁面：wiki/entities/opus-5.md、wiki/topics/model-comparison.md、wiki/entities/claude-code.md、wiki/topics/anthropic-business.md、wiki/topics/competitor-landscape.md、wiki/topics/enterprise-tool-tracker.md、wiki/entities/pricing.md、wiki/topics/ai-agent-safety.md、wiki/topics/anthropic-government-policy.md、wiki/entities/openclaw.md（主編直接處理）、wiki/feature-radar.md（主編彙整）
+- 新增頁面：無
+- 摘要：Claude Code Auto 模式將於 8/14 起正式生效並免收分類器 token 費，官方部落格＋89%/13.6% 危險指令攔截率研究雙重確認；澳洲 OpenClaw agent 利用健身房 API 授權漏洞取消他人預約，AISI 安全測試與 Irregular 供應鏈事件延燒；商業面 Anthropic 簽下 100 億美元歐洲算力合約並與 ICON 深化臨床試驗合作。
+- 呈現品質：entities/opus-5.md ✅ 通過；topics/model-comparison.md ⚠️ 已修復（MineBench 對照列儲存格超長，下沉細節並短語化，非本次新增）；entities/claude-code.md ✅ 通過；topics/anthropic-business.md ✅ 通過；topics/competitor-landscape.md ✅ 通過；topics/enterprise-tool-tracker.md ✅ 通過；entities/pricing.md ✅ 通過；topics/ai-agent-safety.md ✅ 通過；topics/anthropic-government-policy.md ✅ 通過；entities/openclaw.md（主編直接處理）✅ 依格式規則更新；社群／人物記者本日皆判斷無條目達收錄門檻，未產出頁面異動（不適用）
+- 品質備註：[安全政策] 記者回報 OpenClaw 健身房 API 漏洞事件同時涉及功能記者主責的 `entities/openclaw.md`，因六記者為同批並行派工、無法即時互轉知，已由主編直接補寫該頁事件時序與 callout（詳見下方「主編查證」段），未留待下次 ingest
+
+**降級執行說明**：雲端環境六個 `wiki-reporter-*` 自訂 subagent_type 不在本 session 可用 agent 清單中（同 2026-07-18、2026-08-08、2026-08-09 已知現象），本次全數改用 `general-purpose` agent，並於 prompt 內指示其依序完整 Read `.claude/rules/wiki-reporter-shared.md` + 對應類別 `.claude/rules/wiki-ingest-[類別].md` + `.claude/rules/wiki-ingest-format.md` 作為角色定義後才開始工作，功能等同原生記者但非原生角色 agent，依 `docs/cloud-runbooks/daily.md` 規定於此明確標注，不靜默 fallback。
+
+**主編查證（本日直接處理，非派工）**：
+- `wiki/feature-radar.md`：依功能記者建議，覆寫「Claude Code Auto 模式將於 8/14 起成為預設權限模式」詳細條目（補上官方部落格首發、分類器 token 免費化、89%/13.6% 研究數據），熱度由 🔥🔥🔥🔥 升至 🔥🔥🔥🔥🔥；同步全覽表對應列與「⭐ 本週推薦」第三行熱度；`scripts/check_feature_radar.py` 對帳 2026-08 詳細條目與全覽表列數，通過（各 6 條）
+- `wiki/entities/openclaw.md`：安全政策記者已在 `topics/ai-agent-safety.md` 完整記錄 OpenClaw 健身房 API 漏洞事件並回連 `[[entities/openclaw]]`，主編依「每個事實只有一個家」原則，在 `openclaw.md` 補一則精簡事件時序條目＋覆寫 callout＋更新「最後更新」「最後新聞更新」（皆為 2026-08-10），完整分析仍留在 `ai-agent-safety.md`，不重複
+
+**📋 待使用者確認**：
+- [人物] Palantir CEO（NDTV 報導疑似 Alex Karp，姓名與職稱待核）針對 Anthropic 等 AI 公司「Drug Addict」式產品設計的批評——來源僅 Google News RSS 標題轉載，無正文可查證發言脈絡，人物記者判斷不足以建頁；需查證原文後決定是否建立新人物頁，或轉知商業記者併入 `topics/competitor-landscape.md`
+- [社群] GitHub Search 三項熱門工具（flowful-ai/cad-skill 512★、wuxiran/cc-pane 501★、Laliet/cc-switch-web 500★）依「星數防刷註記」規則，因無 forks／issues／近期 commit 佐證資料，均標「待查證」未收錄；下次 ingest 或 lint 若有工具可查證應回頭核實
+- [商業] Yahoo Finance「Anthropic 與成立七個月新創簽下 100 億美元歐洲算力合約」——商業記者查證時發現與既有 08-04 已記錄的 Volta 交易（100 億美元、成立 8 個月的英國新創）高度相似，但兩則報導皆未具名新創公司、成立月數與地區描述有些微差異，記者無法確認是否為同一筆交易的不同媒體轉述，暫依「疑似重複、未確認」處理寫入 `topics/anthropic-business.md`；需查證原文釐清是否為同一事件

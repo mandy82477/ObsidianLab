@@ -167,3 +167,12 @@
 [Sun 2026/08/09 13:28:53.00] WARN: gen_wiki_frontmatter.py FAILED (Python 3.11 incompatible with Path.read_text(newline=) — requires 3.13+); non-blocking, build_web proceeded
 [Sun 2026/08/09 13:28:53.00] Single push done (news + wiki + web + confirm-cache + open-signals) - 第一次重試（pull --rebase）即成功，無衝突
 [Sun 2026/08/09 13:28:53.00] === Pipeline complete (agent) ===
+[cloud daily-news-pipeline-cloud STARTED 2026-08-10T13:05:57Z]
+[Mon 2026/08/10 13:35:54.00] === Agent pipeline start (2026-08-10) ===
+[Mon 2026/08/10 13:35:54.00] Aggregator OK（GitHub Actions 已抓料，51 items，來源 12/12 正常；日報 30/51 條收錄）
+[Mon 2026/08/10 13:35:54.00] Wiki ingest OK（降級：六位記者以 general-purpose + 內嵌規則指示執行，wiki-reporter-* 自訂 subagent_type 雲端無法解析；模型/功能/商業/安全政策記者更新頁面，社群/人物記者本日判斷無條目達收錄門檻，未產出頁面異動；主編彙整 feature-radar、補寫 entities/openclaw.md 轉知回應）
+[Mon 2026/08/10 13:35:54.00] Building web reader...
+[Mon 2026/08/10 13:35:54.00] 測試全綠 - web build 放行
+[Mon 2026/08/10 13:35:54.00] FIXED: gen_wiki_frontmatter.py 修復（08-07／08-09 log 曾誤判為「Python 3.11 與 3.13+ 不相容」，實為腳本本身對 Path.read_text() 傳入不存在的 newline= 參數，任何 Python 版本皆不支援此用法；本次改用 path.open() 修正，55 頁 frontmatter 恢復正常重算，已隨本次 web rebuild 一併提交）
+[Mon 2026/08/10 13:35:54.00] Single push done (news + wiki + web + confirm-cache) - 首次嘗試即成功，無需重試
+[Mon 2026/08/10 13:35:54.00] === Pipeline complete (agent) ===

@@ -4,14 +4,14 @@ kind: "topic"
 status: "monitoring"
 domain: "💼 商業"
 last_updated: "2026-08-10"
-last_news_update: "2026-08-07"
+last_news_update: "2026-08-10"
 status_main: "monitoring"
-days_since_news: 3
-inbound_links: 48
-attribution_count: 54
-attribution_last: "2026-08-07"
+days_since_news: 0
+inbound_links: 49
+attribution_count: 55
+attribution_last: "2026-08-10"
 top_source: "google-news"
-pending_count: 31
+pending_count: 30
 pending_overdue: 0
 pending_next_review: "2026-08-24"
 pending_signalled: 0
@@ -24,12 +24,11 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 **領域：** 💼 商業
 **開始日期：** 2026-04
 **最後更新：** 2026-08-10
-**最後新聞更新：** 2026-08-07
+**最後新聞更新：** 2026-08-10
 
-> **最新競品動態**（2026-08-07）
-> - **Meta 正式發布程式碼撰寫 agent「Muse Code」（及 Muse Spark 1.2），加入 Claude Code／Codex 競爭賽道**：WSJ（08-07）、CNET、Basic Tutorials（皆 08-05）三方媒體報導，Simon Willison 部落格（08-05，轉引 Meta 官方部落格）同步收錄；本頁 07-09 已追蹤之「Meta AI 程式輔助工具」傳聞至此正式落地為具名產品，詳見「主要競品追蹤」Meta 子區塊更新。
-> - **the-decoder.com：Claude Code 速度最快但成本近最便宜對手三倍**：❓ **待查證**（標 2026-08-10｜查 the-decoder.com、成本三倍）｜**測試方法與對手身分**：報導未提供測試方法、具體 $ 數字或對手名稱，僅標題層級資訊，詳見「競品定價對照」表對應列。
-> - 08-04 已記錄之阿里巴巴免費開放「最強」模型、08-03 Kiro vs Claude Code 比較文等近期重點仍具參考價值，詳見下方時序。
+> **最新競品動態**（2026-08-10）
+> - **SemiAnalysis（經 Stocktwits 轉引）：Microsoft 能否在 AI 基礎設施競賽「Out-AI」OpenAI 與 Anthropic**：分析文章提及每 GW 推理商機規模達千億美元（$100B-per-GW）估算，數字未經本頁查證原文，詳見「主要競品追蹤」Microsoft 子區塊新增。
+> - 08-07 Meta「Muse Code」正式發布、08-06 the-decoder.com 成本倍數報導等近期重點仍具參考價值，詳見下方時序。
 
 ---
 
@@ -141,6 +140,12 @@ Claude Code 已成為 AI 輔助編碼的標竿產品，但競爭正快速升溫�
 - **動態**：Microsoft 傳出正逐步以自研模型取代部分產品中的 OpenAI 與 Anthropic 模型以降低成本
 - **與既有觀察的呼應**：延續 Microsoft 06-21 退出 Claude Code（成本原因）、06-04 Kevin Scott 公開批評 Anthropic 定價過高的既有軌跡，若屬實代表依賴度收斂從「編碼工具層」擴大至「底層模型層」的雙重收斂
 - **意義**：雲端大廠若成功以自研模型替代第三方模型，將直接侵蝕 Anthropic 的 API 收入來源，且此風險不受 Anthropic 內部定價或效能改善控制（推論）（SiliconANGLE https://siliconangle.com/2026/07/07/microsoft-reportedly-ditching-openais-anthropics-ai-models-favor-cut-costs/；Bloomberg https://www.bloomberg.com/news/articles/2026-07-07/microsoft-replaces-openai-anthropic-with-own-ai-in-some-apps）；商業風險面詳見 [[topics/anthropic-business]]
+
+### Microsoft 基礎設施競賽：SemiAnalysis 稱其對 OpenAI／Anthropic 具「Out-AI」潛力（分析文章，2026-08-10）
+- **狀態**：分析階段（Stocktwits 轉引 SemiAnalysis 觀點，僅標題層級資訊，2026-08-10）
+- **動態**：財經媒體 Stocktwits 轉引研究機構 SemiAnalysis 分析，討論 Microsoft 能否在 AI 基礎設施競賽中超越 OpenAI 與 Anthropic，文中提及每 GW 推理商機規模達**千億美元**（$100B-per-GW）的估算
+- **與既有觀察的呼應**：延續 07-07 Microsoft 傳出以自研模型逐步取代 OpenAI/Anthropic 模型（見上方「Microsoft 自研模型」子區塊）、07-15 訓練業務團隊淡化競品優勢等既有 Microsoft 對抗策略軌跡，本次從「產品/銷售」層面轉向「基礎設施投資規模」層面立論，若分析屬實，代表 Microsoft 對抗兩大競爭對手的路線正擴及運算基礎設施投資規模的直接比拼（推論）
+- **注意（待查證）**：$100B-per-GW 推理商機估算僅為轉引媒體標題層級資訊，SemiAnalysis 原文測算方法論、具體假設條件未見於本頁抓取資料，不可逕自採信為已查證數字（Google News/Stocktwits，轉引 SemiAnalysis）
 
 ### Microsoft 業務策略：訓練業務團隊淡化 OpenAI/Anthropic 優勢（傳聞，2026-07-15）
 - **狀態**：傳聞階段（Yahoo Finance 2026-07-15 報導，未經 Microsoft 官方證實）
@@ -269,6 +274,9 @@ Claude Code 已成為 AI 輔助編碼的標竿產品，但競爭正快速升溫�
 #### 近期單日動態彙整（2026-07-02 至 2026-07-26）
 
 > 逐日條目按主題可另見上方「主要競品追蹤」對應廠商子區塊；此區塊保留完整時序供追溯查證。
+
+### 2026-08-10
+- **[競品基礎設施動態，標題層級，待查證] SemiAnalysis（經 Stocktwits 轉引）：Microsoft 能否「Out-AI」OpenAI 與 Anthropic，每 GW 推理商機估算達千億美元**：詳見「主要競品追蹤」新增 Microsoft 基礎設施競賽子區塊（Google News/Stocktwits）
 
 ### 2026-08-07
 - **[重大，競品正式發布，跨 4 來源] WSJ：Meta 發布程式碼撰寫 agent「Muse Code」，明確對標 OpenAI 與 Anthropic**：WSJ 標題直指「Meta Releases Coding Agent to Compete With OpenAI and Anthropic」，與 08-05 CNET、Basic Tutorials、Simon Willison 部落格報導同一事件；詳見「主要競品追蹤」Meta「Muse Code」子區塊更新與「競品定價對照」表新增列（Google News/WSJ）

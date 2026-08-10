@@ -7,7 +7,7 @@ last_updated: "2026-08-10"
 last_news_update: "2026-08-04"
 status_main: "monitoring"
 days_since_news: 6
-inbound_links: 28
+inbound_links: 27
 attribution_count: 12
 attribution_last: "2026-08-04"
 top_source: "reddit"

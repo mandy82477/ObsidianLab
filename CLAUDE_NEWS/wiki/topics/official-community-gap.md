@@ -7,7 +7,7 @@ last_updated: "2026-08-10"
 last_news_update: "2026-08-09"
 status_main: "monitoring"
 days_since_news: 1
-inbound_links: 18
+inbound_links: 17
 attribution_count: 5
 attribution_last: "2026-08-09"
 top_source: "github-issues"

@@ -12,13 +12,7 @@
       "time": "08/09 10:41",
       "sentiment": "",
       "body": "一款自稱「輕量級 loop 工程狀態核心」的專案，宣稱可跨 Codex、Claude Code 等多種 coding agent 通用，提供持久目標、配額感知的自動喚醒、可執行待辦、證據紀錄與可驗證交接等機制，鎖定長任務多 agent 團隊場景；GitHub 顯示 3641 顆星，實際採用情形有待觀察。",
-      "focusTags": [],
-      "sedimented": [
-        {
-          "id": "claude-code",
-          "pageType": "entity"
-        }
-      ]
+      "focusTags": []
     },
     {
       "title": "HangYu8123/HarnessFlow",
@@ -36,13 +30,7 @@
       "time": "08/08 22:47",
       "sentiment": "",
       "body": "作者自稱將程式碼庫編譯成 O(1) 雜湊表供 agent 查詢架構並做完整靜態分析，在自訂 20 項 benchmark 中有 2 項讓以 Sonnet 為主的 Claude Code 表現退步或逾時、其餘 18 項聲稱更便宜或更快；目前僅支援 Windows，數據為作者自行測試、未經第三方驗證。",
-      "focusTags": [],
-      "sedimented": [
-        {
-          "id": "claude-code",
-          "pageType": "entity"
-        }
-      ]
+      "focusTags": []
     },
     {
       "title": "Support /btw command in VS Code extension",
@@ -60,13 +48,7 @@
       "time": "08/08 22:49",
       "sentiment": "",
       "body": "功能請求：希望能在 Claude 桌面 App 中對 Claude Code session 開啟 Remote Control，累計 158 個👍反應。",
-      "focusTags": [],
-      "sedimented": [
-        {
-          "id": "claude-code",
-          "pageType": "entity"
-        }
-      ]
+      "focusTags": []
     }
   ],
   "techUpdates": [],
@@ -78,13 +60,7 @@
       "time": "08/08 22:17",
       "sentiment": "",
       "body": "XDA 報導一名使用者調整 Claude Code 的某項設定後，token 消耗量下降 45%；原文摘要僅提供標題，具體是哪項設定尚待查證。",
-      "focusTags": [],
-      "sedimented": [
-        {
-          "id": "claude-code",
-          "pageType": "entity"
-        }
-      ]
+      "focusTags": []
     },
     {
       "title": "Anthropic sets Claude Code to Auto Mode by default to protect developers from bad approvals - the-decoder.com",
@@ -93,13 +69,7 @@
       "time": "08/08 15:02",
       "sentiment": "",
       "body": "the-decoder.com 同步報導 Auto Mode 即將成為 Claude Code 預設模式，標題將此舉定調為保護開發者免於錯誤核准風險，與今日聚焦所述為同一事件的另一來源。",
-      "focusTags": [],
-      "sedimented": [
-        {
-          "id": "claude-code",
-          "pageType": "entity"
-        }
-      ]
+      "focusTags": []
     },
     {
       "title": "Visiting Anthropic's Favorite Atomic Author - The Information",
@@ -146,13 +116,7 @@
       "time": "08/08 14:33",
       "sentiment": "😊",
       "body": "作者記錄凌晨因記憶體緩慢洩漏導致正式環境當機的排查過程，改用 Claude Code 系統性分析 heap snapshot 後才找出問題，並整理出四項用 AI coding agent 排查正式環境問題的心得。",
-      "focusTags": [],
-      "sedimented": [
-        {
-          "id": "claude-code",
-          "pageType": "entity"
-        }
-      ]
+      "focusTags": []
     },
     {
       "title": "Git worktrees isolate branches, not every dependency lookup",
@@ -161,13 +125,7 @@
       "time": "08/09 08:25",
       "sentiment": "😐",
       "body": "討論指出 Claude Code 的 git worktree 機制能防止兩個 session 同時修改相同檔案，但檔案系統的放置位置仍可能弱化執行期的隔離效果，提醒使用者留意預設放置位置。",
-      "focusTags": [],
-      "sedimented": [
-        {
-          "id": "claude-code",
-          "pageType": "entity"
-        }
-      ]
+      "focusTags": []
     },
     {
       "title": "How do I know which model to use?",
@@ -185,13 +143,7 @@
       "time": "08/09 10:25",
       "sentiment": "😊",
       "body": "作者分享自製的 agent skill，可透過 CLI 直接設定真實後端服務（不使用測試金鑰或佔位資料），改善過去要求 agent「串接 Stripe」或「連接 Postgres」時常見的困擾。",
-      "focusTags": [],
-      "sedimented": [
-        {
-          "id": "claude-code",
-          "pageType": "entity"
-        }
-      ]
+      "focusTags": []
     },
     {
       "title": "Real use cases/limitations?",
@@ -200,13 +152,7 @@
       "time": "08/09 10:35",
       "sentiment": "🤔",
       "body": "一名自稱懂技術但非工程師的小型企業經營者發問，詢問其他使用者用 Claude Code 打造自有應用的實際案例與限制。",
-      "focusTags": [],
-      "sedimented": [
-        {
-          "id": "claude-code",
-          "pageType": "entity"
-        }
-      ]
+      "focusTags": []
     },
     {
       "title": "Thought I knew better 😫",
@@ -334,11 +280,6 @@
   ],
   "preview": "Claude Code 的 Auto Mode 將於 8 月 14 日起成為 Pro、Max、Team 方案的預設權限模式（Enterprise 與 API／雲端平台目前仍維持選用制，預計約一個月後跟進）；Anthropic 產品團隊在受訪時表示已針對主要疑慮的風險類別大幅緩解相關攻擊，並將於近期公布評測數據。",
   "sedimentedToday": [
-    {
-      "id": "claude-code",
-      "name": "Claude Code",
-      "pageType": "entity"
-    },
     {
       "id": "mythos",
       "name": "Claude Mythos",
