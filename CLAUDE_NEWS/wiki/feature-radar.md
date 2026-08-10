@@ -4,7 +4,7 @@
 僅收錄官方 changelog、release note 或官方公告來源；社群工具見 [[topics/community-tech-tools]]。
 每日更新：新增功能、更新熱度、補充社群回饋。
 
-**最後更新：** 2026-08-09
+**最後更新：** 2026-08-10
 
 ---
 
@@ -12,9 +12,9 @@
 
 - **Claude Opus 5**（熱度 🔥🔥🔥🔥🔥）：2026-07-25 正式發布，編碼與知識工作評測逼近 Fable 5、官方稱定價為其一半，現為 Claude Max 新預設模型、Claude Pro 最強模型，適合日常 agentic 使用與知識工作任務
 - **Claude Code 跨 session 訊息互通**（熱度 🔥🔥🔥🔥）：2026-08-08 官方文件確認（需 v2.1.224+、macOS/Linux），用 `ListAgents`+`SendMessage` 跨 session 傳訊；已在平行跑多個 session 的使用者可直接試用
-- **Claude Code Auto 模式 8/14 起預設化**（熱度 🔥🔥🔥🔥）：2026-08-14 起成為 Pro/Max/Team 方案預設權限模式，取代手動確認流程；依賴手動確認做安全把關者應在生效日前確認是否要主動關閉
+- **Claude Code Auto 模式 8/14 起預設化**（熱度 🔥🔥🔥🔥🔥）：2026-08-14 起成為 Pro/Max/Team 方案預設權限模式，取代手動確認流程，即日起分類器 token 用量免收費；依賴手動確認做安全把關者應在生效日前確認是否要主動關閉
 
-> 本週輪替：2026-08-09（語音模式 Opus／Sonnet 選擇、Reflect with Claude 因今日無新熱度異動、被本輪更新的兩項功能擠出候選池）。
+> 本週輪替：2026-08-10（Auto 模式熱度因官方部落格正式確認＋89%/13.6% 研究數據由 🔥🔥🔥🔥 升至 🔥🔥🔥🔥🔥，維持推薦；語音模式 Opus／Sonnet 選擇、Reflect with Claude 因今日無新熱度異動，續未進入候選池）。
 
 ---
 
@@ -65,7 +65,7 @@
 | 功能 | 發布日期 | 熱度 | 試用價值 | 狀態 |
 |------|----------|------|----------|------|
 | **Claude Code 跨 session 訊息互通**（需 v2.1.224+、macOS／Linux，`ListAgents` 探索可連線 session、`SendMessage` 指定名稱傳訊，亦適用 subagent 與 team 隊友） | 2026-08-08 | 🔥🔥🔥🔥 | ⚡ 有條件推薦 | 正式發布 |
-| **Claude Code Auto 模式預設化**（⚠️ Breaking change：8/14 起 auto 成為 Pro／Max／Team 預設權限模式，取代手動確認流程；Enterprise 與 API／雲端平台仍選用制） | 2026-08-14 生效（08-07 公告） | 🔥🔥🔥🔥 | ⚡ 有條件推薦 | 官方公告（尚未生效） |
+| **Claude Code Auto 模式預設化**（⚠️ Breaking change：8/14 起 auto 成為 Pro／Max／Team 預設權限模式，取代手動確認流程；即日起免收分類器 token 費；Enterprise 與 API／雲端平台仍選用制） | 2026-08-14 生效（08-07 公告，08-10 官方部落格確認） | 🔥🔥🔥🔥🔥 | ⚡ 有條件推薦 | 官方公告（尚未生效） |
 | **Claude Code v2.1.224**（新增 `claude self-hosted-runner`，可將自有機器或容器變成 Claude Code web／mobile／desktop session 執行環境，Team／Enterprise 適用） | 2026-08-07 | 🔥🔥 | ⚡ 有條件推薦 | 正式發布 |
 | **API Inference Hooks**（Enterprise 組織 beta，claude.ai／Cowork／Claude Code 上受管治 prompt 可導向企業自有 AI 安全伺服器） | 2026-08-05 | 🔥🔥 | ⏳ 觀望 | Beta（Enterprise） |
 | **Claude Code v2.1.222**（安全修復：worktree 隔離 session 及其 subagent 可對主 checkout 執行破壞性 git 指令的漏洞，隔離範圍擴及檔案編輯與 Bash 執行） | 2026-08-04 | 🔥🔥 | ✅ 建議升級 | 正式發布（安全修復） |
@@ -144,15 +144,15 @@
 ## 🆕 最新功能（2026-08）
 
 ### Claude Code Auto 模式將於 8/14 起成為預設權限模式
-**發布：** 2026-08-14 生效（2026-08-07 公告） | **熱度：** 🔥🔥🔥🔥 | **試用價值：** ⚡ 有條件推薦 | **狀態：** 官方公告（尚未生效，⚠️ Breaking change，適用 Pro/Max/Team；Enterprise 與 API/雲端平台仍選用制，預計約一個月後跟進）
+**發布：** 2026-08-14 生效（2026-08-07 公告，2026-08-10 官方部落格正式宣布並補充免費措施） | **熱度：** 🔥🔥🔥🔥🔥 | **試用價值：** ⚡ 有條件推薦 | **狀態：** 官方公告（尚未生效，⚠️ Breaking change，適用 Pro/Max/Team；Enterprise 與 API/雲端平台仍選用制，預計約一個月後跟進）
 
-**是什麼：** Anthropic 宣布 Claude Code 將於 2026 年 8 月 14 日起，把「auto 模式」設為 Pro、Max、Team 方案的預設權限模式，取代目前預設的手動確認流程；Enterprise 與 API／雲端平台目前仍維持選用制。
+**是什麼：** Anthropic 官方部落格正式宣布 Claude Code 將於 2026 年 8 月 14 日起，把「auto 模式」設為 Pro、Max、Team 方案新 session 的預設權限模式，取代目前預設的手動確認流程（已自行設定過個人預設或釘選預設者不受影響，會收到一次性提示詢問是否切換）；Enterprise 與 API／雲端平台目前仍維持選用制，約一個月後跟進。同時宣布**即日起（2026-08-10）不再對 auto 分類器產生的額外 token 用量收費**——此前分類器每次工具呼叫會消耗少量額外 token。
 
-**為何熱：** Hacker News（轉引 @ClaudeDevs 官方推文、the newstack.io）、simonwillison.net、the-decoder.com 多來源互相驗證；Anthropic 產品負責人 Cat Wu 受訪表示「We've pretty much mitigated every attack [...] for the main categories of risks that we're concerned about」，並將於近期公布評測數據；同一受訪內容提到「Broadly within Anthropic, almost every single person uses auto mode」。HN 討論串高分留言認為新款模型已大幅降低破壞性操作風險。
+**為何熱：** Anthropic 官方部落格首發（經 Hacker News 轉發，227 分），是繼 08-07 官方公告、08-09 產品負責人 Cat Wu 受訪（the newstack.io）表示「We've pretty much mitigated every attack [...] for the main categories of risks that we're concerned about」後的正式書面確認；Reddit 週熱門貼文引述對 1,053 名付費測試者的對照研究，指 auto 模式攔下 89% 危險指令、人工逐一審核僅攔下 13.6%，為此前僅憑官方單方陳述補上量化佐證，熱度由 🔥🔥🔥🔥 升至 🔥🔥🔥🔥🔥。
 
-**現在要試嗎：** 屬即將生效的預設行為變更，非選用功能；依賴目前手動確認流程做安全把關的使用者，應在 8/14 前確認是否要主動關閉 auto 模式（設定方式待官方文件補齊）。一般使用者可持觀望態度等生效日到來。
+**現在要試嗎：** 屬即將生效的預設行為變更，非選用功能；依賴目前手動確認流程做安全把關的使用者，應在 8/14 前確認是否要主動關閉 auto 模式（設定方式待官方文件補齊）。分類器 token 免費化降低了「多花錢換安全」的疑慮，一般使用者可持觀望態度等生效日到來。
 
-**注意事項：** 目前僅公告尚未生效，具體關閉/設定方式待官方 changelog 或部落格正式公告確認；官方評測數據尚未發布（Cat Wu 稱「未來數週內」公布），現階段「已緩解主要風險」為官方單方陳述，未經第三方驗證。
+**注意事項：** Reddit 89%/13.6% 研究樣本為單一社群來源引述，尚待官方或第三方正式發布評測數據佐證（Cat Wu 稱「未來數週內」公布）；具體關閉/設定方式待官方 changelog 或部落格正式公告確認。
 
 ---
 
