@@ -123,11 +123,11 @@ window.WIKI_DATA = {
       "pill": "active",
       "firstSeen": "2025（正式推出）",
       "startDate": "",
-      "lastUpdated": "2026-08-09",
+      "lastUpdated": "2026-08-10",
       "lastNewsUpdate": "2026-08-09",
       "updateFreq": "",
       "summary": "**最新版本動態：** 最新版本號為 **v2.1.226**（2026-08-08），官方標示為 bug 修復與穩定性改進版本，未列出具體異動項目，純版本號更新已記入版本表；前一版 **v2.1.224**（2026-08-07）新增 `claude self-hosted-runner` 指令，開放 Team 與 …",
-      "latestHeadline": "⟨Q-03⟩ ❓ 待查證（標 2026-08-09｜查 anthropic-sdk-python、mid-conversation-tool-channel）：v0.121.0 changelog 於 `mid-conversation-tool-chan[nel]` 處截斷，完整功能名稱與細節無法確認。"
+      "latestHeadline": "⟨Q-13⟩ ❓ 待查證（標 2026-08-09｜查 Governor、token 浪費｜複 2026-09-09）：社群工具 Governor 宣稱優化 token 浪費，HN 社群對其實際成效提出疑慮；2026-08-10 查證找到廠商自報數據（compact professional 模式宣稱較基準降低 55."
     },
     {
       "id": "claude-design",
@@ -246,7 +246,7 @@ window.WIKI_DATA = {
       "pageType": "entity",
       "name": "Claude Fable 5",
       "entityType": "model",
-      "status": "active（正式發布；出口管制已解除，2026-07-01 起全球恢復存取；免費期已於 2026-07-19 到期，Max/Team 後續存取政策尚有分歧報導，見 [[entities/pricing]]）",
+      "status": "active（正式發布；出口管制已解除，2026-07-01 起全球恢復存取；免費期已於 2026-07-19 到期，Max/Team 後續存取政策已於 2026-08-08 經官方 Help Center 查證收斂，見 [[entities/pricing]]）",
       "domain": "🤖 模型",
       "pill": "active",
       "firstSeen": "2026-06-09",
@@ -399,7 +399,7 @@ window.WIKI_DATA = {
       "lastNewsUpdate": "2026-07-25",
       "updateFreq": "",
       "summary": "**2026-07-25 最新**：Claude Opus 5 正式發布，取代 Opus 4.8 成為次旗艦、Claude Max 新預設模型、Claude Pro 最強模型（詳見 opus-5）。近兩週的「Opus 5」傳聞（HackerNoon 07-24、TestingCatalog 07-23 等，見下方「下一…",
-      "latestHeadline": "⟨Q-01⟩ ❓ 待查證（標 2026-08-10｜查 TipRanks、Qwen distillation）：舊「Qwen distillation」爭議經媒體重提，冠以「蒸餾雙標」框架。TipRanks（經 Google News 轉載，僅標題可用，無內文）報導標題稱「Claude 自稱是阿里巴巴 Qwen AI」"
+      "latestHeadline": "⟨Q-01⟩ 2026-08-10 官方／第三方媒體查證：查得 TipRanks 全文（非僅標題），確認非單純舊事重炒。核心事實：Anthropic 於 2026-06-10 致函美國參議院銀行委員會，指控與 Alibaba Qwen Lab 有關的操作者對 Claude 發動迄今最大規模蒸餾攻擊（約 25,000 個"
     },
     {
       "id": "opus-5",
@@ -415,7 +415,7 @@ window.WIKI_DATA = {
       "lastNewsUpdate": "2026-07-30",
       "updateFreq": "",
       "summary": "Anthropic 於 2026-07-25 正式發布 Claude Opus 5，是繼 2026-07-13 起多篇媒體「Opus 5 傳聞」報導後的官方證實版本（詳見 opus-4-8 「下一代模型觀察」歷史記錄）。官方定位此模型為 thoughtful and proactive，設計目標是**日常可用**且效率…",
-      "latestHeadline": "⟨Q-01⟩ ❓ 待查證（標 2026-08-10｜查 Reddit、ClaudeCode）：Opus 5 使用後仍有落差的「minor」問題，原文於此截斷，具體細節不可得；缺乏數字或跨來源佐證，效能落差幅度未經查證"
+      "latestHeadline": "Reddit r/ClaudeCode 貼文（無「週熱門」標記，score 恆為 0 屬 RSS 已知限制不可信）稱使用者原先參考跑分認為 Opus 5 優於 Fable 5，實際使用後認為 Opus 5 仍有落差，提及遇到「minor」問題（原文於此截斷，具體細節不可得）；缺乏具體數字、跨來源佐證或問題細節，僅記錄社"
     },
     {
       "id": "pricing",
