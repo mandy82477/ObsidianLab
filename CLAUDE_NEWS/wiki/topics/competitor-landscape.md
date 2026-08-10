@@ -19,13 +19,12 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 **狀態：** monitoring
 **領域：** 💼 商業
 **開始日期：** 2026-04
-**最後更新：** 2026-08-08
-**最後新聞更新：** 2026-08-07
+**最後更新：** 2026-08-10
+**最後新聞更新：** 2026-08-10
 
-> **最新競品動態**（2026-08-07）
-> - **Meta 正式發布程式碼撰寫 agent「Muse Code」（及 Muse Spark 1.2），加入 Claude Code／Codex 競爭賽道**：WSJ（08-07）、CNET、Basic Tutorials（皆 08-05）三方媒體報導，Simon Willison 部落格（08-05，轉引 Meta 官方部落格）同步收錄；本頁 07-09 已追蹤之「Meta AI 程式輔助工具」傳聞至此正式落地為具名產品，詳見「主要競品追蹤」Meta 子區塊更新。
-> - **the-decoder.com：Claude Code 速度最快但成本近最便宜對手三倍**：報導未提供測試方法、具體 $ 數字或對手名稱，僅標題層級資訊，詳見「競品定價對照」表新增列（標「待查證」）。
-> - 08-04 已記錄之阿里巴巴免費開放「最強」模型、08-03 Kiro vs Claude Code 比較文等近期重點仍具參考價值，詳見下方時序。
+> **最新競品動態**（2026-08-10）
+> - **SemiAnalysis（經 Stocktwits 轉引）：Microsoft 能否在 AI 基礎設施競賽「Out-AI」OpenAI 與 Anthropic**：分析文章提及每 GW 推理商機規模達千億美元（$100B-per-GW）估算，數字未經本頁查證原文，詳見「主要競品追蹤」Microsoft 子區塊新增。
+> - 08-07 Meta「Muse Code」正式發布、08-06 the-decoder.com 成本倍數報導等近期重點仍具參考價值，詳見下方時序。
 
 ---
 

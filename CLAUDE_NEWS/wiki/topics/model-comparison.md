@@ -19,12 +19,13 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 **狀態：** ongoing
 **領域：** 🤖 模型
 **開始日期：** 2026-07-02
-**最後更新：** 2026-08-08
-**最後新聞更新：** 2026-08-04
+**最後更新：** 2026-08-10
+**最後新聞更新：** 2026-08-10
 
-> **最新對照更新**（2026-08-04）
+> **最新對照更新**（2026-08-10）
 > 公開陣容為 Fable 5（旗艦）> [[entities/opus-5|Opus 5]]（次旗艦，07-25 發布）> Sonnet 5（Claude Code 預設）> Sonnet 4.6 > Haiku 4.5；Opus 4.8 / 4.7 皆已被取代。
 > Opus 5 上線後兩週的社群回饋轉為分歧（「過度自信」「不如跑分預期」，07-29～08-04，弱訊號無量化數字），見下方社群實測觀察。
+> 新增「安全分類器評測」一節：社群報導 Auto 模式攔截危險指令準確率 89% vs 人工 13.6%（單一社群報導，非選型指標），見下方對應區塊。
 
 ---
 
@@ -108,8 +109,10 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 | 同一 iOS 卡路里 App brief 並排（影片） | 僅影片示範，無文字評測結論。單一使用者，弱 | Reddit r/ClaudeCode，2026-07-14 |
 | Opus 5 長時任務心得 | 稱 long-horizon 表現最佳、low effort 成本效益高，**無 benchmark 數字**。單一使用者（週熱門），弱 | Reddit r/ClaudeAI「Opus 5 results are really shocking!!」，2026-07-24 |
 | Opus 5 effort dial 非單調 | ❌ **官方文件反證**（2026-08-08 查證）：官方載明 effort 提高可更可靠轉換為更好結果、直到 `max`，未見任何「高於 high 即下降」敘述。社群說法不成立 | Reddit r/artificial，2026-07-25；[官方 migration guide](https://platform.claude.com/docs/en/about-claude/models/migration-guide)，查核 2026-07-29 |
-| MineBench.ai 上 Fable 5 vs Opus 5 差異 | ⚠️ **查證後不可採信**（2026-08-08）：MineBench 測 3D voxel 空間推理（文字→JSON 座標，人類配對投票算 Elo），與編碼／agentic 能力無關；榜上**查無 Fable 5 或 Opus 5**（現列 GPT-5 4215／Claude 4 2108／Gemini 3 Pro 2091，無資料日期）。單一貼文（週熱門），弱 | Reddit r/ClaudeAI，2026-07-26；[minebench.ai](https://minebench.ai/) 2026-08-08 查證 |
+| MineBench.ai 上 Fable 5 vs Opus 5 差異 | ⚠️ **查證後不可採信**（2026-08-08）：測的是空間推理非編碼能力，且榜上查無兩模型，見下方細節。單一貼文（週熱門），弱 | Reddit r/ClaudeAI，2026-07-26；[minebench.ai](https://minebench.ai/) 2026-08-08 查證 |
 | Opus 5 上線兩週後的體感回饋 | 三則負向回報：「過度自信」（07-29）、「不如跑分預期」（07-30）、「令人挫折」（08-04），皆無量化數字。多則獨立貼文但同平台，弱～中 | Reddit r/ClaudeCode，2026-07-29 / 07-30 / 08-04 |
+
+**MineBench 細節：** MineBench 測的是 3D voxel 空間推理（文字→JSON 座標，人類配對投票算 Elo），與編碼／agentic 能力無關；榜上查無 Fable 5 或 Opus 5（現列 GPT-5 4215／Claude 4 2108／Gemini 3 Pro 2091，無資料日期），2026-08-08 查證後判定原貼文所稱差異不可採信。
 
 **Effort dial 細節：** 原始貼文於「至少在程式碼任務上看起來這樣做…」處截斷；經查證官方 migration guide（2026-07-29 查核）僅載明 `max` 效果「可能報酬遞減、在較簡單任務上容易 overthinking」，屬**定性**描述，未見具體分數或「高於 high 即單調下降」的文字——社群措辭比官方原文更強烈，此落差待驗證，不可逕自採信社群版本的因果強度，亦不可推算下降幅度。
 
@@ -129,6 +132,12 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 Anthropic 研究部落格於 2026-07-15 發布〈Claude's values across models and languages〉，探討使用者提出**沒有普遍正確答案的問題**時（如「該不該接受新工作」），Claude 在不同模型版本與語言之間的價值觀回應差異（[Anthropic Research](https://www.anthropic.com/research/claude-values-models-languages)，2026-07-15；HN 32 分）。
 
 **性質說明：** 屬模型行為／對齊研究，非可用功能也非 benchmark 分數，**不影響本頁選型建議**；因涉及跨模型比較而記於本頁。原文未附樣本語言清單、模型清單或量化差異數字，暫列標題級記錄。
+
+## 安全分類器評測（社群報導，非選型指標）
+
+Reddit r/ClaudeAI 週熱門貼文〈Anthropic Flips Claude Code to Auto Mode by Default Aug 14〉稱引一項對 1,053 名付費測試者的對照研究：Auto 模式攔截危險指令準確率 **89%**，人工逐一審核僅 **13.6%**；貼文標題另稱「blocks 80%+ ... humans only 14%」，與內文 TL;DR 數字（89% / 13.6%）不完全一致，兩組數字並陳，不擇一（[Reddit](https://www.reddit.com/r/ClaudeAI/comments/1vjqcvf/anthropic_flips_claude_code_to_auto_mode_by/)，週熱門，2026-08-09）。
+
+**訊號強度：單一社群報導。** 原始對照研究是否經 Anthropic 官方發布、測試方法與「危險指令」的認定標準均未附連結佐證，除樣本規模（1,053 名付費測試者）外的條件不可考，暫列待查證。此為 Claude Code Auto 模式背後分類器的安全行為評測，與模型間選型（Fable 5 / Opus 5 / Sonnet 5…）無直接對應關係，不進快速選型表；Auto 模式預設化本身（生效日期 08-14、開關機制）由 [[entities/claude-code]] 追蹤，本頁僅記錄評測數字本身。
 
 ## 外部評測榜單
 
