@@ -12,7 +12,7 @@ inbound_links: 25
 attribution_count: 12
 attribution_last: "2026-07-30"
 top_source: "google-news"
-pending_count: 6
+pending_count: 1
 pending_overdue: 0
 pending_next_review: "2026-08-24"
 pending_signalled: 0
@@ -29,7 +29,7 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 **最後新聞更新：** 2026-07-30
 
 > **最新進展**（2026-07-26）
-> Anthropic 於 2026-07-25 正式推出 Claude Opus 5，終結了近兩週的「Opus 5」傳聞（詳見 [[entities/opus-4-8]] 歷史記錄）。定位為 thoughtful and proactive 的新一代模型，在編碼與知識工作評測（Frontier-Bench、GDPval-AA）上逼近 Fable 5 的 frontier intelligence，官方稱定價為 Fable 5 的一半；現為 Claude Max 新預設模型、Claude Pro 最強模型，取代 Opus 4.8 成為次旗艦。資安任務上仍落後 Mythos 5。07-26 MLQ.ai／PCMag 標題另稱 Opus 5 在特定測試（AI Benchmark Index、agentic search）「tops」Fable 5，與官方「逼近未超越」框架略有出入，僅標題層級。❓ **待查證**（標 2026-08-10｜查 MLQ.ai、PCMag）｜**「tops」措辭與官方框架落差**：具體數字尚未公開。
+> Anthropic 於 2026-07-25 正式推出 Claude Opus 5，終結了近兩週的「Opus 5」傳聞（詳見 [[entities/opus-4-8]] 歷史記錄）。定位為 thoughtful and proactive 的新一代模型，在編碼與知識工作評測（Frontier-Bench、GDPval-AA）上逼近 Fable 5 的 frontier intelligence，官方稱定價為 Fable 5 的一半；現為 Claude Max 新預設模型、Claude Pro 最強模型，取代 Opus 4.8 成為次旗艦。資安任務上仍落後 Mythos 5。**07-26 MLQ.ai／PCMag 標題「tops」措辭已查證**：第三方 Artificial Analysis Intelligence Index 上 Opus 5 確以 60.7% 微幅領先 Fable 5 的 59.9%；GDPval-AA v2（1861 Elo，+114）、AA-Briefcase（1720 Elo，+146）亦領先，同時 AA-Briefcase 每任務成本僅 $10.41，較 Fable 5 的 $22.30 低 54%。詳見 [[topics/model-comparison#Benchmark 對照（有來源者才列）]]。
 
 ---
 
@@ -43,7 +43,7 @@ Anthropic 於 2026-07-25 正式發布 Claude Opus 5，是繼 2026-07-13 起多�
 
 **定價定位：** 官方宣稱定價為 Fable 5 的一半（[the-decoder.com](https://news.google.com/rss/articles/CBMixAFBVV95cUxQd3dndnBYZjY0MVBWTjAtNGFYMmFkVUFEUHZmMkZpWVBscjh2VGlRNlJSREdfV3ZmNURtcWVWeTNhYnRudEU3eUhMMkt6bTBRNGRkS2I3WTMwWU5IcmxLdGFXcm56cGJMcmZoWjlpeWdwSjZlRVpRelhFcTkza01tdkZjcGNOQjBKa0JlOFV1bGtRSGJwVkRDb2h3STRKRVN5NEJmM1Q3aVZtUzBRQURlaXpxUENyWHFQZVk0LVBrdUM2QlZm?oc=5)，2026-07-25）；另有 MarkTechPost 報導稱 Opus 5 是在**維持原 Opus 定價**下達到 frontier 級的程式撰寫與電腦操作能力（[Google News/MarkTechPost](https://news.google.com/rss/articles/CBMi1wFBVV95cUxOS0JSUzdUZmhBMVJ3bkFpcXFINFdKalE4NU1YZ1lxSnpBazVRWkl4SUx1RTlEYmI3azJKUFJTbXJGYUxzQTM2UkNjektPMGJxVGdRSTNoSE93SkJZTmFrekFiTjEwdEhxMjZkenBDMGx6cDU0OS1zTzhwWWhpX3RqYWY3TUlCaVg5ZmFJZW5meU04Y09kNDdnTXhjTG1mYXlHTG1hY1lTd3NuUlhwZGJ3VFI0M2VjWUQ2eDF0WVBuYXFuOUVfTTVtRWl6N1A3ZG1DMENraWtCNNIB3AFBVV95cUxPdExPRlliYXRNMjVRVTFJY0xEcFllWjJkdHRmNnNuUDgyMXNOd0VlckNjNmxsaTdpTUtpeklJUEdfMjdGekpPbGl6ZjFTb0tfYVpJbUlEX18tQjlwalQ4amNJcHAwUmZoUm1BWmpLSFY5bS1ibTY1WmlqX0FTUG1LZkdKd01mUjdYSFg0ZFVaNVJ4aHZGaHE1OEM0RHdmUXd6R0dpeVM0SjhPdzF2UTloTTdGaHVpZ2dEUG8wdUIzWmhyQVNnMUtaQ2d4Tk1mMXdCRFdhaXhmcmJ3X3Yz?oc=5)，2026-07-24）。兩則報導對「定價相對前代是否維持不變或砍半」的敘述方向不完全一致，**具體定價數字留給** [[entities/pricing]] 查證彙整。07-26 EdTech Innovation Hub 另有報導標題稱 Opus 5「at same price as Opus 4.8」發布，若屬實則與 MarkTechPost「維持原定價」方向一致，可視為互相呼應的補充訊號——惟本則同樣僅標題級可用，具體 $/Mtok 數字仍待 [[entities/pricing]] 逐項查證。
 
-**07-26 媒體標題層級補充（尚無完整內文佐證）：** MLQ.ai 標題稱 Opus 5「Tops AI Benchmark Index」、PCMag 標題稱 Opus 5「Tops Fable 5 on Agentic Search」（[MLQ.ai](https://mlq.ai/news/anthropic-launches-claude-opus-5-tops-ai-benchmark-index-at-half-the-cost-of-fable-5/)、[PCMag](https://www.pcmag.com/news/anthropics-newest-ai-model-opus-5-is-now-available)，均 2026-07-26 經 Google News 收錄）。兩則標題用詞為「tops」（領先），與官方系統卡「逼近但未超越 Fable 5」的整體框架略有出入——不排除是特定子項（agentic search、綜合指數排序方式）Opus 5 確實領先，但整體評測仍是 Fable 5 為 SOTA；兩篇報導僅摘要層級可用、無完整評測數字。❓ **待查證**（標 2026-08-10｜查 MLQ.ai、PCMag）｜**措辭落差未改寫官方定位**：此差異暫列為尚無法驗證的措辭落差，不改寫上方官方定位。
+**07-26 媒體標題「tops」措辭（2026-08-10 第三方基準查證）：** MLQ.ai 標題稱 Opus 5「Tops AI Benchmark Index」、PCMag 標題稱 Opus 5「Tops Fable 5 on Agentic Search」（[MLQ.ai](https://mlq.ai/news/anthropic-launches-claude-opus-5-tops-ai-benchmark-index-at-half-the-cost-of-fable-5/)、[PCMag](https://www.pcmag.com/news/anthropics-newest-ai-model-opus-5-is-now-available)，均 2026-07-26 經 Google News 收錄）。經查證第三方基準 [Artificial Analysis](https://artificialanalysis.ai/articles/opus-5)，「tops」措辭**有事實依據，非誇大**：Opus 5 在 Artificial Analysis Intelligence Index 以 60.7% 微幅領先 Fable 5 的 59.9%（GPT-5.6 Sol 58.9% 居三）；在 GDPval-AA v2（1861 Elo，+114 領先 Fable 5）與 AA-Briefcase（1720 Elo，+146 領先）兩項知識工作基準亦是新龍頭，且 AA-Briefcase 每任務成本僅 $10.41（high 效努力），較 Fable 5 的 $22.30 低 54%。與官方系統卡「逼近但未超越」的框架落差可理解為：官方以自有 Frontier-Bench／GDPval-AA 基準保守表述整體定位，第三方獨立基準則顯示 Opus 5 在多個綜合指數上已實質超車，兩者並非矛盾，而是評測基準與措辭尺度不同。
 
 **預設模型變化：** 現為 Claude Max 新預設模型、Claude Pro 最強模型，取代 Opus 4.8 的角色。
 
@@ -106,14 +106,8 @@ Anthropic 於 2026-07-25 正式發布 Claude Opus 5，是繼 2026-07-13 起多�
 
 | 日期 | 事件 |
 |------|------|
-| 2026-07-30 | Reddit r/ClaudeCode 貼文（無「週熱門」標記，score 恆為 0 屬 RSS 已知限制不可信）稱使用者原先參考跑分認為 Opus 5 優於 Fable 5，實際使用後認為 Opus 5 仍有落差，提及遇到「minor」問題（原文於此截斷，具體細節不可得）；因缺乏具體數字、跨來源佐證或問題細節，僅記錄社群出現不如預期的觀感回報，效能落差內容 ❓ 待查證 ⟨Q-01⟩，不代入評測結論（[Reddit](https://www.reddit.com/r/ClaudeCode/comments/1var15k/opus_5_is_not_as_good_as_i_thought/)，2026-07-30） |
-| 2026-07-29 | Reddit r/artificial 週熱門貼文稱 Opus 5 的 effort 旋鈕「非單調」——超過 `high` 後（`xhigh`／`max`）程式碼任務分數反而下降，並稱官方 migration guide 本身即有此說明；**2026-08-08 查證官方文件後判定此說法不成立**——[What's new in Claude Opus 5](https://platform.claude.com/docs/en/about-claude/models/whats-new-opus-5) 明載「Claude Opus 5 converts additional effort into better results more reliably than any earlier Opus model」，並將 test-time compute scaling（效果隨 effort 提升直到 `max`）列為主要能力改進；官方對 `xhigh`／`max` 的唯一告誡是「須設較大 `max_tokens`」，以及 `thinking: disabled` 在 `xhigh`／`max` 會回 400。未見任何「高於 high 即單調下降」文字，社群措辭比官方原文更強烈，具體幅度 ❓ 待查證 ⟨Q-02⟩，完整比對見 [[topics/model-comparison]] |
-| 2026-07-26 | MLQ.ai／PCMag 媒體標題分別稱 Opus 5「Tops AI Benchmark Index」「Tops Fable 5 on Agentic Search」——與官方「逼近但未超越」框架略有出入，僅標題層級 ❓ 待查證 ⟨Q-03⟩；EdTech Innovation Hub 報導稱 Opus 5 與 Opus 4.8 同價發布，與 MarkTechPost「維持原定價」方向一致——**2026-08-08 官方查證確認兩說皆成立**：$5/$25 per Mtok，官方逐字載明「unchanged from Claude Opus 4.8」，同時也確為 Fable 5（$10/$50）的一半，兩種描述指的是同一組數字的不同對照對象（見 [[entities/pricing]]）；Reddit r/ClaudeAI 週熱門貼文提及第三方 benchmark 平台 MineBench.ai 有 Fable 5 vs Opus 5 差異討論，僅標題可用，具體分數 ❓ 待查證 ⟨Q-04⟩ |
+| 2026-07-30 | Reddit r/ClaudeCode 貼文（無「週熱門」標記，score 恆為 0 屬 RSS 已知限制不可信）稱使用者原先參考跑分認為 Opus 5 優於 Fable 5，實際使用後認為 Opus 5 仍有落差，提及遇到「minor」問題（原文於此截斷，具體細節不可得）；缺乏具體數字、跨來源佐證或問題細節，僅記錄社群出現不如預期的觀感回報，不代入評測結論。❓ **待查證**（標 2026-08-10｜查 minor、效能落差｜複 2026-08-24）｜**「minor」問題具體所指**：Reddit 原文於此截斷，2026-08-10 查證嘗試無法再取得該貼文內容或後續討論，具體細節與效能落差幅度仍未經查證（[Reddit](https://www.reddit.com/r/ClaudeCode/comments/1var15k/opus_5_is_not_as_good_as_i_thought/)，2026-07-30） |
+| 2026-07-29 | Reddit r/artificial 週熱門貼文稱 Opus 5 的 effort 旋鈕「非單調」——超過 `high` 後（`xhigh`／`max`）程式碼任務分數反而下降，並稱官方 migration guide 本身即有此說明；**2026-08-08 查證官方文件後判定此說法不成立**——[What's new in Claude Opus 5](https://platform.claude.com/docs/en/about-claude/models/whats-new-opus-5) 明載「Claude Opus 5 converts additional effort into better results more reliably than any earlier Opus model」，並將 test-time compute scaling（效果隨 effort 提升直到 `max`）列為主要能力改進；官方對 `xhigh`／`max` 的唯一告誡是「須設較大 `max_tokens`」，以及 `thinking: disabled` 在 `xhigh`／`max` 會回 400。未見任何「高於 high 即單調下降」文字，社群措辭比官方原文更強烈——核心說法已證偽，無下降幅度可言，完整比對見 [[topics/model-comparison]] |
+| 2026-07-26 | MLQ.ai／PCMag 媒體標題分別稱 Opus 5「Tops AI Benchmark Index」「Tops Fable 5 on Agentic Search」——**2026-08-10 第三方基準查證屬實**：Artificial Analysis Intelligence Index Opus 5 60.7% vs Fable 5 59.9%，GDPval-AA v2／AA-Briefcase 亦領先，詳見上方「現況」；EdTech Innovation Hub 報導稱 Opus 5 與 Opus 4.8 同價發布，與 MarkTechPost「維持原定價」方向一致——**2026-08-08 官方查證確認兩說皆成立**：$5/$25 per Mtok，官方逐字載明「unchanged from Claude Opus 4.8」，同時也確為 Fable 5（$10/$50）的一半，兩種描述指的是同一組數字的不同對照對象（見 [[entities/pricing]]）；Reddit r/ClaudeAI 週熱門貼文提及第三方 benchmark 平台 MineBench.ai 有 Fable 5 vs Opus 5 差異討論——**2026-08-08 查證後不可採信**：MineBench 測的是 3D voxel 空間推理（與編碼／agentic 能力無關），榜上查無 Fable 5 或 Opus 5 條目 |
 | 2026-07-25 | 正式發布，取代 Opus 4.8 成為 Claude Max 新預設模型、Claude Pro 最強模型；HN score 1587；SDK（Python/TypeScript）同步加入模型支援；Boris Cherny 稱其為最難被提示注入攻破的模型 |
 | 2026-07-24 | Reddit r/ClaudeAI 週熱門貼文稱 Opus 5 於長時間任務（long-horizon task）表現最佳、Low effort 設定下成本效益極高，屬單一社群主觀評價，無量化數字佐證 |
-
-**懸置細節**
-- ⟨Q-01⟩ ❓ **待查證**（標 2026-08-10｜查 minor、效能落差）：Opus 5 使用後仍有落差的「minor」問題，原文於此截斷，具體細節不可得；缺乏數字或跨來源佐證，效能落差幅度未經查證
-- ⟨Q-02⟩ ❓ **待查證**（標 2026-08-10｜查 非單調、effort 旋鈕）：社群「非單調」措辭比官方原文更強烈的具體幅度未經查證（核心說法本身已於 2026-08-08 經官方文件證偽，見表列）
-- ⟨Q-03⟩ ❓ **待查證**（標 2026-08-10｜查 MLQ.ai、PCMag）：「tops」措辭與官方「逼近但未超越」框架的落差幅度未經完整內文佐證
-- ⟨Q-04⟩ ❓ **待查證**（標 2026-08-10｜查 MineBench.ai、Fable 5）：第三方 benchmark 平台 MineBench.ai 的 Fable 5 vs Opus 5 差異討論僅標題可用，具體分數未經查證

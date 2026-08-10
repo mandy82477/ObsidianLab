@@ -12,7 +12,7 @@ inbound_links: 93
 attribution_count: 40
 attribution_last: "2026-08-07"
 top_source: "google-news"
-pending_count: 3
+pending_count: 2
 pending_overdue: 0
 pending_next_review: "2026-08-24"
 pending_signalled: 0
@@ -248,7 +248,7 @@ git commit 歷史出現大寫字串「HERMES.md」會觸發靜默切換至 API �
 
 #### 2026-07-19：免費期到期日當天，Fable 5 存取政策再添兩則標題層級報導，仍未消解矛盾
 
-- **Tech Times：「Max 永久、Pro Credits-only」**：標題稱 Claude Fable 5 訂閱限制調整為「Max 方案轉為永久提供、Pro 方案改為 Credits-only」。**與 07-18 訊號的可能關係（推論，待證實）**：若屬實，可能是 07-18 兩則看似矛盾報導的「方案別拆解」——官方 `@claudeai` 帳號稱「設為永久」，可能特指 Max 方案；Startup Fortune／the-decoder.com 稱「Pro 導向 API 計費」，與本則「Pro 改 Credits-only」方向一致。❓ **待查證**（標 2026-08-10｜查 Tech Times、RSS 截斷）｜**Tech Times 報導的原文細節**：摘要遭 RSS 截斷，僅存標題資訊，具體限額數字與生效日期不明，此推論本身也未經證實（Google News/Tech Times，07-18 12:56 UTC）
+- **Tech Times：「Max 永久、Pro Credits-only」（2026-08-10 官方查證確認屬實）**：標題稱 Claude Fable 5 訂閱限制調整為「Max 方案轉為永久提供、Pro 方案改為 Credits-only」。經 2026-08-08 官方 Help Center 查證（見上方「官方 Help Center 查證」段），此標題所述**方向正確**：Max 方案／Team premium seats 確為標配（不脫離、"permanent" 意指不下架），Pro 方案／Team standard seats 確改為 usage credits 按 API 費率計費——與 07-18 Startup Fortune／the-decoder.com「Pro 導向 API 計費」方向一致，兩則報導確實是同一政策的「方案別拆解」，非互斥（[Tech Times](https://www.techtimes.com/articles/320905/20260718/claude-fable-5-ends-subscription-limbo-permanent-max-credits-only-pro.htm)，2026-07-18）
 - **Dawn：「併入 Max、Team Premium，用量上限 50%」**：標題稱 Anthropic 將把 Fable 5 模型以「50% 用量上限」的方式併入 Max、Team Premium 方案。**與 Tech Times 報導的落差**：若 Max 方案是「永久提供」（Tech Times），與本則「50% 用量上限」的描述無法完全對照——「永久」可能指存取權限本身不下架，「50% 上限」則可能指配額分配比例，兩者未必互斥，但缺乏官方公告確認具體機制（Google News/Dawn，07-18 12:50 UTC）
 - **⚠️ 不擇一呈現**：本頁採「如實記錄矛盾」原則，兩則新報導均為標題層級資訊，與 07-18 已記錄的矛盾訊號一併保留，待官方於免費期到期後進一步公告釐清。
 

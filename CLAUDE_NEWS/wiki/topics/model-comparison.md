@@ -7,13 +7,13 @@ last_updated: "2026-08-10"
 last_news_update: "2026-08-04"
 status_main: "ongoing"
 days_since_news: 6
-inbound_links: 20
+inbound_links: 21
 attribution_count: 14
 attribution_last: "2026-08-04"
 top_source: "reddit"
-pending_count: 4
+pending_count: 0
 pending_overdue: 0
-pending_next_review: "2026-08-24"
+pending_next_review: null
 pending_signalled: 0
 signal: "健康"
 generated_by: "scripts/gen_wiki_frontmatter.py"
@@ -85,7 +85,7 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 
 > **表格範圍與新鮮度**：本表為 **Opus 5 發布前**陣容（Fable 5 / Opus 4.8 / Sonnet 5）的對照，**數據截至 2026-07-09**（已逾 21 天未有新數據，讀者請視為歷史對照）。Opus 5 尚無同口徑的橫向數據——官方評測改用 Frontier-Bench／GDPval-AA，**Opus 5 數據待補**，暫不塞入本表。
 >
-> **Opus 5 的定位結論（不入表，因無同口徑對照）**：官方版結論見上方「選型細節」與情境推薦，此處只記歧異——07-26 MLQ.ai／PCMag 標題稱 Opus 5「tops」Fable 5（AI Benchmark Index、agentic search），與官方「逼近但未超越」的框架有出入，且僅止於標題層級、無公開數字。❓ **待查證**（標 2026-08-10｜查 MLQ.ai、PCMag）｜**「tops」措辭與官方框架落差**：詳見 [[entities/opus-5]]。
+> **Opus 5 的定位結論（不入表，因無同口徑對照）**：官方版結論見上方「選型細節」與情境推薦。07-26 MLQ.ai／PCMag 標題稱 Opus 5「tops」Fable 5，**2026-08-10 第三方基準查證屬實**：Artificial Analysis Intelligence Index Opus 5 60.7% 領先 Fable 5 59.9%，GDPval-AA v2（+114 Elo）、AA-Briefcase（+146 Elo，成本再低 54%）亦領先；官方「逼近未超越」是自有基準的保守表述，非與第三方數字矛盾。詳見 [[entities/opus-5]]。
 
 | 指標 | Fable 5 | Opus 4.8 | Sonnet 5 |
 |------|---------|----------|----------|
@@ -100,7 +100,7 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 - **綜合定位**：Opus 4.8 第三方小輸 Gemini 3.5 Flash 主因為指令遵循；各數據測試日期與條件見各模型 entities 頁。
 - **token 消耗**：「小勝」需連成本一起讀——分差 0.9、token 代價約 2 倍（Reddit r/ClaudeAI，2026-06-12，社群整理）。
 - **多模型協作**：官方基準，經 Reddit r/ClaudeAI 整理轉載（週熱門標記，來源貼文 2026-07-08，原始官方連結未附，尚未直接查證）。與上一列形成對照：協作模式可望大幅壓低整體成本。
-- **延伸閱讀**：❓ **待查證**（標 2026-08-10｜查 MarkTechPost、agentic coding）｜**三模型對照文章缺量化數字**：MarkTechPost（2026-07-14）有 Sonnet 5 / Sonnet 4.6 / Opus 4.8 三模型 agentic coding benchmark 與成本效益對照文章，惟日報摘要僅標題級資訊、未附數字，待補量化數字後再納入（Google News／MarkTechPost，2026-07-14）。
+- **延伸閱讀（2026-08-10 補齊量化數字）**：MarkTechPost（2026-07-13）Sonnet 5 / Sonnet 4.6 / Opus 4.8 三模型對照——Sonnet 5 於所有已公布指標超越 Sonnet 4.6（SWE-bench Pro 63.2%、OSWorld-Verified 81.2%、HLE 57.4%），拉近與 Opus 4.8（SWE-bench Pro 69.2%、OSWorld-Verified 83.4%）的差距；定價 Sonnet 5 早鳥 $2/$10（至 8/31，其後 $3/$15）vs Opus 4.8 $5/$25。成本效益取捨：low／medium effort 下 Sonnet 5 最划算，但 xhigh effort 因輸出 token 量大增，成本可能超過 Opus 4.8（[MarkTechPost](https://www.marktechpost.com/2026/07/13/anthropic-claude-sonnet-5-vs-sonnet-4-6-vs-opus-4-8-agentic-coding-benchmarks-api-pricing-and-cost-performance-tradeoffs-compared/)，2026-07-13）。
 
 ### 社群實測觀察（弱訊號，未達決策級）
 
@@ -115,7 +115,7 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 | MineBench.ai 上 Fable 5 vs Opus 5 差異 | ⚠️ **查證後不可採信**（2026-08-08）：MineBench 測 3D voxel 空間推理（文字→JSON 座標，人類配對投票算 Elo），與編碼／agentic 能力無關；榜上**查無 Fable 5 或 Opus 5**（現列 GPT-5 4215／Claude 4 2108／Gemini 3 Pro 2091，無資料日期）。單一貼文（週熱門），弱 | Reddit r/ClaudeAI，2026-07-26；[minebench.ai](https://minebench.ai/) 2026-08-08 查證 |
 | Opus 5 上線兩週後的體感回饋 | 三則負向回報：「過度自信」（07-29）、「不如跑分預期」（07-30）、「令人挫折」（08-04），皆無量化數字。多則獨立貼文但同平台，弱～中 | Reddit r/ClaudeCode，2026-07-29 / 07-30 / 08-04 |
 
-**Effort dial 細節：** 原始貼文於「至少在程式碼任務上看起來這樣做…」處截斷；經查證官方 migration guide（2026-07-29 查核）僅載明 `max` 效果「可能報酬遞減、在較簡單任務上容易 overthinking」，屬**定性**描述，未見具體分數或「高於 high 即單調下降」的文字——社群措辭比官方原文更強烈。❓ **待查證**（標 2026-08-10｜查 effort dial、migration guide）｜**落差幅度不可逕自採信**：不可逕自採信社群版本的因果強度，亦不可推算下降幅度。
+**Effort dial 細節：** 原始貼文於「至少在程式碼任務上看起來這樣做…」處截斷；經查證官方 migration guide（2026-07-29 查核）僅載明 `max` 效果「可能報酬遞減、在較簡單任務上容易 overthinking」，屬**定性**描述，未見具體分數或「高於 high 即單調下降」的文字——社群措辭比官方原文更強烈。核心「非單調」說法已於 2026-08-08 由官方 [What's new in Claude Opus 5](https://platform.claude.com/docs/en/about-claude/models/whats-new-opus-5) 證偽（見上表），故不存在可查證的下降幅度。
 
 **小結：** Opus 5 發布後兩週的社群訊號由「首日正面驚喜」轉為分歧（過度自信、與跑分落差），但全數無量化佐證，僅記錄動向、不進快速選型表；Fable 5 vs GPT-5.6 Sol 亦無單一結論。另有一筆已失效的歷史對照：Reddit r/ClaudeAI「同 100 則前端需求測 GPT-5.6 Sol / Opus 4.8 / Grok 4.5」（週熱門，2026-07-23）作者公開 300 筆產出但未給文字結論，且測試對象 Opus 4.8 已被取代，不反映當前陣容。
 
@@ -123,7 +123,7 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 
 | 觀察 | 結論（含樣本與訊號強度） | 來源與日期 |
 |------|----------------------|-----------|
-| 儀器化實測：新版模型 token 用量顯著更高，但每任務總成本反而下降 | 須同時看 token 用量與完成率，不能只看單位成本。工程師以自建儀表板對比新舊版；HN score 5，弱。❓ **待查證**（標 2026-08-10｜查 signoz.io、token 用量）｜**因果關係尚未驗證** | [signoz.io](https://signoz.io/blog/claude-code-model-comparison/)，2026-06-29 |
+| 儀器化實測：token 倍增（Sonnet 4.6 288 萬→Opus 4.8 606 萬）但每任務成本降 19.8%（$1.26→$1.01） | Terminal-Bench 10 任務、OpenTelemetry 儀器化，各任務跑一輪；多出的 token 多為便宜的 cache 讀取，非全新處理。HN score 5，中（有具體方法與數字，但單輪未重複） | [signoz.io](https://signoz.io/blog/claude-code-model-comparison/)，2026-08-10 查證 |
 | 用戶回報：$50 額度原可用兩天，現在一小時內燒完 | 懷疑新模型刻意提高 quota 消耗；另有 5x 費用暴增回報。個人主觀對照帳單、非儀器化，弱 | [Vincent Schmalbach](https://www.vincentschmalbach.com/claude-code-quietly-looks-5x-more-expensive/)，2026-07-01；[GitHub Issue #62476](https://github.com/anthropics/claude-code/issues/62476) |
 
 **矛盾之處：** 前者是受控測量（同任務對比新舊模型），後者是用戶主觀感受同一模型近期帳單變化，測的不是同一件事——不直接互斥，但共同指向「新一代模型 token 消耗與實際成本的關係，社群尚無共識」。相關省額度策略見 [[entities/fable-5]]。
