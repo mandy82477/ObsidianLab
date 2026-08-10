@@ -128,7 +128,8 @@ def main(argv: list[str]) -> int:
     signals: collections.Counter[str] = collections.Counter()
 
     for slug, path, sub in pages:
-        raw = path.read_text(encoding="utf-8-sig", newline="")
+        with path.open(encoding="utf-8-sig", newline="") as fh:
+            raw = fh.read()
         body = strip_body(raw)
 
         meta: dict[str, object] = {
