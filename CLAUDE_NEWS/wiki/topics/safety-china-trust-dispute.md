@@ -6,14 +6,14 @@ domain: "🏛️ 政策/安全"
 last_updated: "2026-08-10"
 last_news_update: "2026-07-11"
 status_main: "monitoring"
-days_since_news: 30
+days_since_news: 31
 inbound_links: 18
 attribution_count: 0
 attribution_last: null
 top_source: null
-pending_count: 1
+pending_count: 0
 pending_overdue: 0
-pending_next_review: "2026-08-24"
+pending_next_review: null
 pending_signalled: 0
 signal: "⚠️ 高引用但停滯"
 generated_by: "scripts/gen_wiki_frontmatter.py"
@@ -101,7 +101,7 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 ### 「embedded spyware」指控：Anthropic 定調為內部「實驗」（2026-07-07）
 
 - **揭露來源**：Malwarebytes「Claude Code's hidden tracker was an "experiment," says Anthropic」；The Neuron Daily「Anthropic found Claude's hidden workspace」；Axios（06-07-06）
-- **狀態轉折**：Anthropic 對 06-30 起追蹤的「embedded spyware」指控首次正式回應，將先前被指控的「隱藏追蹤器」定調為內部**實驗**（experiment）性質，非惡意設計。❓ **待查證**（標 2026-08-10｜查 embedded spyware、hidden tracker）：指控是否經第三方資安機構驗證，抑或僅為 Anthropic 單方主張，尚未確認
+- **狀態轉折**：Anthropic 對 06-30 起追蹤的「embedded spyware」指控首次正式回應，將先前被指控的「隱藏追蹤器」定調為內部**實驗**（experiment）性質，非惡意設計。**2026-08-10 查證**：機制本身**已獲第三方獨立驗證**——資安研究員 Adnane Khan 確認 Claude Code 2.1.193／2.1.195／2.1.196 版本中存在隱藏於系統提示詞內的 3-bit 指紋（偽裝成標點符號的 Unicode 字元替換），觸發清單以 XOR-91 編碼、未見於任何發布說明，Khan 稱指控「在每個實質細節上皆驗證屬實」；但「僅為內部實驗、非惡意設計」的**動機定性仍是 Anthropic 單方框架**，未見第三方資安機構對其意圖（如是否針對特定中國 AI 實驗室蒸餾行為的偵測機制）獨立驗證（[Malwarebytes](https://www.malwarebytes.com/blog/news/2026/07/claude-codes-hidden-tracker-was-an-experiment-says-anthropic)；[HN 討論](https://news.ycombinator.com/item?id=48735113)）
 - **附帶機制說明**：Anthropic 同時說明 Claude 內部存在「隱藏工作空間」（hidden workspace）機制（「Claude has carved out its own space to ponder」）；此說明與先前指控的關聯性未完全釐清
 - **可信度評估**：官方（Anthropic）首次正式回應，屬「官方確認」等級，但「實驗」是官方單方框架，不等於指控內容或動機已獲第三方資安機構驗證；社群（原指控發起者）是否接受此說法尚未見後續回應
 

@@ -6,14 +6,14 @@ domain: "🏛️ 政策/安全"
 last_updated: "2026-08-10"
 last_news_update: "2026-07-14"
 status_main: "monitoring"
-days_since_news: 27
+days_since_news: 28
 inbound_links: 5
 attribution_count: 1
 attribution_last: "2026-07-14"
 top_source: "google-news"
-pending_count: 2
+pending_count: 0
 pending_overdue: 0
-pending_next_review: "2026-08-24"
+pending_next_review: null
 pending_signalled: 0
 signal: "休眠"
 generated_by: "scripts/gen_wiki_frontmatter.py"
@@ -52,7 +52,7 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 
 ## 目前結論
 
-- 截至 2026-06-22，尚無任何機構正式同意協調暫停。Anthropic 的報告是目前最詳盡的「AI 自我加速」公開數據。❓ **待查證**（標 2026-08-10｜查 遞歸自我改進、協調暫停）：呼籲機制的可行性未確認。
+- 截至 2026-06-22，尚無任何機構正式同意協調暫停。Anthropic 的報告是目前最詳盡的「AI 自我加速」公開數據。**2026-08-10 查證**：可行性質疑已有具體共識——「如何驗證某實驗室確實已暫停或減緩前沿訓練」是所有現存治理提案共通的未解問題；專家亦質疑全球暫停的現實可行性，因包括中國在內的競爭對手仍持續快速開發（[Medium 分析](https://medium.com/@christianaistudio/anthropic-fears-autonomous-ai-development-and-calls-for-a-global-pause-45ff0cc5328a)）。
 - 五眼聯盟聯合聲明（2026-06-22）是迄今最高層級的政府安全機構對「數月內出現毀滅性 AI」的公開預警，為遞歸自我改進議題提供了情報聯盟背書。
 - Anthropic「呼籲暫停」的立場持續受到「言行不一」批評（邊呼籲邊 IPO、邊呼籲邊出口管制衝突）。
 - 2026-07-13，首見公眾社會運動面回應（抗議者要求 OpenAI/Anthropic/Google DeepMind 暫停 AI 開發），惟報導資訊量少（僅標題式轉載），暫不改變 monitoring 判斷。
@@ -85,7 +85,7 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 ## 時序
 
 ### 2026-07-13
-- **[公眾社會運動] 示威者要求 OpenAI、Anthropic、Google DeepMind 暫停 AI 開發**：抗議者在三家公司總部前遊行，要求暫停 AI 開發；報導僅為標題式轉載（Decrypt，經 Google News 轉載，2026-07-13）。❓ **待查證**（標 2026-08-10｜查 Decrypt、AI 開發暫停示威）：遊行規模、具體訴求或後續官方回應等細節均未確認
+- **[公眾社會運動] 示威者要求 OpenAI、Anthropic、Google DeepMind 暫停 AI 開發**：抗議者在三家公司總部前遊行，要求暫停 AI 開發（Decrypt，經 Google News 轉載，2026-07-13）。**2026-08-10 查證全文**：主辦方為「Stop the AI Race」聯盟，約 200～400 名抗議者於三家公司總部之間遊行（沿 OpenAI→Anthropic→Google DeepMind 路線），訴求為「每家前沿實驗室 CEO 公開承諾暫停開發，前提是其他實驗室也可信地同步暫停」，並提出安全、就業、環境（能源消耗）三面向關切；OpenAI、Anthropic、Google DeepMind 均未即時回應 Decrypt 置評請求；此為該聯盟 2026 年第二次同類遊行（首次為 03 月）（[Decrypt](https://decrypt.co/373433/stop-ai-protest-openai-anthropic-google-deepmind)）
 
 ### 2026-06-22
 - **[五眼聯盟警告] 罕見聯合聲明：數月內出現毀滅性 AI**：五眼聯盟發表聯合聲明，警告能癱瘓政府與企業的 AI 模型將在數月內出現；為迄今最高層級政府機構對遞歸自我改進威脅的公開預警，與 Anthropic 6/4 報告的「煞車踏板」呼籲形成跨機構共鳴（The Guardian）

@@ -7,14 +7,14 @@ domain: "🏛️ 政策/安全"
 last_updated: "2026-08-10"
 last_news_update: "2026-06-27"
 status_main: "monitoring"
-days_since_news: 44
+days_since_news: 45
 inbound_links: 7
 attribution_count: 0
 attribution_last: null
 top_source: null
-pending_count: 2
+pending_count: 0
 pending_overdue: 0
-pending_next_review: "2026-08-24"
+pending_next_review: null
 pending_signalled: 0
 signal: "休眠"
 generated_by: "scripts/gen_wiki_frontmatter.py"
@@ -48,7 +48,7 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 - **[漏洞跟進] RCE via 惡意 deeplink（CyberSecurityNews 新報導）**：CyberSecurityNews 進一步報導 Claude Code RCE via 惡意 deeplink 漏洞，提供更多技術細節——攻擊者可在使用者開啟惡意 deeplink 後於本機執行任意指令，與 2026-05-18 首次揭露為同一漏洞的深度報導；修補狀態仍待 Anthropic 確認
 
 ### 2026-05-18
-- **[重大漏洞] Claude Code RCE via 惡意 deeplink**：資安研究人員揭露 Claude Code 存在遠端程式碼執行（RCE）漏洞，攻擊者可透過精心構造的 deeplink 觸發任意指令執行（CyberSecurityNews 報導，05/17 19:20 UTC）；此為繼 CVE-2026-39861（symlink 沙箱逃逸）、1-click RCE（信任提示觸發）後，Claude Code 第三個公開 RCE 類漏洞；攻擊向量從信任提示轉移至 deeplink，意味著攻擊者正在系統性探索 Claude Code 的新攻擊面；建議使用者密切追蹤 Anthropic 安全公告。❓ **待查證**（標 2026-08-10｜查 CyberSecurityNews、惡意 deeplink）：官方修補狀態未確認
+- **[重大漏洞] Claude Code RCE via 惡意 deeplink**：資安研究人員揭露 Claude Code 存在遠端程式碼執行（RCE）漏洞，攻擊者可透過精心構造的 deeplink 觸發任意指令執行（CyberSecurityNews 報導，05/17 19:20 UTC）；此為繼 CVE-2026-39861（symlink 沙箱逃逸）、1-click RCE（信任提示觸發）後，Claude Code 第三個公開 RCE 類漏洞；攻擊向量從信任提示轉移至 deeplink，意味著攻擊者正在系統性探索 Claude Code 的新攻擊面；**2026-08-10 查證：已修復。** 資安研究員 Joernchen（0day.click）於 2026-05-12 揭露此漏洞，根因為 `main.tsx` 中 `eagerParseCliFlag` 函式在應用程式完整初始化前搶先解析 `--settings` 等命令列旗標，攻擊者可將惡意 `--settings` payload 嵌入 deeplink 的 `q` 參數觸發任意指令執行；Anthropic 已於 **Claude Code 2.1.118** 版修復，改用上下文感知的參數解析區分 CLI 旗標與其值，徹底消除此注入介面（[CyberSecurityNews](https://cybersecuritynews.com/claude-code-rce-flaw/)）
 
 ### 2026-05-15
 - **[破壞性操作防護] 「Claude 刪除專案」類事件持續增加，社群主動建構安全閘門**：GrapeRoot Pro 開發者針對「Claude 刪除整個專案」類帖子（近期 700+ 留言討論）建立破壞性操作閘門——執行 `rm -rf` 等高危指令前自動顯示受影響檔案清單（含讀寫次數、最後存取時間）並暫停等待確認；是繼 DataMoat（AES-256-GCM 加密）、hard_deny（官方邊界）後，社群在破壞性操作防護上的第三條路線
@@ -124,7 +124,7 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 - **漏洞類型**：deeplink 觸發遠端程式碼執行（RCE）；攻擊者可透過精心構造的 deeplink URI 觸發 Claude Code 執行任意指令，無需使用者手動確認信任提示
 - **與既有漏洞的區別**：與 CVE-2026-39861（symlink 沙箱逃逸）和 1-click RCE（信任提示）為獨立攻擊向量；deeplink 攻擊面代表攻擊者已從「軟體安裝路徑」（假冒安裝包、Google 廣告詐騙）延伸至「執行時期協議處理」
 - **攻擊場景**：受害者開啟惡意 deeplink（可能來自 email、網頁、CI/CD 觸發等），Claude Code 在本機執行攻擊者指定的指令
-- **當前狀態**：❓ **待查證**（標 2026-08-10｜查 Deeplink、遠端執行）：修補狀態未確認（存檔時點）
+- **當前狀態**：✅ 已修復（2026-08-10 查證）——資安研究員 Joernchen（0day.click）於 2026-05-12 揭露，根因為 `main.tsx` 的 `eagerParseCliFlag` 函式在應用程式完整初始化前搶先解析 `--settings` 等命令列旗標，攻擊者可將惡意 payload 嵌入 deeplink 的 `q` 參數觸發任意指令執行；已於 **Claude Code 2.1.118** 版修復，改用上下文感知的參數解析（[CyberSecurityNews](https://cybersecuritynews.com/claude-code-rce-flaw/)）
 - **防護建議**：勿開啟不明來源的 deeplink；在確認修補前避免讓 Claude Code 在高權限環境（root、生產伺服器）執行
 
 ### CVE-2026-39861：沙箱逃逸漏洞（CVSS 7.7）（2026-05-08）
