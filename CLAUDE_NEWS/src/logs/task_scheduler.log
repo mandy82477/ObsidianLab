@@ -186,3 +186,4 @@
 [Tue 2026/08/11 13:45:50.00] build_web OK (34 entities, 22 topics, 105 digests, 3 weekly reports)
 [Tue 2026/08/11 13:46:40.00] Push FAILED - rebase conflict (衝突檔案：CLAUDE_NEWS/wiki/entities/opus-5.md；與遠端並發的懸置查證波二 session 同時編輯同一檔案；已 git rebase --abort，未自行解衝突；本次 news/wiki/web 全部 commit 已完整保留在遠端分支 cloud-daily-2026-08-11-unmerged，待人工核對合併，未進 master)
 [Tue 2026/08/11 13:46:40.00] === Pipeline complete (agent) — 本次產出未上站，完整成果見分支 cloud-daily-2026-08-11-unmerged ===
+[Tue 2026/08/11 23:08:25.00] Watchdog push SENT - 每日新聞 2026-08-11 缺件：日報。本機跑 /news-pipeline 2026-08-11 補（另有近 7 天 1 個舊缺口）
