@@ -4,9 +4,9 @@ kind: "topic"
 status: "ongoing"
 domain: "💼 商業"
 last_updated: "2026-08-10"
-last_news_update: "2026-08-07"
+last_news_update: "2026-08-10"
 status_main: "ongoing"
-days_since_news: 3
+days_since_news: 1
 inbound_links: 19
 attribution_count: 9
 attribution_last: "2026-08-10"
@@ -24,7 +24,7 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 **領域：** 💼 商業
 **開始日期：** 2026-05-26
 **最後更新：** 2026-08-10
-**最後新聞更新：** 2026-08-07
+**最後新聞更新：** 2026-08-10
 
 > **最新企業採用異動**（2026-08-10）
 > ICON 臨床試驗合作案第三度獲媒體關注——The Clinical Trial Vanguard 發表分析文章，未見新增合作規模或範疇，詳見下方使用現況表 ICON 列更新。08-07 記錄之 Syracuse University 擴大 Claude Enterprise 授權（納入 Claude Code、Claude Cowork）仍為近期重點新增採用案例。

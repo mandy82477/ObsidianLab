@@ -412,7 +412,7 @@ window.WIKI_DATA = {
       "firstSeen": "2026-07-25",
       "startDate": "",
       "lastUpdated": "2026-08-10",
-      "lastNewsUpdate": "2026-07-30",
+      "lastNewsUpdate": "2026-08-10",
       "updateFreq": "",
       "summary": "Anthropic 於 2026-07-25 正式發布 Claude Opus 5，是繼 2026-07-13 起多篇媒體「Opus 5 傳聞」報導後的官方證實版本（詳見 opus-4-8 「下一代模型觀察」歷史記錄）。官方定位此模型為 thoughtful and proactive，設計目標是**日常可用**且效率…",
       "latestHeadline": "Reddit r/ClaudeAI 週熱門貼文「I defended Opus 5 - and then I realised otherwise」稱作者原本認為 Opus 5 是目前最「奇特獨特」的模型、稱讚其思考過程（reasoning trace）而非單純能力，深入分析其思考過程後改變了看法；原文於「actual"
@@ -428,7 +428,7 @@ window.WIKI_DATA = {
       "firstSeen": "2026-04-25",
       "startDate": "",
       "lastUpdated": "2026-08-10",
-      "lastNewsUpdate": "2026-08-09",
+      "lastNewsUpdate": "2026-08-10",
       "updateFreq": "",
       "summary": "**2026-07-20 起，旗艦模型（現為 Fable 5）在訂閱體系中被切成兩層**：Max 與 Team premium 席位維持標配、上限為週用量的 50%；Pro 與 Team standard 席位改以 usage credits 按 API 費率付費，並發放一次性過渡 credit。此分界於 2026-0…",
       "latestHeadline": "2026-07-20 起，旗艦模型（現為 Fable 5）在訂閱體系中被切成兩層：Max 與 Team premium 席位維持標配、上限為週用量的 50%；Pro 與 Team standard 席位改以 usage credits 按 API 費率付費，並發放一次性過渡 credit。此分界於 2026-08-08"
@@ -798,7 +798,7 @@ window.WIKI_DATA = {
       "firstSeen": "",
       "startDate": "2026-05-26",
       "lastUpdated": "2026-08-10",
-      "lastNewsUpdate": "2026-08-07",
+      "lastNewsUpdate": "2026-08-10",
       "updateFreq": "",
       "summary": "**2026-06 淨變化回顧（歷史快照，非最新月份；最新異動見頂部 callout）：** 3 家退出/縮減（Microsoft 成本、JPMorgan Chase 香港出口管制、Alibaba 安全疑慮）+ 1 家 API 客戶切換（Lindy → DeepSeek，成本），對 10+ 家新增/擴大採用（Globa…",
       "latestHeadline": "2026-06 淨變化回顧（歷史快照，非最新月份；最新異動見頂部 callout）： 3 家退出/縮減（Microsoft 成本、JPMorgan Chase 香港出口管制、Alibaba 安全疑慮）+ 1 家 API 客戶切換（Lindy → DeepSeek，成本），對 10+ 家新增/擴大採用（Globant、D",
@@ -1718,7 +1718,7 @@ window.WIKI_DATA = {
       "firstSeen": "",
       "startDate": "2026-07-02",
       "lastUpdated": "2026-08-10",
-      "lastNewsUpdate": "2026-08-04",
+      "lastNewsUpdate": "2026-08-10",
       "updateFreq": "",
       "summary": "**現行公開陣容：Fable 5 > Opus 5 > Sonnet 5 > Sonnet 4.6 > Haiku 4.5**（Opus 4.8 / Opus 4.7 已被取代，Mythos 5 僅限授權機構）。本頁回答一個問題：**「我該用哪個 Claude 模型？」**——只做橫向對照、情境推薦與可驗證的選型分界；…",
       "latestHeadline": "現行公開陣容：Fable 5 > Opus 5 > Sonnet 5 > Sonnet 4.6 > Haiku 4.5（Opus 4.8 / Opus 4.7 已被取代，Mythos 5 僅限授權機構）。本頁回答一個問題：「我該用哪個 Claude 模型？」——只做橫向對照、情境推薦與可驗證的選型分界；各模型的爭議、時"
@@ -1769,7 +1769,7 @@ window.WIKI_DATA = {
       "lastNewsUpdate": "2026-07-14",
       "updateFreq": "",
       "summary": "2026-06-04，Anthropic Institute 發布《When AI Builds Itself: Our progress toward recursive self-improvement》報告（HN 477），首次系統性披露 AI 加速自身開發的進展：Anthropic 工程師平均每人可交付的程式碼…",
-      "latestHeadline": "[公眾社會運動] 示威者要求 OpenAI、Anthropic、Google DeepMind 暫停 AI 開發：抗議者在三家公司總部前遊行，要求暫停 AI 開發；報導僅為標題式轉載（Decrypt，經 Google News 轉載，2026-07-13）。❓ 待查證（標 2026-08-10｜查 Decrypt、AI"
+      "latestHeadline": "[公眾社會運動] 示威者要求 OpenAI、Anthropic、Google DeepMind 暫停 AI 開發：抗議者在三家公司總部前遊行，要求暫停 AI 開發（Decrypt，經 Google News 轉載，2026-07-13）。2026-08-10 查證全文：主辦方為「Stop the AI Race」聯盟，"
     },
     {
       "id": "safety-china-trust-dispute",

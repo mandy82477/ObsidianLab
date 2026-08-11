@@ -5,7 +5,7 @@ type: "policy"
 status: "active（持續調整中）"
 domain: "💼 商業"
 last_updated: "2026-08-10"
-last_news_update: "2026-08-09"
+last_news_update: "2026-08-10"
 status_main: "active"
 days_since_news: 1
 inbound_links: 94
@@ -26,7 +26,7 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 **領域：** 💼 商業
 **首次出現：** 2026-04-25
 **最後更新：** 2026-08-10
-**最後新聞更新：** 2026-08-09
+**最後新聞更新：** 2026-08-10
 
 > **最新計費政策異動**（2026-08-10）
 > - **旗艦模型的訂閱分界已由官方文件確認，07-18～21 的四方矛盾報導就此收斂**：Max／Team premium 為標配（上限週用量 50%）、Pro／Team standard 改走 usage credits，2026-07-20 生效；合格 Pro／Team standard 另有一次性過渡 credit。詳見「我的方案現在有什麼」。

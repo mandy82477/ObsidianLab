@@ -7,7 +7,7 @@ last_updated: "2026-08-10"
 last_news_update: "2026-08-10"
 status_main: "monitoring"
 days_since_news: 1
-inbound_links: 66
+inbound_links: 67
 attribution_count: 40
 attribution_last: "2026-08-10"
 top_source: "google-news"

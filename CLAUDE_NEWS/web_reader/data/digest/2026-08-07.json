@@ -365,11 +365,6 @@
       "id": "community-tech-discussions",
       "name": "社群技術討論趨勢",
       "pageType": "topic"
-    },
-    {
-      "id": "enterprise-tool-tracker",
-      "name": "大型企業 AI 編碼工具使用追蹤",
-      "pageType": "topic"
     }
   ]
 }

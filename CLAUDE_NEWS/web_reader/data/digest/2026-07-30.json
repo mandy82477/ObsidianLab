@@ -283,11 +283,5 @@
     }
   ],
   "preview": "Anthropic 公開兩項由 Claude Mythos（尚未發布的進階模型）產出的密碼分析研究成果，成功攻破 HAWK 簽章方案並對縮減輪數 AES 提出改進攻擊，密碼學界正在消化其意義。",
-  "sedimentedToday": [
-    {
-      "id": "opus-5",
-      "name": "Claude Opus 5",
-      "pageType": "entity"
-    }
-  ]
+  "sedimentedToday": []
 }

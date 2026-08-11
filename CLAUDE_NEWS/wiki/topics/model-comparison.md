@@ -4,9 +4,9 @@ kind: "topic"
 status: "ongoing"
 domain: "🤖 模型"
 last_updated: "2026-08-10"
-last_news_update: "2026-08-04"
+last_news_update: "2026-08-10"
 status_main: "ongoing"
-days_since_news: 6
+days_since_news: 1
 inbound_links: 21
 attribution_count: 15
 attribution_last: "2026-08-10"
@@ -24,7 +24,7 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 **領域：** 🤖 模型
 **開始日期：** 2026-07-02
 **最後更新：** 2026-08-10
-**最後新聞更新：** 2026-08-04
+**最後新聞更新：** 2026-08-10
 
 > **最新對照更新**（2026-08-10）
 > 公開陣容為 Fable 5（旗艦）> [[entities/opus-5|Opus 5]]（次旗艦，07-25 發布）> Sonnet 5（Claude Code 預設）> Sonnet 4.6 > Haiku 4.5；Opus 4.8 / 4.7 皆已被取代。
