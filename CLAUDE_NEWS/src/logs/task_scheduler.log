@@ -177,3 +177,12 @@
 [Mon 2026/08/10 13:35:54.00] Single push done (news + wiki + web + confirm-cache) - 首次嘗試即成功，無需重試
 [Mon 2026/08/10 13:35:54.00] === Pipeline complete (agent) ===
 [cloud daily-news-pipeline-cloud STARTED 2026-08-11T13:06:55Z]
+[Tue 2026/08/11 13:06:55.00] === Agent pipeline start (2026-08-11) ===
+[Tue 2026/08/11 13:09:30.00] Aggregator OK
+[Tue 2026/08/11 13:17:01.00] confirm-digest OK (62 items)
+[Tue 2026/08/11 13:45:00.00] Wiki ingest OK (降級執行：general-purpose agent 取代 wiki-reporter-* subagent type，已於 wiki/log.md 標注)
+[Tue 2026/08/11 13:45:30.00] Building web reader...
+測試全綠 - web build 放行
+[Tue 2026/08/11 13:45:50.00] build_web OK (34 entities, 22 topics, 105 digests, 3 weekly reports)
+[Tue 2026/08/11 13:46:40.00] Push FAILED - rebase conflict (衝突檔案：CLAUDE_NEWS/wiki/entities/opus-5.md；與遠端並發的懸置查證波二 session 同時編輯同一檔案；已 git rebase --abort，未自行解衝突；本次 news/wiki/web 全部 commit 已完整保留在遠端分支 cloud-daily-2026-08-11-unmerged，待人工核對合併，未進 master)
+[Tue 2026/08/11 13:46:40.00] === Pipeline complete (agent) — 本次產出未上站，完整成果見分支 cloud-daily-2026-08-11-unmerged ===
