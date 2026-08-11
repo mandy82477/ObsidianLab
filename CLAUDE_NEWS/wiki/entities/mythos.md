@@ -7,7 +7,7 @@ domain: "🤖 模型"
 last_updated: "2026-08-10"
 last_news_update: "2026-08-09"
 status_main: "active"
-days_since_news: 1
+days_since_news: 2
 inbound_links: 24
 attribution_count: 11
 attribution_last: "2026-08-07"
@@ -89,6 +89,7 @@ Anthropic 的官方 AI 資安能力研究計畫，Mythos Preview 為核心工具
 
 | 事件 | 日期 | 結果 |
 |------|------|------|
+| Project Glasswing 正式啟動 | 2026-04-07 | 初始約 50 家夥伴（含 AWS、Cisco、CrowdStrike、Google、JPMorganChase、Microsoft、Nvidia、Palo Alto Networks）（2026-08-10 查證） |
 | 白宮反對擴大存取 | 2026-04-29 | 聯邦政府首次直接干預單一 AI 模型存取 |
 | OpenAI GPT-5.5 Cyber 同樣限制 | 2026-05-01 | Sam Altman 批評後旋即採同策略 |
 | 印度政府部署 | 2026-05-27 | 首個主權政府採用案例 |
@@ -97,8 +98,10 @@ Anthropic 的官方 AI 資安能力研究計畫，Mythos Preview 為核心工具
 | ICE 加入 Glasswing | 2026-06-04 | 美國聯邦執法機構加入 |
 | Mythos 5 部分解禁（100+ 機構）| 2026-06-27 | 商務部長 Lutnick 致函確認；條件：受信任合作夥伴 + 安全措施 |
 | NSA 用 Mythos 發動攻擊 | 2026-06-05 | 防禦框架「兩用性」首次公開確認（FT 獨家）|
+| Horizon3.ai 加入 Glasswing | 2026-07-15 | 首度納入**攻擊性安全**專長的夥伴（此前偏重超大規模雲端業者與大型資安廠商），將 Mythos 用於自家防禦性工作，並以漏洞研究與安全驗證經驗協助評估 AI 辨識可利用風險的能力（businesswire 官方新聞稿，2026-08-10 查證）|
 | Nozomi Networks 加入 Glasswing | 2026-07-20 | 工業資安公司加入，協助強化 OT／IoT／cyber-physical systems 安全防護（Industrial Cyber，2026-07-20 報導，僅標題可用，至今無後續內容）|
 | Oxide Computer 加入 Glasswing | 2026-07-28 | 應用 Mythos 5 主動掃描自家開源程式碼庫（韌體/OS/控制平面/網路堆疊），強調關鍵軟體應可被檢視（Oxide Blog）|
+| Glasswing 規模演進確認 | 2026-08-10 | 自 2026-04-07 啟動時約 50 家夥伴，擴及 **15 國以上、逾 150 個組織**（官方查證，取代先前「200 個」概估數字）|
 
 **授權費用**：企業客戶描述為「Budget Buster」，高安全能力伴隨高授權成本（The Information, 2026-06-01）。
 

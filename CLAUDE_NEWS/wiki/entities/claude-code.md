@@ -7,7 +7,7 @@ domain: "🛠️ 工具/功能"
 last_updated: "2026-08-10"
 last_news_update: "2026-08-10"
 status_main: "active"
-days_since_news: 0
+days_since_news: 1
 inbound_links: 60
 attribution_count: 253
 attribution_last: "2026-08-10"
@@ -62,11 +62,12 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 
 > 按主題分組；各組內大致依回報時間倒序。每條開頭的狀態標記回答「現在還會發生嗎」：🔴 未修復 / ✅ 已修復（註明修復版本）/ ⛔ 官方拒修 / ❓ 待查證。
 
-### 🛡️ 安全與隱私（8 條未修復、3 條已修復）
+### 🛡️ 安全與隱私（8 條未修復、3 條已修復、1 條拒修）
 
 - ✅ **已修復 v2.1.163**｜**Claude Code 與 Gemini CLI「Comment and Control」漏洞：GitHub Issue 內容可觸及 CI workflow secrets**（2026-08-07 報導，2026-08-10 查證）：研究團隊 Novee Security 在 Black Hat USA（08-05）發表「Comment and Control」技術，證實無倉庫權限的帳號僅需開一則 GitHub Issue，內容經 prompt injection 即可在 Claude Code Security Review、Gemini CLI Action、GitHub Copilot Agent 的 CI runner 上執行任意程式碼，進而取得 `GITHUB_TOKEN`、`ANTHROPIC_API_KEY` 等 workflow secrets；Claude Code 端漏洞另利用 Hugging Face 公開下載計數器作為側通道，逐字元外洩 API 金鑰。受影響版本 v0.2.54–v2.1.162，已於 **v2.1.163** 修復；Gemini CLI 端另一漏洞獲 CVSS 10.0 滿分評級。見 [The Hacker News](https://thehackernews.com/2026/08/claude-code-and-gemini-cli-flaws-let.html)；事件細節另見 [[topics/ai-agent-safety]]
 - 🔴 **未修復**｜**Keyv 關聯 npm 供應鏈蠕蟲攻擊，植入 Claude Code 與 VS Code hook**（2026-08-04 報導，2026-08-10 查證）：屬於 Mini Shai-Hulud 惡意軟體家族的供應鏈攻擊，08-04 從快取套件 keyv@6.0.0（週下載量約 1.27 億）開始，透過 preinstall script 竊取 GitHub／雲端／Kubernetes 憑證，並利用既有 npm 發布權限持續感染同維護者的套件家族，獨立追蹤者確認至少 353 個套件版本（79 個套件名）遭波及；攻擊會在受害 repo 內寫入 Claude Code 與 VS Code 各一份設定檔，於開啟專案或啟動 agent session 時觸發 payload，此持久化機制隨 repo 一同散布，不侷限於單機。此為 npm 供應鏈攻擊而非 Claude Code 本身漏洞，Anthropic 無法單方修補，使用者應留意來路不明套件的 preinstall script。見 [The Hacker News](https://thehackernews.com/2026/08/keyv-linked-npm-worm-poisons-hundreds.html)；事件細節另見 [[topics/ai-agent-safety]]
 - ✅ **已修復 v2.1.216（v2.1.223 進一步加固）**｜**Bash 與 Unicode 繞過修補（Tech Times 報導）**（2026-07-21 報導，2026-08-10 查證）：**v2.1.216**（2026-07-20）修補 Auto Mode 下的兩類繞過——Bash 複合語句重導向、PowerShell 隱形 Unicode 注入；**v2.1.223**（2026-08-06）再修補 4 項權限邊界：Bash 指令可隱藏部分內容不受權限檢查掃描、tab／隱形 Unicode 填塞可讓核准對話框看不出實際內容、workflow script 可用動態 `import()` 逃出沙箱、`bypassPermissions` agent 定義可無視組織政策停用 bypass 模式。與既有隱寫術／同形字符機制（見下條）屬相關但不同批次的修復。見 [Tech Times](https://www.techtimes.com/articles/321151/20260721/claude-code-seals-bash-unicode-bypass-gaps-agentic-permission-layer.htm)
+- ⛔ **官方拒修**｜**symlink 記憶載入器缺口：`CLAUDE.md` `@import` 指向 repo 外檔案可繞過核准對話框（HackerOne 通報，2026-08-10 查證）**：Tego AI 於 **2026-07-18** 經 HackerOne 通報，committed `CLAUDE.md` 的 `@import` 若指向 repo 內 symlink、實際解析至 repo 外檔案，Claude Code 僅驗證 repo 內路徑，內容隨 session 首次對外請求送出、使用者平時應看到的核准提示不會出現，風險在 CI runner／容器／標準化開發映像檔中更高；**兩天後（2026-07-20）Anthropic 將此案結案為「Informative」**，官方立場是「信任此資料夾」對話框本身即安全邊界，使用者同意時已授予該專案廣泛讀寫執行權限，不視為需修復的漏洞。與既有 CVE-2025-59829、CVE-2026-25724（皆修於權限子系統）屬同類 symlink 路徑驗證缺口第三次出現，但本次走的是啟動記憶載入器的另一條程式路徑，未被前兩次修補涵蓋；與 CVE-2026-39861（symlink 沙箱逃逸）分屬不同案件。事件細節另見 [[topics/ai-agent-safety]]
 - 🔴 **未修復**｜**隱寫術標記／代理偵測指控（2026-06-30 至 07-01，待查證）**：Reddit 貼文（2026-06-30）指控 Claude Code 自 v2.1.91 起嵌入偵測中國代理／地區的隱藏程式碼，並疑似混淆程式碼掩蓋此行為；此為社群單方指控，Anthropic 尚未就此回應或證實。2026-07-01 安全研究者進一步發現 Claude Code 2.1.196 binary 含隱寫術（steganography）機制，將日期字串中的撇號與分隔符替換為外觀相同的同形字符（homoglyphs），HN 熱度達 2263 分，36Kr 報導確認此機制針對時區資訊及中國 AI Lab 連線者注入額外系統提示，與 06-30 事件屬同一偵測基礎架構的延伸；Anthropic 已就隱寫術部分承諾修復（2026-07-01），但截至目前修復版尚未發布。事件完整細節見 [[topics/ai-agent-safety]]；承諾兌現進度見 [[topics/anthropic-commitments]]
 - ✅ **已修復 v2.1.118**｜**Claude Code RCE via 惡意 Deeplink**（研究者 2026-05-12 揭露，2026-08-10 查證，原記錄標「2026-05-19」為報導轉載日、非揭露日已更正）：安全研究者 joernchen（0day.click）揭露 `claude-cli://` deeplink 的 `q` 參數會經 `--prefill` 帶入提示詞，因 `eagerParseCliFlag` 不辨識 flag／引數邊界，攻擊者可在 `q` 值中夾帶惡意 `--settings=` JSON，註冊 `SessionStart` hook 執行任意 shell 指令；若 deeplink 的 `repo` 參數命中使用者本機已信任的倉庫（如 `anthropics/claude-code` 本身），workspace 信任對話框會完全被略過、於背景靜默執行。已於 **v2.1.118** 修補；所有使用者應避免開啟不明來源的 deeplink。見 [CyberSecurityNews](https://cybersecuritynews.com/claude-code-rce-flaw/)；事件細節另見 [[topics/ai-agent-safety]]
 - 🔴 **未修復**｜**API 金鑰外洩風險：`.claude/settings.local.json` 隨 npm 套件發布外流**（2026-04-27 報導，2026-08-10 查證）：Check Point 研究團隊發現 Claude Code 將已核准的 shell 指令與相關機密存於專案目錄下 `.claude/settings.local.json`，若該目錄之後被用於發布 npm 套件、且未明確以 `.npmignore` 排除，該檔案即隨套件公開發布；研究團隊監測約 46,500 個套件中，428 個含此檔案，其中 30 個套件、33 份檔案內含實際憑證。此為設計面持續性風險（依賴使用者手動排除），非單次可修補的 bug，Anthropic 尚未提供內建防呆機制。見 [TechTalks](https://bdtechtalks.com/2026/04/27/claude-code-api-token-leak/)
@@ -360,6 +361,7 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 | **anthropic-sdk-python v0.107.1** | 2026-06-07 | 修復 foundry 模式下 x-api-key header 未正確送出的問題 |
 | **v2.1.167** | 2026-06-06 | Bug fixes and reliability improvements |
 | **v2.1.165** | 2026-06-05 | Bug fixes and reliability improvements |
+| **v2.1.163** | 2026-06-04（確切發布日期未見於官方 changelog 串流，僅知序於 v2.1.162 與 v2.1.165 之間，2026-08-10 查證） | ⚠️ **安全修復**：修復 **CVE-2026-54316**——GitHub Issue 內容經 prompt injection 於 CI runner 執行任意程式碼、外洩 workflow secrets；受影響版本 **0.2.54–2.1.162**；Novee Security 於 Black Hat USA 2026 揭露（見已知問題「🛡️ 安全與隱私」、[[topics/ai-agent-safety]]）|
 | **v2.1.162** | 2026-06-04 | ① `claude agents --json` 新增 `waitingFor` 欄位顯示 agent 被阻塞的原因（如 permission prompt）；② `--tools` 明確列出 Grep/Glob 時提供目錄遍歷能力，無需 Bash 工具 |
 | **v2.1.161** | 2026-06-03 | ① `OTEL_RESOURCE_ATTRIBUTES` 值作為 metric datapoints 標籤，支援以 team/repo 等自訂維度切片使用數據；② `claude agents` 列表顯示改善 |
 | **v2.1.160** | 2026-06-02 | ① **安全修復**：寫入 shell startup files（`.zshenv`、`.zlogin`、`.bash_login`）及 `~/.config/git/` 前新增提示，防止未預期命令執行；② **⚠️ Breaking Change**：`/effort` 的 `workflow` 觸發詞更名為 `ultracode`，所有硬編碼 `workflow` 的腳本式 prompt 即時失效 |
