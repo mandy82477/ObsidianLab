@@ -716,11 +716,6 @@
       "id": "managed-agents",
       "name": "Managed Agents",
       "pageType": "entity"
-    },
-    {
-      "id": "enterprise-cost-management",
-      "name": "企業規模 Claude 成本管理",
-      "pageType": "topic"
     }
   ]
 }

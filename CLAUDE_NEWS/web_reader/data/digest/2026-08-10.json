@@ -12,13 +12,7 @@
       "time": "08/10 11:14",
       "sentiment": "",
       "body": "一款用於參數化 3D 可列印模型生成的 Claude Code skill，基於 CadQuery，GitHub 顯示 512 顆星；與下列兩項工具同批出現在 GitHub 熱門清單。",
-      "focusTags": [],
-      "sedimented": [
-        {
-          "id": "claude-code",
-          "pageType": "entity"
-        }
-      ]
+      "focusTags": []
     },
     {
       "title": "wuxiran/cc-pane",
@@ -27,13 +21,7 @@
       "time": "08/10 11:14",
       "sentiment": "",
       "body": "以 Tauri 2 打造的跨平台桌面 App，提供 Claude Code 多實例分割視窗管理，GitHub 顯示 501 顆星。",
-      "focusTags": [],
-      "sedimented": [
-        {
-          "id": "claude-code",
-          "pageType": "entity"
-        }
-      ]
+      "focusTags": []
     },
     {
       "title": "Laliet/cc-switch-web",
@@ -42,13 +30,7 @@
       "time": "08/10 11:14",
       "sentiment": "",
       "body": "基於 CC Switch 的跨平台網頁版整合工具，宣稱可一站切換 Claude Code、Codex、Gemini CLI，GitHub 顯示 500 顆星。",
-      "focusTags": [],
-      "sedimented": [
-        {
-          "id": "claude-code",
-          "pageType": "entity"
-        }
-      ]
+      "focusTags": []
     },
     {
       "title": "[FEATURE] Multi-account switching in Claude Mobile app without shared email",
@@ -87,13 +69,7 @@
       "time": "08/09 19:20",
       "sentiment": "",
       "body": "TechCrunch 同步報導 Auto Mode 預設化一事，是今日 Google News 中被最多媒體轉載連結的來源之一（source_count 3）。",
-      "focusTags": [],
-      "sedimented": [
-        {
-          "id": "claude-code",
-          "pageType": "entity"
-        }
-      ]
+      "focusTags": []
     },
     {
       "title": "Anthropic to put AI in charge of reviewing Claude Code actions by default - Help Net Security",
@@ -102,13 +78,7 @@
       "time": "08/10 09:13",
       "sentiment": "",
       "body": "資安媒體 Help Net Security 以「AI 接手審核 Claude Code 動作」的角度報導同一次 Auto Mode 預設化變更，聚焦其對企業安全稽核流程的意涵。",
-      "focusTags": [],
-      "sedimented": [
-        {
-          "id": "claude-code",
-          "pageType": "entity"
-        }
-      ]
+      "focusTags": []
     },
     {
       "title": "The ICON-Anthropic Deal Will Reach Your Site Before You're Ready for It - The Clinical Trial Vanguard",
@@ -173,13 +143,7 @@
       "time": "08/10 11:06",
       "sentiment": "🤔",
       "body": "使用者表示 Fable 額度經常用盡，聽聞在 Claude Code 中改用 GPT 模型因系統提示詞不同而表現較佳，詢問其他人如何在 Claude Code 中串接 GPT 模型。",
-      "focusTags": [],
-      "sedimented": [
-        {
-          "id": "claude-code",
-          "pageType": "entity"
-        }
-      ]
+      "focusTags": []
     },
     {
       "title": "AMH: boring governance for when the one-shot honeymoon ends",
@@ -206,13 +170,7 @@
       "time": "08/09 23:31",
       "sentiment": "😐",
       "body": "Simon Willison 引用官方發布說明頁的系統提示詞段落，內容提及 Fable 5 與 Mythos 5 於 6 月 9 日首發、Anthropic 其後於 6 月 12 日的相關調整。",
-      "focusTags": [],
-      "sedimented": [
-        {
-          "id": "opus-5",
-          "pageType": "entity"
-        }
-      ]
+      "focusTags": []
     },
     {
       "title": "Model behavior: /goal Stop-hook directive cited as authorization for unrequested actions; absence-from-search treated as evidence of absence; structure-as-substance under pushback",
@@ -360,38 +318,13 @@
   "preview": "Anthropic 官方確認 Claude Code 的 Auto Mode 將於 8 月 14 日起正式成為 Pro、Max、Team 方案新 session 的預設值（已自行設定過預設或釘選預設者不受影響），並宣布即日起不再對 auto 分類器產生的額外 token 用量收費；社群流傳一項對 1,053 名付費測試",
   "sedimentedToday": [
     {
-      "id": "claude-code",
-      "name": "Claude Code",
-      "pageType": "entity"
-    },
-    {
       "id": "openclaw",
       "name": "OpenClaw",
       "pageType": "entity"
     },
     {
-      "id": "opus-5",
-      "name": "Claude Opus 5",
-      "pageType": "entity"
-    },
-    {
-      "id": "pricing",
-      "name": "Anthropic 訂閱方案與計費政策",
-      "pageType": "entity"
-    },
-    {
-      "id": "ai-agent-safety",
-      "name": "AI Agent 安全與可靠性",
-      "pageType": "topic"
-    },
-    {
       "id": "anthropic-business",
       "name": "Anthropic 商業健康度",
-      "pageType": "topic"
-    },
-    {
-      "id": "anthropic-government-policy",
-      "name": "Anthropic 政府與軍事政策",
       "pageType": "topic"
     },
     {

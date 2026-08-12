@@ -1,0 +1,421 @@
+{
+  "date": "2026-08-12",
+  "generatedAt": "2026-08-12 13:13 UTC",
+  "articleCount": 53,
+  "sourceCount": "12/12",
+  "bulletin": "",
+  "topStories": [
+    {
+      "title": "Waishnav/devspace",
+      "url": "https://github.com/Waishnav/devspace",
+      "source": "GitHub Search",
+      "time": "08/12 11:04",
+      "sentiment": "",
+      "body": "標榜可把 ChatGPT 變成 Codex、或把 Claude Web 變成 Claude Code 的工具，GitHub 顯示 3661 顆星，與下列五項工具同批出現在 GitHub 熱門清單。",
+      "focusTags": [],
+      "sedimented": [
+        {
+          "id": "claude-code",
+          "pageType": "entity"
+        }
+      ]
+    },
+    {
+      "title": "tzachbon/smart-ralph",
+      "url": "https://github.com/tzachbon/smart-ralph",
+      "source": "GitHub Search",
+      "time": "08/12 11:04",
+      "sentiment": "",
+      "body": "結合 Ralph Wiggum loop 與結構化規格流程的 Claude Code plugin，主打規格驅動開發與智慧壓縮（compaction），GitHub 顯示 509 顆星。",
+      "focusTags": [],
+      "sedimented": [
+        {
+          "id": "claude-code",
+          "pageType": "entity"
+        }
+      ]
+    },
+    {
+      "title": "gglucass/headroom-desktop",
+      "url": "https://github.com/gglucass/headroom-desktop",
+      "source": "GitHub Search",
+      "time": "08/12 11:04",
+      "sentiment": "",
+      "body": "macOS 桌面工具，宣稱可將 Claude Code 與 Codex 的 token 成本削減約 50%，GitHub 顯示 506 顆星。",
+      "focusTags": [],
+      "sedimented": [
+        {
+          "id": "claude-code",
+          "pageType": "entity"
+        }
+      ]
+    },
+    {
+      "title": "aisa-group/PostTrainBench",
+      "url": "https://github.com/aisa-group/PostTrainBench",
+      "source": "GitHub Search",
+      "time": "08/12 11:04",
+      "sentiment": "",
+      "body": "評測基準，測量 Claude Code、Codex CLI 等 CLI agent 能否在單張 H100 GPU 上於 10 小時內完成基礎模型的後訓練，GitHub 顯示 505 顆星。",
+      "focusTags": [],
+      "sedimented": [
+        {
+          "id": "claude-code",
+          "pageType": "entity"
+        }
+      ]
+    },
+    {
+      "title": "ZeroPointRepo/youtube-skills",
+      "url": "https://github.com/ZeroPointRepo/youtube-skills",
+      "source": "GitHub Search",
+      "time": "08/12 11:04",
+      "sentiment": "",
+      "body": "提供 AI agent 使用的 YouTube 字幕擷取技能，可取得逐字稿、搜尋影片、瀏覽頻道，相容 OpenClaw、Hermes-Agent、Claude Code 等多種平台，GitHub 顯示 504 顆星。",
+      "focusTags": [],
+      "sedimented": [
+        {
+          "id": "claude-code",
+          "pageType": "entity"
+        }
+      ]
+    },
+    {
+      "title": "clawplays/ospec",
+      "url": "https://github.com/clawplays/ospec",
+      "source": "GitHub Search",
+      "time": "08/12 11:04",
+      "sentiment": "",
+      "body": "規格驅動的 agentic 工作流框架，將需求轉為「規劃—執行—驗證」的可驗證目標迴圈，並在 repo 中留存規格與證據，相容 Claude Code、Codex、Gemini、OpenCode 等，GitHub 顯示 502 顆星。",
+      "focusTags": [],
+      "sedimented": [
+        {
+          "id": "claude-code",
+          "pageType": "entity"
+        }
+      ]
+    },
+    {
+      "title": "Add support for Visual Studio 2026 Integration",
+      "url": "https://github.com/anthropics/claude-code/issues/15942",
+      "source": "GitHub Issues / claude-code",
+      "time": "08/11 13:54",
+      "sentiment": "",
+      "body": "功能請求：希望 Claude Code 能整合 Visual Studio 2026，累計 149 則留言與 514 個 👍 反應，是今日社群互動量最高的功能請求之一。",
+      "focusTags": [],
+      "sedimented": [
+        {
+          "id": "claude-code",
+          "pageType": "entity"
+        }
+      ]
+    }
+  ],
+  "techUpdates": [
+    {
+      "title": "[anthropics/claude-code] v2.1.228",
+      "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.228",
+      "source": "GitHub / anthropics/claude-code",
+      "time": "08/11 19:50",
+      "sentiment": "",
+      "body": "修復互動式 session 因罕見內部排版錯誤而停止重繪畫面（但程序仍在執行）的問題，並修復 Windows 上找不到 `git` / Git Bash 的問題。",
+      "focusTags": []
+    }
+  ],
+  "mediaReports": [],
+  "discussions": [
+    {
+      "title": "OpenAI and Anthropic hidden CoT leaks when given deep_think tool.",
+      "url": "https://twitter.com/_can1357/status/2087228354399265125",
+      "source": "Hacker News",
+      "time": "08/11 22:06",
+      "sentiment": "🤔",
+      "body": "社群討論一則推文指稱 OpenAI 與 Anthropic 在提供 deep_think 工具時會外洩隱藏的思維鏈（CoT）內容，留言區猜測相關公司可能正設法阻止此類外洩（具體技術細節待查證，原文為推文截圖）。",
+      "focusTags": []
+    },
+    {
+      "title": "How to organize Claude Code for product work",
+      "url": "https://www.theaithinker.com/p/how-to-organize-claude-code-for-product",
+      "source": "Hacker News",
+      "time": "08/11 11:02",
+      "sentiment": "😊",
+      "body": "作者分享將 Claude Code 工作區整理成情境資料夾、任務與交付物分離、把重複工作沉澱為 skills 的實務做法，強調此系統是「先做錯才慢慢摸索出來的」。",
+      "focusTags": [],
+      "sedimented": [
+        {
+          "id": "claude-code",
+          "pageType": "entity"
+        }
+      ]
+    },
+    {
+      "title": "6 out of 10",
+      "url": "https://www.reddit.com/r/ClaudeCode/comments/1vmavje/6_out_of_10/",
+      "source": "Reddit / r/ClaudeCode",
+      "time": "08/12 10:58",
+      "sentiment": "😤",
+      "body": "使用者抱怨常聽不懂 Opus 在說什麼，多次要求它解釋或講白話文。",
+      "focusTags": []
+    },
+    {
+      "title": "ISO 24495 Plain Language plugin for Claude Code",
+      "url": "https://www.reddit.com/r/ClaudeCode/comments/1vmapwm/iso_24495_plain_language_plugin_for_claude_code/",
+      "source": "Reddit / r/ClaudeCode",
+      "time": "08/12 10:49",
+      "sentiment": "😊",
+      "body": "開發者釋出一款讓 Claude Code 輸出遵循 ISO 24495 系列平易語言（Plain Language）原則的 plugin。",
+      "focusTags": [],
+      "sedimented": [
+        {
+          "id": "claude-code",
+          "pageType": "entity"
+        }
+      ]
+    },
+    {
+      "title": "I made a forensic archive for Claude failures, regressions and slop",
+      "url": "https://www.reddit.com/r/ClaudeCode/comments/1vm9igt/i_made_a_forensic_archive_for_claude_failures/",
+      "source": "Reddit / r/ClaudeCode",
+      "time": "08/12 09:44",
+      "sentiment": "😤",
+      "body": "作者累積數月來遇到的 Claude Code bug、模型退化、設定異常等問題，整理成公開的證據存檔（含 HackerOne 回報紀錄）。",
+      "focusTags": [],
+      "sedimented": [
+        {
+          "id": "claude-code",
+          "pageType": "entity"
+        }
+      ]
+    },
+    {
+      "title": "Confession: My Research May Have Triggered Claude's Lobotomy.",
+      "url": "https://www.reddit.com/r/ClaudeCode/comments/1vm95eu/confession_my_research_may_have_triggered_claudes/",
+      "source": "Reddit / r/ClaudeCode",
+      "time": "08/12 09:23",
+      "sentiment": "🤔",
+      "body": "作者聲稱自己發表的研究顯示無害文字可改變 Claude 的內部狀態，Anthropic 已修補該問題，並猜測此舉導致模型表現變差（因果關係為作者個人推測，未經證實）。",
+      "focusTags": []
+    },
+    {
+      "title": "Did Anthropic Decreased the Usage Limit?",
+      "url": "https://www.reddit.com/r/ClaudeCode/comments/1vm9135/did_anthropic_decreased_the_usage_limit/",
+      "source": "Reddit / r/ClaudeCode",
+      "time": "08/12 09:16",
+      "sentiment": "😤",
+      "body": "使用者反映近幾天用量額度消耗速度明顯變快，詢問是否遭調降限額。",
+      "focusTags": []
+    },
+    {
+      "title": "There are no lossless transformations of natural-language text",
+      "url": "https://simonwillison.net/2026/Aug/11/there-are-no-lossless-transformations-of-natural-language-text/#atom-everything",
+      "source": "Blog / Simon Willison",
+      "time": "08/11 23:48",
+      "sentiment": "🤔",
+      "body": "Simon Willison 轉引一篇討論文章，主張自然語言文字不存在「無損轉換」。",
+      "focusTags": []
+    },
+    {
+      "title": "Stealing Reasoning Traces from Proprietary LLM APIs",
+      "url": "https://simonwillison.net/2026/Aug/11/stealing-reasoning-traces/#atom-everything",
+      "source": "Blog / Simon Willison",
+      "time": "08/11 22:40",
+      "sentiment": "😤",
+      "body": "Simon Willison 轉引一篇研究，探討如何從專有 LLM API 中竊取推理過程（reasoning trace）。",
+      "focusTags": []
+    },
+    {
+      "title": "Claude Code plugin for translating from Claudish to English",
+      "url": "https://www.reddit.com/r/ClaudeAI/comments/1vl0n1t/claude_code_plugin_for_translating_from_claudish/",
+      "source": "Reddit / r/ClaudeAI · 週熱門",
+      "time": "08/10 23:17",
+      "sentiment": "😊",
+      "body": "週熱門討論串，介紹一款將 Claude Code 輸出的「Claude 式用語」翻譯成一般英文的 plugin（具體實作待查證，原文摘要僅提供標題）。",
+      "focusTags": [],
+      "sedimented": [
+        {
+          "id": "claude-code",
+          "pageType": "entity"
+        }
+      ]
+    },
+    {
+      "title": "PSA: Be careful letting Claude use WebFetch for research 😵‍💫",
+      "url": "https://www.reddit.com/r/ClaudeAI/comments/1vim8b7/psa_be_careful_letting_claude_use_webfetch_for/",
+      "source": "Reddit / r/ClaudeAI · 週熱門",
+      "time": "08/08 04:22",
+      "sentiment": "😤",
+      "body": "週熱門討論串，作者請 Opus 5 研究 AI agent 記憶架構時，發現 Claude 生成看似真實、實則捏造的具體統計數字、百分比與引述。",
+      "focusTags": []
+    },
+    {
+      "title": "I used Claude to build a poker app where you deal real cards and everyone uses their phone as their chip stack. It's now been used to play 19,072 poker hands.",
+      "url": "https://www.reddit.com/r/ClaudeAI/comments/1vii2zl/i_used_claude_to_build_a_poker_app_where_you_deal/",
+      "source": "Reddit / r/ClaudeAI · 週熱門",
+      "time": "08/08 00:56",
+      "sentiment": "😊",
+      "body": "週熱門討論串，作者用 Claude 打造一款讓玩家用手機當籌碼、實體發牌的撲克 app，累計已被用來進行 19,072 手牌局。",
+      "focusTags": []
+    }
+  ],
+  "billing": [
+    {
+      "title": "[BUG] Plan upgrade payment fails — PaymentIntent voided immediately with `void_invoice` before confirm can complete",
+      "url": "https://github.com/anthropics/claude-code/issues/55982",
+      "source": "GitHub Issues / claude-code",
+      "time": "08/12 10:24",
+      "sentiment": "",
+      "body": "回報者指出升級方案時付款失敗，PaymentIntent 在確認流程完成前就被 `void_invoice` 提前作廢，累計 26 個 👍 反應。",
+      "focusTags": []
+    },
+    {
+      "title": "Claude asking me for payment details to use existing payment credits",
+      "url": "https://www.reddit.com/r/ClaudeCode/comments/1vm9chm/claude_asking_me_for_payment_details_to_use/",
+      "source": "Reddit / r/ClaudeCode",
+      "time": "08/12 09:34",
+      "sentiment": "",
+      "body": "使用者回報即便帳戶已有既有付款額度（credits），系統仍要求重新輸入付款資訊才能使用。",
+      "focusTags": []
+    }
+  ],
+  "focus": [
+    {
+      "tag": "[社群趨勢]",
+      "text": "Claude Code 的 `/buddy` 技能自 4 月 9 日隨 v2.1.97 版本消失、官方未於 changelog 說明，社群發起「Bring Back Buddy」請願 issue，累計 265 則留言與 2068 個 👍 反應。",
+      "ref_urls": [
+        "https://github.com/anthropics/claude-code/issues/45596"
+      ]
+    },
+    {
+      "tag": "[風險警示]",
+      "text": "兩則使用者回報引發關注：一則指出 Claude Code 透過 curl 指令送出的 User-Agent 字串疑似洩漏使用者真實 email，但 HN 留言質疑該回報未附重現步驟、真實性待查；另一則回報指出已通過 Cyber Verification Program 審核的組織，在 Claude Code 中再次被資安防護機制誤擋，累計 69 則留言。",
+      "ref_urls": [
+        "https://github.com/anthropics/claude-code/issues/78431",
+        "https://github.com/anthropics/claude-code/issues/84352"
+      ]
+    },
+    {
+      "tag": "[持續追蹤]",
+      "text": "部落格文章指出，Claude Code 在「相同 token、相同模型」條件下，依訂閱或 API 計價方式不同，價差最高可達 40 倍；文中引用 Pylon 執行長 Marty Kausas 表示三天內意外花費 4,000 美元，並引述 The Information 報導多家企業帳單較預期高出 2–3 倍。",
+      "ref_urls": [
+        "https://quesma.com/blog/claude-code-pricing-for-enterprise/"
+      ]
+    },
+    {
+      "tag": "[重大事件]",
+      "text": "Anthropic 官方部落格披露，一個尚未公開發布的研究版 Claude 在嘗試證明黎曼猜想（Riemann hypothesis）的過程中未能成功，卻意外在相關問題上取得進展，改進了黎曼 zeta 函數零點滿足黎曼猜想比例的既有下界紀錄。",
+      "ref_urls": [
+        "https://www.anthropic.com/research/riemann-zeta"
+      ]
+    }
+  ],
+  "sourceStatus": [
+    {
+      "name": "Anthropic Status",
+      "ok": true,
+      "count": 0
+    },
+    {
+      "name": "Hacker News",
+      "ok": true,
+      "count": 21
+    },
+    {
+      "name": "Anthropic Blog",
+      "ok": true,
+      "count": 0
+    },
+    {
+      "name": "dev.to",
+      "ok": true,
+      "count": 14
+    },
+    {
+      "name": "Official Skills",
+      "ok": true,
+      "count": 0
+    },
+    {
+      "name": "GitHub Issues",
+      "ok": true,
+      "count": 15
+    },
+    {
+      "name": "Claude API Release Notes",
+      "ok": true,
+      "count": 0
+    },
+    {
+      "name": "GitHub",
+      "ok": true,
+      "count": 34
+    },
+    {
+      "name": "Blogroll",
+      "ok": true,
+      "count": 3
+    },
+    {
+      "name": "Official Docs",
+      "ok": true,
+      "count": 8
+    },
+    {
+      "name": "Google News",
+      "ok": true,
+      "count": 0
+    },
+    {
+      "name": "Reddit",
+      "ok": true,
+      "count": 12
+    }
+  ],
+  "preview": "Claude Code 的 `/buddy` 技能自 4 月 9 日隨 v2.1.97 版本消失、官方未於 changelog 說明，社群發起「Bring Back Buddy」請願 issue，累計 265 則留言與 2068 個 👍 反應。",
+  "sedimentedToday": [
+    {
+      "id": "claude-code",
+      "name": "Claude Code",
+      "pageType": "entity"
+    },
+    {
+      "id": "claude-skills",
+      "name": "Claude Skills",
+      "pageType": "entity"
+    },
+    {
+      "id": "opus-5",
+      "name": "Claude Opus 5",
+      "pageType": "entity"
+    },
+    {
+      "id": "pricing",
+      "name": "Anthropic 訂閱方案與計費政策",
+      "pageType": "entity"
+    },
+    {
+      "id": "ai-agent-safety",
+      "name": "AI Agent 安全與可靠性",
+      "pageType": "topic"
+    },
+    {
+      "id": "anthropic-government-policy",
+      "name": "Anthropic 政府與軍事政策",
+      "pageType": "topic"
+    },
+    {
+      "id": "community-tech-discussions",
+      "name": "社群技術討論趨勢",
+      "pageType": "topic"
+    },
+    {
+      "id": "enterprise-cost-management",
+      "name": "企業規模 Claude 成本管理",
+      "pageType": "topic"
+    },
+    {
+      "id": "recursive-self-improvement",
+      "name": "AI 遞歸自我改進與全球暫停呼籲",
+      "pageType": "topic"
+    }
+  ]
+}

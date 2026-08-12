@@ -615,11 +615,6 @@
   "preview": "Claude Code v2.1.215 發布：不再自動執行 `/verify` 與 `/code-review` 兩項技能，須由使用者手動呼叫指令觸發。",
   "sedimentedToday": [
     {
-      "id": "claude-skills",
-      "name": "Claude Skills",
-      "pageType": "entity"
-    },
-    {
       "id": "opus-4-7",
       "name": "Claude Opus 4.7",
       "pageType": "entity"
