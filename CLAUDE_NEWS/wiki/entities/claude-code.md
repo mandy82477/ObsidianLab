@@ -4,8 +4,8 @@ kind: "entity"
 type: "product"
 status: "active"
 domain: "🛠️ 工具/功能"
-last_updated: "2026-08-10"
-last_news_update: "2026-08-10"
+last_updated: "2026-08-12"
+last_news_update: "2026-08-12"
 status_main: "active"
 days_since_news: 1
 inbound_links: 60
@@ -25,8 +25,8 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 **狀態：** active
 **領域：** 🛠️ 工具/功能
 **首次出現：** 2025（正式推出）
-**最後更新：** 2026-08-10
-**最後新聞更新：** 2026-08-10
+**最後更新：** 2026-08-12
+**最後新聞更新：** 2026-08-12
 
 > **最新動態**（2026-08-10）
 > - **Auto Mode 官方部落格正式宣布 8/14 預設化，並即日起免收分類器 token 費**：Anthropic 官方部落格（經 Hacker News 轉發，227 分）確認 8 月 14 日起 auto 模式成為 Pro／Max／Team 新 session 預設權限模式（Enterprise、API／雲端平台不在本次範圍）；同時宣布**即日起（2026-08-10）不再對 auto 分類器產生的額外 token 用量收費**。Reddit 週熱門貼文引述對 1,053 名付費測試者的對照研究：auto 模式攔下 89% 危險指令，人工逐一審核僅攔下 13.6%，為此前僅憑官方訪談單方陳述補上量化佐證；已同步 [[feature-radar]]。
@@ -62,8 +62,10 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 
 > 按主題分組；各組內大致依回報時間倒序。每條開頭的狀態標記回答「現在還會發生嗎」：🔴 未修復 / ✅ 已修復（註明修復版本）/ ⛔ 官方拒修 / ❓ 待查證。
 
-### 🛡️ 安全與隱私（8 條未修復、3 條已修復、1 條拒修）
+### 🛡️ 安全與隱私（9 條未修復、3 條已修復、1 條拒修、1 條待查證）
 
+- 🔴 **未修復**｜**已通過 CVP 審核的組織在 Claude Code 中再度被資安防護機制誤擋（GitHub issue #84352，累積 69 則留言、9 個讚，2026-08-12）**：已通過 Anthropic Cyber Verification Program（CVP）審核的 Claude.ai 組織，回報在 Claude Code 中仍再度觸發 cyber safeguard 攔阻，顯示 CVP 核准狀態未能在 Claude Code 端同步生效；官方尚未回應。
+- ❓ **待查證**（標 2026-08-12｜查 #78431、User-Agent｜複 2026-08-26）｜**Claude Code 經 curl 送出的 User-Agent 字串疑似洩漏使用者真實 email（GitHub Issue #78431，經 Hacker News 轉發 38 分，2026-08-11）**：有回報指出 Claude Code 透過 curl 送出的 User-Agent 字串疑似夾帶使用者真實 email；惟 Hacker News 留言質疑該回報缺乏細節與可重現步驟，真實性尚待查證，官方尚未回應或證實。
 - ✅ **已修復 v2.1.163**｜**Claude Code 與 Gemini CLI「Comment and Control」漏洞：GitHub Issue 內容可觸及 CI workflow secrets**（2026-08-07 報導，2026-08-10 查證）：研究團隊 Novee Security 在 Black Hat USA（08-05）發表「Comment and Control」技術，證實無倉庫權限的帳號僅需開一則 GitHub Issue，內容經 prompt injection 即可在 Claude Code Security Review、Gemini CLI Action、GitHub Copilot Agent 的 CI runner 上執行任意程式碼，進而取得 `GITHUB_TOKEN`、`ANTHROPIC_API_KEY` 等 workflow secrets；Claude Code 端漏洞另利用 Hugging Face 公開下載計數器作為側通道，逐字元外洩 API 金鑰。受影響版本 v0.2.54–v2.1.162，已於 **v2.1.163** 修復；Gemini CLI 端另一漏洞獲 CVSS 10.0 滿分評級。見 [The Hacker News](https://thehackernews.com/2026/08/claude-code-and-gemini-cli-flaws-let.html)；事件細節另見 [[topics/ai-agent-safety]]
 - 🔴 **未修復**｜**Keyv 關聯 npm 供應鏈蠕蟲攻擊，植入 Claude Code 與 VS Code hook**（2026-08-04 報導，2026-08-10 查證）：屬於 Mini Shai-Hulud 惡意軟體家族的供應鏈攻擊，08-04 從快取套件 keyv@6.0.0（週下載量約 1.27 億）開始，透過 preinstall script 竊取 GitHub／雲端／Kubernetes 憑證，並利用既有 npm 發布權限持續感染同維護者的套件家族，獨立追蹤者確認至少 353 個套件版本（79 個套件名）遭波及；攻擊會在受害 repo 內寫入 Claude Code 與 VS Code 各一份設定檔，於開啟專案或啟動 agent session 時觸發 payload，此持久化機制隨 repo 一同散布，不侷限於單機。此為 npm 供應鏈攻擊而非 Claude Code 本身漏洞，Anthropic 無法單方修補，使用者應留意來路不明套件的 preinstall script。見 [The Hacker News](https://thehackernews.com/2026/08/keyv-linked-npm-worm-poisons-hundreds.html)；事件細節另見 [[topics/ai-agent-safety]]
 - ✅ **已修復 v2.1.216（v2.1.223 進一步加固）**｜**Bash 與 Unicode 繞過修補（Tech Times 報導）**（2026-07-21 報導，2026-08-10 查證）：**v2.1.216**（2026-07-20）修補 Auto Mode 下的兩類繞過——Bash 複合語句重導向、PowerShell 隱形 Unicode 注入；**v2.1.223**（2026-08-06）再修補 4 項權限邊界：Bash 指令可隱藏部分內容不受權限檢查掃描、tab／隱形 Unicode 填塞可讓核准對話框看不出實際內容、workflow script 可用動態 `import()` 逃出沙箱、`bypassPermissions` agent 定義可無視組織政策停用 bypass 模式。與既有隱寫術／同形字符機制（見下條）屬相關但不同批次的修復。見 [Tech Times](https://www.techtimes.com/articles/321151/20260721/claude-code-seals-bash-unicode-bypass-gaps-agentic-permission-layer.htm)
@@ -125,7 +127,7 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 - 🔴 **未修復**｜**畫面/終端機閃爍（GitHub issue #769 進行中呼叫畫面閃爍，累積 306 則留言、335 個讚，Claude CLI v0.2.69，全站已知問題今日互動量最高；issue #1913 終端機閃爍，累積 187 則留言、321 個讚，皆 2026-07-09）**：使用者回報進行中的呼叫會造成畫面閃爍，另有獨立回報指出終端機介面本身也會閃爍，兩者疑為相關或重複問題；官方尚未回應。
 - 🔴 **未修復**｜**Thinking summaries 在 Opus 4.7 消失，harness 未設定 `display: "summarized"`（GitHub issue #49268，累積 49 則留言、78 個讚，首見 2026-07-17，Claude Code v2.1.111，2026-07-21 10:45 UTC 留言數更新）**：使用者改用 Opus 4.7 後思考摘要不再顯示，追查發現 harness 呼叫 extended-thinking API 時未設定 `display: "summarized"` 參數，屬 harness 端設定缺失而非模型行為變化；與既有「Opus 4.7 thinking summaries 未在 VS Code 擴充套件正確渲染」（issue #49322）同屬 thinking summary 顯示問題但根源不同，暫分列追蹤；官方尚未回應。見 [[entities/opus-4-7]]。
 - 🔴 **未修復**｜**功能請求：關閉輸入框貼上文字自動收合為 `[Pasted text #N +X lines]`（GitHub issue #23134，累積 137 個讚，2026-07-16）**：使用者希望能關閉輸入框將多行貼上文字自動收合顯示的行為，保留原始貼上內容的可視性；官方尚未回應或提供設定選項。
-- 🔴 **未修復**｜**社群請願恢復已移除的 `/buddy` 功能（GitHub issue #45596，累積 262 則留言、2037 個讚，2026-07-09）**：`/buddy` 功能已於 4 月自 Claude Code v2.1.97 起移除，官方未附說明；社群集體請願要求恢復，反應數居今日已知問題前列，官方尚未回應是否重新上架。
+- 🔴 **未修復**｜**社群請願恢復已移除的 `/buddy` 功能（GitHub issue #45596，累積 265 則留言、2068 個讚，2026-07-09 首見，2026-08-11 互動數更新）**：`/buddy` 功能已於 4 月 9 日自 Claude Code v2.1.97 起移除，官方 changelog 未提及；社群發起統整請願要求恢復，反應數居全站已知問題前列，官方尚未回應是否重新上架。
 - 🔴 **未修復**｜**終端機複製夾帶多餘縮排與行尾空白（GitHub issue #18170，累積 134 則留言、283 個讚，首見 2026-07-08，2026-08-06 互動數更新）**：從 Claude Code 終端機複製文字（段落或程式碼區塊）時會夾帶前導縮排與行尾空白，影響貼上至其他編輯器或文件時的格式整潔；官方尚未回應。
 - 🔴 **未修復**｜**AskUserQuestion 60 秒逾時自動代答（GitHub issue #73125，累積 142 則留言、403 個讚，2026-07-08 持續累積）**：互動詢問（AskUserQuestion）逾時 60 秒未回應會自動代答並繼續執行（提示訊息「No response after 60s — continued without an answer」），可能導致決策分岔點被略過而產生非預期結果；此行為早已存在（[issue #30740](https://github.com/anthropics/claude-code/issues/30740)），2026-07-02 因 Reddit 貼文才被社群大量注意到並引發體驗爭議，反應數持續攀升（07-02 起連續多日高居不下），官方尚無修復或設定可調整逾時時間；2026-07-17 Hacker News 部落格文章（olafalders.com「Claude Code: Anatomy of a Misfeature」，score 140）確認此為 2026-07-01（v2.1.198）刻意加入的「效率繞過」（efficiency bypass）設計，非單純 bug：逾時後 agent 會自行判斷並繼續執行，而非等待人工指示；同日另有 Hacker News 使用者具體案例（score 23）回報請求 agent 放慢步調、暫停以節省 token，多次嘗試澄清仍未能改變其行為，agent 持續以相同步調作業；討論詳見 [[topics/community-tech-discussions]]
 - 🔴 **未修復**｜**功能請求：READ 工具未標示目前正在讀取哪一個檔案（GitHub issue #21151，累積 133 則留言、186 個讚，2026-07-17 首次記錄，2026-07-21 留言數更新）**：使用者反映執行 READ 工具讀取檔案時，介面未顯示目前正在讀取的具體檔案名稱，多檔案讀取情境下難以追蹤進度；官方尚未回應或提供設定選項。
@@ -216,7 +218,7 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 - 🔴 **未修復**｜**功能請求：VS Code 擴充功能比照 GitHub Copilot Edits Review 的差異審閱介面（GitHub issue #33932，累積 33 則留言、218 個讚，2026-07-14）**：使用者呼籲 VS Code 擴充功能提供類似 GitHub Copilot Edits Review 的 diff 審閱 UI；官方尚未回應或排入路線圖。
 - 🔴 **未修復**｜**功能請求：VS Code 擴充套件支援 LaTeX 算式渲染（GitHub issue #16446，累積 35 則留言、122 個讚，2026-07-14）**：使用者請求「Claude Code for VS Code」外掛支援 LaTeX 算式渲染；官方尚未回應或排入路線圖。
 - 🔴 **未修復**｜**Environment Contributions 警告訊息持續重複出現（GitHub issue #3301，累積 43 則留言、81 個讚，2026-07-18 更新，Claude Code Status v1.0.25）**：使用者回報每次開啟 Cursor 或 VS Code IDE 時，Environment Contributions 警告訊息都會持續重複出現；官方尚未回應。
-- 🔴 **未修復**｜**功能請求：Visual Studio 2026 整合支援（GitHub issue #15942，累積 144 則留言、504 個讚，首見 2026-07-09，2026-07-25 互動數更新）**：使用者要求 Claude Code 支援 Visual Studio 2026 整合；官方尚未回應或排入路線圖。
+- 🔴 **未修復**｜**功能請求：Visual Studio 2026 整合支援（GitHub issue #15942，累積 149 則留言、514 個讚，首見 2026-07-09，2026-08-11 互動數更新，今日社群互動量最高功能請求之一）**：使用者要求 Claude Code 支援 Visual Studio 2026 整合；官方尚未回應或排入路線圖。
 - 🔴 **未修復**｜**功能請求：Claude Code Desktop 多視窗支援（GitHub issue #30154，累積 61 則留言、215 個讚，首見 2026-07-09，2026-07-30 互動數更新）**：使用者呼籲 Desktop app 支援多視窗同時操作，取代目前單視窗＋側邊欄的 session 管理方式；官方尚未回應。
 - 🔴 **未修復**｜**Opus 4.7 thinking summaries 未在 VS Code 擴充套件正確渲染（GitHub issue #49322，累積 50 則留言、42 個讚，2026-07-09）**：使用者回報使用 Opus 4.7 時，VS Code 擴充套件無法正確渲染 thinking summaries 內容；官方尚未回應。見 [[entities/opus-4-7]]。
 - 🔴 **未修復**｜**VSCode 擴充套件 `ide_selection` 缺失、`ide_opened_file` 回報錯誤（GitHub issue #8451，累積 48 則留言、35 個讚，2026-07-10）**：VSCode 擴充套件未正確回報 `ide_selection`，且 `ide_opened_file` 欄位回傳錯誤檔案資訊，影響依賴這些欄位判斷編輯器狀態的工作流；官方尚未回應。
@@ -298,6 +300,7 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 
 | 版本 | 日期 | 重點 |
 |------|------|------|
+| **v2.1.228** | 2026-08-11 | Bug fixes：修復互動式 session 因罕見內部排版錯誤而停止重繪畫面（背景程序仍持續執行）；修復 Windows 上找不到 `git`／Git Bash 的問題；純 bug 修復，無新指令/旗標（見 [Release](https://github.com/anthropics/claude-code/releases/tag/v2.1.228)）|
 | **v2.1.226** | 2026-08-08 | Bug fixes and reliability improvements，官方 changelog 未列具體項目，純可靠性修正，無使用者端功能異動（見 [Release](https://github.com/anthropics/claude-code/releases/tag/v2.1.226)）|
 | **anthropic-sdk-python v0.121.0** | 2026-08-07 | Features：新增 `mid-conversation-tool-changes-2026-07-01` beta——可在對話進行中的系統訊息附加工具異動（新增／移除工具）而不使既有 prompt cache 失效；另新增 session budgets、advisor tool、pinned inference location、GitHub skills 自動載入等 API 支援（2026-08-10 查證，見 [Release](https://github.com/anthropics/anthropic-sdk-python/releases/tag/v0.121.0)）|
 | **anthropic-sdk-typescript google-cloud-sdk v0.0.7** | 2026-08-07 | Bug Fixes：client 改用固定字串作為 User-Agent，不再依賴 constructor 名稱；純相容性修正，無使用者端功能異動（2026-08-10 查證，見 [Release](https://github.com/anthropics/anthropic-sdk-typescript/releases/tag/google-cloud-sdk-v0.0.7)）|

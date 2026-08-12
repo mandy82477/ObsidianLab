@@ -25,14 +25,14 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 **狀態：** active（持續調整中）
 **領域：** 💼 商業
 **首次出現：** 2026-04-25
-**最後更新：** 2026-08-10
-**最後新聞更新：** 2026-08-10
+**最後更新：** 2026-08-12
+**最後新聞更新：** 2026-08-12
 
-> **最新計費政策異動**（2026-08-10）
-> - **旗艦模型的訂閱分界已由官方文件確認，07-18～21 的四方矛盾報導就此收斂**：Max／Team premium 為標配（上限週用量 50%）、Pro／Team standard 改走 usage credits，2026-07-20 生效；合格 Pro／Team standard 另有一次性過渡 credit。詳見「我的方案現在有什麼」。
-> - **usage credits 開啟後，方案用量上限不再是硬停止**——會繼續回答並計費，靠硬上限控管支出者需自行確認 `Settings > Usage` 開關。
-> - **Max 20x 用量異常回報再添一例**：Reddit 使用者回報用量在未使用期間半小時內從 0% 衝到 100%（08-04，週熱門），與功能記者已記錄之 GitHub Issue #41788（版本迴歸 bug）症狀相似，詳見「事故與爭議」。
-> - GitHub Issue #79337（Fable 5 於 Max 方案誤要求購點）延燒逾 18 天、留言 67 則仍未解，同屬「事故與爭議」。
+> **最新計費政策異動**（2026-08-12）
+> - **新增高互動付款 bug：升級方案時 PaymentIntent 遭提前作廢**：GitHub Issue #55982（77 留言、👍 26）反映升級付款流程在使用者確認前就被 `void_invoice` 提前作廢，導致升級持續失敗；同日 Reddit 另有用戶回報帳戶已有付款額度仍被要求重新輸入付款資訊，兩者是否同源未經證實。詳見「事故與爭議」。
+> - **官方文件首度明確區分「usage limits」與「length limits」**：usage limits 會隨對話長度、複雜度、啟用功能、模型、effort 等級動態變動，不同方案規則不同；同日 Reddit 出現「用量限額是否被調降」的疑慮（單一貼文，未經證實），詳見「配額與速率」。
+> - **企業定價落差再添量化案例**：Quesma 部落格（HN 31 分）指相同 token、相同模型下訂閱制與 API 計費價差最高達 40 倍，與既有 07-23 記錄（44 倍實測）方向一致；Pylon CEO 三天內意外花費 $4,000，The Information 報導多家企業帳單較預期高 2–3 倍，詳見「成本案例與優化」。
+> - **旗艦模型的訂閱分界（07-20 生效、08-08 官方確認）與 usage credits 機制仍為現行規則**，詳見「我的方案現在有什麼」；GitHub Issue #79337（Fable 5 於 Max 方案誤要求購點）延燒逾 18 天仍未解，同屬「事故與爭議」。
 
 ## 現況
 
@@ -68,6 +68,7 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 - **Max 5x 月費曾記載矛盾**：06-26 Reddit 貼文誤植 $50，已依 2026-05-14 xda-developers／dev.to 官方公告原文更正為 **$100**；該貼文「兩個 Max 5x = 一個 Max 20x」的價格假設有誤
 - **Max 20x 用量上限集體訴訟進行中**：Karl Kahn 訴訟（2026-06-16 提起）指控實際僅 Pro 的 6–8 倍而非廣告的 20 倍
 - **Team／Free／Enterprise 月費（2026-08-08 官方查證）**：Team 可混搭席位型別（mix and match），standard $20／premium $100（年繳，月繳各為 $25／$125），未見最低席位數規定；Free $0；Enterprise 未公開完整報價，頁面標示為「席位費＋依 API 費率計量」並提及 $20／席，實際價格需洽業務（來源：[claude.com/pricing](https://claude.com/pricing)）
+- **Free／Pro 功能組成補充（2026-08-12 官方查證，原文於 Max 方案段落截斷）**：Free 方案含 web 搜尋、記憶、桌面擴充、connector；Pro 方案另含 Claude Code／Cowork／Design／Science、無限 projects、Research、更多模型選擇、Microsoft 365 整合。此為功能清單補充，不影響上方六欄表的月費／計費規則；完整原文（含 Max／Team／Enterprise 段落）待後續查證（來源：[claude.com/pricing](https://claude.com/pricing)）
 - **各方案最強可用模型（2026-07-24 起）**：Opus 5 為 Pro 方案最強可用模型、Max 方案新預設模型（原為 Opus 4.8），見 [[entities/opus-5]]
 - **Max 20x 的差異不只用量**：context window、Claude Code 額度、優先排隊等有結構性差異，非單純 Pro 的 20 倍
 - **Enterprise 附加功能**：含 Compliance API、Enterprise Gateway 等；合作分級 Select／Preferred 差異未公開。Team 方案於 2026-06-19 官方速率翻倍時同步適用
@@ -148,6 +149,12 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 - **與既有計費邏輯的潛在張力（推論）**：若此類轉售規模擴大，可能繞開 Anthropic「訂閱補貼人工使用、程式化用量按 API 費率」的雙軌計費邏輯（見下方「計費架構」節），以訂閱價格取得 API 存取權轉售牟利，形同套利灰色地帶；惟目前僅一則低分社群貼文，尚無規模或官方回應佐證，需持續觀察是否有後續報導佐證（Hacker News https://news.ycombinator.com/item?id=49151751）
 
 ### 事故與爭議（誤扣費、靜默計費改動、帳號安全）
+
+#### 2026-08-12：升級方案付款流程新爆計費 bug——PaymentIntent 於確認完成前遭提前作廢
+
+- **GitHub Issue #55982（77 留言、👍 26 反應，2026-08-12 查證）**：反映用戶升級方案時付款流程失敗——PaymentIntent 在使用者確認付款前，就被後端 `void_invoice` 提前作廢，導致升級持續無法完成；77 留言已達 GitHub Issue 高門檻（≥50 留言對照表），是本頁近期新出現、互動量最高的付款類 bug（GitHub https://github.com/anthropics/claude-code/issues/55982）
+- **同日 Reddit 出現疑似相關回報（單一貼文，未經證實）**：r/ClaudeCode 用戶回報，即便帳戶已有既有付款額度（credits），系統仍要求重新輸入付款資訊；是否與上述 PaymentIntent 作廢問題同源，兩者未見官方或報導證實關聯，暫各自獨立記錄，不合併為單一事件（Reddit https://www.reddit.com/r/ClaudeCode/comments/1vm9chm/claude_asking_me_for_payment_details_to_use/）
+- **與既有事故的關係（推論）**：本頁「事故與爭議」已記錄多起用量點數／帳務異常（08-07 Issue #79337、07-20 南韓 $16.7M 疑似故障帳單等），本次首度集中在「升級付款流程本身失敗」而非「用量計費異常」，屬付款基礎設施層級的新故障面向
 
 #### 2026-08-07：Fable 5 Max 方案用量點數異常追蹤更新——留言數攀升至 67，延燒逾 18 天
 
@@ -334,6 +341,12 @@ The Information 報導企業客戶即使面對成本上漲仍持續採用；Anth
 
 ### 配額與速率
 
+#### 2026-08-12：官方文件釐清 usage limits 與 length limits 為兩種不同機制；同日再現「用量限制遭調降？」社群疑慮
+
+- **官方 Help Center：《How do usage and length limits work?》（2026-08-12 查證）**：官方文件說明 usage limits（隨對話長度、複雜度、啟用功能、模型、effort 等級等變動的「額度」）與 length limits（單則訊息／對話長度上限）是兩種不同概念；不同方案（Pro／Max／Team 等）的額度規則亦不同。此文件首度明確說明 usage limits 具動態性，而非固定額度（來源：[How do usage and length limits work?](https://support.claude.com/en/articles/11647753-how-do-usage-and-length-limits-work)）
+- **同日 Reddit 疑慮（單一貼文，未經證實）**：r/ClaudeCode 用戶反映近幾天用量額度消耗速度明顯變快，詢問是否遭調降限額；無官方回應佐證，亦未見其他來源佐證（Reddit https://www.reddit.com/r/ClaudeCode/comments/1vm9135/did_anthropic_decreased_the_usage_limit/）
+- **與官方文件的潛在關聯（推論，非官方回應）**：若 usage limits 確實隨對話複雜度／effort 等級動態變動（見上方官方說明），使用者感受到的「額度消耗變快」有可能源於任務型態改變而非官方調降限額；惟官方文件未直接回應本則貼文的具體指控，也未證實或否認限額本身是否曾調整，不可視為已解釋
+
 #### 2026-07-22：Reddit 週熱門質疑 Anthropic 宣稱的用量提升未反映於實際體驗（單一貼文，2026-07-22 指控，至今無後續——近 14 天日報未見其他來源佐證或官方回應）
 
 - **r/ClaudeAI 週熱門貼文**：貼文標題稱「Anthropic Claims 50% usage boost that doesn't exist」，質疑官方宣稱的 50% 用量提升並未實際反映在使用體驗中；純圖片型貼文，未附具體帳號數據或官方公告連結佐證。**與既有 +50% 促銷的關係（推論，待證實）**：不確定是否指涉上方「當前生效的計費規則」已記錄、已於 07-19 到期的「週配額 +50% 過渡期促銷」，或另一項未見於日報的官方宣稱；若指涉前者，則與 05-16 已記錄「Max 20x 用量上限未生效（數學實證）」同屬「官方宣告與實際體驗存在落差」的重複性模式（推論）。本則達互動門檻對照表 Reddit 週熱門「低」門檻，但無具體數據佐證，暫不視為新增可查證事實，僅記錄為既有落差模式的又一社群訊號（Reddit https://www.reddit.com/r/ClaudeAI/comments/1v3d8iz/anthropic_claims_50_usage_boost_that_doesnt_exist/）
@@ -480,6 +493,14 @@ Anthropic 將使用場景切分為**兩條獨立計費軌道**：
 - 設定費用警報（Anthropic 儀表板有顯示延遲，建議自建監控腳本）
 
 ### 成本案例與優化
+
+#### 2026-08-11：Quesma 部落格量化訂閱制 vs API 計費落差最高達 40 倍，Pylon CEO 三天內意外花費 $4,000
+
+- **HN 討論（score 31，達互動門檻對照表「中」門檻，2026-08-11）**：Quesma 部落格文章指出，相同 token、相同模型下，Claude Code 訂閱制與純 API 計費之間的價差最高可達 **40 倍**；一年前 $20/月方案已夠用，如今官方建議的「入門」方案已是 $100/月（Hacker News/quesma.com https://quesma.com/blog/claude-code-pricing-for-enterprise/）
+- **Pylon CEO 具名案例**：Pylon CEO Marty Kausas 公開表示三天內意外花費 **$4,000**，凸顯企業用戶對 API 計費模式的成本可預測性不足；具名企業案例彙整見 [[topics/enterprise-cost-management]]
+- **The Information 佐證**：文中引述報導指多家企業實際帳單較原先預期高出 **2–3 倍**，與本頁既有「計費儀表板滯後、透明度不足」結構性問題方向一致
+- **Uber 時間軸補充**：文章重申 Uber 於 **2025 年 12 月**導入 Claude Code、**2026 年 4 月**即燒完全年 AI coding 預算，為既有 Uber 案例（05-02／05-18，Forbes）補上具體月份，非新事件
+- **與 07-23 既有案例的對照（推論）**：與 07-23 已記錄「一手部落格實測——綁定方案改走純 API 計費，月費暴增至約 44 倍，推估補貼倍數約 13 倍」量級相近（40 倍 vs 44 倍），兩則獨立來源方向一致，均指向訂閱制對 API 計費的補貼倍數落在 40–44 倍區間，補強原本單一樣本的可信度
 
 #### 2026-07-23：一手部落格實測——綁定方案改走純 API 計費，月費暴增至約 44 倍，推估補貼倍數約 13 倍
 

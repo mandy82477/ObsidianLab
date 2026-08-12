@@ -25,8 +25,8 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 **狀態：** active
 **領域：** 🤖 模型
 **首次出現：** 2026-07-25
-**最後更新：** 2026-08-10
-**最後新聞更新：** 2026-08-10
+**最後更新：** 2026-08-12
+**最後新聞更新：** 2026-08-12
 
 > **最新進展**（2026-07-26）
 > Anthropic 於 2026-07-25 正式推出 Claude Opus 5，終結了近兩週的「Opus 5」傳聞（詳見 [[entities/opus-4-8]] 歷史記錄）。定位為 thoughtful and proactive 的新一代模型，在編碼與知識工作評測（Frontier-Bench、GDPval-AA）上逼近 Fable 5 的 frontier intelligence，官方稱定價為 Fable 5 的一半；現為 Claude Max 新預設模型、Claude Pro 最強模型，取代 Opus 4.8 成為次旗艦。資安任務上仍落後 Mythos 5。**07-26 MLQ.ai／PCMag 標題「tops」措辭已查證**：第三方 Artificial Analysis Intelligence Index 上 Opus 5 確以 60.7% 微幅領先 Fable 5 的 59.9%；GDPval-AA v2（1861 Elo，+114）、AA-Briefcase（1720 Elo，+146）亦領先，同時 AA-Briefcase 每任務成本僅 $10.41，較 Fable 5 的 $22.30 低 54%。詳見 [[topics/model-comparison#Benchmark 對照（有來源者才列）]]。
@@ -107,6 +107,7 @@ Anthropic 於 2026-07-25 正式發布 Claude Opus 5，是繼 2026-07-13 起多�
 
 | 日期 | 事件 |
 |------|------|
+| 2026-08-08 | Reddit r/ClaudeAI 週熱門貼文「PSA: Be careful letting Claude use WebFetch for research」：作者請 Opus 5 研究 AI agent 記憶架構時，發現其以 WebFetch 生成看似真實、實則捏造的具體統計數字、百分比與引述，提醒他人使用 WebFetch 做研究時需小心查核；單一使用者回報、無具體案例引文或跨來源佐證，列為待社群驗證的可靠性觀察，非量化評測結論（[Reddit](https://www.reddit.com/r/ClaudeAI/comments/1vim8b7/psa_be_careful_letting_claude_use_webfetch_for/)，週熱門，2026-08-08） |
 | 2026-08-07 | Reddit r/ClaudeAI 週熱門貼文「I defended Opus 5 - and then I realised otherwise」稱作者原本認為 Opus 5 是目前最「奇特獨特」的模型、稱讚其思考過程（reasoning trace）而非單純能力，深入分析其思考過程後改變了看法；原文於「actually reading through and analysing it's thought process I find fascinati...」處截斷，具體轉折方向（趨向更正面或更負面）不可考。與 07-29～08-04 已記錄的「過度自信」「不如跑分預期」「令人挫折」負向回饋屬同一波「上線兩週後社群重新評估」現象，惟本則聚焦 reasoning trace 角度且結論方向不明，暫列觀察、不代入評測結論（[Reddit](https://www.reddit.com/r/ClaudeAI/comments/1vibkny/i_defended_opus_5_and_then_i_realised_otherwise/)，週熱門，2026-08-07） |
 | 2026-07-30 | Reddit r/ClaudeCode 貼文（無「週熱門」標記，score 恆為 0 屬 RSS 已知限制不可信）稱使用者原先參考跑分認為 Opus 5 優於 Fable 5，實際使用後認為 Opus 5 仍有落差，提及遇到「minor」問題（原文於此截斷，具體細節不可得）；缺乏具體數字、跨來源佐證或問題細節，僅記錄社群出現不如預期的觀感回報，不代入評測結論。❓ **待查證**（標 2026-08-10｜查 minor、效能落差｜複 2026-08-24）｜**「minor」問題具體所指**：Reddit 原文於此截斷，2026-08-10 查證嘗試無法再取得該貼文內容或後續討論，具體細節與效能落差幅度仍未經查證（[Reddit](https://www.reddit.com/r/ClaudeCode/comments/1var15k/opus_5_is_not_as_good_as_i_thought/)，2026-07-30） |
 | 2026-07-29 | Reddit r/artificial 週熱門貼文稱 Opus 5 的 effort 旋鈕「非單調」——超過 `high` 後（`xhigh`／`max`）程式碼任務分數反而下降，並稱官方 migration guide 本身即有此說明；**2026-08-08 查證官方文件後判定此說法不成立**——[What's new in Claude Opus 5](https://platform.claude.com/docs/en/about-claude/models/whats-new-opus-5) 明載「Claude Opus 5 converts additional effort into better results more reliably than any earlier Opus model」，並將 test-time compute scaling（效果隨 effort 提升直到 `max`）列為主要能力改進；官方對 `xhigh`／`max` 的唯一告誡是「須設較大 `max_tokens`」，以及 `thinking: disabled` 在 `xhigh`／`max` 會回 400。未見任何「高於 high 即單調下降」文字，社群措辭比官方原文更強烈——核心說法已證偽，無下降幅度可言，完整比對見 [[topics/model-comparison]] |
