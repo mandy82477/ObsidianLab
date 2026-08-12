@@ -25,11 +25,11 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 **狀態：** active
 **領域：** 🛠️ 工具/功能
 **首次出現：** 2026-04-27
-**最後更新：** 2026-07-19
-**最後新聞更新：** 2026-07-19
+**最後更新：** 2026-08-12
+**最後新聞更新：** 2026-08-12
 
-> **最新官方動態**（2026-07-15）
-> Claude for Teachers 教學技能庫發布，官方把 Skills 推進教育場景（美國認證 K-12 教師免費使用）。Skills 的官方定位框架則以 2026-06-21《七種指令傳遞方法》為準——與 CLAUDE.md、rules、subagents、hooks、output styles、system prompt append 並列六大控制層。
+> **最新官方動態**（2026-08-06）
+> Enterprise 方案新增 skill／plugin 安全掃描（beta），第三方 skill／plugin 上傳或編輯時自動檢查惡意內容，是官方安全審查機制首次延伸至 skill／plugin 送審流程。
 
 ---
 
@@ -83,6 +83,7 @@ description: 在 PR 或 diff review 前，依團隊規範檢查命名、測試�
 | 官方設計指南 | 《Lessons from building Claude Code: How we use skills》——內部數百個 Skills 的實戰心得 | 2026-06-05 |
 | | 《七種指令傳遞方法》——Skills 與 CLAUDE.md/rules/subagents/hooks/output styles/system prompt append 六層控制的定位框架 | 2026-06-21 |
 | 分享／同步機制 | ✅ **已有官方市集**（2026-08-08 查證官方文件更正）：`claude-plugins-official`（Anthropic 策展，首次互動啟動時自動註冊）與 `claude-plugins-community`（第三方送審後上架，需自行 `/plugin marketplace add`）；目錄另可於 [claude.com/plugins](https://claude.com/plugins) 瀏覽，送審有自動驗證與安全篩查。**創作者變現機制仍缺** | 市集已就位；變現無官方時程 |
+| | Enterprise 方案可開啟 skill／plugin 安全掃描（beta），第三方 skill／plugin 上傳或編輯時自動檢查惡意內容 | 2026-08-06 |
 | 行為變更 | v2.1.215：`/verify` 與 `/code-review` 兩項官方技能不再由 Claude 自動觸發，須使用者手動呼叫指令才會執行；與上方「機制本身」列所述「依描述語意自動觸發、無需手動呼叫」的通則產生例外，依賴自動驗證/審查的既有工作流需改為顯式呼叫，無過渡期即刻生效。詳見 [[entities/claude-code]] 版本表 | 2026-07-19 |
 
 ## 第三方生態動態

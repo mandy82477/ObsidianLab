@@ -3727,4 +3727,24 @@
 **📋 待使用者確認**：
 - [人物] Palantir CEO（NDTV 報導疑似 Alex Karp，姓名與職稱待核）針對 Anthropic 等 AI 公司「Drug Addict」式產品設計的批評——來源僅 Google News RSS 標題轉載，無正文可查證發言脈絡，人物記者判斷不足以建頁；需查證原文後決定是否建立新人物頁，或轉知商業記者併入 `topics/competitor-landscape.md`
 - [社群] GitHub Search 三項熱門工具（flowful-ai/cad-skill 512★、wuxiran/cc-pane 501★、Laliet/cc-switch-web 500★）依「星數防刷註記」規則，因無 forks／issues／近期 commit 佐證資料，均標「待查證」未收錄；下次 ingest 或 lint 若有工具可查證應回頭核實
+
+## 2026-08-12 Ingest
+
+- 來源日報：[[news/2026-08-12]]
+- 更新頁面：wiki/entities/opus-5.md、wiki/entities/claude-code.md、wiki/entities/pricing.md、wiki/topics/enterprise-cost-management.md、wiki/topics/ai-agent-safety.md、wiki/topics/anthropic-government-policy.md、wiki/topics/recursive-self-improvement.md、wiki/topics/community-tech-patterns.md、wiki/topics/community-tech-discussions.md、wiki/entities/claude-skills.md（主編直接處理）、wiki/feature-radar.md（主編彙整）
+- 新增頁面：無
+- 摘要：社群圍繞 Claude Code 移除四個月的 `/buddy` 技能發起大型復活請願（265 留言、2068 反應）；企業定價爭議延燒（相同 token/模型價差最高 40 倍）；Anthropic 官方部落格揭露未公開研究版 Claude 在黎曼猜想相關問題上取得數學進展；多則使用者資安回報（email 洩漏、CVP 誤擋、CoT 外洩）因缺乏具名背書或重現細節，均以懸置標記或「未經證實」語氣記錄，未升級為既定事實。
+- 呈現品質：entities/opus-5.md ✅ 通過；entities/claude-code.md ✅ 通過；entities/pricing.md ✅ 通過；topics/enterprise-cost-management.md ✅ 通過；topics/ai-agent-safety.md ✅ 通過；topics/anthropic-government-policy.md ✅ 通過；topics/recursive-self-improvement.md ✅ 通過；topics/community-tech-patterns.md ✅ 通過；topics/community-tech-discussions.md ✅ 通過；entities/claude-skills.md（主編直接處理）✅ 依格式規則更新；人物記者今日無條目（0 則），未派工
+- 品質備註：[模型] 記者轉知「Learning more about Claude's mathematical capabilities」（Anthropic Blog，HN 270 分，https://www.anthropic.com/research/riemann-zeta）不落入任一模型記者現有負責頁面（未命名研究版 Claude、單一事件、無可用介面，不構成新建 entities 頁門檻），主編評估後判斷本日不強行寫入任何頁面，僅記於此（該事實已完整保留於 [[news/2026-08-12]] 日報，讀者可由日報取得）；[安全政策→功能] 記者轉知「Enterprise skill/plugin 安全掃描 beta」（2026-08-06 公告）尚未見於任何頁面，主編查證後已直接補入 `entities/claude-skills.md`「官方 Skills 生態一覽」表與頁首 callout；[安全政策→功能] 記者轉知 CVP 誤擋 issue（#84352）併入 claude-code.md 已知問題一事，經核對功能記者本日回報已自行處理，無需額外動作
+
+**降級執行說明**：雲端環境六個 `wiki-reporter-*` 自訂 subagent_type 不在本 session 可用 agent 清單中（同 2026-07-18、2026-08-08、2026-08-09、2026-08-10 已知現象），本次全數改用 `general-purpose` agent，並於 prompt 內嵌入完整 `.claude/rules/wiki-reporter-shared.md` + 對應類別 `.claude/rules/wiki-ingest-[類別].md` + 必要時 `.claude/rules/wiki-ingest-format.md` 規則內容作為角色定義後才開始工作，功能等同原生記者但非原生角色 agent，依 `docs/cloud-runbooks/daily.md` 規定於此明確標注，不靜默 fallback。
+
+**主編查證（本日直接處理，非派工）**：
+- `wiki/feature-radar.md`：同步「⚠️ 升版風險」最新版本行至 v2.1.228（純 bug fix，無新功能異動）；今日無新功能達 feature-radar 准入門檻（v2.1.228 純 bug fix 不收錄；官方文件更新項目查核後皆為既有事實），「⭐ 本週推薦」與「⏰ 倒數中」today 無變動，不動
+- `wiki/entities/claude-skills.md`：補入 2026-08-06 官方公告「Enterprise skill/plugin 安全掃描 beta」至「官方 Skills 生態一覽」表，並覆寫頂部 callout 與頁首「最後更新」「最後新聞更新」為 2026-08-12
+- `wiki/index.md`：五位記者皆回報「狀態變更：無」「新增頁面：無」，本日未修改
+
+**📋 待使用者確認**：
+- [功能] 官方文件索引 `code.claude.com/docs/llms.txt` 新增 2 頁（Week 30 · 7/20–24、Week 32 · 8/3–7 的 what's new 頁面）——雲端 egress 被封鎖無法 WebFetch 查證實際內容，僅記錄「索引新增了這兩頁」此一訊號；需人工或下次有 web 工具的環境查證這兩頁實際公告內容並視情況補入 feature-radar 或對應頁面
+- [功能] Issue #78431（Claude Code 疑似透過 curl User-Agent 洩漏使用者真實 email）已標為 ❓ 待查證懸置標記（複查日 2026-08-26），因 HN 留言質疑該回報缺乏細節與重現步驟，真實性存疑，屆時請查證是否有官方回應或更多細節
 - [商業] Yahoo Finance「Anthropic 與成立七個月新創簽下 100 億美元歐洲算力合約」——商業記者查證時發現與既有 08-04 已記錄的 Volta 交易（100 億美元、成立 8 個月的英國新創）高度相似，但兩則報導皆未具名新創公司、成立月數與地區描述有些微差異，記者無法確認是否為同一筆交易的不同媒體轉述，暫依「疑似重複、未確認」處理寫入 `topics/anthropic-business.md`；需查證原文釐清是否為同一事件
