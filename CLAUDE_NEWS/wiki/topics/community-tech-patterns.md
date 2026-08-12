@@ -129,6 +129,21 @@ Claude Code 的三種多 agent 機制，可對應到 Anthropic《Building Effect
 
 ### 2026-08
 
+#### GitHub 熱門清單同日聚集六款工具，五款星數集中於狹窄區間、缺乏佐證（2026-08-12）
+
+- **核心模式：** GitHub Search 熱門清單今日同批帶出六款鎖定 Claude Code／Codex 等 coding agent 生態的工具：Waishnav/devspace（宣稱可把 ChatGPT 網頁介面變成類 Codex／把 Claude Web 變成 Claude Code 的體驗）、tzachbon/smart-ralph（結合 Ralph Wiggum loop 與結構化規格流程的 Claude Code plugin，主打規格驅動開發與智慧壓縮 compaction）、gglucass/headroom-desktop（macOS 桌面工具 Headroom，宣稱可將 Claude Code 與 Codex 的 token 成本削減約 50%）、aisa-group/PostTrainBench（評測 CLI agent 能否在單張 H100 GPU 上於 10 小時內完成基礎模型後訓練的基準）、ZeroPointRepo/youtube-skills（供 AI agent 使用的 YouTube 字幕擷取 skill，相容 OpenClaw、Hermes-Agent、Claude Code、Cursor、Windsurf）、clawplays/ospec（規格驅動 agentic 工作流框架，「規劃—執行—驗證」可驗證目標迴圈，相容 Claude Code、Codex、Gemini、OpenCode）
+- **與既有模式的關係：** smart-ralph 與 ospec 呼應本頁「Skills 設計」與「架構邊界合約」類別既有的規格驅動開發（spec-driven）取向——與既有 ISO 29148 規格驅動、ANMA YAML contracts 等節點屬同一趨勢的後續獨立實作；headroom-desktop 補充「Token / 成本優化」類別既有 Mac 桌面工具方向的又一實作；devspace、PostTrainBench、youtube-skills 三者與本頁既有模式無直接對應，暫記觀察
+- **星數真實性：** devspace 顯示 3,661 星（達對照表高門檻 ≥1000 星）；其餘五款（smart-ralph 509、headroom-desktop 506、PostTrainBench 505、youtube-skills 504、ospec 502）集中在 502–509 星的狹窄區間（達中門檻 ≥300 星），此區間分布緊密異常值得留意；本次摘要未附任一工具的 forks／open issues 真實往來／近 30 天 commit 等難造假佐證數據，依「GitHub repo 星數防刷註記」規則，六款工具星數全數標記 ❓ **待查證**（標 2026-08-12｜查 devspace、smart-ralph、headroom-desktop、PostTrainBench、youtube-skills、ospec）｜**星數真實性**：本記者無工具可自行查證 fork／issue／commit 數據，不視為高信度節點
+- **來源：** GitHub Search（今日日報「⭐ 重點話題」已收錄）
+- **成熟度：** ⏳ 新興（今日首見，六款工具星數皆缺乏佐證，實際採用情形有待觀察）
+
+#### 把 Claude Code 工作區依情境資料夾組織：任務與交付物分離、重複工作沉澱為 skills（2026-08-11）
+
+- **核心模式：** 文章分享一套將 Claude Code 工作區整理成情境資料夾（context folders）的實務做法，把任務本身與交付物（deliverables）分離存放，並把重複出現的工作流程沉澱為可複用的 skills，聚焦「產品工作（product work）」情境（非純程式碼開發）下如何組織 Claude Code 的日常使用方式
+- **與既有模式的關係：** 呼應本頁「Skills 設計」類別既有「流程 skill 化」共識——既有節點多聚焦工程／程式碼場景，本篇補上「情境資料夾」「任務與交付物分離」這類尚未見於既有節點的組織技巧，並將適用範圍延伸至非純工程的產品工作場景
+- **來源：** 「How to organize Claude Code for product work」— Hacker News（score 35，達對照表中門檻 ≥30 分）
+- **成熟度：** ⏳ 新興（今日首見，單一作者實務分享，尚無其他來源複現或延伸應用）
+
 #### loopx + HarnessFlow：同日兩款跨 harness 協作／狀態管理工具亮相，星數缺乏佐證（2026-08-09）
 
 - **核心模式：** GitHub Search 同日抓到兩款鎖定跨 coding agent 通用的協作工具：huangruiteng/loopx 自稱「輕量級 loop 工程狀態核心」，提供持久目標、配額感知自動喚醒、可執行待辦、證據紀錄與可驗證交接，鎖定長任務多 agent 團隊場景，agent-loop agnostic 橫跨 Codex、Claude Code 等工具；HangYu8123/HarnessFlow 則是鎖定 Codex、Claude、GitHub Copilot 的通用 coding workflow harness

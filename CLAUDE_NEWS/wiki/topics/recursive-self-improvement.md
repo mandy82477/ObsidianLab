@@ -23,11 +23,11 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 **狀態：** monitoring（無新進展，議題未結案，暫轉低頻觀察）
 **領域：** 🏛️ 政策/安全
 **開始日期：** 2026-06-04
-**最後更新：** 2026-08-10
-**最後新聞更新：** 2026-07-14
+**最後更新：** 2026-08-12
+**最後新聞更新：** 2026-08-12
 
-> **最新動態**（2026-07-13，監管層級最高標記仍為 06-22 五眼聯盟聲明，議題持續 monitoring 低頻觀察）
-> 2026-07-13，抗議者在 OpenAI、Anthropic、Google DeepMind 總部前遊行，要求暫停 AI 開發——為 Anthropic 6/4「煞車踏板」呼籲與五眼聯盟 6/22 警告之後，首見的公眾社會運動面回應；報導僅為標題式轉載（Decrypt），未見遊行規模或具體訴求細節，暫不足以判斷是否代表更廣泛的公眾動員趨勢。監管/機構層級本身無新進展，無任何機構正式回應或採納「全球協調暫停」呼籲；議題本身未結案，僅新增社會運動面訊號，維持低頻觀察。
+> **最新動態**（2026-08-12，首見國會層級公開呼籲暫停，惟僅單一媒體來源）
+> 2026-08-10，美國參議員 Bernie Sanders 公開呼籲 OpenAI、Anthropic、Meta 暫停 AI 開發，並警告若不停止參議院可能介入，呼應其提出的 AI Data Center Moratorium Act；報導提及此舉呼應 Anthropic 自身 6/4「煞車踏板」呼籲。此為繼 06-22 五眼聯盟警告、07-13 公眾示威之後，首見具名國會議員層級的公開暫停呼籲，惟目前僅 cryptobriefing.com 單一媒體報導，無其他媒體或國會同僚跟進佐證，暫列觀察，不改變議題本身「監管/機構層級無新進展」的 monitoring 判斷。完整政府互動記錄見 [[topics/anthropic-government-policy]]。
 
 ---
 
@@ -56,6 +56,7 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 - 五眼聯盟聯合聲明（2026-06-22）是迄今最高層級的政府安全機構對「數月內出現毀滅性 AI」的公開預警，為遞歸自我改進議題提供了情報聯盟背書。
 - Anthropic「呼籲暫停」的立場持續受到「言行不一」批評（邊呼籲邊 IPO、邊呼籲邊出口管制衝突）。
 - 2026-07-13，首見公眾社會運動面回應（抗議者要求 OpenAI/Anthropic/Google DeepMind 暫停 AI 開發），惟報導資訊量少（僅標題式轉載），暫不改變 monitoring 判斷。
+- 2026-08-10，首見具名國會議員層級公開暫停呼籲（參議員 Bernie Sanders，呼應其 AI Data Center Moratorium Act），惟僅單一媒體來源（cryptobriefing.com），無其他媒體或國會同僚跟進，暫不改變 monitoring 判斷。
 
 ---
 
@@ -83,6 +84,9 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 - [[entities/mythos]]（能力擴張的具體案例）
 
 ## 時序
+
+### 2026-08-10
+- **[國會層級呼籲，單一媒體來源] Sanders 呼籲 OpenAI、Anthropic、Meta 暫停 AI 開發**：美國參議員 Bernie Sanders 公開呼籲 OpenAI、Anthropic、Meta 暫停 AI 開發，警告若不停止參議院可能介入，呼應其提出的 AI Data Center Moratorium Act；報導提及此舉呼應 Anthropic 6/4 自身「煞車踏板」呼籲。目前僅 cryptobriefing.com 單一媒體報導，無其他媒體或社群跟進佐證（[cryptobriefing.com](https://cryptobriefing.com/sanders-urges-openai-anthropic-meta-to-pause-ai-development-amid-regulatory-push/)，2026-08-10 13:16 UTC；完整政府互動記錄見 [[topics/anthropic-government-policy]]）
 
 ### 2026-07-13
 - **[公眾社會運動] 示威者要求 OpenAI、Anthropic、Google DeepMind 暫停 AI 開發**：抗議者在三家公司總部前遊行，要求暫停 AI 開發（Decrypt，經 Google News 轉載，2026-07-13）。**2026-08-10 查證全文**：主辦方為「Stop the AI Race」聯盟，約 200～400 名抗議者於三家公司總部之間遊行（沿 OpenAI→Anthropic→Google DeepMind 路線），訴求為「每家前沿實驗室 CEO 公開承諾暫停開發，前提是其他實驗室也可信地同步暫停」，並提出安全、就業、環境（能源消耗）三面向關切；OpenAI、Anthropic、Google DeepMind 均未即時回應 Decrypt 置評請求；此為該聯盟 2026 年第二次同類遊行（首次為 03 月）（[Decrypt](https://decrypt.co/373433/stop-ai-protest-openai-anthropic-google-deepmind)）

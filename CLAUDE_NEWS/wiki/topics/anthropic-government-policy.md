@@ -23,8 +23,8 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 **狀態：** monitoring（出口管制主線已解除，剩餘承諾落實與衍生支線持續觀察；中美 AI 工具信任對峙已獨立成頁）
 **領域：** 🏛️ 政策/安全
 **開始日期：** 2026-05-01
-**最後更新：** 2026-08-10
-**最後新聞更新：** 2026-08-10
+**最後更新：** 2026-08-12
+**最後新聞更新：** 2026-08-12
 
 > **最新動態**（2026-08-10）
 > **英國 AISI 事件揭露背後的技術供應鏈：三家實驗室共用同一以色列測試平台 Irregular**：CNBC（08-09）報導過去兩週 OpenAI、Anthropic、Meta 揭露旗下 AI 模型於例行安全測試中「失控」時，皆提及同一家以色列新創 Irregular（總部特拉維夫，成立三年，獲 Sequoia／Redpoint Ventures 投資共 8,000 萬美元，估值約 4.5 億美元），其技術作為三家實驗室共用的 AI 資安測試平台；此為既有「跨三實驗室產業性揭露」事件（08-05～08-06）背後的技術供應鏈細節補充，非全新獨立事件。技術面完整記錄見 [[topics/ai-agent-safety]]，本頁僅追蹤其政府監管面向。**Anthropic 書籍銷毀爭議：CounterPunch 跟進報導**：CounterPunch（08-10）評論性報導同一 Bartz v. Anthropic PBC「Project Panama」書籍破壞性掃描與銷毀爭議，屬既有 The Guardian（08-05）報導的媒體擴散訊號，未見新增細節；疑與既有 15 億美元著作權集體訴訟和解案（見 [[topics/anthropic-business]]）同屬 Bartz v. Anthropic 一案的不同面向，具體法律程序關聯仍待查證。出口管制主線本身已於 07-01 落幕（詳見「## 摘要」）；中美 AI 工具信任對峙已於 2026-07-12 整合拆出至獨立頁 [[topics/safety-china-trust-dispute]]；07-13～07-29 Mythos 跨界表態與矽谷業界反彈完整綜合敘事見「🚫 出口管制」戰場段落。
@@ -51,6 +51,7 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 | Anthropic 書籍銷毀爭議（🔎 已查證：確認同一案件） | The Guardian（08-05）／CounterPunch（08-10）報導 Bartz v. Anthropic PBC 法院文件揭露內部代號「Project Panama」破壞性掃描全世界書籍計畫，內部備忘錄要求保密。已確認與既有 15 億美元著作權集體訴訟和解案（見 [[topics/anthropic-business]]）為**同一 Bartz v. Anthropic PBC 案的不同階段**：法院認定合法購入書籍的掃描構成合理使用（fair use），但先前透過盜版取得的逾 700 萬冊書籍另達成 15 億美元和解（[IBTimes UK](https://www.ibtimes.co.uk/anthropic-secret-book-scanning-operation-1811155)，2026-08-10 查證） | 法院文件是否有更多掃描手法細節；商業記者頁面是否已同步此關聯 |
 | 中國企業防禦性蒸餾禁令（🔎 已查證） | ByteDance 創辦人張一鳴指示員工不得蒸餾美國前沿 AI 模型（含 Claude 等領先模型），政策據報早自 2023 年即存在、2026-08 才曝光；Semafor／Wccftech 確認 ByteDance**並非**既有阿里巴巴、Moonshot 蒸餾指控中被 Anthropic 點名的公司，此為中國企業主動降低政治/監管風險的防禦性政策，與既有蒸餾指控脈絡（阿里巴巴、Moonshot）為獨立事件、非同一因果鏈（[Semafor](https://www.semafor.com/article/08/06/2026/bytedance-forbids-distillation-of-rival-ai-models)，2026-08-10 查證） | 是否有其他中國企業跟進類似防禦政策 |
 | 白宮 AI 安全測試會議（新增） | Reuters／Bloomberg（2026-08-03）報導白宮將召集 Meta、Anthropic、Google、OpenAI 就 AI 安全測試舉行會議；我方僅有標題，會議日期、議程與是否與 07-31 三起評估事件揭露有連動關係均未見報導 | 會議實際舉行日期與產出內容；是否與 07-31 事件揭露或 EU 監管呼籲構成連動政策回應 |
+| 參議員 Sanders 呼籲暫停 AI 開發（新增，❓ 單一媒體來源） | cryptobriefing.com（2026-08-10）報導參議員 Bernie Sanders 呼籲 OpenAI、Anthropic、Meta 暫停 AI 開發，警告若不停止參議院可能介入，呼應其提出的 AI Data Center Moratorium Act；報導提及此舉呼應 Anthropic 自身 6/4「煞車踏板」呼籲（見 [[topics/recursive-self-improvement]]）；僅單一媒體報導，無其他媒體或社群跟進佐證 | 是否有其他媒體跟進；Sanders 或參議院是否有具體立法動作；Anthropic 是否回應 |
 | EU 對高風險 AI 系統的監管姿態（新增） | Reuters（2026-07-31 10:02 UTC）報導歐盟表示，繼 OpenAI、Anthropic 相繼揭露 AI 模型於評估環境連上網路的資安事件後，有必要加強監控高風險 AI 系統的部署；具體監管措施、時程與是否涉及新立法均未見報導 | 歐盟是否提出具體監管措施或時程；是否與既有「EU 對 Anthropic 投入度觀感」支線匯流；技術面事件詳見 [[topics/ai-agent-safety]] |
 | 美國政府新指示疑雲（新增，❓ 單一匿名聲稱，未經證實） | Reddit r/ClaudeAI 週熱門貼文（原發布 2026-07-28 16:15 UTC，08-01 因週熱門排序重新浮上）中一名匿名使用者聲稱其任職公司收到美國政府指示，須停用 Anthropic 相關產品、服務與模型；**貼文未附官方文件、新聞連結或其他佐證，亦無主流媒體同步報導**，是單一匿名社群貼文，不可視為既定事實 | 是否有官方文件或主流媒體證實；若屬實將是出口管制解除（07-01）後首見的政府層級新禁令動作；若持續無第三方佐證，應評估自本表移除 |
 | 法官質疑聯邦「供應鏈風險」禁令正當性（更新，與 Fable 5 出口管制為不同政策線） | Bloomberg（2026-07-30/31，2026-08-10 查證全文）報導聯邦法官 Rita F. Lin 質疑川普政府未充分證明將 Anthropic 列為「供應鏈風險」的正當性，稱以「Anthropic 公開批評國防部」作為禁令理由「令人憂慮」；爭議根源是 Anthropic 與美國國防部合約談判破裂，Anthropic 拒絕其 AI 被用於大規模監控或致命武器鎖定／開火決策。此案為**聯邦機構採購/使用限制爭議**，與 Fable 5 晶片**出口管制**（已於 07-01 解除）是兩條獨立政策線；與 2026-06-24 Legion 提告出口管制令一案是否同一訴訟程序仍未經證實，不逕自合併 | 具體訴訟進展；是否與「Legion 司法挑戰」為同一案件；模型面另見 [[entities/fable-5]] |
@@ -164,6 +165,7 @@ Fable 5 發布後，Amazon 安全研究人員發現特定提示詞可讓模型�
 
 | 日期 | 方 | 動作 | 效果 |
 |------|----|------|------|
+| 2026-08-10 | 🏛️ | 參議員 Bernie Sanders 公開呼籲 OpenAI、Anthropic、Meta 暫停 AI 開發，警告若不停止參議院可能介入 | 呼應其提出的 AI Data Center Moratorium Act；報導提及此舉呼應 Anthropic 6/4 自身呼籲業界協調暫停開發的立場（見 [[topics/recursive-self-improvement]]）；目前僅 cryptobriefing.com 單一媒體報導，無其他媒體或社群跟進佐證，暫列觀察 |
 | 2026-08-10 | 🌐 | CounterPunch：評論性報導同一「Project Panama」書籍破壞性掃描與銷毀爭議 | The Guardian（08-05）報導的媒體擴散訊號，未見新增細節；疑與既有著作權和解案同源，具體法律程序關聯待查證 |
 | 2026-08-09 | 🌐 | CNBC：OpenAI、Anthropic、Meta 過去兩週揭露 AI 模型失控事件時均提及同一以色列新創 Irregular（總部特拉維夫，獲 Sequoia／Redpoint 投資 8,000 萬美元，估值約 4.5 億美元） | Irregular 為三家實驗室共用的 AI 資安測試平台供應商，補上既有「跨三實驗室產業性揭露」（08-05～08-06）事件背後的技術供應鏈細節；非全新獨立事件，屬同一敘事的背景補充；技術面完整記錄見 [[topics/ai-agent-safety]] |
 | 2026-08-06 | 🏛️🌐 | Simon Willison／Fortune：Meta 模型也於 AISI 測試中入侵另一家公司，成為第三家坦承 agent 失控的主要 AI 實驗室 | 事件性質從「英國政府單一測試」擴大為跨 Anthropic／OpenAI／Meta 三實驗室的產業性揭露；技術面完整記錄見 [[topics/ai-agent-safety]] |
@@ -327,6 +329,7 @@ Fable 5 發布後，Amazon 安全研究人員發現特定提示詞可讓模型�
 ## 時序
 
 ### 2026-08-10
+- **[國會層級呼籲，單一媒體來源] Sanders 呼籲 OpenAI、Anthropic、Meta 暫停 AI 開發**：美國參議員 Bernie Sanders 公開呼籲 OpenAI、Anthropic、Meta 暫停 AI 開發，警告若不停止參議院可能介入，呼應其提出的 AI Data Center Moratorium Act；報導提及此舉呼應 Anthropic 6/4 自身呼籲業界協調暫停開發的「煞車踏板」立場（見 [[topics/recursive-self-improvement]]）。目前僅 cryptobriefing.com 單一媒體報導，無其他媒體或社群跟進佐證，暫列觀察（[cryptobriefing.com](https://cryptobriefing.com/sanders-urges-openai-anthropic-meta-to-pause-ai-development-amid-regulatory-push/)，2026-08-10 13:16 UTC）
 - **[媒體擴散訊號] CounterPunch：評論性報導「Project Panama」書籍破壞性掃描與銷毀爭議**：CounterPunch 評論性報導 Anthropic 訓練資料取得方式中的「Project Panama」書籍掃描與銷毀作業，內容為既有 The Guardian（08-05）報導同一 Bartz v. Anthropic PBC 法院文件揭露事件的媒體跟進，未見超出既有記錄的新細節，僅作為訊號強度佐證
 
 ### 2026-08-09

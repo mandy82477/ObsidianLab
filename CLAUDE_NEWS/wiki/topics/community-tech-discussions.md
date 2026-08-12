@@ -23,11 +23,11 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 **狀態：** ongoing
 **領域：** 🌐 社群
 **開始日期：** 2026-04-25
-**最後更新：** 2026-08-10
-**最後新聞更新：** 2026-08-07
+**最後更新：** 2026-08-12
+**最後新聞更新：** 2026-08-12
 
-> **最熱討論**（2026-08-07）
-> 同日兩則 Show HN 終端管理／UI 工具（Wallfacer、HUD）皆達跨來源佐證門檻，HUD 透過官方 CLI JSON event stream 運作、以 hook 取得狀態不額外耗 token；Simon Willison 部落格發布以 Fable 5 一次到位打造「浣熊搶案」（Raccoon Heist）遊戲的創意展示案例。
+> **最熱討論**（2026-08-11）
+> GitHub Issue「Bring Back Buddy」請願——`/buddy` skill 隨 v2.1.97 無預警消失、官方未說明，留言數 265、👍 2068，本輪互動最高，呼應既有「Anthropic 透明度與信任赤字」長期議題；同日 Simon Willison 部落格發布「自然語言文字不存在無損轉換」的論述文章。
 
 ---
 
@@ -127,6 +127,7 @@ MCP 的實際成本遠超多數使用者預期，已有多個量化案例：
 - **2026-07-06 好感度流失論**（HN score 97）：API 穩定性 + 訂閱鎖定的商業設計批評（見技術彙整 2026-07）
 - **2026-07-13 Zed 創作者具名批評**（HN score 557）：公開指 Anthropic 對外宣稱與實際作為存在落差，本系列首個高分具名意見領袖指控（見技術彙整 2026-07）
 - **2026-07-13 Reddit 溝通策略抱怨**：使用者不滿 Fable 存取權與用量資訊（含 50% 增量）的官方溝通方式（[原帖](https://www.reddit.com/r/ClaudeCode/comments/1uvec4f/anthropic_needs_to_work_on_their_communication/)，單一貼文）
+- **2026-08-11 `/buddy` skill 無預警消失，官方未說明**：GitHub Issue「Bring Back Buddy」請願，留言 265、👍 2068，本系列互動最高（見熱門討論表格）
 
 （推論）各事件證據力落差極大（可複現的技術發現 vs 單一未驗證貼文），目前無證據顯示彼此有共同成因；但 07-13 起「社群端溝通抱怨 + 具名意見領袖公開批評」首次同時出現，若後續再有同軸事件，此線索可能收斂為獨立議題。
 
@@ -140,6 +141,11 @@ MCP 的實際成本遠超多數使用者預期，已有多個量化案例：
 
 | 討論主題 | 首見 | 熱度 | 模式 | 核心論點 | 衍生 |
 |---------|------|------|------|---------|------|
+| GitHub Issue：「Bring Back Buddy」——`/buddy` skill 隨 v2.1.97 無預警消失，社群發起統整請願 | 2026-08-11 | 🔥🔥🔥 | ☄️閃現 | `/buddy` skill 於 4/9 隨 v2.1.97 消失，官方未公開說明；GitHub Issue #45596 留言數 265、👍 2068，達對照表 GitHub Issue 高門檻（≥50 留言），社群發起統整請願要求官方回應或解釋為何移除；性質為「功能無預警消失＋零官方溝通」，呼應本頁既有「Anthropic 透明度與信任赤字」長期議題（見上方彙整索引）——本次為該議題新的獨立訊號；功能本身已由功能記者記錄於 [[entities/claude-code]] 已知問題，本頁僅記錄社群請願現象；[原文](https://github.com/anthropics/claude-code/issues/45596)（GitHub Issue） | — |
+| Simon Willison：自然語言文字不存在無損轉換（There are no lossless transformations of natural-language text） | 2026-08-11 | 🔥 | ☄️閃現 | Simon Willison 部落格主張自然語言文字不存在無損轉換，原文未點名特定 AI 廠商；具名表態，無社群延燒；[原文](https://simonwillison.net/2026/Aug/11/there-are-no-lossless-transformations-of-natural-language-text/#atom-everything)（Blog） | — |
+| Reddit r/ClaudeAI 週熱門：把 Claude Code 輸出的「Claude 式用語」翻譯成一般英文的 plugin | 2026-08-10 | 🔥 | ☄️閃現 | 使用者釋出將 Claude Code 常見「Claude 式」制式措辭自動翻譯成一般英文的 plugin；具體實作方式與下載連結細節 ❓ 待查證；Reddit r/ClaudeAI 週熱門標記，達收錄低門檻；[原文](https://www.reddit.com/r/ClaudeAI/comments/1vl0n1t/claude_code_plugin_for_translating_from_claudish/)（Reddit · 週熱門） | — |
+| Reddit r/ClaudeAI 週熱門：PSA — 讓 Claude 用 WebFetch 研究時，慎防生成看似真實、實則捏造的統計數字與引述 | 2026-08-08 | 🔥 | ☄️閃現 | 使用者請 Opus 5 用 WebFetch 研究 AI agent 記憶架構時，發現生成內容夾雜看似真實、實則捏造的統計數字與引述，提醒社群 WebFetch 取回真實網頁內容不保證模型輸出內容真實性；Reddit r/ClaudeAI 週熱門標記，達收錄低門檻；[原文](https://www.reddit.com/r/ClaudeAI/comments/1vim8b7/psa_be_careful_letting_claude_use_webfetch_for/)（Reddit · 週熱門） | — |
+| Reddit r/ClaudeAI 週熱門：用 Claude 打造手機籌碼＋實體發牌的撲克 app，已用於 19,072 手牌局 | 2026-08-08 | 🔥 | ☄️閃現 | 使用者用 Claude 打造以手機當籌碼、實體發牌的撲克 app，累計已用於 19,072 手牌局；呼應本頁既有「創意工具 Agent 整合」等既有模式對長期實際使用案例的持續關注；Reddit r/ClaudeAI 週熱門標記，達收錄低門檻；[原文](https://www.reddit.com/r/ClaudeAI/comments/1vii2zl/i_used_claude_to_build_a_poker_app_where_you_deal/)（Reddit · 週熱門） | — |
 | Simon Willison：以 Claude Fable 5 一次到位（one-shot）打造「浣熊搶案」（Raccoon Heist）遊戲 | 2026-08-07 | 🔥 | ☄️閃現 | Simon Willison 部落格展示以 Fable 5 一次生成完整可玩小遊戲的創意案例，延續其一貫的模型能力實測展示風格；具體 prompt 與生成過程細節見原文；具名表態，無社群延燒；[原文](https://simonwillison.net/2026/Aug/5/raccoon-heist/#atom-everything)（Blog） | — |
 | Show HN：Wallfacer — Claude Code 專用終端機 session 管理工具 | 2026-08-07 | 🔥 | ☄️閃現 | 作者釋出終端機 session 管理工具 Wallfacer，鎖定 Claude Code 多 session 切換與管理的痛點；HN score 35，達對照表中門檻（≥30分），source_count=2（跨來源佐證）；與同日 Show HN：HUD（見下一列）同屬終端管理/UI 工具同日湧現的趨勢，具體功能細節與差異化賣點 ❓ 待查證 ⟨Q-01⟩；[GitHub](https://github.com/pradipta/wallfacer)（HN） | — |
 | Show HN：HUD — 面向 Claude Code / Codex / OpenCode 的開源極簡終端 UI | 2026-08-07 | 🔥 | ☄️閃現 | 作者釋出開源極簡終端 UI「HUD」，同時支援 Claude Code、Codex、OpenCode 三種 CLI 工具；技術亮點是透過官方 CLI JSON event stream 運作（而非螢幕截取或包裝終端輸出），並用 UserPromptSubmit hook 取得狀態、不額外消耗 token；HN score 25，達對照表低門檻（≥10分），source_count=2（跨來源佐證）；與同日 Show HN：Wallfacer（見上一列）同屬終端管理/UI 工具同日湧現的趨勢；[GitHub](https://github.com/adrida/hud-mode)（HN） | — |
