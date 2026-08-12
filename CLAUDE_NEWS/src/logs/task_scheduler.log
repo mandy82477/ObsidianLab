@@ -188,3 +188,11 @@
 [Tue 2026/08/11 13:46:40.00] === Pipeline complete (agent) — 本次產出未上站，完整成果見分支 cloud-daily-2026-08-11-unmerged ===
 [Tue 2026/08/11 23:08:25.00] Watchdog push SENT - 每日新聞 2026-08-11 缺件：日報。本機跑 /news-pipeline 2026-08-11 補（另有近 7 天 1 個舊缺口）
 [cloud daily-news-pipeline-cloud STARTED Wed 2026/08/12 13:09:00.45]
+[Wed 2026/08/12 13:09:00.45] === Agent pipeline start (2026-08-12) ===
+[Wed 2026/08/12 13:09:00.45] WARN: yesterday digest missing (2026-08-11)
+[Wed 2026/08/12 13:15:19.00] Aggregator OK
+[Wed 2026/08/12 13:34:00.00] Wiki ingest OK
+[Wed 2026/08/12 13:30:00.00] 測試全綠 - web build 放行
+[Wed 2026/08/12 13:31:00.00] Building web reader...
+[Wed 2026/08/12 13:33:15.00] Single push done (news + wiki + web)
+[Wed 2026/08/12 13:34:43.64] === Pipeline complete (agent) ===
