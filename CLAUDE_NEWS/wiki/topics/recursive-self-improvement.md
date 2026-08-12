@@ -3,19 +3,19 @@ page: "topics/recursive-self-improvement"
 kind: "topic"
 status: "monitoring（無新進展，議題未結案，暫轉低頻觀察）"
 domain: "🏛️ 政策/安全"
-last_updated: "2026-08-10"
-last_news_update: "2026-07-14"
+last_updated: "2026-08-12"
+last_news_update: "2026-08-12"
 status_main: "monitoring"
-days_since_news: 28
-inbound_links: 5
-attribution_count: 1
-attribution_last: "2026-07-14"
+days_since_news: 0
+inbound_links: 8
+attribution_count: 2
+attribution_last: "2026-08-12"
 top_source: "google-news"
 pending_count: 0
 pending_overdue: 0
 pending_next_review: null
 pending_signalled: 0
-signal: "休眠"
+signal: "健康"
 generated_by: "scripts/gen_wiki_frontmatter.py"
 ---
 # AI 遞歸自我改進與全球暫停呼籲

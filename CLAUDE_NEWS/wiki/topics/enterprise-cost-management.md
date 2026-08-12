@@ -3,13 +3,13 @@ page: "topics/enterprise-cost-management"
 kind: "topic"
 status: "monitoring"
 domain: "💼 商業"
-last_updated: "2026-07-23"
-last_news_update: "2026-07-23"
+last_updated: "2026-08-12"
+last_news_update: "2026-08-12"
 status_main: "monitoring"
-days_since_news: 19
-inbound_links: 22
-attribution_count: 2
-attribution_last: "2026-07-23"
+days_since_news: 0
+inbound_links: 23
+attribution_count: 3
+attribution_last: "2026-08-12"
 top_source: "google-news"
 pending_count: 0
 pending_overdue: 0

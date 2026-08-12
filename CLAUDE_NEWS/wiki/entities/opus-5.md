@@ -4,13 +4,13 @@ kind: "entity"
 type: "model"
 status: "active"
 domain: "🤖 模型"
-last_updated: "2026-08-10"
-last_news_update: "2026-08-10"
+last_updated: "2026-08-12"
+last_news_update: "2026-08-12"
 status_main: "active"
-days_since_news: 1
+days_since_news: 0
 inbound_links: 25
-attribution_count: 13
-attribution_last: "2026-08-10"
+attribution_count: 14
+attribution_last: "2026-08-12"
 top_source: "google-news"
 pending_count: 1
 pending_overdue: 0

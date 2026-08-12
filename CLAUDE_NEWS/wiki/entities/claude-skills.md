@@ -4,10 +4,10 @@ kind: "entity"
 type: "feature"
 status: "active"
 domain: "🛠️ 工具/功能"
-last_updated: "2026-07-19"
-last_news_update: "2026-07-19"
+last_updated: "2026-08-12"
+last_news_update: "2026-08-12"
 status_main: "active"
-days_since_news: 23
+days_since_news: 0
 inbound_links: 3
 attribution_count: 6
 attribution_last: "2026-07-17"
@@ -16,7 +16,7 @@ pending_count: 0
 pending_overdue: 0
 pending_next_review: null
 pending_signalled: 0
-signal: "休眠"
+signal: "孤島"
 generated_by: "scripts/gen_wiki_frontmatter.py"
 ---
 # Claude Skills
