@@ -3117,17 +3117,17 @@
   "https://support.claude.com/en/articles/12429409-manage-usage-credits-for-paid-claude-plans": {
     "first_emitted": "2026-08-11",
     "score_at_emit": 0,
-    "digest_confirmed": false
+    "digest_confirmed": true
   },
   "https://claude.com/pricing": {
     "first_emitted": "2026-08-11",
     "score_at_emit": 0,
-    "digest_confirmed": false
+    "digest_confirmed": true
   },
   "https://code.claude.com/docs/llms.txt": {
     "first_emitted": "2026-08-11",
     "score_at_emit": 0,
-    "digest_confirmed": false
+    "digest_confirmed": true
   },
   "https://github.com/anthropics/claude-code/releases/tag/v2.1.227": {
     "first_emitted": "2026-08-11",
@@ -3137,57 +3137,57 @@
   "https://github.com/Waishnav/devspace": {
     "first_emitted": "2026-08-11",
     "score_at_emit": 3661,
-    "digest_confirmed": false
+    "digest_confirmed": true
   },
   "https://github.com/tzachbon/smart-ralph": {
     "first_emitted": "2026-08-11",
     "score_at_emit": 509,
-    "digest_confirmed": false
+    "digest_confirmed": true
   },
   "https://github.com/ZeroPointRepo/youtube-skills": {
     "first_emitted": "2026-08-11",
     "score_at_emit": 504,
-    "digest_confirmed": false
+    "digest_confirmed": true
   },
   "https://github.com/clawplays/ospec": {
     "first_emitted": "2026-08-11",
     "score_at_emit": 502,
-    "digest_confirmed": false
+    "digest_confirmed": true
   },
   "https://github.com/gglucass/headroom-desktop": {
     "first_emitted": "2026-08-11",
     "score_at_emit": 506,
-    "digest_confirmed": false
+    "digest_confirmed": true
   },
   "https://github.com/aisa-group/PostTrainBench": {
     "first_emitted": "2026-08-11",
     "score_at_emit": 505,
-    "digest_confirmed": false
+    "digest_confirmed": true
   },
   "https://github.com/anthropics/claude-code/issues/45596": {
     "first_emitted": "2026-08-11",
     "score_at_emit": 265,
-    "digest_confirmed": false
+    "digest_confirmed": true
   },
   "https://www.anthropic.com/research/riemann-zeta": {
     "first_emitted": "2026-08-11",
     "score_at_emit": 270,
-    "digest_confirmed": false
+    "digest_confirmed": true
   },
   "https://github.com/anthropics/claude-code/issues/15942": {
     "first_emitted": "2026-08-11",
     "score_at_emit": 149,
-    "digest_confirmed": false
+    "digest_confirmed": true
   },
   "https://github.com/pueschel88/Tradingview-MCP": {
     "first_emitted": "2026-08-11",
     "score_at_emit": 132,
-    "digest_confirmed": false
+    "digest_confirmed": true
   },
   "https://github.com/Moh4696/50-essential-mcp-servers": {
     "first_emitted": "2026-08-11",
     "score_at_emit": 118,
-    "digest_confirmed": false
+    "digest_confirmed": true
   },
   "https://github.com/anthropics/claude-code/issues/26452": {
     "first_emitted": "2026-08-11",
@@ -3197,7 +3197,7 @@
   "https://quesma.com/blog/claude-code-pricing-for-enterprise": {
     "first_emitted": "2026-08-11",
     "score_at_emit": 31,
-    "digest_confirmed": false
+    "digest_confirmed": true
   },
   "https://github.com/leog/ai-pulse": {
     "first_emitted": "2026-08-11",
@@ -3212,12 +3212,12 @@
   "https://cryptobriefing.com/sanders-urges-openai-anthropic-meta-to-pause-ai-development-amid-regulatory-push": {
     "first_emitted": "2026-08-11",
     "score_at_emit": 11,
-    "digest_confirmed": false
+    "digest_confirmed": true
   },
   "https://github.com/mochow13/keen-code": {
     "first_emitted": "2026-08-11",
     "score_at_emit": 6,
-    "digest_confirmed": false
+    "digest_confirmed": true
   },
   "https://www.aisloperator.com/brickoven-estates-laundry-room": {
     "first_emitted": "2026-08-11",
@@ -3227,32 +3227,32 @@
   "https://github.com/stared/trmnl-x-claude-codex": {
     "first_emitted": "2026-08-11",
     "score_at_emit": 3,
-    "digest_confirmed": false
+    "digest_confirmed": true
   },
   "https://github.com/skyzer/skills": {
     "first_emitted": "2026-08-11",
     "score_at_emit": 2,
-    "digest_confirmed": false
+    "digest_confirmed": true
   },
   "https://marketplace.visualstudio.com/items?itemName=multicoder.multicoder": {
     "first_emitted": "2026-08-11",
     "score_at_emit": 2,
-    "digest_confirmed": false
+    "digest_confirmed": true
   },
   "https://github.com/orchidfiles/ungate": {
     "first_emitted": "2026-08-11",
     "score_at_emit": 1,
-    "digest_confirmed": false
+    "digest_confirmed": true
   },
   "https://github.com/0xnyn/airship": {
     "first_emitted": "2026-08-11",
     "score_at_emit": 1,
-    "digest_confirmed": false
+    "digest_confirmed": true
   },
   "https://github.com/AIStoryHub/etincel": {
     "first_emitted": "2026-08-11",
     "score_at_emit": 1,
-    "digest_confirmed": false
+    "digest_confirmed": true
   },
   "https://www.reddit.com/r/ClaudeCode/comments/1vldpve/how_are_you_handling_model_switching_in_claude": {
     "first_emitted": "2026-08-11",
@@ -3362,7 +3362,7 @@
   "https://simonwillison.net/2026/Aug/10/introducing-muse-glimmer": {
     "first_emitted": "2026-08-11",
     "score_at_emit": 0,
-    "digest_confirmed": false
+    "digest_confirmed": true
   },
   "https://news.google.com/rss/articles/CBMikwFBVV95cUxNZWJzd21hc1YwNE9WdG0tLWxlNm9MVTZXQ1IwV0hWVE1Ob1VPQVRfUVNDZmptcjdzbXlCLU5sRUtiaXpwZFBPSkYxVjJZVXJIVzZKRENqZXJ2QkRYanR1M1RUdmxmSWtZUXRJaHpDTm45WkJJOHZBcTBKUEFrc0Z4YVBEdWQzd2c4WEwzY3pEX0dFNGM?oc=5": {
     "first_emitted": "2026-08-11",
@@ -3427,146 +3427,146 @@
   "https://support.claude.com/en/articles/12138966-release-notes": {
     "first_emitted": "2026-08-12",
     "score_at_emit": 0,
-    "digest_confirmed": false
+    "digest_confirmed": true
   },
   "https://support.claude.com/en/articles/11145838-use-claude-code-with-your-pro-or-max-plan": {
     "first_emitted": "2026-08-12",
     "score_at_emit": 0,
-    "digest_confirmed": false
+    "digest_confirmed": true
   },
   "https://support.claude.com/en/articles/11647753-how-do-usage-and-length-limits-work": {
     "first_emitted": "2026-08-12",
     "score_at_emit": 0,
-    "digest_confirmed": false
+    "digest_confirmed": true
   },
   "https://support.claude.com/en/articles/15424964-claude-fable-5-on-your-plan": {
     "first_emitted": "2026-08-12",
     "score_at_emit": 0,
-    "digest_confirmed": false
+    "digest_confirmed": true
   },
   "https://code.claude.com/docs/en/desktop.md": {
     "first_emitted": "2026-08-12",
     "score_at_emit": 0,
-    "digest_confirmed": false
+    "digest_confirmed": true
   },
   "https://github.com/anthropics/claude-code/releases/tag/v2.1.228": {
     "first_emitted": "2026-08-12",
     "score_at_emit": 0,
-    "digest_confirmed": false
+    "digest_confirmed": true
   },
   "https://github.com/anthropics/claude-code/issues/55982": {
     "first_emitted": "2026-08-12",
     "score_at_emit": 77,
-    "digest_confirmed": false
+    "digest_confirmed": true
   },
   "https://github.com/anthropics/claude-code/issues/84352": {
     "first_emitted": "2026-08-12",
     "score_at_emit": 69,
-    "digest_confirmed": false
+    "digest_confirmed": true
   },
   "https://twitter.com/_can1357/status/2087228354399265125": {
     "first_emitted": "2026-08-12",
     "score_at_emit": 54,
-    "digest_confirmed": false
+    "digest_confirmed": true
   },
   "https://github.com/anthropics/claude-code/issues/78431": {
     "first_emitted": "2026-08-12",
     "score_at_emit": 38,
-    "digest_confirmed": false
+    "digest_confirmed": true
   },
   "https://www.theaithinker.com/p/how-to-organize-claude-code-for-product": {
     "first_emitted": "2026-08-12",
     "score_at_emit": 35,
-    "digest_confirmed": false
+    "digest_confirmed": true
   },
   "https://discoveredmaterials.com/research": {
     "first_emitted": "2026-08-12",
     "score_at_emit": 19,
-    "digest_confirmed": false
+    "digest_confirmed": true
   },
   "https://github.com/karanb192/hindcast": {
     "first_emitted": "2026-08-12",
     "score_at_emit": 4,
-    "digest_confirmed": false
+    "digest_confirmed": true
   },
   "https://github.com/triuzzi/brave-devtools-mcp": {
     "first_emitted": "2026-08-12",
     "score_at_emit": 3,
-    "digest_confirmed": false
+    "digest_confirmed": true
   },
   "https://cutthroat.news": {
     "first_emitted": "2026-08-12",
     "score_at_emit": 1,
-    "digest_confirmed": false
+    "digest_confirmed": true
   },
   "https://github.com/tigerlang/auracommit": {
     "first_emitted": "2026-08-12",
     "score_at_emit": 1,
-    "digest_confirmed": false
+    "digest_confirmed": true
   },
   "https://github.com/Shalom-Borohov/claude-fleet": {
     "first_emitted": "2026-08-12",
     "score_at_emit": 1,
-    "digest_confirmed": false
+    "digest_confirmed": true
   },
   "https://synapse.mdlc.ai": {
     "first_emitted": "2026-08-12",
     "score_at_emit": 1,
-    "digest_confirmed": false
+    "digest_confirmed": true
   },
   "https://www.reddit.com/r/ClaudeCode/comments/1vmavje/6_out_of_10": {
     "first_emitted": "2026-08-12",
     "score_at_emit": 0,
-    "digest_confirmed": false
+    "digest_confirmed": true
   },
   "https://www.reddit.com/r/ClaudeCode/comments/1vmapwm/iso_24495_plain_language_plugin_for_claude_code": {
     "first_emitted": "2026-08-12",
     "score_at_emit": 0,
-    "digest_confirmed": false
+    "digest_confirmed": true
   },
   "https://www.reddit.com/r/ClaudeCode/comments/1vm9igt/i_made_a_forensic_archive_for_claude_failures": {
     "first_emitted": "2026-08-12",
     "score_at_emit": 0,
-    "digest_confirmed": false
+    "digest_confirmed": true
   },
   "https://www.reddit.com/r/ClaudeCode/comments/1vm9chm/claude_asking_me_for_payment_details_to_use": {
     "first_emitted": "2026-08-12",
     "score_at_emit": 0,
-    "digest_confirmed": false
+    "digest_confirmed": true
   },
   "https://www.reddit.com/r/ClaudeCode/comments/1vm95eu/confession_my_research_may_have_triggered_claudes": {
     "first_emitted": "2026-08-12",
     "score_at_emit": 0,
-    "digest_confirmed": false
+    "digest_confirmed": true
   },
   "https://www.reddit.com/r/ClaudeCode/comments/1vm9135/did_anthropic_decreased_the_usage_limit": {
     "first_emitted": "2026-08-12",
     "score_at_emit": 0,
-    "digest_confirmed": false
+    "digest_confirmed": true
   },
   "https://simonwillison.net/2026/Aug/11/there-are-no-lossless-transformations-of-natural-language-text": {
     "first_emitted": "2026-08-12",
     "score_at_emit": 0,
-    "digest_confirmed": false
+    "digest_confirmed": true
   },
   "https://simonwillison.net/2026/Aug/11/stealing-reasoning-traces": {
     "first_emitted": "2026-08-12",
     "score_at_emit": 0,
-    "digest_confirmed": false
+    "digest_confirmed": true
   },
   "https://www.reddit.com/r/ClaudeAI/comments/1vl0n1t/claude_code_plugin_for_translating_from_claudish": {
     "first_emitted": "2026-08-12",
     "score_at_emit": 0,
-    "digest_confirmed": false
+    "digest_confirmed": true
   },
   "https://www.reddit.com/r/ClaudeAI/comments/1vim8b7/psa_be_careful_letting_claude_use_webfetch_for": {
     "first_emitted": "2026-08-12",
     "score_at_emit": 0,
-    "digest_confirmed": false
+    "digest_confirmed": true
   },
   "https://www.reddit.com/r/ClaudeAI/comments/1vii2zl/i_used_claude_to_build_a_poker_app_where_you_deal": {
     "first_emitted": "2026-08-12",
     "score_at_emit": 0,
-    "digest_confirmed": false
+    "digest_confirmed": true
   }
 }
