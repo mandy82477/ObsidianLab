@@ -1796,6 +1796,12 @@ window.WIKI_DATA = {
       "topCount": 7
     },
     {
+      "date": "2026-08-11",
+      "articleCount": 62,
+      "preview": "多家媒體報導 Anthropic 為新產生的 Claude 文字輸出全面加上隱形浮水印，用於辨識 AI 生成內容，此舉與歐盟相關規範有關；報導指出標記在部分編輯後仍可能殘留。",
+      "topCount": 5
+    },
+    {
       "date": "2026-08-10",
       "articleCount": 51,
       "preview": "Anthropic 官方確認 Claude Code 的 Auto Mode 將於 8 月 14 日起正式成為 Pro、Max、Team 方案新 session 的預設值（已自行設定過預設或釘選預設者不受影響），並宣布即日起不再對 auto 分類器產生的額外 token 用量收費；社群流傳一項對 1,053 名付費測試",
