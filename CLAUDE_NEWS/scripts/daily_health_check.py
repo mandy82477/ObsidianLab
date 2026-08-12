@@ -18,6 +18,15 @@
      （2026-07-31 就是這樣：日報與 wiki 都好，只有 web build 被跳過）
   ④ 近 7 天缺口：Step 0 只看昨天，連漏數天時要能一次看到全貌
 
+外加一項（`parked_branches()`，只在 CLI 路徑跑、不進 check()）：
+  ⑤ 未併分支：雲端 routine push 撞衝突時會把「已做完的成果」停在
+     `cloud-daily-YYYY-MM-DD-unmerged` 分支而非併回 master（2026-08-11 實際
+     發生：routine 撞上手動大量推送、rebase 失敗，日報＋wiki ingest 全做完
+     卻停在分支兩天）。這種狀態下 watchdog 原本只會說「日報缺件、跑
+     /news-pipeline 補」——但那是重抓重生，會浪費掉已完成的成果。偵測到未併
+     分支就改口「成果已停在分支、用 git 救回勿重跑」，救法完全不同。
+     git 查詢失敗一律當「無未併分支」，絕不讓看門狗自己崩掉。
+
 用法：
     python scripts/daily_health_check.py                  # 人看的摘要
     python scripts/daily_health_check.py --format md      # GitHub job summary 用
@@ -32,11 +41,16 @@ from __future__ import annotations
 import argparse
 import io
 import json
+import re
+import subprocess
 import sys
 from datetime import date, datetime, timedelta, timezone
 from pathlib import Path
 
 REPO_ROOT = Path(__file__).resolve().parent.parent
+
+# 雲端 routine 停泊未併成果的分支命名慣例。
+PARKED_BRANCH_RE = re.compile(r"cloud-daily-\d{4}-\d{2}-\d{2}-unmerged")
 
 
 def _use_utf8_stdout() -> None:
@@ -95,6 +109,26 @@ def check(target: date, repo: Path = REPO_ROOT) -> dict:
     }
 
 
+def parked_branches(repo: Path = REPO_ROOT) -> list[str]:
+    """查遠端有無雲端 routine 停泊的未併成果分支。
+
+    **fail-safe：任何錯誤（git 不存在、無網路、逾時、非零退出）一律回 []。**
+    看門狗自己因為一個附加檢查而崩掉，比漏報未併分支更糟——所以這裡只增益、
+    不冒險。不放進 check()（那支要保持純檔案讀取、被 run_tests 匯入時不得有
+    網路副作用），只在 main() 的 CLI 路徑呼叫。
+    """
+    try:
+        out = subprocess.run(
+            ["git", "-C", str(repo), "ls-remote", "--heads", "origin"],
+            capture_output=True, text=True, timeout=15, encoding="utf-8",
+        )
+        if out.returncode != 0:
+            return []
+        return sorted({m.group(0) for m in PARKED_BRANCH_RE.finditer(out.stdout)})
+    except Exception:
+        return []
+
+
 def render_md(r: dict) -> str:
     lines = [f"## 每日產出檢查 {r['date']} (UTC)"]
     if r["gather_date"] == r["date"] and r["gather_n"] > 0:
@@ -108,6 +142,12 @@ def render_md(r: dict) -> str:
     elif r["digest_ok"]:
         lines.append(f"- ❌ ② 日報有但網站沒重建：web_reader/data/digest/{r['date']}.json 不存在（多半是 web build gate 擋下）")
 
+    parked = r.get("parked", [])
+    if parked:
+        lines += ["", "### ⚠️ 未併成果分支（成果已完成、push 失敗停在分支）"]
+        for b in parked:
+            lines.append(f"- ⚠️ `{b}`：**用 git 救回，勿跑 /news-pipeline 重抓**（會浪費已完成的成果）")
+
     lines += ["", "### 近 7 天缺口"]
     if not r["holes"]:
         lines.append("- ✅ 近 7 天無缺口")
@@ -117,13 +157,19 @@ def render_md(r: dict) -> str:
         else:
             lines.append(f"- ⚠️ {h['date']} 缺日報（無原料副本，只能重抓，內容會偏稀疏）")
 
-    if not r["healthy"]:
+    if not r["healthy"] or parked:
         lines += ["", f"**補救**：本機執行 `/news-pipeline {r['date']}`（見 CLAUDE_NEWS/docs/daily-automation.md）"]
     return "\n".join(lines)
 
 
 def render_push(r: dict) -> str:
     """一行推播訊息。開頭直接講哪一段壞了，讓通知列不用點開就能判斷要不要現在處理。"""
+    parked = r.get("parked", [])
+    # 未併分支優先：它的救法（git 救回）與缺件的救法（重抓）相反，先講清楚免得重跑白費
+    if parked:
+        b = parked[0]
+        extra = f"（另有 {len(parked) - 1} 條）" if len(parked) > 1 else ""
+        return f"每日新聞：成果停在未併分支 {b}{extra}，push 曾失敗。用 git 救回勿跑 /news-pipeline 重抓"[:200]
     if r["healthy"]:
         return f"每日新聞 {r['date']} 產出齊全"
     what = "、".join(p[0] for p in r["problems"])
@@ -143,9 +189,12 @@ def main() -> int:
     target = (datetime.strptime(args.date, "%Y-%m-%d").date() if args.date
               else datetime.now(timezone.utc).date())
     r = check(target)
+    # 未併分支查詢只在 CLI 路徑做（有網路副作用），不進 check()
+    r["parked"] = parked_branches()
 
     print(render_push(r) if args.format == "push" else render_md(r))
-    return 0 if r["healthy"] else 1
+    # 未併分支＝有成果被卡住沒整合，即使今天的檔案齊全也該喊——這正是本輪要補的靜默洞
+    return 0 if (r["healthy"] and not r["parked"]) else 1
 
 
 if __name__ == "__main__":

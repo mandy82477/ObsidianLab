@@ -14,7 +14,7 @@ from pathlib import Path
 from tempfile import TemporaryDirectory
 
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent.parent / "scripts"))
-from daily_health_check import check, render_push  # noqa: E402
+from daily_health_check import check, render_push, render_md, parked_branches  # noqa: E402
 
 TODAY = date(2026, 7, 31)
 
@@ -119,6 +119,46 @@ class TestRenderPush(unittest.TestCase):
         msg = render_push(r)
         self.assertIn("網站", msg)
         self.assertIn("2026-07-31", msg)
+
+
+class TestParkedBranches(unittest.TestCase):
+    """未併分支偵測（2026-08-11 教訓：成果做完但 push 失敗停在分支，
+    watchdog 卻建議重抓）。救法與缺件相反，訊息必須優先講清楚。"""
+
+    def test_parked_branch_leads_push_message(self):
+        """有未併分支時，推播要先講 git 救回，而不是叫人重抓。"""
+        with TemporaryDirectory() as tmp:
+            root = build_repo(Path(tmp), past_digests=ALL_PAST)  # 今天檔案齊全
+            r = check(TODAY, repo=root)
+        r["parked"] = ["cloud-daily-2026-08-11-unmerged"]
+        msg = render_push(r)
+        self.assertIn("cloud-daily-2026-08-11-unmerged", msg)
+        self.assertIn("git", msg)
+        self.assertLessEqual(len(msg), 200)
+        # 關鍵：明確勸阻重跑（提到 /news-pipeline 是為了說「勿」，不是建議）
+        self.assertIn("勿", msg)
+
+    def test_parked_branch_shown_in_md(self):
+        with TemporaryDirectory() as tmp:
+            root = build_repo(Path(tmp), past_digests=ALL_PAST)
+            r = check(TODAY, repo=root)
+        r["parked"] = ["cloud-daily-2026-08-11-unmerged"]
+        md = render_md(r)
+        self.assertIn("未併成果分支", md)
+        self.assertIn("cloud-daily-2026-08-11-unmerged", md)
+
+    def test_render_without_parked_key_is_backward_compatible(self):
+        """check() 不含 parked 鍵；render 不得因此 KeyError。"""
+        with TemporaryDirectory() as tmp:
+            root = build_repo(Path(tmp), past_digests=ALL_PAST)
+            r = check(TODAY, repo=root)
+        self.assertNotIn("parked", r)
+        render_push(r)   # 不得拋錯
+        render_md(r)
+
+    def test_parked_branches_failsafe_on_git_error(self):
+        """git 查詢失敗一律回 []，絕不讓看門狗自己崩掉。"""
+        self.assertEqual(parked_branches(Path("/nonexistent-repo-xyz")), [])
 
 
 if __name__ == "__main__":
