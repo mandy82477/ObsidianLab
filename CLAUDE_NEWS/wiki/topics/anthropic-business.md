@@ -3,10 +3,10 @@ page: "topics/anthropic-business"
 kind: "topic"
 status: "ongoing"
 domain: "💼 商業"
-last_updated: "2026-08-10"
-last_news_update: "2026-08-10"
+last_updated: "2026-08-11"
+last_news_update: "2026-08-11"
 status_main: "ongoing"
-days_since_news: 2
+days_since_news: 1
 inbound_links: 48
 attribution_count: 97
 attribution_last: "2026-08-10"
@@ -23,12 +23,13 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 **狀態：** ongoing
 **領域：** 💼 商業
 **開始日期：** 2026-05-28
-**最後更新：** 2026-08-10
-**最後新聞更新：** 2026-08-10
+**最後更新：** 2026-08-11
+**最後新聞更新：** 2026-08-11
 
-> **最新動態**（2026-08-10）
-> - **$100 億美元歐洲算力合約疑似 08-04 Volta 案的媒體重提**：Google News／Yahoo Finance 標題稱 Anthropic 與一家「成立僅七個月」的新創簽下規模 100 億美元歐洲算力合約，金額與既有 Volta 案相同，惟新創「月齡」（七個月 vs 既有報導的八個月）與地區描述有出入，且未見具名，待後續報導確認是否為同一交易，詳見「戰略合作」表 Volta 列更新。
-> - **OpenAI／Anthropic 合計佔 AI 產業營收 70% 說法引發 HN 論戰**：YouTube 影片主張兩家合計占 AI 產業營收 70%，Hacker News 討論串（73 分，達互動門檻對照表「高」門檻）出現反駁聲音，質疑該前提高估推理市場規模，詳見「財務狀況」表新增列。
+> **最新動態**（2026-08-11）
+> - **基礎建設合約密集簽署，Riot Platforms 20 年 90 億美元雲端協議領銜**：多家媒體報導 Anthropic 與加密貨幣礦業公司 Riot Platforms 簽下規模達 90 億美元、為期 20 年的雲端運算協議；另與新加坡主權基金 GIC、澳洲金融集團 Macquarie 洽談合作開發資料中心，延續近期算力基礎設施擴張系列信號，詳見「戰略合作」表新增三列。
+> - **南韓 Naver 投資 Anthropic 700 萬美元**：KED Global 報導 Naver 此舉為調整 AI 策略、擴大全球聯盟布局一環，僅標題可用，詳見「戰略合作」表新增列。
+> - **WSJ：IPO 前瞻報導聚焦投資人信心穩固**：WSJ 報導 Anthropic 在傳出將進行大型 IPO 之際正設法穩固投資人信心，僅標題可用，詳見「IPO 前瞻與估值追蹤」表新增列。
 
 ---
 
@@ -61,6 +62,7 @@ Anthropic 在技術聲譽與企業採用率上持續上升（企業採用率 34.
 | 2026-07-23 | Bloomberg 報導 Alphabet 持有 Anthropic 股權市值已跳升至約 **1,240 億美元** | 為股權市值（帳面評估），非新一輪投資金額，與 2026-04-24 官方投資額（最高 $400 億美元，當時估值 $3,500 億美元）為不同性質數字；市值跳升反映 Anthropic 整體估值自 04-24 以來持續墊高，與既有 Series H $965B、次級市場 $1.2 兆美元等估值訊號同屬「估值持續攀升」敘事的外部佐證，惟具體換算基準與 Google 持股比例未見報導細節（推論）；詳見 [[entities/google-investment]] 時序 | Google News/Bloomberg.com |
 | 2026-07-20 | Yahoo Finance UK 報導一位創投人士公開表態，看好 Anthropic IPO 前景優於對 OpenAI 之評價 | 是本鏈條首次出現「創投機構投資人明確選邊表態」的具體信號；若此類機構觀點擴散，可能影響未來認購熱度與市場對兩大 AI 巨頭 IPO 相對定價的預期（推論）；原文摘要遭 RSS 截斷，未見創投身分、具體理由與資金規模等細節，僅標題層級資訊 | [Google News/Yahoo Finance UK](https://news.google.com/rss/articles/CBMilgFBVV95cUxOZ2tsUWpzTFRkTjVjb3E1dTFJTTdzMHdiT2JVTi1PRzRFUTJZU0o4MHh1VXAwelR3cnh1SEN6dnR4dkZ1b2pBM2w3dUIyVjRQRzFBbjdCYi1pS3F4SjMySUxlNTVNXzFLNzltTW0yd1J3eEltejctWEFoSU1lRkpTUFV4cVlsRVFZTFVkY3hHMlhxYzhUQ3c?oc=5) |
 | 2026-07-19 | Yahoo Finance 報導 Anthropic 傳出仿效 SpaceX 模式，於 IPO 前尋求數十億美元規模信貸額度 | 若屬實，是繼 Series H 股權融資、次級市場交易熱度之外首見的「債務融資」IPO 前置動作；SpaceX 曾以類似信貸額度操作強化流動性同時避免過早稀釋股權，Anthropic 若跟進同一劇本，顯示財務團隊正系統性佈局多元資金管道以支撐 IPO 前現金部位、降低對股權融資的單一依賴（推論）；具體額度規模、參與銀行團未見細節，僅標題層級資訊 | [Google News/Yahoo Finance](https://news.google.com/rss/articles/CBMipwFBVV95cUxNNmJUYXZDTllxeUtmc1h6aHFQdnE4UEE3eGpLUFM4T2RCMGE3Z3dMSEI3dHZMQ2ZadVJKX25QekdmV3k4TktFazhKUW8tbHVpWVNWUDg2WXB4ZVFwSUJZUzBZWVQ0Y0tnX1VRc2w1a0VNV29UV1MxNzN1cEVuRUlDLW81b1ZaX0doZC0yYXdLcVlpSGFMdldTblRQNXZZMEdsc2FvZTYyRQ?oc=5) |
+| 2026-08-11 | WSJ 報導 Anthropic 在傳出將進行大型 IPO 之際正設法穩固投資人信心 | 延續近期投資人信心相關報導系列（07-17 敘事整備招募、07-15 銀行家協調投資人會議等），本次直接點出「穩固信心」為當前 IPO 前置工作核心議題，暗示可能存在潛在投資人疑慮需要化解（推論）；僅標題可用，具體疑慮內容、穩固信心的具體作法未見報導細節 | Google News/WSJ |
 | 2026-07-17 | Anthropic 揭露將支付 **60 萬美元**徵才協助形塑其「棘手（tricky）IPO 敘事故事」| 是本鏈條中首次揭露具體「敘事整備」投入金額的訊號，用詞「tricky」側面承認當前公開敘事（超高估值伴隨安全事件、出口管制、Alibaba 蒸餾指控等爭議）需要專業包裝才能在路演中站得住腳（推論）；具體職位、候選人資格、招募進度未見細節 | [Business Insider](https://news.google.com/rss/articles/CBMikAFBVV95cUxQRDNhRm4tcXpZYXBXUjJISTJsal9Wb1hVaWhJU3ZLTXNmZ1ZyQ1JaMFlGZHE4WTV1anRQYk1MQlBqbGdQeTRqWldVRVp2ZnlxaFpkYUJpaGdtdmptdldLdTBIZjdNTkprUXZ1LUhocWJlTF9HbVNRTUJPT0tsRXVZalhhUEVjU3NtdzRZRzh2Wjk?oc=5) |
 | 2026-05-28 | Series H 完成，估值 $965B，融資 $65B（史上最大單輪 AI 融資）| 估值基準線正式確立，超越 OpenAI 成全球最大 AI 新創 | Series H 官方公告 |
 | 2026-07-08 | SemiAnalysis 深度報導：3Q26（2026 財年第三季）獲利首度被第三方揭露超過 10 億美元 | 首次出現正獲利數據，若獲利趨勢延續，實質支撐 $965B 估值基本面，對 IPO 路演定價談判力有正面影響（推論）| [SemiAnalysis](https://newsletter.semianalysis.com/p/anthropic-3q26-profit-over-1b-the-anthropic-ipo-financials-sneak-peak) |
@@ -159,9 +161,13 @@ Simon Willison（知名開發者博主）發表文章，認為 Anthropic 與 Ope
 
 | 合作方 | 類型 | 日期 | 意義 |
 |--------|------|------|------|
+| Riot Platforms（加密貨幣礦業公司）| 雲端整合（運算協議，$90 億美元、20 年）| 2026-08-11 | 多家媒體報導 Anthropic 與加密貨幣礦業公司 Riot Platforms 簽署規模達 90 億美元、為期 20 年的雲端運算協議。**對商業的意涵**：延續近期 Volta（08-04，$100 億美元）、Morgan Stanley（08-02，$150 億美元）等基礎設施擴張系列信號，Riot Platforms 是又一家非傳統雲端商（加密貨幣礦業公司轉型算力供應）加入 Anthropic 算力供應鏈的具名案例，且合約期限長達 20 年，顯示 Anthropic 正鎖定長期穩定算力來源以因應持續擴張的運算需求（推論）；具體交易結構、生效時程未見報導細節，僅標題層級資訊（多家媒體，2026-08-11）|
+| GIC（新加坡主權財富基金）| 雲端整合（資料中心開發）| 2026-08-11 | 多家媒體報導 Anthropic 與新加坡主權財富基金 GIC 合作開發資料中心。**對商業的意涵**：與同日 Macquarie 合作並列，是 Anthropic 首度出現主權財富基金層級資料中心開發夥伴的具名案例，顯示其基礎設施融資管道正從傳統投行（Morgan Stanley）與科技公司延伸至主權基金（推論）；具體投資規模、資料中心地點未見報導細節，僅標題層級資訊（多家媒體，2026-08-11）|
+| Macquarie（澳洲金融集團）| 雲端整合（資料中心開發）| 2026-08-11 | 多家媒體報導 Anthropic 與澳洲金融集團 Macquarie 合作開發資料中心，延續 07-05 已記錄之澳洲 1.4GW 算力採購佈局（推論），是澳洲市場基礎設施合作的再一具名案例；具體規模、時程未見報導細節，僅標題層級資訊（多家媒體，2026-08-11）|
+| Naver（南韓網路巨頭）| 投資人（$700 萬美元）| 2026-08-11 | KED Global 報導南韓 Naver 宣布投資 Anthropic 700 萬美元，作為調整 AI 策略、擴大全球聯盟佈局一環。**對商業的意涵**：相較既有 AMD（$50 億美元）、SK 集團等大型投資／供應鏈夥伴，Naver 投資規模明顯較小，性質上更接近策略聯盟訊號而非重大資本挹注（推論）；具體聯盟內容、股權比例未見報導細節，僅標題層級資訊（Google News/KED Global，2026-08-11）|
 | Robert Mahari（Claude for Legal 負責人）| 新事業／人才佈局 | 2026-08-07 | Legal IT Insider、Law.com（source_count=2）同日獨立報導 Anthropic 任命法律科技學者暨新創創辦人 Robert Mahari，出任新設立的「Claude for Legal」部門負責人。**對商業的意涵**：是 Anthropic 首度以具名部門形式進軍法律 AI 垂直市場的訊號，延續近期 Cognizant（07-28）、UST（07-10/14/20）等垂直產業深化模式，惟本次是內部設立專責部門而非與既有企業客戶合作深化（推論）；具體部門職掌、團隊規模、產品路線未見報導細節，僅標題層級資訊，人物背景見人物記者對應頁面（Google News/Legal IT Insider；Google News/Law.com）|
 | Millennium（避險基金）| 企業客戶 | 2026-08-06 | Yahoo Finance（source_count=3）報導避險基金 Millennium 宣布與 Anthropic 合作開發 AI 風險分析師（AI risk analyst）工具。**對商業的意涵**：是繼 iCapital（金融服務採用，見 [[topics/enterprise-tool-tracker]]）、Nimble Gravity（銀行/保險顧問，05-27）之後，金融業（本次為避險基金）另一起具名採用案例，顯示 Claude 在金融風控垂直應用持續滲透（推論）；具體技術範疇、合約金額未見報導細節，僅標題層級資訊（Google News/Yahoo Finance）|
-| AWS（Continuum）| 雲端整合 | 2026-08-05 | AWS 官方宣布與 Anthropic、OpenAI 合作，將新推出的 AWS Continuum 導入開發者工作流程。**對商業的意涵**：延續既有 Enterprise Gateway（07-01，簡化 AWS/GCP 上的 Claude Code 存取）、AWS 治理功能（07-09）等雲端整合深化路線（推論），本次為 AWS 首度將 Anthropic 與 OpenAI 並列同一新產品的具名合作案例；具體 Continuum 功能範疇、技術細節未見報導，僅標題層級資訊（Google News/AWS）|
+| AWS（Continuum）| 雲端整合 | 2026-08-05 | AWS 官方宣布與 Anthropic、OpenAI 合作，將新推出的 AWS Continuum 導入開發者工作流程。**對商業的意涵**：延續既有 Enterprise Gateway（07-01，簡化 AWS/GCP 上的 Claude Code 存取）、AWS 治理功能（07-09）等雲端整合深化路線（推論），本次為 AWS 首度將 Anthropic 與 OpenAI 並列同一新產品的具名合作案例；具體 Continuum 功能範疇、技術細節未見報導，僅標題層級資訊（Google News/AWS）。**08-11 跟進（VentureBeat，角度延伸，非新事實）**：報導將 AWS Continuum 整合 Codex 與 Claude Code 定位為「大型 AI 資安舉措」一環，與 08-05 已記錄「開發者工作流程」框架不同，惟未見新增技術細節或合作條款，屬同一事件的不同媒體角度重述（Google News/VentureBeat）|
 | Volta（新創雲端運算商）| 雲端整合（運算協議，$100 億美元）| 2026-08-04 | TechCrunch 報導 Anthropic 與 AI 雲端運算新創 Volta 簽署規模達 100 億美元的運算協議；The Telegraph 補充 Volta 為僅成立八個月的英國新創；TipRanks 補充其獲 Nvidia 支持（三方報導同一事件，合併記錄）。**對商業的意涵**：延續近期 Morgan Stanley（08-02，150 億美元德州資料中心投資）、TeraWulf（07-06，190 億美元 20 年租約）、Meta（07-17，潛在 100 億美元運算力租賃）等基礎設施擴張系列信號，Volta 是又一起新興 AI 雲端運算商加入 Anthropic 算力供應鏈的具名案例，且合作對象成立僅八個月即簽下十億美元級合約，反映 Anthropic 算力採購對象持續向新興專營商擴散（推論）；具體交易結構、運算容量、生效時程未見報導細節，僅標題層級資訊（Google News/TechCrunch；Google News/The Telegraph；Google News/TipRanks）。**08-10 待查證（僅標題可用，新舊細節有出入，不可逕自認定為同一交易）**：Google News／Yahoo Finance 標題稱 Anthropic 與一家「成立僅七個月」的新創簽下規模達 100 億美元的**歐洲**算力合約，未見具名。金額與本案相同，但新創「月齡」（七個月 vs 本案八個月）、地區描述（「歐洲」vs 本案「英國」，英國技術上亦屬廣義歐洲）均有出入，可能是同一交易被不同媒體以稍有差異的細節重述，也可能是另一起獨立新交易，待後續報導揭露公司名稱後再判斷（Google News/Yahoo Finance）|
 | SpaceX | 運算合作（Anthropic／Google 客戶關係，推論）| 2026-08-04 | TechCrunch 報導 SpaceX 財報揭露營收較去年翻倍，成長動能含與 Anthropic、Google 的運算合作及 Starlink 業務成長。**對商業的意涵**：顯示 SpaceX 已成為 Anthropic（與 Google）運算基礎設施供應鏈的一環，是繼 TeraWulf、Volta 等新興算力供應商後又一起非傳統雲端商參與 Anthropic 算力佈局的案例（推論）；具體合作內容、金額、SpaceX 提供之運算類型（資料中心電力、衛星鏈路或其他）未見報導細節，僅標題層級資訊（Google News/TechCrunch）|
 | Google | 基礎設施融資（近 $2000 億美元，推論性質待證）| 2026-08-04 | Financial Times 報導 Google 為 Anthropic 主導/牽線一項規模近 **2000 億美元**的華爾街融資機制（原文標題："Inside Google's $200bn Wall Street finance machine for Anthropic"）。**對商業的意涵**：延續近期 Morgan Stanley（08-02，$150 億美元資料中心投資案）、TeraWulf（07-06，$19B 20 年租約）、Meta（07-17/18，潛在 $100 億美元運算力租賃洽談）等基礎設施擴張系列信號，若屬實將是目前已知規模最大的單一金融安排，顯示 Google 除既有 $400 億美元直接投資（見 [[entities/google-investment]]）外，可能進一步扮演資本市場中介／促成者角色（推論）；具體交易結構（債權/股權比例）、參與銀行團、資金確切用途未見報導細節，僅標題層級資訊，待後續補充（Google News/Financial Times）|
@@ -243,6 +249,12 @@ Simon Willison（知名開發者博主）發表文章，認為 Anthropic 與 Ope
 ## 時序
 
 ### 2026-08
+
+#### 2026-08-11
+- **[戰略合作，新增] Anthropic 與 Riot Platforms 簽署 20 年、90 億美元雲端協議；另與 GIC、Macquarie 洽談資料中心開發**：多家媒體報導，詳見「戰略合作」表新增三列（多家媒體）
+- **[戰略合作，新增] 南韓 Naver 投資 Anthropic 700 萬美元**：KED Global 報導，詳見「戰略合作」表新增列（Google News/KED Global）
+- **[IPO 前瞻，新增] WSJ：Anthropic IPO 前設法穩固投資人信心**：詳見「IPO 前瞻與估值追蹤」表新增列（Google News/WSJ）
+- **[戰略合作，媒體角度延伸，非新事實] VentureBeat：AWS Continuum 整合 Codex 與 Claude Code，定位為大型 AI 資安舉措一環**：與既有 08-05 已記錄之 AWS Continuum 合作事實一致，詳見「戰略合作」表 AWS 列補充（Google News/VentureBeat）
 
 #### 2026-08-10
 - **[戰略合作，待查證，疑似重複報導] Google News／Yahoo Finance：Anthropic 與「成立僅七個月」新創簽下 100 億美元歐洲算力合約**：金額與既有 08-04 Volta 案相同，但新創月齡與地區描述有出入，未見具名，詳見「戰略合作」表 Volta 列更新（Google News/Yahoo Finance）

@@ -72,6 +72,7 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 - **各方案最強可用模型（2026-07-24 起）**：Opus 5 為 Pro 方案最強可用模型、Max 方案新預設模型（原為 Opus 4.8），見 [[entities/opus-5]]
 - **Max 20x 的差異不只用量**：context window、Claude Code 額度、優先排隊等有結構性差異，非單純 Pro 的 20 倍
 - **Enterprise 附加功能**：含 Compliance API、Enterprise Gateway 等；合作分級 Select／Preferred 差異未公開。Team 方案於 2026-06-19 官方速率翻倍時同步適用
+- **usage credits 僅可在網頁版開通（2026-08-11 官方查證）**：官方說明中心 usage-credits 條目載明，行動 App（iOS／Android）訂閱者無法直接於 App 內開啟 usage credits，須改至網頁版 `Settings > Usage` 操作；額度用盡後可切換按量計費（API 標準費率）不中斷服務。此為既有「credits 為 opt-in、預設關閉」規則（見上方 2026-08-08 條目）的補充限制（來源：support.claude.com usage-credits 條目，2026-08-11）
 
 ---
 
@@ -227,6 +228,11 @@ git commit 歷史出現大寫字串「HERMES.md」會觸發靜默切換至 API �
 來源：[GitHub Issue #53262](https://github.com/anthropics/claude-code/issues/53262)
 
 ### 定價與促銷（模型定價、方案設計）
+
+#### 2026-08-11：官方文件補充 usage credits 僅限網頁版開通，pricing 頁確認 Free 方案功能範圍
+
+- **官方 usage-credits 條目補充限制**：support.claude.com 說明中心確認行動 App 訂閱者無法直接於 App 內開啟 usage credits，須改至網頁版操作；額度用盡後可切換按量計費（API 標準費率）不中斷。詳見上方「方案細節」新增條目
+- **claude.com/pricing 確認方案分層**：官方定價頁列出 Free／Pro／Max 各方案，Pro 明確標示涵蓋 Claude Code／Cowork／Design／Science，與 2026-08-12 已記錄之「Free／Pro 功能組成補充」屬同一份官方頁面的不同時點查證，不重複記錄
 
 #### 2026-08-08：官方 Help Center 查證，07-18～21 四方矛盾報導收斂（✅ 待查證結案）
 

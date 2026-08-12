@@ -7,11 +7,11 @@ last_updated: "2026-08-12"
 last_news_update: "2026-08-12"
 status_main: "ongoing"
 days_since_news: 0
-inbound_links: 40
+inbound_links: 41
 attribution_count: 70
 attribution_last: "2026-08-12"
 top_source: "hacker-news"
-pending_count: 5
+pending_count: 6
 pending_overdue: 0
 pending_next_review: "2026-08-24"
 pending_signalled: 0
@@ -143,6 +143,7 @@ MCP 的實際成本遠超多數使用者預期，已有多個量化案例：
 |---------|------|------|------|---------|------|
 | GitHub Issue：「Bring Back Buddy」——`/buddy` skill 隨 v2.1.97 無預警消失，社群發起統整請願 | 2026-08-11 | 🔥🔥🔥 | ☄️閃現 | `/buddy` skill 於 4/9 隨 v2.1.97 消失，官方未公開說明；GitHub Issue #45596 留言數 265、👍 2068，達對照表 GitHub Issue 高門檻（≥50 留言），社群發起統整請願要求官方回應或解釋為何移除；性質為「功能無預警消失＋零官方溝通」，呼應本頁既有「Anthropic 透明度與信任赤字」長期議題（見上方彙整索引）——本次為該議題新的獨立訊號；功能本身已由功能記者記錄於 [[entities/claude-code]] 已知問題，本頁僅記錄社群請願現象；[原文](https://github.com/anthropics/claude-code/issues/45596)（GitHub Issue） | — |
 | Simon Willison：自然語言文字不存在無損轉換（There are no lossless transformations of natural-language text） | 2026-08-11 | 🔥 | ☄️閃現 | Simon Willison 部落格主張自然語言文字不存在無損轉換，原文未點名特定 AI 廠商；具名表態，無社群延燒；[原文](https://simonwillison.net/2026/Aug/11/there-are-no-lossless-transformations-of-natural-language-text/#atom-everything)（Blog） | — |
+| Reddit：隱形浮水印政策引發社群反彈——使用者主張自己提供指示與決策，加浮水印不合理 | 2026-08-11 | 🔥 | ☄️閃現 | Reddit r/ClaudeCode 使用者針對日前隱形浮水印相關報導表達不滿，主張自己才是提供指示、脈絡與決策的一方，Claude 僅為工具，為輸出加隱形浮水印並不合理；與本頁 2026-07-01「Claude Code 隱寫術：同形字符隱寫元資料的信任危機」屬同一「AI 輸出隱藏標記是否應告知使用者」議題軸線的後續獨立訊號，惟該條已不在本表 30 天保留窗內，本則視為新訊號而非重燃；原始浮水印政策報導細節 ❓ 待查證 ⟨Q-03⟩；0 留言、無「週熱門」標記，score 不可信，單一貼文，惟情緒訊號明確（😤）且呼應既有長期議題脈絡，依內容判斷收錄；[原文](https://www.reddit.com/r/ClaudeCode/comments/1vlclpn/)（Reddit） | — |
 | Reddit r/ClaudeAI 週熱門：把 Claude Code 輸出的「Claude 式用語」翻譯成一般英文的 plugin | 2026-08-10 | 🔥 | ☄️閃現 | 使用者釋出將 Claude Code 常見「Claude 式」制式措辭自動翻譯成一般英文的 plugin；具體實作方式與下載連結細節 ❓ 待查證；Reddit r/ClaudeAI 週熱門標記，達收錄低門檻；[原文](https://www.reddit.com/r/ClaudeAI/comments/1vl0n1t/claude_code_plugin_for_translating_from_claudish/)（Reddit · 週熱門） | — |
 | Reddit r/ClaudeAI 週熱門：PSA — 讓 Claude 用 WebFetch 研究時，慎防生成看似真實、實則捏造的統計數字與引述 | 2026-08-08 | 🔥 | ☄️閃現 | 使用者請 Opus 5 用 WebFetch 研究 AI agent 記憶架構時，發現生成內容夾雜看似真實、實則捏造的統計數字與引述，提醒社群 WebFetch 取回真實網頁內容不保證模型輸出內容真實性；Reddit r/ClaudeAI 週熱門標記，達收錄低門檻；[原文](https://www.reddit.com/r/ClaudeAI/comments/1vim8b7/psa_be_careful_letting_claude_use_webfetch_for/)（Reddit · 週熱門） | — |
 | Reddit r/ClaudeAI 週熱門：用 Claude 打造手機籌碼＋實體發牌的撲克 app，已用於 19,072 手牌局 | 2026-08-08 | 🔥 | ☄️閃現 | 使用者用 Claude 打造以手機當籌碼、實體發牌的撲克 app，累計已用於 19,072 手牌局；呼應本頁既有「創意工具 Agent 整合」等既有模式對長期實際使用案例的持續關注；Reddit r/ClaudeAI 週熱門標記，達收錄低門檻；[原文](https://www.reddit.com/r/ClaudeAI/comments/1vii2zl/i_used_claude_to_build_a_poker_app_where_you_deal/)（Reddit · 週熱門） | — |
@@ -210,6 +211,7 @@ MCP 的實際成本遠超多數使用者預期，已有多個量化案例：
 **懸置細節**
 - ⟨Q-01⟩ ❓ **待查證**（標 2026-08-10｜查 Wallfacer、終端機管理）：Show HN：Wallfacer 終端機 session 管理工具的具體功能細節與差異化賣點（相對於同日 HUD）原文未見摘要
 - ⟨Q-02⟩ ❓ **待查證**（標 2026-08-10｜查 DeepSeek、OpenCode）：Harness showdown（Claude Code vs OpenCode vs Pi 搭配 DeepSeek V4 Flash）原始資料僅提供標題與圖片 alt 文字，具體量化 benchmark 數字未能擷取
+- ⟨Q-03⟩ ❓ **待查證**（標 2026-08-11｜查 隱形浮水印、watermark 政策）：引發本則 Reddit 反彈的原始浮水印政策報導未見於本次派工節錄，具體政策內容與適用範圍待補
 
 ---
 

@@ -11,7 +11,7 @@ inbound_links: 44
 attribution_count: 64
 attribution_last: "2026-08-12"
 top_source: "devto"
-pending_count: 19
+pending_count: 21
 pending_overdue: 0
 pending_next_review: "2026-08-24"
 pending_signalled: 0
@@ -137,12 +137,34 @@ Claude Code 的三種多 agent 機制，可對應到 Anthropic《Building Effect
 - **來源：** GitHub Search（今日日報「⭐ 重點話題」已收錄）
 - **成熟度：** ⏳ 新興（今日首見，六款工具星數皆缺乏佐證，實際採用情形有待觀察）
 
+#### spec-driven 工作流工具批次亮相：ospec／smart-ralph／devspace／headroom-desktop 同日湧現（2026-08-11）
+
+- **核心模式：** GitHub Search 今日同批出現四款鎖定 spec-driven／agentic 工作流的工具：clawplays/ospec（503 星，「規劃—執行—驗證」可驗證目標迴圈，相容 Claude Code、Codex、Gemini、OpenCode）、tzachbon/smart-ralph（505 星，結合 Ralph Wiggum loop 與結構化規格流程的 Claude Code plugin）、Waishnav/devspace（3,645 星，宣稱可把 ChatGPT 網頁介面／Claude Web 轉換成類 CLI agent 的體驗）、gglucass/headroom-desktop（502 星，macOS 桌面工具，宣稱可將 Claude Code／Codex 的 token 成本削減約 50%，機制未見說明）
+- **與既有模式的關係：** ospec、smart-ralph 呼應本頁「Skills 設計」與「架構邊界合約」類別既有的規格驅動開發（spec-driven）取向，屬同一趨勢的後續獨立實作；headroom-desktop 補充「Token / 成本優化」類別既有做法的又一實作；四款工具於隔日（2026-08-12）以更高星數再度出現於 GitHub 熱門清單（見上方 2026-08-12 節點），星數overnight成長，同批工具持續發酵
+- **星數與聲稱真實性：** devspace 3,645 星達對照表高門檻（≥1000 星）；其餘三款於中門檻（≥300 星）；四款工具均未附 forks／open issues／近期 commit 等難造假佐證數據；❓ **待查證**（標 2026-08-11｜查 ospec、smart-ralph、devspace、headroom-desktop）｜**星數真實性與 headroom 削減聲稱**：四款工具皆缺乏佐證數據，headroom-desktop 宣稱削減約 50% token 成本之具體機制未見說明
+- **來源：** GitHub Search（今日日報「⭐ 重點話題」已收錄）
+- **成熟度：** ⏳ 新興（今日首見，星數與成本削減聲稱皆待查證）
+
 #### 把 Claude Code 工作區依情境資料夾組織：任務與交付物分離、重複工作沉澱為 skills（2026-08-11）
 
 - **核心模式：** 文章分享一套將 Claude Code 工作區整理成情境資料夾（context folders）的實務做法，把任務本身與交付物（deliverables）分離存放，並把重複出現的工作流程沉澱為可複用的 skills，聚焦「產品工作（product work）」情境（非純程式碼開發）下如何組織 Claude Code 的日常使用方式
 - **與既有模式的關係：** 呼應本頁「Skills 設計」類別既有「流程 skill 化」共識——既有節點多聚焦工程／程式碼場景，本篇補上「情境資料夾」「任務與交付物分離」這類尚未見於既有節點的組織技巧，並將適用範圍延伸至非純工程的產品工作場景
 - **來源：** 「How to organize Claude Code for product work」— Hacker News（score 35，達對照表中門檻 ≥30 分）
 - **成熟度：** ⏳ 新興（今日首見，單一作者實務分享，尚無其他來源複現或延伸應用）
+
+#### 用 Claude Code 打造 AI SRE agent：第一手實作經驗與踩坑（2026-08-11）
+
+- **核心模式：** 使用者分享用 Claude Code 打造 AI SRE（Site Reliability Engineering）agent 的實作經驗，記錄過程中遇到的具體坑點；聚焦事故響應／維運自動化這個此前本頁較少著墨的應用場景
+- **與既有模式的關係：** 補充本頁既有偏「開發／除錯」場景的 agent 應用之外的**維運/事故響應**新場景，與 2026-08-08 收錄的「生產環境 memory leak 除錯」同屬「用 Claude Code 處理生產環境真實事故」主軸的獨立訊號
+- **來源：** Reddit r/ClaudeCode（0 留言，無「週熱門」標記，score 不可信；單一貼文尚無跨平台佐證，惟屬具體第一手實作經驗，依內容判斷收錄）
+- **成熟度：** ⏳ 新興（今日首見，單一作者第一手實作記錄，尚無其他來源複現或延伸應用）
+
+#### 把維基百科「Signs of AI writing」頁改寫成 Claude 自訂指示，宣稱可通過人工判讀（2026-08-11）
+
+- **核心模式：** 使用者將維基百科「AI 寫作特徵」（Signs of AI writing）頁面內容改寫成 Claude Code 自訂指示（如 CLAUDE.md／system prompt 片段），宣稱經實測可讓輸出通過人工判讀、不易被辨識為 AI 生成
+- **與既有模式的關係：** 與本頁 2026-07-01「Claude Code 隱寫術：同形字符隱寫元資料的信任危機」（見 [[topics/community-tech-discussions]]）及當日社群對隱形浮水印政策的反彈（見同頁 2026-08-11 節點）同屬「AI 輸出可辨識性」這個議題軸線的對立面實作——前者關注 Claude 輸出被動加註可辨識標記，本篇則是使用者主動要求 Claude 主動規避人類/工具辨識 AI 寫作的痕跡；❓ **待查證**（標 2026-08-11｜查 Signs of AI writing、Wikipedia）｜**效果驗證方式**：宣稱「經實測可通過人工判讀」但具體測試方法與樣本數未見原文
+- **來源：** Reddit r/ClaudeCode（0 留言，無「週熱門」標記，score 不可信；單一貼文，具體技術操作但成效聲稱未經驗證，依內容判斷收錄）
+- **成熟度：** ⏳ 新興（今日首見，單一使用者聲稱，成效未經第三方驗證）
 
 #### loopx + HarnessFlow：同日兩款跨 harness 協作／狀態管理工具亮相，星數缺乏佐證（2026-08-09）
 

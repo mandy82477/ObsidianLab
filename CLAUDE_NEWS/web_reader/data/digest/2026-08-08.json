@@ -249,11 +249,6 @@
   "preview": "Anthropic 宣布 Claude Code 將於 8 月 14 日起把「auto 模式」設為預設權限模式；Hacker News 討論串中社群回饋多偏正面，有留言指出新款模型已大幅降低破壞性操作風險，作者提到已用 auto 模式執行數月的系統管理任務未出過重大差錯。",
   "sedimentedToday": [
     {
-      "id": "fable-5",
-      "name": "Claude Fable 5",
-      "pageType": "entity"
-    },
-    {
       "id": "robert-mahari",
       "name": "Robert Mahari",
       "pageType": "entity"

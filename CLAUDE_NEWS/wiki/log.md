@@ -3748,3 +3748,14 @@
 - [功能] 官方文件索引 `code.claude.com/docs/llms.txt` 新增 2 頁（Week 30 · 7/20–24、Week 32 · 8/3–7 的 what's new 頁面）——雲端 egress 被封鎖無法 WebFetch 查證實際內容，僅記錄「索引新增了這兩頁」此一訊號；需人工或下次有 web 工具的環境查證這兩頁實際公告內容並視情況補入 feature-radar 或對應頁面
 - [功能] Issue #78431（Claude Code 疑似透過 curl User-Agent 洩漏使用者真實 email）已標為 ❓ 待查證懸置標記（複查日 2026-08-26），因 HN 留言質疑該回報缺乏細節與重現步驟，真實性存疑，屆時請查證是否有官方回應或更多細節
 - [商業] Yahoo Finance「Anthropic 與成立七個月新創簽下 100 億美元歐洲算力合約」——商業記者查證時發現與既有 08-04 已記錄的 Volta 交易（100 億美元、成立 8 個月的英國新創）高度相似，但兩則報導皆未具名新創公司、成立月數與地區描述有些微差異，記者無法確認是否為同一筆交易的不同媒體轉述，暫依「疑似重複、未確認」處理寫入 `topics/anthropic-business.md`；需查證原文釐清是否為同一事件
+
+## 2026-08-11 Ingest（補跑 backfill）
+
+- 來源日報：[[news/2026-08-11]]（62 篇，12/12 來源；日報收錄 37/62，未收錄 25 併入分類）
+- 補跑原因：08-11 雲端 routine 完整產出日報與 ingest，但 push 撞上同時段推送的查證波二大合併、rebase 失敗，成果停在分支 cloud-daily-2026-08-11-unmerged 未併回；該分支 ingest 係套在查證波之前的舊 wiki，不可併回（會覆蓋已定讞查證成果），故對現行 wiki 重跑本次 backfill。
+- 分類派工：模型、功能、商業、安全政策、社群五類並行（sonnet）；人物類無實質具名新聞，未派工。
+- 更新頁面：entities/opus-5、entities/fable-5（黎曼 zeta 里程碑，標註「非 Fable 5 本體」）、entities/claude-code（v2.1.227 版本表、Auto Mode 媒體接力、llms.txt +2 頁）、topics/anthropic-business（Riot 90 億／GIC／Macquarie、Naver 投資、WSJ IPO、AWS Continuum）、entities/pricing（usage credits／定價頁官方更新）、topics/competitor-landscape（Meta Muse Glimmer 開源）、topics/anthropic-government-policy（隱形浮水印政策、眾議院施壓）、topics/ai-agent-safety（浮水印溯源面 wikilink、澳洲健身房 API 媒體跟進）、topics/community-tech-patterns（spec-driven 工具批次、AI SRE agent、AI-writing 指示）、topics/community-tech-discussions（浮水印社群反彈 ⟨Q-03⟩）
+- 新增頁面：無
+- 摘要：Anthropic 隱形浮水印全面上線（歐盟法規驅動、4 來源）與 Auto Mode 8/14 預設化媒體接力為當日兩大主線；基建合約密集（Riot 20 年 90 億）；研究版 Claude 意外改進黎曼 zeta 下界；Bring Back Buddy 聯署（2068 👍）為社群最高互動。
+- 呈現品質：全部通過（記者 5/5 回報 ✅；新增懸置一律新語法）
+- 品質備註：安全政策記者一度將 anthropic-government-policy 標頭回調至 08-11（該頁已有 08-12 內容），主編收尾時校正回 08-12——backfill 補插歷史時標頭日期不得回退至補跑日。

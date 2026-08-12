@@ -12,7 +12,7 @@ inbound_links: 25
 attribution_count: 14
 attribution_last: "2026-08-12"
 top_source: "google-news"
-pending_count: 1
+pending_count: 2
 pending_overdue: 0
 pending_next_review: "2026-08-24"
 pending_signalled: 0
@@ -107,6 +107,7 @@ Anthropic 於 2026-07-25 正式發布 Claude Opus 5，是繼 2026-07-13 起多�
 
 | 日期 | 事件 |
 |------|------|
+| 2026-08-11 | SitePoint 刊出針對開發者的 Claude Opus 5 效能評測整理，原文僅提供標題層級資訊。❓ **待查證**（標 2026-08-11｜查 SitePoint、效能評測｜複 2026-08-25）｜**SitePoint 開發者效能評測具體數據**：未見量化基準、測試任務或對比對象，內容待查證（Google News/SitePoint，2026-08-11） |
 | 2026-08-08 | Reddit r/ClaudeAI 週熱門貼文「PSA: Be careful letting Claude use WebFetch for research」：作者請 Opus 5 研究 AI agent 記憶架構時，發現其以 WebFetch 生成看似真實、實則捏造的具體統計數字、百分比與引述，提醒他人使用 WebFetch 做研究時需小心查核；單一使用者回報、無具體案例引文或跨來源佐證，列為待社群驗證的可靠性觀察，非量化評測結論（[Reddit](https://www.reddit.com/r/ClaudeAI/comments/1vim8b7/psa_be_careful_letting_claude_use_webfetch_for/)，週熱門，2026-08-08） |
 | 2026-08-07 | Reddit r/ClaudeAI 週熱門貼文「I defended Opus 5 - and then I realised otherwise」稱作者原本認為 Opus 5 是目前最「奇特獨特」的模型、稱讚其思考過程（reasoning trace）而非單純能力，深入分析其思考過程後改變了看法；原文於「actually reading through and analysing it's thought process I find fascinati...」處截斷，具體轉折方向（趨向更正面或更負面）不可考。與 07-29～08-04 已記錄的「過度自信」「不如跑分預期」「令人挫折」負向回饋屬同一波「上線兩週後社群重新評估」現象，惟本則聚焦 reasoning trace 角度且結論方向不明，暫列觀察、不代入評測結論（[Reddit](https://www.reddit.com/r/ClaudeAI/comments/1vibkny/i_defended_opus_5_and_then_i_realised_otherwise/)，週熱門，2026-08-07） |
 | 2026-07-30 | Reddit r/ClaudeCode 貼文（無「週熱門」標記，score 恆為 0 屬 RSS 已知限制不可信）稱使用者原先參考跑分認為 Opus 5 優於 Fable 5，實際使用後認為 Opus 5 仍有落差，提及遇到「minor」問題（原文於此截斷，具體細節不可得）；缺乏具體數字、跨來源佐證或問題細節，僅記錄社群出現不如預期的觀感回報，不代入評測結論。❓ **待查證**（標 2026-08-10｜查 minor、效能落差｜複 2026-08-24）｜**「minor」問題具體所指**：Reddit 原文於此截斷，2026-08-10 查證嘗試無法再取得該貼文內容或後續討論，具體細節與效能落差幅度仍未經查證（[Reddit](https://www.reddit.com/r/ClaudeCode/comments/1var15k/opus_5_is_not_as_good_as_i_thought/)，2026-07-30） |

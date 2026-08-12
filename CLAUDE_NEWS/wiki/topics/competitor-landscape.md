@@ -3,10 +3,10 @@ page: "topics/competitor-landscape"
 kind: "topic"
 status: "monitoring"
 domain: "💼 商業"
-last_updated: "2026-08-10"
-last_news_update: "2026-08-10"
+last_updated: "2026-08-11"
+last_news_update: "2026-08-11"
 status_main: "monitoring"
-days_since_news: 2
+days_since_news: 1
 inbound_links: 49
 attribution_count: 55
 attribution_last: "2026-08-10"
@@ -23,12 +23,12 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 **狀態：** monitoring
 **領域：** 💼 商業
 **開始日期：** 2026-04
-**最後更新：** 2026-08-10
-**最後新聞更新：** 2026-08-10
+**最後更新：** 2026-08-11
+**最後新聞更新：** 2026-08-11
 
-> **最新競品動態**（2026-08-10）
-> - **SemiAnalysis（經 Stocktwits 轉引）：Microsoft 能否在 AI 基礎設施競賽「Out-AI」OpenAI 與 Anthropic**：分析文章提及每 GW 推理商機規模達千億美元（$100B-per-GW）估算，數字未經本頁查證原文，詳見「主要競品追蹤」Microsoft 子區塊新增。
-> - 08-07 Meta「Muse Code」正式發布、08-06 the-decoder.com 成本倍數報導等近期重點仍具參考價值，詳見下方時序。
+> **最新競品動態**（2026-08-11）
+> - **Meta 宣布開源其最強模型 Muse Glimmer**：CNBC、Simon Willison 部落格報導 Meta 將開源目前最強 AI 模型 Muse Glimmer，藉此對 OpenAI、Anthropic 表態競爭；與 08-05 發布的編碼 agent「Muse Code」不同，本次是模型層權重開源，詳見「主要競品追蹤」Meta 子區塊新增。
+> - 08-10 SemiAnalysis Microsoft 基礎設施競賽分析、08-07 Meta「Muse Code」正式發布等近期重點仍具參考價值，詳見下方時序。
 
 ---
 
@@ -54,6 +54,7 @@ Claude Code 已成為 AI 輔助編碼的標竿產品，但競爭正快速升溫�
 
 | 工具/模型 | 定價 | vs Claude 定位 | 來源日期 |
 |---------|------|--------------|---------|
+| Muse Glimmer（Meta，開源）| 免費（開源權重）| CNBC、Simon Willison 部落格報導 Meta 將開源目前最強模型，藉此對 OpenAI、Anthropic 表態競爭；具體 benchmark 數字、授權條款未見細節 | 2026-08-11（CNBC；Blog/Simon Willison https://simonwillison.net/2026/Aug/10/introducing-muse-glimmer/）|
 | Claude Code（自身，成本倍數宣稱）| ❓ **待查證**（標 2026-08-10｜查 the-decoder.com、成本三倍）｜**成本倍數宣稱**：the-decoder.com 稱速度最快但成本「接近最便宜對手的三倍」，未指明對手名稱、測試方法或具體 $ 數字 | 若屬實顯示 Claude Code 的「速度」優勢伴隨「成本」代價，與既有 GitHub Copilot Pro+（27 倍 Opus 加價）、DeepSeek（100 倍降價）等對比同屬「Claude 陣營溢價」敘事的一環；惟本則僅標題可用，倍數與對手身分均未經查證，**不可推算或杜撰具體對手與數字** | 2026-08-06（Google News/the-decoder.com）|
 | Muse Code / Muse Spark 1.2（Meta）| ❓ **待查證**（標 2026-08-10｜查 Muse Code、Basic Tutorials）｜**Muse Code 定價**：WSJ、CNET、Basic Tutorials 均未提供訂閱/API 掛牌價 | Meta 正式推出的程式碼撰寫 agent，明確對標 Claude Code 與 OpenAI Codex；為本頁 07-09「Meta AI 程式輔助工具」傳聞的正式落地產品，詳見「主要競品追蹤」Meta 子區塊 | 2026-08-05（Google News/CNET；Google News/Basic Tutorials；Blog/Simon Willison）／2026-08-07（Google News/WSJ）|
 | Alibaba「最強」模型（名稱未指明）| 免費開放 | Decrypt 稱效能「幾乎追平」Claude 與 ChatGPT，未提供具體 benchmark 數字或模型名稱；❓ 待查證 ⟨Q-04⟩ | 2026-08-04（Google News/Decrypt）|
@@ -169,6 +170,11 @@ Claude Code 已成為 AI 輔助編碼的標竿產品，但競爭正快速升溫�
 - **意義**：是繼 07-13 Cursor「Sand」代號確認、07-09 OpenAI ChatGPT Work/GPT-5.6 之後，又一家科技巨頭正式推出（而非僅傳聞）直接對標 Claude Code 的產品，且四家獨立媒體/管道（WSJ、CNET、Basic Tutorials、Simon Willison 轉引 Meta 官方部落格）於 08-05～08-07 三天內密集報導同一事件，為近期跨來源訊號最強的競品發布之一；若 Meta 憑藉自有 Llama 模型與龐大開發者生態切入，可能為 Claude Code 帶來新一輪「大廠免費/低價捆綁」壓力，類似 Microsoft Copilot CLI 路徑（推論）
 - **待補充**：Muse Code 具體定價、發布形式（獨立產品/Meta AI 內建）、能力評測數字均未見報導細節，僅標題與官方部落格公告層級資訊，詳見「競品定價對照」新增列（Google News/WSJ；Google News/CNET；Google News/Basic Tutorials；Blog/Simon Willison https://simonwillison.net/2026/Aug/5/muse-code-and-muse-spark-12/#atom-everything）
 
+### Meta 開源最強模型「Muse Glimmer」（2026-08-11，新戰線：開源旗艦模型）
+- **狀態**：正式宣布開源（CNBC；Simon Willison 部落格 https://simonwillison.net/2026/Aug/10/introducing-muse-glimmer/，2026-08-11）
+- **動態**：Meta 宣布將開源其目前最強 AI 模型 Muse Glimmer，CNBC 報導此舉意在向 OpenAI、Anthropic 表態競爭；與 08-05 已發布之編碼專用 agent「Muse Code」不同，Muse Glimmer 為通用旗艦模型，Meta 的開源戰線從「產品層工具」擴大至「模型層權重」
+- **對競爭格局的意涵**：延續 Moonshot Kimi K3（07-27 開源權重）、Zhipu Z.AI、DeepSeek 等既有開源陣營對 Anthropic 高定價旗艦模型的壓力（推論），Meta 若確實開源頂尖模型權重，可能進一步壓縮 Anthropic「閉源旗艦模型溢價」的商業邏輯空間，尤其對 Fable 5／Opus 5 等高單價模型構成間接定價壓力；具體 benchmark 數字、授權條款、開源範圍未見細節，僅標題與部落格轉引層級資訊
+
 ### Perplexity AI 編碼工具（傳聞開發中，2026-07-07）
 - **狀態**：傳聞階段（Business Insider 2026-07-07 報導）
 - **動態**：Perplexity 正低調開發一款 AI 程式編碼工具，意在對打 Cursor 與 Claude Code
@@ -274,6 +280,9 @@ Claude Code 已成為 AI 輔助編碼的標竿產品，但競爭正快速升溫�
 #### 近期單日動態彙整（2026-07-02 至 2026-07-26）
 
 > 逐日條目按主題可另見上方「主要競品追蹤」對應廠商子區塊；此區塊保留完整時序供追溯查證。
+
+### 2026-08-11
+- **[重大，競品正式宣布，開源旗艦模型] CNBC、Simon Willison：Meta 宣布開源其最強模型 Muse Glimmer，對標 OpenAI、Anthropic**：與 08-05 發布的編碼 agent「Muse Code」不同，本次為通用旗艦模型開源，詳見「主要競品追蹤」新增 Meta「Muse Glimmer」子區塊與「競品定價對照」表新增列（Google News/CNBC；Blog/Simon Willison）
 
 ### 2026-08-10
 - **[競品基礎設施動態，標題層級，待查證] SemiAnalysis（經 Stocktwits 轉引）：Microsoft 能否「Out-AI」OpenAI 與 Anthropic，每 GW 推理商機估算達千億美元**：詳見「主要競品追蹤」新增 Microsoft 基礎設施競賽子區塊（Google News/Stocktwits）
