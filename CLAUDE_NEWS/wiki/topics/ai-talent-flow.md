@@ -3,17 +3,17 @@ page: "topics/ai-talent-flow"
 kind: "topic"
 status: "monitoring"
 domain: "💼 商業"
-last_updated: "2026-08-10"
+last_updated: "2026-08-13"
 last_news_update: "2026-07-13"
 status_main: "monitoring"
-days_since_news: 30
+days_since_news: 31
 inbound_links: 13
 attribution_count: 1
 attribution_last: "2026-07-13"
 top_source: "google-news"
-pending_count: 3
+pending_count: 0
 pending_overdue: 0
-pending_next_review: "2026-08-24"
+pending_next_review: null
 pending_signalled: 0
 signal: "休眠"
 generated_by: "scripts/gen_wiki_frontmatter.py"
@@ -23,7 +23,7 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 **狀態：** monitoring
 **領域：** 💼 商業
 **開始日期：** 2026-06-21
-**最後更新：** 2026-08-10
+**最後更新：** 2026-08-13
 **最後新聞更新：** 2026-07-13
 
 > **最新動態**（2026-07-13）
@@ -40,12 +40,12 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 
 | 公司 | 角色 | 具體影響 | 評估 |
 |------|------|---------|------|
-| **Google DeepMind** | 淨流失方 | 兩週內連失 Jumper（科學/生物）、Adler（AI 編碼）、Pritzel（訓練）、額外 2 位資深研究員（6/28），另有一名研究員轉投 OpenAI；市值蒸發約 $2,700 億美元；Gemini 3.5 Pro 延期至七月（推論）；被迫重組 AI 編碼突擊隊 | 🔴 傷在痛點：流失方向與其落後領域（coding）重疊，複利式傷害（推論）；❓ 待查證 ⟨Q-01⟩ |
+| **Google DeepMind** | 淨流失方 | 兩週內連失 Jumper（科學/生物）、Adler（AI 編碼）、Pritzel（訓練）、額外 2 位資深研究員（6/28），另有一名研究員轉投 OpenAI；市值蒸發約 $2,700 億美元；Gemini 3.5 Pro 延期至七月（推論）；被迫重組 AI 編碼突擊隊 | 🔴 傷在痛點：流失方向與其落後領域（coding）重疊，複利式傷害（推論）；已查證 ⟨Q-01⟩ |
 | **Anthropic** | 主要承接方 | 補強科學計算（Jumper / AlphaFold）、AI 編碼（Adler）、模型訓練（Pritzel）、安全/經濟（FT 經濟學家）等多方向縱深 | 🟢 訊號 > 實質：對模型能力直接拉抬有限（Claude 已寫 80–90% 程式碼），真正價值在招募飛輪與動能訊號（推論）|
 | **OpenAI** | 次要承接方 | 獲得一名 Google 頂尖研究員（6/23 SEJ 報導，姓名未具名）| 🟡 同步受惠於 Google 人才外流，規模小於 Anthropic |
 
 **懸置細節**
-- ⟨Q-01⟩ ❓ **待查證**（標 2026-08-10｜查 Gemini 3.5、市值蒸發）｜**市值衝擊與 Gemini 延期歸因**：$2,700 億市值蒸發與 Gemini 3.5 Pro 延期是否直接肇因於人才流失，屬分析師推論，未見官方確認
+- ⟨Q-01⟩ 已查證（2026-08-13）：市值蒸發數字獲多方分析佐證（因統計時間窗不同，單月人才出走批次估算 $225B–270B，累計一個月內達 $425B）；Gemini 3.5 Pro 延期主因，據報導引述 DeepMind 內部說法，為「內部效能目標未達標，缺口集中在 coding 能力」，方向與人才流失（AI 編碼研究員出走）一致，但 Google 官方未直接承認兩者因果關係，故延期「肇因於人才流失」本身仍屬情境佐證下的合理推論，非官方確認（[The Agent Report](https://the-agent-report.com/2026/07/google-gemini-3-5-pro-delayed-july-2026/)；[FourWeekMBA](https://fourweekmba.com/ai-google-gemini-35-pro-delayed-coding-gap/)）
 
 **關鍵判讀（推論）：**
 - 人才流向是「市場相信前沿在哪裡」的領先指標；連續多波頂尖人才選 Anthropic，本身會自我強化（好的人吸引更好的人）。
@@ -79,8 +79,8 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 ## 相關實體
 
 - [[entities/john-jumper]] — 諾貝爾獎得主，DeepMind → Anthropic（6/21 Reuters 確認）
-- [[entities/andrej-karpathy]] — ❓ **待查證**（標 2026-08-10｜查 [[entities/andrej-karpathy]]）｜**加入 Anthropic 傳聞**：近期傳聞加入 Anthropic，尚未見官方確認
-- [[entities/teresa-carlson]] — 前 Microsoft/AWS 高管，2026-07-07 加入 Anthropic 主導公部門業務；❓ **待查證**（標 2026-08-10｜查 [[entities/teresa-carlson]]）｜**是否屬同期人才佈局**：非研究職，時序與人才流動潮相近，是否屬同一佈局尚未見官方或報導明確定性
+- [[entities/andrej-karpathy]] — 已查證（2026-08-13）：OpenAI 共同創辦人 Andrej Karpathy 已於 **2026-05-19** 正式加入 Anthropic，本人於 X 公開宣布，主導以 Claude 加速 pre-training 研究的新團隊，多家媒體同步確認（[TechCrunch](https://techcrunch.com/2026/05/19/openai-co-founder-andrej-karpathy-joins-anthropics-pre-training-team/)；[CNBC](https://www.cnbc.com/2026/05/19/anthropic-hires-openai-cofounder-andrej-karpathy-former-tesla-ai-lead.html)；[Axios](https://www.axios.com/2026/05/19/anthropic-openai-karpathy-andrej-claude)）
+- [[entities/teresa-carlson]] — 前 Microsoft/AWS 高管，2026-07-07 加入 Anthropic 主導公部門業務；🔎 查無官方（標 2026-08-10｜複 2026-09-13｜查 [[entities/teresa-carlson]]）：是否屬與研究員流動潮同期的整體人才佈局，查證後仍未見官方或報導將兩者明確定性為同一策略動作，非研究職與研究員潮之間僅時序相近，維持推論層級
 - [[topics/competitor-landscape]] — Google / OpenAI 競品格局
 - [[topics/anthropic-business]] — Anthropic 商業與人才動態
 - [[topics/recursive-self-improvement]] — Claude 已寫 80–90% Anthropic 程式碼，人才邊際效益的背景
