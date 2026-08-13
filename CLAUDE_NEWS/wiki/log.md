@@ -3771,3 +3771,25 @@
   4. **防再犯（watchdog）**：`daily_health_check.py` 新增 `parked_branches()`——查遠端 `cloud-daily-*-unmerged` 分支，有就 exit 非 0（即使今日檔案齊全，成果被卡住沒整合即靜默洞），推播優先改口「成果停在分支 X、用 git 救回勿重跑」；fail-safe（git 錯誤回 []）、只在 CLI 路徑跑不進 check()、+4 測試、runbook 同步（`4578be0`）
   5. emitted-cache 08-11 未確認項目維持原狀：兩階段機制設計為未確認項會被重新提供而非丟棄（安全方向），且 08-11 新聞至 08-13 多已滑出來源視窗
 - **教訓**：手動大量推送應避開雲端 routine 時窗（13:00–13:50 UTC ＝ 21:00–21:50 台北）；停泊分支救援優先於重跑（重跑會浪費已完成成果並可能覆蓋更新內容）。
+
+## 2026-08-13 Ingest | news/2026-08-13.md（56 則）
+
+- 來源日報：[[news/2026-08-13]]（56 則，12/12 來源；日報實收 25 則，另有 31 則透過 `list_digest_omissions.py` 一併提供給記者判斷）
+- 分類派工：模型 1 則、功能 11 則、商業 13 則、安全政策 3 則、社群 20 則（六類並行 foreground；人物類本日無具名 Anthropic 人員動態或重要外部人物言論，未派工）；**本雲端 routine 環境自訂 subagent_type（wiki-reporter-*）不在本 session 可用 agent 清單中，五位有條目的記者均改以 general-purpose agent 扮演角色、於 prompt 內指示其依序完整 Read `.claude/rules/wiki-reporter-shared.md` + 對應類別規則檔 + 必要時 `.claude/rules/wiki-ingest-format.md` 作為角色定義，功能等同原生記者但非原生角色 agent，屬環境限制的變通做法，依 `docs/cloud-runbooks/daily.md` 規定於此明確標注，不靜默 fallback**
+- 更新頁面：
+  - **模型**：無（Anthropic Status 多模型錯誤率上升事件已於當日解決，比對 07-06 同性質獨立事件後判斷不構成累積訊號，未達 `entities/fable-5.md` 更新門檻）
+  - **功能**：`entities/claude-code.md`（新增 v2.1.231 版本記錄——修復 MCP OAuth 登入失敗問題，Slack 等預先註冊 OAuth client 場景；新增已知問題 2 則——Claude in Chrome 擴充功能無法連接 CLI #20298、獨立 macOS 介面缺乏關閉自動建立 worktree 選項 #12513；既有已知問題互動數更新 4 則——多帳號 Connector #27302、Skills 子目錄 #10238、Environment Contributions 警告重複出現 #3301、官方 Linux Desktop build #65697；Claude Cowork Chrome 側邊欄消息僅標題可用，已標待查證；呈現品質順帶修復「現況不被時序侵蝕」違規，刪除已有歷史記錄對應的舊段落並回填缺漏歷史列）
+  - **商業**：`topics/anthropic-business.md`（新增 Anthropic 傳洽購世界模型新創 Decart 約 60 億美元、評估上看 2 兆美元估值規劃創紀錄 IPO，兩則皆多來源同日報導，寫入戰略合作表與新增「IPO 前瞻與估值追蹤」表）、`topics/competitor-landscape.md`（DeepSeek 組建團隊挑戰 Claude Code＋V4 Pro 上線宣稱效能逼近 Claude 3 Opus 但成本更低，補入既有 DeepSeek 子區塊；SpaceX Grok 新版加壓 Anthropic/OpenAI 僅記入時序）
+  - **安全政策**：`topics/anthropic-government-policy.md`（Claude 浮水印機制之 EU AI Act 政策角度補充報導；Guardian 國有化評論文章簡短記入攻防紀錄/時序，未達持續追蹤門檻）、`topics/ai-agent-safety.md`（新增 OpenAI/Anthropic/Google API 瑕疵——弱模型可解讀強模型推理過程，僅標題可用，以標準式 ❓ 待查證標記收錄，並註明與既有 07-14 加密推理簽章懸置「是否同一機制無法判斷，不逕自合併」）
+  - **社群**：`topics/community-tech-discussions.md`（新增 2 列：show-me skill／Quoting Florian Herrengt；同步執行 21 天 ☄️閃現 保留清理，移除 14 列逾期舊列）、`topics/community-tech-patterns.md`（新增 MISTAKES.md 節點，判斷非四條大型 codebase 主線，未觸發縫合）
+  - **主編彙整**：`wiki/feature-radar.md`（今日無新功能達准入門檻，「本週推薦」與「⏰ 倒數中」不動；同步「⚠️ 升版風險」最新版本行至 v2.1.231）
+- 新增頁面：無
+- 摘要：Anthropic 傳洽購 Decart（約 60 億美元）與評估 2 兆美元估值創紀錄 IPO 為當日兩大商業主線，多家財經媒體同步報導；Claude 浮水印機制（EU AI Act 合規）延續前日爭議，新增使用者反彈與繞過工具報導；DeepSeek 組隊＋V4 Pro 上線持續加壓 Claude Code 競爭態勢；Claude Code GitHub Issues 高互動功能請求（官方 Linux 桌面版 655👍、多帳號 Connector 480👍）反映社群使用痛點。
+- 呈現品質：entities/claude-code.md ⚠️ 已修復（現況段落時序侵蝕，見上）；topics/anthropic-business.md ✅ 通過；topics/competitor-landscape.md ✅ 通過；topics/anthropic-government-policy.md ✅ 通過；topics/ai-agent-safety.md ✅ 通過；topics/community-tech-discussions.md ✅ 已修復（21 天保留規則清理）；topics/community-tech-patterns.md ✅ 通過；模型記者本日無條目達更新門檻，不適用
+- 品質備註：[功能] 記者主動確認浮水印事件政策面已轉知安全政策記者處理（避免功能/安全政策兩邊皆漏或皆寫），經核對安全政策記者本日回報確實已收錄於 `anthropic-government-policy.md`，無缺口；[社群] 記者回報 gamedev-skills/awesome-gamedev-agent-skills（500★）依「GitHub repo 星數防刷註記」規則，因派工資料未附 forks/issues/近期 commit 佐證，未收錄，記者無 web 工具無法自行查證，已轉入下方待確認清單
+
+**降級執行說明**：雲端環境六個 `wiki-reporter-*` 自訂 subagent_type 不在本 session 可用 agent 清單中（同 2026-07-18、2026-08-08、2026-08-09、2026-08-10、2026-08-12 已知現象），本次五位有條目的記者全數改用 `general-purpose` agent，並於 prompt 內指示其依序完整 Read `.claude/rules/wiki-reporter-shared.md` + 對應類別 `.claude/rules/wiki-ingest-[類別].md` + `.claude/rules/wiki-ingest-format.md` 作為角色定義後才開始工作，功能等同原生記者但非原生角色 agent，依 `docs/cloud-runbooks/daily.md` 規定於此明確標注，不靜默 fallback。
+
+**📋 待使用者確認**：
+- [商業→安全政策，歸屬未定] 「How well do job retraining programs work?」（Google News 來源標記為 Anthropic，疑似官方勞動市場研究產出）——僅標題可用、無正文，不符合商業記者觸發條件（融資/收購/戰略合作/企業採用），亦未派工給安全政策記者；需人工查證原文後決定歸屬（勞動政策 → 安全政策記者；若屬一般研究無政策動作 → 可能不需收錄）
+- [社群] GitHub Search 熱門工具 gamedev-skills/awesome-gamedev-agent-skills（500★）依「星數防刷註記」規則，因無 forks／issues／近期 commit 佐證資料，標「待查證」未收錄；下次 ingest 或 lint 若有工具可查證應回頭核實
