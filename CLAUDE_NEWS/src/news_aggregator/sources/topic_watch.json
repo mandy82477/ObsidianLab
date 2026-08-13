@@ -1,5 +1,5 @@
 {
-  "_doc": "wiki 專頁定向抓取清單。每個 topic 綁一個 wiki 頁，抓回來的條目帶 topic 標記、豁免 filter.py 的 Google News 標題閘——判準是「對該專頁有沒有價值」而非「標題有沒有 Claude/Anthropic」。2026-08-05 Jeff Dean 等四人離開 Google 創辦 Discovery Loop 是 ai-talent-flow 主題史上最大事件，卻因標題不含 Anthropic 而漏了 8 天，本來源即為此而生。status 設 retired 即停止抓取但保留紀錄。",
+  "_doc": "wiki 專頁定向抓取清單，由 Topic Watch 來源（sources/topic_watch.py）讀取，條目來源標籤為 `Topic Watch / <slug>`。每個 topic 綁一個 wiki 頁，抓回來的條目帶 topic 標記、豁免 filter.py 的 Google News 標題閘——判準是「對該專頁有沒有價值」而非「標題有沒有 Claude/Anthropic」。2026-08-05 Jeff Dean 等四人離開 Google 創辦 Discovery Loop 是 ai-talent-flow 主題史上最大事件，卻因標題不含 Anthropic 而漏了 8 天，本來源即為此而生。status 設 retired 即停止抓取但保留紀錄。",
   "_query_rules": "query 設計原則（2026-08-13 實測校準得出）：①名詞錨優先——機構名、職稱、產品名是標題必然出現且拼寫穩定的元素，動詞只用 OR 組合當輔助，不當主軸；②不可把 Claude/Anthropic 放進 query（那是既有 GoogleNews 來源的地盤，且定向抓取的目標恰恰是不含這些字的標題）；③一 topic 多條窄 query 優於一條寬 query。反例存證：`joins Anthropic`／`Anthropic hires` 實測 0 命中，`\"AI researchers\" (leaving OR departures OR exits)` 一條就撈回 Jeff Dean、Brain Drain、HPCwire 三則。新增 query 前必須實測命中率，不可未驗證就上線。",
   "_caps": "per-topic max_items 與 _global_max 在抓料層硬截斷，是防止稀釋日報的第一道；日報呈現位置與判準見 .claude/commands/news-pipeline-steps.md 的『專頁雷達』區塊。",
   "_global_max": 8,

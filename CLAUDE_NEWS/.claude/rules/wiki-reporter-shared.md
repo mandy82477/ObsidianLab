@@ -60,6 +60,7 @@ slug | 類別 | page路徑 | item_url | item_title
 | Anthropic Blog | `anthropic-blog` |
 | Anthropic Status | `anthropic-status` |
 | Claude API Release Notes | `claude-api-release-notes` |
+| Topic Watch | `topic-watch` |
 | Blog | `blog` |
 
 僅對「今日新增的具體事實」回報歸因，不需回溯補歷史條目；一則事實有多個來源時每個來源各回報一筆。**wiki 正文不加任何 sources wikilink**（來源節點連結機制已於 2026-07-11 撤除）；歸因由主編 append 至 `data/source_attribution.jsonl`，不影響既有 `## 參考來源`（日報連結）寫法。

@@ -706,6 +706,20 @@
         "收尾"
       ],
       "_note": "2026-08-09 加入。原本 /weekly 與 /wiki-weekly-review 是兩個各自獨立的每週指令，使用者跑完策展後以為週報也產生了——實際 W32 週報缺漏。改為總指揮帶起兩段後，鏈路本身成為新的單點失效處，故立此檢查。順序（週報先、策展後）與不可合併的三個理由寫在 weekly.md，不在此重複。"
+    },
+    {
+      "name": "專頁定向抓取的三處說法必須同步：config 的 topic slug <-> 日報區塊規格 <-> 派工路由規則（任一處改了名稱或判準而其餘沒跟上，條目會被丟進錯的區塊或錯的記者手上）",
+      "assertion": "all_contain",
+      "files": [
+        "src/news_aggregator/sources/topic_watch.json",
+        ".claude/commands/news-pipeline-steps.md",
+        ".claude/commands/wiki-ingest.md"
+      ],
+      "patterns": [
+        "Topic Watch",
+        "專頁"
+      ],
+      "_note": "2026-08-13 加入。Topic Watch 上線時建立。這條通道的條目要正確落地，需要三方對同一組 slug 有一致認知：抓料端產生 topic 標記、日報端把它們收進『🧭 專頁雷達』區塊、ingest 端據此路由給對應記者。其中任一處被改寫而其餘沒跟上，症狀是靜默的——條目仍會進 gathered_items.json，但可能混進正文區塊稀釋日報，或被記者當成一般條目套 Claude 關聯門檻而略過。 錨點刻意選『Topic Watch』（來源標籤，條目識別的依據）與『專頁』（概念詞），不列個別 slug——slug 清單的唯一家是 topic_watch.json，要求 command 檔複述會製造第二份真相。"
     }
   ],
   "coupling_hints": {

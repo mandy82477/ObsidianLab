@@ -19,12 +19,13 @@
 | **官方核心** | GitHub Changelog、SDK / API 迭代、定價結構變化、Anthropic 公告 |
 | **社群實測** | 工程師驗證過的工作流模式、agent 設計、Bug 回報與替代方案（HN / Reddit） |
 | **生態動態** | 融資、大型企業合作（AWS / Google）、政策趨勢、周邊工具 |
+| **專頁定向** | 為特定 wiki 專頁定向抓取的少量條目（`src/news_aggregator/sources/topic_watch.json`），判準是「對該專頁有無價值」而非標題是否提及 Claude／Anthropic |
 
 ### 不收錄
 
 - X / Discord 即時訊號（社交平台秒級爆料；26–30 小時延遲是設計取捨，非缺陷）
 - NDA 保護下的企業非公開資訊
-- 與 Claude / Anthropic 無直接關聯的通用 AI 新聞
+- 與 Claude / Anthropic 無直接關聯的通用 AI 新聞（**例外**：wiki 專頁定向抓取，見上表「專頁定向」——該通道有數量上限且在日報獨立成區，不混入正文六區塊）
 - 無技術內容的純行銷稿
 
 **新增 source 或 command 時的判斷標準：**

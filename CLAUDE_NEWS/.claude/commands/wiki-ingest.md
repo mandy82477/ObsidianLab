@@ -47,6 +47,10 @@ python scripts/scan_pending_verifications.py $ARGUMENTS
 
 未進日報的條目在原文節錄中標一行 `- **日報未收錄**（僅原始抓取資料，摘要較簡略）`，讓記者知道細節密度不同、判斷時以自己的類別門檻為準。
 
+**專頁定向抓取的條目（`topic` 欄非空）`[加入: 2026-08-13]`**：`gathered_items.json` 中 `topic` 非空者，是為某個 wiki 專頁定向抓來的（來源標籤 `Topic Watch / <slug>`），**直接路由給該 slug 所屬領域的記者**，不必再走類別判斷。原文節錄中標一行 `- **專頁定向**（目標頁：topics/<slug>；收錄判準為該專頁觸發條件，**不套用 Claude/Anthropic 關聯門檻**）`。
+
+> 這批的標題天生不含 Claude/Anthropic——那正是它們被定向抓來的原因（2026-08-05 Jeff Dean 等人離開 Google 創辦 Discovery Loop，因標題是 Google 視角而被 12 個來源全數漏掉 8 天）。記者**不得因為「跟 Claude 沒關係」而略過**，但仍須依該專頁自己的觸發條件判斷收不收——不收可以，沒看過不行。
+
 分類完成後，為每個有條目的類別整理原文節錄（格式如下）：
 
 ```
