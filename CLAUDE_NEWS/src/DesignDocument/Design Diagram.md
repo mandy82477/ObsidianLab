@@ -68,6 +68,9 @@ flowchart TD
         S12["Official Skills
 (官方技能 repo 目錄差異
 skills / knowledge-work-plugins)"]
+        S13["Topic Watch
+(wiki 專頁定向抓取
+繞過 Claude/Anthropic 標題閘)"]
 (官方靜態頁 hash diff
 方案/配額/計費)"]
     end

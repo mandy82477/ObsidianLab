@@ -1,0 +1,46 @@
+{
+  "_doc": "wiki 專頁定向抓取清單。每個 topic 綁一個 wiki 頁，抓回來的條目帶 topic 標記、豁免 filter.py 的 Google News 標題閘——判準是「對該專頁有沒有價值」而非「標題有沒有 Claude/Anthropic」。2026-08-05 Jeff Dean 等四人離開 Google 創辦 Discovery Loop 是 ai-talent-flow 主題史上最大事件，卻因標題不含 Anthropic 而漏了 8 天，本來源即為此而生。status 設 retired 即停止抓取但保留紀錄。",
+  "_query_rules": "query 設計原則（2026-08-13 實測校準得出）：①名詞錨優先——機構名、職稱、產品名是標題必然出現且拼寫穩定的元素，動詞只用 OR 組合當輔助，不當主軸；②不可把 Claude/Anthropic 放進 query（那是既有 GoogleNews 來源的地盤，且定向抓取的目標恰恰是不含這些字的標題）；③一 topic 多條窄 query 優於一條寬 query。反例存證：`joins Anthropic`／`Anthropic hires` 實測 0 命中，`\"AI researchers\" (leaving OR departures OR exits)` 一條就撈回 Jeff Dean、Brain Drain、HPCwire 三則。新增 query 前必須實測命中率，不可未驗證就上線。",
+  "_caps": "per-topic max_items 與 _global_max 在抓料層硬截斷，是防止稀釋日報的第一道；日報呈現位置與判準見 .claude/commands/news-pipeline-steps.md 的『專頁雷達』區塊。",
+  "_global_max": 8,
+  "topics": [
+    {
+      "slug": "ai-talent-flow",
+      "wiki_page": "topics/ai-talent-flow",
+      "status": "active",
+      "max_items": 3,
+      "queries": [
+        "\"AI researchers\" (leaving OR departures OR exits)",
+        "DeepMind (departures OR exits OR leaving OR quits)",
+        "\"chief scientist\" (joins OR leaves OR departs)"
+      ],
+      "why": "人才流動報導的標題極少含 Anthropic（多為『某某離開 Google』視角）。三條 query 於 2026-08-13 實測皆命中 Jeff Dean／Discovery Loop 事件，是本來源成立的證據。"
+    },
+    {
+      "slug": "ai-agent-safety",
+      "wiki_page": "topics/ai-agent-safety",
+      "status": "active",
+      "max_items": 3,
+      "queries": [
+        "\"prompt injection\" (agent OR CLI OR coding)"
+      ],
+      "why": "agent 安全事件常以攻擊手法為標題主詞、不點名廠商。實測 11 則中多數切題（四大實驗室指標不相容、The Register『prompt injection 不是 bug，agent 框架才是』、Atlassian Rovo 漏洞）。"
+    },
+    {
+      "slug": "competitor-landscape",
+      "wiki_page": "topics/competitor-landscape",
+      "status": "active",
+      "max_items": 2,
+      "queries": [
+        "(Cursor OR Copilot OR Codex) \"AI coding\" (launch OR pricing OR benchmark)"
+      ],
+      "why": "競品自身的發布/定價若未與 Claude 對比即不可見。實測撈回 Meta Muse Code 發布、GitHub Copilot 新定價模式、Codex 對比評測。註：另兩條候選已淘汰——`\"Cursor\" (pricing OR launch OR funding)` 因 Cursor 被 SpaceX 收購，該詞已被 Grok 產品發布洗版（14 則幾乎全雜訊）；`\"Codex CLI\" OR \"Gemini CLI\"` 回來的多是既有來源已覆蓋的 Claude Code 資安報導。"
+    }
+  ],
+  "_rejected": [
+    {
+      "slug": "enterprise-tool-tracker",
+      "reason": "2026-08-13 實測三條 query 各回 4／0／3 則，且內容是**產業統計**（如『84% 開發者使用、僅 29% 信任』）而非**具名企業採用事件**——該頁表格要的是企業名、規模、工具、狀態，統計數字填不進去。Google News 的公開報導層本來就少見具名企業的內部工具決策（多屬非公開資訊，見 CLAUDE.md 不收錄第 2 條）。此主題暫不由定向抓取服務，維持現況：靠與 Claude 相關的報導順帶帶出。"
+    }
+  ]
+}

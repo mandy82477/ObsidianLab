@@ -23,6 +23,7 @@ from news_aggregator.sources.anthropic_status import AnthropicStatus
 from news_aggregator.sources.api_docs import ApiDocs
 from news_aggregator.sources.official_docs_watch import OfficialDocsWatch
 from news_aggregator.sources.official_skills_repos import OfficialSkillsRepos
+from news_aggregator.sources.topic_watch import TopicWatch
 from news_aggregator.sources.blogroll import Blogroll
 from news_aggregator.sources.devto import DevTo
 from news_aggregator.sources.github_releases import GitHubReleases
@@ -260,6 +261,7 @@ def main() -> None:
         ("Blogroll", Blogroll()),
         ("Official Docs", OfficialDocsWatch()),
         ("Official Skills", OfficialSkillsRepos()),
+        ("Topic Watch", TopicWatch()),
     ]
 
     all_items = []
