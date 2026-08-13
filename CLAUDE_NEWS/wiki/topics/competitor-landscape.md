@@ -29,6 +29,7 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 > **最新競品動態**（2026-08-13，補記事件發生於 08-05／08-06）
 > - **Google DeepMind 高層與核心研究員大規模異動**：Demis Hassabis 卸任 DeepMind CEO 轉任 Alphabet 首席科學家（留任集團），Jeff Dean 等四人離職創辦 Discovery Loop（PBC，**Alphabet 亦為投資方**，故性質介於流失與 spin-out 之間），市值影響各家估 1,600–2,000 億美元（盤中估算區間）；詳見「主要競品追蹤」新增子區塊，主敘事在 [[topics/ai-talent-flow]]。
 > - **Meta 宣布開源其最強模型 Muse Glimmer**（08-11）：CNBC、Simon Willison 部落格報導 Meta 將開源目前最強 AI 模型 Muse Glimmer，藉此對 OpenAI、Anthropic 表態競爭；與 08-05 發布的編碼 agent「Muse Code」不同，本次是模型層權重開源，詳見「主要競品追蹤」Meta 子區塊新增。
+> - **DeepSeek 公開組建團隊、V4 Pro 正式上線挑戰 Claude Code**：TradingView、Bloomberg（source_count=3，跨多來源同日報導同一趨勢）報導 DeepSeek 組建團隊力抗 Claude Code；同日 KuCoin、Simon Willison 部落格證實 DeepSeek V4 Pro 已透過 OpenRouter API 上線，聲稱 agent 表現逼近 Claude 3 Opus、成本大幅降低，詳見「主要競品追蹤」DeepSeek 子區塊新增。
 > - 08-10 SemiAnalysis Microsoft 基礎設施競賽分析、08-07 Meta「Muse Code」正式發布等近期重點仍具參考價值，詳見下方時序。
 
 ---
@@ -188,13 +189,15 @@ Claude Code 已成為 AI 輔助編碼的標竿產品，但競爭正快速升溫�
 - **重大事件**：SpaceX 以 $60B 正式完成收購 Cursor（2026-06-17 確認）；收購整合 SpaceX / xAI 生態，使 Cursor 獲得 SpaceX 資源支撐，直接衝擊 Claude Code vs Cursor 競爭態勢；Cursor 此前與 Anthropic 有深度整合關係，收購後生態歸屬方向待觀察（dev.to、9to5Mac）
 
 ### DeepSeek 🔴
-- **狀態**：正式宣布建構 Claude Code 競品（2026-05-22）；DeepSeek V4 Flash 顛覆 agent 定價（2026-06-26）；Lindy 100% 切換案例（2026-06-29）；推出開源 agent 工具「Deep Code」直接對標 Claude Code（2026-07-07）
+- **狀態**：正式宣布建構 Claude Code 競品（2026-05-22）；DeepSeek V4 Flash 顛覆 agent 定價（2026-06-26）；Lindy 100% 切換案例（2026-06-29）；推出開源 agent 工具「Deep Code」直接對標 Claude Code（2026-07-07）；公開組建團隊、V4 Pro 正式上線正面挑戰 Claude Code（2026-08-13）
 - **策略**：「Beijing Wants the Whole Stack」——DeepSeek 不只是低成本替代生態，而是公開宣稱要打造從模型到開發工具的完整技術棧
 - **既有基礎**：DeepClaude（聲稱降低 17 倍成本）、DeepSeek-based Claude Code clone（8,700 Stars）
 - **關鍵定價衝擊（2026-06-26）**：DeepSeek V4 Flash（開源，成本較 Claude API 降低逾 100 倍）打破 Anthropic 以較高 API 定價補貼自家 Claude Code 等 agent 服務的商業邏輯；Microsoft 等廠商已實際切換至 DeepSeek 執行層（ref: rtrvr.ai https://www.rtrvr.ai/blog/code-as-plan-deepseek-flash-text-only-browser-agent）。**對 Anthropic 的意涵**：訂閱補貼依賴 API 定價差距維持，DeepSeek Flash 壓縮此空間；若企業持續切換執行層，Anthropic 的 token 份額將流失至競品（推論）
 - **具名客戶承接（2026-06-29）**：AI 新創 Lindy CEO 公開宣告 100% 流量從 Claude 切至 DeepSeek，每月省下數百萬美元；是 DeepSeek 在 API 應用層承接 Anthropic 客戶的最大規模具名案例（CNBC https://www.cnbc.com/2026/06/26/openai-anthropic-new-ai-spending-reality-as-users-shift-to-efficiency.html）
 - **意義**：Claude Code 類產品已成為國家層面 AI 競爭的戰場；DeepSeek 轉向正面競爭標誌低成本替代生態進入下一階段；具名 API 客戶切換案例的累積正在成為可量化的市場份額流失訊號
 - **產品層再進一步（2026-07-07）**：DeepSeek 生態系推出開源程式設計 agent 工具「Deep Code」，被 finance.biggo.com 視為直接對標 Claude Code 的競品；與 Zhipu Z.ai 的 ZCode（07-06，免費）同週出現，顯示中國廠商正從「模型層對標」與「執行層替代」，加速擴展至「產品層開源工具」的第三條戰線（finance.biggo.com https://finance.biggo.com/news/a6f1bde2-c3a4-4aa4-93e9-911f6bce01e5）
+- **團隊化正面對抗（2026-08-13，重大，跨多來源）**：TradingView、Bloomberg（各自獨立報導，source_count=3）同日報導 DeepSeek 正式組建團隊、推出新一代 AI agent，明確以挑戰 Anthropic Claude Code 為目標。**對競爭格局的意涵**：延續 05-22「正式宣布建構 Claude Code 競品」以來的策略主軸，本次首度出現「組建專責團隊」的具體組織化訊號，顯示投入已從單一產品發布升級為建制化長期競爭（推論）；具體團隊規模、成員背景未見報導細節，僅標題層級資訊（Google News/TradingView；Google News/Bloomberg）
+- **V4 Pro 正式上線（2026-08-13）**：KuCoin 報導 DeepSeek V4 Pro 上線，聲稱其 agent 表現逼近 **Claude 3 Opus**、成本僅一小部分；Simon Willison 部落格（08-12）證實該模型已透過 OpenRouter 以 API 形式上線："The latest DeepSeek Pro model is now available, via API only."。**注意**：對標對象為已非最新旗艦的 Claude 3 Opus（非 Opus 4.8／Opus 5），比較基準是否具代表性待查證；具體 benchmark 數字未見報導細節（Google News/KuCoin；Blog/Simon Willison https://simonwillison.net/2026/Aug/12/deepseek-v4-pro-0813/）
 
 ### Zhipu Z.AI 🔴
 - **狀態**：Active（快速追趕中，2026-06-27 CNBC 確認；2026-07-06 推出免費工具 ZCode 直接對標 Cursor/Claude Code）
@@ -278,6 +281,10 @@ Claude Code 已成為 AI 輔助編碼的標竿產品，但競爭正快速升溫�
 #### 近期單日動態彙整（2026-07-02 至 2026-07-26）
 
 > 逐日條目按主題可另見上方「主要競品追蹤」對應廠商子區塊；此區塊保留完整時序供追溯查證。
+
+### 2026-08-13
+- **[DeepSeek，重大，跨多來源] TradingView、Bloomberg（source_count=3）：DeepSeek 公開組建團隊挑戰 Claude Code；KuCoin、Simon Willison 部落格：V4 Pro 經 OpenRouter API 正式上線，聲稱 agent 表現逼近 Claude 3 Opus、成本大幅降低**：詳見「主要競品追蹤」DeepSeek 子區塊新增（Google News/TradingView；Google News/Bloomberg；Google News/KuCoin；Blog/Simon Willison）
+- **[xAI/Grok，單一來源，僅標題可用] Barron's：SpaceX 新版 Grok 發布，加壓 Anthropic 與 OpenAI**：僅標題可用，無正文細節，具體 Grok 版本號、能力提升內容待查證（Google News/Barron's）
 
 ### 2026-08-11
 - **[重大，競品正式宣布，開源旗艦模型] CNBC、Simon Willison：Meta 宣布開源其最強模型 Muse Glimmer，對標 OpenAI、Anthropic**：與 08-05 發布的編碼 agent「Muse Code」不同，本次為通用旗艦模型開源，詳見「主要競品追蹤」新增 Meta「Muse Glimmer」子區塊與「競品定價對照」表新增列（Google News/CNBC；Blog/Simon Willison）

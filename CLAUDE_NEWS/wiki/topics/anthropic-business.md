@@ -24,12 +24,11 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 **領域：** 💼 商業
 **開始日期：** 2026-05-28
 **最後更新：** 2026-08-13
-**最後新聞更新：** 2026-08-11
+**最後新聞更新：** 2026-08-13
 
-> **最新動態**（2026-08-11）
-> - **基礎建設合約密集簽署，Riot Platforms 20 年 90 億美元雲端協議領銜**：多家媒體報導 Anthropic 與加密貨幣礦業公司 Riot Platforms 簽下規模達 90 億美元、為期 20 年的雲端運算協議；另與新加坡主權基金 GIC、澳洲金融集團 Macquarie 洽談合作開發資料中心，延續近期算力基礎設施擴張系列信號，詳見「戰略合作」表新增三列。
-> - **南韓 Naver 投資 Anthropic 700 萬美元**：KED Global 報導 Naver 此舉為調整 AI 策略、擴大全球聯盟布局一環，僅標題可用，詳見「戰略合作」表新增列。
-> - **WSJ：IPO 前瞻報導聚焦投資人信心穩固**：WSJ 報導 Anthropic 在傳出將進行大型 IPO 之際正設法穩固投資人信心，僅標題可用，詳見「IPO 前瞻與估值追蹤」表新增列。
+> **最新動態**（2026-08-13）
+> - **傳洽購世界模型新創 Decart，約 60 億美元**：Bloomberg、Reuters、calcalistech（指出 Decart 為以色列 AI 新創）、Gizmodo 等多家媒體同日報導 Anthropic 正洽購世界模型 AI 新創 Decart，交易金額約 60 億美元；Hacker News 討論串出現質疑聲音，認為此舉是為搶版面而非聚焦既有模型的成本與效能改善。詳見「戰略合作」表與「時序」新增列。
+> - **評估上看 2 兆美元估值、規劃創紀錄 IPO**：PYMNTS、Financial Times（source_count=2）、WSJ 同日報導 Anthropic 可能於創紀錄 IPO 中尋求 2 兆美元估值，三則均僅標題可用。詳見「IPO 前瞻與估值追蹤」表新增列。
 
 ---
 
@@ -57,6 +56,7 @@ Anthropic 在技術聲譽與企業採用率上持續上升（企業採用率 34.
 
 | 日期 | 事件 | 對 IPO/估值的意涵 | 來源 |
 |------|------|------|------|
+| 2026-08-13 | PYMNTS、Financial Times（source_count=2）、WSJ 同日報導 Anthropic 評估上看 **2 兆美元**估值、規劃創紀錄 IPO | 是本鏈條首次出現具體「2 兆美元」估值數字（此前多為「創紀錄」等定性描述，或 07-09 次級市場 $1.2 兆美元估值屬不同性質數字），且三家獨立財經媒體同日報導，訊號密集度高；WSJ 標題另指出 Anthropic 正設法穩固投資人信心，與既有「敘事整備」（07-17）、「投資人會議」（07-15）等籌備動作系列信號一致（推論）；三則均僅標題可用，具體 IPO 時程、承銷細節、確切估值區間未見報導 | Google News/PYMNTS；Google News/Financial Times；Google News/WSJ |
 | 2026-07-28 | Axios 報導 Anthropic 市值已超越 Starbucks 與 McDonald's | 是本鏈條首次出現以「知名消費品牌市值」作為對照基準的估值敘事，區別於此前慣用的「Series H 估值」「次級市場報價」「同業比較（OpenAI/SpaceX）」等基準，改用大眾更有感的品牌對照凸顯 AI 估值攀升速度之快（推論）；文章正文未能完整擷取，僅標題與導言可用，具體市值數字、換算基準未見細節，待後續補充 | Google News/Axios |
 | 2026-07-24 | Yahoo Finance 發表分析文章，將 Anthropic 類比為「ETF 發行商版的 SpaceX」 | 延續既有「私人公司透過次級市場/特殊工具供散戶間接曝險」敘事（呼應 07-09 次級市場估值 $1.2 兆美元、惜售心態報導），本次從「ETF 商品設計」角度切入，顯示金融業者正嘗試將 Anthropic 這類尚未上市的超高估值公司包裝進零售可及的投資產品；具體 ETF 名稱、產品結構、Anthropic 股權曝險比例未見細節，僅標題層級資訊（推論，待補充）| Google News/Yahoo Finance |
 | 2026-07-23 | Bloomberg 報導 Alphabet 持有 Anthropic 股權市值已跳升至約 **1,240 億美元** | 為股權市值（帳面評估），非新一輪投資金額，與 2026-04-24 官方投資額（最高 $400 億美元，當時估值 $3,500 億美元）為不同性質數字；市值跳升反映 Anthropic 整體估值自 04-24 以來持續墊高，與既有 Series H $965B、次級市場 $1.2 兆美元等估值訊號同屬「估值持續攀升」敘事的外部佐證，惟具體換算基準與 Google 持股比例未見報導細節（推論）；詳見 [[entities/google-investment]] 時序 | Google News/Bloomberg.com |
@@ -115,6 +115,7 @@ Simon Willison（知名開發者博主）發表文章，認為 Anthropic 與 Ope
 
 | 訊號 | 說明 | 來源 |
 |------|------|------|
+| Nvidia 對 OpenAI、Anthropic 等公司合計約 700 億美元投資，潛在股東回報分析 | Yahoo Finance 分析 Nvidia 對包含 Anthropic 在內多家 AI 公司合計約 700 億美元的投資，評估對 Nvidia 股東的潛在回報；屬第三方投資分析，非新增融資事件，僅標題可用，具體投資結構、Anthropic 分得金額未見報導細節 | Google News/finance.yahoo.com，2026-08-12 |
 | OpenAI／Anthropic 合計佔 AI 產業營收 70%（待查證，與既有企業採用率指標為不同維度）| YouTube 影片主張兩家合計占 AI 產業營收 70%，原始數據來源與方法論未提供；Hacker News 討論串（73 分，達互動門檻對照表「高」門檻）出現反駁聲音，質疑此前提，指出大型企業終將自建 LLM workload，未來 5–10 年推理市場規模恐不到目前估算的 1%，反面論點本身亦未附來源。**注意**：此為「營收占比」，與本頁已記錄之「企業採用率」34.4%（Ramp AI Index，2026-05-15，衡量企業導入比例而非營收金額）為不同維度指標，不可混用比較 | Hacker News（YouTube 影片轉貼），2026-08-09 |
 | Economic Futures Research Fund：承諾投入 2 億美元支持外部研究 | Anthropic Blog 公布研究議程，聚焦勞工衝擊、AI 轉型輔助、所得支持現代化、工作者在 AI 成長中的持股五大方向；原文：「We're committing $200 million to the fund to support ambitious external research on interventions to prepare society for the economic impacts of AI.」**注意**：屬對外部研究的資助承諾，非公司內部融資或商業合作，性質與 Claude Corps（$1.5 億美元非營利培力）同屬經濟政策軟性佈局路線，但聚焦研究資助而非人才派遣（推論）；具體受助機構、審核機制未見報導細節 | Anthropic Blog，2026-07-23 |
 | 著作權和解案再添細節：《哈利波特》系列出版商將獲數百萬美元賠付 | The Guardian 報導《哈利波特》系列出版商為 15 億美元著作權集體訴訟和解案受益方之一，預期獲數百萬美元賠付；The Wenatchee World、Jurist.org、WXYZ Channel 7、NDTV（07-24 跟進）、CNN（07-25 跟進，標題稱「Anthropic to pay settlement to Harry Potter publisher」）同期跟進和解案後續報導。**注意**：六則報導均未明確點名是否即為 07-22 已記錄之英國出版商 Bloomsbury，或美國《哈利波特》出版商 Scholastic，暫不逕自合併認定為同一實體；截至 07-25 仍未見具體賠付金額或新增細節，均屬同一事實的媒體擴散跟進，非新事實 | The Guardian 等六媒體，2026-07-22～25 |
@@ -152,6 +153,7 @@ Simon Willison（知名開發者博主）發表文章，認為 Anthropic 與 Ope
 
 | 合作方 | 類型 | 日期 | 意義 |
 |--------|------|------|------|
+| Decart（世界模型 AI 新創，以色列）| 收購（金額，約 $60 億美元，洽談中）| 2026-08-13 | Bloomberg、Reuters、Gizmodo 等多家媒體同日報導 Anthropic 正洽購世界模型 AI 新創 Decart，交易金額約 60 億美元；calcalistech 特別指出 Decart 為以色列 AI 新創。**對商業的意涵**：若成真將是 Anthropic 首度公開洽購「世界模型」（world model，區別於既有語言模型核心業務）新創的具名案例，可能代表產品線向多模態／物理世界模擬方向擴張的訊號（推論）；Hacker News 討論串（08-13）出現質疑聲音，部分留言認為此舉是為搶版面而非聚焦既有模型的成本與效能改善。具體交易條款、是否已簽署最終協議未見報導細節，僅屬洽談階段（Hacker News；Google News/Reuters；Google News/calcalistech；Google News/Gizmodo；[Bloomberg 原文](https://www.bloomberg.com/news/articles/2026-08-13/anthropic-said-in-talks-to-buy-ai-startup-decart-for-6-billion)）|
 | Riot Platforms（加密貨幣礦業公司）| 雲端整合（運算協議，$90 億美元、20 年）| 2026-08-11 | 多家媒體報導 Anthropic 與加密貨幣礦業公司 Riot Platforms 簽署規模達 90 億美元、為期 20 年的雲端運算協議。**對商業的意涵**：延續近期 Volta（08-04，$100 億美元）、Morgan Stanley（08-02，$150 億美元）等基礎設施擴張系列信號，Riot Platforms 是又一家非傳統雲端商（加密貨幣礦業公司轉型算力供應）加入 Anthropic 算力供應鏈的具名案例，且合約期限長達 20 年，顯示 Anthropic 正鎖定長期穩定算力來源以因應持續擴張的運算需求（推論）；具體交易結構、生效時程未見報導細節，僅標題層級資訊（多家媒體，2026-08-11）|
 | GIC（新加坡主權財富基金）| 雲端整合（資料中心開發）| 2026-08-11 | 多家媒體報導 Anthropic 與新加坡主權財富基金 GIC 合作開發資料中心。**對商業的意涵**：與同日 Macquarie 合作並列，是 Anthropic 首度出現主權財富基金層級資料中心開發夥伴的具名案例，顯示其基礎設施融資管道正從傳統投行（Morgan Stanley）與科技公司延伸至主權基金（推論）；具體投資規模、資料中心地點未見報導細節，僅標題層級資訊（多家媒體，2026-08-11）|
 | Macquarie（澳洲金融集團）| 雲端整合（資料中心開發）| 2026-08-11 | 多家媒體報導 Anthropic 與澳洲金融集團 Macquarie 合作開發資料中心，延續 07-05 已記錄之澳洲 1.4GW 算力採購佈局（推論），是澳洲市場基礎設施合作的再一具名案例；具體規模、時程未見報導細節，僅標題層級資訊（多家媒體，2026-08-11）|
@@ -240,6 +242,11 @@ Simon Willison（知名開發者博主）發表文章，認為 Anthropic 與 Ope
 ## 時序
 
 ### 2026-08
+
+#### 2026-08-13
+- **[戰略合作，收購洽談，跨多來源] Bloomberg、Reuters、calcalistech、Gizmodo：Anthropic 傳洽購世界模型新創 Decart，約 60 億美元**：calcalistech 指出 Decart 為以色列 AI 新創；Hacker News 討論串出現質疑聲音，詳見「戰略合作」表新增列（Hacker News；Google News/Reuters；Google News/calcalistech；Google News/Gizmodo；Bloomberg 原文）
+- **[IPO 前瞻，新增] PYMNTS、Financial Times（source_count=2）、WSJ：Anthropic 評估上看 2 兆美元估值、規劃創紀錄 IPO**：三則均僅標題可用，詳見「IPO 前瞻與估值追蹤」表新增列（Google News/PYMNTS；Google News/Financial Times；Google News/WSJ）
+- **[財務分析，單一來源，非新增融資] Yahoo Finance：Nvidia 對 OpenAI、Anthropic 等公司合計約 700 億美元投資的潛在股東回報分析**：僅標題可用，詳見「財務狀況」表新增列（Google News/finance.yahoo.com）
 
 #### 2026-08-11
 - **[戰略合作，新增] Anthropic 與 Riot Platforms 簽署 20 年、90 億美元雲端協議；另與 GIC、Macquarie 洽談資料中心開發**：多家媒體報導，詳見「戰略合作」表新增三列（多家媒體）
