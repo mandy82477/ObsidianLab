@@ -3,17 +3,17 @@ page: "topics/community-tech-patterns"
 kind: "topic"
 status: "monitoring"
 domain: "🌐 社群"
-last_updated: "2026-08-12"
+last_updated: "2026-08-13"
 last_news_update: "2026-08-12"
 status_main: "monitoring"
-days_since_news: 0
+days_since_news: 1
 inbound_links: 44
-attribution_count: 64
+attribution_count: 66
 attribution_last: "2026-08-12"
 top_source: "devto"
-pending_count: 21
+pending_count: 9
 pending_overdue: 0
-pending_next_review: "2026-08-24"
+pending_next_review: "2026-09-13"
 pending_signalled: 0
 signal: "健康"
 generated_by: "scripts/gen_wiki_frontmatter.py"

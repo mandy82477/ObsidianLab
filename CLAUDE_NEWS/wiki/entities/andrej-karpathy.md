@@ -2,17 +2,17 @@
 page: "entities/andrej-karpathy"
 kind: "entity"
 type: "person"
-status: "active（待核實）"
+status: "active"
 domain: "👤 人物"
-last_updated: "2026-08-10"
+last_updated: "2026-08-13"
 last_news_update: "2026-08-02"
 status_main: "active"
-days_since_news: 10
+days_since_news: 11
 inbound_links: 3
 attribution_count: 1
 attribution_last: "2026-08-02"
 top_source: "google-news"
-pending_count: 2
+pending_count: 1
 pending_overdue: 0
 pending_next_review: "2026-08-24"
 pending_signalled: 0
@@ -22,20 +22,21 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 # Andrej Karpathy
 
 **類型：** person
-**狀態：** active（待核實）
+**狀態：** active
 **領域：** 👤 人物
 **首次出現：** 2026-05-17（CLAUDE.md 維護討論中被引用）
-**最後更新：** 2026-08-10
+**最後更新：** 2026-08-13
 **最後新聞更新：** 2026-08-02
 
-> ❓ **待查證**（標 2026-08-10｜查 Benzinga、《魔戒》）｜**Claude Opus 3D 建構案例引述**（2026-08-02 報導）：Benzinga 報導引述 Karpathy 說法，稱以 Claude Opus 建構 3D《魔戒》（Lord of the Rings）場景為例，主張 AI 互動模式已跳脫單純提示詞問答；為單一媒體二手轉述，具體發言原文、發言場合與示範技術細節均未確認。
+> **加入 Anthropic 已確認**（2026-05-19，2026-08-13 查證）
+> Karpathy 於 2026-05-19 本人在 X 宣布加入 Anthropic，進入 Nick Joseph 領導的 pre-training 團隊，並將籌組以 Claude 加速 pre-training 研究的新團隊；TechCrunch、CNBC、Axios 同日獨立報導。原文：「I've joined Anthropic. I think the next few years at the frontier of LLMs will be especially formative.」
 > ❓ **待查證**（標 2026-08-10｜查 Karpathy、Eureka Labs）｜**加入 Anthropic 傳聞**（2026-05-29 首見）：截至 2026-08-02 日報仍無獨立確認報導，僅見「Karpathy-style」作為技能命名慣稱出現，與本人動態無關。
 
 ---
 
 ## 現況
 
-Andrej Karpathy 為知名 AI 研究者，傳已加入 Anthropic（2026-05-29 首見，來源僅 HN 討論，逾兩個月未見進一步獨立確認，詳見上方標記）。以 OpenAI 聯合創始人/研究總監及 Tesla AI/Autopilot 負責人身份廣為人知。若加入屬實，其分享的「CLAUDE.md 四條規則」中強調「不讓 agent 讀超過必要內容（最小必要 context）」原則——此原則在 $6,000 徹夜帳單事件廣傳後，成為社群費用控管的重要共識依據，被 engramx 等工具作者直接引用。另，Karpathy 創立的 Eureka Labs（AI 教育新創）或已停止活動（依據：GitHub org 停更、LinkedIn 資訊移除，2026-05-29）。2026-08-02 另有 Benzinga 單一媒體報導引述其對 Claude Opus 3D 建構案例的評論，查證狀態見上方標記。
+Andrej Karpathy 為知名 AI 研究者，已於 2026-05-19 加入 Anthropic pre-training 團隊（本人於 X 宣布，[TechCrunch](https://techcrunch.com/2026/05/19/openai-co-founder-andrej-karpathy-joins-anthropics-pre-training-team/)、[CNBC](https://www.cnbc.com/2026/05/19/anthropic-hires-openai-cofounder-andrej-karpathy-former-tesla-ai-lead.html)、[Axios](https://www.axios.com/2026/05/19/anthropic-openai-karpathy-andrej-claude) 同日獨立報導，2026-08-13 查證）。以 OpenAI 聯合創始人/研究總監及 Tesla AI/Autopilot 負責人身份廣為人知。其分享的「CLAUDE.md 四條規則」中強調「不讓 agent 讀超過必要內容（最小必要 context）」原則——此原則在 $6,000 徹夜帳單事件廣傳後，成為社群費用控管的重要共識依據，被 engramx 等工具作者直接引用。另，Karpathy 創立的 Eureka Labs（AI 教育新創）或已停止活動（依據：GitHub org 停更、LinkedIn 資訊移除，2026-05-29）。2026-08-02 另有 Benzinga 單一媒體報導引述其對 Claude Opus 3D 建構案例的評論，查證狀態見上方標記。
 
 ---
 
