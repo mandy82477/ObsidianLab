@@ -26,7 +26,7 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 **領域：** 🌐 社群
 **開始日期：** 2026-04-25
 **最後更新：** 2026-08-13
-**最後新聞更新：** 2026-08-12
+**最後新聞更新：** 2026-08-13
 
 > **最新工作流模式**（2026-08-12）
 > GitHub 熱門清單同日集中出現六款鎖定 Claude Code／Codex 等 coding agent 生態的工具，星數已於 2026-08-13 查證（devspace／smart-ralph／headroom-desktop／PostTrainBench／youtube-skills 佐證充分，ospec 較弱）；另收錄一篇談「把 Claude Code 工作區依情境資料夾組織」的實務心得（HN 35 分）。
@@ -128,6 +128,13 @@ Claude Code 的三種多 agent 機制，可對應到 Anthropic《Building Effect
 ## 技術彙整
 
 ### 2026-08
+
+#### 讓 Claude Code 維護 MISTAKES.md 記錯清單：setup 簡單、附後續使用回饋（2026-08-13）
+
+- **核心模式：** 使用者分享讓 Claude Code 在工作過程中維護一份 MISTAKES.md 檔案，記錄曾犯過的錯誤並作為後續任務的提醒，作者記錄了實際導入的 setup 步驟（簡單）與後續使用回饋
+- **與既有模式的關係：** 呼應本頁「記憶與知識管理」類別既有「已否決方案索引」（08-07，[[topics/community-large-codebase-workflow]] Codebase 索引與記憶主線）——同樣是把「不該再犯／不該再做」的知識結構化記錄進 agent 可讀取的檔案而非依賴人類記憶；差異在於「已否決方案索引」記的是「已被否決的方案」，MISTAKES.md 記的是「已知會重複發生的錯誤模式」，兩者互補而非重疊；本則屬個人單機使用習慣、非大型 codebase 多 agent 協作場景，暫不視為該主線的縫合節點
+- **來源：** 「I make Claude Code keep a MISTAKES.md file. Here's what actually happened.」— Reddit r/ClaudeCode（0 留言，無「週熱門」標記，score 不可信；單一貼文，惟屬具體第一手實作經驗與後續使用回饋，依內容判斷收錄）
+- **成熟度：** ⏳ 新興（今日首見，單一作者實作分享，尚無其他來源複現或延伸應用）
 
 #### GitHub 熱門清單同日聚集六款工具，五款星數集中於狹窄區間、缺乏佐證（2026-08-12）
 
