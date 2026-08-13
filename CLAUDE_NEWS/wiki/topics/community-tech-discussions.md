@@ -24,7 +24,7 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 **領域：** 🌐 社群
 **開始日期：** 2026-04-25
 **最後更新：** 2026-08-13
-**最後新聞更新：** 2026-08-12
+**最後新聞更新：** 2026-08-13
 
 > **最熱討論**（2026-08-11）
 > GitHub Issue「Bring Back Buddy」請願——`/buddy` skill 隨 v2.1.97 無預警消失、官方未說明，留言數 265、👍 2068，本輪互動最高，呼應既有「Anthropic 透明度與信任赤字」長期議題；同日 Simon Willison 部落格發布「自然語言文字不存在無損轉換」的論述文章。
@@ -141,6 +141,8 @@ MCP 的實際成本遠超多數使用者預期，已有多個量化案例：
 
 | 討論主題 | 首見 | 熱度 | 模式 | 核心論點 | 衍生 |
 |---------|------|------|------|---------|------|
+| Show HN：show-me — 讓 coding agent 以精簡視覺化取代大量文字輸出的 agent skill | 2026-08-12 | 🔥 | ☄️閃現 | 開發者釋出 show-me skill，訴求「讓 agent 用視覺對話而非成堆文字」（"Was so sick of reading walls of codex/claude prose... make your agent converse visually instead of in walls of prose."），可用 `npx skills add humanlayer/skills --skill show-me` 安裝；HN score 10，達收錄低門檻，source_count=2（跨來源佐證）；與本頁既有「HTML vs Markdown 輸出格式辯論」長期議題同屬「輸出格式如何影響資訊密度與可讀性」議題軸線的後續獨立訊號；[原文](https://www.humanlayer.com/blog/show-me-skill)（HN） | — |
+| Simon Willison 轉引 Florian Herrengt：AI 取代軟體工程「中產階級」職位的討論 | 2026-08-12 | 🔥 | ☄️閃現 | Simon Willison 部落格轉引 Florian Herrengt 對 AI 影響軟體工程「中產階級」職位的觀點，引用段落描述團隊反覆修不好一個怪異 bug 的情境（"But then users start to report a weird bug. It's the 4th time your team has been trying to fix..."）；具名表態，無社群延燒；[原文](https://simonwillison.net/2026/Aug/12/florian-herrengt/)（Blog） | — |
 | GitHub Issue：「Bring Back Buddy」——`/buddy` skill 隨 v2.1.97 無預警消失，社群發起統整請願 | 2026-08-11 | 🔥🔥🔥 | ☄️閃現 | `/buddy` skill 於 4/9 隨 v2.1.97 消失，官方未公開說明；GitHub Issue #45596 留言數 265、👍 2068，達對照表 GitHub Issue 高門檻（≥50 留言），社群發起統整請願要求官方回應或解釋為何移除；性質為「功能無預警消失＋零官方溝通」，呼應本頁既有「Anthropic 透明度與信任赤字」長期議題（見上方彙整索引）——本次為該議題新的獨立訊號；功能本身已由功能記者記錄於 [[entities/claude-code]] 已知問題，本頁僅記錄社群請願現象；[原文](https://github.com/anthropics/claude-code/issues/45596)（GitHub Issue） | — |
 | Simon Willison：自然語言文字不存在無損轉換（There are no lossless transformations of natural-language text） | 2026-08-11 | 🔥 | ☄️閃現 | Simon Willison 部落格主張自然語言文字不存在無損轉換，原文未點名特定 AI 廠商；具名表態，無社群延燒；[原文](https://simonwillison.net/2026/Aug/11/there-are-no-lossless-transformations-of-natural-language-text/#atom-everything)（Blog） | — |
 | Reddit：隱形浮水印政策引發社群反彈——使用者主張自己提供指示與決策，加浮水印不合理 | 2026-08-11 | 🔥 | ☄️閃現 | Reddit r/ClaudeCode 使用者針對日前隱形浮水印相關報導表達不滿，主張自己才是提供指示、脈絡與決策的一方，Claude 僅為工具，為輸出加隱形浮水印並不合理；與本頁 2026-07-01「Claude Code 隱寫術：同形字符隱寫元資料的信任危機」屬同一「AI 輸出隱藏標記是否應告知使用者」議題軸線的後續獨立訊號，惟該條已不在本表 30 天保留窗內，本則視為新訊號而非重燃；原始浮水印政策報導細節已查證，見下方懸置細節 ⟨Q-03⟩；0 留言、無「週熱門」標記，score 不可信，單一貼文，惟情緒訊號明確（😤）且呼應既有長期議題脈絡，依內容判斷收錄；[原文](https://www.reddit.com/r/ClaudeCode/comments/1vlclpn/)（Reddit） | — |
