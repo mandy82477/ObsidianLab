@@ -1,0 +1,53 @@
+{
+  "anthropics/skills/skills": [
+    "algorithmic-art",
+    "brand-guidelines",
+    "canvas-design",
+    "claude-api",
+    "doc-coauthoring",
+    "docx",
+    "frontend-design",
+    "internal-comms",
+    "mcp-builder",
+    "pdf",
+    "pptx",
+    "skill-creator",
+    "slack-gif-creator",
+    "theme-factory",
+    "web-artifacts-builder",
+    "webapp-testing",
+    "xlsx"
+  ],
+  "anthropics/knowledge-work-plugins/": [
+    "bio-research",
+    "cowork-plugin-management",
+    "customer-support",
+    "data",
+    "design",
+    "engineering",
+    "enterprise-search",
+    "finance",
+    "human-resources",
+    "legal",
+    "marketing",
+    "operations",
+    "partner-built",
+    "pdf-viewer",
+    "product-management",
+    "productivity",
+    "sales",
+    "small-business"
+  ],
+  "anthropics/knowledge-work-plugins/engineering/skills": [
+    "architecture",
+    "code-review",
+    "debug",
+    "deploy-checklist",
+    "documentation",
+    "incident-response",
+    "standup",
+    "system-design",
+    "tech-debt",
+    "testing-strategy"
+  ]
+}
