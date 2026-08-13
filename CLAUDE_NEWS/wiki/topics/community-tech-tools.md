@@ -25,7 +25,7 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 **領域：** 🌐 社群
 **更新頻率：** 🗓️ 週更（每週策展一次；更新日期停留數天屬正常節奏）
 **開始日期：** 2026-04-25
-**最後更新：** 2026-08-10
+**最後更新：** 2026-08-13
 **最後新聞更新：** 2026-08-08
 
 > **最新工具動態**（2026-08-08）
@@ -197,7 +197,7 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 | [**Agent Sessions**](https://jazzyalex.github.io/agent-sessions/) | 費用監測 | ⏳ | 2026-07-09 | 瀏覽、搜尋、恢復本機 Codex／Claude session 紀錄，並提供即時額度用量表；Show HN score 2 |
 | [**Tilion**](https://github.com/tiliondev/fortress/tree/main/mcp) | 整合工具 | ⏳ | 2026-07-09 | MCP 工具，協助 Claude Code 避免網頁瀏覽時被封鎖；Show HN score 5 |
 | [**Atelier**](https://github.com/atelier-ws/atelier) | 費用監測 | ⏳ | 2026-07-09 | 以實測基準（非誇大宣稱）驗證的 Claude Code 成本節省工具，實測約省 30%；Show HN score 3 |
-| [**Geosql**](https://github.com/dekart-xyz/geosql) | Skills | ⚠️ | 2026-07-08 | Claude/Codex 地理空間資料 skill；HN 討論質疑其宣稱「整體效能提升 4 倍」與細部任務成功率數據加總不一致，❓ 待查證 ⟨Q-01⟩（HN score 55） |
+| [**Geosql**](https://github.com/dekart-xyz/geosql) | Skills | ✅ | 2026-07-08 | Claude/Codex/Copilot 地理空間資料 skill（PostGIS／BigQuery／Snowflake）；「4 倍效能提升」機制已查證，見下方懸置細節 ⟨Q-01⟩（HN score 55） |
 | [**Workweave Router**](https://github.com/workweave/router) | 模型路由 | ⚡ | 2026-06-27 | 成本感知模型路由器，作為 Anthropic/OpenAI 相容 endpoint 運作，依請求難度自動路由模型；起因 Opus 4.7 tokenizer 改版後成本大漲；實測成本降 40%+；Show HN score 181 |
 | [**bulk-delete-claude-chat**](https://github.com/MatteoLeonesi/bulk-delete-claude-chat) | UI 工具 | ⚡ | 2026-06-13 | 解決 Claude 網頁版缺乏批量刪除對話功能的痛點；自動捲動、全選、刪除（對比 ChatGPT 已有內建批量刪除）；HN score 56 |
 | [**AVP（Agent Vault Proxy）**](https://github.com/inflightsec/agent-vault-proxy) | 安全工具 | ⚡ | 2026-06-12 | 解決 coding agent 持有 API key 的安全風險；placeholder + 最後一刻注入方案，agent 環境中只保存 placeholder，真實金鑰由代理在 wire 層面即時替換；從根本上消除洩露風險；HN Show HN |
@@ -265,7 +265,7 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 | **Council** | 多 Agent | ⚡ | 2026-05-02 | 並行執行 claude+codex+gemini 同一 prompt，主持模型彙整並標記分歧 |
 | **Chrome 用量監控擴充** | 費用監測 | ✅ | 2026-05-02 | 即時顯示 token 數、context 使用量、prompt cache 倒數、速率限制進度條 |
 | **Caliber** | 工作流 | ⚡ | 2026-05-02 | 跨工具 AI config 統一管理（CLAUDE.md/.cursor/rules/AGENTS.md），本週 888 stars |
-| **Governor** | 費用監測 | ⚠️ | 2026-05-02 | Token 浪費優化插件；❓ **待查證**（標 2026-08-10｜查 Governor、token 優化）｜**效果**：HN 社群質疑基準測試粗糙，未評估輸出品質 |
+| [**Governor**](https://github.com/0xhimanshu/governor) | 費用監測 | ⚡ | 2026-05-02 | Token 浪費優化插件；已查證：V2 benchmark 同時量測 token 數與「決策正確度保留率」回應 HN 對基準粗糙的質疑，平均省 45.5% token（2026-08-13 查證） |
 | **Throttle Meter** | 費用監測 | ⚡ | 2026-04-30 | macOS menubar 用量計，即時顯示 5h 滾動窗口與週配額 |
 | **Brifly** | 記憶工具 | ⚡ | 2026-04-30 | Claude Code 跨 session 持久記憶層，支援多人協作 |
 | **Mneme** | 工作流 | ⚡ | 2026-04-30 | repo-native ADR 注入，CI 攔截違反架構的 PR |
@@ -287,7 +287,7 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 | **CC-Canary** | 工作流 | ✅ | 2026-04-25 | 讀取 session log 自動偵測效能漂移，HERMES.md bug 後更受重視；詳見 [[topics/code-quality-decline]] |
 
 **懸置細節**
-- ⟨Q-01⟩ ❓ **待查證**（標 2026-08-10｜查 Geosql、地理空間）：Geosql 宣稱「整體效能提升 4 倍」與作者自己公布的細部任務成功率數據加總後不一致，效果是否如宣稱仍無法驗證；詳見 [[topics/community-tech-discussions]]
+- ⟨Q-01⟩ 已查證（2026-08-13）：「4 倍」宣稱的機制已釐清數據不一致的來源——GeoSQL 讓 agent 把空間查詢結果透過 Dekart 渲染成地圖並回看修正幾何錯誤（map-in-the-loop），4 倍準確度提升**只在連接 Dekart 時成立**；未連接 Dekart 時 GeoSQL 表現與一般 SQL agent 相當，先前細部任務成功率數據加總不一致即源於部分任務未啟用 Dekart 視覺回饋（[dekart.xyz 部落格](https://dekart.xyz/blog/claude-code-vs-aino-geospatial-agent/)、[Show HN](https://news.ycombinator.com/item?id=48829242)）；詳見 [[topics/community-tech-discussions]]
 
 ---
 
