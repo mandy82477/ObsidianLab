@@ -22,6 +22,7 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 
 **狀態：** ongoing
 **領域：** 🏛️ 政策/安全
+**蒐集邊界：** 以 Claude 與 Claude Code 的安全事件為主，另針對 prompt injection 等 agent 安全議題定向補抓（每日至多 3 則）；他家 agent 的獨立事件多半僅在與 Claude 同案或同報導時才會出現。
 **開始日期：** 2026-04-27
 **最後更新：** 2026-08-15
 **最後新聞更新：** 2026-08-14

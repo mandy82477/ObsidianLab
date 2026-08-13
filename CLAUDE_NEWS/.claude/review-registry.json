@@ -128,6 +128,26 @@
       "label": "全覽表 區塊",
       "pattern": "全覽表",
       "file": "wiki/feature-radar.md"
+    },
+    {
+      "label": "蒐集邊界欄位（人才流動涵蓋範圍）——主題延伸到 Claude/Anthropic 之外的頁面必須誠實標示會漏什麼，欄位被刪＝讀者又看不出缺口",
+      "pattern": "\\*\\*蒐集邊界：\\*\\*",
+      "file": "wiki/topics/ai-talent-flow.md"
+    },
+    {
+      "label": "蒐集邊界欄位（安全事件涵蓋範圍）——主題延伸到 Claude/Anthropic 之外的頁面必須誠實標示會漏什麼，欄位被刪＝讀者又看不出缺口",
+      "pattern": "\\*\\*蒐集邊界：\\*\\*",
+      "file": "wiki/topics/ai-agent-safety.md"
+    },
+    {
+      "label": "蒐集邊界欄位（競品動態涵蓋範圍）——主題延伸到 Claude/Anthropic 之外的頁面必須誠實標示會漏什麼，欄位被刪＝讀者又看不出缺口",
+      "pattern": "\\*\\*蒐集邊界：\\*\\*",
+      "file": "wiki/topics/competitor-landscape.md"
+    },
+    {
+      "label": "蒐集邊界欄位（企業採用涵蓋範圍）——主題延伸到 Claude/Anthropic 之外的頁面必須誠實標示會漏什麼，欄位被刪＝讀者又看不出缺口",
+      "pattern": "\\*\\*蒐集邊界：\\*\\*",
+      "file": "wiki/topics/enterprise-tool-tracker.md"
     }
   ],
   "sync_pairs": [
