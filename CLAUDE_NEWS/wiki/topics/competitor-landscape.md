@@ -4,9 +4,9 @@ kind: "topic"
 status: "monitoring"
 domain: "💼 商業"
 last_updated: "2026-08-13"
-last_news_update: "2026-08-11"
+last_news_update: "2026-08-13"
 status_main: "monitoring"
-days_since_news: 2
+days_since_news: 0
 inbound_links: 49
 attribution_count: 55
 attribution_last: "2026-08-10"
@@ -24,10 +24,11 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 **領域：** 💼 商業
 **開始日期：** 2026-04
 **最後更新：** 2026-08-13
-**最後新聞更新：** 2026-08-11
+**最後新聞更新：** 2026-08-13
 
-> **最新競品動態**（2026-08-11）
-> - **Meta 宣布開源其最強模型 Muse Glimmer**：CNBC、Simon Willison 部落格報導 Meta 將開源目前最強 AI 模型 Muse Glimmer，藉此對 OpenAI、Anthropic 表態競爭；與 08-05 發布的編碼 agent「Muse Code」不同，本次是模型層權重開源，詳見「主要競品追蹤」Meta 子區塊新增。
+> **最新競品動態**（2026-08-13，補記事件發生於 08-05／08-06）
+> - **Google DeepMind 高層與核心研究員大規模異動**：Demis Hassabis 卸任 DeepMind CEO 轉任 Alphabet 首席科學家（留任集團），Jeff Dean 等四人離職創辦 Discovery Loop（PBC，**Alphabet 亦為投資方**，故性質介於流失與 spin-out 之間），市值影響各家估 1,600–2,000 億美元（盤中估算區間）；詳見「主要競品追蹤」新增子區塊，主敘事在 [[topics/ai-talent-flow]]。
+> - **Meta 宣布開源其最強模型 Muse Glimmer**（08-11）：CNBC、Simon Willison 部落格報導 Meta 將開源目前最強 AI 模型 Muse Glimmer，藉此對 OpenAI、Anthropic 表態競爭；與 08-05 發布的編碼 agent「Muse Code」不同，本次是模型層權重開源，詳見「主要競品追蹤」Meta 子區塊新增。
 > - 08-10 SemiAnalysis Microsoft 基礎設施競賽分析、08-07 Meta「Muse Code」正式發布等近期重點仍具參考價值，詳見下方時序。
 
 ---
@@ -93,6 +94,10 @@ Claude Code 已成為 AI 輔助編碼的標竿產品，但競爭正快速升溫�
 - **關鍵人物**：Sergey Brin 親自主導
 - **首報**：2026-04（India Today、HN 跟進）
 - **意義**：Google 同時是 Anthropic 股東（400 億投資），投資方與競爭者並存的矛盾結構
+
+### Google DeepMind 高層動盪（補記，事件 2026-08-05／08-06）
+- **狀態**：已查證（2026-08-13，[TechCrunch 一手報導](https://techcrunch.com/2026/08/05/jeff-dean-and-other-top-ai-researchers-are-leaving-google-to-launch-their-own-startup/)）｜**CEO 轉任＋核心研究員出走創業**：Demis Hassabis 卸下 DeepMind 日常營運、轉任 DeepMind 董事長兼 Alphabet 首席科學家（留任集團非離職），Koray Kavukcuoglu 升任 DeepMind SVP；Jeff Dean（27 年）、Sanjay Ghemawat、Oriol Vinyals、Quoc Le 離職共創 Discovery Loop（public benefit corporation，Dean 任 CEO），投資方含 Radical Ventures／Khosla Ventures 共同領投與 **Alphabet 本身**；股價盤中一度跌約 5%，市值影響各家估 1,600–2,000 億美元（盤中估算區間）。TechCrunch 全文未提及 Anthropic，此波非流向前沿實驗室競爭對手，主敘事見 [[topics/ai-talent-flow]]
+- **對競爭格局的意涵（推論）**：與既有「Google 同時是投資方與競爭者」的矛盾結構並置，高層與技術核心同步震盪可能削弱 Google 作為 Anthropic 對手的組織穩定性訊號；惟此波出走流向獨立新創而非 OpenAI 等直接競品，短期內對 Google AI 產品線（Gemini、Antigravity 等）競爭力的直接影響仍待觀察
 
 ### OpenAI Codex CLI 🔴
 - **狀態**：Active（快速成長）

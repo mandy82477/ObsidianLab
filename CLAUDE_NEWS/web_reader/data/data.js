@@ -574,10 +574,10 @@ window.WIKI_DATA = {
       "firstSeen": "",
       "startDate": "2026-06-21",
       "lastUpdated": "2026-08-13",
-      "lastNewsUpdate": "2026-07-13",
+      "lastNewsUpdate": "2026-08-13",
       "updateFreq": "",
       "summary": "截至 2026-06-29，一週至兩週內 Google DeepMind 連失至少 4–5 位頂尖研究員至 Anthropic，市值蒸發約 $2,700 億美元（推論，分析師估算），Gemini 3.5 Pro 延期至七月（推論，dev.to 報導，未經 Google 官方確認）。最矚目的是 2024 諾貝爾化學獎得主…",
-      "latestHeadline": "[跨界執行層人才，非典型 AI 實驗室流動] Anthropic 新聘 Monzo 共同創辦人 Tom Blomfield：Business Insider 報導 Anthropic 聘請英國數位銀行 Monzo 共同創辦人 Tom Blomfield，背景涉及 AI compute 與 Y Combinator。對商"
+      "latestHeadline": "Google DeepMind 高層轉任＋核心研究員出走創業，Alphabet 股價重挫：Demis Hassabis 卸任 Google DeepMind CEO，轉任 Alphabet 首席科學家兼 DeepMind 董事長——留任 Alphabet 集團，非離職。同時 Jeff Dean（Google 27 年資"
     },
     {
       "id": "anthropic-business",
@@ -766,7 +766,7 @@ window.WIKI_DATA = {
       "firstSeen": "",
       "startDate": "2026-04",
       "lastUpdated": "2026-08-13",
-      "lastNewsUpdate": "2026-08-11",
+      "lastNewsUpdate": "2026-08-13",
       "updateFreq": "",
       "summary": "Claude Code 已成為 AI 輔助編碼的標竿產品，但競爭正快速升溫。2026-05 是關鍵轉折月：OpenAI Codex 下載量單週爆增 1,397%、OpenCode 吸走 15.7 萬開發者、Microsoft 取消數千名員工授權改推 Copilot CLI——分流訊號同步出現。另一方面，Anthropi…",
       "latestHeadline": "Claude Code 已成為 AI 輔助編碼的標竿產品，但競爭正快速升溫。2026-05 是關鍵轉折月：OpenAI Codex 下載量單週爆增 1,397%、OpenCode 吸走 15.7 萬開發者、Microsoft 取消數千名員工授權改推 Copilot CLI——分流訊號同步出現。另一方面，Anthropi"
