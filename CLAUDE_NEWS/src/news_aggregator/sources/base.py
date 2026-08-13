@@ -15,6 +15,11 @@ class FeedItem:
     category: str  # "official" | "community" | "media"
     source_count: int = 1  # how many independent sources covered this item
     score_unit: str = ""   # what `score` counts: "分" (HN points) | "留言" (comments) | "" (n/a)
+    # Non-empty when the item was fetched *for a specific wiki page* rather than by the
+    # usual Claude/Anthropic relevance. Holds that page's slug (e.g. "ai-talent-flow").
+    # It is the sole exemption key for filter.py's Google News title gate — see
+    # sources/topic_watch.py for why the gate would otherwise drop these by design.
+    topic: str = ""
 
 
 class BaseSource(ABC):

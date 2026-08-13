@@ -62,7 +62,11 @@ def filter_relevant(items: list[FeedItem], min_score: int = 3) -> list[FeedItem]
             dropped_pr += 1
             logger.debug("Rule filter dropped (PR wire domain): %s", item.title)
             continue
-        if item.source.startswith("Google News"):
+        # Topic-watch items are fetched *for a named wiki page*, and their whole point
+        # is that the title does not mention Claude/Anthropic (2026-08-05 Jeff Dean →
+        # Discovery Loop went unseen for 8 days because of that). The tag survives dedup
+        # via dedup._inherit_topic, so an item co-discovered by Google News keeps it.
+        if item.source.startswith("Google News") and not item.topic:
             title = item.title.lower()
             if not any(kw in title for kw in _TITLE_KEYWORDS):
                 dropped += 1

@@ -330,6 +330,11 @@ def main() -> None:
                     "source_count": it.source_count,
                     "summary":   it.summary or "",
                     "category":  it.category,
+                    # Non-empty = fetched for a specific wiki page, not by Claude/Anthropic
+                    # relevance. Step 1b renders these in their own digest section and the
+                    # wiki-ingest editor routes them by this slug. Additive field: existing
+                    # readers of gathered_items.json are unaffected.
+                    "topic":     it.topic,
                 }
                 for it in filtered
             ],

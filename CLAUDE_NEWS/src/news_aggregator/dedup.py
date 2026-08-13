@@ -33,6 +33,21 @@ def _normalize_url(url: str) -> str:
         return url.rstrip("/")
 
 
+def _inherit_topic(winner: FeedItem, loser: FeedItem) -> None:
+    """Merging must not discard a `topic` tag.
+
+    Topic-watch items are fetched precisely because their titles do *not* mention
+    Claude/Anthropic, and `topic` is their only exemption from filter.py's Google
+    News title gate. But dedup runs *before* filter, and Google News outranks
+    Topic Watch in SOURCE_PRIORITY — so when both sources find the same article,
+    the surviving copy would carry the "Google News" label, lose the tag, and be
+    dropped by the gate. The targeted fetch would then be silently wasted: the
+    logs show only "filter dropped", never that a topic hit was thrown away.
+    """
+    if not winner.topic and loser.topic:
+        winner.topic = loser.topic
+
+
 def deduplicate(items: list[FeedItem]) -> list[FeedItem]:
     seen_urls: dict[str, FeedItem] = {}
     result: list[FeedItem] = []
@@ -46,10 +61,12 @@ def deduplicate(items: list[FeedItem]) -> list[FeedItem]:
             if item.score > existing.score or (
                 item.score == existing.score and _source_rank(item) < _source_rank(existing)
             ):
+                _inherit_topic(item, existing)
                 item.source_count = merged_count
                 seen_urls[norm] = item
                 result = [item if i is existing else i for i in result]
             else:
+                _inherit_topic(existing, item)
                 existing.source_count = merged_count
         else:
             seen_urls[norm] = item
@@ -67,9 +84,11 @@ def deduplicate(items: list[FeedItem]) -> list[FeedItem]:
                 if item.score > kept.score or (
                     item.score == kept.score and _source_rank(item) < _source_rank(kept)
                 ):
+                    _inherit_topic(item, kept)
                     item.source_count = merged_count
                     final[idx] = item
                 else:
+                    _inherit_topic(kept, item)
                     kept.source_count = merged_count
                 duplicate = True
                 break
