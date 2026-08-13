@@ -197,3 +197,12 @@
 [Wed 2026/08/12 13:33:15.00] Single push done (news + wiki + web)
 [Wed 2026/08/12 13:34:43.64] === Pipeline complete (agent) ===
 [cloud daily-news-pipeline-cloud STARTED 2026-08-13T13:05:50Z]
+[Thu 2026/08/13 13:05:50.00] === Agent pipeline start (2026-08-13) ===
+[Thu 2026/08/13 13:09:00.00] Aggregator OK（GitHub Actions 已抓料，56 items，來源 12/12 正常；日報 25/56 條收錄）
+[Thu 2026/08/13 13:13:20.00] confirm-digest OK (56 items)
+[Thu 2026/08/13 13:33:00.00] Wiki ingest OK（降級：五位有條目的記者以 general-purpose + 內嵌規則指示執行，wiki-reporter-* 自訂 subagent_type 雲端無法解析；模型/功能/商業/安全政策/社群記者更新頁面，人物記者本日無條目未派工；主編彙整 feature-radar 版本行、log.md、source_attribution.jsonl）
+[Thu 2026/08/13 13:33:05.00] 測試全綠 - web build 放行
+[Thu 2026/08/13 13:34:00.00] Building web reader...
+[Thu 2026/08/13 13:34:10.00] build_web OK (33 entities, 22 topics, 107 digests, 3 weekly reports)
+[Thu 2026/08/13 13:34:25.00] Single push done (news + wiki + web + confirm-cache) - 首次嘗試即成功，無需重試
+[Thu 2026/08/13 13:34:25.00] === Pipeline complete (agent) ===
