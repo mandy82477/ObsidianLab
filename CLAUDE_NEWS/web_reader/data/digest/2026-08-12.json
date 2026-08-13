@@ -12,13 +12,7 @@
       "time": "08/12 11:04",
       "sentiment": "",
       "body": "標榜可把 ChatGPT 變成 Codex、或把 Claude Web 變成 Claude Code 的工具，GitHub 顯示 3661 顆星，與下列五項工具同批出現在 GitHub 熱門清單。",
-      "focusTags": [],
-      "sedimented": [
-        {
-          "id": "claude-code",
-          "pageType": "entity"
-        }
-      ]
+      "focusTags": []
     },
     {
       "title": "tzachbon/smart-ralph",
@@ -27,13 +21,7 @@
       "time": "08/12 11:04",
       "sentiment": "",
       "body": "結合 Ralph Wiggum loop 與結構化規格流程的 Claude Code plugin，主打規格驅動開發與智慧壓縮（compaction），GitHub 顯示 509 顆星。",
-      "focusTags": [],
-      "sedimented": [
-        {
-          "id": "claude-code",
-          "pageType": "entity"
-        }
-      ]
+      "focusTags": []
     },
     {
       "title": "gglucass/headroom-desktop",
@@ -42,13 +30,7 @@
       "time": "08/12 11:04",
       "sentiment": "",
       "body": "macOS 桌面工具，宣稱可將 Claude Code 與 Codex 的 token 成本削減約 50%，GitHub 顯示 506 顆星。",
-      "focusTags": [],
-      "sedimented": [
-        {
-          "id": "claude-code",
-          "pageType": "entity"
-        }
-      ]
+      "focusTags": []
     },
     {
       "title": "aisa-group/PostTrainBench",
@@ -57,13 +39,7 @@
       "time": "08/12 11:04",
       "sentiment": "",
       "body": "評測基準，測量 Claude Code、Codex CLI 等 CLI agent 能否在單張 H100 GPU 上於 10 小時內完成基礎模型的後訓練，GitHub 顯示 505 顆星。",
-      "focusTags": [],
-      "sedimented": [
-        {
-          "id": "claude-code",
-          "pageType": "entity"
-        }
-      ]
+      "focusTags": []
     },
     {
       "title": "ZeroPointRepo/youtube-skills",
@@ -72,13 +48,7 @@
       "time": "08/12 11:04",
       "sentiment": "",
       "body": "提供 AI agent 使用的 YouTube 字幕擷取技能，可取得逐字稿、搜尋影片、瀏覽頻道，相容 OpenClaw、Hermes-Agent、Claude Code 等多種平台，GitHub 顯示 504 顆星。",
-      "focusTags": [],
-      "sedimented": [
-        {
-          "id": "claude-code",
-          "pageType": "entity"
-        }
-      ]
+      "focusTags": []
     },
     {
       "title": "clawplays/ospec",
@@ -87,13 +57,7 @@
       "time": "08/12 11:04",
       "sentiment": "",
       "body": "規格驅動的 agentic 工作流框架，將需求轉為「規劃—執行—驗證」的可驗證目標迴圈，並在 repo 中留存規格與證據，相容 Claude Code、Codex、Gemini、OpenCode 等，GitHub 顯示 502 顆星。",
-      "focusTags": [],
-      "sedimented": [
-        {
-          "id": "claude-code",
-          "pageType": "entity"
-        }
-      ]
+      "focusTags": []
     },
     {
       "title": "Add support for Visual Studio 2026 Integration",
@@ -102,13 +66,7 @@
       "time": "08/11 13:54",
       "sentiment": "",
       "body": "功能請求：希望 Claude Code 能整合 Visual Studio 2026，累計 149 則留言與 514 個 👍 反應，是今日社群互動量最高的功能請求之一。",
-      "focusTags": [],
-      "sedimented": [
-        {
-          "id": "claude-code",
-          "pageType": "entity"
-        }
-      ]
+      "focusTags": []
     }
   ],
   "techUpdates": [
@@ -140,13 +98,7 @@
       "time": "08/11 11:02",
       "sentiment": "😊",
       "body": "作者分享將 Claude Code 工作區整理成情境資料夾、任務與交付物分離、把重複工作沉澱為 skills 的實務做法，強調此系統是「先做錯才慢慢摸索出來的」。",
-      "focusTags": [],
-      "sedimented": [
-        {
-          "id": "claude-code",
-          "pageType": "entity"
-        }
-      ]
+      "focusTags": []
     },
     {
       "title": "6 out of 10",
@@ -164,13 +116,7 @@
       "time": "08/12 10:49",
       "sentiment": "😊",
       "body": "開發者釋出一款讓 Claude Code 輸出遵循 ISO 24495 系列平易語言（Plain Language）原則的 plugin。",
-      "focusTags": [],
-      "sedimented": [
-        {
-          "id": "claude-code",
-          "pageType": "entity"
-        }
-      ]
+      "focusTags": []
     },
     {
       "title": "I made a forensic archive for Claude failures, regressions and slop",
@@ -179,13 +125,7 @@
       "time": "08/12 09:44",
       "sentiment": "😤",
       "body": "作者累積數月來遇到的 Claude Code bug、模型退化、設定異常等問題，整理成公開的證據存檔（含 HackerOne 回報紀錄）。",
-      "focusTags": [],
-      "sedimented": [
-        {
-          "id": "claude-code",
-          "pageType": "entity"
-        }
-      ]
+      "focusTags": []
     },
     {
       "title": "Confession: My Research May Have Triggered Claude's Lobotomy.",
@@ -230,13 +170,7 @@
       "time": "08/10 23:17",
       "sentiment": "😊",
       "body": "週熱門討論串，介紹一款將 Claude Code 輸出的「Claude 式用語」翻譯成一般英文的 plugin（具體實作待查證，原文摘要僅提供標題）。",
-      "focusTags": [],
-      "sedimented": [
-        {
-          "id": "claude-code",
-          "pageType": "entity"
-        }
-      ]
+      "focusTags": []
     },
     {
       "title": "PSA: Be careful letting Claude use WebFetch for research 😵‍💫",
@@ -373,11 +307,6 @@
   "preview": "Claude Code 的 `/buddy` 技能自 4 月 9 日隨 v2.1.97 版本消失、官方未於 changelog 說明，社群發起「Bring Back Buddy」請願 issue，累計 265 則留言與 2068 個 👍 反應。",
   "sedimentedToday": [
     {
-      "id": "claude-code",
-      "name": "Claude Code",
-      "pageType": "entity"
-    },
-    {
       "id": "claude-skills",
       "name": "Claude Skills",
       "pageType": "entity"
@@ -391,21 +320,6 @@
       "id": "pricing",
       "name": "Anthropic 訂閱方案與計費政策",
       "pageType": "entity"
-    },
-    {
-      "id": "ai-agent-safety",
-      "name": "AI Agent 安全與可靠性",
-      "pageType": "topic"
-    },
-    {
-      "id": "anthropic-government-policy",
-      "name": "Anthropic 政府與軍事政策",
-      "pageType": "topic"
-    },
-    {
-      "id": "community-tech-discussions",
-      "name": "社群技術討論趨勢",
-      "pageType": "topic"
     },
     {
       "id": "enterprise-cost-management",

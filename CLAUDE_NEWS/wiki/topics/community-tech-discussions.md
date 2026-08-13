@@ -4,12 +4,12 @@ kind: "topic"
 status: "ongoing"
 domain: "🌐 社群"
 last_updated: "2026-08-13"
-last_news_update: "2026-08-12"
+last_news_update: "2026-08-13"
 status_main: "ongoing"
-days_since_news: 1
+days_since_news: 0
 inbound_links: 41
-attribution_count: 71
-attribution_last: "2026-08-12"
+attribution_count: 73
+attribution_last: "2026-08-13"
 top_source: "hacker-news"
 pending_count: 1
 pending_overdue: 0

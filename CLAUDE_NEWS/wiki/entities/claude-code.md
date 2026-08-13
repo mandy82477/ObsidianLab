@@ -7,12 +7,12 @@ domain: "🛠️ 工具/功能"
 last_updated: "2026-08-13"
 last_news_update: "2026-08-13"
 status_main: "active"
-days_since_news: 1
+days_since_news: 0
 inbound_links: 61
-attribution_count: 259
-attribution_last: "2026-08-12"
+attribution_count: 267
+attribution_last: "2026-08-13"
 top_source: "github-issues"
-pending_count: 14
+pending_count: 15
 pending_overdue: 0
 pending_next_review: "2026-08-26"
 pending_signalled: 0

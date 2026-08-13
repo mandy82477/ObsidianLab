@@ -8,8 +8,8 @@ last_news_update: "2026-08-13"
 status_main: "monitoring"
 days_since_news: 0
 inbound_links: 49
-attribution_count: 55
-attribution_last: "2026-08-10"
+attribution_count: 60
+attribution_last: "2026-08-13"
 top_source: "google-news"
 pending_count: 0
 pending_overdue: 0
