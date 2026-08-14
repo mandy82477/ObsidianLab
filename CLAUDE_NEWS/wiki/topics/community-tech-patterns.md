@@ -25,11 +25,11 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 **狀態：** monitoring
 **領域：** 🌐 社群
 **開始日期：** 2026-04-25
-**最後更新：** 2026-08-13
-**最後新聞更新：** 2026-08-13
+**最後更新：** 2026-08-14
+**最後新聞更新：** 2026-08-14
 
-> **最新工作流模式**（2026-08-12）
-> GitHub 熱門清單同日集中出現六款鎖定 Claude Code／Codex 等 coding agent 生態的工具，星數已於 2026-08-13 查證（devspace／smart-ralph／headroom-desktop／PostTrainBench／youtube-skills 佐證充分，ospec 較弱）；另收錄一篇談「把 Claude Code 工作區依情境資料夾組織」的實務心得（HN 35 分）。
+> **最新工作流模式**（2026-08-14）
+> GitHub Issue #56913（獲 47 個 👍 反應）提出分層架構構想：以 Opus 擔任指揮中樞、Sonnet 擔任執行單元，搭配持久化狀態讓 Claude Code 能長時間自主運行而非僅止於結對編程；屬工作流設計層級的提案，尚無具體實作或量化驗證，與既有 orchestrator-workers 分派模式相呼應（詳見「Multi-agent 架構」技術彙整）。
 
 ---
 
@@ -128,6 +128,11 @@ Claude Code 的三種多 agent 機制，可對應到 Anthropic《Building Effect
 ## 技術彙整
 
 ### 2026-08
+
+#### 分層 Opus「大腦」＋Sonnet「工人」＋持久狀態：讓 Claude Code 自主運行而非結對編程的提案（2026-08-14）
+
+- **核心模式：** GitHub Issue #56913（獲 47 個 👍 反應）提出的工作流架構構想：以 Opus 擔任分層指揮中樞（tiered brains，負責決策與監督），Sonnet 擔任執行單元（workers，實際動手做），並搭配持久化狀態（persistent state）讓系統記得任務進度與決策脈絡，目標是讓 Claude Code 能長時間自主運行，而非僅止於結對編程的助手角色。作者主張這是目前 Claude Code 社群「最有意思的事」——人們正嘗試把它當成長時間運作背後的實際指揮智能，而非單純的結對編程夥伴。屬工作流設計層級的提案／討論，非既有工具的第一手實作紀錄，尚無公開實作或量化驗證。
+- **與既有模式的關係：** 呼應本頁「Multi-agent 架構」類別既有的 orchestrator-workers 分派模式（見「學術對照」表 Subagent 對應 Orchestrator–Workers），差異在於此提案明確用「Opus 做腦、Sonnet 做手」的**模型分層**取代單一模型 orchestrator，並額外強調「persistent state」作為長時間自主運行的必要條件；也與「模型使用策略」類別既有的分層模型路由（Sonnet+Opus）、Fable 5 Orchestrator-Executor 官方基準相通，但後兩者聚焦成本／效能路由，此提案聚焦「如何撐住長時間自主運行」這個不同的軸線。判斷為通用型多 agent 架構提案，非大型 codebase 特有痛點，暫不縫合 [[topics/community-large-codebase-workflow]] 四條主線。
 
 #### 讓 Claude Code 維護 MISTAKES.md 記錯清單：setup 簡單、附後續使用回饋（2026-08-13）
 

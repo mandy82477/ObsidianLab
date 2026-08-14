@@ -23,13 +23,14 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 **狀態：** monitoring
 **領域：** 💼 商業
 **開始日期：** 2026-06-21
-**最後更新：** 2026-08-13
-**最後新聞更新：** 2026-08-13
+**最後更新：** 2026-08-14
+**最後新聞更新：** 2026-08-14
 
 > **最新動態：Google DeepMind 高層與核心研究員異動**（事件 2026-08-05，2026-08-13 查證補記）
 > Jeff Dean（Google 27 年、時任首席科學家）、Sanjay Ghemawat（Google Brain 共同創辦人）、Oriol Vinyals、Quoc Le 離開 Google，共同創辦自動化科學研究新創 **Discovery Loop**（public benefit corporation，與 Anthropic 同為 PBC 結構），Dean 出任 CEO；**Alphabet 本身亦為投資人之一**（Radical Ventures 與 Khosla Ventures 共同領投，另有 Kleiner Perkins、Lightspeed、Doerr Capital），故此案性質介於「人才流失」與「集團支持的 spin-out」之間，非單純 brain drain。同期 Demis Hassabis 卸下 DeepMind 日常營運、轉任 DeepMind 董事長兼 Alphabet 首席科學家（**留任集團，非離職**），Koray Kavukcuoglu 升任 DeepMind SVP。Alphabet 股價盤中一度跌約 5%（各家估市值影響 1,600–2,000 億美元，為盤中估算非定值）。
 > **此波未流向 Anthropic**——[TechCrunch 原始報導](https://techcrunch.com/2026/08/05/jeff-dean-and-other-top-ai-researchers-are-leaving-google-to-launch-their-own-startup/) 全文未提及 Anthropic；流向 Anthropic 者為更早的獨立批次（John Jumper、Jonas Adler、Alexander Pritzel，均 06 月確認）。
 > **轉入 monitoring（2026-08-01）**：自 07-13 起近 3 週日報未見新的跨實驗室人才流動事件，議題本身未見結案訊號（Google/Anthropic/OpenAI 人才競逐格局仍在持續），故由 ongoing 轉為低頻觀察，非結案；08-13 補記早於此轉態的漏抓事件不改變此判斷。
+> **❓ 待查證（2026-08-14，Topic Watch）**：Times of India 標題稱「Google 共同創辦人 Sergey Brin 在 Demis Hassabis 卸任 DeepMind CEO 後對內部員工發表談話」，標題本身遭截斷為「Catch u...」，談話內容、發表場合、與上述 08-05／08-06 已查證之 Hassabis 轉任事件是否為同一組織異動的後續回應，均未見報導細節，暫不視為新增獨立事實，僅記於下方「時序」待後續補充。
 
 ## 摘要
 
@@ -54,6 +55,9 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 - 人才流動為**雙向洗牌**（Google 同期亦失人至 OpenAI），非單向崩塌。
 
 ## 時序
+
+### 2026-08-13（❓ 待查證，Topic Watch 專頁定向抓取）
+- **Sergey Brin 在 Hassabis 卸任 DeepMind CEO 後對內部員工發表談話（標題截斷，內容未知）**：Times of India 標題稱 Google 共同創辦人 Sergey Brin 在 Demis Hassabis 卸任 DeepMind CEO 後對內部員工發表談話，標題本身遭 RSS 截斷為「Catch u...」，具體談話內容、發表場合均未見報導。**與既有記錄的關係**：本頁已於 08-05／08-06 事件（08-13 查證補記，見下方）記錄 Hassabis「卸下 DeepMind 日常營運、轉任 DeepMind 董事長兼 Alphabet 首席科學家（留任集團，非離職）」；本則標題用詞「exits as CEO」與該既有記錄方向一致（確實卸任 CEO 職務，但留任集團），惟無法排除為另一波後續發展或純粹是同一事件的重新報導角度，因標題截斷、正文未提供，暫不逕自合併或視為新增獨立事實，待後續報導補充談話內容後再評估是否需更新 08-05／08-06 條目（Google News/Times of India）
 
 ### 2026-08-05／08-06（補記於 2026-08-13）
 - **Google DeepMind 高層轉任＋核心研究員出走創業，Alphabet 股價重挫**：Demis Hassabis 卸任 Google DeepMind CEO，轉任 Alphabet 首席科學家兼 DeepMind 董事長——**留任 Alphabet 集團，非離職**。同時 Jeff Dean（Google 27 年資深、首席科學家）、Sanjay Ghemawat（Google Brain 共同創辦人）、Oriol Vinyals、Quoc Le 離開 Google，共同創辦自動化科學研究新創 **Discovery Loop**；《Attention Is All You Need》八位作者至此全數離開 Google。Alphabet 股價盤中一度下跌約 5%（各家媒體估市值影響 1,600–2,000 億美元，屬盤中估算區間、非定值）。**Discovery Loop 為 public benefit corporation，Dean 出任 CEO，投資方含 Radical Ventures 與 Khosla Ventures 共同領投、Kleiner Perkins、Lightspeed、Doerr Capital，以及 Alphabet 本身**——集團同時是「被離開方」與「出資方」，此案性質介於人才流失與集團支持的 spin-out 之間（推論）。同期 Koray Kavukcuoglu 升任 DeepMind SVP。**與本頁核心追蹤格局的關係**：此波離職者流向獨立新創 Discovery Loop，非流向 Anthropic 或其他前沿實驗室，故不直接改變「Google DeepMind 淨流失、Anthropic 主要承接」的既有格局，但顯示 Google 高層與技術核心的動盪已從「單點人才流失」擴大至「創業出走潮」層級（推論）；流向 Anthropic 的研究員（Adler、Pritzel、Jumper）為更早的獨立批次，非本次事件的一部分。主編已於 2026-08-13 以 TechCrunch 原始報導交叉查證創辦人名單、公司結構與投資方（CNBC／Axios 原文 403 擋爬，改以 TechCrunch 一手報導與多方彙整佐證；市值數字各家不一致故以區間記錄）；補漏原因：Google News query 以 Anthropic/Claude 為中心詞，本次事件報導標題以 Google 視角為主，未被既有 query 命中（主編判讀，屬 pipeline 覆蓋缺口而非日報無報導）。（[TechCrunch（一手查證）](https://techcrunch.com/2026/08/05/jeff-dean-and-other-top-ai-researchers-are-leaving-google-to-launch-their-own-startup/)；其餘起點來源：[CNBC](https://www.cnbc.com/2026/08/05/google-is-expanding-its-ai-empire-and-losing-the-people-who-built-it.html)；[Axios](https://www.axios.com/2026/08/06/googles-ai-leadership-shuffle)）

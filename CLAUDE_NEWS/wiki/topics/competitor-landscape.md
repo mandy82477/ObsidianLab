@@ -23,8 +23,8 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 **狀態：** monitoring
 **領域：** 💼 商業
 **開始日期：** 2026-04
-**最後更新：** 2026-08-13
-**最後新聞更新：** 2026-08-13
+**最後更新：** 2026-08-14
+**最後新聞更新：** 2026-08-14
 
 > **最新競品動態**（2026-08-14）
 > - **Z.ai（Zhipu AI）推出新程式碼生成模型，正面對打 Anthropic、OpenAI**：Bloomberg 報導 Z.ai 推出新模型競逐 coding 市場，明確點名 Anthropic 與 OpenAI 為對手；延續既有 Zhipu Z.AI 🔴 追蹤（07-06 免費工具 ZCode）之後模型層再進一步，詳見「主要競品追蹤」Zhipu Z.AI 子區塊更新。
@@ -286,6 +286,11 @@ Claude Code 已成為 AI 輔助編碼的標竿產品，但競爭正快速升溫�
 #### 近期單日動態彙整（2026-07-02 至 2026-07-26）
 
 > 逐日條目按主題可另見上方「主要競品追蹤」對應廠商子區塊；此區塊保留完整時序供追溯查證。
+
+### 2026-08-14
+- **[Z.ai，重大] Bloomberg：Z.ai（Zhipu AI）推出新程式碼生成模型，正面對打 Anthropic、OpenAI**：詳見「主要競品追蹤」Zhipu Z.AI 子區塊新增（Google News/Bloomberg.com）
+- **[DeepSeek，重大，補上工具具名] VentureBeat：DeepSeek Harness 以開源形式問世，正面對標 Claude Code；同步的 V4-Pro API 定價較高**：延續 08-13 已記錄之「團隊化＋V4 Pro 上線」，本次首度揭露開源工具正式名稱「Harness」；詳見「主要競品追蹤」DeepSeek 子區塊新增、「競品定價對照」表新增列（Google News/VentureBeat）
+- **[中美定價戰敘事，無具體數字] FT：OpenAI 與 Anthropic 因中國 AI 對手崛起涉入定價戰；The Information：研究指出 Anthropic 模型在特定情境下可能較中國同類模型便宜**：兩則報導方向呼應，均僅標題層級資訊，詳見「競品定價對照」表下方新增觀察（Google News/Financial Times；Google News/The Information）
 
 ### 2026-08-13
 - **[DeepSeek，重大，跨多來源] TradingView、Bloomberg（source_count=3）：DeepSeek 公開組建團隊挑戰 Claude Code；KuCoin、Simon Willison 部落格：V4 Pro 經 OpenRouter API 正式上線，聲稱 agent 表現逼近 Claude 3 Opus、成本大幅降低**：詳見「主要競品追蹤」DeepSeek 子區塊新增（Google News/TradingView；Google News/Bloomberg；Google News/KuCoin；Blog/Simon Willison）
