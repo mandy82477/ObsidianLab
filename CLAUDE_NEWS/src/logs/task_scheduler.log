@@ -206,3 +206,4 @@
 [Thu 2026/08/13 13:34:10.00] build_web OK (33 entities, 22 topics, 107 digests, 3 weekly reports)
 [Thu 2026/08/13 13:34:25.00] Single push done (news + wiki + web + confirm-cache) - 首次嘗試即成功，無需重試
 [Thu 2026/08/13 13:34:25.00] === Pipeline complete (agent) ===
+[週五 2026/08/14 13:31:05.00] === cloud daily-news-pipeline-cloud STARTED 2026-08-14 ===
