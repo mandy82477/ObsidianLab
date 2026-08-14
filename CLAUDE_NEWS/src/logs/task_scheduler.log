@@ -207,3 +207,14 @@
 [Thu 2026/08/13 13:34:25.00] Single push done (news + wiki + web + confirm-cache) - 首次嘗試即成功，無需重試
 [Thu 2026/08/13 13:34:25.00] === Pipeline complete (agent) ===
 [週五 2026/08/14 13:31:05.00] === cloud daily-news-pipeline-cloud STARTED 2026-08-14 ===
+[週五 2026/08/14 14:07:45.00] === Agent pipeline start (2026-08-14) ===
+[週五 2026/08/14 14:07:45.00] Step 0 昨日缺跑檢查：OK（news/2026-08-13.md 存在）
+[週五 2026/08/14 14:07:45.00] Step 0b 冪等閘：OK（news/2026-08-14.md 不存在，正常繼續）
+[週五 2026/08/14 14:07:45.00] Step 1a 新聞抓取：SKIPPED（雲端由 GitHub Actions 完成）
+[週五 2026/08/14 14:07:45.00] Step 1b 生成日報：OK（68 則，13/13 來源，日報收錄 38/68；忠實度自檢抽 10 條、改寫 4 條 ⚠️）
+[週五 2026/08/14 14:07:45.00] Step 1c 確認 emitted-cache：OK（68 筆確認）
+[週五 2026/08/14 14:07:45.00] Wiki ingest OK（六類全派工：模型/功能/商業/安全政策/社群/人物；降級為 general-purpose agent 扮演記者角色，因雲端 wiki-reporter-* subagent_type 不可用）
+[週五 2026/08/14 14:07:45.00] Building web reader...
+[週五 2026/08/14 14:07:45.00] 測試全綠 - web build 放行（gate 首次執行擋下 ⟨Q-14⟩ 標記重複，已修復後重跑通過）
+[週五 2026/08/14 14:07:45.00] Single push done (news + wiki + web + confirm-cache) - 首次嘗試即成功，無需重試
+[週五 2026/08/14 14:07:45.00] === Pipeline complete (agent) ===
