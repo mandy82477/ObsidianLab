@@ -25,18 +25,18 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 **狀態：** active
 **領域：** 🛠️ 工具/功能
 **首次出現：** 2025（正式推出）
-**最後更新：** 2026-08-13
-**最後新聞更新：** 2026-08-13
+**最後更新：** 2026-08-14
+**最後新聞更新：** 2026-08-14
 
-> **最新動態**（2026-08-13）
-> - **v2.1.231 修復 MCP OAuth 登入失敗**：修復使用預先註冊 OAuth client 的 MCP 伺服器（如 Slack）因 redirect URI 不符導致登入失敗的問題；純 bug 修復，不進 feature-radar。
-> - **Auto Mode 8/14 預設化倒數中**：Pro／Max／Team 方案將於明日（2026-08-14）起把 Auto Mode 設為新 session 預設權限模式，並已自 2026-08-10 起免收分類器 token 費用。
-> - **新增／更新多則社群高互動已知問題**：Claude in Chrome 擴充功能無法連接本機 CLI（issue #20298，51 則留言、41 個讚）、獨立 macOS 介面缺乏關閉自動建立 worktree 選項（issue #12513，47 則留言、80 個讚）新增；內建 Slack MCP connector 多帳號連結訴求（issue #27302）累積至 480 個讚、官方 Linux Desktop build 功能請求（issue #65697）累積至 655 個讚，皆互動數更新。
+> **最新動態**（2026-08-14）
+> - **v2.1.232：Subagent forking 預設開啟**：帶 `subagent_type: "fork"` 的 subagent 現在預設繼承完整對話與 prompt cache，互動 session 中非 teammate 的 agent 派工行為亦有相應調整（官方 changelog 原文於此處截斷，細節未知）。
+> - **Auto Mode 今日（8/14）於 Pro／Max／Team 正式生效預設化**：先前倒數的權限模式轉換今日上線；dev.to 同步報導此轉換，惟為單一來源，未補充官方 8/10 部落格既有內容以外的新事實。
+> - **已知問題互動數更新**：AGENTS.md 支援訴求（issue #6235）攀升至 5889 個讚，居全站已知問題之冠；Desktop 多帳號管理（issue #18435）升至 819 個讚；Max 方案額度異常消耗（issue #38335）543 個讚；GitHub Connector 未被識別（issue #32479）138 個讚。
 ---
 
 ## 現況
 
-**最新版本動態：** 最新版本為 **v2.1.231**（2026-08-13），修復 MCP OAuth 登入失敗問題——針對使用預先註冊 OAuth client 的伺服器（如 Slack），先前因 redirect URI 不符而登入失敗；純 bug 修復，已記入版本表，不進 feature-radar。**v2.1.228**（2026-08-11）、**v2.1.227**（2026-08-10）、**v2.1.226**（2026-08-08）均為純 bug fix／穩定性修正版本；**v2.1.224**（2026-08-07）新增 `claude self-hosted-runner` 指令，開放 Team 與 Enterprise 方案將自有機器或容器轉為 Claude Code web、mobile、desktop session 的執行環境，已提報 [[feature-radar]]；其餘近期版本異動詳見下方「最新版本」表格與「歷史記錄」。API 層面：Claude API Release Notes（2026-08-05）新增 **Inference Hooks**，進入 Enterprise 組織 beta 階段，可將 claude.ai、Cowork、Claude Code 上每一次受管治 prompt 導向企業自身的 AI 安全伺服器；已提報 [[feature-radar]]。**2026-08-11 新增：** Auto Mode 8/14 預設化持續獲多家媒體接力報導（含 Mashable，source_count 3），確認官方 8/10 宣布內容在社群媒體圈持續擴散；官方文件索引（[code.claude.com/docs/llms.txt](https://code.claude.com/docs/llms.txt)）新增兩頁「本週新功能」記錄（Week 30：7/20–24、Week 32：8/3–7），屬頁面增減偵測，實際內容待後續查看確認是否含未公開異動。v2.1.227（2026-08-10）修復 bug：session 以過期登入 token 啟動時，feature flag 未依訂閱層級正確評估，曾導致 Max 方案使用者被誤導提示啟用相關功能，純 bug 修復已記入版本表。 **2026-08-13 新增：** 新增已知問題 2 則：Claude in Chrome 瀏覽器擴充功能無法連接本機 Claude Code CLI（issue #20298，51 則留言、41 個讚，環境 Claude Code v2.1.17）、獨立 macOS 介面缺乏關閉自動建立 worktree 選項功能請求（issue #12513，47 則留言、80 個讚）；既有已知問題互動數更新 4 則：內建 Slack MCP connector 多帳號連結訴求（issue #27302，222→227 則留言、454→480 個讚）、Skills 支援子目錄結構功能請求（issue #10238，補上 50 則留言、165→167 個讚）、Environment Contributions 警告重複出現（issue #3301，43→45 則留言、81→83 個讚）、官方 Linux Desktop build 功能請求（issue #65697，累積反應 651→655）。❓ **待查證**（標 2026-08-13｜查 sidebar、Chrome｜複 2026-08-27）｜**Claude Cowork 據報可於 Chrome 側邊欄執行**（Engadget，2026-08-12 報導）：Google News 轉載的 Engadget 報導稱 Claude Cowork 現可於 Chrome 側邊欄執行，僅有標題可用，無正文說明具體功能範圍與生效條件。
+**最新版本動態：** 最新版本為 **v2.1.232**（2026-08-13），Subagent forking 預設開啟——帶 `subagent_type: "fork"` 的 subagent 現在預設繼承完整對話與 prompt cache，互動 session 中非 teammate 的 agent 派工行為亦有相應調整（官方 changelog 原文於此處截斷，細節未知）；已提報 [[feature-radar]]。**v2.1.231**（2026-08-13）修復 MCP OAuth 登入失敗問題——針對使用預先註冊 OAuth client 的伺服器（如 Slack），先前因 redirect URI 不符而登入失敗；純 bug 修復，已記入版本表，不進 feature-radar。**v2.1.228**（2026-08-11）、**v2.1.227**（2026-08-10）、**v2.1.226**（2026-08-08）均為純 bug fix／穩定性修正版本；**v2.1.224**（2026-08-07）新增 `claude self-hosted-runner` 指令，開放 Team 與 Enterprise 方案將自有機器或容器轉為 Claude Code web、mobile、desktop session 的執行環境，已提報 [[feature-radar]]；其餘近期版本異動詳見下方「最新版本」表格與「歷史記錄」。API 層面：Claude API Release Notes（2026-08-05）新增 **Inference Hooks**，進入 Enterprise 組織 beta 階段，可將 claude.ai、Cowork、Claude Code 上每一次受管治 prompt 導向企業自身的 AI 安全伺服器；已提報 [[feature-radar]]。**2026-08-13 新增：** 新增已知問題 2 則：Claude in Chrome 瀏覽器擴充功能無法連接本機 Claude Code CLI（issue #20298，51 則留言、41 個讚，環境 Claude Code v2.1.17）、獨立 macOS 介面缺乏關閉自動建立 worktree 選項功能請求（issue #12513，47 則留言、80 個讚）；既有已知問題互動數更新 4 則：內建 Slack MCP connector 多帳號連結訴求（issue #27302，222→227 則留言、454→480 個讚）、Skills 支援子目錄結構功能請求（issue #10238，補上 50 則留言、165→167 個讚）、Environment Contributions 警告重複出現（issue #3301，43→45 則留言、81→83 個讚）、官方 Linux Desktop build 功能請求（issue #65697，累積反應 651→655）。❓ **待查證**（標 2026-08-13｜查 sidebar、Chrome｜複 2026-08-27）｜**Claude Cowork 據報可於 Chrome 側邊欄執行**（Engadget，2026-08-12 報導）：Google News 轉載的 Engadget 報導稱 Claude Cowork 現可於 Chrome 側邊欄執行，僅有標題可用，無正文說明具體功能範圍與生效條件。
 
 **產品定位：** Claude Code 是 Anthropic 的 AI 編碼 CLI 工具，核心能力已從程式碼助理擴展為具備全桌面自動化、多代理管理（Managed Agents）、MCP Server 整合、Hooks 機制、AI 安全審查，以及可串接 1Password 憑證庫安全登入網站（密碼不外流至 Claude／Anthropic，2026-07-17 多家媒體報導，官方技術細節待補）的完整 agent 開發平台；GitHub Stars 達 **131,000+**。
 

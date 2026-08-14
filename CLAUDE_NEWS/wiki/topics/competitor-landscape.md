@@ -26,11 +26,11 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 **最後更新：** 2026-08-13
 **最後新聞更新：** 2026-08-13
 
-> **最新競品動態**（2026-08-13，補記事件發生於 08-05／08-06）
-> - **Google DeepMind 高層與核心研究員大規模異動**：Demis Hassabis 卸任 DeepMind CEO 轉任 Alphabet 首席科學家（留任集團），Jeff Dean 等四人離職創辦 Discovery Loop（PBC，**Alphabet 亦為投資方**，故性質介於流失與 spin-out 之間），市值影響各家估 1,600–2,000 億美元（盤中估算區間）；詳見「主要競品追蹤」新增子區塊，主敘事在 [[topics/ai-talent-flow]]。
-> - **Meta 宣布開源其最強模型 Muse Glimmer**（08-11）：CNBC、Simon Willison 部落格報導 Meta 將開源目前最強 AI 模型 Muse Glimmer，藉此對 OpenAI、Anthropic 表態競爭；與 08-05 發布的編碼 agent「Muse Code」不同，本次是模型層權重開源，詳見「主要競品追蹤」Meta 子區塊新增。
-> - **DeepSeek 公開組建團隊、V4 Pro 正式上線挑戰 Claude Code**：TradingView、Bloomberg（source_count=3，跨多來源同日報導同一趨勢）報導 DeepSeek 組建團隊力抗 Claude Code；同日 KuCoin、Simon Willison 部落格證實 DeepSeek V4 Pro 已透過 OpenRouter API 上線，聲稱 agent 表現逼近 Claude 3 Opus、成本大幅降低，詳見「主要競品追蹤」DeepSeek 子區塊新增。
-> - 08-10 SemiAnalysis Microsoft 基礎設施競賽分析、08-07 Meta「Muse Code」正式發布等近期重點仍具參考價值，詳見下方時序。
+> **最新競品動態**（2026-08-14）
+> - **Z.ai（Zhipu AI）推出新程式碼生成模型，正面對打 Anthropic、OpenAI**：Bloomberg 報導 Z.ai 推出新模型競逐 coding 市場，明確點名 Anthropic 與 OpenAI 為對手；延續既有 Zhipu Z.AI 🔴 追蹤（07-06 免費工具 ZCode）之後模型層再進一步，詳見「主要競品追蹤」Zhipu Z.AI 子區塊更新。
+> - **DeepSeek 開源工具正式定名「Harness」，直接對標 Claude Code；同步的 V4-Pro API 定價較高**：VentureBeat 報導 DeepSeek Harness 以開源形式問世，被定位為 Claude Code 的直接競品，同步搭配定價較高的 V4-Pro 模型上線 API；為 08-13 已記錄「DeepSeek 團隊化正面對抗＋V4 Pro 上線」之後續，本次補上工具具名「Harness」，惟具體開源授權條款、確切定價數字未見報導，詳見「主要競品追蹤」DeepSeek 子區塊更新。
+> - **中美 AI 定價戰敘事升溫（無具體數字）**：FT 報導 OpenAI 與 Anthropic 因中國 AI 對手崛起涉入定價戰；The Information 同引一項研究指出 Anthropic 模型在特定情境下實際成本可能低於中國同類模型，挑戰「中國模型必然更便宜」印象；兩者均僅標題層級資訊，未見具體數字或研究方法，詳見「競品定價對照」表下方新增觀察。
+> - 08-13 DeepSeek 團隊化對抗、Google DeepMind 高層動盪等既有重點仍具參考價值，詳見下方時序。
 
 ---
 
@@ -56,6 +56,7 @@ Claude Code 已成為 AI 輔助編碼的標竿產品，但競爭正快速升溫�
 
 | 工具/模型 | 定價 | vs Claude 定位 | 來源日期 |
 |---------|------|--------------|---------|
+| DeepSeek V4-Pro（API）| ❓ 待查證，僅見「較 V4 Flash 定價更高」之定性描述，具體費率未見報導 | VentureBeat 報導 DeepSeek V4-Pro 隨開源工具 Harness 同步上線，API 定價較既有 V4 Flash（見下方「成本降低逾 100 倍」列）高，可能為「低價 Flash／高價 Pro」雙軌定價策略；與 08-13 已記錄 KuCoin「聲稱表現逼近 Claude 3 Opus、成本僅一小部分」對比對象不同（該則對比 Claude，本則為 DeepSeek 內部兩模型互比），兩者不可混用 | 2026-08-14（Google News/VentureBeat）|
 | Muse Glimmer（Meta，開源）| 免費（開源權重）| CNBC、Simon Willison 部落格報導 Meta 將開源目前最強模型，藉此對 OpenAI、Anthropic 表態競爭；具體 benchmark 數字、授權條款未見細節 | 2026-08-11（CNBC；Blog/Simon Willison https://simonwillison.net/2026/Aug/10/introducing-muse-glimmer/）|
 | Claude Code（自身，成本倍數宣稱）| 已查證：Composio 實測 $0.195/任務（最貴，但最快 122 秒/任務），OpenCode 最低 $0.073/任務（≈2.7 倍）| the-decoder.com 引述 AI 工具商 Composio 針對 DeepSeek V4 Flash，於 4 款 agent 框架（Claude Code、Codex、OpenCode、Oh My Pi）跑 30 項真實工具任務（Gmail/GitHub/Slack/Notion）的實測結果，證實「速度最快、成本最高」宣稱屬實 | 2026-08-06（[the-decoder.com 原文](https://the-decoder.com/claude-code-is-the-fastest-agent-framework-but-costs-nearly-three-times-more-than-the-cheapest-rival/)，2026-08-13 查證）|
 | Muse Code / Muse Spark 1.2（Meta）| 無訂閱制，按量計費：標準層 $1.25／$4.25（input／output，每 M token）；Contributor 層 $0.10／$0.20（折扣換取資料可能用於訓練 Meta 模型）| Meta 正式推出的程式碼撰寫 agent，明確對標 Claude Code 與 OpenAI Codex；為本頁 07-09「Meta AI 程式輔助工具」傳聞的正式落地產品，詳見「主要競品追蹤」Meta 子區塊 | 2026-08-05（Google News/CNET；Google News/Basic Tutorials；Blog/Simon Willison）／2026-08-07（Google News/WSJ）；定價數字為媒體整理（Wavect、The New Stack），Meta 官方獨立掛牌頁未見，2026-08-13 查證 |
@@ -75,6 +76,8 @@ Claude Code 已成為 AI 輔助編碼的標竿產品，但競爭正快速升溫�
 | Gemini CLI / Gemini 系列 | 已查證：2026-06-18 起免費／Google AI Pro／Ultra 帳號停止 Gemini CLI（併入 Antigravity CLI）；付費：Free $10 一次性／Pro $60/月／Max $200/月 | 免費層大幅緊縮後，個人開發者需轉向 Antigravity CLI 或改用付費 API key | 2026-08-13 查證（多方比較站彙整）|
 
 **觀察：** 目前日報實際查證到的競品定價訊號集中在「相對成本換算」（Copilot 27 倍加價、DeepSeek 100 倍降價），而非可直接比較的掛牌月費；多數競品定價仍待後續日報補上具體數字。
+
+**中美 AI 定價戰敘事（2026-08-14，均無具體數字，待查證）**：FT 報導 OpenAI 與 Anthropic 因中國 AI 對手崛起涉入定價戰，屬產業級定價策略動態報導，非 Anthropic 官方公告的方案異動；同日 The Information 引述一項研究指出，Anthropic 模型在特定使用情境下的實際成本可能低於中國同類模型，挑戰「中國模型必然更便宜」的既定印象（**研究指出**，非官方數據；具體研究方法、樣本、測試情境未見報導）。兩則報導方向呼應——若 Anthropic 模型在部分情境確實更具成本優勢，可能削弱本表已記錄多筆「中國模型較 Claude 降價數十至上百倍」訊號（如 DeepSeek V4 Flash「逾 100 倍」、Kimi K3「三分之一」）的普遍適用性，惟兩則報導均僅標題層級資訊，無具體倍數或情境條件，❓ 待查證，不可推算或杜撰倍數。
 
 ---
 
@@ -189,7 +192,8 @@ Claude Code 已成為 AI 輔助編碼的標竿產品，但競爭正快速升溫�
 - **重大事件**：SpaceX 以 $60B 正式完成收購 Cursor（2026-06-17 確認）；收購整合 SpaceX / xAI 生態，使 Cursor 獲得 SpaceX 資源支撐，直接衝擊 Claude Code vs Cursor 競爭態勢；Cursor 此前與 Anthropic 有深度整合關係，收購後生態歸屬方向待觀察（dev.to、9to5Mac）
 
 ### DeepSeek 🔴
-- **狀態**：正式宣布建構 Claude Code 競品（2026-05-22）；DeepSeek V4 Flash 顛覆 agent 定價（2026-06-26）；Lindy 100% 切換案例（2026-06-29）；推出開源 agent 工具「Deep Code」直接對標 Claude Code（2026-07-07）；公開組建團隊、V4 Pro 正式上線正面挑戰 Claude Code（2026-08-13）
+- **狀態**：正式宣布建構 Claude Code 競品（2026-05-22）；DeepSeek V4 Flash 顛覆 agent 定價（2026-06-26）；Lindy 100% 切換案例（2026-06-29）；推出開源 agent 工具「Deep Code」直接對標 Claude Code（2026-07-07）；公開組建團隊、V4 Pro 正式上線正面挑戰 Claude Code（2026-08-13）；開源工具正式定名「DeepSeek Harness」、V4-Pro API 定價較高上線（2026-08-14）
+- **DeepSeek Harness 正式定名、開源上線（2026-08-14，重大，補上工具具名）**：VentureBeat（source_count=2）報導 DeepSeek Harness 以開源形式問世，被明確定位為 Claude Code 的直接競品，同步搭配 API 定價較高的 V4-Pro 模型上線。**對競爭格局的意涵**：是繼 08-13「組建團隊、V4 Pro 上線」之後的具體落地——此前僅知「團隊化」與「V4 Pro 上線」兩個動作，本次首次補上開源工具的正式名稱「Harness」，顯示 DeepSeek 在「模型層」（V4-Pro）與「產品層」（Harness 開源工具）同步發力，與既有「Deep Code」（07-07）是否為同一工具或另一產品線，報導未見說明，暫不逕自合併記錄（推論）；「V4-Pro 定價較高」與既有 V4 Flash「成本降低逾 100 倍」宣稱方向相反，可能代表 DeepSeek 正建立「低價 Flash／高價 Pro」雙軌定價策略對應不同任務等級，惟具體定價數字、開源授權條款均未見報導細節，僅標題層級資訊，見「競品定價對照」表新增列（Google News/VentureBeat）
 - **策略**：「Beijing Wants the Whole Stack」——DeepSeek 不只是低成本替代生態，而是公開宣稱要打造從模型到開發工具的完整技術棧
 - **既有基礎**：DeepClaude（聲稱降低 17 倍成本）、DeepSeek-based Claude Code clone（8,700 Stars）
 - **關鍵定價衝擊（2026-06-26）**：DeepSeek V4 Flash（開源，成本較 Claude API 降低逾 100 倍）打破 Anthropic 以較高 API 定價補貼自家 Claude Code 等 agent 服務的商業邏輯；Microsoft 等廠商已實際切換至 DeepSeek 執行層（ref: rtrvr.ai https://www.rtrvr.ai/blog/code-as-plan-deepseek-flash-text-only-browser-agent）。**對 Anthropic 的意涵**：訂閱補貼依賴 API 定價差距維持，DeepSeek Flash 壓縮此空間；若企業持續切換執行層，Anthropic 的 token 份額將流失至競品（推論）
@@ -200,6 +204,7 @@ Claude Code 已成為 AI 輔助編碼的標竿產品，但競爭正快速升溫�
 - **V4 Pro 正式上線（2026-08-13）**：KuCoin 報導 DeepSeek V4 Pro 上線，聲稱其 agent 表現逼近 **Claude 3 Opus**、成本僅一小部分；Simon Willison 部落格（08-12）證實該模型已透過 OpenRouter 以 API 形式上線："The latest DeepSeek Pro model is now available, via API only."。**注意**：對標對象為已非最新旗艦的 Claude 3 Opus（非 Opus 4.8／Opus 5），比較基準是否具代表性待查證；具體 benchmark 數字未見報導細節（Google News/KuCoin；Blog/Simon Willison https://simonwillison.net/2026/Aug/12/deepseek-v4-pro-0813/）
 
 ### Zhipu Z.AI 🔴
+- **新程式碼生成模型，正面對打 Anthropic、OpenAI（2026-08-14）**：Bloomberg 報導 Z.ai 推出新模型競逐 coding 市場，明確點名 Anthropic、OpenAI 為競爭對手；延續 07-06 免費工具 ZCode 之後，是模型層再進一步的具體訊號，惟具體模型名稱、benchmark 數字、定價未見報導細節，僅標題層級資訊（Google News/Bloomberg.com）
 - **狀態**：Active（快速追趕中，2026-06-27 CNBC 確認；2026-07-06 推出免費工具 ZCode 直接對標 Cursor/Claude Code）
 - **路線**：開源模型，趁 Anthropic / OpenAI 受出口管制與法律 / 政治審查影響期間快速縮小能力差距
 - **策略**：以開源路線滲透出口管制無法觸及的市場，類似 DeepSeek 以「免費壁壘」繞開競爭管制；2026-07-06 更進一步推出免費 IDE/CLI 工具 ZCode，正面對標 Cursor 與 Claude Code 的產品層，而非僅停留在底層模型競爭

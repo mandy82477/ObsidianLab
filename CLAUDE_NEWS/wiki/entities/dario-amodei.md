@@ -25,9 +25,10 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 **狀態：** active
 **領域：** 👤 人物
 **首次出現：** 2026-04-25
-**最後更新：** 2026-08-10
-**最後新聞更新：** 2026-08-07
+**最後更新：** 2026-08-14
+**最後新聞更新：** 2026-08-14
 
+> ❓ **待查證**（標 2026-08-14｜查 Amodei's Wife、Winding Road to the Top）｜**媒體聚焦 Dario Amodei 妻子的人物側寫**（2026-08-14 報導）：WSJ 與 The Information 同日發布深度報導，聚焦 Dario Amodei 妻子在網路上幾乎沒有公開資訊一事，並探討她對 Anthropic 內部可能的影響力；兩篇報導均未提供其姓名或具體職務內容，僅標題層級資訊可用。
 > ❓ **待查證**（標 2026-08-10｜查 Axios、Yahoo Finance）｜**人才招募疑慮延燒**（2026-08-07 報導）：Axios 報導（經 Yahoo Finance 轉載）稱 Dario Amodei 據稱憂心新進員工只為高薪而非公司使命加入 Anthropic，並對照公司同期開出年薪 32-40 萬美元的活動企劃負責人職缺，遠高於市場行情；為二手轉述，具體發言未經證實。
 > ❓ **待查證**（標 2026-08-10｜查 The Information、Silicon Valley）｜**The Information 深度剖析**（2026-08-06 報導）：發布《How Dario Amodei Spread Anthropic's Religion and Stirred Up Silicon Valley》，探討其個人影響力與外界對 Anthropic 企業文化的觀感；原文僅標題層級資訊可用，暫無具體引述內容。
 
@@ -35,9 +36,9 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 
 ## 現況
 
-2026-08-07，Axios 報導（經 Yahoo Finance 轉載）稱 Dario Amodei 據稱憂心新進員工僅為高薪而非公司使命加入 Anthropic，並提及公司同期開出一則年薪 32-40 萬美元的活動企劃負責人（brand marketing events lead）職缺、遠高於同類職位市場行情作為對照；同日 The Information 發布剖析報導，探討其個人影響力對矽谷的攪動與外界對 Anthropic 企業文化的觀感（僅標題層級資訊可用，無具體引述內容）。以上均屬二手轉述或標題層級報導，非本人直接公開聲明，查證狀態見上方標記。
+2026-08-14，WSJ 與 The Information 分別發布聚焦 Dario Amodei 妻子的人物側寫報導：WSJ 標題〈Even Claude Is in the Dark About Dario Amodei's Wife—and Her Influence at Anthropic〉探討她在網路上幾乎沒有公開資訊、以及她對 Anthropic 內部可能的影響力；The Information 標題稱其為 Anthropic 的「'First Lady'」，聚焦其職涯歷程「a winding road to the top」。同一事件另有 Hacker News 轉發（直連 wsj.com），留言中一則揣測其與 Eric Schmidt 有私人關係、藉此清空網路個資的說法屬留言者主觀嘲諷，未經任何來源證實，不予採信。兩篇報導正文均未提供其姓名或具體職務內容，查證狀態見上方標記。
 
-2026-08-03，Dario Amodei 公開表態憂心部分員工是為金錢而非公司使命加入 Anthropic（Techmeme／The Next Web 報導），Hacker News 社群討論反應兩極——有人認為多數人本就為錢工作，也有人認為這正是科技業近 30 年被資本侵蝕的縮影；具體發言場合與逐字稿未能取得，查證狀態見下方公開立場表格標記。
+2026-08-07，Axios 報導（經 Yahoo Finance 轉載）稱 Dario Amodei 據稱憂心新進員工僅為高薪而非公司使命加入 Anthropic，並提及公司同期開出一則年薪 32-40 萬美元的活動企劃負責人（brand marketing events lead）職缺、遠高於同類職位市場行情作為對照；同日 The Information 發布剖析報導，探討其個人影響力對矽谷的攪動與外界對 Anthropic 企業文化的觀感（僅標題層級資訊可用，無具體引述內容）。以上均屬二手轉述或標題層級報導，非本人直接公開聲明，查證狀態見上方標記。
 
 Dario Amodei 是 Anthropic 共同創辦人兼執行長（CEO），與 Chris Olah、Daniela Amodei 等人從 OpenAI 出走後創立 Anthropic。主導公司整體策略與安全定位，在 AI 治理、政府政策、企業文化三條線高度活躍。白宮一度對其失去信任、談判改由聯合創辦人 Tom Brown 接管一事已收斂（出口管制已解除，見 [[entities/tom-brown]]、[[entities/fable-5]]、下方歷史記錄）；惟 Dario 本人與白宮的信任關係修復與否，尚無報導確認。
 
@@ -81,6 +82,9 @@ Dario Amodei 是 Anthropic 共同創辦人兼執行長（CEO），與 Chris Olah
 
 ## 參考來源
 
+- Google News（2026-08-14）→ WSJ：「Even Claude Is in the Dark About Dario Amodei's Wife—and Her Influence at Anthropic」，聚焦其妻在網路上幾乎沒有公開資訊及其對 Anthropic 內部可能的影響力；查證狀態見上方標記
+- Google News（2026-08-13）→ The Information：「Anthropic's 'First Lady' Took a Winding Road to the Top」，同一人物側寫的另一媒體版本；查證狀態見上方標記
+- Hacker News（25分，經 wsj.com 直連，2026-08-14）：同一 WSJ 報導的討論串轉發；留言含一則對 Eric Schmidt 私人關係的嘲諷性揣測，非任何來源證實之事實，不採信
 - [Hacker News（50分）→ Yahoo Finance，2026-08-07](https://finance.yahoo.com/technology/ai/articles/anthropic-ceo-reportedly-worried-hires-160000647.html)（原引述 Axios）：「Anthropic CEO reportedly worried new hires only care about money」，稱 Dario Amodei 據稱憂心新進員工僅為薪資而非使命加入，並對照一則年薪 32-40 萬美元的活動企劃負責人職缺；查證狀態見上方標記
 - Google News（2026-08-06）→ The Information：「How Dario Amodei Spread Anthropic's Religion and Stirred Up Silicon Valley」，剖析其個人影響力與矽谷觀感；查證狀態見上方標記
 - Hacker News（經 Twitter/Techmeme，2026-08-03）：[twitter.com/Techmeme](https://twitter.com/Techmeme/status/2084238055368687932)「Dario worried people were joining Anthropic for the money, not the mission」；社群留言兩極
@@ -96,6 +100,7 @@ Dario Amodei 是 Anthropic 共同創辦人兼執行長（CEO），與 Chris Olah
 
 ## 歷史記錄
 
+- 2026-08-14：WSJ（經 Google News 轉載）與 The Information 同日分別發布聚焦 Dario Amodei 妻子的人物側寫報導——WSJ 標題〈Even Claude Is in the Dark About Dario Amodei's Wife—and Her Influence at Anthropic〉，探討她在網路上幾乎沒有公開資訊，以及她對 Anthropic 內部可能的影響力；The Information 標題稱其為 Anthropic 的「'First Lady'」，聚焦其「a winding road to the top」的職涯歷程。同一事件另有 Hacker News 轉發版本（直連 wsj.com），留言中一則暗示其與 Eric Schmidt 有私人關係、藉此清空網路個資的說法為留言者主觀嘲諷，**未經任何來源證實，不採信為事實**。兩篇報導正文均未提供其姓名或具體職務內容，查證狀態見上方標記（來源：Google News／WSJ、Google News／The Information、Hacker News）
 - 2026-08-07：Axios 報導（經 Yahoo Finance 轉載）稱 Dario Amodei 據稱憂心新進員工僅為薪資而非公司使命加入 Anthropic，與 08-03 Techmeme／The Next Web 報導同一主題的後續補充；報導另附帶對照——公司同期開出一則活動企劃負責人（brand marketing events lead）職缺，年薪達 32-40 萬美元，遠高於同類職位市場行情；具體發言場合與逐字稿仍未能取得（查證狀態見上方標記）（來源：Hacker News 50分／Yahoo Finance／Axios）
 - 2026-08-06：The Information 發布深度剖析報導《How Dario Amodei Spread Anthropic's Religion and Stirred Up Silicon Valley》，探討其個人影響力對矽谷的攪動與外界對 Anthropic 企業文化的觀感；原文僅標題層級資訊可用，尚無具體引述內容補充（查證狀態見上方標記）（來源：Google News／The Information）
 - 2026-08-03：公開表態憂心部分員工是為金錢而非公司使命加入 Anthropic；Hacker News（經 Twitter/Techmeme，11 分）討論反應兩極——有人認為多數人本就為錢工作，也有人認為這是科技業近 30 年被資本侵蝕的縮影；The Next Web 同步以「Anthropic's CEO says staff want money over mission」為題報導，與 Techmeme 互為佐證；具體發言場合與逐字稿未能取得（查證狀態見公開立場表格標記）（來源：Hacker News/Techmeme、The Next Web，2026-08-03）

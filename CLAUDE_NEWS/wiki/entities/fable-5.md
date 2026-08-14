@@ -25,8 +25,8 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 **狀態：** active（正式發布；出口管制已解除，2026-07-01 起全球恢復存取；免費期已於 2026-07-19 到期，Max/Team 後續存取政策已於 2026-08-08 經官方 Help Center 查證收斂，見 [[entities/pricing]]）
 **領域：** 🤖 模型
 **首次出現：** 2026-06-09
-**最後更新：** 2026-08-12
-**最後新聞更新：** 2026-08-11
+**最後更新：** 2026-08-14
+**最後新聞更新：** 2026-08-14
 
 > **最新進展**（2026-08-07）
 > **生物安全防護更新**：Anthropic 官方部落格宣布更新 Fable 5 的生物安全防護（biology safeguards），測試顯示各產品面「生物相關降級」（fallback 至 Opus 4.8）情形減少約 85%；官方並表示醫療專業人員在臨床任務上將能獲得 Fable 5 更多協助。詳見「爭議」與「歷史記錄」。
@@ -182,6 +182,8 @@ claude --model claude-fable-5-20260609
 
 #### 2026-08-11
 **未發布研究版 Claude 意外改進黎曼假設 zeta 函數下界紀錄（研究里程碑，非 Fable 5 本體）**：Anthropic 官方部落格公告，一個**未發布的研究版 Claude**（非現行 Fable 5 產品版本）在嘗試證明黎曼假設（Riemann hypothesis）未果的過程中，意外改進了「黎曼 zeta 函數零點滿足該假設比例」的長期下界紀錄，該紀錄先前已維持 87 年未被突破；The Times of India 另有跟進報導，指研究者感謝 Claude 協助解開此一長年數學猜想相關進展。此為 Anthropic 內部研究能力展示（HN 211 分、4 個獨立來源轉載），與 Fable 5 產品版本或其部署狀態無直接關聯，僅記為 Anthropic 前沿數學研究能力的里程碑參考（[Anthropic Blog](https://www.anthropic.com/research/riemann-zeta)、The Times of India，2026-08-11）。
+
+**媒體延續報導（無新增技術細節）**：TechSpot 於 2026-08-13 刊出〈Anthropic's Claude tried to solve the Riemann hypothesis and found something new instead〉，敘事（嘗試證明黎曼假設未果、過程中取得新數學進展）與上則 08-11 Anthropic 官方部落格公告高度吻合，判斷為同一事件的媒體接力報導，非獨立新事件；Google News RSS 僅提供標題，無正文可查證是否含超出官方原文的新細節（Google News/TechSpot，單一來源，2026-08-13）。
 
 #### 2026-08-07
 **官方更新生物安全防護，「生物相關降級」減少約 85%**：Anthropic 官方部落格公告《Improving Fable 5's biology safeguards》，宣布更新 Fable 5 的生物安全防護（biology safeguards）。測試顯示，此次更新使各產品面「生物相關降級」（誤判觸發 fallback 至 Opus 4.8）情形減少約 85%（官方原文：「this update reduced biology-related fallbacks by about 85% across our product surfaces」）。實務影響：日常健康／教育類問題（判讀檢驗報告、理解症狀、學習生物學教育內容）預期更少被誤判降級；醫療專業人員在臨床任務上將能獲得 Fable 5 更多協助（官方原文：「Healthcare professionals will be able to receive more support from Fable 5 on clinical tasks」）。此為官方對「資安研究者護欄過激」「Defense in Depth 分類器誤判」等既有護欄過敏爭議中，生物領域面向的具體修復進展；資安/程式碼領域的過敏問題官方本次公告未提及是否同步改善（[Anthropic Blog](https://www.anthropic.com/news/improving-fable-5-s-biology-safeguards)，2026-08-07）。
