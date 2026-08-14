@@ -4,7 +4,7 @@
 僅收錄官方 changelog、release note 或官方公告來源；社群工具見 [[topics/community-tech-tools]]。
 每日更新：新增功能、更新熱度、補充社群回饋。
 
-**最後更新：** 2026-08-13
+**最後更新：** 2026-08-14
 
 ---
 
@@ -20,7 +20,7 @@
 
 ## ⚠️ 升版風險
 
-**最新版本：** v2.1.231（2026-08-13，修復 MCP OAuth 登入失敗問題：使用預先註冊 OAuth client 的伺服器如 Slack，先前因 redirect URI 不符而登入失敗，純 bug fix 無新功能）。前一版 v2.1.228（08-11）同為 bug 修復與穩定性改進。最後一次重大 breaking change 仍為 v2.1.212／v2.1.215（見下表）；另有一項即將於 8/14 生效的 breaking change（auto 模式預設化，見下方「⏰ 倒數中」）。
+**最新版本：** v2.1.232（2026-08-13，Subagent forking 預設開啟：帶 `subagent_type: "fork"` 的 subagent 現在預設繼承完整對話與 prompt cache，互動 session 中非 teammate 的 agent 派工行為亦有相應調整，官方 changelog 原文截斷、細節未知）。前一版 v2.1.231（08-13）為 bug fix（修復 MCP OAuth 登入失敗問題）。最後一次重大 breaking change 仍為 v2.1.212／v2.1.215（見下表）；另有一項於 8/14 生效的 breaking change（auto 模式預設化，見下方「⏰ 倒數中」）。
 
 | 風險 | 嚴重度 | 說明 |
 |------|--------|------|
@@ -66,6 +66,7 @@
 |------|----------|------|----------|------|
 | **Claude Code 跨 session 訊息互通**（需 v2.1.224+、macOS／Linux，`ListAgents` 探索可連線 session、`SendMessage` 指定名稱傳訊，亦適用 subagent 與 team 隊友） | 2026-08-08 | 🔥🔥🔥🔥 | ⚡ 有條件推薦 | 正式發布 |
 | **Claude Code Auto 模式預設化**（⚠️ Breaking change：8/14 起 auto 成為 Pro／Max／Team 預設權限模式，取代手動確認流程；即日起免收分類器 token 費；Enterprise 與 API／雲端平台仍選用制） | 2026-08-14 生效（08-07 公告，08-10 官方部落格確認） | 🔥🔥🔥🔥🔥 | ⚡ 有條件推薦 | 官方公告（尚未生效） |
+| **Claude Code v2.1.232**（Subagent forking 預設開啟，`subagent_type: "fork"` 現繼承完整對話與 prompt cache；互動 session 非 teammate agent 派工行為亦調整，原文截斷） | 2026-08-13 | 🔥🔥 | ⚡ 有條件推薦 | 正式發布 |
 | **Claude Code v2.1.224**（新增 `claude self-hosted-runner`，可將自有機器或容器變成 Claude Code web／mobile／desktop session 執行環境，Team／Enterprise 適用） | 2026-08-07 | 🔥🔥 | ⚡ 有條件推薦 | 正式發布 |
 | **API Inference Hooks**（Enterprise 組織 beta，claude.ai／Cowork／Claude Code 上受管治 prompt 可導向企業自有 AI 安全伺服器） | 2026-08-05 | 🔥🔥 | ⏳ 觀望 | Beta（Enterprise） |
 | **Claude Code v2.1.222**（安全修復：worktree 隔離 session 及其 subagent 可對主 checkout 執行破壞性 git 指令的漏洞，隔離範圍擴及檔案編輯與 Bash 執行） | 2026-08-04 | 🔥🔥 | ✅ 建議升級 | 正式發布（安全修復） |
@@ -154,6 +155,19 @@
 **現在要試嗎：** 屬即將生效的預設行為變更，非選用功能；依賴目前手動確認流程做安全把關的使用者，應在 8/14 前確認是否要主動關閉 auto 模式（設定方式待官方文件補齊）。分類器 token 免費化降低了「多花錢換安全」的疑慮，一般使用者可持觀望態度等生效日到來。
 
 **注意事項：** Reddit 89%/13.6% 研究樣本為單一社群來源引述，尚待官方或第三方正式發布評測數據佐證（Cat Wu 稱「未來數週內」公布）；具體關閉/設定方式待官方 changelog 或部落格正式公告確認。
+
+---
+
+### Claude Code v2.1.232 — Subagent forking 預設開啟
+**發布：** 2026-08-13 | **熱度：** 🔥🔥 | **試用價值：** ⚡ 有條件推薦 | **狀態：** 正式發布
+
+**是什麼：** 帶 `subagent_type: "fork"` 的 subagent 現在預設繼承完整對話與 prompt cache；互動 session 中非 teammate 的 agent 派工行為亦有相應調整（官方 changelog 原文於「no[...]」處截斷，具體調整內容未知）。與既有 `/fork`／`/subtask` 語意拆分（v2.1.212）同屬 subagent 派工機制的延伸。
+
+**為何熱：** 官方 release notes 首發，尚無社群驗證或跟進報導。
+
+**現在要試嗎：** 依賴 `subagent_type: "fork"` 的既有工作流會自動獲得完整對話/cache 繼承，屬行為預設變更而非選用功能；重度使用 fork 的使用者應留意 context／cache 用量是否隨之增加。
+
+**注意事項：** 官方原文截斷處未知的「非 teammate agent 派工行為調整」細節待補；是否有 opt-out 設定亦未知。
 
 ---
 

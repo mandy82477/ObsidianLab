@@ -3793,3 +3793,35 @@
 **📋 待使用者確認**：
 - [商業→安全政策，歸屬未定] 「How well do job retraining programs work?」（Google News 來源標記為 Anthropic，疑似官方勞動市場研究產出）——僅標題可用、無正文，不符合商業記者觸發條件（融資/收購/戰略合作/企業採用），亦未派工給安全政策記者；需人工查證原文後決定歸屬（勞動政策 → 安全政策記者；若屬一般研究無政策動作 → 可能不需收錄）
 - [社群] GitHub Search 熱門工具 gamedev-skills/awesome-gamedev-agent-skills（500★）依「星數防刷註記」規則，因無 forks／issues／近期 commit 佐證資料，標「待查證」未收錄；下次 ingest 或 lint 若有工具可查證應回頭核實
+
+## 2026-08-14 Ingest | news/2026-08-14.md（68 則）
+
+- 來源日報：[[news/2026-08-14]]（68 則，13/13 來源；日報實收 38 則，另有 30 則透過 `list_digest_omissions.py` 一併提供給記者判斷）
+- 分類派工：模型 3 則、功能 12 則、商業 15 則（14 則新聞＋1 則專頁定向）、安全政策 10 則（6 則主要＋4 則佐證性重複報導）、社群 23 則、人物 3 則（六類並行 foreground）
+- 更新頁面：
+  - **模型**：`entities/fable-5.md`（TechSpot「Claude 嘗試證明黎曼假設」判斷為 08-11 研究版 Claude 改進黎曼 zeta 下界事件的媒體接力報導，附記一段媒體延續說明，未重複建歷史條目；Conceptual Reasoning Index 與 08-13 Mythos/Fable/Sonnet 錯誤率事件比照既有先例判斷不構成頁面更新門檻，未寫入）
+  - **功能**：`entities/claude-code.md`（新增 v2.1.232 版本記錄——subagent forking 預設開啟；v2.1.231 MCP OAuth 修復記入版本表；status.claude.com／Claude Code on the web 兩起服務事件記入服務穩定性；已知問題互動數更新 4 則——AGENTS.md #6235（5760→5889👍）、多帳號管理 #18435（769→819👍）、Max 額度異常 #38335（538→543👍）、GitHub Connector #32479（130→138👍）；新增已知問題 1 則——The Register 報導空白思考區塊仍計費，標待查證 ⟨Q-14⟩）、`topics/official-community-gap.md`（Subagent 派工/編排列因 v2.1.232 同步更新）
+  - **商業**：`topics/anthropic-business.md`（Decart 收購仍在洽談、CFO 已展開早期 IPO 對話但未談估值、投資人估值上看 2 兆美元、Steve Eisman「阿基里斯腱」評論，四則同日商業/估值動態同步記入）、`topics/enterprise-tool-tracker.md`（新增 Samsung 晶片設計採用列，❓ 未確認——「reportedly」措辭未經證實）、`entities/pricing.md`（新增 issue #38335 Max 額度異常事故；Reddit「用量暗中調降」質疑經查證現有記錄後以「使用者質疑」語氣記錄，未見對應官方承諾）、`topics/competitor-landscape.md`（Z.ai 新模型、DeepSeek Harness 開源上線＋V4-Pro、中美 AI 定價戰 FT 報導、Anthropic 模型可能比中國模型更便宜研究，定價數字缺具體佐證處均標「待查證」不推算）、`topics/ai-talent-flow.md`（Sergey Brin 於 Demis Hassabis 卸任 DeepMind CEO 後談話，標題本身截斷，❓ 待查證）
+  - **安全政策**：`topics/ai-agent-safety.md`（Anthropic 自揭：多 AI agent 執行同一任務時互相破壞、癱瘓對方，採 TechCrunch/BI 中性描述、避開 Decrypt 戲劇化措辭；Yellow.com「四大 AI 實驗室 prompt injection 指標不相容」研究因未指名是否含 Anthropic，標準式 ❓ 待查證收錄）、`topics/anthropic-government-policy.md`（浮水印爭議延燒，新增 Anthropic 透過 Business Insider 首度回應使用者疑慮一節；PCMag 圖像浮水印報導併入佐證）
+  - **社群**：`topics/code-quality-decline.md`（Reddit 兩則品質/效能下滑抱怨——3 個月觀察 MASSIVE 下滑、Pro→Max 升級後變慢 3 倍——記入訊號群）、`topics/community-tech-patterns.md`（新增「分層 Opus 大腦＋Sonnet 工人＋持久狀態」multi-agent 架構提案節點，issue #56913；判斷非四條大型 codebase 主線歸屬，`community-large-codebase-workflow.md` 主線頁未動）
+  - **人物**：`entities/dario-amodei.md`（三則同日媒體對 Dario Amodei 之妻的人物側寫報導——WSJ／HN／The Information——均未提供姓名或具體職務，未達新人物建頁門檻，以待核實標記附記於現況/歷史記錄/參考來源三處；HN 留言中對 Eric Schmidt 私人關係的嘲諷性揣測已明確排除、未採信為事實）
+  - **主編彙整**：`wiki/feature-radar.md`（新增 Claude Code v2.1.232 — Subagent forking 預設開啟，🔥🔥／⚡ 有條件推薦／正式發布，詳細條目與全覽表列已補齊對帳；同步「⚠️ 升版風險」最新版本行至 v2.1.232；「⭐ 本週推薦」與「⏰ 倒數中」今日無資格變動，維持不動）
+- 新增頁面：無
+- 摘要：Decart 收購（60 億美元，仍洽談中）與 Anthropic 估值／IPO 傳聞（CFO 已展開早期會議、投資人估值上看 2 兆美元）為當日商業主線；Anthropic 自揭多 AI agent 同任務下互相破壞的內鬥行為為新增安全政策發現；Claude 隱形浮水印爭議延燒，Anthropic 首度透過媒體回應使用者疑慮；Claude Code Auto Mode 8 月中旬起為 Pro/Max/Team 預設開啟（dev.to 單一來源，重申既有 08-10 官方確認事實，feature-radar 熱度不變）；GitHub Issues 高互動請求集中於 AGENTS.md 支援（5889👍）、多帳號管理（819👍）與 Max 額度異常（543👍）。
+- 呈現品質：entities/fable-5.md ✅ 通過；entities/claude-code.md ✅ 通過；topics/official-community-gap.md ✅ 通過；topics/anthropic-business.md ✅ 通過；topics/enterprise-tool-tracker.md ✅ 通過；entities/pricing.md ✅ 通過；topics/competitor-landscape.md ✅ 通過；topics/ai-talent-flow.md ✅ 通過；topics/ai-agent-safety.md ✅ 通過；topics/anthropic-government-policy.md ✅ 通過；topics/code-quality-decline.md ✅ 通過；topics/community-tech-patterns.md ✅ 通過；entities/dario-amodei.md ⚠️ 已修復（新增待查證 callout 前先移除現況段落中已重複於歷史記錄的舊段落，符合「現況不被時序侵蝕」2 段上限）
+- 品質備註：日報生成階段摘要忠實度自檢（3d）抽 10 條、改寫 4 條（首度→移除未驗證措辭、社群趨勢反應數精確化、Show HN 留言誤將兩位不同使用者的花費數字混為一談已拆分、Status 事故標題列名模型與內文不一致已補齊），M≥3 已於當時標記 ⚠️ 供覆核；[社群→功能，待確認] `community-tech-patterns.md` 新增「分層 Opus 大腦＋Sonnet 工人＋持久狀態」節點後，記者請主編轉知功能記者評估 `official-community-gap.md` 產品化矩陣是否新增列，功能記者本次僅同步了 v2.1.232 對應列，未評估此提案，待下次 ingest 或 lint 補做
+
+**降級執行說明**：雲端環境六個 `wiki-reporter-*` 自訂 subagent_type 不在本 session 可用 agent 清單中（同 2026-07-18、2026-08-08、2026-08-09、2026-08-10、2026-08-12 已知現象；本次事前已由可用 agent 清單直接確認不可用，未逐一嘗試觸發解析失敗），本次六位記者全數改用 `general-purpose` agent，並於 prompt 內指示其依序完整 Read `.claude/rules/wiki-reporter-shared.md` + 對應類別 `.claude/rules/wiki-ingest-[類別].md` + `.claude/rules/wiki-ingest-format.md` 作為角色定義後才開始工作，功能等同原生記者但非原生角色 agent，依 `docs/cloud-runbooks/daily.md` 規定於此明確標注，不靜默 fallback。
+
+**主編查證（本日直接處理，非派工）**：
+- `wiki/feature-radar.md`：新增 Claude Code v2.1.232 詳細條目＋全覽表列（依功能記者提供的草稿彙整）；同步「⚠️ 升版風險」最新版本行；「⭐ 本週推薦」現有三項皆於 4 天內輪替過（08-10），且今日無 🔥🔥🔥🔥 以上新達標候選，維持不動；「⏰ 倒數中」auto 模式生效日條目本身即為今日日期，因無新資訊確認實際已生效，保留原樣供讀者對照
+- `wiki/index.md`：六位記者皆回報「狀態變更：無」「新增頁面：無」，本日未修改
+- `data/source_attribution.jsonl`：彙整六位記者回報之來源歸因，共 35 筆 append（記者回報中缺具體 URL 者，已由主編對照 `src/gathered_items.json` 補齊正確連結）
+
+**📋 待使用者確認**：
+- [模型] 「The Conceptual Reasoning Index」（Anthropic alignment 團隊發布概念推理評測套件，HN 76 分）不落入任一模型頁觸發邊（無可用介面、不測試既有具名模型），比照 08-12 黎曼 zeta 先例未寫入任何頁面；若後續有更多同類 Anthropic 研究性公告出現，建議評估是否需要新建頁面追蹤此類「研究性能力揭露」訊號
+- [商業] 「Can I use my Outputs to train an AI model?」（support.claude.com 官方一手來源，訓練資料使用政策）不符合商業類六頁任一觸發條件，未寫入任何頁面；建議評估歸屬（可能需新建政策類頁面，或併入安全政策類）
+- [商業→安全政策，未派工] 「How Musk's toxic data empire is powering Anthropic's 'responsible' AI」（TBIJ 調查報導，訓練資料供應鏈爭議）橫跨商業與安全政策兩面向，商業記者判斷更適合安全政策記者但本次未派工給安全政策記者處理，未寫入任何頁面；需人工查證原文後決定歸屬與是否收錄
+- [社群→功能，待補做] `community-tech-patterns.md` 新增「分層 Opus 大腦＋Sonnet 工人＋持久狀態」節點（issue #56913）是否應觸發 `official-community-gap.md` 產品化矩陣新增列，尚未評估（見上方品質備註）
+- [商業] Reddit「用量疑似配合 8/19 促銷永久化而暗中調降」指控，已查證現有 `entities/pricing.md` 記錄未見對應官方承諾，`topics/anthropic-commitments.md` 亦無相關追蹤列，已以「使用者質疑／推測」語氣記入 pricing.md；建議持續觀察 8/19 前後是否有更多同類指控或官方回應
+- [沿用 08-13] 「How well do job retraining programs work?」歸屬未定（見上則 08-13 Ingest 紀錄），今日日報未再出現，暫無新進展
