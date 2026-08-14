@@ -7,8 +7,8 @@ domain: "🛠️ 工具/功能"
 last_updated: "2026-08-10"
 last_news_update: "2026-07-23"
 status_main: "active"
-days_since_news: 21
-inbound_links: 27
+days_since_news: 22
+inbound_links: 28
 attribution_count: 2
 attribution_last: "2026-07-23"
 top_source: "github"
@@ -16,7 +16,7 @@ pending_count: 2
 pending_overdue: 0
 pending_next_review: "2026-08-24"
 pending_signalled: 0
-signal: "健康"
+signal: "⚠️ 高引用但停滯"
 generated_by: "scripts/gen_wiki_frontmatter.py"
 ---
 # Managed Agents

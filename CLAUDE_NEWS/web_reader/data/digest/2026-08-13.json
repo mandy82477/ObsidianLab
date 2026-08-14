@@ -80,12 +80,6 @@
       "body": "TradingView 報導 DeepSeek 正組建團隊、以新一代 AI agent 挑戰 Anthropic 的 Claude Code。",
       "focusTags": [
         "[持續追蹤]"
-      ],
-      "sedimented": [
-        {
-          "id": "claude-code",
-          "pageType": "entity"
-        }
       ]
     },
     {
@@ -133,13 +127,7 @@
       "time": "08/12 13:49",
       "sentiment": "",
       "body": "ZDNET 撰文比較 Claude Code 與 Codex 的使用情境，分享同時使用兩者及如何取捨的心得。",
-      "focusTags": [],
-      "sedimented": [
-        {
-          "id": "claude-code",
-          "pageType": "entity"
-        }
-      ]
+      "focusTags": []
     },
     {
       "title": "If the markets reject OpenAI and Anthropic, the US should nationalize them",
@@ -172,12 +160,6 @@
       "body": "GitHub Issue 累積 480 個 👍，社群要求 claude.ai/code 支援同一 Connector 掛載多個帳號。",
       "focusTags": [
         "[社群趨勢]"
-      ],
-      "sedimented": [
-        {
-          "id": "claude-code",
-          "pageType": "entity"
-        }
       ]
     },
     {
@@ -214,13 +196,7 @@
       "time": "08/12 12:59 UTC ·",
       "sentiment": "😤",
       "body": "GitHub Issue 累積 41 個 👍，回報 Claude in Chrome 擴充功能無法連接本機 Claude Code CLI。",
-      "focusTags": [],
-      "sedimented": [
-        {
-          "id": "claude-code",
-          "pageType": "entity"
-        }
-      ]
+      "focusTags": []
     },
     {
       "title": "gamedev-skills/awesome-gamedev-agent-skills",
@@ -229,13 +205,7 @@
       "time": "08/13 11:04 UTC ·",
       "sentiment": "😊",
       "body": "社群釋出 67 個涵蓋 Godot、Unity、Unreal、Phaser、three.js 等引擎的遊戲開發 Agent Skills 合輯，採官方 SKILL.md 格式並附路由器依引擎自動載入對應技能，可於 Claude Code 等多個 agent 平台使用；GitHub 已累積 500 星。",
-      "focusTags": [],
-      "sedimented": [
-        {
-          "id": "claude-code",
-          "pageType": "entity"
-        }
-      ]
+      "focusTags": []
     },
     {
       "title": "Anthropic in Talks to Buy World Model AI Startup Decart for $6B",
@@ -264,13 +234,7 @@
       "time": "07/27 15:03 UTC ·",
       "sentiment": "🤔",
       "body": "作者在自己的 Claude Code JSONL 對話紀錄中發現一個對話過程中出現、平常介面不會顯示的 `<ip_reminder>` 標籤，並記錄了查找過程。",
-      "focusTags": [],
-      "sedimented": [
-        {
-          "id": "claude-code",
-          "pageType": "entity"
-        }
-      ]
+      "focusTags": []
     },
     {
       "title": "How I Scored 910/1000 on CCAF Claude Certification and Open-Sourced My Last Cheat Sheet",
@@ -288,13 +252,7 @@
       "time": "08/13 09:56 UTC ·",
       "sentiment": "😊",
       "body": "Reddit 使用者分享讓 Claude Code 維護一份 MISTAKES.md 記錯清單的實作心得與後續回饋。",
-      "focusTags": [],
-      "sedimented": [
-        {
-          "id": "claude-code",
-          "pageType": "entity"
-        }
-      ]
+      "focusTags": []
     }
   ],
   "billing": [],
@@ -398,38 +356,8 @@
   "preview": "Anthropic 傳洽購世界模型新創 Decart，交易金額約 60 億美元；同時多家媒體報導 Anthropic 正評估上看 2 兆美元估值、規劃創紀錄 IPO。",
   "sedimentedToday": [
     {
-      "id": "claude-code",
-      "name": "Claude Code",
-      "pageType": "entity"
-    },
-    {
-      "id": "ai-agent-safety",
-      "name": "AI Agent 安全與可靠性",
-      "pageType": "topic"
-    },
-    {
-      "id": "ai-talent-flow",
-      "name": "AI 實驗室人才流動",
-      "pageType": "topic"
-    },
-    {
-      "id": "anthropic-business",
-      "name": "Anthropic 商業健康度",
-      "pageType": "topic"
-    },
-    {
-      "id": "anthropic-government-policy",
-      "name": "Anthropic 政府與軍事政策",
-      "pageType": "topic"
-    },
-    {
       "id": "community-tech-discussions",
       "name": "社群技術討論趨勢",
-      "pageType": "topic"
-    },
-    {
-      "id": "competitor-landscape",
-      "name": "AI 編碼工具競品動態",
       "pageType": "topic"
     }
   ]

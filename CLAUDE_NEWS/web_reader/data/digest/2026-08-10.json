@@ -323,11 +323,6 @@
       "pageType": "entity"
     },
     {
-      "id": "enterprise-tool-tracker",
-      "name": "大型企業 AI 編碼工具使用追蹤",
-      "pageType": "topic"
-    },
-    {
       "id": "model-comparison",
       "name": "Claude 模型選型對照",
       "pageType": "topic"

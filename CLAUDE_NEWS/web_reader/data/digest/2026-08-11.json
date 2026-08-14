@@ -338,11 +338,5 @@
     }
   ],
   "preview": "多家媒體報導 Anthropic 為新產生的 Claude 文字輸出全面加上隱形浮水印，用於辨識 AI 生成內容，此舉與歐盟相關規範有關；報導指出標記在部分編輯後仍可能殘留。",
-  "sedimentedToday": [
-    {
-      "id": "fable-5",
-      "name": "Claude Fable 5",
-      "pageType": "entity"
-    }
-  ]
+  "sedimentedToday": []
 }

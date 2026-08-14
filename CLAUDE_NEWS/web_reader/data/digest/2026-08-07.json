@@ -57,13 +57,7 @@
       "time": "08/06 13:00",
       "sentiment": "",
       "body": "The Information 以「Dario Amodei 如何傳播 Anthropic 的信念並攪動矽谷」為題發文剖析其影響力；原文摘要未提供具體內容，僅見標題。",
-      "focusTags": [],
-      "sedimented": [
-        {
-          "id": "dario-amodei",
-          "pageType": "entity"
-        }
-      ]
+      "focusTags": []
     }
   ],
   "techUpdates": [
@@ -355,11 +349,5 @@
     }
   ],
   "preview": "Anthropic 正式證實成立內部晶片設計團隊，將為 Claude 客製化推理硬體以降低對 Nvidia GPU 的依賴；公司發言人強調仍會維持「多晶片」策略，AWS、Google、Nvidia、AMD 的硬體仍是擴展運算的核心。路透社、TechCrunch、Business Insider 等媒體同步報導。",
-  "sedimentedToday": [
-    {
-      "id": "dario-amodei",
-      "name": "Dario Amodei",
-      "pageType": "entity"
-    }
-  ]
+  "sedimentedToday": []
 }

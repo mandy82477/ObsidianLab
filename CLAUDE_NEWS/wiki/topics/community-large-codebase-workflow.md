@@ -6,8 +6,8 @@ domain: "🌐 社群"
 last_updated: "2026-08-13"
 last_news_update: "2026-08-08"
 status_main: "ongoing"
-days_since_news: 5
-inbound_links: 9
+days_since_news: 6
+inbound_links: 10
 attribution_count: 2
 attribution_last: "2026-08-05"
 top_source: "reddit"

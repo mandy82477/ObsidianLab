@@ -3,13 +3,13 @@ page: "topics/community-tech-patterns"
 kind: "topic"
 status: "monitoring"
 domain: "🌐 社群"
-last_updated: "2026-08-13"
-last_news_update: "2026-08-13"
+last_updated: "2026-08-14"
+last_news_update: "2026-08-14"
 status_main: "monitoring"
 days_since_news: 0
 inbound_links: 44
-attribution_count: 67
-attribution_last: "2026-08-13"
+attribution_count: 68
+attribution_last: "2026-08-14"
 top_source: "devto"
 pending_count: 9
 pending_overdue: 0

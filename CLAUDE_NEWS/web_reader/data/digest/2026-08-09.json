@@ -284,11 +284,6 @@
       "id": "mythos",
       "name": "Claude Mythos",
       "pageType": "entity"
-    },
-    {
-      "id": "official-community-gap",
-      "name": "官方功能 vs 社群痛點缺口分析",
-      "pageType": "topic"
     }
   ]
 }
