@@ -468,10 +468,10 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 
 - **揭露來源**：Endor Labs（AI SAST 引擎自動發現，2026-07-01；https://www.endorlabs.com/learn/endor-labs-ai-sast-finds-zero-day-cve-2026-55407-buffa）；HN score 5
 - **漏洞描述**：Anthropic Rust protobuf 函式庫 buffa 的 unknown-field decoder 實作存在缺陷，攻擊者可透過構造特定 wire data 觸發約 22 倍記憶體放大，最終導致 OOM（Out-of-Memory）崩潰，實現對服務的 DoS（拒絕服務）攻擊
-- **漏洞生命週期**：由 Endor Labs AI SAST 引擎首次發現（zero-day），已獲 CVE 編號 CVE-2026-55407；修補狀態（2026-07-01 揭露，至今無後續報導確認是否已修補）
-- **嚴重程度**：DoS 類漏洞，嚴重度低於 RCE/身份繞過；但若 buffa 用於 Anthropic 生產環境 protobuf 解碼路徑，大規模攻擊可導致服務不可用
+- **漏洞生命週期**：由 Endor Labs AI SAST 引擎首次發現（zero-day），已獲 CVE 編號 CVE-2026-55407；**✅ 2026-08-10 查證：已修補於 buffa 與 connectrpc 0.8.0**，加入可設定的單訊息 unknown-field 數量上限（預設 100 萬欄，開銷上限約 40 MB），受影響為 0.8.0 之前版本
+- **嚴重程度**：DoS 類漏洞，CVSS 4.0 評 6.3（Moderate），嚴重度低於 RCE/身份繞過；預設 `preserve_unknown_fields=true` 者受影響
 - **意義**：此漏洞由 AI SAST（靜態應用安全測試）工具自動發現，延續 Project Glasswing 所示的「AI 加速漏洞發現」趨勢，同時也是 Anthropic 自身 Rust 工具鏈的供應鏈安全問題首次公開披露
-- **可信度評估**：Endor Labs 為資安廠商，CVE 機制已為官方確認管道；HN score 5 顯示熱度有限；修補時程與影響範圍無 Anthropic 官方公告（2026-07-01 揭露，至今無後續報導）
+- **可信度評估**：Endor Labs 為資安廠商，CVE 機制已為官方確認管道；HN score 5 顯示熱度有限；修補版本已於 2026-08-10 查證確認（見上），與「## 未修補風險現況」外的已結案事件一致
 
 ### Claude Code Prompt Injection 完整接管：乾淨 GitHub Repo 向量多媒體確認（2026-06-30 新增）
 
@@ -921,4 +921,4 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 ### 2026-06-02
 - **[供應鏈攻擊] 637 npm 套件植入 Claude Code SessionStart Hook**：2026-05-19 攻擊（39 分鐘內 323 套件受害）的完整分析發布；惡意程式具體利用 Claude Code hooks 機制，在每次 Claude Code 啟動時執行任意指令；是 Claude Code hooks 系統首次出現在真實供應鏈攻擊中（dev.to 報告）
 - **[安全修復] v2.1.160 shell startup file 寫入提示**：修復 Claude Code 可在未提示的情況下寫入 `.zshenv`、`.zlogin`、`.bash_login`、`~/.config/git/` 的安全漏洞；先前版本可能導致惡意指令在 shell 啟動時自動執行
-- **[安全漏洞] Claude Code Flaw Exposes Repositories**：Let's Data Science 報導 Claude Code 存在可暴露 repository 的安全漏洞（2026-06-02 指控，至今無後續——查核近 14 天日報與該來源後續報導，未見技術細節或修補公告）
+- **[安全漏洞] Claude Code Flaw Exposes Repositories**：Let's Data Science 報導 Claude Code 存在可暴露 repository 的安全漏洞（2026-06-02 指控，已掃日報至 2026-08-14 無後續；官方頁面未查證）
