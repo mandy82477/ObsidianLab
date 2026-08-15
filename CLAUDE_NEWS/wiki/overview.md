@@ -21,7 +21,7 @@
 
 **社群多 agent 協作與大型 codebase 工作流持續深化**：規格驅動開發（Spec-Driven Development）從「醞釀中」升格為第七條成形趨勢（opsx／ANMA／ISO 29148／ospec／smart-ralph 五個獨立來源跨 54 天達門檻）；multi-agent 可觀測性儀表板化（前週新增趨勢六）持續有新實作加入。詳見 [[topics/community-pattern-trends]]、[[topics/community-tech-patterns]]。
 
-**Samsung 疑似採用 Claude 於晶片設計（未經證實）**：報導使用「reportedly」措辭，已以 ❓ 未確認狀態記入企業工具追蹤，待後續證實。詳見 [[topics/enterprise-tool-tracker]]。
+**Samsung 採用 Claude Code 於晶片設計已獲具名報導（2026-08-15 更新）**：TechSpot 與 Tech My Money 同期報導 Samsung 表示 Claude Code 可把晶片設計工作從數週縮短到數天（另一報導的數字為驗證從一個月縮到兩天），同時明言它仍會犯嚴重錯誤；企業工具追蹤已由 ❓ 未確認轉為 ✅ 使用中。兩則皆為媒體轉述而非 Samsung 官方發布。詳見 [[topics/enterprise-tool-tracker]]。
 
 ---
 

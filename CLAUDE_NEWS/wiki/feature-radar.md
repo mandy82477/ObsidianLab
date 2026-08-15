@@ -4,23 +4,23 @@
 僅收錄官方 changelog、release note 或官方公告來源；社群工具見 [[topics/community-tech-tools]]。
 每日更新：新增功能、更新熱度、補充社群回饋。
 
-**最後更新：** 2026-08-14
+**最後更新：** 2026-08-15
 
 ---
 
 ## ⭐ 本週推薦
 
+- **Claude Code Auto 模式已預設化**（熱度 🔥🔥🔥🔥🔥）：8/14 起正式生效，成為 Pro/Max/Team 方案預設權限模式並取代手動確認流程，分類器 token 用量免收費；**依賴手動確認做安全把關者請立即確認自身設定是否要主動關閉**——媒體已發 PSA 提醒
 - **Claude Opus 5**（熱度 🔥🔥🔥🔥🔥）：2026-07-25 正式發布，編碼與知識工作評測逼近 Fable 5、官方稱定價為其一半，現為 Claude Max 新預設模型、Claude Pro 最強模型，適合日常 agentic 使用與知識工作任務
 - **Claude Code 跨 session 訊息互通**（熱度 🔥🔥🔥🔥）：2026-08-08 官方文件確認（需 v2.1.224+、macOS/Linux），用 `ListAgents`+`SendMessage` 跨 session 傳訊；已在平行跑多個 session 的使用者可直接試用
-- **Claude Code Auto 模式 8/14 起預設化**（熱度 🔥🔥🔥🔥🔥）：2026-08-14 起成為 Pro/Max/Team 方案預設權限模式，取代手動確認流程，即日起分類器 token 用量免收費；依賴手動確認做安全把關者應在生效日前確認是否要主動關閉
 
-> 本週輪替：2026-08-10（Auto 模式熱度因官方部落格正式確認＋89%/13.6% 研究數據由 🔥🔥🔥🔥 升至 🔥🔥🔥🔥🔥，維持推薦；語音模式 Opus／Sonnet 選擇、Reflect with Claude 因今日無新熱度異動，續未進入候選池）。
+> 本週輪替：2026-08-15（Auto 模式狀態由「尚未生效」轉為已生效並升至首位，推薦文字改為生效後的行動；三條候選皆在 30 天時間閘內，無更新且達標的替補，名單不變）。
 
 ---
 
 ## ⚠️ 升版風險
 
-**最新版本：** v2.1.232（2026-08-13，Subagent forking 預設開啟：帶 `subagent_type: "fork"` 的 subagent 現在預設繼承完整對話與 prompt cache，互動 session 中非 teammate 的 agent 派工行為亦有相應調整，官方 changelog 原文截斷、細節未知）。前一版 v2.1.231（08-13）為 bug fix（修復 MCP OAuth 登入失敗問題）。最後一次重大 breaking change 仍為 v2.1.212／v2.1.215（見下表）；另有一項於 8/14 已生效的 breaking change（auto 模式預設化，已對 Pro/Max/Team 上線，詳見 [[entities/claude-code]] 現況）。
+**最新版本：** v2.1.233（2026-08-14，`--worktree` 旗標與 `claude agents` 視圖新增 GitLab merge request URL 支援、MR 顯示為 `!N`；另新增選用的 `forward_user_identity` apps gateway 設定，官方未說明其使用情境）。前一版 v2.1.232（08-13）為 Subagent forking 預設開啟。最後一次重大 breaking change 仍為 v2.1.212／v2.1.215（見下表）；另有一項於 8/14 已生效的 breaking change（auto 模式預設化，已對 Pro/Max/Team 上線，詳見 [[entities/claude-code]] 現況）。
 
 | 風險 | 嚴重度 | 說明 |
 |------|--------|------|
@@ -63,8 +63,9 @@
 
 | 功能 | 發布日期 | 熱度 | 試用價值 | 狀態 |
 |------|----------|------|----------|------|
+| **Claude Code v2.1.233**（`--worktree`／`claude agents` 視圖新增 GitLab MR URL 支援，MR 顯示為 `!N`；另有 opt-in `forward_user_identity` apps gateway 設定） | 2026-08-14 | 🔥🔥 | ⚡ 有條件推薦 | 正式發布 |
+| **Claude Code Auto 模式預設化**（⚠️ Breaking change：8/14 起 auto 成為 Pro／Max／Team 預設權限模式，取代手動確認流程；即日起免收分類器 token 費；Enterprise 與 API／雲端平台仍選用制） | 2026-08-14 生效（08-07 公告，08-10 官方部落格確認） | 🔥🔥🔥🔥🔥 | ⚡ 有條件推薦 | 正式發布 |
 | **Claude Code 跨 session 訊息互通**（需 v2.1.224+、macOS／Linux，`ListAgents` 探索可連線 session、`SendMessage` 指定名稱傳訊，亦適用 subagent 與 team 隊友） | 2026-08-08 | 🔥🔥🔥🔥 | ⚡ 有條件推薦 | 正式發布 |
-| **Claude Code Auto 模式預設化**（⚠️ Breaking change：8/14 起 auto 成為 Pro／Max／Team 預設權限模式，取代手動確認流程；即日起免收分類器 token 費；Enterprise 與 API／雲端平台仍選用制） | 2026-08-14 生效（08-07 公告，08-10 官方部落格確認） | 🔥🔥🔥🔥🔥 | ⚡ 有條件推薦 | 官方公告（尚未生效） |
 | **Claude Code v2.1.232**（Subagent forking 預設開啟，`subagent_type: "fork"` 現繼承完整對話與 prompt cache；互動 session 非 teammate agent 派工行為亦調整，原文截斷） | 2026-08-13 | 🔥🔥 | ⚡ 有條件推薦 | 正式發布 |
 | **Claude Code v2.1.224**（新增 `claude self-hosted-runner`，可將自有機器或容器變成 Claude Code web／mobile／desktop session 執行環境，Team／Enterprise 適用） | 2026-08-07 | 🔥🔥 | ⚡ 有條件推薦 | 正式發布 |
 | **API Inference Hooks**（Enterprise 組織 beta，claude.ai／Cowork／Claude Code 上受管治 prompt 可導向企業自有 AI 安全伺服器） | 2026-08-05 | 🔥🔥 | ⏳ 觀望 | Beta（Enterprise） |
@@ -144,14 +145,33 @@
 
 ## 🆕 最新功能（2026-08）
 
-### Claude Code Auto 模式將於 8/14 起成為預設權限模式
-**發布：** 2026-08-14 生效（2026-08-07 公告，2026-08-10 官方部落格正式宣布並補充免費措施） | **熱度：** 🔥🔥🔥🔥🔥 | **試用價值：** ⚡ 有條件推薦 | **狀態：** 官方公告（尚未生效，⚠️ Breaking change，適用 Pro/Max/Team；Enterprise 與 API/雲端平台仍選用制，預計約一個月後跟進）
+### Claude Code v2.1.233 — GitLab merge request 支援
+**發布：** 2026-08-14（v2.1.233） | **熱度：** 🔥🔥 | **試用價值：** ⚡ 有條件推薦 | **狀態：** 正式發布
+
+**是什麼：** `--worktree` 旗標與 `claude agents` 視圖新增 GitLab merge request URL 支援（MR 顯示為 `!N`）；同版另新增選用（opt-in）的 `forward_user_identity` apps gateway 設定。
+
+**為何熱：** 官方 GitHub Release 首發。GitLab 整合是社群長期高互動的功能請求（issue #12346，47 則留言、131 個讚），本次為 worktree／agents 視圖層級的部分回應，尚未涵蓋完整 repo 連接與行動裝置存取。
+
+**現在要試嗎：** 已用 `--worktree` 搭配 GitLab MR 的使用者可直接受益；等完整 GitLab 整合（repo 連接、行動存取）的人仍須再等。
+
+**快速上手：**
+```
+claude update   # 升級至 v2.1.233 或以上
+claude --worktree <GitLab-MR-URL>
+```
+
+**注意事項：** 官方 release notes 未說明 `forward_user_identity` apps gateway 設定的使用情境與影響範圍；GitLab 支援目前僅限 worktree／agents 視圖顯示 MR，非完整整合。
+
+---
+
+### Claude Code Auto 模式已於 8/14 起成為預設權限模式
+**發布：** 2026-08-14 生效（2026-08-07 公告，2026-08-10 官方部落格正式宣布並補充免費措施） | **熱度：** 🔥🔥🔥🔥🔥 | **試用價值：** ⚡ 有條件推薦 | **狀態：** 正式發布（8/14 已生效，⚠️ Breaking change，適用 Pro/Max/Team；Enterprise 與 API/雲端平台仍選用制，預計約一個月後跟進）
 
 **是什麼：** Anthropic 官方部落格正式宣布 Claude Code 將於 2026 年 8 月 14 日起，把「auto 模式」設為 Pro、Max、Team 方案新 session 的預設權限模式，取代目前預設的手動確認流程（已自行設定過個人預設或釘選預設者不受影響，會收到一次性提示詢問是否切換）；Enterprise 與 API／雲端平台目前仍維持選用制，約一個月後跟進。同時宣布**即日起（2026-08-10）不再對 auto 分類器產生的額外 token 用量收費**——此前分類器每次工具呼叫會消耗少量額外 token。
 
 **為何熱：** Anthropic 官方部落格首發（經 Hacker News 轉發，227 分），是繼 08-07 官方公告、08-09 產品負責人 Cat Wu 受訪（the newstack.io）表示「We've pretty much mitigated every attack [...] for the main categories of risks that we're concerned about」後的正式書面確認；Reddit 週熱門貼文引述對 1,053 名付費測試者的對照研究，指 auto 模式攔下 89% 危險指令、人工逐一審核僅攔下 13.6%，為此前僅憑官方單方陳述補上量化佐證，熱度由 🔥🔥🔥🔥 升至 🔥🔥🔥🔥🔥。
 
-**現在要試嗎：** 屬即將生效的預設行為變更，非選用功能；依賴目前手動確認流程做安全把關的使用者，應在 8/14 前確認是否要主動關閉 auto 模式（設定方式待官方文件補齊）。分類器 token 免費化降低了「多花錢換安全」的疑慮，一般使用者可持觀望態度等生效日到來。
+**現在要試嗎：** 已生效，不是選用功能——2026-08-15 多家媒體（9to5Mac 等）發 PSA 提醒使用者確認自身設定。依賴手動確認流程做安全把關的使用者**現在就該檢查權限模式是否已被切換**；分類器 token 免費化降低了「多花錢換安全」的疑慮，一般使用者可直接沿用新預設。
 
 **注意事項：** Reddit 89%/13.6% 研究樣本為單一社群來源引述，尚待官方或第三方正式發布評測數據佐證（Cat Wu 稱「未來數週內」公布）；具體關閉/設定方式待官方 changelog 或部落格正式公告確認。
 

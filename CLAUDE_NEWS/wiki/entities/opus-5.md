@@ -4,13 +4,13 @@ kind: "entity"
 type: "model"
 status: "active"
 domain: "🤖 模型"
-last_updated: "2026-08-12"
-last_news_update: "2026-08-12"
+last_updated: "2026-08-15"
+last_news_update: "2026-08-15"
 status_main: "active"
-days_since_news: 2
+days_since_news: 0
 inbound_links: 25
-attribution_count: 14
-attribution_last: "2026-08-12"
+attribution_count: 18
+attribution_last: "2026-08-15"
 top_source: "google-news"
 pending_count: 2
 pending_overdue: 0
@@ -26,16 +26,18 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 **領域：** 🤖 模型
 **首次出現：** 2026-07-25
 **最後更新：** 2026-08-15
-**最後新聞更新：** 2026-08-12
+**最後新聞更新：** 2026-08-15
 
-> **最新動態**（2026-08-08）
-> 上線兩週後社群回饋轉趨分歧：08-07 Reddit 使用者稱重新檢視 Opus 5 的 reasoning trace 後改變原先正面看法（方向不明，弱訊號）；08-08 另有使用者提醒以 Opus 5 搭配 WebFetch 做研究時，發現其會捏造看似真實的統計數字與引述，籲注意人工查核（單一回報，未經證實）。核心定位、定價（$5/$25，官方確認為 Fable 5 一半）與第三方基準驗證「tops」措辭屬實（Artificial Analysis Intelligence Index 60.7% 領先 Fable 5 59.9%）等發布首週細節見下方「現況」；08-11 另有 SitePoint 效能評測整理待查證（見「歷史記錄」）。
+> **最新動態**（2026-08-14）
+> Anthropic 發布八月風險報告，首度揭露尚未發布的「Model 2」，官方稱目前無釋出更強模型的計畫（對齊疑慮完整脈絡見 [[topics/ai-agent-safety]]）。社群面延續上線以來的分歧回饋：08-13 Reddit 週熱門貼文稱已依官方建議調整、試過各種全域 CLAUDE.md 設定，仍無法讓 Opus 5 的行為符合期待（詳見「歷史記錄」）。
 
 ---
 
 ## 現況
 
-**2026-08-08 最新**：上線兩週後社群回饋轉趨分歧——08-07 Reddit 使用者重新檢視 Opus 5 的 reasoning trace 後改變原先正面看法（方向不明，弱訊號，[Reddit](https://www.reddit.com/r/ClaudeAI/comments/1vibkny/i_defended_opus_5_and_then_i_realised_otherwise/)，週熱門，2026-08-07）；08-08 另有使用者提醒以 Opus 5 搭配 WebFetch 做研究時，發現其會捏造看似真實的統計數字與引述，籲注意人工查核（單一回報，未經證實，[Reddit](https://www.reddit.com/r/ClaudeAI/comments/1vim8b7/psa_be_careful_letting_claude_use_webfetch_for/)，週熱門，2026-08-08）。08-11 另有 SitePoint 開發者效能評測整理待查證（見「歷史記錄」）。
+**2026-08-14 最新**：Anthropic 發布八月風險報告（部分遮蔽 PDF），內含尚未發布的「Model 2」，Axios 報導 Anthropic 認為 AI 風險上升、**目前無釋出更強 Model 2 的計畫**；報告自陳「相信內部 AI R&D 明顯比沒有 AI 協助時快，但尚未達兩倍（且量測困難）」（[Hacker News](https://www-cdn.anthropic.com/f61d49fa5596956a5dec75fea0e973bf6a6a8378/Redacted%20Risk%20Report%20August%202026%20.pdf)，55 分；[SiliconANGLE](https://siliconangle.com/2026/08/14/anthropic-details-unreleased-model-2-new-alignment-concerns-latest-ai-risk-report/)；[Axios](https://www.axios.com/2026/08/14/anthropic-model-2-ai-risk)，2026-08-14）。對齊疑慮那一面完整脈絡見 [[topics/ai-agent-safety]]，本頁僅記模型陣容面（Model 2 存在但不釋出）。
+
+社群面延續上線以來的分歧回饋：08-13 Reddit 週熱門貼文「Opus 5 is actually almost rage-inducing to use」稱已依官方建議調整、試過各種全域 CLAUDE.md 設定，仍無法讓 Opus 5 的行為符合期待（單一回報，無具體案例細節，[Reddit](https://www.reddit.com/r/ClaudeAI/comments/1vn8ml6/opus_5_is_actually_almost_rageinducing_to_use/)，週熱門，2026-08-13），呼應 08-07（reasoning trace 觀感轉折）與 08-08（WebFetch 捏造數字提醒）已記錄的社群觀感分歧，詳見「歷史記錄」。
 
 Anthropic 於 2026-07-25 正式發布 Claude Opus 5，是繼 2026-07-13 起多篇媒體「Opus 5 傳聞」報導後的官方證實版本（詳見 [[entities/opus-4-8]] 「下一代模型觀察」歷史記錄）。官方定位此模型為 thoughtful and proactive，設計目標是**日常可用**且效率優於其他模型，而非單純堆疊評測分數。
 
@@ -89,6 +91,7 @@ Anthropic 於 2026-07-25 正式發布 Claude Opus 5，是繼 2026-07-13 起多�
 - [[entities/boris-cherny]] — 提示注入抵抗力聲明來源
 - [[topics/model-comparison]] — 完整選型對照
 - [[feature-radar]] — 功能熱度追蹤
+- [[topics/ai-agent-safety]] — Model 2 對齊疑慮完整脈絡（安全政策記者維護）
 
 ## 參考來源
 
@@ -103,12 +106,14 @@ Anthropic 於 2026-07-25 正式發布 Claude Opus 5，是繼 2026-07-13 起多�
 - [官方 migration guide](https://platform.claude.com/docs/en/about-claude/models/migration-guide)（查核日 2026-07-29）
 - [Reddit：Opus 5 is not as good as i thought](https://www.reddit.com/r/ClaudeCode/comments/1var15k/opus_5_is_not_as_good_as_i_thought/)（2026-07-30，無週熱門標記，score 不可信）
 - [Reddit：I defended Opus 5 - and then I realised otherwise](https://www.reddit.com/r/ClaudeAI/comments/1vibkny/i_defended_opus_5_and_then_i_realised_otherwise/)（週熱門，2026-08-07）
-- [[news/2026-07-25]]、[[news/2026-07-26]]、[[news/2026-07-28]]、[[news/2026-07-29]]、[[news/2026-07-30]]、[[news/2026-08-07]]
+- [[news/2026-07-25]]、[[news/2026-07-26]]、[[news/2026-07-28]]、[[news/2026-07-29]]、[[news/2026-07-30]]、[[news/2026-08-07]]、[[news/2026-08-15]]
 
 ## 歷史記錄
 
 | 日期 | 事件 |
 |------|------|
+| 2026-08-14 | Anthropic 發布八月風險報告（部分遮蔽 PDF），首度揭露尚未發布的「Model 2」，Axios 報導官方稱目前無釋出更強模型的計畫；報告自陳內部 AI R&D 速度尚未達到「無 AI 協助情況下的兩倍」（自陳量測困難）。對齊疑慮面完整脈絡見安全政策記者對應頁面 [[topics/ai-agent-safety]]，本頁僅記模型陣容面（[Hacker News](https://www-cdn.anthropic.com/f61d49fa5596956a5dec75fea0e973bf6a6a8378/Redacted%20Risk%20Report%20August%202026%20.pdf)，55 分；[SiliconANGLE](https://siliconangle.com/2026/08/14/anthropic-details-unreleased-model-2-new-alignment-concerns-latest-ai-risk-report/)；[Axios](https://www.axios.com/2026/08/14/anthropic-model-2-ai-risk)，2026-08-14） |
+| 2026-08-13 | Reddit r/ClaudeAI 週熱門貼文「Opus 5 is actually almost rage-inducing to use」：作者稱已依官方建議調整並試過各種全域 CLAUDE.md 設定，仍無法讓 Opus 5 的行為符合期待；單一使用者回報，無具體案例或量化數字佐證，延續 08-07～08-08 已記錄的社群觀感分歧（[Reddit](https://www.reddit.com/r/ClaudeAI/comments/1vn8ml6/opus_5_is_actually_almost_rageinducing_to_use/)，週熱門，2026-08-13） |
 | 2026-08-11 | SitePoint 刊出針對開發者的 Claude Opus 5 效能評測整理，原文僅提供標題層級資訊。❓ **待查證**（標 2026-08-11｜查 SitePoint、效能評測｜複 2026-08-25）｜**SitePoint 開發者效能評測具體數據**：未見量化基準、測試任務或對比對象，內容待查證（Google News/SitePoint，2026-08-11） |
 | 2026-08-08 | Reddit r/ClaudeAI 週熱門貼文「PSA: Be careful letting Claude use WebFetch for research」：作者請 Opus 5 研究 AI agent 記憶架構時，發現其以 WebFetch 生成看似真實、實則捏造的具體統計數字、百分比與引述，提醒他人使用 WebFetch 做研究時需小心查核；單一使用者回報、無具體案例引文或跨來源佐證，列為待社群驗證的可靠性觀察，非量化評測結論（[Reddit](https://www.reddit.com/r/ClaudeAI/comments/1vim8b7/psa_be_careful_letting_claude_use_webfetch_for/)，週熱門，2026-08-08） |
 | 2026-08-07 | Reddit r/ClaudeAI 週熱門貼文「I defended Opus 5 - and then I realised otherwise」稱作者原本認為 Opus 5 是目前最「奇特獨特」的模型、稱讚其思考過程（reasoning trace）而非單純能力，深入分析其思考過程後改變了看法；原文於「actually reading through and analysing it's thought process I find fascinati...」處截斷，具體轉折方向（趨向更正面或更負面）不可考。與 07-29～08-04 已記錄的「過度自信」「不如跑分預期」「令人挫折」負向回饋屬同一波「上線兩週後社群重新評估」現象，惟本則聚焦 reasoning trace 角度且結論方向不明，暫列觀察、不代入評測結論（[Reddit](https://www.reddit.com/r/ClaudeAI/comments/1vibkny/i_defended_opus_5_and_then_i_realised_otherwise/)，週熱門，2026-08-07） |

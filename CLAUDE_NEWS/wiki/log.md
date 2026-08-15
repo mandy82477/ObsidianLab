@@ -3888,3 +3888,18 @@
   8. **雲端 push 撞衝突「先重試再停泊」**：查證後發現 `news-pipeline-steps.md` Step 5 早已有 pull --rebase 重試 2 次的規定，08-11 是真衝突非缺重試——**第一輪 review 此條誤判，不需改動**
 - **今日事故（review 時順帶發現）**：08-15 GH Actions `daily-gather` 於 10:28 UTC 在「Gather news」步驟失敗（無 token 讀不到 log；本機 21:42 台北排程抓料成功 62 則，疑為暫時性），雲端 routine 13:05 UTC 因 gathered_items 仍為 08-14 而正確中止 → **08-15 日報尚未產出**，待本機補跑 `/news-pipeline`（watchdog 15:00 UTC 亦會推播）
 - **未動手（需使用者）**：Reddit OAuth＋GitHub PAT 兩組憑證（一次解三個來源的分數可信度、GitHub Search 限流，逾期 workaround 中槓桿最大）
+
+## 2026-08-15 Ingest
+
+- 來源日報：[[news/2026-08-15]]（本機補跑；GH Actions `daily-gather` 10:28 UTC 於 Gather 步驟以 exit 134/SIGABRT 失敗，本機 21:42 台北排程抓料成功 62 則，雲端 routine 因 gathered_items 仍為 08-14 而正確中止）
+- 更新頁面：entities/opus-5、entities/fable-5、entities/claude-code、topics/official-community-gap、topics/anthropic-business、topics/enterprise-tool-tracker、entities/pricing、topics/competitor-landscape、topics/anthropic-government-policy、topics/recursive-self-improvement、topics/community-tech-patterns、topics/community-tech-discussions、topics/code-quality-decline、feature-radar、overview
+- 新增頁面：無
+- 摘要：浮水印補上官方機制說明與第三方偵測 API（跨 3 來源）；八月風險報告揭露未發布的 Model 2 與新對齊疑慮，官方稱無釋出計畫，報告自陳內部 AI R&D「明顯更快但尚未達兩倍」；Reuters 獨家指 IPO 估值繫於 2028 年 1,900–2,000 億美元營收預測；Samsung 晶片設計採用由 ❓ 轉為具名報導證實（同時明言仍會犯嚴重錯誤）；Auto 模式 8/14 如期生效，媒體發 PSA。
+- 呈現品質：全部通過（人物記者本輪無頁面更新）
+- 未收錄決策（主編判定）：
+  - Cami Clark（Dario Amodei 配偶）Epstein 相關報導兩則（Forbes、NY Post）——內容為私人個人過往私生活，與 Claude/Anthropic 技術、產品、政策、生態無直接關聯，依專案 `CLAUDE.md`「不收錄」條款判定不收，未在任何頁面留痕
+  - 「8 AI Coding Models Ranked」（mshale.com，專頁定向 competitor-landscape）——來源網域可信度存疑，文中「Opus 4.6」與本站陣容紀錄（4.7／4.8／5）不符，商業記者依「從嚴判斷、寧可不收」處理
+  - Elon Musk 承認低估 Anthropic（Motley Fool）——投資評論媒體二手轉述，原始出處／日期／措辭均不明，人物記者判定證據不足不建檔
+  - anthropic-commitments 本輪不動：今日事件不屬「承諾修復／承諾政策／明確拒絕／兌現先前承諾」性質，追蹤中五項均無官方新動作（Auto 模式如期生效屬產品發布時程，不列入承諾追蹤以免稀釋該頁語意）
+- 品質備註：[主編] 派工模板落後規則檔——社群記者派工要求「今日順手改寫 community-large-codebase-workflow 主線敘事」，但 `.claude/rules/wiki-ingest-community.md` 今日改版後已明定日更只在 patterns 節點標 `**主線：**` tag、主線縫合改週更。記者正確依規則拒絕執行並回報矛盾，非記者疏失；`.claude/commands/wiki-ingest.md` 派工範本無此指示，是主編臨場加寫，後續派工不得再加。
+- 主編待辦（轉主編層 web 查證，非記者可為）：Reddit 質疑 Opus 5 與 Fable 5 共用同一週用量池、牴觸官方「Fable 5 佔 50%」設計，商業記者已在 `entities/pricing` 以待查證方式記錄；需查 support.claude.com 官方說明中心確認配額池規則，屬 `/wiki-lint` 5c 範圍。

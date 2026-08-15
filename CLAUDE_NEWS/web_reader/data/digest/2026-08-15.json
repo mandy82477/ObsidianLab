@@ -1,0 +1,529 @@
+{
+  "date": "2026-08-15",
+  "generatedAt": "2026-08-15 15:10 UTC",
+  "articleCount": 62,
+  "sourceCount": "13/13",
+  "bulletin": "",
+  "topStories": [
+    {
+      "title": "Maximizing the value of your Claude Code sessions",
+      "url": "https://claude.com/blog/maximizing-the-value-of-your-claude-code-sessions",
+      "source": "Hacker News",
+      "time": "08/14 16:15",
+      "sentiment": "",
+      "body": "Anthropic 官方部落格談如何讓每個 token 發揮最大價值，具體建議包含任務之間 `/clear`；HN 268 分，是今日互動量最高的項目。",
+      "focusTags": [],
+      "sedimented": [
+        {
+          "id": "claude-code",
+          "pageType": "entity"
+        }
+      ]
+    },
+    {
+      "title": "Anthropic Risk August 2026 [pdf]",
+      "url": "https://www-cdn.anthropic.com/f61d49fa5596956a5dec75fea0e973bf6a6a8378/Redacted%20Risk%20Report%20August%202026%20.pdf",
+      "source": "Hacker News",
+      "time": "08/14 19:32",
+      "sentiment": "",
+      "body": "官方風險報告原文（部分遮蔽）。HN 討論引述其中一句自評：內部 AI R&D 「明顯比沒有 AI 協助時快，但尚未達兩倍（且我們不確定、量測困難）」。HN 55 分。",
+      "focusTags": [
+        "[重大事件]"
+      ]
+    },
+    {
+      "title": "Show HN: Graft – Claude Code hooks that cut grep tokens by 42%",
+      "url": "https://github.com/NanoNets/Graft",
+      "source": "Hacker News",
+      "time": "08/14 15:22",
+      "sentiment": "",
+      "body": "以 Claude Code hooks 削減 grep 產生的 token，宣稱降幅 42%。HN 39 分、跨 2 來源；討論串中有評論質疑其 README 的 benchmark 段落本身疑似 AI 生成、難以判斷宣稱是否成立。",
+      "focusTags": [],
+      "sedimented": [
+        {
+          "id": "claude-code",
+          "pageType": "entity"
+        }
+      ]
+    }
+  ],
+  "techUpdates": [
+    {
+      "title": "[anthropics/claude-code] v2.1.233",
+      "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.233",
+      "source": "GitHub / anthropics/claude-code",
+      "time": "08/14 22:20",
+      "sentiment": "",
+      "body": "`--worktree` 旗標與 `claude agents` 檢視新增 GitLab merge request URL 支援（MR 顯示為 `!N`）；另新增可選用的 `forward_user_identity` apps gateway 設定。",
+      "focusTags": []
+    },
+    {
+      "title": "[Status] Service disruption on Claude services",
+      "url": "https://status.claude.com/incidents/005ym4vzrq2w",
+      "source": "Anthropic Status",
+      "time": "08/14 21:58",
+      "sentiment": "",
+      "body": "影響 Claude API、Claude Code 與 Claude Cowork，影響區間 20:14–20:38 UTC，已解決。",
+      "focusTags": [],
+      "sedimented": [
+        {
+          "id": "claude-code",
+          "pageType": "entity"
+        }
+      ]
+    },
+    {
+      "title": "[Status] Elevated errors for Claude Fable 5",
+      "url": "https://status.claude.com/incidents/hdynq1pc0fn8",
+      "source": "Anthropic Status",
+      "time": "08/15 00:27",
+      "sentiment": "",
+      "body": "Fable 5 錯誤率升高，影響區間 08-14 20:00 至 08-15 00:11 UTC，已解決。",
+      "focusTags": [],
+      "sedimented": [
+        {
+          "id": "fable-5",
+          "pageType": "entity"
+        }
+      ]
+    }
+  ],
+  "mediaReports": [
+    {
+      "title": "EXCLUSIVE: Anthropic IPO valuation hinges on $190-200 billion 2028 revenue forecast, sources say",
+      "url": "https://www.reuters.com/business/anthropic-ipo-valuation-hinges-190-200-billion-2028-revenue-forecast-sources-say-2026-0",
+      "source": "Google News / Reuters",
+      "time": "08/15 00:12",
+      "sentiment": "",
+      "body": "Reuters 獨家：Anthropic IPO 估值取決於 2028 年 1,900–2,000 億美元的營收預測，消息來自知情人士。",
+      "focusTags": [
+        "[重大事件]"
+      ]
+    },
+    {
+      "title": "Anthropic Revenue Surges to Over $11.5 Billion in Second Quarter",
+      "url": "https://finance.yahoo.com/technology/ai/articles/anthropic-revenue-surges-over-11-210857853.html",
+      "source": "Google News / Yahoo Finance",
+      "time": "08/14 21:08",
+      "sentiment": "",
+      "body": "報導稱 Anthropic 第二季營收超過 115 億美元。",
+      "focusTags": [
+        "[重大事件]"
+      ]
+    },
+    {
+      "title": "Anthropic details unreleased Model 2, new alignment concerns in latest AI risk report",
+      "url": "https://siliconangle.com/2026/08/14/anthropic-details-unreleased-model-2-new-alignment-concerns-latest-ai-risk-report/",
+      "source": "Google News / SiliconANGLE",
+      "time": "08/14 23:31",
+      "sentiment": "",
+      "body": "報導最新 AI 風險報告揭露尚未發布的 Model 2 與新的對齊疑慮。",
+      "focusTags": [
+        "[重大事件]"
+      ]
+    },
+    {
+      "title": "Anthropic sees AI risks rising, no plan to release stronger \"Model 2\"",
+      "url": "https://www.axios.com/2026/08/14/anthropic-model-2-ai-risk",
+      "source": "Google News / Axios",
+      "time": "08/14 18:45",
+      "sentiment": "",
+      "body": "Axios 報導 Anthropic 認為 AI 風險上升，目前無釋出更強 Model 2 的計畫。",
+      "focusTags": [
+        "[重大事件]"
+      ]
+    },
+    {
+      "title": "Anthropic announces watermark detection API that will let third parties detect Claude's AI texts",
+      "url": "https://the-decoder.com/anthropic-announces-watermark-detection-api-that-will-let-third-parties-detect-claudes-ai-texts/",
+      "source": "Google News / the-decoder.com",
+      "time": "08/14 21:34",
+      "sentiment": "",
+      "body": "Anthropic 宣布浮水印偵測 API，讓第三方能判斷文字是否出自 Claude。",
+      "focusTags": [
+        "[重大事件]"
+      ]
+    },
+    {
+      "title": "How Anthropic plans to watermark Claude's AI-generated text",
+      "url": "https://www.bleepingcomputer.com/news/artificial-intelligence/how-anthropic-plans-to-watermark-claudes-ai-generated-text",
+      "source": "Google News / BleepingComputer",
+      "time": "08/14 23:24",
+      "sentiment": "",
+      "body": "資安媒體整理浮水印機制與適用範圍。",
+      "focusTags": [
+        "[重大事件]"
+      ]
+    },
+    {
+      "title": "Anthropic's Claude Will Now Add Invisible Watermarks to Text, Image Outputs",
+      "url": "https://www.pcmag.com/news/anthropics-claude-will-now-add-invisible-watermarks-to-text-image-outputs",
+      "source": "Google News / PCMag",
+      "time": "08/14 19:30",
+      "sentiment": "",
+      "body": "報導浮水印將同時套用於文字與圖片輸出。",
+      "focusTags": []
+    },
+    {
+      "title": "Samsung says Claude Code can cut chip design work from weeks to days, but it still makes serious mistakes",
+      "url": "https://www.techspot.com/news/113487-samsung-claude-code-can-cut-chip-design-work.html",
+      "source": "Google News / TechSpot",
+      "time": "08/15 13:01",
+      "sentiment": "",
+      "body": "Samsung 表示 Claude Code 能把晶片設計工作從數週壓縮到數天，但同時指出它仍會犯嚴重錯誤。",
+      "focusTags": [
+        "[新工具]"
+      ],
+      "sedimented": [
+        {
+          "id": "claude-code",
+          "pageType": "entity"
+        }
+      ]
+    },
+    {
+      "title": "Samsung Claude Code Reportedly Cut Chip Verification From a Month to Two Days",
+      "url": "https://techmymoney.com/2026/08/14/samsung-claude-code-reportedly-cut-chip-verification-from-a-month-to-two-days/",
+      "source": "Google News / Tech My Money",
+      "time": "08/14 22:16",
+      "sentiment": "",
+      "body": "同一案例的另一家報導，數字為驗證階段從一個月縮短至兩天。",
+      "focusTags": [
+        "[新工具]"
+      ],
+      "sedimented": [
+        {
+          "id": "claude-code",
+          "pageType": "entity"
+        }
+      ]
+    },
+    {
+      "title": "PSA: Claude Code now enables auto mode as default, Anthropic says",
+      "url": "https://9to5mac.com/2026/08/14/psa-claude-code-enabling-auto-mode-as-default-next-week-anthropic-says/",
+      "source": "Google News / 9to5Mac",
+      "time": "08/14 18:00",
+      "sentiment": "",
+      "body": "提醒使用者 Auto 模式已成為預設，建議確認自身權限設定。",
+      "focusTags": [
+        "[持續追蹤]"
+      ],
+      "sedimented": [
+        {
+          "id": "claude-code",
+          "pageType": "entity"
+        }
+      ]
+    },
+    {
+      "title": "Anthropic At $2 Trillion: Is AI Entering Bubble Territory?",
+      "url": "https://www.forbes.com/sites/ronschmelzer/2026/08/14/anthropic-at-2-trillion-is-ai-entering-bubble-territory/",
+      "source": "Google News / Forbes",
+      "time": "08/14 19:13",
+      "sentiment": "",
+      "body": "評論文章以 2 兆美元估值為切入點討論 AI 是否進入泡沫區間。",
+      "focusTags": []
+    }
+  ],
+  "discussions": [
+    {
+      "title": "Inter-session communication for multi-Claude workflows",
+      "url": "https://github.com/anthropics/claude-code/issues/24798",
+      "source": "GitHub Issues / claude-code",
+      "time": "08/15 09:26",
+      "sentiment": "🤔",
+      "body": "功能請求：讓彼此隔離的 Claude session 能直接串接專案流程、依相依性排序高階步驟；75 則留言、21 個👍。",
+      "focusTags": []
+    },
+    {
+      "title": "[BUG] Missing HCS services: vfpext - Cowork not working on Windows 11 Pro",
+      "url": "https://github.com/anthropics/claude-code/issues/74649",
+      "source": "GitHub Issues / claude-code",
+      "time": "08/14 15:55",
+      "sentiment": "😤",
+      "body": "Windows 11 Pro 上 Cowork 因缺少 HCS 服務（vfpext）無法運作；85 則留言，是今日 GitHub Issues 互動量最高者。",
+      "focusTags": []
+    },
+    {
+      "title": "[BUG] Remote Control: automatic reconnection doesn't work -- connection drops silently with no recovery",
+      "url": "https://github.com/anthropics/claude-code/issues/34255",
+      "source": "GitHub Issues / claude-code",
+      "time": "08/15 07:04",
+      "sentiment": "😤",
+      "body": "遠端控制連線中斷後不會自動重連，且斷線無提示；63 則留言、103 個👍。",
+      "focusTags": []
+    },
+    {
+      "title": "[Feature Request] Real-time steering: priority message channel for redirecting Claude mid-execution",
+      "url": "https://github.com/anthropics/claude-code/issues/30492",
+      "source": "GitHub Issues / claude-code",
+      "time": "08/14 18:46",
+      "sentiment": "🤔",
+      "body": "請求提供優先訊息通道，讓使用者能在執行途中即時導正 Claude；34 則留言、60 個👍。",
+      "focusTags": []
+    },
+    {
+      "title": "[BUG] Claude Desktop 1.1.3189 severe UI lag and mouse stutter on Windows",
+      "url": "https://github.com/anthropics/claude-code/issues/26302",
+      "source": "GitHub Issues / claude-code",
+      "time": "08/15 08:07",
+      "sentiment": "😤",
+      "body": "Windows 版桌面應用更新後出現嚴重 UI 延遲與滑鼠卡頓，回報為效能退步；46 則留言、43 個👍。",
+      "focusTags": []
+    },
+    {
+      "title": "Some Claude users are mad that Anthropic's new watermarks will catch them using it at their jobs, classes",
+      "url": "https://www.reddit.com/r/ClaudeAI/comments/1vndlg3/some_claude_users_are_mad_that_anthropics_new/",
+      "source": "Reddit / r/ClaudeAI · 週熱門",
+      "time": "08/13 15:16",
+      "sentiment": "😤",
+      "body": "週熱門貼文：部分使用者不滿浮水印會讓他們在職場與課堂上的使用被辨識出來。",
+      "focusTags": []
+    },
+    {
+      "title": "Opus 5 is actually almost rage-inducing to use.",
+      "url": "https://www.reddit.com/r/ClaudeAI/comments/1vn8ml6/opus_5_is_actually_almost_rageinducing_to_use/",
+      "source": "Reddit / r/ClaudeAI · 週熱門",
+      "time": "08/13 11:56",
+      "sentiment": "😤",
+      "body": "週熱門貼文：使用者稱已依官方建議調整並試過各種全域 CLAUDE.md 設定，仍無法讓 Opus 5 的行為符合期待。",
+      "focusTags": []
+    },
+    {
+      "title": "Why aren't businesses using Fable 5?",
+      "url": "https://www.reddit.com/r/ClaudeAI/comments/1vnj1xq/why_arent_businesses_using_fable_5/",
+      "source": "Reddit / r/ClaudeAI · 週熱門",
+      "time": "08/13 18:29",
+      "sentiment": "🤔",
+      "body": "週熱門貼文：討論企業端採用 Fable 5 的阻力何在。",
+      "focusTags": []
+    },
+    {
+      "title": "Your AI Subagents Are Lying to You: 4 Silent Failure Modes",
+      "url": "https://dev.to/__declspec/your-ai-subagents-are-lying-to-you-4-silent-failure-modes-oc4",
+      "source": "dev.to / #claudecode",
+      "time": "07/29 23:10",
+      "sentiment": "🤔",
+      "body": "第一手實作記錄：把約 317 個硬編碼色碼的 design token 清理工作切給多個並行 Claude Code subagent，歸納出四種「靜默失敗」模式。",
+      "focusTags": [],
+      "sedimented": [
+        {
+          "id": "claude-code",
+          "pageType": "entity"
+        }
+      ]
+    }
+  ],
+  "billing": [],
+  "focus": [
+    {
+      "tag": "[重大事件]",
+      "text": "Anthropic 官方說明文字浮水印的運作方式，並宣布**第三方偵測 API**——外部單位可據以判斷文字是否由 Claude 產生；本站 08-11 日報已記錄浮水印上線報導，今日補上官方機制說明與偵測管道。",
+      "ref_urls": [
+        "https://www.anthropic.com/news/claude-text-watermark",
+        "https://the-decoder.com/anthropic-announces-watermark-detection-api-that-will-let-third-parties-detect-claudes-ai-texts/",
+        "https://www.bleepingcomputer.com/news/artificial-intelligence/how-anthropic-plans-to-watermark-claudes-ai-generated-text"
+      ]
+    },
+    {
+      "tag": "[重大事件]",
+      "text": "Anthropic 發布八月風險報告，內含**尚未發布的「Model 2」**與新的對齊疑慮；官方表示目前無釋出更強 Model 2 的計畫。報告自陳「內部 AI R&D 提速明顯，但尚未達兩倍」。",
+      "ref_urls": [
+        "https://www-cdn.anthropic.com/f61d49fa5596956a5dec75fea0e973bf6a6a8378/Redacted%20Risk%20Report%20August%202026%20.pdf",
+        "https://siliconangle.com/2026/08/14/anthropic-details-unreleased-model-2-new-alignment-concerns-latest-ai-risk-report/",
+        "https://www.axios.com/2026/08/14/anthropic-model-2-ai-risk"
+      ]
+    },
+    {
+      "tag": "[重大事件]",
+      "text": "Reuters 獨家報導 Anthropic IPO 估值繫於 **2028 年 1,900–2,000 億美元營收預測**；另有報導指第二季營收超過 115 億美元。",
+      "ref_urls": [
+        "https://www.reuters.com/business/anthropic-ipo-valuation-hinges-190-200-billion-2028-revenue-forecast-sources-say-2026-0",
+        "https://finance.yahoo.com/technology/ai/articles/anthropic-revenue-surges-over-11-210857853.html"
+      ]
+    },
+    {
+      "tag": "[持續追蹤]",
+      "text": "Auto 模式如期於 8/14 起成為預設——多家媒體發 PSA 提醒使用者確認自身設定。",
+      "ref_urls": [
+        "https://9to5mac.com/2026/08/14/psa-claude-code-enabling-auto-mode-as-default-next-week-anthropic-says/"
+      ]
+    },
+    {
+      "tag": "[新工具]",
+      "text": "Samsung 表示 Claude Code 可把晶片設計工作從數週縮短到數天（一說驗證從一個月縮到兩天），**但同時指出它仍會犯嚴重錯誤**——兩家媒體同日報導，是今日少見的具名企業量化案例。",
+      "ref_urls": [
+        "https://www.techspot.com/news/113487-samsung-claude-code-can-cut-chip-design-work.html",
+        "https://techmymoney.com/2026/08/14/samsung-claude-code-reportedly-cut-chip-verification-from-a-month-to-two-days/"
+      ]
+    }
+  ],
+  "topicRadar": [
+    {
+      "title": "Study Finds Four Major AI Labs Use Incompatible Prompt Injection Metrics",
+      "url": "https://yellow.com/sacramento.html/news/four-ai-labs-incompatible-prompt-injection-metrics-study",
+      "body": "研究指四家主要 AI 實驗室的 prompt injection 量測指標互不相容，跨廠商比較因此失去基礎（→ AI Agent 安全與可靠性）",
+      "topic": "",
+      "topicPage": null
+    },
+    {
+      "title": "GLM-5.3 is here with advanced cyber capabilities — and reportedly already found a 'serious vulnerability' in Cursor",
+      "url": "https://venturebeat.com/technology/glm-5-3-is-here-with-advanced-cyber-capabilities-and-reportedly-already-found-a-serio",
+      "body": "GLM-5.3 發布並強調資安能力，據報已在 Cursor 中找到一個「嚴重漏洞」（→ AI 編碼工具競品動態）",
+      "topic": "",
+      "topicPage": null
+    },
+    {
+      "title": "8 AI Coding Models Ranked (GPT-5.3 Codex Vs Opus 4.6 Vs Kimi K2.5 Vs Qwen 3.5 & More)",
+      "url": "https://mshale.com/008f2b3f/bf6e1d74bjJCAYqL7yg",
+      "body": "八款 AI 編碼模型橫向排名整理（→ AI 編碼工具競品動態）",
+      "topic": "",
+      "topicPage": null
+    }
+  ],
+  "sourceStatus": [
+    {
+      "name": "Anthropic Blog",
+      "ok": true,
+      "count": 0
+    },
+    {
+      "name": "Anthropic Status",
+      "ok": true,
+      "count": 2
+    },
+    {
+      "name": "GitHub",
+      "ok": true,
+      "count": 1
+    },
+    {
+      "name": "GitHub Issues",
+      "ok": true,
+      "count": 15
+    },
+    {
+      "name": "Hacker News",
+      "ok": true,
+      "count": 16
+    },
+    {
+      "name": "Reddit",
+      "ok": true,
+      "count": 16
+    },
+    {
+      "name": "Google News",
+      "ok": true,
+      "count": 44
+    },
+    {
+      "name": "dev.to",
+      "ok": true,
+      "count": 15
+    },
+    {
+      "name": "Claude API Release Notes",
+      "ok": true,
+      "count": 0
+    },
+    {
+      "name": "Blogroll",
+      "ok": true,
+      "count": 1
+    },
+    {
+      "name": "Official Docs",
+      "ok": true,
+      "count": 0
+    },
+    {
+      "name": "Official Skills",
+      "ok": true,
+      "count": 0
+    },
+    {
+      "name": "Topic Watch",
+      "ok": true,
+      "count": 3
+    }
+  ],
+  "preview": "Anthropic 官方說明文字浮水印的運作方式，並宣布**第三方偵測 API**——外部單位可據以判斷文字是否由 Claude 產生；本站 08-11 日報已記錄浮水印上線報導，今日補上官方機制說明與偵測管道。",
+  "sedimentedToday": [
+    {
+      "id": "claude-code",
+      "name": "Claude Code",
+      "pageType": "entity"
+    },
+    {
+      "id": "fable-5",
+      "name": "Claude Fable 5",
+      "pageType": "entity"
+    },
+    {
+      "id": "opus-5",
+      "name": "Claude Opus 5",
+      "pageType": "entity"
+    },
+    {
+      "id": "pricing",
+      "name": "Anthropic 訂閱方案與計費政策",
+      "pageType": "entity"
+    },
+    {
+      "id": "anthropic-business",
+      "name": "Anthropic 商業健康度",
+      "pageType": "topic"
+    },
+    {
+      "id": "anthropic-government-policy",
+      "name": "Anthropic 政府與軍事政策",
+      "pageType": "topic"
+    },
+    {
+      "id": "code-quality-decline",
+      "name": "Claude Code 效能退步事件",
+      "pageType": "topic"
+    },
+    {
+      "id": "community-large-codebase-workflow",
+      "name": "大型 Codebase 規模化開發：社群工作流主線",
+      "pageType": "topic"
+    },
+    {
+      "id": "community-pattern-trends",
+      "name": "社群趨勢觀察（週更）",
+      "pageType": "topic"
+    },
+    {
+      "id": "community-tech-discussions",
+      "name": "社群技術討論趨勢",
+      "pageType": "topic"
+    },
+    {
+      "id": "community-tech-tools",
+      "name": "社群工具目錄",
+      "pageType": "topic"
+    },
+    {
+      "id": "competitor-landscape",
+      "name": "AI 編碼工具競品動態",
+      "pageType": "topic"
+    },
+    {
+      "id": "enterprise-tool-tracker",
+      "name": "大型企業 AI 編碼工具使用追蹤",
+      "pageType": "topic"
+    },
+    {
+      "id": "official-community-gap",
+      "name": "官方功能 vs 社群痛點缺口分析",
+      "pageType": "topic"
+    },
+    {
+      "id": "recursive-self-improvement",
+      "name": "AI 遞歸自我改進與全球暫停呼籲",
+      "pageType": "topic"
+    }
+  ]
+}

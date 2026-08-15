@@ -3,18 +3,18 @@ page: "topics/community-tech-patterns"
 kind: "topic"
 status: "monitoring"
 domain: "🌐 社群"
-last_updated: "2026-08-14"
-last_news_update: "2026-08-14"
+last_updated: "2026-08-15"
+last_news_update: "2026-08-15"
 status_main: "monitoring"
 days_since_news: 0
-inbound_links: 44
-attribution_count: 68
-attribution_last: "2026-08-14"
+inbound_links: 41
+attribution_count: 70
+attribution_last: "2026-08-15"
 top_source: "devto"
 pending_count: 9
 pending_overdue: 0
 pending_next_review: "2026-09-13"
-pending_signalled: 0
+pending_signalled: 1
 signal: "健康"
 generated_by: "scripts/gen_wiki_frontmatter.py"
 ---
@@ -25,11 +25,11 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 **狀態：** monitoring
 **領域：** 🌐 社群
 **開始日期：** 2026-04-25
-**最後更新：** 2026-08-14
-**最後新聞更新：** 2026-08-14
+**最後更新：** 2026-08-15
+**最後新聞更新：** 2026-08-15
 
-> **最新工作流模式**（2026-08-14）
-> GitHub Issue #56913（獲 47 個 👍 反應）提出分層架構構想：以 Opus 擔任指揮中樞、Sonnet 擔任執行單元，搭配持久化狀態讓 Claude Code 能長時間自主運行而非僅止於結對編程；屬工作流設計層級的提案，尚無具體實作或量化驗證，與既有 orchestrator-workers 分派模式相呼應（詳見「Multi-agent 架構」技術彙整）。
+> **最新工作流模式**（2026-08-15）
+> Show HN：Graft 以 Claude Code hooks 削減 grep 輸出的 token 用量，宣稱降幅 42%，但 HN 討論質疑其 README benchmark 段落疑似 AI 代寫，可信度存疑。
 
 ---
 
@@ -128,6 +128,23 @@ Claude Code 的三種多 agent 機制，可對應到 Anthropic《Building Effect
 ## 技術彙整
 
 ### 2026-08
+
+#### Show HN：Graft — Claude Code hooks 削減 grep 輸出 token，宣稱降幅 42%，惟 benchmark 段落遭質疑 AI 代寫（2026-08-15）
+
+- **主線：** Context 管理
+- **核心模式：** 開源專案 Graft 提供一組 Claude Code hooks，攔截並精簡 grep 搜尋產生的輸出內容，宣稱可將相關 token 用量削減 42%
+- **與既有模式的關係：** 呼應本頁「Token / 成本優化」類別既有多筆針對特定工具輸出裁剪的做法（CCN 只清 AI 遺留註解、pxpipe 圖片化 context 等），本篇補上 grep 輸出這個此前未被記錄過的裁剪對象；與 [[topics/community-large-codebase-workflow]] Context / Token 管理主線相關——grep 是大型 repo 搜尋的高頻高輸出來源
+- **可信度疑慮：** HN 討論串有留言指出 README 的 benchmark 段落「看起來像 Claude/Codex 代寫」，難以判斷 42% 宣稱是否成立，本頁不將此數字視為已驗證
+- **來源：** 「Show HN: Graft – Claude Code hooks that cut grep tokens by 42%」— Hacker News（score 39，達對照表中門檻）＋跨 2 來源；[GitHub](https://github.com/NanoNets/Graft)
+- **成熟度：** ⏳ 新興（單一開源專案，宣稱數字未經第三方驗證，且社群本身對 benchmark 真實性存疑）
+
+#### Simon Willison 轉介：以「假設性分類」（hallucinate classification）取代傳統分類流程的做法（2026-08-14）
+
+- **主線：** —
+- **核心模式：** Simon Willison 部落格轉介 softwaredoug 的文章，主張部分分類任務與其建置傳統分類器／embedding pipeline，不如直接讓 LLM「假設性」生成分類結果（hallucinate a classification）後再視需要校正，作為更輕量的替代做法
+- **與既有模式的關係：** 呼應本頁「Token / 成本優化」「Skills 設計」等類別既有「用更少工程換取可用結果」的取向，補上分類任務這個尚未見於既有節點的應用場景；性質偏概念性主張，非附帶量化驗證的第一手實作，非大型 codebase 特有痛點，暫不縫合 [[topics/community-large-codebase-workflow]] 四條主線
+- **來源：** 「Don't classify. Hallucinate!」— Simon Willison Blog（Blogroll 策展名單，具名知名開發者轉介，收錄即算達收錄低門檻）；[原文](https://simonwillison.net/2026/Aug/14/dont-classify-hallucinate/)
+- **成熟度：** ⏳ 新興（概念性主張，尚無量化驗證或社群跟進採用案例）
 
 #### 分層 Opus「大腦」＋Sonnet「工人」＋持久狀態：讓 Claude Code 自主運行而非結對編程的提案（2026-08-14）
 
@@ -339,7 +356,7 @@ Claude Code 的三種多 agent 機制，可對應到 Anthropic《Building Effect
 - **核心模式：** 作者將一項含 317 個硬編碼色碼的 design-token 清理工作拆給多個 Claude Code subagent 平行處理，各自分到一批檔案並回報「完成」，但實際檢查發現多種靜默失敗模式（各 agent 回報乾淨卻結果不然）
 - **與既有模式的關係：** 呼應本頁「安全架構」類別中 Grepathy（agent 未經核准決策稽核）對「agent 自主決策是否可信」的既有關注，本篇聚焦「回報完成」本身不可信的具體案例，是對「orchestrator 分派後如何驗證真的完成」這一環節的第一手踩坑記錄
 - **來源：** 「Your AI Subagents Are Lying to You: 4 Silent Failure Modes」— dev.to / #claudecode（依 dev.to 內容判斷原則收錄：第一手實作與踩坑記錄，讚數不作為判斷依據；3 讚）
-- **成熟度：** ⏳ 新興（單一案例）；🔎 **查無官方**（標 2026-08-10｜查 subagent、silent failure｜複 2026-09-13）｜**四種失敗模式細節**：已查證（2026-08-13）原始 dev.to 文章（#claudecode 作者）未能於公開搜尋中定位，僅查得同類主題的其他獨立文章（如「5 silent failure modes in production AI agents」），非本則的第一手佐證
+- **成熟度：** ⏳ 新興（單一案例）；🔎 **查無官方**（標 2026-08-10｜查 subagent、silent failure｜複 2026-09-13｜訊 2026-08-15）｜**四種失敗模式細節**：已查證（2026-08-13）原始 dev.to 文章（#claudecode 作者）未能於公開搜尋中定位，僅查得同類主題的其他獨立文章（如「5 silent failure modes in production AI agents」），非本則的第一手佐證；2026-08-15 日報重新出現本則並附直接連結（https://dev.to/__declspec/your-ai-subagents-are-lying-to-you-4-silent-failure-modes-oc4），文章確實存在可定位，惟具體內文細節仍待主編以此連結覆核
 
 #### Agenta：開源、可自架模型的 Claude Cowork 替代品，支援任意 harness（2026-07-28）
 

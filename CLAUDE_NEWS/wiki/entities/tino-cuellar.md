@@ -7,8 +7,8 @@ domain: "👤 人物"
 last_updated: "2026-08-10"
 last_news_update: "2026-08-05"
 status_main: "active"
-days_since_news: 9
-inbound_links: 4
+days_since_news: 10
+inbound_links: 3
 attribution_count: 2
 attribution_last: "2026-08-05"
 top_source: "anthropic-blog"
@@ -16,7 +16,7 @@ pending_count: 0
 pending_overdue: 0
 pending_next_review: null
 pending_signalled: 0
-signal: "健康"
+signal: "孤島"
 generated_by: "scripts/gen_wiki_frontmatter.py"
 ---
 # Tino Cuéllar

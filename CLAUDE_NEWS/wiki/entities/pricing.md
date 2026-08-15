@@ -4,13 +4,13 @@ kind: "entity"
 type: "policy"
 status: "active（持續調整中）"
 domain: "💼 商業"
-last_updated: "2026-08-14"
-last_news_update: "2026-08-14"
+last_updated: "2026-08-15"
+last_news_update: "2026-08-15"
 status_main: "active"
 days_since_news: 0
-inbound_links: 99
-attribution_count: 50
-attribution_last: "2026-08-14"
+inbound_links: 98
+attribution_count: 51
+attribution_last: "2026-08-15"
 top_source: "google-news"
 pending_count: 2
 pending_overdue: 0
@@ -26,12 +26,11 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 **領域：** 💼 商業
 **首次出現：** 2026-04-25
 **最後更新：** 2026-08-15
-**最後新聞更新：** 2026-08-14
+**最後新聞更新：** 2026-08-15
 
-> **最新計費政策異動**（2026-08-14）
-> - **高互動 bug：Max 方案 session 額度自 3/23 起異常快速耗盡**：GitHub Issue #38335（👍 543，CLI 使用情境）反映 Max 方案的 session 限制自 2026-03-23 起異常快速耗盡；為本頁目前互動量最高的配額類回報，詳見「事故與爭議」新增。
-> - **社群質疑：用量是否為配合 8/19 促銷「永久化」而暗中調降（單一貼文，未經證實）**：Reddit r/ClaudeCode 使用者質疑 Anthropic 是否正暗中調降用量，以便在傳聞中「50% 用量提升轉為永久」的 8/19 前後製造對比效果；score=0（Reddit RSS 天生無讚數），單一未經證實貼文，且查證本頁既有紀錄未見與「8/19 永久化」直接對應的官方承諾，性質存疑，詳見「事故與爭議」新增。
-> - **08-12 記錄之 PaymentIntent 提前作廢 bug（Issue #55982）、usage limits／length limits 官方區分、企業定價落差量化案例仍為近期重點**，詳見下方「事故與爭議」「配額與速率」「成本案例與優化」。
+> **最新計費政策異動**（2026-08-15）
+> - **社群提問：Fable 5 與 Opus 5 是否共用同一週用量池，牴觸官方「50% 上限」設計？（單一貼文，非官方說明，需查證）**：Reddit r/ClaudeCode 使用者質疑：官方 07-20 分界訂定 Fable 5 在 Max／Team premium 席位「最多用到週用量 50%」且不額外收費，但若 Opus 5 用量與 Fable 5 共用同一計量池，該上限的實際扣抵邏輯是否形同被架空？本頁尚無官方一手來源說明 Opus 5 與 Fable 5 是否共用同一用量池，詳見「事故與爭議」新增。
+> - **08-14 記錄之 Max 方案 session 額度異常耗盡（GitHub Issue #38335）、用量暗中調降質疑，仍為近期重點**，詳見下方「事故與爭議」「配額與速率」「成本案例與優化」。
 
 ## 現況
 
@@ -149,6 +148,12 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 - **與既有計費邏輯的潛在張力（推論）**：若此類轉售規模擴大，可能繞開 Anthropic「訂閱補貼人工使用、程式化用量按 API 費率」的雙軌計費邏輯（見下方「計費架構」節），以訂閱價格取得 API 存取權轉售牟利，形同套利灰色地帶；惟目前僅一則低分社群貼文，尚無規模或官方回應佐證，需持續觀察是否有後續報導佐證（Hacker News https://news.ycombinator.com/item?id=49151751）
 
 ### 事故與爭議（誤扣費、靜默計費改動、帳號安全）
+
+#### 2026-08-15：社群質疑 Fable 5／Opus 5 是否共用同一週用量池，牴觸官方「50% 上限」設計（單一貼文，需主編查證）
+
+- **Reddit r/ClaudeCode（2026-08-15）**：使用者質疑，官方 07-20 已確認之分界——Max／Team premium 席位下 Fable 5「最多用到週用量 50%」且不額外收費（見上方「已查證的計費架構分界」）——若 Opus 5 的用量與 Fable 5 共用同一週用量池計算，則「50% 上限」的實際扣抵邏輯可能形同被 Opus 5 消耗架空，牴觸該分界設計的原意。
+- **查證本頁既有紀錄**：本頁 07-20 分界僅明確 Fable 5 本身的計量規則（Max/Team premium 標配、Pro/Team standard 走 usage credits），**未見官方一手來源說明 Opus 5 與 Fable 5 是否共用同一計量池、或各自獨立計量**——此為本頁尚未回答過的問題，非既有紀錄矛盾。
+- **⚠️ 需主編查證官方說明中心**：Opus 5 與 Fable 5 是否共用同一週用量池，屬 `support.claude.com` 說明中心層級的事實，記者無 web 工具不可自行推斷（Reddit https://www.reddit.com/r/ClaudeCode/comments/1vozbmm/opus_5_and_fable_5_sharing_a_pool_isnt_that_a/）
 
 #### 2026-08-14：Max 方案 session 額度自 3/23 起異常快速耗盡（本頁互動量最高配額回報）+ 社群質疑用量被暗中調降
 

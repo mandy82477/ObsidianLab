@@ -12,13 +12,7 @@
       "time": "08/13 16:47",
       "sentiment": "",
       "body": "VentureBeat 報導 DeepSeek Harness 以開源形式問世，同步搭配 API 定價較高的 V4-Pro 模型，被定位為 Claude Code 的直接競品；36Kr 另一篇實測報導則稱其在類 Minecraft 任務中的表現優於 Claude Code。兩篇報導角度不同（發布資訊 vs. 單一實測心得），後者結論屬單次測試個案。",
-      "focusTags": [],
-      "sedimented": [
-        {
-          "id": "claude-code",
-          "pageType": "entity"
-        }
-      ]
+      "focusTags": []
     },
     {
       "title": "VS Code 1.133 更新讓 Claude 工作階段更具彈性",
@@ -65,13 +59,7 @@
       "time": "08/14 00:51",
       "sentiment": "",
       "body": "Claude Code on the web 與相關服務於 23:42–00:50 UTC 間出現效能下降，事件已於 00:51 UTC 解決。",
-      "focusTags": [],
-      "sedimented": [
-        {
-          "id": "claude-code",
-          "pageType": "entity"
-        }
-      ]
+      "focusTags": []
     },
     {
       "title": "[anthropics/claude-code] v2.1.232",
@@ -80,13 +68,7 @@
       "time": "08/13 23:29",
       "sentiment": "",
       "body": "Claude Code v2.1.232 發布，重點變更為 subagent forking 預設開啟：`subagent_type: \"fork\"` 的 subagent 將繼承完整對話與 prompt cache，互動 session 中非 teammate 的 agent 派工行為亦有調整。",
-      "focusTags": [],
-      "sedimented": [
-        {
-          "id": "claude-code",
-          "pageType": "entity"
-        }
-      ]
+      "focusTags": []
     },
     {
       "title": "[anthropics/anthropic-sdk-typescript] vertex-sdk: v0.19.4",
@@ -113,13 +95,7 @@
       "time": "08/13 16:08",
       "sentiment": "",
       "body": "Claude Mythos 5、Claude Fable 5 與 Claude Sonnet 5 請求出現錯誤率上升，事件已於 16:08 UTC 解決。",
-      "focusTags": [],
-      "sedimented": [
-        {
-          "id": "fable-5",
-          "pageType": "entity"
-        }
-      ]
+      "focusTags": []
     }
   ],
   "mediaReports": [
@@ -148,13 +124,7 @@
       "time": "08/14 07:30",
       "sentiment": "",
       "body": "The Register 報導 Claude Code 出現思考區塊（thinking blocks）回傳為空白、但對應的推理 token 仍照常計費的情況，屬使用者端可感知的行為異常。",
-      "focusTags": [],
-      "sedimented": [
-        {
-          "id": "claude-code",
-          "pageType": "entity"
-        }
-      ]
+      "focusTags": []
     },
     {
       "title": "Samsung is reportedly using Claude to speed up chip design",
@@ -187,13 +157,7 @@
       "time": "08/13 19:00",
       "sentiment": "",
       "body": "MakeUseOf 整理 5 個實用的 Claude Code hooks 設定，用於在錯誤操作離開終端機前攔截，屬實作導向的教學型文章。",
-      "focusTags": [],
-      "sedimented": [
-        {
-          "id": "claude-code",
-          "pageType": "entity"
-        }
-      ]
+      "focusTags": []
     },
     {
       "title": "'Big Short' investor Steve Eisman says Anthropic and OpenAI are the 'Achilles' heel' of the AI trade",
@@ -240,13 +204,7 @@
       "time": "08/13 16:10 UTC ·",
       "sentiment": "🤔",
       "body": "社群提出分層架構構想：以 Opus 作為指揮中樞、Sonnet 作為執行單元並搭配持久化狀態，讓 Claude Code 能長時間自主運行而非僅止於結對編程，屬工作流設計層級的討論。",
-      "focusTags": [],
-      "sedimented": [
-        {
-          "id": "claude-code",
-          "pageType": "entity"
-        }
-      ]
+      "focusTags": []
     },
     {
       "title": "CVP approved user being blocked on completely benign, non-security queries in fresh sessions on claude.ai (not Claude Code)",
@@ -255,13 +213,7 @@
       "time": "08/13 16:47 UTC ·",
       "sentiment": "😤",
       "body": "已通過 CVP 審核的使用者回報，在 claude.ai（非 Claude Code）的全新 session 中，完全無害、非安全性相關的查詢仍遭攔截。",
-      "focusTags": [],
-      "sedimented": [
-        {
-          "id": "claude-code",
-          "pageType": "entity"
-        }
-      ]
+      "focusTags": []
     },
     {
       "title": "Show HN: My Claude subscription did $5,868 of API-equivalent work last month",
@@ -279,13 +231,7 @@
       "time": "08/14 10:52 UTC ·",
       "sentiment": "😤",
       "body": "Reddit 使用者反映近 3 個月觀察到 Claude Code 品質明顯下滑，並提及該現象不限於特定模型，呼應近期社群對輸出品質穩定性的持續討論。",
-      "focusTags": [],
-      "sedimented": [
-        {
-          "id": "claude-code",
-          "pageType": "entity"
-        }
-      ]
+      "focusTags": []
     }
   ],
   "billing": [
@@ -445,23 +391,8 @@
   "preview": "Decart 收購案與 Anthropic 估值／IPO 傳聞持續延燒：60 億美元收購以色列新創 Decart 一案仍在洽談、尚未定案，CFO Krishna Rao 已展開早期 IPO 對話但未談及估值，另有報導稱投資人評估上看 2 兆美元估值。",
   "sedimentedToday": [
     {
-      "id": "claude-code",
-      "name": "Claude Code",
-      "pageType": "entity"
-    },
-    {
       "id": "dario-amodei",
       "name": "Dario Amodei",
-      "pageType": "entity"
-    },
-    {
-      "id": "fable-5",
-      "name": "Claude Fable 5",
-      "pageType": "entity"
-    },
-    {
-      "id": "pricing",
-      "name": "Anthropic 訂閱方案與計費政策",
       "pageType": "entity"
     },
     {
@@ -472,36 +403,6 @@
     {
       "id": "ai-talent-flow",
       "name": "AI 實驗室人才流動",
-      "pageType": "topic"
-    },
-    {
-      "id": "anthropic-business",
-      "name": "Anthropic 商業健康度",
-      "pageType": "topic"
-    },
-    {
-      "id": "anthropic-government-policy",
-      "name": "Anthropic 政府與軍事政策",
-      "pageType": "topic"
-    },
-    {
-      "id": "code-quality-decline",
-      "name": "Claude Code 效能退步事件",
-      "pageType": "topic"
-    },
-    {
-      "id": "competitor-landscape",
-      "name": "AI 編碼工具競品動態",
-      "pageType": "topic"
-    },
-    {
-      "id": "enterprise-tool-tracker",
-      "name": "大型企業 AI 編碼工具使用追蹤",
-      "pageType": "topic"
-    },
-    {
-      "id": "official-community-gap",
-      "name": "官方功能 vs 社群痛點缺口分析",
       "pageType": "topic"
     }
   ]

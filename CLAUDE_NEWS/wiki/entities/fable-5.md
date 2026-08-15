@@ -4,13 +4,13 @@ kind: "entity"
 type: "model"
 status: "active（正式發布；出口管制已解除，2026-07-01 起全球恢復存取；免費期已於 2026-07-19 到期，Max/Team 後續存取政策已於 2026-08-08 經官方 Help Center 查證收斂，見 [[entities/pricing]]）"
 domain: "🤖 模型"
-last_updated: "2026-08-14"
-last_news_update: "2026-08-14"
+last_updated: "2026-08-15"
+last_news_update: "2026-08-15"
 status_main: "active"
 days_since_news: 0
 inbound_links: 30
-attribution_count: 15
-attribution_last: "2026-08-14"
+attribution_count: 17
+attribution_last: "2026-08-15"
 top_source: "google-news"
 pending_count: 0
 pending_overdue: 0
@@ -26,7 +26,7 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 **領域：** 🤖 模型
 **首次出現：** 2026-06-09
 **最後更新：** 2026-08-15
-**最後新聞更新：** 2026-08-14
+**最後新聞更新：** 2026-08-15
 
 > **最新進展**（2026-08-07）
 > **生物安全防護更新**：Anthropic 官方部落格宣布更新 Fable 5 的生物安全防護（biology safeguards），測試顯示各產品面「生物相關降級」（fallback 至 Opus 4.8）情形減少約 85%；官方並表示醫療專業人員在臨床任務上將能獲得 Fable 5 更多協助。詳見「爭議」與「歷史記錄」。
@@ -175,10 +175,16 @@ claude --model claude-fable-5-20260609
 - [System Card PDF](https://www-cdn.anthropic.com/d00db56fa754a1b115b6dd7cb2e3c342ee809620.pdf)
 - [資料保留政策](https://support.claude.com/en/articles/15425996-data-retention-practices-for-mythos-class-models)
 - [[news/2026-08-11]]
+- [[news/2026-08-15]]
 
 ## 歷史記錄
 
 ### 解禁後（2026-07-01 起）
+
+#### 2026-08-15
+**Anthropic Status：錯誤率一度升高（同日解決）**：Anthropic Status 通報 Fable 5 於 2026-08-14 20:00 至 2026-08-15 00:11 UTC 錯誤率升高，事件已解決，無需採取行動（[Anthropic Status](https://status.claude.com/incidents/hdynq1pc0fn8)，2026-08-15）。
+
+**Reddit 週熱門：企業端為何不採用 Fable 5？（開放式討論，無具名案例）**：r/ClaudeAI 週熱門貼文討論企業端採用 Fable 5 的阻力何在；原文未提供具名企業案例或量化數據，屬開放式社群討論，暫列觀察，未達 `enterprise-tool-tracker.md` 具名企業收錄門檻（[Reddit](https://www.reddit.com/r/ClaudeAI/comments/1vnj1xq/why_arent_businesses_using_fable_5/)，週熱門，2026-08-15）。
 
 #### 2026-08-11
 **未發布研究版 Claude 意外改進黎曼假設 zeta 函數下界紀錄（研究里程碑，非 Fable 5 本體）**：Anthropic 官方部落格公告，一個**未發布的研究版 Claude**（非現行 Fable 5 產品版本）在嘗試證明黎曼假設（Riemann hypothesis）未果的過程中，意外改進了「黎曼 zeta 函數零點滿足該假設比例」的長期下界紀錄，該紀錄先前已維持 87 年未被突破；The Times of India 另有跟進報導，指研究者感謝 Claude 協助解開此一長年數學猜想相關進展。此為 Anthropic 內部研究能力展示（HN 211 分、4 個獨立來源轉載），與 Fable 5 產品版本或其部署狀態無直接關聯，僅記為 Anthropic 前沿數學研究能力的里程碑參考（[Anthropic Blog](https://www.anthropic.com/research/riemann-zeta)、The Times of India，2026-08-11）。

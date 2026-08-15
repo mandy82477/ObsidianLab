@@ -1,15 +1,15 @@
 ---
 page: "topics/recursive-self-improvement"
 kind: "topic"
-status: "monitoring（無新進展，議題未結案，暫轉低頻觀察）"
+status: "monitoring（08-14 官方風險報告揭露新對齊疑慮，持續觀察）"
 domain: "🏛️ 政策/安全"
-last_updated: "2026-08-12"
-last_news_update: "2026-08-12"
+last_updated: "2026-08-15"
+last_news_update: "2026-08-15"
 status_main: "monitoring"
-days_since_news: 2
+days_since_news: 0
 inbound_links: 8
-attribution_count: 2
-attribution_last: "2026-08-12"
+attribution_count: 5
+attribution_last: "2026-08-15"
 top_source: "google-news"
 pending_count: 0
 pending_overdue: 0
@@ -20,14 +20,14 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 ---
 # AI 遞歸自我改進與全球暫停呼籲
 
-**狀態：** monitoring（無新進展，議題未結案，暫轉低頻觀察）
+**狀態：** monitoring（08-14 官方風險報告揭露新對齊疑慮，持續觀察）
 **領域：** 🏛️ 政策/安全
 **開始日期：** 2026-06-04
-**最後更新：** 2026-08-12
-**最後新聞更新：** 2026-08-12
+**最後更新：** 2026-08-15
+**最後新聞更新：** 2026-08-15
 
-> **最新動態**（2026-08-12，首見國會層級公開呼籲暫停，惟僅單一媒體來源）
-> 2026-08-10，美國參議員 Bernie Sanders 公開呼籲 OpenAI、Anthropic、Meta 暫停 AI 開發，並警告若不停止參議院可能介入，呼應其提出的 AI Data Center Moratorium Act；報導提及此舉呼應 Anthropic 自身 6/4「煞車踏板」呼籲。此為繼 06-22 五眼聯盟警告、07-13 公眾示威之後，首見具名國會議員層級的公開暫停呼籲，惟目前僅 cryptobriefing.com 單一媒體報導，無其他媒體或國會同僚跟進佐證，暫列觀察，不改變議題本身「監管/機構層級無新進展」的 monitoring 判斷。完整政府互動記錄見 [[topics/anthropic-government-policy]]。
+> **最新動態**（2026-08-14，官方《Risk Report August 2026》首度自評內部 AI 研發加速幅度）
+> Anthropic 部分遮蔽版《Risk Report August 2026》（Hacker News 55 分；SiliconANGLE、Axios 跟進）揭露新的對齊疑慮，並確認**尚未發布的「Model 2」目前無釋出計畫**——Axios 稱 Anthropic 認為 AI 風險正在上升。報告原文自陳：「內部 AI R&D 明顯比沒有 AI 協助時快，但尚未達兩倍（且我們不確定、量測困難）」——這是官方首度就自身內部 AI 研發加速幅度提供量化區間自評（此前 06-04 報告僅稱工程師代碼交付量提升 8 倍），與遞歸自我改進議題直接相關；Model 2 陣容面另見模型記者負責頁面。完整政府互動記錄見 [[topics/anthropic-government-policy]]。
 
 ---
 
@@ -57,6 +57,7 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 - Anthropic「呼籲暫停」的立場持續受到「言行不一」批評（邊呼籲邊 IPO、邊呼籲邊出口管制衝突）。
 - 2026-07-13，首見公眾社會運動面回應（抗議者要求 OpenAI/Anthropic/Google DeepMind 暫停 AI 開發），惟報導資訊量少（僅標題式轉載），暫不改變 monitoring 判斷。
 - 2026-08-10，首見具名國會議員層級公開暫停呼籲（參議員 Bernie Sanders，呼應其 AI Data Center Moratorium Act），惟僅單一媒體來源（cryptobriefing.com），無其他媒體或國會同僚跟進，暫不改變 monitoring 判斷。
+- 2026-08-14，Anthropic《Risk Report August 2026》首度提供內部 AI R&D 加速幅度的量化區間自評（「明顯比沒有 AI 協助時快，但尚未達兩倍」），比 06-04《When AI Builds Itself》報告的「工程師代碼交付量 8 倍」更保守、更具體，且明確承認「量測困難、我方也不確定」；報告同時揭露新對齊疑慮並確認尚未發布的 Model 2 暫無釋出計畫，屬官方主動揭露而非外部推估，惟報告全文遭部分遮蔽，無法確認疑慮細節與量測方法論，暫不改變 monitoring 判斷。
 
 ---
 
@@ -84,6 +85,9 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 - [[entities/mythos]]（能力擴張的具體案例）
 
 ## 時序
+
+### 2026-08-14
+- **[官方風險報告，新增] Anthropic《Risk Report August 2026》：新對齊疑慮＋內部 AI R&D 加速量化自評＋Model 2 暫無釋出計畫**：部分遮蔽版風險報告（Hacker News 55 分；SiliconANGLE、Axios 跟進）揭露新的對齊疑慮，並確認尚未發布的 Model 2 目前無釋出計畫；Axios 稱 Anthropic 認為 AI 風險正在上升。報告原文自陳：「內部 AI R&D 明顯比沒有 AI 協助時快，但尚未達兩倍（且我們不確定、量測困難）」，為官方首度就自身內部 AI 研發加速幅度提供量化區間自評，較 06-04 報告「工程師代碼交付量 8 倍」更保守具體；報告全文遭部分遮蔽，對齊疑慮細節與量測方法論未見完整揭露（[PDF](https://www-cdn.anthropic.com/f61d49fa5596956a5dec75fea0e973bf6a6a8378/Redacted%20Risk%20Report%20August%202026%20.pdf) ／ [SiliconANGLE](https://siliconangle.com/2026/08/14/anthropic-details-unreleased-model-2-new-alignment-concerns-latest-ai-risk-report/) ／ [Axios](https://www.axios.com/2026/08/14/anthropic-model-2-ai-risk)，2026-08-14；Model 2 陣容面詳見模型記者負責頁面）
 
 ### 2026-08-10
 - **[國會層級呼籲，單一媒體來源] Sanders 呼籲 OpenAI、Anthropic、Meta 暫停 AI 開發**：美國參議員 Bernie Sanders 公開呼籲 OpenAI、Anthropic、Meta 暫停 AI 開發，警告若不停止參議院可能介入，呼應其提出的 AI Data Center Moratorium Act；報導提及此舉呼應 Anthropic 6/4 自身「煞車踏板」呼籲。目前僅 cryptobriefing.com 單一媒體報導，無其他媒體或社群跟進佐證（[cryptobriefing.com](https://cryptobriefing.com/sanders-urges-openai-anthropic-meta-to-pause-ai-development-amid-regulatory-push/)，2026-08-10 13:16 UTC；完整政府互動記錄見 [[topics/anthropic-government-policy]]）

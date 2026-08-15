@@ -3,17 +3,17 @@ page: "topics/model-comparison"
 kind: "topic"
 status: "ongoing"
 domain: "🤖 模型"
-last_updated: "2026-08-10"
+last_updated: "2026-08-15"
 last_news_update: "2026-08-10"
 status_main: "ongoing"
-days_since_news: 4
-inbound_links: 21
+days_since_news: 5
+inbound_links: 20
 attribution_count: 15
 attribution_last: "2026-08-10"
 top_source: "reddit"
-pending_count: 0
+pending_count: 1
 pending_overdue: 0
-pending_next_review: null
+pending_next_review: "2026-08-29"
 pending_signalled: 0
 signal: "健康"
 generated_by: "scripts/gen_wiki_frontmatter.py"

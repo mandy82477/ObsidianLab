@@ -3,11 +3,11 @@ page: "topics/coding-workflow-guide"
 kind: "topic"
 status: "ongoing"
 domain: "🛠️ 工具/功能"
-last_updated: "2026-08-10"
+last_updated: "2026-08-15"
 last_news_update: "2026-08-08"
 update_freq: "🗓️ 週更（隨官方文件與社群策展更新；日期停留數天屬正常節奏）"
 status_main: "ongoing"
-days_since_news: 6
+days_since_news: 7
 inbound_links: 4
 attribution_count: 0
 attribution_last: null
@@ -15,7 +15,7 @@ top_source: null
 pending_count: 1
 pending_overdue: 0
 pending_next_review: "2026-08-24"
-pending_signalled: 0
+pending_signalled: 1
 signal: "健康"
 generated_by: "scripts/gen_wiki_frontmatter.py"
 ---

@@ -355,11 +355,5 @@
     }
   ],
   "preview": "Anthropic 傳洽購世界模型新創 Decart，交易金額約 60 億美元；同時多家媒體報導 Anthropic 正評估上看 2 兆美元估值、規劃創紀錄 IPO。",
-  "sedimentedToday": [
-    {
-      "id": "community-tech-discussions",
-      "name": "社群技術討論趨勢",
-      "pageType": "topic"
-    }
-  ]
+  "sedimentedToday": []
 }

@@ -3,13 +3,13 @@ page: "topics/community-tech-discussions"
 kind: "topic"
 status: "ongoing"
 domain: "🌐 社群"
-last_updated: "2026-08-13"
-last_news_update: "2026-08-13"
+last_updated: "2026-08-15"
+last_news_update: "2026-08-15"
 status_main: "ongoing"
-days_since_news: 1
-inbound_links: 41
-attribution_count: 73
-attribution_last: "2026-08-13"
+days_since_news: 0
+inbound_links: 40
+attribution_count: 74
+attribution_last: "2026-08-15"
 top_source: "hacker-news"
 pending_count: 1
 pending_overdue: 0
@@ -23,11 +23,11 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 **狀態：** ongoing
 **領域：** 🌐 社群
 **開始日期：** 2026-04-25
-**最後更新：** 2026-08-13
-**最後新聞更新：** 2026-08-13
+**最後更新：** 2026-08-15
+**最後新聞更新：** 2026-08-15
 
-> **最熱討論**（2026-08-11）
-> GitHub Issue「Bring Back Buddy」請願——`/buddy` skill 隨 v2.1.97 無預警消失、官方未說明，留言數 265、👍 2068，本輪互動最高，呼應既有「Anthropic 透明度與信任赤字」長期議題；同日 Simon Willison 部落格發布「自然語言文字不存在無損轉換」的論述文章。
+> **最熱討論**（2026-08-15）
+> 隱形浮水印政策反彈自 08-11 延燒至 08-13（r/ClaudeAI 週熱門再度出現同軸抱怨），升格 🌊延燒；同軸另有使用者反映 Opus 5 依官方建議調整全域 CLAUDE.md 後仍無法馴服其行為，詳見 [[topics/code-quality-decline]] 訊號群。
 
 ---
 
@@ -145,7 +145,7 @@ MCP 的實際成本遠超多數使用者預期，已有多個量化案例：
 | Simon Willison 轉引 Florian Herrengt：AI 取代軟體工程「中產階級」職位的討論 | 2026-08-12 | 🔥 | ☄️閃現 | Simon Willison 部落格轉引 Florian Herrengt 對 AI 影響軟體工程「中產階級」職位的觀點，引用段落描述團隊反覆修不好一個怪異 bug 的情境（"But then users start to report a weird bug. It's the 4th time your team has been trying to fix..."）；具名表態，無社群延燒；[原文](https://simonwillison.net/2026/Aug/12/florian-herrengt/)（Blog） | — |
 | GitHub Issue：「Bring Back Buddy」——`/buddy` skill 隨 v2.1.97 無預警消失，社群發起統整請願 | 2026-08-11 | 🔥🔥🔥 | ☄️閃現 | `/buddy` skill 於 4/9 隨 v2.1.97 消失，官方未公開說明；GitHub Issue #45596 留言數 265、👍 2068，達對照表 GitHub Issue 高門檻（≥50 留言），社群發起統整請願要求官方回應或解釋為何移除；性質為「功能無預警消失＋零官方溝通」，呼應本頁既有「Anthropic 透明度與信任赤字」長期議題（見上方彙整索引）——本次為該議題新的獨立訊號；功能本身已由功能記者記錄於 [[entities/claude-code]] 已知問題，本頁僅記錄社群請願現象；[原文](https://github.com/anthropics/claude-code/issues/45596)（GitHub Issue） | — |
 | Simon Willison：自然語言文字不存在無損轉換（There are no lossless transformations of natural-language text） | 2026-08-11 | 🔥 | ☄️閃現 | Simon Willison 部落格主張自然語言文字不存在無損轉換，原文未點名特定 AI 廠商；具名表態，無社群延燒；[原文](https://simonwillison.net/2026/Aug/11/there-are-no-lossless-transformations-of-natural-language-text/#atom-everything)（Blog） | — |
-| Reddit：隱形浮水印政策引發社群反彈——使用者主張自己提供指示與決策，加浮水印不合理 | 2026-08-11 | 🔥 | ☄️閃現 | Reddit r/ClaudeCode 使用者針對日前隱形浮水印相關報導表達不滿，主張自己才是提供指示、脈絡與決策的一方，Claude 僅為工具，為輸出加隱形浮水印並不合理；與本頁 2026-07-01「Claude Code 隱寫術：同形字符隱寫元資料的信任危機」屬同一「AI 輸出隱藏標記是否應告知使用者」議題軸線的後續獨立訊號，惟該條已不在本表 30 天保留窗內，本則視為新訊號而非重燃；原始浮水印政策報導細節已查證，見下方懸置細節 ⟨Q-03⟩；0 留言、無「週熱門」標記，score 不可信，單一貼文，惟情緒訊號明確（😤）且呼應既有長期議題脈絡，依內容判斷收錄；[原文](https://www.reddit.com/r/ClaudeCode/comments/1vlclpn/)（Reddit） | — |
+| 隱形浮水印政策引發社群反彈——使用者主張自己提供指示與決策，加浮水印不合理，08-13 二度出現同軸抱怨 | 2026-08-11 | 🔥🔥🔥 | 🌊延燒 | Reddit r/ClaudeCode 使用者（08-11，0 留言、無「週熱門」標記）針對隱形浮水印政策表達不滿，主張自己才是提供指示、脈絡與決策的一方，Claude 僅為工具，為輸出加隱形浮水印並不合理；08-13 r/ClaudeAI 週熱門再度出現同軸抱怨（[「Some Claude users are mad that Anthropic's new watermarks will catch them using it at their jobs, classes」](https://www.reddit.com/r/ClaudeAI/comments/1vndlg3/some_claude_users_are_mad_that_anthropics_new/)），達收錄低門檻，兩則獨立貼文相隔進入第 3 天，依模式規則升格 🌊延燒；與本頁 2026-07-01「Claude Code 隱寫術：同形字符隱寫元資料的信任危機」屬同一「AI 輸出隱藏標記是否應告知使用者」議題軸線的後續獨立訊號；原始浮水印政策報導細節已查證，見下方懸置細節 ⟨Q-03⟩；[08-11 原文](https://www.reddit.com/r/ClaudeCode/comments/1vlclpn/)（Reddit） | — |
 | Reddit r/ClaudeAI 週熱門：把 Claude Code 輸出的「Claude 式用語」翻譯成一般英文的 plugin | 2026-08-10 | 🔥 | ☄️閃現 | 使用者釋出將 Claude Code 常見「Claude 式」制式措辭自動翻譯成一般英文的 plugin；具體實作方式與下載連結細節 ❓ 待查證；Reddit r/ClaudeAI 週熱門標記，達收錄低門檻；[原文](https://www.reddit.com/r/ClaudeAI/comments/1vl0n1t/claude_code_plugin_for_translating_from_claudish/)（Reddit · 週熱門） | — |
 | Reddit r/ClaudeAI 週熱門：PSA — 讓 Claude 用 WebFetch 研究時，慎防生成看似真實、實則捏造的統計數字與引述 | 2026-08-08 | 🔥 | ☄️閃現 | 使用者請 Opus 5 用 WebFetch 研究 AI agent 記憶架構時，發現生成內容夾雜看似真實、實則捏造的統計數字與引述，提醒社群 WebFetch 取回真實網頁內容不保證模型輸出內容真實性；Reddit r/ClaudeAI 週熱門標記，達收錄低門檻；[原文](https://www.reddit.com/r/ClaudeAI/comments/1vim8b7/psa_be_careful_letting_claude_use_webfetch_for/)（Reddit · 週熱門） | — |
 | Reddit r/ClaudeAI 週熱門：用 Claude 打造手機籌碼＋實體發牌的撲克 app，已用於 19,072 手牌局 | 2026-08-08 | 🔥 | ☄️閃現 | 使用者用 Claude 打造以手機當籌碼、實體發牌的撲克 app，累計已用於 19,072 手牌局；呼應本頁既有「創意工具 Agent 整合」等既有模式對長期實際使用案例的持續關注；Reddit r/ClaudeAI 週熱門標記，達收錄低門檻；[原文](https://www.reddit.com/r/ClaudeAI/comments/1vii2zl/i_used_claude_to_build_a_poker_app_where_you_deal/)（Reddit · 週熱門） | — |
