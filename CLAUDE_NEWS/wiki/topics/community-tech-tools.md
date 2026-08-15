@@ -185,24 +185,7 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 | [**Claude-thermos**](https://github.com/izeigerman/claude-thermos) | 費用監測 | ⏳ | 2026-07-23 | 定期送出保活請求維持 Claude session 的 prompt cache 不過期；HN 高分留言質疑是否為「成本轉嫁其他用戶」，並揭露 Pro/Max 方案快取到期時間曾一度退化至僅 5 分鐘；Show HN score 102 |
 | [**OneCLI**](https://github.com/onecli/onecli) | 安全工具 | ⏳ | 2026-07-23 | 開源憑證閘道器，安插於 AI agent 與其呼叫服務之間，依 host/path 驗證權限後才代換真實憑證，agent 本身全程不接觸密鑰；Show HN score 101 |
 | [**CodeAlmanac**](https://github.com/AlmanacCode/codealmanac/) | 記憶工具 | ⏳ | 2026-07-22 | YC S26 團隊釋出，隨與 Claude Code / Codex 對話自動更新 codebase wiki，取代手動維護的 MANUAL.md、DESIGN.md 等文件；Show HN score 54 |
-| [**Brainless**](https://brainless.swerdlow.dev) | UI 工具 | ⏳ | 2026-07-15 | 模仿 Claude Code、Codex、Grok 介面風格的 shadcn 元件庫，`bunx shadcn add` 單一指令安裝；Show HN score 124（本輪最高分） |
-| [**Agentty**](https://github.com/1ay1/agentty) | IDE/終端 | ⏳ | 2026-07-15 | C++26 撰寫的 Claude Code drop-in 替代品，11MB 二進位檔；HN 討論質疑以此方式使用 Claude OAuth 的帳號風險；Show HN score 38 |
-| [**OtoDock**](https://github.com/OtoDock/oto-dock/) | 多 Agent | ⏳ | 2026-07-15 | 在自有伺服器上將 Claude Code 與 Codex 組成協作 agent 團隊；Show HN score 2，source_count 2（跨來源報導） |
-| [**Grepathy**](https://github.com/evansjp/grepathy) | 安全工具 | ⏳ | 2026-07-15 | 偵測、追蹤 agent 未經核准之自主決策的稽核工具，衍生自承包案中 Claude 自行建立訪客帳號的信任疑慮事件；Show HN score 18，source_count 2 |
-| [**cc-session-recover**](https://github.com/softcane/cc-session-recover) | 工作流 | ⏳ | 2026-07-15 | 配額恢復後自動接續 Claude Code 工作流程，附對應官方功能請求 issue；Show HN score 4 |
-| [**Cc-hindsight**](https://github.com/adityaarunsinghal/cc-hindsight) | 記憶工具 | ⏳ | 2026-07-15 | 將過往 Claude 對話紀錄轉換為可重複使用的 prompt 庫；Show HN score 3 |
-| [**Fleet Deck**](https://github.com/lacion/fleet-deck) | 多 Agent | ⏳ | 2026-07-14 | 單一看板掌握機器上每個 Claude Code session 狀態（排隊中／執行中／待輸入／閒置）；Show HN |
-| [**aloud**](https://github.com/softcane/aloud) | 其他 | ⏳ | 2026-07-14 | 用 kokoro 語音模型讓 Claude Code / Codex 具備通用語音輸出能力；Show HN score 2 |
 | [**Sx 2.0**](https://sleuth-io.github.io/sx/2026/07/10/your-dropbox-is-now-a-skill-server.html) | Skills | ⚡ | 2026-07-13 | 透過 Dropbox / Google Drive / iCloud 免 git 分享 Claude/Codex skill；2.0 版新增原生 app 與 Skill Evals；Show HN score 39 |
-| [**claude-meseeks**](https://github.com/thephw/claude-meseeks) | 其他 | ⏳ | 2026-07-13 | 長對話準備收尾時播放 Mr. Meeseeks 語音台詞提示 Claude 已完成；Show HN score 130（本輪單日最高分） |
-| [**Topsoil**](https://topsoil-two.vercel.app/) | 監控工具 | ⏳ | 2026-07-13 | macOS 原生應用，將筆電瀏海變成監看 Claude Code / Codex 等編碼 agent 即時終端機面板；Show HN |
-| [**Devthropology**](https://devthropology.com/demo) | 搜尋/診斷 | ⏳ | 2026-07-10 | GitHub Repo 貢獻者互動與程式碼健康度視覺化分析工具；Show HN score 34 |
-| [**AI 思考表徵編輯器**](https://lucid.earthpilot.ai) | 其他 | ⏳ | 2026-07-10 | 視覺化並編輯開源模型回答前內部推理表徵的網頁工具，受 Anthropic 可解釋性論文《Verbalizable Representations Form a Global Workspace in Language Models》啟發；Show HN score 31 |
-| [**Kastra**](https://kastra.ai/) | 安全工具 | ⏳ | 2026-07-10 | Agent 工具呼叫執行前依確定性政策攔截評估，起因是曾攔下一個差點對正式環境資料庫執行 DELETE 的 agent；Show HN score 12 |
-| [**Papercrane-CLI**](https://papercrane.ai/blog/today-im-launching-papercrane-cli-a-bi-tool-built-for-claude-code) | 整合工具 | ⏳ | 2026-07-10 | 命令列 BI 工具，讓 Claude Code 直接存取資料並產生可分享儀表板連結；Show HN score 7 |
-| [**Agent Sessions**](https://jazzyalex.github.io/agent-sessions/) | 費用監測 | ⏳ | 2026-07-09 | 瀏覽、搜尋、恢復本機 Codex／Claude session 紀錄，並提供即時額度用量表；Show HN score 2 |
-| [**Tilion**](https://github.com/tiliondev/fortress/tree/main/mcp) | 整合工具 | ⏳ | 2026-07-09 | MCP 工具，協助 Claude Code 避免網頁瀏覽時被封鎖；Show HN score 5 |
-| [**Atelier**](https://github.com/atelier-ws/atelier) | 費用監測 | ⏳ | 2026-07-09 | 以實測基準（非誇大宣稱）驗證的 Claude Code 成本節省工具，實測約省 30%；Show HN score 3 |
 | [**Geosql**](https://github.com/dekart-xyz/geosql) | Skills | ✅ | 2026-07-08 | Claude/Codex/Copilot 地理空間資料 skill（PostGIS／BigQuery／Snowflake）；「4 倍效能提升」機制已查證，見下方懸置細節 ⟨Q-01⟩（HN score 55） |
 | [**Workweave Router**](https://github.com/workweave/router) | 模型路由 | ⚡ | 2026-06-27 | 成本感知模型路由器，作為 Anthropic/OpenAI 相容 endpoint 運作，依請求難度自動路由模型；起因 Opus 4.7 tokenizer 改版後成本大漲；實測成本降 40%+；Show HN score 181 |
 | [**bulk-delete-claude-chat**](https://github.com/MatteoLeonesi/bulk-delete-claude-chat) | UI 工具 | ⚡ | 2026-06-13 | 解決 Claude 網頁版缺乏批量刪除對話功能的痛點；自動捲動、全選、刪除（對比 ChatGPT 已有內建批量刪除）；HN score 56 |
