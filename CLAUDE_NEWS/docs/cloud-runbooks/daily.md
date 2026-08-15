@@ -57,8 +57,7 @@ git push        # 失敗時照 Step 5 的 push 重試程序處理
 
 **派工注意：**
 - 你是頂層 session，用 Task tool 派工會同步等待完成，不會有本機那個「巢狀背景通知迷路」的問題，可放心派
-- 派工帶 `model: "sonnet"`
-- **若 `wiki-reporter-*` 這六個自訂 subagent_type 在雲端環境無法解析**（歷史上發生過：2026-07-18 雲端 ingest 因 subagent 註冊表未載入而 fallback），改用 `general-purpose` agent 並在 prompt 內嵌對應的 `.claude/rules/wiki-ingest-[類別].md` 與 `.claude/rules/wiki-reporter-shared.md` 規則，功能等同。**但這屬於降級執行，必須在最終摘要與 `wiki/log.md` 本次紀錄中明確標注**，不可靜默 fallback
+- 派工一律 `subagent_type: "general-purpose"` + `model: "sonnet"`，prompt 首段為角色前導（導向 `.claude/agents/wiki-reporter-[category].md`），格式照 `.claude/commands/wiki-ingest.md` 步驟 3。**這就是正典路徑，不是降級**——2026-08-13 起本機與雲端同一條路，不再需要在 log 標注「降級執行」（歷史：07-18～08-12 雲端無法載入自訂 `wiki-reporter-*` subagent_type，六次退回內嵌路徑；已裁決轉正，見 `.claude/rules/wiki-ingest.md`「派工方式」）
 
 **失敗處理：** Step 2 整體失敗或部分記者失敗時，記錄錯誤但仍繼續後續步驟（web build 不依賴 wiki 完整性）。
 
@@ -69,6 +68,5 @@ git push        # 失敗時照 Step 5 的 push 重試程序處理
 - 新鮮度檢查結果（fresh / aborted，aborted 時附實際 date 與 items 數）
 - 上表各步驟結果（OK / FAILED / SKIPPED）
 - TARGET_DATE
-- 記者是否降級為 general-purpose（是 / 否）
 - wiki ingest 記者回報中的異常
 - 若 runbook 步驟表與來源檔不同步，附上 `⚠️` 那一行

@@ -27,7 +27,7 @@ description: 每週判斷本週有哪些主題值得加碼追蹤（建頁/加開
 
 ### 2. 六位記者並行判斷（同一訊息中平行呼叫全部）
 
-沿用 `.claude/commands/wiki-lint.md` 「步驟 2」的類別對應表（模型/功能/商業/安全政策/社群/人物 → 對應 subagent_type）。每個 Agent 呼叫必須帶 `model: "sonnet"`（lint 與策展為有界判斷任務，不需旗艦模型；未指定會繼承主 session 模型，六記者並行足以打穿訂閱配額）。
+沿用 `.claude/commands/wiki-lint.md` 「步驟 2」的類別對應表與派工方式（`subagent_type: "general-purpose"`＋prompt 首段角色前導導向 `.claude/agents/wiki-reporter-[category].md`）。每個 Agent 呼叫必須帶 `model: "sonnet"`（lint 與策展為有界判斷任務，不需旗艦模型；未指定會繼承主 session 模型，六記者並行足以打穿訂閱配額）。
 
 每個 Agent 呼叫的 prompt：
 

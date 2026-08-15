@@ -213,7 +213,7 @@
       "_note": "2026-07-25 由 min_count/min:0 改為 max_count/max:0——前者的條件是 count < min 才失敗，min:0 恆為真，這條「不該出現」的檢查一直是假綠。"
     },
     {
-      "name": "wiki-ingest.md / wiki-lint.md / rules/wiki-ingest.md：六類 subagent_type 名稱一致 + model: \"sonnet\"",
+      "name": "wiki-ingest.md / wiki-lint.md / rules/wiki-ingest.md：六類記者角色檔名一致 + 正典派工路徑（general-purpose + 角色前導 + model: \"sonnet\"）",
       "assertion": "all_contain",
       "files": [
         ".claude/commands/wiki-ingest.md",
@@ -221,6 +221,8 @@
         ".claude/rules/wiki-ingest.md"
       ],
       "patterns": [
+        "subagent_type: \"general-purpose\"",
+        "那是你的角色定義（含「開始前必讀」規則清單與回報契約）",
         "wiki-reporter-models",
         "wiki-reporter-features",
         "wiki-reporter-commercial",

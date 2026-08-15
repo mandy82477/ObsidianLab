@@ -50,6 +50,5 @@
 
 - 更新了哪些頁
 - 留了哪些「📋 待使用者確認」待辦
-- 記者是否降級為 general-purpose（雲端 subagent 註冊表未載入時的 fallback，見 `docs/cloud-runbooks/daily.md` 同段說明）
 - 測試 / build / push 結果
 - 若 runbook 步驟表與來源檔不同步，附上 `⚠️` 那一行

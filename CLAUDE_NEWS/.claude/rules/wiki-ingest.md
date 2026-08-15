@@ -26,9 +26,19 @@
 
 依分類結果，對每個有條目的類別呼叫 Agent tool，傳入今日日期與該類別的**原文節錄**（保留數字、版本號、具名企業等細節，不壓縮）。有多個類別時同一訊息並行發出。記者派工帶 `model: "sonnet"`（分類與頁面更新為有界任務，不需旗艦模型；未指定會繼承主 session 模型——若主 session 直接跑 `/wiki-ingest` 時停留在旗艦模型，六記者並行足以打穿訂閱配額）。
 
-記者的角色、規則引用、回報格式已定義在 `.claude/agents/wiki-reporter-[category].md` 的 system prompt 中，派工時無需重複指示。
+### 派工方式（本機與雲端唯一正典路徑）`[改版: 2026-08-13]`
 
-| 類別 | subagent_type |
+每位記者一律以 **`subagent_type: "general-purpose"` + `model: "sonnet"`** 派出，prompt **第一段固定為角色前導**，把記者導向自己的角色檔：
+
+```
+你是 CLAUDE_NEWS wiki 的「[類別]」記者。開工前先 Read `.claude/agents/wiki-reporter-[category].md`——那是你的角色定義（含「開始前必讀」規則清單與回報契約），逐條照做後再處理下面的任務。你不可再呼叫 Agent tool 委派任何工作。
+```
+
+記者的角色、規則引用、回報格式只寫在 `.claude/agents/wiki-reporter-[category].md`（**單一來源**），派工 prompt 不重抄規則內文、也不塞規則路徑清單——角色檔自己會列。
+
+> **為何不用自訂 `subagent_type`：** 這六份角色檔同時也註冊為自訂 agent（本機 Agent tool 看得到 `wiki-reporter-*`），但雲端 routine 環境自 2026-07-18 起至少六次無法載入專案層 `.claude/agents/`，每次都退回 general-purpose ＋手工內嵌規則，形成「本機一條路、雲端一條路」的雙軌。2026-08-13 裁決：**內嵌路徑轉正為唯一正典**，本機也走同一條，不再有「降級」——同一角色只剩一種構成方式，規則檔改動兩邊同時吃到。自訂 agent 註冊照留（無害、方便本機手動呼叫），但派工流程不依賴它。
+
+| 類別 | 角色檔（`.claude/agents/`） |
 |------|--------------|
 | 模型 | `wiki-reporter-models` |
 | 功能 | `wiki-reporter-features` |

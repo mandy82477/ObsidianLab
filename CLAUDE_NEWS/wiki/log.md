@@ -3871,3 +3871,10 @@
 4. **跨家榜單週更（5b）**：因雲端 egress 封鎖跳過，留待本機執行
 5. **逾期待查證清算（5c）**：因雲端 egress 封鎖跳過，留待本機執行
 6. **社群記者發現：`community-tech-patterns.md` 有 2 條「無法判斷」淘汰候選**——Aharness FSM（複查日 2026-09-26 未到，暫緩）、Git Lazy Mount（規模極小，建議下輪複查列入淘汰候選）
+
+## 2026-08-13 Query：「review 專案設計／蒐集／派工有無值得優化」→ 記者派工路徑轉正（取消本機／雲端雙軌）
+
+- **提問**：使用者請 review 專案的蒐集與派工設計。review 指出派工端最大的結構問題：六個 `wiki-reporter-*` 自訂 subagent_type 在雲端 routine 自 07-18 起至少六次無法載入（07-18／19／22／24、08-08～12），每次退回 `general-purpose`＋手工內嵌規則並在 log 標「降級執行」——形成本機一條路（原生 agent）、雲端一條路（內嵌）的雙軌，同一角色兩種構成方式，規則檔改動只有一條路自動吃到，且每天付一段降級聲明的利息。
+- **裁決**：內嵌路徑轉正為**唯一正典**，本機也走同一條——`subagent_type: "general-purpose"` + `model: "sonnet"` + prompt 首段固定「角色前導」（要求記者 Read `.claude/agents/wiki-reporter-[category].md`），角色檔維持規則單一來源（前導只導向、不重抄規則內文）；自訂 agent 註冊照留供本機手動呼叫，派工流程不再依賴。
+- **改動**：`.claude/rules/wiki-ingest.md` 新增「派工方式」節（正典定義＋理由）；`wiki-ingest.md`／`wiki-lint.md`／`wiki-weekly-review.md` 表頭 subagent_type → 角色檔、prompt 範本加前導；`docs/cloud-runbooks/daily.md`／`weekly-lint.md` 移除「降級」措辭與「記者是否降級」摘要欄；六份角色檔頂部加派工方式說明；`review-registry.json` 同步配對改為檢查正典路徑三要素（general-purpose／角色前導語句／sonnet）；`docs/workaround-register.md` 該列移入已收斂（登記 07-24 → 收斂 08-13）。測試 280/280 綠、check_rules 46 組配對綠。
+- **review 其餘結論（未動手，留待決定）**：蒐集端最大槓桿是 Reddit OAuth＋GitHub PAT 兩組憑證（一次解三個來源的分數可信度，需使用者申請）；Official Skills 32 天 0 條需「查過確認沒有 vs 沒查」探針；topic-watch 歸因未到 query 層級；lobste.rs 已移出但門檻表仍列；記者間「轉知」可照懸置標記掃描同構機械化；雲端 push 撞衝突可在停泊前先 rebase 重試。
