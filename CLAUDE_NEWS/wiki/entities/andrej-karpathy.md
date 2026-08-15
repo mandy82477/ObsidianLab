@@ -25,7 +25,7 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 **狀態：** active
 **領域：** 👤 人物
 **首次出現：** 2026-05-17（CLAUDE.md 維護討論中被引用）
-**最後更新：** 2026-08-13
+**最後更新：** 2026-08-15
 **最後新聞更新：** 2026-08-02
 
 > **加入 Anthropic 已確認**（2026-05-19，2026-08-13 查證）
@@ -69,6 +69,6 @@ Andrej Karpathy 為知名 AI 研究者，已於 2026-05-19 加入 Anthropic pre-
 ## 歷史記錄
 
 - 2026-08-02：Benzinga 報導引述 Karpathy 說法，以 Claude Opus 建構 3D《魔戒》（Lord of the Rings）場景為例，稱 AI 互動模式已跳脫單純提示詞問答（查證狀態見上方標記）
-- 2026-05-29：HN 社群討論確認 Karpathy 已正式加入 Anthropic，Eureka Labs GitHub org 停更、LinkedIn 資訊移除，推測已解散（2026-05-29，至今無後續：近 14 天日報無進一步報導）
+- 2026-05-29：HN 社群討論確認 Karpathy 已正式加入 Anthropic，Eureka Labs GitHub org 停更、LinkedIn 資訊移除，推測已解散（2026-05-29 報導，已掃日報至 2026-08-14 無後續；官方頁面未查證）
 - 2026-05-22：engramx 作者在 Reddit 引用「Karpathy 剛加入 Anthropic 後發表的 CLAUDE.md 四條規則」；最小必要 context 原則成為費用控管社群共識依據
 - 2026-05-17：HN 討論 CLAUDE.md 維護效益時提及「Karpathy 等知名開發者積極公開自己的設定」

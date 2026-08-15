@@ -25,7 +25,7 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 **狀態：** active
 **領域：** 👤 人物
 **首次出現：** 2026-04-23（事後報告發布）
-**最後更新：** 2026-08-10
+**最後更新：** 2026-08-15
 **最後新聞更新：** 2026-08-04
 
 > ❓ **待查證**（標 2026-08-10｜查 Electron、桌面應用）｜**驗證方法論與 Electron 桌面應用重寫嘗試**（2026-08-03）：Boris Cherny 在 Y Combinator Startup School 2026 訪談中表示，引導 Claude 完成困難任務的關鍵已從 prompt engineering 轉向「讓 Claude 能沿途驗證自己的工作」——「verification 大概是人們最容易做錯的一件事」，並以團隊嘗試用 Claude 重寫 Electron 版 Claude 桌面應用為例；重寫細節與最終結果未能確認。
@@ -47,8 +47,8 @@ Boris Cherny 是 Anthropic Claude Code 的創始人與負責人（Head of Claude
 | 2026-08-03 | 方法論 | 引導 Claude 完成困難任務的關鍵已從 prompt engineering 轉向「讓 Claude 能沿途驗證自己的工作」；以團隊嘗試用 Claude 重寫 Electron 版 Claude 桌面應用為例 | 深化——將「Loops 是未來」的自主執行哲學具體化為可操作的「驗證優先」方法論 |
 | 2026-07-27 | 哲學 ❓ 待查證 ⟨Q-01⟩ | 呼籲使用者停止「微管理」AI，僅標題可確認核心主張 | 延續——與「Loops 是未來」「我寫 loop 讓 loop 去 prompt Claude」一脈相承 |
 | 2026-07-25 | 安全 | Opus 5 是目前最難被提示注入攻破的模型，比評測分數更讓他興奮 | 轉折——首次公開聚焦模型安全性面向，此前宣言多聚焦能力／效率 |
-| 2026-07-20 | 商業 | Bloomberg 影片報導「Claude Code 創造者」畫面，展示其以英文向多個 Claude 實例下指令，原文未具名確認受訪者身分（2026-07-20 報導，至今無後續） | — |
-| 2026-07-17 | 操作 | 據報現在同時執行數千個 Claude Code agent（2026-07-17 報導，至今無後續） | 延續（推論）——呼應 5/13 揭露的夜間數千子代理工作流，若屬實顯示已從「夜間批次」擴展為「同時執行」的常態實踐 |
+| 2026-07-20 | 商業 | Bloomberg 影片報導「Claude Code 創造者」畫面，展示其以英文向多個 Claude 實例下指令，原文未具名確認受訪者身分（2026-07-20 報導，已掃日報至 2026-08-14 無後續；官方頁面未查證） | — |
+| 2026-07-17 | 操作 | 據報現在同時執行數千個 Claude Code agent（2026-07-17 報導，已掃日報至 2026-08-14 無後續；官方頁面未查證） | 延續（推論）——呼應 5/13 揭露的夜間數千子代理工作流，若屬實顯示已從「夜間批次」擴展為「同時執行」的常態實踐 |
 | 2026-06-28 | 操作 | 公開 13 個日常 Claude Code 使用技巧，包括同時開 5 個並行實例、`--teleport` 跨環境切換，強調此 setup「surprisingly vanilla」 | 延續——將此前的哲學宣言具體化為可操作的日常實踐 |
 | 2026-06-24 | 哲學 | 承認「AI 寫 100% 程式碼正在變得有問題」 | 轉折——與此前「coding is solved」宣言形成明顯對比，顯示公開立場已調整 |
 | 2026-06-23 | 商業 | 支持企業聚焦 AI ROI 是正確方向，但主張企業仍需保留實驗空間，不應將預算完全鎖定 ROI 導向框架 | — |
@@ -94,17 +94,17 @@ Claude Opus 5 於 2026-07-24 正式發布後，Boris Cherny 在 X 發文評論�
 
 ---
 
-### Bloomberg「Claude Code 創造者」影片報導（2026-07-20 報導，至今無後續）
+### Bloomberg「Claude Code 創造者」影片報導（2026-07-20 報導，已掃日報至 2026-08-14 無後續；官方頁面未查證）
 
-Bloomberg 發布一則影片／報導，標題為「Watch The Creator of Claude Code on The Hottest Piece of Software in the World」。Google News RSS 僅提供標題與轉址連結，無正文或影片逐字稿可用，標題本身**未具名**，無法直接確認受訪者是否即為 Boris Cherny。經查證：(1) Bloomberg 本身於 2026-07-16 發布特稿〈Anthropic and OpenAI Tools Transform the Profession of Coding〉，內容明確描述 Boris Cherny 以英文向多個 Claude 實例下指令的畫面；(2)「Creator of Claude Code」一詞在多個媒體（YouTube 訪談標題、Boris 本人 X 個人簡介「I created Claude Code」）中皆專指 Boris Cherny 本人，未見用於他人。基於以上脈絡佐證，此則報導**極可能**指涉 Boris Cherny，但因原文未具名確認，仍未能完全確證；近 14 天（08-01～08-08）日報無更完整報導或逐字稿出現，暫維持懸置。
+Bloomberg 發布一則影片／報導，標題為「Watch The Creator of Claude Code on The Hottest Piece of Software in the World」。Google News RSS 僅提供標題與轉址連結，無正文或影片逐字稿可用，標題本身**未具名**，無法直接確認受訪者是否即為 Boris Cherny。經查證：(1) Bloomberg 本身於 2026-07-16 發布特稿〈Anthropic and OpenAI Tools Transform the Profession of Coding〉，內容明確描述 Boris Cherny 以英文向多個 Claude 實例下指令的畫面；(2)「Creator of Claude Code」一詞在多個媒體（YouTube 訪談標題、Boris 本人 X 個人簡介「I created Claude Code」）中皆專指 Boris Cherny 本人，未見用於他人。基於以上脈絡佐證，此則報導**極可能**指涉 Boris Cherny，但因原文未具名確認，仍未能完全確證；已掃日報至 2026-08-14 無更完整報導或逐字稿出現，暫維持懸置；官方頁面未查證。
 
 - 來源：[Google News / Bloomberg.com，2026-07-20](https://news.google.com/rss/articles/CBMirgFBVV95cUxQZHp2bEZTR0FEa2lyTE9pbkplLVpKdkVGX3loQVIyVG1VVVpCSDhBOGFLVGtaTFNtSGxPcFhfVWxtZnRiQWVxSHR0TXlJcGpCcXhpX1h2MWhiSDZiQlFqc2ppOW15eUJ5TVVnZS1hUUlQRVhtSDJYUWJEaG5sUFQ5S3RvM2VtX0RnODZaczNPQWlxN0RNVjZIME5YTW9oZ2w5V29TMWxKcTZLMDltaUE?oc=5)（旁證：[Bloomberg，2026-07-16](https://www.bloomberg.com/news/features/2026-07-16/anthropic-and-openai-tools-transform-the-profession-of-coding)）
 
 ---
 
-### 「現在同時執行數千個 Claude Code agent」（2026-07-17 報導，至今無後續）
+### 「現在同時執行數千個 Claude Code agent」（2026-07-17 報導，已掃日報至 2026-08-14 無後續；官方頁面未查證）
 
-Startup Fortune 報導 Boris Cherny 表示他現在同時執行數千個 Claude Code agent。原文屬標題層級資訊，未展開具體脈絡（是否為訪談、社群貼文或其他場合的發言未明）。此說法呼應他 2026-05-13 揭露的「每晚數千個 AI 子代理」工作流架構，若屬實則顯示該工作流已從「夜間批次」擴展為「同時執行」的常態實踐，但因原始出處不明，尚不確定是否為既有立場的延伸陳述或報導轉述誤差（2026-07-17 報導，至今無後續：近 14 天日報無獨立確認或反駁的後續報導）。
+Startup Fortune 報導 Boris Cherny 表示他現在同時執行數千個 Claude Code agent。原文屬標題層級資訊，未展開具體脈絡（是否為訪談、社群貼文或其他場合的發言未明）。此說法呼應他 2026-05-13 揭露的「每晚數千個 AI 子代理」工作流架構，若屬實則顯示該工作流已從「夜間批次」擴展為「同時執行」的常態實踐，但因原始出處不明，尚不確定是否為既有立場的延伸陳述或報導轉述誤差（2026-07-17 報導，已掃日報至 2026-08-14 無後續；官方頁面未查證）。
 
 - 來源：[Google News / Startup Fortune，2026-07-17](https://news.google.com/rss/articles/CBMingFBVV95cUxOeEZlYzhQcGFQX3V2N3U1T1doZmVIdkhvQ3plX3ZVRFdwQU5faGtWZzVEeVhmMVdGU2F3c1BLcFFLVnZHd0RnNE5vQkVYSFg5V2lQTm5hSEY3a25ZM3AweWJ5VHhFeHdfRUt0RTVSNXdXa0NEZTBJYjVoRjJlWml1aC1PZUhOLUxQS09nUWF3R0kzX2FCRkdsQ1AzOW1XQQ?oc=5)
 
@@ -209,9 +209,9 @@ Boris Cherny 的公開言論呈現兩種截然不同的社群反應：
 - 2026-08-03：於 YC Startup School 2026 訪談中表示，引導 Claude 完成困難任務的關鍵已從 prompt engineering 轉向「讓 Claude 能沿途驗證自己的工作」（「verification 大概是人們最容易做錯的一件事」），並以團隊嘗試用 Claude 重寫 Electron 版 Claude 桌面應用為例；重寫細節與結果未能確認（查證狀態見上方標記）（daringfireball.net 轉引 John Gruber，Hacker News 69 分，2026-08-02）
 - 2026-07-27：Business Insider 報導呼籲使用者停止「微管理」（micromanaging）AI，延續其「Loops 是未來」設計哲學；原文正文未能擷取，僅標題可確認核心主張（查證狀態見「呼籲停止微管理」段落標記）（Google News / Business Insider，2026-07-27）
 - 2026-07-25：Boris Cherny 公開表示 Opus 5 是目前最難被提示注入攻破的模型（Simon Willison 部落格轉引 X 貼文，https://simonwillison.net/2026/Jul/25/boris-cherny/#atom-everything）
-- 2026-07-20：Bloomberg 發布影片／報導「Watch The Creator of Claude Code on The Hottest Piece of Software in the World」，標題未具名，佐以 Bloomberg 7/16 特稿與多平台「Creator of Claude Code」慣稱推測極可能為本人（2026-07-20 報導，至今無後續：近 14 天日報無更完整報導或逐字稿）（Google News / Bloomberg.com，2026-07-20）
-- 2026-07-17：Startup Fortune 報導其表示現在同時執行數千個 Claude Code agent，呼應 5/13 揭露的夜間數千子代理工作流，惟原始出處（訪談或社群貼文）未明（2026-07-17 報導，至今無後續：近 14 天日報無獨立確認或反駁）（Google News / Startup Fortune，2026-07-17）
-- 2026-07-08：inc.com 報導「Head of Claude Code」談新創公司需具備的 5 種員工原型（employee archetypes），原文未具名確認發言人，可能為 Boris Cherny 或 [[entities/cat-wu]]（2026-07-08 報導，至今無後續：近 14 天日報無獨立確認發言人身分的報導）（inc.com，2026-07-07，https://www.inc.com/ashley-couto/claude-code-startup-needs-employee-archetypes/91370409）
+- 2026-07-20：Bloomberg 發布影片／報導「Watch The Creator of Claude Code on The Hottest Piece of Software in the World」，標題未具名，佐以 Bloomberg 7/16 特稿與多平台「Creator of Claude Code」慣稱推測極可能為本人（2026-07-20 報導，已掃日報至 2026-08-14 無後續；官方頁面未查證）（Google News / Bloomberg.com，2026-07-20）
+- 2026-07-17：Startup Fortune 報導其表示現在同時執行數千個 Claude Code agent，呼應 5/13 揭露的夜間數千子代理工作流，惟原始出處（訪談或社群貼文）未明（2026-07-17 報導，已掃日報至 2026-08-14 無後續；官方頁面未查證）（Google News / Startup Fortune，2026-07-17）
+- 2026-07-08：inc.com 報導「Head of Claude Code」談新創公司需具備的 5 種員工原型（employee archetypes），原文未具名確認發言人，可能為 Boris Cherny 或 [[entities/cat-wu]]（2026-07-08 報導，已掃日報至 2026-08-14 無後續；官方頁面未查證）（inc.com，2026-07-07，https://www.inc.com/ashley-couto/claude-code-startup-needs-employee-archetypes/91370409）
 - 2026-06-28：在 howborisusesclaudecode.com 公開 13 個日常 Claude Code 使用技巧，涵蓋 5 個並行實例搭配獨立 git checkout、`--teleport` 跨環境切換、iPhone 啟動電腦接力等；強調「surprisingly vanilla」setup（Hacker News，score 5）
 - 2026-06-24：Times of India 報導其承認「AI 寫 100% 程式碼正在變得有問題」，與早前「coding is solved」立場形成對比，呼應企業端過度依賴反彈聲浪
 - 2026-06-23：Business Insider 報導其對企業 AI 投資的立場：支持 ROI 導向，但反對完全不留實驗預算

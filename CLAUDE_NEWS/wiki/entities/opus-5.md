@@ -25,15 +25,17 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 **狀態：** active
 **領域：** 🤖 模型
 **首次出現：** 2026-07-25
-**最後更新：** 2026-08-12
+**最後更新：** 2026-08-15
 **最後新聞更新：** 2026-08-12
 
-> **最新進展**（2026-07-26）
-> Anthropic 於 2026-07-25 正式推出 Claude Opus 5，終結了近兩週的「Opus 5」傳聞（詳見 [[entities/opus-4-8]] 歷史記錄）。定位為 thoughtful and proactive 的新一代模型，在編碼與知識工作評測（Frontier-Bench、GDPval-AA）上逼近 Fable 5 的 frontier intelligence，官方稱定價為 Fable 5 的一半；現為 Claude Max 新預設模型、Claude Pro 最強模型，取代 Opus 4.8 成為次旗艦。資安任務上仍落後 Mythos 5。**07-26 MLQ.ai／PCMag 標題「tops」措辭已查證**：第三方 Artificial Analysis Intelligence Index 上 Opus 5 確以 60.7% 微幅領先 Fable 5 的 59.9%；GDPval-AA v2（1861 Elo，+114）、AA-Briefcase（1720 Elo，+146）亦領先，同時 AA-Briefcase 每任務成本僅 $10.41，較 Fable 5 的 $22.30 低 54%。詳見 [[topics/model-comparison#Benchmark 對照（有來源者才列）]]。
+> **最新動態**（2026-08-08）
+> 上線兩週後社群回饋轉趨分歧：08-07 Reddit 使用者稱重新檢視 Opus 5 的 reasoning trace 後改變原先正面看法（方向不明，弱訊號）；08-08 另有使用者提醒以 Opus 5 搭配 WebFetch 做研究時，發現其會捏造看似真實的統計數字與引述，籲注意人工查核（單一回報，未經證實）。核心定位、定價（$5/$25，官方確認為 Fable 5 一半）與第三方基準驗證「tops」措辭屬實（Artificial Analysis Intelligence Index 60.7% 領先 Fable 5 59.9%）等發布首週細節見下方「現況」；08-11 另有 SitePoint 效能評測整理待查證（見「歷史記錄」）。
 
 ---
 
 ## 現況
+
+**2026-08-08 最新**：上線兩週後社群回饋轉趨分歧——08-07 Reddit 使用者重新檢視 Opus 5 的 reasoning trace 後改變原先正面看法（方向不明，弱訊號，[Reddit](https://www.reddit.com/r/ClaudeAI/comments/1vibkny/i_defended_opus_5_and_then_i_realised_otherwise/)，週熱門，2026-08-07）；08-08 另有使用者提醒以 Opus 5 搭配 WebFetch 做研究時，發現其會捏造看似真實的統計數字與引述，籲注意人工查核（單一回報，未經證實，[Reddit](https://www.reddit.com/r/ClaudeAI/comments/1vim8b7/psa_be_careful_letting_claude_use_webfetch_for/)，週熱門，2026-08-08）。08-11 另有 SitePoint 開發者效能評測整理待查證（見「歷史記錄」）。
 
 Anthropic 於 2026-07-25 正式發布 Claude Opus 5，是繼 2026-07-13 起多篇媒體「Opus 5 傳聞」報導後的官方證實版本（詳見 [[entities/opus-4-8]] 「下一代模型觀察」歷史記錄）。官方定位此模型為 thoughtful and proactive，設計目標是**日常可用**且效率優於其他模型，而非單純堆疊評測分數。
 

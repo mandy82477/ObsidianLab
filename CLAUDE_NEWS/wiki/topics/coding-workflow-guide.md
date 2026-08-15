@@ -25,7 +25,7 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 **開始日期：** 2026-08-08
 **領域：** 🛠️ 工具/功能
 **更新頻率：** 🗓️ 週更（隨官方文件與社群策展更新；日期停留數天屬正常節奏）
-**最後更新：** 2026-08-10
+**最後更新：** 2026-08-15
 **最後新聞更新：** 2026-08-08
 
 > **本頁在回答什麼**（2026-08-08 重寫）
@@ -400,7 +400,7 @@ Boris Cherny 反對「vibe coding」推動術語向 spec-driven 靠攏，2026-05
 
 ### 社群的做法，以及官方自己的煞車
 
-社群做法收斂度最高的是 **Read-Only Reviewer**（審查者不給寫入權限）；另有對抗性審查（計畫前＋程式碼後）、4-agent 分工、跨模型互審（Claude 審 Codex，通過率 71.6% → 89.7%；❓ **待查證**（標 2026-08-10｜查 跨模型互審、通過率）｜**通過率提升的方法論**：單一貼文回報，樣本規模與具體評測方法尚未確認）、以及把品質把關前移到任務拆解與驗收條件設計。
+社群做法收斂度最高的是 **Read-Only Reviewer**（審查者不給寫入權限）；另有對抗性審查（計畫前＋程式碼後）、4-agent 分工、跨模型互審（Claude 審 Codex，通過率 71.6% → 89.7%；❓ **待查證**（標 2026-08-10｜查 跨模型互審、通過率｜訊 2026-08-15）｜**通過率提升的方法論**：[[topics/community-tech-patterns]] 查得學術來源 [Cross-Model LLM Code Review（arXiv 2607.21656）](https://arxiv.org/abs/2607.21656)——116 則 LiveCodeBench 中／難題、六種條件對照重現此數字，reviewer 僅見題目與 writer 草稿、不能執行測試；反向（Codex 審 Claude）則使通過率從 91.4% 降至 82.8%，顯示審查方向有明顯不對稱效應，並非任一模型互審都有效）、以及把品質把關前移到任務拆解與驗收條件設計。
 
 官方也推對抗式 review，但**同一節就自己踩煞車**——這句社群幾乎沒人提：
 
@@ -600,4 +600,5 @@ Boris Cherny 反對「vibe coding」推動術語向 spec-driven 靠攏，2026-05
 
 - [anthropics/skills](https://github.com/anthropics/skills) ／ [knowledge-work-plugins](https://github.com/anthropics/knowledge-work-plugins) — 官方技能清冊，2026-08-08 查證
 - [Putting Spec Kit through its paces](https://blog.scottlogic.com/2025/11/26/putting-spec-kit-through-its-paces-radical-idea-or-reinvented-waterfall.html) — spec-driven 反方實測
+- [Cross-Model LLM Code Review（arXiv 2607.21656）](https://arxiv.org/abs/2607.21656) — 跨模型互審通過率方法論，[[topics/community-tech-patterns]] 2026-08-13 查證
 - 熱門專案設定調查 — 14 個 repo，2026-08-08 一手觀察，樣本限制見該節
