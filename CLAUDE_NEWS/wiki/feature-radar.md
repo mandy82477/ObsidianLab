@@ -20,7 +20,7 @@
 
 ## ⚠️ 升版風險
 
-**最新版本：** v2.1.232（2026-08-13，Subagent forking 預設開啟：帶 `subagent_type: "fork"` 的 subagent 現在預設繼承完整對話與 prompt cache，互動 session 中非 teammate 的 agent 派工行為亦有相應調整，官方 changelog 原文截斷、細節未知）。前一版 v2.1.231（08-13）為 bug fix（修復 MCP OAuth 登入失敗問題）。最後一次重大 breaking change 仍為 v2.1.212／v2.1.215（見下表）；另有一項於 8/14 生效的 breaking change（auto 模式預設化，見下方「⏰ 倒數中」）。
+**最新版本：** v2.1.232（2026-08-13，Subagent forking 預設開啟：帶 `subagent_type: "fork"` 的 subagent 現在預設繼承完整對話與 prompt cache，互動 session 中非 teammate 的 agent 派工行為亦有相應調整，官方 changelog 原文截斷、細節未知）。前一版 v2.1.231（08-13）為 bug fix（修復 MCP OAuth 登入失敗問題）。最後一次重大 breaking change 仍為 v2.1.212／v2.1.215（見下表）；另有一項於 8/14 已生效的 breaking change（auto 模式預設化，已對 Pro/Max/Team 上線，詳見 [[entities/claude-code]] 現況）。
 
 | 風險 | 嚴重度 | 說明 |
 |------|--------|------|
@@ -36,7 +36,6 @@
 
 | 截止日 | 事件 | 到期後 | 你該做的決定 |
 |--------|------|--------|------------|
-| **2026-08-14** | Claude Code auto 模式將取代目前手動確認流程成為預設權限模式 | 未主動關閉者，新 session 預設改為 auto 模式執行 | 依賴目前手動確認做安全把關的使用者：生效日前確認是否需主動關閉（設定方式待官方文件補齊） |
 | **2026-08-31** | Sonnet 5 促銷價 $2/$10 per Mtok 結束 | 正式定價未公布，成本可能上升 | 依賴 Sonnet 5 的自動化流程：8 月底前關注正式定價公告 |
 
 > Fable 5 免費期限（原訂 7/19）已到期並移出本表；今日報導方向趨於一致指向 Pro 訂閱免費存取已結束、Max/Team 動向未明，詳見 [[entities/pricing]]「當前生效的計費規則」與時序。

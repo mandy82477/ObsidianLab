@@ -30,7 +30,7 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 
 > **加入 Anthropic 已確認**（2026-05-19，2026-08-13 查證）
 > Karpathy 於 2026-05-19 本人在 X 宣布加入 Anthropic，進入 Nick Joseph 領導的 pre-training 團隊，並將籌組以 Claude 加速 pre-training 研究的新團隊；TechCrunch、CNBC、Axios 同日獨立報導。原文：「I've joined Anthropic. I think the next few years at the frontier of LLMs will be especially formative.」
-> ❓ **待查證**（標 2026-08-10｜查 Karpathy、Eureka Labs）｜**加入 Anthropic 傳聞**（2026-05-29 首見）：截至 2026-08-02 日報仍無獨立確認報導，僅見「Karpathy-style」作為技能命名慣稱出現，與本人動態無關。
+> ❓ **待查證**（標 2026-08-15｜查 Benzinga、Lord of the Rings）｜**Claude Opus 建構 3D 場景評論**（2026-08-02 報導）：Benzinga 單一媒體報導引述 Karpathy 評論，稱其以 Claude Opus 建構《魔戒》3D 場景為例說明 AI 互動模式演進，未見其他來源獨立確認。
 
 ---
 

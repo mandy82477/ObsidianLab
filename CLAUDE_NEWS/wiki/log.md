@@ -3825,3 +3825,49 @@
 - [社群→功能，待補做] `community-tech-patterns.md` 新增「分層 Opus 大腦＋Sonnet 工人＋持久狀態」節點（issue #56913）是否應觸發 `official-community-gap.md` 產品化矩陣新增列，尚未評估（見上方品質備註）
 - [商業] Reddit「用量疑似配合 8/19 促銷永久化而暗中調降」指控，已查證現有 `entities/pricing.md` 記錄未見對應官方承諾，`topics/anthropic-commitments.md` 亦無相關追蹤列，已以「使用者質疑／推測」語氣記入 pricing.md；建議持續觀察 8/19 前後是否有更多同類指控或官方回應
 - [沿用 08-13] 「How well do job retraining programs work?」歸屬未定（見上則 08-13 Ingest 紀錄），今日日報未再出現，暫無新進展
+
+## 2026-08-15 Lint（雲端排程執行）
+
+- 修正矛盾：4 處——(1) `topics/competitor-landscape.md` pi-coding-agent 列表格摘要仍寫「未經官方交叉確認」，但同頁時序已記錄 08-13 Databricks 官方部落格查證數字（$1.28 vs $1.94/任務，省約 34%），已統一改採已查證數字；(2) `topics/ai-agent-safety.md` CVE-2026-55407（buffa Rust Protobuf DoS）技術彙整細節區仍寫「至今無後續報導確認是否已修補」，但頁面摘要／未修補風險現況表／時序三處皆已確認修於 buffa/connectrpc 0.8.0，同頁自相矛盾，已統一為「已修補」；(3) `topics/community-pattern-trends.md` 趨勢一觀察日期與掃描日不同步（2026-08-08/37天→應為 08-15/44天）、「醞釀中：行動裝置遠端控制」天數描述與首見日矛盾，均已修正；(4) `entities/andrej-karpathy.md` 頂部「加入 Anthropic 已確認」callout 與其下方一則 ❓ 待查證標記（內文寫「加入 Anthropic 傳聞…仍無獨立確認報導」）互斥——人物記者依規不可刪標記僅回報待主編複核，主編查證後確認該 ❓ 標記已被同頁 08-13 查證的三方媒體確認結果取代，予以移除；同時發現頁內另有三處「查證狀態見上方標記」實際指向的是 Benzinga 08-02 單一媒體報導（Claude Opus 建構 3D 場景評論），而非已刪除的「加入 Anthropic」項，已重新建立對應該筆事實的新語法 ❓ 標記，避免三處引用變成懸空參照
+- 補孤立連結：`entities/robert-mahari.md`（inbound_links=0）→ 人物記者已於 `topics/anthropic-business.md`「戰略合作」表列與說明文字補上 wikilink；其餘六類負責頁面逐一確認反向連結 ≥1，無其他孤立頁
+- 狀態更新：無（六類回報之 topics 頁面最後新聞更新皆在 14 天門檻內，或已由近期 ingest 更新，無 ongoing→monitoring/resolved 轉態）
+- resolved 收尾：無（六類負責範圍內無 resolved 狀態頁面待收尾）
+- 新增 entities：無（本輪未建立新頁；Step 4 全站候選掃描見下方「📋 待使用者確認」第 1 項）
+- 呈現品質：⚠️ 已修復約 60+ 處，主要三類——(a) 舊語法「至今無後續」禁用詞違規改寫共約 44 處（模型 11、商業 6、安全政策 15、人物 12；功能與社群本輪皆為新語法未逾期或無此問題），統一改為「已掃日報至 2026-08-1X 無後續；官方頁面未查證」格式；(b) delta-first 規則違反 2 處（`entities/opus-5.md` callout 停留於 07-26 發布敘事已補 08-08 動態；`entities/chris-olah.md` 現況段落背景先於事件已調整為事件優先）；(c) 維運術語洩漏／現況被時序侵蝕（`entities/claude-code.md` 2 處已改寫為讀者語言並瘦身逐日 append）。📋 已記錄待辦（工作量大，本輪未處理）：`ai-agent-safety.md`（924 行，36 個連續 `### YYYY-MM-DD` 無月份分組）、`anthropic-government-policy.md`（564 行，43 個連續同類條列無分組），均觸發「事件流堆積」警示但入口層本身完整（callout+表格），重構需重寫約 170 行，留待後續 lint 處理。其餘全數 ✅ 通過
+- 入口層健檢：>500 行頁面（`community-tech-patterns.md` 1439 行、`community-tech-discussions.md` 1227 行、`ai-agent-safety.md` 924 行、`claude-code.md` 629 行、`anthropic-business.md` 614 行、`coding-workflow-guide.md` 604 行、`pricing.md` 593 行、`anthropic-government-policy.md` 564 行、`competitor-landscape.md` 550 行）逐一確認入口層完整（delta-first callout＋概覽表或月份/主題分組），本輪無需補結構；六位記者均無回報語意分岔或死案候選，Step 3 因無候選直接跳過
+- 待查證回訪：已標訊 4 處——`anthropic-government-policy.md` 隱形浮水印機制細節標記 3 處（訊 2026-08-13，EU AI Act 依據與 Anthropic 已回應但內容未公開）、`coding-workflow-guide.md` 跨模型互審通過率方法論 1 處（訊 2026-08-15，命中 arXiv 2607.21656 查證來源）；已改註「日報無後續、官方未查證」共約 44 處（見上「呈現品質」）；其餘新語法標記距複查日未到、或近 14 天 news 無新後續者維持不動
+- 規則檔健檢：
+  - 矛盾：無（`wiki/CLAUDE.md`、`.claude/rules/wiki-ingest.md`、`.claude/rules/wiki-ingest-format.md`、`.claude/rules/wiki-reporter-shared.md` 及六份記者規則檔本輪逐檔全文複查，未見同一行為的相反指示）
+  - 引用驗證：全部通過（7 個錨點逐一 grep 命中：`首次出現`欄、`## 痛點洞察`、`近期工具`欄、`## 技術彙整`、`熱門討論`表格、`衍生`欄、`全覽表`區塊）
+  - 遵守率：呈現品質審查 3/3（08-12／08-13／08-14 log 皆含 ✅/⚠️/📋 標記）；feature-radar 明確提及 3/3；log 格式正確 3/3。「新工具加入時更新痛點洞察近期工具欄」延續案，`community-tech-tools.md` 已改 lint 專用不受每日 ingest 抽樣影響，不適用
+  - 過期規則（> 60 天）：7 項，較 08-08 lint 新增 2 項跨越閾值——`entities/頁面格式模板`〔04-25，112 天〕、`topics/頁面格式模板`〔04-25，112 天〕、`Wiki 頁面呈現品質標準`〔05-15，92 天〕、`community-tech-patterns↔discussions 雙向連結規則`〔05-16，91 天〕、`enterprise-tool-tracker 更新規則`〔05-26，81 天〕、`命名與分類規則`〔06-11，65 天，**本輪新跨越**，08-08 lint 曾預告「下週將跨越」〕、`feature-radar 准入定義`〔06-15，61 天，**本輪新跨越**〕。主編對 7 項各做輕量 spot-check（entities 狀態值分佈、領域欄位分佈、enterprise-tool-tracker 表頭欄數、community-tech-discussions「衍生」欄存在）均未見明顯內容與現狀脫節，惟正式判斷仍需使用者確認，見待確認第 2 項
+  - 來源健康：近 7 個運行日（08-08～08-14）逐日核對——`Anthropic Blog` 連續 7 天 count=0（官方源特性，非異常，但天數偏長值得留意）；`Claude API Release Notes` 連續 6/7 天 count=0（同性質）；`Anthropic Status` 曾連續 5 天 count=0（08-08～08-12）後於 08-13/08-14 恢復（1／3）；`Official Docs` 曾連續 3 天 count=0（08-08～08-10）後恢復；其餘來源（Google News／Hacker News／Reddit／dev.to／GitHub／GitHub Issues／Blogroll）均未觸發連續 3 天 count=0 告警。**新發現未註冊 slug**：`official-docs`、`topic-watch` 各 2 筆在 `data/source_attribution.jsonl` 使用，但 `data/source_registry.json` 查無對應項（`topic-watch` 雖已記載於 `wiki-reporter-shared.md` 來源歸因表，但 registry 檔案本身缺漏），見待確認第 3 項
+  - 來源記分卡：`python scripts/source_scorecard.py`（33 天窗口）HHI 0.223（未達 0.25 高度集中門檻）；Google News 低信譽桶（pc1 < 0.4）0 筆；11 個社群/媒體來源與 4 個官方/白名單來源逐一列表附回報
+  - 跨檔案語意矛盾（6f）：本輪逐一複查 `.claude/review-registry.json` 列出的 sync_pairs 涉及規則檔全文（含六類記者回報格式段七欄一致性、community-lint 邊界標記、subagent_type 名稱一致性等），未發現新的實質語意矛盾，✅ 全部配對語意一致；機械層面確定性檢查（bare_references／path_existence／anchors／equal_values／all_contain／max_count）交由收尾 `gate_web_build.py` 內建 `scripts/check_rules.py` 驗證
+  - 成長迴路（月度）：**非本月首次 lint（`wiki/log.md` 08 月已有 08-01、08-08 兩次 Lint 記錄），跳過月度蒸餾**
+- 品質指標（6g）：
+  - ref 覆蓋率（每週）：**100%**（08-08～08-14，29 條列/29 有歸因；08-06 當日無 news 檔案不計入分母，閾值 80% 通過）
+  - 採用驗證率（月度）：**非本月首次 lint，跳過**
+  - 外部死鏈（月度）：**非本月首次 lint，跳過**（雲端亦一律跳過，理由同 5c）
+  - 趨勢判讀：持平（連續 4 期 ≥97%：07-26 97%／08-08 100%／08-15 100%，高位穩定），已 append `wiki/metrics.md`
+- 跨家榜單週更（5b）：**雲端 egress 封鎖，跳過**——`model-task-leaderboard.md` 抓取需存取外部榜單網站，雲端沙盒一律封鎖，留待本機執行，見待確認第 4 項
+- 逾期待查證清算（5c）：**雲端 egress 封鎖，跳過**——需查證官方一手來源，雲端沙盒一律封鎖，留待本機執行，見待確認第 5 項
+- 讀者模擬：
+  - Claude Code 重度使用者「Auto 模式現在是不是已經對我的方案預設開啟了？」→ ✅ 通過：index → `entities/claude-code.md` → 頂部 callout 直接說明 08-14 已對 Pro/Max/Team 正式生效，2 跳內取得結論
+  - AI 系統開發者「社群現在有哪些工具在追蹤多個 agent 的執行狀態？」→ ✅ 通過：index → `topics/community-pattern-trends.md` → 趨勢六（多 Agent 可觀測性儀表板化）段落直接列出 Wallfacer／HUD／Cockpit／OtoDock／Fleet Deck 六款實作，2 跳內取得結論
+  - Anthropic 生態追蹤者「Decart 收購案跟 Anthropic 上市傳聞現在進展到哪？」→ ✅ 通過：index → `topics/anthropic-business.md` → 頂部 callout 直接說明仍在洽談、CFO 已展開早期 IPO 會議但未談估值，2 跳內取得結論
+- lint 自我遵守率：6/6 位記者回報一次過（3a–3g 各項在六份回報中皆有具體頁名與結論，無缺項或含糊，無退回）
+- overview.md：已全文改寫（上次全文改寫為 08-01 lint）。本輪反映 08-08～08-14 局勢：Decart 收購案（約 60 億美元）與 Anthropic 估值／IPO 傳聞同週浮現為新商業主線、Anthropic 自揭多 AI agent 同任務互相破壞為新安全訊號、Claude 隱形浮水印爭議延燒逾兩週且 Anthropic 首度透過媒體回應、DeepSeek Harness＋V4-Pro 與 Z.ai 新模型加碼中國陣營競爭壓力、Claude Code v2.1.232 Subagent forking 預設開啟＋Auto Mode 08-14 正式對 Pro/Max/Team 生效預設化；社群趨勢新增趨勢七「規格驅動開發」；`wiki/index.md` 同步更新 `community-tech-tools`（189→58 工具，反映本輪策展後實際數量）與 `community-pattern-trends`（5→7 條成形趨勢）兩則過時摘要數字
+- **品質備註**：
+  - **[環境]** 雲端 `wiki-reporter-*` 六個自訂 subagent_type 本次仍不在本 session 可用 agent 清單中（同 07-18 起已知現象），六類全數以 `general-purpose` agent 執行，並於 prompt 內指示其依序完整 Read `.claude/rules/wiki-reporter-shared.md` + 對應類別規則檔 + `.claude/rules/wiki-ingest-format.md` 作為角色定義後才開始工作，功能等同原生記者但非原生角色 agent，依 `docs/cloud-runbooks/daily.md` 規定於此明確標注，不靜默 fallback
+  - **[主編直接處理]** `wiki/feature-radar.md`「⏰ 倒數中」表 Auto 模式預設化一列截止日已過（2026-08-14），依規則「截止日已過的列移除」由主編直接移除（結果已完整記錄於 `entities/claude-code.md` 現況，不遺失資訊），同步改寫「⚠️ 升版風險」段落中對該列的既有引用
+  - **[延續]** 社群記者本輪 `community-tech-patterns.md` 淘汰審查 dry run：建議淘汰 0 條、建議合併 0 組、無法判斷 2 條（Aharness FSM 複查日 2026-09-26 未到；Git Lazy Mount 規模極小已逼近 60 天沉寂門檻但未滿，建議下輪複查列入淘汰候選）
+
+### 📋 待使用者確認（2026-08-15 lint）
+
+1. **新實體頁候選（Step 4 全站掃描）**：`Samsung`（企業提及 28 次）、`Z.ai`（19 次）、`Decart`（13 次）、`Volta`（17 次）、`Sergey Brin`（7 次）均超過「被提及 3 次以上」門檻，但目前分散追蹤於既有 topic 頁（`enterprise-tool-tracker`／`competitor-landscape`／`anthropic-business`／`ai-talent-flow`）。主編判斷：參照既有慣例（企業客戶如 Microsoft/Uber、競品如 DeepSeek 均未建專頁，維持在 tracker/landscape 頁彙整），且符合「每個事實只有一個家」的資訊架構原則，暫不建議拆頁；是否同意維持現狀，或有特定項目認為應獨立建頁？
+2. **規則年齡審查（6d）**：7 項超過 60 天（詳見上方「規則檔健檢」），其中 2 項本輪新跨越閾值（`命名與分類規則` 65 天、`feature-radar 准入定義` 61 天）→ 是否逐項審視內容是否仍吻合現狀，或標記「已審閱、長期有效」以停止重複列出？
+3. **來源 registry 缺漏**：`official-docs`、`topic-watch` 兩個 slug 在 `data/source_attribution.jsonl` 中使用但 `data/source_registry.json` 查無對應項 → 需修 registry 補登，或確認記者回報用字是否有誤
+4. **跨家榜單週更（5b）**：因雲端 egress 封鎖跳過，留待本機執行
+5. **逾期待查證清算（5c）**：因雲端 egress 封鎖跳過，留待本機執行
+6. **社群記者發現：`community-tech-patterns.md` 有 2 條「無法判斷」淘汰候選**——Aharness FSM（複查日 2026-09-26 未到，暫緩）、Git Lazy Mount（規模極小，建議下輪複查列入淘汰候選）
