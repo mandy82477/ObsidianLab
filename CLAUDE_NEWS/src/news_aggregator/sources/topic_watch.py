@@ -106,6 +106,9 @@ class TopicWatch(BaseSource):
         except Exception as e:
             logger.warning("Topic watch query failed (%s / %s): %s", slug, query[:40], e)
             return []
+        # Per-query hit count is the only place a query's continued worth can be
+        # judged from (attribution only resolves to topic level via publisher).
+        logger.info("Topic watch query '%s' [%s]: %d hit(s)", slug, query[:60], len(items))
         out = []
         for it in items:
             # summary 前綴讓日報 agent 與記者都自帶語境，不必倚賴額外規則記憶

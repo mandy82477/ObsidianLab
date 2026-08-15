@@ -75,7 +75,8 @@
       "^src/logs/pipeline_baseline\\.json$",
       "^weekly/YYYY-Wnn\\.md$",
       "^scripts/weekly_stats\\.py$",
-      "^data/pending-signals\\.jsonl$"
+      "^data/pending-signals\\.jsonl$",
+      "^data/pending-handoffs\\.jsonl$"
     ],
     "_allowlist_note": "以上為 placeholder 或執行期才產生的產物檔，不強制存在。",
     "bare_name_search_dirs": {
@@ -265,7 +266,7 @@
       ]
     },
     {
-      "name": "六份記者回報格式段皆含七欄（更新頁面/feature-radar 新增/index.md 狀態變更/新增頁面/同步自查/待查證命中處置/來源歸因）",
+      "name": "六份記者回報格式段皆含八欄（更新頁面/feature-radar 新增/index.md 狀態變更/新增頁面/同步自查/待查證命中處置/轉知處置/來源歸因）",
       "assertion": "all_contain",
       "files": [
         ".claude/rules/wiki-reporter-shared.md",
@@ -283,11 +284,12 @@
         "新增頁面：",
         "同步自查：",
         "待查證命中處置：",
+        "轉知處置：",
         "來源歸因："
       ]
     },
     {
-      "name": "主編指南（rules/wiki-ingest.md）回報格式段同步七欄",
+      "name": "主編指南（rules/wiki-ingest.md）回報格式段同步八欄",
       "assertion": "all_contain",
       "files": [
         ".claude/rules/wiki-ingest.md"
@@ -299,6 +301,7 @@
         "新增頁面：",
         "同步自查：",
         "待查證命中處置：",
+        "轉知處置：",
         "來源歸因："
       ]
     },

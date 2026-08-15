@@ -57,7 +57,7 @@ git push        # 失敗時照 Step 5 的 push 重試程序處理
 
 **派工注意：**
 - 你是頂層 session，用 Task tool 派工會同步等待完成，不會有本機那個「巢狀背景通知迷路」的問題，可放心派
-- 派工一律 `subagent_type: "general-purpose"` + `model: "sonnet"`，prompt 首段為角色前導（導向 `.claude/agents/wiki-reporter-[category].md`），格式照 `.claude/commands/wiki-ingest.md` 步驟 3。**這就是正典路徑，不是降級**——2026-08-13 起本機與雲端同一條路，不再需要在 log 標注「降級執行」（歷史：07-18～08-12 雲端無法載入自訂 `wiki-reporter-*` subagent_type，六次退回內嵌路徑；已裁決轉正，見 `.claude/rules/wiki-ingest.md`「派工方式」）
+- 派工一律 `subagent_type: "general-purpose"` + `model: "sonnet"`，prompt 首段為角色前導（導向 `.claude/agents/wiki-reporter-[category].md`），格式照 `.claude/commands/wiki-ingest.md` 步驟 3。**這就是正典路徑，不是降級**——2026-08-15 起本機與雲端同一條路，不再需要在 log 標注「降級執行」（歷史：07-18～08-14 雲端無法載入自訂 `wiki-reporter-*` subagent_type，六次退回內嵌路徑；已裁決轉正，見 `.claude/rules/wiki-ingest.md`「派工方式」）
 
 **失敗處理：** Step 2 整體失敗或部分記者失敗時，記錄錯誤但仍繼續後續步驟（web build 不依賴 wiki 完整性）。
 

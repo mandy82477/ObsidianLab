@@ -35,6 +35,16 @@
 - **不可刪標記、不可改狀態符號（❓/🔎）、不可宣告結案**——結案判斷需要官方一手來源查證，屬 `/wiki-lint` 5c 主編層工作，記者無 web 工具
 - 派工訊息無此段或段落內容為「無」→ 回報「待查證命中處置」欄寫「無命中」
 
+## 轉知接手處置 `[加入: 2026-08-15]`
+
+派工訊息可能附一段「轉知待接手 → [你的類別] 記者」——這是別的記者在先前回報中標「⚠️ 需主編轉知」、由主編登進 `data/pending-handoffs.jsonl` 帳本的跨記者交辦（每筆一個 `H-xxxxxx` id）。逐筆處理：
+
+- 該交辦屬你負責頁面且今日可做（補列、加 wikilink、記已知問題……）→ 做完後在回報「轉知處置」欄列入「已處理」並附 id
+- 該交辦不屬你、議題已失效、或需要你沒有的資訊（web 查證）→ 不動，列入「不適用」並附 id＋一句理由；**不可為了清單好看而硬做**
+- 派工訊息無此段或內容為「無」→ 「轉知處置」欄寫「無待接手」
+
+**你自己要轉知別人時**，照舊在「同步自查」欄寫 `⚠️ 需主編轉知[目標類別]記者：[要做什麼＋頁面]`——結構化登帳是主編的事，你只要把目標類別與要做的事寫清楚。
+
 ## 來源歸因回報 `[加入: 2026-07-11]`
 
 新增條目時，若該事實明確來自某一則具體新聞項目，在**回報訊息**（不是 wiki 正文）的「來源歸因」欄列出，每筆一行，格式：
@@ -56,11 +66,12 @@ slug | 類別 | page路徑 | item_url | item_title
 | GitHub、GitHub Search | `github` |
 | Google News | `google-news` |
 | dev.to | `devto` |
-| lobste.rs | `lobsters` |
 | Anthropic Blog | `anthropic-blog` |
 | Anthropic Status | `anthropic-status` |
 | Claude API Release Notes | `claude-api-release-notes` |
 | Topic Watch | `topic-watch` |
+| Official Docs | `official-docs` |
+| Official Skills | `official-skills` |
 | Blog | `blog` |
 
 僅對「今日新增的具體事實」回報歸因，不需回溯補歷史條目；一則事實有多個來源時每個來源各回報一筆。**wiki 正文不加任何 sources wikilink**（來源節點連結機制已於 2026-07-11 撤除）；歸因由主編 append 至 `data/source_attribution.jsonl`，不影響既有 `## 參考來源`（日報連結）寫法。
@@ -69,14 +80,14 @@ slug | 類別 | page路徑 | item_url | item_title
 
 ## 互動門檻對照表 `[加入: 2026-07-04]`
 
-來源已擴充至 11 個，各規則檔的互動門檻以下表為準（規則檔寫「高/中/低門檻」即引用此表）；
+來源清單以 `src/news_aggregator/main.py` 的 `sources` 為準（lobste.rs 已於 2026-07-10 移出，18 天 0 命中），各規則檔的互動門檻以下表為準（規則檔寫「高/中/低門檻」即引用此表）；
 gathered_items.json 的 score_unit 標明單位（分/讚/留言），不可跨單位直接比大小。
 
 | 強度 | HN | Reddit | GitHub Issue | GitHub repo（星）| dev.to | 其他 |
 |------|----|----|----|----|----|----|
 | **高**（精選層/重點話題）| ≥50 分 | ≥100 讚 | ≥50 留言 | ≥1000 星 | — | source_count ≥ 3 |
 | **中**（tools/patterns 收錄）| ≥30 分 或 ≥5 留言 | ≥50 讚 或 ≥10 留言 | ≥20 留言 | ≥300 星 | ≥20 讚 | source_count ≥ 2 |
-| **低**（discussions 收錄）| ≥10 分 | ≥20 讚 或 明顯互動 | ≥10 留言且跨平台延燒 | ≥100 星 | ≥10 讚 | lobste.rs 收錄即算（量少質精）|
+| **低**（discussions 收錄）| ≥10 分 | ≥20 讚 或 明顯互動 | ≥10 留言且跨平台延燒 | ≥100 星 | ≥10 讚 | Blogroll 收錄即算（策展名單，量少質精）|
 
 **GitHub repo 星數防刷註記 `[加入: 2026-08-04]`：** 星數可以刷，單憑星數達標不足採信——收錄前確認至少一項難造假的佐證：forks 數（約星數 1/10 以上為正常）、open issues 有真實往來、或近 30 天有實質 commit。三者全無而星數異常高 → 標「待查證」不收。GitHub Search 條目的 `score_unit` 為「星」，不可與分/讚/留言跨單位比大小。
 
@@ -111,6 +122,7 @@ index.md 狀態變更：[page: 舊狀態 → 新狀態 or 無]
 新增頁面：[filepath or 無]
 同步自查：[✅ 已同步 / ⚠️ 需主編轉知（說明）/ 不適用]
 待查證命中處置：[已標訊 N 筆: list ／ 證據不足不動 M 筆 ／ 無命中]
+轉知處置：[已處理 N 筆: H-id list ／ 不適用 M 筆（id＋一句理由）／ 無待接手]
 來源歸因：[每筆一行 or 無]
 | 呈現品質審查 | [每頁：✅ 通過 / ⚠️ 已修復（說明）/ 📋 已記錄待辦（說明）] |
 ```

@@ -3872,9 +3872,19 @@
 5. **逾期待查證清算（5c）**：因雲端 egress 封鎖跳過，留待本機執行
 6. **社群記者發現：`community-tech-patterns.md` 有 2 條「無法判斷」淘汰候選**——Aharness FSM（複查日 2026-09-26 未到，暫緩）、Git Lazy Mount（規模極小，建議下輪複查列入淘汰候選）
 
-## 2026-08-13 Query：「review 專案設計／蒐集／派工有無值得優化」→ 記者派工路徑轉正（取消本機／雲端雙軌）
+## 2026-08-15 Query：「review 專案設計／蒐集／派工有無值得優化」→ 記者派工路徑轉正（取消本機／雲端雙軌）
 
-- **提問**：使用者請 review 專案的蒐集與派工設計。review 指出派工端最大的結構問題：六個 `wiki-reporter-*` 自訂 subagent_type 在雲端 routine 自 07-18 起至少六次無法載入（07-18／19／22／24、08-08～12），每次退回 `general-purpose`＋手工內嵌規則並在 log 標「降級執行」——形成本機一條路（原生 agent）、雲端一條路（內嵌）的雙軌，同一角色兩種構成方式，規則檔改動只有一條路自動吃到，且每天付一段降級聲明的利息。
+- **提問**：使用者請 review 專案的蒐集與派工設計。review 指出派工端最大的結構問題：六個 `wiki-reporter-*` 自訂 subagent_type 在雲端 routine 自 07-18 起至少六次無法載入（07-18／19／22／24、08-08～14），每次退回 `general-purpose`＋手工內嵌規則並在 log 標「降級執行」——形成本機一條路（原生 agent）、雲端一條路（內嵌）的雙軌，同一角色兩種構成方式，規則檔改動只有一條路自動吃到，且每天付一段降級聲明的利息。
 - **裁決**：內嵌路徑轉正為**唯一正典**，本機也走同一條——`subagent_type: "general-purpose"` + `model: "sonnet"` + prompt 首段固定「角色前導」（要求記者 Read `.claude/agents/wiki-reporter-[category].md`），角色檔維持規則單一來源（前導只導向、不重抄規則內文）；自訂 agent 註冊照留供本機手動呼叫，派工流程不再依賴。
-- **改動**：`.claude/rules/wiki-ingest.md` 新增「派工方式」節（正典定義＋理由）；`wiki-ingest.md`／`wiki-lint.md`／`wiki-weekly-review.md` 表頭 subagent_type → 角色檔、prompt 範本加前導；`docs/cloud-runbooks/daily.md`／`weekly-lint.md` 移除「降級」措辭與「記者是否降級」摘要欄；六份角色檔頂部加派工方式說明；`review-registry.json` 同步配對改為檢查正典路徑三要素（general-purpose／角色前導語句／sonnet）；`docs/workaround-register.md` 該列移入已收斂（登記 07-24 → 收斂 08-13）。測試 280/280 綠、check_rules 46 組配對綠。
-- **review 其餘結論（未動手，留待決定）**：蒐集端最大槓桿是 Reddit OAuth＋GitHub PAT 兩組憑證（一次解三個來源的分數可信度，需使用者申請）；Official Skills 32 天 0 條需「查過確認沒有 vs 沒查」探針；topic-watch 歸因未到 query 層級；lobste.rs 已移出但門檻表仍列；記者間「轉知」可照懸置標記掃描同構機械化；雲端 push 撞衝突可在停泊前先 rebase 重試。
+- **改動**：`.claude/rules/wiki-ingest.md` 新增「派工方式」節（正典定義＋理由）；`wiki-ingest.md`／`wiki-lint.md`／`wiki-weekly-review.md` 表頭 subagent_type → 角色檔、prompt 範本加前導；`docs/cloud-runbooks/daily.md`／`weekly-lint.md` 移除「降級」措辭與「記者是否降級」摘要欄；六份角色檔頂部加派工方式說明；`review-registry.json` 同步配對改為檢查正典路徑三要素（general-purpose／角色前導語句／sonnet）；`docs/workaround-register.md` 該列移入已收斂（登記 07-24 → 收斂 08-15）。測試 280/280 綠、check_rules 46 組配對綠。
+- **第二輪（同日，使用者「你確定嗎、全部修一修」）——review 其餘項目逐項處置**：
+  1. **日期誤植**：第一輪把當日寫成 08-13（實為 08-15），rules／runbook／register／本 log 條目全部校正
+  2. **雲端派工復現次數**：register 校正為至少 8 次（07-18／19／22／24、08-08～14）
+  3. **lobste.rs 殘留**：07-10 已移出 pipeline，但 `wiki-reporter-shared.md` 門檻表「其他」欄與 slug 表、`wiki-ingest-community-lint.md` 排除條仍列它——已清除，門檻表「其他」欄改 Blogroll
+  4. **Official Skills／Official Docs 的 state 只做了一半**：08-13 已把兩份 `*_state.json` 納入版控，但 `.github/workflows/daily-gather.yml` 的 `git add` 清單漏了它們——GH Actions 每天全新 checkout、偵測到的異動隨容器銷毀，等於每天拿舊基線比對、同一異動重複偵測，state 只在本機手動跑才前進。已補進 commit 清單
+  5. **「查過確認沒有 vs 沒查」**：`wiki-lint.md` 6e 改用 `sourceStatus.ok` 分辨——清冊／官方型來源 `ok=true` 且 count=0 屬正常，不再對它們發連續 0 告警；`ok=false` 才是異常
+  6. **來源註冊表缺三個 slug**（`official-docs`／`official-skills`／`topic-watch`，記分卡會報「未註冊 slug」）：已補；`wiki-reporter-shared.md` slug 表補 Official Docs／Official Skills；`data/README.md` 同步；`topic_watch.py` 加 per-query 命中量 INFO log（歸因經 publisher 回填只到 topic 層級，query 層級的去留判斷靠這行 log）
+  7. **記者間「轉知」機械化**：新增 `scripts/pending_handoffs.py`＋`data/pending-handoffs.jsonl`（append-only 帳本，open／list／close／void，開立冪等，逾 14 天標 ⚠️，+3 測試）；派工訊息附「轉知待接手」清單、記者回報契約新增第八欄「轉知處置」（八份規則檔＋registry 同步）、主編彙整表明定登帳／結案規則、pipeline Step 3 與 wiki 同批 commit；register 該列移入已收斂
+  8. **雲端 push 撞衝突「先重試再停泊」**：查證後發現 `news-pipeline-steps.md` Step 5 早已有 pull --rebase 重試 2 次的規定，08-11 是真衝突非缺重試——**第一輪 review 此條誤判，不需改動**
+- **今日事故（review 時順帶發現）**：08-15 GH Actions `daily-gather` 於 10:28 UTC 在「Gather news」步驟失敗（無 token 讀不到 log；本機 21:42 台北排程抓料成功 62 則，疑為暫時性），雲端 routine 13:05 UTC 因 gathered_items 仍為 08-14 而正確中止 → **08-15 日報尚未產出**，待本機補跑 `/news-pipeline`（watchdog 15:00 UTC 亦會推播）
+- **未動手（需使用者）**：Reddit OAuth＋GitHub PAT 兩組憑證（一次解三個來源的分數可信度、GitHub Search 限流，逾期 workaround 中槓桿最大）

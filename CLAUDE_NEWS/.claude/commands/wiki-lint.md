@@ -42,6 +42,9 @@ description: 每週執行 wiki 品質檢查，修正矛盾/孤立/過期頁面�
 今日日期：[YYYY-MM-DD]
 任務：對你負責的頁面執行 wiki lint 檢查並修正問題。
 
+轉知待接手（其他記者先前交辦給你的事；無則寫「無」）：
+[貼入 `python scripts/pending_handoffs.py list --to [類別]` 的輸出]
+
 你的負責頁面＝`wiki/index.md` 中領域為 [對應領域] 的所有頁面（含近期新增），開工前先讀 index.md 認領清單，再加上你規則檔（`.claude/rules/wiki-ingest-[category].md`）觸發條件表中列出的頁面。
 
 讀取 `.claude/rules/wiki-ingest-format.md`，然後對每個頁面依序執行：
@@ -271,8 +274,10 @@ index.md 狀態變更：[page: 舊狀態→新狀態 or 無]
 
 #### 6e. 來源健康檢查 `[加入: 2026-07-04，改版: 2026-07-16]`
 
-讀取近 7 天 `web_reader/data/digest/*.json` 的 `sourceStatus` 陣列，統計每個來源的每日抓取數：
-- 同一來源**連續 3 天 count=0** → ⚠️ 告警（可能是來源壞掉而非真的沒新聞，如時區 bug、RSS 改版、rate limit）
+讀取近 7 天 `web_reader/data/digest/*.json` 的 `sourceStatus` 陣列（每來源 `{ok, count}`），統計每個來源的每日抓取數：
+- 任一來源 **`ok=false`** → ⚠️ 告警（fetch 拋例外，與「沒新聞」無關）
+- **社群／媒體來源**（HN、Reddit、Google News、GitHub、GitHub Issues、dev.to、Blogroll）**連續 3 天 count=0** → ⚠️ 告警（可能是來源壞掉而非真的沒新聞，如時區 bug、RSS 改版、rate limit）
+- **清冊／官方型來源**（Official Skills、Official Docs、Claude API Release Notes、Anthropic Blog、Anthropic Status、Topic Watch）`ok=true` 且 count=0 **屬正常**（上游無異動）——「查過確認沒有」與「沒查」的分界就是 `ok` 旗標，**不對這組發連續 0 告警**；它們的異常訊號是 `ok=false`，或 GitHub Actions 的 `daily-gather` 連續失敗（`data/source_funnel.jsonl` 當日缺列）`[改版: 2026-08-15]`
 - 輸出各來源 7 天貢獻統計表，供判斷來源價值
 發現 ⚠️ 時回報使用者，不自行修改管線程式。
 

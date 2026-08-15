@@ -318,10 +318,11 @@ Step 2 由呼叫 `/news-pipeline` 的 session 親自執行，完整步驟見 `.c
 用 Bash 執行（**先不 push**，於 Step 5 統一推送）：
 
 ```
-git -C REPO_ROOT add wiki/
+git -C REPO_ROOT add wiki/ data/source_attribution.jsonl data/pending-handoffs.jsonl
 git -C REPO_ROOT commit -m "wiki: auto-ingest TARGET_DATE"
 ```
 
+- `data/source_attribution.jsonl`（來源歸因）與 `data/pending-handoffs.jsonl`（轉知帳本）是 Step 2 主編彙整的產出，與 wiki 同批 commit；無變更時 `git add` 為 no-op
 - 若 wiki 無任何變更，跳過 commit，繼續 Step 4
 
 ---

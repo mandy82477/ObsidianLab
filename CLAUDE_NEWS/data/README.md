@@ -20,12 +20,12 @@ Schema（每行一筆）：
 | 欄位 | 說明 |
 |------|------|
 | `date` | 日報日期（YYYY-MM-DD） |
-| `source` | 來源 slug（`hacker-news` / `reddit` / `github-issues` / `github` / `google-news` / `devto` / `lobsters` / `anthropic-blog` / `anthropic-status` / `claude-api-release-notes` / `blog`），對照表見 `.claude/rules/wiki-reporter-shared.md` |
+| `source` | 來源 slug（`hacker-news` / `reddit` / `github-issues` / `github` / `google-news` / `devto` / `anthropic-blog` / `anthropic-status` / `claude-api-release-notes` / `blog` / `official-docs` / `official-skills` / `topic-watch`；`lobsters` 僅存歷史資料，來源已於 2026-07-10 移出），對照表見 `.claude/rules/wiki-reporter-shared.md`，註冊表 `data/source_registry.json` |
 | `category` | 六類別之一：模型 / 功能 / 商業 / 安全政策 / 社群 / 人物 |
 | `page` | 寫入的 wiki 相對路徑，不含 `.md`（如 `topics/ai-agent-safety`） |
 | `item_url` | 日報條目原始連結 |
 | `item_title` | 日報條目標題 |
-| `publisher` | **選填**，來源標記斜線後半段（出版者／子版／站名）。記者回報的 `source` 只有斜線前半段，而 `google-news` 底下實際有 250+ 個出版者、品質從 Reuters 到內容農場都有，單一 slug 的品質標籤對它沒有意義。由 `scripts/enrich_attribution_publisher.py` 從日報回推補上（不改記者契約）；日報查無對應 URL、或來源本身無斜線（如 `Hacker News`）時不帶此欄 |
+| `publisher` | **選填**，來源標記斜線後半段（出版者／子版／站名）。記者回報的 `source` 只有斜線前半段，而 `google-news` 底下實際有 250+ 個出版者、品質從 Reuters 到內容農場都有，單一 slug 的品質標籤對它沒有意義。由 `scripts/enrich_attribution_publisher.py` 從日報回推補上（不改記者契約）；日報查無對應 URL、或來源本身無斜線（如 `Hacker News`）時不帶此欄。`topic-watch` 的斜線後半段是 topic slug（如 `ai-talent-flow`），回填後可按專頁統計定向抓取的實際貢獻 |
 
 ### publisher 回填
 
@@ -56,3 +56,14 @@ Schema（每行一筆，每次 gather / render 各一筆）：
 | `lookback_hours` | 回看時數 |
 | `sources` | 以來源註冊名為 key；`ok`（抓取是否成功）、`gathered` / `filtered` / `emitted` 各階段條目數；對不回註冊名的計數歸入 `"_unmapped"` 桶 |
 | `totals` | 三階段總數 |
+
+## pending-handoffs.jsonl
+
+記者間「轉知」帳本（append only，最後一筆勝出），`[加入: 2026-08-15]`。跨記者交辦（如社群記者發現新工作模式要功能記者評估產品化矩陣）過去靠主編口頭轉達、無接手驗收；現在照 `pending-signals.jsonl` 的同構做法走閉迴路：主編 `open` 登帳 → 派工時 `list` 附清單 → 記者回報「轉知處置」→ 主編 `close`／`void`。
+
+一律用 `python scripts/pending_handoffs.py {open|list|close|void}` 操作，不手改。行格式：
+- 開立：`{"id":"H-xxxxxx","opened":"YYYY-MM-DD","from":"社群","to":"功能","page":"topics/...","note":"...","status":"open"}`
+- 結案：`{"id":"H-xxxxxx","closed":"YYYY-MM-DD","status":"done|void","by":"功能","result":"..."}`
+
+id 由（開立日、來源、目標、note）雜湊而來，同一交辦重複開立冪等；`list` 對逾 14 天未結案者標 ⚠️。
+

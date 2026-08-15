@@ -34,6 +34,8 @@ python scripts/scan_pending_verifications.py $ARGUMENTS
 
 輸出依記者類別分組，供下一步派工時原樣附在對應記者的訊息裡；某類別無命中則該記者派工訊息此區塊寫「無」。規格見 `.claude/rules/wiki-ingest-format.md`「懸置標記語法」節。
 
+**再取轉知待接手清單 `[加入: 2026-08-15]`：** 執行 `python scripts/pending_handoffs.py list`，輸出依目標記者分組，派工時附在對應記者訊息的「轉知待接手」區塊；無則寫「無」。這是先前 ingest 的記者「⚠️ 需主編轉知」經主編登帳後的未結案項（帳本 `data/pending-handoffs.jsonl`，規格見 `.claude/rules/wiki-ingest.md`「第三步」轉知帳本段）。
+
 同時讀取：
 - `wiki/CLAUDE.md` — wiki 目錄結構與基本限制
 - `.claude/rules/wiki-ingest.md` — 分類標準與派工流程（主編指南）
@@ -95,6 +97,10 @@ python scripts/scan_pending_verifications.py $ARGUMENTS
 你負責頁面今日命中的待查證項目（機械偵測，可能誤判；無則寫「無」）：
 
 [貼入掃描器輸出中該類別的區塊，無命中該類別則寫「無」]
+
+轉知待接手（其他記者先前交辦給你的事；無則寫「無」）：
+
+[貼入 `python scripts/pending_handoffs.py list --to [類別]` 的輸出]
 ```
 
 **防偏誤說明（隨每次派工附上，不可省略）：** 此清單僅供比對——若今日條目足以作為某筆懸置的後續，在該標記加 `｜訊 YYYY-MM-DD` 並更新內文；證據不足則不動並在回報說明。**不可為了消化懸置而過度解讀新聞；不可刪標記、改狀態符號或宣告結案**（結案屬 `/wiki-lint` 5c）。
@@ -132,6 +138,11 @@ python scripts/scan_pending_verifications.py $ARGUMENTS
 - 把所有記者回報的「來源歸因」欄逐筆轉成一行 JSON append，schema 與 slug 對照見 `.claude/rules/wiki-ingest.md`「第三步」與 `data/README.md`
 - 記者回報「無」則該記者不寫；全部記者皆「無」則不動此檔
 
+**`data/pending-handoffs.jsonl`**（轉知帳本，append only，透過腳本操作）
+- 記者回報「轉知處置」欄的「已處理」→ 逐筆 `python scripts/pending_handoffs.py close H-xxxxxx --by [類別] --result "[一句話]"`；「不適用」→ 判斷：理由成立則 `void`，理由是「不屬我」則保留 open 並改派（重新 `open` 給正確類別後 `void` 原筆）
+- 記者回報「同步自查」欄出現 `⚠️ 需主編轉知[目標類別]記者：…` 且目標是**另一位記者**（非主編自己的彙整工作）→ `python scripts/pending_handoffs.py open --from [來源類別] --to [目標類別] --page [頁面] --note "[要做什麼]"`；今日就能在同一輪派工內解決的（目標記者尚未派出）可直接附進其派工訊息並同時登帳
+- 主編自己要做的（feature-radar、index、commitments）不登帳，照第 4 步做
+
 **`wiki/overview.md`**（視情況）
 - 若有重大事件（新模型發布、重大政策變化），更新「當前局勢」段落
 
@@ -141,6 +152,7 @@ python scripts/scan_pending_verifications.py $ARGUMENTS
 
 - [ ] 每個有條目的類別均已派工，記者回報已收齊
 - [ ] 六記者回報的「待查證命中處置」欄皆有值（已標訊／證據不足不動／無命中，三選一，不可空白或省略）
+- [ ] 六記者回報的「轉知處置」欄皆有值，且已處理者已 `close`、新轉知已 `open` 登帳（`python scripts/pending_handoffs.py list` 的結果與記者回報一致）
 - [ ] feature-radar.md 已彙整更新（無新功能則標「本日無新功能」）
 - [ ] wiki/index.md 狀態已全部同步（含所有記者回報的狀態變更）
 - [ ] wiki/log.md 已 append 本次 ingest 紀錄（含品質審查彙整，未修改既有條目）
