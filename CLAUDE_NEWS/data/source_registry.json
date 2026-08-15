@@ -79,8 +79,8 @@
       "category": "media",
       "score_reliability": "none",
       "curation_mode": "content",
-      "domain_prior": true,
-      "notes": "無互動分數且 publisher 長尾雜，是唯一適用 domain 信譽先驗的來源：查 data/external/domain_pc1.csv（Lin et al. 2023, PNAS Nexus）。查無資料記「未知」不記「低分」。"
+      "notes": "無互動分數且 publisher 長尾雜，是唯一適用 domain 信譽先驗的來源：查 data/external/domain_pc1.csv（Lin et al. 2023, PNAS Nexus）。查無資料記「未知」不記「低分」。",
+      "domain_prior": true
     },
     {
       "name": "dev.to",
@@ -89,8 +89,8 @@
       "category": "community",
       "score_reliability": "untrusted",
       "curation_mode": "content",
-      "rate_comparable": false,
-      "notes": "實測讚數為反指標（第一手實作文 2–3 讚、SEO 農場文 5–6 讚，2026-07-10 教訓），一律內容判斷；規則見 .claude/rules/wiki-ingest-community.md。rate_comparable=false：top=30 抓法每日重抓 30 天窗，gathered 含跨日重複（由 emitted-cache 擋下），收錄率結構性偏低，不可與 26h 窗來源比較。"
+      "notes": "實測讚數為反指標（第一手實作文 2–3 讚、SEO 農場文 5–6 讚，2026-07-10 教訓），一律內容判斷；規則見 .claude/rules/wiki-ingest-community.md。rate_comparable=false：top=30 抓法每日重抓 30 天窗，gathered 含跨日重複（由 emitted-cache 擋下），收錄率結構性偏低，不可與 26h 窗來源比較。",
+      "rate_comparable": false
     },
     {
       "name": "Blogroll",
@@ -109,6 +109,33 @@
       "score_reliability": "trusted",
       "curation_mode": "whitelist",
       "notes": "2026-07-10 移出 pipeline（commit aec9237）：`ai` tag＋標題關鍵字抓法 18 天 0 命中，價值與 HN 重疊；fetcher（sources/lobsters.py）保留備日後。重啟需先有新抓法假說（參考 dev.to top=30 改法翻身案例），不可原樣接回。"
+    },
+    {
+      "name": "Official Docs",
+      "slug": "official-docs",
+      "active": true,
+      "category": "official",
+      "score_reliability": "none",
+      "curation_mode": "whitelist",
+      "notes": "官方文件索引／頁面異動監看（sources/official_docs_watch.py），清冊型：ok=true 且 count=0 屬正常（上游無異動）。state 檔 official_watch_state.json 由 GH Actions 每日 commit（2026-08-15 起）。"
+    },
+    {
+      "name": "Official Skills",
+      "slug": "official-skills",
+      "active": true,
+      "category": "official",
+      "score_reliability": "none",
+      "curation_mode": "whitelist",
+      "notes": "官方 skills repo 清冊異動監看（sources/official_skills_repos.py），清冊型：多數日子 0 條屬正常。state 檔 official_skills_repos_state.json 由 GH Actions 每日 commit（2026-08-15 起）。"
+    },
+    {
+      "name": "Topic Watch",
+      "slug": "topic-watch",
+      "active": true,
+      "category": "media",
+      "score_reliability": "none",
+      "curation_mode": "content",
+      "notes": "wiki 專頁定向抓取（sources/topic_watch.json），來源標籤 `Topic Watch / <topic slug>`。curation_mode=whitelist 的理由：query 清單是人工實測校準過的策展名單（等同 Blogroll 的性質），且本來源明文不套互動門檻——判準是「對該 wiki 專頁有無價值」，不是分數。歸因 publisher 欄回填後即為 topic slug，可按 topic 看命中；query 層級命中量見 news_aggregator.log 的 per-query INFO 行。"
     }
   ]
 }

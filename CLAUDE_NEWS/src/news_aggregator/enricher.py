@@ -25,6 +25,9 @@ MAX_SUMMARY_CHARS = 800
 _THIN_THRESHOLD = 120   # existing summary shorter than this → try to enrich
 _WORKERS = 6
 _ARTICLE_TIMEOUT = 8    # per-URL cap for article fetching (trafilatura.fetch_url ignores ours)
+# 單篇文章 HTML 上限。6 個 worker 並行，所以最壞情況是這個數字的 6 倍常駐；
+# 5 MB × 6 = 30 MB，遠低於 runner 記憶體，而正常文章頁只有幾百 KB。
+_MAX_ARTICLE_BYTES = 5 * 1024 * 1024
 _HN_FIREBASE = "https://hacker-news.firebaseio.com/v0/item/{}.json"
 _HN_ITEM_RE = re.compile(r"news\.ycombinator\.com/item\?id=(\d+)")
 
@@ -187,6 +190,36 @@ except ImportError:
     _trafilatura = None  # type: ignore[assignment]
 
 
+def _read_capped(resp) -> str:
+    """Read at most `_MAX_ARTICLE_BYTES` of the response and decode it.
+
+    **這道上限是為了不讓一個病態頁面殺掉整個 pipeline。** 底下的
+    `trafilatura.extract()` 走 lxml（C 擴充），把幾百 MB 的 HTML 丟給它，
+    輕則吃光記憶體、重則在 C 層崩潰——而 C 層的 abort **Python 的 try/except
+    攔不住**，整個 process 直接帶著 SIGABRT（exit 134）死掉，`main.py` 的
+    per-source 保護完全無效。2026-08-15 GitHub Actions 抓料就是這樣整個失敗，
+    當日無原料、雲端 routine 的新鮮度防線正確中止、當天沒有日報。
+
+    正常文章頁 HTML 不會超過幾百 KB；超過上限即視為非文章內容（串流、
+    無限捲動、二進位誤標為 HTML），直接放棄擷取並保留原摘要。
+    """
+    total = 0
+    chunks: list[bytes] = []
+    for chunk in resp.iter_content(chunk_size=65536):
+        if not chunk:
+            continue
+        total += len(chunk)
+        if total > _MAX_ARTICLE_BYTES:
+            logger.debug("article too large (>%d bytes), skipping: %s",
+                         _MAX_ARTICLE_BYTES, resp.url)
+            return ""
+        chunks.append(chunk)
+    raw = b"".join(chunks)
+    # 只用 header 宣告的編碼，不呼叫 apparent_encoding——後者會對整份內容跑
+    # chardet，在這條熱路徑上既慢又可能再吃一份記憶體。
+    return raw.decode(resp.encoding or "utf-8", errors="replace")
+
+
 def _fetch_article(url: str) -> str:
     """Extract main article text using requests + trafilatura.
 
@@ -211,11 +244,15 @@ def _fetch_article(url: str) -> str:
             timeout=_ARTICLE_TIMEOUT,
             headers={"User-Agent": "Mozilla/5.0 (compatible; ClaudeNewsBot/1.0)"},
             allow_redirects=True,
+            stream=True,
         )
         if resp.status_code != 200:
             return ""
+        html = _read_capped(resp)
+        if not html:
+            return ""
         text = _trafilatura.extract(
-            resp.text,
+            html,
             include_comments=False,
             include_tables=False,
             no_fallback=False,
