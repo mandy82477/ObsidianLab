@@ -306,24 +306,6 @@
       "sentiment": "",
       "body": "The Information 引述研究指出，Anthropic 模型在特定使用情境下的實際成本可能低於中國同類模型，挑戰「中國模型必然更便宜」的既定印象。",
       "focusTags": []
-    },
-    {
-      "title": "Study Finds Four Major AI Labs Use Incompatible Prompt Injection Metrics",
-      "url": "https://news.google.com/rss/articles/CBMilAFBVV95cUxOYUNDS2JpWFBLU1lEYkF4NDJXMUpzNzdEUUtDQU9rb1I4OEd4aTdyVmpqbW54SEdLUjFOUThocDlURmNTVkpZMmRtcUZTQl9kMmVMdjdEZDlCTEo3X1hmQWNRbEJ2WWJrTm1GNzhBbWNrQjVuazM2UnVFTjY0cndqcnBlMWtHNVBfUW9XZjVJLXJ3R3VN?oc=5",
-      "source": "",
-      "time": "",
-      "sentiment": "",
-      "body": "",
-      "focusTags": []
-    },
-    {
-      "title": "Google co-founder Sergey Brin has a message for DeepMind staff after Demis Hassabis exits as CEO",
-      "url": "https://news.google.com/rss/articles/CBMiogJBVV95cUxPd0N1bjItUkpvUXhRWVFBSXZXV3VtajRYbUhiN3p4R0F3TEt5ZVU2OHY4SXhoWWVmSnNmZVRWZnJUb3VJVWFzMjhfZnVxZkViSHhLQWluaHRXSExNOVBOcGNYblpYNFZwc0diWVlHNkRZT05uNGxRdWM5VWNOR2RoX3Z1YVJZbVMxNGszSVVJUEdKYlJHTzVpcmlYcHVzdnJIM2NPWm9BQVZ1eFR4UHI1LXZUOG12OUxLenNQdk9SZml5VFhOeTBEVkhJVHM5YjFsVXdMb2p4WC12akZvcDQyZi0wZEV5YzdQUzk2dGtqa3dvbkpzS2dvcFBKTHBkWHlrTnpFb3pSUUNTNkhteGNpbXhKY213enNtWUZ1TmlubmRsUdIBpwJBVV95cUxNdTdpbkVxUHZ1NUJTU040NTBMRW9mdklCSzdBUG9iRUJYeFJZOWNmVmFncUIyYU5kNTZDdGowQ296eTZZUWNCWGx3bFo2S1JXQmxRVVZwVFVUUnRURERUYk9naWtiSU9PVkczRWJpRDduY1N2eTY4ejEtc0ozZi1FeDRhdGF4LW5oRHdvZlp6UzFCUHp4QjJSNkMxRkZodk1ZY1VuRWdodlNKcWp1NjA3NDFOUDRvSkhxTjFpM1JlWVFoblZTWEpPQnZ1RWJseF81VWEyS3NESGt1bFQxMzJDUXJheXA2V1lzbUNZdko0TDlXMzhzZjFuZ2hFS2xHRG9QaWZ3WmZVODNxTVljbS1PNnlKRGxyODBrSjNmNDlPSmhyOXpJMl9Z?oc=5",
-      "source": "",
-      "time": "",
-      "sentiment": "",
-      "body": "| 來源 | 狀態 | 條數 | |------|------|------| **選材門檻：** - **[新工具]**：單一 Show HN 工具未達互動門檻對照表（`.claude/rules/wiki-reporter-shared.md`）**中**門檻、且無跨來源佐證（source_count = 1）時，不單獨列入今日聚焦；多款工具同批亮相時歸入「⭐ 重點話題」，不逐一在聚焦具名。 - **[風險警示]**：具名資安研究機構/研究者揭露、附具體攻擊鏈或 CVE 細節的條目優先；無具名背書的單一社群抱怨即使當日互動較高，也不優先於前者。 - **[持續追蹤]**：此標籤語意上向讀者承諾「這是有跡象會延燒的故事線」，須有多方訊號佐證。僅有單一低分來源（HN < 10 分且 source_count = 1）的指控/爭議類條目、或當日已修復的服務監控事件，不得標為 [持續追蹤]，也不獨立佔一條聚焦名額。 **今日聚焦參考連結：** 1. https://news.google.com/rss/articles/CBMinwFBVV95cUxPdzEyVE55dDV5YzhkNWNSZ0V0RDBQYy1pOE9NUWpENnNkSHJmQmlTT3RXMF9aemt2SHhwazBSTmlKNjV4UDEtNHFmbWRvZkhBZm4ycFNsU0RfM3dDaUZLV3VFY0Y4SHJJS3JremY2dEs1OWJZVEZOandkUEVEbDJpNHQxRk01UUw0MzJ4b1hacFBHRXJ5RjFwMTFRbzZxT28?oc=5 2. https://news.google.com/rss/articles/CBMihgFBVV95cUxPRlZFSERVa2Z4YzhjRVpKc0V1YktMcks5QWRlS2NIZ1Nzd0hLb2lONVVELXZILThaWnh1SXNvYURMZTVQcWRDUWkwZ2ZDMjFLNHJ3T05QQzhhVHRLazVOSzZxYmNoYnhvTW1pLW1fZy1kdUhQbjVuODRDRUgxLXE0QVd5cFp0d9IBiwFBVV95cUxPb29DaEVJYXY5Ym5xeXNLVlVuM0dKZlFsQVN4Y2FnZElCUzhSaUphd0h5RnRLT1BOdkpCQk9sbHBIZWw1cXgza3gxM1JjYkp4M1BKSUZkMF9DZTdxWjRxX2p6ei1oS2RhLVpHSEY3Q1otQUlKcmRLLXVMV095U2Rsclp2ZFl1NU9fVHZF?oc=5 3. https://news.google.com/rss/articles/CBMihAFBVV95cUxQWS1xbmFlM1hiY1hKQlQxWHNQWDlmYi1nTnFpSWJrMHNSTE8tUkprSW81OUVaRUZCTVZudlVGcExKTWRSRVo1S3lGZUdVU0ZUSDg5X04xSUpHelo1cVVjNHNpZm1CVFBVVkRXTlJsREFtMWszeFU5QUZ5bEMtM0dhZVFXVTk?oc=5 4. https://news.google.com/rss/articles/CBMipAFBVV95cUxPVnJ3dFoxSl9YdWhLa2lYaHg4Y3hNR1pjNFVfcnh5SE1XdVpSSmp2cTFGSkR2eDNQN3EtZXZOc09RTWhmZmVKcGtQOW5EUjZJT09zaWs5R0NoaVJHTHFzWG1xOC1aeHhwd1R5eGtfWVFCYWdablNPOUtpS2hxMEh0blVMWEpZdTd4bjFscHo2SXE4Z0gxb2RlZnVlMmp2NE9XV3RSbQ?oc=5 5. https://techcrunch.com/2026/08/12/some-claude-users-are-mad-that-anthropics-new-watermarks-will-catch-them-cheating-at-their-jobs-classes/ 6. https://news.google.com/rss/articles/CBMiqAFBVV95cUxPdGFDcUl1V3FOWEM4WmhQQVlwVElDbmdPcnIzb1otRVE2akVDbUJBRHoxVU83bXpEM0hkclloQ0ZvUkUzVGVHLU1zenBvUzIwWmt0WTA3WnVnV3dsVHhtVU1jNmN3bGphc05YT3pUR0I5eFU2SXltUjl3OThDNk8xaVFwQkE3Yk9PNk1aNDFXcXRnSFBrNTE0WUo4ZUpmNXhUTDNORXRib2w?oc=5 7. https://news.google.com/rss/articles/CBMikAFBVV95cUxOQXJSdUhYcnVPN1JJRWIxY3dSWW5KVUxwMEJHUG1NUDRzMnlRbUpDTjhWUkxQWVdlNHJJTkJNRWZmNVhEcEJhRnRXbWdWQTlDNVRuTnJOdDVDRkFCeGdlVjdIaVU5dmtJQ2xfTkRtZXFwV3RJS2VBdTc2VDhkdzdJLXNyUmVtVHFBWDFtaXVNR00?oc=5 8. https://dev.to/vpodk/anthropic-enables-auto-mode-by-default-for-claude-code-21om 9. https://github.com/anthropics/claude-code/issues/6235 10. https://github.com/anthropics/claude-code/issues/38335 11. https://www.reddit.com/r/ClaudeCode/comments/1vo2y4n/it_feels_like_our_usage_is_secretly_being_reduced/",
-      "focusTags": []
     }
   ],
   "focus": [
@@ -367,6 +349,30 @@
         "https://github.com/anthropics/claude-code/issues/38335",
         "https://www.reddit.com/r/ClaudeCode/comments/1vo2y4n/it_feels_like_our_usage_is_secretly_being_reduced/"
       ]
+    }
+  ],
+  "topicRadar": [
+    {
+      "title": "Study Finds Four Major AI Labs Use Incompatible Prompt Injection Metrics",
+      "url": "https://news.google.com/rss/articles/CBMilAFBVV95cUxOYUNDS2JpWFBLU1lEYkF4NDJXMUpzNzdEUUtDQU9rb1I4OEd4aTdyVmpqbW54SEdLUjFOUThocDlURmNTVkpZMmRtcUZTQl9kMmVMdjdEZDlCTEo3X1hmQWNRbEJ2WWJrTm1GNzhBbWNrQjVuazM2UnVFTjY0cndqcnBlMWtHNVBfUW9XZjVJLXJ3R3VN?oc=5",
+      "body": "研究發現四大 AI 實驗室採用互不相容的提示注入評測指標，難以橫向比較防禦成效",
+      "topic": "ai-agent-safety",
+      "topicPage": {
+        "id": "ai-agent-safety",
+        "name": "AI Agent 安全與可靠性",
+        "pageType": "topic"
+      }
+    },
+    {
+      "title": "Google co-founder Sergey Brin has a message for DeepMind staff after Demis Hassabis exits as CEO",
+      "url": "https://news.google.com/rss/articles/CBMiogJBVV95cUxPd0N1bjItUkpvUXhRWVFBSXZXV3VtajRYbUhiN3p4R0F3TEt5ZVU2OHY4SXhoWWVmSnNmZVRWZnJUb3VJVWFzMjhfZnVxZkViSHhLQWluaHRXSExNOVBOcGNYblpYNFZwc0diWVlHNkRZT05uNGxRdWM5VWNOR2RoX3Z1YVJZbVMxNGszSVVJUEdKYlJHTzVpcmlYcHVzdnJIM2NPWm9BQVZ1eFR4UHI1LXZUOG12OUxLenNQdk9SZml5VFhOeTBEVkhJVHM5YjFsVXdMb2p4WC12akZvcDQyZi0wZEV5YzdQUzk2dGtqa3dvbkpzS2dvcFBKTHBkWHlrTnpFb3pSUUNTNkhteGNpbXhKY213enNtWUZ1TmlubmRsUdIBpwJBVV95cUxNdTdpbkVxUHZ1NUJTU040NTBMRW9mdklCSzdBUG9iRUJYeFJZOWNmVmFncUIyYU5kNTZDdGowQ296eTZZUWNCWGx3bFo2S1JXQmxRVVZwVFVUUnRURERUYk9naWtiSU9PVkczRWJpRDduY1N2eTY4ejEtc0ozZi1FeDRhdGF4LW5oRHdvZlp6UzFCUHp4QjJSNkMxRkZodk1ZY1VuRWdodlNKcWp1NjA3NDFOUDRvSkhxTjFpM1JlWVFoblZTWEpPQnZ1RWJseF81VWEyS3NESGt1bFQxMzJDUXJheXA2V1lzbUNZdko0TDlXMzhzZjFuZ2hFS2xHRG9QaWZ3WmZVODNxTVljbS1PNnlKRGxyODBrSjNmNDlPSmhyOXpJMl9Z?oc=5",
+      "body": "Sergey Brin 於 Demis Hassabis 卸任 DeepMind CEO 後對內部員工發表談話，屬 AI 實驗室高層人事動態",
+      "topic": "ai-talent-flow",
+      "topicPage": {
+        "id": "ai-talent-flow",
+        "name": "AI 實驗室人才流動",
+        "pageType": "topic"
+      }
     }
   ],
   "sourceStatus": [

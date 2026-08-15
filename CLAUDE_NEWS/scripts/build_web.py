@@ -428,7 +428,14 @@ def attach_sedimented_badges(digest_all: dict, entities: list, topics: list) -> 
     某條目的標題/內文中，該條目附上 sedimented 徽章；同時彙整當日全部已沉澱頁
     為 sedimentedToday，供前端「今日 wiki 動態」小節使用。"""
     all_pages = entities + topics
+    by_id = {p["id"]: p for p in all_pages if p.get("id")}
     for date_str, d in digest_all.items():
+        # 專頁雷達條目：把「→ slug」解析成可點的 wiki 頁（slug 可能帶 topics/ 前綴）
+        for item in d.get("topicRadar", []):
+            slug = item.get("topic", "").split("/")[-1]
+            p = by_id.get(slug)
+            item["topicPage"] = ({"id": p["id"], "name": p["name"], "pageType": p["pageType"]}
+                                 if p else None)
         today_pages = [p for p in all_pages
                        if p.get("lastNewsUpdate") == date_str and p.get("name")]
         if not today_pages:
@@ -802,7 +809,16 @@ def parse_wiki(f: Path, page_type: str) -> dict:
 # ── Digest parser ─────────────────────────────────────────────────────────────
 
 SECTION_EMOJI = {"🔔": "bulletin", "⭐": "topStories", "🔧": "techUpdates", "📰": "mediaReports",
-                 "💬": "discussions", "💰": "billing", "📌": "focus"}
+                 "💬": "discussions", "💰": "billing", "📌": "focus",
+                 # 🧭 專頁雷達（2026-08-13 起，Topic Watch 定向抓取）——獨立區塊，不混入正文六區。
+                 # 📡 來源狀態必須也列入：否則它的表格行會被當成前一區最後一則故事的 body
+                 # （2026-08-14 症狀：專頁雷達條目跑進「付費方案動態」，來源表黏在最後一條底下）。
+                 "🧭": "topicRadar", "📡": "sourceStatusSection"}
+
+# 專頁雷達每行：`- **[標題](url)** — 一句話說明（→ 專頁 slug）`
+TOPIC_RADAR_RE = re.compile(
+    r"^-\s+\*\*\[(.+?)\]\((.+?)\)\*\*\s*(?:[—–-]+\s*(.*?))?\s*(?:[（(]→\s*([\w./-]+)\s*[）)])?\s*$"
+)
 
 SENTIMENT_RE = re.compile(r"`情緒：(.+?)`")
 # star stories start with "⭐ **[Title](url)**" — strip any leading emoji/chars before **
@@ -847,6 +863,7 @@ def parse_digest(f: Path) -> dict:
         "discussions": [],
         "billing": [],
         "focus": [],
+        "topicRadar": [],
         "sourceStatus": [],
         "preview": "",
     }
@@ -912,6 +929,19 @@ def parse_digest(f: Path) -> dict:
                     if not result["bulletin"]:
                         result["bulletin"] = stripped
                 continue
+
+            # 專頁雷達：每行一條 bullet，無來源行；讀者需看到「這是為哪個專頁抓的」
+            if current_section == "topicRadar":
+                m = TOPIC_RADAR_RE.match(line.strip())
+                if m:
+                    result["topicRadar"].append({
+                        "title": m.group(1), "url": m.group(2),
+                        "body": (m.group(3) or "").strip(),
+                        "topic": (m.group(4) or "").strip(),
+                    })
+                continue
+            if current_section == "sourceStatusSection":
+                continue  # 表格行已在上方 SOURCE_TABLE_RE 處理
 
             # focus items
             if current_section == "focus":

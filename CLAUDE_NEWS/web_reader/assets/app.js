@@ -406,6 +406,26 @@
       parts.push('</div>');
     });
 
+    // 🧭 專頁雷達 — 為特定 wiki 專頁定向抓取的條目（2026-08-13 起）。
+    // 自成一格、放在正文六區之後：讀者契約是正文維持 Claude/Anthropic 純度，
+    // 這區的條目標題本來就不會提到 Claude，必須讓讀者一眼分辨「這是為哪頁抓的」。
+    if (d.topicRadar?.length) {
+      parts.push(`<div class="section section--radar">
+<div class="section__h"><span class="section__h-label">專 頁 雷 達</span><span class="section__h-en">topic watch · 定向抓取</span><span class="section__h-count">${d.topicRadar.length} items</span></div>`);
+      d.topicRadar.forEach(s => {
+        const p = s.topicPage;
+        const chip = p
+          ? `<button type="button" class="radar-topic-chip" onclick="openWikiPage('${esc(p.id)}','${esc(p.pageType)}')">→ ${esc(p.name)}</button>`
+          : (s.topic ? `<span class="radar-topic-chip radar-topic-chip--plain">→ ${esc(s.topic)}</span>` : '');
+        parts.push(`<div class="story story--radar">
+  <div class="story__title"><a href="${esc(s.url)}" target="_blank" rel="noopener">${esc(s.title)}</a></div>
+  ${s.body ? `<div class="story__body">${esc(s.body)}</div>` : ''}
+  <div class="sourceline">${chip}</div>
+</div>`);
+      });
+      parts.push('</div>');
+    }
+
     // source status — one-line ribbon
     if (d.sourceStatus?.length) {
       parts.push(`<aside class="source-ribbon">

@@ -158,6 +158,7 @@
       ]
     }
   ],
+  "topicRadar": [],
   "sourceStatus": [],
   "preview": "Fable 5（含 Mythos 5）在遭美國商務部祭出 19 天出口管制禁令後，於昨日（7/1）恢復全球部署；Anthropic 這次加上更嚴格的資安/程式碼分類器，遇到高風險 coding 請求會 fallback 到 Opus 4.8。",
   "sedimentedToday": []

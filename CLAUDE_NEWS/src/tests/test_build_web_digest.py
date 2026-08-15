@@ -100,3 +100,40 @@ class TestBulletStyleRegression(unittest.TestCase):
 
 if __name__ == "__main__":
     unittest.main()
+
+
+class TestTopicRadarSection(unittest.TestCase):
+    """Regression (2026-08-14): 「🧭 專頁雷達」區塊（Topic Watch 定向抓取，08-13 起）
+    未列入 SECTION_EMOJI 時，其 bullet 條目會被吞進前一區（付費方案動態），
+    且「📡 來源狀態」表格行會黏在最後一則故事的 body 上。"""
+
+    def _write(self, tmp_dir: Path) -> Path:
+        f = tmp_dir / "2026-08-14.md"
+        f.write_text(
+            "# 每日新聞摘要\n\n"
+            "**日期：** 2026-08-14 | **來源：** 2/2 | **文章數：** 3 | **更新時間：** 2026-08-14 00:00 UTC\n\n"
+            "### 💰 付費方案動態\n\n"
+            "**[Price story](https://example.com/p)**\n計費相關內文。\n"
+            "`Google News / FT` · 08/14 07:52 UTC\n\n"
+            "### 🧭 專頁雷達（定向抓取）\n\n"
+            "- **[Radar A](https://example.com/a)** — 一句話說明 A（→ ai-agent-safety）\n"
+            "- **[Radar B](https://example.com/b)** — 一句話說明 B（→ topics/ai-talent-flow）\n\n"
+            "### 📡 來源狀態\n\n"
+            "| 來源 | 狀態 | 條數 |\n|------|------|------|\n| Topic Watch | ✅ | 2 |\n",
+            encoding="utf-8",
+        )
+        return f
+
+    def test_radar_items_parsed_and_not_leaked_into_billing(self):
+        import tempfile
+        with tempfile.TemporaryDirectory() as td:
+            d = build_web.parse_digest(self._write(Path(td)))
+        self.assertEqual(len(d["billing"]), 1)
+        self.assertNotIn("|", d["billing"][0]["body"])
+        self.assertEqual(len(d["topicRadar"]), 2)
+        a, b = d["topicRadar"]
+        self.assertEqual(a["title"], "Radar A")
+        self.assertEqual(a["body"], "一句話說明 A")
+        self.assertEqual(a["topic"], "ai-agent-safety")
+        self.assertEqual(b["topic"], "topics/ai-talent-flow")
+        self.assertEqual([s["name"] for s in d["sourceStatus"]], ["Topic Watch"])

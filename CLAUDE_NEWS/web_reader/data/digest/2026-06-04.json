@@ -168,6 +168,7 @@
       ]
     }
   ],
+  "topicRadar": [],
   "sourceStatus": [],
   "preview": "Anthropic 發布工程博文《The ways we contain Claude across products》（HN score 173）：揭示 Anthropic 如何在高存取權限的內部部署中系統性降低 Claude 的「爆炸半徑」——從細粒度權限、沙箱隔離到模型訓練的多層防禦架構，是 Anthropic ",
   "sedimentedToday": []

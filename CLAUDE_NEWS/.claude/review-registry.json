@@ -740,6 +740,24 @@
         "專頁"
       ],
       "_note": "2026-08-13 加入。Topic Watch 上線時建立。這條通道的條目要正確落地，需要三方對同一組 slug 有一致認知：抓料端產生 topic 標記、日報端把它們收進『🧭 專頁雷達』區塊、ingest 端據此路由給對應記者。其中任一處被改寫而其餘沒跟上，症狀是靜默的——條目仍會進 gathered_items.json，但可能混進正文區塊稀釋日報，或被記者當成一般條目套 Claude 關聯門檻而略過。 錨點刻意選『Topic Watch』（來源標籤，條目識別的依據）與『專頁』（概念詞），不列個別 slug——slug 清單的唯一家是 topic_watch.json，要求 command 檔複述會製造第二份真相。"
+    },
+    {
+      "name": "日報區塊 emoji 必須同時出現在日報規格、build_web 解析器與 app.js 渲染器（新增區塊只改規格，網站會把它吞進前一區）",
+      "assertion": "all_contain",
+      "files": [
+        ".claude/commands/news-pipeline-steps.md",
+        "scripts/build_web.py",
+        "web_reader/assets/app.js"
+      ],
+      "patterns": [
+        "🧭",
+        "💰",
+        "💬",
+        "📰",
+        "🔧",
+        "⭐"
+      ],
+      "_note": "2026-08-14 加入。專頁雷達（🧭）於 08-13 加進日報規格，但 build_web.SECTION_EMOJI 與 app.js 未跟上——條目被當成「付費方案動態」的故事、來源狀態表黏在最後一條底下。此對是三邊都得認得同一組區塊 emoji 的機械保證；新增日報區塊時三檔一起改。"
     }
   ],
   "coupling_hints": {

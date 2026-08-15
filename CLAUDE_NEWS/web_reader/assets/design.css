@@ -490,6 +490,18 @@ code {
 }
 .sediment-chip:hover { background: var(--ochre-tint); border-color: var(--ochre-9); }
 
+/* 🧭 專頁雷達 — 定向抓取區塊，與正文六區以左側 hairline 區隔 */
+.section--radar { border-left: 1px solid var(--border-2); padding-left: 14px; }
+.story--radar .story__title a { font-weight: 400; }
+.radar-topic-chip {
+  font-family: var(--font-sans); font-size: 11px;
+  color: var(--ochre-9); background: transparent;
+  border: 1px solid var(--ochre-7); border-radius: var(--radius-2);
+  padding: 2px 8px; cursor: pointer; letter-spacing: 0.02em;
+}
+.radar-topic-chip:hover { background: var(--ochre-tint); border-color: var(--ochre-9); }
+.radar-topic-chip--plain { cursor: default; color: var(--ink-3); border-color: var(--border-2); }
+
 /* 今日 wiki 動態 — 日報頁尾小節 */
 .wiki-today-list { display: flex; flex-wrap: wrap; gap: 8px; }
 .wiki-today-chip {

@@ -599,7 +599,7 @@
       "source": "",
       "time": "",
       "sentiment": "",
-      "body": "Simon Willison 部落格關鍵字誤觸（sqlite-utils 套件更新，與 Claude/Anthropic 無直接關聯），判定不收錄，僅存檔說明來源機制。 `Blog / Simon Willison` | 來源 | 狀態 | 條數 | |------|------|------|",
+      "body": "Simon Willison 部落格關鍵字誤觸（sqlite-utils 套件更新，與 Claude/Anthropic 無直接關聯），判定不收錄，僅存檔說明來源機制。 `Blog / Simon Willison`",
       "focusTags": []
     }
   ],
@@ -646,6 +646,7 @@
       ]
     }
   ],
+  "topicRadar": [],
   "sourceStatus": [
     {
       "name": "Anthropic Status",
