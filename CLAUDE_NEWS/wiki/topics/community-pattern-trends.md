@@ -25,11 +25,11 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 **領域：** 🌐 社群
 **更新頻率：** 🗓️ 週更（無新趨勢節點時刻意不動——日期停留＝趨勢層無變化，非漏更新）
 **開始日期：** 2026-06-29
-**最後更新：** 2026-08-13
-**最後新聞更新：** 2026-08-08
+**最後更新：** 2026-08-15
+**最後新聞更新：** 2026-08-15
 
-> **本週趨勢觀察**（2026-08-08）
-> **新增趨勢六「多 Agent 可觀測性儀表板化」**：live-log-viewer-next（7/6）、Topsoil（7/13）、Fleet Deck（7/14）、Cockpit（8/2）、Wallfacer（8/7）、HUD（8/7）六個獨立實作跨 32 天反覆出現，達成立門檻。既有趨勢新節點：趨勢三「Context 主權爭奪」新增三則（已否決方案索引補上 Repo-as-Memory 的「記什麼不該再做」子類別／pxpipe 圖片化 context／headless 冷啟動 15 萬 token 固定成本）；趨勢四「模型路由自動化」補上 07-26 節點（僅頂尖判斷力任務用 Fable 5，其餘交便宜 subagent）；趨勢五「對抗性設計」新增 A 層量化證據（Claude 審查 Codex 通過率 71.6%→89.7%，8/4）。趨勢一「強制層取代建議層」已 37 天無新節點，惟研判為已收斂成熟（Hooks 取代 CLAUDE.md 硬性規則已成社群共識做法），非熱度消退，暫不標「↘淡出」，列入下次複查觀察。
+> **本週趨勢觀察**（2026-08-15）
+> **新增趨勢七「規格驅動開發（Spec-Driven Development）」**：opsx（6/19）、ANMA（6/22，A 層量化數據 0/20 vs 13/19）、ISO 29148（6/22）、ospec／smart-ralph（8/11，星數 8/13 已查證非刷星）5 個獨立來源跨 54 天反覆出現，達成立門檻，自「醞釀中」升格為成形趨勢。既有六條趨勢無新節點——近 14 天 patterns.md 新節點（loopx／HarnessFlow／omnigent／pxpipe／MISTAKES.md／分層 Opus-Sonnet 提案等）逐一比對後均不構成既有趨勢的新演進節點：omnigent／pxpipe 已於各自技巧方向（harness 抽象化、context 精簡）記錄但未達獨立趨勢規模；loopx／HarnessFlow 屬 [[topics/community-large-codebase-workflow]]「除錯與分工架構」主線的縫合節點，不直接對應本頁任一既有趨勢。「行動裝置遠端控制」已逾 14 天但無第 4 個獨立實作補充，樣本數仍 3 個，維持醞釀觀察不升格。趨勢一「強制層取代建議層」持續無新節點（已 44 天），research 判斷維持收斂成熟定性，暫不標「↘淡出」。
 
 ---
 
@@ -208,7 +208,7 @@ Hook 的原理：exit 1 = 硬攔截，不是「提醒模型注意」，而是工
 
 ---
 
-### 趨勢六：多 Agent 可觀測性儀表板化　`成形`　熱度趨勢：📈 加溫中（最新）
+### 趨勢六：多 Agent 可觀測性儀表板化　`成形`　熱度趨勢：📈 加溫中
 
 **演進：**
 - 🔥 **live-log-viewer-next**（7/6）：讀取本機 JSONL transcript，呈現多個平行 agent 即時對話地圖，此線最早的獨立實作
@@ -229,10 +229,26 @@ Hook 的原理：exit 1 = 硬攔截，不是「提醒模型注意」，而是工
 
 ---
 
+### 趨勢七：規格驅動開發（Spec-Driven Development）　`成形`　熱度趨勢：▬ 穩定延燒
+
+**演進：**
+- 🔥 **opsx spec-driven-development-toolkit**（6/19）：CLI 工具強制要求先寫規格文件才能執行 AI 代碼生成，早期單一嘗試，已被 HN flagged，社群接受度尚待觀察
+- 🔥🔥 **ANMA 架構邊界合約**（6/22，HN 3）：YAML 合約定義架構邊界 + Hook 強制驗證，本線首個 A 層量化數據——有 ANMA 時 0/20 違規，無 ANMA 時 13/19 測試案例違反架構規則
+- 🔥 **ISO/IEC/IEEE 29148 SRS 格式引入**（6/22，Reddit r/ClaudeAI）：與 ANMA 同日獨立出現的第二種規格化路徑，以工業標準需求規格格式（The system shall...）作為 Interview 收集需求後的書面化框架
+- 🔥🔥 **ospec／smart-ralph 批次亮相**（8/11，GitHub Search）：時隔近兩個月後的第三、四個獨立實作——ospec 為「規劃—執行—驗證」可驗證目標迴圈，smart-ralph 結合 Ralph Wiggum loop 與結構化規格流程；星數已於 8/13 查證非刷星（ospec 502 星／forks 6.0% 較弱，smart-ralph 510 星／forks 9.0% 良好），確認 5 個獨立來源（opsx／ANMA／ISO 29148／ospec／smart-ralph）跨 3 種平台（GitHub、Show HN、Reddit）、跨 54 天（6/19–8/12）反覆出現，達成立門檻（≥3 來源、≥14 天、ANMA 具 A 層量化數據）
+
+**代表模式：**
+- **ANMA YAML 合約**：架構邊界寫成合約 + Hook 強制驗證，讓便宜模型也能守規（0/20 vs 13/19 實測）
+- **ospec 可驗證目標迴圈**：規劃—執行—驗證三階段，相容 Claude Code、Codex、Gemini、OpenCode
+- **smart-ralph**：Ralph Wiggum loop + 結構化規格流程，主打規格驅動與智慧壓縮
+
+**對現有設計的啟示：** 「先寫規格再讓 agent 動手」不是單一作者的個人偏好，是社群跨兩個月反覆獨立重新發明的做法——如果你的工作流仍是「直接 prompt、邊做邊改」，規格先行能把 ANMA 已實測的「AI 為求速度繞過架構約束」問題前移到動手前攔截。但要注意：本線至今唯一的 A 層量化數據來自 ANMA 單一實測（0/20 vs 13/19），ospec／smart-ralph 兩個新實作尚未見第一手使用心得或獨立複現同等數字，規格驅動「有效」的證據集中度仍偏低。
+
+---
+
 ## 醞釀中（未列成形）
 
-- **spec-driven 規格先行**：以規格 / 合約先於實作定義 AI 的行動邊界。ANMA 架構邊界合約、ISO/IEC/IEEE 29148 引入工作流等零星出現，概念紮實（ANMA 自帶 0/20 vs 13/19 數據）但社群驗證度仍低，待累積到判定門檻再升為成形趨勢。
-- **行動裝置遠端控制**：手機作為 agent 控制介面已有 3 個獨立實作——ccgram（Telegram bot，6/28）、Android Remote Control MCP、Shellular（專屬 web-app，7/8，HN 32）；滿足「≥3 獨立來源」但首見至今僅約 10 天，未滿 14 天門檻，暫列觀察；若近期再有新實作出現，下次週更可能升格為成形趨勢。
+- **行動裝置遠端控制**：手機作為 agent 控制介面已有 3 個獨立實作——ccgram（Telegram bot，6/28）、Android Remote Control MCP、Shellular（專屬 web-app，7/8，HN 32）；首見（6/28）至今已逾 14 天，惟近期無第 4 個獨立實作補充，樣本數維持 3 個未再擴大，暫不升格，列入下次複查觀察。
 
 ---
 
