@@ -59,8 +59,8 @@ DERIVED_PAGES = {
     "topics/community-pattern-trends":
         ".claude/rules/wiki-ingest-community-lint.md（週更，讀 patterns 頁）",
     "topics/community-large-codebase-workflow":
-        ".claude/rules/wiki-ingest-community.md 主線縫合（daily 小縫）"
-        " + wiki-ingest-community-lint.md（lint 大縫）",
+        ".claude/rules/wiki-ingest-community-lint.md 週更整線重寫（吃 patterns 頁"
+        "帶 `**主線：**` tag 的節點；每日 ingest 只標 tag、不寫此頁）",
     "topics/official-community-gap":
         ".claude/rules/wiki-ingest-features.md 產品化矩陣同步",
     "topics/anthropic-commitments":

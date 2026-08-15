@@ -19,7 +19,7 @@
 | **主題延伸到 Claude/Anthropic 之外**（競品、他家實驗室、產業現象） | 類別路由**只接得到「標題／tag 有提到 Claude/Anthropic」那一半**——12 個來源全部在來源端綁定關鍵字，`filter.py` 對 Google News 再加一道標題閘 | **必須寫 `**蒐集邊界：**` 欄位**（見下方「蒐集邊界欄位」），誠實告訴讀者哪些會漏；若該主題值得補抓，另評估申請 `src/news_aggregator/sources/topic_watch.json` 的定向 query |
 | **別的頁面／跨記者彙整**（衍生頁：縫合層、策展層、趨勢層） | 類別路由**接不到**——沒有新聞會路由到它 | **必須同步在對應規則檔登記明文觸發邊**（daily 順手規則或 lint 週更規則），未登記不得建頁。記者無權改規則檔 → 在回報中標「⚠️ 需主編登記觸發邊：[頁名＋建議節奏]」，由主編層執行 |
 
-> 教訓：`community-large-codebase-workflow` 2026-07-26 建頁時未登記觸發邊，僅靠「領域＝🌐 社群」概括條款覆蓋（所有權≠會被更新），孤兒化 10 天——patterns 持續進節點、主線零縫合。既有衍生頁的觸發邊清冊見 `wiki/CLAUDE.md` 搜尋策略第 5 路。
+> 教訓：`community-large-codebase-workflow` 2026-07-26 建頁時未登記觸發邊，僅靠「領域＝🌐 社群」概括條款覆蓋（所有權≠會被更新），孤兒化 10 天——patterns 持續進節點、主線零縫合；補上 daily 小縫後又因記者每天只看一個節點、只能往段尾加句，兩週把綜合頁長回 log，2026-08-15 改為 daily 標 tag＋weekly 整線重寫。既有衍生頁的觸發邊清冊見 `wiki/CLAUDE.md` 搜尋策略第 5 路。
 
 ### 蒐集邊界欄位 `[加入: 2026-08-13]`
 
@@ -225,4 +225,4 @@ callout 放在標頭欄位（最後更新、最後新聞更新）之後，`---` 
 
 **新 topics slug 命名規約**（既有頁面不溯及）：社群類 `community-*`、企業類 `enterprise-*`、Anthropic 官方 `anthropic-*`、安全政策 `safety-*`。
 
-**更新頻率欄位（選填）`[加入: 2026-07-16，改版: 2026-07-28]`**：非每日維護的頁面（週更／lint 專用）在標頭「領域」之後加一行 `**更新頻率：** 🗓️ 週更（讀者導向的節奏說明）`，並在 `wiki/index.md` 對應摘要前綴「🗓️ 週更」——向讀者說明日期停留是設計而非漏更新。補充說明用讀者語言（如「每週策展一次；更新日期停留數天屬正常節奏」），**不得出現 `/wiki-lint`、ingest 等內部指令名**（此欄位會原樣顯示在網站詳頁標頭）。每日維護頁**不加**此欄。目前適用：`wiki/overview.md`、`wiki/topics/community-pattern-trends.md`、`wiki/topics/community-tech-tools.md`、`wiki/topics/model-task-leaderboard.md`；日後新增週更頁時比照。
+**更新頻率欄位（選填）`[加入: 2026-07-16，改版: 2026-07-28]`**：非每日維護的頁面（週更／lint 專用）在標頭「領域」之後加一行 `**更新頻率：** 🗓️ 週更（讀者導向的節奏說明）`，並在 `wiki/index.md` 對應摘要前綴「🗓️ 週更」——向讀者說明日期停留是設計而非漏更新。補充說明用讀者語言（如「每週策展一次；更新日期停留數天屬正常節奏」），**不得出現 `/wiki-lint`、ingest 等內部指令名**（此欄位會原樣顯示在網站詳頁標頭）。每日維護頁**不加**此欄。目前適用：`wiki/overview.md`、`wiki/topics/community-pattern-trends.md`、`wiki/topics/community-tech-tools.md`、`wiki/topics/model-task-leaderboard.md`、`wiki/topics/community-large-codebase-workflow.md`；日後新增週更頁時比照。

@@ -12,7 +12,7 @@
 | `wiki/topics/community-tech-discussions.md` | HN / Reddit 熱門技術討論 |
 | `wiki/topics/community-tech-timeline.md` | 社群技術應用趨勢時序 |
 | `wiki/topics/code-quality-decline.md` | Claude Code 效能退步事件 |
-| `wiki/topics/community-large-codebase-workflow.md` | patterns 新節點屬四條主線（並行規模／Context 管理／索引記憶／除錯分工）之一時，同步縫合（見下方主線縫合規則）|
+| `wiki/topics/community-large-codebase-workflow.md` | 🗓️ **週更，每日 ingest 不寫此頁**——每日只在 patterns 節點標 `**主線：**` tag（見下方「主線 tag 規則」）；週更整線重寫規則見 `.claude/rules/wiki-ingest-community-lint.md` |
 
 > 上表為核心頁面與觸發條件；此外 `wiki/index.md` 中領域為 🌐 社群 的所有頁面（含日後新增）皆由本記者負責維護與 lint。
 
@@ -31,18 +31,20 @@
 
 ---
 
-## community-large-codebase-workflow 主線縫合規則（daily）`[加入: 2026-08-05]`
+## community-large-codebase-workflow 主線 tag 規則（daily）`[加入: 2026-08-05，改版: 2026-08-15]`
 
-`community-large-codebase-workflow.md` 是把 patterns 模式庫的散落節點縫成主線的頁；patterns 收「節點」（append 即可），主線做「縫合」（判斷歸屬、更新該線敘事）。**縫合時機在 ingest 當下**——你剛寫完該節點、內容還在手上，歸線判斷成本最低；留到事後策展會貴一個數量級（2026-07-26 建頁後因無此規則孤兒化 10 天的教訓）。
+`community-large-codebase-workflow.md` 是把 patterns 節點沉澱成四條主線的**週更**頁；patterns 收「節點」（每日 append），主線頁每週從 patterns **整線重寫**（規則見 `.claude/rules/wiki-ingest-community-lint.md`）。**每日 ingest 不寫主線頁**——2026-08-05～08-15 的日更小縫實驗證明：每天只看一個節點的記者，結構上只做得到「往段尾加一句」，兩週就把綜合敘事頁長回 log；縫合需要看完整條線再重寫，那是週更的事（2026-08-15 使用者裁決）。
 
-**每次為 `community-tech-patterns.md` 新增節點後，多做一步：**
-1. 判斷該節點是否屬四條主線之一——並行規模／Context 管理／索引記憶／除錯分工。不屬於 → 主線頁不動，結束
-2. 屬於 → **改寫**該線對應段落（把新節點的意義縫進敘事，不是在段落尾 append 一句）；節點細節與來源留在 patterns 頁，主線只寫「這條線現在走到哪」＋ wikilink 回 patterns
-3. 覆寫頂部 callout（單一最新、不疊加），更新「最後更新」「最後新聞更新」
-4. **主線頁不設時序區塊，也不寫日期開頭的條列**——它的價值是綜合敘事，長出 `### YYYY-MM-DD` 區塊、或 bullet 以「`05-06 …`」「`08-04 …`」這種日期起頭逐條堆疊，都是換了衣服的 log，一律視為腐蝕訊號。每條線用**主題小段**（粗體引言＋敘事，如「隔離原語：從 OS 帳號走到 worktree」）組織，節點按意義歸段、不按時間排隊；日期只在需要錨定時以括號附註（2026-08-15 使用者裁決）
-5. callout 寫「這條線發生了什麼」，不得出現「大縫／小縫／漏縫補縫／縫合」等維運字眼（同 `.claude/rules/wiki-ingest-format.md` 無維運術語洩漏條）
+**每次為 `community-tech-patterns.md` 新增節點時，多填一個欄位：**
 
-第五條主線的誕生：某類節點反覆出現卻無線可歸 → 不自行開線，回報主編轉知 weekly-review 評估。
+```
+- **主線：** 並行規模 ／ Context 管理 ／ 索引記憶 ／ 除錯分工 ／ —
+```
+
+- 判準是「這個節點回答的是**大型 codebase 特有**的痛點嗎」——並行 agent 互踩／context 被工具輸出撐爆／agent 記不住跨 session 決策／多 agent 產出誰把關；小專案也會遇到的通用技巧填 `—`
+- 可複選（頓號分隔）；拿不準填 `—` 並在「與既有模式的關係」寫一句理由，週更時記者會再判
+- 這個欄位是週更唯一的撈料依據（`Grep "\*\*主線：\*\* [^—]"`），漏填等於該節點對主線頁不存在
+- 某類節點反覆出現卻無線可歸 → 不自行開線，回報主編轉知 weekly-review 評估第五條線
 
 ---
 

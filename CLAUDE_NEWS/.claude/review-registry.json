@@ -581,7 +581,7 @@
       ]
     },
     {
-      "name": "large-codebase 主線頁小縫/大縫兩側規則齊全（daily 掛線在 community.md、weekly 健檢在 community-lint.md——只有一側時主線頁會再次孤兒化）",
+      "name": "large-codebase 主線頁 tag/重寫兩側規則齊全（daily 標 `**主線：**` tag 在 community.md、weekly 整線重寫在 community-lint.md——只有一側時主線頁會再次孤兒化或長回 log）",
       "assertion": "all_contain",
       "files": [
         ".claude/rules/wiki-ingest-community.md",
@@ -590,9 +590,9 @@
       "patterns": [
         "community-large-codebase-workflow",
         "並行規模",
-        "縫合"
+        "\\*\\*主線：\\*\\*"
       ],
-      "_note": "2026-08-05 加入。頁面 07-26 建立後因日更與 lint 兩側都無觸發規則而孤兒化 10 天——patterns 持續進節點、主線零縫合。"
+      "_note": "2026-08-05 加入。頁面 07-26 建立後因日更與 lint 兩側都無觸發規則而孤兒化 10 天。2026-08-15 改版：日更小縫兩週就把頁面長回 log，改為 daily 只標 tag、weekly 整線重寫（每線 ≤30 行固定骨架）。"
     },
     {
       "name": "週報預告偵測的反確認偏誤護欄：weekly-report.md 與 news-pipeline-steps.md 都必須明載掃描在選材之後、且只偵測不判定",
