@@ -221,3 +221,6 @@
 [cloud weekly-wiki-lint-cloud STARTED 2026-08-15T01:05:02Z]
 [週六 2026/08/15 01:31:00.00] Weekly lint OK - 修 28 頁（六類記者 3a-3g 全通過），6 項待使用者確認，測試/build/push：gate 首次擋下（model-comparison.md 待查證探針含逗號被誤切，已修復後重跑通過）→ build 成功 → 單一 push
 [cloud daily-news-pipeline-cloud STARTED 2026-08-15T13:05:30Z]
+[週六 2026/08/15 13:06:02.00] === Agent pipeline start (2026-08-15) ===
+[週六 2026/08/15 13:06:02.00] ABORTED: gathered_items.json date=2026-08-14 items=68，非目標日期的新鮮資料
+[週六 2026/08/15 13:06:02.00] === Pipeline aborted (agent) ===
