@@ -3,11 +3,11 @@ page: "topics/community-large-codebase-workflow"
 kind: "topic"
 status: "ongoing"
 domain: "🌐 社群"
-last_updated: "2026-08-13"
-last_news_update: "2026-08-08"
+last_updated: "2026-08-15"
+last_news_update: "2026-08-15"
 status_main: "ongoing"
-days_since_news: 6
-inbound_links: 10
+days_since_news: 0
+inbound_links: 11
 attribution_count: 2
 attribution_last: "2026-08-05"
 top_source: "reddit"

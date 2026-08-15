@@ -3,12 +3,12 @@ page: "topics/community-pattern-trends"
 kind: "topic"
 status: "ongoing"
 domain: "🌐 社群"
-last_updated: "2026-08-13"
-last_news_update: "2026-08-08"
+last_updated: "2026-08-15"
+last_news_update: "2026-08-15"
 update_freq: "🗓️ 週更（無新趨勢節點時刻意不動——日期停留＝趨勢層無變化，非漏更新）"
 status_main: "ongoing"
-days_since_news: 6
-inbound_links: 12
+days_since_news: 0
+inbound_links: 11
 attribution_count: 0
 attribution_last: null
 top_source: null
@@ -60,7 +60,7 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 - **ANMA 架構邊界合約**：用 YAML 合約定義架構邊界 + Hook 強制驗證，讓便宜模型也守得住規則（實測 0/20 vs 無約束時 13/19 違規）
 - **Pre-completion Hook**：Stop Hook 掃描最後一輪輸出，偵測到模糊結束語句就回傳非零 exit，逼模型繼續
 
-**觀察（2026-08-08）：** 近 14 天 patterns.md 無屬於本線的新節點（上一則為 7/2 氛圍狀態燈，已 37 天）。研判非熱度消退，而是「Hooks 取代 CLAUDE.md 硬性規則」已收斂為社群穩定共識，新聞性隨之降低；暫不下修為「↘ 淡出」，列入下次複查觀察，若持續無新節點則重新評估。
+**觀察（2026-08-15）：** 近 14 天 patterns.md 無屬於本線的新節點（上一則為 7/2 氛圍狀態燈，已 44 天）。研判非熱度消退，而是「Hooks 取代 CLAUDE.md 硬性規則」已收斂為社群穩定共識，新聞性隨之降低；暫不下修為「↘ 淡出」，列入下次複查觀察，若持續無新節點則重新評估。
 
 **對現有設計的啟示：** 你 CLAUDE.md 裡任何「必須 100% 遵守」的規則都放錯位置了——LLM 是機率性遵守，規則越多遵守率越低。把它們分成兩類：偏好留 CLAUDE.md，邊界搬 Hooks。
 
