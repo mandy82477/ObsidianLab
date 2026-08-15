@@ -167,6 +167,15 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 
 | 工具 | 類型 | 採用 | 首次出現 | 簡介 |
 | --- | --- | --- | --- | --- |
+| [**youtube-skills**](https://github.com/ZeroPointRepo/youtube-skills) | Skills | ⏳ | 2026-08-12 | 供 AI agent 使用的 YouTube 字幕擷取 skill，相容 OpenClaw、Hermes-Agent、Claude Code、Cursor、Windsurf；506 星，已查證非刷星（forks 10.7%） |
+| [**devspace**](https://github.com/Waishnav/devspace) | 整合工具 | ⏳ | 2026-08-11 | 把 ChatGPT 網頁介面／Claude Web 轉換成類 Codex／Claude Code 的操作體驗；3,675 星，已查證非刷星（forks 10.9%） |
+| [**smart-ralph**](https://github.com/tzachbon/smart-ralph) | 工作流 | ⏳ | 2026-08-11 | 結合 Ralph Wiggum loop 與結構化規格流程的 Claude Code plugin，主打規格驅動開發與智慧壓縮 compaction；510 星，已查證非刷星（forks 9.0%） |
+| [**headroom-desktop**](https://github.com/gglucass/headroom-desktop) | 費用監測 | ⏳ | 2026-08-11 | macOS 桌面工具，本機壓縮 pipeline 攔截 prompt 移除 tool output／log／樣板文字；已查證整體 session 平均省約 15–25% token（非宣傳的 50%）；508 星，已查證非刷星 |
+| [**ospec**](https://github.com/clawplays/ospec) | 工作流 | ⏳ | 2026-08-11 | 規格驅動 agentic 工作流框架，「規劃—執行—驗證」可驗證目標迴圈，相容 Claude Code、Codex、Gemini、OpenCode；502 星，forks 比例 6.0% 低於防刷佐證基準，刷星可能性未能完全排除 |
+| [**loopx**](https://github.com/huangruiteng/loopx) | 多 Agent | ⏳ | 2026-08-09 | 輕量級 loop 工程狀態核心，持久目標、配額感知自動喚醒、可執行待辦、證據紀錄與可驗證交接，agent-loop agnostic；4,476 星，已查證非刷星（forks 8.6%） |
+| [**HarnessFlow**](https://github.com/HangYu8123/HarnessFlow) | 多 Agent | ⏳ | 2026-08-09 | 鎖定 Codex、Claude、GitHub Copilot 的通用 coding workflow harness；482 星，forks 比例 6.8% 低於防刷佐證基準，僅近期 commit 一項佐證 |
+| **omnigent** | 多 Agent | ⏳ | 2026-08-05 | harness 無關 meta-harness，換底層 agent（Claude Code／Codex／Cursor／Pi）不必重寫協作邏輯；8,150 星，已查證非刷星（forks 14.7%） |
+| [**pxpipe**](https://github.com/teamchong/pxpipe) | 費用監測 | ⏳ | 2026-08-05 | 把文字 context 渲染成圖片降低 token 用量，實測約 25,000 text token 壓至 2,700 image token；6,955 星，已查證非刷星（forks 8.5%） |
 | [**Wallfacer**](https://github.com/pradipta/wallfacer) | 多 Agent | ⏳ | 2026-08-07 | Claude Code 專用終端機 session 管理工具；Show HN score 35，source_count 2（跨來源佐證） |
 | [**HUD**](https://github.com/adrida/hud-mode) | IDE/終端 | ⏳ | 2026-08-07 | 開源極簡終端 UI，同時支援 Claude Code、Codex、OpenCode；透過官方 CLI JSON event stream 運作，以 UserPromptSubmit hook 取得狀態不額外耗 token；Show HN score 25，source_count 2 |
 | [**Cockpit**](https://episko.dev/) | 多 Agent | ⏳ | 2026-08-02 | Rust 打造的 Claude Code 多 Agent 監控主控台，彙整多個 agent／session／專案執行狀態於單一介面；HN score 11，source_count 2 |
