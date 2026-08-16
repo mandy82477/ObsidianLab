@@ -811,6 +811,19 @@
         "＋"
       ],
       "_note": "2026-08-16 加入。dedup 只留勝者標籤，低流量官方來源在 funnel／記分卡上長期顯示零貢獻（2026-08-15：Anthropic Blog 供了當日最大條報導，掛名全歸 HN）。修法是把 contributors 寫進日報來源欄；只改產出端而記者不知道要拆成多筆，attribution 一樣只記勝者，等於白做。"
+    },
+    {
+      "name": "深挖專欄的三邊耦合：規格（weekly-report.md）、解析器（build_web.py 以 h3 抽 deepDive 元件）、檢查器（check_weekly_ledger.py 擋非 ### 層級）",
+      "assertion": "all_contain",
+      "files": [
+        ".claude/commands/weekly-report.md",
+        "scripts/build_web.py",
+        "scripts/check_weekly_ledger.py"
+      ],
+      "patterns": [
+        "深挖"
+      ],
+      "_note": "2026-08-16 加入。規格檔的範例原本寫成 `#### 深挖：主題名稱`——那是規格文件自己的巢狀深度（該處為 `#### (2) 技術討論＋深挖`），輸出檔少一層。W30–W32 三期各自從輸出結構推導出 `###` 而沒人回頭改規格，錯誤範例活了三週；W33 照字面抄，build_web 切不到子區塊、deepDive 變 None，整段 1,200 字被靜默併進討論綜述，網站上專欄消失且無任何錯誤訊息。三邊任一移除深挖處理即紅。"
     }
   ],
   "coupling_hints": {

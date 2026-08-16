@@ -48,6 +48,17 @@ ZOMBIE_EXEMPT_MARKS = ("⏰",)
 MIN_FORECASTS = 3
 MAX_FORECASTS = 6
 
+# 深挖小標必須恰好是 `###`——`scripts/build_web.py` 以 h3 切子區塊，再把「深挖：」
+# 那節抽成專屬元件（kicker「深挖專欄 · DEEP DIVE」＋標題＋內文）。寫成 `####` 時
+# 子區塊根本不存在，deepDive 變 None，整段內文被靜默併進「討論綜述」，網站上專欄
+# 消失且無任何錯誤——2026-08-16 W33 踩過。規格檔的範例原本就寫成 `####`（那是規格
+# 文件自己的巢狀深度，輸出檔少一層），W30–W32 三期各自從輸出結構推導出 `###`、
+# 沒人回頭改規格，於是錯誤範例活了三週而無人察覺。
+DEEPDIVE_HEADING_RE = re.compile(r"^(#{2,6})\s*深挖[：:]\s*(.*)$", re.MULTILINE)
+DEEPDIVE_LEVEL = "###"
+DEEPDIVE_MIN_CHARS = 800
+DEEPDIVE_MAX_CHARS = 1200
+
 
 def _strip_bold(text: str) -> str:
     return re.sub(r"\*{1,3}([^*]+)\*{1,3}", r"\1", text).strip()
@@ -220,9 +231,47 @@ def check(report: list[str]) -> bool:
     return ok
 
 
+def check_deepdive(report: list[str]) -> bool:
+    """深挖專欄的小標層級與篇幅。
+
+    層級錯誤會讓網站上的專欄元件整個消失（見 DEEPDIVE_HEADING_RE 註解），故硬擋；
+    篇幅只 WARN——那是編輯判斷，且本專案不用「數字只准往某方向走」的機械棘輪。
+    """
+    ok = True
+    for path in _issues():
+        text = path.read_text(encoding="utf-8-sig")
+        matches = DEEPDIVE_HEADING_RE.findall(text)
+        if not matches:
+            # 規格允許「查無不補位」時整段省略，故不硬擋，只提醒。
+            report.append(f"  ⚠️ {path.stem}：找不到深挖小標（若為本週略過，忽略此提醒）")
+            continue
+        if len(matches) > 1:
+            report.append(f"  ❌ {path.stem}：出現 {len(matches)} 個深挖小標，專欄應只有一個")
+            ok = False
+        level, title = matches[0]
+        if level != DEEPDIVE_LEVEL:
+            report.append(
+                f"  ❌ {path.stem}：深挖小標為 `{level}`，必須是 `{DEEPDIVE_LEVEL}`"
+                f"——build_web.py 以 h3 切子區塊，其他層級會讓專欄元件整個不渲染、"
+                f"內文被靜默併進「討論綜述」"
+            )
+            ok = False
+
+        start = text.index(matches[0][1]) if matches[0][1] else 0
+        body = re.split(r"^#{2,3}\s", text[start:], maxsplit=1, flags=re.MULTILINE)[0]
+        n = len(re.sub(r"\s", "", body))
+        if not (DEEPDIVE_MIN_CHARS <= n <= DEEPDIVE_MAX_CHARS):
+            report.append(
+                f"  ⚠️ {path.stem}：深挖 {n} 字，規格為 "
+                f"{DEEPDIVE_MIN_CHARS}–{DEEPDIVE_MAX_CHARS}（提醒，不擋）"
+            )
+    return ok
+
+
 def main() -> int:
     report: list[str] = []
     ok = check(report)
+    ok = check_deepdive(report) and ok
     out = _stdout()
     print("# check_weekly_ledger.py 報告\n", file=out)
     print("\n".join(report) if report else "  （無週報）", file=out)
