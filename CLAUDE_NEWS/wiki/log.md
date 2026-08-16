@@ -3903,3 +3903,16 @@
   - anthropic-commitments 本輪不動：今日事件不屬「承諾修復／承諾政策／明確拒絕／兌現先前承諾」性質，追蹤中五項均無官方新動作（Auto 模式如期生效屬產品發布時程，不列入承諾追蹤以免稀釋該頁語意）
 - 品質備註：[主編] 派工模板落後規則檔——社群記者派工要求「今日順手改寫 community-large-codebase-workflow 主線敘事」，但 `.claude/rules/wiki-ingest-community.md` 今日改版後已明定日更只在 patterns 節點標 `**主線：**` tag、主線縫合改週更。記者正確依規則拒絕執行並回報矛盾，非記者疏失；`.claude/commands/wiki-ingest.md` 派工範本無此指示，是主編臨場加寫，後續派工不得再加。
 - 主編待辦（轉主編層 web 查證，非記者可為）：Reddit 質疑 Opus 5 與 Fable 5 共用同一週用量池、牴觸官方「Fable 5 佔 50%」設計，商業記者已在 `entities/pricing` 以待查證方式記錄；需查 support.claude.com 官方說明中心確認配額池規則，屬 `/wiki-lint` 5c 範圍。
+
+## 2026-08-16 週度延伸回顧
+
+- 延伸：
+  - `topics/anthropic-business`：「IPO 前瞻與估值追蹤」新增「資本佈局背景（推論）」小結，並置解讀算力合約線（08-11 一天四筆：Riot／GIC／Macquarie／Volta）與 IPO／估值線（08-13 $2 兆傳聞、08-15 Reuters 2028 營收預測、Q2 $115 億），回答「為何此刻密集簽算力合約」。呈現層整理不引入新數字，只動「最後更新」
+  - `topics/enterprise-cost-management`：補入 HN `cookbook-meter`（08-14），為繼 Quesma「40 倍」、modelplane.ai「44 倍」後第三個獨立方法論的訂閱／API 價差量化。**記者查證後修正主編轉述**：$5,868 是作者本人上月訂閱換算的工具輸出而非留言數字，HN 僅 2 分，已據實標「單一社群回報」、不與前兩則等量齊觀
+  - `topics/code-quality-decline`：補入 08-12 Reddit forensic archive（Claude 失敗／退化／slop 存檔，附 HackerOne 回報連結），定位為社群把品質下滑從零散貼文升級為可被引用的證據基礎設施，呼應頁內 CC-Canary 先例；單一 Reddit 貼文無週熱門標記，已標訊號強度
+  - `entities/dario-amodei`：修正三處過期斷言（使用者裁決選項 1）。頁上原寫兩篇報導「均未提供其姓名」，但 08-15 另有報導提供姓名而本庫判定不收錄，導致頁面持續宣稱假事實。改為只描述那兩篇報導本身「內容停留在標題層級、未展開姓名或具體職務」——斷言範圍從「沒有人提供」收窄到「這兩篇沒展開」，不論外界後續如何都保持為真。未引入 08-15 任何素材、未動狀態符號與探針、未加訊號日
+- 使用者跳過項目：官方部落格〈Maximizing the value of your Claude Code sessions〉（HN 268 分，本週互動最高的官方一手內容）全庫零收錄——功能記者判定為正確排除（無新操作，不符 feature-radar 准入），主編提出可能的家為 `community-large-codebase-workflow` Context 管理主線或 `entities/pricing` token 成本角度，使用者本輪未指定，維持不安家、留作觀察
+- 待辦（同記者跨時交辦，非轉知帳本範圍）：下次 `/wiki-lint` 由社群記者評估 `community-tech-tools.md` 是否收錄 forensic archive 存檔工具本身（單一社群來源、score 不可信，門檻待判）
+- 聚焦校準：非本月首次（8 月已於 08-01 執行，命中率 76%，回看 06-29~07-05），跳過
+- reader-notes 處置：4 條 ⏳ 全部維持 ⏳，無 🎨／📝 待辦、無逾期雜記。LLM code review 單位成本本週 review×成本 交集零命中、庫內仍零節點；codebase map format 由社群記者標一則鄰近訊號（GitHub #56913 tiered Opus/Sonnet + persistent state，08-13）——碰同一底層需求但屬架構提案而非具名 format，不算第三節點，若其持久化設計具體化則可能是；模型路由／靜默降階本週無新進展；GPT-5.6 對照維持 07-19 起的被動觸發，本週無官方 benchmark
+- 無建議記者：模型、功能、安全政策、人物（四位皆回報訊號已被 daily ingest 即時吃進、深度與訊號量相符，非未審視）
