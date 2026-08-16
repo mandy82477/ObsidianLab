@@ -3985,3 +3985,17 @@ registry 加一組 sync_pair 釘住產出端與歸因端（只改一邊等於白
 **處置**：W33 補齊兩行導言並改回 `###`；規格範本補上兩行並註明「不要照抄本規格檔自己的標題深度」與「新開表那行不進網站但仍必寫」；`scripts/check_weekly_ledger.py` 的 `check_deepdive()` 擴充為三檢（層級硬擋、字數 WARN、兩處導言 WARN）；registry 加規格／解析器／檢查器三邊 sync_pair。
 
 **驗證**：W31／W32／W33 的 markdown 結構骨架現已**完全一致**；反向驗證兩項（寫回 `####` 會紅並指出後果、拿掉導言會 WARN）；308 測試綠。
+
+## 2026-08-16 Ingest | news/2026-08-16.md（45 則）
+
+- 來源日報：[[news/2026-08-16]]（45 則，13/13 來源；日報實收 19 則，另 26 則透過 `list_digest_omissions.py` 一併提供給記者判斷；其中 5 則因與 Claude/Anthropic 完全無關聯（Qwen 系列討論、Unsloth Desktop app）在主編分類階段即排除，未進入任何記者派工）
+- 分類派工：功能 8 則、社群 16 則、商業 6 則、安全政策 7 則、人物 3 則（模型類今日無條目，未派工）；六類皆以 `subagent_type: general-purpose` + `model: sonnet` foreground 派工，角色前導導向 `.claude/agents/wiki-reporter-[category].md`（正典路徑）
+- 更新頁面：
+  - **功能**：`entities/claude-code.md`（新增 4 則已知問題：Windows BSOD via Wof.sys #32870、Bedrock Opus 4.7 permission_error #51183、output style YAML frontmatter 未注入系統提示 #47482、GPU process crash 拖垮全部 session #81698；已同步分組統計）、`topics/official-community-gap.md`（Inter-session communication #24798 互動數同步至 78 留言）
+  - **商業**：`topics/anthropic-business.md`（傳 Anthropic 洽談收購 Decart，交易規模上修至約 70 億美元、稱先於 Nvidia 談成，單一來源未證實；財務狀況表新增 TechRadar「AI 界的 Apple」評論角度）
+  - **社群**：`topics/community-tech-patterns.md`（新增 2 節點：Looker 內建 MCP 端點免裝本機 Toolbox、背景 agent 空 prompt 仍「順利結束」的實戰教訓；GitHub 高星倉庫 AIUsage/awesome-claude-code 因無法查證 forks/issues/commit 佐證且代理無法連線 GitHub API，判斷不收錄）
+  - **安全政策**：`topics/ai-agent-safety.md`（Anthropic 官方研究〈Patterns and problems in emerging multi-agent systems〉，剖析多智能體系統浮現的行為模式與風險；Benzinga／Business Insider 同題跟進報導措辭明顯較官方原文聳動，已並存標注、未採信媒體框架強度）
+  - **人物**：無（Epstein 相關三則報導經查不符 `entities/dario-amodei.md` 觸發條件，亦不構成 Cami Clark 本人建頁門檻，判斷不收錄，未動任何頁面）
+- 新增頁面：無
+- 摘要：Anthropic 發布多智能體系統風險研究並引發媒體聳動化跟進、傳出洽談收購 Decart（約 70 億美元，未證實）、Claude Code 集中出現 4 起穩定性 bug 回報（BSOD／Bedrock 權限／output style／GPU crash）
+- 呈現品質：全部通過
