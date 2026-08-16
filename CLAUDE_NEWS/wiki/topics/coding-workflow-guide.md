@@ -3,15 +3,15 @@ page: "topics/coding-workflow-guide"
 kind: "topic"
 status: "ongoing"
 domain: "🛠️ 工具/功能"
-last_updated: "2026-08-15"
-last_news_update: "2026-08-08"
+last_updated: "2026-08-16"
+last_news_update: "2026-08-16"
 update_freq: "🗓️ 週更（隨官方文件與社群策展更新；日期停留數天屬正常節奏）"
 status_main: "ongoing"
-days_since_news: 8
+days_since_news: 0
 inbound_links: 4
-attribution_count: 0
-attribution_last: null
-top_source: null
+attribution_count: 1
+attribution_last: "2026-08-16"
+top_source: "hacker-news"
 pending_count: 1
 pending_overdue: 0
 pending_next_review: "2026-08-24"
@@ -25,8 +25,8 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 **開始日期：** 2026-08-08
 **領域：** 🛠️ 工具/功能
 **更新頻率：** 🗓️ 週更（隨官方文件與社群策展更新；日期停留數天屬正常節奏）
-**最後更新：** 2026-08-15
-**最後新聞更新：** 2026-08-08
+**最後更新：** 2026-08-16
+**最後新聞更新：** 2026-08-16
 
 > **本頁在回答什麼**（2026-08-08 重寫）
 > 把一條完整的開發流程攤開，逐段回答：**官方給了什麼、社群補了什麼、還缺什麼**。
@@ -253,6 +253,10 @@ Database queries use Knex in src/db/. Never write raw SQL strings in route handl
 ⚠️ 跨目錄存取的載入行為不同，很容易踩：`additionalDirectories` **從不**載入 CLAUDE.md／rules／skills；`--add-dir` 會載 skills，要載 CLAUDE.md 得設 `CLAUDE_CODE_ADDITIONAL_DIRECTORIES_CLAUDE_MD=1`。
 
 社群在這半邊只補了兩塊：**session 語意搜尋**（`/resume` 只能靠第一條訊息篩選，至少 15 個獨立實作，最大 1,050★／128 forks，路線高度收斂於「掃 `~/.claude/projects/*/*.jsonl` → SQLite FTS5」）與符號級索引（Semble，5,845★、HN 445 分，宣稱「99% fewer tokens than grep+read」）。
+
+#### 官方的 session 經營建議
+
+Anthropic 官方部落格〈[Maximizing the value of your Claude Code sessions](https://claude.com/blog/maximizing-the-value-of-your-claude-code-sessions)〉（2026-08-14）談如何讓每個 token 發揮最大價值，建議之一是**任務之間執行 `/clear`**，理由是避免前一個不相關任務累積的 context 被原樣送回模型。這與上面「同一個問題糾正超過兩次就 `/clear`」（見第 7 段）是同一個工具、不同觸發時機：那條管**單一任務內失敗重試**，這條管**任務邊界之間**的 context 衛生。
 
 以下三條**已被官方機制取代或證據不足，本頁不再推薦**：「hook 層設讀取上限」（Claude Code 本來就有硬編碼上限，CLI 25,000／Desktop 10,000 tokens，社群在 issue 求的是放寬不是收緊）；「已否決方案索引」（對應官方 issue 已關閉、0 reactions）；「本地小模型分流省 50–60% context」（生態只驗證成本不驗證 context）。
 

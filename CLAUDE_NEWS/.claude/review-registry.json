@@ -786,6 +786,19 @@
         "規則檔優先於派工訊息"
       ],
       "_note": "2026-08-15 加入。只修派工端仍依賴主編每次記得；只修記者端則主編永遠不知道自己在製造矛盾（記者靜默照規則做，牴觸不會浮上來）。此對保證兩層同時在：主編不加寫、記者擋下來並回報。"
+    },
+    {
+      "name": "官方內容的類別分流：正典分流鐵則（wiki-ingest.md）必須與功能側（coding-workflow-guide 進料）、社群側（patterns/discussions 不限出處）三邊齊全",
+      "assertion": "all_contain",
+      "files": [
+        ".claude/rules/wiki-ingest.md",
+        ".claude/rules/wiki-ingest-features.md",
+        ".claude/rules/wiki-ingest-community.md"
+      ],
+      "patterns": [
+        "官方內容不是社群類的禁區"
+      ],
+      "_note": "2026-08-16 加入。官方部落格〈Maximizing the value of your Claude Code sessions〉（HN 268 分，當日最高互動的官方一手內容）全庫零收錄——分類層無落點（社群列讀起來像『社群產出』、功能列只有版本/指令/旗標）＋ coding-workflow-guide 一句『不吃新聞條目』，兩層同時漏。三邊只要有一邊被改回去，官方使用指南就會再次無家可歸；社群側缺席則官方模式類條目又會被記者當成不屬自己而略過。"
     }
   ],
   "coupling_hints": {

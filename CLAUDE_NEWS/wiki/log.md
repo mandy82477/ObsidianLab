@@ -3916,3 +3916,18 @@
 - 聚焦校準：非本月首次（8 月已於 08-01 執行，命中率 76%，回看 06-29~07-05），跳過
 - reader-notes 處置：4 條 ⏳ 全部維持 ⏳，無 🎨／📝 待辦、無逾期雜記。LLM code review 單位成本本週 review×成本 交集零命中、庫內仍零節點；codebase map format 由社群記者標一則鄰近訊號（GitHub #56913 tiered Opus/Sonnet + persistent state，08-13）——碰同一底層需求但屬架構提案而非具名 format，不算第三節點，若其持久化設計具體化則可能是；模型路由／靜默降階本週無新進展；GPT-5.6 對照維持 07-19 起的被動觸發，本週無官方 benchmark
 - 無建議記者：模型、功能、安全政策、人物（四位皆回報訊號已被 daily ingest 即時吃進、深度與訊號量相符，非未審視）
+
+## 2026-08-16 Query：官方使用指南在分類層無落點
+
+- **提問**：使用者對週度回顧「官方部落格〈Maximizing the value of your Claude Code sessions〉沒有家」追問「這為什麼沒有家」，繼而指出「技術討論、工作流模式，這我覺得也可以放官方的」。
+- **根因（兩層同時漏，才會漏得乾淨）**：
+  1. **分類層無格子**——六類分類表的「功能」列只有版本／指令／旗標／SDK／Breaking change／beta，這篇沒有新指令；「社群」列寫作「社群工具（Show HN / score ≥ 30）、技術討論、工作流模式」，加上類別名叫「社群」，讀起來像出處篩選器，主編分類時不會把官方部落格丟過去。**但查證後確認：`community-tech-discussions` 的收錄門檻本就明列「重要人士具名表態」為三個合法訊號來源之一，`community-tech-patterns` 的觸發條件從未限制出處——規則早就允許，是措辭讓人不敢用。**
+  2. **主題上最精準的頁把它擋在門外**——`topics/coding-workflow-guide` 的 §2a 標題就叫「怎麼讀得省」，且該頁半數子節是「官方的 include／exclude 清單」「官方的四階段」「官方的規格品質判準」，本就是官方＋社群雙軌；擋住的是建頁時寫的一句「不吃新聞條目」。那句要防的是無來源灌水（配套理由寫著「無來源、不會被更新、會讓讀者誤以為經查證」），卻拿**進料管道**當**可信度**的代理，於是擋掉了唯一最有來源的那種內容。
+- **使用者裁決**：兩頁分工，加分流鐵則。
+- **處置**：
+  - `.claude/rules/wiki-ingest.md` 分類表「功能」列補「官方對既有功能的使用指南」、「社群」列明寫後兩者不限出處；新增「分流鐵則：官方內容不是社群類的禁區」節（三型態對照表：怎麼用既有功能 → 功能／coding-workflow-guide；官方提出的新工作流模式 → 社群／patterns 標官方出處；有新指令旗標 → 功能／claude-code + feature-radar）
+  - `.claude/rules/wiki-ingest-features.md` coding-workflow-guide 改為兩條進料（技能清冊週更 ＋ 官方使用指南每日），新增「官方使用指南的寫入紀律」
+  - `.claude/rules/wiki-ingest-community.md` 新增「官方內容不是你的禁區」，界線依「它給讀者什麼」而非出處
+  - `.claude/review-registry.json` 加三邊 sync_pair（任一邊被改回去，官方使用指南會再次無家可歸）
+  - 該條目已由功能記者寫入 `coding-workflow-guide` §2a 新子節「官方的 session 經營建議」，並與該頁第 7 段既有的「同一問題糾正超過兩次就 `/clear`」做區隔（一個管單一任務內失敗重試、一個管任務邊界間的 context 衛生）
+- **未查完（另案）**：查證途中發現兩條 funnel 異常，尚未定論——(a) 2026-08-15 `Anthropic Blog` gathered 1 → filtered 0，但 `filter.py` 只擋 Google News 標題無關鍵字與 PR wire 網域，不可能丟棄官方部落格；最像的解釋是 dedup 併入 HN 那份，但 dedup 合併會累加 `source_count` 而存活項為 1，對不上。(b) `Official Docs` 連三天 filtered > 0 但 emitted 0（08-13 8→8→0、08-14 1→1→0、08-15 1→1→0），可能是 `seen_urls` 正常去重，未證實。
