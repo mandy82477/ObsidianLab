@@ -259,14 +259,17 @@ def check_deepdive(report: list[str]) -> bool:
 
         # 回收小標與表格之間的導言：build_web 抽成 nextweek.intro，缺了網站上會
         # 從小標直接跳進表格。只 WARN——它不影響內容正確性，只影響版面一致。
-        gap = re.search(
-            r"^###\s*先回收上週（\d{4}-W\d{2}）的帳\s*$(.*?)^\|", text, re.MULTILINE | re.DOTALL
-        )
-        if gap and not gap.group(1).strip():
-            report.append(
-                f"  ⚠️ {path.stem}：回收小標與表格之間缺導言一行"
-                f"（build_web 的 nextweek.intro 會是空的，版面與前幾期不一致）"
-            )
+        for heading_re, label, why in (
+            (r"^###\s*先回收上週（\d{4}-W\d{2}）的帳\s*$",
+             "回收表",
+             "build_web 的 nextweek.intro 會是空的，網站上該段會從小標直接跳進表格"),
+            (r"^###\s*本週新開\s*\d+\s*條\s*$",
+             "新開表",
+             "它回答「為什麼追蹤 N 條卻只新開 M 條」；不進網站，但 Obsidian 與原始檔靠它"),
+        ):
+            gap = re.search(heading_re + r"(.*?)^\|", text, re.MULTILINE | re.DOTALL)
+            if gap and not gap.group(1).strip():
+                report.append(f"  ⚠️ {path.stem}：{label}小標與表格之間缺導言一行（{why}）")
 
         start = text.index(matches[0][1]) if matches[0][1] else 0
         body = re.split(r"^#{2,3}\s", text[start:], maxsplit=1, flags=re.MULTILINE)[0]

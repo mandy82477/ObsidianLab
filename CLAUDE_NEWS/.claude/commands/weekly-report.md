@@ -78,9 +78,13 @@ argument-hint: [YYYY-Wnn]
 
 ### 本週新開 N 條
 
+（一句話說明哪些續盯條已在上表、不重複佔新開額度；無續盯條時寫本期無續盯。）
+
 | 類型 | 預告 | 判準 |
 |------|------|------|
 ```
+
+> **兩張表各自的導言都不可省略。** 回收表那行會被 `scripts/build_web.py` 抽成 `nextweek.intro` 並顯示在網站上；新開表那行**目前不進網站**（`_parse_weekly_nextweek_intro` 只取第一個 `|` 之前的文字，`app.js` 也只渲染 `intro`／`recap`／`forecasts`），但它在 Obsidian 與原始檔裡回答「為什麼追蹤 7 條卻只新開 5 條」，仍是必寫項。兩者皆由 `scripts/check_weekly_ledger.py` 以 ⚠️ 提醒。
 
 `scripts/check_weekly_ledger.py` 依上述欄名與標題比對兩期帳目，掛在 `scripts/run_tests.py` 內。
 
