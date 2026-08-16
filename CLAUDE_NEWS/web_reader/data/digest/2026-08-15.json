@@ -12,13 +12,7 @@
       "time": "08/14 16:15",
       "sentiment": "",
       "body": "Anthropic 官方部落格談如何讓每個 token 發揮最大價值，具體建議包含任務之間 `/clear`；HN 268 分，是今日互動量最高的項目。",
-      "focusTags": [],
-      "sedimented": [
-        {
-          "id": "claude-code",
-          "pageType": "entity"
-        }
-      ]
+      "focusTags": []
     },
     {
       "title": "Anthropic Risk August 2026 [pdf]",
@@ -38,13 +32,7 @@
       "time": "08/14 15:22",
       "sentiment": "",
       "body": "以 Claude Code hooks 削減 grep 產生的 token，宣稱降幅 42%。HN 39 分、跨 2 來源；討論串中有評論質疑其 README 的 benchmark 段落本身疑似 AI 生成、難以判斷宣稱是否成立。",
-      "focusTags": [],
-      "sedimented": [
-        {
-          "id": "claude-code",
-          "pageType": "entity"
-        }
-      ]
+      "focusTags": []
     }
   ],
   "techUpdates": [
@@ -64,13 +52,7 @@
       "time": "08/14 21:58",
       "sentiment": "",
       "body": "影響 Claude API、Claude Code 與 Claude Cowork，影響區間 20:14–20:38 UTC，已解決。",
-      "focusTags": [],
-      "sedimented": [
-        {
-          "id": "claude-code",
-          "pageType": "entity"
-        }
-      ]
+      "focusTags": []
     },
     {
       "title": "[Status] Elevated errors for Claude Fable 5",
@@ -173,12 +155,6 @@
       "body": "Samsung 表示 Claude Code 能把晶片設計工作從數週壓縮到數天，但同時指出它仍會犯嚴重錯誤。",
       "focusTags": [
         "[新工具]"
-      ],
-      "sedimented": [
-        {
-          "id": "claude-code",
-          "pageType": "entity"
-        }
       ]
     },
     {
@@ -190,12 +166,6 @@
       "body": "同一案例的另一家報導，數字為驗證階段從一個月縮短至兩天。",
       "focusTags": [
         "[新工具]"
-      ],
-      "sedimented": [
-        {
-          "id": "claude-code",
-          "pageType": "entity"
-        }
       ]
     },
     {
@@ -207,12 +177,6 @@
       "body": "提醒使用者 Auto 模式已成為預設，建議確認自身權限設定。",
       "focusTags": [
         "[持續追蹤]"
-      ],
-      "sedimented": [
-        {
-          "id": "claude-code",
-          "pageType": "entity"
-        }
       ]
     },
     {
@@ -305,13 +269,7 @@
       "time": "07/29 23:10",
       "sentiment": "🤔",
       "body": "第一手實作記錄：把約 317 個硬編碼色碼的 design token 清理工作切給多個並行 Claude Code subagent，歸納出四種「靜默失敗」模式。",
-      "focusTags": [],
-      "sedimented": [
-        {
-          "id": "claude-code",
-          "pageType": "entity"
-        }
-      ]
+      "focusTags": []
     }
   ],
   "billing": [],
@@ -451,11 +409,6 @@
   "preview": "Anthropic 官方說明文字浮水印的運作方式，並宣布**第三方偵測 API**——外部單位可據以判斷文字是否由 Claude 產生；本站 08-11 日報已記錄浮水印上線報導，今日補上官方機制說明與偵測管道。",
   "sedimentedToday": [
     {
-      "id": "claude-code",
-      "name": "Claude Code",
-      "pageType": "entity"
-    },
-    {
       "id": "fable-5",
       "name": "Claude Fable 5",
       "pageType": "entity"
@@ -469,11 +422,6 @@
       "id": "pricing",
       "name": "Anthropic 訂閱方案與計費政策",
       "pageType": "entity"
-    },
-    {
-      "id": "anthropic-business",
-      "name": "Anthropic 商業健康度",
-      "pageType": "topic"
     },
     {
       "id": "anthropic-government-policy",
@@ -508,11 +456,6 @@
     {
       "id": "enterprise-tool-tracker",
       "name": "大型企業 AI 編碼工具使用追蹤",
-      "pageType": "topic"
-    },
-    {
-      "id": "official-community-gap",
-      "name": "官方功能 vs 社群痛點缺口分析",
       "pageType": "topic"
     },
     {

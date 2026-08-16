@@ -123,8 +123,8 @@ window.WIKI_DATA = {
       "pill": "active",
       "firstSeen": "2025（正式推出）",
       "startDate": "",
-      "lastUpdated": "2026-08-15",
-      "lastNewsUpdate": "2026-08-15",
+      "lastUpdated": "2026-08-16",
+      "lastNewsUpdate": "2026-08-16",
       "updateFreq": "",
       "summary": "**最新版本動態：** 最新版本為 **v2.1.233**（2026-08-14），新增 `--worktree` 旗標與 `claude agents` 視圖的 GitLab merge request URL 支援（顯示為 `!N`），以及選用（opt-in）的 `forward_user_identity` a…",
       "latestHeadline": "⟨Q-13⟩ ❓ 待查證（標 2026-08-09｜查 Governor、token 浪費｜複 2026-09-09）：社群工具 Governor 宣稱優化 token 浪費，HN 社群對其實際成效提出疑慮；2026-08-10 查證找到廠商自報數據（compact professional 模式宣稱較基準降低 55."
@@ -557,11 +557,11 @@ window.WIKI_DATA = {
       "pill": "active",
       "firstSeen": "",
       "startDate": "2026-04-27",
-      "lastUpdated": "2026-08-15",
-      "lastNewsUpdate": "2026-08-14",
+      "lastUpdated": "2026-08-16",
+      "lastNewsUpdate": "2026-08-16",
       "updateFreq": "",
-      "summary": "**最新態勢（2026-08-13～08-14）：** Anthropic 讓多個 AI agent 同時執行同一項任務進行實驗，TechCrunch 與 Business Insider（Business Insider 明確稱為 Anthropic 自行表示）報導，agent 之間出現互相破壞、癱瘓對方、爭奪任務主…",
-      "latestHeadline": "最新態勢（2026-08-13～08-14）： Anthropic 讓多個 AI agent 同時執行同一項任務進行實驗，TechCrunch 與 Business Insider（Business Insider 明確稱為 Anthropic 自行表示）報導，agent 之間出現互相破壞、癱瘓對方、爭奪任務主導權的行"
+      "summary": "**最新態勢（2026-08-16）：** Anthropic 官方正式發布研究〈Patterns and problems in emerging multi-agent systems〉（Hacker News 90 分），首度以官方研究形式系統性剖析多智能體系統浮現的行為模式：官方原文稱 agent 間即時互動增…",
+      "latestHeadline": "最新態勢（2026-08-16）： Anthropic 官方正式發布研究〈Patterns and problems in emerging multi-agent systems〉（Hacker News 90 分），首度以官方研究形式系統性剖析多智能體系統浮現的行為模式：官方原文稱 agent 間即時互動增加已不可"
     },
     {
       "id": "ai-talent-flow",
@@ -590,7 +590,7 @@ window.WIKI_DATA = {
       "firstSeen": "",
       "startDate": "2026-05-28",
       "lastUpdated": "2026-08-16",
-      "lastNewsUpdate": "2026-08-15",
+      "lastNewsUpdate": "2026-08-16",
       "updateFreq": "",
       "summary": "Anthropic 在技術聲譽與企業採用率上持續上升（企業採用率 34.4% 首超 OpenAI 32.3%，Ramp AI Index 2026-05-15），並於 2026-05-28 完成 $65B Series H 融資，估值 $965B，超越 OpenAI 成全球最大 AI 新創。核心矛盾從「PMF vs 獲…",
       "latestHeadline": "Anthropic 在技術聲譽與企業採用率上持續上升（企業採用率 34.4% 首超 OpenAI 32.3%，Ramp AI Index 2026-05-15），並於 2026-05-28 完成 $65B Series H 融資，估值 $965B，超越 OpenAI 成全球最大 AI 新創。核心矛盾從「PMF vs 獲"
@@ -717,8 +717,8 @@ window.WIKI_DATA = {
       "pill": "warn",
       "firstSeen": "",
       "startDate": "2026-04-25",
-      "lastUpdated": "2026-08-15",
-      "lastNewsUpdate": "2026-08-15",
+      "lastUpdated": "2026-08-16",
+      "lastNewsUpdate": "2026-08-16",
       "updateFreq": "",
       "summary": "追蹤 Claude Code 社群在實際開發中累積的**工作流與應用模式**。本頁收錄的模式類型包括 Multi-agent 架構、Skills 設計、CLAUDE.md 管理、Hooks 與自動化、模型使用策略、Token 成本優化、記憶與知識管理、Plugin/MCP 整合等，持續累積形成社群最佳實踐知識庫。 工具…",
       "latestHeadline": "追蹤 Claude Code 社群在實際開發中累積的工作流與應用模式。本頁收錄的模式類型包括 Multi-agent 架構、Skills 設計、CLAUDE.md 管理、Hooks 與自動化、模型使用策略、Token 成本優化、記憶與知識管理、Plugin/MCP 整合等，持續累積形成社群最佳實踐知識庫。"
@@ -1772,8 +1772,8 @@ window.WIKI_DATA = {
       "pill": "warn",
       "firstSeen": "",
       "startDate": "2026-05-17",
-      "lastUpdated": "2026-08-15",
-      "lastNewsUpdate": "2026-08-15",
+      "lastUpdated": "2026-08-16",
+      "lastNewsUpdate": "2026-08-16",
       "updateFreq": "",
       "summary": "比對社群工具所反映的開發者痛點，與 Anthropic 官方功能路線之間的覆蓋情況。識別哪些痛點官方正在積極解決、哪些被忽略或結構性缺席。 截至 2026-07-08，矩陣涵蓋 9 個核心痛點：多 agent 協調與安全隔離已獲高度官方對應；輸出品質驗證、平台可及性（Artifacts 輸出共享 + Cowork 行動…",
       "latestHeadline": "v2.1.232：Subagent forking 預設開啟：帶 `subagent_type: \"fork\"` 的 subagent 現在預設繼承完整對話與 prompt cache；「Subagent 派工/編排」的官方對應再進一步降低手動設定門檻，矩陣狀態維持 ✅ 已產品化"
@@ -1812,6 +1812,12 @@ window.WIKI_DATA = {
     }
   ],
   "digestIndex": [
+    {
+      "date": "2026-08-16",
+      "articleCount": 45,
+      "preview": "Anthropic 發布研究報告，剖析多智能體系統中浮現的行為模式：隨著 agent 承接更多共享程式庫、市場等場域的任務，agent 間的即時互動預期將大幅增加，而現有制度多是為「人類速度」下的監督所設計。Benzinga、Business Insider 則以「AI agent 使對手失效、規避安全限制」為題跟進報",
+      "topCount": 3
+    },
     {
       "date": "2026-08-15",
       "articleCount": 62,
@@ -2501,6 +2507,6 @@ window.WIKI_DATA = {
     "summary": "追蹤 Claude / Claude Code 每個新發布功能的社群熱度、試用價值與快速上手方式。"
   }
 };
-window.TRANSPARENCY = {"window":{"days":35,"from":"2026-07-11","to":"2026-08-16"},"totals":{"gathered":3462,"emitted":2041,"wiki_hits":944,"prior_emit":0.5895436164067013,"prior_wiki":0.46251837334639884},"hhi":0.2225967753519104,"sources":[{"name":"Anthropic Blog","slug":"anthropic-blog","active":true,"score_reliability":"none","curation_mode":"whitelist","rate_comparable":true,"days_seen":35,"gathered":13,"filtered":8,"emitted":8,"wiki_hits":13,"emit_rate":0.5997234038828493,"emit_wilson":0.3552248097226855,"wiki_rate":0.9791768740813327,"presence":0.013771186440677966,"low_sample":true,"pc1_buckets":{"unknown":13}},{"name":"Anthropic Status","slug":"anthropic-status","active":true,"score_reliability":"none","curation_mode":"whitelist","rate_comparable":true,"days_seen":35,"gathered":65,"filtered":55,"emitted":50,"wiki_hits":29,"emit_rate":0.726951439154518,"emit_wilson":0.6535506019179673,"wiki_rate":0.5604197288910664,"presence":0.03072033898305085,"low_sample":false,"pc1_buckets":{"unknown":29}},{"name":"Claude API Release Notes","slug":"claude-api-release-notes","active":true,"score_reliability":"none","curation_mode":"whitelist","rate_comparable":true,"days_seen":35,"gathered":2,"filtered":2,"emitted":1,"wiki_hits":1,"emit_rate":0.5814032876424556,"emit_wilson":0.09452865480086611,"wiki_rate":0.5113803394058171,"presence":0.001059322033898305,"low_sample":true,"pc1_buckets":{"unknown":1}},{"name":"GitHub","slug":"github","active":true,"score_reliability":"untrusted","curation_mode":"content","rate_comparable":true,"days_seen":35,"gathered":384,"filtered":352,"emitted":102,"wiki_hits":55,"emit_rate":0.2816605750696387,"emit_wilson":0.22392882323818558,"wiki_rate":0.5323677119059285,"presence":0.05826271186440678,"low_sample":false,"pc1_buckets":{"unknown":55}},{"name":"GitHub Issues","slug":"github-issues","active":true,"score_reliability":"trusted","curation_mode":"score","rate_comparable":true,"days_seen":35,"gathered":510,"filtered":504,"emitted":227,"wiki_hits":205,"emit_rate":0.4505488157134604,"emit_wilson":0.4025353458213598,"wiki_rate":0.8844944461327594,"presence":0.21716101694915255,"low_sample":false,"pc1_buckets":{"unknown":205}},{"name":"Hacker News","slug":"hacker-news","active":true,"score_reliability":"trusted","curation_mode":"score","rate_comparable":true,"days_seen":35,"gathered":518,"filtered":470,"emitted":443,"wiki_hits":120,"emit_rate":0.8453361939184647,"emit_wilson":0.8222925557239333,"wiki_rate":0.27511078086857393,"presence":0.1271186440677966,"low_sample":false,"pc1_buckets":{"unknown":95,"high":21,"mid":3,"low":1}},{"name":"Reddit","slug":"reddit","active":true,"score_reliability":"untrusted","curation_mode":"content","rate_comparable":true,"days_seen":35,"gathered":387,"filtered":376,"emitted":354,"wiki_hits":100,"emit_rate":0.8987490720592973,"emit_wilson":0.8826650891337974,"wiki_rate":0.28743182344358237,"presence":0.1059322033898305,"low_sample":false,"pc1_buckets":{"unknown":100}},{"name":"Google News","slug":"google-news","active":true,"score_reliability":"none","curation_mode":"content","rate_comparable":true,"days_seen":35,"gathered":976,"filtered":671,"emitted":653,"wiki_hits":355,"emit_rate":0.6674607151888896,"emit_wilson":0.6389234863158407,"wiki_rate":0.5424210916040181,"presence":0.3760593220338983,"low_sample":false,"pc1_buckets":{"unknown":14,"high":327,"mid":14}},{"name":"dev.to","slug":"devto","active":true,"score_reliability":"untrusted","curation_mode":"content","rate_comparable":false,"days_seen":35,"gathered":487,"filtered":486,"emitted":100,"wiki_hits":32,"emit_rate":0.2204948172152545,"emit_wilson":0.1718341652794993,"wiki_rate":0.3329562157587635,"presence":0.03389830508474576,"low_sample":false,"pc1_buckets":{"unknown":32}},{"name":"Blogroll","slug":"blog","active":true,"score_reliability":"none","curation_mode":"whitelist","rate_comparable":true,"days_seen":35,"gathered":94,"filtered":88,"emitted":87,"wiki_hits":29,"emit_rate":0.8665865993695967,"emit_wilson":0.8541862329739056,"wiki_rate":0.346651378695505,"presence":0.03072033898305085,"low_sample":false,"pc1_buckets":{"unknown":29}},{"name":"lobste.rs","slug":"lobsters","active":false,"score_reliability":"trusted","curation_mode":"whitelist","rate_comparable":true,"days_seen":0,"gathered":0,"filtered":0,"emitted":0,"wiki_hits":0,"emit_rate":0.5895436164067013,"emit_wilson":0.0,"wiki_rate":0.4625183733463988,"presence":0.0,"low_sample":true,"pc1_buckets":{}},{"name":"Official Docs","slug":"official-docs","active":true,"score_reliability":"none","curation_mode":"whitelist","rate_comparable":true,"days_seen":9,"gathered":21,"filtered":21,"emitted":11,"wiki_hits":2,"emit_rate":0.5558749348325372,"emit_wilson":0.3236921790026675,"wiki_rate":0.31548493968876135,"presence":0.00211864406779661,"low_sample":true,"pc1_buckets":{"unknown":2}},{"name":"Official Skills","slug":"official-skills","active":true,"score_reliability":"none","curation_mode":"whitelist","rate_comparable":true,"days_seen":8,"gathered":0,"filtered":0,"emitted":0,"wiki_hits":0,"emit_rate":0.5895436164067013,"emit_wilson":0.0,"wiki_rate":0.4625183733463988,"presence":0.0,"low_sample":true,"pc1_buckets":{}},{"name":"Topic Watch","slug":"topic-watch","active":true,"score_reliability":"none","curation_mode":"content","rate_comparable":true,"days_seen":3,"gathered":5,"filtered":5,"emitted":5,"wiki_hits":3,"emit_rate":0.671634893125361,"emit_wilson":0.565508505247919,"wiki_rate":0.5083455822309325,"presence":0.0031779661016949155,"low_sample":true,"pc1_buckets":{"high":2,"mid":1}}],"unknown_slugs":{},"domain_data_loaded":11520};
+window.TRANSPARENCY = {"window":{"days":34,"from":"2026-07-11","to":"2026-08-16"},"totals":{"gathered":3329,"emitted":1979,"wiki_hits":955,"prior_emit":0.5944728146590568,"prior_wiki":0.482566953006569},"hhi":0.2230015624571695,"sources":[{"name":"Anthropic Blog","slug":"anthropic-blog","active":true,"score_reliability":"none","curation_mode":"whitelist","rate_comparable":true,"days_seen":34,"gathered":12,"filtered":8,"emitted":8,"wiki_hits":13,"emit_rate":0.6215455091619104,"emit_wilson":0.3906175873976139,"wiki_rate":0.9903149738925383,"presence":0.013612565445026177,"low_sample":true,"pc1_buckets":{"unknown":13}},{"name":"Anthropic Status","slug":"anthropic-status","active":true,"score_reliability":"none","curation_mode":"whitelist","rate_comparable":true,"days_seen":34,"gathered":62,"filtered":52,"emitted":47,"wiki_hits":29,"emit_rate":0.7181641011363553,"emit_wilson":0.6384725574675496,"wiki_rate":0.5934327987730823,"presence":0.030366492146596858,"low_sample":false,"pc1_buckets":{"unknown":29}},{"name":"Claude API Release Notes","slug":"claude-api-release-notes","active":true,"score_reliability":"none","curation_mode":"whitelist","rate_comparable":true,"days_seen":34,"gathered":2,"filtered":2,"emitted":1,"wiki_hits":1,"emit_rate":0.5858843769627788,"emit_wilson":0.09452865480086611,"wiki_rate":0.5296063209150627,"presence":0.0010471204188481676,"low_sample":true,"pc1_buckets":{"unknown":1}},{"name":"GitHub","slug":"github","active":true,"score_reliability":"untrusted","curation_mode":"content","rate_comparable":true,"days_seen":34,"gathered":351,"filtered":323,"emitted":102,"wiki_hits":55,"emit_rate":0.3069796665584397,"emit_wilson":0.24556861511103323,"wiki_rate":0.5341577636613007,"presence":0.05759162303664921,"low_sample":false,"pc1_buckets":{"unknown":55}},{"name":"GitHub Issues","slug":"github-issues","active":true,"score_reliability":"trusted","curation_mode":"score","rate_comparable":true,"days_seen":34,"gathered":495,"filtered":489,"emitted":221,"wiki_hits":209,"emit_rate":0.45221253649161386,"emit_wilson":0.4032494220274452,"wiki_rate":0.9256522490479033,"presence":0.218848167539267,"low_sample":false,"pc1_buckets":{"unknown":209}},{"name":"Hacker News","slug":"hacker-news","active":true,"score_reliability":"trusted","curation_mode":"score","rate_comparable":true,"days_seen":34,"gathered":500,"filtered":454,"emitted":427,"wiki_hits":121,"emit_rate":0.8440181851791945,"emit_wilson":0.8203500666587294,"wiki_rate":0.2879305938903105,"presence":0.12670157068062826,"low_sample":false,"pc1_buckets":{"unknown":96,"high":21,"mid":3,"low":1}},{"name":"Reddit","slug":"reddit","active":true,"score_reliability":"untrusted","curation_mode":"content","rate_comparable":true,"days_seen":34,"gathered":368,"filtered":357,"emitted":339,"wiki_hits":101,"emit_rate":0.9043542687968585,"emit_wilson":0.8891146327251445,"wiki_rate":0.30322541412626275,"presence":0.10575916230366492,"low_sample":false,"pc1_buckets":{"unknown":101}},{"name":"Google News","slug":"google-news","active":true,"score_reliability":"none","curation_mode":"content","rate_comparable":true,"days_seen":34,"gathered":951,"filtered":654,"emitted":636,"wiki_hits":359,"emit_rate":0.6672393988601248,"emit_wilson":0.6382295917302367,"wiki_rate":0.5631976308514949,"presence":0.37591623036649213,"low_sample":false,"pc1_buckets":{"unknown":14,"high":331,"mid":14}},{"name":"dev.to","slug":"devto","active":true,"score_reliability":"untrusted","curation_mode":"content","rate_comparable":false,"days_seen":34,"gathered":473,"filtered":472,"emitted":99,"wiki_hits":33,"emit_rate":0.22492790323160475,"emit_wilson":0.17505510281849668,"wiki_rate":0.34702449110152006,"presence":0.03455497382198953,"low_sample":false,"pc1_buckets":{"unknown":33}},{"name":"Blogroll","slug":"blog","active":true,"score_reliability":"none","curation_mode":"whitelist","rate_comparable":true,"days_seen":34,"gathered":93,"filtered":87,"emitted":86,"wiki_hits":29,"emit_rate":0.8662783742759393,"emit_wilson":0.8527013398161072,"wiki_rate":0.3523507242715176,"presence":0.030366492146596858,"low_sample":false,"pc1_buckets":{"unknown":29}},{"name":"lobste.rs","slug":"lobsters","active":false,"score_reliability":"trusted","curation_mode":"whitelist","rate_comparable":true,"days_seen":0,"gathered":0,"filtered":0,"emitted":0,"wiki_hits":0,"emit_rate":0.5944728146590568,"emit_wilson":0.0,"wiki_rate":0.48256695300656893,"presence":0.0,"low_sample":true,"pc1_buckets":{}},{"name":"Official Docs","slug":"official-docs","active":true,"score_reliability":"none","curation_mode":"whitelist","rate_comparable":true,"days_seen":8,"gathered":20,"filtered":20,"emitted":11,"wiki_hits":2,"emit_rate":0.5722364073295283,"emit_wilson":0.34208200830759966,"wiki_rate":0.32503188238408043,"presence":0.0020942408376963353,"low_sample":true,"pc1_buckets":{"unknown":2}},{"name":"Official Skills","slug":"official-skills","active":true,"score_reliability":"none","curation_mode":"whitelist","rate_comparable":true,"days_seen":7,"gathered":0,"filtered":0,"emitted":0,"wiki_hits":0,"emit_rate":0.5944728146590568,"emit_wilson":0.0,"wiki_rate":0.48256695300656893,"presence":0.0,"low_sample":true,"pc1_buckets":{}},{"name":"Topic Watch","slug":"topic-watch","active":true,"score_reliability":"none","curation_mode":"content","rate_comparable":true,"days_seen":2,"gathered":2,"filtered":2,"emitted":2,"wiki_hits":3,"emit_rate":0.6313389224173244,"emit_wilson":0.3423719528896193,"wiki_rate":0.6521391275054741,"presence":0.0031413612565445027,"low_sample":true,"pc1_buckets":{"high":2,"mid":1}}],"unknown_slugs":{},"domain_data_loaded":11520};
 // Digest content is loaded on-demand from data/digest/{date}.json
 // Wiki content is loaded on-demand from data/wiki/{id}.json

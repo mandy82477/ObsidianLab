@@ -4,12 +4,12 @@ kind: "topic"
 status: "ongoing"
 domain: "💼 商業"
 last_updated: "2026-08-16"
-last_news_update: "2026-08-15"
+last_news_update: "2026-08-16"
 status_main: "ongoing"
-days_since_news: 1
+days_since_news: 0
 inbound_links: 47
-attribution_count: 113
-attribution_last: "2026-08-15"
+attribution_count: 115
+attribution_last: "2026-08-16"
 top_source: "google-news"
 pending_count: 0
 pending_overdue: 0
