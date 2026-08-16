@@ -48,6 +48,19 @@ def _inherit_topic(winner: FeedItem, loser: FeedItem) -> None:
         winner.topic = loser.topic
 
 
+def _inherit_merge_fields(winner: FeedItem, loser: FeedItem) -> None:
+    """Fields whose loss on merge silently wastes the losing fetch.
+
+    `topic` (see above) and `dedup_key`: a change-detection item can be merged away
+    by a news article pointing at the same doc URL, and without the key the surviving
+    copy falls back to bare-URL caching — i.e. straight back into the permanent
+    suppression this key exists to prevent.
+    """
+    _inherit_topic(winner, loser)
+    if not winner.dedup_key and loser.dedup_key:
+        winner.dedup_key = loser.dedup_key
+
+
 def deduplicate(items: list[FeedItem]) -> list[FeedItem]:
     seen_urls: dict[str, FeedItem] = {}
     result: list[FeedItem] = []
@@ -61,12 +74,12 @@ def deduplicate(items: list[FeedItem]) -> list[FeedItem]:
             if item.score > existing.score or (
                 item.score == existing.score and _source_rank(item) < _source_rank(existing)
             ):
-                _inherit_topic(item, existing)
+                _inherit_merge_fields(item, existing)
                 item.source_count = merged_count
                 seen_urls[norm] = item
                 result = [item if i is existing else i for i in result]
             else:
-                _inherit_topic(existing, item)
+                _inherit_merge_fields(existing, item)
                 existing.source_count = merged_count
         else:
             seen_urls[norm] = item
@@ -84,11 +97,11 @@ def deduplicate(items: list[FeedItem]) -> list[FeedItem]:
                 if item.score > kept.score or (
                     item.score == kept.score and _source_rank(item) < _source_rank(kept)
                 ):
-                    _inherit_topic(item, kept)
+                    _inherit_merge_fields(item, kept)
                     item.source_count = merged_count
                     final[idx] = item
                 else:
-                    _inherit_topic(kept, item)
+                    _inherit_merge_fields(kept, item)
                     kept.source_count = merged_count
                 duplicate = True
                 break

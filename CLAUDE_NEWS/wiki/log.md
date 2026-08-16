@@ -3931,3 +3931,13 @@
   - `.claude/review-registry.json` 加三邊 sync_pair（任一邊被改回去，官方使用指南會再次無家可歸）
   - 該條目已由功能記者寫入 `coding-workflow-guide` §2a 新子節「官方的 session 經營建議」，並與該頁第 7 段既有的「同一問題糾正超過兩次就 `/clear`」做區隔（一個管單一任務內失敗重試、一個管任務邊界間的 context 衛生）
 - **未查完（另案）**：查證途中發現兩條 funnel 異常，尚未定論——(a) 2026-08-15 `Anthropic Blog` gathered 1 → filtered 0，但 `filter.py` 只擋 Google News 標題無關鍵字與 PR wire 網域，不可能丟棄官方部落格；最像的解釋是 dedup 併入 HN 那份，但 dedup 合併會累加 `source_count` 而存活項為 1，對不上。(b) `Official Docs` 連三天 filtered > 0 但 emitted 0（08-13 8→8→0、08-14 1→1→0、08-15 1→1→0），可能是 `seen_urls` 正常去重，未證實。
+
+## 2026-08-16 Query 後續：兩條 funnel 異常追到底
+
+承同日「官方使用指南在分類層無落點」條目末的「未查完（另案）」，使用者指示全部追完，結果一好一壞。
+
+- **(a) `Anthropic Blog` 08-15 gathered 1 → filtered 0：沒有 bug，是歸因假象。** 該來源當天抓到的是〈How Claude's text watermarking works〉（`anthropic.com/news/claude-text-watermark`），與其他四來源合併成 `source_count: 5` 的條目，勝出標籤為 Hacker News。funnel 的 `filtered`/`emitted` 是按**存活條目的 source 前綴**回算，故官方部落格的貢獻記到 HN 頭上。`source_count` 累加正常（08-15 有 8 則 >1），132→118 的 dedup 損耗逐源對得上。**但這使低流量官方來源長期顯示「零產出」，會誤導來源記分卡與來源×類別 graph**——已登記 `docs/workaround-register.md`（複查 2026-08-30），非本次修復範圍。
+- **(b) `Official Docs` filtered > 0 但 emitted 0：真 bug，已修。** `official_docs_watch` / `official_skills_repos` / `api_docs` 三支變更偵測來源，每次都以**同一個穩定 URL**重報、且 `score=0`；`emitted_cache` 以正規化 URL 為鍵，唯一復活路徑是分數再燃（≥2× 且 +10），從 0 永遠不可能達成。**於是每個被監看頁面的第一次變動被日報收錄後，之後所有變動被永久靜默丟棄。** 實測 9 個監看目標**已燒掉 8 個**（08-07～08-12），含 `claude.com/pricing` 與 support 說明中心的方案／配額／限制三頁——正是 `.claude/rules/wiki-ingest-commercial.md` 指定的計費事實權威來源。`api_docs` 更早就燒了：它已在 URL 用 `#anchor` 區隔每則 release note，但 `_normalize_url` 會剝掉 fragment，全部塌成同一鍵（08-07 起）。
+  - **修法**：`FeedItem` 新增 `dedup_key`（`"<url>#<內容 hash>"`），`emitted_cache.cache_key()` 優先採用、否則 fallback 正規化 URL；三支來源填值；`main.py` 持久化該欄並讓 `--confirm-digest` 以完整記錄確認（確認到裸 URL 會讓真正的條目永遠未確認、每輪重複提供）；`dedup` 合併時繼承此欄（與 `topic` 同一類坑）。
+  - **自我修復**：新鍵與舊的裸 URL 紀錄永不相撞，8 個燒掉的頁面下次變動即自動復活，**不需清 cache 或寫遷移**。已對真實 `emitted_items.json` 實測四個燒掉的 URL：修正前靜默丟棄、修正後放行。
+  - 新增 `src/tests/test_change_detection_cache.py`（10 例，含「同內容仍須抑制」的反向保護）；抽掉修正會紅 4 項。測試 300/300 綠，`/pipeline-change-check` compare 15 項指標全無變動、109 份舊 digest 解析零失敗。

@@ -40,6 +40,17 @@ REIGNITE_MULTIPLIER = 2
 REIGNITE_MIN_DELTA = 10
 
 
+def cache_key(url: str, dedup_key: str = "") -> str:
+    """The emitted-cache identity of an item.
+
+    Normally the normalized URL. Change-detection sources override it with
+    "<url>#<content-hash>" so that each change to a stable page is its own entry
+    — see `FeedItem.dedup_key` for the failure this prevents. The override is used
+    verbatim: normalizing it would strip the fragment that carries the hash.
+    """
+    return dedup_key or _normalize_url(url)
+
+
 def load_cache() -> dict:
     try:
         if CACHE_FILE.exists():
@@ -93,7 +104,7 @@ def filter_new_or_reignited(
     kept: list[FeedItem] = []
 
     for item in items:
-        norm = _normalize_url(item.url)
+        norm = cache_key(item.url, getattr(item, "dedup_key", ""))
         existing = updated_cache.get(norm)
 
         if existing is None or not existing.get("digest_confirmed", False):
@@ -121,19 +132,28 @@ def filter_new_or_reignited(
     return kept, updated_cache
 
 
-def confirm_digest(cache: dict, urls: list[str], today: date | None = None) -> dict:
-    """Mark the given URLs as digest_confirmed=True — call this only after a
+def confirm_digest(cache: dict, urls: list, today: date | None = None) -> dict:
+    """Mark the given items as digest_confirmed=True — call this only after a
     real digest (news/*.md) has actually been written from these items.
 
-    Unknown URLs (not already in cache, e.g. because filtering happened in a
+    Each entry is either a plain URL string, or a mapping with "url" and an
+    optional "dedup_key" (as persisted in gathered_items.json). The mapping form
+    matters for change-detection sources: confirming them under the bare URL
+    while `filter_new_or_reignited` stored them under "<url>#<hash>" would leave
+    the real entry unconfirmed forever and re-offer it every run.
+
+    Unknown entries (not already in cache, e.g. because filtering happened in a
     process that never called save_cache) are added fresh and confirmed.
     """
     today = today or date.today()
     today_str = today.isoformat()
     updated_cache = dict(cache)
 
-    for url in urls:
-        norm = _normalize_url(url)
+    for entry in urls:
+        if isinstance(entry, dict):
+            norm = cache_key(entry.get("url", ""), entry.get("dedup_key", ""))
+        else:
+            norm = cache_key(entry)
         existing = updated_cache.get(norm, {})
         updated_cache[norm] = {
             "first_emitted": existing.get("first_emitted", today_str),

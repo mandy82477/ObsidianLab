@@ -69,6 +69,11 @@ class ApiDocs(BaseSource):
                 items.append(FeedItem(
                     title=f"[API Docs] {date_str} 異動",
                     url=f"{RELEASE_NOTES_URL}#{anchor}",
+                    # The per-entry anchor already makes each release note distinct, but
+                    # `_normalize_url` strips fragments — so every note collapsed onto the
+                    # same cache key and only the first one (2026-08-07) ever got through.
+                    # `dedup_key` is used verbatim, which keeps the anchor.
+                    dedup_key=f"{RELEASE_NOTES_URL}#{anchor}",
                     source="Claude API Release Notes",
                     published=day,
                     score=0,

@@ -204,7 +204,14 @@ def main() -> None:
     if args.confirm_digest:
         gather_path = LOG_DIR.parent / "gathered_items.json"
         gathered = json.loads(gather_path.read_text(encoding="utf-8"))
-        all_urls = [it["url"] for it in gathered.get("items", []) if it.get("url")]
+        # Pass the whole record, not just the URL: change-detection items were cached
+        # under their dedup_key, and confirming them under the bare URL would leave the
+        # real entry unconfirmed forever (re-offered every run). Items written before
+        # dedup_key existed simply lack the field and fall back to the URL.
+        all_urls = [
+            {"url": it["url"], "dedup_key": it.get("dedup_key", "")}
+            for it in gathered.get("items", []) if it.get("url")
+        ]
 
         # 確認的判準是「這批原料有沒有真的被 pipeline 處理過」，不是「有沒有印進
         # 日報」。日報只留讀者要讀的重點，本來就會篩掉一部分；被篩掉的條目仍會
@@ -337,6 +344,10 @@ def main() -> None:
                     # wiki-ingest editor routes them by this slug. Additive field: existing
                     # readers of gathered_items.json are unaffected.
                     "topic":     it.topic,
+                    # Empty for normal items. Change-detection sources put
+                    # "<url>#<content-hash>" here; --confirm-digest must confirm under
+                    # this exact key, not the bare URL — see emitted_cache.cache_key.
+                    "dedup_key": it.dedup_key,
                 }
                 for it in filtered
             ],

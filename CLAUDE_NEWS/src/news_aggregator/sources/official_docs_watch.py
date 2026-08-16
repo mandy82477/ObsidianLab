@@ -130,6 +130,9 @@ def _hash_item(name: str, url: str, text: str, prev, state: dict) -> FeedItem | 
     return FeedItem(
         title=f"官方文件更新：{name}",
         url=url,
+        # Each change to this stable URL must be its own emitted-cache entry, or only
+        # the first one ever reaches a digest (score=0 can never re-ignite).
+        dedup_key=f"{url}#{digest[:16]}",
         source="Official Docs",
         published=datetime.now(tz=timezone.utc),
         score=0,
@@ -184,6 +187,11 @@ def _index_item(name: str, url: str, text: str, prev, state: dict) -> FeedItem |
     return FeedItem(
         title=f"官方文件索引異動：{name}（{headline}）",
         url=url,
+        # Keyed by which pages appeared/disappeared, so a later index change on the
+        # same URL is a distinct entry rather than a silently-dropped duplicate.
+        dedup_key=f"{url}#" + hashlib.sha256(
+            ("+".join(added) + "|" + "-".join(removed)).encode("utf-8")
+        ).hexdigest()[:16],
         source="Official Docs",
         published=datetime.now(tz=timezone.utc),
         score=0,

@@ -191,12 +191,12 @@
     }
   },
   "https://code.claude.com/docs/en/desktop.md": {
-    "hash": "de4b7b886a248d642fd316d8a0f044717057bb7ffa0d3bd9ce2db1bc9df0a251",
-    "length": 78179
+    "hash": "fa3caa416456620082a4ac89fe09aa93ee8574db5296f9ffe71e2c83aa80ccd9",
+    "length": 78507
   },
   "https://claude.com/pricing": {
-    "hash": "c13bb846b46c33a07d6e0da1dffb698f2e660f9fb95cdd5219eebaf403c8b0e6",
-    "length": 31585
+    "hash": "854f1ba0c6014b36cb5f2050c5ff5cbf8bfeabad564f5fc7b009d2a0fd77472d",
+    "length": 31584
   },
   "https://support.claude.com/en/articles/15424964-claude-fable-5-on-your-plan": {
     "hash": "ff83006575949f6bd67adf4af14193af1ae392a68fbcc6b202c1ad4d012765e1",
@@ -215,7 +215,7 @@
     "length": 22950
   },
   "https://support.claude.com/en/articles/12138966-release-notes": {
-    "hash": "2cde8de6ac229b06d133b9bbdeaee18ed4d4747c805e96e22b1212de564c37b7",
-    "length": 42952
+    "hash": "4c980c0b35205065442885b48a3cd842dd88dfba9de5597f0d7c5cff033a9a4c",
+    "length": 42958
   }
 }

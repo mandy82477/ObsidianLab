@@ -18,6 +18,7 @@ As with OfficialDocsWatch, a path seen for the first time is recorded silently
 rather than emitted; otherwise adding a watch entry would announce every skill
 that already existed as if it were new.
 """
+import hashlib
 import json
 import logging
 from datetime import datetime, timezone
@@ -109,9 +110,15 @@ def _item(watch: dict, key: str, added: list[str], removed: list[str]) -> FeedIt
     if removed:
         parts.append(f"移除 {len(removed)} 項：{', '.join(removed)}")
     headline = "官方 Skills 異動" if added and not removed else "官方 Skills 目錄異動"
+    _url = watch.get("url") or f"https://github.com/{watch['repo']}"
     return FeedItem(
         title=f"{headline}：{label}（{'／'.join(parts)}）",
-        url=watch.get("url") or f"https://github.com/{watch['repo']}",
+        url=_url,
+        # Same stable URL on every inventory change; keyed by the diff so a later
+        # change is a distinct entry instead of a silent drop (score=0 never re-ignites).
+        dedup_key=f"{_url}#" + hashlib.sha256(
+            ("+".join(added) + "|" + "-".join(removed)).encode("utf-8")
+        ).hexdigest()[:16],
         source="Official Skills",
         published=datetime.now(tz=timezone.utc),
         score=0,
