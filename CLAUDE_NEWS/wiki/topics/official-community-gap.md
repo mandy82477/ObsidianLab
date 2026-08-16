@@ -23,11 +23,11 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 **狀態：** monitoring
 **領域：** 🛠️ 工具/功能
 **開始日期：** 2026-05-17
-**最後更新：** 2026-08-15
-**最後新聞更新：** 2026-08-15
+**最後更新：** 2026-08-16
+**最後新聞更新：** 2026-08-16
 
-> **最新功能缺口**（2026-08-15）
-> - **Agent 間直接通訊協定**：issue #24798 留言持續累積至 75 則，內容顯示社群訴求核心是「依相依性排序高階流程步驟」的工作流編排，非既有 `ListAgents`／`SendMessage` 訊息傳遞原語所涵蓋；矩陣狀態維持 🧪 部分產品化。
+> **最新功能缺口**（2026-08-16）
+> - **Agent 間直接通訊協定**：issue #24798 留言持續累積至 78 則、新增 21 個 👍，內容顯示社群訴求核心是「依相依性排序高階流程步驟」的工作流編排，非既有 `ListAgents`／`SendMessage` 訊息傳遞原語所涵蓋；矩陣狀態維持 🧪 部分產品化。
 
 ## 摘要
 
@@ -55,7 +55,7 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 | Slack 內 AI 隊友 | 弱社群前驅（Ano 等輕量 Slack + Claude 整合，2026-06-04） | Ano | [[entities/claude-tag\|Claude Tag]]（2026-06-24，Slack-native，Anthropic 內部 65% 程式碼由其生成） | ✅ 已產品化 | 此列較弱屬「社群發明」框架——官方主導色彩強，社群前驅稀薄，列入僅供對照參考 |
 | 跨工具 agent 設定標準（AGENTS.md） | 2026-05-02 起，[GitHub issue #6235](https://github.com/anthropics/claude-code/issues/6235) 累積 335 則留言、5889 個讚（2026-08-14，全站已知問題讚數之最）| Codex、Amp、Cursor（均已採用 AGENTS.md 標準） | 無 | ❌ 無官方對應 | Claude Code 仍不支援 AGENTS.md，多工具並用者需為 Claude Code 額外維護 CLAUDE.md，造成配置互通痛點；反應數持續攀升顯示壓力未見緩解；v2.1.206（2026-07-10）`/doctor` 新增建議精簡 CLAUDE.md 內容的檢查項，屬維護性提示而非互操作標準對應，缺口性質未變 |
 | 多平行 agent 即時可觀測性／協調地圖 | 2026-07-06 Show HN live-log-viewer-next（讀本機 JSONL transcript 呈現即時對話地圖）；既有 1000 Subagents Fan-out、20-instance 崩潰分析持續堆疊 | live-log-viewer-next、（fan-out/多 instance 分析工具鏈） | Agent View（`claude agents` 多 session 列表管理，v2.1.139）＋ `--forward-subagent-text` 旗標（v2.1.211，2026-07-15）＋ `/fork` 背景 session 化（v2.1.212，2026-07-17） | ❌ 無官方對應 | 官方 Agent View 為**列表式** session 管理，非跨 agent 即時狀態流的 live map；當數十至上千平行 agent 併跑時「誰卡住、誰在等、彼此依賴」缺乏即時可觀測面，社群自建地圖式檢視器補位，官方無對應方向。2026-07-15 v2.1.211 新增 `--forward-subagent-text` 旗標與 `CLAUDE_CODE_FORWARD_SUBAGENT_TEXT` 環境變數，讓 `stream-json` 輸出包含 subagent 文字與思考內容，為社群建構觀測工具提供官方資料來源；2026-07-17 v2.1.212 將 `/fork` 改為建立獨立背景 session（`claude agents` 自成一列），原同 session 子 agent 行為更名 `/subtask`，使多開背景任務與同 session 委派的列表可見度更清楚拆分，但本身仍非官方 live map 產品，狀態未變 |
-| Agent 間直接通訊協定 | 2026-07-08 [GitHub issue #24798](https://github.com/anthropics/claude-code/issues/24798)（多 Claude session 間直接通訊，累積 75 則留言，2026-08-15 互動數更新）；2026-07-14 [issue #28300](https://github.com/anthropics/claude-code/issues/28300)（跨機器多 agent 協作 A2A 協定） | 無專屬社群工具，訴求以 GitHub issue 形式累積 | 官方文件（2026-08-09 查證，[code.claude.com/docs/en/cross-session-messaging](https://code.claude.com/docs/en/cross-session-messaging)）：Cross-session messaging，需 v2.1.224 以上版本、限 macOS／Linux，工具為 `ListAgents`＋`SendMessage`，同機制涵蓋 subagent／team 內部訊息 | 🧪 部分產品化（官方文件確認同機 session 通訊；跨機器 A2A 需求 #28300 涵蓋範圍未載明） | 與上一列「即時可觀測性／協調地圖」的區別：協調地圖是**被動觀測**（讀 transcript/log 呈現狀態，agent 本身不互相收送訊息）；本列是**主動通訊**（agent 之間或跨機器直接交換訊息以協調依賴順序），先前僅能透過檔案系統或外部工具中繼；2026-08-09 官方文件正式確認跨 session 訊息互通功能存在，直接對應 issue #24798 的訴求（已於 [[entities/claude-code]] 已知問題轉為 ✅ 已修復 v2.1.224）；惟官方文件未明確說明是否涵蓋**跨機器**場景，issue #28300（A2A 協定）訴求範圍是否被涵蓋 ❓ 待查證 ⟨Q-01⟩，故狀態暫不升至完全產品化；2026-08-15 issue #24798 留言持續累積（60→75），內容顯示社群訴求核心其實是「依相依性排序高階流程步驟」的工作流編排，`ListAgents`／`SendMessage` 僅提供點對點訊息傳遞原語，未涵蓋自動依賴排序，此為即使排除跨機器場景後**仍未被涵蓋**的第二個切面，🧪 部分產品化維持不變 |
+| Agent 間直接通訊協定 | 2026-07-08 [GitHub issue #24798](https://github.com/anthropics/claude-code/issues/24798)（多 Claude session 間直接通訊，累積 78 則留言、21 個 👍，2026-08-16 互動數更新）；2026-07-14 [issue #28300](https://github.com/anthropics/claude-code/issues/28300)（跨機器多 agent 協作 A2A 協定） | 無專屬社群工具，訴求以 GitHub issue 形式累積 | 官方文件（2026-08-09 查證，[code.claude.com/docs/en/cross-session-messaging](https://code.claude.com/docs/en/cross-session-messaging)）：Cross-session messaging，需 v2.1.224 以上版本、限 macOS／Linux，工具為 `ListAgents`＋`SendMessage`，同機制涵蓋 subagent／team 內部訊息 | 🧪 部分產品化（官方文件確認同機 session 通訊；跨機器 A2A 需求 #28300 涵蓋範圍未載明） | 與上一列「即時可觀測性／協調地圖」的區別：協調地圖是**被動觀測**（讀 transcript/log 呈現狀態，agent 本身不互相收送訊息）；本列是**主動通訊**（agent 之間或跨機器直接交換訊息以協調依賴順序），先前僅能透過檔案系統或外部工具中繼；2026-08-09 官方文件正式確認跨 session 訊息互通功能存在，直接對應 issue #24798 的訴求（已於 [[entities/claude-code]] 已知問題轉為 ✅ 已修復 v2.1.224）；惟官方文件未明確說明是否涵蓋**跨機器**場景，issue #28300（A2A 協定）訴求範圍是否被涵蓋 ❓ 待查證 ⟨Q-01⟩，故狀態暫不升至完全產品化；issue #24798 留言持續累積（60→75→78），內容顯示社群訴求核心其實是「依相依性排序高階流程步驟」的工作流編排，`ListAgents`／`SendMessage` 僅提供點對點訊息傳遞原語，未涵蓋自動依賴排序，此為即使排除跨機器場景後**仍未被涵蓋**的第二個切面，🧪 部分產品化維持不變 |
 
 **懸置細節**
 - ⟨Q-01⟩ ❓ **待查證**（標 2026-08-10｜查 [[entities/claude-code]]、A2A 協定）：官方文件未明確說明跨 session 訊息互通是否涵蓋跨機器場景，issue #28300（A2A 協定）訴求範圍是否被涵蓋尚未確認。

@@ -25,14 +25,12 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 **狀態：** active
 **領域：** 🛠️ 工具/功能
 **首次出現：** 2025（正式推出）
-**最後更新：** 2026-08-15
-**最後新聞更新：** 2026-08-15
+**最後更新：** 2026-08-16
+**最後新聞更新：** 2026-08-16
 
-> **最新動態**（2026-08-15）
-> - **v2.1.233**：`--worktree` 旗標與 `claude agents` 視圖新增 GitLab merge request URL 支援（MR 顯示為 `!N`）；新增選用（opt-in）的 `forward_user_identity` apps gateway 設定。
-> - **Auto Mode 預設化已生效**：9to5Mac 同步發布 PSA 提醒使用者確認自身權限設定，確認 8/14 轉換已如期上線（無新事實，僅生效確認）。
-> - **官方部落格談 token 效益最大化**：Anthropic 官方部落格建議任務之間執行 `/clear` 避免無關 context 被送回模型，為今日互動最高條目（HN 268 分）；屬使用建議而非新功能，詳見「開發者須知」。
-> - **已知問題互動數更新**：Remote Control 自動重連失效（issue #34255）升至 63 則留言、103 個讚；跨 session 直接通訊訴求（issue #24798）升至 75 則留言、21 個讚，社群仍在追問依相依性排序高階流程步驟的完整編排能力；Windows 11 Pro 缺 HCS vfpext 服務導致 Cowork 無法運作（issue #74649）升至 85 則留言，今日 Issues 互動最高。
+> **最新動態**（2026-08-16）
+> - **新增已知問題**：帶 YAML frontmatter 的 output style 雖被辨識（狀態列／`/config` 皆顯示）卻未真正注入系統提示（38 則留言、4 個讚）；Windows Desktop app GPU process crash（exit code 101457950）導致整個應用與所有執行中 session 一併中斷（36 則留言、1 個讚）。
+> - **已知問題互動數更新**：claude.exe 疑似透過 Wof.sys 觸發 Windows BSOD（issue #32870）升至 41 則留言；Bedrock 上 Opus 4.7 回傳 permission_error（issue #51183）升至 39 則留言、12 個讚；跨 session 直接通訊訴求（issue #24798）升至 78 則留言、21 個讚，社群仍在追問依相依性排序高階流程步驟的完整編排能力。
 ---
 
 ## 現況
@@ -102,8 +100,9 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 - 🔴 **未修復**｜**Session 額度上限時無法順暢接續／功能請求自動續行（GitHub issue #13354，累積 72 則留言、193 個讚，首見 2026-07-07，2026-08-04 互動數更新，今日互動最高功能請求之一）**：使用者希望 session 達到額度上限時能有更順暢的接續機制（如自動排隊、無縫轉續、自動恢復），而非直接中斷工作流程；2026-08-04 日報標記此為當日互動最高功能請求之一，與同日「瞬間打到用量上限」抱怨（issue #16157）呼應；官方尚未回應或提供替代方案。（此前曾被誤列為兩則獨立條目，本次合併統一追蹤）
 - 🔴 **未修復**｜**升級方案付款失敗，`PaymentIntent` 於確認完成前即遭 `void_invoice` 作廢（GitHub issue #55982，累積 25 個讚，2026-07-18）**：使用者回報升級訂閱方案時付款流程失敗，`PaymentIntent` 在確認（confirm）尚未完成前就被 `void_invoice` 動作立即作廢，導致升級無法完成；官方尚未回應。定價/計費層面另見 [[entities/pricing]]。
 
-### 🧠 行為與品質（38 條未修復、1 條拒修、6 條查無官方、1 條待查證）
+### 🧠 行為與品質（39 條未修復、1 條拒修、6 條查無官方、1 條待查證）
 
+- 🔴 **未修復**｜**Output styles 帶 YAML frontmatter 被辨識卻未真正注入系統提示（GitHub issue #47482，累積 38 則留言、4 個讚，2026-08-16）**：使用者回報帶 YAML frontmatter 的 output style 雖能被 Claude Code 正確辨識（顯示於狀態列與 `/config`），但實際內容並未被注入系統提示；移除 frontmatter 後問題消失（原文截斷，具體重現步驟待補）；官方尚未回應。
 - 🔴 **未修復**｜**功能請求：優先訊息通道，可在執行途中即時導正 Claude（Real-time steering，GitHub issue #30492，累積 34 則留言、60 個讚，2026-08-14）**：使用者呼籲新增優先訊息通道（priority message channel），讓使用者能在 Claude 執行中途即時傳送導正指令，而不需中斷現有任務或排隊等候；與既有「訊息佇列模式」需求（issue #50246，排隊而非中斷）為同一類「執行中如何插入使用者輸入」缺口的不同解法——佇列訴求重點是不打斷，本則訴求重點是即時介入；官方尚未回應或排入路線圖。
 - ❓ **待查證**（標 2026-08-14｜查 thinking blocks、blank｜複 2026-08-28）｜**Claude Code 回傳空白思考區塊，但推理 token 仍照常計費**（The Register，2026-08-14 報導）：Google News 轉載的 The Register 報導稱 Claude Code 出現思考區塊（thinking blocks）回傳為空白、但對應推理 token 仍照常計費的異常行為；僅有標題與連結片段可用，無正文說明具體重現條件、受影響版本或官方回應，暫無法確認是否為既有「Extended Thinking 摘要非真實推理」問題（見下方同分組）的延伸現象。計費爭議面另見 [[entities/pricing]]。
 - 🔎 **查無官方**（標 2026-08-09｜查 #23377、prompt 過長｜複 2026-09-09）｜**「Prompt is too long」錯誤導致 session 永久卡死（GitHub issue #23377，累積 43 則留言、38 個讚，2026-08-08 回報，2026-08-09 依互動門檻自行收錄，非當日日報選題）**：查證確認完整標題與內容——一旦觸發「Prompt is too long」錯誤，後續每次輸入皆重現同一錯誤，session 永久無法使用，須捨棄該 session 重開；已標記 `has repro`、`area:core`、`area:ide`、`oncall`（內部已排查但無公開回應）；查無官方留言或修復版本。
@@ -196,14 +195,14 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 - 🔴 **未修復**｜**MCP servers/hooks/plugins 設定變更需完整重啟 session（GitHub issue #24057，累積 30 則留言、15 個讚，2026-07-05）**：目前修改 MCP server、hooks 或 plugin 設定後必須重啟整個 session 才會生效，無法熱重載，中斷工作流程並遺失既有 context；社群呼籲改為設定變更後自動重載，官方尚未回應。
 - 🔴 **未修復**｜**MCP Token 消耗問題**：多個 MCP Server 併用時，每條訊息可能消耗 20,000+ tokens
 
-### 🔌 平台相容性（52 條未修復、3 條查無官方）
+### 🔌 平台相容性（53 條未修復、3 條查無官方）
 
 > Windows 上 Cowork VM 啟動失敗於 8 天內至少 5 起獨立事件湧現：#29941 Windows 11 Pro CoworkVMService 簽章驗證初始化失敗（07-23）、#74649 缺少 HCS vfpext 服務導致無法運作（07-27～07-29）、#27801 workspace 啟動顯示「VM service not running」、重開機亦無法解決（07-28）、#40198 Windows ARM64（Snapdragon）無法啟動（07-28）、#40175 Cowork Global instructions 儲存後靜默還原舊版本（08-01）；五起成因各異（簽章驗證、服務缺失、VM 啟動、架構相容、設定持久化），疑指向 Cowork Windows VM 層本身不穩定，而非個別 driver 問題；官方尚未回應或確認共同成因，此為推論。
 
 - 🔴 **未修復**｜**Claude in Chrome 瀏覽器擴充功能無法連接本機 Claude Code CLI（GitHub issue #20298，累積 51 則留言、41 個讚，環境：Claude Code v2.1.17，2026-08-12）**：使用者回報 Claude in Chrome 瀏覽器擴充功能無法與本機執行的 Claude Code CLI 建立連線；官方尚未回應。
 - 🔴 **未修復**｜**功能請求：獨立 macOS 介面提供關閉自動建立 worktree 的選項，方便獨立開發者使用（GitHub issue #12513，累積 47 則留言、80 個讚，2026-08-12）**：獨立開發者反映獨立 macOS 介面會自動建立 worktree，希望提供選項可關閉此行為；官方尚未回應或提供設定選項。
 - 🔴 **未修復**｜**Cowork 無法加入私有 GitHub marketplace（GitHub issue #28125，累積 35 個讚，2026-08-02）**：使用者回報 Cowork 功能無法加入私有（private）GitHub marketplace；官方尚未回應。
-- 🔴 **未修復**｜**Bedrock：Claude Opus 4.7 回傳 permission_error，儘管帳號權限狀態顯示 AUTHORIZED（GitHub issue #51183，累積 37 則留言，2026-07-31）**：在 AWS Bedrock 環境下，即使帳號權限狀態顯示為 AUTHORIZED（已授權），呼叫 Opus 4.7 仍回傳 permission_error 錯誤；回報者已確認搜尋過現有 issue 未見重複回報；與既有「Bedrock 功能相容性落差（持續）」同屬 Bedrock 接入層問題，官方尚未回應。
+- 🔴 **未修復**｜**Bedrock：Claude Opus 4.7 回傳 permission_error，儘管帳號權限狀態顯示 AUTHORIZED（GitHub issue #51183，累積 39 則留言、12 個讚，首見 2026-07-31，2026-08-16 互動數更新）**：在 AWS Bedrock 環境下，即使帳號權限狀態顯示為 AUTHORIZED（已授權），呼叫 Opus 4.7 仍回傳 permission_error 錯誤；回報者已確認搜尋過現有 issue 未見重複回報；與既有「Bedrock 功能相容性落差（持續）」同屬 Bedrock 接入層問題，官方尚未回應。
 - 🔴 **未修復**｜**Cowork：儲存 Global instructions 後靜默還原成舊版本（GitHub issue #40175，累積 30 則留言、20 個讚，2026-08-01）**：在 Cowork 中儲存 Global instructions（全域指示）後，會靜默還原成較舊版本，使用者不會收到任何警告或錯誤提示，屬資料遺失類 bug；官方尚未回應。
 - 🔴 **未修復**｜**Claude Code 未遵循 XDG Base Directory 規範（GitHub issue #1455，累積 62 則留言、423 個讚，2026-07-30）**：Linux 使用者指出 Claude Code 將快取資料與設定寫入 `~/.claude.json`、`~/.claude`，未依循 XDG Base Directory 規範分別寫入 `$XDG_CACHE_HOME`、`$XDG_CONFIG_HOME` 等標準路徑，影響習慣遵循該規範管理 dotfiles 的 Linux 使用者；官方尚未回應。
 - 🔴 **未修復**｜**Dispatch 主對話持續顯示離線，儘管 Cowork 任務正常運作（GitHub issue #45937，累積 37 則留言，2026-07-26）**：使用者回報 Dispatch 主對話在行動裝置端持續顯示「This desktop appears offline」，即使直接從桌面端發起提示也一樣；然而個別 Cowork 任務仍能正常運作，顯示問題限於主對話的連線狀態顯示；官方尚未回應。
@@ -234,8 +233,9 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 - 🔴 **未修復**｜**Cowork VM 在 Windows ARM64（Samsung Galaxy Book4 Edge、Snapdragon）無法啟動（GitHub issue #40198，累積 13 個讚，2026-07-28）**：使用者回報在搭載 Snapdragon 處理器的 Windows ARM64 裝置（Samsung Galaxy Book4 Edge）上，Cowork VM 無法啟動；顯示 Cowork 對 Windows ARM64 架構的支援尚不完整，官方尚未回應。
 - 🔴 **未修復**｜**Cowork 工作區啟動失敗「Failed to start Claude's workspace」，VM service not running，重開機後問題依然存在（GitHub issue #27801，累積 71 則留言、40 個讚，2026-07-28）**：使用者回報 Cowork 嘗試啟動工作區時失敗，顯示 VM service not running 錯誤，即便重新開機仍無法解決；與既有 Windows 平台 Cowork 啟動障礙（issue #29941、#74649、#40198）同屬 Cowork VM 啟動失敗但成因與平台細節不同，暫分列追蹤；官方尚未回應。
 - 🔴 **未修復**｜**Linux（Ubuntu）無法從剪貼簿貼上圖片（GitHub issue #8324，累積 43 則留言、41 個讚，2026-07-29）**：使用者回報在 Linux（Ubuntu）環境下，無法透過剪貼簿貼上圖片至 Claude Code；官方尚未回應。
-- 🔴 **未修復**｜**claude.exe 列出目錄時（`NtQueryDirectoryFileEx`）疑似透過 Wof.sys 觸發 Windows 藍屏（BSOD）（GitHub issue #32870，累積 36 則留言，2026-07-29）**：使用者回報 claude.exe 在列出目錄內容（`NtQueryDirectoryFileEx`）時，疑似透過 Windows 系統的 Wof.sys（Windows Overlay Filter driver）觸發系統藍屏當機；屬嚴重穩定性問題，官方尚未回應。
+- 🔴 **未修復**｜**claude.exe 列出目錄時（`NtQueryDirectoryFileEx`）疑似透過 Wof.sys 觸發 Windows 藍屏（BSOD）（GitHub issue #32870，累積 41 則留言，首見 2026-07-29，2026-08-15 互動數更新）**：使用者回報 claude.exe 在列出目錄內容（`NtQueryDirectoryFileEx`）時，疑似透過 Windows 系統的 Wof.sys（Windows Overlay Filter driver）觸發系統藍屏當機；屬嚴重穩定性問題，官方尚未回應。
 - 🔴 **未修復**｜**Claude Desktop 1.1.3189 於 Windows 出現嚴重 UI 延遲與滑鼠卡頓（GitHub issue #26302，累積 46 則留言、43 個讚，2026-08-15）**：使用者回報更新至 Claude Desktop 1.1.3189 後，Windows 上出現嚴重 UI 延遲與滑鼠卡頓，回報為效能退步（regression）；與既有「Cowork 建立 10GB VM bundle 導致效能持續惡化」（issue #22543）同屬 Desktop 效能問題但觸發情境不同（此則未特定指向 Cowork），暫分列追蹤；官方尚未回應。
+- 🔴 **未修復**｜**Windows Desktop app：GPU process crash（exit code 101457950）導致整個應用與所有執行中 session 一併中斷（GitHub issue #81698，累積 36 則留言、1 個讚，2026-08-16）**：Windows 桌面應用（Claude desktop app 1.24012.9 MSIX 安裝、Claude Code CCD 2.1.219、bundled Node 24.18.0，Windows 11 Home build 10.0.26200，NVIDIA GeForce RTX 5080）發生 GPU process crash（exit code 101457950），導致整個應用程式與所有執行中的 session 一併中斷；與既有「Claude Desktop 1.1.3189 於 Windows 出現嚴重 UI 延遲與滑鼠卡頓」（issue #26302）同屬 Desktop app 於 Windows 上的穩定性問題但成因不同，暫分列追蹤；官方尚未回應。
 - 🔴 **未修復**｜**進程記憶體洩漏，增長至 120GB+ 遭 OOM Killed（GitHub issue #4953，累積 97 則留言、73 個讚，2026-07-06 首次記錄，2026-07-21 留言數更新）**：使用者回報 Claude Code 進程會持續增長至 120GB 以上記憶體，最終遭系統 OOM killed，屬嚴重穩定性缺陷；長時間執行或大型專案場景風險較高，官方尚未回應或說明成因。
 - 🔴 **未修復**｜**macOS 持續性 ECONNRESET 連線錯誤（GitHub issue #5674，累積 51 則留言、44 個讚，首見 2026-07-06，2026-07-31 互動數更新，今日全站 GitHub Issues 互動最高）**：僅在 macOS 上出現的持續性連線中斷問題（ECONNRESET），連線中斷導致任務被打斷，Windows 環境未見同樣狀況，疑為平台特定的網路層處理差異；官方尚未回應。
 - 🔴 **未修復**｜**Linux 上持續產生 Windows 換行（CRLF）檔案（GitHub issue #2805，累積 47 則留言、33 個讚，首見 2026-07-06，2026-08-04 互動數更新）**：即便 CLAUDE.md 已明確指示使用 LF 換行，Claude Code 在 Ubuntu Linux 上仍持續產生 CRLF 換行的檔案，跨平台團隊協作時易引發不必要的 diff 雜訊；官方尚未回應。
