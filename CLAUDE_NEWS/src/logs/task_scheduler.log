@@ -226,3 +226,10 @@
 [週六 2026/08/15 13:06:02.00] === Pipeline aborted (agent) ===
 [週六 2026/08/15 23:07:50.00] Watchdog push SENT - 每日新聞 2026-08-15 缺件：抓料。本機跑 /news-pipeline 2026-08-15 補
 [cloud daily-news-pipeline-cloud STARTED Sun 2026/08/16 13:05:32.00]
+[週日 2026/08/16 13:13:00.00] === Agent pipeline start (2026-08-16) ===
+[週日 2026/08/16 13:16:31.00] Aggregator OK
+[週日 2026/08/16 13:29:00.00] Wiki ingest OK
+[週日 2026/08/16 13:29:30.00] 測試全綠 - web build 放行
+[週日 2026/08/16 13:30:16.00] Building web reader...
+[週日 2026/08/16 13:31:22.00] Single push done (news + wiki + web)
+[週日 2026/08/16 13:31:22.00] === Pipeline complete (agent) ===
