@@ -311,11 +311,6 @@
       "id": "claude-skills",
       "name": "Claude Skills",
       "pageType": "entity"
-    },
-    {
-      "id": "enterprise-cost-management",
-      "name": "企業規模 Claude 成本管理",
-      "pageType": "topic"
     }
   ]
 }
