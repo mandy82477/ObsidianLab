@@ -3941,3 +3941,17 @@
   - **修法**：`FeedItem` 新增 `dedup_key`（`"<url>#<內容 hash>"`），`emitted_cache.cache_key()` 優先採用、否則 fallback 正規化 URL；三支來源填值；`main.py` 持久化該欄並讓 `--confirm-digest` 以完整記錄確認（確認到裸 URL 會讓真正的條目永遠未確認、每輪重複提供）；`dedup` 合併時繼承此欄（與 `topic` 同一類坑）。
   - **自我修復**：新鍵與舊的裸 URL 紀錄永不相撞，8 個燒掉的頁面下次變動即自動復活，**不需清 cache 或寫遷移**。已對真實 `emitted_items.json` 實測四個燒掉的 URL：修正前靜默丟棄、修正後放行。
   - 新增 `src/tests/test_change_detection_cache.py`（10 例，含「同內容仍須抑制」的反向保護）；抽掉修正會紅 4 項。測試 300/300 綠，`/pipeline-change-check` compare 15 項指標全無變動、109 份舊 digest 解析零失敗。
+
+## 2026-08-16 Query 後續之二：funnel 歸因失真已修（使用者「全部修到沒問題」）
+
+承同日「兩條 funnel 異常」條目中登記為「已診斷未修」的 (a)。追下去發現後果比原估嚴重：`scripts/source_scorecard.py` 的 **收錄率 = emitted / gathered** 與 **wiki 率 = 歸因筆數 / emitted** 都吃這兩欄，而該記分卡正是 `/wiki-lint` 6e 判斷來源去留的依據——**2026-08-15 Anthropic Blog 供了當日最大條（浮水印報導），記分卡卻算它 0% 收錄率**。一個供頭條的來源可能因此被淘汰。
+
+修法分三段，缺一段就白做：
+
+1. **記住是誰**：`FeedItem.contributors` 記錄 dedup 併掉的來源標籤（勝者自己不列入），合併時以集合聯集更新，順序無關且冪等（A←B 再 AB←C 與任何順序同解）
+2. **算對數字**：`main._count_by_prefix` 改為每則條目對「所有貢獻來源」各計一次。per-source 數字因此可能加總大於條目數——那是誠實的讀法（「本來源貢獻了 N 則存活條目」）；`totals` 仍計條目數。每份抓取副本只會併進一個存活條目，故 per-source `filtered`/`emitted` ≤ `gathered` 仍成立。修這裡時踩到一個回歸：無 source 標籤的條目原本落 `""` → `_unmapped` 桶，新寫法一度把它濾掉——那會讓「來源標籤壞掉」變隱形，已修回並加註
+3. **傳到下游**：`gathered_items.json` 新增 `contributors`；日報來源欄改寫成 `` `Hacker News ＋Anthropic Blog、Google News / PCMag` ``（`SOURCE_RE` 對反引號內是自由文字，解析器不受影響）；`.claude/rules/wiki-reporter-shared.md` 規定記者見 `＋` 就每來源各報一筆歸因。只改前兩段的話 `source_attribution.jsonl` 仍只記勝者，wiki 率照樣失真
+
+registry 加一組 sync_pair 釘住產出端與歸因端（只改一邊等於白做）。測試 308/308 綠（新增 8 例：合併鏈全記錄、勝者不列自己、標籤前綴正規化、同來源在同一條目只計一次、無貢獻者時行為不變）；`/pipeline-change-check` compare 15 項指標全無變動、109 份舊 digest 解析零失敗；記分卡實跑正常。
+
+**殘留（非缺陷，時間問題）**：歷史 funnel 資料仍是舊語意，記分卡的長期平均要再累積數日才反映真值。`docs/workaround-register.md` 該列已標修復並註明此點。

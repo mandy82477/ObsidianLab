@@ -221,6 +221,7 @@ PYTHON REPO_ROOT\scripts\check_gather_health.py
 - 標題行必須是 `**[標題](url)**`（方括號連結），**不可**寫成 `- **標題**：內文` 的 bullet 形式
 - 來源行必須是 `` `來源` · 時間 `` 獨立一行
 - 違反此格式時 web reader 會解析出空區塊，讀者只看得到今日聚焦
+- **多來源條目要把來源全部列出 `[加入: 2026-08-16]`**：`gathered_items.json` 的 `contributors` 非空時（dedup 併掉的其他來源），來源欄寫成 `` `勝出來源 ＋其他來源、其他來源` ``，例如 `` `Hacker News ＋Anthropic Blog、Google News / PCMag` ``。只寫勝出來源會讓其餘來源在下游完全消失——記者依日報來源欄做歸因、`data/source_attribution.jsonl` 再餵 `scripts/source_scorecard.py` 的 wiki 率，於是低流量官方來源（幾乎必定輸給 HN／Google News）長期看起來零貢獻（2026-08-15：Anthropic Blog 供了當日最大條的浮水印報導，掛名全歸 HN）。解析器不受影響——`SOURCE_RE` 對反引號內是自由文字
 - `gathered_items.json` 每條含 `score_unit` 欄位（分＝HN points、留言＝評論數），選材比較熱度時注意單位不同不可直接互比
 - 跨來源比較熱度時的粗略等價量級：HN 30 分 ≈ Reddit 50 讚 ≈ 10 則留言 ≈ dev.to 20 讚；source_count ≥ 2（跨來源報導）視為高於任何單來源分數的訊號
 - `source_count > 1` 表示多個獨立來源報導同一事件，選材時視為重要度加權訊號

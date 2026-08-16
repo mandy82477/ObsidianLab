@@ -59,6 +59,18 @@ def _inherit_merge_fields(winner: FeedItem, loser: FeedItem) -> None:
     _inherit_topic(winner, loser)
     if not winner.dedup_key and loser.dedup_key:
         winner.dedup_key = loser.dedup_key
+    _merge_contributors(winner, loser)
+
+
+def _merge_contributors(winner: FeedItem, loser: FeedItem) -> None:
+    """Remember every source that covered this item, not just the winner's.
+
+    Order-independent and idempotent, so a chain of merges (A<-B, then AB<-C)
+    ends up with the same set whichever copy wins each round.
+    """
+    names = set(winner.contributors) | set(loser.contributors) | {loser.source}
+    names.discard(winner.source)
+    winner.contributors = tuple(sorted(names))
 
 
 def deduplicate(items: list[FeedItem]) -> list[FeedItem]:

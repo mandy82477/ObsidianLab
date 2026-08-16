@@ -57,6 +57,7 @@ slug | 類別 | page路徑 | item_url | item_title
 ```
 
 - `slug`：日報條目結尾的 `` `來源` `` 標記取「/」前半段，對照下表
+- **來源欄含 `＋` 時每個來源各報一筆 `[加入: 2026-08-16]`**：`` `Hacker News ＋Anthropic Blog、Google News / PCMag` `` 代表三個來源都報導了這則，各自轉成一行歸因（`hacker-news`、`anthropic-blog`、`google-news`）。只報勝出來源會讓低流量官方來源在來源記分卡上長期顯示零貢獻——它們幾乎必定在 dedup 輸給 HN／Google News
 - `類別`：你的記者類別（模型/功能/商業/安全政策/社群/人物）
 - `page路徑`：本次寫入的 wiki 相對路徑，不含 `.md`（如 `topics/ai-agent-safety`）
 - `item_url` / `item_title`：日報條目的原始連結與標題

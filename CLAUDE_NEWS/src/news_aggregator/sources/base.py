@@ -36,6 +36,18 @@ class FeedItem:
     # distinct cache entry. Old bare-URL entries can never collide with it, so the
     # burned pages heal on their next change — no cache surgery needed.
     dedup_key: str = ""
+    # Source labels of the copies merged *into* this item by dedup (own `source`
+    # excluded — it is always a contributor). Empty for un-merged items.
+    #
+    # Dedup keeps one winner and discards the rest, so without this the losing
+    # sources vanish from every downstream count. `source_count` says how many
+    # covered the story but not which, and the funnel/scorecard credit only the
+    # winner's label — so a low-volume source that reliably loses to Hacker News
+    # or Google News reads as producing nothing. On 2026-08-15 the Anthropic Blog
+    # supplied the day's biggest story (the text-watermark post) and scored
+    # gathered 1 → filtered 0 → emitted 0, i.e. a 0% 收錄率 on the scorecard that
+    # `/wiki-lint` 6e uses to decide whether to retire a source.
+    contributors: tuple[str, ...] = ()
 
 
 class BaseSource(ABC):

@@ -120,6 +120,50 @@ class TestMergeDoesNotDropTheKey(unittest.TestCase):
         self.assertEqual(merged[0].dedup_key, f"{WATCHED}#aaa")
 
 
+class TestMergeRemembersEverySource(unittest.TestCase):
+    """Dedup discards the losing copies; it must not discard who supplied them."""
+
+    @staticmethod
+    def _news(source, score, url="https://claude.com/news/x", title="Same story"):
+        return FeedItem(
+            title=title, url=url, source=source,
+            published=datetime(2026, 8, 16, tzinfo=timezone.utc),
+            score=score, summary="", category="community", score_unit="分",
+        )
+
+    def test_loser_source_is_recorded_on_the_winner(self):
+        merged = deduplicate([
+            self._news("Anthropic Blog", 0),
+            self._news("Hacker News", 268),
+        ])
+        self.assertEqual(len(merged), 1)
+        self.assertEqual(merged[0].source, "Hacker News")
+        self.assertIn("Anthropic Blog", merged[0].contributors)
+
+    def test_chain_of_merges_keeps_all_of_them(self):
+        merged = deduplicate([
+            self._news("Anthropic Blog", 0),
+            self._news("Reddit", 5),
+            self._news("Hacker News", 268),
+            self._news("Google News / PCMag", 1),
+        ])
+        self.assertEqual(len(merged), 1)
+        self.assertEqual(merged[0].source_count, 4)
+        self.assertEqual(
+            set(merged[0].contributors),
+            {"Anthropic Blog", "Reddit", "Google News / PCMag"},
+            "every merged-away source must survive, whatever order they won in",
+        )
+
+    def test_winner_does_not_list_itself(self):
+        merged = deduplicate([self._news("Anthropic Blog", 0), self._news("Hacker News", 268)])
+        self.assertNotIn("Hacker News", merged[0].contributors)
+
+    def test_unmerged_item_has_no_contributors(self):
+        merged = deduplicate([self._news("Hacker News", 268)])
+        self.assertEqual(merged[0].contributors, ())
+
+
 class TestSourcesActuallySetTheKey(unittest.TestCase):
     """The cache fix is inert unless the sources populate the field."""
 

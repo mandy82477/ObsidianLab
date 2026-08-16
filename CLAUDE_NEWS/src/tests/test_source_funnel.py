@@ -17,8 +17,42 @@ from news_aggregator.main import _count_by_prefix, write_funnel_record
 
 
 class _Item:
-    def __init__(self, source):
+    def __init__(self, source, contributors=()):
         self.source = source
+        self.contributors = tuple(contributors)
+
+
+class TestContributorsAreCredited(unittest.TestCase):
+    """A merged-away source must not read as having produced nothing.
+
+    2026-08-15: the Anthropic Blog fetched the day's biggest story (the
+    text-watermark post), dedup kept the Hacker News copy, and the funnel recorded
+    Anthropic Blog as gathered 1 → filtered 0 → emitted 0. `source_scorecard.py`
+    turns those numbers into 收錄率 = emitted / gathered, which `/wiki-lint` 6e
+    uses to decide whether a source is worth keeping — so the source that supplied
+    the headline scored 0%.
+    """
+
+    def test_merged_source_is_counted(self):
+        counts = _count_by_prefix([_Item("Hacker News", contributors=("Anthropic Blog",))])
+        self.assertEqual(counts["Anthropic Blog"], 1)
+        self.assertEqual(counts["Hacker News"], 1)
+
+    def test_contributor_labels_are_prefix_normalized(self):
+        counts = _count_by_prefix([
+            _Item("Google News / Reuters", contributors=("Reddit / r/ClaudeAI · 週熱門",)),
+        ])
+        self.assertEqual(counts, {"Google News": 1, "Reddit": 1})
+
+    def test_a_source_is_counted_once_per_item_even_if_listed_twice(self):
+        counts = _count_by_prefix([
+            _Item("Hacker News / Show HN", contributors=("Hacker News / Ask HN",)),
+        ])
+        self.assertEqual(counts, {"Hacker News": 1}, "same source twice on one item is still one item")
+
+    def test_items_without_contributors_behave_as_before(self):
+        counts = _count_by_prefix([_Item("Hacker News"), _Item("Hacker News")])
+        self.assertEqual(counts, {"Hacker News": 2})
 
 
 class TestCountByPrefix(unittest.TestCase):

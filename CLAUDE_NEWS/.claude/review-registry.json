@@ -799,6 +799,18 @@
         "官方內容不是社群類的禁區"
       ],
       "_note": "2026-08-16 加入。官方部落格〈Maximizing the value of your Claude Code sessions〉（HN 268 分，當日最高互動的官方一手內容）全庫零收錄——分類層無落點（社群列讀起來像『社群產出』、功能列只有版本/指令/旗標）＋ coding-workflow-guide 一句『不吃新聞條目』，兩層同時漏。三邊只要有一邊被改回去，官方使用指南就會再次無家可歸；社群側缺席則官方模式類條目又會被記者當成不屬自己而略過。"
+    },
+    {
+      "name": "多來源條目的來源欄：日報產出端（news-pipeline-steps.md）與歸因端（wiki-reporter-shared.md）必須都認得 ＋ 分隔",
+      "assertion": "all_contain",
+      "files": [
+        ".claude/commands/news-pipeline-steps.md",
+        ".claude/rules/wiki-reporter-shared.md"
+      ],
+      "patterns": [
+        "＋"
+      ],
+      "_note": "2026-08-16 加入。dedup 只留勝者標籤，低流量官方來源在 funnel／記分卡上長期顯示零貢獻（2026-08-15：Anthropic Blog 供了當日最大條報導，掛名全歸 HN）。修法是把 contributors 寫進日報來源欄；只改產出端而記者不知道要拆成多筆，attribution 一樣只記勝者，等於白做。"
     }
   ],
   "coupling_hints": {

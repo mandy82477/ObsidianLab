@@ -89,15 +89,35 @@ def _warn_if_scores_all_zero(name: str, items: list, logger) -> None:
         )
 
 
-def _count_by_prefix(items) -> dict[str, int]:
-    """Group items by the leading part of their source label.
+def _label_prefix(label: str) -> str:
+    """"Hacker News / Show HN" → "Hacker News"; "Reddit / r/X · 週熱門" → "Reddit"."""
+    return (label or "").split(" / ")[0].split(" · ")[0].strip()
 
-    "Hacker News / Show HN" → "Hacker News"; "Reddit / r/X · 週熱門" → "Reddit".
+
+def _count_by_prefix(items) -> dict[str, int]:
+    """Count each surviving item once per source that contributed to it.
+
+    Dedup keeps one winner, so counting only `item.source` credits the whole story
+    to whichever source outranked the others and silently zeroes the rest. A source
+    that reliably loses (any low-volume official feed vs Hacker News / Google News)
+    then reads as producing nothing — and `scripts/source_scorecard.py` computes
+    收錄率 = emitted / gathered from exactly these numbers, feeding the retirement
+    decision in `/wiki-lint` 6e.
+
+    Consequence: per-source figures may sum to more than the number of items, which
+    is the honest reading — "this source contributed to N surviving items". The
+    `totals` block still counts items, not contributions. Each fetched copy can only
+    merge into one survivor, so per-source `filtered`/`emitted` stay <= `gathered`.
     """
     counts: dict[str, int] = {}
     for it in items:
-        prefix = (getattr(it, "source", "") or "").split(" / ")[0].split(" · ")[0].strip()
-        counts[prefix] = counts.get(prefix, 0) + 1
+        labels = {getattr(it, "source", "") or ""} | set(getattr(it, "contributors", ()) or ())
+        prefixes = {_label_prefix(x) for x in labels if x}
+        # An item with no usable label at all still has to be counted, under "" —
+        # it lands in the "_unmapped" bucket, which is how a broken source label
+        # stays visible instead of quietly evaporating from the ledger.
+        for prefix in prefixes or {""}:
+            counts[prefix] = counts.get(prefix, 0) + 1
     return counts
 
 
@@ -348,6 +368,11 @@ def main() -> None:
                     # "<url>#<content-hash>" here; --confirm-digest must confirm under
                     # this exact key, not the bare URL — see emitted_cache.cache_key.
                     "dedup_key": it.dedup_key,
+                    # Every other source that also covered this item (dedup discards
+                    # their copies). `source` alone would credit the story to whichever
+                    # source outranked the rest — see _count_by_prefix. Reporters use
+                    # this to file one 來源歸因 row per contributing source.
+                    "contributors": list(it.contributors),
                 }
                 for it in filtered
             ],
