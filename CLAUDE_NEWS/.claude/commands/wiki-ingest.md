@@ -107,6 +107,8 @@ python scripts/scan_pending_verifications.py $ARGUMENTS
 
 記者的角色、規則引用、回報格式只定義在角色檔 `.claude/agents/wiki-reporter-[category].md`（單一來源），由上方角色前導導入；派工 prompt 不重抄規則內文。
 
+**🚫 prompt 內不得臨場加寫「今日順手做 X」「記得同步 Y 頁」這類操作指示**——上方五個區塊（角色前導／日期／條目節錄／待查證命中／轉知待接手）加防偏誤說明即為完整 prompt，不再增加。針對單一條目的事實性提示寫在該條目的 `- **註：**` 行內。理由與 2026-08-15 教訓見 `.claude/rules/wiki-ingest.md`「派工 prompt 不得臨場加寫操作指示」。
+
 ### 4. 彙整共用檔案（主編）
 
 收到所有記者回報後，統一更新共用檔案：

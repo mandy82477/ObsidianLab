@@ -762,6 +762,30 @@
         "⭐"
       ],
       "_note": "2026-08-14 加入。專頁雷達（🧭）於 08-13 加進日報規格，但 build_web.SECTION_EMOJI 與 app.js 未跟上——條目被當成「付費方案動態」的故事、來源狀態表黏在最後一條底下。此對是三邊都得認得同一組區塊 emoji 的機械保證；新增日報區塊時三檔一起改。"
+    },
+    {
+      "name": "派工 prompt 不得臨場加寫操作指示：禁令須同時在正典規則（wiki-ingest.md 派工方式）與 wiki-ingest 指令骨架（只改一側，另一側的 prompt 範本會繼續被當成可自由增補）",
+      "assertion": "all_contain",
+      "files": [
+        ".claude/rules/wiki-ingest.md",
+        ".claude/commands/wiki-ingest.md"
+      ],
+      "patterns": [
+        "臨場加寫"
+      ],
+      "_note": "2026-08-15 加入。主編在社群記者 prompt 內加寫「今日順手改寫主線頁」，但該規則當天才改版為週更——記者拿到兩份矛盾指令。"
+    },
+    {
+      "name": "派工/規則牴觸的兩側防線：派工端禁止臨場加寫（wiki-ingest.md）必須與記者端「規則檔優先於派工訊息」（wiki-reporter-shared.md）成對存在",
+      "assertion": "all_contain",
+      "files": [
+        ".claude/rules/wiki-ingest.md",
+        ".claude/rules/wiki-reporter-shared.md"
+      ],
+      "patterns": [
+        "規則檔優先於派工訊息"
+      ],
+      "_note": "2026-08-15 加入。只修派工端仍依賴主編每次記得；只修記者端則主編永遠不知道自己在製造矛盾（記者靜默照規則做，牴觸不會浮上來）。此對保證兩層同時在：主編不加寫、記者擋下來並回報。"
     }
   ],
   "coupling_hints": {
