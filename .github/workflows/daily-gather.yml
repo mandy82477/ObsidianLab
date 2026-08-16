@@ -50,6 +50,14 @@ jobs:
         run: python -m pip install --upgrade pip && pip install -r requirements_news.txt
 
       - name: Gather news (Python only, no LLM)
+        # GITHUB_TOKEN 是 Actions 每次 run 自帶的臨時 token（額度 1,000 次/小時/repo，
+        # 匿名只有 60），config.py 讀同名環境變數，GitHub Issues / releases / Official
+        # Skills 三個來源自動帶上；本機執行才需要自己的 PAT。
+        # REDDIT_* 未設定時 reddit.py 自動走 RSS 路徑，設定後走 OAuth 拿真實讚數。
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          REDDIT_CLIENT_ID: ${{ secrets.REDDIT_CLIENT_ID }}
+          REDDIT_CLIENT_SECRET: ${{ secrets.REDDIT_CLIENT_SECRET }}
         run: python -m news_aggregator.main --gather-only
 
       # 把當日抓到的原料存一份按日期分檔的副本。
