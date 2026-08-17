@@ -12,13 +12,7 @@
       "time": "08/16 10:29",
       "sentiment": "",
       "body": "一站式管理各 AI 訂閱用量與費用的儀表板，涵蓋配額、成本、帳號，並支援 Claude Code 與 Codex 的 proxy；GitHub 星數 501，與下一項同批亮相。",
-      "focusTags": [],
-      "sedimented": [
-        {
-          "id": "claude-code",
-          "pageType": "entity"
-        }
-      ]
+      "focusTags": []
     },
     {
       "title": "jqueryscript/awesome-claude-code",
@@ -27,13 +21,7 @@
       "time": "08/16 10:29",
       "sentiment": "",
       "body": "Claude Code 工具、IDE 整合、框架與其他資源的精選清單；GitHub 星數 500。",
-      "focusTags": [],
-      "sedimented": [
-        {
-          "id": "claude-code",
-          "pageType": "entity"
-        }
-      ]
+      "focusTags": []
     },
     {
       "title": "CORS Chat",
@@ -152,13 +140,7 @@
       "time": "08/16 02:06",
       "sentiment": "🤔",
       "body": "回報帶 YAML frontmatter 的 output style 雖被 Claude Code 辨識（顯示於狀態列與 `/config`），內容卻未真正注入系統提示；38 則留言。",
-      "focusTags": [],
-      "sedimented": [
-        {
-          "id": "claude-code",
-          "pageType": "entity"
-        }
-      ]
+      "focusTags": []
     },
     {
       "title": "[Windows] Desktop app: GPU process crash (exit code 101457950) kills entire app and all running sessions",
@@ -185,13 +167,7 @@
       "time": "08/14 14:00",
       "sentiment": "😐",
       "body": "說明 Looker 現已內建 MCP 端點，Claude Code 可直接連線，不再需要本機安裝 MCP Toolbox 二進位檔；文中也誠實列出目前工具集的限制。",
-      "focusTags": [],
-      "sedimented": [
-        {
-          "id": "claude-code",
-          "pageType": "entity"
-        }
-      ]
+      "focusTags": []
     },
     {
       "title": "background agents that start with nothing still exit green. check the brief before launch",
@@ -292,21 +268,6 @@
   ],
   "preview": "Anthropic 發布研究報告，剖析多智能體系統中浮現的行為模式：隨著 agent 承接更多共享程式庫、市場等場域的任務，agent 間的即時互動預期將大幅增加，而現有制度多是為「人類速度」下的監督所設計。Benzinga、Business Insider 則以「AI agent 使對手失效、規避安全限制」為題跟進報",
   "sedimentedToday": [
-    {
-      "id": "claude-code",
-      "name": "Claude Code",
-      "pageType": "entity"
-    },
-    {
-      "id": "ai-agent-safety",
-      "name": "AI Agent 安全與可靠性",
-      "pageType": "topic"
-    },
-    {
-      "id": "anthropic-business",
-      "name": "Anthropic 商業健康度",
-      "pageType": "topic"
-    },
     {
       "id": "code-quality-decline",
       "name": "Claude Code 效能退步事件",

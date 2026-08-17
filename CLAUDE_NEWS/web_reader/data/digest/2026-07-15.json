@@ -159,13 +159,7 @@
       "time": "07/15 04:04",
       "sentiment": "",
       "body": "the-scientist.com 報導科學研究者對 Claude Science 的早期評價：工作流程加快，但仍存在功能缺口。",
-      "focusTags": [],
-      "sedimented": [
-        {
-          "id": "claude-science",
-          "pageType": "entity"
-        }
-      ]
+      "focusTags": []
     },
     {
       "title": "Claude Fable 5 security bypassed using '/btw' command in Claude Code - Crypto Briefing",
@@ -534,11 +528,5 @@
     }
   ],
   "preview": "Claude Code OAuth 登入因 `auth.anthropic.com` 完全無法透過 DNS 解析而逾時失敗，該則 issue 累積 151 則留言，為本日互動量最高的條目。",
-  "sedimentedToday": [
-    {
-      "id": "claude-science",
-      "name": "Claude Science",
-      "pageType": "entity"
-    }
-  ]
+  "sedimentedToday": []
 }

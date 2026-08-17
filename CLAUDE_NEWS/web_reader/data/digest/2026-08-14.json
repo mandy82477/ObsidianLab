@@ -142,13 +142,7 @@
       "time": "08/14 00:42",
       "sentiment": "",
       "body": "WSJ 深度報導聚焦 Dario Amodei 之妻在網路上資訊極少一事，並探討其對 Anthropic 內部可能的影響力，屬人物側寫類報導。",
-      "focusTags": [],
-      "sedimented": [
-        {
-          "id": "dario-amodei",
-          "pageType": "entity"
-        }
-      ]
+      "focusTags": []
     },
     {
       "title": "5 Claude Code hooks that stop costly mistakes before they leave the terminal",
@@ -390,11 +384,6 @@
   ],
   "preview": "Decart 收購案與 Anthropic 估值／IPO 傳聞持續延燒：60 億美元收購以色列新創 Decart 一案仍在洽談、尚未定案，CFO Krishna Rao 已展開早期 IPO 對話但未談及估值，另有報導稱投資人評估上看 2 兆美元估值。",
   "sedimentedToday": [
-    {
-      "id": "dario-amodei",
-      "name": "Dario Amodei",
-      "pageType": "entity"
-    },
     {
       "id": "ai-talent-flow",
       "name": "AI 實驗室人才流動",
