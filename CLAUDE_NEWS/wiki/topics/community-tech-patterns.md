@@ -25,11 +25,11 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 **狀態：** monitoring
 **領域：** 🌐 社群
 **開始日期：** 2026-04-25
-**最後更新：** 2026-08-16
-**最後新聞更新：** 2026-08-16
+**最後更新：** 2026-08-17
+**最後新聞更新：** 2026-08-17
 
-> **最新工作流模式**（2026-08-16）
-> 實戰教訓：以腳本啟動背景／並行 Claude Code session 時，若傳入的 prompt 檔案或變數意外為空，session 仍會「順利結束」（exit green）卻等於什麼都沒做，作者稱此問題排查耗費了他半天時間。
+> **最新工作流模式**（2026-08-17）
+> 除錯方法論：作者手上全部 26 個 MCP 工具以完全相同的方式失敗，靠設計排除測試（而非逐一檢查各工具設定）鎖定 token 是根因——為 MCP 長 session 穩健化既有的三大失效模式再補上第四種。
 
 ---
 
@@ -72,7 +72,7 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 | **Agent Loop 終止條件** | Loop exit condition 設計模式 | ⏳ 新興 | 「如何停下」比「如何跑起來」更難；設計顯式終止條件（計數器、狀態機、人工確認）防止無限循環 |
 | **Agent 記憶保護** | 結構化 Markdown 編輯器取代 regex | ⏳ 新興 | agent 用 regex 修改記憶檔案易損壞結構；以結構化 AST 編輯器操作 Markdown，防止非預期覆寫 |
 | **跨 Repo 依賴可視化** | Cross-repo blast radius 分析 | ⏳ 新興 | Claude Code 讀完整 clone、Cursor 讀相似度索引，兩者皆不看依賴圖；串接 cross-repo blast radius 分析以補盲點 |
-| **MCP 長 Session 穩健化** | MCP server 失效模式防護 | ⏳ 新興 | 長 session 三大失效模式：連線中斷、工具超時、上下文失憶；對應策略：心跳檢查、超時重試、session 狀態快照 |
+| **MCP 長 Session 穩健化** | MCP server 失效模式防護 | ⏳ 新興 | 長 session 三大失效模式：連線中斷、工具超時、上下文失憶；對應策略：心跳檢查、超時重試、session 狀態快照；另有 token 設定錯誤導致全部工具同時同型態失敗的第四種失效模式，靠排除測試而非逐一檢查鎖定根因 |
 | **行動裝置遠端控制** | ccgram（Telegram）、Android Remote Control MCP、Shellular | ⏳ 新興 | 手機作為 agent 控制介面，透過 Telegram bot / MCP / 專屬 web-app 等不同傳輸層連線並操作本機執行中的 Claude Code / Codex session |
 
 > 成熟度：✅ 成熟（社群廣泛實踐）/ ⚡ 活躍（持續演進中）/ ⏳ 新興（近期出現，尚在探索）
@@ -166,6 +166,14 @@ Claude Code 的三種多 agent 機制，可對應到 Anthropic《Building Effect
 - **與既有模式的關係：** 呼應本頁「Plugin / MCP 整合」類別既有「Claude Code 作為 MCP 協調中心」的取向，補上「BI／資料平台原生託管 MCP 端點、取代本機二進位安裝」這個此前未見於既有節點的整合形態——省去的是安裝與版本維護成本，而非 token 或 context 成本，與同類別「避免不必要 context 載入」的既有訊號互補而非重疊；非大型 codebase 特有痛點，暫不縫合 [[topics/community-large-codebase-workflow]] 四條主線
 - **來源：** 「Looker's Native MCP Server with Claude Code」— dev.to / #claudecode（依 dev.to 內容判斷原則收錄：具體描述架構變化並誠實列出限制，非純新聞轉述或行銷稿）
 - **成熟度：** ⏳ 新興（單一文章描述官方新能力，尚無社群第一手串接實測或量化數據佐證）
+
+#### 全部 26 個 MCP 工具以相同方式失敗：用排除測試鎖定 token 是根因（2026-08-14）
+
+- **主線：** —
+- **核心模式：** 作者記錄一次除錯過程：手上全部 26 個 MCP 工具皆以完全相同的方式失敗；透過設計測試排除其他變因（而非逐一檢查每個工具設定），確認問題根源出在 token 上，而非個別工具或伺服器設定
+- **與既有模式的關係：** 呼應本頁「MCP 長 Session 穩健化」類別既有的三大失效模式防護（連線中斷、工具超時、上下文失憶），補上第四種此前未記錄的失效模式——token 設定錯誤導致「全部工具同時、同型態失敗」；也呼應本頁 08-08「先測量、再究責」方法論（生產環境 memory leak 除錯節點）在 MCP 除錯場景的對應版本：先用排除測試鎖定變因範圍，而非直覺猜測或逐一檢查
+- **來源：** 「All 26 of My MCP Tools Failed the Same Way. My Test to Rule Out the Token Proved It Was the Problem.」— dev.to / #anthropic（3 讚；依規則以第一手除錯內容判斷，非讚數）
+- **成熟度：** ⏳ 新興（單一作者第一手除錯記錄，具體 token 問題成因與修復方式未見於摘要，暫記觀察）
 
 #### 讓 Claude Code 維護 MISTAKES.md 記錯清單：setup 簡單、附後續使用回饋（2026-08-13）
 

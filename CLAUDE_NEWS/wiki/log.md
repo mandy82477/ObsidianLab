@@ -3999,3 +3999,19 @@ registry 加一組 sync_pair 釘住產出端與歸因端（只改一邊等於白
 - 新增頁面：無
 - 摘要：Anthropic 發布多智能體系統風險研究並引發媒體聳動化跟進、傳出洽談收購 Decart（約 70 億美元，未證實）、Claude Code 集中出現 4 起穩定性 bug 回報（BSOD／Bedrock 權限／output style／GPU crash）
 - 呈現品質：全部通過
+
+## 2026-08-17 Ingest | news/2026-08-17.md（52 則）
+
+- 來源日報：[[news/2026-08-17]]（52 則抓取，13/13 來源；日報實收 26 則，另 26 則透過 `list_digest_omissions.py` 一併提供給記者判斷）
+- 分類派工：功能 9 則、商業 8 則、安全政策 3 則、社群 22 則、人物 4 則、模型 3 則（六類皆有條目，全數派工）；六類皆以 `subagent_type: general-purpose` + `model: sonnet` foreground 派工，角色前導導向 `.claude/agents/wiki-reporter-[category].md`（正典路徑）
+- 更新頁面：
+  - **功能**：`entities/claude-code.md`（8/16 服務中斷已修復記入「🌐 服務穩定性」；GitHub Issue #8477/#3412/#17432 互動數同步；新增 2 則「待查證」：Claude Desktop 類 Slack 功能、Cowork 內建瀏覽器／超級應用傳聞，TestingCatalog 單一來源未經官方證實）、`entities/claude-science.md`（新增官方 `anthropics/life-sciences` marketplace repo，576★）
+  - **商業**：`topics/anthropic-business.md`（新增 IPO 估值炒作評論列）、`topics/competitor-landscape.md`（新增智譜 Zhipu「抓 bug 優於 Anthropic/OpenAI」聲明）、`entities/pricing.md`（印度盧比定價訴求 issue #17432 留言數 210→212）
+  - **安全政策**：`topics/ai-agent-safety.md`（SOFX 單一來源「Claude agent 互相破壞並隱瞞使用者」報導標「待查證」；WSJ「AI Models Went Rogue」深度報導併入既有 turf war 敘事；同步清理違反段落上限的重複舊段落）、`topics/anthropic-government-policy.md`（EU 浮水印法規遵循報導補充）
+  - **社群**：`topics/community-tech-discussions.md`（浮水印反彈事件熱度升級 🔥🔥🔥→🔥🔥🔥🔥，新增技術彙整節點；GitHub 三個高星 repo 因無 forks/issues/commit 佐證且代理無法查證，判斷不收錄）、`topics/community-tech-patterns.md`（新增 MCP 長 session 穩健化第四種失效模式節點）
+  - **人物**：`entities/dario-amodei.md`（新增 08-16 雙重表態：回應 Gavin Baker 批評稱「信任危機」＋主張需具體科學突破如治癒癌症才能贏回公眾信任，三方獨立來源交叉確認）
+  - **模型**：無（Opus 5/Fable 5 相關三則 Reddit 條目 score 不可信且內容空泛，均未達收錄門檻，未寫入任何頁面）
+  - **主編**：`index.md` 修正 pricing 條目摘要（原文字停留於 07-03 舊數字「👍584，無官方回應」，已與 pricing.md 現況同步為「07-13 已回應 Pro 方案、Claude Code 涵蓋範圍未見官方確認、留言 212」）
+- 新增頁面：無
+- 摘要：Anthropic 浮水印功能引發訂閱用戶大規模反彈（HN 293 分＋多家媒體跟進）、8/16 服務中斷已修復、Q2 營收與 IPO 估值傳出具體數字（115 億美元／1900-2000 億美元）、CEO Dario Amodei 公開回應「信任危機」
+- 呈現品質：功能／商業／社群 全部通過；安全政策 `ai-agent-safety.md` ⚠️ 已修復（清除違反「現況不被時序侵蝕」段落上限的重複舊段落）、`anthropic-government-policy.md` ✅ 通過；人物 未附獨立呈現品質欄位（角色檔回報模板無此列）
