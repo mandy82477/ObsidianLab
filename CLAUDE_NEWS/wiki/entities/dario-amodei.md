@@ -7,10 +7,10 @@ domain: "👤 人物"
 last_updated: "2026-08-17"
 last_news_update: "2026-08-17"
 status_main: "active"
-days_since_news: 2
+days_since_news: 0
 inbound_links: 11
-attribution_count: 8
-attribution_last: "2026-08-14"
+attribution_count: 12
+attribution_last: "2026-08-17"
 top_source: "google-news"
 pending_count: 6
 pending_overdue: 0

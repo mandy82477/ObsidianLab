@@ -9,10 +9,10 @@ last_news_update: "2026-08-17"
 status_main: "active"
 days_since_news: 0
 inbound_links: 63
-attribution_count: 290
-attribution_last: "2026-08-16"
+attribution_count: 294
+attribution_last: "2026-08-17"
 top_source: "github-issues"
-pending_count: 17
+pending_count: 19
 pending_overdue: 0
 pending_next_review: "2026-08-26"
 pending_signalled: 0

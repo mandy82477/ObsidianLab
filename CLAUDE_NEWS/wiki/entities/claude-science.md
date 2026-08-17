@@ -9,14 +9,14 @@ last_news_update: "2026-08-17"
 status_main: "active"
 days_since_news: 0
 inbound_links: 2
-attribution_count: 1
-attribution_last: "2026-07-15"
+attribution_count: 2
+attribution_last: "2026-08-17"
 top_source: "google-news"
 pending_count: 0
 pending_overdue: 0
 pending_next_review: null
 pending_signalled: 0
-signal: "休眠"
+signal: "孤島"
 generated_by: "scripts/gen_wiki_frontmatter.py"
 ---
 # Claude Science

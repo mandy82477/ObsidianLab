@@ -3,13 +3,13 @@ page: "topics/competitor-landscape"
 kind: "topic"
 status: "monitoring"
 domain: "💼 商業"
-last_updated: "2026-08-15"
-last_news_update: "2026-08-15"
+last_updated: "2026-08-17"
+last_news_update: "2026-08-17"
 status_main: "monitoring"
-days_since_news: 1
+days_since_news: 0
 inbound_links: 50
-attribution_count: 65
-attribution_last: "2026-08-15"
+attribution_count: 66
+attribution_last: "2026-08-17"
 top_source: "google-news"
 pending_count: 0
 pending_overdue: 0
