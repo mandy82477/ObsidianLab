@@ -24,12 +24,12 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 **領域：** 💼 商業
 **蒐集邊界：** 以 Claude 為參照系的競品動態為主，另針對競品發布與定價定向補抓（每日至多 2 則）；競品自身未與 Claude 對比的發布可能延遲或缺漏。
 **開始日期：** 2026-04
-**最後更新：** 2026-08-15
-**最後新聞更新：** 2026-08-15
+**最後更新：** 2026-08-17
+**最後新聞更新：** 2026-08-17
 
-> **最新競品動態**（2026-08-15）
-> - **GLM-5.3 發布，主打資安能力，據報已在 Cursor 找到「嚴重漏洞」**：VentureBeat（透過專頁定向抓取）報導 Zhipu AI 發布 GLM-5.3，強調進階資安能力，並稱該模型已在 Cursor 中找到一個「嚴重漏洞」；延續既有 Zhipu Z.AI 🔴 追蹤（08-14 新程式碼生成模型對打 Anthropic/OpenAI）之後，是首次以「資安能力」（而非泛用編碼能力）作為差異化訴求，且直接點名競品 Cursor 的具體漏洞發現，詳見「主要競品追蹤」Zhipu Z.AI 子區塊更新。
-> - 08-14 記錄之 Z.ai 新模型、DeepSeek Harness 具名、中美定價戰敘事等既有重點仍具參考價值，詳見下方時序。
+> **最新競品動態**（2026-08-17）
+> - **The Register：Zhipu 稱新模型抓 bug 能力優於 Anthropic、OpenAI**：延續 08-15 已記錄之 GLM-5.3 資安能力與 Cursor 漏洞發現，本則進一步將能力宣稱正面對比 Anthropic 與 OpenAI，詳見「主要競品追蹤」Zhipu Z.AI 子區塊更新。
+> - 08-15 記錄之 GLM-5.3 發布、Cursor 漏洞發現等既有重點仍具參考價值，詳見下方時序。
 
 ---
 
@@ -203,6 +203,7 @@ Claude Code 已成為 AI 輔助編碼的標竿產品，但競爭正快速升溫�
 - **V4 Pro 正式上線（2026-08-13）**：KuCoin 報導 DeepSeek V4 Pro 上線，聲稱其 agent 表現逼近 **Claude 3 Opus**、成本僅一小部分；Simon Willison 部落格（08-12）證實該模型已透過 OpenRouter 以 API 形式上線："The latest DeepSeek Pro model is now available, via API only."。**注意**：對標對象為已非最新旗艦的 Claude 3 Opus（非 Opus 4.8／Opus 5），比較基準是否具代表性待查證；具體 benchmark 數字未見報導細節（Google News/KuCoin；Blog/Simon Willison https://simonwillison.net/2026/Aug/12/deepseek-v4-pro-0813/）
 
 ### Zhipu Z.AI 🔴
+- **The Register：新模型自稱抓 bug 能力優於 Anthropic、OpenAI（2026-08-17，標題層級）**：The Register 報導 Zhipu 新模型宣稱抓 bug（bug-finding）能力優於 Anthropic 與 OpenAI 模型。**對競爭格局的意涵**：延續 08-15 已記錄 GLM-5.3 主打資安能力並稱已在 Cursor 找到「嚴重漏洞」，本則進一步將能力宣稱從「點名單一競品工具」升級為「正面對比 Anthropic、OpenAI 兩大模型商」，顯示 Zhipu 持續深化「資安／除錯能力」作為對抗 Anthropic 的差異化戰場（推論）；具體是否為同一款 GLM-5.3 模型、測試方法論、benchmark 數字均未見報導，僅標題層級資訊（Google News/The Register）
 - **GLM-5.3 發布，主打資安能力，據報已在 Cursor 找到「嚴重漏洞」（2026-08-15，專頁定向來源）**：VentureBeat 報導 Zhipu AI 發布 GLM-5.3，強調進階資安（cyber）能力，並稱該模型已在 Cursor 中發現一個「嚴重漏洞」（原文措辭 "already found a 'serious vulnerability'"）。**對競爭格局的意涵**：延續 08-14 已記錄「新程式碼生成模型對打 Anthropic、OpenAI」之後，是首次見到 Zhipu 陣營以「資安能力」（而非泛用編碼/成本）作為差異化訴求，且直接點名競品 Cursor 的具體漏洞發現作為能力佐證，若此類「用 AI 模型找競品漏洞」的行銷模式擴散，可能成為編碼模型間新的差異化戰場（推論）；具體漏洞細節、揭露/修補流程、Cursor 官方回應均未見報導，僅標題層級資訊（Google News/VentureBeat）
 - **新程式碼生成模型，正面對打 Anthropic、OpenAI（2026-08-14）**：Bloomberg 報導 Z.ai 推出新模型競逐 coding 市場，明確點名 Anthropic、OpenAI 為競爭對手；延續 07-06 免費工具 ZCode 之後，是模型層再進一步的具體訊號，惟具體模型名稱、benchmark 數字、定價未見報導細節，僅標題層級資訊（Google News/Bloomberg.com）
 - **狀態**：Active（快速追趕中，2026-06-27 CNBC 確認；2026-07-06 推出免費工具 ZCode 直接對標 Cursor/Claude Code）
@@ -286,6 +287,9 @@ Claude Code 已成為 AI 輔助編碼的標竿產品，但競爭正快速升溫�
 #### 近期單日動態彙整（2026-07-02 至 2026-07-26）
 
 > 逐日條目按主題可另見上方「主要競品追蹤」對應廠商子區塊；此區塊保留完整時序供追溯查證。
+
+### 2026-08-17
+- **[Zhipu Z.AI，標題層級] The Register：Zhipu 稱新模型抓 bug 能力優於 Anthropic、OpenAI**：延續 08-15 已記錄之 GLM-5.3 資安能力與 Cursor 漏洞發現，本則將能力宣稱正面對比 Anthropic、OpenAI；詳見「主要競品追蹤」Zhipu Z.AI 子區塊新增（Google News/The Register）
 
 ### 2026-08-15
 - **[Zhipu Z.AI，重大，專頁定向來源] VentureBeat：GLM-5.3 發布，主打資安能力，據報已在 Cursor 找到「嚴重漏洞」**：延續 08-14 已記錄之新程式碼生成模型，首次以資安能力為差異化訴求並直指 Cursor 具體漏洞；詳見「主要競品追蹤」Zhipu Z.AI 子區塊新增（Google News/VentureBeat）

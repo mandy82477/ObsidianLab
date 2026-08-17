@@ -4,10 +4,10 @@ kind: "entity"
 type: "product"
 status: "active"
 domain: "🛠️ 工具/功能"
-last_updated: "2026-07-15"
-last_news_update: "2026-07-15"
+last_updated: "2026-08-17"
+last_news_update: "2026-08-17"
 status_main: "active"
-days_since_news: 32
+days_since_news: 0
 inbound_links: 2
 attribution_count: 1
 attribution_last: "2026-07-15"
@@ -25,12 +25,14 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 **狀態：** active
 **領域：** 🛠️ 工具/功能
 **首次出現：** 2026-07-01
-**最後更新：** 2026-07-15
-**最後新聞更新：** 2026-07-15
+**最後更新：** 2026-08-17
+**最後新聞更新：** 2026-08-17
 
 ---
 
 ## 現況
+
+**Marketplace repo 曝光（2026-08-17）：** GitHub Search 發現官方 repo `anthropics/life-sciences`（576★），描述為「Claude for Life Sciences Launch」使用的 Claude Code Marketplace，長期託管 `marketplace.json`（非實際 MCP servers 本身）。「Claude for Life Sciences」與本頁「Claude Science」是否為同一產品線的官方命名調整或另立的 MCP marketplace 擴充，原文未進一步說明，暫記待後續報導釐清。
 
 **早期使用者評價（2026-07-15）：** the-scientist.com 報導科學研究者對 Claude Science 的早期評價：工作流程加快，但仍存在功能缺口（"Faster Workflows, But Gaps Remain"）。原文僅有標題可用（Google News 轉址頁面無法取得完整內容），具體缺口項目與量化證據待後續報導補齊。
 
@@ -72,12 +74,15 @@ Claude Science 是 Anthropic 於 2026-07-01 發布的科學家專用 AI 工作�
 
 - [Anthropic Blog: Claude Science AI Workbench](https://www.anthropic.com/news/claude-science-ai-workbench)（2026-07-01）
 - Google News / the-scientist.com："Early Verdicts on Claude Science: Faster Workflows, But Gaps Remain"（2026-07-15，僅標題可用）
+- GitHub Search: [anthropics/life-sciences](https://github.com/anthropics/life-sciences)（576★，2026-08-17 查證）
 - [[news/2026-07-01]]
 - [[news/2026-07-15]]
+- [[news/2026-08-17]]
 
 ## 歷史記錄
 
 | 日期 | 事件 |
 |------|------|
+| 2026-08-17 | GitHub Search 發現官方 repo `anthropics/life-sciences`（576★），為「Claude for Life Sciences Launch」的 Claude Code Marketplace，長期託管 `marketplace.json`；與「Claude Science」品牌關係待後續報導釐清 |
 | 2026-07-15 | the-scientist.com 報導科學研究者早期評價：工作流程加快，但仍存在功能缺口；僅標題可用，細節待補 |
 | 2026-07-01 | 正式發布，科學家專用 AI 工作台 app，整合研究工具套件、可稽核 artifact 與彈性雲端運算 |
