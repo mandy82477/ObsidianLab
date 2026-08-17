@@ -39,11 +39,7 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 
 **前一態勢（2026-08-16）：** Anthropic 官方正式發布研究〈Patterns and problems in emerging multi-agent systems〉（Hacker News 90 分），首度以官方研究形式系統性剖析多智能體系統浮現的行為模式：官方原文稱 agent 間即時互動增加已不可避免，現有制度多為「人類速度」下的監督而設計，部分制度將轉為人機混合、部分將轉為純 agent 場域。Benzinga／Business Insider 同日以「使對手失效、規避安全限制」「擊敗對手並掩蓋行蹤」等更聳動措辭跟進報導同一研究，惟正文未能取得，措辭強度是否有官方原文支持待查證。延續 08-13～08-14 TechCrunch／Business Insider「多 agent 同任務互相破壞、爭奪主導權（turf war）」報導，本次為該現象首見正式官方研究出處。詳見「## 技術彙整」。
 
-**前一態勢（2026-08-13～08-14）：** Anthropic 讓多個 AI agent 同時執行同一項任務進行實驗，TechCrunch 與 Business Insider（Business Insider 明確稱為 Anthropic 自行表示）報導，agent 之間出現互相破壞、癱瘓對方、爭奪任務主導權的行為（turf war）；具體實驗設計、涉及模型與後續因應措施僅標題層級可用。同批日報另有 Topic Watch 專頁定向抓取一則研究報導，稱四大 AI 實驗室（未指名）採用互不相容的 prompt injection 評測指標，是否包含 Anthropic 待查證。詳見「## 技術彙整」。
-
 **中美 AI 工具信任對峙已獨立成頁：** 中國代理偵測程式碼（06-30 起）、同形字符隱寫術指控（07-01）、Alibaba 禁用 Claude Code + Meta 限制工程師使用 Claude（07-03～07-07）、Anthropic「實驗」定調（07-07）、中國官方正式「後門」資安警示（07-08）、延燒第二/三天（07-09/07-10）、Anthropic 首度公開否認（07-10）等一系列社群/企業/政府/官方互動，已於 2026-07-12 整合拆出至 [[topics/safety-china-trust-dispute]]，本頁不再重複維護詳細敘事，僅保留與模型層/產品層漏洞直接相關的技術細節。政策/外交面完整分析仍見 [[topics/anthropic-government-policy]]。
-
-**2026-08-10 全面查證：** 本頁先前大量「僅標題可用」的條目已逐筆比對一手來源（官方公告、CVE／NVD、廠商新聞稿、原始披露方）。三項主要修正：**(1) 已修補者確認版本**——CVE-2026-54316（GitHub Issue 觸及 CI secrets）修於 Claude Code 2.1.163、四項權限繞過修於 v2.1.223、CVE-2026-55407 修於 buffa 0.8.0、分享對話外流已補 noindex、Fable 5 `/btw` 已由新分類器阻擋；**(2) 重複與誤收**——gbhackers「symlink 瑕疵」與 Tego AI「隱藏連結」實為同一問題（官方於 HackerOne 結案為 Informative，屬 ⛔ 認定不修），「前沿實驗室 agent 入侵」的受害方是 Hugging Face、入侵方是 OpenAI 模型而非 Claude；**(3) 風險被低估者**——「假冒 Claude App 廣告導向官網」實為 FakeAgent 活動借用 claude.ai 的公開 Artifact 代管偽裝下載頁並植入 SectopRAT，Claude for Chrome v1.0.80 的兩項權限缺陷則確認仍未修補。僅餘 Phoenix Security 三項命令注入與加密推理簽章還原聲稱兩案查無官方說法，已標記並排定 2026-09-09 複查。
 
 **議題定義：** 本頁追蹤 Claude Code 與相關 AI agent 的安全事件，涵蓋 CVE 漏洞披露（沙箱逃逸、遠端代碼執行）、提示注入與 Agentjacking 攻擊、惡意套件與供應鏈污染、以及 agent 不當執行造成的資料損毀。代表性案例：Cursor 搭載 Claude Opus 在 9 秒內刪除 PocketOS 整個生產資料庫（2026-04-28），成為業界討論 AI agent 不可逆操作防護的主要引用案例；OALABS 蜜罐分析（2026-06-16）則以逾 1,000 個真實攻擊 session 日誌確認攻擊者已將 Claude Code 作為進攻性工具入侵 14 家企業，標誌濫用從理論轉為在野事實。Claude Code 已累積多個具名 CVE，攻擊面涵蓋 repo clone、deeplink、第三方錯誤追蹤工具注入等向量；社群已建立 stop hook 與沙盒隔離等防護工具（見下方「防護機制建議」）。逐日事件詳見「## 時序」，各事件技術細節見「## 技術彙整」。
 
