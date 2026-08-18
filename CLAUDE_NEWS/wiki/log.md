@@ -4015,3 +4015,17 @@ registry 加一組 sync_pair 釘住產出端與歸因端（只改一邊等於白
 - 新增頁面：無
 - 摘要：Anthropic 浮水印功能引發訂閱用戶大規模反彈（HN 293 分＋多家媒體跟進）、8/16 服務中斷已修復、Q2 營收與 IPO 估值傳出具體數字（115 億美元／1900-2000 億美元）、CEO Dario Amodei 公開回應「信任危機」
 - 呈現品質：功能／商業／社群 全部通過；安全政策 `ai-agent-safety.md` ⚠️ 已修復（清除違反「現況不被時序侵蝕」段落上限的重複舊段落）、`anthropic-government-policy.md` ✅ 通過；人物 未附獨立呈現品質欄位（角色檔回報模板無此列）
+
+## 2026-08-18 Ingest | news/2026-08-18.md（61 則）
+
+- 來源日報：[[news/2026-08-18]]（61 則抓取，13/13 來源；日報實收 38 則，另 23 則透過 `list_digest_omissions.py` 一併提供給記者判斷；其中 5 則因與 Claude/Anthropic 完全無關聯（Qwen 系列討論、CUDA Agent 論文、Amazon AI 訓練設施報導）在主編分類階段即排除，未進入任何記者派工）
+- 分類派工：功能 13 則、商業 9 則、安全政策 9 則、社群 21 則、人物 2 則（六類皆以 `subagent_type: general-purpose` + `model: sonnet` foreground 派工，角色前導導向 `.claude/agents/wiki-reporter-[category].md`；模型類今日無條目，未派工）
+- 更新頁面：
+  - **功能**：`entities/claude-code.md`（新增 5 則高互動 GitHub Issue：Desktop Relaunch 檔案鎖 #42776、Remote Control 重連失效 #34255、Console 閃爍 #14828、OAuth 白名單 #27263、刪除 session #13514；`/design` 指令與 Claude Workbench 下線各標 ❓ 待查證，複查日 2026-09-01）、`entities/claude-skills.md`（官方技能庫新增 claude-academy-guide、discernment-nudge）、`entities/claude-design.md`（`/design` 指令待查證標記）；feature-radar 新增「自訂專案 Transcript 目錄短名稱」（`CLAUDE_CODE_PROJECT_DIR_NAME`，v2.1.234，🔥）並由主編同步全覽表列與升版風險最新版本行
+  - **商業**：`topics/anthropic-business.md`（Anthropic 年化營收站上 650 億美元，Bloomberg／Reuters／CNBC／Benzinga 四方同步報導，另補 TechRadar「AI 界的 Apple」評論）、`topics/competitor-landscape.md`（GitHub Copilot 計費改版終結無限量方案；Cursor 推出程式碼託管平台 Origin）
+  - **安全政策**：`topics/anthropic-government-policy.md`（CNET／Guardian／PCWorld 三方跟進浮水印功能報導，延續既有政策系列追蹤）、`topics/ai-agent-safety.md`（CyberSecurityNews 揭露勒索軟體操作者濫用 Claude Code 竊取 LDAP 密碼並外洩資料庫；Cybernews 報導 Anthropic 揭露多智能體「疑心較重」agent 互相部署惡意軟體研究；World IP Review 提示注入商業機密訴訟專頁定向條目）；⚠️ 已登記轉知帳本 H-3e88e6：兩則音樂版權訴訟（Round Hill 10 億美元求償、另一音樂出版商）依既有慣例應收錄至商業記者 `anthropic-business.md`，因商業記者已完成派工，留待下次 ingest 處理
+  - **社群**：`topics/community-tech-discussions.md`（新增「Anthropic's War on open source AI」HN 146 分節點）、`topics/community-tech-patterns.md`（新增 statuslin.es Claude Code status line 社群展示網站節點）；GitHub Search 高星倉庫 internet-court-skill（3793★）與 devnors-data-mcp（121★）因無法查證 forks/issues/commit 佐證，比照既有判例不收錄；19 則低互動 Show HN／Reddit 條目未達門檻不收錄
+  - **人物**：`entities/dario-amodei.md`（既有 08-14 待查證標記加訊 2026-08-18：The Week 首次在標題層級揭露 Dario Amodei 妻子姓名「Cami Clark」；Fidji Simo 呼應 Amodei「治癒疾病」論述併入歷史記錄，比照 08-16 判例不為 Cami Clark 另建頁）
+- 新增頁面：無
+- 摘要：Anthropic 年化營收站上 650 億美元（IPO 前強力訊號，四方媒體同步報導）、Claude 浮水印功能持續延燒（CNET/Guardian/PCWorld）、資安媒體揭露勒索軟體濫用 Claude Code 攻擊鏈、音樂產業版權方接連對 Anthropic 提告（10 億美元求償）、Anthropic 揭露多智能體惡意行為研究
+- 呈現品質：全部通過

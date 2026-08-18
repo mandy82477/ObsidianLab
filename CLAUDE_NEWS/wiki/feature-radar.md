@@ -4,7 +4,7 @@
 僅收錄官方 changelog、release note 或官方公告來源；社群工具見 [[topics/community-tech-tools]]。
 每日更新：新增功能、更新熱度、補充社群回饋。
 
-**最後更新：** 2026-08-15
+**最後更新：** 2026-08-18
 
 ---
 
@@ -20,7 +20,7 @@
 
 ## ⚠️ 升版風險
 
-**最新版本：** v2.1.233（2026-08-14，`--worktree` 旗標與 `claude agents` 視圖新增 GitLab merge request URL 支援、MR 顯示為 `!N`；另新增選用的 `forward_user_identity` apps gateway 設定，官方未說明其使用情境）。前一版 v2.1.232（08-13）為 Subagent forking 預設開啟。最後一次重大 breaking change 仍為 v2.1.212／v2.1.215（見下表）；另有一項於 8/14 已生效的 breaking change（auto 模式預設化，已對 Pro/Max/Team 上線，詳見 [[entities/claude-code]] 現況）。
+**最新版本：** v2.1.234（2026-08-17，新增可選環境變數 `CLAUDE_CODE_PROJECT_DIR_NAME`，讓多 session 各自獨立設定目錄的主機為專案 transcript 目錄自訂短名稱；非 breaking change）。前一版 v2.1.233（08-14）新增 GitLab merge request URL 支援。最後一次重大 breaking change 仍為 v2.1.212／v2.1.215（見下表）；另有一項於 8/14 已生效的 breaking change（auto 模式預設化，已對 Pro/Max/Team 上線，詳見 [[entities/claude-code]] 現況）。
 
 | 風險 | 嚴重度 | 說明 |
 |------|--------|------|
@@ -63,6 +63,7 @@
 
 | 功能 | 發布日期 | 熱度 | 試用價值 | 狀態 |
 |------|----------|------|----------|------|
+| **自訂專案 Transcript 目錄短名稱**（`CLAUDE_CODE_PROJECT_DIR_NAME` 環境變數，v2.1.234） | 2026-08-17 | 🔥 | ⚡ 有條件推薦 | 正式發布 |
 | **Claude Code v2.1.233**（`--worktree`／`claude agents` 視圖新增 GitLab MR URL 支援，MR 顯示為 `!N`；另有 opt-in `forward_user_identity` apps gateway 設定） | 2026-08-14 | 🔥🔥 | ⚡ 有條件推薦 | 正式發布 |
 | **Claude Code Auto 模式預設化**（⚠️ Breaking change：8/14 起 auto 成為 Pro／Max／Team 預設權限模式，取代手動確認流程；即日起免收分類器 token 費；Enterprise 與 API／雲端平台仍選用制） | 2026-08-14 生效（08-07 公告，08-10 官方部落格確認） | 🔥🔥🔥🔥🔥 | ⚡ 有條件推薦 | 正式發布 |
 | **Claude Code 跨 session 訊息互通**（需 v2.1.224+、macOS／Linux，`ListAgents` 探索可連線 session、`SendMessage` 指定名稱傳訊，亦適用 subagent 與 team 隊友） | 2026-08-08 | 🔥🔥🔥🔥 | ⚡ 有條件推薦 | 正式發布 |
@@ -144,6 +145,25 @@
 ---
 
 ## 🆕 最新功能（2026-08）
+
+### 自訂專案 Transcript 目錄短名稱（`CLAUDE_CODE_PROJECT_DIR_NAME`）
+**發布：** 2026-08-17（v2.1.234） | **熱度：** 🔥 | **試用價值：** ⚡ 有條件推薦 | **狀態：** 正式發布
+
+**是什麼：** 新增可選環境變數 `CLAUDE_CODE_PROJECT_DIR_NAME`，讓每個 session 有獨立設定目錄的主機（如 CI、多租戶執行環境）可為專案 transcript 目錄自訂短名稱，取代預設的長雜湊/路徑命名。
+
+**為何熱：** 純官方 GitHub Release 條目，社群尚無延燒討論；主要受眾為自架多 session 執行環境的平台維運者，一般個人開發者日常不會直接觸及此設定。
+
+**現在要試嗎：** 自架多租戶 Claude Code 執行環境（CI、self-hosted runner）的維運者可直接受益；一般個人開發者可略過。
+
+**快速上手：**
+```
+export CLAUDE_CODE_PROJECT_DIR_NAME="my-project"
+claude
+```
+
+**注意事項：** 官方 changelog 原文於此處截斷，除環境變數名稱與用途一句話描述外未載明其餘行為細節（如是否影響既有 transcript 路徑相容性）。
+
+---
 
 ### Claude Code v2.1.233 — GitLab merge request 支援
 **發布：** 2026-08-14（v2.1.233） | **熱度：** 🔥🔥 | **試用價值：** ⚡ 有條件推薦 | **狀態：** 正式發布
