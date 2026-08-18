@@ -25,8 +25,8 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 **狀態：** monitoring
 **領域：** 🌐 社群
 **開始日期：** 2026-04-25
-**最後更新：** 2026-08-17
-**最後新聞更新：** 2026-08-17
+**最後更新：** 2026-08-18
+**最後新聞更新：** 2026-08-18
 
 > **最新工作流模式**（2026-08-17）
 > 除錯方法論：作者手上全部 26 個 MCP 工具以完全相同的方式失敗，靠設計排除測試（而非逐一檢查各工具設定）鎖定 token 是根因——為 MCP 長 session 穩健化既有的三大失效模式再補上第四種。
@@ -128,6 +128,14 @@ Claude Code 的三種多 agent 機制，可對應到 Anthropic《Building Effect
 ## 技術彙整
 
 ### 2026-08
+
+#### Show HN：statuslin.es——社群策展的 Claude Code status line 樣式展示網站，每則附真實 sandbox 容器截圖（2026-08-17）
+
+- **主線：** —
+- **核心模式：** 開發者釋出 statuslin.es，蒐集社群提交、經人工審核的 Claude Code status line 樣式展示，每則皆附上真實 sandbox 容器截圖以佐證樣式實際運作效果（而非僅程式碼片段）
+- **與既有模式的關係：** 為 Claude Code 客製化/UI 展示補上一個策展型社群索引，性質類似本頁「介面元件複用」類別的 Brainless（模仿介面風格的 shadcn 元件庫），但聚焦 status line 這個更細分的客製化面向，且以「真實截圖佐證」作為收錄門檻，可信度較單純程式碼片段展示更高；非大型 codebase 特有痛點，暫不縫合 [[topics/community-large-codebase-workflow]] 四條主線
+- **來源：** 「Show HN: A community library for Claude Code status lines」— Hacker News（score 12，達對照表低門檻）＋跨 2 來源（source_count=2）；[statuslin.es](https://statuslin.es)
+- **成熟度：** ⏳ 新興（今日首見，尚待觀察後續提交量與社群採用度）
 
 #### 背景／並行 session 腳本啟動的空 prompt 陷阱：exit green 不代表真的執行了任務（2026-08-16）
 
