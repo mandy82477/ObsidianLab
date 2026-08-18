@@ -243,3 +243,11 @@
 [Mon 2026/08/17 13:42:20.00] === Pipeline complete (agent) ===
 [cloud daily-news-pipeline-cloud OK Mon 2026/08/17 13:42:20.00]
 [週2 2026/08/18 13:05:13.00] [cloud daily-news-pipeline-cloud STARTED 2026-08-18T13:05:13Z]
+[週2 2026/08/18 13:39:03.00] === Agent pipeline start (2026-08-18) ===
+[週2 2026/08/18 13:39:03.00] Aggregator OK
+[週2 2026/08/18 13:39:03.00] Wiki ingest OK
+[週2 2026/08/18 13:39:03.00] Building web reader...
+[週2 2026/08/18 13:39:03.00] 測試全綠 - web build 放行
+[週2 2026/08/18 13:39:03.00] Single push done (news + wiki + web)
+[週2 2026/08/18 13:39:03.00] === Pipeline complete (agent) ===
+[cloud daily-news-pipeline-cloud OK Tue 2026/08/18 13:39:10.00]
