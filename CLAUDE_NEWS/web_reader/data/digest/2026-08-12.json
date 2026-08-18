@@ -306,11 +306,5 @@
     }
   ],
   "preview": "Claude Code 的 `/buddy` 技能自 4 月 9 日隨 v2.1.97 版本消失、官方未於 changelog 說明，社群發起「Bring Back Buddy」請願 issue，累計 265 則留言與 2068 個 👍 反應。",
-  "sedimentedToday": [
-    {
-      "id": "claude-skills",
-      "name": "Claude Skills",
-      "pageType": "entity"
-    }
-  ]
+  "sedimentedToday": []
 }

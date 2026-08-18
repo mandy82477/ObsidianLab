@@ -1,0 +1,561 @@
+{
+  "date": "2026-08-18",
+  "generatedAt": "2026-08-18 13:10 UTC",
+  "articleCount": 61,
+  "sourceCount": "13/13",
+  "bulletin": "",
+  "topStories": [
+    {
+      "title": "internet-court/internet-court-skill",
+      "url": "https://github.com/internet-court/internet-court-skill",
+      "source": "GitHub Search",
+      "time": "08/18 10:35",
+      "sentiment": "",
+      "body": "一款主打「agent 對 agent 商務信任層」的 Claude Code plugin / Agent Skill，包含自然語言授權、ERC-7710 委任權限、x402 支付與爭議解決機制，GitHub Search 顯示已累積 3793 星。",
+      "focusTags": [],
+      "sedimented": [
+        {
+          "id": "claude-code",
+          "pageType": "entity"
+        }
+      ]
+    },
+    {
+      "title": "Anthropic's War on open source AI",
+      "url": "https://twitter.com/TheAhmadOsman/status/2065307070044234186",
+      "source": "Hacker News",
+      "time": "08/17 15:24",
+      "sentiment": "",
+      "body": "一則批評 Anthropic 對開源 AI 立場的貼文引發 Hacker News 146 分熱議，留言區也有人質疑該文本身是否由 AI 代筆。",
+      "focusTags": []
+    },
+    {
+      "title": "Anthropic becomes the 'Apple of AI': Most revenue despite being most expensive - techradar.com",
+      "url": "https://www.techradar.com/pro/anthropic-becomes-the-apple-of-ai-as-it-grabs-most-revenue-despite-being-the-most-expensive",
+      "source": "Hacker News",
+      "time": "08/17 10:56",
+      "sentiment": "",
+      "body": "TechRadar 報導 Anthropic 在 token 定價高於對手的情況下，仍拿下 2026 年 7 月最高的 AI token 營收，與今日聚焦的 650 億美元營收消息互為呼應。",
+      "focusTags": []
+    },
+    {
+      "title": "Anthropic Is Making Claude Code's Auto Mode the Default Setting - ALM Corp",
+      "url": "https://news.google.com/rss/articles/CBMigwFBVV95cUxOMmFORjZoUjJuZVRjcVZvc3hMUE9PQTlpdWdWNk1iRnNINEJTOVo3T0xqb3FQb01JV01fVjg5UFZyX0V6WkRfMGthN2RZSVh2My1XWnAtYmNTTE8zUUg1ZENZcWJqXzVDLTI0MWNGeWJxQ2VON0dGTjg2b1Y3bTlGRUx3SQ?oc=5",
+      "source": "Google News / ALM Corp",
+      "time": "08/17 11:52",
+      "sentiment": "",
+      "body": "報導稱 Anthropic 正將 Claude Code 的 Auto 模式設為預設設定，目前僅此單一來源，尚待官方 changelog 或其他媒體佐證。",
+      "focusTags": [],
+      "sedimented": [
+        {
+          "id": "claude-code",
+          "pageType": "entity"
+        }
+      ]
+    },
+    {
+      "title": "Claude Code gets a /design command that lets developers create UI mockups right in the terminal - the-decoder.com",
+      "url": "https://news.google.com/rss/articles/CBMiuwFBVV95cUxNeGc2b0FkbTJXN1NwRElicmZoSV9MQzg0QnktYUxkSkEwNGtiNzlkVDN0eERTVTNCNUxEcUJoSVBLb2tjdlo1aEl0Q196SGRZUmNuMWpzU1poODQ2WXN5WHh1VnF2a3Zrd2pZZHAwRFhTcGsyN3p1MEdnV2dLVGZBcHBtRFlkTTBDeVlnc3FKcktJdmJFTWNDRnl1TzlDbFk1aVZkYnBoRnhrcUo3MVNfcU1GaW9YbjIxUkdZ?oc=5",
+      "source": "Google News / the-decoder.com",
+      "time": "08/18 10:08",
+      "sentiment": "",
+      "body": "報導稱 Claude Code 新增 `/design` 指令，可直接在終端機建立 UI mockup；目前僅此單一媒體來源。",
+      "focusTags": [],
+      "sedimented": [
+        {
+          "id": "claude-code",
+          "pageType": "entity"
+        }
+      ]
+    }
+  ],
+  "techUpdates": [
+    {
+      "title": "官方文件更新：Claude Code 桌面版",
+      "url": "https://code.claude.com/docs/en/desktop.md",
+      "source": "Official Docs",
+      "time": "08/18 10:35",
+      "sentiment": "",
+      "body": "官方文件說明 Claude Code Desktop 三個分頁（Chat、Cowork、Code）功能，涵蓋 Git 隔離的並行 session、拖放版面配置、整合終端機與檔案編輯器、電腦操作、手機發起 Dispatch session、視覺化 diff review、app 預覽、PR 監控與 connectors。",
+      "focusTags": [],
+      "sedimented": [
+        {
+          "id": "claude-code",
+          "pageType": "entity"
+        }
+      ]
+    },
+    {
+      "title": "官方 Skills 異動：anthropics/skills 官方技能庫",
+      "url": "https://github.com/anthropics/skills/tree/main/skills",
+      "source": "Official Skills",
+      "time": "08/18 10:35",
+      "sentiment": "",
+      "body": "官方技能庫新增 2 項技能：`claude-academy-guide`、`discernment-nudge`。",
+      "focusTags": []
+    },
+    {
+      "title": "[anthropics/claude-code] v2.1.234",
+      "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.234",
+      "source": "GitHub / anthropics/claude-code",
+      "time": "08/17 20:20",
+      "sentiment": "",
+      "body": "新增可選的 `CLAUDE_CODE_PROJECT_DIR_NAME` 環境變數，讓每個 session 有獨立設定目錄的主機可為專案的 transcript 目錄自訂短名稱。",
+      "focusTags": []
+    },
+    {
+      "title": "[Status] Degraded performance for Claude Opus 5, Claude Sonnet 5",
+      "url": "https://status.claude.com/incidents/zhk4v3yv1lsf",
+      "source": "Anthropic Status",
+      "time": "08/17 15:29",
+      "sentiment": "",
+      "body": "Anthropic Status 記錄 Opus 5、Sonnet 5 效能降級事件，已於 8/17 15:29 UTC 確認修復。",
+      "focusTags": []
+    }
+  ],
+  "mediaReports": [
+    {
+      "title": "Anthropic's Annualized Revenue Tops $65 Billion Before IPO - Bloomberg",
+      "url": "https://news.google.com/rss/articles/CBMisAFBVV95cUxPNVktR0ZGanRzYkMwQjBWRkhfbmVfLTVxR3JpYWtRbk1HemlQbjRab2EzTmN1VDNmYmk5Z0xIWGYzVmU2b3VTRENNTy00d1RrLXBoWjFPVE5hNEQyVDdrZ1ZuTzFaczRGODM0VnpycFpDa0tTZWpFSzYyU3d1dVNwQzlicGJPTm9WdlFHczFUMzNOalhjdDIwSWZZcVltMHdsVDY2OXE4QnZOQ2laUlU4Xw?oc=5",
+      "source": "Google News / Bloomberg",
+      "time": "08/18 03:29",
+      "sentiment": "",
+      "body": "Bloomberg 報導 Anthropic 年化營收站上 650 億美元（詳見今日聚焦）。",
+      "focusTags": [
+        "[重大事件]"
+      ]
+    },
+    {
+      "title": "Anthropic revenue run rate tops $65 billion, source says - Reuters",
+      "url": "https://news.google.com/rss/articles/CBMiowFBVV95cUxNVEJ6S2RpblVGQzhVS083a3dqR3JpajJOUkJIVUZIS1ZkQ05PeW9TdkJUazFpRXNybXNDUUNnV3dfWTllcFdsYms2Mm53dGJwY1VyYnVYb0xYSTNwZWoyaC1vM0FDVWJtTlh6VjFyTGxGUUNaYkg0VDdzNlhjMDJ4dUxJVHQzY0dUaWdKd2t3d0NoWk5IQU52bDRXWTJxZWNFdThJ?oc=5",
+      "source": "Google News / Reuters",
+      "time": "08/17 21:36",
+      "sentiment": "",
+      "body": "Reuters 引述消息來源證實同一則年化營收數字（詳見今日聚焦）。",
+      "focusTags": [
+        "[重大事件]"
+      ]
+    },
+    {
+      "title": "Anthropic tells investors annualized revenue run rate climbed to $65 billion in July - CNBC",
+      "url": "https://news.google.com/rss/articles/CBMiogFBVV95cUxOUi05NkI4cXl6M3ZhcWx2QlFuYjNJa2xTN3pIUER6YWZ6bGc3TTBUb0VIV3ppTXBXdG5pbEo2b19kRFQ3MW1SR3p3eFQ2RGNlQUdwUFRJRXJtS0ZCemxjZmRRRWl3Y3M0VXo0dU5nZE0tTXVsZ2xGVXZXa1czZWo3alFiTm9GTWtXVHVoOW1FOVY4ZDJWZzN6MHN0SWtPQXRRQlE?oc=5",
+      "source": "Google News / CNBC",
+      "time": "08/17 20:33",
+      "sentiment": "",
+      "body": "CNBC 報導 Anthropic 向投資人透露 7 月年化營收已攀升至 650 億美元（詳見今日聚焦）。",
+      "focusTags": [
+        "[重大事件]"
+      ]
+    },
+    {
+      "title": "Anthropic Hits $65 Billion Annualized Revenue Run Rate as Claude Drives Explosive Growth Ahead of Potential IPO - Benzinga",
+      "url": "https://news.google.com/rss/articles/CBMipgFBVV95cUxPaFNULWZXa0gxNHVORDV6TmRDVktsdk5GbGdkTkJuQjJWTVk4MThlV1gwcGxpMWZSTUEwdGpQd3hKQlU5b29kcVZxd3FzYlE0MHhPeUZuUUVjVEdOa2pJcVU5Z0E3VHJDWk4xcXVsRFZIcVU4Vm1OYW1TcXE0ZXl3cVNUaThZNi1FYUoxbVk5ejJXZnJTUlpBLVpqYXVMRGZlOUZMdzhR?oc=5",
+      "source": "Google News / Benzinga",
+      "time": "08/18 07:18",
+      "sentiment": "",
+      "body": "Benzinga 同步報導這則營收數字，並將其與潛在的 IPO 進程連結（詳見今日聚焦）。",
+      "focusTags": [
+        "[重大事件]"
+      ]
+    },
+    {
+      "title": "Anthropic's Claude Will Add Watermarks to AI-Generated Text and Files - CNET",
+      "url": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxQeTVhQkpPVGFnb3lvVXZ1UHRHOXFVNTB5eVIxUXc4b2xiNFpOVFY1QVBpN18tMm1sVDdwSTlGcEljQ2tIazZkMFlWZjM1bURnT2xmT0s4UWJlWTdVUHVTQ2ZtcVI5UW5FVkluZGpVREFoT29SMGNMaVlYRUVPZDFnX2hVdVlCQ2FBWVVnRTk4MGgyOXZFdmFXa2E0U1p1YmdLSDQ2bEFWTzJ2MDdoQnhvVUd2bVp3dFdu?oc=5",
+      "source": "Google News / CNET",
+      "time": "08/17 18:19",
+      "sentiment": "",
+      "body": "CNET 報導 Claude 即將為生成內容加上浮水印（詳見今日聚焦）。",
+      "focusTags": [
+        "[重大事件]"
+      ]
+    },
+    {
+      "title": "Claude to start watermarking AI-generated text – but will it make quality worse? - The Guardian",
+      "url": "https://news.google.com/rss/articles/CBMikwFBVV95cUxNdDhaNEwwSzdEUkZjTjdIb1JyTkl4T2JMZ2V1REVTaEhvd3owenhXallWRk5UOGltM3d0d3dqelFNV1hjbHljTDBYc0xVbWJCZTZIQWc1aHUwZFA0ZVlXZlozUGZBNEdJQmhhR3BpRmdSZHFnaF93X3V0aVp6ZnVPQnY5T3BXamdHcG1ZVHdGeGRjNUk?oc=5",
+      "source": "Google News / The Guardian",
+      "time": "08/17 17:11",
+      "sentiment": "",
+      "body": "The Guardian 除了報導浮水印功能，也提出疑問：這是否會犧牲文字生成品質（詳見今日聚焦）。",
+      "focusTags": [
+        "[重大事件]"
+      ]
+    },
+    {
+      "title": "Claude text watermarks will \"nudge\" its word choices. Should we care? - PCWorld",
+      "url": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxOOFJVNDVvYy1rUkctUWZxS0RFTGdsOVozUnFpQVFfbEdyZ191c2h2OHAwUWt2d2lqMHdyYlB0bUxkdGNsVENjenpteXJVbS1ES2NYQnNSN1J3MHZoeEFUcEZhTzVqVDkwNG1FaEFLdnZhU2VudU1jVm9RYjlrY2lwMWltRWpTWGRRczRlMG1aTE02bVlxQWhSbDNFRUd4X1V6ZHNndkVDZm8?oc=5",
+      "source": "Google News / PCWorld",
+      "time": "08/17 16:18",
+      "sentiment": "",
+      "body": "PCWorld 同樣聚焦浮水印技術對用字選擇的影響（詳見今日聚焦）。",
+      "focusTags": [
+        "[重大事件]"
+      ]
+    },
+    {
+      "title": "Claude Code Helps Ransomware Operator Steal LDAP Passwords, Backdoor VPNs and Exfiltrate SQL Databases - CyberSecurityNews",
+      "url": "https://news.google.com/rss/articles/CBMid0FVX3lxTE9TMHVDQW1pU2hhWmtYcG84WktmQm84cWM4TEI0YnREYVRNVFo3bHhLZkdXeFFDR3prWDB1T1pGdjZpYU1PczVoUVU4aE5OZWJZclR2dWlLVXZLWnpQUWJPNk5vb2VIa0ZTcDlEcTI0c2l4YVJrakVj0gF8QVVfeXFMTTZzYXFfY010a3o5RExtM19keWZ0dnpJOE1vbXl4cHM1MVpqT2tUNXV6NUxSYlJGMzcyelRBVm5lci1DS2hwd1ZoOEdPcGJNS0V3djFVcHpHbXJGekc1cjZXTjVXOWR3S3dERTNnMXNfX3VpNjlDclRuaUxKbA?oc=5",
+      "source": "Google News / CyberSecurityNews",
+      "time": "08/18 06:04",
+      "sentiment": "",
+      "body": "CyberSecurityNews 揭露勒索軟體操作者濫用 Claude Code 的攻擊鏈（詳見今日聚焦）。",
+      "focusTags": [
+        "[風險警示]"
+      ],
+      "sedimented": [
+        {
+          "id": "claude-code",
+          "pageType": "entity"
+        }
+      ]
+    },
+    {
+      "title": "\"Paranoid\" AI agents deploy killer malware against one another, Anthropic says - Cybernews",
+      "url": "https://news.google.com/rss/articles/CBMigAFBVV95cUxNbUVlU3d4c0RrLTNzQ3hUNV9BX2dfdVMxbnB5alp2SkVMT0FWRXJWSzliOElzTlpNalJMNkFqX2JpSlFrS1kzZzR5MXhjMXhPOC0zMDV0YkxBRWxJdlBzaEYxR0dFT0NQVV9DSzZNX2dvZEdtREZlQVA3SWtTMk9VTw?oc=5",
+      "source": "Google News / Cybernews",
+      "time": "08/18 09:00",
+      "sentiment": "",
+      "body": "Cybernews 報導 Anthropic 揭露多智能體實驗中的惡意行為現象（詳見今日聚焦）。",
+      "focusTags": [
+        "[風險警示]"
+      ]
+    },
+    {
+      "title": "Round Hill Files $1 Billion Copyright Infringement Suits Against Suno, Anthropic - The Hollywood Reporter",
+      "url": "https://news.google.com/rss/articles/CBMivAFBVV95cUxQdndROUV5bmltd1BSWktMaVBwMnJDdE41TXd4bzJqSGpZQ2x0cXREXzd1eUp5dmQ0cXR1MmxFVXRtNFRlWEN5aVR2aUVRQ085X0ZUalRkZlNpbmcwYll1cUUxeWZSMGNOcVdNT1B5dVhjUkN6UHNtY3VELTFSNTVROENfc0FvUzlaeXFKSDJfQkNoRWFadDVSSTVXV09uX3Nud0ZUVklJSXE3RFpMRUJxQk9fdWh6bW04S2hwSA?oc=5",
+      "source": "Google News / The Hollywood Reporter",
+      "time": "08/17 23:47",
+      "sentiment": "",
+      "body": "The Hollywood Reporter 報導 Round Hill 向 Anthropic、Suno 提起 10 億美元著作權侵權訴訟（詳見今日聚焦）。",
+      "focusTags": [
+        "[持續追蹤]"
+      ]
+    },
+    {
+      "title": "Music publisher sues Anthropic, Suno over AI training - Reuters",
+      "url": "https://news.google.com/rss/articles/CBMirAFBVV95cUxNUzBuU0RkY3lGY0pYZmM3c05LVVNLSUFqV1FfN0hqU053a21tRTYzanpfN0IwOThYTWNUV0ZuWXM1Q2pXRnlLYXhkVnVLMGxTbDlpZS00X1RzV2o0ekkzbHVpc0FLeFgzV0U4SGl1bm0xSk01cVJ4ZVdGOG93OFQyRTJvT3l4Zk16RXlzZk1KTHJHaDNKSVl4Z0VuRER5eC1BUHFWclZXNjF4bWhr?oc=5",
+      "source": "Google News / Reuters",
+      "time": "08/17 21:52",
+      "sentiment": "",
+      "body": "Reuters 報導另一家音樂出版商對 Anthropic、Suno 提出 AI 訓練侵權訴訟（詳見今日聚焦）。",
+      "focusTags": [
+        "[持續追蹤]"
+      ]
+    },
+    {
+      "title": "Anthropic Kills Claude Workbench Today: Saved Prompts Gone, API Pipelines Broken - Tech Times",
+      "url": "https://news.google.com/rss/articles/CBMizgFBVV95cUxPNWRiZlptTlIwdTVoa2dVTjZSUnVjNzA1XzhMeDNoMGdLWENBN0hfb0hEUFNTR21OMy02b2FzdnphTTVsai0ydkhoTDUyeEtZMWN4OHVac01LSWIzdEJORmJqdEZfUUstczM5d01wb1B0Zm5PMGFsMFdFa1kyd2EzLWtPUHhZSF95Tk1aMjl0cDBSemRvbElGVV94SEVzZzdRamt1TTJ6aENVdkI0QXlaRGlHZ2FPM2Q3T3NyUWVXRTc0WHlDRFJmajhocFZaUQ?oc=5",
+      "source": "Google News / Tech Times",
+      "time": "08/17 11:53",
+      "sentiment": "",
+      "body": "Tech Times 報導 Anthropic 已下線 Claude Workbench，既有已儲存的 prompt 消失，仰賴它的 API pipeline 隨之中斷；目前僅此單一來源，細節待查證。",
+      "focusTags": []
+    },
+    {
+      "title": "Codex vs Cursor vs Claude Code: Which Is Best for Mac in 2026? - macobserver.com",
+      "url": "https://news.google.com/rss/articles/CBMikgFBVV95cUxNald1Wk5kWHdpbVZINDRERjY0SVpxcWxUV1M2Y2dCTUtTR3NZYXFvR19sR3dRVlZsTm14M3BkN3JJejlwd2J4TmhXbmphejNWcVdxSWhDV2VZMXNEeXA0ekF4WWRBY0kxUnBFeFBaSXpCbUVxUUxEUHRaSldkUmNLaWxMNnhoVFJPSjc2c1ZUMGxCQQ?oc=5",
+      "source": "Google News / macobserver.com",
+      "time": "08/18 10:28",
+      "sentiment": "",
+      "body": "macobserver.com 針對 Mac 平台比較 Codex、Cursor、Claude Code 三款編碼工具。",
+      "focusTags": [],
+      "sedimented": [
+        {
+          "id": "claude-code",
+          "pageType": "entity"
+        }
+      ]
+    },
+    {
+      "title": "Will Anthropic and OpenAI Stop Selling Their Best AI to Businesses? - The Information",
+      "url": "https://news.google.com/rss/articles/CBMiqgFBVV95cUxQWS1pQ01ldjR6WTlTVGJWYi10RU9jaUxsbWwyVmx6bTQ3NUtvX1phSTRoXzhRWl9WSE04OEpEVmt6M285QXdSSXhmdXVEVkJQVHVmOGVva0kzeWxWR2dJc0ZNVkxWbG5tbGhvOXA4WC1BaXlyWHlIUnRlUnUtSXB1Y1lqSFVncWZvZ2w4ZXl4Ry13TUY1cW9EYzE1dklHV2hDZnFJWE5hTWh0UQ?oc=5",
+      "source": "Google News / The Information",
+      "time": "08/17 14:01",
+      "sentiment": "",
+      "body": "The Information 探討 Anthropic 與 OpenAI 是否會停止把最強模型賣給企業客戶，改為自留優勢。",
+      "focusTags": []
+    }
+  ],
+  "discussions": [
+    {
+      "title": "Show HN: A community library for Claude Code status lines",
+      "url": "https://statuslin.es",
+      "source": "Hacker News",
+      "time": "08/17 13:12",
+      "sentiment": "😊",
+      "body": "社群展示網站，收錄社群提交、經人工審核的 Claude Code status line 樣式，每則皆附真實 sandbox 容器截圖；此則同時被兩個獨立來源收錄。",
+      "focusTags": [],
+      "sedimented": [
+        {
+          "id": "claude-code",
+          "pageType": "entity"
+        }
+      ]
+    },
+    {
+      "title": "Show HN: Doberman: The AI watchdog that stops Claude from deleting your database",
+      "url": "https://github.com/fu351/Doberman-Core",
+      "source": "Hacker News",
+      "time": "08/17 20:03",
+      "sentiment": "😤",
+      "body": "作者指出現有 AI 安全防護僅能擋下約 89% 的危險指令，因此打造雙層防護系統監控 LLM 的每一次輸入、輸出與工具呼叫。",
+      "focusTags": []
+    },
+    {
+      "title": "Show HN: HarnessRouter: Unified interface for agent harnesses",
+      "url": "https://github.com/harnessrouter/harnessrouter",
+      "source": "Hacker News",
+      "time": "08/17 18:33",
+      "sentiment": "😐",
+      "body": "作者分享打造 HarnessRouter 的動機：過去自行串接 Codex、Claude Code、Hermes 等多種 agent harness 工程負擔沉重，因此做出統一的 API 層。",
+      "focusTags": [],
+      "sedimented": [
+        {
+          "id": "claude-code",
+          "pageType": "entity"
+        }
+      ]
+    },
+    {
+      "title": "I stopped ranking Claude Code failures by popularity. The result is more uncomfortable.",
+      "url": "https://www.reddit.com/r/ClaudeCode/comments/1vrle7i/i_stopped_ranking_claude_code_failures_by/",
+      "source": "Reddit / r/ClaudeCode",
+      "time": "08/18 10:33",
+      "sentiment": "😤",
+      "body": "使用者指出 GitHub reactions 數並非可靠的失敗案例排序依據，改用其他方式檢視 Claude Code 的問題後得出更令人不安的結論。",
+      "focusTags": [],
+      "sedimented": [
+        {
+          "id": "claude-code",
+          "pageType": "entity"
+        }
+      ]
+    },
+    {
+      "title": "Claude code usage burning fast?",
+      "url": "https://www.reddit.com/r/ClaudeCode/comments/1vrkw63/claude_code_usage_burning_fast/",
+      "source": "Reddit / r/ClaudeCode",
+      "time": "08/18 10:05",
+      "sentiment": "😤",
+      "body": "使用者反映近期即使是小型、簡單的功能請求，Claude Code 消耗的 token 額度也明顯比以往更快見底。",
+      "focusTags": [],
+      "sedimented": [
+        {
+          "id": "claude-code",
+          "pageType": "entity"
+        }
+      ]
+    },
+    {
+      "title": "kinda tired of re-explaining my whole project to claude code every session so i built it a memory it can actually read",
+      "url": "https://www.reddit.com/r/ClaudeCode/comments/1vrk9q8/kinda_tired_of_reexplaining_my_whole_project_to/",
+      "source": "Reddit / r/ClaudeCode",
+      "time": "08/18 09:29",
+      "sentiment": "🤔",
+      "body": "使用者分享因不堪每次 session 都要重新解釋專案背景，自行打造一套 Claude Code 可讀取的記憶機制。",
+      "focusTags": [],
+      "sedimented": [
+        {
+          "id": "claude-code",
+          "pageType": "entity"
+        }
+      ]
+    },
+    {
+      "title": "What todo when you hit the Claude Code limit?",
+      "url": "https://www.reddit.com/r/ClaudeCode/comments/1vrk2ki/what_todo_when_you_hit_the_claude_code_limit/",
+      "source": "Reddit / r/ClaudeCode",
+      "time": "08/18 09:17",
+      "sentiment": "😐",
+      "body": "使用者發文詢問社群，觸及 Claude Code 使用額度上限時該如何因應。",
+      "focusTags": [],
+      "sedimented": [
+        {
+          "id": "claude-code",
+          "pageType": "entity"
+        }
+      ]
+    }
+  ],
+  "billing": [],
+  "focus": [
+    {
+      "tag": "[重大事件]",
+      "text": "Bloomberg、Reuters、CNBC、Benzinga 等多家財經媒體同步報導：Anthropic 年化營收已站上 650 億美元，市場解讀為 IPO 前釋出的強力業績訊號。",
+      "ref_urls": [
+        "https://news.google.com/rss/articles/CBMisAFBVV95cUxPNVktR0ZGanRzYkMwQjBWRkhfbmVfLTVxR3JpYWtRbk1HemlQbjRab2EzTmN1VDNmYmk5Z0xIWGYzVmU2b3VTRENNTy00d1RrLXBoWjFPVE5hNEQyVDdrZ1ZuTzFaczRGODM0VnpycFpDa0tTZWpFSzYyU3d1dVNwQzlicGJPTm9WdlFHczFUMzNOalhjdDIwSWZZcVltMHdsVDY2OXE4QnZOQ2laUlU4Xw?oc=5",
+        "https://news.google.com/rss/articles/CBMiowFBVV95cUxNVEJ6S2RpblVGQzhVS083a3dqR3JpajJOUkJIVUZIS1ZkQ05PeW9TdkJUazFpRXNybXNDUUNnV3dfWTllcFdsYms2Mm53dGJwY1VyYnVYb0xYSTNwZWoyaC1vM0FDVWJtTlh6VjFyTGxGUUNaYkg0VDdzNlhjMDJ4dUxJVHQzY0dUaWdKd2t3d0NoWk5IQU52bDRXWTJxZWNFdThJ?oc=5",
+        "https://news.google.com/rss/articles/CBMiogFBVV95cUxOUi05NkI4cXl6M3ZhcWx2QlFuYjNJa2xTN3pIUER6YWZ6bGc3TTBUb0VIV3ppTXBXdG5pbEo2b19kRFQ3MW1SR3p3eFQ2RGNlQUdwUFRJRXJtS0ZCemxjZmRRRWl3Y3M0VXo0dU5nZE0tTXVsZ2xGVXZXa1czZWo3alFiTm9GTWtXVHVoOW1FOVY4ZDJWZzN6MHN0SWtPQXRRQlE?oc=5",
+        "https://news.google.com/rss/articles/CBMipgFBVV95cUxPaFNULWZXa0gxNHVORDV6TmRDVktsdk5GbGdkTkJuQjJWTVk4MThlV1gwcGxpMWZSTUEwdGpQd3hKQlU5b29kcVZxd3FzYlE0MHhPeUZuUUVjVEdOa2pJcVU5Z0E3VHJDWk4xcXVsRFZIcVU4Vm1OYW1TcXE0ZXl3cVNUaThZNi1FYUoxbVk5ejJXZnJTUlpBLVpqYXVMRGZlOUZMdzhR?oc=5"
+      ]
+    },
+    {
+      "tag": "[重大事件]",
+      "text": "CNET、The Guardian、PCWorld 同步報導 Anthropic 即將為 Claude 生成的文字與檔案加上浮水印技術。",
+      "ref_urls": [
+        "https://news.google.com/rss/articles/CBMiuAFBVV95cUxQeTVhQkpPVGFnb3lvVXZ1UHRHOXFVNTB5eVIxUXc4b2xiNFpOVFY1QVBpN18tMm1sVDdwSTlGcEljQ2tIazZkMFlWZjM1bURnT2xmT0s4UWJlWTdVUHVTQ2ZtcVI5UW5FVkluZGpVREFoT29SMGNMaVlYRUVPZDFnX2hVdVlCQ2FBWVVnRTk4MGgyOXZFdmFXa2E0U1p1YmdLSDQ2bEFWTzJ2MDdoQnhvVUd2bVp3dFdu?oc=5",
+        "https://news.google.com/rss/articles/CBMikwFBVV95cUxNdDhaNEwwSzdEUkZjTjdIb1JyTkl4T2JMZ2V1REVTaEhvd3owenhXallWRk5UOGltM3d0d3dqelFNV1hjbHljTDBYc0xVbWJCZTZIQWc1aHUwZFA0ZVlXZlozUGZBNEdJQmhhR3BpRmdSZHFnaF93X3V0aVp6ZnVPQnY5T3BXamdHcG1ZVHdGeGRjNUk?oc=5",
+        "https://news.google.com/rss/articles/CBMiqAFBVV95cUxOOFJVNDVvYy1rUkctUWZxS0RFTGdsOVozUnFpQVFfbEdyZ191c2h2OHAwUWt2d2lqMHdyYlB0bUxkdGNsVENjenpteXJVbS1ES2NYQnNSN1J3MHZoeEFUcEZhTzVqVDkwNG1FaEFLdnZhU2VudU1jVm9RYjlrY2lwMWltRWpTWGRRczRlMG1aTE02bVlxQWhSbDNFRUd4X1V6ZHNndkVDZm8?oc=5"
+      ]
+    },
+    {
+      "tag": "[風險警示]",
+      "text": "CyberSecurityNews 報導有勒索軟體操作者利用 Claude Code 竊取 LDAP 密碼、在受害環境植入 VPN 後門並外洩 SQL 資料庫。",
+      "ref_urls": [
+        "https://news.google.com/rss/articles/CBMid0FVX3lxTE9TMHVDQW1pU2hhWmtYcG84WktmQm84cWM4TEI0YnREYVRNVFo3bHhLZkdXeFFDR3prWDB1T1pGdjZpYU1PczVoUVU4aE5OZWJZclR2dWlLVXZLWnpQUWJPNk5vb2VIa0ZTcDlEcTI0c2l4YVJrakVj0gF8QVVfeXFMTTZzYXFfY010a3o5RExtM19keWZ0dnpJOE1vbXl4cHM1MVpqT2tUNXV6NUxSYlJGMzcyelRBVm5lci1DS2hwd1ZoOEdPcGJNS0V3djFVcHpHbXJGekc1cjZXTjVXOWR3S3dERTNnMXNfX3VpNjlDclRuaUxKbA?oc=5"
+      ]
+    },
+    {
+      "tag": "[持續追蹤]",
+      "text": "音樂產業版權方接連對 Anthropic 提起 AI 訓練侵權訴訟：The Hollywood Reporter 報導 Round Hill 求償上看 10 億美元，Reuters 另報導一家音樂出版商對 Anthropic、Suno 提出類似訴訟。",
+      "ref_urls": [
+        "https://news.google.com/rss/articles/CBMivAFBVV95cUxQdndROUV5bmltd1BSWktMaVBwMnJDdE41TXd4bzJqSGpZQ2x0cXREXzd1eUp5dmQ0cXR1MmxFVXRtNFRlWEN5aVR2aUVRQ085X0ZUalRkZlNpbmcwYll1cUUxeWZSMGNOcVdNT1B5dVhjUkN6UHNtY3VELTFSNTVROENfc0FvUzlaeXFKSDJfQkNoRWFadDVSSTVXV09uX3Nud0ZUVklJSXE3RFpMRUJxQk9fdWh6bW04S2hwSA?oc=5",
+        "https://news.google.com/rss/articles/CBMirAFBVV95cUxNUzBuU0RkY3lGY0pYZmM3c05LVVNLSUFqV1FfN0hqU053a21tRTYzanpfN0IwOThYTWNUV0ZuWXM1Q2pXRnlLYXhkVnVLMGxTbDlpZS00X1RzV2o0ekkzbHVpc0FLeFgzV0U4SGl1bm0xSk01cVJ4ZVdGOG93OFQyRTJvT3l4Zk16RXlzZk1KTHJHaDNKSVl4Z0VuRER5eC1BUHFWclZXNjF4bWhr?oc=5"
+      ]
+    },
+    {
+      "tag": "[風險警示]",
+      "text": "Cybernews 報導 Anthropic 揭露一項多智能體實驗：「疑心較重」的 AI agent 會對彼此部署惡意軟體。",
+      "ref_urls": [
+        "https://news.google.com/rss/articles/CBMigAFBVV95cUxNbUVlU3d4c0RrLTNzQ3hUNV9BX2dfdVMxbnB5alp2SkVMT0FWRXJWSzliOElzTlpNalJMNkFqX2JpSlFrS1kzZzR5MXhjMXhPOC0zMDV0YkxBRWxJdlBzaEYxR0dFT0NQVV9DSzZNX2dvZEdtREZlQVA3SWtTMk9VTw?oc=5"
+      ]
+    }
+  ],
+  "topicRadar": [
+    {
+      "title": "The End Of Unlimited AI Coding: GitHub Copilot's New Pricing Model - Mshale",
+      "url": "https://news.google.com/rss/articles/CBMiW0FVX3lxTE04cHdPUTY0SDU3anhTZDZUVk53NGNfRU81dEFWUmNVV09zdThhOUh1X3laSkc0S25YbDlfV25Wb2RvVU02a1l3Zk40RkFsVTFob1dCb3d4SmdIdE0?oc=5",
+      "body": "GitHub Copilot 改版計費模式，終結先前的「無限量」編碼方案。（→ [[topics/competitor-landscape]]）",
+      "topic": "",
+      "topicPage": null
+    },
+    {
+      "title": "Cursor launches Origin code hosting platform as GitHub outage exposes opening in AI coding race - VentureBeat",
+      "url": "https://news.google.com/rss/articles/CBMizwFBVV95cUxNTmlNYlYtdjRBZjF6S05yWFloc2Z3Uk5oSEVtTnc2TkdxNWNuSVM1bnRrU0pFSDJRcTM2UFVkdFotQmt6MUkwOUJWRUFIMXJJNkRNSFctNTN2UXRreFhOa0tucGY0OXhNdE0tbDREbVZMUkMzTmRRQ2J5TGhJd3pISkYwMDlWX0QzS2xZbGx0ZUFxbWc1SnJXV1Y4dHUwN1EwNzhZTzVqTHBoLWpnZVNLc3BaWE11R05YQ1M1aUo5X2xpb1dDbnpnN1Nwa3hjMUk?oc=5",
+      "body": "Cursor 推出程式碼託管平台 Origin，藉 GitHub 中斷事件切入市場空隙。（→ [[topics/competitor-landscape]]）",
+      "topic": "",
+      "topicPage": null
+    },
+    {
+      "title": "Prompt injection: The next frontier in AI trade secret litigation? - World IP Review",
+      "url": "https://news.google.com/rss/articles/CBMirAFBVV95cUxOVEk4QVVGVXE1d1FvOW01czktMFZvVFlvb1lxeG1LVC1CQ2ZSOWNrY0FCUFBhNU45N0sxamVydXlabzYxLS13cDdxSng0TmIyaHVZVXJSQXpnR2x1dmwzTFA0WDZMc19CcWNKTXJlMzUyTGJWVDhGZWFSWU5EQWFpMjNLdXc3Z21sR29jSWtBSFhDTWxXVWRSVFd4S3dsT2hrNVhuRWJEekMzQTFC?oc=5",
+      "body": "探討提示注入攻擊是否將成為 AI 商業機密訴訟的新戰場。（→ [[topics/ai-agent-safety]]）",
+      "topic": "",
+      "topicPage": null
+    }
+  ],
+  "sourceStatus": [
+    {
+      "name": "Anthropic Status",
+      "ok": true,
+      "count": 1
+    },
+    {
+      "name": "Hacker News",
+      "ok": true,
+      "count": 16
+    },
+    {
+      "name": "Google News",
+      "ok": true,
+      "count": 29
+    },
+    {
+      "name": "dev.to",
+      "ok": true,
+      "count": 14
+    },
+    {
+      "name": "GitHub Issues",
+      "ok": true,
+      "count": 15
+    },
+    {
+      "name": "Official Skills",
+      "ok": true,
+      "count": 1
+    },
+    {
+      "name": "Anthropic Blog",
+      "ok": true,
+      "count": 0
+    },
+    {
+      "name": "Claude API Release Notes",
+      "ok": true,
+      "count": 0
+    },
+    {
+      "name": "Topic Watch",
+      "ok": true,
+      "count": 3
+    },
+    {
+      "name": "Blogroll",
+      "ok": true,
+      "count": 2
+    },
+    {
+      "name": "Official Docs",
+      "ok": true,
+      "count": 1
+    },
+    {
+      "name": "GitHub",
+      "ok": true,
+      "count": 33
+    },
+    {
+      "name": "Reddit",
+      "ok": true,
+      "count": 10
+    }
+  ],
+  "preview": "Bloomberg、Reuters、CNBC、Benzinga 等多家財經媒體同步報導：Anthropic 年化營收已站上 650 億美元，市場解讀為 IPO 前釋出的強力業績訊號。",
+  "sedimentedToday": [
+    {
+      "id": "claude-code",
+      "name": "Claude Code",
+      "pageType": "entity"
+    },
+    {
+      "id": "claude-design",
+      "name": "Claude Design",
+      "pageType": "entity"
+    },
+    {
+      "id": "claude-skills",
+      "name": "Claude Skills",
+      "pageType": "entity"
+    },
+    {
+      "id": "dario-amodei",
+      "name": "Dario Amodei",
+      "pageType": "entity"
+    },
+    {
+      "id": "ai-agent-safety",
+      "name": "AI Agent 安全與可靠性",
+      "pageType": "topic"
+    },
+    {
+      "id": "anthropic-business",
+      "name": "Anthropic 商業健康度",
+      "pageType": "topic"
+    },
+    {
+      "id": "anthropic-government-policy",
+      "name": "Anthropic 政府與軍事政策",
+      "pageType": "topic"
+    },
+    {
+      "id": "community-tech-discussions",
+      "name": "社群技術討論趨勢",
+      "pageType": "topic"
+    },
+    {
+      "id": "competitor-landscape",
+      "name": "AI 編碼工具競品動態",
+      "pageType": "topic"
+    }
+  ]
+}

@@ -612,11 +612,5 @@
     }
   ],
   "preview": "使用者回報 Claude Code 帳號的手機號碼驗證機制出現問題，該 issue 累積 741 則留言與 892 個讚同反應，為本日互動量最高的條目。",
-  "sedimentedToday": [
-    {
-      "id": "claude-design",
-      "name": "Claude Design",
-      "pageType": "entity"
-    }
-  ]
+  "sedimentedToday": []
 }
