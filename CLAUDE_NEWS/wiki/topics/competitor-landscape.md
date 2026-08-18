@@ -24,12 +24,13 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 **領域：** 💼 商業
 **蒐集邊界：** 以 Claude 為參照系的競品動態為主，另針對競品發布與定價定向補抓（每日至多 2 則）；競品自身未與 Claude 對比的發布可能延遲或缺漏。
 **開始日期：** 2026-04
-**最後更新：** 2026-08-17
-**最後新聞更新：** 2026-08-17
+**最後更新：** 2026-08-18
+**最後新聞更新：** 2026-08-18
 
 > **最新競品動態**（2026-08-17）
+> - **Mshale：GitHub Copilot 終結「無限量」編碼方案，改版計費模式**：詳見「主要競品追蹤」GitHub Copilot 子區塊新增。
+> - **VentureBeat：Cursor 推出程式碼託管平台 Origin，藉 GitHub 中斷事件切入市場空隙**：詳見「主要競品追蹤」Cursor / Windsurf 子區塊新增。
 > - **The Register：Zhipu 稱新模型抓 bug 能力優於 Anthropic、OpenAI**：延續 08-15 已記錄之 GLM-5.3 資安能力與 Cursor 漏洞發現，本則進一步將能力宣稱正面對比 Anthropic 與 OpenAI，詳見「主要競品追蹤」Zhipu Z.AI 子區塊更新。
-> - 08-15 記錄之 GLM-5.3 發布、Cursor 漏洞發現等既有重點仍具參考價值，詳見下方時序。
 
 ---
 
@@ -185,10 +186,12 @@ Claude Code 已成為 AI 輔助編碼的標竿產品，但競爭正快速升溫�
 - **狀態**：Active（2026-05-16 推出全新應用程式，明確點名對標 Claude Code）
 - **母公司**：Microsoft / GitHub
 - **關鍵事件**：Microsoft 內部從 Claude Code 切換至 Copilot CLI（2026-05-15）
+- **計費模式改版，終結「無限量」方案（2026-08-17）**：Mshale 報導 GitHub Copilot 推出新計費模式，終結先前提供的「無限量」編碼方案；具體新方案內容、價格級距、生效時程未見報導細節，僅標題層級資訊，待後續補充。**對競爭格局的意涵**：與本頁「競品定價對照」表既有 Copilot Pro+（$39/月，Opus 存取採 27 倍加價換算）並置，顯示 GitHub Copilot 正從「無限量」吃到飽模式轉向更精細的用量計費，可能反映其自身 token 成本壓力，與 Anthropic 自身 6/15 計費結構收緊路線呈現同業趨同現象（推論）（Google News/Mshale）
 
 ### Cursor / Windsurf
 - **狀態**：Active（IDE 整合型，與 Claude Code CLI-first 定位有別）
 - **重大事件**：SpaceX 以 $60B 正式完成收購 Cursor（2026-06-17 確認）；收購整合 SpaceX / xAI 生態，使 Cursor 獲得 SpaceX 資源支撐，直接衝擊 Claude Code vs Cursor 競爭態勢；Cursor 此前與 Anthropic 有深度整合關係，收購後生態歸屬方向待觀察（dev.to、9to5Mac）
+- **推出程式碼託管平台「Origin」，藉 GitHub 中斷事件切入市場（2026-08-17）**：VentureBeat 報導 Cursor 推出名為 Origin 的程式碼託管平台，報導將此舉與同期 GitHub 服務中斷事件並置，稱其「暴露 AI 編碼賽道的市場空隙」。**對競爭格局的意涵**：是繼「Sand」agent（07-13 對標 Claude Cowork）之後，Cursor 產品線再度擴張——從「IDE／agent 工具」延伸至「程式碼託管基礎設施」層，直接挑戰 GitHub（Microsoft/Copilot 母公司）的核心業務範疇，若時機確與 GitHub 中斷事件相關，顯示 Cursor 正積極利用競品服務缺口搶佔市場（推論）；具體平台功能、與既有 GitHub/GitLab 的差異化、上線範圍未見報導細節，僅標題層級資訊（Google News/VentureBeat）
 
 ### DeepSeek 🔴
 - **狀態**：正式宣布建構 Claude Code 競品（2026-05-22）；DeepSeek V4 Flash 顛覆 agent 定價（2026-06-26）；Lindy 100% 切換案例（2026-06-29）；推出開源 agent 工具「Deep Code」直接對標 Claude Code（2026-07-07）；公開組建團隊、V4 Pro 正式上線正面挑戰 Claude Code（2026-08-13）；開源工具正式定名「DeepSeek Harness」、V4-Pro API 定價較高上線（2026-08-14）
@@ -289,6 +292,8 @@ Claude Code 已成為 AI 輔助編碼的標竿產品，但競爭正快速升溫�
 > 逐日條目按主題可另見上方「主要競品追蹤」對應廠商子區塊；此區塊保留完整時序供追溯查證。
 
 ### 2026-08-17
+- **[GitHub Copilot，新增] Mshale：GitHub Copilot 終結「無限量」編碼方案，改版計費模式**：詳見「主要競品追蹤」GitHub Copilot 子區塊新增（Google News/Mshale）
+- **[Cursor，新增] VentureBeat：Cursor 推出程式碼託管平台 Origin，藉 GitHub 中斷事件切入市場空隙**：詳見「主要競品追蹤」Cursor / Windsurf 子區塊新增（Google News/VentureBeat）
 - **[Zhipu Z.AI，標題層級] The Register：Zhipu 稱新模型抓 bug 能力優於 Anthropic、OpenAI**：延續 08-15 已記錄之 GLM-5.3 資安能力與 Cursor 漏洞發現，本則將能力宣稱正面對比 Anthropic、OpenAI；詳見「主要競品追蹤」Zhipu Z.AI 子區塊新增（Google News/The Register）
 
 ### 2026-08-15

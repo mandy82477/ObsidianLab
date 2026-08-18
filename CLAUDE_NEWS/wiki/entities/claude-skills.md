@@ -25,11 +25,11 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 **狀態：** active
 **領域：** 🛠️ 工具/功能
 **首次出現：** 2026-04-27
-**最後更新：** 2026-08-12
-**最後新聞更新：** 2026-08-12
+**最後更新：** 2026-08-18
+**最後新聞更新：** 2026-08-18
 
-> **最新官方動態**（2026-08-06）
-> Enterprise 方案新增 skill／plugin 安全掃描（beta），第三方 skill／plugin 上傳或編輯時自動檢查惡意內容，是官方安全審查機制首次延伸至 skill／plugin 送審流程。
+> **最新官方動態**（2026-08-18）
+> 官方技能庫（anthropics/skills）新增 2 項：`claude-academy-guide`、`discernment-nudge`；官方 repo 未附說明文字，用途待後續版本或官方文件補齊。
 
 ---
 
@@ -74,7 +74,8 @@ description: 在 PR 或 diff review 前，依團隊規範檢查命名、測試�
 | 面向 | 內容 | 日期 |
 |------|------|------|
 | 機制本身 | 可重複使用的任務封裝單元，Claude 依描述語意自動觸發，無需手動呼叫；採「漸進式揭露」三層架構（啟動只讀名稱+簡述，命中後才載入完整內容），兼顧 token 效率與觸發準確度 | 官方設計揭露 2026-05-31 |
-| 官方 skills bundle | 官方核心 11 個 Skills（代碼審查、安全審計、前端設計等），首見於社群移植而非官方公告本身 | 2026-04-27（移植事件） |
+| 官方 skills bundle | 新增 `claude-academy-guide`、`discernment-nudge` 2 項；官方 repo 未附說明文字，用途待補 | 2026-08-18 |
+| | 官方核心 11 個 Skills（代碼審查、安全審計、前端設計等），首見於社群移植而非官方公告本身 | 2026-04-27（移植事件） |
 | | 官方發布「31 個小企業 Skills」技能包，首日下載 38.2 萬次 | 2026-05-24 |
 | | Claude for Teachers 教學技能庫（美國認證 K-12 教師專用），詳見 [[entities/claude-for-teachers]] | 2026-07-15 |
 | 平台支援 | security-guidance plugin 全面開放給所有 Claude Code 用戶（非僅 Enterprise），寫碼時即時偵測漏洞——首次將企業安全功能下放一般開發者工作流 | 2026-05-27 |
@@ -110,12 +111,13 @@ description: 在 PR 或 diff review 前，依團隊規範檢查命名、測試�
 - [Claude Code v2.1.169 Release](https://github.com/anthropics/claude-code/releases/tag/v2.1.169)（2026-06-09）
 - [Claude Code v2.1.178 Release](https://github.com/anthropics/claude-code/releases/tag/v2.1.178)（2026-06-16）
 - [Show HN: Claudinho — Find and Install Claude Skills](https://www.claudinho.xyz/)（2026-06-03）
-- [[news/2026-04-27]]、[[news/2026-05-17]]、[[news/2026-05-20]]、[[news/2026-05-24]]、[[news/2026-05-27]]、[[news/2026-05-31]]、[[news/2026-06-05]]、[[news/2026-06-09]]、[[news/2026-06-16]]、[[news/2026-06-21]]、[[news/2026-07-15]]
+- [[news/2026-04-27]]、[[news/2026-05-17]]、[[news/2026-05-20]]、[[news/2026-05-24]]、[[news/2026-05-27]]、[[news/2026-05-31]]、[[news/2026-06-05]]、[[news/2026-06-09]]、[[news/2026-06-16]]、[[news/2026-06-21]]、[[news/2026-07-15]]、[[news/2026-08-18]]
 
 ## 歷史記錄
 
 | 日期 | 事件 |
 |------|------|
+| 2026-08-18 | 官方技能庫（anthropics/skills）新增 2 項：`claude-academy-guide`、`discernment-nudge`；官方 repo 未附說明文字，用途待補 |
 | 2026-07-15 | Claude for Teachers 教學技能庫發布，向美國認證 K-12 教師免費開放（詳見 [[entities/claude-for-teachers]]） |
 | 2026-06-21 | 官方部落格《七種指令傳遞方法》，將 Skills 納入 CLAUDE.md／rules／subagents／hooks／output styles／system prompt append 六層控制決策框架 |
 | 2026-06-16 | v2.1.178：Skills 在巢狀子 Agent 中可正常運作，搭配新版 `Tool(param:value)` permission 語法 |

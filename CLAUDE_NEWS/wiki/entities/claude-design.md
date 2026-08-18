@@ -25,17 +25,17 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 **狀態：** active（初期，體驗粗糙）
 **領域：** 🛠️ 工具/功能
 **首次出現：** 2026-04-27
-**最後更新：** 2026-08-10
-**最後新聞更新：** 2026-07-16
+**最後更新：** 2026-08-18
+**最後新聞更新：** 2026-08-18
 
-> **最新工具動態**（2026-07-16）
-> ❓ **待查證**（標 2026-08-10｜查 [[entities/claude-design]]、同步至程式碼庫）｜**dev.to 教學文章提及可同步至程式碼庫**（2026-07-16 提及，原文發表於 2026-06-21）：作者 max_quimby 提及「Claude Design 可同步至程式碼庫」的設定方式，但未提供具體操作步驟；來源非官方文件、作者亦非已知業界人士，可信度未經確認。截至目前 Anthropic 官方無公開更新確認此能力，初期問題（幻覺嚴重、品牌風格偏移、Claude Code 整合差）是否已改善仍未知，暫維持不推薦評分。
+> **最新工具動態**（2026-08-18）
+> ❓ **待查證**（標 2026-08-18｜查 /design、UI mockup｜複 2026-09-01）｜**the-decoder.com 報導 Claude Code 新增 `/design` 指令，可於終端機直接建立 UI mockup**（經 Google News 轉載，2026-08-18 報導）：單一媒體來源，Google News RSS 摘要僅含連結、無完整內文，未見官方 changelog 對應條目佐證，與 Claude Design 是否為同一產物或獨立指令尚不明確。
 
 ---
 
 ## 現況
 
-Claude Design 是 Anthropic 推出的 AI 設計工具功能，旨在讓 Claude 具備輔助 UI／視覺設計的能力。目前處於初期階段，社群評價以負面為主——幻覺嚴重、工具錯誤頻繁，且輸出設計風格過度貼近 Anthropic 自家品牌，忽略用戶提供的設計素材。截至 2026-07-10，無官方後續公開更新，初期問題是否已改善未知；❓ **待查證**（標 2026-08-10｜查 [[entities/claude-design]]、同步至程式碼庫）｜**dev.to 教學文章提及同步能力**（2026-07-16 提及，原文發表於 2026-06-21）：一篇 dev.to 教學文章提及「Claude Design 同步至程式碼庫」的設定方式，但缺乏具體操作細節與官方佐證，不改變現有試用評分。
+Claude Design 是 Anthropic 推出的 AI 設計工具功能，旨在讓 Claude 具備輔助 UI／視覺設計的能力。目前處於初期階段，社群評價以負面為主——幻覺嚴重、工具錯誤頻繁，且輸出設計風格過度貼近 Anthropic 自家品牌，忽略用戶提供的設計素材。截至 2026-07-10，無官方後續公開更新，初期問題是否已改善未知；❓ **待查證**（標 2026-08-10｜查 [[entities/claude-design]]、同步至程式碼庫）｜**dev.to 教學文章提及同步能力**（2026-07-16 提及，原文發表於 2026-06-21）：一篇 dev.to 教學文章提及「Claude Design 同步至程式碼庫」的設定方式，但缺乏具體操作細節與官方佐證，不改變現有試用評分。❓ **待查證**（標 2026-08-18｜查 /design、UI mockup｜複 2026-09-01）｜**the-decoder.com 報導 Claude Code 新增 `/design` 指令，可於終端機直接建立 UI mockup**（經 Google News 轉載，2026-08-18 報導）：僅有連結片段可用，無正文佐證，是否與本頁 Claude Design 功能同源或為 Claude Code 獨立新指令尚待官方確認。
 
 ---
 
@@ -69,6 +69,7 @@ Claude Design 是 Anthropic 推出的 AI 設計工具功能，旨在讓 Claude �
 
 ## 歷史記錄
 
+- ❓ **待查證**（標 2026-08-18｜查 /design、UI mockup｜複 2026-09-01）｜**the-decoder.com 報導 Claude Code 新增 `/design` 指令，可於終端機直接建立 UI mockup**（經 Google News 轉載，2026-08-18 報導）：單一媒體來源，僅連結片段可用，未見官方 changelog 佐證
 - ❓ **待查證**（標 2026-08-10｜查 [[entities/claude-design]]、同步至程式碼庫）｜**dev.to 教學文章提及可同步至程式碼庫**（2026-07-16 提及，原文發表於 2026-06-21）：提及設定方式但未提供具體操作步驟，來源可信度未經確認，Anthropic 官方未公開確認
 - 2026-04-27：有開發者透過讓 Claude Design 洩漏部分指引，成功反向工程其系統提示詞，並以近似版本公開分享，顯示提示工程邏輯可被複製至其他 LLM 或 Claude Code 環境，降低了其差異化壁壘
 
@@ -83,5 +84,6 @@ Claude Design 是 Anthropic 推出的 AI 設計工具功能，旨在讓 Claude �
 
 ## 參考來源
 
+- [[news/2026-08-18]]
 - [[news/2026-04-27]]
 - [dev.to：Artifacts in Claude Code: The Operator's Guide](https://dev.to/max_quimby/artifacts-in-claude-code-the-operators-guide-4fb0)（非官方來源，可信度評估見上方「現況」段落）
