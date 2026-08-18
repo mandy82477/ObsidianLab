@@ -5,7 +5,7 @@
         <div>
           <h1 class="text-[26px] leading-tight" style="font-family: var(--font-display); font-weight: 500; color: var(--ink-1);">自動化新聞知識庫系統<span style="color: var(--ink-3); font-style: italic;"> / 現有架構</span></h1>
           <p class="mt-1 text-[11px] tracking-wide" style="font-family: var(--font-mono); color: var(--ink-3);">CURRENT ARCHITECTURE — 現況操作／維運視圖</p>
-          <p style="margin-top: 8px; font-family: var(--font-mono); font-size: 11px; color: var(--ink-3); letter-spacing: 0.02em;">現況截至 2026-08-08 · 源自 src/DesignDocument/Design Diagram.md</p>
+          <p style="margin-top: 8px; font-family: var(--font-mono); font-size: 11px; color: var(--ink-3); letter-spacing: 0.02em;">現況截至 2026-08-18 · 源自 src/DesignDocument/Design Diagram.md</p>
         </div>
       </div>
       <!-- 頁面導覽 tab -->
@@ -16,9 +16,11 @@
       <!-- 架構圖 filter bar -->
       <div class="mt-4 flex flex-wrap items-center gap-2" id="diagram-filter">
         <button class="dgm-tab flex items-center gap-1.5 px-2.5 py-1 text-[12px] transition-colors" data-dgm="overview" style="font-family: var(--font-sans); border: 1px solid var(--ochre-9); border-radius: 2px; color: var(--ochre-9); background: var(--ochre-tint);">全流程總覽</button>
+        <button class="dgm-tab flex items-center gap-1.5 px-2.5 py-1 text-[12px] transition-colors" data-dgm="auto" style="font-family: var(--font-sans); border: 1px solid var(--border-2); border-radius: 2px; color: var(--ink-3); background: transparent;">每日自動化</button>
         <button class="dgm-tab flex items-center gap-1.5 px-2.5 py-1 text-[12px] transition-colors" data-dgm="agg" style="font-family: var(--font-sans); border: 1px solid var(--border-2); border-radius: 2px; color: var(--ink-3); background: transparent;">聚合器內部</button>
         <button class="dgm-tab flex items-center gap-1.5 px-2.5 py-1 text-[12px] transition-colors" data-dgm="ingest" style="font-family: var(--font-sans); border: 1px solid var(--border-2); border-radius: 2px; color: var(--ink-3); background: transparent;">Wiki Ingest</button>
         <button class="dgm-tab flex items-center gap-1.5 px-2.5 py-1 text-[12px] transition-colors" data-dgm="lint" style="font-family: var(--font-sans); border: 1px solid var(--border-2); border-radius: 2px; color: var(--ink-3); background: transparent;">Wiki Lint</button>
+        <button class="dgm-tab flex items-center gap-1.5 px-2.5 py-1 text-[12px] transition-colors" data-dgm="weekly" style="font-family: var(--font-sans); border: 1px solid var(--border-2); border-radius: 2px; color: var(--ink-3); background: transparent;">週報線</button>
         <button class="dgm-tab flex items-center gap-1.5 px-2.5 py-1 text-[12px] transition-colors" data-dgm="artifacts" style="font-family: var(--font-sans); border: 1px solid var(--border-2); border-radius: 2px; color: var(--ink-3); background: transparent;">產物邊界</button>
         <button class="dgm-tab flex items-center gap-1.5 px-2.5 py-1 text-[12px] transition-colors" data-dgm="govern" style="font-family: var(--font-sans); border: 1px solid var(--border-2); border-radius: 2px; color: var(--ink-3); background: transparent;">規則治理</button>
       </div>
@@ -33,7 +35,7 @@
       <ul style="font-family: var(--font-sans); font-size: 12px; color: var(--ink-2); line-height: 1.7; padding-left: 16px; list-style: disc;">
         <li>本專案<strong style="color: var(--ink-1); font-weight: 500;">沒有 <code style="font-family: var(--font-mono);">ANTHROPIC_API_KEY</code></strong>，全流程不呼叫任何外部 LLM API。</li>
         <li><strong style="color: var(--ink-1); font-weight: 500;"><code style="font-family: var(--font-mono);">claude -p</code> 全面禁用</strong>。所有 LLM 工作只在 Claude Code session 內完成（日報生成、wiki ingest 派工）。</li>
-        <li>觸發方式是 <code style="font-family: var(--font-mono);">/news-pipeline</code> skill（在 Claude Code 內執行），<strong style="color: var(--ink-1); font-weight: 500;">不是</strong> <code style="font-family: var(--font-mono);">.bat</code> + Windows 排程呼叫 <code style="font-family: var(--font-mono);">claude -p</code>。</li>
+        <li>每日觸發<strong style="color: var(--ink-1); font-weight: 500;">已自動化</strong>：GitHub Actions 抓料 + 雲端 routine 做 LLM（見「每日自動化」圖）。手動 <code style="font-family: var(--font-mono);">/news-pipeline</code> skill 保留為<strong style="color: var(--ink-1); font-weight: 500;">補救路徑</strong>。兩者都<strong style="color: var(--ink-1); font-weight: 500;">不是</strong> <code style="font-family: var(--font-mono);">.bat</code> + Windows 排程呼叫 <code style="font-family: var(--font-mono);">claude -p</code>。</li>
       </ul>
     </div>
 
@@ -102,6 +104,79 @@
       <p class="mt-6 text-[12px]" style="font-family: var(--font-sans); color: var(--ink-2); line-height: 1.6;">三段拆分的原因：Step 2 要用 Agent tool 派記者，而「背景 agent 再派 agent」會導致完成通知迷路（巢狀背景的系統性限制），所以 Step 2 必須由呼叫 skill 的 session 親自跑。</p>
     </div>
 
+    <!-- 圖①b 每日自動化（分裂架構，2026-07-10 上線） -->
+    <div id="dgm-auto" class="dgm-panel" style="display:none;">
+      <div class="text-[13px] mb-4" style="font-family: var(--font-sans); color: var(--ink-2);">
+        <span style="color: var(--ochre-9); font-weight: 500;">每日自動化</span> — 分裂架構，2026-07-10 上線。日報關機也會跑：抓料與 LLM 兩段拆開，因為雲端沙盒 egress 封鎖一般外部網域（Reddit / HN / Google News 全回 403），而抓料不需 LLM、生日報不需上網——各自放到能跑的地方。<span style="font-family: var(--font-mono); font-size: 11px;">/news-pipeline</span> 三段式是同一套步驟的手動補救路徑，自動線任一段失敗時用它補。
+      </div>
+
+      <div class="dgm-box" style="border: 1px solid var(--ochre-7); border-radius: 2px; background: var(--ochre-tint); padding: 8px 12px; display: inline-block;">
+        <div style="font-family: var(--font-mono); font-size: 11px; color: var(--ochre-9);">① GitHub Actions —— daily-gather.yml</div>
+        <div style="font-family: var(--font-sans); font-size: 11px; color: var(--ink-2); margin-top: 2px;">10:00 UTC / 18:00 台北 · 網路無限制 · 免 API · python -m news_aggregator.main --gather-only</div>
+      </div>
+
+      <div class="dgm-arrow" style="color: var(--ink-4); font-family: var(--font-mono); margin: 6px 0 6px 14px;">↓</div>
+
+      <div class="dgm-box" style="border: 1px solid var(--border-strong); border-radius: 2px; padding: 8px 12px; display: inline-block;">
+        <div style="font-family: var(--font-mono); font-size: 11px; color: var(--ink-1);">commit 回 master</div>
+        <div style="font-family: var(--font-sans); font-size: 11px; color: var(--ink-3); margin-top: 2px;">gathered_items.json + seen_urls.json + emitted_items.json（未確認條目）</div>
+      </div>
+
+      <div class="flex items-start gap-6 mt-2 mb-1" style="margin-left: 14px;">
+        <div style="font-family: var(--font-mono); color: var(--ink-4); font-size: 11px;">↓ 3 小時緩衝，鬆耦合</div>
+      </div>
+
+      <div class="dgm-box" style="border: 1px solid var(--ochre-7); border-radius: 2px; background: var(--ochre-tint); padding: 8px 12px; display: inline-block; margin-top: 6px;">
+        <div style="font-family: var(--font-mono); font-size: 11px; color: var(--ochre-9);">② 雲端 routine —— daily-news-pipeline-cloud</div>
+        <div style="font-family: var(--font-sans); font-size: 11px; color: var(--ink-2); margin-top: 2px;">13:00 UTC / 21:00 台北 · 訂閱 LLM · 不需上網 · 跑 Step 0/1b/1c/2/3/4/5/6</div>
+      </div>
+
+      <div class="dgm-arrow" style="color: var(--ink-4); font-family: var(--font-mono); margin: 6px 0 6px 14px;">↓</div>
+
+      <div class="dgm-box" style="border: 1px solid var(--border-strong); border-radius: 2px; padding: 8px 12px; display: inline-block;">
+        <div style="font-family: var(--font-mono); font-size: 11px; color: var(--ink-1);">新鮮度防線</div>
+        <div style="font-family: var(--font-sans); font-size: 11px; color: var(--ink-2); margin-top: 2px;">gathered 非今日 / 0 條？</div>
+      </div>
+
+      <div class="flex items-start gap-6 mt-2 mb-1" style="margin-left: 14px;">
+        <div style="font-family: var(--font-sans); color: var(--ink-3); font-size: 11px;">是 → 中止，不生假日報</div>
+        <div style="font-family: var(--font-mono); color: var(--ink-4); font-size: 11px;">↓ 否</div>
+      </div>
+
+      <div class="dgm-box" style="border: 1px solid var(--border-strong); border-radius: 2px; padding: 8px 12px; display: inline-block; margin-top: 6px;">
+        <div style="font-family: var(--font-sans); font-size: 11px; color: var(--ink-1);">生日報 → 六記者 ingest → build → 單一 push 上站（只寫 emitted_items.json 的確認欄位）</div>
+      </div>
+
+      <div class="mt-6" style="border-top: 1px solid var(--border-2); padding-top: 12px;">
+        <div class="dgm-box" style="border: 1px solid var(--border-2); border-radius: 2px; padding: 8px 12px; display: inline-block;">
+          <div style="font-family: var(--font-mono); font-size: 11px; color: var(--ink-1);">③ 看門狗 —— daily-watchdog.yml</div>
+          <div style="font-family: var(--font-sans); font-size: 11px; color: var(--ink-2); margin-top: 2px;">15:00 UTC / 23:00 台北</div>
+        </div>
+
+        <div class="dgm-arrow" style="color: var(--ink-4); font-family: var(--font-mono); margin: 6px 0 6px 14px;">↓</div>
+
+        <div class="dgm-box" style="border: 1px solid var(--border-strong); border-radius: 2px; padding: 8px 12px; display: inline-block;">
+          <div style="font-family: var(--font-sans); font-size: 11px; color: var(--ink-1);">當日 gathered_items.json 與 news/&lt;date&gt;.md 齊全？</div>
+        </div>
+
+        <div class="flex items-start gap-6 mt-2 mb-1" style="margin-left: 14px;">
+          <div style="font-family: var(--font-sans); color: var(--warn); font-size: 11px;">缺件 → job 失敗 → GitHub 寄信（本系統唯一主動告警管道）</div>
+          <div style="font-family: var(--font-sans); color: var(--success); font-size: 11px;">齊全 → 綠燈</div>
+        </div>
+
+        <div class="flex items-start gap-6 mt-2" style="margin-left: 14px;">
+          <div style="font-family: var(--font-sans); color: var(--ink-2); font-size: 11px;">↳ 人工補救：<code style="font-family: var(--font-mono);">/news-pipeline YYYY-MM-DD</code> 本機補跑，<code style="font-family: var(--font-mono);">--date</code> 不碰去重快取</div>
+        </div>
+      </div>
+
+      <div class="mt-6" style="font-family: var(--font-sans); font-size: 12px; color: var(--ink-2); line-height: 1.7;">
+        <p class="mb-2"><strong style="color: var(--ink-1); font-weight: 500;">寫者分工（避免競態）：</strong>① 寫 <code style="font-family: var(--font-mono);">gathered_items.json</code> / <code style="font-family: var(--font-mono);">seen_urls.json</code> / <code style="font-family: var(--font-mono);">emitted_items.json</code>（新增未確認條目）；② 只寫 <code style="font-family: var(--font-mono);">emitted_items.json</code> 的確認欄位，與日報同批 push。兩者時間錯開 3 小時且都走 push 重試。</p>
+        <p class="mb-2"><strong style="color: var(--ink-1); font-weight: 500;">為何快取檔必須 commit：</strong>GitHub Actions 每次全新 checkout，<code style="font-family: var(--font-mono);">seen_urls.json</code> / <code style="font-family: var(--font-mono);">emitted_items.json</code> 不 commit 回去隔天跨日去重就失效、重複出舊聞。</p>
+        <p class="mb-2"><strong style="color: var(--ink-1); font-weight: 500;">週更同理上雲：</strong><code style="font-family: var(--font-mono);">/wiki-lint</code> 亦有對應雲端 routine（weekly-wiki-lint-cloud）。分裂架構的取捨理由見 <code style="font-family: var(--font-mono);">docs/daily-automation.md</code>；雲端 routine 實際執行步驟見 <code style="font-family: var(--font-mono);">docs/cloud-runbooks/</code>。</p>
+        <p style="color: var(--warn);">⚠ 文件寫的 trigger_id <strong style="font-weight: 500;">不代表 trigger 真的存在</strong>（2026-07-12 踩過：記載的 routine 從未被建立過，連兩天靜默不跑）。查驗以 <code style="font-family: var(--font-mono);">RemoteTrigger list</code> 為準。</p>
+      </div>
+    </div>
+
     <!-- 圖② 聚合器內部 -->
     <div id="dgm-agg" class="dgm-panel" style="display:none;">
       <div class="text-[13px] mb-4" style="font-family: var(--font-sans); color: var(--ink-2);">
@@ -109,7 +184,7 @@
       </div>
 
       <div style="border: 1px solid var(--border-2); border-radius: 2px; padding: 12px; margin-bottom: 10px;">
-        <div style="font-family: var(--font-mono); font-size: 10.5px; color: var(--ink-3); margin-bottom: 8px; letter-spacing: 0.04em;">10 個來源（ThreadPoolExecutor 並行抓取）</div>
+        <div style="font-family: var(--font-mono); font-size: 10.5px; color: var(--ink-3); margin-bottom: 8px; letter-spacing: 0.04em;">13 個來源（ThreadPoolExecutor 並行抓取）</div>
         <div class="flex flex-wrap gap-2">
           <span class="dgm-step" style="border: 1px solid var(--border-2); border-radius: 2px; padding: 4px 9px; font-family: var(--font-sans); font-size: 11px; color: var(--ink-2);">Anthropic Blog（/news + /engineering）</span>
           <span class="dgm-step" style="border: 1px solid var(--border-2); border-radius: 2px; padding: 4px 9px; font-family: var(--font-sans); font-size: 11px; color: var(--ink-2);">Anthropic Status（RSS）</span>
@@ -179,6 +254,7 @@
         <ul style="padding-left: 16px; list-style: disc;">
           <li><code style="font-family: var(--font-mono);">score_unit</code>：分（HN）／讚（Reddit、dev.to）／留言 —— 跨來源比熱度時單位不同，不可直接比大小</li>
           <li><code style="font-family: var(--font-mono);">source_count</code>：同一事件被幾個獨立來源報導，&gt; 1 視為重要度加權</li>
+          <li><code style="font-family: var(--font-mono);">topic</code>：專頁定向抓取（Topic Watch）的豁免鑰匙——帶此欄的條目繞過 <code style="font-family: var(--font-mono);">filter.py</code> 的 Claude/Anthropic 標題閘，去重時會傳染給被併掉的同事件條目；日報中獨立成「🧭 專頁雷達」區，不混入正文六區塊</li>
           <li><code style="font-family: var(--font-mono);">source_status</code>：每個來源本次抓到幾筆（餵給日報「📡 來源狀態」表 + wiki-lint 6f 來源健康檢查）</li>
           <li><code style="font-family: var(--font-mono);">source_funnel.jsonl</code>：跨日漏斗統計，與 <code style="font-family: var(--font-mono);">source_attribution.jsonl</code> 一起餵給來源記分卡（<code style="font-family: var(--font-mono);">scripts/source_scorecard.py</code>）（GH Actions 每日 commit）</li>
         </ul>
@@ -204,9 +280,23 @@
 
       <div class="dgm-arrow" style="color: var(--ink-4); font-family: var(--font-mono); margin: 6px 0 6px 14px;">↓</div>
 
+      <div class="flex flex-wrap gap-3 mb-1">
+        <div class="dgm-box" style="border: 1px solid var(--border-2); border-radius: 2px; padding: 8px 12px; display: inline-block;">
+          <div style="font-family: var(--font-mono); font-size: 11px; color: var(--ink-1);">scan_pending_verifications.py &lt;date&gt;</div>
+          <div style="font-family: var(--font-sans); font-size: 11px; color: var(--ink-3); margin-top: 2px;">懸置標記探針 × 今日日報比對</div>
+        </div>
+        <div class="dgm-box" style="border: 1px solid var(--border-2); border-radius: 2px; padding: 8px 12px; display: inline-block;">
+          <div style="font-family: var(--font-mono); font-size: 11px; color: var(--ink-1);">pending_handoffs.py list</div>
+          <div style="font-family: var(--font-sans); font-size: 11px; color: var(--ink-3); margin-top: 2px;">未結案的跨記者轉知</div>
+        </div>
+      </div>
+
+      <div class="dgm-arrow" style="color: var(--ink-4); font-family: var(--font-mono); margin: 6px 0 6px 14px;">↓</div>
+
       <div style="border: 1px solid var(--ochre-9); border-radius: 2px; padding: 12px; margin-bottom: 12px; background: var(--ochre-tint);">
         <div style="font-family: var(--font-mono); font-size: 10.5px; color: var(--ochre-9); margin-bottom: 8px; letter-spacing: 0.04em;">foreground 派工（model: sonnet）</div>
-        <div style="font-family: var(--font-sans); font-size: 11px; color: var(--ink-2); margin-bottom: 8px;">六類記者同一訊息並行 · ⚠ 不可 run_in_background · ⚠ 記者不可再委派子 agent</div>
+        <div style="font-family: var(--font-sans); font-size: 11px; color: var(--ink-2); margin-bottom: 4px;"><code style="font-family: var(--font-mono);">subagent_type: general-purpose</code> ＋角色前導 · 六類記者同一訊息並行 · 附：條目節錄＋懸置命中＋轉知待接手</div>
+        <div style="font-family: var(--font-sans); font-size: 11px; color: var(--ink-2); margin-bottom: 8px;">⚠ 不可 run_in_background · ⚠ 記者不可再委派子 agent · ⚠ prompt 不得臨場加寫操作指示</div>
         <div class="flex flex-wrap gap-2">
           <span class="dgm-step" style="border: 1px solid var(--border-2); border-radius: 2px; padding: 4px 9px; font-family: var(--font-sans); font-size: 11px; color: var(--ink-2); background: var(--paper-0);">模型記者</span>
           <span class="dgm-step" style="border: 1px solid var(--border-2); border-radius: 2px; padding: 4px 9px; font-family: var(--font-sans); font-size: 11px; color: var(--ink-2); background: var(--paper-0);">功能記者</span>
@@ -235,6 +325,7 @@
           <span class="dgm-step" style="border: 1px solid var(--border-2); border-radius: 2px; padding: 4px 9px; font-family: var(--font-sans); font-size: 11px; color: var(--ink-2);">log.md（append，含品質備註）</span>
           <span class="dgm-step" style="border: 1px solid var(--border-2); border-radius: 2px; padding: 4px 9px; font-family: var(--font-sans); font-size: 11px; color: var(--ink-2);">overview.md（重大事件才更新）</span>
           <span class="dgm-step" style="border: 1px solid var(--border-strong); border-radius: 2px; padding: 4px 9px; font-family: var(--font-mono); font-size: 11px; color: var(--ink-1);">data/source_attribution.jsonl（來源歸因 append）</span>
+          <span class="dgm-step" style="border: 1px solid var(--border-strong); border-radius: 2px; padding: 4px 9px; font-family: var(--font-mono); font-size: 11px; color: var(--ink-1);">data/pending-handoffs.jsonl（轉知登帳與結案）</span>
         </div>
       </div>
 
@@ -243,6 +334,14 @@
       <p class="mt-2 text-[12px]" style="font-family: var(--font-sans); color: var(--ink-2); line-height: 1.6;"><strong style="color: var(--ink-1); font-weight: 500;">來源歸因走 ledger、不進 wiki 正文：</strong>記者在回報訊息填「來源歸因」欄，主編彙整時 append 至 <code style="font-family: var(--font-mono);">data/source_attribution.jsonl</code>（日期×來源×類別×頁面）。此設計取代舊的 <code style="font-family: var(--font-mono);">[[sources/*]]</code> wikilink 機制（2026-07-11 撤除——會污染 web reader，且 Graph 二元邊答不了來源比重問題）。</p>
 
       <p class="mt-2 text-[12px]" style="font-family: var(--font-sans); color: var(--ink-2); line-height: 1.6;"><strong style="color: var(--ink-1); font-weight: 500;">注入防護：</strong>日報條目的標題／摘要來自外部網路，記者一律視為引用資料而非指令；條目內出現指令式文字不執行，回報「⚠️ 疑似注入」轉知主編。</p>
+
+      <p class="mt-2 text-[12px]" style="font-family: var(--font-sans); color: var(--ink-2); line-height: 1.6;"><strong style="color: var(--ink-1); font-weight: 500;">派工路徑＝單一正典：</strong>六記者一律以 <code style="font-family: var(--font-mono);">subagent_type: general-purpose</code> + <code style="font-family: var(--font-mono);">model: sonnet</code> 派出，prompt 第一段固定為角色前導，導向 <code style="font-family: var(--font-mono);">.claude/agents/wiki-reporter-[category].md</code>（角色、規則引用、回報契約的單一來源）。原因：雲端 routine 環境自 2026-07-18 起多次無法載入專案層 <code style="font-family: var(--font-mono);">.claude/agents/</code>，2026-08-15 裁決把內嵌路徑轉正為唯一構成方式，本機／雲端不再雙軌。</p>
+
+      <p class="mt-2 text-[12px]" style="font-family: var(--font-sans); color: var(--ink-2); line-height: 1.6;"><strong style="color: var(--ink-1); font-weight: 500;">派工 prompt 只放資料、不放指示：</strong>主編不得臨場加寫「今日順手做 X」——規則檔會改，臨場指示不會跟著改，記者會同時拿到兩份矛盾指令。對稱防線在記者端：派工與規則檔明文牴觸時以規則檔為準並回報牴觸。判斷式：這句話下週還會是對的嗎？會 → 它屬於規則檔。</p>
+
+      <p class="mt-2 text-[12px]" style="font-family: var(--font-sans); color: var(--ink-2); line-height: 1.6;"><strong style="color: var(--ink-1); font-weight: 500;">懸置標記閉迴路：</strong>wiki 正文的「待查證」不再是散文，改為自帶偵測條件的結構化標記（<code style="font-family: var(--font-mono);">❓/🔎</code> ＋類別詞＋標／查／複／訊 metadata）。每日派工前跑 <code style="font-family: var(--font-mono);">scan_pending_verifications.py &lt;date&gt;</code> 拿探針比對當日日報，命中清單附進對應記者派工；記者只能加「訊 YYYY-MM-DD」，不可刪標記、改狀態符號或宣告結案——結案屬 <code style="font-family: var(--font-mono);">/wiki-lint</code> 5c 主編層查官方一手來源後的判斷。</p>
+
+      <p class="mt-2 text-[12px]" style="font-family: var(--font-sans); color: var(--ink-2); line-height: 1.6;"><strong style="color: var(--ink-1); font-weight: 500;">轉知帳本：</strong>跨記者交辦不靠口頭轉達。記者在「同步自查」欄標「⚠️ 需主編轉知[類別]記者」，主編用 <code style="font-family: var(--font-mono);">pending_handoffs.py</code> 登帳（<code style="font-family: var(--font-mono);">data/pending-handoffs.jsonl</code>，每筆一個 <code style="font-family: var(--font-mono);">H-xxxxxx</code> id）；下次派工前 list 一次附進派工，記者在「轉知處置」欄回報已處理／不適用，主編據以 close／void。逾 14 天積壓寫進 <code style="font-family: var(--font-mono);">wiki/log.md</code>。</p>
     </div>
 
     <!-- 圖④ Wiki Lint -->
@@ -288,6 +387,51 @@
       </div>
 
       <p class="mt-6 text-[12px]" style="font-family: var(--font-sans); color: var(--ink-2); line-height: 1.6;"><strong style="color: var(--ink-1); font-weight: 500;">6e 來源健康＋記分卡：</strong>除既有「連續 3 天 count=0」抓取告警外，每週執行 <code style="font-family: var(--font-mono);">python scripts/source_scorecard.py</code> 附記分卡表；樣本充足且 Wilson 下界與 Presence 雙低者列觀察名單回報使用者，不自行動 pipeline。</p>
+    </div>
+
+    <!-- 圖④b 週報線 -->
+    <div id="dgm-weekly" class="dgm-panel" style="display:none;">
+      <div class="text-[13px] mb-4" style="font-family: var(--font-sans); color: var(--ink-2);">
+        <span style="color: var(--ochre-9); font-weight: 500;">週報線</span> — <span style="font-family: var(--font-mono); font-size: 11px;">/weekly</span> 總指揮，每週。原本的 <span style="font-family: var(--font-mono); font-size: 11px;">/weekly</span> 只產週報；現改為總指揮，依序帶起兩個子指令再統一收尾（週報本體更名 <span style="font-family: var(--font-mono); font-size: 11px;">/weekly-report</span>）。順序固定「週報先、策展後」，不可調換也不可合併。
+      </div>
+
+      <div class="dgm-box" style="border: 1px solid var(--ochre-7); border-radius: 2px; background: var(--ochre-tint); padding: 8px 12px; display: inline-block;">
+        <div style="font-family: var(--font-mono); font-size: 11px; color: var(--ochre-9);">/weekly [YYYY-Wnn]</div>
+      </div>
+
+      <div class="dgm-arrow" style="color: var(--ink-4); font-family: var(--font-mono); margin: 6px 0 6px 14px;">↓</div>
+
+      <div class="space-y-2">
+        <div style="border: 1px solid var(--border-2); border-radius: 2px; padding: 10px 12px;">
+          <div style="font-family: var(--font-sans); font-size: 12px; color: var(--ink-1); margin-bottom: 4px;">1. /weekly-report —— 對外交付</div>
+          <div style="font-family: var(--font-sans); font-size: 11px; color: var(--ink-2);">頭條敘事＋技術討論深挖＋下週看什麼＋檔尾數字 → <code style="font-family: var(--font-mono);">weekly/YYYY-Wnn.md</code>（寫入即凍結）</div>
+        </div>
+        <div style="font-family: var(--font-mono); color: var(--ink-4); font-size: 11px; margin-left: 14px;">↓</div>
+        <div style="border: 1px solid var(--border-2); border-radius: 2px; padding: 10px 12px;">
+          <div style="font-family: var(--font-sans); font-size: 12px; color: var(--ink-1); margin-bottom: 4px;">2. /wiki-weekly-review —— 對內策展</div>
+          <div style="font-family: var(--font-sans); font-size: 11px; color: var(--ink-2);">判斷值得加碼追蹤的主題（建頁/加區塊/升熱度） · ⚠ 未經使用者確認不得改任何頁面</div>
+        </div>
+        <div style="font-family: var(--font-mono); color: var(--ink-4); font-size: 11px; margin-left: 14px;">↓</div>
+        <div class="dgm-step" style="border: 1px solid var(--border-strong); border-radius: 2px; padding: 8px 12px; font-family: var(--font-sans); font-size: 12px; color: var(--ink-1);">3. 收尾：commit → 測試 → build web → 單一 push</div>
+      </div>
+
+      <div class="mt-4 flex flex-wrap gap-2">
+        <span class="dgm-step" style="border: 1px solid var(--border-2); border-radius: 2px; padding: 4px 9px; font-family: var(--font-mono); font-size: 11px; color: var(--ink-2);">↳ scripts/check_weekly_ledger.py（帳本機械檢查＋反確認偏誤護欄）</span>
+        <span class="dgm-step" style="border: 1px solid var(--border-2); border-radius: 2px; padding: 4px 9px; font-family: var(--font-mono); font-size: 11px; color: var(--ink-2);">↳ 結構骨架機械檢查（深挖小標層級／回收表導言等四期對齊）</span>
+      </div>
+
+      <div class="mt-6" style="border-top: 1px solid var(--border-2); padding-top: 12px;">
+        <div style="font-family: var(--font-mono); font-size: 10.5px; color: var(--ink-3); letter-spacing: 0.04em; margin-bottom: 8px;">為什麼不合併成一段</div>
+        <div class="space-y-2">
+          <div class="dgm-step" style="border: 1px solid var(--border-2); border-radius: 2px; padding: 8px 10px; font-family: var(--font-sans); font-size: 11.5px; color: var(--ink-2);"><strong style="color: var(--ink-1); font-weight: 500;">確認閘相反</strong> — 策展未經使用者確認不得改頁；週報是自主產出。合併只會二選一，等於廢掉其中一條規則</div>
+          <div class="dgm-step" style="border: 1px solid var(--border-2); border-radius: 2px; padding: 8px 10px; font-family: var(--font-sans); font-size: 11.5px; color: var(--ink-2);"><strong style="color: var(--ink-1); font-weight: 500;">凍結語義衝突</strong> — 週報寫入後凍結、不因後續 ingest 回頭改；策展則主動改 wiki。策展先跑會讓週報引用到同一次執行剛改出來的頁面狀態</div>
+          <div class="dgm-step" style="border: 1px solid var(--border-2); border-radius: 2px; padding: 8px 10px; font-family: var(--font-sans); font-size: 11.5px; color: var(--ink-2);"><strong style="color: var(--ink-1); font-weight: 500;">帳本獨立性</strong> — 週報帳本有機械檢查與反確認偏誤護欄；策展若先知道本週開了哪些預告，會傾向加碼「能讓預告成真」的主題</div>
+        </div>
+      </div>
+
+      <p class="mt-4 text-[12px]" style="font-family: var(--font-sans); color: var(--ink-2); line-height: 1.6;">判斷式：<strong style="color: var(--ink-1); font-weight: 500;">這一步會不會讓後面那步「已經知道答案」？</strong> 會 → 順序錯了。</p>
+
+      <p class="mt-2 text-[12px]" style="font-family: var(--font-sans); color: var(--ink-3); line-height: 1.6;"><code style="font-family: var(--font-mono);">/wiki-lint</code>（每週品質檢查）與本線並行但獨立，兩者皆有對應雲端 routine。</p>
     </div>
 
     <!-- 圖⑤ 產物與唯讀邊界 -->

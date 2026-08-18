@@ -11,7 +11,7 @@
     <div class="wrap" style="padding-top: 1.25rem; padding-bottom: 1.25rem;">
       <div>
         <h1 class="arch-title">自動化新聞知識庫系統<span class="arch-title__sub"> / 架構演進</span></h1>
-        <p class="arch-subtitle">SCRIPT &middot; LLM 呼叫點 &middot; AGENT 設計 &mdash; 三條線的時間軸（2026-04-25 &rarr; 2026-08-08）</p>
+        <p class="arch-subtitle">SCRIPT &middot; LLM 呼叫點 &middot; AGENT 設計 &mdash; 三條線的時間軸（2026-04-25 &rarr; 2026-08-18）</p>
       </div>
       <nav class="arch-nav">
         <a href="architecture-evolution-v2.html" class="arch-tab arch-tab--active">架構演進</a>
@@ -1082,6 +1082,168 @@ llm 呼叫從「一支 prompt 生成一份文件」演變為「多個獨立 llm 
 <p><strong>公道性三規則：</strong> whitelist（官方源／Blogroll）不參與排名、跨日重覆視窗抓法標 † 不跨來源比較、零樣本顯示「—」不回吐平滑先驗，防止指標冤枉特定來源。</p>
 <p>輸出掛進 <code>/wiki-lint</code> 6e 週跑附記分卡表，以及 <code>build_web.py</code> 嵌入 web reader 的資料透明度頁。</p>
 <p><strong>原則：</strong> Phase 1 純監控，分數不回饋 pipeline 任何行為；enforcement（汰換／門檻調整／黑名單下放）待累積 ≥ 60 天資料且逐項走 <code>/pipeline-change-check</code>。</p>
+    </div>
+  </button>
+</div>
+<div class="event-card-wrap" data-track="script" data-search="看門狗告警層上線
+每日自動線原本沒有主動告警，跑失敗只能靠人事後發現。
+做法：新增 .github/workflows/daily-watchdog.yml（15:00 UTC／23:00 台北）檢查當日 gathered_items.json 與 news/YYYY-MM-DD.md 是否齊全，缺件則 job 失敗——GitHub 對失敗的排程 workflow 會寄信，這是本系統唯一的主動告警管道。
+同期把雲端 routine 的執行步驟從設計文件分離到 docs/cloud-runbooks/（daily／weekly-lint／_shared），並修正寫者分工：雲端 routine 只寫 emitted_items.json 的確認欄位並與日報同批 push（原設計「單一寫者＝GitHub Actions」導致確認結果從未進 repo，兩階段確認機制空轉十天）。
+">
+  <span class="event-card-wrap__dot" style="background-color: var(--info);"></span>
+  <button class="event-card event-card--script" onclick="toggleEvent(this)">
+    <div class="event-card__head">
+      <div>
+        <div>
+          <span class="event-date">2026.07.25</span>
+          <span class="event-tag event-tag--script">告警機制</span>
+
+        </div>
+        <h3 class="event-title">看門狗告警層上線</h3>
+      </div>
+      <span class="event-toggle">+</span>
+    </div>
+    <div class="event-body" hidden>
+
+      <p>每日自動線原本沒有主動告警：跑失敗只能靠人事後發現。</p>
+<p><strong>做法：</strong> 新增 <code>.github/workflows/daily-watchdog.yml</code>（15:00 UTC／23:00 台北）檢查當日 <code>gathered_items.json</code> 與 <code>news/YYYY-MM-DD.md</code> 是否齊全，缺件則 job 失敗——GitHub 對失敗的排程 workflow 會寄信，這是本系統唯一的主動告警管道。</p>
+<p>同期把雲端 routine 的執行步驟從設計文件分離到 <code>docs/cloud-runbooks/</code>（daily／weekly-lint／_shared），並修正寫者分工：雲端 routine 只寫 <code>emitted_items.json</code> 的確認欄位並與日報同批 push（原設計「單一寫者＝GitHub Actions」導致確認結果從未進 repo，兩階段確認機制空轉十天）。</p>
+    </div>
+  </button>
+</div>
+</div>
+<h2 class="timeline-month">2026-08</h2>
+<div class="timeline-track">
+<div class="event-card-wrap" data-track="agent" data-search="/weekly 改為每週總指揮
+原本 /weekly 只產週報。改為總指揮：依序帶起 /weekly-report（對外交付，寫入即凍結）與 /wiki-weekly-review（對內策展，未經使用者確認不得改頁），最後統一收尾單一 push；週報本體更名為 /weekly-report。
+順序固定「週報先、策展後」不可調換也不可合併，三個理由：確認閘相反（合併只會二選一，等於廢掉其中一條規則）、凍結語義衝突（策展先跑會讓週報引用到同一次執行剛改出來的頁面狀態）、帳本獨立性（策展若先知道本週開了哪些預告，會傾向加碼能讓預告成真的主題）。
+判斷式：這一步會不會讓後面那步「已經知道答案」？
+">
+  <span class="event-card-wrap__dot" style="background-color: var(--success);"></span>
+  <button class="event-card event-card--agent" onclick="toggleEvent(this)">
+    <div class="event-card__head">
+      <div>
+        <div>
+          <span class="event-date">2026.08.09</span>
+          <span class="event-tag event-tag--agent">流程重組</span>
+
+        </div>
+        <h3 class="event-title">/weekly 改為每週總指揮</h3>
+      </div>
+      <span class="event-toggle">+</span>
+    </div>
+    <div class="event-body" hidden>
+
+      <p>原本 <code>/weekly</code> 只產週報。</p>
+<p><strong>做法：</strong> 改為總指揮：依序帶起 <code>/weekly-report</code>（對外交付，寫入即凍結）與 <code>/wiki-weekly-review</code>（對內策展，未經使用者確認不得改頁），最後統一收尾單一 push；週報本體更名為 <code>/weekly-report</code>。</p>
+<p>順序固定「週報先、策展後」不可調換也不可合併，三個理由：確認閘相反（合併只會二選一，等於廢掉其中一條規則）、凍結語義衝突（策展先跑會讓週報引用到同一次執行剛改出來的頁面狀態）、帳本獨立性（策展若先知道本週開了哪些預告，會傾向加碼能讓預告成真的主題）。</p>
+<p><strong>原則：</strong> 判斷式——這一步會不會讓後面那步「已經知道答案」？</p>
+    </div>
+  </button>
+</div>
+<div class="event-card-wrap" data-track="script" data-search="懸置標記自帶偵測條件
+wiki 正文的「待查證」原本是散文，沒有任何機制讀得到它——曾有條目標了「未經官方確認」並寫著「後續應更新」，掛到使用者親自問起才被發現，而官方文件從第一天就存在。
+做法：改為結構化標記：❓／🔎 ＋類別詞 ＋ 標／查／複／訊 metadata（含探針字串），語法定於 .claude/rules/wiki-ingest-format.md。配套 scripts/scan_pending_verifications.py 每日拿探針比對當日日報，命中清單附進對應記者派工；scripts/check_pending_markers.py 掛進 run_tests.py 做語法驗收。
+權限分層：記者只能加 訊 YYYY-MM-DD，不可刪標記、改狀態符號或宣告結案（記者無 web 工具），結案屬 /wiki-lint 5c 主編層查官方一手來源後的判斷。
+">
+  <span class="event-card-wrap__dot" style="background-color: var(--info);"></span>
+  <button class="event-card event-card--script" onclick="toggleEvent(this)">
+    <div class="event-card__head">
+      <div>
+        <div>
+          <span class="event-date">2026.08.10</span>
+          <span class="event-tag event-tag--script">流程補洞</span>
+
+        </div>
+        <h3 class="event-title">懸置標記自帶偵測條件</h3>
+      </div>
+      <span class="event-toggle">+</span>
+    </div>
+    <div class="event-body" hidden>
+
+      <p>wiki 正文的「待查證」原本是散文，沒有任何機制讀得到它——曾有條目標了「未經官方確認」並寫著「後續應更新」，掛到使用者親自問起才被發現，而官方文件從第一天就存在。</p>
+<p><strong>做法：</strong> 改為結構化標記：<code>❓／🔎</code> ＋類別詞 ＋ <code>標／查／複／訊</code> metadata（含探針字串），語法定於 <code>.claude/rules/wiki-ingest-format.md</code>。配套 <code>scripts/scan_pending_verifications.py</code> 每日拿探針比對當日日報，命中清單附進對應記者派工；<code>scripts/check_pending_markers.py</code> 掛進 <code>run_tests.py</code> 做語法驗收。</p>
+<p><strong>權限分層：</strong> 記者只能加 <code>訊 YYYY-MM-DD</code>，不可刪標記、改狀態符號或宣告結案（記者無 web 工具），結案屬 <code>/wiki-lint</code> 5c 主編層查官方一手來源後的判斷。</p>
+    </div>
+  </button>
+</div>
+<div class="event-card-wrap" data-track="script" data-search="Topic Watch 專頁定向抓取
+12 個來源全部在來源端綁定 Claude/Anthropic 關鍵字、filter.py 對 Google News 再加一道標題閘，導致「主題延伸到 Claude/Anthropic 之外」的 wiki 專頁（競品、他家實驗室、人才流動）結構上只收得到一半——該類主題最大的事件曾 12 個來源零命中、漏 8 天。
+做法：新增第 13 個來源 Topic Watch（sources/topic_watch.json 定義題目），以 FeedItem.topic 作為豁免鑰匙繞過標題閘、去重時傳染給被併掉的同事件條目；有每日數量上限，日報中獨立成「🧭 專頁雷達」區不混入正文六區塊。
+配套要求受影響頁面標「蒐集邊界」欄位，誠實告訴讀者哪些會漏。
+">
+  <span class="event-card-wrap__dot" style="background-color: var(--info);"></span>
+  <button class="event-card event-card--script" onclick="toggleEvent(this)">
+    <div class="event-card__head">
+      <div>
+        <div>
+          <span class="event-date">2026.08.12</span>
+          <span class="event-tag event-tag--script">來源擴張</span>
+
+        </div>
+        <h3 class="event-title">Topic Watch 專頁定向抓取</h3>
+      </div>
+      <span class="event-toggle">+</span>
+    </div>
+    <div class="event-body" hidden>
+
+      <p>12 個來源全部在來源端綁定 Claude/Anthropic 關鍵字、<code>filter.py</code> 對 Google News 再加一道標題閘，導致「主題延伸到 Claude/Anthropic 之外」的 wiki 專頁（競品、他家實驗室、人才流動）結構上只收得到一半——該類主題最大的事件曾 12 個來源零命中、漏 8 天。</p>
+<p><strong>做法：</strong> 新增第 13 個來源 Topic Watch（<code>sources/topic_watch.json</code> 定義題目），以 <code>FeedItem.topic</code> 作為豁免鑰匙繞過標題閘、去重時傳染給被併掉的同事件條目；有每日數量上限，日報中獨立成「🧭 專頁雷達」區不混入正文六區塊。</p>
+<p><strong>配套：</strong> 要求受影響頁面標「蒐集邊界」欄位，誠實告訴讀者哪些會漏。</p>
+    </div>
+  </button>
+</div>
+<div class="event-card-wrap" data-track="agent" data-search="記者派工路徑轉正為單一正典
+六記者原以自訂 subagent_type: wiki-reporter-* 派出，但雲端 routine 環境自 2026-07-18 起至少六次無法載入專案層 .claude/agents/，每次都退回 general-purpose ＋手工內嵌規則，形成「本機一條路、雲端一條路」的雙軌。
+做法：裁決把內嵌路徑轉正為唯一正典——一律 subagent_type: general-purpose + model: sonnet 派出，prompt 第一段固定為角色前導，把記者導向 .claude/agents/wiki-reporter-[category].md（角色、規則引用、回報契約的單一來源）。
+原則：同一角色只剩一種構成方式，規則檔改動兩邊同時吃到；自訂 agent 註冊照留但派工流程不依賴它。
+">
+  <span class="event-card-wrap__dot" style="background-color: var(--success);"></span>
+  <button class="event-card event-card--agent" onclick="toggleEvent(this)">
+    <div class="event-card__head">
+      <div>
+        <div>
+          <span class="event-date">2026.08.15</span>
+          <span class="event-tag event-tag--agent">雙軌收斂</span>
+
+        </div>
+        <h3 class="event-title">記者派工路徑轉正為單一正典</h3>
+      </div>
+      <span class="event-toggle">+</span>
+    </div>
+    <div class="event-body" hidden>
+
+      <p>六記者原以自訂 <code>subagent_type: wiki-reporter-*</code> 派出，但雲端 routine 環境自 2026-07-18 起至少六次無法載入專案層 <code>.claude/agents/</code>，每次都退回 general-purpose ＋手工內嵌規則，形成「本機一條路、雲端一條路」的雙軌。</p>
+<p><strong>做法：</strong> 裁決把內嵌路徑轉正為唯一正典——一律 <code>subagent_type: "general-purpose"</code> + <code>model: "sonnet"</code> 派出，prompt 第一段固定為角色前導，把記者導向 <code>.claude/agents/wiki-reporter-[category].md</code>（角色、規則引用、回報契約的單一來源）。</p>
+<p><strong>原則：</strong> 同一角色只剩一種構成方式，規則檔改動兩邊同時吃到；自訂 agent 註冊照留（無害、方便本機手動呼叫），但派工流程不依賴它。</p>
+    </div>
+  </button>
+</div>
+<div class="event-card-wrap" data-track="agent" data-search="轉知帳本與派工 prompt 紀律
+跨記者交辦原本靠口頭轉達，會掉。
+做法：改走帳本閉迴路（與懸置掃描同構）：記者標「⚠️ 需主編轉知」→ 主編用 scripts/pending_handoffs.py 登帳（data/pending-handoffs.jsonl，每筆一個 H-xxxxxx id）→ 下次派工前 list 附進派工 → 記者在「轉知處置」欄回報 → 主編 close／void；逾 14 天積壓寫進 wiki/log.md。
+同日補上派工 prompt 紀律的兩側防線：主編不得臨場加寫「今日順手做 X」（規則檔會改、臨場指示不會跟著改，記者會拿到兩份矛盾指令），記者端則規定派工與規則檔明文牴觸時以規則檔為準並回報牴觸。
+判斷式：這句話下週還會是對的嗎？會 → 它屬於規則檔。
+">
+  <span class="event-card-wrap__dot" style="background-color: var(--success);"></span>
+  <button class="event-card event-card--agent" onclick="toggleEvent(this)">
+    <div class="event-card__head">
+      <div>
+        <div>
+          <span class="event-date">2026.08.15</span>
+          <span class="event-tag event-tag--agent">治理閉環</span>
+
+        </div>
+        <h3 class="event-title">轉知帳本與派工 prompt 紀律</h3>
+      </div>
+      <span class="event-toggle">+</span>
+    </div>
+    <div class="event-body" hidden>
+
+      <p>跨記者交辦原本靠口頭轉達，會掉。</p>
+<p><strong>做法：</strong> 改走帳本閉迴路（與懸置掃描同構）：記者標「⚠️ 需主編轉知」→ 主編用 <code>scripts/pending_handoffs.py</code> 登帳（<code>data/pending-handoffs.jsonl</code>，每筆一個 <code>H-xxxxxx</code> id）→ 下次派工前 <code>list</code> 附進派工 → 記者在「轉知處置」欄回報 → 主編 <code>close</code>／<code>void</code>；逾 14 天積壓寫進 <code>wiki/log.md</code>。</p>
+<p>同日補上派工 prompt 紀律的兩側防線：主編不得臨場加寫「今日順手做 X」（規則檔會改、臨場指示不會跟著改，記者會拿到兩份矛盾指令），記者端則規定派工與規則檔明文牴觸時以規則檔為準並回報牴觸。</p>
+<p><strong>原則：</strong> 判斷式——這句話下週還會是對的嗎？會 → 它屬於規則檔。</p>
     </div>
   </button>
 </div>
