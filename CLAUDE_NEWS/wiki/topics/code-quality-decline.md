@@ -6,7 +6,7 @@ domain: "🛠️ 工具/功能"
 last_updated: "2026-08-16"
 last_news_update: "2026-08-16"
 status_main: "monitoring"
-days_since_news: 1
+days_since_news: 2
 inbound_links: 27
 attribution_count: 16
 attribution_last: "2026-08-16"
