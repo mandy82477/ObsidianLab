@@ -30,7 +30,7 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 > - **IPO 前置動作雙訊號：超級投票權 + 信用額度擴大至逾 100 億美元**：Reuters（引述 The Information）報導創辦人傳將保留超級投票權以維持公司控制權；Bloomberg 報導上市前信用額度規模傳擴大至逾 $10B，兩則皆僅標題層級可用，詳見「IPO 前瞻與估值追蹤」表新增列。
 > - **OpenAI 第二季業績落後 Anthropic（多來源，含相反訊號）**：WSJ（經 HN 分享）、CoinDesk、SiliconANGLE 同角度報導 OpenAI 營收成長遲緩、虧損擴大；The Information 另指 OpenAI 在 OpenRouter 客戶占比回升，方向相反，不擇一呈現，詳見「財務狀況」表新增列。
 > - **Payward（採用 Claude Mythos 5）、Duke University（pay-as-you-go 訂閱方案）兩則具名企業/機構採用案例**：詳見 [[topics/enterprise-tool-tracker]]，本頁不重複列出。
-> - **⚠️ 轉知處置：Round Hill Music（10 億美元求償）與另一家音樂出版商對 Anthropic、Suno 提起著作權侵權訴訟**：The Hollywood Reporter、Reuters 報導，音樂產業首度具名著作權訴訟，詳見「商業風險」表新增列。
+> - **Round Hill Music（10 億美元求償）與另一家音樂出版商對 Anthropic、Suno 提起著作權侵權訴訟**：The Hollywood Reporter、Reuters 報導，音樂產業首度具名著作權訴訟，詳見「商業風險」表新增列。
 
 ---
 
