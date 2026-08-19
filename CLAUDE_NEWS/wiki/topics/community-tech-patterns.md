@@ -25,11 +25,12 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 **狀態：** monitoring
 **領域：** 🌐 社群
 **開始日期：** 2026-04-25
-**最後更新：** 2026-08-18
-**最後新聞更新：** 2026-08-18
+**最後更新：** 2026-08-19
+**最後新聞更新：** 2026-08-19
 
-> **最新工作流模式**（2026-08-17）
-> 除錯方法論：作者手上全部 26 個 MCP 工具以完全相同的方式失敗，靠設計排除測試（而非逐一檢查各工具設定）鎖定 token 是根因——為 MCP 長 session 穩健化既有的三大失效模式再補上第四種。
+> **最新工作流模式**（2026-08-18）
+> - **常駐雲端運算基礎設施**：YC S26 新創 machine0 推出供 agent 長時間運算使用的常駐 CPU／GPU VM（含 H100/H200），反映 agent 工作負載正從「用完即丟」轉為「常駐運算」——單次編碼任務常跑 6–8 小時，訓練/RL 編排任務可能跑數天。
+> - **長時間單次 session 案例**：開發者以 Claude Code（Opus 4.8、1M context）單次約 4 小時 session，完整逆向工程一款 macOS 從未原生支援的 HP 印表機驅動程式。
 
 ---
 
@@ -128,6 +129,22 @@ Claude Code 的三種多 agent 機制，可對應到 Anthropic《Building Effect
 ## 技術彙整
 
 ### 2026-08
+
+#### 反向工程 macOS 從未原生支援的 HP 印表機驅動：Claude Code＋Opus 4.8（1M context）單次 4 小時 session 完整記錄公開（2026-08-18）
+
+- **主線：** —
+- **核心模式：** 作者公開一份完整 Claude Code（Opus 4.8、1M context）session 記錄：單次 session、耗時約 4 小時，成功逆向工程一款 macOS 從未原生支援的 HP Laser 1008a 印表機驅動程式，讓該印表機得以在 macOS 原生列印
+- **與既有模式的關係：** 屬「長時間單次 session 完成困難任務」的第一手案例展示，呼應本頁既有對長 context／單次高強度 session 能力的持續關注（如 08-04「難任務＋沿途可驗證性」心法）；非大型 codebase 特有痛點（單一硬體逆向工程任務），暫不縫合 [[topics/community-large-codebase-workflow]] 四條主線
+- **來源：** Hacker News（score 127，達對照表高門檻）；[session 記錄](https://cdn.kuber.studio/chat/hp-laser-1008a-driver)
+- **成熟度：** ✅ 個案已完成並公開完整記錄，惟屬單一硬體逆向工程案例，可複製性視目標硬體與驅動複雜度而定，非可直接套用的通用做法
+
+#### machine0（YC S26）：CLI／MCP 皆可操作的常駐 CPU／GPU 雲端 VM，鎖定 6–8 小時起跳的長時間 agent 工作負載（2026-08-18）
+
+- **主線：** —
+- **核心模式：** YC S26 新創 machine0 推出供 agent 長時間運算使用的常駐雲端 VM（含 H100／H200 GPU，$0.013/hr 起、最高 60 vCPU/240GB RAM，宣稱 99.99% uptime），CLI 或 MCP 皆可操作；作者主張 agent 工作負載正從「用完即丟」轉為「常駐運算」——單次編碼 agent 任務常跑 6–8 小時，訓練/RL 編排任務可能跑數天，OpenClaw、Hermes 等 agent 需要 24/7 常駐運算環境
+- **與既有模式的關係：** 補上「常駐雲端運算基礎設施」這個此前未見於本頁的 agent 基礎設施類別；作者明確點名安全考量——在個人機器開 `--yolo`（跳過權限確認）「距離一次 prompt injection 只有一步之遙」，呼應本頁與 [[topics/ai-agent-safety]] 既有對 agent 自主權限風險的關注，但常駐雲端環境本身也拉長曝露時間，需另評估；OpenClaw 為 [[entities/openclaw]] 既有追蹤的第三方整合，本則屬其作為長時間運算需求場景之一被提及，非 OpenClaw 本身更新
+- **來源：** Launch HN（score 78，達對照表高門檻）；[machine0.io](https://machine0.io)
+- **成熟度：** ⏳ 新興（YC S26 新創首發，屬商業服務而非開源工具，尚無社群實際採用回饋）
 
 #### Show HN：statuslin.es——社群策展的 Claude Code status line 樣式展示網站，每則附真實 sandbox 容器截圖（2026-08-17）
 

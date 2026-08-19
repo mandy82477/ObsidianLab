@@ -23,11 +23,11 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 **狀態：** monitoring（官方已說明工程疏失，恢復情況見下方摘要）
 **領域：** 🛠️ 工具/功能
 **開始日期：** 2026-03（推測）
-**最後更新：** 2026-08-16
-**最後新聞更新：** 2026-08-16
+**最後更新：** 2026-08-19
+**最後新聞更新：** 2026-08-19
 
-> **最近效能退步事件**（2026-08-15）
-> 「Opus 5 上線後品質感知訊號群」延燒至 08-13，新增一則社群投訴——使用者稱已依官方建議調整、試過各種全域 CLAUDE.md 設定，仍無法讓 Opus 5 行為符合期待，形容其「幾乎令人惱火（rage-inducing）」——為單一 Reddit 貼文、無「週熱門」標記、score 不可信，訊號群樣本數自 7 則增至 8 則，僅計入現象層級延續，未提供新的機制性證據（詳見「Opus 5 上線後品質感知訊號群」子區塊）。Token 消耗異常訊號群（06-27～07-13，九個獨立來源）與模型釘選／靜默降級訊號群（02～08-04）仍並行追蹤，Anthropic 均未回應。
+> **最近效能退步事件**（2026-08-19）
+> 「Opus 5 上線後品質感知訊號群」再添一則社群投訴——r/ClaudeCode 用戶反映過去兩週 Claude 表現反覆不穩、多半比平常差，詢問是否為運算資源問題——為單一 Reddit 貼文、無「週熱門」標記、score 不可信、無具體量化數字或版本號，訊號群樣本數自 8 則增至 9 則，僅計入現象層級延續，未提供新的機制性證據（詳見「Opus 5 上線後品質感知訊號群」子區塊）。Token 消耗異常訊號群（06-27～07-13，九個獨立來源）與模型釘選／靜默降級訊號群（02～08-04）仍並行追蹤，Anthropic 均未回應。
 
 ---
 
@@ -81,10 +81,11 @@ Claude Code 在 2026 年 3 月至 4 月間出現長達約一個月的效能明�
 | 2026-08-14 | 「Serious question regarding CC quality」：近 3 個月觀察到 Claude Code 品質「大幅」（MASSIVE）下滑，不限特定模型，內文提及 Opus 5 表現尤其令人失望（原文截斷） | Reddit r/ClaudeCode（[原文](https://www.reddit.com/r/ClaudeCode/comments/1vo3ygk/serious_question_regarding_cc_quality_no_hate_or/)，無「週熱門」標記、score 不可信） | 單一社群回報 |
 | 2026-08-14 | 「Claude Code got slower since I upgraded from Pro to Max」：升級後 session 時長變為 3 倍，任務難度、規模與專案皆未變 | Reddit r/ClaudeCode（[原文](https://www.reddit.com/r/ClaudeCode/comments/1vo3y1g/claude_code_got_slower_since_i_upgraded_from_pro/)，無「週熱門」標記、score 不可信） | 單一社群回報 |
 | 2026-08-13 | 「Opus 5 is actually almost rage-inducing to use.」：使用者稱已依官方建議調整、試過各種全域 CLAUDE.md 設定，仍無法讓 Opus 5 行為符合期待 | Reddit r/ClaudeAI（[原文](https://www.reddit.com/r/ClaudeAI/comments/1vn8ml6/opus_5_is_actually_almost_rageinducing_to_use/)，週熱門標記，達收錄低門檻） | 單一社群回報（週熱門達低門檻，惟無具體量化數字） |
+| 2026-08-19 | 「I've never felt Claude been degraded for so long before」：使用者反映過去兩週 Claude 表現反覆不穩，多半比平常差，詢問是否為運算資源問題 | Reddit r/ClaudeCode（[原文](https://www.reddit.com/r/ClaudeCode/comments/1vshkrf/)，0 留言、無「週熱門」標記，score 不可信） | 單一社群回報（無具體量化數字或版本號，僅主觀感受描述） |
 
 **第三種假說的定位：** 上方「三種假說」表格圍繞 token 消耗展開（模型真退步／計費計量／context 工具配置），且截至 07-13 三者均無官方確認等級證據。本訊號群提供的是**不同維度**的證據——不是「消耗了多少 token」，而是「模型行為本身是否有可驗證的特性變化」。07-25 的 effort dial 非單調現象尤其關鍵：這是**目前全頁唯一一筆官方自己承認的行為特性變化**（其餘皆為社群主張或用戶主觀感受），性質上比既有三種假說的證據都更硬。
 
-**（推論）這條線可能挑戰的既有共識：** [[topics/community-tech-discussions]] 記錄的社群共識「Claude 越用越笨幾乎都是 context 腐蝕而非模型退步」，隱含假設「模型本身沒有變」，變化只在使用者端的 context 管理。但 07-25 的官方確認顯示，至少在 effort 設定這個維度上，模型行為本身確有非直覺、非單調的特性——若使用者誤以為「調高 effort＝更好」而觸發此現象，表面上會呈現與 context rot 相同的「感覺變笨」症狀，但根因是模型設定使用不當，而非 context 管理問題，也不是模型「退步」。三者現階段仍難以區分：07-29～07-30 的三則主觀感受回報，無法排除是 context rot、也無法排除是 effort dial 誤用、更無法排除是單純的模型能力落差感（相對 Fable 5 跑分預期）。截至 08-15，樣本量已擴大但訊號強度未變（8 則訊號，其中 6 則為單一 Reddit 貼文、score 不可信；08-13「幾乎令人惱火」與 08-14「近 3 個月大幅下滑」「升級 Pro→Max 後 session 時長變 3 倍」三則陸續加入，仍延續同一「泛化品質下滑」抱怨方向，未提供新的機制性證據），尚不足以推翻既有 context rot 共識，僅提示「並非所有『變笨』投訴都能簡化為 context 管理問題」，需持續觀察。
+**（推論）這條線可能挑戰的既有共識：** [[topics/community-tech-discussions]] 記錄的社群共識「Claude 越用越笨幾乎都是 context 腐蝕而非模型退步」，隱含假設「模型本身沒有變」，變化只在使用者端的 context 管理。但 07-25 的官方確認顯示，至少在 effort 設定這個維度上，模型行為本身確有非直覺、非單調的特性——若使用者誤以為「調高 effort＝更好」而觸發此現象，表面上會呈現與 context rot 相同的「感覺變笨」症狀，但根因是模型設定使用不當，而非 context 管理問題，也不是模型「退步」。三者現階段仍難以區分：07-29～07-30 的三則主觀感受回報，無法排除是 context rot、也無法排除是 effort dial 誤用、更無法排除是單純的模型能力落差感（相對 Fable 5 跑分預期）。截至 08-19，樣本量已擴大但訊號強度未變（9 則訊號，其中 7 則為單一 Reddit 貼文、score 不可信；08-13「幾乎令人惱火」、08-14「近 3 個月大幅下滑」「升級 Pro→Max 後 session 時長變 3 倍」、08-19「過去兩週表現反覆不穩」四則陸續加入，仍延續同一「泛化品質下滑」抱怨方向，未提供新的機制性證據），尚不足以推翻既有 context rot 共識，僅提示「並非所有『變笨』投訴都能簡化為 context 管理問題」，需持續觀察。
 
 ---
 
@@ -124,7 +125,7 @@ Claude Code 在 2026 年 3 月至 4 月間出現長達約一個月的效能明�
 - 🔴 Stop hooks 失效為獨立問題，[[entities/claude-code]] 已知問題列表確認截至 2026-07-11 仍未修復（非僅社群指控）
 - ⚠️ 信任侵蝕已從「效能品質」擴大至「定價透明度、計量準確性、基礎設施可靠性」，形成結構性問題
 - 🔴 「token 消耗異常」訊號群自 06-27 延燒至 07-13（共 17 天，九個獨立來源），密度已達「結構性未解問題」，尚無法判定模型真退步 vs 計費/計量問題 vs context/工具配置問題，Anthropic 未回應
-- 🟡 Opus 5 上線後（07-25～08-14）浮現第三條分析線「模型行為特性本身」，首見官方確認等級證據（effort dial 非單調），（推論）可能局部挑戰既有「多為 context rot」共識，惟樣本量小（7 則，5 則單一 Reddit 貼文），08-14 再添兩則同方向抱怨但無新機制性證據，尚待更多獨立來源覆核
+- 🟡 Opus 5 上線後（07-25～08-19）浮現第三條分析線「模型行為特性本身」，首見官方確認等級證據（effort dial 非單調），（推論）可能局部挑戰既有「多為 context rot」共識，惟樣本量小（9 則，7 則單一 Reddit 貼文），08-14～08-19 再添三則同方向抱怨但無新機制性證據，尚待更多獨立來源覆核
 - 📊 CC-Canary 可作為持續監測工具；2026-08-12 起社群另闢人工彙整路線（forensic archive），與自動化偵測並行，顯示品質下滑證據的蒐集正逐步基礎設施化
 
 ---
@@ -169,6 +170,9 @@ Claude Code 在 2026 年 3 月至 4 月間出現長達約一個月的效能明�
 ## 時序（最新在上，按月分組）
 
 ### 2026-08
+
+#### 2026-08-19
+- **「過去兩週表現反覆不穩」**：r/ClaudeCode 貼文「I've never felt Claude been degraded for so long before」，使用者反映過去兩週 Claude 表現反覆不穩、多半比平常差，詢問是否為運算資源問題；0 留言、無「週熱門」標記，score 不可信，無具體量化數字或版本號，屬「Opus 5 上線後品質感知訊號群」第九則訊號，僅計入現象延續（來源：[Reddit](https://www.reddit.com/r/ClaudeCode/comments/1vshkrf/)）
 
 #### 2026-08-13（補記，08-15 日報收錄）
 - **「幾乎令人惱火」：已依官方建議調整仍無法馴服 Opus 5**：r/ClaudeAI 貼文「Opus 5 is actually almost rage-inducing to use.」，使用者稱已依官方建議調整、試過各種全域 CLAUDE.md 設定，仍無法讓 Opus 5 行為符合期待；週熱門標記，達收錄低門檻，但無具體量化數字，屬「Opus 5 上線後品質感知訊號群」第八則訊號，僅計入現象延續（來源：[Reddit](https://www.reddit.com/r/ClaudeAI/comments/1vn8ml6/opus_5_is_actually_almost_rageinducing_to_use/)）
