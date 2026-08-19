@@ -4,7 +4,7 @@
 僅收錄官方 changelog、release note 或官方公告來源；社群工具見 [[topics/community-tech-tools]]。
 每日更新：新增功能、更新熱度、補充社群回饋。
 
-**最後更新：** 2026-08-18
+**最後更新：** 2026-08-19
 
 ---
 
@@ -20,7 +20,7 @@
 
 ## ⚠️ 升版風險
 
-**最新版本：** v2.1.234（2026-08-17，新增可選環境變數 `CLAUDE_CODE_PROJECT_DIR_NAME`，讓多 session 各自獨立設定目錄的主機為專案 transcript 目錄自訂短名稱；非 breaking change）。前一版 v2.1.233（08-14）新增 GitLab merge request URL 支援。最後一次重大 breaking change 仍為 v2.1.212／v2.1.215（見下表）；另有一項於 8/14 已生效的 breaking change（auto 模式預設化，已對 Pro/Max/Team 上線，詳見 [[entities/claude-code]] 現況）。
+**最新版本：** v2.1.235（2026-08-18，新增可選 `spellcheck` 設定與整段提示詞相關修復；非 breaking change）。前一版 v2.1.234（08-17）新增可選環境變數 `CLAUDE_CODE_PROJECT_DIR_NAME`。最後一次重大 breaking change 仍為 v2.1.212／v2.1.215（見下表）；另有一項於 8/14 已生效的 breaking change（auto 模式預設化，已對 Pro/Max/Team 上線，詳見 [[entities/claude-code]] 現況）。
 
 | 風險 | 嚴重度 | 說明 |
 |------|--------|------|
@@ -37,6 +37,7 @@
 | 截止日 | 事件 | 到期後 | 你該做的決定 |
 |--------|------|--------|------------|
 | **2026-08-31** | Sonnet 5 促銷價 $2/$10 per Mtok 結束 | 正式定價未公布，成本可能上升 | 依賴 Sonnet 5 的自動化流程：8 月底前關注正式定價公告 |
+| **2026-08-31** | Claude Code 週用量 +50% 促銷結束（官方 2026-08-18 確認已再度延長至此日） | 未公布延長後動向，週用量上限可能回落 | 重度依賴週用量緩衝的使用者：8 月底前留意官方是否再度延長 |
 
 > Fable 5 免費期限（原訂 7/19）已到期並移出本表；今日報導方向趨於一致指向 Pro 訂閱免費存取已結束、Max/Team 動向未明，詳見 [[entities/pricing]]「當前生效的計費規則」與時序。
 
@@ -63,6 +64,7 @@
 
 | 功能 | 發布日期 | 熱度 | 試用價值 | 狀態 |
 |------|----------|------|----------|------|
+| **spellcheck 輸入框拼字檢查**（v2.1.235，需本機 aspell／hunspell／ispell） | 2026-08-18 | 🔥 | ⚡ 有條件推薦 | 正式發布 |
 | **自訂專案 Transcript 目錄短名稱**（`CLAUDE_CODE_PROJECT_DIR_NAME` 環境變數，v2.1.234） | 2026-08-17 | 🔥 | ⚡ 有條件推薦 | 正式發布 |
 | **Claude Code v2.1.233**（`--worktree`／`claude agents` 視圖新增 GitLab MR URL 支援，MR 顯示為 `!N`；另有 opt-in `forward_user_identity` apps gateway 設定） | 2026-08-14 | 🔥🔥 | ⚡ 有條件推薦 | 正式發布 |
 | **Claude Code Auto 模式預設化**（⚠️ Breaking change：8/14 起 auto 成為 Pro／Max／Team 預設權限模式，取代手動確認流程；即日起免收分類器 token 費；Enterprise 與 API／雲端平台仍選用制） | 2026-08-14 生效（08-07 公告，08-10 官方部落格確認） | 🔥🔥🔥🔥🔥 | ⚡ 有條件推薦 | 正式發布 |
@@ -145,6 +147,26 @@
 ---
 
 ## 🆕 最新功能（2026-08）
+
+### spellcheck 輸入框拼字檢查
+**發布：** 2026-08-18（v2.1.235） | **熱度：** 🔥 | **試用價值：** ⚡ 有條件推薦 | **狀態：** 正式發布
+
+**是什麼：** 新增可選 `spellcheck` 設定，透過本機安裝的 aspell／hunspell／ispell，即時在輸入框底線標出拼字錯誤。
+
+**為何熱：** 官方 v2.1.235 changelog 新增項目，屬 QoL 設定；社群反應尚待觀察。
+
+**現在要試嗎：** 本機已安裝 aspell／hunspell／ispell 其一者可直接開啟一試；未安裝拼字檢查程式者需先安裝依賴才能使用。
+
+**快速上手：**
+```
+# 需本機已安裝 aspell／hunspell／ispell 其一
+# 於 settings.json 開啟：
+{ "spellcheck": true }
+```
+
+**注意事項：** 需本機已安裝 aspell／hunspell／ispell 其一，官方未列支援清單細節；同版本另修復一項與整段提示詞（whole-prompt）相關的問題，官方 changelog 原文截斷、細節未知。
+
+---
 
 ### 自訂專案 Transcript 目錄短名稱（`CLAUDE_CODE_PROJECT_DIR_NAME`）
 **發布：** 2026-08-17（v2.1.234） | **熱度：** 🔥 | **試用價值：** ⚡ 有條件推薦 | **狀態：** 正式發布
@@ -833,7 +855,7 @@ https://claude.com/blog/artifacts-in-claude-code
 
 **為何熱：** HN 2,448 分，近 2,000 評論。幾乎所有 benchmark SOTA，任務越長期越複雜優勢越大。首次讓開發者在一般工作流中使用 Mythos 等級推理能力。
 
-**注意事項：** 2026-07-01 起出口管制已解除，全球恢復存取；Pro/Max/Team 用戶 7/7 前享 50% 配額；❓ **待查證**（標 2026-08-10｜查 [[entities/fable-5]]、7/7 後配額政策）｜**7/7 後配額政策**：官方尚未公布 7/7 期限後的配額規則。詳見 [[entities/fable-5]]。
+**注意事項：** 2026-07-01 起出口管制已解除，全球恢復存取；Pro/Max/Team 用戶 7/7 前享 50% 配額；❓ **待查證**（標 2026-08-10｜查 [[entities/fable-5]]、7/7 後配額政策｜訊 2026-08-19）｜**7/7 後配額政策**：官方文件（support.claude.com，2026-08-19 查）說明促銷已於 7/19（非 7/7）結束，之後 Max／Team premium seat／舊制 Enterprise premium seat 標準內含使用，Pro／Team standard seat／舊制 Enterprise standard seat 改用 pay-as-you-go 用量額度計費；細節請見 [[entities/fable-5]] 現況段落，正式結案需 `/wiki-lint` 5c 核實後改判。
 
 ---
 

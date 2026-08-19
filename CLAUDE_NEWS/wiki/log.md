@@ -4029,3 +4029,18 @@ registry 加一組 sync_pair 釘住產出端與歸因端（只改一邊等於白
 - 新增頁面：無
 - 摘要：Anthropic 年化營收站上 650 億美元（IPO 前強力訊號，四方媒體同步報導）、Claude 浮水印功能持續延燒（CNET/Guardian/PCWorld）、資安媒體揭露勒索軟體濫用 Claude Code 攻擊鏈、音樂產業版權方接連對 Anthropic 提告（10 億美元求償）、Anthropic 揭露多智能體惡意行為研究
 - 呈現品質：全部通過
+
+## 2026-08-19 Ingest | news/2026-08-19.md（50 則）
+
+- 來源日報：[[news/2026-08-19]]（50 則抓取，13/13 來源；日報實收 43 則，另 7 則透過 `list_digest_omissions.py` 一併提供給記者判斷）
+- 分類派工：功能 9 則（含合併項）、模型 2 則、商業 7 則（另含轉知待接手 1 筆）、安全政策 1 則、社群 17 則（人物類今日無條目，未派工）；六類皆以 `subagent_type: general-purpose` + `model: sonnet` foreground 派工，角色前導導向 `.claude/agents/wiki-reporter-[category].md`（正典路徑）
+- 更新頁面：
+  - **功能**：`entities/claude-code.md`（新增 3 則已知問題：Memory leak /tmp/claude-*-cwd 未清理 #8856、Linux 剪貼簿貼圖失敗 #8324、Windows GPU 當機 appxState=2 #80444；8/18-19 二度服務異常記入「🌐 服務穩定性」）、`entities/claude-skills.md`（官方技能庫 academy-guide／claude-academy-guide 改名事件，核對確認非新增）；feature-radar 新增「spellcheck 輸入框拼字檢查」（v2.1.235，🔥）並由主編同步全覽表列、升版風險最新版本行、⏰ 倒數中新增 Claude Code 週用量促銷 8/31 到期列
+  - **模型**：`entities/fable-5.md`（官方文件確認促銷實際於 7/19（非既有頁面誤植的「6/22」與 7/7）結束，依方案分流計費；修正頁面內一處實質錯誤：舊敘述誤寫「Max 訂閱用戶須額外付費」，實際 Max 為標準內含；另有 Fable 5 使用率偏低的單一來源報導，已標註未經證實、不臆測因果）
+  - **商業**：`entities/pricing.md`（Fable 5 計費規則官方再確認；修正一項既有錯誤——07-12 條目誤將「週用量 +50% 促銷」與「Fable 5 免費期」記為同步於 7/19 到期並移入已失效規則，今日證實兩者為獨立時程，週用量促銷實際已延長至 2026-08-31，已更正「當前生效」／「已失效」兩表）、`topics/anthropic-business.md`（新增 Anthropic IPO 前置動作：超級投票權＋逾 100 億美元信用額度；OpenAI vs Anthropic 第二季業績對比含相反訊號並陳；處理轉知 H-3e88e6，Round Hill Music／另一音樂出版商著作權訴訟已收錄至商業風險表）、`topics/enterprise-tool-tracker.md`（新增 Payward〔Claude Mythos 5〕、Duke University〔pay-as-you-go 訂閱〕兩筆具名採用）
+  - **安全政策**：`topics/anthropic-government-policy.md`（Business Insider 報導 Anthropic 浮水印偵測技術遭開發者繞過，併入既有浮水印政策系列追蹤，標明僅標題層級可用）
+  - **社群**：`topics/community-tech-patterns.md`（新增 2 節點：HP 印表機驅動逆向工程單次長 session 案例、machine0 常駐 GPU/CPU VM 基礎設施）、`topics/community-tech-discussions.md`（新增 GLM 遷移文章、Reddit「22GB 本地模型」未附證據宣稱兩列；同步清理 14 筆逾 21 天 ☄️閃現舊列）、`topics/code-quality-decline.md`（「Opus 5 上線後品質感知訊號群」新增第 9 則訊號）；skill-based-architecture（502★）、Lucasartsifier、五款 Show HN session 管理工具叢集、dev.to J-Space 等因未達收錄門檻或無法查證佐證，判斷不收錄
+  - **主編**：`wiki/feature-radar.md` 內既有 ❓ 待查證標記（Fable 5「7/7 後配額政策」）依懸置標記語法加 `訊 2026-08-19`，更新題目內文為今日官方文件查得的實際規則（7/19、依方案分流），符號維持 ❓ 未改判，正式結案留待 `/wiki-lint` 5c
+- 新增頁面：無
+- 摘要：Claude 服務 8/18-19 二度效能異常（官方已修復＋監控中，多家媒體同步報導）、Claude Code 週用量 +50% 促銷再度延長至 8/31、Anthropic 傳出 IPO 前置動作（超級投票權＋信用額度擴大）、OpenAI vs Anthropic 第二季業績對比出現相反訊號、Fable 5 促銷結束後配額規則經官方文件澄清（7/19 而非頁面舊誤植的 7/7）並修正既有頁面兩處實質錯誤
+- 呈現品質：全部通過
