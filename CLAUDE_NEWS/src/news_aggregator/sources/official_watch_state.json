@@ -152,8 +152,7 @@
       "https://code.claude.com/docs/en/agent-sdk/tool-search.md": "Scale to many tools with tool search",
       "https://code.claude.com/docs/en/agent-sdk/subagents.md": "Subagents in the SDK",
       "https://code.claude.com/docs/en/agent-sdk/modifying-system-prompts.md": "Modifying system prompts",
-      "https://code.claude.com/docs/en/agent-sdk/slash-commands.md": "Slash Commands in the SDK",
-      "https://code.claude.com/docs/en/agent-sdk/skills.md": "Agent Skills in the SDK",
+      "https://code.claude.com/docs/en/agent-sdk/skills.md": "Extend agents with skills",
       "https://code.claude.com/docs/en/agent-sdk/plugins.md": "Plugins in the SDK",
       "https://code.claude.com/docs/en/agent-sdk/permissions.md": "Configure permissions",
       "https://code.claude.com/docs/en/agent-sdk/hooks.md": "Intercept and control agent behavior with hooks",
@@ -191,31 +190,31 @@
     }
   },
   "https://code.claude.com/docs/en/desktop.md": {
-    "hash": "5e6e89f5c9efd5289511f5702cc27de1c575be06c91e383d62acc5a16cb68c62",
-    "length": 77398
+    "hash": "711008859b4912ffa6a0dbed5a4d0f1ef084a674d366f7032844129bde40c03b",
+    "length": 77420
   },
   "https://claude.com/pricing": {
     "hash": "70cd7828c1d1a3305074498a3ac81b6944a46d25b1a990d73127ba2a4fb946af",
     "length": 31561
   },
   "https://support.claude.com/en/articles/15424964-claude-fable-5-on-your-plan": {
-    "hash": "f95720c657b8f069ab821b67a88df332637d513101486be12551616f59c05feb",
-    "length": 22068
+    "hash": "72717eed38f58ca41b49f0544fdd8425d6256f569d4fbdac69203c7db805b35d",
+    "length": 22020
   },
   "https://support.claude.com/en/articles/12429409-manage-usage-credits-for-paid-claude-plans": {
-    "hash": "3abbfa1f95a30ac4e7d2c30e5f0db28672ec157774f03347c6801995d159a204",
-    "length": 22858
+    "hash": "d0d7bfe9bdb700d7b5317a40ddbd1babed7dcf05ea89083956b147d85d4a8719",
+    "length": 22821
   },
   "https://support.claude.com/en/articles/11647753-how-do-usage-and-length-limits-work": {
-    "hash": "ba4eef48f0fc84e75d1c79c65326a3f89813fc8627c6cafa2924831c6f68ea8a",
-    "length": 22219
+    "hash": "fac6e1871d84241c75c7ffed0b72fce88ade1460cc680236b1341c088336e315",
+    "length": 22182
   },
   "https://support.claude.com/en/articles/11145838-use-claude-code-with-your-pro-or-max-plan": {
-    "hash": "8efbd9b36b113956c5d9312cf91a2d3c836e07da01a3783bbd725165bf071948",
-    "length": 22953
+    "hash": "ea7f327706eca93099ccba8f8f185eaaeed66c62da48f618bdf1645a25a01e14",
+    "length": 22916
   },
   "https://support.claude.com/en/articles/12138966-release-notes": {
-    "hash": "bcb613d738b47c91adfd224bbec8ae68eaaa353b83839b43a370c0489a484dc0",
-    "length": 42961
+    "hash": "264786687978b98d84011165f5088a2ff69e7b74658ab391c3c5519a2951f4f1",
+    "length": 42924
   }
 }
