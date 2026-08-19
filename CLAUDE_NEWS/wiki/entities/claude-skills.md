@@ -92,7 +92,7 @@ description: 在 PR 或 diff review 前，依團隊規範檢查命名、測試�
 - **OpenCode-power-pack**：2026-04-27 移植 Anthropic 官方 11 個 skills 至 OpenCode，打破官方插件僅限 Claude Code 環境的相容性限制，詳見 [[entities/opencode]]
 - **Claudinho**：2026-06-03 上線的 Claude Skills 探索與安裝介面，鎖定非技術用戶「技能難以發現、難以評估價值」的痛點；為第三方工具，非官方產物
 - **創作者變現缺口**：2026-05-20 社群開發者指出 Anthropic 建立了 skill runtime 卻無創作者變現機制，自製 skill 只能免費開源分享，無法商業化（推論：這是官方生態目前最明顯的結構性缺口之一）
-- ❓ **待查證**（標 2026-08-19｜查 200,000 tokens｜複 2026-09-02）｜**The New Stack 報導某 Claude Code skill 在回答任何問題之前就先耗掉 20 萬 token**（Google News 轉載，2026-08-18 報導）：原文僅標題層級可用，未見具體是哪個 skill、成因是否為漸進式揭露機制未生效或 skill 本身設計不當，亦未見是否為官方或第三方 skill；若屬實則是與本頁「漸進式揭露三層架構」設計初衷（節省 token）相牴觸的反例，惟細節待補
+- ❓ **待查證**（標 2026-08-19｜查 200000 tokens、The New Stack｜複 2026-09-02）｜**The New Stack 報導某 Claude Code skill 在回答任何問題之前就先耗掉 20 萬 token**（Google News 轉載，2026-08-18 報導）：原文僅標題層級可用，未見具體是哪個 skill、成因是否為漸進式揭露機制未生效或 skill 本身設計不當，亦未見是否為官方或第三方 skill；若屬實則是與本頁「漸進式揭露三層架構」設計初衷（節省 token）相牴觸的反例，惟細節待補
 
 ## 相關議題
 
