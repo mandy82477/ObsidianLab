@@ -25,11 +25,11 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 **狀態：** active
 **領域：** 🛠️ 工具/功能
 **首次出現：** 2026-04-27
-**最後更新：** 2026-08-18
-**最後新聞更新：** 2026-08-18
+**最後更新：** 2026-08-19
+**最後新聞更新：** 2026-08-19
 
-> **最新官方動態**（2026-08-18）
-> 官方技能庫（anthropics/skills）新增 2 項：`claude-academy-guide`、`discernment-nudge`；官方 repo 未附說明文字，用途待後續版本或官方文件補齊。
+> **最新官方動態**（2026-08-19）
+> 官方技能庫（anthropics/skills）目錄異動：昨日新增的 `claude-academy-guide` 今日改名為 `academy-guide`（原名同步從目錄移除），`discernment-nudge` 不變；官方 repo 未附說明文字，改名理由與內容用途待後續版本或官方文件補齊。
 
 ---
 
@@ -74,7 +74,7 @@ description: 在 PR 或 diff review 前，依團隊規範檢查命名、測試�
 | 面向 | 內容 | 日期 |
 |------|------|------|
 | 機制本身 | 可重複使用的任務封裝單元，Claude 依描述語意自動觸發，無需手動呼叫；採「漸進式揭露」三層架構（啟動只讀名稱+簡述，命中後才載入完整內容），兼顧 token 效率與觸發準確度 | 官方設計揭露 2026-05-31 |
-| 官方 skills bundle | 新增 `claude-academy-guide`、`discernment-nudge` 2 項；官方 repo 未附說明文字，用途待補 | 2026-08-18 |
+| 官方 skills bundle | 新增 `academy-guide`（2026-08-18 以 `claude-academy-guide` 之名新增，2026-08-19 改名，原名同步移除）、`discernment-nudge`；官方 repo 未附說明文字，用途待補 | 2026-08-19（改名） |
 | | 官方核心 11 個 Skills（代碼審查、安全審計、前端設計等），首見於社群移植而非官方公告本身 | 2026-04-27（移植事件） |
 | | 官方發布「31 個小企業 Skills」技能包，首日下載 38.2 萬次 | 2026-05-24 |
 | | Claude for Teachers 教學技能庫（美國認證 K-12 教師專用），詳見 [[entities/claude-for-teachers]] | 2026-07-15 |
@@ -92,6 +92,7 @@ description: 在 PR 或 diff review 前，依團隊規範檢查命名、測試�
 - **OpenCode-power-pack**：2026-04-27 移植 Anthropic 官方 11 個 skills 至 OpenCode，打破官方插件僅限 Claude Code 環境的相容性限制，詳見 [[entities/opencode]]
 - **Claudinho**：2026-06-03 上線的 Claude Skills 探索與安裝介面，鎖定非技術用戶「技能難以發現、難以評估價值」的痛點；為第三方工具，非官方產物
 - **創作者變現缺口**：2026-05-20 社群開發者指出 Anthropic 建立了 skill runtime 卻無創作者變現機制，自製 skill 只能免費開源分享，無法商業化（推論：這是官方生態目前最明顯的結構性缺口之一）
+- ❓ **待查證**（標 2026-08-19｜查 200,000 tokens｜複 2026-09-02）｜**The New Stack 報導某 Claude Code skill 在回答任何問題之前就先耗掉 20 萬 token**（Google News 轉載，2026-08-18 報導）：原文僅標題層級可用，未見具體是哪個 skill、成因是否為漸進式揭露機制未生效或 skill 本身設計不當，亦未見是否為官方或第三方 skill；若屬實則是與本頁「漸進式揭露三層架構」設計初衷（節省 token）相牴觸的反例，惟細節待補
 
 ## 相關議題
 
@@ -111,12 +112,13 @@ description: 在 PR 或 diff review 前，依團隊規範檢查命名、測試�
 - [Claude Code v2.1.169 Release](https://github.com/anthropics/claude-code/releases/tag/v2.1.169)（2026-06-09）
 - [Claude Code v2.1.178 Release](https://github.com/anthropics/claude-code/releases/tag/v2.1.178)（2026-06-16）
 - [Show HN: Claudinho — Find and Install Claude Skills](https://www.claudinho.xyz/)（2026-06-03）
-- [[news/2026-04-27]]、[[news/2026-05-17]]、[[news/2026-05-20]]、[[news/2026-05-24]]、[[news/2026-05-27]]、[[news/2026-05-31]]、[[news/2026-06-05]]、[[news/2026-06-09]]、[[news/2026-06-16]]、[[news/2026-06-21]]、[[news/2026-07-15]]、[[news/2026-08-18]]
+- [[news/2026-04-27]]、[[news/2026-05-17]]、[[news/2026-05-20]]、[[news/2026-05-24]]、[[news/2026-05-27]]、[[news/2026-05-31]]、[[news/2026-06-05]]、[[news/2026-06-09]]、[[news/2026-06-16]]、[[news/2026-06-21]]、[[news/2026-07-15]]、[[news/2026-08-18]]、[[news/2026-08-19]]
 
 ## 歷史記錄
 
 | 日期 | 事件 |
 |------|------|
+| 2026-08-19 | 官方技能庫目錄核對：`claude-academy-guide`（08-18 新增）改名為 `academy-guide`，原名同步從目錄移除；The New Stack 報導某 Claude Code skill 在回答問題前耗掉 20 萬 token，僅標題可用，已標待查證 |
 | 2026-08-18 | 官方技能庫（anthropics/skills）新增 2 項：`claude-academy-guide`、`discernment-nudge`；官方 repo 未附說明文字，用途待補 |
 | 2026-07-15 | Claude for Teachers 教學技能庫發布，向美國認證 K-12 教師免費開放（詳見 [[entities/claude-for-teachers]]） |
 | 2026-06-21 | 官方部落格《七種指令傳遞方法》，將 Skills 納入 CLAUDE.md／rules／subagents／hooks／output styles／system prompt append 六層控制決策框架 |

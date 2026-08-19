@@ -25,19 +25,19 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 **狀態：** active（正式發布；出口管制已解除，2026-07-01 起全球恢復存取；免費期已於 2026-07-19 到期，Max/Team 後續存取政策已於 2026-08-08 經官方 Help Center 查證收斂，見 [[entities/pricing]]）
 **領域：** 🤖 模型
 **首次出現：** 2026-06-09
-**最後更新：** 2026-08-15
-**最後新聞更新：** 2026-08-15
+**最後更新：** 2026-08-19
+**最後新聞更新：** 2026-08-19
 
-> **最新進展**（2026-08-07）
-> **生物安全防護更新**：Anthropic 官方部落格宣布更新 Fable 5 的生物安全防護（biology safeguards），測試顯示各產品面「生物相關降級」（fallback 至 Opus 4.8）情形減少約 85%；官方並表示醫療專業人員在臨床任務上將能獲得 Fable 5 更多協助。詳見「爭議」與「歷史記錄」。
+> **最新進展**（2026-08-19）
+> 官方說明文件更新〈Claude Fable 5 on your plan〉，重申先前促銷已於 **2026-07-19 23:59:59 PT**（非早期公告的 7/7）到期，到期後依方案分流計費，與 2026-08-08 查證結論一致，詳見「現況」。另有單一來源（08-18）報導稱 Fable 5「幾乎無人使用」，僅標題可用、尚待查證，暫不與計費變化做因果推論。
 
 ---
 
 ## 現況
 
-**2026-08-07 最新**：Anthropic 官方部落格宣布更新 Fable 5 的生物安全防護（biology safeguards），測試顯示各產品面「生物相關降級」（誤判觸發 fallback 至 Opus 4.8）情形減少約 85%；官方表示日常健康／教育類問題（如判讀檢驗報告、理解症狀、學習生物學）預期更少被誤判降級，醫療專業人員也能在臨床任務上獲得 Fable 5 更多協助（[Anthropic Blog](https://www.anthropic.com/news/improving-fable-5-s-biology-safeguards)，2026-08-07）。
+**2026-08-19 最新**：Anthropic 官方說明文件更新〈Claude Fable 5 on your plan〉，明載先前促銷（允許用戶最多以週訂閱額度 50% 免費使用 Fable 5）已於 **2026-07-19 23:59:59 PT** 結束；到期後依方案分流：Max 方案、Team／舊制（legacy seat-based）Enterprise 的 premium seat → Fable 5 為方案標準內含項目，Pro 方案、Team／舊制 Enterprise 的 standard seat → 改以 pay-as-you-go usage credits 計費，目前所有付費方案（Pro/Max/Team/Enterprise）皆可使用 Fable 5。此分流與 2026-08-08 官方 Help Center 查證結論一致（非早期公告的 7/7 節點），計費規則細節見 [[entities/pricing]]（Official Docs，2026-08-19）。同日另有單一來源（analyticsindiamag.com，經 Google News 轉載，2026-08-18）以標題《Almost Nobody Is Using Anthropic's Fable 5》報導 Fable 5 採用率偏低，RSS 摘要僅標題可用、無正文可查證具體數據或統計方法，暫列待查證；原文未提供與促銷/配額政策變化的因果證據，本頁不做因果推論。
 
-**2026-07-31**：**美國法官質疑聯邦政府對 Anthropic「供應鏈風險」認定的正當性**（2026-07-30/31 報導，2026-08-10 官方/媒體查證）：Bloomberg 報導聯邦法官 Rita F. Lin 認為川普政府未能充分證明對 Anthropic 列為「供應鏈風險」（供應鏈風險標籤導致聯邦機構禁用其 AI）具正當性；爭議源於 Anthropic 與美國國防部（DoD）合約談判破裂，Anthropic 拒絕讓其 AI 用於美國民眾大規模監控或涉及致命武器的鎖定／開火決策。**經查證，此案與 Fable 5 晶片出口管制（已於 2026-07-01 解除）為兩條獨立政策線**——本案是聯邦機構「能否使用」Anthropic AI 產品的採購爭議，非「能否出口晶片／模型」的出口管制爭議，兩者僅同屬「政府對 Anthropic 施加限制」大類，不可合併記錄。完整脈絡以安全政策記者 [[topics/anthropic-government-policy]] 為主（詳見「歷史記錄」）。
+**2026-08-07**：Anthropic 官方部落格宣布更新 Fable 5 的生物安全防護（biology safeguards），測試顯示各產品面「生物相關降級」（誤判觸發 fallback 至 Opus 4.8）情形減少約 85%；官方表示日常健康／教育類問題（如判讀檢驗報告、理解症狀、學習生物學）預期更少被誤判降級，醫療專業人員也能在臨床任務上獲得 Fable 5 更多協助（[Anthropic Blog](https://www.anthropic.com/news/improving-fable-5-s-biology-safeguards)，2026-08-07）。
 
 Claude Fable 5 是 Anthropic 於 2026-06-09 發布的旗艦模型，為**史上首款向大眾開放的 Mythos 級模型**。Fable 5 與 Claude Mythos 5 共用相同的模型權重，差異在於 Fable 5 前置安全分類器——觸發時 fallback 至 Claude Opus 4.8（Anthropic 稱不到 5% 的 session 受影響）。核心定位：任務越複雜越長期，Fable 5 的優勢越明顯；在軟體工程、知識工作、視覺、科學研究等幾乎所有 benchmark 達到 SOTA。
 
@@ -64,7 +64,7 @@ Claude Fable 5 是 Anthropic 於 2026-06-09 發布的旗艦模型，為**史上�
 
 ## 配額與計費過渡（原訂 7/7，已於 7/19 到期；後續分界已確認）
 
-**規則（2026-07-01 原始公告）：** Pro/Max/Team 方案 7/7 前維持每週配額 50%（含 Fable 5 用量），7/7 後改依用量計費（usage-based billing），定價另行公布；Enterprise 方案需聯繫帳戶主管（[Anthropic Blog](https://www.anthropic.com/news/redeploying-fable-5)，2026-07-01）。**此 7/7 節點已因免費期限三度順延而延至 2026-07-19 才到期，免費期目前已結束**；07-20 起的實際分界（Max／Team premium 標配 50% 上限、Pro／Team standard 走 usage credits）已於 2026-08-08 由官方 Help Center 確認，詳見上方「現況」、頁首 callout 與 [[entities/pricing]]。
+**規則（2026-07-01 原始公告）：** Pro/Max/Team 方案 7/7 前維持每週配額 50%（含 Fable 5 用量），7/7 後改依用量計費（usage-based billing），定價另行公布；Enterprise 方案需聯繫帳戶主管（[Anthropic Blog](https://www.anthropic.com/news/redeploying-fable-5)，2026-07-01）。**此 7/7 節點已因免費期限三度順延而延至 2026-07-19 才到期，免費期目前已結束**；07-20 起的實際分界（Max／Team premium 標配 50% 上限、Pro／Team standard 走 usage credits）已於 2026-08-08 由官方 Help Center 確認，並於 2026-08-19 由官方說明文件〈Claude Fable 5 on your plan〉再次重申（同樣明載 7/19 為到期日，非 7/7），詳見上方「現況」、頁首 callout 與 [[entities/pricing]]。
 
 **配額重置時間因訂閱起始日而異**：Reddit 社群 07-03 釐清，Fable 5 額度重置規則並非統一週期，而是依各用戶訂閱方案的起始時間點各自輪轉（「Fable resets on Monday if you held a plan already」），並非所有人同一天重置（[Reddit r/ClaudeCode](https://www.reddit.com/r/ClaudeCode/comments/1umt5h5/fable_resets_on_monday_if_you_held_a_plan_already/)，2026-07-03）。
 
@@ -88,7 +88,7 @@ claude --model claude-fable-5-20260609
 ```
 
 **注意事項：**
-- 6/22 後 Fable 5 移至消費制，Pro/Max 訂閱用戶須額外付費
+- 促銷（週用量 50% 內免費使用 Fable 5）已於 **2026-07-19 23:59:59 PT** 到期（非早期公告的 7/7）；到期後 Max 方案／Team・舊制 Enterprise 的 premium seat 為方案標配，Pro 方案／Team・舊制 Enterprise 的 standard seat 改以 pay-as-you-go usage credits 付費，計費細節見 [[entities/pricing]]
 - 從事前沿 LLM 開發（訓練 pipeline、推論研究）時，Fable 5 護欄會靜默降級輸出品質，不告知用戶（System Card 明文記載）
 - 30 天資料保留政策適用於所有平台（含 AWS Bedrock），資料離開 AWS 安全邊界
 
@@ -176,10 +176,16 @@ claude --model claude-fable-5-20260609
 - [資料保留政策](https://support.claude.com/en/articles/15425996-data-retention-practices-for-mythos-class-models)
 - [[news/2026-08-11]]
 - [[news/2026-08-15]]
+- [[news/2026-08-19]]
 
 ## 歷史記錄
 
 ### 解禁後（2026-07-01 起）
+
+#### 2026-08-19
+**官方說明文件更新確認促銷結束日與分流政策（與 2026-08-08 查證結果一致）**：Anthropic 官方說明文件更新〈Claude Fable 5 on your plan〉頁面，明載先前促銷（允許用戶最多以週訂閱額度 50% 免費使用 Fable 5）已於 **2026-07-19 23:59:59 PT** 結束（並非早期 2026-07-01 公告所稱的 7/7）。促銷結束後：Max 方案、Team 方案 premium seat、舊制（legacy seat-based）Enterprise 方案 premium seat，Fable 5 成為方案標準內含項目；Pro 方案、Team 方案 standard seat、舊制 Enterprise 方案 standard seat，Fable 5 改以 pay-as-you-go usage credits 計費；目前所有付費方案（Pro/Max/Team/Enterprise）皆可使用 Fable 5。本次官方文件與 2026-08-08 Help Center 查證所得的分流結論一致；官方引文為「On Max plans, premium seats on Team plans, and premium seats on legacy seat-based Enterprise plans, Fable 5 will be a standard part of your plan. On Pro plans, standard seats on Team plans, and standard seats on legacy seat-based Enterprise plans, Fable 5 will run on pay-as-you-go usage credits.」。計費規則細節（含週用量 50% 上限是否延續等定價面問題）留給商業記者於 [[entities/pricing]] 記錄（Official Docs，2026-08-19）。
+
+**單一來源報導稱 Fable 5「幾乎無人使用」（待查證，僅標題可用）**：Google News 轉載 analyticsindiamag.com 標題〈Almost Nobody Is Using Anthropic's Fable 5〉，RSS 摘要未附正文，具體採用數據、統計方法、對比基準均未見報導，需開啟原文確認（[Google News/analyticsindiamag.com](https://news.google.com/rss/articles/CBMiiwFBVV95cUxQQWl5SUFPU3RoVmN3eFhjYXFWbUk2ZTIwN2tLWHhGT2h3Q2lsdjhuNTVtRHhTeS1GZXN2ZXZvTmg4Z1Y5RUo4aG1TODZHQmRHYTVvQkxaTEJ5bkFUV1lMV2xtdmFZMW80eVZXY0NyVUNkYlc0enlHWUpCVUpBM3I4V3ZGcXJzQkFKVFVR?oc=5)，2026-08-18 14:19 UTC）。**與其他條目的關係**：本則報導日期與同日「Claude Code 週用量促銷延長」報導、以及上方 08-19 官方文件確認的 07-19 促銷到期時間點相近，但原文未提供因果證據，本頁不做因果推論，僅並列記錄。
 
 #### 2026-08-15
 **Anthropic Status：錯誤率一度升高（同日解決）**：Anthropic Status 通報 Fable 5 於 2026-08-14 20:00 至 2026-08-15 00:11 UTC 錯誤率升高，事件已解決，無需採取行動（[Anthropic Status](https://status.claude.com/incidents/hdynq1pc0fn8)，2026-08-15）。

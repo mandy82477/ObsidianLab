@@ -24,11 +24,13 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 **領域：** 💼 商業
 **蒐集邊界：** 僅涵蓋 Claude 相關報導所帶出的企業案例。未提及 Claude 的企業工具決策不在自動蒐集範圍——公開報導本就少見具名企業的內部工具決策，本表為已見報者的彙整，非市場全貌。
 **開始日期：** 2026-05-26
-**最後更新：** 2026-08-15
-**最後新聞更新：** 2026-08-15
+**最後更新：** 2026-08-19
+**最後新聞更新：** 2026-08-19
 
-> **最新企業採用異動**（2026-08-15）
-> **Samsung 案例升級為量化採用（跨 2 來源，仍為媒體轉述、非官方發布）**：TechSpot（08-15）、Tech My Money（08-14）跨 2 來源報導三星使用 Claude Code 壓縮晶片設計/驗證作業時程，但兩則具體數字不同——一則稱「數週壓縮到數天」，另一則稱「驗證階段從一個月縮到兩天」；兩則報導均明確指出 Claude Code **仍會犯嚴重錯誤**。狀態由 08-14 記錄之 ❓ 未確認升級為 ✅ 使用中（具體量化成效 + 跨媒體確認），惟仍非三星或 Anthropic 官方一手證實，詳見下方使用現況表 Samsung 列更新。
+> **最新企業採用異動**（2026-08-19）
+> - **Payward（Kraken 母公司）**：Google News／FF News 報導加密貨幣平台 Payward 採用 Claude Mythos 5 強化全球加密基礎設施；Mythos 5 為僅限授權機構存取的安全強化模型，本案為具名企業採用該受限模型的案例，僅標題層級可用。
+> - **Duke University**：Google News／The Duke Chronicle 報導杜克大學與 Anthropic 合作，提供師生「用多少付多少」（pay-as-you-go）Claude 訂閱方案，為繼哈佛 FAS、Syracuse University 後另一具名高等教育機構採用案例，僅標題層級可用。
+> - **Samsung 案例升級為量化採用（跨 2 來源，仍為媒體轉述、非官方發布）**：TechSpot（08-15）、Tech My Money（08-14）跨 2 來源報導三星使用 Claude Code 壓縮晶片設計/驗證作業時程，但兩則具體數字不同——一則稱「數週壓縮到數天」，另一則稱「驗證階段從一個月縮到兩天」；兩則報導均明確指出 Claude Code **仍會犯嚴重錯誤**。狀態由 08-14 記錄之 ❓ 未確認升級為 ✅ 使用中（具體量化成效 + 跨媒體確認），惟仍非三星或 Anthropic 官方一手證實，詳見下方使用現況表 Samsung 列更新。
 
 ## 摘要
 
@@ -36,7 +38,7 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 
 追蹤各大型企業目前正在使用的 AI 編碼工具，以及工具選擇的變化軌跡。資料來源為公開報導與內部消息洩露，僅記錄有明確來源佐證的事實。
 
-目前追蹤 36 家具名企業/機構（Samsung——08-15 跨 2 媒體確認升級為 ✅ 使用中，Claude Code 壓縮晶片設計/驗證時程（惟仍會犯嚴重錯誤），此前 08-14 為 ❓ 未確認狀態；此前新增 Syracuse University——繼哈佛 FAS 後另一具名高等教育機構案例；此前新增 ICON——臨床試驗/醫療研究產業首個具名採用案例；此前新增 Cognizant——升級為 Claude Partner Network 全球首要夥伴 Global Premier Partner），其中多數狀態為使用中（✅），4 家退出/切換（❌🔄，Microsoft 停用 Claude Code、JPMorgan Chase 香港分行因出口管制被迫退出、Lindy 100% 切換至 DeepSeek、Alibaba 因資安疑慮禁用 Claude Code 並明確改用內部工具 Qoder），Uber 縮減中（⚠️，成本管控）。新增 Alberta 省政府（加拿大）具名政府採用案例，20 小時掃描 4.66 億行程式碼完成資安審查，是繼加州州政府後另一個地方政府層級具體成效案例。整體趨勢：Claude API 企業與政府採用持續擴大，TCS、DXC、LG 等頂尖企業相繼全面入局；2026-06-29–06-30 單日/隔日湧現 Globant、DataArt、Okta、Rubrik、加州州政府等新一波具名案例，Partner Network 密集擴張（詳見 [[topics/anthropic-business]]）。同期 Lindy 案例顯示 API 客戶對成本敏感度高、可能因競品定價優勢流失。2026-06-21 Microsoft 確認在 Fable 5 封鎖期間加速退出 Claude Code，2026-06-22 The Jerusalem Post 跟進確認 Microsoft 正系統性降低對 Claude 依賴，GitHub Copilot 為主要替代方案。出口管制 + 成本壓力雙重因素持續影響頂尖企業工具選擇。
+目前追蹤 38 家具名企業/機構（新增 Payward——加密貨幣交易平台母公司（Kraken），採用僅限授權機構存取的 Claude Mythos 5 強化全球加密基礎設施；新增 Duke University——繼哈佛 FAS、Syracuse University 後另一具名高等教育機構，提供師生 pay-as-you-go Claude 訂閱方案；此前 Samsung——08-15 跨 2 媒體確認升級為 ✅ 使用中，Claude Code 壓縮晶片設計/驗證時程（惟仍會犯嚴重錯誤），此前 08-14 為 ❓ 未確認狀態；此前新增 Syracuse University——繼哈佛 FAS 後另一具名高等教育機構案例；此前新增 ICON——臨床試驗/醫療研究產業首個具名採用案例；此前新增 Cognizant——升級為 Claude Partner Network 全球首要夥伴 Global Premier Partner），其中多數狀態為使用中（✅），4 家退出/切換（❌🔄，Microsoft 停用 Claude Code、JPMorgan Chase 香港分行因出口管制被迫退出、Lindy 100% 切換至 DeepSeek、Alibaba 因資安疑慮禁用 Claude Code 並明確改用內部工具 Qoder），Uber 縮減中（⚠️，成本管控）。新增 Alberta 省政府（加拿大）具名政府採用案例，20 小時掃描 4.66 億行程式碼完成資安審查，是繼加州州政府後另一個地方政府層級具體成效案例。整體趨勢：Claude API 企業與政府採用持續擴大，TCS、DXC、LG 等頂尖企業相繼全面入局；2026-06-29–06-30 單日/隔日湧現 Globant、DataArt、Okta、Rubrik、加州州政府等新一波具名案例，Partner Network 密集擴張（詳見 [[topics/anthropic-business]]）。同期 Lindy 案例顯示 API 客戶對成本敏感度高、可能因競品定價優勢流失。2026-06-21 Microsoft 確認在 Fable 5 封鎖期間加速退出 Claude Code，2026-06-22 The Jerusalem Post 跟進確認 Microsoft 正系統性降低對 Claude 依賴，GitHub Copilot 為主要替代方案。出口管制 + 成本壓力雙重因素持續影響頂尖企業工具選擇。
 
 ---
 
@@ -48,6 +50,8 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 
 | 企業 | 規模 | AI 編碼工具 | 狀態 | 事件日期 | 備註 | 確認日期 |
 |------|------|-----------|------|---------|------|---------|
+| Payward（Kraken 母公司） | 大型（全球加密貨幣交易平台母公司） | Claude Mythos 5 | ✅ | — | FF News 報導 Payward 採用 Claude Mythos 5 強化全球加密基礎設施；Mythos 5 為僅限授權機構存取的安全強化模型（見 [[entities/mythos]]），本案為具名企業採用該受限模型的具體案例；原文僅標題層級可用，具體整合範疇、規模未見細節（Google News/FF News）| 2026-08-19 |
+| Duke University | 大型（高等教育機構） | Claude（pay-as-you-go 訂閱方案） | ✅ | — | The Duke Chronicle 報導杜克大學與 Anthropic 合作，提供師生「用多少付多少」的 Claude 訂閱方案；為繼哈佛 FAS（04-28）、Syracuse University（08-07）後另一具名高等教育機構採用案例，延續教育機構採用 Claude 的趨勢（推論）；原文僅標題層級可用，具體授權範圍、定價細節未見報導（Google News/The Duke Chronicle）| 2026-08-18 |
 | Samsung | 頂尖 | Claude Code | ✅ | — | 跨 2 媒體確認具體量化成效，惟仍為媒體轉述、非三星或 Anthropic 官方發布：TechSpot（08-15）稱 Claude Code 能把晶片設計工作從「數週壓縮到數天」；Tech My Money（08-14）稱驗證階段「從一個月縮到兩天」——兩則數字不同，並陳不擇一。兩則均明確指出 Claude Code **仍會犯嚴重錯誤**。延續 08-14 記錄之 ❓ 未確認狀態，本次升級為 ✅；與 [[topics/anthropic-business]] 已記錄之 Samsung 代工洽談（07-02/06）、Series H 投資人身份為不同性質事件——本則為 Samsung**使用**Claude Code 的採用案例，非供應鏈/投資關係（Google News/TechSpot；Google News/Tech My Money）| 2026-08-15（首見 2026-08-14）|
 | Syracuse University | 大型（高等教育機構）| Claude Code + Claude Cowork | ✅ | 2026-08-05 | Syracuse University Today 官方報導校方擴大 Claude Enterprise 授權，納入 Claude Code 與 Claude Cowork；為繼哈佛 FAS（04-28，取代 ChatGPT Edu）後另一具名高等教育機構擴大採用案例，顯示學術機構對 Claude Enterprise 的採用正從「單一授權」擴展至「含編碼與協作工具的完整套件」（推論）；具體授權規模、部署範圍未見細節，僅標題層級資訊（Google News/Syracuse University Today）| 2026-08-05 |
 | ICON（NASDAQ: ICLR） | 大型（全球臨床研究委外機構 CRO）| Claude API | ✅ | 2026-07-29 | Clinical Trials Arena（source_count=2）報導 ICON 與 Anthropic 合作，將 Claude AI 整合進臨床試驗流程；為醫療研究/CRO 產業首個具名採用案例，延續近期 Optum（07-14，健康服務業）之後醫療垂直產業另一深化案例（推論）；具體整合範疇、合約規模未見細節，僅標題層級資訊（Google News/Clinical Trials Arena）。**08-04 二次確認**：Fierce Biotech（source_count=2）跟進報導同一合作案，未見新增細節，屬媒體二次確認（Google News/Fierce Biotech）。**08-10 三度獲媒體關注（分析角度，非新事實）**：The Clinical Trial Vanguard（臨床試驗產業媒體）發表分析文章，標題暗示此合作案影響將觸及臨床試驗場域，未見新增合作規模、範疇或時程等具體事實，僅標題層級資訊，屬既有合作案的產業媒體深度評論跟進（Google News/The Clinical Trial Vanguard） | 2026-08-10（首見 2026-07-29）|
@@ -102,7 +106,7 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 | 工具 | 企業採用數 | 趨勢 | 主要阻力 |
 |------|----------|------|---------|
 | Claude Code | 7 使用中（Amazon、UiPath、Rubrik、JFrog、Salesforce、Alberta 省政府、Samsung）+ 1 縮減中（Uber）+ 2 退出（Microsoft、Alibaba → Qoder） | ⚠️ 成本壓力 + Fable 5 封鎖衝擊 + 安全疑慮新增退出理由；✅ 政府與晶片設計案例出現具體量化成效（Alberta 4.66 億行/20hr；Samsung 晶片設計/驗證時程壓縮，惟仍會犯嚴重錯誤） | 缺乏企業層級預算管控；Fable 5 出口管制加速部分企業評估替代方案；Alibaba 案例顯示「疑似後門」指控也可能成為退出理由（指控未經證實），且已確認具體替代方案（Qoder） |
-| Claude API | 25（Apple、KPMG、iCapital、哈佛、Fujitsu、Travelport、Nimble Gravity、ZoomInfo、LG Group、AppFolio、Salesforce Claude API、TCS、DXC Technology、Atlassian、JPMorgan Chase 美國本部、Charleston Hospitality Group、Notion、加州州政府、Globant、DataArt、Okta、Grasshopper Bank、Cognizant、ICON）+ 1 退出中（Lindy → DeepSeek） | 🟢 快速擴張（政府/合規/服務業縱深加深，新增醫療研究 CRO 產業、金融科技銀行、大型 IT 服務商全球首要夥伴）；⚠️ 部分 API 客戶因成本敏感轉向競品 | — |
+| Claude API | 27（Apple、KPMG、iCapital、哈佛、Fujitsu、Travelport、Nimble Gravity、ZoomInfo、LG Group、AppFolio、Salesforce Claude API、TCS、DXC Technology、Atlassian、JPMorgan Chase 美國本部、Charleston Hospitality Group、Notion、加州州政府、Globant、DataArt、Okta、Grasshopper Bank、Cognizant、ICON、Payward、Duke University）+ 1 退出中（Lindy → DeepSeek） | 🟢 快速擴張（政府/合規/服務業縱深加深，新增醫療研究 CRO 產業、金融科技銀行、大型 IT 服務商全球首要夥伴、加密貨幣基礎設施、教育機構訂閱方案）；⚠️ 部分 API 客戶因成本敏感轉向競品 | — |
 | GitHub Copilot | 1（Microsoft） | 🟢 Microsoft 背書 | 生態鎖定 |
 | OpenAI Codex | 2（Amazon、UiPath） | 🟢 快速成長 | — |
 | Cursor | 1（Uber） | ⚠️ 新創份額下滑 | 成本管控困難；企業級功能不如 Claude Code |
@@ -126,6 +130,12 @@ Claude Code 是工程師日常編碼工具（CLI），成本隨使用量線性�
 ## 時序
 
 ### 2026-08
+
+#### 2026-08-19
+- **[新增企業採用，受限模型案例] Payward（Kraken 母公司）採用 Claude Mythos 5 強化全球加密基礎設施**：FF News 報導，僅標題層級可用；Mythos 5 為僅限授權機構存取的安全強化模型，本案為具名企業採用該受限模型的具體案例，詳見上方使用現況表新增列（Google News/FF News）
+
+#### 2026-08-18
+- **[新增企業採用，具名高等教育機構] Duke University 與 Anthropic 合作，提供 pay-as-you-go Claude 訂閱方案**：The Duke Chronicle 報導，僅標題層級可用；為繼哈佛 FAS、Syracuse University 後另一具名高等教育機構採用案例，詳見上方使用現況表新增列（Google News/The Duke Chronicle）
 
 #### 2026-08-15
 - **[✅ 升級為量化採用，跨 2 媒體] TechSpot、Tech My Money：Samsung 用 Claude Code 壓縮晶片設計/驗證時程，惟仍會犯嚴重錯誤**：延續 08-14 記錄之 ❓ 未確認狀態，本次跨 2 媒體確認具體量化成效——TechSpot 稱「數週壓縮到數天」，Tech My Money 稱驗證階段「一個月縮到兩天」（兩則數字不同，並陳不擇一），兩則均明確指出 Claude Code 仍會犯嚴重錯誤；仍為媒體轉述、非官方發布。詳見上方使用現況表 Samsung 列更新（Google News/TechSpot；Google News/Tech My Money）
