@@ -295,11 +295,6 @@
       "id": "claude-science",
       "name": "Claude Science",
       "pageType": "entity"
-    },
-    {
-      "id": "pricing",
-      "name": "Anthropic 訂閱方案與計費政策",
-      "pageType": "entity"
     }
   ]
 }

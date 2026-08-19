@@ -3,13 +3,13 @@ page: "topics/anthropic-government-policy"
 kind: "topic"
 status: "monitoring（出口管制主線已解除，剩餘承諾落實與衍生支線持續觀察；中美 AI 工具信任對峙已獨立成頁）"
 domain: "🏛️ 政策/安全"
-last_updated: "2026-08-18"
-last_news_update: "2026-08-18"
+last_updated: "2026-08-19"
+last_news_update: "2026-08-19"
 status_main: "monitoring"
 days_since_news: 0
-inbound_links: 69
-attribution_count: 52
-attribution_last: "2026-08-18"
+inbound_links: 68
+attribution_count: 53
+attribution_last: "2026-08-19"
 top_source: "google-news"
 pending_count: 16
 pending_overdue: 0

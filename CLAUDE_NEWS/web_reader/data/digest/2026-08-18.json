@@ -12,13 +12,7 @@
       "time": "08/18 10:35",
       "sentiment": "",
       "body": "一款主打「agent 對 agent 商務信任層」的 Claude Code plugin / Agent Skill，包含自然語言授權、ERC-7710 委任權限、x402 支付與爭議解決機制，GitHub Search 顯示已累積 3793 星。",
-      "focusTags": [],
-      "sedimented": [
-        {
-          "id": "claude-code",
-          "pageType": "entity"
-        }
-      ]
+      "focusTags": []
     },
     {
       "title": "Anthropic's War on open source AI",
@@ -45,13 +39,7 @@
       "time": "08/17 11:52",
       "sentiment": "",
       "body": "報導稱 Anthropic 正將 Claude Code 的 Auto 模式設為預設設定，目前僅此單一來源，尚待官方 changelog 或其他媒體佐證。",
-      "focusTags": [],
-      "sedimented": [
-        {
-          "id": "claude-code",
-          "pageType": "entity"
-        }
-      ]
+      "focusTags": []
     },
     {
       "title": "Claude Code gets a /design command that lets developers create UI mockups right in the terminal - the-decoder.com",
@@ -60,13 +48,7 @@
       "time": "08/18 10:08",
       "sentiment": "",
       "body": "報導稱 Claude Code 新增 `/design` 指令，可直接在終端機建立 UI mockup；目前僅此單一媒體來源。",
-      "focusTags": [],
-      "sedimented": [
-        {
-          "id": "claude-code",
-          "pageType": "entity"
-        }
-      ]
+      "focusTags": []
     }
   ],
   "techUpdates": [
@@ -77,13 +59,7 @@
       "time": "08/18 10:35",
       "sentiment": "",
       "body": "官方文件說明 Claude Code Desktop 三個分頁（Chat、Cowork、Code）功能，涵蓋 Git 隔離的並行 session、拖放版面配置、整合終端機與檔案編輯器、電腦操作、手機發起 Dispatch session、視覺化 diff review、app 預覽、PR 監控與 connectors。",
-      "focusTags": [],
-      "sedimented": [
-        {
-          "id": "claude-code",
-          "pageType": "entity"
-        }
-      ]
+      "focusTags": []
     },
     {
       "title": "官方 Skills 異動：anthropics/skills 官方技能庫",
@@ -200,12 +176,6 @@
       "body": "CyberSecurityNews 揭露勒索軟體操作者濫用 Claude Code 的攻擊鏈（詳見今日聚焦）。",
       "focusTags": [
         "[風險警示]"
-      ],
-      "sedimented": [
-        {
-          "id": "claude-code",
-          "pageType": "entity"
-        }
       ]
     },
     {
@@ -257,13 +227,7 @@
       "time": "08/18 10:28",
       "sentiment": "",
       "body": "macobserver.com 針對 Mac 平台比較 Codex、Cursor、Claude Code 三款編碼工具。",
-      "focusTags": [],
-      "sedimented": [
-        {
-          "id": "claude-code",
-          "pageType": "entity"
-        }
-      ]
+      "focusTags": []
     },
     {
       "title": "Will Anthropic and OpenAI Stop Selling Their Best AI to Businesses? - The Information",
@@ -283,13 +247,7 @@
       "time": "08/17 13:12",
       "sentiment": "😊",
       "body": "社群展示網站，收錄社群提交、經人工審核的 Claude Code status line 樣式，每則皆附真實 sandbox 容器截圖；此則同時被兩個獨立來源收錄。",
-      "focusTags": [],
-      "sedimented": [
-        {
-          "id": "claude-code",
-          "pageType": "entity"
-        }
-      ]
+      "focusTags": []
     },
     {
       "title": "Show HN: Doberman: The AI watchdog that stops Claude from deleting your database",
@@ -307,13 +265,7 @@
       "time": "08/17 18:33",
       "sentiment": "😐",
       "body": "作者分享打造 HarnessRouter 的動機：過去自行串接 Codex、Claude Code、Hermes 等多種 agent harness 工程負擔沉重，因此做出統一的 API 層。",
-      "focusTags": [],
-      "sedimented": [
-        {
-          "id": "claude-code",
-          "pageType": "entity"
-        }
-      ]
+      "focusTags": []
     },
     {
       "title": "I stopped ranking Claude Code failures by popularity. The result is more uncomfortable.",
@@ -322,13 +274,7 @@
       "time": "08/18 10:33",
       "sentiment": "😤",
       "body": "使用者指出 GitHub reactions 數並非可靠的失敗案例排序依據，改用其他方式檢視 Claude Code 的問題後得出更令人不安的結論。",
-      "focusTags": [],
-      "sedimented": [
-        {
-          "id": "claude-code",
-          "pageType": "entity"
-        }
-      ]
+      "focusTags": []
     },
     {
       "title": "Claude code usage burning fast?",
@@ -337,13 +283,7 @@
       "time": "08/18 10:05",
       "sentiment": "😤",
       "body": "使用者反映近期即使是小型、簡單的功能請求，Claude Code 消耗的 token 額度也明顯比以往更快見底。",
-      "focusTags": [],
-      "sedimented": [
-        {
-          "id": "claude-code",
-          "pageType": "entity"
-        }
-      ]
+      "focusTags": []
     },
     {
       "title": "kinda tired of re-explaining my whole project to claude code every session so i built it a memory it can actually read",
@@ -352,13 +292,7 @@
       "time": "08/18 09:29",
       "sentiment": "🤔",
       "body": "使用者分享因不堪每次 session 都要重新解釋專案背景，自行打造一套 Claude Code 可讀取的記憶機制。",
-      "focusTags": [],
-      "sedimented": [
-        {
-          "id": "claude-code",
-          "pageType": "entity"
-        }
-      ]
+      "focusTags": []
     },
     {
       "title": "What todo when you hit the Claude Code limit?",
@@ -367,13 +301,7 @@
       "time": "08/18 09:17",
       "sentiment": "😐",
       "body": "使用者發文詢問社群，觸及 Claude Code 使用額度上限時該如何因應。",
-      "focusTags": [],
-      "sedimented": [
-        {
-          "id": "claude-code",
-          "pageType": "entity"
-        }
-      ]
+      "focusTags": []
     }
   ],
   "billing": [],
@@ -513,18 +441,8 @@
   "preview": "Bloomberg、Reuters、CNBC、Benzinga 等多家財經媒體同步報導：Anthropic 年化營收已站上 650 億美元，市場解讀為 IPO 前釋出的強力業績訊號。",
   "sedimentedToday": [
     {
-      "id": "claude-code",
-      "name": "Claude Code",
-      "pageType": "entity"
-    },
-    {
       "id": "claude-design",
       "name": "Claude Design",
-      "pageType": "entity"
-    },
-    {
-      "id": "claude-skills",
-      "name": "Claude Skills",
       "pageType": "entity"
     },
     {
@@ -535,21 +453,6 @@
     {
       "id": "ai-agent-safety",
       "name": "AI Agent 安全與可靠性",
-      "pageType": "topic"
-    },
-    {
-      "id": "anthropic-business",
-      "name": "Anthropic 商業健康度",
-      "pageType": "topic"
-    },
-    {
-      "id": "anthropic-government-policy",
-      "name": "Anthropic 政府與軍事政策",
-      "pageType": "topic"
-    },
-    {
-      "id": "community-tech-discussions",
-      "name": "社群技術討論趨勢",
       "pageType": "topic"
     },
     {

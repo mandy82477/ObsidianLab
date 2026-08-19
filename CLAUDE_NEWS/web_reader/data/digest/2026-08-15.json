@@ -61,13 +61,7 @@
       "time": "08/15 00:27",
       "sentiment": "",
       "body": "Fable 5 錯誤率升高，影響區間 08-14 20:00 至 08-15 00:11 UTC，已解決。",
-      "focusTags": [],
-      "sedimented": [
-        {
-          "id": "fable-5",
-          "pageType": "entity"
-        }
-      ]
+      "focusTags": []
     }
   ],
   "mediaReports": [
@@ -409,11 +403,6 @@
   "preview": "Anthropic 官方說明文字浮水印的運作方式，並宣布**第三方偵測 API**——外部單位可據以判斷文字是否由 Claude 產生；本站 08-11 日報已記錄浮水印上線報導，今日補上官方機制說明與偵測管道。",
   "sedimentedToday": [
     {
-      "id": "fable-5",
-      "name": "Claude Fable 5",
-      "pageType": "entity"
-    },
-    {
       "id": "opus-5",
       "name": "Claude Opus 5",
       "pageType": "entity"
@@ -431,11 +420,6 @@
     {
       "id": "community-tech-tools",
       "name": "社群工具目錄",
-      "pageType": "topic"
-    },
-    {
-      "id": "enterprise-tool-tracker",
-      "name": "大型企業 AI 編碼工具使用追蹤",
       "pageType": "topic"
     },
     {
