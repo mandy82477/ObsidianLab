@@ -194,27 +194,27 @@
     "length": 77420
   },
   "https://claude.com/pricing": {
-    "hash": "70cd7828c1d1a3305074498a3ac81b6944a46d25b1a990d73127ba2a4fb946af",
-    "length": 31561
+    "hash": "0247007f8dd0bd2e7b118bcb465abc5ffbf5a9056e4861aed4ef692d637bdfa7",
+    "length": 31600
   },
   "https://support.claude.com/en/articles/15424964-claude-fable-5-on-your-plan": {
-    "hash": "72717eed38f58ca41b49f0544fdd8425d6256f569d4fbdac69203c7db805b35d",
-    "length": 22020
+    "hash": "5d3bda7bb8b64c622d04e275f27df6a287170ed7cd4be4cda0dbdef584d97070",
+    "length": 21970
   },
   "https://support.claude.com/en/articles/12429409-manage-usage-credits-for-paid-claude-plans": {
-    "hash": "d0d7bfe9bdb700d7b5317a40ddbd1babed7dcf05ea89083956b147d85d4a8719",
-    "length": 22821
+    "hash": "86c04184d006df43eeaa45d96af144b665b612a99760a8129b4deef6612ed0b2",
+    "length": 22761
   },
   "https://support.claude.com/en/articles/11647753-how-do-usage-and-length-limits-work": {
-    "hash": "fac6e1871d84241c75c7ffed0b72fce88ade1460cc680236b1341c088336e315",
-    "length": 22182
+    "hash": "38397c1f829dd9b4ed13c2e254eaf8a59195dc7797110901e9bb0ea9c204e683",
+    "length": 22132
   },
   "https://support.claude.com/en/articles/11145838-use-claude-code-with-your-pro-or-max-plan": {
-    "hash": "ea7f327706eca93099ccba8f8f185eaaeed66c62da48f618bdf1645a25a01e14",
-    "length": 22916
+    "hash": "e6b263e5aae34118aa56ceb8551cd4111cb553b7d5c79fbe3766ac22c1f5c659",
+    "length": 22812
   },
   "https://support.claude.com/en/articles/12138966-release-notes": {
-    "hash": "264786687978b98d84011165f5088a2ff69e7b74658ab391c3c5519a2951f4f1",
-    "length": 42924
+    "hash": "96cad57a331efa55a73e9aff682596b3aa86ec4414b99ca148f48b3328245214",
+    "length": 42875
   }
 }
