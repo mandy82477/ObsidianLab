@@ -24,13 +24,13 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 **領域：** 💼 商業
 **蒐集邊界：** 以 Claude 為參照系的競品動態為主，另針對競品發布與定價定向補抓（每日至多 2 則）；競品自身未與 Claude 對比的發布可能延遲或缺漏。
 **開始日期：** 2026-04
-**最後更新：** 2026-08-18
-**最後新聞更新：** 2026-08-18
+**最後更新：** 2026-08-20
+**最後新聞更新：** 2026-08-20
 
-> **最新競品動態**（2026-08-17）
-> - **Mshale：GitHub Copilot 終結「無限量」編碼方案，改版計費模式**：詳見「主要競品追蹤」GitHub Copilot 子區塊新增。
-> - **VentureBeat：Cursor 推出程式碼託管平台 Origin，藉 GitHub 中斷事件切入市場空隙**：詳見「主要競品追蹤」Cursor / Windsurf 子區塊新增。
-> - **The Register：Zhipu 稱新模型抓 bug 能力優於 Anthropic、OpenAI**：延續 08-15 已記錄之 GLM-5.3 資安能力與 Cursor 漏洞發現，本則進一步將能力宣稱正面對比 Anthropic 與 OpenAI，詳見「主要競品追蹤」Zhipu Z.AI 子區塊更新。
+> **最新競品動態**（2026-08-19）
+> - **TechCrunch／WSJ：OpenAI 推出新客戶資料隱私保護承諾，被解讀為針對 Anthropic 既有隱私訴求的競爭回應**：詳見「主要競品追蹤」OpenAI ChatGPT Work / GPT-5.6 子區塊新增。
+> - **Startup Fortune（專頁定向）：分析 AI 編碼 agent 定價模式與新創在成本上遭遇的擠壓**：詳見「觀察重點」新增與下方時序。
+> - **08-17 記錄之 GitHub Copilot 計費改版、Cursor Origin 平台、Zhipu 能力宣稱仍為近期重點**，詳見「主要競品追蹤」對應子區塊。
 
 ---
 
@@ -86,6 +86,7 @@ Claude Code 已成為 AI 輔助編碼的標竿產品，但競爭正快速升溫�
 - **投資 vs 競爭的矛盾**：Google 400 億投資 Anthropic 的同時開發競品，Amazon 雙品牌並行部署（Claude Code + Codex）——大型科技公司不押注單一供應商
 - **開源替代加速**：OpenCode 157K、DeepClaude 17x 成本節省——訂閱政策收緊（OpenClaw 禁令、6/15 計費結構）正在為開源方案創造需求
 - **企業成本臨界點**：Microsoft 退訂、Uber 燒光全年預算——企業 AI 工具採購的成本敏感度正在形成新的市場分水嶺
+- **新創在 AI 編碼 agent 定價鏈中被擠壓（2026-08-19，Startup Fortune，專頁定向）**：分析文章探討 AI 編碼 agent 的定價模式運作方式，以及建構於底層模型 API 之上的新創公司在成本結構上遭遇的擠壓；與上方「企業成本臨界點」（買方視角，Microsoft/Uber 的採購成本壓力）互補，本則是賣方/中介方視角——新創若定價低於底層 API 成本漲幅，毛利即遭壓縮；僅標題層級可用，具體成本結構、毛利率數字未見報導細節（推論）
 
 ---
 
@@ -160,6 +161,7 @@ Claude Code 已成為 AI 輔助編碼的標竿產品，但競爭正快速升溫�
 - **狀態**：正式推出（Reuters、ZDNET 2026-07-09）
 - **動態**：OpenAI 發表長期醞釀的「super app」ChatGPT Work，搭配新模型 GPT-5.6，明確訴求在**價格、速度、生產力**三個面向上超越 Anthropic
 - **意義**：與既有 OpenAI Codex CLI（下載量對 Claude Code 分流）不同，ChatGPT Work 定位為企業工作場景的整合入口，正面挑戰 Anthropic 的訂閱與企業採購雙軌商業模式；若價格與速度確實具優勢，可能加劇 Anthropic 6/15 計費爭議後的訂閱留存壓力（推論）（Reuters「OpenAI unveils long-awaited "super app" as rivalry with Anthropic intensifies」；ZDNET「OpenAI's GPT-5.6 and ChatGPT Work aim to beat Anthropic on price, speed, and productivity」）；定價細節待後續報導補上具體數字，見「競品定價對照」
+- **隱私面新戰線（2026-08-19）**：TechCrunch、WSJ 同步報導 OpenAI 推出新的客戶資料隱私保護承諾，兩媒體均將其解讀為針對 Anthropic 既有隱私訴求的競爭回應；延續本區塊「價格、速度、生產力」三面向競爭框架，本則首見「資料隱私」作為第四個正面對標維度，顯示 OpenAI 正將 Anthropic 過去強調的信任/安全定位優勢一併對標爭奪（推論）；具體承諾內容（資料保留期限、訓練用途排除範圍、稽核機制等）未見報導細節，僅標題層級可用（Google News/TechCrunch；WSJ）
 
 ### Cursor AI Agent「Sand」對標 Claude Cowork（開發中，代號確認 2026-07-13）
 - **狀態**：開發中，代號首度確認為「Sand」（TweakTown 2026-07-13；The Information 2026-07-09 首報）
@@ -290,6 +292,10 @@ Claude Code 已成為 AI 輔助編碼的標竿產品，但競爭正快速升溫�
 #### 近期單日動態彙整（2026-07-02 至 2026-07-26）
 
 > 逐日條目按主題可另見上方「主要競品追蹤」對應廠商子區塊；此區塊保留完整時序供追溯查證。
+
+### 2026-08-19
+- **[OpenAI ChatGPT Work / GPT-5.6，新增] TechCrunch／WSJ：OpenAI 推出新客戶資料隱私保護承諾，解讀為針對 Anthropic 隱私訴求的競爭回應**：詳見「主要競品追蹤」OpenAI 子區塊新增（Google News/TechCrunch；WSJ）
+- **[觀察重點，新增，專頁定向來源] Startup Fortune：分析 AI 編碼 agent 定價模式與新創在成本上遭遇的擠壓**：詳見「觀察重點」新增列（Google News/Startup Fortune）
 
 ### 2026-08-17
 - **[GitHub Copilot，新增] Mshale：GitHub Copilot 終結「無限量」編碼方案，改版計費模式**：詳見「主要競品追蹤」GitHub Copilot 子區塊新增（Google News/Mshale）
