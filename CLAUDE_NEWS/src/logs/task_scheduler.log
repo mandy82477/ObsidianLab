@@ -261,3 +261,16 @@
 [週3 2026/08/19 13:53:16.00] === Pipeline complete (agent) ===
 [cloud daily-news-pipeline-cloud OK 週3 2026/08/19 13:53:16.00]
 [Thu 2026/08/20 13:05:59.00] [cloud daily-news-pipeline-cloud STARTED 2026-08-20T13:05:59Z]
+[週4 2026/08/20 13:41:00.00] === Agent pipeline start (2026-08-20) ===
+[週4 2026/08/20 13:41:00.00] Step 0 昨日缺跑檢查 OK (news/2026-08-19.md 存在)
+[週4 2026/08/20 13:41:00.00] Step 0b 冪等閘 OK (news/2026-08-20.md 尚未存在)
+[週4 2026/08/20 13:41:00.00] Step 1a SKIPPED（雲端跳過，GitHub Actions 已完成抓料）
+[週4 2026/08/20 13:41:00.00] Step 1b 新鮮度防線 OK (date=2026-08-20, items=81)；原料健康檢查 OK（13/13 來源正常）；日報生成 OK；格式自檢 OK（3a=20, 3b=13）；摘要忠實度自檢 OK（抽 5 條，改寫 0 條）
+[週4 2026/08/20 13:41:00.00] Step 1c 確認 emitted-cache OK（確認 81 則，已 commit）
+[週4 2026/08/20 13:41:00.00] Step 2 Wiki ingest OK（模型/功能/商業/安全政策/社群五類已派工回報，人物類今日無條目）
+[週4 2026/08/20 13:41:00.00] Step 3 Wiki commit OK
+[週4 2026/08/20 13:41:00.00] 測試全綠 - web build 放行（rebase 取得 origin 新增的 data/link_health.json 後重跑通過）
+[週4 2026/08/20 13:41:00.00] Step 4 Building web reader... OK
+[週4 2026/08/20 13:41:00.00] Step 5 Single push done (news + wiki + web)
+[週4 2026/08/20 13:41:00.00] === Pipeline complete (agent) ===
+[cloud daily-news-pipeline-cloud OK 週4 2026/08/20 13:41:00.00]
