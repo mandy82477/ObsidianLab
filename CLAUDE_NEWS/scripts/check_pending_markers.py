@@ -238,6 +238,26 @@ def _overdue_entries(wiki_dir: Path, today: date) -> list[tuple[bool, int, str]]
     return entries
 
 
+def _legacy_by_page(wiki_dir: Path) -> list[tuple[str, int]]:
+    """舊字樣標記的頁面分佈，筆數降序。供 --queue 揭露佇列看不到的盲區。
+
+    必須走 wiki_pages() 與 utf-8-sig，與主報告的「存量殘餘」及 _overdue_entries
+    同一口徑——自己 rglob 會多算 index/_views 等頁，兩個數字打架
+    （2026-08-04 已為同類問題修過一次：iter_legacy 排除清單漏排 SHORT_RE）。
+    """
+    rows: list[tuple[str, int]] = []
+    for path in wiki_pages(wiki_dir):
+        try:
+            text = path.read_text(encoding="utf-8-sig")
+        except Exception:
+            continue
+        n = len(iter_legacy(text, path))
+        if n:
+            rows.append((_slug(path, wiki_dir), n))
+    rows.sort(key=lambda r: (-r[1], r[0]))
+    return rows
+
+
 def print_queue(out, wiki_dir: Path | None = None, today: date | None = None) -> None:
     wiki_dir = wiki_dir or WIKI_DIR
     today = today or date.today()
@@ -249,6 +269,18 @@ def print_queue(out, wiki_dir: Path | None = None, today: date | None = None) ->
         print("  （無逾期標記）", file=out)
     print(file=out)
     print(f"總逾期數：{len(entries)}", file=out)
+
+    # 舊語法盲區：佇列只讀新語法標記（舊字樣沒有探針欄，機器找不到它）。
+    # 只印數字會讓 5c 誤以為「總逾期數 0」＝沒事，故在此列出頁面分佈，
+    # 讓消化端每輪至少看得到盲區規模與位置。
+    legacy = _legacy_by_page(wiki_dir)
+    if legacy:
+        total = sum(n for _, n in legacy)
+        print(file=out)
+        print(f"⚠️ 舊語法盲區：{total} 筆未回填，不在上方佇列內（前 10 頁）", file=out)
+        for name, n in legacy[:10]:
+            print(f"  {n:>3} 筆  {name}", file=out)
+        print("  → 這些筆沒有探針欄，5c 永遠撈不到；依 `/wiki-lint` 3g 於記者輪回填為新語法後才會進佇列", file=out)
 
 
 def main() -> int:
