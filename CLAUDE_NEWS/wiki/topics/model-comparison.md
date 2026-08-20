@@ -23,7 +23,7 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 **狀態：** ongoing
 **領域：** 🤖 模型
 **開始日期：** 2026-07-02
-**最後更新：** 2026-08-15
+**最後更新：** 2026-08-20
 **最後新聞更新：** 2026-08-10
 
 > **最新對照更新**（2026-08-10）
@@ -44,7 +44,7 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 | [[entities/fable-5\|Fable 5]] | 旗艦（Mythos 級公開版） | $10 / $50 · 1M | 跨多天的長期 agentic 工作流、deep reasoning、安全漏洞分析 |
 | [[entities/opus-5\|Opus 5]] | 次旗艦（Max 預設 / Pro 最強） | $5 / $25（官方確認）· 1M | 數小時自主編碼、跨數十檔 refactor、複雜系統工程 |
 | [[entities/sonnet-5\|Sonnet 5]] | 主力平衡（Claude Code 預設） | $2 / $10（促銷至 8/31）· 1M | 日常規模開發（分鐘～1 小時級）、tool use 密集、成本敏感 |
-| Sonnet 4.6 | 前代主力 | 低於 Sonnet 5 正式價 · 200K | 已驗證穩定、尚未遷移的既有工作流 |
+| Sonnet 4.6 | 前代主力 | $3 / $15（官方確認）· 1M | 已驗證穩定、尚未遷移的既有工作流 |
 | Haiku 4.5 | 輕量 worker | 最低 · 200K | 即時互動、高頻批量分類、延遲與成本敏感的 sub-agent |
 
 **不進表的選項：** [[entities/opus-4-8|Opus 4.8]]、[[entities/opus-4-7|Opus 4.7]] 皆已被取代，新採用一律改用 Opus 5（Fast Mode 已非 4.8 獨佔優勢）；[[entities/mythos|Mythos 5]] 為非公開陣容（僅限授權機構的無護欄安全研究），一般開發用途改選 Fable 5。三者的細節見下方「選型細節」。「不適合」的判準亦全數列於選型細節，每個模型一條。
@@ -56,7 +56,7 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 - **Fable 5**：官方定位 long-running agents／long-horizon agentic tasks（[choosing-a-model](https://platform.claude.com/docs/en/about-claude/models/choosing-a-model)），適合**跨多天**的長期工作流、deep reasoning、advanced research、安全漏洞分析。**不適合**日常短問答或單次改動小的任務（改選 Sonnet 5，成本大幅降低）；不適合前沿 LLM 開發（護欄靜默降級）；07-02 起有 Defense in Depth 分類器誤判實測，需人工複核。**存取狀態**：免費期已於 **2026-07-19 到期**；07-20 起 Max／Team premium 為標配（上限週用量 50%）、**Pro／Team standard 需以 usage credits 按 $10/$50 per Mtok 付費**（官方 Help Center，2026-08-08 查證）。Pro 用戶選用前先確認是否願意離開訂閱硬上限。另 07-20 曾出現 Max 誤判需購買 credits 的 bug（#79337 至 08-07 仍延燒）。詳見 [[entities/pricing]]。
 - **Opus 5**：官方定位 multihour autonomous coding agents／large-scale refactoring（[choosing-a-model](https://platform.claude.com/docs/en/about-claude/models/choosing-a-model)），硬邊界是**比日常大一級、但不到跨多天**：數小時自主執行的編碼 agent、跨數十檔的大規模 refactor、複雜系統工程、vision-heavy 工作流、computer use；為 Claude Max/Pro 目前最強可用模型。**不適合**日常規模的 Claude Code 開發（改選 Sonnet 5，成本更低且已足夠）；不適合資安／滲透測試導向任務（官方自陳仍落後 Mythos 5，但一般使用者拿不到 Mythos 5——公開陣容資安首選為 Fable 5〔留意分類器誤判〕，Opus 5 為次選）；不適合跨多天的極長時任務（改選 Fable 5）。**重度 subagent／workflow 工作流建議先實測**：Claude Code 2.1.219/220 疑有僅針對 Opus 5 的硬編碼工具限制（不得呼叫 AgentTool／workflows／deep-research，除非明確要求），未經官方證實，見 [[entities/claude-code]]。
 - **Sonnet 5**：官方定位 code generation／agentic tool use（[choosing-a-model](https://platform.claude.com/docs/en/about-claude/models/choosing-a-model)），適合 Claude Code **日常規模**開發、tool use 密集、成本敏感；v2.1.197 起為 Claude Code 預設。**不適合**比日常規模更大的任務：跨數十檔 refactor、數小時自主 agent（改選 Opus 5）；不適合高頻批量且延遲敏感的場景（改選 Haiku 4.5）。
-- **Sonnet 4.6**：適合已驗證穩定、尚未遷移的既有工作流；**不適合**新專案啟動（改選 Sonnet 5，促銷期至 8/31 CP 值更高，見 [[entities/pricing]]）。
+- **Sonnet 4.6**：**$3 / $15 per Mtok、1M context、128k 輸出**（官方模型總覽頁，2026-08-20 查證；官方列為 legacy，仍可用）。適合已驗證穩定、尚未遷移的既有工作流；**不適合**新專案啟動——Sonnet 5 促銷期至 8/31 為 $2/$10，同 context 同輸出上限而更便宜，促銷結束後兩者同價，屆時仍應選 Sonnet 5。見 [[entities/pricing]]。
 - **Haiku 4.5**：官方定位 real-time applications／sub-agent tasks（[choosing-a-model](https://platform.claude.com/docs/en/about-claude/models/choosing-a-model)），適合即時互動、高頻批量分類、延遲與成本敏感又需一定推理力的 sub-agent worker；**不適合**多步驟規劃或跨檔案關聯推理（改選 Sonnet 5 起）。
 - **Opus 4.8 / Opus 4.7（已被取代）**：僅適合尚未遷移者的既有工作流延續，不建議新採用——次旗艦地位已由 Opus 5 接手，Fast Mode 亦非 4.8 獨佔優勢（官方文件確認 Opus 5 與 4.8 皆支援 fast mode）。Opus 4.7 另有 200K context 上限與思考深度議題，見 [[entities/opus-4-7]]。
 - **Mythos 5（非公開陣容）**：無護欄完整版，僅供獲授權機構的安全研究、滲透測試；一般使用者取不到，不可作為公開陣容模型的淘汰基準——公開陣容資安首選為 Fable 5。
