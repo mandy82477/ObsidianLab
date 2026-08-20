@@ -20,7 +20,7 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 ---
 # AI 編碼工具競品動態
 
-**狀態：** monitoring
+**狀態：** ongoing
 **領域：** 💼 商業
 **蒐集邊界：** 以 Claude 為參照系的競品動態為主，另針對競品發布與定價定向補抓（每日至多 2 則）；競品自身未與 Claude 對比的發布可能延遲或缺漏。
 **開始日期：** 2026-04
