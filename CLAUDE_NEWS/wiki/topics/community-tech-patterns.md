@@ -1,15 +1,15 @@
 ---
 page: "topics/community-tech-patterns"
 kind: "topic"
-status: "monitoring"
+status: "ongoing"
 domain: "🌐 社群"
-last_updated: "2026-08-19"
-last_news_update: "2026-08-19"
-status_main: "monitoring"
+last_updated: "2026-08-20"
+last_news_update: "2026-08-20"
+status_main: "ongoing"
 days_since_news: 0
-inbound_links: 40
-attribution_count: 76
-attribution_last: "2026-08-19"
+inbound_links: 41
+attribution_count: 79
+attribution_last: "2026-08-20"
 top_source: "devto"
 pending_count: 9
 pending_overdue: 0

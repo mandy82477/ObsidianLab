@@ -1,0 +1,399 @@
+{
+  "date": "2026-08-20",
+  "generatedAt": "2026-08-20 13:09 UTC",
+  "articleCount": 81,
+  "sourceCount": "13/13",
+  "bulletin": "",
+  "topStories": [
+    {
+      "title": "Show HN: Frugal Tokens – explore costs and usage across coding agents",
+      "url": "https://demo.frugaltokens.com/",
+      "source": "Hacker News",
+      "time": "08/19 17:07",
+      "sentiment": "",
+      "body": "作者分享自製工具，用來檢視自己各 coding agent session 的花費、cache miss 對成本的影響，並提供依模型與快取狀態拆解的用量分析與逐一 session 的呼叫細節檢視。",
+      "focusTags": []
+    }
+  ],
+  "techUpdates": [
+    {
+      "title": "[anthropics/claude-code] v2.1.237",
+      "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.237",
+      "source": "GitHub / anthropics/claude-code",
+      "time": "08/20 00:54",
+      "sentiment": "",
+      "body": "修復使用 LLM gateway 或自訂 base URL 的 session 中 prompt caching 失效的問題，並新增內建「Concise」輸出風格，讓 Claude 直接給結果、省去前言與敘述性文字。",
+      "focusTags": []
+    },
+    {
+      "title": "[anthropics/anthropic-sdk-python] v0.125.0",
+      "url": "https://github.com/anthropics/anthropic-sdk-python/releases/tag/v0.125.0",
+      "source": "GitHub / anthropics/anthropic-sdk-python",
+      "time": "08/19 22:00",
+      "sentiment": "",
+      "body": "Python SDK 新版本，新增 managed agents 的 web search 設定相關功能。",
+      "focusTags": []
+    },
+    {
+      "title": "[anthropics/anthropic-sdk-typescript] vertex-sdk: v0.19.5 ／ google-cloud-sdk: v0.0.10",
+      "url": "https://github.com/anthropics/anthropic-sdk-typescript/releases/tag/vertex-sdk-v0.19.5",
+      "source": "GitHub / anthropics/anthropic-sdk-typescript",
+      "time": "08/19 22:00",
+      "sentiment": "",
+      "body": "TypeScript SDK 的 Vertex 與 Google Cloud 子套件同步發布小版本更新，內容以維護性變更為主。",
+      "focusTags": []
+    }
+  ],
+  "mediaReports": [
+    {
+      "title": "Goldman Sachs, OKX Both Cut Off From Claude AI in Hong Kong - Yahoo Finance",
+      "url": "https://news.google.com/rss/articles/CBMilAFBVV95cUxNNXNiSk9CMHc2OUN6R0VhR0tDMlNvZG1sVzUzRU9GQjQ3X2NkaThISHlNQWxsYXJMcTlBOE9reUdnX2JjLWRKWERaTDBwanBoMTkyQnlCQVB3aVdNV1ZsQk1wdHBNNnVWNDdONzlERThlU0RsSGxEN0ZraUxyYzI0QllDamI4SHQ2NFJJWjdNWWJaZ25u?oc=5",
+      "source": "Google News / Yahoo Finance",
+      "time": "08/20 03:44",
+      "sentiment": "",
+      "body": "報導稱高盛與 OKX 均在香港被切斷 Claude AI 存取權限，涉及地緣政治與合規因素。",
+      "focusTags": []
+    },
+    {
+      "title": "OpenAI seeks to one-up Anthropic with new customer privacy protections - TechCrunch",
+      "url": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxOeE1RX0FaeTZ4N25BV05ZYnhqS3I3bVd4aHB2WWI2QUhCV3czRmh2UGxWUjhKNDB5OWNoUldnd002WWFidk5QaXhtVG1Kd29UX2JaR2FxcWNIbGVCNndVVnhRYkF4UlpHejZRTWFVWXdvR013dkU3TWFzbjJIbG9sbDFHYTI2S3I3bFZaQkJTYXg5aVhoMHVtUHVYSHB1dExJTTUzN1poa2I?oc=5",
+      "source": "Google News / TechCrunch",
+      "time": "08/19 22:10",
+      "sentiment": "",
+      "body": "TechCrunch 與 WSJ 同步報導 OpenAI 推出新的客戶資料隱私保護承諾，被解讀為針對 Anthropic 既有隱私訴求的競爭回應。",
+      "focusTags": []
+    },
+    {
+      "title": "Coders Say They Already Found Workarounds to Claude’s Invisible Watermarks - WIRED",
+      "url": "https://news.google.com/rss/articles/CBMipAFBVV95cUxQdnVRS0g1dHJENG1VR2ppa25vUFpkRlQtazVRWEhCelNSSWJKSTE4YTJ4NEpaZWV4TFd0dHN5cXA3M20tLVRTdmNWeVJyaHRXSEZ0QWVFSGZFN0hUZDJyUXl5cWVtTFhTNTd2NU8wbE5pS2drdzJLTFdJRHk2aW5vSlY2ME9hUTZ0LVF3NTRoV0VWMkJycVhLUXBOZXYwRk41ZGJvZA?oc=5",
+      "source": "Google News / WIRED",
+      "time": "08/19 16:44",
+      "sentiment": "",
+      "body": "WIRED 報導稱有工程師已找到繞過 Claude 隱形浮水印機制的方法。",
+      "focusTags": []
+    },
+    {
+      "title": "Anthropic’s Claude can now send Gmail emails without asking first - Mashable",
+      "url": "https://news.google.com/rss/articles/CBMigAFBVV95cUxNZlZjWGxjcDNNckRKYVFYeXFsVHVrOUQ4aGk0d2s5NnBuWUY0MzVNaG9HYk43SG1QbjRvWHYybEJGclBsR1lVZWVqbmc4M2lfMzdIdlVaZmVWcmF3VTFMaU1Kd25rcGwyMUVQZHplVzhDV0dPaE42MU4ya0Fmc0V6Uw?oc=5",
+      "source": "Google News / Mashable",
+      "time": "08/19 16:45",
+      "sentiment": "",
+      "body": "Mashable 與 Android Police 同步報導，Claude 現可在未事先詢問的情況下直接發送 Gmail 郵件。",
+      "focusTags": []
+    },
+    {
+      "title": "Anthropic-Tied Data Center Inks $1.3 Billion Private Credit Loan - Yahoo Finance",
+      "url": "https://news.google.com/rss/articles/CBMimwFBVV95cUxNSm9USkx5Qy1HeWdnOUw5QkhkSy1tVTlCN2gxRWpVbXptNVdUbmc0YllIYTdyTGd1QVB6NGVWNXpXZ0NhR2hqQ3RFeWdnM2pOVWdSMTVKWDVUbDJGWlVSVkMzQjNGckVYZDhiMlpFYWo4TU5wNkZOYzFyQlFrNlBYbDE2NGJzblNqUVNzaWE2SktnU2JzakZ3LV91UQ?oc=5",
+      "source": "Google News / Yahoo Finance",
+      "time": "08/19 12:15",
+      "sentiment": "",
+      "body": "報導稱一座與 Anthropic 相關的資料中心取得 13 億美元的私募信貸貸款。",
+      "focusTags": []
+    },
+    {
+      "title": "Dev taps Claude Code to craft custom printer driver for macOS - The Register",
+      "url": "https://news.google.com/rss/articles/CBMiugFBVV95cUxPNVBtSVpDdDFVWkhsV0F1LWlLOUJlelpJMERfWmFhTG1EVDg1VGx5c1dadkFkLWZHLU5falEyc3l3NWdodDRkb3AzZTNnLUlUWG9WOWtoekhnSmtWVUFqbEw2dHZ4WVFnanFWS2Zfa0R6el9CSUFNcDRzaFlLbnZNdTJORU1OS1kxRm05VG5XYktuRXJwWWR2clZYazlQSDJEeUlFdWo0cE1Kd2FUUF96LTJaQWF4Q3JJUkE?oc=5",
+      "source": "Google News / The Register",
+      "time": "08/19 19:31",
+      "sentiment": "",
+      "body": "The Register 報導一名開發者用 Claude Code 為 macOS 打造自訂印表機驅動程式。",
+      "focusTags": [],
+      "sedimented": [
+        {
+          "id": "claude-code",
+          "pageType": "entity"
+        }
+      ]
+    },
+    {
+      "title": "The most interesting takeaway from Anthropic’s design study has nothing to do with proteins - Endpoints News",
+      "url": "https://news.google.com/rss/articles/CBMinAFBVV95cUxNeTNMZXZXeWgxZWpsNXd6UHhZU1VLQkFfZ3VMUUJRZ1FLX0VvZjdmaVNvT1k3Z0pxY2ZhT2dIY2FIOTRLRVlxWng5Y1AzdGVVWkMweHhSOE5PVjFIaWljLWJoMHBEQ2hMRFBONzNpZlBPaHcwZE1vS3BUUUJGQ1FyTW1BamYwaTZ6a09aU0RRZ290aEFlcmJGMF9lZUw?oc=5",
+      "source": "Google News / Endpoints News",
+      "time": "08/19 15:21",
+      "sentiment": "",
+      "body": "Endpoints News 分析 Anthropic 一份設計研究，指出其真正值得關注之處與蛋白質研究本身無關。",
+      "focusTags": []
+    },
+    {
+      "title": "OpenAI Raises the Safety Bar on Anthropic; Anthropic Expands Its Revenue Lead - The Information",
+      "url": "https://news.google.com/rss/articles/CBMiugFBVV95cUxNeGE2ek0wODJIN3VVWUZtdTVZam5wLXB2cmtsRGZqWWZWbVhZSlp2NmNGZ2RUQk5sRmRYalQxWko3ZjNVeXAyY1ZIaUJVQXl4eHR5NDRQT0FWemdOVlQ0ajctb0pjc3NqaDNpR3lBWE1LLXBOX05nb3o5NW5PeHQ5VWNlbFhlME1UODlwdjhMVEROeFBWZnVVVm9hZ2RxaWEwLVlUZG9tX0FQRnNEMkJQdWlhSEhQZFFJb0E?oc=5",
+      "source": "Google News / The Information",
+      "time": "08/19 14:01",
+      "sentiment": "",
+      "body": "The Information 報導 OpenAI 在安全政策上追上 Anthropic 的同時，Anthropic 的營收領先幅度仍在擴大。",
+      "focusTags": []
+    }
+  ],
+  "discussions": [
+    {
+      "title": "Stop Anthropomorphizing Intermediate Tokens as Reasoning/Thinking Traces",
+      "url": "https://arxiv.org/abs/2504.09762",
+      "source": "Hacker News",
+      "time": "08/19 11:35",
+      "sentiment": "",
+      "body": "arXiv 論文主張不應將模型輸出解答前產生的中間 token 直接擬人化稱為「推理／思考痕跡」，Hacker News 上引發討論。情緒：🤔",
+      "focusTags": []
+    },
+    {
+      "title": "The Claude language calibration issue on GitHub got an official response from Anthropic. Guess who wrote it.",
+      "url": "https://www.reddit.com/r/ClaudeCode/comments/1vtfib0/the_claude_language_calibration_issue_on_github/",
+      "source": "Reddit / r/ClaudeCode",
+      "time": "08/20 10:20",
+      "sentiment": "",
+      "body": "Reddit 貼文呼應今日聚焦提及的 Opus 5.0 用詞爭議，指出 Anthropic 對該 GitHub issue 的官方回覆讀起來疑似又是 Claude 代寫。情緒：😤",
+      "focusTags": []
+    },
+    {
+      "title": "I let Claude Code trade stocks with my real money. Results:",
+      "url": "https://www.reddit.com/r/ClaudeAI/comments/1voi341/i_let_claude_code_trade_stocks_with_my_real_money/",
+      "source": "Reddit / r/ClaudeAI · 週熱門",
+      "time": "08/14 20:09",
+      "sentiment": "",
+      "body": "使用者分享讓 Claude Code 用真實資金自動交易股票的實驗結果，屬個人實測分享。情緒：😐",
+      "focusTags": [],
+      "sedimented": [
+        {
+          "id": "claude-code",
+          "pageType": "entity"
+        }
+      ]
+    },
+    {
+      "title": "Finally, Claude Code has “Auto-continue when limits reset”",
+      "url": "https://www.reddit.com/r/ClaudeAI/comments/1vndhg6/finally_claude_code_has_autocontinue_when_limits/",
+      "source": "Reddit / r/ClaudeAI · 週熱門",
+      "time": "08/13 15:12",
+      "sentiment": "",
+      "body": "使用者回報 Claude Code 新增「額度重置後自動繼續」功能，社群反應正面。情緒：😊",
+      "focusTags": [],
+      "sedimented": [
+        {
+          "id": "claude-code",
+          "pageType": "entity"
+        }
+      ]
+    }
+  ],
+  "billing": [
+    {
+      "title": "Claude Code’s Temporary Usage Boost Expires Tonight. Here’s What Actually Changes - DevOps.com",
+      "url": "https://news.google.com/rss/articles/CBMinwFBVV95cUxPRkh5TFNKWHNTQXZzUV9XTGthdUZBQzJzRThrQlRwZ1YzalBhUEYtU29Sc2FBcWNDbWctQzFRRkxiQ2xtaWRxT2pUOGsyclBLME9udDgyX0tpRjM3NlV2V0dKME5QMDF1VHNHZ0VSSGF0amNaU09SSXljNzd2S1ZYN2twTUlyUWJHVG5iTDNmbExPN3ZDWjBqTU10U2JRTFU?oc=5",
+      "source": "Google News / DevOps.com",
+      "time": "08/19 13:07",
+      "sentiment": "",
+      "body": "報導稱 Claude Code 的「暫時性用量提升」將於當晚到期。詳見今日聚焦。",
+      "focusTags": [
+        "[持續追蹤]"
+      ],
+      "sedimented": [
+        {
+          "id": "claude-code",
+          "pageType": "entity"
+        }
+      ]
+    },
+    {
+      "title": "Anthropic extends 50% limit increase to Aug 31",
+      "url": "https://www.reddit.com/r/ClaudeAI/comments/1vrzmx9/anthropic_extends_50_limit_increase_to_aug_31/",
+      "source": "Reddit / r/ClaudeAI · 週熱門",
+      "time": "08/18 19:38",
+      "sentiment": "",
+      "body": "Reddit 回報 Claude Code 週用量提升 50% 的促銷已延長至 8/31。詳見今日聚焦。",
+      "focusTags": [
+        "[持續追蹤]"
+      ],
+      "sedimented": [
+        {
+          "id": "claude-code",
+          "pageType": "entity"
+        }
+      ]
+    },
+    {
+      "title": "官方文件：How do usage and length limits work?",
+      "url": "https://support.claude.com/en/articles/11647753-how-do-usage-and-length-limits-work",
+      "source": "Official Docs",
+      "time": "08/20 10:37",
+      "sentiment": "",
+      "body": "官方說明頁解釋用量限制（usage limits）與長度限制（length limits）的差異及各自運作方式。",
+      "focusTags": []
+    },
+    {
+      "title": "官方文件：Manage usage credits for paid Claude plans",
+      "url": "https://support.claude.com/en/articles/12429409-manage-usage-credits-for-paid-claude-plans",
+      "source": "Official Docs",
+      "time": "08/20 10:37",
+      "sentiment": "",
+      "body": "官方說明頁介紹 Pro／Max 5x／Max 20x 付費方案在額度用盡後，如何透過用量額度（usage credits）以隨用隨付方式繼續使用。",
+      "focusTags": []
+    }
+  ],
+  "focus": [
+    {
+      "tag": "[重大事件]",
+      "text": "媒體報導 Anthropic 目前能力最強的模型（代號「Model 2」）暫僅供內部使用，尚未對外開放。",
+      "ref_urls": [
+        "https://news.google.com/rss/articles/CBMikwFBVV95cUxQNFNjOV9kU1NNbl9IcUpyWHRpQjBpeHR1VU4tZm5iTmt5LVBreEdYOVRLRUdERUx6b0JIUTVKNmNmWWdqOVN0eTZwdzhrdnVTWnhFa1RJUDRWcjBRdkpqeHFlTjktTjNhZXZ1UzlwMzA4SWJjZUZJX2ZqNFg0SURhdGl0MTFfQlN2MmxQVGR6QUdFSUk?oc=5"
+      ]
+    },
+    {
+      "tag": "[持續追蹤]",
+      "text": "Claude Code 用量調整訊號分歧：Reddit 回報「週用量提升 50%」促銷已延長至 8/31；同時另有報導標題稱「暫時性用量提升」將於當晚到期並說明實際變化，兩則消息是否指向同一波政策、範圍是否重疊，標題層級無法確認，讀者可留意官方文件公告為準。",
+      "ref_urls": [
+        "https://www.reddit.com/r/ClaudeAI/comments/1vrzmx9/anthropic_extends_50_limit_increase_to_aug_31/",
+        "https://news.google.com/rss/articles/CBMinwFBVV95cUxPRkh5TFNKWHNTQXZzUV9XTGthdUZBQzJzRThrQlRwZ1YzalBhUEYtU29Sc2FBcWNDbWctQzFRRkxiQ2xtaWRxT2pUOGsyclBLME9udDgyX0tpRjM3NlV2V0dKME5QMDF1VHNHZ0VSSGF0amNaU09SSXljNzd2S1ZYN2twTUlyUWJHVG5iTDNmbExPN3ZDWjBqTU10U2JRTFU?oc=5"
+      ]
+    },
+    {
+      "tag": "[重大事件]",
+      "text": "Claude Code GitHub Issues 今日集中湧入多筆高互動已知問題回報，含記憶體用量異常導致程序被 OOM 終止（97 則留言）、Cowork 功能產生 10GB VM 套件拖慢效能（76 則留言）、tool call 解析失敗中斷工作階段（75 則留言）、Cowork 工作區啟動失敗且重開機無法解決（73 則留言）、v2.1.113 後 Termux/Android 因原生二進位需要 glibc 而失效（67 則留言），以及一則思考區塊修改觸發 API 400 錯誤的回報（100 則留言）。",
+      "ref_urls": [
+        "https://github.com/anthropics/claude-code/issues/4953",
+        "https://github.com/anthropics/claude-code/issues/22543",
+        "https://github.com/anthropics/claude-code/issues/63875",
+        "https://github.com/anthropics/claude-code/issues/27801",
+        "https://github.com/anthropics/claude-code/issues/50270",
+        "https://github.com/anthropics/claude-code/issues/10199"
+      ]
+    },
+    {
+      "tag": "[社群趨勢]",
+      "text": "Hacker News 熱門討論「Opus 5.0 drives incoherence into the stratosphere」（181 分）批評模型輸出用詞浮誇失真；留言指出 Anthropic 工程師的回覆本身疑似由 Claude 代寫、且措辭仍帶有被抱怨的同類「行話」，引發讀者兩極反應。",
+      "ref_urls": [
+        "https://github.com/anthropics/claude-code/issues/77136"
+      ]
+    },
+    {
+      "tag": "[重大事件]",
+      "text": "多家財經媒體同步聚焦 Anthropic 商業地位：CNBC 報導稱 Anthropic 已超越 OpenAI，成為市場最熱門的 AI 新創；The Motley Fool 分析若 Anthropic 傳出的 IPO 估值成真，Amazon 持股價值可能超過 4000 億美元。",
+      "ref_urls": [
+        "https://news.google.com/rss/articles/CBMirwFBVV95cUxPWmFhYU5mVjhXb0FnQ0NHTk1CMXE1azlabnZiN1pnZVN6aXhqUkdNLTVsMU9DTDJVVWVxVGxVMHFtaGx5QmRNWlc4ODljVnJYOXgxZEpUV1ZrYXBJUFplSXhHeDJKN293TXRUUHh4c1ZkVDFvdFBzSXJ0WXg0OVZVWUJFdVJmUmdlTFB5NjFJV0xQTWloM1lGZEQ4aFFWMDlYRkVFTGxiVDdLYmZCVVYw?oc=5",
+        "https://news.google.com/rss/articles/CBMimAFBVV95cUxNcFRGOU4yeWxxeVUwTDRZclYtSi1HNnltYWVfVF9DRWtxSXVVUHZocHByVE9Bb2FNWE1qRWI0T0FnQ1lGajlOTWJFa01kS0pCZkQtLVc0UkwyV25fTV9sVWxibElqSnJUc3QyRGI5UUhpOGhBNDJObVdENHF6WXEyTzZ3b0ZfcV96b21JLTVQeDFma2tLbzJLdA?oc=5"
+      ]
+    }
+  ],
+  "topicRadar": [
+    {
+      "title": "How Does AI Coding Agent Pricing Work, and Where Founders Get Squeezed - Startup Fortune",
+      "url": "https://news.google.com/rss/articles/CBMingFBVV95cUxPa1UyMlVsMWRMYXJnQ3d3cFBEQ3NVeFB0ajZzbEZDRzRoNG1VWHdWdWN3eG9YNlRDb2VmbXFTR2IzbmFCV0c4djhtWFE2ZnVvbS1qMElBNERkT2pVc3ZsaEc5a2w1bzBtNHVvZklCUkt1aEJlNW5wZW9qWFdYcVNjczBYMjg0QV9QZG50VU15emZDQmNkLW5mVnR2bFA0QQ?oc=5",
+      "body": "分析 AI 編碼 agent 的定價模式與新創公司在成本上遭遇的擠壓",
+      "topic": "競品格局",
+      "topicPage": null
+    }
+  ],
+  "sourceStatus": [
+    {
+      "name": "Anthropic Status",
+      "ok": true,
+      "count": 1
+    },
+    {
+      "name": "Hacker News",
+      "ok": true,
+      "count": 18
+    },
+    {
+      "name": "Anthropic Blog",
+      "ok": true,
+      "count": 0
+    },
+    {
+      "name": "Official Skills",
+      "ok": true,
+      "count": 0
+    },
+    {
+      "name": "Google News",
+      "ok": true,
+      "count": 25
+    },
+    {
+      "name": "GitHub Issues",
+      "ok": true,
+      "count": 15
+    },
+    {
+      "name": "dev.to",
+      "ok": true,
+      "count": 14
+    },
+    {
+      "name": "Claude API Release Notes",
+      "ok": true,
+      "count": 0
+    },
+    {
+      "name": "Topic Watch",
+      "ok": true,
+      "count": 1
+    },
+    {
+      "name": "Official Docs",
+      "ok": true,
+      "count": 5
+    },
+    {
+      "name": "GitHub",
+      "ok": true,
+      "count": 40
+    },
+    {
+      "name": "Blogroll",
+      "ok": true,
+      "count": 3
+    },
+    {
+      "name": "Reddit",
+      "ok": true,
+      "count": 12
+    }
+  ],
+  "preview": "媒體報導 Anthropic 目前能力最強的模型（代號「Model 2」）暫僅供內部使用，尚未對外開放。",
+  "sedimentedToday": [
+    {
+      "id": "claude-code",
+      "name": "Claude Code",
+      "pageType": "entity"
+    },
+    {
+      "id": "managed-agents",
+      "name": "Managed Agents",
+      "pageType": "entity"
+    },
+    {
+      "id": "pricing",
+      "name": "Anthropic 訂閱方案與計費政策",
+      "pageType": "entity"
+    },
+    {
+      "id": "anthropic-business",
+      "name": "Anthropic 商業健康度",
+      "pageType": "topic"
+    },
+    {
+      "id": "anthropic-government-policy",
+      "name": "Anthropic 政府與軍事政策",
+      "pageType": "topic"
+    },
+    {
+      "id": "code-quality-decline",
+      "name": "Claude Code 效能退步事件",
+      "pageType": "topic"
+    },
+    {
+      "id": "community-tech-discussions",
+      "name": "社群技術討論趨勢",
+      "pageType": "topic"
+    },
+    {
+      "id": "competitor-landscape",
+      "name": "AI 編碼工具競品動態",
+      "pageType": "topic"
+    },
+    {
+      "id": "enterprise-tool-tracker",
+      "name": "大型企業 AI 編碼工具使用追蹤",
+      "pageType": "topic"
+    }
+  ]
+}

@@ -12,13 +12,7 @@
       "time": "08/19 10:35",
       "sentiment": "",
       "body": "一款「meta-skill」：指向任何 codebase 後可自動萃取專案規則、工作流程與踩坑經驗，生成供 Cursor、Claude Code、Codex、Windsurf、Gemini 等多款 agent 共用的 skills 目錄，GitHub 已累積 502 星。",
-      "focusTags": [],
-      "sedimented": [
-        {
-          "id": "claude-code",
-          "pageType": "entity"
-        }
-      ]
+      "focusTags": []
     }
   ],
   "techUpdates": [
@@ -60,13 +54,7 @@
       "time": "08/19 10:35",
       "sentiment": "",
       "body": "官方文件索引偵測到移除「Slash Commands in the SDK」頁面，實際內容變動需開啟原連結確認。",
-      "focusTags": [],
-      "sedimented": [
-        {
-          "id": "claude-code",
-          "pageType": "entity"
-        }
-      ]
+      "focusTags": []
     },
     {
       "title": "官方 Skills 目錄異動：anthropics/skills 官方技能庫（新增 1 項：academy-guide／移除 1 項：claude-academy-guide）",
@@ -184,13 +172,7 @@
       "time": "08/18 17:46",
       "sentiment": "",
       "body": "The New Stack 報導一款 Claude Code skill 在回答任何問題前就先耗掉 20 萬 token，凸顯 skill 設計不當可能造成的成本浪費。",
-      "focusTags": [],
-      "sedimented": [
-        {
-          "id": "claude-code",
-          "pageType": "entity"
-        }
-      ]
+      "focusTags": []
     },
     {
       "title": "Anthropic says Claude Cowork is now available on mobile for all paid plans - 9to5Mac",
@@ -228,13 +210,7 @@
       "time": "08/18 15:03",
       "sentiment": "😤",
       "body": "使用者回報 Claude Code 追蹤工作目錄變化用的暫存檔從未清除，長期執行會累積大量 `/tmp/claude-*-cwd` 檔案，該 issue 已累積 111 則留言。",
-      "focusTags": [],
-      "sedimented": [
-        {
-          "id": "claude-code",
-          "pageType": "entity"
-        }
-      ]
+      "focusTags": []
     },
     {
       "title": "[BUG] Can't paste image from clipboard on Linux (Ubuntu)",
@@ -270,13 +246,7 @@
       "time": "08/19 09:06",
       "sentiment": "🤔",
       "body": "使用者發文詢問社群為何偏好 Claude Code 而非 Cursor 等 AI 原生編輯器，引發工作流程偏好討論。",
-      "focusTags": [],
-      "sedimented": [
-        {
-          "id": "claude-code",
-          "pageType": "entity"
-        }
-      ]
+      "focusTags": []
     },
     {
       "title": "Claude Code automatically inserts aN;NaNm when switching windows",
@@ -285,13 +255,7 @@
       "time": "08/19 08:38",
       "sentiment": "😤",
       "body": "使用者回報切換視窗時 Claude Code 會自動插入亂碼字串 `aN;NaNm`。",
-      "focusTags": [],
-      "sedimented": [
-        {
-          "id": "claude-code",
-          "pageType": "entity"
-        }
-      ]
+      "focusTags": []
     },
     {
       "title": "Game over. 22GB local models run in Pi now outperform Claude Code Opus 5 High on real-world coding tasks published after training cutoffs",
@@ -300,13 +264,7 @@
       "time": "08/18 14:34",
       "sentiment": "🤔",
       "body": "貼文宣稱訓練截止日後發布的真實世界編碼任務中，樹莓派上跑的 22GB 本地模型效能已超越 Claude Code 搭配 Opus 5 High；本文屬單一社群貼文，未附具體 benchmark 數據來源，讀者宜審慎看待。",
-      "focusTags": [],
-      "sedimented": [
-        {
-          "id": "claude-code",
-          "pageType": "entity"
-        }
-      ]
+      "focusTags": []
     },
     {
       "title": "What We Learned Moving Our Agent Loops from Anthropic to GLM",
@@ -324,13 +282,7 @@
       "time": "08/18 21:14",
       "sentiment": "😊",
       "body": "作者分享用 Claude Code（Opus 4.8、1M context）逆向工程一款 Mac 從未原生支援的 HP 印表機驅動程式的完整 session 紀錄，耗時約 4 小時。",
-      "focusTags": [],
-      "sedimented": [
-        {
-          "id": "claude-code",
-          "pageType": "entity"
-        }
-      ]
+      "focusTags": []
     },
     {
       "title": "Show HN: Loft Day – a wedding invitation turned point-and-click game",
@@ -370,12 +322,6 @@
       "body": "促銷內容：Pro／Max／Team 與舊制 Enterprise 席位方案的 Claude Code 週用量提升 50%，官方確認已延長至 8/31（5 小時用量上限不受影響，Free 方案與消耗制 Enterprise 席位不適用）。詳見今日聚焦。",
       "focusTags": [
         "[持續追蹤]"
-      ],
-      "sedimented": [
-        {
-          "id": "claude-code",
-          "pageType": "entity"
-        }
       ]
     },
     {
@@ -402,12 +348,6 @@
       "body": "報導稱 Anthropic 已將付費方案的 Claude Code 滾動限額調高一倍，與上方促銷延長屬同一波配額調整（詳見今日聚焦）。",
       "focusTags": [
         "[持續追蹤]"
-      ],
-      "sedimented": [
-        {
-          "id": "claude-code",
-          "pageType": "entity"
-        }
       ]
     }
   ],
@@ -519,11 +459,6 @@
   "preview": "Claude 服務兩天內二度出現異常：Anthropic 狀態頁顯示 8/18 16:11–18:23 UTC 多款模型一度效能下降、已修復；8/19 再傳 Claude Opus 5 與 Claude Haiku 4.5 效能異常，目前標記為監控中；用戶端同步回報出現「容量已滿」錯誤訊息。",
   "sedimentedToday": [
     {
-      "id": "claude-code",
-      "name": "Claude Code",
-      "pageType": "entity"
-    },
-    {
       "id": "claude-skills",
       "name": "Claude Skills",
       "pageType": "entity"
@@ -532,36 +467,6 @@
       "id": "fable-5",
       "name": "Claude Fable 5",
       "pageType": "entity"
-    },
-    {
-      "id": "pricing",
-      "name": "Anthropic 訂閱方案與計費政策",
-      "pageType": "entity"
-    },
-    {
-      "id": "anthropic-business",
-      "name": "Anthropic 商業健康度",
-      "pageType": "topic"
-    },
-    {
-      "id": "anthropic-government-policy",
-      "name": "Anthropic 政府與軍事政策",
-      "pageType": "topic"
-    },
-    {
-      "id": "code-quality-decline",
-      "name": "Claude Code 效能退步事件",
-      "pageType": "topic"
-    },
-    {
-      "id": "community-tech-discussions",
-      "name": "社群技術討論趨勢",
-      "pageType": "topic"
-    },
-    {
-      "id": "enterprise-tool-tracker",
-      "name": "大型企業 AI 編碼工具使用追蹤",
-      "pageType": "topic"
     }
   ]
 }

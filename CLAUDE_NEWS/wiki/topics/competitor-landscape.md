@@ -1,15 +1,15 @@
 ---
 page: "topics/competitor-landscape"
 kind: "topic"
-status: "monitoring"
+status: "ongoing"
 domain: "💼 商業"
-last_updated: "2026-08-18"
-last_news_update: "2026-08-18"
-status_main: "monitoring"
-days_since_news: 1
+last_updated: "2026-08-20"
+last_news_update: "2026-08-20"
+status_main: "ongoing"
+days_since_news: 0
 inbound_links: 50
-attribution_count: 68
-attribution_last: "2026-08-18"
+attribution_count: 70
+attribution_last: "2026-08-20"
 top_source: "google-news"
 pending_count: 0
 pending_overdue: 0

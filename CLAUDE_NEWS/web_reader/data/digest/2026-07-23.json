@@ -83,12 +83,6 @@
       "body": "Python SDK 釋出 0.118.0 版，新增功能面向 Managed Agents 相關支援。",
       "focusTags": [
         "[持續追蹤]"
-      ],
-      "sedimented": [
-        {
-          "id": "managed-agents",
-          "pageType": "entity"
-        }
       ]
     },
     {
@@ -712,11 +706,5 @@
     }
   ],
   "preview": "AMD 宣布將對 Anthropic 投資最高 50 億美元，雙方簽署晶片暨投資協議，Reuters、WSJ、Yahoo Finance 等媒體同步跟進報導。",
-  "sedimentedToday": [
-    {
-      "id": "managed-agents",
-      "name": "Managed Agents",
-      "pageType": "entity"
-    }
-  ]
+  "sedimentedToday": []
 }
