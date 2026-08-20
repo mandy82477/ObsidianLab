@@ -34,9 +34,10 @@ permissions:
 jobs:
   linkcheck:
     runs-on: ubuntu-latest
-    # 795 條唯一外部連結、逐條 HEAD、單條逾時上限 10 秒（無節流 sleep）。
-    # 典型全綠時數分鐘內跑完；最壞情況（大量逾時）約 2 小時，故給 90 分鐘上限，
-    # 超時視為異常而非常態，讓它紅燈寄信。
+    # 795 條唯一外部連結、逐條 HEAD（無節流 sleep）。單條上限 10 秒；逾時或連線
+    # 失敗會用 25 秒逾時 + GET 重試一次（2026-08-20 加，用來壓掉假死鏈），故單條
+    # 最壞 35 秒。實測全量約 15 分鐘；最壞情況（大量逾時）不超過 1 小時，
+    # 給 90 分鐘上限——超時視為異常而非常態，讓它紅燈寄信。
     timeout-minutes: 90
     steps:
       - name: Checkout repo
@@ -63,7 +64,7 @@ jobs:
         # 因為 lint 下游會讀到過期報告卻以為是新的——與 daily 的新鮮度防線同理。
         run: |
           test -f data/link_health.json || { echo "報告未產出，視為失敗"; exit 1; }
-          python -c "import json,sys; d=json.load(open('data/link_health.json',encoding='utf-8')); print(f\"checked_at={d['checked_at']} 檢查 {d['checked']}/{d['total_unique_links']} 條，死鏈 {len(d['dead'])}、疑似反爬 {len(d['anti_bot'])}\")"
+          python -c "import json,sys; d=json.load(open('data/link_health.json',encoding='utf-8')); print(f\"checked_at={d['checked_at']} 檢查 {d['checked']}/{d['total_unique_links']} 條，死鏈 {len(d['dead'])}、擋機器人 {len(d['anti_bot'])}、無法判定 {len(d['unverified'])}\")"
 
       - name: Commit link health report
         working-directory: .  # repo root

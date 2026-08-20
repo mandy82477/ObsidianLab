@@ -28,10 +28,23 @@ WIKI_DIR = ROOT / "wiki"
 URL_RE = re.compile(r'https?://[^\s\)\]>"\'`（）「」『』、，。《》〈〉一-鿿]+')
 
 TIMEOUT = 10
+_SEP = chr(10)
 USER_AGENT = "Mozilla/5.0 (compatible; ClaudeNewsLinkChecker/1.0; +https://github.com/)"
 
-# 反爬蟲常見狀態碼：不算死鏈，只標記「可能反爬，人工確認」
-ANTI_BOT_CODES = {403, 429}
+# 「擋機器人」而非「內容不存在」的狀態碼：不算死鏈，只標記人工確認。
+#
+# 401 是 2026-08-20 首次全量掃描後補進來的：15 筆 401 全部來自 Reuters(10)／
+# Barron's(3)／WSJ(2)，是付費牆／登入牆，內容其實還在。原本把它歸為死鏈，
+# 會讓記者在頁面標「（原文已失效）」——正是雲端 egress 守衛當初要防的頁面污染。
+ANTI_BOT_CODES = {401, 403, 429}
+
+# 只有這些狀態碼代表「內容真的不在了」，也只有它們會驅動頁面標註。
+# 5xx 不列入：伺服器暫時掛掉不等於文章消失。
+DEAD_CODES = {404, 410}
+
+# 逾時／連線失敗重試一次用的較長逾時。單次逾時是很弱的證據——2026-08-20
+# 全量掃描有 38 筆逾時，含 www.anthropic.com 自己逾時 3 次，顯然不是死鏈。
+RETRY_TIMEOUT = 25
 
 
 def collect_links() -> dict[str, list[Path]]:
@@ -71,14 +84,31 @@ def check_one(url: str) -> tuple[str, int | None, str]:
                 return url, None, f"GET fallback 失敗：{e2}"
         return url, e.code, ""
     except urllib.error.URLError as e:
-        return url, None, f"連線失敗：{e.reason}"
+        return _retry_slow(url, f"連線失敗：{e.reason}")
     except TimeoutError:
-        return url, None, "逾時"
+        return _retry_slow(url, "逾時")
     except Exception as e:
         return url, None, f"錯誤：{e}"
 
 
-def _write_report(path_str, links, urls, dead, anti_bot, ok_count, as_of):
+def _retry_slow(url: str, first_note: str) -> tuple[str, int | None, str]:
+    """逾時／連線失敗時用較長逾時 + GET 再試一次。
+
+    很多新聞站對 HEAD 或對陌生 UA 反應慢，10 秒一刀切會製造大量假死鏈。
+    重試仍失敗才回 None，並由呼叫端歸入「無法判定」而非「死鏈」。
+    """
+    try:
+        req = urllib.request.Request(url, method="GET", headers={"User-Agent": USER_AGENT})
+        with urllib.request.urlopen(req, timeout=RETRY_TIMEOUT) as resp:
+            return url, resp.status, "重試後正常"
+    except urllib.error.HTTPError as e:
+        note = "可能反爬，人工確認" if e.code in ANTI_BOT_CODES else "重試後仍失敗"
+        return url, e.code, note
+    except Exception:
+        return url, None, first_note
+
+
+def _write_report(path_str, links, urls, dead, anti_bot, unverified, ok_count, as_of):
     """輸出 JSON 報告。消費端是 `/wiki-lint` 指標三——它讀這個檔而不自己連網，
     因此雲端 lint（egress 封鎖）也能完成該步驟。"""
     checked_at = as_of or date.today().isoformat()
@@ -95,6 +125,15 @@ def _write_report(path_str, links, urls, dead, anti_bot, ok_count, as_of):
                 "pages": sorted(str(p.relative_to(ROOT)).replace("\\", "/") for p in links[url]),
             }
             for url, status, note in dead
+        ],
+        "unverified": [
+            {
+                "url": url,
+                "status": status,
+                "note": note,
+                "pages": sorted(str(p.relative_to(ROOT)).replace(chr(92), "/") for p in links[url]),
+            }
+            for url, status, note in unverified
         ],
         "anti_bot": [
             {
@@ -141,37 +180,52 @@ def main():
 
     dead: list[tuple[str, int | None, str]] = []
     anti_bot: list[tuple[str, int | None, str]] = []
+    unverified: list[tuple[str, int | None, str]] = []
     ok_count = 0
 
     for i, url in enumerate(urls, 1):
         _, status, note = check_one(url)
-        if note == "可能反爬，人工確認":
-            anti_bot.append((url, status, note))
-            print(f"[{i}/{len(urls)}] ?? {status} {url}  ({note})")
-        elif status is None or status >= 400:
+        if status in ANTI_BOT_CODES:
+            anti_bot.append((url, status, note or "可能反爬，人工確認"))
+            print(f"[{i}/{len(urls)}] ?? {status} {url}  (擋機器人)")
+        elif status in DEAD_CODES:
             dead.append((url, status, note))
-            print(f"[{i}/{len(urls)}] XX {status or '???'} {url}  {note}")
+            print(f"[{i}/{len(urls)}] XX {status} {url}  {note}")
+        elif status is None or status >= 400:
+            # 逾時、連線失敗、5xx：證據不足以判死。歸「無法判定」，不驅動頁面標註。
+            unverified.append((url, status, note))
+            print(f"[{i}/{len(urls)}] -- {status or '無回應'} {url}  {note}")
         else:
             ok_count += 1
             print(f"[{i}/{len(urls)}] OK {status} {url}")
 
     print("-" * 60)
-    print(f"正常：{ok_count}　疑似死鏈：{len(dead)}　可能反爬（人工確認）：{len(anti_bot)}")
+    print(
+        f"正常：{ok_count}　確認死鏈（404/410）：{len(dead)}　"
+        f"擋機器人（401/403/429）：{len(anti_bot)}　無法判定（逾時/5xx）：{len(unverified)}"
+    )
 
     if dead:
-        print("\n=== 疑似死鏈清單 ===")
+        print(_SEP + "=== 確認死鏈清單（404/410，僅這些驅動頁面標註）===")
         for url, status, note in dead:
             pages = ", ".join(str(p.relative_to(ROOT)) for p in links[url])
-            print(f"- {url}  [狀態: {status or '逾時/連線失敗'}]  引用頁面: {pages}")
+            print(f"- {url}  [狀態: {status}]  引用頁面: {pages}")
 
     if anti_bot:
-        print("\n=== 可能反爬（人工確認，不算死鏈）===")
+        print(_SEP + "=== 擋機器人（401/403/429，不算死鏈、不標註）===")
         for url, status, note in anti_bot:
             pages = ", ".join(str(p.relative_to(ROOT)) for p in links[url])
             print(f"- {url}  [狀態: {status}]  引用頁面: {pages}")
 
+    if unverified:
+        print(_SEP + "=== 無法判定（逾時/連線失敗/5xx，已重試一次仍失敗）===")
+        print("  單次逾時是很弱的證據，不足以判死；連續多週落在此桶才值得人工看。")
+        for url, status, note in unverified:
+            pages = ", ".join(str(p.relative_to(ROOT)) for p in links[url])
+            print(f"- {url}  [狀態: {status or '無回應'}]  {note}  引用頁面: {pages}")
+
     if args.report:
-        _write_report(args.report, links, urls, dead, anti_bot, ok_count, args.as_of)
+        _write_report(args.report, links, urls, dead, anti_bot, unverified, ok_count, args.as_of)
         print(f"\n報告已寫入：{args.report}")
 
     # exit code 只代表「有沒有死鏈」，供本機使用者判讀。
