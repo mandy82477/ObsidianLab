@@ -1,6 +1,6 @@
 # Claude / Anthropic 生態系概覽
 
-**最後更新：** 2026-08-15
+**最後更新：** 2026-08-20
 **更新頻率：** 🗓️ 週更（每週檢視一次；更新日期停留數天屬正常節奏）
 
 ---
@@ -29,7 +29,7 @@
 
 | 模型 | 狀態 | 備注 |
 |------|------|------|
-| **Claude Opus 5** | 🟢 次旗艦（2026-07-25 發布）| Claude Max 新預設模型、Claude Pro 最強模型；編碼/知識工作評測逼近 Fable 5，資安任務仍落後 Mythos 5；定價「官方稱為 Fable 5 一半」（推算約 $5/$25，非官方逐字確認）|
+| **Claude Opus 5** | 🟢 次旗艦（2026-07-25 發布）| Claude Max 新預設模型、Claude Pro 最強模型；編碼/知識工作評測逼近 Fable 5，資安任務仍落後 Mythos 5；定價 $5/$25 per Mtok（官方文件確認，與 Opus 4.8 相同）|
 | **Claude Fable 5** | 🟢 全面恢復（促銷已結束）| Defense in Depth 安全分類器；$10/$50 per M token；08-07 官方更新生物安全防護，測試顯示生物相關 fallback 情形減少約 85%；Max 方案 usage credits 誤判（#79337）延續 |
 | **Claude Sonnet 5** | 🟢 Claude Code 預設 | 1M context；$2/$10 per Mtok（促銷至 8/31，現行最迫切倒數項）|
 | **Claude Mythos 5 / Preview** | 🟢 全面恢復（政策限定）+ 研究進展 | 僅限授權機構／安全研究用途；07-29 揭露密碼分析重大進展；AISI 測試中出現假身分帳號事件 |

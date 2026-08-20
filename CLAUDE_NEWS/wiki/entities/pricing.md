@@ -84,10 +84,11 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 | Claude Opus 5 | **$5 / $25** | 官方文件逐字確認，與 Opus 4.8 相同；Fast mode 另計 $10/$50 |
 | Claude Opus 4.8 | **$5 / $25** | 官方載明 Opus 5 定價「unchanged from Claude Opus 4.8」；2026-07-24 起次旗艦地位被 Opus 5 取代，各平台仍可用 |
 | Claude Sonnet 4.6 | **$3 / $15** | 前代 Sonnet，官方列為 legacy 仍可用；1M context / 128k 輸出。Sonnet 5 促銷 8/31 到期後回到同一價位 |
+| Claude Haiku 4.5 | **$1 / $5** | 陣容中最低價；200K context / 64k 輸出（非 1M，與其餘四者不同）。適合高頻批量與延遲敏感的 sub-agent |
 
 **Opus 5 定價「歧異」已解消（2026-08-08 官方查證）**：官方文件載明 **$5 / $25 per Mtok，且「unchanged from Claude Opus 4.8」**。此前並存的兩種說法**其實同時成立**——「為 Fable 5 的一半」（$5 vs $10）與 MarkTechPost「維持原 Opus 定價」（與 4.8 相同）講的是同一組數字的兩個對照對象，並非矛盾。Fast mode（research preview，僅 Claude API）另計 **$10 / $50**（來源：[What's new in Claude Opus 5](https://platform.claude.com/docs/en/about-claude/models/whats-new-opus-5)）。能力細節見 [[entities/opus-5]]、[[topics/model-comparison]]。
 
-**本表數字之官方查證（2026-08-20）**：Fable 5 $10/$50、Opus 5 與 Opus 4.8 $5/$25、Sonnet 5 $2/$10、Sonnet 4.6 $3/$15，均與官方模型總覽頁一致（[Models overview](https://platform.claude.com/docs/en/about-claude/models/overview)，2026-08-20 查證）。官方頁未載 Sonnet 5 促銷到期日，8/31 之後的 $3/$15 走向仍以本頁「當前生效的計費規則」為準。
+**本表數字之官方查證（2026-08-20）**：Fable 5 $10/$50、Opus 5 與 Opus 4.8 $5/$25、Sonnet 5 $2/$10、Sonnet 4.6 $3/$15、Haiku 4.5 $1/$5，均與官方模型總覽頁一致（[Models overview](https://platform.claude.com/docs/en/about-claude/models/overview)，2026-08-20 查證）。官方頁未載 Sonnet 5 促銷到期日，8/31 之後的 $3/$15 走向仍以本頁「當前生效的計費規則」為準。
 
 > 模型能力與評測細節見 [[topics/model-comparison]]；此表僅列價格。
 > **注意（2026-07-14）**：The Register 分析指出 Anthropic tokenizer 設計較為複雜，使 API 定價與跨供應商成本估算更難以直接比較（標題式報導，無進一步量化細節，source_count=2）。
@@ -282,7 +283,7 @@ git commit 歷史出現大寫字串「HERMES.md」會觸發靜默切換至 API �
 
 #### 2026-07-24：Claude Opus 5 發布，官方稱定價為 Fable 5 的一半，與此前 MarkTechPost「維持原定價」說法方向不一致
 
-- **官方公告**：Anthropic 正式發布 Claude Opus 5（[官方公告](https://www.anthropic.com/news/claude-opus-5)，2026-07-24 16:57 UTC，Hacker News 1587 分），稱其定價為 Fable 5 的一半，相同成本下效能相較前代 Opus 4.8 大幅提升；現為 Claude Max 方案新預設模型、Claude Pro 方案最強可用模型，取代 Opus 4.8 次旗艦地位。**與既有訊號的落差**：MarkTechPost（2026-07-14，見 [[topics/model-comparison]] 延伸閱讀）此前曾稱 Opus 5 將「維持原 Opus 定價」，與官方本次「砍半」的說法方向不同；官方公告本身未提供具體 $/Mtok 數字，若以現行 Fable 5 $10/$50 定價推算，半價約為 $5/$25，但此為讀者端推算，非官方逐字確認的數字，待官方定價頁更新後進一步核實（推論，不可逕自視為官方定案數字）。能力面詳見 [[entities/opus-5]]。
+- **官方公告**：Anthropic 正式發布 Claude Opus 5（[官方公告](https://www.anthropic.com/news/claude-opus-5)，2026-07-24 16:57 UTC，Hacker News 1587 分），稱其定價為 Fable 5 的一半，相同成本下效能相較前代 Opus 4.8 大幅提升；現為 Claude Max 方案新預設模型、Claude Pro 方案最強可用模型，取代 Opus 4.8 次旗艦地位。**與既有訊號的落差**：MarkTechPost（2026-07-14，見 [[topics/model-comparison]] 延伸閱讀）此前曾稱 Opus 5 將「維持原 Opus 定價」，與官方本次「砍半」的說法方向不同；官方公告本身未提供具體 $/Mtok 數字，若以現行 Fable 5 $10/$50 定價推算，半價約為 $5/$25，但此為讀者端推算，非官方逐字確認的數字，待官方定價頁更新後進一步核實（推論，不可逕自視為官方定案數字）。**後續（2026-08-08 查證、2026-08-20 複查一致）**：官方文件已載明 **$5 / $25**，且「unchanged from Claude Opus 4.8」——此處的讀者端推算獲證實，兩則報導的方向差異亦隨之解消（同一組數字的兩個對照對象）。見上方「模型 API 定價現況」。能力面詳見 [[entities/opus-5]]。
 
 #### 2026-07-21：Reddit 週熱門回顧 Fable 5 免費期延長史，社群觀察指向 Max／Team Standard 轉為計量存取
 
