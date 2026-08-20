@@ -4059,3 +4059,21 @@ registry 加一組 sync_pair 釘住產出端與歸因端（只改一邊等於白
 - **W33 深挖重寫**（凍結存檔破例一次，原因記於此）：換題為「subagent 為什麼會『回報完成』卻沒做完」。缺口以官方文件外查補齊（`code.claude.com/docs/en/sub-agents`，2026-08-20 取得），核心機制為 **`AskUserQuestion` 被從每個 subagent 移除 → 架構上沒有回問通道 → 唯一訊號是它自己寫的摘要**，據此解釋 dev.to 四種靜默失敗與官方自揭的 agent 互相破壞。三條陷阱皆帶具名物（`model: inherit`、`tools` 全繼承、`CLAUDE_CODE_MAX_CONCURRENT_SUBAGENTS` 20 vs 社群 10）。
 - **⚠️ 同時發現的操作失誤（比上述更嚴重）**：執行 `/weekly-report` 時**沒有查證今天的日期**，沿用先前補跑任務殘留的 08-15 往後推一天當成 08-16，實際今天是 **2026-08-20（ISO W34）**。後果：(a) 無參數應產 W34 卻產了 W33；(b) W33 涵蓋窗誤寫為「6 份日報、08-16 尚未產出」，實際 08-16～08-19 日報皆已由雲端 pipeline 正常產出。**W33 本身仍是必要的**（帳本鏈 W32→W33→W34 缺它不可），已更正涵蓋窗為 08-10～08-16 全週共 7 份、補入 08-16 官方多智能體研究報告與 Decart 金額更新（70 億、競價先於 Nvidia，單一來源）。**W34（08-17～08-23）尚未產出，該週未完結，待 08-23 後再跑。**
 - **殘留**：深挖 1,228 字，略高於新訂的 800–1,200（檢查器 ⚠️ 提醒、不擋）。已自 1,911 字砍到 1,228（含刪去第四條陷阱與「怎麼用」段對陷阱 1／2 的重複陳述）；再砍只能砍掉一條陷阱，判斷保留內容優於湊進字數框。
+
+## 2026-08-20 Ingest | news/2026-08-20.md（81 則）
+
+- 來源日報：[[news/2026-08-20]]（81 則抓取，13/13 來源；日報實收 34 則，另 47 則透過 `list_digest_omissions.py` 一併提供給記者判斷）
+- 分類派工：模型 2 則、功能 16 則、商業 15 則、安全政策 4 則、社群 38 則（人物類今日無條目，未派工）；六類皆以 `subagent_type: general-purpose` + `model: sonnet` foreground 派工，角色前導導向 `.claude/agents/wiki-reporter-[category].md`（正典路徑）
+- 更新頁面：
+  - **模型**：查證後判斷今日兩則條目（「Model 2」內部限定使用、Anthropic design study 與蛋白質無關）均為既有事實重複轉載或內容不可讀，未動任何頁面
+  - **功能**：`entities/claude-code.md`（新增 2 則已知問題：修改 thinking block 觸發 API 400 錯誤 #10199、v2.1.113 起 Termux/Android glibc 破壞性回歸 #50270；互動數更新 3 則：Cowork VM bundle #22543、記憶體洩漏 #4953、Cowork 工作區啟動失敗 #27801；記入 v2.1.237／SDK 三則版本異動；Reddit 回報「額度重置後自動繼續」已於既有 feature request #13354 註記社群回報）、`entities/managed-agents.md`（anthropic-sdk-python v0.125.0 新增 web search 設定）；feature-radar 新增「Concise 輸出風格」（v2.1.237，🔥）與「Managed Agents Web Search 設定」（🔥），並由主編同步全覽表列、升版風險最新版本行與 Cowork 風險列互動數；轉知 2 筆（社群：claude-code-lsps 星數防刷佐證待週更評估；安全政策：Gmail 自主發信涉 agent 權限擴張）
+  - **商業**：`entities/pricing.md`（DevOps.com「暫時性用量提升今晚到期」與已確認延長至 8/31 的週用量 +50% 促銷間關係無法從標題層級確認，新增 ❓ 待查證標記）、`topics/anthropic-business.md`（Amazon 持股 IPO 估值分析、Anthropic 超越 OpenAI 成熱門新創、OpenAI 安全標準追趕與 Anthropic 營收領先擴大、資料中心 13 億美元信貸）、`topics/enterprise-tool-tracker.md`（新增高盛、OKX 香港存取受限退出列）、`topics/competitor-landscape.md`（OpenAI 隱私保護競爭回應、Startup Fortune 專頁定向定價分析，狀態 monitoring→ongoing）
+  - **安全政策**：`topics/anthropic-government-policy.md`（浮水印政策系列追蹤新增 Forbes／WIRED 兩則；高盛/OKX 香港存取受限地緣政治面新增列並標 ❓ 待查證；OpenAI 安全標準敘事記錄，狀態 monitoring→ongoing）
+  - **社群**：`topics/community-tech-discussions.md`（Opus 5.0「行話」爭議 HN 181 分＋Reddit 跨平台延燒收錄 🔥🔥🔥🔥；arXiv 擬人化推理痕跡論文；Simon Willison 三篇部落格；真金交易實驗）、`topics/community-tech-patterns.md`（Frugal Tokens、dev.to「Give Up」除錯實錄、Register 印表機驅動報導併入既有節點，狀態 monitoring→ongoing）、`topics/code-quality-decline.md`（「Claude is Losing Me」列為第十則品質感知延續訊號，狀態 monitoring→ongoing）；16 個高星 GitHub Search 新專案因無 web 工具無法完成星數防刷佐證，全數不收錄（含日報已提及的 opencodex／omnigent／guizang-social-card-skill）
+  - **主編**：`wiki/feature-radar.md` 彙整功能記者新增條目（詳見上）；`wiki/index.md` 同步四筆狀態變更（anthropic-government-policy／competitor-landscape／community-tech-patterns／code-quality-decline，皆 monitoring→ongoing）；`data/pending-handoffs.jsonl` 新增 2 筆轉知（H-6b16c9 功能→社群、H-21f8e6 功能→安全政策），皆待下次派工處理
+- 新增頁面：無
+- 摘要：Claude Code v2.1.237 發布（Concise 輸出風格＋prompt caching 修復），同日湧現多筆高互動已知問題（記憶體洩漏、Cowork VM 效能、tool call 解析失敗等）；Anthropic 商業敘事升溫（超越 OpenAI 成熱門新創、Amazon 持股 IPO 估值分析）與浮水印政策/香港存取限制並行；Opus 5.0 用詞風格爭議在 HN／Reddit 跨平台延燒，官方回覆疑似 Claude 代寫引發討論
+- 呈現品質：全部通過
+- 品質備註：無
+
+📋 收件匣提醒：`wiki/reader-notes.md` 有 2 筆 ⏳ 興趣主題已逾 14 天未處理——2026-08-01（成本感知自動模型路由，19 天，週度回顧持續追蹤中）、2026-07-12（GPT-5.6 vs Claude 第一手評測，39 天，已改被動觸發等日報自然出現數字）。

@@ -22,15 +22,15 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 
 # 社群實戰模式庫
 
-**狀態：** monitoring
+**狀態：** ongoing
 **領域：** 🌐 社群
 **開始日期：** 2026-04-25
-**最後更新：** 2026-08-19
-**最後新聞更新：** 2026-08-19
+**最後更新：** 2026-08-20
+**最後新聞更新：** 2026-08-20
 
-> **最新工作流模式**（2026-08-18）
-> - **常駐雲端運算基礎設施**：YC S26 新創 machine0 推出供 agent 長時間運算使用的常駐 CPU／GPU VM（含 H100/H200），反映 agent 工作負載正從「用完即丟」轉為「常駐運算」——單次編碼任務常跑 6–8 小時，訓練/RL 編排任務可能跑數天。
-> - **長時間單次 session 案例**：開發者以 Claude Code（Opus 4.8、1M context）單次約 4 小時 session，完整逆向工程一款 macOS 從未原生支援的 HP 印表機驅動程式。
+> **最新工作流模式**（2026-08-19）
+> - **跨 agent 成本／快取可視化工具**：Frugal Tokens 讓開發者檢視自己各 coding agent session 的花費與 cache miss 對成本的影響，提供依模型與快取狀態拆解的用量分析。
+> - **Agent Loop 終止條件實例**：開發者記錄 9 小時 k3s 網路 bug 除錯經驗，Claude Code 建議選項清單中「放棄」被標示為 Recommended。
 
 ---
 
@@ -130,12 +130,28 @@ Claude Code 的三種多 agent 機制，可對應到 Anthropic《Building Effect
 
 ### 2026-08
 
+#### Show HN：Frugal Tokens——檢視跨 coding agent 用量與成本的自製工具（2026-08-19）
+
+- **主線：** —
+- **核心模式：** 作者釋出自製工具 Frugal Tokens，用於檢視自己各 coding agent session 的花費、cache miss 對成本的影響，提供依模型與快取狀態拆解的用量分析，並可逐一 session 檢視呼叫細節
+- **與既有模式的關係：** 呼應本頁「Token / 成本優化」類別既有多筆針對成本可視化與快取行為的工具（如 pxpipe、claude-thermos），本則補上跨 agent（非僅 Claude Code 單一工具）的成本／快取拆解視角；非大型 codebase 特有痛點，暫不縫合 [[topics/community-large-codebase-workflow]] 四條主線
+- **來源：** 「Show HN: Frugal Tokens – explore costs and usage across coding agents」— Hacker News（score 33，達對照表中門檻）＋跨 2 來源（source_count=2）；[demo.frugaltokens.com](https://demo.frugaltokens.com/)
+- **成熟度：** ⏳ 新興（今日首見，個人自製工具，尚無社群採用回饋）
+
+#### dev.to：9 小時 k3s 網路 bug 排查後，Claude Code 建議選項中「放棄」被標為 Recommended（2026-08-19）
+
+- **主線：** —
+- **核心模式：** 作者記錄一次耗時 9 小時、對抗 k3s 網路問題的除錯過程；過程中 Claude Code 提供的建議選項清單裡，「放棄」被標示為 Recommended（推薦選項）
+- **與既有模式的關係：** 呼應本頁「Agent Loop 終止條件」類別既有「如何停下比如何跑起來更難」的設計關注——本則提供一個具體實例：官方產品本身已將「終止／放棄」納入建議選項清單；dev.to 條目依內容判斷收錄（第一手實作經驗，非互動門檻）
+- **來源：** 「Claude Code Recommended: Give Up」— dev.to（2 讚，依內容判斷收錄，非套用互動門檻對照表）；[dev.to 原文](https://dev.to/jeromefromhk/claude-code-recommended-give-up-460d)
+- **成熟度：** ⏳ 新興（單一開發者第一手記錄，尚無其他來源佐證此為普遍行為或個案）
+
 #### 反向工程 macOS 從未原生支援的 HP 印表機驅動：Claude Code＋Opus 4.8（1M context）單次 4 小時 session 完整記錄公開（2026-08-18）
 
 - **主線：** —
 - **核心模式：** 作者公開一份完整 Claude Code（Opus 4.8、1M context）session 記錄：單次 session、耗時約 4 小時，成功逆向工程一款 macOS 從未原生支援的 HP Laser 1008a 印表機驅動程式，讓該印表機得以在 macOS 原生列印
 - **與既有模式的關係：** 屬「長時間單次 session 完成困難任務」的第一手案例展示，呼應本頁既有對長 context／單次高強度 session 能力的持續關注（如 08-04「難任務＋沿途可驗證性」心法）；非大型 codebase 特有痛點（單一硬體逆向工程任務），暫不縫合 [[topics/community-large-codebase-workflow]] 四條主線
-- **來源：** Hacker News（score 127，達對照表高門檻）；[session 記錄](https://cdn.kuber.studio/chat/hp-laser-1008a-driver)
+- **來源：** Hacker News（score 127，達對照表高門檻）；[session 記錄](https://cdn.kuber.studio/chat/hp-laser-1008a-driver)；08-19 同一事件獲 The Register 媒體轉載報導（Google News / The Register），無新增技術細節
 - **成熟度：** ✅ 個案已完成並公開完整記錄，惟屬單一硬體逆向工程案例，可複製性視目標硬體與驅動複雜度而定，非可直接套用的通用做法
 
 #### machine0（YC S26）：CLI／MCP 皆可操作的常駐 CPU／GPU 雲端 VM，鎖定 6–8 小時起跳的長時間 agent 工作負載（2026-08-18）

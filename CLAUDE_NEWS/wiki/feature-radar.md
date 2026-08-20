@@ -4,7 +4,7 @@
 僅收錄官方 changelog、release note 或官方公告來源；社群工具見 [[topics/community-tech-tools]]。
 每日更新：新增功能、更新熱度、補充社群回饋。
 
-**最後更新：** 2026-08-19
+**最後更新：** 2026-08-20
 
 ---
 
@@ -20,11 +20,11 @@
 
 ## ⚠️ 升版風險
 
-**最新版本：** v2.1.235（2026-08-18，新增可選 `spellcheck` 設定與整段提示詞相關修復；非 breaking change）。前一版 v2.1.234（08-17）新增可選環境變數 `CLAUDE_CODE_PROJECT_DIR_NAME`。最後一次重大 breaking change 仍為 v2.1.212／v2.1.215（見下表）；另有一項於 8/14 已生效的 breaking change（auto 模式預設化，已對 Pro/Max/Team 上線，詳見 [[entities/claude-code]] 現況）。
+**最新版本：** v2.1.237（2026-08-20，修復 LLM gateway／自訂 base URL session 的 prompt caching 失效問題，並新增內建「Concise」輸出風格；非 breaking change）。前一版 v2.1.235（08-18）新增可選 `spellcheck` 設定。最後一次重大 breaking change 仍為 v2.1.212／v2.1.215（見下表）；另有一項於 8/14 已生效的 breaking change（auto 模式預設化，已對 Pro/Max/Team 上線，詳見 [[entities/claude-code]] 現況）。
 
 | 風險 | 嚴重度 | 說明 |
 |------|--------|------|
-| Cowork 已知問題（VM bundle 效能劣化 + 檔案靜默截斷） | 🔴 | Cowork 功能會建立高達 10GB 的 VM bundle，導致啟動變慢、UI 延遲、效能隨時間持續劣化（#22543，76 留言）；Edit/Write 工具另因緩衝區容量上限（byte-conservation buffer cap）靜默截斷檔案，任何檔案大小皆可重現（#53940，累計 16 個讚同反應），屬資料完整性風險，非邊緣情況 |
+| Cowork／穩定性已知問題群（VM bundle 效能劣化 + 記憶體洩漏 + 檔案靜默截斷） | 🔴 | Cowork 功能會建立高達 10GB 的 VM bundle，導致啟動變慢、UI 延遲、效能隨時間持續劣化（#22543，76 留言、259 個讚）；另有進程記憶體洩漏可增長至 120GB+ 遭 OOM killed（#4953，97 留言、75 個讚，2026-08-19 互動數更新）；Edit/Write 工具另因緩衝區容量上限（byte-conservation buffer cap）靜默截斷檔案，任何檔案大小皆可重現（#53940，累計 16 個讚同反應），屬資料完整性風險，非邊緣情況 |
 | `/fork` 語意變更（⚠️ Breaking Change，無過渡期） | 🔴 | v2.1.212 起 `/fork` 不再於同一 session 內啟動子 agent，改為複製對話進新背景 session；依賴舊行為撰寫的 skill/hook/巨集需立即改用 `/subtask`，官方 release note 未附完整遷移指南 |
 | `/verify` `/code-review` 不再自動觸發（⚠️ Breaking Change，無過渡期） | 🔴 | v2.1.215 起 Claude 不再於背景自動執行 `/verify` 與 `/code-review`，須使用者手動呼叫指令；依賴自動驗證/審查隱性保護的既有工作流（CI、hook、慣例流程）升級後會失去這層保護，官方未附遷移指南 |
 
@@ -64,6 +64,8 @@
 
 | 功能 | 發布日期 | 熱度 | 試用價值 | 狀態 |
 |------|----------|------|----------|------|
+| **Concise 輸出風格**（v2.1.237 新增內建 output style，省略前言與敘述性文字） | 2026-08-20 | 🔥 | ⚡ 有條件推薦 | 正式發布 |
+| **Managed Agents Web Search 設定**（anthropic-sdk-python v0.125.0 新增 SDK 層設定支援） | 2026-08-19 | 🔥 | ⏳ 觀望 | 正式發布（SDK 層）|
 | **spellcheck 輸入框拼字檢查**（v2.1.235，需本機 aspell／hunspell／ispell） | 2026-08-18 | 🔥 | ⚡ 有條件推薦 | 正式發布 |
 | **自訂專案 Transcript 目錄短名稱**（`CLAUDE_CODE_PROJECT_DIR_NAME` 環境變數，v2.1.234） | 2026-08-17 | 🔥 | ⚡ 有條件推薦 | 正式發布 |
 | **Claude Code v2.1.233**（`--worktree`／`claude agents` 視圖新增 GitLab MR URL 支援，MR 顯示為 `!N`；另有 opt-in `forward_user_identity` apps gateway 設定） | 2026-08-14 | 🔥🔥 | ⚡ 有條件推薦 | 正式發布 |
@@ -147,6 +149,44 @@
 ---
 
 ## 🆕 最新功能（2026-08）
+
+### Concise 輸出風格
+**發布：** 2026-08-20（v2.1.237） | **熱度：** 🔥 | **試用價值：** ⚡ 有條件推薦 | **狀態：** 正式發布
+
+**是什麼：** Claude Code 內建新增「Concise」輸出風格，啟用後 Claude 直接給出結果，省去前言與敘述性文字。
+
+**為何熱：** 隨 v2.1.237 首次發布，日報尚無社群討論或工具跟進資料，暫列基礎熱度。
+
+**現在要試嗎：** 想減少 Claude 輸出中的鋪陳文字、只看結果的使用者可一試；偏好詳細說明過程者不適合。
+
+**快速上手：**
+```
+/output-style
+# 選擇 Concise；官方 release notes 未附完整操作範例，建議以 /output-style 或 /config 確認實際路徑
+```
+
+**注意事項：** 同版本亦修復使用 LLM gateway 或自訂 base URL 的 session 中 prompt caching 失效問題（純 bug fix，不獨立列入本表）。
+
+---
+
+### Managed Agents Web Search 設定
+**發布：** 2026-08-19（anthropic-sdk-python v0.125.0） | **熱度：** 🔥 | **試用價值：** ⏳ 觀望 | **狀態：** 正式發布（SDK 層）
+
+**是什麼：** Python SDK 新增 managed agents 的 web search 設定相關功能，讓開發者可透過 SDK 設定／控制 Managed Agents 的 web search 行為；官方 changelog 未列出具體參數與用法。
+
+**為何熱：** 隨 SDK 版本首次發布，日報尚無社群討論或使用回饋。
+
+**現在要試嗎：** 已在使用 Managed Agents 且需要控制 web search 行為的開發者可關注；具體參數未知，建議先查 SDK release notes 原文再升級。
+
+**快速上手：**
+```
+pip install --upgrade anthropic  # 升級至 v0.125.0 以上
+# 具體 web search 設定參數官方 changelog 未列出，待後續版本或文件補充
+```
+
+**注意事項：** 具體設定範圍（如搜尋來源限制、開關）尚未見官方文件說明；詳見 [[entities/managed-agents]]。
+
+---
 
 ### spellcheck 輸入框拼字檢查
 **發布：** 2026-08-18（v2.1.235） | **熱度：** 🔥 | **試用價值：** ⚡ 有條件推薦 | **狀態：** 正式發布

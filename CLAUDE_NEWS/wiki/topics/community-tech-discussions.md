@@ -23,11 +23,11 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 **狀態：** ongoing
 **領域：** 🌐 社群
 **開始日期：** 2026-04-25
-**最後更新：** 2026-08-19
-**最後新聞更新：** 2026-08-19
+**最後更新：** 2026-08-20
+**最後新聞更新：** 2026-08-20
 
-> **最熱討論**（2026-08-17）
-> 隱形浮水印政策反彈持續延燒：08-17 科技評論人 John Gruber 專欄批評浮水印是「對寫作本質的扭曲」，登上 HN 首頁取得 293 分（本輪最高），同日 NPR、Yahoo Tech、inc.com 三家媒體同步跟進報導讀者「怕被識破用 AI」與訂閱用戶反彈，討論規模升至主流媒體層級，熱度上調 🔥🔥🔥🔥。
+> **最熱討論**（2026-08-19）
+> Opus 5.0 用語浮誇引爆「行話」批評：HN 討論（181 分，連結至 GitHub Issue #77136）指控輸出充斥「blast radius」「earned its keep」等被列入禁用詞的行話，留言更質疑負責回覆此 issue 的 Anthropic 工程師疑似用 Claude 代寫回應，且回覆本身仍帶同類行話；08-20 Reddit 貼文聚焦同一爭點延燒次日，跨平台佐證。
 
 ---
 
@@ -141,6 +141,12 @@ MCP 的實際成本遠超多數使用者預期，已有多個量化案例：
 
 | 討論主題 | 首見 | 熱度 | 模式 | 核心論點 | 衍生 |
 |---------|------|------|------|---------|------|
+| Opus 5.0 用語浮誇引爆「行話」批評，Anthropic 疑似用 Claude 代寫官方回覆再添爭議：跨 HN／Reddit 延燒 | 2026-08-19 | 🔥🔥🔥🔥 | ☄️閃現 | Hacker News 熱門討論（連結至 [GitHub Issue #77136](https://github.com/anthropics/claude-code/issues/77136)）批評 Opus 5.0 輸出用詞浮誇，充斥「行話」（blast radius、earned its keep、spine 等被列入禁用詞清單的用語）；留言指出負責回覆此 issue 的 Anthropic 工程師疑似用 Claude 代寫回應，而該回覆本身仍帶有被抱怨的同類「Claude-isms」，引發讀者兩極反應——部分認為官方用 AI 回覆「AI 用詞問題」的抱怨本身不妥（此為留言區質疑，未經官方證實）；HN score 181，遠超收錄高門檻；08-20 Reddit r/ClaudeCode 貼文「[The Claude language calibration issue on GitHub got an official response from Anthropic. Guess who wrote it.](https://www.reddit.com/r/ClaudeCode/comments/1vtfib0/the_claude_language_calibration_issue_on_github/)」聚焦同一「官方回覆疑似 Claude 代寫」爭點延燒次日，跨平台佐證（source_count=2）；與本頁 08-10「把 Claude 式用語翻譯成一般英文的 plugin」同屬「Claude 制式措辭／行話」議題軸線，本則為該軸線在官方溝通層級的新訊號；[GitHub Issue #77136](https://github.com/anthropics/claude-code/issues/77136)（HN／Reddit） | — |
+| arXiv 論文主張不應將模型解答前的中間 token 直接擬人化稱為「推理／思考痕跡」 | 2026-08-19 | 🔥 | ☄️閃現 | 論文（[arXiv:2504.09762](https://arxiv.org/abs/2504.09762)）主張「推理／思考痕跡（reasoning/thinking traces）」一詞隱含模型思考過程與人類解題步驟相似，此類比可能誤導讀者對模型內部運作的理解；HN score 38，達收錄中門檻；與本頁 06-23「Extended Thinking 為摘要而非真實推理」長期議題同軸——後者聚焦 thinking blocks 技術上無法核驗，本篇從命名／擬人化角度補上學術文獻觀點；單一來源，尚無跨平台佐證；[原文](https://arxiv.org/abs/2504.09762)（HN） | — |
+| Simon Willison：smolmachines/smolvm 作為執行不受信任 Python／JavaScript 的沙盒方案 | 2026-08-19 | 🔥 | ☄️閃現 | Simon Willison 部落格研究筆記，介紹 smolmachines/smolvm 作為執行不受信任 Python 與 JavaScript 程式碼的沙盒方案；具體技術細節未見於本次摘要；具名表態，無社群延燒；[原文](https://simonwillison.net/2026/Aug/19/smolmachines-untrusted-sandbox/)（Blog） | — |
+| Simon Willison 轉引 Jeremy Morrell：LLM 為網頁帶來「可延伸軟體」新機會 | 2026-08-19 | 🔥 | ☄️閃現 | Simon Willison 部落格轉引 Jeremy Morrell 觀點：LLM 使網頁上的「可延伸軟體（Extensible Software）」出現新機會；具體論述未見於本次摘要；具名表態，無社群延燒；[原文](https://simonwillison.net/2026/Aug/19/jeremy-morrell/)（Blog） | — |
+| Simon Willison × Claire Giordano：AI 如何改變軟體開發——概念完整性與程式碼行數計算 | 2026-08-19 | 🔥 | ☄️閃現 | Simon Willison 分享與 Claire Giordano 討論「AI 如何改變軟體開發」的 podcast 內容，主題涉及概念完整性（conceptual integrity）與程式碼行數計算方式；具體論點未見於本次摘要；具名表態，無社群延燒；[原文](https://simonwillison.net/2026/Aug/19/conceptual-integrity-and-counting-lines-of-code/)（Blog） | — |
+| Reddit r/ClaudeAI 週熱門：讓 Claude Code 用真實資金自動交易股票的實驗結果 | 2026-08-14 | 🔥 | ☄️閃現 | 使用者分享讓 Claude Code 以真實資金自動交易股票的實驗心得與結果；具體績效數字與策略細節未見於本次摘要；Reddit r/ClaudeAI 週熱門標記，達收錄低門檻；[原文](https://www.reddit.com/r/ClaudeAI/comments/1voi341/i_let_claude_code_trade_stocks_with_my_real_money/)（Reddit · 週熱門） | — |
 | Reddit r/ClaudeCode 週熱門：貼文宣稱樹莓派上跑的 22GB 本地模型於「真實世界編碼任務」表現超越 Claude Code + Opus 5 High | 2026-08-19 | 🔥 | ☄️閃現 | 貼文標題主張訓練截止日後發布的真實世界編碼任務中，樹莓派本機跑的 22GB 本地模型效能已超越 Claude Code 搭配 Opus 5 High；**未附任何具體 benchmark 數據、樣本規模或測試方法論**，僅為單一貼文主張；Reddit 週熱門標記，達收錄低門檻，惟訊號強度極弱，讀者不應將其視為已驗證的效能對比；[原文](https://www.reddit.com/r/ClaudeCode/comments/1vrqxqc/)（Reddit · 週熱門） | — |
 | What We Learned Moving Our Agent Loops from Anthropic to GLM：團隊分享盲測結果與遷移原因 | 2026-08-18 | 🔥 | ☄️閃現 | Unblocked 團隊發文說明將多數 agent 流量從 Claude Opus 遷移至 GLM 5.2 的過程，記錄了促成遷移的具體原因、盲測（blind A/B）與內部 ledger 呈現的實測結果，並誠實列出哪些地方變差、哪些維持不變（非片面宣傳文）；HN score 18，達收錄低門檻，單平台、尚無跨平台佐證；技術面量化細節已同步收錄於下方「技術彙整」；[原文](https://getunblocked.com/blog/moving-agent-loops-from-anthropic-to-glm/)（HN） | — |
 | 「Anthropic's War on open source AI」批評文於 HN 引發熱議，留言區另質疑該文本身是否由 AI（疑似 Grok 假扮 Claude）代筆 | 2026-08-17 | 🔥🔥🔥 | ☄️閃現 | 一篇批評 Anthropic 對開源 AI 生態立場的貼文（以 X/Twitter 貼文形式流傳）於 Hacker News 引發熱議；HN 留言區除討論原文論點外，另有一派留言質疑該文字風格疑似非人類撰寫，懷疑是 Grok 冒充 Claude 語氣代筆，使討論分岔為「Anthropic 開源立場評價」與「AI 生成內容可信度」兩條並行爭論；HN score 146，達高門檻（≥50分），單平台高互動、議題共鳴深，尚無跨平台佐證；原文具體論據未見於本次摘要，需讀者自行查閱；[原文](https://twitter.com/TheAhmadOsman/status/2065307070044234186)（HN） | — |

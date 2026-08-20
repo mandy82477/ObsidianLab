@@ -30,6 +30,7 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 > - **CNBC／The Information：Anthropic 對 OpenAI 的商業領先幅度持續擴大**：CNBC 稱 Anthropic 已超越 OpenAI 成為市場最熱門 AI 新創；The Information 稱 Anthropic 營收領先幅度仍在擴大（安全政策面留給安全政策記者），與既有 08-19 已記錄「OpenAI 第二季業績落後 Anthropic」多來源訊號方向一致，詳見「財務狀況」表新增列。
 > - **Motley Fool：若傳出的 IPO 估值成真，Amazon 持有 Anthropic 股份價值恐超過 4,000 億美元**：分析文章，詳見「IPO 前瞻與估值追蹤」表新增列。
 > - **Yahoo Finance：與 Anthropic 相關的資料中心取得 13 億美元私募信貸貸款**：詳見「戰略合作」表新增列。
+> - **Goldman Sachs、OKX 雙雙於香港被切斷 Claude AI 存取權限**：地緣政治/合規面詳見 [[topics/anthropic-government-policy]]，企業存取面本頁不重複列出，詳見 [[topics/enterprise-tool-tracker]]。
 > - **08-19 記錄之 IPO 前置動作雙訊號（超級投票權、信用額度擴大至逾 100 億美元）與音樂出版商著作權訴訟仍為近期重點**，詳見「IPO 前瞻與估值追蹤」「商業風險」表。
 
 ---
@@ -267,6 +268,7 @@ Simon Willison（知名開發者博主）發表文章，認為 Anthropic 與 Ope
 ### 2026-08
 
 #### 2026-08-20
+- **[具名企業退出，詳見 enterprise-tool-tracker] Yahoo Finance：Goldman Sachs、OKX 雙雙於香港被切斷 Claude AI 存取權限**：涉及地緣政治與合規因素，成因未明；本頁不重複列出，詳見 [[topics/enterprise-tool-tracker]]、[[topics/anthropic-government-policy]]（Google News/Yahoo Finance）
 - **[財務狀況，新增] CNBC：Anthropic 已超越 OpenAI 成為市場最熱門 AI 新創（含股票贏家/輸家分析）**：詳見「財務狀況」表新增列（Google News/CNBC）
 - **[財務狀況，新增，安全面留給安全政策記者] The Information：OpenAI 安全政策追上 Anthropic 之際，Anthropic 營收領先幅度仍在擴大**：本頁僅記錄商業面，詳見「財務狀況」表新增列（Google News/The Information）
 - **[IPO 前瞻，新增，分析文章] Motley Fool：若 IPO 估值傳聞成真，Amazon 持有 Anthropic 股份價值恐超過 $4,000 億美元**：詳見「IPO 前瞻與估值追蹤」表新增列（Google News/The Motley Fool）
