@@ -67,3 +67,15 @@ Schema（每行一筆，每次 gather / render 各一筆）：
 
 id 由（開立日、來源、目標、note）雜湊而來，同一交辦重複開立冪等；`list` 對逾 14 天未結案者標 ⚠️。
 
+## `link_health.json`
+
+wiki 外部連結的健康快照，**唯一寫者是 `.github/workflows/weekly-linkcheck.yml`**（週五 20:00 UTC，純 stdlib HEAD 請求、不含 LLM），唯一讀者是 `/wiki-lint` 指標三。
+
+| 欄位 | 意義 |
+|---|---|
+| `checked_at` | 檢查日期。**消費端必須驗新鮮度**——距今 > 10 天視為過期，不得據以標註頁面 |
+| `total_unique_links` / `checked` / `ok` | 掃描規模與正常數 |
+| `dead[]` | 疑似死鏈：`url` / `status`（null=逾時或連線失敗）/ `pages[]` 引用頁面清單 |
+| `anti_bot[]` | 429/403，**不算死鏈**、不派工，僅列數字 |
+
+覆寫式快照（非 append），歷史留在 git。產出這個檔的理由見該 workflow 檔頭：這步是純網路、不需 LLM，套用分裂架構後就不再需要本機。

@@ -12,11 +12,13 @@ check_links.py — 月檢 wiki/**/*.md 中的外部連結（http/https），找�
 """
 
 import argparse
+import json
 import re
 import sys
 import time
 import urllib.error
 import urllib.request
+from datetime import date
 from pathlib import Path
 
 ROOT = Path(__file__).parent.parent
@@ -76,9 +78,57 @@ def check_one(url: str) -> tuple[str, int | None, str]:
         return url, None, f"錯誤：{e}"
 
 
+def _write_report(path_str, links, urls, dead, anti_bot, ok_count, as_of):
+    """輸出 JSON 報告。消費端是 `/wiki-lint` 指標三——它讀這個檔而不自己連網，
+    因此雲端 lint（egress 封鎖）也能完成該步驟。"""
+    checked_at = as_of or date.today().isoformat()
+    payload = {
+        "checked_at": checked_at,
+        "total_unique_links": len(links),
+        "checked": len(urls),
+        "ok": ok_count,
+        "dead": [
+            {
+                "url": url,
+                "status": status,
+                "note": note,
+                "pages": sorted(str(p.relative_to(ROOT)).replace("\\", "/") for p in links[url]),
+            }
+            for url, status, note in dead
+        ],
+        "anti_bot": [
+            {
+                "url": url,
+                "status": status,
+                "pages": sorted(str(p.relative_to(ROOT)).replace("\\", "/") for p in links[url]),
+            }
+            for url, status, note in anti_bot
+        ],
+    }
+    out = Path(path_str)
+    if not out.is_absolute():
+        out = ROOT / out
+    out.parent.mkdir(parents=True, exist_ok=True)
+    out.write_text(json.dumps(payload, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
+
+
 def main():
     parser = argparse.ArgumentParser(description="掃描 wiki/**/*.md 外部連結，找出疑似死鏈")
     parser.add_argument("--limit", type=int, default=None, help="只驗證前 N 條連結（用於快速驗證邏輯）")
+    parser.add_argument(
+        "--report",
+        type=str,
+        default=None,
+        metavar="PATH",
+        help="額外輸出機器可讀的 JSON 報告（供 GH Actions commit 回 repo、由 /wiki-lint 讀取）",
+    )
+    parser.add_argument(
+        "--as-of",
+        type=str,
+        default=None,
+        metavar="YYYY-MM-DD",
+        help="報告的檢查日期，預設為今日（測試用，避免報告內容隨時鐘變動）",
+    )
     args = parser.parse_args()
 
     links = collect_links()
@@ -120,6 +170,14 @@ def main():
             pages = ", ".join(str(p.relative_to(ROOT)) for p in links[url])
             print(f"- {url}  [狀態: {status}]  引用頁面: {pages}")
 
+    if args.report:
+        _write_report(args.report, links, urls, dead, anti_bot, ok_count, args.as_of)
+        print(f"\n報告已寫入：{args.report}")
+
+    # exit code 只代表「有沒有死鏈」，供本機使用者判讀。
+    # GH Actions 那條線刻意不看它（見 .github/workflows/weekly-linkcheck.yml）：
+    # 有死鏈是預期中的常態發現，不是 workflow 失敗——若讓它紅燈，紅燈會變成
+    # 背景雜訊，真正的抓取失敗就沒人看得出來。
     return 1 if dead else 0
 
 

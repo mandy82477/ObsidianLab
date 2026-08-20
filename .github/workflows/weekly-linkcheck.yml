@@ -1,0 +1,85 @@
+# 每週外部死鏈檢查（分裂架構套用到 lint 這條線）
+#
+# 為什麼存在：wiki-lint 的「指標三：外部死鏈」原本標為「只能本機執行」，因為
+# 雲端 routine 的沙盒 egress 封鎖外部網域。但這一步是**純 HTTP HEAD 請求、
+# 完全不需要 LLM**——與每日抓料同一種性質，正好適用 2026-07-10 就定案的分裂
+# 架構：「不需 LLM 的網路工作移到 GitHub Actions，需 LLM 的留給有訂閱的環境」。
+#
+# 這條線從來沒被套用過，代價是死鏈檢查自 2026-07 起一次都沒真正執行：
+# 每週 lint 都輸出「雲端跳過，留待本機」，而沒有任何機制保證本機補跑
+# （log 佐證：08-01 留待辦 → 08-08「非本月首次，跳過」→ 08-15 再跳過）。
+#
+# 有了這個 workflow，該步驟不再需要本機、也不再需要雲端連網：Actions 產出
+# data/link_health.json，lint 改成讀這個檔並派記者標註失效連結。
+#
+# 順帶修掉一個 bug：原規格「僅每月第一次 lint 執行」的觸發器會被雲端那次用掉，
+# 之後每週都輸出「非本月首次，跳過」。現在檢查有自己的 cron，與 lint 脫鉤。
+name: weekly-linkcheck
+
+on:
+  schedule:
+    # 週五 20:00 UTC = 週六 04:00 台北，早於雲端 weekly lint（週六 01:00 UTC）5 小時。
+    # 緩衝取 5 小時的理由同 daily-gather：GitHub 排程 workflow 實測延遲可達 2.7 小時，
+    # 緩衝不足會讓 lint 讀到上週的舊報告而不自知。
+    - cron: "0 20 * * 5"
+  workflow_dispatch: {}  # 允許手動觸發（改完規格想立刻產一份報告時用）
+
+concurrency:
+  group: weekly-linkcheck
+  cancel-in-progress: false
+
+permissions:
+  contents: write  # 需要把 link_health.json commit 回 repo 供 lint 讀取
+
+jobs:
+  linkcheck:
+    runs-on: ubuntu-latest
+    # 795 條唯一外部連結、逐條 HEAD、單條逾時上限 10 秒（無節流 sleep）。
+    # 典型全綠時數分鐘內跑完；最壞情況（大量逾時）約 2 小時，故給 90 分鐘上限，
+    # 超時視為異常而非常態，讓它紅燈寄信。
+    timeout-minutes: 90
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.13"
+
+      # check_links.py 只用標準庫（urllib），不需要 pip install。
+
+      - name: Check external links (pure stdlib, no LLM)
+        working-directory: CLAUDE_NEWS
+        # 刻意 `|| true`：這支腳本的 exit code 代表「有沒有死鏈」，而發現死鏈是
+        # 這個 job 的**正常產出**，不是執行失敗。若讓它紅燈，紅燈就變成背景雜訊，
+        # 真正該告警的事（抓取整個掛掉、timeout）反而沒人分辨得出來。
+        # 真正的失敗由下一步「報告是否產出」把關。
+        run: python scripts/check_links.py --report data/link_health.json || true
+
+      - name: Verify report was produced
+        working-directory: CLAUDE_NEWS
+        # 沒有報告＝這個 job 實質失敗（腳本崩潰、網路整段不通）。此時要紅燈寄信，
+        # 因為 lint 下游會讀到過期報告卻以為是新的——與 daily 的新鮮度防線同理。
+        run: |
+          test -f data/link_health.json || { echo "報告未產出，視為失敗"; exit 1; }
+          python -c "import json,sys; d=json.load(open('data/link_health.json',encoding='utf-8')); print(f\"checked_at={d['checked_at']} 檢查 {d['checked']}/{d['total_unique_links']} 條，死鏈 {len(d['dead'])}、疑似反爬 {len(d['anti_bot'])}\")"
+
+      - name: Commit link health report
+        working-directory: .  # repo root
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add CLAUDE_NEWS/data/link_health.json
+          if git diff --cached --quiet; then
+            echo "No link-health changes to commit."
+            exit 0
+          fi
+          git commit -m "data: weekly link health report"
+          # 與其他自動線同樣走 pull --rebase 重試：雲端 routine 與本機都可能同時 push。
+          for i in 1 2 3; do
+            git pull --rebase origin master && git push origin master && exit 0
+            echo "push 失敗，第 $i 次重試"
+            sleep 15
+          done
+          echo "push 連續三次失敗"; exit 1

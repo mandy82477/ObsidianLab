@@ -513,15 +513,16 @@
       ]
     },
     {
-      "name": "雲端外部死鏈防護：weekly-lint.md 必須保留「雲端一律跳過死鏈檢查」規定（egress 封鎖會產生假死鏈並污染頁面標註；08-01 為月度首跑首當其衝）",
+      "name": "雲端外部死鏈防護（2026-08-20 移交 GitHub Actions 後改指新不變式）：weekly-lint.md 必須載明雲端「讀 link_health.json、不自己連網」且必須有新鮮度防線。原風險（雲端跑 check_links 產生假死鏈污染頁面標註）已消失，但新風險是讀到過期報告卻以為是新的——過期報告比沒有報告更危險，它看起來像剛檢查過",
       "assertion": "all_contain",
       "files": [
-        "docs/cloud-runbooks/weekly-lint.md"
+        "docs/cloud-runbooks/weekly-lint.md",
+        ".claude/commands/wiki-lint.md"
       ],
       "patterns": [
-        "外部死鏈檢查（月度）在雲端一律跳過",
-        "egress",
-        "check_links\\.py"
+        "link_health\\.json",
+        "checked_at",
+        "過期"
       ]
     },
     {
@@ -849,6 +850,17 @@
         "reader-notes"
       ],
       "_note": "2026-08-20 加入。reader-notes.md 原本只被 /wiki-weekly-review（對內策展）與 /wiki-ingest（逾期提醒）消費，對外交付的週報從不讀它——讀者問過的題目只會變成 wiki 加碼，永遠進不了他們真正在讀的那篇。該檔自己維護一份「消費（避免變死檔）」清單，新增消費者而不同步該清單，清單就會謊報這個收件匣被誰讀過。"
+    },
+    {
+      "name": "死鏈報告的產出端 <-> 消費端：weekly-linkcheck workflow 產出 data/link_health.json，wiki-lint 指標三讀它。只留一側＝有人天天產報告沒人看，或 lint 讀一個永遠不存在的檔（後者更糟：它會安靜地跳過死鏈檢查，回到 2026-07～08 一次都沒跑過的狀態）。註：workflow 位於 git repo 根（ObsidianLab/），故路徑相對 CLAUDE_NEWS 需 ../",
+      "assertion": "all_contain",
+      "files": [
+        "../.github/workflows/weekly-linkcheck.yml",
+        ".claude/commands/wiki-lint.md"
+      ],
+      "patterns": [
+        "link_health\\.json"
+      ]
     }
   ],
   "coupling_hints": {

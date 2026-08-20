@@ -59,7 +59,7 @@ from pending_markers import (  # noqa: E402
 )
 
 REVIEW_DEFAULT_DAYS = 14
-QUEUE_LIMIT = 10
+QUEUE_LIMIT = 5  # 5c 每輪處理額度；與 .claude/commands/wiki-lint.md 5c 步驟 1 同步
 SHORT_PROBE_LEN = 6
 
 BAD_BRACKET_RE = re.compile(r"\*\*(?:待查證|查無官方)（標")
