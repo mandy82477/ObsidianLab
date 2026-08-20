@@ -837,6 +837,18 @@
         "5c",
         "回掃"
       ]
+    },
+    {
+      "name": "reader-notes 的消費者清單必須與實際消費者一致：weekly-report 選題讀它，該檔的「消費」節也要列出它",
+      "assertion": "all_contain",
+      "files": [
+        ".claude/commands/weekly-report.md",
+        "wiki/reader-notes.md"
+      ],
+      "patterns": [
+        "reader-notes"
+      ],
+      "_note": "2026-08-20 加入。reader-notes.md 原本只被 /wiki-weekly-review（對內策展）與 /wiki-ingest（逾期提醒）消費，對外交付的週報從不讀它——讀者問過的題目只會變成 wiki 加碼，永遠進不了他們真正在讀的那篇。該檔自己維護一份「消費（避免變死檔）」清單，新增消費者而不同步該清單，清單就會謊報這個收件匣被誰讀過。"
     }
   ],
   "coupling_hints": {
