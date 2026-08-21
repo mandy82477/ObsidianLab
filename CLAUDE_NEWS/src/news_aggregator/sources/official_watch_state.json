@@ -159,7 +159,7 @@
       "https://code.claude.com/docs/en/agent-sdk/file-checkpointing.md": "Rewind file changes with checkpointing",
       "https://code.claude.com/docs/en/agent-sdk/cost-tracking.md": "Track cost and usage",
       "https://code.claude.com/docs/en/agent-sdk/observability.md": "Observability with OpenTelemetry",
-      "https://code.claude.com/docs/en/agent-sdk/todo-tracking.md": "Todo Lists",
+      "https://code.claude.com/docs/en/agent-sdk/todo-tracking.md": "Track todos",
       "https://code.claude.com/docs/en/agent-sdk/hosting.md": "Hosting the Agent SDK",
       "https://code.claude.com/docs/en/agent-sdk/secure-deployment.md": "Securely deploying AI agents",
       "https://code.claude.com/docs/en/agent-sdk/typescript.md": "Agent SDK reference - TypeScript",
@@ -190,16 +190,16 @@
     }
   },
   "https://code.claude.com/docs/en/desktop.md": {
-    "hash": "711008859b4912ffa6a0dbed5a4d0f1ef084a674d366f7032844129bde40c03b",
-    "length": 77420
+    "hash": "33162066488f1018fe3e6f983667bf8d666c8e7bae7738dd879575ccb06b6483",
+    "length": 77464
   },
   "https://claude.com/pricing": {
     "hash": "0247007f8dd0bd2e7b118bcb465abc5ffbf5a9056e4861aed4ef692d637bdfa7",
     "length": 31600
   },
   "https://support.claude.com/en/articles/15424964-claude-fable-5-on-your-plan": {
-    "hash": "5d3bda7bb8b64c622d04e275f27df6a287170ed7cd4be4cda0dbdef584d97070",
-    "length": 21970
+    "hash": "2a4a95e95365bc71e343d48b1589eab2853eb5e66edc4cabe2494bfe36645a50",
+    "length": 21963
   },
   "https://support.claude.com/en/articles/12429409-manage-usage-credits-for-paid-claude-plans": {
     "hash": "86c04184d006df43eeaa45d96af144b665b612a99760a8129b4deef6612ed0b2",
@@ -210,8 +210,8 @@
     "length": 22132
   },
   "https://support.claude.com/en/articles/11145838-use-claude-code-with-your-pro-or-max-plan": {
-    "hash": "e6b263e5aae34118aa56ceb8551cd4111cb553b7d5c79fbe3766ac22c1f5c659",
-    "length": 22812
+    "hash": "219d01e9536e9ce81e2a11a3d8baa5a3ff901db805827a82c87a146d77e102ae",
+    "length": 22816
   },
   "https://support.claude.com/en/articles/12138966-release-notes": {
     "hash": "96cad57a331efa55a73e9aff682596b3aa86ec4414b99ca148f48b3328245214",
