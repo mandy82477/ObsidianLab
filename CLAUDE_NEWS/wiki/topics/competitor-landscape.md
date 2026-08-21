@@ -24,12 +24,12 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 **領域：** 💼 商業
 **蒐集邊界：** 以 Claude 為參照系的競品動態為主，另針對競品發布與定價定向補抓（每日至多 2 則）；競品自身未與 Claude 對比的發布可能延遲或缺漏。
 **開始日期：** 2026-04
-**最後更新：** 2026-08-20
-**最後新聞更新：** 2026-08-20
+**最後更新：** 2026-08-21
+**最後新聞更新：** 2026-08-21
 
-> **最新競品動態**（2026-08-19）
-> - **TechCrunch／WSJ：OpenAI 推出新客戶資料隱私保護承諾，被解讀為針對 Anthropic 既有隱私訴求的競爭回應**：詳見「主要競品追蹤」OpenAI ChatGPT Work / GPT-5.6 子區塊新增。
-> - **Startup Fortune（專頁定向）：分析 AI 編碼 agent 定價模式與新創在成本上遭遇的擠壓**：詳見「觀察重點」新增與下方時序。
+> **最新競品動態**（2026-08-21）
+> - **The Register：OpenAI 以「零資料保留」（zero data retention）承諾正面搶攻 Anthropic 企業客戶；TechCrunch：新數據指出 OpenAI 正在企業用戶市場追近 Anthropic**：延續 08-19 已記錄之隱私承諾競爭回應，本次補上具體措辭「零資料保留」與量化追近訊號，詳見「主要競品追蹤」OpenAI ChatGPT Work / GPT-5.6 子區塊新增。
+> - **VentureBeat／The Next Web：Slack 推出「Slack Code」，讓 Claude 與 ChatGPT 可在同一群組頻道協作，被視為聊天工具切入 AI coding 市場**：本頁首次追蹤 Slack 作為競品，詳見「主要競品追蹤」新增 Slack Code 子區塊。
 > - **08-17 記錄之 GitHub Copilot 計費改版、Cursor Origin 平台、Zhipu 能力宣稱仍為近期重點**，詳見「主要競品追蹤」對應子區塊。
 
 ---
@@ -162,6 +162,7 @@ Claude Code 已成為 AI 輔助編碼的標竿產品，但競爭正快速升溫�
 - **動態**：OpenAI 發表長期醞釀的「super app」ChatGPT Work，搭配新模型 GPT-5.6，明確訴求在**價格、速度、生產力**三個面向上超越 Anthropic
 - **意義**：與既有 OpenAI Codex CLI（下載量對 Claude Code 分流）不同，ChatGPT Work 定位為企業工作場景的整合入口，正面挑戰 Anthropic 的訂閱與企業採購雙軌商業模式；若價格與速度確實具優勢，可能加劇 Anthropic 6/15 計費爭議後的訂閱留存壓力（推論）（Reuters「OpenAI unveils long-awaited "super app" as rivalry with Anthropic intensifies」；ZDNET「OpenAI's GPT-5.6 and ChatGPT Work aim to beat Anthropic on price, speed, and productivity」）；定價細節待後續報導補上具體數字，見「競品定價對照」
 - **隱私面新戰線（2026-08-19）**：TechCrunch、WSJ 同步報導 OpenAI 推出新的客戶資料隱私保護承諾，兩媒體均將其解讀為針對 Anthropic 既有隱私訴求的競爭回應；延續本區塊「價格、速度、生產力」三面向競爭框架，本則首見「資料隱私」作為第四個正面對標維度，顯示 OpenAI 正將 Anthropic 過去強調的信任/安全定位優勢一併對標爭奪（推論）；具體承諾內容（資料保留期限、訓練用途排除範圍、稽核機制等）未見報導細節，僅標題層級可用（Google News/TechCrunch；WSJ）
+- **承諾內容補上具體措辭：「零資料保留」（zero data retention）；同日新數據稱 OpenAI 正追近 Anthropic 企業用戶市場（2026-08-20）**：The Register 報導將 08-19 已記錄之隱私承諾具體化為「zero data retention pledge」，明確定位為對 Anthropic 企業客戶的競爭爭奪動作；同日 TechCrunch 另引述新數據指出 OpenAI 在企業用戶市場的成長正在追近 Anthropic。**對競爭格局的意涵**：兩則同日報導首次將「資料隱私承諾」與「企業用戶市場成長數據」並置，若追近趨勢屬實，顯示 OpenAI 隱私面新戰線並非純公關動作，而是伴隨實際市占變化（推論）；巧合的是同期路透社／彭博社報導 Anthropic 自身也「據傳計畫調整企業資料保留政策」（消息人士，未經官方證實），使得雙方企業資料政策同期均處於變動報導中，詳見 [[entities/pricing]]「定價與促銷」；具體「零資料保留」承諾的技術實作、涵蓋範圍，以及 OpenAI「追近」的量化數字（市占百分比、客戶數）均未見報導細節，僅標題層級資訊（Google News/The Register；Google News/TechCrunch）
 
 ### Cursor AI Agent「Sand」對標 Claude Cowork（開發中，代號確認 2026-07-13）
 - **狀態**：開發中，代號首度確認為「Sand」（TweakTown 2026-07-13；The Information 2026-07-09 首報）
@@ -178,6 +179,12 @@ Claude Code 已成為 AI 輔助編碼的標竿產品，但競爭正快速升溫�
 - **狀態**：正式宣布開源（CNBC；Simon Willison 部落格 https://simonwillison.net/2026/Aug/10/introducing-muse-glimmer/，2026-08-11）
 - **動態**：Meta 宣布將開源其目前最強 AI 模型 Muse Glimmer，CNBC 報導此舉意在向 OpenAI、Anthropic 表態競爭；與 08-05 已發布之編碼專用 agent「Muse Code」不同，Muse Glimmer 為通用旗艦模型，Meta 的開源戰線從「產品層工具」擴大至「模型層權重」
 - **對競爭格局的意涵**：延續 Moonshot Kimi K3（07-27 開源權重）、Zhipu Z.AI、DeepSeek 等既有開源陣營對 Anthropic 高定價旗艦模型的壓力（推論），Meta 若確實開源頂尖模型權重，可能進一步壓縮 Anthropic「閉源旗艦模型溢價」的商業邏輯空間，尤其對 Fable 5／Opus 5 等高單價模型構成間接定價壓力；具體 benchmark 數字、授權條款、開源範圍未見細節，僅標題與部落格轉引層級資訊
+
+### Slack Code（新增追蹤，正式推出，2026-08-20/21）
+- **狀態**：正式推出（VentureBeat 2026-08-21 00:00 UTC；The Next Web 2026-08-20 15:46 UTC）
+- **動態**：Slack 推出「Slack Code」功能，讓 Claude 與 ChatGPT 可在同一個群組頻道內協作；VentureBeat 標題直指 Slack 意圖「把 AI coding 從終端機拖進群組聊天」（"drag AI coding out of the terminal and into the group chat"），The Next Web 稱此舉「讓 Claude 與 ChatGPT 進入同一頻道」
+- **對競爭格局的意涵**：是本頁首次追蹤 Slack（母公司 Salesforce）作為 AI 編碼賽道進入者，切入點與既有競品（Cursor、GitHub Copilot、Zhipu 等聚焦 IDE／CLI 層）不同——Slack Code 以「群組協作介面」為差異化訴求，而非速度或定價；同時**同時整合 Claude 與 ChatGPT**，顯示 Slack 採多模型並行策略而非獨家綁定 Anthropic，與本頁既有「Claude Desktop 第三方 LLM 支援」（見下方「技術彙整」）呈現的「聊天/協作平台層漸趨中立於底層模型商」趨勢一致（推論）
+- **待補充**：具體上線時程（正式發布或 beta）、定價、功能範圍（僅限文字協作或含程式碼執行）均未見報導細節，僅標題層級資訊（Google News/VentureBeat；Google News/The Next Web）
 
 ### Perplexity AI 編碼工具（傳聞開發中，2026-07-07）
 - **狀態**：傳聞階段（Business Insider 2026-07-07 報導）
@@ -292,6 +299,13 @@ Claude Code 已成為 AI 輔助編碼的標竿產品，但競爭正快速升溫�
 #### 近期單日動態彙整（2026-07-02 至 2026-07-26）
 
 > 逐日條目按主題可另見上方「主要競品追蹤」對應廠商子區塊；此區塊保留完整時序供追溯查證。
+
+### 2026-08-21
+- **[Slack Code，新增追蹤] VentureBeat：Slack 把 AI coding 從終端機拖進群組聊天**：詳見「主要競品追蹤」新增 Slack Code 子區塊（Google News/VentureBeat）
+
+### 2026-08-20
+- **[OpenAI ChatGPT Work / GPT-5.6，更新] The Register：OpenAI「零資料保留」承諾正面搶攻 Anthropic 企業客戶；TechCrunch：新數據指出 OpenAI 正追近 Anthropic 企業用戶市場**：延續 08-19 已記錄之隱私承諾競爭回應，詳見「主要競品追蹤」OpenAI 子區塊更新（Google News/The Register；Google News/TechCrunch）
+- **[Slack Code，新增追蹤] The Next Web：Slack Code 讓 Claude 與 ChatGPT 進入同一頻道協作**：詳見「主要競品追蹤」新增 Slack Code 子區塊（Google News/The Next Web）
 
 ### 2026-08-19
 - **[OpenAI ChatGPT Work / GPT-5.6，新增] TechCrunch／WSJ：OpenAI 推出新客戶資料隱私保護承諾，解讀為針對 Anthropic 隱私訴求的競爭回應**：詳見「主要競品追蹤」OpenAI 子區塊新增（Google News/TechCrunch；WSJ）
