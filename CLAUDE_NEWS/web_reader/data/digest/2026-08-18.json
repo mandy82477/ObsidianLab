@@ -449,11 +449,6 @@
       "id": "dario-amodei",
       "name": "Dario Amodei",
       "pageType": "entity"
-    },
-    {
-      "id": "ai-agent-safety",
-      "name": "AI Agent 安全與可靠性",
-      "pageType": "topic"
     }
   ]
 }

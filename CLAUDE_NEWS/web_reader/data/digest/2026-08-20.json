@@ -97,13 +97,7 @@
       "time": "08/19 19:31",
       "sentiment": "",
       "body": "The Register 報導一名開發者用 Claude Code 為 macOS 打造自訂印表機驅動程式。",
-      "focusTags": [],
-      "sedimented": [
-        {
-          "id": "claude-code",
-          "pageType": "entity"
-        }
-      ]
+      "focusTags": []
     },
     {
       "title": "The most interesting takeaway from Anthropic’s design study has nothing to do with proteins - Endpoints News",
@@ -150,13 +144,7 @@
       "time": "08/14 20:09",
       "sentiment": "",
       "body": "使用者分享讓 Claude Code 用真實資金自動交易股票的實驗結果，屬個人實測分享。情緒：😐",
-      "focusTags": [],
-      "sedimented": [
-        {
-          "id": "claude-code",
-          "pageType": "entity"
-        }
-      ]
+      "focusTags": []
     },
     {
       "title": "Finally, Claude Code has “Auto-continue when limits reset”",
@@ -165,13 +153,7 @@
       "time": "08/13 15:12",
       "sentiment": "",
       "body": "使用者回報 Claude Code 新增「額度重置後自動繼續」功能，社群反應正面。情緒：😊",
-      "focusTags": [],
-      "sedimented": [
-        {
-          "id": "claude-code",
-          "pageType": "entity"
-        }
-      ]
+      "focusTags": []
     }
   ],
   "billing": [
@@ -184,12 +166,6 @@
       "body": "報導稱 Claude Code 的「暫時性用量提升」將於當晚到期。詳見今日聚焦。",
       "focusTags": [
         "[持續追蹤]"
-      ],
-      "sedimented": [
-        {
-          "id": "claude-code",
-          "pageType": "entity"
-        }
       ]
     },
     {
@@ -201,12 +177,6 @@
       "body": "Reddit 回報 Claude Code 週用量提升 50% 的促銷已延長至 8/31。詳見今日聚焦。",
       "focusTags": [
         "[持續追蹤]"
-      ],
-      "sedimented": [
-        {
-          "id": "claude-code",
-          "pageType": "entity"
-        }
       ]
     },
     {
@@ -351,29 +321,9 @@
   "preview": "媒體報導 Anthropic 目前能力最強的模型（代號「Model 2」）暫僅供內部使用，尚未對外開放。",
   "sedimentedToday": [
     {
-      "id": "claude-code",
-      "name": "Claude Code",
-      "pageType": "entity"
-    },
-    {
       "id": "managed-agents",
       "name": "Managed Agents",
       "pageType": "entity"
-    },
-    {
-      "id": "pricing",
-      "name": "Anthropic 訂閱方案與計費政策",
-      "pageType": "entity"
-    },
-    {
-      "id": "anthropic-business",
-      "name": "Anthropic 商業健康度",
-      "pageType": "topic"
-    },
-    {
-      "id": "anthropic-government-policy",
-      "name": "Anthropic 政府與軍事政策",
-      "pageType": "topic"
     },
     {
       "id": "code-quality-decline",
@@ -383,11 +333,6 @@
     {
       "id": "community-tech-discussions",
       "name": "社群技術討論趨勢",
-      "pageType": "topic"
-    },
-    {
-      "id": "competitor-landscape",
-      "name": "AI 編碼工具競品動態",
       "pageType": "topic"
     },
     {

@@ -1,0 +1,441 @@
+{
+  "date": "2026-08-21",
+  "generatedAt": "2026-08-21 13:15 UTC",
+  "articleCount": 56,
+  "sourceCount": "13/13",
+  "bulletin": "",
+  "topStories": [
+    {
+      "title": "Anthropic Watermarks Claude to Meet New EU AI Act Rules",
+      "url": "https://news.google.com/rss/articles/CBMijwFBVV95cUxNNHROU1VCeURmZHVLLXJnRTlCd0wxMFJVVm1MTDRYSWZTYkpSRDNKOF8tcHpsUGo3MVk0dUN2cTFoNGZEZ1hPRElkWE1YOExzWDhQZV9fRGxoYW9IMDV0N0oycEU0RDdldWlmem9uankwdldWeVNvVE1MYWw2UkNBWGZ1ZzdOYVl1eUhXLThzSQ?oc=5",
+      "source": "Google News / Business Chief",
+      "time": "08/21 03:42",
+      "sentiment": "",
+      "body": "Business Chief 報導 Anthropic 為因應歐盟 AI Act 的新規定，替 Claude 輸出內容加上浮水印；CNET 同日刊出評論文章，主張 AI 內容標示是大型科技公司的基本責任。",
+      "focusTags": []
+    },
+    {
+      "title": "Slack Code puts Claude and ChatGPT in the same channel",
+      "url": "https://news.google.com/rss/articles/CBMickFVX3lxTFB4eFRlYjhhc1BsYjl1aHI0N0dsaVFOb0JkbTY3WlV0RUFTRnlueDNFcmo1SEpBbWtiOTRmUVdyY21ja25GS1VlcktsenVmTGVRM1VwN0plX1F0LXlHbU81TklFM3Q2QVNTeXBVZ2tFNS0zdw?oc=5",
+      "source": "Google News / The Next Web",
+      "time": "08/20 15:46",
+      "sentiment": "",
+      "body": "The Next Web 報導 Slack 新推出的 Slack Code 功能，讓 Claude 與 ChatGPT 可在同一個群組頻道內協作，被視為聊天工具切入 AI coding 市場的動作。",
+      "focusTags": []
+    },
+    {
+      "title": "三款高星 GitHub 工具同批亮相",
+      "url": "https://github.com/a-bonus/google-docs-mcp",
+      "source": "GitHub Search",
+      "time": "08/21 10:36",
+      "sentiment": "",
+      "body": "`a-bonus/google-docs-mcp`（Google Docs／Sheets／Drive／Gmail／Calendar 的 MCP server，640★）、`borski/travel-hacking-toolkit`（機票哩程與獎勵航班搜尋工具，631★）、`tigerless-labs/cost-xray`（檢視 Claude Code／Codex 實際送出的 API 內容與成本，511★）同日出現在 GitHub Search 熱門清單。三者皆為單一來源、尚無 fork 數或近期 commit 活躍度等佐證可查核，讀者可自行評估後再採用。",
+      "focusTags": [],
+      "sedimented": [
+        {
+          "id": "claude-code",
+          "pageType": "entity"
+        }
+      ]
+    },
+    {
+      "title": "OpenAI is gaining on Anthropic with business users, new data indicates",
+      "url": "https://news.google.com/rss/articles/CBMipwFBVV95cUxNMGJmajZkeWM5S2ptNElzb25JeVc3Qm1Ic291SXFRSjdBNWtmY3E2Mkk5MENZS3hYWi1HMUQyQ3FOWnhqSllGYlhEMmtXVjVZWGJiUTRyUS1CamJhazJNem9scU5oMHNSSWF2SVdiSlVUNEdOOC1Vc1JYN2Flazl2RURzelJUWkc1dTlzT2hrRGdSQTFZVWJJN3NYalVfM3YtdkZ6cGRuaw?oc=5",
+      "source": "Google News / TechCrunch",
+      "time": "08/20 22:36",
+      "sentiment": "",
+      "body": "TechCrunch 引用新數據指出 OpenAI 在企業用戶市場的成長正在追近 Anthropic；The Register 同日報導 OpenAI 祭出零資料保留（zero data retention）承諾，被視為針對 Anthropic 企業客戶的競爭動作。",
+      "focusTags": []
+    },
+    {
+      "title": "Anthropic says Claude designed protein binders for 14 of 15 test targets",
+      "url": "https://news.google.com/rss/articles/CBMiiANBVV95cUxNamM1RV9mZ0FRTlA2S0piMnMyTG5NMGZpSG5xdG1mU3cxZEN3SjVua0QxRUJGZHlGOVl0ai1zTFlYbndLVU1JZ3k5d3hkcTJFNkUzWHl5ZUR2Y05IVmJ4MUFpbHNGNV8zcUtHTHQzZjh0Yk1aNFVMU3U4WW5MdW9VQThDcHRkSGwyV2J6WDUwNkdEQTZHcGtaV3M5X3hhNXpNalJyMFdQT1VGT3JQREtHMkVBSHhCdnl6TWtZZGJxdW05NElWYXNWbHFtVjZucmhLdnVJYy1uOE5teGIwdm1neW1hUy1rWHhQekZuOS1ZQ3pvQVJvRlFVTVB1R05KSU04aENpOEh0SW95S0VfSXRIMHBVc3JuT2syZ0RRWTlVc2FZNmZ0dzhvVEh2T2JsNzE4NzBMNVZickFVU0FCQ0NaVF9tdGJTMENNOUc5RE11dXBDVWVkZWFWVk5pTTA5eFlnWWtkTGhyMnJsX0FOVEpPTEJzaTdBOEJLUXNLVzQwZmpZVzJBODJtdtIBjgNBVV95cUxNTHp5NGxXTmNaU1VVZUYyaHJYQzVFZkU1VTVPcmhRZXlWMHNJSDU1VU51c2lJODZtWmZZdERSNEVBeEtZX190bVUySXpCV1ZHMDRsZ2t5cUJQa044ajFySk5uLTFNQUpjdVlNYkVTa0JUbnNtdXJ4RWJ0dU0tVk85YWJaYk5uRkg3d1VnU1JTa05Fb2JDUU5CeTFkM2xkWGt2d1RUdmRaTVQ1SVRGeGVDNHZselUzdWYzUTQ1WEphTkc5UXo4dU14c1pwSDRvY2ZBT2c5RHo2dE52T3N5Tll5WnkzTUxzM2VwTzRrZTBVYS1xSFh2QUcwRUdJZ0NsVE5CQ09zTGZnZzVEcmJnUTVIdGRaYVkwcmktZDlKZXhfYXJNd09nU2duQ3RVZGR4eHVRUXhpekhSOGhaVVFjQXgwV3hmTzYtU2N3NklxMF9PZi1KWlBTcEtnTkV2ajc1WEhwQ3AxV1padVdubjhrT0Fpa2JQSGpmZ1RmUEE3OUJEbDlicEtOYTB1TnNzakVPQQ?oc=5",
+      "source": "Google News / The Times of India",
+      "time": "08/20 12:15",
+      "sentiment": "",
+      "body": "Times of India 報導 Anthropic 表示 Claude 協助設計了蛋白質結合物，15 個測試目標中有 14 個經獨立實驗室驗證成功。",
+      "focusTags": []
+    }
+  ],
+  "techUpdates": [
+    {
+      "title": "anthropics/claude-code v2.1.238",
+      "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.238",
+      "source": "GitHub / anthropics/claude-code",
+      "time": "08/20 20:33",
+      "sentiment": "",
+      "body": "新增 `keybindingFlavor` 設定，設為 `\"readline\"` 時可讓提示列中的 Ctrl+W 依 Bash 慣例刪除到前一個空白字元；預設值 `\"classic\"` 行為不變。",
+      "focusTags": [
+        "[新工具]"
+      ]
+    },
+    {
+      "title": "anthropics/anthropic-sdk-python v1.0.0",
+      "url": "https://github.com/anthropics/anthropic-sdk-python/releases/tag/v1.0.0",
+      "source": "GitHub / anthropics/anthropic-sdk-python",
+      "time": "08/20 19:58",
+      "sentiment": "",
+      "body": "Python SDK 正式發布 1.0.0，內含 breaking changes：client 升級至 httpx2。升級前建議先查閱完整 changelog。",
+      "focusTags": [
+        "[新工具]"
+      ]
+    },
+    {
+      "title": "官方文件更新：Claude Code 桌面版",
+      "url": "https://code.claude.com/docs/en/desktop.md",
+      "source": "Official Docs",
+      "time": "08/21 10:36",
+      "sentiment": "",
+      "body": "官方文件更新 Claude Code Desktop 頁面，說明桌面版具備並行 session（Git 隔離）、拖放式面板配置、內建終端機與檔案編輯器、side chat、電腦操作、手機端 Dispatch session、視覺化 diff 審查、app 預覽、PR 監控、connectors 與企業設定等功能。",
+      "focusTags": [],
+      "sedimented": [
+        {
+          "id": "claude-code",
+          "pageType": "entity"
+        }
+      ]
+    }
+  ],
+  "mediaReports": [
+    {
+      "title": "Anthropic plans to change enterprise data retention policy, source says",
+      "url": "https://news.google.com/rss/articles/CBMisgFBVV95cUxNaDlfRWVSb2Q5ZEhuaWFqdHR3WThoM2tOalBxeW91VEZGZWgzTUNJZF9NZUxFTmhINXlHS1V3YlZvTXAtNExsT3JtaTdmajA2UlZvYUtOOTI4ZEtBRFIzYTVBNl9nRUhzVUFybmZfX3BIVjd4aDJMM1hpUXQtMC1lZzZXR0k2c3poNlUtUWl0RGZ5NzhNSmtaTzI2NmF0QU54WWZvYVhzREpmanpmN2lfNHh3?oc=5",
+      "source": "Google News / Reuters",
+      "time": "08/20 19:34",
+      "sentiment": "",
+      "body": "路透社引用消息人士報導，Anthropic 計畫調整企業客戶的資料保留政策，細節尚未公開。",
+      "focusTags": [
+        "[重大事件]"
+      ]
+    },
+    {
+      "title": "Anthropic Plans to Change Data Retention Policy for Advanced AI",
+      "url": "https://news.google.com/rss/articles/CBMitAFBVV95cUxNM0dDcm5LNjRqTjcxaTdsWG8wTjBncjVoei1vT2dpOU5TQ05ieWNZOVhqYkQxZGpXclN2ekpMX084bl9udzJTRnhrd2dQNlBEem04bDBSZzhVR1plRF93VS15WDJGZElDSDhJbEVwcTZxRkJtNWxUc3YwZFhmX0JseFZfTXhkM0p5VWJrb3o0RXFCX3h5WkFEME1EQXE0VGdvcjhPYUxSZnhFblVzYjh6bGsyVmQ?oc=5",
+      "source": "Google News / Bloomberg.com",
+      "time": "08/20 17:51",
+      "sentiment": "",
+      "body": "彭博社同日跟進報導同一則資料保留政策異動消息，聚焦於「進階 AI」的適用範圍。",
+      "focusTags": [
+        "[重大事件]"
+      ]
+    },
+    {
+      "title": "Anthropic Expects to Match or Top SpaceX's Record IPO Size",
+      "url": "https://news.google.com/rss/articles/CBMisgFBVV95cUxPZjdKM3p6TTVON2FNcXFDRVhHd056NU03dGQxNzFYYkNYc09xWDhwS1hETzdFUkoyVkpWM0o1VENSaENzWnIwODBmUThla2dsUWF5UkRuWThvVmRsRVdCZHhCaDVQZ2NYSVdLU2J4aHdaZ19OeDY5LUREbVg1cmR6ZmZxVk5OcG5YX0lHMmFUelNSYjNoVVBJVWNYdENoeFFZdmxEQVBPSDNsQWdIMFdtQnJn?oc=5",
+      "source": "Google News / Bloomberg.com",
+      "time": "08/20 19:22",
+      "sentiment": "",
+      "body": "彭博社報導 Anthropic 據傳預期 IPO 規模將比肩甚至超越 SpaceX 先前創下的紀錄發行規模，細節與時程未定。",
+      "focusTags": [
+        "[重大事件]"
+      ]
+    },
+    {
+      "title": "Anthropic could publicly file IPO paperwork as soon as this month",
+      "url": "https://news.google.com/rss/articles/CBMiwwFBVV95cUxPd3lodmhZY0w3R0VINU1YNnh4d1JiYl9teXdqN0FnOVdnWXpnMTlLdWkxRDRva1AzbkhIZkNHR2lIbHZHWGg2MjlOUWZYaXJhRFNoRGZFU1BtMWZkVkhPU1JtX3JiZV9DVjRBZVljOVdOd1R0MnFXYTl1TlU0cVVwVXQxcjBSanFhTUNYTTVWY3AyTklKd3BQeDV0Wk9HVER4NGI0WEVZclVBNUludGdKQUVFQmVwMFljT0NleXRGQmhSUWs?oc=5",
+      "source": "Google News / Yahoo Finance",
+      "time": "08/20 19:20",
+      "sentiment": "",
+      "body": "雅虎財經報導 Anthropic 有可能最快於本月正式遞交 IPO 文件。",
+      "focusTags": [
+        "[重大事件]"
+      ]
+    },
+    {
+      "title": "Anthropic-Affiliated AI Services Company Ode Acquires Casper Studios",
+      "url": "https://news.google.com/rss/articles/CBMiowFBVV95cUxPUkpBX3djUXJfbzNHNFdFeHplcTUwVWZNN1NfSDNVOV94R0h1QXBDVURIUU5xNU5IRWdGWHRXdkpYUUpVLTlMSm8wWUpYVXVqV3h2ZTZEaUo5eHI2Yk9OekZWNkVyd2V4bGdNZTlYZ25HYjAzS093eDFER01neGNsbzV2UGp4M21CYk1CSUNsMzkwUVMzbTk1dTVoakZVa3NBblRv?oc=5",
+      "source": "Google News / crn.com",
+      "time": "08/20 20:47",
+      "sentiment": "",
+      "body": "crn.com 報導與 Anthropic 有關聯的 AI 服務公司 Ode 收購顧問公司 Casper Studios。",
+      "focusTags": [
+        "[重大事件]"
+      ]
+    },
+    {
+      "title": "Anthropic AI venture to acquire consultancy firm: report",
+      "url": "https://news.google.com/rss/articles/CBMimAFBVV95cUxPNzBQaWtsZDNEbFV5dWdCb2R0UWV5eWhWMkFUdmdMMUhMZU5IZkZFOFBIVDk0dExkLTNXOGdla0d5TVJjem9WYUZfWTFLalhCZlk4eVhlLTlWQ2JqeW83SzZQUjBzeUU2Tkt0eHJFUHVZd1ZkdGZmNmdXSVpNQm5nRlV2dG9FZWR3akFKODQxRk9HSVozaWp0Tw?oc=5",
+      "source": "Google News / Seeking Alpha",
+      "time": "08/20 15:41",
+      "sentiment": "",
+      "body": "Seeking Alpha 同日以投資圈角度報導同一起收購案。",
+      "focusTags": [
+        "[重大事件]"
+      ]
+    },
+    {
+      "title": "Anthropic's Enterprise AI Venture Buys Consultancy",
+      "url": "https://news.google.com/rss/articles/CBMikwFBVV95cUxQMWtOUFRTLWtoemREQ09uOVpoQUJPQ2lyUjU2SVpEMEFNNXNoaGs4UWZfeGFING1pcG41VFlEUEx6NWxCNU5pTnFYd0RkNlhYWGJpdUp4d1dxNV9abWZBb3JtZkFwNVhuSE94Z2l3T1hzcFM4YjNGWXpmRHBWLXJQRVV1Y0VRMnlRRHdGV0lDRW1Ndzg?oc=5",
+      "source": "Google News / The Information",
+      "time": "08/20 13:00",
+      "sentiment": "",
+      "body": "The Information 同日跟進報導 Ode 收購 Casper Studios 一事。",
+      "focusTags": [
+        "[重大事件]"
+      ]
+    },
+    {
+      "title": "Claude Outage Hits Claude.ai, API, Claude Code and Cowork as Errors Spread Across Models",
+      "url": "https://news.google.com/rss/articles/CBMirAFBVV95cUxNVUIyeW9yMlo4bGNwNDlzclR4cm1vcmRGT05ScHUtLVZwMF94SVlxaVNLMnRtVE1tS2d6VmdSREc0dERweWZWdFBKbW1WZ0RNd1VTTUhEQjlDWG93S1NhaFljX2ZDTzN4cVNWQVQtUDc2dkkzNjdPTDJDSkhhVVZGbzVLczlnY19xS1lsYWhnT2dER0dKQjV0ZTVOVEw3X0xJTWxFbkJHbnJ4dlNp?oc=5",
+      "source": "Google News / Unite.AI",
+      "time": "08/20 19:39",
+      "sentiment": "",
+      "body": "Unite.AI 報導 Claude 服務今日一度發生錯誤擴散，影響 Claude.ai、API、Claude Code 與 Cowork，對應官方状态頁的兩起事故（多模型請求錯誤、Google connectors 中斷），均已於當日修復。",
+      "focusTags": [
+        "[風險警示]"
+      ],
+      "sedimented": [
+        {
+          "id": "claude-code",
+          "pageType": "entity"
+        }
+      ]
+    },
+    {
+      "title": "Anthropic lets companies store AI data in their own cloud",
+      "url": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxObDNfMU4xbGZkdC1xZWZMLV9wUjJ3QUZmRFlnM2hCNzlMU1pMc2VUQzJGek84SFcyRExuUmlzZ3dadHlqN19iYWs0VW1WTVh3bDVwc3NqbWFDTTRNTDRpX1ZmdXRTeDk5TVY4bWM5M0Juc01UaEhiQi00ZU4yMXVfLTh3NDduLVgxalUzNXBMQ01wMVFya1hQWG8wcDlRYTFWSXlqR3RPUWVMRjA?oc=5",
+      "source": "Google News / Techzine Global",
+      "time": "08/21 07:46",
+      "sentiment": "",
+      "body": "Techzine Global 報導 Anthropic 讓企業客戶可以將 AI 資料存放在自有雲端環境中。",
+      "focusTags": []
+    },
+    {
+      "title": "7 ways I make Claude Code use fewer tokens without hurting the results",
+      "url": "https://news.google.com/rss/articles/CBMinAFBVV95cUxQeUtuaTBCc2w0ZS1JNVVWaUVPSlVKODAydFlwV1pwUnVlcEM2TlV1dUUtQXJXaGg5aGFPRjhNOUFMaFI4cElteHV3OWFadEJIcjZjVVFleWhTNnNUQjNwdU5OYWRJTng4U0ZhdXJzOUZjSFV6OWlRbUkwa1cyNWtWTWEteEhPNF82TVE1Q3RUVzlxU3FkZnlTdnNpd08?oc=5",
+      "source": "Google News / XDA",
+      "time": "08/20 18:00",
+      "sentiment": "",
+      "body": "XDA 分享作者實測的七種降低 Claude Code token 用量的方法，強調不犧牲輸出品質。",
+      "focusTags": [],
+      "sedimented": [
+        {
+          "id": "claude-code",
+          "pageType": "entity"
+        }
+      ]
+    },
+    {
+      "title": "Graft for Claude Code: Cutting Token Use by 42% in Practice",
+      "url": "https://news.google.com/rss/articles/CBMieEFVX3lxTE9PSTM2aUhXOUJycGNjcm9CcVZxLXRUU1BiVWFZOHBKNnZSbFJCLWUzS3NIU3pnSU4wWTA3OXVCdVNJdHFqNkh4d1dRWWRxQUVEb1g3aDdRQm1YSlFrd1pBR0pMaHdCVVd1ODJfTm1EOHFLaVg5XzlaOQ?oc=5",
+      "source": "Google News / SitePoint",
+      "time": "08/20 22:14",
+      "sentiment": "",
+      "body": "SitePoint 報導名為 Graft 的工具在實際使用中將 Claude Code 的 token 用量降低 42%。",
+      "focusTags": [],
+      "sedimented": [
+        {
+          "id": "claude-code",
+          "pageType": "entity"
+        }
+      ]
+    }
+  ],
+  "discussions": [
+    {
+      "title": "Huge change in token allocation this reset.",
+      "url": "https://www.reddit.com/r/ClaudeCode/comments/1vubdkb/huge_change_in_token_allocation_this_reset/",
+      "source": "Reddit / r/ClaudeCode",
+      "time": "😤 · 08/21 09:26",
+      "sentiment": "",
+      "body": "r/ClaudeCode 使用者回報本次配額重置後，token 分配出現明顯變化，但官方尚無對應公告可查證，內容細節待觀察。",
+      "focusTags": []
+    },
+    {
+      "title": "We tried spec-driven development for months. We couldn't prove it improved the code.",
+      "url": "https://www.reddit.com/r/ClaudeCode/comments/1vuc1i3/we_tried_specdriven_development_for_months_we/",
+      "source": "Reddit / r/ClaudeCode",
+      "time": "🤔 · 08/21 10:02",
+      "sentiment": "",
+      "body": "r/ClaudeCode 一則貼文分享團隊實行 spec-driven development 數月後的心得：無法證明此工作流對程式碼品質有實質提升。",
+      "focusTags": []
+    },
+    {
+      "title": "Remote Control Disconnects increasing?",
+      "url": "https://www.reddit.com/r/ClaudeCode/comments/1vucm4a/remote_control_disconnects_increasing/",
+      "source": "Reddit / r/ClaudeCode",
+      "time": "😤 · 08/21 10:33",
+      "sentiment": "",
+      "body": "使用者回報過去三、四天 Claude Code Remote Control 的斷線頻率升高，影響透過手機遠端操作工作流的體驗。",
+      "focusTags": [],
+      "sedimented": [
+        {
+          "id": "claude-code",
+          "pageType": "entity"
+        }
+      ]
+    },
+    {
+      "title": "\\[BUG\\] Cowork VM fails to start on Windows ARM64 (Samsung Galaxy Book4 Edge, Snapdragon)",
+      "url": "https://github.com/anthropics/claude-code/issues/40198",
+      "source": "GitHub Issues / claude-code",
+      "time": "😤 · 08/20 21:25",
+      "sentiment": "",
+      "body": "GitHub Issue 回報 Cowork 虛擬機在 Windows ARM64（Snapdragon 平台，如 Samsung Galaxy Book4 Edge）機型上無法啟動，累積 68 則留言／反應。",
+      "focusTags": []
+    },
+    {
+      "title": "\\[BUG\\] API Error (Connection error.)",
+      "url": "https://github.com/anthropics/claude-code/issues/4297",
+      "source": "GitHub Issues / claude-code",
+      "time": "😤 · 08/20 21:48",
+      "sentiment": "",
+      "body": "另一則 GitHub Issue 彙集了多起 API 連線錯誤回報（Windows 11、Anthropic API 平台），累積 48 則留言／反應。",
+      "focusTags": []
+    }
+  ],
+  "billing": [],
+  "focus": [
+    {
+      "tag": "[風險警示]",
+      "text": "Claude 服務今日一度出現雙重異常：多個模型的請求錯誤率升高，以及 Google connectors（Sheets／Docs／Slides／Chat）連線異常，官方状态頁均已標記為已解決。",
+      "ref_urls": [
+        "https://status.claude.com/incidents/c0ncxxm2wd9r",
+        "https://status.claude.com/incidents/6xskhw7rn4tf",
+        "https://news.google.com/rss/articles/CBMirAFBVV95cUxNVUIyeW9yMlo4bGNwNDlzclR4cm1vcmRGT05ScHUtLVZwMF94SVlxaVNLMnRtVE1tS2d6VmdSREc0dERweWZWdFBKbW1WZ0RNd1VTTUhEQjlDWG93S1NhaFljX2ZDTzN4cVNWQVQtUDc2dkkzNjdPTDJDSkhhVVZGbzVLczlnY19xS1lsYWhnT2dER0dKQjV0ZTVOVEw3X0xJTWxFbkJHbnJ4dlNp?oc=5"
+      ]
+    },
+    {
+      "tag": "[重大事件]",
+      "text": "路透社與彭博社報導，Anthropic 據傳計畫調整企業級資料保留政策，消息來源未具名。",
+      "ref_urls": [
+        "https://news.google.com/rss/articles/CBMisgFBVV95cUxNaDlfRWVSb2Q5ZEhuaWFqdHR3WThoM2tOalBxeW91VEZGZWgzTUNJZF9NZUxFTmhINXlHS1V3YlZvTXAtNExsT3JtaTdmajA2UlZvYUtOOTI4ZEtBRFIzYTVBNl9nRUhzVUFybmZfX3BIVjd4aDJMM1hpUXQtMC1lZzZXR0k2c3poNlUtUWl0RGZ5NzhNSmtaTzI2NmF0QU54WWZvYVhzREpmanpmN2lfNHh3?oc=5",
+        "https://news.google.com/rss/articles/CBMitAFBVV95cUxNM0dDcm5LNjRqTjcxaTdsWG8wTjBncjVoei1vT2dpOU5TQ05ieWNZOVhqYkQxZGpXclN2ekpMX084bl9udzJTRnhrd2dQNlBEem04bDBSZzhVR1plRF93VS15WDJGZElDSDhJbEVwcTZxRkJtNWxUc3YwZFhmX0JseFZfTXhkM0p5VWJrb3o0RXFCX3h5WkFEME1EQXE0VGdvcjhPYUxSZnhFblVzYjh6bGsyVmQ?oc=5"
+      ]
+    },
+    {
+      "tag": "[重大事件]",
+      "text": "彭博與雅虎財經報導，Anthropic 傳最快本月遞交 IPO 文件，規模上看比肩 SpaceX 先前的紀錄發行規模。",
+      "ref_urls": [
+        "https://news.google.com/rss/articles/CBMisgFBVV95cUxPZjdKM3p6TTVON2FNcXFDRVhHd056NU03dGQxNzFYYkNYc09xWDhwS1hETzdFUkoyVkpWM0o1VENSaENzWnIwODBmUThla2dsUWF5UkRuWThvVmRsRVdCZHhCaDVQZ2NYSVdLU2J4aHdaZ19OeDY5LUREbVg1cmR6ZmZxVk5OcG5YX0lHMmFUelNSYjNoVVBJVWNYdENoeFFZdmxEQVBPSDNsQWdIMFdtQnJn?oc=5",
+        "https://news.google.com/rss/articles/CBMiwwFBVV95cUxPd3lodmhZY0w3R0VINU1YNnh4d1JiYl9teXdqN0FnOVdnWXpnMTlLdWkxRDRva1AzbkhIZkNHR2lIbHZHWGg2MjlOUWZYaXJhRFNoRGZFU1BtMWZkVkhPU1JtX3JiZV9DVjRBZVljOVdOd1R0MnFXYTl1TlU0cVVwVXQxcjBSanFhTUNYTTVWY3AyTklKd3BQeDV0Wk9HVER4NGI0WEVZclVBNUludGdKQUVFQmVwMFljT0NleXRGQmhSUWs?oc=5"
+      ]
+    },
+    {
+      "tag": "[新工具]",
+      "text": "`anthropic-sdk-python` 發布 1.0.0 正式版，內含升級至 httpx2 等 breaking changes；同日 `claude-code` 釋出 v2.1.238，新增 `keybindingFlavor` 設定。",
+      "ref_urls": [
+        "https://github.com/anthropics/anthropic-sdk-python/releases/tag/v1.0.0",
+        "https://github.com/anthropics/claude-code/releases/tag/v2.1.238"
+      ]
+    },
+    {
+      "tag": "[重大事件]",
+      "text": "Anthropic 關聯企業 Ode 傳出收購顧問公司 Casper Studios，crn.com、Seeking Alpha、The Information 均有報導。",
+      "ref_urls": [
+        "https://news.google.com/rss/articles/CBMiowFBVV95cUxPUkpBX3djUXJfbzNHNFdFeHplcTUwVWZNN1NfSDNVOV94R0h1QXBDVURIUU5xNU5IRWdGWHRXdkpYUUpVLTlMSm8wWUpYVXVqV3h2ZTZEaUo5eHI2Yk9OekZWNkVyd2V4bGdNZTlYZ25HYjAzS093eDFER01neGNsbzV2UGp4M21CYk1CSUNsMzkwUVMzbTk1dTVoakZVa3NBblRv?oc=5",
+        "https://news.google.com/rss/articles/CBMimAFBVV95cUxPNzBQaWtsZDNEbFV5dWdCb2R0UWV5eWhWMkFUdmdMMUhMZU5IZkZFOFBIVDk0dExkLTNXOGdla0d5TVJjem9WYUZfWTFLalhCZlk4eVhlLTlWQ2JqeW83SzZQUjBzeUU2Tkt0eHJFUHVZd1ZkdGZmNmdXSVpNQm5nRlV2dG9FZWR3akFKODQxRk9HSVozaWp0Tw?oc=5",
+        "https://news.google.com/rss/articles/CBMikwFBVV95cUxQMWtOUFRTLWtoemREQ09uOVpoQUJPQ2lyUjU2SVpEMEFNNXNoaGs4UWZfeGFING1pcG41VFlEUEx6NWxCNU5pTnFYd0RkNlhYWGJpdUp4d1dxNV9abWZBb3JtZkFwNVhuSE94Z2l3T1hzcFM4YjNGWXpmRHBWLXJQRVV1Y0VRMnlRRHdGV0lDRW1Ndzg?oc=5"
+      ]
+    }
+  ],
+  "topicRadar": [
+    {
+      "title": "Slack wants to drag AI coding out of the terminal and into the group chat",
+      "url": "https://news.google.com/rss/articles/CBMisAFBVV95cUxNbmhKVHkxSFd1WW1RSVRNTDlycHQxaE5aQmZzNFNDOUd2VkJKVE9IdFpSb01EZE93R2RMd3NhSWFTRmdEWWVzRmtfVTYtYzJUOHRUSTlXZVdhd2IzaUl1MFRWZnJlcTNqSEpqcEY1cnVKS2lYU0l3enpKa0Z2WDZZejFYVlNOaGJmTVJrdHhia3JCNXI2cnpQRnJNeXpsZzRSYmFlb0NmZEkzczFHSmhGRA?oc=5",
+      "body": "VentureBeat 分析 Slack 正把 AI coding 從終端機帶進群組聊天介面，視為對現有 coding agent 工具生態的競品佈局",
+      "topic": "競品動態",
+      "topicPage": null
+    }
+  ],
+  "sourceStatus": [
+    {
+      "name": "Anthropic Status",
+      "ok": true,
+      "count": 2
+    },
+    {
+      "name": "Hacker News",
+      "ok": true,
+      "count": 10
+    },
+    {
+      "name": "Anthropic Blog",
+      "ok": true,
+      "count": 0
+    },
+    {
+      "name": "Official Skills",
+      "ok": true,
+      "count": 0
+    },
+    {
+      "name": "GitHub Issues",
+      "ok": true,
+      "count": 15
+    },
+    {
+      "name": "Google News",
+      "ok": true,
+      "count": 30
+    },
+    {
+      "name": "Claude API Release Notes",
+      "ok": true,
+      "count": 0
+    },
+    {
+      "name": "dev.to",
+      "ok": true,
+      "count": 14
+    },
+    {
+      "name": "Topic Watch",
+      "ok": true,
+      "count": 1
+    },
+    {
+      "name": "GitHub",
+      "ok": true,
+      "count": 34
+    },
+    {
+      "name": "Blogroll",
+      "ok": true,
+      "count": 2
+    },
+    {
+      "name": "Official Docs",
+      "ok": true,
+      "count": 1
+    },
+    {
+      "name": "Reddit",
+      "ok": true,
+      "count": 10
+    }
+  ],
+  "preview": "Claude 服務今日一度出現雙重異常：多個模型的請求錯誤率升高，以及 Google connectors（Sheets／Docs／Slides／Chat）連線異常，官方状态頁均已標記為已解決。",
+  "sedimentedToday": [
+    {
+      "id": "claude-code",
+      "name": "Claude Code",
+      "pageType": "entity"
+    },
+    {
+      "id": "pricing",
+      "name": "Anthropic 訂閱方案與計費政策",
+      "pageType": "entity"
+    },
+    {
+      "id": "ai-agent-safety",
+      "name": "AI Agent 安全與可靠性",
+      "pageType": "topic"
+    },
+    {
+      "id": "anthropic-business",
+      "name": "Anthropic 商業健康度",
+      "pageType": "topic"
+    },
+    {
+      "id": "anthropic-government-policy",
+      "name": "Anthropic 政府與軍事政策",
+      "pageType": "topic"
+    },
+    {
+      "id": "competitor-landscape",
+      "name": "AI 編碼工具競品動態",
+      "pageType": "topic"
+    }
+  ]
+}
