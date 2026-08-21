@@ -4077,3 +4077,19 @@ registry 加一組 sync_pair 釘住產出端與歸因端（只改一邊等於白
 - 品質備註：無
 
 📋 收件匣提醒：`wiki/reader-notes.md` 有 2 筆 ⏳ 興趣主題已逾 14 天未處理——2026-08-01（成本感知自動模型路由，19 天，週度回顧持續追蹤中）、2026-07-12（GPT-5.6 vs Claude 第一手評測，39 天，已改被動觸發等日報自然出現數字）。
+
+## 2026-08-21 Ingest | news/2026-08-21.md（56 則）
+
+- 來源日報：[[news/2026-08-21]]（56 則抓取，13/13 來源；日報實收 27 則，另 29 則透過 `list_digest_omissions.py` 一併提供給記者判斷）
+- 分類派工：功能 7 則、商業 17 則、安全政策 2 則（另含轉知待接手 1 筆）、社群 25 則（另含轉知待接手 1 筆）、人物 1 則；六類皆以 `subagent_type: general-purpose` + `model: sonnet` foreground 派工，角色前導導向 `.claude/agents/wiki-reporter-[category].md`（正典路徑）；模型類今日無條目，未派工
+- 更新頁面：
+  - **功能**：`entities/claude-code.md`（新增 v2.1.238「keybindingFlavor」設定與 anthropic-sdk-python v1.0.0 breaking change（httpx2 升級，官方未提供遷移時程）；互動數更新：Cowork VM 於 Windows ARM64/Snapdragon 無法啟動（#40198）累積 68 則留言，新增 API 連線錯誤彙整已知問題（#4297，48 則留言）；MCP Apps（HN 2 分）未達門檻不收錄）；feature-radar 新增「anthropic-sdk-python 1.0.0」（🔥🔥🔥）與「keybindingFlavor readline 模式」（🔥🔥），並由主編同步全覽表列與升版風險最新版本行
+  - **商業**：`entities/pricing.md`（新增資料保留政策傳聞、企業自有雲端存放傳聞、token 配額變動回報三筆，均標「⚠️ 需主編查證官方說明中心」）、`topics/anthropic-business.md`（IPO 傳聞：規模傳比肩 SpaceX、可能本月遞交文件；Ode 收購 Casper Studios 三方報導）、`topics/competitor-landscape.md`（OpenAI 業務追趕 Anthropic＋零資料保留反制；Slack Code 讓 Claude／ChatGPT 同駐頻道）；KuCoin／36Kr／Morningstar／ETF Trends 四則低品質來源未收錄
+  - **安全政策**：`topics/anthropic-government-policy.md`（EU AI Act 浮水印系列追蹤新增 Business Chief／CNET 兩則，內容為既有系列重申、無新機制細節，誠實標註未虛抬訊號）、`topics/ai-agent-safety.md`（處理轉知 H-21f8e6：Claude 未經詢問直接發送 Gmail 郵件〔Mashable/Android Police 08-19 報導〕收錄為 agent 自主權限擴張風險，標 ❓ 待查證待補功能面規格；同步修剪現況段落回 2 段避免時序侵蝕）
+  - **社群**：今日條目全數未達收錄門檻，未修改任何頁面——3 筆 GitHub Search 高星工具（640★/631★/511★）因 source_count=1 且無 fork/issue/commit 佐證可查核，標「待查證」不收；9 則 Show HN 分數 2–7 分未達低門檻；10 則 Reddit（r/ClaudeCode 6 則、r/LocalLLaMA 4 則）皆單一來源、score 不可信、無跨平台延燒佐證不收；GLM 5.3 benchmark 因未含與 Claude 的直接比較排除；Simon Willison 兩則與 Claude/Anthropic 無直接關聯排除
+  - **人物**：「The woman behind Anthropic's CEO」（calcalistech.com）僅標題可用、無姓名/事件/引述可查證，且屬個人生活側寫非公開聲明/政策立場，判定資訊不足不寫入 `entities/dario-amodei.md`，未修改任何頁面
+  - **主編**：`wiki/feature-radar.md` 彙整功能記者新增條目（詳見上，含全覽表列與升版風險最新版本行同步，另補注 SDK breaking change 為獨立產品面風險）；`data/pending-handoffs.jsonl` 結案 H-21f8e6（功能→安全政策，已處理，安全政策記者已收入 ai-agent-safety）；H-6b16c9（功能→社群）維持待接手，社群記者確認屬 `community-tech-tools.md` 週更範圍，今日不動作
+- 新增頁面：無
+- 摘要：Claude 服務今日一度發生多模型請求錯誤與 Google connectors 中斷（皆同日解決）；Anthropic 傳出 IPO 前置訊號（規模傳比肩 SpaceX、可能本月遞件）與企業資料保留政策擬異動（路透／彭博，未經官方證實）；Anthropic 關聯企業 Ode 收購顧問公司 Casper Studios；anthropic-sdk-python 發布 1.0.0 含 httpx2 breaking change；Claude 未經詢問直接發送 Gmail 郵件的 agent 自主權限議題收入 ai-agent-safety；社群面今日無條目達收錄門檻
+- 呈現品質：全部通過（`topics/ai-agent-safety.md` 摘要段落當場修剪回 2 段，屬例行維護，非缺陷）
+- 品質備註：無

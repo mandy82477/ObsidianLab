@@ -4,7 +4,7 @@
 僅收錄官方 changelog、release note 或官方公告來源；社群工具見 [[topics/community-tech-tools]]。
 每日更新：新增功能、更新熱度、補充社群回饋。
 
-**最後更新：** 2026-08-20
+**最後更新：** 2026-08-21
 
 ---
 
@@ -20,7 +20,7 @@
 
 ## ⚠️ 升版風險
 
-**最新版本：** v2.1.237（2026-08-20，修復 LLM gateway／自訂 base URL session 的 prompt caching 失效問題，並新增內建「Concise」輸出風格；非 breaking change）。前一版 v2.1.235（08-18）新增可選 `spellcheck` 設定。最後一次重大 breaking change 仍為 v2.1.212／v2.1.215（見下表）；另有一項於 8/14 已生效的 breaking change（auto 模式預設化，已對 Pro/Max/Team 上線，詳見 [[entities/claude-code]] 現況）。
+**最新版本：** v2.1.238（2026-08-20，新增 `keybindingFlavor` 設定；非 breaking change）。前一版 v2.1.237（同日）修復 LLM gateway／自訂 base URL session 的 prompt caching 失效問題，並新增內建「Concise」輸出風格。最後一次重大 breaking change 仍為 v2.1.212／v2.1.215（見下表）；另有一項於 8/14 已生效的 breaking change（auto 模式預設化，已對 Pro/Max/Team 上線，詳見 [[entities/claude-code]] 現況）。⚠️ **另注意**：anthropic-sdk-python 同日發布 v1.0.0，含獨立於 Claude Code CLI 之外的 breaking change（client 升級至 httpx2，官方未提供遷移時程），影響對象為以該 SDK 建置的整合程式碼，非 CLI 升版本身，詳見 [[entities/claude-code]] 現況。
 
 | 風險 | 嚴重度 | 說明 |
 |------|--------|------|
@@ -64,6 +64,8 @@
 
 | 功能 | 發布日期 | 熱度 | 試用價值 | 狀態 |
 |------|----------|------|----------|------|
+| **anthropic-sdk-python 1.0.0**（httpx2 Breaking Change，⚠️ 無過渡期） | 2026-08-20 | 🔥🔥🔥 | ⚡ 有條件推薦 | 正式發布 |
+| **keybindingFlavor readline 模式**（v2.1.238，可選提示列刪除鍵行為） | 2026-08-20 | 🔥🔥 | ⚡ 有條件推薦 | 正式發布 |
 | **Concise 輸出風格**（v2.1.237 新增內建 output style，省略前言與敘述性文字） | 2026-08-20 | 🔥 | ⚡ 有條件推薦 | 正式發布 |
 | **Managed Agents Web Search 設定**（anthropic-sdk-python v0.125.0 新增 SDK 層設定支援） | 2026-08-19 | 🔥 | ⏳ 觀望 | 正式發布（SDK 層）|
 | **spellcheck 輸入框拼字檢查**（v2.1.235，需本機 aspell／hunspell／ispell） | 2026-08-18 | 🔥 | ⚡ 有條件推薦 | 正式發布 |
@@ -149,6 +151,39 @@
 ---
 
 ## 🆕 最新功能（2026-08）
+
+### anthropic-sdk-python 1.0.0（httpx2 Breaking Change）
+**發布：** 2026-08-20（v1.0.0） | **熱度：** 🔥🔥🔥 | **試用價值：** ⚡ 有條件推薦 | **狀態：** GA
+
+**是什麼：** Python SDK 正式發布 1.0.0，⚠️ **Breaking change**：client 底層升級至 httpx2，依賴舊版 httpx 行為或直接操作底層 HTTP client 的整合程式碼可能受影響。
+
+**為何熱：** 主要 SDK 大版號升級與 breaking change，影響所有以 anthropic-sdk-python 建置的服務／pipeline；官方僅提示查閱完整 changelog，未提供明確遷移時程或緩衝期。
+
+**快速上手：**
+```
+pip install --upgrade anthropic
+# 升級前建議先查閱完整 changelog，確認自訂 httpx client 設定與逾時／重試邏輯相容
+```
+
+**注意事項：** ⚠️ 官方未提供明確遷移時程；直接操作 `httpx.Client`／自訂 transport 的整合程式碼升級前務必先在測試環境驗證。
+
+---
+
+### keybindingFlavor readline 模式
+**發布：** 2026-08-20（v2.1.238） | **熱度：** 🔥🔥 | **試用價值：** ⚡ 有條件推薦 | **狀態：** GA
+
+**是什麼：** 新增 `keybindingFlavor` 設定，設為 `"readline"` 時可讓提示列中的 Ctrl+W 依 Bash／Readline 慣例刪除到前一個空白字元，而非 Claude Code 原本的 `"classic"` 刪除邏輯。
+
+**為何熱：** 單一小型可選設定，今日尚未見社群討論延燒；對習慣 Bash/Readline 快捷鍵的使用者有直接體感差異。
+
+**快速上手：**
+```json
+{ "keybindingFlavor": "readline" }
+```
+
+**注意事項：** 預設值仍為 `"classic"`，未設定則行為不變；僅影響提示列（prompt）內 Ctrl+W 的刪除範圍。
+
+---
 
 ### Concise 輸出風格
 **發布：** 2026-08-20（v2.1.237） | **熱度：** 🔥 | **試用價值：** ⚡ 有條件推薦 | **狀態：** 正式發布
