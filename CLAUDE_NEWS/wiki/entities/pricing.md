@@ -4,13 +4,13 @@ kind: "entity"
 type: "policy"
 status: "active（持續調整中）"
 domain: "💼 商業"
-last_updated: "2026-08-20"
-last_news_update: "2026-08-20"
+last_updated: "2026-08-21"
+last_news_update: "2026-08-21"
 status_main: "active"
 days_since_news: 0
-inbound_links: 100
-attribution_count: 56
-attribution_last: "2026-08-20"
+inbound_links: 103
+attribution_count: 60
+attribution_last: "2026-08-21"
 top_source: "google-news"
 pending_count: 3
 pending_overdue: 0

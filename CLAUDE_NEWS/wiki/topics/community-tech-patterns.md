@@ -6,7 +6,7 @@ domain: "🌐 社群"
 last_updated: "2026-08-20"
 last_news_update: "2026-08-20"
 status_main: "ongoing"
-days_since_news: 0
+days_since_news: 1
 inbound_links: 41
 attribution_count: 79
 attribution_last: "2026-08-20"

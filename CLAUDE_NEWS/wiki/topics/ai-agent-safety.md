@@ -11,7 +11,7 @@ inbound_links: 79
 attribution_count: 83
 attribution_last: "2026-08-18"
 top_source: "google-news"
-pending_count: 12
+pending_count: 13
 pending_overdue: 0
 pending_next_review: "2026-08-26"
 pending_signalled: 0
