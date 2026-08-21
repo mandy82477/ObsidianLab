@@ -274,3 +274,4 @@
 [週4 2026/08/20 13:41:00.00] Step 5 Single push done (news + wiki + web)
 [週4 2026/08/20 13:41:00.00] === Pipeline complete (agent) ===
 [cloud daily-news-pipeline-cloud OK 週4 2026/08/20 13:41:00.00]
+[週五 2026/08/21 13:04:43.00] [cloud daily-news-pipeline-cloud STARTED 2026-08-21T13:04:43Z]
