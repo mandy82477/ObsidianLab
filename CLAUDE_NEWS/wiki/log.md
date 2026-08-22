@@ -4166,3 +4166,18 @@ registry 加一組 sync_pair 釘住產出端與歸因端（只改一邊等於白
 - **雲端 `weekly-wiki-lint-cloud` 與每日 pipeline 於本次執行期間同時推送**，收尾 push 遭拒 → `pull --rebase` 後六檔衝突（claude-code／pricing／ai-agent-safety／anthropic-government-policy／community-tech-patterns／log）。標頭與 callout 類衝突一律取雲端側（其新聞內容較新，含 08-20／08-21 ingest），本次新增的區塊與查證結果全部保留並逐項驗證存活；`log.md` 為 append-only，兩側條目皆保留、依日期排序。web build commit 因純產物衝突改為 skip 後重跑 build
 - **`news/2026-08-20`／`08-21` 在週報寫完後才隨 rebase 進入本機**。週報依步驟 5 凍結原則不回頭改選題與深挖，但**補掃了預告探針**，命中 1 則具實質影響者：**WIRED（08-20）〈Coders Say They Already Found Workarounds to Claude's Invisible Watermarks〉**——該則推翻了「可去除浮水印」一列初稿寫的「無人復現」，已由 ✅ 結案改判 🟡 續盯至 W35，並在該列與檔尾標明更正緣由
 - **可攜教訓**：本機 session 開工時的 `news/` 快照，不等於該週實際存在的日報。`/weekly` 步驟 1 的涵蓋窗是在**開工當下**盤點的，而雲端 pipeline 會在執行期間繼續產出——若不在收尾 push 前重掃一次，週報會以「這幾天沒有日報」的語氣，對實際存在的新聞下「本週零命中」的判定。**建議把「收尾前重掃涵蓋窗與預告探針」寫進 `.claude/commands/weekly.md` 步驟 3**，成本是一次 grep，擋掉的是對讀者說謊
+
+## 2026-08-22 Ingest
+
+- 來源日報：[[news/2026-08-22]]
+- 更新頁面：wiki/entities/mythos.md、wiki/entities/claude-code.md、wiki/entities/claude-security.md、wiki/topics/anthropic-business.md、wiki/topics/competitor-landscape.md、wiki/entities/pricing.md、wiki/topics/anthropic-government-policy.md、wiki/topics/ai-agent-safety.md、wiki/entities/dario-amodei.md、wiki/topics/community-tech-patterns.md、wiki/topics/community-tech-discussions.md、wiki/feature-radar.md（主編彙整：Claude Security 熱度 🔥🔥🔥→🔥🔥🔥🔥［source_count 4：MarkTechPost／Dealroom／Palo Alto Networks Unit 42／The New Stack］、「最新版本」更新為 v2.1.239）
+- 新增頁面：無
+- 摘要：Anthropic IPO 估值傳聞升溫至 1000 億美元並將「AI 反彈情緒」列為風險因素、Claude Mythos 5 整合進 Claude Security 資安產品（承諾 3500 萬美元額度）、延攬前 Google 晶片工程師釋出自研硬體訊號，以及多筆 GitHub Issues 集中回報用量配額異常耗盡（Max 訂閱累積 1488 則留言）
+- 呈現品質：六位記者皆回報 ✅ 通過，其中功能記者於 `entities/claude-security.md` 發現「現況」段落與歷史記錄重複，已依「現況不被時序侵蝕」規則修復；全部通過（含 1 項已修復）
+- 品質備註：無
+
+**跨記者轉知（已登帳，待下次派工帶入）：**
+- H-201d81：社群→功能，patterns 新增 OzBrain 對應 `official-community-gap.md`「跨 session 記憶歸零」矩陣列，評估是否列入
+- H-b7c4f2：安全政策→商業，Forbes（08-21）浮水印企業影響報導，`topics/anthropic-business.md` 商業面內容待補
+
+**主編判斷備註：** 功能記者另標「⚠️ 需主編轉知模型記者：entities/mythos.md 補充 Mythos 5 整合進 Claude Security 事件」——經核對，模型記者本輪已獨立處理同一事件（現況／時序均已寫入 `entities/mythos.md`），為兩記者依各自角色檔觸發條件對同一跨類別事件的預期重疊覆蓋，非缺漏，未另開轉知帳目。
