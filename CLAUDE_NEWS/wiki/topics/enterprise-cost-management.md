@@ -1,11 +1,11 @@
 ---
 page: "topics/enterprise-cost-management"
 kind: "topic"
-status: "monitoring"
+status: "ongoing"
 domain: "💼 商業"
-last_updated: "2026-08-16"
+last_updated: "2026-08-22"
 last_news_update: "2026-08-16"
-status_main: "monitoring"
+status_main: "ongoing"
 days_since_news: 5
 inbound_links: 23
 attribution_count: 4
@@ -20,10 +20,10 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 ---
 # 企業規模 Claude 成本管理
 
-**狀態：** monitoring
+**狀態：** ongoing
 **領域：** 💼 商業
 **開始日期：** 2026-05-01
-**最後更新：** 2026-08-16
+**最後更新：** 2026-08-22
 **最後新聞更新：** 2026-08-16
 
 > **最新成本管控動態**（2026-08-14）

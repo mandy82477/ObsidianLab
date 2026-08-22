@@ -25,7 +25,7 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 **開始日期：** 2026-08-08
 **領域：** 🛠️ 工具/功能
 **更新頻率：** 🗓️ 週更（隨官方文件與社群策展更新；日期停留數天屬正常節奏）
-**最後更新：** 2026-08-16
+**最後更新：** 2026-08-22
 **最後新聞更新：** 2026-08-16
 
 > **本頁在回答什麼**（2026-08-08 重寫）
@@ -536,7 +536,7 @@ Boris Cherny 反對「vibe coding」推動術語向 spec-driven 靠攏，2026-05
 
 ## 官方文件導讀：想深入該讀哪一頁
 
-官方文件共 185 頁（完整索引在 [llms.txt](https://code.claude.com/docs/en/llms.txt)），跟 codebase 工作相關的是這些。每頁後面標的是「它在回答什麼」：
+官方文件共 185 頁（完整索引在 [llms.txt](https://code.claude.com/docs/en/llms.txt)，原文已失效），跟 codebase 工作相關的是這些。每頁後面標的是「它在回答什麼」：
 
 - [large-codebases](https://code.claude.com/docs/en/large-codebases) —— **大 repo／monorepo 該怎麼設定**。全站唯一專門講這件事的一頁，含可貼上就用的 `settings.json`。
 - [memory](https://code.claude.com/docs/en/memory) —— CLAUDE.md 怎麼載入、rules 的 `paths:`、auto memory、`/doctor` 的減法原則。

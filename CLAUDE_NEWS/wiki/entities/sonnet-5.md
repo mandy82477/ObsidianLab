@@ -87,7 +87,7 @@ claude --model claude-sonnet-5-20260701
 
 ## 爭議
 
-- ⚠️ **官方對比圖表遭質疑修改（2026-07-02 指控，已掃日報至 2026-08-15 無後續；官方頁面未查證）**：分析文章指出 Anthropic 修改了官方 Sonnet 5 對比圖表，該圖表原版本呈現 Sonnet 5 表現較差（[vincentschmalbach.com](https://www.vincentschmalbach.com/anthropic-changed-sonnet-5-chart-after-it-made-sonnet-look-bad/)，HN score 3）；HN score 3 訊號極弱，且原文未提供修改前後圖表對照的完整存檔連結，近 14 天日報無相關後續報導或官方回應，暫無法進一步驗證
+- ❓ **待查證**（標 2026-07-02｜查 vincentschmalbach、對比圖表）｜**官方對比圖表遭質疑修改**：分析文章指出 Anthropic 修改了官方 Sonnet 5 對比圖表，該圖表原版本呈現 Sonnet 5 表現較差（[vincentschmalbach.com](https://www.vincentschmalbach.com/anthropic-changed-sonnet-5-chart-after-it-made-sonnet-look-bad/)，HN score 3）；HN score 3 訊號極弱，且原文未提供修改前後圖表對照的完整存檔連結，已掃日報至 2026-08-21 無後續；官方頁面未查證
 - ⚠️ **個性/語氣不如 Sonnet 4.6（主觀回饋）**：Reddit 多位使用者反映 Sonnet 5 智力提升但互動個性流失——Sonnet 4.6 原本較有個性、懂得對話節奏、簡短回應精準，Sonnet 5 感覺更像通用「help」助手而非有特色的對話夥伴（[Reddit r/ClaudeAI](https://www.reddit.com/r/ClaudeAI/comments/1ulf5xc/something_important_was_lost_between_sonnet_46/)）；屬主觀體驗回饋，非量化評測，與 Fable 5「失去靈魂」討論（見 [[entities/fable-5]] 爭議區）呈現類似的世代模型「個性 vs 能力」取捨模式（推論）
 - ⚠️ **回應內容重複（弱訊號，2026-07-09）**：Reddit r/ClaudeCode 使用者詢問是否也遇到 Sonnet 5 回應內容重複的情形；貼文無 score（Reddit RSS 恆 0，非跨平台佐證），暫僅列為待觀察訊號，不構成已驗證問題
 
@@ -116,14 +116,14 @@ claude --model claude-sonnet-5-20260701
 **MarkTechPost 三模型深度比較（Sonnet 5 vs Sonnet 4.6 vs Opus 4.8）**：MarkTechPost 發布文章〈Anthropic Claude Sonnet 5 vs Sonnet 4.6 vs Opus 4.8: Agentic Coding Benchmarks, API Pricing, and Cost-Performance Tradeoffs Compared〉，涵蓋三模型的 agentic coding 基準測試、API 定價與成本效益取捨分析；本則日報摘要僅提供標題級資訊，未附具體評測數字，暫列為外部延伸閱讀資源，待後續補充量化內容時再擴寫（Google News／MarkTechPost，2026-07-14）。完整選型對照見 [[topics/model-comparison]]。
 
 ### 2026-07-09
-**媒體「正式發布」報導 + 評測分數/定價初步數字（2026-07-09 指控，已掃日報至 2026-08-15 無後續；官方頁面未查證）**：Mashable 於 07-09 03:41 UTC 報導 Anthropic「finally, officially launches Claude Sonnet 5」，與既有 07-01 官方發布日重疊；tech-insider.org 同日另發文宣稱評測分數達 57 分、API 成本較前代減半（"Claude Sonnet 5 Debuts: 57 Score, Half the API Cost"，13:10 UTC），惟未附具體 benchmark 名稱與官方來源；近 14 天日報無相關後續報導或官方確認具體分數/名稱，暫無法進一步驗證。定價相關細節見 [[entities/pricing]]。此外 Reddit r/ClaudeCode 出現「回應內容重複」的弱訊號回報（score 恆 0，見「爭議」區）。
+❓ **待查證**（標 2026-07-09｜查 Mashable、tech-insider.org）｜**媒體「正式發布」報導 + 評測分數/定價初步數字**：Mashable 於 07-09 03:41 UTC 報導 Anthropic「finally, officially launches Claude Sonnet 5」，與既有 07-01 官方發布日重疊；tech-insider.org 同日另發文宣稱評測分數達 57 分、API 成本較前代減半（"Claude Sonnet 5 Debuts: 57 Score, Half the API Cost"，13:10 UTC），惟未附具體 benchmark 名稱與官方來源；已掃日報至 2026-08-21 無後續；官方頁面未查證。定價相關細節見 [[entities/pricing]]。此外 Reddit r/ClaudeCode 出現「回應內容重複」的弱訊號回報（score 恆 0，見「爭議」區）。
 
 ### 2026-07-08
 **錯誤率再度升高（同日解決）**：Anthropic Status 通報 Sonnet 5 錯誤率一度升高，於 06:40 UTC 解決，無需採取行動（[Anthropic Status](https://status.claude.com/incidents/n3v83qmtlbqm)）；另有 07-07 23:46 UTC 一起「部分模型請求錯誤率升高」事件同日解決。屬穩定性事件，非能力或定價變化。
 
 ### 2026-07-02
 **發布次日爭議：圖表可信度質疑 + 個性流失回饋**：
-- **官方圖表修改爭議（2026-07-02 指控，已掃日報至 2026-08-15 無後續；官方頁面未查證）**：HN 文章指控 Anthropic 修改官方 Sonnet 5 對比圖表，原版本讓 Sonnet 5 表現不佳（[vincentschmalbach.com](https://www.vincentschmalbach.com/anthropic-changed-sonnet-5-chart-after-it-made-sonnet-look-bad/)），HN score 3 訊號弱，近 14 天日報無相關後續報導或獨立佐證
+- ❓ **待查證**（標 2026-07-02｜查 vincentschmalbach、對比圖表）｜**官方圖表修改爭議**：HN 文章指控 Anthropic 修改官方 Sonnet 5 對比圖表，原版本讓 Sonnet 5 表現不佳（[vincentschmalbach.com](https://www.vincentschmalbach.com/anthropic-changed-sonnet-5-chart-after-it-made-sonnet-look-bad/)），HN score 3 訊號弱，已掃日報至 2026-08-21 無後續；官方頁面未查證
 - **個性流失回饋**：Reddit 多位使用者反映 Sonnet 5 相較 Sonnet 4.6 智力提升但互動個性/語氣弱化，感覺更通用化（[Reddit](https://www.reddit.com/r/ClaudeAI/comments/1ulf5xc/something_important_was_lost_between_sonnet_46/)），屬主觀體驗，非量化評測
 
 ### 2026-07-01

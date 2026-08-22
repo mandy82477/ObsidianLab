@@ -1,11 +1,11 @@
 ---
 page: "topics/recursive-self-improvement"
 kind: "topic"
-status: "monitoring（08-14 官方風險報告揭露新對齊疑慮，持續觀察）"
+status: "ongoing（08-14 官方風險報告揭露新對齊疑慮，回升觀察）"
 domain: "🏛️ 政策/安全"
-last_updated: "2026-08-15"
+last_updated: "2026-08-22"
 last_news_update: "2026-08-15"
-status_main: "monitoring"
+status_main: "ongoing"
 days_since_news: 6
 inbound_links: 10
 attribution_count: 5
@@ -20,10 +20,10 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 ---
 # AI 遞歸自我改進與全球暫停呼籲
 
-**狀態：** monitoring（08-14 官方風險報告揭露新對齊疑慮，持續觀察）
+**狀態：** ongoing（08-14 官方風險報告揭露新對齊疑慮，回升觀察）
 **領域：** 🏛️ 政策/安全
 **開始日期：** 2026-06-04
-**最後更新：** 2026-08-15
+**最後更新：** 2026-08-22
 **最後新聞更新：** 2026-08-15
 
 > **最新動態**（2026-08-14，官方《Risk Report August 2026》首度自評內部 AI 研發加速幅度）

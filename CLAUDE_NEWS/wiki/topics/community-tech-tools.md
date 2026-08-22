@@ -3,8 +3,8 @@ page: "topics/community-tech-tools"
 kind: "topic"
 status: "ongoing"
 domain: "🌐 社群"
-last_updated: "2026-08-15"
-last_news_update: "2026-08-15"
+last_updated: "2026-08-22"
+last_news_update: "2026-08-22"
 update_freq: "🗓️ 週更（每週策展一次；更新日期停留數天屬正常節奏）"
 status_main: "ongoing"
 days_since_news: 6
@@ -25,11 +25,11 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 **領域：** 🌐 社群
 **更新頻率：** 🗓️ 週更（每週策展一次；更新日期停留數天屬正常節奏）
 **開始日期：** 2026-04-25
-**最後更新：** 2026-08-15
-**最後新聞更新：** 2026-08-15
+**最後更新：** 2026-08-22
+**最後新聞更新：** 2026-08-22
 
-> **最新工具動態**（2026-08-15）
-> 新增 9 筆達門檻工具（皆為 GitHub Search 抓取，星數已於 2026-08-13 以 GitHub API 查證非刷星）：**loopx**（4,476 星／forks 8.6%，長任務多 agent 團隊的 loop 工程狀態核心，含證據紀錄與可驗證交接機制）、**omnigent**（8,150 星／forks 14.7%，harness 無關 meta-harness）、**pxpipe**（6,955 星／forks 8.5%，圖片化 context 降 token）、**devspace**（3,675 星／forks 10.9%）四筆星數達精選層高門檻（≥1,000），提拔至「值得關注的工具」；另收錄 smart-ralph、headroom-desktop、youtube-skills、ospec（皆 500 星級距，佐證強弱不一，詳見工具目錄備註）、HarnessFlow（482 星，佐證較弱，⏳ 觀察）。提拔同時因採用 30 天無後續，將 **Brainless**、**claude-meseeks** 移出精選層。同步汰除 17 筆逾 30 天無後續的 ⏳ 條目：Brainless／07-15、Agentty／07-15、OtoDock／07-15、Grepathy／07-15、cc-session-recover／07-15、Cc-hindsight／07-15、Fleet Deck／07-14、aloud／07-14、claude-meseeks／07-13、Topsoil／07-13、Devthropology／07-10、AI 思考表徵編輯器／07-10、Kastra／07-10、Papercrane-CLI／07-10、Agent Sessions／07-09、Tilion／07-09、Atelier／07-09。「多 agent 協調混亂」「Token 成本不透明」兩痛點列同步更新近期工具日期。
+> **最新工具動態**（2026-08-22）
+> 本輪新增 3 筆達門檻工具：**Show HN /show-me**（agent skill，精簡視覺化取代大量文字輸出；兩個獨立來源同日報導，達中門檻）、**Graft**（Claude Code hooks 削減 grep 輸出 token，宣稱降幅 42%，HN 39 分＋跨 2 來源達中門檻，惟討論串質疑其 README benchmark 段落疑似 AI 代寫，標「⚠️ 效果存疑」）、**statuslin.es**（社群策展 Claude Code status line 展示網站，同時被 2 個獨立來源收錄）。**omnigent** 星數更新為 9,080（08-20 GitHub Search 再度亮相，較 08-05 查證時的 8,150 星成長；同一 repo 持續成長，非新條目）並補上 repo 連結。汰除 **CodeAlmanac**（2026-07-22 首次出現，逾 30 天無任何後續報導，移出工具目錄與精選層）。「Token 成本不透明」痛點列近期工具日期同步更新至 Graft 出現日。本輪另掃到多筆僅有星數、無 forks／commit／issue 佐證的 GitHub Search 新條目（如 opencodex 11,424★、guizang-social-card-skill 6,467★、cc-pane／cc-switch-web／cad-skill／PostTrainBench／awesome-gamedev-agent-skills 等 500 星級距批次），依防刷規則無法連網查驗，標「待查證」暫不收錄。轉知待接手 H-6b16c9（Piebald-AI/claude-code-lsps，512★）：日報全庫查無此條目原始出處、亦無法連網查證 forks/issues 佐證，同樣標「待查證」不收。
 
 ---
 
@@ -49,9 +49,9 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 
 | 痛點主題 | 代表工具 | 本質問題 | 狀態 | 近期工具 |
 |---------|---------|---------|------|---------|
-| Token 成本不透明 | Tokenyst、CostHawk、TokenShield、PrismoDev、engramx、agent-estimate、pxpipe | 自主 agent 讓帳單不可預測；pxpipe 把文字 context 渲染成圖片降低 token（實測降幅 59–70%，星數已查證非刷星）；Claude-thermos 以保活請求維持快取不過期，但引發「成本轉嫁其他用戶」爭議，尚無社群共識 | 🔥 持續升溫 | 2026-08-05 |
-| 跨 session 記憶歸零 | ltm、Memex、draft CLI、LockedIn、VIR、CoreMem | 無官方標準，每個新 session 從零開始；CodeAlmanac 將記憶對象從「agent 個人記憶」擴大至「codebase 說明文件隨對話自動更新」 | 🔥 持續升溫 | 2026-07-22 |
-| 多 agent 協調混亂 | agent-baton、cdesktop、AnyFrame、agent-teamflow、Superset、omnigent、loopx | 官方 Managed Agents 已部分解決，但社群仍補缺口；Claude Code Merge Queue 補上「多 agent 產出的 commit 如何序列化落地」的下游整合缺口；Cockpit／Wallfacer／HUD 延續補足「多 agent 進度難追蹤」的可觀測性缺口；omnigent（harness 無關 meta-harness）、loopx（長任務多 agent 的證據紀錄與可驗證交接）為本輪新增，星數已查證非刷星 | 🔥 持續升溫 | 2026-08-13 |
+| Token 成本不透明 | Tokenyst、CostHawk、TokenShield、PrismoDev、engramx、agent-estimate、pxpipe、Graft | 自主 agent 讓帳單不可預測；pxpipe 把文字 context 渲染成圖片降低 token（實測降幅 59–70%，星數已查證非刷星）；Graft 用 hooks 削減 grep 輸出 token（宣稱降幅 42%，效果存疑，見下方懸置細節）；Claude-thermos 以保活請求維持快取不過期，但引發「成本轉嫁其他用戶」爭議，尚無社群共識 | 🔥 持續升溫 | 2026-08-15 |
+| 跨 session 記憶歸零 | ltm、Memex、draft CLI、LockedIn、VIR、CoreMem | 無官方標準，每個新 session 從零開始 | 🌙 冷卻觀望 | 2026-07-22 |
+| 多 agent 協調混亂 | agent-baton、cdesktop、AnyFrame、agent-teamflow、Superset、omnigent、loopx | 官方 Managed Agents 已部分解決，但社群仍補缺口；Claude Code Merge Queue 補上「多 agent 產出的 commit 如何序列化落地」的下游整合缺口；Cockpit／Wallfacer／HUD 延續補足「多 agent 進度難追蹤」的可觀測性缺口；omnigent（harness 無關 meta-harness，星數已成長至 9,080）、loopx（長任務多 agent 的證據紀錄與可驗證交接）為近期新增，星數已查證非刷星 | 🔥 持續升溫 | 2026-08-13 |
 | CLAUDE.md 規則失效 | Writ、Caliber、Patina | 規則被忽略、過多規則耗 token、跨工具無標準 | 🌙 冷卻觀望 | 2026-05-12 |
 | 多模型鎖定防禦 | Dragoman、Claudy、claudely、clarp、vibe-skill | 6/15 計費切割後供應商依賴防禦反應加速 | 🌙 冷卻觀望 | 2026-05-21 |
 | 輸出品質不可信 | Groundtruth、EvanFlow、Relay plugin、Proof Loop、Grepathy | 信任邊界未建立，需在流程層強制插入驗證點；Proof Loop 加入建構者/驗證者分離機制；Grepathy 將驗證範疇延伸至「agent 未經核准的自主決策」可追溯性 | 🔥 持續升溫 | 2026-07-15 |
@@ -97,7 +97,7 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 | **Harness** | ✅ | 多 Git worktree 並行管理多個 Claude Code agent |
 | [**Claude Squad**](https://www.reddit.com/r/ClaudeAI/comments/1svmpkv/) | ✅ | 多人多 agent 並行，orchestrator 分派任務並合併分支 |
 | [**Omar**](https://omar.tech) | ✅ | TUI 儀表板統一管理 100 個 agent，支援層級化管理 |
-| **omnigent** | ⏳（8,150 星，已查證非刷星，forks 14.7%）| harness 無關 meta-harness，換底層 agent（Claude Code／Codex／Cursor／Pi）不必重寫協作邏輯，內建政策執行與沙盒化 |
+| [**omnigent**](https://github.com/omnigent-ai/omnigent) | ⏳（9,080 星，08-05 查證非刷星時為 8,150 星，forks 14.7%）| harness 無關 meta-harness，換底層 agent（Claude Code／Codex／Cursor／Pi）不必重寫協作邏輯，內建政策執行與沙盒化 |
 | [**loopx**](https://github.com/huangruiteng/loopx) | ⏳（4,476 星，已查證非刷星）| 輕量級 loop 工程狀態核心，提供持久目標、配額感知自動喚醒、可執行待辦、證據紀錄與可驗證交接，agent-loop agnostic |
 
 ### 工作流 / 品質保障
@@ -112,7 +112,6 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 | 工具 | 採用 | 亮點 |
 | --- | --- | --- |
 | **graphify** | ✅ | Leiden 偵測建程式碼知識圖譜，71 倍 token 減少，40k stars |
-| [**CodeAlmanac**](https://github.com/AlmanacCode/codealmanac/) | ⏳（HN 54）| YC S26，隨與 Claude Code / Codex 對話自動更新 codebase wiki，取代手動維護的 MANUAL.md／DESIGN.md |
 
 ### IDE / 終端
 
@@ -174,7 +173,7 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 | [**ospec**](https://github.com/clawplays/ospec) | 工作流 | ⏳ | 2026-08-11 | 規格驅動 agentic 工作流框架，「規劃—執行—驗證」可驗證目標迴圈，相容 Claude Code、Codex、Gemini、OpenCode；502 星，forks 比例 6.0% 低於防刷佐證基準，刷星可能性未能完全排除 |
 | [**loopx**](https://github.com/huangruiteng/loopx) | 多 Agent | ⏳ | 2026-08-09 | 輕量級 loop 工程狀態核心，持久目標、配額感知自動喚醒、可執行待辦、證據紀錄與可驗證交接，agent-loop agnostic；4,476 星，已查證非刷星（forks 8.6%） |
 | [**HarnessFlow**](https://github.com/HangYu8123/HarnessFlow) | 多 Agent | ⏳ | 2026-08-09 | 鎖定 Codex、Claude、GitHub Copilot 的通用 coding workflow harness；482 星，forks 比例 6.8% 低於防刷佐證基準，僅近期 commit 一項佐證 |
-| **omnigent** | 多 Agent | ⏳ | 2026-08-05 | harness 無關 meta-harness，換底層 agent（Claude Code／Codex／Cursor／Pi）不必重寫協作邏輯；8,150 星，已查證非刷星（forks 14.7%） |
+| [**omnigent**](https://github.com/omnigent-ai/omnigent) | 多 Agent | ⏳ | 2026-08-05 | harness 無關 meta-harness，換底層 agent（Claude Code／Codex／Cursor／Pi）不必重寫協作邏輯；9,080 星（08-05 查證非刷星時為 8,150 星，forks 14.7%），持續成長 |
 | [**pxpipe**](https://github.com/teamchong/pxpipe) | 費用監測 | ⏳ | 2026-08-05 | 把文字 context 渲染成圖片降低 token 用量，實測約 25,000 text token 壓至 2,700 image token；6,955 星，已查證非刷星（forks 8.5%） |
 | [**Wallfacer**](https://github.com/pradipta/wallfacer) | 多 Agent | ⏳ | 2026-08-07 | Claude Code 專用終端機 session 管理工具；Show HN score 35，source_count 2（跨來源佐證） |
 | [**HUD**](https://github.com/adrida/hud-mode) | IDE/終端 | ⏳ | 2026-08-07 | 開源極簡終端 UI，同時支援 Claude Code、Codex、OpenCode；透過官方 CLI JSON event stream 運作，以 UserPromptSubmit hook 取得狀態不額外耗 token；Show HN score 25，source_count 2 |

@@ -4,7 +4,7 @@ kind: "entity"
 type: "person"
 status: "active"
 domain: "👤 人物"
-last_updated: "2026-08-10"
+last_updated: "2026-08-22"
 last_news_update: "2026-08-05"
 status_main: "active"
 days_since_news: 16
@@ -25,7 +25,7 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 **狀態：** active
 **領域：** 👤 人物
 **首次出現：** 2026-08-05
-**最後更新：** 2026-08-10
+**最後更新：** 2026-08-22
 **最後新聞更新：** 2026-08-05
 
 > **最新動態**（2026-08-05）
@@ -41,7 +41,7 @@ Cuéllar 的職涯橫跨法律、科技、國際安全與公部門機構，歷�
 
 ## 核心論述
 
-（目前尚無 Cuéllar 本人於加入 Anthropic 後的公開聲明可記錄；若後續有本人談話，補入此區塊。）
+目前尚無 Cuéllar 本人於加入 Anthropic 後的公開聲明可記錄。
 
 ## 相關議題
 

@@ -125,7 +125,7 @@ claude agents --json | jq '.[] | .agent_id'   # 取得所有 agent ID
 # 詳細配置文件待 Anthropic 正式發布
 # 基本流程：在自有基礎設施部署 Anthropic agent runtime
 # 再透過 MCP 隧道配置連接內部 MCP 伺服器
-# 持續追蹤：https://anthropic.com/claude-code/managed-agents
+# 持續追蹤：https://anthropic.com/claude-code/managed-agents（原文已失效）
 ```
 
 **注意事項：** 自架沙箱需要自行管理基礎設施安全與更新；MCP 隧道的身份驗證機制與延遲影響需在 PoC 階段充分測試。

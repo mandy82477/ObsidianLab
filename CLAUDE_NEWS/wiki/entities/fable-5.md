@@ -111,7 +111,7 @@ claude --model claude-fable-5-20260609
 - ⚠️ **Fable 5 成本高昂**：$200/月 Max 用戶一次 code review 可消耗 45% 週配額；社群回報消耗量個體差異極大
 - ⚠️ **30 天資料保留**：Bedrock 用戶數據強制離開 AWS 安全邊界，企業隱私顧慮
 - ⚠️ **「失去靈魂」討論**：部分用戶認為 Fable 5 相比 Opus 4.6 更工具性、減少人本關懷深度
-- ⚠️ **「Defense in Depth」分類器誤判（2026-07-02，新）**：redeploy 後新增的資安/程式碼請求分類器出現誤判案例——合法資安審查請求被攔截、化學問題被拒（後者 2026-07-02 指控，已掃日報至 2026-08-15 無後續；官方頁面未查證），攔截範圍可能超出原設計的 coding/cybersecurity 場景
+- ⚠️ **「Defense in Depth」分類器誤判（2026-07-02，新）**：redeploy 後新增的資安/程式碼請求分類器出現誤判案例——合法資安審查請求被攔截、化學問題被拒（後者待查證狀態見下方歷史記錄 2026-07-02），攔截範圍可能超出原設計的 coding/cybersecurity 場景
 - 🔴 **Advisor 角色全面 unavailable（2026-07-10，新，未修復）**：GitHub Issue #73365 回報 Fable 5 advisor（Opus 4.8 main 底下的 advisor 角色）在所有 Claude Code session 中皆顯示「unavailable」，版本 v2.1.198，累積 50 則留言、100 個讚，情緒強烈。此為 Claude Code 功能面的呼叫失效，非模型能力本身劣化；完整 bug 追蹤見 [[entities/claude-code]] 已知問題（[GitHub Issues](https://github.com)，2026-07-10）
 - 🔴 **Max 方案誤判需購買 usage credits 才能執行 Fable 5（2026-07-20 起，官方 07-20 定性為誤判並建議重啟，但社群回報持續至 08-07 未解，留言數 35 → 67）**：GitHub Issue #79337（07-20 記錄 10 讚、35 留言；07-24 reaction 增至 13 個，留言數未見更新）回報，Fable 5 免費期到期後的 07-20 當天，Max 方案一度被要求額外購買 usage credits 才能執行 Fable 5，並將 session 靜默降級至 Opus 4.8；受影響帳號的已儲存模型設定顯示為 `claude-fable-5[1m]`（1M context 變體）。症狀與同日 Anthropic Status 已證實的 Max 誤判事件高度吻合，官方 07-20 已定性為誤判並建議重啟——**但該建議未解決問題**：留言數自 07-20 的 35 則增至 08-07 的 67 則，社群回報延燒逾 18 天仍無官方修復或說明（以 [[entities/pricing]] 08-07 查證為準；本頁先前標為「已解決」係停在 07-24 追蹤，2026-08-08 更正）。存取政策本身已於 2026-08-08 由官方文件釐清（Max／Team premium 標配、Pro／Team standard 走 credits），計費細節見 [[entities/pricing]]（[GitHub Issues](https://github.com/anthropics/claude-code/issues/79337)，2026-07-20；追蹤至 2026-08-07）
 - ⚠️ **「太危險」分級受競品追平質疑（2026-07-24 日報收錄，社群觀點，弱訊號）**：r/ClaudeCode 使用者認為 Fable 5 被「削弱」後感覺只比 Opus 4.8 聰明一點，開源模型已追上「太危險」等級模型的能力（2026-07-24，單一來源，score 恆 0）；同期 r/ClaudeAI 週熱門貼文（原貼 2026-07-18）另有一名自稱基因學/神經科學研究者，質疑 Fable/Mythos「對科學研究太危險」的分類與自身分析 RNA 等用途完全無關。兩則均為社群主觀觀點，非量化評測；分類爭議的安全政策脈絡另見安全政策記者對應頁面，此處僅記模型定位/能力落差角度
@@ -246,7 +246,7 @@ claude --model claude-fable-5-20260609
 **Redeploy 技術細節：「Defense in Depth」分類器 + 早期實測褒貶不一**：
 - **新安全機制**：Reddit 貼文整理 Fable 5 全球 redeploy（7/1）隨附的「Defense in Depth」措施——新增更嚴格的資安/程式碼請求分類器，一旦判定為高風險 coding/debug 請求，自動靜默 fallback 至 Opus 4.8 執行，不使用 Fable 5（[Reddit r/ClaudeAI](https://www.reddit.com/r/ClaudeAI/comments/1uliwhc/anthropic_just_redeployed_fable_5_globally_here/)）
 - **負面實測：資安審查被誤判**：dev.to 作者實測用 Fable 5 執行合法資安審查工作，遭新分類器誤判為風險請求並攔截，作者形容「flagged my own request」（[dev.to](https://dev.to/tecnomanu/i-tried-fable-5-for-a-security-review-and-it-flagged-my-own-request-2pbn)）；此案例呼應 6/11 IBM X-Force 研究員 Valentina Palmiotti 曾批評的「護欄過激」問題，顯示該爭議在新分類器上仍未解決
-- **範圍疑似擴大：化學提問也被拒（2026-07-02 指控，已掃日報至 2026-08-15 無後續；官方頁面未查證）**：另一則 Reddit 貼文顯示使用者詢問化學相關問題被 Fable 5 拒絕回答（「I guess not」），若屬實代表新分類器的攔截範圍可能不僅限於 coding/cybersecurity（[Reddit](https://www.reddit.com/r/ClaudeAI/comments/1ulh5he/can_you_ask_fable_anything_chemistry_related/)）；訊號來源單一，且原文未附截圖佐證，近 14 天日報無相關後續報導佐證
+- ❓ **待查證**（標 2026-07-02｜查 chemistry related、1ulh5he）｜**範圍疑似擴大：化學提問也被拒**：另一則 Reddit 貼文顯示使用者詢問化學相關問題被 Fable 5 拒絕回答（「I guess not」），若屬實代表新分類器的攔截範圍可能不僅限於 coding/cybersecurity（[Reddit](https://www.reddit.com/r/ClaudeAI/comments/1ulh5he/can_you_ask_fable_anything_chemistry_related/)）；訊號來源單一，且原文未附截圖佐證，已掃日報至 2026-08-21 無後續；官方頁面未查證
 - **與既有爭議的關係**：本次分類器行為為可見防護（用戶知道被 fallback），不同於 6/9 發布時「靜默降級不告知」已撤回的舊爭議；但誤判率與攔截範圍是否合理，仍待更多社群案例累積判斷
 
 #### 2026-07-01

@@ -4,7 +4,7 @@ kind: "entity"
 type: "person"
 status: "active"
 domain: "👤 人物"
-last_updated: "2026-08-10"
+last_updated: "2026-08-22"
 last_news_update: "2026-07-10"
 status_main: "active"
 days_since_news: 42
@@ -25,7 +25,7 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 **狀態：** active
 **領域：** 👤 人物
 **首次出現：** 2026-07-10
-**最後更新：** 2026-08-10
+**最後更新：** 2026-08-22
 **最後新聞更新：** 2026-07-10
 
 > **最新動態**（2026-07-09）
@@ -39,7 +39,7 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 
 ## 核心論述
 
-目前尚無 Bernanke 本人的具體公開聲明或引述內容，僅為人事任命公告；若後續有本人談話，補入此區塊。
+目前尚無 Bernanke 本人的具體公開聲明或引述內容，僅為人事任命公告。
 
 ## 相關議題
 
