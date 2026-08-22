@@ -23,11 +23,11 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 **狀態：** ongoing
 **領域：** 🌐 社群
 **開始日期：** 2026-04-25
-**最後更新：** 2026-08-20
-**最後新聞更新：** 2026-08-20
+**最後更新：** 2026-08-22
+**最後新聞更新：** 2026-08-22
 
-> **最熱討論**（2026-08-19）
-> Opus 5.0 用語浮誇引爆「行話」批評：HN 討論（181 分，連結至 GitHub Issue #77136）指控輸出充斥「blast radius」「earned its keep」等被列入禁用詞的行話，留言更質疑負責回覆此 issue 的 Anthropic 工程師疑似用 Claude 代寫回應，且回覆本身仍帶同類行話；08-20 Reddit 貼文聚焦同一爭點延燒次日，跨平台佐證。
+> **最熱討論**（2026-08-21）
+> 「一週改用 Codex 多過 Claude」個人心得於 HN 引發討論（91 分）：Claude 累積較多自建 skills、部分未移植到 Codex（作者解法：把 Codex 指向 Claude skills 資料夾請其轉換），趕時間除錯情境的工具選擇偏好也有差異；重提 06-21「Claude Code vs Codex 工具選擇」議題軸線。
 
 ---
 
@@ -141,6 +141,7 @@ MCP 的實際成本遠超多數使用者預期，已有多個量化案例：
 
 | 討論主題 | 首見 | 熱度 | 模式 | 核心論點 | 衍生 |
 |---------|------|------|------|---------|------|
+| 「一週改用 Codex 多過 Claude」個人心得重提工具選擇議題，附 skill 移植技巧 | 2026-08-21 | 🔥🔥🔥 | ☄️閃現 | 作者分享實際改用 Codex 一週後的個人觀察：Claude 累積較多自建 skills、部分未移植到 Codex，解法是把 Codex 指向 Claude skills 資料夾請其轉換；趕時間除錯情境時兩工具的選擇偏好也有差異；HN score 91，達收錄高門檻（≥50分）；呼應本頁 2026-06-21「Claude Code vs Codex 工具選擇：OMP + Opus 4.8 成主流」議題軸線的後續獨立訊號，惟該則已隨 30 天保留期汰除，現僅存於引用文字中；同日 36Kr 另有「Codex 是否反擊 Claude Code」產業競爭角度報導，屬另一視角，已交由商業記者處理；[原文](https://allaboutcoding.ghinda.com/a-week-of-using-codex-more-than-claude/)（HN） | — |
 | Opus 5.0 用語浮誇引爆「行話」批評，Anthropic 疑似用 Claude 代寫官方回覆再添爭議：跨 HN／Reddit 延燒 | 2026-08-19 | 🔥🔥🔥🔥 | ☄️閃現 | Hacker News 熱門討論（連結至 [GitHub Issue #77136](https://github.com/anthropics/claude-code/issues/77136)）批評 Opus 5.0 輸出用詞浮誇，充斥「行話」（blast radius、earned its keep、spine 等被列入禁用詞清單的用語）；留言指出負責回覆此 issue 的 Anthropic 工程師疑似用 Claude 代寫回應，而該回覆本身仍帶有被抱怨的同類「Claude-isms」，引發讀者兩極反應——部分認為官方用 AI 回覆「AI 用詞問題」的抱怨本身不妥（此為留言區質疑，未經官方證實）；HN score 181，遠超收錄高門檻；08-20 Reddit r/ClaudeCode 貼文「[The Claude language calibration issue on GitHub got an official response from Anthropic. Guess who wrote it.](https://www.reddit.com/r/ClaudeCode/comments/1vtfib0/the_claude_language_calibration_issue_on_github/)」聚焦同一「官方回覆疑似 Claude 代寫」爭點延燒次日，跨平台佐證（source_count=2）；與本頁 08-10「把 Claude 式用語翻譯成一般英文的 plugin」同屬「Claude 制式措辭／行話」議題軸線，本則為該軸線在官方溝通層級的新訊號；[GitHub Issue #77136](https://github.com/anthropics/claude-code/issues/77136)（HN／Reddit） | — |
 | arXiv 論文主張不應將模型解答前的中間 token 直接擬人化稱為「推理／思考痕跡」 | 2026-08-19 | 🔥 | ☄️閃現 | 論文（[arXiv:2504.09762](https://arxiv.org/abs/2504.09762)）主張「推理／思考痕跡（reasoning/thinking traces）」一詞隱含模型思考過程與人類解題步驟相似，此類比可能誤導讀者對模型內部運作的理解；HN score 38，達收錄中門檻；與本頁 06-23「Extended Thinking 為摘要而非真實推理」長期議題同軸——後者聚焦 thinking blocks 技術上無法核驗，本篇從命名／擬人化角度補上學術文獻觀點；單一來源，尚無跨平台佐證；[原文](https://arxiv.org/abs/2504.09762)（HN） | — |
 | Simon Willison：smolmachines/smolvm 作為執行不受信任 Python／JavaScript 的沙盒方案 | 2026-08-19 | 🔥 | ☄️閃現 | Simon Willison 部落格研究筆記，介紹 smolmachines/smolvm 作為執行不受信任 Python 與 JavaScript 程式碼的沙盒方案；具體技術細節未見於本次摘要；具名表態，無社群延燒；[原文](https://simonwillison.net/2026/Aug/19/smolmachines-untrusted-sandbox/)（Blog） | — |

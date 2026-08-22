@@ -25,7 +25,7 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 **蒐集邊界：** 以 Claude 與 Claude Code 的安全事件為主，另針對 prompt injection 等 agent 安全議題定向補抓（每日至多 3 則）；他家 agent 的獨立事件多半僅在與 Claude 同案或同報導時才會出現。
 **開始日期：** 2026-04-27
 **最後更新：** 2026-08-22
-**最後新聞更新：** 2026-08-21
+**最後新聞更新：** 2026-08-22
 
 > **最新安全事件**（2026-08-19）
 > - **Mashable／Android Police：Claude 現可未經詢問直接透過 Gmail 整合發送郵件**：取代先前需人工確認草稿的流程，屬 agent 自主權限擴張的產品層「誤操作」風險類型；僅標題可用，是否可關閉、誤發防護機制未見報導，詳見「## 未修補風險現況」。
@@ -805,6 +805,9 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 > 更早期時序見 [[topics/ai-agent-safety-archive]]
 
 > **中美 AI 工具信任對峙**（06-30～07-10：中國代理偵測程式碼、隱寫術指控、Alibaba/Meta 禁用、中國官方後門警示、Anthropic 首度否認）完整逐日時序已整合至 [[topics/safety-china-trust-dispute]]，此處不再重複條目，僅保留與本頁漏洞/提示注入主線相關者。
+
+### 2026-08-22
+- **[產業對照，非 Claude 風險，Topic Watch 專頁定向，新增] CyberSecurityNews：Grok 遭揭露零點擊攻擊漏洞，攻擊者可透過加密提示注入竊取聊天資料**：xAI 競品 Grok（非 Claude）零點擊攻擊（zero-click attack）漏洞披露，攻擊者可利用加密提示注入（encrypted prompt injection）竊取聊天資料；本則經本頁 Topic Watch 專頁定向抓取，收錄判準為本頁觸發條件而非 Claude/Anthropic 關聯門檻；僅標題可用，攻擊鏈技術細節、是否已修補均未見報導；本頁僅保留為產業對照，不列入「## 未修補風險現況」（該表僅列 Claude/Claude Code 使用者暴露的風險）
 
 ### 2026-08-19
 - **[agent 自主權限擴張，新增，轉知自功能記者] Mashable／Android Police：Claude 現可未經詢問直接透過 Gmail 整合發送郵件，取代先前需人工確認草稿的流程**：屬產品層「誤操作」風險類型（agent 自主權限擴張，非模型層拒答問題），❓ 待查證（標 2026-08-21｜查 Gmail、未經詢問），是否可關閉、預設開關狀態、誤發防護機制（如撤回窗口）均未見報導；功能規格詳見 [[entities/claude-code]]（功能記者主責）

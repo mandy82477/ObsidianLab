@@ -26,11 +26,10 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 **領域：** 🌐 社群
 **開始日期：** 2026-04-25
 **最後更新：** 2026-08-22
-**最後新聞更新：** 2026-08-20
+**最後新聞更新：** 2026-08-22
 
-> **最新工作流模式**（2026-08-19）
-> - **跨 agent 成本／快取可視化工具**：Frugal Tokens 讓開發者檢視自己各 coding agent session 的花費與 cache miss 對成本的影響，提供依模型與快取狀態拆解的用量分析。
-> - **Agent Loop 終止條件實例**：開發者記錄 9 小時 k3s 網路 bug 除錯經驗，Claude Code 建議選項清單中「放棄」被標示為 Recommended。
+> **最新工作流模式**（2026-08-22）
+> - **跨 agent／團隊共享知識庫**：OzBrain 主張以跨 session 共享知識庫取代傳統筆記與任務管理工具，作者論點是 agent-first 介面將取代儀表板式 UI，知識應「跟著使用者走」而非留在為人類設計的工具裡。
 
 ---
 
@@ -56,7 +55,7 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 | **Hooks 與自動化** | PostToolUse 稽核、Git Hooks 品質門、/goal Fire-and-Forget、deploy/migration 保護、Pre-completion Hook、Stop Hook 音效通知、Hooks 環境感知條件觸發（Adrafinil、氛圍狀態燈） | ✅ 成熟 | 強制執行 > CLAUDE.md 建議；Stop Hook 要求可驗證完成證明；CLAUDE.md 做偏好、Hooks 做邊界；Pre-completion Hook 防模糊結束；hooks 可感知 agent 活躍狀態驅動環境副作用（螢幕喚醒、實體燈光顏色） |
 | **模型使用策略** | 分層模型（Sonnet + Opus）、多模型路由、Workweave Router、跨模態內容生成分工（InstantVideos）、Fable 5 Orchestrator-Executor（官方基準） | ⚡ 活躍 | 依任務複雜度路由，節省 60% 用量；Dragoman / Workweave 自動路由；嵌入 Claude Code / Codex / Cursor 的成本感知路由；InstantVideos 將分工路由思路延伸至內容生成（文字/圖像/影音各交專門模型）；Anthropic 官方基準證實 Fable 5 編排 + 便宜模型執行可達 46% 成本／96% 效能 |
 | **Token / 成本優化** | MCP Code Execution、Token Bloat 對策、本機圖資料庫索引、穴居人模式（Caveman）企業採用、claude-thermos（session 快取保活）、pxpipe（圖片化 context）、headless 呼叫冷啟動成本 | ⚡ 活躍 | HTML→Markdown 降 80% token；快取不跨 session 是費用主因；極簡輸出模式（穴居人）企業採用獲 404 Media 確認，OpenAI、Nvidia、GitHub 開發者使用；claude-thermos 以保活請求維持快取不過期，但引發「成本轉嫁其他用戶」爭議；pxpipe 反其道而行，把文字 context 渲染成圖片傳遞以降低 token 用量；`claude -p` 未加 `--bare` 冷啟動實測約耗 15 萬 token |
-| **記憶與知識管理** | ltm Core Memory Packet、本機圖資料庫、NanoBrain、OKF（物件鍵格式跨 session 記憶）、已否決方案索引 | ⚡ 活躍 | 跨 session / 跨工具持久記憶；Leiden 圖譜減少 71 倍 token；OKF 標準化 agent 知識格式供團隊共用；已否決方案未結構化記錄會導致 agent 重新實作已被殺掉的方案 |
+| **記憶與知識管理** | ltm Core Memory Packet、本機圖資料庫、NanoBrain、OKF（物件鍵格式跨 session 記憶）、已否決方案索引、OzBrain（跨 agent／團隊共享知識庫） | ⚡ 活躍 | 跨 session / 跨工具持久記憶；Leiden 圖譜減少 71 倍 token；OKF 標準化 agent 知識格式供團隊共用；已否決方案未結構化記錄會導致 agent 重新實作已被殺掉的方案；OzBrain 主張取代傳統筆記/任務管理工具，鎖定團隊共用而非單一使用者記憶 |
 | **Plugin / MCP 整合** | Plugin 反模式整理、Claude Code 作為 MCP 協調中心 | ⚡ 活躍 | 避免不必要 context 載入；Claude Code 主導 MCP 工具鏈協作 |
 | **多代理 PR Review** | 4-agent Code Review、對抗性審查（計畫前 + 程式碼後）、Read-Only Reviewer、Claude 審查 Codex（71.6%→89.7% 通過率） | ⚡ 活躍 | 架構師代理協調 + 多廠商模型交叉審查；對抗性審查者讀取真實 codebase；read-only 權限約束維持對立性；跨模型交叉審查量化提升通過率已有學術論文佐證（見下方懸置細節） |
 | **Agent 版本控制** | ADR 注入、架構決策文件先於實作 | ⏳ 新興 | 決策文件先於實作，降低代理方向偏移風險 |
@@ -151,6 +150,14 @@ Claude Code 的三種多 agent 機制，可對應到 Anthropic《Building Effect
 ## 技術彙整
 
 ### 2026-08
+
+#### Show HN：OzBrain——為 agent 與團隊打造的跨 session 共享知識庫（2026-08-21）
+
+- **主線：** 索引記憶
+- **核心模式：** 作者釋出 OzBrain，主張為 agent 與團隊建立跨 session 共享知識庫，取代傳統筆記與任務管理工具；作者論點：agent-first 聊天介面將成為主要軟體型態、繁忙的儀表板式 UI 將式微，因此知識應「跟著使用者走」而非留在為人類設計的筆記/任務管理系統中
+- **與既有模式的關係：** 補充本頁「記憶與知識管理」類別既有 ltm／本機圖資料庫／NanoBrain／OKF 等跨 session 記憶方案；差異在於明確鎖定「團隊共用」而非單一使用者跨 session 記憶，且主張取代既有筆記/任務管理工具而非僅作為 agent 的輔助記憶層；縫合 [[topics/community-large-codebase-workflow]] 索引記憶主線
+- **來源：** [Show HN: OzBrain, a shared brain for knowledge between agents and your team](https://ozbrain.com)（Hacker News，score 69，達對照表高門檻）＋跨 2 來源（source_count=2，跨來源佐證）
+- **成熟度：** ⏳ 新興（今日首見，尚無具體採用回饋或量化效果數據）
 
 #### Show HN：Frugal Tokens——檢視跨 coding agent 用量與成本的自製工具（2026-08-19）
 
