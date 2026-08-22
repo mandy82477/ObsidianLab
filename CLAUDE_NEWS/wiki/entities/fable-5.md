@@ -41,7 +41,7 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 
 Claude Fable 5 是 Anthropic 於 2026-06-09 發布的旗艦模型，為**史上首款向大眾開放的 Mythos 級模型**。Fable 5 與 Claude Mythos 5 共用相同的模型權重，差異在於 Fable 5 前置安全分類器——觸發時 fallback 至 Claude Opus 4.8（Anthropic 稱不到 5% 的 session 受影響）。核心定位：任務越複雜越長期，Fable 5 的優勢越明顯；在軟體工程、知識工作、視覺、科學研究等幾乎所有 benchmark 達到 SOTA。
 
-**當前狀態（2026-07-20 起）**：出口管制（2026-06-13 至 2026-07-01，歷時 18 天）已正式解除，全球恢復存取。免費使用期限已於 **2026-07-19 23:59:59 PT 到期**；07-20 起訂閱存取分為兩層——Max 方案／Team premium seats 為標配（可用至多週用量上限的 50%，不額外收費），Pro 方案／Team standard seats 不計入方案用量、改以 usage credits 按 API 費率付費，合格 Pro／Team standard 另有一次性過渡 credit。此分界 2026-08-08 經官方 Help Center 查證確認，先前四則矛盾報導就此收斂，詳見 [[entities/pricing]]。Redeploy 同步導入「Defense in Depth」安全機制——更嚴格的資安/程式碼請求分類器，判定高風險時自動 fallback 至 Opus 4.8，首日已有誤判實測回報。管制事件完整經過見「出口管制：雙方立場」與「歷史記錄」。
+**當前狀態（2026-07-20 起）**：出口管制（2026-06-13 至 2026-07-01，歷時 18 天）已正式解除，全球恢復存取。免費使用期限已於 **2026-07-19 23:59:59 PT 到期**；07-20 起訂閱存取分為兩層——Max 方案／Team premium seats 為標配（可用至多週用量上限的 50%，不額外收費），Pro 方案／Team standard seats 不計入方案用量（該層另有一次性 $100 過渡 credit，領取窗已於 2026-08-02 關閉、已領者 09-17 到期，2026-08-22 官方查證，見 [[entities/pricing]]）、改以 usage credits 按 API 費率付費，合格 Pro／Team standard 另有一次性過渡 credit。此分界 2026-08-08 經官方 Help Center 查證確認，先前四則矛盾報導就此收斂，詳見 [[entities/pricing]]。Redeploy 同步導入「Defense in Depth」安全機制——更嚴格的資安/程式碼請求分類器，判定高風險時自動 fallback 至 Opus 4.8，首日已有誤判實測回報。管制事件完整經過見「出口管制：雙方立場」與「歷史記錄」。
 
 | 指標 | 數值 |
 |------|------|

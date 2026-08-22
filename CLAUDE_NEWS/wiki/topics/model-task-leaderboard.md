@@ -3,7 +3,7 @@ page: "topics/model-task-leaderboard"
 kind: "topic"
 status: "ongoing"
 domain: "🤖 模型"
-last_updated: "2026-08-05"
+last_updated: "2026-08-22"
 last_news_update: "2026-08-05"
 update_freq: "🗓️ 週更（每週抓取一次外部榜單快照；更新日期停留數天屬正常節奏）"
 status_main: "ongoing"
@@ -25,11 +25,11 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 **領域：** 🤖 模型
 **更新頻率：** 🗓️ 週更（每週抓取一次外部榜單快照；更新日期停留數天屬正常節奏）
 **開始日期：** 2026-08-05
-**最後更新：** 2026-08-05
+**最後更新：** 2026-08-22
 **最後新聞更新：** 2026-08-05
 
-> **本週快照重點**（2026-08-05）
-> 寫 code 與對話由 Claude 領先（SWE-bench Verified Opus 5 96%、LMArena Fable 5 ~1525）、畫圖 OpenAI 領先（GPT Image 2）、影片 Google 領先（Gemini Omni Flash）；實際 API 用量榜則由 DeepSeek V4 Flash 等低價 MoE 模型稱王——「最強」與「大家實際在用」是兩個世界。
+> **本週快照重點**（2026-08-22）
+> 寫 code、前端、對話、情商四類仍由 Claude 領先，但 **SWE-bench Verified 三甲全部擠進 95% 以上**，該榜已接近飽和、不再能分辨強弱；畫圖 OpenAI 領先、影片改由 Wan 3.0 登頂（換人）；實際 API 用量榜前三無一是旗艦——「最強」與「大家實際在用」仍是兩個世界。
 
 ---
 
@@ -41,30 +41,33 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 
 | 你想做的任務 | 本週前三名 | 資料日期 | 榜單 |
 |---|---|---|---|
-| [寫 code（agent 解 issue）](#eval-swebench) | Claude Opus 5 > Mythos 5 > Fable 5 | 08-04 | [SWE-bench](https://www.swebench.com/) |
-| [寫 code（Aider 實戰）](#eval-aider) | gpt-5 (high) > gpt-5 (medium) > o3-pro（⚠️ 榜疑停更） | 2025-08 | [Aider Polyglot](https://aider.chat/docs/leaderboards/) |
-| [寫文案、聊天、翻譯](#eval-lmarena) | Claude Fable 5 > Opus 4.8 > GPT-5.5 Pro | 08-01 | [LMArena](https://lmarena.ai/) |
-| [查資料（AI 搜尋）](#eval-search) | Claude Opus 4-6 Search > GPT-5.5 Search > Fable 5 | 08-05 | [Search Arena](https://arena.ai/leaderboard) |
-| [做網頁／前端](#eval-webdev) | Claude Opus 5 Max > Kimi K3 Max > Opus 5 High | 08-05 | [WebDev Arena](https://arena.ai/leaderboard) |
-| [畫圖（文生圖）](#eval-image) | GPT Image 2 > Reve 2.1 > MAI-Image-2.5 | 08-05 | [AA 圖像榜](https://artificialanalysis.ai/image/leaderboard/text-to-image) |
-| [改圖（圖像編輯）](#eval-imageedit) | Reve 2.1 > GPT Image 2 > MAI-Image-2.5（前三僅差 5 分） | 08-05 | [AA 編輯榜](https://artificialanalysis.ai/image/leaderboard/editing) |
-| [生成影片](#eval-video) | Gemini Omni Flash > MiniMax H3 > Seedance 2.0 | 08-05 | [AA 影片榜](https://artificialanalysis.ai/video/leaderboard/text-to-video) |
-| [語音合成（TTS）](#eval-tts) | 快照待補（下週補抓） | — | [AA TTS 榜](https://artificialanalysis.ai/text-to-speech/leaderboard) |
-| [語音轉文字（逐字稿）](#eval-stt) | Fun-Realtime-ASR > Scribe v2 > MAI-Transcribe-1.5 | 08-05 | [AA STT 榜](https://artificialanalysis.ai/speech-to-text) |
-| [電腦操作 agent](#eval-terminal) | GPT-5.6 Sol > Claude Opus 5 > Mythos 5 | 07~08 月 | [Terminal-Bench](https://www.tbench.ai/) |
-| [文件解析／OCR](#eval-docparse) | MiniMax M3（其餘排名未公開） | 08 月 | [OmniDocBench](https://llm-stats.com/benchmarks/omnidocbench-1.5) |
-| [音樂生成](#eval-music) | 快照待補（下週補抓） | — | [AA Music Arena](https://artificialanalysis.ai/music/leaderboard/vocals) |
-| [Embedding（自建 RAG）](#eval-mteb) | Gemini Embedding 001 > Voyage-3.1 > Cohere embed-v4 | 04~07 月 | [MTEB](https://huggingface.co/spaces/mteb/leaderboard) |
+| [寫 code（agent 解 issue）](#eval-swebench) | Claude Opus 5 > Mythos 5 > Fable 5（三甲皆 ≥95%，見註記） | 08-21 | [SWE-bench](https://www.swebench.com/) |
+| [寫 code（Aider 實戰）](#eval-aider) | gpt-5 (high) > gpt-5 (medium) > o3-pro（⚠️ 榜疑停更） | 2025-11 | [Aider Polyglot](https://aider.chat/docs/leaderboards/) |
+| [寫文案、聊天、翻譯](#eval-lmarena) | Claude Fable 5 > Opus 4.8 > GPT-5.5 Pro（前三差 ≤15 分） | 08 月 | [LMArena](https://lmarena.ai/) |
+| [查資料（AI 搜尋）](#eval-search) | Claude Opus 4-6 Search > GPT-5.5 Search > Fable 5 | 07-21 | [Search Arena](https://arena.ai/leaderboard) |
+| [做網頁／前端](#eval-webdev) | Claude Opus 5 Max > Kimi K3 Max > Qwen3.8 Max | 08-21 | [WebDev Arena](https://arena.ai/leaderboard) |
+| [畫圖（文生圖）](#eval-image) | GPT Image 2 > Reve 2.1 > Nano Banana 2 | 未載（08-22 抓取） | [AA 圖像榜](https://artificialanalysis.ai/image/leaderboard/text-to-image) |
+| [改圖（圖像編輯）](#eval-imageedit) | MAI-Image-2.5-Pro > Reve 2.1 > MAI-Image-2.5 | 未載（08-22 抓取） | [AA 編輯榜](https://artificialanalysis.ai/image/leaderboard/editing) |
+| [生成影片](#eval-video) | Wan 3.0 > Gemini Omni Flash > MiniMax H3 | 08 月 | [AA 影片榜](https://artificialanalysis.ai/video/leaderboard/text-to-video) |
+| [語音合成（TTS）](#eval-tts) | Simba 3.2 > Qwen-Audio-3.0-TTS-Plus > Gemini 3.1 Flash TTS | 07-28 | [AA TTS 榜](https://artificialanalysis.ai/text-to-speech/leaderboard) |
+| [語音轉文字（逐字稿）](#eval-stt) | Fun-Realtime-ASR > Scribe v2 > MAI-Transcribe-1.5 | 未載（08-22 抓取） | [AA STT 榜](https://artificialanalysis.ai/speech-to-text) |
+| [電腦操作 agent](#eval-terminal) | ⚠️ 兩組來源不同榜（見註記）：Grok 4.6 > DeepSeek V4 Pro > Qwen3.8 Max ／ GPT-5.6 Sol > Claude Opus 5 | 08 月 | [Terminal-Bench](https://www.tbench.ai/) |
+| [文件解析／OCR](#eval-docparse) | Kimi K3 > MiMo-V2.5（第三名未公開） | 08 月 | [OmniDocBench](https://llm-stats.com/benchmarks/omnidocbench-1.5) |
+| [音樂生成](#eval-music) | Suno V5.5 > Mureka V9 > Mureka V8 | 未載（08-22 抓取） | [AA Music Arena](https://artificialanalysis.ai/music/leaderboard/vocals) |
+| [Embedding（自建 RAG）](#eval-mteb) | KaLM-Embedding-Gemma3-12B > Qwen3-Embedding-8B > Gemini-embedding-001 | 07 月 | [MTEB](https://huggingface.co/spaces/mteb/leaderboard) |
 | [聊天陪伴／情商](#eval-eqbench) | Claude Fable 5 > Kimi K3 > GPT-5.5 | 07-20 | [EQ-Bench](https://eqbench.com/) |
-| [放多長的任務給 agent](#eval-metr) | Claude Opus 4.5（320 分鐘@50%）> GPT-5 > o3（⚠️ 量測過期，見本週註記） | 2026-01 | [METR](https://metr.org/) |
+| [放多長的任務給 agent](#eval-metr) | Claude Opus 4.5（320 分鐘@50%）> GPT-5 > o3（⚠️ 量測過期，見註記） | 2026-01 | [METR](https://metr.org/) |
 | [讀文件不胡說（幻覺率低）](#eval-vectara) | finix_s1_32b > gpt-5.4-nano > gemini-2.5-flash-lite | 05-11 | [Vectara 幻覺榜](https://github.com/vectara/hallucination-leaderboard) |
-| [大家實際在用什麼](#eval-openrouter) | DeepSeek V4 Flash > 腾訊 Hy3 > GPT 5.6 Luna | 08-02 | [OpenRouter](https://openrouter.ai/rankings) |
+| [大家實際在用什麼](#eval-openrouter) | Hermes Agent（35.7 兆 token）> DeepSeek V4 Flash > 騰訊 Hy3 | 08-21 | [OpenRouter](https://openrouter.ai/rankings) |
 
 ## 本週註記（僅列異常）
 
-- **Aider Polyglot 疑似停更**：榜首仍是 2025-08 陣容，一年未見新模型入榜；持續無更新將汰換該列。
+- **SWE-bench Verified 已接近飽和**：三甲全在 95% 以上（Opus 5 96%、Mythos 5 95.5%、Fable 5 95%），前三名之間的差距已小於評測雜訊，實質排名爭點正移往 SWE-bench Pro。
+- **Terminal-Bench 同名榜、兩組不相容分數**：codingfleet（08 月）列 Grok 4.6 88.4% > DeepSeek V4 Pro 87.9% > Qwen3.8 Max 86.6%；morphllm（08 月）列 GPT-5.6 Sol 85.77% > Claude Opus 5 84.64%。兩者 harness 與評估方法不同，**不可跨表比大小**，本頁並陳不擇一。
+- **Aider Polyglot 疑似停更（連續 2 週）**：榜首仍是 2025-11 陣容，未見新模型入榜。連續 2 週無更新，**建議下週起汰換該列**（改由 SWE-bench Pro 或 Terminal-Bench 承接「寫 code 實戰」語意）。
 - **METR 量測過期**：最近一次發布為 2026-01-29（Opus 4.5 領先），現役陣容（Fable 5 / Opus 5）尚未入測，數字僅供尺度感。
-- **EQ-Bench 兩來源歧異**：BenchLM（07-20）稱榜首 Fable 5、llm-stats（08 月）稱 Grok 4.1 Thinking，疑為不同快照或子榜版本，待直抓官方站核實。
+- **AA 系列多榜未於頁面標示資料日期**：文生圖、圖像編輯、STT、音樂四榜為直接抓取但頁面未載快照日期，本頁以抓取日（08-22）標示。
+- **本週已解除的舊註記**：TTS 與音樂兩榜上週標「待補」，本週均已取得；EQ-Bench 上週的兩來源歧異本週未再現（BenchLM 07-20 快照與本頁一致）。
 
 ## 評比方式索引（每榜比什麼、分數怎麼來）
 

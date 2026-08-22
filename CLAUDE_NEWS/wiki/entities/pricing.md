@@ -4,7 +4,7 @@ kind: "entity"
 type: "policy"
 status: "active（持續調整中）"
 domain: "💼 商業"
-last_updated: "2026-08-21"
+last_updated: "2026-08-22"
 last_news_update: "2026-08-21"
 status_main: "active"
 days_since_news: 1
@@ -25,7 +25,7 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 **狀態：** active（持續調整中）
 **領域：** 💼 商業
 **首次出現：** 2026-04-25
-**最後更新：** 2026-08-21
+**最後更新：** 2026-08-22
 **最後新聞更新：** 2026-08-21
 
 > **最新計費政策異動**（2026-08-21）
@@ -44,12 +44,12 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 
 ## 我的方案現在有什麼
 
-> **資料截至 2026-08-08**（官方 Help Center 查證）。此表反映**訂閱月費**，非曾規劃但已暫停的 programmatic 信用池金額（見「計費架構」節）。「訂閱內含／需另計費」的分界會隨陣容換代改變，模型名以當期實際情形填寫。
+> **資料截至 2026-08-22**（官方 Help Center 查證）。此表反映**訂閱月費**，非曾規劃但已暫停的 programmatic 信用池金額（見「計費架構」節）。「訂閱內含／需另計費」的分界會隨陣容換代改變，模型名以當期實際情形填寫。
 
 | 方案 | 月費 | 訂閱內含 | 需另計費 | 可領優惠 | 你該做的動作 |
 |------|------|---------|---------|---------|------------|
 | Free | $0 | 基本額度；旗艦存取未載 | — | — | 週用量 +50% 促銷不適用本方案 |
-| Pro | $20（年繳 $17／月）| 全模型，**旗艦除外** | **Fable 5** — $10/$50 per Mtok，走 usage credits | **一次性過渡 credit**（官方未列金額；媒體稱 $100）| 領完至 `Settings > Usage` 確認 auto-reload 未開 |
+| Pro | $20（年繳 $17／月）| 全模型，**旗艦除外** | **Fable 5** — $10/$50 per Mtok，走 usage credits | **已截止**：一次性 $100 過渡 credit 領取窗於 2026-08-02 關閉 | 已領者記得在 09-17 到期前用掉；至 `Settings > Usage` 確認 auto-reload 未開 |
 | Max 5x | $100 | 全模型；**旗艦上限為週用量 50%** | 超出後走 usage credits | — | 留意旗艦誤要求購點問題（見事故區）|
 | Max 20x | $200 | 同上，額度更高 | 同上 | — | 用量上限集體訴訟進行中 |
 | Team standard seat | $20（年繳）／$25（月繳）每席 | 同 Pro | 同 Pro | 同 Pro | 同 Pro |
@@ -61,7 +61,7 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 ### 方案細節
 
 - **旗艦分界的官方定義（2026-07-20 生效）**：Max 方案、Team premium seats、舊制席位制 Enterprise premium seats — Fable 5 為標配，可用「至多每週用量上限的 50%」且不額外收費；Pro 方案、Team standard seats、Enterprise standard seats — Fable 5 **不計入方案用量**，需以 usage credits 按 API 費率付費。先前將 Fable 5 納入方案週用量的促銷結束於 **2026-07-19 23:59:59 PT**
-- **Pro 過渡 credit**：官方原文僅稱「eligible Pro and Team standard seats qualify for a one-time credit to help with the change」，**未載金額、未載到期日**；$100 一說來自媒體（XenoSpectrum、XDA、nerdzap），官方文件未確認。credits 用盡後可續買、改用其他模型、或升級 Max
+- **Pro／Team standard 過渡 credit（2026-08-22 官方查證，先前懸置已結案）**：金額 **$100**——Pro 為每帳戶 $100，Team 為每購買的 standard seat $100、每組織上限 $2,500。資格以 **2026-07-19 23:59:59 PT** 當下持有合格 Pro／Team standard 方案為準（免費試用不算）。**領取窗已於 2026-08-02 23:59 PT 關閉**，未領者不再補發；已領取的 credits 於 **2026-09-17 23:59 PT 到期**（促銷起算 60 天）。這批 credits **不限 Fable 5**，是一般 usage credits，任何模型都能用、方案用量觸頂時也能墊（來源：[Claude Fable 5 one-time free credits promotion](https://support.claude.com/en/articles/15862783)，2026-08-22 查證）。credits 用盡後可續買、改用其他模型、或升級 Max
 - **credits 購買方式歧異（未收斂）**：官方寫「Add funds，自行輸入金額」，XenoSpectrum 則稱為固定包（$45 買 $50、$200 買 $250、$700 買 $1,000）。兩者對不上，媒體數字不採信，以官方為準
 - **Pro 年繳**：$200 一次預付，折合 $17／月（來源：[claude.com/pricing](https://claude.com/pricing)，2026-08-08 查證）
 - **印度在地化定價**：Pro 為 **Rs 2,000／月**（2026-07-13 生效，首個非美元在地化市場，回應 GitHub Issue #17432）；Max／Team／Enterprise 是否同步在地化未見報導
@@ -101,7 +101,7 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 
 一條一規則，附來源日期；失效規則移除，計費事故與爭議見下方「事故與爭議」分組。
 
-- **✅ 2026-07-20 生效｜旗艦模型的訂閱分界（官方文件已確認）**：Max 方案、Team premium seats、舊制席位制 Enterprise premium seats — Fable 5 為標配，可用至多**每週用量上限的 50%**，不額外收費；Pro 方案、Team standard seats、Enterprise standard seats — Fable 5 **不計入方案用量**，需以 usage credits 按 API 費率（$10/$50 per Mtok）付費。合格 Pro 與 Team standard seats 另有**一次性過渡 credit**；🔎 **查無官方**（標 2026-08-10｜查 過渡 credit、standard seat）｜**過渡 credit 金額與到期日**：官方文件未載具體金額與到期日。先前將 Fable 5 納入方案週用量的促銷結束於 2026-07-19 23:59:59 PT（來源：[Claude Fable 5 on your plan](https://support.claude.com/en/articles/15424964-claude-fable-5-on-your-plan)，2026-08-08 查證）
+- **✅ 2026-07-20 生效｜旗艦模型的訂閱分界（官方文件已確認）**：Max 方案、Team premium seats、舊制席位制 Enterprise premium seats — Fable 5 為標配，可用至多**每週用量上限的 50%**，不額外收費；Pro 方案、Team standard seats、Enterprise standard seats — Fable 5 **不計入方案用量**，需以 usage credits 按 API 費率（$10/$50 per Mtok）付費。合格 Pro 與 Team standard seats 另有**一次性過渡 credit $100**（Team 每 standard seat $100、每組織上限 $2,500），領取窗已於 2026-08-02 關閉、已領 credits 於 2026-09-17 到期，且可用於任何模型（[官方促銷條目](https://support.claude.com/en/articles/15862783)，2026-08-22 查證）。先前將 Fable 5 納入方案週用量的促銷結束於 2026-07-19 23:59:59 PT（來源：[Claude Fable 5 on your plan](https://support.claude.com/en/articles/15424964-claude-fable-5-on-your-plan)，2026-08-08 查證）
 - **⚠️ usage credits 開啟後，方案用量上限不再是硬停止**：credits 為 opt-in、預設關閉，於 `Settings > Usage` 開關，可設 auto-reload（每日兌換上限 $2,000）。開啟後 Claude 會在額度用盡後繼續回答並從 credits 扣款，體感與額度內無異，但每則超額回應皆計費——靠方案硬上限控管支出者需主動確認此開關（來源：[Manage usage credits](https://support.claude.com/en/articles/12429409-manage-usage-credits-for-paid-claude-plans)，2026-08-08 查證）
 - **⏰ 2026-08-31 到期：Claude Sonnet 5 促銷定價（$2/$10 per Mtok）**：官方明確定性為「temporary」促銷，相較 Opus 4.8 估計省 60% 成本；dev.to 第三方實測（2026-07-02）確認此定價並建議設為預設路由模型。8/31 後定價走向未見公告（來源：2026-07-01、2026-07-02）
 - **⏰ 2026-08-31 到期（已再度延長）｜Claude Code 週用量 +50% 促銷**：官方於 2026-08-18 確認再度延長，適用期間由原訂 **2026-05-13** 起持續延續至 **2026-08-31**（此前歷經 06-22→07-07→07-12→07-19 等多次延長）；適用 **Pro／Max／Team 及舊制席位制 Enterprise**，**Free 方案與消耗制（consumption-based）Enterprise seat 不適用**；僅影響週用量上限，**5 小時用量上限不受影響**；符合資格帳號自動套用，無需操作。**更正**：此促銷此前於 07-19 一度被本頁誤記為與 Fable 5 免費期同步到期，實為兩條獨立時程——Fable 5 免費期確於 07-19 到期並由 07-20 分界取代，本促銷則持續延長中，並未終止（詳見下方「定價與促銷」08-18 條目）（來源：Hacker News 轉載 support.claude.com，2026-08-18 17:02 UTC，276 分）
@@ -156,11 +156,11 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 
 ### 事故與爭議（誤扣費、靜默計費改動、帳號安全）
 
-#### 2026-08-15：社群質疑 Fable 5／Opus 5 是否共用同一週用量池，牴觸官方「50% 上限」設計（單一貼文，需主編查證）
+#### 2026-08-15：Fable 5／Opus 5 是否共用同一週用量池 → ✅ 官方確認共用，「50% 上限」是池內天花板不是額外配額（2026-08-22 查證結案）
 
 - **Reddit r/ClaudeCode（2026-08-15）**：使用者質疑，官方 07-20 已確認之分界——Max／Team premium 席位下 Fable 5「最多用到週用量 50%」且不額外收費（見上方「已查證的計費架構分界」）——若 Opus 5 的用量與 Fable 5 共用同一週用量池計算，則「50% 上限」的實際扣抵邏輯可能形同被 Opus 5 消耗架空，牴觸該分界設計的原意。
 - **查證本頁既有紀錄**：本頁 07-20 分界僅明確 Fable 5 本身的計量規則（Max/Team premium 標配、Pro/Team standard 走 usage credits），**未見官方一手來源說明 Opus 5 與 Fable 5 是否共用同一計量池、或各自獨立計量**——此為本頁尚未回答過的問題，非既有紀錄矛盾。
-- **⚠️ 需主編查證官方說明中心**：Opus 5 與 Fable 5 是否共用同一週用量池，屬 `support.claude.com` 說明中心層級的事實，記者無 web 工具不可自行推斷（Reddit https://www.reddit.com/r/ClaudeCode/comments/1vozbmm/opus_5_and_fable_5_sharing_a_pool_isnt_that_a/）
+- **✅ 官方答案（2026-08-22 查證）**：**共用同一池，貼文的直覺是對的，但推論的「牴觸設計」不成立。** 官方〈Claude Fable 5 on your plan〉逐字寫明 Fable 5「draws from your plan's regular weekly usage limits and uses them faster than other Claude models」，FAQ 另稱「your use of other models draws from the same usage limits and you can never use more than your weekly limit」——亦即 **50% 是同一池內的「Fable 5 最多能吃掉一半」天花板，本來就不是額外配額**。讀者要知道的實務結論：拿 Opus 5 跑滿週用量，Fable 5 那 50% 額度也跟著不見；反之亦然（來源：[Claude Fable 5 on your plan](https://support.claude.com/en/articles/15424964-claude-fable-5-on-your-plan)，官方頁最後更新 2026-07-20，2026-08-22 查證；原始質疑 Reddit https://www.reddit.com/r/ClaudeCode/comments/1vozbmm/opus_5_and_fable_5_sharing_a_pool_isnt_that_a/）
 
 #### 2026-08-14：Max 方案 session 額度自 3/23 起異常快速耗盡（本頁互動量最高配額回報）+ 社群質疑用量被暗中調降
 
@@ -286,7 +286,7 @@ git commit 歷史出現大寫字串「HERMES.md」會觸發靜默切換至 API �
 - **查證動機**：本頁自 07-18 起累積四則互相矛盾的媒體報導（Tech Times「Max 永久」／Dawn「50% 上限」／the-decoder「Pro 導向 API 計費」／Reddit「轉為 metered」），懸置 20 天無官方澄清。日報來源不含 `support.claude.com`，媒體轉述始終只有標題層級，故直接查證官方說明中心原文。
 - **官方結論（[Claude Fable 5 on your plan](https://support.claude.com/en/articles/15424964-claude-fable-5-on-your-plan)）**：2026-07-20 生效。Max 方案／Team premium seats／舊制席位制 Enterprise premium seats — Fable 5 標配，可用至多**週用量上限的 50%**，不額外收費；Pro 方案／Team standard seats／Enterprise standard seats — Fable 5 **不計入方案用量**，改以 usage credits 按 API 費率付費。先前促銷結束於 **2026-07-19 23:59:59 PT**。合格 Pro 與 Team standard seats「qualify for a one-time credit to help with the change」。
 - **四則矛盾報導其實各對一半**：Tech Times「Max 永久」✅（Max 確為標配）、Dawn「50% 上限」✅（標配確有 50% 週上限）、Reddit「轉為 metered」✅（但那是講 Pro）—— 三則各自描述不同 seat 層級卻都未指明層級，才被記成互斥（推論）。
-- **一次性 credit 金額為媒體數字，非官方**：官方原文未載金額與到期日；$100 一說來自 XenoSpectrum、XDA、nerdzap。credits 購買方式亦有歧異——官方寫「Add funds 自行輸入金額」，XenoSpectrum 稱固定包（$45 買 $50／$200 買 $250／$700 買 $1,000），以官方為準。
+- **一次性 credit 金額 ✅ 已於 2026-08-22 官方查證為 $100（此前僅媒體數字）**：官方促銷條目載明 Pro 每帳戶 $100、Team 每 standard seat $100（每組織上限 $2,500），領取窗 2026-08-02 關閉、credits 2026-09-17 到期、不限 Fable 5 可用於任何模型（[官方條目](https://support.claude.com/en/articles/15862783)）。先前 XenoSpectrum／XDA／nerdzap 的 $100 說法事後證實正確，但當時無官方佐證，本頁按分級紀律標為媒體數字屬正確處置。credits 購買方式亦有歧異——官方寫「Add funds 自行輸入金額」，XenoSpectrum 稱固定包（$45 買 $50／$200 買 $250／$700 買 $1,000），以官方為準。
 - **usage credits 的隱性風險（[Manage usage credits](https://support.claude.com/en/articles/12429409-manage-usage-credits-for-paid-claude-plans)）**：credits 為 opt-in、預設關閉（`Settings > Usage`），可設 auto-reload（每日兌換上限 $2,000）。開啟後方案用量上限不再是硬停止——Claude 繼續回答並從 credits 扣款，體感與額度內無異。此即 08-01 XDA「多數人從沒注意到」報導所指的計費異動（見下方同組條目），至此獲官方文件佐證。
 - **官方 Help Center 未把此事寫進 Release notes**：[Release notes](https://support.claude.com/en/articles/12138966-release-notes) 只記模型發布與功能（07-24 Opus 5、07-09 Reflect、07-01 Fable 5 恢復），方案／配額／計費改制不在其中——代表即使把該頁納為來源，此類異動仍抓不到（流程缺口見 `wiki/log.md` 2026-08-08 Query 條目）。
 

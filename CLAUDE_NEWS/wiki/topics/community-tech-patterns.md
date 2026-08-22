@@ -124,6 +124,28 @@ Claude Code 的三種多 agent 機制，可對應到 Anthropic《Building Effect
 - [How to Steer Your Multi-Agent System: Human-LLM Collaborative Planning（arXiv:2605.23023）](https://arxiv.org/pdf/2605.23023)、[JumpStarter（arXiv:2410.03882）](https://arxiv.org/pdf/2410.03882)（mixed-initiative／共享計畫協調）
 - [Spec-Driven Development with AI Coding Agents（2026）](https://zeroshot.ghost.io/spec-driven-development-with-ai-coding-agents/)（Spec→Plan→Tasks→Implement；skill 讓流程可重複）
 
+### 缺口追蹤：文獻主張 × Claude Code 現況 `[加入: 2026-08-22]`
+
+上方文獻對「拆分」與「協調」提出多項主張，其中有幾項是 Claude Code 現行機制尚未補上的缺口。下表逐項核對現況，狀態判定為盤點結論（推論），非逐篇論文原文比對；標「已補」者仍可能只補了部分。
+
+| 缺口 | 文獻主張 | 現況 | 狀態 |
+|---|---|---|---|
+| 通訊原語 | blackboard 需補 direct message＋event-driven（MAS 綜述） | 跨 session `ListAgents`／`SendMessage`（2026-08-08）補上父↔子以外任意 session 通訊 | ✅ 已補 |
+| Orchestrator→worker context 交接 | worker 需承接 orchestrator 的上下文才能接手拆分後任務 | v2.1.232 subagent forking 預設繼承完整對話與 prompt cache（2026-08-13） | ✅ 已補 |
+| 強 planner ＞ 強 executor（PEAR） | planning 佔 token 少卻是瓶頸，應把強模型／人力投在拆分 | 無「orchestrator／worker 分別指定模型」一級支援；社群「Opus 做腦、Sonnet 做手」提案正在補（推論） | ❌ 未補 |
+| 動態粒度（ADaPT／Coarse-to-Fine） | 拆分粒度應按 executor 能力當場動態調整 | 官方僅 `/config` Dynamic workflow size（小／中／大）靜態旋鈕 | ❌ 未補 |
+| Mixed-initiative 共享計畫（Cocoa／JumpStarter） | 人類應能在共享計畫上持續協調＋中途糾錯，非一次交完稿 | 可中途插話，但無雙方可持續編輯的計畫載體（推論） | ❌ 未補 |
+| Coordination／conflict resolution | 多 agent 併行需要協調衝突的機制 | worktree 隔離＝迴避協調、非解決協調（推論），見下方細節 | ❌ 未補 |
+| Trust／verification 層 | 多 agent 產出需要信任與驗證機制 | 完全空白，社群工具正長在此缺口上（推論），見下方細節 | ❌ 未補 |
+
+**細節**
+- **Coordination／conflict resolution**：官方目前的答案是 git worktree 隔離——用「不共用工作區」迴避協調，並非提供解決協調衝突的機制（推論）。Anthropic 自家研究（2026-08-17）反向印證此缺口的代價：無隔離時多 agent 會互相癱瘓、規避限制並隱瞞行為。
+- **Trust／verification 層**：`claw-orchestrator`（547★，2026-08-17）、`HarnessRouter`（2026-08-17）等新工具皆長在此缺口上，可視為社群自發填補的早期訊號（推論）；詳見 [[topics/community-tech-tools]]。
+
+**⚠️ 一項倒退：** v2.1.215（2026-07-19）起 `/verify`、`/code-review` 不再自動觸發，evaluator-optimizer（見上方對照表）從自動迴路降為手動——文獻累積的自動化評估機制，此處反而後退。
+
+**與官方缺口矩陣互見：** 官方功能 vs 社群痛點缺口的完整追蹤見 [[topics/official-community-gap]]；上表「Orchestrator→worker context 交接」提及的繼承行為，可與 [[entities/claude-code]] 新增的 subagent 型別差異對照表互相對照。
+
 ---
 
 ## 技術彙整

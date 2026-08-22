@@ -83,6 +83,32 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 
 ---
 
+## 浮水印政策
+
+> 逐日報導細節見「## 攻防紀錄」與「## 時序」；本節彙整系列報導的現況、法源、爭點與未解問題。
+
+### 現況
+
+Anthropic 自 2026-08-11 起為所有新產生的 Claude 文字輸出全面加上隱形浮水印，用於辨識 AI 生成內容（Audacy／Business Standard／Business Insider 等至少 4 家媒體首報）。08-14 官方說明浮水印運作機制原理，並宣布**第三方偵測 API**——外部單位可據以判斷一段文字是否由 Claude 產生（the-decoder／BleepingComputer／PCMag 三來源）；PCMag、CNET（08-17）另指範圍同時涵蓋圖片與檔案（files）輸出，惟兩者用詞略有出入，具體涵蓋範圍未經官方確認。08-18 Business Insider 報導開發者已著手打造規避偵測的方法，僅標題層級可用。
+
+### 法源
+
+08-12 TechCrunch、Forbes、Axios、Tech Times、New York Post 等多家媒體確認浮水印政策的法規依據為歐盟 AI Act「Transparency Code」透明度規範；08-17 Technology Org 重申此框架，未見超出既有報導的新細節。
+
+### 爭點
+
+- **社群反彈，聲量分歧非一致**：08-12 起 Reddit 使用者擔憂遭用於偵測工作/課業「作弊」；08-13 TechCrunch（經 Hacker News 轉載 62 分）具體引述一則來自僅存在 3 週帳號的貼文稱浮水印是「反烏托邦式陰謀」，但原文明確指出其他 Reddit 貼文者並不認同此說法，屬意見分歧而非一致反彈。
+- **品質犧牲疑慮**：08-17 The Guardian／PCWorld 兩獨立來源首次提出浮水印機制可能透過「引導字詞選擇」影響 Claude 文字生成品質，具體影響程度、官方是否回應均未見報導。
+- **「可移除」聲稱未經復現，且多為詐騙**：08-12 報導已有工具聲稱可移除浮水印，惟**無人以方法復現**該聲稱；Forbes（08-16）反向報導市面上聲稱可移除浮水印的 App 多半是詐騙與謊言。08-18 Business Insider 報導開發者已著手打造規避偵測的方法，是否與 08-12 報導的「移除工具」為同一批、具體技術手法均未見報導細節。
+
+### 目前未解
+
+- 第三方偵測 API 的開放範圍與呼叫方式**官方尚未發布文件**，僅媒體轉述，不得視為讀者可用的功能
+- 浮水印演算法細節是否有官方文件公開
+- 品質犧牲疑慮是否有官方回應或具體量化數據
+- 開發者規避偵測的具體手法與規模是否有更完整報導
+
+---
 
 ## 根本矛盾
 
@@ -185,7 +211,7 @@ Fable 5 發布後，Amazon 安全研究人員發現特定提示詞可讓模型�
 | 2026-08-13 | 🌐 | TechCrunch（經 Hacker News 轉載，62 分）：Reddit 對浮水印政策反彈聲量分歧，非一致反對 | 延續 08-12 同篇 TechCrunch 報導，具體引述一則來自僅存在 3 週帳號的貼文稱浮水印是「反烏托邦式陰謀」，但原文明確指出其他 Reddit 貼文者並不認同此說法；PCMag（08-13）另補充浮水印政策同時涵蓋文字與圖像輸出 |
 | 2026-08-12 | 🏢🌐 | TechCrunch 等多家媒體：Anthropic 浮水印政策首見具名法規依據（EU AI Act Transparency Code），使用者反彈＋移除工具聲稱浮現 | TechCrunch／Forbes／Axios／Tech Times／New York Post 報導 Anthropic 為滿足歐盟 AI Act「Transparency Code」透明度規範推出隱形浮水印；部分使用者於 Reddit 擔憂遭用於偵測「作弊」，另有報導稱已有工具聲稱可移除浮水印；為既有 08-11 條目（❓ 待查證，見上）補充首個具名法規依據，機制細節仍未官方確認 |
 | 2026-08-12 | 🌐 | The Guardian：評論文章主張若市場拒絕 OpenAI 與 Anthropic，美國應將其國有化（Bruce Schneier／Nathan E. Sanders 具名撰文） | 僅標題可用之評論/意見文章，非新聞事件；無正文內容可查證，暫不列入「目前局勢」持續追蹤表 |
-| 2026-08-11 | 🏢🌐 | 多家媒體：Anthropic 為所有新 Claude 文字輸出加隱形浮水印 | Audacy／Business Standard／Business Insider 等至少 4 來源報導與歐盟相關法規要求有關，部分編輯後仍可能殘留；機制細節（運作方式、可否移除、殘留率）僅標題可用，❓ 待查證（標 2026-08-11｜查 隱形浮水印、Claude 文字輸出｜訊 2026-08-13：EU AI Act Transparency Code 法規依據確認、Anthropic 已回應惟內容未公開，詳見「## 目前局勢」）；技術面另見 [[topics/ai-agent-safety]] |
+| 2026-08-11 | 🏢🌐 | 多家媒體：Anthropic 為所有新 Claude 文字輸出加隱形浮水印 | Audacy／Business Standard／Business Insider 等至少 4 來源報導與歐盟相關法規要求有關，部分編輯後仍可能殘留；機制細節（運作方式、可否移除、殘留率）僅標題可用，❓ 待查證（標 2026-08-11｜查 隱形浮水印、Claude 文字輸出｜訊 2026-08-13：EU AI Act Transparency Code 法規依據確認、Anthropic 已回應惟內容未公開，詳見「## 浮水印政策」）；技術面另見 [[topics/ai-agent-safety]] |
 | 2026-08-11 | 🏛️ | 路透：美國眾議院民主黨就「失控 AI agent」施壓 Anthropic、OpenAI | 具體訴求僅標題可用，❓ 待查證（標 2026-08-11｜查 眾議院民主黨、失控 AI agent） |
 | 2026-08-10 | 🏛️ | 參議員 Bernie Sanders 公開呼籲 OpenAI、Anthropic、Meta 暫停 AI 開發，警告若不停止參議院可能介入 | 呼應其提出的 AI Data Center Moratorium Act；報導提及此舉呼應 Anthropic 6/4 自身呼籲業界協調暫停開發的立場（見 [[topics/recursive-self-improvement]]）；目前僅 cryptobriefing.com 單一媒體報導，無其他媒體或社群跟進佐證，暫列觀察 |
 | 2026-08-10 | 🌐 | CounterPunch：評論性報導同一「Project Panama」書籍破壞性掃描與銷毀爭議 | The Guardian（08-05）報導的媒體擴散訊號，未見新增細節；疑與既有著作權和解案同源，具體法律程序關聯待查證 |
@@ -368,14 +394,14 @@ Fable 5 發布後，Amazon 安全研究人員發現特定提示詞可讓模型�
 - **[媒體擴散，新增] CNET：延續報導 Claude 將為 AI 生成文字與檔案加上浮水印**：CNET（08-17）報導 Anthropic 將為 Claude 生成的文字與檔案（files）加上浮水印，與既有系列報導同一事件；「檔案」用詞與既有 08-13／08-14 報導「文字與圖片輸出」略有出入，具體涵蓋範圍待查證
 
 ### 2026-08-14
-- **[機制說明＋第三方偵測 API，新增] the-decoder／BleepingComputer／PCMag：Anthropic 說明浮水印運作方式並開放第三方偵測 API**：三家媒體（2026-08-14）報導 Anthropic 說明 Claude 隱形浮水印的運作方式，並宣布**第三方偵測 API**——外部單位可據以判斷一段文字是否由 Claude 產生；PCMag 指浮水印政策同時涵蓋文字與圖片輸出。延續 08-11 上線報導、08-12 EU AI Act Transparency Code 法源確認、08-13 官方已回應從業者疑慮系列報導，惟偵測 API 的存取門檻／費用、浮水印演算法細節仍僅標題層級可用（詳見「## 目前局勢」條目更新）
+- **[機制說明＋第三方偵測 API，新增] the-decoder／BleepingComputer／PCMag：Anthropic 說明浮水印運作方式並開放第三方偵測 API**：三家媒體（2026-08-14）報導 Anthropic 說明 Claude 隱形浮水印的運作方式，並宣布**第三方偵測 API**——外部單位可據以判斷一段文字是否由 Claude 產生；PCMag 指浮水印政策同時涵蓋文字與圖片輸出。延續 08-11 上線報導、08-12 EU AI Act Transparency Code 法源確認、08-13 官方已回應從業者疑慮系列報導，惟偵測 API 的存取門檻／費用、浮水印演算法細節仍僅標題層級可用（詳見「## 浮水印政策」）
 
 ### 2026-08-13
 - **[官方回應，新增] Business Insider：Anthropic 已對科技從業者的浮水印疑慮提出回應**：報導稱 Anthropic 已就從業者對 Claude 隱形浮水印的疑慮提出回應，惟 Google News RSS 摘要未提供具體回應內容；為浮水印政策延燒以來首見官方回應動作的報導，具體內容待後續查證補充
 - **[反彈聲量分歧，補充] TechCrunch（經 Hacker News 轉載，62 分）：Reddit 使用者對浮水印政策意見分歧，非一致反對**：延續 08-12 同篇 TechCrunch 報導，具體引述一則來自僅存在 3 週帳號的貼文稱浮水印系統是「反烏托邦式陰謀」，但原文明確指出**其他 Reddit 貼文者並不認同此說法**，屬意見分歧而非一致反彈；同日 PCMag 報導浮水印政策同時涵蓋文字與圖像輸出，非僅文字
 
 ### 2026-08-12
-- **[政策依據具名化，新增] TechCrunch 等多家媒體：Anthropic 浮水印政策綁定歐盟 AI Act Transparency Code**：TechCrunch、Forbes、Axios、Tech Times、New York Post 等多家媒體報導 Anthropic 為滿足歐盟 AI Act「Transparency Code」透明度規範，為 Claude 文字輸出加上不可見浮水印；部分使用者於 Reddit 等平台表達不滿，擔憂遭用於偵測工作/課業「作弊」；另有報導稱已出現聲稱可移除該浮水印的第三方工具。為既有 08-11 條目（❓ 待查證機制細節，見「## 目前局勢」）補充首見具名法規依據，惟浮水印運作方式、殘留率與移除工具真偽仍未見官方公告確認（[TechCrunch](https://techcrunch.com/2026/08/12/some-claude-users-are-mad-that-anthropics-new-watermarks-will-catch-them-cheating-at-their-jobs-classes/)，2026-08-12）
+- **[政策依據具名化，新增] TechCrunch 等多家媒體：Anthropic 浮水印政策綁定歐盟 AI Act Transparency Code**：TechCrunch、Forbes、Axios、Tech Times、New York Post 等多家媒體報導 Anthropic 為滿足歐盟 AI Act「Transparency Code」透明度規範，為 Claude 文字輸出加上不可見浮水印；部分使用者於 Reddit 等平台表達不滿，擔憂遭用於偵測工作/課業「作弊」；另有報導稱已出現聲稱可移除該浮水印的第三方工具。為既有 08-11 條目（❓ 待查證機制細節，見「## 浮水印政策」）補充首見具名法規依據，惟浮水印運作方式、殘留率與移除工具真偽仍未見官方公告確認（[TechCrunch](https://techcrunch.com/2026/08/12/some-claude-users-are-mad-that-anthropics-new-watermarks-will-catch-them-cheating-at-their-jobs-classes/)，2026-08-12）
 - **[評論] The Guardian：Schneier／Sanders 主張若市場拒絕 OpenAI／Anthropic 應予國有化**：《The Guardian》刊登資安專家 Bruce Schneier 與 Nathan E. Sanders 具名評論文章，主張若市場拒絕 OpenAI 與 Anthropic，美國政府應將其國有化；僅標題可用，屬評論/意見文章而非新聞事件，無具體政策動作或政府回應可查證
 
 ### 2026-08-11

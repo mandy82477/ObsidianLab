@@ -4,7 +4,7 @@ kind: "entity"
 type: "product"
 status: "active"
 domain: "🛠️ 工具/功能"
-last_updated: "2026-08-21"
+last_updated: "2026-08-22"
 last_news_update: "2026-08-21"
 status_main: "active"
 days_since_news: 1
@@ -25,7 +25,7 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 **狀態：** active
 **領域：** 🛠️ 工具/功能
 **首次出現：** 2025（正式推出）
-**最後更新：** 2026-08-21
+**最後更新：** 2026-08-22
 **最後新聞更新：** 2026-08-21
 
 > **最新動態**（2026-08-21）
@@ -62,11 +62,11 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 
 > 按主題分組；各組內大致依回報時間倒序。每條開頭的狀態標記回答「現在還會發生嗎」：🔴 未修復 / ✅ 已修復（註明修復版本）/ ⛔ 官方拒修 / ❓ 待查證。
 
-### 🛡️ 安全與隱私（10 條未修復、3 條已修復、1 條拒修、1 條待查證）
+### 🛡️ 安全與隱私（11 條未修復、3 條已修復、1 條拒修）
 
 - 🔴 **未修復**｜**功能請求：OAuth 與其他第三方流程可設定外部 URL 白名單（GitHub issue #27263，累積 52 則留言、131 個讚，2026-08-17）**：使用者呼籲 Claude Code 開放可設定的外部 URL 白名單機制，套用於 OAuth 登入與其他需要導向第三方網域的流程，讓企業可控管允許連線的網域範圍；官方尚未回應或排入路線圖。
 - 🔴 **未修復**｜**已通過 CVP 審核的組織在 Claude Code 中再度被資安防護機制誤擋（GitHub issue #84352，累積 69 則留言、9 個讚，2026-08-12）**：已通過 Anthropic Cyber Verification Program（CVP）審核的 Claude.ai 組織，回報在 Claude Code 中仍再度觸發 cyber safeguard 攔阻，顯示 CVP 核准狀態未能在 Claude Code 端同步生效；官方尚未回應。
-- ❓ **待查證**（標 2026-08-12｜查 #78431、User-Agent｜複 2026-08-26）｜**Claude Code 經 curl 送出的 User-Agent 字串疑似洩漏使用者真實 email（GitHub Issue #78431，經 Hacker News 轉發 38 分，2026-08-11）**：有回報指出 Claude Code 透過 curl 送出的 User-Agent 字串疑似夾帶使用者真實 email；惟 Hacker News 留言質疑該回報缺乏細節與可重現步驟，真實性尚待查證，官方尚未回應或證實。
+- 🔴 **未修復**｜**Claude Code 送出的 User-Agent 字串夾帶使用者真實 email（GitHub Issue #78431，經 Hacker News 轉發 38 分，2026-08-11）**：2026-08-22 直查 issue 頁確認——回報**已補上可重現條件**：v2.1.212、macOS、IntelliJ IDEA、Anthropic API、Sonnet 5.0，回報者標明為**回歸**（舊版本無此行為），官方已掛 `bug`／`area:security`／`area:networking` 標籤。**但 issue 仍為 open、無 assignee、無官方回覆、無關聯 PR，亦未見任何版本 changelog 提及修復**。此前本頁標「真實性尚待查證」——現已可確認事件為真、標籤獲官方分類，未解的是修復進度而非事件本身（[Issue #78431](https://github.com/anthropics/claude-code/issues/78431)，2026-08-22 查證）。
 - ✅ **已修復 v2.1.163**｜**Claude Code 與 Gemini CLI「Comment and Control」漏洞：GitHub Issue 內容可觸及 CI workflow secrets**（2026-08-07 報導，2026-08-10 查證）：研究團隊 Novee Security 在 Black Hat USA（08-05）發表「Comment and Control」技術，證實無倉庫權限的帳號僅需開一則 GitHub Issue，內容經 prompt injection 即可在 Claude Code Security Review、Gemini CLI Action、GitHub Copilot Agent 的 CI runner 上執行任意程式碼，進而取得 `GITHUB_TOKEN`、`ANTHROPIC_API_KEY` 等 workflow secrets；Claude Code 端漏洞另利用 Hugging Face 公開下載計數器作為側通道，逐字元外洩 API 金鑰。受影響版本 v0.2.54–v2.1.162，已於 **v2.1.163** 修復；Gemini CLI 端另一漏洞獲 CVSS 10.0 滿分評級。見 [The Hacker News](https://thehackernews.com/2026/08/claude-code-and-gemini-cli-flaws-let.html)；事件細節另見 [[topics/ai-agent-safety]]
 - 🔴 **未修復**｜**Keyv 關聯 npm 供應鏈蠕蟲攻擊，植入 Claude Code 與 VS Code hook**（2026-08-04 報導，2026-08-10 查證）：屬於 Mini Shai-Hulud 惡意軟體家族的供應鏈攻擊，08-04 從快取套件 keyv@6.0.0（週下載量約 1.27 億）開始，透過 preinstall script 竊取 GitHub／雲端／Kubernetes 憑證，並利用既有 npm 發布權限持續感染同維護者的套件家族，獨立追蹤者確認至少 353 個套件版本（79 個套件名）遭波及；攻擊會在受害 repo 內寫入 Claude Code 與 VS Code 各一份設定檔，於開啟專案或啟動 agent session 時觸發 payload，此持久化機制隨 repo 一同散布，不侷限於單機。此為 npm 供應鏈攻擊而非 Claude Code 本身漏洞，Anthropic 無法單方修補，使用者應留意來路不明套件的 preinstall script。見 [The Hacker News](https://thehackernews.com/2026/08/keyv-linked-npm-worm-poisons-hundreds.html)；事件細節另見 [[topics/ai-agent-safety]]
 - ✅ **已修復 v2.1.216（v2.1.223 進一步加固）**｜**Bash 與 Unicode 繞過修補（Tech Times 報導）**（2026-07-21 報導，2026-08-10 查證）：**v2.1.216**（2026-07-20）修補 Auto Mode 下的兩類繞過——Bash 複合語句重導向、PowerShell 隱形 Unicode 注入；**v2.1.223**（2026-08-06）再修補 4 項權限邊界：Bash 指令可隱藏部分內容不受權限檢查掃描、tab／隱形 Unicode 填塞可讓核准對話框看不出實際內容、workflow script 可用動態 `import()` 逃出沙箱、`bypassPermissions` agent 定義可無視組織政策停用 bypass 模式。與既有隱寫術／同形字符機制（見下條）屬相關但不同批次的修復。見 [Tech Times](https://www.techtimes.com/articles/321151/20260721/claude-code-seals-bash-unicode-bypass-gaps-agentic-permission-layer.htm)
@@ -452,6 +452,57 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 - **MCP Servers** — 外部工具整合（注意：多個 MCP 可能導致每次訊息消耗 20k+ tokens）
 - **Memories** — 跨 session 的持久記憶（Managed Agents Beta）
 - **1Password 整合**（2026-07-17 媒體報導）— 可用已存 1Password 憑證自動登入網站，密碼不外流至 Claude／Anthropic；官方技術細節（適用範圍、設定方式）尚待補充
+
+### Subagent 型別差異對照
+
+派 subagent 前先看四條獨立軸線，可疊加（例：一個 background 的 fork）。來源：官方 `code.claude.com/docs/en/sub-agents`，2026-08-22 查證。
+
+**軸線 1：內建 / 自訂 / plugin**
+
+| 型別 | CLAUDE.md／git status | 模型 | 自動註冊 |
+|---|---|---|---|
+| Explore | 跳過（保持研究輕快省成本） | 繼承主對話，Claude API 上限為 Opus | ✅ |
+| Plan | 跳過 | 繼承主對話 | ✅ |
+| general-purpose | 讀取 | 繼承主對話 | ❌ 需顯式指定 |
+| 其他內建 | 讀取 | 依定義 | ✅ |
+| 自訂（`.claude/agents/`） | 讀取 | 依 frontmatter | 依設定 |
+| plugin agent | 讀取 | 依 frontmatter | 依設定 |
+
+- 自訂 agent 支援的 frontmatter 全集：`name`, `description`, `tools`, `disallowedTools`, `model`, `permissionMode`, `maxTurns`, `skills`, `mcpServers`, `hooks`, `memory`, `background`, `effort`, `isolation`, `color`, `initialPrompt`；可定義於 `.claude/agents/`、`~/.claude/agents/`、`--agents` CLI 旗標或 managed settings
+- **plugin agent 基於安全理由不支援 `hooks`／`mcpServers`／`permissionMode`**，其餘欄位支援；識別碼帶 scope（如 `my-plugin:review:security`）
+
+**軸線 2：fork / 非 fork**
+
+| 面向 | fork | 非 fork |
+|---|---|---|
+| Context 起點 | 繼承完整對話歷史、system prompt、工具、模型 | 全新隔離 context：僅 system prompt、任務訊息、CLAUDE.md／git status（Explore/Plan 除外）、預載 skills、sibling roster |
+| 深度上限時 `Agent` 工具 | 保留在工具清單，但呼叫回傳錯誤，且不能再派 fork | 移除（僅 fork 保留） |
+| 成本 | 首次請求複用 parent 的 prompt cache，較派新 subagent 便宜 | 全新 cache |
+| 對主對話可見性 | 自身工具呼叫不進主對話，只有最終結果回傳 | 同左 |
+
+**軸線 3：background / foreground**
+
+兩者共同的第一層過濾會先移除：深度上限時的 `Agent`、`AskUserQuestion`、`EndConversation`、`EnterPlanMode`、`ExitPlanMode`（除非 `permissionMode: plan`）、`ScheduleWakeup`、`TaskOutput`、`WaitForMcpServers`、`Workflow`。
+
+| 面向 | background | foreground |
+|---|---|---|
+| 內建工具 | 僅保留白名單（見下）| 全保留 |
+| MCP 工具 | 全保留 | 全保留 |
+| 權限提示 | 主 session 浮出、指名是哪個 subagent，結果以完成通知回來 | 即時 passthrough 給你 |
+
+- background 白名單：`Read`, `Grep`, `Glob`, `Bash`, `PowerShell`, `Edit`, `Write`, `NotebookEdit`, `WebFetch`, `WebSearch`, `TodoWrite`, `Skill`, `ToolSearch`, `EnterWorktree`, `ExitWorktree`, `Monitor`, `TaskStop`, `SendMessage`, `Artifact`
+- 預設選擇依序：teammate 派的 → foreground（teammate 設 `background: true` 會被拒）／`CLAUDE_CODE_DISABLE_BACKGROUND_TASKS=1` → foreground／fork 模式開啟 → background／fork 關且無 `background: true` → 預設 background，但需要結果才能繼續時為 foreground／fork 關且有 `background: true` → background
+
+**軸線 4：teammate / 非 teammate**
+
+| 面向 | teammate | 非 teammate |
+|---|---|---|
+| 觸發條件 | interactive session 開 agent teams，主對話派出且帶 `name`（非 fork／`isolation`）| 其餘情況 |
+| 額外工具 | `TaskCreate`, `TaskGet`, `TaskList`, `TaskUpdate`, `CronCreate`, `CronDelete`, `CronList` | 無 |
+| background | 不可（foreground-only） | 依軸線 3 規則 |
+| context 隔離 | out-of-process teammate（split pane）各自獨立 context window | — |
+
+> 相關：社群 subagent 使用模式見 [[topics/community-tech-patterns]]；本表列的機制對得上學術哪些缺口（已補／未補／倒退）見 [[topics/community-tech-patterns#學術對照：多智能體 orchestration 術語]] 的缺口追蹤層；官方 vs 社群缺口對照見 [[topics/official-community-gap]]
 
 ---
 

@@ -4128,3 +4128,35 @@ registry 加一組 sync_pair 釘住產出端與歸因端（只改一邊等於白
 2. **規則年齡審查（6d）**：10 條規則已超過 60 天閾值（詳見上方「規則檔健檢」欄清單），是否需要逐條確認內容仍準確？（多數為格式/命名類穩定規則，過去數輪 lint 已複查過部分項目）
 3. **來源記分卡觀察名單（6e）**：GitHub、dev.to 兩來源 Wilson 下界與 Presence 雙低，是否需要調整收錄門檻或列入長期觀察名單？
 4. **未註冊 slug `business-chief`（6e）**：安全政策記者 08-21 引用 Business Chief（Google News 轉載）時誤用媒體名作 attribution slug，正確應為 `google-news`。是否需要修正 `data/source_registry.json` 或在下次派工提醒記者？（單筆，非結構性問題，可視情況延後處理）
+
+## 2026-08-22 Weekly（W34）：週報＋週度延伸回顧＋本機專屬步驟補跑
+
+### 步驟 0：本機專屬步驟補跑（`/weekly` 首次承接）
+
+- **5b 跨家任務榜單週更**：派 Haiku 抓 18 個榜，`wiki/topics/model-task-leaderboard.md` 全表覆寫（上次更新 2026-08-05，停更 17 天，本步驟即為其唯一觸發邊）。本週異常：SWE-bench Verified 三甲全 ≥95% 已近飽和；Terminal-Bench 兩組來源 harness 不同、分數不可跨表比，並陳不擇一；**Aider Polyglot 連續 2 週停更（榜首仍為 2025-11 陣容），依 5b 規則標記並建議下週汰換該列**；AA 系列四榜頁面未載快照日期，以抓取日標示。已解除的舊註記：TTS 與音樂兩榜上週「待補」本週均取得，EQ-Bench 兩來源歧異本週未再現。
+- **5c 逾期待查證清算**：`check_pending_markers.py --queue` 回報**總逾期數 0**，但輸出末尾「⚠️ 舊語法盲區 **94 筆**」——前三頁為 `entities/claude-code`（20）、`topics/ai-agent-safety`（19）、`topics/anthropic-government-policy`（12）。**佇列空而存量 94，正是本步驟要防的餓死型態**，故本輪額度改花在盲區手挑，處理 5 筆：
+  1. ✅ **查實**｜Fable 5／Opus 5 是否共用週用量池（08-15 起懸置，主編待辦）→ 官方確認**共用同一池**，「Fable 5 最多用到週用量 50%」是池內天花板而非額外配額。寫入 `entities/pricing`
+  2. ✅ **查實**｜Fable 5 過渡 credit 金額與到期日（原 🔎 查無官方）→ $100／Pro 每帳戶、Team 每 standard seat $100 且每組織上限 $2,500；領取窗 2026-08-02 已關、已領者 2026-09-17 到期、不限 Fable 5
+  3. ✅ **查實**｜Claude Code +50% 週用量促銷 → 官方確認延長至 2026-08-31、自 2026-05-13 起跑、**不影響 5 小時窗**、Free 與消耗制 Enterprise 席位不適用
+  4. ✅ **查實**｜GitHub #78431 User-Agent 洩漏 email（原 ❓ 待查證「真實性存疑」）→ 直查 issue 確認**事件為真**：已補 v2.1.212／macOS／IntelliJ 可重現條件，回報者標為回歸，官方已掛 `bug`／`area:security` 標籤；仍 open、無 assignee、無官方回覆、無修復版本 → 改標 🔴 未修復
+  5. ⚠️ **查證未果**｜analyticsindiamag〈Almost Nobody Is Using Anthropic's Fable 5〉→ 文章存在但正文抓不到，無採用數據可查證，維持懸置
+- **結案回掃**：拿探針字串回掃全庫，上修 **3 頁**——`topics/ai-agent-safety`（#78431 該條同步改 🔴 並補查證條件）、`entities/fable-5`（過渡 credit 補官方金額與日期）、`entities/pricing`（媒體數字段落上修為官方查證）。同步修正 `entities/claude-code`「安全與隱私」組頭統計（1 條待查證 → 0，未修復 10 → 11）
+- **lint 待裁示呈報**：已於本次輸出直接呈給使用者（不只寫進本檔），見下方「呈報使用者的積壓事項」
+
+### 步驟 1：週報
+
+- 產出 `weekly/2026-W34.md`。深挖題目：**〈你到底撞到哪一道牆——Claude Code 用量上限的四層結構〉**（5 小時窗／週上限／池內天花板／usage credits），機制層引官方說明中心四份文件（均 08-22 取得），與步驟 0 的 5c 查證同源
+- 帳本：`check_weekly_ledger.py` ✅ 回收 7 筆全數到位、判準無改寫、新開 4 條均帶查證線索。結案 3（模型釘選升為長期警示／浮水印去除標未證實／Max 配額併入靜默降級線）、續盯 4
+- **⚠️ 深挖 1,523 字，超出 800–1,200 規格**（機械檢查為提醒不擋）。已兩輪壓縮（2,387 → 1,908 → 1,523），再壓會開始刪掉規格自己要求的具名可驗證物與來源 URL。**建議下次校準時檢討該字數上限是否需含 URL 字元**——W33 為 1,228 亦超標，連續兩期超標指向規格與實作有落差，而非單期失手
+- 涵蓋窗誠實揭露：本期只有 `news/2026-08-17`～`08-19` **3 份日報**（08-20 之後尚未產出），續盯條的「本週零命中」須照此折扣理解
+
+### 步驟 2：週度延伸回顧
+
+- 六記者並行判斷（general-purpose ＋ sonnet），提出 5 項候選；**聚焦校準：本月已於 08-01 執行（`wiki/metrics.md` 聚焦命中率欄有 76% 數值），跳過**
+- 延伸：使用者確認執行 **2 項**
+  - **B｜subagent 型別差異 ＋ MAS 缺口對照（併案）**——`entities/claude-code` 新增「Subagent 型別差異對照」四軸表（內建／自訂／plugin、fork／非 fork、background／foreground、teammate／非 teammate）；`topics/community-tech-patterns`「學術對照」節新增「缺口追蹤：文獻主張 × Claude Code 現況」子表（已補 2／未補 5／倒退 1）。兩頁互加 wikilink（主編補上 `claude-code` → patterns 錨點連結那一側）
+  - **C｜浮水印政策子區塊化**——`topics/anthropic-government-policy` 872 字元儲存格瘦身，敘事改由獨立子區塊承接
+- 使用者跳過項目 **3 項**：(A) patterns 補「agent session 觀察／管理工具集群」彙整節點；(D) `entities/opus-5` 信任度／穩定性彙整子節；(E) `topics/anthropic-business` 著作權／專利訴訟子區塊化
+- **主編更正記者判斷 1 處**：社群記者建議為本週六款 session 觀測工具「新增趨勢區塊」，但 `topics/community-pattern-trends` 已有「趨勢六：多 Agent 可觀測性儀表板化」（live-log-viewer-next → Topsoil → Fleet Deck → Cockpit → Wallfacer → HUD），本批應為該趨勢的**新節點**而非新趨勢。因 (A) 未獲採納，本輪不動；留給 lint 週更
+- `wiki/reader-notes.md` 收件匣消費：08-20 兩條同源 ⏳ 🔍 標 ✅（併案執行，未各自開頁，符合該檔原文要求）；其餘 4 條 ⏳ 維持；📌 📓 雜記 0 筆，無逾 30 天需清除者
+- **未竟**：`community-tech-patterns` 學術對照節的 8 月新論文仍需主編層 WebSearch 查證補入（記者無 web 工具，本輪僅升級呈現結構未增文獻）
