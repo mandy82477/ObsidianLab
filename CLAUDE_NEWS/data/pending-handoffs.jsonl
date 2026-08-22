@@ -5,3 +5,4 @@
 {"id": "H-21f8e6", "closed": "2026-08-21", "status": "done", "by": "安全政策", "result": "已收入 ai-agent-safety，標 ❓ 待查證待補功能面規格細節"}
 {"id": "H-6b16c9", "closed": "2026-08-22", "status": "done", "by": "community", "result": "無法連網查證 forks/issues 佐證，且日報全庫查無 Piebald-AI/claude-code-lsps 原始條目線索；依防刷規則與既有判例標待查證，本輪不收錄"}
 {"id": "H-201d81", "opened": "2026-08-22", "from": "社群", "to": "功能", "page": "topics/official-community-gap", "note": "patterns 新增 OzBrain（跨 agent／團隊共享知識庫）對應「跨 session 記憶歸零」矩陣列（官方對應 Dreaming，狀態 ⏳），評估是否列入該缺口的社群工具引用", "status": "open"}
+{"id": "H-b7c4f2", "opened": "2026-08-22", "from": "安全政策", "to": "商業", "page": "topics/anthropic-business", "note": "Forbes（08-21）「Anthropic Claude Adds Watermarks. Implications For Business?」討論浮水印對企業用戶的實務影響，安全政策頁已加 wikilink，商業面內容待補", "status": "open"}
