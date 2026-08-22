@@ -3,8 +3,8 @@ page: "topics/community-large-codebase-workflow"
 kind: "topic"
 status: "ongoing"
 domain: "🌐 社群"
-last_updated: "2026-08-15"
-last_news_update: "2026-08-15"
+last_updated: "2026-08-22"
+last_news_update: "2026-08-22"
 update_freq: "🗓️ 週更（每週從模式庫沉澱一次；更新日期停留數天屬正常節奏）"
 status_main: "ongoing"
 days_since_news: 6
@@ -25,11 +25,11 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 **領域：** 🌐 社群
 **更新頻率：** 🗓️ 週更（每週從模式庫沉澱一次；更新日期停留數天屬正常節奏）
 **開始日期：** 2026-05-02
-**最後更新：** 2026-08-15
-**最後新聞更新：** 2026-08-15
+**最後更新：** 2026-08-22
+**最後新聞更新：** 2026-08-22
 
-> **本週答案變動**（2026-08-15）
-> 「除錯與分工」線：多 agent 回報是否屬實的驗證缺口，出現第一個工具化嘗試（loopx 的證據紀錄＋可驗證交接）；效果待使用回饋。其餘三條線答案不變。
+> **本週答案變動**（2026-08-22）
+> 「Context / Token」線：grep 搜尋輸出成為第四種被盯上的裁剪對象（Graft，宣稱降 42% token），補入「工具輸出裁剪」子問題；惟宣稱本身遭社群質疑為未驗證數字。其餘三條線本週無新節點，答案不變。
 
 ---
 
@@ -75,7 +75,7 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 - 「變笨」先量 context 組成再怪工具——MCP 工具清單、CLAUDE.md、headless 冷啟動都是可量的固定成本
 - CLAUDE.md 每行都是對每個請求課的「context 稅」：依觸發頻率決定放 CLAUDE.md／skill／hook／docs 哪一層
 
-**還沒解決**：「該裁多少」沒有跨案例統一標準，多為個別作者自訂閾值；圖片化 context（pxpipe）只有單一案例。
+**還沒解決**：「該裁多少」沒有跨案例統一標準，多為個別作者自訂閾值；圖片化 context（pxpipe）與 grep 輸出裁剪（Graft）都只有單一案例，且 Graft 的降幅宣稱本身遭社群質疑。
 
 | 子問題 | 社群走到哪 | 代表實作 | 證據強度 |
 |---|---|---|---|
@@ -84,9 +84,10 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 | 極簡輸出 | 單次回覆 70→20 token；65% 降耗；企業已當降本策略 | Caveman Skill、404 Media 報導 | 多來源 |
 | CLAUDE.md 取捨 | 四層寄放地依觸發頻率；載入順序（CLAUDE.local.md 後載、受管理原則檔各 OS 路徑不同） | 「該裝什麼」「載入順序」兩篇 | 單一深度分析 |
 | 固定成本量測 | `claude -p` 未加 `--bare` 冷啟動約 15 萬 token，多 agent pipeline 反覆呼叫會放大 | headless 冷啟動實測 | 單一實測 |
+| 工具輸出裁剪 | 高頻高輸出來源逐一被盯上：grep 搜尋輸出宣稱可削減 42% token，但 benchmark 段落遭質疑 AI 代寫，數字未經第三方驗證 | Graft | 單一實測（存疑）|
 | 非主流方向 | 清程式碼內 AI 殘留註解（CCN，2,700 次迭代自陳）；文字 context 渲染成圖片（pxpipe） | CCN、pxpipe | 推論 |
 
-**為什麼會這樣**：大 repo 的檔案量與工具輸出量本身就超過 context，任何「多讀一點保險」的直覺都會撐爆；於是社群的每一步都是在把「哪裡吃了 token」變成可量測的數字，再針對數字最大的那塊裁。
+**為什麼會這樣**：大 repo 的檔案量與工具輸出量本身就超過 context，任何「多讀一點保險」的直覺都會撐爆；於是社群的每一步都是在把「哪裡吃了 token」變成可量測的數字，再針對數字最大的那塊裁——但量測本身的可信度也需要驗證，不是每個宣稱的百分比都經得起檢視。
 
 ---
 

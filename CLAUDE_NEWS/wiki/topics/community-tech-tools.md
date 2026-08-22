@@ -49,7 +49,7 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 
 | 痛點主題 | 代表工具 | 本質問題 | 狀態 | 近期工具 |
 |---------|---------|---------|------|---------|
-| Token 成本不透明 | Tokenyst、CostHawk、TokenShield、PrismoDev、engramx、agent-estimate、pxpipe、Graft | 自主 agent 讓帳單不可預測；pxpipe 把文字 context 渲染成圖片降低 token（實測降幅 59–70%，星數已查證非刷星）；Graft 用 hooks 削減 grep 輸出 token（宣稱降幅 42%，效果存疑，見下方懸置細節）；Claude-thermos 以保活請求維持快取不過期，但引發「成本轉嫁其他用戶」爭議，尚無社群共識 | 🔥 持續升溫 | 2026-08-15 |
+| Token 成本不透明 | Tokenyst、CostHawk、TokenShield、PrismoDev、engramx、agent-estimate、pxpipe、Graft | 自主 agent 讓帳單不可預測；pxpipe 把文字 context 渲染成圖片降低 token（實測降幅 59–70%，星數已查證非刷星）；Graft 用 hooks 削減 grep 輸出 token（宣稱降幅 42%，但 HN 討論質疑 benchmark 段落疑似 AI 代寫，數字未經驗證）；Claude-thermos 以保活請求維持快取不過期，但引發「成本轉嫁其他用戶」爭議，尚無社群共識 | 🔥 持續升溫 | 2026-08-15 |
 | 跨 session 記憶歸零 | ltm、Memex、draft CLI、LockedIn、VIR、CoreMem | 無官方標準，每個新 session 從零開始 | 🌙 冷卻觀望 | 2026-07-22 |
 | 多 agent 協調混亂 | agent-baton、cdesktop、AnyFrame、agent-teamflow、Superset、omnigent、loopx | 官方 Managed Agents 已部分解決，但社群仍補缺口；Claude Code Merge Queue 補上「多 agent 產出的 commit 如何序列化落地」的下游整合缺口；Cockpit／Wallfacer／HUD 延續補足「多 agent 進度難追蹤」的可觀測性缺口；omnigent（harness 無關 meta-harness，星數已成長至 9,080）、loopx（長任務多 agent 的證據紀錄與可驗證交接）為近期新增，星數已查證非刷星 | 🔥 持續升溫 | 2026-08-13 |
 | CLAUDE.md 規則失效 | Writ、Caliber、Patina | 規則被忽略、過多規則耗 token、跨工具無標準 | 🌙 冷卻觀望 | 2026-05-12 |
@@ -167,7 +167,7 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 | 工具 | 類型 | 採用 | 首次出現 | 簡介 |
 | --- | --- | --- | --- | --- |
 | [**statuslin.es**](https://statuslin.es) | UI 工具 | ⏳ | 2026-08-17 | 社群策展的 Claude Code status line 樣式展示網站，每則附真實 sandbox 容器截圖；同時被 2 個獨立來源收錄 |
-| [**Graft**](https://github.com/NanoNets/Graft) | 費用監測 | ⚠️（HN 39，跨 2 來源）| Claude Code hooks 削減 grep 輸出 token，宣稱降幅 42%；HN 討論串質疑 README 的 benchmark 段落疑似 AI 代寫，數字未經第三方覆核 |
+| [**Graft**](https://github.com/NanoNets/Graft) | 費用監測 | ⚠️ | 2026-08-15 | Claude Code hooks 削減 grep 輸出 token，宣稱降幅 42%（HN 39，跨 2 來源）；HN 討論串質疑 README 的 benchmark 段落疑似 AI 代寫，數字未經第三方覆核 |
 | [**/show-me**](https://www.humanlayer.com/blog/show-me-skill) | Skills | ⏳ | 2026-08-13 | agent skill，讓 coding agent 以精簡視覺化呈現取代大量文字輸出；兩個獨立來源同日報導 |
 | [**youtube-skills**](https://github.com/ZeroPointRepo/youtube-skills) | Skills | ⏳ | 2026-08-12 | 供 AI agent 使用的 YouTube 字幕擷取 skill，相容 OpenClaw、Hermes-Agent、Claude Code、Cursor、Windsurf；506 星，已查證非刷星（forks 10.7%） |
 | [**devspace**](https://github.com/Waishnav/devspace) | 整合工具 | ⏳ | 2026-08-11 | 把 ChatGPT 網頁介面／Claude Web 轉換成類 Codex／Claude Code 的操作體驗；3,675 星，已查證非刷星（forks 10.9%） |
