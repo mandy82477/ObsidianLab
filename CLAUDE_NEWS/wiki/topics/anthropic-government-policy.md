@@ -116,7 +116,7 @@ Fable 5 發布後，Amazon 安全研究人員發現特定提示詞可讓模型�
 
 2026-06-23，法律科技新創 Legion 正式對美國政府提告，主張出口管制令違法（Reuters），為首起針對此次管制的司法挑戰。2026-06-24，中國網路安全公司 360 聲稱開發出對標 Mythos 的工具（Reuters），進一步挑戰「管制閉源模型有效防護」的政策前提。
 
-2026-06-24，Wired 報導 Trump 白宮對 Dario Amodei 態度趨冷，談判主導權移交聯合創辦人 Tom Brown；白宮對 Tom Brown 的評語顯示此為刻意的人事替換，而非臨時安排。2026-06-25，歐盟就 Mythos 出口管制與白宮展開直接對話（Bloomberg），事件正式升格為跨大西洋外交議題，使美方承受來自盟友的額外壓力管道。
+2026-06-24，Wired 報導 Trump 白宮對 Dario Amodei 態度趨冷。2026-06-25，Wired 進一步報導談判主導權正式移交聯合創辦人 Tom Brown；白宮對 Tom Brown 的評語顯示此為刻意的人事替換，而非臨時安排。同日，歐盟就 Mythos 出口管制與白宮展開直接對話（Bloomberg），事件正式升格為跨大西洋外交議題，使美方承受來自盟友的額外壓力管道。
 
 2026-06-26，Bloomberg 分析指出限制 Anthropic 頂尖模型的出口管制可能適得其反——閉源模型遭限制後，中國開源模型的國際採用率可能反而提升，使「管制可有效維護美國 AI 領先地位」的政策邏輯受到挑戰（Bloomberg，2026-06-26；https://www.bloomberg.com/news/newsletters/2026-06-26/white-house-s-ban-on-anthropic-ai-access-may-boost-china-s-open-source-models）。同日，The Verge 報導 Mythos 危機持續惡化，Anthropic 同時面臨外交（EU、盟友）與商業（JPMorgan、DoD）雙重壓力，談判已逾兩週（The Verge，2026-06-26；https://www.theverge.com/ai-artificial-intelligence/957327/anthropic-mythos-fable-ai-trump-administration-negotiations）。
 
@@ -246,9 +246,9 @@ Fable 5 發布後，Amazon 安全研究人員發現特定提示詞可讓模型�
 | 2026-06-26 | 🌐 | Bloomberg 分析：限制 Anthropic 頂尖模型出口管制可能反推中國開源模型國際採用（Bloomberg） | 出口管制「適得其反」論述獲主流財經媒體背書；削弱管制正當性的戰略效果論據 |
 | 2026-06-26 | 🌐 | The Verge：Mythos 危機持續惡化，Anthropic 面臨外交與商業雙重壓力（The Verge） | 談判已逾兩週仍無明確解封時程；外交壓力（EU 介入）與商業損失（企業客戶 / DoD）雙軌累積 |
 | 2026-06-26 | 🏢 | Anthropic 6/10 致函美參議院：指控阿里巴巴 4/22–6/5 間透過約 25,000 個假帳號發動 2,880 萬次 Claude 模型交換（CNBC） | 史上最大規模已知模型蒸餾攻擊；同時具出口管制政策意涵——外國行為者大規模提取受管制模型能力；模型安全面向見 [[topics/ai-agent-safety]] |
+| 2026-06-25 | 🏢 | Tom Brown 接管與白宮談判會議，取代 Dario Amodei；白宮內評：「can actually engage」（Wired） | Dario 被逐出核心談判桌；Anthropic 談判策略重大調整，談判主導權易手 |
 | 2026-06-25 | 🌐 | EU 就 Mythos 出口管制與白宮展開直接對話（Bloomberg） | 事件從美國內政升格為跨大西洋科技外交；歐盟作為正式外交施壓方正式入場 |
-| 2026-06-24 | 🏢 | Tom Brown 接管與白宮談判會議，取代 Dario Amodei；白宮內評：「can actually engage」（Wired） | Dario 被逐出核心談判桌；Anthropic 談判策略重大調整，談判主導權易手 |
-| 2026-06-24 | 🌐 | LessWrong 解封中位數預測從 7 月 7 日修正至 7 月 9 日（LessWrong） | 反映談判進度略慢；社群預測持續為最具體的時間錨點 |
+| 2026-06-25 | 🌐 | LessWrong 解封中位數預測從 7 月 7 日修正至 7 月 9 日（LessWrong） | 反映談判進度略慢；社群預測持續為最具體的時間錨點 |
 | 2026-06-24 | 🌐 | 中國網路安全公司 360 聲稱開發出對標 Mythos 的工具（Reuters） | 若屬實，削弱出口管制的戰略防護效果；「管制閉源模型是否有效」爭議再度升溫 |
 | 2026-06-24 | 🌐 | WIRED：白宮與 Dario Amodei 關係趨於緊張，Trump 政府與 Anthropic 的互動進入新的不確定期（WIRED） | 6/22 撤銷「國安威脅」標籤後的意外逆轉訊號；關係修復路徑仍不穩定 |
 | 2026-06-23 | 🌐 | 法律科技新創 Legion 正式對美國政府提告，主張 Fable 出口管制令違法（Reuters） | 首起針對此次出口管制的正式司法挑戰；與國會議員施壓形成法律 + 立法雙路夾擊 |
@@ -485,9 +485,9 @@ Fable 5 發布後，Amazon 安全研究人員發現特定提示詞可讓模型�
 - **[蒸餾攻擊指控] Anthropic 致函參議院：阿里巴巴 2,880 萬次模型交換**：Anthropic 於 2026-06-10 致函美參議院，正式指控阿里巴巴透過約 25,000 個假帳號在 2026-04-22 至 2026-06-05 間向 Claude 發動 2,880 萬次模型交換，目的是蒸餾提取 AI 能力；為已知最大規模 AI 蒸餾攻擊事件；此指控今日（2026-06-26）經 CNBC 報導後引發廣泛關注，同時具出口管制政策意涵（CNBC，2026-06-24；https://www.cnbc.com/2026/06/24/anthropic-alibaba-distillation-campaign.html）；技術安全面向見 [[topics/ai-agent-safety]]
 
 ### 2026-06-25
-- **[談判主導權易手] Tom Brown 接管白宮談判**：Wired 報導 Trump 白宮對 Dario Amodei 態度趨冷，已由聯合創辦人 Tom Brown 接管與白宮的正式談判會議；白宮內部評語為「Tom Brown is not being a weirdo like Dario and can actually engage」；Dario 被逐出核心談判桌，為 Anthropic 自 6/15 赴 DC 協商以來最重大的策略調整（Wired，2026-06-24；https://www.wired.com/story/the-trump-white-house-is-over-anthropics-dario-amodei/）
+- **[談判主導權易手] Tom Brown 接管白宮談判**：Wired 報導已由聯合創辦人 Tom Brown 接管與白宮的正式談判會議；白宮內部評語為「Tom Brown is not being a weirdo like Dario and can actually engage」；Dario 被逐出核心談判桌，為 Anthropic 自 6/15 赴 DC 協商以來最重大的策略調整（Wired，2026-06-25；https://www.wired.com/story/the-trump-white-house-is-over-anthropics-dario-amodei/）
 - **[跨大西洋外交] EU 與白宮就 Mythos 出口管制直接對話**：Bloomberg 報導歐盟已就 Mythos 模型出口管制與白宮展開直接對話；事件從美國內政議題正式升格為跨大西洋科技外交，歐盟作為外部壓力方正式入場，開通盟友施壓管道（Bloomberg，2026-06-25；https://www.bloomberg.com/news/articles/2026-06-25/eu-held-talks-with-white-house-on-anthropic-after-mythos-cutoff）
-- **[預測修正] LessWrong 解封中位數從 7/7 修正至 7/9**：LessWrong 社群模型更新預測，Fable 重新上線的中位數時間從 7 月 7 日修正至 7 月 9 日，原因為談判進度略慢；NSA 出口管制自 6/12 起仍維持，尚未解除（LessWrong，2026-06-24；https://www.lesswrong.com/posts/zhRe3tdBpsZbGCdDK/world-modeling-the-us-vs-anthropic-standoff-on-claude-fable）
+- **[預測修正] LessWrong 解封中位數從 7/7 修正至 7/9**：LessWrong 社群模型更新預測，Fable 重新上線的中位數時間從 7 月 7 日修正至 7 月 9 日，原因為談判進度略慢；NSA 出口管制自 6/12 起仍維持，尚未解除（LessWrong，2026-06-25；https://www.lesswrong.com/posts/zhRe3tdBpsZbGCdDK/world-modeling-the-us-vs-anthropic-standoff-on-claude-fable）
 
 ### 2026-06-24
 - **[NSA 制裁] NSA 失去 Claude Fable 模型存取權**：NYT 報導 NSA 因與 Anthropic 的持續爭議，正式失去 Claude Fable 模型的存取資格；此前 FT（06/05）曾報導 NSA 自行使用 Mythos 進行進攻性網路操作，「一邊管制一邊用」的邏輯矛盾至今未解（NYT，2026-06-23；https://www.nytimes.com/2026/06/23/us/politics/nsa-lost-access-anthropic-tool.html）
