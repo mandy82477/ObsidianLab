@@ -4160,3 +4160,9 @@ registry 加一組 sync_pair 釘住產出端與歸因端（只改一邊等於白
 - **主編更正記者判斷 1 處**：社群記者建議為本週六款 session 觀測工具「新增趨勢區塊」，但 `topics/community-pattern-trends` 已有「趨勢六：多 Agent 可觀測性儀表板化」（live-log-viewer-next → Topsoil → Fleet Deck → Cockpit → Wallfacer → HUD），本批應為該趨勢的**新節點**而非新趨勢。因 (A) 未獲採納，本輪不動；留給 lint 週更
 - `wiki/reader-notes.md` 收件匣消費：08-20 兩條同源 ⏳ 🔍 標 ✅（併案執行，未各自開頁，符合該檔原文要求）；其餘 4 條 ⏳ 維持；📌 📓 雜記 0 筆，無逾 30 天需清除者
 - **未竟**：`community-tech-patterns` 學術對照節的 8 月新論文仍需主編層 WebSearch 查證補入（記者無 web 工具，本輪僅升級呈現結構未增文獻）
+
+### 收尾時的更正（推送前發現）
+
+- **雲端 `weekly-wiki-lint-cloud` 與每日 pipeline 於本次執行期間同時推送**，收尾 push 遭拒 → `pull --rebase` 後六檔衝突（claude-code／pricing／ai-agent-safety／anthropic-government-policy／community-tech-patterns／log）。標頭與 callout 類衝突一律取雲端側（其新聞內容較新，含 08-20／08-21 ingest），本次新增的區塊與查證結果全部保留並逐項驗證存活；`log.md` 為 append-only，兩側條目皆保留、依日期排序。web build commit 因純產物衝突改為 skip 後重跑 build
+- **`news/2026-08-20`／`08-21` 在週報寫完後才隨 rebase 進入本機**。週報依步驟 5 凍結原則不回頭改選題與深挖，但**補掃了預告探針**，命中 1 則具實質影響者：**WIRED（08-20）〈Coders Say They Already Found Workarounds to Claude's Invisible Watermarks〉**——該則推翻了「可去除浮水印」一列初稿寫的「無人復現」，已由 ✅ 結案改判 🟡 續盯至 W35，並在該列與檔尾標明更正緣由
+- **可攜教訓**：本機 session 開工時的 `news/` 快照，不等於該週實際存在的日報。`/weekly` 步驟 1 的涵蓋窗是在**開工當下**盤點的，而雲端 pipeline 會在執行期間繼續產出——若不在收尾 push 前重掃一次，週報會以「這幾天沒有日報」的語氣，對實際存在的新聞下「本週零命中」的判定。**建議把「收尾前重掃涵蓋窗與預告探針」寫進 `.claude/commands/weekly.md` 步驟 3**，成本是一次 grep，擋掉的是對讀者說謊
