@@ -4093,3 +4093,38 @@ registry 加一組 sync_pair 釘住產出端與歸因端（只改一邊等於白
 - 摘要：Claude 服務今日一度發生多模型請求錯誤與 Google connectors 中斷（皆同日解決）；Anthropic 傳出 IPO 前置訊號（規模傳比肩 SpaceX、可能本月遞件）與企業資料保留政策擬異動（路透／彭博，未經官方證實）；Anthropic 關聯企業 Ode 收購顧問公司 Casper Studios；anthropic-sdk-python 發布 1.0.0 含 httpx2 breaking change；Claude 未經詢問直接發送 Gmail 郵件的 agent 自主權限議題收入 ai-agent-safety；社群面今日無條目達收錄門檻
 - 呈現品質：全部通過（`topics/ai-agent-safety.md` 摘要段落當場修剪回 2 段，屬例行維護，非缺陷）
 - 品質備註：無
+
+## 2026-08-22 Lint（雲端排程執行）
+
+- 修正矛盾：`topics/anthropic-government-policy.md` Tom Brown 接管白宮談判日期誤植 2026-06-24 → 更正為 2026-06-25（依日報原文 `news/2026-06-25.md`，並與 `entities/tom-brown.md`／`entities/dario-amodei.md` 一致），修正時序表列＋正文兩處敘述＋詳述段兩則引用日期；由人物記者 3a 跨頁檢查發現、主編直接執行（安全政策記者已先行完成派工未及知悉）
+- 補連結：無（六類記者逐頁 Grep 確認，全數頁面皆有 inbound wikilink，無孤立頁）
+- 狀態更新：`topics/official-community-gap`（monitoring→ongoing）、`topics/enterprise-cost-management`（monitoring→ongoing）、`topics/ai-talent-flow`（monitoring→ongoing）、`topics/recursive-self-improvement`（monitoring→ongoing）——四頁皆為 3c 回升邊：最後新聞更新距今 ≤14 天但狀態仍停在 monitoring，本輪回升
+- resolved 收尾：無
+- 新增 entities：無（Step 4 掃描候選 Decart／Casper Studios／Ode／Cami Clark 均未達「3+ 頁提及且有足夠獨立內容」門檻，維持現況：於 `anthropic-business.md`／`dario-amodei.md` 內文覆蓋即可，不建頁）
+- 呈現品質：模型 5/8 頁 ⚠️已修復（懸置標記舊語法改新語法）、功能 1/14 頁 ⚠️已修復（official-community-gap 狀態回升）、商業 全部✅、安全政策 1/6 頁 ⚠️已修復（浮水印標記訊號日同步）、社群 1/7 頁 ⚠️已修復（patterns 補漏填主線 tag）、人物 5/14 頁 ⚠️已修復（移除 LLM 操作語句殘留）
+- 入口層健檢：`entities/claude-code.md`（661行）、`topics/coding-workflow-guide.md`（608行）、`entities/pricing.md`（642行）、`topics/anthropic-business.md`（669行）、`topics/competitor-landscape.md`（582行）、`topics/ai-agent-safety.md`（985行）、`topics/anthropic-government-policy.md`（593行）、`topics/community-tech-patterns.md`（1522行）、`topics/community-tech-discussions.md`（1250行）——九頁均已具備入口層（callout＋概覽表/月份分組），無需補結構；未發現語意分岔或死案候選，Step 3 本輪跳過
+- 待查證回訪：已改註「日報無後續、官方未查證」共約 15 筆（模型 6 頁×多筆舊語法標記改新語法、安全政策浮水印標記訊號日更新、人物既有新語法標記逐筆核對均無新後續）；社群／功能／商業／安全政策另有多筆新語法標記核對後維持原狀不動（詳見各記者回報）
+- 規則檔健檢：
+  - 矛盾（6a）：本輪掃描與六位記者回報均無新增規則矛盾發現
+  - 引用驗證（6b）：7 個錨點（首次出現欄／##痛點洞察／近期工具欄／##技術彙整／熱門討論表格／衍生欄／全覽表）逐一 grep 確認全部存在，全部通過
+  - 遵守率（6c）：抽樣近 3 次 ingest（08-19／08-20／08-21）——呈現品質審查 3/3、feature-radar 更新提及 3/3、log.md 格式正確 3/3，全部通過（近期無新工具收錄事件，痛點洞察同步規則本輪無樣本可測）
+  - 過期規則（6d，>60天）：10 條規則超過 60 天閾值，📋 待使用者確認是否仍準確——`entities/`頁面格式模板／`topics/`頁面格式模板（119天）、Wiki頁面呈現品質標準（99天）、community-tech-patterns↔discussions雙向連結規則（98天）、enterprise-tool-tracker更新規則（88天）、feature-radar准入定義（68天）、anthropic-government-policy更新規則（65天）、community-tech-tools策展規則（64天）、命名與分類規則（72天）、community-tech-discussions熱門討論保留規則（63天）
+  - 來源健康（6e）：近 7 天（08-15～08-21）sourceStatus 全部 `ok=true`，社群/媒體來源（HN／Reddit／Google News／GitHub／GitHub Issues／dev.to／Blogroll）均無連續 3 天 count=0，全部正常；記分卡（`source_scorecard.py`）觀察名單：GitHub（Wilson下界21%／Presence 6%，樣本充足但雙低）、dev.to（Wilson下界16%／Presence 3%，另有跨日重複視窗結構性偏低註記，僅供趨勢觀察），📋 待使用者確認是否列入長期觀察；Google News 低信譽桶 0 筆；⚠️ 未註冊 slug `business-chief`（安全政策記者 08-21 誤用媒體名作為 slug，應為 `google-news`），📋 待使用者確認是否修 registry 或提醒記者
+  - 跨檔案語意矛盾（6f）：`scripts/check_rules.py` 54 組 sync_pairs 機械檢查全數 ✅ 通過；本輪六記者回報均無「⚠️ 派工與規則牴觸」；額外發現 12 組高頻互引但未登記的 coupling hints（warn-only，非阻塞，資訊性提示）——✅ 全部配對語意一致，無新增矛盾
+  - 成長迴路（月度）：非本月首次 lint，跳過（本月已於 08-01 執行過首次 lint）
+- 品質指標（6g）：
+  - ref 覆蓋率（每週）：100%（08-16~08-21，25 條列/25 有歸因；08-22 當日 news 檔案尚未產出不計入分母）→ ✅ 通過
+  - 採用驗證率（月度）：非本月首次 lint，跳過
+  - 外部死鏈（每週，讀 `data/link_health.json`）：checked_at 2026-08-21（新鮮，<10天）；共 4 條死鏈，已由對應類別記者標「（原文已失效）」共 4 頁（`feature-radar-archive-2026-05`／`topics/coding-workflow-guide`／`topics/anthropic-business`／`topics/community-tech-patterns`）；anti_bot 186 筆／unverified 40 筆依規則不派工不標註，僅列入指標
+  - 趨勢判讀：持平（連續 5 期 ≥97%：07-26 97%／08-08 100%／08-15 100%／08-22 100%）
+- 跨家榜單週更（5b）：雲端 egress 封鎖，跳過（`topics/model-task-leaderboard` 最後新聞更新已距今 17 天但模型記者判斷為抓取管道被擋、非議題沉寂，本輪維持 ongoing 不下修，理由詳見模型記者附註）
+- 逾期待查證清算（5c）：雲端 egress 封鎖，跳過，留待本機執行
+- 讀者模擬：3 題全數 ✅ 2 跳內找到答案——①「anthropic-sdk-python 1.0.0 breaking change 是否影響我？」→ index→`entities/claude-code.md` 現況段已直接列出 httpx2 影響範圍與 changelog 連結；②「多 agent 可觀測性儀表板化社群驗證結果如何？」→ index→`topics/community-pattern-trends.md` 趨勢六段落已有六個實作與啟示；③「Anthropic IPO 進展到哪？」→ index→`topics/anthropic-business.md` callout 已有規模傳言與遞件時程
+- lint 自我遵守率：6/6 位記者回報一次過，3a–3g 七項均有明確結果，無退回
+- overview.md：已更新（反映本週局勢：IPO/ARR 650億美元、Opus 5.0行話爭議、v2.1.237/238發布、SDK breaking change、服務穩定性事件、浮水印延燒、多agent互相破壞研究、Decart收購案上修至70億、規格驅動開發與行動裝置遠端控制兩條社群趨勢）
+
+📋 待使用者確認：
+1. **`community-tech-patterns` 模式淘汰審查**（社群記者 dry-run，未執行）：建議淘汰 1 條「跨 Session 通訊插件 `/qu /ans`」（2026-05-07，已被官方 08-09 正式推出的 `ListAgents`／`SendMessage` 完全取代）；建議拆分 1 條「Session 記憶與搜尋工具生態」（內「多 session 互通 Claude Relay」子條目同樣被取代，`Claude-Find`／`Memex` 兩子條目應保留）；另有 2026-05 月份 39 個舊格式節點缺少「成熟度」欄位，機械化 60 天沉寂判準無法套用，建議後續補標欄位再審（僅觀察，未列入淘汰候選）。❓ 是否同意執行淘汰／拆分？
+2. **規則年齡審查（6d）**：10 條規則已超過 60 天閾值（詳見上方「規則檔健檢」欄清單），是否需要逐條確認內容仍準確？（多數為格式/命名類穩定規則，過去數輪 lint 已複查過部分項目）
+3. **來源記分卡觀察名單（6e）**：GitHub、dev.to 兩來源 Wilson 下界與 Presence 雙低，是否需要調整收錄門檻或列入長期觀察名單？
+4. **未註冊 slug `business-chief`（6e）**：安全政策記者 08-21 引用 Business Chief（Google News 轉載）時誤用媒體名作 attribution slug，正確應為 `google-news`。是否需要修正 `data/source_registry.json` 或在下次派工提醒記者？（單筆，非結構性問題，可視情況延後處理）

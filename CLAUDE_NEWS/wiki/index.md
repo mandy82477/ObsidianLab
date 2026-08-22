@@ -5,7 +5,7 @@
 **不收：** 快變事實（日期／熱度／近況→頁面標頭，盤點用 Grep）；異動紀錄（→ [[log]]）；每日新聞（→ `news/`）
 **讀法：** 整讀（本檔的存在意義就是便宜的一次讀）；查詢分流見 `wiki/CLAUDE.md`「搜尋策略」
 
-**最後更新：** 2026-08-20
+**最後更新：** 2026-08-22
 
 
 ---
@@ -81,11 +81,11 @@
 | [[topics/ai-agent-safety]] | 🏛️ 政策/安全 | ongoing | AI agent 安全：GitHub Repo prompt injection 多媒體確認 + 假冒安裝包 + CVE/DoS 漏洞（中國信任對峙已分流至 [[topics/safety-china-trust-dispute]]）|
 | [[topics/ai-agent-safety-archive]] | 🏛️ 政策/安全 | monitoring | AI Agent 安全時序歷史存檔（2026-05-22 以前）；主頁 [[topics/ai-agent-safety]] 瘦身分流 |
 | [[topics/anthropic-government-policy]] | 🏛️ 政策/安全 | ongoing | Anthropic 政府政策攻防：出口管制主線已於 2026-07-01 解除，剩餘承諾落實、歐洲據點爭奪、Legion 訴訟等衍生支線持續觀察（中國信任對峙已分流至 [[topics/safety-china-trust-dispute]]）|
-| [[topics/official-community-gap]] | 🛠️ 工具/功能 | monitoring | 官方功能 vs 社群痛點缺口矩陣：哪些痛點官方正在解決、哪些結構性缺席 |
+| [[topics/official-community-gap]] | 🛠️ 工具/功能 | ongoing | 官方功能 vs 社群痛點缺口矩陣：哪些痛點官方正在解決、哪些結構性缺席；08-16 起持續有新缺口/矩陣更新，08-22 lint 回升 |
 | [[topics/coding-workflow-guide]] | 🛠️ 工具/功能 | ongoing | 🗓️ 週更 程式開發實戰手冊：我現在在做這件事，該下哪個 skill、它會做什麼、有什麼坑——以流程階段為軸（官方技能不按開發領域切） |
-| [[topics/enterprise-cost-management]] | 💼 商業 | monitoring | 企業規模採用 Claude 的成本結構挑戰：Uber/Microsoft 案例、缺失工具、因應策略 |
+| [[topics/enterprise-cost-management]] | 💼 商業 | ongoing | 企業規模採用 Claude 的成本結構挑戰：Uber/Microsoft 案例、缺失工具、因應策略；08-14 新增成本管控動態，08-22 lint 回升 |
 | [[topics/enterprise-tool-tracker]] | 💼 商業 | ongoing | 大型企業 AI 編碼工具使用追蹤：Microsoft/Amazon/Uber/Apple 等企業當前工具選擇與變化軌跡；07-03 Alibaba 以疑似後門風險禁用 Claude Code（❌ 退出） |
 | [[topics/community-tech-timeline]] | 🌐 社群 | monitoring | 社群技術應用趨勢完整時序（2026-04-25 至今），從 community-tech-patterns 拆分 |
 | [[topics/anthropic-business]] | 💼 商業 | ongoing | Anthropic 商業健康度：企業採用率 34.4%、17 倍訂閱補貼、PMF 觀察、Microsoft 退出風險；07-03 藥物開發野心（The Verge）、大廠員工進駐客戶模式 |
-| [[topics/recursive-self-improvement]] | 🏛️ 政策/安全 | monitoring | AI 遞歸自我改進與全球暫停呼籲：Claude 已寫 80-90% Anthropic 程式碼、工程師代碼產出 8×、全球 AI 煞車踏板呼籲（2026-06-22 後無新進展，轉低頻觀察）|
-| [[topics/ai-talent-flow]] | 💼 商業 | monitoring | AI 實驗室人才流動與對各公司影響：DeepMind 淨流失（Jumper/Adler/Pritzel）、Anthropic 主要承接、OpenAI 次要承接；自 07-13 起 3 週無新流動事件，08-01 lint 降級觀察 |
+| [[topics/recursive-self-improvement]] | 🏛️ 政策/安全 | ongoing | AI 遞歸自我改進：官方《Risk Report August 2026》（08-14）首度就內部 AI R&D 加速幅度提供量化區間自評，並確認 Model 2 暫無釋出計畫；08-22 lint 回升 |
+| [[topics/ai-talent-flow]] | 💼 商業 | ongoing | AI 實驗室人才流動與對各公司影響：Google DeepMind 高層與核心研究員異動（事件 08-05，08-13 查證補記），Anthropic 主要承接；08-22 lint 回升 |
