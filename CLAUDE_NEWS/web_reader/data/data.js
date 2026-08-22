@@ -123,7 +123,7 @@ window.WIKI_DATA = {
       "pill": "active",
       "firstSeen": "2025（正式推出）",
       "startDate": "",
-      "lastUpdated": "2026-08-21",
+      "lastUpdated": "2026-08-22",
       "lastNewsUpdate": "2026-08-21",
       "updateFreq": "",
       "summary": "**最新版本動態：** 最新版本為 **v2.1.238**（2026-08-20），新增 `keybindingFlavor` 設定：設為 `\"readline\"` 時可讓提示列中的 Ctrl+W 依 Bash 慣例刪除到前一個空白字元，預設值 `\"classic\"` 行為不變；已提報 feature-radar。同…",
@@ -427,7 +427,7 @@ window.WIKI_DATA = {
       "pill": "active",
       "firstSeen": "2026-04-25",
       "startDate": "",
-      "lastUpdated": "2026-08-21",
+      "lastUpdated": "2026-08-22",
       "lastNewsUpdate": "2026-08-21",
       "updateFreq": "",
       "summary": "**2026-07-20 起，旗艦模型（現為 Fable 5）在訂閱體系中被切成兩層**：Max 與 Team premium 席位維持標配、上限為週用量的 50%；Pro 與 Team standard 席位改以 usage credits 按 API 費率付費，並發放一次性過渡 credit。此分界於 2026-0…",
@@ -557,7 +557,7 @@ window.WIKI_DATA = {
       "pill": "active",
       "firstSeen": "",
       "startDate": "2026-04-27",
-      "lastUpdated": "2026-08-21",
+      "lastUpdated": "2026-08-22",
       "lastNewsUpdate": "2026-08-21",
       "updateFreq": "",
       "summary": "**最新態勢（2026-08-19）：** Mashable／Android Police 報導 Claude 現可未經詢問直接透過 Gmail 整合發送郵件，取代先前需人工確認草稿的流程，屬 agent 自主權限擴張的產品層「誤操作」風險類型；僅標題可用，是否可關閉、誤發防護機制未見報導。 **前一態勢（2026-0…",
@@ -1851,7 +1851,7 @@ window.WIKI_DATA = {
       "pill": "active",
       "firstSeen": "",
       "startDate": "2026-08-05",
-      "lastUpdated": "2026-08-05",
+      "lastUpdated": "2026-08-22",
       "lastNewsUpdate": "2026-08-05",
       "updateFreq": "🗓️ 週更（每週抓取一次外部榜單快照；更新日期停留數天屬正常節奏）",
       "summary": "回答「**做某類任務，目前哪家模型最強？**」——按任務類型列出各活榜單的本週領先者快照，涵蓋跨家模型（OpenAI、Google、開源等）與非文字生成（畫圖、影片、語音）。每列標資料日期；即時精確數字請點榜單連結（活榜單永遠最新，本頁只是每週速讀），各榜怎麼算分見下方評比方式索引。Claude 家內選型見 model…",
@@ -2599,6 +2599,11 @@ window.WIKI_DATA = {
     }
   ],
   "weeklyIndex": [
+    {
+      "id": "2026-W34",
+      "name": "本週深挖 · 2026-W34（08-17 ～ 08-23）",
+      "preview": "這一週對外的數字很好看。08-17 起 Bloomberg、Reuters、CNBC、Benzinga 同步報出 Anthropic 7 月年化營收站上 650 億美元，Reuters 引述消息來源證實，市場一致解讀為 IPO 前的業績訊號；同期另有報導指第二季營收超過 115 億美元、IPO 估值繫於 2028 年 "
+    },
     {
       "id": "2026-W33",
       "name": "本週深挖 · 2026-W33（08-10 ～ 08-16）",
