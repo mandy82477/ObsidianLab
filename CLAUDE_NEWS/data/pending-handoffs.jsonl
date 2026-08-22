@@ -3,3 +3,4 @@
 {"id": "H-6b16c9", "opened": "2026-08-20", "from": "功能", "to": "社群", "page": "topics/community-tech-tools", "note": "Piebald-AI/claude-code-lsps（512★，第三方 Claude Code LSP 外掛市集）納入下次週更策展評估，功能記者無 web 工具無法完成星數防刷佐證", "status": "open"}
 {"id": "H-21f8e6", "opened": "2026-08-20", "from": "功能", "to": "安全政策", "page": "topics/ai-agent-safety", "note": "Claude 現可未經詢問直接發送 Gmail 郵件（Mashable/Android Police 2026-08-19 報導），屬 agent 自主權限擴張，請評估是否收入 ai-agent-safety", "status": "open"}
 {"id": "H-21f8e6", "closed": "2026-08-21", "status": "done", "by": "安全政策", "result": "已收入 ai-agent-safety，標 ❓ 待查證待補功能面規格細節"}
+{"id": "H-6b16c9", "closed": "2026-08-22", "status": "done", "by": "community", "result": "無法連網查證 forks/issues 佐證，且日報全庫查無 Piebald-AI/claude-code-lsps 原始條目線索；依防刷規則與既有判例標待查證，本輪不收錄"}

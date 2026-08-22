@@ -166,6 +166,9 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 
 | 工具 | 類型 | 採用 | 首次出現 | 簡介 |
 | --- | --- | --- | --- | --- |
+| [**statuslin.es**](https://statuslin.es) | UI 工具 | ⏳ | 2026-08-17 | 社群策展的 Claude Code status line 樣式展示網站，每則附真實 sandbox 容器截圖；同時被 2 個獨立來源收錄 |
+| [**Graft**](https://github.com/NanoNets/Graft) | 費用監測 | ⚠️（HN 39，跨 2 來源）| Claude Code hooks 削減 grep 輸出 token，宣稱降幅 42%；HN 討論串質疑 README 的 benchmark 段落疑似 AI 代寫，數字未經第三方覆核 |
+| [**/show-me**](https://www.humanlayer.com/blog/show-me-skill) | Skills | ⏳ | 2026-08-13 | agent skill，讓 coding agent 以精簡視覺化呈現取代大量文字輸出；兩個獨立來源同日報導 |
 | [**youtube-skills**](https://github.com/ZeroPointRepo/youtube-skills) | Skills | ⏳ | 2026-08-12 | 供 AI agent 使用的 YouTube 字幕擷取 skill，相容 OpenClaw、Hermes-Agent、Claude Code、Cursor、Windsurf；506 星，已查證非刷星（forks 10.7%） |
 | [**devspace**](https://github.com/Waishnav/devspace) | 整合工具 | ⏳ | 2026-08-11 | 把 ChatGPT 網頁介面／Claude Web 轉換成類 Codex／Claude Code 的操作體驗；3,675 星，已查證非刷星（forks 10.9%） |
 | [**smart-ralph**](https://github.com/tzachbon/smart-ralph) | 工作流 | ⏳ | 2026-08-11 | 結合 Ralph Wiggum loop 與結構化規格流程的 Claude Code plugin，主打規格驅動開發與智慧壓縮 compaction；510 星，已查證非刷星（forks 9.0%） |
