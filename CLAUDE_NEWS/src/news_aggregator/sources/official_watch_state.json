@@ -10,7 +10,6 @@
       "https://code.claude.com/docs/en/context-window.md": "Explore the context window",
       "https://code.claude.com/docs/en/prompt-caching.md": "How Claude Code uses prompt caching",
       "https://code.claude.com/docs/en/memory.md": "How Claude remembers your project",
-      "https://code.claude.com/docs/en/permission-modes.md": "Choose a permission mode",
       "https://code.claude.com/docs/en/sessions.md": "Manage sessions",
       "https://code.claude.com/docs/en/common-workflows.md": "Common workflows",
       "https://code.claude.com/docs/en/prompt-library.md": "Prompt library",
@@ -68,6 +67,7 @@
       "https://code.claude.com/docs/en/admin-setup.md": "Set up Claude Code for your organization",
       "https://code.claude.com/docs/en/setup.md": "Advanced setup",
       "https://code.claude.com/docs/en/authentication.md": "Authentication",
+      "https://code.claude.com/docs/en/managed-settings.md": "Deploy managed settings",
       "https://code.claude.com/docs/en/server-managed-settings.md": "Configure server-managed settings",
       "https://code.claude.com/docs/en/managed-mcp.md": "Control MCP server access for your organization",
       "https://code.claude.com/docs/en/auto-mode-config.md": "Configure auto mode",
@@ -104,9 +104,12 @@
       "https://code.claude.com/docs/en/communications-kit.md": "Communications kit",
       "https://code.claude.com/docs/en/champion-kit.md": "Champion kit",
       "https://code.claude.com/docs/en/settings.md": "Claude Code settings",
+      "https://code.claude.com/docs/en/settings-reference.md": "Claude Code settings reference",
+      "https://code.claude.com/docs/en/settings-example.md": "Example settings files",
       "https://code.claude.com/docs/en/permissions.md": "Configure permissions",
-      "https://code.claude.com/docs/en/sandbox-environments.md": "Choose a sandbox environment",
+      "https://code.claude.com/docs/en/permission-modes.md": "Choose a permission mode",
       "https://code.claude.com/docs/en/sandboxing.md": "Configure the sandboxed Bash tool",
+      "https://code.claude.com/docs/en/sandbox-environments.md": "Choose a sandbox environment",
       "https://code.claude.com/docs/en/cloud-environments.md": "Configure cloud environments",
       "https://code.claude.com/docs/en/self-hosted-environments.md": "Self-hosted environments",
       "https://code.claude.com/docs/en/self-hosted-environments-quickstart.md": "Self-hosted environments quickstart",
@@ -190,16 +193,16 @@
     }
   },
   "https://code.claude.com/docs/en/desktop.md": {
-    "hash": "33162066488f1018fe3e6f983667bf8d666c8e7bae7738dd879575ccb06b6483",
-    "length": 77464
+    "hash": "544dc1463486a38ca0f29112de8380e65545954e1e673ed45b914a2c6a1f4279",
+    "length": 77337
   },
   "https://claude.com/pricing": {
     "hash": "0247007f8dd0bd2e7b118bcb465abc5ffbf5a9056e4861aed4ef692d637bdfa7",
     "length": 31600
   },
   "https://support.claude.com/en/articles/15424964-claude-fable-5-on-your-plan": {
-    "hash": "2a4a95e95365bc71e343d48b1589eab2853eb5e66edc4cabe2494bfe36645a50",
-    "length": 21963
+    "hash": "22872351df5a6979a8948c2febb0d1b69609b4064512fde1f5660e882d184d45",
+    "length": 21995
   },
   "https://support.claude.com/en/articles/12429409-manage-usage-credits-for-paid-claude-plans": {
     "hash": "86c04184d006df43eeaa45d96af144b665b612a99760a8129b4deef6612ed0b2",
@@ -210,7 +213,7 @@
     "length": 22132
   },
   "https://support.claude.com/en/articles/11145838-use-claude-code-with-your-pro-or-max-plan": {
-    "hash": "219d01e9536e9ce81e2a11a3d8baa5a3ff901db805827a82c87a146d77e102ae",
+    "hash": "006ead42d6159e95023b050a9d9041716a45e6b792b6e6988016387fdb2a3cc9",
     "length": 22816
   },
   "https://support.claude.com/en/articles/12138966-release-notes": {
