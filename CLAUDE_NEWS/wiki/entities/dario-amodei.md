@@ -25,10 +25,10 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 **狀態：** active
 **領域：** 👤 人物
 **首次出現：** 2026-04-25
-**最後更新：** 2026-08-18
-**最後新聞更新：** 2026-08-18
+**最後更新：** 2026-08-22
+**最後新聞更新：** 2026-08-22
 
-> ❓ **待查證**（標 2026-08-14｜查 Amodei's Wife、Winding Road to the Top｜訊 2026-08-18）｜**媒體聚焦 Dario Amodei 妻子的人物側寫**（2026-08-14 報導）：WSJ 與 The Information 同日發布深度報導，聚焦 Dario Amodei 妻子在網路上幾乎沒有公開資訊一事，並探討她對 Anthropic 內部可能的影響力；這兩篇報導本身內容停留在標題層級，未展開其姓名或具體職務內容。**後續**（2026-08-18）：The Week 發布人物側寫〈Cami Clark: the Anthropic CEO's wife and 'first lady' of AI〉，首次在標題層級公開其姓名「Cami Clark」，稱其為 AI 界的「第一夫人」；惟報導本身仍為單一標題層級來源，對 Anthropic 內部具體影響力等細節仍未展開，查證狀態維持待確認。
+> ❓ **待查證**（標 2026-08-14｜查 Amodei's Wife、Winding Road to the Top｜訊 2026-08-22）｜**媒體聚焦 Dario Amodei 妻子的人物側寫**（2026-08-14 報導）：WSJ 與 The Information 同日發布深度報導，聚焦 Dario Amodei 妻子在網路上幾乎沒有公開資訊一事，並探討她對 Anthropic 內部可能的影響力；這兩篇報導本身內容停留在標題層級，未展開其姓名或具體職務內容。**後續**（2026-08-18）：The Week 發布人物側寫〈Cami Clark: the Anthropic CEO's wife and 'first lady' of AI〉，首次在標題層級公開其姓名「Cami Clark」，稱其為 AI 界的「第一夫人」；惟報導本身仍為單一標題層級來源，對 Anthropic 內部具體影響力等細節仍未展開，查證狀態維持待確認。**後續**（2026-08-22）：Ynetnews 刊出同題人物側寫〈Meet Cami Clark, the 'first lady of AI' shaping Anthropic and Dario Amodei behind the scenes〉，第三家媒體重複「AI 界第一夫人」定性與「幕後影響 Anthropic 與 Dario Amodei」描述；原文摘要僅為連結樁，具體職稱、事件、引述內容仍未見報導，查證狀態維持待確認。
 > ❓ **待查證**（標 2026-08-10｜查 Axios、Yahoo Finance）｜**人才招募疑慮延燒**（2026-08-07 報導）：Axios 報導（經 Yahoo Finance 轉載）稱 Dario Amodei 據稱憂心新進員工只為高薪而非公司使命加入 Anthropic，並對照公司同期開出年薪 32-40 萬美元的活動企劃負責人職缺，遠高於市場行情；為二手轉述，具體發言未經證實。
 > ❓ **待查證**（標 2026-08-10｜查 The Information、Silicon Valley）｜**The Information 深度剖析**（2026-08-06 報導）：發布《How Dario Amodei Spread Anthropic's Religion and Stirred Up Silicon Valley》，探討其個人影響力與外界對 Anthropic 企業文化的觀感；原文僅標題層級資訊可用，暫無具體引述內容。
 
@@ -83,6 +83,7 @@ Dario Amodei 是 Anthropic 共同創辦人兼執行長（CEO），與 Chris Olah
 
 ## 參考來源
 
+- [Google News（2026-08-22）→ Ynetnews](https://news.google.com/rss/articles/CBMiYkFVX3lxTE8yYWFtYks5QjdhOVFtOEpxV3RiaWxweW1ReGdtR2RqVzRYUVJLeFpoOHZfTWcxd3NIMU1kUkdXazdOMGczWjVRemg2elVXN19ORjV6cmJyYVR3b1RUT3RWM3p3?oc=5)：「Meet Cami Clark, the 'first lady of AI' shaping Anthropic and Dario Amodei behind the scenes」，第三家媒體同題跟進的人物側寫，查證狀態見上方標記
 - Hacker News（26分，2026-08-16）→ Business Insider：「Anthropic CEO says the way for AI to win over the public is to cure cancer」，Dario Amodei 在 X 上稱唯有具體科學突破才能扭轉大眾對 AI 的不信任
 - Hacker News（12分，source_count=2，2026-08-16）→ TechCrunch：「Anthropic CEO says AI backlash is 'fundamentally a crisis of trust'」，回應投資人 Gavin Baker 於 All-In podcast 及 X 上的批評
 - Google News（2026-08-16）→ Business Insider：「Anthropic CEO Dario Amodei says the way for AI to win over the public is to 'actually' cure cancer」，與上則 Business Insider 報導同一事件的另一篇報導，僅供交叉核對
@@ -107,6 +108,7 @@ Dario Amodei 是 Anthropic 共同創辦人兼執行長（CEO），與 Chris Olah
 
 ## 歷史記錄
 
+- 2026-08-22：Ynetnews 發布人物側寫報導〈Meet Cami Clark, the 'first lady of AI' shaping Anthropic and Dario Amodei behind the scenes〉，第三家媒體同題跟進，重複「AI 界第一夫人」定性與「幕後影響 Anthropic 與 Dario Amodei」描述；原文僅標題層級資訊可用，具體職稱與事件仍未見報導，併入頁首既有待查證追蹤（來源：Google News／Ynetnews）
 - 2026-08-18：The Week 發布人物側寫報導〈Cami Clark: the Anthropic CEO's wife and 'first lady' of AI〉，首次在標題層級公開 Dario Amodei 妻子姓名為「Cami Clark」，稱其為 AI 界的「第一夫人」；報導內容仍停留在標題層級，具體影響力細節未展開，併入頁首既有待查證追蹤（來源：Google News／The Week）
 - 2026-08-17：Fidji Simo（非 Anthropic 人員）公開表態同意 Dario Amodei 稱「AI 可治癒所有疾病」的說法，呼應其 08-16 主張唯有具體科學突破才能扭轉大眾對 AI 不信任的論述（來源：Google News／Business Insider）
 - 2026-08-16：Dario Amodei 在 X 上發表兩則具名表態，均為本人第一手發言：（1）回應投資人 Gavin Baker（於 All-In podcast 及 X 上）批評其「過度悲觀描繪 AI」，稱大眾對 AI 的反彈「根本上是一場信任危機」（TechCrunch，source_count=2，另有 Google News 同題報導）；（2）稱扭轉大眾對 AI 不信任的唯一辦法是產業交出具體科學突破，並舉「治癒癌症」為例（Business Insider；同事件另有標題含「actually」一詞的 Google News／Business Insider 版本，交叉核對內容一致）。Simon Willison 部落格〈Quoting Dario Amodei〉引述其 X 原文全文：「I do agree that the public has a negative view of AI (and that this is a big problem), but I don't think it is primarily...」，作為此事件的第一手佐證來源（來源：Hacker News／Business Insider、Hacker News／TechCrunch、Google News／Business Insider、Simon Willison Blog，2026-08-16）

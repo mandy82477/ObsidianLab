@@ -26,11 +26,11 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 **領域：** 💼 商業
 **首次出現：** 2026-04-25
 **最後更新：** 2026-08-22
-**最後新聞更新：** 2026-08-21
+**最後新聞更新：** 2026-08-22
 
-> **最新計費政策異動**（2026-08-21）
-> - **路透社／彭博社（消息人士）：Anthropic 據傳計畫調整企業資料保留政策，細節未公開**：與同期 OpenAI「零資料保留」承諾形成競爭呼應（詳見 [[topics/competitor-landscape]]），未經官方證實，詳見「定價與促銷」新增條目。
-> - **Techzine Global：Anthropic 讓企業客戶可將 AI 資料存放於自有雲端環境**：與上則資料保留政策異動關係未明，不逕自視為同一事件，詳見「定價與促銷」新增條目。
+> **最新計費政策異動**（2026-08-22）
+> - **MarkTechPost／Dealroom／Palo Alto Networks Unit 42／The New Stack（四方跟進）：Anthropic 承諾提供 3,500 萬美元額度，供企業透過 Claude Security 導入 Mythos 5 漏洞掃描能力**：屬產品導入型促銷，非一般訂閱優惠，詳見「定價與促銷」新增條目；產品功能面細節見 [[entities/claude-security]]。
+> - **08-21 記錄之企業資料保留政策異動、自有雲端存放報導，仍為近期重點**，詳見「定價與促銷」。
 > - **Reddit：使用者回報本次配額重置後 token 分配出現明顯變化，官方尚無公告**：詳見「配額與速率」新增條目。
 > - **08-18 記錄之週用量 +50% 促銷延長至 8/31、旗艦模型訂閱分界，仍為近期重點**，詳見「當前生效的計費規則」。
 
@@ -245,6 +245,12 @@ git commit 歷史出現大寫字串「HERMES.md」會觸發靜默切換至 API �
 來源：[GitHub Issue #53262](https://github.com/anthropics/claude-code/issues/53262)
 
 ### 定價與促銷（模型定價、方案設計）
+
+#### 2026-08-21：Anthropic 承諾 3,500 萬美元額度，供企業透過 Claude Security 導入 Mythos 5 漏洞掃描能力
+
+- **Google News／MarkTechPost、Dealroom、Palo Alto Networks Unit 42、The New Stack（四方跟進報導）**：Anthropic 將 Claude Mythos 5 導入 Claude Security 產品線，企業團隊透過產品介面即可取得 frontier 等級漏洞掃描能力，同時官方承諾提供 **3,500 萬美元**額度（credits）；四家媒體同步跟進同一事件，僅標題與導言層級可用，具體額度發放對象（既有客戶／新客戶）、使用期限、是否綁定特定產品用量或方案未見報導細節。
+- **與「我的方案現在有什麼」表的關係**：本額度屬**產品導入型促銷**（綁定 Claude Security 產品線的企業客戶），非該表涵蓋的一般訂閱方案優惠，暫不列入表內；模型能力釋出面詳見 [[entities/mythos]]，產品功能細節見 [[entities/claude-security]]。
+- **⚠️ 需主編查證官方說明中心**：$35M 額度方案的官方公告原文、適用範圍與截止日均未見報導，僅媒體轉述金額，屬 `support.claude.com` 或 Anthropic 官方部落格層級事實，記者無 web 工具不可自行推斷（Google News/MarkTechPost；Google News/Dealroom；Google News/Palo Alto Networks Unit 42；Google News/The New Stack）
 
 #### 2026-08-21：Techzine 報導 Anthropic 允許企業將 AI 資料存放於自有雲端環境（單一來源，未經官方確認）
 

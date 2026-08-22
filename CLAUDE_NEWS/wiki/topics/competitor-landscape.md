@@ -24,13 +24,13 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 **領域：** 💼 商業
 **蒐集邊界：** 以 Claude 為參照系的競品動態為主，另針對競品發布與定價定向補抓（每日至多 2 則）；競品自身未與 Claude 對比的發布可能延遲或缺漏。
 **開始日期：** 2026-04
-**最後更新：** 2026-08-21
-**最後新聞更新：** 2026-08-21
+**最後更新：** 2026-08-22
+**最後新聞更新：** 2026-08-22
 
-> **最新競品動態**（2026-08-21）
-> - **The Register：OpenAI 以「零資料保留」（zero data retention）承諾正面搶攻 Anthropic 企業客戶；TechCrunch：新數據指出 OpenAI 正在企業用戶市場追近 Anthropic**：延續 08-19 已記錄之隱私承諾競爭回應，本次補上具體措辭「零資料保留」與量化追近訊號，詳見「主要競品追蹤」OpenAI ChatGPT Work / GPT-5.6 子區塊新增。
-> - **VentureBeat／The Next Web：Slack 推出「Slack Code」，讓 Claude 與 ChatGPT 可在同一群組頻道協作，被視為聊天工具切入 AI coding 市場**：本頁首次追蹤 Slack 作為競品，詳見「主要競品追蹤」新增 Slack Code 子區塊。
-> - **08-17 記錄之 GitHub Copilot 計費改版、Cursor Origin 平台、Zhipu 能力宣稱仍為近期重點**，詳見「主要競品追蹤」對應子區塊。
+> **最新競品動態**（2026-08-22）
+> - **36Kr：《Codex 是否開始反擊 Claude Code？》產業競爭態勢觀察**：與 Hacker News 高分貼文「Quick impressions: A week of using Codex more than Claude」同日呼應同一主題（該則已由社群記者以個人觀察角度處理），詳見「主要競品追蹤」OpenAI Codex CLI 子區塊「頭對頭比較彙整」表新增列。
+> - **Startup Fortune（Topic Watch 專頁定向）：分析廠商鎖定型（vendor-locked）AI 編碼 agent 如何悄悄推高企業工程成本**：詳見下方「觀察重點」新增。
+> - **08-21 記錄之 OpenAI「零資料保留」承諾搶攻企業客戶、Slack Code 新戰線，仍為近期重點**，詳見「主要競品追蹤」對應子區塊。
 
 ---
 
@@ -87,6 +87,7 @@ Claude Code 已成為 AI 輔助編碼的標竿產品，但競爭正快速升溫�
 - **開源替代加速**：OpenCode 157K、DeepClaude 17x 成本節省——訂閱政策收緊（OpenClaw 禁令、6/15 計費結構）正在為開源方案創造需求
 - **企業成本臨界點**：Microsoft 退訂、Uber 燒光全年預算——企業 AI 工具採購的成本敏感度正在形成新的市場分水嶺
 - **新創在 AI 編碼 agent 定價鏈中被擠壓（2026-08-19，Startup Fortune，專頁定向）**：分析文章探討 AI 編碼 agent 的定價模式運作方式，以及建構於底層模型 API 之上的新創公司在成本結構上遭遇的擠壓；與上方「企業成本臨界點」（買方視角，Microsoft/Uber 的採購成本壓力）互補，本則是賣方/中介方視角——新創若定價低於底層 API 成本漲幅，毛利即遭壓縮；僅標題層級可用，具體成本結構、毛利率數字未見報導細節（推論）
+- **廠商鎖定型 AI 編碼 agent 悄悄推高企業工程成本（2026-08-21，Startup Fortune，專頁定向）**：分析文章探討 vendor-locked（廠商鎖定型）AI 編碼 agent 如何在使用者未察覺的情況下推升企業端工程成本；與 08-19 已記錄之「新創在定價鏈中被擠壓」（賣方/中介方視角）互補，本則回到買方視角，且更聚焦「鎖定」機制本身（而非單純的 API 漲價）——呼應本頁既有 05-12 已記錄之 OpenCode 分流訊號中「vendor lock-in 顧慮驅動開源轉移」的既有敘事，提供該顧慮的具體成本後果描述；僅標題層級可用，具體鎖定機制、成本量化數字未見報導細節（推論）
 
 ---
 
@@ -113,10 +114,11 @@ Claude Code 已成為 AI 輔助編碼的標竿產品，但競爭正快速升溫�
 
 #### Claude Code vs Codex 頭對頭比較彙整
 
-> 目前累積 6 篇比較文（07-15 起），**共識尚未收斂**——多數僅為標題層級評論或工作流選型建議，缺乏具體公開分數；直到 08-01 才首次出現第三方開源評測套件，具備後續產出量化數據的潛力，但截至目前仍無實測分數可引用。
+> 目前累積 7 篇比較文（07-15 起），**共識尚未收斂**——多數僅為標題層級評論或工作流選型建議，缺乏具體公開分數；直到 08-01 才首次出現第三方開源評測套件，具備後續產出量化數據的潛力，但截至目前仍無實測分數可引用。
 
 | 日期 | 來源 | 內容 | 量化數字 |
 |------|------|------|---------|
+| 2026-08-22 | 36Kr | 「Codex 是否開始反擊 Claude Code？」產業競爭態勢觀察報導，與同日 Hacker News 高分貼文「Quick impressions: A week of using Codex more than Claude」呼應同一主題（該則已由社群記者以個人觀察角度收錄） | ❓ 待查證：僅標題可用，具體評測方法論或量化分數未見報導細節 |
 | 2026-07-15 | HackerNoon（source_count=2） | 「Claude Code vs Codex vs OpenCode：全端工程師誠實裁決」，三方比較文 | 🔎 查無官方（標 2026-08-10｜複 2026-09-13）：為工程師個人觀點比較文，查證後仍未見具體評分數據 |
 | 2026-07-22 | South China Morning Post（source_count=2） | 中國 Qiushi Engine（浙江大學團隊）於 ResearchClawBench 自主研究排行榜奪冠，Claude Code 第三、Open Science Desktop 第二 | 已查證：2026-08-13，[SCMP 原文](https://www.scmp.com/news/china/science/article/3361370/chinese-ai-agent-outperforms-anthropics-claude-code-autonomous-research) |
 | 2026-07-25 | SitePoint | 「Codex 5.3 生產環境工作流——何時該選它而非 Claude 做複雜重構」，工作流選型建議文 | 🔎 查無官方（標 2026-08-10｜複 2026-09-13）：為工作流選型建議文，查證後仍未見具體評測方法論或分數 |
@@ -300,7 +302,11 @@ Claude Code 已成為 AI 輔助編碼的標竿產品，但競爭正快速升溫�
 
 > 逐日條目按主題可另見上方「主要競品追蹤」對應廠商子區塊；此區塊保留完整時序供追溯查證。
 
+### 2026-08-22
+- **[OpenAI Codex CLI，頭對頭比較彙整新增] 36Kr：「Codex 是否開始反擊 Claude Code？」產業競爭態勢觀察**：與同日 Hacker News 高分貼文呼應同一主題（該則已交社群記者處理），詳見「主要競品追蹤」OpenAI Codex CLI 子區塊「頭對頭比較彙整」表新增列（Google News/36Kr）
+
 ### 2026-08-21
+- **[觀察重點，新增，專頁定向] Startup Fortune：廠商鎖定型 AI 編碼 agent 悄悄推高企業工程成本**：詳見「觀察重點」新增（Topic Watch/competitor-landscape）
 - **[Slack Code，新增追蹤] VentureBeat：Slack 把 AI coding 從終端機拖進群組聊天**：詳見「主要競品追蹤」新增 Slack Code 子區塊（Google News/VentureBeat）
 
 ### 2026-08-20
