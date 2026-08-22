@@ -204,6 +204,9 @@ Fable 5 發布後，Amazon 安全研究人員發現特定提示詞可讓模型�
 
 | 日期 | 方 | 動作 | 效果 |
 |------|----|------|------|
+| 2026-08-22 | 🌐 | The Independent 評論：主張外界對 Claude 浮水印的批評「錯過了最重要的一點」 | 僅標題可用，具體反駁論點未見報導；系列報導首見明確站在政策辯護方的評論文章 |
+| 2026-08-21 | 🌐 | Forbes：討論 Claude 浮水印對企業用戶的實務影響 | 僅標題可用，具體商業影響內容未見報導；系列報導首見企業商業面角度，與商業記者 [[topics/anthropic-business]] 可能重疊 |
+| 2026-08-21 | 🌐 | Business Insider：分析 Anthropic 浮水印做法「較同業更進一步（for now）」 | 僅標題可用，具體同業比較基準未見報導；系列報導首見同業比較角度，「for now」措辭暗示可能非長期優勢 |
 | 2026-08-21 | 🌐 | Business Chief：報導 Anthropic 為因應歐盟 AI Act 新規定，替 Claude 輸出加上浮水印 | 僅標題可用，重申既有 08-12 已確認的 EU AI Act Transparency Code 法規依據，未見新增機制細節 |
 | 2026-08-20 | 🌐 | CNET 評論文章：主張 AI 內容標示是大型科技公司的基本責任，文中提及 Claude 浮水印 | 意見/評論性文章，非新聞事件；呼應既有浮水印政策社會觀感角力，未提供新技術細節或事實 |
 | 2026-08-20 | 🌐 | Yahoo Finance：高盛（Goldman Sachs）與 OKX 均在香港被切斷 Claude AI 存取權限 | 僅標題可用，成因未知；與 06-18 JPMorgan Chase 香港分行切斷存取先例類似，惟該案肇因於出口管制（已於 07-01 解除），本次因果關係未明，不逕自視為同一原因 |
@@ -386,6 +389,13 @@ Fable 5 發布後，Amazon 安全研究人員發現特定提示詞可讓模型�
 - [Chris Olah Vatican Remarks](https://www.anthropic.com/news/chris-olah-pope-leo-encyclical) — Anthropic Blog
 
 ## 時序
+
+### 2026-08-22
+- **[反批評評論，新增] The Independent：主張外界對 Claude 浮水印的批評「錯過了最重要的一點」**：The Independent（08-22）刊出評論文章，主張圍繞 Claude AI 浮水印的批評聲浪「missing the most important point」；為系列報導首見明確站在政策辯護方的評論文章（先前 08-19 Forbes「破除迷思」屬技術面澄清，本篇屬立場辯護），具體反駁論點僅標題可用，未見報導
+
+### 2026-08-21
+- **[企業商業面角度，新增] Forbes：討論 Claude 浮水印對企業用戶的實務影響**：Forbes（08-21，"Anthropic Claude Adds Watermarks. Implications For Business?"）首次從企業用戶角度討論浮水印政策的實務影響；僅標題可用，具體內容未見報導，可能與商業記者主責的 [[topics/anthropic-business]] 重疊
+- **[同業比較角度，新增] Business Insider：Anthropic 浮水印做法「較同業更進一步（for now）」**：Business Insider（08-21，"Why Anthropic's AI watermark is going further than its rivals — for now"）分析 Anthropic 浮水印做法較其他業者更進一步；「for now」措辭暗示此領先地位可能非長期優勢，具體比較基準與同業跟進計畫均未見報導
 
 ### 2026-08-20
 - **[存取限制，新增，成因未明] Yahoo Finance：高盛與 OKX 均在香港被切斷 Claude AI 存取權限**：Yahoo Finance（08-20）報導高盛（Goldman Sachs）與 OKX 均在香港被切斷 Claude AI 存取權限；僅標題可用，涉及地緣政治或合規因素但具體原因未知。❓ **待查證**（標 2026-08-20｜查 Goldman Sachs、OKX 交易所）｜**成因**：與 06-18 JPMorgan Chase 香港分行切斷存取先例性質相似，惟該案肇因於當時仍生效的出口管制（已於 07-01 全面解除），本次事件發生於管制解除後逾七週，是否同源均未見報導；企業存取權/商業面另有商業記者處理

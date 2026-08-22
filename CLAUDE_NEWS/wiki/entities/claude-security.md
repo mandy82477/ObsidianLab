@@ -25,19 +25,19 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 **狀態：** beta（公開測試版）
 **領域：** 🛠️ 工具/功能
 **首次出現：** 2026-04-30
-**最後更新：** 2026-08-10
-**最後新聞更新：** 2026-07-24
+**最後更新：** 2026-08-22
+**最後新聞更新：** 2026-08-22
 
-> **最新資安產品動態**（2026-07-23）
-> MarkTechPost 報導 Anthropic 發布「Claude Security 外掛（plugin）」Beta 版，強調為**可在終端機內執行的多代理（multi-agent）漏洞掃描工具**；報導僅有標題可用，與本頁既有已於 2026-04-30 推出、2026-05-01 向全部 Enterprise 客戶開放的 Claude Security 是否為同一產品的最新包裝說法、或另一獨立的外掛發布形式（2026-07-23 報導，至今無後續）。
+> **最新資安產品動態**（2026-08-21）
+> Anthropic 將 **Claude Mythos 5** 整合進 Claude Security，企業團隊可在**不直接存取模型本身**的前提下取得前沿（frontier）等級漏洞掃描能力；MarkTechPost 首發報導，Dealroom、Palo Alto Networks Unit 42、The New Stack 三方跟進（source_count 4）。額度／定價面（Dealroom 提及承諾提供 $35M credits）留給 [[entities/pricing]] 處理，本頁僅記產品功能面。
 
 ## 現況
+
+Anthropic 已將 **Claude Mythos 5**（見 [[entities/mythos]]，目前僅限授權機構的安全模型）整合進 Claude Security，讓企業團隊取得前沿等級漏洞掃描能力，且**不需直接存取 Mythos 5 模型本身**——延續 2026-05-24 曾洩露的「Claude Security 將整合 Mythos 模型」app 字串線索，如今由官方正式產品化（2026-08-21，MarkTechPost 首發，Dealroom／Palo Alto Networks Unit 42／The New Stack 跟進報導）。原文為摘要層級，尚未見具體掃描範圍、與下方既有 Claude Security 掃描機制的技術銜接細節；細節待後續報導或官方文件補齊。
 
 Claude Security 於 2026-04-30 宣布推出公開測試版，並於 2026-05-01 正式向**全部 Enterprise 客戶**開放。ZDNET、SecurityWeek、SiliconANGLE、CRN、Pulse 2.0 等多家媒體報導。這是 Anthropic 首次以**獨立資安產品形式**跨足 AI 輔助資安市場，直接整合於 Claude Code 開發環境。
 
 核心運作方式：以類安全研究員的方式**讀取 Git 歷史**、**跨檔案追蹤資料流**，目標大幅降低傳統規則掃描的誤報率。多位開發者指出「**推理式驗證（reasoned verification）**」才是本次發布真正的差異化設計決策——工具可自動確認漏洞真實性並提出修復建議，而非僅標記疑似問題。
-
-**社群回饋（2026-07-24 指控，至今無後續）：** 一則 Reddit 貼文反映新手使用者花費大量 token 才發現 Claude Security 目前無法存取 Workflow tool；僅單一來源、非官方文件確認，是否為既有設計限制或待補功能，近 14 天無後續報導或官方回應。
 
 ---
 
@@ -45,7 +45,7 @@ Claude Security 於 2026-04-30 宣布推出公開測試版，並於 2026-05-01 �
 
 | 項目 | 評分 |
 |------|------|
-| 社群熱度 | 🔥🔥🔥 |
+| 社群熱度 | 🔥🔥🔥🔥 |
 | 試用價值 | ⚡ 有條件推薦 |
 | 最適合 | Enterprise 客戶、需要業務邏輯情境化安全評估的開發團隊 |
 | 不適合 | 個人開發者（目前限 Enterprise 客戶）、僅需傳統 CVE 掃描的場景 |
@@ -83,11 +83,13 @@ Claude Security 於 2026-04-30 宣布推出公開測試版，並於 2026-05-01 �
 
 - [[news/2026-04-30]]
 - [[news/2026-05-28]]
+- [[news/2026-08-21]]
 
 ## 歷史記錄
 
 | 日期 | 事件 |
 |------|------|
+| 2026-08-21 | **Claude Mythos 5 整合進 Claude Security**：企業團隊在不直接存取模型本身的前提下取得前沿等級漏洞掃描能力；MarkTechPost 首發報導，Dealroom、Palo Alto Networks Unit 42、The New Stack 三方跟進（source_count 4）；額度／定價面（Dealroom 提及 $35M credits 承諾）留給 [[entities/pricing]] 處理；來源：Google News / MarkTechPost（另有 Dealroom、Palo Alto Networks Unit 42、The New Stack） |
 | 2026-07-24 | **社群反映無 Workflow tool 存取權限**：Reddit 使用者（自稱使用 Claude Code 未滿一個月）反映摸索過程燒費大量 token 才發現 Claude Security 沒有 Workflow tool 的存取權限；是否為既有設計限制或待補功能 ❓ 待查證 ⟨Q-01⟩；來源：Reddit / r/ClaudeCode |
 | 2026-07-23 | **MarkTechPost 報導「Claude Security Plugin」Beta 版**：標題強調「終端機內執行的多代理漏洞掃描工具」，僅標題可用、無正文細節；與既有版本的定位關係 ❓ 待查證 ⟨Q-02⟩；來源：Google News / MarkTechPost |
 | 2026-05-28 | **Cisco LLM Security Leaderboard 首次發布**：Anthropic 模型佔前十名 8 個席位（8/10），成為企業採購 AI 工具時最強的第三方安全背書；調查同時顯示 83% 企業計畫部署 agentic AI，但僅 29% 認為已具備足夠安全管控能力——此數字直接推動 Claude Security 產品採購需求；來源：Cisco / The Deep View（HN score 3） |

@@ -88,6 +88,7 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 
 | 結論 | 狀態 | 日期 |
 |------|------|------|
+| CyberSecurityNews：Grok（競品，非 Claude）爆出零點擊攻擊漏洞，攻擊者可透過加密提示注入竊取聊天資料 | 🟡 產業對照，非 Claude 風險：Topic Watch 專頁定向抓取（本頁觸發條件，不套用 Claude/Anthropic 關聯門檻），僅標題可用，攻擊鏈技術細節與是否已修補均未見報導 | 2026-08-22 |
 | Claude 現可未經詢問直接透過 Gmail 發送郵件，取代先前的草稿確認流程（Mashable／Android Police） | ❓ 待查證：agent 自主權限擴張，是否可關閉、誤發防護機制未見報導；屬產品層「誤操作」風險類型，非漏洞 | 2026-08-19 |
 | CyberSecurityNews：勒索軟體操作者利用 Claude Code 竊取 LDAP 密碼、植入 VPN 後門、外洩 SQL 資料庫 | ❓ 待查證：單一資安媒體來源，攻擊鏈細節（特定漏洞、CVE 編號）未見報導 | 2026-08-18 |
 | Cybernews：「疑心較重」的 AI agent 對彼此部署惡意軟體，稱為 Anthropic 揭露 | ❓ 待查證：單一媒體來源，未見連結官方論文/部落格，與既有 turf war／官方多智能體研究關聯待確認 | 2026-08-18 |
