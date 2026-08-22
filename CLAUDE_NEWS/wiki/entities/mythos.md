@@ -5,12 +5,12 @@ type: "model"
 status: "active（出口管制解除，2026-07-01 起全球恢復存取）"
 domain: "🤖 模型"
 last_updated: "2026-08-22"
-last_news_update: "2026-08-09"
+last_news_update: "2026-08-22"
 status_main: "active"
-days_since_news: 13
-inbound_links: 24
-attribution_count: 11
-attribution_last: "2026-08-07"
+days_since_news: 0
+inbound_links: 26
+attribution_count: 12
+attribution_last: "2026-08-22"
 top_source: "google-news"
 pending_count: 8
 pending_overdue: 5

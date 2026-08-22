@@ -4,14 +4,14 @@ kind: "topic"
 status: "ongoing"
 domain: "🏛️ 政策/安全"
 last_updated: "2026-08-22"
-last_news_update: "2026-08-21"
+last_news_update: "2026-08-22"
 status_main: "ongoing"
-days_since_news: 1
-inbound_links: 79
-attribution_count: 83
-attribution_last: "2026-08-18"
+days_since_news: 0
+inbound_links: 78
+attribution_count: 84
+attribution_last: "2026-08-22"
 top_source: "google-news"
-pending_count: 13
+pending_count: 12
 pending_overdue: 0
 pending_next_review: "2026-08-26"
 pending_signalled: 0

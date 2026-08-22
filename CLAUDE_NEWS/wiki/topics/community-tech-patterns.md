@@ -4,12 +4,12 @@ kind: "topic"
 status: "ongoing"
 domain: "🌐 社群"
 last_updated: "2026-08-22"
-last_news_update: "2026-08-20"
+last_news_update: "2026-08-22"
 status_main: "ongoing"
-days_since_news: 2
-inbound_links: 41
-attribution_count: 79
-attribution_last: "2026-08-20"
+days_since_news: 0
+inbound_links: 44
+attribution_count: 80
+attribution_last: "2026-08-22"
 top_source: "devto"
 pending_count: 9
 pending_overdue: 0

@@ -4,13 +4,13 @@ kind: "entity"
 type: "person"
 status: "active"
 domain: "👤 人物"
-last_updated: "2026-08-18"
-last_news_update: "2026-08-18"
+last_updated: "2026-08-22"
+last_news_update: "2026-08-22"
 status_main: "active"
-days_since_news: 4
+days_since_news: 0
 inbound_links: 11
-attribution_count: 14
-attribution_last: "2026-08-18"
+attribution_count: 15
+attribution_last: "2026-08-22"
 top_source: "google-news"
 pending_count: 6
 pending_overdue: 0
