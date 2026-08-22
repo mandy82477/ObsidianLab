@@ -79,12 +79,17 @@ argument-hint: [YYYY-Wnn]
 
 兩段都跑完後才執行。`REPO_ROOT` = `C:\Users\Mandy\CLAUDE_OBSIDIAN\ObsidianLab\CLAUDE_NEWS`，`PYTHON` = `C:\Users\Mandy\AppData\Local\Programs\Python\Python313\python.exe`：
 
+0. **重掃涵蓋窗與預告探針（在 commit 之前，不可略過）** `[加入: 2026-08-22]`——重列一次 `news/` 目錄，與步驟 1 寫進週報檔尾的涵蓋窗比對：
+   - **有新日報**（開工後才產出者）→ 對這幾份補跑第 (3) 段所有續盯／新開條的 `｜查證：` 關鍵字 grep。命中且足以改變某列判定 → **改判該列，並在該列與檔尾標明更正緣由**；命中但不足以改判 → 檔尾註明已補掃。**選題與深挖不回頭改**（步驟 5 凍結原則），補掃只修正「會讓讀者被誤導的事實判定」
+   - **無新日報** → 什麼都不做，繼續第 1 步
+
 1. `git -C REPO_ROOT add weekly/ wiki/ data/source_attribution.jsonl` → `git -C REPO_ROOT commit -m "weekly: YYYY-Wnn 週報＋週度延伸回顧"`（無變更則跳過）
 2. `PYTHON REPO_ROOT\scripts\run_tests.py`（失敗 → 跳過 build 與 web commit，仍執行第 4 步推送已完成的 commit，並在回報標「Tests FAILED - build skipped」）
 3. `PYTHON REPO_ROOT\scripts\build_web.py` → `git -C REPO_ROOT add web_reader/` → `git -C REPO_ROOT commit -m "web: rebuild YYYY-Wnn（週報＋週度回顧上站）"`
 4. `git -C REPO_ROOT push`（**單一 push**）
 
-- **push 失敗**：照 `.claude/commands/news-pipeline-steps.md` 的 `Step 5` push 失敗重試程序處理（`pull --rebase` 上限 2 次），不要另寫一套
+- **push 失敗**：照 `.claude/commands/news-pipeline-steps.md` 的 `Step 5` push 失敗重試程序處理（`pull --rebase` 上限 2 次），不要另寫一套。**`pull --rebase` 若帶進新的 `news/*.md`，回第 0 步重跑補掃**——rebase 正是新日報最常進入本機的路徑
+- **為什麼第 0 步存在** `[加入: 2026-08-22]`：涵蓋窗是在**開工當下**盤點的，而 `daily-news-pipeline-cloud`（每日 13:00 UTC）會在本指令執行期間繼續產出日報。2026-W34 踩過：週報依開工時可見的 3 份日報寫成，檔尾寫「08-20 之後尚未產出」，並據此對 4 條預告判「本週零命中」；收尾 rebase 帶進 08-20／08-21 後補掃，命中 WIRED〈工程師已找到繞過隱形浮水印的方法〉，直接推翻該期「無人復現」的結案結論。**成本是一次 grep，擋掉的是拿「我沒看到」當「沒發生」寫給讀者。**
 - **與排程的關係**：本指令無雲端排程。`weekly/` 不與任何排程重疊；`wiki/` 會與 `weekly-wiki-lint-cloud`（每週六 01:00 UTC）及 `daily-news-pipeline-cloud`（每日 13:00 UTC）競爭，靠上述 push 重試化解
 
 ---
@@ -97,7 +102,7 @@ argument-hint: [YYYY-Wnn]
 - 週報：weekly/YYYY-Wnn.md（深挖題目：…）
 - 延伸回顧：執行 N 項 / 使用者跳過 M 項
 - 聚焦校準：（月度才有，或「非本月首次，跳過」）
-- 收尾：測試 ✅／❌｜build ✅／跳過｜push ✅
+- 收尾：涵蓋窗補掃（新日報 N 份／無）｜測試 ✅／❌｜build ✅／跳過｜push ✅
 ```
 
 ---

@@ -861,6 +861,18 @@
       "patterns": [
         "link_health\\.json"
       ]
+    },
+    {
+      "name": "/weekly 收尾補掃 <-> /weekly-report 凍結存檔：補掃是凍結原則的明文例外，兩側措辭必須同時存在（只留凍結會讓補掃看起來違規；只留補掃會讓凍結的邊界消失）",
+      "assertion": "all_contain",
+      "files": [
+        ".claude/commands/weekly.md",
+        ".claude/commands/weekly-report.md"
+      ],
+      "patterns": [
+        "凍結"
+      ],
+      "_note": "2026-08-22 加入。W34 踩過：涵蓋窗只在開工當下盤點，雲端 pipeline 執行期間續產日報，週報遂以「這幾天沒有日報」對實際存在的新聞下「本週零命中」，並把 WIRED 浮水印繞過報導漏成「無人復現」的結案。weekly.md 步驟 3 第 0 步為此加入收尾補掃，並明文限定只修正會誤導讀者的事實判定、不回頭改選題與深挖——該限定直接引用 weekly-report.md 步驟 5 的凍結原則，兩者措辭失步會讓補掃的邊界失效。"
     }
   ],
   "coupling_hints": {
