@@ -6,7 +6,7 @@ domain: "🏛️ 政策/安全"
 last_updated: "2026-08-22"
 last_news_update: "2026-08-21"
 status_main: "ongoing"
-days_since_news: 0
+days_since_news: 1
 inbound_links: 72
 attribution_count: 59
 attribution_last: "2026-08-21"

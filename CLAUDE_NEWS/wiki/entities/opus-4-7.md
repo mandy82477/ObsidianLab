@@ -4,16 +4,16 @@ kind: "entity"
 type: "model"
 status: "active（已被取代，第三階旗艦）"
 domain: "🤖 模型"
-last_updated: "2026-08-15"
+last_updated: "2026-08-22"
 last_news_update: "2026-07-19"
 status_main: "active"
-days_since_news: 33
+days_since_news: 34
 inbound_links: 11
 attribution_count: 4
 attribution_last: "2026-07-19"
 top_source: "hacker-news"
-pending_count: 0
-pending_overdue: 0
+pending_count: 1
+pending_overdue: 1
 pending_next_review: null
 pending_signalled: 0
 signal: "休眠"

@@ -1,13 +1,13 @@
 ---
 page: "topics/official-community-gap"
 kind: "topic"
-status: "monitoring"
+status: "ongoing"
 domain: "🛠️ 工具/功能"
-last_updated: "2026-08-16"
+last_updated: "2026-08-22"
 last_news_update: "2026-08-16"
-status_main: "monitoring"
-days_since_news: 5
-inbound_links: 18
+status_main: "ongoing"
+days_since_news: 6
+inbound_links: 19
 attribution_count: 7
 attribution_last: "2026-08-15"
 top_source: "github-issues"

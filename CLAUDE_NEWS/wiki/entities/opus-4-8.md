@@ -7,7 +7,7 @@ domain: "🤖 模型"
 last_updated: "2026-08-10"
 last_news_update: "2026-07-25"
 status_main: "active"
-days_since_news: 27
+days_since_news: 28
 inbound_links: 12
 attribution_count: 6
 attribution_last: "2026-07-25"

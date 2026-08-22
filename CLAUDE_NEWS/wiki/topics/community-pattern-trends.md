@@ -7,8 +7,8 @@ last_updated: "2026-08-22"
 last_news_update: "2026-08-22"
 update_freq: "🗓️ 週更（無新趨勢節點時刻意不動——日期停留＝趨勢層無變化，非漏更新）"
 status_main: "ongoing"
-days_since_news: 6
-inbound_links: 10
+days_since_news: 0
+inbound_links: 9
 attribution_count: 0
 attribution_last: null
 top_source: null
