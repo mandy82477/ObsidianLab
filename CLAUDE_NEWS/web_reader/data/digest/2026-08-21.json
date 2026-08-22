@@ -30,13 +30,7 @@
       "time": "08/21 10:36",
       "sentiment": "",
       "body": "`a-bonus/google-docs-mcp`（Google Docs／Sheets／Drive／Gmail／Calendar 的 MCP server，640★）、`borski/travel-hacking-toolkit`（機票哩程與獎勵航班搜尋工具，631★）、`tigerless-labs/cost-xray`（檢視 Claude Code／Codex 實際送出的 API 內容與成本，511★）同日出現在 GitHub Search 熱門清單。三者皆為單一來源、尚無 fork 數或近期 commit 活躍度等佐證可查核，讀者可自行評估後再採用。",
-      "focusTags": [],
-      "sedimented": [
-        {
-          "id": "claude-code",
-          "pageType": "entity"
-        }
-      ]
+      "focusTags": []
     },
     {
       "title": "OpenAI is gaining on Anthropic with business users, new data indicates",
@@ -87,13 +81,7 @@
       "time": "08/21 10:36",
       "sentiment": "",
       "body": "官方文件更新 Claude Code Desktop 頁面，說明桌面版具備並行 session（Git 隔離）、拖放式面板配置、內建終端機與檔案編輯器、side chat、電腦操作、手機端 Dispatch session、視覺化 diff 審查、app 預覽、PR 監控、connectors 與企業設定等功能。",
-      "focusTags": [],
-      "sedimented": [
-        {
-          "id": "claude-code",
-          "pageType": "entity"
-        }
-      ]
+      "focusTags": []
     }
   ],
   "mediaReports": [
@@ -183,12 +171,6 @@
       "body": "Unite.AI 報導 Claude 服務今日一度發生錯誤擴散，影響 Claude.ai、API、Claude Code 與 Cowork，對應官方状态頁的兩起事故（多模型請求錯誤、Google connectors 中斷），均已於當日修復。",
       "focusTags": [
         "[風險警示]"
-      ],
-      "sedimented": [
-        {
-          "id": "claude-code",
-          "pageType": "entity"
-        }
       ]
     },
     {
@@ -207,13 +189,7 @@
       "time": "08/20 18:00",
       "sentiment": "",
       "body": "XDA 分享作者實測的七種降低 Claude Code token 用量的方法，強調不犧牲輸出品質。",
-      "focusTags": [],
-      "sedimented": [
-        {
-          "id": "claude-code",
-          "pageType": "entity"
-        }
-      ]
+      "focusTags": []
     },
     {
       "title": "Graft for Claude Code: Cutting Token Use by 42% in Practice",
@@ -222,13 +198,7 @@
       "time": "08/20 22:14",
       "sentiment": "",
       "body": "SitePoint 報導名為 Graft 的工具在實際使用中將 Claude Code 的 token 用量降低 42%。",
-      "focusTags": [],
-      "sedimented": [
-        {
-          "id": "claude-code",
-          "pageType": "entity"
-        }
-      ]
+      "focusTags": []
     }
   ],
   "discussions": [
@@ -257,13 +227,7 @@
       "time": "😤 · 08/21 10:33",
       "sentiment": "",
       "body": "使用者回報過去三、四天 Claude Code Remote Control 的斷線頻率升高，影響透過手機遠端操作工作流的體驗。",
-      "focusTags": [],
-      "sedimented": [
-        {
-          "id": "claude-code",
-          "pageType": "entity"
-        }
-      ]
+      "focusTags": []
     },
     {
       "title": "\\[BUG\\] Cowork VM fails to start on Windows ARM64 (Samsung Galaxy Book4 Edge, Snapdragon)",
@@ -406,36 +370,5 @@
     }
   ],
   "preview": "Claude 服務今日一度出現雙重異常：多個模型的請求錯誤率升高，以及 Google connectors（Sheets／Docs／Slides／Chat）連線異常，官方状态頁均已標記為已解決。",
-  "sedimentedToday": [
-    {
-      "id": "claude-code",
-      "name": "Claude Code",
-      "pageType": "entity"
-    },
-    {
-      "id": "pricing",
-      "name": "Anthropic 訂閱方案與計費政策",
-      "pageType": "entity"
-    },
-    {
-      "id": "ai-agent-safety",
-      "name": "AI Agent 安全與可靠性",
-      "pageType": "topic"
-    },
-    {
-      "id": "anthropic-business",
-      "name": "Anthropic 商業健康度",
-      "pageType": "topic"
-    },
-    {
-      "id": "anthropic-government-policy",
-      "name": "Anthropic 政府與軍事政策",
-      "pageType": "topic"
-    },
-    {
-      "id": "competitor-landscape",
-      "name": "AI 編碼工具競品動態",
-      "pageType": "topic"
-    }
-  ]
+  "sedimentedToday": []
 }

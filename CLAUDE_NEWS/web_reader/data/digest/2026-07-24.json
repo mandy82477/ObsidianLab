@@ -340,13 +340,7 @@
       "time": "07/24 10:28",
       "sentiment": "😤",
       "body": "新手使用者反映燒了不少 token 才發現 Claude Security 沒有 Workflow tool 的存取權限，卡在使用上的困惑。",
-      "focusTags": [],
-      "sedimented": [
-        {
-          "id": "claude-security",
-          "pageType": "entity"
-        }
-      ]
+      "focusTags": []
     },
     {
       "title": "Day 11 building a game with Claude Code: someone has played my game for over 70 hours. I'm in shock.",
@@ -716,11 +710,6 @@
   ],
   "preview": "資安研究機構 Tego AI 本週第二次揭露與 Claude 相關的漏洞，指出攻擊者可利用一個隱藏連結悄悄將檔案傳送出去。",
   "sedimentedToday": [
-    {
-      "id": "claude-security",
-      "name": "Claude Security",
-      "pageType": "entity"
-    },
     {
       "id": "google-investment",
       "name": "Google 投資 Anthropic 400 億美元",

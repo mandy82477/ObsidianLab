@@ -280,11 +280,5 @@
     }
   ],
   "preview": "Claude Code 的 Auto Mode 將於 8 月 14 日起成為 Pro、Max、Team 方案的預設權限模式（Enterprise 與 API／雲端平台目前仍維持選用制，預計約一個月後跟進）；Anthropic 產品團隊在受訪時表示已針對主要疑慮的風險類別大幅緩解相關攻擊，並將於近期公布評測數據。",
-  "sedimentedToday": [
-    {
-      "id": "mythos",
-      "name": "Claude Mythos",
-      "pageType": "entity"
-    }
-  ]
+  "sedimentedToday": []
 }
