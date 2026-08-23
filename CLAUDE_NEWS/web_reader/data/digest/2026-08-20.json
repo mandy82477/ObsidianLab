@@ -329,11 +329,6 @@
       "id": "code-quality-decline",
       "name": "Claude Code 效能退步事件",
       "pageType": "topic"
-    },
-    {
-      "id": "enterprise-tool-tracker",
-      "name": "大型企業 AI 編碼工具使用追蹤",
-      "pageType": "topic"
     }
   ]
 }

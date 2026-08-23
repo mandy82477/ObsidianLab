@@ -277,11 +277,6 @@
       "id": "enterprise-cost-management",
       "name": "企業規模 Claude 成本管理",
       "pageType": "topic"
-    },
-    {
-      "id": "official-community-gap",
-      "name": "官方功能 vs 社群痛點缺口分析",
-      "pageType": "topic"
     }
   ]
 }

@@ -21,13 +21,7 @@
       "time": "91 分 · 08/21 19:51",
       "sentiment": "",
       "body": "一篇 Hacker News 高分貼文分享作者實際改用 Codex 一週後的個人觀察（如技能轉移、除錯情境選擇等），累積 91 分；同日 36Kr 也以「Codex 是否開始反擊 Claude Code」為題做產業觀察報導。",
-      "focusTags": [],
-      "sedimented": [
-        {
-          "id": "claude-code",
-          "pageType": "entity"
-        }
-      ]
+      "focusTags": []
     },
     {
       "title": "五款以上高星 GitHub 工具同批亮相",
@@ -36,13 +30,7 @@
       "time": "08/22 10:30",
       "sentiment": "",
       "body": "`NanoNets/Graft`（提升 Claude Code／Cursor／Codex／Gemini 等編碼 agent 對程式碼庫的語境理解速度與成本效率，3995★）、`artokun/comfyui-mcp`（ComfyUI 的 agent 原生控制平面，含 178 個工具與 36 項 AI 技能，647★）、`yacuo/check-cc`（Claude 帳號風險與運行環境檢測工具，505★）等多款工具同日出現在 GitHub Search 熱門清單，皆為單一來源、尚無 fork 數或近期 commit 活躍度等佐證可查核，讀者可自行評估後再採用。",
-      "focusTags": [],
-      "sedimented": [
-        {
-          "id": "claude-code",
-          "pageType": "entity"
-        }
-      ]
+      "focusTags": []
     },
     {
       "title": "Anthropic Expands Claude Computer Use With Browser Access, Skills and File Storage",
@@ -71,13 +59,7 @@
       "time": "08/22 10:30",
       "sentiment": "",
       "body": "文件索引新增 3 頁：Deploy managed settings、Example settings files、Claude Code settings reference，新增頁通常代表新功能或設定項上線，建議開啟確認實際內容。",
-      "focusTags": [],
-      "sedimented": [
-        {
-          "id": "claude-code",
-          "pageType": "entity"
-        }
-      ]
+      "focusTags": []
     }
   ],
   "mediaReports": [
@@ -123,13 +105,7 @@
       "time": "😤 · 08/21 15:03",
       "sentiment": "",
       "body": "GitHub Issue 回報 Claude Code 幾乎每天都要求使用者重新透過網頁驗證登入，認為過於頻繁且非必要，累積 79 則留言。",
-      "focusTags": [],
-      "sedimented": [
-        {
-          "id": "claude-code",
-          "pageType": "entity"
-        }
-      ]
+      "focusTags": []
     },
     {
       "title": "Claude Code OAuth login fails with a timeout error. `auth.anthropic.com` does not resolve via DNS, making it impossible to authenticate.",
@@ -138,13 +114,7 @@
       "time": "😤 · 08/21 15:16",
       "sentiment": "",
       "body": "GitHub Issue 回報 OAuth 登入流程中 `auth.anthropic.com` 的 DNS 解析失敗，導致完全無法完成驗證，累積 153 則留言。",
-      "focusTags": [],
-      "sedimented": [
-        {
-          "id": "claude-code",
-          "pageType": "entity"
-        }
-      ]
+      "focusTags": []
     },
     {
       "title": "Show HN: OzBrain, a shared brain for knowledge between agents and your team",
@@ -162,13 +132,7 @@
       "time": "😊 · 07/22 22:44",
       "sentiment": "",
       "body": "作者分享將 Google gemini-3.1-flash-lite-image 包裝為 Claude Code skill 與 MCP server 的實作，支援多輪連續影像編輯，累積 20 讚（原文發布於 07/22，經 dev.to 30 天熱門清單納入）。",
-      "focusTags": [],
-      "sedimented": [
-        {
-          "id": "claude-code",
-          "pageType": "entity"
-        }
-      ]
+      "focusTags": []
     }
   ],
   "billing": [],
@@ -295,11 +259,6 @@
   "preview": "紐約時報報導 Anthropic 據傳評估在 IPO 中募資高達 1000 億美元；CNBC 引述消息人士指出，申報文件將把「AI 反彈情緒」列為風險因素之一；金融時報則整理散戶投資人參與前需留意的重點。",
   "sedimentedToday": [
     {
-      "id": "claude-code",
-      "name": "Claude Code",
-      "pageType": "entity"
-    },
-    {
       "id": "claude-security",
       "name": "Claude Security",
       "pageType": "entity"
@@ -325,11 +284,6 @@
       "pageType": "topic"
     },
     {
-      "id": "anthropic-business",
-      "name": "Anthropic 商業健康度",
-      "pageType": "topic"
-    },
-    {
       "id": "anthropic-government-policy",
       "name": "Anthropic 政府與軍事政策",
       "pageType": "topic"
@@ -345,18 +299,8 @@
       "pageType": "topic"
     },
     {
-      "id": "community-tech-discussions",
-      "name": "社群技術討論趨勢",
-      "pageType": "topic"
-    },
-    {
       "id": "community-tech-tools",
       "name": "社群工具目錄",
-      "pageType": "topic"
-    },
-    {
-      "id": "competitor-landscape",
-      "name": "AI 編碼工具競品動態",
       "pageType": "topic"
     }
   ]
