@@ -170,6 +170,8 @@
       "https://code.claude.com/docs/en/agent-sdk/python.md": "Agent SDK reference - Python",
       "https://code.claude.com/docs/en/agent-sdk/migration-guide.md": "Migrate to Claude Agent SDK",
       "https://code.claude.com/docs/en/whats-new/index.md": "What's new",
+      "https://code.claude.com/docs/en/whats-new/2026-w34.md": "Week 34 · August 17–21, 2026",
+      "https://code.claude.com/docs/en/whats-new/2026-w33.md": "Week 33 · August 10–14, 2026",
       "https://code.claude.com/docs/en/whats-new/2026-w32.md": "Week 32 · August 3–7, 2026",
       "https://code.claude.com/docs/en/whats-new/2026-w30.md": "Week 30 · July 20–24, 2026",
       "https://code.claude.com/docs/en/whats-new/2026-w29.md": "Week 29 · July 13–17, 2026",
@@ -193,16 +195,16 @@
     }
   },
   "https://code.claude.com/docs/en/desktop.md": {
-    "hash": "544dc1463486a38ca0f29112de8380e65545954e1e673ed45b914a2c6a1f4279",
-    "length": 77337
+    "hash": "5f8b26e2bdc2dba4a32d3a4296a58d2936a148bdf2aa00da4ebbd4cd4b65b0ab",
+    "length": 77611
   },
   "https://claude.com/pricing": {
     "hash": "0247007f8dd0bd2e7b118bcb465abc5ffbf5a9056e4861aed4ef692d637bdfa7",
     "length": 31600
   },
   "https://support.claude.com/en/articles/15424964-claude-fable-5-on-your-plan": {
-    "hash": "22872351df5a6979a8948c2febb0d1b69609b4064512fde1f5660e882d184d45",
-    "length": 21995
+    "hash": "2a4a95e95365bc71e343d48b1589eab2853eb5e66edc4cabe2494bfe36645a50",
+    "length": 21963
   },
   "https://support.claude.com/en/articles/12429409-manage-usage-credits-for-paid-claude-plans": {
     "hash": "86c04184d006df43eeaa45d96af144b665b612a99760a8129b4deef6612ed0b2",
