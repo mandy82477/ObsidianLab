@@ -7,7 +7,7 @@ domain: "👤 人物"
 last_updated: "2026-08-22"
 last_news_update: "2026-07-10"
 status_main: "active"
-days_since_news: 43
+days_since_news: 44
 inbound_links: 6
 attribution_count: 0
 attribution_last: null

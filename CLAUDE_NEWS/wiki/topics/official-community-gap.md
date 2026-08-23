@@ -3,13 +3,13 @@ page: "topics/official-community-gap"
 kind: "topic"
 status: "ongoing"
 domain: "🛠️ 工具/功能"
-last_updated: "2026-08-22"
-last_news_update: "2026-08-16"
+last_updated: "2026-08-23"
+last_news_update: "2026-08-23"
 status_main: "ongoing"
-days_since_news: 6
+days_since_news: 0
 inbound_links: 21
-attribution_count: 7
-attribution_last: "2026-08-15"
+attribution_count: 8
+attribution_last: "2026-08-23"
 top_source: "github-issues"
 pending_count: 2
 pending_overdue: 0

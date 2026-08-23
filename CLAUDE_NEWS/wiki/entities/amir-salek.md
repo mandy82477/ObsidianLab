@@ -1,3 +1,24 @@
+---
+page: "entities/amir-salek"
+kind: "entity"
+type: "person"
+status: "active（待核實）"
+domain: "👤 人物"
+last_updated: "2026-08-23"
+last_news_update: "2026-08-23"
+status_main: "active"
+days_since_news: 0
+inbound_links: 1
+attribution_count: 1
+attribution_last: "2026-08-23"
+top_source: "google-news"
+pending_count: 1
+pending_overdue: 0
+pending_next_review: "2026-09-06"
+pending_signalled: 0
+signal: "孤島"
+generated_by: "scripts/gen_wiki_frontmatter.py"
+---
 # Amir Salek
 
 **類型：** person
