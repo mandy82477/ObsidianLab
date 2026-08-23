@@ -23,11 +23,12 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 **狀態：** ongoing
 **領域：** 🛠️ 工具/功能
 **開始日期：** 2026-05-17
-**最後更新：** 2026-08-22
-**最後新聞更新：** 2026-08-16
+**最後更新：** 2026-08-23
+**最後新聞更新：** 2026-08-23
 
-> **最新功能缺口**（2026-08-16）
-> - **Agent 間直接通訊協定**：issue #24798 留言持續累積至 78 則、新增 21 個 👍，內容顯示社群訴求核心是「依相依性排序高階流程步驟」的工作流編排，非既有 `ListAgents`／`SendMessage` 訊息傳遞原語所涵蓋；矩陣狀態維持 🧪 部分產品化。
+> **最新功能缺口**（2026-08-23）
+> - **跨 session 記憶持久化**：新增代表社群工具 OzBrain（跨 agent／團隊共享知識庫，2026-08-21 Show HN），凸顯 Dreaming 目前仍是單一 Anthropic 生態內的個人記憶方案，未觸及團隊共享面向；矩陣狀態維持 🧪 部分產品化。
+> - **Subagent 派工/編排**：issue #24316（41 則留言、43 個讚）反映自訂 `.claude/agents/` 定義無法加入 agent team 作為隊友的子項缺口；矩陣狀態維持 ✅ 已產品化。
 
 ## 摘要
 
@@ -44,11 +45,11 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 
 | 模式 | 社群起源 | 代表社群工具 | 官方對應 | 狀態 | 缺口分析 |
 |------|---------|------------|---------|------|---------|
-| Subagent 派工/編排 | 2026-05 前，Claude Squad orchestrator 模式 | Claude Squad、Harness（multi-worktree） | Managed Agents（2026-04-30 Beta→2026-05-11 正式）+ `subagent_type` 匹配改善（v2.1.140）+ `/fork`／`/subtask` 語意拆分（v2.1.212，2026-07-17）+ Subagent forking 預設開啟（v2.1.232，2026-08-13） | ✅ 已產品化 | 官方能力已超前，Boris Cherny 揭露內部「數千子代理夜間跑批」工作流（2026-05-13），早期社群模式已被涵蓋；2026-07-17 官方進一步將「背景多開新 session」（`/fork`）與「同 session 委派子任務」（`/subtask`）拆成兩個明確指令，派工模式的操作介面更成熟；2026-08-13 v2.1.232 再將 `subagent_type: "fork"` 的完整對話與 prompt cache 繼承改為預設開啟，降低手動設定門檻（官方 changelog 原文截斷，細節待補） |
+| Subagent 派工/編排 | 2026-05 前，Claude Squad orchestrator 模式 | Claude Squad、Harness（multi-worktree） | Managed Agents（2026-04-30 Beta→2026-05-11 正式）+ `subagent_type` 匹配改善（v2.1.140）+ `/fork`／`/subtask` 語意拆分（v2.1.212，2026-07-17）+ Subagent forking 預設開啟（v2.1.232，2026-08-13） | ✅ 已產品化 | 官方能力已超前，Boris Cherny 揭露內部「數千子代理夜間跑批」工作流（2026-05-13），早期社群模式已被涵蓋；2026-07-17 官方進一步將「背景多開新 session」（`/fork`）與「同 session 委派子任務」（`/subtask`）拆成兩個明確指令，派工模式的操作介面更成熟；2026-08-13 v2.1.232 再將 `subagent_type: "fork"` 的完整對話與 prompt cache 繼承改為預設開啟，降低手動設定門檻（官方 changelog 原文截斷，細節待補）；2026-08-23 GitHub issue #24316（41 則留言、43 個讚）反映一項子項缺口仍未補齊——自訂 `.claude/agents/` 定義目前無法直接加入 agent team 作為隊友，見 [[entities/claude-code]] 已知問題，整體 ✅ 已產品化 判斷不變 |
 | Multi-agent workflow 腳本化 | 2026-06-18 Gorchestra（手機遠端多 agent 控制）；2026-07-01 動態 fan-out 教學 | Gorchestra、TBD（agent-channels）、Superset | Dynamic Workflows（2026-05-28，Research Preview，最多 1,000 平行子代理）＋ `/config` **Dynamic workflow size** 設定（v2.1.202，2026-07-07，可調整 agent 規模小/中/大）；Coordinator 模式（v2.1.152） | 🧪 部分產品化 | 官方版本存在但 feature-radar 明確標「❌ 暫不推薦」（UltraCode 1.7M token bug 無退款）；v2.1.202 新增規模引導值屬易用性微調，未解決核心退款爭議；手機遠端操控場景**出現初步官方線索**——2026-07-13 GitHub issue #28322 顯示 `/remote-control`（`/rc`）指令已存在但既有 session 無法辨識（需新 session），同日 issue #29006 社群仍在請求 Desktop App 遠端控制 CC session，顯示官方可能已悄悄鋪路但尚未正式發布/文件化，缺口尚未完全補上 |
 | Agent 需要輸入時的通知 | 2026-06-28 Stop Hook 音效通知；2026-07-02 氛圍狀態燈；2026-07-03 claude-needs-input | claude-needs-input（終端機標籤變色）、氛圍狀態燈（實體 LED） | `waitingFor` 可見性（v2.1.162，2026-06-04） | 🧪 部分產品化 | 官方僅提供被動可見性（需主動查看畫面），社群工具補上主動提醒（變色、聲音、實體燈號），官方尚未涉足 |
 | 破壞性指令防護 | 長期社群關注（沙盒隔離、git 安全腳本） | SmolVM、Sandfence、CapaKit | 破壞性 Git 指令自動封鎖（v2.1.183，2026-06-19）；Claude Code Sandboxing（2026-05-10）、`hard_deny`（2026-05-09） | ✅ 已產品化 | 官方對 git 層級防護已完整覆蓋且評價高（🔥🔥🔥 ✅ 推薦）；社群沙盒工具仍在更廣泛的資源限制場景（非僅 git）補位 |
-| 跨 session 記憶持久化 | 2026-05-05 起記憶工具浪潮；2026-06-28 OKF 格式 | ltm（Core Memory Packet）、VIR、CoreMem、OKF | Dreaming 記憶整合（2026-05-07，Research Preview）＋ anthropic-sdk-python v0.117.0（2026-07-16）新增「dreaming」API 支援 | 🧪 部分產品化 | Dreaming 兩個月後仍為 Research Preview、試用價值「⏳ 觀望」；社群工具（OKF）跨工具跨模型，Dreaming（僅限 Anthropic 生態）無法取代；v0.117.0 的 SDK 級「dreaming」支援用途未明（[[entities/managed-agents]] 標記待更多資訊確認是既有機制正式曝光還是新能力），狀態暫不變動 |
+| 跨 session 記憶持久化 | 2026-05-05 起記憶工具浪潮；2026-06-28 OKF 格式；2026-08-21 OzBrain（跨 agent／團隊共享知識庫） | ltm（Core Memory Packet）、VIR、CoreMem、OKF、OzBrain | Dreaming 記憶整合（2026-05-07，Research Preview）＋ anthropic-sdk-python v0.117.0（2026-07-16）新增「dreaming」API 支援 | 🧪 部分產品化 | Dreaming 兩個月後仍為 Research Preview、試用價值「⏳ 觀望」；社群工具（OKF）跨工具跨模型，Dreaming（僅限 Anthropic 生態）無法取代；OzBrain（2026-08-21 Show HN，score 69，跨 2 來源）進一步鎖定「團隊共用」而非單一使用者跨 session 記憶，主張取代筆記/任務管理工具而非僅作輔助記憶層，凸顯 Dreaming 目前仍是單一 Anthropic 生態內的個人記憶方案，未觸及團隊共享面向；v0.117.0 的 SDK 級「dreaming」支援用途未明（[[entities/managed-agents]] 標記待更多資訊確認是既有機制正式曝光還是新能力），狀態暫不變動 |
 | 多代理 PR/程式碼審查 | 2026-05-08 4-agent Code Review；2026-05-11 adamsreview | adamsreview、Read-Only Reviewer Agent（2026-06-26）、Mira | `/code-review`（原 `/simplify`，v2.1.146）+ `/code-review --fix`（v2.1.152）+ 背景 subagent 化（v2.1.218，2026-07-22） | 🧪 部分產品化 | 官方 `/code-review` 已評 ✅ 推薦，v2.1.218 進一步改為背景 subagent 執行、不再佔用對話內容，並維持 stacked slash commands 作為審查對象，易用性再提升；但社群「adversarial 多模型審查抓到更多真實 bug」的說法尚無雙方公開對照數據佐證，狀態未變 |
 | 成本感知模型路由 | 2026-06-27，Opus 4.7 tokenizer 改版成本大漲後爆發 | Workweave Router（HN 181，實測降 40%+）、Dragoman、Rayline | 無 | ❌ 無官方對應 | feature-radar 全覽表無任何路由/成本最佳化功能；社群工具是唯一解法 |
 | 額度/用量監控 | 2026-05 起持續累積，2026-07-03 因 7/7 計費轉換臨近急遽爆發 | LimitBar、CCLimitPing、claude-needs-input | 企業版 Spend Controls（2026-07-04 宣布，控管粒度未公開，見 [[topics/enterprise-cost-management]]）；個人用戶仍無官方儀表板/告警 UI | 🧪 部分產品化（僅企業版） | 個人重度使用者缺口依舊，迫切性隨計費轉換 deadline 逼近而升高，見 [[feature-radar]] ⏰ 倒數中 |
@@ -156,6 +157,10 @@ v2.1.196（2026-06-29）新增 org default model 功能，企業管理員可在 
 - [[topics/community-tech-discussions]] — 社群技術辯論
 
 ## 時序
+
+### 2026-08-23
+- **「跨 session 記憶持久化」代表社群工具新增 OzBrain**：2026-08-21 Show HN 發布，鎖定跨 agent／團隊共享知識庫（而非單一使用者跨 session 記憶），主張取代傳統筆記/任務管理工具；矩陣狀態維持 🧪 部分產品化（Dreaming 未觸及團隊共享面向）
+- **「Subagent 派工/編排」新增子項缺口回報**：GitHub issue #24316 反映自訂 `.claude/agents/` 定義無法加入 agent team 作為隊友；矩陣狀態維持 ✅ 已產品化，缺口分析欄補記此子項
 
 ### 2026-08-13
 - **v2.1.232：Subagent forking 預設開啟**：帶 `subagent_type: "fork"` 的 subagent 現在預設繼承完整對話與 prompt cache；「Subagent 派工/編排」的官方對應再進一步降低手動設定門檻，矩陣狀態維持 ✅ 已產品化

@@ -3,8 +3,8 @@ page: "topics/competitor-landscape"
 kind: "topic"
 status: "ongoing"
 domain: "💼 商業"
-last_updated: "2026-08-22"
-last_news_update: "2026-08-22"
+last_updated: "2026-08-23"
+last_news_update: "2026-08-23"
 status_main: "ongoing"
 days_since_news: 0
 inbound_links: 51
@@ -24,13 +24,13 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 **領域：** 💼 商業
 **蒐集邊界：** 以 Claude 為參照系的競品動態為主，另針對競品發布與定價定向補抓（每日至多 2 則）；競品自身未與 Claude 對比的發布可能延遲或缺漏。
 **開始日期：** 2026-04
-**最後更新：** 2026-08-22
-**最後新聞更新：** 2026-08-22
+**最後更新：** 2026-08-23
+**最後新聞更新：** 2026-08-23
 
-> **最新競品動態**（2026-08-22）
-> - **36Kr：《Codex 是否開始反擊 Claude Code？》產業競爭態勢觀察**：與 Hacker News 高分貼文「Quick impressions: A week of using Codex more than Claude」同日呼應同一主題（該則已由社群記者以個人觀察角度處理），詳見「主要競品追蹤」OpenAI Codex CLI 子區塊「頭對頭比較彙整」表新增列。
-> - **Startup Fortune（Topic Watch 專頁定向）：分析廠商鎖定型（vendor-locked）AI 編碼 agent 如何悄悄推高企業工程成本**：詳見下方「觀察重點」新增。
-> - **08-21 記錄之 OpenAI「零資料保留」承諾搶攻企業客戶、Slack Code 新戰線，仍為近期重點**，詳見「主要競品追蹤」對應子區塊。
+> **最新競品動態**（2026-08-23）
+> - **inc.com：OpenAI 拓展企業用戶速度超越 Anthropic，文章主張此比估值更重要**：詳見「主要競品追蹤」OpenAI ChatGPT Work / GPT-5.6 子區塊新增，延續 08-20 已記錄之「OpenAI 正追近 Anthropic 企業用戶市場」敘事。
+> - **TechCrunch：DeepMind 校友創立的新創 Inherent 宣稱其 AI「隊友」在複現研究任務上超越 Anthropic 與 OpenAI**：屬該公司自行發布、尚無第三方驗證的說法，詳見「主要競品追蹤」新增子區塊。
+> - **the-decoder.com：中國灰色市場以遠低於官方定價轉售 Claude API token**：詳見「中國用戶 VPN 繞過限制」子區塊新增，與既有地理管制實效敘事同源。
 
 ---
 
@@ -105,6 +105,12 @@ Claude Code 已成為 AI 輔助編碼的標竿產品，但競爭正快速升溫�
 - **狀態**：已查證（2026-08-13，[TechCrunch 一手報導](https://techcrunch.com/2026/08/05/jeff-dean-and-other-top-ai-researchers-are-leaving-google-to-launch-their-own-startup/)）｜**CEO 轉任＋核心研究員出走創業**：Demis Hassabis 卸下 DeepMind 日常營運、轉任 DeepMind 董事長兼 Alphabet 首席科學家（留任集團非離職），Koray Kavukcuoglu 升任 DeepMind SVP；Jeff Dean（27 年）、Sanjay Ghemawat、Oriol Vinyals、Quoc Le 離職共創 Discovery Loop（public benefit corporation，Dean 任 CEO），投資方含 Radical Ventures／Khosla Ventures 共同領投與 **Alphabet 本身**；股價盤中一度跌約 5%，市值影響各家估 1,600–2,000 億美元（盤中估算區間）。TechCrunch 全文未提及 Anthropic，此波非流向前沿實驗室競爭對手，主敘事見 [[topics/ai-talent-flow]]
 - **對競爭格局的意涵（推論）**：與既有「Google 同時是投資方與競爭者」的矛盾結構並置，高層與技術核心同步震盪可能削弱 Google 作為 Anthropic 對手的組織穩定性訊號；惟此波出走流向獨立新創而非 OpenAI 等直接競品，短期內對 Google AI 產品線（Gemini、Antigravity 等）競爭力的直接影響仍待觀察
 
+### Inherent（DeepMind 校友創辦，新增追蹤，2026-08-23）
+- **狀態**：新創首見追蹤，公司自行發布聲明，尚無第三方驗證
+- **來源**：TechCrunch 報導由 DeepMind 校友創立的新創公司 Inherent 宣稱其 AI「隊友」（AI teammate）在複現研究任務（replicating research）上表現超越 Anthropic 與 OpenAI
+- **⚠️ 驗證層級提示**：此為 Inherent 自行發布的說法，**非第三方基準測試或獨立評測結果**；具體評測任務範疇、樣本數、對比的 Anthropic／OpenAI 產品名稱（模型或特定 agent 產品）均未見報導細節，僅標題層級資訊
+- **對競爭格局的意涵**：延續本頁既有「研究複現／自主科研」能力戰場觀察（如 07-22 已記錄之 SCMP 報導中國 Qiushi Engine 於 ResearchClawBench 自主研究排行榜奪冠、Claude Code 第三），Inherent 是又一起以「科研 agent」能力自我宣稱挑戰 Anthropic／OpenAI 的新進者，惟訊號強度遠低於已有第三方榜單佐證的案例，需待獨立驗證後再評估實質威脅程度（推論）
+
 ### OpenAI Codex CLI 🔴
 - **狀態**：Active（快速成長）
 - **關鍵轉折**：v0.128.0（2026-04-30）新增持久化 `/goal` 跨步驟任務規劃
@@ -165,6 +171,7 @@ Claude Code 已成為 AI 輔助編碼的標竿產品，但競爭正快速升溫�
 - **意義**：與既有 OpenAI Codex CLI（下載量對 Claude Code 分流）不同，ChatGPT Work 定位為企業工作場景的整合入口，正面挑戰 Anthropic 的訂閱與企業採購雙軌商業模式；若價格與速度確實具優勢，可能加劇 Anthropic 6/15 計費爭議後的訂閱留存壓力（推論）（Reuters「OpenAI unveils long-awaited "super app" as rivalry with Anthropic intensifies」；ZDNET「OpenAI's GPT-5.6 and ChatGPT Work aim to beat Anthropic on price, speed, and productivity」）；定價細節待後續報導補上具體數字，見「競品定價對照」
 - **隱私面新戰線（2026-08-19）**：TechCrunch、WSJ 同步報導 OpenAI 推出新的客戶資料隱私保護承諾，兩媒體均將其解讀為針對 Anthropic 既有隱私訴求的競爭回應；延續本區塊「價格、速度、生產力」三面向競爭框架，本則首見「資料隱私」作為第四個正面對標維度，顯示 OpenAI 正將 Anthropic 過去強調的信任/安全定位優勢一併對標爭奪（推論）；具體承諾內容（資料保留期限、訓練用途排除範圍、稽核機制等）未見報導細節，僅標題層級可用（Google News/TechCrunch；WSJ）
 - **承諾內容補上具體措辭：「零資料保留」（zero data retention）；同日新數據稱 OpenAI 正追近 Anthropic 企業用戶市場（2026-08-20）**：The Register 報導將 08-19 已記錄之隱私承諾具體化為「zero data retention pledge」，明確定位為對 Anthropic 企業客戶的競爭爭奪動作；同日 TechCrunch 另引述新數據指出 OpenAI 在企業用戶市場的成長正在追近 Anthropic。**對競爭格局的意涵**：兩則同日報導首次將「資料隱私承諾」與「企業用戶市場成長數據」並置，若追近趨勢屬實，顯示 OpenAI 隱私面新戰線並非純公關動作，而是伴隨實際市占變化（推論）；巧合的是同期路透社／彭博社報導 Anthropic 自身也「據傳計畫調整企業資料保留政策」（消息人士，未經官方證實），使得雙方企業資料政策同期均處於變動報導中，詳見 [[entities/pricing]]「定價與促銷」；具體「零資料保留」承諾的技術實作、涵蓋範圍，以及 OpenAI「追近」的量化數字（市占百分比、客戶數）均未見報導細節，僅標題層級資訊（Google News/The Register；Google News/TechCrunch）
+- **inc.com：OpenAI 拓展企業用戶速度超越 Anthropic，主張此比估值更重要（2026-08-23）**：延續 08-20 已記錄之「OpenAI 正追近 Anthropic 企業用戶市場」數據報導，本則措辭從「追近（catching up）」進一步升級為「速度已超越（adding business users faster）」，且文章角度從單純市占數字轉向「企業用戶成長速度可能比 IPO 估值更能反映公司實質競爭力」的評論性論點，與本頁既有 IPO／估值敘事（見 [[topics/anthropic-business]]）形成對照視角（推論）；具體用戶成長速度數字、統計方法論、樣本期間均未見報導細節，僅標題層級資訊（Google News/inc.com）
 
 ### Cursor AI Agent「Sand」對標 Claude Cowork（開發中，代號確認 2026-07-13）
 - **狀態**：開發中，代號首度確認為「Sand」（TweakTown 2026-07-13；The Information 2026-07-09 首報）
@@ -251,6 +258,7 @@ Claude Code 已成為 AI 輔助編碼的標竿產品，但競爭正快速升溫�
 - **狀態**：Active（長期現象，Wired 2026-06-28 確認）
 - **現象**：中國用戶長期通過 VPN 等方式繞過 Anthropic 地理限制；已查證（2026-08-13，Wired 原文）：地理限制形同虛設，Wired 引述安全研究者「Geolocation is a speed bump, not a wall」（地理定位只是減速丘，不是牆），VPN、境外 SIM 卡、第三方 API wrapper 均能繞過，用戶亦可在淘寶/閒魚購買已設定帳號、透過 Telegram 頻道取得完整繞過教學
 - **意義**：管制無法實質阻隔中國用戶使用 Claude 已獲第一手報導證實，「管制犧牲收入」的代價真實，「管制保護能力」的效果確有可疑（Wired https://www.wired.com/story/how-people-in-china-keep-outsmarting-anthropics-geolocation-restrictions/；2026-08-13 查證）
+- **灰色市場轉售 Claude API token（2026-08-23，the-decoder.com，僅標題可用）**：the-decoder.com 報導中國存在灰色市場，以遠低於官方定價的價格轉售 Claude API token 額度。**與既有記錄的關係**：延續本頁已記錄之「VPN／境外 SIM／第三方 API wrapper 繞過地理限制」現象（Wired 08-13 查證），本則從「繞過存取限制」進一步延伸至「商業化轉售」層級——顯示中國用戶不僅能繞過管制取得存取，還形成有規模的次級市場轉售官方額度，可能反映官方定價與灰市定價之間存在套利空間（推論）；具體轉售規模、價格倍數、額度來源（是否為境外帳號批量取得後轉賣）均未見報導細節，僅標題層級資訊（Google News/the-decoder.com）
 
 ### Alibaba Qwen3.7-Max / Alibaba 蒸餾攻擊 / Qwen3.8（2026-07-20 新增追蹤）
 - **免費釋出「最強」模型，宣稱追平 Claude／ChatGPT（08-04，Decrypt，僅標題可用）**：Decrypt 報導阿里巴巴免費開放其「最強」AI 模型，宣稱效能幾乎追平 Claude 與 ChatGPT。**注意**：報導未指明模型名稱（是否為 07-20 已報導、宣稱「僅次於 Fable 5」的 Qwen3.8，或另一新模型），亦未提供具體 benchmark 數字，僅標題層級資訊，待後續報導補充。**對競爭格局的意涵**：若確為 Qwen3.8，則呼應該模型持續以「免費＋高性能」策略正面對打 Anthropic 訂閱付費模式，與既有蒸餾指控（06-25）並置解讀時，外界可能將「免費卻高性能」再度視為蒸餾疑慮的佐證（推論）（Google News/Decrypt）
@@ -301,6 +309,11 @@ Claude Code 已成為 AI 輔助編碼的標竿產品，但競爭正快速升溫�
 #### 近期單日動態彙整（2026-07-02 至 2026-07-26）
 
 > 逐日條目按主題可另見上方「主要競品追蹤」對應廠商子區塊；此區塊保留完整時序供追溯查證。
+
+### 2026-08-23
+- **[OpenAI ChatGPT Work / GPT-5.6，新增] inc.com：OpenAI 拓展企業用戶速度超越 Anthropic，主張此比估值更重要**：延續 08-20 已記錄之「追近」數據，本則升級為「速度已超越」，詳見「主要競品追蹤」OpenAI 子區塊新增（Google News/inc.com）
+- **[新增追蹤，未經第三方驗證] TechCrunch：DeepMind 校友創立的 Inherent 宣稱 AI「隊友」在複現研究任務上超越 Anthropic 與 OpenAI**：公司自行發布聲明，詳見「主要競品追蹤」新增 Inherent 子區塊（Google News/TechCrunch）
+- **[中國用戶 VPN 繞過限制，新增] the-decoder.com：中國灰色市場以遠低於官方定價轉售 Claude API token**：詳見「主要競品追蹤」中國用戶子區塊新增（Google News/the-decoder.com）
 
 ### 2026-08-22
 - **[OpenAI Codex CLI，頭對頭比較彙整新增] 36Kr：「Codex 是否開始反擊 Claude Code？」產業競爭態勢觀察**：與同日 Hacker News 高分貼文呼應同一主題（該則已交社群記者處理），詳見「主要競品追蹤」OpenAI Codex CLI 子區塊「頭對頭比較彙整」表新增列（Google News/36Kr）

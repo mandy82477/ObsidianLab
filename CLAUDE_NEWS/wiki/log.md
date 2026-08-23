@@ -4181,3 +4181,21 @@ registry 加一組 sync_pair 釘住產出端與歸因端（只改一邊等於白
 - H-b7c4f2：安全政策→商業，Forbes（08-21）浮水印企業影響報導，`topics/anthropic-business.md` 商業面內容待補
 
 **主編判斷備註：** 功能記者另標「⚠️ 需主編轉知模型記者：entities/mythos.md 補充 Mythos 5 整合進 Claude Security 事件」——經核對，模型記者本輪已獨立處理同一事件（現況／時序均已寫入 `entities/mythos.md`），為兩記者依各自角色檔觸發條件對同一跨類別事件的預期重疊覆蓋，非缺漏，未另開轉知帳目。
+
+## 2026-08-23 Ingest
+
+- 來源日報：[[news/2026-08-23]]
+- 更新頁面：wiki/entities/opus-5.md、wiki/entities/claude-code.md、wiki/topics/official-community-gap.md、wiki/topics/anthropic-business.md、wiki/topics/enterprise-tool-tracker.md、wiki/topics/competitor-landscape.md、wiki/topics/ai-talent-flow.md、wiki/topics/community-tech-discussions.md、wiki/feature-radar.md（主編彙整：同步「最新版本」行為 v2.1.241）、wiki/index.md（主編彙整：新增 amir-salek 列）
+- 新增頁面：wiki/entities/amir-salek.md（Anthropic 延攬前 Google 自研晶片計畫創辦人，待核實）
+- 摘要：Anthropic IPO 準備話題十餘家媒體同日圍繞估值（Motley Fool／Yahoo Finance「Dean of Valuation」1.2兆美元營收門檻）、風險揭露（CNBC「AI 反彈情緒」列為風險因素）與獲客能力（FT）多角度報導；Claude Code 疑似 A/B 測試調降 effort 顯示方式，官方 Thariq 具名澄清使用者實際選擇的 effort 未變；CVP 已核准企業仍遭資安防護誤擋（GitHub Issue 141 留言，今日全站已知問題互動最高）；Anthropic 延攬前 Google 自研晶片計畫創辦人 Amir Salek，人物與商業面雙記者並行記錄
+- 呈現品質：六位記者（模型、功能、商業、社群、人物；安全政策今日無條目未派工）皆回報 ✅ 通過，無需修復項目
+- 品質備註：無
+
+**跨記者轉知（已登帳，待下次派工帶入）：**
+- H-2fc0ba：社群→功能，SkillWorks（第三方索引工具）08-23 揭露 Claude Skills 生態規模統計（503,570 listings、48,190 個 skill 無法載入等），對 `entities/claude-skills.md` 可能有參考價值，社群記者無權代寫功能頁
+
+**本次結案轉知：**
+- H-201d81（08-22 開立）：功能記者已處理——OzBrain 列入 `official-community-gap.md`「跨 session 記憶歸零」矩陣列代表社群工具欄
+- H-b7c4f2（08-22 開立）：商業記者已處理——Forbes 浮水印企業實務影響已補入 `anthropic-business.md`「商業風險」表
+
+**主編判斷備註：** 人物記者查證後判斷 Palantir CEO Alex Karp 相關言論（HN 15 分，連回 08-03 CNBC 舊文）不建新人物頁——同一事件已於 `topics/anthropic-business.md`、`topics/competitor-landscape.md` 收錄，且 2026-08-10 已有記者做過相同「不足以建頁」判斷，屬既有覆蓋範圍內的重新浮現，非新事件；商業記者亦同步採納相同判斷、未重複記錄。

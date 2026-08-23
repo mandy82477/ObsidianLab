@@ -3,8 +3,8 @@ page: "topics/ai-talent-flow"
 kind: "topic"
 status: "ongoing"
 domain: "💼 商業"
-last_updated: "2026-08-22"
-last_news_update: "2026-08-14"
+last_updated: "2026-08-23"
+last_news_update: "2026-08-23"
 status_main: "ongoing"
 days_since_news: 8
 inbound_links: 14
@@ -24,14 +24,12 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 **領域：** 💼 商業
 **蒐集邊界：** 以與 Anthropic 相關的人才流動為主，另針對本主題定向補抓（每日至多 3 則）；其他實驗室之間、與 Anthropic 無關的異動仍可能延遲或缺漏，重大者由人工查證補記。
 **開始日期：** 2026-06-21
-**最後更新：** 2026-08-22
-**最後新聞更新：** 2026-08-14
+**最後更新：** 2026-08-23
+**最後新聞更新：** 2026-08-23
 
-> **最新動態：Google DeepMind 高層與核心研究員異動**（事件 2026-08-05，2026-08-13 查證補記）
-> Jeff Dean（Google 27 年、時任首席科學家）、Sanjay Ghemawat（Google Brain 共同創辦人）、Oriol Vinyals、Quoc Le 離開 Google，共同創辦自動化科學研究新創 **Discovery Loop**（public benefit corporation，與 Anthropic 同為 PBC 結構），Dean 出任 CEO；**Alphabet 本身亦為投資人之一**（Radical Ventures 與 Khosla Ventures 共同領投，另有 Kleiner Perkins、Lightspeed、Doerr Capital），故此案性質介於「人才流失」與「集團支持的 spin-out」之間，非單純 brain drain。同期 Demis Hassabis 卸下 DeepMind 日常營運、轉任 DeepMind 董事長兼 Alphabet 首席科學家（**留任集團，非離職**），Koray Kavukcuoglu 升任 DeepMind SVP。Alphabet 股價盤中一度跌約 5%（各家估市值影響 1,600–2,000 億美元，為盤中估算非定值）。
-> **此波未流向 Anthropic**——[TechCrunch 原始報導](https://techcrunch.com/2026/08/05/jeff-dean-and-other-top-ai-researchers-are-leaving-google-to-launch-their-own-startup/) 全文未提及 Anthropic；流向 Anthropic 者為更早的獨立批次（John Jumper、Jonas Adler、Alexander Pritzel，均 06 月確認）。
-> **轉入 monitoring（2026-08-01）→ 回升 ongoing（2026-08-22 lint）**：自 07-13 起近 3 週日報未見新的跨實驗室人才流動事件，故 08-01 由 ongoing 轉為低頻觀察，非結案；08-13 補記早於此轉態的漏抓事件（見下方時序）不改變此判斷。08-14 新增待查證項目使「最後新聞更新」進入 14 天內，依 lint 回升規則轉回 ongoing；議題本身格局未變。
-> **❓ 待查證（2026-08-14，Topic Watch）**：Times of India 標題稱「Google 共同創辦人 Sergey Brin 在 Demis Hassabis 卸任 DeepMind CEO 後對內部員工發表談話」，標題本身遭截斷為「Catch u...」，談話內容、發表場合、與上述 08-05／08-06 已查證之 Hassabis 轉任事件是否為同一組織異動的後續回應，均未見報導細節，暫不視為新增獨立事實，僅記於下方「時序」待後續補充。
+> **最新動態：Anthropic 延攬 Google 自研晶片計畫創辦人 Amir Salek**（2026-08-21 首報，2026-08-23 具名確認）
+> The Times of India 報導 Anthropic 延攬 **Amir Salek**（Google 自研晶片計畫（custom chip programme）創辦人，即 Google TPU 專案創始人物之一）；此為 08-21 Seeking Alpha／Bloomberg 已記錄「前 Google 晶片工程師」（未具名）的具名確認，人才資歷等級從「一般工程師」升級為「創始人層級」。**與本頁核心追蹤格局的關係**：此波為 Anthropic 首見的**晶片人才**流入案例，區別於本頁既有記錄之研究員流動（Jumper、Adler、Pritzel 等 AI 科學/訓練人才）；商業意涵詳見 [[topics/anthropic-business]]「戰略合作」表。
+> **待查證項目仍未有後續**：08-14 Sergey Brin 內部談話報導（標題截斷）截至今日日報仍無新進展。
 
 ## 摘要
 
@@ -44,7 +42,7 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 | 公司 | 角色 | 具體影響 | 評估 |
 |------|------|---------|------|
 | **Google DeepMind** | 淨流失方＋高層動盪 | 兩週內連失 Jumper（科學/生物）、Adler（AI 編碼）、Pritzel（訓練）、額外 2 位資深研究員（6/28），另有一名研究員轉投 OpenAI；市值蒸發約 $2,700 億美元；Gemini 3.5 Pro 延期至七月（推論）；被迫重組 AI 編碼突擊隊。**08-05／08-06**：Hassabis 卸任 DeepMind CEO 轉任 Alphabet 首席科學家（留任集團，非離職）；Jeff Dean、Sanjay Ghemawat、Oriol Vinyals、Quoc Le 離職創辦 Discovery Loop（PBC，Dean 任 CEO，**Alphabet 亦為投資方**），市值影響各家估 1,600–2,000 億美元（盤中估算區間）；Kavukcuoglu 升任 DeepMind SVP| 🔴 傷在痛點＋領導層可見度雙重打擊：技術核心（Attention 論文八作者至此全數離開 Google）與高層治理同步震盪，儘管此波未直接流向 Anthropic，仍削弱 Google 作為對手的組織穩定性訊號（推論）；已查證（2026-08-13，TechCrunch 一手） |
-| **Anthropic** | 主要承接方 | 補強科學計算（Jumper / AlphaFold）、AI 編碼（Adler）、模型訓練（Pritzel）、安全/經濟（FT 經濟學家）等多方向縱深 | 🟢 訊號 > 實質：對模型能力直接拉抬有限（Claude 已寫 80–90% 程式碼），真正價值在招募飛輪與動能訊號（推論）|
+| **Anthropic** | 主要承接方 | 補強科學計算（Jumper / AlphaFold）、AI 編碼（Adler）、模型訓練（Pritzel）、安全/經濟（FT 經濟學家）等多方向縱深；**08-21/08-23 新增晶片自研人才**——延攬 Amir Salek（Google 自研晶片計畫創辦人，Google TPU 專案創始人物之一） | 🟢 訊號 > 實質（研究員流動一貫評估）；晶片人才屬**性質不同的新戰場**——若屬實，代表 Anthropic 招募已從「模型能力」擴及「硬體自主設計」，與既有 Samsung 代工洽談、AMD/Micron 投資路線同屬降低 Nvidia 依賴的布局，惟具體職位、團隊規模、時程仍未見報導細節，戰力影響待觀察（推論）|
 | **OpenAI** | 次要承接方 | 獲得一名 Google 頂尖研究員（6/23 SEJ 報導，姓名未具名）| 🟡 同步受惠於 Google 人才外流，規模小於 Anthropic |
 
 **懸置細節**
@@ -56,6 +54,9 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 - 人才流動為**雙向洗牌**（Google 同期亦失人至 OpenAI），非單向崩塌。
 
 ## 時序
+
+### 2026-08-23（具名確認，延續 08-21）
+- **The Times of India：具名確認 Anthropic 延攬 Google 自研晶片計畫創辦人 Amir Salek**：延續 08-21 已記錄之「前 Google 晶片工程師」（未具名，Seeking Alpha／Bloomberg），本則首次具名確認為 **Amir Salek**——Google 自研晶片計畫（custom chip programme）創辦人，即 Google TPU 專案創始人物之一。**對戰力與市場意涵**：與本頁既有以研究員流動為主的追蹤格局不同，此案屬**晶片設計人才**流入，且延攬對象非一般工程師而是曾主導 Google 整條自研晶片專案的創始層級人物，顯示 Anthropic 自研晶片布局（見 [[topics/anthropic-business]]「戰略合作」表 08-05～07 已記錄之內部晶片設計團隊籌建）可能取得具備從零打造整條晶片專案經驗的核心人才；具體職位、加入時間、團隊規模、與既有晶片團隊籌建進度的銜接關係均未見報導細節，僅標題層級資訊（推論）（Google News/The Times of India）
 
 ### 2026-08-13（❓ 待查證，Topic Watch 專頁定向抓取）
 - **Sergey Brin 在 Hassabis 卸任 DeepMind CEO 後對內部員工發表談話（標題截斷，內容未知）**：Times of India 標題稱 Google 共同創辦人 Sergey Brin 在 Demis Hassabis 卸任 DeepMind CEO 後對內部員工發表談話，標題本身遭 RSS 截斷為「Catch u...」，具體談話內容、發表場合均未見報導。**與既有記錄的關係**：本頁已於 08-05／08-06 事件（08-13 查證補記，見下方）記錄 Hassabis「卸下 DeepMind 日常營運、轉任 DeepMind 董事長兼 Alphabet 首席科學家（留任集團，非離職）」；本則標題用詞「exits as CEO」與該既有記錄方向一致（確實卸任 CEO 職務，但留任集團），惟無法排除為另一波後續發展或純粹是同一事件的重新報導角度，因標題截斷、正文未提供，暫不逕自合併或視為新增獨立事實，待後續報導補充談話內容後再評估是否需更新 08-05／08-06 條目（Google News/Times of India）
@@ -87,6 +88,7 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 
 ## 相關實體
 
+- [[entities/amir-salek]] — Google 自研晶片計畫創辦人，08-21/23 報導加入 Anthropic（待查證）
 - [[entities/john-jumper]] — 諾貝爾獎得主，DeepMind → Anthropic（6/21 Reuters 確認）
 - [[entities/andrej-karpathy]] — 已查證（2026-08-13）：OpenAI 共同創辦人 Andrej Karpathy 已於 **2026-05-19** 正式加入 Anthropic，本人於 X 公開宣布，主導以 Claude 加速 pre-training 研究的新團隊，多家媒體同步確認（[TechCrunch](https://techcrunch.com/2026/05/19/openai-co-founder-andrej-karpathy-joins-anthropics-pre-training-team/)；[CNBC](https://www.cnbc.com/2026/05/19/anthropic-hires-openai-cofounder-andrej-karpathy-former-tesla-ai-lead.html)；[Axios](https://www.axios.com/2026/05/19/anthropic-openai-karpathy-andrej-claude)）
 - [[entities/teresa-carlson]] — 前 Microsoft/AWS 高管，2026-07-07 加入 Anthropic 主導公部門業務；🔎 查無官方（標 2026-08-10｜複 2026-09-13｜查 [[entities/teresa-carlson]]）：是否屬與研究員流動潮同期的整體人才佈局，查證後仍未見官方或報導將兩者明確定性為同一策略動作，非研究職與研究員潮之間僅時序相近，維持推論層級
