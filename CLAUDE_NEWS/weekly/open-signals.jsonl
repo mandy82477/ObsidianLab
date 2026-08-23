@@ -40,3 +40,5 @@
 {"date": "2026-08-21", "week": "2026-W33", "forecast": "「可去除浮水印」的工具宣稱 vs 官方稱標記在部分編輯後仍可能殘留", "origin": "新立", "probe": "watermark", "entries": []}
 {"date": "2026-08-22", "week": "2026-W34", "forecast": "浮水印第三方偵測 API 的開放範圍與呼叫方式", "origin": "續盯", "probe": "watermark", "entries": []}
 {"date": "2026-08-22", "week": "2026-W34", "forecast": "「可去除浮水印」的工具宣稱 vs 官方稱標記在部分編輯後仍可能殘留", "origin": "續盯", "probe": "watermark", "entries": []}
+{"date": "2026-08-23", "week": "2026-W34", "forecast": "`/design` 指令（可在終端機建立 UI mockup，the-decoder 單一來源，08-18，無官方 changelog）", "origin": "新立", "probe": "the-decoder", "entries": []}
+{"date": "2026-08-23", "week": "2026-W34", "forecast": "浮水印第三方偵測 API 的開放範圍與呼叫方式", "origin": "續盯", "probe": "the-decoder", "entries": []}
