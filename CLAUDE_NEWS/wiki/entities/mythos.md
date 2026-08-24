@@ -25,8 +25,8 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 **狀態：** active（出口管制解除，2026-07-01 起全球恢復存取）
 **領域：** 🤖 模型
 **首次出現：** 2026-04（限定夥伴 Preview）
-**最後更新：** 2026-08-22
-**最後新聞更新：** 2026-08-22
+**最後更新：** 2026-08-24
+**最後新聞更新：** 2026-08-24
 
 > **最新進展**（2026-08-22）
 > Anthropic 將 Claude Mythos 5 導入 Claude Security 產品線，企業團隊不需直接存取模型即可取得 frontier 等級漏洞掃描能力——是繼「直接 API」「Project Glasswing」後 Mythos 5 的第三種能力釋出管道。定價與產品細節見 [[entities/claude-security]]。
@@ -122,6 +122,12 @@ Anthropic 的官方 AI 資安能力研究計畫，Mythos Preview 為核心工具
 ## 時序
 
 ### 解禁後（2026-06-27 起）
+
+#### 2026-08-24
+❓ **待查證**（標 2026-08-24｜查 SecurityWeek、more defenders）｜**SecurityWeek：Mythos 5 存取擴大至更多防禦端**（僅標題可用）：
+- Google News 轉載 SecurityWeek 標題「Anthropic Expands Mythos 5 Access to More Defenders, Unveils $35M Open Source Fund」（[Google News/SecurityWeek](https://news.google.com/rss/articles/CBMirwFBVV95cUxQY1E3Um1LaDRvamd5R3M4TDFIdEpIQ1dSY09DV2tsM0FXOTMtUVkxcnlBZ2ZKeEdOcXhYOGtRdFNYQkhab1drZE9WZzhDeHBwbl9vQzlUV29vLXVfcG9WNU5RWDV1cEdHMDBDb0xBVjZiaE5UVDFmeG93OUhpRzRuQnJYOGswcHJwVkJrS1dBeTRSUk5LWXo1S01LVmhLMHZPZU9WWmNhOVRqZ3EwSjZv?oc=5)）；RSS 僅提供標題與轉址連結，無正文摘要，無法確認「更多防禦端」的具體擴大機制是否即 08-22 已記錄的 Claude Security 產品線導入（間接提供漏洞掃描能力），或屬另一波獨立的直接存取擴大
+- 若與 08-22 事件系出同源，本則為 SecurityWeek 兩天後的專業資安媒體跟進；標題中的 3500 萬美元「開源資安基金」與 08-22 記錄的 Claude Security 額度承諾是否為同一筆金額待原文查證，該面向（基金定價/政策細節）由其他記者頁面同步處理，本頁僅記錄模型存取範圍面向
+- 已掃日報至 2026-08-24（當日），無其他來源佐證此則報導
 
 #### 2026-08-22
 **Mythos 5 導入 Claude Security 產品線（跨類別事件，模型面摘記）**：
@@ -306,3 +312,4 @@ Mythos 遭駭客存取事件（KRON4 等媒體）。⚠️ 細節尚待官方聲
 - [Quoting Matthew Green](https://simonwillison.net/2026/Jul/29/matthew-green/#atom-everything) — Simon Willison（2026-07-29）
 - [Incident Report: unsanctioned agent behaviour during cyber testing](https://www.aisi.gov.uk/blog/incident-report-unsanctioned-agent-behaviour-during-cyber-testing) — UK AI Safety Institute（2026-08-05）
 - [[news/2026-07-26]]、[[news/2026-07-29]]、[[news/2026-07-30]]、[[news/2026-08-07]]
+- [Google News/SecurityWeek：Anthropic Expands Mythos 5 Access to More Defenders, Unveils $35M Open Source Fund](https://news.google.com/rss/articles/CBMirwFBVV95cUxQY1E3Um1LaDRvamd5R3M4TDFIdEpIQ1dSY09DV2tsM0FXOTMtUVkxcnlBZ2ZKeEdOcXhYOGtRdFNYQkhab1drZE9WZzhDeHBwbl9vQzlUV29vLXVfcG9WNU5RWDV1cEdHMDBDb0xBVjZiaE5UVDFmeG93OUhpRzRuQnJYOGswcHJwVkJrS1dBeTRSUk5LWXo1S01LVmhLMHZPZU9WWmNhOVRqZ3EwSjZv?oc=5)（2026-08-24，僅標題可用；懸置標記細節見「時序」2026-08-24 條目）

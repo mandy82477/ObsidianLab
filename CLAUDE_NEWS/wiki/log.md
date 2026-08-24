@@ -4199,3 +4199,20 @@ registry 加一組 sync_pair 釘住產出端與歸因端（只改一邊等於白
 - H-b7c4f2（08-22 開立）：商業記者已處理——Forbes 浮水印企業實務影響已補入 `anthropic-business.md`「商業風險」表
 
 **主編判斷備註：** 人物記者查證後判斷 Palantir CEO Alex Karp 相關言論（HN 15 分，連回 08-03 CNBC 舊文）不建新人物頁——同一事件已於 `topics/anthropic-business.md`、`topics/competitor-landscape.md` 收錄，且 2026-08-10 已有記者做過相同「不足以建頁」判斷，屬既有覆蓋範圍內的重新浮現，非新事件；商業記者亦同步採納相同判斷、未重複記錄。
+
+## 2026-08-24 Ingest
+
+- 來源日報：[[news/2026-08-24]]
+- 更新頁面：wiki/entities/mythos.md、wiki/topics/model-comparison.md、wiki/entities/claude-code.md、wiki/entities/claude-skills.md、wiki/topics/official-community-gap.md、wiki/topics/ai-agent-safety.md、wiki/topics/anthropic-business.md、wiki/topics/ai-talent-flow.md、wiki/topics/competitor-landscape.md、wiki/topics/community-tech-patterns.md、wiki/topics/community-tech-discussions.md
+- 新增頁面：無
+- 摘要：Claude 多款模型今日一度出現錯誤率上升（04:50–07:36 UTC，已解決）；Anthropic 擴大 Mythos 5 防禦端存取並成立 3,500 萬美元開源資安基金；Claude Code 出現高互動凍結／卡住 bug 回報（150 reactions）與多筆桌面版功能請求；中國媒體《36氪》單一來源、無法查證的「Claude 推理能力遭秘密降低」聳動報導以待查證方式記入，未寫成事實；TechRadar 專題報導多個 Claude agent「地盤爭奪、部署自我複製惡意程式」，同樣因僅標題可用、無實驗細節而以待查證處理
+- 呈現品質：五位記者（模型、功能、安全政策、商業、社群；人物今日無條目未派工）皆回報 ✅ 通過，無需修復項目
+- 品質備註：無
+
+**跨記者轉知：**
+- 派工前 `pending_handoffs.py list` 僅 1 筆積壓（H-2fc0ba，2026-08-23 由社群記者轉知功能記者），未逾 14 天，本次已隨功能記者派工帶入並處理
+
+**本次結案轉知：**
+- H-2fc0ba（08-23 開立）：功能記者已處理——SkillWorks 第三方生態規模統計已以「訊號待驗」方式加入 `entities/claude-skills.md`
+
+**主編判斷備註：** 今日多達 12 則條目（Anthropic Status 官方事故公告 + 11 則媒體跟進報導）圍繞同一起服務錯誤率上升事故；因無專屬頁面追蹤一般性服務中斷（非安全漏洞、非產品功能缺陷），主編判斷不逐則路由六記者分類，僅由官方狀態頁條目留存於當日日報「技術更新」區塊，不另立 wiki 頁面或事件記錄。36氪與 TechRadar 兩則聳動報導在派工訊息中已明確提示「Google News RSS 僅標題可用、無完整內文」，兩位記者（模型、安全政策）皆採納謹慎處理、以標準待查證語法記入而未寫成既定事實，為預期中的正確處置。

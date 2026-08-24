@@ -9,3 +9,4 @@
 {"id": "H-201d81", "closed": "2026-08-23", "status": "done", "by": "功能", "result": "OzBrain 已列入 official-community-gap.md「跨 session 記憶歸零」矩陣列代表社群工具欄，官方對應 Dreaming／狀態🧪部分產品化維持不變"}
 {"id": "H-b7c4f2", "closed": "2026-08-23", "status": "done", "by": "商業", "result": "Forbes 浮水印企業實務影響已補入 anthropic-business.md「商業風險」表新增列，並與 topics/anthropic-government-policy 互加 wikilink"}
 {"id": "H-2fc0ba", "opened": "2026-08-23", "from": "社群", "to": "功能", "page": "entities/claude-skills", "note": "SkillWorks（skillworks.kynth.studio，第三方索引工具非官方）08-23揭露生態規模統計：503,570 listings·392,227 skills·80,636 subagents·23,442 plugins·7,265 marketplaces·48,190 個 skill 無法載入（rebuilt 2026-08-22）。HN僅2分未達收錄門檻，但數字對claude-skills.md生態現況可能有參考價值，社群記者無權代寫功能頁", "status": "open"}
+{"id": "H-2fc0ba", "closed": "2026-08-24", "status": "done", "by": "功能", "result": "SkillWorks 生態規模統計已以訊號待驗方式加入 entities/claude-skills.md"}

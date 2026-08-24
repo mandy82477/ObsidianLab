@@ -25,11 +25,11 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 **狀態：** ongoing
 **領域：** 🌐 社群
 **開始日期：** 2026-04-25
-**最後更新：** 2026-08-22
-**最後新聞更新：** 2026-08-22
+**最後更新：** 2026-08-24
+**最後新聞更新：** 2026-08-24
 
-> **最新工作流模式**（2026-08-22）
-> - **跨 agent／團隊共享知識庫**：OzBrain 主張以跨 session 共享知識庫取代傳統筆記與任務管理工具，作者論點是 agent-first 介面將取代儀表板式 UI，知識應「跟著使用者走」而非留在為人類設計的工具裡。
+> **最新工作流模式**（2026-08-24）
+> - **手動策展取代自動記憶**：使用者分享改用手動維護的 Obsidian vault（LLM Wiki 形式）取代 Claude Code 內建自動記憶功能，主張自己策展的知識庫比官方自動記憶更可控可信。
 
 ---
 
@@ -150,6 +150,14 @@ Claude Code 的三種多 agent 機制，可對應到 Anthropic《Building Effect
 ## 技術彙整
 
 ### 2026-08
+
+#### 用手動維護的 Obsidian vault（LLM Wiki 形式）取代 Claude Code 內建自動記憶（2026-08-24）
+
+- **主線：** 索引記憶
+- **核心模式：** 使用者分享改採手動維護 Obsidian vault、以「LLM Wiki」形式取代 Claude Code 內建自動記憶功能的實作心得，主張自己策展的知識庫比官方自動記憶更可控、更可信賴
+- **與既有模式的關係：** 呼應本頁「記憶與知識管理」類別既有跨 session 記憶方案（ltm／本機圖資料庫／NanoBrain／OKF／08-21 OzBrain 跨 agent 共享知識庫），差異在於本則明確**捨棄官方自動記憶功能**、改由使用者手動策展取代，是既有「補充官方記憶」取向之外的「取代官方記憶」路線；縫合 [[topics/community-large-codebase-workflow]] 索引記憶主線
+- **來源：** Reddit r/ClaudeAI（今日日報「技術熱度討論」已收錄）；[原文](https://www.reddit.com/r/ClaudeAI/comments/1vwx5i6/i_replaced_claude_codes_automemory_with_an/)
+- **成熟度：** ⏳ 新興（今日首見，單一使用者實作心得，尚無其他來源複現或延伸應用）
 
 #### Show HN：OzBrain——為 agent 與團隊打造的跨 session 共享知識庫（2026-08-21）
 

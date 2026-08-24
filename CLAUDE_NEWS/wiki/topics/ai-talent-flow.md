@@ -24,8 +24,8 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 **領域：** 💼 商業
 **蒐集邊界：** 以與 Anthropic 相關的人才流動為主，另針對本主題定向補抓（每日至多 3 則）；其他實驗室之間、與 Anthropic 無關的異動仍可能延遲或缺漏，重大者由人工查證補記。
 **開始日期：** 2026-06-21
-**最後更新：** 2026-08-23
-**最後新聞更新：** 2026-08-23
+**最後更新：** 2026-08-24
+**最後新聞更新：** 2026-08-24
 
 > **最新動態：Anthropic 延攬 Google 自研晶片計畫創辦人 Amir Salek**（2026-08-21 首報，2026-08-23 具名確認）
 > The Times of India 報導 Anthropic 延攬 **Amir Salek**（Google 自研晶片計畫（custom chip programme）創辦人，即 Google TPU 專案創始人物之一）；此為 08-21 Seeking Alpha／Bloomberg 已記錄「前 Google 晶片工程師」（未具名）的具名確認，人才資歷等級從「一般工程師」升級為「創始人層級」。**與本頁核心追蹤格局的關係**：此波為 Anthropic 首見的**晶片人才**流入案例，區別於本頁既有記錄之研究員流動（Jumper、Adler、Pritzel 等 AI 科學/訓練人才）；商業意涵詳見 [[topics/anthropic-business]]「戰略合作」表。
@@ -54,6 +54,9 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 - 人才流動為**雙向洗牌**（Google 同期亦失人至 OpenAI），非單向崩塌。
 
 ## 時序
+
+### 2026-08-24（跟進，非新事實）
+- **citybiz：轉載 Anthropic 延攬 Amir Salek 消息**：與 08-23 具名確認為同一事件，未見新增職位、時程或團隊規模細節，僅為又一媒體重述；商業意涵仍見 [[topics/anthropic-business]]「戰略合作」表（Google News/citybiz）
 
 ### 2026-08-23（具名確認，延續 08-21）
 - **The Times of India：具名確認 Anthropic 延攬 Google 自研晶片計畫創辦人 Amir Salek**：延續 08-21 已記錄之「前 Google 晶片工程師」（未具名，Seeking Alpha／Bloomberg），本則首次具名確認為 **Amir Salek**——Google 自研晶片計畫（custom chip programme）創辦人，即 Google TPU 專案創始人物之一。**對戰力與市場意涵**：與本頁既有以研究員流動為主的追蹤格局不同，此案屬**晶片設計人才**流入，且延攬對象非一般工程師而是曾主導 Google 整條自研晶片專案的創始層級人物，顯示 Anthropic 自研晶片布局（見 [[topics/anthropic-business]]「戰略合作」表 08-05～07 已記錄之內部晶片設計團隊籌建）可能取得具備從零打造整條晶片專案經驗的核心人才；具體職位、加入時間、團隊規模、與既有晶片團隊籌建進度的銜接關係均未見報導細節，僅標題層級資訊（推論）（Google News/The Times of India）

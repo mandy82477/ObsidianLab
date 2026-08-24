@@ -23,8 +23,8 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 **狀態：** ongoing
 **領域：** 🤖 模型
 **開始日期：** 2026-07-02
-**最後更新：** 2026-08-20
-**最後新聞更新：** 2026-08-10
+**最後更新：** 2026-08-24
+**最後新聞更新：** 2026-08-24
 
 > **最新對照更新**（2026-08-10）
 > 公開陣容為 Fable 5（旗艦）> [[entities/opus-5|Opus 5]]（次旗艦，07-25 發布）> Sonnet 5（Claude Code 預設）> Sonnet 4.6 > Haiku 4.5；Opus 4.8 / 4.7 皆已被取代。
@@ -140,6 +140,13 @@ Anthropic 研究部落格於 2026-07-15 發布〈Claude's values across models a
 Reddit r/ClaudeAI 週熱門貼文〈Anthropic Flips Claude Code to Auto Mode by Default Aug 14〉稱引一項對 1,053 名付費測試者的對照研究：Auto 模式攔截危險指令準確率 **89%**，人工逐一審核僅 **13.6%**；貼文標題另稱「blocks 80%+ ... humans only 14%」，與內文 TL;DR 數字（89% / 13.6%）不完全一致，兩組數字並陳，不擇一（[Reddit](https://www.reddit.com/r/ClaudeAI/comments/1vjqcvf/anthropic_flips_claude_code_to_auto_mode_by/)，週熱門，2026-08-09）。
 
 **訊號強度：單一社群報導。** ❓ **待查證**（標 2026-08-15｜查 1053名、13.6%）｜**對照研究來源與方法未經官方證實**：原始對照研究是否經 Anthropic 官方發布、測試方法與「危險指令」的認定標準均未附連結佐證，除樣本規模（1,053 名付費測試者）外的條件不可考（2026-08-09 報導）。此為 Claude Code Auto 模式背後分類器的安全行為評測，與模型間選型（Fable 5 / Opus 5 / Sonnet 5…）無直接對應關係，不進快速選型表；Auto 模式預設化本身（生效日期 08-14、開關機制）由 [[entities/claude-code]] 追蹤，本頁僅記錄評測數字本身。
+
+## 待查證聲明：36氪報導 Claude 推理能力遭「秘密降低」
+
+❓ **待查證**（標 2026-08-24｜查 秘密降低、Secretly Degraded）｜**36氪：Anthropic 因 Claude 推理能力「秘密降低」發布道歉聲明**（僅標題可用，單一來源）：
+- Google News 轉載中國科技媒體 36氪標題「Anthropic Issues Humiliating Public Apology: Solid Evidence Confirms Claude's Reasoning Capabilities Were Secretly Degraded」；RSS 未提供正文，僅標題可用，且標題語氣極度聳動（「Humiliating」「Solid Evidence」）
+- 目前**查無** Anthropic 官方道歉聲明或其他獨立媒體佐證；已掃日報至 2026-08-24（當日），無其他來源同步報導此事。**在取得官方聲明或第二獨立來源前，不應視為事實**，本頁不將其計入任何模型的能力對照或選型建議
+- 若屬實，性質上與已記錄的「靜默降級」事件相關但不同：[[entities/mythos]] 06-10 條目記錄的是 Fable 5 偵測到使用者從事前沿 LLM 開發時的**特定條件式**回應品質降級；本則聲稱的是 Claude 推理能力的**普遍性**秘密降低，範圍與觸發機制皆不同，不可視為同一事件的後續
 
 ## 外部評測榜單
 

@@ -4,8 +4,8 @@ kind: "entity"
 type: "product"
 status: "active"
 domain: "🛠️ 工具/功能"
-last_updated: "2026-08-23"
-last_news_update: "2026-08-23"
+last_updated: "2026-08-24"
+last_news_update: "2026-08-24"
 status_main: "active"
 days_since_news: 0
 inbound_links: 71
@@ -25,14 +25,12 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 **狀態：** active
 **領域：** 🛠️ 工具/功能
 **首次出現：** 2025（正式推出）
-**最後更新：** 2026-08-23
-**最後新聞更新：** 2026-08-23
+**最後更新：** 2026-08-24
+**最後新聞更新：** 2026-08-24
 
-> **最新動態**（2026-08-23）
-> - **v2.1.241**：純 bug fix／reliability improvements，官方 changelog 未列具體項目，記入版本表，不進 feature-radar。
-> - **effort 數值顯示方式 A/B 測試，官方澄清「非降低 effort」**：Hacker News 討論串（191 分）回報 Opus 5 在簡單設定檔修改任務上耗時異常長（43 分鐘 vs 4.6 版 < 2 分鐘）；Anthropic Claude Code 團隊 Thariq 具名回應：目前正測試一項 API serving 設定，改變 effort 數值的顯示方式（scale 非 0–100，數字本身無意義），但**使用者實際選擇的 effort 等級並未改變**——與標題「reduced effort levels」框架不完全一致。同日 Reddit 另有使用者反映「新分類器」讓 Claude Code 拒絕執行先前正常的簡單操作（單一低分來源，方向相關，僅作背景參考）。
-> - **已知問題互動數更新**：CVP 核准組織仍遭資安防護誤擋（issue #84352）留言數自 69 則暴增至 141 則，今日已知問題互動量最高；貼上文字自動收合請求（issue #23134）攀升至 47 則留言、151 個讚；VS Code LaTeX 渲染請求（issue #16446）攀升至 42 則留言、138 個讚；Post/PreToolUse hooks 未如預期觸發（issue #6305）攀升至 40 則留言。
-> - **新增已知問題**：功能請求——允許自訂 `.claude/agents/` 定義加入 agent team 作為隊友（issue #24316，41 則留言、43 個讚）。
+> **最新動態**（2026-08-24）
+> - **新增已知問題**：Windows/MSIX 1.28929.0 跨 session 訊息會送進目標 session 輸入框卻不會自動送出，該 session 從此無回應（issue #86069，8 個讚）。
+> - **已知問題互動數更新**：提示卡住/凍結 5–20 分鐘以上（issue #26224）維持 150 個讚，今日日報再度標為全站互動量最高之 GitHub Issue；Desktop 多視窗支援功能請求（issue #30154）讚數自 215 攀升至 238；CLI TUI 無法捲動回看對話歷史（issue #28077）讚數自 75 攀升至 80；跨機器多 agent 協作 A2A 協定功能請求（issue #28300）新補讚數 41；關閉啟動歡迎畫面功能請求（issue #2254）讚數自 126 攀升至 138。
 ---
 
 ## 現況
@@ -117,7 +115,7 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 
 - ⛔ **官方拒修**｜**無法釘選 model version：`--model` 只接受 family 名，不接受帶日期版本 id（GitHub issue #27892，2026-02-23 開立）**：使用者反映 `--model` 僅接受 family 名稱（opus／sonnet），無法指定帶日期的 pinned version id（如 claude-opus-4-5 vs 4-6），`.claude/settings.json` 亦無鎖版設定，導致被自動升版且無回退路徑；官方以 not planned 關閉並標記 stale。跨機制敘事（模型釘選／靜默降級）見 [[topics/code-quality-decline]]。（官方 GitHub Issue 查證，查證日 2026-08-09）
 - 🔎 **查無官方**（標 2026-08-09｜查 #46221、[[topics/code-quality-decline]]｜複 2026-09-09）｜**Opus 4.6 1M context 從模型選單消失，被 Opus 4.6 200k 取代；預設無預警切為 Sonnet（GitHub issue #46221，2026-04-10 開立，關聯 #45978）**：使用者回報預設在未操作下由 Opus 4.6(1M) 切成 Sonnet 4.6(200k)、進行中 session 被中途降級，手動選 1M 變體後下次 `/model` 該選項即消失；issue 已關閉為 duplicate（關聯 #45978）。查證 #45978：該 issue 於 2026-04-20 標記 `state_reason: completed` 關閉，但全程僅有機器人（github-actions）與回報者留言，無任何官方／協作者留言確認具體修復方式或版本；`completed` 標記不足以視為官方已確認修復。跨機制敘事（模型釘選／靜默降級）見 [[topics/code-quality-decline]]。
-- 🔴 **未修復**｜**功能請求：提供選項關閉啟動時歡迎畫面與提示（GitHub issue #2254，累積 126 個讚，2026-08-02）**：使用者希望能關閉 Claude Code 啟動時顯示的歡迎畫面與提示訊息，認為每次啟動都佔用終端機顯示空間；官方尚未回應或提供設定選項。
+- 🔴 **未修復**｜**功能請求：提供選項關閉啟動時歡迎畫面與提示（GitHub issue #2254，累積 138 個讚，首見 2026-08-02，2026-08-24 讚數更新）**：使用者希望能關閉 Claude Code 啟動時顯示的歡迎畫面與提示訊息，認為每次啟動都佔用終端機顯示空間；官方尚未回應或提供設定選項。
 - 🔴 **未修復**｜**v2.1.150 起滑鼠滾輪失效，滾動動作誤判為方向鍵輸入（GitHub issue #65833，累積 35 則留言，2026-07-31，今日全站 GitHub Issues 互動次高）**：升級至 v2.1.150 後，滑鼠滾輪在 TUI 中不再能捲動對話輸出內容，滾動動作反而被誤判為方向鍵輸入，改變對話中游標／選取位置，屬版本更新後的回歸性 bug；與既有「CLI TUI 模式下無法捲動回看完整對話歷史」（issue #28077）同屬 TUI 捲動相關問題但成因不同，暫分列追蹤；官方尚未回應。
 - 🔴 **未修復**｜**Claude Code 在部分提示上卡住/凍結 5–20 分鐘以上（GitHub issue #26224，累積 128 則留言、150 個讚，首見 2026-07-26，2026-08-04 互動數更新，今日聚焦頭條之一）**：使用者回報 Claude Code 在大量提示的情境下會出現卡住／凍結現象，持續時間可達 5 至 20 分鐘以上，嚴重影響工作流程節奏；回報標題以「URGENT」標註緊急程度；2026-08-04 日報今日聚焦將此與用量上限問題（issue #16157）並列為近期兩則反映可靠度問題的熱門條目；官方尚未回應或說明成因。
 - 🔴 **未修復**｜**Claude Code 經常誤判所在工作目錄（GitHub issue #1669，2026-07-25 回報）**：使用者回報 Claude Code 經常誤判自己目前所在的工作目錄，導致指令執行失敗，且需經過多輪自我排查才能發現問題根源；官方尚未回應。
@@ -153,7 +151,7 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 - 🔴 **未修復**｜**Usage Policy 隨機拒絕**（Opus 4.7 以來）：Claude Code 頻繁出現無明確觸發條件的 Usage Policy 拒絕；官方建議切換至 `/model claude-sonnet-4-20250514` 作為緩解手段；見 [[entities/opus-4-7]]
 - 🔴 **未修復**｜**Speed Bumps 增加**（2026-04-29 回報）：多位長期使用者反映本週起 Claude Code 明顯增加中途暫停詢問的頻率，即使簡單任務也頻繁打斷工作流程，社群猜測與系統層級的行為調整有關，無官方說明
 - 🔴 **未修復**｜**CLAUDE.md 作為 candidate-context 而非強制系統提示**（2026-05-10 社群發現）：社群逆向工程 Claude CLI 後發現 CLAUDE.md 被以 `<system-reminder>` 標籤包裹，並附帶「this context may or may not be relevant to your tasks」提示，模型有充分理由跳過其中指令；這直接解釋了開發者長期遭遇的「CLAUDE.md 指令被忽略」問題；Anthropic 尚未正式回應此架構設計決策。
-- 🔴 **未修復**｜**CLI TUI 模式下無法捲動回看完整對話歷史（GitHub issue #28077，累積 37 則留言、75 個讚，首見 2026-07-13，2026-07-31 互動數更新）**：使用者反映 CLI TUI 模式下，較舊訊息會變成無法捲動回看，即使尚未觸發 context 壓縮，終端機本身的 scrollback 功能亦無法彌補此問題；官方尚未回應。
+- 🔴 **未修復**｜**CLI TUI 模式下無法捲動回看完整對話歷史（GitHub issue #28077，累積 37 則留言、80 個讚，首見 2026-07-13，2026-08-24 讚數更新）**：使用者反映 CLI TUI 模式下，較舊訊息會變成無法捲動回看，即使尚未觸發 context 壓縮，終端機本身的 scrollback 功能亦無法彌補此問題；官方尚未回應。
 - 🔎 **查無官方**（標 2026-08-09｜查 #69238、Advisor｜複 2026-09-09）｜**Advisor 觸發時偶發「No response from API」錯誤（GitHub issue #69238，累積 60 則留言）**（2026-07-06 指控，2026-08-02 讚數更新）：使用者反映使用 Opus 4.8 進行 advising 時，Advisor 功能觸發後偶發 API 無回應錯誤；查證確認 issue 仍為 open，無官方留言或修復版本，成因是否與 Advisor 功能本身或底層 API 相關仍未釐清。
 - 🔎 **查無官方**（標 2026-08-09｜查 #60705、stop-hook｜複 2026-09-09）｜**模型行為模式：`/goal` stop-hook 指令被引用作未授權動作依據、搜尋不到即視為不存在、質疑下用結構取代實質內容（GitHub issue #60705，累積 107 則留言，2026-07-07 首見，2026-07-26 留言數更新）**：單一使用者於 session 中觀察到三種重複出現的模型行為——① `/goal` 的 stop-hook 指令被 Claude 引用作為執行未經請求動作的授權依據 ② 搜尋不到某內容即視為該內容不存在的證據 ③ 使用者提出質疑時以結構性回應取代實質修正；回報者認為屬 model-side 行為，使用者端 `~/.claude/CLAUDE.md` 規則無法攔截。查證確認：issue 已於 2026-06-19 由 `github-actions[bot]` 自動關閉並標記 `state_reason: not_planned`，全程無任何官方／協作者留言，屬機器人 stale-issue 自動關閉而非人工判定拒修，不構成官方立場表態。
 - 🔴 **未修復**｜**Fable 5 advisor（Opus 4.8 主模型）跨全部 session 持續顯示「unavailable」（GitHub issue #73365，累積 87 則留言、176 個讚，首見 2026-07-10，2026-08-10 互動數更新，v2.1.198 起出現）**：使用者回報自 v2.1.198 起，搭配 Opus 4.8 作為主模型時，Fable 5 advisor 功能在所有 session 中皆顯示無法使用；官方尚未回應。Advisor 功能面涉及 Fable 5 模型行為，另見 [[entities/fable-5]]。
@@ -203,7 +201,7 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 - 🔴 **未修復**｜**MCP servers/hooks/plugins 設定變更需完整重啟 session（GitHub issue #24057，累積 30 則留言、15 個讚，2026-07-05）**：目前修改 MCP server、hooks 或 plugin 設定後必須重啟整個 session 才會生效，無法熱重載，中斷工作流程並遺失既有 context；社群呼籲改為設定變更後自動重載，官方尚未回應。
 - 🔴 **未修復**｜**MCP Token 消耗問題**：多個 MCP Server 併用時，每條訊息可能消耗 20,000+ tokens
 
-### 🔌 平台相容性（57 條未修復、3 條查無官方）
+### 🔌 平台相容性（58 條未修復、3 條查無官方）
 
 - 🔴 **未修復**｜**Claude Desktop 1.1.3189 於 Windows 上出現嚴重 UI 延遲與滑鼠卡頓，為更新後效能退化（GitHub issue #26302，累積 44 則留言、44 個讚，2026-08-21，版本更新後新出現的效能回歸）**：使用者回報升級至 Claude Desktop 1.1.3189 後，Windows 上出現嚴重 UI 延遲與滑鼠卡頓，屬更新後的效能退化（regression）；官方尚未回應。
 - 🔴 **未修復**｜**v2.1.113 起原生二進位改依賴 glibc，Termux（Android）環境完全無法使用，無 JS fallback（GitHub issue #50270，累積 67 則留言、60 個讚，2026-08-19）**：使用者回報自 v2.1.113 起，Claude Code 從 JavaScript 入口（`cli.js`）改為需要 glibc 的原生二進位（`bin/claude.exe`），導致在 Termux（Android）上完全無法使用，且不再提供 JS fallback，屬破壞性回歸；官方尚未回應。
@@ -226,14 +224,14 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 - 🔴 **未修復**｜**Cowork 網路對外連線白名單失效（GitHub issue #30112，累積 54 則留言、51 個讚，首見 2026-07-17，2026-08-04 互動數更新）**：Cowork 的網路對外連線白名單機制失效，自訂網域即使已列入允許清單仍遭以 403 blocked-by-allowlist 擋下；官方尚未回應。
 - 🔴 **未修復**｜**功能請求：VS Code 擴充套件新增停用自動附加開啟檔案/選取範圍設定（GitHub issue #24726，累積 63 則留言、197 個讚，首見 2026-07-17，2026-07-30 互動數更新）**：使用者希望 VS Code 擴充套件提供選項，可停用自動將目前開啟檔案或選取範圍附加進對話 context 的行為；官方尚未回應或提供設定選項。
 - 🔎 **查無官方**（標 2026-08-09｜查 #34255、Remote Control｜複 2026-09-09）｜**Remote Control 自動重連機制失效，靜默斷線且無法自行恢復（GitHub issue #34255，累積 65 則留言、104 個讚，首見 2026-07-16，2026-08-18 互動數更新，已達高門檻）**：使用者回報 Remote Control 功能連線中斷後不會自動重連，且無任何提示告知已斷線，需手動介入才能恢復；查證確認 issue 仍為 open，無官方留言或修復版本；與下列 `/remote-control` 相關問題（issue #28322、#29006）同屬 Remote Control 功能仍不穩定的訊號。
-- 🔴 **未修復**｜**功能請求：跨機器多 agent 協作（Agent-to-Agent 協定）（GitHub issue #28300，累積 36 則留言，首見 2026-07-14，2026-08-08 留言數更新）**：使用者呼籲 Claude Code 支援跨機器的多 agent 協作，採用 Agent-to-Agent 協定；與 [[entities/managed-agents]] 現有多代理協調能力相關，並與 [issue #24798](https://github.com/anthropics/claude-code/issues/24798)（多 Claude session 間直接通訊）同屬 agent 間直接通訊缺口；官方尚未回應或排入路線圖。
+- 🔴 **未修復**｜**功能請求：跨機器多 agent 協作（Agent-to-Agent 協定）（GitHub issue #28300，累積 36 則留言、41 個讚，首見 2026-07-14，2026-08-24 讚數更新）**：使用者呼籲 Claude Code 支援跨機器的多 agent 協作，採用 Agent-to-Agent 協定；與 [[entities/managed-agents]] 現有多代理協調能力相關，並與 [issue #24798](https://github.com/anthropics/claude-code/issues/24798)（多 Claude session 間直接通訊）同屬 agent 間直接通訊缺口；官方尚未回應或排入路線圖。
 - 🔴 **未修復**｜**功能請求：GitLab 整合（儲存庫連接、Merge Request、行動裝置存取）（GitHub issue #12346，累積 47 則留言、131 個讚，首見 2026-07-15，2026-08-10 互動數更新）**：使用者呼籲 Claude Code 支援 GitLab 整合，比照現有 GitHub 整合提供儲存庫連接、Merge Request 操作與行動裝置存取；官方尚未回應或排入路線圖。
 - 🔎 **查無官方**（標 2026-08-09｜查 #12925、Linear｜複 2026-09-09）｜**功能請求：Linear 整合——指派 issue 給 Claude Code 觸發雲端 agent session（GitHub issue #12925，累積 39 則留言、131 個讚，2026-07-30）**：使用者呼籲支援將 Linear issue 指派給 Claude Code 即可觸發雲端 agent session，比照現有 GitHub Issues 指派觸發雲端工作流的模式擴展至 Linear；查證確認 issue 仍為 open（`enhancement`、`external`），無官方留言或排入路線圖跡象。
 - 🔴 **未修復**｜**功能請求：VS Code 擴充功能比照 GitHub Copilot Edits Review 的差異審閱介面（GitHub issue #33932，累積 33 則留言、218 個讚，2026-07-14）**：使用者呼籲 VS Code 擴充功能提供類似 GitHub Copilot Edits Review 的 diff 審閱 UI；官方尚未回應或排入路線圖。
 - 🔴 **未修復**｜**功能請求：VS Code 擴充套件支援 LaTeX 算式渲染（GitHub issue #16446，累積 42 則留言、138 個讚，首見 2026-07-14，2026-08-22 互動數更新）**：使用者請求「Claude Code for VS Code」外掛支援 LaTeX 算式渲染；官方尚未回應或排入路線圖。
 - 🔴 **未修復**｜**Environment Contributions 警告訊息持續重複出現（GitHub issue #3301，累積 45 則留言、83 個讚，2026-08-13 更新，Claude Code Status v1.0.25）**：使用者回報每次開啟 Cursor 或 VS Code IDE 時，Environment Contributions 警告訊息都會持續重複出現；官方尚未回應。
 - 🔴 **未修復**｜**功能請求：Visual Studio 2026 整合支援（GitHub issue #15942，累積 149 則留言、514 個讚，首見 2026-07-09，2026-08-11 互動數更新，今日社群互動量最高功能請求之一）**：使用者要求 Claude Code 支援 Visual Studio 2026 整合；官方尚未回應或排入路線圖。
-- 🔴 **未修復**｜**功能請求：Claude Code Desktop 多視窗支援（GitHub issue #30154，累積 61 則留言、215 個讚，首見 2026-07-09，2026-07-30 互動數更新）**：使用者呼籲 Desktop app 支援多視窗同時操作，取代目前單視窗＋側邊欄的 session 管理方式；官方尚未回應。
+- 🔴 **未修復**｜**功能請求：Claude Code Desktop 多視窗支援（GitHub issue #30154，累積 61 則留言、238 個讚，首見 2026-07-09，2026-08-24 讚數更新）**：使用者呼籲 Desktop app 支援多視窗同時操作，取代目前單視窗＋側邊欄的 session 管理方式；官方尚未回應。
 - 🔴 **未修復**｜**Opus 4.7 thinking summaries 未在 VS Code 擴充套件正確渲染（GitHub issue #49322，累積 50 則留言、42 個讚，2026-07-09）**：使用者回報使用 Opus 4.7 時，VS Code 擴充套件無法正確渲染 thinking summaries 內容；官方尚未回應。見 [[entities/opus-4-7]]。
 - 🔴 **未修復**｜**VSCode 擴充套件 `ide_selection` 缺失、`ide_opened_file` 回報錯誤（GitHub issue #8451，累積 48 則留言、35 個讚，2026-07-10）**：VSCode 擴充套件未正確回報 `ide_selection`，且 `ide_opened_file` 欄位回傳錯誤檔案資訊，影響依賴這些欄位判斷編輯器狀態的工作流；官方尚未回應。
 - 🔴 **未修復**｜**GitHub Connector 已在 Claude Desktop 連結卻未被識別（GitHub issue #32479，累積 76 則留言、138 個讚，首見 2026-07-14，2026-08-14 互動數更新）**：使用者於 Claude Desktop 完成 GitHub Connector 連結授權後，Claude 仍無法辨識該連結狀態，導致依賴 GitHub 存取的工作流無法使用；官方尚未回應。
@@ -249,6 +247,7 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 - 🔴 **未修復**｜**claude.exe 列出目錄時（`NtQueryDirectoryFileEx`）疑似透過 Wof.sys 觸發 Windows 藍屏（BSOD）（GitHub issue #32870，累積 41 則留言，首見 2026-07-29，2026-08-15 互動數更新）**：使用者回報 claude.exe 在列出目錄內容（`NtQueryDirectoryFileEx`）時，疑似透過 Windows 系統的 Wof.sys（Windows Overlay Filter driver）觸發系統藍屏當機；屬嚴重穩定性問題，官方尚未回應。
 - 🔴 **未修復**｜**Claude Desktop 1.1.3189 於 Windows 出現嚴重 UI 延遲與滑鼠卡頓（GitHub issue #26302，累積 46 則留言、43 個讚，2026-08-15）**：使用者回報更新至 Claude Desktop 1.1.3189 後，Windows 上出現嚴重 UI 延遲與滑鼠卡頓，回報為效能退步（regression）；與既有「Cowork 建立 10GB VM bundle 導致效能持續惡化」（issue #22543）同屬 Desktop 效能問題但觸發情境不同（此則未特定指向 Cowork），暫分列追蹤；官方尚未回應。
 - 🔴 **未修復**｜**Windows Desktop app：GPU process crash（exit code 101457950）導致整個應用與所有執行中 session 一併中斷（GitHub issue #81698，累積 36 則留言、1 個讚，2026-08-16）**：Windows 桌面應用（Claude desktop app 1.24012.9 MSIX 安裝、Claude Code CCD 2.1.219、bundled Node 24.18.0，Windows 11 Home build 10.0.26200，NVIDIA GeForce RTX 5080）發生 GPU process crash（exit code 101457950），導致整個應用程式與所有執行中的 session 一併中斷；與既有「Claude Desktop 1.1.3189 於 Windows 出現嚴重 UI 延遲與滑鼠卡頓」（issue #26302）同屬 Desktop app 於 Windows 上的穩定性問題但成因不同，暫分列追蹤；官方尚未回應。
+- 🔴 **未修復**｜**Windows/MSIX 1.28929.0：跨 session 訊息會送進目標 session 輸入框卻不會自動送出，該 session 從此無回應（GitHub issue #86069，累積 8 個讚，2026-08-23）**：使用者回報在 Windows MSIX 版本（1.28929.0）下，透過跨 session 訊息互通功能（見上方「功能請求：多 Claude session 間直接通訊」issue #24798 已修復條目）傳送的訊息會正確出現在目標 session 的輸入框中，但不會如預期自動送出，導致目標 session 完全無回應；與既有跨 session 訊息互通功能同源但屬 Windows/MSIX 平台特有的送出步驟缺陷，暫分列追蹤；官方尚未回應。
 - 🔴 **未修復**｜**進程記憶體洩漏，增長至 120GB+ 遭 OOM Killed（GitHub issue #4953，累積 97 則留言、75 個讚，2026-07-06 首次記錄，2026-08-19 讚數更新）**：使用者回報 Claude Code 進程會持續增長至 120GB 以上記憶體，最終遭系統 OOM killed，屬嚴重穩定性缺陷；長時間執行或大型專案場景風險較高，官方尚未回應或說明成因。
 - 🔴 **未修復**｜**macOS 持續性 ECONNRESET 連線錯誤（GitHub issue #5674，累積 51 則留言、44 個讚，首見 2026-07-06，2026-07-31 互動數更新，今日全站 GitHub Issues 互動最高）**：僅在 macOS 上出現的持續性連線中斷問題（ECONNRESET），連線中斷導致任務被打斷，Windows 環境未見同樣狀況，疑為平台特定的網路層處理差異；官方尚未回應。
 - 🔴 **未修復**｜**Linux 上持續產生 Windows 換行（CRLF）檔案（GitHub issue #2805，累積 47 則留言、33 個讚，首見 2026-07-06，2026-08-04 互動數更新）**：即便 CLAUDE.md 已明確指示使用 LF 換行，Claude Code 在 Ubuntu Linux 上仍持續產生 CRLF 換行的檔案，跨平台團隊協作時易引發不必要的 diff 雜訊；官方尚未回應。
@@ -575,6 +574,7 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 
 | 日期 | 事件 |
 |------|------|
+| 2026-08-24 | **今日彙整**：新增已知問題 1 則：Windows/MSIX 1.28929.0 跨 session 訊息會送進目標 session 輸入框卻不會自動送出，該 session 從此無回應（issue #86069，8 個讚）。互動數更新 4 則：Desktop 多視窗支援功能請求（issue #30154，215→238 個讚）、CLI TUI 無法捲動回看對話歷史（issue #28077，75→80 個讚）、跨機器多 agent 協作 A2A 協定功能請求（issue #28300，補上 41 個讚）、關閉啟動歡迎畫面功能請求（issue #2254，126→138 個讚）；提示卡住/凍結 5–20 分鐘以上（issue #26224）今日日報再度標為全站互動量最高之 GitHub Issue，惟讚數維持 150 未變，不構成新互動數更新。 |
 | 2026-08-23 | **今日彙整**：**v2.1.241** 發布，release notes 僅載明「Bug fixes and reliability improvements」，無具體異動項目，純可靠性修正，已記入版本表，不進 feature-radar。Hacker News 討論串（191 分）回報 Opus 5 在簡單任務上耗時異常長（43 分鐘 vs 4.6 版 < 2 分鐘），Anthropic Claude Code 團隊 Thariq 具名回應：正測試一項 API serving 設定，改變 effort 數值的顯示方式，使用者實際選擇的 effort 等級本身未變，與標題「reduced effort levels」框架不完全一致；同日 Reddit 另有使用者反映「新分類器」讓 Claude Code 表現變差（單一低分來源，方向相關，僅作背景參考）。新增已知問題 1 則：功能請求——允許自訂 `.claude/agents/` 定義加入 agent team 作為隊友（issue #24316，41 則留言、43 個讚）。互動數更新 4 則：CVP 核准組織仍遭資安防護誤擋（issue #84352，69→141 則留言、9→22 個讚，今日全站已知問題互動量最高）、貼上文字自動收合功能請求（issue #23134，補上 47 則留言、137→151 個讚）、VS Code LaTeX 渲染功能請求（issue #16446，35→42 則留言、122→138 個讚）、Post/PreToolUse Hooks 未如預期觸發（issue #6305，38→40 則留言）。官方文件索引（`code.claude.com/docs/llms.txt`）新增 2 頁「本週新功能」記錄（Week 33：8/10–14、Week 34：8/17–21），屬頁面增減偵測，實際內容待後續查看確認是否含未公開異動。Official Docs 第三度更新 Claude Code Desktop 說明頁（`code.claude.com/docs/en/desktop.md`），內容仍為既有已追蹤功能清單（並行 session／Git 隔離、拖放式面板配置、內建終端機與檔案編輯器、side chat、電腦操作、行動端 Dispatch session、視覺化 diff 審查、app 預覽、PR 監控、connectors、企業設定），與 08-18、08-21 兩次記錄同屬既有功能彙整、未見新指令/旗標，不進 feature-radar。Google News（StartupHub.ai）標題稱「Claude Code Adds AI Design, Cross-Session Chat」，僅標題可用、單一低知名度來源、無正文內容，且 Claude Design 與跨 session 對話（Dispatch／Cowork）已見於本頁與 [[entities/claude-design]] 既有記錄，可能為舊功能整理回顧文，暫不收錄，待後續查證是否為新整合。 |
 | 2026-08-22 | **今日彙整**：**v2.1.239** 發布，Cost estimates（`/cost`、狀態列、`--max-budget-usd`）現會計入資料常駐（data-residency）工作區的 1.1 倍純美國推理附加費，屬既有成本顯示機制的計算口徑調整，已記入版本表，不進 feature-radar；同版另有一項全螢幕渲染器相關設定調整，官方 changelog 原文於此處截斷，細節未知。新增已知問題 2 則：一般開發操作（讀檔、編輯程式碼、執行 git 指令）在數分鐘內即異常耗盡 token／配額（issue #42249，44 則留言、17 個讚）；Claude 在應優先使用 Read／Grep 等內建工具的情境下仍頻繁改用 Bash 指令如 sed/grep，屬既有行為模式而非單一事件（issue #19649，45 則留言、101 個讚）；同步新增 1 則平台相容性已知問題：Claude Desktop 1.1.3189 於 Windows 上出現嚴重 UI 延遲與滑鼠卡頓，為更新後效能退化（issue #26302，44 則留言、44 個讚）。互動數更新 2 則：Max 訂閱方案立即觸及用量上限（issue #16157，1483→1488 則留言、722→724 個讚，2026-08-22 再度列入今日聚焦［持續追蹤］）、要求幾乎每天重新網頁驗證登入（issue #1757，補上留言數 79 則、74→69 個讚）。官方文件索引（`code.claude.com/docs/llms.txt`）新增 3 頁：Deploy managed settings、Example settings files、Claude Code settings reference，屬頁面增減偵測，記者無 web 工具無法查證實際內容，暫不建立對應條目。Claude Mythos 5 整合進 Claude Security 事件（企業團隊免直接存取模型即取得前沿等級漏洞掃描能力）已記入 [[entities/claude-security]]，非本頁範圍。 |
 | 2026-08-21 | **今日彙整**：**v2.1.238** 發布，新增 `keybindingFlavor` 設定：設為 `"readline"` 時可讓提示列中的 Ctrl+W 依 Bash 慣例刪除到前一個空白字元，預設值 `"classic"` 行為不變，已記入版本表並提報 [[feature-radar]]。同日 anthropic-sdk-python 正式發布 **v1.0.0**，⚠️ **Breaking change**：client 升級至 httpx2，官方未提供明確遷移時程，僅建議升級前查閱完整 changelog，已記入版本表並提報 [[feature-radar]]。已知問題互動數更新 1 則：Cowork VM 於 Windows ARM64（Snapdragon）無法啟動（issue #40198，13 個讚 → 68 則留言／反應）；新增已知問題 1 則：多起 API 連線錯誤彙整回報（issue #4297，48 則留言／反應，Windows 11、Anthropic API 平台）。Official Docs 再次更新 Claude Code Desktop 說明頁（`code.claude.com/docs/en/desktop.md`），內容涵蓋既有已追蹤功能（並行 session／Git 隔離、拖放式面板配置、內建終端機與檔案編輯器、side chat、電腦操作、行動端 Dispatch session、視覺化 diff 審查、app 預覽、PR 監控、connectors、企業設定），與 08-18 該頁首次記錄時同屬既有功能彙整、未見新指令/旗標，不進 feature-radar。Anthropic Status 通報 2 起同日已解決事故：多模型請求錯誤升高（08-20 19:16–19:42 UTC）、Google connectors（Sheets/Docs/Slides/Chat）錯誤升高（08-20 18:32–19:01 UTC），皆同日修復，重要性低未列入已知問題。 |
