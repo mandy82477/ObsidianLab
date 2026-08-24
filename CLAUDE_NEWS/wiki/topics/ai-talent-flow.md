@@ -3,11 +3,11 @@ page: "topics/ai-talent-flow"
 kind: "topic"
 status: "ongoing"
 domain: "💼 商業"
-last_updated: "2026-08-23"
-last_news_update: "2026-08-23"
+last_updated: "2026-08-24"
+last_news_update: "2026-08-24"
 status_main: "ongoing"
 days_since_news: 0
-inbound_links: 18
+inbound_links: 17
 attribution_count: 3
 attribution_last: "2026-08-23"
 top_source: "google-news"

@@ -6,14 +6,14 @@ domain: "🛠️ 工具/功能"
 last_updated: "2026-08-20"
 last_news_update: "2026-08-20"
 status_main: "ongoing"
-days_since_news: 3
+days_since_news: 4
 inbound_links: 27
 attribution_count: 18
 attribution_last: "2026-08-20"
 top_source: "reddit"
 pending_count: 2
-pending_overdue: 0
-pending_next_review: "2026-08-24"
+pending_overdue: 2
+pending_next_review: null
 pending_signalled: 0
 signal: "健康"
 generated_by: "scripts/gen_wiki_frontmatter.py"

@@ -7,14 +7,14 @@ domain: "👤 人物"
 last_updated: "2026-08-15"
 last_news_update: "2026-08-04"
 status_main: "active"
-days_since_news: 19
+days_since_news: 20
 inbound_links: 22
 attribution_count: 5
 attribution_last: "2026-08-04"
 top_source: "google-news"
 pending_count: 3
-pending_overdue: 0
-pending_next_review: "2026-08-24"
+pending_overdue: 3
+pending_next_review: null
 pending_signalled: 0
 signal: "健康"
 generated_by: "scripts/gen_wiki_frontmatter.py"

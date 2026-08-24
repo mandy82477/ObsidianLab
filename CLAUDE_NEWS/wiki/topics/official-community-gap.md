@@ -12,8 +12,8 @@ attribution_count: 8
 attribution_last: "2026-08-23"
 top_source: "github-issues"
 pending_count: 2
-pending_overdue: 0
-pending_next_review: "2026-08-24"
+pending_overdue: 2
+pending_next_review: null
 pending_signalled: 0
 signal: "健康"
 generated_by: "scripts/gen_wiki_frontmatter.py"

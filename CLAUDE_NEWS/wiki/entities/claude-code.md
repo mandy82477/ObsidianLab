@@ -8,9 +8,9 @@ last_updated: "2026-08-24"
 last_news_update: "2026-08-24"
 status_main: "active"
 days_since_news: 0
-inbound_links: 71
-attribution_count: 341
-attribution_last: "2026-08-23"
+inbound_links: 72
+attribution_count: 346
+attribution_last: "2026-08-24"
 top_source: "github-issues"
 pending_count: 22
 pending_overdue: 0

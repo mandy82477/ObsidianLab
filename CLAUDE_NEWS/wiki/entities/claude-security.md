@@ -7,14 +7,14 @@ domain: "🛠️ 工具/功能"
 last_updated: "2026-08-22"
 last_news_update: "2026-08-22"
 status_main: "beta"
-days_since_news: 1
+days_since_news: 2
 inbound_links: 13
 attribution_count: 3
 attribution_last: "2026-08-22"
 top_source: "google-news"
 pending_count: 2
-pending_overdue: 0
-pending_next_review: "2026-08-24"
+pending_overdue: 2
+pending_next_review: null
 pending_signalled: 0
 signal: "健康"
 generated_by: "scripts/gen_wiki_frontmatter.py"
