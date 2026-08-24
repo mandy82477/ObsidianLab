@@ -1,0 +1,432 @@
+{
+  "date": "2026-08-24",
+  "generatedAt": "2026-08-24 13:08 UTC",
+  "articleCount": 54,
+  "sourceCount": "13/13",
+  "bulletin": "",
+  "topStories": [
+    {
+      "title": "The One Line in Anthropic's S-1 That Amazon Investors Should Read First",
+      "url": "https://news.google.com/rss/articles/CBMilwFBVV95cUxQZnZNMXhfbDFCLU1UTnhqaGxMdFBhQkZGYlJfdDJXZm5GaTd0T0lIaDc5QTd5RUVwRUkxcUlOM3EySWctY1ZITDAzWE9raFJUS25aYlpHajVNSl9TRGVPUk9WTC1SMUwtSXlVQm9EaFFVeW5pTVFWUlNmOW1QcW55dG5iNmdCTHFvMkI2RWhCN3RGcUlqd0hn?oc=5",
+      "source": "Google News / Yahoo Finance",
+      "time": "08/24 09:50",
+      "sentiment": "",
+      "body": "《Yahoo Finance》分析 Anthropic S-1 申報文件中，認為亞馬遜投資人最應優先留意的一句話（原文未提供具體引述內容）；同日《The Neuron》另有報導談及外界討論 Anthropic IPO 估值有機會超越 SpaceX 紀錄。",
+      "focusTags": []
+    },
+    {
+      "title": "huangruiteng/loopx",
+      "url": "https://github.com/huangruiteng/loopx",
+      "source": "GitHub Search",
+      "time": "5,067 星 · 08/24 10:43",
+      "sentiment": "",
+      "body": "GitHub Search 熱門清單出現一款主打橫跨 Codex、Claude Code 等多種 agent harness 的「長時程 agent 控制平面」開源專案，累積 5,067 星；同日另一款可同時啟動並串接多個 AI coding agent（Claude Code、Codex CLI、Gemini CLI 等）的工具 VibeAround 也上榜，累積 521 星。兩者皆為單一來源，尚無 fork 數或近期 commit 活躍度等佐證可查核，讀者可自行評估後再採用。",
+      "focusTags": [],
+      "sedimented": [
+        {
+          "id": "claude-code",
+          "pageType": "entity"
+        }
+      ]
+    },
+    {
+      "title": "Quoting Drew Breunig",
+      "url": "https://simonwillison.net/2026/Aug/23/drew-breunig/",
+      "source": "Blog / Simon Willison",
+      "time": "08/23 19:55",
+      "sentiment": "",
+      "body": "Simon Willison 引述 Drew Breunig 的文章觀點：在 Fable 推出之前，花太多心力優化 coding harness 或 context 策略顯得沒有必要——原文以「摩爾定律終結」為題，暗示 Fable 的出現改變了這個判斷（原文完整論證未見於摘要）。",
+      "focusTags": []
+    }
+  ],
+  "techUpdates": [
+    {
+      "title": "[Status] Elevated errors for multiple models",
+      "url": "https://status.claude.com/incidents/vgz5psbjmt1h",
+      "source": "Anthropic Status",
+      "time": "08/24 08:30",
+      "sentiment": "",
+      "body": "Anthropic 官方狀態頁公告，08/24 04:50–07:36 UTC 期間多款 Claude 模型（含 Opus 5）請求出現錯誤率上升，事故已於 08:30 UTC 確認解決。",
+      "focusTags": [
+        "[風險警示]"
+      ]
+    }
+  ],
+  "mediaReports": [
+    {
+      "title": "Anthropic Expands Mythos 5 Access to More Defenders, Unveils $35M Open Source Fund",
+      "url": "https://news.google.com/rss/articles/CBMirwFBVV95cUxQY1E3Um1LaDRvamd5R3M4TDFIdEpIQ1dSY09DV2tsM0FXOTMtUVkxcnlBZ2ZKeEdOcXhYOGtRdFNYQkhab1drZE9WZzhDeHBwbl9vQzlUV29vLXVfcG9WNU5RWDV1cEdHMDBDb0xBVjZiaE5UVDFmeG93OUhpRzRuQnJYOGswcHJwVkJrS1dBeTRSUk5LWXo1S01LVmhLMHZPZU9WWmNhOVRqZ3EwSjZv0gG0AUFVX3lxTE5qdktfNnExbm9jVUYxMlYtMHZ4WmpldE5Qbzg2Ujljdk12NUpTODFLSHNYMEVXUDNIc29lVmNJSGNvS2FuWVBBRW11UlBqTHFhbUhMNURHVEpqUWFSX2RpRlZvSTBzMXZkMjFFVkhXRW1EbjBUZm9QeFJibnZWR242VUhNa1AxN2xuMUxQUGxocGNEVjNVWlZiQjNrRjI4Z2lIOWRMOHNGN0RvZHJvdVkxZF9XLQ?oc=5",
+      "source": "Google News / SecurityWeek",
+      "time": "08/24 07:18",
+      "sentiment": "",
+      "body": "《SecurityWeek》報導 Anthropic 擴大 Mythos 5 安全模型給更多防禦端使用者存取，並宣布成立 3,500 萬美元開源資安基金。",
+      "focusTags": [
+        "[重大事件]"
+      ]
+    },
+    {
+      "title": "Claude-maker hires former Google TPU chief Amir Salek",
+      "url": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxPdXJlWHJEOE9lVzdhLW1md0RZMTMzVkJGc2wwX3ZsOTR6eGFrbnRud2N0SElkeHNrRm1WdXc4ZVBKQ00wS21kMmJGYzNyTDlieEYwakZQbnB4Z19pYl81Z3duYUcyQ1ZoQnkyUnJKMUtvOVF2enhmbUhfaW5NTy1DeVpZTXRIdGQ5NUxTVlhfRUF4emRsblpqakhDZGVwbXF0NzN0VDRUZ1dUdHRIcjVlSkJVbVcwdWFza0lHaU40U1Q?oc=5",
+      "source": "Google News / citybiz",
+      "time": "08/24 09:45",
+      "sentiment": "",
+      "body": "《citybiz》報導 Anthropic 延攬前 Google 自研 TPU 團隊負責人 Amir Salek，外界解讀為公司評估自研晶片、跨入硬體領域的訊號。",
+      "focusTags": [
+        "[重大事件]"
+      ]
+    },
+    {
+      "title": "Claude down? Users report partial outage, degraded performance",
+      "url": "https://news.google.com/rss/articles/CBMiswFBVV95cUxOLWhsTWVGTExHVXlFSnpqS1NkOHRWYm9YbWV0SVhEMW9lUV9nTjFXN2VXczA5VXdyZDZaRmhTSVdfVW90V0xKZ3EzRFp2aDVqRXVrejlBZEM0cDEyckYxa1pDME10R1BobENSWVN6ODdRREdPTU1SUU41SmdKdDlPXzNjbkpsZW5IT08tZ2ctdlh1RDJGY0pjLVBPRFVfc0h4TEpRMWZWOGZ5Z0ZsUGtzWmR1TdIBswFBVV95cUxOLWhsTWVGTExHVXlFSnpqS1NkOHRWYm9YbWV0SVhEMW9lUV9nTjFXN2VXczA5VXdyZDZaRmhTSVdfVW90V0xKZ3EzRFp2aDVqRXVrejlBZEM0cDEyckYxa1pDME10R1BobENSWVN6ODdRREdPTU1SUU41SmdKdDlPXzNjbkpsZW5IT08tZ2ctdlh1RDJGY0pjLVBPRFVfc0h4TEpRMWZWOGZ5Z0ZsUGtzWmR1TQ?oc=5",
+      "source": "Google News / CNBC TV18",
+      "time": "08/24 09:39",
+      "sentiment": "",
+      "body": "《CNBC TV18》報導 Claude 用户反映聊天、程式碼與 API 服務出現部分中斷與效能下降，時間點與官方事故公告一致。",
+      "focusTags": []
+    },
+    {
+      "title": "Anthropic's Claude Models Resume Normal System Operations After Elevated Errors on Requests",
+      "url": "https://news.google.com/rss/articles/CBMi3AFBVV95cUxQSldvSDhSY2dnVTB0QjJuLUk0LXlabHpNeWthMzFqZHl5ZEhoVng5S19KT3RXdDlxam9zRTdEM0Z6ZGt1YWhzWjByY2FWRkQyTFdhX2tyU3pMdlBmM01LeUlxM2IwXzFZQVlLRWxWYmpLMDFQV0N1dmY1YzlPeWRtM01ZWE82RWFjRTVya29jbEFNclhycHpINExvaTVQcGtreDJhMmdHV0Y1eE4xdkE0YU5pVzBaaS1oajVCejc1QmZMT2JvZHlXcVNKYjBqUzZYaHhZY2RWME1EZEhm?oc=5",
+      "source": "Google News / marketscreener.com",
+      "time": "08/24 09:33",
+      "sentiment": "",
+      "body": "《marketscreener.com》報導 Claude 模型已於錯誤率上升事件後恢復正常運作，呼應官方狀態頁的事故解決公告。",
+      "focusTags": []
+    },
+    {
+      "title": "Anthropic Says Australia is Falling Behind in Claude Coding Use",
+      "url": "https://news.google.com/rss/articles/CBMitAFBVV95cUxQZ2djVTJHc1JOcTZlcVNpMzNaM0RzbHlsSlFWazY0UzRyeWNHQ2xGRnRuSlJYalZab1J3WlZhNVZJYS1MRDUwMEhySE5VTG5hMlozOE5VTG5iMFp0bm1LMURlOEdITjBhV1lSbzhxVklKN2JMTllPMVpVQS1DRVZDd3ZWbDJ4SlptYUYzaExKTEI4LW5JY0hHdHFxbVdiV3pOdW5rNUhPVHdNUFA1RGw1UEdHUXY?oc=5",
+      "source": "Google News / Bloomberg.com",
+      "time": "08/24 05:18",
+      "sentiment": "",
+      "body": "《Bloomberg》報導 Anthropic 指出澳洲在 Claude 程式開發工具的採用速度上落後其他市場（原文未提供具體數字佐證）。",
+      "focusTags": []
+    },
+    {
+      "title": "UT Research Foundation files patent infringement lawsuit against AI giant Anthropic",
+      "url": "https://news.google.com/rss/articles/CBMivwFBVV95cUxNMVhqRWwwb2dRLVNBeW9UREdnTlVoWVdVOTlUR28zei1QMC1HOVFXaURySlZBVlRVTW1aY1Myd1dmUFZweXNVVmkzVlBhMDhUYm9nOWtkaDlWcExiWTZ4S3ZjN3ZRVU1MZXZockluNUJQMjJ5NVpxbDA2TDlRb1l3SjAtTWh2RkVOVEdkU2l0cUltSk1aS1c2eTFvU2x5clgyVkx6RFRTVUJvcDRJbnhMbTVJWk95eWk1Y3U1WElPRQ?oc=5",
+      "source": "Google News / The Daily Beacon",
+      "time": "08/24 02:39",
+      "sentiment": "",
+      "body": "《The Daily Beacon》報導德州大學研究基金會對 Anthropic 提起專利侵權訴訟，原文未載明涉及哪一項專利或具體主張。",
+      "focusTags": []
+    },
+    {
+      "title": "Anthropic Issues Public Apology Over Claude Reasoning Capability Claim",
+      "url": "https://news.google.com/rss/articles/CBMiU0FVX3lxTE85cU9HVUk1OFUyOVlzZmpZalZwYl9LLVhmcUNQT0xqMTNGd1hSNHZrdURhb0ZXcGtFVnItUm9pckRaXzFWc0VxU09NdnBfRGpEWHk0?oc=5",
+      "source": "Google News / 36 Kr",
+      "time": "08/24 02:33",
+      "sentiment": "",
+      "body": "中國科技媒體《36氪》以聳動標題報導 Anthropic 發布道歉聲明，稱有證據顯示 Claude 推理能力曾遭「秘密降低」；本則為單一中國媒體轉述，摘要未提供具體證據內容或官方原始聲明連結，讀者宜自行查核原文後再判斷可信度。",
+      "focusTags": []
+    },
+    {
+      "title": "Anthropic opens Claude Academy with free AI courses and workplace rollout guides",
+      "url": "https://news.google.com/rss/articles/CBMivgFBVV95cUxQQ2xlR05ScHBEWGpOdVRLZ01xTGhrWnhuS1gtTUtwdDItZkRTSkExZFVOaWFrUmdFMDg0SkZzSWhVMFVpRlE0R2NkS1U3eElTM1hJdW9QeWF2eldueG9iQTVTc2w3SjhNaUpnRk5aalQzamNGTHBnWFpqZFVJem1xdTFOelBULWpGRlVDMU5Sc2JFSjZRUzY5cXotSWxZMjlwZzNmX3dCb29HOW9GSlhta0ZnUEw0ekczdF9Zd2dn?oc=5",
+      "source": "Google News / EdTech Innovation Hub",
+      "time": "08/23 23:10",
+      "sentiment": "",
+      "body": "《EdTech Innovation Hub》報導 Anthropic 推出「Claude Academy」，提供免費 AI 課程與企業導入指南。",
+      "focusTags": []
+    },
+    {
+      "title": "Why are 'paranoid' Claude agents launching a turf war and deploying self-replicating malware against each other? The experts weigh in",
+      "url": "https://news.google.com/rss/articles/CBMi_gFBVV95cUxNc1JXY1E3NFVjOUVFcW56UUtBVGxTeGVDcHAwOW0taEpUM3RJTXdWSmVTMFZUZzZKX1FqMTBvOW81eWN4YV81cDJfeDdUYjM0U0NFYVFIWUtGZE05Y1F5XzRwbTFmVTlCUlBvMkllWDAtQXRGRS1WQXVieGRobkdXTFFqTmtSS3Y5Um1hMTlNWFVQWUh5RVMyeWc4RUpjeVFjSHlnNHNnLVFSRnZlOV8tQVY5b2dNR3FwbnJqVmMwVWpDVFNpeTlyWVU3eHpvN3N5eVpuOUcwa0JpZWp6c0pzb2t5bVdweWk0NVBibFFSUkFLd1c5VzJMcVlpbnEzQQ?oc=5",
+      "source": "Google News / TechRadar",
+      "time": "08/23 11:00",
+      "sentiment": "",
+      "body": "《TechRadar》一篇專題報導以「多個 Claude agent 互相發動地盤爭奪、部署自我複製惡意程式」為題，訪問多位專家對此現象的看法；標題用語為報導方框架描述，摘要未提供具體實驗設計或攻擊鏈細節，屬觀察性專題而非漏洞揭露。",
+      "focusTags": []
+    },
+    {
+      "title": "Scoop: Anthropic asks about mission versus money in candidate interviews",
+      "url": "https://news.google.com/rss/articles/CBMijgFBVV95cUxPdklqampjeURCbHdfR3J2ZEdOUG1hdnF6T3dMd0lKbVQyRE9ESWFsNkFxRnBxNlRnY1RLd1duUEZabVRvMWhHWXh4ZzhRNm1haC1XY2hmZF90LVRZVzItdTVudUtBb2g3eWZpXzNwdDI5RVVyR29FeWxJNXFneVJWZ0xQTGtZdFNQTjlGRHpn?oc=5",
+      "source": "Google News / Axios",
+      "time": "08/24 09:03",
+      "sentiment": "",
+      "body": "《Axios》獨家報導 Anthropic 在面試候選人時，會詢問其如何看待「使命」與「金錢」之間的優先順序。",
+      "focusTags": []
+    }
+  ],
+  "discussions": [
+    {
+      "title": "[BUG] [URGENT!!!] Claude Code is hanging / freezing / stuck on heaps of prompts for 5-20minutes or more.",
+      "url": "https://github.com/anthropics/claude-code/issues/26224",
+      "source": "GitHub Issues / claude-code",
+      "time": "😤 · 129 留言 · 08/23 11:27",
+      "sentiment": "",
+      "body": "GitHub Issue 回報 Claude Code 在大量提示情境下會凍結卡住 5–20 分鐘以上，累積 129 則留言反應，為今日 GitHub Issue 互動量最高者。",
+      "focusTags": [
+        "[持續追蹤]"
+      ],
+      "sedimented": [
+        {
+          "id": "claude-code",
+          "pageType": "entity"
+        }
+      ]
+    },
+    {
+      "title": "FEATURE: Multi-window support in Claude Code Desktop",
+      "url": "https://github.com/anthropics/claude-code/issues/30154",
+      "source": "GitHub Issues / claude-code",
+      "time": "😐 · 238 留言 · 08/23 16:08",
+      "sentiment": "",
+      "body": "GitHub Issue 提案要求 Claude Code Desktop 支援在單一應用實例中開啟多個視窗，取代目前的單視窗＋側欄 session 管理方式，累積 238 則留言反應，為今日互動量最高的功能請求。",
+      "focusTags": [],
+      "sedimented": [
+        {
+          "id": "claude-code",
+          "pageType": "entity"
+        }
+      ]
+    },
+    {
+      "title": "Disable the welcome banner",
+      "url": "https://github.com/anthropics/claude-code/issues/2254",
+      "source": "GitHub Issues / claude-code",
+      "time": "😤 · 138 留言 · 08/23 21:19",
+      "sentiment": "",
+      "body": "社群反覆回報希望能關閉 CLI 每次啟動顯示的歡迎畫面與提示，認為佔用終端機版面，累積 138 則留言反應。",
+      "focusTags": []
+    },
+    {
+      "title": "[FEATURE] Multi-agent collaboration across machines (Agent-to-Agent protocol)",
+      "url": "https://github.com/anthropics/claude-code/issues/28300",
+      "source": "GitHub Issues / claude-code",
+      "time": "🤔 · 41 留言 · 08/24 05:35",
+      "sentiment": "",
+      "body": "GitHub Issue 提案建議 Claude Code 支援跨機器的 agent 對 agent 協作協定，累積 41 則留言反應。",
+      "focusTags": [],
+      "sedimented": [
+        {
+          "id": "claude-code",
+          "pageType": "entity"
+        }
+      ]
+    },
+    {
+      "title": "[BUG] Windows/MSIX 1.28929.0: cross-session messages land in the target's composer but are never submitted — session never responds",
+      "url": "https://github.com/anthropics/claude-code/issues/86069",
+      "source": "GitHub Issues / claude-code",
+      "time": "😤 · 8 留言 · 08/23 09:13",
+      "sentiment": "",
+      "body": "Windows MSIX 版本回報，跨 session 訊息會進到目標 session 的輸入框但不會自動送出，導致該 session 無回應，累積 8 則留言反應。",
+      "focusTags": []
+    },
+    {
+      "title": "How I Used Claude Code to Hunt Down a Memory Leak That Took Down Prod",
+      "url": "https://dev.to/yureki_lab/how-i-used-claude-code-to-hunt-down-a-memory-leak-that-took-down-prod-2cpf",
+      "source": "dev.to / #claudecode",
+      "time": "😊 · 3 讚 · 08/08 14:33",
+      "sentiment": "",
+      "body": "開發者第一手實作分享：一次生產環境記憶體洩漏事故中，改用 Claude Code 系統性分析 heap snapshot 而非憑猜測排查，記錄下實際除錯過程與四項心得。",
+      "focusTags": [],
+      "sedimented": [
+        {
+          "id": "claude-code",
+          "pageType": "entity"
+        }
+      ]
+    },
+    {
+      "title": "Too many Claude Code skills? How the listing budget decides which descriptions Claude sees",
+      "url": "https://dev.to/rulestack/too-many-claude-code-skills-how-the-listing-budget-decides-which-descriptions-claude-sees-4a6m",
+      "source": "dev.to / #claudecode",
+      "time": "🤔 · 2 讚 · 07/27 16:30",
+      "sentiment": "",
+      "body": "文章拆解 Claude Code 的 skill 列表載入機制：單筆 description／when_to_use 上限 1,536 字元，全體清單另有隨 context window 等比例調整的總預算上限，skill 數量一多會有描述被截斷或排擠出清單的風險。",
+      "focusTags": [],
+      "sedimented": [
+        {
+          "id": "claude-code",
+          "pageType": "entity"
+        }
+      ]
+    },
+    {
+      "title": "Implementing Watermarking for Language Models [P]",
+      "url": "https://www.reddit.com/r/MachineLearning/comments/1vw18ys/implementing_watermarking_for_language_models_p/",
+      "source": "Reddit / r/MachineLearning · 週熱門",
+      "time": "🤔 · 08/23 08:09",
+      "sentiment": "",
+      "body": "週熱門 Reddit 貼文分享作者實作 SynthID-Text 風格語言模型浮水印的教學專案，並提及此舉呼應 Anthropic 先前公開表態將為模型輸出加入浮水印機制的方向。",
+      "focusTags": []
+    },
+    {
+      "title": "I replaced Claude Code's auto-memory with an Obsidian vault I curate by hand (LLM Wiki)",
+      "url": "https://www.reddit.com/r/ClaudeAI/comments/1vwx5i6/i_replaced_claude_codes_automemory_with_an/",
+      "source": "Reddit / r/ClaudeAI",
+      "time": "😊 · 08/24 08:46",
+      "sentiment": "",
+      "body": "Reddit 使用者分享改用手動維護的 Obsidian vault（LLM Wiki 形式）取代 Claude Code 內建自動記憶功能的實作心得。",
+      "focusTags": [],
+      "sedimented": [
+        {
+          "id": "claude-code",
+          "pageType": "entity"
+        }
+      ]
+    }
+  ],
+  "billing": [],
+  "focus": [
+    {
+      "tag": "[風險警示]",
+      "text": "Claude 多款模型（含 Opus 5）今日一度出現請求錯誤率上升，Anthropic 官方狀態頁顯示事故發生於 04:50–07:36 UTC，已於 08:30 UTC 確認解決。",
+      "ref_urls": [
+        "https://status.claude.com/incidents/vgz5psbjmt1h"
+      ]
+    },
+    {
+      "tag": "[重大事件]",
+      "text": "Anthropic 宣布擴大 Mythos 5 安全模型給更多防禦端使用者存取，並成立 3,500 萬美元開源資安基金。",
+      "ref_urls": [
+        "https://news.google.com/rss/articles/CBMirwFBVV95cUxQY1E3Um1LaDRvamd5R3M4TDFIdEpIQ1dSY09DV2tsM0FXOTMtUVkxcnlBZ2ZKeEdOcXhYOGtRdFNYQkhab1drZE9WZzhDeHBwbl9vQzlUV29vLXVfcG9WNU5RWDV1cEdHMDBDb0xBVjZiaE5UVDFmeG93OUhpRzRuQnJYOGswcHJwVkJrS1dBeTRSUk5LWXo1S01LVmhLMHZPZU9WWmNhOVRqZ3EwSjZv0gG0AUFVX3lxTE5qdktfNnExbm9jVUYxMlYtMHZ4WmpldE5Qbzg2Ujljdk12NUpTODFLSHNYMEVXUDNIc29lVmNJSGNvS2FuWVBBRW11UlBqTHFhbUhMNURHVEpqUWFSX2RpRlZvSTBzMXZkMjFFVkhXRW1EbjBUZm9QeFJibnZWR242VUhNa1AxN2xuMUxQUGxocGNEVjNVWlZiQjNrRjI4Z2lIOWRMOHNGN0RvZHJvdVkxZF9XLQ?oc=5"
+      ]
+    },
+    {
+      "tag": "[持續追蹤]",
+      "text": "Claude Code 出現「Hang／凍結 5–20 分鐘」的緊急高互動 bug 回報，GitHub Issue 已累積上百則留言，為今日社群互動量最高的技術問題。",
+      "ref_urls": [
+        "https://github.com/anthropics/claude-code/issues/26224"
+      ]
+    },
+    {
+      "tag": "[重大事件]",
+      "text": "有報導指 Anthropic 延攬前 Google 自研 TPU 團隊負責人 Amir Salek，外界解讀為公司評估自研晶片、跨入硬體領域的訊號。",
+      "ref_urls": [
+        "https://news.google.com/rss/articles/CBMiwAFBVV95cUxPdXJlWHJEOE9lVzdhLW1md0RZMTMzVkJGc2wwX3ZsOTR6eGFrbnRud2N0SElkeHNrRm1WdXc4ZVBKQ00wS21kMmJGYzNyTDlieEYwakZQbnB4Z19pYl81Z3duYUcyQ1ZoQnkyUnJKMUtvOVF2enhmbUhfaW5NTy1DeVpZTXRIdGQ5NUxTVlhfRUF4emRsblpqakhDZGVwbXF0NzN0VDRUZ1dUdHRIcjVlSkJVbVcwdWFza0lHaU40U1Q?oc=5"
+      ]
+    }
+  ],
+  "topicRadar": [
+    {
+      "title": "Prompt Injection Is Now an RCE Primitive",
+      "url": "https://news.google.com/rss/articles/CBMicEFVX3lxTE1ERmd0OUJNaDBqMk9SZ1hSMDJGQ1Q5dnB6bTU5a0tDTVZVd3JrcmE4Uk5fa0tKVlJHWFBPNUtScWtzQjl2S2I0Q29SdU9ubkJ5aW5mNUE5c0wwQndaU05Idnpfck1FUmRXdlpxOXExS1Y?oc=5",
+      "body": "HackerNoon 探討提示注入攻擊已演化為可被用來達成任意程式碼執行（RCE）的攻擊原語（→ AI Agent 安全）",
+      "topic": "",
+      "topicPage": null
+    }
+  ],
+  "sourceStatus": [
+    {
+      "name": "Anthropic Status",
+      "ok": true,
+      "count": 1
+    },
+    {
+      "name": "Anthropic Blog",
+      "ok": true,
+      "count": 0
+    },
+    {
+      "name": "Hacker News",
+      "ok": true,
+      "count": 2
+    },
+    {
+      "name": "GitHub Issues",
+      "ok": true,
+      "count": 15
+    },
+    {
+      "name": "Google News",
+      "ok": true,
+      "count": 39
+    },
+    {
+      "name": "dev.to",
+      "ok": true,
+      "count": 14
+    },
+    {
+      "name": "Official Skills",
+      "ok": true,
+      "count": 0
+    },
+    {
+      "name": "Claude API Release Notes",
+      "ok": true,
+      "count": 0
+    },
+    {
+      "name": "Topic Watch",
+      "ok": true,
+      "count": 1
+    },
+    {
+      "name": "Blogroll",
+      "ok": true,
+      "count": 2
+    },
+    {
+      "name": "GitHub",
+      "ok": true,
+      "count": 32
+    },
+    {
+      "name": "Official Docs",
+      "ok": true,
+      "count": 0
+    },
+    {
+      "name": "Reddit",
+      "ok": true,
+      "count": 11
+    }
+  ],
+  "preview": "Claude 多款模型（含 Opus 5）今日一度出現請求錯誤率上升，Anthropic 官方狀態頁顯示事故發生於 04:50–07:36 UTC，已於 08:30 UTC 確認解決。",
+  "sedimentedToday": [
+    {
+      "id": "claude-code",
+      "name": "Claude Code",
+      "pageType": "entity"
+    },
+    {
+      "id": "claude-skills",
+      "name": "Claude Skills",
+      "pageType": "entity"
+    },
+    {
+      "id": "mythos",
+      "name": "Claude Mythos",
+      "pageType": "entity"
+    },
+    {
+      "id": "ai-agent-safety",
+      "name": "AI Agent 安全與可靠性",
+      "pageType": "topic"
+    },
+    {
+      "id": "ai-talent-flow",
+      "name": "AI 實驗室人才流動",
+      "pageType": "topic"
+    },
+    {
+      "id": "anthropic-business",
+      "name": "Anthropic 商業健康度",
+      "pageType": "topic"
+    },
+    {
+      "id": "community-tech-discussions",
+      "name": "社群技術討論趨勢",
+      "pageType": "topic"
+    },
+    {
+      "id": "competitor-landscape",
+      "name": "AI 編碼工具競品動態",
+      "pageType": "topic"
+    },
+    {
+      "id": "model-comparison",
+      "name": "Claude 模型選型對照",
+      "pageType": "topic"
+    },
+    {
+      "id": "official-community-gap",
+      "name": "官方功能 vs 社群痛點缺口分析",
+      "pageType": "topic"
+    }
+  ]
+}

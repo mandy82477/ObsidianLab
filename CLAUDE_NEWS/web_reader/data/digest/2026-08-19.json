@@ -459,11 +459,6 @@
   "preview": "Claude 服務兩天內二度出現異常：Anthropic 狀態頁顯示 8/18 16:11–18:23 UTC 多款模型一度效能下降、已修復；8/19 再傳 Claude Opus 5 與 Claude Haiku 4.5 效能異常，目前標記為監控中；用戶端同步回報出現「容量已滿」錯誤訊息。",
   "sedimentedToday": [
     {
-      "id": "claude-skills",
-      "name": "Claude Skills",
-      "pageType": "entity"
-    },
-    {
       "id": "fable-5",
       "name": "Claude Fable 5",
       "pageType": "entity"

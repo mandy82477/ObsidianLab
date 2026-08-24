@@ -50,13 +50,7 @@
       "time": "08/23 10:30",
       "sentiment": "",
       "body": "文件索引新增 2 頁週報：Week 33（8/10–14）與 Week 34（8/17–21）「近期更新」頁面，新增頁通常代表新功能或設定項上線，建議開啟確認實際內容。",
-      "focusTags": [],
-      "sedimented": [
-        {
-          "id": "claude-code",
-          "pageType": "entity"
-        }
-      ]
+      "focusTags": []
     }
   ],
   "mediaReports": [
@@ -147,13 +141,7 @@
       "time": "😊 · 62 分 · 08/22 18:43",
       "sentiment": "",
       "body": "作者分享用 Claude Code 協助開發的瀏覽器端小工具，可為 Logo 加上僅 HDR 螢幕才看得到的高亮效果，累積 62 分。",
-      "focusTags": [],
-      "sedimented": [
-        {
-          "id": "claude-code",
-          "pageType": "entity"
-        }
-      ]
+      "focusTags": []
     },
     {
       "title": "Quoting Linus Torvalds",
@@ -171,13 +159,7 @@
       "time": "🤔 · 08/19 04:48",
       "sentiment": "",
       "body": "一則週熱門 Reddit 貼文提問，為何 Claude Code 常先估計任務需要數天工時，實際執行卻僅需約 20 分鐘完成，詢問是否有其他使用者也遇到相同現象。",
-      "focusTags": [],
-      "sedimented": [
-        {
-          "id": "claude-code",
-          "pageType": "entity"
-        }
-      ]
+      "focusTags": []
     }
   ],
   "billing": [],
@@ -283,43 +265,13 @@
       "pageType": "entity"
     },
     {
-      "id": "claude-code",
-      "name": "Claude Code",
-      "pageType": "entity"
-    },
-    {
       "id": "opus-5",
       "name": "Claude Opus 5",
       "pageType": "entity"
     },
     {
-      "id": "ai-talent-flow",
-      "name": "AI 實驗室人才流動",
-      "pageType": "topic"
-    },
-    {
-      "id": "anthropic-business",
-      "name": "Anthropic 商業健康度",
-      "pageType": "topic"
-    },
-    {
-      "id": "community-tech-discussions",
-      "name": "社群技術討論趨勢",
-      "pageType": "topic"
-    },
-    {
-      "id": "competitor-landscape",
-      "name": "AI 編碼工具競品動態",
-      "pageType": "topic"
-    },
-    {
       "id": "enterprise-tool-tracker",
       "name": "大型企業 AI 編碼工具使用追蹤",
-      "pageType": "topic"
-    },
-    {
-      "id": "official-community-gap",
-      "name": "官方功能 vs 社群痛點缺口分析",
       "pageType": "topic"
     }
   ]
