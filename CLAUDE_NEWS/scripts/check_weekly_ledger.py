@@ -282,10 +282,116 @@ def check_deepdive(report: list[str]) -> bool:
     return ok
 
 
+# ── 頭條敘事規則（規格：weekly-report.md 第 (1) 段，W35 起生效）───────────────
+#
+# 舊期（W30–W34）在規則立下前寫成，已凍結——回溯檢查只會產出一批永遠不修的
+# ❌，把真訊號淹掉，故以期號閘門排除。字串比較對 YYYY-Wnn 格式即字典序即時序。
+HEADLINE_RULES_SINCE = "2026-W35"
+
+# 頭條節＝「## 一、…」到下一個 ## 之間。
+HEADLINE_SECTION_RE = re.compile(r"^##\s*一、[^\n]*\n(.*?)(?=^##\s)", re.MULTILINE | re.DOTALL)
+
+# 規則 7：跨期收束模板。連兩期命中同一句型骨架才算違規（單期首次使用合法）。
+COLLAPSE_TEMPLATE_RE = re.compile(r"把[一二三四五六七八九十\d]+條線並排")
+
+# 規則 9：日期句首與段內遞增。只認 MM-DD 形式（08-17），不碰 8/31 這類到期日寫法。
+DATE_LEAD_RE = re.compile(r"^\s*\d{2}-\d{2}")
+DATE_RE = re.compile(r"\b(\d{2})-(\d{2})\b")
+
+# 規則 10：粗體預算。
+HEADLINE_BOLD_MAX = 2
+HEADLINE_BOLD_SPAN_MAX = 15
+
+# 規則 8：同段 ≥2 個同單位金額時，每個數字 ±12 字內要有角色詞。
+MONEY_RE = re.compile(r"\d[\d,.]*\s*[億兆]")
+ROLE_WORDS = ("已實現", "年化", "單季", "預測", "估值", "額度", "一次性", "合約總額", "收購價")
+ROLE_WINDOW = 12
+
+
+def _headline_paragraphs(text: str) -> list[str]:
+    m = HEADLINE_SECTION_RE.search(text)
+    if not m:
+        return []
+    return [p.strip() for p in re.split(r"\n\s*\n", m.group(1)) if p.strip() and not p.strip().startswith(("|", ">"))]
+
+
+def check_headline(report: list[str], weekly_dir: Path = WEEKLY_DIR) -> bool:
+    """頭條敘事的機械規則（規格第 (1) 段帶 🔧 者）。
+
+    硬擋（❌）只留誤判率低的三項：跨期模板、日期句首、粗體數量；
+    段內日期遞增與角色詞誤判空間較大（前情錨合法回指、金額語境多樣），只 WARN。
+    """
+    ok = True
+    files = sorted(weekly_dir.glob("[0-9][0-9][0-9][0-9]-W[0-9][0-9].md")) if weekly_dir.exists() else []
+    for i, path in enumerate(files):
+        if path.stem < HEADLINE_RULES_SINCE:
+            continue
+        text = path.read_text(encoding="utf-8-sig")
+        paras = _headline_paragraphs(text)
+        if not paras:
+            report.append(f"  ⚠️ {path.stem}：找不到「## 一、」頭條節，頭條規則未檢查")
+            continue
+        section = "\n\n".join(paras)
+
+        # 規則 7：與上一期（不受生效閘限制——上期是比對基準，不是受檢對象）同構
+        if i > 0 and COLLAPSE_TEMPLATE_RE.search(section):
+            prev_text = files[i - 1].read_text(encoding="utf-8-sig")
+            if COLLAPSE_TEMPLATE_RE.search(prev_text):
+                report.append(
+                    f"  ❌ {path.stem}：收束句型「把 N 條線並排」與上期（{files[i - 1].stem}）同構"
+                    f"——換一種收束方式（時間因果鏈／反問／直接給結論）"
+                )
+                ok = False
+
+        for n, para in enumerate(paras, 1):
+            # 規則 9a：每段日期開頭句 ≤1
+            sentences = [s for s in re.split(r"[。；]", para) if s.strip()]
+            leads = sum(1 for s in sentences if DATE_LEAD_RE.match(s))
+            if leads > 1:
+                report.append(
+                    f"  ❌ {path.stem}：頭條第 {n} 段有 {leads} 句以日期開頭（上限 1）"
+                    f"——其餘句事件先行、日期後置"
+                )
+                ok = False
+            # 規則 9b：段內日期非遞減（WARN——前情錨回指上週屬合法例外）
+            dates = [(int(a), int(b)) for a, b in DATE_RE.findall(para)]
+            if any(dates[j] > dates[j + 1] for j in range(len(dates) - 1)):
+                report.append(
+                    f"  ⚠️ {path.stem}：頭條第 {n} 段日期非由早到晚（{['-'.join(f'{x:02d}' for x in d) for d in dates]}）"
+                    f"——若非前情錨回指，代表混了兩條時間線，建議拆段"
+                )
+            # 規則 8：同段 ≥2 個金額，每個 ±12 字內要有角色詞（WARN）
+            monies = list(MONEY_RE.finditer(para))
+            if len(monies) >= 2:
+                for m2 in monies:
+                    ctx = para[max(0, m2.start() - ROLE_WINDOW): m2.end() + ROLE_WINDOW]
+                    if not any(w in ctx for w in ROLE_WORDS):
+                        report.append(
+                            f"  ⚠️ {path.stem}：頭條第 {n} 段「{m2.group()}」缺角色詞"
+                            f"（已實現／年化／單季／預測／估值／額度…）——同段多金額時讀者無從比較"
+                        )
+
+        # 規則 10：粗體預算
+        bolds = re.findall(r"\*\*([^*]+)\*\*", section)
+        if len(bolds) > HEADLINE_BOLD_MAX:
+            report.append(
+                f"  ❌ {path.stem}：頭條粗體 {len(bolds)} 處（上限 {HEADLINE_BOLD_MAX}）——只標數字／專名"
+            )
+            ok = False
+        for b in bolds:
+            if len(b) > HEADLINE_BOLD_SPAN_MAX:
+                report.append(
+                    f"  ⚠️ {path.stem}：頭條粗體「{b[:20]}…」長 {len(b)} 字（上限 {HEADLINE_BOLD_SPAN_MAX}）"
+                    f"——整句判斷加粗是把金句感用字重再放大一次"
+                )
+    return ok
+
+
 def main() -> int:
     report: list[str] = []
     ok = check(report)
     ok = check_deepdive(report) and ok
+    ok = check_headline(report) and ok
     out = _stdout()
     print("# check_weekly_ledger.py 報告\n", file=out)
     print("\n".join(report) if report else "  （無週報）", file=out)

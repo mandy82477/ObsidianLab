@@ -873,6 +873,34 @@
         "凍結"
       ],
       "_note": "2026-08-22 加入。W34 踩過：涵蓋窗只在開工當下盤點，雲端 pipeline 執行期間續產日報，週報遂以「這幾天沒有日報」對實際存在的新聞下「本週零命中」，並把 WIRED 浮水印繞過報導漏成「無人復現」的結案。weekly.md 步驟 3 第 0 步為此加入收尾補掃，並明文限定只修正會誤導讀者的事實判定、不回頭改選題與深挖——該限定直接引用 weekly-report.md 步驟 5 的凍結原則，兩者措辭失步會讓補掃的邊界失效。"
+    },
+    {
+      "name": "weekly-report.md 頭條敘事規則 <-> check_weekly_ledger.py 機械檢查：規格與檢查器同進退",
+      "assertion": "all_contain",
+      "files": [
+        ".claude/commands/weekly-report.md"
+      ],
+      "patterns": [
+        "入口讀者裁定",
+        "編線准入",
+        "前情錨",
+        "固定稱呼",
+        "收束預算",
+        "冷讀者三問",
+        "W35 起生效"
+      ]
+    },
+    {
+      "name": "check_weekly_ledger.py 存在頭條檢查與生效閘（規格帶 🔧 的規則有實作對應）",
+      "assertion": "all_contain",
+      "files": [
+        "scripts/check_weekly_ledger.py"
+      ],
+      "patterns": [
+        "def check_headline",
+        "HEADLINE_RULES_SINCE",
+        "把\\[一二三四五六七八九十"
+      ]
     }
   ],
   "coupling_hints": {
