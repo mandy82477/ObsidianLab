@@ -27,7 +27,7 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 **最後新聞更新：** 2026-08-25
 
 > **最近效能退步事件**（2026-08-25）
-> 「Opus 5 上線後品質感知訊號群」新增一筆待查證項目——HackerNoon 報導程式碼品質分析工具 Sonar 對 Opus 5 生成程式碼進行基準測試，僅標題可用，具體評測數字尚未見報導（❓ 待查證）；若後續查得數字，將是本訊號群首筆量化／第三方工具評測證據。Token 消耗異常訊號群（06-27～07-13，九個獨立來源）與模型釘選／靜默降級訊號群（02～08-04）仍並行追蹤，Anthropic 均未回應。
+> 「Opus 5 上線後品質感知訊號群」新增一筆待查證項目——HackerNoon 報導程式碼品質分析工具 Sonar 對 Opus 5 生成程式碼進行基準測試，僅標題可用，具體評測數字尚未見報導（❓ 待查證）；若後續查得數字，將是本訊號群首筆量化／第三方工具評測證據。「Token 消耗異常訊號群」沉寂 43 天後再現同方向單一貼文質疑（僅計入現象延續）。模型釘選／靜默降級訊號群（02～08-04）仍並行追蹤，Anthropic 均未回應。
 
 ---
 
@@ -54,6 +54,7 @@ Claude Code 在 2026 年 3 月至 4 月間出現長達約一個月的效能明�
 | 2026-07-08 | 「Claude Max (20x) weekly limit exhausted in less than a day」：Max 20x 方案週額度不到一天用盡 | Reddit r/ClaudeCode（[原文](https://www.reddit.com/r/ClaudeCode/comments/1uqs99q/claude_max_20x_weekly_limit_exhausted_in_less/)）| 具體異常比例回報，與同日 GitHub 額度耗盡回報呼應 |
 | 2026-07-09 | 「Claude Max 20x: Why did 27% of one session consume 7% of my entire weekly limit?」：單一 session 27% 的時間即消耗掉整週額度 7% | Reddit r/ClaudeAI（[原文](https://www.reddit.com/r/ClaudeAI/comments/1urqgqx/claude_max_20x_why_did_27_of_one_session_consume/)）| 具體異常比例回報，質疑額度計算機制本身 |
 | 2026-07-13 | 「Usage limits getting lower」：Max 5x 訂閱用戶回報近一週用量額度消耗速度明顯變快，5 小時額度約 2 小時即用完 | Reddit r/ClaudeCode（[原文](https://www.reddit.com/r/ClaudeCode/comments/1uve90h/usage_limits_getting_lower/)）| 單一貼文、無評論數據佐證，方向與既有額度異常訊號一致，尚待第三方覆核（07-14～07-31 news 無同一主張的直接覆核，但 07-21 GitHub issue #29579「16% 用量即觸發 rate limit」153 則留言延續同一「額度異常消耗」大主題方向一致，屬功能記者已知問題追蹤範疇，本頁不重複收錄細節） |
+| 2026-08-25 | 「Is Claude Code intentionally burning more tokens now?」：使用者質疑近幾個月來 Claude Code 是否比過去消耗更多 token 才能完成相同任務，隔了 43 天再度出現同方向質疑 | Reddit r/ClaudeCode（[原文](https://www.reddit.com/r/ClaudeCode/comments/1vxw3fi/is_claude_code_intentionally_burning_more_tokens/)，0 留言、無「週熱門」標記，score 不可信） | 單一貼文、無具體數字或版本號佐證，屬本訊號群自 07-13 沉寂 43 天後的第十則訊號，僅計入現象延續，不提供新機制性證據 |
 
 **核心分析：三種假說目前證據各支持什麼**
 
@@ -63,7 +64,7 @@ Claude Code 在 2026 年 3 月至 4 月間出現長達約一個月的效能明�
 | **計費／計量問題**（token 計數方式改變，而非實際用量增加）| $62,021 案例與「5x 更貴」報導都聚焦帳單/配額消耗速度而非任務品質下降；07-08「cache 命中率下降 20% 帳單翻倍」首度提供具體技術機制——若 prompt caching 命中率因 context 結構變化或後端調度改變而下降，重複計算的 token 會直接反映為帳單增加，不需模型能力真的變差；07-09「單一 session 27% 時間耗掉週額度 7%」進一步指向額度計算本身可能存在非線性放大；[[topics/community-tech-discussions]] 技術彙整已記錄社群懷疑「agent 模式的 token 計費方式變更」與「subagent 呼叫計費細節未透明揭示」| Anthropic 未就計費機制或 cache 命中率變化做出官方說明；cache 命中率下降的根因（使用者 context 結構改變 vs 後端調度變更）尚未釐清；無法排除只是使用習慣改變（如更多 subagent/parallel session）導致實際消耗上升（推論）|
 | **Context／工具配置問題**（用戶端 orchestration、MCP 工具或 context 管理不當導致的浪費）| #38335 的「Max 方案額度異常消耗」與本頁 2026-06-26「自訂編排路由失效」屬同類型「工具行為不一致」訊號；multi-agent／MCP 工具調用疊加成本是 [[topics/community-tech-discussions]] 已記錄的系統性問題；cache 命中率下降若源於使用者端 context 結構變化（如頻繁插入不同前綴內容），亦可能是配置問題而非後端變更 | 若確為 context 腐蝕或配置問題，理論上應可透過調整 CLAUDE.md／減少 subagent 層級緩解，但目前無用戶回報「調整配置後消耗恢復正常」的驗證案例（推論）|
 
-**目前立場：** 訊號鏈自 06-27（quota 焦慮早期訊號）延燒至 07-13，跨 17 天持續出現同方向訊號且來源獨立，密度已足以將定調從「值得觀察」上調為**「結構性未解問題」**——三種假說均有部分支持證據且互不排斥，07-08 起新增的 cache 命中率機制觀察與兩則額度異常比例回報，首度讓「計費/計量問題」假說有了具體技術描述，07-13 再添一則 Max 5x 額度消耗變快回報但仍屬單一貼文，但仍缺乏官方說明或受控實驗佐證。截至 2026-07-13，Anthropic 尚未對此訊號群做出官方回應。與 [[topics/community-tech-discussions]] 對應的「Claude Code 成本 5x 暴漲」與「額度焦慮系列」條目互相引用，細節不重複展開。
+**目前立場：** 訊號鏈自 06-27（quota 焦慮早期訊號）延燒至 07-13，跨 17 天持續出現同方向訊號且來源獨立，密度已足以將定調從「值得觀察」上調為**「結構性未解問題」**——三種假說均有部分支持證據且互不排斥，07-08 起新增的 cache 命中率機制觀察與兩則額度異常比例回報，首度讓「計費/計量問題」假說有了具體技術描述，07-13 再添一則 Max 5x 額度消耗變快回報但仍屬單一貼文，但仍缺乏官方說明或受控實驗佐證。訊號鏈其後沉寂 43 天，08-25 再度出現同方向質疑（單一貼文、無具體數字），僅計入現象延續，未提供新證據，三種假說的證據強度分布未變。截至 2026-08-25，Anthropic 尚未對此訊號群做出官方回應。與 [[topics/community-tech-discussions]] 對應的「Claude Code 成本 5x 暴漲」與「額度焦慮系列」條目互相引用，細節不重複展開。
 
 ---
 
@@ -129,7 +130,7 @@ Claude Code 在 2026 年 3 月至 4 月間出現長達約一個月的效能明�
 - 🔍 社群開發者正逐一驗證 50+ 修復是否落實（2026-05-03 開始，最終結果待觀察）
 - 🔴 Stop hooks 失效為獨立問題，[[entities/claude-code]] 已知問題列表確認截至 2026-07-11 仍未修復（非僅社群指控）
 - ⚠️ 信任侵蝕已從「效能品質」擴大至「定價透明度、計量準確性、基礎設施可靠性」，形成結構性問題
-- 🔴 「token 消耗異常」訊號群自 06-27 延燒至 07-13（共 17 天，九個獨立來源），密度已達「結構性未解問題」，尚無法判定模型真退步 vs 計費/計量問題 vs context/工具配置問題，Anthropic 未回應
+- 🔴 「token 消耗異常」訊號群自 06-27 延燒至 07-13（共 17 天，九個獨立來源），密度已達「結構性未解問題」，尚無法判定模型真退步 vs 計費/計量問題 vs context/工具配置問題，Anthropic 未回應；沉寂 43 天後 08-25 再現同方向單一貼文質疑，僅計入現象延續
 - 🟡 Opus 5 上線後（07-25～08-19）浮現第三條分析線「模型行為特性本身」，首見官方確認等級證據（effort dial 非單調），（推論）可能局部挑戰既有「多為 context rot」共識，惟樣本量小（10 則，8 則單一 Reddit 貼文），08-14～08-19 再添四則同方向抱怨但無新機制性證據，尚待更多獨立來源覆核
 - 📊 CC-Canary 可作為持續監測工具；2026-08-12 起社群另闢人工彙整路線（forensic archive），與自動化偵測並行，顯示品質下滑證據的蒐集正逐步基礎設施化
 
@@ -175,6 +176,9 @@ Claude Code 在 2026 年 3 月至 4 月間出現長達約一個月的效能明�
 ## 時序（最新在上，按月分組）
 
 ### 2026-08
+
+#### 2026-08-25
+- **「Token 消耗異常訊號群」沉寂 43 天後再現**：r/ClaudeCode 貼文「Is Claude Code intentionally burning more tokens now?」質疑近幾個月來 Claude Code 是否比過去消耗更多 token 才能完成相同任務；0 留言、無「週熱門」標記，score 不可信，屬「Token 消耗異常訊號群」自 07-13 以來第十則訊號，僅計入現象延續，不提供新機制性證據（來源：[Reddit](https://www.reddit.com/r/ClaudeCode/comments/1vxw3fi/is_claude_code_intentionally_burning_more_tokens/)）
 
 #### 2026-08-20（週熱門重浮上，原發時間較早）
 - **「Claude is Losing Me After Being Heavy User Since Release」**：r/ClaudeAI 重度使用者發文表達對 Claude 逐漸失望的心情，具體抱怨內容未見於本次摘要；週熱門標記，達收錄低門檻，屬「Opus 5 上線後品質感知訊號群」第十則訊號，僅計入現象延續（來源：[Reddit](https://www.reddit.com/r/ClaudeAI/comments/1vqsas9/claude_is_losing_me_after_being_heavy_user_since/)）
