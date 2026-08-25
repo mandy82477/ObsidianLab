@@ -3,10 +3,10 @@ page: "topics/enterprise-tool-tracker"
 kind: "topic"
 status: "ongoing"
 domain: "💼 商業"
-last_updated: "2026-08-23"
-last_news_update: "2026-08-23"
+last_updated: "2026-08-25"
+last_news_update: "2026-08-25"
 status_main: "ongoing"
-days_since_news: 1
+days_since_news: 0
 inbound_links: 22
 attribution_count: 16
 attribution_last: "2026-08-23"
@@ -24,14 +24,13 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 **領域：** 💼 商業
 **蒐集邊界：** 僅涵蓋 Claude 相關報導所帶出的企業案例。未提及 Claude 的企業工具決策不在自動蒐集範圍——公開報導本就少見具名企業的內部工具決策，本表為已見報者的彙整，非市場全貌。
 **開始日期：** 2026-05-26
-**最後更新：** 2026-08-23
-**最後新聞更新：** 2026-08-23
+**最後更新：** 2026-08-25
+**最後新聞更新：** 2026-08-25
 
-> **最新企業採用異動**（2026-08-23）
-> - **ReliaQuest（資安廠商）深化與 Anthropic 的技術整合，作為其去 SIEM 化資安策略一環**：TipRanks 報導，僅標題層級可用，詳見下方使用現況表新增列。
-> - **08-20 記錄之 Goldman Sachs、OKX 雙雙於香港被切斷 Claude AI 存取權限，仍為近期重點**，詳見下方使用現況表與 [[topics/anthropic-government-policy]]。
-> - **Payward（Kraken 母公司）、Duke University 兩則具名採用案例（08-18／08-19，狀態未變）**：詳見下方使用現況表。
-> - **Samsung 案例已於 08-15 升級為量化採用（跨 2 來源，仍為媒體轉述、非官方發布，狀態未變）**：詳見下方使用現況表 Samsung 列。
+> **最新企業採用異動**（2026-08-25）
+> - **TechRadar 第三方媒體再確認 Samsung 用 Claude Code 輔助晶片設計、惟仍會犯重大錯誤（非新事實，狀態未變）**：詳見下方使用現況表 Samsung 列更新。
+> - **Thomson Reuters 縮減對 Claude 依賴（成本驅動，僅標題可用）**：Business Insider 報導標題未指明具體是 Claude Code、Claude API 或 Claude.ai，本頁專責追蹤「AI 編碼工具」使用狀態，工具別不明時暫不列入本表，詳見 [[topics/enterprise-cost-management]] 完整記錄。
+> - **08-23 記錄之 ReliaQuest 資安整合、08-20 Goldman Sachs／OKX 香港存取被切斷，仍為近期重點**，詳見下方使用現況表。
 
 ## 摘要
 
@@ -56,7 +55,7 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 | OKX | 大型（加密貨幣交易平台） | Claude AI | ❌ | — | Yahoo Finance 同篇報導稱加密貨幣交易平台 OKX 同樣在香港被切斷 Claude AI 存取權限，與高盛同批報導，成因未明，詳見 [[topics/anthropic-government-policy]]；為本頁首見加密貨幣交易平台因合規/地緣政治因素退出的具名案例（區別於 08-19 已記錄 Payward 採用 Claude Mythos 5 的加密貨幣產業正面案例）；具體切斷原因細節、生效日未見報導，僅標題層級可用（Google News/Yahoo Finance）| 2026-08-20 |
 | Payward（Kraken 母公司） | 大型（全球加密貨幣交易平台母公司） | Claude Mythos 5 | ✅ | — | FF News 報導 Payward 採用 Claude Mythos 5 強化全球加密基礎設施；Mythos 5 為僅限授權機構存取的安全強化模型（見 [[entities/mythos]]），本案為具名企業採用該受限模型的具體案例；原文僅標題層級可用，具體整合範疇、規模未見細節（Google News/FF News）| 2026-08-19 |
 | Duke University | 大型（高等教育機構） | Claude（pay-as-you-go 訂閱方案） | ✅ | — | The Duke Chronicle 報導杜克大學與 Anthropic 合作，提供師生「用多少付多少」的 Claude 訂閱方案；為繼哈佛 FAS（04-28）、Syracuse University（08-07）後另一具名高等教育機構採用案例，延續教育機構採用 Claude 的趨勢（推論）；原文僅標題層級可用，具體授權範圍、定價細節未見報導（Google News/The Duke Chronicle）| 2026-08-18 |
-| Samsung | 頂尖 | Claude Code | ✅ | — | 跨 2 媒體確認具體量化成效，惟仍為媒體轉述、非三星或 Anthropic 官方發布：TechSpot（08-15）稱 Claude Code 能把晶片設計工作從「數週壓縮到數天」；Tech My Money（08-14）稱驗證階段「從一個月縮到兩天」——兩則數字不同，並陳不擇一。兩則均明確指出 Claude Code **仍會犯嚴重錯誤**。延續 08-14 記錄之 ❓ 未確認狀態，本次升級為 ✅；與 [[topics/anthropic-business]] 已記錄之 Samsung 代工洽談（07-02/06）、Series H 投資人身份為不同性質事件——本則為 Samsung**使用**Claude Code 的採用案例，非供應鏈/投資關係（Google News/TechSpot；Google News/Tech My Money）| 2026-08-15（首見 2026-08-14）|
+| Samsung | 頂尖 | Claude Code | ✅ | — | 跨 3 媒體確認具體量化成效，惟仍為媒體轉述、非三星或 Anthropic 官方發布：TechSpot（08-15）稱 Claude Code 能把晶片設計工作從「數週壓縮到數天」；Tech My Money（08-14）稱驗證階段「從一個月縮到兩天」——兩則數字不同，並陳不擇一。三則均明確指出 Claude Code **仍會犯嚴重錯誤**。延續 08-14 記錄之 ❓ 未確認狀態，08-15 升級為 ✅；與 [[topics/anthropic-business]] 已記錄之 Samsung 代工洽談（07-02/06）、Series H 投資人身份為不同性質事件——本則為 Samsung**使用**Claude Code 的採用案例，非供應鏈/投資關係（Google News/TechSpot；Google News/Tech My Money）。**08-25 三度確認（TechRadar，非新事實）**：TechRadar 報導同一事實——三星認為 Claude Code 有助其晶片設計，但坦言 AI 仍會犯下「令人擔憂的重大錯誤」；未見新增具體數字或案例細節，屬既有 08-14/08-15 記錄的第三方媒體再確認，狀態與量化數字均不變（Google News/TechRadar）| 2026-08-15（首見 2026-08-14）|
 | Syracuse University | 大型（高等教育機構）| Claude Code + Claude Cowork | ✅ | 2026-08-05 | Syracuse University Today 官方報導校方擴大 Claude Enterprise 授權，納入 Claude Code 與 Claude Cowork；為繼哈佛 FAS（04-28，取代 ChatGPT Edu）後另一具名高等教育機構擴大採用案例，顯示學術機構對 Claude Enterprise 的採用正從「單一授權」擴展至「含編碼與協作工具的完整套件」（推論）；具體授權規模、部署範圍未見細節，僅標題層級資訊（Google News/Syracuse University Today）| 2026-08-05 |
 | ICON（NASDAQ: ICLR） | 大型（全球臨床研究委外機構 CRO）| Claude API | ✅ | 2026-07-29 | Clinical Trials Arena（source_count=2）報導 ICON 與 Anthropic 合作，將 Claude AI 整合進臨床試驗流程；為醫療研究/CRO 產業首個具名採用案例，延續近期 Optum（07-14，健康服務業）之後醫療垂直產業另一深化案例（推論）；具體整合範疇、合約規模未見細節，僅標題層級資訊（Google News/Clinical Trials Arena）。**08-04 二次確認**：Fierce Biotech（source_count=2）跟進報導同一合作案，未見新增細節，屬媒體二次確認（Google News/Fierce Biotech）。**08-10 三度獲媒體關注（分析角度，非新事實）**：The Clinical Trial Vanguard（臨床試驗產業媒體）發表分析文章，標題暗示此合作案影響將觸及臨床試驗場域，未見新增合作規模、範疇或時程等具體事實，僅標題層級資訊，屬既有合作案的產業媒體深度評論跟進（Google News/The Clinical Trial Vanguard） | 2026-08-10（首見 2026-07-29）|
 | Cognizant | 頂尖 | Claude API | ✅ | 2026-07-28 | Anthropic Blog 官方公告：雙方擴大既有合作，Cognizant 將 Claude 用於自身建置並為客戶運行的系統，橫跨製造業、生命科學、保險等產業；將 Claude 嵌入自身商業與工程平台、打造「Claude 認證」（Frontier Certified）人才梯隊，並升級為 Claude Partner Network 的全球首要夥伴（Global Premier Partner）；延續近期 TCS、DXC 等頂尖 IT 服務商全面深化合作模式（推論）；具體合約規模未見細節（Anthropic Blog https://www.anthropic.com/news/cognizant-anthropic；Google News/Seeking Alpha 同日跟進） | 2026-07-28 |
@@ -134,6 +133,9 @@ Claude Code 是工程師日常編碼工具（CLI），成本隨使用量線性�
 ## 時序
 
 ### 2026-08
+
+#### 2026-08-25
+- **[三度確認，非新事實] TechRadar：Samsung 認為 Claude Code 有助晶片設計，惟仍會犯重大錯誤**：與 08-14/08-15 既有記錄同一事實的第三方媒體再確認，未見新增數字或細節，詳見上方使用現況表 Samsung 列更新（Google News/TechRadar）
 
 #### 2026-08-22
 - **[✅ 新增企業採用，資安廠商深化整合] TipRanks：ReliaQuest 深化與 Anthropic 技術整合，作為去 SIEM 化資安策略一環**：僅標題層級可用，詳見上方使用現況表新增列（Google News/TipRanks）

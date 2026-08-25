@@ -25,11 +25,12 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 **狀態：** ongoing
 **領域：** 🌐 社群
 **開始日期：** 2026-04-25
-**最後更新：** 2026-08-24
-**最後新聞更新：** 2026-08-24
+**最後更新：** 2026-08-25
+**最後新聞更新：** 2026-08-25
 
-> **最新工作流模式**（2026-08-24）
-> - **手動策展取代自動記憶**：使用者分享改用手動維護的 Obsidian vault（LLM Wiki 形式）取代 Claude Code 內建自動記憶功能，主張自己策展的知識庫比官方自動記憶更可控可信。
+> **最新工作流模式**（2026-08-25）
+> - **螢幕活動記憶**：Show HN ambient-context 以 Accessibility API 讀取螢幕文字寫成純 Markdown 日誌，取代截圖／OCR 做法，供 Claude Code 讀取回答「那天做了什麼」（HN 51 分）。
+> - **零依賴專案大腦**：mindmuxai/brain.md 提供跨 session 保存決策／需求／限制的檔案式記憶層（GitHub Search 504★）。
 
 ---
 
@@ -150,6 +151,40 @@ Claude Code 的三種多 agent 機制，可對應到 Anthropic《Building Effect
 ## 技術彙整
 
 ### 2026-08
+
+#### Show HN：ambient-context——用 Accessibility API 讀取螢幕文字寫成純 Markdown 日誌，取代截圖／OCR 的螢幕記憶（2026-08-25）
+
+- **主線：** —
+- **核心模式：** macOS 選單列工具 ambient-context 透過 Accessibility API 每隔數秒讀取當前作用中視窗的文字內容，不使用截圖、影片或 OCR，寫成純 Markdown、每日一檔存入使用者指定資料夾；讓 Claude Code 等具檔案存取能力的工具讀取該資料夾後回答「那天做了什麼」或建立跨專案的工作記憶
+- **與既有模式的關係：** 補上本頁「記憶與知識管理」類別一種此前未見的擷取機制——既有方案（ltm、NanoBrain、OKF、OzBrain、08-24 手動 Obsidian vault）聚焦 agent 對話／決策層級的記憶結構化，本則改從作業系統層級持續擷取使用者實際操作文字作為記憶原始素材，定位更偏「個人跨專案活動日誌」而非「單一專案決策記憶」，與下則 mindmuxai/brain.md 互補而非重疊；HN 留言區提及 Littlebird、HeyClicky 等既有類似產品（HeyClicky 已下架同類功能），顯示此非首創機制；非大型 codebase 特有痛點（個人跨專案活動記憶，與 codebase 規模無關），暫不縫合 [[topics/community-large-codebase-workflow]] 四條主線
+- **來源：** 「Show HN: Screen memory without screenshots, just text to Markdown」— Hacker News（score 51，達對照表高門檻）＋跨 2 來源（source_count=2）；[GitHub](https://github.com/dragthelake/ambient-context)
+- **成熟度：** ⏳ 新興（今日首見，個人開發者工具，尚無社群採用回饋或量化效果數據）
+
+#### mindmuxai/brain.md：零依賴、檔案式跨 session 持久記憶層，為 coding agent 建立「專案大腦」（2026-08-25）
+
+- **主線：** 索引記憶
+- **核心模式：** mindmuxai/brain.md 是一個零依賴、以檔案為基礎的持久記憶層，透過零依賴 CLI 為 Claude Code、Codex 等 coding agent 提供跨 session 保存決策、需求與限制的「專案大腦」，GitHub Search 累積 504 顆星
+- **與既有模式的關係：** 呼應本頁「記憶與知識管理」類別既有跨 session 記憶方案（ltm、NanoBrain、OKF、OzBrain、08-24 手動 Obsidian vault），差異在於明確鎖定「零依賴、檔案式 CLI」的輕量實作路線，且聚焦「決策／需求／限制」三類專案層級持久資訊——與 OzBrain 鎖定團隊共享、Obsidian vault 走人工策展路線不同，補上第三種實作取向；縫合 [[topics/community-large-codebase-workflow]] 索引記憶主線
+- **可信度註記：** 星數（504）達對照表社群工具中門檻，惟資料僅含 GitHub Search 星數，無 forks／issues／近期 commit 佐證可查，本記者無 web 工具驗證，依內容具體程度（明確功能敘述、零依賴架構）判斷收錄，星數本身不作為獨立驗證訊號
+- **來源：** 「A persistent, file-based memory layer for coding agents」— GitHub Search（504★，達對照表中門檻）；[GitHub](https://github.com/mindmuxai/brain.md)
+- **成熟度：** ⏳ 新興（今日首見，單一開源專案，尚無社群採用回饋或第三方驗證）
+
+#### rsmdt/the-startup：「The Agentic Startup」風格 Claude Code 指令／Skills／Agent 集合（2026-08-25）
+
+- **主線：** —
+- **核心模式：** rsmdt/the-startup 是一套「The Agentic Startup」風格的 Claude Code commands、skills 與 agents 集合，GitHub Search 累積 507 顆星
+- **與既有模式的關係：** 呼應本頁「Skills 設計」「Multi-agent 架構」類別既有套件化打包做法（如 ccteams 套件化 subagent 團隊配置），本則將 commands／skills／agents 三者一起打包為單一「新創風格」工具集，屬同一「把驗證過的配置打包成可安裝套件」取向的另一實例；非大型 codebase 特有痛點（通用型工具套件），暫不縫合 [[topics/community-large-codebase-workflow]] 四條主線
+- **可信度註記：** 星數（507）達對照表中門檻，惟資料僅含星數，無 forks／issues／commit 佐證可查，依內容具體程度判斷收錄
+- **來源：** 「The Agentic Startup - A collection of Claude Code commands, skills, and agents.」— GitHub Search（507★，達對照表中門檻）；[GitHub](https://github.com/rsmdt/the-startup)
+- **成熟度：** ⏳ 新興（今日首見，單一開源專案，尚無社群採用回饋）
+
+#### l3a0/claude-plugins：Claude Code Skill 用 OCR 從 Kindle Cloud Reader 復原被限制匯出的畫線筆記（2026-08-24）
+
+- **主線：** —
+- **核心模式：** 開發者分享用 Claude 打造的瀏覽器擴充功能／Claude Code skill，透過 OCR 從 Kindle Cloud Reader 擷取官方限制匯出的畫線筆記內容，繞過 Kindle 原生匯出功能的限制
+- **與既有模式的關係：** 屬本頁既有「利用 OCR／視覺辨識繞過官方限制或擷取非結構化資料」取向的新實例，性質上與「pxpipe 把文字 context 圖片化」方向相反（此則是把畫面文字經 OCR 還原為可用文字）；HN 留言區有使用者分享自己也做過類似萃取工具（聚焦語言學習情境，擷取畫線詞彙的上下文），顯示此類需求有一定普遍性但均為個別實作，尚無共通工具；非大型 codebase 特有痛點，暫不縫合 [[topics/community-large-codebase-workflow]] 四條主線
+- **來源：** 「A Claude Code skill that recovers export-blocked Kindle highlights」— Hacker News（score 45，達對照表高門檻）；[GitHub](https://github.com/l3a0/claude-plugins)
+- **成熟度：** ⏳ 新興（單一開發者分享，留言區有相似獨立實作經驗佐證共鳴，惟均為第一手心得，尚無工具化／套件化的公開複用版本）
 
 #### 用手動維護的 Obsidian vault（LLM Wiki 形式）取代 Claude Code 內建自動記憶（2026-08-24）
 

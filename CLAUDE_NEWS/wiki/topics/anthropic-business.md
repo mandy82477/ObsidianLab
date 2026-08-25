@@ -138,6 +138,8 @@ Simon Willison（知名開發者博主）發表文章，認為 Anthropic 與 Ope
 
 Financial Times 報導 Anthropic 旗艦模型在吸引一般使用者（general consumer users）上，不敵定價較低的競品工具。**與既有 PMF 論述的關係**：Simon Willison 的 PMF 分析聚焦**開發者**工作流依賴度，本則報導聚焦**一般消費者**採用面，兩者衡量對象不同，不構成直接矛盾，但共同呈現「開發者端 PMF 強、消費者端 PMF 弱」的分層圖像（推論）；與本頁「商業模式」已記錄之「訂閱補貼一切」轉向「按量計費」的定價策略收緊，以及既有「定價強勢期」（企業客戶即使漲價仍留存，The Information 05-13）敘事並置時，本則從另一角度補充：企業/開發者端定價強勢可能與一般消費者端價格敏感度流失同時存在（推論）；具體流失規模、競品名稱、量化數字未見報導細節，僅標題層級資訊。
 
+**08-25 跟進（cio.com，企業端視角，非新事實）**：cio.com 報導部分企業對 Anthropic 旗艦模型的採用意願不如預期熱絡。**與 08-23 FT 報導的關係**：FT 聚焦**一般消費者**採用面，本則聚焦**企業**端採用意願，若兩者均屬實，代表「旗艦模型吸引力不足」的現象可能同時出現在消費者與企業兩端，而非僅限一般消費者價格敏感群體（推論）；惟本則同樣僅標題層級可用，未見具體企業名稱、採用意願不足的原因（成本、效能、或替代方案競爭）等細節，暫不視為獨立新增結論，僅作既有反面訊號的並置補充（Google News/cio.com）。
+
 ---
 
 ## 財務狀況（公開資訊）
@@ -191,6 +193,8 @@ Financial Times 報導 Anthropic 旗艦模型在吸引一般使用者（general 
 
 | 合作方 | 類型 | 日期 | 意義 |
 |--------|------|------|------|
+| 未具名資料中心業者（Bastrop County，美國德州）| 基礎設施擴張（洽談租用）| 2026-08-25 | KXAN Austin（在地新聞台）引述消息人士報導 Anthropic 正洽談租用德州 Bastrop County 一座大型資料中心。**對商業的意涵**：延續近期德州算力布局系列信號（08-02 Morgan Stanley 領投 150 億美元德州校園/資料中心投資案），本則為又一起德州資料中心具名地點案例，惟業者身分未具名，與 Morgan Stanley 案是否為同一設施尚待確認（推論）；具體面積、投資金額、租期均未見報導細節，僅標題層級資訊、洽談階段非確定簽約（Google News/KXAN Austin）|
+| UpToDate（醫療資訊平台，Wolters Kluwer 旗下）| 企業客戶（醫療產業深化合作）| 2026-08-24 | Fierce Healthcare 於 Epic 年度用戶大會（Epic UGM）報導中提及 Anthropic 深化與醫療資訊平台 UpToDate 的合作，同篇報導並提及 Project Glasswing 相關進展。**對商業的意涵**：延續近期 Optum＋UST（07-14）、ICON（07-29）等醫療垂直產業深化案例，UpToDate 是又一起具名醫療資訊平台深化合作案例（推論）；Project Glasswing 部分屬安全模型能力面，詳見模型記者維護之 [[entities/mythos]]；具體合作範疇、UpToDate 整合方式均未見報導細節，僅標題層級資訊（Google News/Fierce Healthcare）|
 | 一般大眾／企業客戶（Claude Academy）| 教育／企業導入啟用（免費課程＋導入指南）| 2026-08-23 | EdTech Innovation Hub 報導 Anthropic 推出「Claude Academy」，提供免費 AI 課程與企業導入指南（workplace rollout guides）。**對商業的意涵**：與既有 UST（07-10，訓練兩萬名工程師顧問）、DXC（06-12，訓練數萬名認證工程師）等企業客戶端「培訓認證」模式不同，本次是 Anthropic 首度以自身名義面向**一般大眾**推出免費課程，可能是為即將到來的 IPO 路演強化「普及化 AI 教育」的公眾敘事，同時降低企業導入 Claude 的教育門檻（推論）；具體課程內容、涵蓋範圍、與既有「Claude 認證」（Frontier Certified，見 Cognizant 07-28 列）人才梯隊的關係未見報導細節，僅標題層級資訊（Google News/EdTech Innovation Hub）|
 | Casper Studios（顧問公司）| 收購（Ode 主導，金額未公開）| 2026-08-20 | crn.com、Seeking Alpha、The Information 三方同日報導：與 Anthropic 關聯的 AI 服務公司 **Ode**（見 07-16 已記錄之 Anthropic／Blackstone 合資 $15 億美元 AI 導入公司）收購顧問公司 Casper Studios。**對商業的意涵**：延續 07-15/16 已記錄之 Ode 定位論述——「下一個兆美元級 AI 商機在於實作，而非模型本身」，本次是 Ode 成立後首度公開的具名收購案，從「合資成立公司」進一步落實為「透過併購擴大導入服務能量」，若此模式延續，Ode 可能持續透過併購顧問/實作公司擴張版圖，直接進入 Accenture、TCS、DXC 等既有戰略夥伴業務領域（推論，延續 07-16 已記錄之潛在競合關係觀察）；具體收購金額、Casper Studios 規模與客戶基礎、整合時程均未見報導細節，僅標題層級資訊（Google News/crn.com；Google News/Seeking Alpha；Google News/The Information）|
 | Anthropic 關聯資料中心（未具名）| 基礎設施擴張（私募信貸貸款，$13 億美元）| 2026-08-19 | Yahoo Finance 報導一座與 Anthropic 相關的資料中心取得規模達 **13 億美元**的私募信貸（private credit）貸款。**對商業的意涵**：延續近期 TeraWulf（07-06，$19B 20 年租約）、Volta（08-04，$100 億美元）、Morgan Stanley（08-02，$150 億美元）等基礎設施擴張系列信號，本則首次出現以「私募信貸」（債務融資，區別於股權投資或雲端運算協議）形式直接為 Anthropic 關聯資料中心籌資的具名案例，顯示算力基礎設施融資管道正進一步向債務資本市場延伸（推論）；具體資料中心名稱、地點、承貸方、與 Anthropic 的合約關係（自建、租賃或合資）均未見報導細節，僅標題層級資訊（Google News/Yahoo Finance）|
@@ -285,8 +289,14 @@ Financial Times 報導 Anthropic 旗艦模型在吸引一般使用者（general 
 
 ### 2026-08
 
+#### 2026-08-25
+- **[新增，基礎設施擴張] KXAN Austin：Anthropic 洽談租用德州 Bastrop County 大型資料中心**：僅標題層級可用，洽談階段非確定簽約，詳見上方「戰略合作」表新增列（Google News/KXAN Austin）
+- **[新增，IPO/估值敘事分歧] 24/7 Wall St. 同日刊出兩篇方向相反文章：「意圖超越 SpaceX IPO 規模」vs「估值遠遜於 SpaceX」**：兩篇並陳呈現、不擇一，詳見上方「IPO 前瞻與估值追蹤」表新增列（Google News/24/7 Wall St.；Google News/Yahoo Finance）
+- **[新增，治理權分析] Bloomberg〈Who Should Control Anthropic?〉**：與既有超級投票權籌備信號同屬治理敘事，詳見上方「IPO 前瞻與估值追蹤」表新增列（Google News/Bloomberg）
+- **[新增，企業採用反面訊號] cio.com：部分企業對 Anthropic 旗艦模型採用意願不如預期**：與 08-23 FT 消費者端反面訊號並置，詳見上方「產品市場契合度」反面訊號段落更新（Google News/cio.com）
+
 #### 2026-08-24
-- **[新增] Axios 獨家：Anthropic 面試候選人時會詢問其如何看待「使命」與「金錢」之間的優先順序**：屬公司招募文化／人才篩選標準的具體訊號，與本頁既有「敘事整備」（07-17，Anthropic 揭露支付 60 萬美元徵才協助形塑 IPO 敘事）同屬公司對外形象經營路線，但本則聚焦招募流程本身而非公關職缺；若此為系統性面試設計，顯示公司在快速擴張＋IPO 前更看重候選人對「使命優先」文化的認同度，避免純粹逐利心態稀釋既有安全/使命導向敘事（推論）；具體面試問題全文、篩選權重、適用職級範圍未見報導細節，僅標題層級資訊（Google News/Axios）
+- **[新增] Axios 獨家：Anthropic 面試候選人時會詢問其如何看待「使命」與「金錢」之間的優先順序**：屬公司招募文化／人才篩選標準的具體訊號，與本頁既有「敘事整備」（07-17，Anthropic 揭露支付 60 萬美元徵才協助形塑 IPO 敘事）同屬公司對外形象經營路線，但本則聚焦招募流程本身而非公關職缺；若此為系統性面試設計，顯示公司在快速擴張＋IPO 前更看重候選人對「使命優先」文化的認同度，避免純粹逐利心態稀釋既有安全/使命導向敘事（推論）；具體面試問題全文、篩選權重、適用職級範圍未見報導細節，僅標題層級資訊（Google News/Axios）。**08-25 跟進（Hacker News，36 分，補上具體引述）**：報導原文引述一名求職者（因擔憂影響未來求職機會而匿名受訪）回憶，面試官問其若公司未來因安全考量放棄 AI 願景、導致股票歸零，會作何感受——是「使命 vs 金錢」提問框架下的具體場景範例。HN 討論兩極：部分留言認為這是 Anthropic 一貫透明作風的延伸、非新聞爆點；另有留言認為此問法對一般求職者而言不近人情。屬同一報導的深化補充，未改變既有「招募文化篩選訊號」的判讀（Hacker News）
 - **[新增] Bloomberg.com：Anthropic 表態指出澳洲在 Claude 程式開發工具的採用速度上落後其他市場**：是本頁首見針對單一國家市場「採用落後」的官方公開表態，與既有企業採用率指標（Ramp AI Index 34.4%，全球整體數字）為不同顆粒度——本則為特定地區的相對落後評語，非全球數字修正；與 08-03 已記錄之印度市場擴大布局（在地化定價＋更普及）形成對照，顯示 Anthropic 對不同市場的滲透速度存在明顯落差，且公司願意公開點名特定市場落後（推論）；具體落後幅度、比較基準（對比美國或其他亞太市場）、Anthropic 是否有對應澳洲市場的加碼計畫均未見報導細節，僅標題層級資訊（Google News/Bloomberg.com）
 - **[戰略合作，新增] EdTech Innovation Hub：Anthropic 推出「Claude Academy」，提供免費 AI 課程與企業導入指南**：詳見「戰略合作」表新增列（Google News/EdTech Innovation Hub）
 - **[商業風險，跟進，非新事實] The Daily Beacon：UT 校內學生報跟進報導 UTRF 專利侵權訴訟**：與既有 07-21 UTRF 訴訟為同一案，詳見「商業風險」表更新（Google News/The Daily Beacon）
