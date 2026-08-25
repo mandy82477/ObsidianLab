@@ -7,9 +7,9 @@ last_updated: "2026-08-25"
 last_news_update: "2026-08-25"
 status_main: "ongoing"
 days_since_news: 0
-inbound_links: 24
-attribution_count: 4
-attribution_last: "2026-08-16"
+inbound_links: 25
+attribution_count: 5
+attribution_last: "2026-08-25"
 top_source: "google-news"
 pending_count: 0
 pending_overdue: 0

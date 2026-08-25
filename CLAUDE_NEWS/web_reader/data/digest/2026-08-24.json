@@ -21,13 +21,7 @@
       "time": "5,067 星 · 08/24 10:43",
       "sentiment": "",
       "body": "GitHub Search 熱門清單出現一款主打橫跨 Codex、Claude Code 等多種 agent harness 的「長時程 agent 控制平面」開源專案，累積 5,067 星；同日另一款可同時啟動並串接多個 AI coding agent（Claude Code、Codex CLI、Gemini CLI 等）的工具 VibeAround 也上榜，累積 521 星。兩者皆為單一來源，尚無 fork 數或近期 commit 活躍度等佐證可查核，讀者可自行評估後再採用。",
-      "focusTags": [],
-      "sedimented": [
-        {
-          "id": "claude-code",
-          "pageType": "entity"
-        }
-      ]
+      "focusTags": []
     },
     {
       "title": "Quoting Drew Breunig",
@@ -158,12 +152,6 @@
       "body": "GitHub Issue 回報 Claude Code 在大量提示情境下會凍結卡住 5–20 分鐘以上，累積 129 則留言反應，為今日 GitHub Issue 互動量最高者。",
       "focusTags": [
         "[持續追蹤]"
-      ],
-      "sedimented": [
-        {
-          "id": "claude-code",
-          "pageType": "entity"
-        }
       ]
     },
     {
@@ -173,13 +161,7 @@
       "time": "😐 · 238 留言 · 08/23 16:08",
       "sentiment": "",
       "body": "GitHub Issue 提案要求 Claude Code Desktop 支援在單一應用實例中開啟多個視窗，取代目前的單視窗＋側欄 session 管理方式，累積 238 則留言反應，為今日互動量最高的功能請求。",
-      "focusTags": [],
-      "sedimented": [
-        {
-          "id": "claude-code",
-          "pageType": "entity"
-        }
-      ]
+      "focusTags": []
     },
     {
       "title": "Disable the welcome banner",
@@ -197,13 +179,7 @@
       "time": "🤔 · 41 留言 · 08/24 05:35",
       "sentiment": "",
       "body": "GitHub Issue 提案建議 Claude Code 支援跨機器的 agent 對 agent 協作協定，累積 41 則留言反應。",
-      "focusTags": [],
-      "sedimented": [
-        {
-          "id": "claude-code",
-          "pageType": "entity"
-        }
-      ]
+      "focusTags": []
     },
     {
       "title": "[BUG] Windows/MSIX 1.28929.0: cross-session messages land in the target's composer but are never submitted — session never responds",
@@ -221,13 +197,7 @@
       "time": "😊 · 3 讚 · 08/08 14:33",
       "sentiment": "",
       "body": "開發者第一手實作分享：一次生產環境記憶體洩漏事故中，改用 Claude Code 系統性分析 heap snapshot 而非憑猜測排查，記錄下實際除錯過程與四項心得。",
-      "focusTags": [],
-      "sedimented": [
-        {
-          "id": "claude-code",
-          "pageType": "entity"
-        }
-      ]
+      "focusTags": []
     },
     {
       "title": "Too many Claude Code skills? How the listing budget decides which descriptions Claude sees",
@@ -236,13 +206,7 @@
       "time": "🤔 · 2 讚 · 07/27 16:30",
       "sentiment": "",
       "body": "文章拆解 Claude Code 的 skill 列表載入機制：單筆 description／when_to_use 上限 1,536 字元，全體清單另有隨 context window 等比例調整的總預算上限，skill 數量一多會有描述被截斷或排擠出清單的風險。",
-      "focusTags": [],
-      "sedimented": [
-        {
-          "id": "claude-code",
-          "pageType": "entity"
-        }
-      ]
+      "focusTags": []
     },
     {
       "title": "Implementing Watermarking for Language Models [P]",
@@ -260,13 +224,7 @@
       "time": "😊 · 08/24 08:46",
       "sentiment": "",
       "body": "Reddit 使用者分享改用手動維護的 Obsidian vault（LLM Wiki 形式）取代 Claude Code 內建自動記憶功能的實作心得。",
-      "focusTags": [],
-      "sedimented": [
-        {
-          "id": "claude-code",
-          "pageType": "entity"
-        }
-      ]
+      "focusTags": []
     }
   ],
   "billing": [],
@@ -379,11 +337,6 @@
   "preview": "Claude 多款模型（含 Opus 5）今日一度出現請求錯誤率上升，Anthropic 官方狀態頁顯示事故發生於 04:50–07:36 UTC，已於 08:30 UTC 確認解決。",
   "sedimentedToday": [
     {
-      "id": "claude-code",
-      "name": "Claude Code",
-      "pageType": "entity"
-    },
-    {
       "id": "claude-skills",
       "name": "Claude Skills",
       "pageType": "entity"
@@ -394,23 +347,8 @@
       "pageType": "entity"
     },
     {
-      "id": "ai-agent-safety",
-      "name": "AI Agent 安全與可靠性",
-      "pageType": "topic"
-    },
-    {
       "id": "ai-talent-flow",
       "name": "AI 實驗室人才流動",
-      "pageType": "topic"
-    },
-    {
-      "id": "anthropic-business",
-      "name": "Anthropic 商業健康度",
-      "pageType": "topic"
-    },
-    {
-      "id": "community-tech-discussions",
-      "name": "社群技術討論趨勢",
       "pageType": "topic"
     },
     {

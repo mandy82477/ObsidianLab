@@ -1,0 +1,510 @@
+{
+  "date": "2026-08-25",
+  "generatedAt": "2026-08-25 13:10 UTC",
+  "articleCount": 47,
+  "sourceCount": "13/13",
+  "bulletin": "",
+  "topStories": [
+    {
+      "title": "Screen memory without screenshots, just text to Markdown",
+      "url": "https://github.com/dragthelake/ambient-context",
+      "source": "Hacker News",
+      "time": "08/25 04:33",
+      "sentiment": "",
+      "body": "一款 macOS 選單列工具，透過 Accessibility API 定期讀取當前視窗文字並寫成純 Markdown 日誌，讓 Claude Code 之類的工具讀取後回答「那天做了什麼」，不需截圖或 OCR。",
+      "focusTags": [
+        "[新工具]"
+      ],
+      "sedimented": [
+        {
+          "id": "claude-code",
+          "pageType": "entity"
+        }
+      ]
+    },
+    {
+      "title": "Model behavior: /goal Stop-hook directive cited as authorization for unrequested actions; absence-from-search treated as evidence of absence; structure-as-substance under pushback",
+      "url": "https://github.com/anthropics/claude-code/issues/60705",
+      "source": "GitHub Issues / claude-code",
+      "time": "08/25 05:41",
+      "sentiment": "",
+      "body": "一則 GitHub Issue 記錄了單一 session 中觀察到的三種重複出現的模型行為模式，回報者認為使用者端 `~/.claude/CLAUDE.md` 規則未能攔截這些模式，討論已累積 137 則留言。",
+      "focusTags": [
+        "[社群趨勢]"
+      ]
+    },
+    {
+      "title": "Feature Request: Message queue mode — queue messages instead of interrupting active tasks",
+      "url": "https://github.com/anthropics/claude-code/issues/50246",
+      "source": "GitHub Issues / claude-code",
+      "time": "08/25 05:36",
+      "sentiment": "",
+      "body": "使用者提出：目前 Claude 執行任務時若想追加後續指示，只能中斷當前工作或等待完成，建議新增「訊息佇列模式」讓追加指示排隊而不打斷進行中的任務，獲得 236 個👍。",
+      "focusTags": [
+        "[社群趨勢]"
+      ]
+    },
+    {
+      "title": "trailhq/Graft",
+      "url": "https://github.com/trailhq/Graft",
+      "source": "GitHub Search",
+      "time": "08/25 10:39",
+      "sentiment": "",
+      "body": "一款鎖定 Claude Code、Cursor、Codex、Gemini 等編碼 agent 的專案，訴求為針對特定 codebase 提供上下文理解，加速並降低成本，目前已累積 4,842 顆星。",
+      "focusTags": [],
+      "sedimented": [
+        {
+          "id": "claude-code",
+          "pageType": "entity"
+        }
+      ]
+    },
+    {
+      "title": "rsmdt/the-startup",
+      "url": "https://github.com/rsmdt/the-startup",
+      "source": "GitHub Search",
+      "time": "08/25 10:39",
+      "sentiment": "",
+      "body": "一套「The Agentic Startup」風格的 Claude Code 指令、skills 與 agent 集合，累積 507 顆星。",
+      "focusTags": [],
+      "sedimented": [
+        {
+          "id": "claude-code",
+          "pageType": "entity"
+        }
+      ]
+    },
+    {
+      "title": "mindmuxai/brain.md",
+      "url": "https://github.com/mindmuxai/brain.md",
+      "source": "GitHub Search",
+      "time": "08/25 10:39",
+      "sentiment": "",
+      "body": "一個零依賴、以檔案為基礎的持久記憶層，為 Claude Code、Codex 等編碼 agent 提供跨 session 保存決策、需求與限制的「專案大腦」，累積 504 顆星。",
+      "focusTags": [],
+      "sedimented": [
+        {
+          "id": "claude-code",
+          "pageType": "entity"
+        }
+      ]
+    }
+  ],
+  "techUpdates": [
+    {
+      "title": "[anthropics/claude-code] v2.1.245",
+      "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.245",
+      "source": "GitHub / anthropics/claude-code",
+      "time": "08/25 05:13",
+      "sentiment": "",
+      "body": "修復在搭載 glibc 2.44 的 Linux 發行版（如 Arch Linux、CachyOS、Fedora Rawhide）上啟動時發生的當機問題。",
+      "focusTags": []
+    },
+    {
+      "title": "[Status] Issues logging into Claude.ai",
+      "url": "https://status.claude.com/incidents/n0rlp126qf8g",
+      "source": "Anthropic Status",
+      "time": "08/24 20:26",
+      "sentiment": "",
+      "body": "官方狀態頁記錄一起導致無法登入 Claude.ai 的異常事件，於 08/24 20:11 UTC 進入監控、20:26 UTC 宣告已解決。",
+      "focusTags": [
+        "[持續追蹤]"
+      ]
+    }
+  ],
+  "mediaReports": [
+    {
+      "title": "Claude will now watermark all content generated using its tools",
+      "url": "https://news.google.com/rss/articles/CBMinwFBVV95cUxOWlZoaFl6aEFqWUlSdGh5MU8xdjNwSmxKNUtoT2VQalNGVk9TWlN1QUJRVl9wZmdvcjhqSlg5WW5aTEVPUFZzYWtiZUtxSVVMUEVkQVBXWkZEVFFpZ2NOVWV2RVRheVU3V2F5bzZ1QnVTQmJJUU9hay1zeVh4UHZpY1RBRGdMbmgyN3BqSlVMNXZSazc5QTlyeGMyT2Z2c0U?oc=5",
+      "source": "Google News / New Atlas",
+      "time": "08/25 04:27",
+      "sentiment": "",
+      "body": "New Atlas 報導 Claude 將為其工具所產生的內容加上浮水印。",
+      "focusTags": [
+        "[重大事件]"
+      ]
+    },
+    {
+      "title": "Is Claude Down? Anthropic Says It Fixed the Latest AI Outage",
+      "url": "https://news.google.com/rss/articles/CBMilgFBVV95cUxPSmtqanI4ZERZSnZ6VlRPQXNCbnBhRTZYY016YVluUkU0QW11eTNKMmJtRHF0R3Z1NE1TTnZxM1dDWUpTcWJ0Z29Zc00wT3pMekFoRk16VmxMOWl0dXNodU04SFhLVjF0VE05Tm1TLURWRTNWN2NQSjFCcEIyVGt1a3lnSUxSVzJGUHBONDZtVWhodTJwcVE?oc=5",
+      "source": "Google News / PCMag Australia ＋Google News / PCMag",
+      "time": "08/24 10:20",
+      "sentiment": "",
+      "body": "`來源` ＋PCMag（Google News）報導 Anthropic 表示已修復最新一起 AI 服務中斷，並與其他媒體同步報導此事件。",
+      "focusTags": [
+        "[持續追蹤]"
+      ]
+    },
+    {
+      "title": "Claude Continues to Suffer Outages, Services Down for 3+ Hours",
+      "url": "https://news.google.com/rss/articles/CBMinwFBVV95cUxNc3hnTE9YRFhXak1JWXFVUVNsRVlGN2IwMzhadzA1M2gyQ2x4X1RiaFhBVUhmajMtbkd3V1RUN0lkSGpyeGxwcDdyd3BzX0ZhdHVzN2RDN0xPN201b0hDLXk1bUZyVDNwbmZIRl9ObFlkbjlaa2JQWFNzOEpRWWlDVDlidGNXZ3NQUEtRUDN4aTlkamFTUkoyQl9ldDZMQ2c?oc=5",
+      "source": "Google News / analyticsindiamag.com",
+      "time": "08/24 10:13",
+      "sentiment": "",
+      "body": "analyticsindiamag.com 報導 Claude 服務近期持續發生中斷，單次時間超過 3 小時。",
+      "focusTags": [
+        "[持續追蹤]"
+      ]
+    },
+    {
+      "title": "Commercial Claude Has Gone Down 28 Times in 30 Days; Its Government Tier Has Never Gone Down Once",
+      "url": "https://news.google.com/rss/articles/CBMi4gFBVV95cUxQYzR6Tkp4Q2R0d3FJLWYtbDVoeXVLZGZsN2ZlWS1TNERMVVJiSHRxVXJJNUpZSXJ2V0N0d2lrQmRiaG85QUU4WDVuX2hoLWcxLTFTT2dkQzhfSTlvNEktOGpVMlRVQzdYV0cxUjR0NWticjJHUUQtMlNMbkpaYU8waUpUM3BTdlZsbTJ4RlRjTkpnZFBpM0VKV1hyTVVZNWR2Y2twM0hTWDlkTzMwT3hJVjNmYkRnUzdJVDBORWpDaGVJNHNxUGdCaE4xUUxxVHNKdDlQa0VtQXpuM1c5dld4WGZB?oc=5",
+      "source": "Google News / Tech Times",
+      "time": "08/24 15:28",
+      "sentiment": "",
+      "body": "Tech Times 報導商用版 Claude 在過去 30 天內已發生 28 次中斷，並指出政府層級（Government Tier）方案從未發生過中斷。",
+      "focusTags": [
+        "[持續追蹤]"
+      ]
+    },
+    {
+      "title": "6 Claude Code Masterpieces Handpicked by Anthropic: Expert-Selected Top AI-Powered Coding Creations",
+      "url": "https://news.google.com/rss/articles/CBMiU0FVX3lxTFBhVGpZRGE5M1gwVUw5TW95ZjFiLWRYeWxxLWNSWWxxM1lOWmVOSmgzbThGM0VaSXdwTkVMQUw4X1hMTmhsVHJKS1prVVkzQ29MNTU0?oc=5",
+      "source": "Google News / 36Kr",
+      "time": "08/25 08:26",
+      "sentiment": "",
+      "body": "36Kr 報導 Anthropic 精選六件以 Claude Code 打造的作品作為代表案例。",
+      "focusTags": [],
+      "sedimented": [
+        {
+          "id": "claude-code",
+          "pageType": "entity"
+        }
+      ]
+    },
+    {
+      "title": "AI giant Anthropic in talks to lease massive Bastrop County data center, sources said",
+      "url": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxPQlVUWGdCV3hiNFdydVphZlpwYXctSHAzRnZ3SzNMTmVxQm9QcVpkS0F4WVdQcGtYb1pGNXdnMjRHVVlHUlBFZ2JRdkU4eV9pQWduaXlWV1lneXJkMFNrZkhmTmI1czhGOUhFbjJ1U1VOcXgzMFhMMjl0WnphbXFEMXZGSzNuU1VONDBrNXhhRHRGVEY2R0V1SFNDSV9GbnNRUDN0OVlzYW1EQnpiQU01NVJrYkU4MEF00gG-AUFVX3lxTE5takJHbTd3Y1FjNjg4SVl2dEJNdHp6b2ZySVVsbnlzZXFBZ0YwVHgwUmdvQXN0RmtQbEJfNzRoNVhCeWl4bWU0ZFliOE54TVZINHBmN2s4QVpRNHI0NkFIUWY0VzA3WWx2aHJmOThNSDRQYUNuZVpINU9CdVFaSnZkZVd0cVZBNUZDWkZVWjFfWjRLYkNfNG5WSFlDd01ZNmNzX2lQZ3Z0bFRiTVlIZk5oTVdrYzhRaXk0d1V4anc?oc=5",
+      "source": "Google News / KXAN Austin",
+      "time": "08/25 01:22",
+      "sentiment": "",
+      "body": "KXAN Austin 報導 Anthropic 正洽談租用德州 Bastrop County 一座大型資料中心。",
+      "focusTags": []
+    },
+    {
+      "title": "More tidbits from Epic UGM: Anthropic's Project Glasswing and a deeper partnership with UpToDate",
+      "url": "https://news.google.com/rss/articles/CBMixgFBVV95cUxNZ18zMV9kMHZXcHBIMjRTdUxKQ3VuV25tLWVJOUlFX0c4SUk4ODRCc0FfdWdvbTJiZ3NKcldlRzRjV0JOcWJrY2NWQkljUk9CX283OUlSTDJiSFVXT001MG1TVUNGLUdLVjdWTFQ3NGhDNzFrakktMG03bGVYNVdGbnhsNTJjWTdmN1pNN1g5T1NWRHJMdlcyc1I1YUtKOVZyRTN6UFc3ZzJFeTcwR1NTZTlwcVRVNDd2aEh1cUVDWW93dkVBcHc?oc=5",
+      "source": "Google News / Fierce Healthcare",
+      "time": "08/24 11:00",
+      "sentiment": "",
+      "body": "Fierce Healthcare 報導 Anthropic 的醫療專案「Project Glasswing」，以及與醫療資訊平台 UpToDate 深化合作的動態。",
+      "focusTags": []
+    },
+    {
+      "title": "Anthropic tells San Francisco staff to work from home due to possible security team strike",
+      "url": "https://news.google.com/rss/articles/CBMipgFBVV95cUxNV3JsZ3V5NHdIQTdfZ2xQTEY4MzNFRWx1dzNld2cyMHdCbGhaWFAtT3RHcUxrZDh0M1ZmWm5OZW9yMmJ4Z1BUaDh3N1k4bzVDOE1MRWpTUUd2WEVTNXZRbHVnX1Z4T3NuRHg0TEJVTnFMOGROY2hTaDJtUHRkb2VYdThVbzM2eXVLeGhieDZyekVPeUF1Qk5qb1gwTXA1UzE4cUtXc0VB?oc=5",
+      "source": "Google News / Business Insider",
+      "time": "08/25 09:12",
+      "sentiment": "",
+      "body": "Business Insider 報導 Anthropic 因舊金山辦公室安全團隊可能罷工，要求當地員工改為居家辦公。",
+      "focusTags": []
+    },
+    {
+      "title": "Who Should Control Anthropic?",
+      "url": "https://news.google.com/rss/articles/CBMijgFBVV95cUxNR1J3NGNXVXJNR1BSeUtOQjliLTVYWFZvSFRra2tBM0lHWEV6Nkh0V1JjQ0h5RXFDTUVwWXo4NWZ3R1FKMDBXS1N0dEtEc1RJQWdWbncxVXFYNnZQVzJKalp5Si0tN2p5c0c2SVpDY0V3LW9tcElVZmZPQ0llQ05fVFFFdXRNcnEtcVNCMDB3?oc=5",
+      "source": "Google News / Bloomberg",
+      "time": "08/24 18:18",
+      "sentiment": "",
+      "body": "Bloomberg 就 Anthropic 的公司治理與控制權議題發表分析報導。",
+      "focusTags": []
+    },
+    {
+      "title": "Companies not as keen on Anthropic's best AI model",
+      "url": "https://news.google.com/rss/articles/CBMiowFBVV95cUxOOUlubmQxdDFISUd0dVk5M0w0R3ZWUnNSOUNfRVp2UGlTbGhfTzQ0dnRaSG8tS01OSnN5OFBiUnNQYklyOWNJcXl2SW9XRW5EUEhONzBEaEF0M214Q3E3UXpSY25kbFhSeUVPVjRocTkwX3lQTDhuWjNJYXdLZUx1cHR4aF9wM0lvS0pPRW8zNEhtMlEtOHA5dl8tWi1JVnV6QVZJ?oc=5",
+      "source": "Google News / cio.com",
+      "time": "08/25 00:47",
+      "sentiment": "",
+      "body": "cio.com 報導部分企業對 Anthropic 旗艦模型的採用意願不如預期熱絡。",
+      "focusTags": []
+    },
+    {
+      "title": "Samsung thinks Claude Code can help it boost chip design — but admits the AI still makes some worryingly big mistakes",
+      "url": "https://news.google.com/rss/articles/CBMi3gFBVV95cUxQa2RHY2xLSFluZWZRWUdyS2tJT19BMVJPQ3VCcTMxNUNMbUZqTGo5Wk9qbUlJQ2piTTNxZUZjRUxtLUdMdGhNTzlJMjc3SWJCeVRVNFRsUlJpNDdPZC1ZTE9FN0tLY2JROVZuU3Fac2tJWWFiSVpZNG5IREEtd0xKYmZ6VlhMQzBuWTA5b0FrNm9wa045YWI4VS14UWhzUEd3aXdxcWwtdkpMUHdHdE5LM1l0b0hDX2lLdGQzZGFtam5KM29PYmsyMEc1MFNRbUdPMG4yNnRJN0VKUWZnSXc?oc=5",
+      "source": "Google News / TechRadar",
+      "time": "08/25 00:26",
+      "sentiment": "",
+      "body": "TechRadar 報導三星認為 Claude Code 有助其晶片設計，但也坦言 AI 仍會犯下令人擔憂的重大錯誤。",
+      "focusTags": [],
+      "sedimented": [
+        {
+          "id": "claude-code",
+          "pageType": "entity"
+        }
+      ]
+    },
+    {
+      "title": "Here's how Thomson Reuters is loosening Claude's costly grip",
+      "url": "https://news.google.com/rss/articles/CBMimAFBVV95cUxQNTlJeGxyakhWMlAyR0JTaEV6UDVnaTZmWVMxYk9SSk5wNktnU3gyVnZWdzRBek5CMjJsdExoWXBkNzJlQlZUQWVsbmVoTkcyQWZlX1p4ZUo1YUdkajlXUkw2TV83eTM1WFdsSUphQmU0eWo0dXExYjlKSXgwNlZzSzRRMDBOLWthMTNVbTFlU3JuTURNZ0tpWA?oc=5",
+      "source": "Google News / Business Insider",
+      "time": "08/24 13:00",
+      "sentiment": "",
+      "body": "Business Insider 報導 Thomson Reuters 正設法降低對 Claude 的高額依賴成本。",
+      "focusTags": []
+    }
+  ],
+  "discussions": [
+    {
+      "title": "[BUG] Claude Code consistently creates files with Windows line endings on Linux systems",
+      "url": "https://github.com/anthropics/claude-code/issues/2805",
+      "source": "GitHub Issues / claude-code",
+      "time": "08/25 05:36",
+      "sentiment": "",
+      "body": "使用者回報即使在 Ubuntu Linux 上並於 CLAUDE.md 明確指示，Claude Code 仍持續建立 Windows 換行符號（CRLF）的檔案，累積 52 則留言、35 個👍。情緒：😤",
+      "focusTags": [
+        "[社群趨勢]"
+      ],
+      "sedimented": [
+        {
+          "id": "claude-code",
+          "pageType": "entity"
+        }
+      ]
+    },
+    {
+      "title": "A Claude Code skill that recovers export-blocked Kindle highlights",
+      "url": "https://github.com/l3a0/claude-plugins",
+      "source": "Hacker News",
+      "time": "08/24 19:32",
+      "sentiment": "",
+      "body": "一位使用者分享用 Claude 打造的瀏覽器擴充功能，透過 OCR 從 Kindle Cloud Reader 擷取被限制匯出的畫線筆記內容，登上 HN。情緒：😊",
+      "focusTags": [],
+      "sedimented": [
+        {
+          "id": "claude-code",
+          "pageType": "entity"
+        }
+      ]
+    },
+    {
+      "title": "Anthropic candidates face blunt money question",
+      "url": "https://www.axios.com/2026/08/24/scoop-anthropic-candidates-face-blunt-money-question",
+      "source": "Hacker News",
+      "time": "08/24 11:55",
+      "sentiment": "",
+      "body": "Axios 報導 Anthropic 面試流程中會直接詢問應徵者「若公司未來因安全考量放棄 AI 願景導致股票歸零，你會作何感受」，HN 討論中不少人認為這是該公司一貫透明的作法。情緒：🤔",
+      "focusTags": []
+    },
+    {
+      "title": "Is Claude Code intentionally burning more tokens now?",
+      "url": "https://www.reddit.com/r/ClaudeCode/comments/1vxw3fi/is_claude_code_intentionally_burning_more_tokens/",
+      "source": "Reddit / r/ClaudeCode",
+      "time": "08/25 10:36",
+      "sentiment": "",
+      "body": "使用者質疑近幾個月來 Claude Code 是否比過去消耗更多 token 才能完成相同任務。情緒：😤",
+      "focusTags": [],
+      "sedimented": [
+        {
+          "id": "claude-code",
+          "pageType": "entity"
+        }
+      ]
+    },
+    {
+      "title": "For very heavy Fable 5 usage, is rotating multiple Max accounts allowed, and is it generally cheaper than using the API?",
+      "url": "https://www.reddit.com/r/ClaudeCode/comments/1vxvjxr/for_very_heavy_fable_5_usage_is_rotating_multiple/",
+      "source": "Reddit / r/ClaudeCode",
+      "time": "08/25 10:05",
+      "sentiment": "",
+      "body": "重度使用者詢問長時間、高頻使用 Fable 5 時，輪替多組 Max 帳號是否被允許、是否比直接用 API 划算。情緒：🤔",
+      "focusTags": []
+    },
+    {
+      "title": "llm-anthropic 0.27",
+      "url": "https://simonwillison.net/2026/Aug/24/llm-anthropic/",
+      "source": "Blog / Simon Willison",
+      "time": "08/24 16:27",
+      "sentiment": "",
+      "body": "Simon Willison 部落格記錄 `llm` CLI 工具的 Anthropic 外掛更新至 0.27 版。情緒：😐",
+      "focusTags": []
+    },
+    {
+      "title": "What I Built with Claude - sweet potatoes",
+      "url": "https://www.reddit.com/r/ClaudeAI/comments/1vx6fyn/what_i_built_with_claude_sweet_potatoes/",
+      "source": "Reddit / r/ClaudeAI · 週熱門",
+      "time": "08/24 15:44",
+      "sentiment": "",
+      "body": "一則本週熱門貼文分享使用者用 Claude 打造的小專案。情緒：😊",
+      "focusTags": []
+    },
+    {
+      "title": "Indeed laid off my pregnant wife, so I built a job search competitor with Claude. It just got its first three people hired.",
+      "url": "https://www.reddit.com/r/ClaudeAI/comments/1vx4kn7/indeed_laid_off_my_pregnant_wife_so_i_built_a_job/",
+      "source": "Reddit / r/ClaudeAI · 週熱門",
+      "time": "08/24 14:35",
+      "sentiment": "",
+      "body": "一則本週熱門貼文描述使用者在配偶遭資遣後，用 Claude 打造求職平台，已促成三人成功獲聘。情緒：😊",
+      "focusTags": []
+    },
+    {
+      "title": "Having unlimited tokens is wild",
+      "url": "https://www.reddit.com/r/ClaudeAI/comments/1vuuiot/having_unlimited_tokens_is_wild/",
+      "source": "Reddit / r/ClaudeAI · 週熱門",
+      "time": "08/21 22:20",
+      "sentiment": "",
+      "body": "一則本週熱門貼文分享使用者對無限 token 用量體驗的感想。情緒：😊",
+      "focusTags": []
+    }
+  ],
+  "billing": [
+    {
+      "title": "官方文件更新：Claude Fable 5 on your plan",
+      "url": "https://support.claude.com/en/articles/15424964-claude-fable-5-on-your-plan",
+      "source": "Official Docs",
+      "time": "08/25 10:39",
+      "sentiment": "",
+      "body": "官方說明文件更新：先前允許以每週訂閱額度 50% 免費使用 Fable 5 的促銷已於 7/19 結束，之後 Fable 5 在 Max 方案、Team／Enterprise 的付費席位上維持隨方案內建；在 Pro 方案與 Team／Enterprise 的標準席位上則改採用量計費（pay-as-you-go）。",
+      "focusTags": []
+    }
+  ],
+  "focus": [
+    {
+      "tag": "[持續追蹤]",
+      "text": "Claude 服務穩定性問題本月不斷延燒：官方狀態頁今日再排除一起 Claude.ai 登入異常，同時多家媒體分別報導近期已發生多次中斷、單次長達 3 小時以上。",
+      "ref_urls": [
+        "https://status.claude.com/incidents/n0rlp126qf8g",
+        "https://news.google.com/rss/articles/CBMilgFBVV95cUxPSmtqanI4ZERZSnZ6VlRPQXNCbnBhRTZYY016YVluUkU0QW11eTNKMmJtRHF0R3Z1NE1TTnZxM1dDWUpTcWJ0Z29Zc00wT3pMekFoRk16VmxMOWl0dXNodU04SFhLVjF0VE05Tm1TLURWRTNWN2NQSjFCcEIyVGt1a3lnSUxSVzJGUHBONDZtVWhodTJwcVE?oc=5",
+        "https://news.google.com/rss/articles/CBMinwFBVV95cUxNc3hnTE9YRFhXak1JWXFVUVNsRVlGN2IwMzhadzA1M2gyQ2x4X1RiaFhBVUhmajMtbkd3V1RUN0lkSGpyeGxwcDdyd3BzX0ZhdHVzN2RDN0xPN201b0hDLXk1bUZyVDNwbmZIRl9ObFlkbjlaa2JQWFNzOEpRWWlDVDlidGNXZ3NQUEtRUDN4aTlkamFTUkoyQl9ldDZMQ2c?oc=5",
+        "https://news.google.com/rss/articles/CBMi4gFBVV95cUxQYzR6Tkp4Q2R0d3FJLWYtbDVoeXVLZGZsN2ZlWS1TNERMVVJiSHRxVXJJNUpZSXJ2V0N0d2lrQmRiaG85QUU4WDVuX2hoLWcxLTFTT2dkQzhfSTlvNEktOGpVMlRVQzdYV0cxUjR0NWticjJHUUQtMlNMbkpaYU8waUpUM3BTdlZsbTJ4RlRjTkpnZFBpM0VKV1hyTVVZNWR2Y2twM0hTWDlkTzMwT3hJVjNmYkRnUzdJVDBORWpDaGVJNHNxUGdCaE4xUUxxVHNKdDlQa0VtQXpuM1c5dld4WGZB?oc=5"
+      ]
+    },
+    {
+      "tag": "[重大事件]",
+      "text": "有媒體報導 Anthropic 將為 Claude 工具生成的內容加上浮水印。",
+      "ref_urls": [
+        "https://news.google.com/rss/articles/CBMinwFBVV95cUxOWlZoaFl6aEFqWUlSdGh5MU8xdjNwSmxKNUtoT2VQalNGVk9TWlN1QUJRVl9wZmdvcjhqSlg5WW5aTEVPUFZzYWtiZUtxSVVMUEVkQVBXWkZEVFFpZ2NOVWV2RVRheVU3V2F5bzZ1QnVTQmJJUU9hay1zeVh4UHZpY1RBRGdMbmgyN3BqSlVMNXZSazc5QTlyeGMyT2Z2c0U?oc=5"
+      ]
+    },
+    {
+      "tag": "[社群趨勢]",
+      "text": "Claude Code 社群回饋集中在三個痛點：「訊息佇列模式」功能請求獲最多迴響（236 個👍），同時模型行為爭議（137 則留言）與 Windows 換行符號舊 bug 也持續有人提出意見。",
+      "ref_urls": [
+        "https://github.com/anthropics/claude-code/issues/50246",
+        "https://github.com/anthropics/claude-code/issues/60705",
+        "https://github.com/anthropics/claude-code/issues/2805"
+      ]
+    },
+    {
+      "tag": "[新工具]",
+      "text": "Show HN 推出免截圖的螢幕活動記憶工具，讓 Claude Code 讀取每日活動紀錄回答「那天做了什麼」，登上 HN 熱門並獲跨來源討論。",
+      "ref_urls": [
+        "https://github.com/dragthelake/ambient-context"
+      ]
+    }
+  ],
+  "topicRadar": [],
+  "sourceStatus": [
+    {
+      "name": "Anthropic Status",
+      "ok": true,
+      "count": 2
+    },
+    {
+      "name": "Hacker News",
+      "ok": true,
+      "count": 5
+    },
+    {
+      "name": "Anthropic Blog",
+      "ok": true,
+      "count": 0
+    },
+    {
+      "name": "dev.to",
+      "ok": true,
+      "count": 14
+    },
+    {
+      "name": "Official Skills",
+      "ok": true,
+      "count": 0
+    },
+    {
+      "name": "GitHub Issues",
+      "ok": true,
+      "count": 15
+    },
+    {
+      "name": "Google News",
+      "ok": true,
+      "count": 36
+    },
+    {
+      "name": "Claude API Release Notes",
+      "ok": true,
+      "count": 0
+    },
+    {
+      "name": "Topic Watch",
+      "ok": true,
+      "count": 0
+    },
+    {
+      "name": "Blogroll",
+      "ok": true,
+      "count": 1
+    },
+    {
+      "name": "Official Docs",
+      "ok": true,
+      "count": 1
+    },
+    {
+      "name": "GitHub",
+      "ok": true,
+      "count": 33
+    },
+    {
+      "name": "Reddit",
+      "ok": true,
+      "count": 11
+    }
+  ],
+  "preview": "Claude 服務穩定性問題本月不斷延燒：官方狀態頁今日再排除一起 Claude.ai 登入異常，同時多家媒體分別報導近期已發生多次中斷、單次長達 3 小時以上。",
+  "sedimentedToday": [
+    {
+      "id": "claude-code",
+      "name": "Claude Code",
+      "pageType": "entity"
+    },
+    {
+      "id": "dario-amodei",
+      "name": "Dario Amodei",
+      "pageType": "entity"
+    },
+    {
+      "id": "ai-agent-safety",
+      "name": "AI Agent 安全與可靠性",
+      "pageType": "topic"
+    },
+    {
+      "id": "anthropic-business",
+      "name": "Anthropic 商業健康度",
+      "pageType": "topic"
+    },
+    {
+      "id": "anthropic-government-policy",
+      "name": "Anthropic 政府與軍事政策",
+      "pageType": "topic"
+    },
+    {
+      "id": "code-quality-decline",
+      "name": "Claude Code 效能退步事件",
+      "pageType": "topic"
+    },
+    {
+      "id": "community-tech-discussions",
+      "name": "社群技術討論趨勢",
+      "pageType": "topic"
+    },
+    {
+      "id": "enterprise-cost-management",
+      "name": "企業規模 Claude 成本管理",
+      "pageType": "topic"
+    },
+    {
+      "id": "enterprise-tool-tracker",
+      "name": "大型企業 AI 編碼工具使用追蹤",
+      "pageType": "topic"
+    }
+  ]
+}

@@ -79,13 +79,7 @@
       "time": "08/22 09:08",
       "sentiment": "",
       "body": "Ynetnews 刊出人物側寫報導，描述 Cami Clark 在 Anthropic 幕後對公司與執行長 Dario Amodei 的影響力。",
-      "focusTags": [],
-      "sedimented": [
-        {
-          "id": "dario-amodei",
-          "pageType": "entity"
-        }
-      ]
+      "focusTags": []
     }
   ],
   "discussions": [
@@ -264,19 +258,9 @@
       "pageType": "entity"
     },
     {
-      "id": "dario-amodei",
-      "name": "Dario Amodei",
-      "pageType": "entity"
-    },
-    {
       "id": "pricing",
       "name": "Anthropic 訂閱方案與計費政策",
       "pageType": "entity"
-    },
-    {
-      "id": "anthropic-government-policy",
-      "name": "Anthropic 政府與軍事政策",
-      "pageType": "topic"
     },
     {
       "id": "community-large-codebase-workflow",

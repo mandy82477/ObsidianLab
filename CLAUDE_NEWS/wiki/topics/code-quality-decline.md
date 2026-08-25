@@ -3,17 +3,17 @@ page: "topics/code-quality-decline"
 kind: "topic"
 status: "ongoing（官方已說明工程疏失，恢復情況見下方摘要）"
 domain: "🛠️ 工具/功能"
-last_updated: "2026-08-20"
-last_news_update: "2026-08-20"
+last_updated: "2026-08-25"
+last_news_update: "2026-08-25"
 status_main: "ongoing"
-days_since_news: 4
+days_since_news: 0
 inbound_links: 27
-attribution_count: 18
-attribution_last: "2026-08-20"
+attribution_count: 20
+attribution_last: "2026-08-25"
 top_source: "reddit"
-pending_count: 2
+pending_count: 3
 pending_overdue: 2
-pending_next_review: null
+pending_next_review: "2026-09-08"
 pending_signalled: 0
 signal: "健康"
 generated_by: "scripts/gen_wiki_frontmatter.py"

@@ -324,11 +324,6 @@
       "id": "managed-agents",
       "name": "Managed Agents",
       "pageType": "entity"
-    },
-    {
-      "id": "code-quality-decline",
-      "name": "Claude Code 效能退步事件",
-      "pageType": "topic"
     }
   ]
 }

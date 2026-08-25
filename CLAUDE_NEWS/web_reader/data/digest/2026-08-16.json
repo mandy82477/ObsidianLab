@@ -272,11 +272,6 @@
       "id": "coding-workflow-guide",
       "name": "程式開發實戰手冊",
       "pageType": "topic"
-    },
-    {
-      "id": "enterprise-cost-management",
-      "name": "企業規模 Claude 成本管理",
-      "pageType": "topic"
     }
   ]
 }
