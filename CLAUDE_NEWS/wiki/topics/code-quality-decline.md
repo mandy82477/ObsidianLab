@@ -23,11 +23,11 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 **狀態：** ongoing（官方已說明工程疏失，恢復情況見下方摘要）
 **領域：** 🛠️ 工具/功能
 **開始日期：** 2026-03（推測）
-**最後更新：** 2026-08-20
-**最後新聞更新：** 2026-08-20
+**最後更新：** 2026-08-25
+**最後新聞更新：** 2026-08-25
 
-> **最近效能退步事件**（2026-08-20）
-> 「Opus 5 上線後品質感知訊號群」再添一則社群投訴——r/ClaudeAI 週熱門貼文「Claude is Losing Me After Being Heavy User Since Release」，重度使用者表達逐漸失望情緒，具體技術細節未見於摘要——為週熱門標記（達收錄低門檻）但僅標題可考，訊號群樣本數自 9 則增至 10 則，僅計入現象層級延續，未提供新的機制性證據（詳見「Opus 5 上線後品質感知訊號群」子區塊）。Token 消耗異常訊號群（06-27～07-13，九個獨立來源）與模型釘選／靜默降級訊號群（02～08-04）仍並行追蹤，Anthropic 均未回應。
+> **最近效能退步事件**（2026-08-25）
+> 「Opus 5 上線後品質感知訊號群」新增一筆待查證項目——HackerNoon 報導程式碼品質分析工具 Sonar 對 Opus 5 生成程式碼進行基準測試，僅標題可用，具體評測數字尚未見報導（❓ 待查證）；若後續查得數字，將是本訊號群首筆量化／第三方工具評測證據。Token 消耗異常訊號群（06-27～07-13，九個獨立來源）與模型釘選／靜默降級訊號群（02～08-04）仍並行追蹤，Anthropic 均未回應。
 
 ---
 
@@ -83,6 +83,10 @@ Claude Code 在 2026 年 3 月至 4 月間出現長達約一個月的效能明�
 | 2026-08-13 | 「Opus 5 is actually almost rage-inducing to use.」：使用者稱已依官方建議調整、試過各種全域 CLAUDE.md 設定，仍無法讓 Opus 5 行為符合期待 | Reddit r/ClaudeAI（[原文](https://www.reddit.com/r/ClaudeAI/comments/1vn8ml6/opus_5_is_actually_almost_rageinducing_to_use/)，週熱門標記，達收錄低門檻） | 單一社群回報（週熱門達低門檻，惟無具體量化數字） |
 | 2026-08-19 | 「I've never felt Claude been degraded for so long before」：使用者反映過去兩週 Claude 表現反覆不穩，多半比平常差，詢問是否為運算資源問題 | Reddit r/ClaudeCode（[原文](https://www.reddit.com/r/ClaudeCode/comments/1vshkrf/)，0 留言、無「週熱門」標記，score 不可信） | 單一社群回報（無具體量化數字或版本號，僅主觀感受描述） |
 | 2026-08-19（週熱門重浮上，原發時間較早） | 「Claude is Losing Me After Being Heavy User Since Release」：重度使用者發文表達對 Claude 逐漸失望的心情，具體抱怨內容未見於本次摘要 | Reddit r/ClaudeAI（[原文](https://www.reddit.com/r/ClaudeAI/comments/1vqsas9/claude_is_losing_me_after_being_heavy_user_since/)，週熱門標記，達收錄低門檻） | 單一社群回報（僅標題可考，無具體量化數字或版本號） |
+| 2026-08-25 | 「Claude Opus 5 Code Quality: What Sonar's Benchmark Reveals」：程式碼品質分析工具 Sonar 對 Opus 5 生成程式碼進行基準測試，具體結果 ❓ 待查證 ⟨Q-01⟩ | Google News/HackerNoon（僅標題可用） | 待查證（第三方工具評測，具體數字未見報導）|
+
+**懸置細節**
+- ⟨Q-01⟩ ❓ **待查證**（標 2026-08-25｜查 Sonar、code quality benchmark）：HackerNoon 標題「Claude Opus 5 Code Quality: What Sonar's Benchmark Reveals」僅標題可用，程式碼品質分析工具 Sonar 對 Opus 5 生成程式碼的基準測試具體評測數字、樣本規模與測試方法論均未見報導；若查得具體數字，將是本訊號群目前唯一的量化／第三方工具評測證據（現有 10 則社群訊號均為主觀回報，無量化數字）。
 
 **第三種假說的定位：** 上方「三種假說」表格圍繞 token 消耗展開（模型真退步／計費計量／context 工具配置），且截至 07-13 三者均無官方確認等級證據。本訊號群提供的是**不同維度**的證據——不是「消耗了多少 token」，而是「模型行為本身是否有可驗證的特性變化」。07-25 的 effort dial 非單調現象尤其關鍵：這是**目前全頁唯一一筆官方自己承認的行為特性變化**（其餘皆為社群主張或用戶主觀感受），性質上比既有三種假說的證據都更硬。
 
