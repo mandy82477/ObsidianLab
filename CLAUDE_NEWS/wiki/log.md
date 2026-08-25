@@ -4216,3 +4216,18 @@ registry 加一組 sync_pair 釘住產出端與歸因端（只改一邊等於白
 - H-2fc0ba（08-23 開立）：功能記者已處理——SkillWorks 第三方生態規模統計已以「訊號待驗」方式加入 `entities/claude-skills.md`
 
 **主編判斷備註：** 今日多達 12 則條目（Anthropic Status 官方事故公告 + 11 則媒體跟進報導）圍繞同一起服務錯誤率上升事故；因無專屬頁面追蹤一般性服務中斷（非安全漏洞、非產品功能缺陷），主編判斷不逐則路由六記者分類，僅由官方狀態頁條目留存於當日日報「技術更新」區塊，不另立 wiki 頁面或事件記錄。36氪與 TechRadar 兩則聳動報導在派工訊息中已明確提示「Google News RSS 僅標題可用、無完整內文」，兩位記者（模型、安全政策）皆採納謹慎處理、以標準待查證語法記入而未寫成既定事實，為預期中的正確處置。
+
+## 2026-08-25 Ingest
+
+- 來源日報：[[news/2026-08-25]]
+- 更新頁面：wiki/entities/claude-code.md、wiki/entities/dario-amodei.md、wiki/topics/ai-agent-safety.md、wiki/topics/anthropic-business.md、wiki/topics/anthropic-government-policy.md、wiki/topics/code-quality-decline.md、wiki/topics/community-tech-patterns.md、wiki/topics/community-tech-discussions.md、wiki/topics/enterprise-tool-tracker.md、wiki/topics/enterprise-cost-management.md、wiki/feature-radar.md（主編彙整：同步「最新版本」行為 v2.1.245）
+- 新增頁面：無
+- 摘要：Anthropic 宣布將為 Claude 工具生成的內容加上浮水印（媒體報導，與既有浮水印爭議系列報導並陳、無新機制細節）；Claude Code GitHub Issue #60705（模型行為模式爭議，含 stop-hook 指令被引為未經授權動作依據）與 #50246（訊息佇列模式功能請求）互動量雙雙創新高（137、67 則留言）；一批鎖定 codebase 理解與長期記憶的社群開發工具同日於 GitHub 亮相（Graft、the-startup、brain.md 等）；Anthropic IPO／估值報導延續多日熱度，同日出現「遜於 SpaceX」與「可能超越 SpaceX IPO」兩種相反論點，並陳收錄；三星證實用 Claude Code 輔助晶片設計但坦言仍有明顯錯誤、Thomson Reuters 傳出降低對 Claude 依賴，反映企業採用出現分歧訊號
+- 呈現品質：六位記者皆回報 ✅ 通過（安全政策記者處理 Firstpost「中國駭客用 AI」條目時，因原文僅標題、且該則本身未通過日報收錄門檻，先草擬後複核撤回，判斷正確，非品質問題）
+- 品質備註：無
+
+**跨記者轉知（已登帳，待下次派工帶入）：**
+- H-70d575：商業→模型，Fierce Healthcare（Epic UGM）報導提及 Project Glasswing 進展，題材屬 `entities/mythos.md` 範疇但僅標題可用，待模型記者查證後續報導補列
+- H-f82d69：社群→功能，今日新增技術模式（ambient-context 螢幕記憶、mindmuxai/brain.md、rsmdt/the-startup、Kindle highlights OCR skill）待功能記者評估是否需在 `official-community-gap.md` 產品化矩陣新增對應列
+
+**主編判斷備註：** 延續 2026-08-24 已建立的先例，今日日報中 4 則一般性服務中斷／已修復事故條目（Anthropic Status 登入異常、PCMag Australia／analyticsindiamag.com／Tech Times 三則媒體跟進報導「近期已發生多次中斷」）因無專屬頁面追蹤一般性服務可靠性議題（非安全漏洞、非產品功能缺陷），主編判斷不逐則路由六記者分類，僅保留於當日日報「📌 今日聚焦」與「📰 媒體報導」區塊。社群記者對 GitHub Search 條目 `trailhq/Graft`（4,842 星）依星數防刷規則判定證據不足、不收錄（區別於既有 08-15 已收錄的 `NanoNets/Graft`，同名不同專案），為正確的謹慎處置。
