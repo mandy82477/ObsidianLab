@@ -191,35 +191,46 @@
       "https://code.claude.com/docs/en/whats-new/2026-w15.md": "Week 15 · April 6–10, 2026",
       "https://code.claude.com/docs/en/whats-new/2026-w14.md": "Week 14 · March 30 – April 3, 2026",
       "https://code.claude.com/docs/en/whats-new/2026-w13.md": "Week 13 · March 23–27, 2026",
-      "https://code.claude.com/docs/en/legal-and-compliance.md": "Legal and compliance"
+      "https://code.claude.com/docs/en/legal-and-compliance.md": "Legal and compliance",
+      "https://code.claude.com/docs/_llms/fr.md": "French (166 pages)",
+      "https://code.claude.com/docs/_llms/de.md": "German (166 pages)",
+      "https://code.claude.com/docs/_llms/it.md": "Italian (166 pages)",
+      "https://code.claude.com/docs/_llms/jp.md": "Japanese (166 pages)",
+      "https://code.claude.com/docs/_llms/es.md": "Spanish (166 pages)",
+      "https://code.claude.com/docs/_llms/ko.md": "Korean (166 pages)",
+      "https://code.claude.com/docs/_llms/cn.md": "Chinese (166 pages)",
+      "https://code.claude.com/docs/_llms/zh-hant.md": "Traditional Chinese (166 pages)",
+      "https://code.claude.com/docs/_llms/ru.md": "Russian (166 pages)",
+      "https://code.claude.com/docs/_llms/id.md": "Indonesian (166 pages)",
+      "https://code.claude.com/docs/_llms/pt-br.md": "Brazilian Portuguese (166 pages)"
     }
   },
   "https://code.claude.com/docs/en/desktop.md": {
-    "hash": "5f8b26e2bdc2dba4a32d3a4296a58d2936a148bdf2aa00da4ebbd4cd4b65b0ab",
-    "length": 77611
+    "hash": "698a401297b4c24b541e9cf90f523815c7fc3a9887508beb4cdad224d152f0f3",
+    "length": 78713
   },
   "https://claude.com/pricing": {
-    "hash": "0247007f8dd0bd2e7b118bcb465abc5ffbf5a9056e4861aed4ef692d637bdfa7",
-    "length": 31600
+    "hash": "797819641f948dafde289ef82cfb9add8bea8d67b8d293404301925c3f618794",
+    "length": 24257
   },
   "https://support.claude.com/en/articles/15424964-claude-fable-5-on-your-plan": {
-    "hash": "de42de8350703fdabd04e7fd0392ea5d0d5ff158778f8b3b18e5fe19cff26081",
-    "length": 22032
+    "hash": "e547b8336e69ce6a51eaaf25e72419d5665f303f073876d10a432df270f74142",
+    "length": 21734
   },
   "https://support.claude.com/en/articles/12429409-manage-usage-credits-for-paid-claude-plans": {
-    "hash": "5be2258b11d6ed5a8f33ed24a172072c673fde0e40540e84046d36d339ca43e8",
-    "length": 22799
+    "hash": "ee4453f516d3de9cfec8280627e2e1b1a7118bd1a63f1404871b1f816746211d",
+    "length": 22429
   },
   "https://support.claude.com/en/articles/11647753-how-do-usage-and-length-limits-work": {
-    "hash": "4c9ef4fe57fc0ba267304d4cc47bc93446d55cfd46d30f74cff019548fddc4e9",
-    "length": 22169
+    "hash": "d324d641600f329ce9990918f818113fc7f68146d5d2dcb943db2795c2687702",
+    "length": 22201
   },
   "https://support.claude.com/en/articles/11145838-use-claude-code-with-your-pro-or-max-plan": {
-    "hash": "1c62ba4c46e35fa2e2578e9b10df43227cdaf8e58a63993066ac3548c7034c05",
-    "length": 22853
+    "hash": "04a2718ae9a92dfca564e2fdf8d66ff1988f04feb110286f61909c64942212d4",
+    "length": 22590
   },
   "https://support.claude.com/en/articles/12138966-release-notes": {
-    "hash": "e5d6f6d61f8b5251fc988116af2a8cb519bb953e8e20b72bcbd3d1a057975dc6",
-    "length": 42912
+    "hash": "9ba6f0355c8c123be78b14d301316a28754d2f3df520c8842d128146404b9316",
+    "length": 42670
   }
 }
