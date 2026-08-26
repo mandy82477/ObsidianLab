@@ -352,18 +352,8 @@
       "pageType": "topic"
     },
     {
-      "id": "competitor-landscape",
-      "name": "AI 編碼工具競品動態",
-      "pageType": "topic"
-    },
-    {
       "id": "model-comparison",
       "name": "Claude 模型選型對照",
-      "pageType": "topic"
-    },
-    {
-      "id": "official-community-gap",
-      "name": "官方功能 vs 社群痛點缺口分析",
       "pageType": "topic"
     }
   ]

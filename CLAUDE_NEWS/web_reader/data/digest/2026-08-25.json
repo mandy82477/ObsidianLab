@@ -14,12 +14,6 @@
       "body": "一款 macOS 選單列工具，透過 Accessibility API 定期讀取當前視窗文字並寫成純 Markdown 日誌，讓 Claude Code 之類的工具讀取後回答「那天做了什麼」，不需截圖或 OCR。",
       "focusTags": [
         "[新工具]"
-      ],
-      "sedimented": [
-        {
-          "id": "claude-code",
-          "pageType": "entity"
-        }
       ]
     },
     {
@@ -51,13 +45,7 @@
       "time": "08/25 10:39",
       "sentiment": "",
       "body": "一款鎖定 Claude Code、Cursor、Codex、Gemini 等編碼 agent 的專案，訴求為針對特定 codebase 提供上下文理解，加速並降低成本，目前已累積 4,842 顆星。",
-      "focusTags": [],
-      "sedimented": [
-        {
-          "id": "claude-code",
-          "pageType": "entity"
-        }
-      ]
+      "focusTags": []
     },
     {
       "title": "rsmdt/the-startup",
@@ -66,13 +54,7 @@
       "time": "08/25 10:39",
       "sentiment": "",
       "body": "一套「The Agentic Startup」風格的 Claude Code 指令、skills 與 agent 集合，累積 507 顆星。",
-      "focusTags": [],
-      "sedimented": [
-        {
-          "id": "claude-code",
-          "pageType": "entity"
-        }
-      ]
+      "focusTags": []
     },
     {
       "title": "mindmuxai/brain.md",
@@ -81,13 +63,7 @@
       "time": "08/25 10:39",
       "sentiment": "",
       "body": "一個零依賴、以檔案為基礎的持久記憶層，為 Claude Code、Codex 等編碼 agent 提供跨 session 保存決策、需求與限制的「專案大腦」，累積 504 顆星。",
-      "focusTags": [],
-      "sedimented": [
-        {
-          "id": "claude-code",
-          "pageType": "entity"
-        }
-      ]
+      "focusTags": []
     }
   ],
   "techUpdates": [
@@ -164,13 +140,7 @@
       "time": "08/25 08:26",
       "sentiment": "",
       "body": "36Kr 報導 Anthropic 精選六件以 Claude Code 打造的作品作為代表案例。",
-      "focusTags": [],
-      "sedimented": [
-        {
-          "id": "claude-code",
-          "pageType": "entity"
-        }
-      ]
+      "focusTags": []
     },
     {
       "title": "AI giant Anthropic in talks to lease massive Bastrop County data center, sources said",
@@ -224,13 +194,7 @@
       "time": "08/25 00:26",
       "sentiment": "",
       "body": "TechRadar 報導三星認為 Claude Code 有助其晶片設計，但也坦言 AI 仍會犯下令人擔憂的重大錯誤。",
-      "focusTags": [],
-      "sedimented": [
-        {
-          "id": "claude-code",
-          "pageType": "entity"
-        }
-      ]
+      "focusTags": []
     },
     {
       "title": "Here's how Thomson Reuters is loosening Claude's costly grip",
@@ -252,12 +216,6 @@
       "body": "使用者回報即使在 Ubuntu Linux 上並於 CLAUDE.md 明確指示，Claude Code 仍持續建立 Windows 換行符號（CRLF）的檔案，累積 52 則留言、35 個👍。情緒：😤",
       "focusTags": [
         "[社群趨勢]"
-      ],
-      "sedimented": [
-        {
-          "id": "claude-code",
-          "pageType": "entity"
-        }
       ]
     },
     {
@@ -267,13 +225,7 @@
       "time": "08/24 19:32",
       "sentiment": "",
       "body": "一位使用者分享用 Claude 打造的瀏覽器擴充功能，透過 OCR 從 Kindle Cloud Reader 擷取被限制匯出的畫線筆記內容，登上 HN。情緒：😊",
-      "focusTags": [],
-      "sedimented": [
-        {
-          "id": "claude-code",
-          "pageType": "entity"
-        }
-      ]
+      "focusTags": []
     },
     {
       "title": "Anthropic candidates face blunt money question",
@@ -291,13 +243,7 @@
       "time": "08/25 10:36",
       "sentiment": "",
       "body": "使用者質疑近幾個月來 Claude Code 是否比過去消耗更多 token 才能完成相同任務。情緒：😤",
-      "focusTags": [],
-      "sedimented": [
-        {
-          "id": "claude-code",
-          "pageType": "entity"
-        }
-      ]
+      "focusTags": []
     },
     {
       "title": "For very heavy Fable 5 usage, is rotating multiple Max accounts allowed, and is it generally cheaper than using the API?",
@@ -462,24 +408,9 @@
   "preview": "Claude 服務穩定性問題本月不斷延燒：官方狀態頁今日再排除一起 Claude.ai 登入異常，同時多家媒體分別報導近期已發生多次中斷、單次長達 3 小時以上。",
   "sedimentedToday": [
     {
-      "id": "claude-code",
-      "name": "Claude Code",
-      "pageType": "entity"
-    },
-    {
       "id": "dario-amodei",
       "name": "Dario Amodei",
       "pageType": "entity"
-    },
-    {
-      "id": "ai-agent-safety",
-      "name": "AI Agent 安全與可靠性",
-      "pageType": "topic"
-    },
-    {
-      "id": "anthropic-business",
-      "name": "Anthropic 商業健康度",
-      "pageType": "topic"
     },
     {
       "id": "anthropic-government-policy",
@@ -487,23 +418,8 @@
       "pageType": "topic"
     },
     {
-      "id": "code-quality-decline",
-      "name": "Claude Code 效能退步事件",
-      "pageType": "topic"
-    },
-    {
-      "id": "community-tech-discussions",
-      "name": "社群技術討論趨勢",
-      "pageType": "topic"
-    },
-    {
       "id": "enterprise-cost-management",
       "name": "企業規模 Claude 成本管理",
-      "pageType": "topic"
-    },
-    {
-      "id": "enterprise-tool-tracker",
-      "name": "大型企業 AI 編碼工具使用追蹤",
       "pageType": "topic"
     }
   ]

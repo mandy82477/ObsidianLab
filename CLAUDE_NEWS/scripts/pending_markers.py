@@ -61,7 +61,9 @@ LEGACY_RE = re.compile(
     r"待查證|待核實|待確認|待驗證|存疑|未經官方確認|未證實|官方未載|單方指控|無官方證實"
 )
 
-PROBE_SPLIT_RE = re.compile(r"[、,，]")
+# 半形逗號夾在數字之間時（$1,125、1,000 星）是千分位，不是探針分隔符——
+# 2026-08-26 曾把探針「$1,125 Gap」切成「$1」而 FAIL，連帶擋掉當日 web build。
+PROBE_SPLIT_RE = re.compile(r"[、，]|(?<!\d),(?!\d)")
 WIKILINK_RE = re.compile(r"\[\[([^\]|#]+)")
 
 SYM_TO_KIND = {"❓": "待查證", "🔎": "查無官方"}
