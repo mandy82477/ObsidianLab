@@ -25,8 +25,8 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 **狀態：** active（正式發布；出口管制已解除，2026-07-01 起全球恢復存取；免費期已於 2026-07-19 到期，Max/Team 後續存取政策已於 2026-08-08 經官方 Help Center 查證收斂，見 [[entities/pricing]]）
 **領域：** 🤖 模型
 **首次出現：** 2026-06-09
-**最後更新：** 2026-08-22
-**最後新聞更新：** 2026-08-19
+**最後更新：** 2026-08-26
+**最後新聞更新：** 2026-08-26
 
 > **最新進展**（2026-08-19）
 > 官方說明文件更新〈Claude Fable 5 on your plan〉，重申先前促銷已於 **2026-07-19 23:59:59 PT**（非早期公告的 7/7）到期，到期後依方案分流計費，與 2026-08-08 查證結論一致，詳見「現況」。另有單一來源（08-18）報導稱 Fable 5「幾乎無人使用」，僅標題可用、尚待查證，暫不與計費變化做因果推論。
@@ -177,15 +177,24 @@ claude --model claude-fable-5-20260609
 - [[news/2026-08-11]]
 - [[news/2026-08-15]]
 - [[news/2026-08-19]]
+- [Google News/Futurism：Nobody Wants Anthropic's Best AI Model Anymore](https://news.google.com/rss/articles/CBMingFBVV95cUxQcktnOVJUTlRkVG53NHl6ZlR4RFhTekx1ZlQ4cmRRZVROMG5vZzZNR0cwandpVlhfM3MzQnhNTEZDX0pQR1dfOVF2SnhJcmkwYWtaZXJGZF9LVlBKQ1cxRHdLeHFuZzlBR2FpT3JEb05QUTJGQ3JUQzlYeGlrRlJrQkNrdzFMR1F3WThfdW5wb1RwUkI4a2d0a2RWSWxKZw?oc=5)（2026-08-26，僅標題可用）
+- [Google News/tech-insider.org：Claude Fable 5 vs Opus 5 vs GPT-5.6 Sol: $1,125 Gap](https://news.google.com/rss/articles/CBMiekFVX3lxTE1lT2hvNTRuTm5IVEt4WG5vV3BMQmxLdmZHX2lubDN4SzRvczBYblBJVFMteHM4V3UtM1l2NFZQYWFvbEZmaFVxdFIwSmlvRkpwc29KQzdOUXNPRWFpcDJyLWhDd0VfUkdlQ0Y3Vzk0MzBaUWtuanFLc1FR?oc=5)（2026-08-26，僅標題可用）
 
 ## 歷史記錄
 
 ### 解禁後（2026-07-01 起）
 
+#### 2026-08-26
+**Futurism：企業轉向更便宜替代模型、Anthropic 旗艦採用意願下滑（僅標題可用，待查證）**：Google News 轉載 Futurism 標題〈Nobody Wants Anthropic's Best AI Model Anymore Now That There Are Way Cheaper Alternatives〉；RSS 僅提供標題與轉址連結，無正文可查證具體採用數據、樣本或方法論。與上方 08-18 analyticsindiamag.com〈Almost Nobody Is Using Anthropic's Fable 5〉標題主題相近，惟來源、標題涵蓋範圍（泛稱「最強模型」vs 明確指名 Fable 5）皆不完全相同，暫不合併視為同一事實的兩次獨立確認，亦不做因果推論。❓ **待查證**（標 2026-08-26｜查 Futurism、cheaper alternatives｜複 2026-09-09）｜**企業轉向更便宜替代方案的具體佐證**：僅標題可用，無採用數據、案例或方法論佐證（[Google News/Futurism](https://news.google.com/rss/articles/CBMingFBVV95cUxQcktnOVJUTlRkVG53NHl6ZlR4RFhTekx1ZlQ4cmRRZVROMG5vZzZNR0cwandpVlhfM3MzQnhNTEZDX0pQR1dfOVF2SnhJcmkwYWtaZXJGZF9LVlBKQ1cxRHdLeHFuZzlBR2FpT3JEb05QUTJGQ3JUQzlYeGlrRlJrQkNrdzFMR1F3WThfdW5wb1RwUkI4a2d0a2RWSWxKZw?oc=5)，2026-08-26）
+
+**tech-insider.org 模板化定價比較標題（僅標題可用，待查證，模型能力面）**：同日另有 tech-insider.org（經 Google News 轉載）發布標題《Claude Fable 5 vs Opus 5 vs GPT-5.6 Sol: $1,125 Gap [2026]》，比較 Fable 5、[[entities/opus-5|Opus 5]] 與競品 GPT-5.6 Sol 定價；同站另有一篇比較 Opus 5 與 Grok 4.6、Gemini 3.1 Pro 的同系列標題，記於 [[entities/opus-5]]。本則僅標題可用、無正文，「$1,125 Gap」具體數字未經查證，不採信為事實；如經查證，具體定價數字應留給 [[entities/pricing]] 記錄。❓ **待查證**（標 2026-08-26｜查 tech-insider.org、$1,125 Gap｜複 2026-09-09）｜**Fable 5 vs Opus 5 vs GPT-5.6 Sol 的 $1,125 差距計算基準**：僅標題可用，計算基準（per-token／月費等）與是否與現行定價一致均未經查證（[Google News/tech-insider.org](https://news.google.com/rss/articles/CBMiekFVX3lxTE1lT2hvNTRuTm5IVEt4WG5vV3BMQmxLdmZHX2lubDN4SzRvczBYblBJVFMteHM4V3UtM1l2NFZQYWFvbEZmaFVxdFIwSmlvRkpwc29KQzdOUXNPRWFpcDJyLWhDd0VfUkdlQ0Y3Vzk0MzBaUWtuanFLc1FR?oc=5)，2026-08-26）
+
+**官方說明文件〈Claude Fable 5 on your plan〉重新抓取，內容未變（非新事件）**：官方頁面本輪被重新抓取，經比對內容與 08-19 已查證版本一致，仍為 7/19 促銷到期後的既定分流規則，非新公告；不重複記錄，計費細節仍以 [[entities/pricing]] 為準。
+
 #### 2026-08-19
 **官方說明文件更新確認促銷結束日與分流政策（與 2026-08-08 查證結果一致）**：Anthropic 官方說明文件更新〈Claude Fable 5 on your plan〉頁面，明載先前促銷（允許用戶最多以週訂閱額度 50% 免費使用 Fable 5）已於 **2026-07-19 23:59:59 PT** 結束（並非早期 2026-07-01 公告所稱的 7/7）。促銷結束後：Max 方案、Team 方案 premium seat、舊制（legacy seat-based）Enterprise 方案 premium seat，Fable 5 成為方案標準內含項目；Pro 方案、Team 方案 standard seat、舊制 Enterprise 方案 standard seat，Fable 5 改以 pay-as-you-go usage credits 計費；目前所有付費方案（Pro/Max/Team/Enterprise）皆可使用 Fable 5。本次官方文件與 2026-08-08 Help Center 查證所得的分流結論一致；官方引文為「On Max plans, premium seats on Team plans, and premium seats on legacy seat-based Enterprise plans, Fable 5 will be a standard part of your plan. On Pro plans, standard seats on Team plans, and standard seats on legacy seat-based Enterprise plans, Fable 5 will run on pay-as-you-go usage credits.」。計費規則細節（含週用量 50% 上限是否延續等定價面問題）留給商業記者於 [[entities/pricing]] 記錄（Official Docs，2026-08-19）。
 
-**單一來源報導稱 Fable 5「幾乎無人使用」（待查證，僅標題可用）**：Google News 轉載 analyticsindiamag.com 標題〈Almost Nobody Is Using Anthropic's Fable 5〉，RSS 摘要未附正文，具體採用數據、統計方法、對比基準均未見報導，需開啟原文確認（[Google News/analyticsindiamag.com](https://news.google.com/rss/articles/CBMiiwFBVV95cUxQQWl5SUFPU3RoVmN3eFhjYXFWbUk2ZTIwN2tLWHhGT2h3Q2lsdjhuNTVtRHhTeS1GZXN2ZXZvTmg4Z1Y5RUo4aG1TODZHQmRHYTVvQkxaTEJ5bkFUV1lMV2xtdmFZMW80eVZXY0NyVUNkYlc0enlHWUpCVUpBM3I4V3ZGcXJzQkFKVFVR?oc=5)，2026-08-18 14:19 UTC）。**與其他條目的關係**：本則報導日期與同日「Claude Code 週用量促銷延長」報導、以及上方 08-19 官方文件確認的 07-19 促銷到期時間點相近，但原文未提供因果證據，本頁不做因果推論，僅並列記錄。
+❓ **待查證**（標 2026-08-26｜查 analyticsindiamag.com、Almost Nobody｜複 2026-09-09）｜**單一來源報導稱 Fable 5「幾乎無人使用」**：Google News 轉載 analyticsindiamag.com 標題〈Almost Nobody Is Using Anthropic's Fable 5〉，RSS 摘要未附正文，具體採用數據、統計方法、對比基準均未見報導，需開啟原文確認（[Google News/analyticsindiamag.com](https://news.google.com/rss/articles/CBMiiwFBVV95cUxQQWl5SUFPU3RoVmN3eFhjYXFWbUk2ZTIwN2tLWHhGT2h3Q2lsdjhuNTVtRHhTeS1GZXN2ZXZvTmg4Z1Y5RUo4aG1TODZHQmRHYTVvQkxaTEJ5bkFUV1lMV2xtdmFZMW80eVZXY0NyVUNkYlc0enlHWUpCVUpBM3I4V3ZGcXJzQkFKVFVR?oc=5)，2026-08-18 14:19 UTC）。**與其他條目的關係**：本則報導日期與同日「Claude Code 週用量促銷延長」報導、以及上方 08-19 官方文件確認的 07-19 促銷到期時間點相近，但原文未提供因果證據，本頁不做因果推論，僅並列記錄。2026-08-26 另有 Futurism 報導呼應類似主題但範圍不完全相同，見下方「2026-08-26」條目，兩則不合併視為同一事實。
 
 #### 2026-08-15
 **Anthropic Status：錯誤率一度升高（同日解決）**：Anthropic Status 通報 Fable 5 於 2026-08-14 20:00 至 2026-08-15 00:11 UTC 錯誤率升高，事件已解決，無需採取行動（[Anthropic Status](https://status.claude.com/incidents/hdynq1pc0fn8)，2026-08-15）。

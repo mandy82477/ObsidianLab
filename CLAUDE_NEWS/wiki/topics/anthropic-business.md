@@ -23,16 +23,13 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 **狀態：** ongoing
 **領域：** 💼 商業
 **開始日期：** 2026-05-28
-**最後更新：** 2026-08-25
-**最後新聞更新：** 2026-08-25
+**最後更新：** 2026-08-26
+**最後新聞更新：** 2026-08-26
 
-> **最新動態**（2026-08-25）
-> - **KXAN Austin：Anthropic 洽談租用德州 Bastrop County 大型資料中心**：詳見「戰略合作」表新增列。
-> - **24/7 Wall St.（另有 Yahoo Finance 同步）：Anthropic 意圖以規模超越 SpaceX 的 IPO 重新定價整體 AI 類股，同日該媒體另一篇文章卻稱 Anthropic 估值遠遜於 SpaceX**：兩篇論點方向相反，並陳呈現，詳見「IPO 前瞻與估值追蹤」表新增列。
-> - **Fierce Healthcare：Epic UGM 揭露 Anthropic 深化與醫療資訊平台 UpToDate 合作，同場並提及 Project Glasswing 進展**：UpToDate 合作詳見「戰略合作」表新增列；Glasswing 部分屬模型記者頁面範疇，已標記待轉知。
-> - **cio.com：部分企業對 Anthropic 旗艦模型採用意願不如預期**：與本頁既有 08-23 FT「一般消費者採用面」反面訊號同屬企業/消費端採用溫度落差敘事，詳見「產品市場契合度」反面訊號更新。
-> - **Bloomberg：〈Who Should Control Anthropic?〉治理權分析文章**：與本頁既有 08-18 超級投票權籌備信號同屬公司治理敘事，詳見「IPO 前瞻與估值追蹤」表新增列。
-> - **Hacker News（36 分）跟進 08-24 Axios 面試提問報導，補上具體引述（若公司因安全考量放棄 AI 願景致股票歸零，應徵者作何感受）**：詳見「時序」08-24 條目更新。
+> **最新動態**（2026-08-26）
+> - **$30 兆美元潛在市場宣稱引發正反論戰**：Hacker News 雙帖（連結 WSJ／Reuters）＋Anadolu Ajansı、Moomoo 等報導 Anthropic 傳將向投資人簡報，宣稱 AI 服務潛在市場（TAM）上看 30 兆美元；Yahoo Finance、Marcus on AI（Substack）、24/7 Wall St.（引述創投人 Chamath Palihapitiya）等多篇提出懷疑或質疑角度。**須留意口徑差異**：Fortune 同日報導之「2 兆美元」為 IPO 估值傳聞，與「30 兆美元」市場總量（非 Anthropic 宣稱可實際拿下的營收）屬不同性質數字，不可混淆——詳見「IPO 前瞻與估值追蹤」表與「商業風險」表新增列。
+> - **Anthropic Blog：啟動 500 萬美元獎助計畫，資助獨立研究人員開發開源工具評測 AI 對使用者身心福祉的影響**：屬公益/CSR 性質研究資助，詳見「財務狀況」表新增列。
+> - **Bloomberg：一家與 Anthropic、Google 合作之 AI 資安新創獲得 1.4 億美元融資**：新創名稱未具名，詳見「戰略合作」表新增列。
 
 ---
 
@@ -60,6 +57,7 @@ Anthropic 在技術聲譽與企業採用率上持續上升（企業採用率 34.
 
 | 日期 | 事件 | 對 IPO/估值的意涵 | 來源 |
 |------|------|------|------|
+| 2026-08-26 | Hacker News 雙帖（39 分，連結 WSJ；20 分＋source_count=2，連結 Reuters）報導 Anthropic 傳將向投資人簡報，宣稱 AI 服務整體潛在市場（TAM）規模上看 **30 兆美元**；Anadolu Ajansı、Moomoo（兩則）同步報導 | 是本鏈條首次出現「總潛在市場」層級的規模宣稱，量級遠超既有估值／募資／營收預測等指標（如 08-22 募資 $1,000 億、08-23 估值 $2 兆）——**須嚴格區分**：30 兆美元為 AI 服務整體潛在市場總量，非 Anthropic 宣稱可實際拿下的營收，HN 討論明確指出「$30T is probably absurd... total addressable market... not that they will capture 100% of that market」；與同日 Fortune 報導之 **2 兆美元** IPO 估值傳聞相比，兩者衡量口徑（公司估值 vs 市場總量）不同，不可混為一談（推論，本頁首次並置提醒兩者口徑差異）。市場反應呈現「官方樂觀敘事 vs 外部懷疑」對立：Yahoo Finance 標題直指此數字「僅為整個科技業規模的 12 倍」帶懷疑語氣；Marcus on AI（Substack）評論文章直批「$30 trillion fantasy」；24/7 Wall St. 引述知名創投人 Chamath Palihapitiya 對 2 兆美元 IPO 前景提出質疑（詳見「商業風險」表新增列）。具體簡報內容、對象、時程未見報導細節，均僅標題或部分內文可用 | [WSJ](https://www.wsj.com/tech/ai/anthropic-expected-to-tell-investors-it-sees-over-30-trillion-in-potential-revenue-a611efea)；Hacker News；Google News/Anadolu Ajansı；Google News/Moomoo（×2）|
 | 2026-08-24 | Bloomberg 發表分析文章〈Who Should Control Anthropic?〉，探討公司治理與控制權結構 | 與 08-18 已記錄之「創辦人保留超級投票權」籌備信號同屬公司治理敘事，本則首次以獨立分析文章形式正面探討「誰該控制 Anthropic」的治理權問題，可能反映市場對創辦人集中控制權（若超級投票權屬實）之於一般股東權益的疑慮開始浮上檯面（推論）；具體論點（董事會結構、創辦人持股比例、監理機構角色等）未見報導細節，僅標題層級資訊，屬評論分析而非事實揭露 | Google News/Bloomberg |
 | 2026-08-24 | 24/7 Wall St. 兩篇方向相反文章同日刊出：其一稱 Anthropic 意圖以規模**超越 SpaceX** 的 IPO 重新定價整體 AI 類股（Yahoo Finance 同日同步報導）；其二稱 Anthropic **估值遠遜於 SpaceX** | 與同一媒體 08-20/23 已記錄之「發行規模比肩甚至超越 SpaceX」「投資人討論估值是否超越 SpaceX」系列敘事相比，本次首次出現同一媒體同日發布方向相反結論的情形——一篇延續「超越 SpaceX」框架、一篇反向主張「遜於 SpaceX」，可能反映兩篇文章採用不同衡量基準（如發行規模 vs 當前估值倍數、或不同時間點的估值傳聞）並各自成文，**兩者並陳呈現、不擇一**（推論）；均僅標題層級可用，具體估值數字、比較方法論未見報導細節 | Google News/24/7 Wall St.（×2）；Google News/Yahoo Finance |
 | 2026-08-23 | Yahoo Finance 引述知名估值學者 Aswath Damodaran（人稱「Dean of Valuation」，紐約大學史登商學院教授）指出：Anthropic 須有 **1.2 兆美元**營收才能撐得起市場傳聞的 **2 兆美元**估值 | 是本鏈條首次出現具名獨立估值學者以「營收門檻」形式對 2 兆美元估值提出量化質疑，區別於既有多為記者/投資人臆測或推崇性報導（如 08-13 PYMNTS/FT/WSJ「評估上看 2 兆美元」、08-20 SpaceX 規模對照）；與 08-15 Reuters 獨家「估值繫於 2028 年 1,900–2,000 億美元營收預測」並置時，1.2 兆美元營收門檻與 2028 年營收預測之間存在數量級落差，凸顯若市場真以 2 兆美元估值定價，隱含的營收成長假設遠超既有第三方預測（推論）；具體計算方法論（採用何種估值倍數、參照同業）未見報導細節，僅標題層級資訊 | Google News/Yahoo Finance |
@@ -146,6 +144,7 @@ Financial Times 報導 Anthropic 旗艦模型在吸引一般使用者（general 
 
 | 訊號 | 說明 | 來源 |
 |------|------|------|
+| Anthropic Blog：啟動 500 萬美元獎助計畫，資助 AI 對使用者身心福祉影響之獨立評測研究 | 官方部落格公告：受獎助研究人員將完全獨立作業，開發開源評測工具衡量 AI 對使用者身心福祉的影響，成果以開源專案釋出。**注意**：屬公益/CSR 性質研究資助，非新功能或商業合作，與既有 Economic Futures Research Fund（$2 億美元，07-23，聚焦經濟政策研究）、Claude Corps（$1.5 億美元非營利培力）同屬對外部研究/公益資助的軟性佈局路線，惟本次聚焦身心福祉評測工具開發（推論）；具體受獎助對象、審核機制、單筆金額未見公告細節 | [Anthropic Blog](https://www.anthropic.com/news/wellbeing-research-grants)，2026-08-26 |
 | CNBC：Anthropic 已超越 OpenAI，成為市場最熱門 AI 新創；文章討論相應股票贏家與輸家 | CNBC 報導稱 Anthropic 商業地位已超越 OpenAI，市場視其為當前最熱門的 AI 新創企業，並分析此趨勢下的股票市場贏家與輸家；與同日 The Information「Anthropic 營收領先幅度擴大」報導方向一致，共同延續本頁既有「業績優於 OpenAI」敘事（見上列 08-19 條目），僅標題層級可用，具體股票標的、漲跌幅未見報導細節（推論）| Google News/CNBC，2026-08-19 |
 | The Information：OpenAI 在安全政策上追上 Anthropic 的同時，Anthropic 的營收領先幅度仍在擴大 | 報導稱 OpenAI 安全政策面正追上 Anthropic（安全政策面留給安全政策記者評估是否收錄至 [[topics/ai-agent-safety]]），本頁僅記錄「Anthropic 營收領先幅度仍在擴大」的商業面訊號；與同日 CNBC「超越 OpenAI 成最熱門新創」、既有 08-19「OpenAI 第二季業績落後 Anthropic」多來源報導方向一致，屬同一敘事的持續延伸，非新增獨立事件；僅標題層級可用，具體營收領先倍數或金額未見報導細節（推論）| Google News/The Information，2026-08-19 |
 | OpenAI 第二季業績落後 Anthropic（多來源，含相反訊號）| WSJ（經 Hacker News 分享，18 分，source_count=2）報導 OpenAI 第二季營收成長遲緩，不如 Anthropic；HN 討論串留言稱「多數認識的開發者已改用 GPT-5.6」（單一留言，非量化調查，僅供參考）。CoinDesk、SiliconANGLE 同角度報導 OpenAI 虧損持續擴大，且 Altman 據稱暫停前沿 AI 訓練。**與既有 Anthropic 業績動能敘事一致**：呼應本頁 08-17/18 已記錄之 ARR 站上 $650 億美元、Vercel token 營收份額最高等既有訊號，共同構成「Anthropic 業績優於 OpenAI」的敘事（推論）。**⚠️ 相反訊號，不擇一呈現**：The Information 同期報導稱 OpenAI 在 OpenRouter 平台的客戶占比正在回升，方向與上述「落後」敘事相反，可能反映不同衡量指標（整體財報成長率 vs 特定平台客戶占比）各自成立、非互斥。四則均僅標題／HN 留言層級可用，具體營收數字、虧損金額、訓練暫停細節與 OpenRouter 占比數字均未見報導 | Hacker News/WSJ；Google News/CoinDesk；Google News/SiliconANGLE；Google News/The Information，2026-08-18～19 |
@@ -173,6 +172,7 @@ Financial Times 報導 Anthropic 旗艦模型在吸引一般使用者（general 
 
 | 風險 | 當前狀況 | 嚴重度 |
 |------|---------|--------|
+| 知名創投人士公開質疑 IPO 前景（單一來源，僅標題可用）| 24/7 Wall St. 報導知名創投人 Chamath Palihapitiya 提出「3 個 AI 殺手」警訊，並質疑 Anthropic 傳聞中 2 兆美元 IPO 前景是否可能率先崩盤；與既有 08-15 Steve Eisman 唱空言論同屬市場知名人士公開質疑估值敘事的訊號，且與同日「IPO 前瞻與估值追蹤」表新增之 30 兆美元 TAM 論戰同源並發（推論）；具體「3 個殺手」論點內容、量化依據未見報導細節，僅標題層級資訊 | ℹ️ 市場觀感（未經驗證的個人觀點）|
 | Claude 浮水印功能對企業用戶的實務影響（單一來源，僅標題可用）| Forbes（08-21）討論 Claude 輸出內容浮水印（為因應歐盟 AI Act 透明度規範，見 [[topics/anthropic-government-policy]]）對企業用戶的實務影響；同期 WIRED（08-20）報導工程師已找到繞過隱形浮水印的方法。**對商業的意涵**：若浮水印可被輕易繞過卻仍是企業合規/內容溯源依賴的機制，可能削弱企業客戶對浮水印作為「可信賴內容標示」的信任，對已依賴此機制滿足自身合規需求的企業用戶構成潛在風險（推論）；具體實務影響內容、受影響企業類型、Forbes 論點細節均未見報導，僅標題層級資訊（Google News/Forbes；Google News/WIRED）| ℹ️ 待觀察（單一來源評論，僅標題可用）|
 | 音樂出版商著作權侵權訴訟（Round Hill Music $10 億美元＋另一家出版商）| The Hollywood Reporter 報導音樂出版商 Round Hill Music 對 Anthropic 提起著作權侵權訴訟，求償 **10 億美元**；Reuters 同期報導另一家音樂出版商對 Anthropic 與 Suno（AI 音樂生成服務）提起類似著作權侵權訴訟。**與既有著作權訴訟的關係**：延續本頁已記錄之著作權集體訴訟 15 億美元和解案（07-20 核准，見「財務狀況」表）、UTRF 專利侵權訴訟（07-21），是音樂出版業首度對 Anthropic 提起的具名著作權訴訟，顯示著作權法律風險正從文字出版業擴散至音樂產業；求償金額、具體侵權指控內容、與既有和解案的涵蓋範圍關係（是否涉及音樂作品）均未見報導細節，兩則均僅標題層級可用（The Hollywood Reporter；Reuters，2026-08-18）| ⚠️ 中（新增訴訟，求償金額具體但案情細節未明）|
 | 頂尖模型是否停售企業客戶（推論／單一來源）| The Information 報導（僅標題可用）探討 Anthropic 與 OpenAI 是否將停止把最強模型販售給企業客戶、轉為自留競爭優勢；若屬實將是「賣模型」商業邏輯的根本轉向，與本頁「商業模式」段落既有「程式化／訂閱雙軌」框架方向相反（推論）；具體策略內容、時程、是否已有內部決策未見報導細節，僅標題層級資訊，待後續報導補充 | ℹ️ 待觀察（單一來源，僅標題可用）|
@@ -193,9 +193,10 @@ Financial Times 報導 Anthropic 旗艦模型在吸引一般使用者（general 
 
 | 合作方 | 類型 | 日期 | 意義 |
 |--------|------|------|------|
+| 未具名 AI 資安新創（與 Anthropic、Google 合作）| SDK 夥伴（資安整合，融資佐證）| 2026-08-25 | Bloomberg 報導一家與 Anthropic、Google 合作的 AI 資安新創獲得 **1.4 億美元**融資。**對商業的意涵**：延續近期 Cyberhaven（07-23）、Orca Security（07-21）、Varonis（07-14）等資安夥伴生態擴張趨勢，本次首度出現「合作夥伴自身完成大型融資」作為生態健康度佐證訊號，惟新創公司名稱、合作具體內容均未見報導（推論）；僅標題層級資訊，待後續補充具名（Google News/Bloomberg.com）|
 | 未具名資料中心業者（Bastrop County，美國德州）| 基礎設施擴張（洽談租用）| 2026-08-25 | KXAN Austin（在地新聞台）引述消息人士報導 Anthropic 正洽談租用德州 Bastrop County 一座大型資料中心。**對商業的意涵**：延續近期德州算力布局系列信號（08-02 Morgan Stanley 領投 150 億美元德州校園/資料中心投資案），本則為又一起德州資料中心具名地點案例，惟業者身分未具名，與 Morgan Stanley 案是否為同一設施尚待確認（推論）；具體面積、投資金額、租期均未見報導細節，僅標題層級資訊、洽談階段非確定簽約（Google News/KXAN Austin）|
 | UpToDate（醫療資訊平台，Wolters Kluwer 旗下）| 企業客戶（醫療產業深化合作）| 2026-08-24 | Fierce Healthcare 於 Epic 年度用戶大會（Epic UGM）報導中提及 Anthropic 深化與醫療資訊平台 UpToDate 的合作，同篇報導並提及 Project Glasswing 相關進展。**對商業的意涵**：延續近期 Optum＋UST（07-14）、ICON（07-29）等醫療垂直產業深化案例，UpToDate 是又一起具名醫療資訊平台深化合作案例（推論）；Project Glasswing 部分屬安全模型能力面，詳見模型記者維護之 [[entities/mythos]]；具體合作範疇、UpToDate 整合方式均未見報導細節，僅標題層級資訊（Google News/Fierce Healthcare）|
-| 一般大眾／企業客戶（Claude Academy）| 教育／企業導入啟用（免費課程＋導入指南）| 2026-08-23 | EdTech Innovation Hub 報導 Anthropic 推出「Claude Academy」，提供免費 AI 課程與企業導入指南（workplace rollout guides）。**對商業的意涵**：與既有 UST（07-10，訓練兩萬名工程師顧問）、DXC（06-12，訓練數萬名認證工程師）等企業客戶端「培訓認證」模式不同，本次是 Anthropic 首度以自身名義面向**一般大眾**推出免費課程，可能是為即將到來的 IPO 路演強化「普及化 AI 教育」的公眾敘事，同時降低企業導入 Claude 的教育門檻（推論）；具體課程內容、涵蓋範圍、與既有「Claude 認證」（Frontier Certified，見 Cognizant 07-28 列）人才梯隊的關係未見報導細節，僅標題層級資訊（Google News/EdTech Innovation Hub）|
+| 一般大眾／企業客戶（Claude Academy）| 教育／企業導入啟用（免費課程＋導入指南）| 2026-08-23 | EdTech Innovation Hub 報導 Anthropic 推出「Claude Academy」，提供免費 AI 課程與企業導入指南（workplace rollout guides）。**對商業的意涵**：與既有 UST（07-10，訓練兩萬名工程師顧問）、DXC（06-12，訓練數萬名認證工程師）等企業客戶端「培訓認證」模式不同，本次是 Anthropic 首度以自身名義面向**一般大眾**推出免費課程，可能是為即將到來的 IPO 路演強化「普及化 AI 教育」的公眾敘事，同時降低企業導入 Claude 的教育門檻（推論）；具體課程內容、涵蓋範圍、與既有「Claude 認證」（Frontier Certified，見 Cognizant 07-28 列）人才梯隊的關係未見報導細節，僅標題層級資訊（Google News/EdTech Innovation Hub）。**08-26 跟進（ababnews.com，非新事實，來源可信度待查證）**：轉載同一 Claude Academy 免費課程消息，未見新增課程內容或範圍細節；來源網站知名度不明，本則資訊採信度低於 08-23 EdTech Innovation Hub 原始報導（Google News/ababnews.com）|
 | Casper Studios（顧問公司）| 收購（Ode 主導，金額未公開）| 2026-08-20 | crn.com、Seeking Alpha、The Information 三方同日報導：與 Anthropic 關聯的 AI 服務公司 **Ode**（見 07-16 已記錄之 Anthropic／Blackstone 合資 $15 億美元 AI 導入公司）收購顧問公司 Casper Studios。**對商業的意涵**：延續 07-15/16 已記錄之 Ode 定位論述——「下一個兆美元級 AI 商機在於實作，而非模型本身」，本次是 Ode 成立後首度公開的具名收購案，從「合資成立公司」進一步落實為「透過併購擴大導入服務能量」，若此模式延續，Ode 可能持續透過併購顧問/實作公司擴張版圖，直接進入 Accenture、TCS、DXC 等既有戰略夥伴業務領域（推論，延續 07-16 已記錄之潛在競合關係觀察）；具體收購金額、Casper Studios 規模與客戶基礎、整合時程均未見報導細節，僅標題層級資訊（Google News/crn.com；Google News/Seeking Alpha；Google News/The Information）|
 | Anthropic 關聯資料中心（未具名）| 基礎設施擴張（私募信貸貸款，$13 億美元）| 2026-08-19 | Yahoo Finance 報導一座與 Anthropic 相關的資料中心取得規模達 **13 億美元**的私募信貸（private credit）貸款。**對商業的意涵**：延續近期 TeraWulf（07-06，$19B 20 年租約）、Volta（08-04，$100 億美元）、Morgan Stanley（08-02，$150 億美元）等基礎設施擴張系列信號，本則首次出現以「私募信貸」（債務融資，區別於股權投資或雲端運算協議）形式直接為 Anthropic 關聯資料中心籌資的具名案例，顯示算力基礎設施融資管道正進一步向債務資本市場延伸（推論）；具體資料中心名稱、地點、承貸方、與 Anthropic 的合約關係（自建、租賃或合資）均未見報導細節，僅標題層級資訊（Google News/Yahoo Finance）|
 | Decart（世界模型 AI 新創，以色列）| 收購（金額，約 $60 億美元，洽談中）| 2026-08-13 | Bloomberg、Reuters、Gizmodo 等多家媒體同日報導 Anthropic 正洽購世界模型 AI 新創 Decart，交易金額約 60 億美元；calcalistech 特別指出 Decart 為以色列 AI 新創。**對商業的意涵**：若成真將是 Anthropic 首度公開洽購「世界模型」（world model，區別於既有語言模型核心業務）新創的具名案例，可能代表產品線向多模態／物理世界模擬方向擴張的訊號（推論）；Hacker News 討論串（08-13）出現質疑聲音，部分留言認為此舉是為搶版面而非聚焦既有模型的成本與效能改善。具體交易條款、是否已簽署最終協議未見報導細節，僅屬洽談階段（Hacker News；Google News/Reuters；Google News/calcalistech；Google News/Gizmodo；[Bloomberg 原文](https://www.bloomberg.com/news/articles/2026-08-13/anthropic-said-in-talks-to-buy-ai-startup-decart-for-6-billion)）。**08-14 跟進（延續報導，非新事實）**：Yahoo Finance 確認交易仍在洽談階段、尚未定案，同一 $6B 數字；calcalistech 另發表分析文章解讀 Anthropic 為何願付此價碼，屬同一事件的分析視角，未見新增交易條款（Google News/Yahoo Finance；Google News/calcalistech）。**08-16 跟進（單一來源，未經證實）**：calcalistech 報導交易規模上修至約 **70 億美元**（此前 08-13/14 報導約 $60 億美元），並稱 Anthropic 在競價中先於 Nvidia 一步談成；此為單一來源消息，尚未見其他媒體佐證或官方確認，金額上修幅度與「先於 Nvidia 談成」的競價細節均待其他來源查證（Google News/calcalistech）。**08-23 跟進（分析文章，非新事實）**：calcalistech 發表分析文章，主張若 Anthropic 順利完成 IPO，這筆 70 億美元交易的價值可能大幅升值；屬既有交易的估值後續分析視角，未見新增交易條款、進度或金額，僅標題層級資訊（Google News/calcalistech）|
@@ -288,6 +289,12 @@ Financial Times 報導 Anthropic 旗艦模型在吸引一般使用者（general 
 ## 時序
 
 ### 2026-08
+
+#### 2026-08-26
+- **[新增，IPO/估值敘事，正反論戰] Hacker News 雙帖＋Anadolu Ajansı／Moomoo 等：Anthropic 傳簡報宣稱 AI 服務潛在市場（TAM）上看 30 兆美元；Yahoo Finance／Marcus on AI／24/7 Wall St.（引述 Chamath Palihapitiya）提出懷疑角度**：須留意「30 兆美元市場總量」與同日 Fortune 報導「2 兆美元 IPO 估值」口徑不同，不可混淆，詳見「IPO 前瞻與估值追蹤」表與「商業風險」表新增列（Hacker News；Google News/Anadolu Ajansı；Google News/Moomoo；Google News/Yahoo Finance；Google News/Marcus on AI；Google News/24/7 Wall St.；Google News/Fortune）
+- **[新增，研究資助] Anthropic Blog：啟動 500 萬美元獎助計畫，資助 AI 對使用者身心福祉影響之獨立評測研究**：屬公益/CSR 性質，詳見「財務狀況」表新增列（Anthropic Blog）
+- **[戰略合作，新增] Bloomberg：一家與 Anthropic、Google 合作之 AI 資安新創獲得 1.4 億美元融資**：新創名稱未具名，詳見「戰略合作」表新增列（Google News/Bloomberg.com）
+- **[戰略合作，跟進，非新事實] ababnews.com：轉載 Anthropic 推出免費「Claude Academy」課程消息**：與既有 08-23 記錄為同一事件，來源網站知名度待查證，詳見「戰略合作」表更新（Google News/ababnews.com）
 
 #### 2026-08-25
 - **[新增，基礎設施擴張] KXAN Austin：Anthropic 洽談租用德州 Bastrop County 大型資料中心**：僅標題層級可用，洽談階段非確定簽約，詳見上方「戰略合作」表新增列（Google News/KXAN Austin）

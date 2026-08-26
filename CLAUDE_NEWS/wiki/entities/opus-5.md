@@ -25,8 +25,8 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 **狀態：** active
 **領域：** 🤖 模型
 **首次出現：** 2026-07-25
-**最後更新：** 2026-08-23
-**最後新聞更新：** 2026-08-23
+**最後更新：** 2026-08-26
+**最後新聞更新：** 2026-08-26
 
 > **最新動態**（2026-08-14）
 > Anthropic 發布八月風險報告，首度揭露尚未發布的「Model 2」，官方稱目前無釋出更強模型的計畫（對齊疑慮完整脈絡見 [[topics/ai-agent-safety]]）。社群面延續上線以來的分歧回饋：08-13 Reddit 週熱門貼文稱已依官方建議調整、試過各種全域 CLAUDE.md 設定，仍無法讓 Opus 5 的行為符合期待（詳見「歷史記錄」）。
@@ -108,11 +108,13 @@ Anthropic 於 2026-07-25 正式發布 Claude Opus 5，是繼 2026-07-13 起多�
 - [Reddit：I defended Opus 5 - and then I realised otherwise](https://www.reddit.com/r/ClaudeAI/comments/1vibkny/i_defended_opus_5_and_then_i_realised_otherwise/)（週熱門，2026-08-07）
 - [Reddit：Finally. Could this be the smoking gun that makes Opus less load-bearing?](https://www.reddit.com/r/ClaudeCode/comments/1vt6gf8/finally_could_this_be_the_smoking_gun_that_makes/)（週熱門，2026-08-20，僅標題可用）
 - [[news/2026-07-25]]、[[news/2026-07-26]]、[[news/2026-07-28]]、[[news/2026-07-29]]、[[news/2026-07-30]]、[[news/2026-08-07]]、[[news/2026-08-15]]、[[news/2026-08-23]]
+- [Google News/tech-insider.org：Claude Opus 5 vs Grok 4.6 vs Gemini 3.1 Pro: $19 Gap](https://news.google.com/rss/articles/CBMigwFBVV95cUxNWkVkQU8xS2pPWVFZS2RMemJCQ0JFVnZyZFBia28xMlNlWWNPVFB2eHhxdVhBTWJJRFFmaDlOUU9IcGJUWDlBU0phQUhUUEFGRG51NkttME9tMTl0X1dsV2piR2lsQTZOeURZQV8yRExlTE93cFF2U1hYbUFTZGNRUTIxcw?oc=5)（2026-08-26，僅標題可用）
 
 ## 歷史記錄
 
 | 日期 | 事件 |
 |------|------|
+| 2026-08-26 | tech-insider.org（經 Google News 轉載）發布模板化定價比較標題《Claude Opus 5 vs Grok 4.6 vs Gemini 3.1 Pro: $19 Gap [2026]》，比較 Opus 5 與競品 Grok 4.6、Gemini 3.1 Pro 定價；同站同日另有《Claude Fable 5 vs Opus 5 vs GPT-5.6 Sol: $1,125 Gap [2026]》，記於 [[entities/fable-5]]。本則僅標題可用、無正文，「$19 Gap」具體數字未經查證，不採信為事實；如經查證應留給 [[entities/pricing]] 記錄。❓ **待查證**（標 2026-08-26｜查 tech-insider.org、$19 Gap｜複 2026-09-09）｜**Opus 5 vs Grok 4.6 vs Gemini 3.1 Pro 的 $19 差距計算基準**：僅標題可用，未見正文說明計算方式（per-token／月費等）（[Google News/tech-insider.org](https://news.google.com/rss/articles/CBMigwFBVV95cUxNWkVkQU8xS2pPWVFZS2RMemJCQ0JFVnZyZFBia28xMlNlWWNPVFB2eHhxdVhBTWJJRFFmaDlOUU9IcGJUWDlBU0phQUhUUEFGRG51NkttME9tMTl0X1dsV2piR2lsQTZOeURZQV8yRExlTE93cFF2U1hYbUFTZGNRUTIxcw?oc=5)，2026-08-26） |
 | 2026-08-20 | Reddit r/ClaudeCode 週熱門貼文標題稱「終於出現讓 Opus 不再是工作流『必要依賴』的證據」，惟原文僅有圖片預覽卡片，無法取得貼文正文或具體佐證內容。與同日社群另一則熱議（Claude Code effort 數值顯示方式測試，官方已澄清係測試 API serving 設定改變數值顯示方式、非實際降低使用者選擇的 effort 等級）為不同議題，不應混為一談。呼應 08-13、08-08、08-07 已記錄的社群觀感分歧，惟本則因原文不可讀，暫列觀察、不代入結論。❓ **待查證**（標 2026-08-23｜查 load-bearing、smoking gun｜複 2026-09-06）｜**貼文具體證據內容**：僅標題可用，Opus「不再是必要依賴」的具體證據或案例未見報導（[Reddit](https://www.reddit.com/r/ClaudeCode/comments/1vt6gf8/finally_could_this_be_the_smoking_gun_that_makes/)，週熱門，2026-08-20） |
 | 2026-08-14 | Anthropic 發布八月風險報告（部分遮蔽 PDF），首度揭露尚未發布的「Model 2」，Axios 報導官方稱目前無釋出更強模型的計畫；報告自陳內部 AI R&D 速度尚未達到「無 AI 協助情況下的兩倍」（自陳量測困難）。對齊疑慮面完整脈絡見安全政策記者對應頁面 [[topics/ai-agent-safety]]，本頁僅記模型陣容面（[Hacker News](https://www-cdn.anthropic.com/f61d49fa5596956a5dec75fea0e973bf6a6a8378/Redacted%20Risk%20Report%20August%202026%20.pdf)，55 分；[SiliconANGLE](https://siliconangle.com/2026/08/14/anthropic-details-unreleased-model-2-new-alignment-concerns-latest-ai-risk-report/)；[Axios](https://www.axios.com/2026/08/14/anthropic-model-2-ai-risk)，2026-08-14） |
 | 2026-08-13 | Reddit r/ClaudeAI 週熱門貼文「Opus 5 is actually almost rage-inducing to use」：作者稱已依官方建議調整並試過各種全域 CLAUDE.md 設定，仍無法讓 Opus 5 的行為符合期待；單一使用者回報，無具體案例或量化數字佐證，延續 08-07～08-08 已記錄的社群觀感分歧（[Reddit](https://www.reddit.com/r/ClaudeAI/comments/1vn8ml6/opus_5_is_actually_almost_rageinducing_to_use/)，週熱門，2026-08-13） |
