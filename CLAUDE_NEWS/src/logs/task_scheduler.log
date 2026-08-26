@@ -322,3 +322,11 @@
 [Tue 2026/08/25 13:35:12.63] === Pipeline complete (agent) ===
 [cloud daily-news-pipeline-cloud OK Tue 2026/08/25 13:35:17.91]
 [cloud daily-news-pipeline-cloud STARTED 2026/08/26 13:06:09 UTC]
+[Wed 2026/08/26 13:44:00.00] === Agent pipeline start (2026-08-26) ===
+[Wed 2026/08/26 13:44:00.00] Aggregator OK
+[Wed 2026/08/26 13:44:00.00] Wiki ingest OK
+[Wed 2026/08/26 13:44:00.00] 測試失敗且非單元測試案例（規則一致性檢查等）- web build 擋下
+[Wed 2026/08/26 13:44:00.00] build_web SKIPPED - pushing news/wiki only
+[Wed 2026/08/26 13:44:00.00] Single push done (news + wiki, web build skipped)
+[Wed 2026/08/26 13:44:00.00] === Pipeline complete (agent) ===
+[cloud daily-news-pipeline-cloud OK Wed 2026/08/26 13:43:58.19]
