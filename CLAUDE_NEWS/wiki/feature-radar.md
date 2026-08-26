@@ -4,7 +4,7 @@
 僅收錄官方 changelog、release note 或官方公告來源；社群工具見 [[topics/community-tech-tools]]。
 每日更新：新增功能、更新熱度、補充社群回饋。
 
-**最後更新：** 2026-08-25
+**最後更新：** 2026-08-26
 
 ---
 
@@ -20,7 +20,7 @@
 
 ## ⚠️ 升版風險
 
-**最新版本：** v2.1.245（2026-08-25，修復搭載 glibc 2.44 的 Linux 發行版［如 Arch Linux、CachyOS、Fedora Rawhide］啟動當機問題，純 bug fix，非 breaking change）。上一筆有具體異動記錄的版本為 v2.1.241（2026-08-23，release notes 僅載明「Bug fixes and reliability improvements」，無具體異動項目，純可靠性修正，非 breaking change；v2.1.242–244 無日報報導，不代表未發布）。再前一版 v2.1.239（2026-08-21，`/cost`／狀態列／`--max-budget-usd` 成本估算計入資料常駐工作區 1.1 倍純美國推理附加費；屬既有成本顯示機制的計算口徑調整，非 breaking change）。再前一版 v2.1.238（2026-08-20）新增 `keybindingFlavor` 設定；再前一版 v2.1.237（同日）修復 LLM gateway／自訂 base URL session 的 prompt caching 失效問題，並新增內建「Concise」輸出風格。最後一次重大 breaking change 仍為 v2.1.212／v2.1.215（見下表）；另有一項於 8/14 已生效的 breaking change（auto 模式預設化，已對 Pro/Max/Team 上線，詳見 [[entities/claude-code]] 現況）。⚠️ **另注意**：anthropic-sdk-python 同日發布 v1.0.0，含獨立於 Claude Code CLI 之外的 breaking change（client 升級至 httpx2，官方未提供遷移時程），影響對象為以該 SDK 建置的整合程式碼，非 CLI 升版本身，詳見 [[entities/claude-code]] 現況。
+**最新版本：** v2.1.246（2026-08-26，新增啟動警告：Bash 允許規則在子指令前使用萬用字元［如 `Bash(git * main)`］時，此寫法也會意外比對插入在子指令前的選項參數；屬安全提示而非新指令/旗標，純提醒非 breaking change）。上一版 v2.1.245（2026-08-25，修復搭載 glibc 2.44 的 Linux 發行版［如 Arch Linux、CachyOS、Fedora Rawhide］啟動當機問題，純 bug fix，非 breaking change）。再上一筆有具體異動記錄的版本為 v2.1.241（2026-08-23，release notes 僅載明「Bug fixes and reliability improvements」，無具體異動項目，純可靠性修正，非 breaking change；v2.1.242–244 無日報報導，不代表未發布）。再前一版 v2.1.239（2026-08-21，`/cost`／狀態列／`--max-budget-usd` 成本估算計入資料常駐工作區 1.1 倍純美國推理附加費；屬既有成本顯示機制的計算口徑調整，非 breaking change）。再前一版 v2.1.238（2026-08-20）新增 `keybindingFlavor` 設定；再前一版 v2.1.237（同日）修復 LLM gateway／自訂 base URL session 的 prompt caching 失效問題，並新增內建「Concise」輸出風格。最後一次重大 breaking change 仍為 v2.1.212／v2.1.215（見下表）；另有一項於 8/14 已生效的 breaking change（auto 模式預設化，已對 Pro/Max/Team 上線，詳見 [[entities/claude-code]] 現況）。⚠️ **另注意**：anthropic-sdk-python 同日發布 v1.0.0，含獨立於 Claude Code CLI 之外的 breaking change（client 升級至 httpx2，官方未提供遷移時程），影響對象為以該 SDK 建置的整合程式碼，非 CLI 升版本身，詳見 [[entities/claude-code]] 現況。
 
 | 風險 | 嚴重度 | 說明 |
 |------|--------|------|
@@ -64,6 +64,7 @@
 
 | 功能 | 發布日期 | 熱度 | 試用價值 | 狀態 |
 |------|----------|------|----------|------|
+| **Cowork 記憶功能整合**（設定 > Memory > Topics，跨 web/App/Cowork 共用記憶，敏感主題預設關閉） | 2026-08-25 | 🔥🔥 | ⚡ 有條件推薦 | 正式發布 |
 | **anthropic-sdk-python 1.0.0**（httpx2 Breaking Change，⚠️ 無過渡期） | 2026-08-20 | 🔥🔥🔥 | ⚡ 有條件推薦 | 正式發布 |
 | **keybindingFlavor readline 模式**（v2.1.238，可選提示列刪除鍵行為） | 2026-08-20 | 🔥🔥 | ⚡ 有條件推薦 | 正式發布 |
 | **Concise 輸出風格**（v2.1.237 新增內建 output style，省略前言與敘述性文字） | 2026-08-20 | 🔥 | ⚡ 有條件推薦 | 正式發布 |
@@ -151,6 +152,25 @@
 ---
 
 ## 🆕 最新功能（2026-08）
+
+### Cowork 記憶功能整合
+**發布：** 2026-08-25（官方 Release Notes 標註日期） | **熱度：** 🔥🔥 | **試用價值：** ⚡ 有條件推薦 | **狀態：** 正式發布（部分方案預設開啟）
+
+**是什麼：** Claude Cowork 現在與網頁／App 對話共用記憶：所有記住項目集中列在設定 > Memory 底下的 Topics，可個別編輯或刪除；健康、信仰等敏感主題預設不納入記憶，須手動開啟「Include sensitive topics in memory」才會記錄。
+
+**為何熱：** 官方 Claude Help Center Release Notes 首發；TechCrunch、SiliconANGLE、CNET、Engadget、SD Times、The Register、Techzine、ZDNET 等多家媒體同步報導，隱私（敏感主題記憶）設定引發關注。
+
+**現在要試嗎：** 適合已跨 web／App／Cowork 多介面使用 Claude、想要記憶延續的使用者；在意隱私者應留意「Include sensitive topics in memory」預設關閉，須手動開啟才會記錄健康、信仰等敏感主題。
+
+**快速上手：**
+```
+設定 > Memory > Topics：檢視／編輯／刪除既有記憶項目
+設定 > Memory > 開啟「Include sensitive topics in memory」以納入敏感主題記憶
+```
+
+**注意事項：** 官方原文於「記憶預設對部分方案開啟」處截斷，實際預設開啟的方案範圍未知。
+
+---
 
 ### anthropic-sdk-python 1.0.0（httpx2 Breaking Change）
 **發布：** 2026-08-20（v1.0.0） | **熱度：** 🔥🔥🔥 | **試用價值：** ⚡ 有條件推薦 | **狀態：** GA

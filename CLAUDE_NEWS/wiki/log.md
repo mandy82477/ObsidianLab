@@ -4237,3 +4237,22 @@ registry 加一組 sync_pair 釘住產出端與歸因端（只改一邊等於白
 - **診斷根因**：頭條敘事規格只有一行（「當週最大張力縫成因果敘事，300–500 字，不列清單」），風格實際來自逐期模仿前作——防重複規則管題目不管修辭，於是 W33/W34 收束句逐字級同構、連兩期從財經視角開篇、同一事件全篇六種說法、一段六個無角色詞金額。
 - **處置**：`weekly-report.md` 第 (1) 段擴為四層——結構層（入口讀者裁定／編線准入／頭條-深挖分工）、連載層（前情錨＋增量／固定稱呼）、句子層（收束預算禁隱喻／跨期句式 diff／數字角色詞／日期位置／粗體預算＋案例定性）、驗收層（冷讀者三問：每答必須可逐字 grep 回頭條原文）；全部附 W33/W34 實文正反例。機械檢查五項入 `scripts/check_weekly_ledger.py` 新增 `check_headline()`（跨期模板／日期句首／粗體數量硬擋，日期遞增／角色詞 WARN），以 `HEADLINE_RULES_SINCE = 2026-W35` 閘門凍結舊期不回溯；+5 測試；registry 加兩組同步配對防規格與檢查器失步。
 - **淘汰紀錄**：三線摘要表（違反「不列清單」的訓練意圖）、腳注全面化（破壞敘事文體區隔）、段落骨架標籤（零增益）、TL;DR 框（與「本週一句話」重疊）——agent 自砍與主編合議，留檔防止日後重提。
+
+## 2026-08-26 Ingest
+
+- 來源日報：[[news/2026-08-26]]
+- 更新頁面：wiki/entities/opus-5.md、wiki/entities/fable-5.md、wiki/entities/claude-code.md、wiki/topics/official-community-gap.md、wiki/topics/anthropic-business.md、wiki/topics/enterprise-tool-tracker.md、wiki/topics/competitor-landscape.md、wiki/topics/ai-agent-safety.md、wiki/topics/code-quality-decline.md、wiki/topics/community-tech-discussions.md、wiki/feature-radar.md（主編彙整：新增「Cowork 記憶功能整合」條目＋全覽表列，同步最新版本行至 v2.1.246）
+- 新增頁面：無
+- 摘要：Claude Cowork 與網頁／App 對話正式共用記憶（官方 Release Notes＋多家媒體同步報導）；Anthropic 傳出將向投資人簡報稱潛在市場規模上看 30 兆美元、為可能創紀錄 IPO 鋪路，社群與評論界對此說法不乏質疑（TAM 非實際營收、「$30 兆幻想」等）；Claude Code 與外部生態摩擦浮上檯面（Shopify CEO 揚言封殺、AGENTS.md 業界標準遭拒引發開發者反彈）；GitHub Issues 熱度集中在四項功能／臭蟲請求（多帳號切換 879👍、Bedrock 後端 243👍、extended-thinking 恢復失敗、1M context 無法關閉）；社群對「Claude Code 是否正被 A/B 測試降規模」的質疑（nerfd models）與作者親身經驗（今昔對比、實測抓到人工漏掉的 bug）並陳收錄
+- 呈現品質：六位記者皆回報 ✅ 通過
+- 品質備註：無
+
+**跨記者轉知：**
+- 派工前 `pending_handoffs.py list` 有 2 筆積壓（H-70d575 商業→模型，2026-08-25 開立；H-f82d69 社群→功能，2026-08-25 開立），均未逾 14 天，本次已隨對應記者派工帶入處理
+- 模型記者：H-70d575（Project Glasswing／mythos.md）判斷「不適用」——今日日報無相關後續報導，保留 open 待下次查證（非理由「不屬我」，僅無新證據，不 void）
+- 功能記者：H-f82d69 已 `close`——ambient-context／mindmuxai-brain.md 併入 official-community-gap.md 既有「跨 session 記憶持久化」列；rsmdt/the-startup、Kindle highlights skill 判定不新增列
+- 商業記者新開一筆轉知：H-1be92f（商業→安全政策），ABC News〈Internal emails expose scale of Anthropic's Australian AI plans〉僅標題可用，可能涉政府合作內容，已於 anthropic-business.md 戰略合作表記錄「歸屬待定」，待安全政策記者查證是否屬 anthropic-government-policy.md 範疇
+
+**人物記者判斷備註：** 今日兩則外部人物條目（Shopify CEO Tobi Lütke 揚言封殺 Claude Code；創投人 Chamath Palihapitiya 質疑 Anthropic $2兆 IPO 前景）均因「僅標題可用、無可查證的具體發言內容」且內容實質屬商業類別議題（企業工具追蹤／IPO 敘事），判定不建人物頁、不適用，為正確處置——避免用不具引用價值的標題湊出人物頁「核心論述」。
+
+**主編判斷備註：** Anthropic 舊金山辦公室因保全人員可能罷工要求員工居家辦公一事，原始報導已於 2026-08-25 由 Business Insider 首發並進入前一日日報；今日僅為 Hacker News 高分討論（121 分）延續同一事件，商業記者判斷不另立新事件（非融資/收購/戰略合作），社群記者今日條目節錄中亦未見對應收錄，均為正確處置，避免同一事件重複計入多頁。「$30 兆潛在市場」系列報導口徑不一（IPO 估值 $2 兆 vs. 市場總量 $30 兆）已在商業記者派工節錄中明確提醒不可混用，anthropic-business.md 更新時已並置區分。
