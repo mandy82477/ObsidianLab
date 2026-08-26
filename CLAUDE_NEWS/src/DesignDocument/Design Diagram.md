@@ -1,6 +1,6 @@
 # Design Diagram — 現況架構（維運用）
 
-**最後更新：** 2026-08-18
+**最後更新：** 2026-08-27
 **文件定位：** 這份是「**系統現在怎麼運作**」的操作/維運架構圖，給要執行或維護 pipeline 的人看。
 「**系統怎麼演變成現在這樣**」的演進敘事，另見 `docs/architecture-evolution.html`（互動時間軸），兩者分工不重疊。
 
@@ -37,7 +37,10 @@ flowchart TD
 
     subgraph PC["Phase C —— 第二個背景 agent（model: sonnet）"]
         S3["Step 3：commit wiki（不 push）"]
-        S4["Step 4：跑測試套件 → 建置 web reader\n（測試不過則跳過 build，仍推送 news/wiki）"]
+        S4["Step 4：web build gate → 建置 web reader
+gate_web_build.py 代跑測試：已登記缺口放行；
+擋下先走修復迴圈（agent 自修 wiki 內容格式，
+至多 2 輪重跑 gate）；仍擋才跳過 build，照推 news/wiki"]
         S5["Step 5：單一 git push\n（一次推送 news+wiki+web，避免 Pages 並發競爭）"]
         S6["Step 6：append task_scheduler.log\n（無論成敗都寫）"]
         S3 --> S4 --> S5 --> S6
@@ -76,7 +79,7 @@ flowchart TD
 
 **為何快取檔必須 commit：** GitHub Actions 每次全新 checkout，`seen_urls.json` / `emitted_items.json` 不 commit 回去隔天跨日去重就失效、重複出舊聞（`CLAUDE.md` 說資料檔「不需 commit」是指手動流程無此義務，非禁止）。
 
-**週更同理上雲：** `/wiki-lint` 亦有對應雲端 routine（weekly-wiki-lint-cloud）。雲端 routine 的實際執行步驟不在本檔，見 `docs/cloud-runbooks/`（`daily.md` / `weekly-lint.md` / 共用規則 `_shared.md`）；分裂架構的取捨理由見 `docs/daily-automation.md`。
+**週更同理上雲：** `/wiki-lint` 亦有對應雲端 routine（weekly-wiki-lint-cloud）；外部死鏈檢查同樣因 egress 封鎖上了 Actions——`.github/workflows/weekly-linkcheck.yml`（週五 20:00 UTC）掃 `wiki/**/*.md` 的外部連結、三桶分類（真死／需人工確認／誤判排除）後把 `data/link_health.json` commit 回 repo，lint 端只讀報告不連網（`[加入: 2026-08-20]`）。雲端 routine 的實際執行步驟不在本檔，見 `docs/cloud-runbooks/`（`daily.md` / `weekly-lint.md` / 共用規則 `_shared.md`）；分裂架構的取捨理由見 `docs/daily-automation.md`。
 
 > ⚠️ 文件寫的 trigger_id **不代表 trigger 真的存在**（2026-07-12 踩過：記載的 routine 從未被建立過，連兩天靜默不跑）。查驗以 `RemoteTrigger list` 為準。
 
@@ -187,8 +190,12 @@ flowchart TD
     L7["7. 讀者模擬驗收（3 讀者 3 跳測試）"] --> L8
     L8["8. append log（含 metrics 趨勢）"] --> L9
     L9["9. 更新 index.md"] --> L10
-    L10["10. 收尾閉迴路\ncommit wiki → 測試 → build web → 單一 push"]
+    L10["10. 收尾閉迴路
+commit wiki → web build gate（擋下先走
+修復迴圈，同每日 Step 4）→ build web → 單一 push"]
 ```
+
+**本機專屬步驟的去向 `[加入: 2026-08-20]`：** 5b（跨家榜單抓取）、5c（逾期待查證官方清算）與外部死鏈檢查都需要連外網，雲端 lint 一律跳過。死鏈改由 GitHub Actions 每週產報告（見「每日自動化」節尾）；5b/5c 接到 `/weekly` 步驟 0 的「本機專屬補跑」，不再依賴使用者記得手動跑 lint——雲端跳過的步驟必須有明文接手方，否則就是靜默餓死（08-01～08-15 死鏈檢查一次都沒真正跑過的教訓）。
 
 **6e 來源健康 + 記分卡 `[改版: 2026-07-16]`：** 除既有「連續 3 天 count=0」抓取告警外，每週執行 `python scripts/source_scorecard.py` 附記分卡表；樣本充足且 Wilson 下界與 Presence 雙低者列觀察名單回報使用者，不自行動 pipeline。
 
@@ -200,7 +207,12 @@ flowchart TD
 
 ```mermaid
 flowchart TD
-    W["/weekly [YYYY-Wnn]"] --> W1
+    W["/weekly [YYYY-Wnn]"] --> W0
+
+    W0["0. 本機專屬補跑 [加入: 2026-08-20]
+lint 5b 榜單週更＋5c 逾期待查證清算
+＋lint 待裁示呈報（雲端 egress 封鎖跳過的步驟在此接手）"]
+    W0 --> W1
 
     W1["1. /weekly-report —— 對外交付\n頭條敘事＋技術討論深挖＋下週看什麼＋檔尾數字\n→ weekly/YYYY-Wnn.md（寫入即凍結）"]
     W1 --> W2["2. /wiki-weekly-review —— 對內策展\n判斷值得加碼追蹤的主題（建頁/加區塊/升熱度）\n⚠️ 未經使用者確認不得改任何頁面"]

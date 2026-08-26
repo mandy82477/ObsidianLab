@@ -5,7 +5,7 @@
         <div>
           <h1 class="text-[26px] leading-tight" style="font-family: var(--font-display); font-weight: 500; color: var(--ink-1);">自動化新聞知識庫系統<span style="color: var(--ink-3); font-style: italic;"> / 現有架構</span></h1>
           <p class="mt-1 text-[11px] tracking-wide" style="font-family: var(--font-mono); color: var(--ink-3);">CURRENT ARCHITECTURE — 現況操作／維運視圖</p>
-          <p style="margin-top: 8px; font-family: var(--font-mono); font-size: 11px; color: var(--ink-3); letter-spacing: 0.02em;">現況截至 2026-08-18 · 源自 src/DesignDocument/Design Diagram.md</p>
+          <p style="margin-top: 8px; font-family: var(--font-mono); font-size: 11px; color: var(--ink-3); letter-spacing: 0.02em;">現況截至 2026-08-27 · 源自 src/DesignDocument/Design Diagram.md</p>
         </div>
       </div>
       <!-- 頁面導覽 tab -->
@@ -88,7 +88,7 @@
         <div class="flex flex-wrap items-center gap-2">
           <span class="dgm-step" style="border: 1px solid var(--border-2); border-radius: 2px; padding: 4px 9px; font-family: var(--font-sans); font-size: 11px; color: var(--ink-2);">Step 3 commit wiki（不 push）</span>
           <span style="color: var(--ink-4); font-family: var(--font-mono);">→</span>
-          <span class="dgm-step" style="border: 1px solid var(--border-2); border-radius: 2px; padding: 4px 9px; font-family: var(--font-sans); font-size: 11px; color: var(--ink-2);">Step 4 測試 → build web</span>
+          <span class="dgm-step" style="border: 1px solid var(--border-2); border-radius: 2px; padding: 4px 9px; font-family: var(--font-sans); font-size: 11px; color: var(--ink-2);">Step 4 web build gate → 建置 web reader（gate_web_build.py 代跑測試：已登記缺口放行；擋下先走修復迴圈，agent 自修 wiki 內容格式，至多 2 輪重跑 gate；仍擋才跳過 build，照推 news/wiki）</span>
           <span style="color: var(--ink-4); font-family: var(--font-mono);">→</span>
           <span class="dgm-step" style="border: 1px solid var(--border-2); border-radius: 2px; padding: 4px 9px; font-family: var(--font-sans); font-size: 11px; color: var(--ink-2);">Step 5 單一 push</span>
           <span style="color: var(--ink-4); font-family: var(--font-mono);">→</span>
@@ -172,7 +172,7 @@
       <div class="mt-6" style="font-family: var(--font-sans); font-size: 12px; color: var(--ink-2); line-height: 1.7;">
         <p class="mb-2"><strong style="color: var(--ink-1); font-weight: 500;">寫者分工（避免競態）：</strong>① 寫 <code style="font-family: var(--font-mono);">gathered_items.json</code> / <code style="font-family: var(--font-mono);">seen_urls.json</code> / <code style="font-family: var(--font-mono);">emitted_items.json</code>（新增未確認條目）；② 只寫 <code style="font-family: var(--font-mono);">emitted_items.json</code> 的確認欄位，與日報同批 push。兩者時間錯開 3 小時且都走 push 重試。</p>
         <p class="mb-2"><strong style="color: var(--ink-1); font-weight: 500;">為何快取檔必須 commit：</strong>GitHub Actions 每次全新 checkout，<code style="font-family: var(--font-mono);">seen_urls.json</code> / <code style="font-family: var(--font-mono);">emitted_items.json</code> 不 commit 回去隔天跨日去重就失效、重複出舊聞。</p>
-        <p class="mb-2"><strong style="color: var(--ink-1); font-weight: 500;">週更同理上雲：</strong><code style="font-family: var(--font-mono);">/wiki-lint</code> 亦有對應雲端 routine（weekly-wiki-lint-cloud）。分裂架構的取捨理由見 <code style="font-family: var(--font-mono);">docs/daily-automation.md</code>；雲端 routine 實際執行步驟見 <code style="font-family: var(--font-mono);">docs/cloud-runbooks/</code>。</p>
+        <p class="mb-2"><strong style="color: var(--ink-1); font-weight: 500;">週更同理上雲：</strong><code style="font-family: var(--font-mono);">/wiki-lint</code> 亦有對應雲端 routine（weekly-wiki-lint-cloud）；外部死鏈檢查同樣因 egress 封鎖上了 Actions——<code style="font-family: var(--font-mono);">.github/workflows/weekly-linkcheck.yml</code>（週五 20:00 UTC）掃 <code style="font-family: var(--font-mono);">wiki/**/*.md</code> 的外部連結、三桶分類（真死／需人工確認／誤判排除）後把 <code style="font-family: var(--font-mono);">data/link_health.json</code> commit 回 repo，lint 端只讀報告不連網。分裂架構的取捨理由見 <code style="font-family: var(--font-mono);">docs/daily-automation.md</code>；雲端 routine 實際執行步驟見 <code style="font-family: var(--font-mono);">docs/cloud-runbooks/</code>。</p>
         <p style="color: var(--warn);">⚠ 文件寫的 trigger_id <strong style="font-weight: 500;">不代表 trigger 真的存在</strong>（2026-07-12 踩過：記載的 routine 從未被建立過，連兩天靜默不跑）。查驗以 <code style="font-family: var(--font-mono);">RemoteTrigger list</code> 為準。</p>
       </div>
     </div>
@@ -383,10 +383,12 @@
         <div style="font-family: var(--font-mono); color: var(--ink-4); font-size: 11px; margin-left: 14px;">↓</div>
         <div class="dgm-step" style="border: 1px solid var(--border-2); border-radius: 2px; padding: 8px 12px; font-family: var(--font-sans); font-size: 12px; color: var(--ink-2);">9. 更新 index.md</div>
         <div style="font-family: var(--font-mono); color: var(--ink-4); font-size: 11px; margin-left: 14px;">↓</div>
-        <div class="dgm-step" style="border: 1px solid var(--border-strong); border-radius: 2px; padding: 8px 12px; font-family: var(--font-sans); font-size: 12px; color: var(--ink-1);">10. 收尾閉迴路：commit wiki → 測試 → build web → 單一 push</div>
+        <div class="dgm-step" style="border: 1px solid var(--border-strong); border-radius: 2px; padding: 8px 12px; font-family: var(--font-sans); font-size: 12px; color: var(--ink-1);">10. 收尾閉迴路：commit wiki → web build gate（擋下先走修復迴圈，同每日 Step 4）→ build web → 單一 push</div>
       </div>
 
       <p class="mt-6 text-[12px]" style="font-family: var(--font-sans); color: var(--ink-2); line-height: 1.6;"><strong style="color: var(--ink-1); font-weight: 500;">6e 來源健康＋記分卡：</strong>除既有「連續 3 天 count=0」抓取告警外，每週執行 <code style="font-family: var(--font-mono);">python scripts/source_scorecard.py</code> 附記分卡表；樣本充足且 Wilson 下界與 Presence 雙低者列觀察名單回報使用者，不自行動 pipeline。</p>
+
+      <p class="mt-2 text-[12px]" style="font-family: var(--font-sans); color: var(--ink-2); line-height: 1.6;"><strong style="color: var(--ink-1); font-weight: 500;">本機專屬步驟的去向：</strong>5b（跨家榜單抓取）、5c（逾期待查證官方清算）與外部死鏈檢查都需要連外網，雲端 lint 一律跳過。死鏈改由 GitHub Actions 每週產報告；5b/5c 接到 <span style="font-family: var(--font-mono); font-size: 11px;">/weekly</span> 步驟 0 的「本機專屬補跑」，雲端跳過的步驟必須有明文接手方，否則就是靜默餓死。</p>
     </div>
 
     <!-- 圖④b 週報線 -->
@@ -402,6 +404,11 @@
       <div class="dgm-arrow" style="color: var(--ink-4); font-family: var(--font-mono); margin: 6px 0 6px 14px;">↓</div>
 
       <div class="space-y-2">
+        <div style="border: 1px solid var(--border-2); border-radius: 2px; padding: 10px 12px;">
+          <div style="font-family: var(--font-sans); font-size: 12px; color: var(--ink-1); margin-bottom: 4px;">0. 本機專屬補跑</div>
+          <div style="font-family: var(--font-sans); font-size: 11px; color: var(--ink-2);">lint 5b 榜單週更＋5c 逾期待查證清算＋lint 待裁示呈報（雲端 egress 封鎖跳過的步驟在此接手）</div>
+        </div>
+        <div style="font-family: var(--font-mono); color: var(--ink-4); font-size: 11px; margin-left: 14px;">↓</div>
         <div style="border: 1px solid var(--border-2); border-radius: 2px; padding: 10px 12px;">
           <div style="font-family: var(--font-sans); font-size: 12px; color: var(--ink-1); margin-bottom: 4px;">1. /weekly-report —— 對外交付</div>
           <div style="font-family: var(--font-sans); font-size: 11px; color: var(--ink-2);">頭條敘事＋技術討論深挖＋下週看什麼＋檔尾數字 → <code style="font-family: var(--font-mono);">weekly/YYYY-Wnn.md</code>（寫入即凍結）</div>
