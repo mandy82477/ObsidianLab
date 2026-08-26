@@ -435,7 +435,7 @@ python -c "import json;d=json.load(open('data/link_health.json',encoding='utf-8'
 
 1. **Commit wiki 變更**（先不 push）：`git -C REPO_ROOT add wiki/` → `git -C REPO_ROOT commit -m "wiki: weekly lint YYYY-MM-DD"`（wiki 無變更則跳過 commit，續下一步）
 2. **強制 web build gate**：`PYTHON REPO_ROOT\scripts\gate_web_build.py`（此腳本代跑完整測試套件，不要另外自己跑 `run_tests.py` 再自行判斷——判準集中在腳本裡，才不會與 `.claude/commands/news-pipeline-steps.md` Step 4 失步）
-   - 擋下（exit≠0）→ 跳過 build 與 web commit，仍執行步驟 4 推送已完成的 wiki commit
+   - 擋下（exit≠0）→ **先依 `.claude/commands/news-pipeline-steps.md` Step 4「gate 擋下時的修復迴圈」嘗試修復再重跑 gate（至多 2 輪，允許清單與禁止事項皆同）**；仍擋下才跳過 build 與 web commit，仍執行步驟 4 推送已完成的 wiki commit
    - 放行（exit 0，含「測試失敗但全屬 `docs/known-test-gaps.json` 已登記缺口」）→ 續步驟 3
    - 兩種結果都在步驟 4 的心跳紀錄抄上腳本輸出的**最後一行摘要**，不要自己改寫措辭
    - 放寬理由與邊界見 `.claude/commands/news-pipeline-steps.md` Step 4 的說明區塊（2026-07-31 教訓：抓料端依賴缺口不該讓整站停更）

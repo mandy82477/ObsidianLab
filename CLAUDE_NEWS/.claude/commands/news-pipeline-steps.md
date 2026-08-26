@@ -339,7 +339,30 @@ PYTHON REPO_ROOT\scripts\gate_web_build.py
 此腳本會代跑 `scripts/run_tests.py`，再依 `docs/known-test-gaps.json` 判定該不該擋。**不要另外自己跑 `run_tests.py` 再自行判斷**——判準集中在腳本裡，才不會兩處失步。
 
 - **exit 0** → 放行，繼續執行 build（可能是「全綠」，也可能是「失敗但全屬已登記缺口」；後者腳本會印出放行理由）
-- **exit 非 0** → 視同 Step 4 失敗：跳過 web build 與 web commit，但仍繼續 Step 5（推送已完成的 news / wiki commit）與 Step 6（記錄 log）
+- **exit 非 0** → **先走下方「gate 擋下時的修復迴圈」，不可直接跳過 build**；迴圈仍失敗才視同 Step 4 失敗：跳過 web build 與 web commit，但仍繼續 Step 5（推送已完成的 news / wiki commit）與 Step 6（記錄 log）
+
+### gate 擋下時的修復迴圈 `[加入: 2026-08-26]`
+
+你是 LLM agent，gate 印出的失敗訊息你讀得懂也多半修得好——擋下就放棄等於把「讀者今天看不到網站」當成對一個格式瑕疵的懲罰（2026-08-26 教訓：wiki 懸置探針含千分位逗號 `$1,125` 被切成 `$1` 而 FAIL，日報與 wiki 全部正常，網站卻停更一天，瑕疵本身也沒人修）。
+
+**流程（至多修 2 輪，每輪：讀失敗 → 修 → 重跑 gate）：**
+
+1. 讀 gate 輸出，定位失敗的檢查與檔案行號（輸出通常直接給到 `頁面:行號` 或測試案例名）
+2. 判斷失敗屬於哪一類，只修**允許清單**內的：
+
+| 失敗類型 | 可否自行修復 | 修法 |
+|---|---|---|
+| wiki 內容格式（懸置標記語法、探針不合格、欄位缺漏、日期格式、表格對帳差一列） | ✅ | 依對應規則檔修 `wiki/` 內容本身（如探針改寫成合規字串），修完併入本次 wiki commit（`git commit --amend` 或補一個 `wiki: fix gate failure` commit） |
+| 規則檔同步配對／錨點（`check_rules.py`），且是**本次 pipeline 改動造成** | ✅ | 修回一致 |
+| 單元測試失敗、腳本層 bug、環境依賴缺失 | ❌ | 不修——腳本改動需要人工 review，照舊擋下並回報 |
+
+3. 重跑 `gate_web_build.py`：exit 0 → 繼續 build，Step 6 log 在摘要行後**多記一行** `REPAIRED: <一句話：修了什麼>`；仍非 0 → 進第 2 輪；2 輪後仍失敗 → 放棄，照舊跳過 build 並在 log 記 `repair attempted, still blocked`
+
+**硬性禁止（違反任一條就等於把 gate 拆掉）：**
+- 不可修改任何 `scripts/check_*.py`、`run_tests.py`、`gate_web_build.py`
+- 不可為了放行而新增 `docs/known-test-gaps.json` 條目（該檔只在人工登記 workaround 時動）
+- 不可用「刪掉觸發失敗的內容」了事——探針寫錯要改對，不是把整條懸置標記刪掉；刪除等於湮滅待查證事項
+- 修復只准動失敗訊息**指名**的位置，不可順手擴大改動範圍
 
 Step 6 的 log 一律抄腳本輸出的**最後一行摘要**（例如 `測試失敗 3 案，全屬已登記缺口（feedparser-sgmllib）- web build 放行`），不要自己改寫措辭——log 是日後判斷「哪天為什麼沒上站」的唯一證據。
 

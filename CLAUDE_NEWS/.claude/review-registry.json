@@ -901,6 +901,18 @@
         "HEADLINE_RULES_SINCE",
         "把\\[一二三四五六七八九十"
       ]
+    },
+    {
+      "name": "news-pipeline-steps.md <-> wiki-lint.md：gate 擋下時的修復迴圈（節名逐字引用）",
+      "assertion": "all_contain",
+      "files": [
+        ".claude/commands/news-pipeline-steps.md",
+        ".claude/commands/wiki-lint.md"
+      ],
+      "patterns": [
+        "gate 擋下時的修復迴圈"
+      ],
+      "_note": "2026-08-26 加入。wiki-lint 步驟 2 逐字引用 Step 4 的節名；節名改動時兩處要一起改，否則 lint 端的引用指向不存在的節。"
     }
   ],
   "coupling_hints": {
