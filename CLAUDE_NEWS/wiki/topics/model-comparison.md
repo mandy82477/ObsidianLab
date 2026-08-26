@@ -23,7 +23,7 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 **狀態：** ongoing
 **領域：** 🤖 模型
 **開始日期：** 2026-07-02
-**最後更新：** 2026-08-24
+**最後更新：** 2026-08-26
 **最後新聞更新：** 2026-08-24
 
 > **最新對照更新**（2026-08-10）
@@ -43,7 +43,7 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 |------|---------|------------------------------|--------|
 | [[entities/fable-5\|Fable 5]] | 旗艦（Mythos 級公開版） | $10 / $50 · 1M | 跨多天的長期 agentic 工作流、deep reasoning、安全漏洞分析 |
 | [[entities/opus-5\|Opus 5]] | 次旗艦（Max 預設 / Pro 最強） | $5 / $25（官方確認）· 1M | 數小時自主編碼、跨數十檔 refactor、複雜系統工程 |
-| [[entities/sonnet-5\|Sonnet 5]] | 主力平衡（Claude Code 預設） | $2 / $10（促銷至 8/31）· 1M | 日常規模開發（分鐘～1 小時級）、tool use 密集、成本敏感 |
+| [[entities/sonnet-5\|Sonnet 5]] | 主力平衡（Claude Code 預設） | $2 / $10（標準價）· 1M | 日常規模開發（分鐘～1 小時級）、tool use 密集、成本敏感 |
 | Sonnet 4.6 | 前代主力 | $3 / $15（官方確認）· 1M | 已驗證穩定、尚未遷移的既有工作流 |
 | Haiku 4.5 | 輕量 worker | $1 / $5（官方確認）· 200K | 即時互動、高頻批量分類、延遲與成本敏感的 sub-agent |
 

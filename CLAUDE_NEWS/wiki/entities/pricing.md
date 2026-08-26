@@ -25,7 +25,7 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 **狀態：** active（持續調整中）
 **領域：** 💼 商業
 **首次出現：** 2026-04-25
-**最後更新：** 2026-08-22
+**最後更新：** 2026-08-26
 **最後新聞更新：** 2026-08-22
 
 > **最新計費政策異動**（2026-08-22）
@@ -80,11 +80,11 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 
 | 模型 | Input / Output per Mtok | 備注 |
 |------|------|------|
-| Claude Sonnet 5 | $2 / $10 | 促銷定價，有效期至 2026-08-31；Claude Code 新預設模型，相較 Opus 4.8 估計省 60% 成本 |
+| Claude Sonnet 5 | $2 / $10 | **標準定價（不再是促銷）**：原訂 2026-08-31 到期的入門價已於 2026-08-10 永久化，9/1 漲至 $3/$15 的計畫取消；Claude Code 新預設模型，相較 Opus 4.8 估計省 60% 成本 |
 | Claude Fable 5 | $10 / $50 | Pro／Team standard 走此費率以 usage credits 計費；Max／Team premium 為標配（週用量 50% 內）。訂閱端分界見上方「我的方案現在有什麼」|
 | Claude Opus 5 | **$5 / $25** | 官方文件逐字確認，與 Opus 4.8 相同；Fast mode 另計 $10/$50 |
 | Claude Opus 4.8 | **$5 / $25** | 官方載明 Opus 5 定價「unchanged from Claude Opus 4.8」；2026-07-24 起次旗艦地位被 Opus 5 取代，各平台仍可用 |
-| Claude Sonnet 4.6 | **$3 / $15** | 前代 Sonnet，官方列為 legacy 仍可用；1M context / 128k 輸出。Sonnet 5 促銷 8/31 到期後回到同一價位 |
+| Claude Sonnet 4.6 | **$3 / $15** | 前代 Sonnet，官方列為 legacy 仍可用；1M context / 128k 輸出。（Sonnet 5 原訂 8/31 後回到此價位的計畫已取消）|
 | Claude Haiku 4.5 | **$1 / $5** | 陣容中最低價；200K context / 64k 輸出（非 1M，與其餘四者不同）。適合高頻批量與延遲敏感的 sub-agent |
 
 **Opus 5 定價「歧異」已解消（2026-08-08 官方查證）**：官方文件載明 **$5 / $25 per Mtok，且「unchanged from Claude Opus 4.8」**。此前並存的兩種說法**其實同時成立**——「為 Fable 5 的一半」（$5 vs $10）與 MarkTechPost「維持原 Opus 定價」（與 4.8 相同）講的是同一組數字的兩個對照對象，並非矛盾。Fast mode（research preview，僅 Claude API）另計 **$10 / $50**（來源：[What's new in Claude Opus 5](https://platform.claude.com/docs/en/about-claude/models/whats-new-opus-5)）。能力細節見 [[entities/opus-5]]、[[topics/model-comparison]]。
@@ -103,7 +103,6 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 
 - **✅ 2026-07-20 生效｜旗艦模型的訂閱分界（官方文件已確認）**：Max 方案、Team premium seats、舊制席位制 Enterprise premium seats — Fable 5 為標配，可用至多**每週用量上限的 50%**，不額外收費；Pro 方案、Team standard seats、Enterprise standard seats — Fable 5 **不計入方案用量**，需以 usage credits 按 API 費率（$10/$50 per Mtok）付費。合格 Pro 與 Team standard seats 另有**一次性過渡 credit $100**（Team 每 standard seat $100、每組織上限 $2,500），領取窗已於 2026-08-02 關閉、已領 credits 於 2026-09-17 到期，且可用於任何模型（[官方促銷條目](https://support.claude.com/en/articles/15862783)，2026-08-22 查證）。先前將 Fable 5 納入方案週用量的促銷結束於 2026-07-19 23:59:59 PT（來源：[Claude Fable 5 on your plan](https://support.claude.com/en/articles/15424964-claude-fable-5-on-your-plan)，2026-08-08 查證）
 - **⚠️ usage credits 開啟後，方案用量上限不再是硬停止**：credits 為 opt-in、預設關閉，於 `Settings > Usage` 開關，可設 auto-reload（每日兌換上限 $2,000）。開啟後 Claude 會在額度用盡後繼續回答並從 credits 扣款，體感與額度內無異，但每則超額回應皆計費——靠方案硬上限控管支出者需主動確認此開關（來源：[Manage usage credits](https://support.claude.com/en/articles/12429409-manage-usage-credits-for-paid-claude-plans)，2026-08-08 查證）
-- **⏰ 2026-08-31 到期：Claude Sonnet 5 促銷定價（$2/$10 per Mtok）**：官方明確定性為「temporary」促銷，相較 Opus 4.8 估計省 60% 成本；dev.to 第三方實測（2026-07-02）確認此定價並建議設為預設路由模型。8/31 後定價走向未見公告（來源：2026-07-01、2026-07-02）
 - **⏰ 2026-08-31 到期（已再度延長）｜Claude Code 週用量 +50% 促銷**：官方於 2026-08-18 確認再度延長，適用期間由原訂 **2026-05-13** 起持續延續至 **2026-08-31**（此前歷經 06-22→07-07→07-12→07-19 等多次延長）；適用 **Pro／Max／Team 及舊制席位制 Enterprise**，**Free 方案與消耗制（consumption-based）Enterprise seat 不適用**；僅影響週用量上限，**5 小時用量上限不受影響**；符合資格帳號自動套用，無需操作。**更正**：此促銷此前於 07-19 一度被本頁誤記為與 Fable 5 免費期同步到期，實為兩條獨立時程——Fable 5 免費期確於 07-19 到期並由 07-20 分界取代，本促銷則持續延長中，並未終止（詳見下方「定價與促銷」08-18 條目）（來源：Hacker News 轉載 support.claude.com，2026-08-18 17:02 UTC，276 分）
 - **訂閱配額制維持**：原定 2026-06-15 生效的 Agent SDK／`claude -p` 計費切割已於 2026-06-16 暫停，重新推行時間未定；Agent SDK、`claude -p`、第三方 Agent SDK app 用量持續計入訂閱配額，無需額外信用池（來源：2026-06-16、2026-06-18 DevOps.com）
 - **1M context window 觸發獨立 API 計費通道**：即使儀表板顯示 0% 訂閱用量，1M context window 仍會產生額外費用（實例：2026-05-11 用戶 0% 用量下遭收取 $3.37 Extra Usage）
@@ -282,6 +281,13 @@ git commit 歷史出現大寫字串「HERMES.md」會觸發靜默切換至 API �
 - **與 07-13 官方回應的範圍缺口依然存在**：本頁已記錄 Anthropic 於 07-13 推出印度盧比計價（Pro 方案 Rs 2,000/月），惟該公告僅確認 Pro 方案訂閱定價；issue 標題與原始訴求同時提及的 **Claude Code** 是否同步在地化仍未見報導。互動量在官方回應後持續攀升（07-03: 留言 205 → 07-29: 210 → 08-17: 212），可能反映此範圍缺口，也可能只是舊討論串持續累積留言，兩種可能性均無法從現有資料確認（不可推測，僅記錄現象）。
 - **用詞界定**：本則為使用者訴求延續，**非**官方新公告（GitHub https://github.com/anthropics/claude-code/issues/17432）。
 
+#### 2026-08-10：Claude Sonnet 5 入門定價 $2/$10 永久化，9/1 漲至 $3/$15 的計畫取消（2026-08-26 補記，日報未收錄）
+
+- **官方公告**：Anthropic 官方帳號宣布「making Claude Sonnet 5's introductory pricing permanent」——Sonnet 5 於 6 月發布時載明 $2/$10 per Mtok 為入門價、有效期至 2026-08-31，該價格**維持不變**；原定 2026-09-01 起調至 $3/$15（各降幅 50% 的漲幅）**不會發生**（部分媒體記為 08-11）
+- **官方文件佐證（2026-08-26 查證）**：官方模型總覽頁 Sonnet 5 定價欄現為 `$2 / input MTok, $10 / output MTok`，**已無任何 introductory／temporary／到期字樣**；官方定價文件另載明該價格「is now the standard price」
+- **⚠️ 本庫覆蓋缺口**：此則為官方定價變動，但**日報 12 個來源於 08-10～08-26 全數未收錄**——官方公告走 X 與 support/pricing 說明中心，兩者皆不在來源清單（X 為設計上排除、說明中心為已知缺口，見 `.claude/rules/wiki-ingest-commercial.md`）。結果是本頁在漲價日前 5 天仍掛著「⏰ 08-31 到期」倒數，讀者會據以做錯誤的成本決策
+- **連帶更正**：本頁「模型 API 定價現況」表、「⏰ 倒數中」、[[feature-radar]]、[[topics/model-comparison]]、[[entities/sonnet-5]] 的到期敘述已於 2026-08-26 一併上修
+
 #### 2026-08-11：官方文件補充 usage credits 僅限網頁版開通，pricing 頁確認 Free 方案功能範圍
 
 - **官方 usage-credits 條目補充限制**：support.claude.com 說明中心確認行動 App 訂閱者無法直接於 App 內開啟 usage credits，須改至網頁版操作；額度用盡後可切換按量計費（API 標準費率）不中斷。詳見上方「方案細節」新增條目
@@ -367,11 +373,11 @@ git commit 歷史出現大寫字串「HERMES.md」會觸發靜默切換至 API �
 #### 2026-07-02：第三方實測確認 Sonnet 5 促銷定價，籲設為預設路由模型
 
 - **dev.to 第一手定價實測**：作者計算確認 Anthropic 已將 Sonnet 5 以 $2/$10（每百萬 token）廣泛開放，優惠將持續至 **2026-08-31**，與官方 07-01 公告數字一致；文章建議開發者應將 Sonnet 5 設為**預設路由模型**而非僅作為用量上限的備援，以最大化促銷期內的成本節省（dev.to https://dev.to/tokenmixai/i-did-the-math-on-claude-sonnet-5-the-60-opus-discount-is-real-but-temporary-31pf）
-- **注意**：優惠明確為「temporary」，8/31 到期後定價走向未見官方公告，屆時是否延續或調升需留意（見「⏰ 倒數中」風險提示）
+- **注意**：優惠當時明確為「temporary」，8/31 後走向未見公告 —— **後續（2026-08-10）：Anthropic 宣布此定價永久化，取消 9/1 漲價，本則的到期風險已解除**（見下方 2026-08-10 條目）
 
 #### 2026-07-01：Claude Sonnet 5 促銷定價 + Fable 5 計費架構調整
 
-- **Claude Sonnet 5 促銷定價**：$2/Mtok（輸入）、$10/Mtok（輸出），有效期至 2026-08-31；Claude Code 用戶以此定價使用新預設模型，相較 Opus 4.8 估計省 60% 成本。**對採用率的意涵**：若 Claude Code 預設路由切換至 Sonnet 5，重度使用者的月均 API 費用可能顯著降低，有助於緩解近期配額縮減導致的訂閱留存壓力（推論）。
+- **Claude Sonnet 5 促銷定價**：$2/Mtok（輸入）、$10/Mtok（輸出），發布時載明有效期至 2026-08-31（**該到期日後於 2026-08-10 取消，定價永久化**）；Claude Code 用戶以此定價使用新預設模型，相較 Opus 4.8 估計省 60% 成本。**對採用率的意涵**：若 Claude Code 預設路由切換至 Sonnet 5，重度使用者的月均 API 費用可能顯著降低，有助於緩解近期配額縮減導致的訂閱留存壓力（推論）。
 - **Fable 5 計費架構調整**：Pro/Max/Team 方案 2026-07-07（7/7）前每週配額含 50% Fable 5；2026-07-07 後改為 usage-based billing（依用量計費）；Enterprise 方案需聯繫帳戶主管確認條件；定價細節另行公告。**注意**：此架構意味 7/7 後 Pro/Max 訂閱用戶使用 Fable 5 將不再包含在訂閱配額內，須另計費用；對重度使用 Fable 5 的用戶構成成本衝擊風險（推論）。**與 06-09 舊公告銜接說明**：06-09 條目記錄 Fable 5「6/22 前含括於訂閱、之後改為消費制」，本次公告明確 6/22–7/7 為過渡期（每週配額仍含 50% Fable 5），7/7 才是 usage-based billing 正式生效日；兩則公告方向一致、非互相矛盾，但 Anthropic 並未使用「過渡期」字眼，此銜接判斷為由兩則公告推得（推論）。此調整與同日公布的 Sonnet 5 促銷定價同屬毛利率相關政策，對公司財務面的意涵詳見 [[topics/anthropic-business]]。
 
 #### 2026-06-26：Max 5x × 2 vs Max 20x × 1 方案分析

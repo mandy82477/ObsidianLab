@@ -25,7 +25,7 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 **狀態：** active（出口管制解除，2026-07-01 起全球恢復存取）
 **領域：** 🤖 模型
 **首次出現：** 2026-04（限定夥伴 Preview）
-**最後更新：** 2026-08-24
+**最後更新：** 2026-08-26
 **最後新聞更新：** 2026-08-24
 
 > **最新進展**（2026-08-22）
@@ -99,12 +99,9 @@ Anthropic 的官方 AI 資安能力研究計畫，Mythos Preview 為核心工具
 | Mythos 5 部分解禁（100+ 機構）| 2026-06-27 | 商務部長 Lutnick 致函確認；條件：受信任合作夥伴 + 安全措施 |
 | NSA 用 Mythos 發動攻擊 | 2026-06-05 | 防禦框架「兩用性」首次公開確認（FT 獨家）|
 | Horizon3.ai 加入 Glasswing | 2026-07-15 | 首度納入**攻擊性安全**專長的夥伴（此前偏重超大規模雲端業者與大型資安廠商），將 Mythos 用於自家防禦性工作，並以漏洞研究與安全驗證經驗協助評估 AI 辨識可利用風險的能力（businesswire 官方新聞稿，2026-08-10 查證）|
-| Nozomi Networks 加入 Glasswing | 2026-07-20 | 工業資安公司加入，協助強化 OT／IoT／cyber-physical systems 安全防護 ❓ 待查證 ⟨Q-01⟩ |
+| Nozomi Networks 加入 Glasswing | 2026-07-20 | 工業資安公司加入，將 AI 漏洞探勘帶入 OT／IoT／cyber-physical systems；夥伴可取得 Mythos Preview 檢視自家軟體漏洞，Nozomi 承諾將發現回饋 Anthropic 研究並分享資安社群（Nozomi 官方部落格，2026-08-26 查證）|
 | Oxide Computer 加入 Glasswing | 2026-07-28 | 應用 Mythos 5 主動掃描自家開源程式碼庫（韌體/OS/控制平面/網路堆疊），強調關鍵軟體應可被檢視（Oxide Blog）|
 | Glasswing 規模演進確認 | 2026-08-10 | 自 2026-04-07 啟動時約 50 家夥伴，擴及 **15 國以上、逾 150 個組織**（官方查證，取代先前「200 個」概估數字）|
-
-**懸置細節**
-- ⟨Q-01⟩ ❓ **待查證**（標 2026-07-20｜查 Nozomi Networks、Glasswing）：Industrial Cyber 報導僅標題可用，已掃日報至 2026-08-21 無後續；官方頁面未查證
 
 **授權費用**：企業客戶描述為「Budget Buster」，高安全能力伴隨高授權成本（The Information, 2026-06-01）。
 
@@ -161,14 +158,15 @@ Anthropic 的官方 AI 資安能力研究計畫，Mythos Preview 為核心工具
 - 若屬實將是繼 Fable 5（2026-06-09，Mythos 架構附加護欄公開版）後，Mythos 級能力進一步向大眾開放的重大政策轉向；暫無第二來源佐證，待後續報導補充具體內容再擴寫分析
 
 #### 2026-07-21
-❓ **待查證**（標 2026-07-21｜查 CNBC、rang the alarm）｜**CNBC：Fed 曾就 Mythos AI 模型發出警示，但延遲數月才浮現**（僅標題可用）：
+**CNBC：Fed 對銀行示警 Mythos 風險，自己卻數月拿不到該模型**（2026-08-26 查證）：
 - Google News 轉載 CNBC 標題「The Fed rang the alarm about Anthropic's Mythos AI model — but had to go months without it」（[Google News/CNBC](https://news.google.com/rss/articles/CBMikgFBVV95cUxOejZuVHE3NHBKYnY4N0VFS0U3M3JXd3pQeEJBemUyQ21BRTF6U3Vvc2JWVXdQQkdlUDVPYnN0OUZJRnpUNVh4NkhTUTRNT3NyTlhwaTJ1YmpBcm1PSUF5MUZhNjU0SnlLZ3VwdWR4X1MzalF1UDRjcWszR0daUmVtV01ibDQ1MWxBaVFfTWhJWmVpZ9IBlwFBVV95cUxPSmNOa05qbkpGTjB1YkFBZE5rNEZaMFcteW81SlRldGFvckpHRE0tdVI3RHlEa1FSWDVFSnRNbnNLSTBjQlRJSWpJZTZOSEhwU09lb1paM051X2k3ZzcyWXNPYTRrai1tRHdFSndVbS15MUlVWXNFQWtFZGNwM0ZIUVcxTmdPNUVWY2FrS0RWajJucGpDSk9v?oc=5)）；RSS 僅提供標題與轉址連結，無正文摘要，無法取得具體警示內容、發布時間點、延遲原因或影響範圍。已掃日報至 2026-08-21 無後續；官方頁面未查證
-- 若屬實，顯示金融監管機構對 Mythos 風險的關注已從加拿大金融監管機關（07-13）、摩根大通執行長 Dimon 公開表態（07-16），進一步擴散至美國聯邦準備系統層級；惟因僅有標題可用，不排除與已知的 07-13／07-16 事件系出同源、經不同媒體以不同角度報導的可能性，具體警示內容與時間軸尚未經證實
+- **查證結果**：Fed 與財政部於 4 月與主要銀行執行長召開特別會議示警 Mythos 級能力可能讓網路攻擊更頻繁且更具破壞性；但 Fed 自該次示警後**至少三個月未取得 Mythos Preview 存取權**，截至 2026-07-15 仍在爭取——即央行一邊要求金融機構修補 AI 找出的漏洞，一邊被排除在其他銀行正在使用的同一工具之外（[CNBC](https://www.cnbc.com/2026/07/21/fed-mythos-ai-cybersecurity-banks-project-glasswing.html)；Bloomberg 2026-05-19 另報導監管機關因 Mythos 延後美國銀行網攻演練）
+- 監管關注鏈條因此確立：加拿大金融監管機關（07-13）→ 摩根大通 Dimon 公開表態（07-16）→ 美國聯準會層級（本則），非同一事件的重複報導
 
 #### 2026-07-20
-❓ **待查證**（標 2026-07-20｜查 csoonline.com、Mythos FAQ）｜**csoonline.com：Mythos FAQ 專文**（能力／存取／競爭者／影響，僅標題可用）：
+**csoonline.com：Mythos FAQ 專文**（能力／存取／競爭者／影響）：
 - Google News 轉載 csoonline.com 標題「Claude Mythos FAQ: Capabilities, access, competitors, implications」（[Google News/csoonline.com](https://news.google.com/rss/articles/CBMirgFBVV95cUxOaE10YjdGU2JoM2xVRC02Q3VRQkVOX3ZBVmVMY1hXbTUxNDgwTUZ5OVBMUUdLdWNPcEtfYUZVMS0xaTRYMWFWckU2eUNuZ251VHV2aF9wcU5GNUtReHE3QUlYODdPU2ZTN3pfaDhHWG84Ti1GZV9IMC05QWNrUVNqZHg5OUY2TEExWmZuQURTMi1Tb1duVUpyTW5uVVZfa0RFRnRjQVBPRFpmekxHQlE?oc=5)）；RSS 僅提供標題與轉址連結，無正文內容可用，無法取得具體 FAQ 問答內容。已掃日報至 2026-08-21 無後續；官方頁面未查證
-- 顯示主流資安科技媒體持續以整理性 FAQ 形式報導 Mythos 現況（能力、存取方式、競爭者、影響），惟本則缺乏可驗證的新事實，暫僅記錄標題存在
+- 顯示主流資安科技媒體持續以整理性 FAQ 形式報導 Mythos 現況；2026-08-26 回查該文連結已失效（HTTP 404），且本則本就無本頁他處未載的獨立事實，僅保留「媒體以 FAQ 形式報導」此一現象記錄，不再追蹤
 
 #### 2026-07-16
 **摩根大通執行長 Dimon：Mythos AI 風險是「真實問題」（Reuters／Google News，僅標題可用）**：
@@ -183,13 +181,13 @@ Anthropic 的官方 AI 資安能力研究計畫，Mythos Preview 為核心工具
 #### 2026-06-29
 **美國政府正式許可恢復 Mythos 存取（信任合作夥伴）+ 中國 Z.Ai 聲稱對標**：
 - **政府許可進一步確認**：qz.com 報導 Anthropic 正式獲得美國政府許可，可向特定信任合作夥伴恢復 Mythos 存取（[qz.com](https://qz.com/anthropic-mythos-5-clearance-trusted-partners-commerce-062926)）；此為繼 6/27 商務部長 Lutnick 致函後，政府鬆綁政策的進一步落實，Fable 5 全面解禁談判同步推進中
-- ❓ **待查證**（標 2026-06-24｜查 Z.Ai、chinas-360）｜**中國 Z.Ai 聲稱對標 Mythos**：Reuters 報導（[Reuters](https://www.reuters.com/legal/litigation/chinas-360-says-it-has-developed-tools-match-anthropics-mythos-2026-06-24/)，HN score 8）中國 Z.Ai 與 360 聲稱已開發出可與 Mythos 匹敵的網路安全 AI 模型；Z.Ai 為新出現的宣稱方（360 已見於 6/24 條目）；兩家公司均未提供獨立 benchmark 驗證，已掃日報至 2026-08-21 無後續；官方頁面未查證
+- **中國 Z.Ai 聲稱對標 Mythos**：Reuters 報導（[Reuters](https://www.reuters.com/legal/litigation/chinas-360-says-it-has-developed-tools-match-anthropics-mythos-2026-06-24/)，HN score 8）中國 Z.Ai 與 360 聲稱已開發出可與 Mythos 匹敵的網路安全 AI 模型。**後續（2026-08-26 查證）**：Z.Ai 於 08-14 公布開源 GLM-5.3 的具體數字——CyberGym（審視程式碼、找出並確認真實漏洞）得 **84.5%**，略高於其測得的 Mythos 5 **83.8%**；但在把漏洞轉為可用攻擊的 ExploitBench 僅 **54.4%**，遠低於 Mythos 5 的 **78.0%**。兩家數字**均為自行公布、未經獨立驗證**；GLM-5.3 屬通用編碼模型經擴充後訓練取得資安能力，與 360 專建的 Tulongfeng 路線不同
 
 #### 2026-06-28
 **TechCrunch / Mashable 後續確認 Mythos 5 部分解禁 + 競品聲稱對標（Sakana Fugu / WSJ）**：
 - **TechCrunch 補充細節**（HN n/a）：補充 Lutnick 致信收件人為 Anthropic **chief compute officer Tom Brown**（非此前部分媒體所述的聯合創辦人），確認 100+ 受信任機構範圍含其**非美籍員工**，是兩週禁令後的差異化部分鬆綁（[TechCrunch](https://techcrunch.com/2026/06/26/trump-admin-releases-anthropic-mythos-to-be-used-by-more-than-100-us-companies-agencies/)）；Mashable 同步報導（[Mashable](https://mashable.com/tech/claude-mythos-5-reinstated-by-us-government)）
 - **Sakana AI Fugu**：日本 Sakana AI 發布 Fugu，聲稱可與 Fable 5 / Mythos Preview 比肩，支援 multi-agent API 協調其他模型（[TechCrunch](https://techcrunch.com/2026/06/27/asian-ai-startups-launch-mythos-like-models-as-anthropics-export-ban-drags-on/)，HN score 256）；與同日中國 360 Tulongfeng 聲明合看，亞洲 AI 新創正以出口禁令空檔加速追趕 Mythos 等級能力
-- ❓ **待查證**（標 2026-06-28｜查 Tulongfeng、574b02c2）｜**WSJ：中國已在網路安全 AI 追上 Anthropic**：WSJ 報導指中國在網路安全 AI 能力上已逼近 Anthropic，Tulongfeng 為代表案例（[WSJ](https://www.wsj.com/tech/ai/chinese-ai-anthropic-mythos-cybersecurity-574b02c2)，Reuters HN score 7）；此說法尚未有獨立 benchmark 驗證，已掃日報至 2026-08-21 無後續；官方頁面未查證
+- **WSJ：中國已在網路安全 AI 追上 Anthropic**：WSJ 報導指中國在網路安全 AI 能力上已逼近 Anthropic，Tulongfeng 為代表案例（[WSJ](https://www.wsj.com/tech/ai/chinese-ai-anthropic-mythos-cybersecurity-574b02c2)，Reuters HN score 7）。**後續（2026-08-26 查證）**：360 稱 Tulongfeng 以「AI 模型＋資安資料＋自動化工具」組合達到 Mythos 等級，累計辨識 **3,432 個軟體漏洞、其中 105 個經中國官方確認**；此組數字與「達到 Mythos 等級」的宣稱**皆未經獨立驗證**，本頁不採信為能力對等的證據（同線的 Z.Ai GLM-5.3 數字見 06-29 條目）
 
 #### 2026-06-27
 **Mythos 5 部分解禁：美國商務部批准 100+ 機構有限存取**：

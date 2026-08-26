@@ -4256,3 +4256,34 @@ registry 加一組 sync_pair 釘住產出端與歸因端（只改一邊等於白
 **人物記者判斷備註：** 今日兩則外部人物條目（Shopify CEO Tobi Lütke 揚言封殺 Claude Code；創投人 Chamath Palihapitiya 質疑 Anthropic $2兆 IPO 前景）均因「僅標題可用、無可查證的具體發言內容」且內容實質屬商業類別議題（企業工具追蹤／IPO 敘事），判定不建人物頁、不適用，為正確處置——避免用不具引用價值的標題湊出人物頁「核心論述」。
 
 **主編判斷備註：** Anthropic 舊金山辦公室因保全人員可能罷工要求員工居家辦公一事，原始報導已於 2026-08-25 由 Business Insider 首發並進入前一日日報；今日僅為 Hacker News 高分討論（121 分）延續同一事件，商業記者判斷不另立新事件（非融資/收購/戰略合作），社群記者今日條目節錄中亦未見對應收錄，均為正確處置，避免同一事件重複計入多頁。「$30 兆潛在市場」系列報導口徑不一（IPO 估值 $2 兆 vs. 市場總量 $30 兆）已在商業記者派工節錄中明確提醒不可混用，anthropic-business.md 更新時已並置區分。
+
+---
+
+## 2026-08-26（Query／主編查證：逾期懸置清理）
+
+**觸發：** 使用者指出今日網站未更新。查得日報與 wiki ingest 均正常，實為 `run_tests.py` 因一筆探針語法 FAIL、`gate_web_build` 擋下 build_web。使用者續指示清理測試輸出中的逾期複查警告。
+
+**A. web build 被擋的根因與防再犯**
+- `wiki/entities/fable-5.md` 懸置探針寫成 `$1,125 Gap`，`PROBE_SPLIT_RE` 把千分位半形逗號當分隔符，切出 `$1` 觸發「英數探針需 ≥ 4 字元」FAIL
+- 處置：探針改為 `tech-insider.org、GPT-5.6 Sol`；`scripts/pending_markers.py` 的分隔符改為 `[、，]|(?<!\d),(?!\d)`，數字之間的半形逗號不再視為分隔符
+
+**B. 逾期懸置清理（22 天以上者 10 筆，全數結案；剩 39 筆均為 0–2 天正常到期）**
+
+| 頁面 | 逾期 | 處置 |
+|---|---|---|
+| entities/opus-4-7 | 104 天 | 取得 arxiv 2604.24827v2 全文：論文**未給** Opus 4.7 參數估算，Figure 1 列的是 Opus 4.6 ≈1.6T／Sonnet 4.6 ≈766B／Haiku 4.5 ≈28B。本頁原記「4.7 ≈4T、4.6 =5.3T、屬降規」**查無出處且算式不成立**，改為 🔎 查無官方並更正；同一組數字在 `topics/code-quality-decline` 的引用一併上修 |
+| entities/mythos ×2 | 49／45 天 | Z.Ai GLM-5.3 CyberGym 84.5% vs Mythos 5 83.8%、ExploitBench 54.4% vs 78.0%（08-14 自行公布）；360 Tulongfeng 累計 3,432 漏洞、105 經中國官方確認。均未經獨立驗證，改寫為事實敘述並保留該性質 |
+| entities/sonnet-5 ×2 | 41 天 | 官方 2026-06-30 changelog 更正 BrowseComp 圖表（原圖未套用標準 agentic-search 方法論，新圖用 system-card 設定）。換版屬實、官方理由可稽，結案 |
+| entities/fable-5 | 41 天 | 化學拒答經 The Verge／Anthropic 發言人證實非孤例：護欄刻意過度保守、平均 <5% session 觸發，官方已承認取捨錯誤並承諾放寬。攔截範圍確認不限 coding/cybersecurity |
+| entities/sonnet-5 | 34 天 | Mashable 07-09「正式發布」為遲到報導（官方 06-30 PT／本庫採 07-01）；「API 成本減半」屬實；「57 分」查無 benchmark 名稱，改 🔎 查無官方 |
+| entities/mythos | 23 天 | Nozomi Networks 加入 Glasswing 經官方部落格確認，結案 |
+| entities/mythos | 23 天 | csoonline Mythos FAQ 專文連結已 404 且無獨立事實，議題失效移除 |
+| entities/mythos | 22 天 | CNBC Fed 示警經全文＋Bloomberg 佐證：Fed 至少三個月未取得 Mythos Preview，07-15 仍在爭取。結案 |
+
+**C. ⚠️ 查證途中發現的覆蓋缺口（比原任務更嚴重）**
+- **Claude Sonnet 5 的 $2/$10 已於 2026-08-10 官方永久化，9/1 漲至 $3/$15 的計畫取消**——官方模型總覽頁定價欄已無任何 introductory／到期字樣
+- **本庫 12 個來源於 08-10～08-26 全數未收錄此則**（官方走 X 與 support/pricing 說明中心，兩者皆不在來源清單）。後果：距離原到期日剩 5 天時，`entities/pricing` 仍掛「⏰ 2026-08-31 到期」倒數，`feature-radar`、`model-comparison`、`entities/sonnet-5` 同步誤導，讀者會據以做錯誤的成本決策
+- 已上修四頁共 13 處，並在 `entities/pricing` 補記 2026-08-10 事件與此缺口
+- **未解決**：說明中心／官方 X 的定價變動仍無任何自動偵測；`.claude/rules/wiki-ingest-commercial.md` 已載明「記者無 web 工具、遇此回報主編查證」，但**沒有任何機制會定期主動查**——這是預言了故障卻沒裝偵測器。建議 weekly-review 評估加一道「⏰ 倒數中條目在到期前 7 天強制官方複查」的閘
+
+**品質備註：** 本次為主編層查證（`/wiki-lint` 5c 性質），非每日 ingest；所有更動頁面只動「最後更新」，不動「最後新聞更新」。

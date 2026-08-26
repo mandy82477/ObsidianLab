@@ -36,7 +36,6 @@
 
 | 截止日 | 事件 | 到期後 | 你該做的決定 |
 |--------|------|--------|------------|
-| **2026-08-31** | Sonnet 5 促銷價 $2/$10 per Mtok 結束 | 正式定價未公布，成本可能上升 | 依賴 Sonnet 5 的自動化流程：8 月底前關注正式定價公告 |
 | **2026-08-31** | Claude Code 週用量 +50% 促銷結束（官方 2026-08-18 確認已再度延長至此日） | 未公布延長後動向，週用量上限可能回落 | 重度依賴週用量緩衝的使用者：8 月底前留意官方是否再度延長 |
 
 > Fable 5 免費期限（原訂 7/19）已到期並移出本表；今日報導方向趨於一致指向 Pro 訂閱免費存取已結束、Max/Team 動向未明，詳見 [[entities/pricing]]「當前生效的計費規則」與時序。
@@ -98,7 +97,7 @@
 | **Reflect with Claude**（Settings 內使用模式儀表板，媒體廣泛報導但 HN 僅 29 分） | 2026-07-09 | 🔥🔥🔥🔥 | ⚡ 有條件推薦 | Preview |
 | **Claude Cowork 行動版 / 網頁版**（雲端持續執行，闔上裝置任務不中斷，首波 Max 訂閱戶，涵蓋政府客戶） | 2026-07-07 | 🔥🔥🔥🔥 | ⚡ 有條件推薦 | Preview（限 Max） |
 | **`/config` Dynamic workflow size**（v2.1.202，調整動態工作流 agent 規模 小/中/大，建議性引導值） | 2026-07-07 | 🔥🔥 | ⚡ 有條件推薦 | 正式發布 |
-| **Claude Sonnet 5**（Claude Code v2.1.197 新預設，1M context，$2/$10 per Mtok 促銷至 8/31） | 2026-07-01 | 🔥🔥🔥🔥🔥 | ✅ 強烈推薦 | 正式發布 |
+| **Claude Sonnet 5**（Claude Code v2.1.197 新預設，1M context，$2/$10 per Mtok 標準價，原 8/31 到期已於 08-10 永久化） | 2026-07-01 | 🔥🔥🔥🔥🔥 | ✅ 強烈推薦 | 正式發布 |
 | **Claude Science**（科學家專用 AI 工作台，整合研究工具套件、可稽核 artifact、彈性雲端運算） | 2026-07-01 | 🔥🔥 | ⚡ 有條件推薦 | 正式發布 |
 | **Org Default Model**（Claude Code v2.1.196，管理員設定組織預設模型，使用者 `/model` 顯示「Org default」） | 2026-06-29 | 🔥🔥 | ⚡ 有條件推薦 | 正式發布 |
 | **`CLAUDE_CODE_DISABLE_MOUSE_CLICKS` 環境變數**（Claude Code v2.1.195，全螢幕模式停用滑鼠點擊/拖拉/懸停） | 2026-06-26 | 🔥🔥 | ⚡ 有條件推薦 | 正式發布 |
@@ -685,7 +684,7 @@ claude
 ### Claude Sonnet 5 — Claude Code 新預設模型（1M context）
 **發布：** 2026-07-01（v2.1.197）| **熱度：** 🔥🔥🔥🔥🔥 | **試用價值：** ✅ 強烈推薦 | **狀態：** 正式發布
 
-**是什麼：** Claude Code v2.1.197 將 Claude Sonnet 5 設為預設模型，原生支援 1M token context window，促銷定價 $2/$10 per Mtok 至 2026-08-31，agentic 效能接近 Opus 4.8。
+**是什麼：** Claude Code v2.1.197 將 Claude Sonnet 5 設為預設模型，原生支援 1M token context window，定價 $2/$10 per Mtok（發布時為促銷價、載明 2026-08-31 到期，**已於 2026-08-10 永久化為標準價**，9/1 漲至 $3/$15 的計畫取消），agentic 效能接近 Opus 4.8。
 
 **為何熱：** 影響所有新 session，無需手動切換即享 1M context；社群多篇評測確認 agentic 任務、coding、tool use 已接近 Opus 4.8 水準，而成本僅 60%。
 
@@ -697,7 +696,7 @@ npm install -g @anthropic-ai/claude-code@latest
 # 新 session 自動使用 Sonnet 5 + 1M context；/model 可確認
 ```
 
-**注意事項：** 促銷定價至 2026-08-31，之後定價待官方公告；1M context 仍需注意 token 成本控制。
+**注意事項：** $2/$10 已為標準價，無到期日（2026-08-10 官方永久化）；1M context 仍需注意 token 成本控制。
 
 ---
 

@@ -255,7 +255,7 @@ claude --model claude-fable-5-20260609
 **Redeploy 技術細節：「Defense in Depth」分類器 + 早期實測褒貶不一**：
 - **新安全機制**：Reddit 貼文整理 Fable 5 全球 redeploy（7/1）隨附的「Defense in Depth」措施——新增更嚴格的資安/程式碼請求分類器，一旦判定為高風險 coding/debug 請求，自動靜默 fallback 至 Opus 4.8 執行，不使用 Fable 5（[Reddit r/ClaudeAI](https://www.reddit.com/r/ClaudeAI/comments/1uliwhc/anthropic_just_redeployed_fable_5_globally_here/)）
 - **負面實測：資安審查被誤判**：dev.to 作者實測用 Fable 5 執行合法資安審查工作，遭新分類器誤判為風險請求並攔截，作者形容「flagged my own request」（[dev.to](https://dev.to/tecnomanu/i-tried-fable-5-for-a-security-review-and-it-flagged-my-own-request-2pbn)）；此案例呼應 6/11 IBM X-Force 研究員 Valentina Palmiotti 曾批評的「護欄過激」問題，顯示該爭議在新分類器上仍未解決
-- ❓ **待查證**（標 2026-07-02｜查 chemistry related、1ulh5he）｜**範圍疑似擴大：化學提問也被拒**：另一則 Reddit 貼文顯示使用者詢問化學相關問題被 Fable 5 拒絕回答（「I guess not」），若屬實代表新分類器的攔截範圍可能不僅限於 coding/cybersecurity（[Reddit](https://www.reddit.com/r/ClaudeAI/comments/1ulh5he/can_you_ask_fable_anything_chemistry_related/)）；訊號來源單一，且原文未附截圖佐證，已掃日報至 2026-08-21 無後續；官方頁面未查證
+- **範圍確認擴大：化學／生物提問同樣被拒**（2026-08-26 查證）：Reddit 貼文顯示使用者詢問化學相關問題被 Fable 5 拒答（「I guess not」）（[Reddit](https://www.reddit.com/r/ClaudeAI/comments/1ulh5he/can_you_ask_fable_anything_chemistry_related/)）。此非孤例——Anthropic 發言人向 The Verge 表示公司**刻意將防護調得過度保守**，以攔下多數與生物工作相關的查詢，並自陳護欄「平均在不到 5% 的 session 觸發」；The Verge 實測到細胞膜、粒線體、prion、mRNA 疫苗、花粉症、抗生素抗藥性等基礎題均被拒。化學面則以**分離程序＋特定化合物／產率／設備配置**最易觸發，一般蒸餾與教學層級提問多半放行。**Anthropic 已承認此調校「是錯的取捨」**，承諾揭露拒答原因並放寬生物類觸發條件。攔截範圍因此確認**不限於 coding/cybersecurity**，原「疑似」二字已可移除
 - **與既有爭議的關係**：本次分類器行為為可見防護（用戶知道被 fallback），不同於 6/9 發布時「靜默降級不告知」已撤回的舊爭議；但誤判率與攔截範圍是否合理，仍待更多社群案例累積判斷
 
 #### 2026-07-01
