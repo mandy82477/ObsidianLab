@@ -24,13 +24,11 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 **領域：** 💼 商業
 **蒐集邊界：** 僅涵蓋 Claude 相關報導所帶出的企業案例。未提及 Claude 的企業工具決策不在自動蒐集範圍——公開報導本就少見具名企業的內部工具決策，本表為已見報者的彙整，非市場全貌。
 **開始日期：** 2026-05-26
-**最後更新：** 2026-08-25
-**最後新聞更新：** 2026-08-25
+**最後更新：** 2026-08-26
+**最後新聞更新：** 2026-08-26
 
-> **最新企業採用異動**（2026-08-25）
-> - **TechRadar 第三方媒體再確認 Samsung 用 Claude Code 輔助晶片設計、惟仍會犯重大錯誤（非新事實，狀態未變）**：詳見下方使用現況表 Samsung 列更新。
-> - **Thomson Reuters 縮減對 Claude 依賴（成本驅動，僅標題可用）**：Business Insider 報導標題未指明具體是 Claude Code、Claude API 或 Claude.ai，本頁專責追蹤「AI 編碼工具」使用狀態，工具別不明時暫不列入本表，詳見 [[topics/enterprise-cost-management]] 完整記錄。
-> - **08-23 記錄之 ReliaQuest 資安整合、08-20 Goldman Sachs／OKX 香港存取被切斷，仍為近期重點**，詳見下方使用現況表。
+> **最新企業採用異動**（2026-08-26）
+> - **Shopify 執行長 Tobi Lütke 揚言封殺 Claude Code；The New Stack 指出 Anthropic 早已關閉相關功能請求**：本頁首見具名科技公司高層公開表態封殺 Claude Code 的案例，尚未見官方確認實際執行，暫標「未確認」，詳見下方使用現況表新增列。
 
 ## 摘要
 
@@ -38,7 +36,7 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 
 追蹤各大型企業目前正在使用的 AI 編碼工具，以及工具選擇的變化軌跡。資料來源為公開報導與內部消息洩露，僅記錄有明確來源佐證的事實。
 
-目前追蹤 41 家具名企業/機構（新增 ReliaQuest——資安廠商，深化與 Anthropic 技術整合作為去 SIEM 化資安策略一環；此前新增 Goldman Sachs、OKX——雙雙於香港被切斷 Claude AI 存取權限，涉及地緣政治與合規因素，成因未明，外觀近似 JPMorgan Chase 香港退出案例但是否同源尚待查證；新增 Payward——加密貨幣交易平台母公司（Kraken），採用僅限授權機構存取的 Claude Mythos 5 強化全球加密基礎設施；新增 Duke University——繼哈佛 FAS、Syracuse University 後另一具名高等教育機構，提供師生 pay-as-you-go Claude 訂閱方案；此前 Samsung——08-15 跨 2 媒體確認升級為 ✅ 使用中，Claude Code 壓縮晶片設計/驗證時程（惟仍會犯嚴重錯誤），此前 08-14 為 ❓ 未確認狀態；此前新增 Syracuse University——繼哈佛 FAS 後另一具名高等教育機構案例；此前新增 ICON——臨床試驗/醫療研究產業首個具名採用案例；此前新增 Cognizant——升級為 Claude Partner Network 全球首要夥伴 Global Premier Partner），其中多數狀態為使用中（✅），6 家退出/切換（❌🔄，Microsoft 停用 Claude Code、JPMorgan Chase 香港分行因出口管制被迫退出、Lindy 100% 切換至 DeepSeek、Alibaba 因資安疑慮禁用 Claude Code 並明確改用內部工具 Qoder、Goldman Sachs 與 OKX 於香港被切斷存取），Uber 縮減中（⚠️，成本管控）。新增 Alberta 省政府（加拿大）具名政府採用案例，20 小時掃描 4.66 億行程式碼完成資安審查，是繼加州州政府後另一個地方政府層級具體成效案例。整體趨勢：Claude API 企業與政府採用持續擴大，TCS、DXC、LG 等頂尖企業相繼全面入局；2026-06-29–06-30 單日/隔日湧現 Globant、DataArt、Okta、Rubrik、加州州政府等新一波具名案例，Partner Network 密集擴張（詳見 [[topics/anthropic-business]]）。同期 Lindy 案例顯示 API 客戶對成本敏感度高、可能因競品定價優勢流失。2026-06-21 Microsoft 確認在 Fable 5 封鎖期間加速退出 Claude Code，2026-06-22 The Jerusalem Post 跟進確認 Microsoft 正系統性降低對 Claude 依賴，GitHub Copilot 為主要替代方案。出口管制 + 成本壓力雙重因素持續影響頂尖企業工具選擇。
+目前追蹤 42 家具名企業/機構（新增 Shopify——執行長公開揚言封殺 Claude Code，尚未確認實際生效，狀態 ❓；此前新增 ReliaQuest——資安廠商，深化與 Anthropic 技術整合作為去 SIEM 化資安策略一環；此前新增 Goldman Sachs、OKX——雙雙於香港被切斷 Claude AI 存取權限，涉及地緣政治與合規因素，成因未明，外觀近似 JPMorgan Chase 香港退出案例但是否同源尚待查證；新增 Payward——加密貨幣交易平台母公司（Kraken），採用僅限授權機構存取的 Claude Mythos 5 強化全球加密基礎設施；新增 Duke University——繼哈佛 FAS、Syracuse University 後另一具名高等教育機構，提供師生 pay-as-you-go Claude 訂閱方案；此前 Samsung——08-15 跨 2 媒體確認升級為 ✅ 使用中，Claude Code 壓縮晶片設計/驗證時程（惟仍會犯嚴重錯誤），此前 08-14 為 ❓ 未確認狀態；此前新增 Syracuse University——繼哈佛 FAS 後另一具名高等教育機構案例；此前新增 ICON——臨床試驗/醫療研究產業首個具名採用案例；此前新增 Cognizant——升級為 Claude Partner Network 全球首要夥伴 Global Premier Partner），其中多數狀態為使用中（✅），6 家退出/切換（❌🔄，Microsoft 停用 Claude Code、JPMorgan Chase 香港分行因出口管制被迫退出、Lindy 100% 切換至 DeepSeek、Alibaba 因資安疑慮禁用 Claude Code 並明確改用內部工具 Qoder、Goldman Sachs 與 OKX 於香港被切斷存取），Uber 縮減中（⚠️，成本管控）。新增 Alberta 省政府（加拿大）具名政府採用案例，20 小時掃描 4.66 億行程式碼完成資安審查，是繼加州州政府後另一個地方政府層級具體成效案例。整體趨勢：Claude API 企業與政府採用持續擴大，TCS、DXC、LG 等頂尖企業相繼全面入局；2026-06-29–06-30 單日/隔日湧現 Globant、DataArt、Okta、Rubrik、加州州政府等新一波具名案例，Partner Network 密集擴張（詳見 [[topics/anthropic-business]]）。同期 Lindy 案例顯示 API 客戶對成本敏感度高、可能因競品定價優勢流失。2026-06-21 Microsoft 確認在 Fable 5 封鎖期間加速退出 Claude Code，2026-06-22 The Jerusalem Post 跟進確認 Microsoft 正系統性降低對 Claude 依賴，GitHub Copilot 為主要替代方案。出口管制 + 成本壓力雙重因素持續影響頂尖企業工具選擇。
 
 ---
 
@@ -50,6 +48,7 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 
 | 企業 | 規模 | AI 編碼工具 | 狀態 | 事件日期 | 備註 | 確認日期 |
 |------|------|-----------|------|---------|------|---------|
+| Shopify | 頂尖 | Claude Code | ❓ | — | analyticsindiamag.com、The New Stack 報導 Shopify 執行長 Tobi Lütke 揚言封殺（"ban"）Claude Code；The New Stack 另指出 Anthropic 其實早已關閉（closed）相關功能請求。**對商業與生態的意涵**：是本頁首見具名科技公司高層公開揚言封殺 Claude Code 的案例，區別於既有退出案例多為成本（Microsoft）、出口管制（JPMorgan）、安全疑慮（Alibaba）三類理由——本次爭議點未見報導具體說明（是否涉資安、成本或政策爭議），且尚未見 Shopify 官方確認實際執行封鎖（僅為 CEO 公開表態），故暫標「未確認」而非「已退出」；具體爭議緣由、封鎖範圍、是否已生效均未見報導細節，僅標題層級資訊（推論）| Google News/analyticsindiamag.com；Google News/The New Stack |
 | ReliaQuest | 大型（資安廠商） | Claude API（AI 驅動資安平台整合）| ✅ | — | TipRanks 報導資安廠商 ReliaQuest 深化與 Anthropic 的技術整合，作為其去 SIEM 化（SIEM-less）資安策略的一環；延續近期 Cyberhaven（07-23）、Orca Security（07-21）、Tenable（06-29）等資安廠商整合 Claude Compliance API 的既有生態擴張模式（推論），惟本則整合範疇更廣（去 SIEM 化整體策略，非單一 Compliance API 功能）；具體整合範疇、合作規模、技術細節均未見報導，僅標題層級資訊（Google News/TipRanks）| 2026-08-22 |
 | Goldman Sachs | 頂尖 | Claude AI | ❌ | — | Yahoo Finance 報導高盛在香港被切斷 Claude AI 存取權限，涉及地緣政治與合規因素，成因未明；與 JPMorgan Chase（06-18，因美國出口管制指令於香港分行被迫停止使用 Anthropic 服務，管制已於 07-01 解除）外觀相似，惟本次發生於管制解除後逾七週，是否同源尚待查證，詳見 [[topics/anthropic-government-policy]]；具體切斷生效日、涉及範圍（僅香港分行或全球）均未見報導細節，僅標題層級可用（Google News/Yahoo Finance）| 2026-08-20 |
 | OKX | 大型（加密貨幣交易平台） | Claude AI | ❌ | — | Yahoo Finance 同篇報導稱加密貨幣交易平台 OKX 同樣在香港被切斷 Claude AI 存取權限，與高盛同批報導，成因未明，詳見 [[topics/anthropic-government-policy]]；為本頁首見加密貨幣交易平台因合規/地緣政治因素退出的具名案例（區別於 08-19 已記錄 Payward 採用 Claude Mythos 5 的加密貨幣產業正面案例）；具體切斷原因細節、生效日未見報導，僅標題層級可用（Google News/Yahoo Finance）| 2026-08-20 |
@@ -133,6 +132,9 @@ Claude Code 是工程師日常編碼工具（CLI），成本隨使用量線性�
 ## 時序
 
 ### 2026-08
+
+#### 2026-08-26
+- **[❓ 未確認，新增追蹤] Shopify 執行長 Tobi Lütke 揚言封殺 Claude Code；The New Stack 指出 Anthropic 早已關閉相關功能請求**：analyticsindiamag.com、The New Stack 報導，僅標題層級可用，具體爭議緣由未見報導；尚未見官方確認實際執行封鎖，詳見上方使用現況表新增列（Google News/analyticsindiamag.com；Google News/The New Stack）
 
 #### 2026-08-25
 - **[三度確認，非新事實] TechRadar：Samsung 認為 Claude Code 有助晶片設計，惟仍會犯重大錯誤**：與 08-14/08-15 既有記錄同一事實的第三方媒體再確認，未見新增數字或細節，詳見上方使用現況表 Samsung 列更新（Google News/TechRadar）

@@ -23,11 +23,11 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 **狀態：** ongoing（官方已說明工程疏失，恢復情況見下方摘要）
 **領域：** 🛠️ 工具/功能
 **開始日期：** 2026-03（推測）
-**最後更新：** 2026-08-25
-**最後新聞更新：** 2026-08-25
+**最後更新：** 2026-08-26
+**最後新聞更新：** 2026-08-26
 
-> **最近效能退步事件**（2026-08-25）
-> 「Opus 5 上線後品質感知訊號群」新增一筆待查證項目——HackerNoon 報導程式碼品質分析工具 Sonar 對 Opus 5 生成程式碼進行基準測試，僅標題可用，具體評測數字尚未見報導（❓ 待查證）；若後續查得數字，將是本訊號群首筆量化／第三方工具評測證據。「Token 消耗異常訊號群」沉寂 43 天後再現同方向單一貼文質疑（僅計入現象延續）。模型釘選／靜默降級訊號群（02～08-04）仍並行追蹤，Anthropic 均未回應。
+> **最近效能退步事件**（2026-08-26）
+> 「Opus 5 上線後品質感知訊號群」新增兩則獨立訊號，首度主張「懷疑正在被即時 A/B 測試降低 effort」——Reddit r/ClaudeCode（今日）與 r/artificial 週熱門（08-22，今日收錄）方向一致，皆指 Anthropic 疑似在 Claude Code 上分派降規模／低運算力版本；同日另有 HN 部落格文章（score 25，真實分數）泛化抱怨新模型「開始寫程式前」耗時變長，惟未指名具體模型版本。
 
 ---
 
@@ -85,6 +85,9 @@ Claude Code 在 2026 年 3 月至 4 月間出現長達約一個月的效能明�
 | 2026-08-19 | 「I've never felt Claude been degraded for so long before」：使用者反映過去兩週 Claude 表現反覆不穩，多半比平常差，詢問是否為運算資源問題 | Reddit r/ClaudeCode（[原文](https://www.reddit.com/r/ClaudeCode/comments/1vshkrf/)，0 留言、無「週熱門」標記，score 不可信） | 單一社群回報（無具體量化數字或版本號，僅主觀感受描述） |
 | 2026-08-19（週熱門重浮上，原發時間較早） | 「Claude is Losing Me After Being Heavy User Since Release」：重度使用者發文表達對 Claude 逐漸失望的心情，具體抱怨內容未見於本次摘要 | Reddit r/ClaudeAI（[原文](https://www.reddit.com/r/ClaudeAI/comments/1vqsas9/claude_is_losing_me_after_being_heavy_user_since/)，週熱門標記，達收錄低門檻） | 單一社群回報（僅標題可考，無具體量化數字或版本號） |
 | 2026-08-25 | 「Claude Opus 5 Code Quality: What Sonar's Benchmark Reveals」：程式碼品質分析工具 Sonar 對 Opus 5 生成程式碼進行基準測試，具體結果 ❓ 待查證 ⟨Q-01⟩ | Google News/HackerNoon（僅標題可用） | 待查證（第三方工具評測，具體數字未見報導）|
+| 2026-08-22（週熱門，08-26 收錄） | 「I spent the morning digging into Anthropic so I could write it up properly」：作者稱查閱一手資料與討論串後認為，Anthropic 似乎正在 Claude Code 上 A/B 測試降低運算力度（effort）的版本，與同日「nerfd models」貼文方向一致 | Reddit r/artificial（[原文](https://www.reddit.com/r/artificial/comments/1vvjmmo/i_spent_the_morning_digging_into_anthropic_so_i/)，週熱門標記，達收錄低門檻） | 單一社群回報（週熱門達低門檻，惟「查閱的一手資料」具體內容未見於摘要，無法覆核查證過程；與 07-25 官方 migration guide 自承 effort dial 非單調現象呼應，是本訊號群首次出現「懷疑正在被即時 A/B 測試」的直接主張，而非僅描述效能感受）|
+| 2026-08-26 | 「I can tell when I'm being A/B tested with nerfd models」：使用者稱可依 Claude 是否跳出「這次 session 表現如何」回饋彈窗，判斷自己是否被分到降規模測試模型版本 | Reddit r/ClaudeCode（[原文](https://www.reddit.com/r/ClaudeCode/comments/1vystw3/i_can_tell_when_im_being_ab_tested_with_nerfd/)，0 留言、無「週熱門」標記，score 不可信） | 單一社群回報（與同日 r/artificial 貼文方向一致，兩者互為呼應但均無具體量化數字或版本號）|
+| 2026-08-26 | 「I miss the old Claude Code」：部落格作者比較年初與近期使用經驗，稱換用新模型後同任務要花更久時間才真正開始寫程式，直指「有大量 pre-work」；未點名具體模型版本 | Hacker News（[原文](https://alexkras.com/focus-is-the-main-feature-why-i-miss-the-old-claude-code/)，HN score 25，達收錄低門檻） | 本訊號群少見附真實 HN 分數的訊號（多數既有訊號 score 不可信）；未指名模型版本，無法歸入特定模型的品質爭議，僅可佐證「泛化變慢」現象持續 |
 
 **懸置細節**
 - ⟨Q-01⟩ ❓ **待查證**（標 2026-08-25｜查 Sonar、code quality benchmark）：HackerNoon 標題「Claude Opus 5 Code Quality: What Sonar's Benchmark Reveals」僅標題可用，程式碼品質分析工具 Sonar 對 Opus 5 生成程式碼的基準測試具體評測數字、樣本規模與測試方法論均未見報導；若查得具體數字，將是本訊號群目前唯一的量化／第三方工具評測證據（現有 10 則社群訊號均為主觀回報，無量化數字）。
@@ -131,7 +134,7 @@ Claude Code 在 2026 年 3 月至 4 月間出現長達約一個月的效能明�
 - 🔴 Stop hooks 失效為獨立問題，[[entities/claude-code]] 已知問題列表確認截至 2026-07-11 仍未修復（非僅社群指控）
 - ⚠️ 信任侵蝕已從「效能品質」擴大至「定價透明度、計量準確性、基礎設施可靠性」，形成結構性問題
 - 🔴 「token 消耗異常」訊號群自 06-27 延燒至 07-13（共 17 天，九個獨立來源），密度已達「結構性未解問題」，尚無法判定模型真退步 vs 計費/計量問題 vs context/工具配置問題，Anthropic 未回應；沉寂 43 天後 08-25 再現同方向單一貼文質疑，僅計入現象延續
-- 🟡 Opus 5 上線後（07-25～08-19）浮現第三條分析線「模型行為特性本身」，首見官方確認等級證據（effort dial 非單調），（推論）可能局部挑戰既有「多為 context rot」共識，惟樣本量小（10 則，8 則單一 Reddit 貼文），08-14～08-19 再添四則同方向抱怨但無新機制性證據，尚待更多獨立來源覆核
+- 🟡 Opus 5 上線後（07-25～08-26）浮現第三條分析線「模型行為特性本身」，首見官方確認等級證據（effort dial 非單調），（推論）可能局部挑戰既有「多為 context rot」共識，惟樣本量小（13 則，多數單一 Reddit 貼文），08-14～08-19 再添四則同方向抱怨但無新機制性證據；08-22～08-26 首度出現兩則獨立來源直接主張「懷疑正在被即時 A/B 測試降低 effort」（而非僅描述效能變差感受），與 07-25 官方 effort dial 證據呼應但仍缺乏可驗證測試方法或版本號佐證，尚待更多獨立來源覆核
 - 📊 CC-Canary 可作為持續監測工具；2026-08-12 起社群另闢人工彙整路線（forensic archive），與自動化偵測並行，顯示品質下滑證據的蒐集正逐步基礎設施化
 
 ---
@@ -170,12 +173,17 @@ Claude Code 在 2026 年 3 月至 4 月間出現長達約一個月的效能明�
 - [[news/2026-07-29]]
 - [[news/2026-07-30]]
 - [[news/2026-08-12]]
+- [[news/2026-08-26]]
 - [CC-Canary GitHub](https://github.com/delta-hq/cc-canary)
 - [Anthropic's definition of safety is too narrow](https://jonathannen.com/anthropic-safety-too-narrow/)
 
 ## 時序（最新在上，按月分組）
 
 ### 2026-08
+
+#### 2026-08-26
+- **「Opus 5 上線後品質感知訊號群」首度出現「懷疑正在被即時 A/B 測試」直接主張**：r/ClaudeCode 貼文「I can tell when I'm being A/B tested with nerfd models」稱可依 Claude 是否跳出「這次 session 表現如何」回饋彈窗判斷自己是否被分到降規模測試模型；同日補記 08-22 r/artificial 週熱門貼文「I spent the morning digging into Anthropic so I could write it up properly」，作者稱查閱一手資料後認為 Anthropic 似乎正在 Claude Code 上 A/B 測試降低 effort 的版本，兩者方向一致；均無具體量化數字或版本號，但與 07-25 官方 migration guide 自承 effort dial 非單調現象呼應，是本訊號群首次從「效能感受變差」進展到「懷疑正在被主動測試」的主張（來源：[Reddit「nerfd models」](https://www.reddit.com/r/ClaudeCode/comments/1vystw3/i_can_tell_when_im_being_ab_tested_with_nerfd/)、[Reddit「digging into Anthropic」](https://www.reddit.com/r/artificial/comments/1vvjmmo/i_spent_the_morning_digging_into_anthropic_so_i/)）
+- **「I miss the old Claude Code」：泛化「新模型變慢」抱怨，附真實 HN 分數**：部落格作者比較年初與近期使用經驗，稱換用新模型後同任務要花更久時間才真正開始寫程式；HN score 25（達收錄低門檻，本訊號群少見的真實分數），惟未點名具體模型版本，僅可佐證「泛化變慢」現象持續，不歸入特定模型爭議（來源：[alexkras.com](https://alexkras.com/focus-is-the-main-feature-why-i-miss-the-old-claude-code/)）
 
 #### 2026-08-25
 - **「Token 消耗異常訊號群」沉寂 43 天後再現**：r/ClaudeCode 貼文「Is Claude Code intentionally burning more tokens now?」質疑近幾個月來 Claude Code 是否比過去消耗更多 token 才能完成相同任務；0 留言、無「週熱門」標記，score 不可信，屬「Token 消耗異常訊號群」自 07-13 以來第十則訊號，僅計入現象延續，不提供新機制性證據（來源：[Reddit](https://www.reddit.com/r/ClaudeCode/comments/1vxw3fi/is_claude_code_intentionally_burning_more_tokens/)）

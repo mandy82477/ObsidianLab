@@ -30,6 +30,7 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 > - **$30 兆美元潛在市場宣稱引發正反論戰**：Hacker News 雙帖（連結 WSJ／Reuters）＋Anadolu Ajansı、Moomoo 等報導 Anthropic 傳將向投資人簡報，宣稱 AI 服務潛在市場（TAM）上看 30 兆美元；Yahoo Finance、Marcus on AI（Substack）、24/7 Wall St.（引述創投人 Chamath Palihapitiya）等多篇提出懷疑或質疑角度。**須留意口徑差異**：Fortune 同日報導之「2 兆美元」為 IPO 估值傳聞，與「30 兆美元」市場總量（非 Anthropic 宣稱可實際拿下的營收）屬不同性質數字，不可混淆——詳見「IPO 前瞻與估值追蹤」表與「商業風險」表新增列。
 > - **Anthropic Blog：啟動 500 萬美元獎助計畫，資助獨立研究人員開發開源工具評測 AI 對使用者身心福祉的影響**：屬公益/CSR 性質研究資助，詳見「財務狀況」表新增列。
 > - **Bloomberg：一家與 Anthropic、Google 合作之 AI 資安新創獲得 1.4 億美元融資**：新創名稱未具名，詳見「戰略合作」表新增列。
+> - **ABC News：內部郵件揭露 Anthropic 澳洲 AI 佈局規模**：僅標題可用，可能涉及政府合作面向、歸屬待定，詳見「戰略合作」表新增列。
 
 ---
 
@@ -193,6 +194,7 @@ Financial Times 報導 Anthropic 旗艦模型在吸引一般使用者（general 
 
 | 合作方 | 類型 | 日期 | 意義 |
 |--------|------|------|------|
+| Anthropic（澳洲市場）| 市場擴張（規模不明，內部郵件揭露）| 2026-08-25 | ABC News（澳洲廣播公司）報導有內部郵件揭露 Anthropic 在澳洲的 AI 佈局規模。**對商業的意涵**：延續 08-24 已記錄之 Bloomberg「Anthropic 表態指出澳洲在 Claude 程式開發工具採用速度上落後其他市場」，本則揭露內部規劃文件層級的澳洲布局，惟具體內容（資料中心、辦公室擴張或政府合作）未見報導細節，可能屬本頁戰略合作範疇，亦可能觸及 [[topics/anthropic-government-policy]] 政府合作面向，需後續報導查證後再判斷主要歸屬（推論）；僅標題層級資訊 | Google News/ABC News |
 | 未具名 AI 資安新創（與 Anthropic、Google 合作）| SDK 夥伴（資安整合，融資佐證）| 2026-08-25 | Bloomberg 報導一家與 Anthropic、Google 合作的 AI 資安新創獲得 **1.4 億美元**融資。**對商業的意涵**：延續近期 Cyberhaven（07-23）、Orca Security（07-21）、Varonis（07-14）等資安夥伴生態擴張趨勢，本次首度出現「合作夥伴自身完成大型融資」作為生態健康度佐證訊號，惟新創公司名稱、合作具體內容均未見報導（推論）；僅標題層級資訊，待後續補充具名（Google News/Bloomberg.com）|
 | 未具名資料中心業者（Bastrop County，美國德州）| 基礎設施擴張（洽談租用）| 2026-08-25 | KXAN Austin（在地新聞台）引述消息人士報導 Anthropic 正洽談租用德州 Bastrop County 一座大型資料中心。**對商業的意涵**：延續近期德州算力布局系列信號（08-02 Morgan Stanley 領投 150 億美元德州校園/資料中心投資案），本則為又一起德州資料中心具名地點案例，惟業者身分未具名，與 Morgan Stanley 案是否為同一設施尚待確認（推論）；具體面積、投資金額、租期均未見報導細節，僅標題層級資訊、洽談階段非確定簽約（Google News/KXAN Austin）|
 | UpToDate（醫療資訊平台，Wolters Kluwer 旗下）| 企業客戶（醫療產業深化合作）| 2026-08-24 | Fierce Healthcare 於 Epic 年度用戶大會（Epic UGM）報導中提及 Anthropic 深化與醫療資訊平台 UpToDate 的合作，同篇報導並提及 Project Glasswing 相關進展。**對商業的意涵**：延續近期 Optum＋UST（07-14）、ICON（07-29）等醫療垂直產業深化案例，UpToDate 是又一起具名醫療資訊平台深化合作案例（推論）；Project Glasswing 部分屬安全模型能力面，詳見模型記者維護之 [[entities/mythos]]；具體合作範疇、UpToDate 整合方式均未見報導細節，僅標題層級資訊（Google News/Fierce Healthcare）|
@@ -294,6 +296,7 @@ Financial Times 報導 Anthropic 旗艦模型在吸引一般使用者（general 
 - **[新增，IPO/估值敘事，正反論戰] Hacker News 雙帖＋Anadolu Ajansı／Moomoo 等：Anthropic 傳簡報宣稱 AI 服務潛在市場（TAM）上看 30 兆美元；Yahoo Finance／Marcus on AI／24/7 Wall St.（引述 Chamath Palihapitiya）提出懷疑角度**：須留意「30 兆美元市場總量」與同日 Fortune 報導「2 兆美元 IPO 估值」口徑不同，不可混淆，詳見「IPO 前瞻與估值追蹤」表與「商業風險」表新增列（Hacker News；Google News/Anadolu Ajansı；Google News/Moomoo；Google News/Yahoo Finance；Google News/Marcus on AI；Google News/24/7 Wall St.；Google News/Fortune）
 - **[新增，研究資助] Anthropic Blog：啟動 500 萬美元獎助計畫，資助 AI 對使用者身心福祉影響之獨立評測研究**：屬公益/CSR 性質，詳見「財務狀況」表新增列（Anthropic Blog）
 - **[戰略合作，新增] Bloomberg：一家與 Anthropic、Google 合作之 AI 資安新創獲得 1.4 億美元融資**：新創名稱未具名，詳見「戰略合作」表新增列（Google News/Bloomberg.com）
+- **[戰略合作，新增，歸屬待定] ABC News：內部郵件揭露 Anthropic 澳洲 AI 佈局規模**：僅標題層級可用，具體內容未見報導，可能涉及政府合作面向，詳見「戰略合作」表新增列（Google News/ABC News）
 - **[戰略合作，跟進，非新事實] ababnews.com：轉載 Anthropic 推出免費「Claude Academy」課程消息**：與既有 08-23 記錄為同一事件，來源網站知名度待查證，詳見「戰略合作」表更新（Google News/ababnews.com）
 
 #### 2026-08-25

@@ -24,13 +24,14 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 **領域：** 💼 商業
 **蒐集邊界：** 以 Claude 為參照系的競品動態為主，另針對競品發布與定價定向補抓（每日至多 2 則）；競品自身未與 Claude 對比的發布可能延遲或缺漏。
 **開始日期：** 2026-04
-**最後更新：** 2026-08-24
-**最後新聞更新：** 2026-08-24
+**最後更新：** 2026-08-26
+**最後新聞更新：** 2026-08-26
 
-> **最新競品動態**（2026-08-24）
-> - **Financial Times（Simon Willison 轉引）／dev.to：Anthropic 旗艦模型在吸引一般使用者上不敵較低價競品工具**：詳見「觀察重點」新增；商業面 PMF 觀察同步記於 [[topics/anthropic-business]]「產品市場契合度（PMF）觀察」。
-> - **inc.com：OpenAI 拓展企業用戶速度超越 Anthropic，文章主張此比估值更重要**：詳見「主要競品追蹤」OpenAI ChatGPT Work / GPT-5.6 子區塊新增，延續 08-20 已記錄之「OpenAI 正追近 Anthropic 企業用戶市場」敘事。
-> - **TechCrunch：DeepMind 校友創立的新創 Inherent 宣稱其 AI「隊友」在複現研究任務上超越 Anthropic 與 OpenAI**：屬該公司自行發布、尚無第三方驗證的說法，詳見「主要競品追蹤」新增子區塊。
+> **最新競品動態**（2026-08-26）
+> - **AgentConnect：新聞稿宣傳「開源多代理替代方案」對標 Claude Tag**：屬企業自行發布之新聞稿性質，可信度需留意，詳見「主要競品追蹤」新增子區塊。
+> - **Google 加入法律 AI 賽道，與 Anthropic、OpenAI 競爭**：Business Insider 報導，詳見「主要競品追蹤」新增子區塊。
+> - **Salesforce 官方確認「Slack Code」正式推出，整合 Claude 與 ChatGPT（International Business Times）**：與既有 08-20/21 VentureBeat／The Next Web 報導同一事件，詳見「主要競品追蹤」Slack Code 子區塊更新。
+> - **Claude Code 拒採 AGENTS.md 業界標準引發開發者社群不滿（36Kr）**：詳見「觀察重點」新增，聚焦此決策對 Anthropic 產業定位/生態關係的影響；開發者社群反應面已轉交社群記者處理。
 
 ---
 
@@ -83,6 +84,7 @@ Claude Code 已成為 AI 輔助編碼的標竿產品，但競爭正快速升溫�
 
 ## 觀察重點
 
+- **Claude Code 拒採 AGENTS.md 業界標準，引發開發者社群不滿（2026-08-26，36Kr）**：標題稱 Claude Code 拒絕採用 AGENTS.md 這項業界標準，官方後續回應引發開發者社群不滿；僅標題可用，無法得知官方回應具體內容。**對產業定位/生態關係的意涵**：AGENTS.md 是多個 AI 編碼工具間互通的檔案格式慣例，若 Anthropic 確定不跟進，可能使 Claude Code 在「跨工具生態相容性」上與採用該標準的競品（如 Codex、OpenCode 等，具體採用名單未見報導）產生分歧，對願意多工具並行部署的企業與開發者形成額外整合成本，與本頁既有「聊天/協作平台層漸趨中立於底層模型商」（見 Slack Code 子區塊）的生態中立化趨勢方向相反——本次是 Anthropic 主動選擇不相容，而非被動被排除（推論）；開發者社群反應面向已同步交由社群記者處理，具體標準內容、拒絕理由、後續官方回應均未見報導細節，僅標題層級資訊（Google News/36Kr）
 - **Claude 旗艦模型在一般消費者市場不敵較便宜競品（2026-08-23/24，Financial Times／dev.to／Simon Willison 轉引）**：Financial Times 報導 Anthropic 旗艦模型在吸引一般使用者（general consumer users，非開發者／企業客戶）上，不敵定價較低的競品工具；dev.to（adilaidev）與 Simon Willison 部落格同期分別發文轉引同一敘事，三個獨立管道（FT 原文、dev.to 轉述、Simon Willison 附加觀察）同源疊加，訊號密度提高但未見新增具體流失規模或競品名稱數字。**與本頁既有敘事的關係**：與上方「觀察重點」既有「開源替代加速」「企業成本臨界點」兩點聚焦**開發者/企業端**的成本敏感度不同，本則首次點出**一般消費者端**的价格敏感度流失，與本頁既有 08-14「中美 AI 定價戰敘事」、多筆中國模型「降價數十至上百倍」訊號（DeepSeek V4 Flash、Kimi K3）方向一致——低價競品的壓力面正從企業採購擴散至一般消費者選擇（推論）；商業面 PMF 觀察同步記於 [[topics/anthropic-business]]「產品市場契合度（PMF）觀察」；具體流失規模、受影響競品名稱、量化數字未見報導細節，僅標題與部落格轉述層級資訊
 - **投資 vs 競爭的矛盾**：Google 400 億投資 Anthropic 的同時開發競品，Amazon 雙品牌並行部署（Claude Code + Codex）——大型科技公司不押注單一供應商
 - **開源替代加速**：OpenCode 157K、DeepClaude 17x 成本節省——訂閱政策收緊（OpenClaw 禁令、6/15 計費結構）正在為開源方案創造需求
@@ -95,6 +97,17 @@ Claude Code 已成為 AI 輔助編碼的標竿產品，但競爭正快速升溫�
 ## 主要競品追蹤
 
 > 🔴 = 高威脅 / 重點關注競品
+
+### Google 進軍法律 AI（新增追蹤，2026-08-25）
+- **狀態**：新聞角度首見追蹤，尚無產品細節
+- **來源**：Business Insider 報導 Google 加入法律 AI 賽道，與 Anthropic（[[entities/robert-mahari|Robert Mahari]] 領軍之 Claude for Legal，見 [[topics/anthropic-business]] 戰略合作表 08-07 列）及 OpenAI 競爭
+- **對競爭格局的意涵**：延續本頁「大型科技公司持續切入 Anthropic 既有垂直深化領域」的觀察模式（如 Salesforce/Slack Code 切入編碼協作、Meta Muse Code 切入編碼 agent），本次是法律垂直賽道首見三強（Google／Anthropic／OpenAI）並列競爭的具名報導，法律 AI 從「Anthropic 單一具名部門佈局」升級為「多家巨頭同場競逐」的賽道（推論）；具體 Google 產品名稱、功能範疇、上線時程均未見報導細節，僅標題層級資訊（Google News/Business Insider）
+
+### AgentConnect（開源多代理替代方案，新增追蹤，2026-08-25）
+- **狀態**：新聞稿宣傳階段，**可信度需留意**——來源為 24-7 Press Release Newswire（企業自行發布管道，非獨立媒體報導）
+- **來源**：新聞稿宣傳「AgentConnect」為開源多代理（multi-agent）替代方案，對標 Claude Tag（Claude in Slack）
+- **⚠️ 驗證層級提示**：新聞稿性質內容，非第三方媒體報導或獨立評測，具體功能範疇、採用規模、與 Claude Tag 的實際功能對比均未見獨立驗證
+- **對競爭格局的意涵**：延續本頁既有「開源替代加速」觀察（OpenCode、DeepSeek Harness 等），AgentConnect 是又一起以「開源」為賣點挑戰 Anthropic 官方產品（本次為 Claude Tag 協作介面，而非 Claude Code 本體）的案例，惟訊號強度遠低於已有下載量/星數佐證的既有開源競品，需待獨立驗證後再評估實質影響（推論）（Google News/24-7 Press Release Newswire）
 
 ### Google 未命名競品 🔴
 - **狀態**：秘密開發中
@@ -195,6 +208,7 @@ Claude Code 已成為 AI 輔助編碼的標竿產品，但競爭正快速升溫�
 - **動態**：Slack 推出「Slack Code」功能，讓 Claude 與 ChatGPT 可在同一個群組頻道內協作；VentureBeat 標題直指 Slack 意圖「把 AI coding 從終端機拖進群組聊天」（"drag AI coding out of the terminal and into the group chat"），The Next Web 稱此舉「讓 Claude 與 ChatGPT 進入同一頻道」
 - **對競爭格局的意涵**：是本頁首次追蹤 Slack（母公司 Salesforce）作為 AI 編碼賽道進入者，切入點與既有競品（Cursor、GitHub Copilot、Zhipu 等聚焦 IDE／CLI 層）不同——Slack Code 以「群組協作介面」為差異化訴求，而非速度或定價；同時**同時整合 Claude 與 ChatGPT**，顯示 Slack 採多模型並行策略而非獨家綁定 Anthropic，與本頁既有「Claude Desktop 第三方 LLM 支援」（見下方「技術彙整」）呈現的「聊天/協作平台層漸趨中立於底層模型商」趨勢一致（推論）
 - **待補充**：具體上線時程（正式發布或 beta）、定價、功能範圍（僅限文字協作或含程式碼執行）均未見報導細節，僅標題層級資訊（Google News/VentureBeat；Google News/The Next Web）
+- **08-25 官方確認（International Business Times，專頁定向）**：Salesforce 官方以自身名義發布「推出 Slack Code，整合 Claude 與 ChatGPT」，與既有 08-20/21 VentureBeat／The Next Web 報導為同一產品事件，本次首度由 Salesforce（Slack 母公司）官方角度確認，而非僅第三方媒體報導；僅標題層級可用，未見新增功能範圍或定價細節（Google News/International Business Times）
 
 ### Perplexity AI 編碼工具（傳聞開發中，2026-07-07）
 - **狀態**：傳聞階段（Business Insider 2026-07-07 報導）
@@ -310,6 +324,12 @@ Claude Code 已成為 AI 輔助編碼的標竿產品，但競爭正快速升溫�
 #### 近期單日動態彙整（2026-07-02 至 2026-07-26）
 
 > 逐日條目按主題可另見上方「主要競品追蹤」對應廠商子區塊；此區塊保留完整時序供追溯查證。
+
+### 2026-08-26
+- **[觀察重點，新增] 36Kr：Claude Code 拒採 AGENTS.md 業界標準，引發開發者社群不滿**：詳見「觀察重點」新增（Google News/36Kr）
+- **[新增追蹤] Business Insider：Google 加入法律 AI 賽道，與 Anthropic、OpenAI 競爭**：詳見「主要競品追蹤」新增 Google 法律 AI 子區塊（Google News/Business Insider）
+- **[新增追蹤，新聞稿性質] 24-7 Press Release Newswire：AgentConnect 宣傳為開源多代理替代方案，對標 Claude Tag**：詳見「主要競品追蹤」新增 AgentConnect 子區塊（Google News/24-7 Press Release Newswire）
+- **[Slack Code，官方確認，非新事實] International Business Times：Salesforce 官方發布推出 Slack Code，整合 Claude 與 ChatGPT**：與既有 08-20/21 VentureBeat／The Next Web 報導同一事件，詳見「主要競品追蹤」Slack Code 子區塊更新（Google News/International Business Times，專頁定向）
 
 ### 2026-08-24
 - **[觀察重點，新增] Financial Times（經 dev.to／Simon Willison 轉引）：Anthropic 旗艦模型在吸引一般消費者上不敵較低價競品工具**：詳見「觀察重點」新增（dev.to；Blog/Simon Willison）
