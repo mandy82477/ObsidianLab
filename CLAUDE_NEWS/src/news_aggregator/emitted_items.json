@@ -4308,5 +4308,295 @@
     "first_emitted": "2026-08-26",
     "score_at_emit": 0,
     "digest_confirmed": true
+  },
+  "https://support.claude.com/en/articles/12138966-release-notes#75689e625c3f655d": {
+    "first_emitted": "2026-08-27",
+    "score_at_emit": 0,
+    "digest_confirmed": true
+  },
+  "https://support.claude.com/en/articles/11145838-use-claude-code-with-your-pro-or-max-plan#f621777acc538533": {
+    "first_emitted": "2026-08-27",
+    "score_at_emit": 0,
+    "digest_confirmed": true
+  },
+  "https://support.claude.com/en/articles/11647753-how-do-usage-and-length-limits-work#a058de5f3ccbe140": {
+    "first_emitted": "2026-08-27",
+    "score_at_emit": 0,
+    "digest_confirmed": true
+  },
+  "https://support.claude.com/en/articles/12429409-manage-usage-credits-for-paid-claude-plans#54ef1528a9308e78": {
+    "first_emitted": "2026-08-27",
+    "score_at_emit": 0,
+    "digest_confirmed": true
+  },
+  "https://support.claude.com/en/articles/15424964-claude-fable-5-on-your-plan#9075fe46c5ca95a6": {
+    "first_emitted": "2026-08-27",
+    "score_at_emit": 0,
+    "digest_confirmed": true
+  },
+  "https://code.claude.com/docs/en/desktop.md#2320ec2e3b289301": {
+    "first_emitted": "2026-08-27",
+    "score_at_emit": 0,
+    "digest_confirmed": true
+  },
+  "https://github.com/anthropics/claude-code/releases/tag/v2.1.247": {
+    "first_emitted": "2026-08-27",
+    "score_at_emit": 0,
+    "digest_confirmed": true
+  },
+  "https://github.com/karanb192/awesome-claude-skills": {
+    "first_emitted": "2026-08-27",
+    "score_at_emit": 0,
+    "digest_confirmed": true
+  },
+  "https://github.com/anthropics/claude-code/issues/69415": {
+    "first_emitted": "2026-08-27",
+    "score_at_emit": 0,
+    "digest_confirmed": true
+  },
+  "https://github.com/anthropics/claude-code/issues/82056": {
+    "first_emitted": "2026-08-27",
+    "score_at_emit": 0,
+    "digest_confirmed": true
+  },
+  "https://github.com/anthropics/claude-code/issues/50674": {
+    "first_emitted": "2026-08-27",
+    "score_at_emit": 0,
+    "digest_confirmed": true
+  },
+  "https://github.com/anthropics/claude-code/issues/12506": {
+    "first_emitted": "2026-08-27",
+    "score_at_emit": 0,
+    "digest_confirmed": true
+  },
+  "https://github.com/anthropics/claude-code/issues/23626": {
+    "first_emitted": "2026-08-27",
+    "score_at_emit": 0,
+    "digest_confirmed": true
+  },
+  "https://github.com/anthropics/claude-code/issues/18192": {
+    "first_emitted": "2026-08-27",
+    "score_at_emit": 0,
+    "digest_confirmed": true
+  },
+  "https://github.com/anthropics/claude-code/issues/38005": {
+    "first_emitted": "2026-08-27",
+    "score_at_emit": 0,
+    "digest_confirmed": true
+  },
+  "https://github.com/anthropics/claude-code/issues/1262": {
+    "first_emitted": "2026-08-27",
+    "score_at_emit": 0,
+    "digest_confirmed": true
+  },
+  "https://github.com/anthropics/claude-code/issues/85199": {
+    "first_emitted": "2026-08-27",
+    "score_at_emit": 0,
+    "digest_confirmed": true
+  },
+  "https://louisabraham.github.io/load-bearing": {
+    "first_emitted": "2026-08-27",
+    "score_at_emit": 0,
+    "digest_confirmed": true
+  },
+  "https://github.com/Get-Concord-AI/concord-mcp": {
+    "first_emitted": "2026-08-27",
+    "score_at_emit": 0,
+    "digest_confirmed": true
+  },
+  "https://dev.to/toffy/stop-asking-your-ai-agent-to-follow-rules-enforce-them-4mlo": {
+    "first_emitted": "2026-08-27",
+    "score_at_emit": 0,
+    "digest_confirmed": true
+  },
+  "https://www.opensession.com": {
+    "first_emitted": "2026-08-27",
+    "score_at_emit": 0,
+    "digest_confirmed": true
+  },
+  "https://whisperbar.app": {
+    "first_emitted": "2026-08-27",
+    "score_at_emit": 0,
+    "digest_confirmed": true
+  },
+  "https://call-me-vera.vercel.app": {
+    "first_emitted": "2026-08-27",
+    "score_at_emit": 0,
+    "digest_confirmed": true
+  },
+  "https://github.com/palamim/port": {
+    "first_emitted": "2026-08-27",
+    "score_at_emit": 0,
+    "digest_confirmed": true
+  },
+  "https://www.taskshell.app": {
+    "first_emitted": "2026-08-27",
+    "score_at_emit": 0,
+    "digest_confirmed": true
+  },
+  "https://github.com/faizannraza/wattage": {
+    "first_emitted": "2026-08-27",
+    "score_at_emit": 0,
+    "digest_confirmed": true
+  },
+  "https://github.com/hetpatel-11/agent-hop": {
+    "first_emitted": "2026-08-27",
+    "score_at_emit": 0,
+    "digest_confirmed": true
+  },
+  "https://www.reddit.com/r/ClaudeCode/comments/1vzvtpw/under_usage_on_a_20_package_what_does_total_cost": {
+    "first_emitted": "2026-08-27",
+    "score_at_emit": 0,
+    "digest_confirmed": true
+  },
+  "https://www.reddit.com/r/ClaudeCode/comments/1vzvryq/is_there_an_official_way_to_try_claude_code": {
+    "first_emitted": "2026-08-27",
+    "score_at_emit": 0,
+    "digest_confirmed": true
+  },
+  "https://www.reddit.com/r/ClaudeCode/comments/1vzvow2/need_advice_about_switching_services_or_making": {
+    "first_emitted": "2026-08-27",
+    "score_at_emit": 0,
+    "digest_confirmed": true
+  },
+  "https://www.reddit.com/r/ClaudeCode/comments/1vzvixh/fork_subagents_in_claude_code_inherit_your_entire": {
+    "first_emitted": "2026-08-27",
+    "score_at_emit": 0,
+    "digest_confirmed": true
+  },
+  "https://www.reddit.com/r/ClaudeCode/comments/1vzvdtl/im_building_a_sourcebacked_practice_pack_for": {
+    "first_emitted": "2026-08-27",
+    "score_at_emit": 0,
+    "digest_confirmed": true
+  },
+  "https://www.reddit.com/r/ClaudeCode/comments/1vzvcc4/unpopular_opinion_opus_5_language_just_became": {
+    "first_emitted": "2026-08-27",
+    "score_at_emit": 0,
+    "digest_confirmed": true
+  },
+  "https://www.techrepublic.com/article/news-claude-gym-api-flaw": {
+    "first_emitted": "2026-08-27",
+    "score_at_emit": 0,
+    "digest_confirmed": true
+  },
+  "https://www.nytimes.com/2026/08/27/technology/meta-anthropic-frenemies.html": {
+    "first_emitted": "2026-08-27",
+    "score_at_emit": 0,
+    "digest_confirmed": true
+  },
+  "https://www.forbes.com/sites/tylerroush/2026/08/27/crowdstrike-shares-pop-13-after-ceo-touts-best-ever-quarter-heres-why-he-says-anthropic-is-responsible": {
+    "first_emitted": "2026-08-27",
+    "score_at_emit": 0,
+    "digest_confirmed": true
+  },
+  "https://thehackernews.com/2026/08/amazon-kiro-prompt-injection-can.html": {
+    "first_emitted": "2026-08-27",
+    "score_at_emit": 0,
+    "digest_confirmed": true
+  },
+  "https://qz.com/salesforce-earnings-claudeforce-anthropic-ai-plugin-082726": {
+    "first_emitted": "2026-08-27",
+    "score_at_emit": 0,
+    "digest_confirmed": true
+  },
+  "https://finance.yahoo.com/technology/ai/articles/nvidia-reportedly-bets-12-9b-125502611.html": {
+    "first_emitted": "2026-08-27",
+    "score_at_emit": 0,
+    "digest_confirmed": true
+  },
+  "https://qz.com/salesforce-anthropic-claudeforce-ai-sales-plugin-082726": {
+    "first_emitted": "2026-08-27",
+    "score_at_emit": 0,
+    "digest_confirmed": true
+  },
+  "https://www.xda-developers.com/use-claude-code-for-planning-but-a-local-model-for-building": {
+    "first_emitted": "2026-08-27",
+    "score_at_emit": 0,
+    "digest_confirmed": true
+  },
+  "https://www.einnews.com/pr_news/937444199/scalo-joins-anthropic-s-claude-partner-network": {
+    "first_emitted": "2026-08-27",
+    "score_at_emit": 0,
+    "digest_confirmed": true
+  },
+  "https://technode.global/2026/08/27/salesforce-anthropic-launch-claudeforce-connect-claude-crm-workflows": {
+    "first_emitted": "2026-08-27",
+    "score_at_emit": 0,
+    "digest_confirmed": true
+  },
+  "https://thenextweb.com/news/salesforce-anthropic-claudeforce-partnership": {
+    "first_emitted": "2026-08-27",
+    "score_at_emit": 0,
+    "digest_confirmed": true
+  },
+  "https://diginomica.com/time-it-stop-will-salesforces-claudeforce-tie-anthropic-be-final-nail-saaspocalypse-coffin": {
+    "first_emitted": "2026-08-27",
+    "score_at_emit": 0,
+    "digest_confirmed": true
+  },
+  "https://fortune.com/2026/08/27/google-deepmind-losing-talent-to-rival-ai-labs-startups-new-data-show": {
+    "first_emitted": "2026-08-27",
+    "score_at_emit": 0,
+    "digest_confirmed": true
+  },
+  "https://eu.36kr.com/en/p/3957248313572737": {
+    "first_emitted": "2026-08-27",
+    "score_at_emit": 0,
+    "digest_confirmed": true
+  },
+  "https://hackernoon.com/how-to-let-claude-search-your-email-without-letting-it-send-or-delete": {
+    "first_emitted": "2026-08-27",
+    "score_at_emit": 0,
+    "digest_confirmed": true
+  },
+  "https://www.reddit.com/r/LocalLLaMA/comments/1vze6jl/running_local_llms_as_agents_in_claude_code": {
+    "first_emitted": "2026-08-27",
+    "score_at_emit": 0,
+    "digest_confirmed": true
+  },
+  "https://simonwillison.net/2026/Aug/26/qwen38-flash-next": {
+    "first_emitted": "2026-08-27",
+    "score_at_emit": 0,
+    "digest_confirmed": true
+  },
+  "https://www.reuters.com/technology/salesforce-raises-annual-revenue-forecast-2026-08-26": {
+    "first_emitted": "2026-08-27",
+    "score_at_emit": 0,
+    "digest_confirmed": true
+  },
+  "https://www.cnbc.com/2026/08/26/cnbc-exclusive-transcript-salesforce-chair-ceo-marc-benioff-and-anthropic-co-founder-ceo-dario-amodei-speak-with-cnbcs-jim-cramer-on-closing-bell-overtime-today.html": {
+    "first_emitted": "2026-08-27",
+    "score_at_emit": 0,
+    "digest_confirmed": true
+  },
+  "https://www.reddit.com/r/LocalLLaMA/comments/1vzcxd5/i_kept_losing_track_of_my_own_agent_backlog_so_i": {
+    "first_emitted": "2026-08-27",
+    "score_at_emit": 0,
+    "digest_confirmed": true
+  },
+  "https://www.reddit.com/r/LocalLLaMA/comments/1vyzzxu/megathread_glm53flash_former_oxalpha": {
+    "first_emitted": "2026-08-27",
+    "score_at_emit": 0,
+    "digest_confirmed": true
+  },
+  "https://www.reddit.com/r/LocalLLaMA/comments/1vxi7gp/i_just_tried_deepseek_harness_and_it_escaped_from": {
+    "first_emitted": "2026-08-27",
+    "score_at_emit": 0,
+    "digest_confirmed": true
+  },
+  "https://www.reddit.com/r/LocalLLaMA/comments/1vwhcuf/qwen_38_27b_helped_me_with_something_unique_that": {
+    "first_emitted": "2026-08-27",
+    "score_at_emit": 0,
+    "digest_confirmed": true
+  },
+  "https://www.reddit.com/r/LocalLLaMA/comments/1vwde84/new_qwen3827b_on_a_39k_line_c_to_singlefile_html": {
+    "first_emitted": "2026-08-27",
+    "score_at_emit": 0,
+    "digest_confirmed": true
+  },
+  "https://www.reddit.com/r/LocalLLaMA/comments/1vukppf/whats_the_best_local_ai_harness_for_coding": {
+    "first_emitted": "2026-08-27",
+    "score_at_emit": 0,
+    "digest_confirmed": true
   }
 }
