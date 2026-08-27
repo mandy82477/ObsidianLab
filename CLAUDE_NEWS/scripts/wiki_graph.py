@@ -20,6 +20,9 @@ wiki 的圖從第一天起就存在：頁面＝節點、wikilink＝邊。本腳�
   sections <關鍵詞>     跨頁找「議題散在哪幾節」，回傳限定名＋行號
   cluster              頁層 references 投影分群（label propagation），與 frontmatter
                        領域欄比對，列出「分群歸屬 vs 人工領域」不一致的頁（診斷用）
+  sources <頁slug>     查原文：列出該頁在 data/source_attribution.jsonl 的歸因
+                       （日期｜來源｜條目標題｜原始 URL，新到舊）——帳本 07-11 起收，
+                       更早的事實走日報：頁內時序找日期 → news/該日.md 條目附原文連結
 
 用法：python scripts/wiki_graph.py explain entities/pricing
 """
@@ -272,6 +275,33 @@ def cmd_cluster(out) -> int:
     return 0
 
 
+def cmd_sources(target: str, out) -> int:
+    import json
+    ledger = WIKI_DIR.parent / "data" / "source_attribution.jsonl"
+    if not ledger.exists():
+        print(f"帳本不存在：{ledger}", file=out)
+        return 1
+    rows = []
+    for ln in ledger.read_text(encoding="utf-8").splitlines():
+        if not ln.strip():
+            continue
+        try:
+            r = json.loads(ln)
+        except ValueError:
+            continue
+        if r.get("page") == target:
+            rows.append(r)
+    if not rows:
+        print(f"{target} 在帳本無歸因（帳本 2026-07-11 起收；更早的事實走日報：頁內時序找日期 → news/該日.md）", file=out)
+        return 0
+    rows.sort(key=lambda r: r.get("date", ""), reverse=True)
+    print(f"# {target} 的來源歸因（{len(rows)} 筆，新到舊）\n", file=out)
+    for r in rows:
+        print(f"{r.get('date','—')}｜{r.get('source','—')}｜{r.get('item_title','—')}", file=out)
+        print(f"    {r.get('item_url','—')}", file=out)
+    return 0
+
+
 def main() -> int:
     out = _stdout()
     args = sys.argv[1:]
@@ -288,6 +318,8 @@ def main() -> int:
             return cmd_sections(rest[0], out)
         if cmd == "cluster":
             return cmd_cluster(out)
+        if cmd == "sources" and len(rest) == 1:
+            return cmd_sources(rest[0], out)
         print(__doc__, file=out)
         return 1
     finally:
