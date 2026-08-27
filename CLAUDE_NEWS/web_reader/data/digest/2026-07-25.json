@@ -415,11 +415,5 @@
     }
   ],
   "preview": "Anthropic 正式推出 Claude Opus 5：官方稱其編碼與知識工作評測分數逼近 Fable 5、價格僅為一半，現為 Claude Max 方案新預設模型、Pro 方案最強模型；Python／TypeScript SDK 同步支援新模型，GitHub Copilot 也已上線 Opus 5。",
-  "sedimentedToday": [
-    {
-      "id": "opus-4-8",
-      "name": "Claude Opus 4.8",
-      "pageType": "entity"
-    }
-  ]
+  "sedimentedToday": []
 }

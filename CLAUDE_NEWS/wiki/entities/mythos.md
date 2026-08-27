@@ -4,16 +4,16 @@ kind: "entity"
 type: "model"
 status: "active（出口管制解除，2026-07-01 起全球恢復存取）"
 domain: "🤖 模型"
-last_updated: "2026-08-24"
+last_updated: "2026-08-26"
 last_news_update: "2026-08-24"
 status_main: "active"
-days_since_news: 1
+days_since_news: 3
 inbound_links: 28
 attribution_count: 13
 attribution_last: "2026-08-24"
 top_source: "google-news"
-pending_count: 9
-pending_overdue: 8
+pending_count: 4
+pending_overdue: 3
 pending_next_review: "2026-09-07"
 pending_signalled: 0
 signal: "健康"

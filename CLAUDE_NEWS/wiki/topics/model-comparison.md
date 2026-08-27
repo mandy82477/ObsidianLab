@@ -3,11 +3,11 @@ page: "topics/model-comparison"
 kind: "topic"
 status: "ongoing"
 domain: "🤖 模型"
-last_updated: "2026-08-24"
+last_updated: "2026-08-26"
 last_news_update: "2026-08-24"
 status_main: "ongoing"
-days_since_news: 1
-inbound_links: 21
+days_since_news: 3
+inbound_links: 22
 attribution_count: 16
 attribution_last: "2026-08-24"
 top_source: "reddit"

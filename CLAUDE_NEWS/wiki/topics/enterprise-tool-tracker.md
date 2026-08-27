@@ -3,13 +3,13 @@ page: "topics/enterprise-tool-tracker"
 kind: "topic"
 status: "ongoing"
 domain: "💼 商業"
-last_updated: "2026-08-25"
-last_news_update: "2026-08-25"
+last_updated: "2026-08-27"
+last_news_update: "2026-08-26"
 status_main: "ongoing"
-days_since_news: 0
+days_since_news: 1
 inbound_links: 23
-attribution_count: 17
-attribution_last: "2026-08-25"
+attribution_count: 18
+attribution_last: "2026-08-26"
 top_source: "google-news"
 pending_count: 0
 pending_overdue: 0

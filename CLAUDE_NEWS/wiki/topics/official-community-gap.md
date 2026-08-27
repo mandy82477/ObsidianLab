@@ -3,8 +3,8 @@ page: "topics/official-community-gap"
 kind: "topic"
 status: "ongoing"
 domain: "🛠️ 工具/功能"
-last_updated: "2026-08-24"
-last_news_update: "2026-08-24"
+last_updated: "2026-08-27"
+last_news_update: "2026-08-26"
 status_main: "ongoing"
 days_since_news: 1
 inbound_links: 21

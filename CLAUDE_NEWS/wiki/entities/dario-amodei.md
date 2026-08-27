@@ -9,8 +9,8 @@ last_news_update: "2026-08-27"
 status_main: "active"
 days_since_news: 0
 inbound_links: 12
-attribution_count: 16
-attribution_last: "2026-08-25"
+attribution_count: 17
+attribution_last: "2026-08-27"
 top_source: "google-news"
 pending_count: 7
 pending_overdue: 5

@@ -347,11 +347,6 @@
       "pageType": "entity"
     },
     {
-      "id": "ai-talent-flow",
-      "name": "AI 實驗室人才流動",
-      "pageType": "topic"
-    },
-    {
       "id": "model-comparison",
       "name": "Claude 模型選型對照",
       "pageType": "topic"

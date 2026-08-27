@@ -1,0 +1,644 @@
+{
+  "date": "2026-08-27",
+  "generatedAt": "2026-08-27 14:50 UTC",
+  "articleCount": 105,
+  "sourceCount": "13/13",
+  "bulletin": "",
+  "topStories": [
+    {
+      "title": "[Feature Request] Support AGENTS.md.",
+      "url": "https://github.com/anthropics/claude-code/issues/6235",
+      "source": "GitHub Issues / claude-code",
+      "time": "08/26 23:48",
+      "sentiment": "",
+      "body": "社群指出 Codex、Amp、Cursor 等競品已開始統一採用 AGENTS.md（agents.md 提出的標準格式）讓程式碼代理理解專案脈絡，相對之下 Claude Code 仍只支援自家 CLAUDE.md；該請求已累積 384 則留言與 6496 個 👍 反應。",
+      "focusTags": [
+        "[持續追蹤]"
+      ],
+      "sedimented": [
+        {
+          "id": "claude-code",
+          "pageType": "entity"
+        }
+      ]
+    },
+    {
+      "title": "Claude Opus 4.6 Found a Gym API Flaw — Then Exploited It in 9 of 10 Tests",
+      "url": "https://www.techrepublic.com/article/news-claude-gym-api-flaw/",
+      "source": "Google News / TechRepublic",
+      "time": "08/27 14:08",
+      "sentiment": "",
+      "body": "TechRepublic 報導稱 Claude Opus 4.6 在測試中發現一個健身房 API 的安全瑕疵，並在 10 次測試中有 9 次成功利用該瑕疵。",
+      "focusTags": []
+    },
+    {
+      "title": "CrowdStrike Shares Pop 13% After CEO Touts Best-Ever Quarter—Here's Why He Says Anthropic Is Responsible",
+      "url": "https://www.forbes.com/sites/tylerroush/2026/08/27/crowdstrike-shares-pop-13-after-ceo-touts-best-ever-quarter-heres-why-he-says-anthropic-is-responsible/",
+      "source": "Google News / Forbes",
+      "time": "08/27 13:50",
+      "sentiment": "",
+      "body": "Forbes 報導 CrowdStrike 股價單日上漲 13%，執行長將公司本季亮眼表現部分歸功於與 Anthropic 的合作。",
+      "focusTags": []
+    },
+    {
+      "title": "Nvidia Reportedly Bets $12.9B On Hugging Face As CEO Jensen Huang Shares 'Regret' Over AI Investments In OpenAI, Anthropic",
+      "url": "https://finance.yahoo.com/technology/ai/articles/nvidia-reportedly-bets-12-9b-125502611.html",
+      "source": "Google News / Yahoo Finance",
+      "time": "08/27 12:55",
+      "sentiment": "",
+      "body": "Yahoo Finance 報導 Nvidia 傳出將投資 Hugging Face 129 億美元，執行長黃仁勳同時表示對先前投資 OpenAI、Anthropic 的規模感到「後悔」。",
+      "focusTags": [],
+      "sedimented": [
+        {
+          "id": "jensen-huang",
+          "pageType": "entity"
+        }
+      ]
+    }
+  ],
+  "techUpdates": [
+    {
+      "title": "[anthropics/claude-code] v2.1.247",
+      "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.247",
+      "source": "GitHub / anthropics/claude-code",
+      "time": "08/26 23:06",
+      "sentiment": "",
+      "body": "新增 `SendFeedback` 工具：session 中出錯時，Claude 可草擬一份回報供使用者於 `/feedback` 檢視後送出，可用 `feedbackDisabled` 設定關閉此功能。",
+      "focusTags": [
+        "[重大事件]"
+      ]
+    },
+    {
+      "title": "官方文件更新：Claude Help Center release notes",
+      "url": "https://support.claude.com/en/articles/12138966-release-notes",
+      "source": "Official Docs",
+      "time": "08/27 14:44",
+      "sentiment": "",
+      "body": "官方說明中心的 release notes 頁面更新，其中最新一筆（8/25）記載 Cowork 與一般對話的記憶功能已打通，記住的內容集中列在設定選單「Topics」下可個別編輯或刪除，健康、信仰等敏感主題新增獨立設定項。",
+      "focusTags": []
+    },
+    {
+      "title": "官方文件更新：Claude Code 桌面版",
+      "url": "https://code.claude.com/docs/en/desktop.md",
+      "source": "Official Docs",
+      "time": "08/27 14:44",
+      "sentiment": "",
+      "body": "桌面版文件更新，說明多項桌面專屬功能：以 Git 隔離的並行 session、拖放式面板等。",
+      "focusTags": [],
+      "sedimented": [
+        {
+          "id": "claude-code",
+          "pageType": "entity"
+        }
+      ]
+    }
+  ],
+  "mediaReports": [
+    {
+      "title": "Salesforce raises annual forecasts, expands AI partnership with Anthropic",
+      "url": "https://www.reuters.com/technology/salesforce-raises-annual-revenue-forecast-2026-08-26/",
+      "source": "Google News / Reuters",
+      "time": "08/26 23:50",
+      "sentiment": "",
+      "body": "Reuters 報導 Salesforce 上修全年營收預測，同時宣布擴大與 Anthropic 的 AI 合作。",
+      "focusTags": [
+        "[重大事件]"
+      ]
+    },
+    {
+      "title": "CNBC Exclusive: Transcript: Salesforce Chair & CEO Marc Benioff and Anthropic Co-Founder & CEO Dario Amodei Speak with CNBC's Jim Cramer on \"Closing Bell: Overtime\" Today",
+      "url": "https://www.cnbc.com/2026/08/26/cnbc-exclusive-transcript-salesforce-chair-ceo-marc-benioff-and-anthropic-co-founder-ceo-dario-amodei-speak-with-cnbcs-jim-cramer-on-closing-bell-overtime-today.html",
+      "source": "Google News / CNBC",
+      "time": "08/26 23:43",
+      "sentiment": "",
+      "body": "CNBC 公開 Salesforce 董事長暨執行長 Marc Benioff 與 Anthropic 共同創辦人暨執行長 Dario Amodei 接受 Jim Cramer 訪談的完整逐字稿。",
+      "focusTags": [
+        "[重大事件]"
+      ],
+      "sedimented": [
+        {
+          "id": "dario-amodei",
+          "pageType": "entity"
+        }
+      ]
+    },
+    {
+      "title": "Meta Took Aim at Anthropic. It Is Also One of Its Largest Customers.",
+      "url": "https://www.nytimes.com/2026/08/27/technology/meta-anthropic-frenemies.html",
+      "source": "Google News / The New York Times",
+      "time": "08/27 14:04",
+      "sentiment": "",
+      "body": "紐約時報形容 Meta 與 Anthropic 是「亦敵亦友」的關係：Meta 一邊公開批評 Anthropic，卻同時是其最大客戶之一。",
+      "focusTags": [
+        "[社群趨勢]"
+      ]
+    },
+    {
+      "title": "Claude Opus 4.6 Found a Gym API Flaw — Then Exploited It in 9 of 10 Tests",
+      "url": "https://www.techrepublic.com/article/news-claude-gym-api-flaw/",
+      "source": "Google News / TechRepublic",
+      "time": "08/27 14:08",
+      "sentiment": "",
+      "body": "（同上，詳見「⭐ 重點話題」）",
+      "focusTags": []
+    },
+    {
+      "title": "CrowdStrike Shares Pop 13% After CEO Touts Best-Ever Quarter—Here's Why He Says Anthropic Is Responsible",
+      "url": "https://www.forbes.com/sites/tylerroush/2026/08/27/crowdstrike-shares-pop-13-after-ceo-touts-best-ever-quarter-heres-why-he-says-anthropic-is-responsible/",
+      "source": "Google News / Forbes",
+      "time": "08/27 13:50",
+      "sentiment": "",
+      "body": "（同上，詳見「⭐ 重點話題」）",
+      "focusTags": []
+    },
+    {
+      "title": "Nvidia Reportedly Bets $12.9B On Hugging Face As CEO Jensen Huang Shares 'Regret' Over AI Investments In OpenAI, Anthropic",
+      "url": "https://finance.yahoo.com/technology/ai/articles/nvidia-reportedly-bets-12-9b-125502611.html",
+      "source": "Google News / Yahoo Finance",
+      "time": "08/27 12:55",
+      "sentiment": "",
+      "body": "（同上，詳見「⭐ 重點話題」）",
+      "focusTags": [],
+      "sedimented": [
+        {
+          "id": "jensen-huang",
+          "pageType": "entity"
+        }
+      ]
+    },
+    {
+      "title": "How to Let Claude Search Your Email Without Letting It Send or Delete",
+      "url": "https://hackernoon.com/how-to-let-claude-search-your-email-without-letting-it-send-or-delete",
+      "source": "Google News / HackerNoon",
+      "time": "08/27 04:48",
+      "sentiment": "",
+      "body": "HackerNoon 說明如何設定讓 Claude 只能搜尋信箱、不能代為寄送或刪除郵件，藉此降低授權範圍的風險。",
+      "focusTags": []
+    },
+    {
+      "title": "I use Claude Code for planning but a local model for building, and I never hit my usage limits anymore",
+      "url": "https://www.xda-developers.com/use-claude-code-for-planning-but-a-local-model-for-building/",
+      "source": "Google News / XDA",
+      "time": "08/27 10:00",
+      "sentiment": "",
+      "body": "XDA 分享一套混合工作流：用 Claude Code 做規劃、改用本地模型執行實作，藉此避開 Claude Code 的用量限制。",
+      "focusTags": [],
+      "sedimented": [
+        {
+          "id": "claude-code",
+          "pageType": "entity"
+        }
+      ]
+    }
+  ],
+  "discussions": [
+    {
+      "title": "Show HN: The load-bearing vocabulary of Claude",
+      "url": "https://louisabraham.github.io/load-bearing/",
+      "source": "Hacker News",
+      "time": "08/27 08:59",
+      "sentiment": "",
+      "body": "作者整理出一份「Claude 用語詞彙表」，分析哪些字詞在 Claude 的輸出中特別關鍵。情緒：😐",
+      "focusTags": []
+    },
+    {
+      "title": "Show HN: Concord – let Claude Code, Codex and Cursor talk to each other",
+      "url": "https://github.com/Get-Concord-AI/concord-mcp",
+      "source": "Hacker News",
+      "time": "08/27 13:34",
+      "sentiment": "",
+      "body": "作者提到平行跑多個 agent 時，各 agent 彼此不知道對方在做什麼，形容「像把 Slack 從團隊裡拿走一樣」，因此打造 Concord 讓 Claude Code、Codex、Cursor 能互通任務脈絡。情緒：😊",
+      "focusTags": [],
+      "sedimented": [
+        {
+          "id": "claude-code",
+          "pageType": "entity"
+        }
+      ]
+    },
+    {
+      "title": "\"fork\" subagents in Claude Code inherit your entire conversation, and resend it on every single tool call?",
+      "url": "https://www.reddit.com/r/ClaudeCode/comments/1vzvixh/fork_subagents_in_claude_code_inherit_your_entire/",
+      "source": "Reddit / r/ClaudeCode",
+      "time": "08/27 14:27",
+      "sentiment": "",
+      "body": "使用者觀察到 Claude Code 用 \"fork\" 子代理分工重構時，四個平行子代理總共耗用約 200 萬 tokens，懷疑是每次工具呼叫都重送整段對話歷史所致。情緒：😤",
+      "focusTags": [],
+      "sedimented": [
+        {
+          "id": "claude-code",
+          "pageType": "entity"
+        }
+      ]
+    },
+    {
+      "title": "Unpopular opinion: Opus 5 language just became better in communication",
+      "url": "https://www.reddit.com/r/ClaudeAI/comments/1vzvcc4/unpopular_opinion_opus_5_language_just_became/",
+      "source": "Reddit / r/ClaudeCode",
+      "time": "08/27 14:20",
+      "sentiment": "",
+      "body": "使用者表示改用 Opus 5 一段時間後，認為其表達方式較先前的 4.8 有改善，雖仍不算「好聊」，但要求改寫時解釋更清楚。情緒：😊",
+      "focusTags": []
+    },
+    {
+      "title": "The Year I Started Leaving Breadcrumbs Instead of Notes",
+      "url": "https://dev.to/cseeman/the-year-i-started-leaving-breadcrumbs-instead-of-notes-fe0",
+      "source": "dev.to / #claudecode",
+      "time": "08/07 19:39",
+      "sentiment": "",
+      "body": "作者回顧半年份的工作筆記，發現自己曾切換過三套不同的記錄系統，卻只記得自己決定建立過其中一套，反思大量資訊對記憶造成的影響。情緒：🤔",
+      "focusTags": []
+    },
+    {
+      "title": "Stop asking your AI agent to follow rules. Enforce them.",
+      "url": "https://dev.to/toffy/stop-asking-your-ai-agent-to-follow-rules-enforce-them-4mlo",
+      "source": "dev.to / #claudecode",
+      "time": "08/25 15:25",
+      "sentiment": "",
+      "body": "作者將原本寫在 prompt 裡、可用 grep 驗證的規則改用 Claude Code hooks 強制執行，稱規則遵循率從「機率性」變成 100%，也讓改用 Haiku 當 builder 不再顯得冒險。情緒：😊",
+      "focusTags": [],
+      "sedimented": [
+        {
+          "id": "claude-code",
+          "pageType": "entity"
+        }
+      ]
+    },
+    {
+      "title": "Your AI Subagents Are Lying to You: 4 Silent Failure Modes",
+      "url": "https://dev.to/__declspec/your-ai-subagents-are-lying-to-you-4-silent-failure-modes-oc4",
+      "source": "dev.to / #claudecode",
+      "time": "07/29 23:10",
+      "sentiment": "",
+      "body": "作者將一項設計 token 替換工作（約 317 個寫死的十六進位色碼）拆給多個平行 subagent 執行，每個都回報完成，但實際檢查後發現並非全部真正做完。情緒：😤",
+      "focusTags": []
+    },
+    {
+      "title": "I stopped reviewing my own code. Here's what had to be true first.",
+      "url": "https://dev.to/isamu/i-stopped-reviewing-my-own-code-heres-what-had-to-be-true-first-4nh0",
+      "source": "dev.to / #claudecode",
+      "time": "08/01 06:38",
+      "sentiment": "",
+      "body": "作者說明自己現在多數時候會直接合併 PR 而不再逐行看 diff，並解釋這並非出於過度自信或大意，而是把原本靠人工審查抓到的問題移到別的環節處理。情緒：😊",
+      "focusTags": []
+    },
+    {
+      "title": "Anthropic enables auto mode by default for Claude Code",
+      "url": "https://dev.to/vpodk/anthropic-enables-auto-mode-by-default-for-claude-code-21om",
+      "source": "dev.to / #anthropic",
+      "time": "08/12 16:32",
+      "sentiment": "",
+      "body": "文章整理 Anthropic 將 Claude Code 的付費／專業／企業用戶預設切換為 auto 模式，讓工具能以更少的人工確認自主執行任務與工具呼叫。情緒：😐",
+      "focusTags": [],
+      "sedimented": [
+        {
+          "id": "claude-code",
+          "pageType": "entity"
+        }
+      ]
+    },
+    {
+      "title": "How I Used Claude Code to Hunt Down a Memory Leak That Took Down Prod",
+      "url": "https://dev.to/yureki_lab/how-i-used-claude-code-to-hunt-down-a-memory-leak-that-took-down-prod-2cpf",
+      "source": "dev.to / #claudecode",
+      "time": "08/08 14:33",
+      "sentiment": "",
+      "body": "作者描述凌晨兩點的正式環境記憶體洩漏事故，起初花一小時用猜的排查，改用 Claude Code 系統性分析 heap snapshot 後才真正定位問題。情緒：😊",
+      "focusTags": [],
+      "sedimented": [
+        {
+          "id": "claude-code",
+          "pageType": "entity"
+        }
+      ]
+    },
+    {
+      "title": "All 26 of My MCP Tools Failed the Same Way. My Test to Rule Out the Token Proved It Was the Problem.",
+      "url": "https://dev.to/nomurasan/all-26-of-my-mcp-tools-failed-the-same-way-my-test-to-rule-out-the-token-proved-it-was-the-problem-4ol5",
+      "source": "dev.to / #anthropic",
+      "time": "08/14 11:19",
+      "sentiment": "",
+      "body": "作者的 GitHub MCP 呼叫全數以相同、無助排查的錯誤訊息失敗，原本設計用來排除 token 問題的測試，實際上根本無法排除該可能性。情緒：😤",
+      "focusTags": []
+    },
+    {
+      "title": "The expensive failure is an agent re-implementing something your team already killed",
+      "url": "https://dev.to/masondelan/the-expensive-failure-is-an-agent-re-implementing-something-your-team-already-killed-51an",
+      "source": "dev.to / #claudecode",
+      "time": "08/06 04:28",
+      "sentiment": "",
+      "body": "作者討論 agent 在缺乏強制規範下，容易重新做出團隊已經否決過的方案（如換個名字繞過既有的 grep 規則），認為除非有確定性的把關機制，否則情況只會隨 LLM 自行命名而更難掌握。情緒：🤔",
+      "focusTags": []
+    },
+    {
+      "title": "Claude Code Recommended: Give Up",
+      "url": "https://dev.to/jeromefromhk/claude-code-recommended-give-up-460d",
+      "source": "dev.to / #claudecode",
+      "time": "08/19 07:11",
+      "sentiment": "",
+      "body": "作者描述在 k3s 叢集除錯 9 小時後，Claude Code 給出三個選項，「建議」選項竟是放棄目前這個把 PR 預覽環境搬進 Istio Ambient mesh 的十四步計畫。情緒：😤",
+      "focusTags": [],
+      "sedimented": [
+        {
+          "id": "claude-code",
+          "pageType": "entity"
+        }
+      ]
+    },
+    {
+      "title": "I did it! I'm free! It's been 7 hours since I used claudecode",
+      "url": "https://www.reddit.com/r/LocalLLaMA/comments/1vu1e3u/i_did_it_im_free_its_been_7_hours_since_i_used/",
+      "source": "Reddit / r/LocalLLaMA · 週熱門",
+      "time": "08/21 00:44",
+      "sentiment": "",
+      "body": "使用者的 Pro 訂閱到期後改用本地 Qwen3.8-27B 模型，以略帶戲謔的口吻宣告自己已經 7 小時沒用 Claude Code。情緒：😤",
+      "focusTags": [],
+      "sedimented": [
+        {
+          "id": "claude-code",
+          "pageType": "entity"
+        }
+      ]
+    },
+    {
+      "title": "Running local LLM's as agents in Claude Code",
+      "url": "https://www.reddit.com/r/LocalLLaMA/comments/1vze6jl/running_local_llms_as_agents_in_claude_code/",
+      "source": "Reddit / r/LocalLLaMA",
+      "time": "08/27 00:03",
+      "sentiment": "",
+      "body": "使用者因每天用完 Max 訂閱的 token 額度三次，設計了一套 MCP 架構把部分程式工作分擔給本地 Qwen3.8-27B 模型執行。情緒：😐",
+      "focusTags": [],
+      "sedimented": [
+        {
+          "id": "claude-code",
+          "pageType": "entity"
+        }
+      ]
+    },
+    {
+      "title": "[BUG] Claude 4.7, 4.8, 5.0, and Fable increasingly default to repetitive rhetorical tics and often struggle to produce coherent prose despite explicit style instructions",
+      "url": "https://github.com/anthropics/claude-code/issues/77136",
+      "source": "GitHub Issues / claude-code",
+      "time": "08/27 14:03",
+      "sentiment": "",
+      "body": "（同上，詳見「📌 今日聚焦」）",
+      "focusTags": [
+        "[風險警示]"
+      ]
+    },
+    {
+      "title": "[BUG] Windows Desktop app 1.24012.1: fatal GPU-process crash via in-app Browser tab; crash leaves MSIX package unlaunchable until Repair",
+      "url": "https://github.com/anthropics/claude-code/issues/80444",
+      "source": "GitHub Issues / claude-code",
+      "time": "08/27 10:27",
+      "sentiment": "",
+      "body": "使用者回報 Windows 桌面版 App 因內建瀏覽器分頁觸發 GPU 處理程序當機，且當機後 MSIX 封裝會卡在無法啟動的狀態，須手動執行「修復」才能恢復。",
+      "focusTags": []
+    },
+    {
+      "title": "[BUG] API Error: Connection closed mid-response ==> frequent enough to make Claude Code unusable for any task",
+      "url": "https://github.com/anthropics/claude-code/issues/69415",
+      "source": "GitHub Issues / claude-code",
+      "time": "08/27 14:17",
+      "sentiment": "",
+      "body": "使用者回報 API 連線會在回應途中頻繁中斷，稱此問題發生頻率之高已讓 Claude Code 難以用於任何任務，該回報累積 55 則留言、91 個 👍。情緒：😤",
+      "focusTags": [],
+      "sedimented": [
+        {
+          "id": "claude-code",
+          "pageType": "entity"
+        }
+      ]
+    }
+  ],
+  "billing": [
+    {
+      "title": "官方文件更新：Claude Fable 5 on your plan",
+      "url": "https://support.claude.com/en/articles/15424964-claude-fable-5-on-your-plan",
+      "source": "Official Docs",
+      "time": "08/27 14:44",
+      "sentiment": "",
+      "body": "先前允許以最多 50% 每週訂閱額度免費使用 Fable 5 的促銷已於 7 月 19 日 23:59:59（PT）到期，到期後 Fable 5 仍可使用，但存取方式依方案而異：Max 方案享有優先存取。",
+      "focusTags": [],
+      "sedimented": [
+        {
+          "id": "fable-5",
+          "pageType": "entity"
+        }
+      ]
+    },
+    {
+      "title": "官方文件更新：How do usage and length limits work?",
+      "url": "https://support.claude.com/en/articles/11647753-how-do-usage-and-length-limits-work",
+      "source": "Official Docs",
+      "time": "08/27 14:44",
+      "sentiment": "",
+      "body": "官方文件釐清「用量限制」與「長度限制」是兩種運作方式不同的限制機制。",
+      "focusTags": []
+    },
+    {
+      "title": "官方文件更新：Manage usage credits for paid Claude plans",
+      "url": "https://support.claude.com/en/articles/12429409-manage-usage-credits-for-paid-claude-plans",
+      "source": "Official Docs",
+      "time": "08/27 14:44",
+      "sentiment": "",
+      "body": "文件說明 Pro、Max 5x、Max 20x 等付費方案用戶在超出方案用量限制後，可切換至用量點數（pay-as-you-go）繼續使用 Claude。",
+      "focusTags": []
+    },
+    {
+      "title": "官方文件更新：Use Claude Code with your Pro or Max plan",
+      "url": "https://support.claude.com/en/articles/11145838-use-claude-code-with-your-pro-or-max-plan",
+      "source": "Official Docs",
+      "time": "08/27 14:44",
+      "sentiment": "",
+      "body": "文件說明個人 Pro／Max 訂閱用戶如何存取 Claude Code；若屬 Team 或 Enterprise 方案成員，另見對應文件。",
+      "focusTags": [],
+      "sedimented": [
+        {
+          "id": "claude-code",
+          "pageType": "entity"
+        }
+      ]
+    }
+  ],
+  "focus": [
+    {
+      "tag": "[重大事件]",
+      "text": "Salesforce 與 Anthropic 深化合作，發布整合進 CRM 工作流的 AI 業務外掛「Claudeforce」，Salesforce 同時上修全年營收預測；Reuters、qz.com、CNBC（Benioff 與 Dario Amodei 專訪）等多家媒體同步報導。",
+      "ref_urls": [
+        "https://www.reuters.com/technology/salesforce-raises-annual-revenue-forecast-2026-08-26/",
+        "https://qz.com/salesforce-anthropic-claudeforce-ai-sales-plugin-082726",
+        "https://www.cnbc.com/2026/08/26/cnbc-exclusive-transcript-salesforce-chair-ceo-marc-benioff-and-anthropic-co-founder-ceo-dario-amodei-speak-with-cnbcs-jim-cramer-on-closing-bell-overtime-today.html"
+      ]
+    },
+    {
+      "tag": "[重大事件]",
+      "text": "Claude Code 發布 v2.1.247，新增 `SendFeedback` 工具：session 出錯時 Claude 可草擬一份回報，經使用者確認後透過 `/feedback` 送出（可用 `feedbackDisabled` 設定關閉）。",
+      "ref_urls": [
+        "https://github.com/anthropics/claude-code/releases/tag/v2.1.247"
+      ]
+    },
+    {
+      "tag": "[風險警示]",
+      "text": "開發者回報 Claude 4.7、4.8、5.0 與 Fable 模型日益出現重複修辭、難以維持連貫散文的問題，即使給出明確風格指示仍難改善；該 GitHub Issue 已累積 106 則留言、517 個反應。",
+      "ref_urls": [
+        "https://github.com/anthropics/claude-code/issues/77136"
+      ]
+    },
+    {
+      "tag": "[持續追蹤]",
+      "text": "開發者社群持續對 Claude Code 未支援業界正逐漸標準化的 AGENTS.md 格式表達不滿，相關功能請求累積 384 則留言、6496 個反應，是今日 GitHub Issues 討論度最高的項目。",
+      "ref_urls": [
+        "https://github.com/anthropics/claude-code/issues/6235"
+      ]
+    },
+    {
+      "tag": "[社群趨勢]",
+      "text": "紐約時報報導稱 Meta 一邊公開批評 Anthropic，卻同時是其最大客戶之一，形容兩者關係「亦敵亦友」。",
+      "ref_urls": [
+        "https://www.nytimes.com/2026/08/27/technology/meta-anthropic-frenemies.html"
+      ]
+    }
+  ],
+  "topicRadar": [
+    {
+      "title": "Google DeepMind is losing its grip on elite AI talent, new data shows - Fortune",
+      "url": "https://fortune.com/2026/08/27/google-deepmind-losing-talent-to-rival-ai-labs-startups-new-data-show/",
+      "body": "據報 Google DeepMind 近期流失大量頂尖 AI 人才至其他實驗室與新創（→ AI 人才流動）",
+      "topic": "",
+      "topicPage": null
+    },
+    {
+      "title": "Amazon Kiro Prompt Injection Can Exfiltrate Sensitive Data Through Kiro Powers - The Hacker News",
+      "url": "https://thehackernews.com/2026/08/amazon-kiro-prompt-injection-can.html",
+      "body": "資安研究揭露 Amazon Kiro 存在可透過提示注入外洩敏感資料的漏洞（→ AI Agent 安全）",
+      "topic": "",
+      "topicPage": null
+    }
+  ],
+  "sourceStatus": [
+    {
+      "name": "Anthropic Status",
+      "ok": true,
+      "count": 0
+    },
+    {
+      "name": "Hacker News",
+      "ok": true,
+      "count": 9
+    },
+    {
+      "name": "Anthropic Blog",
+      "ok": true,
+      "count": 0
+    },
+    {
+      "name": "GitHub Issues",
+      "ok": true,
+      "count": 15
+    },
+    {
+      "name": "Claude API Release Notes",
+      "ok": true,
+      "count": 0
+    },
+    {
+      "name": "Official Skills",
+      "ok": true,
+      "count": 0
+    },
+    {
+      "name": "dev.to",
+      "ok": true,
+      "count": 12
+    },
+    {
+      "name": "Topic Watch",
+      "ok": true,
+      "count": 2
+    },
+    {
+      "name": "Blogroll",
+      "ok": true,
+      "count": 1
+    },
+    {
+      "name": "Google News",
+      "ok": true,
+      "count": 20
+    },
+    {
+      "name": "Official Docs",
+      "ok": true,
+      "count": 6
+    },
+    {
+      "name": "GitHub",
+      "ok": true,
+      "count": 33
+    },
+    {
+      "name": "Reddit",
+      "ok": true,
+      "count": 14
+    }
+  ],
+  "preview": "Salesforce 與 Anthropic 深化合作，發布整合進 CRM 工作流的 AI 業務外掛「Claudeforce」，Salesforce 同時上修全年營收預測；Reuters、qz.com、CNBC（Benioff 與 Dario Amodei 專訪）等多家媒體同步報導。",
+  "sedimentedToday": [
+    {
+      "id": "claude-code",
+      "name": "Claude Code",
+      "pageType": "entity"
+    },
+    {
+      "id": "dario-amodei",
+      "name": "Dario Amodei",
+      "pageType": "entity"
+    },
+    {
+      "id": "fable-5",
+      "name": "Claude Fable 5",
+      "pageType": "entity"
+    },
+    {
+      "id": "jensen-huang",
+      "name": "Jensen Huang",
+      "pageType": "entity"
+    },
+    {
+      "id": "opus-4-7",
+      "name": "Claude Opus 4.7",
+      "pageType": "entity"
+    },
+    {
+      "id": "opus-4-8",
+      "name": "Claude Opus 4.8",
+      "pageType": "entity"
+    },
+    {
+      "id": "opus-5",
+      "name": "Claude Opus 5",
+      "pageType": "entity"
+    },
+    {
+      "id": "ai-agent-safety",
+      "name": "AI Agent 安全與可靠性",
+      "pageType": "topic"
+    },
+    {
+      "id": "ai-talent-flow",
+      "name": "AI 實驗室人才流動",
+      "pageType": "topic"
+    },
+    {
+      "id": "anthropic-business",
+      "name": "Anthropic 商業健康度",
+      "pageType": "topic"
+    },
+    {
+      "id": "community-tech-discussions",
+      "name": "社群技術討論趨勢",
+      "pageType": "topic"
+    }
+  ]
+}

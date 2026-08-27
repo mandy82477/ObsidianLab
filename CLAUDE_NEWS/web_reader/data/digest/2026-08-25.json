@@ -408,11 +408,6 @@
   "preview": "Claude 服務穩定性問題本月不斷延燒：官方狀態頁今日再排除一起 Claude.ai 登入異常，同時多家媒體分別報導近期已發生多次中斷、單次長達 3 小時以上。",
   "sedimentedToday": [
     {
-      "id": "dario-amodei",
-      "name": "Dario Amodei",
-      "pageType": "entity"
-    },
-    {
       "id": "anthropic-government-policy",
       "name": "Anthropic 政府與軍事政策",
       "pageType": "topic"

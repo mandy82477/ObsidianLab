@@ -4,17 +4,17 @@ kind: "entity"
 type: "model"
 status: "active（正式發布）"
 domain: "🤖 模型"
-last_updated: "2026-08-22"
+last_updated: "2026-08-26"
 last_news_update: "2026-07-31"
 status_main: "active"
-days_since_news: 25
-inbound_links: 8
+days_since_news: 27
+inbound_links: 9
 attribution_count: 3
 attribution_last: "2026-07-31"
 top_source: "google-news"
-pending_count: 4
-pending_overdue: 4
-pending_next_review: null
+pending_count: 2
+pending_overdue: 1
+pending_next_review: "2026-11-26"
 pending_signalled: 0
 signal: "休眠"
 generated_by: "scripts/gen_wiki_frontmatter.py"
