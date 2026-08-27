@@ -16,6 +16,13 @@
       "https://code.claude.com/docs/en/best-practices.md": "Best practices for Claude Code",
       "https://code.claude.com/docs/en/platforms.md": "Platforms and integrations",
       "https://code.claude.com/docs/en/remote-control.md": "Continue local sessions from any device with Remote Control",
+      "https://code.claude.com/docs/en/mobile.md": "Claude Code on mobile",
+      "https://code.claude.com/docs/en/chrome.md": "Use Claude Code with Chrome",
+      "https://code.claude.com/docs/en/computer-use.md": "Let Claude use your computer from the CLI",
+      "https://code.claude.com/docs/en/vs-code.md": "Use Claude Code in VS Code",
+      "https://code.claude.com/docs/en/jetbrains.md": "JetBrains IDEs",
+      "https://code.claude.com/docs/en/slack.md": "Claude Code in Slack",
+      "https://code.claude.com/docs/en/claude-tag.md": "Claude Tag",
       "https://code.claude.com/docs/en/web-quickstart.md": "Get started with Claude Code on the web",
       "https://code.claude.com/docs/en/claude-code-on-the-web.md": "Use Claude Code on the web",
       "https://code.claude.com/docs/en/routines.md": "Automate work with routines",
@@ -26,11 +33,6 @@
       "https://code.claude.com/docs/en/desktop-wsl.md": "Claude Code Desktop in WSL",
       "https://code.claude.com/docs/en/desktop-scheduled-tasks.md": "Schedule recurring tasks in Claude Code Desktop",
       "https://code.claude.com/docs/en/desktop-ios-simulator.md": "Test iOS apps in the simulator",
-      "https://code.claude.com/docs/en/mobile.md": "Claude Code on mobile",
-      "https://code.claude.com/docs/en/chrome.md": "Use Claude Code with Chrome",
-      "https://code.claude.com/docs/en/computer-use.md": "Let Claude use your computer from the CLI",
-      "https://code.claude.com/docs/en/vs-code.md": "Use Claude Code in VS Code",
-      "https://code.claude.com/docs/en/jetbrains.md": "JetBrains IDEs",
       "https://code.claude.com/docs/en/security-guidance.md": "Catch security issues as Claude writes code",
       "https://code.claude.com/docs/en/claude-security.md": "Scan your codebase for vulnerabilities",
       "https://code.claude.com/docs/en/code-review.md": "Code Review",
@@ -38,8 +40,6 @@
       "https://code.claude.com/docs/en/github-actions-cloud-providers.md": "Use Claude Code GitHub Actions with cloud providers",
       "https://code.claude.com/docs/en/github-enterprise-server.md": "Claude Code with GitHub Enterprise Server",
       "https://code.claude.com/docs/en/gitlab-ci-cd.md": "Claude Code GitLab CI/CD",
-      "https://code.claude.com/docs/en/slack.md": "Claude Code in Slack",
-      "https://code.claude.com/docs/en/claude-tag.md": "Claude Tag",
       "https://code.claude.com/docs/en/agents.md": "Run agents in parallel",
       "https://code.claude.com/docs/en/sub-agents.md": "Create custom subagents",
       "https://code.claude.com/docs/en/agent-view.md": "Manage multiple agents with agent view",
@@ -206,31 +206,31 @@
     }
   },
   "https://code.claude.com/docs/en/desktop.md": {
-    "hash": "698a401297b4c24b541e9cf90f523815c7fc3a9887508beb4cdad224d152f0f3",
-    "length": 78713
+    "hash": "2320ec2e3b289301e5bcaf75dfbfc3038dcee97d69bf6a9d82fbbd27327f3c88",
+    "length": 79568
   },
   "https://claude.com/pricing": {
     "hash": "797819641f948dafde289ef82cfb9add8bea8d67b8d293404301925c3f618794",
     "length": 24257
   },
   "https://support.claude.com/en/articles/15424964-claude-fable-5-on-your-plan": {
-    "hash": "e547b8336e69ce6a51eaaf25e72419d5665f303f073876d10a432df270f74142",
-    "length": 21734
+    "hash": "b1ad797f84d184d37afc3938d839e9146e799c961195add199e84aeb22a96d39",
+    "length": 21874
   },
   "https://support.claude.com/en/articles/12429409-manage-usage-credits-for-paid-claude-plans": {
-    "hash": "ee4453f516d3de9cfec8280627e2e1b1a7118bd1a63f1404871b1f816746211d",
-    "length": 22429
+    "hash": "79de33e640beffb69a2c8025f639d087fc52798bf06e27ccecf5eb8dd2affc2c",
+    "length": 22552
   },
   "https://support.claude.com/en/articles/11647753-how-do-usage-and-length-limits-work": {
-    "hash": "d324d641600f329ce9990918f818113fc7f68146d5d2dcb943db2795c2687702",
-    "length": 22201
+    "hash": "48901961c9632825a5fc042115e868923b544af0089520c59862c747ea9e78eb",
+    "length": 22341
   },
   "https://support.claude.com/en/articles/11145838-use-claude-code-with-your-pro-or-max-plan": {
-    "hash": "04a2718ae9a92dfca564e2fdf8d66ff1988f04feb110286f61909c64942212d4",
-    "length": 22590
+    "hash": "e455678c0cc4fa236f357d6671d96d602b0bbcd074ef437ff65e98b6fde8118a",
+    "length": 22736
   },
   "https://support.claude.com/en/articles/12138966-release-notes": {
-    "hash": "9ba6f0355c8c123be78b14d301316a28754d2f3df520c8842d128146404b9316",
-    "length": 42670
+    "hash": "319e806515b9f05b44065440ec902bd59890c121d534e2a567071a3ecc175d42",
+    "length": 42814
   }
 }
