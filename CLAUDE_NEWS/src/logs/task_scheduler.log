@@ -333,3 +333,5 @@
 [Wed 2026/08/26 14:59:00.00] Manual recovery: fable-5 探針修正 + PROBE_SPLIT_RE 千分位防護，測試全綠 - web build 補跑並 push
 [cloud watchdog-push STARTED 2026-08-26T23:09:45Z]
 [cloud daily-news-pipeline-cloud STARTED 2026-08-27T13:08:00Z]
+[Thu 2026/08/27 13:08:55.00] === Agent pipeline start (2026-08-27) ===
+[Thu 2026/08/27 13:08:55.00] ABORTED: gathered_items.json date=2026-08-26 items=86，非目標日期的新鮮資料
