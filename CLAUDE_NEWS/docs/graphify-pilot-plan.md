@@ -113,6 +113,20 @@ graphify wiki/ --output data/graph/
 
 ---
 
-## 試點結果（執行後回填）
+## 試點結果（2026-08-27 執行）
 
-_（待執行）_
+**環境事實：** graphifyy 0.9.50 安裝成功；建圖指令實際為 `graphify update wiki --no-cluster` ＋ `graphify cluster-only . --graph data/graph/graph.json --no-label`（`--no-label` 必加——省略會呼叫 LLM backend 命名社群，含 claude-cli，違反本專案禁令）。輸出預設寫進 `wiki/graphify-out/` 與 cwd 的 `graphify-out/`，**需手動搬到 `data/graph/` 並清理**。
+
+**節點解析度（Step 1b）：✅ 原生標題層。** 69 個頁節點＋2030 個標題節點（`contains` 邊）＋959 條 wikilink `references` 邊，共 2101 節點。不需要爆頁器。
+
+| 判準 | 結果 | 證據 |
+|---|---|---|
+| 查得到 | ⚡ 2/3 過 | 考題 2（path）✅：`pricing → claude-code → community-tech-patterns` 2 跳。考題 3（explain）✅：feature-radar 34 條進出邊含檔案行號，優於 grep 反查。考題 1（query「成本」）⚠️：能挖出 pricing 頁整串成本案例節點（含行號可跳讀），但混入 log.md 等雜訊且 139 節點被 token 預算截斷——單跳關鍵字查詢不明顯優於 grep |
+| 省得多 | ⚡ 部分成立 | query/explain 回傳「節點名＋src＋行號」的緊湊清單，可直接 Read offset 跳讀，省掉 grep 後逐檔開讀的探索成本；但僅對關係型／導航型查詢成立 |
+| 圈得準 | ❌ 不過 | Leiden 121 個 community 中 **120 個是單頁內標題群**，唯一跨頁的 community 把全部 64 頁裝進同一團——`contains` 樹狀邊壓過稀疏的 `references` 邊，分群給不出六領域等級的洞察 |
+| 考題 4：分類輔助命中率 | ❌ 3/8 | 以近 8 則 attribution 帳本條目的標題查圖、比對實際落頁（top-6 內算命中）：3/8，遠低於 80% 門檻。失因結構性：英文新聞標題與繁中 wiki 內文詞彙不重疊（2 題回傳空集合），且部分條目的落頁本身跨類別歧義 |
+| god-nodes 樞紐驗證 | 假說證實 | 最大節點為 log.md（230 邊）與各頁「技術彙整／時序」通用標題——通用標題節點在圖上等同過寬詞探針，無鑑別力 |
+
+**結論：** 三項全過的門檻未達（圈得準 ❌、考題 4 ❌）。**分類線（含分類輔助）確定死亡**——與其說工具不行，是詞彙層匹配跨不過「英文標題 vs 繁中內文」的鴻溝，且分群被 contains 結構支配。**查詢線有真實但窄的增益**：`explain`（雙向引用＋行號）與 `path` 優於 grep，`query` 打平或小輸。
+
+**待決定（使用者裁決）：** (a) 依計畫失敗路線移除；(b) 降格保留為「查詢專用」本地工具（不進 pipeline、不接記者、圖過期時手動重建）。傾向建議：若日常「誰引用 X／兩頁怎麼連」的查詢頻率低，(a) 較乾淨。
