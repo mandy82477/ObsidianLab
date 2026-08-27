@@ -4294,3 +4294,10 @@ registry 加一組 sync_pair 釘住產出端與歸因端（只改一邊等於白
 - 已修復：topics/anthropic-government-policy（目前局勢表兩儲存格下沉）、topics/enterprise-tool-tracker（摘要文字牆改分組條列）、topics/official-community-gap（缺口分析欄 10 列短語化＋⟨G-01⟩～⟨G-10⟩ 細節下沉）、entities/claude-code（版本動態條列化＋待查證獨立區）、entities/dario-amodei（頂部 4 則懸置 callout 收斂為單一最新動態，其餘下沉歷史記錄）、entities/claude-for-teachers、entities/claude-science、entities/claude-tag、entities/opencode（四頁補頂部 callout）
 - 使用者跳過：無
 - 共通問題：表格儲存格塞散文（未執行「表格放結論、細節下沉」）——已將該紀律自 wiki-ingest-models G/H 條提升為全站通用規範，寫入 `.claude/rules/wiki-ingest-format.md`「必須修復」表（2026-08-27）
+
+## 2026-08-27 Graphify 試點結案＋節點查詢層上線
+
+- **試點結論**：graphifyy 0.9.50 移除。查詢線 2/3 過（explain/path 贏 grep、query 打平）、分群與分類輔助雙死（contains 壓過 references；英文標題 vs 繁中內文詞彙鴻溝，top-6 命中 3/8）。詳見 `docs/graphify-pilot-plan.md` 試點結果與終局決策。
+- **取而代之**：`scripts/wiki_graph.py`（隨需解析 wikilink 圖，explain/path/sections/cluster，頁＋標題層＋行號＋邊產地標記），衛生規則與 frontmatter 生成器/建置檢查字面共用；煙霧測試 4 條掛入測試套件（313→317）；`wiki/CLAUDE.md` 搜尋策略登記第 6 路；`.obsidian/graph.json` 套用同套衛生規則（濾 log/index/幽靈節點、六領域上色）。
+- **買到的認識論**（雙 agent 辯論收斂）：模板標題＝圖上的過寬詞；log/index＝無鑑別力樞紐；contains 壓過 references 分群必死；跨語言詞彙鴻溝不在圖層解；roll-up 邊界＝未來 embedding chunk 邊界；樣板區（相關實體/參考來源）佔 26% 的邊、屬 see-also 非敘事關聯。
+- **cluster 首跑訊號**：四群語意可辨；4 個 wikilink 孤島人物頁（chris-olah、teresa-carlson、tino-cuellar、tom-blomfield）待記者補語意連結。

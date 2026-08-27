@@ -129,4 +129,9 @@ graphify wiki/ --output data/graph/
 
 **結論：** 三項全過的門檻未達（圈得準 ❌、考題 4 ❌）。**分類線（含分類輔助）確定死亡**——與其說工具不行，是詞彙層匹配跨不過「英文標題 vs 繁中內文」的鴻溝，且分群被 contains 結構支配。**查詢線有真實但窄的增益**：`explain`（雙向引用＋行號）與 `path` 優於 grep，`query` 打平或小輸。
 
-**待決定（使用者裁決）：** (a) 依計畫失敗路線移除；(b) 降格保留為「查詢專用」本地工具（不進 pipeline、不接記者、圖過期時手動重建）。傾向建議：若日常「誰引用 X／兩頁怎麼連」的查詢頻率低，(a) 較乾淨。
+**終局決策（2026-08-27，經雙 agent 節點政策辯論＋使用者裁決）：** graphifyy 移除（`uv tool uninstall graphifyy`、`data/graph/` 已刪）。使用者澄清設計前提——**wiki 選 Obsidian／wikilink 本就是為了讓節點層運作**，節點是產品目標不是可拋棄的衍生品，落點兩個表面：
+
+1. **Agent 查詢層**：新增 `scripts/wiki_graph.py`（隨需解析、零落地檔案），子命令 `explain`／`path`／`sections`／`cluster`，頁＋標題層節點、行號跳讀、邊產地三值標記（正文／錨點／樣板）；衛生規則與 `gen_wiki_frontmatter.py`／`build_web.py` 字面共用（import，不複製）。煙霧測試掛 `src/tests/test_wiki_graph.py`，`wiki/CLAUDE.md` 搜尋策略登記為第 6 路。首跑 `cluster` 即產出訊號：四群語意可辨（工具功能＋模型／商業＋人物／社群／政策安全），並抓出 4 個 wikilink 孤島人物頁（chris-olah、teresa-carlson、tino-cuellar、tom-blomfield）。
+2. **Obsidian Graph 優化**：`.obsidian/graph.json` 套用同一套衛生規則——濾除 log／index／維運層與未解析幽靈節點、六領域依 frontmatter `domain` 屬性上色。
+
+**辯論沉澱的節點衛生學（技術中立，未來 embedding chunking 沿用）：** log/index 樞紐排除；模板標題與純日期標題不是一級節點（上捲到語意祖先＝chunk 邊界）；邊按產地分級（正文＞錨點＞樣板 see-also，26% 的邊屬樣板區）；「參考來源」區指向 news/ 的連結是出處不是關聯，排除；分類路由與別名表凍結（重啟前置條件＝別名欄位進頁面標頭模板）；contains 結構不參與分群。
