@@ -4,10 +4,10 @@ kind: "entity"
 type: "model"
 status: "active（已被取代，次旗艦地位由 Opus 5 接手）"
 domain: "🤖 模型"
-last_updated: "2026-08-10"
-last_news_update: "2026-07-25"
+last_updated: "2026-08-27"
+last_news_update: "2026-08-27"
 status_main: "active"
-days_since_news: 31
+days_since_news: 0
 inbound_links: 12
 attribution_count: 6
 attribution_last: "2026-07-25"
@@ -25,17 +25,19 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 **狀態：** active（已被取代，次旗艦地位由 Opus 5 接手）
 **領域：** 🤖 模型
 **首次出現：** 2026-05-28
-**最後更新：** 2026-08-10
-**最後新聞更新：** 2026-07-25
+**最後更新：** 2026-08-27
+**最後新聞更新：** 2026-08-27
 
-> **最新進展**（2026-07-25）
-> 近兩週流傳的「Opus 5」傳聞已由官方證實：Anthropic 於 2026-07-25 正式發布 [[entities/opus-5|Claude Opus 5]]，官方稱「相同成本下效能大幅提升」，取代 Opus 4.8 成為次旗艦，並成為 Claude Max 新預設模型、Claude Pro 最強模型。Opus 4.8 本身能力不變，但已非 Anthropic 當前最推薦的次旗艦選項，詳見 [[entities/opus-5]] 與下方「下一代模型觀察」。
+> **最新進展**（2026-08-27）
+> GitHub Issue 回報 Claude 4.7、4.8、5.0 與 Fable 日益預設重複修辭套路、難維持連貫散文，即使給明確風格指示仍難改善，跨模型代際共同問題（106 則留言、517 個反應）；完整記錄見 [[entities/opus-5]]。Opus 4.8 本身自 2026-07-25 起已由 [[entities/opus-5|Claude Opus 5]] 取代次旗艦地位（詳見下方「現況」）。
 
 ---
 
 ## 現況
 
-**2026-07-25 最新**：Claude Opus 5 正式發布，取代 Opus 4.8 成為次旗艦、Claude Max 新預設模型、Claude Pro 最強模型（詳見 [[entities/opus-5]]）。近兩週的「Opus 5」傳聞（HackerNoon 07-24、TestingCatalog 07-23 等，見下方「下一代模型觀察」歷史記錄）就此獲得官方證實。Opus 4.8 本身能力與規格未變，仍是 Fable 5 護欄觸發時的 fallback 模型，但已不再是次高階公開模型的首選。
+**2026-08-27 最新**：GitHub Issue #77136 回報 Claude 4.7、4.8、5.0 與 Fable 日益預設輸出重複修辭套路、難維持連貫散文，即使給明確風格指示仍難改善，跨模型代際共同問題，已累積 106 則留言、517 個反應，尚無官方回應。完整記錄與最新社群回饋見 [[entities/opus-5]]「歷史記錄」（GitHub Issue #77136，2026-08-27）。
+
+**2026-07-25**：Claude Opus 5 正式發布，取代 Opus 4.8 成為次旗艦、Claude Max 新預設模型、Claude Pro 最強模型（詳見 [[entities/opus-5]]）。近兩週的「Opus 5」傳聞（HackerNoon 07-24、TestingCatalog 07-23 等，見下方「下一代模型觀察」歷史記錄）就此獲得官方證實。Opus 4.8 本身能力與規格未變，仍是 Fable 5 護欄觸發時的 fallback 模型，但已不再是次高階公開模型的首選。
 
 Claude Opus 4.8 於 2026-05-28 正式發布，同步推出 Dynamic Workflows（Research Preview）與 Fast Mode 降價，是 2026 年以來 Anthropic 發布規模最大的旗艦更新。**2026-06-09 Claude Fable 5 發布後，Opus 4.8 不再是最高階公開模型**，現作為 Fable 5 安全分類器觸發時的 fallback 模型（< 5% session 觸發）——出口管制期間（2026-06-13 至 07-01）Opus 4.8 曾是 Fable 5 全面下線時的唯一替代選項，管制已於 2026-07-01 解除，現行 fallback 角色改由 Fable 5「Defense in Depth」分類器觸發（詳見 [[entities/fable-5]]）。核心指標：SWE-bench Pro 69.2%（1M context window）；Fast Mode 速度為標準的 2.5 倍、費率降至前代的 1/3。
 
@@ -159,6 +161,7 @@ claude.ai 用戶現可調節 Claude 在任務上投入的努力程度，不再�
 
 | 日期 | 事件 |
 |------|------|
+| 2026-08-27 | GitHub Issue #77136 回報 Claude 4.7、4.8、5.0 與 Fable 日益預設重複修辭套路、難維持連貫散文，即使給明確風格指示仍難改善；106 則留言、517 個反應，尚無官方回應。完整記錄見 [[entities/opus-5]]（[GitHub Issue #77136](https://github.com/anthropics/claude-code/issues/77136)，2026-08-27） |
 | 2026-07-25 | **✅ 官方證實：Claude Opus 5 正式發布**，取代 Opus 4.8 成為次旗艦、Claude Max 新預設模型、Claude Pro 最強模型；終結近兩週傳聞（詳見 [[entities/opus-5]]） |
 | 2026-07-24 | **Opus 5 傳聞通過截圖測試，未通過 API 合約測試**：指出流傳截圖看似可信，但缺乏可程式化驗證的 API 層級證據——已由隔日官方發布證實 |
 | 2026-07-23 | **Anthropic 正為潛在 Opus 5 推出做準備**：未提供具體時間或型號細節——已由 07-25 官方發布證實 |

@@ -4301,3 +4301,37 @@ registry 加一組 sync_pair 釘住產出端與歸因端（只改一邊等於白
 - **取而代之**：`scripts/wiki_graph.py`（隨需解析 wikilink 圖，explain/path/sections/cluster，頁＋標題層＋行號＋邊產地標記），衛生規則與 frontmatter 生成器/建置檢查字面共用；煙霧測試 4 條掛入測試套件（313→317）；`wiki/CLAUDE.md` 搜尋策略登記第 6 路；`.obsidian/graph.json` 套用同套衛生規則（濾 log/index/幽靈節點、六領域上色）。
 - **買到的認識論**（雙 agent 辯論收斂）：模板標題＝圖上的過寬詞；log/index＝無鑑別力樞紐；contains 壓過 references 分群必死；跨語言詞彙鴻溝不在圖層解；roll-up 邊界＝未來 embedding chunk 邊界；樣板區（相關實體/參考來源）佔 26% 的邊、屬 see-also 非敘事關聯。
 - **cluster 首跑訊號**：四群語意可辨；4 個 wikilink 孤島人物頁（chris-olah、teresa-carlson、tino-cuellar、tom-blomfield）待記者補語意連結。
+
+---
+
+## 2026-08-27 Ingest
+
+**日報：** `news/2026-08-27.md`（13/13 來源、105 則）｜派工六類記者，全數回報。
+
+**記者回報摘要**
+
+| 類別 | 更新頁面 | 重點 |
+|---|---|---|
+| 模型 | entities/opus-5、opus-4-8、opus-4-7、fable-5 | GitHub Issue #77136（4.7／4.8／5.0／Fable 重複修辭、106 留言 517 反應）記於 opus-5 並在 4.8／fable-5 交叉引用；Opus 4.6 健身房 API 漏洞發現記能力面（標明為前代 4.6）；Fable 5 官方存取文件判定為既有記錄重申，未寫入新事實 |
+| 功能 | entities/claude-code | v2.1.247 `SendFeedback`（進 feature-radar）；AGENTS.md #6235 互動數 335→384 留言／5889→6496 讚；API 中斷 #69415 44→55／82→91；fork subagent 重送對話歷史（Reddit，社群推測）依懸置語法標記；Windows GPU crash 與兩則官方文件判定與 08-19／08-25／08-26 既有記載重複，未重記 |
+| 商業 | topics/anthropic-business、topics/ai-talent-flow | Salesforce／Claudeforce 深化合作＋上修全年營收（Reuters／qz／CNBC 三來源）、CrowdStrike 股價 +13% CEO 歸功 Anthropic、Meta 亦敵亦友（NYT）、Nvidia 傳投資 Hugging Face $12.9B 與黃仁勳「後悔」表態（商業風險表）；Fortune 報導 DeepMind 頂尖人才流失進 ai-talent-flow |
+| 安全政策 | topics/ai-agent-safety | Amazon Kiro 提示注入外洩（Topic Watch，比照 Grok 列產業對照，不進「未修補風險現況」表）、Opus 4.6 自主發現並利用漏洞的安全意涵、HackerNoon 郵件權限最小化收於防護機制建議 |
+| 社群 | topics/community-tech-patterns、topics/community-tech-discussions | Concord（多 agent 互通）、fork subagent 200 萬 token、hooks 強制規則遵循進 patterns；AGENTS.md 標準之爭、本地模型替代潮（LocalLLaMA ×2＋XDA）、#77136 品質退化訊號進 discussions |
+| 人物 | entities/dario-amodei（＋新頁 entities/jensen-huang） | Dario 與 Benioff CNBC 聯訪（僅記逐字稿公開此層事實，未推斷發言內容）；黃仁勳達建頁門檻，「後悔」方向含糊依懸置語法標 ❓ 待查證 |
+
+**主編彙整**
+- `feature-radar.md`：新增 SendFeedback 工具（🔥🔥／⏳ 觀望／正式發布）詳細條目＋全覽表列；升版風險最新版本行更新至 v2.1.247；本週推薦無合格替補，維持三條並補記輪替說明（SendFeedback 未達 🔥🔥🔥🔥；Opus 5 超出 30 天時間閘、放寬 60 天後留任）。**當月對帳：詳細條目 16／全覽表列 16，相等。**
+- `index.md`：新增 `entities/jensen-huang`（person／👤 人物／active（待核實））
+- `data/source_attribution.jsonl`：append 28 筆
+- `data/pending-handoffs.jsonl`：無新增（H-70d575 模型記者判不適用、H-1be92f 安全政策記者判需 web 查證，兩筆均維持開啟；一筆誤登為跨記者交辦者已 void）
+- `anthropic-commitments.md`：無承諾類事件，未動
+- `overview.md`：Salesforce 合作屬既有生態敘事的延伸，非局勢級變化，未動
+
+**品質備註：** 功能 記者回報「August 全覽表 15 列對 16 條詳細條目、缺 1 列」，主編實測為 15／15 相等，該缺口不存在——回報前未實際數過，屬對帳欄自述與實況不符。
+
+**📋 待辦（非單日 ingest 可處理）**
+- `topics/anthropic-business.md`：「戰略合作」「IPO 前瞻」兩表既有列儲存格全數超過今日新訂的 120 字元全站規範，屬整頁結構性瘦身，建議另立 lint 任務
+- `topics/community-tech-discussions.md`：熱門討論表格多數既有列同上，同建議
+
+**📌 待使用者裁示**
+- 上述兩頁的整頁儲存格瘦身工程要不要排？兩頁都是高流量頁，且規範是今天才升為全站通用——是排進下次 `/wiki-lint`，還是另立一次性專案任務。

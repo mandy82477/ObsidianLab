@@ -25,12 +25,13 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 **狀態：** ongoing
 **領域：** 🌐 社群
 **開始日期：** 2026-04-25
-**最後更新：** 2026-08-25
-**最後新聞更新：** 2026-08-25
+**最後更新：** 2026-08-27
+**最後新聞更新：** 2026-08-27
 
-> **最新工作流模式**（2026-08-25）
-> - **螢幕活動記憶**：Show HN ambient-context 以 Accessibility API 讀取螢幕文字寫成純 Markdown 日誌，取代截圖／OCR 做法，供 Claude Code 讀取回答「那天做了什麼」（HN 51 分）。
-> - **零依賴專案大腦**：mindmuxai/brain.md 提供跨 session 保存決策／需求／限制的檔案式記憶層（GitHub Search 504★）。
+> **最新工作流模式**（2026-08-27）
+> - **跨 agent 任務脈絡互通**：Show HN Concord 以 MCP 讓 Claude Code、Codex、Cursor 三種 coding agent 共享任務脈絡，解決平行跑多 agent 時彼此不知情的痛點。
+> - **meta-harness 趨勢第三波**：opencodex、metaharness 加入 08-05／08-09 已觀察到的跨代理統一管理趨勢。
+> - **fork 子代理 token 放大疑慮**：Reddit 回報 fork 子代理疑似每次工具呼叫重送整段對話歷史，四個平行子代理耗用約 200 萬 tokens（推論，未經官方證實）。
 
 ---
 
@@ -151,6 +152,39 @@ Claude Code 的三種多 agent 機制，可對應到 Anthropic《Building Effect
 ## 技術彙整
 
 ### 2026-08
+
+#### Show HN：Concord——讓 Claude Code、Codex、Cursor 三種 coding agent 互通任務脈絡的 MCP（2026-08-27）
+
+- **主線：** 並行規模
+- **核心模式：** 作者觀察到平行跑多個 coding agent 時，各 agent 彼此不知道對方在做什麼，形容「像把 Slack 從團隊裡拿走一樣」；Concord 以 MCP server 的形式讓 Claude Code、Codex、Cursor 三種工具能互通任務脈絡，取代目前各 agent 各自為政、互不知情的預設狀態
+- **與既有模式的關係：** 補上「跨 harness 協作」類別一種新取向——既有的 omnigent（08-05）、loopx＋HarnessFlow（08-09）聚焦讓單一 orchestration 層可替換底層 agent／統一 runtime，本則不取代底層 agent，而是讓多個各自獨立運作的 agent 之間共享任務脈絡，定位更接近「agent 間的 Slack」而非「agent 的統一容器」；縫合 [[topics/community-large-codebase-workflow]] 並行規模主線（多 agent 互踩／互不知情的協調缺口）
+- **來源：** 「Show HN: Concord – let Claude Code, Codex and Cursor talk to each other」— Hacker News；[GitHub](https://github.com/Get-Concord-AI/concord-mcp)
+- **成熟度：** ⏳ 新興（今日首見，單一 Show HN 貼文，尚無星數或採用回饋數據）
+
+#### GitHub Search 第三波 meta-harness／跨代理 orchestration 工具湧現：opencodex、metaharness、claw-orchestrator（2026-08-27）
+
+- **主線：** 並行規模
+- **核心模式：** 延續 08-05 omnigent、08-09 loopx＋HarnessFlow 已記錄的「統一管理 Claude Code、Codex 等多種程式代理」趨勢，今日 GitHub Search 再度湧入同類新專案：opencodex（Codex／Claude Code 通用 provider proxy）、metaharness（可自建品牌化 agent harness 的 meta-harness），以及 claw-orchestrator 的新版本描述（可跑 Claude Code、Codex、Antigravity 等多代理的統一 runtime；claw-orchestrator 本身已於 08-17 以 547★ 收錄於 [[topics/community-tech-tools]] Trust／verification 層）
+- **與既有模式的關係：** 這是同一「meta-harness／跨代理統一管理」趨勢的第三次批次亮相（08-05、08-09、08-27），顯示此非單一事件而是持續性的社群方向；今日條目未附獨立星數或 forks／commit 佐證資料，暫記為趨勢延續觀察，不對個別新工具背書；縫合 [[topics/community-large-codebase-workflow]] 並行規模主線
+- **來源：** GitHub Search（今日批次亮相，未見獨立星數資料）
+- **成熟度：** ⏳ 新興（延續既有趨勢，個別新工具尚無社群採用回饋）
+
+#### Reddit：fork 子代理每次工具呼叫疑似重送整段對話歷史，四個平行子代理耗用約 200 萬 tokens（2026-08-27）
+
+- **主線：** 並行規模、Context 管理
+- **核心模式：** 使用者觀察到 Claude Code 用 "fork" 子代理分工重構程式碼時，四個平行子代理總共耗用約 200 萬 tokens，懷疑根因是每次工具呼叫都重送整段對話歷史，而非只送當次所需的增量內容
+- **與既有模式的關係：** 若機制屬實，將是本頁「並行 Agent 規模化」類別下一種此前未被量化的 token 放大源——與既有的 AgentWatch runtime budget enforcement（預算層攔截）、Context Window 診斷法（07-10，先測量再究責 MCP）互補：本則指向的是子代理 fork 機制本身的重送設計，而非上層工具或 MCP 的 context 消耗；縫合 [[topics/community-large-codebase-workflow]] 並行規模／Context 管理雙主線
+- **訊號強度：** 單一 Reddit 回報，機制推論未經官方證實（推論）；機制／已知問題面已同步交由功能記者處理，本頁僅記錄其對並行 agent token 經濟的影響
+- **來源：** 「"fork" subagents in Claude Code inherit your entire conversation, and resend it on every single tool call?」— Reddit r/ClaudeCode；[原文](https://www.reddit.com/r/ClaudeCode/comments/1vzvixh/fork_subagents_in_claude_code_inherit_your_entire/)
+- **成熟度：** ⏳ 新興（單一使用者觀察，尚無第三方覆核或官方說明）
+
+#### dev.to：以 hooks 強制執行取代 prompt 建議的新案例——規則遵循率變 100%，改用 Haiku 當 builder 不再冒險（2026-08-25）
+
+- **主線：** —
+- **核心模式：** 呼應本頁「Hooks 強制執行取代 CLAUDE.md 規則：從建議層到強制層」核心模式（2026-06-23）的新實例：作者將原本寫在 prompt 裡、可用 grep 驗證的規則改用 Claude Code hooks 強制執行，稱規則遵循率從「機率性」變成 100%；額外效益是遵循率提升後，改用較便宜的 Haiku 模型當 builder 也不再顯得冒險
+- **與既有模式的關係：** 不改動 06-23 已記錄的核心分層邏輯（CLAUDE.md＝偏好、hooks＝強制邊界），本則補上「規則確定性提升後可降級模型」這一具體效益連結，與本頁既有「分層模型路由」類別（讓 Fable 5 物有所值的分層路由、依任務類型分工選用模型）形成呼應——確定性強制執行是便宜模型可用性的前提之一
+- **來源：** 「Stop asking your AI agent to follow rules. Enforce them.」— dev.to／#claudecode（08-25）；[原文](https://dev.to/toffy/stop-asking-your-ai-agent-to-follow-rules-enforce-them-4mlo)
+- **成熟度：** ⚡ 有條件推薦（單一第一手實作案例，機制與 06-23 已收錄的量化佐證一致，尚無獨立第三方覆核本次具體案例的遵循率數字）
 
 #### Show HN：ambient-context——用 Accessibility API 讀取螢幕文字寫成純 Markdown 日誌，取代截圖／OCR 的螢幕記憶（2026-08-25）
 

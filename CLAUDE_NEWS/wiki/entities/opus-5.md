@@ -4,10 +4,10 @@ kind: "entity"
 type: "model"
 status: "active"
 domain: "🤖 模型"
-last_updated: "2026-08-23"
-last_news_update: "2026-08-23"
+last_updated: "2026-08-27"
+last_news_update: "2026-08-27"
 status_main: "active"
-days_since_news: 2
+days_since_news: 0
 inbound_links: 25
 attribution_count: 19
 attribution_last: "2026-08-23"
@@ -25,19 +25,19 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 **狀態：** active
 **領域：** 🤖 模型
 **首次出現：** 2026-07-25
-**最後更新：** 2026-08-26
-**最後新聞更新：** 2026-08-26
+**最後更新：** 2026-08-27
+**最後新聞更新：** 2026-08-27
 
-> **最新動態**（2026-08-14）
-> Anthropic 發布八月風險報告，首度揭露尚未發布的「Model 2」，官方稱目前無釋出更強模型的計畫（對齊疑慮完整脈絡見 [[topics/ai-agent-safety]]）。社群面延續上線以來的分歧回饋：08-13 Reddit 週熱門貼文稱已依官方建議調整、試過各種全域 CLAUDE.md 設定，仍無法讓 Opus 5 的行為符合期待（詳見「歷史記錄」）。
+> **最新動態**（2026-08-27）
+> GitHub Issue 回報 Opus 5（連同 Opus 4.7、4.8、Fable 5）日益出現重複修辭與難以維持連貫散文的問題，即使給出明確風格指示仍難改善，已累積 106 則留言、517 個反應（詳見「現況」）。同日另有 Reddit 使用者提出「不受歡迎的意見」：認為 Opus 5 的表達方式近期已比先前的 4.8 有改善，與此前「幾近令人抓狂」的負評並陳。
 
 ---
 
 ## 現況
 
-**2026-08-14 最新**：Anthropic 發布八月風險報告（部分遮蔽 PDF），內含尚未發布的「Model 2」，Axios 報導 Anthropic 認為 AI 風險上升、**目前無釋出更強 Model 2 的計畫**；報告自陳「相信內部 AI R&D 明顯比沒有 AI 協助時快，但尚未達兩倍（且量測困難）」（[Hacker News](https://www-cdn.anthropic.com/f61d49fa5596956a5dec75fea0e973bf6a6a8378/Redacted%20Risk%20Report%20August%202026%20.pdf)，55 分；[SiliconANGLE](https://siliconangle.com/2026/08/14/anthropic-details-unreleased-model-2-new-alignment-concerns-latest-ai-risk-report/)；[Axios](https://www.axios.com/2026/08/14/anthropic-model-2-ai-risk)，2026-08-14）。對齊疑慮那一面完整脈絡見 [[topics/ai-agent-safety]]，本頁僅記模型陣容面（Model 2 存在但不釋出）。
+**2026-08-27 最新**：GitHub Issue #77136 回報 Claude Opus 5（連同 Opus 4.7、4.8、Fable 5）日益預設輸出重複的修辭套路（rhetorical tics），即使給出明確風格指示仍難以維持連貫散文；此為跨模型代際的共同問題，已累積 106 則留言、517 個反應，尚無官方回應，屬**行為/風格面**觀察，非能力面退步（[GitHub Issue #77136](https://github.com/anthropics/claude-code/issues/77136)，2026-08-27）。同日 Reddit r/ClaudeCode 一則「不受歡迎的意見」貼文稱，使用一段時間後認為 Opus 5 的表達方式較 4.8 有改善——雖仍不算「好聊」，但要求改寫時解釋更清楚；score 恆為 0（RSS 限制，不可信），單一社群回報，與 GitHub Issue 反映的「重複修辭」問題並非直接矛盾（前者談連貫性退步、後者談解釋清晰度提升），並陳記錄不擇一（[Reddit](https://www.reddit.com/r/ClaudeAI/comments/1vzvcc4/unpopular_opinion_opus_5_language_just_became/)，2026-08-27）。此議題呼應上線以來持續的社群觀感分歧，詳見「歷史記錄」。
 
-社群面延續上線以來的分歧回饋：08-13 Reddit 週熱門貼文「Opus 5 is actually almost rage-inducing to use」稱已依官方建議調整、試過各種全域 CLAUDE.md 設定，仍無法讓 Opus 5 的行為符合期待（單一回報，無具體案例細節，[Reddit](https://www.reddit.com/r/ClaudeAI/comments/1vn8ml6/opus_5_is_actually_almost_rageinducing_to_use/)，週熱門，2026-08-13），呼應 08-07（reasoning trace 觀感轉折）與 08-08（WebFetch 捏造數字提醒）已記錄的社群觀感分歧，詳見「歷史記錄」。
+Anthropic 於 2026-08-14 發布八月風險報告（部分遮蔽 PDF），首度揭露尚未發布的「Model 2」，Axios 報導 Anthropic 認為 AI 風險上升、**目前無釋出更強 Model 2 的計畫**（對齊疑慮那一面完整脈絡見 [[topics/ai-agent-safety]]，本頁僅記模型陣容面，詳見「歷史記錄」）。
 
 Anthropic 於 2026-07-25 正式發布 Claude Opus 5，是繼 2026-07-13 起多篇媒體「Opus 5 傳聞」報導後的官方證實版本（詳見 [[entities/opus-4-8]] 「下一代模型觀察」歷史記錄）。官方定位此模型為 thoughtful and proactive，設計目標是**日常可用**且效率優於其他模型，而非單純堆疊評測分數。
 
@@ -109,11 +109,14 @@ Anthropic 於 2026-07-25 正式發布 Claude Opus 5，是繼 2026-07-13 起多�
 - [Reddit：Finally. Could this be the smoking gun that makes Opus less load-bearing?](https://www.reddit.com/r/ClaudeCode/comments/1vt6gf8/finally_could_this_be_the_smoking_gun_that_makes/)（週熱門，2026-08-20，僅標題可用）
 - [[news/2026-07-25]]、[[news/2026-07-26]]、[[news/2026-07-28]]、[[news/2026-07-29]]、[[news/2026-07-30]]、[[news/2026-08-07]]、[[news/2026-08-15]]、[[news/2026-08-23]]
 - [Google News/tech-insider.org：Claude Opus 5 vs Grok 4.6 vs Gemini 3.1 Pro: $19 Gap](https://news.google.com/rss/articles/CBMigwFBVV95cUxNWkVkQU8xS2pPWVFZS2RMemJCQ0JFVnZyZFBia28xMlNlWWNPVFB2eHhxdVhBTWJJRFFmaDlOUU9IcGJUWDlBU0phQUhUUEFGRG51NkttME9tMTl0X1dsV2piR2lsQTZOeURZQV8yRExlTE93cFF2U1hYbUFTZGNRUTIxcw?oc=5)（2026-08-26，僅標題可用）
+- [GitHub Issue #77136：repetitive rhetorical tics across Claude 4.7/4.8/5.0/Fable](https://github.com/anthropics/claude-code/issues/77136)（2026-08-27）
+- [Reddit：Unpopular opinion: Opus 5 language just became better in communication](https://www.reddit.com/r/ClaudeAI/comments/1vzvcc4/unpopular_opinion_opus_5_language_just_became/)（2026-08-27）
 
 ## 歷史記錄
 
 | 日期 | 事件 |
 |------|------|
+| 2026-08-27 | GitHub Issue #77136 回報 Opus 5（連同 Opus 4.7、4.8、Fable 5）日益預設重複修辭套路、難維持連貫散文，即使給明確風格指示仍難改善；106 則留言、517 個反應，尚無官方回應。同日 Reddit「不受歡迎的意見」貼文稱 Opus 5 表達方式較 4.8 有改善（要求改寫時解釋更清楚），與前述問題並非直接矛盾，並陳記錄（[GitHub Issue #77136](https://github.com/anthropics/claude-code/issues/77136)；[Reddit](https://www.reddit.com/r/ClaudeAI/comments/1vzvcc4/unpopular_opinion_opus_5_language_just_became/)，2026-08-27） |
 | 2026-08-26 | tech-insider.org（經 Google News 轉載）發布模板化定價比較標題《Claude Opus 5 vs Grok 4.6 vs Gemini 3.1 Pro: $19 Gap [2026]》，比較 Opus 5 與競品 Grok 4.6、Gemini 3.1 Pro 定價；同站同日另有《Claude Fable 5 vs Opus 5 vs GPT-5.6 Sol: $1,125 Gap [2026]》，記於 [[entities/fable-5]]。本則僅標題可用、無正文，「$19 Gap」具體數字未經查證，不採信為事實；如經查證應留給 [[entities/pricing]] 記錄。❓ **待查證**（標 2026-08-26｜查 tech-insider.org、$19 Gap｜複 2026-09-09）｜**Opus 5 vs Grok 4.6 vs Gemini 3.1 Pro 的 $19 差距計算基準**：僅標題可用，未見正文說明計算方式（per-token／月費等）（[Google News/tech-insider.org](https://news.google.com/rss/articles/CBMigwFBVV95cUxNWkVkQU8xS2pPWVFZS2RMemJCQ0JFVnZyZFBia28xMlNlWWNPVFB2eHhxdVhBTWJJRFFmaDlOUU9IcGJUWDlBU0phQUhUUEFGRG51NkttME9tMTl0X1dsV2piR2lsQTZOeURZQV8yRExlTE93cFF2U1hYbUFTZGNRUTIxcw?oc=5)，2026-08-26） |
 | 2026-08-20 | Reddit r/ClaudeCode 週熱門貼文標題稱「終於出現讓 Opus 不再是工作流『必要依賴』的證據」，惟原文僅有圖片預覽卡片，無法取得貼文正文或具體佐證內容。與同日社群另一則熱議（Claude Code effort 數值顯示方式測試，官方已澄清係測試 API serving 設定改變數值顯示方式、非實際降低使用者選擇的 effort 等級）為不同議題，不應混為一談。呼應 08-13、08-08、08-07 已記錄的社群觀感分歧，惟本則因原文不可讀，暫列觀察、不代入結論。❓ **待查證**（標 2026-08-23｜查 load-bearing、smoking gun｜複 2026-09-06）｜**貼文具體證據內容**：僅標題可用，Opus「不再是必要依賴」的具體證據或案例未見報導（[Reddit](https://www.reddit.com/r/ClaudeCode/comments/1vt6gf8/finally_could_this_be_the_smoking_gun_that_makes/)，週熱門，2026-08-20） |
 | 2026-08-14 | Anthropic 發布八月風險報告（部分遮蔽 PDF），首度揭露尚未發布的「Model 2」，Axios 報導官方稱目前無釋出更強模型的計畫；報告自陳內部 AI R&D 速度尚未達到「無 AI 協助情況下的兩倍」（自陳量測困難）。對齊疑慮面完整脈絡見安全政策記者對應頁面 [[topics/ai-agent-safety]]，本頁僅記模型陣容面（[Hacker News](https://www-cdn.anthropic.com/f61d49fa5596956a5dec75fea0e973bf6a6a8378/Redacted%20Risk%20Report%20August%202026%20.pdf)，55 分；[SiliconANGLE](https://siliconangle.com/2026/08/14/anthropic-details-unreleased-model-2-new-alignment-concerns-latest-ai-risk-report/)；[Axios](https://www.axios.com/2026/08/14/anthropic-model-2-ai-risk)，2026-08-14） |

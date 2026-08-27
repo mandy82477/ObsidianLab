@@ -4,8 +4,8 @@ kind: "entity"
 type: "person"
 status: "active"
 domain: "👤 人物"
-last_updated: "2026-08-25"
-last_news_update: "2026-08-25"
+last_updated: "2026-08-27"
+last_news_update: "2026-08-27"
 status_main: "active"
 days_since_news: 0
 inbound_links: 12
@@ -26,7 +26,7 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 **領域：** 👤 人物
 **首次出現：** 2026-04-25
 **最後更新：** 2026-08-27
-**最後新聞更新：** 2026-08-25
+**最後新聞更新：** 2026-08-27
 
 > ❓ **待查證**（標 2026-08-25｜查 airline industry、marketing and safety）｜**Fortune 評論比較 Anthropic 安全論述與航空業經驗**（2026-08-24 報導）：Fortune 發表評論文章〈What Anthropic's Dario Amodei can learn from the airline industry's lesson on marketing and safety〉，以航空業在行銷與安全議題上的經驗為借鏡，討論 Dario Amodei 可以從中學到什麼；僅標題可用，具體論點與建議內容未見報導。
 
@@ -46,6 +46,7 @@ Dario Amodei 是 Anthropic 共同創辦人兼執行長（CEO），與 Chris Olah
 
 | 日期 | 立場 | 來源 |
 |------|------|------|
+| 2026-08-26 | 與 Salesforce 董事長暨執行長 Marc Benioff 共同接受 CNBC Jim Cramer 專訪，逐字稿公開（具體發言內容未見節錄，合作面詳見 [[topics/anthropic-business]]） | CNBC |
 | 2026-08-16 | 回應投資人 Gavin Baker 批評，稱 AI 大眾反彈「根本上是一場信任危機」；同日稱唯有交出具體科學突破（如治癒癌症）才能扭轉大眾對 AI 的不信任 | Hacker News（經 TechCrunch、Business Insider）、Google News（Business Insider）、Simon Willison Blog |
 | 2026-08-03 | 公開表態憂心部分員工是為金錢而非公司使命加入 Anthropic，引發社群兩極討論 ❓ 待查證 ⟨Q-01⟩ | Hacker News（經 Twitter/Techmeme）、The Next Web |
 | 2026-07-28 | 部落格聲明「Our position on open-weights models」：澄清 Anthropic 從未主張禁止開源權重模型，呼籲加強對中國晶片出口管制 | Anthropic Blog |
@@ -81,6 +82,7 @@ Dario Amodei 是 Anthropic 共同創辦人兼執行長（CEO），與 Chris Olah
 
 ## 參考來源
 
+- [CNBC（2026-08-26）](https://www.cnbc.com/2026/08/26/cnbc-exclusive-transcript-salesforce-chair-ceo-marc-benioff-and-anthropic-co-founder-ceo-dario-amodei-speak-with-cnbcs-jim-cramer-on-closing-bell-overtime-today.html)：與 Salesforce 董事長暨執行長 Marc Benioff 共同接受 Jim Cramer 專訪，完整逐字稿公開（Google News/CNBC）
 - [Google News（2026-08-22）→ Ynetnews](https://news.google.com/rss/articles/CBMiYkFVX3lxTE8yYWFtYks5QjdhOVFtOEpxV3RiaWxweW1ReGdtR2RqVzRYUVJLeFpoOHZfTWcxd3NIMU1kUkdXazdOMGczWjVRemg2elVXN19ORjV6cmJyYVR3b1RUT3RWM3p3?oc=5)：「Meet Cami Clark, the 'first lady of AI' shaping Anthropic and Dario Amodei behind the scenes」，第三家媒體同題跟進的人物側寫，查證狀態見下方歷史記錄
 - Hacker News（26分，2026-08-16）→ Business Insider：「Anthropic CEO says the way for AI to win over the public is to cure cancer」，Dario Amodei 在 X 上稱唯有具體科學突破才能扭轉大眾對 AI 的不信任
 - Hacker News（12分，source_count=2，2026-08-16）→ TechCrunch：「Anthropic CEO says AI backlash is 'fundamentally a crisis of trust'」，回應投資人 Gavin Baker 於 All-In podcast 及 X 上的批評
@@ -106,6 +108,7 @@ Dario Amodei 是 Anthropic 共同創辦人兼執行長（CEO），與 Chris Olah
 
 ## 歷史記錄
 
+- 2026-08-26：與 Salesforce 董事長暨執行長 Marc Benioff 共同接受 CNBC《Closing Bell: Overtime》主持人 Jim Cramer 專訪，CNBC 公開完整逐字稿；日報僅載逐字稿已公開一事，未節錄任何具體發言內容，合作動態詳見 [[topics/anthropic-business]]（來源：Google News／CNBC）
 - 2026-08-24：Fortune 發表評論文章〈What Anthropic's Dario Amodei can learn from the airline industry's lesson on marketing and safety〉，以航空業在行銷與安全議題上的經驗為借鏡討論 Dario Amodei 可以從中學到什麼；僅標題可用，具體論點與建議內容未見報導，查證狀態見頁首標記（來源：Google News／Fortune）
 - 2026-08-22：Ynetnews 發布人物側寫報導〈Meet Cami Clark, the 'first lady of AI' shaping Anthropic and Dario Amodei behind the scenes〉，第三家媒體同題跟進，重複「AI 界第一夫人」定性與「幕後影響 Anthropic 與 Dario Amodei」描述；原文僅標題層級資訊可用，具體職稱與事件仍未見報導，併入下方既有待查證追蹤（來源：Google News／Ynetnews）
 - 2026-08-18：The Week 發布人物側寫報導〈Cami Clark: the Anthropic CEO's wife and 'first lady' of AI〉，首次在標題層級公開 Dario Amodei 妻子姓名為「Cami Clark」，稱其為 AI 界的「第一夫人」；報導內容仍停留在標題層級，具體影響力細節未展開，併入下方既有待查證追蹤（來源：Google News／The Week）

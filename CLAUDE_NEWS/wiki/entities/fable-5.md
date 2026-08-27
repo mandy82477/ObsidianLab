@@ -4,8 +4,8 @@ kind: "entity"
 type: "model"
 status: "active（正式發布；出口管制已解除，2026-07-01 起全球恢復存取；免費期已於 2026-07-19 到期，Max/Team 後續存取政策已於 2026-08-08 經官方 Help Center 查證收斂，見 [[entities/pricing]]）"
 domain: "🤖 模型"
-last_updated: "2026-08-22"
-last_news_update: "2026-08-19"
+last_updated: "2026-08-27"
+last_news_update: "2026-08-27"
 status_main: "active"
 days_since_news: 6
 inbound_links: 30
@@ -25,19 +25,19 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 **狀態：** active（正式發布；出口管制已解除，2026-07-01 起全球恢復存取；免費期已於 2026-07-19 到期，Max/Team 後續存取政策已於 2026-08-08 經官方 Help Center 查證收斂，見 [[entities/pricing]]）
 **領域：** 🤖 模型
 **首次出現：** 2026-06-09
-**最後更新：** 2026-08-26
-**最後新聞更新：** 2026-08-26
+**最後更新：** 2026-08-27
+**最後新聞更新：** 2026-08-27
 
-> **最新進展**（2026-08-19）
-> 官方說明文件更新〈Claude Fable 5 on your plan〉，重申先前促銷已於 **2026-07-19 23:59:59 PT**（非早期公告的 7/7）到期，到期後依方案分流計費，與 2026-08-08 查證結論一致，詳見「現況」。另有單一來源（08-18）報導稱 Fable 5「幾乎無人使用」，僅標題可用、尚待查證，暫不與計費變化做因果推論。
+> **最新進展**（2026-08-27）
+> GitHub Issue 回報 Fable 5（連同 Opus 4.7、4.8、5.0）日益預設重複修辭套路、難維持連貫散文，即使給明確風格指示仍難改善，跨模型代際共同問題（106 則留言、517 個反應）；完整記錄見 [[entities/opus-5]]。存取方式方面，官方說明文件重申 08-19 已載明的分流規則未變（詳見「現況」）。
 
 ---
 
 ## 現況
 
-**2026-08-19 最新**：Anthropic 官方說明文件更新〈Claude Fable 5 on your plan〉，明載先前促銷（允許用戶最多以週訂閱額度 50% 免費使用 Fable 5）已於 **2026-07-19 23:59:59 PT** 結束；到期後依方案分流：Max 方案、Team／舊制（legacy seat-based）Enterprise 的 premium seat → Fable 5 為方案標準內含項目，Pro 方案、Team／舊制 Enterprise 的 standard seat → 改以 pay-as-you-go usage credits 計費，目前所有付費方案（Pro/Max/Team/Enterprise）皆可使用 Fable 5。此分流與 2026-08-08 官方 Help Center 查證結論一致（非早期公告的 7/7 節點），計費規則細節見 [[entities/pricing]]（Official Docs，2026-08-19）。同日另有單一來源（analyticsindiamag.com，經 Google News 轉載，2026-08-18）以標題《Almost Nobody Is Using Anthropic's Fable 5》報導 Fable 5 採用率偏低，RSS 摘要僅標題可用、無正文可查證具體數據或統計方法，暫列待查證；原文未提供與促銷/配額政策變化的因果證據，本頁不做因果推論。
+**2026-08-27 最新**：GitHub Issue #77136 回報 Claude 4.7、4.8、5.0 與 Fable 日益預設輸出重複修辭套路、難維持連貫散文，即使給明確風格指示仍難改善，跨模型代際共同問題，已累積 106 則留言、517 個反應，尚無官方回應；完整記錄與最新社群回饋見 [[entities/opus-5]]「歷史記錄」（[GitHub Issue #77136](https://github.com/anthropics/claude-code/issues/77136)，2026-08-27）。同日官方說明文件〈Claude Fable 5 on your plan〉重申存取依方案分流（Max 方案優先），與 08-19 已查證記錄的規則一致，無新資訊，不另做因果推論。
 
-**2026-08-07**：Anthropic 官方部落格宣布更新 Fable 5 的生物安全防護（biology safeguards），測試顯示各產品面「生物相關降級」（誤判觸發 fallback 至 Opus 4.8）情形減少約 85%；官方表示日常健康／教育類問題（如判讀檢驗報告、理解症狀、學習生物學）預期更少被誤判降級，醫療專業人員也能在臨床任務上獲得 Fable 5 更多協助（[Anthropic Blog](https://www.anthropic.com/news/improving-fable-5-s-biology-safeguards)，2026-08-07）。
+**2026-08-19**：Anthropic 官方說明文件更新〈Claude Fable 5 on your plan〉，明載先前促銷（允許用戶最多以週訂閱額度 50% 免費使用 Fable 5）已於 **2026-07-19 23:59:59 PT** 結束；到期後依方案分流：Max 方案、Team／舊制（legacy seat-based）Enterprise 的 premium seat → Fable 5 為方案標準內含項目，Pro 方案、Team／舊制 Enterprise 的 standard seat → 改以 pay-as-you-go usage credits 計費，目前所有付費方案（Pro/Max/Team/Enterprise）皆可使用 Fable 5。此分流與 2026-08-08 官方 Help Center 查證結論一致（非早期公告的 7/7 節點），計費規則細節見 [[entities/pricing]]（Official Docs，2026-08-19）。同日另有單一來源（analyticsindiamag.com，經 Google News 轉載，2026-08-18）以標題《Almost Nobody Is Using Anthropic's Fable 5》報導 Fable 5 採用率偏低，RSS 摘要僅標題可用、無正文可查證具體數據或統計方法，暫列待查證；原文未提供與促銷/配額政策變化的因果證據，本頁不做因果推論。
 
 Claude Fable 5 是 Anthropic 於 2026-06-09 發布的旗艦模型，為**史上首款向大眾開放的 Mythos 級模型**。Fable 5 與 Claude Mythos 5 共用相同的模型權重，差異在於 Fable 5 前置安全分類器——觸發時 fallback 至 Claude Opus 4.8（Anthropic 稱不到 5% 的 session 受影響）。核心定位：任務越複雜越長期，Fable 5 的優勢越明顯；在軟體工程、知識工作、視覺、科學研究等幾乎所有 benchmark 達到 SOTA。
 
@@ -175,6 +175,7 @@ claude --model claude-fable-5-20260609
 - [System Card PDF](https://www-cdn.anthropic.com/d00db56fa754a1b115b6dd7cb2e3c342ee809620.pdf)
 - [資料保留政策](https://support.claude.com/en/articles/15425996-data-retention-practices-for-mythos-class-models)
 - [[news/2026-08-11]]
+- [GitHub Issue #77136：跨模型代際重複修辭套路問題](https://github.com/anthropics/claude-code/issues/77136)（2026-08-27）
 - [[news/2026-08-15]]
 - [[news/2026-08-19]]
 - [Google News/Futurism：Nobody Wants Anthropic's Best AI Model Anymore](https://news.google.com/rss/articles/CBMingFBVV95cUxQcktnOVJUTlRkVG53NHl6ZlR4RFhTekx1ZlQ4cmRRZVROMG5vZzZNR0cwandpVlhfM3MzQnhNTEZDX0pQR1dfOVF2SnhJcmkwYWtaZXJGZF9LVlBKQ1cxRHdLeHFuZzlBR2FpT3JEb05QUTJGQ3JUQzlYeGlrRlJrQkNrdzFMR1F3WThfdW5wb1RwUkI4a2d0a2RWSWxKZw?oc=5)（2026-08-26，僅標題可用）
@@ -183,6 +184,11 @@ claude --model claude-fable-5-20260609
 ## 歷史記錄
 
 ### 解禁後（2026-07-01 起）
+
+#### 2026-08-27
+**GitHub Issue #77136：跨模型代際重複修辭套路問題**：開發者回報 Claude 4.7、4.8、5.0 與 Fable 日益出現重複修辭、難以維持連貫散文的問題，即使給出明確風格指示仍難改善；已累積 106 則留言、517 個反應，尚無官方回應。此為**跨模型代際的共同問題**（非 Fable 5 獨有），完整記錄見 [[entities/opus-5]]「歷史記錄」（[GitHub Issue #77136](https://github.com/anthropics/claude-code/issues/77136)，2026-08-27）。
+
+同日官方說明文件〈Claude Fable 5 on your plan〉重申存取依方案分流（Max 方案優先存取），與 08-19 已查證記錄的規則一致，無新資訊，不重複記錄計費細節（詳見 [[entities/pricing]]）。
 
 #### 2026-08-26
 **Futurism：企業轉向更便宜替代模型、Anthropic 旗艦採用意願下滑（僅標題可用，待查證）**：Google News 轉載 Futurism 標題〈Nobody Wants Anthropic's Best AI Model Anymore Now That There Are Way Cheaper Alternatives〉；RSS 僅提供標題與轉址連結，無正文可查證具體採用數據、樣本或方法論。與上方 08-18 analyticsindiamag.com〈Almost Nobody Is Using Anthropic's Fable 5〉標題主題相近，惟來源、標題涵蓋範圍（泛稱「最強模型」vs 明確指名 Fable 5）皆不完全相同，暫不合併視為同一事實的兩次獨立確認，亦不做因果推論。❓ **待查證**（標 2026-08-26｜查 Futurism、cheaper alternatives｜複 2026-09-09）｜**企業轉向更便宜替代方案的具體佐證**：僅標題可用，無採用數據、案例或方法論佐證（[Google News/Futurism](https://news.google.com/rss/articles/CBMingFBVV95cUxQcktnOVJUTlRkVG53NHl6ZlR4RFhTekx1ZlQ4cmRRZVROMG5vZzZNR0cwandpVlhfM3MzQnhNTEZDX0pQR1dfOVF2SnhJcmkwYWtaZXJGZF9LVlBKQ1cxRHdLeHFuZzlBR2FpT3JEb05QUTJGQ3JUQzlYeGlrRlJrQkNrdzFMR1F3WThfdW5wb1RwUkI4a2d0a2RWSWxKZw?oc=5)，2026-08-26）

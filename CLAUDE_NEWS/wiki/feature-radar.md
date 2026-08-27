@@ -4,7 +4,7 @@
 僅收錄官方 changelog、release note 或官方公告來源；社群工具見 [[topics/community-tech-tools]]。
 每日更新：新增功能、更新熱度、補充社群回饋。
 
-**最後更新：** 2026-08-26
+**最後更新：** 2026-08-27
 
 ---
 
@@ -14,13 +14,13 @@
 - **Claude Opus 5**（熱度 🔥🔥🔥🔥🔥）：2026-07-25 正式發布，編碼與知識工作評測逼近 Fable 5、官方稱定價為其一半，現為 Claude Max 新預設模型、Claude Pro 最強模型，適合日常 agentic 使用與知識工作任務
 - **Claude Code 跨 session 訊息互通**（熱度 🔥🔥🔥🔥）：2026-08-08 官方文件確認（需 v2.1.224+、macOS/Linux），用 `ListAgents`+`SendMessage` 跨 session 傳訊；已在平行跑多個 session 的使用者可直接試用
 
-> 本週輪替：2026-08-15（Auto 模式狀態由「尚未生效」轉為已生效並升至首位，推薦文字改為生效後的行動；三條候選皆在 30 天時間閘內，無更新且達標的替補，名單不變）。
+> 本週無新達標功能，維持上週推薦（最後輪替：2026-08-15）。今日新增的 SendFeedback 工具熱度 🔥🔥，未達 🔥🔥🔥🔥 門檻；Claude Opus 5 已超出 30 天時間閘，依規則放寬至 60 天後仍達標而留任。
 
 ---
 
 ## ⚠️ 升版風險
 
-**最新版本：** v2.1.246（2026-08-26，新增啟動警告：Bash 允許規則在子指令前使用萬用字元［如 `Bash(git * main)`］時，此寫法也會意外比對插入在子指令前的選項參數；屬安全提示而非新指令/旗標，純提醒非 breaking change）。上一版 v2.1.245（2026-08-25，修復搭載 glibc 2.44 的 Linux 發行版［如 Arch Linux、CachyOS、Fedora Rawhide］啟動當機問題，純 bug fix，非 breaking change）。再上一筆有具體異動記錄的版本為 v2.1.241（2026-08-23，release notes 僅載明「Bug fixes and reliability improvements」，無具體異動項目，純可靠性修正，非 breaking change；v2.1.242–244 無日報報導，不代表未發布）。再前一版 v2.1.239（2026-08-21，`/cost`／狀態列／`--max-budget-usd` 成本估算計入資料常駐工作區 1.1 倍純美國推理附加費；屬既有成本顯示機制的計算口徑調整，非 breaking change）。再前一版 v2.1.238（2026-08-20）新增 `keybindingFlavor` 設定；再前一版 v2.1.237（同日）修復 LLM gateway／自訂 base URL session 的 prompt caching 失效問題，並新增內建「Concise」輸出風格。最後一次重大 breaking change 仍為 v2.1.212／v2.1.215（見下表）；另有一項於 8/14 已生效的 breaking change（auto 模式預設化，已對 Pro/Max/Team 上線，詳見 [[entities/claude-code]] 現況）。⚠️ **另注意**：anthropic-sdk-python 同日發布 v1.0.0，含獨立於 Claude Code CLI 之外的 breaking change（client 升級至 httpx2，官方未提供遷移時程），影響對象為以該 SDK 建置的整合程式碼，非 CLI 升版本身，詳見 [[entities/claude-code]] 現況。
+**最新版本：** v2.1.247（2026-08-26 發布，新增 `SendFeedback` 工具：session 出錯時 Claude 可草擬回報供使用者於 `/feedback` 檢視後送出，可用 `feedbackDisabled` 關閉；屬新增功能，非 breaking change）。上一版 v2.1.246（2026-08-26，新增啟動警告：Bash 允許規則在子指令前使用萬用字元［如 `Bash(git * main)`］時，此寫法也會意外比對插入在子指令前的選項參數；屬安全提示而非新指令/旗標，純提醒非 breaking change）。上一版 v2.1.245（2026-08-25，修復搭載 glibc 2.44 的 Linux 發行版［如 Arch Linux、CachyOS、Fedora Rawhide］啟動當機問題，純 bug fix，非 breaking change）。再上一筆有具體異動記錄的版本為 v2.1.241（2026-08-23，release notes 僅載明「Bug fixes and reliability improvements」，無具體異動項目，純可靠性修正，非 breaking change；v2.1.242–244 無日報報導，不代表未發布）。再前一版 v2.1.239（2026-08-21，`/cost`／狀態列／`--max-budget-usd` 成本估算計入資料常駐工作區 1.1 倍純美國推理附加費；屬既有成本顯示機制的計算口徑調整，非 breaking change）。再前一版 v2.1.238（2026-08-20）新增 `keybindingFlavor` 設定；再前一版 v2.1.237（同日）修復 LLM gateway／自訂 base URL session 的 prompt caching 失效問題，並新增內建「Concise」輸出風格。最後一次重大 breaking change 仍為 v2.1.212／v2.1.215（見下表）；另有一項於 8/14 已生效的 breaking change（auto 模式預設化，已對 Pro/Max/Team 上線，詳見 [[entities/claude-code]] 現況）。⚠️ **另注意**：anthropic-sdk-python 同日發布 v1.0.0，含獨立於 Claude Code CLI 之外的 breaking change（client 升級至 httpx2，官方未提供遷移時程），影響對象為以該 SDK 建置的整合程式碼，非 CLI 升版本身，詳見 [[entities/claude-code]] 現況。
 
 | 風險 | 嚴重度 | 說明 |
 |------|--------|------|
@@ -63,6 +63,7 @@
 
 | 功能 | 發布日期 | 熱度 | 試用價值 | 狀態 |
 |------|----------|------|----------|------|
+| **SendFeedback 工具**（v2.1.247，session 出錯時 Claude 草擬回報，經 `/feedback` 檢視後送出；可用 `feedbackDisabled` 關閉） | 2026-08-27 | 🔥🔥 | ⏳ 觀望 | 正式發布 |
 | **Cowork 記憶功能整合**（設定 > Memory > Topics，跨 web/App/Cowork 共用記憶，敏感主題預設關閉） | 2026-08-25 | 🔥🔥 | ⚡ 有條件推薦 | 正式發布 |
 | **anthropic-sdk-python 1.0.0**（httpx2 Breaking Change，⚠️ 無過渡期） | 2026-08-20 | 🔥🔥🔥 | ⚡ 有條件推薦 | 正式發布 |
 | **keybindingFlavor readline 模式**（v2.1.238，可選提示列刪除鍵行為） | 2026-08-20 | 🔥🔥 | ⚡ 有條件推薦 | 正式發布 |
@@ -151,6 +152,26 @@
 ---
 
 ## 🆕 最新功能（2026-08）
+
+### SendFeedback 工具
+**發布：** 2026-08-27（v2.1.247） | **熱度：** 🔥🔥 | **試用價值：** ⏳ 觀望 | **狀態：** 正式發布
+
+**是什麼：** session 中出錯時，Claude 可草擬一份問題回報，使用者於 `/feedback` 檢視後決定是否送出；可用 `feedbackDisabled` 設定關閉。
+
+**為何熱：** 剛隨 v2.1.247 發布，目前僅見於 GitHub release note，尚無社群討論或使用回饋。
+
+**現在要試嗎：** 預設即在，不需主動啟用；回報內容含 session 脈絡，不希望 session 內容外送者可先設 `feedbackDisabled` 關閉。
+
+**快速上手：**
+```
+# 出錯後 Claude 會主動草擬回報，於終端機輸入檢視並決定是否送出
+/feedback
+
+# 關閉此功能（設定檔）
+"feedbackDisabled": true
+```
+
+**注意事項：** 剛發布，尚無已知限制或社群回饋可參考。送出前務必檢視草稿內容——回報由 Claude 起草，可能夾帶 session 中的專案細節。
 
 ### Cowork 記憶功能整合
 **發布：** 2026-08-25（官方 Release Notes 標註日期） | **熱度：** 🔥🔥 | **試用價值：** ⚡ 有條件推薦 | **狀態：** 正式發布（部分方案預設開啟）
