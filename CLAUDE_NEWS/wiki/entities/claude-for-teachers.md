@@ -25,8 +25,11 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 **狀態：** active
 **領域：** 🛠️ 工具/功能
 **首次出現：** 2026-07-15
-**最後更新：** 2026-07-18
+**最後更新：** 2026-08-27
 **最後新聞更新：** 2026-07-18
+
+> **最新動態**（2026-07-17）
+> Education Week 報導部分評論者對「Claude for Teachers」表達疑慮（具體疑慮內容原文未展開）；同日 WDET 101.9 FM 報導 Anthropic 將此教師版 AI 產品導入底特律課堂。
 
 ---
 

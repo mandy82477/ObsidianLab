@@ -4287,3 +4287,10 @@ registry 加一組 sync_pair 釘住產出端與歸因端（只改一邊等於白
 - **未解決**：說明中心／官方 X 的定價變動仍無任何自動偵測；`.claude/rules/wiki-ingest-commercial.md` 已載明「記者無 web 工具、遇此回報主編查證」，但**沒有任何機制會定期主動查**——這是預言了故障卻沒裝偵測器。建議 weekly-review 評估加一道「⏰ 倒數中條目在到期前 7 天強制官方複查」的閘
 
 **品質備註：** 本次為主編層查證（`/wiki-lint` 5c 性質），非每日 ingest；所有更動頁面只動「最後更新」，不動「最後新聞更新」。
+
+## 2026-08-27 可讀性掃描
+
+- 掃描頁數：55（✅ 41 / ⚠️ 11 / ❌ 3）
+- 已修復：topics/anthropic-government-policy（目前局勢表兩儲存格下沉）、topics/enterprise-tool-tracker（摘要文字牆改分組條列）、topics/official-community-gap（缺口分析欄 10 列短語化＋⟨G-01⟩～⟨G-10⟩ 細節下沉）、entities/claude-code（版本動態條列化＋待查證獨立區）、entities/dario-amodei（頂部 4 則懸置 callout 收斂為單一最新動態，其餘下沉歷史記錄）、entities/claude-for-teachers、entities/claude-science、entities/claude-tag、entities/opencode（四頁補頂部 callout）
+- 使用者跳過：無
+- 共通問題：表格儲存格塞散文（未執行「表格放結論、細節下沉」）——已將該紀律自 wiki-ingest-models G/H 條提升為全站通用規範，寫入 `.claude/rules/wiki-ingest-format.md`「必須修復」表（2026-08-27）

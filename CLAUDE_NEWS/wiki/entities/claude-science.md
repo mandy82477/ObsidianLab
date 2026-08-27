@@ -25,8 +25,11 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 **狀態：** active
 **領域：** 🛠️ 工具/功能
 **首次出現：** 2026-07-01
-**最後更新：** 2026-08-17
+**最後更新：** 2026-08-27
 **最後新聞更新：** 2026-08-17
+
+> **最新動態**（2026-08-17）
+> GitHub Search 發現官方 repo `anthropics/life-sciences`（576★），描述為「Claude for Life Sciences Launch」使用的 Claude Code Marketplace；與「Claude Science」品牌關係待後續報導釐清。
 
 ---
 
