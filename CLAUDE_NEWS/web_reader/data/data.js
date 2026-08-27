@@ -737,7 +737,7 @@ window.WIKI_DATA = {
       "lastNewsUpdate": "2026-08-27",
       "updateFreq": "",
       "summary": "追蹤 Claude Code 社群中活躍的概念辯論、設計哲學、實證研究與技術反思。與 community-tech-patterns 追蹤具體工具和工作流不同，本頁聚焦思想碰撞：什麼哲學正在成形、什麼假設受到挑戰、什麼共識正在收斂。頁面結構：**🔥 本週熱點**（當前最熱的持續議題）→ **🌊 長期議題**（主題彙整）…",
-      "latestHeadline": "追蹤 Claude Code 社群中活躍的概念辯論、設計哲學、實證研究與技術反思。與 community-tech-patterns 追蹤具體工具和工作流不同，本頁聚焦思想碰撞：什麼哲學正在成形、什麼假設受到挑戰、什麼共識正在收斂。頁面結構：🔥 本週熱點（當前最熱的持續議題）→ 🌊 長期議題（主題彙整）→ 熱門討論記錄"
+      "latestHeadline": "Cache miss 12.5 倍成本首次量化（Reddit）；686 skills 向量索引實測 progressive disclosure 機制（Reddit）；JSONL session 知識化討論（57MB/1026 sessions，Reddit + CC-Wiki 工具）"
     },
     {
       "id": "community-tech-patterns",
