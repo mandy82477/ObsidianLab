@@ -335,3 +335,10 @@
 [cloud daily-news-pipeline-cloud STARTED 2026-08-27T13:08:00Z]
 [Thu 2026/08/27 13:08:55.00] === Agent pipeline start (2026-08-27) ===
 [Thu 2026/08/27 13:08:55.00] ABORTED: gathered_items.json date=2026-08-26 items=86，非目標日期的新鮮資料
+[Thu 2026/08/27 23:06:38.58] === Agent pipeline start (2026-08-27) ===
+[Thu 2026/08/27 23:06:38.58] Aggregator OK
+[Thu 2026/08/27 23:06:38.58] Wiki ingest OK
+[Thu 2026/08/27 23:06:38.58] 測試全綠 - web build 放行
+[Thu 2026/08/27 23:06:38.58] Building web reader...
+[Thu 2026/08/27 23:06:38.58] Single push done (news + wiki + web)
+[Thu 2026/08/27 23:06:38.58] === Pipeline complete (agent) ===
