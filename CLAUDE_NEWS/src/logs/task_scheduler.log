@@ -348,3 +348,17 @@
 [Fri 2026/08/28 13:07:39.00 UTC] Step 0b OK - no idempotency conflict
 [Fri 2026/08/28 13:07:39.00 UTC] ABORTED: gathered_items.json date=2026-08-27 items=70，非目標日期的新鮮資料（GitHub Actions daily-gather 尚未產出 2026-08-28 資料，cron 0 10 * * * UTC 已過 3+ 小時緩衝仍未見新資料）
 [Fri 2026/08/28 13:07:39.00 UTC] === Pipeline aborted (agent) ===
+[Sat 2026/08/29 01:16:37.00] === Agent pipeline start (2026-08-29) ===
+[Sat 2026/08/29 01:16:37.00] WARN: yesterday digest missing (2026-08-28) - GitHub Actions 未替 08-28 建 run，該日未抓料，無法補建；內容由本日 26 小時視窗涵蓋（已知且已裁決）
+[Sat 2026/08/29 01:16:37.00] Aggregator OK - 13/13 來源、90 則；news/2026-08-29.md 已生成並 commit（38b1d5ea、6e2fa873）
+[Sat 2026/08/29 01:16:37.00] Wiki ingest OK - 六類記者全數回報完成；主編已彙整 feature-radar（SDK files／skills 命名空間轉正 GA，當月對帳 17/17）、anthropic-commitments（新增 Fable 5 承諾列，monitoring→ongoing）、index.md、log.md、source_attribution.jsonl（36 筆）、pending-handoffs.jsonl（close 1、新增 4）
+[Sat 2026/08/29 01:16:37.00] Wiki commit OK (fe21efe5: wiki: auto-ingest 2026-08-29)
+[Sat 2026/08/29 01:16:37.00] 測試失敗且非單元測試案例（規則一致性檢查等）- web build 擋下（check_wiki_freshness.py：entities/fable-5、entities/opus-5 最後新聞更新落後歸因記錄）
+[Sat 2026/08/29 01:16:37.00] REPAIRED: 補寫 fable-5.md／opus-5.md「最後新聞更新」為 2026-08-29（e9ee871a），重跑 gate 後測試全綠 - web build 放行
+[Sat 2026/08/29 01:16:37.00] Building web reader...
+[Sat 2026/08/29 01:16:37.00] enrich_attribution_publisher.py OK（新增 publisher 12 筆）／gen_wiki_frontmatter.py OK（57 頁全寫入，健康 31／休眠 20／孤島 4／⚠️ 高引用但停滯 2）
+[Sat 2026/08/29 01:16:37.00] build_web.py OK - 35 entities, 22 topics, 122 digests, 5 weekly reports + radar（88070ffb）
+[Sat 2026/08/29 01:16:37.00] wiki: refresh frontmatter commit OK（77f033f3，frontmatter 重算輸出併入）
+[Sat 2026/08/29 01:16:37.00] Push non-fast-forward on first attempt - pull --rebase origin master 後重試成功（ba5a8aa2..d92be7f3）
+[Sat 2026/08/29 01:16:37.00] Single push done (news + wiki + web)
+[Sat 2026/08/29 01:16:37.00] === Pipeline complete (agent) === 本日為 08-28 缺日後的首次成功執行
