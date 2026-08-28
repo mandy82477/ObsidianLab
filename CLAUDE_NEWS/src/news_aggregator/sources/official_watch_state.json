@@ -143,8 +143,8 @@
       "https://code.claude.com/docs/en/glossary.md": "Glossary",
       "https://code.claude.com/docs/en/agent-sdk/overview.md": "Agent SDK overview",
       "https://code.claude.com/docs/en/agent-sdk/quickstart.md": "Quickstart",
-      "https://code.claude.com/docs/en/agent-sdk/examples.md": "Examples",
       "https://code.claude.com/docs/en/agent-sdk/troubleshooting.md": "Troubleshooting",
+      "https://code.claude.com/docs/en/agent-sdk/examples.md": "Examples",
       "https://code.claude.com/docs/en/agent-sdk/agent-loop.md": "How the agent loop works",
       "https://code.claude.com/docs/en/agent-sdk/claude-code-features.md": "Use Claude Code features in the SDK",
       "https://code.claude.com/docs/en/agent-sdk/sessions.md": "Work with sessions",
@@ -1090,8 +1090,8 @@
     ]
   },
   "https://platform.claude.com/docs/en/about-claude/pricing": {
-    "hash": "38e65d8e05f32e4037837db8435011125119b5417ddd2860df7aef8a71f54372",
-    "length": 28819,
+    "hash": "1de823d99aa02ab74d5b608e8f2203512f6a1876089fc40a2733c6217274b739",
+    "length": 28830,
     "segments": [
       "\"cache_creation_input_tokens\" : 0 ,",
       "\"cache_creation_input_tokens\" : 7345 ,",
