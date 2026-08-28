@@ -4,15 +4,15 @@ kind: "entity"
 type: "model"
 status: "active（正式發布；出口管制已解除，2026-07-01 起全球恢復存取；免費期已於 2026-07-19 到期，Max/Team 後續存取政策已於 2026-08-08 經官方 Help Center 查證收斂，見 [[entities/pricing]]）"
 domain: "🤖 模型"
-last_updated: "2026-08-27"
-last_news_update: "2026-08-27"
+last_updated: "2026-08-29"
+last_news_update: "2026-08-29"
 status_main: "active"
 days_since_news: 0
 inbound_links: 32
-attribution_count: 22
-attribution_last: "2026-08-27"
+attribution_count: 24
+attribution_last: "2026-08-29"
 top_source: "google-news"
-pending_count: 3
+pending_count: 4
 pending_overdue: 0
 pending_next_review: "2026-09-09"
 pending_signalled: 0

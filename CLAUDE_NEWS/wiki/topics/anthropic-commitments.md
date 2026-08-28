@@ -3,19 +3,19 @@ page: "topics/anthropic-commitments"
 kind: "topic"
 status: "ongoing"
 domain: "🏛️ 政策/安全"
-last_updated: "2026-08-08"
-last_news_update: "2026-07-10"
-status_main: "monitoring"
-days_since_news: 48
-inbound_links: 8
+last_updated: "2026-08-29"
+last_news_update: "2026-08-29"
+status_main: "ongoing"
+days_since_news: 0
+inbound_links: 10
 attribution_count: 0
 attribution_last: null
 top_source: null
-pending_count: 0
+pending_count: 1
 pending_overdue: 0
-pending_next_review: null
+pending_next_review: "2026-09-12"
 pending_signalled: 0
-signal: "休眠"
+signal: "健康"
 generated_by: "scripts/gen_wiki_frontmatter.py"
 ---
 # Anthropic 承諾兌現追蹤
