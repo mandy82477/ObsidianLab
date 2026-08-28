@@ -936,6 +936,30 @@
         "\\[存量盤點｜"
       ],
       "_note": "2026-08-28 首版用概念詞『存量盤點』當 pattern，是假綠——檔內設計註解也含這四個字，把前綴改壞照樣通過。pattern 必須釘實際輸出字串。"
+    },
+    {
+      "name": "截止日複查的產出端 <-> 消費端：scan_expiring_deadlines.py 必須被 news-pipeline-steps.md 的 3g 呼叫，且其輸出必須在完成摘要「待使用者裁示」有接手方（只寫在步驟裡沒人接＝偵測器印給空氣看，正是 2026-08-02 裁示擱置 6 天的同型死法）",
+      "assertion": "all_contain",
+      "files": [
+        ".claude/commands/news-pipeline-steps.md"
+      ],
+      "patterns": [
+        "scan_expiring_deadlines\\.py",
+        "3g",
+        "截止日複查清單"
+      ]
+    },
+    {
+      "name": "官方頁段落級 diff 的三個護欄：hash/length 仍由 _visible_text 算（改算法會讓部署當天每頁都報假警報）＋ 舊 state 無 segments 時退化說明（不得假裝有 diff）＋ 超大頁不存 segments（state 檔無上限成長的閘）",
+      "assertion": "all_contain",
+      "files": [
+        "src/news_aggregator/sources/official_docs_watch.py"
+      ],
+      "patterns": [
+        "_visible_segments",
+        "MAX_SEGMENTS",
+        "下次變動起會列出差異"
+      ]
     }
   ],
   "coupling_hints": {

@@ -103,7 +103,7 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 
 - **✅ 2026-07-20 生效｜旗艦模型的訂閱分界（官方文件已確認）**：Max 方案、Team premium seats、舊制席位制 Enterprise premium seats — Fable 5 為標配，可用至多**每週用量上限的 50%**，不額外收費；Pro 方案、Team standard seats、Enterprise standard seats — Fable 5 **不計入方案用量**，需以 usage credits 按 API 費率（$10/$50 per Mtok）付費。合格 Pro 與 Team standard seats 另有**一次性過渡 credit $100**（Team 每 standard seat $100、每組織上限 $2,500），領取窗已於 2026-08-02 關閉、已領 credits 於 2026-09-17 到期，且可用於任何模型（[官方促銷條目](https://support.claude.com/en/articles/15862783)，2026-08-22 查證）。先前將 Fable 5 納入方案週用量的促銷結束於 2026-07-19 23:59:59 PT（來源：[Claude Fable 5 on your plan](https://support.claude.com/en/articles/15424964-claude-fable-5-on-your-plan)，2026-08-08 查證）
 - **⚠️ usage credits 開啟後，方案用量上限不再是硬停止**：credits 為 opt-in、預設關閉，於 `Settings > Usage` 開關，可設 auto-reload（每日兌換上限 $2,000）。開啟後 Claude 會在額度用盡後繼續回答並從 credits 扣款，體感與額度內無異，但每則超額回應皆計費——靠方案硬上限控管支出者需主動確認此開關（來源：[Manage usage credits](https://support.claude.com/en/articles/12429409-manage-usage-credits-for-paid-claude-plans)，2026-08-08 查證）
-- **⏰ 2026-08-31 到期（已再度延長）｜Claude Code 週用量 +50% 促銷**：官方於 2026-08-18 確認再度延長，適用期間由原訂 **2026-05-13** 起持續延續至 **2026-08-31**（此前歷經 06-22→07-07→07-12→07-19 等多次延長）；適用 **Pro／Max／Team 及舊制席位制 Enterprise**，**Free 方案與消耗制（consumption-based）Enterprise seat 不適用**；僅影響週用量上限，**5 小時用量上限不受影響**；符合資格帳號自動套用，無需操作。**更正**：此促銷此前於 07-19 一度被本頁誤記為與 Fable 5 免費期同步到期，實為兩條獨立時程——Fable 5 免費期確於 07-19 到期並由 07-20 分界取代，本促銷則持續延長中，並未終止（詳見下方「定價與促銷」08-18 條目）（來源：Hacker News 轉載 support.claude.com，2026-08-18 17:02 UTC，276 分）
+- **⏰ 2026-08-31 到期（已再度延長；2026-08-28 查官方原文複查，日期仍有效）｜Claude Code 週用量 +50% 促銷**：官方於 2026-08-18 確認再度延長，適用期間由原訂 **2026-05-13** 起持續延續至 **2026-08-31**（此前歷經 06-22→07-07→07-12→07-19 等多次延長）；適用 **Pro／Max／Team 及舊制席位制 Enterprise**，**Free 方案與消耗制（consumption-based）Enterprise seat 不適用**；僅影響週用量上限，**5 小時用量上限不受影響**；符合資格帳號自動套用，無需操作。**更正**：此促銷此前於 07-19 一度被本頁誤記為與 Fable 5 免費期同步到期，實為兩條獨立時程——Fable 5 免費期確於 07-19 到期並由 07-20 分界取代，本促銷則持續延長中，並未終止（詳見下方「定價與促銷」08-18 條目）（來源：Hacker News 轉載 support.claude.com，2026-08-18 17:02 UTC，276 分）
 - **訂閱配額制維持**：原定 2026-06-15 生效的 Agent SDK／`claude -p` 計費切割已於 2026-06-16 暫停，重新推行時間未定；Agent SDK、`claude -p`、第三方 Agent SDK app 用量持續計入訂閱配額，無需額外信用池（來源：2026-06-16、2026-06-18 DevOps.com）
 - **1M context window 觸發獨立 API 計費通道**：即使儀表板顯示 0% 訂閱用量，1M context window 仍會產生額外費用（實例：2026-05-11 用戶 0% 用量下遭收取 $3.37 Extra Usage）
 - **`ANTHROPIC_API_KEY` 環境變數陷阱**：雲端環境（CI/CD、Docker、K8s）若設置此環境變數，所有 Claude Code 呼叫自動改走 API 計費通道而非訂閱配額（來源：2026-04-30）
@@ -287,6 +287,7 @@ git commit 歷史出現大寫字串「HERMES.md」會觸發靜默切換至 API �
 - **官方文件佐證（2026-08-26 查證）**：官方模型總覽頁 Sonnet 5 定價欄現為 `$2 / input MTok, $10 / output MTok`，**已無任何 introductory／temporary／到期字樣**；官方定價文件另載明該價格「is now the standard price」
 - **⚠️ 本庫覆蓋缺口**：此則為官方定價變動，但**日報 12 個來源於 08-10～08-26 全數未收錄**——官方公告走 X 與 support/pricing 說明中心，兩者皆不在來源清單（X 為設計上排除、說明中心為已知缺口，見 `.claude/rules/wiki-ingest-commercial.md`）。結果是本頁在漲價日前 5 天仍掛著「⏰ 08-31 到期」倒數，讀者會據以做錯誤的成本決策
 - **連帶更正**：本頁「模型 API 定價現況」表、「⏰ 倒數中」、[[feature-radar]]、[[topics/model-comparison]]、[[entities/sonnet-5]] 的到期敘述已於 2026-08-26 一併上修
+- **缺口已修補（2026-08-28）**：官方 API 定價頁（`platform.claude.com/docs/en/about-claude/pricing`，即記載本次變動的那一頁）已納入官方文件監看清單；同時官方頁的變更偵測由「只說變了」升級為列出新增／移除的段落——本次這種「少了一句到期字樣」的移除型變動，先前的偵測方式看不出來
 
 #### 2026-08-11：官方文件補充 usage credits 僅限網頁版開通，pricing 頁確認 Free 方案功能範圍
 

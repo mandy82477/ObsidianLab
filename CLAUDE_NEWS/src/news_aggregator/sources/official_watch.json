@@ -28,6 +28,18 @@
       "why": "訂閱月費、年繳折扣、各方案模型可用性"
     },
     {
+      "name": "API 模型定價（Platform Docs）",
+      "url": "https://platform.claude.com/docs/en/about-claude/pricing",
+      "status": "active",
+      "why": "每 token 單價、fast mode（$10/$50）、Managed Agents session runtime（$0.08/session-hour）、web search（$10/1000 次）、batch 對照表、CCU 換算——這些數字只在這一頁，claude.com/pricing 只有訂閱月費。2026-08-10 Sonnet 5 的 $2/$10 永久化、9/1 漲至 $3/$15 取消，就是寫在本頁的 note 裡，而本頁當時不在清單內：12 個來源 16 天零覆蓋，`entities/pricing` 掛著作廢的倒數掛到剩 5 天（2026-08-26 查證）"
+    },
+    {
+      "name": "Claude Code 週用量促銷（May–August 2026）",
+      "url": "https://support.claude.com/en/articles/15910845-claude-code-may-august-2026-weekly-limits-promotion",
+      "status": "active",
+      "why": "本庫「⏰ 倒數中」唯一在追的截止日（2026-08-31）就寫在這一頁，而它原本不在清單內——2026-08-28 的截止日複查靠人工翻日報才找到它。促銷延長／結束都只會改這頁的一句話，正是段落級 diff 抓得到、hash-only 抓不到的形態。促銷結束後改 status=retired"
+    },
+    {
       "name": "Claude Fable 5 on your plan",
       "url": "https://support.claude.com/en/articles/15424964-claude-fable-5-on-your-plan",
       "status": "active",

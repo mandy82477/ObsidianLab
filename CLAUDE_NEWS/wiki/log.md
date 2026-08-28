@@ -4391,3 +4391,39 @@ registry 加一組 sync_pair 釘住產出端與歸因端（只改一邊等於白
 **registry 首版是假綠：** 前綴同步配對原本用概念詞「存量盤點」當 pattern，但檔內設計註解也含那四個字，把前綴改壞照樣通過。已改為釘實際輸出字串 `\[存量盤點｜` 並做過破壞測試（改壞 → ❌，還原 → ✅）。
 
 **未解：** 本次只補了 GitHub repo 這條通道。`support.claude.com` 定價變動無自動偵測（2026-08-26 記錄的同型缺口）仍未解——同樣是「預言了故障卻沒裝偵測器」，建議 weekly-review 一併評估。
+
+---
+
+## 2026-08-28 官方頁偵測三修（含對 08-26 自身診斷的更正）
+
+**觸發：** 使用者問「那是什麼問題」，追查 08-26 記下的「定價變動無自動偵測」缺口。
+
+### ⚠️ 更正 2026-08-26 的診斷
+
+該筆寫「說明中心／官方 X 的定價變動**仍無任何自動偵測**」——**這句話是錯的**。`src/news_aggregator/sources/official_watch.json` 自 2026-08-08 起就在監看 `claude.com/pricing` 與四個 support.claude.com 說明頁，而且它在 08-11 確實響過（該日日報有「官方文件更新：方案與定價」條目）。
+
+診斷錯誤的代價不是零：照那句話行動會去蓋第二個偵測器，而真正的病是既有偵測器的三個缺陷。
+
+### 真正的三個問題與處置
+
+| # | 問題 | 處置 |
+|---|---|---|
+| 一 | **警報只說「變了」，說不出「變什麼」**。hash 模式只有一個 bit，摘要因此寫「具體改了什麼需開啟連結比對」——警報響了沒人知道響什麼。移除型變動（頁面少了一句「到期」）尤其隱形 | `_hash_item` 加段落級 diff（沿用 `_index_item` 已證明有效的集合差做法）。**hash/length 算法刻意不動**——改了會讓部署當天每頁同時報假警報 |
+| 二 | **出事那一頁根本不在清單裡**。`claude.com/pricing` 是訂閱月費；每 token 單價寫在 `platform.claude.com/docs/en/about-claude/pricing`，該頁另獨家承載 fast mode $10/$50、Managed Agents $0.08/session-hour、web search $10/1000 次 | 該頁納入監看清單 |
+| 三 | **截止日到期前沒有人回頭查**。倒數寫下去之後無機制複查 | 新增 `scripts/scan_expiring_deadlines.py`，掛為 pipeline Step 1b-3g，輸出接進完成摘要「待使用者裁示」 |
+
+### 首次執行 3g 即抓到第四個缺口
+
+3g 指出 `2026-08-31` 剩 3 天、散在 3 處。依規則查官方原文複查，發現促銷的**專屬官方頁**（`support.claude.com/…/15910845-claude-code-may-august-2026-weekly-limits-promotion`）**也不在監看清單** —— 本庫唯一在追的截止日，其權威來源竟無人監看。已納入清單。
+
+複查結果：原文載「Increased weekly limits now run through August 31, 2026」，**日期仍有效 → 不動**，已在 `entities/pricing` 與 `feature-radar` 標註複查日。
+
+### 測試與驗收
+
+- 327 → 346（+19）：段落級 diff 9 條、截止日掃描 7 條，其餘為既有套件連帶
+- registry 新增 2 組同步配對，兩組皆做過破壞測試（改壞 → ❌，還原 → ✅）
+- 段落級 diff 以 2026-08-10 那次為測試案例：舊行為只印「內容有變動」，新行為印出「移除 1 段：Introductory pricing through August 31」
+
+### 已知代價
+
+`official_watch_state.json` 由 20KB 增至 323KB（存下各頁段落全文供比對）。判斷：正確性優先於體積，且 git 對逐頁區塊做差異壓縮；`MAX_SEGMENTS = 1200` 是無上限成長的閘。

@@ -285,6 +285,17 @@ PYTHON REPO_ROOT\scripts\scan_pending_verifications.py TARGET_DATE
 - **B 級（僅單一弱探針命中且僅在內文）不進派工附件**，只記入 jsonl 供之後查核，不得轉貼給記者
 - **純字串比對，不做判斷、不改 wiki**；失敗只記錄不阻斷 pipeline，不影響本日其餘產出
 
+3g. **截止日到期前強制官方複查（機械，非 LLM）`[加入: 2026-08-28]`**：用 Bash 執行
+
+```
+PYTHON REPO_ROOT\scripts\scan_expiring_deadlines.py
+```
+
+- 掃全 wiki 的「⏰ 倒數中」表列與散文 `⏰ YYYY-MM-DD` 標記，列出**已過期**與**7 天內到期**者
+- 這些是本庫對讀者做的**時間承諾**（「到了那天，事情會變」）。截止日寫下去之後，沒有任何機制會在它到期前回頭問一次「這個日期還算數嗎」——2026-08-10 官方取消 9/1 漲價，`entities/pricing` 的倒數掛到剩 5 天才被人工發現，期間 `feature-radar`、`model-comparison`、`entities/sonnet-5` 同步誤導
+- **記者不處理這批**（無 web 工具，不可自行推斷）。輸出接進 Step 6 的完成摘要「📋 待使用者裁示」，由主編層 WebFetch 查官方原文後三選一：日期仍有效 → 不動／已延長 → 更新截止日並記事件／已作廢 → 移除倒數並**回掃全庫引用方**（同一截止日常散在 3 處以上，只改一處等於沒改）
+- 無命中時印「無需複查的截止日」，不佔用摘要版面；失敗只記錄不阻斷 pipeline
+
 4. 用 Bash git 暫存並 commit（**先不 push**，本次所有變更於 Step 5 統一推送，避免多次 push 觸發 Pages 部署並發競爭）：
 ```
 git -C REPO_ROOT add news/TARGET_DATE.md
@@ -480,6 +491,8 @@ REPO_ROOT\src\logs\task_scheduler.log
 摘要表之後**必接**此區塊——待確認事項只寫進 `wiki/log.md` 等於沒有出口，使用者不會讀那個檔（2026-08-02 提出的 feature-radar 防霸榜裁示因此擱置 6 天）。
 
 作法：Grep `wiki/log.md` 中 TARGET_DATE 該次 ingest 紀錄的「📋 待使用者確認」段落，逐條轉貼成一行摘要（`- [頁面/主題]：一句話問題`）。同時 Grep 前 14 天的 ingest 紀錄，**同一議題重複出現者標「⏳ 已擱置 N 天」**置頂。
+
+**另必接 Step 1b-3g 的截止日複查清單 `[加入: 2026-08-28]`：** 若 3g 有命中（已過期或 7 天內到期），逐個截止日轉成一行 `- ⏰ [YYYY-MM-DD]（剩 N 天，M 處引用）：[事件]——需查官方原文確認日期是否仍有效`。這批與 log.md 的裁示不同源，**不可因為 log.md 沒有對應段落就省略**；3g 印「無需複查的截止日」時整段省略。
 
 無任何未決項時寫 `- 無`，不可省略此區塊。
 
