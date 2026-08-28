@@ -913,6 +913,29 @@
         "gate 擋下時的修復迴圈"
       ],
       "_note": "2026-08-26 加入。wiki-lint 步驟 2 逐字引用 Step 4 的節名；節名改動時兩處要一起改，否則 lint 端的引用指向不存在的節。"
+    },
+    {
+      "name": "C 窗兩個護欄不得被拆掉：判準取自 news/*.md（唯一永久記錄）＋ 空日報集合必須不吐（空集合等價於『全部沒報導過』，會把整個存量灌進日報；Path.glob 對不存在目錄不拋錯，光靠 try/except 擋不住）",
+      "assertion": "all_contain",
+      "files": [
+        "src/news_aggregator/sources/github_releases.py"
+      ],
+      "patterns": [
+        "NEWS_DIR\\.glob",
+        "if not digests"
+      ]
+    },
+    {
+      "name": "存量盤點前綴的產出端 <-> 消費端：github_releases.py 實際輸出的 `[存量盤點｜` 字串必須與 news-pipeline-steps.md 的寫法規則逐字相同（改前綴而規格沒跟上，日報撰寫者辨識不出這批不是今日新聞，會把 2 月出生的 9 萬星 repo 寫成今日發布——這是本通道唯一的誠實防線）",
+      "assertion": "all_contain",
+      "files": [
+        "src/news_aggregator/sources/github_releases.py",
+        ".claude/commands/news-pipeline-steps.md"
+      ],
+      "patterns": [
+        "\\[存量盤點｜"
+      ],
+      "_note": "2026-08-28 首版用概念詞『存量盤點』當 pattern，是假綠——檔內設計註解也含這四個字，把前綴改壞照樣通過。pattern 必須釘實際輸出字串。"
     }
   ],
   "coupling_hints": {

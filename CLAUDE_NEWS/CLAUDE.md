@@ -20,12 +20,14 @@
 | **社群實測** | 工程師驗證過的工作流模式、agent 設計、Bug 回報與替代方案（HN / Reddit） |
 | **生態動態** | 融資、大型企業合作（AWS / Google）、政策趨勢、周邊工具 |
 | **專頁定向** | 為特定 wiki 專頁定向抓取的少量條目（`src/news_aggregator/sources/topic_watch.json`），判準是「對該專頁有無價值」而非標題是否提及 Claude／Anthropic |
+| **存量盤點** | 已成名但本庫從未報導過的 GitHub repo，每日至多 2 則補進（`src/news_aggregator/sources/github_releases.py` C 窗）。含 Agent Skills 生態——SKILL.md 是 Anthropic originated 的格式，該生態整體屬 Claude 生態，但多數 repo 的描述不含 claude 字樣 |
 
 ### 不收錄
 
 - X / Discord 即時訊號（社交平台秒級爆料；26–30 小時延遲是設計取捨，非缺陷）
 - NDA 保護下的企業非公開資訊
 - 與 Claude / Anthropic 無直接關聯的通用 AI 新聞（**例外**：wiki 專頁定向抓取，見上表「專頁定向」——該通道有數量上限且在日報獨立成區，不混入正文六區塊）
+- Agent Skills 生態以外、與 Claude 無關的 agent 工具存量（存量盤點通道綁定四條 scope，不是通用 GitHub 熱門榜；scope 清單見 `src/news_aggregator/sources/github_releases.py` 的 `_INVENTORY_SCOPES`）
 - 無技術內容的純行銷稿
 
 **新增 source 或 command 時的判斷標準：**

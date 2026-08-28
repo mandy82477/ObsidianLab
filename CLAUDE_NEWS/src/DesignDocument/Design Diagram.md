@@ -93,7 +93,8 @@ flowchart TD
         direction LR
         S1["Anthropic Blog\n(/news + /engineering)"]
         S2["Anthropic Status\n(status RSS)"]
-        S3["GitHub Releases"]
+        S3["GitHub Releases
+＋repo 搜尋三窗 A/B/C"]
         S4["GitHub Issues"]
         S5["Hacker News"]
         S6["Reddit\n(含 r/ClaudeCode)"]
@@ -126,6 +127,8 @@ flowchart TD
 - `score_unit`：分（HN）/ 讚（Reddit、dev.to）/ 留言 —— 跨來源比熱度時單位不同，不可直接比大小
 - `source_count`：同一事件被幾個獨立來源報導，> 1 視為重要度加權
 - `topic`：專頁定向抓取（Topic Watch）的豁免鑰匙——帶此欄的條目繞過 `filter.py` 的 Claude/Anthropic 標題閘，去重時會傳染給被併掉的同事件條目；日報中獨立成「🧭 專頁雷達」區，不混入正文六區塊
+**GitHub repo 搜尋的三扇窗 `[加入: 2026-08-28]`：** A 新星窗（90 天內出生、≥100 星）＋ B 穿越窗（500–3000 星、升冪取剛越過門檻者）都是**發現期偵測器**，只看得到剛出生或還很小的；後果是任何一條 scope 底下既存的大 repo 永久隱形，且每新增一條 scope 就復發一次。C 存量盤點窗（>3000 星、每日至多 2 則）補這個洞：判準取自 `news/*.md` 全文（日報是唯一的永久記錄，`emitted_items.json` 只有 14 天 TTL），因此日報沒建成就自動重試、repo 日後才越過門檻也會被撿起。skills 生態 scope **只掛 C 窗**——100–3000 星帶實測被單一用途內容型 skill 洗版，在該 scope 上星數本身即品質過濾器。觸發本次改動的實例：`addyosmani/agent-skills` 90,233 星、每日 push，12 個來源 × 121 篇日報零命中。
+
 - `source_status`：每個來源本次抓到幾筆（餵給日報「📡 來源狀態」表 + wiki-lint 6f 來源健康檢查）
 - `source_funnel.jsonl`：跨日累積的來源漏斗統計（gathered→filtered→emitted），與 `source_attribution.jsonl` 一起餵給**來源記分卡**（見下方「來源評分」節；GH Actions 每日 commit）
 
