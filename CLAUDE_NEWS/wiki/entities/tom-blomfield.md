@@ -25,7 +25,7 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 **狀態：** active（待核實）
 **領域：** 👤 人物
 **首次出現：** 2026-07-13
-**最後更新：** 2026-08-22
+**最後更新：** 2026-08-28
 **最後新聞更新：** 2026-07-13
 
 > ❓ **待查證**（標 2026-08-10｜查 Blomfield、Monzo）｜**加入 Anthropic 傳聞**（2026-07-13 報導）：Business Insider 報導 Anthropic 聘請英國數位銀行 Monzo 共同創辦人 Tom Blomfield 加入公司，報導涉及 AI compute 與 Y Combinator 背景；僅單一媒體來源，職稱與具體職掌尚未明朗。
@@ -34,7 +34,7 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 
 ## 現況
 
-2026-07-13，Business Insider 報導 Anthropic 新聘 Monzo（英國數位銀行）共同創辦人 Tom Blomfield 加入公司，報導提及此事與 AI compute、Y Combinator 背景相關，惟未提供明確職稱或具體職掌說明。Blomfield 先前為 Y Combinator 合夥人，並曾共同創辦 Monzo 與 GoCardless。此為單一媒體來源報導，查證狀態見上方標記。
+2026-07-13，Business Insider 報導 Anthropic 新聘 Monzo（英國數位銀行）共同創辦人 Tom Blomfield 加入公司，報導提及此事與 AI compute、Y Combinator 背景相關，惟未提供明確職稱或具體職掌說明。Blomfield 先前為 Y Combinator 合夥人，並曾共同創辦 Monzo 與 GoCardless。此為單一媒體來源報導，查證狀態見上方標記。[[topics/ai-talent-flow]] 將此案定性為「跨界執行層人才，非典型 AI 實驗室流動」，並與同期加入的 [[entities/teresa-carlson|Teresa Carlson]] 並陳觀察；[[topics/anthropic-business]] 同步記錄此人事動態。
 
 ## 核心論述
 

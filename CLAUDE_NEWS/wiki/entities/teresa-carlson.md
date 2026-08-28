@@ -25,7 +25,7 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 **狀態：** active（待核實）
 **領域：** 👤 人物
 **首次出現：** 2026-07-07
-**最後更新：** 2026-08-10
+**最後更新：** 2026-08-28
 **最後新聞更新：** 2026-07-07
 
 > ❓ **待查證**（標 2026-08-10｜查 Carlson、FedScoop）｜**加入 Anthropic 傳聞**（2026-07-07 報導）：Teresa Carlson（曾任職 Microsoft、AWS）加入 Anthropic，主導公部門（public sector）業務；確切職稱與到任日期僅 FedScoop 單一媒體標題層級報導，尚無進一步獨立確認。
@@ -36,7 +36,7 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 
 2026-07-07，FedScoop 報導 Anthropic 延攬 Teresa Carlson 主導公部門業務。Carlson 曾任職 Microsoft 與 AWS，在雲端服務公部門業務領域有豐富經驗；確切職稱迄今無其他媒體或官方確認，查證狀態見上方標記。
 
-此為事件層級記錄，日報僅標題報導，尚無 Carlson 本人公開聲明可引用。
+此為事件層級記錄，日報僅標題報導，尚無 Carlson 本人公開聲明可引用。[[topics/ai-talent-flow]] 將此案與同期加入 Anthropic 的 [[entities/tom-blomfield|Tom Blomfield]] 並陳，視為 Anthropic 在 IPO 前加強執行層人才佈局的訊號之一（推論）。
 
 ---
 

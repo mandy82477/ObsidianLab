@@ -25,7 +25,7 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 **狀態：** active
 **領域：** 👤 人物
 **首次出現：** 2026-04-25
-**最後更新：** 2026-08-27
+**最後更新：** 2026-08-28
 **最後新聞更新：** 2026-08-27
 
 > ❓ **待查證**（標 2026-08-25｜查 airline industry、marketing and safety）｜**Fortune 評論比較 Anthropic 安全論述與航空業經驗**（2026-08-24 報導）：Fortune 發表評論文章〈What Anthropic's Dario Amodei can learn from the airline industry's lesson on marketing and safety〉，以航空業在行銷與安全議題上的經驗為借鏡，討論 Dario Amodei 可以從中學到什麼；僅標題可用，具體論點與建議內容未見報導。
@@ -38,7 +38,7 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 
 2026-08-14，WSJ 與 The Information 分別發布聚焦 Dario Amodei 妻子的人物側寫報導：WSJ 標題〈Even Claude Is in the Dark About Dario Amodei's Wife—and Her Influence at Anthropic〉探討她在網路上幾乎沒有公開資訊、以及她對 Anthropic 內部可能的影響力；The Information 標題稱其為 Anthropic 的「'First Lady'」，聚焦其職涯歷程「a winding road to the top」。同一事件另有 Hacker News 轉發（直連 wsj.com），留言中一則揣測其與 Eric Schmidt 有私人關係、藉此清空網路個資的說法屬留言者主觀嘲諷，未經任何來源證實，不予採信。這兩篇報導正文本身內容停留在標題層級，未展開其姓名或具體職務內容，查證狀態見下方歷史記錄。
 
-Dario Amodei 是 Anthropic 共同創辦人兼執行長（CEO），與 Chris Olah、Daniela Amodei 等人從 OpenAI 出走後創立 Anthropic。主導公司整體策略與安全定位，在 AI 治理、政府政策、企業文化三條線高度活躍。白宮一度對其失去信任、談判改由聯合創辦人 Tom Brown 接管一事已收斂（出口管制已解除，見 [[entities/tom-brown]]、[[entities/fable-5]]、下方歷史記錄）；惟 Dario 本人與白宮的信任關係修復與否，尚無報導確認。
+Dario Amodei 是 Anthropic 共同創辦人兼執行長（CEO），與 [[entities/chris-olah|Chris Olah]]、Daniela Amodei 等人從 OpenAI 出走後創立 Anthropic。主導公司整體策略與安全定位，在 AI 治理、政府政策、企業文化三條線高度活躍。白宮一度對其失去信任、談判改由聯合創辦人 Tom Brown 接管一事已收斂（出口管制已解除，見 [[entities/tom-brown]]、[[entities/fable-5]]、下方歷史記錄）；惟 Dario 本人與白宮的信任關係修復與否，尚無報導確認。
 
 2026 年上半年公開言論集中在：（1）呼籲政府有權阻止危險 AI 模型發布（尤指中國競爭者）；（2）主張企業文化是 AI 競賽決勝關鍵，個人花費 40% 工作時間於文化建設；（3）出席 Code with Claude 大會現場宣布 Pro/Max 速率翻倍政策。
 
@@ -66,7 +66,7 @@ Dario Amodei 是 Anthropic 共同創辦人兼執行長（CEO），與 Chris Olah
 
 ## 在 Anthropic 的角色與影響
 
-- **Anthropic 創辦人背景：** 前 OpenAI VP of Research，與 Chris Olah 等人共同創立 Anthropic，定位「安全優先」AI 公司
+- **Anthropic 創辦人背景：** 前 OpenAI VP of Research，與 [[entities/chris-olah|Chris Olah]] 等人共同創立 Anthropic，定位「安全優先」AI 公司
 - **企業代言人：** 代表 Anthropic 接受主流財經媒體採訪，包含 Bloomberg、Fortune、Forbes、NBC News
 - **政策倡議：** 積極參與 AI 治理政策討論，多次接觸白宮與國會；同時呼籲政府不應妨礙州級 AI 法律
 

@@ -25,7 +25,7 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 **狀態：** active
 **領域：** 👤 人物
 **首次出現：** 2026-08-05
-**最後更新：** 2026-08-22
+**最後更新：** 2026-08-28
 **最後新聞更新：** 2026-08-05
 
 > **最新動態**（2026-08-05）
@@ -35,7 +35,7 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 
 ## 現況
 
-Mariano-Florentino (Tino) Cuéllar 將加入 Anthropic，擔任公司首任 Chief Global Affairs Officer，主導政策（policy）、策略性國際事務（strategic international engagement）與全球政府關係（government relationships）工作（Anthropic Blog，2026-08-05）。CNBC 報導將此人事任命放在 Anthropic 與川普政府關係持續緊張的脈絡下解讀，惟該報導僅標題層級可用，正文細節未見（Google News/CNBC，2026-08-04）。
+Mariano-Florentino (Tino) Cuéllar 將加入 Anthropic，擔任公司首任 Chief Global Affairs Officer，主導政策（policy）、策略性國際事務（strategic international engagement）與全球政府關係（government relationships）工作（Anthropic Blog，2026-08-05）。CNBC 報導將此人事任命放在 Anthropic 與川普政府關係持續緊張（詳見 [[topics/anthropic-government-policy]]）的脈絡下解讀，惟該報導僅標題層級可用，正文細節未見（Google News/CNBC，2026-08-04）。
 
 Cuéllar 的職涯橫跨法律、科技、國際安全與公部門機構，歷任國際、聯邦與州層級職務。加入 Anthropic 前，他甫卸任 Carnegie Endowment for International Peace（卡內基國際和平基金會）總裁——該機構為獨立全球政策研究機構，學者遍布 20 國。在 Carnegie 之前，他曾任加州最高法院（Supreme Court of California）大法官，任內意見書涉及科技與隱私、國際協定、權力分立等議題。
 

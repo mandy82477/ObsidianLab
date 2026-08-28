@@ -25,7 +25,7 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 **狀態：** active
 **領域：** 👤 人物
 **首次出現：** 2026-05-26
-**最後更新：** 2026-08-15
+**最後更新：** 2026-08-28
 **最後新聞更新：** 2026-05-29
 
 > **最新研究與公開發言**（2026-05-29）
@@ -49,7 +49,7 @@ Chris Olah 是 Anthropic 的共同創辦人之一，也是 AI 可解釋性（int
 - 強調透明度與可解釋性作為 AI 安全的基石
 - 呼籲廣泛的社會對話，而非由少數科技公司單獨決定 AI 發展方向
 
-演講全文由 Anthropic 官方發布：https://www.anthropic.com/news/chris-olah-pope-leo-encyclical
+此為 Anthropic 出口管制風波後「換戰場」策略的核心事件之一，詳見 [[topics/anthropic-government-policy]]。演講全文由 Anthropic 官方發布：https://www.anthropic.com/news/chris-olah-pope-leo-encyclical
 
 媒體覆蓋：AP News、Reuters、NYT、WashPost、NDTV、Fast Company 等（HN score 81，全球主流報導）
 
@@ -67,7 +67,7 @@ Wired 發表深度側寫，聚焦 Olah 在梵蒂岡事件中的角色與內心�
 
 - **神經網路可解釋性研究**先驅，開創「神經元電路」（circuits）方法論
 - Distill.pub 聯合創辦人（AI 視覺化研究發表平台）
-- 在 OpenAI / Google Brain 任職期間奠定可解釋性研究基礎，後與 Dario Amodei 等人共同創辦 Anthropic
+- 在 OpenAI / Google Brain 任職期間奠定可解釋性研究基礎，後與 [[entities/dario-amodei|Dario Amodei]] 等人共同創辦 Anthropic
 
 ---
 
