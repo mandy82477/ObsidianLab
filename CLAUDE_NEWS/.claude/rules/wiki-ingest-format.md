@@ -226,4 +226,6 @@ callout 放在標頭欄位（最後更新、最後新聞更新）之後，`---` 
 
 **新 topics slug 命名規約**（既有頁面不溯及）：社群類 `community-*`、企業類 `enterprise-*`、Anthropic 官方 `anthropic-*`、安全政策 `safety-*`。
 
+**別名欄位（選填）`[加入: 2026-08-28]`**：頁面主題有常用英文名／舊名／媒體慣用別稱，且與中文頁名或 slug 字面不同者，在標頭「領域」之後加一行 `**別名：** Fable 5, Mythos-class`（逗號分隔，只列真實出現過的稱呼，不預測性堆詞）。用途：全庫 grep 與 `scripts/wiki_graph.py sections` 查詢時可命中、記者判斷條目歸屬時對照、未來語意檢索的正名依據——terminology drift（同物多名造成搜尋與連結失準）是 LLM wiki 的已知失效模式，canonical name＋別名是標準解。人物頁英文名、產品頁官方英文名為典型適用；slug 已含該英文者不必重複。
+
 **更新頻率欄位（選填）`[加入: 2026-07-16，改版: 2026-07-28]`**：非每日維護的頁面（週更／lint 專用）在標頭「領域」之後加一行 `**更新頻率：** 🗓️ 週更（讀者導向的節奏說明）`，並在 `wiki/index.md` 對應摘要前綴「🗓️ 週更」——向讀者說明日期停留是設計而非漏更新。補充說明用讀者語言（如「每週策展一次；更新日期停留數天屬正常節奏」），**不得出現 `/wiki-lint`、ingest 等內部指令名**（此欄位會原樣顯示在網站詳頁標頭）。每日維護頁**不加**此欄。目前適用：`wiki/overview.md`、`wiki/topics/community-pattern-trends.md`、`wiki/topics/community-tech-tools.md`、`wiki/topics/model-task-leaderboard.md`、`wiki/topics/community-large-codebase-workflow.md`；日後新增週更頁時比照。
