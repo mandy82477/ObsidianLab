@@ -342,3 +342,4 @@
 [Thu 2026/08/27 23:06:38.58] Building web reader...
 [Thu 2026/08/27 23:06:38.58] Single push done (news + wiki + web)
 [Thu 2026/08/27 23:06:38.58] === Pipeline complete (agent) ===
+[Fri 2026/08/28 13:06:53.00 UTC] [cloud daily-news-pipeline-cloud STARTED 2026-08-28T13:06:53Z]
