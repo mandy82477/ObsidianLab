@@ -3592,7 +3592,7 @@
   "https://github.com/karanb192/awesome-claude-skills": {
     "first_emitted": "2026-08-27",
     "score_at_emit": 500,
-    "digest_confirmed": false
+    "digest_confirmed": true
   },
   "https://github.com/anthropics/claude-code/issues/69415": {
     "first_emitted": "2026-08-27",
@@ -3642,7 +3642,7 @@
   "https://louisabraham.github.io/load-bearing": {
     "first_emitted": "2026-08-27",
     "score_at_emit": 630,
-    "digest_confirmed": false
+    "digest_confirmed": true
   },
   "https://github.com/Get-Concord-AI/concord-mcp": {
     "first_emitted": "2026-08-27",
@@ -3727,7 +3727,7 @@
   "https://www.nytimes.com/2026/08/27/technology/meta-anthropic-frenemies.html": {
     "first_emitted": "2026-08-27",
     "score_at_emit": 12,
-    "digest_confirmed": false
+    "digest_confirmed": true
   },
   "https://www.forbes.com/sites/tylerroush/2026/08/27/crowdstrike-shares-pop-13-after-ceo-touts-best-ever-quarter-heres-why-he-says-anthropic-is-responsible": {
     "first_emitted": "2026-08-27",
@@ -3872,22 +3872,22 @@
   "https://www.anthropic.com/news/expanding-support-for-scientists": {
     "first_emitted": "2026-08-27",
     "score_at_emit": 0,
-    "digest_confirmed": false
+    "digest_confirmed": true
   },
   "https://github.com/anthropics/claude-code/issues/84352": {
     "first_emitted": "2026-08-27",
     "score_at_emit": 163,
-    "digest_confirmed": false
+    "digest_confirmed": true
   },
   "https://github.com/anthropics/claude-code/issues/1455": {
     "first_emitted": "2026-08-27",
     "score_at_emit": 67,
-    "digest_confirmed": false
+    "digest_confirmed": true
   },
   "https://github.com/kelviq/tare": {
     "first_emitted": "2026-08-27",
     "score_at_emit": 84,
-    "digest_confirmed": false
+    "digest_confirmed": true
   },
   "https://github.com/anthropics/claude-code/issues/52151": {
     "first_emitted": "2026-08-27",
@@ -3897,7 +3897,7 @@
   "https://news.ycombinator.com/item?id=49468252": {
     "first_emitted": "2026-08-27",
     "score_at_emit": 53,
-    "digest_confirmed": false
+    "digest_confirmed": true
   },
   "https://github.com/anthropics/claude-code/issues/65833": {
     "first_emitted": "2026-08-27",
@@ -3907,17 +3907,17 @@
   "https://www.anthropic.com/news/model-hardware-standard-research-preview": {
     "first_emitted": "2026-08-27",
     "score_at_emit": 0,
-    "digest_confirmed": false
+    "digest_confirmed": true
   },
   "https://www.valet.dev/blog/your-agent-is-only-the-first-collaborator": {
     "first_emitted": "2026-08-27",
     "score_at_emit": 5,
-    "digest_confirmed": false
+    "digest_confirmed": true
   },
   "https://claudecoupons.com": {
     "first_emitted": "2026-08-27",
     "score_at_emit": 2,
-    "digest_confirmed": false
+    "digest_confirmed": true
   },
   "https://news.google.com/rss/articles/CBMiekFVX3lxTFA1ZW5yWlE0YV9EU2xVM0NmOG1sQzlOUVFQTXY1Z19iTmpNTFBEZkN4NzVqTVJNdWRUeHl5d3hfT2QwLXpqTjJpTkNaMHFwOUFlRmNmUVYzSExCWmctVGZiUDRTa2VNVk5oS0x2M2M2SVRFdmtqdmQ0ZmRn?oc=5": {
     "first_emitted": "2026-08-27",
@@ -4157,396 +4157,396 @@
   "https://support.claude.com/en/articles/12138966-release-notes#eb29862e4a385ee8": {
     "first_emitted": "2026-08-29",
     "score_at_emit": 0,
-    "digest_confirmed": false
+    "digest_confirmed": true
   },
   "https://support.claude.com/en/articles/11145838-use-claude-code-with-your-pro-or-max-plan#49722060af45b73e": {
     "first_emitted": "2026-08-29",
     "score_at_emit": 0,
-    "digest_confirmed": false
+    "digest_confirmed": true
   },
   "https://support.claude.com/en/articles/11647753-how-do-usage-and-length-limits-work#70a66efc7b6b93aa": {
     "first_emitted": "2026-08-29",
     "score_at_emit": 0,
-    "digest_confirmed": false
+    "digest_confirmed": true
   },
   "https://support.claude.com/en/articles/12429409-manage-usage-credits-for-paid-claude-plans#4a17eb1f20cdae9a": {
     "first_emitted": "2026-08-29",
     "score_at_emit": 0,
-    "digest_confirmed": false
+    "digest_confirmed": true
   },
   "https://support.claude.com/en/articles/15424964-claude-fable-5-on-your-plan#4b335272e39c222b": {
     "first_emitted": "2026-08-29",
     "score_at_emit": 0,
-    "digest_confirmed": false
+    "digest_confirmed": true
   },
   "https://github.com/anthropics/claude-code/releases/tag/v2.1.250": {
     "first_emitted": "2026-08-29",
     "score_at_emit": 0,
-    "digest_confirmed": false
+    "digest_confirmed": true
   },
   "https://github.com/anthropics/anthropic-sdk-typescript/releases/tag/sdk-v0.122.0": {
     "first_emitted": "2026-08-29",
     "score_at_emit": 0,
-    "digest_confirmed": false
+    "digest_confirmed": true
   },
   "https://github.com/anthropics/anthropic-sdk-python/releases/tag/v1.2.0": {
     "first_emitted": "2026-08-29",
     "score_at_emit": 0,
-    "digest_confirmed": false
+    "digest_confirmed": true
   },
   "https://github.com/obra/superpowers": {
     "first_emitted": "2026-08-29",
     "score_at_emit": 278958,
-    "digest_confirmed": false
+    "digest_confirmed": true
   },
   "https://github.com/affaan-m/ECC": {
     "first_emitted": "2026-08-29",
     "score_at_emit": 243909,
-    "digest_confirmed": false
+    "digest_confirmed": true
   },
   "https://github.com/anthropics/claude-code/issues/38335": {
     "first_emitted": "2026-08-29",
     "score_at_emit": 837,
-    "digest_confirmed": false
+    "digest_confirmed": true
   },
   "https://github.com/anthropics/claude-code/issues/6235": {
     "first_emitted": "2026-08-29",
     "score_at_emit": 385,
-    "digest_confirmed": false
+    "digest_confirmed": true
   },
   "https://www.reuters.com/legal/government/us-judge-blocks-pentagons-anthropic-blacklisting-2026-08-28": {
     "first_emitted": "2026-08-29",
     "score_at_emit": 316,
-    "digest_confirmed": false
+    "digest_confirmed": true
   },
   "https://www.nytimes.com/2026/08/27/technology/anthropic-government-blacklisting-ruling.html": {
     "first_emitted": "2026-08-29",
     "score_at_emit": 271,
-    "digest_confirmed": false
+    "digest_confirmed": true
   },
   "https://github.com/anthropics/claude-code/issues/45596": {
     "first_emitted": "2026-08-29",
     "score_at_emit": 268,
-    "digest_confirmed": false
+    "digest_confirmed": true
   },
   "https://github.com/anthropics/claude-code/issues/27302": {
     "first_emitted": "2026-08-29",
     "score_at_emit": 238,
-    "digest_confirmed": false
+    "digest_confirmed": true
   },
   "https://github.com/anthropics/claude-code/issues/5088": {
     "first_emitted": "2026-08-29",
     "score_at_emit": 182,
-    "digest_confirmed": false
+    "digest_confirmed": true
   },
   "https://github.com/anthropics/claude-code/issues/18435": {
     "first_emitted": "2026-08-29",
     "score_at_emit": 170,
-    "digest_confirmed": false
+    "digest_confirmed": true
   },
   "https://github.com/opslane/opslane": {
     "first_emitted": "2026-08-29",
     "score_at_emit": 34,
-    "digest_confirmed": false
+    "digest_confirmed": true
   },
   "https://www.cnbc.com/2026/08/28/judge-blocks-pentagon-blacklist--anthropic-.html": {
     "first_emitted": "2026-08-29",
     "score_at_emit": 21,
-    "digest_confirmed": false
+    "digest_confirmed": true
   },
   "https://github.com/paoloanzn/pi-black": {
     "first_emitted": "2026-08-29",
     "score_at_emit": 8,
-    "digest_confirmed": false
+    "digest_confirmed": true
   },
   "https://llmcanvas.chat": {
     "first_emitted": "2026-08-29",
     "score_at_emit": 4,
-    "digest_confirmed": false
+    "digest_confirmed": true
   },
   "https://dev.to/vpodk/anthropic-enables-auto-mode-by-default-for-claude-code-21om": {
     "first_emitted": "2026-08-29",
     "score_at_emit": 4,
-    "digest_confirmed": false
+    "digest_confirmed": true
   },
   "https://github.com/shadok-ai/shadok-ai": {
     "first_emitted": "2026-08-29",
     "score_at_emit": 3,
-    "digest_confirmed": false
+    "digest_confirmed": true
   },
   "https://leadcode.build": {
     "first_emitted": "2026-08-29",
     "score_at_emit": 3,
-    "digest_confirmed": false
+    "digest_confirmed": true
   },
   "https://www.reddit.com/r/ClaudeCode/comments/1w0v676/do_you_guys_think_that_fable_51_is_actually": {
     "first_emitted": "2026-08-29",
     "score_at_emit": 0,
-    "digest_confirmed": false
+    "digest_confirmed": true
   },
   "https://www.reddit.com/r/ClaudeAI/comments/1w0v4yq/claude_just_validated_what_ive_spent_three_months": {
     "first_emitted": "2026-08-29",
     "score_at_emit": 0,
-    "digest_confirmed": false
+    "digest_confirmed": true
   },
   "https://www.reddit.com/r/ClaudeCode/comments/1w0uyu7/a_comparison_of_opus_5_47_and_46_running_a_code": {
     "first_emitted": "2026-08-29",
     "score_at_emit": 0,
-    "digest_confirmed": false
+    "digest_confirmed": true
   },
   "https://www.reddit.com/r/ClaudeCode/comments/1w0utwi/one_dev_claude_code_agent_fleet_running_a_saas": {
     "first_emitted": "2026-08-29",
     "score_at_emit": 0,
-    "digest_confirmed": false
+    "digest_confirmed": true
   },
   "https://www.reddit.com/r/ClaudeCode/comments/1w0us6k/claude_code_really_said_swirling_bonbon": {
     "first_emitted": "2026-08-29",
     "score_at_emit": 0,
-    "digest_confirmed": false
+    "digest_confirmed": true
   },
   "https://www.reuters.com/world/how-anthropic-pentagon-dispute-over-ai-safeguards-escalated-2026-08-28": {
     "first_emitted": "2026-08-29",
     "score_at_emit": 0,
-    "digest_confirmed": false
+    "digest_confirmed": true
   },
   "https://www.forbes.com/sites/jonmarkman/2026/08/28/anthropics-45-billion-nscale-deal-buys-460-megawatts-of-vera-rubin": {
     "first_emitted": "2026-08-29",
     "score_at_emit": 0,
-    "digest_confirmed": false
+    "digest_confirmed": true
   },
   "https://www.reddit.com/r/ClaudeAI/comments/1w0tntf/citation_issues_the_past_little_while": {
     "first_emitted": "2026-08-29",
     "score_at_emit": 0,
-    "digest_confirmed": false
+    "digest_confirmed": true
   },
   "https://www.reddit.com/r/ClaudeCode/comments/1w0t53b/is_it_even_legal_for_anthropic_to_nerf_its_models": {
     "first_emitted": "2026-08-29",
     "score_at_emit": 0,
-    "digest_confirmed": false
+    "digest_confirmed": true
   },
   "https://www.reddit.com/r/ClaudeCode/comments/1w0t2t9/claude_code_for_vs_code_bug": {
     "first_emitted": "2026-08-29",
     "score_at_emit": 0,
-    "digest_confirmed": false
+    "digest_confirmed": true
   },
   "https://www.chinausfocus.com/finance-economy/claude-vs-kimi": {
     "first_emitted": "2026-08-29",
     "score_at_emit": 0,
-    "digest_confirmed": false
+    "digest_confirmed": true
   },
   "https://cybernews.com/security/claude-code-auto-mode-malware-vulnerability": {
     "first_emitted": "2026-08-29",
     "score_at_emit": 0,
-    "digest_confirmed": false
+    "digest_confirmed": true
   },
   "https://gbhackers.com/mcp-rce-exploitation": {
     "first_emitted": "2026-08-29",
     "score_at_emit": 0,
-    "digest_confirmed": false
+    "digest_confirmed": true
   },
   "https://finance.yahoo.com/technology/ai/articles/exclusive-claude-revenue-surges-1-132739054.html": {
     "first_emitted": "2026-08-29",
     "score_at_emit": 0,
-    "digest_confirmed": false
+    "digest_confirmed": true
   },
   "https://www.reddit.com/r/ClaudeAI/comments/1w0px6l/anthropic_said_fable_5_would_be_restored_to": {
     "first_emitted": "2026-08-29",
     "score_at_emit": 0,
-    "digest_confirmed": false
+    "digest_confirmed": true
   },
   "https://www.theregister.com/ai-and-ml/2026/08/28/pentagon-blacklisted-anthropic-over-claude-powers-it-didnt-have/5293266": {
     "first_emitted": "2026-08-29",
     "score_at_emit": 0,
-    "digest_confirmed": false
+    "digest_confirmed": true
   },
   "https://www.axios.com/2026/08/28/judge-blocks-pentagon-anthropic-blacklist": {
     "first_emitted": "2026-08-29",
     "score_at_emit": 0,
-    "digest_confirmed": false
+    "digest_confirmed": true
   },
   "https://analyticsindiamag.com/ai-features/youre-drowning-claude-code-in-instructions-you-cant-explain-or-remember": {
     "first_emitted": "2026-08-29",
     "score_at_emit": 0,
-    "digest_confirmed": false
+    "digest_confirmed": true
   },
   "https://www.reddit.com/r/ClaudeAI/comments/1w0ocjl/new_to_claude_what_would_you_suggest": {
     "first_emitted": "2026-08-29",
     "score_at_emit": 0,
-    "digest_confirmed": false
+    "digest_confirmed": true
   },
   "https://www.sfgate.com/local/article/open-ai-anthropic-ruining-sf-22404657.php": {
     "first_emitted": "2026-08-29",
     "score_at_emit": 0,
-    "digest_confirmed": false
+    "digest_confirmed": true
   },
   "https://www.bostonglobe.com/2026/08/28/newsletters/anthropic-campaign-donations-legislature-the-scrum": {
     "first_emitted": "2026-08-29",
     "score_at_emit": 0,
-    "digest_confirmed": false
+    "digest_confirmed": true
   },
   "https://www.storyboard18.com/brand-makers/google-deepminds-share-of-elite-ai-talent-declines-as-rivals-gain-ground-109141.htm": {
     "first_emitted": "2026-08-29",
     "score_at_emit": 0,
-    "digest_confirmed": false
+    "digest_confirmed": true
   },
   "https://www.washingtonpost.com/technology/2026/08/27/federal-judge-overturns-pentagon-ban-claude-chatbot-maker-anthropic": {
     "first_emitted": "2026-08-29",
     "score_at_emit": 0,
-    "digest_confirmed": false
+    "digest_confirmed": true
   },
   "https://www.npr.org/2026/08/28/nx-s1-5947761/judge-pentagon-anthropic-illegal": {
     "first_emitted": "2026-08-29",
     "score_at_emit": 0,
-    "digest_confirmed": false
+    "digest_confirmed": true
   },
   "https://www.hostinger.com/tutorials/how-to-send-email-in-claude": {
     "first_emitted": "2026-08-29",
     "score_at_emit": 0,
-    "digest_confirmed": false
+    "digest_confirmed": true
   },
   "https://www.cbsnews.com/news/judge-rules-trump-administration-illegally-punished-ai-firm-anthropic": {
     "first_emitted": "2026-08-29",
     "score_at_emit": 0,
-    "digest_confirmed": false
+    "digest_confirmed": true
   },
   "https://www.nbcnews.com/business/business-news/anthropic-pentagon-blacklist-claude-judge-rcna594825": {
     "first_emitted": "2026-08-29",
     "score_at_emit": 0,
-    "digest_confirmed": false
+    "digest_confirmed": true
   },
   "https://itwire.com/business-it-news/data/agent-island-lets-developers-walk-away-while-claude-code-and-codex-keep-working": {
     "first_emitted": "2026-08-29",
     "score_at_emit": 0,
-    "digest_confirmed": false
+    "digest_confirmed": true
   },
   "https://techcrunch.com/2026/08/27/anthropic-and-openai-are-joining-the-ai-stage-at-techcrunch-disrupt-2026": {
     "first_emitted": "2026-08-29",
     "score_at_emit": 0,
-    "digest_confirmed": false
+    "digest_confirmed": true
   },
   "https://simonwillison.net/2026/Aug/27/breaking-claude-code-opus-5-auto-mode": {
     "first_emitted": "2026-08-29",
     "score_at_emit": 0,
-    "digest_confirmed": false
+    "digest_confirmed": true
   },
   "https://arstechnica.com/ai/2026/08/anthropics-new-hardware-standard-lets-ai-agents-control-the-physical-world": {
     "first_emitted": "2026-08-29",
     "score_at_emit": 0,
-    "digest_confirmed": false
+    "digest_confirmed": true
   },
   "https://www.reddit.com/r/artificial/comments/1w05763/can_an_ai_make_other_ais_better_we_benchmarked_5": {
     "first_emitted": "2026-08-29",
     "score_at_emit": 0,
-    "digest_confirmed": false
+    "digest_confirmed": true
   },
   "https://www.cbsnews.com/news/openai-anthropic-ai-cyber-threat-warning": {
     "first_emitted": "2026-08-29",
     "score_at_emit": 0,
-    "digest_confirmed": false
+    "digest_confirmed": true
   },
   "https://www.bloomberg.com/news/articles/2026-08-27/anthropic-tests-new-way-for-claude-to-work-with-robots-and-scientific-lab-tools": {
     "first_emitted": "2026-08-29",
     "score_at_emit": 0,
-    "digest_confirmed": false
+    "digest_confirmed": true
   },
   "https://www.ft.com/content/dd069af7-a2a2-4984-8d9a-5edeaf54f2f8?syn-25a6b1a6=1": {
     "first_emitted": "2026-08-29",
     "score_at_emit": 0,
-    "digest_confirmed": false
+    "digest_confirmed": true
   },
   "https://www.reuters.com/technology/anthropic-unveils-new-framework-allowing-ai-agents-operate-physical-devices-2026-08-27": {
     "first_emitted": "2026-08-29",
     "score_at_emit": 0,
-    "digest_confirmed": false
+    "digest_confirmed": true
   },
   "https://prospect.org/2026/08/27/anthropic-reenlists-for-war-defense-department-ai": {
     "first_emitted": "2026-08-29",
     "score_at_emit": 0,
-    "digest_confirmed": false
+    "digest_confirmed": true
   },
   "https://fortune.com/2026/08/27/anthropic-makes-first-move-into-physical-ai-with-universal-standard-for-scientists-manufacturing": {
     "first_emitted": "2026-08-29",
     "score_at_emit": 0,
-    "digest_confirmed": false
+    "digest_confirmed": true
   },
   "https://finance.yahoo.com/technology/ai/articles/anthropic-bet-tens-billions-amd-175220772.html": {
     "first_emitted": "2026-08-29",
     "score_at_emit": 0,
-    "digest_confirmed": false
+    "digest_confirmed": true
   },
   "https://gizmodo.com/anthropic-is-quietly-cutting-google-out-of-the-equation-2000803895": {
     "first_emitted": "2026-08-29",
     "score_at_emit": 0,
-    "digest_confirmed": false
+    "digest_confirmed": true
   },
   "https://www.wiz.io/blog/ai-infrastructure-honeypot": {
     "first_emitted": "2026-08-29",
     "score_at_emit": 0,
-    "digest_confirmed": false
+    "digest_confirmed": true
   },
   "https://www.cnbc.com/video/2026/08/27/google-takes-am-at-anthropic-microsoft-with-budget-friendly-ai-pricing.html": {
     "first_emitted": "2026-08-29",
     "score_at_emit": 0,
-    "digest_confirmed": false
+    "digest_confirmed": true
   },
   "https://arstechnica.com/security/2026/08/claude-codex-and-hermes-installed-unowned-code-inside-corporate-networks": {
     "first_emitted": "2026-08-29",
     "score_at_emit": 0,
-    "digest_confirmed": false
+    "digest_confirmed": true
   },
   "https://enterpriseai.economictimes.indiatimes.com/news/industry/thinking-machines-lab-cofounder-barret-zoph-joins-google/133568907": {
     "first_emitted": "2026-08-29",
     "score_at_emit": 0,
-    "digest_confirmed": false
+    "digest_confirmed": true
   },
   "https://www.thestar.com/news/canada/government-to-announce-64-top-researchers-coming-to-canada/article_a15d09ff-632b-4c9c-be6e-d0559e09b681.html": {
     "first_emitted": "2026-08-29",
     "score_at_emit": 0,
-    "digest_confirmed": false
+    "digest_confirmed": true
   },
   "https://thenewstack.io/claude-built-in-browser-cowork": {
     "first_emitted": "2026-08-29",
     "score_at_emit": 0,
-    "digest_confirmed": false
+    "digest_confirmed": true
   },
   "https://www.ft.com/content/0ec76ba3-5f7f-4085-88fb-acf21954bc85?syn-25a6b1a6=1": {
     "first_emitted": "2026-08-29",
     "score_at_emit": 0,
-    "digest_confirmed": false
+    "digest_confirmed": true
   },
   "https://www.wsj.com/business/earnings/salesforce-profit-revenue-rise-expands-partnership-with-anthropics-claude-f17aa26f": {
     "first_emitted": "2026-08-29",
     "score_at_emit": 0,
-    "digest_confirmed": false
+    "digest_confirmed": true
   },
   "https://www.salesforce.com/news/press-releases/2026/08/26/salesforce-and-anthropic-announce-claudeforce": {
     "first_emitted": "2026-08-29",
     "score_at_emit": 0,
-    "digest_confirmed": false
+    "digest_confirmed": true
   },
   "https://www.cnbc.com/2026/08/26/salesforce-anthropic-partnership-claudeforce.html": {
     "first_emitted": "2026-08-29",
     "score_at_emit": 0,
-    "digest_confirmed": false
+    "digest_confirmed": true
   },
   "https://venturebeat.com/orchestration/salesforce-just-put-its-entire-crm-inside-claude-and-says-youll-never-need-its-app-again": {
     "first_emitted": "2026-08-29",
     "score_at_emit": 0,
-    "digest_confirmed": false
+    "digest_confirmed": true
   },
   "https://www.reddit.com/r/artificial/comments/1vz7jey/sandboxaq_releases_switch_for_shared_aiagent": {
     "first_emitted": "2026-08-29",
     "score_at_emit": 0,
-    "digest_confirmed": false
+    "digest_confirmed": true
   },
   "https://www.reddit.com/r/artificial/comments/1vyuv28/finally_a_proper_ui_for_skills": {
     "first_emitted": "2026-08-29",
     "score_at_emit": 0,
-    "digest_confirmed": false
+    "digest_confirmed": true
   },
   "https://dev.to/thefluxread/us-house-democrats-press-openai-and-anthropic-rogue-ai-agents-sandbox-breakouts-and-the-ai-kill-ad1": {
     "first_emitted": "2026-08-29",
     "score_at_emit": 0,
-    "digest_confirmed": false
+    "digest_confirmed": true
   }
 }
