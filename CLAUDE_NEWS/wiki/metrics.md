@@ -2,7 +2,7 @@
 
 編輯部內部檔案，不在 `entities/` 或 `topics/`，不會發布上網。
 
-此表由 `/wiki-lint` 6h（每週 ref 覆蓋率）與 `/wiki-weekly-review`（月度聚焦校準）append，每次一列，**只 append 不修改舊列**。
+此表由 `/wiki-lint` 6g（每週 ref 覆蓋率）與 `/wiki-weekly-review`（月度聚焦校準）append，每次一列，**只 append 不修改舊列**。
 
 | 日期 | ref 覆蓋率 | 採用驗證率 | 零命中搜尋數 | 聚焦命中率 | 備註 |
 |------|-----------|-----------|------------|-----------|------|

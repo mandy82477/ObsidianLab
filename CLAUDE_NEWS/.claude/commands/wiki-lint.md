@@ -320,7 +320,9 @@ Citation drift 是 LLM wiki 文獻點名的最嚴重失效模式：**claim 被�
 
 #### 6d. 規則年齡審查
 
-`.claude/rules/wiki-ingest-format.md`、`.claude/rules/wiki-reporter-shared.md` 及各記者規則檔（`wiki-ingest-*.md`）中帶有 `[加入: YYYY-MM-DD]` 標記的 `##` 區塊，計算距今天數。
+`.claude/rules/wiki-ingest-format.md`、`.claude/rules/wiki-reporter-shared.md`、各記者規則檔（`wiki-ingest-*.md`）、`.claude/rules/wiki-ingest.md`（主編指南）與**本檔（`.claude/commands/wiki-lint.md`）自身** `[加入: 2026-08-28]` 中帶有 `[加入: YYYY-MM-DD]` 標記的 `##` 區塊，計算距今天數。
+
+> 後兩者原本不在範圍內：`wiki-ingest.md` 沒有後綴，接不到 `wiki-ingest-*.md` 這個 glob；本檔則單純沒被列入。但本檔有 **35 條** `[加入:]` 條款——全庫最多——等於「規則最密集的檔案，它的規則從不被審查是否過期」。與 6a 原本不掃自己是同一形狀：**檢查者把自己排除在檢查範圍外**。
 
 - **距今 > 60 天**：逐一確認規則描述的行為是否仍與現狀吻合
 - **距今 ≤ 60 天**：記錄「在閾值內，無需審查」
