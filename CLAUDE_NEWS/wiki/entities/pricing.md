@@ -25,7 +25,7 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 **狀態：** active（持續調整中）
 **領域：** 💼 商業
 **首次出現：** 2026-04-25
-**最後更新：** 2026-08-26
+**最後更新：** 2026-08-28
 **最後新聞更新：** 2026-08-22
 
 > **最新計費政策異動**（2026-08-22）
@@ -89,7 +89,7 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 
 **Opus 5 定價「歧異」已解消（2026-08-08 官方查證）**：官方文件載明 **$5 / $25 per Mtok，且「unchanged from Claude Opus 4.8」**。此前並存的兩種說法**其實同時成立**——「為 Fable 5 的一半」（$5 vs $10）與 MarkTechPost「維持原 Opus 定價」（與 4.8 相同）講的是同一組數字的兩個對照對象，並非矛盾。Fast mode（research preview，僅 Claude API）另計 **$10 / $50**（來源：[What's new in Claude Opus 5](https://platform.claude.com/docs/en/about-claude/models/whats-new-opus-5)）。能力細節見 [[entities/opus-5]]、[[topics/model-comparison]]。
 
-**本表數字之官方查證（2026-08-20）**：Fable 5 $10/$50、Opus 5 與 Opus 4.8 $5/$25、Sonnet 5 $2/$10、Sonnet 4.6 $3/$15、Haiku 4.5 $1/$5，均與官方模型總覽頁一致（[Models overview](https://platform.claude.com/docs/en/about-claude/models/overview)，2026-08-20 查證）。官方頁未載 Sonnet 5 促銷到期日，8/31 之後的 $3/$15 走向仍以本頁「當前生效的計費規則」為準。
+**本表數字之官方查證（2026-08-20）**：Fable 5 $10/$50、Opus 5 與 Opus 4.8 $5/$25、Sonnet 5 $2/$10、Sonnet 4.6 $3/$15、Haiku 4.5 $1/$5，均與官方模型總覽頁一致（[Models overview](https://platform.claude.com/docs/en/about-claude/models/overview)，2026-08-20 查證）。**（2026-08-28 更正）** 此註原寫「8/31 之後的 $3/$15 走向待定」——該說法在寫下時就已過期：官方早於 **2026-08-10** 宣布 $2/$10 永久化、9/1 漲價取消。已無到期日可等。
 
 > 模型能力與評測細節見 [[topics/model-comparison]]；此表僅列價格。
 > **注意（2026-07-14）**：The Register 分析指出 Anthropic tokenizer 設計較為複雜，使 API 定價與跨供應商成本估算更難以直接比較（標題式報導，無進一步量化細節，source_count=2）。
