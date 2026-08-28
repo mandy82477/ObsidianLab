@@ -652,11 +652,6 @@
       "id": "bernanke",
       "name": "Ben Bernanke",
       "pageType": "entity"
-    },
-    {
-      "id": "anthropic-commitments",
-      "name": "Anthropic 承諾兌現追蹤",
-      "pageType": "topic"
     }
   ]
 }

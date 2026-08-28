@@ -1,0 +1,650 @@
+{
+  "date": "2026-08-29",
+  "generatedAt": "2026-08-29 00:44 UTC",
+  "articleCount": 90,
+  "sourceCount": "13/13",
+  "bulletin": "",
+  "topStories": [
+    {
+      "title": "[BUG] Claude Max plan session limits exhausted abnormally fast since March 23, 2026 (CLI usage)",
+      "url": "https://github.com/anthropics/claude-code/issues/38335",
+      "source": "GitHub Issues / claude-code",
+      "time": "08/28 13:44",
+      "sentiment": "",
+      "body": "GitHub Issue 回報 Claude Max 方案的 session 額度自 3 月底起消耗速度異常加快，該討論已累積 837 則留言與大量 👍 反應，是今日 GitHub Issues 討論度最高的項目。",
+      "focusTags": []
+    },
+    {
+      "title": "Feature Request: Support AGENTS.md.",
+      "url": "https://github.com/anthropics/claude-code/issues/6235",
+      "source": "GitHub Issues / claude-code",
+      "time": "08/27 14:54",
+      "sentiment": "",
+      "body": "社群持續要求 Claude Code 支援業界正逐漸統一採用的 AGENTS.md 格式（Codex、Amp、Cursor 已支援）；該請求已累積 385 則留言與 6525 個 👍 反應，是持續多日延燒的高熱度議題。",
+      "focusTags": [],
+      "sedimented": [
+        {
+          "id": "claude-code",
+          "pageType": "entity"
+        }
+      ]
+    },
+    {
+      "title": "Bring Back Buddy — A Consolidated Plea from the Community",
+      "url": "https://github.com/anthropics/claude-code/issues/45596",
+      "source": "GitHub Issues / claude-code",
+      "time": "08/26 16:46",
+      "sentiment": "",
+      "body": "`/buddy` 技能於 4 月 v2.1.97 版本無預告下移除，社群串聯要求官方恢復；該 Issue 已累積 268 則留言與 2076 個 👍 反應。",
+      "focusTags": []
+    },
+    {
+      "title": "EXCLUSIVE: Claude Revenue Surges 1,000% as Anthropic Gains on ChatGPT - Yahoo Finance",
+      "url": "https://finance.yahoo.com/technology/ai/articles/exclusive-claude-revenue-surges-1-132739054.html",
+      "source": "Google News / Yahoo Finance",
+      "time": "08/28 13:27",
+      "sentiment": "",
+      "body": "Yahoo Finance 獨家報導稱 Claude 營收年增達 1,000%，在企業市場對 ChatGPT 的差距持續縮小。",
+      "focusTags": []
+    },
+    {
+      "title": "Show HN: My Claude quota ran out in 10 minutes, so I made a tool to find out why",
+      "url": "https://github.com/kelviq/tare",
+      "source": "Hacker News",
+      "time": "08/27 16:37",
+      "sentiment": "",
+      "body": "多款圍繞 Claude 用量監控與帳號管理的小工具同批出現，包括本作（用量追蹤）、Leadcode（多客戶帳號隔離）、shadok-ai（排程 agent 省 token）與 Pi-Black（Max/Pro 額度轉接），反映社群對配額焦慮的持續關注。",
+      "focusTags": []
+    },
+    {
+      "title": "obra/superpowers",
+      "url": "https://github.com/obra/superpowers",
+      "source": "GitHub Search",
+      "time": "08/28 16:43",
+      "sentiment": "",
+      "body": "[存量盤點｜2025-10-09 出生、本庫今日首次收錄] 累計 27.9 萬星的 agentic skills 框架與軟體開發方法論，本庫今日才首次收錄，反映既有生態覆蓋仍有缺口。",
+      "focusTags": []
+    },
+    {
+      "title": "affaan-m/ECC",
+      "url": "https://github.com/affaan-m/ECC",
+      "source": "GitHub Search",
+      "time": "08/28 16:43",
+      "sentiment": "",
+      "body": "[存量盤點｜2026-01-18 出生、本庫今日首次收錄] 累計 24.4 萬星的 agent harness 效能優化系統，涵蓋技能、記憶、安全與研究優先開發流程，適用 Claude Code、Codex、Opencode、Cursor 等多種 harness。",
+      "focusTags": [],
+      "sedimented": [
+        {
+          "id": "claude-code",
+          "pageType": "entity"
+        }
+      ]
+    },
+    {
+      "title": "karanb192/awesome-claude-skills",
+      "url": "https://github.com/karanb192/awesome-claude-skills",
+      "source": "GitHub Search",
+      "time": "08/28 16:43",
+      "sentiment": "",
+      "body": "收錄 50 餘款經驗證 Claude Skills 的策展清單，涵蓋 TDD、除錯、git 工作流與文件處理。",
+      "focusTags": []
+    },
+    {
+      "title": "Meta projected to spend $10B on Anthropic AI",
+      "url": "https://www.nytimes.com/2026/08/27/technology/meta-anthropic-frenemies.html",
+      "source": "Hacker News",
+      "time": "08/27 15:14",
+      "sentiment": "",
+      "body": "紐約時報報導 Meta 公開批評 Anthropic 的同時，卻也是其最大客戶之一，兩者關係「亦敵亦友」。",
+      "focusTags": []
+    },
+    {
+      "title": "Google takes aim at Anthropic, Microsoft with budget-friendly AI pricing - CNBC",
+      "url": "https://www.cnbc.com/video/2026/08/27/google-takes-am-at-anthropic-microsoft-with-budget-friendly-ai-pricing.html",
+      "source": "Google News / CNBC",
+      "time": "08/27 16:12",
+      "sentiment": "",
+      "body": "CNBC 報導 Google 推出低價 AI 方案，對 Anthropic 與 Microsoft 的企業客戶形成價格競爭壓力。",
+      "focusTags": []
+    }
+  ],
+  "techUpdates": [
+    {
+      "title": "[anthropics/claude-code] v2.1.250",
+      "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.250",
+      "source": "GitHub",
+      "time": "08/28 00:49",
+      "sentiment": "",
+      "body": "本版僅為錯誤修復與穩定性改善，無具體新功能說明。",
+      "focusTags": []
+    },
+    {
+      "title": "[anthropics/anthropic-sdk-typescript] sdk: v0.122.0",
+      "url": "https://github.com/anthropics/anthropic-sdk-typescript/releases/tag/sdk-v0.122.0",
+      "source": "GitHub",
+      "time": "08/27 20:33",
+      "sentiment": "",
+      "body": "TypeScript SDK 釋出 v0.122.0，beta 版 files／skills 命名空間改用正式版（GA）介面形狀。",
+      "focusTags": []
+    },
+    {
+      "title": "[anthropics/anthropic-sdk-python] v1.2.0",
+      "url": "https://github.com/anthropics/anthropic-sdk-python/releases/tag/v1.2.0",
+      "source": "GitHub",
+      "time": "08/27 20:28",
+      "sentiment": "",
+      "body": "Python SDK 同步釋出 v1.2.0，beta 版 files／skills 命名空間同步改用正式版（GA）介面形狀。",
+      "focusTags": []
+    },
+    {
+      "title": "官方文件更新：Claude Help Center release notes",
+      "url": "https://support.claude.com/en/articles/12138966-release-notes",
+      "source": "Official Docs",
+      "time": "08/28 16:44",
+      "sentiment": "",
+      "body": "8 月 25 日更新：Claude Cowork 的記憶功能現在與一般對話共通，所有記住的內容可在設定的 Topics 中檢視、編輯或刪除；健康、信仰等敏感主題預設不納入記憶，需另外開啟。8 月 6 日更新：Enterprise 方案新增 Skill／外掛安全掃描（beta），可在第三方 Skill 或外掛上傳或編輯時自動檢查是否含惡意內容。",
+      "focusTags": []
+    }
+  ],
+  "mediaReports": [
+    {
+      "title": "AI firm Anthropic wins case challenging Pentagon blacklisting - The Washington Post",
+      "url": "https://www.washingtonpost.com/technology/2026/08/27/federal-judge-overturns-pentagon-ban-claude-chatbot-maker-anthropic/",
+      "source": "Google News / The Washington Post",
+      "time": "08/28 05:30",
+      "sentiment": "",
+      "body": "華郵報導聯邦法官推翻五角大廈對 Anthropic 的黑名單認定。",
+      "focusTags": []
+    },
+    {
+      "title": "Pentagon blacklisted Anthropic over Claude powers it didn't have - The Register",
+      "url": "https://www.theregister.com/ai-and-ml/2026/08/28/pentagon-blacklisted-anthropic-over-claude-powers-it-didnt-have/5293266",
+      "source": "Google News / The Register",
+      "time": "08/28 12:31",
+      "sentiment": "",
+      "body": "The Register 指出五角大廈當初列黑名單所依據的 Claude「能力」實際上並不存在，是判決翻案的關鍵理由之一。",
+      "focusTags": []
+    },
+    {
+      "title": "Anthropic (Re-)Enlists for War - The American Prospect",
+      "url": "https://prospect.org/2026/08/27/anthropic-reenlists-for-war-defense-department-ai/",
+      "source": "Google News / The American Prospect",
+      "time": "08/27 18:22",
+      "sentiment": "",
+      "body": "The American Prospect 從批判角度分析 Anthropic 與美國國防部門的關係，質疑禁令解除後雙方合作將如何發展。",
+      "focusTags": []
+    },
+    {
+      "title": "Anthropic Tests New Way for Claude to Work With Robots and Scientific Lab Tools - Bloomberg.com",
+      "url": "https://www.bloomberg.com/news/articles/2026-08-27/anthropic-tests-new-way-for-claude-to-work-with-robots-and-scientific-lab-tools",
+      "source": "Google News / Bloomberg.com",
+      "time": "08/27 19:31",
+      "sentiment": "",
+      "body": "Bloomberg 報導 Anthropic 測試讓 Claude 操作機器人與科學實驗室工具的新方式，呼應同日發布的 Model Hardware Standard。",
+      "focusTags": []
+    },
+    {
+      "title": "Anthropic's new hardware standard lets AI agents control the physical world - Ars Technica",
+      "url": "https://arstechnica.com/ai/2026/08/anthropics-new-hardware-standard-lets-ai-agents-control-the-physical-world/",
+      "source": "Google News / Ars Technica",
+      "time": "08/27 22:15",
+      "sentiment": "",
+      "body": "Ars Technica 解析 Model Hardware Standard 的技術框架與潛在應用場景。",
+      "focusTags": []
+    },
+    {
+      "title": "Anthropic launches AI tool that can conduct scientific experiments - Financial Times",
+      "url": "https://www.ft.com/content/dd069af7-a2a2-4984-8d9a-5edeaf54f2f8?syn-25a6b1a6=1",
+      "source": "Google News / Financial Times",
+      "time": "08/27 19:20",
+      "sentiment": "",
+      "body": "FT 報導 Anthropic 推出可操作科學實驗的 AI 工具，作為 Model Hardware Standard 首波應用案例。",
+      "focusTags": []
+    },
+    {
+      "title": "Claude, Codex, and Hermes installed unowned code inside corporate networks - Ars Technica",
+      "url": "https://arstechnica.com/security/2026/08/claude-codex-and-hermes-installed-unowned-code-inside-corporate-networks/",
+      "source": "Google News / Ars Technica",
+      "time": "08/27 14:00",
+      "sentiment": "",
+      "body": "Ars Technica 報導多款編碼 agent（含 Claude）在企業網路環境中安裝了來源不明的程式碼，凸顯 agent 自動化執行的資安風險。",
+      "focusTags": []
+    },
+    {
+      "title": "OpenAI, Anthropic, tech leaders warn of \"limited window\" to defend against AI cyber threats - CBS News",
+      "url": "https://www.cbsnews.com/news/openai-anthropic-ai-cyber-threat-warning/",
+      "source": "Google News / CBS News",
+      "time": "08/27 19:58",
+      "sentiment": "",
+      "body": "CBS News 報導多家 AI 公司高層共同示警，稱防禦 AI 驅動的網路威脅只剩「有限的時間窗口」。",
+      "focusTags": []
+    },
+    {
+      "title": "Claude vs. Kimi - China-US Focus",
+      "url": "https://www.chinausfocus.com/finance-economy/claude-vs-kimi",
+      "source": "Google News / China-US Focus",
+      "time": "08/28 14:57",
+      "sentiment": "",
+      "body": "China-US Focus 從中美 AI 競爭角度比較 Claude 與中國模型 Kimi。",
+      "focusTags": []
+    },
+    {
+      "title": "You're Drowning Claude Code in Instructions You Can't Explain, or Remember - analyticsindiamag.com",
+      "url": "https://analyticsindiamag.com/ai-features/youre-drowning-claude-code-in-instructions-you-cant-explain-or-remember",
+      "source": "Google News / analyticsindiamag.com",
+      "time": "08/28 11:50",
+      "sentiment": "",
+      "body": "分析文章討論開發者為 Claude Code 堆疊過多、難以追溯的指令設定，反思 CLAUDE.md／規則檔管理方式。",
+      "focusTags": [],
+      "sedimented": [
+        {
+          "id": "claude-code",
+          "pageType": "entity"
+        }
+      ]
+    },
+    {
+      "title": "OpenAI and Anthropic are ruining San Francisco - sfgate.com",
+      "url": "https://www.sfgate.com/local/article/open-ai-anthropic-ruining-sf-22404657.php",
+      "source": "Google News / sfgate.com",
+      "time": "08/28 11:04",
+      "sentiment": "",
+      "body": "sfgate 從社會觀察角度討論 OpenAI 與 Anthropic 對舊金山當地生態的衝擊。",
+      "focusTags": []
+    },
+    {
+      "title": "Anthropic's Beacon Hill spending spree - The Boston Globe",
+      "url": "https://www.bostonglobe.com/2026/08/28/newsletters/anthropic-campaign-donations-legislature-the-scrum/",
+      "source": "Google News / The Boston Globe",
+      "time": "08/28 10:49",
+      "sentiment": "",
+      "body": "波士頓環球報報導 Anthropic 在麻州政界的政治獻金與遊說支出增加。",
+      "focusTags": []
+    }
+  ],
+  "discussions": [
+    {
+      "title": "Show HN: The load-bearing vocabulary of Claude",
+      "url": "https://louisabraham.github.io/load-bearing/",
+      "source": "Hacker News",
+      "time": "08/27 08:59",
+      "sentiment": "",
+      "body": "分析 Claude 常用語彙與措辭模式的視覺化網頁，HN 討論者認為呈現簡潔且未過度加入作者主觀詮釋。",
+      "focusTags": []
+    },
+    {
+      "title": "Tell HN: Man, AI is killing my brain",
+      "url": "https://news.ycombinator.com/item?id=49468252",
+      "source": "Hacker News",
+      "time": "08/27 17:28",
+      "sentiment": "",
+      "body": "作者自述因同儕用 Claude Code 大幅提升產出速度，被迫放鬆自我審查、逐漸依賴 agent 直接推上 main，反思長期心智影響。",
+      "focusTags": [],
+      "sedimented": [
+        {
+          "id": "claude-code",
+          "pageType": "entity"
+        }
+      ]
+    },
+    {
+      "title": "Show HN: Watches user sessions, finds bugs that matter, and fixes them",
+      "url": "https://github.com/opslane/opslane",
+      "source": "Hacker News",
+      "time": "08/27 15:45",
+      "sentiment": "",
+      "body": "開源 agent Opslane 會找出真正影響使用者的 bug 並自動調查，僅在能驗證修復時才開 PR。",
+      "focusTags": []
+    },
+    {
+      "title": "A Comparison of Opus 5, 4.7, and 4.6 running a code review",
+      "url": "https://www.reddit.com/r/ClaudeCode/comments/1w0uyu7/a_comparison_of_opus_5_47_and_46_running_a_code/",
+      "source": "Reddit / r/ClaudeCode",
+      "time": "08/28 16:14",
+      "sentiment": "",
+      "body": "社群實測比較三款模型在同一份 code review 提示下的表現差異。",
+      "focusTags": []
+    },
+    {
+      "title": "Is it even legal for Anthropic to nerf its models this hard?",
+      "url": "https://www.reddit.com/r/ClaudeCode/comments/1w0t53b/is_it_even_legal_for_anthropic_to_nerf_its_models/",
+      "source": "Reddit / r/ClaudeCode",
+      "time": "08/28 15:06",
+      "sentiment": "",
+      "body": "使用者抱怨 Opus 5 與 Fable 5 在 Claude Code 中的實際表現遜於預期，質疑模型遭「削弱」。",
+      "focusTags": [],
+      "sedimented": [
+        {
+          "id": "claude-code",
+          "pageType": "entity"
+        }
+      ]
+    },
+    {
+      "title": "Citation Issues the Past Little While",
+      "url": "https://www.reddit.com/r/ClaudeAI/comments/1w0tntf/citation_issues_the_past_little_while/",
+      "source": "Reddit / r/ClaudeAI",
+      "time": "08/28 15:26",
+      "sentiment": "",
+      "body": "使用者回報 Claude 近期常拒絕正確附上引用來源，即使指令要求驗證與引用。",
+      "focusTags": []
+    },
+    {
+      "title": "Anthropic said Fable 5 would be restored to subscription plans. Ten weeks on, Pro is still paying per token.",
+      "url": "https://www.reddit.com/r/ClaudeAI/comments/1w0px6l/anthropic_said_fable_5_would_be_restored_to/",
+      "source": "Reddit / r/ClaudeAI",
+      "time": "08/28 12:59",
+      "sentiment": "",
+      "body": "使用者整理 Fable 5 計費爭議時間軸，指官方承諾恢復訂閱內含已十週，Pro 方案目前仍按 token 計費。",
+      "focusTags": []
+    },
+    {
+      "title": "Do you guys think that Fable 5.1 is actually dropping today and will it be available in Claude Code?",
+      "url": "https://www.reddit.com/r/ClaudeCode/comments/1w0v676/do_you_guys_think_that_fable_51_is_actually/",
+      "source": "Reddit / r/ClaudeCode",
+      "time": "08/28 16:21",
+      "sentiment": "",
+      "body": "社群討論 Fable 5.1 是否即將發布，部分使用者回報已被路由至疑似新版本測試。",
+      "focusTags": [],
+      "sedimented": [
+        {
+          "id": "claude-code",
+          "pageType": "entity"
+        }
+      ]
+    },
+    {
+      "title": "Can an AI make other AIs better? We benchmarked 5 frontier LLMs at rewriting other agents' harnesses (HarnessOpt-Bench)",
+      "url": "https://www.reddit.com/r/artificial/comments/1w05763/can_an_ai_make_other_ais_better_we_benchmarked_5/",
+      "source": "Reddit / r/artificial · 週熱門",
+      "time": "08/27 20:17",
+      "sentiment": "",
+      "body": "社群發布新基準 HarnessOpt-Bench，測試前沿 LLM 改寫其他 agent harness 的能力並防止作弊。",
+      "focusTags": []
+    },
+    {
+      "title": "Claude Code does not respect the XDG Base Directory specification",
+      "url": "https://github.com/anthropics/claude-code/issues/1455",
+      "source": "GitHub Issues / claude-code",
+      "time": "08/26 19:07",
+      "sentiment": "",
+      "body": "Linux 使用者要求 Claude Code 遵循 XDG 目錄規範，而非固定寫入 `~/.claude`。",
+      "focusTags": [],
+      "sedimented": [
+        {
+          "id": "claude-code",
+          "pageType": "entity"
+        }
+      ]
+    },
+    {
+      "title": "Claude Account Disabled After Payment for Claude Code Max 5x Plan",
+      "url": "https://github.com/anthropics/claude-code/issues/5088",
+      "source": "GitHub Issues / claude-code",
+      "time": "08/26 14:47",
+      "sentiment": "",
+      "body": "使用者回報付費續訂 Max 5x 方案後帳號反遭停用，尚待官方處理。",
+      "focusTags": [],
+      "sedimented": [
+        {
+          "id": "claude-code",
+          "pageType": "entity"
+        }
+      ]
+    },
+    {
+      "title": "[BUG] CVP-approved Claude.ai organization still receives cyber safeguard blocks in Claude Code",
+      "url": "https://github.com/anthropics/claude-code/issues/84352",
+      "source": "GitHub Issues / claude-code",
+      "time": "08/27 22:24",
+      "sentiment": "",
+      "body": "已通過 Cyber Verification Program 審核的組織，在 Claude Code 中仍持續遭遇資安防護誤擋。",
+      "focusTags": [],
+      "sedimented": [
+        {
+          "id": "claude-code",
+          "pageType": "entity"
+        }
+      ]
+    }
+  ],
+  "billing": [
+    {
+      "title": "官方文件更新：How do usage and length limits work?",
+      "url": "https://support.claude.com/en/articles/11647753-how-do-usage-and-length-limits-work",
+      "source": "Official Docs",
+      "time": "08/28 16:44",
+      "sentiment": "",
+      "body": "官方說明中心區分「用量限制」與「長度限制」兩種機制：用量限制是特定期間內可互動的「對話預算」，受對話長度、功能使用、模型選擇與 effort 等級影響。",
+      "focusTags": []
+    },
+    {
+      "title": "官方文件更新：Manage usage credits for paid Claude plans",
+      "url": "https://support.claude.com/en/articles/12429409-manage-usage-credits-for-paid-claude-plans",
+      "source": "Official Docs",
+      "time": "08/28 16:44",
+      "sentiment": "",
+      "body": "Pro、Max 5x、Max 20x 方案使用者觸及方案用量上限後，可切換為按標準 API 費率計費的「用量點數」繼續使用，需先綁定付款方式（僅限網頁版啟用）。",
+      "focusTags": []
+    },
+    {
+      "title": "官方文件更新：Claude Fable 5 on your plan",
+      "url": "https://support.claude.com/en/articles/15424964-claude-fable-5-on-your-plan",
+      "source": "Official Docs",
+      "time": "08/28 16:44",
+      "sentiment": "",
+      "body": "官方說明先前「每週訂閱額度最多 50% 可用於 Fable 5」的促銷已於 7 月 19 日結束：Max 方案、Team／Enterprise 高階席位將 Fable 5 納入方案內含，Pro 方案與標準席位則改為按用量點數計費。",
+      "focusTags": [],
+      "sedimented": [
+        {
+          "id": "fable-5",
+          "pageType": "entity"
+        }
+      ]
+    }
+  ],
+  "focus": [
+    {
+      "tag": "[重大事件]",
+      "text": "聯邦法官裁定五角大廈將 Anthropic 列入供應鏈風險黑名單「違法且毫無根據」，即時解除禁令；Anthropic 稍早曾因「軍方認定其具備實際上不存在的能力」遭列黑名單，本案是 Claude 進入美國政府市場過程中目前最大的單一法律變數。",
+      "ref_urls": [
+        "https://www.reuters.com/legal/government/us-judge-blocks-pentagons-anthropic-blacklisting-2026-08-28/",
+        "https://www.reuters.com/world/how-anthropic-pentagon-dispute-over-ai-safeguards-escalated-2026-08-28/"
+      ]
+    },
+    {
+      "tag": "[重大事件]",
+      "text": "Anthropic 發布「Model Hardware Standard」研究預覽，提供統一介面讓 Claude 代理人操作機器人與科學實驗室儀器，首波應用鎖定科學研究與製造場域。",
+      "ref_urls": [
+        "https://www.anthropic.com/news/model-hardware-standard-research-preview",
+        "https://www.anthropic.com/news/expanding-support-for-scientists"
+      ]
+    },
+    {
+      "tag": "[重大事件]",
+      "text": "Anthropic 與英國新創 Nscale 簽署 450 億美元資料中心協議，取得 460 MW Vera Rubin 世代算力，是繼近期 AMD、Nvidia 兩筆大型算力布局後的第三筆重大基礎建設交易。",
+      "ref_urls": [
+        "https://www.forbes.com/sites/jonmarkman/2026/08/28/anthropics-45-billion-nscale-deal-buys-460-megawatts-of-vera-rubin/",
+        "https://www.ft.com/content/0ec76ba3-5f7f-4085-88fb-acf21954bc85?syn-25a6b1a6=1"
+      ]
+    },
+    {
+      "tag": "[重大事件]",
+      "text": "Salesforce 與 Anthropic 深化合作，發布「Claudeforce」將 Claude 整合進 Salesforce 全線 CRM 產品，同時 Salesforce 公布財報獲利與營收雙雙成長。",
+      "ref_urls": [
+        "https://www.wsj.com/business/earnings/salesforce-profit-revenue-rise-expands-partnership-with-anthropics-claude-f17aa26f",
+        "https://www.salesforce.com/news/press-releases/2026/08/26/salesforce-and-anthropic-announce-claudeforce/"
+      ]
+    },
+    {
+      "tag": "[風險警示]",
+      "text": "資安研究者 embracethered 公布可繞過 Claude Code Opus 5 Auto Mode 安全機制的攻擊手法，示範可誘使其執行未經授權的程式碼；Cybernews 報導其中一起實際遭惡意程式碼利用的案例。",
+      "ref_urls": [
+        "https://simonwillison.net/2026/Aug/27/breaking-claude-code-opus-5-auto-mode/",
+        "https://cybernews.com/security/claude-code-auto-mode-malware-vulnerability/"
+      ]
+    }
+  ],
+  "topicRadar": [
+    {
+      "title": "Attackers Exploit MCP RCE, Blind Prompt Injection and Memory Credential Theft Against AI Infrastructure - gbhackers.com",
+      "url": "https://gbhackers.com/mcp-rce-exploitation/",
+      "body": "揭露針對 AI 基礎設施的 MCP 遠端程式碼執行、盲提示注入與記憶憑證竊取攻擊手法（→ AI Agent 安全）",
+      "topic": "",
+      "topicPage": null
+    },
+    {
+      "title": "Attacks on AI Infrastructure: 90-Day Honeypot Telemetry - wiz.io",
+      "url": "https://www.wiz.io/blog/ai-infrastructure-honeypot",
+      "body": "Wiz 公布 90 天蜜罐遙測數據，量化針對 AI 基礎設施的實際攻擊型態（→ AI Agent 安全）",
+      "topic": "",
+      "topicPage": null
+    },
+    {
+      "title": "Google DeepMind's share of elite AI talent declines as rivals gain ground - Storyboard18",
+      "url": "https://www.storyboard18.com/brand-makers/google-deepminds-share-of-elite-ai-talent-declines-as-rivals-gain-ground-109141.htm",
+      "body": "數據顯示 Google DeepMind 頂尖 AI 人才佔比持續下滑，對手實驗室吸收更多人才（→ AI 人才流動）",
+      "topic": "",
+      "topicPage": null
+    },
+    {
+      "title": "Thinking Machines Lab cofounder Barret Zoph joins Google - ET Enterprise AI",
+      "url": "https://enterpriseai.economictimes.indiatimes.com/news/industry/thinking-machines-lab-cofounder-barret-zoph-joins-google/133568907",
+      "body": "Thinking Machines Lab 共同創辦人 Barret Zoph 轉往 Google（→ AI 人才流動）",
+      "topic": "",
+      "topicPage": null
+    },
+    {
+      "title": "Why Ivy League professors are leaving Trump's U.S. for Canada's new $541-million research program - Toronto Star",
+      "url": "https://www.thestar.com/news/canada/government-to-announce-64-top-researchers-coming-to-canada/article_a15d09ff-632b-4c9c-be6e-d0559e09b681.html",
+      "body": "加拿大以 5.41 億美元研究計畫吸引常春藤學者北遷，涉及 AI 研究人才跨國流動（→ AI 人才流動）",
+      "topic": "",
+      "topicPage": null
+    }
+  ],
+  "sourceStatus": [
+    {
+      "name": "Anthropic Status",
+      "ok": true,
+      "count": 0
+    },
+    {
+      "name": "Hacker News",
+      "ok": true,
+      "count": 18
+    },
+    {
+      "name": "GitHub Issues",
+      "ok": true,
+      "count": 15
+    },
+    {
+      "name": "Anthropic Blog",
+      "ok": true,
+      "count": 0
+    },
+    {
+      "name": "Claude API Release Notes",
+      "ok": true,
+      "count": 0
+    },
+    {
+      "name": "dev.to",
+      "ok": true,
+      "count": 13
+    },
+    {
+      "name": "Official Skills",
+      "ok": true,
+      "count": 0
+    },
+    {
+      "name": "Topic Watch",
+      "ok": true,
+      "count": 6
+    },
+    {
+      "name": "Blogroll",
+      "ok": true,
+      "count": 2
+    },
+    {
+      "name": "Official Docs",
+      "ok": true,
+      "count": 5
+    },
+    {
+      "name": "Google News",
+      "ok": true,
+      "count": 47
+    },
+    {
+      "name": "GitHub",
+      "ok": true,
+      "count": 42
+    },
+    {
+      "name": "Reddit",
+      "ok": true,
+      "count": 16
+    }
+  ],
+  "preview": "聯邦法官裁定五角大廈將 Anthropic 列入供應鏈風險黑名單「違法且毫無根據」，即時解除禁令；Anthropic 稍早曾因「軍方認定其具備實際上不存在的能力」遭列黑名單，本案是 Claude 進入美國政府市場過程中目前最大的單一法律變數。",
+  "sedimentedToday": [
+    {
+      "id": "claude-code",
+      "name": "Claude Code",
+      "pageType": "entity"
+    },
+    {
+      "id": "fable-5",
+      "name": "Claude Fable 5",
+      "pageType": "entity"
+    },
+    {
+      "id": "opus-5",
+      "name": "Claude Opus 5",
+      "pageType": "entity"
+    },
+    {
+      "id": "pricing",
+      "name": "Anthropic 訂閱方案與計費政策",
+      "pageType": "entity"
+    },
+    {
+      "id": "ai-agent-safety",
+      "name": "AI Agent 安全與可靠性",
+      "pageType": "topic"
+    },
+    {
+      "id": "anthropic-business",
+      "name": "Anthropic 商業健康度",
+      "pageType": "topic"
+    },
+    {
+      "id": "anthropic-commitments",
+      "name": "Anthropic 承諾兌現追蹤",
+      "pageType": "topic"
+    },
+    {
+      "id": "anthropic-government-policy",
+      "name": "Anthropic 政府與軍事政策",
+      "pageType": "topic"
+    },
+    {
+      "id": "code-quality-decline",
+      "name": "Claude Code 效能退步事件",
+      "pageType": "topic"
+    },
+    {
+      "id": "community-tech-discussions",
+      "name": "社群技術討論趨勢",
+      "pageType": "topic"
+    },
+    {
+      "id": "competitor-landscape",
+      "name": "AI 編碼工具競品動態",
+      "pageType": "topic"
+    }
+  ]
+}

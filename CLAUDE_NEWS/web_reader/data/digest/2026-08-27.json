@@ -14,12 +14,6 @@
       "body": "社群指出 Codex、Amp、Cursor 等競品已開始統一採用 AGENTS.md（agents.md 提出的標準格式）讓程式碼代理理解專案脈絡，相對之下 Claude Code 仍只支援自家 CLAUDE.md；該請求已累積 384 則留言與 6496 個 👍 反應。",
       "focusTags": [
         "[持續追蹤]"
-      ],
-      "sedimented": [
-        {
-          "id": "claude-code",
-          "pageType": "entity"
-        }
       ]
     },
     {
@@ -84,13 +78,7 @@
       "time": "08/27 14:44",
       "sentiment": "",
       "body": "桌面版文件更新，說明多項桌面專屬功能：以 Git 隔離的並行 session、拖放式面板等。",
-      "focusTags": [],
-      "sedimented": [
-        {
-          "id": "claude-code",
-          "pageType": "entity"
-        }
-      ]
+      "focusTags": []
     }
   ],
   "mediaReports": [
@@ -182,13 +170,7 @@
       "time": "08/27 10:00",
       "sentiment": "",
       "body": "XDA 分享一套混合工作流：用 Claude Code 做規劃、改用本地模型執行實作，藉此避開 Claude Code 的用量限制。",
-      "focusTags": [],
-      "sedimented": [
-        {
-          "id": "claude-code",
-          "pageType": "entity"
-        }
-      ]
+      "focusTags": []
     }
   ],
   "discussions": [
@@ -208,13 +190,7 @@
       "time": "08/27 13:34",
       "sentiment": "",
       "body": "作者提到平行跑多個 agent 時，各 agent 彼此不知道對方在做什麼，形容「像把 Slack 從團隊裡拿走一樣」，因此打造 Concord 讓 Claude Code、Codex、Cursor 能互通任務脈絡。情緒：😊",
-      "focusTags": [],
-      "sedimented": [
-        {
-          "id": "claude-code",
-          "pageType": "entity"
-        }
-      ]
+      "focusTags": []
     },
     {
       "title": "\"fork\" subagents in Claude Code inherit your entire conversation, and resend it on every single tool call?",
@@ -223,13 +199,7 @@
       "time": "08/27 14:27",
       "sentiment": "",
       "body": "使用者觀察到 Claude Code 用 \"fork\" 子代理分工重構時，四個平行子代理總共耗用約 200 萬 tokens，懷疑是每次工具呼叫都重送整段對話歷史所致。情緒：😤",
-      "focusTags": [],
-      "sedimented": [
-        {
-          "id": "claude-code",
-          "pageType": "entity"
-        }
-      ]
+      "focusTags": []
     },
     {
       "title": "Unpopular opinion: Opus 5 language just became better in communication",
@@ -256,13 +226,7 @@
       "time": "08/25 15:25",
       "sentiment": "",
       "body": "作者將原本寫在 prompt 裡、可用 grep 驗證的規則改用 Claude Code hooks 強制執行，稱規則遵循率從「機率性」變成 100%，也讓改用 Haiku 當 builder 不再顯得冒險。情緒：😊",
-      "focusTags": [],
-      "sedimented": [
-        {
-          "id": "claude-code",
-          "pageType": "entity"
-        }
-      ]
+      "focusTags": []
     },
     {
       "title": "Your AI Subagents Are Lying to You: 4 Silent Failure Modes",
@@ -289,13 +253,7 @@
       "time": "08/12 16:32",
       "sentiment": "",
       "body": "文章整理 Anthropic 將 Claude Code 的付費／專業／企業用戶預設切換為 auto 模式，讓工具能以更少的人工確認自主執行任務與工具呼叫。情緒：😐",
-      "focusTags": [],
-      "sedimented": [
-        {
-          "id": "claude-code",
-          "pageType": "entity"
-        }
-      ]
+      "focusTags": []
     },
     {
       "title": "How I Used Claude Code to Hunt Down a Memory Leak That Took Down Prod",
@@ -304,13 +262,7 @@
       "time": "08/08 14:33",
       "sentiment": "",
       "body": "作者描述凌晨兩點的正式環境記憶體洩漏事故，起初花一小時用猜的排查，改用 Claude Code 系統性分析 heap snapshot 後才真正定位問題。情緒：😊",
-      "focusTags": [],
-      "sedimented": [
-        {
-          "id": "claude-code",
-          "pageType": "entity"
-        }
-      ]
+      "focusTags": []
     },
     {
       "title": "All 26 of My MCP Tools Failed the Same Way. My Test to Rule Out the Token Proved It Was the Problem.",
@@ -337,13 +289,7 @@
       "time": "08/19 07:11",
       "sentiment": "",
       "body": "作者描述在 k3s 叢集除錯 9 小時後，Claude Code 給出三個選項，「建議」選項竟是放棄目前這個把 PR 預覽環境搬進 Istio Ambient mesh 的十四步計畫。情緒：😤",
-      "focusTags": [],
-      "sedimented": [
-        {
-          "id": "claude-code",
-          "pageType": "entity"
-        }
-      ]
+      "focusTags": []
     },
     {
       "title": "I did it! I'm free! It's been 7 hours since I used claudecode",
@@ -352,13 +298,7 @@
       "time": "08/21 00:44",
       "sentiment": "",
       "body": "使用者的 Pro 訂閱到期後改用本地 Qwen3.8-27B 模型，以略帶戲謔的口吻宣告自己已經 7 小時沒用 Claude Code。情緒：😤",
-      "focusTags": [],
-      "sedimented": [
-        {
-          "id": "claude-code",
-          "pageType": "entity"
-        }
-      ]
+      "focusTags": []
     },
     {
       "title": "Running local LLM's as agents in Claude Code",
@@ -367,13 +307,7 @@
       "time": "08/27 00:03",
       "sentiment": "",
       "body": "使用者因每天用完 Max 訂閱的 token 額度三次，設計了一套 MCP 架構把部分程式工作分擔給本地 Qwen3.8-27B 模型執行。情緒：😐",
-      "focusTags": [],
-      "sedimented": [
-        {
-          "id": "claude-code",
-          "pageType": "entity"
-        }
-      ]
+      "focusTags": []
     },
     {
       "title": "[BUG] Claude 4.7, 4.8, 5.0, and Fable increasingly default to repetitive rhetorical tics and often struggle to produce coherent prose despite explicit style instructions",
@@ -402,13 +336,7 @@
       "time": "08/27 14:17",
       "sentiment": "",
       "body": "使用者回報 API 連線會在回應途中頻繁中斷，稱此問題發生頻率之高已讓 Claude Code 難以用於任何任務，該回報累積 55 則留言、91 個 👍。情緒：😤",
-      "focusTags": [],
-      "sedimented": [
-        {
-          "id": "claude-code",
-          "pageType": "entity"
-        }
-      ]
+      "focusTags": []
     }
   ],
   "billing": [
@@ -419,13 +347,7 @@
       "time": "08/27 14:44",
       "sentiment": "",
       "body": "先前允許以最多 50% 每週訂閱額度免費使用 Fable 5 的促銷已於 7 月 19 日 23:59:59（PT）到期，到期後 Fable 5 仍可使用，但存取方式依方案而異：Max 方案享有優先存取。",
-      "focusTags": [],
-      "sedimented": [
-        {
-          "id": "fable-5",
-          "pageType": "entity"
-        }
-      ]
+      "focusTags": []
     },
     {
       "title": "官方文件更新：How do usage and length limits work?",
@@ -452,13 +374,7 @@
       "time": "08/27 14:44",
       "sentiment": "",
       "body": "文件說明個人 Pro／Max 訂閱用戶如何存取 Claude Code；若屬 Team 或 Enterprise 方案成員，另見對應文件。",
-      "focusTags": [],
-      "sedimented": [
-        {
-          "id": "claude-code",
-          "pageType": "entity"
-        }
-      ]
+      "focusTags": []
     }
   ],
   "focus": [
@@ -586,18 +502,8 @@
   "preview": "Salesforce 與 Anthropic 深化合作，發布整合進 CRM 工作流的 AI 業務外掛「Claudeforce」，Salesforce 同時上修全年營收預測；Reuters、qz.com、CNBC（Benioff 與 Dario Amodei 專訪）等多家媒體同步報導。",
   "sedimentedToday": [
     {
-      "id": "claude-code",
-      "name": "Claude Code",
-      "pageType": "entity"
-    },
-    {
       "id": "dario-amodei",
       "name": "Dario Amodei",
-      "pageType": "entity"
-    },
-    {
-      "id": "fable-5",
-      "name": "Claude Fable 5",
       "pageType": "entity"
     },
     {
@@ -616,28 +522,8 @@
       "pageType": "entity"
     },
     {
-      "id": "opus-5",
-      "name": "Claude Opus 5",
-      "pageType": "entity"
-    },
-    {
-      "id": "ai-agent-safety",
-      "name": "AI Agent 安全與可靠性",
-      "pageType": "topic"
-    },
-    {
       "id": "ai-talent-flow",
       "name": "AI 實驗室人才流動",
-      "pageType": "topic"
-    },
-    {
-      "id": "anthropic-business",
-      "name": "Anthropic 商業健康度",
-      "pageType": "topic"
-    },
-    {
-      "id": "community-tech-discussions",
-      "name": "社群技術討論趨勢",
       "pageType": "topic"
     }
   ]
