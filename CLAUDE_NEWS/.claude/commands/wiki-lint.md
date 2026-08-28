@@ -252,7 +252,7 @@ index.md 狀態變更：[page: 舊狀態→新狀態 or 無]
 Citation drift 是 LLM wiki 文獻點名的最嚴重失效模式：**claim 被後續改寫走樣，但歸因還在，造成虛假的有源感**。懸置標記防「未確認的事實」，本步驟防「已確認但被改壞的事實」。抽樣控成本，不全查：
 
 1. 從 `data/source_attribution.jsonl` 隨機抽 **5 筆**近 60 天的歸因（`python -c "import json,random;rows=[json.loads(l) for l in open('data/source_attribution.jsonl',encoding='utf-8') if l.strip()];random.shuffle(rows);[print(r['date'],r['page'],r['item_title'][:60]) for r in rows[:5]]"` 後自行過濾日期）
-2. 每筆：開 `news/該日.md` 找到該條目的摘要 → Grep 該 wiki 頁中對應此事實的段落 → 比對**頁面現文是否仍忠於來源**（數字、日期、確定性程度、誰說的）
+2. 每筆：開該歸因日期的日報（`news/` 下同名日期檔）找到該條目的摘要 → Grep 該 wiki 頁中對應此事實的段落 → 比對**頁面現文是否仍忠於來源**（數字、日期、確定性程度、誰說的）
 3. 三種結果：✅ 相符不動；⚠️ 措辭漂移（把「媒體稱」寫成事實、把分歧寫成共識、數字走樣）→ 依日報原文修正該段；❓ 頁面已無此事實對應段落（被合併或清理）→ 不算錯，記一筆即可
 4. 回報格式（納入步驟 8 的 lint 紀錄）：`歸因抽查（5d）：抽 5 筆，相符 A／修正漂移 B（頁名 list）／無對應 C`；**連續 3 週 B=0 可降頻為隔週抽**
 
