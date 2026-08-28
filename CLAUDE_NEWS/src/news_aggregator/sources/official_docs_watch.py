@@ -87,11 +87,18 @@ MIN_DELTA_CHARS = 40
 # **hash 與 length 的算法刻意不動**：改動它們會讓部署當天七頁同時報「變了」，
 # 一次假警報就足以把這個來源訓練成可忽略。segments 是純新增欄位，舊 state 沒有
 # 它 → 該頁本次照舊行為輸出並靜默補記基線，下一次變動起才有 diff。
+# **表格切到「列」為止，不切到「格」**：切到格會讓價格表碎成 `$2 / MTok` 這種
+# 無主詞的碎片——而它只有 9 字元、低於 MIN_SEGMENT_CHARS 會被整個丟掉，於是
+# 「Sonnet 5 從 $2 改成 $3」在偵測器眼中是零變動（2026-08-28 首版即如此，正好
+# 壞在這個功能唯一存在理由的那一頁上）。切到列則整列進 diff：
+# 「Claude Sonnet 5 $2 / MTok … $10 / MTok」，讀者一眼看得出改了什麼。
 _BLOCK_END_RE = re.compile(
-    r"</(?:p|div|li|h[1-6]|tr|td|th|section|article|blockquote|pre)\s*>|<br\s*/?>", re.I)
+    r"</(?:p|div|li|h[1-6]|tr|section|article|blockquote|pre)\s*>|<br\s*/?>", re.I)
 NEWLINE = chr(10)
 MIN_SEGMENT_CHARS = 12   # 更短的多半是導覽殘骸與圖示 alt，進來只會製造假 diff
 MAX_SEGMENTS = 1200      # 超過此數的頁面不存 segments（state 檔無上限成長的閘）
+BOILERPLATE_MIN_PAGES = 2   # 出現在幾個頁面以上就算樣板
+_META_KEY = "_meta"         # state 內存放樣板指紋（不是 URL，不會與監看頁衝突）
 MAX_LISTED_SEGMENTS = 5  # 摘要裡列幾條就夠了——目的是讓人知道往哪看，不是重現 diff
 SEGMENT_PREVIEW_CHARS = 120
 
@@ -111,6 +118,8 @@ class OfficialDocsWatch(BaseSource):
         items: list[FeedItem] = []
         dirty = False
 
+        # 先全部抓回來再處理：樣板判定需要看過本輪所有頁面（見 _boilerplate）
+        fetched = []
         for page in pages:
             url = page.get("url")
             name = page.get("name") or url
@@ -125,15 +134,29 @@ class OfficialDocsWatch(BaseSource):
                 # stored hash is left untouched so the next run retries cleanly.
                 logger.warning("Official watch '%s' failed: %s", name, e)
                 continue
+            fetched.append((name, url, mode, raw_body))
+
+        segs_by_url = {u: _visible_segments(b) for _, u, m, b in fetched if m != "index"}
+        boilerplate = _boilerplate(segs_by_url)
+        # 樣板集合隨監看清單而變：清單一改，同一段可能從「內容」變成「樣板」
+        # 而消失，下次 diff 就會把它報成「移除」。指紋不同時本輪只重記基線、
+        # 不報 diff——與舊 state 無 segments 的處理一致。
+        fingerprint = _watch_fingerprint(segs_by_url)
+        resegmented = state.get(_META_KEY, {}).get("fingerprint") != fingerprint
+        if resegmented and state.get(_META_KEY) is not None:
+            logger.info("Official watch: watchlist changed, re-baselining segments this run")
+        state[_META_KEY] = {"fingerprint": fingerprint}
+
+        for name, url, mode, raw_body in fetched:
             # index 模式吃原文（_visible_text 會吃掉索引解析器需要的行結構）
             text = raw_body if mode == "index" else _visible_text(raw_body)
-
             prev = state.get(url)
             if mode == "index":
                 item = _index_item(name, url, text, prev, state)
             else:
-                # 原文另外傳一份：段落級 diff 需要區塊邊界，而 text 已被壓平
-                item = _hash_item(name, url, text, prev, state, raw_body=raw_body)
+                item = _hash_item(name, url, text, prev, state,
+                                  segments=sorted(segs_by_url.get(url, set()) - boilerplate),
+                                  resegmented=resegmented)
             dirty = True
             if item is not None:
                 items.append(item)
@@ -145,9 +168,10 @@ class OfficialDocsWatch(BaseSource):
 
 
 def _hash_item(name: str, url: str, text: str, prev, state: dict,
-               raw_body: str = "") -> FeedItem | None:
+               segments: list[str] | None = None,
+               resegmented: bool = False) -> FeedItem | None:
     digest = hashlib.sha256(text.encode("utf-8")).hexdigest()
-    segments = _visible_segments(raw_body) if raw_body else []
+    segments = segments or []
     entry: dict = {"hash": digest, "length": len(text)}
     if segments and len(segments) <= MAX_SEGMENTS:
         entry["segments"] = segments
@@ -171,7 +195,7 @@ def _hash_item(name: str, url: str, text: str, prev, state: dict,
         source="Official Docs",
         published=datetime.now(tz=timezone.utc),
         score=0,
-        summary=_change_summary(name, prev, text, segments),
+        summary=_change_summary(name, prev, text, segments, resegmented),
         category="official",
         score_unit="",
     )
@@ -187,15 +211,38 @@ def _visible_segments(body: str) -> list[str]:
     stripped = _SCRIPT_RE.sub(" ", body)
     stripped = _BLOCK_END_RE.sub(NEWLINE, stripped)
     stripped = _TAG_RE.sub(" ", stripped)
-    out = []
+    out = set()
     for line in stripped.split(NEWLINE):
         seg = _WS_RE.sub(" ", line).strip()
         if len(seg) >= MIN_SEGMENT_CHARS:
-            out.append(seg)
+            # 回傳集合而非清單：diff 本來就只用集合語意，存重複段落是白存
+            # （定價頁光是重複的表頭列就有 142 段）
+            out.add(seg)
     return out
 
 
-def _change_summary(name: str, prev: dict, text: str, segments: list[str]) -> str:
+def _boilerplate(segs_by_url: dict) -> set:
+    """本輪出現在 ≥ BOILERPLATE_MIN_PAGES 個頁面的段落，視為導覽／頁尾樣板。
+
+    這些段落佔掉六成的儲存量，而且它們變動時報出來的 diff 是「新增 1 段：
+    Try Claude Try Claude」——既沒有資訊，又會把真訊號淹掉。判準用「跨頁重複」
+    而不是關鍵字黑名單：樣板的定義就是「每頁都有」，這是它唯一穩定的特徵。
+    """
+    seen: dict = {}
+    for segs in segs_by_url.values():
+        for seg in segs:
+            seen[seg] = seen.get(seg, 0) + 1
+    return {seg for seg, n in seen.items() if n >= BOILERPLATE_MIN_PAGES}
+
+
+def _watch_fingerprint(segs_by_url: dict) -> str:
+    """本輪參與樣板判定的頁面集合。變了就代表樣板集合可能整批位移。"""
+    joined = "|".join(sorted(segs_by_url))
+    return hashlib.sha256(joined.encode("utf-8")).hexdigest()[:16]
+
+
+def _change_summary(name: str, prev: dict, text: str, segments: list[str],
+                    resegmented: bool = False) -> str:
     """說出「改了什麼」，而不只是「變了」。
 
     舊 state 沒有 segments（本函式部署前記的基線），或頁面大到不存 segments 時，
@@ -203,7 +250,7 @@ def _change_summary(name: str, prev: dict, text: str, segments: list[str]) -> st
     """
     head = f"{name} 內容有變動（前次 {prev.get('length', 0)} 字 → 本次 {len(text)} 字）。"
     before = prev.get("segments")
-    if not before or not segments:
+    if resegmented or not before or not segments:
         return head + "此為官方一手文件的變更偵測，非新聞報導；具體改了什麼需開啟連結比對（本頁尚無可比對的前一版段落，下次變動起會列出差異）。"
 
     before_set, now_set = set(before), set(segments)

@@ -950,7 +950,7 @@
       ]
     },
     {
-      "name": "官方頁段落級 diff 的三個護欄：hash/length 仍由 _visible_text 算（改算法會讓部署當天每頁都報假警報）＋ 舊 state 無 segments 時退化說明（不得假裝有 diff）＋ 超大頁不存 segments（state 檔無上限成長的閘）",
+      "name": "官方頁段落級 diff 的四個護欄：hash/length 仍由 _visible_text 算（改算法＝部署當天每頁假警報）＋舊 state 無 segments 時退化說明（不假裝有 diff）＋MAX_SEGMENTS 上限（state 無上限成長的閘）＋表格只切到列不切到格（切到格會讓 `$2 / MTok` 低於門檻被丟掉，價格改動變零 diff）",
       "assertion": "all_contain",
       "files": [
         "src/news_aggregator/sources/official_docs_watch.py"
@@ -958,7 +958,20 @@
       "patterns": [
         "_visible_segments",
         "MAX_SEGMENTS",
-        "下次變動起會列出差異"
+        "下次變動起會列出差異",
+        "表格切到「列」為止"
+      ]
+    },
+    {
+      "name": "跨頁樣板過濾與其穩定性護欄成對存在：_boilerplate（濾掉六成儲存量的導覽/頁尾噪音）必須與 _watch_fingerprint 重記基線同時在（監看清單一改，樣板集合整批位移，不擋會報出整批假的『移除』）",
+      "assertion": "all_contain",
+      "files": [
+        "src/news_aggregator/sources/official_docs_watch.py"
+      ],
+      "patterns": [
+        "_boilerplate",
+        "_watch_fingerprint",
+        "resegmented"
       ]
     }
   ],
