@@ -343,3 +343,8 @@
 [Thu 2026/08/27 23:06:38.58] Single push done (news + wiki + web)
 [Thu 2026/08/27 23:06:38.58] === Pipeline complete (agent) ===
 [Fri 2026/08/28 13:06:53.00 UTC] [cloud daily-news-pipeline-cloud STARTED 2026-08-28T13:06:53Z]
+[Fri 2026/08/28 13:07:39.00 UTC] === Agent pipeline start (2026-08-28) ===
+[Fri 2026/08/28 13:07:39.00 UTC] Step 0 OK - yesterday digest (2026-08-27) present
+[Fri 2026/08/28 13:07:39.00 UTC] Step 0b OK - no idempotency conflict
+[Fri 2026/08/28 13:07:39.00 UTC] ABORTED: gathered_items.json date=2026-08-27 items=70，非目標日期的新鮮資料（GitHub Actions daily-gather 尚未產出 2026-08-28 資料，cron 0 10 * * * UTC 已過 3+ 小時緩衝仍未見新資料）
+[Fri 2026/08/28 13:07:39.00 UTC] === Pipeline aborted (agent) ===
