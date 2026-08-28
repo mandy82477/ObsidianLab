@@ -24,14 +24,12 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 **領域：** 💼 商業
 **蒐集邊界：** 以 Claude 為參照系的競品動態為主，另針對競品發布與定價定向補抓（每日至多 2 則）；競品自身未與 Claude 對比的發布可能延遲或缺漏。
 **開始日期：** 2026-04
-**最後更新：** 2026-08-26
-**最後新聞更新：** 2026-08-26
+**最後更新：** 2026-08-29
+**最後新聞更新：** 2026-08-29
 
-> **最新競品動態**（2026-08-26）
-> - **AgentConnect：新聞稿宣傳「開源多代理替代方案」對標 Claude Tag**：屬企業自行發布之新聞稿性質，可信度需留意，詳見「主要競品追蹤」新增子區塊。
-> - **Google 加入法律 AI 賽道，與 Anthropic、OpenAI 競爭**：Business Insider 報導，詳見「主要競品追蹤」新增子區塊。
-> - **Salesforce 官方確認「Slack Code」正式推出，整合 Claude 與 ChatGPT（International Business Times）**：與既有 08-20/21 VentureBeat／The Next Web 報導同一事件，詳見「主要競品追蹤」Slack Code 子區塊更新。
-> - **Claude Code 拒採 AGENTS.md 業界標準引發開發者社群不滿（36Kr）**：詳見「觀察重點」新增，聚焦此決策對 Anthropic 產業定位/生態關係的影響；開發者社群反應面已轉交社群記者處理。
+> **最新競品動態**（2026-08-29）
+> - **Google 推出低價 AI 方案，對 Anthropic／Microsoft 企業客戶形成定價壓力**：CNBC 報導，僅標題層級可用、無具體數字，詳見「主要競品追蹤」新增子區塊。
+> - **08-26 記錄之 Google 法律 AI 賽道競爭、AgentConnect 開源多代理、Slack Code 官方確認、AGENTS.md 爭議，仍為近期重點**，詳見「主要競品追蹤」與「觀察重點」。
 
 ---
 
@@ -97,6 +95,11 @@ Claude Code 已成為 AI 輔助編碼的標竿產品，但競爭正快速升溫�
 ## 主要競品追蹤
 
 > 🔴 = 高威脅 / 重點關注競品
+
+### Google 低價 AI 方案，對 Anthropic／Microsoft 企業客戶形成定價壓力（新增追蹤，2026-08-27）
+- **狀態**：新聞角度首見追蹤，僅標題層級可用
+- **來源**：CNBC 報導 Google 推出「budget-friendly」AI 方案，對 Anthropic 與 Microsoft 的企業客戶形成價格競爭壓力
+- **對競爭格局的意涵**：延續本頁「競品定價對照」既有低價/免費策略觀察（DeepSeek、OpenCode、Antigravity 等），本次首見 Google 以「低價」正面點名 Anthropic 與 Microsoft 兩家企業客戶基礎（推論）；🔎 **查無官方數字**（標 2026-08-29｜查 Google、Anthropic、企業定價｜複 2026-09-12）：具體方案名稱、費率、與既有 Antigravity（Pro ~$20／Ultra ~$100，見上方「競品定價對照」表）的關係均未見報導細節，日報未載具體數字，不可推算或杜撰，待後續報導補充後再併入「競品定價對照」表（Google News/CNBC）
 
 ### Google 進軍法律 AI（新增追蹤，2026-08-25）
 - **狀態**：新聞角度首見追蹤，尚無產品細節
@@ -324,6 +327,9 @@ Claude Code 已成為 AI 輔助編碼的標竿產品，但競爭正快速升溫�
 #### 近期單日動態彙整（2026-07-02 至 2026-07-26）
 
 > 逐日條目按主題可另見上方「主要競品追蹤」對應廠商子區塊；此區塊保留完整時序供追溯查證。
+
+### 2026-08-27
+- **[新增追蹤，待查證數字] CNBC：Google 推出低價 AI 方案，對 Anthropic、Microsoft 企業客戶形成定價壓力**：僅標題層級可用，無具體費率，詳見「主要競品追蹤」新增 Google 低價方案子區塊（Google News/CNBC）
 
 ### 2026-08-26
 - **[觀察重點，新增] 36Kr：Claude Code 拒採 AGENTS.md 業界標準，引發開發者社群不滿**：詳見「觀察重點」新增（Google News/36Kr）

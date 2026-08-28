@@ -4463,3 +4463,36 @@ registry 加一組 sync_pair 釘住產出端與歸因端（只改一邊等於白
 
 - 測試 346 → 352；registry 的 diff 護欄配對由 3 條 pattern 增為 4 條（納入表格切法），另新增樣板／指紋配對；兩者皆做過破壞測試
 - state 323KB → 205KB
+
+---
+
+## 2026-08-29 Ingest（含 08-28 缺日補救）
+
+**背景：** `news/2026-08-28.md` 不存在。GitHub Actions 未替 08-28 建立任何 run（API 查證：08-27T20:15:28Z 之後直接無紀錄；08-27 那次亦遲到 10h15m），雲端 routine 因無新鮮資料正確中止。該日未抓料故無 `gathered_archive/2026-08-28.json` 可 replay，**不偽造 08-28 日報**；改由本日 26 小時視窗涵蓋（90 則中 43 則為 08-28 發布）。
+
+**日報：** `news/2026-08-29.md`（13/13 來源、90 則）｜六類記者全數回報。
+
+**記者回報摘要**
+
+| 類別 | 更新頁面 | 重點 |
+|---|---|---|
+| 模型 | entities/fable-5、opus-5 | 社群「模型被削弱」質疑（Opus 5／Fable 5）、三模型 code review 實測（無數字，標待查證）、Fable 5.1 臆測依懸置語法標記；Model Hardware Standard 判非模型記者範疇，轉知功能記者 |
+| 功能 | entities/claude-code | SDK files／skills 命名空間轉正 GA（進 feature-radar）；v2.1.250 純 bug fix 不收錄；#38335 session 額度異常 807→837 留言、#6235 AGENTS.md 384→385／6496→6525、#45596 Bring Back Buddy 265→268／2068→2076 |
+| 商業 | topics/anthropic-business、entities/pricing、topics/competitor-landscape | Nscale 450 億美元／460 MW 資料中心協議、Claude 營收年增 1000%（單一來源）、Meta 預估支出 $10B、Salesforce Claudeforce 財報面補強、Google 低價方案（數字待查證） |
+| 安全政策 | topics/anthropic-government-policy、topics/ai-agent-safety | **五角大廈黑名單經聯邦法官裁定違法、即時解除**（本頁長期追蹤案的終局判決，已四處同步無殘留舊狀態）；embracethered 揭露 Auto Mode 繞過＋Cybernews 實際利用案例；MCP RCE、Wiz 蜜罐遙測 |
+| 社群 | topics/community-tech-discussions、topics/code-quality-decline | Tell HN 心智影響反思、HarnessOpt-Bench、`/buddy` 議題升 ☄️閃現→🌊延燒（18 天持續成長）；配額工具小批量與存量盤點三則留待 lint 策展 |
+| 人物 | 無 | 三則候選全部判不達門檻（Barret Zoph 與 Anthropic 無直接關聯／CBS 聯合示警無具名發言者／embracethered 職稱僅泛稱）。**無更新是正確結果** |
+
+**主編彙整**
+- `feature-radar.md`：新增「SDK files／skills 命名空間轉正（GA）」詳細條目＋全覽表列；升版風險最新版本行更新至 v2.1.250。**當月對帳：詳細條目 17／全覽表列 17，相等。**
+- `anthropic-commitments.md`：新增「Fable 5 恢復訂閱內含」列（🔴 未兌現）。官方原始表態出處僅有社群轉述，依懸置語法標 ⟨C-01⟩ 待主編查證——**本頁判準是「官方說過要做的事」，社群轉述不足以立案**。狀態 monitoring → ongoing（實質新事件），`index.md` 同步。
+- `data/source_attribution.jsonl`：append 36 筆
+- `data/pending-handoffs.jsonl`：close H-1be92f（安全政策記者查證後判不適用）；新增 4 筆——H-723f42（模型→功能：Model Hardware Standard 落點）、H-9f3d35（商業→安全政策：麻州政治獻金）、H-2eb673（安全政策→功能：Auto Mode 繞過同步已知問題）、H-a32301（安全政策→模型：fable-5 殘留黑名單舊狀態）。H-70d575 仍開啟（模型記者判不適用，需 web 查證）
+- `overview.md`：未動（黑名單解除已在 government-policy 完整記錄，overview 週更）
+
+**📋 待辦（非單日 ingest 可處理）**
+- `entities/opus-5.md` 歷史記錄表、`topics/anthropic-government-policy.md` 目前局勢／攻防紀錄表：既有列儲存格超過 120 字元全站規範（26+ 列），與 08-27 已記的 anthropic-business／community-tech-discussions 同型，建議一併排入 lint
+
+**📌 待使用者裁示**
+- ⏰ 2026-08-31（剩 2 天）週用量促銷：08-28 已查官方原文確認日期仍有效，本次為 3g 重複命中，無需動作
+- **日報格式瑕疵**：兩則存量盤點條目把 `[存量盤點｜…]` 前綴原樣印進日報，違反 `.claude/commands/news-pipeline-steps.md`「前綴本身不可寫進日報」。但該前綴的**資訊**（出生日、本庫首次收錄）對讀者有價值——要改的是輸出還是規則？

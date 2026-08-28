@@ -25,19 +25,19 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 **狀態：** active（正式發布；出口管制已解除，2026-07-01 起全球恢復存取；免費期已於 2026-07-19 到期，Max/Team 後續存取政策已於 2026-08-08 經官方 Help Center 查證收斂，見 [[entities/pricing]]）
 **領域：** 🤖 模型
 **首次出現：** 2026-06-09
-**最後更新：** 2026-08-27
-**最後新聞更新：** 2026-08-27
+**最後更新：** 2026-08-29
+**最後新聞更新：** 2026-08-28
 
-> **最新進展**（2026-08-27）
-> GitHub Issue 回報 Fable 5（連同 Opus 4.7、4.8、5.0）日益預設重複修辭套路、難維持連貫散文，即使給明確風格指示仍難改善，跨模型代際共同問題（106 則留言、517 個反應）；完整記錄見 [[entities/opus-5]]。存取方式方面，官方說明文件重申 08-19 已載明的分流規則未變（詳見「現況」）。
+> **最新進展**（2026-08-28）
+> Reddit 出現質疑串「Anthropic 是否在削弱模型」，使用者稱 Opus 5、Fable 5 在 Claude Code 中實際表現遜於預期；延續近期社群觀感分歧模式，無具體案例或量化數字佐證。同日另有社群討論猜測 Fable 5.1 是否即將發布，純屬臆測、無官方來源。
 
 ---
 
 ## 現況
 
-**2026-08-27 最新**：GitHub Issue #77136 回報 Claude 4.7、4.8、5.0 與 Fable 日益預設輸出重複修辭套路、難維持連貫散文，即使給明確風格指示仍難改善，跨模型代際共同問題，已累積 106 則留言、517 個反應，尚無官方回應；完整記錄與最新社群回饋見 [[entities/opus-5]]「歷史記錄」（[GitHub Issue #77136](https://github.com/anthropics/claude-code/issues/77136)，2026-08-27）。同日官方說明文件〈Claude Fable 5 on your plan〉重申存取依方案分流（Max 方案優先），與 08-19 已查證記錄的規則一致，無新資訊，不另做因果推論。
+**2026-08-28 最新**：Reddit r/ClaudeCode 質疑串「Is it even legal for Anthropic to nerf its models this hard?」，使用者抱怨 Opus 5 與 Fable 5 在 Claude Code 中的實際表現遜於預期，質疑模型遭「削弱」；單一使用者觀感回報，無具體案例或量化數字佐證，延續 08-13、08-20 等已記錄的社群觀感分歧模式，完整記錄與相關社群回饋見 [[entities/opus-5]]「歷史記錄」（[Reddit](https://www.reddit.com/r/ClaudeCode/comments/1w0t53b/is_it_even_legal_for_anthropic_to_nerf_its_models/)，2026-08-28）。同日另有 Reddit 討論串猜測 Fable 5.1 是否即將發布、部分使用者稱已被路由至疑似新版本測試，純屬社群臆測、無官方來源佐證，不寫成事實（詳見「歷史記錄」待查證標記）。
 
-**2026-08-19**：Anthropic 官方說明文件更新〈Claude Fable 5 on your plan〉，明載先前促銷（允許用戶最多以週訂閱額度 50% 免費使用 Fable 5）已於 **2026-07-19 23:59:59 PT** 結束；到期後依方案分流：Max 方案、Team／舊制（legacy seat-based）Enterprise 的 premium seat → Fable 5 為方案標準內含項目，Pro 方案、Team／舊制 Enterprise 的 standard seat → 改以 pay-as-you-go usage credits 計費，目前所有付費方案（Pro/Max/Team/Enterprise）皆可使用 Fable 5。此分流與 2026-08-08 官方 Help Center 查證結論一致（非早期公告的 7/7 節點），計費規則細節見 [[entities/pricing]]（Official Docs，2026-08-19）。同日另有單一來源（analyticsindiamag.com，經 Google News 轉載，2026-08-18）以標題《Almost Nobody Is Using Anthropic's Fable 5》報導 Fable 5 採用率偏低，RSS 摘要僅標題可用、無正文可查證具體數據或統計方法，暫列待查證；原文未提供與促銷/配額政策變化的因果證據，本頁不做因果推論。
+**2026-08-27 最新**：GitHub Issue #77136 回報 Claude 4.7、4.8、5.0 與 Fable 日益預設輸出重複修辭套路、難維持連貫散文，即使給明確風格指示仍難改善，跨模型代際共同問題，已累積 106 則留言、517 個反應，尚無官方回應；完整記錄與最新社群回饋見 [[entities/opus-5]]「歷史記錄」（[GitHub Issue #77136](https://github.com/anthropics/claude-code/issues/77136)，2026-08-27）。同日官方說明文件〈Claude Fable 5 on your plan〉重申存取依方案分流（Max 方案優先），與 08-19 已查證記錄的規則一致，無新資訊，不另做因果推論。
 
 Claude Fable 5 是 Anthropic 於 2026-06-09 發布的旗艦模型，為**史上首款向大眾開放的 Mythos 級模型**。Fable 5 與 Claude Mythos 5 共用相同的模型權重，差異在於 Fable 5 前置安全分類器——觸發時 fallback 至 Claude Opus 4.8（Anthropic 稱不到 5% 的 session 受影響）。核心定位：任務越複雜越長期，Fable 5 的優勢越明顯；在軟體工程、知識工作、視覺、科學研究等幾乎所有 benchmark 達到 SOTA。
 
@@ -180,10 +180,18 @@ claude --model claude-fable-5-20260609
 - [[news/2026-08-19]]
 - [Google News/Futurism：Nobody Wants Anthropic's Best AI Model Anymore](https://news.google.com/rss/articles/CBMingFBVV95cUxQcktnOVJUTlRkVG53NHl6ZlR4RFhTekx1ZlQ4cmRRZVROMG5vZzZNR0cwandpVlhfM3MzQnhNTEZDX0pQR1dfOVF2SnhJcmkwYWtaZXJGZF9LVlBKQ1cxRHdLeHFuZzlBR2FpT3JEb05QUTJGQ3JUQzlYeGlrRlJrQkNrdzFMR1F3WThfdW5wb1RwUkI4a2d0a2RWSWxKZw?oc=5)（2026-08-26，僅標題可用）
 - [Google News/tech-insider.org：Claude Fable 5 vs Opus 5 vs GPT-5.6 Sol: $1,125 Gap](https://news.google.com/rss/articles/CBMiekFVX3lxTE1lT2hvNTRuTm5IVEt4WG5vV3BMQmxLdmZHX2lubDN4SzRvczBYblBJVFMteHM4V3UtM1l2NFZQYWFvbEZmaFVxdFIwSmlvRkpwc29KQzdOUXNPRWFpcDJyLWhDd0VfUkdlQ0Y3Vzk0MzBaUWtuanFLc1FR?oc=5)（2026-08-26，僅標題可用）
+- [Reddit：Is it even legal for Anthropic to nerf its models this hard?](https://www.reddit.com/r/ClaudeCode/comments/1w0t53b/is_it_even_legal_for_anthropic_to_nerf_its_models/)（2026-08-28）
+- [Reddit：Do you guys think that Fable 5.1 is actually dropping today](https://www.reddit.com/r/ClaudeCode/comments/1w0v676/do_you_guys_think_that_fable_51_is_actually/)（2026-08-28）
+- [[news/2026-08-29]]
 
 ## 歷史記錄
 
 ### 解禁後（2026-07-01 起）
+
+#### 2026-08-28
+**Reddit 質疑串：「Anthropic 是否在削弱模型」**：r/ClaudeCode 貼文「Is it even legal for Anthropic to nerf its models this hard?」，使用者抱怨 Opus 5 與 Fable 5 在 Claude Code 中的實際表現遜於預期，質疑模型遭「削弱」（nerf）；單一使用者觀感回報，無具體案例或量化數字佐證，延續 08-13「rage-inducing」、08-20「smoking gun」等已記錄的社群觀感分歧模式（完整同類記錄見 [[entities/opus-5]]「歷史記錄」）（[Reddit](https://www.reddit.com/r/ClaudeCode/comments/1w0t53b/is_it_even_legal_for_anthropic_to_nerf_its_models/)，2026-08-28）。
+
+❓ **待查證**（標 2026-08-29｜查 Fable 5.1、1w0v676｜複 2026-09-12）｜**Fable 5.1 是否即將發布**：Reddit r/ClaudeCode 貼文「Do you guys think that Fable 5.1 is actually dropping today and will it be available in Claude Code?」討論版本傳聞，部分回覆稱疑似已被路由至新版本測試，純屬社群臆測，無官方公告或版本號佐證（[Reddit](https://www.reddit.com/r/ClaudeCode/comments/1w0v676/do_you_guys_think_that_fable_51_is_actually/)，2026-08-28）。
 
 #### 2026-08-27
 **GitHub Issue #77136：跨模型代際重複修辭套路問題**：開發者回報 Claude 4.7、4.8、5.0 與 Fable 日益出現重複修辭、難以維持連貫散文的問題，即使給出明確風格指示仍難改善；已累積 106 則留言、517 個反應，尚無官方回應。此為**跨模型代際的共同問題**（非 Fable 5 獨有），完整記錄見 [[entities/opus-5]]「歷史記錄」（[GitHub Issue #77136](https://github.com/anthropics/claude-code/issues/77136)，2026-08-27）。

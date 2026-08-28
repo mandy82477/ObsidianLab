@@ -3,8 +3,8 @@ page: "topics/anthropic-business"
 kind: "topic"
 status: "ongoing"
 domain: "💼 商業"
-last_updated: "2026-08-27"
-last_news_update: "2026-08-27"
+last_updated: "2026-08-29"
+last_news_update: "2026-08-29"
 status_main: "ongoing"
 days_since_news: 0
 inbound_links: 61
@@ -23,14 +23,14 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 **狀態：** ongoing
 **領域：** 💼 商業
 **開始日期：** 2026-05-28
-**最後更新：** 2026-08-28
-**最後新聞更新：** 2026-08-27
+**最後更新：** 2026-08-29
+**最後新聞更新：** 2026-08-29
 
-> **最新動態**（2026-08-27）
-> - **Salesforce／Anthropic 深化合作，推出 CRM 業務外掛「Claudeforce」**：Reuters、qz.com、CNBC 多家媒體報導 Salesforce 上修全年營收預測、同步發布整合 Claude 的 CRM 業務外掛；CNBC 取得 Salesforce 董事長暨執行長 Marc Benioff 與 Anthropic 共同創辦人暨執行長 Dario Amodei 接受 Jim Cramer 專訪逐字稿，詳見「戰略合作」表新增列。
-> - **CrowdStrike 股價單日漲 13%，執行長歸功 Anthropic 合作**：Forbes 報導 CrowdStrike 本季（史上最佳單季）表現部分歸因於與 Anthropic 的合作，詳見「戰略合作」表新增列。
-> - **Meta「亦敵亦友」**：紐約時報報導 Meta 公開批評 Anthropic 的同時，卻是其最大客戶之一，詳見「戰略合作」表新增列。
-> - **Nvidia 傳投資 Hugging Face 129 億美元，執行長黃仁勳稱對投資 OpenAI／Anthropic 規模感到「後悔」**（媒體轉述、未經證實）：詳見「商業風險」表新增列。
+> **最新動態**（2026-08-29）
+> - **Anthropic 與 Nscale 簽署 450 億美元資料中心協議**：取得 460 MW Vera Rubin 世代算力，是繼近期 AMD、Nvidia 兩筆大型算力布局後第三筆重大基礎建設交易，詳見「戰略合作」表新增列。
+> - **Yahoo Finance 獨家：Claude 營收年增稱達 1,000%**（媒體獨家、未經官方確認）：對 ChatGPT 的企業市場差距持續縮小，詳見「戰略合作」表新增列。
+> - **Meta 傳將於 Anthropic 支出達 100 億美元**：紐約時報「亦敵亦友」報導補上具體金額，詳見「戰略合作」表更新列。
+> - **Salesforce／Claudeforce 合作獲財報面補強**：WSJ 報導 Salesforce 財報獲利與營收雙雙成長，同時擴大與 Anthropic 合作，詳見「戰略合作」表 Salesforce 列更新。
 
 ---
 
@@ -268,9 +268,11 @@ Financial Times 報導 Anthropic 旗艦模型在吸引一般使用者（general 
 
 | 合作方 | 類型 | 日期 | 意義 | 來源 |
 |--------|------|------|------|------|
-| Salesforce（NYSE: CRM）| 企業客戶（CRM 整合＋業務外掛「Claudeforce」）| 2026-08-26 | 深化合作，發布 CRM 業務外掛「Claudeforce」；Salesforce 同步上修全年營收預測 | [Reuters](https://www.reuters.com/technology/salesforce-raises-annual-revenue-forecast-2026-08-26/)；Google News/qz.com；Google News/CNBC |
+| Nscale（英國新創）| 基礎設施擴張（雲端整合，$450 億美元）| 2026-08-28 | 簽署 450 億美元資料中心協議，取得 460 MW Vera Rubin 世代算力；為繼 AMD、Nvidia 後第三筆重大算力布局 | Google News/Forbes；Google News/Financial Times |
+| Anthropic（營收信號，媒體獨家未經證實）| 企業客戶／營收信號（推論）| 2026-08-28 | Yahoo Finance 獨家稱 Claude 營收年增達 1,000%，企業市場對 ChatGPT 差距縮小（媒體轉述，待官方確認）| Google News/Yahoo Finance |
+| Salesforce（NYSE: CRM）| 企業客戶（CRM 整合＋業務外掛「Claudeforce」）| 2026-08-26 | 深化合作，發布 CRM 業務外掛「Claudeforce」；Salesforce 同步上修全年營收預測（08-28 WSJ 補強：財報獲利與營收雙雙成長）| [Reuters](https://www.reuters.com/technology/salesforce-raises-annual-revenue-forecast-2026-08-26/)；Google News/qz.com；Google News/CNBC；[WSJ](https://www.wsj.com/business/earnings/salesforce-profit-revenue-rise-expands-partnership-with-anthropics-claude-f17aa26f)；官方新聞稿 |
 | CrowdStrike（NASDAQ: CRWD）| 企業客戶（資安整合，股價效應）| 2026-08-27 | 股價單日漲 13%，執行長歸功本季最佳表現部分來自 Anthropic 合作 | Google News/Forbes |
-| Meta | 企業客戶（亦敵亦友關係）| 2026-08-27 | NYT 稱雙方「亦敵亦友」：Meta 公開批評 Anthropic，卻同時是其最大客戶之一 | [The New York Times](https://www.nytimes.com/2026/08/27/technology/meta-anthropic-frenemies.html) |
+| Meta | 企業客戶（亦敵亦友關係，$100 億美元支出）| 2026-08-27 | NYT 稱雙方「亦敵亦友」：Meta 公開批評 Anthropic，卻同時是其最大客戶之一，傳將於 Anthropic 支出達 100 億美元（08-28 補上具體金額）| [The New York Times](https://www.nytimes.com/2026/08/27/technology/meta-anthropic-frenemies.html) |
 | Anthropic（澳洲市場）| 市場擴張（規模不明，內部郵件揭露）| 2026-08-25 | ABC News：內部郵件揭露 Anthropic 澳洲佈局規模（延續 08-24 澳洲採用落後說法）| Google News/ABC News |
 | 未具名 AI 資安新創（與 Anthropic、Google 合作）| SDK 夥伴（資安整合，融資佐證）| 2026-08-25 | 與 Anthropic、Google 合作的未具名 AI 資安新創獲 1.4 億美元融資 | Google News/Bloomberg.com |
 | 未具名資料中心業者（Bastrop County，美國德州）| 基礎設施擴張（洽談租用）| 2026-08-25 | KXAN Austin：Anthropic 洽談租用德州 Bastrop County 大型資料中心（洽談階段）| Google News/KXAN Austin |
@@ -345,6 +347,9 @@ Financial Times 報導 Anthropic 旗艦模型在吸引一般使用者（general 
 | Amazon（投資）| $40 億美元 | 2023–2024 | 算力 + 生態綁定 | — |
 
 **戰略合作細節**
+- **Nscale（08-28）**：Forbes、Financial Times 報導 Anthropic 與英國新創 Nscale 簽署 450 億美元資料中心協議，取得 460 MW Vera Rubin 世代算力容量。是繼近期 AMD（08-05 自研晶片人才招募、07-22 投資協議）、Nvidia（既有算力供應關係）兩筆大型算力布局後，本頁第三筆標題明確以「重大基礎建設交易」框架描述的合作案，顯示算力鎖定策略持續向新興雲端算力供應商延伸（推論）；具體合約年期、Nscale 財務結構、Vera Rubin 世代硬體規格未見報導細節。
+- **Claude 營收年增 1,000%（08-28，媒體獨家，未經證實）**：Yahoo Finance 獨家報導稱 Claude 營收年增達 1,000%，在企業市場對 ChatGPT 的差距持續縮小。**單一媒體獨家、無官方確認**，具體基期、統計口徑（ARR／季營收／哪個時間窗口）均未見報導，與本頁「摘要」表既有 ARR 數字（$65B，2026-07）口徑是否一致待查；不可直接與官方揭露數字並列比較，僅作市場信號記錄（推論，待官方或第三方獨立驗證）。
+- **Meta（$100 億美元支出，08-28 補強）**：延續 08-27 NYT「亦敵亦友」報導，08-28 起後續報導補上具體金額——Meta 傳將於 Anthropic 支出達 100 億美元，與既有 07-17 已記錄之「Meta 洽談 100 億美元運算力租賃」金額相同，惟本則描述角度側重「Meta 支出」而非「租賃洽談階段」，可能為同一筆交易的後續進展或不同報導角度重申（推論，具體是否已從洽談階段推進至確定簽約未見報導細節）。
 - **Salesforce（Claudeforce，08-26）**：Reuters、qz.com、CNBC 等多家媒體報導 Salesforce 與 Anthropic 深化合作，發布整合進 CRM 工作流的 AI 業務外掛「Claudeforce」；Salesforce 同時上修全年營收預測。是本頁首度出現「以具名產品命名方式深度綁定品牌」的合作案例，顯示 Salesforce 將 Claude 定位為核心 CRM AI 能力而非周邊外掛；CNBC 並取得 Salesforce 董事長暨執行長 Marc Benioff 與 Anthropic 共同創辦人暨執行長 Dario Amodei 接受 Jim Cramer 專訪逐字稿，顯示雙方高層親自為此合作背書（推論，具體商業條款、營收貢獻占比未見報導細節）。
 - **CrowdStrike（08-27）**：Forbes 報導 CrowdStrike 股價單日上漲 13%，執行長將公司本季（史上最佳單季）表現部分歸功於與 Anthropic 的合作。是本頁首度出現「企業客戶財報＋股價雙重效應」明確歸因於 Anthropic 合作的具名案例，區別於既有多為「宣布合作」層級的訊號，顯示至少部分企業客戶已將合作實質轉化為可驗證的財務與市場表現（推論）；具體合作內容、對營收貢獻比例未見報導細節，僅執行長口頭歸因，非官方財報拆分數字。
 - **Meta（亦敵亦友，08-27）**：紐約時報以「亦敵亦友」（frenemies）形容 Meta 與 Anthropic 關係：Meta 一邊公開批評 Anthropic，卻同時是其最大客戶之一。與既有 07-17 已記錄之 Meta 洽談 100 億美元運算力租賃（Anthropic 向 Meta 租算力）方向相反——本則指出 Meta 反過來是 Anthropic 產品的大客戶之一，顯示兩家公司間存在雙向且方向相反的商業依賴關係，同時 Meta 對外仍維持公開競爭批評姿態；具體 Meta 採用 Claude 的產品範疇、採購規模、與既有運算力租賃洽談的關係均未見報導細節（推論）。
@@ -406,6 +411,12 @@ Financial Times 報導 Anthropic 旗艦模型在吸引一般使用者（general 
 ## 時序
 
 ### 2026-08
+
+#### 2026-08-28
+- **[戰略合作，新增] Forbes／Financial Times：Anthropic 與英國新創 Nscale 簽署 450 億美元資料中心協議，取得 460 MW Vera Rubin 世代算力**：繼 AMD、Nvidia 後第三筆重大算力布局，詳見「戰略合作」表新增列（Google News/Forbes；Google News/Financial Times）
+- **[戰略合作，新增，媒體獨家未經證實] Yahoo Finance 獨家：Claude 營收年增稱達 1,000%，對 ChatGPT 差距縮小**：單一來源、無官方確認，詳見「戰略合作」表新增列（Google News/Yahoo Finance）
+- **[戰略合作，跟進，補上具體金額] 後續報導：Meta 傳將於 Anthropic 支出達 100 億美元**：與既有 07-17 記錄之運算力租賃洽談金額相同，詳見「戰略合作」表 Meta 列更新（Hacker News；Google News/The New York Times）
+- **[戰略合作，跟進，財報面補強，非新事實] WSJ：Salesforce 財報獲利與營收雙雙成長，同步擴大與 Anthropic 合作發布 Claudeforce**：與既有 08-26 記錄為同一事件，詳見「戰略合作」表 Salesforce 列更新（WSJ；Salesforce 官方新聞稿）
 
 #### 2026-08-26
 - **[新增，IPO/估值敘事，正反論戰] Hacker News 雙帖＋Anadolu Ajansı／Moomoo 等：Anthropic 傳簡報宣稱 AI 服務潛在市場（TAM）上看 30 兆美元；Yahoo Finance／Marcus on AI／24/7 Wall St.（引述 Chamath Palihapitiya）提出懷疑角度**：須留意「30 兆美元市場總量」與同日 Fortune 報導「2 兆美元 IPO 估值」口徑不同，不可混淆，詳見「IPO 前瞻與估值追蹤」表與「商業風險」表新增列（Hacker News；Google News/Anadolu Ajansı；Google News/Moomoo；Google News/Yahoo Finance；Google News/Marcus on AI；Google News/24/7 Wall St.；Google News/Fortune）

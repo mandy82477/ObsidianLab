@@ -23,11 +23,11 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 **狀態：** ongoing（官方已說明工程疏失，恢復情況見下方摘要）
 **領域：** 🛠️ 工具/功能
 **開始日期：** 2026-03（推測）
-**最後更新：** 2026-08-26
-**最後新聞更新：** 2026-08-26
+**最後更新：** 2026-08-29
+**最後新聞更新：** 2026-08-29
 
-> **最近效能退步事件**（2026-08-26）
-> 「Opus 5 上線後品質感知訊號群」新增兩則獨立訊號，首度主張「懷疑正在被即時 A/B 測試降低 effort」——Reddit r/ClaudeCode（今日）與 r/artificial 週熱門（08-22，今日收錄）方向一致，皆指 Anthropic 疑似在 Claude Code 上分派降規模／低運算力版本；同日另有 HN 部落格文章（score 25，真實分數）泛化抱怨新模型「開始寫程式前」耗時變長，惟未指名具體模型版本。
+> **最近效能退步事件**（2026-08-28）
+> 「Opus 5 上線後品質感知訊號群」累計第 14 則訊號：Reddit r/ClaudeCode 使用者質疑 Opus 5／Fable 5 表現遜於預期、指控遭「削弱」，無週熱門標記、score 不可信，方向與 08-22／08-26 的「A/B 測試降 effort」懷疑一致，僅計入現象延續，未提供新機制證據。
 
 ---
 
@@ -88,13 +88,14 @@ Claude Code 在 2026 年 3 月至 4 月間出現長達約一個月的效能明�
 | 2026-08-22（週熱門，08-26 收錄） | 「I spent the morning digging into Anthropic so I could write it up properly」：作者稱查閱一手資料與討論串後認為，Anthropic 似乎正在 Claude Code 上 A/B 測試降低運算力度（effort）的版本，與同日「nerfd models」貼文方向一致 | Reddit r/artificial（[原文](https://www.reddit.com/r/artificial/comments/1vvjmmo/i_spent_the_morning_digging_into_anthropic_so_i/)，週熱門標記，達收錄低門檻） | 單一社群回報（週熱門達低門檻，惟「查閱的一手資料」具體內容未見於摘要，無法覆核查證過程；與 07-25 官方 migration guide 自承 effort dial 非單調現象呼應，是本訊號群首次出現「懷疑正在被即時 A/B 測試」的直接主張，而非僅描述效能感受）|
 | 2026-08-26 | 「I can tell when I'm being A/B tested with nerfd models」：使用者稱可依 Claude 是否跳出「這次 session 表現如何」回饋彈窗，判斷自己是否被分到降規模測試模型版本 | Reddit r/ClaudeCode（[原文](https://www.reddit.com/r/ClaudeCode/comments/1vystw3/i_can_tell_when_im_being_ab_tested_with_nerfd/)，0 留言、無「週熱門」標記，score 不可信） | 單一社群回報（與同日 r/artificial 貼文方向一致，兩者互為呼應但均無具體量化數字或版本號）|
 | 2026-08-26 | 「I miss the old Claude Code」：部落格作者比較年初與近期使用經驗，稱換用新模型後同任務要花更久時間才真正開始寫程式，直指「有大量 pre-work」；未點名具體模型版本 | Hacker News（[原文](https://alexkras.com/focus-is-the-main-feature-why-i-miss-the-old-claude-code/)，HN score 25，達收錄低門檻） | 本訊號群少見附真實 HN 分數的訊號（多數既有訊號 score 不可信）；未指名模型版本，無法歸入特定模型的品質爭議，僅可佐證「泛化變慢」現象持續 |
+| 2026-08-28 | 「Is it even legal for Anthropic to nerf its models this hard?」：使用者質疑 Opus 5 與 Fable 5 在 Claude Code 中表現遜於預期，指控模型遭「削弱」 | Reddit r/ClaudeCode（[原文](https://www.reddit.com/r/ClaudeCode/comments/1w0t53b/is_it_even_legal_for_anthropic_to_nerf_its_models/)，無「週熱門」標記、score 不可信） | 單一社群回報（無具體量化數字或版本號），與 08-22／08-26「A/B 測試降 effort」主張同方向，僅計入現象延續 |
 
 **懸置細節**
 - ⟨Q-01⟩ ❓ **待查證**（標 2026-08-25｜查 Sonar、code quality benchmark）：HackerNoon 標題「Claude Opus 5 Code Quality: What Sonar's Benchmark Reveals」僅標題可用，程式碼品質分析工具 Sonar 對 Opus 5 生成程式碼的基準測試具體評測數字、樣本規模與測試方法論均未見報導；若查得具體數字，將是本訊號群目前唯一的量化／第三方工具評測證據（現有 10 則社群訊號均為主觀回報，無量化數字）。
 
 **第三種假說的定位：** 上方「三種假說」表格圍繞 token 消耗展開（模型真退步／計費計量／context 工具配置），且截至 07-13 三者均無官方確認等級證據。本訊號群提供的是**不同維度**的證據——不是「消耗了多少 token」，而是「模型行為本身是否有可驗證的特性變化」。07-25 的 effort dial 非單調現象尤其關鍵：這是**目前全頁唯一一筆官方自己承認的行為特性變化**（其餘皆為社群主張或用戶主觀感受），性質上比既有三種假說的證據都更硬。
 
-**（推論）這條線可能挑戰的既有共識：** [[topics/community-tech-discussions]] 記錄的社群共識「Claude 越用越笨幾乎都是 context 腐蝕而非模型退步」，隱含假設「模型本身沒有變」，變化只在使用者端的 context 管理。但 07-25 的官方確認顯示，至少在 effort 設定這個維度上，模型行為本身確有非直覺、非單調的特性——若使用者誤以為「調高 effort＝更好」而觸發此現象，表面上會呈現與 context rot 相同的「感覺變笨」症狀，但根因是模型設定使用不當，而非 context 管理問題，也不是模型「退步」。三者現階段仍難以區分：07-29～07-30 的三則主觀感受回報，無法排除是 context rot、也無法排除是 effort dial 誤用、更無法排除是單純的模型能力落差感（相對 Fable 5 跑分預期）。截至 08-19，樣本量已擴大但訊號強度未變（10 則訊號，其中 8 則為單一 Reddit 貼文、score 不可信；08-13「幾乎令人惱火」、08-14「近 3 個月大幅下滑」「升級 Pro→Max 後 session 時長變 3 倍」、08-19「過去兩週表現反覆不穩」、08-19「Claude is Losing Me」五則陸續加入，仍延續同一「泛化品質下滑」抱怨方向，未提供新的機制性證據），尚不足以推翻既有 context rot 共識，僅提示「並非所有『變笨』投訴都能簡化為 context 管理問題」，需持續觀察。08-22～08-26 新增三則訊號（累計 13 則）：兩則首度從「感覺變差」進展到「懷疑正在被即時 A/B 測試降低 effort」的直接主張（r/artificial 週熱門、r/ClaudeCode），性質上比既有主觀感受回報更接近可調查的具體機制假說，但仍缺乏可驗證測試方法或版本號佐證；另一則（HN score 25，真實分數）泛化抱怨新模型「開始寫程式前」耗時變長，未點名模型版本，僅佐證現象持續而非提供新機制證據。
+**（推論）這條線可能挑戰的既有共識：** [[topics/community-tech-discussions]] 記錄的社群共識「Claude 越用越笨幾乎都是 context 腐蝕而非模型退步」，隱含假設「模型本身沒有變」，變化只在使用者端的 context 管理。但 07-25 的官方確認顯示，至少在 effort 設定這個維度上，模型行為本身確有非直覺、非單調的特性——若使用者誤以為「調高 effort＝更好」而觸發此現象，表面上會呈現與 context rot 相同的「感覺變笨」症狀，但根因是模型設定使用不當，而非 context 管理問題，也不是模型「退步」。三者現階段仍難以區分：07-29～07-30 的三則主觀感受回報，無法排除是 context rot、也無法排除是 effort dial 誤用、更無法排除是單純的模型能力落差感（相對 Fable 5 跑分預期）。截至 08-19，樣本量已擴大但訊號強度未變（10 則訊號，其中 8 則為單一 Reddit 貼文、score 不可信；08-13「幾乎令人惱火」、08-14「近 3 個月大幅下滑」「升級 Pro→Max 後 session 時長變 3 倍」、08-19「過去兩週表現反覆不穩」、08-19「Claude is Losing Me」五則陸續加入，仍延續同一「泛化品質下滑」抱怨方向，未提供新的機制性證據），尚不足以推翻既有 context rot 共識，僅提示「並非所有『變笨』投訴都能簡化為 context 管理問題」，需持續觀察。08-22～08-26 新增三則訊號（累計 13 則）：兩則首度從「感覺變差」進展到「懷疑正在被即時 A/B 測試降低 effort」的直接主張（r/artificial 週熱門、r/ClaudeCode），性質上比既有主觀感受回報更接近可調查的具體機制假說，但仍缺乏可驗證測試方法或版本號佐證；另一則（HN score 25，真實分數）泛化抱怨新模型「開始寫程式前」耗時變長，未點名模型版本，僅佐證現象持續而非提供新機制證據。08-28 新增第 14 則訊號（r/ClaudeCode，無週熱門標記、score 不可信）：泛化質疑 Opus 5／Fable 5 遭「削弱」，未提供具體版本號或量化數字，方向與既有 A/B 測試懷疑一致，僅計入現象延續。
 
 ---
 
@@ -180,6 +181,9 @@ Claude Code 在 2026 年 3 月至 4 月間出現長達約一個月的效能明�
 ## 時序（最新在上，按月分組）
 
 ### 2026-08
+
+#### 2026-08-28
+- **「Is it even legal for Anthropic to nerf its models this hard?」**：r/ClaudeCode 貼文質疑 Opus 5、Fable 5 在 Claude Code 中表現遜於預期，指控模型遭「削弱」；無「週熱門」標記、score 不可信，屬「Opus 5 上線後品質感知訊號群」第 14 則訊號，方向與 08-22／08-26「懷疑正在被 A/B 測試降 effort」一致，僅計入現象延續（來源：[Reddit](https://www.reddit.com/r/ClaudeCode/comments/1w0t53b/is_it_even_legal_for_anthropic_to_nerf_its_models/)）
 
 #### 2026-08-26
 - **「Opus 5 上線後品質感知訊號群」首度出現「懷疑正在被即時 A/B 測試」直接主張**：r/ClaudeCode 貼文「I can tell when I'm being A/B tested with nerfd models」稱可依 Claude 是否跳出「這次 session 表現如何」回饋彈窗判斷自己是否被分到降規模測試模型；同日補記 08-22 r/artificial 週熱門貼文「I spent the morning digging into Anthropic so I could write it up properly」，作者稱查閱一手資料後認為 Anthropic 似乎正在 Claude Code 上 A/B 測試降低 effort 的版本，兩者方向一致；均無具體量化數字或版本號，但與 07-25 官方 migration guide 自承 effort dial 非單調現象呼應，是本訊號群首次從「效能感受變差」進展到「懷疑正在被主動測試」的主張（來源：[Reddit「nerfd models」](https://www.reddit.com/r/ClaudeCode/comments/1vystw3/i_can_tell_when_im_being_ab_tested_with_nerfd/)、[Reddit「digging into Anthropic」](https://www.reddit.com/r/artificial/comments/1vvjmmo/i_spent_the_morning_digging_into_anthropic_so_i/)）

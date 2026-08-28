@@ -23,11 +23,11 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 **狀態：** ongoing
 **領域：** 🌐 社群
 **開始日期：** 2026-04-25
-**最後更新：** 2026-08-27
-**最後新聞更新：** 2026-08-27
+**最後更新：** 2026-08-29
+**最後新聞更新：** 2026-08-29
 
-> **最熱討論**（2026-08-27）
-> GitHub Issue #6235 呼籲支援 AGENTS.md 標準已累積 384 則留言、6496 個 👍，跨平台已成競品共識；同日 Issue #77136（Claude 用語浮誇／連貫性下滑）8 天內增至 106 留言、517 反應，由 ☄️閃現 升格 🌊延燒。
+> **最熱討論**（2026-08-29）
+> GitHub Issue「Bring Back Buddy」（#45596）留言持續增至 268、👍 2076，首見 18 天後仍在累積，由 ☄️閃現 升格 🌊延燒；GitHub Issue #6235 呼籲支援 AGENTS.md 標準累積至 385 則留言、6525 個 👍，跨平台已成競品共識。
 
 ---
 
@@ -86,6 +86,7 @@ CLAUDE.md 是目前最多討論的設計決策點，已有多個量化案例：
 - **TDD 規則 60% 機率被忽略**：即使 CLAUDE.md 有明確 TDD First 規則，30 天提交審計顯示 60% 情況先寫程式後補測試。
 - **五種靜默失效模式**：規則過於模糊、規則互相衝突、context 截斷、子任務範圍不繼承、規則與模型偏好抵觸。
 - **自我演化現象**：Claude 在未指示情況下自行為 CLAUDE.md 新增規則——agent 自主性邊界需要主動管理。
+- **指令堆疊難以追溯**（2026-08-28）：媒體分析文章指出開發者持續為 Claude Code 堆疊「自己也解釋不出來、記不住」的指令設定，呼應「固定租金」比喻與五種靜默失效模式；單一媒體分析，尚無社群互動數據佐證（來源：[analyticsindiamag.com](https://analyticsindiamag.com/ai-features/youre-drowning-claude-code-in-instructions-you-cant-explain-or-remember)）
 
 ### Skill Atrophy 與技藝認同
 
@@ -95,6 +96,7 @@ AI 輔助開發正在改變工程師的自我認知，形成社群層面的結�
 - **情緒代價（成就感缺失）**：flow state 消失、「成品不像自己做的」、量越多才感覺有產出——兩個獨立維度（能力退化 + 情緒退化）均在社群引發廣泛共鳴。
 - **審查疲勞的具體案例**（2026-07-05）：Reddit r/ClaudeCode 開發者反思「審查大量 AI 生成程式碼多到忘記自己是開發者」，舉例需反問 Claude 如何寫 debounce function——與既有 Skill Atrophy 論述一致，但聚焦「審查者角色」而非「撰寫者角色」的退化面向；單一貼文、互動數據不明，暫記於此不獨立開列（推論：若後續有跨平台呼應，可能形成「Reviewer Atrophy」子議題）
 - **撰寫者角色的量化案例**（2026-07-13）：dev.to 作者連續 30 天讓 Claude Code 撰寫約 90% 程式碼（5 萬行、$187 token 成本），事後反思明確指出「vibe coding 帶來的技能退化與倦怠是少有人討論的代價」；補上「撰寫者角色」退化面向的具體量化數字，與 07-05 審查者案例互補（單篇第一手記錄，尚無跨平台呼應）
+- **同儕壓力驅動的自我審查放鬆**（2026-08-27）：Tell HN 作者自述因同儕用 Claude Code 大幅提升產出速度，被迫放鬆自我審查、逐漸依賴 agent 直接推上 main，反思長期心智影響；單一貼文、score 未見報導，與既有 Skill Atrophy 論述方向一致，補上「同儕競爭壓力」這個誘因面向（來源：[Hacker News](https://news.ycombinator.com/item?id=49468252)）
 - **社群共識**：警覺度持續升高，但尚無共識解法；反 atrophy 工具（recap 等）正在成形。
 
 ### Boris Cherny Loop 哲學
@@ -127,7 +129,7 @@ MCP 的實際成本遠超多數使用者預期，已有多個量化案例：
 - **2026-07-06 好感度流失論**（HN score 97）：API 穩定性 + 訂閱鎖定的商業設計批評（見技術彙整 2026-07）
 - **2026-07-13 Zed 創作者具名批評**（HN score 557）：公開指 Anthropic 對外宣稱與實際作為存在落差，本系列首個高分具名意見領袖指控（見技術彙整 2026-07）
 - **2026-07-13 Reddit 溝通策略抱怨**：使用者不滿 Fable 存取權與用量資訊（含 50% 增量）的官方溝通方式（[原帖](https://www.reddit.com/r/ClaudeCode/comments/1uvec4f/anthropic_needs_to_work_on_their_communication/)，單一貼文）
-- **2026-08-11 `/buddy` skill 無預警消失，官方未說明**：GitHub Issue「Bring Back Buddy」請願，留言 265、👍 2068，本系列互動最高（見熱門討論表格）
+- **2026-08-11 `/buddy` skill 無預警消失，官方未說明**：GitHub Issue「Bring Back Buddy」請願，留言持續增長至 268、👍 2076，本系列互動最高（見熱門討論表格）
 
 （推論）各事件證據力落差極大（可複現的技術發現 vs 單一未驗證貼文），目前無證據顯示彼此有共同成因；但 07-13 起「社群端溝通抱怨 + 具名意見領袖公開批評」首次同時出現，若後續再有同軸事件，此線索可能收斂為獨立議題。
 
@@ -141,7 +143,8 @@ MCP 的實際成本遠超多數使用者預期，已有多個量化案例：
 
 | 討論主題 | 首見 | 熱度 | 模式 | 核心論點 | 衍生 |
 |---------|------|------|------|---------|------|
-| 社群長期呼籲 Claude Code 支援 AGENTS.md 標準格式，跨平台已成競品共識 | 2026-08-27 | 🔥🔥🔥🔥 | ☄️閃現 | [GitHub Issue #6235] 指出競品已統一採用 AGENTS.md，累積 384 則留言、6496 個 👍，遠超收錄高門檻 | — |
+| 社群長期呼籲 Claude Code 支援 AGENTS.md 標準格式，跨平台已成競品共識 | 2026-08-27 | 🔥🔥🔥🔥 | ☄️閃現 | [GitHub Issue #6235] 指出競品已統一採用 AGENTS.md，累積 385 則留言、6525 個 👍，遠超收錄高門檻 | — |
+| Reddit r/artificial 週熱門：新基準 HarnessOpt-Bench 測試前沿 LLM 改寫其他 agent harness 的能力並防作弊 | 2026-08-27 | 🔥 | ☄️閃現 | 社群發布 HarnessOpt-Bench，測試 5 款前沿 LLM 改寫其他 agent harness 的能力，並設計防作弊機制；Reddit r/artificial 週熱門標記，達收錄低門檻 | — |
 | 用量限制驅動的「規劃用 Claude Code、實作交給本地模型」混合工作流小趨勢 | 2026-08-21 | 🔥🔥 | 🌊延燒 | 近一週至少三則案例（Reddit×2＋XDA）主張因用量限制而「規劃用 Claude Code、執行交給本地模型」分流 | — |
 | Anthropic 潛在市場規模「30 兆美元」說法引發社群質疑：留言指出這是產業潛在市場總量，非實際營收承諾 | 2026-08-26 | 🔥 | ☄️閃現 | WSJ 報導 Anthropic 稱潛在市場規模達 30 兆美元；HN 留言（score 39）指出這是產業 TAM 估計，非營收承諾 | — |
 | Simon Willison 引述 Paul Dix：AI 寫了 100 萬行程式碼，仍需花數月精煉才能產出可靠軟體 | 2026-08-26 | 🔥 | ☄️閃現 | Paul Dix：AI 一次寫出 100 萬行程式碼，仍需數月精煉才能產出可靠軟體（Simon Willison 轉引） | — |
@@ -167,7 +170,7 @@ MCP 的實際成本遠超多數使用者預期，已有多個量化案例：
 | Reddit r/ClaudeCode 週熱門：Claude 對「移動一個逗號」的極小改動給出長達兩頁的說明，成為冗長回應抱怨的具體案例 | 2026-08-14 | 🔥 | ☄️閃現 | 使用者抱怨 Claude 對移動一個逗號的極小改動給出長達兩頁說明（Reddit r/ClaudeCode 週熱門） | — |
 | Show HN：show-me — 讓 coding agent 以精簡視覺化取代大量文字輸出的 agent skill | 2026-08-12 | 🔥 | ☄️閃現 | Show HN：show-me skill 讓 coding agent 以視覺化取代大量文字輸出；HN score 10 | — |
 | Simon Willison 轉引 Florian Herrengt：AI 取代軟體工程「中產階級」職位的討論 | 2026-08-12 | 🔥 | ☄️閃現 | Florian Herrengt：AI 取代軟體工程「中產階級」職位的討論（Simon Willison 轉引） | — |
-| GitHub Issue：「Bring Back Buddy」——`/buddy` skill 隨 v2.1.97 無預警消失，社群發起統整請願 | 2026-08-11 | 🔥🔥🔥 | ☄️閃現 | `/buddy` skill 隨 v2.1.97 無預警消失，Issue #45596 留言 265、👍 2068，社群發起統整請願 | — |
+| GitHub Issue：「Bring Back Buddy」——`/buddy` skill 隨 v2.1.97 無預警消失，社群發起統整請願 | 2026-08-11 | 🔥🔥🔥 | 🌊延燒 | `/buddy` skill 隨 v2.1.97 無預警消失，Issue #45596 留言持續增長至 268、👍 2076，18 天後仍在累積，升格 🌊延燒 | — |
 | Simon Willison：自然語言文字不存在無損轉換（There are no lossless transformations of natural-language text） | 2026-08-11 | 🔥 | ☄️閃現 | Simon Willison 部落格主張自然語言文字不存在無損轉換，原文未點名特定 AI 廠商；具名表態，無社群延燒；[原文](https://simonwillison.net/2026/Aug/11/there-are-no-lossless-transformations-of-natural-language-text/#atom-everything)（Blog） | — |
 | 隱形浮水印政策引發社群反彈——政策已上線，08-17 由 Gruber 專欄與 NPR/Yahoo Tech/inc.com 三家媒體同步跟進，08-25 New Atlas 續有跟進報導，質疑聲浪持續延燒至主流媒體層級 | 2026-08-11 | 🔥🔥🔥🔥 | 🌊延燒 | 隱形浮水印政策反彈持續延燒：08-17 Gruber 專欄登 HN 首頁（293 分）＋NPR/Yahoo/inc.com 同步跟進，08-25 New Atlas 續報 | — |
 | Reddit r/ClaudeAI 週熱門：把 Claude Code 輸出的「Claude 式用語」翻譯成一般英文的 plugin | 2026-08-10 | 🔥 | ☄️閃現 | 使用者釋出將 Claude Code「Claude 式用語」自動翻譯成一般英文的 plugin（Reddit 週熱門） | — |
@@ -198,7 +201,7 @@ MCP 的實際成本遠超多數使用者預期，已有多個量化案例：
 
 **熱門討論細節**
 
-- **社群長期呼籲 Claude Code 支援 AGENTS.md 標準格式，跨平台已成競品共識**：[GitHub Issue #6235](https://github.com/anthropics/claude-code/issues/6235) 指出 Codex、Amp、Cursor 等競品已陸續統一採用 AGENTS.md 作為跨工具 agent 配置標準，Claude Code 目前僅支援自家 CLAUDE.md 格式；該 issue 已累積 384 則留言、6496 個 👍 反應，遠超收錄高門檻；與本頁既有技術彙整「AGENTS.md 跨工具插件簡報」（Kobiton 案例）、[[topics/community-tech-patterns]] 記錄的 Caliber（跨工具設定統一管理工具）同屬「AGENTS.md 是否該成為業界標準」議題軸線，本則是該軸線首次以官方 issue 高互動度呈現的直接訴求；issue 本身分類歸功能記者已知問題追蹤，此處僅記錄其作為跨平台標準之爭的社群訊號面；[GitHub Issue #6235](https://github.com/anthropics/claude-code/issues/6235)（GitHub Issues）
+- **社群長期呼籲 Claude Code 支援 AGENTS.md 標準格式，跨平台已成競品共識**：[GitHub Issue #6235](https://github.com/anthropics/claude-code/issues/6235) 指出 Codex、Amp、Cursor 等競品已陸續統一採用 AGENTS.md 作為跨工具 agent 配置標準，Claude Code 目前僅支援自家 CLAUDE.md 格式；該 issue 已累積 385 則留言、6525 個 👍 反應，遠超收錄高門檻；與本頁既有技術彙整「AGENTS.md 跨工具插件簡報」（Kobiton 案例）、[[topics/community-tech-patterns]] 記錄的 Caliber（跨工具設定統一管理工具）同屬「AGENTS.md 是否該成為業界標準」議題軸線，本則是該軸線首次以官方 issue 高互動度呈現的直接訴求；issue 本身分類歸功能記者已知問題追蹤，此處僅記錄其作為跨平台標準之爭的社群訊號面；[GitHub Issue #6235](https://github.com/anthropics/claude-code/issues/6235)（GitHub Issues）
 - **用量限制驅動的「規劃用 Claude Code、實作交給本地模型」混合工作流小趨勢**：近一週至少三則同方向案例：r/LocalLLaMA 使用者戲謔宣告「Pro 訂閱到期後改用本地 Qwen3.8-27B，已 7 小時沒用 Claude Code」（[原文](https://www.reddit.com/r/LocalLLaMA/comments/1vu1e3u/i_did_it_im_free_its_been_7_hours_since_i_used/)，週熱門，08-21）；另一使用者因 Max 訂閱每日用完額度三次，設計 MCP 架構把部分工作分擔給本地 Qwen3.8-27B（[原文](https://www.reddit.com/r/LocalLLaMA/comments/1vze6jl/running_local_llms_as_agents_in_claude_code/)，08-27）；XDA 媒體報導同方向混合工作流，宣稱藉此不再撞到用量上限（[原文](https://www.xda-developers.com/use-claude-code-for-planning-but-a-local-model-for-building/)，08-27，Google News）；三則跨 2 平台、逾 6 天持續出現同一「本地模型分流因應用量限制」主張，與本頁 08-19「樹莓派本地模型宣稱超越 Opus 5 High」（☄️閃現、單一貼文、訊號強度極弱）方向一致但屬不同具體宣稱，本則聚焦「工作流分工」而非「效能對比」；與 [[topics/community-tech-patterns]] 07-05「本地小模型分流節省 Context」機制觀察同屬一條「用量限制→本地模型分流」實務軸線
 - **Anthropic 潛在市場規模「30 兆美元」說法引發社群質疑：留言指出這是產業潛在市場總量，非實際營收承諾**：WSJ 報導 Anthropic 準備向投資人簡報時宣稱潛在市場規模上看 30 兆美元，為可能的創紀錄 IPO 鋪路；HN 討論（score 39，達中門檻）留言區隨即有人指出，該數字是「AI 服務整體潛在市場總量（TAM）」的產業估計，並非 Anthropic 宣稱自己能實際拿下的營收，提醒讀者不要把潛在市場規模與實際財測數字混為一談；Reuters 另有一篇同主題報導（source_count=2，僅為重複報導同一商業事實，非社群延燒佐證）；商業面（融資動機、IPO 佈局）已交由商業記者處理，本頁僅記錄社群對數字本身的質疑角度；[原文](https://www.wsj.com/tech/ai/anthropic-expected-to-tell-investors-it-sees-over-30-trillion-in-potential-revenue-a611efea)（HN）
 - **Simon Willison 引述 Paul Dix：AI 寫了 100 萬行程式碼，仍需花數月精煉才能產出可靠軟體**：Simon Willison 部落格引述 Paul Dix（InfluxDB 創辦人）觀點：AI 一次寫出 100 萬行程式碼，隨後花費接下來幾個月時間加以精煉，才產出一套可靠軟體；凸顯「AI 寫得快」與「AI 寫得可靠」之間仍有落差，需大量人工後製；具名表態（Paul Dix／Simon Willison），無社群延燒；[原文](https://simonwillison.net/2026/Aug/26/paul-dix/)（Blog）
@@ -221,7 +224,7 @@ MCP 的實際成本遠超多數使用者預期，已有多個量化案例：
 - **Reddit r/ClaudeCode 週熱門：Claude 對「移動一個逗號」的極小改動給出長達兩頁的說明，成為冗長回應抱怨的具體案例**：使用者抱怨 Claude 對一個微小改動（僅移動一個逗號）給出長達兩頁的說明文字；帖文標題本身即完整呈現案例，具體上下文未於本次摘要提供；Reddit r/ClaudeCode 週熱門標記，達收錄低門檻；[原文](https://www.reddit.com/r/ClaudeCode/comments/1vo167p/claude_explaining_to_me_over_two_pages_how_he/)（Reddit · 週熱門）
 - **Show HN：show-me — 讓 coding agent 以精簡視覺化取代大量文字輸出的 agent skill**：開發者釋出 show-me skill，訴求「讓 agent 用視覺對話而非成堆文字」（"Was so sick of reading walls of codex/claude prose... make your agent converse visually instead of in walls of prose."），可用 `npx skills add humanlayer/skills --skill show-me` 安裝；HN score 10，達收錄低門檻，source_count=2（跨來源佐證）；與本頁既有「HTML vs Markdown 輸出格式辯論」長期議題同屬「輸出格式如何影響資訊密度與可讀性」議題軸線的後續獨立訊號；[原文](https://www.humanlayer.com/blog/show-me-skill)（HN）
 - **Simon Willison 轉引 Florian Herrengt：AI 取代軟體工程「中產階級」職位的討論**：Simon Willison 部落格轉引 Florian Herrengt 對 AI 影響軟體工程「中產階級」職位的觀點，引用段落描述團隊反覆修不好一個怪異 bug 的情境（"But then users start to report a weird bug. It's the 4th time your team has been trying to fix..."）；具名表態，無社群延燒；[原文](https://simonwillison.net/2026/Aug/12/florian-herrengt/)（Blog）
-- **GitHub Issue：「Bring Back Buddy」——`/buddy` skill 隨 v2.1.97 無預警消失，社群發起統整請願**：`/buddy` skill 於 4/9 隨 v2.1.97 消失，官方未公開說明；GitHub Issue #45596 留言數 265、👍 2068，達對照表 GitHub Issue 高門檻（≥50 留言），社群發起統整請願要求官方回應或解釋為何移除；性質為「功能無預警消失＋零官方溝通」，呼應本頁既有「Anthropic 透明度與信任赤字」長期議題（見上方彙整索引）——本次為該議題新的獨立訊號；功能本身已由功能記者記錄於 [[entities/claude-code]] 已知問題，本頁僅記錄社群請願現象；[原文](https://github.com/anthropics/claude-code/issues/45596)（GitHub Issue）
+- **GitHub Issue：「Bring Back Buddy」——`/buddy` skill 隨 v2.1.97 無預警消失，社群發起統整請願**：`/buddy` skill 於 4/9 隨 v2.1.97 消失，官方未公開說明；GitHub Issue #45596 留言數持續增長至 268、👍 2076，達對照表 GitHub Issue 高門檻（≥50 留言），社群發起統整請願要求官方回應或解釋為何移除；性質為「功能無預警消失＋零官方溝通」，呼應本頁既有「Anthropic 透明度與信任赤字」長期議題（見上方彙整索引）——本次為該議題新的獨立訊號；功能本身已由功能記者記錄於 [[entities/claude-code]] 已知問題，本頁僅記錄社群請願現象；[原文](https://github.com/anthropics/claude-code/issues/45596)（GitHub Issue）
 - **隱形浮水印政策引發社群反彈——政策已上線，08-17 由 Gruber 專欄與 NPR/Yahoo Tech/inc.com 三家媒體同步跟進，08-25 New Atlas 續有跟進報導，質疑聲浪持續延燒至主流媒體層級**：Reddit r/ClaudeCode 使用者（08-11，0 留言、無「週熱門」標記）針對隱形浮水印政策表達不滿，主張自己才是提供指示、脈絡與決策的一方，Claude 僅為工具，為輸出加隱形浮水印並不合理；08-13 r/ClaudeAI 週熱門再度出現同軸抱怨（[「Some Claude users are mad that Anthropic's new watermarks will catch them using it at their jobs, classes」](https://www.reddit.com/r/ClaudeAI/comments/1vndlg3/some_claude_users_are_mad_that_anthropics_new/)），達收錄低門檻，兩則獨立貼文相隔進入第 3 天，依模式規則升格 🌊延燒；08-17 科技評論人 John Gruber（Daring Fireball）發表專欄〈[Anthropic's 'watermark' text adulteration in Claude is a perversion of writing](https://daringfireball.net/2026/08/anthropics_watermark_text_adulteration_in_claude_is_a_perversion_of_writing)〉，批評浮水印做法是「對寫作本質的扭曲」，登上 HN 首頁取得 293 分（本輪社群類最高分，遠超高門檻），社群碰撞 + 重要人士具名表態雙重訊號來源同時成立；同日 NPR、Yahoo Tech 跟進報導浮水印技術運作方式與讀者「擔心被識破用 AI」的不安（Google News / NPR、Google News / Yahoo Tech），inc.com 另從訂閱用戶反彈角度補充報導（source_count=2，Google News / inc.com）；四方報導同日集中出現，討論規模由單一 Reddit 帖擴大至主流科技媒體與具名評論人層級，依「誠實標註原則」升格 🔥🔥🔥🔥；08-25 New Atlas 再發報導〈Claude will now watermark all content generated using its tools〉，僅標題可考、無完整內文，是否涉及政策範圍擴大無法從標題判斷，暫視為既有政策的延續媒體覆蓋，非獨立新事件；與本頁 2026-07-01「Claude Code 隱寫術：同形字符隱寫元資料的信任危機」屬同一「AI 輸出隱藏標記是否應告知使用者」議題軸線的後續獨立訊號；原始浮水印政策報導細節已查證，見下方懸置細節 ⟨Q-03⟩；[08-11 原文](https://www.reddit.com/r/ClaudeCode/comments/1vlclpn/)（Reddit）
 - **Reddit r/ClaudeAI 週熱門：把 Claude Code 輸出的「Claude 式用語」翻譯成一般英文的 plugin**：使用者釋出將 Claude Code 常見「Claude 式」制式措辭自動翻譯成一般英文的 plugin；具體實作方式與下載連結細節 ❓ 待查證；Reddit r/ClaudeAI 週熱門標記，達收錄低門檻；[原文](https://www.reddit.com/r/ClaudeAI/comments/1vl0n1t/claude_code_plugin_for_translating_from_claudish/)（Reddit · 週熱門）
 - **Reddit r/ClaudeAI 週熱門：PSA — 讓 Claude 用 WebFetch 研究時，慎防生成看似真實、實則捏造的統計數字與引述**：使用者請 Opus 5 用 WebFetch 研究 AI agent 記憶架構時，發現生成內容夾雜看似真實、實則捏造的統計數字與引述，提醒社群 WebFetch 取回真實網頁內容不保證模型輸出內容真實性；Reddit r/ClaudeAI 週熱門標記，達收錄低門檻；[原文](https://www.reddit.com/r/ClaudeAI/comments/1vim8b7/psa_be_careful_letting_claude_use_webfetch_for/)（Reddit · 週熱門）
