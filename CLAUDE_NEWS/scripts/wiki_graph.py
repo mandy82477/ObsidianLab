@@ -212,13 +212,21 @@ def cmd_sections(keyword: str, out) -> int:
                 sec = _semantic_heading(headings_by_page[slug], i)
                 hits.append((slug, sec, i))
     seen = set()
+    hot, cold = [], []
     for slug, sec, line in hits:
         key = (slug, sec)
         if key in seen:
             continue
         seen.add(key)
-        print(f"{slug} § {sec or '(頁首)'} :L{line}", file=out)
-    print(f"\n{len(seen)} 節命中（關鍵詞「{keyword}」，同節只列首見行）", file=out)
+        row = f"{slug} § {sec or '(頁首)'} :L{line}"
+        (cold if "-archive" in slug else hot).append(row)
+    for row in hot:
+        print(row, file=out)
+    if cold:
+        print("\n──（封存細節層，要看原始條目再下鑽）──", file=out)
+        for row in cold:
+            print(row, file=out)
+    print(f"\n{len(seen)} 節命中（關鍵詞「{keyword}」，同節只列首見行；重點頁在前、封存頁在後）", file=out)
     return 0
 
 
