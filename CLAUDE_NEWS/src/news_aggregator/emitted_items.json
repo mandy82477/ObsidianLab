@@ -4561,12 +4561,12 @@
   },
   "https://github.com/multica-ai/andrej-karpathy-skills": {
     "first_emitted": "2026-08-28",
-    "score_at_emit": 208393,
+    "score_at_emit": 208570,
     "digest_confirmed": false
   },
   "https://github.com/x1xhlol/system-prompts-and-models-of-ai-tools": {
     "first_emitted": "2026-08-28",
-    "score_at_emit": 143200,
+    "score_at_emit": 143217,
     "digest_confirmed": false
   },
   "https://github.com/anthropics/claude-code/issues/71542": {
@@ -4581,7 +4581,7 @@
   },
   "https://prmpt.cash": {
     "first_emitted": "2026-08-28",
-    "score_at_emit": 4,
+    "score_at_emit": 6,
     "digest_confirmed": false
   },
   "https://wan0.net/civ2": {
@@ -4591,12 +4591,12 @@
   },
   "https://github.com/nilbuild/rundown": {
     "first_emitted": "2026-08-28",
-    "score_at_emit": 3,
+    "score_at_emit": 8,
     "digest_confirmed": false
   },
   "https://github.com/guillaumemeyer/watermarks-remover": {
     "first_emitted": "2026-08-28",
-    "score_at_emit": 2,
+    "score_at_emit": 4,
     "digest_confirmed": false
   },
   "https://heyrafter.xyz": {
@@ -4811,6 +4811,156 @@
   },
   "https://news.google.com/rss/articles/CBMicEFVX3lxTE1Tc2JIOXRYSDB1Z05hSi1UdjkxN1UyZWFyMHBxQzdPMTlRbXJIVkp0Q04tVFFVX29fT3RUN2tMTEhTdlBQWmFyZlVMTTBVNVhhVFZiNXNsTnpncnFWZzE4R1I0d3ZjUTF5UmlhWG1FOEY?oc=5": {
     "first_emitted": "2026-08-28",
+    "score_at_emit": 0,
+    "digest_confirmed": false
+  },
+  "https://code.claude.com/docs/en/desktop.md#e1600cec9f354c1b": {
+    "first_emitted": "2026-08-29",
+    "score_at_emit": 0,
+    "digest_confirmed": false
+  },
+  "https://github.com/JimLiu/baoyu-design": {
+    "first_emitted": "2026-08-29",
+    "score_at_emit": 3637,
+    "digest_confirmed": false
+  },
+  "https://github.com/anthropics/claude-code/issues/10018": {
+    "first_emitted": "2026-08-29",
+    "score_at_emit": 59,
+    "digest_confirmed": false
+  },
+  "https://github.com/anthropics/claude-code/issues/12346": {
+    "first_emitted": "2026-08-29",
+    "score_at_emit": 50,
+    "digest_confirmed": false
+  },
+  "https://github.com/anthropics/claude-code/issues/61889": {
+    "first_emitted": "2026-08-29",
+    "score_at_emit": 43,
+    "digest_confirmed": false
+  },
+  "https://github.com/anthropics/claude-code/issues/85891": {
+    "first_emitted": "2026-08-29",
+    "score_at_emit": 41,
+    "digest_confirmed": false
+  },
+  "https://www.sfgate.com/local/article/open-ai-anthropic-ruining-sf-22404657.php?link_source=ta_first_comment&taid=6a91be8eb9a1130001896fd8&fbclid=IwY2xjawT_Fs1wZG9mA2V4dG4DYWVtAjExAHNydGMGYXBwX2lkDzQwOTk2MjYyMzA4NTYwOQABHvfPHyGSByYNR7Cmkzc-oVqd31kuJy3YUIMwJB5LlB84Hi71zSB_6e5NVbld_aem_L8Ysu4gjQinZHOeaZObNKA": {
+    "first_emitted": "2026-08-29",
+    "score_at_emit": 25,
+    "digest_confirmed": false
+  },
+  "https://www.ibtimes.com/anthropic-just-beat-pentagon-court-judge-said-national-security-was-used-punish-its-ai-rules-3806895": {
+    "first_emitted": "2026-08-29",
+    "score_at_emit": 17,
+    "digest_confirmed": false
+  },
+  "https://news.ycombinator.com/item?id=49481969": {
+    "first_emitted": "2026-08-29",
+    "score_at_emit": 13,
+    "digest_confirmed": false
+  },
+  "https://startupfortune.com/researcher-alon-hertz-tricked-claude-codex-and-hermes-into-running-malware": {
+    "first_emitted": "2026-08-29",
+    "score_at_emit": 12,
+    "digest_confirmed": false
+  },
+  "https://github.com/yevhens-hue/claude-skills-starter-kit": {
+    "first_emitted": "2026-08-29",
+    "score_at_emit": 2,
+    "digest_confirmed": false
+  },
+  "https://github.com/RomanVolkov/agentctl": {
+    "first_emitted": "2026-08-29",
+    "score_at_emit": 1,
+    "digest_confirmed": false
+  },
+  "https://www.reddit.com/r/ClaudeCode/comments/1w1ohy9/im_about_to_learn_ui_just_to_prove_to_you_that": {
+    "first_emitted": "2026-08-29",
+    "score_at_emit": 0,
+    "digest_confirmed": false
+  },
+  "https://www.reddit.com/r/ClaudeCode/comments/1w1n1kp/i_built_a_habit_tracker_that_never_asks_what_time": {
+    "first_emitted": "2026-08-29",
+    "score_at_emit": 0,
+    "digest_confirmed": false
+  },
+  "https://www.reddit.com/r/ClaudeCode/comments/1w1mycm/i_made_skill_engineeringdecipline_it_focuses_on": {
+    "first_emitted": "2026-08-29",
+    "score_at_emit": 0,
+    "digest_confirmed": false
+  },
+  "https://www.reddit.com/r/ClaudeCode/comments/1w1ms72/response_stalled_too_large_tool_call": {
+    "first_emitted": "2026-08-29",
+    "score_at_emit": 0,
+    "digest_confirmed": false
+  },
+  "https://www.reddit.com/r/ClaudeCode/comments/1w1mhwz/claude_code_vs_grok_build": {
+    "first_emitted": "2026-08-29",
+    "score_at_emit": 0,
+    "digest_confirmed": false
+  },
+  "https://www.reddit.com/r/ClaudeCode/comments/1w1mgs5/switch_from_codex_to_claude_code": {
+    "first_emitted": "2026-08-29",
+    "score_at_emit": 0,
+    "digest_confirmed": false
+  },
+  "https://news.google.com/rss/articles/CBMigwJBVV95cUxNWFJ1QVZIVjNQTTFPRThZWVZYTkJ4Ulc2ajBKZXhSODMtVVVqMjloeE1zNkk1TnFraDVWc3AxTkZDdFc0Tk9adHdNNVhsLVBDeWlwblRqX2JQRHZjeG14NzRQVmZkSXlZTGRhdmJlV0NKZUlkNzFCOG00THhDWWJwWGZ3Um50MEIzeDlZcHJOb3pqRWF6SVV4TTNPVGxzYlpyOXh1ZXFCU2F3cEJ6djJqSXpISWFpMmhzeTNCYndOa1BBd2ZJT2w2RTBOdlJWYUFJbWFZR2VmREk3cURaLWNQRzIxeVNLWmVoYk5CV21Jd2hmQ2UtYnZrTU5QQzFPeXo4SERr?oc=5": {
+    "first_emitted": "2026-08-29",
+    "score_at_emit": 0,
+    "digest_confirmed": false
+  },
+  "https://news.google.com/rss/articles/CBMigAFBVV95cUxPUU9JWUlzbmh4STU5a3BHWEo1TlRPVEJCM2JhR3d1bEZabXA5OXRUUjJfY0ZsUU1XTVhjNU5KM3V5anRadlhPM0Zsc0dwZDcwT1F5ejVJamhTXzhLc2JzczQ4YUU5aUhTdG5jVzhJR2dpZ3poZG03a0FpS21jT1Rsbg?oc=5": {
+    "first_emitted": "2026-08-29",
+    "score_at_emit": 0,
+    "digest_confirmed": false
+  },
+  "https://news.google.com/rss/articles/CBMipwFBVV95cUxQRVpaX1RfSmRzNzNYODhTLU5mRzFUYWNuT09yeFNSeUNzQlN5azlQRlhDa0JSdlRyN0ZkUmlJYXVWQjZnbTh4a2xWbHU3dWdJcnJQN0Nlazk4OG1pS1ZJTUE1MHZBSkctdlVVdktvZ2JCaFptem5BX2g5WFlzckZNQ29kV2tHbkhINU9jdFdjVWxrbVpJVkp1RFZoMEZoU1FYREdyaGFQQQ?oc=5": {
+    "first_emitted": "2026-08-29",
+    "score_at_emit": 0,
+    "digest_confirmed": false
+  },
+  "https://news.google.com/rss/articles/CBMisgFBVV95cUxPSlJhNzBFNUxUMW8xOWpySlkza2EyMENZSjBEQmJGc1Rrc2wtaXg0c0E0dGhqN092LXNqVHRRX0tyWUdHYi1rWmE5eGo2bWUtMS1KRmx0TUhxZ2JWdkUxNEVEaFdwUnJWN19hWkY1dmUzX0xsTm1CcjdvT2U5VGFmY3JJVUFGX2JEcHdNTVhMbnB0NVhEaEJRaEotaVBtQzJvbTJqa3lvcTVucGpjX1BQaGJ3?oc=5": {
+    "first_emitted": "2026-08-29",
+    "score_at_emit": 0,
+    "digest_confirmed": false
+  },
+  "https://news.google.com/rss/articles/CBMiuAFBVV95cUxNeEszX3E4WURrM3ZzNEpYV1ZpbWFZNk0zYjdNMnltYzdoaFlmNW9lcUlEaWhBUzItSHByRW15SkxQOHJzMDJKTFB1TU41SURtaURxVGdnVmY0SGxnNlpWbHNXMjV2N0tzMVV1Q2hvdEJSZFVvMDRFTkptX29CTF9vTHVNbWMxWU1nSE1qS2thdnI2ZkhJVVc0c1FIb29UUERiNTlWeTI1SmFXMTRudy1EX3Nzbm1aVXg4?oc=5": {
+    "first_emitted": "2026-08-29",
+    "score_at_emit": 0,
+    "digest_confirmed": false
+  },
+  "https://simonwillison.net/2026/Aug/28/just-a-rumour-of-a-bug": {
+    "first_emitted": "2026-08-29",
+    "score_at_emit": 0,
+    "digest_confirmed": false
+  },
+  "https://news.google.com/rss/articles/CBMilwFBVV95cUxNbnp1aVBZRHNVc0JPVEFuclhUTVdjSW1mMXJjTjU1UXZ2MzhHdXFvNU1QRWJIaXJFcm41WUd3MzRISmhXVG9hMElDc3NjN0NpUWMzcFB4QWdYX0JRbkY3N0QxLUlULS1kRE5oSFRIVlBZSkJiamczbzNXTFM2OUkzV2VEUkpYVVVjeXpKNmV1R0gzRVU4YVlv?oc=5": {
+    "first_emitted": "2026-08-29",
+    "score_at_emit": 0,
+    "digest_confirmed": false
+  },
+  "https://news.google.com/rss/articles/CBMia0FVX3lxTFBIcEZmeXAxNFgzNnMwX0FhQmk1VWpjalNmOUt3djNiVTB3U2F1a2RsUk5EekFRUVRmWmlTT0VLekltT0lBYXcyR0RZTkl2dmxPM0RsaEZNc0NDNm9fYzM5aE1BQ3FCZm1yWkpj?oc=5": {
+    "first_emitted": "2026-08-29",
+    "score_at_emit": 0,
+    "digest_confirmed": false
+  },
+  "https://news.google.com/rss/articles/CBMiqwFBVV95cUxQdkVBTkVna3J0QUNvc0tCdnlJVGd5RW9qNWtta1BETTF6cVJyeXhGSWxvaWtyY0Q0VDkxdi04TklBUWVseVU3UGVpa1laeVlPb3F0UkUzRjVEc0ZHdzBBc2dkenJJblcxcXpPR2ZEWUZlb3RHMjJMR2Y1NG10MDdWOUtFYXdBZ0gzTDRISkRkWnE2NGFnczNGU0ZWT3JKYlAybDgxNzBMaFBROUE?oc=5": {
+    "first_emitted": "2026-08-29",
+    "score_at_emit": 0,
+    "digest_confirmed": false
+  },
+  "https://www.reddit.com/r/ClaudeAI/comments/1w047gy/i_think_were_starting_to_see_the_downside_of": {
+    "first_emitted": "2026-08-29",
+    "score_at_emit": 0,
+    "digest_confirmed": false
+  },
+  "https://www.reddit.com/r/ClaudeAI/comments/1vzl671/literally_me_when_claude_codes": {
+    "first_emitted": "2026-08-29",
+    "score_at_emit": 0,
+    "digest_confirmed": false
+  },
+  "https://www.reddit.com/r/ClaudeAI/comments/1vxdnw6/week_4_of_making_my_fishing_game_entirely_with_ai": {
+    "first_emitted": "2026-08-29",
     "score_at_emit": 0,
     "digest_confirmed": false
   }

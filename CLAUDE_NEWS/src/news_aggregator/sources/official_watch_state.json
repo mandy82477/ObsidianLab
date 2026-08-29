@@ -206,8 +206,8 @@
     }
   },
   "https://code.claude.com/docs/en/desktop.md": {
-    "hash": "1994eb012cab50f0473480c859b92f97df58d79fd10c52aac20ac660811e2916",
-    "length": 81136,
+    "hash": "e1600cec9f354c1b628fe6a624238e7c4a977bd2be163076a667290371f126a2",
+    "length": 81474,
     "segments": [
       "\"args\": [\"--verbose\"],",
       "\"autoPort\": false",
@@ -516,6 +516,7 @@
       "Managed settings override project and user settings and apply to Claude Code sessions in Desktop. You can set these keys in your organization's [managed settings](/docs/en/managed-settings) file or push them remotely through the admin console.",
       "On Windows, Git is required for the Code tab to start local sessions. If you see \"Git is required,\" install [Git for Windows](https://git-scm.com/downloads/win) and restart the app.",
       "On macOS, grant two system permissions before the toggle takes effect:",
+      "On models with [adaptive reasoning](/docs/en/model-config#adjust-effort-level), `MAX_THINKING_TOKENS` values other than `0` are ignored because adaptive reasoning controls thinking depth instead. On Opus 4.6 and Sonnet 4.6, set `CLAUDE_CODE_DISABLE_ADAPTIVE_THINKING` to `1` to use a fixed thinking budget; Fable 5, Sonnet 5, and Opus 4.7 and later always use adaptive reasoning and have no fixed-budget mode.",
       "Once added, the connection appears in the environment dropdown. Select it to start a session on that machine. Claude runs on the remote machine with access to its files and tools.",
       "Once connected, Claude can read your calendar, send messages, create issues, and interact with your tools directly. You can ask Claude what connectors are configured in your session.",
       "Organizations on Team or Enterprise plans can manage desktop app behavior through admin console controls, managed settings files, and device management policies.",
@@ -600,7 +601,7 @@
       "Use the controls at the top of the sidebar to filter sessions by status, project, or environment, and to group sessions by project. To rename a session, click the session title in the toolbar at the top of the active session.",
       "View modes control how much detail appears in the chat transcript. Switch modes from the **Transcript view** dropdown next to the send button, or press **Ctrl+O** on macOS or Windows to cycle through them.",
       "When Claude changes files, a diff stats indicator appears showing the number of lines added and removed, such as `+12 -1`. Click this indicator to open the diff viewer, which displays a file list on the left and the changes for each file on the right.",
-      "When Claude messages another session through this surface, Claude Code shows it there as a card labeled with the sending session's title and a link back, so you can always tell where a message came from. If the receiving session is mid-task, Claude Code holds the message and Claude reads it once the current work finishes. Claude can't deliver to an archived session, and tells you when a message doesn't go through.",
+      "When Claude messages another session through this surface, Claude Code shows it there as a card labeled with the sending session's title and a link back, so you can always tell where a message came from. If the receiving session is mid-task, Claude Code holds the message and Claude reads it once the current work finishes. The receiving Claude can reply, and Claude Code delivers the reply back through this surface. Claude can't deliver to an archived session, and tells you when a message doesn't go through.",
       "When Claude picks a different port, it passes the assigned port to your server via the `PORT` environment variable.",
       "When `autoVerify` is enabled, Claude automatically verifies code changes after editing files. It takes screenshots, checks for errors, and confirms changes work before completing its response.",
       "When disabled, preview tools are still available and you can ask Claude to verify at any time. Auto-verify makes it automatic after every edit.",
@@ -615,7 +616,7 @@
       "You can send a command while Claude is working, the same as any other message, and the session returns to idle once the turn finishes. Before v2.1.206, a command sent mid-turn could leave the session showing as running and messages you sent afterward weren't delivered.",
       "Your administrator can turn off local sessions with the [`disableDesktopLocalSessions` managed setting](#managed-settings). When they have, **Local** stays in the environment dropdown but is grayed out and can't be selected, with a tooltip saying your organization turned it off, and on Windows the [WSL](/docs/en/desktop-wsl) entry, whose availability on managed devices is [governed separately](/docs/en/admin-setup#wsl-sessions-in-claude-code-desktop), is grayed out the same way. New sessions default to the first SSH connection if one is configured, and Desktop shows a message that local sessions aren't available on this device if you try to continue an existing one. Choose an [SSH](#ssh-sessions) or [cloud](#cloud-sessions) environment instead, or contact your IT team.",
       "[Dispatch](https://support.claude.com/en/articles/13947068) is a persistent conversation with Claude that lives in the [Cowork](https://claude.com/product/cowork) tab. You message Dispatch a task, and it decides how to handle it.",
-      "[Extended thinking](/docs/en/model-config#extended-thinking) is enabled by default, which improves performance on complex reasoning tasks but uses additional tokens. On the Anthropic API, set `MAX_THINKING_TOKENS` to `0` in the local environment editor to turn thinking off; this has no effect on Fable 5, which always uses extended thinking. On models with [adaptive reasoning](/docs/en/model-config#adjust-effort-level), any other `MAX_THINKING_TOKENS` value is ignored because adaptive reasoning controls thinking depth instead. On Opus 4.6 and Sonnet 4.6, set `CLAUDE_CODE_DISABLE_ADAPTIVE_THINKING` to `1` to use a fixed thinking budget; Fable 5, Sonnet 5, and Opus 4.7 and later always use adaptive reasoning and have no fixed-budget mode.",
+      "[Extended thinking](/docs/en/model-config#extended-thinking) is enabled by default, which improves performance on complex reasoning tasks but uses additional tokens. On the Anthropic API, set `MAX_THINKING_TOKENS` to `0` in the local environment editor to turn thinking off; this has no effect on Fable 5, which always uses extended thinking. With thinking turned off on the Anthropic API, Claude Code sends effort `high` instead of a higher level to models it knows [don't accept that combination](/docs/en/errors#effort-isnt-available-with-thinking-turned-off), such as Opus 5.",
       "[Plugins](/docs/en/plugins) are reusable packages that add skills, agents, hooks, MCP servers, and LSP configurations to Claude Code. You can install plugins from the desktop app without using the terminal.",
       "[Skills](/docs/en/skills) extend what Claude can do. Claude loads them automatically when relevant, or you can invoke one directly: type `/` in the prompt box or click the **+** button and select **Slash commands** to browse what's available. This includes [built-in commands](/docs/en/commands), your [custom skills](/docs/en/skills#create-your-first-skill), project skills from your codebase, and skills from any [installed plugins](/docs/en/plugins). Select one and it appears highlighted in the input field. Type your task after it and send as usual.",
       "```bash theme={null}",
@@ -1398,8 +1399,8 @@
     ]
   },
   "https://support.claude.com/en/articles/15910845-claude-code-may-august-2026-weekly-limits-promotion": {
-    "hash": "340da4e82bb22ab25247535377095cb3fa6834737974fa42cb5c39d0c5ebaf74",
-    "length": 2546,
+    "hash": "cf977eceaf6c469948589b4a367cbcee45838c11ae3b45caa5fd1880cc5464b5",
+    "length": 2522,
     "segments": [
       "After August 31, 2026, weekly usage limits in Claude Code return to their standard levels. There&#x27;s no change to your plan or billing.",
       "Claude Code May–August 2026 weekly limits promotion | Anthropic Help Center Skip to main content Claude Code May–August 2026 weekly limits promotion",
@@ -1831,8 +1832,8 @@
     ]
   },
   "https://support.claude.com/en/articles/12429409-manage-usage-credits-for-paid-claude-plans": {
-    "hash": "4a17eb1f20cdae9a1b506664b3b6a163ee8176c1c6071020a24e67abce6c42af",
-    "length": 22607,
+    "hash": "c8160cb15cabbca1f9fa1ea0ec2d5661aabf2cfdc5baca3b3a3b25eed883091f",
+    "length": 22582,
     "segments": [
       "API FAQ Can I have a Claude account and a Console account?",
       "API Key Best Practices: Keeping Your Keys Safe and Secure",
@@ -2653,8 +2654,8 @@
     ]
   },
   "https://support.claude.com/en/articles/11145838-use-claude-code-with-your-pro-or-max-plan": {
-    "hash": "49722060af45b73ea50ecf1f3ebaca351881af364a349a4d60601bb44bbfc226",
-    "length": 22791,
+    "hash": "7dd626bec038ee36d684b409536d39b5e37921fb25f0375ef3b02e285f31017b",
+    "length": 22767,
     "segments": [
       "API FAQ Can I have a Claude account and a Console account?",
       "API Key Best Practices: Keeping Your Keys Safe and Secure",
@@ -3085,8 +3086,8 @@
     ]
   },
   "https://support.claude.com/en/articles/12138966-release-notes": {
-    "hash": "eb29862e4a385ee88b7282d00808af0af21d0854b087e218a119bd4660cba0d7",
-    "length": 42869,
+    "hash": "539969709e20308a17b4ed58a1d4655f9382e3c86fdfa089171d3bbad34438dc",
+    "length": 42851,
     "segments": [
       "/security-review command",
       "/slash commands: Save your best-working prompts as shortcuts (/slash commands) and reuse these proven workflows instantly without retyping instructions to Claude.",
