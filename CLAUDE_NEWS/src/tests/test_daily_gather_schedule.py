@@ -8,12 +8,16 @@
 **那 11.6 小時全部是空等**：抓料 2 分鐘、pipeline 30–60 分鐘，常態日根本不需要等，
 卻天天付最壞情況的代價（送達由台北 21:00 變隔日 06:00）。
 
-現在改成**多班重試**：routine 一天排 6 班，第一班在抓料之後不久，之後每 2 小時一班。
-資料到了就做，沒到就靜默結束、留給下一班。這不需要新機制——「資料還沒到就不做」是
-Step 1b 的新鮮度防線，「已經做過就別再做」是 Step 0b 的冪等閘，兩道都早就在了。
+現在改成**多班重試**：routine 一天排三班（12/17/22 UTC），資料到了就做，沒到就留給
+下一班。這不需要新機制——「資料還沒到就不做」是 Step 1b 的新鮮度防線，「已經做過就
+別再做」是 Step 0b 的冪等閘，兩道都早就在了。
 
-所以本檔釘的不再是「一個夠久的緩衝」，而是「**這組班次涵蓋得住變異、而且中間沒有
-空窗**」。
+初版排了六班、間隔 2 小時，被 reviewer 推翻兩點：班距恰等於一輪 pipeline 的最壞執行
+時間（前一班還沒 push 完，後一班的冪等閘就會讀到「日報還不存在」而放行，兩條 pipeline
+併行、wiki 對同一批新聞重複 prepend），而且五個空跑班次逼出一條「靜默」例外，與正典
+檔四處明文牴觸。少排幾班讓那條例外整個不必存在。
+
+所以本檔釘的是「**第一班不空等、最後一班蓋得住變異、班次之間不會撞在一起**」。
 """
 import json
 import re
@@ -32,9 +36,12 @@ OBSERVED_MAX_DELAY_H = 11.2
 # 否則常態日的第一班必然空跑，等於白費一班。
 NORMAL_DISPATCH_DELAY_H = 0.75
 
-# 相鄰班次的最大間隔。間隔大於這個值，「重試」就變成一段沒人看的空窗——資料在
-# 空窗初期到達時，日報要多等一整個間隔才產出。
-MAX_GAP_H = 2.0
+# 常態日容許的空等時間：抓料落地到第一班之間。使用者 2026-08-29 明確要求「送達不能
+# 再被空等推遲」，這條就是那個要求的機械版本。
+# 注意這個上限**只管第一班**——班次之間的間隔刻意不設上限：延遲日本來就是異常日，
+# 日報晚 2 小時或晚 5 小時對讀者沒有差別，而多排班次的成本是每天多一次空跑的雲端啟動。
+# （初版曾對班距設 2 小時上限，那個數字沒有任何實測或需求支撐，是憑感覺定的。）
+MAX_NORMAL_IDLE_H = 2.0
 
 # 一輪 pipeline 的實測執行時間上限（30–60 分鐘，取 2 小時當保守值）。
 # 最後一班 + 這個值不得跨過 UTC 午夜——跨了的話後半段重算 `date -u +%F` 會拿到
@@ -100,6 +107,22 @@ class TestRetryWindowCoversTheVariance(unittest.TestCase):
         self.gather = max(_hour(c) for c in _crons())
         self.attempts = _routine_attempts()
 
+    def test_there_is_more_than_one_attempt(self):
+        """退回單班就退回了「用一個夠久的緩衝空等」，而那正是使用者點破的病。
+
+        沒有這條的話，把 cron 改回 `0 22 * * *` 會**全綠**——2026-08-29 reviewer 實測。
+        班距檢查對單元素清單是空迴圈，涵蓋檢查照樣通過（22 − 10.38 = 11.6h）。
+        """
+        self.assertGreater(len(self.attempts), 1, "只剩一班就是退回單班大緩衝")
+
+    def test_the_first_attempt_does_not_idle(self):
+        """第一班與抓料的間隔就是常態日的空等時間，它不該比班距上限還大。"""
+        idle = self.attempts[0] - self.gather
+        self.assertLessEqual(
+            idle, MAX_NORMAL_IDLE_H,
+            f"抓料 {self.gather:.2f}h、第一班 {self.attempts[0]:.2f}h，"
+            f"常態日空等 {idle:.2f}h 超過上限 {MAX_NORMAL_IDLE_H}h")
+
     def test_the_first_attempt_is_after_the_normal_dispatch_delay(self):
         """第一班早於常態派工延遲的話，常態日它必然空跑，等於少一班。"""
         self.assertGreaterEqual(
@@ -116,12 +139,18 @@ class TestRetryWindowCoversTheVariance(unittest.TestCase):
             f"涵蓋 {self.attempts[-1] - self.gather:.2f}h 未蓋過實測變異 "
             f"{OBSERVED_MAX_DELAY_H}h")
 
-    def test_no_gap_between_attempts(self):
-        """班次之間的空窗＝資料到了卻沒人看。間隔決定的是最壞的等待時間。"""
+    def test_attempts_are_spaced_wider_than_one_run(self):
+        """班距**不得小於等於**一輪 pipeline 的最壞執行時間。
+
+        初版六班的間隔正好是 2 小時，與 MAX_RUNTIME_H 相同：前一班還沒走到 Step 5
+        統一 push，後一班的 Step 0b 就讀到「日報還不存在」而放行，兩條 pipeline 併行，
+        六記者對同一批新聞各 prepend 一次——而 wiki 重複條目要人工逐頁挑。
+        """
         for a, b in zip(self.attempts, self.attempts[1:]):
-            self.assertLessEqual(
-                b - a, MAX_GAP_H,
-                f"{a:.2f}h 與 {b:.2f}h 之間隔了 {b - a:.2f}h，超過上限 {MAX_GAP_H}h")
+            self.assertGreater(
+                b - a, MAX_RUNTIME_H,
+                f"{a:.2f}h 與 {b:.2f}h 只隔 {b - a:.2f}h，不大於一輪執行時間 "
+                f"{MAX_RUNTIME_H}h——兩班可能併行")
 
     def test_the_last_attempt_finishes_inside_the_same_utc_day(self):
         """TARGET_DATE 取自 `date -u +%F`（一句指令，不是一次求值），跑到後半段
@@ -167,21 +196,6 @@ class TestRetryWindowCoversTheVariance(unittest.TestCase):
                            f"緩衝 {lint - produced:.2f}h 未蓋過實測變異 {OBSERVED_MAX_DELAY_H}h")
 
 
-class TestRetryDoesNotSpamTheRepo(unittest.TestCase):
-    """一天六班，若每班都寫開跑標記與心跳，就是每天最多 12 筆垃圾 commit。
-
-    多班重試唯一的代價是放棄「每一班的可追查性」：只有真正生日報的那一班留證據，
-    空跑的班次完全靜默。守住「今天到底有沒有日報」的是看門狗，不是逐班的心跳。
-    """
-
-    def test_the_shared_rules_say_empty_attempts_stay_silent(self):
-        shared = (REPO_ROOT / "docs" / "cloud-runbooks" / "_shared.md"
-                  ).read_text(encoding="utf-8")
-        self.assertIn("空跑的班次完全靜默", shared)
-        # 開跑標記必須排在兩道閘之後，否則靜默就無從談起
-        self.assertIn("通過冪等閘與新鮮度防線之後", shared)
-
-
 class TestReplayCannotSilentlyCopyTheWrongDay(unittest.TestCase):
     """手動補跑仍然 `cp gathered_archive/<date>.json`，檔名差一個字就 replay 錯一天。
 
@@ -212,9 +226,11 @@ class TestCloudRoutinesDoNotCollide(unittest.TestCase):
         occupied = _occupied()
         for a, ia in occupied.items():
             for b, ib in occupied.items():
-                if a < b:
-                    for sa, ea in ia:
-                        for sb, eb in ib:
+                if a <= b:            # <= 而非 <：同一個 routine 的多班次也要互比
+                    for i, (sa, ea) in enumerate(ia):
+                        for j, (sb, eb) in enumerate(ib):
+                            if a == b and i >= j:
+                                continue
                             # 各自往前後繞一圈，處理跨 UTC 午夜的區間
                             overlap = any(sa < eb + k and sb + k < ea for k in (-24, 0, 24))
                             self.assertFalse(
