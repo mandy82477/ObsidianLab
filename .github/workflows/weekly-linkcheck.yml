@@ -21,6 +21,8 @@ on:
     # 週五 20:00 UTC = 週六 04:00 台北，早於雲端 weekly lint（週六 03:00 UTC）7 小時。
     # 緩衝取 7 小時的理由同 daily-gather：GitHub 排程 workflow 實測延遲可達 2.7 小時，
     # 緩衝不足會讓 lint 讀到上週的舊報告而不自知。
+    # 註：離本班最近的推送者其實是週五 22:00 UTC 的每日 routine（僅 2 小時）。
+    # 兩邊都有 pull --rebase 重試，最壞情況是重試一次，不會遺失資料。
     - cron: "0 20 * * 5"
   workflow_dispatch: {}  # 允許手動觸發（改完規格想立刻產一份報告時用）
 

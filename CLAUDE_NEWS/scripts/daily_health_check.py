@@ -67,14 +67,18 @@ def _use_utf8_stdout() -> None:
 
 def check(target: date, repo: Path = REPO_ROOT) -> dict:
     d = target.isoformat()
-    gathered = repo / "src" / "gathered_items.json"
+    # 讀按日分檔的 archive，不讀單槽的 gathered_items.json。
+    # 單槽檔會被下一班抓料覆寫：本檢查查的是**前一個 UTC 日**（01:00 執行），
+    # 而看門狗自己若被 GitHub 排程延遲 ≥ 9.4 小時就會跑在 10:23 的抓料之後，
+    # 此時單槽檔已前進到 D+1，健康的 D 會被判成抓料缺件——而看門狗延遲正是
+    # 本系統踩過的事故本身。archive 按日分檔、已進 git，不受覆寫影響。
+    archive = repo / "src" / "gathered_archive" / f"{d}.json"
 
-    gather_date, gather_n = None, 0
-    if gathered.exists():
+    gather_n = 0
+    if archive.exists():
         try:
             # encoding 明寫 utf-8：資料含中文，非 UTF-8 預設環境會讀失敗而誤報缺件
-            data = json.loads(gathered.read_text(encoding="utf-8"))
-            gather_date, gather_n = data.get("date"), len(data.get("items") or [])
+            gather_n = len(json.loads(archive.read_text(encoding="utf-8")).get("items") or [])
         except (json.JSONDecodeError, OSError):
             pass
 
@@ -82,8 +86,8 @@ def check(target: date, repo: Path = REPO_ROOT) -> dict:
     web_ok = (repo / "web_reader" / "data" / "digest" / f"{d}.json").exists()
 
     problems = []
-    if gather_date != d or gather_n == 0:
-        problems.append(("抓料", f"gathered_items.json date={gather_date} items={gather_n}（daily-gather 失敗或被 GitHub 丟棄）"))
+    if gather_n == 0:
+        problems.append(("抓料", f"src/gathered_archive/{d}.json 不存在或為空（daily-gather 失敗或被 GitHub 丟棄）"))
     if not digest_ok:
         problems.append(("日報", f"news/{d}.md 不存在（雲端 routine 未執行、中止、或 push 失敗）"))
     elif not web_ok:
@@ -100,7 +104,6 @@ def check(target: date, repo: Path = REPO_ROOT) -> dict:
     return {
         "date": d,
         "healthy": not problems,
-        "gather_date": gather_date,
         "gather_n": gather_n,
         "digest_ok": digest_ok,
         "web_ok": web_ok,
@@ -131,10 +134,10 @@ def parked_branches(repo: Path = REPO_ROOT) -> list[str]:
 
 def render_md(r: dict) -> str:
     lines = [f"## 每日產出檢查 {r['date']} (UTC)"]
-    if r["gather_date"] == r["date"] and r["gather_n"] > 0:
+    if r["gather_n"] > 0:
         lines.append(f"- ✅ ① 抓料：{r['gather_n']} 則")
     else:
-        lines.append(f"- ❌ ① 抓料缺件：gathered_items.json date={r['gather_date']} items={r['gather_n']}（daily-gather 失敗或被 GitHub 丟棄）")
+        lines.append(f"- ❌ ① 抓料缺件：src/gathered_archive/{r['date']}.json 不存在或為空（daily-gather 失敗或被 GitHub 丟棄）")
     lines.append(f"- ✅ ② 日報已上站：news/{r['date']}.md" if r["digest_ok"]
                  else f"- ❌ ② 日報缺件：news/{r['date']}.md 不存在（雲端 routine 未執行、中止、或 push 失敗）")
     if r["web_ok"]:

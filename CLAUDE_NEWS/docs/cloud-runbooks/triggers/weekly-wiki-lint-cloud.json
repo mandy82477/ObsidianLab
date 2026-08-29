@@ -3,7 +3,7 @@
   "id": "trig_01E41amaGSNuL8jeUhCR8iUw",
   "name": "weekly-wiki-lint-cloud",
   "cron_expression": "0 3 * * 6",
-  "_cron_note": "UTC，= 台北每週六 11:00。原為 01:00，2026-08-29 每日 routine 由 13:00 移到 23:00 UTC 後，01:30 的 daily-watchdog-push 會與它同時在推——兩個雲端 routine 並發 push 同一 repo 會撞非快轉。錯開到 03:00，與 23:00 的每日 routine 也不重疊。",
+  "_cron_note": "UTC，= 台北每週六 11:00。原為 01:00，2026-08-29 每日 routine 由 13:00 移到 22:00 UTC 後，01:30 的 daily-watchdog-push 會與它同時在推——兩個雲端 routine 並發 push 同一 repo 會撞非快轉。錯開到 03:00，與 22:00 的每日 routine 也不重疊。",
   "enabled": true,
   "job_config": {
     "ccr": {

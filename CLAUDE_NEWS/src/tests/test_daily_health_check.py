@@ -29,6 +29,10 @@ def build_repo(root: Path, *, gather_date="2026-07-31", gather_n=73,
     (root / "src" / "gathered_items.json").write_text(
         json.dumps({"date": gather_date, "items": [{"t": i} for i in range(gather_n)]}),
         encoding="utf-8")
+    if gather_date:
+        (root / "src" / "gathered_archive" / f"{gather_date}.json").write_text(
+            json.dumps({"date": gather_date, "items": [{"t": i} for i in range(gather_n)]}),
+            encoding="utf-8")
     if digest:
         (root / "news" / f"{TODAY}.md").write_text("# 日報", encoding="utf-8")
     if web:
@@ -73,6 +77,20 @@ class TestCheck(unittest.TestCase):
     def test_stale_gather_date_is_a_problem(self):
         r = self._check(gather_date="2026-07-30")
         self.assertIn("抓料", [p[0] for p in r["problems"]])
+
+    def test_the_single_slot_file_moving_on_is_not_a_problem(self):
+        """單槽的 gathered_items.json 已前進到隔天，但當日 archive 在——這是健康的。
+
+        看門狗查的是前一個 UTC 日，而它自己若被 GitHub 排程延遲 ≥ 9.4 小時就會跑在
+        下一班抓料之後。舊判準讀單槽檔，此時會把健康的一天判成抓料缺件、寄信＋推播
+        假警報——而看門狗延遲正是本系統踩過的事故本身。
+        """
+        with TemporaryDirectory() as tmp:
+            root = build_repo(Path(tmp))
+            (root / "src" / "gathered_items.json").write_text(
+                json.dumps({"date": "2026-08-01", "items": [{"t": 1}]}), encoding="utf-8")
+            r = check(TODAY, repo=root)
+            self.assertEqual(r["problems"], [])
 
     def test_empty_gather_is_a_problem(self):
         """date 對但一則都沒抓到，等同沒跑——不可因為日期對就放行。"""

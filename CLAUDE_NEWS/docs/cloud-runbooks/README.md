@@ -14,7 +14,7 @@
 
 另有 `cloud-writeback-probe`（`trig_01KYk75uTSqLsXcmTNaawmLL`）為 2026-07-10 的寫回測試殘留，已 disabled，未納入備份。
 
-上游第一段 GitHub Actions `daily-gather`（`.github/workflows/daily-gather.yml`，`0 10 * * *` UTC）與告警層 `daily-watchdog`（`0 15 * * *` UTC）都在 repo 內，不需鏡像。
+上游第一段 GitHub Actions `daily-gather`（`.github/workflows/daily-gather.yml`）與告警層 `daily-watchdog`（`.github/workflows/daily-watchdog.yml`）都在 repo 內，不需鏡像——**排程時間以那兩個 workflow 檔為準，本檔不再抄一份**（上表為雲端 trigger 專用，由測試驗逐字一致；散文裡的副本沒人驗，2026-08-29 就是這兩個值飄成舊配置）。
 
 `daily-watchdog`（寄信）與 `daily-watchdog-push`（推手機）是**同一套判準的兩個送達管道**，共用 `scripts/daily_health_check.py`；判準不可分別改寫在 workflow 或 runbook 裡（理由見 `docs/cloud-runbooks/watchdog-push.md`）。
 
