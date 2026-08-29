@@ -96,6 +96,18 @@
           }
         ]
       }
+    ],
+    "PreToolUse": [
+      {
+        "matcher": "Read",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python \"C:/Users/Mandy/CLAUDE_OBSIDIAN/ObsidianLab/CLAUDE_NEWS/.claude/hooks/observe_large_reads.py\"",
+            "timeout": 10
+          }
+        ]
+      }
     ]
   }
 }
