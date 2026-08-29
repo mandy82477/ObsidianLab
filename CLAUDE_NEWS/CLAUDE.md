@@ -97,7 +97,9 @@
 
 **判斷式：** 這個 commit 的訊息，說得出裡面每一個檔案為什麼在嗎？說不出 → 你 add 太多了。
 
-**開放迴路掃描：** 每週跑 `python scripts/open_loops.py`（列出未 commit 的實質改動、逾複查日的 workaround）；日常則由 SessionStart hook 在開啟專案時提醒未 commit 的實質改動。
+**開放迴路掃描：** 每週跑 `python scripts/open_loops.py`，它彙整**五類**開放迴路的可見性（只報數字與最舊年齡，不合併處理權——每類仍由各自流程消化）：未 commit 的實質改動、逾複查日的 workaround、懸置標記逾期＋舊語法盲區（處理端 `/wiki-lint` 5c）、`wiki/reader-notes.md` 的 ⏳（處理端 `/wiki-weekly-review`）、`wiki/feature-radar.md` 的 ⏳（逾期判定端 `/wiki-lint` 5a）。日常則由 SessionStart hook 在開啟專案時提醒未 commit 的實質改動。
+
+輸出末尾刻意分成兩個數字——**「需收尾」是這次該做完的，「全庫積壓」是還欠著的**。`[加入: 2026-08-29]` 之前本腳本只算前兩類，報「合計 8 個」，而實際積壓 230 筆：**唯一的彙整端低報 30 倍**。這與懸置佇列改版前「只印存量不印流量」是同一種病——**看得到的地方沒有積壓，積壓都在看不到的地方**。
 
 ---
 
