@@ -85,6 +85,10 @@ def overdue_workarounds(today: date) -> list[str]:
     return overdue
 
 
+class PendingScanUnavailable(RuntimeError):
+    """懸置掃描不可用。刻意不吞——見 pending_marker_backlog。"""
+
+
 def pending_marker_backlog(today: date) -> tuple[int, int, int]:
     """(逾期筆數, 舊語法盲區筆數, 最久逾期天數)。處理端是 `/wiki-lint` 5c，本處只報數。
 
@@ -93,15 +97,13 @@ def pending_marker_backlog(today: date) -> tuple[int, int, int]:
     """
     try:
         import check_pending_markers as cpm
-    except Exception:
-        return (0, 0, 0)
-    try:
         entries = cpm._overdue_entries(cpm.WIKI_DIR, today)
         legacy = sum(n for _, n in cpm._legacy_by_page(cpm.WIKI_DIR))
         oldest = max((e[1] for e in entries), default=0)
         return (len(entries), legacy, oldest)
-    except Exception:
-        return (0, 0, 0)
+    except Exception as e:
+        # 不可靜默回 0——那會讓掃描壞掉看起來像「很乾淨」，正是本腳本要治的病。
+        raise PendingScanUnavailable(str(e)) from e
 
 
 def reader_notes_pending(today: date) -> list[str]:
@@ -120,8 +122,7 @@ def reader_notes_pending(today: date) -> list[str]:
             continue
         d = date(int(m.group(1)), int(m.group(2)), int(m.group(3)))
         desc = line.split("｜")[-1][:50] if "｜" in line else line[:50]
-        rows.append((today - d).days)
-        rows[-1] = f"放置 {(today - d).days} 天（{d.isoformat()}）：{desc}"
+        rows.append(f"放置 {(today - d).days} 天（{d.isoformat()}）：{desc}")
     return rows
 
 
@@ -152,9 +153,16 @@ def main() -> int:
     if not overdue:
         print("    ✅ 無逾期繞路")
 
-    pend_overdue, pend_legacy, pend_oldest = pending_marker_backlog(today)
+    try:
+        pend_overdue, pend_legacy, pend_oldest = pending_marker_backlog(today)
+        pend_broken = None
+    except PendingScanUnavailable as e:
+        pend_overdue = pend_legacy = pend_oldest = 0
+        pend_broken = str(e)
     print(f"\n[3] 懸置標記：逾期 {pend_overdue} 筆（最久逾 {pend_oldest} 天）＋ 舊語法盲區 {pend_legacy} 筆")
-    if pend_overdue or pend_legacy:
+    if pend_broken is not None:
+        print(f"    ❌ 掃描失敗，此類積壓未知（不可當成 0）：{pend_broken[:80]}")
+    elif pend_overdue or pend_legacy:
         print("    → 處理端：`/wiki-lint` 5c（Lane A/B 兩條分流）；盲區須先由記者輪回填才進得了佇列")
         print("    → 明細與產消速率：python scripts/check_pending_markers.py --queue")
     else:

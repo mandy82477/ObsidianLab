@@ -67,6 +67,55 @@ class PendingBacklogDegradationTest(unittest.TestCase):
             mod.pending_marker_backlog = orig
 
 
+class PendingScanFailureTest(unittest.TestCase):
+    """掃描壞掉時不可静默回 0——那會讓壞掉看起來像「很乾淨」，
+    正是本腳本要治的病。main() 需顯式標出「此類積壓未知」。"""
+
+    def _run_main_with_broken_scan(self):
+        import io, contextlib
+        orig = (mod.pending_marker_backlog, mod.uncommitted_real_changes,
+                mod.overdue_workarounds, mod.reader_notes_pending,
+                mod.feature_radar_watching, mod._use_utf8_stdout)
+
+        def boom(today):
+            raise mod.PendingScanUnavailable("boom")
+
+        buf = io.StringIO()
+        try:
+            mod._use_utf8_stdout = lambda: None
+            mod.pending_marker_backlog = boom
+            mod.uncommitted_real_changes = lambda: []
+            mod.overdue_workarounds = lambda today: []
+            mod.reader_notes_pending = lambda today: []
+            mod.feature_radar_watching = lambda: 0
+            with contextlib.redirect_stdout(buf):
+                mod.main()
+        finally:
+            (mod.pending_marker_backlog, mod.uncommitted_real_changes,
+             mod.overdue_workarounds, mod.reader_notes_pending,
+             mod.feature_radar_watching, mod._use_utf8_stdout) = orig
+        return buf.getvalue()
+
+    def test_broken_scan_is_reported_not_silently_zero(self):
+        out = self._run_main_with_broken_scan()
+        self.assertIn("掃描失敗", out)
+        self.assertIn("不可當成 0", out)
+        self.assertNotIn("✅ 無逾期懸置", out, "壞掉時不得報「無逾期」")
+
+    def test_backlog_scan_raises_rather_than_returning_zeros(self):
+        import sys
+        saved = sys.modules.pop("check_pending_markers", None)
+        sys.modules["check_pending_markers"] = None  # import 會拋 ImportError
+        try:
+            with self.assertRaises(mod.PendingScanUnavailable):
+                mod.pending_marker_backlog(TODAY)
+        finally:
+            if saved is not None:
+                sys.modules["check_pending_markers"] = saved
+            else:
+                sys.modules.pop("check_pending_markers", None)
+
+
 class TotalBacklogTest(unittest.TestCase):
     """總量必須含入五類——漏算任一類就回到「報 8 個、實際欠 230 筆」那種低報。"""
 
