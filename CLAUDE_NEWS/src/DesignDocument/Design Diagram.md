@@ -57,17 +57,17 @@ gate_web_build.py 代跑測試：已登記缺口放行；
 
 ```mermaid
 flowchart TD
-    GHA["① GitHub Actions —— .github/workflows/daily-gather.yml\n10:00 UTC / 18:00 台北 · 網路無限制 · 免 API\npython -m news_aggregator.main --gather-only"]
+    GHA["① GitHub Actions —— .github/workflows/daily-gather.yml\n10:23 UTC / 18:23 台北 · 網路無限制 · 免 API\npython -m news_aggregator.main --gather-only"]
     GHA --> COMMIT["commit 回 master\ngathered_items.json + seen_urls.json\n+ emitted_items.json（未確認條目）"]
 
-    COMMIT -->|3 小時緩衝，鬆耦合| CLOUD
+    COMMIT -->|12.6 小時緩衝，鬆耦合| CLOUD
 
-    CLOUD["② 雲端 routine —— daily-news-pipeline-cloud\n13:00 UTC / 21:00 台北 · 訂閱 LLM · 不需上網\n跑 Step 0/1b/1c/2/3/4/5/6"]
+    CLOUD["② 雲端 routine —— daily-news-pipeline-cloud\n23:00 UTC / 隔日 07:00 台北 · 訂閱 LLM · 不需上網\n跑 Step 0/1b/1c/2/3/4/5/6"]
     CLOUD --> FRESH{"新鮮度防線\ngathered 非今日 / 0 條？"}
     FRESH -->|是| ABORT["中止，不生假日報"]
     FRESH -->|否| RUN["生日報 → 六記者 ingest → build\n→ 單一 push 上站\n（只寫 emitted_items.json 的確認欄位）"]
 
-    WD["③ 看門狗 —— .github/workflows/daily-watchdog.yml\n15:00 UTC / 23:00 台北"]
+    WD["③ 看門狗 —— .github/workflows/daily-watchdog.yml\n隔日 01:00 UTC / 09:00 台北"]
     WD --> CHECK{"當日 gathered_items.json\n與 news/&lt;date&gt;.md 齊全？"}
     CHECK -->|缺件| FAIL["job 失敗 → GitHub 寄信\n（本系統唯一主動告警管道）"]
     CHECK -->|齊全| GREEN["綠燈"]

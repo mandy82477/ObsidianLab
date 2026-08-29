@@ -2,8 +2,8 @@
   "_mirror_note": "claude.ai trigger 定義鏡像備份，非執行檔。改雲端後同步更新本檔（見 ../README.md）。最後同步：2026-07-25",
   "id": "trig_01E41amaGSNuL8jeUhCR8iUw",
   "name": "weekly-wiki-lint-cloud",
-  "cron_expression": "0 1 * * 6",
-  "_cron_note": "UTC，= 台北每週六 09:00；與每日 routine（13:00 UTC）不重疊",
+  "cron_expression": "0 3 * * 6",
+  "_cron_note": "UTC，= 台北每週六 11:00。原為 01:00，2026-08-29 每日 routine 由 13:00 移到 23:00 UTC 後，01:30 的 daily-watchdog-push 會與它同時在推——兩個雲端 routine 並發 push 同一 repo 會撞非快轉。錯開到 03:00，與 23:00 的每日 routine 也不重疊。",
   "enabled": true,
   "job_config": {
     "ccr": {
@@ -19,9 +19,23 @@
         }
       ],
       "session_context": {
-        "allowed_tools": ["Bash", "Read", "Write", "Edit", "Glob", "Grep", "Task"],
+        "allowed_tools": [
+          "Bash",
+          "Read",
+          "Write",
+          "Edit",
+          "Glob",
+          "Grep",
+          "Task"
+        ],
         "model": "claude-sonnet-5",
-        "sources": [{ "git_repository": { "url": "https://github.com/mandy82477/ObsidianLab" } }]
+        "sources": [
+          {
+            "git_repository": {
+              "url": "https://github.com/mandy82477/ObsidianLab"
+            }
+          }
+        ]
       }
     }
   }

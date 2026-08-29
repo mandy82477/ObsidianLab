@@ -50,6 +50,38 @@ class TestConsumerOutlastsProducerVariance(unittest.TestCase):
         self.assertLess(routine, 24)
 
 
+class TestCloudRoutinesDoNotCollide(unittest.TestCase):
+    """兩個會 push 的雲端 routine 排在同一小時 → 非快轉推送被打掉，而且是靜默的。
+
+    2026-08-29 移動排程時親自踩到：watchdog-push 移到 01:30，沒注意 weekly-wiki-lint
+    就排在 01:00 週六。
+    """
+
+    def test_pushing_routines_start_at_least_an_hour_apart(self):
+        triggers = {}
+        for path in sorted(TRIGGER.parent.glob("*.json")):
+            cron = json.loads(path.read_text(encoding="utf-8")).get("cron_expression")
+            if cron:
+                triggers[path.stem] = _hour(cron)
+        for a, ha in triggers.items():
+            for b, hb in triggers.items():
+                if a < b:
+                    self.assertGreaterEqual(
+                        abs(ha - hb), 1.0,
+                        f"{a}（{ha:.2f}h）與 {b}（{hb:.2f}h）相距不足 1 小時，"
+                        "兩者都會 push 同一個 repo")
+
+    def test_the_readme_table_matches_the_definition_files(self):
+        """README 的 trigger 表把 cron 抄了一份。2026-08-29 改排程時三列全部沒跟上。"""
+        readme = (TRIGGER.parent.parent / "README.md").read_text(encoding="utf-8")
+        for path in sorted(TRIGGER.parent.glob("*.json")):
+            d = json.loads(path.read_text(encoding="utf-8"))
+            cron = d.get("cron_expression")
+            if cron:
+                self.assertIn(f"`{d['name']}` | `{d['id']}` | `{cron}`", readme,
+                              f"README 的 {d['name']} 那列與定義檔不符（定義檔為 {cron}）")
+
+
 class TestDataActuallyLands(unittest.TestCase):
     def test_push_retries_with_rebase(self):
         """裸 push 會在兩分鐘視窗內被任何併發推送打掉，當天抓料整包不落地。"""
