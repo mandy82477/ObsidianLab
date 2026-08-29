@@ -394,6 +394,9 @@ def print_queue(out, wiki_dir: Path | None = None, today: date | None = None,
             delta = len(entries) - prev_total
             sign = "+" if delta > 0 else ""
             print(f"📈 趨勢：{prev_date} {prev_total} 筆 → 今日 {len(entries)} 筆（{sign}{delta}）", file=out)
+        else:
+            # 不印假數字是對的，但整行消失會讓讀者分不出「沒有基準」與「這功能壞了」。
+            print("📈 趨勢：尚無上一輪快照（下次執行起可比較）", file=out)
         _append_history(history_path, today, len(entries), len(lane_a), len(lane_b), added)
 
     # 排空預估：「43 筆」沒有時間感，「8.6 週」有。
