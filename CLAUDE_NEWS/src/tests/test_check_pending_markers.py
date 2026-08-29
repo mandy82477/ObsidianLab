@@ -195,44 +195,90 @@ _NOSIG = '❓ **待查證**（標 %s｜查 Electron、桌面應用）｜**題**�
 
 
 class QueueLaneSplitTest(_WikiCase):
-    """--queue 兩條分流 + 產消對帳（2026-08-29 加入）。
+    """--queue 兩條分流 + 產消對帳（2026-08-29 加入，同日 review 後補強）。
 
-    改版前是單一額度 5 筆、排序「訊欄優先」——結果有訊的筆數佔滿全部額度，
-    而有訊代表記者已在日報找到後續、結案不需要 web。便宜的工作吃光了昂貴
-    查證的配額，真正需要 WebFetch 的那批永遠排不進來。本測試釘住分流行為，
-    以及「產出快過消費」的告警——後者是 19 天內從 0 長到 51 筆卻無人察覺的
-    唯一可見訊號。
+    初版測試把 15 筆標記全寫進同一頁，於是「Lane B 區段含該頁 slug」在
+    **原始 bug 原封復活**（Lane B 改印合併排序前 5 筆）時照樣通過——
+    review 的突變 M9 實證此漏。現在有訊／無訊分兩頁，斷言 Lane B 區段
+    **不含**有訊頁，飢餓語意才真的被釘住。額度切片（M6/M7）、額度不可
+    對調（M3）、產能非名目（P1-5）亦一併補上。
     """
 
-    def _queue(self, today):
+    def _queue(self, today=date(2026, 8, 29)):
         import io
         buf = io.StringIO()
         mod.print_queue(buf, wiki_dir=self.wiki_dir, today=today)
         return buf.getvalue()
 
+    def _lane_sections(self, out):
+        a = out.split("## Lane A")[1].split("## Lane B")[0]
+        b = out.split("## Lane B")[1].split("總逾期數")[0]
+        return a, b
+
+    def _fill(self, n_sig, n_nosig, marked="2026-08-01"):
+        if n_sig:
+            self.write("topics/alpha.md", NL.join([_SIG % marked] * n_sig))
+        if n_nosig:
+            self.write("topics/bravo.md", NL.join([_NOSIG % marked] * n_nosig))
+
     def test_lane_b_is_not_starved_by_lane_a(self):
-        body = [_SIG % "2026-08-01" for _ in range(8)]
-        body += [_NOSIG % "2026-08-01" for _ in range(7)]
-        self.write("topics/t.md", NL.join(body))
-        out = self._queue(date(2026, 8, 29))
-        self.assertIn("Lane A", out)
-        self.assertIn("Lane B", out)
-        lane_b = out.split("Lane B")[1]
-        self.assertIn("topics/t", lane_b, "Lane B 必須排得進來，不可被 Lane A 佔滿")
-        self.assertIn("Lane A 8", out)
-        self.assertIn("Lane B 7", out)
+        """M9 殺手：Lane B 區段不得混入有訊頁。"""
+        self._fill(n_sig=8, n_nosig=7)
+        lane_a, lane_b = self._lane_sections(self._queue())
+        self.assertIn("bravo", lane_b, "Lane B 必須排得進來")
+        self.assertNotIn("alpha", lane_b, "Lane B 不得混入有訊筆（原始 bug 的形狀）")
+        self.assertIn("alpha", lane_a)
+        self.assertNotIn("bravo", lane_a)
+
+    def test_lane_a_quota_caps_listing(self):
+        """M6 殺手：額度切片必須生效。"""
+        self._fill(n_sig=15, n_nosig=0)
+        lane_a, _ = self._lane_sections(self._queue())
+        self.assertEqual(lane_a.count("alpha"), mod.SIGNAL_LIMIT)
+
+    def test_lane_b_quota_caps_listing(self):
+        """M7 殺手。"""
+        self._fill(n_sig=0, n_nosig=15)
+        _, lane_b = self._lane_sections(self._queue())
+        self.assertEqual(lane_b.count("bravo"), mod.QUEUE_LIMIT)
+
+    def test_lane_quotas_are_not_interchangeable(self):
+        """M3 殺手：兩個額度對調就失去分流意義（A 是便宜工作，額度必須較大）。"""
+        self._fill(n_sig=15, n_nosig=15)
+        lane_a, lane_b = self._lane_sections(self._queue())
+        self.assertGreater(
+            lane_a.count("alpha"), lane_b.count("bravo"),
+            "Lane A（不需 web）額度必須大於 Lane B（需 web）"
+        )
+
+    def test_capacity_uses_actual_backlog_not_nominal_quota(self):
+        """本輪實際可消 = min(積壓, 額度) 逐 Lane 相加；產能仍是名目值（見 print_queue 註解）。"""
+        self._fill(n_sig=3, n_nosig=20)
+        out = self._queue()
+        self.assertIn("本輪實際可消 8 筆", out)
+
+    def test_rate_window_boundary_is_exclusive_and_width_matters(self):
+        """M4／M8 殺手：窗口寬度與邊界都要釘死。
+
+        today=08-29、窗口 7 天 → cutoff=08-22，條件為 d > cutoff（不含當日）。
+        佈局：08-28 兩筆（內）、08-22 一筆（邊界，不含）、08-09 一筆（窗外）。
+        期望 added=2；`>` 改 `>=` 會變 3，窗口改 30 會變 4。
+        """
+        self.write("topics/win.md", NL.join(
+            [_NOSIG % "2026-08-28"] * 2 + [_NOSIG % "2026-08-22"] + [_NOSIG % "2026-08-09"]
+        ))
+        out = self._queue()
+        self.assertIn("近 7 天新增 2 筆", out)
 
     def test_rate_meter_warns_when_production_exceeds_capacity(self):
-        body = [_NOSIG % "2026-08-27" for _ in range(30)]
-        self.write("topics/t.md", NL.join(body))
-        out = self._queue(date(2026, 8, 29))
+        self._fill(n_sig=0, n_nosig=30, marked="2026-08-27")
+        out = self._queue()
         self.assertIn("產消對帳", out)
         self.assertIn("淨增", out)
         self.assertIn("產出快過消費", out)
 
     def test_rate_meter_silent_when_within_capacity(self):
-        body = [_NOSIG % "2026-08-27" for _ in range(3)]
-        self.write("topics/t.md", NL.join(body))
-        out = self._queue(date(2026, 8, 29))
+        self._fill(n_sig=0, n_nosig=3, marked="2026-08-27")
+        out = self._queue()
         self.assertIn("產消對帳", out)
         self.assertNotIn("產出快過消費", out)

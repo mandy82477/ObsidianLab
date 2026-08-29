@@ -59,8 +59,8 @@ from pending_markers import (  # noqa: E402
 )
 
 REVIEW_DEFAULT_DAYS = 14
-QUEUE_LIMIT = 5  # Lane B（需 web 查證）每輪額度；與 .claude/commands/wiki-lint.md 5c 步驟 1 同步
-SIGNAL_LIMIT = 10  # Lane A（已有日報訊號，不需 web）每輪額度；同上同步
+QUEUE_LIMIT = 5  # Lane B（本輪額度 5）需 web 查證；四處同步見 .claude/review-registry.json
+SIGNAL_LIMIT = 10  # Lane A（本輪額度 10）已有日報訊號；四處同步見 .claude/review-registry.json
 RATE_WINDOW_DAYS = 7  # 產消對帳的回看窗口
 SHORT_PROBE_LEN = 6
 
@@ -286,9 +286,11 @@ def print_queue(out, wiki_dir: Path | None = None, today: date | None = None) ->
     必然被便宜那種佔滿。
 
     為什麼要有產消對帳：改版前輸出只有「總逾期數」這個存量數字，
-    看不出流量。2026-08-29 實測近 7 天新增 24 筆、消費 5 筆/週，
-    結構性淨增約 19 筆/週——而這件事在輸出裡完全看不到，
+    看不出流量。2026-08-29 實測近 7 天新增 24 筆、
+    本輪實際可消費 13 筆（A 8＋B 5）——而這件事在輸出裡完全看不到，
     於是 19 天內從 0 長到 51 筆沒有任何人察覺。
+
+    注意本行是**概估**：額度為上限、7 天內建立又已結案者不計入分子。
     """
     wiki_dir = wiki_dir or WIKI_DIR
     today = today or date.today()
@@ -297,16 +299,17 @@ def print_queue(out, wiki_dir: Path | None = None, today: date | None = None) ->
     lane_b = [e for e in entries if not e[0]]   # 無訊欄
     print("# check_pending_markers.py --queue 逾期佇列" + chr(10), file=out)
 
-    print(f"## Lane A：已有日報訊號，不需 web（{len(lane_a)} 筆，本輪額度 {SIGNAL_LIMIT}）", file=out)
-    print("   記者已標 `訊`，結案只需讀該日日報改寫；查不到官方也可直接依日報結。", file=out)
+    print(f"## Lane A（本輪額度 {SIGNAL_LIMIT}）：日報已有後續訊號，多數可免 web——{len(lane_a)} 筆", file=out)
+    print("   記者已標 `訊`＝日報有後續。多數可只憑日報收斂，但探針是機械比對、可能假命中——", file=out)
+    print("   逐筆確認該日條目是否真指此事實；確認不了就退回 Lane B，不可硬結。處置見 5c 步驟 3 第四列。", file=out)
     for _, _, line in lane_a[:SIGNAL_LIMIT]:
         print(f"  {line}", file=out)
     if not lane_a:
         print("  （無）", file=out)
 
     print(file=out)
-    print(f"## Lane B：需 WebFetch 官方查證（{len(lane_b)} 筆，本輪額度 {QUEUE_LIMIT}）", file=out)
-    print("   雲端 egress 封鎖時本區跳過，Lane A 仍可處理。", file=out)
+    print(f"## Lane B（本輪額度 {QUEUE_LIMIT}）：需 WebFetch 官方查證——{len(lane_b)} 筆", file=out)
+    print("   需官方一手來源，雲端 egress 封鎖時整個 5c 跳過（含本區）。", file=out)
     for _, _, line in lane_b[:QUEUE_LIMIT]:
         print(f"  {line}", file=out)
     if not lane_b:
@@ -317,12 +320,18 @@ def print_queue(out, wiki_dir: Path | None = None, today: date | None = None) ->
 
     # 產消對帳：存量數字看不出流量，沒有這段就無法判斷額度夠不夠。
     added = _recent_marked(wiki_dir, today, RATE_WINDOW_DAYS)
-    capacity = SIGNAL_LIMIT + QUEUE_LIMIT
-    net = added - capacity
+    # 兩個不同的數字，別混用：
+    #   throughput = 每週產能（能力值），是「會不會結構性落後」的分母
+    #   clearable  = 這輪實際消得掉幾筆（受現有積壓限制），只作展示
+    # 2026-08-29 review 建議把 min() 當分母，實測會在「積壓 0 但近期有新標記」時
+    # 誤報產出過快——積壓空不代表產能是 0，只代表沒東西可消。
+    throughput = SIGNAL_LIMIT + QUEUE_LIMIT
+    clearable = min(len(lane_a), SIGNAL_LIMIT) + min(len(lane_b), QUEUE_LIMIT)
+    net = added - throughput
     verdict = f"淨增 {net} 筆/週" if net > 0 else (f"淨減 {-net} 筆/週" if net < 0 else "打平")
     print(
-        f"📊 產消對帳：近 {RATE_WINDOW_DAYS} 天新增 {added} 筆｜本輪合計額度 {capacity} 筆"
-        f"（A {SIGNAL_LIMIT}＋B {QUEUE_LIMIT}）｜**{verdict}**",
+        f"📊 產消對帳（概估）：近 {RATE_WINDOW_DAYS} 天新增 {added} 筆｜每週產能 {throughput} 筆"
+        f"（A {SIGNAL_LIMIT}＋B {QUEUE_LIMIT}）｜本輪實際可消 {clearable} 筆｜{verdict}",
         file=out,
     )
     if net > 0:
