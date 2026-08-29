@@ -89,10 +89,15 @@ _BLOCK_END_RE = re.compile(
 MIN_SEGMENT_CHARS = 12   # 更短的多半是導覽殘骸與圖示 alt，進來只會製造假 diff
 MAX_SEGMENTS = 1200      # 超過此數的頁面不存 segments（state 檔無上限成長的閘）
 # 出現在幾個監看頁以上就算樣板。6 個 support 頁共享一份會變動的 Help Center
-# 文章索引（354 段），官方發一篇新文章時 6 頁會同時報「新增 1 段：<新文章標題>」
-# ——那是錯誤歸因，不只是噪音。判準用「跨頁重複」而非關鍵字黑名單：樣板的定義
-# 就是「每頁都有」，那是它唯一穩定的特徵。
-BOILERPLATE_MIN_PAGES = 2
+# 文章索引，官方發一篇新文章時這些頁會同時「變了」——若不剔除，配額頁與計費頁
+# 會各自宣稱新增了一段不相干的文章標題（錯誤歸因，非單純噪音）。
+#
+# 門檻取 3 是量出來的（2026-08-29 實測 8 頁 1489 段的跨頁分布）：
+#   出現在 1 頁 1124 段｜2 頁 9｜3 頁 1｜4 頁 1｜**5 頁 350**｜6 頁 4
+# 真樣板整團落在 5，而 count=2 的 9 段全是導覽標籤（Customer stories、Claude
+# Design…）。取 3 既涵蓋整個索引，又讓「同一事實剛好被官方寫在兩頁」不致被
+# 誤判為樣板而靜音——那是本機制唯一的偽陰性方向。
+BOILERPLATE_MIN_PAGES = 3
 MAX_LISTED_SEGMENTS = 5  # 摘要裡列幾條就夠了——目的是讓人知道往哪看，不是重現 diff
 SEGMENT_PREVIEW_CHARS = 120
 
@@ -155,11 +160,15 @@ class OfficialDocsWatch(BaseSource):
 
 
 def _hash_item(name: str, url: str, text: str, prev, state: dict,
-               segments: list[str], boilerplate: set | None = None) -> FeedItem | None:
+               segments: list[str], boilerplate: set) -> FeedItem | None:
     digest = hashlib.sha256(text.encode("utf-8")).hexdigest()
     entry: dict = {"hash": digest, "length": len(text)}
     if segments and len(segments) <= MAX_SEGMENTS:
         entry["segments"] = segments
+    elif not segments and prev and prev.get("segments"):
+        # 今日切不出段落（骨架頁、版型改版）不代表昨天的基線該丟。丟了之後
+        # 訊息會說「本頁尚無可比對的前一版段落」——兩個子句都不成立。
+        entry["segments"] = prev["segments"]
     state[url] = entry
 
     if prev is None:
@@ -171,6 +180,14 @@ def _hash_item(name: str, url: str, text: str, prev, state: dict,
         logger.info("Official watch '%s' changed below threshold", name)
         return None
 
+    summary = _change_summary(name, prev, text, segments, boilerplate)
+    if summary is None:
+        # 變動全部落在跨頁共用區：這一頁自己沒改。不發條目——發一則「未偵測到
+        # 差異」等於把錯誤歸因從段落層級搬到條目層級，下游 enricher 還會把它
+        # 改寫成看起來像新聞的摘要（2026-08-29 review 第 5 輪）。
+        logger.info("Official watch '%s' changed only in shared chrome", name)
+        return None
+
     return FeedItem(
         title=f"官方文件更新：{name}",
         url=url,
@@ -180,7 +197,7 @@ def _hash_item(name: str, url: str, text: str, prev, state: dict,
         source="Official Docs",
         published=datetime.now(tz=timezone.utc),
         score=0,
-        summary=_change_summary(name, prev, text, segments, boilerplate or set()),
+        summary=summary,
         category="official",
         score_unit="",
     )
@@ -207,7 +224,7 @@ def _visible_segments(body: str) -> set[str]:
 
 
 def _boilerplate(segs_by_url: dict) -> set:
-    """本輪出現在 ≥ BOILERPLATE_MIN_PAGES 個監看頁的段落。
+    """本輪出現在 ≥ BOILERPLATE_MIN_PAGES 個監看頁的段落（判準見該常數）。
 
     只用於比較時剔除，**不影響儲存內容**——儲存未過濾的全量，才能讓昨天與
     今天永遠可比，不受樣板集合變動影響。"""
@@ -219,7 +236,7 @@ def _boilerplate(segs_by_url: dict) -> set:
 
 
 def _change_summary(name: str, prev: dict, text: str, segments: list[str],
-                    boilerplate: set = frozenset()) -> str:
+                    boilerplate: set) -> str | None:
     """說出「改了什麼」，而不只是「變了」。
 
     舊 state 沒有 segments（本函式部署前記的基線），或頁面大到不存 segments 時，
@@ -233,15 +250,13 @@ def _change_summary(name: str, prev: dict, text: str, segments: list[str],
             return head + f"此為官方一手文件的變更偵測，非新聞報導；本頁段落數（{len(segments)}）超過上限 {MAX_SEGMENTS}，不做段落比對，具體改了什麼需開啟連結比對。"
         return head + "此為官方一手文件的變更偵測，非新聞報導；具體改了什麼需開啟連結比對（本頁尚無可比對的前一版段落，下次變動起會列出差異）。"
 
-    # 樣板從**兩邊**同時剔除：對稱套用才不會憑空生出增減。6 個 support 頁共享
-    # 一份會變的文章索引，不剔除的話官方發一篇新文章 6 頁會各報一次「新增」。
+    # 樣板從**兩邊**同時剔除：對稱套用才不會憑空生出增減（理由見 BOILERPLATE_MIN_PAGES）。
     before_set = set(before) - boilerplate
     now_set = set(segments) - boilerplate
     added = sorted(now_set - before_set)
     removed = sorted(before_set - now_set)
     if not added and not removed:
-        # 只有順序變動：不是內容變更，但 hash 已經不同，還是誠實說明
-        return head + "未偵測到段落層級差異（變動落在段落門檻以下，或只發生在跨頁共用區）。"
+        return None
 
     def _fmt(label: str, rows: list[str]) -> str:
         shown = "；".join(r[:SEGMENT_PREVIEW_CHARS] for r in rows[:MAX_LISTED_SEGMENTS])
@@ -359,8 +374,6 @@ def _fetch_body(url: str) -> str:
     )
     resp.raise_for_status()
     return resp.text
-
-
 
 
 def _visible_text(html: str) -> str:

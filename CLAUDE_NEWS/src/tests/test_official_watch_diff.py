@@ -16,7 +16,12 @@
    是前者能安全實作的前提。
 """
 import hashlib
+import json
+import logging
 import unittest
+from pathlib import Path
+from tempfile import TemporaryDirectory
+from unittest.mock import patch
 
 from news_aggregator.sources import official_docs_watch as mod
 
@@ -41,7 +46,8 @@ class TestRemovalIsReported(unittest.TestCase):
         after_segs = sorted(mod._visible_segments(AFTER))
         prev = {"hash": "old", "length": len(mod._visible_text(BEFORE)), "segments": before_segs}
 
-        summary = mod._change_summary("方案與定價", prev, mod._visible_text(AFTER), after_segs)
+        summary = mod._change_summary("方案與定價", prev, mod._visible_text(AFTER),
+                                      after_segs, set())
 
         self.assertIn("新增", summary)
         self.assertIn("will not occur", summary)
@@ -50,11 +56,11 @@ class TestRemovalIsReported(unittest.TestCase):
         # 舊行為的措辭必須消失，否則等於沒修
         self.assertNotIn("需開啟連結比對", summary)
 
-    def test_unchanged_segments_are_not_reported_as_a_diff(self):
+    def test_no_real_difference_yields_no_item(self):
         segs = sorted(mod._visible_segments(BEFORE))
         prev = {"hash": "old", "length": 1, "segments": segs}
-        summary = mod._change_summary("x", prev, mod._visible_text(BEFORE), segs)
-        self.assertIn("未偵測到段落層級差異", summary)
+        summary = mod._change_summary("x", prev, mod._visible_text(BEFORE), segs, set())
+        self.assertIsNone(summary)
 
 
 class TestHashUnchanged(unittest.TestCase):
@@ -63,7 +69,7 @@ class TestHashUnchanged(unittest.TestCase):
         text = mod._visible_text(BEFORE)
         state: dict = {}
         mod._hash_item("x", "https://e.test/p", text, None, state,
-                       segments=sorted(mod._visible_segments(BEFORE)))
+                       segments=sorted(mod._visible_segments(BEFORE)), boilerplate=set())
         entry = state["https://e.test/p"]
         self.assertEqual(entry["hash"], hashlib.sha256(text.encode("utf-8")).hexdigest())
         self.assertEqual(entry["length"], len(text))
@@ -73,7 +79,7 @@ class TestGracefulDegradation(unittest.TestCase):
         """靜默地假裝有 diff 才是問題；退化並說明是可接受的。"""
         prev = {"hash": "old", "length": 10}  # 本功能部署前記下的基線
         summary = mod._change_summary("x", prev, mod._visible_text(AFTER),
-                                      sorted(mod._visible_segments(AFTER)))
+                                      sorted(mod._visible_segments(AFTER)), set())
         self.assertIn("下次變動起會列出差異", summary)
 
     def test_a_shared_index_change_is_not_attributed_to_each_page(self):
@@ -84,12 +90,13 @@ class TestGracefulDegradation(unittest.TestCase):
         shared_new = shared_old | {"Article C is newly published today"}
         own = "Page one own content sentence."
         boiler = mod._boilerplate({"p1": shared_new | {own},
-                                   "p2": shared_new | {"Page two own content."}})
+                                   "p2": shared_new | {"Page two own content."},
+                                   "p3": shared_new | {"Page three own content."}})
         prev = {"hash": "o", "length": 10, "segments": sorted(shared_old | {own})}
         summary = mod._change_summary("P1", prev, "x" * 50,
                                       sorted(shared_new | {own}), boiler)
-        self.assertNotIn("Article C", summary)
-        self.assertIn("未偵測到段落層級差異", summary)
+        # 這一頁自己沒改：回 None，_hash_item 因此整則不發
+        self.assertIsNone(summary)
 
     def test_stored_segments_are_unfiltered_so_yesterday_stays_comparable(self):
         """儲存未過濾的全量是整個設計的關鍵：存進去的東西一旦帶著「當時的樣板
@@ -104,7 +111,7 @@ class TestGracefulDegradation(unittest.TestCase):
         huge = _page(*[f"paragraph number {n} with enough characters" for n in range(mod.MAX_SEGMENTS + 50)])
         state: dict = {}
         mod._hash_item("x", "https://e.test/huge", mod._visible_text(huge), None,
-                       state, segments=sorted(mod._visible_segments(huge)))
+                       state, segments=sorted(mod._visible_segments(huge)), boilerplate=set())
         self.assertNotIn("segments", state["https://e.test/huge"])
 
 
@@ -131,7 +138,7 @@ class TestSegmentation(unittest.TestCase):
         new_t = "<table><tr><td>Claude Sonnet 5</td><td>$3 / MTok</td></tr></table>"
         prev = {"hash": "o", "length": 1, "segments": sorted(mod._visible_segments(old_t))}
         summary = mod._change_summary("定價", prev, mod._visible_text(new_t),
-                                      sorted(mod._visible_segments(new_t)))
+                                      sorted(mod._visible_segments(new_t)), set())
         self.assertIn("Claude Sonnet 5 $3 / MTok", summary)
         self.assertIn("Claude Sonnet 5 $2 / MTok", summary)
 
@@ -139,6 +146,64 @@ class TestSegmentation(unittest.TestCase):
         md = "# Title\n\nSonnet 5 costs $2 per million tokens.\n\nOpus 5 costs $5.\n"
         segs = mod._visible_segments(md)
         self.assertIn("Sonnet 5 costs $2 per million tokens.", segs)
+
+
+class TestSharedChromeAtFetchLevel(unittest.TestCase):
+    """fetch 層的多頁情境。
+
+    單元測 _boilerplate、再單元測 _change_summary，兩者都綠——但 2026-08-29 的
+    第 5 輪 review 發現「濾完沒有差異卻照樣發條目」正是從這兩層之間走出來的：
+    6 個 support 頁會各發一則「未偵測到差異」，下游 enricher 再把空條目改寫成
+    看起來像新聞的摘要。所以這兩條必須測到 fetch。全程 mock，不連網。
+    """
+
+    IDX = [f"Help Center article number {n} title text" for n in range(30)]
+    URLS = [f"https://support.test/p{i}" for i in range(6)]
+
+    def _page(self, own, idx):
+        return "<html><body>" + "".join(f"<p>{x}</p>" for x in idx + [own]) + "</body></html>"
+
+    def _run(self, cfg_path, state_path, own_of, idx):
+        with patch.object(mod, "CONFIG_PATH", cfg_path), \
+             patch.object(mod, "STATE_PATH", state_path), \
+             patch.object(mod, "_fetch_body",
+                          lambda u: self._page(own_of(u), idx)):
+            return mod.OfficialDocsWatch().fetch()
+
+    def test_a_shared_index_change_emits_nothing_at_all(self):
+        """官方發一篇新文章，6 個共享索引的頁都會「變了」——但沒有一頁自己改。
+        修法前這裡是 6 則空條目。"""
+        logging.disable(logging.CRITICAL)
+        self.addCleanup(logging.disable, logging.NOTSET)
+        with TemporaryDirectory() as d:
+            cfg = Path(d) / "c.json"
+            cfg.write_text(json.dumps({"pages": [
+                {"name": f"p{i}", "url": u, "status": "active"}
+                for i, u in enumerate(self.URLS)]}), encoding="utf-8")
+            state = Path(d) / "s.json"
+            base = lambda u: f"Own content of page {u[-2:]} here."  # noqa: E731
+            self._run(cfg, state, base, self.IDX)          # 基線
+            grown = self.IDX + ["Help Center article number 30 title text"]
+            self.assertEqual(self._run(cfg, state, base, grown), [])
+
+    def test_a_real_change_on_one_page_still_reports_which_segment(self):
+        """對照組：抑制不得誤傷真變動，且要說得出改了哪一段。"""
+        logging.disable(logging.CRITICAL)
+        self.addCleanup(logging.disable, logging.NOTSET)
+        with TemporaryDirectory() as d:
+            cfg = Path(d) / "c.json"
+            cfg.write_text(json.dumps({"pages": [
+                {"name": f"p{i}", "url": u, "status": "active"}
+                for i, u in enumerate(self.URLS)]}), encoding="utf-8")
+            state = Path(d) / "s.json"
+            base = lambda u: f"Own content of page {u[-2:]} here."  # noqa: E731
+            self._run(cfg, state, base, self.IDX)
+            new = "Sonnet 5 pricing rises to three dollars per million input tokens on September."
+            items = self._run(cfg, state,
+                              lambda u: new if u.endswith("p2") else base(u), self.IDX)
+        self.assertEqual(len(items), 1)
+        self.assertIn("p2", items[0].title)
+        self.assertIn("Sonnet 5 pricing rises", items[0].summary)
 
 if __name__ == "__main__":
     unittest.main()

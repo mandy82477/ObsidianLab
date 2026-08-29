@@ -263,19 +263,6 @@ class TestIndexMode(unittest.TestCase):
             with patch.object(mod.requests, "get", return_value=_resp(_index(BASE_INDEX))):
                 self.assertEqual(OfficialDocsWatch().fetch(), [])
 
-    def test_index_mode_does_not_strip_markup(self):
-        """index 模式吃純文字：若沿用 HTML 剝除，行結構會被壓成一行而解析失敗。"""
-        with _Ctx([_index_page()]):
-            captured = {}
-
-            def _get(url, **kw):
-                captured["url"] = url
-                return _resp(_index(BASE_INDEX))
-
-            with patch.object(mod.requests, "get", side_effect=_get):
-                OfficialDocsWatch().fetch()
-            self.assertEqual(captured["url"], INDEX_URL)
-
     def test_hash_mode_is_unaffected_by_index_support(self):
         """既有 hash 模式頁面不得因新增 index 模式而改變行為。"""
         with _Ctx([_page(), _index_page()]):

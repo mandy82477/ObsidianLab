@@ -170,15 +170,15 @@ class TestSourcesActuallySetTheKey(unittest.TestCase):
     def test_hash_item_sets_a_content_derived_key(self):
         state = {}
         prev = {"hash": "0" * 64, "length": 100}
-        item = docs_mod._hash_item("Pricing", WATCHED, "x" * 4000, prev, state, segments=[])
+        item = docs_mod._hash_item("Pricing", WATCHED, "x" * 4000, prev, state, segments=[], boilerplate=set())
         self.assertIsNotNone(item)
         self.assertTrue(item.dedup_key.startswith(f"{WATCHED}#"))
         self.assertNotEqual(item.dedup_key, WATCHED)
 
     def test_two_different_contents_get_two_different_keys(self):
         prev = {"hash": "0" * 64, "length": 100}
-        a = docs_mod._hash_item("Pricing", WATCHED, "x" * 4000, prev, {}, segments=[])
-        b = docs_mod._hash_item("Pricing", WATCHED, "y" * 4000, prev, {}, segments=[])
+        a = docs_mod._hash_item("Pricing", WATCHED, "x" * 4000, prev, {}, segments=[], boilerplate=set())
+        b = docs_mod._hash_item("Pricing", WATCHED, "y" * 4000, prev, {}, segments=[], boilerplate=set())
         self.assertNotEqual(a.dedup_key, b.dedup_key)
 
     def test_index_item_key_tracks_which_pages_moved(self):
