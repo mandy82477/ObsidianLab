@@ -31,7 +31,7 @@ routine 的 trigger prompt 只是薄殼（「cd 到 CLAUDE_NEWS，讀某份 runb
 | 工作目錄 | repo checkout 內的 `CLAUDE_NEWS/`（所有操作前先 `cd` 進去） |
 | `REPO_ROOT` | 上述 `CLAUDE_NEWS/` 的絕對路徑 |
 | `PYTHON` | `python3` |
-| 今日日期 | `date -u +%F`（UTC） |
+| 今日日期 | `date -u +%F`（UTC）。**每日 pipeline 的目標日期不用此值**——見 daily.md 開頭 |
 
 測試用 `python3 scripts/run_tests.py`，建置用 `python3 scripts/build_web.py`。
 

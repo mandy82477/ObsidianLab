@@ -120,6 +120,10 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 
 **小結：** Opus 5 發布後兩週的社群訊號由「首日正面驚喜」轉為分歧（過度自信、與跑分落差），但全數無量化佐證，僅記錄動向、不進快速選型表；Fable 5 vs GPT-5.6 Sol 亦無單一結論。另有一筆已失效的歷史對照：Reddit r/ClaudeAI「同 100 則前端需求測 GPT-5.6 Sol / Opus 4.8 / Grok 4.5」（週熱門，2026-07-23）作者公開 300 筆產出但未給文字結論，且測試對象 Opus 4.8 已被取代，不反映當前陣容。
 
+## 同一份工作，換設定差多少 `[加入: 2026-08-29]`
+
+上方對照的是**能力**，本節對照的是**代價**——「換個模型／換個世代，同一份工作實付差多少」。牌價（快速選型表的 $/Mtok）不等於實付：**tokenizer 會換代**。乘數（快取、Batch、資料落地、地區端點）與通路差異不在本頁，見 [[entities/pricing]] 的「通路與乘數」。
+
 ### token 成本：兩個方向相反的實測結果（並陳，不選邊）
 
 | 觀察 | 結論（含樣本與訊號強度） | 來源與日期 |
@@ -128,6 +132,32 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 | 用戶回報：$50 額度原可用兩天，現在一小時內燒完 | 懷疑新模型刻意提高 quota 消耗；另有 5x 費用暴增回報。個人主觀對照帳單、非儀器化，弱 | [Vincent Schmalbach](https://www.vincentschmalbach.com/claude-code-quietly-looks-5x-more-expensive/)，2026-07-01；[GitHub Issue #62476](https://github.com/anthropics/claude-code/issues/62476) |
 
 **矛盾之處：** 前者是受控測量（同任務對比新舊模型），後者是用戶主觀感受同一模型近期帳單變化，測的不是同一件事——不直接互斥，但共同指向「新一代模型 token 消耗與實際成本的關係，社群尚無共識」。相關省額度策略見 [[entities/fable-5]]。
+
+### 換代的實付成本：牌價相同不等於花費相同 `[加入: 2026-08-29]`
+
+**Claude 4.7 起換用新 tokenizer，同一段文字約多產生 30% token**（官方[定價頁](https://platform.claude.com/docs/en/about-claude/pricing)註記，2026-08-29 查證；原文為「約 30%，確切增幅視內容與工作型態而定」，[遷移指南](https://platform.claude.com/docs/en/about-claude/models/migration-guide)給的範圍是 1×–1.35×）。Sonnet 4.6 及更早的模型仍用舊 tokenizer。
+
+**後果：快速選型表的每 Mtok 牌價無法直接橫向比較。** 以一份在舊 tokenizer 下為 10 萬 token 的文件、輸出 5 千 token 估算：
+
+| 模型 | tokenizer | 換算後 token | 實付 | 相對 Haiku |
+|------|-----------|------------|------|-----------|
+| Haiku 4.5 | 舊 | 100K + 5K | $0.13 | 1× |
+| Sonnet 5 | 新 +30% | 130K + 6.5K | $0.33 | 2.6× |
+| Sonnet 4.6 | 舊 | 100K + 5K | $0.38 | 3× |
+| Opus 4.6 | 舊 | 100K + 5K | $0.63 | 5× |
+| Opus 5 / 4.8 | 新 +30% | 130K + 6.5K | $0.81 | 6.5× |
+| Fable 5 | 新 +30% | 130K + 6.5K | $1.63 | 13× |
+
+**兩個只有換算後才看得出來的結論：**
+
+- **Sonnet 5 比 Sonnet 4.6 便宜，即使 token 變多**——牌價降 33%、token 增 30%，淨結果仍是省（$0.33 vs $0.38）。新專案選 Sonnet 5 的理由不只是牌價。
+- **Opus 5 比 Opus 4.6 貴約 30%，即使牌價一模一樣**——同為 $5 / $25，但新 tokenizer 讓同一份文字多算 30% token。**帳面沒漲，實付漲了**；這是升版後最容易被帳單意外到的一條。（Opus 4.6 不在現行陣容，本列是**換代前的基準線**，用來標出漲幅發生在哪一步。）
+
+**這解釋了庫內一個早有記錄卻未說明機制的事件：** [[topics/official-community-gap]] 的「成本感知模型路由」列寫著該需求「2026-06-27，**Opus 4.7 tokenizer 改版成本大漲後爆發**」——上表就是那次大漲的量級。社群當時的反應是做路由器（Workweave Router 等）自動降階，而非等官方調價。
+
+**使用限制：** 上表為 +30% 概值下的換算，非實測。**遷移前應以 `count_tokens` 對自己真實的 prompt 對目標模型量一次**，不可沿用對舊模型量過的數字——官方明載工作型態會改變增幅。乘數（快取命中 ×0.1、Batch ×0.5、`inference_geo:"us"` ×1.1、地區端點 ×1.1）與通路差異見 [[entities/pricing]]。
+
+> **選了不一定算數。** 上表假設你實際跑在你選的模型上，但這件事本身有已佐證的缺口：`--model` 不接受版本 pin（[GitHub #27892](https://github.com/anthropics/claude-code/issues/27892)，官方 not planned 關閉）、1M context 變體會從 model picker 消失且選定狀態無法保持（#46221）。成本估算前先確認釘選是否成立，見 [[topics/code-quality-decline]] 的「模型釘選／靜默降級 訊號群」。
 
 ## 跨模型／跨語言行為研究（官方，非選型指標）
 

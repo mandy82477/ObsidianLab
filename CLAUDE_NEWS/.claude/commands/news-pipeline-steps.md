@@ -106,19 +106,14 @@ PYTHON REPO_ROOT\scripts\archive_gathered.py
 
 ## Step 1b：生成日報
 
-**0-1. 新鮮度防線（強制，生成前先做）`[加入: 2026-07-25，改版: 2026-08-29]`**：讀取 `src/gathered_items.json`，確認 `items` 非空。
+**0-1. 新鮮度防線（強制，生成前先做）`[加入: 2026-07-25]`**：讀取 `src/gathered_items.json`，確認 `date` 等於 TARGET_DATE 且 `items` 非空。
 
-- 滿足 → 繼續
-- 不滿足 → **中止，不生成假日報**。Step 6 log 寫 `ABORTED: gathered_items.json items=0，無可用原料`，結束
+- 兩者皆滿足 → 繼續
+- 任一不滿足 → **中止，不生成假日報**。Step 6 log 寫 `ABORTED: gathered_items.json date=<實際值> items=<數量>，非目標日期的新鮮資料`，結束
 
-**這裡不再檢查 `date` 是否等於 TARGET_DATE `[改版: 2026-08-29]`**——排程模式下 TARGET_DATE 本來就取自這個檔的 `date`（見 `docs/cloud-runbooks/daily.md` 開頭），兩者恆等，檢查沒有意義。
+本機剛跑完 Step 1a 時這道檢查通常必然通過（資料才剛產生）；它真正保護的是**replay 路徑**——雲端與本機補跑都是 `cp gathered_archive/<date>.json` 進來，而檔名只差一個字就會 replay 錯一天，這道檢查是唯一擋得住的地方。兩種環境都執行，不因「應該不會發生」而略過。
 
-> 舊版要求兩者相等，而 TARGET_DATE 取自時鐘：等於強迫抓料與生成兩個**各自排程**的工作落在
-> 同一個 UTC 日。任一邊延遲就中止，而隔天抓料會覆寫 `gathered_items.json`，**那一天的日報
-> 永久消失**。2026-08-27／08-28 連兩天因此開天窗，兩次的中止理由一字不差。改由資料決定
-> TARGET_DATE 之後，延遲只讓日報晚一天送達，不會讓它消失；而「這批資料是不是已經變成
-> 日報了」由 `Step 0b：冪等閘` 判斷，不需要新增任何機制。
-
+> `[註: 2026-08-29]` 這道檢查曾被短暫刪除，理由是「排程模式下 TARGET_DATE 取自資料、兩者恆等」。那個理由只在單槽檔的設計下成立，而單槽設計本身是錯的（見 `docs/cloud-runbooks/daily.md` 目標日期一節）。改讀 `gathered_archive/` 之後，這道檢查驗的正是「cp 對了沒」，是真護欄。
 **0-2. 原料健康檢查（強制）`[加入: 2026-07-25]`**：新鮮度防線只擋「沒抓到」，擋不住「抓到但殘缺」——10 個來源掛 9 個仍會生出一份看起來正常、實則系統性偏食的日報，並被六記者沉澱進 wiki 變成長期污染。
 
 ```
@@ -318,7 +313,7 @@ git -C REPO_ROOT commit -m "news: daily digest TARGET_DATE"
 
 ```
 cd REPO_ROOT\src
-PYTHON -m news_aggregator.main --confirm-digest [--date TARGET_DATE]
+PYTHON -m news_aggregator.main --confirm-digest --date TARGET_DATE
 ```
 
 - 把 Step 1a 篩出的項目標記 `digest_confirmed: true`；未確認的項目視同未出現過，下次重跑會重新提供、不會被永久靜默丟棄（2026-07-13 曾因日報未產出導致 25 則新聞永久漏失，詳見當日 log）

@@ -114,6 +114,49 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 
 ---
 
+## 通路與乘數 `[加入: 2026-08-29]`
+
+上方三個區塊是**牌價**。實付金額還取決於兩件事：**走哪條通路**，以及**套了哪些乘數**——兩者都會讓帳單與牌價對不上。資料截至 **2026-08-29**（官方文件查證）。
+
+### 通路：誰定價、怎麼開票
+
+| 通路 | 誰營運 | 誰定價 | 計費單位 | 取不到的計費手段 |
+|------|--------|--------|---------|----------------|
+| Claude API（第一方） | Anthropic | Anthropic | 每 Mtok | — |
+| Claude Platform on AWS | Anthropic | Anthropic（標準費率） | CCU（100 CCU＝$1） | fast mode |
+| Amazon Bedrock | AWS | **AWS 自訂** | AWS 服務用量 | **Batch 折扣**、beta 功能 |
+| Google Cloud／Vertex AI | Google | **Google 自訂** | Google 服務用量 | 見官方平台可用性 |
+| Microsoft Foundry | Anthropic | Anthropic（標準費率） | CCU | — |
+
+**通路細節**
+
+- **partner 通路（Bedrock、Google Cloud）的絕對數字本頁不記**——費率由該平台自訂且會各自調整，抄下來即過期。查 [Bedrock 定價](https://aws.amazon.com/bedrock/pricing/)／[Google Cloud 定價](https://cloud.google.com/vertex-ai/generative-ai/pricing#claude-models)
+- **Bedrock 無 Message Batches API ⇒ 拿不到 50% 批次折扣**；亦不支援 `anthropic-beta` 標頭，compaction／context editing／task budgets 皆不可用——長脈絡的成本控制手段少一半
+- **Claude Platform on AWS 組織固定於 Start 層且不自動升級**，月花費上限 $500，提額須聯繫 Anthropic 客戶代表；私有報價須在產生用量**前**接受，折扣不溯及既往
+- **Claude Enterprise 經 AWS Marketplace 採購**是 claude.ai 聊天產品、不是 API 平台，於 claude.ai 管理，與上表五條通路無關
+
+### 乘數：會互相疊乘
+
+| 乘數 | 倍率 | 套用範圍 | 觸發條件 |
+|------|------|---------|---------|
+| 快取命中 | ×0.1 | 讀取的 token | 命中既有快取 |
+| Batch API | ×0.5 | 輸入＋輸出 | 非即時工作負載 |
+| 快取寫入（5 分／1 小時） | ×1.25／×2.0 | 寫入的 token | 建立快取 |
+| 資料落地 | ×1.1 | **輸入、輸出、快取讀寫全部** | `inference_geo:"us"`；Azure 為 US Data Zone Standard；Claude 4.6 以後 |
+| 地區端點 | ×1.1 | 全部 token | Bedrock／Google Cloud 用 regional 或 multi-region 端點 |
+| 長脈絡（Claude 4.6 以後） | ×1.0 | — | **不加價**，900k 與 9k 同費率 |
+| 長脈絡（Sonnet 4／4.5 世代） | ×2.0 輸入／×1.5 輸出 | 僅超過 200K 的請求 | 該世代 1M 為預覽功能 |
+| Fast mode | 改為 $10／$50 | 取代基準費率 | 僅 Opus 5 與 4.8，僅第一方 API |
+
+**乘數細節**
+
+- **會疊乘**：例如 Batch ×0.5 與資料落地 ×1.1 同時成立時兩者相乘。往下的只有快取命中與 Batch
+- **長脈絡的分界是模型世代，不是「1M」這個功能**。Claude 4.6 以後內含 1M 且不加價（官方[定價頁](https://platform.claude.com/docs/en/about-claude/pricing) Long context pricing 節）；Sonnet 4／4.5 世代的 1M 為 public preview，[AWS 公告](https://aws.amazon.com/about-aws/whats-new/2025/08/anthropic-claude-sonnet-bedrock-expanded-context-window/)明載超過 20 萬 token 的 prompt 約為兩倍輸入價、1.5 倍輸出價。**兩代混用時，兩套規則會出現在同一份帳單上**
+- **診斷法**：價差只在大請求出現 → 舊世代長脈絡溢價；小請求也貴同樣比例 → 資料落地或地區端點
+- 模型之間「同一份工作換個模型差多少」的換算（含 tokenizer 換代的影響）不在本頁，見 [[topics/model-comparison]]
+
+---
+
 ## **費用管控技巧 ★**
 
 | 問題 | 建議對策 |

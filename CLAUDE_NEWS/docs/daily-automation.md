@@ -18,17 +18,19 @@
 
 ```
 ① GitHub Actions（.github/workflows/daily-gather.yml）
-   10:00 UTC / 18:00 台北 · 網路無限制 · 免 API
+   10:23 UTC / 18:00 台北 · 網路無限制 · 免 API
    跑 python -m news_aggregator.main --gather-only
    → commit gathered_items.json + seen_urls.json + emitted_items.json 回 master
         ↓（資料進 repo）
 ② 雲端 routine（daily-news-pipeline-cloud，trig_01AWf2wwmVeL3ykPCSyxyvzw）
    13:00 UTC / 21:00 台北 · 訂閱 LLM · 不需上網
-   讀 ① 的 gathered_items.json（新鮮度防線：非今日/0 條則中止不生假日報）
+   replay `gathered_archive/<目標日>.json`（目標日＝archive 中尚無日報者，由舊到新；新鮮度防線：非目標日/0 條則中止不生假日報）
    → 生日報 → 六記者 ingest → build → 單一 push → 上站
 ```
 
-兩段用 **3 小時時間差**鬆耦合（`[改版: 2026-07-11]` 原設計 30 分鐘，首跑當日 GitHub Actions 排程延遲 1.5–2.7 小時導致 ② 新鮮度防線中止、未生假日報，已拉大緩衝覆蓋觀測到的最大延遲）；② 的新鮮度防線確保 ① 若失敗,② 不會拿舊料生假日報。
+兩段**不再靠時間差耦合** `[改版: 2026-08-29]`。② 的目標日期取自 `src/gathered_archive/`（按資料日期分檔、已進 git、保留 14 天）——「archive 裡哪天還沒出過報就補哪天」，正常日恰好只有今天一個目標。① 延遲多久都不會讓那天消失，下一輪自動補上。
+
+> 舊設計靠 3 小時緩衝（原 30 分鐘，2026-07-11 首跑遇 1.5–2.7h 延遲後拉大）。但緩衝的前提是「延遲小於緩衝」，而 2026-08-27／08-28 連兩天延遲 10–11 小時直接穿透，兩天的日報都因新鮮度防線中止而永久消失——**因為當時的目標日期取自時鐘，等於強迫兩個各自排程的工作落在同一個 UTC 日**。緩衝再拉大也只是把同一個賭注押得更遠。
 
 ## 為什麼快取檔要 commit（與 CLAUDE.md 資料檔例外的關係）
 
@@ -56,6 +58,6 @@ CLAUDE.md 說資料檔「不需 commit」是指手動流程無此義務,非禁�
 - **Actions**：https://github.com/mandy82477/ObsidianLab/actions → `daily-gather` / `daily-watchdog`
 - **雲端 routine**：https://claude.ai/code/routines/trig_01AWf2wwmVeL3ykPCSyxyvzw
 - **是否上站**：master 每天應出現 `data: daily gather`（①）+ `news/wiki/web`（②）共約 4 筆 commit;網站 Pages 自動重建。
-- **首跑結果（2026-07-11）**：❌ 失敗。① 實際延遲至 14:02 UTC 才 push（設計 12:30 UTC），② 於 13:00 UTC 開跑時讀不到當日資料，新鮮度防線正確中止、未生假日報。已本機補跑並將 ① 排程提早至 10:00 UTC（3 小時緩衝），見 `docs/workaround-register.md` 對應列。
+- **首跑結果（2026-07-11）**：❌ 失敗。① 實際延遲至 14:02 UTC 才 push（設計 12:30 UTC），② 於 13:00 UTC 開跑時讀不到當日資料，新鮮度防線正確中止、未生假日報。已本機補跑並將 ① 排程提早至 10:23 UTC（3 小時緩衝），見 `docs/workaround-register.md` 對應列。
 - **07-12 追查發現真正根因（2026-07-13 確認）**：② 這個雲端 routine **從未被實際建立過**——文件記載的 trigger ID `trig_01JNrBGyrsZk1HjBQeJ7UKLG` 用 `RemoteTrigger list` 查詢完全不存在。也就是說 07-11、07-12 連兩天①都有成功抓料 commit（07-12 那次已用完整 CI log 核對確認：58→34 則、`e18b02d` 正常 push），但②從頭到尾沒有任何排程在跑，並非延遲或中止。已於 2026-07-13 15:15 UTC 用 `RemoteTrigger create` 重新建立正確的 daily-news-pipeline-cloud（trig_01AWf2wwmVeL3ykPCSyxyvzw，cron `0 13 * * *`）。
 - **首次真正排程執行結果（2026-07-14）**：✅ 成功。13:00 UTC 觸發，新鮮度防線通過（`gathered_items.json` date=2026-07-14、60 則），依序完成 Step 0/1b/2/3/4/5/6，統一 push 4 筆 commit（`1b90dfb..8b6793e`）。過程中兩個非架構性插曲：(1) 雲端 sandbox 環境預設缺 `feedparser`/`sgmllib3k`（Python 3.11 distutils 相容性問題），導致 Step 1c 與測試套件一度失敗，已用手動安裝 `sgmllib.py` 繞過（session-local，未持久化，登記於 `docs/workaround-register.md` 待補環境層級真解）；(2) 本地 git 初始為 detached HEAD（因 session 啟動時 fetch 前 `origin/master` 快取落後），已重新 `checkout -B master` 修復，未遺失任何 commit。分裂架構（① GH Actions 抓料 + ② 雲端 routine 產 news/wiki/web）確認穩定跑通。

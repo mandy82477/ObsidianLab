@@ -6,19 +6,28 @@
 
 你執行的是「GitHub Actions 抓料 + 雲端 routine 做 LLM」分裂架構的**第二段**（架構全貌見 `docs/daily-automation.md`）。第一段（抓新聞）已由 GitHub Actions 完成並把資料 commit 進 repo，**你不重複抓料**——雲端 egress 被封鎖，抓也抓不到。
 
-TARGET_DATE = `src/gathered_items.json` 的 `date` 欄位，**不是** `date -u +%F`。
+**目標日期不是「今天」，是「還沒出過報的原料日期」。**
 
-抓料與本 routine 是兩個各自排程的工作。用時鐘當 TARGET_DATE 等於要求兩者落在
-同一個 UTC 日——任一邊延遲，當天就中止，而隔天抓料會覆寫 `gathered_items.json`，
-那一天的日報永久消失（2026-08-27／08-28 連兩天即如此）。改由資料決定之後，你的
-工作是「把手上這批資料變成日報，如果它還沒被變成日報」，而「還沒被變成」由
-`Step 0b：冪等閘` 判斷。延遲只會讓日報晚一天送達，不會讓它消失。
+開工前先算出待生成清單：`src/gathered_archive/` 裡每一個檔名日期 `<date>`，若
+`news/<date>.md` **不存在**，就是一個待生成目標。由舊到新排序，逐一執行；清單為空
+則本輪無事可做（照 `_shared.md` 寫心跳，不算失敗）。
 
+每個目標走 `.claude/commands/news-pipeline-steps.md`「補跑注意事項」第 2 條的 replay
+路徑：`cp src/gathered_archive/<date>.json src/gathered_items.json`，**跳過 Step 1a**，
+從 Step 1b 開始，TARGET_DATE 即該 `<date>`。
+
+> **為什麼不是 `date -u +%F`，也不是 `gathered_items.json` 的 date。**
+> 抓料與本 routine 是兩個各自排程的工作。用時鐘當目標，等於要求兩者落在同一個
+> UTC 日——任一邊延遲就中止（2026-08-27／08-28 連兩天如此）。改讀
+> `gathered_items.json` 也不行：它是**單槽**的，而抓料（10:23 UTC）排在本 routine
+> （13:00 UTC）之前，延遲那批會被隔天準時的抓料覆寫掉。
+> `gathered_archive/` 按資料日期分檔、已進 git、保留 14 天——它是耐久的那一份，
+> 讀它就不需要任何補償機制：哪天沒出過報就補哪天，正常日恰好只有今天一個目標。
 ---
 
 ## 前置閘與失敗處理：不在本檔
 
-`Step 0b：冪等閘`（日報已存在則中止）、`Step 1b` 開頭的新鮮度防線（資料為空則中止）、以及 `Step 5` 的 push 失敗重試，全部定義在 `.claude/commands/news-pipeline-steps.md`，**本機與雲端行為完全相同**，照該檔執行即可。
+`Step 0b：冪等閘`（日報已存在則中止）、`Step 1b` 開頭的新鮮度防線（資料非目標日期／為空則中止）、以及 `Step 5` 的 push 失敗重試，全部定義在 `.claude/commands/news-pipeline-steps.md`，**本機與雲端行為完全相同**，照該檔執行即可。
 
 本檔不重複這些邏輯——兩處各寫一份就會失步，而失步的那一份會在無人值守時生效。
 
@@ -42,7 +51,7 @@ git push        # 失敗時照 Step 5 的 push 重試程序處理
 |------|------|
 | `Step 0：昨日缺跑檢查` | TARGET_DATE 為今日時照做；補上前一天的日報時 TARGET_DATE 非今日，該步驟本就跳過 |
 | `Step 0b：冪等閘` | 照做。非 backfill 模式，所以「日報已存在」一律中止——這正是「這批資料已經變成日報了」的判斷 |
-| `Step 1a：新聞抓取` | **跳過**——GitHub Actions 已完成，`gathered_items.json` 已存在（新鮮度由 Step 1b 開頭的防線把關） |
+| `Step 1a：新聞抓取` | **跳過**——改為 `cp src/gathered_archive/<目標日>.json src/gathered_items.json`（replay 該日真實原料），新鮮度由 Step 1b 開頭的防線把關 |
 | `Step 1b：生成日報` | 照做，完成後 commit（**不 push**） |
 | `Step 1c：確認 emitted-cache` | **照做，不可跳過，且必須 commit `src/news_aggregator/emitted_items.json`**（該 Step 已明文要求）——你是全新 checkout、結束後容器銷毀，不 commit 等於沒改過。2026-07-14～07-24 雲端每日確認率幾乎為 0 就是漏了這個 commit。失敗只記警告，繼續後續步驟 |
 | `Step 2：Wiki Ingest` | 照做，但規範在別的檔案，見下方「Wiki Ingest」段落 |
@@ -71,7 +80,7 @@ git push        # 失敗時照 Step 5 的 push 重試程序處理
 
 ## 完成後輸出摘要
 
-- 新鮮度檢查結果（fresh / aborted，aborted 時附實際 date 與 items 數）
+- 待生成清單（哪幾個日期）與每個目標的新鮮度檢查結果（fresh / aborted，aborted 時附實際 date 與 items 數）
 - 上表各步驟結果（OK / FAILED / SKIPPED）
 - TARGET_DATE
 - wiki ingest 記者回報中的異常

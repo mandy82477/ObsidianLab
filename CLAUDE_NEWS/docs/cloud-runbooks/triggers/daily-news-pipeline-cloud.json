@@ -3,7 +3,7 @@
   "id": "trig_01AWf2wwmVeL3ykPCSyxyvzw",
   "name": "daily-news-pipeline-cloud",
   "cron_expression": "0 13 * * *",
-  "_cron_note": "UTC，= 台北每日 21:00；上游 GitHub Actions daily-gather 為 0 10 * * *，留 3 小時緩衝吸收 Actions 排程延遲",
+  "_cron_note": "13:00 UTC。上游 GitHub Actions daily-gather 為 `23 10 * * *`。**時間差不再是正確性依賴**——目標日期取自 gathered_archive/ 而非時鐘，上游延遲只會讓該日在下一輪補上（見 daily.md 開頭）。",
   "enabled": true,
   "job_config": {
     "ccr": {
@@ -19,9 +19,23 @@
         }
       ],
       "session_context": {
-        "allowed_tools": ["Bash", "Read", "Write", "Edit", "Glob", "Grep", "Task"],
+        "allowed_tools": [
+          "Bash",
+          "Read",
+          "Write",
+          "Edit",
+          "Glob",
+          "Grep",
+          "Task"
+        ],
         "model": "claude-sonnet-5",
-        "sources": [{ "git_repository": { "url": "https://github.com/mandy82477/ObsidianLab" } }]
+        "sources": [
+          {
+            "git_repository": {
+              "url": "https://github.com/mandy82477/ObsidianLab"
+            }
+          }
+        ]
       }
     }
   }
