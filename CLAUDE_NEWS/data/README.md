@@ -69,7 +69,7 @@ id 由（開立日、來源、目標、note）雜湊而來，同一交辦重複�
 
 ## `link_health.json`
 
-wiki 外部連結的健康快照，**唯一寫者是 `.github/workflows/weekly-linkcheck.yml`**（週五 20:00 UTC，純 stdlib HEAD 請求、不含 LLM），唯一讀者是 `/wiki-lint` 指標三。
+wiki 外部連結的健康快照，**唯一寫者是 `.github/workflows/weekly-linkcheck.yml`**（排程見該檔，純 stdlib HEAD 請求、不含 LLM），唯一讀者是 `/wiki-lint` 指標三。
 
 | 欄位 | 意義 |
 |---|---|

@@ -418,7 +418,9 @@ git -C REPO_ROOT push
 ```
 
 - 若 web build 無變更，仍須執行 `git -C REPO_ROOT push` 推送先前的 news / wiki commit
-- **backfill 模式收尾（強制）**：push 完成後執行 `git -C REPO_ROOT checkout -- src/gathered_items.json`，把該檔還原成 repo 版本。理由見「補跑注意事項」第 1 點——補跑會覆寫這個雲端 routine 賴以判斷新鮮度的輸入檔
+- **replay 路徑收尾（強制）`[改版: 2026-08-29]`**：本次若曾 `cp src/gathered_archive/<date>.json src/gathered_items.json`（backfill 模式，以及雲端每日班——它現在也走這條路徑），**必須在 Step 1c 之後、push 之前**執行 `git -C REPO_ROOT checkout -- src/gathered_items.json` 還原成 repo 版本。
+  - **不可等到 push 之後**：本 repo 的 `rebase.autoStash` 為 false，工作樹髒的話下方 push 重試的 `git pull --rebase` 會被 git 直接拒絕（不是衝突，是前置檢查），兩次重試必然失敗，而雲端未推送的 commit 隨容器銷毀救不回來——日報、wiki、web 全部白做
+  - **不可提早到 Step 1c 之前**：`--confirm-digest` 讀的就是這個檔
 
 **push 失敗重試（強制）`[加入: 2026-07-25]`**
 

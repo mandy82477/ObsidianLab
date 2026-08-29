@@ -79,7 +79,7 @@ flowchart TD
 
 **為何快取檔必須 commit：** GitHub Actions 每次全新 checkout，`seen_urls.json` / `emitted_items.json` 不 commit 回去隔天跨日去重就失效、重複出舊聞（`CLAUDE.md` 說資料檔「不需 commit」是指手動流程無此義務，非禁止）。
 
-**週更同理上雲：** `/wiki-lint` 亦有對應雲端 routine（weekly-wiki-lint-cloud）；外部死鏈檢查同樣因 egress 封鎖上了 Actions——`.github/workflows/weekly-linkcheck.yml`（週五 20:00 UTC）掃 `wiki/**/*.md` 的外部連結、三桶分類（真死／需人工確認／誤判排除）後把 `data/link_health.json` commit 回 repo，lint 端只讀報告不連網（`[加入: 2026-08-20]`）。雲端 routine 的實際執行步驟不在本檔，見 `docs/cloud-runbooks/`（`daily.md` / `weekly-lint.md` / 共用規則 `_shared.md`）；分裂架構的取捨理由見 `docs/daily-automation.md`。
+**週更同理上雲：** `/wiki-lint` 亦有對應雲端 routine（weekly-wiki-lint-cloud）；外部死鏈檢查同樣因 egress 封鎖上了 Actions——`.github/workflows/weekly-linkcheck.yml`掃 `wiki/**/*.md` 的外部連結、三桶分類（真死／需人工確認／誤判排除）後把 `data/link_health.json` commit 回 repo，lint 端只讀報告不連網（`[加入: 2026-08-20]`）。雲端 routine 的實際執行步驟不在本檔，見 `docs/cloud-runbooks/`（`daily.md` / `weekly-lint.md` / 共用規則 `_shared.md`）；分裂架構的取捨理由見 `docs/daily-automation.md`。
 
 > ⚠️ 文件寫的 trigger_id **不代表 trigger 真的存在**（2026-07-12 踩過：記載的 routine 從未被建立過，連兩天靜默不跑）。查驗以 `RemoteTrigger list` 為準。
 

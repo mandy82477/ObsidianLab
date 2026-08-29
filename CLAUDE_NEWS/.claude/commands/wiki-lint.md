@@ -405,7 +405,7 @@ awk '/^### 📌 今日聚焦/{f=1;next} /^### /{f=0} f' news/YYYY-MM-DD.md | gre
 python -c "import json;d=json.load(open('data/link_health.json',encoding='utf-8'));print(d['checked_at'],len(d['dead']),'死鏈 /',len(d['anti_bot']),'疑似反爬')"
 ```
 
-該檔由 `.github/workflows/weekly-linkcheck.yml`（週五 20:00 UTC）產出並 commit 回 repo——掃 `wiki/**/*.md`（不含 `news/`）逐條 HEAD 驗證，429/403 歸「可能反爬」不算死鏈。
+該檔由 `.github/workflows/weekly-linkcheck.yml`（排程見該檔）產出並 commit 回 repo——掃 `wiki/**/*.md`（不含 `news/`）逐條 HEAD 驗證，429/403 歸「可能反爬」不算死鏈。
 
 - **新鮮度防線**：`checked_at` 距今 > 10 天 → 視為報告過期，本輪不據以標註，改回報「⚠️ link_health.json 過期（checked_at=…），請查 weekly-linkcheck workflow 是否連續失敗」。**過期報告比沒有報告更危險**——它看起來像剛檢查過
 - **只有 `dead[]` 驅動頁面標註**：由對應類別記者標「（原文已失效）」（**保留原 URL 不刪**，供讀者仍可嘗試存取或查 web archive）；`dead[].pages` 已列出引用頁面，直接據以派工
