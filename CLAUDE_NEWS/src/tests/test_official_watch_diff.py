@@ -206,15 +206,55 @@ class TestSegmentation(unittest.TestCase):
 
 
 class TestStateDiscipline(unittest.TestCase):
-    def test_hash_and_length_still_come_from_visible_text(self):
-        """算法一改，部署當天每一頁都會報「變了」——假警報比沒警報更貴。"""
-        text = mod._visible_text(BEFORE)
-        state: dict = {}
-        mod._hash_item("x", URL, text, None, state,
-                       segments=sorted(mod._visible_segments(BEFORE)), boilerplate=set())
-        self.assertEqual(state[URL]["hash"], hashlib.sha256(text.encode("utf-8")).hexdigest())
-        self.assertEqual(state[URL]["length"], len(text))
+    # 固定 fixture 與它的 golden digest。任何改動 _visible_text 行為的修改都會
+    # 讓下面那條測試紅——那正是重點：hash 算法一改，部署當天每一頁都會報「變了」，
+    # 一次假警報就足以把整個來源訓練成可忽略。要改就更新這個常數，並在 commit 裡
+    # 說明為何值得讓所有頁重報一次。
+    #
+    # fixture 刻意同時含：style 區塊（該剝）、相對時間戳 chrome（該剝）、價格表
+    # （該留）、以及正文裡帶「N 天前」的計費事實（該留——第 8 輪發現 volatile
+    # regex 的 updated 前綴若可選，這句話的退款期限會被吃掉）。
+    ALGO_FIXTURE = (
+        "<html><head><style>.x{color:red}</style></head><body>"
+        "<h2>Pricing</h2>"
+        "<p>Updated over 2 weeks ago Copy for LLM This article explains credits.</p>"
+        "<table><tr><td>Claude Sonnet 5</td><td>$2 / MTok</td></tr></table>"
+        "<p>If you purchased less than 14 days ago, you may request a refund.</p>"
+        "</body></html>")
+    ALGO_DIGEST = "1427d2117443ecd10081250ea46f0eda5701d056935d0052bf55a9b841079a3e"
 
+    def test_visible_text_algorithm_is_pinned(self):
+        """守住 hash 算法本身。
+
+        原本這裡是「把 _visible_text(X) 餵進 _hash_item 再對同一個 X 算 sha256」，
+        那只證明 _hash_item 沒竄改參數。第 8 輪 reviewer 指出：第 7 輪正是修改
+        _visible_text 的 commit，而該測試全程綠燈——宣稱的護欄從未生效過。
+        """
+        digest = hashlib.sha256(
+            mod._visible_text(self.ALGO_FIXTURE).encode("utf-8")).hexdigest()
+        self.assertEqual(digest, self.ALGO_DIGEST)
+
+    def test_segments_and_text_strip_the_same_things(self):
+        """兩個函式對同一頁必須得出一致的可見文字。
+
+        第 8 輪發現 volatile 在兩處剝的位置不同（一個在標籤剝除前、一個在後），
+        於是 inline markup 的時間戳只有一邊剝得掉——hash 與 segments 對同一頁
+        得出不同結論。三種 markup 各驗一次。
+        """
+        for html in (
+            "<p>Updated <time>over <b>2</b> weeks ago</time> Copy for LLM Credits explained.</p>",
+            "<p>Updated over 2 weeks ago Copy for LLM Credits explained.</p>",
+            "<p>Updated <span>over 2 weeks ago</span> Copy for LLM Credits explained.</p>",
+        ):
+            with self.subTest(html=html[:40]):
+                self.assertEqual(mod._visible_segments(html), {mod._visible_text(html)})
+
+    def test_a_real_fact_containing_a_relative_date_is_not_stripped(self):
+        """「purchased less than 14 days ago」是退款期限，不是 chrome。volatile
+        regex 的 updated 前綴若可選就會吃掉它，而且因為 _visible_text 也剝，
+        hash 不變 → 這條計費事實從此不可能被偵測到。"""
+        fact = "If you purchased your subscription less than 14 days ago, request a refund."
+        self.assertIn(fact, mod._visible_text(f"<p>{fact}</p>"))
     def test_stored_segments_are_unfiltered(self):
         """儲存未過濾全量是整個設計的關鍵：存進去的東西一旦帶著「當時的樣板
         基準」，基準一變昨天今天就不可比——那是前三輪三個缺陷的共同根源。"""
@@ -250,7 +290,6 @@ class TestStateDiscipline(unittest.TestCase):
         item = mod._hash_item("x", URL, "x" * 900, prev, state,
                               segments=["A real sentence here."], boilerplate=set())
         self.assertIn("尚無可比對的前一版段落", item.summary)
-        self.assertNotIn("segments", {k: v for k, v in prev.items()})
 
         # (b) 段落集合與前版相同、hash 卻變了（變動落在段落層看不見處）
         segs = ["Claude Sonnet 5 costs two dollars per million input tokens."]

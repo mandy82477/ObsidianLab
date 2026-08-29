@@ -4765,3 +4765,36 @@ Updated this week        Copy for LLM August 2026
 第 6 輪只測了新規則的收益（數字變動報得出來），沒測它的成本（數字雜訊要不要擋）——**第四次同一個形狀**。已補兩條：時間戳滾動不得成為變動、同頁真價格變動仍要報出。另把「訊息說尚無前版段落」的測試從釘訊息文字改為釘**訊息與 state 是否相符**。
 
 寫測試時對照組先紅了一次，抓到另一個真限制：`two dollars → three dollars` 這種拼字數字不含 `[0-9$%]`，會被長度閘擋掉。官方定價頁用的是 `$3 / MTok`，故現況未觀測到漏報，已登記為已知取捨——不擴充判準的理由是那會把「計數器 vs 價格」那條分不開的線再拉長一次，而那正是七輪來反覆栽的地方。
+
+---
+
+## 2026-08-29 第八輪 review：護欄寫得比要擋的東西寬，而守護它的測試從未生效過
+
+第 7 輪把輪替時間戳當 chrome 剝掉，方向是對的，但三處出錯：
+
+**A1（嚴重）——regex 的 `updated` 前綴寫成可選，於是它吃掉正文裡任何「N 天前」的句子：**
+
+| 原句 | 剝除後 |
+|---|---|
+| `If you purchased your subscription less than 14 days ago, you may request a refund.` | `If you purchased your subscription , you may request a refund.` |
+| `Credits granted more than 30 days ago expire automatically.` | `Credits granted more than expire automatically.` |
+
+退款期限、credit 到期日**正是本模組要守的計費事實**，而且因為 `_visible_text` 也剝，hash 根本不變 → 這條事實從此不可能被偵測到。與第 6 輪修掉的「價格變動端到端 0 則」同一形狀，由第 7 輪的修法重新生出來。真 state 的 4 個命中 4/4 都帶字面 `Updated`，改必填零損失。
+
+**A2（嚴重）——同一個修法在兩個函式以兩種順序落地，只驗了其中一個。** `_visible_segments` 在標籤還在時剝、`_visible_text` 在標籤剝掉後剝。頁面若是 `Updated <time>over <b>2</b> weeks ago</time>` 這種 inline markup，前者剝不掉、後者剝得掉。而我 commit 裡寫的「實測 → 0 則」是在測試自造的純文字 `<p>` 上得到的，**不構成對真實頁面的證據**。已統一為兩處都在標籤剝除、空白收斂之後才剝，三種 markup 各驗過。
+
+**C1（最刺）——那條號稱守護 hash 演算法的測試，在演算法被改的同一個 commit 裡全程綠燈。**
+
+它把 `_visible_text(BEFORE)` 餵進 `_hash_item`，再對**同一個字串**算一次 sha256——只證明 `_hash_item` 沒竄改自己的參數，與 `_visible_text` 的算法完全無關。我從第一輪就在 commit 裡宣稱「hash 算法不得改動、由測試守著」，**那個護欄從來沒有存在過**。
+
+已改為 golden digest：對固定 fixture 算 `_visible_text` 的 sha256 與硬編常數比對。三種真實演算法突變（不剝 script／不剝 volatile／volatile 樣式擴大）全數擋下——這是七輪來那條護欄第一次生效。
+
+### 八輪下來的形狀
+
+前七輪是「修 X 生出 Y」。第 8 輪 reviewer 指出這輪的形狀變了，而且更難察覺：
+
+- **同一個修法在兩個地方以兩種順序落地，只驗了其中一個**（A2）
+- **護欄寫得比要擋的東西寬**（A1）
+- 而這兩件事沒被自己的測試擋下，是因為 **那條測試從未真的守著它宣稱守著的東西**（C1）
+
+C1 是這八輪最值得記的一條：**我每一輪都在 commit 裡引用那條測試當作「已驗證」的依據，而它一次也沒兌現過。** 破壞測試不是形式——沒做破壞測試的護欄，等於沒有護欄。

@@ -58,8 +58,12 @@ _SCRIPT_RE = re.compile(r"<(script|style)\b.*?</\1>", re.S | re.I)
 # 分不開就不要分，直接從源頭剝掉（同 _SCRIPT_RE 剝 script 的道理）。剝在
 # _visible_text 裡，hash 因此也不會為它而變，問題不是被過濾而是不存在。
 # 2026-08-29 實測：全庫 4 個段落含此樣式，無其他數字型輪替 chrome。
+# `updated` 前綴**必填**：少了它會吃掉正文裡任何「N 天前」的句子——
+# 「If you purchased your subscription less than 14 days ago, you may request a
+# refund.」的退款期限就這樣消失，而那正是本模組要守的計費事實，且因為
+# _visible_text 也剝，hash 不變 → 該事實從此不可能被偵測到（2026-08-29 第 8 輪）。
 _VOLATILE_RE = re.compile(
-    r"\b(?:updated\s+)?(?:about|over|almost|less\s+than)?\s*"
+    r"\bupdated\s+(?:about|over|almost|less\s+than)?\s*"
     r"(?:\d+|a|an)\s+(?:second|minute|hour|day|week|month|year)s?\s+ago\b"
     r"|\bupdated\s+(?:just\s+now|today|yesterday|this\s+(?:week|month|year))\b",
     re.I)
@@ -271,12 +275,15 @@ def _visible_segments(body: str) -> set[str]:
     （markdown 本來就有換行，原樣保留），再逐行收斂空白。
     """
     stripped = _SCRIPT_RE.sub(" ", body)
-    stripped = _VOLATILE_RE.sub(" ", stripped)
     stripped = _BLOCK_END_RE.sub('\n', stripped)
     stripped = _TAG_RE.sub(" ", stripped)
     out = set()
     for line in stripped.split('\n'):
-        seg = _WS_RE.sub(" ", line).strip()
+        # volatile 必須在**標籤剝除與空白收斂之後**才剝，且與 _visible_text 同
+        # 順序。剝在標籤還在時，`Updated <time>over <b>2</b> weeks ago</time>`
+        # 這種 inline markup 剝不掉，於是 hash 與 segments 對同一頁得出不同
+        # 結論（2026-08-29 第 8 輪）。
+        seg = _WS_RE.sub(" ", _VOLATILE_RE.sub(" ", _WS_RE.sub(" ", line))).strip()
         if len(seg) >= MIN_SEGMENT_CHARS:
             # 回傳集合而非清單：diff 本來就只用集合語意，存重複段落是白存
             # （定價頁光是重複的表頭列就有 142 段）
@@ -420,8 +427,14 @@ def _fetch_body(url: str) -> str:
 
 
 def _visible_text(html: str) -> str:
-    """Strip markup so cosmetic asset-hash churn doesn't read as a content change."""
+    """剝成純可見文字：標籤、script/style，以及相對時間戳這類易變 chrome。
+
+    volatile 與 _visible_segments 走同一順序（標籤 → 空白收斂 → volatile），
+    否則兩者會對同一頁得出不同結論。本函式的輸出餵給 hash，改動它等於改動
+    變更偵測的算法——由 test_visible_text_algorithm_is_pinned 的 golden digest
+    守著（2026-08-29 第 8 輪發現原本那條守護測試結構上不可能失敗）。
+    """
     body = _SCRIPT_RE.sub(" ", html)
     body = _TAG_RE.sub(" ", body)
-    body = _VOLATILE_RE.sub(" ", body)
-    return _WS_RE.sub(" ", body).strip()
+    body = _WS_RE.sub(" ", body)
+    return _WS_RE.sub(" ", _VOLATILE_RE.sub(" ", body)).strip()
