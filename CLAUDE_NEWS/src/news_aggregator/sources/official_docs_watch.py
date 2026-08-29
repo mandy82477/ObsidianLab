@@ -88,6 +88,11 @@ _BLOCK_END_RE = re.compile(
     r"</(?:p|li|h[1-6]|tr|section|article|blockquote|pre)\s*>|<br\s*/?>", re.I)
 MIN_SEGMENT_CHARS = 12   # 更短的多半是導覽殘骸與圖示 alt，進來只會製造假 diff
 MAX_SEGMENTS = 1200      # 超過此數的頁面不存 segments（state 檔無上限成長的閘）
+# 出現在幾個監看頁以上就算樣板。6 個 support 頁共享一份會變動的 Help Center
+# 文章索引（354 段），官方發一篇新文章時 6 頁會同時報「新增 1 段：<新文章標題>」
+# ——那是錯誤歸因，不只是噪音。判準用「跨頁重複」而非關鍵字黑名單：樣板的定義
+# 就是「每頁都有」，那是它唯一穩定的特徵。
+BOILERPLATE_MIN_PAGES = 2
 MAX_LISTED_SEGMENTS = 5  # 摘要裡列幾條就夠了——目的是讓人知道往哪看，不是重現 diff
 SEGMENT_PREVIEW_CHARS = 120
 
@@ -105,8 +110,12 @@ class OfficialDocsWatch(BaseSource):
 
         state = _load_state()
         items: list[FeedItem] = []
-        fetched: list[str] = []
 
+        # 先全部抓回來：樣板判定需要看過本輪所有頁面。注意**存進 state 的是
+        # 未過濾的全量段落**，過濾只發生在比較時——存進去的東西一旦帶著
+        # 「當時的樣板基準」，基準一變昨天今天就不可比，那正是前三輪三個
+        # 缺陷的共同根源（2026-08-29 review 第 4 輪）。
+        fetched = []
         for page in pages:
             url = page.get("url")
             name = page.get("name") or url
@@ -121,16 +130,21 @@ class OfficialDocsWatch(BaseSource):
                 # stored hash is left untouched so the next run retries cleanly.
                 logger.warning("Official watch '%s' failed: %s", name, e)
                 continue
-            fetched.append(url)
+            fetched.append((name, url, mode, raw_body))
+
+        segs_by_url = {u: _visible_segments(b) for _, u, m, b in fetched if m != "index"}
+        boilerplate = _boilerplate(segs_by_url)
+
+        for name, url, mode, raw_body in fetched:
             # index 模式吃原文（_visible_text 會吃掉索引解析器需要的行結構）
             text = raw_body if mode == "index" else _visible_text(raw_body)
             prev = state.get(url)
             if mode == "index":
                 item = _index_item(name, url, text, prev, state)
             else:
-                # 原文另外傳一份：段落級 diff 需要區塊邊界，而 text 已被壓平
                 item = _hash_item(name, url, text, prev, state,
-                                  segments=sorted(_visible_segments(raw_body)))
+                                  segments=sorted(segs_by_url[url]),
+                                  boilerplate=boilerplate)
             if item is not None:
                 items.append(item)
 
@@ -141,9 +155,8 @@ class OfficialDocsWatch(BaseSource):
 
 
 def _hash_item(name: str, url: str, text: str, prev, state: dict,
-               segments: list[str] | None = None) -> FeedItem | None:
+               segments: list[str], boilerplate: set | None = None) -> FeedItem | None:
     digest = hashlib.sha256(text.encode("utf-8")).hexdigest()
-    segments = segments or []
     entry: dict = {"hash": digest, "length": len(text)}
     if segments and len(segments) <= MAX_SEGMENTS:
         entry["segments"] = segments
@@ -167,7 +180,7 @@ def _hash_item(name: str, url: str, text: str, prev, state: dict,
         source="Official Docs",
         published=datetime.now(tz=timezone.utc),
         score=0,
-        summary=_change_summary(name, prev, text, segments),
+        summary=_change_summary(name, prev, text, segments, boilerplate or set()),
         category="official",
         score_unit="",
     )
@@ -193,7 +206,20 @@ def _visible_segments(body: str) -> set[str]:
     return out
 
 
-def _change_summary(name: str, prev: dict, text: str, segments: list[str]) -> str:
+def _boilerplate(segs_by_url: dict) -> set:
+    """本輪出現在 ≥ BOILERPLATE_MIN_PAGES 個監看頁的段落。
+
+    只用於比較時剔除，**不影響儲存內容**——儲存未過濾的全量，才能讓昨天與
+    今天永遠可比，不受樣板集合變動影響。"""
+    seen: dict = {}
+    for segs in segs_by_url.values():
+        for seg in segs:
+            seen[seg] = seen.get(seg, 0) + 1
+    return {seg for seg, n in seen.items() if n >= BOILERPLATE_MIN_PAGES}
+
+
+def _change_summary(name: str, prev: dict, text: str, segments: list[str],
+                    boilerplate: set = frozenset()) -> str:
     """說出「改了什麼」，而不只是「變了」。
 
     舊 state 沒有 segments（本函式部署前記的基線），或頁面大到不存 segments 時，
@@ -202,14 +228,20 @@ def _change_summary(name: str, prev: dict, text: str, segments: list[str]) -> st
     head = f"{name} 內容有變動（前次 {prev.get('length', 0)} 字 → 本次 {len(text)} 字）。"
     before = prev.get("segments")
     if not before or not segments:
+        if len(segments) > MAX_SEGMENTS:
+            # 超標頁永遠存不進 segments，不能承諾「下次就會列出差異」
+            return head + f"此為官方一手文件的變更偵測，非新聞報導；本頁段落數（{len(segments)}）超過上限 {MAX_SEGMENTS}，不做段落比對，具體改了什麼需開啟連結比對。"
         return head + "此為官方一手文件的變更偵測，非新聞報導；具體改了什麼需開啟連結比對（本頁尚無可比對的前一版段落，下次變動起會列出差異）。"
 
-    before_set, now_set = set(before), set(segments)
-    added = [x for x in segments if x not in before_set]
-    removed = [x for x in before if x not in now_set]
+    # 樣板從**兩邊**同時剔除：對稱套用才不會憑空生出增減。6 個 support 頁共享
+    # 一份會變的文章索引，不剔除的話官方發一篇新文章 6 頁會各報一次「新增」。
+    before_set = set(before) - boilerplate
+    now_set = set(segments) - boilerplate
+    added = sorted(now_set - before_set)
+    removed = sorted(before_set - now_set)
     if not added and not removed:
         # 只有順序變動：不是內容變更，但 hash 已經不同，還是誠實說明
-        return head + "未偵測到段落層級差異（變動落在門檻以下、或只發生在樣板區）。"
+        return head + "未偵測到段落層級差異（變動落在段落門檻以下，或只發生在跨頁共用區）。"
 
     def _fmt(label: str, rows: list[str]) -> str:
         shown = "；".join(r[:SEGMENT_PREVIEW_CHARS] for r in rows[:MAX_LISTED_SEGMENTS])

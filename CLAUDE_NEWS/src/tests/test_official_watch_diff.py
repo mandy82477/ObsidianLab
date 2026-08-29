@@ -4,18 +4,16 @@
 沒人知道響什麼，於是沒人去比對。2026-08-10 Sonnet 5 的 $2/$10 永久化、9/1 漲價
 取消就死在這個縫裡。
 
-測試釘六件事：
+測試釘四件事：
 
 1. **移除型變動要說得出來**——「9/1 漲價取消」在頁面上就是少了一句話，這是最
    容易靜默的方向。
-2. **表格切到「列」不切到「格」**——切到格會讓 `$2 / MTok` 變成低於門檻的碎片
-   被丟掉，價格改動因此變成零 diff，壞在最該偵測的那一頁上。
+2. **價格必須和它的主詞留在同一段**——切到 td 或 div 會讓 `$2 / MTok` 變成低於
+   門檻的碎片被丟掉，價格改動因此變成零 diff，壞在最該偵測的那一頁上。
 3. **hash 與 length 的算法不得改動**——改了會讓部署當天所有頁同時報「變了」，
    一次假警報足以把整個來源訓練成可忽略。
-4. **舊 state 沒有 segments 時要退化，不得假裝有 diff。**
-5. **跨頁樣板要濾掉**——它佔六成儲存量，且會報出「新增 1 段：Try Claude」這種
-   把真訊號淹掉的噪音。
-6. **監看清單一改就重記基線**——樣板集合會整批位移，不擋會報出假的「移除」。
+4. **跨頁共用區的變動不得歸因到個別頁**，且**儲存的必須是未過濾全量**——後者
+   是前者能安全實作的前提。
 """
 import hashlib
 import unittest
@@ -77,6 +75,30 @@ class TestGracefulDegradation(unittest.TestCase):
         summary = mod._change_summary("x", prev, mod._visible_text(AFTER),
                                       sorted(mod._visible_segments(AFTER)))
         self.assertIn("下次變動起會列出差異", summary)
+
+    def test_a_shared_index_change_is_not_attributed_to_each_page(self):
+        """6 個 support 頁共享一份會變的 Help Center 文章索引（實測 354 段）。
+        官方發一篇新文章時若不剔除，6 頁會各報一次「新增 1 段：<新標題>」——
+        配額頁與計費頁會宣稱自己新增了一段不相干的內容，錯誤歸因會進 wiki。"""
+        shared_old = {"Article A", "Article B"}
+        shared_new = shared_old | {"Article C is newly published today"}
+        own = "Page one own content sentence."
+        boiler = mod._boilerplate({"p1": shared_new | {own},
+                                   "p2": shared_new | {"Page two own content."}})
+        prev = {"hash": "o", "length": 10, "segments": sorted(shared_old | {own})}
+        summary = mod._change_summary("P1", prev, "x" * 50,
+                                      sorted(shared_new | {own}), boiler)
+        self.assertNotIn("Article C", summary)
+        self.assertIn("未偵測到段落層級差異", summary)
+
+    def test_stored_segments_are_unfiltered_so_yesterday_stays_comparable(self):
+        """儲存未過濾的全量是整個設計的關鍵：存進去的東西一旦帶著「當時的樣板
+        基準」，基準一變昨天今天就不可比——那是前三輪三個缺陷的共同根源。"""
+        state: dict = {}
+        segs = sorted(mod._visible_segments(BEFORE))
+        mod._hash_item("x", "https://e.test/p", mod._visible_text(BEFORE), None,
+                       state, segments=segs, boilerplate=set(segs))
+        self.assertEqual(state["https://e.test/p"]["segments"], segs)
 
     def test_oversized_page_stores_no_segments(self):
         huge = _page(*[f"paragraph number {n} with enough characters" for n in range(mod.MAX_SEGMENTS + 50)])

@@ -934,9 +934,10 @@
         ".claude/commands/news-pipeline-steps.md"
       ],
       "patterns": [
-        "scan_expiring_deadlines"
+        "scan_expiring_deadlines",
+        "待使用者裁示"
       ],
-      "_note": "2026-08-29 review：首版 files 只列消費端、patterns 用 2 字元的「3g」；第二版 pattern 改「截止日」仍是兩檔天然都含的通用詞（把 3g 呼叫行整行刪掉照樣綠）。現釘腳本名本身。"
+      "_note": "2026-08-29 review 三度修正：首版 files 只列消費端＋patterns 用 2 字元的「3g」；二版改「截止日」仍是兩檔天然都含的通用詞；三版釘腳本名但只守住 name 宣稱的前半（被呼叫），沒守住後半（輸出有接手方）。現兩者各一個 pattern。"
     }
   ],
   "coupling_hints": {
