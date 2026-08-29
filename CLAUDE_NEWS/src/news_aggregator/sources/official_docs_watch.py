@@ -12,7 +12,7 @@ model launches and features, not billing changes. So this source watches a small
 hand-curated list of URLs and emits an item only when a page's meaningful text
 actually changes. Low volume by design: a quiet week emits nothing.
 
-State (the previous hash per URL) lives next to seen_urls.json. A URL with no
+State (per URL: previous hash/length/segments, or the page list for index mode) lives next to seen_urls.json. A URL with no
 recorded hash is *recorded silently* rather than emitted — otherwise every new
 watch entry would fire a bogus "changed" item on its first run.
 
@@ -68,6 +68,13 @@ MAX_LISTED_PAGES = 12
 # source. Require a change of at least this many characters.
 MIN_DELTA_CHARS = 40
 
+# 差異裡出現這些字元的變動時，一律繞過長度閘。理由：本清單存在的目的是追蹤
+# 定價、配額、截止日這些**數字事實**，而它們的變動常是長度守恆的（$2 → $3 差
+# 0 字元）。2026-08-29 實測：長度閘讓這類變動端到端 0 則，且新值被吸收進基線、
+# 日後永遠報不出來。反過來把長度閘整個拿掉也不行——state 的 git 歷史顯示 22 個
+# commit 中有 28 次字數差 <40 的變動被它擋掉（多為排版與措辭微調）。
+_NUMERIC_RE = re.compile(r"[0-9$%]")
+
 # ── 段落級 diff（2026-08-28 加入）──────────────────────────────────────────
 #
 # hash 模式只給一個 bit：變了／沒變。摘要因此只能寫「具體改了什麼需開啟連結
@@ -92,11 +99,11 @@ MAX_SEGMENTS = 1200      # 超過此數的頁面不存 segments（state 檔無�
 # 文章索引，官方發一篇新文章時這些頁會同時「變了」——若不剔除，配額頁與計費頁
 # 會各自宣稱新增了一段不相干的文章標題（錯誤歸因，非單純噪音）。
 #
-# 門檻取 3 是量出來的（2026-08-29 實測 8 頁 1489 段的跨頁分布）：
-#   出現在 1 頁 1124 段｜2 頁 9｜3 頁 1｜4 頁 1｜**5 頁 350**｜6 頁 4
-# 真樣板整團落在 5，而 count=2 的 9 段全是導覽標籤（Customer stories、Claude
-# Design…）。取 3 既涵蓋整個索引，又讓「同一事實剛好被官方寫在兩頁」不致被
-# 誤判為樣板而靜音——那是本機制唯一的偽陰性方向。
+# 門檻取 3 而非 2 的理由：`claude.com/pricing` 與 `platform.claude.com/.../pricing`
+# 是彼此鏡像的兩個定價頁，真正的價格字串可能同時出現在這兩頁。門檻 2 會把
+# **創建本模組的那類變動**當成樣板而雙頁靜音——那是唯一不可接受的偽陰性。
+# 代價：僅出現在 2 頁的產品導覽列（Claude Cowork、Claude Design…共 9 段）不被
+# 過濾，官方上架新產品時該 2 頁會各報一則。已登記為已知取捨。
 BOILERPLATE_MIN_PAGES = 3
 MAX_LISTED_SEGMENTS = 5  # 摘要裡列幾條就夠了——目的是讓人知道往哪看，不是重現 diff
 SEGMENT_PREVIEW_CHARS = 120
@@ -162,12 +169,15 @@ class OfficialDocsWatch(BaseSource):
 def _hash_item(name: str, url: str, text: str, prev, state: dict,
                segments: list[str], boilerplate: set) -> FeedItem | None:
     digest = hashlib.sha256(text.encode("utf-8")).hexdigest()
+    usable = bool(segments) and len(segments) <= MAX_SEGMENTS
+
     entry: dict = {"hash": digest, "length": len(text)}
-    if segments and len(segments) <= MAX_SEGMENTS:
+    if usable:
         entry["segments"] = segments
-    elif not segments and prev and prev.get("segments"):
-        # 今日切不出段落（骨架頁、版型改版）不代表昨天的基線該丟。丟了之後
-        # 訊息會說「本頁尚無可比對的前一版段落」——兩個子句都不成立。
+    elif prev and prev.get("segments"):
+        # 今日切不出段落（骨架頁、版型改版）或段落數超標，都不代表昨天的基線
+        # 該丟。丟了之後訊息會說「本頁尚無可比對的前一版段落」——而那句話在
+        # 剛丟完的當下必定是假的（2026-08-29 review 第 6 輪）。
         entry["segments"] = prev["segments"]
     state[url] = entry
 
@@ -176,18 +186,53 @@ def _hash_item(name: str, url: str, text: str, prev, state: dict,
         return None
     if prev.get("hash") == digest:
         return None
+
+    before = prev.get("segments")
+    if usable and before:
+        # 樣板從兩邊同時剔除：對稱套用才不會憑空生出增減（理由見 BOILERPLATE_MIN_PAGES）
+        added = sorted((set(segments) - boilerplate) - (set(before) - boilerplate))
+        removed = sorted((set(before) - boilerplate) - (set(segments) - boilerplate))
+        if added or removed:
+            if _touches_numbers(added, removed) or \
+                    abs(len(text) - int(prev.get("length", 0))) >= MIN_DELTA_CHARS:
+                return _item(name, url, digest,
+                             _diff_summary(name, prev, text, added, removed))
+            logger.info("Official watch '%s' sub-threshold non-numeric edit", name)
+            return None
+        if set(segments) != set(before):
+            # 原始有差、濾後全空：變動全部落在跨頁共用區，這一頁自己沒改。不發
+            # 條目——發一則「未偵測到差異」等於把錯誤歸因從段落層級搬到條目層級。
+            logger.info("Official watch '%s' changed only in shared chrome", name)
+            return None
+        # 原始也全空：段落層看不見這次變動（低於 MIN_SEGMENT_CHARS 的碎片，或只有
+        # 重複次數變化）。落到下面的長度閘判斷，過閘則發退化條目。
+
+    # 拿不到可比的段落 diff 時，才退回 2026-08-08 的長度閘這個粗糙代理。它擋的是
+    # 輪替 token、「最近瀏覽」小工具那類雜訊；但它對**長度守恆**的編輯無能為力
+    # （$2 → $3 差 0 字元），所以絕不能排在段落 diff 前面。
     if abs(len(text) - int(prev.get("length", 0))) < MIN_DELTA_CHARS:
         logger.info("Official watch '%s' changed below threshold", name)
         return None
 
-    summary = _change_summary(name, prev, text, segments, boilerplate)
-    if summary is None:
-        # 變動全部落在跨頁共用區：這一頁自己沒改。不發條目——發一則「未偵測到
-        # 差異」等於把錯誤歸因從段落層級搬到條目層級，下游 enricher 還會把它
-        # 改寫成看起來像新聞的摘要（2026-08-29 review 第 5 輪）。
-        logger.info("Official watch '%s' changed only in shared chrome", name)
-        return None
+    if not usable and segments:
+        why = f"本頁段落數（{len(segments)}）超過上限 {MAX_SEGMENTS}，不做段落比對"
+    elif not segments:
+        why = "本次未能從頁面解析出可比對的段落"
+    else:
+        why = "本頁尚無可比對的前一版段落，下次變動起會列出差異"
+    head = f"{name} 內容有變動（前次 {prev.get('length', 0)} 字 → 本次 {len(text)} 字）。"
+    return _item(name, url, digest,
+                 head + f"此為官方一手文件的變更偵測，非新聞報導；{why}，具體改了什麼需開啟連結比對。")
 
+
+def _touches_numbers(added: list[str], removed: list[str]) -> bool:
+    """差異兩側的數字／金額字元有沒有不同（見 _NUMERIC_RE 的理由）。"""
+    a = "".join(_NUMERIC_RE.findall("".join(added)))
+    r = "".join(_NUMERIC_RE.findall("".join(removed)))
+    return a != r
+
+
+def _item(name: str, url: str, digest: str, summary: str) -> FeedItem:
     return FeedItem(
         title=f"官方文件更新：{name}",
         url=url,
@@ -201,7 +246,6 @@ def _hash_item(name: str, url: str, text: str, prev, state: dict,
         category="official",
         score_unit="",
     )
-
 
 def _visible_segments(body: str) -> set[str]:
     """把頁面切成可比對的段落。
@@ -235,28 +279,11 @@ def _boilerplate(segs_by_url: dict) -> set:
     return {seg for seg, n in seen.items() if n >= BOILERPLATE_MIN_PAGES}
 
 
-def _change_summary(name: str, prev: dict, text: str, segments: list[str],
-                    boilerplate: set) -> str | None:
-    """說出「改了什麼」，而不只是「變了」。
-
-    舊 state 沒有 segments（本函式部署前記的基線），或頁面大到不存 segments 時，
-    退回舊的字數敘述——退化是可接受的，靜默地假裝有 diff 才不行。
-    """
+def _diff_summary(name: str, prev: dict, text: str,
+                  added: list[str], removed: list[str]) -> str:
+    """把段落差異講成人話。移除型變動最容易被忽略——「9/1 漲價取消」在頁面上
+    就是少了一句話，所以兩個方向都要列。"""
     head = f"{name} 內容有變動（前次 {prev.get('length', 0)} 字 → 本次 {len(text)} 字）。"
-    before = prev.get("segments")
-    if not before or not segments:
-        if len(segments) > MAX_SEGMENTS:
-            # 超標頁永遠存不進 segments，不能承諾「下次就會列出差異」
-            return head + f"此為官方一手文件的變更偵測，非新聞報導；本頁段落數（{len(segments)}）超過上限 {MAX_SEGMENTS}，不做段落比對，具體改了什麼需開啟連結比對。"
-        return head + "此為官方一手文件的變更偵測，非新聞報導；具體改了什麼需開啟連結比對（本頁尚無可比對的前一版段落，下次變動起會列出差異）。"
-
-    # 樣板從**兩邊**同時剔除：對稱套用才不會憑空生出增減（理由見 BOILERPLATE_MIN_PAGES）。
-    before_set = set(before) - boilerplate
-    now_set = set(segments) - boilerplate
-    added = sorted(now_set - before_set)
-    removed = sorted(before_set - now_set)
-    if not added and not removed:
-        return None
 
     def _fmt(label: str, rows: list[str]) -> str:
         shown = "；".join(r[:SEGMENT_PREVIEW_CHARS] for r in rows[:MAX_LISTED_SEGMENTS])
@@ -267,10 +294,8 @@ def _change_summary(name: str, prev: dict, text: str, segments: list[str],
     if added:
         parts.append(_fmt("新增", added))
     if removed:
-        # 移除型變動最容易被忽略——「9/1 漲價取消」在頁面上就是少了一句話
         parts.append(_fmt("移除", removed))
     return head + "；".join(parts) + "。（官方一手文件的變更偵測，非新聞報導）"
-
 
 def _index_item(name: str, url: str, text: str, prev, state: dict) -> FeedItem | None:
     """Emit only when the documentation index gains or loses pages."""
