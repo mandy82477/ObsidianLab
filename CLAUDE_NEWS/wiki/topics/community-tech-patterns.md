@@ -3,7 +3,7 @@ page: "topics/community-tech-patterns"
 kind: "topic"
 status: "ongoing"
 domain: "🌐 社群"
-last_updated: "2026-08-27"
+last_updated: "2026-08-29"
 last_news_update: "2026-08-27"
 status_main: "ongoing"
 days_since_news: 2
@@ -25,7 +25,7 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 **狀態：** ongoing
 **領域：** 🌐 社群
 **開始日期：** 2026-04-25
-**最後更新：** 2026-08-27
+**最後更新：** 2026-08-29
 **最後新聞更新：** 2026-08-27
 
 > **最新工作流模式**（2026-08-27）
@@ -51,19 +51,19 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 
 | 類別 | 代表技巧 | 成熟度 | 核心概念 |
 |------|---------|--------|---------|
-| **Multi-agent 架構** | Claude Squad、Speculative Parallelism、ccteams（套件化團隊配置）、OtoDock（自架伺服器 Claude Code + Codex 團隊）、omnigent（harness 無關 meta-harness） | ✅ 成熟 | orchestrator 分派 + 獨立 git worktree，防答案塌縮；ccteams 將驗證良好的 subagent 組合打包為可跨專案安裝的套件；OtoDock 將 Claude Code 與 Codex 組成協作團隊部署於自有伺服器；omnigent 把協調邏輯與底層 harness（Claude Code／Codex／Cursor／Pi）解耦，換 harness 不必重寫協作邏輯 |
+| **Multi-agent 架構** | Claude Squad、Speculative Parallelism、ccteams、OtoDock、omnigent | ✅ 成熟 | orchestrator 分派 + 獨立 git worktree，防答案塌縮（細節見表下） |
 | **Skills 設計** | 知識框架化、流程 skill 化、免 git 雲端硬碟分享（Sx 2.0） | ✅ 成熟 | description 自動觸發，將書籍/流程封裝為可複用 skill；Sx 2.0 將分享管道從 git 延伸至 Dropbox/Drive/iCloud，降低非技術團隊採用門檻 |
 | **CLAUDE.md 管理** | 精簡規則策略、Self-improving Rules、防腐爛機制、漸進式工具採用原則 | ✅ 成熟 | 以「規則」非「建議」撰寫，CI 攔截違反架構 PR；新增能力前先問「會不會重複使用」，procedure file → CLI → 重整合依序升級 |
-| **Hooks 與自動化** | PostToolUse 稽核、Git Hooks 品質門、/goal Fire-and-Forget、deploy/migration 保護、Pre-completion Hook、Stop Hook 音效通知、Hooks 環境感知條件觸發（Adrafinil、氛圍狀態燈） | ✅ 成熟 | 強制執行 > CLAUDE.md 建議；Stop Hook 要求可驗證完成證明；CLAUDE.md 做偏好、Hooks 做邊界；Pre-completion Hook 防模糊結束；hooks 可感知 agent 活躍狀態驅動環境副作用（螢幕喚醒、實體燈光顏色） |
-| **模型使用策略** | 分層模型（Sonnet + Opus）、多模型路由、Workweave Router、跨模態內容生成分工（InstantVideos）、Fable 5 Orchestrator-Executor（官方基準） | ⚡ 活躍 | 依任務複雜度路由，節省 60% 用量；Dragoman / Workweave 自動路由；嵌入 Claude Code / Codex / Cursor 的成本感知路由；InstantVideos 將分工路由思路延伸至內容生成（文字/圖像/影音各交專門模型）；Anthropic 官方基準證實 Fable 5 編排 + 便宜模型執行可達 46% 成本／96% 效能 |
-| **Token / 成本優化** | MCP Code Execution、Token Bloat 對策、本機圖資料庫索引、穴居人模式（Caveman）企業採用、claude-thermos（session 快取保活）、pxpipe（圖片化 context）、headless 呼叫冷啟動成本 | ⚡ 活躍 | HTML→Markdown 降 80% token；快取不跨 session 是費用主因；極簡輸出模式（穴居人）企業採用獲 404 Media 確認，OpenAI、Nvidia、GitHub 開發者使用；claude-thermos 以保活請求維持快取不過期，但引發「成本轉嫁其他用戶」爭議；pxpipe 反其道而行，把文字 context 渲染成圖片傳遞以降低 token 用量；`claude -p` 未加 `--bare` 冷啟動實測約耗 15 萬 token |
-| **記憶與知識管理** | ltm Core Memory Packet、本機圖資料庫、NanoBrain、OKF（物件鍵格式跨 session 記憶）、已否決方案索引、OzBrain（跨 agent／團隊共享知識庫） | ⚡ 活躍 | 跨 session / 跨工具持久記憶；Leiden 圖譜減少 71 倍 token；OKF 標準化 agent 知識格式供團隊共用；已否決方案未結構化記錄會導致 agent 重新實作已被殺掉的方案；OzBrain 主張取代傳統筆記/任務管理工具，鎖定團隊共用而非單一使用者記憶 |
+| **Hooks 與自動化** | PostToolUse 稽核、Git Hooks 品質門、/goal Fire-and-Forget、Pre-completion Hook、Stop Hook 通知、環境感知觸發 | ✅ 成熟 | 強制執行 > CLAUDE.md 建議；CLAUDE.md 做偏好、Hooks 做邊界（細節見表下） |
+| **模型使用策略** | 分層模型（Sonnet + Opus）、多模型路由、Workweave Router、跨模態內容生成分工（InstantVideos）、Fable 5 Orchestrator-Executor（官方基準） | ⚡ 活躍 | 依任務複雜度路由，節省 60% 用量；官方基準：Fable 5 編排+便宜模型執行達 46% 成本／96% 效能（細節見表下） |
+| **Token / 成本優化** | MCP Code Execution、Token Bloat 對策、穴居人模式（Caveman）、claude-thermos、pxpipe、headless 冷啟動成本 | ⚡ 活躍 | HTML→Markdown 降 80% token；快取不跨 session 是費用主因；穴居人模式企業採用獲 404 Media 確認（細節見表下） |
+| **記憶與知識管理** | ltm Core Memory Packet、本機圖資料庫、NanoBrain、OKF（物件鍵格式跨 session 記憶）、已否決方案索引、OzBrain（跨 agent／團隊共享知識庫） | ⚡ 活躍 | 跨 session / 跨工具持久記憶；Leiden 圖譜減少 71 倍 token（細節見表下） |
 | **Plugin / MCP 整合** | Plugin 反模式整理、Claude Code 作為 MCP 協調中心 | ⚡ 活躍 | 避免不必要 context 載入；Claude Code 主導 MCP 工具鏈協作 |
 | **多代理 PR Review** | 4-agent Code Review、對抗性審查（計畫前 + 程式碼後）、Read-Only Reviewer、Claude 審查 Codex（71.6%→89.7% 通過率） | ⚡ 活躍 | 架構師代理協調 + 多廠商模型交叉審查；對抗性審查者讀取真實 codebase；read-only 權限約束維持對立性；跨模型交叉審查量化提升通過率已有學術論文佐證（見下方懸置細節） |
 | **Agent 版本控制** | ADR 注入、架構決策文件先於實作 | ⏳ 新興 | 決策文件先於實作，降低代理方向偏移風險 |
 | **Context 管理** | Just-in-Time @-file、Repo-as-Memory、Context Rot 修復、對話分支/合併手動控制 | ⚡ 活躍 | 即時取回優於預先加載；repo 是記憶體、模型是工作者；避免 context 過早飽和；新增使用者可視化分支/合併對話以精準控制 context 範圍的手動操作模式 |
-| **Agent 規模化** | 20-instance 崩潰分析、批量 OSS Bug 修復、Personas vs Tool-scoping、Mac Mini 自主 agent 部署、TBD（HN 4，agent-channels 跨 worktree 通訊）、live-log-viewer-next（平行 agent 即時對話地圖） | ⏳ 新興 | 超過 10 個並行 agent 需獨立 worktree + orchestrator 協調層；工具範圍限制比角色描述更可靠的邊界守護；無人監督排程任務已有完整 Mac Mini M4 方案；可觀測性層開始補足「多 agent 進度難追蹤」的協調盲點 |
-| **安全架構** | CLAUDE.md for K8s、語意層漂移 CI 測試、Trent 內嵌評估、Grepathy（agent 未經核准決策稽核）、Spare Mac 隔離環境（--dangerously-skip-permissions 風險隔離）、OneCLI（憑證閘道器） | ⏳ 新興 | AI 加速開發下的系統性安全防線；CI 攔截語義退化；Grepathy 偵測、追蹤 agent 自主做出但未經人工核准的決策行為；備用實體裝置作為 agent 全權控制沙箱，降低主力工作機風險；OneCLI 在網路層攔截請求並代換真實憑證，agent 本身全程不接觸密鑰 |
+| **Agent 規模化** | 20-instance 崩潰分析、批量 OSS Bug 修復、Personas vs Tool-scoping、Mac Mini 自主部署、agent-channels、live-log-viewer-next | ⏳ 新興 | 超過 10 個並行 agent 需獨立 worktree + orchestrator 協調層（細節見表下） |
+| **安全架構** | CLAUDE.md for K8s、語意層漂移 CI 測試、Trent 內嵌評估、Grepathy、Spare Mac 隔離環境、OneCLI | ⏳ 新興 | AI 加速開發下的系統性安全防線；CI 攔截語義退化（細節見表下） |
 | **創意工具 Agent 整合** | Palmier Pro（開源 macOS 影片編輯器 + 本機 MCP server） | ⏳ 新興 | 將 agent 整合從純程式碼場域擴及創作工具鏈，內建 AI 生成並開放本機 MCP server 供 agent 直接操控編輯流程 |
 | **介面元件複用** | Brainless（模仿 Claude Code/Codex/Grok 介面風格的 shadcn 元件庫） | ⏳ 新興 | 將 AI coding 工具的介面美學封裝為可用單一指令（`bunx shadcn add`）安裝的前端元件，本日 HN 最高分（124） |
 | **跨環境 Agent 記憶** | Core Memory Packet、Agent 持續運作架構 | ⏳ 新興 | 跨編輯器 / 跨機器 / 跨模型的供應商中立記憶協定 |
@@ -78,6 +78,15 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 | **行動裝置遠端控制** | ccgram（Telegram）、Android Remote Control MCP、Shellular | ⏳ 新興 | 手機作為 agent 控制介面，透過 Telegram bot / MCP / 專屬 web-app 等不同傳輸層連線並操作本機執行中的 Claude Code / Codex session |
 
 > 成熟度：✅ 成熟（社群廣泛實踐）/ ⚡ 活躍（持續演進中）/ ⏳ 新興（近期出現，尚在探索）
+
+**類別細節**
+- **Multi-agent 架構**：ccteams 將驗證良好的 subagent 組合打包為可跨專案安裝的套件；OtoDock 將 Claude Code 與 Codex 組成協作團隊部署於自有伺服器；omnigent 把協調邏輯與底層 harness（Claude Code／Codex／Cursor／Pi）解耦，換 harness 不必重寫協作邏輯
+- **Hooks 與自動化**：Stop Hook 要求可驗證完成證明；Pre-completion Hook 防模糊結束；hooks 可感知 agent 活躍狀態驅動環境副作用（螢幕喚醒、實體燈光顏色，見 Adrafinil、氛圍狀態燈）
+- **模型使用策略**：Dragoman / Workweave 自動路由，嵌入 Claude Code / Codex / Cursor 的成本感知路由；InstantVideos 將分工路由思路延伸至內容生成（文字/圖像/影音各交專門模型）
+- **Token / 成本優化**：極簡輸出模式（穴居人）企業採用獲 404 Media 確認，OpenAI、Nvidia、GitHub 開發者使用；claude-thermos 以保活請求維持快取不過期，但引發「成本轉嫁其他用戶」爭議；pxpipe 反其道而行，把文字 context 渲染成圖片傳遞以降低 token 用量；`claude -p` 未加 `--bare` 冷啟動實測約耗 15 萬 token
+- **記憶與知識管理**：OKF 標準化 agent 知識格式供團隊共用；已否決方案未結構化記錄會導致 agent 重新實作已被殺掉的方案；OzBrain 主張取代傳統筆記/任務管理工具，鎖定團隊共用而非單一使用者記憶
+- **Agent 規模化**：工具範圍限制比角色描述更可靠的邊界守護；無人監督排程任務已有完整 Mac Mini M4 方案；可觀測性層（live-log-viewer-next）開始補足「多 agent 進度難追蹤」的協調盲點；agent-channels 提供跨 worktree 通訊
+- **安全架構**：Grepathy 偵測、追蹤 agent 自主做出但未經人工核准的決策行為；Spare Mac 隔離環境以備用實體裝置作為 agent 全權控制沙箱，降低主力工作機風險（`--dangerously-skip-permissions` 風險隔離）；OneCLI 在網路層攔截請求並代換真實憑證，agent 本身全程不接觸密鑰
 
 **查證備註**
 - 「Claude 審查 Codex 通過率 71.6%→89.7%」已查得學術來源：[Cross-Model LLM Code Review: Should you use Claude to review Codex or vice versa?](https://arxiv.org/abs/2607.21656)（arXiv 2607.21656）——116 則 LiveCodeBench 中／難題，六種條件對照，reviewer 只見題目與 writer 草稿、不能執行測試，近似真實 code review 流程；反向（Codex 審查 Claude）則使通過率從 91.4% 降至 82.8%，顯示審查方向有明顯不對稱效應，並非任一模型互審都有效（2026-08-13 查證）
@@ -164,7 +173,7 @@ Claude Code 的三種多 agent 機制，可對應到 Anthropic《Building Effect
 #### GitHub Search 第三波 meta-harness／跨代理 orchestration 工具湧現：opencodex、metaharness、claw-orchestrator（2026-08-27）
 
 - **主線：** 並行規模
-- **核心模式：** 延續 08-05 omnigent、08-09 loopx＋HarnessFlow 已記錄的「統一管理 Claude Code、Codex 等多種程式代理」趨勢，今日 GitHub Search 再度湧入同類新專案：opencodex（Codex／Claude Code 通用 provider proxy）、metaharness（可自建品牌化 agent harness 的 meta-harness），以及 claw-orchestrator 的新版本描述（可跑 Claude Code、Codex、Antigravity 等多代理的統一 runtime；claw-orchestrator 本身已於 08-17 以 547★ 收錄於 [[topics/community-tech-tools]] Trust／verification 層）
+- **核心模式：** 延續 08-05 omnigent、08-09 loopx＋HarnessFlow 已記錄的「統一管理 Claude Code、Codex 等多種程式代理」趨勢，今日 GitHub Search 再度湧入同類新專案：opencodex（Codex／Claude Code 通用 provider proxy）、metaharness（可自建品牌化 agent harness 的 meta-harness），以及 claw-orchestrator 的新版本描述（可跑 Claude Code、Codex、Antigravity 等多代理的統一 runtime；claw-orchestrator 本身已於 08-17 以 547★ 收錄於 [[topics/community-tech-tools]] 工具目錄「多 Agent」類）
 - **與既有模式的關係：** 這是同一「meta-harness／跨代理統一管理」趨勢的第三次批次亮相（08-05、08-09、08-27），顯示此非單一事件而是持續性的社群方向；今日條目未附獨立星數或 forks／commit 佐證資料，暫記為趨勢延續觀察，不對個別新工具背書；縫合 [[topics/community-large-codebase-workflow]] 並行規模主線
 - **來源：** GitHub Search（今日批次亮相，未見獨立星數資料）
 - **成熟度：** ⏳ 新興（延續既有趨勢，個別新工具尚無社群採用回饋）

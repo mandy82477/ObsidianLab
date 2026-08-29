@@ -196,7 +196,7 @@ Financial Times 報導 Anthropic 旗艦模型在吸引一般使用者（general 
 | TechRadar：「AI 界的 Apple」定價最高卻拿下最多營收 | Vercel 統計：2026 年 7 月 token 營收份額業界最高 | Google News/TechRadar，2026-08-15；HN，2026-08-17 |
 | Raleigh 合資企業招聘，最高職缺薪資逾 **60 萬美元** | Business Journals 報導 Anthropic 旗下合資企業招聘 | Google News/The Business Journals，2026-08-15 |
 | Nvidia 對 Anthropic 等公司合計約 700 億美元投資 | Yahoo Finance 分析潛在股東回報，非新增融資事件 | Google News/finance.yahoo.com，2026-08-12 |
-| OpenAI／Anthropic 合計佔 AI 產業營收 70%（待查證）| YouTube 影片主張；HN 討論反駁（73 分，達高門檻）| Hacker News（YouTube 轉貼），2026-08-09 |
+| OpenAI／Anthropic 合計佔 AI 產業營收 70%｜❓ 待查證 ⟨Q-01⟩ | YouTube 影片主張；HN 討論反駁（73 分，達高門檻）| Hacker News（YouTube 轉貼），2026-08-09 |
 | Economic Futures Research Fund：承諾 2 億美元支持外部研究 | 聚焦勞工衝擊、AI 轉型輔助、所得支持現代化等五大方向 | Anthropic Blog，2026-07-23 |
 | 著作權和解案再添細節：哈利波特出版商獲數百萬美元賠付 | The Guardian 等六媒體跟進和解案後續報導 | The Guardian 等六媒體，2026-07-22～25 |
 | Max $200/月方案隱性補貼 17 倍 | token-xray 計算：$200/月實際提供相當於 $3,400 API 用量 | 社群計算，2026-05-28 |
@@ -217,7 +217,7 @@ Financial Times 報導 Anthropic 旗艦模型在吸引一般使用者（general 
 - **TechRadar：「AI 界的 Apple」**：TechRadar 發表評論文章，稱 Anthropic 雖為業界定價最高者，卻拿下最多營收，稱其為「AI 界的 Apple」；本站已於 08-15 記錄 Yahoo Finance 版本之 Q2 營收超過 115 億美元事實（見「IPO 前瞻與估值追蹤」表）。08-17 補充（Hacker News，22 分，正文可用）：同篇文章經 Hacker News 轉貼並附上更完整內容——具體數據來源為 Vercel 統計，指 Anthropic 在 2026 年 7 月 AI token 營收上仍拿下業界最高份額，儘管其 token 定價高於對手；與同日（08-17/18）Bloomberg／Reuters／CNBC／Benzinga 四方報導之 $65B 年化營收數字互為呼應，共同強化「高價仍拿下最多營收」的商業模式框架，非新增獨立事件；具體 Vercel 統計方法論、token 營收絕對金額未見報導細節。
 - **Raleigh 合資企業招聘**：Business Journals 報導 Anthropic 旗下合資企業（原文標題涉及「Claude」AI 採用相關業務）正在 Raleigh 招聘，其中一個職位薪資逾 60 萬美元；具體合資企業名稱、職位類型、整體招聘規模均未見報導細節，僅標題與導言層級資訊，反映公司持續擴大人才投資規模（推論）。
 - **Nvidia 約 700 億美元投資分析**：Yahoo Finance 分析 Nvidia 對包含 Anthropic 在內多家 AI 公司合計約 700 億美元的投資，評估對 Nvidia 股東的潛在回報；屬第三方投資分析，非新增融資事件，僅標題可用，具體投資結構、Anthropic 分得金額未見報導細節。
-- **合計佔 AI 產業營收 70%（待查證）**：YouTube 影片主張兩家合計占 AI 產業營收 70%，原始數據來源與方法論未提供；Hacker News 討論串（73 分，達互動門檻對照表「高」門檻）出現反駁聲音，質疑此前提，指出大型企業終將自建 LLM workload，未來 5–10 年推理市場規模恐不到目前估算的 1%，反面論點本身亦未附來源。此為「營收占比」，與本頁已記錄之「企業採用率」34.4%（Ramp AI Index，2026-05-15，衡量企業導入比例而非營收金額）為不同維度指標，不可混用比較。
+- ⟨Q-01⟩ ❓ **待查證**（標 2026-08-09｜查 產業營收占比｜複 2026-09-12）｜**合計佔 AI 產業營收 70%**：YouTube 影片主張兩家合計占 AI 產業營收 70%，原始數據來源與方法論未提供；Hacker News 討論串（73 分，達互動門檻對照表「高」門檻）出現反駁聲音，質疑此前提，指出大型企業終將自建 LLM workload，未來 5–10 年推理市場規模恐不到目前估算的 1%，反面論點本身亦未附來源。此為「營收占比」，與本頁已記錄之「企業採用率」34.4%（Ramp AI Index，2026-05-15，衡量企業導入比例而非營收金額）為不同維度指標，不可混用比較。已掃日報至 2026-08-29 無後續；官方頁面未查證。
 - **Economic Futures Research Fund**：Anthropic Blog 公布研究議程，聚焦勞工衝擊、AI 轉型輔助、所得支持現代化、工作者在 AI 成長中的持股五大方向；原文：「We're committing $200 million to the fund to support ambitious external research on interventions to prepare society for the economic impacts of AI.」屬對外部研究的資助承諾，非公司內部融資或商業合作，性質與 Claude Corps（$1.5 億美元非營利培力）同屬經濟政策軟性佈局路線，但聚焦研究資助而非人才派遣（推論）；具體受助機構、審核機制未見報導細節。
 - **哈利波特出版商獲數百萬美元賠付**：The Guardian 報導《哈利波特》系列出版商為 15 億美元著作權集體訴訟和解案受益方之一，預期獲數百萬美元賠付；The Wenatchee World、Jurist.org、WXYZ Channel 7、NDTV（07-24 跟進）、CNN（07-25 跟進，標題稱「Anthropic to pay settlement to Harry Potter publisher」）同期跟進和解案後續報導。六則報導均未明確點名是否即為 07-22 已記錄之英國出版商 Bloomsbury，或美國《哈利波特》出版商 Scholastic，暫不逕自合併認定為同一實體；截至 07-25 仍未見具體賠付金額或新增細節，均屬同一事實的媒體擴散跟進，非新事實。
 - **著作權集體訴訟核准**：美國法官正式核准，Engadget 稱「創紀錄」和解金額，New York Post 稱「AI 著作權訴訟首宗達成和解的重大案件」；著作權訴訟風險首次獲司法定案結果，IPO 前瞻敘事整備背景下降低法律不確定性（推論）。
@@ -239,14 +239,14 @@ Financial Times 報導 Anthropic 旗艦模型在吸引一般使用者（general 
 | 音樂出版商著作權侵權訴訟 | Round Hill Music 求償 10 億美元＋另一出版商對 Anthropic/Suno 提告（08-18）| ⚠️ 中 |
 | 頂尖模型是否停售企業客戶（推論／單一來源）| The Information：傳 Anthropic/OpenAI 考慮不售最強模型給企業 | ℹ️ 待觀察 |
 | 企業因成本退出 | Microsoft 6/21 加速退出；Uber 警戒中；Amazon 傳降低 Alexa 對高成本模型依賴（07-23）| ⚠️ 高 |
-| 雲端夥伴自研模型替代；🔎 查無官方（複查 2026-09-13）| Microsoft 傳以自研模型逐步取代 OpenAI/Anthropic（07-07 雙來源；08-13 複查未見新證）| ⚠️ 中高 |
+| 雲端夥伴自研模型替代；🔎 查無官方（標 2026-08-13｜查 自研模型、Microsoft｜複 2026-09-13）| Microsoft 傳以自研模型逐步取代 OpenAI/Anthropic（07-07 雙來源；08-13 複查未見新證）| ⚠️ 中高 |
 | 補貼不可持續 | 17 倍補貼規模無法長期維持 | ⚠️ 中高 |
 | 競品分流 | OpenCode 157K 用戶；DeepSeek 低成本替代 | ⚠️ 中 |
 | 定價透明度危機 | 多次靜默計費改動損傷信任 | ⚠️ 中 |
 | API key 無 = 無財務數據 | 個人開發者無從追蹤 Anthropic 真實財務 | ℹ️ 資訊缺口 |
 | 專利侵權訴訟（UTRF，已查證）| 2026-07-21 提告，指控 Claude Code 排程/記憶引擎侵犯專利；Anthropic 抗辯 | ⚠️ 中 |
 | 田納西大學提告（併入上列 UTRF 案，不重複計入）| 同一案，08-24 校內學生報跟進無新事實 | ⚠️ 併入上列 |
-| 著作權訴訟疑似重複報導；🔎 查無新訴訟證據（複查 2026-09-13）| The Post-Crescent 報導；疑似既有 15 億美元和解案重新報導 | ⚠️ 待評估 |
+| 著作權訴訟疑似重複報導；🔎 查無新訴訟證據（標 2026-08-13｜查 Post-Crescent｜複 2026-09-13）| The Post-Crescent 報導；疑似既有 15 億美元和解案重新報導 | ⚠️ 待評估 |
 | 知名放空投資人公開唱空估值敘事 | Steve Eisman 稱 Anthropic/OpenAI 為 AI 交易的「阿基里斯腱」| ℹ️ 市場觀感 |
 
 **商業風險細節**

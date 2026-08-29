@@ -25,8 +25,8 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 **狀態：** active（出口管制解除，2026-07-01 起全球恢復存取）
 **領域：** 🤖 模型
 **首次出現：** 2026-04（限定夥伴 Preview）
-**最後更新：** 2026-08-26
-**最後新聞更新：** 2026-08-24
+**最後更新：** 2026-08-29
+**最後新聞更新：** 2026-08-29
 
 > **最新進展**（2026-08-22）
 > Anthropic 將 Claude Mythos 5 導入 Claude Security 產品線，企業團隊不需直接存取模型即可取得 frontier 等級漏洞掃描能力——是繼「直接 API」「Project Glasswing」後 Mythos 5 的第三種能力釋出管道。定價與產品細節見 [[entities/claude-security]]。
@@ -98,8 +98,8 @@ Anthropic 的官方 AI 資安能力研究計畫，Mythos Preview 為核心工具
 | ICE 加入 Glasswing | 2026-06-04 | 美國聯邦執法機構加入 |
 | Mythos 5 部分解禁（100+ 機構）| 2026-06-27 | 商務部長 Lutnick 致函確認；條件：受信任合作夥伴 + 安全措施 |
 | NSA 用 Mythos 發動攻擊 | 2026-06-05 | 防禦框架「兩用性」首次公開確認（FT 獨家）|
-| Horizon3.ai 加入 Glasswing | 2026-07-15 | 首度納入**攻擊性安全**專長的夥伴（此前偏重超大規模雲端業者與大型資安廠商），將 Mythos 用於自家防禦性工作，並以漏洞研究與安全驗證經驗協助評估 AI 辨識可利用風險的能力（businesswire 官方新聞稿，2026-08-10 查證）|
-| Nozomi Networks 加入 Glasswing | 2026-07-20 | 工業資安公司加入，將 AI 漏洞探勘帶入 OT／IoT／cyber-physical systems；夥伴可取得 Mythos Preview 檢視自家軟體漏洞，Nozomi 承諾將發現回饋 Anthropic 研究並分享資安社群（Nozomi 官方部落格，2026-08-26 查證）|
+| Horizon3.ai 加入 Glasswing | 2026-07-15 | 首度納入**攻擊性安全**專長夥伴（此前偏重雲端業者與大型資安廠商）（2026-08-10 查證）|
+| Nozomi Networks 加入 Glasswing | 2026-07-20 | 工業資安公司加入，將 AI 漏洞探勘帶入 OT／IoT／cyber-physical systems（2026-08-26 查證）|
 | Oxide Computer 加入 Glasswing | 2026-07-28 | 應用 Mythos 5 主動掃描自家開源程式碼庫（韌體/OS/控制平面/網路堆疊），強調關鍵軟體應可被檢視（Oxide Blog）|
 | Glasswing 規模演進確認 | 2026-08-10 | 自 2026-04-07 啟動時約 50 家夥伴，擴及 **15 國以上、逾 150 個組織**（官方查證，取代先前「200 個」概估數字）|
 
@@ -119,6 +119,12 @@ Anthropic 的官方 AI 資安能力研究計畫，Mythos Preview 為核心工具
 ## 時序
 
 ### 解禁後（2026-06-27 起）
+
+#### 2026-08-24（追加：Fierce Healthcare／Epic UGM，2026-08-29 補列）
+❓ **待查證**（標 2026-08-29｜查 Fierce Healthcare、UpToDate｜複 2026-09-12）｜**Fierce Healthcare（Epic UGM 報導）：Project Glasswing 與醫療資訊平台 UpToDate 深化合作**（僅標題可用）：
+- Google News 轉載 Fierce Healthcare 標題「More tidbits from Epic UGM: Anthropic's Project Glasswing and a deeper partnership with UpToDate」（[Google News/Fierce Healthcare](https://news.google.com/rss/articles/CBMixgFBVV95cUxNZ18zMV9kMHZXcHBIMjRTdUxKQ3VuV25tLWVJOUlFX0c4SUk4ODRCc0FfdWdvbTJiZ3NKcldlRzRjV0JOcWJrY2NWQkljUk9CX283OUlSTDJiSFVXT001MG1TVUNGLUdLVjdWTFQ3NGhDNzFrakktMG03bGVYNVdGbnhsNTJjWTdmN1pNN1g5T1NWRHJMdlcyc1I1YUtKOVZyRTN6UFc3ZzJFeTcwR1NTZTlwcVRVNDd2aEh1cUVDWW93dkVBcHc?oc=5)，2026-08-24 11:00 UTC），RSS 僅提供標題與轉址連結，無正文摘要，無法確認 UpToDate 合作的具體內容、是否構成 Project Glasswing 的新增夥伴案例、或與上方「## Project Glasswing」既有統計（數據截至 2026-06-02）的關聯
+- UpToDate 為醫療資訊平台；若屬實將是 Project Glasswing 醫療領域應用的新案例，惟醫療產業合作的商業／產品細節屬其他記者主責範圍，本頁僅記模型能力釋出面向
+- 已掃日報至 2026-08-29，無其他來源佐證此則報導或補充細節
 
 #### 2026-08-24
 ❓ **待查證**（標 2026-08-24｜查 SecurityWeek、more defenders）｜**SecurityWeek：Mythos 5 存取擴大至更多防禦端**（僅標題可用）：
@@ -311,3 +317,4 @@ Mythos 遭駭客存取事件（KRON4 等媒體）。⚠️ 細節尚待官方聲
 - [Incident Report: unsanctioned agent behaviour during cyber testing](https://www.aisi.gov.uk/blog/incident-report-unsanctioned-agent-behaviour-during-cyber-testing) — UK AI Safety Institute（2026-08-05）
 - [[news/2026-07-26]]、[[news/2026-07-29]]、[[news/2026-07-30]]、[[news/2026-08-07]]
 - [Google News/SecurityWeek：Anthropic Expands Mythos 5 Access to More Defenders, Unveils $35M Open Source Fund](https://news.google.com/rss/articles/CBMirwFBVV95cUxQY1E3Um1LaDRvamd5R3M4TDFIdEpIQ1dSY09DV2tsM0FXOTMtUVkxcnlBZ2ZKeEdOcXhYOGtRdFNYQkhab1drZE9WZzhDeHBwbl9vQzlUV29vLXVfcG9WNU5RWDV1cEdHMDBDb0xBVjZiaE5UVDFmeG93OUhpRzRuQnJYOGswcHJwVkJrS1dBeTRSUk5LWXo1S01LVmhLMHZPZU9WWmNhOVRqZ3EwSjZv?oc=5)（2026-08-24，僅標題可用；懸置標記細節見「時序」2026-08-24 條目）
+- [Google News/Fierce Healthcare：More tidbits from Epic UGM: Anthropic's Project Glasswing and a deeper partnership with UpToDate](https://news.google.com/rss/articles/CBMixgFBVV95cUxNZ18zMV9kMHZXcHBIMjRTdUxKQ3VuV25tLWVJOUlFX0c4SUk4ODRCc0FfdWdvbTJiZ3NKcldlRzRjV0JOcWJrY2NWQkljUk9CX283OUlSTDJiSFVXT001MG1TVUNGLUdLVjdWTFQ3NGhDNzFrakktMG03bGVYNVdGbnhsNTJjWTdmN1pNN1g5T1NWRHJMdlcyc1I1YUtKOVZyRTN6UFc3ZzJFeTcwR1NTZTlwcVRVNDd2aEh1cUVDWW93dkVBcHc?oc=5)（2026-08-24，僅標題可用；懸置標記細節見「時序」2026-08-24 條目）

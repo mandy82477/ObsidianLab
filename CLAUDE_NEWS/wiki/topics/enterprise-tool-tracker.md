@@ -24,7 +24,7 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 **領域：** 💼 商業
 **蒐集邊界：** 僅涵蓋 Claude 相關報導所帶出的企業案例。未提及 Claude 的企業工具決策不在自動蒐集範圍——公開報導本就少見具名企業的內部工具決策，本表為已見報者的彙整，非市場全貌。
 **開始日期：** 2026-05-26
-**最後更新：** 2026-08-27
+**最後更新：** 2026-08-29
 **最後新聞更新：** 2026-08-26
 
 > **最新企業採用異動**（2026-08-26）
@@ -73,26 +73,26 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 
 | 企業 | 規模 | AI 編碼工具 | 狀態 | 事件日期 | 備註 | 確認日期 |
 |------|------|-----------|------|---------|------|---------|
-| Shopify | 頂尖 | Claude Code | ❓ | — | analyticsindiamag.com、The New Stack 報導 Shopify 執行長 Tobi Lütke 揚言封殺（"ban"）Claude Code；The New Stack 另指出 Anthropic 其實早已關閉（closed）相關功能請求。**對商業與生態的意涵**：是本頁首見具名科技公司高層公開揚言封殺 Claude Code 的案例，區別於既有退出案例多為成本（Microsoft）、出口管制（JPMorgan）、安全疑慮（Alibaba）三類理由——本次爭議點未見報導具體說明（是否涉資安、成本或政策爭議），且尚未見 Shopify 官方確認實際執行封鎖（僅為 CEO 公開表態），故暫標「未確認」而非「已退出」；具體爭議緣由、封鎖範圍、是否已生效均未見報導細節，僅標題層級資訊（推論）| Google News/analyticsindiamag.com；Google News/The New Stack |
-| ReliaQuest | 大型（資安廠商） | Claude API（AI 驅動資安平台整合）| ✅ | — | TipRanks 報導資安廠商 ReliaQuest 深化與 Anthropic 的技術整合，作為其去 SIEM 化（SIEM-less）資安策略的一環；延續近期 Cyberhaven（07-23）、Orca Security（07-21）、Tenable（06-29）等資安廠商整合 Claude Compliance API 的既有生態擴張模式（推論），惟本則整合範疇更廣（去 SIEM 化整體策略，非單一 Compliance API 功能）；具體整合範疇、合作規模、技術細節均未見報導，僅標題層級資訊（Google News/TipRanks）| 2026-08-22 |
-| Goldman Sachs | 頂尖 | Claude AI | ❌ | — | Yahoo Finance 報導高盛在香港被切斷 Claude AI 存取權限，涉及地緣政治與合規因素，成因未明；與 JPMorgan Chase（06-18，因美國出口管制指令於香港分行被迫停止使用 Anthropic 服務，管制已於 07-01 解除）外觀相似，惟本次發生於管制解除後逾七週，是否同源尚待查證，詳見 [[topics/anthropic-government-policy]]；具體切斷生效日、涉及範圍（僅香港分行或全球）均未見報導細節，僅標題層級可用（Google News/Yahoo Finance）| 2026-08-20 |
-| OKX | 大型（加密貨幣交易平台） | Claude AI | ❌ | — | Yahoo Finance 同篇報導稱加密貨幣交易平台 OKX 同樣在香港被切斷 Claude AI 存取權限，與高盛同批報導，成因未明，詳見 [[topics/anthropic-government-policy]]；為本頁首見加密貨幣交易平台因合規/地緣政治因素退出的具名案例（區別於 08-19 已記錄 Payward 採用 Claude Mythos 5 的加密貨幣產業正面案例）；具體切斷原因細節、生效日未見報導，僅標題層級可用（Google News/Yahoo Finance）| 2026-08-20 |
-| Payward（Kraken 母公司） | 大型（全球加密貨幣交易平台母公司） | Claude Mythos 5 | ✅ | — | FF News 報導 Payward 採用 Claude Mythos 5 強化全球加密基礎設施；Mythos 5 為僅限授權機構存取的安全強化模型（見 [[entities/mythos]]），本案為具名企業採用該受限模型的具體案例；原文僅標題層級可用，具體整合範疇、規模未見細節（Google News/FF News）| 2026-08-19 |
-| Duke University | 大型（高等教育機構） | Claude（pay-as-you-go 訂閱方案） | ✅ | — | The Duke Chronicle 報導杜克大學與 Anthropic 合作，提供師生「用多少付多少」的 Claude 訂閱方案；為繼哈佛 FAS（04-28）、Syracuse University（08-07）後另一具名高等教育機構採用案例，延續教育機構採用 Claude 的趨勢（推論）；原文僅標題層級可用，具體授權範圍、定價細節未見報導（Google News/The Duke Chronicle）| 2026-08-18 |
-| Samsung | 頂尖 | Claude Code | ✅ | — | 跨 3 媒體確認具體量化成效，惟仍為媒體轉述、非三星或 Anthropic 官方發布：TechSpot（08-15）稱 Claude Code 能把晶片設計工作從「數週壓縮到數天」；Tech My Money（08-14）稱驗證階段「從一個月縮到兩天」——兩則數字不同，並陳不擇一。三則均明確指出 Claude Code **仍會犯嚴重錯誤**。延續 08-14 記錄之 ❓ 未確認狀態，08-15 升級為 ✅；與 [[topics/anthropic-business]] 已記錄之 Samsung 代工洽談（07-02/06）、Series H 投資人身份為不同性質事件——本則為 Samsung**使用**Claude Code 的採用案例，非供應鏈/投資關係（Google News/TechSpot；Google News/Tech My Money）。**08-25 三度確認（TechRadar，非新事實）**：TechRadar 報導同一事實——三星認為 Claude Code 有助其晶片設計，但坦言 AI 仍會犯下「令人擔憂的重大錯誤」；未見新增具體數字或案例細節，屬既有 08-14/08-15 記錄的第三方媒體再確認，狀態與量化數字均不變（Google News/TechRadar）| 2026-08-15（首見 2026-08-14）|
-| Syracuse University | 大型（高等教育機構）| Claude Code + Claude Cowork | ✅ | 2026-08-05 | Syracuse University Today 官方報導校方擴大 Claude Enterprise 授權，納入 Claude Code 與 Claude Cowork；為繼哈佛 FAS（04-28，取代 ChatGPT Edu）後另一具名高等教育機構擴大採用案例，顯示學術機構對 Claude Enterprise 的採用正從「單一授權」擴展至「含編碼與協作工具的完整套件」（推論）；具體授權規模、部署範圍未見細節，僅標題層級資訊（Google News/Syracuse University Today）| 2026-08-05 |
-| ICON（NASDAQ: ICLR） | 大型（全球臨床研究委外機構 CRO）| Claude API | ✅ | 2026-07-29 | Clinical Trials Arena（source_count=2）報導 ICON 與 Anthropic 合作，將 Claude AI 整合進臨床試驗流程；為醫療研究/CRO 產業首個具名採用案例，延續近期 Optum（07-14，健康服務業）之後醫療垂直產業另一深化案例（推論）；具體整合範疇、合約規模未見細節，僅標題層級資訊（Google News/Clinical Trials Arena）。**08-04 二次確認**：Fierce Biotech（source_count=2）跟進報導同一合作案，未見新增細節，屬媒體二次確認（Google News/Fierce Biotech）。**08-10 三度獲媒體關注（分析角度，非新事實）**：The Clinical Trial Vanguard（臨床試驗產業媒體）發表分析文章，標題暗示此合作案影響將觸及臨床試驗場域，未見新增合作規模、範疇或時程等具體事實，僅標題層級資訊，屬既有合作案的產業媒體深度評論跟進（Google News/The Clinical Trial Vanguard） | 2026-08-10（首見 2026-07-29）|
-| Cognizant | 頂尖 | Claude API | ✅ | 2026-07-28 | Anthropic Blog 官方公告：雙方擴大既有合作，Cognizant 將 Claude 用於自身建置並為客戶運行的系統，橫跨製造業、生命科學、保險等產業；將 Claude 嵌入自身商業與工程平台、打造「Claude 認證」（Frontier Certified）人才梯隊，並升級為 Claude Partner Network 的全球首要夥伴（Global Premier Partner）；延續近期 TCS、DXC 等頂尖 IT 服務商全面深化合作模式（推論）；具體合約規模未見細節（Anthropic Blog https://www.anthropic.com/news/cognizant-anthropic；Google News/Seeking Alpha 同日跟進） | 2026-07-28 |
-| Grasshopper Bank | 中型（銀行，聚焦金融科技產業）| Claude API（MCP 整合） | ✅ | 2026-07-15 | Financial IT 報導 Grasshopper Bank 成為首家列入 Anthropic MCP（Model Context Protocol）目錄的銀行，象徵金融業對 MCP 生態系統的具名採用起點；具體整合規模、應用場景未見細節（僅標題可用，Google News 轉址）| 2026-07-15 |
-| Alberta 省政府（加拿大） | 政府（省級） | Claude Code | ✅ | 2025 | 加拿大 Alberta 省技術與創新部門自 2025 年起使用 Claude Code（含 Opus、Sonnet 模型）審查系統；20 小時內掃描 4.66 億行程式碼，完成資安漏洞盤點與修補、建立新工具；Anthropic Blog 官方案例研究，為具名政府採用新增一筆（Digital Watch Observatory 跟進） | 2026-07-07 |
-| Meta | 頂尖 | Claude | ❓ | — | 傳出限制工程師使用 Claude，原文節錄未提供具體來源連結、規模範圍或生效日期（2026-07-06 指控，已掃日報至 2026-08-14 無後續；官方頁面未查證）| 2026-07-06 |
-| Alibaba | 頂尖 | Claude Code → Qoder（內部工具） | ❌ | 2026-07-10 | 傳出以「疑似後門風險」/ 資安疑慮為由禁止員工職場使用 Claude Code，生效日確認為 2026-07-10（The Indian Express 07-05 跟進報導提供具體生效日期）；PYMNTS、Benzinga、BeInCrypto 三獨立媒體（07-07）確認**明確改用內部工具 Qoder**，此前僅知禁令未知替代方案；來源指控未經 Anthropic 證實，多家媒體跟進（American Bazaar、Seeking Alpha、Crypto News、WTVB、TechCrunch 07-04）；首個以「安全疑慮」為由退出的具名企業案例，區別於此前的成本（Microsoft）與出口管制（JPMorgan）兩類退出理由；安全指控本身詳見 [[topics/ai-agent-safety]]；封鎖成因已查證，見下方「懸置細節」⟨Q-01⟩ | 2026-07-07 |
-| Lindy | 中型（AI 新創） | Claude API → DeepSeek | 🔄 | 2026-06-29 | CEO Flo Crivello 公開宣告 100% 流量從 Claude 切換至 DeepSeek，每月省下數百萬美元；「最省錢 > 最強模型」趨勢最具名案例，屬 API 客戶成本敏感度案例（詳見 [[topics/enterprise-cost-management]]、[[topics/competitor-landscape]]） | 2026-06-29 |
+| Shopify | 頂尖 | Claude Code | ❓ | — | 執行長 Tobi Lütke 揚言封殺；Anthropic 早已關閉相關功能請求；未見官方確認執行，暫標未確認（詳見下方細節） | Google News/analyticsindiamag.com；Google News/The New Stack |
+| ReliaQuest | 大型（資安廠商） | Claude API（AI 驅動資安平台整合）| ✅ | — | 深化與 Anthropic 技術整合，作為去 SIEM 化資安策略一環；具體整合範疇、合作規模未見報導（詳見下方細節） | 2026-08-22 |
+| Goldman Sachs | 頂尖 | Claude AI | ❌ | — | 香港被切斷 Claude AI 存取權限，成因未明；與 JPMorgan 案是否同源尚待查證，詳見 [[topics/anthropic-government-policy]] | 2026-08-20 |
+| OKX | 大型（加密貨幣交易平台） | Claude AI | ❌ | — | 與高盛同批：香港被切斷 Claude AI 存取權限，成因未明，詳見 [[topics/anthropic-government-policy]] | 2026-08-20 |
+| Payward（Kraken 母公司） | 大型（全球加密貨幣交易平台母公司） | Claude Mythos 5 | ✅ | — | 採用僅限授權機構存取的 Claude Mythos 5，強化全球加密基礎設施；規模未見細節 | 2026-08-19 |
+| Duke University | 大型（高等教育機構） | Claude（pay-as-you-go 訂閱方案） | ✅ | — | 提供師生 pay-as-you-go Claude 訂閱方案；繼哈佛 FAS、Syracuse 後另一高教具名案例 | 2026-08-18 |
+| Samsung | 頂尖 | Claude Code | ✅ | — | 跨 3 媒體確認：壓縮晶片設計/驗證時程（數週→數天／一月→兩天，數字不一），仍會犯嚴重錯誤（詳見下方細節） | 2026-08-15（首見 2026-08-14）|
+| Syracuse University | 大型（高等教育機構）| Claude Code + Claude Cowork | ✅ | 2026-08-05 | 擴大 Claude Enterprise 授權，納入 Claude Code + Cowork；繼哈佛 FAS 後另一高教擴大採用案例 | 2026-08-05 |
+| ICON（NASDAQ: ICLR） | 大型（全球臨床研究委外機構 CRO）| Claude API | ✅ | 2026-07-29 | 整合 Claude AI 進臨床試驗流程；醫療研究/CRO 產業首個具名案例，08-04/08-10 媒體二三度跟進（非新事實）| 2026-08-10（首見 2026-07-29）|
+| Cognizant | 頂尖 | Claude API | ✅ | 2026-07-28 | 官方公告擴大合作，Claude 嵌入商業/工程平台，升級 Global Premier Partner，打造 Frontier Certified 人才梯隊 | 2026-07-28 |
+| Grasshopper Bank | 中型（銀行，聚焦金融科技產業）| Claude API（MCP 整合） | ✅ | 2026-07-15 | 首家列入 Anthropic MCP 目錄的銀行；具體整合規模、應用場景未見細節 | 2026-07-15 |
+| Alberta 省政府（加拿大） | 政府（省級） | Claude Code | ✅ | 2025 | 自 2025 年起用 Claude Code 審查系統；20 小時內掃描 4.66 億行程式碼完成資安盤點與修補 | 2026-07-07 |
+| Meta | 頂尖 | Claude | ❓ | — | 傳限制工程師使用 Claude，來源/規模/生效日均缺｜❓ 待查證 ⟨Q-02⟩ | 2026-07-06 |
+| Alibaba | 頂尖 | Claude Code → Qoder（內部工具） | ❌ | 2026-07-10 | 「疑似後門風險」/資安疑慮禁用 Claude Code，改用 Qoder，生效 07-10；三方媒體確認替代方案；封鎖成因已查證見下方 ⟨Q-01⟩ | 2026-07-07 |
+| Lindy | 中型（AI 新創） | Claude API → DeepSeek | 🔄 | 2026-06-29 | CEO 宣告 100% 流量切至 DeepSeek，每月省數百萬美元；最具名成本敏感案例（見 [[topics/enterprise-cost-management]]） | 2026-06-29 |
 | 加州州政府 | 政府（州級） | Claude API | ✅ | 2026-06-29 | 州長 Newsom 與 Anthropic 正式簽署協議，Claude 進入加州州政府應用；迄今最明確的美國地方政府採用案例（詳見 [[topics/anthropic-business]]） | 2026-06-29 |
 | Globant（NYSE: GLOB） | 頂尖 | Claude API | ✅ | 2026-06-30 | 與 Anthropic 結盟推出 Claude 驅動的 AI Pods，重新定義企業 AI 交付模式；上市公司，覆蓋全球多行業客戶（詳見 [[topics/anthropic-business]]） | 2026-06-30 |
 | DataArt | 大型 | Claude API | ✅ | 2026-06-30 | 加入 Anthropic Claude Partner Network，成為服務軌道精選（Select）合作夥伴（詳見 [[topics/anthropic-business]]） | 2026-06-30 |
 | Okta | 大型 | Claude API | ✅ | 2026-06-30 | 與 Anthropic 在 XAA（跨應用 agent 認證）、MCP 協定整合及 Glasswing 安全框架展開合作，為 agentic 工作流提供身份驗證基礎建設（詳見 [[topics/anthropic-business]]） | 2026-06-30 |
-| Rubrik（NYSE: RBRK） | 大型 | Claude Code | ✅ | 2026-06-30 | 發布 Claude Code 專用 AI agent 與安全層，強化企業環境安全防護；2026-06-09 已有 Agent Cloud 前例，本次為 Claude Code 專屬深化（詳見 [[topics/anthropic-business]]） | 2026-06-30 |
+| Rubrik（NYSE: RBRK） | 大型 | Claude Code | ✅ | 2026-06-30 | 發布 Claude Code 專用 AI agent 與安全層；06-09 已有 Agent Cloud 前例，本次為專屬深化（詳見 [[topics/anthropic-business]]） | 2026-06-30 |
 | Notion | 大型 | Claude Agents + Cursor | ✅ | 2026-06-25 | 正式整合 Claude Agents 與 Cursor 作為外部 agent，進入工作區協作流程；協作 SaaS 平台原生 AI agent 採用案例 | 2026-06-25 |
 | Charleston Hospitality Group | 中型 | Claude API | ✅ | 2026-06-22 | 加入 Anthropic Claude 企業 AI 網路；餐旅業具名採用案例 | 2026-06-22 |
 | Atlassian | 大型 | Claude API | ✅ | 2026-06-18 | Claude Agent for Jira 正式推出，企業整合嵌入全球最大專案管理工具 | 2026-06-18 |
@@ -121,7 +121,13 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 | iCapital | 大型 | Claude API | ✅ | 2026-05-01 | 替代資產平台，為客戶建立 AI 工具 | 2026-05-01 |
 | 哈佛 FAS | 大型 | Claude API | ✅ | 2026-04-28 | 取代 ChatGPT Edu，學術授權 | 2026-04-28 |
 
+**使用現況細節**
+- **Shopify（08-26）**：analyticsindiamag.com、The New Stack 報導 Shopify 執行長 Tobi Lütke 揚言封殺（"ban"）Claude Code；The New Stack 另指出 Anthropic 其實早已關閉（closed）相關功能請求。**對商業與生態的意涵**：是本頁首見具名科技公司高層公開揚言封殺 Claude Code 的案例，區別於既有退出案例多為成本（Microsoft）、出口管制（JPMorgan）、安全疑慮（Alibaba）三類理由——本次爭議點未見報導具體說明（是否涉資安、成本或政策爭議），且尚未見 Shopify 官方確認實際執行封鎖（僅為 CEO 公開表態），故暫標「未確認」而非「已退出」；具體爭議緣由、封鎖範圍、是否已生效均未見報導細節，僅標題層級資訊（推論）。
+- **ReliaQuest（08-22）**：TipRanks 報導資安廠商 ReliaQuest 深化與 Anthropic 的技術整合，作為其去 SIEM 化（SIEM-less）資安策略的一環；延續近期 Cyberhaven（07-23）、Orca Security（07-21）、Tenable（06-29）等資安廠商整合 Claude Compliance API 的既有生態擴張模式（推論），惟本則整合範疇更廣（去 SIEM 化整體策略，非單一 Compliance API 功能）；具體整合範疇、合作規模、技術細節均未見報導，僅標題層級資訊。
+- **Samsung（08-15，首見 08-14）**：跨 3 媒體確認具體量化成效，惟仍為媒體轉述、非三星或 Anthropic 官方發布：TechSpot（08-15）稱 Claude Code 能把晶片設計工作從「數週壓縮到數天」；Tech My Money（08-14）稱驗證階段「從一個月縮到兩天」——兩則數字不同，並陳不擇一。三則均明確指出 Claude Code **仍會犯嚴重錯誤**。延續 08-14 記錄之 ❓ 未確認狀態，08-15 升級為 ✅；與 [[topics/anthropic-business]] 已記錄之 Samsung 代工洽談（07-02/06）、Series H 投資人身份為不同性質事件——本則為 Samsung**使用**Claude Code 的採用案例，非供應鏈/投資關係（Google News/TechSpot；Google News/Tech My Money）。**08-25 三度確認（TechRadar，非新事實）**：TechRadar 報導同一事實——三星認為 Claude Code 有助其晶片設計，但坦言 AI 仍會犯下「令人擔憂的重大錯誤」；未見新增具體數字或案例細節，屬既有 08-14/08-15 記錄的第三方媒體再確認，狀態與量化數字均不變（Google News/TechRadar）。
+
 **懸置細節**
+- ⟨Q-02⟩ ❓ **待查證**（標 2026-07-06｜查 Meta、限制工程師｜複 2026-09-12）｜**Meta 傳出限制工程師使用 Claude**：原文節錄未提供具體來源連結、規模範圍或生效日期；已掃日報至 2026-08-29 無後續，官方頁面未查證
 - ⟨Q-01⟩ 已查證（2026-08-13）：非混淆，為同一組事實的正確引用——tech-insider.org 報導確認封鎖係「兩起爭議交會」的結果：(1) 資安研究者指出 Claude Code 更新曾內含可辨識中國地區用戶的隱藏邏輯（「後門」爭議，Anthropic 否認為監控工具，稱是已在淘汰中的窄範圍反濫用實驗）；(2) 即為 06-25 已記錄之 Anthropic 蒸餾攻擊指控（約 2.5 萬假帳號、2,880 萬次對話）。兩者並非各自獨立的「新理由」，而是同一封鎖決策的兩項並存成因（[Tom's Hardware](https://www.tomshardware.com/tech-industry/artificial-intelligence/alibaba-bans-anthropics-claude-code-after-an-alleged-hidden-china-detection-backdoor-is-uncovered-employees-told-to-switch-to-qoder-as-the-rift-between-the-firms-widens)；[tech-insider.org](https://tech-insider.org/ie/alibaba-bans-claude-code-2026/)）
 
 ---
@@ -133,10 +139,12 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 | 工具 | 企業採用數 | 趨勢 | 主要阻力 |
 |------|----------|------|---------|
 | Claude Code | 7 使用中（Amazon、UiPath、Rubrik、JFrog、Salesforce、Alberta 省政府、Samsung）+ 1 縮減中（Uber）+ 2 退出（Microsoft、Alibaba → Qoder） | ⚠️ 成本壓力 + Fable 5 封鎖衝擊 + 安全疑慮新增退出理由；✅ 政府與晶片設計案例出現具體量化成效（Alberta 4.66 億行/20hr；Samsung 晶片設計/驗證時程壓縮，惟仍會犯嚴重錯誤） | 缺乏企業層級預算管控；Fable 5 出口管制加速部分企業評估替代方案；Alibaba 案例顯示「疑似後門」指控也可能成為退出理由（指控未經證實），且已確認具體替代方案（Qoder） |
-| Claude API | 27（Apple、KPMG、iCapital、哈佛、Fujitsu、Travelport、Nimble Gravity、ZoomInfo、LG Group、AppFolio、Salesforce Claude API、TCS、DXC Technology、Atlassian、JPMorgan Chase 美國本部、Charleston Hospitality Group、Notion、加州州政府、Globant、DataArt、Okta、Grasshopper Bank、Cognizant、ICON、Payward、Duke University）+ 1 退出中（Lindy → DeepSeek） | 🟢 快速擴張（政府/合規/服務業縱深加深，新增醫療研究 CRO 產業、金融科技銀行、大型 IT 服務商全球首要夥伴、加密貨幣基礎設施、教育機構訂閱方案）；⚠️ 部分 API 客戶因成本敏感轉向競品 | — |
+| Claude API | 27（詳見下方「採用企業清單」）+ 1 退出中（Lindy → DeepSeek） | 🟢 快速擴張（政府/合規/服務業縱深加深，新增醫療研究 CRO 產業、金融科技銀行、大型 IT 服務商全球首要夥伴、加密貨幣基礎設施、教育機構訂閱方案）；⚠️ 部分 API 客戶因成本敏感轉向競品 | — |
 | GitHub Copilot | 1（Microsoft） | 🟢 Microsoft 背書 | 生態鎖定 |
 | OpenAI Codex | 2（Amazon、UiPath） | 🟢 快速成長 | — |
 | Cursor | 1（Uber） | ⚠️ 新創份額下滑 | 成本管控困難；企業級功能不如 Claude Code |
+
+**採用企業清單（Claude API，27）**：Apple、KPMG、iCapital、哈佛、Fujitsu、Travelport、Nimble Gravity、ZoomInfo、LG Group、AppFolio、Salesforce Claude API、TCS、DXC Technology、Atlassian、JPMorgan Chase 美國本部、Charleston Hospitality Group、Notion、加州州政府、Globant、DataArt、Okta、Grasshopper Bank、Cognizant、ICON、Payward、Duke University
 
 ---
 

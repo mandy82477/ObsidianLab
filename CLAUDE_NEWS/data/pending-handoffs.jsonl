@@ -21,3 +21,9 @@
 {"id": "H-9f3d35", "opened": "2026-08-29", "from": "商業", "to": "安全政策", "page": "wiki/topics/anthropic-government-policy.md", "note": "波士頓環球報報導 Anthropic 在麻州政界政治獻金與遊說支出增加，商業記者判斷主體屬政策遊說面，請評估是否收錄", "status": "open"}
 {"id": "H-2eb673", "opened": "2026-08-29", "from": "安全政策", "to": "功能", "page": "wiki/entities/claude-code.md", "note": "Claude Code Opus 5 Auto Mode 安全機制遭具名研究者 embracethered 繞過＋Cybernews 補實際惡意程式碼利用案例（已記於 ai-agent-safety 08-27～28），請評估是否同步已知問題／安全提醒", "status": "open"}
 {"id": "H-a32301", "opened": "2026-08-29", "from": "安全政策", "to": "模型", "page": "wiki/entities/fable-5.md", "note": "該頁 08-10 條目殘留「法官質疑聯邦供應鏈風險禁令正當性」的懸置敘述，本次 ingest 已確認終局判決（黑名單違法、即時解除），請同步狀態並加 wikilink 至 topics/anthropic-government-policy", "status": "open"}
+{"id": "H-70d575", "closed": "2026-08-29", "status": "done", "by": "模型", "result": "已補列mythos.md懸置標記（Fierce Healthcare/Project Glasswing，僅標題可用）"}
+{"id": "H-a32301", "closed": "2026-08-29", "status": "done", "by": "模型", "result": "已補fable-5.md終局判決段落，黑名單違法即時解除，同步anthropic-government-policy"}
+{"id": "H-9f3d35", "closed": "2026-08-29", "status": "done", "by": "安全政策", "result": "已收錄anthropic-government-policy.md州級AI規則倡議支線，新增目前局勢列+攻防紀錄+時序"}
+{"id": "H-2eb673", "closed": "2026-08-29", "status": "done", "by": "功能", "result": "已在claude-code.md新增已知問題條目（Auto Mode繞過+Cybernews在野利用案例）"}
+{"id": "H-723f42", "closed": "2026-08-29", "status": "done", "by": "功能", "result": "評估後判定不落在official-community-gap矩陣（全新硬體操作能力非既有痛點回應）；主編已依建議加入feature-radar，entities頁建立留待使用者裁示"}
+{"id": "H-1813db", "opened": "2026-08-29", "from": "人物", "to": "商業", "page": "topics/anthropic-business.md", "note": "第253行「Jensen Huang言論面另由人物記者評估」處補[[entities/jensen-huang]] wikilink，解決該人物頁僅index.md單一入鏈問題", "status": "open"}

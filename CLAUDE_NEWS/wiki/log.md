@@ -4496,3 +4496,47 @@ registry 加一組 sync_pair 釘住產出端與歸因端（只改一邊等於白
 **📌 待使用者裁示**
 - ⏰ 2026-08-31（剩 2 天）週用量促銷：08-28 已查官方原文確認日期仍有效，本次為 3g 重複命中，無需動作
 - **日報格式瑕疵**：兩則存量盤點條目把 `[存量盤點｜…]` 前綴原樣印進日報，違反 `.claude/commands/news-pipeline-steps.md`「前綴本身不可寫進日報」。但該前綴的**資訊**（出生日、本庫首次收錄）對讀者有價值——要改的是輸出還是規則？
+
+---
+
+## 2026-08-29 Lint（雲端排程執行）
+
+- 修正矛盾：`entities/claude-security.md` ⟨Q-01⟩ 與 `entities/claude-code.md` 07-24 已知問題事實不同步（後者早於08-10查證確認但未回掃），已補寫解釋並互加wikilink（功能記者）；`topics/community-tech-patterns.md` 誤稱 claw-orchestrator 已收錄於 tools.md「Trust／verification 層」（該分類不存在），已補列該工具並修正措辭（社群記者）
+- 補連結：無（六類記者逐頁 Grep 確認全數頁面皆有 inbound wikilink，無孤立頁；`entities/jensen-huang` 僅 index.md 單一入鏈已轉知商業記者 H-1813db，非結構性孤立）
+- 狀態更新：無（本輪 3c 掃描各 topics 頁最後新聞更新距今皆 ≤14 天或已於前次 lint 回升，無需下修；無 monitoring 頁滿足回升條件）
+- resolved 收尾：無
+- 新增 entities：無（Model Hardware Standard 達 feature-radar 收錄門檻已收錄，但屬全新產品線非既有頁延伸，是否另建 entities/ 頁列入待使用者裁示，依 4「只回報不動手」不自行建頁）
+- 呈現品質：模型 4/8 頁⚠️已修復（fable-5／mythos／opus-4-8／model-comparison 表格>120字元或callout過期）、功能 3/14 頁⚠️已修復+3頁📋待辦（claude-code/managed-agents/claude-skills表格>120字元逾百筆規模大另立專項）、商業 5/7 頁⚠️已修復（pricing/competitor-landscape/enterprise-tool-tracker/anthropic-business/ai-talent-flow表格短語化下沉）、安全政策 3/6 頁⚠️已修復（government-policy/ai-agent-safety表格下沉、commitments過期callout覆寫）、社群 3/7 頁⚠️已修復（patterns矛盾修正+discussions/tools短語化）、人物 0/16 頁全數✅通過
+- 入口層健檢：`entities/claude-code`（770行）、`entities/pricing`（660行）、`entities/opus-5`（≈370行）、`topics/anthropic-business`（846行）、`topics/anthropic-government-policy`（676行）、`topics/ai-agent-safety`（1107行）、`topics/coding-workflow-guide`（608行）、`topics/community-tech-patterns`（1637行）、`topics/community-tech-discussions`（1307行）、`topics/competitor-landscape`（646行）——十頁均已具備入口層，無需補結構；未發現語意分岔或死案候選，步驟3本輪跳過
+- 待查證回訪：已標訊約4筆（claude-security⟨Q-01⟩訊08-10、dario-amodei訊08-24、amir-salek訊08-24、pricing resale訊08-29）；已改新語法約8筆（商業5筆、社群1筆等，含補齊缺失標/查欄位）；證據不足不動約40餘筆（逐一核對14天news非過度解讀，含多筆已逾複查日仍無後續）；模型組19筆全數核對後本輪無筆可加訊
+- 規則檔健檢：
+  - 矛盾（6a）：本輪掃描（wiki/CLAUDE.md、wiki-ingest.md、wiki-ingest-format.md、wiki-reporter-shared.md、wiki-lint.md自身）與六位記者回報均無新增規則矛盾發現
+  - 引用驗證（6b）：7個錨點（首次出現欄／##痛點洞察／近期工具欄／##技術彙整／熱門討論表格／衍生欄／全覽表）逐一grep確認全部存在，全部通過
+  - 遵守率（6c）：抽樣近3次ingest（08-26／08-27／08-29）——feature-radar更新提及3/3✅、log格式正確（來源/更新頁面/摘要欄位）3/3✅；**呈現品質✅/⚠️/📋標記僅1/3明確出現（08-26有「呈現品質：六位記者皆回報✅通過」明文行，08-27／08-29改用表格式摘要後未再寫出該行）**，低於2/3門檻，⚠️待使用者確認：表格式摘要是否視為滿足此規則、或應要求補寫明文rollup行
+  - 過期規則（>60天）：`wiki-ingest-format.md`（04-25/05-15/06-11三條）、`wiki-ingest-features.md`（06-15/06-20兩條）、`wiki-ingest-commercial.md`（05-26/06-25兩條）、`wiki-ingest-safety-policy.md`（06-18一條）、`wiki-ingest-community.md`（05-16/06-20/06-28三條）、`wiki-ingest-community-lint.md`（06-19/06-28兩條）共11條（62–126天），逐一比對現行實踐（本輪六記者派工、頁面格式、報告契約）確認行為仍與規則描述一致，無需修訂
+  - 來源健康：近7天（08-22~08-29）sourceStatus全部ok=true，社群/媒體來源（HN/Reddit/Google News/GitHub/GitHub Issues/dev.to/Blogroll）均無連續3天count=0，官方/清冊來源count=0屬正常；記分卡（48天窗口）觀察名單延續：GitHub（Wilson下界17%／Presence 6%，樣本充足雙低，已連續第2週列入觀察）；⚠️未註冊slug `business-chief` 1筆延續未處理（已擱置1週）；Google News低信譽桶0筆
+  - 跨檔案語意矛盾（6f）：`python scripts/check_rules.py` 全部確定性檢查✅通過，同步配對註冊表全數語意一致；另發現13組高頻互引未登記sync_pair（warn-only提示，不阻塞，未強制登記）
+  - 成長迴路（月度）：非本月首次lint，跳過（本月已於08-01/08-08/08-15/08-22執行過）
+- 品質指標（6g）：
+  - ref覆蓋率（每週）：100%（08-23~08-29，26條列/26有歸因；08-28當日無news檔案不計入分母），閾值80%→✅通過
+  - 採用驗證率（月度）：非本月首次lint，跳過
+  - 外部死鏈（讀報告）：`data/link_health.json` checked_at 2026-08-21（距今8天，未過10天新鮮度門檻，仍新鮮）；4筆既有dead連結核對仍成立，均已由前次lint標註「（原文已失效）」，本輪無新增
+  - 趨勢判讀：持平（ref覆蓋率連續6期≥97%）
+- 跨家榜單週更（5b）：雲端egress封鎖，跳過（已固定由本機`/weekly`步驟0承接）
+- 逾期待查證清算（5c）：雲端egress封鎖，跳過（已固定由本機`/weekly`步驟0承接，額度5筆）
+- 讀者模擬：3題全數✅3跳內找到——「Auto Mode是否有安全問題」→index→entities/claude-code已知問題（2跳）；「跨session記憶社群驗證得怎樣」→index→topics/community-pattern-trends趨勢九（2跳）；「五角大廈黑名單案進展到哪」→index→topics/anthropic-government-policy目前局勢表（2跳）
+- lint自我遵守率：6/6位記者回報一次過（形狀層：逐項核對3a–3g＋轉知處置共8項均有明確結果，無缺項）
+- 行為層抽驗：抽商業記者「entities/pricing.md ⟨resale標記⟩已加訊2026-08-29」宣稱，`git diff`核對確認如實——訊欄位已加、內文補記08-29跟進且措辭正確標注「非新事實／原問題仍未解決」，未過度解讀。結果：符合宣稱
+- 懸置語法WARN：5c雲端跳過，隨之未執行（WARN掃描屬5c第1步盤點的一部分）
+- 熱度降溫（5a）：檢查72條（🔥🔥+），降57條（絕大多數為近4週零命中的Claude Code逐版更新/舊API公告條目，詳見wiki/feature-radar.md diff）；同步entities頁3處（opus-4-8🔥🔥🔥🔥🔥→🔥🔥🔥🔥、claude-tag🔥🔥→🔥、claude-for-teachers🔥🔥🔥→🔥🔥）；⏳逾期>90天3條：Proactive Workflows／Capability Curve已加註不重複處置，Dreaming記憶整合（114天）本輪因熱度降溫同步降級，既有「最後後續」註記功能等同不重寫。**本規則自2026-08-20立法後首次真正執行**
+- 歸因抽查（5d）：抽5筆（08-15/07-28/08-07/07-29/07-15，跨community-tech-patterns/ai-agent-safety/anthropic-business三頁），逐筆核對日報原文與wiki現文——**5筆全數相符，0修正、0無對應**。註：2筆Blogroll來源項目（Simon Willison部落格）在`news/*.md`當日檔案中查無對應條目（可能為Blogroll項目未進入日報markdown的既有處理路徑），但透過`data/source_attribution.jsonl`與wiki頁面連結交叉核對，內容忠實度確認無誤，非citation drift案例。**本規則自2026-08-28立法後首次真正執行**
+- 渲染層驗收：待web build完成後執行（見下方收尾閉迴路）
+- overview.md：已重寫（反映本輪08-23~08-29週：五角大廈黑名單終局判決、Auto Mode安全繞過揭露、IPO/商業敘事新數字、Model Hardware Standard、feature-radar熱度降溫首次執行、社群趨勢九升格）
+- 待使用者裁示：
+  - Model Hardware Standard是否建entities/頁（⏳ 已擱置0週，本輪新提）
+  - community-tech-patterns淘汰審查dry run：0條淘汰/0條合併/2條無法判斷（額度監控生態需查官方頁細節；Aharness 60天無後續但機制自洽）（⏳ 已擱置0週，本輪新提）
+  - 6c發現：呈現品質✅/⚠️/📋標記log明文rollup行從1/3降至（表格式摘要是否視為滿足規則，或應恢復明文行）（⏳ 已擱置0週，本輪新提）
+  - claude-code.md版本更新/歷史記錄表格（550–767行區間）逾百筆儲存格>120字元，規模過大不宜倉促處理，建議另立專項（⏳ 已擱置0週，本輪新提；managed-agents.md 5格、claude-skills.md 3格同型但規模小可隨附）
+  - 來源記分卡觀察名單：GitHub（Wilson下界17%／Presence 6%雙低）是否調整收錄門檻（⏳ 已擱置1週，08-22首次提出）
+  - 未註冊slug `business-chief`（安全政策記者08-21誤用媒體名，應為google-news）是否修registry（⏳ 已擱置1週，08-22首次提出）
+  - `[存量盤點｜…]`前綴誤印進日報：要改輸出還是規則（⏳ 已擱置1週，08-29 ingest首次提出，本次lint未處理）

@@ -25,7 +25,7 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 **狀態：** active（已被取代，次旗艦地位由 Opus 5 接手）
 **領域：** 🤖 模型
 **首次出現：** 2026-05-28
-**最後更新：** 2026-08-27
+**最後更新：** 2026-08-29
 **最後新聞更新：** 2026-08-27
 
 > **最新進展**（2026-08-27）
@@ -47,7 +47,7 @@ Claude Opus 4.8 於 2026-05-28 正式發布，同步推出 Dynamic Workflows（R
 
 | 項目 | 評分 |
 |------|------|
-| 社群熱度 | 🔥🔥🔥🔥🔥 |
+| 社群熱度 | 🔥🔥🔥🔥 |
 | 試用價值 | ⚡ 有條件推薦 |
 | 最適合 | 大型 agentic 任務、multi-step 工作流、需要 1M context 的長文件處理 |
 | 不適合 | 追求穩定性的生產環境（初期社群反映有行為退步）|
@@ -161,19 +161,19 @@ claude.ai 用戶現可調節 Claude 在任務上投入的努力程度，不再�
 
 | 日期 | 事件 |
 |------|------|
-| 2026-08-27 | GitHub Issue #77136 回報 Claude 4.7、4.8、5.0 與 Fable 日益預設重複修辭套路、難維持連貫散文，即使給明確風格指示仍難改善；106 則留言、517 個反應，尚無官方回應。完整記錄見 [[entities/opus-5]]（[GitHub Issue #77136](https://github.com/anthropics/claude-code/issues/77136)，2026-08-27） |
+| 2026-08-27 | GitHub Issue #77136：跨模型代際重複修辭套路問題（詳見上方「現況」與 [[entities/opus-5]]） |
 | 2026-07-25 | **✅ 官方證實：Claude Opus 5 正式發布**，取代 Opus 4.8 成為次旗艦、Claude Max 新預設模型、Claude Pro 最強模型；終結近兩週傳聞（詳見 [[entities/opus-5]]） |
 | 2026-07-24 | **Opus 5 傳聞通過截圖測試，未通過 API 合約測試**：指出流傳截圖看似可信，但缺乏可程式化驗證的 API 層級證據——已由隔日官方發布證實 |
 | 2026-07-23 | **Anthropic 正為潛在 Opus 5 推出做準備**：未提供具體時間或型號細節——已由 07-25 官方發布證實 |
 | 2026-07-21 | 舊「Qwen distillation」爭議經媒體重提，冠以「蒸餾雙標」框架，詳見下方懸置細節 ⟨Q-01⟩ |
 | 2026-07-20 | 市場傳聞 Anthropic 數日內將推出新 Claude Opus 型號——已由 07-25 官方發布證實 |
-| 2026-07-09 | **錯誤率一度升高（同日解決）**：Anthropic Status 通報 Claude Opus 4.8 出現 Elevated errors，於 03:50 UTC 確認問題已解決；同期 Reddit 用戶反映近期使用體驗轉佳，提及發布初期曾有不穩定（弱訊號，score 恆 0） |
-| 2026-06-24 | **第三方評測：Gemini 3.5 Flash 35.4 vs Opus 4.8 34.8 略勝**：RuntimeWire 對比評測中 Gemini 在四項任務贏三項；Claude 在 messy-orders-to-json 任務因輸出 Markdown code fence（違反 JSON-only 指令）失分；分析師評論失分屬指令遵循失誤，非能力差距（[runtimewire.com](https://runtimewire.com/article/head-to-head-anthropic-claude-opus-4-8-vs-google-gemini-3-5-flash)，HN score 3） |
-| 2026-06-24 | **跨平台高錯誤率事件**：Claude Opus 4.8 出現跨 API、Claude Code 與 Console 三個平台的高錯誤率（elevated errors），Anthropic 正在調查中（[dev.to](https://dev.to/damogallagher/claude-opus-48-is-seeing-elevated-errors-across-api-claude-code-and-console-1g9a)）；範圍較 6/22 事件更廣，影響 Claude Code 工作流用戶 |
-| 2026-06-22 | **529 Overloaded 事件**：Anthropic 官方確認 Opus 4.8 出現 elevated error rates（HTTP 529）；另有全球 90 分鐘中斷，Max Plan 用戶反映自上週起錯誤激增（[cybersecuritynews.com](https://cybersecuritynews.com/anthropic-claude-ai-outage/)、HN score 可見） |
-| 2026-06-22 | **Quake 瀏覽器版程序生成關卡**：開發者以 GitHub Copilot + Claude Opus 4.8 配合 id Software 原始碼編譯 WebAssembly 版本，加入程序生成關卡支援（[leereilly.net](https://leereilly.net/quakelike/)）；HN score 3 |
-| 2026-05-31 | Thinking 模式 context drain 量化：每輪最高 900K cache tokens（4.7 為 14K–34K，40–60 倍差距）；ultracode 70 agent 4 階段 pipeline 實測；引發費用可控性討論 |
-| 2026-05-30 | UltraCode 嚴重 bug 揭露：1.7M tokens 消耗無輸出，Anthropic 無退款；Qwen distillation 爭議（社群主流否定）；德語品質投訴；v2.1.158 Auto mode 擴展至 Bedrock/Vertex/Foundry |
+| 2026-07-09 | 錯誤率一度升高（同日解決）：03:50 UTC 確認已解決；同期 Reddit 反映近期體驗轉佳（弱訊號） |
+| 2026-06-24 | 第三方評測：Gemini 3.5 Flash 35.4 vs Opus 4.8 34.8 略勝，指令遵循失誤所致（詳見上方「社群評價」） |
+| 2026-06-24 | 跨平台高錯誤率事件：API、Claude Code、Console 三平台皆受影響，範圍較 6/22 更廣（詳見上方「社群評價」） |
+| 2026-06-22 | 529 Overloaded 事件：全球約 90 分鐘中斷，Max Plan 用戶錯誤激增（詳見上方「社群評價」） |
+| 2026-06-22 | Quake 瀏覽器版程序生成關卡：GitHub Copilot + Opus 4.8 編譯 WebAssembly 版本（[leereilly.net](https://leereilly.net/quakelike/)）|
+| 2026-05-31 | Thinking 模式 context drain 量化：每輪最高 900K cache tokens（4.7 僅 14K–34K），引發費用可控性討論 |
+| 2026-05-30 | UltraCode 嚴重 bug：1.7M tokens 消耗無輸出、無退款；Qwen distillation 爭議（主流否定）；v2.1.158 擴展至 Bedrock/Vertex/Foundry |
 | 2026-05-29 | v2.1.156 修復 thinking blocks 400 錯誤；社群混合反映（行為退步投訴 + 大型任務好評）|
 | 2026-05-28 | 正式發布，HN 1662 分；Dynamic Workflows Research Preview 同步推出；Fast Mode 降至前代 1/3 費用 |
 

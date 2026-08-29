@@ -24,13 +24,13 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 **領域：** 💼 商業
 **蒐集邊界：** 以與 Anthropic 相關的人才流動為主，另針對本主題定向補抓（每日至多 3 則）；其他實驗室之間、與 Anthropic 無關的異動仍可能延遲或缺漏，重大者由人工查證補記。
 **開始日期：** 2026-06-21
-**最後更新：** 2026-08-28
+**最後更新：** 2026-08-29
 **最後新聞更新：** 2026-08-27
 
 > **最新動態：Fortune 報導 Google DeepMind 頂尖人才流失情況持續**（2026-08-27）
 > Fortune 引述最新資料指出 Google DeepMind 近期持續流失頂尖 AI 人才至競爭實驗室與新創公司，延續本頁自 2026-06 以來記錄的「Google DeepMind 淨流出」格局；具體人數、流向對象、統計期間未見報導細節，僅標題與部分內文可用（推論，待後續補充具名案例）。
 > **08-21/08-23 已記錄之 Anthropic 延攬 Google 自研晶片計畫創辦人 Amir Salek**，仍為本頁近期重點，詳見「對各公司的影響」表。
-> **待查證項目仍未有後續**：08-14 Sergey Brin 內部談話報導（標題截斷）截至今日日報仍無新進展。
+> **待查證項目仍未有後續**：08-13 Sergey Brin 內部談話報導（標題截斷）已掃日報至 2026-08-29 無後續；官方頁面未查證。
 
 ## 摘要
 
@@ -42,9 +42,13 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 
 | 公司 | 角色 | 具體影響 | 評估 |
 |------|------|---------|------|
-| **Google DeepMind** | 淨流失方＋高層動盪 | 兩週內連失 Jumper（科學/生物）、Adler（AI 編碼）、Pritzel（訓練）、額外 2 位資深研究員（6/28），另有一名研究員轉投 OpenAI；市值蒸發約 $2,700 億美元；Gemini 3.5 Pro 延期至七月（推論）；被迫重組 AI 編碼突擊隊。**08-05／08-06**：Hassabis 卸任 DeepMind CEO 轉任 Alphabet 首席科學家（留任集團，非離職）；Jeff Dean、Sanjay Ghemawat、Oriol Vinyals、Quoc Le 離職創辦 Discovery Loop（PBC，Dean 任 CEO，**Alphabet 亦為投資方**），市值影響各家估 1,600–2,000 億美元（盤中估算區間）；Kavukcuoglu 升任 DeepMind SVP；**08-27（Fortune）**：新數據顯示人才流失情況持續，具體人數與流向未見細節（推論）| 🔴 傷在痛點＋領導層可見度雙重打擊：技術核心（Attention 論文八作者至此全數離開 Google）與高層治理同步震盪，儘管此波未直接流向 Anthropic，仍削弱 Google 作為對手的組織穩定性訊號（推論）；已查證（2026-08-13，TechCrunch 一手） |
-| **Anthropic** | 主要承接方 | 補強科學計算（Jumper / AlphaFold）、AI 編碼（Adler）、模型訓練（Pritzel）、安全/經濟（FT 經濟學家）等多方向縱深；**08-21/08-23 新增晶片自研人才**——延攬 Amir Salek（Google 自研晶片計畫創辦人，Google TPU 專案創始人物之一） | 🟢 訊號 > 實質（研究員流動一貫評估）；晶片人才屬**性質不同的新戰場**——若屬實，代表 Anthropic 招募已從「模型能力」擴及「硬體自主設計」，與既有 Samsung 代工洽談、AMD/Micron 投資路線同屬降低 Nvidia 依賴的布局，惟具體職位、團隊規模、時程仍未見報導細節，戰力影響待觀察（推論）|
+| **Google DeepMind** | 淨流失方＋高層動盪 | Jumper／Adler／Pritzel／+2 研究員出走（6/21–6/28）＋ Discovery Loop 創業潮（08-05/06）；市值蒸發約 $2,700 億美元；08-27 Fortune：流失持續（詳見下方細節） | 🔴 技術核心＋高層治理雙重動盪，削弱 Google 組織穩定性訊號（推論，已查證 2026-08-13）|
+| **Anthropic** | 主要承接方 | 科學計算（Jumper）／AI 編碼（Adler）／訓練（Pritzel）／安全經濟；08-21/23 新增晶片人才 Amir Salek（前 Google TPU 計畫創辦人）| 🟢 訊號 > 實質；晶片人才屬性質不同的新戰場，若屬實代表招募擴及硬體自主設計（推論，細節待觀察）|
 | **OpenAI** | 次要承接方 | 獲得一名 Google 頂尖研究員（6/23 SEJ 報導，姓名未具名）| 🟡 同步受惠於 Google 人才外流，規模小於 Anthropic |
+
+**對各公司的影響細節**
+- **Google DeepMind**：兩週內連失 Jumper（科學/生物）、Adler（AI 編碼）、Pritzel（訓練）、額外 2 位資深研究員（6/28），另有一名研究員轉投 OpenAI；市值蒸發約 $2,700 億美元；Gemini 3.5 Pro 延期至七月（推論）；被迫重組 AI 編碼突擊隊。**08-05／08-06**：Hassabis 卸任 DeepMind CEO 轉任 Alphabet 首席科學家（留任集團，非離職）；Jeff Dean、Sanjay Ghemawat、Oriol Vinyals、Quoc Le 離職創辦 Discovery Loop（PBC，Dean 任 CEO，**Alphabet 亦為投資方**），市值影響各家估 1,600–2,000 億美元（盤中估算區間）；Kavukcuoglu 升任 DeepMind SVP；**08-27（Fortune）**：新數據顯示人才流失情況持續，具體人數與流向未見細節（推論）。評估：傷在痛點＋領導層可見度雙重打擊——技術核心（Attention 論文八作者至此全數離開 Google）與高層治理同步震盪，儘管此波未直接流向 Anthropic，仍削弱 Google 作為對手的組織穩定性訊號（推論）；已查證（2026-08-13，TechCrunch 一手）。
+- **Anthropic**：補強科學計算（Jumper / AlphaFold）、AI 編碼（Adler）、模型訓練（Pritzel）、安全/經濟（FT 經濟學家）等多方向縱深；**08-21/08-23 新增晶片自研人才**——延攬 Amir Salek（Google 自研晶片計畫創辦人，Google TPU 專案創始人物之一）。評估：訊號 > 實質（研究員流動一貫評估）；晶片人才屬**性質不同的新戰場**——若屬實，代表 Anthropic 招募已從「模型能力」擴及「硬體自主設計」，與既有 Samsung 代工洽談、AMD/Micron 投資路線同屬降低 Nvidia 依賴的布局，惟具體職位、團隊規模、時程仍未見報導細節，戰力影響待觀察（推論）。
 
 **懸置細節**
 - ⟨Q-01⟩ 已查證（2026-08-13）：市值蒸發數字獲多方分析佐證（因統計時間窗不同，單月人才出走批次估算 $225B–270B，累計一個月內達 $425B）；Gemini 3.5 Pro 延期主因，據報導引述 DeepMind 內部說法，為「內部效能目標未達標，缺口集中在 coding 能力」，方向與人才流失（AI 編碼研究員出走）一致，但 Google 官方未直接承認兩者因果關係，故延期「肇因於人才流失」本身仍屬情境佐證下的合理推論，非官方確認（[The Agent Report](https://the-agent-report.com/2026/07/google-gemini-3-5-pro-delayed-july-2026/)；[FourWeekMBA](https://fourweekmba.com/ai-google-gemini-35-pro-delayed-coding-gap/)）
@@ -65,8 +69,8 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 ### 2026-08-23（具名確認，延續 08-21）
 - **The Times of India：具名確認 Anthropic 延攬 Google 自研晶片計畫創辦人 Amir Salek**：延續 08-21 已記錄之「前 Google 晶片工程師」（未具名，Seeking Alpha／Bloomberg），本則首次具名確認為 **Amir Salek**——Google 自研晶片計畫（custom chip programme）創辦人，即 Google TPU 專案創始人物之一。**對戰力與市場意涵**：與本頁既有以研究員流動為主的追蹤格局不同，此案屬**晶片設計人才**流入，且延攬對象非一般工程師而是曾主導 Google 整條自研晶片專案的創始層級人物，顯示 Anthropic 自研晶片布局（見 [[topics/anthropic-business]]「戰略合作」表 08-05～07 已記錄之內部晶片設計團隊籌建）可能取得具備從零打造整條晶片專案經驗的核心人才；具體職位、加入時間、團隊規模、與既有晶片團隊籌建進度的銜接關係均未見報導細節，僅標題層級資訊（推論）（Google News/The Times of India）
 
-### 2026-08-13（❓ 待查證，Topic Watch 專頁定向抓取）
-- **Sergey Brin 在 Hassabis 卸任 DeepMind CEO 後對內部員工發表談話（標題截斷，內容未知）**：Times of India 標題稱 Google 共同創辦人 Sergey Brin 在 Demis Hassabis 卸任 DeepMind CEO 後對內部員工發表談話，標題本身遭 RSS 截斷為「Catch u...」，具體談話內容、發表場合均未見報導。**與既有記錄的關係**：本頁已於 08-05／08-06 事件（08-13 查證補記，見下方）記錄 Hassabis「卸下 DeepMind 日常營運、轉任 DeepMind 董事長兼 Alphabet 首席科學家（留任集團，非離職）」；本則標題用詞「exits as CEO」與該既有記錄方向一致（確實卸任 CEO 職務，但留任集團），惟無法排除為另一波後續發展或純粹是同一事件的重新報導角度，因標題截斷、正文未提供，暫不逕自合併或視為新增獨立事實，待後續報導補充談話內容後再評估是否需更新 08-05／08-06 條目（Google News/Times of India）
+### 2026-08-13（Topic Watch 專頁定向抓取）
+- ❓ **待查證**（標 2026-08-13｜查 Sergey Brin｜複 2026-09-12）｜**Sergey Brin 在 Hassabis 卸任 DeepMind CEO 後對內部員工發表談話（標題截斷，內容未知）**：Times of India 標題稱 Google 共同創辦人 Sergey Brin 在 Demis Hassabis 卸任 DeepMind CEO 後對內部員工發表談話，標題本身遭 RSS 截斷為「Catch u...」，具體談話內容、發表場合均未見報導。**與既有記錄的關係**：本頁已於 08-05／08-06 事件（08-13 查證補記，見下方）記錄 Hassabis「卸下 DeepMind 日常營運、轉任 DeepMind 董事長兼 Alphabet 首席科學家（留任集團，非離職）」；本則標題用詞「exits as CEO」與該既有記錄方向一致（確實卸任 CEO 職務，但留任集團），惟無法排除為另一波後續發展或純粹是同一事件的重新報導角度，因標題截斷、正文未提供，暫不逕自合併或視為新增獨立事實。已掃日報至 2026-08-29 無後續；官方頁面未查證（Google News/Times of India）
 
 ### 2026-08-05／08-06（補記於 2026-08-13）
 - **Google DeepMind 高層轉任＋核心研究員出走創業，Alphabet 股價重挫**：Demis Hassabis 卸任 Google DeepMind CEO，轉任 Alphabet 首席科學家兼 DeepMind 董事長——**留任 Alphabet 集團，非離職**。同時 Jeff Dean（Google 27 年資深、首席科學家）、Sanjay Ghemawat（Google Brain 共同創辦人）、Oriol Vinyals、Quoc Le 離開 Google，共同創辦自動化科學研究新創 **Discovery Loop**；《Attention Is All You Need》八位作者至此全數離開 Google。Alphabet 股價盤中一度下跌約 5%（各家媒體估市值影響 1,600–2,000 億美元，屬盤中估算區間、非定值）。**Discovery Loop 為 public benefit corporation，Dean 出任 CEO，投資方含 Radical Ventures 與 Khosla Ventures 共同領投、Kleiner Perkins、Lightspeed、Doerr Capital，以及 Alphabet 本身**——集團同時是「被離開方」與「出資方」，此案性質介於人才流失與集團支持的 spin-out 之間（推論）。同期 Koray Kavukcuoglu 升任 DeepMind SVP。**與本頁核心追蹤格局的關係**：此波離職者流向獨立新創 Discovery Loop，非流向 Anthropic 或其他前沿實驗室，故不直接改變「Google DeepMind 淨流失、Anthropic 主要承接」的既有格局，但顯示 Google 高層與技術核心的動盪已從「單點人才流失」擴大至「創業出走潮」層級（推論）；流向 Anthropic 的研究員（Adler、Pritzel、Jumper）為更早的獨立批次，非本次事件的一部分。主編已於 2026-08-13 以 TechCrunch 原始報導交叉查證創辦人名單、公司結構與投資方（CNBC／Axios 原文 403 擋爬，改以 TechCrunch 一手報導與多方彙整佐證；市值數字各家不一致故以區間記錄）；補漏原因：Google News query 以 Anthropic/Claude 為中心詞，本次事件報導標題以 Google 視角為主，未被既有 query 命中（主編判讀，屬 pipeline 覆蓋缺口而非日報無報導）。（[TechCrunch（一手查證）](https://techcrunch.com/2026/08/05/jeff-dean-and-other-top-ai-researchers-are-leaving-google-to-launch-their-own-startup/)；其餘起點來源：[CNBC](https://www.cnbc.com/2026/08/05/google-is-expanding-its-ai-empire-and-losing-the-people-who-built-it.html)；[Axios](https://www.axios.com/2026/08/06/googles-ai-leadership-shuffle)）

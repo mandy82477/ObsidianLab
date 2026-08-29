@@ -94,8 +94,9 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 
 > 按主題分組；各組內大致依回報時間倒序。每條開頭的狀態標記回答「現在還會發生嗎」：🔴 未修復 / ✅ 已修復（註明修復版本）/ ⛔ 官方拒修 / ❓ 待查證。
 
-### 🛡️ 安全與隱私（11 條未修復、3 條已修復、1 條拒修）
+### 🛡️ 安全與隱私（12 條未修復、3 條已修復、1 條拒修）
 
+- 🔴 **未修復**｜**Opus 5 Auto Mode 安全機制遭具名研究者繞過，並有實際惡意程式碼利用案例（embracethered／Simon Willison／Cybernews，2026-08-27～08-28）**：資安研究者 embracethered（經 simonwillison.net 轉載，2026-08-27）公布可繞過 Claude Code Opus 5「Auto Mode」（低監督／高自動化預設權限模式）安全機制、誘使 agent 在未經授權情況下執行任意程式碼的攻擊手法；Cybernews（2026-08-28）補充至少一起實際遭惡意程式碼利用的在野案例，顯示此繞過手法已從概念驗證進入實際濫用階段。屬產品層安全（權限／沙箱繞過）問題，非模型層問題；官方尚未公開回應或提供修補說明。與既有 v2.1.216／v2.1.223 修補的 Auto Mode 繞過（見下方「已修復」條目）屬相關但不同批次的發現。事件完整分析見 [[topics/ai-agent-safety]]
 - 🔴 **未修復**｜**功能請求：OAuth 與其他第三方流程可設定外部 URL 白名單（GitHub issue #27263，累積 52 則留言、131 個讚，2026-08-17）**：使用者呼籲 Claude Code 開放可設定的外部 URL 白名單機制，套用於 OAuth 登入與其他需要導向第三方網域的流程，讓企業可控管允許連線的網域範圍；官方尚未回應或排入路線圖。
 - 🔴 **未修復**｜**已通過 CVP 審核的組織在 Claude Code 中再度被資安防護機制誤擋（GitHub issue #84352，累積 141 則留言、22 個讚，2026-08-12 首見，2026-08-23 留言數更新，今日全站已知問題互動量最高）**：已通過 Anthropic Cyber Verification Program（CVP）審核的 Claude.ai 組織，回報在 Claude Code 中仍再度觸發 cyber safeguard 攔阻，顯示 CVP 核准狀態未能在 Claude Code 端同步生效；Verification Portal 現況原文於截斷處未見完整說明；官方尚未回應。
 - 🔴 **未修復**｜**Claude Code 送出的 User-Agent 字串夾帶使用者真實 email（GitHub Issue #78431，經 Hacker News 轉發 38 分，2026-08-11）**：2026-08-22 直查 issue 頁確認——回報**已補上可重現條件**：v2.1.212、macOS、IntelliJ IDEA、Anthropic API、Sonnet 5.0，回報者標明為**回歸**（舊版本無此行為），官方已掛 `bug`／`area:security`／`area:networking` 標籤。**但 issue 仍為 open、無 assignee、無官方回覆、無關聯 PR，亦未見任何版本 changelog 提及修復**。此前本頁標「真實性尚待查證」——現已可確認事件為真、標籤獲官方分類，未解的是修復進度而非事件本身（[Issue #78431](https://github.com/anthropics/claude-code/issues/78431)，2026-08-22 查證）。

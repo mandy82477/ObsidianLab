@@ -25,7 +25,7 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 **狀態：** active
 **領域：** 👤 人物
 **首次出現：** 2026-04-25
-**最後更新：** 2026-08-28
+**最後更新：** 2026-08-29
 **最後新聞更新：** 2026-08-27
 
 > ❓ **待查證**（標 2026-08-25｜查 airline industry、marketing and safety）｜**Fortune 評論比較 Anthropic 安全論述與航空業經驗**（2026-08-24 報導）：Fortune 發表評論文章〈What Anthropic's Dario Amodei can learn from the airline industry's lesson on marketing and safety〉，以航空業在行銷與安全議題上的經驗為借鏡，討論 Dario Amodei 可以從中學到什麼；僅標題可用，具體論點與建議內容未見報導。
@@ -117,7 +117,7 @@ Dario Amodei 是 Anthropic 共同創辦人兼執行長（CEO），與 [[entities
 > ❓ **待查證**（標 2026-08-14｜查 Amodei's Wife、Winding Road to the Top｜訊 2026-08-22）｜**媒體聚焦 Dario Amodei 妻子的人物側寫**（2026-08-14 報導）：WSJ 與 The Information 同日發布深度報導，聚焦 Dario Amodei 妻子在網路上幾乎沒有公開資訊一事，並探討她對 Anthropic 內部可能的影響力；這兩篇報導本身內容停留在標題層級，未展開其姓名或具體職務內容。**後續**（2026-08-18）：The Week 發布人物側寫〈Cami Clark: the Anthropic CEO's wife and 'first lady' of AI〉，首次在標題層級公開其姓名「Cami Clark」，稱其為 AI 界的「第一夫人」；惟報導本身仍為單一標題層級來源，對 Anthropic 內部具體影響力等細節仍未展開，查證狀態維持待確認。**後續**（2026-08-22）：Ynetnews 刊出同題人物側寫〈Meet Cami Clark, the 'first lady of AI' shaping Anthropic and Dario Amodei behind the scenes〉，第三家媒體重複「AI 界第一夫人」定性與「幕後影響 Anthropic 與 Dario Amodei」描述；原文摘要僅為連結樁，具體職稱、事件、引述內容仍未見報導，查證狀態維持待確認。
 
 - 2026-08-14：WSJ（經 Google News 轉載）與 The Information 同日分別發布聚焦 Dario Amodei 妻子的人物側寫報導——WSJ 標題〈Even Claude Is in the Dark About Dario Amodei's Wife—and Her Influence at Anthropic〉，探討她在網路上幾乎沒有公開資訊，以及她對 Anthropic 內部可能的影響力；The Information 標題稱其為 Anthropic 的「'First Lady'」，聚焦其「a winding road to the top」的職涯歷程。同一事件另有 Hacker News 轉發版本（直連 wsj.com），留言中一則暗示其與 Eric Schmidt 有私人關係、藉此清空網路個資的說法為留言者主觀嘲諷，**未經任何來源證實，不採信為事實**。這兩篇報導正文本身內容停留在標題層級，未展開其姓名或具體職務內容，查證狀態見上方標記（來源：Google News／WSJ、Google News／The Information、Hacker News）
-> ❓ **待查證**（標 2026-08-10｜查 Axios、Yahoo Finance）｜**人才招募疑慮延燒**（2026-08-07 報導）：Axios 報導（經 Yahoo Finance 轉載）稱 Dario Amodei 據稱憂心新進員工只為高薪而非公司使命加入 Anthropic，並對照公司同期開出年薪 32-40 萬美元的活動企劃負責人職缺，遠高於市場行情；為二手轉述，具體發言未經證實。
+> ❓ **待查證**（標 2026-08-10｜查 Axios、Yahoo Finance｜訊 2026-08-24）｜**人才招募疑慮延燒**（2026-08-07 報導）：Axios 報導（經 Yahoo Finance 轉載）稱 Dario Amodei 據稱憂心新進員工只為高薪而非公司使命加入 Anthropic，並對照公司同期開出年薪 32-40 萬美元的活動企劃負責人職缺，遠高於市場行情；為二手轉述，具體發言未經證實。**後續**（2026-08-24）：Axios 獨家報導（news/2026-08-24、2026-08-25 兩則跟進）證實 Anthropic 面試流程中會直接詢問候選人如何看待「使命」與「金錢」的優先順序，甚至問「若公司未來因安全考量放棄 AI 願景導致股票歸零，你會作何感受」；此為公司官方招募實務的獨立報導，與 08-07 憂慮傳言方向一致，但仍未直接證實 Dario Amodei 本人的具體發言場合與逐字稿，查證狀態維持待確認。
 
 - 2026-08-07：Axios 報導（經 Yahoo Finance 轉載）稱 Dario Amodei 據稱憂心新進員工僅為薪資而非公司使命加入 Anthropic，與 08-03 Techmeme／The Next Web 報導同一主題的後續補充；報導另附帶對照——公司同期開出一則活動企劃負責人（brand marketing events lead）職缺，年薪達 32-40 萬美元，遠高於同類職位市場行情；具體發言場合與逐字稿仍未能取得（查證狀態見上方標記）（來源：Hacker News 50分／Yahoo Finance／Axios）
 > ❓ **待查證**（標 2026-08-10｜查 The Information、Silicon Valley）｜**The Information 深度剖析**（2026-08-06 報導）：發布《How Dario Amodei Spread Anthropic's Religion and Stirred Up Silicon Valley》，探討其個人影響力與外界對 Anthropic 企業文化的觀感；原文僅標題層級資訊可用，暫無具體引述內容。

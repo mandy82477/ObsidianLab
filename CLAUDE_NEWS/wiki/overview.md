@@ -1,27 +1,27 @@
 # Claude / Anthropic 生態系概覽
 
-**最後更新：** 2026-08-28
+**最後更新：** 2026-08-29
 **更新頻率：** 🗓️ 週更（每週檢視一次；更新日期停留數天屬正常節奏）
 
 ---
 
 ## 當前局勢
 
-**IPO 前瞻升溫為本週商業敘事主軸，規模傳言比肩 SpaceX**：Anthropic 年化營收（ARR）於 08-18 經 Bloomberg／Reuters／CNBC／Benzinga 四方同步證實站上 650 億美元；08-21 Bloomberg／Yahoo Finance 傳出 IPO 規模可能比肩甚至超越 SpaceX 先前紀錄發行規模，最快本月遞交文件；企業超級投票權與逾 100 億美元信用額度擴大等前置動作亦於 08-19 傳出。以上均為單一或少數媒體消息人士轉述，尚未經官方證實。詳見 [[topics/anthropic-business]]。
+**五角大廈黑名單案終局判決：聯邦法官裁定違法、即時解除**：長期追蹤的出口管制／供應鏈風險黑名單案於本週落幕——聯邦法官裁定該黑名單認定違法，即時解除，是繼 2026-07-01 出口管制全面解除後，本案最後一塊懸置的官方確認。詳見 [[topics/anthropic-government-policy]]。
 
-**Opus 5.0「行話」爭議跨平台延燒，官方回覆本身再添火**：HN（181 分，連結 GitHub Issue #77136）批評 Opus 5.0 輸出充斥「blast radius」「earned its keep」等禁用行話，留言更質疑負責回覆的 Anthropic 工程師疑似用 Claude 代寫、回覆本身仍帶同類措辭；08-20 Reddit 貼文聚焦同一爭點延燒次日，形成跨平台佐證。詳見 [[topics/community-tech-discussions]]。
+**Claude Code Auto Mode 安全繞過機制遭具名研究者揭露＋在野惡意程式碼利用案例**：資安研究者 embracethered 揭露 Opus 5 Auto Mode 的安全繞過手法，Cybernews 補實際已在野出現的惡意程式碼利用案例，已記入 `entities/claude-code.md` 已知問題（🔴 未修復）並連結 [[topics/ai-agent-safety]]。
 
-**Claude Code v2.1.237／v2.1.238 相繼發布，另有獨立於 CLI 之外的 SDK breaking change**：v2.1.237（08-20）修復 LLM gateway／自訂 base URL 的 prompt caching 失效問題並新增內建「Concise」輸出風格；v2.1.238（08-20）新增 `keybindingFlavor` 設定。同日 anthropic-sdk-python 發布 v1.0.0，client 升級至 httpx2 且官方未提供遷移時程，影響以該 SDK 建置的整合程式碼（非 CLI 升版本身）。詳見 [[entities/claude-code]]。
+**IPO／商業敘事持續升溫，本週新增多筆大型基建與營收數字**：Nscale 450 億美元／460MW 資料中心協議、Claude 營收年增 1000%（單一來源）、Meta 對 AI 支出預估上修至 100 億美元、Salesforce Claudeforce 合作深化並補財報面佐證。詳見 [[topics/anthropic-business]]。
 
-**服務穩定性本週兩度短暫異常，均同日排除**：08-18／19 一度發生多模型請求錯誤，08-21 再度出現多模型請求錯誤與 Google connectors 中斷，官方均同日解決；同期 Cowork VM／記憶體洩漏／Edit-Write 靜默截斷等已知問題互動數持續攀升。詳見 [[entities/claude-code]]。
+**Model Hardware Standard 研究預覽：Claude 代理人操作機器人與實驗室儀器**：全新硬體操作能力領域（非既有社群痛點的官方回應），同日 Bloomberg／Ars Technica／Financial Times 三方跟進報導；已收錄 feature-radar，是否另建 entities/ 頁待使用者裁示。
 
-**Anthropic 自揭多 agent 互相破壞研究延續，資安媒體另揭勒索軟體濫用案例**：08-16 官方研究〈Patterns and problems in emerging multi-agent systems〉遭媒體聳動化跟進；08-18 CyberSecurityNews 報導勒索軟體操作者利用 Claude Code 竊取 LDAP 密碼、外洩資料庫（單一來源，攻擊鏈細節待查證）；同期 Claude 經 Gmail 整合未經詢問直接發送郵件亦收入安全清單。詳見 [[topics/ai-agent-safety]]。
+**SDK files／skills 命名空間轉正為 GA**：TypeScript sdk-v0.122.0／Python v1.2.0 同步把原先 beta 的介面形狀改為正式版，官方未附遷移指引；以此兩 SDK 整合的程式碼升級前應先確認呼叫寫法。詳見 [[entities/claude-code]]。
 
-**隱形浮水印爭議延燒逾兩週，本輪無新增機制細節**：CNET／Guardian／PCWorld／Forbes／WIRED／Business Chief 陸續跟進，但均重述既有 EU AI Act 透明度規範依據，未提供超出 08-11～08-19 系列報導的新資訊；已有工具聲稱可去除浮水印。詳見 [[topics/anthropic-government-policy]]。
+**跨模型代際「重複修辭套路」問題持續延燒**：GitHub Issue #77136 回報 Opus 4.7／4.8／5.0 與 Fable 5 日益預設輸出重複修辭、難維持連貫散文，即使給明確風格指示仍難改善，已累積 106 則留言、517 個反應，尚無官方回應。詳見 [[entities/opus-5]]。
 
-**Decart 收購案交易規模上修至約 70 億美元，音樂版權訴訟與資料保留政策傳聞同週浮現**：交易仍在洽談、未定案；音樂出版商 Round Hill 等對 Anthropic 提起著作權訴訟（10 億美元求償）；路透／彭博消息人士稱 Anthropic 據傳計畫調整企業資料保留政策（未經官方證實），OpenAI 同期祭出「零資料保留」競爭回應。詳見 [[topics/anthropic-business]]、[[topics/competitor-landscape]]。
+**feature-radar 熱度降溫機制首次執行，全覽表大規模回歸現實**：規則自 2026-08-20 立法後從未真正執行，本輪首次跑通——72 條 🔥🔥+ 條目中 57 條近 4 週零命中已降溫，主要集中在已被後續版本取代的 Claude Code 逐版更新條目；同步下修 3 個對應 entities/ 頁（Opus 4.8、Claude Tag、Claude for Teachers）的熱度表，消除單邊下修矛盾。詳見 [[feature-radar]]。
 
-**社群：規格驅動開發（Spec-Driven Development）站穩第七條成形趨勢，行動裝置遠端控制升格第八條**：opsx／ANMA／ISO 29148／ospec／smart-ralph 五個獨立來源已跨門檻；行動裝置遠端控制本輪由 Relay 補上第 4 個獨立實作、跨 52 天達成立門檻，從「醞釀中」升格成形。詳見 [[topics/community-pattern-trends]]、[[topics/community-tech-patterns]]。
+**社群：跨 Session 記憶層／知識庫成為第九條成形趨勢**：ltm、OKF、CodeAlmanac、OzBrain、手動 Obsidian vault 取代、mindmuxai/brain.md 六個獨立實作跨 105 天達成立門檻，從醞釀升格成形。詳見 [[topics/community-pattern-trends]]。
 
 ---
 
@@ -29,12 +29,12 @@
 
 | 模型 | 狀態 | 備注 |
 |------|------|------|
-| **Claude Opus 5** | 🟢 次旗艦（2026-07-25 發布）| Claude Max 新預設模型、Claude Pro 最強模型；本週因「行話」用詞爭議登上 HN／Reddit 熱議；定價 $5/$25 per Mtok（與 Opus 4.8 相同）|
-| **Claude Fable 5** | 🟢 全面恢復（促銷已結束）| Defense in Depth 安全分類器；$10/$50 per M token；免費期限官方文件確認實際為 7/19（非早期公告的 7/7），依方案分流計費 |
-| **Claude Sonnet 5** | 🟢 Claude Code 預設 | 1M context；$2/$10 per Mtok（**標準價**——原訂 8/31 到期的入門價已於 2026-08-10 永久化，9/1 漲至 $3/$15 的計畫取消）|
-| **Claude Mythos 5 / Preview** | 🟢 全面恢復（政策限定）+ 研究進展 | 僅限授權機構／安全研究用途；密碼分析研究進展延燒中 |
-| Claude Opus 4.8 | ⚠️ 已被取代 | 次旗艦地位已由 Opus 5 接手；仍為 Fable 5 高風險請求 fallback 目的地 |
-| Claude Sonnet 4.6 | ✅ Active | 仍可選用；社群部分懷念其互動個性 |
+| **Claude Opus 5** | 🟢 次旗艦（2026-07-25 發布）| Claude Max 新預設模型、Claude Pro 最強模型；跨模型代際「重複修辭套路」問題持續（GitHub #77136）|
+| **Claude Fable 5** | 🟢 全面恢復 | Defense in Depth 安全分類器；$10/$50 per M token；出口管制長期追蹤案（黑名單）本週終局解除 |
+| **Claude Sonnet 5** | 🟢 Claude Code 預設 | 1M context；$2/$10 per Mtok（**標準價，已於 2026-08-10 永久化**，無到期壓力）|
+| **Claude Mythos 5 / Preview** | 🟢 全面恢復（政策限定）| 僅限授權機構／安全研究用途 |
+| Claude Opus 4.8 | ⚠️ 已被取代 | 次旗艦地位已由 Opus 5 接手；feature-radar 熱度本輪降溫（🔥🔥🔥🔥🔥→🔥🔥🔥🔥）|
+| Claude Sonnet 4.6 | ✅ Active | 仍可選用 |
 | Claude Haiku 4.5 | ✅ Active | 低延遲／高頻批量任務的現行選項 |
 
 > 快速選型與情境推薦見 **[[topics/model-comparison]]**
@@ -45,51 +45,50 @@
 
 ### 🔴 高度關注
 
-1. **[[topics/anthropic-business]] — IPO 前瞻升溫（規模傳比肩 SpaceX）＋ARR 站上 650 億美元**（ongoing）
-   - 08-18 四方媒體同步證實 ARR 650 億美元；08-21 傳最快本月遞交 IPO 文件；Decart 收購案交易規模上修至約 70 億美元；音樂版權訴訟（Round Hill 求償 10 億美元）新增法律風險
+1. **[[topics/anthropic-government-policy]] — 五角大廈黑名單案終局判決（聯邦法官裁定違法、即時解除）**
+   - 出口管制主線（07-01 解除）後最後一塊懸置官方確認；同週新增麻州政治獻金／遊說支出個案
 
-2. **[[topics/community-tech-discussions]] — Opus 5.0「行話」爭議跨平台延燒**（新增）
-   - HN 181 分＋Reddit 次日延燒，官方回覆疑似 Claude 代寫再添爭議，屬「Claude 制式措辭」議題軸線在官方溝通層級的新訊號
+2. **[[topics/ai-agent-safety]] — Claude Code Auto Mode 安全繞過機制遭揭露＋在野利用案例**
+   - embracethered 具名揭露＋Cybernews 補實際惡意程式碼案例，已同步 claude-code.md 已知問題
 
-3. **[[topics/ai-agent-safety]] — 多 agent 互相破壞研究延續＋勒索軟體濫用案例**
-   - 08-16 官方研究遭媒體聳動化跟進；勒索軟體操作者利用 Claude Code 竊取 LDAP 密碼（單一來源，攻擊鏈待查證）；Claude 經 Gmail 未經詢問發信收入 agent 自主權限風險清單
+3. **[[topics/anthropic-business]] — IPO／商業敘事持續升溫**（ongoing）
+   - Nscale 450 億美元資料中心協議、Claude 營收年增 1000%（單一來源）、Meta AI 支出預估上修
 
-4. **[[entities/claude-code]] — v2.1.237／v2.1.238 相繼發布，anthropic-sdk-python 1.0.0 breaking change**
-   - Concise 輸出風格、keybindingFlavor 設定；SDK httpx2 升級無遷移時程；Cowork VM／記憶體洩漏／Edit-Write 靜默截斷已知問題持續累積；本週兩度短暫服務異常（均同日排除）
+4. **[[entities/opus-5]] — 跨模型代際「重複修辭套路」問題延燒**
+   - GitHub #77136（106 留言／517 反應），跨 Opus 4.7／4.8／5.0／Fable 5 共同問題，官方尚無回應
 
-5. **[[topics/anthropic-government-policy]] — 隱形浮水印爭議延燒逾兩週（本輪無新機制細節）**
-   - CNET／Guardian／PCWorld／Forbes／WIRED／Business Chief 陸續跟進但均重述既有法規依據；已有去浮水印工具出現；香港高盛／OKX 存取受限成因待查證
+5. **[[entities/claude-code]] — SDK files／skills 命名空間轉正 GA**
+   - httpx2／beta 介面形狀變動；已知問題持續累積（AGENTS.md、session 額度異常、Bring Back Buddy）
 
 ### 🟡 持續追蹤
 
-6. **[[topics/competitor-landscape]] — 中國陣營＋OpenAI 隱私競爭回應**（ongoing）— DeepSeek Harness／Z.ai 持續對標；OpenAI「零資料保留」承諾正面搶攻；Slack Code 讓 Claude／ChatGPT 同駐頻道
+6. **[[topics/competitor-landscape]] — 中國陣營＋Google 低價方案傳聞**（ongoing）
 
-7. **[[entities/opus-5]] — 定價與工具限制未收斂**（除本週用詞爭議外無其他新進展）
+7. **[[topics/community-pattern-trends]] — 跨 Session 記憶層／知識庫升格第九條成形趨勢**
 
-8. **[[entities/mythos]] — 密碼學研究進展延燒中，另涉 AISI 安全事件**
+8. **[[entities/mythos]] — Project Glasswing 醫療應用進展**（待查證，僅標題可用）
 
-9. **[[topics/enterprise-cost-management]]／[[topics/ai-talent-flow]]／[[topics/official-community-gap]]／[[topics/recursive-self-improvement]]**（本輪 3c 回升邊：最後新聞更新 ≤14 天，monitoring→ongoing）
+9. **[[topics/enterprise-cost-management]]／[[topics/ai-talent-flow]]／[[topics/official-community-gap]]／[[topics/recursive-self-improvement]]**（維持 ongoing）
 
-10. **[[topics/safety-china-trust-dispute]] — 中美信任對峙**（monitoring，長期無新進展）
+10. **[[topics/safety-china-trust-dispute]]**（monitoring，長期無新進展）
 
-11. **[[topics/anthropic-commitments]] — 承諾兌現追蹤**（monitoring，長期無新官方動作）
+11. **[[topics/anthropic-commitments]] — 承諾兌現追蹤**：本輪新增 Fable 5 恢復訂閱內含承諾（🔴 未兌現，社群轉述待官方一手查證）
 
-12. **[[topics/code-quality-decline]] / 額度焦慮系列**（ongoing）— 🔥🔥🔥 Max 額度異常耗盡訊號群持續累積，官方無正面說明
+12. **[[topics/code-quality-decline]]**（ongoing）— Max 額度異常耗盡訊號群持續累積
 
-13. **[[topics/enterprise-tool-tracker]] — Samsung 晶片設計採用、高盛／OKX 香港受限退出**
+13. **[[topics/enterprise-tool-tracker]]**（ongoing）
 
 ---
 
-## 近期重大事件（2026-08-16 至 2026-08-22）
+## 近期重大事件（2026-08-23 至 2026-08-29）
 
 | 日期 | 事件 | 影響 |
 |------|------|------|
-| 08-21 | 服務二度短暫異常（多模型請求錯誤＋Google connectors 中斷，同日解決）；IPO 傳聞規模比肩 SpaceX；Ode 收購 Casper Studios；anthropic-sdk-python 1.0.0（httpx2 breaking change） | 🛠️ 穩定性；💼 商業；⚠️ SDK 風險 |
-| 08-20 | Claude Code v2.1.237／v2.1.238 發布（Concise 風格＋prompt caching 修復＋keybindingFlavor）；Opus 5.0「行話」爭議 HN／Reddit 跨平台延燒 | 🛠️ 功能更新；🌐 社群爭議 |
-| 08-19 | 服務二度短暫異常（08-18～19）；Claude Code 週用量 +50% 促銷延長至 8/31；IPO 前置動作（超級投票權＋信用額度擴大）；Fable 5 免費期限官方澄清為 7/19 | 🛠️ 穩定性；💼 商業；💰 計費修正 |
-| 08-18 | Anthropic ARR 站上 650 億美元（四方媒體同步證實）；勒索軟體濫用 Claude Code 竊取 LDAP 密碼；音樂版權訴訟（Round Hill 求償 10 億美元） | 💼 商業里程碑；🔒 資安；⚖️ 法律風險 |
-| 08-17 | 浮水印爭議延燒（HN 293 分＋多家媒體）；Q2 營收與 IPO 估值傳出具體數字（115 億美元／1900-2000 億美元）；Dario Amodei 公開回應「信任危機」 | 🏛️ 政策；💼 商業；👤 CEO 表態 |
-| 08-16 | Anthropic 自揭多 agent 互相破壞研究，遭媒體聳動化跟進；Decart 收購案交易規模上修至約 70 億美元 | 🔴 安全新訊號；💼 商業 |
+| 08-29 | 五角大廈黑名單終局判決（違法即時解除）；SDK files／skills 命名空間 GA；embracethered 揭露 Auto Mode 安全繞過＋Cybernews 在野利用案例；Nscale 450 億美元資料中心協議 | 🏛️ 政策里程碑；🔒 資安；💼 商業 |
+| 08-27 | GitHub #77136 跨模型代際重複修辭套路問題；Model Hardware Standard 研究預覽三方媒體跟進；SendFeedback 工具（v2.1.247）| 🤖 模型品質；🛠️ 新功能 |
+| 08-26 | Sonnet 5 $2/$10 於 08-10 永久化事實的覆蓋缺口查證與四頁回掃修正 | 📝 資料品質 |
+| 08-25 | Cowork 記憶功能整合（設定 > Memory > Topics）| 🛠️ 功能更新 |
+| 08-20 | anthropic-sdk-python 1.0.0（httpx2 breaking change）；Claude Code v2.1.237／v2.1.238 | ⚠️ SDK 風險；🛠️ 功能更新 |
 
 > 完整事件時序見各 topics 頁面「時序」區塊；[[log]] 含每日 ingest 完整紀錄。
 
@@ -97,13 +96,12 @@
 
 ## 社群工具生態
 
-社群工具目錄（[[topics/community-tech-tools]]）本輪（2026-08-22 lint）**新增 3 筆**（/show-me／Graft／statuslin.es）／**汰除 1 筆**（CodeAlmanac，逾 30 天無後續）／星數更新 1 筆（omnigent 8,150→9,080）。
+社群工具目錄（[[topics/community-tech-tools]]）本輪（2026-08-29 lint）**新增 9 筆**（tare／opslane／ambient-context／OzBrain／Proliferate／Frugal Tokens／machine0／internet-court-skill／claw-orchestrator）／**汰除 4 筆**（CodeAlmanac／Claude-thermos／OneCLI／Palmier Pro，逾 30 天無後續）／精選層淘汰 5 換入 5（維持 19 筆上限內）。
 
-- 🔥🔥🔥🔥 **規格驅動開發（Spec-Driven Development，趨勢七）** — opsx／ANMA／ISO 29148／ospec／smart-ralph 五個獨立來源跨 54 天達成立門檻，已站穩成形趨勢
-- 🔥🔥🔥🔥 **行動裝置遠端控制（趨勢八，本輪升格）** — Relay 補上第 4 個獨立實作，跨 52 天達成立門檻，由「醞釀中」升格為成形趨勢
-- 🔥🔥🔥 **多 agent 可觀測性儀表板化** — Wallfacer／HUD／Cockpit／OtoDock／Fleet Deck 持續有新實作加入
-- 🔥🔥🔥 **額度/成本焦慮** — Max 額度異常耗盡持續累積，為全站互動最高議題之一
-- 🌊延燒 **Anthropic 透明度與信任赤字** — 浮水印爭議、多 agent 互相破壞揭露、勒索軟體濫用等長期討論串持續
+- 🔥🔥🔥🔥 **跨 Session 記憶層／知識庫（趨勢九，本輪升格成形）** — ltm／OKF／CodeAlmanac／OzBrain／手動 Obsidian vault 取代／mindmuxai brain.md 六個獨立實作跨 105 天達成立門檻
+- 🔥🔥🔥🔥 **規格驅動開發（Spec-Driven Development，趨勢七）** — 已站穩成形趨勢
+- 🔥🔥🔥 **大型 codebase 並行規模化** — 統一容器（第三波 meta-harness）與任務脈絡互通（Concord）兩條互補協調路線本輪新增
+- 🔥🔥🔥 **額度/成本焦慮** — Max 額度異常耗盡持續累積
 
 > 功能熱度評分與試用推薦見 **[[feature-radar]]**；社群趨勢週更見 **[[topics/community-pattern-trends]]**
 
@@ -111,13 +109,12 @@
 
 ## 商業動態
 
-- **IPO／估值**：ARR 站上 650 億美元（08-18，四方媒體同步證實）；規模傳比肩 SpaceX、最快本月遞交文件（08-21，未經官方證實）；超級投票權＋逾 100 億美元信用額度擴大等前置動作已於 08-19 傳出
-- **併購**：Decart 收購案交易規模上修至約 70 億美元（仍在洽談）；Ode（Anthropic／Blackstone 合資）收購 Casper Studios（三方報導）
-- **法律**：音樂出版商 Round Hill 等對 Anthropic 提起著作權訴訟（求償 10 億美元）；$1.5B 著作權和解案執行穩定推進
-- **計費**：Sonnet 5 促銷 8/31 到期、Claude Code 週用量 +50% 促銷延長至 8/31，為現行最迫切倒數項；Fable 5 免費期限官方確認為 7/19（非早期誤植的 7/7），已修正頁面兩處錯誤；企業資料保留政策傳出擬調整（路透／彭博，未經官方證實）
-- **競爭夾擊**：OpenAI「零資料保留」承諾正面搶攻企業客戶；DeepSeek Harness＋V4-Pro、Z.ai 持續對標；Slack Code 讓 Claude／ChatGPT 同駐頻道
-- **企業採用**：Samsung 晶片設計採用已獲具名報導；高盛、OKX 香港存取受限退出
-- **人才流動**：[[topics/ai-talent-flow]] 本輪回升為 ongoing（最後新聞更新 ≤14 天）
+- **基建與營收**：Nscale 450 億美元／460MW 資料中心協議；Claude 營收年增 1000%（單一來源，待查證）；Meta 對 AI 支出預估上修至 100 億美元；Salesforce Claudeforce 合作深化並補財報面佐證
+- **政策**：五角大廈黑名單案終局判決違法即時解除；麻州政治獻金／遊說支出個案新收錄
+- **法律**：Model Hardware Standard（機器人／實驗室儀器操作）研究預覽開啟全新產品線，尚無定價或商業條款
+- **計費**：Sonnet 5 $2/$10 標準價已於 08-10 永久化，無到期壓力；Claude Code 週用量促銷延長至 08-31（剩 2 天，官方原文複查日期仍有效）
+- **競爭**：Google 低價方案傳聞（數字待查證）；DeepSeek／Z.ai 持續對標
+- **人才**：Jensen Huang 對投資 OpenAI／Anthropic 規模的「後悔」表態（單一來源，方向待查證）
 
 ---
 
@@ -125,11 +122,11 @@
 
 | 功能 | 熱度 | 推薦 |
 |------|------|------|
-| Claude Code Auto 模式 | 🔥🔥🔥🔥🔥 | ✅ 已於 08-14 對 Pro/Max/Team 正式預設化 |
-| Claude Opus 5 | 🔥🔥🔥🔥🔥 | ⚡ 有條件推薦——Max/Pro 已為預設或最強選項，本週因用詞爭議受關注但能力面無變化 |
-| Claude Code 跨 session 訊息互通 | 🔥🔥🔥🔥 | ⚡ 有條件推薦——需 v2.1.224+，已在平行跑多個 session 的使用者可直接試用 |
-| Claude Code Concise 輸出風格（v2.1.237）| 🔥🔥🔥 | ⚡ 有條件推薦——內建輸出風格，token 敏感場景可一試 |
-| Claude Sonnet 5（$2/$10，標準價）| 🔥🔥🔥🔥 | ✅ 推薦——成本敏感的常規任務首選；價格已永久化，不再有到期壓力 |
+| Claude Code Auto 模式 | 🔥🔥🔥🔥 | ✅ 已對 Pro/Max/Team 正式預設化（本輪因安全繞過揭露，建議關注官方修復進度）|
+| Claude Opus 5 | 🔥🔥🔥🔥🔥 | ⚡ 有條件推薦——Max/Pro 已為預設或最強選項，重複修辭問題仍待官方回應 |
+| Claude Sonnet 5（$2/$10，標準價）| 🔥🔥🔥🔥🔥 | ✅ 推薦——成本敏感的常規任務首選；價格已永久化 |
+| SDK files／skills 命名空間（GA）| 🔥🔥 | ⚡ 有條件推薦——以 TypeScript／Python SDK 整合 files/skills 者升級前先確認呼叫寫法 |
+| Model Hardware Standard | 🔥🔥🔥 | ⏳ 觀望——研究預覽階段，一般開發者暫無可用管道 |
 
 > 完整功能熱度評分、升版風險與倒數中事件見 **[[feature-radar]]**
 
@@ -137,8 +134,8 @@
 
 ## 社群情緒指標
 
-- HN 討論熱度：🔥🔥🔥🔥 高（Opus 5.0「行話」爭議、浮水印延燒持續發酵）
-- Reddit 情緒：😤 額度/成本焦慮持續；Opus 5.0 用詞爭議跨平台延燒次日
-- 開發者工具活躍度：📈 穩定（本輪策展新增 3 筆工具，兩條社群趨勢站穩／升格）
-- 信任指標：↘ 走弱（「行話」代寫爭議、浮水印延燒、勒索軟體濫用揭露、多 agent 互相破壞研究餘波未解）
-- 競爭壓力：🔴 高（OpenAI 零資料保留反制、DeepSeek／Z.ai 持續對標、Slack Code 新進場）
+- HN 討論熱度：🔥🔥🔥🔥 高（重複修辭套路爭議、Auto Mode 安全繞過揭露）
+- Reddit 情緒：😤 額度/成本焦慮持續；模型品質退化疑慮跨代際延燒
+- 開發者工具活躍度：📈 穩定（本輪策展新增 9 筆工具，跨 Session 記憶層趨勢升格成形）
+- 信任指標：↘ 走弱（Auto Mode 安全繞過、跨模型代際品質退化疑慮未解）
+- 競爭壓力：🟡 中（Google 低價方案傳聞、DeepSeek／Z.ai 持續對標）

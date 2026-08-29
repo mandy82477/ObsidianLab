@@ -3,11 +3,11 @@ page: "topics/community-large-codebase-workflow"
 kind: "topic"
 status: "ongoing"
 domain: "🌐 社群"
-last_updated: "2026-08-22"
-last_news_update: "2026-08-22"
+last_updated: "2026-08-29"
+last_news_update: "2026-08-29"
 update_freq: "🗓️ 週更（每週從模式庫沉澱一次；更新日期停留數天屬正常節奏）"
 status_main: "ongoing"
-days_since_news: 7
+days_since_news: 0
 inbound_links: 26
 attribution_count: 2
 attribution_last: "2026-08-05"
@@ -25,11 +25,11 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 **領域：** 🌐 社群
 **更新頻率：** 🗓️ 週更（每週從模式庫沉澱一次；更新日期停留數天屬正常節奏）
 **開始日期：** 2026-05-02
-**最後更新：** 2026-08-22
-**最後新聞更新：** 2026-08-22
+**最後更新：** 2026-08-29
+**最後新聞更新：** 2026-08-29
 
-> **本週答案變動**（2026-08-22）
-> 「Context / Token」線：grep 搜尋輸出成為第四種被盯上的裁剪對象（Graft，宣稱降 42% token），補入「工具輸出裁剪」子問題；惟宣稱本身遭社群質疑為未驗證數字。其餘三條線本週無新節點，答案不變。
+> **本週答案變動**（2026-08-29）
+> 「並行規模」線補上「任務脈絡互通」（Concord）與統一容器（meta-harness 第三波）兩條互補協調路線，另有 fork 子代理疑似重送整段對話歷史（未經官方證實）同時放大本線與「Context / Token」線的規模上限問題。「索引與記憶」線三則新實作分走零依賴檔案式、手動取代官方記憶、團隊共享三條路線，尚無交叉比較；「除錯與分工」本週無新節點。
 
 ---
 
@@ -39,7 +39,7 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 
 | 主線 | 一句話問題 | 現在的答案 |
 |------|-----------|-----------|
-| 1. 並行規模 | 幾個 agent 同時跑會互踩？ | 每 agent 一個 git worktree；先從 10–20 個驗證協調機制 |
+| 1. 並行規模 | 幾個 agent 同時跑會互踩？ | 每 agent 一個 git worktree；統一容器與任務脈絡互通是兩條互補的協調路線 |
 | 2. Context / Token | context 怎麼不被大 repo 撐爆？ | 不預先加載、按需取回；變笨先測量再歸因 |
 | 3. 索引與記憶 | agent 怎麼記得住跨 session 的決策？ | repo 才是記憶體——決策外化成 CLAUDE.md／spec／ADR，本地索引按需查 |
 | 4. 除錯與分工 | 多 agent 產出誰把關？ | 審查者唯讀＋工具範圍限制；跨模型交叉審查有量化效益 |
@@ -53,18 +53,20 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 **現在的答案**
 - 每個 agent 一個 git worktree（或等價的檔案系統隔離）——沒有獨立工作空間，並行必崩
 - 先從 10–20 個 agent 驗證協調機制；每次倍增規模重新驗證，不要線性外推
-- 平行 agent 的 commit 用本地合併佇列依序建置、測試、合併，不要各分支各自觸發 CI
+- 協調有兩種互不取代的型態：統一容器（meta-harness 換底層 agent 不必重寫協作邏輯）與任務脈絡互通（Concord 讓各自獨立的 agent 像 Slack 一樣互相知會，不吃底層 agent）
 
-**還沒解決**：官方 20 路並行、創始人「每晚數千子代理」與社群實測「4→20 就崩」之間的落差沒人系統驗證（推論）。監控多 agent 進度的儀表板很多，但沒有定論做法。
+**還沒解決**：官方 20 路並行、創始人「每晚數千子代理」與社群實測「4→20 就崩」之間的落差沒人系統驗證（推論）。fork 子代理疑似每次工具呼叫重送整段對話歷史（四個平行子代理耗 200 萬 token）若屬實，是規模上限的新增放大源，未經官方證實。
 
 | 子問題 | 社群走到哪 | 代表實作 | 證據強度 |
 |---|---|---|---|
 | 隔離 | OS 帳號隔離 → git worktree 成共識，並工具化、動態化 | Claudette、Superset、cc-fleet 等 | 多來源 |
-| 規模上限 | 4→20 崩潰主因：git lock／DB 連線競爭、context 洩漏、無協調層 | 《Why 20 Instances Break Down》、1000 fan-out 教學 | 單一深度分析 |
+| 規模上限 | 4→20 崩潰主因：git lock／DB 連線競爭、context 洩漏、無協調層；fork 子代理疑似重送整段歷史再添一個未量化放大源 | 《Why 20 Instances Break Down》、Reddit fork 子代理回報 | 單一深度分析＋單一回報（存疑）|
+| 統一容器（第三波） | 08-05／08-09／08-27 三批同類專案湧現，非單一事件而是持續性社群方向 | omnigent、loopx＋HarnessFlow、opencodex／metaharness／claw-orchestrator | 已成趨勢 |
+| 任務脈絡互通 | 不取代底層 agent，讓多個獨立 agent 共享任務脈絡，定位近「agent 間 Slack」 | Concord（MCP） | 單一實測（今日首見）|
 | 可觀測性 | 32 天內 6 個獨立儀表板；分「讀官方 event stream」與「自解析 transcript」兩路 | HUD、Cockpit 等，見 [[topics/community-pattern-trends]] 趨勢六 | 已成趨勢 |
 | 落地整合 | 本地合併佇列（4–5 agent／日 90 commit／8GB 筆電） | 單一作者實測 | 單一實測 |
 
-**為什麼會這樣**：規模一大，共享資源（git、DB）與 context 邊界最先破，所以隔離原語最早收斂；協調層與整合序列化是隔離做好之後才暴露的下一層瓶頸；人工盯進度撐不住，才催生一批儀表板。
+**為什麼會這樣**：規模一大，共享資源（git、DB）與 context 邊界最先破，所以隔離原語最早收斂；協調層本身正在分岔成「統一容器」與「脈絡互通」兩條互補而非互斥的路線；人工盯進度撐不住，才催生一批儀表板。
 
 ---
 
@@ -75,7 +77,7 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 - 「變笨」先量 context 組成再怪工具——MCP 工具清單、CLAUDE.md、headless 冷啟動都是可量的固定成本
 - CLAUDE.md 每行都是對每個請求課的「context 稅」：依觸發頻率決定放 CLAUDE.md／skill／hook／docs 哪一層
 
-**還沒解決**：「該裁多少」沒有跨案例統一標準，多為個別作者自訂閾值；圖片化 context（pxpipe）與 grep 輸出裁剪（Graft）都只有單一案例，且 Graft 的降幅宣稱本身遭社群質疑。
+**還沒解決**：「該裁多少」沒有跨案例統一標準，多為個別作者自訂閾值；圖片化 context（pxpipe）與 grep 輸出裁剪（Graft）都只有單一案例，且 Graft 的降幅宣稱本身遭社群質疑。fork 子代理若真的每次工具呼叫重送整段對話歷史，裁剪的是工具輸出、放大的卻是對話歷史本身——屬於此前未被量測過的另一種撐爆來源。
 
 | 子問題 | 社群走到哪 | 代表實作 | 證據強度 |
 |---|---|---|---|
@@ -85,6 +87,7 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 | CLAUDE.md 取捨 | 四層寄放地依觸發頻率；載入順序（CLAUDE.local.md 後載、受管理原則檔各 OS 路徑不同） | 「該裝什麼」「載入順序」兩篇 | 單一深度分析 |
 | 固定成本量測 | `claude -p` 未加 `--bare` 冷啟動約 15 萬 token，多 agent pipeline 反覆呼叫會放大 | headless 冷啟動實測 | 單一實測 |
 | 工具輸出裁剪 | 高頻高輸出來源逐一被盯上：grep 搜尋輸出宣稱可削減 42% token，但 benchmark 段落遭質疑 AI 代寫，數字未經第三方驗證 | Graft | 單一實測（存疑）|
+| 子代理歷史重送 | fork 子代理每次工具呼叫疑似重送整段對話歷史，四個平行子代理耗約 200 萬 token；機制未經官方證實 | Reddit 回報 | 單一回報（存疑）|
 | 非主流方向 | 清程式碼內 AI 殘留註解（CCN，2,700 次迭代自陳）；文字 context 渲染成圖片（pxpipe） | CCN、pxpipe | 推論 |
 
 **為什麼會這樣**：大 repo 的檔案量與工具輸出量本身就超過 context，任何「多讀一點保險」的直覺都會撐爆；於是社群的每一步都是在把「哪裡吃了 token」變成可量測的數字，再針對數字最大的那塊裁——但量測本身的可信度也需要驗證，不是每個宣稱的百分比都經得起檢視。
@@ -98,17 +101,20 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 - 本地優先的索引（向量 DB／圖資料庫／SQLite／純 Markdown）按需語義查詢，不把全部記憶塞進 context
 - 「什麼不該再做」也要記——已否決方案沒進 agent 可讀的知識源，agent 會重做一次
 
-**還沒解決**：跨工具可攜（ltm／OKF）仍是少數派；「codebase 文件自動維護」只有 CodeAlmanac 一例；「已否決方案索引」停在問題點名、無工具。
+**還沒解決**：跨工具可攜（ltm／OKF）仍是少數派；「codebase 文件自動維護」只有 CodeAlmanac 一例；「已否決方案索引」停在問題點名、無工具。三個近期實作路線各走各的（零依賴檔案式、手動策展取代官方、團隊共享），尚無交叉比較或共識收斂。
 
 | 子問題 | 社群走到哪 | 代表實作 | 證據強度 |
 |---|---|---|---|
 | 統一框架 | Repo-as-Memory：決策外化；跨 repo 依賴圖需另注入（`nx graph` 等） | Repo-as-Memory、Cross-repo Blast Radius | 單一深度分析＋推論 |
 | 本地索引 | 向量 DB（39ms 檢索）／圖資料庫／SQLite session 索引／Markdown+git，各走一路 | Memex、session-indexer、Iantha 等 | 多來源 |
+| 零依賴檔案式 | 決策／需求／限制三類專案層級資訊，CLI 直存檔案不依賴外部服務 | mindmuxai/brain.md（504★）| 單一實測 |
+| 取代官方記憶 | 主張使用者手動策展比官方自動記憶更可控、更可信賴 | 手動維護 Obsidian vault（LLM Wiki 形式） | 單一實測 |
+| 團隊共享 | 鎖定「跟著使用者走」而非留在人類設計的筆記/任務管理系統 | OzBrain（HN 69）| 單一實測 |
 | 可攜性 | Markdown 規則檔不跨工具 → JSON 協定或格式規約 | ltm、OKF | 單一實測 |
 | 文件自動維護 | codebase wiki 隨對話自動更新，取代手維護 MANUAL.md | CodeAlmanac | 單一實測 |
 | 否決方案索引 | 「已被否決」只在人腦或討論串 → 隱形重工 | 概念性觀察 | 推論 |
 
-**為什麼會這樣**：跑了數月、數百 session 的 repo，agent 每次重「猜」已知答案既費 token 又重蹈覆轍；社群的共同答案是把記憶從模型搬到 repo 與本地索引，差別只在用什麼形式存、跨不跨工具。
+**為什麼會這樣**：跑了數月、數百 session 的 repo，agent 每次重「猜」已知答案既費 token 又重蹈覆轍；社群的共同答案是把記憶從模型搬到 repo 與本地索引，差別只在用什麼形式存、跨不跨工具、以及要不要索性繞過官方記憶機制。
 
 ---
 

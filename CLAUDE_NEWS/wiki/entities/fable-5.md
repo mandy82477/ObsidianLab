@@ -49,7 +49,7 @@ Claude Fable 5 是 Anthropic 於 2026-06-09 發布的旗艦模型，為**史上�
 | Output 定價 | $50 / 百萬 token |
 | Context Window | 1,000,000 token |
 | 最大 Output | 128,000 token |
-| 免費期限 | 已於 2026-07-19 到期；此後 Max／Team premium 標配（週用量 50% 內）、Pro／Team standard 走 usage credits（官方已確認），見 [[entities/pricing]]（原至 06-22，經多次延長，見「歷史記錄」）|
+| 免費期限 | 已於 2026-07-19 到期；後續分流見下方「配額與計費過渡」與 [[entities/pricing]] |
 
 ## 熱度與試用價值
 
@@ -227,6 +227,8 @@ claude --model claude-fable-5-20260609
 
 #### 2026-07-31
 **法官質疑聯邦政府「供應鏈風險」禁令正當性，與 Fable 5 出口管制為不同政策線**（2026-08-10 官方/媒體查證）：Hacker News 轉載 Bloomberg 報導《Judge Voices Doubt US Has Justified Its Ban on Anthropic AI》，查得全文確認：聯邦法官 Rita F. Lin 認為川普政府未充分證明將 Anthropic 列為「供應鏈風險」的正當性，稱以「Anthropic 公開批評國防部」作為禁令理由「令人憂慮」；爭議根源是 Anthropic 與美國國防部合約談判破裂，Anthropic 拒絕其 AI 被用於大規模監控或致命武器鎖定／開火決策。此案為**聯邦機構採購/使用限制爭議**，與 Fable 5 晶片**出口管制**（已於 2026-07-01 解除）是兩條獨立政策線，不應合併記錄；與 2026-06-24 Legion 提告出口管制令一案是否同一訴訟程序仍未經證實，不可逕自合併。完整法律論證內容與政策脈絡由安全政策記者於 [[topics/anthropic-government-policy]] 追蹤（[Bloomberg](https://www.bloomberg.com/news/articles/2026-07-30/judge-voices-doubt-us-has-justified-its-ban-on-anthropic-ai)、[HN 討論](https://news.ycombinator.com/item?id=49117486)，2026-07-30/31）。
+
+**終局判決（2026-08-28，🔴→✅ 結案）**：Rita F. Lin 法官裁定國防部「供應鏈風險」黑名單違法且毫無根據，即時解除禁令；The Register 指出黑名單當初所依據的 Claude「能力」實際上並不存在，為判決翻案的關鍵理由之一（Reuters／Washington Post，2026-08-28）。此案終局結果與 Fable 5 晶片出口管制（已於 2026-07-01 解除）仍是兩條獨立政策線，本則僅摘記模型面關聯；完整判決分析、後續 Anthropic 與國防部合作動向見 [[topics/anthropic-government-policy]]「## 目前局勢」與「## 三個戰場」🪖 軍事合約段落。
 
 #### 2026-07-24
 **GitHub Issue #79337 持續追蹤：reaction 增至 13 個 + 新技術細節「已儲存模型 claude-fable-5[1m]」**：07-20 首次回報的 Max 方案誤判事件持續有讀者互動，reaction 數由 10 個增至 13 個（留言數維持 35 則、暫無更新資料）；本次追蹤新揭露受影響帳號的已儲存模型設定為 `claude-fable-5[1m]`，即 1M context 變體，有助釐清受影響的具體模型設定範圍。官方已於 07-20 確認為誤判並建議重啟，此結論未變，計費/配額面向由商業記者於 [[entities/pricing]] 記錄（[GitHub Issues](https://github.com/anthropics/claude-code/issues/79337)，2026-07-24 01:16 UTC）。
