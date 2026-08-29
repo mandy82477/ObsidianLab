@@ -41,18 +41,28 @@ def _cron_hour(expr: str) -> int:
     return int(expr.split()[1])
 
 
-class TestScheduleSurvivesDelay(unittest.TestCase):
-    def test_earliest_run_still_lands_before_the_cloud_routine(self):
-        """最早那班 ＋ 可容忍延遲，必須仍早於雲端 routine 開跑。
+class TestScheduleIsNotLoadBearing(unittest.TestCase):
+    """排程延遲不該是正確性問題。
 
-        這是整個修法的核心不變式。2026-08-29 之前只有 10:00 一班，10+12=22 > 13，
-        所以 11 小時級的延遲一來就開天窗。
-        """
-        earliest = min(_cron_hour(c) for c in _crons())
-        self.assertLessEqual(
-            earliest + TOLERATED_DELAY_H, ROUTINE_HOUR_UTC,
-            f"最早的 cron 在 {earliest}:00 UTC，加上可容忍延遲 {TOLERATED_DELAY_H}h "
-            f"會落在 {earliest + TOLERATED_DELAY_H}:00，晚於 routine 的 {ROUTINE_HOUR_UTC}:00")
+    2026-08-27／08-28 連兩天日報開天窗，起因是 GitHub 排程延遲 10–11 小時、穿透
+    3 小時緩衝。當時的修法是加一個 00:00 UTC 保險窗——那是在對抗症狀。根因是
+    下游把 TARGET_DATE 取自時鐘、又要求它等於資料的日期，等於強迫兩個各自排程的
+    工作落在同一個 UTC 日；任一邊延遲，那天的日報就永久消失。
+
+    根因已修在 `docs/cloud-runbooks/daily.md`（TARGET_DATE 由資料決定），保險窗
+    因此移除。這裡不再釘「排程要多早」——那是在維護一個不該存在的耦合。
+    """
+
+    def test_the_downstream_no_longer_ties_target_date_to_the_clock(self):
+        """根因的所在地：若有人把 TARGET_DATE 改回時鐘，排程延遲會再度變成
+        永久資料遺失，而 workflow 這邊看不出任何異狀。"""
+        runbook = (REPO_ROOT / "docs" / "cloud-runbooks" / "daily.md").read_text(encoding="utf-8")
+        self.assertIn("TARGET_DATE = `src/gathered_items.json` 的 `date` 欄位", runbook)
+        self.assertIn("不是** `date -u +%F`", runbook)
+
+    def test_a_schedule_still_exists(self):
+        """根因修好不代表可以不抓料。"""
+        self.assertTrue(_crons())
 
 class TestDataActuallyLands(unittest.TestCase):
     def test_push_retries_with_rebase(self):

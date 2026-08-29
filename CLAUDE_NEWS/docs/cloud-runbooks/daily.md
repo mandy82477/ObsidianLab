@@ -6,13 +6,19 @@
 
 你執行的是「GitHub Actions 抓料 + 雲端 routine 做 LLM」分裂架構的**第二段**（架構全貌見 `docs/daily-automation.md`）。第一段（抓新聞）已由 GitHub Actions 完成並把資料 commit 進 repo，**你不重複抓料**——雲端 egress 被封鎖，抓也抓不到。
 
-TARGET_DATE = `date -u +%F`。
+TARGET_DATE = `src/gathered_items.json` 的 `date` 欄位，**不是** `date -u +%F`。
+
+抓料與本 routine 是兩個各自排程的工作。用時鐘當 TARGET_DATE 等於要求兩者落在
+同一個 UTC 日——任一邊延遲，當天就中止，而隔天抓料會覆寫 `gathered_items.json`，
+那一天的日報永久消失（2026-08-27／08-28 連兩天即如此）。改由資料決定之後，你的
+工作是「把手上這批資料變成日報，如果它還沒被變成日報」，而「還沒被變成」由
+`Step 0b：冪等閘` 判斷。延遲只會讓日報晚一天送達，不會讓它消失。
 
 ---
 
 ## 前置閘與失敗處理：不在本檔
 
-`Step 0b：冪等閘`（日報已存在則中止）、`Step 1b` 開頭的新鮮度防線（資料非目標日期則中止）、以及 `Step 5` 的 push 失敗重試，全部定義在 `.claude/commands/news-pipeline-steps.md`，**本機與雲端行為完全相同**，照該檔執行即可。
+`Step 0b：冪等閘`（日報已存在則中止）、`Step 1b` 開頭的新鮮度防線（資料為空則中止）、以及 `Step 5` 的 push 失敗重試，全部定義在 `.claude/commands/news-pipeline-steps.md`，**本機與雲端行為完全相同**，照該檔執行即可。
 
 本檔不重複這些邏輯——兩處各寫一份就會失步，而失步的那一份會在無人值守時生效。
 
@@ -34,8 +40,8 @@ git push        # 失敗時照 Step 5 的 push 重試程序處理
 
 | 該檔中的步驟標題 | 雲端如何處理 |
 |------|------|
-| `Step 0：昨日缺跑檢查` | 照做（TARGET_DATE 為今日，不是 backfill 模式） |
-| `Step 0b：冪等閘` | 照做（TARGET_DATE 為今日，非 backfill，所以「日報已存在」一律中止） |
+| `Step 0：昨日缺跑檢查` | TARGET_DATE 為今日時照做；補上前一天的日報時 TARGET_DATE 非今日，該步驟本就跳過 |
+| `Step 0b：冪等閘` | 照做。非 backfill 模式，所以「日報已存在」一律中止——這正是「這批資料已經變成日報了」的判斷 |
 | `Step 1a：新聞抓取` | **跳過**——GitHub Actions 已完成，`gathered_items.json` 已存在（新鮮度由 Step 1b 開頭的防線把關） |
 | `Step 1b：生成日報` | 照做，完成後 commit（**不 push**） |
 | `Step 1c：確認 emitted-cache` | **照做，不可跳過，且必須 commit `src/news_aggregator/emitted_items.json`**（該 Step 已明文要求）——你是全新 checkout、結束後容器銷毀，不 commit 等於沒改過。2026-07-14～07-24 雲端每日確認率幾乎為 0 就是漏了這個 commit。失敗只記警告，繼續後續步驟 |
