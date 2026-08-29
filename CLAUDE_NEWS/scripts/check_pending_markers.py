@@ -281,12 +281,15 @@ def _recent_marked(wiki_dir: Path, today: date, days: int) -> int:
 HISTORY_PATH = WIKI_DIR.parent / "data" / "pending_queue_history.csv"
 
 
-def _read_last_history(path: Path) -> tuple[str, int] | None:
+def _read_last_history(path: Path, today: date) -> tuple[str, int] | None:
     """上一筆快照 (date, total)。查無或格式壞掉一律回 None——診斷用資料不該讓主流程掛掉。"""
     try:
         rows = [r for r in path.read_text(encoding="utf-8").splitlines() if r and not r.startswith("date,")]
     except Exception:
         return None
+    # 跳過今日列：5c 步驟 1 本來就會先跑完整報告再跑佇列，操作者改完幾筆再看一次是常態。
+    # 不跳過的話基準會變成「今天」，趨勢永遠印（0）——功能自我抵銷。
+    rows = [r for r in rows if not r.startswith(today.isoformat() + ",")]
     if not rows:
         return None
     try:
@@ -301,11 +304,14 @@ def _append_history(path: Path, today: date, total: int, a: int, b: int, added: 
     而本次改版的起因正是『19 天從 0 長到 51 無人察覺』。"""
     try:
         path.parent.mkdir(parents=True, exist_ok=True)
-        new = not path.exists()
-        with path.open("a", encoding="utf-8", newline="") as f:
-            if new:
-                f.write("date,total,lane_a,lane_b,added_7d" + chr(10))
-            f.write(f"{today.isoformat()},{total},{a},{b},{added}" + chr(10))
+        header = "date,total,lane_a,lane_b,added_7d"
+        try:
+            existing = [r for r in path.read_text(encoding="utf-8").splitlines() if r]
+        except Exception:
+            existing = []
+        existing = [r for r in existing if r != header and not r.startswith(today.isoformat() + ",")]
+        rows = [header] + existing + [f"{today.isoformat()},{total},{a},{b},{added}"]
+        path.write_text("\n".join(rows) + "\n", encoding="utf-8")
     except Exception:
         pass  # 寫不進去不該擋住報表
 
@@ -316,7 +322,7 @@ def print_queue(out, wiki_dir: Path | None = None, today: date | None = None,
 
     為什麼分流（2026-08-29）：原本單一額度 5 筆、排序「訊欄優先」，
     結果**有訊的筆數佔滿全部額度**——而有訊代表記者已在日報找到後續，
-    結案只需讀日報改寫、**不需要 web**。便宜的工作吃光了昂貴查證的配額，
+    結案**多數可免 web**（仍須逐筆確認日報證據是否真指該事實）。便宜的工作吃光了昂貴查證的配額，
     真正需要 WebFetch 的那批永遠排不進來。一個額度混用兩種成本結構的工作，
     必然被便宜那種佔滿。
 
@@ -382,7 +388,7 @@ def print_queue(out, wiki_dir: Path | None = None, today: date | None = None,
 
     # 趨勢：上一輪快照對照。存量數字沒有方向，只有序列才答得出「比上週好還是壞」。
     if history_path is not None:
-        prev = _read_last_history(history_path)
+        prev = _read_last_history(history_path, today)
         if prev is not None:
             prev_date, prev_total = prev
             delta = len(entries) - prev_total

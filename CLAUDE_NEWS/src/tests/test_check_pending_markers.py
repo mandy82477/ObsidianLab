@@ -204,10 +204,10 @@ class QueueLaneSplitTest(_WikiCase):
     對調（M3）、產能非名目（P1-5）亦一併補上。
     """
 
-    def _queue(self, today=date(2026, 8, 29)):
+    def _queue(self, today=date(2026, 8, 29), history_path=None):
         import io
         buf = io.StringIO()
-        mod.print_queue(buf, wiki_dir=self.wiki_dir, today=today)
+        mod.print_queue(buf, wiki_dir=self.wiki_dir, today=today, history_path=history_path)
         return buf.getvalue()
 
     def _lane_sections(self, out):
@@ -256,6 +256,85 @@ class QueueLaneSplitTest(_WikiCase):
         self._fill(n_sig=3, n_nosig=20)
         out = self._queue()
         self.assertIn("本輪實際可消 8 筆", out)
+
+    # ---- 趨勢／歷史子系統（2026-08-29 第二輪 review：N8–N12、N15 全存活，此處補洞）----
+
+    def _hist(self):
+        return Path(self._tmp.name) / "hist.csv"
+
+    def test_trend_line_reports_signed_delta_against_previous_snapshot(self):
+        """N8 殺手：delta 反號會讓惡化印成改善——報表說謊比報錯更危險。"""
+        self._fill(n_sig=0, n_nosig=7)
+        h = self._hist()
+        h.write_text("date,total,lane_a,lane_b,added_7d" + NL + "2026-08-22,3,0,3,3" + NL, encoding="utf-8")
+        out = self._queue(history_path=h)
+        self.assertIn("趨勢", out)
+        self.assertIn("2026-08-22 3 筆", out)
+        self.assertIn("今日 7 筆", out)
+        self.assertIn("+4", out)
+
+    def test_trend_reads_last_row_not_first(self):
+        """N11 殺手。"""
+        self._fill(n_sig=0, n_nosig=7)
+        h = self._hist()
+        h.write_text("date,total,lane_a,lane_b,added_7d" + NL
+                     + "2026-08-01,99,0,99,0" + NL + "2026-08-22,3,0,3,3" + NL, encoding="utf-8")
+        out = self._queue(history_path=h)
+        trend = [l for l in out.splitlines() if "趨勢" in l][0]
+        self.assertIn("2026-08-22 3 筆", trend)
+        self.assertNotIn("2026-08-01", trend)
+
+    def test_same_day_rerun_does_not_become_its_own_baseline(self):
+        """P0-6 迴歸：同日重跑若拿今天當基準，趨勢永遠印（0），功能自我抵銷。"""
+        self._fill(n_sig=0, n_nosig=7)
+        h = self._hist()
+        self._queue(history_path=h)          # 第一次寫入今日
+        out = self._queue(history_path=h)    # 同日重跑
+        self.assertNotIn("趨勢", out, "同日重跑不得以今日為基準")
+        rows = [r for r in h.read_text(encoding="utf-8").splitlines() if r.startswith("2026-08-29")]
+        self.assertEqual(len(rows), 1, "同日應 upsert 而非 append")
+
+    def test_history_is_appended_with_expected_columns(self):
+        """N10／N12 殺手：不寫檔＝序列永遠只有一列；欄序寫錯＝日後讀出來的是別的數字。"""
+        self._fill(n_sig=8, n_nosig=7)
+        h = self._hist()
+        self._queue(history_path=h)
+        lines = [r for r in h.read_text(encoding="utf-8").splitlines() if r]
+        self.assertEqual(lines[0], "date,total,lane_a,lane_b,added_7d")
+        self.assertEqual(lines[-1], "2026-08-29,15,8,7,0")
+
+    def test_corrupt_history_degrades_to_no_trend_not_wrong_trend(self):
+        """N15 殺手：讀壞掉的檔要回 None（不印），不可回一個假基準。"""
+        self._fill(n_sig=0, n_nosig=7)
+        h = self._hist()
+        h.write_text("date,total" + NL + "garbage-row" + NL, encoding="utf-8")
+        out = self._queue(history_path=h)
+        self.assertNotIn("趨勢", out)
+
+    def test_no_history_path_means_no_file_written(self):
+        """print_queue 不傳 history_path 時必須是純函式（測試環境不得留檔）。"""
+        self._fill(n_sig=0, n_nosig=7)
+        self._queue()
+        self.assertFalse(self._hist().exists())
+
+    # ---- 截斷提示與排空預估（N1–N5 全存活，此處補洞）----
+
+    def test_truncation_notice_counts_hidden_rows(self):
+        """N1／N2／N3 殺手。"""
+        self._fill(n_sig=14, n_nosig=12)
+        out = self._queue()
+        self.assertIn("另 4 筆未顯示", out)   # Lane A: 14 - 10
+        self.assertIn("另 7 筆未顯示", out)   # Lane B: 12 - 5
+
+    def test_no_truncation_notice_when_within_quota(self):
+        self._fill(n_sig=3, n_nosig=3)
+        self.assertNotIn("未顯示", self._queue())
+
+    def test_drain_estimate_divides_lane_b_by_its_own_quota(self):
+        """N4 殺手：除以 SIGNAL_LIMIT 會把 8.6 週算成 4.3 週，低估一半。"""
+        self._fill(n_sig=0, n_nosig=20)
+        out = self._queue()
+        self.assertIn("Lane B 需約 4.0 週排空", out)   # 20 / QUEUE_LIMIT(5)
 
     def test_rate_window_boundary_is_exclusive_and_width_matters(self):
         """M4／M8 殺手：窗口寬度與邊界都要釘死。
