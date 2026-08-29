@@ -50,10 +50,14 @@ class TestPrune(unittest.TestCase):
     def test_removes_only_expired_and_ignores_non_date_names(self):
         with TemporaryDirectory() as d:
             p = Path(d)
-            for name in ("2026-07-01.json", "2026-07-11.json", "2026-07-24.json", "readme.json"):
+            # 07-10 與 07-11 是保留天數的兩側邊界：14 天時 cutoff 為 07-11，
+            # 所以 07-10 該刪、07-11 該留。少了這一對，RETENTION_DAYS 被改成 15
+            # 也不會有人發現（2026-08-29 突變測試實測）。
+            for name in ("2026-07-01.json", "2026-07-10.json", "2026-07-11.json",
+                         "2026-07-24.json", "readme.json"):
                 (p / name).write_text("{}", encoding="utf-8")
             removed = prune(p, today=date(2026, 7, 25))
-            self.assertEqual(removed, ["2026-07-01.json"])  # 07-11 剛好在 14 天內
+            self.assertEqual(removed, ["2026-07-01.json", "2026-07-10.json"])
             self.assertTrue((p / "readme.json").exists(), "檔名不是日期就不該被刪")
 
     def test_missing_dir_is_not_an_error(self):
