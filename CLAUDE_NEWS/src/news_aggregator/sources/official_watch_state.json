@@ -1,6 +1,16 @@
 {
   "_meta": {
-    "fingerprint": "e285514b7cd12d85"
+    "fingerprint": [
+      "https://claude.com/pricing",
+      "https://code.claude.com/docs/en/desktop.md",
+      "https://platform.claude.com/docs/en/about-claude/pricing",
+      "https://support.claude.com/en/articles/11145838-use-claude-code-with-your-pro-or-max-plan",
+      "https://support.claude.com/en/articles/11647753-how-do-usage-and-length-limits-work",
+      "https://support.claude.com/en/articles/12138966-release-notes",
+      "https://support.claude.com/en/articles/12429409-manage-usage-credits-for-paid-claude-plans",
+      "https://support.claude.com/en/articles/15424964-claude-fable-5-on-your-plan",
+      "https://support.claude.com/en/articles/15910845-claude-code-may-august-2026-weekly-limits-promotion"
+    ]
   },
   "https://code.claude.com/docs/llms.txt": {
     "pages": {

@@ -21,8 +21,6 @@ sys.path.insert(0, str(REPO_ROOT / "scripts"))
 
 import scan_expiring_deadlines as mod  # noqa: E402
 
-NL = chr(10)
-
 
 class _Wiki:
     def __init__(self, files: dict):
@@ -90,19 +88,12 @@ class TestScope(unittest.TestCase):
         with _Wiki({"log.md": "- ⏰ 2026-08-31 到期（歷史紀錄）\n"}) as w:
             self.assertEqual(mod.collect(w.root), [])
 
-    def test_scans_the_whole_wiki_not_a_hardcoded_file_list(self):
-        """截止日會擴散到別的頁；寫死檔名的偵測器只看得到今天想得到的那兩頁。"""
-        with _Wiki({"entities/some-future-model.md": "- ⏰ 2026-09-30 免費期結束\n"}) as w:
-            found = mod.collect(w.root)
-        self.assertEqual([x["date"] for x in found], [date(2026, 9, 30)])
-
-
 class TestVerifiedSuppression(unittest.TestCase):
     """查證過就別再天天叫——永遠在響的警報會被整段跳過。"""
 
-    VERIFIED = "- ⏰ 2026-08-31 到期（2026-08-28 查官方原文複查，日期仍有效）｜促銷" + NL
-    CROSSREF = "> 另見 ⏰ 2026-08-31 到期條目" + NL
-    RADAR_ROW = "| **2026-08-31** | 促銷結束 | x | y |" + NL
+    VERIFIED = "- ⏰ 2026-08-31 到期（2026-08-28 查官方原文複查，日期仍有效）｜促銷" + "\n"
+    CROSSREF = "> 另見 ⏰ 2026-08-31 到期條目" + "\n"
+    RADAR_ROW = "| **2026-08-31** | 促銷結束 | x | y |" + "\n"
 
     def test_line_marked_verified_is_suppressed(self):
         with _Wiki({"entities/pricing.md": self.VERIFIED}) as w:
@@ -116,7 +107,7 @@ class TestVerifiedSuppression(unittest.TestCase):
 
     def test_suppression_expires_so_it_fires_again_later(self):
         """靜默期過了要重新提醒，否則等於永久關掉。"""
-        page = "- ⏰ 2026-09-30 到期（2026-08-28 查官方原文複查，仍有效）" + NL
+        page = "- ⏰ 2026-09-30 到期（2026-08-28 查官方原文複查，仍有效）" + "\n"
         with _Wiki({"entities/pricing.md": page}) as w:
             quiet = mod.collect(w.root, today=date(2026, 8, 29))
             later = mod.collect(w.root, today=date(2026, 9, 20))

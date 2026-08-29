@@ -6,7 +6,7 @@ wiki 的圖從第一天起就存在：頁面＝節點、wikilink＝邊。本腳�
 （docs/graphify-pilot-plan.md）與雙 agent 節點政策辯論的收斂結論。
 
 節點衛生規則（與既有衍生層字面共用，不另立設定檔）：
-  - wikilink 解析：import build_web.WIKILINK_RE / ANCHORED_WIKILINK_RE / HEADING_RE
+  - wikilink 解析：import build_web.WIKILINK_RE / ANCHORED_WIKILINK_RE
   - 懸置探針剝除：import gen_wiki_frontmatter.strip_pending_probes（探針 wikilink
     是偵測器不是內容引用）
   - 樞紐排除：index / log 指向所有頁面、無鑑別力（同 gen_wiki_frontmatter 入鏈統計）
@@ -36,11 +36,11 @@ from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 
-from build_web import ANCHORED_WIKILINK_RE, HEADING_RE, WIKI_DIR, WIKILINK_RE  # noqa: E402
+from build_web import ANCHORED_WIKILINK_RE, WIKI_DIR, WIKILINK_RE  # noqa: E402
 from gen_wiki_frontmatter import strip_body, strip_pending_probes  # noqa: E402
 
 # 樞紐與維運層：目錄/流水帳/規則/儀表，指向或被指向一切，無鑑別力（辯論共識 2）
-EXCLUDE_PAGES = {"index", "log", "CLAUDE", "metrics", "reader-notes", "url"}
+EXCLUDE_PAGES = {"index", "log", "CLAUDE", "metrics", "reader-notes"}
 # 樣板區標題：此 h2 之下的 wikilink 屬 see-also / 出處性質，非敘事主動提及
 TEMPLATE_ZONE_H2 = {"參考來源", "相關實體", "相關議題", "使用指南"}
 # 模板標題與純日期標題：sections 回傳時上捲、不作為錨定名（辯論共識：圖上的過寬詞）
@@ -65,7 +65,7 @@ def _pages() -> dict[str, Path]:
     out = {}
     for f in WIKI_DIR.rglob("*.md"):
         s = _slug(f)
-        if s in EXCLUDE_PAGES or s.startswith(("_views/", "sources/")):
+        if s in EXCLUDE_PAGES or s.startswith("_views/"):
             continue
         out[s] = f
     return out
@@ -165,7 +165,7 @@ def cmd_explain(target: str, out) -> int:
             for l in sorted(by_zone.get(zone, []), key=lambda x: (x.src, x.line)):
                 other = l.dst if name.startswith("出") else l.src
                 sec = f" § {l.heading}" if l.heading else ""
-                print(f"  [{zone}] {other}（{l.src}{sec} :L{l.line}）", file=out)
+                print(f"  [{zone}] {other}（{sec.strip() or '—'} :L{l.line}）", file=out)
         print(file=out)
     return 0
 

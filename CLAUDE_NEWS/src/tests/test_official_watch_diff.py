@@ -56,7 +56,7 @@ class TestRemovalIsReported(unittest.TestCase):
         segs = sorted(mod._visible_segments(BEFORE))
         prev = {"hash": "old", "length": 1, "segments": segs}
         summary = mod._change_summary("x", prev, mod._visible_text(BEFORE), segs)
-        self.assertIn("僅順序或版面調整", summary)
+        self.assertIn("未偵測到段落層級差異", summary)
 
 
 class TestHashUnchanged(unittest.TestCase):
@@ -77,6 +77,16 @@ class TestGracefulDegradation(unittest.TestCase):
         summary = mod._change_summary("x", prev, mod._visible_text(AFTER),
                                       sorted(mod._visible_segments(AFTER)))
         self.assertIn("下次變動起會列出差異", summary)
+
+    def test_incomplete_fetch_keeps_the_previous_segments(self):
+        """抓不齊時樣板集合會位移，算出來的 segments 帶著導覽段。寫進 state
+        就會在隔天恢復時反向報一次「移除」——所以本輪整批不動它。"""
+        prev = {"hash": "o", "length": 1, "segments": ["Earlier clean sentence."]}
+        state: dict = {}
+        mod._hash_item("x", "https://e.test/p", mod._visible_text(AFTER), prev,
+                       state, segments=None, resegmented=True)
+        self.assertEqual(state["https://e.test/p"]["segments"],
+                         ["Earlier clean sentence."])
 
     def test_oversized_page_stores_no_segments(self):
         huge = _page(*[f"paragraph number {n} with enough characters" for n in range(mod.MAX_SEGMENTS + 50)])

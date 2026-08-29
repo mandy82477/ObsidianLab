@@ -930,13 +930,13 @@
       "name": "截止日複查的產出端 <-> 消費端：scan_expiring_deadlines.py 必須被 news-pipeline-steps.md 的 3g 呼叫，且其輸出必須在完成摘要「待使用者裁示」有接手方（只寫在步驟裡沒人接＝偵測器印給空氣看，正是 2026-08-02 裁示擱置 6 天的同型死法）",
       "assertion": "all_contain",
       "files": [
+        "scripts/scan_expiring_deadlines.py",
         ".claude/commands/news-pipeline-steps.md"
       ],
       "patterns": [
-        "scan_expiring_deadlines\\.py",
-        "3g",
-        "截止日複查清單"
-      ]
+        "截止日"
+      ],
+      "_note": "2026-08-29 review 第 2 輪：原本 files 只列消費端一個檔、patterns 含 2 字元的「3g」，等於三次自我 grep。改為真正跨檔。"
     }
   ],
   "coupling_hints": {

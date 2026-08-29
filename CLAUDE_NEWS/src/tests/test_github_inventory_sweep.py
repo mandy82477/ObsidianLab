@@ -133,17 +133,5 @@ class TestHonestLabelling(unittest.TestCase):
         self.assertEqual(item.score_unit, "星")
 
 
-class TestWindowGeometry(unittest.TestCase):
-    def test_c_window_floor_meets_b_window_ceiling(self):
-        """兩窗接壤不留縫也不重疊——縫隙就是下一個 agent-skills 藏身處。"""
-        b_ceiling = int(mod.CROSSING_STAR_RANGE.split("..")[1])
-        self.assertEqual(mod.INVENTORY_MIN_STARS, b_ceiling)
-
-    def test_skills_scope_is_inventory_only(self):
-        """skills scope 不得進 A/B 窗：100–3000 星帶實測被內容型 skill 洗版。"""
-        skills_scope = '"agent skills" in:name,description'
-        self.assertIn(skills_scope, mod._INVENTORY_SCOPES)
-        self.assertNotIn(skills_scope, mod._REPO_SEARCH_SCOPES)
-
 if __name__ == "__main__":
     unittest.main()

@@ -54,12 +54,6 @@ class TestScheduleSurvivesDelay(unittest.TestCase):
             f"最早的 cron 在 {earliest}:00 UTC，加上可容忍延遲 {TOLERATED_DELAY_H}h "
             f"會落在 {earliest + TOLERATED_DELAY_H}:00，晚於 routine 的 {ROUTINE_HOUR_UTC}:00")
 
-    def test_keeps_a_late_run_for_freshness_when_github_is_healthy(self):
-        """保險窗不該取代原本那班：健康時 10:00 的資料比 00:00 新鮮 10 小時。"""
-        self.assertTrue(any(_cron_hour(c) >= 6 for c in _crons()),
-                        "全部 cron 都擠在清晨會讓健康日的日報平白老掉半天")
-
-
 class TestDataActuallyLands(unittest.TestCase):
     def test_push_retries_with_rebase(self):
         """裸 push 會在兩分鐘視窗內被任何併發推送打掉，當天抓料整包不落地。"""

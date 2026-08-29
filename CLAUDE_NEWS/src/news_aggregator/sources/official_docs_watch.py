@@ -107,7 +107,6 @@ class OfficialDocsWatch(BaseSource):
 
         state = _load_state()
         items: list[FeedItem] = []
-        dirty = False
 
         # 先全部抓回來再處理：樣板判定需要看過本輪所有頁面（見 _boilerplate）
         fetched = []
@@ -128,7 +127,17 @@ class OfficialDocsWatch(BaseSource):
             fetched.append((name, url, mode, raw_body))
 
         segs_by_url = {u: _visible_segments(b) for _, u, m, b in fetched if m != "index"}
-        boilerplate = _boilerplate(segs_by_url)
+        # 樣板判定要看齊全本輪所有頁：少抓到一頁，兩頁共有的導覽段就從「樣板」
+        # 變回「內容」，該頁的 segments 會多出一批導覽段。抓不齊時整批不更新
+        # segments（保留前一版乾淨的基線）並退化摘要，否則污染會寫進 state、
+        # 隔天恢復再反向報一次「移除」（2026-08-29 review 第 2 輪）。
+        complete = len(segs_by_url) == sum(
+            1 for p in pages if p.get("url") and (p.get("mode") or "hash") != "index")
+        if not complete:
+            logger.warning("Official watch: %d/%d hash pages fetched, segments left untouched",
+                           len(segs_by_url), sum(1 for p in pages if p.get("url")
+                                                 and (p.get("mode") or "hash") != "index"))
+        boilerplate = _boilerplate(segs_by_url) if complete else set()
         # 樣板集合隨監看清單而變：清單一改，同一段可能從「內容」變成「樣板」
         # 而消失，下次 diff 就會把它報成「移除」。指紋不同時本輪只重記基線、
         # 不報 diff——與舊 state 無 segments 的處理一致。指紋取自設定清單而非
@@ -146,14 +155,14 @@ class OfficialDocsWatch(BaseSource):
             if mode == "index":
                 item = _index_item(name, url, text, prev, state)
             else:
-                item = _hash_item(name, url, text, prev, state,
-                                  segments=sorted(segs_by_url.get(url, set()) - boilerplate),
-                                  resegmented=resegmented)
-            dirty = True
+                segments = (sorted(segs_by_url.get(url, set()) - boilerplate)
+                            if complete else None)
+                item = _hash_item(name, url, text, prev, state, segments=segments,
+                                  resegmented=resegmented or not complete)
             if item is not None:
                 items.append(item)
 
-        if dirty:
+        if fetched:
             _save_state(state)
 
         return items
@@ -162,10 +171,15 @@ class OfficialDocsWatch(BaseSource):
 def _hash_item(name: str, url: str, text: str, prev, state: dict,
                segments: list[str] | None = None,
                resegmented: bool = False) -> FeedItem | None:
+    """segments=None 代表「本輪算不出可信的 segments」（頁面沒抓齊），
+    此時沿用 state 內既有的那份，不覆寫。"""
     digest = hashlib.sha256(text.encode("utf-8")).hexdigest()
-    segments = segments or []
     entry: dict = {"hash": digest, "length": len(text)}
-    if segments and len(segments) <= MAX_SEGMENTS:
+    if segments is None:
+        keep = (prev or {}).get("segments")
+        if keep:
+            entry["segments"] = keep
+    elif segments and len(segments) <= MAX_SEGMENTS:
         entry["segments"] = segments
     state[url] = entry
 
@@ -187,7 +201,7 @@ def _hash_item(name: str, url: str, text: str, prev, state: dict,
         source="Official Docs",
         published=datetime.now(tz=timezone.utc),
         score=0,
-        summary=_change_summary(name, prev, text, segments, resegmented),
+        summary=_change_summary(name, prev, text, segments or [], resegmented),
         category="official",
         score_unit="",
     )
@@ -257,7 +271,7 @@ def _change_summary(name: str, prev: dict, text: str, segments: list[str],
     removed = [x for x in before if x not in now_set]
     if not added and not removed:
         # 只有順序變動：不是內容變更，但 hash 已經不同，還是誠實說明
-        return head + "段落內容相同、僅順序或版面調整。"
+        return head + "未偵測到段落層級差異（變動落在門檻以下、或只發生在樣板區）。"
 
     def _fmt(label: str, rows: list[str]) -> str:
         shown = "；".join(r[:SEGMENT_PREVIEW_CHARS] for r in rows[:MAX_LISTED_SEGMENTS])
