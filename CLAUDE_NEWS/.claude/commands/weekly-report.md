@@ -261,7 +261,7 @@ git -C REPO_ROOT push        # 單一 push
 
 - **單一 push**：每次 push 觸發一個 GitHub Pages 部署，分多次會互相搶佔導致線上停在舊版
 - **push 失敗**：照 `.claude/commands/news-pipeline-steps.md` 的 `Step 5` push 失敗重試程序處理（`pull --rebase` 上限 2 次），不要另寫一套
-- **與排程的關係**：`/weekly` 沒有雲端排程，不會與 `daily-news-pipeline-cloud`（每日 13:00 UTC）或 `weekly-wiki-lint-cloud`（每週六 01:00 UTC）衝突；產出檔在 `weekly/`，與那兩者會動的 `news/`、`wiki/` 不重疊。若執行時間逼近排程時點，靠上述 push 重試化解
+- **與排程的關係**：`/weekly` 沒有雲端排程，不會與 `daily-news-pipeline-cloud`（每日 22:00 UTC（台北隔日 06:00））或 `weekly-wiki-lint-cloud`（每週六 03:00 UTC（台北 11:00））衝突；產出檔在 `weekly/`，與那兩者會動的 `news/`、`wiki/` 不重疊。若執行時間逼近排程時點，靠上述 push 重試化解
 
 ---
 

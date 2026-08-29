@@ -4,8 +4,8 @@
 分裂架構有兩段（① GitHub Actions 抓料、② 雲端 routine 產日報/wiki/網站），
 任一段失敗時系統本身不會喊。本腳本定義「今天到底算不算成功」，由兩個地方共用：
 
-  - `.github/workflows/daily-watchdog.yml`（15:00 UTC）：失敗即 job 失敗 → GitHub 寄信
-  - 雲端 routine `daily-watchdog-push`（23:00 UTC = 隔天 07:00 台北）：失敗才推播到手機
+  - `.github/workflows/daily-watchdog.yml`（01:00 UTC，查前一個 UTC 日）：失敗即 job 失敗 → GitHub 寄信
+  - 雲端 routine `daily-watchdog-push`（01:30 UTC = 09:30 台北，查前一個 UTC 日）：失敗才推播到手機
 
 **判準只能有一份。** 這兩處原本各寫一套的話，遲早會出現「信說壞了、推播說好」的
 狀況，那時你會兩邊都不信。所以邏輯放這裡，兩邊都只負責呼叫與呈現。

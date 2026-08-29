@@ -20,9 +20,9 @@
 
 `30 1 * * *`（01:30 UTC = **09:30 台北**）。
 
-時間點的理由：日更 pipeline 23:00 UTC 開跑、約 30–60 分鐘完成，GH watchdog 01:00 UTC 覆核。01:30 UTC 時前一日產出已定案，而使用者剛起床——這是「知道了還來得及在今天處理」的最早時刻。**不要往前挪**，那會落在 pipeline 還沒跑完的時候，天天誤報。
+時間點的理由：日更 pipeline 22:00 UTC 開跑、約 30–60 分鐘完成，GH watchdog 01:00 UTC 覆核。01:30 UTC 時前一日產出已定案，而使用者剛起床——這是「知道了還來得及在今天處理」的最早時刻。**不要往前挪**，那會落在 pipeline 還沒跑完的時候，天天誤報。
 
-檢查對象是**執行當下的 UTC 日期**（即剛跑完的那一輪），不是台北日期。
+檢查對象是**前一個 UTC 日**（即剛跑完的那一輪；routine 22:00 UTC 開跑，本 routine 在隔日 01:30 才執行），不是執行當下的 UTC 日期、也不是台北日期。
 
 ---
 
@@ -32,7 +32,7 @@
 2. 執行健康檢查（判準的唯一來源，與 GH watchdog 共用同一支腳本）：
 
    ```
-   python3 scripts/daily_health_check.py --format push
+   python3 scripts/daily_health_check.py --format push --date "$(date -u -d yesterday +%F)"
    ```
 
 3. **exit code 0（產出齊全）** → **不做任何事**，不推播、不 commit、不寫 log。安靜是這個 routine 的正常狀態；每天報平安會讓人在一週內學會忽略它。直接結束並回報「今日產出齊全，未推播」。

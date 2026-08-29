@@ -18,19 +18,19 @@
 
 ```
 ① GitHub Actions（.github/workflows/daily-gather.yml）
-   10:23 UTC / 18:00 台北 · 網路無限制 · 免 API
+   10:23 UTC / 18:23 台北 · 網路無限制 · 免 API
    跑 python -m news_aggregator.main --gather-only
    → commit gathered_items.json + seen_urls.json + emitted_items.json 回 master
         ↓（資料進 repo）
 ② 雲端 routine（daily-news-pipeline-cloud，trig_01AWf2wwmVeL3ykPCSyxyvzw）
-   23:00 UTC / 隔日 07:00 台北 · 訂閱 LLM · 不需上網
-   replay `gathered_archive/<目標日>.json`（目標日＝archive 中尚無日報者，由舊到新；新鮮度防線：非目標日/0 條則中止不生假日報）
+   22:00 UTC / 隔日 06:00 台北 · 訂閱 LLM · 不需上網
+   讀 ① 的 `gathered_items.json`（新鮮度防線：非今日/0 條則中止不生假日報）
    → 生日報 → 六記者 ingest → build → 單一 push → 上站
 ```
 
-兩段**不再靠時間差耦合** `[改版: 2026-08-29]`。② 的目標日期取自 `src/gathered_archive/`（按資料日期分檔、已進 git、保留 14 天）——「archive 裡哪天還沒出過報就補哪天」，正常日恰好只有今天一個目標。① 延遲多久都不會讓那天消失，下一輪自動補上。
+兩段靠時間差鬆耦合，**而時間差要大於上游的實測變異** `[改版: 2026-08-29]`：① 10:23 UTC、② 22:00 UTC，緩衝 11.6 小時。曾試過改由資料決定目標日期讓時間差不再是依賴（讀單槽檔、掃 archive 補缺日）兩版，皆撤回——理由見 `docs/cloud-runbooks/daily.md` 的 `[裁決: 2026-08-29]`。
 
-> 舊設計靠 3 小時緩衝（原 30 分鐘，2026-07-11 首跑遇 1.5–2.7h 延遲後拉大）。但緩衝的前提是「延遲小於緩衝」，而 2026-08-27／08-28 連兩天延遲 10–11 小時直接穿透，兩天都因新鮮度防線中止。**根因是消費者的緩衝（2.6h）小於生產者的實測變異（11.2h）**，修法是把消費者移到變異之外：routine 由 13:00 移到 23:00 UTC，緩衝 12.6h。曾試過改由資料決定目標日期（讀單槽檔、掃 archive 補缺日）兩版，皆撤回，理由見 `docs/cloud-runbooks/daily.md` 的 `[裁決: 2026-08-29]`。
+> 舊設計靠 3 小時緩衝（原 30 分鐘，2026-07-11 首跑遇 1.5–2.7h 延遲後拉大）。但緩衝的前提是「延遲小於緩衝」，而 2026-08-27／08-28 連兩天延遲 10–11 小時直接穿透，兩天都因新鮮度防線中止。**根因是消費者的緩衝（2.6h）小於生產者的實測變異（11.2h）**，修法是把消費者移到變異之外：routine 由 13:00 移到 22:00 UTC，緩衝 11.6h。曾試過改由資料決定目標日期（讀單槽檔、掃 archive 補缺日）兩版，皆撤回，理由見 `docs/cloud-runbooks/daily.md` 的 `[裁決: 2026-08-29]`。
 
 ## 為什麼快取檔要 commit（與 CLAUDE.md 資料檔例外的關係）
 
@@ -40,7 +40,7 @@ CLAUDE.md 說資料檔「不需 commit」是指手動流程無此義務,非禁�
 **寫者分工 `[改版: 2026-07-25]`：** 原本記載「單一寫者=① Actions」,但那導致 ② 的 `--confirm-digest` 結果從未進 repo——② 在容器內把 `emitted_items.json` 標記為已確認,容器一銷毀就沒了,下次全新 checkout 讀到的仍是未確認。實測 2026-07-14～07-24 雲端期間每日確認率幾乎為 0（僅本機手動執行的 07-19、07-22 為 100%）,兩階段確認機制形同空轉,跨日去重全靠 `seen_urls.json` 獨撐。現改為:
 - ① Actions 寫 `gathered_items.json` / `seen_urls.json` / `emitted_items.json`（新增未確認條目）
 - ② 雲端 routine **只寫 `emitted_items.json` 的確認欄位**,並與日報同批 push（見 `.claude/commands/news-pipeline-steps.md` 的 `Step 1c：確認 emitted-cache`）
-- 兩者時間錯開 3 小時且都走 push 重試,不構成競態;手動 `--date` 補救不碰快取,見 `main.py`
+- 兩者時間錯開 11.6 小時且都走 push 重試,不構成競態;手動 `--date` 補救不碰快取,見 `main.py`
 
 ## 出問題時如何補救
 

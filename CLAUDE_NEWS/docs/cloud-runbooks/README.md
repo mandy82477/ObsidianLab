@@ -8,7 +8,7 @@
 
 | 名稱 | ID | cron（UTC） | 台北時間 | 定義檔 | runbook |
 |------|----|------|------|--------|---------|
-| `daily-news-pipeline-cloud` | `trig_01AWf2wwmVeL3ykPCSyxyvzw` | `0 23 * * *` | 隔日 07:00 | `docs/cloud-runbooks/triggers/daily-news-pipeline-cloud.json` | `docs/cloud-runbooks/daily.md` |
+| `daily-news-pipeline-cloud` | `trig_01AWf2wwmVeL3ykPCSyxyvzw` | `0 22 * * *` | 隔日 06:00 | `docs/cloud-runbooks/triggers/daily-news-pipeline-cloud.json` | `docs/cloud-runbooks/daily.md` |
 | `weekly-wiki-lint-cloud` | `trig_01E41amaGSNuL8jeUhCR8iUw` | `0 3 * * 6` | 每週六 11:00 | `docs/cloud-runbooks/triggers/weekly-wiki-lint-cloud.json` | `docs/cloud-runbooks/weekly-lint.md` |
 | `daily-watchdog-push` | `trig_01FqjE53JVAKTnPxnt8iJCb6` | `30 1 * * *` | 09:30 | `docs/cloud-runbooks/triggers/daily-watchdog-push.json` | `docs/cloud-runbooks/watchdog-push.md` |
 

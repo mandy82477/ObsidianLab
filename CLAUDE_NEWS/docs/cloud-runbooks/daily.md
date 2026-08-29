@@ -6,7 +6,7 @@
 
 你執行的是「GitHub Actions 抓料 + 雲端 routine 做 LLM」分裂架構的**第二段**（架構全貌見 `docs/daily-automation.md`）。第一段（抓新聞）已由 GitHub Actions 完成並把資料 commit 進 repo，**你不重複抓料**——雲端 egress 被封鎖，抓也抓不到。
 
-TARGET_DATE = `date -u +%F`。
+TARGET_DATE = `date -u +%F`，**開工時求值一次後固定，全程不得重算**（本 routine 22:00 UTC 開跑、實測需 30–60 分鐘，重算落在午夜後就會拿到 D+1，commit 訊息與檔名對不上）。
 
 > **為什麼是時鐘、而不是「掃 archive 補所有缺日」** `[裁決: 2026-08-29]`
 >
