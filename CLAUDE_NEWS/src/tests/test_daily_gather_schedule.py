@@ -19,6 +19,8 @@ TRIGGER = REPO_ROOT / "docs" / "cloud-runbooks" / "triggers" / "daily-news-pipel
 
 # GitHub 排程延遲的實測最大值（2026-08-28，+11.2h）。緩衝必須蓋過它。
 # 這個數字要調小，必須先有一段時間的實測支撐——調小它等於把賭注押得更近。
+# 反過來要調大時：消費者這一側已經沒有空間了（緩衝 11.62h、餘裕 25 分鐘，而 routine
+# 22:00 + MAX_RUNTIME_H 正好等於 UTC 午夜）。那時該動的是**抓料往前挪**，不是再挪 routine。
 OBSERVED_MAX_DELAY_H = 11.2
 
 

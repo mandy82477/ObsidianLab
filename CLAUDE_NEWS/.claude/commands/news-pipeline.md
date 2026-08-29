@@ -37,7 +37,7 @@ argument-hint: [YYYY-MM-DD]
 - PYTHON      = C:\Users\Mandy\AppData\Local\Programs\Python\Python313\python.exe
 - TARGET_DATE = {TARGET_DATE}
 
-讀取 `C:\Users\Mandy\CLAUDE_OBSIDIAN\ObsidianLab\CLAUDE_NEWS\.claude\commands\news-pipeline-steps.md`，只執行「Phase A 步驟」（Step 0、Step 1a、Step 1b），不執行 Step 2 以後任何步驟，也不呼叫 Agent tool 派工任何 sub-agent。完成後回報 Step 0/1a/1b 各自結果；若 Step 1a 失敗，立即停止並明確標註「Aggregator FAILED」。使用繁體中文輸出。
+讀取 `C:\Users\Mandy\CLAUDE_OBSIDIAN\ObsidianLab\CLAUDE_NEWS\.claude\commands\news-pipeline-steps.md`，只執行「Phase A 步驟」（Step 0、Step 1a、Step 1b），不執行 Step 2 以後任何步驟，也不呼叫 Agent tool 派工任何 sub-agent。完成後回報 Step 0/1a/1b 各自結果；**若本次走了 archive replay 路徑（`cp src/gathered_archive/<date>.json`）而非現抓，回報中必須明講**（Step 5 的「replay 路徑收尾」是條件式規則，而執行它的 Phase C 看不到 Phase A 的過程）。若 Step 1a 失敗，立即停止並明確標註「Aggregator FAILED」。使用繁體中文輸出。
 ```
 
 Phase A agent 完成後自動通知本 session。

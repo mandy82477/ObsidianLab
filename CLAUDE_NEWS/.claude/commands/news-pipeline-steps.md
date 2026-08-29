@@ -90,7 +90,7 @@ PYTHON REPO_ROOT\scripts\archive_gathered.py
 
 **1. 別把 `src/gathered_items.json` commit 上去。** 補跑會**覆寫**這個檔（它沒有按日期分檔），寫進去的是補跑那天的資料。這個檔同時是雲端 routine 的輸入——雲端啟動時讀到的若不是當日資料，新鮮度防線會中止當天執行。也就是**一次本機補跑可能連帶讓當天的雲端排程空跑**。
 - 只有 GitHub Actions 的 `daily-gather` 該 commit 這個檔
-- 補跑收尾時執行 `git -C REPO_ROOT checkout -- src/gathered_items.json` 還原，避免不小心被 `git add` 帶上車
+- 還原動作與**時機**見本檔 `Step 5` 的「replay 路徑收尾」，此處不重複——時機是有講究的（太早會讓 Step 1c、Step 2 讀到錯的日期，太晚會讓 push 重試失效），兩處各寫一份就會失步，而失步的那一份會在無人值守時生效
 - 絕不要在補跑流程裡用 `git add -A` / `git add .`
 
 **2. 先找當日原料副本，找不到才重抓。** `src/gathered_archive/<date>.json` 是抓料當下存的原料副本（保留 14 天，由 GitHub Actions 與本機 Step 1a 各自寫入）：
@@ -418,9 +418,10 @@ git -C REPO_ROOT push
 ```
 
 - 若 web build 無變更，仍須執行 `git -C REPO_ROOT push` 推送先前的 news / wiki commit
-- **replay 路徑收尾（強制）`[改版: 2026-08-29]`**：本次若曾 `cp src/gathered_archive/<date>.json src/gathered_items.json`（backfill 模式，以及雲端每日班——它現在也走這條路徑），**必須在 Step 1c 之後、push 之前**執行 `git -C REPO_ROOT checkout -- src/gathered_items.json` 還原成 repo 版本。
+- **replay 路徑收尾（強制）`[改版: 2026-08-29]`**：本次若曾 `cp src/gathered_archive/<date>.json src/gathered_items.json`（backfill 模式，以及雲端每日班——它現在也走這條路徑），**必須在 Step 1c 之後、任何 push 之前（含中止落地的那次）**執行 `git -C REPO_ROOT checkout -- src/gathered_items.json` 還原成 repo 版本。
   - **不可等到 push 之後**：本 repo 的 `rebase.autoStash` 為 false，工作樹髒的話下方 push 重試的 `git pull --rebase` 會被 git 直接拒絕（不是衝突，是前置檢查），兩次重試必然失敗，而雲端未推送的 commit 隨容器銷毀救不回來——日報、wiki、web 全部白做
-  - **不可提早到 Step 1c 之前**：`--confirm-digest` 讀的就是這個檔
+  - **不可提早到 Step 1c 之前**：`--confirm-digest` 讀的就是這個檔；Step 2 的專頁定向路由也吃它的 `topic` 欄（那是該欄唯一的來源）
+  - **中止路徑也算**：cp 之後才觸發的中止（新鮮度防線、原料健康檢查 exit 2/3）同樣要先還原再 commit abort log，否則 abort log 推不上去、雲端看起來像中途死亡，把一次正確的閘門攔截誤報成靜默失敗
 
 **push 失敗重試（強制）`[加入: 2026-07-25]`**
 
