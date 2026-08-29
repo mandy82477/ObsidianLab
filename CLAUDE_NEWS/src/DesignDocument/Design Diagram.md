@@ -60,9 +60,9 @@ flowchart TD
     GHA["① GitHub Actions —— .github/workflows/daily-gather.yml\n10:23 UTC / 18:23 台北 · 網路無限制 · 免 API\npython -m news_aggregator.main --gather-only"]
     GHA --> COMMIT["commit 回 master\ngathered_items.json + seen_urls.json\n+ emitted_items.json（未確認條目）"]
 
-    COMMIT -->|11.6 小時緩衝，鬆耦合| CLOUD
+    COMMIT -->|資料到了就做，沒到留給下一班| CLOUD
 
-    CLOUD["② 雲端 routine —— daily-news-pipeline-cloud\n22:00 UTC / 隔日 06:00 台北 · 訂閱 LLM · 不需上網\n跑 Step 0/1b/1c/2/3/4/5/6"]
+    CLOUD["② 雲端 routine —— daily-news-pipeline-cloud\n12/14/16/18/20/22 UTC 六班重試（常態 12:00＝台北 20:00）· 訂閱 LLM · 不需上網\n跑 Step 0/1b/1c/2/3/4/5/6"]
     CLOUD --> FRESH{"新鮮度防線\ngathered 非今日 / 0 條？"}
     FRESH -->|是| ABORT["中止，不生假日報"]
     FRESH -->|否| RUN["生日報 → 六記者 ingest → build\n→ 單一 push 上站\n（只寫 emitted_items.json 的確認欄位）"]
@@ -75,7 +75,7 @@ flowchart TD
     FAIL -.->|人工補救| MANUAL["/news-pipeline YYYY-MM-DD\n本機補跑，--date 不碰去重快取"]
 ```
 
-**寫者分工（避免競態）：** ① 寫 `gathered_items.json` / `seen_urls.json` / `emitted_items.json`（新增未確認條目）；② **只寫 `emitted_items.json` 的確認欄位**，與日報同批 push。兩者時間錯開 11.6 小時且都走 push 重試。
+**寫者分工（避免競態）：** ① 寫 `gathered_items.json` / `seen_urls.json` / `emitted_items.json`（新增未確認條目）；② **只寫 `emitted_items.json` 的確認欄位**，與日報同批 push。兩者時間錯開至少 1.6 小時且都走 push 重試。
 
 **為何快取檔必須 commit：** GitHub Actions 每次全新 checkout，`seen_urls.json` / `emitted_items.json` 不 commit 回去隔天跨日去重就失效、重複出舊聞（`CLAUDE.md` 說資料檔「不需 commit」是指手動流程無此義務，非禁止）。
 

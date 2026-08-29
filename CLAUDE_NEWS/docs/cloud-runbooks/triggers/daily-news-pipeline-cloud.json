@@ -2,8 +2,8 @@
   "_mirror_note": "claude.ai trigger 定義鏡像備份，非執行檔。改雲端後同步更新本檔（見 ../README.md）。最後同步：2026-08-29",
   "id": "trig_01AWf2wwmVeL3ykPCSyxyvzw",
   "name": "daily-news-pipeline-cloud",
-  "cron_expression": "0 22 * * *",
-  "_cron_note": "22:00 UTC。上游抓料 10:23 UTC，緩衝 11.6h，蓋過實測最大排程延遲 +11.2h。不排 23:00：實測 pipeline 需 30–60 分鐘，23:00 起跑最壞情況正好在 UTC 午夜收尾，而 TARGET_DATE 取自 `date -u +%F`，後半段重算會拿到 D+1。22:00 留 2 小時餘裕。",
+  "cron_expression": "0 12,14,16,18,20,22 * * *",
+  "_cron_note": "一天六班重試（12/14/16/18/20/22 UTC）。上游抓料 10:23 UTC，常態派工延遲 +29～42 分鐘，故第一班排 12:00（台北 20:00 送達）。資料沒到就靜默結束、留給下一班；最後一班 22:00 涵蓋 +11.6 小時，蓋過 2026-08-28 實測的 +11.2 小時。不用單班大緩衝：那在常態日是純空等，會把送達推到隔日 06:00。",
   "enabled": true,
   "job_config": {
     "ccr": {

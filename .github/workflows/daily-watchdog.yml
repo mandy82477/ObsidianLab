@@ -21,7 +21,7 @@ name: daily-watchdog
 
 on:
   schedule:
-    # 01:00 UTC。① 抓料 10:23 UTC、② 雲端 routine 22:00 UTC（實測 pipeline 約
+    # 01:00 UTC。① 抓料 10:23 UTC、② 雲端 routine 最後一班 22:00 UTC（實測 pipeline 約
     # 30–60 分鐘），故最早的安全檢查點落在隔日凌晨。因此查的是**前一個 UTC 日**。
     # 原為 15:00 UTC，那是 routine 還在 13:00 時的配置；routine 改點後不移會天天誤報。
     - cron: "0 1 * * *"
