@@ -1,5 +1,5 @@
 {
-  "_mirror_note": "claude.ai trigger 定義鏡像備份，非執行檔。改雲端後同步更新本檔（見 ../README.md）。最後同步：2026-08-01",
+  "_mirror_note": "claude.ai trigger 定義鏡像備份，非執行檔。改雲端後同步更新本檔（見 ../README.md）。最後同步：2026-08-29",
   "id": "trig_01FqjE53JVAKTnPxnt8iJCb6",
   "name": "daily-watchdog-push",
   "cron_expression": "30 1 * * *",

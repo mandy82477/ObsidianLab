@@ -6,11 +6,15 @@
 
 ## 現行 trigger
 
-| 名稱 | ID | cron（UTC） | 台北時間 | 定義檔 | runbook |
-|------|----|------|------|--------|---------|
-| `daily-news-pipeline-cloud` | `trig_01AWf2wwmVeL3ykPCSyxyvzw` | `0 22 * * *` | 隔日 06:00 | `docs/cloud-runbooks/triggers/daily-news-pipeline-cloud.json` | `docs/cloud-runbooks/daily.md` |
-| `weekly-wiki-lint-cloud` | `trig_01E41amaGSNuL8jeUhCR8iUw` | `0 3 * * 6` | 每週六 11:00 | `docs/cloud-runbooks/triggers/weekly-wiki-lint-cloud.json` | `docs/cloud-runbooks/weekly-lint.md` |
-| `daily-watchdog-push` | `trig_01FqjE53JVAKTnPxnt8iJCb6` | `30 1 * * *` | 09:30 | `docs/cloud-runbooks/triggers/daily-watchdog-push.json` | `docs/cloud-runbooks/watchdog-push.md` |
+| 名稱 | ID | 定義檔（含 cron） | runbook |
+|------|----|--------|---------|
+| `daily-news-pipeline-cloud` | `trig_01AWf2wwmVeL3ykPCSyxyvzw` | `docs/cloud-runbooks/triggers/daily-news-pipeline-cloud.json` | `docs/cloud-runbooks/daily.md` |
+| `weekly-wiki-lint-cloud` | `trig_01E41amaGSNuL8jeUhCR8iUw` | `docs/cloud-runbooks/triggers/weekly-wiki-lint-cloud.json` | `docs/cloud-runbooks/weekly-lint.md` |
+| `daily-watchdog-push` | `trig_01FqjE53JVAKTnPxnt8iJCb6` | `docs/cloud-runbooks/triggers/daily-watchdog-push.json` | `docs/cloud-runbooks/watchdog-push.md` |
+
+**排程時間只寫在定義檔的 `cron_expression`，本檔不抄。** 2026-08-29 改點時這張表三列
+與下方散文的兩個 cron 全部沒跟上；當時的處置是為表格加一條逐字比對的測試——但那是
+在為一份不必要的副本加護欄。副本刪掉，問題就不存在。
 
 另有 `cloud-writeback-probe`（`trig_01KYk75uTSqLsXcmTNaawmLL`）為 2026-07-10 的寫回測試殘留，已 disabled，未納入備份。
 

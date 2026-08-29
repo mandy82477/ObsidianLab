@@ -48,7 +48,7 @@ git push        # 失敗時照 Step 5 的 push 重試程序處理
 |------|------|
 | `Step 0：昨日缺跑檢查` | TARGET_DATE 為今日時照做；補上前一天的日報時 TARGET_DATE 非今日，該步驟本就跳過 |
 | `Step 0b：冪等閘` | 照做。非 backfill 模式，所以「日報已存在」一律中止——這正是「這批資料已經變成日報了」的判斷 |
-| `Step 1a：新聞抓取` | **跳過**——GitHub Actions 已完成，`gathered_items.json` 已存在（新鮮度由 Step 1b 開頭的防線把關） |
+| `Step 1a：新聞抓取` | **跳過**，改跑一行 `cp src/gathered_archive/$TARGET_DATE.json src/gathered_items.json`——GitHub Actions 已抓完並把當日原料按日歸檔。**不可直接吃現成的 `gathered_items.json`**：它是單槽的，會被下一班抓料、本機補跑、或亂序落地的延遲 run 覆寫（2026-08-29 現場即如此：單槽檔停在 08-28，而 08-29 的 archive 與日報都在）。此檔不存在即代表當日確實沒抓到料，Step 1b 開頭的新鮮度防線會擋下，正確 |
 | `Step 1b：生成日報` | 照做，完成後 commit（**不 push**） |
 | `Step 1c：確認 emitted-cache` | **照做，不可跳過，且必須 commit `src/news_aggregator/emitted_items.json`**（該 Step 已明文要求）——你是全新 checkout、結束後容器銷毀，不 commit 等於沒改過。2026-07-14～07-24 雲端每日確認率幾乎為 0 就是漏了這個 commit。失敗只記警告，繼續後續步驟 |
 | `Step 2：Wiki Ingest` | 照做，但規範在別的檔案，見下方「Wiki Ingest」段落 |

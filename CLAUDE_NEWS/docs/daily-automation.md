@@ -54,7 +54,7 @@ CLAUDE.md 說資料檔「不需 commit」是指手動流程無此義務,非禁�
 
 ## 監控與驗證
 
-- **看門狗（告警層）`[加入: 2026-07-25，改版: 2026-08-29]`**：`.github/workflows/daily-watchdog.yml`,每日 01:00 UTC / 09:00 台北檢查**前一個 UTC 日**的 `gathered_items.json` 與 `news/<date>.md` 是否齊全,缺件則 job 失敗——GitHub 對失敗的排程 workflow 會寄信,這是本系統唯一的主動告警管道。紅燈時看 job summary 判斷是哪一段缺件,依下方補救路徑處理。
+- **看門狗（告警層）`[加入: 2026-07-25，改版: 2026-08-29]`**：`.github/workflows/daily-watchdog.yml`,每日 01:00 UTC / 09:00 台北檢查**前一個 UTC 日**的 `gathered_archive/<date>.json` 與 `news/<date>.md` 是否齊全,缺件則 job 失敗——GitHub 對失敗的排程 workflow 會寄信,這是本系統唯一的主動告警管道。紅燈時看 job summary 判斷是哪一段缺件,依下方補救路徑處理。
 - **Actions**：https://github.com/mandy82477/ObsidianLab/actions → `daily-gather` / `daily-watchdog`
 - **雲端 routine**：https://claude.ai/code/routines/trig_01AWf2wwmVeL3ykPCSyxyvzw
 - **是否上站**：master 每天應出現 `data: daily gather`（①）+ `news/wiki/web`（②）共約 4 筆 commit;網站 Pages 自動重建。

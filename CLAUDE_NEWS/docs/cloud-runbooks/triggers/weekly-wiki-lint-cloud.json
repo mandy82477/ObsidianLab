@@ -1,5 +1,5 @@
 {
-  "_mirror_note": "claude.ai trigger 定義鏡像備份，非執行檔。改雲端後同步更新本檔（見 ../README.md）。最後同步：2026-07-25",
+  "_mirror_note": "claude.ai trigger 定義鏡像備份，非執行檔。改雲端後同步更新本檔（見 ../README.md）。最後同步：2026-08-29",
   "id": "trig_01E41amaGSNuL8jeUhCR8iUw",
   "name": "weekly-wiki-lint-cloud",
   "cron_expression": "0 3 * * 6",

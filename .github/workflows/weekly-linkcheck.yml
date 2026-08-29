@@ -18,12 +18,13 @@ name: weekly-linkcheck
 
 on:
   schedule:
-    # 週五 20:00 UTC = 週六 04:00 台北，早於雲端 weekly lint（週六 03:00 UTC）7 小時。
-    # 緩衝取 7 小時的理由同 daily-gather：GitHub 排程 workflow 實測延遲可達 2.7 小時，
-    # 緩衝不足會讓 lint 讀到上週的舊報告而不自知。
-    # 註：離本班最近的推送者其實是週五 22:00 UTC 的每日 routine（僅 2 小時）。
-    # 兩邊都有 pull --rebase 重試，最壞情況是重試一次，不會遺失資料。
-    - cron: "0 20 * * 5"
+    # 週五 14:00 UTC = 週五 22:00 台北，早於雲端 weekly lint（週六 03:00 UTC）13 小時。
+    # 緩衝的判準與 daily-gather 相同：**必須大於 GitHub 排程的實測變異**（+11.2 小時，
+    # 2026-08-28 量得）。原本排 20:00、緩衝 7 小時，那是沿用舊的 2.7 小時變異估計——
+    # 日更那條線正是因為同一個誤估連兩天開天窗。緩衝不足時 lint 會讀到**上週的**
+    # link_health.json，而 weekly-lint.md 的新鮮度防線門檻是 10 天，7 天的舊報告
+    # 照樣通過——於是拿上週資料標死鏈而不自知。
+    - cron: "0 14 * * 5"
   workflow_dispatch: {}  # 允許手動觸發（改完規格想立刻產一份報告時用）
 
 concurrency:

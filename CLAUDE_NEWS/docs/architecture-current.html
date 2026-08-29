@@ -156,7 +156,7 @@
         <div class="dgm-arrow" style="color: var(--ink-4); font-family: var(--font-mono); margin: 6px 0 6px 14px;">↓</div>
 
         <div class="dgm-box" style="border: 1px solid var(--border-strong); border-radius: 2px; padding: 8px 12px; display: inline-block;">
-          <div style="font-family: var(--font-sans); font-size: 11px; color: var(--ink-1);">當日 gathered_items.json 與 news/&lt;date&gt;.md 齊全？</div>
+          <div style="font-family: var(--font-sans); font-size: 11px; color: var(--ink-1);">前一 UTC 日的 gathered_archive/&lt;date&gt;.json 與 news/&lt;date&gt;.md 齊全？</div>
         </div>
 
         <div class="flex items-start gap-6 mt-2 mb-1" style="margin-left: 14px;">
@@ -170,7 +170,7 @@
       </div>
 
       <div class="mt-6" style="font-family: var(--font-sans); font-size: 12px; color: var(--ink-2); line-height: 1.7;">
-        <p class="mb-2"><strong style="color: var(--ink-1); font-weight: 500;">寫者分工（避免競態）：</strong>① 寫 <code style="font-family: var(--font-mono);">gathered_items.json</code> / <code style="font-family: var(--font-mono);">seen_urls.json</code> / <code style="font-family: var(--font-mono);">emitted_items.json</code>（新增未確認條目）；② 只寫 <code style="font-family: var(--font-mono);">emitted_items.json</code> 的確認欄位，與日報同批 push。兩者時間錯開 3 小時且都走 push 重試。</p>
+        <p class="mb-2"><strong style="color: var(--ink-1); font-weight: 500;">寫者分工（避免競態）：</strong>① 寫 <code style="font-family: var(--font-mono);">gathered_items.json</code> / <code style="font-family: var(--font-mono);">seen_urls.json</code> / <code style="font-family: var(--font-mono);">emitted_items.json</code>（新增未確認條目）；② 只寫 <code style="font-family: var(--font-mono);">emitted_items.json</code> 的確認欄位，與日報同批 push。兩者時間錯開 11.6 小時且都走 push 重試。</p>
         <p class="mb-2"><strong style="color: var(--ink-1); font-weight: 500;">為何快取檔必須 commit：</strong>GitHub Actions 每次全新 checkout，<code style="font-family: var(--font-mono);">seen_urls.json</code> / <code style="font-family: var(--font-mono);">emitted_items.json</code> 不 commit 回去隔天跨日去重就失效、重複出舊聞。</p>
         <p class="mb-2"><strong style="color: var(--ink-1); font-weight: 500;">週更同理上雲：</strong><code style="font-family: var(--font-mono);">/wiki-lint</code> 亦有對應雲端 routine（weekly-wiki-lint-cloud）；外部死鏈檢查同樣因 egress 封鎖上了 Actions——<code style="font-family: var(--font-mono);">.github/workflows/weekly-linkcheck.yml</code>（週五 20:00 UTC）掃 <code style="font-family: var(--font-mono);">wiki/**/*.md</code> 的外部連結、三桶分類（真死／需人工確認／誤判排除）後把 <code style="font-family: var(--font-mono);">data/link_health.json</code> commit 回 repo，lint 端只讀報告不連網。分裂架構的取捨理由見 <code style="font-family: var(--font-mono);">docs/daily-automation.md</code>；雲端 routine 實際執行步驟見 <code style="font-family: var(--font-mono);">docs/cloud-runbooks/</code>。</p>
         <p style="color: var(--warn);">⚠ 文件寫的 trigger_id <strong style="font-weight: 500;">不代表 trigger 真的存在</strong>（2026-07-12 踩過：記載的 routine 從未被建立過，連兩天靜默不跑）。查驗以 <code style="font-family: var(--font-mono);">RemoteTrigger list</code> 為準。</p>

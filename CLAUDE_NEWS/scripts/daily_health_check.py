@@ -11,7 +11,9 @@
 狀況，那時你會兩邊都不信。所以邏輯放這裡，兩邊都只負責呼叫與呈現。
 
 檢查四項：
-  ① 抓料：`src/gathered_items.json` 的 date 是今天且 items 非空
+  ① 抓料：`src/gathered_archive/YYYY-MM-DD.json` 存在且 items 非空
+     —— 讀按日分檔的 archive，不讀單槽的 `gathered_items.json`：本檢查查的是
+     前一個 UTC 日，而單槽檔會被下一班抓料覆寫（理由詳見 check() 內註解）
   ② 日報：`news/YYYY-MM-DD.md` 存在
   ③ 網站：`web_reader/data/digest/YYYY-MM-DD.json` 存在
      —— 單獨檢查是因為「日報有、網站沒有」是真實會發生的半成品狀態

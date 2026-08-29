@@ -28,6 +28,9 @@ OBSERVED_MAX_DELAY_H = 11.2
 MAX_RUNTIME_H = 2.0
 
 
+CRON_RE = r'^\s*- cron: "([^"]+)"'
+
+
 def _hour(cron):
     minute, hour = cron.split()[0], cron.split()[1]
     if not (minute.isdigit() and hour.isdigit()):
@@ -37,13 +40,29 @@ def _hour(cron):
     return int(hour) + int(minute) / 60
 
 
+# 各 routine 的實測執行時間。碰撞檢查比的是佔用區間，不是起跑點距離。
+# 沒列到的一律給 0.5h（watchdog、健康檢查這類短工作）。
+_RUNTIME_H = {"daily-news-pipeline-cloud": MAX_RUNTIME_H,
+              "weekly-wiki-lint-cloud": MAX_RUNTIME_H}
+
+
+def _occupied():
+    """{trigger 名: (起, 迄)}，單位為 UTC 小時。"""
+    out = {}
+    for path in sorted(TRIGGER.parent.glob("*.json")):
+        d = json.loads(path.read_text(encoding="utf-8"))
+        if d.get("cron_expression"):
+            start = _hour(d["cron_expression"])
+            out[path.stem] = (start, start + _RUNTIME_H.get(path.stem, 0.5))
+    return out
+
+
 def _crons():
     # 刻意不用 PyYAML：它沒登記在 src/requirements_news.txt，乾淨環境會 ImportError。
     # 必須錨定行首（只容許空白），否則註解裡提到的 cron 字串也會被當成真的——
     # 本檔就有一句「加回 `- cron: "17 0 * * *"` 即可」，2026-08-29 實測它讓緩衝
     # 算成 12.7h 而非 2.6h，整條不變式因此失效。
-    return re.findall(r'^\s*- cron: "([^"]+)"', WORKFLOW.read_text(encoding="utf-8"),
-                      flags=re.M)
+    return re.findall(CRON_RE, WORKFLOW.read_text(encoding="utf-8"), flags=re.M)
 
 
 class TestConsumerOutlastsProducerVariance(unittest.TestCase):
@@ -73,6 +92,22 @@ class TestConsumerOutlastsProducerVariance(unittest.TestCase):
                              f"routine {routine:.2f}h + 執行 {MAX_RUNTIME_H}h 會跨過 UTC 午夜")
 
 
+    def test_the_weekly_line_also_outlasts_the_variance(self):
+        """同一個根因也存在於週更那條線：linkcheck 產報告 → weekly lint 讀它。
+
+        linkcheck 延遲超過緩衝時，lint 會讀到上週的 link_health.json，而它的新鮮度
+        門檻是 10 天——7 天的舊報告照樣通過，於是拿上週資料標死鏈而不自知。
+        """
+        linkcheck = REPO_ROOT.parent / ".github" / "workflows" / "weekly-linkcheck.yml"
+        produced = _hour(re.findall(CRON_RE, linkcheck.read_text(encoding="utf-8"),
+                                    flags=re.M)[0])
+        lint = _hour(json.loads(
+            (TRIGGER.parent / "weekly-wiki-lint-cloud.json").read_text(encoding="utf-8")
+        )["cron_expression"]) + 24        # 週五產出 → 週六消費
+        self.assertGreater(lint - produced, OBSERVED_MAX_DELAY_H,
+                           f"linkcheck {produced:.2f}h → weekly lint {lint - 24:.2f}h(+1d)，"
+                           f"緩衝 {lint - produced:.2f}h 未蓋過實測變異 {OBSERVED_MAX_DELAY_H}h")
+
 class TestReplayCannotSilentlyCopyTheWrongDay(unittest.TestCase):
     """手動補跑仍然 `cp gathered_archive/<date>.json`，檔名差一個字就 replay 錯一天。
 
@@ -93,32 +128,22 @@ class TestCloudRoutinesDoNotCollide(unittest.TestCase):
     就排在 01:00 週六。
     """
 
-    def test_pushing_routines_start_at_least_an_hour_apart(self):
-        triggers = {}
-        for path in sorted(TRIGGER.parent.glob("*.json")):
-            cron = json.loads(path.read_text(encoding="utf-8")).get("cron_expression")
-            if cron:
-                triggers[path.stem] = _hour(cron)
-        for a, ha in triggers.items():
-            for b, hb in triggers.items():
-                if a < b:
-                    # 環狀距離：abs() 會把 23:30 與 00:15 算成相距 23.25 小時，
-                    # 而它們實際只差 45 分鐘。現行配置就緊貼午夜兩側。
-                    d = abs(ha - hb)
-                    self.assertGreaterEqual(
-                        min(d, 24 - d), 1.0,
-                        f"{a}（{ha:.2f}h）與 {b}（{hb:.2f}h）相距不足 1 小時，"
-                        "兩者都會 push 同一個 repo")
+    def test_pushing_routines_do_not_overlap(self):
+        """比的是**佔用區間**，不是起跑點的距離。
 
-    def test_the_readme_table_matches_the_definition_files(self):
-        """README 的 trigger 表把 cron 抄了一份。2026-08-29 改排程時三列全部沒跟上。"""
-        readme = (TRIGGER.parent.parent / "README.md").read_text(encoding="utf-8")
-        for path in sorted(TRIGGER.parent.glob("*.json")):
-            d = json.loads(path.read_text(encoding="utf-8"))
-            cron = d.get("cron_expression")
-            if cron:
-                self.assertIn(f"`{d['name']}` | `{d['id']}` | `{cron}`", readme,
-                              f"README 的 {d['name']} 那列與定義檔不符（定義檔為 {cron}）")
+        原本門檻寫死 1 小時，於是 watchdog-push 排在 23:00 會通過——而每日 routine
+        22:00 起跑、最長跑 2 小時，那正是該 trigger 檔的 _cron_note 明文記載「會在
+        pipeline 還沒跑完時相撞」的配置。護欄放行了文件已裁定為錯的設定。
+        """
+        for a, (sa, ea) in _occupied().items():
+            for b, (sb, eb) in _occupied().items():
+                if a < b:
+                    # 各自往前後繞一圈，處理跨 UTC 午夜的區間
+                    overlap = any(sa < eb + k and sb + k < ea for k in (-24, 0, 24))
+                    self.assertFalse(
+                        overlap,
+                        f"{a}（{sa:.2f}–{ea:.2f}h）與 {b}（{sb:.2f}–{eb:.2f}h）佔用區間重疊，"
+                        "兩者都會 push 同一個 repo")
 
 
 class TestDataActuallyLands(unittest.TestCase):

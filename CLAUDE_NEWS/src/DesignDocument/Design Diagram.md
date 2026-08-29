@@ -68,14 +68,14 @@ flowchart TD
     FRESH -->|否| RUN["生日報 → 六記者 ingest → build\n→ 單一 push 上站\n（只寫 emitted_items.json 的確認欄位）"]
 
     WD["③ 看門狗 —— .github/workflows/daily-watchdog.yml\n隔日 01:00 UTC / 09:00 台北"]
-    WD --> CHECK{"當日 gathered_items.json\n與 news/&lt;date&gt;.md 齊全？"}
+    WD --> CHECK{"前一 UTC 日的 gathered_archive/&lt;date&gt;.json\n與 news/&lt;date&gt;.md 齊全？"}
     CHECK -->|缺件| FAIL["job 失敗 → GitHub 寄信\n（本系統唯一主動告警管道）"]
     CHECK -->|齊全| GREEN["綠燈"]
 
     FAIL -.->|人工補救| MANUAL["/news-pipeline YYYY-MM-DD\n本機補跑，--date 不碰去重快取"]
 ```
 
-**寫者分工（避免競態）：** ① 寫 `gathered_items.json` / `seen_urls.json` / `emitted_items.json`（新增未確認條目）；② **只寫 `emitted_items.json` 的確認欄位**，與日報同批 push。兩者時間錯開 3 小時且都走 push 重試。
+**寫者分工（避免競態）：** ① 寫 `gathered_items.json` / `seen_urls.json` / `emitted_items.json`（新增未確認條目）；② **只寫 `emitted_items.json` 的確認欄位**，與日報同批 push。兩者時間錯開 11.6 小時且都走 push 重試。
 
 **為何快取檔必須 commit：** GitHub Actions 每次全新 checkout，`seen_urls.json` / `emitted_items.json` 不 commit 回去隔天跨日去重就失效、重複出舊聞（`CLAUDE.md` 說資料檔「不需 commit」是指手動流程無此義務，非禁止）。
 
