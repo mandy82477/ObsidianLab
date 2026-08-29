@@ -79,13 +79,7 @@
       "time": "08/23 05:19",
       "sentiment": "",
       "body": "《The Times of India》報導 Anthropic 延攬 Google 自研晶片計畫創辦人 Amir Salek，外界解讀為公司評估自研晶片、跨入硬體領域的訊號。",
-      "focusTags": [],
-      "sedimented": [
-        {
-          "id": "amir-salek",
-          "pageType": "entity"
-        }
-      ]
+      "focusTags": []
     },
     {
       "title": "Inherent, founded by DeepMind alumni, says its AI 'teammate' just outperformed Anthropic and OpenAI at replicating research",
@@ -258,11 +252,5 @@
     }
   ],
   "preview": "Anthropic IPO 話題持續升溫，多家財經媒體同日圍繞估值、營收壓力與風險揭露等角度報導：《The Motley Fool》整理外界對其估值可能超越 SpaceX IPO 的討論，《Yahoo Finance》引述評價專家指出需要 1.2 兆美元營收才撐得起 2 兆美元估值的質疑，CNBC 則報導申報文件將把「",
-  "sedimentedToday": [
-    {
-      "id": "amir-salek",
-      "name": "Amir Salek",
-      "pageType": "entity"
-    }
-  ]
+  "sedimentedToday": []
 }

@@ -67,6 +67,12 @@
       "body": "《citybiz》報導 Anthropic 延攬前 Google 自研 TPU 團隊負責人 Amir Salek，外界解讀為公司評估自研晶片、跨入硬體領域的訊號。",
       "focusTags": [
         "[重大事件]"
+      ],
+      "sedimented": [
+        {
+          "id": "amir-salek",
+          "pageType": "entity"
+        }
       ]
     },
     {
@@ -337,13 +343,13 @@
   "preview": "Claude 多款模型（含 Opus 5）今日一度出現請求錯誤率上升，Anthropic 官方狀態頁顯示事故發生於 04:50–07:36 UTC，已於 08:30 UTC 確認解決。",
   "sedimentedToday": [
     {
-      "id": "claude-skills",
-      "name": "Claude Skills",
+      "id": "amir-salek",
+      "name": "Amir Salek",
       "pageType": "entity"
     },
     {
-      "id": "mythos",
-      "name": "Claude Mythos",
+      "id": "claude-skills",
+      "name": "Claude Skills",
       "pageType": "entity"
     },
     {
