@@ -13,6 +13,9 @@
 即將到期或已過期，需要主編拿 WebFetch 去官方原文確認一次。** 查證是主編層的事，
 和 `scan_pending_verifications.py` 的分工一致。
 
+輸出的去向：日報完成摘要的「待使用者裁示」區（見 `.claude/commands/news-pipeline-steps.md`
+的 Step 1b-3g 與該區規格）。只印在步驟裡而沒有接手方，等於偵測器印給空氣看。
+
 用法：
     python scripts/scan_expiring_deadlines.py [--days 7] [--today YYYY-MM-DD]
 
