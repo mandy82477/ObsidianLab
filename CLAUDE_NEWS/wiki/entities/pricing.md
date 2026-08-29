@@ -8,14 +8,14 @@ last_updated: "2026-08-29"
 last_news_update: "2026-08-29"
 status_main: "active"
 days_since_news: 0
-inbound_links: 110
+inbound_links: 112
 attribution_count: 68
-attribution_last: "2026-08-29"
+attribution_last: "2026-08-28"
 top_source: "google-news"
-pending_count: 2
+pending_count: 3
 pending_overdue: 1
 pending_next_review: "2026-09-03"
-pending_signalled: 0
+pending_signalled: 1
 signal: "健康"
 generated_by: "scripts/gen_wiki_frontmatter.py"
 ---

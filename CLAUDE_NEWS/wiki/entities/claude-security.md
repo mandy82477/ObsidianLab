@@ -4,7 +4,7 @@ kind: "entity"
 type: "product"
 status: "beta（公開測試版）"
 domain: "🛠️ 工具/功能"
-last_updated: "2026-08-22"
+last_updated: "2026-08-29"
 last_news_update: "2026-08-22"
 status_main: "beta"
 days_since_news: 7
@@ -15,7 +15,7 @@ top_source: "google-news"
 pending_count: 2
 pending_overdue: 2
 pending_next_review: null
-pending_signalled: 0
+pending_signalled: 1
 signal: "健康"
 generated_by: "scripts/gen_wiki_frontmatter.py"
 ---

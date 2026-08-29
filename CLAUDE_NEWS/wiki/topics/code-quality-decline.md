@@ -7,9 +7,9 @@ last_updated: "2026-08-29"
 last_news_update: "2026-08-29"
 status_main: "ongoing"
 days_since_news: 0
-inbound_links: 27
+inbound_links: 28
 attribution_count: 24
-attribution_last: "2026-08-29"
+attribution_last: "2026-08-28"
 top_source: "reddit"
 pending_count: 3
 pending_overdue: 2

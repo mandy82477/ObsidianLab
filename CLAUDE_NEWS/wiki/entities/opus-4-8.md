@@ -4,7 +4,7 @@ kind: "entity"
 type: "model"
 status: "active（已被取代，次旗艦地位由 Opus 5 接手）"
 domain: "🤖 模型"
-last_updated: "2026-08-27"
+last_updated: "2026-08-29"
 last_news_update: "2026-08-27"
 status_main: "active"
 days_since_news: 2

@@ -7,12 +7,12 @@ last_updated: "2026-08-29"
 last_news_update: "2026-08-29"
 status_main: "ongoing"
 days_since_news: 0
-inbound_links: 42
-attribution_count: 112
+inbound_links: 41
+attribution_count: 114
 attribution_last: "2026-08-29"
 top_source: "hacker-news"
-pending_count: 1
-pending_overdue: 0
+pending_count: 2
+pending_overdue: 1
 pending_next_review: "2026-09-13"
 pending_signalled: 0
 signal: "健康"

@@ -4,18 +4,18 @@ kind: "entity"
 type: "person"
 status: "active"
 domain: "👤 人物"
-last_updated: "2026-08-28"
-last_news_update: "2026-08-27"
+last_updated: "2026-08-29"
+last_news_update: "2026-08-29"
 status_main: "active"
-days_since_news: 2
-inbound_links: 13
-attribution_count: 17
-attribution_last: "2026-08-27"
+days_since_news: 0
+inbound_links: 12
+attribution_count: 18
+attribution_last: "2026-08-29"
 top_source: "google-news"
-pending_count: 7
+pending_count: 8
 pending_overdue: 6
 pending_next_review: "2026-09-08"
-pending_signalled: 1
+pending_signalled: 2
 signal: "健康"
 generated_by: "scripts/gen_wiki_frontmatter.py"
 ---
