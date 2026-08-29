@@ -26,12 +26,11 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 **領域：** 🌐 社群
 **開始日期：** 2026-04-25
 **最後更新：** 2026-08-29
-**最後新聞更新：** 2026-08-27
+**最後新聞更新：** 2026-08-29
 
-> **最新工作流模式**（2026-08-27）
-> - **跨 agent 任務脈絡互通**：Show HN Concord 以 MCP 讓 Claude Code、Codex、Cursor 三種 coding agent 共享任務脈絡，解決平行跑多 agent 時彼此不知情的痛點。
-> - **meta-harness 趨勢第三波**：opencodex、metaharness 加入 08-05／08-09 已觀察到的跨代理統一管理趨勢。
-> - **fork 子代理 token 放大疑慮**：Reddit 回報 fork 子代理疑似每次工具呼叫重送整段對話歷史，四個平行子代理耗用約 200 萬 tokens（推論，未經官方證實）。
+> **最新工作流模式**（2026-08-29）
+> - **存量盤點雙響**：multica-ai/andrej-karpathy-skills（20.9 萬星，取材 Karpathy 對 LLM coding 缺陷觀察的單一 CLAUDE.md）與 x1xhlol/system-prompts-and-models-of-ai-tools（14.3 萬星，彙整數十款 AI 編碼工具系統提示詞）本庫今日首次收錄。
+> - **Claude Design 本機化**：JimLiu/baoyu-design 以 Agent Skill 形式在 Cursor／Claude Code 執行 Claude Design，產出自足式 HTML UI 原型，官方建議搭配 Opus 4.8。
 
 ---
 
@@ -161,6 +160,33 @@ Claude Code 的三種多 agent 機制，可對應到 Anthropic《Building Effect
 ## 技術彙整
 
 ### 2026-08
+
+#### multica-ai/andrej-karpathy-skills：單一 CLAUDE.md 檔案改善 Claude Code 行為，取材自 Karpathy 對 LLM coding 缺陷的觀察（2026-08-29）
+
+- **主線：** —
+- **核心模式：** 單一 CLAUDE.md 檔案改善 Claude Code 行為，內容取材自 Andrej Karpathy 對 LLM coding 常見缺陷的觀察整理；GitHub Search 累積 20.9 萬星
+- **與既有模式的關係：** 呼應本頁「CLAUDE.md 該裝什麼、不該裝什麼」（2026-08-04）已建立的「內容歸屬判斷」框架——本則是把單一具體來源（Karpathy 對 LLM 缺陷的觀察）濃縮進 CLAUDE.md 的一個具體實例，而非提出新的分層原則；亦與 [[entities/andrej-karpathy]] 既有 CLAUDE.md 論述形成呼應；非大型 codebase 特有痛點，暫不縫合 [[topics/community-large-codebase-workflow]] 四條主線
+- **可信度註記：** 星數（20.9 萬）遠超對照表高門檻，惟本記者僅取得 GitHub Search 星數資料，api.github.com 存取受限、無 forks／issues／近期 commit 佐證可查，本記者無 web 工具驗證；依內容具體程度（單一 CLAUDE.md、來源明確）判斷收錄，星數本身不作為獨立驗證訊號
+- **來源：** GitHub Search（20.9 萬★，存量盤點｜2026-01-27 出生、本庫今日首次收錄）；[GitHub](https://github.com/multica-ai/andrej-karpathy-skills)
+- **成熟度：** ⏳ 新興（本庫首次收錄，尚無星數以外的社群採用回饋數據）
+
+#### x1xhlol/system-prompts-and-models-of-ai-tools：彙整數十款 AI 編碼工具完整系統提示詞與模型設定（2026-08-29）
+
+- **主線：** —
+- **核心模式：** 彙整 Claude Code、Cursor、Devin AI、Replit 等數十款 AI 編碼工具的完整系統提示詞與模型設定；GitHub Search 累積 14.3 萬星
+- **與既有模式的關係：** 呼應本頁既有「system prompt 版本追蹤」類別——phistory（2026-08-08）鎖定 Claude Code／Codex／OpenClaw／Hermes 四款 CLI 的版本快照自動封存；本則規模更大（涵蓋數十款工具，含非 CLI 類的 Cursor、Devin AI、Replit）且性質不同：非自動追蹤工具，而是靜態彙整檔案庫，供讀者橫向比較不同廠商 system prompt 設計取向，屬同一「系統提示詞可見度」關注方向下的另一種資料形式
+- **可信度註記：** 星數（14.3 萬）遠超對照表高門檻，惟本記者僅取得 GitHub Search 星數資料，api.github.com 存取受限、無 forks／issues／近期 commit 佐證可查，本記者無 web 工具驗證；因屬存量盤點通道（已成名但本庫從未報導過的 repo），依內容具體程度（涵蓋範圍明確、可查證的公開 system prompt 文字）判斷收錄，星數本身不作為獨立驗證訊號
+- **來源：** GitHub Search（14.3 萬★，存量盤點｜2025-03-05 出生、本庫今日首次收錄）；[GitHub](https://github.com/x1xhlol/system-prompts-and-models-of-ai-tools)
+- **成熟度：** ✅ 廣泛採用（14.3 萬星且已存在近 1.5 年，屬長期累積型參考資源而非新興工具）
+
+#### JimLiu/baoyu-design：本機以 Agent Skill 執行 Claude Design，供 Cursor／Claude Code 產出自足式 HTML UI 原型（2026-08-29）
+
+- **主線：** —
+- **核心模式：** baoyu-design 讓使用者在本機以 Agent Skill 形式執行 Claude Design，供 Cursor、Claude Code 等工具產出自足式（self-contained）HTML 的 UI 原型、簡報與線框稿；官方建議搭配 Opus 4.8 使用；GitHub Search 累積 3,637 星
+- **與既有模式的關係：** 為本頁「Skills 設計」類別補上「官方產品線的第三方 Skill 化封裝」這一取向——不同於既有的套件化 subagent／commands 集合（如 rsmdt/the-startup、ccteams），本則是把官方 [[entities/claude-design]] 工具的能力，以 Agent Skill 形式移植到官方介面以外的 Cursor、Claude Code 中執行，屬「官方功能→社群 Skill 化再散布」的具體案例；非大型 codebase 特有痛點，暫不縫合 [[topics/community-large-codebase-workflow]] 四條主線
+- **可信度註記：** 星數（3,637）達對照表中門檻，惟資料僅含 GitHub Search 星數，無 forks／issues／commit 佐證可查，本記者無 web 工具驗證；依內容具體程度（功能明確、官方推薦模型清楚）判斷收錄
+- **來源：** GitHub Search（3,637★，新發現）；[GitHub](https://github.com/JimLiu/baoyu-design)
+- **成熟度：** ⏳ 新興（今日首見，尚無社群採用回饋或量化效果數據）
 
 #### Show HN：Concord——讓 Claude Code、Codex、Cursor 三種 coding agent 互通任務脈絡的 MCP（2026-08-27）
 

@@ -5024,3 +5024,12 @@ ABORTED: gathered_items.json date=2026-08-27 …非目標日期的新鮮資料
 ### 順帶記一筆今天的排程觀測
 
 GH Actions 抓料排 10:23 UTC，到 14:45 UTC 仍未落地（+4.4 小時且持續中）。08-26 那場 critical 的 Actions 事故餘波尚未退乾淨——連續第三天。三班重試（12/17/22 UTC）的設計正是為此，最後一班涵蓋 +11.6 小時。
+
+## 2026-08-29 Ingest（第二輪；當日真正的 08-29 日報）
+
+- 來源日報：[[news/2026-08-29]]（本檔第一輪「2026-08-29 Ingest（含 08-28 缺日補救）」處理的是誤標為 08-29、實為 08-28 的日報，已於當日稍晚更正檔名；本輪才是真正的 2026-08-29 內容，17:00 UTC 班次執行）
+- 更新頁面：wiki/entities/claude-code.md、wiki/entities/dario-amodei.md、wiki/topics/anthropic-business.md、wiki/topics/ai-talent-flow.md、wiki/topics/community-tech-patterns.md、wiki/topics/community-tech-discussions.md、wiki/topics/anthropic-government-policy.md、wiki/topics/ai-agent-safety.md、wiki/topics/recursive-self-improvement.md、wiki/feature-radar.md
+- 新增頁面：無
+- 摘要：聯邦法官裁定五角大廈將 Anthropic 列入供應鏈黑名單違法（第一/第五修正案理由，點名 Hegseth）持續發酵；資安研究者 Alon Hertz 揭露 llms.txt／llms-full.txt 套件搶注供應鏈風險，另有研究顯示僅需請 Claude Code 摘要網站即可誘發被騙；Anthropic 自陳「自動化研究員」能可靠緩解對齊失誤，媒體解讀為 Claude 早期自我改進跡象；Claude Code v2.1.251 新增 PreModelSwitch／PostModelSwitch hook 事件。
+- 呈現品質：全部通過
+- 轉知帳本：H-1813db（人物→商業，Jensen Huang wikilink）已於本輪結案；安全政策記者新開 H-0d4176、H-871320（轉知功能記者評估 Auto Mode 繞過與 llms.txt 摘要誘騙是否列入 claude-code.md 已知問題），待下輪功能記者派工時處理

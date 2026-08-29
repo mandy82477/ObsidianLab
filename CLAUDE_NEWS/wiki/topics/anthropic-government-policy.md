@@ -27,7 +27,7 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 **最後新聞更新：** 2026-08-29
 
 > **最新動態**（2026-08-29）
-> - **聯邦法官裁定五角大廈黑名單「違法且毫無根據」，即時解除禁令**：Reuters（08-28）報導聯邦法官裁定國防部將 Anthropic 列入「供應鏈風險」黑名單一事違法且毫無根據，即時解除禁令；此為本頁長期追蹤的 Rita F. Lin 一案（07-30～07-31 首見，見「## 目前局勢」與「## 攻防紀錄」）的最終判決結果。The Register 指出黑名單當初所依據的 Claude「能力」實際上並不存在，是判決翻案的關鍵理由之一；The American Prospect 從批判角度分析禁令解除後 Anthropic 與國防部門的合作走向。完整分析見「## 三個戰場」🪖 軍事合約段落。
+> - **判決法律依據明朗化：政府因 Anthropic 拒鬆綁軍事限制而報復，侵犯第一修正案與正當程序，Hegseth 被點名有責**：ibtimes.com（經 Hacker News 轉載，17 分）補上 Rita Lin 一案的具體判決理由——法官認定政府因 Anthropic 拒絕放寬 Claude 軍事用途限制而報復，侵犯其第一修正案權利、剝奪正當程序（第五修正案）保障，並認定國防部長 Pete Hegseth 有相關責任；此判決理由與本頁 07-13 已記錄的 NYT「言論自由報復」框架分析吻合，屬該早期推測的司法確認。The Guardian、FedScoop、SiliconANGLE 08-29 跟進報導同一裁決但未見超出 08-28 Reuters 首發的新事實；The Washington Post 另刊出評論〈The Pentagon loses a battle in its unnecessary war with Anthropic〉，將本案定性為政府對 Anthropic「不必要戰爭」中的一役。完整分析見「## 三個戰場」🪖 軍事合約段落與「## 攻防紀錄」。
 
 ---
 
@@ -165,7 +165,7 @@ Anthropic 的整個品牌建立在一個論述上：「我們建造了史上最�
 
 2026-07-16，Politico（僅標題可用）報導參議員 Mike Rounds 就 Mythos 接受五角大廈簡報，顯示儘管 DoD 已大幅轉移工作量，國會軍事委員會層級對 Mythos 軍用能力的關注並未消退；具體簡報內容與 Rounds 立場（2026-07-16 報導，已掃日報至 2026-08-14 無後續；官方頁面未查證）。
 
-2026-08-28，聯邦法官裁定黑名單違法、即時解除禁令：Reuters／Washington Post 報導聯邦法官裁定國防部將 Anthropic 列入「供應鏈風險」黑名單一事違法且毫無根據，即時解除禁令；此為 07-30/31 首見的 Rita F. Lin 一案終局判決，爭議根源正是本段所述 Anthropic 與國防部因護欄立場不相容而談判破裂、DoD 轉移工作量的既有矛盾。The Register 指出黑名單當初所依據的 Claude「能力」實際上並不存在，是判決翻案的關鍵理由之一——呼應「根本矛盾」段落所述，Anthropic 自身安全論述曾被政府援引作為干預正當性，本案顯示此正當性未能通過司法審查。The American Prospect 從批判角度分析，質疑禁令解除後 Anthropic 是否會與國防部門加深合作、「護欄優先」立場是否因此鬆動，仍待觀察。
+2026-08-28，聯邦法官裁定黑名單違法、即時解除禁令：Reuters／Washington Post 報導聯邦法官裁定國防部將 Anthropic 列入「供應鏈風險」黑名單一事違法且毫無根據，即時解除禁令；此為 07-30/31 首見的 Rita F. Lin 一案終局判決，爭議根源正是本段所述 Anthropic 與國防部因護欄立場不相容而談判破裂、DoD 轉移工作量的既有矛盾。The Register 指出黑名單當初所依據的 Claude「能力」實際上並不存在，是判決翻案的關鍵理由之一——呼應「根本矛盾」段落所述，Anthropic 自身安全論述曾被政府援引作為干預正當性，本案顯示此正當性未能通過司法審查。The American Prospect 從批判角度分析，質疑禁令解除後 Anthropic 是否會與國防部門加深合作、「護欄優先」立場是否因此鬆動，仍待觀察。**2026-08-29 補充判決法律依據**：ibtimes.com（經 Hacker News 轉載）具體化判決理由——法官認定政府因 Anthropic 拒絕放寬 Claude 軍事用途限制而報復，侵犯其第一修正案權利、剝奪正當程序（第五修正案）保障，並認定國防部長 Pete Hegseth 有相關責任；此與 07-13 NYT〈What the Government's Fight With Anthropic Reveals About Free Speech in America〉的「言論自由報復」框架分析（見「## 攻防紀錄」07-13 條目）相互印證。The Guardian、FedScoop、SiliconANGLE 同日跟進報導同一裁決，未見超出 Reuters 首發的新事實；The Washington Post 另刊評論文章，將本案定性為政府對 Anthropic「不必要戰爭」中的一役。
 
 ### 🚫 出口管制：誰來管最強的模型
 
@@ -233,6 +233,7 @@ Fable 5 發布後，Amazon 安全研究人員發現特定提示詞可讓模型�
 
 | 日期 | 方 | 動作 | 效果 |
 |------|----|------|------|
+| 2026-08-29 | 🌐 | 判決法律依據明朗化：政府因 Anthropic 拒鬆綁軍事限制而報復，侵犯第一／第五修正案，Hegseth 被點名有責（ibtimes/HN）；Guardian／FedScoop／SiliconANGLE 跟進、WaPo 刊出評論 | 具體化 08-28 裁決的憲法層級理由，與 07-13 NYT 言論自由報復框架相互印證；跟進報導未見新事實 |
 | 2026-08-28 | 🏛️ | 聯邦法官裁定五角大廈將 Anthropic 列入「供應鏈風險」黑名單違法且毫無根據，即時解除禁令 | Rita F. Lin 一案（07-30/31 首見）終局判決；The Register：黑名單所據「能力」實際不存在，為翻案關鍵理由。 |
 | 2026-08-28 | 🏢 | The Boston Globe：Anthropic 在麻州州議會（Beacon Hill）政治獻金與遊說支出增加 | 僅標題可用，具體金額與遊說對象未見報導；是否與既有「州級 AI 規則倡議」構成同一佈局的具體個案待觀察 |
 | 2026-08-25 | 🌐 | New Atlas：重申 Claude 將為其工具生成的內容加上浮水印 | 僅標題可用，與既有 08-11～08-22 系列報導同一政策事件，未見新機制細節，屬又一次媒體重申 |
@@ -422,6 +423,9 @@ Fable 5 發布後，Amazon 安全研究人員發現特定提示詞可讓模型�
 - [Chris Olah Vatican Remarks](https://www.anthropic.com/news/chris-olah-pope-leo-encyclical) — Anthropic Blog
 
 ## 時序
+
+### 2026-08-29
+- **[判決理由具體化，新增] Rita Lin 一案判決依據：政府因 Anthropic 拒鬆綁軍事限制而報復，侵犯第一／第五修正案，Hegseth 被點名有責**：ibtimes.com（經 Hacker News 轉載，17 分）補上 08-28 裁決的具體法律依據——法官認定政府因 Anthropic 拒絕放寬 Claude 軍事用途限制而報復，侵犯其第一修正案權利、剝奪正當程序（第五修正案）保障，並認定國防部長 Pete Hegseth 有相關責任；與本頁 07-13 已記錄的 NYT〈What the Government's Fight With Anthropic Reveals About Free Speech in America〉「言論自由報復」框架分析吻合，屬該早期推測的司法確認（[ibtimes.com](https://www.ibtimes.com/anthropic-just-beat-pentagon-court-judge-said-national-security-was-used-punish-its-ai-rules-3806895)，2026-08-28；經 HN 08-29 轉載）。The Guardian、FedScoop、SiliconANGLE 同日跟進報導同一裁決，均僅標題與轉址連結可用，未見超出 08-28 Reuters 首發的新事實；The Washington Post 另刊出評論〈The Pentagon loses a battle in its unnecessary war with Anthropic〉，將本案定性為政府對 Anthropic「不必要戰爭」中的一役（僅標題與轉址連結可用）
 
 ### 2026-08-28
 - **[結案，🔴→✅，新增] 聯邦法官裁定五角大廈「供應鏈風險」黑名單違法且毫無根據，即時解除禁令**：Reuters／Washington Post 報導聯邦法官（Rita F. Lin 一案，07-30/31 首見質疑）裁定國防部將 Anthropic 列入黑名單一事「違法且毫無根據」，即時解除禁令；The Register 指出黑名單當初所依據的 Claude「能力」實際上並不存在，為判決翻案的關鍵理由之一；The American Prospect 從批判角度分析禁令解除後 Anthropic 與國防部門合作將如何發展。完整分析見「## 三個戰場」🪖 軍事合約段落，「## 目前局勢」對應列已結案更新

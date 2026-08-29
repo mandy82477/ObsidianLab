@@ -250,7 +250,7 @@ Financial Times 報導 Anthropic 旗艦模型在吸引一般使用者（general 
 | 知名放空投資人公開唱空估值敘事 | Steve Eisman 稱 Anthropic/OpenAI 為 AI 交易的「阿基里斯腱」| ℹ️ 市場觀感 |
 
 **商業風險細節**
-- **Nvidia 執行長「後悔」**：Yahoo Finance 報導 Nvidia 傳出將投資 Hugging Face **129 億美元**，執行長黃仁勳同時表示對先前投資 OpenAI、Anthropic 的規模感到「後悔」（regret）。若屬實，反映 Nvidia 作為 Anthropic 重要投資人／算力供應商對既有投資部位規模的內部反思，可能影響後續加碼意願（推論）；惟「傳出」為未經證實的媒體報導，具體後悔緣由（規模過大、報酬率不如預期或策略轉向）未見細節，Jensen Huang 言論面另由人物記者評估。
+- **Nvidia 執行長「後悔」**：Yahoo Finance 報導 Nvidia 傳出將投資 Hugging Face **129 億美元**，執行長黃仁勳同時表示對先前投資 OpenAI、Anthropic 的規模感到「後悔」（regret）。若屬實，反映 Nvidia 作為 Anthropic 重要投資人／算力供應商對既有投資部位規模的內部反思，可能影響後續加碼意願（推論）；惟「傳出」為未經證實的媒體報導，具體後悔緣由（規模過大、報酬率不如預期或策略轉向）未見細節，[[entities/jensen-huang]] 言論面另由人物記者評估。
 - **創投人士質疑 IPO 前景**：24/7 Wall St. 報導知名創投人 Chamath Palihapitiya 提出「3 個 AI 殺手」警訊，並質疑 Anthropic 傳聞中 2 兆美元 IPO 前景是否可能率先崩盤；與既有 08-15 Steve Eisman 唱空言論同屬市場知名人士公開質疑估值敘事的訊號，且與同日「IPO 前瞻與估值追蹤」表新增之 30 兆美元 TAM 論戰同源並發（推論）；具體「3 個殺手」論點內容、量化依據未見報導細節，僅標題層級資訊。
 - **Claude 浮水印被繞過**：Forbes（08-21）討論 Claude 輸出內容浮水印（為因應歐盟 AI Act 透明度規範，見 [[topics/anthropic-government-policy]]）對企業用戶的實務影響；同期 WIRED（08-20）報導工程師已找到繞過隱形浮水印的方法。若浮水印可被輕易繞過卻仍是企業合規/內容溯源依賴的機制，可能削弱企業客戶對浮水印作為「可信賴內容標示」的信任（推論）；具體實務影響內容、受影響企業類型、Forbes 論點細節均未見報導，僅標題層級資訊（Google News/Forbes；Google News/WIRED）。
 - **音樂出版商著作權訴訟**：The Hollywood Reporter 報導音樂出版商 Round Hill Music 對 Anthropic 提起著作權侵權訴訟，求償 **10 億美元**；Reuters 同期報導另一家音樂出版商對 Anthropic 與 Suno（AI 音樂生成服務）提起類似著作權侵權訴訟。延續本頁已記錄之著作權集體訴訟 15 億美元和解案（07-20 核准，見「財務狀況」表）、UTRF 專利侵權訴訟（07-21），是音樂出版業首度對 Anthropic 提起的具名著作權訴訟，顯示著作權法律風險正從文字出版業擴散至音樂產業；求償金額、具體侵權指控內容、與既有和解案的涵蓋範圍關係（是否涉及音樂作品）均未見報導細節，兩則均僅標題層級可用（The Hollywood Reporter；Reuters，2026-08-18）。
@@ -417,6 +417,7 @@ Financial Times 報導 Anthropic 旗艦模型在吸引一般使用者（general 
 - **[戰略合作，新增，媒體獨家未經證實] Yahoo Finance 獨家：Claude 營收年增稱達 1,000%，對 ChatGPT 差距縮小**：單一來源、無官方確認，詳見「戰略合作」表新增列（Google News/Yahoo Finance）
 - **[戰略合作，跟進，補上具體金額] 後續報導：Meta 傳將於 Anthropic 支出達 100 億美元**：與既有 07-17 記錄之運算力租賃洽談金額相同，詳見「戰略合作」表 Meta 列更新（Hacker News；Google News/The New York Times）
 - **[戰略合作，跟進，財報面補強，非新事實] WSJ：Salesforce 財報獲利與營收雙雙成長，同步擴大與 Anthropic 合作發布 Claudeforce**：與既有 08-26 記錄為同一事件，詳見「戰略合作」表 Salesforce 列更新（WSJ；Salesforce 官方新聞稿）
+- **[戰略合作，跟進，市場觀感角度，非新事實] Yahoo Finance：財經評論員 Jim Cramer 稱 Salesforce（CRM）與 Anthropic 合作「緩解 AI 顛覆傳統 SaaS 業務之疑慮」**：與同日 WSJ 財報面補強、08-26 Claudeforce 發布為同一合作事件的市場觀感延伸；呼應本頁「產品市場契合度」段落既有「AI 是否侵蝕傳統 SaaS」討論（見 07 月〈小型企業改用 Claude 自建工作流取代 Salesforce〉一則），本則從 Salesforce 立場提供正面反例——深度整合而非被取代；具體論點內容、是否涉及股價評級調整未見報導細節，僅標題層級資訊（Google News/Yahoo Finance）。
 
 #### 2026-08-26
 - **[新增，IPO/估值敘事，正反論戰] Hacker News 雙帖＋Anadolu Ajansı／Moomoo 等：Anthropic 傳簡報宣稱 AI 服務潛在市場（TAM）上看 30 兆美元；Yahoo Finance／Marcus on AI／24/7 Wall St.（引述 Chamath Palihapitiya）提出懷疑角度**：須留意「30 兆美元市場總量」與同日 Fortune 報導「2 兆美元 IPO 估值」口徑不同，不可混淆，詳見「IPO 前瞻與估值追蹤」表與「商業風險」表新增列（Hacker News；Google News/Anadolu Ajansı；Google News/Moomoo；Google News/Yahoo Finance；Google News/Marcus on AI；Google News/24/7 Wall St.；Google News/Fortune）

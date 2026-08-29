@@ -3,8 +3,8 @@ page: "topics/ai-talent-flow"
 kind: "topic"
 status: "ongoing"
 domain: "💼 商業"
-last_updated: "2026-08-28"
-last_news_update: "2026-08-27"
+last_updated: "2026-08-29"
+last_news_update: "2026-08-29"
 status_main: "ongoing"
 days_since_news: 2
 inbound_links: 19
@@ -25,12 +25,13 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 **蒐集邊界：** 以與 Anthropic 相關的人才流動為主，另針對本主題定向補抓（每日至多 3 則）；其他實驗室之間、與 Anthropic 無關的異動仍可能延遲或缺漏，重大者由人工查證補記。
 **開始日期：** 2026-06-21
 **最後更新：** 2026-08-29
-**最後新聞更新：** 2026-08-27
+**最後新聞更新：** 2026-08-29
 
 > **最新動態：Fortune 報導 Google DeepMind 頂尖人才流失情況持續**（2026-08-27）
 > Fortune 引述最新資料指出 Google DeepMind 近期持續流失頂尖 AI 人才至競爭實驗室與新創公司，延續本頁自 2026-06 以來記錄的「Google DeepMind 淨流出」格局；具體人數、流向對象、統計期間未見報導細節，僅標題與部分內文可用（推論，待後續補充具名案例）。
 > **08-21/08-23 已記錄之 Anthropic 延攬 Google 自研晶片計畫創辦人 Amir Salek**，仍為本頁近期重點，詳見「對各公司的影響」表。
 > **待查證項目仍未有後續**：08-13 Sergey Brin 內部談話報導（標題截斷）已掃日報至 2026-08-29 無後續；官方頁面未查證。
+> **另（背景訊號，非核心格局變動，2026-08-28）**：報導稱加拿大 5.41 億美元研究計畫吸引部分美國常春藤學者北遷，屬學界層級跨國政策訊號，僅標題可用，未見具名機構或與特定 AI 實驗室之關聯，詳見「時序」。
 
 ## 摘要
 
@@ -59,6 +60,9 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 - 人才流動為**雙向洗牌**（Google 同期亦失人至 OpenAI），非單向崩塌。
 
 ## 時序
+
+### 2026-08-28（Topic Watch 定向抓取，蒐集邊界外背景訊號）
+- **加拿大 5.41 億美元研究計畫吸引美國常春藤學者北遷**：報導稱受美國研究政策環境影響，部分常春藤學者轉往加拿大新設立的 5.41 億美元研究計畫，涉及 AI 相關研究人才跨國流動；僅標題與轉址連結可用，原文內容未能取得，未見具體學校名單、人數、或與特定 AI 實驗室／公司的關聯。**與本頁核心追蹤格局的關係**：本頁聚焦「AI 前沿實驗室之間」的人才流動（Google DeepMind → Anthropic/OpenAI 一類），此則為學界層級、跨國政策驅動的人才外流，屬更上游的總體背景訊號而非個案（推論），暫記於此供後續若出現具名學者／機構銜接 AI 實驗室的報導時參照；另見 [[topics/anthropic-government-policy]] 美國 AI 研究政策環境（Topic Watch/ai-talent-flow，僅標題可用）
 
 ### 2026-08-27（Topic Watch 定向抓取）
 - **Fortune：新數據顯示 Google DeepMind 持續流失頂尖 AI 人才至競爭實驗室與新創**：報導指出最新資料顯示 DeepMind 人才流失情況延續，惟具體人數、流向公司名單、統計期間均未見報導細節，僅標題可用（推論，待後續補充具名案例）。與本頁既有記錄（06-21～08-06 批次流失至 Anthropic／OpenAI／Discovery Loop）方向一致，屬既有趨勢的持續佐證，非新增具名個案（Google News/Fortune https://fortune.com/2026/08/27/google-deepmind-losing-talent-to-rival-ai-labs-startups-new-data-show/）

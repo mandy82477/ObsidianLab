@@ -26,7 +26,7 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 **領域：** 👤 人物
 **首次出現：** 2026-04-25
 **最後更新：** 2026-08-29
-**最後新聞更新：** 2026-08-27
+**最後新聞更新：** 2026-08-29
 
 > ❓ **待查證**（標 2026-08-25｜查 airline industry、marketing and safety）｜**Fortune 評論比較 Anthropic 安全論述與航空業經驗**（2026-08-24 報導）：Fortune 發表評論文章〈What Anthropic's Dario Amodei can learn from the airline industry's lesson on marketing and safety〉，以航空業在行銷與安全議題上的經驗為借鏡，討論 Dario Amodei 可以從中學到什麼；僅標題可用，具體論點與建議內容未見報導。
 
@@ -46,6 +46,7 @@ Dario Amodei 是 Anthropic 共同創辦人兼執行長（CEO），與 [[entities
 
 | 日期 | 立場 | 來源 |
 |------|------|------|
+| 2026-08-28 | 公開回應外界對 AI 威脅論的疑慮，稱 Anthropic「無意摧毀任何人」（"not interested in destroying anyone"）❓ 待查證 ⟨Q-02⟩ | Google News（Business Insider）|
 | 2026-08-26 | 與 Salesforce 董事長暨執行長 Marc Benioff 共同接受 CNBC Jim Cramer 專訪，逐字稿公開（具體發言內容未見節錄，合作面詳見 [[topics/anthropic-business]]） | CNBC |
 | 2026-08-16 | 回應投資人 Gavin Baker 批評，稱 AI 大眾反彈「根本上是一場信任危機」；同日稱唯有交出具體科學突破（如治癒癌症）才能扭轉大眾對 AI 的不信任 | Hacker News（經 TechCrunch、Business Insider）、Google News（Business Insider）、Simon Willison Blog |
 | 2026-08-03 | 公開表態憂心部分員工是為金錢而非公司使命加入 Anthropic，引發社群兩極討論 ❓ 待查證 ⟨Q-01⟩ | Hacker News（經 Twitter/Techmeme）、The Next Web |
@@ -63,6 +64,7 @@ Dario Amodei 是 Anthropic 共同創辦人兼執行長（CEO），與 [[entities
 
 **懸置細節**
 - ⟨Q-01⟩ ❓ **待查證**（標 2026-08-10｜查 Techmeme、The Next Web）：具體發言場合與逐字稿未能取得
+- ⟨Q-02⟩ ❓ **待查證**（標 2026-08-29｜查 destroying anyone）：僅標題與轉址連結可用，發言的具體場合與完整脈絡未見報導
 
 ## 在 Anthropic 的角色與影響
 
@@ -82,6 +84,7 @@ Dario Amodei 是 Anthropic 共同創辦人兼執行長（CEO），與 [[entities
 
 ## 參考來源
 
+- [Google News（2026-08-28）→ Business Insider](https://news.google.com/rss/articles/CBMiiAFBVV95cUxOeVBkTWk1R2dsdEpLODZObWllTjlrdlVIX3dybGRta1pZbFcxMTRNNlVNcEVCMFFpOElIY3N3WjU3SUpYd28xQ3ZqcjF4X2gwQkZCc3lBX3ppMHdVUmRyQnB0X0M3Mk03OEhWX0lCYnhkWTA0dlJUVTY0RXFlNEpNLVQtQS05T3BK?oc=5)：「Dario Amodei Says Anthropic Is 'Not Interested in Destroying Anyone'」，公開回應外界對 AI 威脅論的疑慮；僅標題與轉址連結可用，查證狀態見下方歷史記錄
 - [CNBC（2026-08-26）](https://www.cnbc.com/2026/08/26/cnbc-exclusive-transcript-salesforce-chair-ceo-marc-benioff-and-anthropic-co-founder-ceo-dario-amodei-speak-with-cnbcs-jim-cramer-on-closing-bell-overtime-today.html)：與 Salesforce 董事長暨執行長 Marc Benioff 共同接受 Jim Cramer 專訪，完整逐字稿公開（Google News/CNBC）
 - [Google News（2026-08-22）→ Ynetnews](https://news.google.com/rss/articles/CBMiYkFVX3lxTE8yYWFtYks5QjdhOVFtOEpxV3RiaWxweW1ReGdtR2RqVzRYUVJLeFpoOHZfTWcxd3NIMU1kUkdXazdOMGczWjVRemg2elVXN19ORjV6cmJyYVR3b1RUT3RWM3p3?oc=5)：「Meet Cami Clark, the 'first lady of AI' shaping Anthropic and Dario Amodei behind the scenes」，第三家媒體同題跟進的人物側寫，查證狀態見下方歷史記錄
 - Hacker News（26分，2026-08-16）→ Business Insider：「Anthropic CEO says the way for AI to win over the public is to cure cancer」，Dario Amodei 在 X 上稱唯有具體科學突破才能扭轉大眾對 AI 的不信任
@@ -108,6 +111,7 @@ Dario Amodei 是 Anthropic 共同創辦人兼執行長（CEO），與 [[entities
 
 ## 歷史記錄
 
+- 2026-08-28：Business Insider 報導 Dario Amodei 公開回應外界對 AI 威脅論的疑慮，稱 Anthropic「無意摧毀任何人」（"not interested in destroying anyone"）；僅標題與轉址連結可用，發言的具體場合與完整脈絡未見報導，查證狀態見上方公開立場表格標記（來源：Google News／Business Insider）
 - 2026-08-26：與 Salesforce 董事長暨執行長 Marc Benioff 共同接受 CNBC《Closing Bell: Overtime》主持人 Jim Cramer 專訪，CNBC 公開完整逐字稿；日報僅載逐字稿已公開一事，未節錄任何具體發言內容，合作動態詳見 [[topics/anthropic-business]]（來源：Google News／CNBC）
 - 2026-08-24：Fortune 發表評論文章〈What Anthropic's Dario Amodei can learn from the airline industry's lesson on marketing and safety〉，以航空業在行銷與安全議題上的經驗為借鏡討論 Dario Amodei 可以從中學到什麼；僅標題可用，具體論點與建議內容未見報導，查證狀態見頁首標記（來源：Google News／Fortune）
 - 2026-08-22：Ynetnews 發布人物側寫報導〈Meet Cami Clark, the 'first lady of AI' shaping Anthropic and Dario Amodei behind the scenes〉，第三家媒體同題跟進，重複「AI 界第一夫人」定性與「幕後影響 Anthropic 與 Dario Amodei」描述；原文僅標題層級資訊可用，具體職稱與事件仍未見報導，併入下方既有待查證追蹤（來源：Google News／Ynetnews）

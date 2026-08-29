@@ -20,14 +20,14 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 ---
 # AI 遞歸自我改進與全球暫停呼籲
 
-**狀態：** ongoing（08-14 官方風險報告揭露新對齊疑慮，回升觀察）
+**狀態：** ongoing（08-14 官方風險報告揭露新對齊疑慮；08-29 新增「自動化研究員」對齊維護研究）
 **領域：** 🏛️ 政策/安全
 **開始日期：** 2026-06-04
-**最後更新：** 2026-08-22
-**最後新聞更新：** 2026-08-15
+**最後更新：** 2026-08-29
+**最後新聞更新：** 2026-08-29
 
-> **最新動態**（2026-08-14，官方《Risk Report August 2026》首度自評內部 AI 研發加速幅度）
-> Anthropic 部分遮蔽版《Risk Report August 2026》（Hacker News 55 分；SiliconANGLE、Axios 跟進）揭露新的對齊疑慮，並確認**尚未發布的「Model 2」目前無釋出計畫**——Axios 稱 Anthropic 認為 AI 風險正在上升。報告原文自陳：「內部 AI R&D 明顯比沒有 AI 協助時快，但尚未達兩倍（且我們不確定、量測困難）」——這是官方首度就自身內部 AI 研發加速幅度提供量化區間自評（此前 06-04 報告僅稱工程師代碼交付量提升 8 倍），與遞歸自我改進議題直接相關；Model 2 陣容面另見模型記者負責頁面。完整政府互動記錄見 [[topics/anthropic-government-policy]]。
+> **最新動態**（2026-08-29，Anthropic 官方部落格〈Automated researchers can reliably mitigate alignment failures〉）
+> Anthropic 官方部落格發表研究，稱其「自動化研究員」（automated researchers，用於稽核並修復模型對齊問題的自動化 AI 系統）能可靠緩解對齊失誤；TechCrunch、Startup Fortune 跟進報導，將此定調為「AI 自我改進」初步跡象——TechCrunch 標題稱「窺見自我改進 AI 的一角」，Startup Fortune 稱「Claude 展現早期自我改進跡象」。三則均僅標題與轉址連結可用，官方原文的具體機制、緩解成效量化數據與是否涉及模型自主修改自身訓練流程均未見報導，詳見「## 技術彙整」。此議題與本頁核心追蹤的「AI 加速自身開發」一脈相承，但性質上偏向「AI 輔助維護/稽核既有模型的對齊」而非「AI 自主設計繼任模型」，兩者是否應視為同一遞歸自我改進光譜的不同階段待後續報導釐清。完整政府互動記錄見 [[topics/anthropic-government-policy]]。
 
 ---
 
@@ -58,10 +58,19 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 - 2026-07-13，首見公眾社會運動面回應（抗議者要求 OpenAI/Anthropic/Google DeepMind 暫停 AI 開發），惟報導資訊量少（僅標題式轉載），暫不改變 monitoring 判斷。
 - 2026-08-10，首見具名國會議員層級公開暫停呼籲（參議員 Bernie Sanders，呼應其 AI Data Center Moratorium Act），惟僅單一媒體來源（cryptobriefing.com），無其他媒體或國會同僚跟進，暫不改變 monitoring 判斷。
 - 2026-08-14，Anthropic《Risk Report August 2026》首度提供內部 AI R&D 加速幅度的量化區間自評（「明顯比沒有 AI 協助時快，但尚未達兩倍」），比 06-04《When AI Builds Itself》報告的「工程師代碼交付量 8 倍」更保守、更具體，且明確承認「量測困難、我方也不確定」；報告同時揭露新對齊疑慮並確認尚未發布的 Model 2 暫無釋出計畫，屬官方主動揭露而非外部推估，惟報告全文遭部分遮蔽，無法確認疑慮細節與量測方法論，暫不改變 monitoring 判斷。
+- 2026-08-29，Anthropic 官方部落格發表〈Automated researchers can reliably mitigate alignment failures〉，稱其「自動化研究員」能可靠緩解對齊失誤；TechCrunch／Startup Fortune 將此定調為「AI 自我改進」初步跡象。此為官方主動揭露而非外部推估，惟三則報導均僅標題可用，具體機制、量化成效與「AI 輔助稽核既有模型」是否等同於「AI 自主設計繼任模型」的遞歸自我改進定義仍待釐清，暫不逕自視為與 06-04《When AI Builds Itself》同一量級進展。
 
 ---
 
 ## 技術彙整
+
+### 「自動化研究員」可靠緩解對齊失誤（Anthropic 官方部落格，2026-08-29 新增）
+
+- **揭露來源**：Anthropic 官方部落格（經 Google News 轉載）〈Automated researchers can reliably mitigate alignment failures〉；TechCrunch〈An Anthropic researcher just gave us a peek at self-improving AI〉；Startup Fortune〈Anthropic Says Claude Is Showing Early Signs of Self-Improvement〉——三則報導同一事件，官方部落格為主要引用來源
+- **核心主張（僅標題可用）**：Anthropic 稱其「自動化研究員」（automated researchers）——用於稽核、發現並修復模型對齊問題的自動化 AI 系統——能可靠緩解對齊失誤；Google News RSS 未提供正文，具體運作機制、緩解成效的量化數據、是否涉及模型參與自身訓練流程的修改均未見報導
+- **與既有敘事的關係**：與 06-04《When AI Builds Itself》報告（工程師代碼交付量 8 倍提升）同屬「AI 加速/輔助自身開發」大主題，但性質不同——06-04 報告談的是 AI **加速人類工程師的產出**，本則談的是 AI **稽核並修復其他 AI 模型的對齊問題**，兩者是否應視為同一遞歸自我改進光譜的不同階段，或應區分為「開發加速」與「對齊維護」兩條獨立敘事，待後續報導提供機制細節後再判
+- ❓ **待查證**（標 2026-08-29｜查 Automated researchers、alignment failures）：官方原文的具體機制、緩解成效量化數據、與遞歸自我改進定義（AI 完全自主設計繼任者）的關係均未見報導
+- **可信度評估**：Anthropic 官方部落格為一手來源，可信度高；惟正文未取得，僅能確認標題主張存在，無法評估具體技術內容；TechCrunch／Startup Fortune 的「自我改進」框架用詞是否忠實反映官方原文措辭亦待查證
 
 ### 遞歸自我改進定義（Anthropic Institute 2026-06-04）
 
@@ -85,6 +94,9 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 - [[entities/mythos]]（能力擴張的具體案例）
 
 ## 時序
+
+### 2026-08-29
+- **[官方研究，新增] Anthropic：「自動化研究員」可靠緩解對齊失誤，媒體定調為「自我改進」初步跡象**：Anthropic 官方部落格發表〈Automated researchers can reliably mitigate alignment failures〉，稱其自動化 AI 系統能可靠緩解模型對齊失誤；TechCrunch〈An Anthropic researcher just gave us a peek at self-improving AI〉、Startup Fortune〈Anthropic Says Claude Is Showing Early Signs of Self-Improvement〉同日跟進，將此定調為「AI 自我改進」初步跡象。三則均僅標題與轉址連結可用，具體機制與量化成效未見報導，詳見「## 技術彙整」
 
 ### 2026-08-14
 - **[官方風險報告，新增] Anthropic《Risk Report August 2026》：新對齊疑慮＋內部 AI R&D 加速量化自評＋Model 2 暫無釋出計畫**：部分遮蔽版風險報告（Hacker News 55 分；SiliconANGLE、Axios 跟進）揭露新的對齊疑慮，並確認尚未發布的 Model 2 目前無釋出計畫；Axios 稱 Anthropic 認為 AI 風險正在上升。報告原文自陳：「內部 AI R&D 明顯比沒有 AI 協助時快，但尚未達兩倍（且我們不確定、量測困難）」，為官方首度就自身內部 AI 研發加速幅度提供量化區間自評，較 06-04 報告「工程師代碼交付量 8 倍」更保守具體；報告全文遭部分遮蔽，對齊疑慮細節與量測方法論未見完整揭露（[PDF](https://www-cdn.anthropic.com/f61d49fa5596956a5dec75fea0e973bf6a6a8378/Redacted%20Risk%20Report%20August%202026%20.pdf) ／ [SiliconANGLE](https://siliconangle.com/2026/08/14/anthropic-details-unreleased-model-2-new-alignment-concerns-latest-ai-risk-report/) ／ [Axios](https://www.axios.com/2026/08/14/anthropic-model-2-ai-risk)，2026-08-14；Model 2 陣容面詳見模型記者負責頁面）

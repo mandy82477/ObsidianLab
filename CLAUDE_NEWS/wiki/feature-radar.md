@@ -20,7 +20,7 @@
 
 ## ⚠️ 升版風險
 
-**最新版本：** v2.1.250（2026-08-28，僅錯誤修復與穩定性改善，release note 無具體異動項目，非 breaking change）。上一版 v2.1.247（2026-08-26 發布，新增 `SendFeedback` 工具：session 出錯時 Claude 可草擬回報供使用者於 `/feedback` 檢視後送出，可用 `feedbackDisabled` 關閉；屬新增功能，非 breaking change）。上一版 v2.1.246（2026-08-26，新增啟動警告：Bash 允許規則在子指令前使用萬用字元［如 `Bash(git * main)`］時，此寫法也會意外比對插入在子指令前的選項參數；屬安全提示而非新指令/旗標，純提醒非 breaking change）。上一版 v2.1.245（2026-08-25，修復搭載 glibc 2.44 的 Linux 發行版［如 Arch Linux、CachyOS、Fedora Rawhide］啟動當機問題，純 bug fix，非 breaking change）。再上一筆有具體異動記錄的版本為 v2.1.241（2026-08-23，release notes 僅載明「Bug fixes and reliability improvements」，無具體異動項目，純可靠性修正，非 breaking change；v2.1.242–244 無日報報導，不代表未發布）。再前一版 v2.1.239（2026-08-21，`/cost`／狀態列／`--max-budget-usd` 成本估算計入資料常駐工作區 1.1 倍純美國推理附加費；屬既有成本顯示機制的計算口徑調整，非 breaking change）。再前一版 v2.1.238（2026-08-20）新增 `keybindingFlavor` 設定；再前一版 v2.1.237（同日）修復 LLM gateway／自訂 base URL session 的 prompt caching 失效問題，並新增內建「Concise」輸出風格。最後一次重大 breaking change 仍為 v2.1.212／v2.1.215（見下表）；另有一項於 8/14 已生效的 breaking change（auto 模式預設化，已對 Pro/Max/Team 上線，詳見 [[entities/claude-code]] 現況）。⚠️ **另注意**：anthropic-sdk-python 同日發布 v1.0.0，含獨立於 Claude Code CLI 之外的 breaking change（client 升級至 httpx2，官方未提供遷移時程），影響對象為以該 SDK 建置的整合程式碼，非 CLI 升版本身，詳見 [[entities/claude-code]] 現況。
+**最新版本：** v2.1.251（2026-08-28，新增 `PreModelSwitch`／`PostModelSwitch` hook 事件，可攔截、確認或標註模型切換；`SessionStart` resume hook 現在回傳 session 新鮮度與估計流失的內容量；非 breaking change）。上一版 v2.1.250（同日，僅錯誤修復與穩定性改善，release note 無具體異動項目，非 breaking change）。上一版 v2.1.247（2026-08-26 發布，新增 `SendFeedback` 工具：session 出錯時 Claude 可草擬回報供使用者於 `/feedback` 檢視後送出，可用 `feedbackDisabled` 關閉；屬新增功能，非 breaking change）。上一版 v2.1.246（2026-08-26，新增啟動警告：Bash 允許規則在子指令前使用萬用字元［如 `Bash(git * main)`］時，此寫法也會意外比對插入在子指令前的選項參數；屬安全提示而非新指令/旗標，純提醒非 breaking change）。上一版 v2.1.245（2026-08-25，修復搭載 glibc 2.44 的 Linux 發行版［如 Arch Linux、CachyOS、Fedora Rawhide］啟動當機問題，純 bug fix，非 breaking change）。再上一筆有具體異動記錄的版本為 v2.1.241（2026-08-23，release notes 僅載明「Bug fixes and reliability improvements」，無具體異動項目，純可靠性修正，非 breaking change；v2.1.242–244 無日報報導，不代表未發布）。再前一版 v2.1.239（2026-08-21，`/cost`／狀態列／`--max-budget-usd` 成本估算計入資料常駐工作區 1.1 倍純美國推理附加費；屬既有成本顯示機制的計算口徑調整，非 breaking change）。再前一版 v2.1.238（2026-08-20）新增 `keybindingFlavor` 設定；再前一版 v2.1.237（同日）修復 LLM gateway／自訂 base URL session 的 prompt caching 失效問題，並新增內建「Concise」輸出風格。最後一次重大 breaking change 仍為 v2.1.212／v2.1.215（見下表）；另有一項於 8/14 已生效的 breaking change（auto 模式預設化，已對 Pro/Max/Team 上線，詳見 [[entities/claude-code]] 現況）。⚠️ **另注意**：anthropic-sdk-python 同日發布 v1.0.0，含獨立於 Claude Code CLI 之外的 breaking change（client 升級至 httpx2，官方未提供遷移時程），影響對象為以該 SDK 建置的整合程式碼，非 CLI 升版本身，詳見 [[entities/claude-code]] 現況。
 
 | 風險 | 嚴重度 | 說明 |
 |------|--------|------|
@@ -63,6 +63,7 @@
 
 | 功能 | 發布日期 | 熱度 | 試用價值 | 狀態 |
 |------|----------|------|----------|------|
+| **PreModelSwitch／PostModelSwitch Hook 事件**（v2.1.251，可攔截/確認/標註模型切換，SessionStart resume 回傳新鮮度） | 2026-08-28 | 🔥🔥🔥 | ⚡ 有條件推薦 | 正式發布 |
 | **SDK files／skills 命名空間轉正**（TypeScript sdk-v0.122.0／Python v1.2.0，beta 介面形狀改為 GA） | 2026-08-27 | 🔥🔥 | ⚡ 有條件推薦 | 正式發布 |
 | **SendFeedback 工具**（v2.1.247，session 出錯時 Claude 草擬回報，經 `/feedback` 檢視後送出；可用 `feedbackDisabled` 關閉） | 2026-08-27 | 🔥🔥 | ⏳ 觀望 | 正式發布 |
 | **Model Hardware Standard**（統一介面供 Claude 代理人操作機器人與科學實驗室儀器，Bloomberg／Ars Technica／FT 三方跟進） | 2026-08-27 | 🔥🔥🔥 | ⏳ 觀望 | Research Preview |
@@ -154,6 +155,27 @@
 ---
 
 ## 🆕 最新功能（2026-08）
+
+### PreModelSwitch／PostModelSwitch Hook 事件
+**發布：** 2026-08-28（v2.1.251） | **熱度：** 🔥🔥🔥 | **試用價值：** ⚡ 有條件推薦 | **狀態：** 正式發布
+
+**是什麼：** Claude Code 新增 `PreModelSwitch`／`PostModelSwitch` 兩個 hook 事件，可在模型切換發生前後攔截、確認或標註該次切換；同時 `SessionStart` 的 resume hook 現在會回傳 session 新鮮度（freshness）與估計流失的內容量，讓外部工具能判斷 resume 的 session 是否完整。
+
+**為何熱：** GitHub Release v2.1.251，2026-08-29 日報標為 📌 今日聚焦［新工具］；為 hooks 生態新增可觀測模型切換這個先前無法攔截的事件點，對建置審計、成本監控或自訂路由邏輯的開發者具直接價值。
+
+**現在要試嗎：** 適合已用 hooks 做審計、成本監控或自訂路由邏輯的進階使用者；一般使用者可先觀望。
+
+**快速上手：**
+```json
+{
+  "hooks": {
+    "PreModelSwitch": [{ "hooks": [{ "type": "command", "command": "your-script.sh" }] }],
+    "PostModelSwitch": [{ "hooks": [{ "type": "command", "command": "your-script.sh" }] }]
+  }
+}
+```
+
+**注意事項：** 官方 release notes 未詳述 hook 事件的完整 payload 欄位、亦未說明 `SessionStart` resume freshness 的估算精確度，實際整合前建議先以 debug 模式檢視 hook 收到的實際資料。
 
 ### SDK files／skills 命名空間轉正（GA）
 **發布：** 2026-08-27（anthropic-sdk-typescript sdk-v0.122.0／anthropic-sdk-python v1.2.0） | **熱度：** 🔥🔥 | **試用價值：** ⚡ 有條件推薦 | **狀態：** 正式發布

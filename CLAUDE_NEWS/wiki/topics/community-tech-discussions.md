@@ -97,6 +97,7 @@ AI 輔助開發正在改變工程師的自我認知，形成社群層面的結�
 - **審查疲勞的具體案例**（2026-07-05）：Reddit r/ClaudeCode 開發者反思「審查大量 AI 生成程式碼多到忘記自己是開發者」，舉例需反問 Claude 如何寫 debounce function——與既有 Skill Atrophy 論述一致，但聚焦「審查者角色」而非「撰寫者角色」的退化面向；單一貼文、互動數據不明，暫記於此不獨立開列（推論：若後續有跨平台呼應，可能形成「Reviewer Atrophy」子議題）
 - **撰寫者角色的量化案例**（2026-07-13）：dev.to 作者連續 30 天讓 Claude Code 撰寫約 90% 程式碼（5 萬行、$187 token 成本），事後反思明確指出「vibe coding 帶來的技能退化與倦怠是少有人討論的代價」；補上「撰寫者角色」退化面向的具體量化數字，與 07-05 審查者案例互補（單篇第一手記錄，尚無跨平台呼應）
 - **同儕壓力驅動的自我審查放鬆**（2026-08-27）：Tell HN 作者自述因同儕用 Claude Code 大幅提升產出速度，被迫放鬆自我審查、逐漸依賴 agent 直接推上 main，反思長期心智影響；單一貼文、score 未見報導，與既有 Skill Atrophy 論述方向一致，補上「同儕競爭壓力」這個誘因面向（來源：[Hacker News](https://news.ycombinator.com/item?id=49468252)）
+- **市場硬性要求驅動的全面轉向**（2026-08-28）：Ask HN 自由工作者分享因 AI 輔助編碼速度已成市場硬性要求，工作流幾乎全面轉向 AI（始於 GPT-5.3 前後），反思在此趨勢下工程師身份與價值定位；自述曾歷經 Harness Engineering、MCP 附加、深度 Prompt Engineering 等階段；與既有 Skill Atrophy 論述方向一致，補上「外部市場壓力（而非個人選擇）驅動全面轉向」這個誘因面向，與 08-27「同儕壓力」互為近似但不同層級的驅動力（同儕 vs 市場）；HN score 13，達收錄低門檻（來源：[Hacker News](https://news.ycombinator.com/item?id=49481969)）
 - **社群共識**：警覺度持續升高，但尚無共識解法；反 atrophy 工具（recap 等）正在成形。
 
 ### Boris Cherny Loop 哲學
@@ -143,6 +144,7 @@ MCP 的實際成本遠超多數使用者預期，已有多個量化案例：
 
 | 討論主題 | 首見 | 熱度 | 模式 | 核心論點 | 衍生 |
 |---------|------|------|------|---------|------|
+| Simon Willison 轉介 Anil Madhavapeddy：僅憑漏洞傳聞就足以讓資安研究者鎖定並找到可利用漏洞 | 2026-08-28 | 🔥 | ☄️閃現 | Anil Madhavapeddy 觀察筆記：僅漏洞傳聞已足以讓資安研究者鎖定並找到可利用漏洞，呼應近期多起 AI coding agent 資安事件（具名表態，無社群延燒）；[原文](https://simonwillison.net/2026/Aug/28/just-a-rumour-of-a-bug/)（Blog） | — |
 | 社群長期呼籲 Claude Code 支援 AGENTS.md 標準格式，跨平台已成競品共識 | 2026-08-27 | 🔥🔥🔥🔥 | ☄️閃現 | [GitHub Issue #6235] 指出競品已統一採用 AGENTS.md，累積 385 則留言、6525 個 👍，遠超收錄高門檻 | — |
 | Reddit r/artificial 週熱門：新基準 HarnessOpt-Bench 測試前沿 LLM 改寫其他 agent harness 的能力並防作弊 | 2026-08-27 | 🔥 | ☄️閃現 | 社群發布 HarnessOpt-Bench，測試 5 款前沿 LLM 改寫其他 agent harness 的能力，並設計防作弊機制；Reddit r/artificial 週熱門標記，達收錄低門檻 | — |
 | 用量限制驅動的「規劃用 Claude Code、實作交給本地模型」混合工作流小趨勢 | 2026-08-21 | 🔥🔥 | 🌊延燒 | 近一週至少三則案例（Reddit×2＋XDA）主張因用量限制而「規劃用 Claude Code、執行交給本地模型」分流 | — |

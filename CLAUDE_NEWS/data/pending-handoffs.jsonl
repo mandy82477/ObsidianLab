@@ -27,3 +27,6 @@
 {"id": "H-2eb673", "closed": "2026-08-29", "status": "done", "by": "功能", "result": "已在claude-code.md新增已知問題條目（Auto Mode繞過+Cybernews在野利用案例）"}
 {"id": "H-723f42", "closed": "2026-08-29", "status": "done", "by": "功能", "result": "評估後判定不落在official-community-gap矩陣（全新硬體操作能力非既有痛點回應）；主編已依建議加入feature-radar，entities頁建立留待使用者裁示"}
 {"id": "H-1813db", "opened": "2026-08-29", "from": "人物", "to": "商業", "page": "topics/anthropic-business.md", "note": "第253行「Jensen Huang言論面另由人物記者評估」處補[[entities/jensen-huang]] wikilink，解決該人物頁僅index.md單一入鏈問題", "status": "open"}
+{"id": "H-1813db", "closed": "2026-08-29", "status": "done", "by": "商業", "result": "已於 topics/anthropic-business.md 第253行補上 [[entities/jensen-huang]] wikilink"}
+{"id": "H-0d4176", "opened": "2026-08-29", "from": "安全政策", "to": "功能", "page": "entities/claude-code.md", "note": "Auto Mode 遭繞過事件（既有 08-27 標記延續）：評估是否於已知問題補充今日 Cybernews 後續（Claude Code 執行到惡意程式碼、嘗試修復但被拒絕執行）", "status": "open"}
+{"id": "H-871320", "opened": "2026-08-29", "from": "安全政策", "to": "功能", "page": "entities/claude-code.md", "note": "The Register 揭露：僅需請 Claude Code 摘要一個網站即可誘發信任 llms.txt 內容而被騙做出非預期行為，屬產品層機制問題，評估是否列入已知問題", "status": "open"}
