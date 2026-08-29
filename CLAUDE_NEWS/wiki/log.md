@@ -4898,3 +4898,30 @@ ABORTED: gathered_items.json date=2026-08-27 …非目標日期的新鮮資料
 ### 這次學到的
 
 第一版與第二版的差別只有一個詞：**單槽 vs 耐久**。而我第一版沒有問「這個資料活多久」——直接抓了最順手的那個檔。reviewer 的 A1 不是靠讀程式碼發現的，是靠**把兩個 cron 的時刻排在同一條時間軸上**看出來的。
+
+---
+
+## 2026-08-29 Query：「歸納我對模型有興趣的主題」→ A 線（成本兌換率）四頁皆有落點但無入口，兩條規則補位
+
+**使用者提問脈絡：** 先連續三輪追問「1M 與非 1M 收費差異」（本人公司走 AWS），再要求依 `wiki/reader-notes.md` 歸納其模型類興趣主題，並判斷該建新頁或補強既有頁的**產生內容方式**。
+
+**歸納結果（三條主線）：** A 兌換率（08-01 自動模型路由、08-08 LLM code review 單位成本、本次的 1M／企業計費／tokenizer）｜B 信任（靜默降階，已在 `topics/code-quality-decline` 有子區塊）｜C 外部參照（07-12 GPT-5.6 ⏳、07-17 GLM/Qwen ✅）。
+
+**揭露的缺陷：** A 線散在 `pricing`（費率）、`model-comparison`（選型）、`community-pattern-trends`（路由趨勢）、`coding-workflow-guide`（review 成本缺口）四頁，**沒有任何一頁的入口寫著「想算實付成本看這裡」**。且 `model-comparison` 全頁 `tokenizer` grep 零命中——於是「Opus 5 與 Opus 4.6 牌價同為 $5/$25、實付差約 30%」這件事，在選型入口上查不到；而 `official-community-gap:55` 早就記著「2026-06-27，Opus 4.7 tokenizer 改版成本大漲後爆發」，**現象在庫內有記錄，機制與量級從未被說明**。
+
+**處置（不建頁，補強產生方式）：**
+- `topics/model-comparison` 新增 h2 `## 同一份工作，換設定差多少`（成本面單一入口），內含 tokenizer 換代說明＋六模型實付換算表＋兩個結論（Sonnet 5 比 4.6 便宜／Opus 5 比 4.6 貴 30%）＋`count_tokens` 實測提醒；`pricing`、`official-community-gap` 各補錨點 wikilink 指向它
+- `entities/pricing` 新增 `## 通路與乘數`（通路五列＋乘數八列，含長脈絡分世代：4.6 以後不加價／Sonnet 4-4.5 世代超過 200K 輸入 ×2 輸出 ×1.5）
+- `topics/code-quality-decline` 新增「對選型的影響」段，反向連回 model-comparison
+- 規則：`wiki-ingest-models.md` 新增 **I 條**（換代若動到 tokenizer／費率／context 政策，實付成本必須落地於上述 h2；不得為此加欄，撞 H 條）
+- 規則：新建 `.claude/rules/wiki-ingest-commercial-lint.md` ＋ `/wiki-lint` **5e**（通路與乘數吃官方計價文件、非日報，主編查證維護）
+
+**顧問 agent 攔下的兩個錯誤（本次派 agent 對抗性檢視提案，兩條被推翻）：**
+1. **通路與乘數原擬為商業記者 daily 責任 → 層級錯。** 該規則檔自己的「官方文件查證優先於媒體轉述」已明訂記者無 web 工具；寫成 daily 會製造一個永遠空著的區塊。改為主編 lint（5e）＋獨立 lint 規則檔，符合 lint-only 規則須分檔的鐵則
+2. **08-08「review 成本」原擬升為懸置標記 → 已撤回。** (a) 前提不成立——`reader-notes` 的 ⏳ 本就由 `/wiki-weekly-review` 與 `/weekly-report` 消費，且 08-09 已消費過一輪；(b) 該題無可查的一手來源，主編 5c 永遠結不了案，會長期佔 `pending_overdue` 成為固定假警報，正是 `.claude/rules/wiki-ingest-features.md` 08-28 才立法反對的型態
+
+**顧問另指出、本次未處置（待使用者裁示）：**
+- **A 線其實是兩題**：「換設定差多少」（可算，本次已治）與「這個月為什麼比上個月貴」（歸因，`pricing` 事故區 40+ 條幾乎全屬此類，未治）
+- **C 線觸犯 08-28 剛立的「⏳ 停車場」規則**：07-19 改被動觸發至今 41 天，失敗原因是**結構性 venue 缺口**（評測部落格不在 12 來源內、`topic_watch.json` `_global_max: 8` 已滿），非「等待中」。應標明「結構上收不到」並寫進 `competitor-landscape` 的蒐集邊界欄，或讓出一個 topic_watch 名額
+
+**驗證：** `python scripts/run_tests.py` 363 案例全過（exit 0）；`check_rules.py` 五項全過；新增的兩條錨點 wikilink 經 `check_wikilink_anchors()` 驗證無 WARN。原擬指向 `code-quality-decline` 子區塊的錨點因該標題帶 `` `[2026-08-09 查證新增]` `` 標記、而錨點檢查只剝粗體不剝反引號，改為純頁面連結＋文字指路。

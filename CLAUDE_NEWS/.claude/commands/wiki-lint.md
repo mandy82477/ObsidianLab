@@ -257,6 +257,15 @@ Citation drift 是 LLM wiki 文獻點名的最嚴重失效模式：**claim 被�
 3. 三種結果：✅ 相符不動；⚠️ 措辭漂移（把「媒體稱」寫成事實、把分歧寫成共識、數字走樣）→ 依日報原文修正該段；❓ 頁面已無此事實對應段落（被合併或清理）→ 不算錯，記一筆即可
 4. 回報格式（納入步驟 8 的 lint 紀錄）：`歸因抽查（5d）：抽 5 筆，相符 A／修正漂移 B（頁名 list）／無對應 C`；**連續 3 週 B=0 可降頻為隔週抽**
 
+### 5e. pricing「通路與乘數」複查（主編親查）`[加入: 2026-08-29]`
+
+`wiki/entities/pricing.md` 的 `## 通路與乘數` 吃的是**官方計價文件**（`platform.claude.com` 與各雲端平台），不是日報——記者無 web 工具，寫成記者責任會製造永遠空著的區塊。依 `.claude/rules/wiki-ingest-commercial-lint.md` 執行：
+
+1. 該區塊「資料截至 YYYY-MM-DD」距今 > 30 天 → WebFetch 官方定價頁與平台可用性頁複查；一致則只更新查證日
+2. 本週有新模型世代發布 → 確認長脈絡是否仍不加價、tokenizer 是否再換代；後者走 `data/pending-handoffs.jsonl` 轉知模型記者（`.claude/rules/wiki-ingest-models.md` I 條）
+3. 商業記者本週回報「⚠️ 需主編查證官方計價文件」→ 逐筆查證後寫入，標來源連結與查證日
+4. 本區塊為非新聞性維護：只更新 pricing 的「最後更新」，**不動「最後新聞更新」**
+
 ### 6. CLAUDE.md 健檢
 
 讀取 `wiki/CLAUDE.md`、`.claude/rules/wiki-ingest.md`、`.claude/rules/wiki-ingest-format.md`、`.claude/rules/wiki-reporter-shared.md` 與**本檔（`.claude/commands/wiki-lint.md`）自身** `[加入: 2026-08-28]`，依序執行下列各項檢查。
