@@ -113,7 +113,7 @@ Anthropic 於 2026-07-25 正式發布 Claude Opus 5，是繼 2026-07-13 起多�
 - [Reddit：Unpopular opinion: Opus 5 language just became better in communication](https://www.reddit.com/r/ClaudeAI/comments/1vzvcc4/unpopular_opinion_opus_5_language_just_became/)（2026-08-27）
 - [Reddit：Is it even legal for Anthropic to nerf its models this hard?](https://www.reddit.com/r/ClaudeCode/comments/1w0t53b/is_it_even_legal_for_anthropic_to_nerf_its_models/)（2026-08-28）
 - [Reddit：A comparison of Opus 5, 4.7, and 4.6 running a code review](https://www.reddit.com/r/ClaudeCode/comments/1w0uyu7/a_comparison_of_opus_5_47_46_running_a_code/)（2026-08-28）
-- [[news/2026-08-29]]
+- [[news/2026-08-28]]
 
 ## 歷史記錄
 

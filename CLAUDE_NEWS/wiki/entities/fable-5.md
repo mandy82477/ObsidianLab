@@ -182,7 +182,7 @@ claude --model claude-fable-5-20260609
 - [Google News/tech-insider.org：Claude Fable 5 vs Opus 5 vs GPT-5.6 Sol: $1,125 Gap](https://news.google.com/rss/articles/CBMiekFVX3lxTE1lT2hvNTRuTm5IVEt4WG5vV3BMQmxLdmZHX2lubDN4SzRvczBYblBJVFMteHM4V3UtM1l2NFZQYWFvbEZmaFVxdFIwSmlvRkpwc29KQzdOUXNPRWFpcDJyLWhDd0VfUkdlQ0Y3Vzk0MzBaUWtuanFLc1FR?oc=5)（2026-08-26，僅標題可用）
 - [Reddit：Is it even legal for Anthropic to nerf its models this hard?](https://www.reddit.com/r/ClaudeCode/comments/1w0t53b/is_it_even_legal_for_anthropic_to_nerf_its_models/)（2026-08-28）
 - [Reddit：Do you guys think that Fable 5.1 is actually dropping today](https://www.reddit.com/r/ClaudeCode/comments/1w0v676/do_you_guys_think_that_fable_51_is_actually/)（2026-08-28）
-- [[news/2026-08-29]]
+- [[news/2026-08-28]]
 
 ## 歷史記錄
 

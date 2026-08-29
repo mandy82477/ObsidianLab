@@ -1,6 +1,6 @@
 {
-  "date": "2026-08-29",
-  "generatedAt": "2026-08-29 00:44 UTC",
+  "date": "2026-08-28",
+  "generatedAt": "2026-08-28 16:44 UTC",
   "articleCount": 90,
   "sourceCount": "13/13",
   "bulletin": "",
@@ -21,13 +21,7 @@
       "time": "08/27 14:54",
       "sentiment": "",
       "body": "社群持續要求 Claude Code 支援業界正逐漸統一採用的 AGENTS.md 格式（Codex、Amp、Cursor 已支援）；該請求已累積 385 則留言與 6525 個 👍 反應，是持續多日延燒的高熱度議題。",
-      "focusTags": [],
-      "sedimented": [
-        {
-          "id": "claude-code",
-          "pageType": "entity"
-        }
-      ]
+      "focusTags": []
     },
     {
       "title": "Bring Back Buddy — A Consolidated Plea from the Community",
@@ -72,13 +66,7 @@
       "time": "08/28 16:43",
       "sentiment": "",
       "body": "[存量盤點｜2026-01-18 出生、本庫今日首次收錄] 累計 24.4 萬星的 agent harness 效能優化系統，涵蓋技能、記憶、安全與研究優先開發流程，適用 Claude Code、Codex、Opencode、Cursor 等多種 harness。",
-      "focusTags": [],
-      "sedimented": [
-        {
-          "id": "claude-code",
-          "pageType": "entity"
-        }
-      ]
+      "focusTags": []
     },
     {
       "title": "karanb192/awesome-claude-skills",
@@ -235,13 +223,7 @@
       "time": "08/28 11:50",
       "sentiment": "",
       "body": "分析文章討論開發者為 Claude Code 堆疊過多、難以追溯的指令設定，反思 CLAUDE.md／規則檔管理方式。",
-      "focusTags": [],
-      "sedimented": [
-        {
-          "id": "claude-code",
-          "pageType": "entity"
-        }
-      ]
+      "focusTags": []
     },
     {
       "title": "OpenAI and Anthropic are ruining San Francisco - sfgate.com",
@@ -279,13 +261,7 @@
       "time": "08/27 17:28",
       "sentiment": "",
       "body": "作者自述因同儕用 Claude Code 大幅提升產出速度，被迫放鬆自我審查、逐漸依賴 agent 直接推上 main，反思長期心智影響。",
-      "focusTags": [],
-      "sedimented": [
-        {
-          "id": "claude-code",
-          "pageType": "entity"
-        }
-      ]
+      "focusTags": []
     },
     {
       "title": "Show HN: Watches user sessions, finds bugs that matter, and fixes them",
@@ -312,13 +288,7 @@
       "time": "08/28 15:06",
       "sentiment": "",
       "body": "使用者抱怨 Opus 5 與 Fable 5 在 Claude Code 中的實際表現遜於預期，質疑模型遭「削弱」。",
-      "focusTags": [],
-      "sedimented": [
-        {
-          "id": "claude-code",
-          "pageType": "entity"
-        }
-      ]
+      "focusTags": []
     },
     {
       "title": "Citation Issues the Past Little While",
@@ -345,13 +315,7 @@
       "time": "08/28 16:21",
       "sentiment": "",
       "body": "社群討論 Fable 5.1 是否即將發布，部分使用者回報已被路由至疑似新版本測試。",
-      "focusTags": [],
-      "sedimented": [
-        {
-          "id": "claude-code",
-          "pageType": "entity"
-        }
-      ]
+      "focusTags": []
     },
     {
       "title": "Can an AI make other AIs better? We benchmarked 5 frontier LLMs at rewriting other agents' harnesses (HarnessOpt-Bench)",
@@ -369,13 +333,7 @@
       "time": "08/26 19:07",
       "sentiment": "",
       "body": "Linux 使用者要求 Claude Code 遵循 XDG 目錄規範，而非固定寫入 `~/.claude`。",
-      "focusTags": [],
-      "sedimented": [
-        {
-          "id": "claude-code",
-          "pageType": "entity"
-        }
-      ]
+      "focusTags": []
     },
     {
       "title": "Claude Account Disabled After Payment for Claude Code Max 5x Plan",
@@ -384,13 +342,7 @@
       "time": "08/26 14:47",
       "sentiment": "",
       "body": "使用者回報付費續訂 Max 5x 方案後帳號反遭停用，尚待官方處理。",
-      "focusTags": [],
-      "sedimented": [
-        {
-          "id": "claude-code",
-          "pageType": "entity"
-        }
-      ]
+      "focusTags": []
     },
     {
       "title": "[BUG] CVP-approved Claude.ai organization still receives cyber safeguard blocks in Claude Code",
@@ -399,13 +351,7 @@
       "time": "08/27 22:24",
       "sentiment": "",
       "body": "已通過 Cyber Verification Program 審核的組織，在 Claude Code 中仍持續遭遇資安防護誤擋。",
-      "focusTags": [],
-      "sedimented": [
-        {
-          "id": "claude-code",
-          "pageType": "entity"
-        }
-      ]
+      "focusTags": []
     }
   ],
   "billing": [
@@ -434,13 +380,7 @@
       "time": "08/28 16:44",
       "sentiment": "",
       "body": "官方說明先前「每週訂閱額度最多 50% 可用於 Fable 5」的促銷已於 7 月 19 日結束：Max 方案、Team／Enterprise 高階席位將 Fable 5 納入方案內含，Pro 方案與標準席位則改為按用量點數計費。",
-      "focusTags": [],
-      "sedimented": [
-        {
-          "id": "fable-5",
-          "pageType": "entity"
-        }
-      ]
+      "focusTags": []
     }
   ],
   "focus": [
@@ -590,81 +530,5 @@
     }
   ],
   "preview": "聯邦法官裁定五角大廈將 Anthropic 列入供應鏈風險黑名單「違法且毫無根據」，即時解除禁令；Anthropic 稍早曾因「軍方認定其具備實際上不存在的能力」遭列黑名單，本案是 Claude 進入美國政府市場過程中目前最大的單一法律變數。",
-  "sedimentedToday": [
-    {
-      "id": "claude-code",
-      "name": "Claude Code",
-      "pageType": "entity"
-    },
-    {
-      "id": "fable-5",
-      "name": "Claude Fable 5",
-      "pageType": "entity"
-    },
-    {
-      "id": "mythos",
-      "name": "Claude Mythos",
-      "pageType": "entity"
-    },
-    {
-      "id": "opus-5",
-      "name": "Claude Opus 5",
-      "pageType": "entity"
-    },
-    {
-      "id": "pricing",
-      "name": "Anthropic 訂閱方案與計費政策",
-      "pageType": "entity"
-    },
-    {
-      "id": "ai-agent-safety",
-      "name": "AI Agent 安全與可靠性",
-      "pageType": "topic"
-    },
-    {
-      "id": "anthropic-business",
-      "name": "Anthropic 商業健康度",
-      "pageType": "topic"
-    },
-    {
-      "id": "anthropic-commitments",
-      "name": "Anthropic 承諾兌現追蹤",
-      "pageType": "topic"
-    },
-    {
-      "id": "anthropic-government-policy",
-      "name": "Anthropic 政府與軍事政策",
-      "pageType": "topic"
-    },
-    {
-      "id": "code-quality-decline",
-      "name": "Claude Code 效能退步事件",
-      "pageType": "topic"
-    },
-    {
-      "id": "community-large-codebase-workflow",
-      "name": "大型 Codebase 規模化開發：社群工作流主線",
-      "pageType": "topic"
-    },
-    {
-      "id": "community-pattern-trends",
-      "name": "社群趨勢觀察（週更）",
-      "pageType": "topic"
-    },
-    {
-      "id": "community-tech-discussions",
-      "name": "社群技術討論趨勢",
-      "pageType": "topic"
-    },
-    {
-      "id": "community-tech-tools",
-      "name": "社群工具目錄",
-      "pageType": "topic"
-    },
-    {
-      "id": "competitor-landscape",
-      "name": "AI 編碼工具競品動態",
-      "pageType": "topic"
-    }
-  ]
+  "sedimentedToday": []
 }

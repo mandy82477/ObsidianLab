@@ -13,6 +13,12 @@ argument-hint: [YYYY-MM-DD]
 - **`/news-pipeline` 本身也不可被包進背景 agent 呼叫**（例如不可用 Agent tool 以 `run_in_background: true` 派一個 agent去執行 `/news-pipeline`）——否則本 session 也變成巢狀背景層，Phase B 一樣會壞掉
 - 其餘不涉及 Agent 派工的步驟（Step 0、1a、1b、3、4、5、6）可安全包進背景 agent，節省本 session context
 
+### TARGET_DATE 一律取 UTC 日期 `[加入: 2026-08-29]`
+
+**`date -u +%F`，不是本機時區的今天。** 雲端 routine 用的就是 UTC（見 `docs/cloud-runbooks/daily.md`），本機若用台北日期，兩邊在**台北 00:00–08:00** 這個窗內會差一天——而深夜補跑正好落在那個窗裡。
+
+> 2026-08-29 踩過：台北 00:44 跑的一次補跑，把 UTC 08-28 的資料標成 08-29 那天的日報檔名。那份日報裡 08/29 的條目**一則都沒有**（08/26 三則、08/27 十七則、08/28 廿一則），而它佔住了 08-29 的檔名，使當天真正的新聞被 `Step 0b：冪等閘` 擋在門外——**錯標一天不只是標籤錯，它會吃掉一整天的日報。**
+
 若提供日期參數（`$ARGUMENTS`），以補跑模式執行；否則以今天為目標。
 
 ---
@@ -27,7 +33,7 @@ argument-hint: [YYYY-MM-DD]
 | run_in_background | `true` |
 | model | `sonnet` |
 
-**prompt**（`{TARGET_DATE}` 替換為今日日期或 `$ARGUMENTS`，格式 YYYY-MM-DD）：
+**prompt**（`{TARGET_DATE}` 替換為**今日的 UTC 日期**（`date -u +%F`）或 `$ARGUMENTS`，格式 YYYY-MM-DD）：
 
 ```
 你是 Claude News Pipeline Agent（Phase A）。
