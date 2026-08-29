@@ -122,6 +122,35 @@ class TestNoiseIsStillSuppressed(unittest.TestCase):
             w.run(lambda u: self._churn(""))
             self.assertEqual(len(w.run(lambda u: self._churn("b" * 60))), 1)
 
+    def test_a_rolling_relative_timestamp_is_not_a_change(self):
+        """support.claude.com 的 Intercom 小工具每週自己滾一次「Updated over N
+        weeks ago」。它是長度守恆的**數字**變動——與價格同型，任何以數字為鍵的
+        規則都分不開兩者。所以從源頭剝掉：hash 不為它而變，問題不存在。
+
+        沒有這條測試，第 6 輪的數字繞道會讓 3–4 個真實監看頁每週各發一則，而且
+        時間戳與文章首段同段，摘要讀起來像整段說明被改寫（第 7 輪 reviewer 用
+        真 state 的段落實測過）。"""
+        def page(stamp):
+            return _page(
+                f"Updated over {stamp} ago Copy for LLM This article explains credits.",
+                "Claude Sonnet 5 costs two dollars per million input tokens.")
+        with _Watch([URL]) as w:
+            w.run(lambda u: page("2 weeks"))
+            self.assertEqual(w.run(lambda u: page("3 weeks")), [])
+            self.assertEqual(w.run(lambda u: page("4 weeks")), [])
+
+    def test_a_price_change_still_surfaces_through_a_rolling_timestamp(self):
+        """對照組：剝掉時間戳不得連帶把同頁的真變動一起吃掉。"""
+        def page(stamp, price):
+            return _page(
+                f"Updated over {stamp} ago Copy for LLM This article explains credits.",
+                f"Claude Sonnet 5 costs {price} / MTok input.")
+        with _Watch([URL]) as w:
+            w.run(lambda u: page("2 weeks", "$2"))
+            items = w.run(lambda u: page("3 weeks", "$3"))
+        self.assertEqual(len(items), 1)
+        self.assertIn("$3 / MTok", items[0].summary)
+
     def test_an_unchanged_page_emits_nothing(self):
         with _Watch([URL]) as w:
             w.run(lambda u: BEFORE)
@@ -211,12 +240,26 @@ class TestStateDiscipline(unittest.TestCase):
         mod._hash_item("x", URL, "x" * 900, prev, state, segments=huge, boilerplate=set())
         self.assertEqual(state[URL]["segments"], ["Yesterday's real sentence."])
 
-    def test_a_page_with_no_prior_segments_says_so_honestly(self):
-        prev = {"hash": "old", "length": 10}          # 本功能部署前記下的基線
+    def test_the_message_matches_what_state_actually_holds(self):
+        """訊息說「尚無可比對的前一版段落」時，state 裡就真的不能有。第 7 輪
+        發現這句話在「段落集合相同」那條路徑上是假的——而當時的測試釘的是訊息
+        文字，不是訊息與 state 相不相符，所以釘不住。"""
+        # (a) 真的沒有前版段落（本功能部署前的舊 state）
+        prev = {"hash": "old", "length": 10}
         state: dict = {}
         item = mod._hash_item("x", URL, "x" * 900, prev, state,
                               segments=["A real sentence here."], boilerplate=set())
         self.assertIn("尚無可比對的前一版段落", item.summary)
+        self.assertNotIn("segments", {k: v for k, v in prev.items()})
+
+        # (b) 段落集合與前版相同、hash 卻變了（變動落在段落層看不見處）
+        segs = ["Claude Sonnet 5 costs two dollars per million input tokens."]
+        prev = {"hash": "old", "length": 10, "segments": segs}
+        state = {}
+        item = mod._hash_item("x", URL, "x" * 900, prev, state,
+                              segments=segs, boilerplate=set())
+        self.assertNotIn("尚無可比對的前一版段落", item.summary)
+        self.assertEqual(state[URL]["segments"], segs)
 
 
 if __name__ == "__main__":

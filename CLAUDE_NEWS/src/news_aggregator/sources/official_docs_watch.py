@@ -51,6 +51,18 @@ CONFIG_PATH = Path(__file__).parent / "official_watch.json"
 STATE_PATH = Path(__file__).parent / "official_watch_state.json"
 
 _SCRIPT_RE = re.compile(r"<(script|style)\b.*?</\1>", re.S | re.I)
+
+# 相對時間戳是易變 chrome：support.claude.com 的 Intercom 小工具會吐
+# 「Updated over 2 weeks ago …」，每週自己滾一次而頁面內容一個字沒改。它與
+# 價格一樣是「長度守恆的數字變動」，所以任何以數字為鍵的規則都分不開兩者——
+# 分不開就不要分，直接從源頭剝掉（同 _SCRIPT_RE 剝 script 的道理）。剝在
+# _visible_text 裡，hash 因此也不會為它而變，問題不是被過濾而是不存在。
+# 2026-08-29 實測：全庫 4 個段落含此樣式，無其他數字型輪替 chrome。
+_VOLATILE_RE = re.compile(
+    r"\b(?:updated\s+)?(?:about|over|almost|less\s+than)?\s*"
+    r"(?:\d+|a|an)\s+(?:second|minute|hour|day|week|month|year)s?\s+ago\b"
+    r"|\bupdated\s+(?:just\s+now|today|yesterday|this\s+(?:week|month|year))\b",
+    re.I)
 _TAG_RE = re.compile(r"<[^>]+>")
 _WS_RE = re.compile(r"\s+")
 
@@ -188,15 +200,15 @@ def _hash_item(name: str, url: str, text: str, prev, state: dict,
         return None
 
     before = prev.get("segments")
+    big_enough = abs(len(text) - int(prev.get("length", 0))) >= MIN_DELTA_CHARS
     if usable and before:
         # 樣板從兩邊同時剔除：對稱套用才不會憑空生出增減（理由見 BOILERPLATE_MIN_PAGES）
         added = sorted((set(segments) - boilerplate) - (set(before) - boilerplate))
         removed = sorted((set(before) - boilerplate) - (set(segments) - boilerplate))
         if added or removed:
-            if _touches_numbers(added, removed) or \
-                    abs(len(text) - int(prev.get("length", 0))) >= MIN_DELTA_CHARS:
+            if _touches_numbers(added, removed) or big_enough:
                 return _item(name, url, digest,
-                             _diff_summary(name, prev, text, added, removed))
+                             _diff_summary(_head(name, prev, text), added, removed))
             logger.info("Official watch '%s' sub-threshold non-numeric edit", name)
             return None
         if set(segments) != set(before):
@@ -210,7 +222,7 @@ def _hash_item(name: str, url: str, text: str, prev, state: dict,
     # 拿不到可比的段落 diff 時，才退回 2026-08-08 的長度閘這個粗糙代理。它擋的是
     # 輪替 token、「最近瀏覽」小工具那類雜訊；但它對**長度守恆**的編輯無能為力
     # （$2 → $3 差 0 字元），所以絕不能排在段落 diff 前面。
-    if abs(len(text) - int(prev.get("length", 0))) < MIN_DELTA_CHARS:
+    if not big_enough:
         logger.info("Official watch '%s' changed below threshold", name)
         return None
 
@@ -218,11 +230,15 @@ def _hash_item(name: str, url: str, text: str, prev, state: dict,
         why = f"本頁段落數（{len(segments)}）超過上限 {MAX_SEGMENTS}，不做段落比對"
     elif not segments:
         why = "本次未能從頁面解析出可比對的段落"
+    elif before:
+        # 段落集合與前一版相同，變動落在段落層看不見的地方（低於
+        # MIN_SEGMENT_CHARS 的碎片、或只有重複次數變化）。前一版段落是存在的，
+        # 不可說「尚無」（2026-08-29 review 第 7 輪：這句話在此路徑上是假的）。
+        why = "段落層級未見差異，變動落在可比對的段落之外"
     else:
         why = "本頁尚無可比對的前一版段落，下次變動起會列出差異"
-    head = f"{name} 內容有變動（前次 {prev.get('length', 0)} 字 → 本次 {len(text)} 字）。"
-    return _item(name, url, digest,
-                 head + f"此為官方一手文件的變更偵測，非新聞報導；{why}，具體改了什麼需開啟連結比對。")
+    return _item(name, url, digest, _head(name, prev, text)
+                 + f"此為官方一手文件的變更偵測，非新聞報導；{why}，具體改了什麼需開啟連結比對。")
 
 
 def _touches_numbers(added: list[str], removed: list[str]) -> bool:
@@ -255,6 +271,7 @@ def _visible_segments(body: str) -> set[str]:
     （markdown 本來就有換行，原樣保留），再逐行收斂空白。
     """
     stripped = _SCRIPT_RE.sub(" ", body)
+    stripped = _VOLATILE_RE.sub(" ", stripped)
     stripped = _BLOCK_END_RE.sub('\n', stripped)
     stripped = _TAG_RE.sub(" ", stripped)
     out = set()
@@ -279,12 +296,13 @@ def _boilerplate(segs_by_url: dict) -> set:
     return {seg for seg, n in seen.items() if n >= BOILERPLATE_MIN_PAGES}
 
 
-def _diff_summary(name: str, prev: dict, text: str,
-                  added: list[str], removed: list[str]) -> str:
+def _head(name: str, prev: dict, text: str) -> str:
+    return f"{name} 內容有變動（前次 {int(prev.get('length', 0))} 字 → 本次 {len(text)} 字）。"
+
+
+def _diff_summary(head: str, added: list[str], removed: list[str]) -> str:
     """把段落差異講成人話。移除型變動最容易被忽略——「9/1 漲價取消」在頁面上
     就是少了一句話，所以兩個方向都要列。"""
-    head = f"{name} 內容有變動（前次 {prev.get('length', 0)} 字 → 本次 {len(text)} 字）。"
-
     def _fmt(label: str, rows: list[str]) -> str:
         shown = "；".join(r[:SEGMENT_PREVIEW_CHARS] for r in rows[:MAX_LISTED_SEGMENTS])
         more = f"（另有 {len(rows) - MAX_LISTED_SEGMENTS} 段未列）" if len(rows) > MAX_LISTED_SEGMENTS else ""
@@ -405,4 +423,5 @@ def _visible_text(html: str) -> str:
     """Strip markup so cosmetic asset-hash churn doesn't read as a content change."""
     body = _SCRIPT_RE.sub(" ", html)
     body = _TAG_RE.sub(" ", body)
+    body = _VOLATILE_RE.sub(" ", body)
     return _WS_RE.sub(" ", body).strip()
