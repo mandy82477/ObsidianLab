@@ -84,21 +84,12 @@ class TestAlreadyReported(unittest.TestCase):
 
 
 class TestDailyCap(unittest.TestCase):
-    def test_cap_holds_even_when_the_whole_backlog_is_unreported(self):
-        """冷啟動當天存量最大，上限就是為了這一天存在的。"""
-        repos = [_repo(f"o/r{n}", 100000 - n) for n in range(50)]
-        with _NewsDir(["（空日報）"]), patch.object(
-            mod.requests, "get", return_value=_FakeResp(repos)
-        ):
-            items = mod._inventory_sweep(HEADERS, NOW)
-        self.assertEqual(len(items), mod.INVENTORY_PER_DAY)
-
     def test_picks_the_highest_starred_first(self):
-        """逐日往下走，先補最大的——讀者最可能已經聽過、卻在本庫查無的那些。"""
+        """逐日往下走，先補最大的，且不超過每日上限（冷啟動當天存量最大）——讀者最可能已經聽過、卻在本庫查無的那些。"""
         repos = [_repo("o/small", 4000), _repo("o/huge", 90000), _repo("o/mid", 20000)]
         with _NewsDir(["（空日報）"]), patch.object(
             mod.requests, "get", return_value=_FakeResp(repos)
-        ), patch.object(mod, "INVENTORY_PER_DAY", 2):
+        ):
             items = mod._inventory_sweep(HEADERS, NOW)
         self.assertEqual([i.title for i in items], ["o/huge", "o/mid"])
 

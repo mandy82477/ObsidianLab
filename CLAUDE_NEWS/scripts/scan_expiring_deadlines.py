@@ -102,7 +102,7 @@ def collect(wiki_dir: Path, today: date | None = None) -> list[dict]:
             if m:
                 d = _parse_date(m.group(1))
                 if d:
-                    found.append({"date": d, "file": rel, "line": n, "kind": "倒數表",
+                    found.append({"date": d, "file": rel, "line": n,
                                   "what": _first_cell(m.group(2))[:110],
                                   "verified": _recently_verified(line, d, today)})
                 continue
@@ -112,7 +112,7 @@ def collect(wiki_dir: Path, today: date | None = None) -> list[dict]:
                 if d:
                     # 從 ⏰ 的位置起擷取，不是行首——同一行可能先講別的事，行首
                     # 文字會讓報告指向錯的議題（2026-08-28 首版即踩到）
-                    found.append({"date": d, "file": rel, "line": n, "kind": "散文",
+                    found.append({"date": d, "file": rel, "line": n,
                                   "what": line[m.start():].strip()[:110],
                                   "verified": _recently_verified(line, d, today)})
     # 抑制以「截止日」為單位，不是以行為單位：同一個日期常散在 3 處以上，查證的

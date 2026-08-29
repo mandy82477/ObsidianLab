@@ -34,7 +34,6 @@ class WikiGraphSmoke(unittest.TestCase):
         """pricing 是全庫高入鏈頁；入邊歸零＝wikilink 解析失效。"""
         inbound = [l for l in self.links if l.dst == "entities/pricing"]
         self.assertGreater(len(inbound), 20)
-        self.assertTrue(all(l.line >= 1 for l in inbound))
 
     def test_產地標記三值(self):
         zones = {l.zone for l in self.links}

@@ -934,9 +934,9 @@
         ".claude/commands/news-pipeline-steps.md"
       ],
       "patterns": [
-        "截止日"
+        "scan_expiring_deadlines"
       ],
-      "_note": "2026-08-29 review 第 2 輪：原本 files 只列消費端一個檔、patterns 含 2 字元的「3g」，等於三次自我 grep。改為真正跨檔。"
+      "_note": "2026-08-29 review：首版 files 只列消費端、patterns 用 2 字元的「3g」；第二版 pattern 改「截止日」仍是兩檔天然都含的通用詞（把 3g 呼叫行整行刪掉照樣綠）。現釘腳本名本身。"
     }
   ],
   "coupling_hints": {

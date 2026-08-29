@@ -88,8 +88,6 @@ _BLOCK_END_RE = re.compile(
     r"</(?:p|li|h[1-6]|tr|section|article|blockquote|pre)\s*>|<br\s*/?>", re.I)
 MIN_SEGMENT_CHARS = 12   # 更短的多半是導覽殘骸與圖示 alt，進來只會製造假 diff
 MAX_SEGMENTS = 1200      # 超過此數的頁面不存 segments（state 檔無上限成長的閘）
-BOILERPLATE_MIN_PAGES = 2   # 出現在幾個頁面以上就算樣板
-_META_KEY = "_meta"         # state 內存放樣板指紋（不是 URL，不會與監看頁衝突）
 MAX_LISTED_SEGMENTS = 5  # 摘要裡列幾條就夠了——目的是讓人知道往哪看，不是重現 diff
 SEGMENT_PREVIEW_CHARS = 120
 
@@ -107,9 +105,8 @@ class OfficialDocsWatch(BaseSource):
 
         state = _load_state()
         items: list[FeedItem] = []
+        fetched: list[str] = []
 
-        # 先全部抓回來再處理：樣板判定需要看過本輪所有頁面（見 _boilerplate）
-        fetched = []
         for page in pages:
             url = page.get("url")
             name = page.get("name") or url
@@ -124,41 +121,16 @@ class OfficialDocsWatch(BaseSource):
                 # stored hash is left untouched so the next run retries cleanly.
                 logger.warning("Official watch '%s' failed: %s", name, e)
                 continue
-            fetched.append((name, url, mode, raw_body))
-
-        segs_by_url = {u: _visible_segments(b) for _, u, m, b in fetched if m != "index"}
-        # 樣板判定要看齊全本輪所有頁：少抓到一頁，兩頁共有的導覽段就從「樣板」
-        # 變回「內容」，該頁的 segments 會多出一批導覽段。抓不齊時整批不更新
-        # segments（保留前一版乾淨的基線）並退化摘要，否則污染會寫進 state、
-        # 隔天恢復再反向報一次「移除」（2026-08-29 review 第 2 輪）。
-        complete = len(segs_by_url) == sum(
-            1 for p in pages if p.get("url") and (p.get("mode") or "hash") != "index")
-        if not complete:
-            logger.warning("Official watch: %d/%d hash pages fetched, segments left untouched",
-                           len(segs_by_url), sum(1 for p in pages if p.get("url")
-                                                 and (p.get("mode") or "hash") != "index"))
-        boilerplate = _boilerplate(segs_by_url) if complete else set()
-        # 樣板集合隨監看清單而變：清單一改，同一段可能從「內容」變成「樣板」
-        # 而消失，下次 diff 就會把它報成「移除」。指紋不同時本輪只重記基線、
-        # 不報 diff——與舊 state 無 segments 的處理一致。指紋取自設定清單而非
-        # 抓取結果，否則單一頁 timeout 會誤判成清單變動（2026-08-29 review）。
-        fingerprint = _watch_fingerprint(pages)
-        resegmented = state.get(_META_KEY, {}).get("fingerprint") != fingerprint
-        if resegmented and state.get(_META_KEY) is not None:
-            logger.info("Official watch: watchlist changed, re-baselining segments this run")
-        state[_META_KEY] = {"fingerprint": fingerprint}
-
-        for name, url, mode, raw_body in fetched:
+            fetched.append(url)
             # index 模式吃原文（_visible_text 會吃掉索引解析器需要的行結構）
             text = raw_body if mode == "index" else _visible_text(raw_body)
             prev = state.get(url)
             if mode == "index":
                 item = _index_item(name, url, text, prev, state)
             else:
-                segments = (sorted(segs_by_url.get(url, set()) - boilerplate)
-                            if complete else None)
-                item = _hash_item(name, url, text, prev, state, segments=segments,
-                                  resegmented=resegmented or not complete)
+                # 原文另外傳一份：段落級 diff 需要區塊邊界，而 text 已被壓平
+                item = _hash_item(name, url, text, prev, state,
+                                  segments=sorted(_visible_segments(raw_body)))
             if item is not None:
                 items.append(item)
 
@@ -169,17 +141,11 @@ class OfficialDocsWatch(BaseSource):
 
 
 def _hash_item(name: str, url: str, text: str, prev, state: dict,
-               segments: list[str] | None = None,
-               resegmented: bool = False) -> FeedItem | None:
-    """segments=None 代表「本輪算不出可信的 segments」（頁面沒抓齊），
-    此時沿用 state 內既有的那份，不覆寫。"""
+               segments: list[str] | None = None) -> FeedItem | None:
     digest = hashlib.sha256(text.encode("utf-8")).hexdigest()
+    segments = segments or []
     entry: dict = {"hash": digest, "length": len(text)}
-    if segments is None:
-        keep = (prev or {}).get("segments")
-        if keep:
-            entry["segments"] = keep
-    elif segments and len(segments) <= MAX_SEGMENTS:
+    if segments and len(segments) <= MAX_SEGMENTS:
         entry["segments"] = segments
     state[url] = entry
 
@@ -201,7 +167,7 @@ def _hash_item(name: str, url: str, text: str, prev, state: dict,
         source="Official Docs",
         published=datetime.now(tz=timezone.utc),
         score=0,
-        summary=_change_summary(name, prev, text, segments or [], resegmented),
+        summary=_change_summary(name, prev, text, segments),
         category="official",
         score_unit="",
     )
@@ -227,35 +193,7 @@ def _visible_segments(body: str) -> set[str]:
     return out
 
 
-def _boilerplate(segs_by_url: dict) -> set:
-    """本輪出現在 ≥ BOILERPLATE_MIN_PAGES 個頁面的段落，視為導覽／頁尾樣板。
-
-    這些段落佔掉六成的儲存量，而且它們變動時報出來的 diff 是「新增 1 段：
-    Try Claude Try Claude」——既沒有資訊，又會把真訊號淹掉。判準用「跨頁重複」
-    而不是關鍵字黑名單：樣板的定義就是「每頁都有」，這是它唯一穩定的特徵。
-    """
-    seen: dict = {}
-    for segs in segs_by_url.values():
-        for seg in segs:
-            seen[seg] = seen.get(seg, 0) + 1
-    return {seg for seg, n in seen.items() if n >= BOILERPLATE_MIN_PAGES}
-
-
-def _watch_fingerprint(pages: list) -> list:
-    """參與樣板判定的頁面清單（排序後的 URL）。
-
-    取自**設定**而非本輪抓成功的頁：樣板集合會不會位移，取決於清單裡有哪些頁，
-    不取決於今天網路好不好。取自抓取結果的話，任一頁 timeout 就會讓當輪所有頁
-    的 diff 失效，隔天該頁恢復再失效一輪。
-
-    不雜湊：11 個 URL 存原樣才看得出是哪一頁進出，雜湊只是把失效原因藏起來。
-    """
-    return sorted(p.get("url") for p in pages
-                  if p.get("url") and (p.get("mode") or "hash") != "index")
-
-
-def _change_summary(name: str, prev: dict, text: str, segments: list[str],
-                    resegmented: bool = False) -> str:
+def _change_summary(name: str, prev: dict, text: str, segments: list[str]) -> str:
     """說出「改了什麼」，而不只是「變了」。
 
     舊 state 沒有 segments（本函式部署前記的基線），或頁面大到不存 segments 時，
@@ -263,7 +201,7 @@ def _change_summary(name: str, prev: dict, text: str, segments: list[str],
     """
     head = f"{name} 內容有變動（前次 {prev.get('length', 0)} 字 → 本次 {len(text)} 字）。"
     before = prev.get("segments")
-    if resegmented or not before or not segments:
+    if not before or not segments:
         return head + "此為官方一手文件的變更偵測，非新聞報導；具體改了什麼需開啟連結比對（本頁尚無可比對的前一版段落，下次變動起會列出差異）。"
 
     before_set, now_set = set(before), set(segments)

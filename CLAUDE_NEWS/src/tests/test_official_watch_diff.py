@@ -78,16 +78,6 @@ class TestGracefulDegradation(unittest.TestCase):
                                       sorted(mod._visible_segments(AFTER)))
         self.assertIn("下次變動起會列出差異", summary)
 
-    def test_incomplete_fetch_keeps_the_previous_segments(self):
-        """抓不齊時樣板集合會位移，算出來的 segments 帶著導覽段。寫進 state
-        就會在隔天恢復時反向報一次「移除」——所以本輪整批不動它。"""
-        prev = {"hash": "o", "length": 1, "segments": ["Earlier clean sentence."]}
-        state: dict = {}
-        mod._hash_item("x", "https://e.test/p", mod._visible_text(AFTER), prev,
-                       state, segments=None, resegmented=True)
-        self.assertEqual(state["https://e.test/p"]["segments"],
-                         ["Earlier clean sentence."])
-
     def test_oversized_page_stores_no_segments(self):
         huge = _page(*[f"paragraph number {n} with enough characters" for n in range(mod.MAX_SEGMENTS + 50)])
         state: dict = {}
@@ -127,35 +117,6 @@ class TestSegmentation(unittest.TestCase):
         md = "# Title\n\nSonnet 5 costs $2 per million tokens.\n\nOpus 5 costs $5.\n"
         segs = mod._visible_segments(md)
         self.assertIn("Sonnet 5 costs $2 per million tokens.", segs)
-
-class TestBoilerplate(unittest.TestCase):
-    def test_segments_on_many_pages_are_dropped(self):
-        """導覽／頁尾佔六成儲存量，且變動時報出「新增 1 段：Try Claude」這種噪音。"""
-        segs_by_url = {
-            "a": {"Contact sales Contact sales", "Page A unique content sentence."},
-            "b": {"Contact sales Contact sales", "Page B unique content sentence."},
-        }
-        boiler = mod._boilerplate(segs_by_url)
-        self.assertIn("Contact sales Contact sales", boiler)
-        self.assertNotIn("Page A unique content sentence.", boiler)
-
-    def test_fingerprint_comes_from_config_not_from_what_was_fetched(self):
-        """取自抓取結果的話，任一頁 timeout 就會讓當輪所有頁的 diff 失效兩輪。"""
-        pages = [{'url': 'https://a.test'}, {'url': 'https://b.test'},
-                 {'url': 'https://idx.test', 'mode': 'index'}]
-        fp = mod._watch_fingerprint(pages)
-        self.assertEqual(fp, ['https://a.test', 'https://b.test'])   # index 模式不參與
-        # 少抓到一頁不得改變指紋——它是設定的性質，不是今天網路好不好
-        self.assertEqual(fp, mod._watch_fingerprint(list(reversed(pages))))
-        self.assertNotEqual(fp, mod._watch_fingerprint(pages + [{'url': 'https://c.test'}]))
-
-    def test_resegmented_run_degrades_instead_of_reporting_a_false_removal(self):
-        prev = {"hash": "o", "length": 1, "segments": ["Some earlier sentence here."]}
-        summary = mod._change_summary("x", prev, "new text",
-                                      ["A different sentence entirely."], resegmented=True)
-        self.assertIn("下次變動起會列出差異", summary)
-        self.assertNotIn("移除", summary)
-
 
 if __name__ == "__main__":
     unittest.main()
