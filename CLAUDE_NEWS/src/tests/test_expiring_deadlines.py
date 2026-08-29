@@ -21,6 +21,8 @@ sys.path.insert(0, str(REPO_ROOT / "scripts"))
 
 import scan_expiring_deadlines as mod  # noqa: E402
 
+NL = chr(10)
+
 
 class _Wiki:
     def __init__(self, files: dict):
@@ -93,6 +95,37 @@ class TestScope(unittest.TestCase):
         with _Wiki({"entities/some-future-model.md": "- ⏰ 2026-09-30 免費期結束\n"}) as w:
             found = mod.collect(w.root)
         self.assertEqual([x["date"] for x in found], [date(2026, 9, 30)])
+
+
+class TestVerifiedSuppression(unittest.TestCase):
+    """查證過就別再天天叫——永遠在響的警報會被整段跳過。"""
+
+    VERIFIED = "- ⏰ 2026-08-31 到期（2026-08-28 查官方原文複查，日期仍有效）｜促銷" + NL
+    CROSSREF = "> 另見 ⏰ 2026-08-31 到期條目" + NL
+    RADAR_ROW = "| **2026-08-31** | 促銷結束 | x | y |" + NL
+
+    def test_line_marked_verified_is_suppressed(self):
+        with _Wiki({"entities/pricing.md": self.VERIFIED}) as w:
+            self.assertEqual(mod.collect(w.root, today=date(2026, 8, 29)), [])
+
+    def test_suppression_is_per_deadline_not_per_line(self):
+        """同一日期常散在 3 處；只抑制帶註記那行，交叉引用行仍會天天叫。"""
+        with _Wiki({"entities/pricing.md": self.VERIFIED + self.CROSSREF,
+                    "feature-radar.md": self.RADAR_ROW}) as w:
+            self.assertEqual(mod.collect(w.root, today=date(2026, 8, 29)), [])
+
+    def test_suppression_expires_so_it_fires_again_later(self):
+        """靜默期過了要重新提醒，否則等於永久關掉。"""
+        page = "- ⏰ 2026-09-30 到期（2026-08-28 查官方原文複查，仍有效）" + NL
+        with _Wiki({"entities/pricing.md": page}) as w:
+            quiet = mod.collect(w.root, today=date(2026, 8, 29))
+            later = mod.collect(w.root, today=date(2026, 9, 20))
+        self.assertEqual(quiet, [])
+        self.assertEqual(len(later), 1)
+
+    def test_a_date_without_a_verification_note_still_fires(self):
+        with _Wiki({"feature-radar.md": self.RADAR_ROW}) as w:
+            self.assertEqual(len(mod.collect(w.root, today=date(2026, 8, 29))), 1)
 
 
 class TestWindow(unittest.TestCase):

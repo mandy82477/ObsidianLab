@@ -31,6 +31,12 @@ WIKI_DIR = REPO_ROOT / "wiki"
 # 26–30 小時，週更 lint 的間隔是 7 天——比 7 天短會讓週更路徑接不到。
 DEFAULT_WINDOW_DAYS = 7
 
+# 已查證過的截止日，多久內不再重複要求複查。沒有這道，掃描器會無視自己的答案：
+# 頁面上明明寫著「2026-08-28 查官方原文複查，日期仍有效」，它照樣天天要求再查
+# 一次，直到到期為止——一個永遠在響的警報會把讀者訓練成整段跳過（2026-08-29
+# review 發現）。
+VERIFIED_QUIET_DAYS = 14
+
 _DATE_RE = re.compile(r"(20\d{2})-(\d{2})-(\d{2})")
 
 # feature-radar「⏰ 倒數中」表格列：| **YYYY-MM-DD** | 事件 | 到期後 | 你該做的決定 |
@@ -50,18 +56,38 @@ def _parse_date(s: str) -> date | None:
         return None
 
 
+def _recently_verified(line: str, deadline: date, today: date) -> bool:
+    """這一行是否已標明近期查證過？
+
+    判準刻意寬鬆——只要行內有「複查／查證」字樣，且帶一個非截止日本身、落在近
+    VERIFIED_QUIET_DAYS 天內的日期。本工具是提醒而非閘門，寧可漏提醒也不要天天
+    重複要求做過的事。
+    """
+    if "複查" not in line and "查證" not in line:
+        return False
+    for y, m, d in _DATE_RE.findall(line):
+        try:
+            seen = date(int(y), int(m), int(d))
+        except ValueError:
+            continue
+        if seen != deadline and 0 <= (today - seen).days <= VERIFIED_QUIET_DAYS:
+            return True
+    return False
+
+
 def _first_cell(row: str) -> str:
     """表格列的第二欄（事件描述），用來讓報告看得懂是哪一筆。"""
     cells = [c.strip() for c in row.split("|") if c.strip()]
     return cells[0] if cells else ""
 
 
-def collect(wiki_dir: Path) -> list[dict]:
+def collect(wiki_dir: Path, today: date | None = None) -> list[dict]:
     """掃出全庫所有帶截止日的承諾。
 
     刻意掃整個 wiki/ 而不是寫死兩個檔名：截止日會擴散到別的頁（模型免費期、
     政策生效日），寫死檔名的偵測器只看得到今天想得到的那兩頁。
     """
+    today = today or date.today()
     found: list[dict] = []
     for path in sorted(wiki_dir.rglob("*.md")):
         rel = path.relative_to(REPO_ROOT).as_posix()
@@ -76,8 +102,9 @@ def collect(wiki_dir: Path) -> list[dict]:
             if m:
                 d = _parse_date(m.group(1))
                 if d:
-                    found.append({"date": d, "file": rel, "line": n,
-                                  "what": _first_cell(m.group(2))[:110], "kind": "倒數表"})
+                    found.append({"date": d, "file": rel, "line": n, "kind": "倒數表",
+                                  "what": _first_cell(m.group(2))[:110],
+                                  "verified": _recently_verified(line, d, today)})
                 continue
             m = _PROSE_RE.search(line)
             if m:
@@ -85,9 +112,13 @@ def collect(wiki_dir: Path) -> list[dict]:
                 if d:
                     # 從 ⏰ 的位置起擷取，不是行首——同一行可能先講別的事，行首
                     # 文字會讓報告指向錯的議題（2026-08-28 首版即踩到）
-                    found.append({"date": d, "file": rel, "line": n,
-                                  "what": line[m.start():].strip()[:110], "kind": "散文"})
-    return found
+                    found.append({"date": d, "file": rel, "line": n, "kind": "散文",
+                                  "what": line[m.start():].strip()[:110],
+                                  "verified": _recently_verified(line, d, today)})
+    # 抑制以「截止日」為單位，不是以行為單位：同一個日期常散在 3 處以上，查證的
+    # 是那個日期而不是某一行，只抑制帶註記的那行等於留著交叉引用行天天叫。
+    verified_dates = {x["date"] for x in found if x["verified"]}
+    return [x for x in found if x["date"] not in verified_dates]
 
 
 def main() -> int:
@@ -99,7 +130,7 @@ def main() -> int:
     today = _parse_date(args.today) or date.today()
     horizon = today + timedelta(days=args.days)
 
-    items = collect(WIKI_DIR)
+    items = collect(WIKI_DIR, today)
     overdue = sorted([x for x in items if x["date"] < today], key=lambda x: x["date"])
     due = sorted([x for x in items if today <= x["date"] <= horizon], key=lambda x: x["date"])
     later = [x for x in items if x["date"] > horizon]
