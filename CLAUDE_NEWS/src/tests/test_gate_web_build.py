@@ -8,6 +8,7 @@ web build，網站整天停在前一天——但那 3 個案例是抓料端依�
 這支測試的重點不是「放行邏輯會不會動」，而是**它會不會放行過頭**：
 允許清單一旦變成橡皮圖章，這層 gate 就等於沒有。
 """
+import json
 import unittest
 from datetime import date
 from pathlib import Path
@@ -16,6 +17,8 @@ import sys
 
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent.parent / "scripts"))
 from gate_web_build import evaluate, load_gaps, parse_failures  # noqa: E402
+
+GAPS_FILE = Path(__file__).resolve().parent.parent.parent / "docs" / "known-test-gaps.json"
 
 GAPS = [
     {
@@ -100,14 +103,25 @@ AssertionError: blogroll 來源清單解析錯誤
 
 
 class TestShippedAllowlist(unittest.TestCase):
+    REQUIRED = ("id", "test", "error", "register_row", "review_date", "why_safe")
+
     def test_shipped_file_parses_and_entries_are_complete(self):
         """實際 ship 的 docs/known-test-gaps.json 必須可解析，且每筆欄位齊全。
 
         允許清單漏欄位不會報錯、只會靜默不匹配（等於該缺口沒被登記到），
         所以這裡明著檢查，避免有人以為登記了、實際上沒生效。
+
+        **同時驗 `_example`**：`gaps` 平常是空的（現在就是），只跑迴圈的話這條測試
+        一次斷言都不會執行——2026-08-29 全庫掃描抓到它是唯一真正恆真的一條。而
+        `_example` 是這份檔案自己宣告的欄位樣板，拿它當常在的樣本，欄位清單日後改了
+        卻忘了同步樣板，這裡就會紅。
         """
+        example = json.loads(GAPS_FILE.read_text(encoding="utf-8"))["_example"]
+        for field in self.REQUIRED:
+            self.assertIn(field, example, f"_example 樣板缺欄位 {field}")
+
         for gap in load_gaps():
-            for field in ("id", "test", "error", "register_row", "review_date", "why_safe"):
+            for field in self.REQUIRED:
                 self.assertIn(field, gap, f"缺口 {gap.get('id', '?')} 缺欄位 {field}")
 
 
