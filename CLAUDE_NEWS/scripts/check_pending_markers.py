@@ -316,6 +316,21 @@ def _append_history(path: Path, today: date, total: int, a: int, b: int, added: 
         pass  # 寫不進去不該擋住報表
 
 
+def backlog_summary(wiki_dir: Path | None = None, today: date | None = None) -> tuple[int, int, int]:
+    """(逾期筆數, 舊語法盲區筆數, 最久逾期天數)。給 `scripts/open_loops.py` 等彙整端用。
+
+    契約寫在**擁有資料的這一側**：重構本檔時作者看得到它有外部消費者。
+    彙整端不得複製一套解析（同一事實兩套解析必然漂移），也不該去 parse
+    `--queue` 的輸出（那份格式 2026-08 內改過三次）。
+    """
+    wiki_dir = wiki_dir or WIKI_DIR
+    today = today or date.today()
+    entries = _overdue_entries(wiki_dir, today)
+    legacy = sum(n for _, n in _legacy_by_page(wiki_dir))
+    oldest = max((e[1] for e in entries), default=0)
+    return (len(entries), legacy, oldest)
+
+
 def print_queue(out, wiki_dir: Path | None = None, today: date | None = None,
                 history_path: Path | None = None) -> None:
     """兩條分流 + 產消對帳。

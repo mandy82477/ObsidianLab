@@ -963,6 +963,32 @@
       "patterns": [
         "產消對帳"
       ]
+    },
+    {
+      "name": "開放迴路五類 <-> CLAUDE.md：類別與處理端必須同步（腳本加減一類而文件沒跟上，讀者會照舊以為只有兩類）",
+      "assertion": "all_contain",
+      "files": [
+        "CLAUDE.md",
+        "scripts/open_loops.py"
+      ],
+      "patterns": [
+        "需收尾",
+        "reader-notes",
+        "feature-radar",
+        "`/wiki-lint` 5c",
+        "`/wiki-lint` 5a"
+      ]
+    },
+    {
+      "name": "open_loops <-> check_pending_markers：彙整端依賴的公開契約（上游改名而彙整端沒跟上＝整類積壓從報表消失）",
+      "assertion": "all_contain",
+      "files": [
+        "scripts/open_loops.py",
+        "scripts/check_pending_markers.py"
+      ],
+      "patterns": [
+        "backlog_summary"
+      ]
     }
   ],
   "coupling_hints": {

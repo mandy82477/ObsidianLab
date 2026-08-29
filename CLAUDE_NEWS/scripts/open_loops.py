@@ -36,6 +36,7 @@ def _use_utf8_stdout() -> None:
 
 REPO = Path(__file__).resolve().parent.parent          # CLAUDE_NEWS/
 REGISTER = REPO / "docs" / "workaround-register.md"
+_DATE_RE = re.compile(r"(\d{4})-(\d{2})-(\d{2})")
 READER_NOTES = REPO / "wiki" / "reader-notes.md"
 FEATURE_RADAR = REPO / "wiki" / "feature-radar.md"
 
@@ -92,15 +93,12 @@ class PendingScanUnavailable(RuntimeError):
 def pending_marker_backlog(today: date) -> tuple[int, int, int]:
     """(逾期筆數, 舊語法盲區筆數, 最久逾期天數)。處理端是 `/wiki-lint` 5c，本處只報數。
 
-    直接沿用 check_pending_markers 的解析，不自己再寫一套——同一個事實兩套解析
-    必然漂移（`_legacy_by_page` 的 docstring 記過同型教訓）。
+    走上游的公開契約 `backlog_summary()`，不自己再寫一套解析——同一事實兩套解析
+    必然漂移。契約寫在擁有資料的那一側，上游重構時看得到有外部消費者。
     """
     try:
         import check_pending_markers as cpm
-        entries = cpm._overdue_entries(cpm.WIKI_DIR, today)
-        legacy = sum(n for _, n in cpm._legacy_by_page(cpm.WIKI_DIR))
-        oldest = max((e[1] for e in entries), default=0)
-        return (len(entries), legacy, oldest)
+        return cpm.backlog_summary(today=today)
     except Exception as e:
         # 不可靜默回 0——那會讓掃描壞掉看起來像「很乾淨」，正是本腳本要治的病。
         raise PendingScanUnavailable(str(e)) from e
@@ -126,12 +124,44 @@ def reader_notes_pending(today: date) -> list[str]:
     return rows
 
 
-def feature_radar_watching() -> int:
-    """feature-radar 標 ⏳ 的條目數。逾期判定（>90 天）屬 `/wiki-lint` 5a，此處不重複實作。"""
-    if not FEATURE_RADAR.exists():
-        return 0
-    return FEATURE_RADAR.read_text(encoding="utf-8").count("⏳")
+def feature_radar_watching(today: date) -> tuple[int, int]:
+    """(觀望中條目數, 其中逾 90 天者)。只解析「功能全覽表」的列，不做全文 count。
 
+    2026-08-29 review 實測：`text.count("⏳")` 得 23，真實只有 13——
+    9 條同時出現在詳細條目標頭與全覽表（跨層重複）、1 個是圖例列。
+    一支專門防低報的腳本在這一類**高報 77%**，而且吃進了總計。
+
+    只有「逾 90 天」那個數字進總計：依 `.claude/rules/wiki-ingest-features.md`
+    「⏳ 觀望是有期限的判斷，不是停車場」，兩天前發布的 ⏳ 不是積壓。
+
+    用欄位位置（試用價值欄）而非全文比對，措辭漂移（觀望／觀察中）不影響。
+    """
+    if not FEATURE_RADAR.exists():
+        return (0, 0)
+    lines = FEATURE_RADAR.read_text(encoding="utf-8").splitlines()
+    start = None
+    for n, line in enumerate(lines):
+        if line.startswith("## ") and "功能全覽表" in line:
+            start = n + 1
+            break
+    if start is None:
+        return (0, 0)
+    watching = overdue = 0
+    for line in lines[start:]:
+        if line.startswith("## "):
+            break
+        if not line.strip().startswith("|"):
+            continue
+        cells = [c.strip() for c in line.strip().strip("|").split("|")]
+        if len(cells) < 4 or cells[0] == "功能" or set(cells[0]) <= {"-", ":"}:
+            continue
+        if "⏳" not in cells[3]:
+            continue
+        watching += 1
+        d = _DATE_RE.search(cells[1])
+        if d and (today - date(int(d.group(1)), int(d.group(2)), int(d.group(3)))).days > 90:
+            overdue += 1
+    return (watching, overdue)
 
 def main() -> int:
     _use_utf8_stdout()
@@ -159,7 +189,10 @@ def main() -> int:
     except PendingScanUnavailable as e:
         pend_overdue = pend_legacy = pend_oldest = 0
         pend_broken = str(e)
-    print(f"\n[3] 懸置標記：逾期 {pend_overdue} 筆（最久逾 {pend_oldest} 天）＋ 舊語法盲區 {pend_legacy} 筆")
+    if pend_broken is not None:
+        print("\n[3] 懸置標記：❌ 掃描失敗，數量未知")
+    else:
+        print(f"\n[3] 懸置標記：逾期 {pend_overdue} 筆（最久逾 {pend_oldest} 天）＋ 舊語法盲區 {pend_legacy} 筆")
     if pend_broken is not None:
         print(f"    ❌ 掃描失敗，此類積壓未知（不可當成 0）：{pend_broken[:80]}")
     elif pend_overdue or pend_legacy:
@@ -175,17 +208,32 @@ def main() -> int:
     if not notes:
         print("    ✅ 無待處理")
 
-    radar = feature_radar_watching()
-    print(f"\n[5] feature-radar 觀望中（⏳）：{radar} 條")
-    if radar:
-        print("    → 逾期判定（發布逾 90 天者三選一處置）屬 `/wiki-lint` 5a，本處只報總量")
+    radar_all, radar_overdue = feature_radar_watching(today)
+    print(f"\n[5] feature-radar 觀望中（⏳）：{radar_all} 條，其中逾 90 天 {radar_overdue} 條")
+    if radar_overdue:
+        print("    → 逾 90 天者依 `/wiki-lint` 5a 三選一處置，不得留原狀；未逾期者不算積壓")
 
     open_count = len(changes) + len(overdue)
-    total_backlog = open_count + pend_overdue + pend_legacy + len(notes) + radar
-    print(f"\n=== 需收尾（前兩類）：{open_count} 個｜全庫積壓合計：{total_backlog} 筆 ===")
-    print("    兩個數字刻意分開：前者是「這次該做完的」，後者是「還欠著的」。"
-          "只看前者會像 2026-08-29 之前那樣——報 8 個，實際欠 200+ 筆。")
-    return 1 if open_count else 0
+    # 三個數字回答三個不同的問題：
+    #   需收尾   = 這次該做完的（前兩類）
+    #   已跳票   = 逾自身期限的承諾，五類共用「件」為單位、同質可追蹤
+    #   存量遷移 = 舊語法盲區，是格式債、沒對讀者承諾過什麼，另計不入總
+    # 2026-08-29 review：原本只印一個 229，其中 195 由盲區＋逾期懸置主導，
+    # 其餘四類全部歸零總數也只掉到 34——那不是彙整，是「盲區筆數＋雜訊」。
+    overdue_promises = len(overdue) + len(notes) + radar_overdue
+    if pend_broken is None:
+        overdue_promises += pend_overdue
+        prefix, legacy_txt = "", str(pend_legacy)
+    else:
+        prefix, legacy_txt = "≥ ", "未知"
+    print(f"\n=== 需收尾（前兩類）：{open_count} 個"
+          f"｜已跳票（逾自身期限）：{prefix}{overdue_promises} 筆"
+          f"｜存量遷移（舊語法盲區）：{legacy_txt} 筆 ===")
+    if pend_broken is not None:
+        print("    ⚠️ 懸置掃描失敗，上列數字不含該類——不可當成 0")
+    print("    「需收尾」是這次該做完的；「已跳票」是已逾自身期限的承諾（同質、可追蹤）；"
+          "存量遷移是格式債，另計不入總。2026-08-29 之前本腳本只算前兩類，當時報 8 個。")
+    return 1 if (open_count or pend_broken is not None) else 0
 
 
 if __name__ == "__main__":
