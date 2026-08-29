@@ -384,3 +384,4 @@
 [Sat 2026/08/29 17:40:14 UTC] Web commit OK (ff56f88: web: rebuild 2026-08-29)
 [Sat 2026/08/29 17:40:14 UTC] Single push done (news + wiki + web, 657952e..ff56f88，第一次即成功無需重試)
 [Sat 2026/08/29 17:40:14 UTC] === Pipeline complete (agent) === 本日為 08-29 真正日報首次成功執行（先前 12:04 UTC 班次因誤標日期而誤判冪等閘中止）
+[cloud daily-news-pipeline-cloud STARTED 2026-08-29 22:03:00 UTC]
