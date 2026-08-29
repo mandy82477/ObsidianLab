@@ -233,9 +233,11 @@ def _overdue_entries(wiki_dir: Path, today: date) -> list[tuple[bool, int, str]]
             overdue = (today - review_date).days
             has_signal = mk.signal is not None
             probes_summary = "、".join(mk.probes[:3])
-            line = f"{slug}:{mk.line}｜標 {mk.marked}｜複 {review_date.isoformat()}｜{probes_summary}"
+            line = f"{slug}:{mk.line}｜逾期 {overdue} 天｜標 {mk.marked}｜{probes_summary}"
             entries.append((has_signal, overdue, line))
 
+    # 主鍵（訊欄優先）在 2026-08-29 分流後對 --queue 已無作用（兩條 Lane 各自成組），
+    # 保留是因為完整報告仍共用 _overdue_entries；次鍵「逾期天數降序」才是兩邊都要的。
     entries.sort(key=lambda e: (0 if e[0] else 1, -e[1]))
     return entries
 
@@ -276,7 +278,40 @@ def _recent_marked(wiki_dir: Path, today: date, days: int) -> int:
     return n
 
 
-def print_queue(out, wiki_dir: Path | None = None, today: date | None = None) -> None:
+HISTORY_PATH = WIKI_DIR.parent / "data" / "pending_queue_history.csv"
+
+
+def _read_last_history(path: Path) -> tuple[str, int] | None:
+    """上一筆快照 (date, total)。查無或格式壞掉一律回 None——診斷用資料不該讓主流程掛掉。"""
+    try:
+        rows = [r for r in path.read_text(encoding="utf-8").splitlines() if r and not r.startswith("date,")]
+    except Exception:
+        return None
+    if not rows:
+        return None
+    try:
+        cells = rows[-1].split(",")
+        return cells[0], int(cells[1])
+    except Exception:
+        return None
+
+
+def _append_history(path: Path, today: date, total: int, a: int, b: int, added: int) -> None:
+    """每輪 append 一列。沒有這個，下週跑同一支腳本仍答不出「比上週好還是壞」——
+    而本次改版的起因正是『19 天從 0 長到 51 無人察覺』。"""
+    try:
+        path.parent.mkdir(parents=True, exist_ok=True)
+        new = not path.exists()
+        with path.open("a", encoding="utf-8", newline="") as f:
+            if new:
+                f.write("date,total,lane_a,lane_b,added_7d" + chr(10))
+            f.write(f"{today.isoformat()},{total},{a},{b},{added}" + chr(10))
+    except Exception:
+        pass  # 寫不進去不該擋住報表
+
+
+def print_queue(out, wiki_dir: Path | None = None, today: date | None = None,
+                history_path: Path | None = None) -> None:
     """兩條分流 + 產消對帳。
 
     為什麼分流（2026-08-29）：原本單一額度 5 筆、排序「訊欄優先」，
@@ -297,7 +332,7 @@ def print_queue(out, wiki_dir: Path | None = None, today: date | None = None) ->
     entries = _overdue_entries(wiki_dir, today)
     lane_a = [e for e in entries if e[0]]       # 有訊欄
     lane_b = [e for e in entries if not e[0]]   # 無訊欄
-    print("# check_pending_markers.py --queue 逾期佇列" + chr(10), file=out)
+    print("# check_pending_markers.py --queue 逾期佇列\n", file=out)
 
     print(f"## Lane A（本輪額度 {SIGNAL_LIMIT}）：日報已有後續訊號，多數可免 web——{len(lane_a)} 筆", file=out)
     print("   記者已標 `訊`＝日報有後續。多數可只憑日報收斂，但探針是機械比對、可能假命中——", file=out)
@@ -306,6 +341,8 @@ def print_queue(out, wiki_dir: Path | None = None, today: date | None = None) ->
         print(f"  {line}", file=out)
     if not lane_a:
         print("  （無）", file=out)
+    elif len(lane_a) > SIGNAL_LIMIT:
+        print(f"  … 另 {len(lane_a) - SIGNAL_LIMIT} 筆未顯示", file=out)
 
     print(file=out)
     print(f"## Lane B（本輪額度 {QUEUE_LIMIT}）：需 WebFetch 官方查證——{len(lane_b)} 筆", file=out)
@@ -314,6 +351,8 @@ def print_queue(out, wiki_dir: Path | None = None, today: date | None = None) ->
         print(f"  {line}", file=out)
     if not lane_b:
         print("  （無）", file=out)
+    elif len(lane_b) > QUEUE_LIMIT:
+        print(f"  … 另 {len(lane_b) - QUEUE_LIMIT} 筆未顯示", file=out)
 
     print(file=out)
     print(f"總逾期數：{len(entries)}（Lane A {len(lane_a)}／Lane B {len(lane_b)}）", file=out)
@@ -341,6 +380,20 @@ def print_queue(out, wiki_dir: Path | None = None, today: date | None = None) ->
             file=out,
         )
 
+    # 趨勢：上一輪快照對照。存量數字沒有方向，只有序列才答得出「比上週好還是壞」。
+    if history_path is not None:
+        prev = _read_last_history(history_path)
+        if prev is not None:
+            prev_date, prev_total = prev
+            delta = len(entries) - prev_total
+            sign = "+" if delta > 0 else ""
+            print(f"📈 趨勢：{prev_date} {prev_total} 筆 → 今日 {len(entries)} 筆（{sign}{delta}）", file=out)
+        _append_history(history_path, today, len(entries), len(lane_a), len(lane_b), added)
+
+    # 排空預估：「43 筆」沒有時間感，「8.6 週」有。
+    if lane_b and QUEUE_LIMIT:
+        print(f"⏳ 依現行額度，Lane B 需約 {len(lane_b) / QUEUE_LIMIT:.1f} 週排空（期間仍在進料）", file=out)
+
     # 舊語法盲區：佇列只讀新語法標記（舊字樣沒有探針欄，機器找不到它）。
     # 只印數字會讓 5c 誤以為「總逾期數 0」＝沒事，故在此列出頁面分佈，
     # 讓消化端每輪至少看得到盲區規模與位置。
@@ -353,13 +406,20 @@ def print_queue(out, wiki_dir: Path | None = None, today: date | None = None) ->
             print(f"  {n:>3} 筆  {name}", file=out)
         print("  → 這些筆沒有探針欄，5c 永遠撈不到；依 `/wiki-lint` 3g 於記者輪回填為新語法後才會進佇列", file=out)
 
+    print(file=out)
+    print(
+        f"→ 本輪請處理 Lane A {min(len(lane_a), SIGNAL_LIMIT)} 筆 ＋ Lane B "
+        f"{min(len(lane_b), QUEUE_LIMIT)} 筆；寫回四選一見 `/wiki-lint` 5c 步驟 3",
+        file=out,
+    )
+
 
 def main() -> int:
     args = sys.argv[1:]
     out = _stdout()
 
     if "--queue" in args:
-        print_queue(out)
+        print_queue(out, history_path=HISTORY_PATH)
         out.flush()
         return 0
 
