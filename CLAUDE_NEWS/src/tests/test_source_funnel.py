@@ -50,13 +50,12 @@ class TestContributorsAreCredited(unittest.TestCase):
         ])
         self.assertEqual(counts, {"Hacker News": 1}, "same source twice on one item is still one item")
 
-    def test_items_without_contributors_behave_as_before(self):
-        counts = _count_by_prefix([_Item("Hacker News"), _Item("Hacker News")])
-        self.assertEqual(counts, {"Hacker News": 2})
-
 
 class TestCountByPrefix(unittest.TestCase):
     def test_plain_source(self):
+        """也涵蓋「沒有 contributors 的條目維持原行為」——contributors 那組原本另有一條
+        逐字相同的測試（2026-08-29 測試盤查刪除），兩條驗的是同一個呼叫與同一個期望值。
+        """
         counts = _count_by_prefix([_Item("Hacker News"), _Item("Hacker News")])
         self.assertEqual(counts, {"Hacker News": 2})
 

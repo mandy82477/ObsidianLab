@@ -5,7 +5,7 @@ check_arch_docs.py — 架構文件漂移機械檢查（取代 /arch-doc-sync �
 只用標準庫（re / pathlib），比照 scripts/check_rules.py 的風格：讀設定 →
 跑確定性檢查 → 印人類可讀報告 → exit code。
 
-四類檢查：
+五類檢查：
     1. sources        — src/news_aggregator/main.py 的 sources 清單
                          與 Design Diagram.md / architecture-current.html 是否一致
                          （含「已退役來源」黑名單，抓「圖上還畫著但 main.py 已移除」的漂移）
@@ -14,6 +14,9 @@ check_arch_docs.py — 架構文件漂移機械檢查（取代 /arch-doc-sync �
     3. charset         — 兩份 HTML 皆含 <meta charset="utf-8">
     4. css_tokens      — 兩份 HTML 用到的 var(--xxx) 皆在 architecture.css 的
                          :root 有定義
+    5. crons           — 文件裡寫死的 cron 字面值必須是現行排程之一（或列在
+                         CRON_ALLOWLIST）。只查 cron，不查散文時刻——後者在歷史
+                         記錄裡合法出現，機械上分不出現況與記述
 
 用法：
     python scripts/check_arch_docs.py
@@ -37,6 +40,22 @@ DESIGN_DIAGRAM = REPO_ROOT / "src" / "DesignDocument" / "Design Diagram.md"
 CURRENT_HTML = REPO_ROOT / "docs" / "architecture-current.html"
 EVOLUTION_HTML = REPO_ROOT / "docs" / "architecture-evolution.html"
 ARCH_CSS = REPO_ROOT / "docs" / "architecture.css"
+TRIGGER_DIR = REPO_ROOT / "docs" / "cloud-runbooks" / "triggers"
+WORKFLOW_DIR = REPO_ROOT.parent / ".github" / "workflows"
+
+# 刻意寫在文件裡、但不是現行排程的 cron。每一筆都要有理由——這是白名單，
+# 不是垃圾桶。
+CRON_ALLOWLIST = {
+    # 2026-08-29 移除的保險窗。註解教人「哪天同日送達變硬需求就加回這個值」，
+    # 值本身必須留在文字裡才有意義。
+    ("daily-gather.yml", "17 0 * * *"),
+    # 2026-07-13 重新建立 daily-news-pipeline-cloud 當下的 cron。這是歷史記錄，
+    # 記的是「當時建成什麼樣」，不是現況宣告。
+    ("daily-automation.md", "0 13 * * *"),
+}
+
+# 白名單以 (檔名, cron) 為粒度：同一個檔案日後若出現描述**現況**的同一個舊值，
+# 這裡會放行。粒度再細（帶行號）會在文件增刪行時天天假警報，不划算。
 
 # main.py 顯示名 → 文件內比對用關鍵字（預設等於顯示名本身；
 # main.py 的 "GitHub" 對應 GitHubReleases class，文件內寫「GitHub Releases」，
@@ -282,6 +301,61 @@ def check_css_tokens(report: Report):
     report.add("檢查 4：CSS token 存在性（css_tokens）", passed, details)
 
 
+def check_crons(report: Report):
+    """文件裡寫死的 cron，必須是現行值之一（或列在白名單）。
+
+    2026-08-29 的教訓：排程改了四次（13:00 → 22:00 → 六班 → 三班），每一次都有文件
+    沒跟上，而且每一次都是靠人逐份 grep 才發現——七輪 review 有一半的工作是這件事。
+    cron 字面值是機器可讀的，沒有理由讓人去比對。
+
+    只查 cron 字面值，**不查散文裡的時刻**（「22:00 UTC」「緩衝 11.6 小時」）：那些在
+    歷史記錄裡合法出現，機械上分不出「描述現況」與「記述當時」，硬查會製造假警報，
+    而假警報會讓人開始略過整個檢查。散文的一致性仍靠 review。
+    """
+    authoritative: set[str] = set()
+    for p in sorted(TRIGGER_DIR.glob("*.json")):
+        m = re.search(r'"cron_expression"\s*:\s*"([^"]+)"', p.read_text(encoding="utf-8"))
+        if m:
+            authoritative.add(m.group(1))
+    for p in sorted(WORKFLOW_DIR.glob("*.yml")):
+        authoritative |= set(re.findall(r'^\s*- cron: "([^"]+)"',
+                                        p.read_text(encoding="utf-8"), re.M))
+
+    # 五欄 cron，且第三、四欄為 *（本專案所有排程都是這個形狀）
+    pattern = re.compile(
+        # lookbehind 不可排除反引號：markdown 散文裡的 cron 幾乎都寫成 `0 13 * * *`，
+        # 排掉它等於對這個檢查最該抓的寫法瞎掉（2026-08-29 破壞測試當場發現）。
+        r"(?<![\w])((?:\d+|\*)(?:[,\-/]\d+)*)\s+((?:\d+|\*)(?:[,\-/]\d+)*)"
+        r"\s+\*\s+\*\s+((?:\d+|\*)(?:[,\-/]\d+)*)(?![\w])")
+
+    scanned = 0
+    stale = []
+    roots = [REPO_ROOT / "docs", REPO_ROOT / ".claude",
+             REPO_ROOT / "src" / "DesignDocument", WORKFLOW_DIR]
+    for root in roots:
+        for p in sorted(root.rglob("*")):
+            if p.is_dir() or p.suffix not in {".md", ".yml", ".json", ".html"}:
+                continue
+            for i, line in enumerate(p.read_text(encoding="utf-8", errors="replace"
+                                                 ).splitlines(), 1):
+                for m in pattern.finditer(line):
+                    scanned += 1
+                    cron = f"{m.group(1)} {m.group(2)} * * {m.group(3)}"
+                    if cron in authoritative:
+                        continue
+                    if (p.name, cron) in CRON_ALLOWLIST:
+                        continue
+                    stale.append(f"{p.relative_to(REPO_ROOT.parent)}:{i} 「{cron}」")
+
+    passed = not stale
+    details = [f"現行 cron {len(authoritative)} 組；文件中掃到 {scanned} 處 cron 字面值"]
+    if stale:
+        details.append(f"與現行值不符且未列白名單 {len(stale)} 處：")
+        details.extend(f"  - {x}" for x in stale)
+    else:
+        details.append("全部與現行排程一致（或在白名單內）")
+    report.add("檢查 5：cron 字面值漂移（crons）", passed, details)
+
 # ---------------------------------------------------------------------------
 # main
 # ---------------------------------------------------------------------------
@@ -294,6 +368,7 @@ def main() -> int:
     check_dates(report)
     check_charset(report)
     check_css_tokens(report)
+    check_crons(report)
 
     stream.write(report.render() + "\n")
     stream.flush()

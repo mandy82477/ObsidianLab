@@ -226,6 +226,10 @@ class TestStateDiscipline(unittest.TestCase):
         # 正文裡帶相對日期的計費事實：該留（第 8 輪 A1）
         "<p>If you purchased less than 14 days ago, you may request a refund.</p>"
         "</body></html>")
+    # 這個值刻意寫死：它是「有人改了 _visible_text 卻沒發現」的警報。
+    # 蓄意改算法時，跑一次 `python -c "import hashlib,sys;sys.path.insert(0,'src');
+    # from news_aggregator.sources import official_docs_watch as m"` 取新值填回，
+    # 並在 commit 訊息寫清楚為什麼——不要無聲更新，那等於把警報關掉。
     ALGO_DIGEST = "760c7266436dfcfed4b5915654b8ef720fa44e0a69f40dcb6bf2a8bed9b590e7"
     def test_visible_text_algorithm_is_pinned(self):
         """守住 hash 算法本身。
