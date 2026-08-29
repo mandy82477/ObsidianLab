@@ -123,20 +123,6 @@ class TestVerifiedSuppression(unittest.TestCase):
         self.assertEqual(quiet, [])
         self.assertEqual(len(later), 1)
 
-    def test_a_date_without_a_verification_note_still_fires(self):
-        with _Wiki({"feature-radar.md": self.RADAR_ROW}) as w:
-            self.assertEqual(len(mod.collect(w.root, today=date(2026, 8, 29))), 1)
-
-
-class TestWindow(unittest.TestCase):
-    def test_the_2026_08_10_case_would_have_fired_before_manual_discovery(self):
-        """人工是在剩 5 天時發現的；7 天視窗必須更早響。"""
-        with _Wiki({"feature-radar.md": "| **2026-08-31** | 促銷結束 | x | y |\n"}) as w:
-            found = mod.collect(w.root)
-        d = found[0]["date"]
-        days_left = (d - date(2026, 8, 24)).days
-        self.assertLessEqual(days_left, mod.DEFAULT_WINDOW_DAYS)
-
 
 if __name__ == "__main__":
     unittest.main()

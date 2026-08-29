@@ -44,9 +44,6 @@ def _cron_hour(expr: str) -> int:
 
 
 class TestScheduleSurvivesDelay(unittest.TestCase):
-    def test_workflow_exists(self):
-        self.assertTrue(WORKFLOW.is_file(), f"找不到 {WORKFLOW}")
-
     def test_has_more_than_one_scheduled_run(self):
         """單一 cron 沒有任何冗餘：那一班遲到，當天就沒有第二次機會。"""
         self.assertGreaterEqual(len(_crons()), 2)

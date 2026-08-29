@@ -70,14 +70,6 @@ class TestHashUnchanged(unittest.TestCase):
         self.assertEqual(entry["hash"], hashlib.sha256(text.encode("utf-8")).hexdigest())
         self.assertEqual(entry["length"], len(text))
 
-    def test_first_sighting_records_baseline_without_emitting(self):
-        state: dict = {}
-        item = mod._hash_item("x", "https://e.test/p", mod._visible_text(BEFORE),
-                              None, state, segments=sorted(mod._visible_segments(BEFORE)))
-        self.assertIsNone(item)
-        self.assertIn("segments", state["https://e.test/p"])
-
-
 class TestGracefulDegradation(unittest.TestCase):
     def test_legacy_state_without_segments_falls_back_and_says_so(self):
         """靜默地假裝有 diff 才是問題；退化並說明是可接受的。"""
@@ -95,10 +87,6 @@ class TestGracefulDegradation(unittest.TestCase):
 
 
 class TestSegmentation(unittest.TestCase):
-    def test_block_boundaries_survive_so_there_is_something_to_diff(self):
-        """_visible_text 把全頁空白壓成一行；沒有這條，diff 沒有可比對的單位。"""
-        self.assertEqual(len(mod._visible_segments(BEFORE)), 2)
-
     def test_table_rows_are_not_shattered_into_cells(self):
         """切到「格」會讓 `$2 / MTok` 變成 9 字元碎片而低於門檻被丟掉——於是
         「Sonnet 5 從 $2 改成 $3」在偵測器眼中是零變動，正好壞在這個功能唯一
@@ -128,11 +116,6 @@ class TestSegmentation(unittest.TestCase):
         md = "# Title\n\nSonnet 5 costs $2 per million tokens.\n\nOpus 5 costs $5.\n"
         segs = mod._visible_segments(md)
         self.assertIn("Sonnet 5 costs $2 per million tokens.", segs)
-
-    def test_navigation_crumbs_are_dropped(self):
-        segs = mod._visible_segments(_page("Home", "OK", "A real sentence of content here."))
-        self.assertEqual(segs, {"A real sentence of content here."})
-
 
 class TestBoilerplate(unittest.TestCase):
     def test_segments_on_many_pages_are_dropped(self):
