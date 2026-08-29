@@ -277,13 +277,14 @@ def _visible_segments(body: str) -> set[str]:
     stripped = _SCRIPT_RE.sub(" ", body)
     stripped = _BLOCK_END_RE.sub('\n', stripped)
     stripped = _TAG_RE.sub(" ", stripped)
+    # volatile 在**切行之前**剝：regex 的 \s+ 本來就跨換行，而 split 用的 \n
+    # 不只來自 _BLOCK_END_RE，也來自原始 HTML／markdown 自己的換行。逐行剝的話，
+    # 跨原始換行的時間戳在段落側剝不掉、在 _visible_text 側剝得掉，兩邊對同一頁
+    # 得出不同結論（2026-08-29 第 9 輪）。
+    stripped = _VOLATILE_RE.sub(" ", stripped)
     out = set()
     for line in stripped.split('\n'):
-        # volatile 必須在**標籤剝除與空白收斂之後**才剝，且與 _visible_text 同
-        # 順序。剝在標籤還在時，`Updated <time>over <b>2</b> weeks ago</time>`
-        # 這種 inline markup 剝不掉，於是 hash 與 segments 對同一頁得出不同
-        # 結論（2026-08-29 第 8 輪）。
-        seg = _WS_RE.sub(" ", _VOLATILE_RE.sub(" ", _WS_RE.sub(" ", line))).strip()
+        seg = _WS_RE.sub(" ", line).strip()
         if len(seg) >= MIN_SEGMENT_CHARS:
             # 回傳集合而非清單：diff 本來就只用集合語意，存重複段落是白存
             # （定價頁光是重複的表頭列就有 142 段）
@@ -436,5 +437,4 @@ def _visible_text(html: str) -> str:
     """
     body = _SCRIPT_RE.sub(" ", html)
     body = _TAG_RE.sub(" ", body)
-    body = _WS_RE.sub(" ", body)
     return _WS_RE.sub(" ", _VOLATILE_RE.sub(" ", body)).strip()

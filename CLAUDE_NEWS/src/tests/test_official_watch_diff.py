@@ -217,12 +217,16 @@ class TestStateDiscipline(unittest.TestCase):
     ALGO_FIXTURE = (
         "<html><head><style>.x{color:red}</style></head><body>"
         "<h2>Pricing</h2>"
-        "<p>Updated over 2 weeks ago Copy for LLM This article explains credits.</p>"
+        # inline markup 的時間戳：第 8 輪的相對斷言看不見它一起漂移
+        "<p>Updated <time>over <b>2</b> weeks ago</time> Copy for LLM This article "
+        "explains credits.</p>"
+        # 跨原始換行的時間戳：第 9 輪發現逐行剝的話段落側剝不掉
+        "<p>Updated over 3\n  weeks ago Second paragraph of the article body here.</p>"
         "<table><tr><td>Claude Sonnet 5</td><td>$2 / MTok</td></tr></table>"
+        # 正文裡帶相對日期的計費事實：該留（第 8 輪 A1）
         "<p>If you purchased less than 14 days ago, you may request a refund.</p>"
         "</body></html>")
-    ALGO_DIGEST = "1427d2117443ecd10081250ea46f0eda5701d056935d0052bf55a9b841079a3e"
-
+    ALGO_DIGEST = "760c7266436dfcfed4b5915654b8ef720fa44e0a69f40dcb6bf2a8bed9b590e7"
     def test_visible_text_algorithm_is_pinned(self):
         """守住 hash 算法本身。
 
@@ -234,21 +238,27 @@ class TestStateDiscipline(unittest.TestCase):
             mod._visible_text(self.ALGO_FIXTURE).encode("utf-8")).hexdigest()
         self.assertEqual(digest, self.ALGO_DIGEST)
 
-    def test_segments_and_text_strip_the_same_things(self):
-        """兩個函式對同一頁必須得出一致的可見文字。
+    def test_no_variant_of_a_timestamp_survives_in_either_function(self):
+        """**絕對**斷言：兩邊都不得殘留時間戳。
 
-        第 8 輪發現 volatile 在兩處剝的位置不同（一個在標籤剝除前、一個在後），
-        於是 inline markup 的時間戳只有一邊剝得掉——hash 與 segments 對同一頁
-        得出不同結論。三種 markup 各驗一次。
+        第 8 輪這裡寫的是 `_visible_segments(html) == {_visible_text(html)}`——相對
+        於受測物自己的斷言，兩個函式一起漂移就穿透（第 9 輪 reviewer 實跑：對稱
+        回退後 18/18 全綠，而 inline markup 的時間戳重新進了 hash）。與第 8 輪剛
+        淘汰掉的那條是同一個形狀。golden digest 有效正因為它是絕對值。
         """
         for html in (
-            "<p>Updated <time>over <b>2</b> weeks ago</time> Copy for LLM Credits explained.</p>",
-            "<p>Updated over 2 weeks ago Copy for LLM Credits explained.</p>",
-            "<p>Updated <span>over 2 weeks ago</span> Copy for LLM Credits explained.</p>",
+            "<p>Updated <time>over <b>2</b> weeks ago</time> Copy for LLM Credits.</p>",
+            "<p>Updated over 2 weeks ago Copy for LLM Credits.</p>",
+            "<p>Updated <span>over 2 weeks ago</span> Copy for LLM Credits.</p>",
+            "<p>Updated over 2\n  weeks ago Copy for LLM Credits.</p>",
+            "<p>Updated\nover 2 weeks ago Copy for LLM Credits.</p>",
         ):
-            with self.subTest(html=html[:40]):
+            with self.subTest(html=html[:34]):
+                self.assertNotIn("weeks ago", mod._visible_text(html))
+                self.assertFalse([x for x in mod._visible_segments(html)
+                                  if "weeks ago" in x])
+                # 一致性仍要查，但它是附帶條件不是主張
                 self.assertEqual(mod._visible_segments(html), {mod._visible_text(html)})
-
     def test_a_real_fact_containing_a_relative_date_is_not_stripped(self):
         """「purchased less than 14 days ago」是退款期限，不是 chrome。volatile
         regex 的 updated 前綴若可選就會吃掉它，而且因為 _visible_text 也剝，
