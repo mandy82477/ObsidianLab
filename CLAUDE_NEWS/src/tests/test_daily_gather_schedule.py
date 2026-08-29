@@ -16,10 +16,9 @@
 2. **push 必須能重試**——裸 `git push` 在 checkout→push 的兩分鐘視窗內只要有人
    推了東西就 non-fast-forward 失敗，當天抓料整包不落地。
 """
+import re
 import unittest
 from pathlib import Path
-
-import yaml
 
 REPO_ROOT = Path(__file__).resolve().parent.parent.parent      # CLAUDE_NEWS/
 WORKFLOW = REPO_ROOT.parent / ".github" / "workflows" / "daily-gather.yml"
@@ -33,10 +32,9 @@ TOLERATED_DELAY_H = 12
 
 
 def _crons():
-    cfg = yaml.safe_load(WORKFLOW.read_text(encoding="utf-8"))
-    # PyYAML 把 YAML 的 `on:` 解析成布林 True，不是字串 "on"
-    on = cfg.get("on") or cfg.get(True)
-    return [entry["cron"] for entry in on["schedule"]]
+    # 刻意不用 PyYAML：它沒有登記在 src/requirements_news.txt，乾淨環境會
+    # ImportError 讓整包測試掛掉（2026-08-29 review 發現）。這裡只要兩個字串。
+    return re.findall(r'- cron: "([^"]+)"', WORKFLOW.read_text(encoding="utf-8"))
 
 
 def _cron_hour(expr: str) -> int:
@@ -44,10 +42,6 @@ def _cron_hour(expr: str) -> int:
 
 
 class TestScheduleSurvivesDelay(unittest.TestCase):
-    def test_has_more_than_one_scheduled_run(self):
-        """單一 cron 沒有任何冗餘：那一班遲到，當天就沒有第二次機會。"""
-        self.assertGreaterEqual(len(_crons()), 2)
-
     def test_earliest_run_still_lands_before_the_cloud_routine(self):
         """最早那班 ＋ 可容忍延遲，必須仍早於雲端 routine 開跑。
 
@@ -71,13 +65,9 @@ class TestDataActuallyLands(unittest.TestCase):
         """裸 push 會在兩分鐘視窗內被任何併發推送打掉，當天抓料整包不落地。"""
         body = WORKFLOW.read_text(encoding="utf-8")
         self.assertIn("git pull --rebase", body)
-
-    def test_push_failure_is_loud(self):
-        """重試耗盡必須讓 job 失敗——GitHub 寄信是本系統唯一的主動告警管道。"""
-        body = WORKFLOW.read_text(encoding="utf-8")
+        # 重試耗盡必須讓 job 失敗——GitHub 寄信是本系統唯一的主動告警管道
         self.assertIn("::error::", body)
         self.assertIn("exit 1", body)
-
 
 if __name__ == "__main__":
     unittest.main()

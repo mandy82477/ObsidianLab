@@ -70,31 +70,22 @@ MIN_DELTA_CHARS = 40
 
 # ── 段落級 diff（2026-08-28 加入）──────────────────────────────────────────
 #
-# hash 模式原本只能給一個 bit：變了 / 沒變。摘要因此只能寫「內容有變動（前次
-# N 字 → 本次 M 字），具體改了什麼需開啟連結比對」——警報響了，但沒有人知道
-# 響什麼，於是沒有人去比對。
+# hash 模式只給一個 bit：變了／沒變。摘要因此只能寫「具體改了什麼需開啟連結
+# 比對」，於是沒有人去比對——2026-08-10 Sonnet 5 定價永久化就死在這個縫裡，
+# 而移除型變動（頁面少一句「到期」）尤其隱形。
 #
-# 2026-08-10 Sonnet 5 的 $2/$10 永久化、9/1 漲價取消，就死在這個縫裡：頁面確實
-# 變了、系統確實通報了，日報寫的卻是「列出 Free／Pro／Max 各方案內容」——那是
-# 在描述頁面現在說什麼，不是這次改了什麼。**移除型變動**（少了一句話）尤其
-# 隱形，因為摘要撰寫者看到的只有當下全文，沒有前一版可比。
+# 修法沿用 _index_item 已證明有效的集合差。hash 與 length 的算法**刻意不動**：
+# 改了會讓部署當天每頁同時報假警報，一次就足以把這個來源訓練成可忽略。segments
+# 是純新增欄位，舊 state 沒有它則退化並說明。詳細沿革見 wiki/log.md 2026-08-28。
 #
-# 修法沿用 `_index_item` 已經證明有效的做法：存下可比對的單位，用集合差算出
-# 新增／移除。`_visible_text` 把全頁空白壓成單一空格（那是為了讓 asset hash
-# 抖動不算內容變動），壓完只剩一行、沒有可比對的單位，所以另開一條保留區塊
-# 邊界的切段函式。
-#
-# **hash 與 length 的算法刻意不動**：改動它們會讓部署當天七頁同時報「變了」，
-# 一次假警報就足以把這個來源訓練成可忽略。segments 是純新增欄位，舊 state 沒有
-# 它 → 該頁本次照舊行為輸出並靜默補記基線，下一次變動起才有 diff。
-# **表格切到「列」為止，不切到「格」**：切到格會讓價格表碎成 `$2 / MTok` 這種
-# 無主詞的碎片——而它只有 9 字元、低於 MIN_SEGMENT_CHARS 會被整個丟掉，於是
-# 「Sonnet 5 從 $2 改成 $3」在偵測器眼中是零變動（2026-08-28 首版即如此，正好
-# 壞在這個功能唯一存在理由的那一頁上）。切到列則整列進 diff：
-# 「Claude Sonnet 5 $2 / MTok … $10 / MTok」，讀者一眼看得出改了什麼。
+# **價格必須和它的主詞留在同一段**，否則 diff 說不出是誰漲價；更糟的是集合差可能
+# 算出空的（頁上別的模型已有同一個價格字串時）。因此兩個邊界不能切：
+#   td/th —— 切了價格表碎成 `$2 / MTok`，只有 9 字元、低於門檻被整個丟掉
+#   div   —— 行銷頁把每個價格各包一個 div，切了同樣碎成無主詞片段
+# 2026-08-29 實測 claude.com/pricing：含 div 時 19 個價格段僅 1 個帶模型名，去掉後
+# 14 個；且每頁最長段落長度不變，沒有把整頁併成一坨的副作用。
 _BLOCK_END_RE = re.compile(
-    r"</(?:p|div|li|h[1-6]|tr|section|article|blockquote|pre)\s*>|<br\s*/?>", re.I)
-NEWLINE = chr(10)
+    r"</(?:p|li|h[1-6]|tr|section|article|blockquote|pre)\s*>|<br\s*/?>", re.I)
 MIN_SEGMENT_CHARS = 12   # 更短的多半是導覽殘骸與圖示 alt，進來只會製造假 diff
 MAX_SEGMENTS = 1200      # 超過此數的頁面不存 segments（state 檔無上限成長的閘）
 BOILERPLATE_MIN_PAGES = 2   # 出現在幾個頁面以上就算樣板
@@ -140,8 +131,9 @@ class OfficialDocsWatch(BaseSource):
         boilerplate = _boilerplate(segs_by_url)
         # 樣板集合隨監看清單而變：清單一改，同一段可能從「內容」變成「樣板」
         # 而消失，下次 diff 就會把它報成「移除」。指紋不同時本輪只重記基線、
-        # 不報 diff——與舊 state 無 segments 的處理一致。
-        fingerprint = _watch_fingerprint(segs_by_url)
+        # 不報 diff——與舊 state 無 segments 的處理一致。指紋取自設定清單而非
+        # 抓取結果，否則單一頁 timeout 會誤判成清單變動（2026-08-29 review）。
+        fingerprint = _watch_fingerprint(pages)
         resegmented = state.get(_META_KEY, {}).get("fingerprint") != fingerprint
         if resegmented and state.get(_META_KEY) is not None:
             logger.info("Official watch: watchlist changed, re-baselining segments this run")
@@ -201,7 +193,7 @@ def _hash_item(name: str, url: str, text: str, prev, state: dict,
     )
 
 
-def _visible_segments(body: str) -> list[str]:
+def _visible_segments(body: str) -> set[str]:
     """把頁面切成可比對的段落。
 
     `_visible_text` 為了讓 asset hash 抖動不算內容變動，把全頁空白壓成單一
@@ -209,10 +201,10 @@ def _visible_segments(body: str) -> list[str]:
     （markdown 本來就有換行，原樣保留），再逐行收斂空白。
     """
     stripped = _SCRIPT_RE.sub(" ", body)
-    stripped = _BLOCK_END_RE.sub(NEWLINE, stripped)
+    stripped = _BLOCK_END_RE.sub('\n', stripped)
     stripped = _TAG_RE.sub(" ", stripped)
     out = set()
-    for line in stripped.split(NEWLINE):
+    for line in stripped.split('\n'):
         seg = _WS_RE.sub(" ", line).strip()
         if len(seg) >= MIN_SEGMENT_CHARS:
             # 回傳集合而非清單：diff 本來就只用集合語意，存重複段落是白存
@@ -235,10 +227,17 @@ def _boilerplate(segs_by_url: dict) -> set:
     return {seg for seg, n in seen.items() if n >= BOILERPLATE_MIN_PAGES}
 
 
-def _watch_fingerprint(segs_by_url: dict) -> str:
-    """本輪參與樣板判定的頁面集合。變了就代表樣板集合可能整批位移。"""
-    joined = "|".join(sorted(segs_by_url))
-    return hashlib.sha256(joined.encode("utf-8")).hexdigest()[:16]
+def _watch_fingerprint(pages: list) -> list:
+    """參與樣板判定的頁面清單（排序後的 URL）。
+
+    取自**設定**而非本輪抓成功的頁：樣板集合會不會位移，取決於清單裡有哪些頁，
+    不取決於今天網路好不好。取自抓取結果的話，任一頁 timeout 就會讓當輪所有頁
+    的 diff 失效，隔天該頁恢復再失效一輪。
+
+    不雜湊：11 個 URL 存原樣才看得出是哪一頁進出，雜湊只是把失效原因藏起來。
+    """
+    return sorted(p.get("url") for p in pages
+                  if p.get("url") and (p.get("mode") or "hash") != "index")
 
 
 def _change_summary(name: str, prev: dict, text: str, segments: list[str],
@@ -378,12 +377,6 @@ def _fetch_body(url: str) -> str:
     return resp.text
 
 
-def _fetch_text(url: str, raw: bool = False) -> str:
-    """保留給既有測試與外部呼叫端的薄殼。"""
-    body = _fetch_body(url)
-    # Markdown and llms.txt carry no markup to strip, and _visible_text would
-    # eat the line structure the index parser needs.
-    return body if raw else _visible_text(body)
 
 
 def _visible_text(html: str) -> str:

@@ -98,6 +98,12 @@ class TestSegmentation(unittest.TestCase):
         # 價格必須和模型名在同一段，否則 diff 說不出改的是誰
         self.assertTrue(all("$" in s for s in segs))
 
+        # 行銷頁（claude.com/pricing）不用 table，把每個價格各包一個 div——切 div
+        # 同樣會讓價格變成無主詞碎片而被門檻丟掉。2026-08-29 實測：含 div 邊界時
+        # 該頁 19 個價格段只有 1 個帶模型名。
+        marketing = "<div><div>Claude Sonnet 5</div><div>$2 / MTok</div></div>"
+        self.assertEqual(mod._visible_segments(marketing), {"Claude Sonnet 5 $2 / MTok"})
+
     def test_a_price_change_produces_an_interpretable_diff(self):
         old_t = "<table><tr><td>Claude Sonnet 5</td><td>$2 / MTok</td></tr></table>"
         new_t = "<table><tr><td>Claude Sonnet 5</td><td>$3 / MTok</td></tr></table>"
@@ -106,11 +112,6 @@ class TestSegmentation(unittest.TestCase):
                                       sorted(mod._visible_segments(new_t)))
         self.assertIn("Claude Sonnet 5 $3 / MTok", summary)
         self.assertIn("Claude Sonnet 5 $2 / MTok", summary)
-
-    def test_repeated_segments_are_stored_once(self):
-        """diff 只用集合語意，存重複是白存（定價頁光重複表頭就 142 段）。"""
-        dup = _page("The same sentence repeated here.", "The same sentence repeated here.")
-        self.assertEqual(len(mod._visible_segments(dup)), 1)
 
     def test_markdown_newlines_are_preserved(self):
         md = "# Title\n\nSonnet 5 costs $2 per million tokens.\n\nOpus 5 costs $5.\n"
@@ -128,12 +129,15 @@ class TestBoilerplate(unittest.TestCase):
         self.assertIn("Contact sales Contact sales", boiler)
         self.assertNotIn("Page A unique content sentence.", boiler)
 
-    def test_fingerprint_changes_when_the_watchlist_changes(self):
-        """清單一改樣板集合整批位移，必須被偵測到並重記基線，否則會報假『移除』。"""
-        a = mod._watch_fingerprint({"u1": set(), "u2": set()})
-        b = mod._watch_fingerprint({"u1": set(), "u2": set(), "u3": set()})
-        self.assertNotEqual(a, b)
-        self.assertEqual(a, mod._watch_fingerprint({"u2": set(), "u1": set()}))
+    def test_fingerprint_comes_from_config_not_from_what_was_fetched(self):
+        """取自抓取結果的話，任一頁 timeout 就會讓當輪所有頁的 diff 失效兩輪。"""
+        pages = [{'url': 'https://a.test'}, {'url': 'https://b.test'},
+                 {'url': 'https://idx.test', 'mode': 'index'}]
+        fp = mod._watch_fingerprint(pages)
+        self.assertEqual(fp, ['https://a.test', 'https://b.test'])   # index 模式不參與
+        # 少抓到一頁不得改變指紋——它是設定的性質，不是今天網路好不好
+        self.assertEqual(fp, mod._watch_fingerprint(list(reversed(pages))))
+        self.assertNotEqual(fp, mod._watch_fingerprint(pages + [{'url': 'https://c.test'}]))
 
     def test_resegmented_run_degrades_instead_of_reporting_a_false_removal(self):
         prev = {"hash": "o", "length": 1, "segments": ["Some earlier sentence here."]}

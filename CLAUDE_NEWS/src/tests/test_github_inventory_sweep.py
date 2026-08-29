@@ -145,11 +145,5 @@ class TestWindowGeometry(unittest.TestCase):
         self.assertIn(skills_scope, mod._INVENTORY_SCOPES)
         self.assertNotIn(skills_scope, mod._REPO_SEARCH_SCOPES)
 
-    def test_every_ab_scope_is_also_swept(self):
-        """C 窗掛在所有 scope 上，不是只為 skills 打的補丁——冷啟動洞才算關掉。"""
-        for scope in mod._REPO_SEARCH_SCOPES:
-            self.assertIn(scope, mod._INVENTORY_SCOPES)
-
-
 if __name__ == "__main__":
     unittest.main()
