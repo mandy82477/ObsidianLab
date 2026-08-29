@@ -401,11 +401,5 @@
     }
   ],
   "preview": "Anthropic 官方說明文字浮水印的運作方式，並宣布**第三方偵測 API**——外部單位可據以判斷文字是否由 Claude 產生；本站 08-11 日報已記錄浮水印上線報導，今日補上官方機制說明與偵測管道。",
-  "sedimentedToday": [
-    {
-      "id": "recursive-self-improvement",
-      "name": "AI 遞歸自我改進與全球暫停呼籲",
-      "pageType": "topic"
-    }
-  ]
+  "sedimentedToday": []
 }

@@ -102,12 +102,6 @@
       "body": "CNBC 公開 Salesforce 董事長暨執行長 Marc Benioff 與 Anthropic 共同創辦人暨執行長 Dario Amodei 接受 Jim Cramer 訪談的完整逐字稿。",
       "focusTags": [
         "[重大事件]"
-      ],
-      "sedimented": [
-        {
-          "id": "dario-amodei",
-          "pageType": "entity"
-        }
       ]
     },
     {
@@ -502,11 +496,6 @@
   "preview": "Salesforce 與 Anthropic 深化合作，發布整合進 CRM 工作流的 AI 業務外掛「Claudeforce」，Salesforce 同時上修全年營收預測；Reuters、qz.com、CNBC（Benioff 與 Dario Amodei 專訪）等多家媒體同步報導。",
   "sedimentedToday": [
     {
-      "id": "dario-amodei",
-      "name": "Dario Amodei",
-      "pageType": "entity"
-    },
-    {
       "id": "jensen-huang",
       "name": "Jensen Huang",
       "pageType": "entity"
@@ -520,11 +509,6 @@
       "id": "opus-4-8",
       "name": "Claude Opus 4.8",
       "pageType": "entity"
-    },
-    {
-      "id": "ai-talent-flow",
-      "name": "AI 實驗室人才流動",
-      "pageType": "topic"
     }
   ]
 }

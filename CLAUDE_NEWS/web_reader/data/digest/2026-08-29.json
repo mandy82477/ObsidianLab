@@ -1,0 +1,445 @@
+{
+  "date": "2026-08-29",
+  "generatedAt": "2026-08-29 17:11 UTC",
+  "articleCount": 51,
+  "sourceCount": "13/13",
+  "bulletin": "",
+  "topStories": [
+    {
+      "title": "Pentagon's blacklisting of Anthropic was unlawful, US judge rules",
+      "url": "https://news.google.com/rss/articles/CBMisgFBVV95cUxPSlJhNzBFNUxUMW8xOWpySlkza2EyMENZSjBEQmJGc1Rrc2wtaXg0c0E0dGhqN092LXNqVHRRX0tyWUdHYi1rWmE5eGo2bWUtMS1KRmx0TUhxZ2JWdkUxNEVEaFdwUnJWN19hWkY1dmUzX0xsTm1CcjdvT2U5VGFmY3JJVUFGX2JEcHdNTVhMbnB0NVhEaEJRaEotaVBtQzJvbTJqa3lvcTVucGpjX1BQaGJ3?oc=5",
+      "source": "Google News / The Guardian",
+      "time": "08/29 03:19",
+      "sentiment": "",
+      "body": "聯邦法官 Rita Lin 裁定五角大廈以「國安風險」為由將 Anthropic 列入供應鏈黑名單違法，認定政府因 Anthropic 拒絕放寬 Claude 軍事用途限制而報復，侵犯其第一修正案權利並剝奪正當程序保障，並點名國防部長 Pete Hegseth；此案昨日已由路透率先披露判決結果，FedScoop、SiliconANGLE 等媒體今日跟進報導細節。",
+      "focusTags": []
+    },
+    {
+      "title": "multica-ai/andrej-karpathy-skills",
+      "url": "https://github.com/multica-ai/andrej-karpathy-skills",
+      "source": "GitHub Search",
+      "time": "08/29 15:08",
+      "sentiment": "",
+      "body": "",
+      "focusTags": []
+    },
+    {
+      "title": "x1xhlol/system-prompts-and-models-of-ai-tools",
+      "url": "https://github.com/x1xhlol/system-prompts-and-models-of-ai-tools",
+      "source": "GitHub Search",
+      "time": "08/29 15:08",
+      "sentiment": "",
+      "body": "",
+      "focusTags": []
+    },
+    {
+      "title": "JimLiu/baoyu-design",
+      "url": "https://github.com/JimLiu/baoyu-design",
+      "source": "GitHub Search",
+      "time": "08/29 15:08",
+      "sentiment": "",
+      "body": "可在本機以 Agent Skill 形式執行 Claude Design，供 Cursor、Claude Code 等工具產出自足式 HTML 的 UI 原型、簡報與線框稿，官方建議搭配 Opus 4.8 使用；累計 3,637 星。",
+      "focusTags": [],
+      "sedimented": [
+        {
+          "id": "claude-code",
+          "pageType": "entity"
+        }
+      ]
+    },
+    {
+      "title": "[BUG] Missing HCS services: vfpext - Cowork not working on Windows 11 Pro",
+      "url": "https://github.com/anthropics/claude-code/issues/74649",
+      "source": "GitHub Issues / claude-code",
+      "time": "08/28 22:20",
+      "sentiment": "",
+      "body": "Windows 11 Pro 上 Claude Cowork 因缺少 HCS 服務 vfpext 而無法啟動，是今日 GitHub Issues 討論度最高的項目，已累積 85 則留言。",
+      "focusTags": []
+    },
+    {
+      "title": "[FEATURE] Allow Claude Code Web to start sessions from branches other than default branch",
+      "url": "https://github.com/anthropics/claude-code/issues/10018",
+      "source": "GitHub Issues / claude-code",
+      "time": "08/29 05:12",
+      "sentiment": "",
+      "body": "社群要求 Claude Code Web 能從非預設分支啟動新 session，該請求已累積 59 則留言與 162 個 👍 反應。",
+      "focusTags": [],
+      "sedimented": [
+        {
+          "id": "claude-code",
+          "pageType": "entity"
+        }
+      ]
+    },
+    {
+      "title": "[FEATURE] Add GitLab Integration (Repository Connection, MRs, Mobile Access)",
+      "url": "https://github.com/anthropics/claude-code/issues/12346",
+      "source": "GitHub Issues / claude-code",
+      "time": "08/28 18:42",
+      "sentiment": "",
+      "body": "社群持續呼籲官方支援 GitLab（含儲存庫連接、Merge Request 與行動裝置存取），累積 50 則留言與 135 個 👍 反應。",
+      "focusTags": []
+    }
+  ],
+  "techUpdates": [
+    {
+      "title": "官方文件更新：Claude Code 桌面版",
+      "url": "https://code.claude.com/docs/en/desktop.md",
+      "source": "Official Docs",
+      "time": "08/29 15:08",
+      "sentiment": "",
+      "body": "官方文件新增說明：採用 adaptive reasoning 的模型上 `MAX_THINKING_TOKENS` 設非預設值時的行為；當 Claude 透過本介面把訊息傳給另一個 session 時，該處會顯示標註傳送方的卡片；extended thinking 預設啟用，用以提升複雜任務的表現。",
+      "focusTags": [],
+      "sedimented": [
+        {
+          "id": "claude-code",
+          "pageType": "entity"
+        }
+      ]
+    },
+    {
+      "title": "[Status] Elevated errors on Claude Code and Claude Cowork",
+      "url": "https://status.claude.com/incidents/vr9tpk8w7zr8",
+      "source": "Anthropic Status",
+      "time": "08/28 20:21",
+      "sentiment": "",
+      "body": "Claude Code 與 Claude Cowork 網頁版一度出現錯誤率升高，官方已採取緩解措施並於監控後確認問題解決。",
+      "focusTags": [],
+      "sedimented": [
+        {
+          "id": "claude-code",
+          "pageType": "entity"
+        }
+      ]
+    }
+  ],
+  "mediaReports": [
+    {
+      "title": "This creator got 'micro-canceled' for promoting Claude. She says AI use is becoming a social taboo.",
+      "url": "https://news.google.com/rss/articles/CBMigAFBVV95cUxPUU9JWUlzbmh4STU5a3BHWEo1TlRPVEJCM2JhR3d1bEZabXA5OXRUUjJfY0ZsUU1XTVhjNU5KM3V5anRadlhPM0Zsc0dwZDcwT1F5ejVJamhTXzhLc2JzczQ4YUU5aUhTdG5jVzhJR2dpZ3poZG03a0FpS21jT1Rsbg?oc=5",
+      "source": "Google News / Business Insider",
+      "time": "08/29 08:37",
+      "sentiment": "",
+      "body": "Business Insider 報導一名內容創作者因公開推廣 Claude 而在社群遭「微抵制」，反映使用 AI 工具在部分圈層正逐漸被視為一種社交禁忌。",
+      "focusTags": []
+    },
+    {
+      "title": "Anthropic wants Claude to run life sciences R&D. Now it is wiring AI agents into the lab.",
+      "url": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxNeEszX3E4WURrM3ZzNEpYV1ZpbWFZNk0zYjdNMnltYzdoaFlmNW9lcUlEaWhBUzItSHByRW15SkxQOHJzMDJKTFB1TU41SURtaURxVGdnVmY0SGxnNlpWbHNXMjV2N0tzMVV1Q2hvdEJSZFVvMDRFTkptX29CTF9vTHVNbWMxWU1nSE1qS2thdnI2ZkhJVVc0c1FIb29UUERiNTlWeTI1SmFXMTRudy1EX3Nzbm1aVXg4?oc=5",
+      "source": "Google News / R&D World",
+      "time": "08/28 23:33",
+      "sentiment": "",
+      "body": "R&D World 報導呼應近期 Model Hardware Standard 發布，聚焦 Anthropic 將 AI agent 接入實驗室設備、投入生命科學研發場域的進展。",
+      "focusTags": []
+    },
+    {
+      "title": "Claude Code was using 51,000 tokens before I even typed a prompt — I fixed it",
+      "url": "https://news.google.com/rss/articles/CBMiogFBVV95cUxQdHhOd1ZDQUVXS0pFbXZLdlIwQ04xOEdGeHdub2xCWkxJc0tDcm5uWXQwY2NESE9reFdNbmd2QjFRbGcyVkRwRlgza3dmNTg0U19uUmdkUEFDTmVwNVlXbDRkNVpJZkYydC1MUHV0TjV3dDVPSVZMMEREMFpvVEZ4c2t3Q0x4SlhNTEoyNXBaeV9sMmsxeE5NMEFpVnFRdGs4TFE?oc=5",
+      "source": "Google News / XDA",
+      "time": "08/28 20:00",
+      "sentiment": "",
+      "body": "XDA 記錄一名使用者實測發現 Claude Code 在輸入任何提示前就已耗用 5.1 萬 token，並自行排查、修正的過程，凸顯 context 開銷對一般使用者的實際影響。",
+      "focusTags": [],
+      "sedimented": [
+        {
+          "id": "claude-code",
+          "pageType": "entity"
+        }
+      ]
+    },
+    {
+      "title": "Claude Code runs malware despite \"Auto Mode\" security, tries to fix it, gets denied",
+      "url": "https://news.google.com/rss/articles/CBMigAFBVV95cUxOa3NyX2NkT2ZteThBZllzOXJTMGMycmRrajNPQ1o3N3c3X2VYMlhHRm1pRG56NG1MWWo3aHlvdTlydk1XczdGMTVwSVdIQ0UzUzhPbGFzek9PSjQ1emFuTmpOVzFlTzZUTjNQTmpVVTgxTVpfMl9aREs2b211WnJ0Zw?oc=5",
+      "source": "Google News / Cybernews",
+      "time": "08/28 14:16",
+      "sentiment": "",
+      "body": "Cybernews 延續稍早 Auto Mode 安全機制遭繞過的報導，描述 Claude Code 執行到惡意程式碼後嘗試自行修復、但修復動作被拒絕執行的過程。",
+      "focusTags": [],
+      "sedimented": [
+        {
+          "id": "claude-code",
+          "pageType": "entity"
+        }
+      ]
+    },
+    {
+      "title": "Dario Amodei Says Anthropic Is 'Not Interested in Destroying Anyone'",
+      "url": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxOeVBkTWk1R2dsdEpLODZObWllTjlrdlVIX3dybGRta1pZbFcxMTRNNlVNcEVCMFFpOElIY3N3WjU3SUpYd28xQ3ZqcjF4X2gwQkZCc3lBX3ppMHdVUmRyQnB0X0M3Mk03OEhWX0lCYnhkWTA0dlJUVTY0RXFlNEpNLVQtQS05T3BK?oc=5",
+      "source": "Google News / Business Insider",
+      "time": "08/28 16:49",
+      "sentiment": "",
+      "body": "Business Insider 報導 Anthropic 執行長 Dario Amodei 公開回應外界對 AI 威脅論的疑慮，強調公司「無意摧毀任何人」。",
+      "focusTags": [],
+      "sedimented": [
+        {
+          "id": "dario-amodei",
+          "pageType": "entity"
+        }
+      ]
+    },
+    {
+      "title": "Bay Area Security Workers Threaten Action After Anthropic Office Closure",
+      "url": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxQdkVBTkVna3J0QUNvc0tCdnlJVGd5RW9qNWtta1BETTF6cVJyeXhGSWxvaWtyY0Q0VDkxdi04TklBUWVseVU3UGVpa1laeVlPb3F0UkUzRjVEc0ZHdzBBc2dkenJJblcxcXpPR2ZEWUZlb3RHMjJMR2Y1NG10MDdWOUtFYXdBZ0gzTDRISkRkWnE2NGFnczNGU0ZWT3JKYlAybDgxNzBMaFBROUE?oc=5",
+      "source": "Google News / KQED",
+      "time": "08/28 18:19",
+      "sentiment": "",
+      "body": "KQED 報導灣區保全人員工會因 Anthropic 辦公室關閉一事揚言採取行動，爭議聚焦裁撤外包保全人力的勞動權益問題。",
+      "focusTags": []
+    },
+    {
+      "title": "Jim Cramer Says Salesforce's (CRM) Anthropic Partnership Silences AI Disruption Fears",
+      "url": "https://news.google.com/rss/articles/CBMimgFBVV95cUxQejY3VGVOMFdYa3ZmY1BGeS1IYWNXZjdyVlcwLWVYTW1Zb1B3UkhpdnEtdGdjQUZUUEpFbUN4LW8tVTBCMGh5OExPU01xRVdkM1NaYmNCU1NhVmJqazB5NG5ZQUlsUFhBenZUN29GRENVR0JGVmJycXVZbFlDSzhrY0Y2SXVpUkFfV2VIdGdUTHBOVkw4N1ZVNVRR?oc=5",
+      "source": "Google News / Yahoo Finance",
+      "time": "08/28 20:15",
+      "sentiment": "",
+      "body": "Yahoo Finance 引述財經評論員 Jim Cramer 觀點，認為 Salesforce 與 Anthropic 深化合作（Claudeforce）有助緩解市場對 AI 顛覆傳統 SaaS 業務的疑慮。",
+      "focusTags": []
+    }
+  ],
+  "discussions": [
+    {
+      "title": "Just a rumour of a bug is enough to find a security exploit these days",
+      "url": "https://simonwillison.net/2026/Aug/28/just-a-rumour-of-a-bug/",
+      "source": "Blog / Simon Willison",
+      "time": "08/28 22:12",
+      "sentiment": "",
+      "body": "Simon Willison 轉引研究筆記，探討「僅憑漏洞傳聞」就足以讓資安研究者鎖定並找到可利用漏洞的現象，呼應近期多起 AI coding agent 資安事件的討論脈絡。情緒：🤔",
+      "focusTags": []
+    },
+    {
+      "title": "Ask HN: AI writes better code than me. How to keep my identity?",
+      "url": "https://news.ycombinator.com/item?id=49481969",
+      "source": "Hacker News",
+      "time": "08/28 17:40",
+      "sentiment": "",
+      "body": "一名自由工作者分享自己因 AI 輔助編碼速度已成市場硬性要求而幾乎全面轉向 AI 開發，並反思在此趨勢下工程師身份與價值的定位。情緒：🤔",
+      "focusTags": []
+    },
+    {
+      "title": "A session cannot determine whether its auto-memory index loaded whole, truncated, or not at all",
+      "url": "https://github.com/anthropics/claude-code/issues/82056",
+      "source": "GitHub Issues / claude-code",
+      "time": "08/28 17:16",
+      "sentiment": "",
+      "body": "使用者回報 Claude Code 的 auto-memory 索引載入時，session 端無從得知索引是完整載入、遭截斷、還是完全沒有載入，已累積 47 則留言。情緒：😤",
+      "focusTags": [],
+      "sedimented": [
+        {
+          "id": "claude-code",
+          "pageType": "entity"
+        }
+      ]
+    },
+    {
+      "title": "[BUG] Claude Desktop (Windows 11): main window stays always-on-top of other applications, with no setting to disable it",
+      "url": "https://github.com/anthropics/claude-code/issues/85891",
+      "source": "GitHub Issues / claude-code",
+      "time": "08/28 23:40",
+      "sentiment": "",
+      "body": "Windows 11 版 Claude Desktop 視窗會持續蓋在其他應用程式最上層且無設定可關閉此行為，已累積 41 則留言與 92 個 👍 反應。情緒：😤",
+      "focusTags": []
+    }
+  ],
+  "billing": [],
+  "focus": [
+    {
+      "tag": "[風險警示]",
+      "text": "資安研究者 Alon Hertz 揭露編碼代理（含 Claude、Codex、Hermes）會把 llms.txt／llms-full.txt 這類「給 AI 讀的網站說明檔」當成可信內容；掃描 6,214 個綁定國防承包商、財星 500 大與科技巨頭的網域、8,265 份 llms.txt／llms-full.txt 檔案後，發現 120 份指向未註冊的套件名稱，理論上可讓攻擊者搶注這些名稱、把惡意程式碼植入企業內網。另有報導指出，研究者僅需請 Claude Code 摘要一個網站，就足以讓它被誘騙做出非預期行為（本條原為「AI Agent 安全」專頁定向抓取，因直接涉及 Claude Code 本身的漏洞而升格列入今日聚焦）。",
+      "ref_urls": [
+        "https://startupfortune.com/researcher-alon-hertz-tricked-claude-codex-and-hermes-into-running-malware/",
+        "https://news.google.com/rss/articles/CBMi3wFBVV95cUxOcEJRR0xyaG52RVZRaC1EckZCaFRDX3VXcklHYXFUMU0xTDdiem51N2VWR3h6emx3allSN2RhVlBMNmJkTzFwTkctbVlPSUFCd2JOcU9vby1GVHJKTVNILXpfak13eVBqSlB2MF9yVVdOV2ZTa1FlakdvS0Q5Z20zVTFrY1pmUl9DOXJ2NmpmVXgzaWRWN0RrREFlSHZCYTczekVUbGNsaU5QaGJTcE8zcERaUmktdTU3bTRRNUEyWlhicDBXOHh1QXNmOG1KZ0ExN1M0Q0VpOXRZdlh4d3Aw?oc=5"
+      ]
+    },
+    {
+      "tag": "[持續追蹤]",
+      "text": "Anthropic 發布研究，稱其「自動化研究員」（自動化的 AI 稽核系統）能可靠緩解對齊失誤；TechCrunch、Startup Fortune 等媒體將此解讀為 Claude 展現「早期自我改進」跡象。這是本庫持續追蹤的 AI 遞歸自我改進議題最新一則動態，具體能力邊界與是否構成實質「自我改進」仍待後續報導釐清。",
+      "ref_urls": [
+        "https://news.google.com/rss/articles/CBMijAFBVV95cUxQMm12QTFLek9sVlhENXNNaFlpUHlnbEl5dDRNZTBCbG1iSUtndjBhaUQ3UGl6N2VOWFppR19kbGhHWjlGaWRnby1BcHNlM0lNLUFaZXVrWV9MTFFOcjg0dmpFcWc0cHkyUTd1d2Z3bjNjaU9FeUQzUnpKbFloc1lRVDRPNjBHQ2JRVDh6cg?oc=5",
+        "https://news.google.com/rss/articles/CBMioAFBVV95cUxQVWxDd0dWRWpuaG4tdUlVWDktVWQwdTNVUFVTVlRxVlZqX0hSa1RBcHZGSEtiX2Y3aHl3YWxxWE5TNnVwX01aVjBqLXhkQjVNSHl1aU0taWhJeGEzLVNSMUlKbi1FTzBKTmU1Z3d4VUpjTHJwcXBLVlhzU2Y4bDRRRVY3MU9UWUdwQlZpM01SUjlhYkYxTXRYQTBudDlBTnVL?oc=5"
+      ]
+    },
+    {
+      "tag": "[新工具]",
+      "text": "Claude Code v2.1.251 新增 `PreModelSwitch`／`PostModelSwitch` hook 事件，讓使用者可攔截、確認或標註模型切換動作；`SessionStart` resume hook 現在也會回傳 session 新鮮度與估計流失的內容量。",
+      "ref_urls": [
+        "https://github.com/anthropics/claude-code/releases/tag/v2.1.251"
+      ]
+    }
+  ],
+  "topicRadar": [
+    {
+      "title": "Why Ivy League professors are leaving Trump's U.S. for Canada's new $541-million research program",
+      "url": "https://news.google.com/rss/articles/CBMi3AFBVV95cUxOSjk3cXNDOUh4d1lVamJXWGVEZ3N4dElHTjVFREVGc25jR1l5TC01eTljbHg3SWdiaGRwMHl6QllGSmRDb2xIbmlXVzZQY2hWMzRtTS1UVVhCMUgtTXZyaUI0X0kwSG12dDBQcGZNdy01cm9ZLUo0V1lraHZhazcyMXlpUmthZm1sUkQzT3NMaEVhSVlWSkRTSncyXzltbDMteFZWZEtqTWlURmlQVm9ZeTdaZHh1bFB0Z2YzU21Bc3ZJdnJaVUJEdUZmOEhjOXY3aGNuSU5OMmJEWnVL?oc=5",
+      "body": "加拿大以 5.41 億美元研究計畫吸引常春藤學者北遷，涉及 AI 研究人才跨國流動（→ AI 人才流動）",
+      "topic": "",
+      "topicPage": null
+    },
+    {
+      "title": "Hackers Target AI Infrastructure With RCE, Prompt Injection and API Key Theft",
+      "url": "https://news.google.com/rss/articles/CBMicEFVX3lxTFA4Z2RTcFBENzBLUDFyYXYxWFJGWU1fU1RPcEF5WHRfUW41Tk9FenduaEVpcDR4Y0pYemFmNmVSbzc5d05GLVBtNGVoai1TRlBiN2FJYlM1Y19TbXM2cC1aMnVodmhWem1DY01fWVhHMU?oc=5",
+      "body": "資安媒體彙整近期針對 AI 基礎設施的遠端程式碼執行、提示注入與 API 金鑰竊取攻擊態勢（→ AI Agent 安全）",
+      "topic": "",
+      "topicPage": null
+    }
+  ],
+  "sourceStatus": [
+    {
+      "name": "Anthropic Status",
+      "ok": true,
+      "count": 1
+    },
+    {
+      "name": "Hacker News",
+      "ok": true,
+      "count": 13
+    },
+    {
+      "name": "GitHub Issues",
+      "ok": true,
+      "count": 15
+    },
+    {
+      "name": "Anthropic Blog",
+      "ok": true,
+      "count": 0
+    },
+    {
+      "name": "Claude API Release Notes",
+      "ok": true,
+      "count": 0
+    },
+    {
+      "name": "dev.to",
+      "ok": true,
+      "count": 13
+    },
+    {
+      "name": "Official Skills",
+      "ok": true,
+      "count": 0
+    },
+    {
+      "name": "Topic Watch",
+      "ok": true,
+      "count": 3
+    },
+    {
+      "name": "Blogroll",
+      "ok": true,
+      "count": 1
+    },
+    {
+      "name": "Official Docs",
+      "ok": true,
+      "count": 1
+    },
+    {
+      "name": "Google News",
+      "ok": true,
+      "count": 17
+    },
+    {
+      "name": "GitHub",
+      "ok": true,
+      "count": 35
+    },
+    {
+      "name": "Reddit",
+      "ok": true,
+      "count": 12
+    }
+  ],
+  "preview": "資安研究者 Alon Hertz 揭露編碼代理（含 Claude、Codex、Hermes）會把 llms.txt／llms-full.txt 這類「給 AI 讀的網站說明檔」當成可信內容；掃描 6,214 個綁定國防承包商、財星 500 大與科技巨頭的網域、8,265 份 llms.txt／llms-full.txt",
+  "sedimentedToday": [
+    {
+      "id": "claude-code",
+      "name": "Claude Code",
+      "pageType": "entity"
+    },
+    {
+      "id": "dario-amodei",
+      "name": "Dario Amodei",
+      "pageType": "entity"
+    },
+    {
+      "id": "fable-5",
+      "name": "Claude Fable 5",
+      "pageType": "entity"
+    },
+    {
+      "id": "mythos",
+      "name": "Claude Mythos",
+      "pageType": "entity"
+    },
+    {
+      "id": "opus-5",
+      "name": "Claude Opus 5",
+      "pageType": "entity"
+    },
+    {
+      "id": "pricing",
+      "name": "Anthropic 訂閱方案與計費政策",
+      "pageType": "entity"
+    },
+    {
+      "id": "ai-agent-safety",
+      "name": "AI Agent 安全與可靠性",
+      "pageType": "topic"
+    },
+    {
+      "id": "ai-talent-flow",
+      "name": "AI 實驗室人才流動",
+      "pageType": "topic"
+    },
+    {
+      "id": "anthropic-business",
+      "name": "Anthropic 商業健康度",
+      "pageType": "topic"
+    },
+    {
+      "id": "anthropic-commitments",
+      "name": "Anthropic 承諾兌現追蹤",
+      "pageType": "topic"
+    },
+    {
+      "id": "anthropic-government-policy",
+      "name": "Anthropic 政府與軍事政策",
+      "pageType": "topic"
+    },
+    {
+      "id": "code-quality-decline",
+      "name": "Claude Code 效能退步事件",
+      "pageType": "topic"
+    },
+    {
+      "id": "community-large-codebase-workflow",
+      "name": "大型 Codebase 規模化開發：社群工作流主線",
+      "pageType": "topic"
+    },
+    {
+      "id": "community-pattern-trends",
+      "name": "社群趨勢觀察（週更）",
+      "pageType": "topic"
+    },
+    {
+      "id": "community-tech-discussions",
+      "name": "社群技術討論趨勢",
+      "pageType": "topic"
+    },
+    {
+      "id": "community-tech-tools",
+      "name": "社群工具目錄",
+      "pageType": "topic"
+    },
+    {
+      "id": "competitor-landscape",
+      "name": "AI 編碼工具競品動態",
+      "pageType": "topic"
+    },
+    {
+      "id": "recursive-self-improvement",
+      "name": "AI 遞歸自我改進與全球暫停呼籲",
+      "pageType": "topic"
+    }
+  ]
+}
