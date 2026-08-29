@@ -31,6 +31,10 @@ TARGET_DATE = `date -u +%F`，**開工時求值一次後固定，全程不得重
 **雲端專屬的只有中止時的落地方式：** 中止時把該步驟要求的訊息 append 到 `src/logs/task_scheduler.log`，並 commit + push 出去：
 
 ```
+# 本次若已執行過 Step 1a 的 cp，先照 Step 5「replay 路徑收尾」還原單槽檔——
+# 工作樹髒的話下面這個 push 一旦被拒，Step 5 的重試程序會被 git 前置檢查
+# 擋下（理由與程序都在該步驟，本檔不複述），abort log 推不上去，一次正確的閘門
+# 攔截就會看起來像中途死亡
 git add src/logs/task_scheduler.log
 git commit -m "chore: cloud routine abort log TARGET_DATE"
 git push        # 失敗時照 Step 5 的 push 重試程序處理

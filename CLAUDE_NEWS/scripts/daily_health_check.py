@@ -158,7 +158,11 @@ def render_md(r: dict) -> str:
         lines.append("- ✅ 近 7 天無缺口")
     for h in r["holes"]:
         if h["replayable"]:
-            lines.append(f"- ⚠️ {h['date']} 缺日報（**有原料副本，可完整 replay 補回**：`/news-pipeline {h['date']}`）")
+            # 「可完整 replay」只對 news 層成立。補一個比現有日報**舊**的日期時，
+            # wiki ingest 會把舊事件 prepend 到新事件上方（頁首 callout 被舊事件覆寫、
+            # 歷史記錄首筆比第二筆舊）——那正是 daily.md 用來否決「掃 archive 補所有
+            # 缺日」那一版的理由之一，建議文字不能自己漏掉它。
+            lines.append(f"- ⚠️ {h['date']} 缺日報（原料副本在，news 可完整 replay：`/news-pipeline {h['date']}`；**但若已有更新日期的日報，wiki 會逆序 prepend，需人工核對**）")
         else:
             lines.append(f"- ⚠️ {h['date']} 缺日報（無原料副本，只能重抓，內容會偏稀疏）")
 
