@@ -21,6 +21,23 @@ on:
     # 30 分鐘緩衝不足以吸收，導致雲端 routine 新鮮度防線正確中止、當日未自動生日報。
     # 拉大為 3 小時緩衝，覆蓋觀測到的最大延遲（2h42m）。
     - cron: "0 10 * * *"
+
+    # 保險窗（2026-08-29 加入）。3 小時緩衝在 08-27／08-28 連兩天被穿透：
+    # 08-17～08-26 十天延遲穩定在 +0.5～0.7h，08-27 突然變 +10.3h、08-28 +11.2h
+    # （皆為 GitHub 建立 run 的時間就已經晚了，非 runner 排隊）。08-28 那次執行於
+    # 21:09 UTC，遠晚於雲端 routine 的 13:00 UTC，當天日報因此開天窗。
+    #
+    # 緩衝再拉大也解不了：雲端 routine 時間固定，而延遲已達 11 小時級。改用「保險
+    # 窗」——一個 run 寫進 gathered_items.json 的日期，是它**實際執行當下**的 UTC
+    # 日期，不是排程時刻。因此 00:00 這一班在兩種狀況下都落在 routine 之前：
+    #   正常 (+0.6h) → 00:36 UTC 執行，日期＝當日 ✅
+    #   延遲 (+11h)  → 11:00 UTC 執行，日期＝當日 ✅（仍早於 13:00）
+    # 而 22:00 那種「前一日晚班」不行：正常時它在前一天執行，寫的是前一天的日期。
+    #
+    # 兩班並存不衝突：10:00 那班若準時，會以更新鮮的資料覆蓋 00:00 的結果，健康時
+    # 完全不影響日報新鮮度；只有 10:00 那班遲到時，00:00 的結果才會被 routine 用到。
+    # concurrency 群組確保兩班不會同時跑。可容忍的延遲上限因此從 3h 拉到約 13h。
+    - cron: "0 0 * * *"
   workflow_dispatch: {}  # 允許手動觸發（測試用）
 
 # 同一時間只跑一個，避免排程與手動觸發重疊造成 push 衝突。
@@ -95,6 +112,19 @@ jobs:
             echo "No data changes to commit."
           else
             git commit -m "data: daily gather $(date -u +%F) (GH Actions)"
-            git push
-            echo "Pushed gathered data for $(date -u +%F)."
+            # 推送前必須 rebase 重試（2026-08-29 加入）。原本是裸 `git push`：
+            # checkout 到 push 之間約有 2 分鐘視窗，期間若雲端 routine 或使用者
+            # 本機推了任何 commit，push 就 non-fast-forward 失敗 → job 失敗 →
+            # **當天的抓料整包不落地**，而失敗原因看起來像抓取有問題。加入保險窗
+            # 後每日兩班，這個視窗的曝險加倍，所以一併補上。
+            for attempt in 1 2 3; do
+              if git push; then
+                echo "Pushed gathered data for $(date -u +%F) (attempt $attempt)."
+                exit 0
+              fi
+              echo "Push rejected (attempt $attempt), rebasing onto origin/master…"
+              git pull --rebase origin master
+            done
+            echo "::error::Push failed after 3 attempts — 今日抓料未落地"
+            exit 1
           fi

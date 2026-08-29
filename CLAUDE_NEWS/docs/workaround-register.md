@@ -24,6 +24,7 @@
 | Blogroll RSS 名單已於 2026-07-11 確認上線（simonwillison / jessevincent / arminronacher / antirez，皆 probation）；煙霧測試 0 命中已診斷為 (a) 26h 窗內無 Claude/Anthropic 相關新文，非技術問題（4 個 feed HTTP 200、bozo=False、時間解析正常，Simon Willison 窗內僅 1 篇且與主題無關已正確被關鍵字擋下）。剩餘待辦：probation 首月觀察（汰換節奏已定：來源記分卡 2026-07-16 上線，每週隨 `/wiki-lint` 6e 執行，見 `docs/source-scoring-optimization.md`） | 30 天 probation 期滿（2026-08-11）後以記分卡數據檢視命中率決定去留 | 使用者 | 2026-08-11 | 🟡 繞路中 |
 | news-pipeline-steps.md 新增 Step 3c 摘要忠實度自檢（2026-07-17），`/pipeline-change-check baseline` 已記錄（對照 07-16 digest）；依規定改後首次 pipeline 跑完須執行 `compare` 對照，尚未執行 | 下次 `/news-pipeline` 跑完後執行 `/pipeline-change-check compare`，確認指標無 ⚠️ 漂移即可移入已收斂 | Claude（下次 pipeline session） | 2026-07-19 | 🟡 待對照 |
 | `data/external/domain_pc1.csv`（Lin et al. 2023 domain 信譽表）底層評級為 2022–2023 快照，新站查無資料落「未知」桶 | 每季複查：記分卡「未知」桶占比持續 > 30% 時重新下載上游（hauselin/domain-quality-ratings）或評估補充 idiap / Iffy Index 資料集 | Claude（隨 `/wiki-lint` 順檢） | 2026-10-16 | 🟡 繞路中（低風險，查無＝中性不懲罰） |
+| **GH Actions 排程延遲的殘餘風險**（2026-08-29 修法後）：抓料改為每日兩班（00:00／10:00 UTC），因 run 寫入的日期是**執行當下**的 UTC 日期，00:00 那班在正常（+0.6h→00:36）與延遲（+11h→11:00）兩種情況下都落在雲端 routine（13:00 UTC）之前，可容忍延遲上限自 3h 拉到約 13h。**殘餘風險：延遲若超過 13h 仍會開天窗**——觀測最大值為 08-28 的 +11.2h，餘裕僅 1.8h，且該延遲是 08-27 才從穩定的 +0.6h 突然跳上來的，趨勢未知 | 續觀測每日 run 的 created_at 延遲；若再出現 >12h，加開前一日晚班 cron（如 20:00 UTC，延遲時可覆蓋到 15h 帶，健康日則屬空跑）。不宜先加——健康日每天多一次無用抓取與 commit | Claude（下次發生時）| 2026-09-12 | 🟡 已緩解，續觀測 |
 
 ## 已收斂
 
