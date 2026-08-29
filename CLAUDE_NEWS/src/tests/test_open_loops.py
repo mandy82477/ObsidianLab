@@ -88,6 +88,41 @@ class FeatureRadarWatchingTest(_PatchedPaths):
         ]))
         self.assertEqual(mod.feature_radar_watching(TODAY), (2, 1))
 
+    def test_stops_at_next_h2_section(self):
+        """Z8 殺手：不在下個 `## ` 停，後面章節的 ⏳ 表列會被誤算。"""
+        self._write(NL.join([
+            "## \U0001f4cb 功能全覽表",
+            "| 功能 | 發布日期 | 熱度 | 試用價值 | 狀態 |",
+            "|---|---|---|---|---|",
+            "| **A** | 2026-08-27 | \U0001f525 | ⏳ 觀望 | 正式 |",
+            "",
+            "## 已封存",
+            "| 功能 | 發布日期 | 熱度 | 試用價值 | 狀態 |",
+            "| **Z** | 2026-01-01 | \U0001f525 | ⏳ 觀望 | 正式 |",
+        ]))
+        self.assertEqual(mod.feature_radar_watching(TODAY), (1, 0), "封存區不得計入")
+
+    def test_skips_header_and_separator_rows(self):
+        """Z4 殺手：表頭與分隔列不是條目。"""
+        self._write(NL.join([
+            "## \U0001f4cb 功能全覽表",
+            "| 功能 | 發布日期 | 熱度 | ⏳ 試用價值 | 狀態 |",   # 表頭混入 ⏳
+            "|---|---|---|⏳|---|",                                  # 分隔列混入 ⏳
+            "| **A** | 2026-08-27 | \U0001f525 | ⏳ 觀望 | 正式 |",
+        ]))
+        self.assertEqual(mod.feature_radar_watching(TODAY), (1, 0))
+
+    def test_ninety_day_threshold_is_strict(self):
+        """Z6 殺手：> 90 而非 >= 90。剛好 90 天當天還在期限內。"""
+        self._write(NL.join([
+            "## \U0001f4cb 功能全覽表",
+            "| 功能 | 發布日期 | 熱度 | 試用價值 | 狀態 |",
+            "|---|---|---|---|---|",
+            "| **剛好90** | 2026-05-31 | \U0001f525 | ⏳ 觀望 | 正式 |",   # 90 天整
+            "| **91天** | 2026-05-30 | \U0001f525 | ⏳ 觀望 | 正式 |",     # 91 天
+        ]))
+        self.assertEqual(mod.feature_radar_watching(TODAY), (2, 1), "90 天整不算逾期")
+
     def test_missing_file_is_zero(self):
         mod.FEATURE_RADAR = self.dir / "nope.md"
         self.assertEqual(mod.feature_radar_watching(TODAY), (0, 0))
@@ -165,8 +200,8 @@ class MainOutputTest(unittest.TestCase):
         self.assertIn("掃描失敗，數量未知", out, "標題不得印 0")
         self.assertNotIn("逾期 0 筆", out)
         self.assertIn("≥ ", out, "總計須標為下界")
-        self.assertIn("存量遷移（舊語法盲區）：未知 筆", out)
-        self.assertIn("不可當成 0", out)
+        self.assertIn("存量遷移（舊語法盲區）：未知", out)
+        self.assertIn("檔尾數字不含懸置類", out, "檔尾須有專屬警語，不可靠 [3] 那行的同字串頂替")
         self.assertNotEqual(rc, 0, "掃描壞掉不得回報成功")
 
     def test_clean_state_returns_zero(self):
@@ -193,6 +228,42 @@ class PendingScanFailureTest(unittest.TestCase):
                 sys.modules["check_pending_markers"] = saved
             else:
                 sys.modules.pop("check_pending_markers", None)
+
+
+class OverdueWorkaroundsBoundaryTest(_PatchedPaths):
+    """Y8 殺手：複查日「當天」就該提醒，`<=` 改 `<` 會讓當天到期的靜默漏掉。"""
+
+    ATTRS = ("REGISTER",)
+
+    def _write(self, due: str):
+        mod.REGISTER = self.dir / "workaround-register.md"
+        mod.REGISTER.write_text(NL.join([
+            "## 進行中",
+            "| 繞路內容 | 真解 | owner | 複查日 | 狀態 |",
+            "|---|---|---|---|---|",
+            f"| 某繞路 | 某真解 | Claude | {due} | \U0001f7e1 |",
+        ]), encoding="utf-8")
+
+    def test_due_today_is_reported(self):
+        self._write("2026-08-29")
+        self.assertEqual(len(mod.overdue_workarounds(TODAY)), 1, "當天到期就該提醒")
+
+    def test_due_tomorrow_is_not_reported(self):
+        self._write("2026-08-30")
+        self.assertEqual(mod.overdue_workarounds(TODAY), [])
+
+    def test_long_description_is_truncated_with_ellipsis(self):
+        """硬切在半個詞上讀者會以為資料壞了；慣例是補刪節號。"""
+        mod.REGISTER = self.dir / "workaround-register.md"
+        long_desc = "甲" * 80
+        mod.REGISTER.write_text(NL.join([
+            "## 進行中",
+            "| 繞路內容 | 真解 | owner | 複查日 | 狀態 |",
+            "|---|---|---|---|---|",
+            f"| {long_desc} | 真解 | Claude | 2026-08-01 | x |",
+        ]), encoding="utf-8")
+        row = mod.overdue_workarounds(TODAY)[0]
+        self.assertTrue(row.endswith("…"), "超長描述須補刪節號")
 
 
 if __name__ == "__main__":

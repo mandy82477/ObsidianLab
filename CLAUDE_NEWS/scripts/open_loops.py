@@ -81,7 +81,7 @@ def overdue_workarounds(today: date) -> list[str]:
             continue
         due = date(int(d.group(1)), int(d.group(2)), int(d.group(3)))
         if due <= today:
-            desc = cells[0][:60]
+            desc = cells[0][:60] + ("…" if len(cells[0]) > 60 else "")
             overdue.append(f"複查日 {due.isoformat()}（逾 {(today - due).days} 天）：{desc}")
     return overdue
 
@@ -133,6 +133,11 @@ def feature_radar_watching(today: date) -> tuple[int, int]:
 
     只有「逾 90 天」那個數字進總計：依 `.claude/rules/wiki-ingest-features.md`
     「⏳ 觀望是有期限的判斷，不是停車場」，兩天前發布的 ⏳ 不是積壓。
+
+    **這個數字是上界**：純年齡判準分不出「零後續」與「有後續但仍觀望」——
+    5a 於 2026-08-28 對 Dreaming 的裁決是「有後續、僅降 1 格」，但它仍逾 90 天。
+    要更準需排除條目名帶「無後續報導」以外者，但那是對散文措辭的脆弱耦合，
+    刻意不做；讀者把它理解為「至多這麼多」即可。
 
     用欄位位置（試用價值欄）而非全文比對，措辭漂移（觀望／觀察中）不影響。
     """
@@ -223,16 +228,17 @@ def main() -> int:
     overdue_promises = len(overdue) + len(notes) + radar_overdue
     if pend_broken is None:
         overdue_promises += pend_overdue
-        prefix, legacy_txt = "", str(pend_legacy)
+        prefix, legacy_txt = "", f"{pend_legacy} 筆"
     else:
         prefix, legacy_txt = "≥ ", "未知"
     print(f"\n=== 需收尾（前兩類）：{open_count} 個"
           f"｜已跳票（逾自身期限）：{prefix}{overdue_promises} 筆"
-          f"｜存量遷移（舊語法盲區）：{legacy_txt} 筆 ===")
+          f"｜存量遷移（舊語法盲區）：{legacy_txt} ===")
     if pend_broken is not None:
-        print("    ⚠️ 懸置掃描失敗，上列數字不含該類——不可當成 0")
+        print("    ⚠️ 檔尾數字不含懸置類（掃描失敗）——不可當成 0")
     print("    「需收尾」是這次該做完的；「已跳票」是已逾自身期限的承諾（同質、可追蹤）；"
-          "存量遷移是格式債，另計不入總。2026-08-29 之前本腳本只算前兩類，當時報 8 個。")
+          "存量遷移是格式債，另計不入總。**三者不互斥**——逾期 workaround 同時計入前兩者，"
+          "不可相加。2026-08-29 之前本腳本只算前兩類，當時報 8 個。")
     return 1 if (open_count or pend_broken is not None) else 0
 
 
