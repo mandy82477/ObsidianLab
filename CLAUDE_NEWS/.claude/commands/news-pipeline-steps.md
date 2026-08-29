@@ -113,7 +113,6 @@ PYTHON REPO_ROOT\scripts\archive_gathered.py
 
 本機剛跑完 Step 1a 時這道檢查通常必然通過（資料才剛產生）；它真正保護的是**replay 路徑**——雲端與本機補跑都是 `cp gathered_archive/<date>.json` 進來，而檔名只差一個字就會 replay 錯一天，這道檢查是唯一擋得住的地方。兩種環境都執行，不因「應該不會發生」而略過。
 
-> `[註: 2026-08-29]` 這道檢查曾被短暫刪除，理由是「排程模式下 TARGET_DATE 取自資料、兩者恆等」。那個理由只在單槽檔的設計下成立，而單槽設計本身是錯的（見 `docs/cloud-runbooks/daily.md` 目標日期一節）。改讀 `gathered_archive/` 之後，這道檢查驗的正是「cp 對了沒」，是真護欄。
 **0-2. 原料健康檢查（強制）`[加入: 2026-07-25]`**：新鮮度防線只擋「沒抓到」，擋不住「抓到但殘缺」——10 個來源掛 9 個仍會生出一份看起來正常、實則系統性偏食的日報，並被六記者沉澱進 wiki 變成長期污染。
 
 ```
@@ -313,7 +312,7 @@ git -C REPO_ROOT commit -m "news: daily digest TARGET_DATE"
 
 ```
 cd REPO_ROOT\src
-PYTHON -m news_aggregator.main --confirm-digest --date TARGET_DATE
+PYTHON -m news_aggregator.main --confirm-digest [--date TARGET_DATE]
 ```
 
 - 把 Step 1a 篩出的項目標記 `digest_confirmed: true`；未確認的項目視同未出現過，下次重跑會重新提供、不會被永久靜默丟棄（2026-07-13 曾因日報未產出導致 25 則新聞永久漏失，詳見當日 log）
