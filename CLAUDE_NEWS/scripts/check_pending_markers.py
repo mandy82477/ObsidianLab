@@ -59,7 +59,9 @@ from pending_markers import (  # noqa: E402
 )
 
 REVIEW_DEFAULT_DAYS = 14
-QUEUE_LIMIT = 5  # 5c 每輪處理額度；與 .claude/commands/wiki-lint.md 5c 步驟 1 同步
+QUEUE_LIMIT = 5  # Lane B（需 web 查證）每輪額度；與 .claude/commands/wiki-lint.md 5c 步驟 1 同步
+SIGNAL_LIMIT = 10  # Lane A（已有日報訊號，不需 web）每輪額度；同上同步
+RATE_WINDOW_DAYS = 7  # 產消對帳的回看窗口
 SHORT_PROBE_LEN = 6
 
 BAD_BRACKET_RE = re.compile(r"\*\*(?:待查證|查無官方)（標")
@@ -258,17 +260,77 @@ def _legacy_by_page(wiki_dir: Path) -> list[tuple[str, int]]:
     return rows
 
 
+def _recent_marked(wiki_dir: Path, today: date, days: int) -> int:
+    """近 N 天新增的新語法標記筆數。供產消對帳——沒有它，積壓只會安靜長大。"""
+    cutoff = today - timedelta(days=days)
+    n = 0
+    for path in wiki_pages(wiki_dir):
+        try:
+            text = path.read_text(encoding="utf-8-sig")
+        except Exception:
+            continue
+        for mk in iter_pending(text, path):
+            d = _parse_date(mk.marked)
+            if d is not None and d > cutoff:
+                n += 1
+    return n
+
+
 def print_queue(out, wiki_dir: Path | None = None, today: date | None = None) -> None:
+    """兩條分流 + 產消對帳。
+
+    為什麼分流（2026-08-29）：原本單一額度 5 筆、排序「訊欄優先」，
+    結果**有訊的筆數佔滿全部額度**——而有訊代表記者已在日報找到後續，
+    結案只需讀日報改寫、**不需要 web**。便宜的工作吃光了昂貴查證的配額，
+    真正需要 WebFetch 的那批永遠排不進來。一個額度混用兩種成本結構的工作，
+    必然被便宜那種佔滿。
+
+    為什麼要有產消對帳：改版前輸出只有「總逾期數」這個存量數字，
+    看不出流量。2026-08-29 實測近 7 天新增 24 筆、消費 5 筆/週，
+    結構性淨增約 19 筆/週——而這件事在輸出裡完全看不到，
+    於是 19 天內從 0 長到 51 筆沒有任何人察覺。
+    """
     wiki_dir = wiki_dir or WIKI_DIR
     today = today or date.today()
     entries = _overdue_entries(wiki_dir, today)
-    print("# check_pending_markers.py --queue 逾期佇列\n", file=out)
-    for _, _, line in entries[:QUEUE_LIMIT]:
+    lane_a = [e for e in entries if e[0]]       # 有訊欄
+    lane_b = [e for e in entries if not e[0]]   # 無訊欄
+    print("# check_pending_markers.py --queue 逾期佇列" + chr(10), file=out)
+
+    print(f"## Lane A：已有日報訊號，不需 web（{len(lane_a)} 筆，本輪額度 {SIGNAL_LIMIT}）", file=out)
+    print("   記者已標 `訊`，結案只需讀該日日報改寫；查不到官方也可直接依日報結。", file=out)
+    for _, _, line in lane_a[:SIGNAL_LIMIT]:
         print(f"  {line}", file=out)
-    if not entries:
-        print("  （無逾期標記）", file=out)
+    if not lane_a:
+        print("  （無）", file=out)
+
     print(file=out)
-    print(f"總逾期數：{len(entries)}", file=out)
+    print(f"## Lane B：需 WebFetch 官方查證（{len(lane_b)} 筆，本輪額度 {QUEUE_LIMIT}）", file=out)
+    print("   雲端 egress 封鎖時本區跳過，Lane A 仍可處理。", file=out)
+    for _, _, line in lane_b[:QUEUE_LIMIT]:
+        print(f"  {line}", file=out)
+    if not lane_b:
+        print("  （無）", file=out)
+
+    print(file=out)
+    print(f"總逾期數：{len(entries)}（Lane A {len(lane_a)}／Lane B {len(lane_b)}）", file=out)
+
+    # 產消對帳：存量數字看不出流量，沒有這段就無法判斷額度夠不夠。
+    added = _recent_marked(wiki_dir, today, RATE_WINDOW_DAYS)
+    capacity = SIGNAL_LIMIT + QUEUE_LIMIT
+    net = added - capacity
+    verdict = f"淨增 {net} 筆/週" if net > 0 else (f"淨減 {-net} 筆/週" if net < 0 else "打平")
+    print(
+        f"📊 產消對帳：近 {RATE_WINDOW_DAYS} 天新增 {added} 筆｜本輪合計額度 {capacity} 筆"
+        f"（A {SIGNAL_LIMIT}＋B {QUEUE_LIMIT}）｜**{verdict}**",
+        file=out,
+    )
+    if net > 0:
+        print(
+            "   ⚠️ 產出快過消費，積壓會持續成長。要嘛提高額度，要嘛降低標記產出"
+            "（記者端提高標記門檻），不可只看「總逾期數」而不看這一行。",
+            file=out,
+        )
 
     # 舊語法盲區：佇列只讀新語法標記（舊字樣沒有探針欄，機器找不到它）。
     # 只印數字會讓 5c 誤以為「總逾期數 0」＝沒事，故在此列出頁面分佈，

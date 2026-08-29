@@ -938,6 +938,29 @@
         "待使用者裁示"
       ],
       "_note": "2026-08-29 review 三度修正：首版 files 只列消費端＋patterns 用 2 字元的「3g」；二版改「截止日」仍是兩檔天然都含的通用詞；三版釘腳本名但只守住 name 宣稱的前半（被呼叫），沒守住後半（輸出有接手方）。現兩者各一個 pattern。"
+    },
+    {
+      "name": "check_pending_markers.py 兩條分流 <-> wiki-lint 5c <-> weekly 步驟 0：Lane A/B 額度三處同步（改一處而另兩處沒跟上，消化端會照舊額度做事）",
+      "assertion": "all_contain",
+      "files": [
+        ".claude/commands/wiki-lint.md",
+        ".claude/commands/weekly.md"
+      ],
+      "patterns": [
+        "Lane A.*10",
+        "Lane B.*5"
+      ]
+    },
+    {
+      "name": "check_pending_markers.py 產消對帳 <-> wiki-lint 5c：告警產出端與消費端同進退（只印不讀＝偵測器印給空氣看）",
+      "assertion": "all_contain",
+      "files": [
+        ".claude/commands/wiki-lint.md",
+        ".claude/commands/weekly.md"
+      ],
+      "patterns": [
+        "產消對帳"
+      ]
     }
   ],
   "coupling_hints": {

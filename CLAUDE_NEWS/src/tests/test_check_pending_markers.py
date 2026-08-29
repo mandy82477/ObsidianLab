@@ -187,3 +187,52 @@ class TestQueueMode(_WikiCase):
 
 if __name__ == "__main__":
     unittest.main()
+
+
+NL = chr(10)
+_SIG = '❓ **待查證**（標 %s｜查 Electron、桌面應用｜訊 2026-08-20）｜**題**：內文'
+_NOSIG = '❓ **待查證**（標 %s｜查 Electron、桌面應用）｜**題**：內文'
+
+
+class QueueLaneSplitTest(_WikiCase):
+    """--queue 兩條分流 + 產消對帳（2026-08-29 加入）。
+
+    改版前是單一額度 5 筆、排序「訊欄優先」——結果有訊的筆數佔滿全部額度，
+    而有訊代表記者已在日報找到後續、結案不需要 web。便宜的工作吃光了昂貴
+    查證的配額，真正需要 WebFetch 的那批永遠排不進來。本測試釘住分流行為，
+    以及「產出快過消費」的告警——後者是 19 天內從 0 長到 51 筆卻無人察覺的
+    唯一可見訊號。
+    """
+
+    def _queue(self, today):
+        import io
+        buf = io.StringIO()
+        mod.print_queue(buf, wiki_dir=self.wiki_dir, today=today)
+        return buf.getvalue()
+
+    def test_lane_b_is_not_starved_by_lane_a(self):
+        body = [_SIG % "2026-08-01" for _ in range(8)]
+        body += [_NOSIG % "2026-08-01" for _ in range(7)]
+        self.write("topics/t.md", NL.join(body))
+        out = self._queue(date(2026, 8, 29))
+        self.assertIn("Lane A", out)
+        self.assertIn("Lane B", out)
+        lane_b = out.split("Lane B")[1]
+        self.assertIn("topics/t", lane_b, "Lane B 必須排得進來，不可被 Lane A 佔滿")
+        self.assertIn("Lane A 8", out)
+        self.assertIn("Lane B 7", out)
+
+    def test_rate_meter_warns_when_production_exceeds_capacity(self):
+        body = [_NOSIG % "2026-08-27" for _ in range(30)]
+        self.write("topics/t.md", NL.join(body))
+        out = self._queue(date(2026, 8, 29))
+        self.assertIn("產消對帳", out)
+        self.assertIn("淨增", out)
+        self.assertIn("產出快過消費", out)
+
+    def test_rate_meter_silent_when_within_capacity(self):
+        body = [_NOSIG % "2026-08-27" for _ in range(3)]
+        self.write("topics/t.md", NL.join(body))
+        out = self._queue(date(2026, 8, 29))
+        self.assertIn("產消對帳", out)
+        self.assertNotIn("產出快過消費", out)

@@ -56,7 +56,7 @@ argument-hint: [YYYY-Wnn]
 依序執行，全部讀 `.claude/commands/wiki-lint.md` 的對應節，不在此重述做法：
 
 1. **5b 跨家任務榜單週更**——照 `.claude/commands/wiki-lint.md`「5b. 跨家任務榜單週更」執行（派 `general-purpose` ＋ `model: "haiku"` 抓榜）
-2. **5c 逾期待查證清算**——照該檔「5c. 逾期待查證清算」執行，**本輪額度 5 筆**（`check_pending_markers.py --queue` 已內建此上限）。務必照 5c 第 5 步做結案回掃，並把輸出末尾的「⚠️ 舊語法盲區」抄進回報
+2. **5c 逾期待查證清算**——照該檔「5c. 逾期待查證清算」執行，**本輪額度 Lane A 10 筆＋Lane B 5 筆**（`check_pending_markers.py --queue` 已內建兩條分流；Lane A 不需 web，egress 受限時照樣做）。務必照 5c 第 5 步做結案回掃，並把輸出的「📊 產消對帳」與末尾「⚠️ 舊語法盲區」一併抄進回報
 3. **lint 待裁示事項呈報**——`Grep "待使用者確認\|待裁示" wiki/log.md` 取最近 3 次 lint 紀錄的未決事項，**直接列在本指令的輸出裡呈給使用者**，每項標「⏳ 已擱置 N 週」。理由：那些事項只寫進 `wiki/log.md`，而**使用者不讀該檔**——不呈報等於沒提過（實例：某建頁候選連續第 6 週被提出而未被看見）
 
 > 這三項的產出一律**併入步驟 3 的單一 push**，不自行 commit（同步驟 1、2 的收尾紀律）。
