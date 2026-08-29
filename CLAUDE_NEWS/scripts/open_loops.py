@@ -214,7 +214,7 @@ def main() -> int:
         print("    ✅ 無待處理")
 
     radar_all, radar_overdue = feature_radar_watching(today)
-    print(f"\n[5] feature-radar 觀望中（⏳）：{radar_all} 條，其中逾 90 天 {radar_overdue} 條")
+    print(f"\n[5] feature-radar 觀望中（⏳）：{radar_all} 條，其中逾 90 天 {radar_overdue} 條（上界，含已由 5a 處置者）")
     if radar_overdue:
         print("    → 逾 90 天者依 `/wiki-lint` 5a 三選一處置，不得留原狀；未逾期者不算積壓")
 
@@ -237,7 +237,7 @@ def main() -> int:
     if pend_broken is not None:
         print("    ⚠️ 檔尾數字不含懸置類（掃描失敗）——不可當成 0")
     print("    「需收尾」是這次該做完的；「已跳票」是已逾自身期限的承諾（同質、可追蹤）；"
-          "存量遷移是格式債，另計不入總。**三者不互斥**——逾期 workaround 同時計入前兩者，"
+          "存量遷移是格式債，另計不入總。三者不互斥——逾期 workaround 同時計入前兩者，"
           "不可相加。2026-08-29 之前本腳本只算前兩類，當時報 8 個。")
     return 1 if (open_count or pend_broken is not None) else 0
 

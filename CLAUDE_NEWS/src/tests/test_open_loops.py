@@ -265,6 +265,19 @@ class OverdueWorkaroundsBoundaryTest(_PatchedPaths):
         row = mod.overdue_workarounds(TODAY)[0]
         self.assertTrue(row.endswith("…"), "超長描述須補刪節號")
 
+    def test_short_description_gets_no_ellipsis(self):
+        """W1 殺手：短描述被無條件加「…」＝告訴讀者後面還有而其實沒有。
+        在一份主題就是「誠實報數」的報表裡，這是同型的小不誠實。"""
+        mod.REGISTER = self.dir / "workaround-register.md"
+        mod.REGISTER.write_text(NL.join([
+            "## 進行中",
+            "| 繞路內容 | 真解 | owner | 複查日 | 狀態 |",
+            "|---|---|---|---|---|",
+            "| 短描述 | 真解 | Claude | 2026-08-01 | x |",
+        ]), encoding="utf-8")
+        row = mod.overdue_workarounds(TODAY)[0]
+        self.assertFalse(row.endswith("…"), "短描述不得補刪節號")
+
 
 if __name__ == "__main__":
     unittest.main()
