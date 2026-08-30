@@ -53,13 +53,29 @@ jobs:
 
       # check_links.py 只用標準庫（urllib），不需要 pip install。
 
+      # 每月 1 號那一週跑全量，其餘週次分層（只驗新連結 + 上次非 OK 者）。
+      # 分層省掉約 85% 的請求：795 條裡約 680 條上週正常、這週幾乎必然還正常。
+      # 代價：非 OK 之外的連結，失效最多晚一個月被發現——對 wiki 引用的新聞
+      # 連結可接受，且不影響死鏈標註的正確性（標註只認 dead 桶，而分層報告
+      # 會把沒掃的連結沿用上次結果補回，仍是完整清單）。
+      - name: Decide scan mode
+        id: mode
+        run: |
+          if [ "$(date -u +%d)" -le 07 ]; then
+            echo "flag=" >> "$GITHUB_OUTPUT"
+            echo "本月首次（每月 1–7 號）→ 全量掃描"
+          else
+            echo "flag=--incremental" >> "$GITHUB_OUTPUT"
+            echo "→ 分層掃描"
+          fi
+
       - name: Check external links (pure stdlib, no LLM)
         working-directory: CLAUDE_NEWS
         # 刻意 `|| true`：這支腳本的 exit code 代表「有沒有死鏈」，而發現死鏈是
         # 這個 job 的**正常產出**，不是執行失敗。若讓它紅燈，紅燈就變成背景雜訊，
         # 真正該告警的事（抓取整個掛掉、timeout）反而沒人分辨得出來。
         # 真正的失敗由下一步「報告是否產出」把關。
-        run: python scripts/check_links.py --report data/link_health.json || true
+        run: python scripts/check_links.py ${{ steps.mode.outputs.flag }} --report data/link_health.json || true
 
       - name: Verify report was produced
         working-directory: CLAUDE_NEWS
@@ -67,7 +83,7 @@ jobs:
         # 因為 lint 下游會讀到過期報告卻以為是新的——與 daily 的新鮮度防線同理。
         run: |
           test -f data/link_health.json || { echo "報告未產出，視為失敗"; exit 1; }
-          python -c "import json,sys; d=json.load(open('data/link_health.json',encoding='utf-8')); print(f\"checked_at={d['checked_at']} 檢查 {d['checked']}/{d['total_unique_links']} 條，死鏈 {len(d['dead'])}、擋機器人 {len(d['anti_bot'])}、無法判定 {len(d['unverified'])}\")"
+          python -c "import json,sys; d=json.load(open('data/link_health.json',encoding='utf-8')); print(f\"checked_at={d['checked_at']} mode={d['mode']} 檢查 {d['checked']}/{d['total_unique_links']} 條，死鏈 {len(d['dead'])}、擋機器人 {len(d['anti_bot'])}、無法判定 {len(d['unverified'])}\")"
 
       - name: Commit link health report
         working-directory: .  # repo root

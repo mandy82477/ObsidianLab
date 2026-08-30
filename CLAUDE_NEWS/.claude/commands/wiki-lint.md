@@ -423,9 +423,9 @@ awk '/^### 📌 今日聚焦/{f=1;next} /^### /{f=0} f' news/YYYY-MM-DD.md | gre
 python -c "import json;d=json.load(open('data/link_health.json',encoding='utf-8'));print(d['checked_at'],len(d['dead']),'死鏈 /',len(d['anti_bot']),'疑似反爬')"
 ```
 
-該檔由 `.github/workflows/weekly-linkcheck.yml`（排程見該檔）產出並 commit 回 repo——掃 `wiki/**/*.md`（不含 `news/`）逐條 HEAD 驗證，429/403 歸「可能反爬」不算死鏈。
+該檔由 `.github/workflows/weekly-linkcheck.yml`（排程見該檔）產出並 commit 回 repo——掃 `wiki/**/*.md`（不含 `news/`）逐條 HEAD 驗證，429/403 歸「可能反爬」不算死鏈。**每月 1–7 號全量、其餘週次分層**（只驗新連結與上次非 OK 者）——分層報告仍是完整清單（沒掃的沿用上次結果補回），消費端讀法不變，見 `data/README.md`。
 
-- **新鮮度防線**：`checked_at` 距今 > 10 天 → 視為報告過期，本輪不據以標註，改回報「⚠️ link_health.json 過期（checked_at=…），請查 weekly-linkcheck workflow 是否連續失敗」。**過期報告比沒有報告更危險**——它看起來像剛檢查過
+- **新鮮度防線**：`checked_at` 距今 > 8 天 → 視為報告過期，本輪不據以標註，改回報「⚠️ link_health.json 過期（checked_at=…），請查 weekly-linkcheck workflow 是否連續失敗」。**過期報告比沒有報告更危險**——它看起來像剛檢查過。**8 天而非 10 天 `[改版: 2026-08-30]`**：報告是**週更**的，門檻必須小於「漏跑一次」的間隔，否則漏跑一週的舊報告照樣通過，lint 會拿上週資料標死鏈而不自知。8 天＝週更 + 1 天寬限（吸收 GitHub 排程實測變異 +11.2 小時）。**門檻鬆過節奏，等於沒有防線。**
 - **只有 `dead[]` 驅動頁面標註**：由對應類別記者標「（原文已失效）」（**保留原 URL 不刪**，供讀者仍可嘗試存取或查 web archive）；`dead[].pages` 已列出引用頁面，直接據以派工
 - **`anti_bot[]`（401/403/429）與 `unverified[]`（逾時/連線失敗/5xx）一律不派工、不標註**，僅在指標區列數字
 

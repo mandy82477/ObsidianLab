@@ -108,14 +108,30 @@ def _retry_slow(url: str, first_note: str) -> tuple[str, int | None, str]:
         return url, None, first_note
 
 
-def _write_report(path_str, links, urls, dead, anti_bot, unverified, ok_count, as_of):
+def _load_prev(report_path):
+    """讀既有報告供分層掃描比對。讀不到就回 None，呼叫端退回全量。"""
+    if not report_path:
+        return None
+    p = Path(report_path)
+    if not p.is_absolute():
+        p = ROOT / p
+    try:
+        return json.loads(p.read_text(encoding="utf-8"))
+    except Exception:
+        return None
+
+
+def _write_report(path_str, links, urls, dead, anti_bot, unverified, ok_count,
+                  as_of, ok_urls=None, incremental=False):
     """輸出 JSON 報告。消費端是 `/wiki-lint` 指標三——它讀這個檔而不自己連網，
     因此雲端 lint（egress 封鎖）也能完成該步驟。"""
     checked_at = as_of or date.today().isoformat()
     payload = {
         "checked_at": checked_at,
         "total_unique_links": len(links),
+        "mode": "incremental" if incremental else "full",
         "checked": len(urls),
+        "ok_urls": sorted(ok_urls or []),
         "ok": ok_count,
         "dead": [
             {
@@ -162,6 +178,11 @@ def main():
         help="額外輸出機器可讀的 JSON 報告（供 GH Actions commit 回 repo、由 /wiki-lint 讀取）",
     )
     parser.add_argument(
+        "--incremental",
+        action="store_true",
+        help="分層掃描：只驗『新連結 + 上次非 OK 者』，其餘沿用上次結果（需 --report 指向既有報告）",
+    )
+    parser.add_argument(
         "--as-of",
         type=str,
         default=None,
@@ -172,6 +193,27 @@ def main():
 
     links = collect_links()
     urls = list(links.keys())
+
+    # ── 分層掃描 ────────────────────────────────────────────────────────
+    # 全量 795 條裡約 680 條上週正常、這週幾乎必然還正常；真正需要每週看的是
+    # 新連結與上次非 OK 者。分層後每週約 120 條（省 ~85% 請求），全量仍每月跑
+    # 一次補回「上週好、這週壞」的漏網。
+    # 代價寫清楚：非 OK 之外的連結，其失效最多晚一個月被發現——對 wiki 引用的
+    # 新聞連結，這個延遲可接受；對死鏈標註的正確性沒有影響（標註只認 dead 桶）。
+    carried: dict[str, dict] = {}
+    if args.incremental:
+        prev = _load_prev(args.report)
+        if prev is None:
+            print("⚠️ --incremental 需要既有報告，找不到則退回全量掃描")
+        else:
+            suspect = {e["url"] for k in ("dead", "anti_bot", "unverified") for e in prev.get(k, [])}
+            prev_ok = {e for e in prev.get("ok_urls", [])}
+            todo = [u for u in urls if u in suspect or u not in prev_ok]
+            carried = {"count": len(urls) - len(todo), "since": prev.get("checked_at")}
+            print(f"分層掃描：本次驗 {len(todo)} 條（新連結 + 上次非 OK），"
+                  f"沿用上次結果 {carried['count']} 條（上次檢查日 {carried['since']}）")
+            urls = todo
+
     if args.limit:
         urls = urls[: args.limit]
 
@@ -199,6 +241,24 @@ def main():
             ok_count += 1
             print(f"[{i}/{len(urls)}] OK {status} {url}")
 
+    ok_urls = [u for u in urls if u not in {x[0] for x in dead + anti_bot + unverified}]
+
+    # 分層模式：把「本次沒掃的連結」用上次的結果補回來。
+    # 這一步不可省——少了它，報告只涵蓋本次掃描的子集，於是 (a) 下週會把沒掃的
+    # 全當成新連結（分層失效），(b) lint 讀到縮水的死鏈清單，把仍失效的連結
+    # 當成已修好。分層是省請求，不是省結論。
+    if carried:
+        prev = _load_prev(args.report) or {}
+        scanned = set(urls)
+        for bucket, lst in (("dead", dead), ("anti_bot", anti_bot), ("unverified", unverified)):
+            for e in prev.get(bucket, []):
+                if e["url"] not in scanned and e["url"] in links:
+                    lst.append((e["url"], e.get("status"), e.get("note", "沿用上次結果")))
+        for u in prev.get("ok_urls", []):
+            if u not in scanned and u in links:
+                ok_urls.append(u)
+                ok_count += 1
+
     print("-" * 60)
     print(
         f"正常：{ok_count}　確認死鏈（404/410）：{len(dead)}　"
@@ -225,7 +285,8 @@ def main():
             print(f"- {url}  [狀態: {status or '無回應'}]  {note}  引用頁面: {pages}")
 
     if args.report:
-        _write_report(args.report, links, urls, dead, anti_bot, unverified, ok_count, args.as_of)
+        _write_report(args.report, links, urls, dead, anti_bot, unverified, ok_count,
+                      args.as_of, ok_urls, bool(carried))
         print(f"\n報告已寫入：{args.report}")
 
     # exit code 只代表「有沒有死鏈」，供本機使用者判讀。

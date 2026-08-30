@@ -36,7 +36,8 @@ parser，只做「這筆標記合不合規格」的判定。
   9. 逾期（WARN，明確不得 FAIL） 複查日（或標記日+14 天）≤ 今日——專案拒絕機械棘輪，
                           見 `scripts/gate_web_build.py` 的註解哲學：逾期是排程訊號，
                           不是語法錯誤，FAIL 會逼記者為了轉綠而亂改標記
-  10. 存量殘餘（只印數字，不判定） `iter_legacy()` 掃到的舊字樣筆數，供回填進度追蹤
+  10. 存量棘輪（FAIL）      `iter_legacy()` 舊字樣筆數；超過 data/pending-legacy-baseline.json
+                          的基線即 FAIL——只擋新增，不追殺既有存量
 
 原計畫的檢查「命中未消費」依賴每日掃描器產生的 jsonl 對照當日日報，該掃描器尚未
 上線，本檔跳過，留待掃描器上線後另補。
@@ -186,6 +187,19 @@ def _page_report(path: Path, text: str, wiki_dir: Path, today: date) -> tuple[li
     return fails, warns, legacy_count
 
 
+LEGACY_BASELINE_PATH = WIKI_DIR.parent / "data" / "pending-legacy-baseline.json"
+
+
+def _legacy_baseline() -> int | None:
+    """舊語法存量的上限基線。檔案不存在時回 None（不啟用棘輪），
+    讓新環境或初次執行不會無故失敗。"""
+    try:
+        import json
+        return int(json.loads(LEGACY_BASELINE_PATH.read_text(encoding="utf-8"))["max_legacy"])
+    except Exception:
+        return None
+
+
 def check(report: list[str], wiki_dir: Path | None = None, today: date | None = None) -> bool:
     wiki_dir = wiki_dir or WIKI_DIR
     today = today or date.today()
@@ -207,10 +221,33 @@ def check(report: list[str], wiki_dir: Path | None = None, today: date | None = 
             report.extend(fails)
         report.extend(warns)
 
-    report.append(
-        f"  ℹ️ 存量殘餘：舊字樣（未回填為新語法）共 {total_legacy} 筆，"
-        f"新語法標記共 {total_markers} 筆（本項只計數，不影響判定）"
-    )
+    # ── 存量棘輪：只擋新增，不追殺既有存量 ──────────────────────────────
+    #
+    # 2026-08-20 首次量測舊語法殘餘 94 筆，08-30 已長到 150 筆——10 天 +56。
+    # 當時只加了「lint 3g 無後續也要改寫為新語法」的止血規則，但那是消化端；
+    # 產生端（記者每日 ingest 仍可寫舊語法）沒有任何機制擋，而本項當時明寫
+    # 「只計數，不影響判定」，於是新增的舊語法標記全部靜默通過測試。
+    #
+    # 棘輪的取捨：既有存量需要逐筆補探針（要判斷、無法機械轉換），一次擋下
+    # 150 筆等於讓測試永遠紅、最後被略過。所以基線容許存量，只在**增加**時 FAIL。
+    # 回填使基線下降時，順手把基線改小即可——棘輪只能往下轉。
+    baseline = _legacy_baseline()
+    if baseline is not None and total_legacy > baseline:
+        ok = False
+        report.append(
+            f"  ❌ 舊語法存量增加：{baseline} → {total_legacy} 筆（+{total_legacy - baseline}）。"
+            f"新標記請直接用新語法（見 .claude/rules/wiki-ingest-format.md「懸置標記語法」）——"
+            f"舊語法沒有探針欄，5c 的佇列永遠撈不到它，等於標了等於沒標。"
+        )
+        report.append(
+            f"     若確為回填期間的暫時波動，調整 {LEGACY_BASELINE_PATH.name} 並在 commit 說明原因。"
+        )
+    else:
+        note = "" if baseline is None else f"（基線 {baseline}，未增加）"
+        report.append(
+            f"  ℹ️ 存量殘餘：舊字樣（未回填為新語法）共 {total_legacy} 筆，"
+            f"新語法標記共 {total_markers} 筆{note}"
+        )
     return ok
 
 
