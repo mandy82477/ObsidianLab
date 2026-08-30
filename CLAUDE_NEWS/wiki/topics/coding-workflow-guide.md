@@ -404,7 +404,7 @@ Boris Cherny 反對「vibe coding」推動術語向 spec-driven 靠攏，2026-05
 
 ### 社群的做法，以及官方自己的煞車
 
-社群做法收斂度最高的是 **Read-Only Reviewer**（審查者不給寫入權限）；另有對抗性審查（計畫前＋程式碼後）、4-agent 分工、跨模型互審（Claude 審 Codex，通過率 71.6% → 89.7%；❓ **待查證**（標 2026-08-10｜查 跨模型互審、通過率｜訊 2026-08-15）｜**通過率提升的方法論**：[[topics/community-tech-patterns]] 查得學術來源 [Cross-Model LLM Code Review（arXiv 2607.21656）](https://arxiv.org/abs/2607.21656)——116 則 LiveCodeBench 中／難題、六種條件對照重現此數字，reviewer 僅見題目與 writer 草稿、不能執行測試；反向（Codex 審 Claude）則使通過率從 91.4% 降至 82.8%，顯示審查方向有明顯不對稱效應，並非任一模型互審都有效）、以及把品質把關前移到任務拆解與驗收條件設計。
+社群做法收斂度最高的是 **Read-Only Reviewer**（審查者不給寫入權限）；另有對抗性審查（計畫前＋程式碼後）、4-agent 分工、跨模型互審（Claude 審 Codex，通過率 71.6% → 89.7%；方法論已查得——[Cross-Model LLM Code Review（arXiv 2607.21656）](https://arxiv.org/abs/2607.21656)：116 則 LiveCodeBench 中／難題、六種條件對照，reviewer 僅見題目與 writer 草稿、不能執行測試。**方向不對稱**：反向（Codex 審 Claude）反而使通過率由 91.4% 降至 82.8%——**不是任一組合互審都有效**）、以及把品質把關前移到任務拆解與驗收條件設計。
 
 官方也推對抗式 review，但**同一節就自己踩煞車**——這句社群幾乎沒人提：
 

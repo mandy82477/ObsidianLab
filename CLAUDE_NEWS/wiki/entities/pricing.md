@@ -192,7 +192,7 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 #### 2026-08-03：Show HN 揭露中國轉售商以最高 90% 折扣轉賣 Claude/Codex API 存取權（社群觀察，低度信號，未達收錄門檻）
 
 - **貼文內容**：Hacker News Show HN 貼文（score 4、source_count=2，**未達互動門檻對照表「低」門檻 ≥10 分**，收錄僅因涉及計費灰色地帶而具警示價值，非達標準收錄）指出，中國轉售商正以最高 **90%** 折扣轉賣 Claude 與 OpenAI Codex 的 API 存取權；發文者稱部分業者使用開源專案（如 Sub2API）將批量購買的訂閱方案轉換為 API 存取權出售，並列舉數個轉售平台名稱（如 ddshub.cc、yunwu.api）。
-- **ToS 已查證（2026-08-08）**：轉售行為明確違反 Anthropic 消費者條款——第 3 條禁止「resell the Services」，第 2 條禁止分享帳號登入資訊、API key 或帳號憑證（[consumer terms](https://www.anthropic.com/legal/consumer-terms)）。🔎 **查無官方**（標 2026-08-10｜查 [[topics/ai-agent-safety]]、resale scope｜訊 2026-08-29）｜**轉售規模與 Anthropic 執法回應**：具體折扣百分比是否普遍、轉售規模、Anthropic 是否已知悉或採取執法行動，均未見官方聲明或第三方媒體佐證，**僅為單一低互動 HN 貼文的一手陳述，不可視為確認事實**；「90% off」為原貼文自述，非日報查證數字。**08-29 跟進（the-decoder.com，非新事實）**：報導再度確認中國灰色市場以低於官方定價轉售 Claude API token 額度存在，惟同樣僅標題層級可用，未提供具體折扣百分比、規模數字或 Anthropic 執法回應，原問題仍未解決（Google News/the-decoder.com）。
+- **ToS 已查證（2026-08-08）**：轉售行為明確違反 Anthropic 消費者條款——第 3 條禁止「resell the Services」，第 2 條禁止分享帳號登入資訊、API key 或帳號憑證（[consumer terms](https://www.anthropic.com/legal/consumer-terms)）。🔎 **查無官方**（標 2026-08-10｜查 [[topics/ai-agent-safety]]、resale scope｜訊 2026-08-29｜複 2026-09-30）｜**轉售規模與 Anthropic 執法回應**：具體折扣百分比是否普遍、轉售規模、Anthropic 是否已知悉或採取執法行動，均未見官方聲明或第三方媒體佐證，**僅為單一低互動 HN 貼文的一手陳述，不可視為確認事實**；「90% off」為原貼文自述，非日報查證數字。**08-29 跟進（the-decoder.com，非新事實）**：報導再度確認中國灰色市場以低於官方定價轉售 Claude API token 額度存在，惟同樣僅標題層級可用，未提供具體折扣百分比、規模數字或 Anthropic 執法回應，原問題仍未解決（Google News/the-decoder.com）。
 - **與既有計費邏輯的潛在張力（推論）**：若此類轉售規模擴大，可能繞開 Anthropic「訂閱補貼人工使用、程式化用量按 API 費率」的雙軌計費邏輯（見下方「計費架構」節），以訂閱價格取得 API 存取權轉售牟利，形同套利灰色地帶；惟目前僅一則低分社群貼文，尚無規模或官方回應佐證，需持續觀察是否有後續報導佐證（Hacker News https://news.ycombinator.com/item?id=49151751）
 
 ### 事故與爭議（誤扣費、靜默計費改動、帳號安全）

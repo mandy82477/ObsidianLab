@@ -25,11 +25,11 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 **領域：** 🤖 模型
 **更新頻率：** 🗓️ 週更（每週抓取一次外部榜單快照；更新日期停留數天屬正常節奏）
 **開始日期：** 2026-08-05
-**最後更新：** 2026-08-22
+**最後更新：** 2026-08-30
 **最後新聞更新：** 2026-08-05
 
-> **本週快照重點**（2026-08-22）
-> 寫 code、前端、對話、情商四類仍由 Claude 領先，但 **SWE-bench Verified 三甲全部擠進 95% 以上**，該榜已接近飽和、不再能分辨強弱；畫圖 OpenAI 領先、影片改由 Wan 3.0 登頂（換人）；實際 API 用量榜前三無一是旗艦——「最強」與「大家實際在用」仍是兩個世界。
+> **本週快照重點**（2026-08-30）
+> 本週**未整表覆寫**——抓取回報的可靠度不足以支撐改寫（見「本週註記」第一條）。確認有變的三列已更新（TTS 換 Sonic 3.6 登頂、改圖換 MAI-Image-2.6-Preview、OpenRouter 資料日期）；其餘維持 08-22 快照並保留原資料日期，**不以本次抓取日冒充新鮮度**。
 
 ---
 
@@ -47,9 +47,9 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 | [查資料（AI 搜尋）](#eval-search) | Claude Opus 4-6 Search > GPT-5.5 Search > Fable 5 | 07-21 | [Search Arena](https://arena.ai/leaderboard) |
 | [做網頁／前端](#eval-webdev) | Claude Opus 5 Max > Kimi K3 Max > Qwen3.8 Max | 08-21 | [WebDev Arena](https://arena.ai/leaderboard) |
 | [畫圖（文生圖）](#eval-image) | GPT Image 2 > Reve 2.1 > Nano Banana 2 | 未載（08-22 抓取） | [AA 圖像榜](https://artificialanalysis.ai/image/leaderboard/text-to-image) |
-| [改圖（圖像編輯）](#eval-imageedit) | MAI-Image-2.5-Pro > Reve 2.1 > MAI-Image-2.5 | 未載（08-22 抓取） | [AA 編輯榜](https://artificialanalysis.ai/image/leaderboard/editing) |
+| [改圖（圖像編輯）](#eval-imageedit) | MAI-Image-2.6-Preview > MAI-Image-2.5-Pro > Reve 2.1 | 未載（08-30 抓取） | [AA 編輯榜](https://artificialanalysis.ai/image/leaderboard/editing) |
 | [生成影片](#eval-video) | Wan 3.0 > Gemini Omni Flash > MiniMax H3 | 08 月 | [AA 影片榜](https://artificialanalysis.ai/video/leaderboard/text-to-video) |
-| [語音合成（TTS）](#eval-tts) | Simba 3.2 > Qwen-Audio-3.0-TTS-Plus > Gemini 3.1 Flash TTS | 07-28 | [AA TTS 榜](https://artificialanalysis.ai/text-to-speech/leaderboard) |
+| [語音合成（TTS）](#eval-tts) | Sonic 3.6 > Qwen-Audio-3.0-TTS-Plus > Simba 3.2 | 未載（08-30 抓取） | [AA TTS 榜](https://artificialanalysis.ai/text-to-speech/leaderboard) |
 | [語音轉文字（逐字稿）](#eval-stt) | Fun-Realtime-ASR > Scribe v2 > MAI-Transcribe-1.5 | 未載（08-22 抓取） | [AA STT 榜](https://artificialanalysis.ai/speech-to-text) |
 | [電腦操作 agent](#eval-terminal) | ⚠️ 兩組來源不同榜（見註記）：Grok 4.6 > DeepSeek V4 Pro > Qwen3.8 Max ／ GPT-5.6 Sol > Claude Opus 5 | 08 月 | [Terminal-Bench](https://www.tbench.ai/) |
 | [文件解析／OCR](#eval-docparse) | Kimi K3 > MiMo-V2.5（第三名未公開） | 08 月 | [OmniDocBench](https://llm-stats.com/benchmarks/omnidocbench-1.5) |
@@ -58,16 +58,17 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 | [聊天陪伴／情商](#eval-eqbench) | Claude Fable 5 > Kimi K3 > GPT-5.5 | 07-20 | [EQ-Bench](https://eqbench.com/) |
 | [放多長的任務給 agent](#eval-metr) | Claude Opus 4.5（320 分鐘@50%）> GPT-5 > o3（⚠️ 量測過期，見註記） | 2026-01 | [METR](https://metr.org/) |
 | [讀文件不胡說（幻覺率低）](#eval-vectara) | finix_s1_32b > gpt-5.4-nano > gemini-2.5-flash-lite | 05-11 | [Vectara 幻覺榜](https://github.com/vectara/hallucination-leaderboard) |
-| [大家實際在用什麼](#eval-openrouter) | Hermes Agent（35.7 兆 token）> DeepSeek V4 Flash > 騰訊 Hy3 | 08-21 | [OpenRouter](https://openrouter.ai/rankings) |
+| [大家實際在用什麼](#eval-openrouter) | Hermes Agent（35.7 兆 token）> DeepSeek V4 Flash > 騰訊 Hy3 | 08-29 | [OpenRouter](https://openrouter.ai/rankings) |
 
 ## 本週註記（僅列異常）
 
+- **⚠️ 本週抓取可靠度不足，未整表覆寫（2026-08-30）**：抓取回報出現兩類問題——(a) **名次與分數自相矛盾**：SWE-bench 列把 96.2% 的 GPT-5.6 Sol 排在 96% 的 Opus 5 之後第 4 名，OCR 列把 90.1% 的 Gemini-3-Flash 排在 87.2% 之後第 3 名；**這兩處恰好都是「非 Claude 模型會擠掉 Claude」的爭點**，不可據以改寫。(b) 18 榜中 13 榜與上週逐字相同，而抓取端為取得榜單 URL 已先讀過本頁，**無法分辨「查證後確認未變」與「把讀到的內容抄回」**。故本輪只更新三列可獨立辨識的變動，其餘保留原值與原資料日期。**待查證**：GPT-5.6 Sol 是否已在 SWE-bench Verified 超越 Claude 陣容——若屬實，本頁「寫 code 由 Claude 領先」的結論需要改寫。
 - **SWE-bench Verified 已接近飽和**：三甲全在 95% 以上（Opus 5 96%、Mythos 5 95.5%、Fable 5 95%），前三名之間的差距已小於評測雜訊，實質排名爭點正移往 SWE-bench Pro。
 - **Terminal-Bench 同名榜、兩組不相容分數**：codingfleet（08 月）列 Grok 4.6 88.4% > DeepSeek V4 Pro 87.9% > Qwen3.8 Max 86.6%；morphllm（08 月）列 GPT-5.6 Sol 85.77% > Claude Opus 5 84.64%。兩者 harness 與評估方法不同，**不可跨表比大小**，本頁並陳不擇一。
-- **Aider Polyglot 疑似停更（連續 2 週）**：榜首仍是 2025-11 陣容，未見新模型入榜。連續 2 週無更新，**建議下週起汰換該列**（改由 SWE-bench Pro 或 Terminal-Bench 承接「寫 code 實戰」語意）。
+- **Aider Polyglot 停更（連續 3 週）**：榜首仍是 2025-11 陣容，未見新模型入榜。**已達汰換門檻，本輪回報使用者裁示**（改由 SWE-bench Pro 或 Terminal-Bench 承接「寫 code 實戰」語意）。
 - **METR 量測過期**：最近一次發布為 2026-01-29（Opus 4.5 領先），現役陣容（Fable 5 / Opus 5）尚未入測，數字僅供尺度感。
 - **AA 系列多榜未於頁面標示資料日期**：文生圖、圖像編輯、STT、音樂四榜為直接抓取但頁面未載快照日期，本頁以抓取日（08-22）標示。
-- **本週已解除的舊註記**：TTS 與音樂兩榜上週標「待補」，本週均已取得；EQ-Bench 上週的兩來源歧異本週未再現（BenchLM 07-20 快照與本頁一致）。
+- **AA 系列資料日期**：文生圖、圖像編輯、STT、音樂四榜頁面未載快照日期，本頁以抓取日標示；本輪僅改圖與 TTS 兩列確認有變並更新為 08-30，其餘維持 08-22。
 
 ## 評比方式索引（每榜比什麼、分數怎麼來）
 

@@ -1023,7 +1023,7 @@ https://claude.com/blog/artifacts-in-claude-code
 
 **為何熱：** HN 2,448 分，近 2,000 評論。幾乎所有 benchmark SOTA，任務越長期越複雜優勢越大。首次讓開發者在一般工作流中使用 Mythos 等級推理能力。
 
-**注意事項：** 2026-07-01 起出口管制已解除，全球恢復存取；Pro/Max/Team 用戶 7/7 前享 50% 配額；❓ **待查證**（標 2026-08-10｜查 [[entities/fable-5]]、7/7 後配額政策｜訊 2026-08-19）｜**7/7 後配額政策**：官方文件（support.claude.com，2026-08-19 查）說明促銷已於 7/19（非 7/7）結束，之後 Max／Team premium seat／舊制 Enterprise premium seat 標準內含使用，Pro／Team standard seat／舊制 Enterprise standard seat 改用 pay-as-you-go 用量額度計費；細節請見 [[entities/fable-5]] 現況段落，正式結案需 `/wiki-lint` 5c 核實後改判。
+**注意事項：** 2026-07-01 起出口管制已解除，全球恢復存取；**配額政策（官方，2026-08-30 複查一致）**：促銷已於 **7/19** 結束（非早期報導所稱 7/7）。之後 **Max、Team premium seat、席位制 Enterprise premium seat** 標準內含 Fable 5，可用至**週用量上限的 50%**、不另計費；**Pro、Team standard seat、舊制 Enterprise standard seat** 改走 pay-as-you-go 用量額度；用量制 Enterprise 按標準 API 費率計。（[官方說明中心](https://support.claude.com/en/articles/15424964-claude-fable-5-on-your-plan)）細節見 [[entities/fable-5]]。
 
 ---
 
