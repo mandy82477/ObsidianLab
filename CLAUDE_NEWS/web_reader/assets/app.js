@@ -760,8 +760,9 @@
 
   // ── Markdown → HTML (+ wikilink resolution) — shared by wiki 詳頁與週報 ───────
   // opts.short：只顯示末段名稱（如 topics/model-comparison → model-comparison）並加
-  // detail__wikilink--short class（收斂裝飾、縮小字級），供週報卡片判準欄使用
-  // （見 web-reader-design.md 修復記錄，只影響該情境，不動其他頁 wikilink 樣式）。
+  // detail__wikilink--short class。**目前無呼叫端** `[2026-08-30]`——原本唯一的使用者是
+  // 週報判準欄，該欄已依使用者裁決不再渲染；對應 CSS 已一併移除，故此路徑現無樣式。
+  // 保留參數本身（一個三元式）以免日後需要時重寫；要再用須同時補回 CSS。
   // slug → 中文頁名（查無則回傳 null）；wikilink 按鈕優先顯示中文名，
   // 冷讀者不需自己完成 slug ↔ 中文名的對映（2026-07-28 讀者 review）
   function wikiPageName(id) {
@@ -838,11 +839,6 @@
   // 表格儲存格等單行文字（不包 <p>）：跳脫＋解析 wikilink，不跑完整 marked
   function weeklyInlineText(text) {
     return esc(text || '').replace(/\[\[([^\]]+)\]\]/g, (_, p) => wikilinkButtonHtml(p));
-  }
-
-  // 判準欄專用：wikilink 收斂為末段名稱＋收斂裝飾（P2-2，見 web-reader-design.md）
-  function weeklyCriterionText(text) {
-    return esc(text || '').replace(/\[\[([^\]]+)\]\]/g, (_, p) => wikilinkButtonHtml(p, { short: true }));
   }
 
   // 頭條敘事 deck：取 §H2 title 冒號後半（如「一、頭條敘事：X」→「X」）；
@@ -1031,6 +1027,9 @@
   </div>`);
     }
 
+    // 判準不渲染 `[2026-08-30 使用者裁決]`：它是給 check_weekly_ledger 的凍結契約
+    // （尾端還掛著 ｜查證：探針關鍵字），不是給讀者的內容。markdown 與 JSON 照舊保留，
+    // 凍結與逐條結算機制零改動；螢幕上只留「待回收 · Wnn」那一句——那是本節對讀者的承諾。
     if (s.nextweek) {
       const nextId = weeklyNextWeekId(w.id);
       const prevId = weeklyPrevWeekId(w.id);
@@ -1052,7 +1051,6 @@
         <span class="weekly-bet__type">${weeklyInlineText(fc.type)}</span>
         <div class="weekly-bet__forecast">${weeklyInlineText(fc.forecast)}</div>
         <div class="weekly-bet__rule"></div>
-        <div class="weekly-bet__criterion"><span class="weekly-bet__criterion-label">判準</span>${weeklyCriterionText(fc.criterion)}</div>
         <div class="weekly-bet__ledger"><span class="weekly-bet__ledger-mark"></span>待回收 · ${esc(nextId)}</div>
       </div>`);
       });
@@ -1075,7 +1073,6 @@
       <div class="weekly-ledger__row">
         <div class="weekly-ledger__forecast">${weeklyInlineText(rc.forecast)}</div>
         <div class="weekly-ledger__result">${weeklyInlineText(rc.result)}</div>
-        <div class="weekly-ledger__criterion"><span class="weekly-bet__criterion-label">當時判準</span>${weeklyCriterionText(rc.criterion)}</div>
       </div>`);
         });
         parts.push(`

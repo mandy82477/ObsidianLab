@@ -974,9 +974,6 @@ code {
   font-family: var(--font-cjk); font-size: 15px; line-height: 1.65; color: var(--ink-1);
   margin-top: 3px;
 }
-.weekly-ledger__criterion {
-  font-size: 12px; line-height: 1.6; color: var(--ink-4); margin-top: 5px;
-}
 .weekly-bets {
   display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px;
 }
@@ -994,15 +991,7 @@ code {
 }
 .weekly-bet__forecast { font-family: var(--font-cjk); font-size: 15px; line-height: 1.65; color: var(--ink-1); margin-bottom: 12px; }
 .weekly-bet__rule { border-top: 1px solid var(--border-1); margin-bottom: 10px; }
-.weekly-bet__criterion { font-size: 13px; line-height: 1.6; color: var(--ink-2); }
-.weekly-bet__criterion-label {
-  font-family: var(--font-mono); font-size: 11px; color: var(--ink-3);
-  letter-spacing: 0.06em; margin-right: 8px;
-}
 /* 判準欄內 wikilink 收斂為末段名稱、縮小字級、收斂裝飾（P2-2）——只在此情境套用 */
-.weekly-bet__criterion .detail__wikilink--short { font-size: 12px; }
-.weekly-bet__criterion .detail__wikilink--short::before,
-.weekly-bet__criterion .detail__wikilink--short::after { display: none; }
 /* 回收槽 — 等下週開欄蓋章的空位，可證偽預告→回收對錯機制的視覺外顯；
    flex column 卡片下沉底對齊，等高 grid 中每排貼齊底邊（P2-1） */
 .weekly-bet__ledger {

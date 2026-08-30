@@ -92,6 +92,18 @@
 
 ---
 
+## 週報：判準不上螢幕 `[裁決: 2026-08-30]`
+
+週報「下週看什麼」的**判準欄不渲染到網站**。它是給 `scripts/check_weekly_ledger.py` 的凍結契約（尾端還掛著 `｜查證：` 探針關鍵字），不是給讀者的內容——使用者裁決「那感覺不是給人看的」。
+
+- markdown 與 `web_reader/data/weekly/*.json` **照舊保留** criterion 欄位，凍結與逐條結算機制零改動；只是不上螢幕
+- 螢幕上保留 `待回收 · Wnn` 一句——那是全站唯一告訴讀者「這條預告不是白說的、下週會回來結算」的東西，支撐本節「提醒下週值得關注」的目的
+- 對應的 `.weekly-bet__criterion` / `.weekly-ledger__criterion` / `.weekly-bet__criterion-label` CSS 與 `weeklyCriterionText()` 已一併移除；`wikilinkButtonHtml` 的 `opts.short` 因此無呼叫端，要再用須同時補回 CSS
+
+> 此為已裁決事項，後續 review 不需再提「判準欄可讀性」——它不在螢幕上。
+
+---
+
 ## 版本號更新
 
 每次修改 `design.css` 或 `app.js` 後，更新 `index.html` 中對應的 `?v=` 參數為當前 Unix timestamp，避免瀏覽器 cache 舊版本。
