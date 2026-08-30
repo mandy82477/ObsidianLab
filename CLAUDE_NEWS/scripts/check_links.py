@@ -25,7 +25,10 @@ ROOT = Path(__file__).parent.parent
 WIKI_DIR = ROOT / "wiki"
 
 # 停在空白、markdown/引號收尾字元、以及全形標點與 CJK 字元（URL 後面緊接中文說明時常見，如「...id=123（HN」）
-URL_RE = re.compile(r'https?://[^\s\)\]>"\'`（）「」『』、，。《》〈〉一-鿿]+')
+# 排除全形標點：中文行文裡它們緊貼 URL 後方，被吃進去會產生「無回應」的假結果。
+# 2026-08-30 實例：`…cybersecurity；Digital` 讓 urllib 直接拋 ascii 編碼錯誤。
+# `一-鿿` 只涵蓋漢字，全形標點不在該區段，需逐個列出。
+URL_RE = re.compile(r'https?://[^\s\)\]>"\'`（）「」『』、，。；：？！…—《》〈〉【】一-鿿]+')
 
 TIMEOUT = 10
 _SEP = chr(10)
@@ -258,6 +261,16 @@ def main():
             if u not in scanned and u in links:
                 ok_urls.append(u)
                 ok_count += 1
+
+    # 完整性自檢：分層之後，四個桶的總和必須仍等於全部唯一連結數。
+    # 這是分層唯一會出錯的地方（沿用邏輯漏掉某些 url），而錯了不會有任何症狀
+    # ——lint 只會看到一份「比較短的」死鏈清單，把仍失效的連結當成已修好。
+    # 手動驗過一次不夠，讓它每次自己驗。
+    _total = len(ok_urls) + len(dead) + len(anti_bot) + len(unverified)
+    if carried and _total != len(links):
+        print(f"❌ 分層合併後清單不完整：{_total} / {len(links)} 條——"
+              f"缺 {len(links) - _total} 條。報告不可信，請改跑全量（不加 --incremental）。")
+        return 2
 
     print("-" * 60)
     print(
