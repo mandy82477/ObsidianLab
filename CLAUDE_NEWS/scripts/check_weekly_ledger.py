@@ -56,8 +56,19 @@ MAX_FORECASTS = 6
 # 沒人回頭改規格，於是錯誤範例活了三週而無人察覺。
 DEEPDIVE_HEADING_RE = re.compile(r"^(#{2,6})\s*深挖[：:]\s*(.*)$", re.MULTILINE)
 DEEPDIVE_LEVEL = "###"
-DEEPDIVE_MIN_CHARS = 800
-DEEPDIVE_MAX_CHARS = 1200
+DEEPDIVE_MIN_CHARS = 900
+DEEPDIVE_MAX_CHARS = 1300
+
+# 只數「讀者讀得到的字」：URL、wikilink 路徑、程式碼反引號、粗體星號都不是。
+# 2026-08-30 校準：舊版連 markup 一起數，佔比在 5%–20% 之間浮動（W31 5%、W34 20%），
+# 於是同樣長度的兩段文字可能差 300 字才觸發提醒——那不是字數上限，是雜訊。
+def deepdive_visible_len(body: str) -> int:
+    """回傳深挖正文的可見字數（去空白、去 markdown 標記與連結目標）。"""
+    s = re.sub(r"\[([^\]]*)\]\([^)]*\)", r"\1", body)   # [文字](url) -> 文字
+    s = re.sub(r"\[\[([^\]|#]*)[^\]]*\]\]", "", s)      # [[頁面#錨點]] -> 移除
+    s = re.sub(r"`([^`]*)`", r"\1", s)                    # `code` -> code
+    s = re.sub(r"\*{1,3}", "", s)                         # 粗體／斜體標記
+    return len(re.sub(r"\s", "", s))
 
 
 def _strip_bold(text: str) -> str:
@@ -273,10 +284,10 @@ def check_deepdive(report: list[str]) -> bool:
 
         start = text.index(matches[0][1]) if matches[0][1] else 0
         body = re.split(r"^#{2,3}\s", text[start:], maxsplit=1, flags=re.MULTILINE)[0]
-        n = len(re.sub(r"\s", "", body))
+        n = deepdive_visible_len(body)
         if not (DEEPDIVE_MIN_CHARS <= n <= DEEPDIVE_MAX_CHARS):
             report.append(
-                f"  ⚠️ {path.stem}：深挖 {n} 字，規格為 "
+                f"  ⚠️ {path.stem}：深挖 {n} 字（可見字數，不含連結與標記），規格為 "
                 f"{DEEPDIVE_MIN_CHARS}–{DEEPDIVE_MAX_CHARS}（提醒，不擋）"
             )
     return ok
