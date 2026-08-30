@@ -35,7 +35,7 @@ WEEKLY_DIR = REPO_ROOT / "weekly"
 
 RECAP_HEADER_RE = re.compile(r"^\|\s*上週預告\s*\|\s*判準\s*\|\s*本週結果\s*\|\s*$", re.MULTILINE)
 FORECAST_HEADER_RE = re.compile(r"^\|\s*類型\s*\|\s*預告\s*\|\s*判準\s*\|\s*$", re.MULTILINE)
-RECAP_HEADING_RE = re.compile(r"^###\s*先回收上週（(\d{4}-W\d{2})）", re.MULTILINE)
+RECAP_HEADING_RE = re.compile(r"^###\s*上週的線怎麼了（(\d{4}-W\d{2})）", re.MULTILINE)
 SEPARATOR_RE = re.compile(r"^\|[-: |]+\|$")
 
 # 結案 vs 未結案：結果欄首字元決定。
@@ -129,7 +129,7 @@ def check(report: list[str]) -> bool:
     # ── 1. 跳期：回收小標必須指名實際的上一期 ────────────────────────────────
     m = RECAP_HEADING_RE.search(curr_raw)
     if not m:
-        report.append(f"  ❌ {curr_id}：找不到回收小標（需為 `### 先回收上週（{prev_id}）的帳`）")
+        report.append(f"  ❌ {curr_id}：找不到回收小標（需為 `### 上週的線怎麼了（{prev_id}）`）")
         ok = False
     elif m.group(1) != prev_id:
         report.append(
@@ -271,12 +271,12 @@ def check_deepdive(report: list[str]) -> bool:
         # 回收小標與表格之間的導言：build_web 抽成 nextweek.intro，缺了網站上會
         # 從小標直接跳進表格。只 WARN——它不影響內容正確性，只影響版面一致。
         for heading_re, label, why in (
-            (r"^###\s*先回收上週（\d{4}-W\d{2}）的帳\s*$",
+            (r"^###\s*上週的線怎麼了（\d{4}-W\d{2}）\s*$",
              "回收表",
-             "build_web 的 nextweek.intro 會是空的，網站上該段會從小標直接跳進表格"),
-            (r"^###\s*本週新開\s*\d+\s*條\s*$",
+             "build_web 的 nextweek.recapIntro 會是空的，盤點摘要不會出現在網站上"),
+            (r"^###\s*下週值得關注：新開\s*\d+\s*條\s*$",
              "新開表",
-             "它回答「為什麼追蹤 N 條卻只新開 M 條」；不進網站，但 Obsidian 與原始檔靠它"),
+             "它與節導言合併為網站的 nextweek.intro，缺了讀者不知道這 N 條是不是全部"),
         ):
             gap = re.search(heading_re + r"(.*?)^\|", text, re.MULTILINE | re.DOTALL)
             if gap and not gap.group(1).strip():

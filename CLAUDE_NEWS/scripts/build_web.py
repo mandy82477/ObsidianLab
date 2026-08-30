@@ -469,6 +469,9 @@ WEEKLY_FORECAST_HEADER_RE = re.compile(r'^\|\s*類型\s*\|\s*預告\s*\|\s*判�
 # 回收表（回頭看上一期預告的結果）——欄名與 forecasts 表刻意不同，兩張表才能在同段共存。
 # 欄名若改動，`.claude/commands/weekly-report.md` 第 (3) 段的欄位定義必須同步（見 review-registry sync_pair）。
 WEEKLY_RECAP_HEADER_RE = re.compile(r'^\|\s*上週預告\s*\|\s*判準\s*\|\s*本週結果\s*\|\s*$', re.MULTILINE)
+# 回收小標與回收表之間那行盤點摘要（幾條活著／幾條死了／幾筆判錯）。2026-08-30 新增：
+# 新順序（新開在上、回收在下）下，節導言與新開導言併入 intro，回收導言需獨立欄位才進得了網站。
+WEEKLY_RECAP_HEADING_RE = re.compile(r"^###\s*上週的線怎麼了（\d{4}-W\d{2}）\s*$", re.MULTILINE)
 WEEKLY_STAT_RE = re.compile(r'^-\s*\*\*(.+?)\*\*\s*——\s*(.+)$', re.MULTILINE)
 
 
@@ -581,6 +584,21 @@ def _parse_weekly_stats(body: str) -> list[dict]:
     ]
 
 
+def _parse_weekly_recap_intro(body: str) -> str:
+    """回收小標與回收表之間的盤點摘要一行。舊期用舊小標，抓不到即回空字串（不報錯）。"""
+    m = WEEKLY_RECAP_HEADING_RE.search(body)
+    if not m:
+        return ""
+    out: list[str] = []
+    for line in body[m.end():].splitlines():
+        ls = line.strip()
+        if ls.startswith("|"):
+            break
+        if ls and not ls.startswith("#"):
+            out.append(_weekly_strip_bold(ls))
+    return " ".join(out).strip()
+
+
 def _parse_weekly_nextweek_intro(body: str) -> str:
     """『下週看什麼』表格前的引言段（如「每條都立了判準，下週開欄先回收對錯。」）。
 
@@ -683,7 +701,7 @@ def parse_weekly(f: Path) -> dict:
                 result["sections"]["discussion"] = disc
 
             elif kind == "nextweek":
-                nw = {"title": title, "body": body, "forecasts": [], "recap": [], "intro": ""}
+                nw = {"title": title, "body": body, "forecasts": [], "recap": [], "intro": "", "recapIntro": ""}
                 try:
                     nw["forecasts"] = _parse_weekly_forecasts(body)
                 except Exception as e:
@@ -694,6 +712,7 @@ def parse_weekly(f: Path) -> dict:
                     print(f"  [warn] weekly {f.name}: recap 表格解析失敗：{e}")
                 try:
                     nw["intro"] = _parse_weekly_nextweek_intro(body)
+                    nw["recapIntro"] = _parse_weekly_recap_intro(body)
                 except Exception as e:
                     print(f"  [warn] weekly {f.name}: nextweek intro 解析失敗：{e}")
                 result["sections"]["nextweek"] = nw

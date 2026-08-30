@@ -938,6 +938,10 @@ code {
 
 /* 下週看什麼 → 預告回收帳（bets ledger）— 本頁 signature，視覺重量集中在此 */
 /* 引言段（表格前一句話，如「每條都立了判準…」）— 表格上方一行，非結構化文字 */
+.weekly-ledger__intro {
+  font-family: var(--font-cjk); font-size: 13px; line-height: 1.7;
+  color: var(--ink-2); margin: 6px 0 14px;
+}
 .weekly-nextweek__intro {
   font-family: var(--font-cjk); font-size: 15px; line-height: 1.7; color: var(--ink-2);
   margin: 0 0 16px;

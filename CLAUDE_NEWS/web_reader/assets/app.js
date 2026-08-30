@@ -1040,30 +1040,9 @@
     ${weeklySectionHeader('下週看什麼', 'next week')}${s.nextweek.intro ? `
     <div class="weekly-nextweek__intro">${esc(s.nextweek.intro)}</div>` : ''}`);
 
-      // 回收（回頭看上一期）與新預告（往前看）必須一眼分得開——兩者同段並列時，
-      // 缺少方向標示會讓讀者無從判斷哪張表是哪個方向（2026-W31 實際回報的問題）。
-      if (recap.length) {
-        parts.push(`
-    <div class="weekly-ledger">
-      <div class="weekly-ledger__head">
-        <span class="weekly-ledger__dir">← 回頭對帳</span>
-        <span class="weekly-ledger__title">上一期（${esc(prevId)}）預告的結果</span>
-      </div>`);
-        recap.forEach(rc => {
-          parts.push(`
-      <div class="weekly-ledger__row">
-        <div class="weekly-ledger__forecast">${weeklyInlineText(rc.forecast)}</div>
-        <div class="weekly-ledger__result">${weeklyInlineText(rc.result)}</div>
-        <div class="weekly-ledger__criterion"><span class="weekly-bet__criterion-label">當時判準</span>${weeklyCriterionText(rc.criterion)}</div>
-      </div>`);
-        });
-        parts.push(`
-    </div>`);
-      }
-
       parts.push(`
     <div class="weekly-bets__head">
-      <span class="weekly-bets__dir">→ 往前下注</span>
+      <span class="weekly-bets__dir">→ 下週盯這些</span>
       <span class="weekly-bets__title">本期新立的預告 · 待 ${esc(nextId)} 回收</span>
     </div>
     <div class="weekly-bets">`);
@@ -1078,7 +1057,32 @@
       </div>`);
       });
       parts.push(`
-    </div>
+    </div>`);
+
+      // 本節目的是「提醒下週有哪些消息值得關注」（2026-08-30 使用者裁定），故新預告在上、
+      // 回收在下——回收段是服務前瞻的篩選器（哪些舊線死了可以放下），不是帳本本身。
+      // 兩者仍需一眼分得開：缺少方向標示會讓讀者無從判斷哪張是回頭看（2026-W31 回報的問題）。
+      if (recap.length) {
+        parts.push(`
+    <div class="weekly-ledger">
+      <div class="weekly-ledger__head">
+        <span class="weekly-ledger__dir">↩ 上週的線</span>
+        <span class="weekly-ledger__title">上一期（${esc(prevId)}）預告的下場</span>
+      </div>${s.nextweek.recapIntro ? `
+      <div class="weekly-ledger__intro">${weeklyInlineText(s.nextweek.recapIntro)}</div>` : ''}`);
+        recap.forEach(rc => {
+          parts.push(`
+      <div class="weekly-ledger__row">
+        <div class="weekly-ledger__forecast">${weeklyInlineText(rc.forecast)}</div>
+        <div class="weekly-ledger__result">${weeklyInlineText(rc.result)}</div>
+        <div class="weekly-ledger__criterion"><span class="weekly-bet__criterion-label">當時判準</span>${weeklyCriterionText(rc.criterion)}</div>
+      </div>`);
+        });
+        parts.push(`
+    </div>`);
+      }
+
+      parts.push(`
   </div>`);
     }
 
