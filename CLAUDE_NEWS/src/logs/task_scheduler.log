@@ -388,3 +388,16 @@
 [Sat 2026/08/29 22:03:23 UTC] === Agent pipeline start (2026-08-29) ===
 [Sat 2026/08/29 22:03:23 UTC] ABORTED: digest already exists (news/2026-08-29.md, committed 2026-08-29 17:40:14 UTC by earlier shift) - Step 0b 冪等閘中止，本班（22:00 UTC 班）不重跑
 [Sat 2026/08/29 22:03:23 UTC] === Pipeline aborted (agent) ===
+[Sun 2026/08/30 12:07:21.00] === Agent pipeline start (2026-08-30) ===
+[Sun 2026/08/30 12:07:21.00] Step 0 昨日缺跑檢查 OK - news/2026-08-29.md 存在，無缺跑
+[Sun 2026/08/30 12:07:21.00] Step 0b 冪等閘 OK - news/2026-08-30.md 不存在，正常繼續（現抓，非 archive replay）
+[Sun 2026/08/30 12:07:21.00] Aggregator OK - 13/13 來源正常，dedup 後 92 條 → 過濾後 40 條，news/2026-08-30.md 已生成並 commit；gathered_archive/2026-08-30.json 已歸檔
+[Sun 2026/08/30 12:07:21.00] confirm-digest OK - 40 則已確認並 commit（emitted_items.json）
+[Sun 2026/08/30 12:07:21.00] Wiki ingest OK - 四類記者回報完成（功能／商業／社群／安全政策；模型與人物今日無條目不派工）。更新頁面：entities/claude-code、entities/pricing、topics/anthropic-business、topics/ai-talent-flow、topics/competitor-landscape、topics/community-tech-patterns、topics/community-tech-discussions、topics/ai-agent-safety、topics/long-context-1m、feature-radar.md。主編完成 feature-radar ⏰ 倒數中換軌（08-31 促銷結束 → 09-14 週配額永久 +25%／取消 +50%，淨減 17%）、source_attribution.jsonl append 18 筆、log.md ingest 紀錄已寫入。轉知帳本 2 筆全數結案，帳本現為空
+[Sun 2026/08/30 12:07:21.00] Wiki commit OK (e19f5055: wiki: auto-ingest 2026-08-30)
+[Sun 2026/08/30 12:07:21.00] 測試全綠 - web build 放行
+[Sun 2026/08/30 12:07:21.00] enrich_attribution_publisher.py OK（新增 publisher 9 筆）／gen_wiki_frontmatter.py OK（58 頁全寫入，健康 32／休眠 21／孤島 3／⚠️ 高引用但停滯 2）
+[Sun 2026/08/30 12:07:21.00] build_web.py OK - 35 entities, 23 topics, 124 digests, 5 weekly reports + radar（既有斷鏈 wikilink WARN 非本次新增，不阻斷）
+[Sun 2026/08/30 12:07:21.00] Web commit OK (0de830a8: web: rebuild 2026-08-30，含 frontmatter 重算輸出併入)
+[Sun 2026/08/30 12:07:21.00] Single push done (news + wiki + web, b4db24c0..0de830a8，第一次即成功無需重試)
+[Sun 2026/08/30 12:07:21.00] === Pipeline complete (agent) ===
