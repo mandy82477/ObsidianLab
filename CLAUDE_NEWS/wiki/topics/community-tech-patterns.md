@@ -1427,7 +1427,7 @@ Claude Code 的三種多 agent 機制，可對應到 Anthropic《Building Effect
 
 - **Session 語義搜尋**（Claude-Find）：解決 `/resume` 僅支援第一條訊息或名稱篩選的痛點；每月累積數百個 session 的重度用戶可用語義搜尋定位過去決策脈絡，並注入現有 session
 - **本地 RAG 持久記憶**（Memex）：本地 RAG + 離線 embedding，所有資料留存本機，以 MCP 接入，無需額外 API 金鑰；直接解決雲端 AI 記憶的隱私疑慮
-- **多 session 互通**（Claude Relay）：plugin 形式讓同時開啟的多個 Claude Code session（前後端、infra）互相傳訊查詢，省去人工複製貼上；開發者指出「我自己才是那個最慢的環節」
+> **官方趨勢觀察 `[加入: 2026-08-30]`：** 本節原有的第三個子條目「多 session 互通（Claude Relay）」與另一節點「跨 Session 通訊插件」（`/qu`／`/ans` 雙向問答橋，2026-05-07）**已由官方功能完全取代**——Claude Code v2.1.224 起內建 `ListAgents` 與 `SendMessage`（官方文件 2026-08-09 確認，限 macOS／Linux），兩者均已移除。**未被取代的是編排層**：官方提供的是點對點訊息傳遞原語，不含依相依性自動排序高階流程（見 [[entities/claude-code]] issue #24798 與 [[topics/official-community-gap]]）。本節保留的語義搜尋與本地 RAG 兩個子條目，官方亦尚未對應。
 
 
 #### Token 大量降耗策略集中出現（2026-05-05）
@@ -1484,10 +1484,6 @@ Claude Code 的三種多 agent 機制，可對應到 Anthropic《Building Effect
 #### MCP Code Execution Token 效率（2026-05-07）
 
 - **MCP server 過多導致 context 在第一條訊息前就半滿**：大量 MCP 伺服器的靜態工具列表佔用大量 context；以 MCP code execution 取代靜態工具列表的方案，讓 Agent 動態獲取能力，兼顧擴展性與 token 效率，適合正在評估 MCP 架構規模的團隊
-
-#### 跨 Session 通訊插件（2026-05-07）
-
-- **雙向 session 問答橋**：開發者自製插件讓兩個 Claude Code 工作階段互相通訊：新終端輸入 `/qu` 撥出，舊終端輸入 `/ans` 接聽；與 Claude Relay（多 session 廣播傳訊）不同，此插件聚焦雙向問答，更適合跨 session 即時決策諮詢的場景
 
 #### Speculative Parallelism 工作流（2026-05-06）
 
