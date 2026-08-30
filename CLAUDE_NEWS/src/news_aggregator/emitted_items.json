@@ -1,309 +1,4 @@
 {
-  "https://status.claude.com/incidents/hdynq1pc0fn8": {
-    "first_emitted": "2026-08-15",
-    "score_at_emit": 0,
-    "digest_confirmed": false
-  },
-  "https://github.com/anthropics/claude-code/releases/tag/v2.1.233": {
-    "first_emitted": "2026-08-15",
-    "score_at_emit": 0,
-    "digest_confirmed": false
-  },
-  "https://status.claude.com/incidents/005ym4vzrq2w": {
-    "first_emitted": "2026-08-15",
-    "score_at_emit": 0,
-    "digest_confirmed": false
-  },
-  "https://claude.com/blog/maximizing-the-value-of-your-claude-code-sessions": {
-    "first_emitted": "2026-08-15",
-    "score_at_emit": 268,
-    "digest_confirmed": false
-  },
-  "https://github.com/anthropics/claude-code/issues/74649": {
-    "first_emitted": "2026-08-15",
-    "score_at_emit": 85,
-    "digest_confirmed": true
-  },
-  "https://github.com/anthropics/claude-code/issues/24798": {
-    "first_emitted": "2026-08-15",
-    "score_at_emit": 78,
-    "digest_confirmed": true
-  },
-  "https://github.com/anthropics/claude-code/issues/34255": {
-    "first_emitted": "2026-08-15",
-    "score_at_emit": 65,
-    "digest_confirmed": true
-  },
-  "https://www-cdn.anthropic.com/f61d49fa5596956a5dec75fea0e973bf6a6a8378/Redacted%20Risk%20Report%20August%202026%20.pdf": {
-    "first_emitted": "2026-08-15",
-    "score_at_emit": 55,
-    "digest_confirmed": false
-  },
-  "https://www.anthropic.com/news/claude-text-watermark": {
-    "first_emitted": "2026-08-15",
-    "score_at_emit": 55,
-    "digest_confirmed": false
-  },
-  "https://github.com/anthropics/claude-code/issues/26302": {
-    "first_emitted": "2026-08-15",
-    "score_at_emit": 47,
-    "digest_confirmed": true
-  },
-  "https://github.com/anthropics/claude-code/issues/30492": {
-    "first_emitted": "2026-08-15",
-    "score_at_emit": 34,
-    "digest_confirmed": false
-  },
-  "https://www.theatlantic.com/ideas/2026/06/ai-open-ai-anthropic/687689": {
-    "first_emitted": "2026-08-15",
-    "score_at_emit": 16,
-    "digest_confirmed": false
-  },
-  "https://github.com/Bevel-Software/Hexis": {
-    "first_emitted": "2026-08-15",
-    "score_at_emit": 5,
-    "digest_confirmed": false
-  },
-  "https://github.com/squillo/aph": {
-    "first_emitted": "2026-08-15",
-    "score_at_emit": 5,
-    "digest_confirmed": false
-  },
-  "https://dev.to/__declspec/your-ai-subagents-are-lying-to-you-4-silent-failure-modes-oc4": {
-    "first_emitted": "2026-08-15",
-    "score_at_emit": 5,
-    "digest_confirmed": true
-  },
-  "https://www.moonlight.ng/captain": {
-    "first_emitted": "2026-08-15",
-    "score_at_emit": 4,
-    "digest_confirmed": false
-  },
-  "https://whizi.io": {
-    "first_emitted": "2026-08-15",
-    "score_at_emit": 3,
-    "digest_confirmed": false
-  },
-  "https://applywise.eu": {
-    "first_emitted": "2026-08-15",
-    "score_at_emit": 3,
-    "digest_confirmed": false
-  },
-  "https://github.com/GiovanniCst/frontstep": {
-    "first_emitted": "2026-08-15",
-    "score_at_emit": 3,
-    "digest_confirmed": true
-  },
-  "https://github.com/moasq/agentic-ship": {
-    "first_emitted": "2026-08-15",
-    "score_at_emit": 2,
-    "digest_confirmed": false
-  },
-  "https://github.com/gtesei/llm-watermark": {
-    "first_emitted": "2026-08-15",
-    "score_at_emit": 1,
-    "digest_confirmed": false
-  },
-  "https://fn2.ai/claude": {
-    "first_emitted": "2026-08-15",
-    "score_at_emit": 1,
-    "digest_confirmed": false
-  },
-  "https://playhyperbubble.com": {
-    "first_emitted": "2026-08-15",
-    "score_at_emit": 1,
-    "digest_confirmed": false
-  },
-  "https://www.reddit.com/r/ClaudeAI/comments/1vp3177/best_practices_for_workflows": {
-    "first_emitted": "2026-08-15",
-    "score_at_emit": 0,
-    "digest_confirmed": false
-  },
-  "https://www.reddit.com/r/ClaudeCode/comments/1vp2uwm/house_rules_works_better_than_rules_in_claudemd": {
-    "first_emitted": "2026-08-15",
-    "score_at_emit": 0,
-    "digest_confirmed": false
-  },
-  "https://www.reddit.com/r/ClaudeAI/comments/1vp2ty0/fable_shmable_the_real_flagship_feature_is_not": {
-    "first_emitted": "2026-08-15",
-    "score_at_emit": 0,
-    "digest_confirmed": false
-  },
-  "https://www.reddit.com/r/ClaudeCode/comments/1vp2n2a/what_is_one_thing_stopping_you_from_vibe_coding": {
-    "first_emitted": "2026-08-15",
-    "score_at_emit": 0,
-    "digest_confirmed": false
-  },
-  "https://www.reddit.com/r/ClaudeAI/comments/1vp2gby/ideas_for_improving_your_understanding_of_which": {
-    "first_emitted": "2026-08-15",
-    "score_at_emit": 0,
-    "digest_confirmed": false
-  },
-  "https://www.reddit.com/r/ClaudeAI/comments/1vp2d2m/i_have_fixed_opus_5_writing_style": {
-    "first_emitted": "2026-08-15",
-    "score_at_emit": 0,
-    "digest_confirmed": false
-  },
-  "https://www.techspot.com/news/113487-samsung-claude-code-can-cut-chip-design-work.html": {
-    "first_emitted": "2026-08-15",
-    "score_at_emit": 0,
-    "digest_confirmed": false
-  },
-  "https://www.reddit.com/r/ClaudeCode/comments/1vp1lai/for_people_who_use_both_claude_code_and_codex_how": {
-    "first_emitted": "2026-08-15",
-    "score_at_emit": 0,
-    "digest_confirmed": false
-  },
-  "https://www.reddit.com/r/ClaudeCode/comments/1vp19cq/why_is_claude_code_considered_better_than": {
-    "first_emitted": "2026-08-15",
-    "score_at_emit": 0,
-    "digest_confirmed": false
-  },
-  "https://www.bizjournals.com/triangle/news/2026/08/15/anthropic-claude-ode-venture-ai-adoption-raleigh.html": {
-    "first_emitted": "2026-08-15",
-    "score_at_emit": 0,
-    "digest_confirmed": false
-  },
-  "https://www.howtogeek.com/turn-handwriting-into-font-with-free-claude-code-skill": {
-    "first_emitted": "2026-08-15",
-    "score_at_emit": 0,
-    "digest_confirmed": false
-  },
-  "https://futurism.com/artificial-intelligence/woman-watch-total-solar-eclipse-claude": {
-    "first_emitted": "2026-08-15",
-    "score_at_emit": 0,
-    "digest_confirmed": false
-  },
-  "https://www.reddit.com/r/ClaudeCode/comments/1vozpv9/a_google_cloud_engineer_just_showed_how_to_build": {
-    "first_emitted": "2026-08-15",
-    "score_at_emit": 0,
-    "digest_confirmed": true
-  },
-  "https://www.reddit.com/r/ClaudeCode/comments/1vozbmm/opus_5_and_fable_5_sharing_a_pool_isnt_that_a": {
-    "first_emitted": "2026-08-15",
-    "score_at_emit": 0,
-    "digest_confirmed": false
-  },
-  "https://www.naplesnews.com/story/opinion/2026/08/15/a-conversation-with-claude-artificial-intelligence-opinion/91281686007": {
-    "first_emitted": "2026-08-15",
-    "score_at_emit": 0,
-    "digest_confirmed": false
-  },
-  "https://www.fool.com/investing/2026/08/15/elon-musk-admits-he-underestimated-anthropics-ai-w": {
-    "first_emitted": "2026-08-15",
-    "score_at_emit": 0,
-    "digest_confirmed": false
-  },
-  "https://www.britannica.com/money/Anthropic-PBC": {
-    "first_emitted": "2026-08-15",
-    "score_at_emit": 0,
-    "digest_confirmed": false
-  },
-  "https://www.reuters.com/business/anthropic-ipo-valuation-hinges-190-200-billion-2028-revenue-forecast-sources-say-2026-08-15": {
-    "first_emitted": "2026-08-15",
-    "score_at_emit": 43,
-    "digest_confirmed": true
-  },
-  "https://siliconangle.com/2026/08/14/anthropic-details-unreleased-model-2-new-alignment-concerns-latest-ai-risk-report": {
-    "first_emitted": "2026-08-15",
-    "score_at_emit": 0,
-    "digest_confirmed": false
-  },
-  "https://www.bleepingcomputer.com/news/artificial-intelligence/how-anthropic-plans-to-watermark-claudes-ai-generated-text": {
-    "first_emitted": "2026-08-15",
-    "score_at_emit": 0,
-    "digest_confirmed": false
-  },
-  "https://yellow.com/sacramento.html/news/four-ai-labs-incompatible-prompt-injection-metrics-study": {
-    "first_emitted": "2026-08-15",
-    "score_at_emit": 0,
-    "digest_confirmed": false
-  },
-  "https://venturebeat.com/technology/glm-5-3-is-here-with-advanced-cyber-capabilities-and-reportedly-already-found-a-serious-vulnerability-in-cursor": {
-    "first_emitted": "2026-08-15",
-    "score_at_emit": 0,
-    "digest_confirmed": false
-  },
-  "https://techmymoney.com/2026/08/14/samsung-claude-code-reportedly-cut-chip-verification-from-a-month-to-two-days": {
-    "first_emitted": "2026-08-15",
-    "score_at_emit": 0,
-    "digest_confirmed": false
-  },
-  "https://simonwillison.net/2026/Aug/14/dont-classify-hallucinate": {
-    "first_emitted": "2026-08-15",
-    "score_at_emit": 0,
-    "digest_confirmed": false
-  },
-  "https://the-decoder.com/anthropic-announces-watermark-detection-api-that-will-let-third-parties-detect-claudes-ai-texts": {
-    "first_emitted": "2026-08-15",
-    "score_at_emit": 0,
-    "digest_confirmed": false
-  },
-  "https://finance.yahoo.com/technology/ai/articles/anthropic-revenue-surges-over-11-210857853.html": {
-    "first_emitted": "2026-08-15",
-    "score_at_emit": 0,
-    "digest_confirmed": false
-  },
-  "https://www.forbes.com/sites/alisondurkee/2026/08/14/who-is-cami-clark-anthropic-ceos-wife-asked-epstein-to-invest-in-porn-business": {
-    "first_emitted": "2026-08-15",
-    "score_at_emit": 31,
-    "digest_confirmed": true
-  },
-  "https://nypost.com/2026/08/14/business/anthropic-ceos-wife-once-asked-jeffrey-epstein-to-fund-porn-venture-now-she-helps-steer-the-claude-ai-empire": {
-    "first_emitted": "2026-08-15",
-    "score_at_emit": 0,
-    "digest_confirmed": false
-  },
-  "https://www.pcmag.com/news/anthropics-claude-will-now-add-invisible-watermarks-to-text-image-outputs": {
-    "first_emitted": "2026-08-15",
-    "score_at_emit": 0,
-    "digest_confirmed": false
-  },
-  "https://www.forbes.com/sites/ronschmelzer/2026/08/14/anthropic-at-2-trillion-is-ai-entering-bubble-territory": {
-    "first_emitted": "2026-08-15",
-    "score_at_emit": 0,
-    "digest_confirmed": false
-  },
-  "https://www.axios.com/2026/08/14/anthropic-model-2-ai-risk": {
-    "first_emitted": "2026-08-15",
-    "score_at_emit": 0,
-    "digest_confirmed": false
-  },
-  "https://9to5mac.com/2026/08/14/psa-claude-code-enabling-auto-mode-as-default-next-week-anthropic-says": {
-    "first_emitted": "2026-08-15",
-    "score_at_emit": 0,
-    "digest_confirmed": false
-  },
-  "https://mshale.com/008f2b3f/bf6e1d74bjJCAYqL7yg": {
-    "first_emitted": "2026-08-15",
-    "score_at_emit": 0,
-    "digest_confirmed": false
-  },
-  "https://www.cnbc.com/2026/08/14/5-things-to-know-before-the-market-opens.html": {
-    "first_emitted": "2026-08-15",
-    "score_at_emit": 0,
-    "digest_confirmed": false
-  },
-  "https://www.reddit.com/r/ClaudeAI/comments/1vnj1xq/why_arent_businesses_using_fable_5": {
-    "first_emitted": "2026-08-15",
-    "score_at_emit": 0,
-    "digest_confirmed": false
-  },
-  "https://www.reddit.com/r/ClaudeAI/comments/1vndlg3/some_claude_users_are_mad_that_anthropics_new": {
-    "first_emitted": "2026-08-15",
-    "score_at_emit": 0,
-    "digest_confirmed": false
-  },
-  "https://www.reddit.com/r/ClaudeAI/comments/1vn8ml6/opus_5_is_actually_almost_rageinducing_to_use": {
-    "first_emitted": "2026-08-15",
-    "score_at_emit": 0,
-    "digest_confirmed": false
-  },
-  "https://www.reddit.com/r/ClaudeAI/comments/1vkvovf/just_realized_why_fable_cant_stop_saying": {
-    "first_emitted": "2026-08-15",
-    "score_at_emit": 0,
-    "digest_confirmed": false
-  },
   "https://github.com/sylearn/AIUsage": {
     "first_emitted": "2026-08-16",
     "score_at_emit": 501,
@@ -3636,7 +3331,7 @@
   },
   "https://github.com/anthropics/claude-code/issues/85199": {
     "first_emitted": "2026-08-27",
-    "score_at_emit": 0,
+    "score_at_emit": 40,
     "digest_confirmed": true
   },
   "https://louisabraham.github.io/load-bearing": {
@@ -4571,8 +4266,8 @@
   },
   "https://github.com/anthropics/claude-code/issues/71542": {
     "first_emitted": "2026-08-28",
-    "score_at_emit": 59,
-    "digest_confirmed": false
+    "score_at_emit": 60,
+    "digest_confirmed": true
   },
   "https://github.com/anthropics/claude-code/issues/65697": {
     "first_emitted": "2026-08-28",
@@ -4961,6 +4656,196 @@
   },
   "https://www.reddit.com/r/ClaudeAI/comments/1vxdnw6/week_4_of_making_my_fishing_game_entirely_with_ai": {
     "first_emitted": "2026-08-29",
+    "score_at_emit": 0,
+    "digest_confirmed": true
+  },
+  "https://github.com/Shubhamsaboo/awesome-llm-apps": {
+    "first_emitted": "2026-08-30",
+    "score_at_emit": 135173,
+    "digest_confirmed": true
+  },
+  "https://github.com/garrytan/gstack": {
+    "first_emitted": "2026-08-30",
+    "score_at_emit": 130356,
+    "digest_confirmed": true
+  },
+  "https://github.com/GaoSSR/best-claude-hud": {
+    "first_emitted": "2026-08-30",
+    "score_at_emit": 501,
+    "digest_confirmed": true
+  },
+  "https://github.com/anthropics/claude-code/issues/9340": {
+    "first_emitted": "2026-08-30",
+    "score_at_emit": 32,
+    "digest_confirmed": true
+  },
+  "https://github.com/anthropics/claude-code/issues/53247": {
+    "first_emitted": "2026-08-30",
+    "score_at_emit": 32,
+    "digest_confirmed": true
+  },
+  "https://github.com/anthropics/claude-code/issues/61682": {
+    "first_emitted": "2026-08-30",
+    "score_at_emit": 28,
+    "digest_confirmed": true
+  },
+  "https://github.com/anthropics/claude-code/issues/66020": {
+    "first_emitted": "2026-08-30",
+    "score_at_emit": 25,
+    "digest_confirmed": true
+  },
+  "https://bsky.app/profile/anthropicbot.bsky.social/post/3muaaxs5nx424": {
+    "first_emitted": "2026-08-30",
+    "score_at_emit": 25,
+    "digest_confirmed": true
+  },
+  "https://twitter.com/ClaudeDevs/status/2093742321473065266": {
+    "first_emitted": "2026-08-30",
+    "score_at_emit": 24,
+    "digest_confirmed": true
+  },
+  "https://github.com/anthropics/claude-code/issues/61734": {
+    "first_emitted": "2026-08-30",
+    "score_at_emit": 24,
+    "digest_confirmed": true
+  },
+  "https://github.com/anthropics/claude-code/issues/12433": {
+    "first_emitted": "2026-08-30",
+    "score_at_emit": 23,
+    "digest_confirmed": true
+  },
+  "https://github.com/anthropics/claude-code/issues/83633": {
+    "first_emitted": "2026-08-30",
+    "score_at_emit": 22,
+    "digest_confirmed": true
+  },
+  "https://www.axios.com/2026/08/29/anthropic-sony-warner-music-copyright": {
+    "first_emitted": "2026-08-30",
+    "score_at_emit": 17,
+    "digest_confirmed": true
+  },
+  "https://news.ycombinator.com/item?id=49491745": {
+    "first_emitted": "2026-08-30",
+    "score_at_emit": 11,
+    "digest_confirmed": true
+  },
+  "https://itsuki.app": {
+    "first_emitted": "2026-08-30",
+    "score_at_emit": 3,
+    "digest_confirmed": true
+  },
+  "https://dev.to/locoprowrestling/my-ai-assistant-deleted-my-working-files-because-i-said-i-cant-tell-which-ones-are-current-22b3": {
+    "first_emitted": "2026-08-30",
+    "score_at_emit": 3,
+    "digest_confirmed": true
+  },
+  "https://github.com/Blue-B/memnest": {
+    "first_emitted": "2026-08-30",
+    "score_at_emit": 1,
+    "digest_confirmed": true
+  },
+  "https://github.com/rysh-ai/rysh-cli-code": {
+    "first_emitted": "2026-08-30",
+    "score_at_emit": 1,
+    "digest_confirmed": true
+  },
+  "https://www.reddit.com/r/ClaudeCode/comments/1w255xr/can_someone_explain_lowpriority_to_me": {
+    "first_emitted": "2026-08-30",
+    "score_at_emit": 0,
+    "digest_confirmed": true
+  },
+  "https://www.reddit.com/r/ClaudeCode/comments/1w240ht/so_lets_talk_haiku_uses_summer_2026": {
+    "first_emitted": "2026-08-30",
+    "score_at_emit": 0,
+    "digest_confirmed": true
+  },
+  "https://www.reddit.com/r/ClaudeCode/comments/1w23wj9/status_of_software_engineering": {
+    "first_emitted": "2026-08-30",
+    "score_at_emit": 0,
+    "digest_confirmed": true
+  },
+  "https://www.reddit.com/r/ClaudeCode/comments/1w236na/my_claude_cli_output_and_session_summary": {
+    "first_emitted": "2026-08-30",
+    "score_at_emit": 0,
+    "digest_confirmed": true
+  },
+  "https://www.reddit.com/r/ClaudeCode/comments/1w236ek/due_giorni_fa_non_sapevo_nemmeno_da_dove_iniziare": {
+    "first_emitted": "2026-08-30",
+    "score_at_emit": 0,
+    "digest_confirmed": true
+  },
+  "https://www.reddit.com/r/ClaudeCode/comments/1w22z36/context_window": {
+    "first_emitted": "2026-08-30",
+    "score_at_emit": 0,
+    "digest_confirmed": true
+  },
+  "https://simonwillison.net/2026/Aug/29/hy4": {
+    "first_emitted": "2026-08-30",
+    "score_at_emit": 0,
+    "digest_confirmed": true
+  },
+  "https://www.bleepingcomputer.com/news/artificial-intelligence/anthropic-is-cutting-claude-codes-current-weekly-limits-by-17-percent": {
+    "first_emitted": "2026-08-30",
+    "score_at_emit": 0,
+    "digest_confirmed": true
+  },
+  "https://www.notebookcheck.net/Anthropic-announces-a-25-increase-to-Claude-Code-limits-but-there-s-a-17-catch.1382735.0.html": {
+    "first_emitted": "2026-08-30",
+    "score_at_emit": 0,
+    "digest_confirmed": true
+  },
+  "https://www.startuphub.ai/cybersecurity/coding-agents-security-failed-70-times-same-bugs": {
+    "first_emitted": "2026-08-30",
+    "score_at_emit": 0,
+    "digest_confirmed": true
+  },
+  "https://www.xda-developers.com/gave-claude-code-my-own-spinner-verbs-terminal-sounds-like-me": {
+    "first_emitted": "2026-08-30",
+    "score_at_emit": 0,
+    "digest_confirmed": true
+  },
+  "https://www.businessinsider.com/anthropic-claude-training-copyright-music-lyrics-sony-lawsuit-2026-8": {
+    "first_emitted": "2026-08-30",
+    "score_at_emit": 0,
+    "digest_confirmed": true
+  },
+  "https://techcrunch.com/2026/08/29/sony-music-warner-sue-anthropic-alleging-a-brazen-campaign-of-intellectual-property-theft": {
+    "first_emitted": "2026-08-30",
+    "score_at_emit": 0,
+    "digest_confirmed": true
+  },
+  "https://towardsdatascience.com/4-claude-skills-every-data-scientist-needs-in-2026": {
+    "first_emitted": "2026-08-30",
+    "score_at_emit": 0,
+    "digest_confirmed": true
+  },
+  "https://www.macobserver.com/news/anthropic-raises-claude-code-weekly-limits-by-25-for-paid-plans": {
+    "first_emitted": "2026-08-30",
+    "score_at_emit": 0,
+    "digest_confirmed": true
+  },
+  "https://wccftech.com/anthropic-pounces-as-openai-abandons-spacexs-cursor-vowing-to-increase-claude-compute-even-as-openai-cites-contract-distrust": {
+    "first_emitted": "2026-08-30",
+    "score_at_emit": 0,
+    "digest_confirmed": true
+  },
+  "https://finance.yahoo.com/technology/ai/articles/exclusive-claude-revenue-surges-1-133046476.html": {
+    "first_emitted": "2026-08-30",
+    "score_at_emit": 0,
+    "digest_confirmed": true
+  },
+  "https://www.reddit.com/r/LocalLLaMA/comments/1w1l3a2/how_important_is_it_for_chinese_llms_to_reach_the": {
+    "first_emitted": "2026-08-30",
+    "score_at_emit": 0,
+    "digest_confirmed": true
+  },
+  "https://www.adgully.com/post/19859/google-deepmind-suffers-sharp-decline-in-elite-ai-talent-share-as-rivals-gain-ground": {
+    "first_emitted": "2026-08-30",
+    "score_at_emit": 0,
+    "digest_confirmed": true
+  },
+  "https://www.theguardian.com/technology/2026/aug/28/us-court-rules-pentagon-anthropic-ban-illegal-trump-claude-ai": {
+    "first_emitted": "2026-08-30",
     "score_at_emit": 0,
     "digest_confirmed": true
   }
