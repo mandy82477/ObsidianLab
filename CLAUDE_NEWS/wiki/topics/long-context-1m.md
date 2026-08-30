@@ -1,3 +1,23 @@
+---
+page: "topics/long-context-1m"
+kind: "topic"
+status: "ongoing"
+domain: "🛠️ 工具/功能"
+last_updated: "2026-08-30"
+last_news_update: "2026-08-30"
+status_main: "ongoing"
+days_since_news: 0
+inbound_links: 7
+attribution_count: 1
+attribution_last: "2026-08-30"
+top_source: "github-issues"
+pending_count: 0
+pending_overdue: 0
+pending_next_review: null
+pending_signalled: 0
+signal: "健康"
+generated_by: "scripts/gen_wiki_frontmatter.py"
+---
 # 1M context：加不加價、你能不能關
 
 **狀態：** ongoing

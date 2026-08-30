@@ -39,13 +39,7 @@
       "time": "08/29 15:08",
       "sentiment": "",
       "body": "可在本機以 Agent Skill 形式執行 Claude Design，供 Cursor、Claude Code 等工具產出自足式 HTML 的 UI 原型、簡報與線框稿，官方建議搭配 Opus 4.8 使用；累計 3,637 星。",
-      "focusTags": [],
-      "sedimented": [
-        {
-          "id": "claude-code",
-          "pageType": "entity"
-        }
-      ]
+      "focusTags": []
     },
     {
       "title": "[BUG] Missing HCS services: vfpext - Cowork not working on Windows 11 Pro",
@@ -63,13 +57,7 @@
       "time": "08/29 05:12",
       "sentiment": "",
       "body": "社群要求 Claude Code Web 能從非預設分支啟動新 session，該請求已累積 59 則留言與 162 個 👍 反應。",
-      "focusTags": [],
-      "sedimented": [
-        {
-          "id": "claude-code",
-          "pageType": "entity"
-        }
-      ]
+      "focusTags": []
     },
     {
       "title": "[FEATURE] Add GitLab Integration (Repository Connection, MRs, Mobile Access)",
@@ -89,13 +77,7 @@
       "time": "08/29 15:08",
       "sentiment": "",
       "body": "官方文件新增說明：採用 adaptive reasoning 的模型上 `MAX_THINKING_TOKENS` 設非預設值時的行為；當 Claude 透過本介面把訊息傳給另一個 session 時，該處會顯示標註傳送方的卡片；extended thinking 預設啟用，用以提升複雜任務的表現。",
-      "focusTags": [],
-      "sedimented": [
-        {
-          "id": "claude-code",
-          "pageType": "entity"
-        }
-      ]
+      "focusTags": []
     },
     {
       "title": "[Status] Elevated errors on Claude Code and Claude Cowork",
@@ -104,13 +86,7 @@
       "time": "08/28 20:21",
       "sentiment": "",
       "body": "Claude Code 與 Claude Cowork 網頁版一度出現錯誤率升高，官方已採取緩解措施並於監控後確認問題解決。",
-      "focusTags": [],
-      "sedimented": [
-        {
-          "id": "claude-code",
-          "pageType": "entity"
-        }
-      ]
+      "focusTags": []
     }
   ],
   "mediaReports": [
@@ -139,13 +115,7 @@
       "time": "08/28 20:00",
       "sentiment": "",
       "body": "XDA 記錄一名使用者實測發現 Claude Code 在輸入任何提示前就已耗用 5.1 萬 token，並自行排查、修正的過程，凸顯 context 開銷對一般使用者的實際影響。",
-      "focusTags": [],
-      "sedimented": [
-        {
-          "id": "claude-code",
-          "pageType": "entity"
-        }
-      ]
+      "focusTags": []
     },
     {
       "title": "Claude Code runs malware despite \"Auto Mode\" security, tries to fix it, gets denied",
@@ -154,13 +124,7 @@
       "time": "08/28 14:16",
       "sentiment": "",
       "body": "Cybernews 延續稍早 Auto Mode 安全機制遭繞過的報導，描述 Claude Code 執行到惡意程式碼後嘗試自行修復、但修復動作被拒絕執行的過程。",
-      "focusTags": [],
-      "sedimented": [
-        {
-          "id": "claude-code",
-          "pageType": "entity"
-        }
-      ]
+      "focusTags": []
     },
     {
       "title": "Dario Amodei Says Anthropic Is 'Not Interested in Destroying Anyone'",
@@ -222,13 +186,7 @@
       "time": "08/28 17:16",
       "sentiment": "",
       "body": "使用者回報 Claude Code 的 auto-memory 索引載入時，session 端無從得知索引是完整載入、遭截斷、還是完全沒有載入，已累積 47 則留言。情緒：😤",
-      "focusTags": [],
-      "sedimented": [
-        {
-          "id": "claude-code",
-          "pageType": "entity"
-        }
-      ]
+      "focusTags": []
     },
     {
       "title": "[BUG] Claude Desktop (Windows 11): main window stays always-on-top of other applications, with no setting to disable it",
@@ -352,11 +310,6 @@
   "preview": "資安研究者 Alon Hertz 揭露編碼代理（含 Claude、Codex、Hermes）會把 llms.txt／llms-full.txt 這類「給 AI 讀的網站說明檔」當成可信內容；掃描 6,214 個綁定國防承包商、財星 500 大與科技巨頭的網域、8,265 份 llms.txt／llms-full.txt",
   "sedimentedToday": [
     {
-      "id": "claude-code",
-      "name": "Claude Code",
-      "pageType": "entity"
-    },
-    {
       "id": "dario-amodei",
       "name": "Dario Amodei",
       "pageType": "entity"
@@ -375,26 +328,6 @@
       "id": "opus-5",
       "name": "Claude Opus 5",
       "pageType": "entity"
-    },
-    {
-      "id": "pricing",
-      "name": "Anthropic 訂閱方案與計費政策",
-      "pageType": "entity"
-    },
-    {
-      "id": "ai-agent-safety",
-      "name": "AI Agent 安全與可靠性",
-      "pageType": "topic"
-    },
-    {
-      "id": "ai-talent-flow",
-      "name": "AI 實驗室人才流動",
-      "pageType": "topic"
-    },
-    {
-      "id": "anthropic-business",
-      "name": "Anthropic 商業健康度",
-      "pageType": "topic"
     },
     {
       "id": "anthropic-commitments",
@@ -422,18 +355,8 @@
       "pageType": "topic"
     },
     {
-      "id": "community-tech-discussions",
-      "name": "社群技術討論趨勢",
-      "pageType": "topic"
-    },
-    {
       "id": "community-tech-tools",
       "name": "社群工具目錄",
-      "pageType": "topic"
-    },
-    {
-      "id": "competitor-landscape",
-      "name": "AI 編碼工具競品動態",
       "pageType": "topic"
     },
     {

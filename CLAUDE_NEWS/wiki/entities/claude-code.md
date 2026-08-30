@@ -4,13 +4,13 @@ kind: "entity"
 type: "product"
 status: "active"
 domain: "🛠️ 工具/功能"
-last_updated: "2026-08-29"
-last_news_update: "2026-08-29"
+last_updated: "2026-08-30"
+last_news_update: "2026-08-30"
 status_main: "active"
 days_since_news: 0
-inbound_links: 72
-attribution_count: 391
-attribution_last: "2026-08-29"
+inbound_links: 74
+attribution_count: 396
+attribution_last: "2026-08-30"
 top_source: "github-issues"
 pending_count: 23
 pending_overdue: 3

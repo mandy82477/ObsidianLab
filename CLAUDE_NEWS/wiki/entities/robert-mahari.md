@@ -7,7 +7,7 @@ domain: "👤 人物"
 last_updated: "2026-08-22"
 last_news_update: "2026-08-08"
 status_main: "active"
-days_since_news: 21
+days_since_news: 22
 inbound_links: 2
 attribution_count: 2
 attribution_last: "2026-08-08"
@@ -16,7 +16,7 @@ pending_count: 1
 pending_overdue: 1
 pending_next_review: null
 pending_signalled: 0
-signal: "孤島"
+signal: "休眠"
 generated_by: "scripts/gen_wiki_frontmatter.py"
 ---
 # Robert Mahari

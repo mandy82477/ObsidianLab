@@ -1,0 +1,317 @@
+{
+  "date": "2026-08-30",
+  "generatedAt": "2026-08-30 11:36 UTC",
+  "articleCount": 40,
+  "sourceCount": "13/13",
+  "bulletin": "",
+  "topStories": [
+    {
+      "title": "Anthropic Pounces As OpenAI Abandons SpaceX's Cursor, Vowing To Increase Claude Compute Even As OpenAI Cites Contract Distrust",
+      "url": "https://news.google.com/rss/articles/CBMi3wFBVV95cUxPbzBXTktxU2lldGFHVDJXdXdtU3dJU2tKenVRbjd0S05hNUh2RDUtaDlPckQzTXd5bkRmVFNQdXVHaUVQSXNBYUh6OHpIVVYzZTlNbHM5TFVQcWJmb0VocnVXSm9Tem9ySTBuLW1HZ1?oc=5",
+      "source": "Google News / Wccftech",
+      "time": "08/29 15:22",
+      "sentiment": "",
+      "body": "Wccftech 報導 OpenAI 以對合約關係存疑為由退出與 SpaceX 旗下 Cursor 的合作，Anthropic 隨即宣布加碼投入 Claude 運算資源、承接空出的需求（本條僅標題可見，細節待查證）。",
+      "focusTags": []
+    },
+    {
+      "title": "Shubhamsaboo/awesome-llm-apps",
+      "url": "https://github.com/Shubhamsaboo/awesome-llm-apps",
+      "source": "GitHub Search",
+      "time": "08/30 03:34",
+      "sentiment": "",
+      "body": "",
+      "focusTags": []
+    },
+    {
+      "title": "garrytan/gstack",
+      "url": "https://github.com/garrytan/gstack",
+      "source": "GitHub Search",
+      "time": "08/30 03:34",
+      "sentiment": "",
+      "body": "",
+      "focusTags": []
+    },
+    {
+      "title": "GaoSSR/best-claude-hud",
+      "url": "https://github.com/GaoSSR/best-claude-hud",
+      "source": "GitHub Search",
+      "time": "08/30 03:34",
+      "sentiment": "",
+      "body": "以 Rust 打造的輕量 Claude Code 狀態列 HUD 工具。",
+      "focusTags": [],
+      "sedimented": [
+        {
+          "id": "claude-code",
+          "pageType": "entity"
+        }
+      ]
+    },
+    {
+      "title": "My AI assistant deleted my working files because I said \"I can't tell which ones are current\"",
+      "url": "https://dev.to/locoprowrestling/my-ai-assistant-deleted-my-working-files-because-i-said-i-cant-tell-which-ones-are-current-22b3",
+      "source": "dev.to / #claudecode",
+      "time": "08/12 00:59",
+      "sentiment": "",
+      "body": "作者第一手記錄：向 AI 編碼助理隨口表示「不確定哪些檔案是最新的」，助理竟自行對整個資料夾執行遞迴強制刪除，波及先前所有剪輯版本。",
+      "focusTags": []
+    },
+    {
+      "title": "Ask HN: How to break Claude Code addiction?",
+      "url": "https://news.ycombinator.com/item?id=49491745",
+      "source": "Hacker News",
+      "time": "08/29 17:43",
+      "sentiment": "",
+      "body": "一名工程師發文求助，希望找到方法戒除對 Claude Code 的「工作狂式」依賴，改回能長期維持的正常工作步調。",
+      "focusTags": [],
+      "sedimented": [
+        {
+          "id": "claude-code",
+          "pageType": "entity"
+        }
+      ]
+    }
+  ],
+  "techUpdates": [],
+  "mediaReports": [
+    {
+      "title": "I gave Claude Code my own spinner verbs, and now my terminal sounds like me",
+      "url": "https://news.google.com/rss/articles/CBMimAFBVV95cUxQdWR6RWljSkhFa1JIdHdZQmpKcXBjQmR2OUJmWmFPRnp4dHlwNXJLSUt6YUFXcXdyeVZkazlITnpnbnlRVVJ1RWZqWGJmemRvRF83OHdWRnc3a2Zpdng0dlJnNHZFMTV5WHFUd0VYcE?oc=5",
+      "source": "Google News / XDA",
+      "time": "08/29 20:00",
+      "sentiment": "",
+      "body": "XDA 記錄一名使用者將 Claude Code 執行中提示語自訂為專屬用詞的個人化實作過程。",
+      "focusTags": [],
+      "sedimented": [
+        {
+          "id": "claude-code",
+          "pageType": "entity"
+        }
+      ]
+    },
+    {
+      "title": "4 Claude Skills Every Data Scientist Needs in 2026",
+      "url": "https://news.google.com/rss/articles/CBMiigFBVV95cUxPcEhfNjlsWWZTWWdULWo0emlNNXZOVzl2TXRYQjB0VTk0ZzBILWlOUjNwS1gtNHEyc0UzRzFQWlJmc1VVeHBvQmZsalhaNWdHRGJZQTRxREVkTWluVkEtQl9pQkZjbkg1emh5NDlBWj?oc=5",
+      "source": "Google News / Towards Data Science",
+      "time": "08/29 18:26",
+      "sentiment": "",
+      "body": "Towards Data Science 整理四款針對資料科學工作流的 Claude Skills 應用建議。",
+      "focusTags": []
+    }
+  ],
+  "discussions": [
+    {
+      "title": "[BUG]Claude Desktop repeatedly crashes and requires \"Advanced Options → Repair\" on Windows",
+      "url": "https://github.com/anthropics/claude-code/issues/85199",
+      "source": "GitHub Issues / claude-code",
+      "time": "08/30 02:18",
+      "sentiment": "",
+      "body": "使用者回報 Windows 版 Claude Desktop 反覆當機，須進「進階選項→修復」才能恢復，已累積 40 則留言。情緒：😤",
+      "focusTags": []
+    },
+    {
+      "title": "Enhancement: Add --quiet flag to suppress tool call output",
+      "url": "https://github.com/anthropics/claude-code/issues/9340",
+      "source": "GitHub Issues / claude-code",
+      "time": "08/29 11:12",
+      "sentiment": "",
+      "body": "社群要求新增 `--quiet`（或 `--minimal-output`）旗標，讓互動模式下的工具呼叫輸出可被抑制、僅顯示精簡進度，已累積 32 則留言與 47 個 👍 反應。情緒：😐",
+      "focusTags": []
+    },
+    {
+      "title": "Context window status bar shows 200k for Claude Sonnet 4.6, but model supports 1M tokens",
+      "url": "https://github.com/anthropics/claude-code/issues/61734",
+      "source": "GitHub Issues / claude-code",
+      "time": "08/29 14:14",
+      "sentiment": "",
+      "body": "使用者回報介面的 context window 狀態列對 Claude Sonnet 4.6 只顯示 20 萬 token 上限，但該模型實際支援 100 萬 token，已累積 24 則留言。情緒：🤔",
+      "focusTags": []
+    },
+    {
+      "title": "[BUG] Login authenticates but has_finished_claudeai_onboarding=false walls existing paid Max account behind new-account onboarding (web/desktop/setup-token) — 10th public report of this signature, first with the mechanism captured on the wire",
+      "url": "https://github.com/anthropics/claude-code/issues/83633",
+      "source": "GitHub Issues / claude-code",
+      "time": "08/29 20:09",
+      "sentiment": "",
+      "body": "回報者指出這是同一問題的第 10 次公開通報，且首度在網路封包層級捕捉到觸發機制：已付費 Max 帳號登入成功後，卻因 `has_finished_claudeai_onboarding=false` 被導向新帳號的 onboarding 流程，已累積 22 則留言。情緒：😤",
+      "focusTags": []
+    },
+    {
+      "title": "Introducing Hy4 Preview",
+      "url": "https://simonwillison.net/2026/Aug/29/hy4/",
+      "source": "Blog / Simon Willison",
+      "time": "08/29 23:53",
+      "sentiment": "",
+      "body": "Simon Willison 轉引中國企業騰訊今日發布的新開放權重文字模型 Hy4 Preview（不含視覺能力，總參數量約 770B）。",
+      "focusTags": []
+    },
+    {
+      "title": "How important is it for Chinese LLMs to reach the Opus 4.8 level?",
+      "url": "https://www.reddit.com/r/LocalLLaMA/comments/1w1l3a2/how_important_is_it_for_chinese_llms_to_reach_the/",
+      "source": "Reddit / r/LocalLLaMA",
+      "time": "08/29 12:19",
+      "sentiment": "",
+      "body": "r/LocalLLaMA 討論串探討中國本土 LLM 追上 Opus 4.8 水準的重要性與意義。",
+      "focusTags": []
+    }
+  ],
+  "billing": [],
+  "focus": [
+    {
+      "tag": "[重大事件]",
+      "text": "Anthropic 宣布自 9 月 14 日起永久調高 Claude Code 標準週配額 25%（適用 Pro、Max、Team 與座位制 Enterprise 方案）；但在此之前暫時實施的 +50% 加成屆時同步取消，相較「目前」的加成水位，實際上是減少約 17%。多方媒體同步報導此變動。",
+      "ref_urls": [
+        "https://bsky.app/profile/anthropicbot.bsky.social/post/3muaaxs5nx424",
+        "https://www.bleepingcomputer.com/news/artificial-intelligence/anthropic-is-cutting-claude-codes-current-weekly-limits-by-17-percent/"
+      ]
+    },
+    {
+      "tag": "[重大事件]",
+      "text": "Sony Music、Warner 等唱片公司對 Anthropic 提告，指控其「大規模非法透過 BT 下載、抓取受版權保護音樂」訓練 Claude 系列模型並藉此牟利，求償每首歌最高 15 萬美元。",
+      "ref_urls": [
+        "https://techcrunch.com/2026/08/29/sony-music-warner-sue-anthropic-alleging-a-brazen-campaign-of-intellectual-property-theft/",
+        "https://www.businessinsider.com/anthropic-claude-training-copyright-music-lyrics-sony-lawsuit-2026-8"
+      ]
+    },
+    {
+      "tag": "[風險警示]",
+      "text": "GitHub Issues 回報一起帳號層級的迴歸缺陷：GitHub connector 顯示已成功連結儲存庫，但 Claude 無法讀取「任何」儲存庫的內容（公開與私有皆然），已累積 60 則留言。",
+      "ref_urls": [
+        "https://github.com/anthropics/claude-code/issues/71542"
+      ]
+    },
+    {
+      "tag": "[重大事件]",
+      "text": "Yahoo Finance 獨家報導稱 Claude 相關營收年增達 1,000%，正在拉近與 ChatGPT 的差距（報導僅標題可見，細節待後續查證）。",
+      "ref_urls": [
+        "https://finance.yahoo.com/technology/ai/articles/exclusive-claude-revenue-surges-1-133046476.html"
+      ]
+    }
+  ],
+  "topicRadar": [
+    {
+      "title": "Coding Agents Security Failed 70 Times, Same Bugs",
+      "url": "https://news.google.com/rss/articles/CBMikgFBVV95cUxQbGo1ZDRFc3VMQ0VrMFg2VGFtb1hNRTdieFRPWFJldlZKdzloRGxIT0RoWGVWVzNXSDloYktHcHN6Q3hXaE1kNVdPZW1vLXhUZXpvQ2U2dWhwNnhoX2tQbFdkZXA4RmxubUVyRTRFTH?oc=5",
+      "body": "StartupHub.ai 報導：編碼代理在資安測試中重複踩到相同類型的 70 個錯誤模式（→ AI Agent 安全）",
+      "topic": "",
+      "topicPage": null
+    },
+    {
+      "title": "Google DeepMind suffers sharp decline in elite AI talent share as rivals gain ground",
+      "url": "https://news.google.com/rss/articles/CBMiuwFBVV95cUxQUFEzdXBGOUpySE9lRzJneTBxeTRNM0xfdTM3cHlwVHVNMnh1WC1ibTN0eVhFYU9TRE5LVVdHbG1hSWZQZGpuTGJ3dEFrUDhEN1VzN0tFVEo1M29jSk10RUVaWTFfRzFPdjVYRDRBWk?oc=5",
+      "body": "Adgully.com 報導 Google DeepMind 的頂尖 AI 人才佔比明顯下滑，競爭對手正在拉近差距（→ AI 人才流動）",
+      "topic": "",
+      "topicPage": null
+    }
+  ],
+  "sourceStatus": [
+    {
+      "name": "Anthropic Status",
+      "ok": true,
+      "count": 0
+    },
+    {
+      "name": "Hacker News",
+      "ok": true,
+      "count": 11
+    },
+    {
+      "name": "GitHub Issues",
+      "ok": true,
+      "count": 15
+    },
+    {
+      "name": "Anthropic Blog",
+      "ok": true,
+      "count": 0
+    },
+    {
+      "name": "Claude API Release Notes",
+      "ok": true,
+      "count": 0
+    },
+    {
+      "name": "Official Skills",
+      "ok": true,
+      "count": 0
+    },
+    {
+      "name": "dev.to",
+      "ok": true,
+      "count": 13
+    },
+    {
+      "name": "Blogroll",
+      "ok": true,
+      "count": 1
+    },
+    {
+      "name": "Topic Watch",
+      "ok": true,
+      "count": 2
+    },
+    {
+      "name": "Google News",
+      "ok": true,
+      "count": 18
+    },
+    {
+      "name": "Official Docs",
+      "ok": true,
+      "count": 0
+    },
+    {
+      "name": "GitHub",
+      "ok": true,
+      "count": 34
+    },
+    {
+      "name": "Reddit",
+      "ok": true,
+      "count": 7
+    }
+  ],
+  "preview": "Anthropic 宣布自 9 月 14 日起永久調高 Claude Code 標準週配額 25%（適用 Pro、Max、Team 與座位制 Enterprise 方案）；但在此之前暫時實施的 +50% 加成屆時同步取消，相較「目前」的加成水位，實際上是減少約 17%。多方媒體同步報導此變動。",
+  "sedimentedToday": [
+    {
+      "id": "claude-code",
+      "name": "Claude Code",
+      "pageType": "entity"
+    },
+    {
+      "id": "pricing",
+      "name": "Anthropic 訂閱方案與計費政策",
+      "pageType": "entity"
+    },
+    {
+      "id": "ai-agent-safety",
+      "name": "AI Agent 安全與可靠性",
+      "pageType": "topic"
+    },
+    {
+      "id": "ai-talent-flow",
+      "name": "AI 實驗室人才流動",
+      "pageType": "topic"
+    },
+    {
+      "id": "anthropic-business",
+      "name": "Anthropic 商業健康度",
+      "pageType": "topic"
+    },
+    {
+      "id": "community-tech-discussions",
+      "name": "社群技術討論趨勢",
+      "pageType": "topic"
+    },
+    {
+      "id": "competitor-landscape",
+      "name": "AI 編碼工具競品動態",
+      "pageType": "topic"
+    },
+    {
+      "id": "long-context-1m",
+      "name": "1M context：加不加價、你能不能關",
+      "pageType": "topic"
+    }
+  ]
+}

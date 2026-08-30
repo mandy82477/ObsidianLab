@@ -8,8 +8,8 @@ last_news_update: "2026-08-30"
 status_main: "ongoing"
 days_since_news: 0
 inbound_links: 41
-attribution_count: 114
-attribution_last: "2026-08-29"
+attribution_count: 115
+attribution_last: "2026-08-30"
 top_source: "hacker-news"
 pending_count: 2
 pending_overdue: 1
