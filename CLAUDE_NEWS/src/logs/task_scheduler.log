@@ -402,3 +402,6 @@
 [Sun 2026/08/30 12:07:21.00] Single push done (news + wiki + web, b4db24c0..0de830a8，第一次即成功無需重試)
 [Sun 2026/08/30 12:07:21.00] === Pipeline complete (agent) ===
 [cloud daily-news-pipeline-cloud STARTED 2026-08-30T12:04:20Z]
+[Sun 2026/08/30 12:05:32.00 UTC] === Agent pipeline start (2026-08-30) ===
+[Sun 2026/08/30 12:05:32.00 UTC] ABORTED: digest already exists (news/2026-08-30.md, committed by earlier shift, pipeline complete 12:07:21 UTC / commit bcaab0c) - Step 0b 冪等閘中止，本班不重跑
+[Sun 2026/08/30 12:05:32.00 UTC] === Pipeline aborted (agent) ===
