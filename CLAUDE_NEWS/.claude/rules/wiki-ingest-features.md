@@ -17,6 +17,7 @@
 | `wiki/entities/claude-skills.md` | Skills 官方產品線與生態：官方技能包、平台支援、分享機制、第三方移植（設計面歸社群記者 patterns 頁） |
 | `wiki/topics/official-community-gap.md` | 官方功能 vs 社群痛點缺口變化 |
 | `wiki/topics/coding-workflow-guide.md` | 🗓️ 主體週更（吃技能清冊）；**官方對既有功能的使用指南**在每日 ingest 即寫入對應流程階段節——見下方「程式開發實戰手冊維護」|
+| `wiki/topics/long-context-1m.md` | 1M context 的**計費規則、預設行為、可控性**（世代加價分界、預設開啟／關閉、model picker 保不保得住 `[1m]` 變體、1M 觸發獨立計費通道）——見下方「1M 專頁的觸發邊」 |
 | `wiki/feature-radar.md` | 新增/更新功能條目（**須回報主編彙整**，不直接寫入） |
 
 > 上表為核心頁面與觸發條件；此外 `wiki/index.md` 中領域為 🛠️ 工具/功能 的所有頁面（含日後新增）皆由本記者負責維護與 lint。
@@ -230,6 +231,25 @@ feature-radar 只收**使用者可實際取用、呼叫、設定或執行的官�
 | 單一 bug 的 hotfix（已屬於另一功能的修正）| ❌ 不收錄 | 附記在對應功能條目「注意事項」 |
 | 有新指令 / 新旗標 / Breaking change | ✅ 收錄 | 正常建立條目 |
 | API 棄用 / 重大 SDK 變更 | ✅ 收錄 | 以「SDK / 棄用」為主題建立條目 |
+
+---
+
+## 1M 專頁的觸發邊 `[加入: 2026-08-30]`
+
+`wiki/topics/long-context-1m.md` 是**衍生頁**——1M 相關的新聞條目會照舊被路由到 `entities/claude-code`（已知問題）或 `entities/pricing`（計費規則），**沒有任何條目會自己路由到這一頁**。依 `.claude/rules/wiki-ingest-format.md`「建頁時必須確認觸發邊」，此處登記明文觸發邊，否則該頁會孤兒化。
+
+**每次 ingest：** 你為 claude-code 或（經商業記者）pricing 寫入的條目，只要涉及下列任一項，**同時**更新本頁：
+
+| 條目涉及 | 本頁要動的地方 |
+|---|---|
+| 長脈絡費率、世代分界、1M 是否加價 | 「你的 1M 會不會加價」表 |
+| 1M 的預設行為、開關、model picker、`[1m]` 變體 | 「三個你控制不了的地方」表＋狀態欄 |
+| 0% 用量卻被收費、獨立計費通道、`ANTHROPIC_API_KEY` 走 API 通道 | 「帳單對不上時怎麼判」表 |
+| 以上任一 | `## 時序` prepend 一則，更新兩個日期欄位 |
+
+**紀律：** 本頁只放「1M 這個旋鈕本身」。單一模型的費率數字屬 [[entities/pricing]]、選型建議屬 [[topics/model-comparison]]、單條 issue 的完整脈絡留在 `entities/` 原頁——本頁引 wikilink，不複製（同 `wiki/CLAUDE.md`「每個事實只有一個家」）。
+
+**若某條目只影響費率數字而與 1M 無關**（如 Opus 5 調價），不動本頁。
 
 ---
 

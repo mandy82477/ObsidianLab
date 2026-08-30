@@ -104,7 +104,7 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 - **⚠️ usage credits 開啟後，方案用量上限不再是硬停止**：credits 為 opt-in、預設關閉，於 `Settings > Usage` 開關，可設 auto-reload（每日兌換上限 $2,000）。開啟後 Claude 會在額度用盡後繼續回答並從 credits 扣款，體感與額度內無異，但每則超額回應皆計費——靠方案硬上限控管支出者需主動確認此開關（來源：[Manage usage credits](https://support.claude.com/en/articles/12429409-manage-usage-credits-for-paid-claude-plans)，2026-08-08 查證）
 - **⏰ 2026-08-31 到期（已再度延長；2026-08-28 查官方原文複查，日期仍有效）｜Claude Code 週用量 +50% 促銷**：官方於 2026-08-18 確認再度延長，適用期間由原訂 **2026-05-13** 起持續延續至 **2026-08-31**（此前歷經 06-22→07-07→07-12→07-19 等多次延長）；適用 **Pro／Max／Team 及舊制席位制 Enterprise**，**Free 方案與消耗制（consumption-based）Enterprise seat 不適用**；僅影響週用量上限，**5 小時用量上限不受影響**；符合資格帳號自動套用，無需操作。**更正**：此促銷此前於 07-19 一度被本頁誤記為與 Fable 5 免費期同步到期，實為兩條獨立時程——Fable 5 免費期確於 07-19 到期並由 07-20 分界取代，本促銷則持續延長中，並未終止（詳見下方「定價與促銷」08-18 條目）（來源：Hacker News 轉載 support.claude.com，2026-08-18 17:02 UTC，276 分）
 - **訂閱配額制維持**：原定 2026-06-15 生效的 Agent SDK／`claude -p` 計費切割已於 2026-06-16 暫停，重新推行時間未定；Agent SDK、`claude -p`、第三方 Agent SDK app 用量持續計入訂閱配額，無需額外信用池（來源：2026-06-16、2026-06-18 DevOps.com）
-- **1M context window 觸發獨立 API 計費通道**：即使儀表板顯示 0% 訂閱用量，1M context window 仍會產生額外費用（實例：2026-05-11 用戶 0% 用量下遭收取 $3.37 Extra Usage）
+- **1M context window 觸發獨立 API 計費通道**：即使儀表板顯示 0% 訂閱用量，1M context window 仍會產生額外費用（實例：2026-05-11 用戶 0% 用量下遭收取 $3.37 Extra Usage）。1M 的世代分界與控制權缺口見 [[topics/long-context-1m]]
 - **`ANTHROPIC_API_KEY` 環境變數陷阱**：雲端環境（CI/CD、Docker、K8s）若設置此環境變數，所有 Claude Code 呼叫自動改走 API 計費通道而非訂閱配額（來源：2026-04-30）
 - **企業支出控管功能上線（2026-07-04）**：具體控管粒度（部門／團隊層級、per-user、即時警報）尚未公開（來源：2026-07-04 Tech Times）
 - **印度盧比在地化定價生效（2026-07-13）**：Pro 方案 **Rs 2,000／月**，為美國以外最大市場首次官方在地化定價；Max／Team／Enterprise 是否同步在地化未見報導（來源：2026-07-13～14 TechCrunch、NDTV、Times of India、bestmediainfo.com）
@@ -154,6 +154,7 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 - **長脈絡的分界是模型世代，不是「1M」這個功能**。Claude 4.6 以後內含 1M 且不加價（官方[定價頁](https://platform.claude.com/docs/en/about-claude/pricing) Long context pricing 節）；Sonnet 4／4.5 世代的 1M 為 public preview，[AWS 公告](https://aws.amazon.com/about-aws/whats-new/2025/08/anthropic-claude-sonnet-bedrock-expanded-context-window/)明載超過 20 萬 token 的 prompt 約為兩倍輸入價、1.5 倍輸出價。**兩代混用時，兩套規則會出現在同一份帳單上**
 - **診斷法**：價差只在大請求出現 → 舊世代長脈絡溢價；小請求也貴同樣比例 → 資料落地或地區端點
 - 模型之間「同一份工作換個模型差多少」的換算（含 tokenizer 換代的影響）不在本頁，見 [[topics/model-comparison#同一份工作，換設定差多少]]
+- **1M 這個旋鈕本身**（世代分界為何長這樣、預設開啟能不能關、選定狀態保不保得住）另見 [[topics/long-context-1m]]
 
 ---
 
