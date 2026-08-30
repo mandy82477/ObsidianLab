@@ -312,6 +312,11 @@
       "id": "long-context-1m",
       "name": "1M context：加不加價、你能不能關",
       "pageType": "topic"
+    },
+    {
+      "id": "official-community-gap",
+      "name": "官方功能 vs 社群痛點缺口分析",
+      "pageType": "topic"
     }
   ]
 }

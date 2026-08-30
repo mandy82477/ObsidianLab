@@ -25,7 +25,7 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 **狀態：** active
 **領域：** 👤 人物
 **首次出現：** 2026-04-25
-**最後更新：** 2026-08-29
+**最後更新：** 2026-08-30
 **最後新聞更新：** 2026-08-29
 
 > ❓ **待查證**（標 2026-08-25｜查 airline industry、marketing and safety）｜**Fortune 評論比較 Anthropic 安全論述與航空業經驗**（2026-08-24 報導）：Fortune 發表評論文章〈What Anthropic's Dario Amodei can learn from the airline industry's lesson on marketing and safety〉，以航空業在行銷與安全議題上的經驗為借鏡，討論 Dario Amodei 可以從中學到什麼；僅標題可用，具體論點與建議內容未見報導。
@@ -36,7 +36,6 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 
 2026-08-16，Dario Amodei 在 X 上發表兩則具名表態，均為本人第一手公開發言（非二手轉述）：其一回應投資人 Gavin Baker（於 All-In podcast 及 X 上）批評其「過度悲觀描繪 AI」，稱大眾對 AI 的反彈「根本上是一場信任危機」（TechCrunch，另有 Google News 同題報導佐證）；其二稱扭轉大眾對 AI 不信任的唯一辦法是產業交出具體科學突破，並舉「治癒癌症」為例（Business Insider，同事件另有標題含「actually」一詞的 Google News／Business Insider 版本，內容一致）。Simon Willison 部落格〈Quoting Dario Amodei〉引述其 X 原文：「I do agree that the public has a negative view of AI (and that this is a big problem), but I don't think it is primarily...」，為此事件的第一手佐證來源。
 
-2026-08-14，WSJ 與 The Information 分別發布聚焦 Dario Amodei 妻子的人物側寫報導：WSJ 標題〈Even Claude Is in the Dark About Dario Amodei's Wife—and Her Influence at Anthropic〉探討她在網路上幾乎沒有公開資訊、以及她對 Anthropic 內部可能的影響力；The Information 標題稱其為 Anthropic 的「'First Lady'」，聚焦其職涯歷程「a winding road to the top」。同一事件另有 Hacker News 轉發（直連 wsj.com），留言中一則揣測其與 Eric Schmidt 有私人關係、藉此清空網路個資的說法屬留言者主觀嘲諷，未經任何來源證實，不予採信。這兩篇報導正文本身內容停留在標題層級，未展開其姓名或具體職務內容，查證狀態見下方歷史記錄。
 
 Dario Amodei 是 Anthropic 共同創辦人兼執行長（CEO），與 [[entities/chris-olah|Chris Olah]]、Daniela Amodei 等人從 OpenAI 出走後創立 Anthropic。主導公司整體策略與安全定位，在 AI 治理、政府政策、企業文化三條線高度活躍。白宮一度對其失去信任、談判改由聯合創辦人 Tom Brown 接管一事已收斂（出口管制已解除，見 [[entities/tom-brown]]、[[entities/fable-5]]、下方歷史記錄）；惟 Dario 本人與白宮的信任關係修復與否，尚無報導確認。
 
@@ -86,16 +85,11 @@ Dario Amodei 是 Anthropic 共同創辦人兼執行長（CEO），與 [[entities
 
 - [Google News（2026-08-28）→ Business Insider](https://news.google.com/rss/articles/CBMiiAFBVV95cUxOeVBkTWk1R2dsdEpLODZObWllTjlrdlVIX3dybGRta1pZbFcxMTRNNlVNcEVCMFFpOElIY3N3WjU3SUpYd28xQ3ZqcjF4X2gwQkZCc3lBX3ppMHdVUmRyQnB0X0M3Mk03OEhWX0lCYnhkWTA0dlJUVTY0RXFlNEpNLVQtQS05T3BK?oc=5)：「Dario Amodei Says Anthropic Is 'Not Interested in Destroying Anyone'」，公開回應外界對 AI 威脅論的疑慮；僅標題與轉址連結可用，查證狀態見下方歷史記錄
 - [CNBC（2026-08-26）](https://www.cnbc.com/2026/08/26/cnbc-exclusive-transcript-salesforce-chair-ceo-marc-benioff-and-anthropic-co-founder-ceo-dario-amodei-speak-with-cnbcs-jim-cramer-on-closing-bell-overtime-today.html)：與 Salesforce 董事長暨執行長 Marc Benioff 共同接受 Jim Cramer 專訪，完整逐字稿公開（Google News/CNBC）
-- [Google News（2026-08-22）→ Ynetnews](https://news.google.com/rss/articles/CBMiYkFVX3lxTE8yYWFtYks5QjdhOVFtOEpxV3RiaWxweW1ReGdtR2RqVzRYUVJLeFpoOHZfTWcxd3NIMU1kUkdXazdOMGczWjVRemg2elVXN19ORjV6cmJyYVR3b1RUT3RWM3p3?oc=5)：「Meet Cami Clark, the 'first lady of AI' shaping Anthropic and Dario Amodei behind the scenes」，第三家媒體同題跟進的人物側寫，查證狀態見下方歷史記錄
 - Hacker News（26分，2026-08-16）→ Business Insider：「Anthropic CEO says the way for AI to win over the public is to cure cancer」，Dario Amodei 在 X 上稱唯有具體科學突破才能扭轉大眾對 AI 的不信任
 - Hacker News（12分，source_count=2，2026-08-16）→ TechCrunch：「Anthropic CEO says AI backlash is 'fundamentally a crisis of trust'」，回應投資人 Gavin Baker 於 All-In podcast 及 X 上的批評
 - Google News（2026-08-16）→ Business Insider：「Anthropic CEO Dario Amodei says the way for AI to win over the public is to 'actually' cure cancer」，與上則 Business Insider 報導同一事件的另一篇報導，僅供交叉核對
 - Simon Willison Blog（2026-08-16）：〈Quoting Dario Amodei〉，引述其 X 原文全文：「I do agree that the public has a negative view of AI (and that this is a big problem), but I don't think it is primarily...」，為信任危機／治癒癌症表態的第一手佐證來源
-- [Google News（2026-08-18）→ The Week](https://news.google.com/rss/articles/CBMickFVX3lxTE5lY2ZQM0RIclh6UmtXYWlleU5tdlF5bmhTeDJFZTZSa1d1YlJOaXdGMThkbktJZktMR2pEMHhQcXJCcWFzNEVuQ1NJTUdPaXhib2lvNG1iYnBKNHMxemZYWlZNaEh1SG4yOFVGelBQajYxQQ?oc=5)：「Cami Clark: the Anthropic CEO's wife and 'first lady' of AI」，首次在標題層級公開其姓名，查證狀態見下方歷史記錄
 - [Google News（2026-08-17）→ Business Insider](https://news.google.com/rss/articles/CBMimAFBVV95cUxOUHF1YnFCRW55ek5WeFpCSkgtWkdOcFBrM3c5dVhBd0xXSFY4VngwNHpLMzcwWTZmOUVzUXF3Q1dDT2xtVnNwVm5nN01yc1E2TGlUR2JRSnhtalFKYjJhUjl1bGk1OWRKZ1FHb0hETGxrcHJKaFhFTHdaYzZQTE9KNk5xc2w2V2k5d3p1WHhfUWJtT0ZmUmlvQQ?oc=5)：「Fidji Simo says she believes AI can 'cure all diseases,' agreeing with Anthropic CEO Dario Amodei」，Fidji Simo（非 Anthropic 人員）公開呼應 Dario Amodei 08-16 的治癒疾病論述
-- Google News（2026-08-14）→ WSJ：「Even Claude Is in the Dark About Dario Amodei's Wife—and Her Influence at Anthropic」，聚焦其妻在網路上幾乎沒有公開資訊及其對 Anthropic 內部可能的影響力；查證狀態見下方歷史記錄
-- Google News（2026-08-13）→ The Information：「Anthropic's 'First Lady' Took a Winding Road to the Top」，同一人物側寫的另一媒體版本；查證狀態見下方歷史記錄
-- Hacker News（25分，經 wsj.com 直連，2026-08-14）：同一 WSJ 報導的討論串轉發；留言含一則對 Eric Schmidt 私人關係的嘲諷性揣測，非任何來源證實之事實，不採信
 - [Hacker News（50分）→ Yahoo Finance，2026-08-07](https://finance.yahoo.com/technology/ai/articles/anthropic-ceo-reportedly-worried-hires-160000647.html)（原引述 Axios）：「Anthropic CEO reportedly worried new hires only care about money」，稱 Dario Amodei 據稱憂心新進員工僅為薪資而非使命加入，並對照一則年薪 32-40 萬美元的活動企劃負責人職缺；查證狀態見下方歷史記錄
 - Google News（2026-08-06）→ The Information：「How Dario Amodei Spread Anthropic's Religion and Stirred Up Silicon Valley」，剖析其個人影響力與矽谷觀感；查證狀態見下方歷史記錄
 - Hacker News（經 Twitter/Techmeme，2026-08-03）：[twitter.com/Techmeme](https://twitter.com/Techmeme/status/2084238055368687932)「Dario worried people were joining Anthropic for the money, not the mission」；社群留言兩極
@@ -114,13 +108,9 @@ Dario Amodei 是 Anthropic 共同創辦人兼執行長（CEO），與 [[entities
 - 2026-08-28：Business Insider 報導 Dario Amodei 公開回應外界對 AI 威脅論的疑慮，稱 Anthropic「無意摧毀任何人」（"not interested in destroying anyone"）；僅標題與轉址連結可用，發言的具體場合與完整脈絡未見報導，查證狀態見上方公開立場表格標記（來源：Google News／Business Insider）
 - 2026-08-26：與 Salesforce 董事長暨執行長 Marc Benioff 共同接受 CNBC《Closing Bell: Overtime》主持人 Jim Cramer 專訪，CNBC 公開完整逐字稿；日報僅載逐字稿已公開一事，未節錄任何具體發言內容，合作動態詳見 [[topics/anthropic-business]]（來源：Google News／CNBC）
 - 2026-08-24：Fortune 發表評論文章〈What Anthropic's Dario Amodei can learn from the airline industry's lesson on marketing and safety〉，以航空業在行銷與安全議題上的經驗為借鏡討論 Dario Amodei 可以從中學到什麼；僅標題可用，具體論點與建議內容未見報導，查證狀態見頁首標記（來源：Google News／Fortune）
-- 2026-08-22：Ynetnews 發布人物側寫報導〈Meet Cami Clark, the 'first lady of AI' shaping Anthropic and Dario Amodei behind the scenes〉，第三家媒體同題跟進，重複「AI 界第一夫人」定性與「幕後影響 Anthropic 與 Dario Amodei」描述；原文僅標題層級資訊可用，具體職稱與事件仍未見報導，併入下方既有待查證追蹤（來源：Google News／Ynetnews）
-- 2026-08-18：The Week 發布人物側寫報導〈Cami Clark: the Anthropic CEO's wife and 'first lady' of AI〉，首次在標題層級公開 Dario Amodei 妻子姓名為「Cami Clark」，稱其為 AI 界的「第一夫人」；報導內容仍停留在標題層級，具體影響力細節未展開，併入下方既有待查證追蹤（來源：Google News／The Week）
 - 2026-08-17：Fidji Simo（非 Anthropic 人員）公開表態同意 Dario Amodei 稱「AI 可治癒所有疾病」的說法，呼應其 08-16 主張唯有具體科學突破才能扭轉大眾對 AI 不信任的論述（來源：Google News／Business Insider）
 - 2026-08-16：Dario Amodei 在 X 上發表兩則具名表態，均為本人第一手發言：（1）回應投資人 Gavin Baker（於 All-In podcast 及 X 上）批評其「過度悲觀描繪 AI」，稱大眾對 AI 的反彈「根本上是一場信任危機」（TechCrunch，source_count=2，另有 Google News 同題報導）；（2）稱扭轉大眾對 AI 不信任的唯一辦法是產業交出具體科學突破，並舉「治癒癌症」為例（Business Insider；同事件另有標題含「actually」一詞的 Google News／Business Insider 版本，交叉核對內容一致）。Simon Willison 部落格〈Quoting Dario Amodei〉引述其 X 原文全文：「I do agree that the public has a negative view of AI (and that this is a big problem), but I don't think it is primarily...」，作為此事件的第一手佐證來源（來源：Hacker News／Business Insider、Hacker News／TechCrunch、Google News／Business Insider、Simon Willison Blog，2026-08-16）
-> 🔎 **查無官方**（標 2026-08-14｜查 Amodei's Wife、Winding Road to the Top｜訊 2026-08-22｜複 2026-09-30）｜**媒體聚焦 Dario Amodei 妻子的人物側寫**（2026-08-14 報導）：WSJ 與 The Information 同日發布深度報導，聚焦 Dario Amodei 妻子在網路上幾乎沒有公開資訊一事，並探討她對 Anthropic 內部可能的影響力；這兩篇報導本身內容停留在標題層級，未展開其姓名或具體職務內容。**後續**（2026-08-18）：The Week 發布人物側寫〈Cami Clark: the Anthropic CEO's wife and 'first lady' of AI〉，首次在標題層級公開其姓名「Cami Clark」，稱其為 AI 界的「第一夫人」；惟報導本身仍為單一標題層級來源，對 Anthropic 內部具體影響力等細節仍未展開，查證狀態維持待確認。**後續**（2026-08-22）：Ynetnews 刊出同題人物側寫〈Meet Cami Clark, the 'first lady of AI' shaping Anthropic and Dario Amodei behind the scenes〉，第三家媒體重複「AI 界第一夫人」定性與「幕後影響 Anthropic 與 Dario Amodei」描述；原文摘要僅為連結樁，具體職稱、事件、引述內容仍未見報導。**（2026-08-30 查證）**三家媒體皆停在標題層級，官方無任何相關資訊，改標查無官方——**此人為非公眾人物，本庫不主動蒐集其個人資訊**；本條僅記錄「媒體出現此類側寫」這件事本身，不隨媒體擴充其個人細節。若後續無涉及 Anthropic 公司決策的具體事實，建議下輪 lint 逕行移除本條。
 
-- 2026-08-14：WSJ（經 Google News 轉載）與 The Information 同日分別發布聚焦 Dario Amodei 妻子的人物側寫報導——WSJ 標題〈Even Claude Is in the Dark About Dario Amodei's Wife—and Her Influence at Anthropic〉，探討她在網路上幾乎沒有公開資訊，以及她對 Anthropic 內部可能的影響力；The Information 標題稱其為 Anthropic 的「'First Lady'」，聚焦其「a winding road to the top」的職涯歷程。同一事件另有 Hacker News 轉發版本（直連 wsj.com），留言中一則暗示其與 Eric Schmidt 有私人關係、藉此清空網路個資的說法為留言者主觀嘲諷，**未經任何來源證實，不採信為事實**。這兩篇報導正文本身內容停留在標題層級，未展開其姓名或具體職務內容，查證狀態見上方標記（來源：Google News／WSJ、Google News／The Information、Hacker News）
 > 🔎 **查無官方**（標 2026-08-10｜查 Axios、Yahoo Finance｜訊 2026-08-24｜複 2026-09-30）｜**人才招募疑慮延燒**（2026-08-07 報導）：Axios 報導（經 Yahoo Finance 轉載）稱 Dario Amodei 據稱憂心新進員工只為高薪而非公司使命加入 Anthropic，並對照公司同期開出年薪 32-40 萬美元的活動企劃負責人職缺，遠高於市場行情；為二手轉述，具體發言未經證實。**後續**（2026-08-24）：Axios 獨家報導（news/2026-08-24、2026-08-25 兩則跟進）證實 Anthropic 面試流程中會直接詢問候選人如何看待「使命」與「金錢」的優先順序，甚至問「若公司未來因安全考量放棄 AI 願景導致股票歸零，你會作何感受」；此為公司官方招募實務的獨立報導，與 08-07 憂慮傳言方向一致。**（2026-08-30 查證）**Anthropic 官方管道未刊載該發言，Axios 原文為付費牆二手轉述——**招募實務已由獨立報導證實，但 Dario 本人的具體發言場合與逐字稿查無官方紀錄**，改標查無官方。
 
 - 2026-08-07：Axios 報導（經 Yahoo Finance 轉載）稱 Dario Amodei 據稱憂心新進員工僅為薪資而非公司使命加入 Anthropic，與 08-03 Techmeme／The Next Web 報導同一主題的後續補充；報導另附帶對照——公司同期開出一則活動企劃負責人（brand marketing events lead）職缺，年薪達 32-40 萬美元，遠高於同類職位市場行情；具體發言場合與逐字稿仍未能取得（查證狀態見上方標記）（來源：Hacker News 50分／Yahoo Finance／Axios）
