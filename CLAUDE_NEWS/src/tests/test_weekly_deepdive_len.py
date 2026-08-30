@@ -8,8 +8,11 @@ markup 佔比在 5%（W31）到 20%（W34）之間浮動——同樣長度的兩
 過長的稿。兩種都靜默。故本檔的每一條都釘住「哪些字不該算」。
 """
 import importlib.util
+import tempfile
 import unittest
 from pathlib import Path
+
+NL = chr(10)
 
 _SPEC = importlib.util.spec_from_file_location(
     "check_weekly_ledger",
@@ -59,6 +62,60 @@ class DeepdiveVisibleLenTest(unittest.TestCase):
         """門檻與規格檔 `.claude/commands/weekly-report.md` 同步（2026-08-30 校準）。"""
         self.assertEqual((mod.DEEPDIVE_MIN_CHARS, mod.DEEPDIVE_MAX_CHARS), (900, 1300))
 
+
+
+class WeeklyNumbersGuardTest(unittest.TestCase):
+    """`check_weekly_numbers()` 的回歸測試。
+
+    2026-08-30 W35 踩過：「本週數字」整節寫成三欄表格，markdown 讀起來完全正常，
+    但 build_web 的 WEEKLY_STAT_RE 只認 `- **值**——說明`，於是解析出 0 筆、
+    網站上該節渲染成空殼。W30–W34 各 5 筆，只有 W35 是 0——**沒有任何檢查會擋**，
+    最後是使用者自己發現「怎麼沒有本週數字」。
+    """
+
+    def _write(self, tmp, body: str):
+        (tmp / "2026-W99.md").write_text(
+            "# 2026-W99\n\n## 四、本週數字\n\n" + body + "\n", encoding="utf-8")
+
+    def test_bullet_form_passes(self):
+        with tempfile.TemporaryDirectory() as d:
+            tmp = Path(d)
+            self._write(tmp, NL.join([
+                "- **+25%**——配額調高幅度",
+                "- **450 億美元**——合約總額",
+                "- **120 ／ 8,265**——未註冊套件份數",
+            ]))
+            rep: list = []
+            self.assertTrue(mod.check_weekly_numbers(rep, tmp), rep)
+
+    def test_table_form_is_blocked(self):
+        """殺手：表格在 markdown 裡好看，在網站上是空的。"""
+        with tempfile.TemporaryDirectory() as d:
+            tmp = Path(d)
+            self._write(tmp, NL.join([
+                "| 數字 | 是什麼 |", "|---|---|",
+                "| **+25%** | 配額 |", "| **450 億美元** | 合約 |", "| **120** | 套件 |",
+            ]))
+            rep: list = []
+            self.assertFalse(mod.check_weekly_numbers(rep, tmp))
+            self.assertIn("寫成表格", " ".join(rep), "訊息要說得出病因，否則讀者只知道數字不對")
+
+    def test_too_few_bullets_is_blocked(self):
+        with tempfile.TemporaryDirectory() as d:
+            tmp = Path(d)
+            self._write(tmp, "- **+25%**——只有一筆")
+            rep: list = []
+            self.assertFalse(mod.check_weekly_numbers(rep, tmp))
+
+    def test_half_width_dash_is_blocked(self):
+        """破折號必須是全形——半形 `--` build_web 認不得，同樣靜默落空。"""
+        with tempfile.TemporaryDirectory() as d:
+            tmp = Path(d)
+            self._write(tmp, NL.join([
+                "- **+25%**--配額", "- **450 億**--合約", "- **120**--套件",
+            ]))
+            rep: list = []
+            self.assertFalse(mod.check_weekly_numbers(rep, tmp))
 
 if __name__ == "__main__":
     unittest.main()

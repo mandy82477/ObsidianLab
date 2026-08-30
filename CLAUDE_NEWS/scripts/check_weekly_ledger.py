@@ -56,6 +56,13 @@ MAX_FORECASTS = 6
 # 沒人回頭改規格，於是錯誤範例活了三週而無人察覺。
 DEEPDIVE_HEADING_RE = re.compile(r"^(#{2,6})\s*深挖[：:]\s*(.*)$", re.MULTILINE)
 DEEPDIVE_LEVEL = "###"
+# 「本週數字」必須寫成 `- **值**——說明` 條列：build_web 的 WEEKLY_STAT_RE 只認這個形狀，
+# 寫成表格會解析出 0 筆、網站上該節渲染成空殼，而 markdown 看起來完全正常。
+# 2026-08-30 W35 踩過：整節寫成三欄表格，五個數字一個都沒上站，是使用者發現的。
+STAT_BULLET_RE = re.compile(r"^-\s*\*\*(.+?)\*\*\s*——\s*(.+)$", re.MULTILINE)
+NUMBERS_HEADING_RE = re.compile(r"^##\s*四、本週數字\s*$", re.MULTILINE)
+STAT_MIN = 3
+
 DEEPDIVE_MIN_CHARS = 900
 DEEPDIVE_MAX_CHARS = 1300
 
@@ -242,6 +249,33 @@ def check(report: list[str]) -> bool:
     return ok
 
 
+def check_weekly_numbers(report: list[str], weekly_dir: Path = WEEKLY_DIR) -> bool:
+    """『本週數字』必須解析得出 stats，否則網站上是空殼。
+
+    硬擋：這是靜默失敗——markdown 讀起來正常，只有網站上少一整節，
+    而沒有任何人會去比對 JSON。W30–W34 各 5 筆，W35 寫成表格得 0 筆。
+    """
+    ok = True
+    files = sorted(weekly_dir.glob("[0-9][0-9][0-9][0-9]-W[0-9][0-9].md")) if weekly_dir.exists() else []
+    for path in files:
+        if path.stem < HEADLINE_RULES_SINCE:
+            continue
+        text = path.read_text(encoding="utf-8-sig")
+        m = NUMBERS_HEADING_RE.search(text)
+        if not m:
+            continue
+        body = re.split(r"^##\s", text[m.end():], maxsplit=1, flags=re.MULTILINE)[0]
+        n = len(STAT_BULLET_RE.findall(body))
+        if n < STAT_MIN:
+            ok = False
+            hint = ("該節寫成表格了？" if "|" in body else "格式須為 `- **值**——說明`（全形破折號）")
+            report.append(
+                f"  ❌ {path.stem}：本週數字只解析出 {n} 筆（需 ≥ {STAT_MIN}）——{hint}"
+                "；build_web 的 WEEKLY_STAT_RE 只認條列，網站上該節會是空殼"
+            )
+    return ok
+
+
 def check_deepdive(report: list[str]) -> bool:
     """深挖專欄的小標層級與篇幅。
 
@@ -401,6 +435,7 @@ def check_headline(report: list[str], weekly_dir: Path = WEEKLY_DIR) -> bool:
 def main() -> int:
     report: list[str] = []
     ok = check(report)
+    ok = check_weekly_numbers(report) and ok
     ok = check_deepdive(report) and ok
     ok = check_headline(report) and ok
     out = _stdout()
