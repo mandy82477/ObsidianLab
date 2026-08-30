@@ -1432,8 +1432,8 @@
     ]
   },
   "https://support.claude.com/en/articles/15424964-claude-fable-5-on-your-plan": {
-    "hash": "4b335272e39c222b09f6e56337b3ec0a6538a499fc299ddc351e00d18ba0d323",
-    "length": 21961,
+    "hash": "e46a2fb4bfd3014cf2e6fb868b25416be0d4ea840ef7aaaceda2f41074b283d8",
+    "length": 21929,
     "segments": [
       "API FAQ Can I have a Claude account and a Console account?",
       "API Key Best Practices: Keeping Your Keys Safe and Secure",
@@ -1804,6 +1804,7 @@
       "What interfaces can I use to access Claude?",
       "What is Anthropic’s policy for handling governmental requests for user information?",
       "What is Claude Tag?",
+      "What is the Enterprise plan?",
       "What is the External Researcher Access Program?",
       "What is the Team plan?",
       "What should I do if I suspect my API key has been compromised?",
