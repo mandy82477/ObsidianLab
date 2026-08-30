@@ -24,12 +24,12 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 **領域：** 💼 商業
 **蒐集邊界：** 以 Claude 為參照系的競品動態為主，另針對競品發布與定價定向補抓（每日至多 2 則）；競品自身未與 Claude 對比的發布可能延遲或缺漏。**帶跑分數字的第三方對照評測收不到**——這類內容多發表於對照型部落格，不在本站蒐集範圍，因此本頁的競品能力比較以官方數字與社群並排實測為主，缺口處改指向外部活榜單（見 [[topics/model-comparison]] 的外部評測榜單節），不自行推算。
 **開始日期：** 2026-04
-**最後更新：** 2026-08-29
-**最後新聞更新：** 2026-08-29
+**最後更新：** 2026-08-30
+**最後新聞更新：** 2026-08-30
 
 > **最新競品動態**（2026-08-29）
-> - **Google 推出低價 AI 方案，對 Anthropic／Microsoft 企業客戶形成定價壓力**：CNBC 報導，僅標題層級可用、無具體數字，詳見「主要競品追蹤」新增子區塊。
-> - **08-26 記錄之 Google 法律 AI 賽道競爭、AgentConnect 開源多代理、Slack Code 官方確認、AGENTS.md 爭議，仍為近期重點**，詳見「主要競品追蹤」與「觀察重點」。
+> - **騰訊發布開放權重模型 Hy4 Preview（約 770B 參數）**：Simon Willison 轉引，中國陣營首度具名加入騰訊，詳見「主要競品追蹤」新增子區塊。
+> - **08-27 記錄之 Google 低價 AI 方案定價壓力，仍為近期重點**，詳見「主要競品追蹤」與「觀察重點」。
 
 ---
 
@@ -256,6 +256,10 @@ Claude Code 已成為 AI 輔助編碼的標竿產品，但競爭正快速升溫�
 - **團隊化正面對抗（2026-08-13，重大，跨多來源）**：TradingView、Bloomberg（各自獨立報導，source_count=3）同日報導 DeepSeek 正式組建團隊、推出新一代 AI agent，明確以挑戰 Anthropic Claude Code 為目標。**對競爭格局的意涵**：延續 05-22「正式宣布建構 Claude Code 競品」以來的策略主軸，本次首度出現「組建專責團隊」的具體組織化訊號，顯示投入已從單一產品發布升級為建制化長期競爭（推論）；具體團隊規模、成員背景未見報導細節，僅標題層級資訊（Google News/TradingView；Google News/Bloomberg）
 - **V4 Pro 正式上線（2026-08-13）**：KuCoin 報導 DeepSeek V4 Pro 上線，聲稱其 agent 表現逼近 **Claude 3 Opus**、成本僅一小部分；Simon Willison 部落格（08-12）證實該模型已透過 OpenRouter 以 API 形式上線："The latest DeepSeek Pro model is now available, via API only."。**注意**：對標對象為已非最新旗艦的 Claude 3 Opus（非 Opus 4.8／Opus 5），比較基準是否具代表性待查證；具體 benchmark 數字未見報導細節（Google News/KuCoin；Blog/Simon Willison https://simonwillison.net/2026/Aug/12/deepseek-v4-pro-0813/）
 
+### 騰訊 Hy4 🆕
+- **狀態**：新增追蹤（2026-08-29）——Simon Willison 部落格轉引騰訊今日發布新開放權重文字模型 **Hy4 Preview**，總參數量約 **770B**，不含視覺能力
+- **與既有中國陣營的關係**：延續 DeepSeek、Zhipu Z.AI、Moonshot AI 既有的中國開放權重模型追趕格局，騰訊為首度具名加入本頁追蹤的新進入者；具體 benchmark 數字、對標對象（是否對標 Fable 5 或 Sonnet 5）、API 定價、與 Claude Code 類產品的競爭關係均未見報導，僅 Simon Willison 轉引標題層級資訊，待後續補充（Blog/Simon Willison，2026-08-29 23:53 UTC）
+
 ### Zhipu Z.AI 🔴
 - **The Register：新模型自稱抓 bug 能力優於 Anthropic、OpenAI（2026-08-17，標題層級）**：The Register 報導 Zhipu 新模型宣稱抓 bug（bug-finding）能力優於 Anthropic 與 OpenAI 模型。**對競爭格局的意涵**：延續 08-15 已記錄 GLM-5.3 主打資安能力並稱已在 Cursor 找到「嚴重漏洞」，本則進一步將能力宣稱從「點名單一競品工具」升級為「正面對比 Anthropic、OpenAI 兩大模型商」，顯示 Zhipu 持續深化「資安／除錯能力」作為對抗 Anthropic 的差異化戰場（推論）；具體是否為同一款 GLM-5.3 模型、測試方法論、benchmark 數字均未見報導，僅標題層級資訊（Google News/The Register）
 - **GLM-5.3 發布，主打資安能力，據報已在 Cursor 找到「嚴重漏洞」（2026-08-15，專頁定向來源）**：VentureBeat 報導 Zhipu AI 發布 GLM-5.3，強調進階資安（cyber）能力，並稱該模型已在 Cursor 中發現一個「嚴重漏洞」（原文措辭 "already found a 'serious vulnerability'"）。**對競爭格局的意涵**：延續 08-14 已記錄「新程式碼生成模型對打 Anthropic、OpenAI」之後，是首次見到 Zhipu 陣營以「資安能力」（而非泛用編碼/成本）作為差異化訴求，且直接點名競品 Cursor 的具體漏洞發現作為能力佐證，若此類「用 AI 模型找競品漏洞」的行銷模式擴散，可能成為編碼模型間新的差異化戰場（推論）；具體漏洞細節、揭露/修補流程、Cursor 官方回應均未見報導，僅標題層級資訊（Google News/VentureBeat）
@@ -342,6 +346,9 @@ Claude Code 已成為 AI 輔助編碼的標竿產品，但競爭正快速升溫�
 #### 近期單日動態彙整（2026-07-02 至 2026-07-26）
 
 > 逐日條目按主題可另見上方「主要競品追蹤」對應廠商子區塊；此區塊保留完整時序供追溯查證。
+
+### 2026-08-29
+- **[新增追蹤] Simon Willison：騰訊發布開放權重模型 Hy4 Preview（約 770B 參數，不含視覺能力）**：中國陣營首度具名加入騰訊，詳見「主要競品追蹤」新增騰訊子區塊（Blog/Simon Willison）
 
 ### 2026-08-27
 - **[新增追蹤，待查證數字] CNBC：Google 推出低價 AI 方案，對 Anthropic、Microsoft 企業客戶形成定價壓力**：僅標題層級可用，無具體費率，詳見「主要競品追蹤」新增 Google 低價方案子區塊（Google News/CNBC）

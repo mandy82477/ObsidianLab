@@ -3,8 +3,8 @@ page: "topics/community-tech-discussions"
 kind: "topic"
 status: "ongoing"
 domain: "🌐 社群"
-last_updated: "2026-08-29"
-last_news_update: "2026-08-29"
+last_updated: "2026-08-30"
+last_news_update: "2026-08-30"
 status_main: "ongoing"
 days_since_news: 0
 inbound_links: 41
@@ -23,8 +23,8 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 **狀態：** ongoing
 **領域：** 🌐 社群
 **開始日期：** 2026-04-25
-**最後更新：** 2026-08-29
-**最後新聞更新：** 2026-08-29
+**最後更新：** 2026-08-30
+**最後新聞更新：** 2026-08-30
 
 > **最熱討論**（2026-08-29）
 > GitHub Issue「Bring Back Buddy」（#45596）留言持續增至 268、👍 2076，首見 18 天後仍在累積，由 ☄️閃現 升格 🌊延燒；GitHub Issue #6235 呼籲支援 AGENTS.md 標準累積至 385 則留言、6525 個 👍，跨平台已成競品共識。
@@ -144,6 +144,7 @@ MCP 的實際成本遠超多數使用者預期，已有多個量化案例：
 
 | 討論主題 | 首見 | 熱度 | 模式 | 核心論點 | 衍生 |
 |---------|------|------|------|---------|------|
+| Ask HN：如何戒除 Claude Code「工作狂式」依賴，找回可長期維持的正常工作步調 | 2026-08-29 | 🔥 | ☄️閃現 | 工程師發文求助如何戒除對 Claude Code 的工作狂式依賴；HN score 11，達收錄低門檻 | — |
 | Simon Willison 轉介 Anil Madhavapeddy：僅憑漏洞傳聞就足以讓資安研究者鎖定並找到可利用漏洞 | 2026-08-28 | 🔥 | ☄️閃現 | Anil Madhavapeddy 觀察筆記：僅漏洞傳聞已足以讓資安研究者鎖定並找到可利用漏洞，呼應近期多起 AI coding agent 資安事件（具名表態，無社群延燒）；[原文](https://simonwillison.net/2026/Aug/28/just-a-rumour-of-a-bug/)（Blog） | — |
 | 社群長期呼籲 Claude Code 支援 AGENTS.md 標準格式，跨平台已成競品共識 | 2026-08-27 | 🔥🔥🔥🔥 | ☄️閃現 | [GitHub Issue #6235] 指出競品已統一採用 AGENTS.md，累積 385 則留言、6525 個 👍，遠超收錄高門檻 | — |
 | Reddit r/artificial 週熱門：新基準 HarnessOpt-Bench 測試前沿 LLM 改寫其他 agent harness 的能力並防作弊 | 2026-08-27 | 🔥 | ☄️閃現 | 社群發布 HarnessOpt-Bench，測試 5 款前沿 LLM 改寫其他 agent harness 的能力，並設計防作弊機制；Reddit r/artificial 週熱門標記，達收錄低門檻 | — |
@@ -203,6 +204,7 @@ MCP 的實際成本遠超多數使用者預期，已有多個量化案例：
 
 **熱門討論細節**
 
+- **Ask HN：如何戒除 Claude Code「工作狂式」依賴，找回可長期維持的正常工作步調**：工程師發文求助：隨工作日推進、時間漸緊，其寫程式風格逐漸從「自己設計並撰寫、僅在卡關時求助 Claude Code」滑向對其依賴加深，目標是重新找回能穩定收工、對當日改動仍保有理解、下班後可放下工作的步調；HN score 11，剛達收錄低門檻，屬個人反思型討論，尚未見跨平台延燒或具體解法共識；與本頁「Vibe coding 成就感缺失」（06-18）、「AI Skill Atrophy」（06-10+）同屬「AI 輔助程度與掌控感／能力保有」議題軸線，本則聚焦工作步調與收工感，非能力退化或認同困惑角度
 - **社群長期呼籲 Claude Code 支援 AGENTS.md 標準格式，跨平台已成競品共識**：[GitHub Issue #6235](https://github.com/anthropics/claude-code/issues/6235) 指出 Codex、Amp、Cursor 等競品已陸續統一採用 AGENTS.md 作為跨工具 agent 配置標準，Claude Code 目前僅支援自家 CLAUDE.md 格式；該 issue 已累積 385 則留言、6525 個 👍 反應，遠超收錄高門檻；與本頁既有技術彙整「AGENTS.md 跨工具插件簡報」（Kobiton 案例）、[[topics/community-tech-patterns]] 記錄的 Caliber（跨工具設定統一管理工具）同屬「AGENTS.md 是否該成為業界標準」議題軸線，本則是該軸線首次以官方 issue 高互動度呈現的直接訴求；issue 本身分類歸功能記者已知問題追蹤，此處僅記錄其作為跨平台標準之爭的社群訊號面；[GitHub Issue #6235](https://github.com/anthropics/claude-code/issues/6235)（GitHub Issues）
 - **用量限制驅動的「規劃用 Claude Code、實作交給本地模型」混合工作流小趨勢**：近一週至少三則同方向案例：r/LocalLLaMA 使用者戲謔宣告「Pro 訂閱到期後改用本地 Qwen3.8-27B，已 7 小時沒用 Claude Code」（[原文](https://www.reddit.com/r/LocalLLaMA/comments/1vu1e3u/i_did_it_im_free_its_been_7_hours_since_i_used/)，週熱門，08-21）；另一使用者因 Max 訂閱每日用完額度三次，設計 MCP 架構把部分工作分擔給本地 Qwen3.8-27B（[原文](https://www.reddit.com/r/LocalLLaMA/comments/1vze6jl/running_local_llms_as_agents_in_claude_code/)，08-27）；XDA 媒體報導同方向混合工作流，宣稱藉此不再撞到用量上限（[原文](https://www.xda-developers.com/use-claude-code-for-planning-but-a-local-model-for-building/)，08-27，Google News）；三則跨 2 平台、逾 6 天持續出現同一「本地模型分流因應用量限制」主張，與本頁 08-19「樹莓派本地模型宣稱超越 Opus 5 High」（☄️閃現、單一貼文、訊號強度極弱）方向一致但屬不同具體宣稱，本則聚焦「工作流分工」而非「效能對比」；與 [[topics/community-tech-patterns]] 07-05「本地小模型分流節省 Context」機制觀察同屬一條「用量限制→本地模型分流」實務軸線
 - **Anthropic 潛在市場規模「30 兆美元」說法引發社群質疑：留言指出這是產業潛在市場總量，非實際營收承諾**：WSJ 報導 Anthropic 準備向投資人簡報時宣稱潛在市場規模上看 30 兆美元，為可能的創紀錄 IPO 鋪路；HN 討論（score 39，達中門檻）留言區隨即有人指出，該數字是「AI 服務整體潛在市場總量（TAM）」的產業估計，並非 Anthropic 宣稱自己能實際拿下的營收，提醒讀者不要把潛在市場規模與實際財測數字混為一談；Reuters 另有一篇同主題報導（source_count=2，僅為重複報導同一商業事實，非社群延燒佐證）；商業面（融資動機、IPO 佈局）已交由商業記者處理，本頁僅記錄社群對數字本身的質疑角度；[原文](https://www.wsj.com/tech/ai/anthropic-expected-to-tell-investors-it-sees-over-30-trillion-in-potential-revenue-a611efea)（HN）

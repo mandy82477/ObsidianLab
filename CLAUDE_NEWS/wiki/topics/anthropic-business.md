@@ -23,14 +23,12 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 **狀態：** ongoing
 **領域：** 💼 商業
 **開始日期：** 2026-05-28
-**最後更新：** 2026-08-29
-**最後新聞更新：** 2026-08-29
+**最後更新：** 2026-08-30
+**最後新聞更新：** 2026-08-30
 
-> **最新動態**（2026-08-29）
-> - **Anthropic 與 Nscale 簽署 450 億美元資料中心協議**：取得 460 MW Vera Rubin 世代算力，是繼近期 AMD、Nvidia 兩筆大型算力布局後第三筆重大基礎建設交易，詳見「戰略合作」表新增列。
-> - **Yahoo Finance 獨家：Claude 營收年增稱達 1,000%**（媒體獨家、未經官方確認）：對 ChatGPT 的企業市場差距持續縮小，詳見「戰略合作」表新增列。
-> - **Meta 傳將於 Anthropic 支出達 100 億美元**：紐約時報「亦敵亦友」報導補上具體金額，詳見「戰略合作」表更新列。
-> - **Salesforce／Claudeforce 合作獲財報面補強**：WSJ 報導 Salesforce 財報獲利與營收雙雙成長，同時擴大與 Anthropic 合作，詳見「戰略合作」表 Salesforce 列更新。
+> **最新動態**（2026-08-30）
+> - **Sony Music、Warner 等唱片公司控告 Anthropic**：指控大規模非法透過 BT 下載盜版音樂訓練 Claude，求償每首歌最高 15 萬美元，延續既有音樂出版商著作權訴訟並升級為主流唱片公司加入，詳見「商業風險」表更新列。
+> - **OpenAI 退出與 SpaceX 旗下 Cursor 的合作，Anthropic 加碼承接**（僅標題可用）：詳見「戰略合作」表新增列。
 
 ---
 
@@ -245,7 +243,7 @@ Financial Times 報導 Anthropic 旗艦模型在吸引一般使用者（general 
 | Nvidia 執行長對投資規模表態「後悔」（媒體轉述，未經證實）| 傳投資 Hugging Face 129 億美元；黃仁勳稱後悔先前投資 OpenAI/Anthropic 規模 | ℹ️ 待觀察 |
 | 創投人士質疑 IPO 前景（單一來源）| Chamath Palihapitiya「3 個 AI 殺手」警訊，質疑 2 兆美元 IPO 前景 | ℹ️ 市場觀感 |
 | Claude 浮水印可被繞過，恐損企業信任（單一來源）| Forbes 08-21 討論企業影響；WIRED 08-20 報導已有繞過方法 | ℹ️ 待觀察 |
-| 音樂出版商著作權侵權訴訟 | Round Hill Music 求償 10 億美元＋另一出版商對 Anthropic/Suno 提告（08-18）| ⚠️ 中 |
+| 音樂出版商著作權侵權訴訟（升級：三大唱片公司加入）| Sony Music、Warner 08-29 對 Anthropic 提告，求償每首歌最高 15 萬美元；延續 Round Hill Music（10 億美元，08-18）與另一出版商對 Anthropic/Suno 提告 | ⚠️ 高 |
 | 頂尖模型是否停售企業客戶（推論／單一來源）| The Information：傳 Anthropic/OpenAI 考慮不售最強模型給企業 | ℹ️ 待觀察 |
 | 企業因成本退出 | Microsoft 6/21 加速退出；Uber 警戒中；Amazon 傳降低 Alexa 對高成本模型依賴（07-23）| ⚠️ 高 |
 | 雲端夥伴自研模型替代；🔎 查無官方（標 2026-08-13｜查 自研模型、Microsoft｜複 2026-09-13）| Microsoft 傳以自研模型逐步取代 OpenAI/Anthropic（07-07 雙來源；08-13 複查未見新證）| ⚠️ 中高 |
@@ -263,6 +261,7 @@ Financial Times 報導 Anthropic 旗艦模型在吸引一般使用者（general 
 - **創投人士質疑 IPO 前景**：24/7 Wall St. 報導知名創投人 Chamath Palihapitiya 提出「3 個 AI 殺手」警訊，並質疑 Anthropic 傳聞中 2 兆美元 IPO 前景是否可能率先崩盤；與既有 08-15 Steve Eisman 唱空言論同屬市場知名人士公開質疑估值敘事的訊號，且與同日「IPO 前瞻與估值追蹤」表新增之 30 兆美元 TAM 論戰同源並發（推論）；具體「3 個殺手」論點內容、量化依據未見報導細節，僅標題層級資訊。
 - **Claude 浮水印被繞過**：Forbes（08-21）討論 Claude 輸出內容浮水印（為因應歐盟 AI Act 透明度規範，見 [[topics/anthropic-government-policy]]）對企業用戶的實務影響；同期 WIRED（08-20）報導工程師已找到繞過隱形浮水印的方法。若浮水印可被輕易繞過卻仍是企業合規/內容溯源依賴的機制，可能削弱企業客戶對浮水印作為「可信賴內容標示」的信任（推論）；具體實務影響內容、受影響企業類型、Forbes 論點細節均未見報導，僅標題層級資訊（Google News/Forbes；Google News/WIRED）。
 - **音樂出版商著作權訴訟**：The Hollywood Reporter 報導音樂出版商 Round Hill Music 對 Anthropic 提起著作權侵權訴訟，求償 **10 億美元**；Reuters 同期報導另一家音樂出版商對 Anthropic 與 Suno（AI 音樂生成服務）提起類似著作權侵權訴訟。延續本頁已記錄之著作權集體訴訟 15 億美元和解案（07-20 核准，見「財務狀況」表）、UTRF 專利侵權訴訟（07-21），是音樂出版業首度對 Anthropic 提起的具名著作權訴訟，顯示著作權法律風險正從文字出版業擴散至音樂產業；求償金額、具體侵權指控內容、與既有和解案的涵蓋範圍關係（是否涉及音樂作品）均未見報導細節，兩則均僅標題層級可用（The Hollywood Reporter；Reuters，2026-08-18）。
+- **音樂訴訟升級：Sony Music、Warner 加入提告（08-29）**：TechCrunch、Business Insider 報導 Sony Music、Warner 等唱片公司對 Anthropic 提起訴訟，指控其「大規模非法透過 BT 下載、抓取受版權保護音樂」訓練 Claude 系列模型並藉此牟利，求償**每首歌最高 15 萬美元**。與 08-18 記錄之 Round Hill Music（10 億美元）、另一出版商對 Anthropic/Suno 訴訟同屬音樂出版業著作權侵權求償，但本次原告改為主流大型唱片公司（Sony、Warner），且首度出現「BT 下載盜版」的具體侵權手法指控（先前記錄的 15 億美元著作權和解案指控的是書籍盜版，見「財務狀況」表）——顯示 Anthropic 訓練資料來源爭議正從書籍出版業擴散至音樂產業的主流廠牌層級，法律風險規模持續擴大（推論：每首歌 15 萬美元的求償上限若涵蓋大量曲目，潛在總求償金額可能達到與書籍和解案相當甚至更高的量級，惟具體涉案曲目數量未見報導）（[TechCrunch](https://techcrunch.com/2026/08/29/sony-music-warner-sue-anthropic-alleging-a-brazen-campaign-of-intellectual-property-theft/)；[Business Insider](https://www.businessinsider.com/anthropic-claude-training-copyright-music-lyrics-sony-lawsuit-2026-8)，2026-08-29）。
 - **頂尖模型是否停售企業客戶**：The Information 報導（僅標題可用）探討 Anthropic 與 OpenAI 是否將停止把最強模型販售給企業客戶、轉為自留競爭優勢；若屬實將是「賣模型」商業邏輯的根本轉向，與本頁「商業模式」段落既有「程式化／訂閱雙軌」框架方向相反（推論）；具體策略內容、時程、是否已有內部決策未見報導細節，待後續報導補充。
 - **企業因成本退出**：Microsoft 6/21 加速退出（原訂 6/30）；Uber 警戒中；Amazon 傳出逐步降低旗下 Alexa 對高成本模型依賴以削減支出（07-23，Business Insider，僅標題可用，詳見 [[topics/enterprise-cost-management]]）。
 - **雲端夥伴自研模型替代**：Microsoft 傳出以自研模型逐步取代部分產品中的 OpenAI/Anthropic 模型以降成本（SiliconANGLE/Bloomberg 2026-07-07）；查證後（2026-08-13）仍僅見同批雙來源報導，未見 Microsoft 或 Anthropic 官方證實或後續獨立報導；若屬實，依賴度收斂從編碼工具層擴大至底層模型層。
@@ -279,6 +278,7 @@ Financial Times 報導 Anthropic 旗艦模型在吸引一般使用者（general 
 
 | 合作方 | 類型 | 日期 | 意義 | 來源 |
 |--------|------|------|------|------|
+| Cursor（SpaceX 旗下）| 企業客戶（承接 OpenAI 退出的算力需求，僅標題可用）| 2026-08-29 | Wccftech：OpenAI 以對合約關係存疑為由退出與 SpaceX 旗下 Cursor 的合作，Anthropic 隨即宣布加碼投入 Claude 運算資源承接空出需求；具體合約規模、承接比例未見報導細節 | Google News/Wccftech |
 | Nscale（英國新創）| 基礎設施擴張（雲端整合，$450 億美元）| 2026-08-28 | 簽署 450 億美元資料中心協議，取得 460 MW Vera Rubin 世代算力；為繼 AMD、Nvidia 後第三筆重大算力布局 | Google News/Forbes；Google News/Financial Times |
 | Anthropic（營收信號，媒體獨家未經證實）| 企業客戶／營收信號（推論）| 2026-08-28 | Yahoo Finance 獨家稱 Claude 營收年增達 1,000%，企業市場對 ChatGPT 差距縮小（媒體轉述，待官方確認）| Google News/Yahoo Finance |
 | Salesforce（NYSE: CRM）| 企業客戶（CRM 整合＋業務外掛「Claudeforce」）| 2026-08-26 | 深化合作，發布 CRM 業務外掛「Claudeforce」；Salesforce 同步上修全年營收預測（08-28 WSJ 補強：財報獲利與營收雙雙成長）| [Reuters](https://www.reuters.com/technology/salesforce-raises-annual-revenue-forecast-2026-08-26/)；Google News/qz.com；Google News/CNBC；[WSJ](https://www.wsj.com/business/earnings/salesforce-profit-revenue-rise-expands-partnership-with-anthropics-claude-f17aa26f)；官方新聞稿 |
@@ -422,6 +422,10 @@ Financial Times 報導 Anthropic 旗艦模型在吸引一般使用者（general 
 ## 時序
 
 ### 2026-08
+
+#### 2026-08-29
+- **[商業風險，升級] TechCrunch／Business Insider：Sony Music、Warner 等唱片公司控告 Anthropic 大規模非法透過 BT 下載盜版音樂訓練 Claude，求償每首歌最高 15 萬美元**：延續 08-18 記錄之音樂出版商著作權訴訟（Round Hill Music 10 億美元、另一出版商對 Anthropic/Suno），本次原告升級為主流大型唱片公司，詳見「商業風險」表更新列（Google News/TechCrunch；Google News/Business Insider）
+- **[戰略合作，新增，僅標題可用] Wccftech：OpenAI 退出與 SpaceX 旗下 Cursor 的合作，Anthropic 加碼承接**：具體合約規模、承接比例未見報導細節，詳見「戰略合作」表新增列（Google News/Wccftech）
 
 #### 2026-08-28
 - **[戰略合作，新增] Forbes／Financial Times：Anthropic 與英國新創 Nscale 簽署 450 億美元資料中心協議，取得 460 MW Vera Rubin 世代算力**：繼 AMD、Nvidia 後第三筆重大算力布局，詳見「戰略合作」表新增列（Google News/Forbes；Google News/Financial Times）

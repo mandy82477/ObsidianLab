@@ -25,13 +25,11 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 **狀態：** active（持續調整中）
 **領域：** 💼 商業
 **首次出現：** 2026-04-25
-**最後更新：** 2026-08-29
-**最後新聞更新：** 2026-08-29
+**最後更新：** 2026-08-30
+**最後新聞更新：** 2026-08-30
 
-> **最新計費政策異動**（2026-08-29）
-> - **官方文件三則再查證（Fable 5 訂閱分界、用量／長度限制機制、usage credits 管理）**：08-28 官方 Help Center 內容與本頁既有記載一致，無新資訊，僅更新查證日。
-> - **Reddit：使用者整理十週時間軸指官方曾承諾 Fable 5 恢復訂閱內含，Pro 方案至今仍按 token 計費**：詳見「事故與爭議」新增條目；承諾兌現判定回報主編同步 [[topics/anthropic-commitments]]。
-> - **08-22 記錄之 Mythos 5 漏洞掃描導入額度、旗艦模型訂閱分界、週用量 +50% 促銷延長至 8/31，仍為近期重點**，詳見「當前生效的計費規則」與「定價與促銷」。
+> **最新計費政策異動**（2026-08-30）
+> - **週配額規則改版：09-14 起標準週配額永久 +25%，但現行 +50% 促銷 08-31 到期不續，相較目前水位實際減少約 17%**：詳見「當前生效的計費規則」新增／更新列，回報主編同步 feature-radar「⏰ 倒數中」。
 
 ## 現況
 
@@ -47,7 +45,7 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 
 | 方案 | 月費 | 訂閱內含 | 需另計費 | 可領優惠 | 你該做的動作 |
 |------|------|---------|---------|---------|------------|
-| Free | $0 | 基本額度；旗艦存取未載 | — | — | 週用量 +50% 促銷不適用本方案 |
+| Free | $0 | 基本額度；旗艦存取未載 | — | — | 09-14 起週配額永久 +25% 不適用本方案（見下方週配額改版說明）|
 | Pro | $20（年繳 $17／月）| 全模型，**旗艦除外** | **Fable 5** — $10/$50 per Mtok，走 usage credits | **已截止**：一次性 $100 過渡 credit 領取窗於 2026-08-02 關閉 | 已領者記得在 09-17 到期前用掉；至 `Settings > Usage` 確認 auto-reload 未開 |
 | Max 5x | $100 | 全模型；**旗艦上限為週用量 50%** | 超出後走 usage credits | — | 留意旗艦誤要求購點問題（見事故區）|
 | Max 20x | $200 | 同上，額度更高 | 同上 | — | 用量上限集體訴訟進行中 |
@@ -102,7 +100,8 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 
 - **✅ 2026-07-20 生效｜旗艦模型的訂閱分界（官方文件已確認）**：Max 方案、Team premium seats、舊制席位制 Enterprise premium seats — Fable 5 為標配，可用至多**每週用量上限的 50%**，不額外收費；Pro 方案、Team standard seats、Enterprise standard seats — Fable 5 **不計入方案用量**，需以 usage credits 按 API 費率（$10/$50 per Mtok）付費。合格 Pro 與 Team standard seats 另有**一次性過渡 credit $100**（Team 每 standard seat $100、每組織上限 $2,500），領取窗已於 2026-08-02 關閉、已領 credits 於 2026-09-17 到期，且可用於任何模型（[官方促銷條目](https://support.claude.com/en/articles/15862783)，2026-08-22 查證）。先前將 Fable 5 納入方案週用量的促銷結束於 2026-07-19 23:59:59 PT（來源：[Claude Fable 5 on your plan](https://support.claude.com/en/articles/15424964-claude-fable-5-on-your-plan)，2026-08-08 查證）
 - **⚠️ usage credits 開啟後，方案用量上限不再是硬停止**：credits 為 opt-in、預設關閉，於 `Settings > Usage` 開關，可設 auto-reload（每日兌換上限 $2,000）。開啟後 Claude 會在額度用盡後繼續回答並從 credits 扣款，體感與額度內無異，但每則超額回應皆計費——靠方案硬上限控管支出者需主動確認此開關（來源：[Manage usage credits](https://support.claude.com/en/articles/12429409-manage-usage-credits-for-paid-claude-plans)，2026-08-08 查證）
-- **⏰ 2026-08-31 到期（已再度延長；2026-08-28 查官方原文複查，日期仍有效）｜Claude Code 週用量 +50% 促銷**：官方於 2026-08-18 確認再度延長，適用期間由原訂 **2026-05-13** 起持續延續至 **2026-08-31**（此前歷經 06-22→07-07→07-12→07-19 等多次延長）；適用 **Pro／Max／Team 及舊制席位制 Enterprise**，**Free 方案與消耗制（consumption-based）Enterprise seat 不適用**；僅影響週用量上限，**5 小時用量上限不受影響**；符合資格帳號自動套用，無需操作。**更正**：此促銷此前於 07-19 一度被本頁誤記為與 Fable 5 免費期同步到期，實為兩條獨立時程——Fable 5 免費期確於 07-19 到期並由 07-20 分界取代，本促銷則持續延長中，並未終止（詳見下方「定價與促銷」08-18 條目）（來源：Hacker News 轉載 support.claude.com，2026-08-18 17:02 UTC，276 分）
+- **✅ 2026-08-31 到期（結局已定）｜Claude Code 週用量 +50% 促銷**：此暫時性促銷（原訂 2026-05-13 起，歷經 06-22→07-07→07-12→07-19→08-18 多次延長至 08-31）**如期於 2026-08-31 終止**，官方 2026-08-29 公告確認不再延長，改由下方「⏰ 2026-09-14｜標準週配額永久 +25%」規則接手（來源：[Bluesky @anthropicbot](https://bsky.app/profile/anthropicbot.bsky.social/post/3muaaxs5nx424)，2026-08-29）
+- **⏰ 2026-09-14 生效｜標準週配額永久調高 25%，但取消目前 +50% 加成 → 相較「目前」水位實際減少約 17%**：Anthropic 官方公告（Bluesky @anthropicbot，2026-08-29）自 2026-09-14 起將 Claude Code 標準週配額**永久**調高 **25%**，適用 **Pro、Max、Team 與座位制 Enterprise** 方案；同時上方「+50% 促銷」於 08-31 到期不再延續。換算：`1.25 ÷ 1.50 ≈ 0.833`，即讀者 09-14 起實際可用週配額約為現在（+50% 加成下）的 83%，較現況**減少約 17%**（BleepingComputer〈Anthropic is cutting Claude Code's current weekly limits by 17 percent〉標題即以此為框架）。**讀者該做的事**：09-14 前後若工作流貼近週配額上限，應預期實際可用量下降，評估是否需調整用量節奏或方案層級（來源：[Bluesky @anthropicbot](https://bsky.app/profile/anthropicbot.bsky.social/post/3muaaxs5nx424)、[BleepingComputer](https://www.bleepingcomputer.com/news/artificial-intelligence/anthropic-is-cutting-claude-codes-current-weekly-limits-by-17-percent/)，2026-08-29）
 - **訂閱配額制維持**：原定 2026-06-15 生效的 Agent SDK／`claude -p` 計費切割已於 2026-06-16 暫停，重新推行時間未定；Agent SDK、`claude -p`、第三方 Agent SDK app 用量持續計入訂閱配額，無需額外信用池（來源：2026-06-16、2026-06-18 DevOps.com）
 - **1M context window 觸發獨立 API 計費通道**：即使儀表板顯示 0% 訂閱用量，1M context window 仍會產生額外費用（實例：2026-05-11 用戶 0% 用量下遭收取 $3.37 Extra Usage）。1M 的世代分界與控制權缺口見 [[topics/long-context-1m]]
 - **`ANTHROPIC_API_KEY` 環境變數陷阱**：雲端環境（CI/CD、Docker、K8s）若設置此環境變數，所有 Claude Code 呼叫自動改走 API 計費通道而非訂閱配額（來源：2026-04-30）
@@ -110,7 +109,7 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 - **印度盧比在地化定價生效（2026-07-13）**：Pro 方案 **Rs 2,000／月**，為美國以外最大市場首次官方在地化定價；Max／Team／Enterprise 是否同步在地化未見報導（來源：2026-07-13～14 TechCrunch、NDTV、Times of India、bestmediainfo.com）
 - **Max 用量上限爭議進入司法程序**：2026-06-16 集體訴訟指控 Max 5x／Max 20x 實際限制遠低於廣告宣稱（Max 20x 實測僅 Pro 的 6–8 倍），訴訟結果將影響方案信任度與可能的退款／調整義務（來源：2026-06-16 CNET、Decrypt）
 
-> **已失效並移除的規則**：Fable 5 免費使用期（2026-07-19 到期，已由上方 07-20 分界取代）。「週用量 +50% 促銷」**不在此列**——此前曾被本頁誤記為與 Fable 5 免費期同步於 07-19 到期，經 2026-08-18 官方公告更正：該促銷持續延長中，現行狀態見上方「⏰ 2026-08-31 到期」條目。沿革見下方「重要政策變動紀錄」。
+> **已失效並移除的規則**：Fable 5 免費使用期（2026-07-19 到期，已由上方 07-20 分界取代）；Claude Code 週用量 +50% 促銷（如期於 2026-08-31 到期，未再延長，由上方「⏰ 2026-09-14｜標準週配額永久 +25%」規則接手）。沿革見下方「重要政策變動紀錄」。
 
 ---
 
@@ -294,6 +293,13 @@ git commit 歷史出現大寫字串「HERMES.md」會觸發靜默切換至 API �
 來源：[GitHub Issue #53262](https://github.com/anthropics/claude-code/issues/53262)
 
 ### 定價與促銷（模型定價、方案設計）
+
+#### 2026-08-29：官方公告週配額改版——09-14 起標準週配額永久 +25%，但 08-31 起不再延續 +50% 促銷，實際減少約 17%
+
+- **官方公告**：Anthropic 官方（[Bluesky @anthropicbot](https://bsky.app/profile/anthropicbot.bsky.social/post/3muaaxs5nx424)）宣布自 **2026-09-14** 起將 Claude Code 標準週配額**永久**調高 **25%**，適用 **Pro、Max、Team 與座位制 Enterprise** 方案；同時本頁已追蹤逾三個月的「週用量 +50% 促銷」（見上方「當前生效的計費規則」）如期於 **2026-08-31** 到期、不再延長。
+- **對讀者的實際影響（換算）**：`1.25 ÷ 1.50 ≈ 0.833`——09-14 起的永久週配額約為現行 +50% 加成水位的 83%，即**相較「目前」實際減少約 17%**；BleepingComputer 標題〈Anthropic is cutting Claude Code's current weekly limits by 17 percent〉即以此框架報導，多家媒體同步跟進。
+- **與既有沿革的關係**：+50% 促銷自 2026-05-13 起歷經 06-22→07-07→07-12→07-19→08-18 五度延長，本次是首度明確終止且改以「永久」而非「促銷」形式接手，性質從「暫時加成」轉為「基準值調整」——讀者不應再期待第六次延長。
+- **來源**：[Bluesky @anthropicbot](https://bsky.app/profile/anthropicbot.bsky.social/post/3muaaxs5nx424)、[BleepingComputer](https://www.bleepingcomputer.com/news/artificial-intelligence/anthropic-is-cutting-claude-codes-current-weekly-limits-by-17-percent/)，2026-08-29
 
 #### 2026-08-21：Anthropic 承諾 3,500 萬美元額度，供企業透過 Claude Security 導入 Mythos 5 漏洞掃描能力
 

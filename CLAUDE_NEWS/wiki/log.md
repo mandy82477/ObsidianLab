@@ -5033,3 +5033,37 @@ GH Actions 抓料排 10:23 UTC，到 14:45 UTC 仍未落地（+4.4 小時且持�
 - 摘要：聯邦法官裁定五角大廈將 Anthropic 列入供應鏈黑名單違法（第一/第五修正案理由，點名 Hegseth）持續發酵；資安研究者 Alon Hertz 揭露 llms.txt／llms-full.txt 套件搶注供應鏈風險，另有研究顯示僅需請 Claude Code 摘要網站即可誘發被騙；Anthropic 自陳「自動化研究員」能可靠緩解對齊失誤，媒體解讀為 Claude 早期自我改進跡象；Claude Code v2.1.251 新增 PreModelSwitch／PostModelSwitch hook 事件。
 - 呈現品質：全部通過
 - 轉知帳本：H-1813db（人物→商業，Jensen Huang wikilink）已於本輪結案；安全政策記者新開 H-0d4176、H-871320（轉知功能記者評估 Auto Mode 繞過與 llms.txt 摘要誘騙是否列入 claude-code.md 已知問題），待下輪功能記者派工時處理
+
+## 2026-08-30 Ingest
+
+**日報：** `news/2026-08-30.md`（13/13 來源、40 條）
+
+**派工：** 四類（功能／商業／社群／安全政策）。模型與人物今日無條目——騰訊 Hy4 Preview 屬競品動態歸商業 `competitor-landscape`，r/LocalLLaMA「中國 LLM 追上 Opus 4.8」屬社群討論面。
+
+**記者回報摘要**
+
+- **功能**：`entities/claude-code` 新增已知問題 5 則（Desktop Windows 當機 #85199／`--quiet` 旗標請求 #9340／context 狀態列對 Sonnet 4.6 顯示 200k #61734／Max 帳號被導向新帳號 onboarding 第 10 次通報 #83633／The Register llms.txt 信任誘騙），GitHub connector #71542 互動數 48→60，群組計數三處同步。轉知 2 筆全數處理並結案（H-0d4176 Cybernews「修復被拒絕」細節、H-871320 llms.txt）
+- **商業**：`entities/pricing`（週配額換軌）、`topics/anthropic-business`（Sony／Warner 版權訴訟、OpenAI 退出 Cursor 由 Anthropic 承接）、`topics/ai-talent-flow`（DeepMind 頂尖人才佔比下滑）、`topics/competitor-landscape`（騰訊 Hy4 Preview 770B 開放權重）。Yahoo Finance「營收年增 1,000%」與 08-28 既有記錄同一事件，未重複新增
+- **社群**：`community-tech-patterns` 收 gstack（Garry Tan 的 23 工具角色分工設定）、awesome-llm-apps（存量盤點）、dev.to 遞迴刪檔第一手記錄（新風險類型節點「模糊敘述觸發破壞性自主行動」）；`community-tech-discussions` 收 Ask HN 戒除依賴（HN 11 分，剛達低門檻，🔥☄️閃現）。best-claude-hud（501 星、單一訊號）留給週更策展；r/LocalLLaMA 該串 score 恆 0＋source_count=1，未達任一門檻不收錄
+- **安全政策**：`topics/ai-agent-safety` 收編碼代理 70 次重複錯誤模式、dev.to 刪檔事件的 agent 安全邊界面
+
+**主編彙整**
+
+- `feature-radar.md`：⏰ 倒數中 換軌——原「2026-08-31 +50% 促銷結束（動向未公布）」改為「**2026-09-14** 標準週配額永久 +25%、同時取消 +50%，淨減約 17%」。該促銷不是單純到期，是被永久制度接手但水位低於現況
+- `index.md`：無狀態變更（`topics/long-context-1m` 列已於本日稍早建頁時加入）
+- `data/source_attribution.jsonl`：append 18 筆
+- 轉知帳本：安全政策記者請轉知社群記者處理 dev.to 條目的 pattern／防護面——**同輪社群記者已自行收錄該條目**，需求當場滿足，不登帳
+
+**🔧 觸發邊漏接（本日發現並修正）**
+
+`topics/long-context-1m` 是 2026-08-30 稍早建的衍生頁，觸發邊當天登記於 `.claude/rules/wiki-ingest-features.md`。**首次受測即漏接**：#61734（狀態列對 Sonnet 4.6 顯示 200k，該模型實際支援 1M，24 則留言）被功能記者正確寫進 `claude-code` 已知問題，卻未同步 1M 頁。
+
+原因不在記者——原觸發表列的是「預設行為、開關、model picker、`[1m]` 變體」四類，**沒有「可見性」**。而「你看不出自己在不在 1M 上」正是控制權缺口的一種：前三條缺口（關不掉、選定保不住、`[1m]` 自成 id）都因為第四條而更難自救。
+
+處置：(a) 觸發表新增「1M 的可見性——狀態列／`/model`／設定畫面顯示的 context 上限與實際不符」一類，並明寫「不因為它『只是顯示問題』而排除」；(b) 頁面「三個你控制不了的地方」改為「你控制不了的地方」共四列，新增 #61734 列、時序 prepend、callout 覆寫為 08-29 該則。
+
+**可攜教訓：** 新建衍生頁的觸發表若以「現有證據的分類」列舉，就只涵蓋得了建頁當天手上那幾條。**列舉式觸發邊要在第一次受測時複查一遍**——漏的那類通常不是罕見情況，而是建頁時剛好沒發生過的常見情況。
+
+**📋 待使用者裁示**
+
+本輪 ingest 無新增待裁示項。`/wiki-lint` 08-29 輪留下的 7 項已於本日 `/weekly` 步驟 0.3 直接呈報給使用者，等待回覆。
