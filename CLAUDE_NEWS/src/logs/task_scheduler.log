@@ -401,3 +401,4 @@
 [Sun 2026/08/30 12:07:21.00] Web commit OK (0de830a8: web: rebuild 2026-08-30，含 frontmatter 重算輸出併入)
 [Sun 2026/08/30 12:07:21.00] Single push done (news + wiki + web, b4db24c0..0de830a8，第一次即成功無需重試)
 [Sun 2026/08/30 12:07:21.00] === Pipeline complete (agent) ===
+[cloud daily-news-pipeline-cloud STARTED 2026-08-30T12:04:20Z]
