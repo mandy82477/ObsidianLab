@@ -434,3 +434,4 @@
 [Mon 2026/08/31 22:59:34.36] Push non-fast-forward on first attempt - stash 暫存例外資料檔（emitted_items.json/seen_urls.json/official_watch_state.json 等）後 pull --rebase origin master 成功、push 成功（8daeb531..61538790），stash pop 後恢復
 [Mon 2026/08/31 22:59:34.36] Single push done (news + wiki + web)
 [Mon 2026/08/31 22:59:34.36] === Pipeline complete (agent) ===
+[cloud daily-news-pipeline-cloud STARTED 2026-08-31T17:04:25Z]
