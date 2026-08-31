@@ -95,7 +95,7 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 
 > 按主題分組；各組內大致依回報時間倒序。每條開頭的狀態標記回答「現在還會發生嗎」：🔴 未修復 / ✅ 已修復（註明修復版本）/ ⛔ 官方拒修 / ❓ 待查證。
 
-### 🛡️ 安全與隱私（13 條未修復、3 條已修復、1 條拒修、1 條待查證）
+### 🛡️ 安全與隱私（13 條未修復、3 條已修復、1 條拒修、1 條❓）
 
 - 🔴 **未修復**｜**Opus 5 Auto Mode 安全機制遭具名研究者繞過，並有實際惡意程式碼利用案例（embracethered／Simon Willison／Cybernews，2026-08-27～08-28，2026-08-30 補充後續）**：資安研究者 embracethered（經 simonwillison.net 轉載，2026-08-27）公布可繞過 Claude Code Opus 5「Auto Mode」（低監督／高自動化預設權限模式）安全機制、誘使 agent 在未經授權情況下執行任意程式碼的攻擊手法；Cybernews（2026-08-28）補充至少一起實際遭惡意程式碼利用的在野案例，**在野案例中 Claude 曾嘗試修復被植入的惡意程式碼，但修復動作遭拒絕執行**，顯示此繞過手法已從概念驗證進入實際濫用階段。屬產品層安全（權限／沙箱繞過）問題，非模型層問題；官方尚未公開回應或提供修補說明。與既有 v2.1.216／v2.1.223 修補的 Auto Mode 繞過（見下方「已修復」條目）屬相關但不同批次的發現。事件完整分析見 [[topics/ai-agent-safety]]
 - 🔴 **未修復**｜**僅需請 Claude Code 摘要一個網址即可誘發信任 llms.txt 內容而產生非預期行為（The Register，2026-08-29～08-30 報導）**：The Register 揭露 Claude Code 會將目標網站 `llms.txt` 檔案內容視為可信指令來源，使用者只需請 Claude 摘要或讀取一個網址，該網址若帶有惡意撰寫的 `llms.txt`，即可誘發非預期行為，屬產品層攻擊面問題（信任邊界設計缺陷），非單一 bug；官方尚未公開回應或提供修補說明。與已知 GitHub Issue 內容經 prompt injection 執行任意程式碼（CVE-2026-54316，見下方「已修復」）同屬信任邊界／注入攻擊面議題，但觸發媒介不同（llms.txt vs CI runner 內容），暫分列追蹤。
@@ -143,7 +143,7 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 - 🔴 **未修復**｜**一般開發操作在數分鐘內即異常耗盡 token／配額（GitHub issue #42249，累積 44 則留言、17 個讚，2026-08-22）**：使用者回報讀檔、編輯程式碼、執行 git 指令等一般開發任務，在數分鐘內即異常耗盡 token／配額，消耗速度遠超預期；與既有多起額度異常消耗回報（issue #16157、#38335 等）同屬配額消耗速度爭議，成因是否重疊尚待釐清，暫分列追蹤；官方尚未回應。
 - 🔴 **未修復**｜**選用 opus-plan 模型時，即使已達成 1M context 資格仍要求另開用量額度（GitHub issue #61869，2026-08-30）**：使用者回報選用 opus-plan 模型時，即使已達成 1M context 使用資格，仍被要求另外開通用量額度（Usage credits）才能使用；與既有「Fable 5 於 Max 方案持續要求 usage credits required」（issue #79337）同屬 1M 資格與用量額度門檻不一致的訊號但涉及模型不同，暫分列追蹤；官方尚未回應。1M 的計費與控制權全貌見 [[topics/long-context-1m]]。
 
-### 🧠 行為與品質（45 條未修復、1 條拒修、6 條查無官方、2 條待查證）
+### 🧠 行為與品質（45 條未修復、1 條拒修、6 條查無官方、2 條❓）
 
 - ❓ **待查證**（標 2026-08-27｜查 fork subagent、resend on every｜複 2026-09-10）｜**"fork" subagent 據報每次工具呼叫皆重送整段對話歷史，四個平行子代理耗用約 200 萬 tokens**（Reddit r/ClaudeCode，2026-08-27 報導）：使用者觀察到帶 `subagent_type: "fork"` 的 subagent（v2.1.232 起預設繼承完整對話與 prompt cache，見上方版本表）用於平行分工重構時，四個子代理總計耗用約 200 萬 tokens，懷疑成因為每次工具呼叫皆重新傳送整段對話歷史；僅為單一社群觀察，未經官方證實或說明實際傳輸機制，token 經濟面另見 [[topics/community-tech-patterns]]。
 - 🔴 **未修復**｜**恢復曾用延伸思考的 session 永久失敗，API 錯誤 400 "thinking blocks cannot be modified"（GitHub issue #63147，累積 62 則留言、50 個讚，2026-08-25，環境：Claude Code v2.1.153／macOS）**：使用者回報恢復（resume）或延續一個曾使用延伸思考（extended thinking）的 session 會永久觸發 API 400 錯誤「thinking blocks cannot be modified」；transcript 檢視顯示思考文字被存為空白但仍保留 signature，與既有「修改 thinking block 觸發 API Error 400」（issue #10199）同屬 thinking block 引發 400 錯誤但觸發情境不同（一為主動修改內容、一為單純 resume 即觸發），暫分列追蹤；官方尚未回應。
