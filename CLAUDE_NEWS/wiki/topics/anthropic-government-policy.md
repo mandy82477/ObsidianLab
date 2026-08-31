@@ -23,11 +23,12 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 **狀態：** ongoing（出口管制主線已解除，剩餘承諾落實與衍生支線持續觀察；中美 AI 工具信任對峙已獨立成頁）
 **領域：** 🏛️ 政策/安全
 **開始日期：** 2026-05-01
-**最後更新：** 2026-08-29
-**最後新聞更新：** 2026-08-29
+**最後更新：** 2026-08-31
+**最後新聞更新：** 2026-08-31
 
-> **最新動態**（2026-08-29）
-> - **判決法律依據明朗化：政府因 Anthropic 拒鬆綁軍事限制而報復，侵犯第一修正案與正當程序，Hegseth 被點名有責**：ibtimes.com（經 Hacker News 轉載，17 分）補上 Rita Lin 一案的具體判決理由——法官認定政府因 Anthropic 拒絕放寬 Claude 軍事用途限制而報復，侵犯其第一修正案權利、剝奪正當程序（第五修正案）保障，並認定國防部長 Pete Hegseth 有相關責任；此判決理由與本頁 07-13 已記錄的 NYT「言論自由報復」框架分析吻合，屬該早期推測的司法確認。The Guardian、FedScoop、SiliconANGLE 08-29 跟進報導同一裁決但未見超出 08-28 Reuters 首發的新事實；The Washington Post 另刊出評論〈The Pentagon loses a battle in its unnecessary war with Anthropic〉，將本案定性為政府對 Anthropic「不必要戰爭」中的一役。完整分析見「## 三個戰場」🪖 軍事合約段落與「## 攻防紀錄」。
+> **最新動態**（2026-08-31）
+> - **中國官方對 Anthropic 表態不滿，為美中 AI 對話設條件**：Bloomberg 報導，僅標題可用，具體不滿內容與設定的條件均未見報導；為出口管制主線落幕後首見中國官方直接對 Anthropic 表態的新事件，非既有 08-27～08-28 判決故事線的延伸。
+> - **五角大廈判決持續有評論跟進，惟未見超出 08-28/08-29 已記錄事實的新內容**：Inc.com 重申 Rita Lin 法官「違法且毫無依據」的判決用語；Reason.com 另刊評論，將本案定性為確立「私部門可對政府合作附加條件」的權利先例，為既有判決故事線補上一個新的評論框架（非新事實）。完整分析見「## 三個戰場」🪖 軍事合約段落與「## 攻防紀錄」。
 
 ---
 
@@ -47,6 +48,7 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 
 | 變數                       | 現狀                                                                                                                                                                                                                                                 | 下一觀察點                                                                                                                  |
 | ---------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|--------------------------------------------------------------------------------------------------------------------------|
+| 中國官方表態不滿，為美中 AI 對話設條件（新增，2026-08-31，僅標題可用） | Bloomberg（08-31）：中國官方對 Anthropic 表態不滿，並為關鍵美中 AI 對話設下條件；僅標題可用，具體不滿內容、設定條件與涉及哪場對話均未見報導。 | 具體不滿事由與條件內容；是否與 [[topics/safety-china-trust-dispute]] 既有「後門」敘事重燃或屬獨立新事件；是否有 Anthropic 官方回應 |
 | Anthropic 隱形浮水印政策（08-11 上線，持續更新，08-25 最新） | 文字輸出全面加隱形浮水印；**機制已由官方 08-14 說明**（低風險用詞選擇點＋金鑰驗證，模型層施加）| **偵測 API 尚未提供**（官方稱「即將」，無時程）；編輯後殘留率無量化數字。見 [[#浮水印政策]] |
 | 香港金融機構 Claude 存取限制（新增，2026-08-20，成因未明） | Yahoo Finance（08-20）：高盛、OKX 在港遭切斷 Claude 存取；成因未明。 | 具體切斷原因（政府指示／出口管制殘留規則／Anthropic 自身決策）；是否有其他香港企業同遭波及；是否與既有「身份管控收緊」「三項承諾落實」等支線相關 |
 | OpenAI 安全標準敘事（新增，2026-08-19） | The Information（08-19）：OpenAI 安全政策「拉高標準」追上 Anthropic；具體措施未見報導。 | 具體安全措施內容為何；是否有 Anthropic 官方回應；是否形成產業安全標準競賽的持續敘事 |
@@ -165,7 +167,7 @@ Anthropic 的整個品牌建立在一個論述上：「我們建造了史上最�
 
 2026-07-16，Politico（僅標題可用）報導參議員 Mike Rounds 就 Mythos 接受五角大廈簡報，顯示儘管 DoD 已大幅轉移工作量，國會軍事委員會層級對 Mythos 軍用能力的關注並未消退；具體簡報內容與 Rounds 立場（2026-07-16 報導，已掃日報至 2026-08-14 無後續；官方頁面未查證）。
 
-2026-08-28，聯邦法官裁定黑名單違法、即時解除禁令：Reuters／Washington Post 報導聯邦法官裁定國防部將 Anthropic 列入「供應鏈風險」黑名單一事違法且毫無根據，即時解除禁令；此為 07-30/31 首見的 Rita F. Lin 一案終局判決，爭議根源正是本段所述 Anthropic 與國防部因護欄立場不相容而談判破裂、DoD 轉移工作量的既有矛盾。The Register 指出黑名單當初所依據的 Claude「能力」實際上並不存在，是判決翻案的關鍵理由之一——呼應「根本矛盾」段落所述，Anthropic 自身安全論述曾被政府援引作為干預正當性，本案顯示此正當性未能通過司法審查。The American Prospect 從批判角度分析，質疑禁令解除後 Anthropic 是否會與國防部門加深合作、「護欄優先」立場是否因此鬆動，仍待觀察。**2026-08-29 補充判決法律依據**：ibtimes.com（經 Hacker News 轉載）具體化判決理由——法官認定政府因 Anthropic 拒絕放寬 Claude 軍事用途限制而報復，侵犯其第一修正案權利、剝奪正當程序（第五修正案）保障，並認定國防部長 Pete Hegseth 有相關責任；此與 07-13 NYT〈What the Government's Fight With Anthropic Reveals About Free Speech in America〉的「言論自由報復」框架分析（見「## 攻防紀錄」07-13 條目）相互印證。The Guardian、FedScoop、SiliconANGLE 同日跟進報導同一裁決，未見超出 Reuters 首發的新事實；The Washington Post 另刊評論文章，將本案定性為政府對 Anthropic「不必要戰爭」中的一役。
+2026-08-28，聯邦法官裁定黑名單違法、即時解除禁令：Reuters／Washington Post 報導聯邦法官裁定國防部將 Anthropic 列入「供應鏈風險」黑名單一事違法且毫無根據，即時解除禁令；此為 07-30/31 首見的 Rita F. Lin 一案終局判決，爭議根源正是本段所述 Anthropic 與國防部因護欄立場不相容而談判破裂、DoD 轉移工作量的既有矛盾。The Register 指出黑名單當初所依據的 Claude「能力」實際上並不存在，是判決翻案的關鍵理由之一——呼應「根本矛盾」段落所述，Anthropic 自身安全論述曾被政府援引作為干預正當性，本案顯示此正當性未能通過司法審查。The American Prospect 從批判角度分析，質疑禁令解除後 Anthropic 是否會與國防部門加深合作、「護欄優先」立場是否因此鬆動，仍待觀察。**2026-08-29 補充判決法律依據**：ibtimes.com（經 Hacker News 轉載）具體化判決理由——法官認定政府因 Anthropic 拒絕放寬 Claude 軍事用途限制而報復，侵犯其第一修正案權利、剝奪正當程序（第五修正案）保障，並認定國防部長 Pete Hegseth 有相關責任；此與 07-13 NYT〈What the Government's Fight With Anthropic Reveals About Free Speech in America〉的「言論自由報復」框架分析（見「## 攻防紀錄」07-13 條目）相互印證。The Guardian、FedScoop、SiliconANGLE 同日跟進報導同一裁決，未見超出 Reuters 首發的新事實；The Washington Post 另刊評論文章，將本案定性為政府對 Anthropic「不必要戰爭」中的一役。**2026-08-31 補充評論角度**：Inc.com 重申判決用語「違法且毫無依據」，未見超出 08-28/08-29 已記錄事實的新內容；Reason.com 另刊評論，將本案定性為確立「私部門可對政府合作附加條件的權利」之先例——與本段既有「Anthropic 核心產品主張與軍事需求結構性不相容」的分析框架相呼應，補上「此案對其他私部門與政府談判的示範效果」這一新的評論角度。
 
 ### 🚫 出口管制：誰來管最強的模型
 
@@ -233,6 +235,8 @@ Fable 5 發布後，Amazon 安全研究人員發現特定提示詞可讓模型�
 
 | 日期 | 方 | 動作 | 效果 |
 |------|----|------|------|
+| 2026-08-31 | 🏛️ | 中國官方對 Anthropic 表態不滿，為關鍵美中 AI 對話設下條件（Bloomberg，僅標題可用） | 出口管制主線落幕後首見中國官方直接對 Anthropic 表態的新事件；具體條件內容待查證 |
+| 2026-08-31 | 🌐 | 五角大廈判決評論持續跟進（Inc.com 重申判決用語；Reason.com 定性為「私部門可對政府附加條件」權利先例） | 補上新評論框架，未見超出 08-28/08-29 已記錄事實的新內容 |
 | 2026-08-29 | 🌐 | 判決法律依據明朗化：政府因 Anthropic 拒鬆綁軍事限制而報復，侵犯第一／第五修正案，Hegseth 被點名有責（ibtimes/HN）；Guardian／FedScoop／SiliconANGLE 跟進、WaPo 刊出評論 | 具體化 08-28 裁決的憲法層級理由，與 07-13 NYT 言論自由報復框架相互印證；跟進報導未見新事實 |
 | 2026-08-28 | 🏛️ | 聯邦法官裁定五角大廈將 Anthropic 列入「供應鏈風險」黑名單違法且毫無根據，即時解除禁令 | Rita F. Lin 一案（07-30/31 首見）終局判決；The Register：黑名單所據「能力」實際不存在，為翻案關鍵理由。 |
 | 2026-08-28 | 🏢 | The Boston Globe：Anthropic 在麻州州議會（Beacon Hill）政治獻金與遊說支出增加 | 僅標題可用，具體金額與遊說對象未見報導；是否與既有「州級 AI 規則倡議」構成同一佈局的具體個案待觀察 |
@@ -423,6 +427,10 @@ Fable 5 發布後，Amazon 安全研究人員發現特定提示詞可讓模型�
 - [Chris Olah Vatican Remarks](https://www.anthropic.com/news/chris-olah-pope-leo-encyclical) — Anthropic Blog
 
 ## 時序
+
+### 2026-08-31
+- **[新事件，新增，僅標題可用] Bloomberg：中國官方對 Anthropic 表態不滿，為關鍵美中 AI 對話設下條件**：出口管制主線落幕後首見中國官方直接對 Anthropic 表態的新事件，具體不滿事由、條件內容與涉及哪場對話均未見報導；與 [[topics/safety-china-trust-dispute]] 既有「後門」敘事是否重燃或屬獨立事件待查證，詳見「## 目前局勢」
+- **[評論跟進，無新事實，新增] Inc.com／Reason.com：五角大廈判決評論持續延燒**：Inc.com 重申 Rita Lin 法官「違法且毫無依據」判決用語；Reason.com 另刊評論，將本案定性為確立「私部門可對政府合作附加條件的權利」先例，補上新評論框架但未見超出 08-28/08-29 已記錄事實的新內容，詳見「## 三個戰場」🪖 軍事合約段落
 
 ### 2026-08-29
 - **[判決理由具體化，新增] Rita Lin 一案判決依據：政府因 Anthropic 拒鬆綁軍事限制而報復，侵犯第一／第五修正案，Hegseth 被點名有責**：ibtimes.com（經 Hacker News 轉載，17 分）補上 08-28 裁決的具體法律依據——法官認定政府因 Anthropic 拒絕放寬 Claude 軍事用途限制而報復，侵犯其第一修正案權利、剝奪正當程序（第五修正案）保障，並認定國防部長 Pete Hegseth 有相關責任；與本頁 07-13 已記錄的 NYT〈What the Government's Fight With Anthropic Reveals About Free Speech in America〉「言論自由報復」框架分析吻合，屬該早期推測的司法確認（[ibtimes.com](https://www.ibtimes.com/anthropic-just-beat-pentagon-court-judge-said-national-security-was-used-punish-its-ai-rules-3806895)，2026-08-28；經 HN 08-29 轉載）。The Guardian、FedScoop、SiliconANGLE 同日跟進報導同一裁決，均僅標題與轉址連結可用，未見超出 08-28 Reuters 首發的新事實；The Washington Post 另刊出評論〈The Pentagon loses a battle in its unnecessary war with Anthropic〉，將本案定性為政府對 Anthropic「不必要戰爭」中的一役（僅標題與轉址連結可用）

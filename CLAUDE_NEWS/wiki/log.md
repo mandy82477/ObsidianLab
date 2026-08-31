@@ -5126,3 +5126,31 @@ GH Actions 抓料排 10:23 UTC，到 14:45 UTC 仍未落地（+4.4 小時且持�
 **模型記者附帶提醒（未列入本輪執行）：** `topics/code-quality-decline` 的「Opus 5 上線後品質感知訊號群」已累積 14 則，**若下週破 20 則，可能該從純訊號記錄升級為有結構的獨立子頁**。屬社群記者／主編 lint 職權，記於此供下輪參考。
 
 **功能記者與社群記者對同一批工具的判斷分歧（已解）：** 兩人都看到跨 harness 工具潮，功能記者要在官方缺口矩陣開列、社群記者說 `community-tech-tools` 已標最高熱度屬「已加碼中」。兩者不衝突——工具目錄追的是「有哪些工具」，缺口矩陣追的是「官方補了沒」，後者確實空著。已在 ⟨G-11⟩ 細節區加 wikilink 指向前者，避免兩頁各自長出重複清單。
+## 2026-08-31 Ingest
+
+**日報：** `news/2026-08-31.md`（13/13 來源、61 條）
+
+**執行脈絡：** GitHub Actions 排程派工延遲惡化（本日 00:17 UTC 排程至 14:30 UTC 仍未建立 run；Actions 官方狀態頁無事故，08-27～30 實際觸發延遲 +14.6h～+20.9h），雲端 12:00 UTC 班被新鮮度防線正確擋下後改本機補跑：本機抓料 14:36 UTC → 日報 → 本 ingest。雲端 17:00／22:00 班將由冪等閘自動中止。
+
+**派工：** 四類（功能／商業／安全政策／社群）。模型與人物今日無條目——alignment 研究與自我改進報導屬 recursive-self-improvement（安全政策）、benchmark 波動分析屬社群討論面。
+
+**記者回報摘要**
+
+- **功能**：`entities/claude-code` 新增已知問題 2 則（#61869 1M context 需另開用量額度、#36582 終端機捲回頂端）＋ Compliance API 懸置標記（❓ 待查證，僅媒體報導無官方文件，複查 2026-09-14）；#61869 依 1M 觸發邊同步 `topics/long-context-1m`（控制表＋callout＋時序）。#80444／#65833／#10238 均為既有條目無新資訊未重複寫入。「AI agent 操作實體機器介面」僅標題可見，不足以判斷落點，本輪不建條目
+- **商業**：`entities/pricing`（週配額實質降規 17%，社群比較值標示）、`topics/anthropic-business`（Sony／Warner Chappell 正式提告、AWS GovCloud、FTX 股權處置、Claude for Teachers 免費開放美國學區）、`topics/competitor-landscape`（Google 低價定價策略——影音報導無具體費率標待查證、36氪 DeepSeek Harness 免費替代討論）
+- **安全政策**：`topics/ai-agent-safety`（Auto Mode 提示注入實測 60–80% vs 官方評測 0% 並陳、infostealer 竊取 Claude session 警示、LM Studio Bionic 定向條目）、`topics/anthropic-government-policy`（五角大廈供應鏈風險標籤判違法 Anthropic 勝訴、中國對美中 AI 對話設條件）、`topics/recursive-self-improvement`（自動化對齊研究 10/10 修復＋2.4% 作弊並陳）
+- **社群**：`community-tech-discussions` 新增 session URL 歸因議題（#66504 經 HN 延燒）＋ co-author 去標註轉向文並陳、benchmark 跨日波動 8.4 分（週熱門）、週配額反彈記入額度焦慮系列 🌊延燒；同步清理 4 筆逾 21 天 ☄️閃現與 1 筆孤兒懸置細節。dev.to 兩則為既有條目重出未重複收；存量盤點 4 repo（cc-switch 13.0萬星、graphify 11.3萬星、storybloq、awesome-claude-code）留待週更策展
+
+**主編彙整**
+
+- `feature-radar.md`：無新增條目、無熱度變動、版本無異動——radar 本輪不動。本週推薦「無新達標」已持續 16 天（最後輪替 08-15），接近 3 週檢討線，下輪再無替補須標 ⚠️ 檢討 🔥🔥🔥🔥 門檻
+- `index.md`：無狀態變更、無新頁
+- `data/source_attribution.jsonl`：append 27 筆
+- 轉知帳本：開 H-616500（安全政策 → 功能：Auto Mode 注入數字升級，評估同步 claude-code 已知問題）
+- 懸置命中判定：S 級 1 筆（`topics/anthropic-commitments` L55）為**假命中**——探針僅命中 `[[entities/pricing]]` wikilink 展開詞，命中條目是 CNBC「Google 低價 AI 定價」，與 Fable 5 訂閱內含承諾無關，不標訊
+- 官方查證（社群記者轉知）：週配額 17% 降規——WebFetch `support.claude.com` Pro/Max 說明頁，**查無週配額具體數字、查無異動記載**；pricing 維持「社群比較值／媒體稱」標示正確，官方數字缺席本身已記入 08-30 radar ⏰ 倒數中（09-14 換軌）
+
+**📋 待使用者裁示**
+
+本輪 ingest 無新增待裁示項。
+

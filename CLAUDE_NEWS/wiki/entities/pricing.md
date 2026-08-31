@@ -25,8 +25,8 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 **狀態：** active（持續調整中）
 **領域：** 💼 商業
 **首次出現：** 2026-04-25
-**最後更新：** 2026-08-30
-**最後新聞更新：** 2026-08-30
+**最後更新：** 2026-08-31
+**最後新聞更新：** 2026-08-31
 
 > **最新計費政策異動**（2026-08-30）
 > - **週配額規則改版：09-14 起標準週配額永久 +25%，但現行 +50% 促銷 08-31 到期不續，相較目前水位實際減少約 17%**：詳見「當前生效的計費規則」新增／更新列，回報主編同步 feature-radar「⏰ 倒數中」。
@@ -300,6 +300,7 @@ git commit 歷史出現大寫字串「HERMES.md」會觸發靜默切換至 API �
 - **對讀者的實際影響（換算）**：`1.25 ÷ 1.50 ≈ 0.833`——09-14 起的永久週配額約為現行 +50% 加成水位的 83%，即**相較「目前」實際減少約 17%**；BleepingComputer 標題〈Anthropic is cutting Claude Code's current weekly limits by 17 percent〉即以此框架報導，多家媒體同步跟進。
 - **與既有沿革的關係**：+50% 促銷自 2026-05-13 起歷經 06-22→07-07→07-12→07-19→08-18 五度延長，本次是首度明確終止且改以「永久」而非「促銷」形式接手，性質從「暫時加成」轉為「基準值調整」——讀者不應再期待第六次延長。
 - **來源**：[Bluesky @anthropicbot](https://bsky.app/profile/anthropicbot.bsky.social/post/3muaaxs5nx424)、[BleepingComputer](https://www.bleepingcomputer.com/news/artificial-intelligence/anthropic-is-cutting-claude-codes-current-weekly-limits-by-17-percent/)，2026-08-29
+- **08-31 跟進（非新事實，社群／媒體評論延燒）**：Hacker News 社群貼文（08-31）與 Android Headlines 分析文章同步討論此次改版，兩者均沿用官方已確認之「相較目前水位實際減少約 17%」換算數字，未提出新增數字；Android Headlines 將此定性為「悄悄降規」（quiet nerf），HN 討論串則拿 OpenAI Codex 的配額調整方式相比。**兩者均為社群/媒體評論或推算，非官方新公告**——17% 換算本身已於 08-29 由官方公告＋BleepingComputer 官方測算確認，本則僅補充後續輿論反應層面，不改變上方已記錄之官方規則內容（[Hacker News](https://twitter.com/ClaudeDevs/status/2093742322525810912)；[Android Headlines](https://www.androidheadlines.com/2026/08/anthropic-claude-code-weekly-limits-update.html)，2026-08-31）
 
 #### 2026-08-21：Anthropic 承諾 3,500 萬美元額度，供企業透過 Claude Security 導入 Mythos 5 漏洞掃描能力
 

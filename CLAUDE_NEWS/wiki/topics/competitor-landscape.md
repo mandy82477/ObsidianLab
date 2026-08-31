@@ -24,12 +24,12 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 **領域：** 💼 商業
 **蒐集邊界：** 以 Claude 為參照系的競品動態為主，另針對競品發布與定價定向補抓（每日至多 2 則）；競品自身未與 Claude 對比的發布可能延遲或缺漏。**帶跑分數字的第三方對照評測收不到**——這類內容多發表於對照型部落格，不在本站蒐集範圍，因此本頁的競品能力比較以官方數字與社群並排實測為主，缺口處改指向外部活榜單（見 [[topics/model-comparison]] 的外部評測榜單節），不自行推算。
 **開始日期：** 2026-04
-**最後更新：** 2026-08-30
-**最後新聞更新：** 2026-08-30
+**最後更新：** 2026-08-31
+**最後新聞更新：** 2026-08-31
 
-> **最新競品動態**（2026-08-29）
-> - **騰訊發布開放權重模型 Hy4 Preview（約 770B 參數）**：Simon Willison 轉引，中國陣營首度具名加入騰訊，詳見「主要競品追蹤」新增子區塊。
-> - **08-27 記錄之 Google 低價 AI 方案定價壓力，仍為近期重點**，詳見「主要競品追蹤」與「觀察重點」。
+> **最新競品動態**（2026-08-31）
+> - **36Kr：中國市場出現免費「DeepSeek Harness」替代方案討論，社群質疑付費訂閱 Claude Code 是否仍值得**：延續本頁既有 DeepSeek Harness 開源工具追蹤，詳見「主要競品追蹤」DeepSeek 子區塊新增細節。
+> - **CNBC 影音報導再度提及 Google 低價 AI 定價策略劍指 Anthropic 與 Microsoft**：與 08-27 已記錄事件同源，非新增數字，詳見「主要競品追蹤」Google 子區塊更新。
 
 ---
 
@@ -110,6 +110,7 @@ Claude Code 已成為 AI 輔助編碼的標竿產品，但競爭正快速升溫�
 - **狀態**：新聞角度首見追蹤，僅標題層級可用
 - **來源**：CNBC 報導 Google 推出「budget-friendly」AI 方案，對 Anthropic 與 Microsoft 的企業客戶形成價格競爭壓力
 - **對競爭格局的意涵**：延續本頁「競品定價對照」既有低價/免費策略觀察（DeepSeek、OpenCode、Antigravity 等），本次首見 Google 以「低價」正面點名 Anthropic 與 Microsoft 兩家企業客戶基礎（推論）；🔎 **查無官方數字**（標 2026-08-29｜查 Google、Anthropic、企業定價｜複 2026-09-12）：具體方案名稱、費率、與既有 Antigravity（Pro ~$20／Ultra ~$100，見上方「競品定價對照」表）的關係均未見報導細節，日報未載具體數字，不可推算或杜撰，待後續報導補充後再併入「競品定價對照」表（Google News/CNBC）
+- **08-31 跟進（非新事實）**：CNBC 以影音形式再度報導同一「低價 AI 定價策略劍指 Anthropic 與 Microsoft」敘事；未見新增方案名稱、費率或發布時間點，仍待具體數字後再併入「競品定價對照」表（Google News/CNBC，2026-08-31）
 
 ### Google 進軍法律 AI（新增追蹤，2026-08-25）
 - **狀態**：新聞角度首見追蹤，尚無產品細節
@@ -245,7 +246,8 @@ Claude Code 已成為 AI 輔助編碼的標竿產品，但競爭正快速升溫�
 - **推出程式碼託管平台「Origin」，藉 GitHub 中斷事件切入市場（2026-08-17）**：VentureBeat 報導 Cursor 推出名為 Origin 的程式碼託管平台，報導將此舉與同期 GitHub 服務中斷事件並置，稱其「暴露 AI 編碼賽道的市場空隙」。**對競爭格局的意涵**：是繼「Sand」agent（07-13 對標 Claude Cowork）之後，Cursor 產品線再度擴張——從「IDE／agent 工具」延伸至「程式碼託管基礎設施」層，直接挑戰 GitHub（Microsoft/Copilot 母公司）的核心業務範疇，若時機確與 GitHub 中斷事件相關，顯示 Cursor 正積極利用競品服務缺口搶佔市場（推論）；具體平台功能、與既有 GitHub/GitLab 的差異化、上線範圍未見報導細節，僅標題層級資訊（Google News/VentureBeat）
 
 ### DeepSeek 🔴
-- **狀態**：正式宣布建構 Claude Code 競品（2026-05-22）；DeepSeek V4 Flash 顛覆 agent 定價（2026-06-26）；Lindy 100% 切換案例（2026-06-29）；推出開源 agent 工具「Deep Code」直接對標 Claude Code（2026-07-07）；公開組建團隊、V4 Pro 正式上線正面挑戰 Claude Code（2026-08-13）；開源工具正式定名「DeepSeek Harness」、V4-Pro API 定價較高上線（2026-08-14）
+- **狀態**：正式宣布建構 Claude Code 競品（2026-05-22）；DeepSeek V4 Flash 顛覆 agent 定價（2026-06-26）；Lindy 100% 切換案例（2026-06-29）；推出開源 agent 工具「Deep Code」直接對標 Claude Code（2026-07-07）；公開組建團隊、V4 Pro 正式上線正面挑戰 Claude Code（2026-08-13）；開源工具正式定名「DeepSeek Harness」、V4-Pro API 定價較高上線（2026-08-14）；中國市場出現免費替代方案討論、質疑 Claude Code 付費訂閱價值（2026-08-31）
+- **中國市場「免費 DeepSeek Harness 替代方案」討論（2026-08-31）**：36Kr 報導中國市場出現以 DeepSeek Harness 為核心的免費替代方案討論，內容質疑 Claude Code 等付費編碼 agent 訂閱是否仍值得。與既有 08-14「Harness 正式定名、開源上線」屬同一工具的後續市場反響——本次首度出現「讀者/使用者端成本效益質疑」角度的報導，而非單純工具發布訊號；延續本頁 08-14 已記錄「低價 Flash／高價 Pro」雙軌定價觀察，若此類「免費夠用」論述在中國市場擴散，可能加劇 Anthropic 既有「補貼不可持續」商業風險（見 [[topics/anthropic-business]] 商業風險表）；具體討論內容、量化使用者流向數字均未見報導細節，僅標題層級資訊（Google News/36Kr，2026-08-31）
 - **DeepSeek Harness 正式定名、開源上線（2026-08-14，重大，補上工具具名）**：VentureBeat（source_count=2）報導 DeepSeek Harness 以開源形式問世，被明確定位為 Claude Code 的直接競品，同步搭配 API 定價較高的 V4-Pro 模型上線。**對競爭格局的意涵**：是繼 08-13「組建團隊、V4 Pro 上線」之後的具體落地——此前僅知「團隊化」與「V4 Pro 上線」兩個動作，本次首次補上開源工具的正式名稱「Harness」，顯示 DeepSeek 在「模型層」（V4-Pro）與「產品層」（Harness 開源工具）同步發力，與既有「Deep Code」（07-07）是否為同一工具或另一產品線，報導未見說明，暫不逕自合併記錄（推論）；「V4-Pro 定價較高」與既有 V4 Flash「成本降低逾 100 倍」宣稱方向相反，可能代表 DeepSeek 正建立「低價 Flash／高價 Pro」雙軌定價策略對應不同任務等級，惟具體定價數字、開源授權條款均未見報導細節，僅標題層級資訊，見「競品定價對照」表新增列（Google News/VentureBeat）
 - **策略**：「Beijing Wants the Whole Stack」——DeepSeek 不只是低成本替代生態，而是公開宣稱要打造從模型到開發工具的完整技術棧
 - **既有基礎**：DeepClaude（聲稱降低 17 倍成本）、DeepSeek-based Claude Code clone（8,700 Stars）
