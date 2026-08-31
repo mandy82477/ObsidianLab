@@ -7,8 +7,8 @@ last_updated: "2026-08-29"
 last_news_update: "2026-08-29"
 update_freq: "🗓️ 週更（每週策展一次；更新日期停留數天屬正常節奏）"
 status_main: "ongoing"
-days_since_news: 1
-inbound_links: 13
+days_since_news: 2
+inbound_links: 14
 attribution_count: 0
 attribution_last: null
 top_source: null

@@ -3,13 +3,13 @@ page: "topics/long-context-1m"
 kind: "topic"
 status: "ongoing"
 domain: "🛠️ 工具/功能"
-last_updated: "2026-08-30"
-last_news_update: "2026-08-30"
+last_updated: "2026-08-31"
+last_news_update: "2026-08-31"
 status_main: "ongoing"
 days_since_news: 0
-inbound_links: 7
-attribution_count: 1
-attribution_last: "2026-08-30"
+inbound_links: 8
+attribution_count: 2
+attribution_last: "2026-08-31"
 top_source: "github-issues"
 pending_count: 0
 pending_overdue: 0

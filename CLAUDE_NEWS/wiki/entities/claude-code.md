@@ -4,17 +4,17 @@ kind: "entity"
 type: "product"
 status: "active"
 domain: "🛠️ 工具/功能"
-last_updated: "2026-08-30"
-last_news_update: "2026-08-30"
+last_updated: "2026-08-31"
+last_news_update: "2026-08-31"
 status_main: "active"
 days_since_news: 0
-inbound_links: 74
-attribution_count: 396
-attribution_last: "2026-08-30"
+inbound_links: 75
+attribution_count: 399
+attribution_last: "2026-08-31"
 top_source: "github-issues"
-pending_count: 23
-pending_overdue: 3
-pending_next_review: "2026-08-31"
+pending_count: 24
+pending_overdue: 5
+pending_next_review: "2026-09-01"
 pending_signalled: 1
 signal: "健康"
 generated_by: "scripts/gen_wiki_frontmatter.py"
