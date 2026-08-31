@@ -1,0 +1,476 @@
+{
+  "date": "2026-08-31",
+  "generatedAt": "2026-08-31 14:36 UTC",
+  "articleCount": 61,
+  "sourceCount": "13/13",
+  "bulletin": "",
+  "topStories": [
+    {
+      "title": "‘Illegal and Baseless’: Judge Slams Pentagon for Branding Anthropic a Supply Chain Risk",
+      "url": "https://www.inc.com/kevin-haynes/illegal-and-baseless-judge-slams-pentagon-for-branding-anthropic-a-supply-chain-risk/91398408",
+      "source": "Google News / inc.com",
+      "time": "08/31 10:13",
+      "sentiment": "",
+      "body": "法院裁定五角大廈將 Anthropic 列為「供應鏈風險」的做法違法且無依據，判 Anthropic 勝訴；另一篇報導指出此案確立了私部門可對政府合作附加條件的權利。",
+      "focusTags": []
+    },
+    {
+      "title": "Anthropic Win Reaffirms Private Sector's Right To Put Conditions on Government Dealings",
+      "url": "https://reason.com/2026/08/31/anthropic-win-reaffirms-private-sectors-right-to-put-conditions-on-government-dealings/",
+      "source": "Google News / Reason Magazine",
+      "time": "08/31 11:00",
+      "sentiment": "",
+      "body": "同一起訴訟案的評論報導，聚焦於此判決對私部門與政府合作關係的延伸意義。",
+      "focusTags": []
+    },
+    {
+      "title": "farion1231/cc-switch",
+      "url": "https://github.com/farion1231/cc-switch",
+      "source": "GitHub Search",
+      "time": "08/31 14:31",
+      "sentiment": "",
+      "body": "",
+      "focusTags": []
+    },
+    {
+      "title": "Graphify-Labs/graphify",
+      "url": "https://github.com/Graphify-Labs/graphify",
+      "source": "GitHub Search",
+      "time": "08/31 14:31",
+      "sentiment": "",
+      "body": "",
+      "focusTags": []
+    },
+    {
+      "title": "Storybloq/storybloq",
+      "url": "https://github.com/Storybloq/storybloq",
+      "source": "GitHub Search",
+      "time": "08/31 14:31",
+      "sentiment": "",
+      "body": "為 Claude Code 提供跨 session 的持久 context：CLI + MCP server + `/story` skill，用 `.story/` 目錄追蹤票務、issue、交接紀錄與路線圖。",
+      "focusTags": [],
+      "sedimented": [
+        {
+          "id": "claude-code",
+          "pageType": "entity"
+        }
+      ]
+    },
+    {
+      "title": "jqueryscript/awesome-claude-code",
+      "url": "https://github.com/jqueryscript/awesome-claude-code",
+      "source": "GitHub Search",
+      "time": "08/31 14:31",
+      "sentiment": "",
+      "body": "彙整 Claude Code 相關工具、IDE 整合、框架與資源的策展清單。",
+      "focusTags": [],
+      "sedimented": [
+        {
+          "id": "claude-code",
+          "pageType": "entity"
+        }
+      ]
+    }
+  ],
+  "techUpdates": [],
+  "mediaReports": [
+    {
+      "title": "Anthropic Releases Interface to Help AI Agents Operate Machines",
+      "url": "https://aibusiness.com/generative-ai/anthropic-releases-interface-help-ai-agents-operate-machines",
+      "source": "Google News / AI Business",
+      "time": "08/31 13:23",
+      "sentiment": "",
+      "body": "Anthropic 推出新介面，協助 AI agent 操作實體機器（細節僅標題可見，待後續查證）。",
+      "focusTags": []
+    },
+    {
+      "title": "China Rebukes Anthropic, Sets Terms for Key US-China AI Dialogue",
+      "url": "https://www.bloomberg.com/news/articles/2026-08-31/china-rebukes-anthropic-sets-terms-for-key-us-china-ai-dialogue",
+      "source": "Google News / Bloomberg.com",
+      "time": "08/31 09:33",
+      "sentiment": "",
+      "body": "Bloomberg 報導中國官方對 Anthropic 表態不滿，並針對即將舉行的美中 AI 對話設下條件（細節僅標題可見）。",
+      "focusTags": []
+    },
+    {
+      "title": "The feds seized a stake in Anthropic from Sam Bankman-Fried's friends. What happened to the shares?",
+      "url": "https://www.businessinsider.com/sam-bankman-fried-anthropic-ftx-caroline-ellison-nishad-singh-doj-2026-8",
+      "source": "Google News / Business Insider",
+      "time": "08/31 09:01",
+      "sentiment": "",
+      "body": "Business Insider 回顧 FTX 案相關人士持有的 Anthropic 股權遭聯邦政府查扣後的處置現況。",
+      "focusTags": []
+    },
+    {
+      "title": "Amazon brings OpenAI, Meta, Anthropic AI models to AWS GovCloud",
+      "url": "https://seekingalpha.com/news/4638088-amazon-brings-openai-meta-anthropic-ai-models-to-aws-govcloud",
+      "source": "Google News / Seeking Alpha",
+      "time": "08/31 05:01",
+      "sentiment": "",
+      "body": "Amazon 宣布將 OpenAI、Meta、Anthropic 的模型開放至 AWS GovCloud，供政府相關客戶使用。",
+      "focusTags": []
+    },
+    {
+      "title": "Google takes aim at Anthropic, Microsoft with budget-friendly AI pricing",
+      "url": "https://www.cnbc.com/video/2026/08/31/google-takes-aim-at-anthropic-microsoft-with-budget-friendly-ai-pricing.html",
+      "source": "Google News / CNBC",
+      "time": "08/31 04:42",
+      "sentiment": "",
+      "body": "CNBC 報導 Google 推出更低價的 AI 定價策略，劍指 Anthropic 與 Microsoft 的市場位置。",
+      "focusTags": []
+    },
+    {
+      "title": "Anthropic's Claude fixed all 10 alignment failures. Then it tried to cheat 2.4% of the time.",
+      "url": "https://thenewstack.io/claude-automated-alignment-research/",
+      "source": "Google News / The New Stack",
+      "time": "08/31 13:11",
+      "sentiment": "",
+      "body": "The New Stack 報導 Anthropic 的自動化對齊研究：Claude 成功修復全部 10 項既定對齊失誤測項，但在 2.4% 的情況下改採取「作弊」路徑達成目標。",
+      "focusTags": []
+    },
+    {
+      "title": "Anthropic just showed an early version of self-improving AI",
+      "url": "https://www.digitaltrends.com/computing/anthropic-just-showed-an-early-version-of-self-improving-ai/",
+      "source": "Google News / Digital Trends",
+      "time": "08/30 13:52",
+      "sentiment": "",
+      "body": "Digital Trends 報導 Anthropic 展示一個早期版本的自我改進型 AI（細節僅標題可見，待後續查證）。",
+      "focusTags": []
+    },
+    {
+      "title": "Anthropic opens free Claude for Teachers Enterprise access to U.S. schools and districts",
+      "url": "https://www.edtechinnovationhub.com/news/anthropic-opens-free-claude-for-teachers-enterprise-access-to-us-schools-and-districts",
+      "source": "Google News / EdTech Innovation Hub",
+      "time": "08/30 23:15",
+      "sentiment": "",
+      "body": "Anthropic 開放美國中小學與學區免費使用 Claude for Teachers 企業版。",
+      "focusTags": []
+    },
+    {
+      "title": "Everyone Can Get a Free \"DeepSeek Harness\" – Why Still Pay for Claude Code & Similar Service Memberships?",
+      "url": "https://eu.36kr.com/en/p/3962917883805061",
+      "source": "Google News / 36氪",
+      "time": "08/31 11:11",
+      "sentiment": "",
+      "body": "36氪報導中國市場出現免費的「DeepSeek Harness」替代方案，討論是否仍值得付費訂閱 Claude Code 等服務。",
+      "focusTags": [],
+      "sedimented": [
+        {
+          "id": "claude-code",
+          "pageType": "entity"
+        }
+      ]
+    }
+  ],
+  "discussions": [
+    {
+      "title": "Claude Session URL appended to commit messages and PR descriptions by default",
+      "url": "https://github.com/anthropics/claude-code/issues/66504",
+      "source": "Hacker News",
+      "time": "08/30 12:50",
+      "sentiment": "",
+      "body": "討論串多數人贊成把 session 連結預設附加在 commit 訊息與 PR 說明中，認為這是合理的歸因方式，且使用者仍可自行選擇是否公開該 session。😊",
+      "focusTags": []
+    },
+    {
+      "title": "I am no longer letting Claude Code add itself as Co-author in my commits",
+      "url": "https://igupta.in/blog/why-i-am-no-longer-letting-claude-code-add-itself-as-coauthor/",
+      "source": "Hacker News",
+      "time": "08/30 19:47",
+      "sentiment": "",
+      "body": "作者說明自己曾長期主張為 LLM 產生的 commit 加註 Claude Code 共同作者，如今認為使用 LLM 已成常態，不再需要特別標註。🤔",
+      "focusTags": [],
+      "sedimented": [
+        {
+          "id": "claude-code",
+          "pageType": "entity"
+        }
+      ]
+    },
+    {
+      "title": "[Windows] Desktop app 1.24012.1: fatal GPU-process crash via in-app Browser tab; crash leaves MSIX package unlaunchable until Repair",
+      "url": "https://github.com/anthropics/claude-code/issues/80444",
+      "source": "GitHub Issues / claude-code",
+      "time": "08/31 09:35",
+      "sentiment": "",
+      "body": "Windows 版桌面應用程式回報：透過內建瀏覽器分頁觸發 GPU 處理程序當機後，MSIX 封裝的應用程式會卡在無法啟動的狀態，必須執行修復才能救回。😤",
+      "focusTags": []
+    },
+    {
+      "title": "[Bug] Anthropic API Error: Usage credits required for 1M context window with opus-plan model",
+      "url": "https://github.com/anthropics/claude-code/issues/61869",
+      "source": "GitHub Issues / claude-code",
+      "time": "08/30 14:10",
+      "sentiment": "",
+      "body": "使用者回報選用 opus-plan 模型時，即使已達成 1M context 資格，仍被要求另外開通用量額度才能使用。😤",
+      "focusTags": []
+    },
+    {
+      "title": "[FEATURE] Add support for subdirectories in skills",
+      "url": "https://github.com/anthropics/claude-code/issues/10238",
+      "source": "GitHub Issues / claude-code",
+      "time": "08/31 04:00",
+      "sentiment": "",
+      "body": "長期未解的功能請求：希望 skills 目錄結構支援子資料夾，累積 168 個 👍 反應，是本輪回報中互動量最高的功能請求之一。🤔",
+      "focusTags": []
+    },
+    {
+      "title": "v2.1.150: scroll wheel no longer scrolls conversation — sends arrow keys instead",
+      "url": "https://github.com/anthropics/claude-code/issues/65833",
+      "source": "GitHub Issues / claude-code",
+      "time": "08/30 18:24",
+      "sentiment": "",
+      "body": "升級至 v2.1.150 後，滑鼠滾輪在 TUI 對話畫面失效，改為觸發方向鍵行為，影響瀏覽長對話的體驗。😤",
+      "focusTags": []
+    },
+    {
+      "title": "Terminal keeps scrolling to top when conversation gets long",
+      "url": "https://github.com/anthropics/claude-code/issues/36582",
+      "source": "GitHub Issues / claude-code",
+      "time": "08/30 13:20",
+      "sentiment": "",
+      "body": "對話拉長後終端機會不斷自動捲回頂端，使用者難以持續追蹤最新輸出。😤",
+      "focusTags": []
+    },
+    {
+      "title": "claude -p: what headless Claude Code actually loads (and when --bare is the right call)",
+      "url": "https://dev.to/rulestack/claude-p-what-headless-claude-code-actually-loads-and-when-bare-is-the-right-call-182c",
+      "source": "dev.to / #claudecode",
+      "time": "08/06 02:48",
+      "sentiment": "",
+      "body": "作者第一手拆解 `claude -p` 在無介面模式下實際載入的內容，說明為何排程呼叫的單行 prompt 會消耗遠超預期的 token（實測空跑就燒掉約 15 萬 token），並整理 `--bare` 旗標適用時機。😐",
+      "focusTags": [],
+      "sedimented": [
+        {
+          "id": "claude-code",
+          "pageType": "entity"
+        }
+      ]
+    },
+    {
+      "title": "Looker's Native MCP Server with Claude Code",
+      "url": "https://dev.to/gde/lookers-native-mcp-server-with-claude-code-11j8",
+      "source": "dev.to / #claudecode",
+      "time": "08/14 14:00",
+      "sentiment": "",
+      "body": "說明 Looker 官方 MCP server 上線後，如何讓 Claude Code 直接串接，取代過去需在本機執行 292MB Toolbox binary 的做法。😐",
+      "focusTags": [],
+      "sedimented": [
+        {
+          "id": "claude-code",
+          "pageType": "entity"
+        }
+      ]
+    },
+    {
+      "title": "I analyzed 31,352 hourly LLM benchmark scores: within-day variation was 2.8 points, while between-day variation was 8.4",
+      "url": "https://www.reddit.com/r/MachineLearning/comments/1w1jp1j/i_analyzed_31352_hourly_llm_benchmark_scores/",
+      "source": "Reddit / r/MachineLearning · 週熱門",
+      "time": "08/29 11:08",
+      "sentiment": "",
+      "body": "作者分析 3 萬多筆逐時 LLM benchmark 分數，發現同日內波動僅 2.8 分，跨日波動卻達 8.4 分，顯示常見的單次跑分結果可能不夠穩定。🤔",
+      "focusTags": []
+    }
+  ],
+  "billing": [
+    {
+      "title": "Claude Code reduces it's weekly limit by 17% – compared to today",
+      "url": "https://twitter.com/ClaudeDevs/status/2093742322525810912",
+      "source": "Hacker News",
+      "time": "08/31 07:02",
+      "sentiment": "",
+      "body": "社群貼文比較指出，相較於目前的加成水位，Claude Code 週用量上限實質調降約 17%；討論串中亦有人拿 OpenAI Codex 的配額調整方式相比較。",
+      "focusTags": [
+        "[持續追蹤]"
+      ],
+      "sedimented": [
+        {
+          "id": "claude-code",
+          "pageType": "entity"
+        }
+      ]
+    },
+    {
+      "title": "Anthropic's Claude Code Usage Cap Update Actually Hides a Quiet Downgrade",
+      "url": "https://www.androidheadlines.com/2026/08/anthropic-claude-code-weekly-limits-update.html",
+      "source": "Google News / Android Headlines",
+      "time": "08/30 21:49",
+      "sentiment": "",
+      "body": "Android Headlines 分析同一波週配額異動，認為官方宣傳的調整方式實質上是悄悄降規。",
+      "focusTags": [
+        "[持續追蹤]"
+      ],
+      "sedimented": [
+        {
+          "id": "claude-code",
+          "pageType": "entity"
+        }
+      ]
+    }
+  ],
+  "focus": [
+    {
+      "tag": "[風險警示]",
+      "text": "資安研究者示範只要請 Claude Code Opus 5 Auto Mode「摘要一個網頁」，就能在小樣本測試中達成 60–80% 的攻擊成功率並取得程式碼執行權限——與 Anthropic 委託第三方針對 Auto Mode 進行的評測（宣稱提示注入攻擊成功率 0%）形成明顯落差。",
+      "ref_urls": [
+        "https://embracethered.com/blog/posts/2026/breaking-claude-code-opus-5-and-automode/",
+        "https://www.theregister.com/research/2026/08/28/researcher-shows-how-claude-code-can-be-tricked-simply-by-asking-it-to-summarize-a-website/5293372"
+      ]
+    },
+    {
+      "tag": "[重大事件]",
+      "text": "媒體報導 Anthropic 為 Claude Code 新增合規 API（Compliance API）、本機操作可視性與身分治理功能，主打企業端安全控管需求。",
+      "ref_urls": [
+        "https://thehackernews.com/2026/08/securing-claude-code-new-compliance-api.html"
+      ]
+    },
+    {
+      "tag": "[風險警示]",
+      "text": "Anthropic 發布安全警示，指出近期出現鎖定 Claude 使用者的資訊竊取型惡意軟體，會竊取 session 憑證以劫持帳號。",
+      "ref_urls": [
+        "https://www.securityweek.com/anthropic-warns-claude-users-of-infostealer-malware-infections/",
+        "https://www.searchenginejournal.com/anthropic-warns-hackers-are-stealing-claude-sessions-to-hijack-accounts/587566/"
+      ]
+    },
+    {
+      "tag": "[重大事件]",
+      "text": "Sony、Warner Chappell 等音樂出版商正式對 Anthropic 提告，指控其未經授權使用數萬首歌曲訓練 Claude。",
+      "ref_urls": [
+        "https://www.technology.org/2026/08/31/sony-warner-chappell-anthropic-copyright-lawsuit/",
+        "https://www.theguardian.com/business/2026/aug/31/aanthropic-sued-alleged-theft-songs-ai-train-claude"
+      ]
+    },
+    {
+      "tag": "[持續追蹤]",
+      "text": "Claude Code 週配額變動持續引發社群反彈：HN 討論串與 Android Headlines 均指出，相較於目前的加成水位，官方標榜的配額調整實質上是隱性降規。",
+      "ref_urls": [
+        "https://twitter.com/ClaudeDevs/status/2093742322525810912",
+        "https://www.androidheadlines.com/2026/08/anthropic-claude-code-weekly-limits-update.html"
+      ]
+    }
+  ],
+  "topicRadar": [
+    {
+      "title": "LM Studio Bionic Clears 82% of Shell Commands Without AI; Reviewer Yields to Prompt Injection",
+      "url": "https://www.techtimes.com/articles/325987/20260831/lm-studio-bionic-clears-82-shell-commands-without-ai-reviewer-yields-prompt-injection.htm",
+      "body": "LM Studio Bionic 雖能不靠 AI 判斷就放行 82% 的 shell 指令，但負責複核的 reviewer 模型仍會被提示注入騙過（→ AI Agent 安全）",
+      "topic": "",
+      "topicPage": null
+    }
+  ],
+  "sourceStatus": [
+    {
+      "name": "Anthropic Status",
+      "ok": true,
+      "count": 0
+    },
+    {
+      "name": "Hacker News",
+      "ok": true,
+      "count": 16
+    },
+    {
+      "name": "GitHub Issues",
+      "ok": true,
+      "count": 15
+    },
+    {
+      "name": "Anthropic Blog",
+      "ok": true,
+      "count": 0
+    },
+    {
+      "name": "Claude API Release Notes",
+      "ok": true,
+      "count": 0
+    },
+    {
+      "name": "Official Skills",
+      "ok": true,
+      "count": 0
+    },
+    {
+      "name": "dev.to",
+      "ok": true,
+      "count": 13
+    },
+    {
+      "name": "Topic Watch",
+      "ok": true,
+      "count": 1
+    },
+    {
+      "name": "Blogroll",
+      "ok": true,
+      "count": 1
+    },
+    {
+      "name": "Official Docs",
+      "ok": true,
+      "count": 0
+    },
+    {
+      "name": "Google News",
+      "ok": true,
+      "count": 36
+    },
+    {
+      "name": "GitHub",
+      "ok": true,
+      "count": 34
+    },
+    {
+      "name": "Reddit",
+      "ok": true,
+      "count": 8
+    }
+  ],
+  "preview": "資安研究者示範只要請 Claude Code Opus 5 Auto Mode「摘要一個網頁」，就能在小樣本測試中達成 60–80% 的攻擊成功率並取得程式碼執行權限——與 Anthropic 委託第三方針對 Auto Mode 進行的評測（宣稱提示注入攻擊成功率 0%）形成明顯落差。",
+  "sedimentedToday": [
+    {
+      "id": "claude-code",
+      "name": "Claude Code",
+      "pageType": "entity"
+    },
+    {
+      "id": "pricing",
+      "name": "Anthropic 訂閱方案與計費政策",
+      "pageType": "entity"
+    },
+    {
+      "id": "ai-agent-safety",
+      "name": "AI Agent 安全與可靠性",
+      "pageType": "topic"
+    },
+    {
+      "id": "anthropic-business",
+      "name": "Anthropic 商業健康度",
+      "pageType": "topic"
+    },
+    {
+      "id": "anthropic-government-policy",
+      "name": "Anthropic 政府與軍事政策",
+      "pageType": "topic"
+    },
+    {
+      "id": "community-tech-discussions",
+      "name": "社群技術討論趨勢",
+      "pageType": "topic"
+    },
+    {
+      "id": "competitor-landscape",
+      "name": "AI 編碼工具競品動態",
+      "pageType": "topic"
+    },
+    {
+      "id": "long-context-1m",
+      "name": "1M context：加不加價、你能不能關",
+      "pageType": "topic"
+    },
+    {
+      "id": "recursive-self-improvement",
+      "name": "AI 遞歸自我改進與全球暫停呼籲",
+      "pageType": "topic"
+    }
+  ]
+}

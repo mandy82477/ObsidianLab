@@ -39,13 +39,7 @@
       "time": "08/30 03:34",
       "sentiment": "",
       "body": "以 Rust 打造的輕量 Claude Code 狀態列 HUD 工具。",
-      "focusTags": [],
-      "sedimented": [
-        {
-          "id": "claude-code",
-          "pageType": "entity"
-        }
-      ]
+      "focusTags": []
     },
     {
       "title": "My AI assistant deleted my working files because I said \"I can't tell which ones are current\"",
@@ -63,13 +57,7 @@
       "time": "08/29 17:43",
       "sentiment": "",
       "body": "一名工程師發文求助，希望找到方法戒除對 Claude Code 的「工作狂式」依賴，改回能長期維持的正常工作步調。",
-      "focusTags": [],
-      "sedimented": [
-        {
-          "id": "claude-code",
-          "pageType": "entity"
-        }
-      ]
+      "focusTags": []
     }
   ],
   "techUpdates": [],
@@ -81,13 +69,7 @@
       "time": "08/29 20:00",
       "sentiment": "",
       "body": "XDA 記錄一名使用者將 Claude Code 執行中提示語自訂為專屬用詞的個人化實作過程。",
-      "focusTags": [],
-      "sedimented": [
-        {
-          "id": "claude-code",
-          "pageType": "entity"
-        }
-      ]
+      "focusTags": []
     },
     {
       "title": "4 Claude Skills Every Data Scientist Needs in 2026",
@@ -274,43 +256,8 @@
   "preview": "Anthropic 宣布自 9 月 14 日起永久調高 Claude Code 標準週配額 25%（適用 Pro、Max、Team 與座位制 Enterprise 方案）；但在此之前暫時實施的 +50% 加成屆時同步取消，相較「目前」的加成水位，實際上是減少約 17%。多方媒體同步報導此變動。",
   "sedimentedToday": [
     {
-      "id": "claude-code",
-      "name": "Claude Code",
-      "pageType": "entity"
-    },
-    {
-      "id": "pricing",
-      "name": "Anthropic 訂閱方案與計費政策",
-      "pageType": "entity"
-    },
-    {
-      "id": "ai-agent-safety",
-      "name": "AI Agent 安全與可靠性",
-      "pageType": "topic"
-    },
-    {
       "id": "ai-talent-flow",
       "name": "AI 實驗室人才流動",
-      "pageType": "topic"
-    },
-    {
-      "id": "anthropic-business",
-      "name": "Anthropic 商業健康度",
-      "pageType": "topic"
-    },
-    {
-      "id": "community-tech-discussions",
-      "name": "社群技術討論趨勢",
-      "pageType": "topic"
-    },
-    {
-      "id": "competitor-landscape",
-      "name": "AI 編碼工具競品動態",
-      "pageType": "topic"
-    },
-    {
-      "id": "long-context-1m",
-      "name": "1M context：加不加價、你能不能關",
       "pageType": "topic"
     },
     {
