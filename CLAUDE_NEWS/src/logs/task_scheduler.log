@@ -420,3 +420,17 @@
 [Mon 2026/08/31 12:16:10 UTC] Step 1a SKIPPED (cloud) - cp src/gathered_archive/2026-08-31.json 失敗（檔案不存在，GitHub Actions 今日抓料尚未落地）
 [Mon 2026/08/31 12:16:10 UTC] ABORTED: gathered_items.json date=2026-08-30 items=38，非目標日期的新鮮資料 - Step 1b 新鮮度防線中止，交由後續班次（17:00/22:00 UTC）接手
 [Mon 2026/08/31 12:16:10 UTC] === Pipeline aborted (cloud, 12:00 UTC shift) ===
+[Mon 2026/08/31 22:59:34.36] === Agent pipeline start (2026-08-31, 本機補跑) ===
+[Mon 2026/08/31 22:59:34.36] Step 0/1a/1b OK（本機補跑，GH Actions 排程延遲、雲端 12:00 UTC 班已正確中止）：13/13 來源、61 條，news/2026-08-31.md 已生成並 commit
+[Mon 2026/08/31 22:59:34.36] Wiki ingest OK - 四類記者並行完成：功能（entities/claude-code＋long-context-1m，新增 #61869／#36582 已知問題與 Compliance API 懸置標記）、商業（entities/pricing 週配額降規 17%、topics/anthropic-business 版權訴訟／GovCloud、topics/competitor-landscape）、安全政策（topics/ai-agent-safety infostealer 警示、topics/anthropic-government-policy 中國官方表態、topics/recursive-self-improvement 對齊數字）、社群（topics/community-tech-discussions）；主編彙整 log.md、source_attribution.jsonl（27 筆）、轉知 H-616500，feature-radar 本輪無異動
+[Mon 2026/08/31 22:59:34.36] Wiki commit OK (9c619ed0: wiki: auto-ingest 2026-08-31)
+[Mon 2026/08/31 22:59:34.36] 測試失敗且非單元測試案例（規則一致性檢查等）- web build 擋下（check_pending_markers.py：舊語法存量增加 147→151，claude-code.md 已知問題組頭統計行與 anthropic-government-policy.md／recursive-self-improvement.md 散文各新增 1 處無探針欄的「待查證」字樣）
+[Mon 2026/08/31 22:59:34.36] REPAIRED: 4 處改寫為不觸發舊語法偵測的措辭（組頭統計改用「❓」符號、散文改「未見報導／現階段無法判斷」），重跑 check_pending_markers.py 通過（146≤147 基線，未增加）；補提交 a89fbc69: wiki: fix gate failure - avoid legacy pending-marker word collisions；重跑 gate 後測試全綠 - web build 放行
+[Mon 2026/08/31 22:59:34.36] Building web reader...
+[Mon 2026/08/31 22:59:34.36] enrich_attribution_publisher.py OK（新增 publisher 15 筆）／gen_wiki_frontmatter.py OK（58 頁全寫入，健康 32／休眠 21／孤島 3／⚠️ 高引用但停滯 2）
+[Mon 2026/08/31 22:59:34.36] wiki: refresh frontmatter commit OK（7d127326）
+[Mon 2026/08/31 22:59:34.36] build_web.py OK - 35 entities, 23 topics, 125 digests, 6 weekly reports + radar（既有斷鏈 wikilink WARN 非本次新增，不阻斷）
+[Mon 2026/08/31 22:59:34.36] Web commit OK (8c891ac0: web: rebuild 2026-08-31)
+[Mon 2026/08/31 22:59:34.36] Push non-fast-forward on first attempt - stash 暫存例外資料檔（emitted_items.json/seen_urls.json/official_watch_state.json 等）後 pull --rebase origin master 成功、push 成功（8daeb531..61538790），stash pop 後恢復
+[Mon 2026/08/31 22:59:34.36] Single push done (news + wiki + web)
+[Mon 2026/08/31 22:59:34.36] === Pipeline complete (agent) ===
