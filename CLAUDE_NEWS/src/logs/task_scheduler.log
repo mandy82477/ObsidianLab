@@ -459,3 +459,4 @@
 [Tue 2026/09/01 17:04:30.00 UTC] === Agent pipeline start (2026-09-01) ===
 [Tue 2026/09/01 17:04:30.00 UTC] ABORTED: digest already exists (news/2026-09-01.md, committed by earlier shift today, pipeline complete 見同日 log 段 push c88ab178) - Step 0b 冪等閘中止，本班（17:00 UTC 班）不重跑
 [Tue 2026/09/01 17:04:30.00 UTC] === Pipeline aborted (cloud, 17:00 UTC shift) ===
+[cloud daily-news-pipeline-cloud STARTED 2026-09-01T22:04:53Z]
