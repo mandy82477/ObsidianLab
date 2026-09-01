@@ -444,3 +444,14 @@
 [Mon 2026/08/31 22:05:22.00 UTC] === Pipeline aborted (cloud, 22:00 UTC shift) ===
 [cloud daily-news-pipeline-cloud STARTED Tuesday 2026/09/01 12:07:09.31]
 [Tuesday 2026/09/01 12:07:52.72] ABORTED: gathered_items.json date=2026-08-31 items=66，非目標日期的新鮮資料 - archive/2026-09-01.json 不存在（GitHub Actions 尚未抓取），Step 1b 新鮮度防線中止（12:00 UTC 班）
+[週二 2026/09/01 23:51:00.00] === Agent pipeline start (2026-09-01) ===
+[週二 2026/09/01 23:51:00.00] Step 0/1a/1b OK - archive replay 補跑（GH Actions 15:00 UTC 落地後 pull）：13/13 來源、71 條，news/2026-09-01.md 已生成並 commit（612e090b）；src/gathered_items.json 與已提交版本零差異，Step 5 的 replay 收尾 checkout 照規範確認一次
+[週二 2026/09/01 23:51:00.00] Step 1c 確認 emitted-cache OK（已 commit，c43bf99f）
+[週二 2026/09/01 23:51:00.00] Wiki ingest OK - 五類記者完成（功能／商業／安全政策／社群／模型，人物今日無條目未派工）：claude-code（v2.1.252、H-616500 Auto Mode 數字同步）、pricing＋anthropic-business＋competitor-landscape＋ai-talent-flow（Lambda 350 億、Muse Code、DeepMind 四主管懸置）、ai-agent-safety＋anthropic-government-policy＋recursive-self-improvement（官方併案檢討＋METR 審查、懸置標訊 2 筆）、community-tech-patterns＋discussions（記憶否決記錄、額度焦慮雙節點）、mythos（UK AISI 同一事件官方回應）；主編已彙整 anthropic-commitments（新增 METR 審查追蹤列）、log.md、source_attribution 21 筆、H-616500 結案
+[週二 2026/09/01 23:51:00.00] Step 3 Wiki commit OK (67497275) - wiki/ + data/source_attribution.jsonl + data/pending-handoffs.jsonl
+[週二 2026/09/01 23:51:00.00] Step 4 web build gate：測試失敗且非單元測試案例（規則一致性檢查等）- web build 擋下（check_pending_markers.py：舊語法存量 147→149，+2；命中 wiki/topics/ai-talent-flow.md 頂部 callout 與 wiki/topics/competitor-landscape.md「動態」段落各一處裸露舊字樣「待查證」，非懸置標記本體、僅為散文提及）
+[週二 2026/09/01 23:51:00.00] REPAIRED: 兩處散文改寫避開裸露舊字樣（ai-talent-flow.md 改「標為懸置事項」；competitor-landscape.md 改「詳見下方待補充」），併入原 wiki commit（git commit --amend，67497275），重跑 gate 後測試全綠 - web build 放行
+[週二 2026/09/01 23:51:00.00] Building web reader... OK（enrich_attribution_publisher.py：新增 publisher 13 筆；gen_wiki_frontmatter.py：58 頁全寫入，健康 31／休眠 22／孤島 3／⚠️ 高引用但停滯 2）
+[週二 2026/09/01 23:51:00.00] build_web.py OK - 35 entities, 23 topics, 126 digests, 6 weekly reports + radar；既有斷鏈 wikilink 警告與本次改動無關，未新增
+[週二 2026/09/01 23:51:00.00] Step 5 Web commit OK (c88ab178) - Single push done (news + wiki + web + confirm-cache) - 首次嘗試即成功，無需重試 (7127718f..c88ab178)
+[週二 2026/09/01 23:51:00.00] === Pipeline complete (agent) ===
