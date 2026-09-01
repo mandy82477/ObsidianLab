@@ -48,13 +48,7 @@
       "time": "08/31 14:31",
       "sentiment": "",
       "body": "為 Claude Code 提供跨 session 的持久 context：CLI + MCP server + `/story` skill，用 `.story/` 目錄追蹤票務、issue、交接紀錄與路線圖。",
-      "focusTags": [],
-      "sedimented": [
-        {
-          "id": "claude-code",
-          "pageType": "entity"
-        }
-      ]
+      "focusTags": []
     },
     {
       "title": "jqueryscript/awesome-claude-code",
@@ -63,13 +57,7 @@
       "time": "08/31 14:31",
       "sentiment": "",
       "body": "彙整 Claude Code 相關工具、IDE 整合、框架與資源的策展清單。",
-      "focusTags": [],
-      "sedimented": [
-        {
-          "id": "claude-code",
-          "pageType": "entity"
-        }
-      ]
+      "focusTags": []
     }
   ],
   "techUpdates": [],
@@ -153,13 +141,7 @@
       "time": "08/31 11:11",
       "sentiment": "",
       "body": "36氪報導中國市場出現免費的「DeepSeek Harness」替代方案，討論是否仍值得付費訂閱 Claude Code 等服務。",
-      "focusTags": [],
-      "sedimented": [
-        {
-          "id": "claude-code",
-          "pageType": "entity"
-        }
-      ]
+      "focusTags": []
     }
   ],
   "discussions": [
@@ -179,13 +161,7 @@
       "time": "08/30 19:47",
       "sentiment": "",
       "body": "作者說明自己曾長期主張為 LLM 產生的 commit 加註 Claude Code 共同作者，如今認為使用 LLM 已成常態，不再需要特別標註。🤔",
-      "focusTags": [],
-      "sedimented": [
-        {
-          "id": "claude-code",
-          "pageType": "entity"
-        }
-      ]
+      "focusTags": []
     },
     {
       "title": "[Windows] Desktop app 1.24012.1: fatal GPU-process crash via in-app Browser tab; crash leaves MSIX package unlaunchable until Repair",
@@ -239,13 +215,7 @@
       "time": "08/06 02:48",
       "sentiment": "",
       "body": "作者第一手拆解 `claude -p` 在無介面模式下實際載入的內容，說明為何排程呼叫的單行 prompt 會消耗遠超預期的 token（實測空跑就燒掉約 15 萬 token），並整理 `--bare` 旗標適用時機。😐",
-      "focusTags": [],
-      "sedimented": [
-        {
-          "id": "claude-code",
-          "pageType": "entity"
-        }
-      ]
+      "focusTags": []
     },
     {
       "title": "Looker's Native MCP Server with Claude Code",
@@ -254,13 +224,7 @@
       "time": "08/14 14:00",
       "sentiment": "",
       "body": "說明 Looker 官方 MCP server 上線後，如何讓 Claude Code 直接串接，取代過去需在本機執行 292MB Toolbox binary 的做法。😐",
-      "focusTags": [],
-      "sedimented": [
-        {
-          "id": "claude-code",
-          "pageType": "entity"
-        }
-      ]
+      "focusTags": []
     },
     {
       "title": "I analyzed 31,352 hourly LLM benchmark scores: within-day variation was 2.8 points, while between-day variation was 8.4",
@@ -282,12 +246,6 @@
       "body": "社群貼文比較指出，相較於目前的加成水位，Claude Code 週用量上限實質調降約 17%；討論串中亦有人拿 OpenAI Codex 的配額調整方式相比較。",
       "focusTags": [
         "[持續追蹤]"
-      ],
-      "sedimented": [
-        {
-          "id": "claude-code",
-          "pageType": "entity"
-        }
       ]
     },
     {
@@ -299,12 +257,6 @@
       "body": "Android Headlines 分析同一波週配額異動，認為官方宣傳的調整方式實質上是悄悄降規。",
       "focusTags": [
         "[持續追蹤]"
-      ],
-      "sedimented": [
-        {
-          "id": "claude-code",
-          "pageType": "entity"
-        }
       ]
     }
   ],
@@ -427,41 +379,6 @@
   ],
   "preview": "資安研究者示範只要請 Claude Code Opus 5 Auto Mode「摘要一個網頁」，就能在小樣本測試中達成 60–80% 的攻擊成功率並取得程式碼執行權限——與 Anthropic 委託第三方針對 Auto Mode 進行的評測（宣稱提示注入攻擊成功率 0%）形成明顯落差。",
   "sedimentedToday": [
-    {
-      "id": "claude-code",
-      "name": "Claude Code",
-      "pageType": "entity"
-    },
-    {
-      "id": "pricing",
-      "name": "Anthropic 訂閱方案與計費政策",
-      "pageType": "entity"
-    },
-    {
-      "id": "ai-agent-safety",
-      "name": "AI Agent 安全與可靠性",
-      "pageType": "topic"
-    },
-    {
-      "id": "anthropic-business",
-      "name": "Anthropic 商業健康度",
-      "pageType": "topic"
-    },
-    {
-      "id": "anthropic-government-policy",
-      "name": "Anthropic 政府與軍事政策",
-      "pageType": "topic"
-    },
-    {
-      "id": "community-tech-discussions",
-      "name": "社群技術討論趨勢",
-      "pageType": "topic"
-    },
-    {
-      "id": "competitor-landscape",
-      "name": "AI 編碼工具競品動態",
-      "pageType": "topic"
-    },
     {
       "id": "long-context-1m",
       "name": "1M context：加不加價、你能不能關",

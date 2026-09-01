@@ -320,19 +320,9 @@
       "pageType": "entity"
     },
     {
-      "id": "mythos",
-      "name": "Claude Mythos",
-      "pageType": "entity"
-    },
-    {
       "id": "opus-5",
       "name": "Claude Opus 5",
       "pageType": "entity"
-    },
-    {
-      "id": "anthropic-commitments",
-      "name": "Anthropic 承諾兌現追蹤",
-      "pageType": "topic"
     },
     {
       "id": "code-quality-decline",
