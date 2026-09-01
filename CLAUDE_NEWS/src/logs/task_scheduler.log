@@ -443,3 +443,4 @@
 [Mon 2026/08/31 22:05:22.00 UTC] ABORTED: digest already exists (news/2026-08-31.md, committed by earlier run today - 本機補跑 pipeline complete 22:59:34 / commit fe13d91) - Step 0b 冪等閘中止，本班（22:00 UTC 班）不重跑
 [Mon 2026/08/31 22:05:22.00 UTC] === Pipeline aborted (cloud, 22:00 UTC shift) ===
 [cloud daily-news-pipeline-cloud STARTED Tuesday 2026/09/01 12:07:09.31]
+[Tuesday 2026/09/01 12:07:52.72] ABORTED: gathered_items.json date=2026-08-31 items=66，非目標日期的新鮮資料 - archive/2026-09-01.json 不存在（GitHub Actions 尚未抓取），Step 1b 新鮮度防線中止（12:00 UTC 班）
