@@ -5154,3 +5154,32 @@ GH Actions 抓料排 10:23 UTC，到 14:45 UTC 仍未落地（+4.4 小時且持�
 
 本輪 ingest 無新增待裁示項。
 
+## 2026-09-01 Ingest
+
+**日報：** `news/2026-09-01.md`（13/13 來源、71 條）
+
+**執行脈絡：** GH Actions 抓料 15:00 UTC 落地（排程 10:23，+4.6h），雲端 12:00 班正確中止；使用者要求提早出報，本機以 archive replay 補跑（料同源、未重抓）。同日使用者裁決：**交付期望改為隔日早上可讀**，台北 20:00 目標作廢（commit e4d695a7，trigger 註記／workaround-register／daily-gather.yml 三處同步，並修正「六班」誤記為三班 12/17/22）。
+
+**派工：** 五類（功能／商業／安全政策／社群／模型）。人物無條目；DeepMind 四主管流失屬 ai-talent-flow 定向條目歸商業。
+
+**記者回報摘要**
+
+- **功能**：`entities/claude-code`——v2.1.252 版本表、08-31 兩起服務降級（同日解決）、#22931 Cowork 封存消失（新增）、#15942／#20697／#52871 互動數更新；**H-616500 已處理**：Auto Mode 注入 60–80% vs 0% 已同步安全與隱私條目並升級嚴重度。radar 無新增（v2.1.252 純 bug fix）
+- **商業**：`anthropic-business`（Lambda 350 億雲端合約、8.5 萬認證、Trifecta 採用）、`competitor-landscape`（Meta Muse Code 出 beta 三層訂閱，無公開費率標待查證）、`pricing`（20x 僅 5 小時視窗的誤導爭議；官方 Fable 5 計費頁與 07-20 既有記錄一致未動筆）、`ai-talent-flow`（DeepMind 同日四主管，人名未載標懸置防誤併 08-05 批次）
+- **安全政策**：官方部落格首度併案檢討 07-30 三起評測環境連網＋08-04 UK AISI Mythos 5 事件，承諾 METR 獨立審查、已恢復外部測試——`ai-agent-safety` 以「既有事件官方升級」處理不新建列；`anthropic-government-policy` 五角大廈判決第三度重申標無新事實。**懸置標訊 2 筆**：infostealer（訊 09-01）、recursive-self-improvement 自動化研究員機制（訊 09-01，官方文聚焦資安非該機制，維持 ❓）
+- **社群**：`community-tech-patterns` 收 agent 記憶否決記錄（縫合索引記憶主線）；`community-tech-discussions` 額度焦慮系列補 20x 誤導＋撞限雙節點。oh-my-subagents／Blume（HN 各 3 分）未達門檻不收；存量盤點 caveman／open-design 留週更策展
+- **模型**：`entities/mythos`——UK AISI 事件與頁面既有 08-05 記錄確認為**同一事件**（官方首度正面回應），三處交叉標明防讀者誤判新案例；`fable-5` 促銷到期敘述 grep 核對已一致未動
+
+**主編彙整**
+
+- `topics/anthropic-commitments`：新增追蹤列「與 METR 合作獨立審查訓練環境安全事件」（🟡 進行中，2026-09-01）
+- `feature-radar.md`：無異動。本週推薦「無新達標」已 17 天（最後輪替 08-15），下輪再無替補須標 ⚠️ 檢討門檻
+- `index.md`：無狀態變更、無新頁
+- `data/source_attribution.jsonl`：append 21 筆
+- 轉知帳本：H-616500 已結案（功能記者處理完畢）
+- 品質備註：商業 歸因欄多筆未附完整 URL（主編以日報原文補齊）；安全政策 歸因欄同病 2 筆（已補）；模型 回報訊息夾雜一段簡體（頁面本文無此問題）
+
+**📋 待使用者裁示**
+
+本輪 ingest 無新增待裁示項。
+

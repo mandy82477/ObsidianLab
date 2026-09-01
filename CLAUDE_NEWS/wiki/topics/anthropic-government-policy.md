@@ -3,13 +3,13 @@ page: "topics/anthropic-government-policy"
 kind: "topic"
 status: "ongoing（出口管制主線已解除，剩餘承諾落實與衍生支線持續觀察；中美 AI 工具信任對峙已獨立成頁）"
 domain: "🏛️ 政策/安全"
-last_updated: "2026-08-31"
-last_news_update: "2026-08-31"
+last_updated: "2026-09-01"
+last_news_update: "2026-09-01"
 status_main: "ongoing"
 days_since_news: 0
 inbound_links: 75
 attribution_count: 72
-attribution_last: "2026-08-31"
+attribution_last: "2026-09-01"
 top_source: "google-news"
 pending_count: 13
 pending_overdue: 2
@@ -23,12 +23,12 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 **狀態：** ongoing（出口管制主線已解除，剩餘承諾落實與衍生支線持續觀察；中美 AI 工具信任對峙已獨立成頁）
 **領域：** 🏛️ 政策/安全
 **開始日期：** 2026-05-01
-**最後更新：** 2026-08-31
-**最後新聞更新：** 2026-08-31
+**最後更新：** 2026-09-01
+**最後新聞更新：** 2026-09-01
 
-> **最新動態**（2026-08-31）
-> - **中國官方對 Anthropic 表態不滿，為美中 AI 對話設條件**：Bloomberg 報導，僅標題可用，具體不滿內容與設定的條件均未見報導；為出口管制主線落幕後首見中國官方直接對 Anthropic 表態的新事件，非既有 08-27～08-28 判決故事線的延伸。
-> - **五角大廈判決持續有評論跟進，惟未見超出 08-28/08-29 已記錄事實的新內容**：Inc.com 重申 Rita Lin 法官「違法且毫無依據」的判決用語；Reason.com 另刊評論，將本案定性為確立「私部門可對政府合作附加條件」的權利先例，為既有判決故事線補上一個新的評論框架（非新事實）。完整分析見「## 三個戰場」🪖 軍事合約段落與「## 攻防紀錄」。
+> **最新動態**（2026-09-01）
+> - **五角大廈「供應鏈風險」違法判決第三度獲媒體跟進，無新事實**：Homeland Security Today 重申 08-28 已結案的判決，未見超出既有記錄的新內容。
+> - **中國官方對 Anthropic 表態不滿，為美中 AI 對話設條件**（2026-08-31）：Bloomberg 報導，僅標題可用，具體不滿內容與設定的條件均未見報導；為出口管制主線落幕後首見中國官方直接對 Anthropic 表態的新事件，非既有 08-27～08-28 判決故事線的延伸。完整分析見「## 三個戰場」🪖 軍事合約段落與「## 攻防紀錄」。
 
 ---
 
@@ -235,6 +235,7 @@ Fable 5 發布後，Amazon 安全研究人員發現特定提示詞可讓模型�
 
 | 日期 | 方 | 動作 | 效果 |
 |------|----|------|------|
+| 2026-09-01 | 🌐 | Homeland Security Today 跟進報導五角大廈「供應鏈風險」違法判決 | 第三家媒體重申 08-28 已結案判決，未見超出既有記錄的新內容 |
 | 2026-08-31 | 🏛️ | 中國官方對 Anthropic 表態不滿，為關鍵美中 AI 對話設下條件（Bloomberg，僅標題可用） | 出口管制主線落幕後首見中國官方直接對 Anthropic 表態的新事件；具體條件內容未見報導 |
 | 2026-08-31 | 🌐 | 五角大廈判決評論持續跟進（Inc.com 重申判決用語；Reason.com 定性為「私部門可對政府附加條件」權利先例） | 補上新評論框架，未見超出 08-28/08-29 已記錄事實的新內容 |
 | 2026-08-29 | 🌐 | 判決法律依據明朗化：政府因 Anthropic 拒鬆綁軍事限制而報復，侵犯第一／第五修正案，Hegseth 被點名有責（ibtimes/HN）；Guardian／FedScoop／SiliconANGLE 跟進、WaPo 刊出評論 | 具體化 08-28 裁決的憲法層級理由，與 07-13 NYT 言論自由報復框架相互印證；跟進報導未見新事實 |
@@ -427,6 +428,9 @@ Fable 5 發布後，Amazon 安全研究人員發現特定提示詞可讓模型�
 - [Chris Olah Vatican Remarks](https://www.anthropic.com/news/chris-olah-pope-leo-encyclical) — Anthropic Blog
 
 ## 時序
+
+### 2026-09-01
+- **[跟進，無新事實，新增] Homeland Security Today：跟進報導五角大廈「供應鏈風險」違法判決**：〈Federal Judge Rules DOD Anthropic Supply Risk Designation Illegal〉重申 08-28 已結案的 Rita Lin 一案判決，為第三家跟進媒體（續 Inc.com／Reason.com 08-31 評論），未見超出既有記錄的新內容
 
 ### 2026-08-31
 - **[新事件，新增，僅標題可用] Bloomberg：中國官方對 Anthropic 表態不滿，為關鍵美中 AI 對話設下條件**：出口管制主線落幕後首見中國官方直接對 Anthropic 表態的新事件，具體不滿事由、條件內容與涉及哪場對話均未見報導；與 [[topics/safety-china-trust-dispute]] 既有「後門」敘事是否重燃或屬獨立事件，現階段無法判斷，詳見「## 目前局勢」

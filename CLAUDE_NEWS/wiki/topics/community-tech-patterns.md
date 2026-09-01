@@ -25,8 +25,8 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 **狀態：** ongoing
 **領域：** 🌐 社群
 **開始日期：** 2026-04-25
-**最後更新：** 2026-08-30
-**最後新聞更新：** 2026-08-30
+**最後更新：** 2026-09-01
+**最後新聞更新：** 2026-09-01
 
 > **最新工作流模式**（2026-08-30）
 > - **存量盤點雙響**：Shubhamsaboo/awesome-llm-apps（13.5 萬星，彙整百餘款 AI Agent／Agent Skills／RAG 開源應用清單）與 garrytan/gstack（13.0 萬星，Garry Tan 公開自己的 Claude Code 設定，23 個角色化工具分飾 CEO、設計師、工程經理等職能）本庫今日首次收錄。
@@ -160,6 +160,15 @@ Claude Code 的三種多 agent 機制，可對應到 Anthropic《Building Effect
 ## 技術彙整
 
 ### 2026-08
+
+#### agent 記憶需要「否決記錄」：可驗證、防竄改的「此路已被否決」機制（2026-08-31）
+
+- **主線：** 索引記憶
+- **核心模式：** 作者主張 agent 記憶系統除了記住「怎麼做」，更需要明確記住「這條路已經被否決過」，且此類否決紀錄必須以**可驗證、防竄改**的方式保存（而非僅存在人類記憶或散落討論串中），避免 agent 反覆重踩已被排除的方案
+- **與既有模式的關係：** 與本頁 2026-08-07「已否決方案的隱形重工成本」同屬「agent 不記得什麼不該再做一次」議題軸線；本則補上具體的實作要求——否決紀錄要**可驗證**（能查證確有此決策）且**防竄改**（沒人能悄悄改掉或移除），把 08-07 的概念性觀察推進一步到「這個索引本身該長什麼樣」；縫合 [[topics/community-large-codebase-workflow]] 索引記憶主線
+- **可信度註記：** dev.to 走內容判斷不套互動門檻（讚數在 dev.to 非品質指標）；本則屬論述型主張，未附具體工具或實作程式碼，暫記為概念性補充
+- **來源：** 「[Your agent's memory needs the word 'no' — and a way to prove nobody edited it](https://dev.to/masondelan/your-agents-memory-needs-the-word-no-and-a-way-to-prove-nobody-edited-it-2kg8)」— dev.to `#claudecode`（5 讚；依規則以第一手論述內容判斷，非讚數）
+- **成熟度：** ⏳ 新興（今日首見，概念性主張，尚無具體工具或量化案例佐證）
 
 #### 「一句話觸發遞迴刪檔」：向 AI 編碼助理表示「不確定哪些檔案是最新的」導致整個資料夾被強制刪除（2026-08-30）
 

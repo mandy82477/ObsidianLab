@@ -23,13 +23,15 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 **狀態：** ongoing
 **領域：** 💼 商業
 **開始日期：** 2026-05-28
-**最後更新：** 2026-08-31
-**最後新聞更新：** 2026-08-31
+**最後更新：** 2026-09-01
+**最後新聞更新：** 2026-09-01
 
-> **最新動態**（2026-08-31）
-> - **Amazon 將 OpenAI、Meta、Anthropic 模型帶進 AWS GovCloud**：供政府相關客戶使用，Claude 首度隨此管道進入美國政府雲環境，詳見「戰略合作」表新增列。
-> - **Anthropic 開放美國中小學與學區免費使用 Claude for Teachers 企業版**：延續 Claude Academy（08-23）教育普及路線，本次首度將免費企業版存取擴及 K-12 學區，詳見「戰略合作」表新增列。
-> - **Sony、Warner Chappell 等音樂出版商正式提告**：多家媒體（technology.org、The Guardian）跟進 08-29 已記錄之 Sony Music／Warner 唱片公司訴訟，補上「Warner Chappell」具體法律實體名稱，非新事實，詳見「商業風險」表細節更新。
+> **最新動態**（2026-09-01）
+> - **Anthropic 與 Lambda 簽 350 億美元雲端運算合約**：Nvidia 支持的雲端業者，資金牽涉德州一座由比特幣礦商營運的資料中心園區，詳見「戰略合作」表新增列。
+> - **Claude 認證累計 8.5 萬張，Anthropic 擬擴大夥伴培訓規模**：延續既有 DXC（訓練數萬名認證工程師）、Cognizant（認證人才梯隊）等培訓型合作，本次首見全公司層級累計數字，詳見「戰略合作」表新增列。
+> - **Trifecta Technologies 與 Anthropic 合作導入 Claude 服務**：詳見「戰略合作」表新增列。
+> - **Amazon 將 OpenAI、Meta、Anthropic 模型帶進 AWS GovCloud**：供政府相關客戶使用，Claude 首度隨此管道進入美國政府雲環境，詳見「戰略合作」表新增列（08-31）。
+> - **Sony、Warner Chappell 等音樂出版商正式提告**：09-01 多家媒體聚焦訴訟正式提交面，與 08-29/08-31 已記錄事件同一案，非新事實，詳見「商業風險」表細節更新。
 
 ---
 
@@ -279,6 +281,9 @@ Financial Times 報導 Anthropic 旗艦模型在吸引一般使用者（general 
 
 | 合作方 | 類型 | 日期 | 意義 | 來源 |
 |--------|------|------|------|------|
+| Lambda（Nvidia 支持雲端業者）| 雲端整合（運算協議，$350 億美元）| 2026-09-01 | 簽署 350 億美元雲端運算合約；資金牽涉德州一座由比特幣礦商營運的資料中心園區（詳見下方細節）| 多家媒體，2026-09-01 |
+| Anthropic（培訓生態，全公司層級累計）| 人才／夥伴培訓（認證累計 8.5 萬張）| 2026-09-01 | Claude 認證累計達 8.5 萬張，擬擴大夥伴培訓規模；延續 DXC（06-12）、Cognizant（07-28）既有培訓型合作，本次首見全公司層級累計數字 | Google News/crn.com |
+| Trifecta Technologies | 企業客戶 | 2026-09-01 | 與 Anthropic 合作導入 Claude 服務 | Google News/Morningstar |
 | Amazon（AWS GovCloud）| 政府市場擴張／雲端整合（多模型並行）| 2026-08-31 | Claude 隨 OpenAI、Meta 模型一同引入 AWS GovCloud，供政府相關客戶使用（詳見下方細節）| Google News/Seeking Alpha |
 | 一般大眾／美國中小學（Claude for Teachers）| 教育機構免費開放（企業版存取）| 2026-08-31 | 開放美國中小學與學區免費使用 Claude for Teachers 企業版（詳見下方細節）| Google News/EdTech Innovation Hub |
 | Cursor（SpaceX 旗下）| 企業客戶（承接 OpenAI 退出的算力需求，僅標題可用）| 2026-08-29 | Wccftech：OpenAI 以對合約關係存疑為由退出與 SpaceX 旗下 Cursor 的合作，Anthropic 隨即宣布加碼投入 Claude 運算資源承接空出需求；具體合約規模、承接比例未見報導細節 | Google News/Wccftech |
@@ -425,6 +430,14 @@ Financial Times 報導 Anthropic 旗艦模型在吸引一般使用者（general 
 - [[news/2026-05-13]]（The Information：定價強勢期）
 
 ## 時序
+
+### 2026-09
+
+#### 2026-09-01
+- **[戰略合作，新增] 多家媒體：Anthropic 與 Lambda 簽署 350 億美元雲端運算合約**：Lambda 為 Nvidia 支持之雲端業者，資金牽涉德州一座由比特幣礦商營運的資料中心園區；延續本頁近期密集的算力布局系列（Nscale $450 億、Riot Platforms $90 億、Volta $100 億等），詳見「戰略合作」表新增列（多家媒體，2026-09-01）
+- **[戰略合作，新增] crn.com：Claude 認證累計 8.5 萬張，Anthropic 擬擴大夥伴培訓規模**：延續既有 DXC（06-12，訓練數萬名認證工程師）、Cognizant（07-28，Global Premier Partner 認證人才梯隊）等培訓型合作訊號，本次首見公司層級累計認證數字，詳見「戰略合作」表新增列（Google News/crn.com）
+- **[戰略合作，新增] Morningstar：Trifecta Technologies 與 Anthropic 合作導入 Claude 服務**：詳見「戰略合作」表新增列（Google News/Morningstar）
+- **[商業風險，跟進，非新事實] Sony、Warner Chappell 等音樂出版商正式提告**：09-01 報導聚焦訴訟正式提交面，與 08-29/08-31 已記錄事件同一案，未見新增求償金額或新原告，不改變既有「商業風險」表記錄
 
 ### 2026-08
 

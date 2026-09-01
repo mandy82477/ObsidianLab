@@ -33,3 +33,4 @@
 {"id": "H-0d4176", "closed": "2026-08-30", "status": "done", "by": "功能", "result": "已於 claude-code.md 補上 Cybernews 後續細節（修復被拒絕執行）"}
 {"id": "H-871320", "closed": "2026-08-30", "status": "done", "by": "功能", "result": "已於 claude-code.md 安全與隱私分組新增 llms.txt 信任誘騙條目"}
 {"id": "H-616500", "opened": "2026-08-31", "from": "安全政策", "to": "功能", "page": "entities/claude-code", "note": "Auto Mode 提示注入條目 08-31 新增量化數字（60–80% vs 官方 0%），嚴重度升級，請評估同步 claude-code.md 已知問題／安全提醒（08-27 曾轉知過同議題，本次為升級後再提醒）", "status": "open"}
+{"id": "H-616500", "closed": "2026-09-01", "status": "done", "by": "功能", "result": "Auto Mode 注入量化數字（60–80% vs 0%）已同步 claude-code 安全與隱私條目並升級嚴重度"}

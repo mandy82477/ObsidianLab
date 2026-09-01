@@ -24,12 +24,14 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 **領域：** 💼 商業
 **蒐集邊界：** 以 Claude 為參照系的競品動態為主，另針對競品發布與定價定向補抓（每日至多 2 則）；競品自身未與 Claude 對比的發布可能延遲或缺漏。**帶跑分數字的第三方對照評測收不到**——這類內容多發表於對照型部落格，不在本站蒐集範圍，因此本頁的競品能力比較以官方數字與社群並排實測為主，缺口處改指向外部活榜單（見 [[topics/model-comparison]] 的外部評測榜單節），不自行推算。
 **開始日期：** 2026-04
-**最後更新：** 2026-08-31
-**最後新聞更新：** 2026-08-31
+**最後更新：** 2026-09-01
+**最後新聞更新：** 2026-09-01
 
-> **最新競品動態**（2026-08-31）
-> - **36Kr：中國市場出現免費「DeepSeek Harness」替代方案討論，社群質疑付費訂閱 Claude Code 是否仍值得**：延續本頁既有 DeepSeek Harness 開源工具追蹤，詳見「主要競品追蹤」DeepSeek 子區塊新增細節。
-> - **CNBC 影音報導再度提及 Google 低價 AI 定價策略劍指 Anthropic 與 Microsoft**：與 08-27 已記錄事件同源，非新增數字，詳見「主要競品追蹤」Google 子區塊更新。
+> **最新競品動態**（2026-09-01）
+> - **Meta「Muse Code」結束 beta、正式推出三個訂閱層級，主打價格戰**：另一篇聚焦其「20x」折扣層級定位，直接對比 Claude Code 現行加購方案；均無具體月費數字可引，詳見「主要競品追蹤」Meta Muse Code 子區塊新增細節。
+> - **HN：Claude「20x」用量宣稱只放大 5 小時視窗，非週上限**：發文者指官方行銷用語易誤導，討論串提及已有行銷不實訴訟，詳見 [[entities/pricing]]「事故與爭議」同步記錄。
+> - **36Kr：中國市場出現免費「DeepSeek Harness」替代方案討論，社群質疑付費訂閱 Claude Code 是否仍值得**（08-31）：延續本頁既有 DeepSeek Harness 開源工具追蹤，詳見「主要競品追蹤」DeepSeek 子區塊新增細節。
+> - **CNBC 影音報導再度提及 Google 低價 AI 定價策略劍指 Anthropic 與 Microsoft**（08-31）：與 08-27 已記錄事件同源，非新增數字，詳見「主要競品追蹤」Google 子區塊更新。
 
 ---
 
@@ -211,11 +213,11 @@ Claude Code 已成為 AI 輔助編碼的標竿產品，但競爭正快速升溫�
 - **動態**：Cursor 正在打造名為「Sand」的 AI agent，直接對標 Anthropic 的 Claude Cowork
 - **意義**：Cursor 此前定位為 IDE 整合型工具，若切入 agentic 工作台賽道，代表其在 SpaceX 收購（2026-06-17 完成）後正積極擴張產品線，從「編碼輔助」延伸至「自主任務執行」，與 Claude Cowork 直接競爭；代號曝光顯示產品開發已進入具體階段，非僅停留在傳聞（推論，功能細節與上市時程仍未公開）（TweakTown https://www.tweaktown.com/news/112601/cursor-builds-ai-agent-sand-to-rival-anthropics-claude-cowork/index.html；The Information「Cursor Is Developing an AI Agent to Compete With Claude Cowork」）
 
-### Meta「Muse Code」🔴（正式發布，2026-08-05）
-- **狀態**：正式發布（WSJ 08-07；CNET、Basic Tutorials 08-05；Simon Willison 部落格 08-05 轉引 Meta 官方部落格 https://research.meta.ai/blog/introducing-muse-code-and-muse-spark-1-2）——07-09 CNBC 首報的「傳聞開發中」至此正式落地為具名產品
-- **動態**：Meta 發布新的程式碼撰寫 agent「Muse Code」，同步推出「Muse Spark 1.2」；WSJ 標題直指「Meta Releases Coding Agent to Compete With OpenAI and Anthropic」，CNET、Basic Tutorials 標題均明確點名對標 **Claude Code 與 Codex**
-- **意義**：是繼 07-13 Cursor「Sand」代號確認、07-09 OpenAI ChatGPT Work/GPT-5.6 之後，又一家科技巨頭正式推出（而非僅傳聞）直接對標 Claude Code 的產品，且四家獨立媒體/管道（WSJ、CNET、Basic Tutorials、Simon Willison 轉引 Meta 官方部落格）於 08-05～08-07 三天內密集報導同一事件，為近期跨來源訊號最強的競品發布之一；若 Meta 憑藉自有 Llama 模型與龐大開發者生態切入，可能為 Claude Code 帶來新一輪「大廠免費/低價捆綁」壓力，類似 Microsoft Copilot CLI 路徑（推論）
-- **待補充**：Muse Code 具體定價、發布形式（獨立產品/Meta AI 內建）、能力評測數字均未見報導細節，僅標題與官方部落格公告層級資訊，詳見「競品定價對照」新增列（Google News/WSJ；Google News/CNET；Google News/Basic Tutorials；Blog/Simon Willison https://simonwillison.net/2026/Aug/5/muse-code-and-muse-spark-12/#atom-everything）
+### Meta「Muse Code」🔴（正式發布，2026-08-05；結束 beta、推出三訂閱層級，2026-09-01）
+- **狀態**：正式發布（WSJ 08-07；CNET、Basic Tutorials 08-05；Simon Willison 部落格 08-05 轉引 Meta 官方部落格 https://research.meta.ai/blog/introducing-muse-code-and-muse-spark-1-2）——07-09 CNBC 首報的「傳聞開發中」至此正式落地為具名產品；**09-01 結束 beta，正式推出三個訂閱層級，主打價格戰**（The New Stack；Intelligent Living）
+- **動態**：Meta 發布新的程式碼撰寫 agent「Muse Code」，同步推出「Muse Spark 1.2」；WSJ 標題直指「Meta Releases Coding Agent to Compete With OpenAI and Anthropic」，CNET、Basic Tutorials 標題均明確點名對標 **Claude Code 與 Codex**。09-01 The New Stack 報導 Muse Code 結束 beta、正式推出三個訂閱層級，明確以「價格戰」為主打；同日 Intelligent Living 另一篇聚焦其「20x」折扣層級定位，直接與 **Claude Code 現行加購方案**對比——惟兩篇報導**均未提供具體月費數字**，不可推算，詳見下方「待補充」
+- **意義**：是繼 07-13 Cursor「Sand」代號確認、07-09 OpenAI ChatGPT Work/GPT-5.6 之後，又一家科技巨頭正式推出（而非僅傳聞）直接對標 Claude Code 的產品，且四家獨立媒體/管道（WSJ、CNET、Basic Tutorials、Simon Willison 轉引 Meta 官方部落格）於 08-05～08-07 三天內密集報導同一事件，為近期跨來源訊號最強的競品發布之一；09-01 結束 beta 並推出三層訂閱、以「價格戰」與「20x 折扣層級」正面對比 Claude Code 加購方案，顯示 Meta 憑藉自有 Llama 模型與龐大開發者生態切入後，第一步策略即為價格競爭而非能力訴求，呼應本頁「開源替代加速」與「Claude 旗艦模型在一般消費者市場不敵較便宜競品」既有觀察（推論）
+- **待補充**：三個訂閱層級的具體月費數字、「20x」折扣層級對應之實際費率、能力評測數字均未見報導細節，僅標題與部分內文層級資訊，暫不併入「競品定價對照」表（待具體數字補上）（Google News/WSJ；Google News/CNET；Google News/Basic Tutorials；Blog/Simon Willison https://simonwillison.net/2026/Aug/5/muse-code-and-muse-spark-12/#atom-everything；Google News/The New Stack；Google News/Intelligent Living）
 
 ### Meta 開源最強模型「Muse Glimmer」（2026-08-11，新戰線：開源旗艦模型）
 - **狀態**：正式宣布開源（CNBC；Simon Willison 部落格 https://simonwillison.net/2026/Aug/10/introducing-muse-glimmer/，2026-08-11）

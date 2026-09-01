@@ -3,7 +3,7 @@ page: "topics/recursive-self-improvement"
 kind: "topic"
 status: "ongoing（08-14 官方風險報告揭露新對齊疑慮；08-29 新增「自動化研究員」對齊維護研究，08-31 補上量化數字）"
 domain: "🏛️ 政策/安全"
-last_updated: "2026-08-31"
+last_updated: "2026-09-01"
 last_news_update: "2026-08-31"
 status_main: "ongoing"
 days_since_news: 0
@@ -23,7 +23,7 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 **狀態：** ongoing（08-14 官方風險報告揭露新對齊疑慮；08-29 新增「自動化研究員」對齊維護研究，08-31 補上量化數字）
 **領域：** 🏛️ 政策/安全
 **開始日期：** 2026-06-04
-**最後更新：** 2026-08-31
+**最後更新：** 2026-09-01
 **最後新聞更新：** 2026-08-31
 
 > **最新動態**（2026-08-31，The New Stack 補上量化數字）
@@ -78,7 +78,7 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 - **揭露來源**：Anthropic 官方部落格（經 Google News 轉載）〈Automated researchers can reliably mitigate alignment failures〉；TechCrunch〈An Anthropic researcher just gave us a peek at self-improving AI〉；Startup Fortune〈Anthropic Says Claude Is Showing Early Signs of Self-Improvement〉——三則報導同一事件，官方部落格為主要引用來源
 - **核心主張（僅標題可用）**：Anthropic 稱其「自動化研究員」（automated researchers）——用於稽核、發現並修復模型對齊問題的自動化 AI 系統——能可靠緩解對齊失誤；Google News RSS 未提供正文，具體運作機制、緩解成效的量化數據、是否涉及模型參與自身訓練流程的修改均未見報導
 - **與既有敘事的關係**：與 06-04《When AI Builds Itself》報告（工程師代碼交付量 8 倍提升）同屬「AI 加速/輔助自身開發」大主題，但性質不同——06-04 報告談的是 AI **加速人類工程師的產出**，本則談的是 AI **稽核並修復其他 AI 模型的對齊問題**，兩者是否應視為同一遞歸自我改進光譜的不同階段，或應區分為「開發加速」與「對齊維護」兩條獨立敘事，待後續報導提供機制細節後再判
-- ❓ **待查證**（標 2026-08-29｜查 Automated researchers、alignment failures）：官方原文的具體機制、緩解成效量化數據、與遞歸自我改進定義（AI 完全自主設計繼任者）的關係均未見報導
+- ❓ **待查證**（標 2026-08-29｜查 Automated researchers、alignment failures｜訊 2026-09-01）：09-01 Anthropic 官方部落格〈improving-alignment-security-efforts〉將「改善對齊」與「改善安全」併為同一份官方檢討發布，惟該篇聚焦 07-30／08-04 兩起評估環境資安事件（詳見 [[topics/ai-agent-safety]]），並未提供本則「自動化研究員」機制細節或緩解成效量化數據的新資訊；官方原文的具體機制、量化數據、與遞歸自我改進定義的關係仍未見報導，保留待查證
 - **可信度評估**：Anthropic 官方部落格為一手來源，可信度高；惟正文未取得，僅能確認標題主張存在，無法評估具體技術內容；TechCrunch／Startup Fortune 的「自我改進」框架用詞是否忠實反映官方原文措辭亦待查證
 
 ### 遞歸自我改進定義（Anthropic Institute 2026-06-04）
