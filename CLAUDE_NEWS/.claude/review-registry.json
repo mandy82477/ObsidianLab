@@ -1,1002 +1,1011 @@
 {
-  "_doc": "check_rules.py 讀取的專案設定。新增同步配對/錨點/allowlist 時登記於此，不改引擎（scripts/check_rules.py）。",
-  "bare_references": {
-    "globs": [
-      ".claude/commands/*.md",
-      ".claude/rules/*.md",
-      "docs/cloud-runbooks/*.md"
-    ],
-    "pattern": "CLAUDE\\.md",
-    "exempt_files": [
-      ".claude/rules/claude-md-edit.md"
-    ],
-    "_exempt_files_note": "claude-md-edit.md 全篇在示範/講解裸露 CLAUDE.md 規則本身，不適用此檢查。",
-    "line_allowlist": [
-      {
-        "file": ".claude/commands/review-commands.md",
-        "pattern": "commands / rules / CLAUDE\\.md"
-      },
-      {
-        "file": ".claude/commands/review-commands.md",
-        "pattern": "根目錄 `CLAUDE\\.md`"
-      },
-      {
-        "file": ".claude/commands/wiki-lint.md",
-        "pattern": "CLAUDE\\.md 健檢"
-      },
-      {
-        "file": ".claude/commands/wiki-lint.md",
-        "pattern": "根目錄 `CLAUDE\\.md`"
-      },
-      {
-        "file": ".claude/commands/wiki-weekly-review.md",
-        "pattern": "根目錄 `CLAUDE\\.md`"
-      },
-      {
-        "file": ".claude/commands/news-pipeline-steps.md",
-        "pattern": "根目錄 `CLAUDE\\.md`"
-      },
-      {
-        "file": ".claude/commands/weekly-report.md",
-        "pattern": "根目錄 `CLAUDE\\.md`"
-      },
-      {
-        "file": ".claude/rules/wiki-ingest-people.md",
-        "pattern": "CLAUDE\\.md 論述"
-      },
-      {
-        "file": "docs/cloud-runbooks/weekly-lint.md",
-        "pattern": "CLAUDE\\.md 健檢"
-      }
-    ]
-  },
-  "path_existence": {
-    "globs": [
-      ".claude/commands/*.md",
-      ".claude/rules/*.md",
-      "docs/cloud-runbooks/*.md"
-    ],
-    "extensions": [
-      ".md",
-      ".py",
-      ".json",
-      ".jsonl"
-    ],
-    "allowlist_patterns": [
-      "^\\.claude/rules/wiki-ingest-\\[.+\\]\\.md$",
-      "^news/YYYY-MM-DD\\.md$",
-      "^news/TARGET_DATE\\.md$",
-      "^news/YESTERDAY\\.md$",
-      "^wiki/YYYY-MM-DD\\.md$",
-      "^gathered_items\\.json$",
-      "^emitted_items\\.json$",
-      "^seen_urls\\.json$",
-      "^src/gathered_items\\.json$",
-      "^src/logs/pipeline_baseline\\.json$",
-      "^weekly/YYYY-Wnn\\.md$",
-      "^scripts/weekly_stats\\.py$",
-      "^data/pending-signals\\.jsonl$",
-      "^data/pending-handoffs\\.jsonl$"
-    ],
-    "_allowlist_note": "以上為 placeholder 或執行期才產生的產物檔，不強制存在。",
-    "bare_name_search_dirs": {
-      "community-tech-tools.md": [
-        "wiki/topics"
-      ],
-      "community-tech-discussions.md": [
-        "wiki/topics"
-      ],
-      "community-pattern-trends.md": [
-        "wiki/topics"
-      ],
-      "community-tech-patterns.md": [
-        "wiki/topics"
-      ]
-    }
-  },
-  "anchors": [
-    {
-      "label": "首次出現 欄",
-      "pattern": "\\| 首次出現 \\|",
-      "file": "wiki/topics/community-tech-tools.md"
-    },
-    {
-      "label": "痛點洞察 區塊",
-      "pattern": "## 痛點洞察",
-      "file": "wiki/topics/community-tech-tools.md"
-    },
-    {
-      "label": "近期工具 欄",
-      "pattern": "近期工具",
-      "file": "wiki/topics/community-tech-tools.md"
-    },
-    {
-      "label": "技術彙整 區塊",
-      "pattern": "## 技術彙整",
-      "file": "wiki/topics/community-tech-discussions.md"
-    },
-    {
-      "label": "熱門討論 表格",
-      "pattern": "熱門討論",
-      "file": "wiki/topics/community-tech-discussions.md"
-    },
-    {
-      "label": "衍生 欄",
-      "pattern": "衍生",
-      "file": "wiki/topics/community-tech-discussions.md"
-    },
-    {
-      "label": "全覽表 區塊",
-      "pattern": "全覽表",
-      "file": "wiki/feature-radar.md"
-    },
-    {
-      "label": "蒐集邊界欄位（人才流動涵蓋範圍）——主題延伸到 Claude/Anthropic 之外的頁面必須誠實標示會漏什麼，欄位被刪＝讀者又看不出缺口",
-      "pattern": "\\*\\*蒐集邊界：\\*\\*",
-      "file": "wiki/topics/ai-talent-flow.md"
-    },
-    {
-      "label": "蒐集邊界欄位（安全事件涵蓋範圍）——主題延伸到 Claude/Anthropic 之外的頁面必須誠實標示會漏什麼，欄位被刪＝讀者又看不出缺口",
-      "pattern": "\\*\\*蒐集邊界：\\*\\*",
-      "file": "wiki/topics/ai-agent-safety.md"
-    },
-    {
-      "label": "蒐集邊界欄位（競品動態涵蓋範圍）——主題延伸到 Claude/Anthropic 之外的頁面必須誠實標示會漏什麼，欄位被刪＝讀者又看不出缺口",
-      "pattern": "\\*\\*蒐集邊界：\\*\\*",
-      "file": "wiki/topics/competitor-landscape.md"
-    },
-    {
-      "label": "蒐集邊界欄位（企業採用涵蓋範圍）——主題延伸到 Claude/Anthropic 之外的頁面必須誠實標示會漏什麼，欄位被刪＝讀者又看不出缺口",
-      "pattern": "\\*\\*蒐集邊界：\\*\\*",
-      "file": "wiki/topics/enterprise-tool-tracker.md"
-    }
+ "_doc": "check_rules.py 讀取的專案設定。新增同步配對/錨點/allowlist 時登記於此，不改引擎（scripts/check_rules.py）。",
+ "bare_references": {
+  "globs": [
+   ".claude/commands/*.md",
+   ".claude/rules/*.md",
+   "docs/cloud-runbooks/*.md"
   ],
-  "sync_pairs": [
-    {
-      "name": "news-pipeline.md <-> news-pipeline-steps.md：REPO_ROOT/PYTHON 逐字相同 + 不可背景",
-      "assertion": "equal_values",
-      "files": [
-        ".claude/commands/news-pipeline.md",
-        ".claude/commands/news-pipeline-steps.md"
-      ],
-      "pattern": "REPO_ROOT\\s*=\\s*(\\S+)"
-    },
-    {
-      "name": "news-pipeline.md <-> news-pipeline-steps.md：PYTHON 逐字相同",
-      "assertion": "equal_values",
-      "files": [
-        ".claude/commands/news-pipeline.md",
-        ".claude/commands/news-pipeline-steps.md"
-      ],
-      "pattern": "PYTHON\\s*=\\s*(\\S+)"
-    },
-    {
-      "name": "news-pipeline.md <-> news-pipeline-steps.md：皆明文「不可包進背景 agent」語意",
-      "assertion": "all_contain",
-      "files": [
-        ".claude/commands/news-pipeline.md",
-        ".claude/commands/news-pipeline-steps.md"
-      ],
-      "patterns": [
-        "不可.*背景"
-      ]
-    },
-    {
-      "name": "news-pipeline.md Phase B <-> wiki-ingest.md：互相參照，無精簡複本殘留",
-      "assertion": "all_contain",
-      "files": [
-        ".claude/commands/news-pipeline.md"
-      ],
-      "patterns": [
-        "wiki-ingest\\.md"
-      ]
-    },
-    {
-      "name": "wiki-ingest.md 提及被 news-pipeline.md Phase B 呼叫，無精簡複本殘留",
-      "assertion": "all_contain",
-      "files": [
-        ".claude/commands/wiki-ingest.md"
-      ],
-      "patterns": [
-        "news-pipeline\\.md"
-      ]
-    },
-    {
-      "name": "wiki-ingest.md 無「精簡複本」殘留字樣",
-      "assertion": "max_count",
-      "files": [
-        ".claude/commands/wiki-ingest.md"
-      ],
-      "patterns": [
-        "精簡複本"
-      ],
-      "max": 0,
-      "_note": "2026-07-25 由 min_count/min:0 改為 max_count/max:0——前者的條件是 count < min 才失敗，min:0 恆為真，這條「不該出現」的檢查一直是假綠。"
-    },
-    {
-      "name": "wiki-ingest.md / wiki-lint.md / rules/wiki-ingest.md：六類記者角色檔名一致 + 正典派工路徑（general-purpose + 角色前導 + model: \"sonnet\"）",
-      "assertion": "all_contain",
-      "files": [
-        ".claude/commands/wiki-ingest.md",
-        ".claude/commands/wiki-lint.md",
-        ".claude/rules/wiki-ingest.md"
-      ],
-      "patterns": [
-        "subagent_type: \"general-purpose\"",
-        "那是你的角色定義（含「開始前必讀」規則清單與回報契約）",
-        "wiki-reporter-models",
-        "wiki-reporter-features",
-        "wiki-reporter-commercial",
-        "wiki-reporter-safety-policy",
-        "wiki-reporter-community",
-        "wiki-reporter-people",
-        "model: \"sonnet\""
-      ]
-    },
-    {
-      "name": "wiki-ingest-community.md <-> wiki-ingest-community-lint.md：lint-only 邊界（共用「每日 ingest 不」語意標記）",
-      "assertion": "all_contain",
-      "files": [
-        ".claude/rules/wiki-ingest-community.md",
-        ".claude/rules/wiki-ingest-community-lint.md"
-      ],
-      "patterns": [
-        "每日 ingest 不"
-      ]
-    },
-    {
-      "name": "wiki-ingest-community.md 明文 lint 專用",
-      "assertion": "all_contain",
-      "files": [
-        ".claude/rules/wiki-ingest-community.md"
-      ],
-      "patterns": [
-        "lint 專用"
-      ]
-    },
-    {
-      "name": "wiki-ingest-community-lint.md 承接 tools 頁策展",
-      "assertion": "all_contain",
-      "files": [
-        ".claude/rules/wiki-ingest-community-lint.md"
-      ],
-      "patterns": [
-        "已脫離每日 ingest",
-        "策展規則"
-      ]
-    },
-    {
-      "name": "六份記者回報格式段皆含八欄（更新頁面/feature-radar 新增/index.md 狀態變更/新增頁面/同步自查/待查證命中處置/轉知處置/來源歸因）",
-      "assertion": "all_contain",
-      "files": [
-        ".claude/rules/wiki-reporter-shared.md",
-        ".claude/rules/wiki-ingest-models.md",
-        ".claude/rules/wiki-ingest-features.md",
-        ".claude/rules/wiki-ingest-commercial.md",
-        ".claude/rules/wiki-ingest-safety-policy.md",
-        ".claude/rules/wiki-ingest-community.md",
-        ".claude/rules/wiki-ingest-people.md"
-      ],
-      "patterns": [
-        "更新頁面：",
-        "feature-radar 新增：",
-        "index\\.md 狀態變更：",
-        "新增頁面：",
-        "同步自查：",
-        "待查證命中處置：",
-        "轉知處置：",
-        "來源歸因："
-      ]
-    },
-    {
-      "name": "主編指南（rules/wiki-ingest.md）回報格式段同步八欄",
-      "assertion": "all_contain",
-      "files": [
-        ".claude/rules/wiki-ingest.md"
-      ],
-      "patterns": [
-        "更新頁面：",
-        "feature-radar 新增：",
-        "index\\.md 狀態變更：",
-        "新增頁面：",
-        "同步自查：",
-        "待查證命中處置：",
-        "轉知處置：",
-        "來源歸因："
-      ]
-    },
-    {
-      "name": "wiki-ingest.md（command）關鍵步驟：feature-radar 彙整 + 呈現品質 log 欄位 + 完成前核對清單",
-      "assertion": "all_contain",
-      "files": [
-        ".claude/commands/wiki-ingest.md"
-      ],
-      "patterns": [
-        "wiki/feature-radar\\.md",
-        "\\.claude/rules/wiki-ingest-features\\.md",
-        "呈現品質",
-        "完成前強制核對清單"
-      ]
-    },
-    {
-      "name": "wiki-lint.md 關鍵步驟：載入鏈 + 呈現品質標準引用 + 規則引用驗證 + 規則年齡審查",
-      "assertion": "all_contain",
-      "files": [
-        ".claude/commands/wiki-lint.md"
-      ],
-      "patterns": [
-        "wiki/CLAUDE\\.md",
-        "\\.claude/rules/wiki-ingest\\.md",
-        "Wiki 頁面呈現品質標準",
-        "規則引用驗證",
-        "規則年齡審查"
-      ]
-    },
-    {
-      "name": "news-pipeline.md 關鍵步驟：三段 Phase 齊全 + 已知結果 + 禁止背景包裹",
-      "assertion": "all_contain",
-      "files": [
-        ".claude/commands/news-pipeline.md"
-      ],
-      "patterns": [
-        "## Phase A",
-        "## Phase B",
-        "## Phase C",
-        "已知結果",
-        "本身也不可被包進背景 agent"
-      ]
-    },
-    {
-      "name": "news-pipeline-steps.md 關鍵步驟：Step 2 不在本檔 + Phase A/C 步驟劃分 + Step 6 log 寫入",
-      "assertion": "all_contain",
-      "files": [
-        ".claude/commands/news-pipeline-steps.md"
-      ],
-      "patterns": [
-        "Step 2.*不在本檔案",
-        "# Phase A 步驟",
-        "# Phase C 步驟",
-        "Step 6：寫入 task_scheduler\\.log"
-      ]
-    },
-    {
-      "name": "雲端 daily runbook <-> news-pipeline-steps.md：步驟標題錨點逐字相符（改步驟標題必須同步 runbook）",
-      "assertion": "all_contain",
-      "files": [
-        "docs/cloud-runbooks/daily.md",
-        ".claude/commands/news-pipeline-steps.md"
-      ],
-      "patterns": [
-        "Step 0：昨日缺跑檢查",
-        "Step 0b：冪等閘",
-        "Step 1a：新聞抓取",
-        "Step 1b：生成日報",
-        "Step 1c：確認 emitted-cache",
-        "Step 2：Wiki Ingest",
-        "Step 3：Commit Wiki 變更",
-        "Step 4：建置 Web Reader",
-        "Step 5：Commit Web 並統一推送",
-        "Step 6：寫入 task_scheduler\\.log"
-      ]
-    },
-    {
-      "name": "雲端 weekly runbook <-> wiki-lint.md：步驟標題錨點逐字相符（改步驟標題必須同步 runbook）",
-      "assertion": "all_contain",
-      "files": [
-        "docs/cloud-runbooks/weekly-lint.md",
-        ".claude/commands/wiki-lint.md"
-      ],
-      "patterns": [
-        "1\\. 載入 wiki 全貌",
-        "2\\. 並行派工",
-        "3\\. 處理語意分岔／死案歸檔候選",
-        "4\\. 建議並建立新實體頁",
-        "5\\. 更新 wiki/overview\\.md",
-        "6\\. CLAUDE\\.md 健檢",
-        "7\\. 讀者模擬驗收",
-        "8\\. 記錄本次 lint",
-        "9\\. 更新 wiki/index\\.md",
-        "10\\. 收尾閉迴路"
-      ]
-    },
-    {
-      "name": "model-comparison 選型品質審核六條規則齊全（決策可用性的單一真相源）",
-      "assertion": "all_contain",
-      "files": [
-        ".claude/rules/wiki-ingest-models.md"
-      ],
-      "patterns": [
-        "model-comparison 選型品質審核",
-        "禁止同義反覆",
-        "不可用讀者取不到的模型當唯一淘汰基準",
-        "社群效能討論一律留數字",
-        "決策層的嚴謹度不得低於證據層",
-        "陣容換代時同步骨架",
-        "3 跳自檢",
-        "儲存格短語化"
-      ]
-    },
-    {
-      "name": "本機/雲端行為一致：閘門・重試・補跑規則必須在共用步驟檔內",
-      "assertion": "all_contain",
-      "files": [
-        ".claude/commands/news-pipeline-steps.md"
-      ],
-      "patterns": [
-        "本機與雲端的行為必須一致",
-        "Step 0b：冪等閘",
-        "新鮮度防線",
-        "push 失敗重試",
-        "補跑（backfill）注意事項"
-      ]
-    },
-    {
-      "name": "雲端 runbook 不得自行實作 push 重試（行為必須來自共用步驟檔，兩份會失步）",
-      "assertion": "max_count",
-      "files": [
-        "docs/cloud-runbooks/daily.md",
-        "docs/cloud-runbooks/_shared.md"
-      ],
-      "patterns": [
-        "pull --rebase"
-      ],
-      "max": 0
-    },
-    {
-      "name": "trigger 鏡像 JSON 仍指向對應 runbook（薄殼規約：prompt 只指路，不含步驟細節）",
-      "assertion": "all_contain",
-      "files": [
-        "docs/cloud-runbooks/triggers/daily-news-pipeline-cloud.json"
-      ],
-      "patterns": [
-        "docs/cloud-runbooks/_shared\\.md",
-        "docs/cloud-runbooks/daily\\.md"
-      ]
-    },
-    {
-      "name": "trigger 鏡像 JSON（weekly）仍指向對應 runbook",
-      "assertion": "all_contain",
-      "files": [
-        "docs/cloud-runbooks/triggers/weekly-wiki-lint-cloud.json"
-      ],
-      "patterns": [
-        "docs/cloud-runbooks/_shared\\.md",
-        "docs/cloud-runbooks/weekly-lint\\.md"
-      ]
-    },
-    {
-      "name": "日報歸因格式 <-> wiki-lint 6g 量測：產出端與量測端都必須認得現行 [N] 註腳格式（改日報歸因格式必須同步 6g，否則回歸偵測器自己讀成 0）",
-      "assertion": "all_contain",
-      "files": [
-        ".claude/commands/news-pipeline-steps.md",
-        ".claude/commands/wiki-lint.md"
-      ],
-      "patterns": [
-        "今日聚焦參考連結",
-        "\\[N\\]"
-      ]
-    },
-    {
-      "name": "wiki-lint 6g 指標一：量測必須同時計兩種歸因格式，且先限縮今日聚焦區塊（防灌大分母）",
-      "assertion": "all_contain",
-      "files": [
-        ".claude/commands/wiki-lint.md"
-      ],
-      "patterns": [
-        "兩種歸因格式，必須同時計",
-        "必須先限縮到「今日聚焦」區塊再數",
-        "news-pipeline-steps\\.md"
-      ]
-    },
-    {
-      "name": "weekly lint 心跳紀錄：wiki-lint.md 收尾與 _shared.md 無人值守原則都必須要求成功/no-op/中止一律寫 task_scheduler.log（07-25 無聲失敗死因不可考的防再犯——只規定中止留證據時，no-op 與死亡無法分辨）",
-      "assertion": "all_contain",
-      "files": [
-        ".claude/commands/wiki-lint.md",
-        "docs/cloud-runbooks/_shared.md"
-      ],
-      "patterns": [
-        "task_scheduler\\.log",
-        "無論成功／no-op／中止"
-      ]
-    },
-    {
-      "name": "雲端 STARTED 開跑標記：_shared.md 無人值守原則必須保留開跑即 push 的規定與四態判定（收尾心跳涵蓋不了中途死——07-25 的死法）",
-      "assertion": "all_contain",
-      "files": [
-        "docs/cloud-runbooks/_shared.md"
-      ],
-      "patterns": [
-        "STARTED 開跑標記",
-        "STARTED 無後續",
-        "完全無 STARTED"
-      ]
-    },
-    {
-      "name": "雲端外部死鏈防護（2026-08-20 移交 GitHub Actions 後改指新不變式）：weekly-lint.md 必須載明雲端「讀 link_health.json、不自己連網」且必須有新鮮度防線。原風險（雲端跑 check_links 產生假死鏈污染頁面標註）已消失，但新風險是讀到過期報告卻以為是新的——過期報告比沒有報告更危險，它看起來像剛檢查過",
-      "assertion": "all_contain",
-      "files": [
-        "docs/cloud-runbooks/weekly-lint.md",
-        ".claude/commands/wiki-lint.md"
-      ],
-      "patterns": [
-        "link_health\\.json",
-        "checked_at",
-        "過期"
-      ]
-    },
-    {
-      "name": "news-pipeline-steps.md <-> wiki-lint.md：兩處 web build gate 都必須走 gate_web_build.py",
-      "assertion": "all_contain",
-      "files": [
-        ".claude/commands/news-pipeline-steps.md",
-        ".claude/commands/wiki-lint.md"
-      ],
-      "patterns": [
-        "scripts.gate_web_build\\.py"
-      ],
-      "_note": "2026-08-01 加入。web build 的放行判準集中在腳本裡；任一處退回自己跑 run_tests.py 再判斷，兩處就會失步（日更放行、週更擋下之類）。"
-    },
-    {
-      "name": "weekly-report.md 第(3)段兩張表的欄名 <-> build_web.py 解析錨點（欄名改動會讓該表整張不進 JSON、在網站上靜默消失）",
-      "assertion": "all_contain",
-      "files": [
-        ".claude/commands/weekly-report.md",
-        "scripts/build_web.py",
-        "scripts/check_weekly_ledger.py",
-        "scripts/scan_open_forecasts.py"
-      ],
-      "patterns": [
-        "上週預告",
-        "本週結果",
-        "類型",
-        "預告",
-        "判準"
-      ],
-      "_note": "2026-08-02 加入。W31 首次出現回收表時，build_web.py 只認得 forecasts 表頭，回收表被整張吃掉——網站上看不到對帳，且回收小標被誤當引言印在新預告卡片上方，讀者無從分辨兩張表的方向。"
-    },
-    {
-      "name": "資訊架構哲學三處錨定：wiki/CLAUDE.md 哲學段 + index.md/log.md 檔頭契約互相指回（哲學失去錨點後，操作規則會退化成無 why 的禁令，擋不住新形態的同類錯誤）",
-      "assertion": "all_contain",
-      "files": [
-        "wiki/CLAUDE.md",
-        "wiki/index.md",
-        "wiki/log.md"
-      ],
-      "patterns": [
-        "資訊架構哲學"
-      ],
-      "_note": "2026-08-05 加入。wiki/CLAUDE.md 另須含「每個事實只有一個家」判斷式（見下一條）。"
-    },
-    {
-      "name": "wiki/CLAUDE.md 哲學段核心判斷式存在",
-      "assertion": "all_contain",
-      "files": [
-        "wiki/CLAUDE.md"
-      ],
-      "patterns": [
-        "每個事實只有一個家",
-        "地圖",
-        "被策展的現在",
-        "不會遺忘的過去"
-      ]
-    },
-    {
-      "name": "large-codebase 主線頁 tag/重寫兩側規則齊全（daily 標 `**主線：**` tag 在 community.md、weekly 整線重寫在 community-lint.md——只有一側時主線頁會再次孤兒化或長回 log）",
-      "assertion": "all_contain",
-      "files": [
-        ".claude/rules/wiki-ingest-community.md",
-        ".claude/rules/wiki-ingest-community-lint.md"
-      ],
-      "patterns": [
-        "community-large-codebase-workflow",
-        "\\*\\*主線：\\*\\*"
-      ],
-      "_note": "2026-08-05 加入。頁面 07-26 建立後因日更與 lint 兩側都無觸發規則而孤兒化 10 天。2026-08-15 改版：日更小縫兩週就把頁面長回 log，改為 daily 只標 tag、weekly 整線重寫（每線 ≤30 行固定骨架）。 2026-08-15 修正兩處：pattern `**主線：**` 未跳脫（`*` 開頭讓 re.compile 拋 PatternError，整支 check_rules.py 崩潰、五項檢查全部跑不了，不只是這條紅）；另移除 `並行規模`——四條線名的家是 community.md，要求 lint 檔複述會製造第二份真相，且 lint 那節已改為通用寫法（「對每條有新節點的線」）不再列線名。剩下兩個 pattern 已足以達成本條自述的目的「兩側規則齊全」。"
-    },
-    {
-      "name": "週報預告偵測的反確認偏誤護欄：weekly-report.md 與 news-pipeline-steps.md 都必須明載掃描在選材之後、且只偵測不判定",
-      "assertion": "all_contain",
-      "files": [
-        ".claude/commands/weekly-report.md",
-        ".claude/commands/news-pipeline-steps.md"
-      ],
-      "patterns": [
-        "open-signals\\.jsonl",
-        "確認偏誤",
-        "選材"
-      ],
-      "_note": "2026-08-02 加入。若哪天把掃描前移到選材階段，日報會傾向撿能證實週報預告的條目——命中率虛高，且每月聚焦校準（量測的正是選材品質）失去獨立性。這條護欄是設計意圖，不是實作細節，兩份文件都要留住。"
-    },
-    {
-      "name": "今日聚焦選材門檻三條在 news-pipeline-steps.md 內同時存在於「判斷用」與「檔尾附錄」兩份（校準加新門檻時只改一份 → LLM 照抄的那份會失步）",
-      "assertion": "min_count",
-      "files": [
-        ".claude/commands/news-pipeline-steps.md"
-      ],
-      "patterns": [
-        "\\*\\*\\[新工具\\]\\*\\*：",
-        "\\*\\*\\[風險警示\\]\\*\\*：",
-        "\\*\\*\\[持續追蹤\\]\\*\\*："
-      ],
-      "min": 2,
-      "_note": "2026-08-01 加入。第二次月度聚焦校準新增 [持續追蹤] 門檻時發現：同一份門檻文字在檔內存在兩份（Step 1b 判斷用 + 檔尾附錄格式範本），只改一份不會被任何檢查抓到。"
-    },
-    {
-      "name": "web build gate 舊措辭已退場（不得殘留 Tests FAILED - web build skipped）",
-      "assertion": "max_count",
-      "files": [
-        ".claude/commands/news-pipeline-steps.md",
-        ".claude/commands/wiki-lint.md"
-      ],
-      "patterns": [
-        "Tests FAILED - web build skipped"
-      ],
-      "max": 0,
-      "_note": "2026-08-01 加入。舊 log 措辭對應「測試失敗一律跳過 build」的舊規則，留著會讓 agent 抄回舊行為。"
-    },
-    {
-      "name": "wiki/index.md 為純路由表：異動日誌區塊不得再長回來（2026-08-02 瘦身：83% 是 log.md 的重複副本，路由成本 42k→8k）",
-      "assertion": "max_count",
-      "files": [
-        "wiki/index.md"
-      ],
-      "patterns": [
-        "## 近期異動"
-      ],
-      "max": 0
-    },
-    {
-      "name": "wiki/CLAUDE.md 查詢分流四路徑齊全（index 瘦身後的配套：專有名詞 grep／概念走 index／結構性盤點 grep 標頭／近況走 log 或日報）",
-      "assertion": "all_contain",
-      "files": [
-        "wiki/CLAUDE.md"
-      ],
-      "patterns": [
-        "搜尋策略（查詢分流）",
-        "直接 Grep",
-        "目錄表挑頁",
-        "Grep 頁面標頭欄位",
-        "不可整讀"
-      ]
-    },
-    {
-      "name": "本週推薦選取邏輯必須保留時間閘（熱度只加不減，無時間項時候選池會固化成歷代名人堂——2026-08-08 凍結 14 天的防再犯）",
-      "assertion": "all_contain",
-      "files": [
-        ".claude/rules/wiki-ingest-features.md"
-      ],
-      "patterns": [
-        "時間閘",
-        "不補舊條目湊數",
-        "本週無新達標功能"
-      ]
-    },
-    {
-      "name": "news-pipeline.md <-> news-pipeline-steps.md：完成摘要必須接出「待使用者裁示」（待確認事項只寫進 log.md 等於靜默丟棄——2026-08-02 裁示擱置 6 天的防再犯）",
-      "assertion": "all_contain",
-      "files": [
-        ".claude/commands/news-pipeline.md",
-        ".claude/commands/news-pipeline-steps.md"
-      ],
-      "patterns": [
-        "待使用者裁示"
-      ]
-    },
-    {
-      "name": "wiki-lint.md <-> 雲端 weekly runbook：5c 逾期待查證清算兩側齊全且明載雲端跳過（記者無 web 工具，此步驟是 299 筆待查證的唯一消化端；只留一側會再次孤兒化）",
-      "assertion": "all_contain",
-      "files": [
-        ".claude/commands/wiki-lint.md",
-        "docs/cloud-runbooks/weekly-lint.md"
-      ],
-      "patterns": [
-        "5c",
-        "逾期待查證清算"
-      ]
-    },
-    {
-      "name": "待查證回訪措辭鐵則：不得寫成「至今無後續」（只掃日報就宣稱世界沒有，會讓懸置被讀成已確認——2026-08-08 pricing 懸置 20 天的防再犯）",
-      "assertion": "all_contain",
-      "files": [
-        ".claude/commands/wiki-lint.md"
-      ],
-      "patterns": [
-        "官方頁面未查證",
-        "措辭鐵則"
-      ]
-    },
-    {
-      "name": "coding-workflow-guide 觸發邊與軸線鐵則（吃技能清冊非新聞，類別路由接不到；且不得改以開發領域分欄——官方技能本身不按領域切，照領域組織會產出大量空格）",
-      "assertion": "all_contain",
-      "files": [
-        ".claude/rules/wiki-ingest-features.md"
-      ],
-      "patterns": [
-        "coding-workflow-guide",
-        "程式開發實戰手冊維護",
-        "不得改以開發領域"
-      ]
-    },
-    {
-      "name": "/weekly 總指揮 <-> 兩個子指令：總指揮必須指名兩者、兩者必須各自載明「被 /weekly 帶起時跳過收尾」（任一側斷鏈都會靜默失效——總指揮漏叫某段＝那段整週沒跑，子指令沒跳過收尾＝兩次 push 搶佔 Pages 部署）",
-      "assertion": "all_contain",
-      "files": [
-        ".claude/commands/weekly.md",
-        ".claude/commands/weekly-report.md",
-        ".claude/commands/wiki-weekly-review.md"
-      ],
-      "patterns": [
-        "/weekly",
-        "收尾"
-      ],
-      "_note": "2026-08-09 加入。原本 /weekly 與 /wiki-weekly-review 是兩個各自獨立的每週指令，使用者跑完策展後以為週報也產生了——實際 W32 週報缺漏。改為總指揮帶起兩段後，鏈路本身成為新的單點失效處，故立此檢查。順序（週報先、策展後）與不可合併的三個理由寫在 weekly.md，不在此重複。"
-    },
-    {
-      "name": "專頁定向抓取的三處說法必須同步：config 的 topic slug <-> 日報區塊規格 <-> 派工路由規則（任一處改了名稱或判準而其餘沒跟上，條目會被丟進錯的區塊或錯的記者手上）",
-      "assertion": "all_contain",
-      "files": [
-        "src/news_aggregator/sources/topic_watch.json",
-        ".claude/commands/news-pipeline-steps.md",
-        ".claude/commands/wiki-ingest.md"
-      ],
-      "patterns": [
-        "Topic Watch",
-        "專頁"
-      ],
-      "_note": "2026-08-13 加入。Topic Watch 上線時建立。這條通道的條目要正確落地，需要三方對同一組 slug 有一致認知：抓料端產生 topic 標記、日報端把它們收進『🧭 專頁雷達』區塊、ingest 端據此路由給對應記者。其中任一處被改寫而其餘沒跟上，症狀是靜默的——條目仍會進 gathered_items.json，但可能混進正文區塊稀釋日報，或被記者當成一般條目套 Claude 關聯門檻而略過。 錨點刻意選『Topic Watch』（來源標籤，條目識別的依據）與『專頁』（概念詞），不列個別 slug——slug 清單的唯一家是 topic_watch.json，要求 command 檔複述會製造第二份真相。"
-    },
-    {
-      "name": "日報區塊 emoji 必須同時出現在日報規格、build_web 解析器與 app.js 渲染器（新增區塊只改規格，網站會把它吞進前一區）",
-      "assertion": "all_contain",
-      "files": [
-        ".claude/commands/news-pipeline-steps.md",
-        "scripts/build_web.py",
-        "web_reader/assets/app.js"
-      ],
-      "patterns": [
-        "🧭",
-        "💰",
-        "💬",
-        "📰",
-        "🔧",
-        "⭐"
-      ],
-      "_note": "2026-08-14 加入。專頁雷達（🧭）於 08-13 加進日報規格，但 build_web.SECTION_EMOJI 與 app.js 未跟上——條目被當成「付費方案動態」的故事、來源狀態表黏在最後一條底下。此對是三邊都得認得同一組區塊 emoji 的機械保證；新增日報區塊時三檔一起改。"
-    },
-    {
-      "name": "派工 prompt 不得臨場加寫操作指示：禁令須同時在正典規則（wiki-ingest.md 派工方式）與 wiki-ingest 指令骨架（只改一側，另一側的 prompt 範本會繼續被當成可自由增補）",
-      "assertion": "all_contain",
-      "files": [
-        ".claude/rules/wiki-ingest.md",
-        ".claude/commands/wiki-ingest.md"
-      ],
-      "patterns": [
-        "臨場加寫"
-      ],
-      "_note": "2026-08-15 加入。主編在社群記者 prompt 內加寫「今日順手改寫主線頁」，但該規則當天才改版為週更——記者拿到兩份矛盾指令。"
-    },
-    {
-      "name": "派工/規則牴觸的兩側防線：派工端禁止臨場加寫（wiki-ingest.md）必須與記者端「規則檔優先於派工訊息」（wiki-reporter-shared.md）成對存在",
-      "assertion": "all_contain",
-      "files": [
-        ".claude/rules/wiki-ingest.md",
-        ".claude/rules/wiki-reporter-shared.md"
-      ],
-      "patterns": [
-        "規則檔優先於派工訊息"
-      ],
-      "_note": "2026-08-15 加入。只修派工端仍依賴主編每次記得；只修記者端則主編永遠不知道自己在製造矛盾（記者靜默照規則做，牴觸不會浮上來）。此對保證兩層同時在：主編不加寫、記者擋下來並回報。"
-    },
-    {
-      "name": "官方內容的類別分流：正典分流鐵則（wiki-ingest.md）必須與功能側（coding-workflow-guide 進料）、社群側（patterns/discussions 不限出處）三邊齊全",
-      "assertion": "all_contain",
-      "files": [
-        ".claude/rules/wiki-ingest.md",
-        ".claude/rules/wiki-ingest-features.md",
-        ".claude/rules/wiki-ingest-community.md"
-      ],
-      "patterns": [
-        "官方內容不是社群類的禁區"
-      ],
-      "_note": "2026-08-16 加入。官方部落格〈Maximizing the value of your Claude Code sessions〉（HN 268 分，當日最高互動的官方一手內容）全庫零收錄——分類層無落點（社群列讀起來像『社群產出』、功能列只有版本/指令/旗標）＋ coding-workflow-guide 一句『不吃新聞條目』，兩層同時漏。三邊只要有一邊被改回去，官方使用指南就會再次無家可歸；社群側缺席則官方模式類條目又會被記者當成不屬自己而略過。"
-    },
-    {
-      "name": "多來源條目的來源欄：日報產出端（news-pipeline-steps.md）與歸因端（wiki-reporter-shared.md）必須都認得 ＋ 分隔",
-      "assertion": "all_contain",
-      "files": [
-        ".claude/commands/news-pipeline-steps.md",
-        ".claude/rules/wiki-reporter-shared.md"
-      ],
-      "patterns": [
-        "＋"
-      ],
-      "_note": "2026-08-16 加入。dedup 只留勝者標籤，低流量官方來源在 funnel／記分卡上長期顯示零貢獻（2026-08-15：Anthropic Blog 供了當日最大條報導，掛名全歸 HN）。修法是把 contributors 寫進日報來源欄；只改產出端而記者不知道要拆成多筆，attribution 一樣只記勝者，等於白做。"
-    },
-    {
-      "name": "深挖專欄的三邊耦合：規格（weekly-report.md）、解析器（build_web.py 以 h3 抽 deepDive 元件）、檢查器（check_weekly_ledger.py 擋非 ### 層級）",
-      "assertion": "all_contain",
-      "files": [
-        ".claude/commands/weekly-report.md",
-        "scripts/build_web.py",
-        "scripts/check_weekly_ledger.py"
-      ],
-      "patterns": [
-        "深挖"
-      ],
-      "_note": "2026-08-16 加入。規格檔的範例原本寫成 `#### 深挖：主題名稱`——那是規格文件自己的巢狀深度（該處為 `#### (2) 技術討論＋深挖`），輸出檔少一層。W30–W32 三期各自從輸出結構推導出 `###` 而沒人回頭改規格，錯誤範例活了三週；W33 照字面抄，build_web 切不到子區塊、deepDive 變 None，整段 1,200 字被靜默併進討論綜述，網站上專欄消失且無任何錯誤訊息。三邊任一移除深挖處理即紅。"
-    },
-    {
-      "name": "懸置標記的定義處 <-> 唯一結案處：wiki-ingest-format.md「誰可以動這個標記」與 wiki-lint.md 5c 必須同步（format 定語法與權限、5c 是唯一有權移除標記並回掃引用方的角色；只改一側會讓權限表指向不存在的步驟，或讓結案少掉回掃這一半）",
-      "assertion": "all_contain",
-      "files": [
-        ".claude/rules/wiki-ingest-format.md",
-        ".claude/commands/wiki-lint.md"
-      ],
-      "patterns": [
-        "懸置標記",
-        "5c",
-        "回掃"
-      ]
-    },
-    {
-      "name": "reader-notes 的消費者清單必須與實際消費者一致：weekly-report 選題讀它，該檔的「消費」節也要列出它",
-      "assertion": "all_contain",
-      "files": [
-        ".claude/commands/weekly-report.md",
-        "wiki/reader-notes.md"
-      ],
-      "patterns": [
-        "reader-notes"
-      ],
-      "_note": "2026-08-20 加入。reader-notes.md 原本只被 /wiki-weekly-review（對內策展）與 /wiki-ingest（逾期提醒）消費，對外交付的週報從不讀它——讀者問過的題目只會變成 wiki 加碼，永遠進不了他們真正在讀的那篇。該檔自己維護一份「消費（避免變死檔）」清單，新增消費者而不同步該清單，清單就會謊報這個收件匣被誰讀過。"
-    },
-    {
-      "name": "死鏈報告的產出端 <-> 消費端：weekly-linkcheck workflow 產出 data/link_health.json，wiki-lint 指標三讀它。只留一側＝有人天天產報告沒人看，或 lint 讀一個永遠不存在的檔（後者更糟：它會安靜地跳過死鏈檢查，回到 2026-07～08 一次都沒跑過的狀態）。註：workflow 位於 git repo 根（ObsidianLab/），故路徑相對 CLAUDE_NEWS 需 ../",
-      "assertion": "all_contain",
-      "files": [
-        "../.github/workflows/weekly-linkcheck.yml",
-        ".claude/commands/wiki-lint.md"
-      ],
-      "patterns": [
-        "link_health\\.json"
-      ]
-    },
-    {
-      "name": "/weekly 收尾補掃 <-> /weekly-report 凍結存檔：補掃是凍結原則的明文例外，兩側措辭必須同時存在（只留凍結會讓補掃看起來違規；只留補掃會讓凍結的邊界消失）",
-      "assertion": "all_contain",
-      "files": [
-        ".claude/commands/weekly.md",
-        ".claude/commands/weekly-report.md"
-      ],
-      "patterns": [
-        "凍結"
-      ],
-      "_note": "2026-08-22 加入。W34 踩過：涵蓋窗只在開工當下盤點，雲端 pipeline 執行期間續產日報，週報遂以「這幾天沒有日報」對實際存在的新聞下「本週零命中」，並把 WIRED 浮水印繞過報導漏成「無人復現」的結案。weekly.md 步驟 3 第 0 步為此加入收尾補掃，並明文限定只修正會誤導讀者的事實判定、不回頭改選題與深挖——該限定直接引用 weekly-report.md 步驟 5 的凍結原則，兩者措辭失步會讓補掃的邊界失效。"
-    },
-    {
-      "name": "weekly-report.md 頭條敘事規則 <-> check_weekly_ledger.py 機械檢查：規格與檢查器同進退",
-      "assertion": "all_contain",
-      "files": [
-        ".claude/commands/weekly-report.md"
-      ],
-      "patterns": [
-        "入口讀者裁定",
-        "編線准入",
-        "前情錨",
-        "固定稱呼",
-        "收束預算",
-        "冷讀者三問",
-        "W35 起生效"
-      ]
-    },
-    {
-      "name": "check_weekly_ledger.py 存在頭條檢查與生效閘（規格帶 🔧 的規則有實作對應）",
-      "assertion": "all_contain",
-      "files": [
-        "scripts/check_weekly_ledger.py"
-      ],
-      "patterns": [
-        "def check_headline",
-        "HEADLINE_RULES_SINCE",
-        "把\\[一二三四五六七八九十"
-      ]
-    },
-    {
-      "name": "news-pipeline-steps.md <-> wiki-lint.md：gate 擋下時的修復迴圈（節名逐字引用）",
-      "assertion": "all_contain",
-      "files": [
-        ".claude/commands/news-pipeline-steps.md",
-        ".claude/commands/wiki-lint.md"
-      ],
-      "patterns": [
-        "gate 擋下時的修復迴圈"
-      ],
-      "_note": "2026-08-26 加入。wiki-lint 步驟 2 逐字引用 Step 4 的節名；節名改動時兩處要一起改，否則 lint 端的引用指向不存在的節。"
-    },
-    {
-      "name": "存量盤點前綴的產出端 <-> 消費端：github_releases.py 實際輸出的 `[存量盤點｜` 字串必須與 news-pipeline-steps.md 的寫法規則逐字相同（改前綴而規格沒跟上，日報撰寫者辨識不出這批不是今日新聞，會把 2 月出生的 9 萬星 repo 寫成今日發布——這是本通道唯一的誠實防線）",
-      "assertion": "all_contain",
-      "files": [
-        "src/news_aggregator/sources/github_releases.py",
-        ".claude/commands/news-pipeline-steps.md"
-      ],
-      "patterns": [
-        "\\[存量盤點｜"
-      ],
-      "_note": "2026-08-28 首版用概念詞『存量盤點』當 pattern，是假綠——檔內設計註解也含這四個字，把前綴改壞照樣通過。pattern 必須釘實際輸出字串。"
-    },
-    {
-      "name": "截止日複查的產出端 <-> 消費端：scan_expiring_deadlines.py 必須被 news-pipeline-steps.md 的 3g 呼叫，且其輸出必須在完成摘要「待使用者裁示」有接手方（只寫在步驟裡沒人接＝偵測器印給空氣看，正是 2026-08-02 裁示擱置 6 天的同型死法）",
-      "assertion": "all_contain",
-      "files": [
-        "scripts/scan_expiring_deadlines.py",
-        ".claude/commands/news-pipeline-steps.md"
-      ],
-      "patterns": [
-        "scan_expiring_deadlines",
-        "待使用者裁示"
-      ],
-      "_note": "2026-08-29 review 三度修正：首版 files 只列消費端＋patterns 用 2 字元的「3g」；二版改「截止日」仍是兩檔天然都含的通用詞；三版釘腳本名但只守住 name 宣稱的前半（被呼叫），沒守住後半（輸出有接手方）。現兩者各一個 pattern。"
-    },
-    {
-      "name": "Lane A/B 額度四處同步：check_pending_markers.py <-> wiki-lint 5c <-> weekly 步驟 0 <-> 雲端 runbook（只改 py 而三份文件沒跟上，消化端會照舊額度做事——2026-08-29 review 以突變實證此漏）",
-      "assertion": "all_contain",
-      "files": [
-        "scripts/check_pending_markers.py",
-        ".claude/commands/wiki-lint.md",
-        ".claude/commands/weekly.md",
-        "docs/cloud-runbooks/weekly-lint.md"
-      ],
-      "patterns": [
-        "Lane A（本輪額度 10）",
-        "Lane B（本輪額度 5）"
-      ]
-    },
-    {
-      "name": "check_pending_markers.py 產消對帳 <-> wiki-lint 5c：告警產出端與消費端同進退（只印不讀＝偵測器印給空氣看）",
-      "assertion": "all_contain",
-      "files": [
-        ".claude/commands/wiki-lint.md",
-        ".claude/commands/weekly.md"
-      ],
-      "patterns": [
-        "產消對帳"
-      ]
-    },
-    {
-      "name": "開放迴路五類 <-> CLAUDE.md：類別與處理端必須同步（腳本加減一類而文件沒跟上，讀者會照舊以為只有兩類）",
-      "assertion": "all_contain",
-      "files": [
-        "CLAUDE.md",
-        "scripts/open_loops.py"
-      ],
-      "patterns": [
-        "需收尾",
-        "reader-notes",
-        "feature-radar",
-        "`/wiki-lint` 5c",
-        "`/wiki-lint` 5a"
-      ]
-    },
-    {
-      "name": "open_loops <-> check_pending_markers：彙整端依賴的公開契約（上游改名而彙整端沒跟上＝整類積壓從報表消失）",
-      "assertion": "all_contain",
-      "files": [
-        "scripts/open_loops.py",
-        "scripts/check_pending_markers.py"
-      ],
-      "patterns": [
-        "backlog_summary"
-      ]
-    }
+  "pattern": "CLAUDE\\.md",
+  "exempt_files": [
+   ".claude/rules/claude-md-edit.md"
   ],
-  "coupling_hints": {
-    "enabled": true,
-    "globs": [
-      ".claude/commands/*.md",
-      ".claude/rules/*.md"
-    ],
-    "min_mutual_references": 2
+  "_exempt_files_note": "claude-md-edit.md 全篇在示範/講解裸露 CLAUDE.md 規則本身，不適用此檢查。",
+  "line_allowlist": [
+   {
+    "file": ".claude/commands/review-commands.md",
+    "pattern": "commands / rules / CLAUDE\\.md"
+   },
+   {
+    "file": ".claude/commands/review-commands.md",
+    "pattern": "根目錄 `CLAUDE\\.md`"
+   },
+   {
+    "file": ".claude/commands/wiki-lint.md",
+    "pattern": "CLAUDE\\.md 健檢"
+   },
+   {
+    "file": ".claude/commands/wiki-lint.md",
+    "pattern": "根目錄 `CLAUDE\\.md`"
+   },
+   {
+    "file": ".claude/commands/wiki-weekly-review.md",
+    "pattern": "根目錄 `CLAUDE\\.md`"
+   },
+   {
+    "file": ".claude/commands/news-pipeline-steps.md",
+    "pattern": "根目錄 `CLAUDE\\.md`"
+   },
+   {
+    "file": ".claude/commands/weekly-report.md",
+    "pattern": "根目錄 `CLAUDE\\.md`"
+   },
+   {
+    "file": ".claude/rules/wiki-ingest-people.md",
+    "pattern": "CLAUDE\\.md 論述"
+   },
+   {
+    "file": "docs/cloud-runbooks/weekly-lint.md",
+    "pattern": "CLAUDE\\.md 健檢"
+   }
+  ]
+ },
+ "path_existence": {
+  "globs": [
+   ".claude/commands/*.md",
+   ".claude/rules/*.md",
+   "docs/cloud-runbooks/*.md"
+  ],
+  "extensions": [
+   ".md",
+   ".py",
+   ".json",
+   ".jsonl"
+  ],
+  "allowlist_patterns": [
+   "^\\.claude/rules/wiki-ingest-\\[.+\\]\\.md$",
+   "^news/YYYY-MM-DD\\.md$",
+   "^news/TARGET_DATE\\.md$",
+   "^news/YESTERDAY\\.md$",
+   "^wiki/YYYY-MM-DD\\.md$",
+   "^gathered_items\\.json$",
+   "^emitted_items\\.json$",
+   "^seen_urls\\.json$",
+   "^src/gathered_items\\.json$",
+   "^src/logs/pipeline_baseline\\.json$",
+   "^weekly/YYYY-Wnn\\.md$",
+   "^scripts/weekly_stats\\.py$",
+   "^data/pending-signals\\.jsonl$",
+   "^data/pending-handoffs\\.jsonl$"
+  ],
+  "_allowlist_note": "以上為 placeholder 或執行期才產生的產物檔，不強制存在。",
+  "bare_name_search_dirs": {
+   "community-tech-tools.md": [
+    "wiki/topics"
+   ],
+   "community-tech-discussions.md": [
+    "wiki/topics"
+   ],
+   "community-pattern-trends.md": [
+    "wiki/topics"
+   ],
+   "community-tech-patterns.md": [
+    "wiki/topics"
+   ]
   }
+ },
+ "anchors": [
+  {
+   "label": "首次出現 欄",
+   "pattern": "\\| 首次出現 \\|",
+   "file": "wiki/topics/community-tech-tools.md"
+  },
+  {
+   "label": "痛點洞察 區塊",
+   "pattern": "## 痛點洞察",
+   "file": "wiki/topics/community-tech-tools.md"
+  },
+  {
+   "label": "近期工具 欄",
+   "pattern": "近期工具",
+   "file": "wiki/topics/community-tech-tools.md"
+  },
+  {
+   "label": "技術彙整 區塊",
+   "pattern": "## 技術彙整",
+   "file": "wiki/topics/community-tech-discussions.md"
+  },
+  {
+   "label": "熱門討論 表格",
+   "pattern": "熱門討論",
+   "file": "wiki/topics/community-tech-discussions.md"
+  },
+  {
+   "label": "衍生 欄",
+   "pattern": "衍生",
+   "file": "wiki/topics/community-tech-discussions.md"
+  },
+  {
+   "label": "全覽表 區塊",
+   "pattern": "全覽表",
+   "file": "wiki/feature-radar.md"
+  },
+  {
+   "label": "蒐集邊界欄位（人才流動涵蓋範圍）——主題延伸到 Claude/Anthropic 之外的頁面必須誠實標示會漏什麼，欄位被刪＝讀者又看不出缺口",
+   "pattern": "\\*\\*蒐集邊界：\\*\\*",
+   "file": "wiki/topics/ai-talent-flow.md"
+  },
+  {
+   "label": "蒐集邊界欄位（安全事件涵蓋範圍）——主題延伸到 Claude/Anthropic 之外的頁面必須誠實標示會漏什麼，欄位被刪＝讀者又看不出缺口",
+   "pattern": "\\*\\*蒐集邊界：\\*\\*",
+   "file": "wiki/topics/ai-agent-safety.md"
+  },
+  {
+   "label": "蒐集邊界欄位（競品動態涵蓋範圍）——主題延伸到 Claude/Anthropic 之外的頁面必須誠實標示會漏什麼，欄位被刪＝讀者又看不出缺口",
+   "pattern": "\\*\\*蒐集邊界：\\*\\*",
+   "file": "wiki/topics/competitor-landscape.md"
+  },
+  {
+   "label": "蒐集邊界欄位（企業採用涵蓋範圍）——主題延伸到 Claude/Anthropic 之外的頁面必須誠實標示會漏什麼，欄位被刪＝讀者又看不出缺口",
+   "pattern": "\\*\\*蒐集邊界：\\*\\*",
+   "file": "wiki/topics/enterprise-tool-tracker.md"
+  }
+ ],
+ "sync_pairs": [
+  {
+   "name": "news-pipeline.md <-> news-pipeline-steps.md：REPO_ROOT/PYTHON 逐字相同 + 不可背景",
+   "assertion": "equal_values",
+   "files": [
+    ".claude/commands/news-pipeline.md",
+    ".claude/commands/news-pipeline-steps.md"
+   ],
+   "pattern": "REPO_ROOT\\s*=\\s*(\\S+)"
+  },
+  {
+   "name": "news-pipeline.md <-> news-pipeline-steps.md：PYTHON 逐字相同",
+   "assertion": "equal_values",
+   "files": [
+    ".claude/commands/news-pipeline.md",
+    ".claude/commands/news-pipeline-steps.md"
+   ],
+   "pattern": "PYTHON\\s*=\\s*(\\S+)"
+  },
+  {
+   "name": "news-pipeline.md <-> news-pipeline-steps.md：皆明文「不可包進背景 agent」語意",
+   "assertion": "all_contain",
+   "files": [
+    ".claude/commands/news-pipeline.md",
+    ".claude/commands/news-pipeline-steps.md"
+   ],
+   "patterns": [
+    "不可.*背景"
+   ]
+  },
+  {
+   "name": "news-pipeline.md Phase B <-> wiki-ingest.md：互相參照，無精簡複本殘留",
+   "assertion": "all_contain",
+   "files": [
+    ".claude/commands/news-pipeline.md"
+   ],
+   "patterns": [
+    "wiki-ingest\\.md"
+   ]
+  },
+  {
+   "name": "wiki-ingest.md 提及被 news-pipeline.md Phase B 呼叫，無精簡複本殘留",
+   "assertion": "all_contain",
+   "files": [
+    ".claude/commands/wiki-ingest.md"
+   ],
+   "patterns": [
+    "news-pipeline\\.md"
+   ]
+  },
+  {
+   "name": "wiki-ingest.md 無「精簡複本」殘留字樣",
+   "assertion": "max_count",
+   "files": [
+    ".claude/commands/wiki-ingest.md"
+   ],
+   "patterns": [
+    "精簡複本"
+   ],
+   "max": 0,
+   "_note": "2026-07-25 由 min_count/min:0 改為 max_count/max:0——前者的條件是 count < min 才失敗，min:0 恆為真，這條「不該出現」的檢查一直是假綠。"
+  },
+  {
+   "name": "wiki-ingest.md / wiki-lint.md / rules/wiki-ingest.md：六類記者角色檔名一致 + 正典派工路徑（general-purpose + 角色前導 + model: \"sonnet\"）",
+   "assertion": "all_contain",
+   "files": [
+    ".claude/commands/wiki-ingest.md",
+    ".claude/commands/wiki-lint.md",
+    ".claude/rules/wiki-ingest.md"
+   ],
+   "patterns": [
+    "subagent_type: \"general-purpose\"",
+    "那是你的角色定義（含「開始前必讀」規則清單與回報契約）",
+    "wiki-reporter-models",
+    "wiki-reporter-features",
+    "wiki-reporter-commercial",
+    "wiki-reporter-safety-policy",
+    "wiki-reporter-community",
+    "wiki-reporter-people",
+    "model: \"sonnet\""
+   ]
+  },
+  {
+   "name": "wiki-ingest-community.md <-> wiki-ingest-community-lint.md：lint-only 邊界（共用「每日 ingest 不」語意標記）",
+   "assertion": "all_contain",
+   "files": [
+    ".claude/rules/wiki-ingest-community.md",
+    ".claude/rules/wiki-ingest-community-lint.md"
+   ],
+   "patterns": [
+    "每日 ingest 不"
+   ]
+  },
+  {
+   "name": "wiki-ingest-community.md 明文 lint 專用",
+   "assertion": "all_contain",
+   "files": [
+    ".claude/rules/wiki-ingest-community.md"
+   ],
+   "patterns": [
+    "lint 專用"
+   ]
+  },
+  {
+   "name": "wiki-ingest-community-lint.md 承接 tools 頁策展",
+   "assertion": "all_contain",
+   "files": [
+    ".claude/rules/wiki-ingest-community-lint.md"
+   ],
+   "patterns": [
+    "已脫離每日 ingest",
+    "策展規則"
+   ]
+  },
+  {
+   "name": "六份記者回報格式段皆含八欄（更新頁面/feature-radar 新增/index.md 狀態變更/新增頁面/同步自查/待查證命中處置/轉知處置/來源歸因）",
+   "assertion": "all_contain",
+   "files": [
+    ".claude/rules/wiki-reporter-shared.md",
+    ".claude/rules/wiki-ingest-models.md",
+    ".claude/rules/wiki-ingest-features.md",
+    ".claude/rules/wiki-ingest-commercial.md",
+    ".claude/rules/wiki-ingest-safety-policy.md",
+    ".claude/rules/wiki-ingest-community.md",
+    ".claude/rules/wiki-ingest-people.md"
+   ],
+   "patterns": [
+    "更新頁面：",
+    "feature-radar 新增：",
+    "index\\.md 狀態變更：",
+    "新增頁面：",
+    "同步自查：",
+    "待查證命中處置：",
+    "轉知處置：",
+    "來源歸因："
+   ]
+  },
+  {
+   "name": "主編指南（rules/wiki-ingest.md）回報格式段同步八欄",
+   "assertion": "all_contain",
+   "files": [
+    ".claude/rules/wiki-ingest.md"
+   ],
+   "patterns": [
+    "更新頁面：",
+    "feature-radar 新增：",
+    "index\\.md 狀態變更：",
+    "新增頁面：",
+    "同步自查：",
+    "待查證命中處置：",
+    "轉知處置：",
+    "來源歸因："
+   ]
+  },
+  {
+   "name": "wiki-ingest.md（command）關鍵步驟：feature-radar 彙整 + 呈現品質 log 欄位 + 完成前核對清單",
+   "assertion": "all_contain",
+   "files": [
+    ".claude/commands/wiki-ingest.md"
+   ],
+   "patterns": [
+    "wiki/feature-radar\\.md",
+    "\\.claude/rules/wiki-ingest-features\\.md",
+    "呈現品質",
+    "完成前強制核對清單"
+   ]
+  },
+  {
+   "name": "wiki-lint.md 關鍵步驟：載入鏈 + 呈現品質標準引用 + 規則引用驗證 + 規則年齡審查",
+   "assertion": "all_contain",
+   "files": [
+    ".claude/commands/wiki-lint.md"
+   ],
+   "patterns": [
+    "wiki/CLAUDE\\.md",
+    "\\.claude/rules/wiki-ingest\\.md",
+    "Wiki 頁面呈現品質標準",
+    "規則引用驗證",
+    "規則年齡審查"
+   ]
+  },
+  {
+   "name": "news-pipeline.md 關鍵步驟：三段 Phase 齊全 + 已知結果 + 禁止背景包裹",
+   "assertion": "all_contain",
+   "files": [
+    ".claude/commands/news-pipeline.md"
+   ],
+   "patterns": [
+    "## Phase A",
+    "## Phase B",
+    "## Phase C",
+    "已知結果",
+    "本身也不可被包進背景 agent"
+   ]
+  },
+  {
+   "name": "news-pipeline-steps.md 關鍵步驟：Step 2 不在本檔 + Phase A/C 步驟劃分 + Step 6 log 寫入",
+   "assertion": "all_contain",
+   "files": [
+    ".claude/commands/news-pipeline-steps.md"
+   ],
+   "patterns": [
+    "Step 2.*不在本檔案",
+    "# Phase A 步驟",
+    "# Phase C 步驟",
+    "Step 6：寫入 task_scheduler\\.log"
+   ]
+  },
+  {
+   "name": "雲端 daily runbook <-> news-pipeline-steps.md：步驟標題錨點逐字相符（改步驟標題必須同步 runbook）",
+   "assertion": "all_contain",
+   "files": [
+    "docs/cloud-runbooks/daily.md",
+    ".claude/commands/news-pipeline-steps.md"
+   ],
+   "patterns": [
+    "Step 0：昨日缺跑檢查",
+    "Step 0b：冪等閘",
+    "Step 1a：新聞抓取",
+    "Step 1b：生成日報",
+    "Step 1c：確認 emitted-cache",
+    "Step 2：Wiki Ingest",
+    "Step 3：Commit Wiki 變更",
+    "Step 4：建置 Web Reader",
+    "Step 5：Commit Web 並統一推送",
+    "Step 6：寫入 task_scheduler\\.log"
+   ]
+  },
+  {
+   "name": "雲端 weekly runbook <-> wiki-lint.md：步驟標題錨點逐字相符（改步驟標題必須同步 runbook）",
+   "assertion": "all_contain",
+   "files": [
+    "docs/cloud-runbooks/weekly-lint.md",
+    ".claude/commands/wiki-lint.md"
+   ],
+   "patterns": [
+    "1\\. 載入 wiki 全貌",
+    "2\\. 並行派工",
+    "3\\. 處理語意分岔／死案歸檔候選",
+    "4\\. 建議並建立新實體頁",
+    "5\\. 更新 wiki/overview\\.md",
+    "6\\. CLAUDE\\.md 健檢",
+    "7\\. 讀者模擬驗收",
+    "8\\. 記錄本次 lint",
+    "9\\. 更新 wiki/index\\.md",
+    "10\\. 收尾閉迴路"
+   ]
+  },
+  {
+   "name": "model-comparison 選型品質審核六條規則齊全（決策可用性的單一真相源）",
+   "assertion": "all_contain",
+   "files": [
+    ".claude/rules/wiki-ingest-models.md"
+   ],
+   "patterns": [
+    "model-comparison 選型品質審核",
+    "禁止同義反覆",
+    "不可用讀者取不到的模型當唯一淘汰基準",
+    "社群效能討論一律留數字",
+    "決策層的嚴謹度不得低於證據層",
+    "陣容換代時同步骨架",
+    "3 跳自檢",
+    "儲存格短語化"
+   ]
+  },
+  {
+   "name": "本機/雲端行為一致：閘門・重試・補跑規則必須在共用步驟檔內",
+   "assertion": "all_contain",
+   "files": [
+    ".claude/commands/news-pipeline-steps.md"
+   ],
+   "patterns": [
+    "本機與雲端的行為必須一致",
+    "Step 0b：冪等閘",
+    "新鮮度防線",
+    "push 失敗重試",
+    "補跑（backfill）注意事項"
+   ]
+  },
+  {
+   "name": "雲端 runbook 不得自行實作 push 重試（行為必須來自共用步驟檔，兩份會失步）",
+   "assertion": "max_count",
+   "files": [
+    "docs/cloud-runbooks/daily.md",
+    "docs/cloud-runbooks/_shared.md"
+   ],
+   "patterns": [
+    "pull --rebase"
+   ],
+   "max": 0
+  },
+  {
+   "name": "trigger 鏡像 JSON 仍指向對應 runbook（薄殼規約：prompt 只指路，不含步驟細節）",
+   "assertion": "all_contain",
+   "files": [
+    "docs/cloud-runbooks/triggers/daily-news-pipeline-cloud.json"
+   ],
+   "patterns": [
+    "docs/cloud-runbooks/_shared\\.md",
+    "docs/cloud-runbooks/daily\\.md"
+   ]
+  },
+  {
+   "name": "trigger 鏡像 JSON（weekly）仍指向對應 runbook",
+   "assertion": "all_contain",
+   "files": [
+    "docs/cloud-runbooks/triggers/weekly-wiki-lint-cloud.json"
+   ],
+   "patterns": [
+    "docs/cloud-runbooks/_shared\\.md",
+    "docs/cloud-runbooks/weekly-lint\\.md"
+   ]
+  },
+  {
+   "name": "日報歸因格式 <-> wiki-lint 6g 量測：產出端與量測端都必須認得現行 [N] 註腳格式（改日報歸因格式必須同步 6g，否則回歸偵測器自己讀成 0）",
+   "assertion": "all_contain",
+   "files": [
+    ".claude/commands/news-pipeline-steps.md",
+    ".claude/commands/wiki-lint.md"
+   ],
+   "patterns": [
+    "今日聚焦參考連結",
+    "\\[N\\]"
+   ]
+  },
+  {
+   "name": "wiki-lint 6g 指標一：量測必須同時計兩種歸因格式，且先限縮今日聚焦區塊（防灌大分母）",
+   "assertion": "all_contain",
+   "files": [
+    ".claude/commands/wiki-lint.md"
+   ],
+   "patterns": [
+    "兩種歸因格式，必須同時計",
+    "必須先限縮到「今日聚焦」區塊再數",
+    "news-pipeline-steps\\.md"
+   ]
+  },
+  {
+   "name": "weekly lint 心跳紀錄：wiki-lint.md 收尾與 _shared.md 無人值守原則都必須要求成功/no-op/中止一律寫 task_scheduler.log（07-25 無聲失敗死因不可考的防再犯——只規定中止留證據時，no-op 與死亡無法分辨）",
+   "assertion": "all_contain",
+   "files": [
+    ".claude/commands/wiki-lint.md",
+    "docs/cloud-runbooks/_shared.md"
+   ],
+   "patterns": [
+    "task_scheduler\\.log",
+    "無論成功／no-op／中止"
+   ]
+  },
+  {
+   "name": "雲端 STARTED 開跑標記：_shared.md 無人值守原則必須保留開跑即 push 的規定與四態判定（收尾心跳涵蓋不了中途死——07-25 的死法）",
+   "assertion": "all_contain",
+   "files": [
+    "docs/cloud-runbooks/_shared.md"
+   ],
+   "patterns": [
+    "STARTED 開跑標記",
+    "STARTED 無後續",
+    "完全無 STARTED"
+   ]
+  },
+  {
+   "name": "雲端外部死鏈防護（2026-08-20 移交 GitHub Actions 後改指新不變式）：weekly-lint.md 必須載明雲端「讀 link_health.json、不自己連網」且必須有新鮮度防線。原風險（雲端跑 check_links 產生假死鏈污染頁面標註）已消失，但新風險是讀到過期報告卻以為是新的——過期報告比沒有報告更危險，它看起來像剛檢查過",
+   "assertion": "all_contain",
+   "files": [
+    "docs/cloud-runbooks/weekly-lint.md",
+    ".claude/commands/wiki-lint.md"
+   ],
+   "patterns": [
+    "link_health\\.json",
+    "checked_at",
+    "過期"
+   ]
+  },
+  {
+   "name": "news-pipeline-steps.md <-> wiki-lint.md：兩處 web build gate 都必須走 gate_web_build.py",
+   "assertion": "all_contain",
+   "files": [
+    ".claude/commands/news-pipeline-steps.md",
+    ".claude/commands/wiki-lint.md"
+   ],
+   "patterns": [
+    "scripts.gate_web_build\\.py"
+   ],
+   "_note": "2026-08-01 加入。web build 的放行判準集中在腳本裡；任一處退回自己跑 run_tests.py 再判斷，兩處就會失步（日更放行、週更擋下之類）。"
+  },
+  {
+   "name": "weekly-report.md 第(3)段兩張表的欄名 <-> build_web.py 解析錨點（欄名改動會讓該表整張不進 JSON、在網站上靜默消失）",
+   "assertion": "all_contain",
+   "files": [
+    ".claude/commands/weekly-report.md",
+    "scripts/build_web.py",
+    "scripts/check_weekly_ledger.py",
+    "scripts/scan_open_forecasts.py"
+   ],
+   "patterns": [
+    "上週預告",
+    "本週結果",
+    "類型",
+    "預告",
+    "判準"
+   ],
+   "_note": "2026-08-02 加入。W31 首次出現回收表時，build_web.py 只認得 forecasts 表頭，回收表被整張吃掉——網站上看不到對帳，且回收小標被誤當引言印在新預告卡片上方，讀者無從分辨兩張表的方向。"
+  },
+  {
+   "name": "資訊架構哲學三處錨定：wiki/CLAUDE.md 哲學段 + index.md/log.md 檔頭契約互相指回（哲學失去錨點後，操作規則會退化成無 why 的禁令，擋不住新形態的同類錯誤）",
+   "assertion": "all_contain",
+   "files": [
+    "wiki/CLAUDE.md",
+    "wiki/index.md",
+    "wiki/log.md"
+   ],
+   "patterns": [
+    "資訊架構哲學"
+   ],
+   "_note": "2026-08-05 加入。wiki/CLAUDE.md 另須含「每個事實只有一個家」判斷式（見下一條）。"
+  },
+  {
+   "name": "wiki/CLAUDE.md 哲學段核心判斷式存在",
+   "assertion": "all_contain",
+   "files": [
+    "wiki/CLAUDE.md"
+   ],
+   "patterns": [
+    "每個事實只有一個家",
+    "地圖",
+    "被策展的現在",
+    "不會遺忘的過去"
+   ]
+  },
+  {
+   "name": "large-codebase 主線頁 tag/重寫兩側規則齊全（daily 標 `**主線：**` tag 在 community.md、weekly 整線重寫在 community-lint.md——只有一側時主線頁會再次孤兒化或長回 log）",
+   "assertion": "all_contain",
+   "files": [
+    ".claude/rules/wiki-ingest-community.md",
+    ".claude/rules/wiki-ingest-community-lint.md"
+   ],
+   "patterns": [
+    "community-large-codebase-workflow",
+    "\\*\\*主線：\\*\\*"
+   ],
+   "_note": "2026-08-05 加入。頁面 07-26 建立後因日更與 lint 兩側都無觸發規則而孤兒化 10 天。2026-08-15 改版：日更小縫兩週就把頁面長回 log，改為 daily 只標 tag、weekly 整線重寫（每線 ≤30 行固定骨架）。 2026-08-15 修正兩處：pattern `**主線：**` 未跳脫（`*` 開頭讓 re.compile 拋 PatternError，整支 check_rules.py 崩潰、五項檢查全部跑不了，不只是這條紅）；另移除 `並行規模`——四條線名的家是 community.md，要求 lint 檔複述會製造第二份真相，且 lint 那節已改為通用寫法（「對每條有新節點的線」）不再列線名。剩下兩個 pattern 已足以達成本條自述的目的「兩側規則齊全」。"
+  },
+  {
+   "name": "週報預告偵測的反確認偏誤護欄：weekly-report.md 與 news-pipeline-steps.md 都必須明載掃描在選材之後、且只偵測不判定",
+   "assertion": "all_contain",
+   "files": [
+    ".claude/commands/weekly-report.md",
+    ".claude/commands/news-pipeline-steps.md"
+   ],
+   "patterns": [
+    "open-signals\\.jsonl",
+    "確認偏誤",
+    "選材"
+   ],
+   "_note": "2026-08-02 加入。若哪天把掃描前移到選材階段，日報會傾向撿能證實週報預告的條目——命中率虛高，且每月聚焦校準（量測的正是選材品質）失去獨立性。這條護欄是設計意圖，不是實作細節，兩份文件都要留住。"
+  },
+  {
+   "name": "今日聚焦選材門檻三條在 news-pipeline-steps.md 內同時存在於「判斷用」與「檔尾附錄」兩份（校準加新門檻時只改一份 → LLM 照抄的那份會失步）",
+   "assertion": "min_count",
+   "files": [
+    ".claude/commands/news-pipeline-steps.md"
+   ],
+   "patterns": [
+    "\\*\\*\\[新工具\\]\\*\\*：",
+    "\\*\\*\\[風險警示\\]\\*\\*：",
+    "\\*\\*\\[持續追蹤\\]\\*\\*："
+   ],
+   "min": 2,
+   "_note": "2026-08-01 加入。第二次月度聚焦校準新增 [持續追蹤] 門檻時發現：同一份門檻文字在檔內存在兩份（Step 1b 判斷用 + 檔尾附錄格式範本），只改一份不會被任何檢查抓到。"
+  },
+  {
+   "name": "web build gate 舊措辭已退場（不得殘留 Tests FAILED - web build skipped）",
+   "assertion": "max_count",
+   "files": [
+    ".claude/commands/news-pipeline-steps.md",
+    ".claude/commands/wiki-lint.md"
+   ],
+   "patterns": [
+    "Tests FAILED - web build skipped"
+   ],
+   "max": 0,
+   "_note": "2026-08-01 加入。舊 log 措辭對應「測試失敗一律跳過 build」的舊規則，留著會讓 agent 抄回舊行為。"
+  },
+  {
+   "name": "wiki/index.md 為純路由表：異動日誌區塊不得再長回來（2026-08-02 瘦身：83% 是 log.md 的重複副本，路由成本 42k→8k）",
+   "assertion": "max_count",
+   "files": [
+    "wiki/index.md"
+   ],
+   "patterns": [
+    "## 近期異動"
+   ],
+   "max": 0
+  },
+  {
+   "name": "wiki/CLAUDE.md 查詢分流四路徑齊全（index 瘦身後的配套：專有名詞 grep／概念走 index／結構性盤點 grep 標頭／近況走 log 或日報）",
+   "assertion": "all_contain",
+   "files": [
+    "wiki/CLAUDE.md"
+   ],
+   "patterns": [
+    "搜尋策略（查詢分流）",
+    "直接 Grep",
+    "目錄表挑頁",
+    "Grep 頁面標頭欄位",
+    "不可整讀"
+   ]
+  },
+  {
+   "name": "本週推薦選取邏輯必須保留時間閘（熱度只加不減，無時間項時候選池會固化成歷代名人堂——2026-08-08 凍結 14 天的防再犯）",
+   "assertion": "all_contain",
+   "files": [
+    ".claude/rules/wiki-ingest-features.md"
+   ],
+   "patterns": [
+    "時間閘",
+    "不補舊條目湊數",
+    "本週無新達標功能"
+   ]
+  },
+  {
+   "name": "news-pipeline.md <-> news-pipeline-steps.md：完成摘要必須接出「待使用者裁示」（待確認事項只寫進 log.md 等於靜默丟棄——2026-08-02 裁示擱置 6 天的防再犯）",
+   "assertion": "all_contain",
+   "files": [
+    ".claude/commands/news-pipeline.md",
+    ".claude/commands/news-pipeline-steps.md"
+   ],
+   "patterns": [
+    "待使用者裁示"
+   ]
+  },
+  {
+   "name": "wiki-lint.md <-> 雲端 weekly runbook：5c 逾期待查證清算兩側齊全且明載雲端跳過（記者無 web 工具，此步驟是 299 筆待查證的唯一消化端；只留一側會再次孤兒化）",
+   "assertion": "all_contain",
+   "files": [
+    ".claude/commands/wiki-lint.md",
+    "docs/cloud-runbooks/weekly-lint.md"
+   ],
+   "patterns": [
+    "5c",
+    "逾期待查證清算"
+   ]
+  },
+  {
+   "name": "待查證回訪措辭鐵則：不得寫成「至今無後續」（只掃日報就宣稱世界沒有，會讓懸置被讀成已確認——2026-08-08 pricing 懸置 20 天的防再犯）",
+   "assertion": "all_contain",
+   "files": [
+    ".claude/commands/wiki-lint.md"
+   ],
+   "patterns": [
+    "官方頁面未查證",
+    "措辭鐵則"
+   ]
+  },
+  {
+   "name": "coding-workflow-guide 觸發邊與軸線鐵則（吃技能清冊非新聞，類別路由接不到；且不得改以開發領域分欄——官方技能本身不按領域切，照領域組織會產出大量空格）",
+   "assertion": "all_contain",
+   "files": [
+    ".claude/rules/wiki-ingest-features.md"
+   ],
+   "patterns": [
+    "coding-workflow-guide",
+    "程式開發實戰手冊維護",
+    "不得改以開發領域"
+   ]
+  },
+  {
+   "name": "/weekly 總指揮 <-> 兩個子指令：總指揮必須指名兩者、兩者必須各自載明「被 /weekly 帶起時跳過收尾」（任一側斷鏈都會靜默失效——總指揮漏叫某段＝那段整週沒跑，子指令沒跳過收尾＝兩次 push 搶佔 Pages 部署）",
+   "assertion": "all_contain",
+   "files": [
+    ".claude/commands/weekly.md",
+    ".claude/commands/weekly-report.md",
+    ".claude/commands/wiki-weekly-review.md"
+   ],
+   "patterns": [
+    "/weekly",
+    "收尾"
+   ],
+   "_note": "2026-08-09 加入。原本 /weekly 與 /wiki-weekly-review 是兩個各自獨立的每週指令，使用者跑完策展後以為週報也產生了——實際 W32 週報缺漏。改為總指揮帶起兩段後，鏈路本身成為新的單點失效處，故立此檢查。順序（週報先、策展後）與不可合併的三個理由寫在 weekly.md，不在此重複。"
+  },
+  {
+   "name": "專頁定向抓取的三處說法必須同步：config 的 topic slug <-> 日報區塊規格 <-> 派工路由規則（任一處改了名稱或判準而其餘沒跟上，條目會被丟進錯的區塊或錯的記者手上）",
+   "assertion": "all_contain",
+   "files": [
+    "src/news_aggregator/sources/topic_watch.json",
+    ".claude/commands/news-pipeline-steps.md",
+    ".claude/commands/wiki-ingest.md"
+   ],
+   "patterns": [
+    "Topic Watch",
+    "專頁"
+   ],
+   "_note": "2026-08-13 加入。Topic Watch 上線時建立。這條通道的條目要正確落地，需要三方對同一組 slug 有一致認知：抓料端產生 topic 標記、日報端把它們收進『🧭 專頁雷達』區塊、ingest 端據此路由給對應記者。其中任一處被改寫而其餘沒跟上，症狀是靜默的——條目仍會進 gathered_items.json，但可能混進正文區塊稀釋日報，或被記者當成一般條目套 Claude 關聯門檻而略過。 錨點刻意選『Topic Watch』（來源標籤，條目識別的依據）與『專頁』（概念詞），不列個別 slug——slug 清單的唯一家是 topic_watch.json，要求 command 檔複述會製造第二份真相。"
+  },
+  {
+   "name": "日報區塊 emoji 必須同時出現在日報規格、build_web 解析器與 app.js 渲染器（新增區塊只改規格，網站會把它吞進前一區）",
+   "assertion": "all_contain",
+   "files": [
+    ".claude/commands/news-pipeline-steps.md",
+    "scripts/build_web.py",
+    "web_reader/assets/app.js"
+   ],
+   "patterns": [
+    "🧭",
+    "💰",
+    "💬",
+    "📰",
+    "🔧",
+    "⭐"
+   ],
+   "_note": "2026-08-14 加入。專頁雷達（🧭）於 08-13 加進日報規格，但 build_web.SECTION_EMOJI 與 app.js 未跟上——條目被當成「付費方案動態」的故事、來源狀態表黏在最後一條底下。此對是三邊都得認得同一組區塊 emoji 的機械保證；新增日報區塊時三檔一起改。"
+  },
+  {
+   "name": "派工 prompt 不得臨場加寫操作指示：禁令須同時在正典規則（wiki-ingest.md 派工方式）與 wiki-ingest 指令骨架（只改一側，另一側的 prompt 範本會繼續被當成可自由增補）",
+   "assertion": "all_contain",
+   "files": [
+    ".claude/rules/wiki-ingest.md",
+    ".claude/commands/wiki-ingest.md"
+   ],
+   "patterns": [
+    "臨場加寫"
+   ],
+   "_note": "2026-08-15 加入。主編在社群記者 prompt 內加寫「今日順手改寫主線頁」，但該規則當天才改版為週更——記者拿到兩份矛盾指令。"
+  },
+  {
+   "name": "派工/規則牴觸的兩側防線：派工端禁止臨場加寫（wiki-ingest.md）必須與記者端「規則檔優先於派工訊息」（wiki-reporter-shared.md）成對存在",
+   "assertion": "all_contain",
+   "files": [
+    ".claude/rules/wiki-ingest.md",
+    ".claude/rules/wiki-reporter-shared.md"
+   ],
+   "patterns": [
+    "規則檔優先於派工訊息"
+   ],
+   "_note": "2026-08-15 加入。只修派工端仍依賴主編每次記得；只修記者端則主編永遠不知道自己在製造矛盾（記者靜默照規則做，牴觸不會浮上來）。此對保證兩層同時在：主編不加寫、記者擋下來並回報。"
+  },
+  {
+   "name": "官方內容的類別分流：正典分流鐵則（wiki-ingest.md）必須與功能側（coding-workflow-guide 進料）、社群側（patterns/discussions 不限出處）三邊齊全",
+   "assertion": "all_contain",
+   "files": [
+    ".claude/rules/wiki-ingest.md",
+    ".claude/rules/wiki-ingest-features.md",
+    ".claude/rules/wiki-ingest-community.md"
+   ],
+   "patterns": [
+    "官方內容不是社群類的禁區"
+   ],
+   "_note": "2026-08-16 加入。官方部落格〈Maximizing the value of your Claude Code sessions〉（HN 268 分，當日最高互動的官方一手內容）全庫零收錄——分類層無落點（社群列讀起來像『社群產出』、功能列只有版本/指令/旗標）＋ coding-workflow-guide 一句『不吃新聞條目』，兩層同時漏。三邊只要有一邊被改回去，官方使用指南就會再次無家可歸；社群側缺席則官方模式類條目又會被記者當成不屬自己而略過。"
+  },
+  {
+   "name": "多來源條目的來源欄：日報產出端（news-pipeline-steps.md）與歸因端（wiki-reporter-shared.md）必須都認得 ＋ 分隔",
+   "assertion": "all_contain",
+   "files": [
+    ".claude/commands/news-pipeline-steps.md",
+    ".claude/rules/wiki-reporter-shared.md"
+   ],
+   "patterns": [
+    "＋"
+   ],
+   "_note": "2026-08-16 加入。dedup 只留勝者標籤，低流量官方來源在 funnel／記分卡上長期顯示零貢獻（2026-08-15：Anthropic Blog 供了當日最大條報導，掛名全歸 HN）。修法是把 contributors 寫進日報來源欄；只改產出端而記者不知道要拆成多筆，attribution 一樣只記勝者，等於白做。"
+  },
+  {
+   "name": "深挖專欄的三邊耦合：規格（weekly-report.md）、解析器（build_web.py 以 h3 抽 deepDive 元件）、檢查器（check_weekly_ledger.py 擋非 ### 層級）",
+   "assertion": "all_contain",
+   "files": [
+    ".claude/commands/weekly-report.md",
+    "scripts/build_web.py",
+    "scripts/check_weekly_ledger.py"
+   ],
+   "patterns": [
+    "深挖"
+   ],
+   "_note": "2026-08-16 加入。規格檔的範例原本寫成 `#### 深挖：主題名稱`——那是規格文件自己的巢狀深度（該處為 `#### (2) 技術討論＋深挖`），輸出檔少一層。W30–W32 三期各自從輸出結構推導出 `###` 而沒人回頭改規格，錯誤範例活了三週；W33 照字面抄，build_web 切不到子區塊、deepDive 變 None，整段 1,200 字被靜默併進討論綜述，網站上專欄消失且無任何錯誤訊息。三邊任一移除深挖處理即紅。"
+  },
+  {
+   "name": "懸置標記的定義處 <-> 唯一結案處：wiki-ingest-format.md「誰可以動這個標記」與 wiki-lint.md 5c 必須同步（format 定語法與權限、5c 是唯一有權移除標記並回掃引用方的角色；只改一側會讓權限表指向不存在的步驟，或讓結案少掉回掃這一半）",
+   "assertion": "all_contain",
+   "files": [
+    ".claude/rules/wiki-ingest-format.md",
+    ".claude/commands/wiki-lint.md"
+   ],
+   "patterns": [
+    "懸置標記",
+    "5c",
+    "回掃"
+   ]
+  },
+  {
+   "name": "reader-notes 的消費者清單必須與實際消費者一致：weekly-report 選題讀它，該檔的「消費」節也要列出它",
+   "assertion": "all_contain",
+   "files": [
+    ".claude/commands/weekly-report.md",
+    "wiki/reader-notes.md"
+   ],
+   "patterns": [
+    "reader-notes"
+   ],
+   "_note": "2026-08-20 加入。reader-notes.md 原本只被 /wiki-weekly-review（對內策展）與 /wiki-ingest（逾期提醒）消費，對外交付的週報從不讀它——讀者問過的題目只會變成 wiki 加碼，永遠進不了他們真正在讀的那篇。該檔自己維護一份「消費（避免變死檔）」清單，新增消費者而不同步該清單，清單就會謊報這個收件匣被誰讀過。"
+  },
+  {
+   "name": "死鏈報告的產出端 <-> 消費端：weekly-linkcheck workflow 產出 data/link_health.json，wiki-lint 指標三讀它。只留一側＝有人天天產報告沒人看，或 lint 讀一個永遠不存在的檔（後者更糟：它會安靜地跳過死鏈檢查，回到 2026-07～08 一次都沒跑過的狀態）。註：workflow 位於 git repo 根（ObsidianLab/），故路徑相對 CLAUDE_NEWS 需 ../",
+   "assertion": "all_contain",
+   "files": [
+    "../.github/workflows/weekly-linkcheck.yml",
+    ".claude/commands/wiki-lint.md"
+   ],
+   "patterns": [
+    "link_health\\.json"
+   ]
+  },
+  {
+   "name": "/weekly 收尾補掃 <-> /weekly-report 凍結存檔：補掃是凍結原則的明文例外，兩側措辭必須同時存在（只留凍結會讓補掃看起來違規；只留補掃會讓凍結的邊界消失）",
+   "assertion": "all_contain",
+   "files": [
+    ".claude/commands/weekly.md",
+    ".claude/commands/weekly-report.md"
+   ],
+   "patterns": [
+    "凍結"
+   ],
+   "_note": "2026-08-22 加入。W34 踩過：涵蓋窗只在開工當下盤點，雲端 pipeline 執行期間續產日報，週報遂以「這幾天沒有日報」對實際存在的新聞下「本週零命中」，並把 WIRED 浮水印繞過報導漏成「無人復現」的結案。weekly.md 步驟 3 第 0 步為此加入收尾補掃，並明文限定只修正會誤導讀者的事實判定、不回頭改選題與深挖——該限定直接引用 weekly-report.md 步驟 5 的凍結原則，兩者措辭失步會讓補掃的邊界失效。"
+  },
+  {
+   "name": "weekly-report.md 頭條敘事規則 <-> check_weekly_ledger.py 機械檢查：規格與檢查器同進退",
+   "assertion": "all_contain",
+   "files": [
+    ".claude/commands/weekly-report.md"
+   ],
+   "patterns": [
+    "入口讀者裁定",
+    "編線准入",
+    "前情錨",
+    "固定稱呼",
+    "收束預算",
+    "冷讀者三問",
+    "W35 起生效"
+   ]
+  },
+  {
+   "name": "check_weekly_ledger.py 存在頭條檢查與生效閘（規格帶 🔧 的規則有實作對應）",
+   "assertion": "all_contain",
+   "files": [
+    "scripts/check_weekly_ledger.py"
+   ],
+   "patterns": [
+    "def check_headline",
+    "HEADLINE_RULES_SINCE",
+    "把\\[一二三四五六七八九十"
+   ]
+  },
+  {
+   "name": "news-pipeline-steps.md <-> wiki-lint.md：gate 擋下時的修復迴圈（節名逐字引用）",
+   "assertion": "all_contain",
+   "files": [
+    ".claude/commands/news-pipeline-steps.md",
+    ".claude/commands/wiki-lint.md"
+   ],
+   "patterns": [
+    "gate 擋下時的修復迴圈"
+   ],
+   "_note": "2026-08-26 加入。wiki-lint 步驟 2 逐字引用 Step 4 的節名；節名改動時兩處要一起改，否則 lint 端的引用指向不存在的節。"
+  },
+  {
+   "name": "存量盤點前綴的產出端 <-> 消費端：github_releases.py 實際輸出的 `[存量盤點｜` 字串必須與 news-pipeline-steps.md 的寫法規則逐字相同（改前綴而規格沒跟上，日報撰寫者辨識不出這批不是今日新聞，會把 2 月出生的 9 萬星 repo 寫成今日發布——這是本通道唯一的誠實防線）",
+   "assertion": "all_contain",
+   "files": [
+    "src/news_aggregator/sources/github_releases.py",
+    ".claude/commands/news-pipeline-steps.md"
+   ],
+   "patterns": [
+    "\\[存量盤點｜"
+   ],
+   "_note": "2026-08-28 首版用概念詞『存量盤點』當 pattern，是假綠——檔內設計註解也含這四個字，把前綴改壞照樣通過。pattern 必須釘實際輸出字串。"
+  },
+  {
+   "name": "截止日複查的產出端 <-> 消費端：scan_expiring_deadlines.py 必須被 news-pipeline-steps.md 的 3g 呼叫，且其輸出必須在完成摘要「待使用者裁示」有接手方（只寫在步驟裡沒人接＝偵測器印給空氣看，正是 2026-08-02 裁示擱置 6 天的同型死法）",
+   "assertion": "all_contain",
+   "files": [
+    "scripts/scan_expiring_deadlines.py",
+    ".claude/commands/news-pipeline-steps.md"
+   ],
+   "patterns": [
+    "scan_expiring_deadlines",
+    "待使用者裁示"
+   ],
+   "_note": "2026-08-29 review 三度修正：首版 files 只列消費端＋patterns 用 2 字元的「3g」；二版改「截止日」仍是兩檔天然都含的通用詞；三版釘腳本名但只守住 name 宣稱的前半（被呼叫），沒守住後半（輸出有接手方）。現兩者各一個 pattern。"
+  },
+  {
+   "name": "Lane A/B 額度四處同步：check_pending_markers.py <-> wiki-lint 5c <-> weekly 步驟 0 <-> 雲端 runbook（只改 py 而三份文件沒跟上，消化端會照舊額度做事——2026-08-29 review 以突變實證此漏）",
+   "assertion": "all_contain",
+   "files": [
+    "scripts/check_pending_markers.py",
+    ".claude/commands/wiki-lint.md",
+    ".claude/commands/weekly.md",
+    "docs/cloud-runbooks/weekly-lint.md"
+   ],
+   "patterns": [
+    "Lane A（本輪額度 10）",
+    "Lane B（本輪額度 5）"
+   ]
+  },
+  {
+   "name": "check_pending_markers.py 產消對帳 <-> wiki-lint 5c：告警產出端與消費端同進退（只印不讀＝偵測器印給空氣看）",
+   "assertion": "all_contain",
+   "files": [
+    ".claude/commands/wiki-lint.md",
+    ".claude/commands/weekly.md"
+   ],
+   "patterns": [
+    "產消對帳"
+   ]
+  },
+  {
+   "name": "開放迴路五類 <-> CLAUDE.md：類別與處理端必須同步（腳本加減一類而文件沒跟上，讀者會照舊以為只有兩類）",
+   "assertion": "all_contain",
+   "files": [
+    "CLAUDE.md",
+    "scripts/open_loops.py"
+   ],
+   "patterns": [
+    "需收尾",
+    "reader-notes",
+    "feature-radar",
+    "`/wiki-lint` 5c",
+    "`/wiki-lint` 5a"
+   ]
+  },
+  {
+   "name": "open_loops <-> check_pending_markers：彙整端依賴的公開契約（上游改名而彙整端沒跟上＝整類積壓從報表消失）",
+   "assertion": "all_contain",
+   "files": [
+    "scripts/open_loops.py",
+    "scripts/check_pending_markers.py"
+   ],
+   "patterns": [
+    "backlog_summary"
+   ]
+  },
+  {
+   "name": "wiki-lint.md <-> wiki-lint-inquiry.md：質疑題庫抽題指令一致",
+   "assertion": "equal_values",
+   "files": [
+    ".claude/commands/wiki-lint.md",
+    ".claude/rules/wiki-lint-inquiry.md"
+   ],
+   "pattern": "python scripts/inquiry_bank\\.py (\\w+)"
+  }
+ ],
+ "coupling_hints": {
+  "enabled": true,
+  "globs": [
+   ".claude/commands/*.md",
+   ".claude/rules/*.md"
+  ],
+  "min_mutual_references": 2
+ }
 }

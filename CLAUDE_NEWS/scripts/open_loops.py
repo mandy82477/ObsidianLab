@@ -8,6 +8,12 @@
   4. `wiki/reader-notes.md` 的 ⏳ 待處理（處理端：`/wiki-weekly-review`）
   5. `wiki/feature-radar.md` 的 ⏳ 觀望（逾期判定端：`/wiki-lint` 5a 的 90 天規則）
 
+另附一盞「人類質疑時效燈」（[6]，不入檔尾總計）：`wiki/log.md` 最新 Query 條目
+距今 >21 天即亮 ⚠。語意：歷史上所有重大品質問題全部來自使用者的考卷外質疑
+（Query 條目是其紀錄），`/wiki-lint` 7b 的題庫只代打**已知**七種質疑模式——
+燈亮代表「黑天鵝偵測器離線中，新型錯誤無人看守」，這不是積壓也不是承諾，
+是可見性，所以另計不進三個數字。
+
 為何 3–5 要納入（2026-08-29 新增）：本腳本原本只算前兩類，報「合計開放迴路 7 個」，
 而同日實測後三類合計約 222 筆——**唯一的彙整端低報 30 倍**。這與 `--queue` 改版前
 「只印存量、不印流量」是同一種病：看得到的地方沒有積壓，積壓都在看不到的地方。
@@ -39,6 +45,8 @@ REGISTER = REPO / "docs" / "workaround-register.md"
 _DATE_RE = re.compile(r"(\d{4})-(\d{2})-(\d{2})")
 READER_NOTES = REPO / "wiki" / "reader-notes.md"
 FEATURE_RADAR = REPO / "wiki" / "feature-radar.md"
+LOG_MD = REPO / "wiki" / "log.md"
+INQUIRY_LAMP_DAYS = 21  # 與 .claude/rules/wiki-lint-inquiry.md「人類質疑時效燈」同步
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 
@@ -168,6 +176,34 @@ def feature_radar_watching(today: date) -> tuple[int, int]:
             overdue += 1
     return (watching, overdue)
 
+def last_human_inquiry(today: date):
+    """(最新 Query 條目日期 or None, 距今天數 or None)。
+
+    Query 條目是使用者「考卷外質疑」的唯一紀錄（`wiki/log.md` 開頭的收錄規則：
+    只收揭露缺陷或促成改動者）。標題格式歷史上有兩型：
+    `## YYYY-MM-DD Query…` 與 `## YYYY-MM-DD（Query…`，都認。
+    log 不存在或整檔無 Query → 回 (None, None)，由呼叫端印「無法判定」——
+    不可靜默當成 0 天（同 pending_marker_backlog 的理由）。
+    """
+    if not LOG_MD.exists():
+        return (None, None)
+    latest = None
+    for line in LOG_MD.read_text(encoding="utf-8").splitlines():
+        if not line.startswith("## "):
+            continue
+        if "Query" not in line:
+            continue
+        m = _DATE_RE.search(line)
+        if not m:
+            continue
+        d = date(int(m.group(1)), int(m.group(2)), int(m.group(3)))
+        if latest is None or d > latest:
+            latest = d
+    if latest is None:
+        return (None, None)
+    return (latest, (today - latest).days)
+
+
 def main() -> int:
     _use_utf8_stdout()
     today = date.today()
@@ -217,6 +253,15 @@ def main() -> int:
     print(f"\n[5] feature-radar 觀望中（⏳）：{radar_all} 條，其中逾 90 天 {radar_overdue} 條（上界，含已由 5a 處置者）")
     if radar_overdue:
         print("    → 逾 90 天者依 `/wiki-lint` 5a 三選一處置，不得留原狀；未逾期者不算積壓")
+
+    inq_date, inq_days = last_human_inquiry(today)
+    if inq_date is None:
+        print("\n[6] 人類質疑時效燈：❌ 無法判定（wiki/log.md 缺檔或查無 Query 條目）——不可當成 0 天")
+    elif inq_days > INQUIRY_LAMP_DAYS:
+        print(f"\n[6] 人類質疑時效燈：⚠️ 已 {inq_days} 天未經人類質疑（最新 Query：{inq_date.isoformat()}）")
+        print("    → 題庫（`/wiki-lint` 7b）只在代打已知七種模式，新型錯誤無人看守；此燈另計不入總")
+    else:
+        print(f"\n[6] 人類質疑時效燈：✅ {inq_days} 天前有質疑（{inq_date.isoformat()}，門檻 {INQUIRY_LAMP_DAYS} 天）")
 
     open_count = len(changes) + len(overdue)
     # 三個數字回答三個不同的問題：

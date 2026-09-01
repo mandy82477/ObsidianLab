@@ -97,7 +97,7 @@
 
 **判斷式：** 這個 commit 的訊息，說得出裡面每一個檔案為什麼在嗎？說不出 → 你 add 太多了。
 
-**開放迴路掃描：** 每週跑 `python scripts/open_loops.py`，它彙整**五類**開放迴路的可見性（只報數字與最舊年齡，不合併處理權——每類仍由各自流程消化）：未 commit 的實質改動、逾複查日的 workaround、懸置標記逾期＋舊語法盲區（處理端 `/wiki-lint` 5c）、`wiki/reader-notes.md` 的 ⏳（處理端 `/wiki-weekly-review`）、`wiki/feature-radar.md` 的 ⏳（逾期判定端 `/wiki-lint` 5a）。日常則由 SessionStart hook 在開啟專案時提醒未 commit 的實質改動。
+**開放迴路掃描：** 每週跑 `python scripts/open_loops.py`，它彙整**五類**開放迴路的可見性（只報數字與最舊年齡，不合併處理權——每類仍由各自流程消化）：未 commit 的實質改動、逾複查日的 workaround、懸置標記逾期＋舊語法盲區（處理端 `/wiki-lint` 5c）、`wiki/reader-notes.md` 的 ⏳（處理端 `/wiki-weekly-review`）、`wiki/feature-radar.md` 的 ⏳（逾期判定端 `/wiki-lint` 5a）。另附一盞「人類質疑時效燈」：`wiki/log.md` 最新 Query 條目距今 >21 天即亮 ⚠（另計不入總；已知質疑模式由 `/wiki-lint` 7b 依 `.claude/rules/wiki-lint-inquiry.md` 抽題代打，新型質疑仍靠使用者）。日常則由 SessionStart hook 在開啟專案時提醒未 commit 的實質改動。
 
 輸出末尾刻意分成**三個數字**，因為它們回答三個不同的問題 `[加入: 2026-08-29]`：
 
