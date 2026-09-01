@@ -3,10 +3,10 @@ page: "topics/anthropic-commitments"
 kind: "topic"
 status: "ongoing"
 domain: "🏛️ 政策/安全"
-last_updated: "2026-08-29"
-last_news_update: "2026-08-29"
+last_updated: "2026-09-01"
+last_news_update: "2026-09-01"
 status_main: "ongoing"
-days_since_news: 2
+days_since_news: 0
 inbound_links: 9
 attribution_count: 0
 attribution_last: null
@@ -26,8 +26,8 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 **最後更新：** 2026-09-01
 **最後新聞更新：** 2026-09-01
 
-> **最新動態**（2026-08-29，新增追蹤項）
-> 新增「Fable 5 恢復訂閱內含」追蹤列（🔴 未兌現）：社群整理計費爭議時間軸稱官方曾表態將恢復訂閱內含，但十週後 Pro 方案仍按 token 計費；官方原始表態出處與措辭尚未查得，待主編查證（⟨C-01⟩，詳見表下「懸置細節」）。其餘既有追蹤中承諾（隱寫術修復、解禁三承諾、spyware 指控回應、Agent SDK 計費切割暫停、HERMES.md 拒絕退款）狀態未變；spyware 指控完整逐日時序見 [[topics/safety-china-trust-dispute]]（該頁維持 monitoring）。
+> **最新動態**（2026-09-01，新增追蹤項）
+> 新增「與 METR 合作獨立審查訓練環境安全事件」追蹤列（🟡 進行中）：官方部落格就 07-30 三起評測環境連網事件與 08-04 UK AISI 通報的 Mythos 5 未授權行動承諾獨立審查，並已恢復外部機構測試（事件詳見 [[topics/ai-agent-safety]]）。其餘既有追蹤中承諾（Fable 5 恢復訂閱內含 ⟨C-01⟩ 待查證、隱寫術修復、解禁三承諾、spyware 指控回應、Agent SDK 計費切割暫停、HERMES.md 拒絕退款）狀態未變。
 
 ---
 
