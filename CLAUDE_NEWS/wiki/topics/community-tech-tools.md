@@ -94,6 +94,12 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 
 社群 Agent Skills 的用途索引（**官方** skill 另有兩條軸：按工程流程階段與按產出物格式選用，見 [[topics/coding-workflow-guide]]）。安裝多為一行（`/plugin` 或 `npx skills add`），隨時可拔。
 
+**Codebase 理解／索引**——讓 agent 讀懂大 repo（建程式庫的一次性設定首選）
+
+| Skill | 證據 | 一句話 |
+|---|---|---|
+| [**graphify**](https://github.com/Graphify-Labs/graphify) | 🟢（05-02 收錄 40k★＋71× 宣稱；08-31 訊號 11.3 萬星、`/graphify` skill、本機 AST 免向量 DB） | 把 codebase（含文件、SQL schema）建成知識圖譜供跨 harness 查詢 |
+
 **寫碼紀律／方法論**——改變 Claude 寫 code 的行為
 
 | Skill | 證據 | 一句話 |
