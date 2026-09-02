@@ -573,7 +573,7 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 | background | 不可（foreground-only） | 依軸線 3 規則 |
 | context 隔離 | out-of-process teammate（split pane）各自獨立 context window | — |
 
-> 相關：社群 subagent 使用模式見 [[topics/community-tech-patterns]]；本表列的機制對得上學術哪些缺口（已補／未補／倒退）見 [[topics/community-tech-patterns#學術對照：多智能體 orchestration 術語]] 的缺口追蹤層；官方 vs 社群缺口對照見 [[topics/official-community-gap]]
+> 相關：社群 subagent 使用模式見 [[topics/community-tech-patterns]]；本表列的機制對得上學術哪些缺口（已補／未補／倒退）見 [[topics/community-tech-patterns]]「學術對照」節的缺口追蹤層；官方 vs 社群缺口對照見 [[topics/official-community-gap]]
 
 ---
 

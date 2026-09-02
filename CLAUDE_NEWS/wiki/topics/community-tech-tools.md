@@ -28,124 +28,65 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 **最後更新：** 2026-09-02
 **最後新聞更新：** 2026-09-02
 
-> **最新工具動態**（2026-09-02）
-> 本輪（讀 08-24～08-30 news，接續上輪 08-29 收尾點）新增 8 筆達門檻工具：**x1xhlol/system-prompts-and-models-of-ai-tools**（存量盤點，14.3 萬星，長期彙整型參考資源，升入精選層）、**Shubhamsaboo/awesome-llm-apps**（存量盤點，13.5 萬星，同上升入精選層）、**multica-ai/andrej-karpathy-skills**（20.9 萬星，惟增速異常，星數不作獨立驗證訊號）、**garrytan/gstack**（Garry Tan 具名公開設定，13.0 萬星，增速同樣異常存疑）、**JimLiu/baoyu-design**（官方 Claude Design 移植為 Agent Skill，3,637 星）、**rsmdt/the-startup**（commands/skills/agents 套件，507 星）、**mindmuxai/brain.md**（零依賴檔案式記憶層，504 星）、**l3a0/claude-plugins**（Kindle 畫線筆記 OCR 復原，HN 45）。本輪無條目達 30 天無後續汰除門檻（現有 ⏳ 條目均在 30 天窗口內或已升級）。新增兩筆彙整型參考資源另開「參考資源／彙整清單」精選子分類，因其內容為靜態清單而非工作流工具，不歸入既有六類。
+> **改版**（2026-09-02）
+> 本頁重組為「症狀 → 首選」決策表：8 條痛點各給一個首選工具、一條改用分界、一個帶日期的證據等級。原「痛點洞察＋值得關注」兩層併入決策表與細節區；工具目錄照舊（沿用原採用符號，滾動封存為後續改版）。上輪（08-24～08-30）新增 8 筆工具已入目錄。
 
 ---
 
 ## 摘要
 
-追蹤 Claude Code 社群發布的工具、插件與 skill 專案。本頁採每週策展：彙整近兩週日報中達收錄門檻的工具，並汰除長期無後續者，因此更新日期停留數天屬正常。日常工作流模式見 [[topics/community-tech-patterns]]，概念辯論見 [[topics/community-tech-discussions]]。
-
-官方功能見 [[feature-radar]]。
+**我卡住了，社群有什麼能救？** 本頁把社群工具依「症狀」排列，每個症狀給一個首選、一條改用分界、一個帶日期的證據等級。
+按開發流程階段找官方做法見 [[topics/coding-workflow-guide]]；做法背後的機制與實測見 [[topics/community-tech-patterns]]；概念辯論見 [[topics/community-tech-discussions]]；官方功能見 [[feature-radar]]。
 
 ---
 
-## 痛點洞察
+## 我卡在這裡
 
-工具類型的分布揭示開發者最在意的問題。以下是從工具密度歸納的主要痛點與深層原因。
+> 本表每週複查一次；首選工具的急性事件（資安、棄坑、下架）另見 [[entities/claude-code]] 與 [[topics/ai-agent-safety]]。
 
-**狀態說明：** 🔥 持續升溫（近 14 天有新工具） / 🌙 冷卻觀望（無新工具但未解決） / ✅ 官方解決 / ⚡ 社群收斂（最佳實踐穩定，工具潮退）
+| 我的症狀 | 先裝這個 | 什麼時候改裝別的 | 證據 |
+|---|---|---|---|
+| 帳單爆了，看不到錢花在哪 | ⌨️ **tare** | 不想動終端、要桌面常駐 → 🖥️ Claude Usage Widget；想比較多個 coding agent 的花費 → Frugal Tokens | 🟡（08-27） |
+| context 一直被工具輸出撐爆 | 🔌 **pxpipe** | 不能接受請求過代理層 → 🧩 Graft（數字有爭議，見細節）；還不確定是誰在撐爆 → 先跑 ⌨️ PrismoDev 診斷 | 🟡（08-05，附防刷佐證） |
+| 每開新 session 都要重講一遍 | ⌨️ **brain.md** | 要團隊共享而非單機 → 🖥️ OzBrain；已在用 Obsidian → VIR | 🟡（08-25） |
+| 多個 agent 在同一 repo 互相覆蓋 | ⌨️ **Harness** | 隔離後 commit 落地仍打架 → Claude Code Merge Queue；要跨 harness 統一協作邏輯 → omnigent | 🟢（04-29 起多來源） |
+| 一堆 agent 在跑，看不到誰卡住 | ⌨️ **Omar** | 只跑 3–5 個、不想多花一毛 token → HUD（走官方 event stream）；要 GUI 主控台 → Cockpit | 🟢（05-02 起多來源） |
+| 它說做完了，但根本沒做 | 🧩 **Groundtruth** | 要留可稽核證據給團隊審 → Proof Loop（建構者／驗證者分離） | 🟡（04-27） |
+| CLAUDE.md 寫了它不聽 | —（答案是機制不是工具，見細節） | 規則多到耗 token → Writ；跨工具設定碎片化 → Caliber | 🟢（08-25 實測） |
+| 不想被單一供應商綁死 | 🔌 **Workweave Router** | 只想改用本地模型、不動主配置 → claudely；想繞過計量計費 → clarp（⚠️ 政策風險，見細節） | 🟡（06-27） |
 
-| 痛點主題 | 代表工具 | 本質問題 | 狀態 | 近期工具 |
-|---------|---------|---------|------|---------|
-| Token 成本不透明 | Tokenyst、CostHawk、TokenShield、PrismoDev、engramx、agent-estimate、pxpipe、Graft、tare | 自主 agent 讓帳單不可預測（細節見表下） | 🔥 持續升溫 | 2026-08-27 |
-| 跨 session 記憶歸零 | ltm、Memex、draft CLI、LockedIn、VIR、CoreMem、OzBrain、ambient-context | 無官方標準，每個新 session 從零開始 | 🔥 持續升溫 | 2026-08-25 |
-| 多 agent 協調混亂 | agent-baton、cdesktop、AnyFrame、agent-teamflow、Superset、omnigent、loopx、claw-orchestrator | 官方 Managed Agents 已部分解決，社群仍補缺口（細節見表下） | 🔥 持續升溫 | 2026-08-21 |
-| CLAUDE.md 規則失效 | Writ、Caliber、Patina | 規則被忽略、過多規則耗 token、跨工具無標準 | 🌙 冷卻觀望 | 2026-05-12 |
-| 多模型鎖定防禦 | Dragoman、Claudy、claudely、clarp、vibe-skill | 6/15 計費切割後供應商依賴防禦反應加速 | 🌙 冷卻觀望 | 2026-05-21 |
-| 輸出品質不可信 | Groundtruth、EvanFlow、Relay plugin、Proof Loop、Grepathy | 信任邊界未建立，需在流程層強制插入驗證點（細節見表下） | 🔥 持續升溫 | 2026-07-15 |
+**圖例**——證據：🟢 多來源實測／🟡 單一實測（多為作者自測）／⚪ 僅星數。**證據等級為收錄或查證當時的判定，括號內即判定日，不隨時間自動回訪**。安裝：🧩 skill/plugin（一行安裝隨時可拔）／⌨️ CLI／🖥️ 桌面 app（注意平台鎖定）／🔌 proxy·MCP（**流量過第三方層，裝前先評估安全**）。首選只在出現新證據時更換，不為輪替而換。
 
-**痛點細節**
-- **Token 成本不透明**：pxpipe 把文字 context 渲染成圖片降低 token（實測降幅 59–70%，星數已查證非刷星）；Graft 用 hooks 削減 grep 輸出 token（宣稱降幅 42%，但 HN 討論質疑 benchmark 段落疑似 AI 代寫，數字未經驗證）；tare 在 CLI 底部即時顯示 usage/context/model 狀態，配合 hook 監測用量暴增
-- **跨 session 記憶歸零**：OzBrain 主張 agent 與團隊共享知識庫，取代傳統筆記/任務管理工具；ambient-context 透過 macOS Accessibility API 背景記錄每日活動為 Markdown，供 Claude Code 查詢「剛剛在做什麼」
-- **多 agent 協調混亂**：Claude Code Merge Queue 補上「多 agent 產出的 commit 如何序列化落地」的下游整合缺口；Cockpit／Wallfacer／HUD 延續補足「多 agent 進度難追蹤」的可觀測性缺口；omnigent（harness 無關 meta-harness，星數已成長至 9,080）、loopx（長任務多 agent 的證據紀錄與可驗證交接）、claw-orchestrator（547 星，統一 Claude Code／Codex／Antigravity／Cursor Agent／OpenCode 一個 runtime）為近期新增
-- **輸出品質不可信**：Proof Loop 加入建構者/驗證者分離機制；Grepathy 將驗證範疇延伸至「agent 未經核准的自主決策」可追溯性
+**推薦細節**
 
-### CLAUDE.md 失效的四個原因
+- **pxpipe vs Graft 的數字強度不同**（08-30 彙整）：pxpipe 有作者實測（25,000 text token 壓至 2,700 image token、帳單降 59–70%，08-05；星數防刷已查證 forks 8.5%）；Graft 宣稱降 42%（08-15）但 HN 討論質疑 benchmark 段落疑似 AI 代寫、未經第三方覆核。接受走代理層就選 pxpipe（證據較強）；只想掛個 hook 隨時可拔、且不介意數字未覆核，才選 Graft。
+- **「CLAUDE.md 不聽」沒有工具首選是結論不是留白**：dev.to 一手實作（08-25）顯示**以 hooks 強制執行取代 prompt 建議後，規則遵循率達 100%**——這個痛點的答案是機制不是工具，做法見 [[topics/community-tech-patterns]]。失效的四個機理：規則被機率性忽略且無反饋、規則越多越貴（Writ 以語意檢索只注入相關規則）、規則腐化（Patina 偵測）、跨工具碎片化（Caliber 統一管理）——後三者才是工具能解的側面。
+- **多 agent 互踩**：Harness 為 ✅ 廣泛採用（04-29 收錄，多來源）；omnigent 星數 9,080（08-05 防刷查證時 8,150、forks 14.7%）但無第三方實測回報，列次選、證據 ⚪。
+- **監看首選的分界**：HUD 經官方 JSON event stream 運作、不額外耗 token（08-07），適合小規模；Omar 管到 100 個 agent（05-02）。兩者解同一症狀的不同規模段。
+- **clarp 的政策風險**（05-21 收錄）：以本地 PTY＋唯讀 API 代理規避 6/15 起的計量計費，屬計費規避而非最佳化；企業環境安裝前先確認與 Anthropic 合約條款的相容性。
+- **記憶類的分界**：brain.md 零依賴、純檔案（08-25，504 星）；OzBrain 走團隊共享知識庫（08-21，HN 69）；VIR 直接萃取 session 檔進 Obsidian vault（05-23）。單機選檔案式，跨人選共享式。
 
-1. **規則被選擇性忽略** — AI 是機率推理，不是規則引擎；session 加長或 context 壓縮後，規則遵守率下降，且無任何反饋機制告知哪條規則被跳過
-2. **規則越多越貴越無效** — 100 條規則全部佔用 context，即使當下只需要 3 條（Writ 用 Neo4j 語意搜尋解這個問題，只注入相關規則）
-3. **規則腐化** — codebase 演進但 CLAUDE.md 無人更新，舊規則反而誤導（Patina 定期偵測腐化）
-4. **跨工具碎片化** — Claude Code 用 CLAUDE.md、Cursor 用 `.cursor/rules`、Codex 用 AGENTS.md，各寫各的（Caliber 嘗試統一管理）
-
-### AI 輔助開發的長期副作用
-
-目前是少數人的擔憂，但工具已在出現，是早期信號：
+### AI 輔助開發的長期副作用（早期信號，尚無成熟工具）
 
 - **技能退化**（`recap`）— 開發者不再獨立解題，調試能力隨時間萎縮
 - **命名漂移** — 每個 session 根據當下 context 取名，同概念可能出現四個不同名稱
 - **架構邊界侵蝕**（`modularity plugin`、`Mneme`）— AI 為讓測試通過直接跨架構邊界，快速累積技術債
 - **無法獨立 debug** — 程式在跑但開發者沒有心智模型，遇 bug 只能再問 AI，形成依賴閉環
 
-官方對這些問題的態度：公開敘事方向（加速使用、更長自主 agent）與上述擔憂完全反向，短期不會主動回應。詳細的官方 vs 社群缺口對照，見 [[topics/official-community-gap]]。
+官方公開敘事方向（加速使用、更長自主 agent）與上述擔憂反向，短期不會主動回應；官方 vs 社群缺口對照見 [[topics/official-community-gap]]。
 
 ---
 
-## 值得關注的工具
+## 不綁症狀的精選
 
-高門檻精選層：採用為 ✅ 廣泛採用，或 HN score ≥ 50 / Launch HN。其餘工具見下方完整目錄。
+上表以外、因規模或門檻值得單獨認識的條目：
 
-### 用量 / 費用監測
-
-| 工具 | 採用 | 亮點 |
-| --- | --- | --- |
-| **Claude Usage Widget** | ✅ | 跨 Windows/macOS 桌面小工具，即時顯示 session 用量、週配額與 token 統計 |
-| **Usage4Claude 3.0.0** | ✅ | macOS 選單列用量追蹤，新增 Codex 支援，憑證存 Keychain |
-| **Chrome 用量監控擴充** | ✅ | 瀏覽器即時顯示 token、context、cache 倒數與速率限制 |
-| [**pxpipe**](https://github.com/teamchong/pxpipe) | ⏳（6,955 星，已查證非刷星）| 把文字 context 渲染成圖片再傳遞降低 token 用量，實測約 25,000 text token 壓至 2,700 image token，帳單降幅約 59–70% |
-| [**tare**](https://github.com/kelviq/tare) | ⏳（HN 84）| CLI 底部即時顯示 usage/context/model 狀態，配合 hook 監測用量暴增；`npx skills add kelviq/tare` 安裝 |
-
-### 多 Agent / 並行協調
-
-| 工具 | 採用 | 亮點 |
-| --- | --- | --- |
-| **Harness** | ✅ | 多 Git worktree 並行管理多個 Claude Code agent |
-| [**Claude Squad**](https://www.reddit.com/r/ClaudeAI/comments/1svmpkv/) | ✅ | 多人多 agent 並行，orchestrator 分派任務並合併分支 |
-| [**Omar**](https://omar.tech) | ✅ | TUI 儀表板統一管理 100 個 agent，支援層級化管理 |
-| [**omnigent**](https://github.com/omnigent-ai/omnigent) | ⏳（9,080 星，08-05 查證非刷星時為 8,150 星，forks 14.7%）| harness 無關 meta-harness，換底層 agent（Claude Code／Codex／Cursor／Pi）不必重寫協作邏輯，內建政策執行與沙盒化 |
-| [**loopx**](https://github.com/huangruiteng/loopx) | ⏳（4,476 星，已查證非刷星）| 輕量級 loop 工程狀態核心，提供持久目標、配額感知自動喚醒、可執行待辦、證據紀錄與可驗證交接，agent-loop agnostic |
-
-### 工作流 / 品質保障
-
-| 工具 | 採用 | 亮點 |
-| --- | --- | --- |
-| **CC-Canary** | ✅ | 讀 session log 自動偵測效能漂移，HERMES.md bug 後受重視 |
-| [**claude-workflow-v2**](https://github.com/CloudAI-X/claude-workflow-v2) | ✅ | 通用工作流插件（7 agents＋26 commands＋14 skills＋14 hooks），1.4k 星／188 forks／半年持續 commit，達廣泛採用 |
-
-### 記憶 / 知識圖譜
-
-| 工具 | 採用 | 亮點 |
-| --- | --- | --- |
-| **graphify** | ✅ | Leiden 偵測建程式碼知識圖譜，71 倍 token 減少，40k stars |
-| [**OzBrain**](https://ozbrain.com) | ⏳（HN 69）| agent 與團隊共享的知識庫，取代傳統筆記/任務管理工具，鎖定「知識隨人成長」而非單機記憶 |
-| [**ambient-context**](https://github.com/dragthelake/ambient-context) | ⏳（HN 51）| macOS 選單列 app，透過 Accessibility API 每隔數秒讀取焦點視窗文字寫成逐日 Markdown，供 Claude Code 等工具查詢「剛剛在做什麼」 |
-
-### IDE / 終端
-
-| 工具 | 採用 | 亮點 |
-| --- | --- | --- |
-| [**mux0**](https://mux0.com/) | ✅ | 開源 macOS 終端，側邊欄即時顯示多 agent 狀態 |
-| [**devspace**](https://github.com/Waishnav/devspace) | ⏳（3,675 星，已查證非刷星，forks 10.9%）| 把 ChatGPT 網頁介面／Claude Web 轉換成類 CLI coding agent 的操作體驗 |
-
-### 環境 / 部署
-
-| 工具 | 採用 | 亮點 |
-| --- | --- | --- |
-| [**machine0**](https://machine0.io) | ⏳（HN 78，Launch HN／YC S26）| 持久化 CPU/GPU 雲端 VM，供長時間自主 agent 運算，`machine0 new mybox` 即開機，$0.013/hr 起，最高 60 vCPU／240GB／H100/H200 |
-
-### 安全工具
-
-| 工具 | 採用 | 亮點 |
-| --- | --- | --- |
-| [**internet-court-skill**](https://github.com/internet-court/internet-court-skill) | ⏳（3,793 星）| agent-to-agent 商務信任層 skill：自然語言 mandate、ERC-7710 委任權限、x402 支付、託管與爭議解決 |
-
-### 參考資源／彙整清單
-
-| 工具 | 採用 | 亮點 |
-| --- | --- | --- |
-| [**x1xhlol/system-prompts-and-models-of-ai-tools**](https://github.com/x1xhlol/system-prompts-and-models-of-ai-tools) | ✅ | 彙整數十款 AI 編碼工具（含 Cursor、Devin AI、Replit）完整系統提示詞與模型設定，14.3 萬星 |
-| [**Shubhamsaboo/awesome-llm-apps**](https://github.com/Shubhamsaboo/awesome-llm-apps) | ✅ | 彙整百餘款 AI Agent、Agent Skills 與 RAG 開源應用清單，13.5 萬星 |
+| 條目 | 證據 | 一句話 |
+|---|---|---|
+| [**machine0**](https://machine0.io) | 🟡（08-18，Launch HN 78） | 持久化 CPU/GPU 雲端 VM 供長時間自主 agent 運算，$0.013/hr 起 |
+| [**internet-court-skill**](https://github.com/internet-court/internet-court-skill) | ⚪（08-18，3,793 星） | agent 對 agent 商務信任層 skill：委任權限、支付、託管與爭議解決 |
+| [**x1xhlol/system-prompts…**](https://github.com/x1xhlol/system-prompts-and-models-of-ai-tools) | ⚪（08-29，14.3 萬星） | 數十款 AI 編碼工具的系統提示詞彙整（靜態參考資源） |
+| [**Shubhamsaboo/awesome-llm-apps**](https://github.com/Shubhamsaboo/awesome-llm-apps) | ⚪（08-30，13.5 萬星） | 百餘款 Agent／Skills／RAG 開源應用清單（靜態參考資源） |
 
 ---
 
@@ -153,7 +94,8 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 
 | 指標 | 說明 |
 |------|------|
-| **採用** | ✅ 廣泛採用 / ⚡ 小圈子使用 / ⏳ 觀望中 / ⚠️ 效果存疑 / ❌ 已放棄 |
+| **證據**（上方兩表） | 🟢 多來源實測 / 🟡 單一實測 / ⚪ 僅星數（未經行為佐證）；括號內為判定日，不隨時間自動回訪 |
+| **採用**（下方目錄） | ✅ 廣泛採用 / ⚡ 小圈子使用 / ⏳ 觀望中 / ⚠️ 效果存疑 / ❌ 已放棄——與證據等級**不同軸**：採用量廣度 ≠ 宣稱可信度 |
 | **類型** | 多 Agent / 記憶工具 / 費用監測 / 工作流 / 整合工具 / 搜尋/診斷 / 安全工具 / IDE/終端 / Skills / 其他 |
 | **入選標準** | HN score ≥ 30 或評論 ≥ 5 / Show HN 投稿 / 同日 2 個獨立來源；無公開 repo 或純商業推廣者不收錄 |
 
