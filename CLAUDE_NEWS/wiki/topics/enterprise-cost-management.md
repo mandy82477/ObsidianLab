@@ -76,6 +76,8 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 
 四項缺口與官方 Spend Controls 功能的對應狀態，詳見頁面前段「缺口 vs 官方對應」表。在官方功能細節明朗前，社群工具（agent-baton、engram、engramx、CostHawk、Tokenyst、agent-estimate）仍是這些需求的主要解法。
 
+**🧰 現在就能下的解**：個人／單機層級見 [[topics/community-tech-tools]]「我卡在這裡」——「帳單爆了，看不到錢花在哪」列（首選 tare）與「context 一直被工具輸出撐爆」列（首選 pxpipe）；**部門層級預算管控**則—（決策表暫無對應列｜候選症狀：企業級成本能見度）——現有社群工具全是個人視角，本頁四缺口的企業面仍待官方 Spend Controls 細節。
+
 ### 企業成本因應策略（社群整理）
 
 | 策略 | 說明 | 適用規模 |

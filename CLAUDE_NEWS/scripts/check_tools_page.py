@@ -71,16 +71,47 @@ def check(text: str):
     return fails
 
 
+def check_spokes(text: str, wiki_dir: Path):
+    """全站 🧰 行的症狀句對帳——hub-spoke 唯一 graph 做不到的機械檢查。
+
+    問題頁的「🧰 現在就能下的解」行引用決策表症狀句；首選換名、症狀列改寫時
+    這些散在各頁的引用會靜默失真（同懸置探針回掃的理由）。graph 管「邊存不存在」
+    （wiki_graph.py explain），本函式管「引的句子還在不在」。
+    缺口態（含「候選症狀：」）不對帳——那是誠實留白，聚合由策展 grep 處理。
+    """
+    symptoms = set()
+    for line in _section(text, "我卡在這裡").splitlines():
+        s = line.strip()
+        if s.startswith("|"):
+            cells = [c.strip() for c in s.strip("|").split("|")]
+            if len(cells) >= 4 and cells[0] not in ("我的症狀",) and not set(cells[0]) <= {"-", ":", " "}:
+                symptoms.add(cells[0])
+    fails = []
+    for f in list(wiki_dir.glob("topics/*.md")) + list(wiki_dir.glob("entities/*.md")):
+        if f.name == "community-tech-tools.md":
+            continue
+        for n, line in enumerate(f.read_text(encoding="utf-8").splitlines(), 1):
+            if "🧰" not in line or "community-tech-tools" not in line:
+                continue
+            quoted = re.findall(r"「([^」]+)」", line.split("候選症狀")[0])
+            for q in quoted:
+                if q in ("我卡在這裡",):
+                    continue
+                if q not in symptoms:
+                    fails.append(f"spoke 引用失效 {f.name}:{n}：「{q}」不在決策表症狀欄")
+    return fails
+
+
 def main() -> int:
     text = PAGE.read_text(encoding="utf-8")
-    fails = check(text)
-    print("# check_tools_page.py（決策表契約）")
+    fails = check(text) + check_spokes(text, PAGE.parent.parent)
+    print("# check_tools_page.py（決策表契約＋spoke 對帳）")
     if fails:
         for f in fails:
             print(f"  ❌ {f}")
         print(f"狀態：❌ {len(fails)} 項違規")
         return 1
-    print("狀態：✅ 數字皆帶日期、首選皆唯一")
+    print("狀態：✅ 數字皆帶日期、首選皆唯一、全站 🧰 spoke 症狀句對帳通過")
     return 0
 
 

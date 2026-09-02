@@ -77,6 +77,8 @@ Claude Code 在 2026 年 3 月至 4 月間出現長達約一個月的效能明�
 
 ---
 
+**🧰 現在就能下的解**：—（決策表暫無對應列｜候選症狀：感覺變笨，想先量測歸因）——社群現有起點是 CC-Canary（讀 session log 偵測效能漂移，見 [[topics/community-tech-tools]] 工具目錄）與「先量 context 組成再怪工具」原則（[[topics/community-large-codebase-workflow]] 線 2），但「版本前後受控對照」尚無工具承接。
+
 ## Opus 5 上線後品質感知訊號群（2026-07-25 起）
 
 [[entities/opus-5]] 於 2026-07-24 上線後，三週內累積七則獨立訊號，構成**第三條分析線**——與上方「token 消耗異常」訊號群（聚焦帳單/計費）、以及 [[topics/community-tech-discussions]] 記錄的「Context Rot 修復五法」社群共識（聚焦「越用越笨幾乎都是 context 腐蝕，非模型退步」）皆不同，這條線聚焦**模型本身的能力/行為特性**，且首次出現官方確認等級的證據。
