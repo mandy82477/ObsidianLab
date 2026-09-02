@@ -5,7 +5,7 @@
 **不收：** 快變事實（日期／熱度／近況→頁面標頭，盤點用 Grep）；異動紀錄（→ [[log]]）；每日新聞（→ `news/`）
 **讀法：** 整讀（本檔的存在意義就是便宜的一次讀）；查詢分流見 `wiki/CLAUDE.md`「搜尋策略」
 
-**最後更新：** 2026-08-29
+**最後更新：** 2026-09-02
 
 
 ---
@@ -15,6 +15,23 @@
 - [[overview]] — 當前 Claude / Anthropic 生態系整體局勢（🗓️ 週更）
 - [[feature-radar]] — 新功能熱度追蹤、試用推薦與快速上手（每日更新）
 - [[feature-radar-archive-2026-05]] — 2026-05 功能詳細條目封存
+
+---
+
+## 💻 開發實務入口
+
+程式開發這條線橫跨三位記者的頁面，此表是它的單一入口（路由，不放事實）：
+
+| 我想…… | 去哪 |
+|---|---|
+| 做某件事該下哪個 **官方** skill（按流程階段／產出物） | [[topics/coding-workflow-guide]] |
+| 我卡住了，找 **社群** 首選工具（按症狀） | [[topics/community-tech-tools]]「我卡在這裡」決策表 |
+| 找 coding 用途的社群 skill（按用途分類） | [[topics/community-tech-tools]]「🧩 Skills 速查」 |
+| 寫 code 該用哪個模型 | [[topics/model-comparison]] |
+| 大型 codebase 的做法主線（並行／context／記憶／把關） | [[topics/community-large-codebase-workflow]] |
+| Claude Code 壞了嗎、該不該升版 | [[entities/claude-code]] 已知問題＋[[feature-radar]] 升版風險 |
+| 覺得它變笨／變貴了 | [[topics/code-quality-decline]] 訊號群 |
+| 看模式背後的機制與實測證據 | [[topics/community-tech-patterns]] |
 
 ---
 
@@ -73,7 +90,7 @@
 | [[topics/model-comparison]] | 🤖 模型 | ongoing | 模型選型對照：「我該用哪個模型」單一入口——快速選型表、情境推薦、benchmark 對照（陣容變化時同步更新） |
 | [[topics/model-task-leaderboard]] | 🤖 模型 | ongoing | 🗓️ 週更 任務 × 跨家模型領先者快照：「做某類任務目前哪家最強」——寫 code／文案／畫圖／改圖／影片／情商／幻覺率等 18 類任務的活榜單每週速讀＋各榜評比方式索引 |
 | [[topics/anthropic-commitments]] | 🏛️ 政策/安全 | ongoing | 承諾兌現追蹤：「Anthropic 說過要做的事做了嗎」——官方承諾/拒絕建檔，狀態變化時由每日 ingest 更新 |
-| [[topics/code-quality-decline]] | 🛠️ 工具/功能 | ongoing | Claude Code 效能退步事件，Anthropic 已承認工程疏失 |
+| [[topics/code-quality-decline]] | 🌐 社群 | ongoing | Claude Code 效能退步事件，Anthropic 已承認工程疏失（訊號蒐集頁，2026-09-02 領域自 🛠️ 改正——社群規則自始明列本頁，原 🛠️ 造成與功能記者雙重認領） |
 | [[topics/competitor-landscape]] | 💼 商業 | ongoing | Google 祕密開發競品 + OpenCode 157K 分流 + DeepSeek clone 低成本替代生態 |
 | [[topics/community-tech-tools]] | 🌐 社群 | ongoing | 🗓️ 週更策展：社群工具目錄——58 工具的活躍度、採用狀態追蹤（每日 ingest 不更新） |
 | [[topics/community-tech-patterns]] | 🌐 社群 | ongoing | 社群實戰模式庫（日更）：multi-agent、skills 設計、工作流最佳實踐的可複用做法 |

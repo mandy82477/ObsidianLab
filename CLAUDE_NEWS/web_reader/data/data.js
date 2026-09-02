@@ -665,7 +665,7 @@ window.WIKI_DATA = {
       "name": "Claude Code 效能退步事件",
       "entityType": "",
       "status": "ongoing（官方已說明工程疏失，恢復情況見下方摘要）",
-      "domain": "🛠️ 工具/功能",
+      "domain": "🌐 社群",
       "pill": "active",
       "firstSeen": "",
       "startDate": "2026-03（推測）",
