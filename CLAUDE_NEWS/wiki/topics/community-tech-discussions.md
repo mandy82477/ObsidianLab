@@ -23,11 +23,11 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 **狀態：** ongoing
 **領域：** 🌐 社群
 **開始日期：** 2026-04-25
-**最後更新：** 2026-09-01
-**最後新聞更新：** 2026-09-01
+**最後更新：** 2026-09-02
+**最後新聞更新：** 2026-09-02
 
-> **最熱討論**（2026-08-31）
-> 額度焦慮系列同日新增雙節點：一則指 Claude Code 週用量上限實質調降約 17%，另一則指官方「20x」標示只放大 5 小時 session 額度、不放大週上限，留言提及已有相關訴訟指控行銷用語誤導；09-01 一則使用者回報時序方向與「實質調降」說法一致（單一貼文，佐證色彩）。08-30 另有 Claude Session URL 是否該預設寫入 commit/PR 的正反並陳討論（GitHub Issue #66504，HN 204 分）。
+> **最熱討論**（2026-09-02）
+> 三則社群反應類新節點同日出現：使用者付費帳號無預警遭停權（後已恢復），重燃「Anthropic 透明度與信任赤字」軸線；HN 質疑 AISLE 拿 OpenAI／Anthropic 找漏洞工具當對照組的資安行銷手法；Claude Code 意外遺失印度 Mythic Society 多年班加羅爾文化遺產紀錄，討論聚焦自主 agent 損害究責與備份習慣。
 
 ---
 
@@ -131,6 +131,7 @@ MCP 的實際成本遠超多數使用者預期，已有多個量化案例：
 - **2026-07-13 Zed 創作者具名批評**（HN score 557）：公開指 Anthropic 對外宣稱與實際作為存在落差，本系列首個高分具名意見領袖指控（見技術彙整 2026-07）
 - **2026-07-13 Reddit 溝通策略抱怨**：使用者不滿 Fable 存取權與用量資訊（含 50% 增量）的官方溝通方式（[原帖](https://www.reddit.com/r/ClaudeCode/comments/1uvec4f/anthropic_needs_to_work_on_their_communication/)，單一貼文）
 - **2026-08-11 `/buddy` skill 無預警消失，官方未說明**：GitHub Issue「Bring Back Buddy」請願，留言持續增長至 268、👍 2076，本系列互動最高（見熱門討論表格）
+- **2026-09-02 付費帳號無預警遭停權，後已恢復**（HN score 39）：使用者記述帳號因「suspicious signals」無預警遭停權，過程缺乏清楚申訴管道，事後已恢復；與 2026-06-23 帳號封禁無申訴管道屬同類事件（見熱門討論表格）
 
 （推論）各事件證據力落差極大（可複現的技術發現 vs 單一未驗證貼文），目前無證據顯示彼此有共同成因；但 07-13 起「社群端溝通抱怨 + 具名意見領袖公開批評」首次同時出現，若後續再有同軸事件，此線索可能收斂為獨立議題。
 
@@ -144,6 +145,9 @@ MCP 的實際成本遠超多數使用者預期，已有多個量化案例：
 
 | 討論主題 | 首見 | 熱度 | 模式 | 核心論點 | 衍生 |
 |---------|------|------|------|---------|------|
+| 使用者付費帳號無預警遭停權（後已恢復），引發社群對帳號執法透明度的討論 | 2026-09-02 | 🔥🔥🔥 | ☄️閃現 | 使用者記述帳號因「suspicious signals」無預警遭停權、事後已恢復，過程缺乏清楚申訴管道；HN score 39，達收錄中門檻；呼應本頁「Anthropic 透明度與信任赤字」長期議題既有 2026-06-23 帳號封禁無申訴管道軸線 | — |
+| HN 討論質疑 AISLE「curl 六個 CVE、OpenAI 與 Anthropic 掃出零個」資安行銷手法 | 2026-09-02 | 🔥🔥🔥 | ☄️閃現 | AISLE 部落格宣稱其工具找出 6 個 curl CVE，同時暗示 OpenAI／Anthropic 的找漏洞工具零命中；HN score 31，達收錄中門檻，留言質疑此為競爭性資安行銷手法，非公允能力對比 | — |
+| Claude Code 意外遺失印度 Mythic Society 多年累積的班加羅爾文化遺產紀錄工作，HN 討論聚焦自主 agent 損害究責與備份習慣 | 2026-09-02 | 🔥🔥 | ☄️閃現 | Deccan Herald 報導：印度 Mythic Society 使用 Claude Code 過程中，多年文化遺產紀錄工作意外遺失，該機構現正投入資金強化備份系統；HN score 17，達收錄低門檻，討論聚焦自主 agent 造成損害時的究責歸屬與備份習慣 | — |
 | Claude Session URL 預設寫入 commit/PR，同日另一篇部落格主張「不再需要標註 Co-author」：AI 貢獻歸因方式正反並陳 | 2026-08-30 | 🔥🔥🔥 | ☄️閃現 | GitHub Issue #66504（HN score 204）多數支持預設在 commit/PR 附加 session 連結，視為合理歸因；同日部落格（HN score 20）主張 LLM 輔助已成常態，不再需要加註 Co-author，兩者為「歸因 vs 去標註」正反兩面 | — |
 | Reddit r/MachineLearning 週熱門：分析 31,352 筆逐時 LLM benchmark 分數，同日內波動僅 2.8 分、跨日波動達 8.4 分 | 2026-08-29 | 🔥 | ☄️閃現 | 作者分析 3 萬多筆逐時 LLM benchmark 分數，發現同日內波動僅 2.8 分、跨日波動卻達 8.4 分，顯示常見單次跑分可能不夠穩定；Reddit 週熱門標記，達收錄低門檻 | — |
 | Ask HN：如何戒除 Claude Code「工作狂式」依賴，找回可長期維持的正常工作步調 | 2026-08-29 | 🔥 | ☄️閃現 | 工程師發文求助如何戒除對 Claude Code 的工作狂式依賴；HN score 11，達收錄低門檻 | — |
@@ -200,6 +204,9 @@ MCP 的實際成本遠超多數使用者預期，已有多個量化案例：
 
 **熱門討論細節**
 
+- **使用者付費帳號無預警遭停權（後已恢復），引發社群對帳號執法透明度的討論**：使用者部落格文章記述自己付費帳號無預警因「suspicious signals」遭停權，事後已恢復，過程中缺乏清楚的申訴管道與說明；HN score 39，達收錄中門檻；與本頁「🌊 持續關注中的長期議題」「Anthropic 透明度與信任赤字」既有 2026-06-23「帳號封禁無申訴管道」軸線同屬一條「帳號執法不透明」議題，本則是該軸線最新獨立訊號；政策面（管制依據、申訴機制設計）已交由安全政策記者處理，本頁僅記錄社群對帳號執法透明度的反應角度；[原文](https://kix.codes/anthropic-banned-me-for-suspicious-signals/)（HN）
+- **HN 討論質疑 AISLE「curl 六個 CVE、OpenAI 與 Anthropic 掃出零個」資安行銷手法**：資安新創 AISLE 部落格宣稱其自動化工具找出 curl 專案 6 個 CVE，同時暗示 OpenAI 與 Anthropic 的自動化找漏洞工具在同一目標上零命中；HN score 31，達收錄中門檻，留言區普遍質疑這是刻意設計的競爭性資安行銷敘事而非嚴謹能力對比（如未說明測試方法論、樣本範圍是否公平）；技術細節面另見安全政策記者節錄，本頁僅記錄社群對此類「拿 Claude/Anthropic 當對照組」資安行銷手法的信任度質疑；[原文](https://aisle.com/blog/aisle-discovered-six-curl-cves-after-openai-and-anthropic-found-zero)（HN）
+- **Claude Code 意外遺失印度 Mythic Society 多年累積的班加羅爾文化遺產紀錄工作，HN 討論聚焦自主 agent 損害究責與備份習慣**：Deccan Herald 報導，印度文化機構 Mythic Society 使用 Claude Code 過程中，多年累積的班加羅爾文化遺產紀錄工作意外遺失，該機構現正投入資金強化備份系統；HN score 17，達收錄低門檻，討論聚焦於自主 agent 造成不可逆損害時的究責歸屬（該由使用者的備份習慣還是工具的預設安全邊界負責），與 [[topics/community-tech-patterns]] 2026-08-30「一句話觸發遞迴刪檔」節點同屬「模糊指示或自主行動觸發破壞性結果」議題軸線，本則是該軸線首個造成真實文化資產損失、非虛構個人專案的具名機構案例；[原文](https://www.deccanherald.com/india/karnataka/bengaluru/when-claude-code-went-rogue-years-of-bengaluru-heritage-work-disappeared-4131958)（HN）
 - **Claude Session URL 預設寫入 commit/PR，同日另一篇部落格主張「不再需要標註 Co-author」：AI 貢獻歸因方式正反並陳**：[GitHub Issue #66504](https://github.com/anthropics/claude-code/issues/66504) 討論串多數人贊成把 session 連結預設附加在 commit 訊息與 PR 說明中，認為這是合理的歸因方式，且使用者仍可自行選擇是否公開該 session；HN score 204，遠超收錄高門檻。同日另一篇部落格〈[I am no longer letting Claude Code add itself as Co-author in my commits](https://igupta.in/blog/why-i-am-no-longer-letting-claude-code-add-itself-as-coauthor/)〉，作者說明自己曾長期主張為 LLM 產生的 commit 加註 Claude Code 共同作者，如今認為使用 LLM 已成常態、不再需要特別標註；HN score 20，達收錄低門檻。兩篇同日出現、立場相反（「該不該標註 AI 參與」的兩種答案：預設公開歸因 vs 認為標註已無意義），並陳呈現、不擇一下定論；與本頁「Anthropic 透明度與信任赤字」長期議題相關但視角不同——本則關注**使用者自己**如何對外揭露 AI 參與程度，非 Anthropic 對使用者的透明度承諾；[原文 1](https://github.com/anthropics/claude-code/issues/66504)（GitHub Issue／HN）、[原文 2](https://igupta.in/blog/why-i-am-no-longer-letting-claude-code-add-itself-as-coauthor/)（HN）
 - **Reddit r/MachineLearning 週熱門：分析 31,352 筆逐時 LLM benchmark 分數，同日內波動僅 2.8 分、跨日波動達 8.4 分**：作者分析 3 萬多筆逐時蒐集的 LLM benchmark 分數，發現同日內（intra-day）波動僅 2.8 分，但跨日（inter-day）波動達 8.4 分，顯示社群常見的「單次跑分即代表模型能力」做法可能低估雜訊、不夠穩定；不針對特定模型，是對整體 benchmark 方法論的量化質疑；與本頁「LLMs 製造虛假忙碌？」「多 LLM 協作架構哲學」等既有「AI 能力宣稱是否經得起檢驗」議題軸線相關；Reddit r/MachineLearning 週熱門標記，達收錄低門檻；[原文](https://www.reddit.com/r/MachineLearning/comments/1w1jp1j/i_analyzed_31352_hourly_llm_benchmark_scores/)（Reddit · 週熱門）
 - **Ask HN：如何戒除 Claude Code「工作狂式」依賴，找回可長期維持的正常工作步調**：工程師發文求助：隨工作日推進、時間漸緊，其寫程式風格逐漸從「自己設計並撰寫、僅在卡關時求助 Claude Code」滑向對其依賴加深，目標是重新找回能穩定收工、對當日改動仍保有理解、下班後可放下工作的步調；HN score 11，剛達收錄低門檻，屬個人反思型討論，尚未見跨平台延燒或具體解法共識；與本頁「Vibe coding 成就感缺失」（06-18）、「AI Skill Atrophy」（06-10+）同屬「AI 輔助程度與掌控感／能力保有」議題軸線，本則聚焦工作步調與收工感，非能力退化或認同困惑角度

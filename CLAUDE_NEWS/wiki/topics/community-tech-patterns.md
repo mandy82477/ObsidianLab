@@ -24,12 +24,12 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 **狀態：** ongoing
 **領域：** 🌐 社群
 **開始日期：** 2026-04-25
-**最後更新：** 2026-09-01
-**最後新聞更新：** 2026-09-01
+**最後更新：** 2026-09-02
+**最後新聞更新：** 2026-09-02
 
-> **最新工作流模式**（2026-08-31）
-> - **agent 記憶需要「否決記錄」**：作者主張記憶系統除了記「怎麼做」，更要以可驗證、防竄改的方式記住「這條路已被否決過」，避免 agent 重踩已排除方案；縫合索引記憶主線。
-> - **存量盤點雙響**（08-30）：Shubhamsaboo/awesome-llm-apps（13.5 萬星，彙整百餘款 AI Agent／Agent Skills／RAG 開源應用清單）與 garrytan/gstack（13.0 萬星，Garry Tan 公開自己的 Claude Code 設定，23 個角色化工具）本庫首次收錄。
+> **最新工作流模式**（2026-09-02）
+> - **存量盤點雙響再破紀錄**：thedotmack/claude-mem（9.3 萬星，跨 7 種以上 harness 的 AI 壓縮持久記憶）與 addyosmani/agent-skills（9.2 萬星，Addy Osmani 具名生產級技能集合）本庫首次收錄。
+> - **dev.to 四連發**：記憶實測、殭屍 subagent 自動偵測、發展「爆炸半徑」風險分區框架（承接 08-30 遞迴刪檔教訓）、多平台發布 Skill，皆屬第一手實作／框架分享。
 
 ---
 
@@ -157,6 +157,98 @@ Claude Code 的三種多 agent 機制，可對應到 Anthropic《Building Effect
 ---
 
 ## 技術彙整
+
+### 2026-09
+
+#### thedotmack/claude-mem：跨 harness 持久記憶，擷取 session 過程並用 AI 壓縮，注入後續 session 作為上下文（2026-09-02）
+
+- **主線：** 索引記憶
+- **核心模式：** 為每個 agent 提供跨 session 的持久記憶——擷取 session 過程並以 AI 壓縮，注入後續 session 作為上下文；支援 Claude Code、OpenClaw、Codex、Gemini、Hermes、Copilot、OpenCode 等多種 harness；GitHub Search 累積 9.3 萬星
+- **與既有模式的關係：** 補上本頁「記憶與知識管理」類別一種尚未涵蓋的取向——既有方案（ltm、NanoBrain、OKF、mindmuxai/brain.md、OzBrain）多鎖定單一 harness（多為 Claude Code）；本則明確支援 7 種以上不同 harness，且核心機制是「AI 壓縮 session 過程」而非單純結構化存檔，屬「跨 harness 記憶可攜性」的具體實作；縫合 [[topics/community-large-codebase-workflow]] 索引記憶主線
+- **可信度註記：** 星數（9.3 萬）遠超對照表高門檻，惟本記者僅取得 GitHub Search 星數資料，無 forks／issues／近期 commit 佐證可查，本記者無 web 工具驗證；屬存量盤點通道（2025-08-31 出生、本庫今日首次收錄，累積時間跨度逾 1 年），依內容具體程度（多 harness 支援清單明確可查證）判斷收錄
+- **來源：** GitHub Search（9.3 萬★，存量盤點｜2025-08-31 出生、本庫今日首次收錄）；[GitHub](https://github.com/thedotmack/claude-mem)
+- **成熟度：** ✅ 廣泛採用（9.3 萬星且已存在逾 1 年，多 harness 支援顯示廣泛跨工具採用）
+
+#### addyosmani/agent-skills：AI coding agent 生產級工程技能集合（2026-09-02）
+
+- **主線：** —
+- **核心模式：** AI coding agent 的生產級工程技能（skills）集合，作者為 Addy Osmani（Google Chrome DevRel 資深工程師）；GitHub Search 累積 9.2 萬星
+- **與既有模式的關係：** 補上本頁「Skills 設計」類別一位具名資深工程師的策展案例——與既有 rsmdt/the-startup（套件化 subagent／commands 集合）、baoyu-design（官方工具 Skill 化移植）不同取向，本則訴求「生產級」（production-grade）品質標準的工程技能集合，非單一功能封裝；非大型 codebase 特有痛點，暫不縫合 [[topics/community-large-codebase-workflow]] 四條主線
+- **可信度註記：** 星數（9.2 萬）遠超對照表高門檻，惟本記者僅取得 GitHub Search 星數資料，無 forks／issues／近期 commit 佐證可查，本記者無 web 工具驗證；repo 僅 2026-02-15 出生（本庫今日首次收錄時約 6.5 個月），星數累積速度偏快，惟作者具名（Addy Osmani，Google 資深工程師，公眾人物，既有龐大社群關注度）且內容具體（生產級技能集合，可查證），依內容具體程度判斷收錄，星數累積速度本身不作為獨立驗證訊號
+- **來源：** GitHub Search（9.2 萬★，存量盤點｜2026-02-15 出生、本庫今日首次收錄）；[GitHub](https://github.com/addyosmani/agent-skills)
+- **成熟度：** ⏳ 新興（本庫首次收錄，尚無星數以外的社群採用回饋數據）
+
+#### internet-court/internet-court-skill：agent 對 agent 商業往來的信任層——自然語言協議＋ERC-7710 委任權限＋x402 支付＋履約爭議仲裁（2026-09-02）
+
+- **主線：** —
+- **核心模式：** 定位為「agent 對 agent 商業往來的信任層」，以自然語言協議、ERC-7710 委任權限、x402 支付機制與履約爭議仲裁機制，組成一個開放、通用的 Claude Code plugin／Agent Skill；GitHub Search 累積 5,317 星
+- **與既有模式的關係：** 為本頁補上「agent 間商業／支付基礎設施」這個此前未見的類別——既有 Plugin/MCP 整合類目前聚焦工具鏈協作（context 共享、避免不必要載入），本則處理的是 agent 之間**經濟往來**的信任與爭議解決，屬不同層次的協作問題；非大型 codebase 特有痛點，暫不縫合 [[topics/community-large-codebase-workflow]] 四條主線
+- **可信度註記：** 星數（5,317）達對照表高門檻，惟本記者僅取得 GitHub Search 星數資料，**無出生日期標記**、無 forks／issues／近期 commit 佐證可查，本記者無 web 工具驗證，成長軌跡是否正常無法判斷；內容涉及加密貨幣支付軌道（x402、ERC-7710），此類題材過往較常見星數異常案例，本記者持保留態度收錄，讀者宜自行核實其實際採用程度
+- **來源：** GitHub Search（5,317★，新發現，無出生日期標記）；[GitHub](https://github.com/internet-court/internet-court-skill)
+- **成熟度：** ⏳ 新興（本庫首次收錄，星數來源與成長軌跡未經驗證，尚無其他社群採用回饋）
+
+#### yetone/cumora：AI agent 團隊聚集地——跨平台團隊聊天工具，讓 AI agent 成為一等公民隊友（2026-09-02）
+
+- **主線：** —
+- **核心模式：** 跨平台團隊聊天工具，讓 AI agent 在團隊聊天中成為「一等公民」隊友，支援雲端代管或自帶大腦（Claude Code／Codex）接入；作者 yetone 為具名知名開源開發者；GitHub Search 累積 3,416 星
+- **與既有模式的關係：** 呼應本頁 2026-08-27 Show HN：Concord（讓 Claude Code、Codex、Cursor 三種 coding agent 互通任務脈絡的 MCP）同屬「跨工具 agent 協作」方向，惟切入點不同——Concord 是 agent 間共享任務脈絡的 MCP 協定層，本則是把 AI agent 直接嵌入**團隊聊天介面**成為可對話的隊友，介面層級更貼近終端使用者的日常協作習慣而非底層協定
+- **可信度註記：** 星數（3,416）達對照表高門檻，惟本記者僅取得 GitHub Search 星數資料，無 forks／issues／近期 commit 佐證可查，本記者無 web 工具驗證；作者 yetone 為具名知名開源開發者（多款既有熱門專案作者），依作者信譽與內容具體程度判斷收錄
+- **來源：** GitHub Search（3,416★，新發現）；[GitHub](https://github.com/yetone/cumora)
+- **成熟度：** ⏳ 新興（本庫首次收錄，尚無星數以外的社群採用回饋數據）
+
+#### Abilityai/trinity：自架 AI Agents 平台，支援 Claude Code、Codex、Gemini agent（2026-09-02）
+
+- **主線：** —
+- **核心模式：** 自架（self-hosted）AI Agents 平台，支援 Claude Code、Codex、Gemini 等多種 agent，Apache 2.0 授權；GitHub Search 累積 503 星
+- **與既有模式的關係：** 屬本頁已記錄三波的「meta-harness／跨代理 orchestration」趨勢（08-05 omnigent、08-09 loopx＋HarnessFlow、08-27 opencodex／metaharness／claw-orchestrator）第四個具體案例，差異在於明確訴求「自架」（self-hosted，可能對應資料落地／隱私考量）與 Apache 2.0 開源授權，與既有案例多未強調授權條款不同
+- **可信度註記：** 星數（503）達對照表中門檻，惟資料僅含 GitHub Search 星數，無 forks／issues／近期 commit 佐證可查，本記者無 web 工具驗證，依內容具體程度（授權條款、支援 agent 清單明確）判斷收錄
+- **來源：** GitHub Search（503★，達對照表中門檻）；[GitHub](https://github.com/Abilityai/trinity)
+- **成熟度：** ⏳ 新興（今日首見，尚無社群採用回饋或量化效果數據）
+
+#### wanghuan9/skilldock：AI skill 管理桌面應用，安裝、整理、編輯、同步、更新 Skills／MCP servers／plugins（2026-09-02）
+
+- **主線：** —
+- **核心模式：** AI skill 管理桌面應用，支援 Claude Code、Cursor、Codex、Windsurf、Gemini CLI 等多種 AI coding 工具，可安裝、整理、編輯、同步、更新 Skills、MCP servers、plugins；GitHub Search 累積 503 星
+- **與既有模式的關係：** 直接回應 [[topics/community-tech-discussions]]「🌊 持續關注中的長期議題」中「工具生態發現性問題」（🌙靜候，「Skills/MCP 散落各處，缺乏集中發現機制」）——本則是針對此痛點的具體桌面應用解法，把跨工具（5 種 AI coding 工具）的 Skills／MCP／plugins 管理集中到單一介面；已於回報中請主編轉知該議題後續是否因此類工具出現而調整狀態
+- **可信度註記：** 星數（503）達對照表中門檻，惟資料僅含 GitHub Search 星數，無 forks／issues／近期 commit 佐證可查，本記者無 web 工具驗證，依內容具體程度（功能清單明確、跨工具支援清楚）判斷收錄
+- **來源：** GitHub Search（503★，達對照表中門檻）；[GitHub](https://github.com/wanghuan9/skilldock)
+- **成熟度：** ⏳ 新興（今日首見，尚無社群採用回饋或量化效果數據）
+
+#### dev.to：作者第一手實測比較 Claude Code 內建記憶與自己的認知記憶差異（2026-09-02）
+
+- **主線：** 索引記憶
+- **核心模式：** 作者以自己單一用戶的第一手實測，比較 Claude Code 內建記憶功能與自己（人類）認知記憶的差異，結論是內建記憶確實有效，但兩者做的並非同一件事——人類記憶與工具記憶在功能定位上不可互相取代
+- **與既有模式的關係：** 補上本頁「記憶與知識管理」類別一種此前未見的評估角度——既有方案（ltm、NanoBrain、OKF、mindmuxai/brain.md、否決記錄機制）聚焦記憶系統**該怎麼建**，本則從使用者第一手體驗角度回答「內建記憶系統實際解決了什麼、沒解決什麼」，屬評測而非新工具；縫合 [[topics/community-large-codebase-workflow]] 索引記憶主線
+- **可信度註記：** dev.to 走內容判斷不套互動門檻（讚數在 dev.to 非品質指標）；單一使用者第一手實測，無跨平台佐證
+- **來源：** 「I tested Claude Code's memory against mine (they are not doing the same job)」— dev.to `#claudecode`（14 讚）；[原文](https://dev.to/heinrichneb/i-tested-claude-codes-memory-against-mine-they-are-not-doing-the-same-job-35jb)
+- **成熟度：** ⏳ 新興（單一第一手評測，尚無其他使用者回報相同結論）
+
+#### dev.to：8 個自訂 subagent 中 7 個 30 天零呼叫，作者建立自動偵測「殭屍 agent」機制（2026-09-02）
+
+- **主線：** —
+- **核心模式：** 作者盤點自訂 subagent 實際使用紀錄，發現 8 個自訂 subagent 中有 7 個在 30 天內零呼叫，因而建立一套自動偵測「殭屍 agent」（dead agent）的機制，供其他使用者比照盤點自己的 subagent 配置是否有大量閒置
+- **與既有模式的關係：** 為本頁「Multi-agent 架構」類別補上此前未見的**維護／觀測性**視角——既有模式多聚焦如何設計、協調 multi-agent 架構（orchestrator 分派、防答案塌縮等），本則指出設計完的 subagent 常態性閒置是被忽視的問題，並提供可複用的自動偵測做法，適合多 subagent 配置的使用者定期自查
+- **可信度註記：** dev.to 走內容判斷不套互動門檻（讚數在 dev.to 非品質指標）；單一第一手案例＋可複用機制，符合收錄標準；無跨平台佐證
+- **來源：** 「7 of My 8 Claude Code Agents Had Zero Calls in 30 Days: Finding Dead Agents Automatically」— dev.to `#claudecode`（4 讚）；[原文](https://dev.to/bokuwalily/7-of-my-8-claude-code-agents-had-zero-calls-in-30-days-finding-dead-agents-automatically-27jf)
+- **成熟度：** ⏳ 新興（單一第一手案例，尚無其他使用者複現相同盤點結果）
+
+#### dev.to：「爆炸半徑」規則——依錯誤修復成本而非任務難度劃分三個風險區，決定哪些改動可放心讓 agent 自主執行（2026-09-02）
+
+- **主線：** —
+- **核心模式：** 作者提出以「錯誤修復成本」（而非「任務難度」）劃分三個風險區的框架，作為判斷哪些改動可放心讓 agent 自主執行的依據——任務再複雜，若出錯容易回復即屬低風險區；任務再簡單，若出錯代價高（如生產環境資料遷移）仍屬高風險區
+- **與既有模式的關係：** 直接發展並具體化本頁 2026-08-30「一句話觸發遞迴刪檔」節點中已提及的「爆炸半徑最小化」概念——該則僅點出「權限把關不能只留給多 agent 情境」的方向，本則補上具體、可操作的三區分類框架，把「爆炸半徑」從單一事故的教訓提煉為可複用的自主性授權判準
+- **可信度註記：** dev.to 走內容判斷不套互動門檻（讚數在 dev.to 非品質指標）；單一作者提出框架，尚無其他使用者採用回饋
+- **來源：** 「The blast radius rule for AI coding」— dev.to `#claudecode`（1 讚）；[原文](https://dev.to/indiecoredev/the-blast-radius-rule-for-ai-coding-4a57)
+- **成熟度：** ⏳ 新興（單一作者提出框架，尚無社群採用回饋或量化案例佐證）
+
+#### dev.to：把 markdown 一鍵轉為多平台發布版本的 Claude Code Skill——dev.to／AWS Builder Center／Medium／LinkedIn（2026-09-02）
+
+- **主線：** —
+- **核心模式：** 一個 Claude Code skill，將一份 markdown 檔轉換為 dev.to、AWS Builder Center、Medium、LinkedIn 等多平台適配版本，發布前附檢查機制，並可透過各平台 API 自動發布
+- **與既有模式的關係：** 為本頁「Skills 設計」類別補上「內容多平台發布」這個此前未見的具體應用領域——與既有 rsmdt/the-startup（開發流程指令集合）、baoyu-design（UI 原型產出）不同垂直領域，本則鎖定技術寫作者將單一文稿改寫並發布至多個內容平台的流程自動化
+- **可信度註記：** dev.to 走內容判斷不套互動門檻；具體工具（Skill）附發布前檢查與 API 自動發布機制，符合「具體工具」收錄標準；單一來源，無跨平台佐證
+- **來源：** 「Streamline Publishing with a Claude Code Skill」— dev.to `#claudecode`（9 讚）；[原文](https://dev.to/gde/streamline-publishing-with-a-claude-code-skill-1bdn)
+- **成熟度：** ⏳ 新興（今日首見，單一工具，尚無社群採用回饋數據）
 
 ### 2026-08
 
