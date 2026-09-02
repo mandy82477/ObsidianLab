@@ -7,7 +7,7 @@ domain: "👤 人物"
 last_updated: "2026-08-30"
 last_news_update: "2026-08-29"
 status_main: "active"
-days_since_news: 2
+days_since_news: 3
 inbound_links: 12
 attribution_count: 18
 attribution_last: "2026-08-29"
@@ -25,7 +25,7 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 **狀態：** active
 **領域：** 👤 人物
 **首次出現：** 2026-04-25
-**最後更新：** 2026-08-30
+**最後更新：** 2026-09-02
 **最後新聞更新：** 2026-08-29
 
 > ❓ **待查證**（標 2026-08-25｜查 airline industry、marketing and safety）｜**Fortune 評論比較 Anthropic 安全論述與航空業經驗**（2026-08-24 報導）：Fortune 發表評論文章〈What Anthropic's Dario Amodei can learn from the airline industry's lesson on marketing and safety〉，以航空業在行銷與安全議題上的經驗為借鏡，討論 Dario Amodei 可以從中學到什麼；僅標題可用，具體論點與建議內容未見報導。
@@ -95,7 +95,7 @@ Dario Amodei 是 Anthropic 共同創辦人兼執行長（CEO），與 [[entities
 - Hacker News（經 Twitter/Techmeme，2026-08-03）：[twitter.com/Techmeme](https://twitter.com/Techmeme/status/2084238055368687932)「Dario worried people were joining Anthropic for the money, not the mission」；社群留言兩極
 - The Next Web（經 Google News，2026-08-03）：「Anthropic's CEO says staff want money over mission」，與 Techmeme 報導互為佐證
 - Anthropic Blog（2026-07-28）：「Our position on open-weights models」，澄清從未主張禁止開源權重模型，呼籲加強中國晶片出口管制（完整政策分析見 [[topics/anthropic-government-policy]]）
-- [STAT News，2026-07-06](https://www.statnews.com/2026/07/06/anthropic-ai-biotech-impact/)：專訪談 AI 對生技產業的潛在影響（2026-07-06 報導，已掃日報至 2026-08-14 無後續；官方頁面未查證，僅標題層級資訊）
+- [STAT News，2026-07-06](https://www.statnews.com/2026/07/06/anthropic-ai-biotech-impact/)：專訪談 AI 對生技產業的潛在影響（僅標題層級資訊，查證狀態見下方歷史記錄）
 - [WIRED，2026-06-26](https://www.wired.com/story/the-trump-white-house-is-over-anthropics-dario-amodei/)：Trump 政府不再信任 Amodei，Tom Brown 全面接管政府溝通
 - [WIRED，2026-06-24](https://www.wired.com/story/the-trump-white-house-is-over-anthropics-dario-amodei/)：白宮關係緊張；退出談判由 Tom Brown 接管
 - Bloomberg 訪談（2026-06-11）：政府監管 + 組織架構
@@ -120,7 +120,7 @@ Dario Amodei 是 Anthropic 共同創辦人兼執行長（CEO），與 [[entities
 - 2026-08-03：公開表態憂心部分員工是為金錢而非公司使命加入 Anthropic；Hacker News（經 Twitter/Techmeme，11 分）討論反應兩極——有人認為多數人本就為錢工作，也有人認為這是科技業近 30 年被資本侵蝕的縮影；The Next Web 同步以「Anthropic's CEO says staff want money over mission」為題報導，與 Techmeme 互為佐證；具體發言場合與逐字稿未能取得（查證狀態見公開立場表格標記）（來源：Hacker News/Techmeme、The Next Web，2026-08-03）
 - 2026-07-28：於 Anthropic Blog 發表聲明「Our position on open-weights models」，澄清 Anthropic 從未主張禁止開源權重模型，並呼籲加強對中國晶片出口管制；人物角度僅記個人具名立場表態，政策細節詳見 [[topics/anthropic-government-policy]]（來源：Anthropic Blog）
 - 2026-07-16：❓ **待查證**（標 2026-08-10｜查 Politico、super PAC）｜**捐款人身分歸屬未具名確認**：Politico 報導（經 Google News 轉載）指「Anthropic 執行長」捐款 100 萬美元予某 super PAC，捲入 AI 陣營之間鉅額政治獻金角力戰局；原文標題未具名確認捐款人身分，現任執行長為 Dario Amodei，此事實歸屬本人仍未確認（來源：Politico）。**後續**：07-17 員工集體捐款 300 萬美元（SFGATE）；07-22 官方證實再捐 2000 萬美元予 Public First Action（累計 4000 萬美元），WSJ／The Hill／Axios 框架為「期中選舉支出翻倍推動 AI 監管」，與官方非選舉用途聲明有敘事張力。❓ **待查證**（標 2026-08-10｜查 [[topics/anthropic-government-policy]]、Public First Action）｜**三筆捐款是否同一資金脈絡**：尚未確認，詳見 [[topics/anthropic-government-policy]]（來源：Anthropic Blog、WSJ、The Hill、Axios，2026-07-22）
-- 2026-07-06：接受 STAT News 專訪，談 AI 對生技（biotech）產業的潛在影響；日報僅提供標題層級資訊（2026-07-06 報導，已掃日報至 2026-08-14 無後續；官方頁面未查證）（來源：STAT News）
+- ❓ **待查證**（標 2026-07-06｜查 STAT News、biotech）｜**接受 STAT News 專訪談 AI 對生技產業影響**（2026-07-06 報導）：日報僅提供標題層級資訊，具體訪談內容未見；已掃日報至 2026-09-02 無後續，官方頁面未查證（來源：STAT News）
 - 2026-06-26：Wired 延伸報導確認 Trump 政府已不再信任 Amodei，改由 Tom Brown（GPT-3 共同研發者、Anthropic 聯合創辦人）全面接管政府溝通；Dario 以商業成功推動 AI 安全的政策立場持續受到質疑（來源：WIRED）
 - 2026-06-25：WIRED 報導 Amodei 退出與白宮 Fable 5 出口管制談判，由聯合創辦人 Tom Brown 接管；白宮人士批評其「行為怪異」無法有效與 Trump 政府溝通（來源：WIRED）
 - 2026-06-24：WIRED 報導白宮與 Dario Amodei 的關係趨於緊張，為 Fable 出口管制爭議持續發酵下的政治維度，顯示 Anthropic 與現任行政當局關係惡化

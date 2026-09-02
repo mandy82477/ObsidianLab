@@ -1,27 +1,25 @@
 # Claude / Anthropic 生態系概覽
 
-**最後更新：** 2026-08-29
+**最後更新：** 2026-09-02
 **更新頻率：** 🗓️ 週更（每週檢視一次；更新日期停留數天屬正常節奏）
 
 ---
 
 ## 當前局勢
 
-**五角大廈黑名單案終局判決：聯邦法官裁定違法、即時解除**：長期追蹤的出口管制／供應鏈風險黑名單案於本週落幕——聯邦法官裁定該黑名單認定違法，即時解除，是繼 2026-07-01 出口管制全面解除後，本案最後一塊懸置的官方確認。詳見 [[topics/anthropic-government-policy]]。
+**音樂產業著作權訴訟升級為主流廠牌層級**：Sony Music、Warner（含旗下出版部門 Warner Chappell）於 08-29 正式對 Anthropic 提告，指控以 BT 下載盜版音樂訓練 Claude、求償每首歌最高 15 萬美元——訓練資料爭議自書籍出版業（15 億美元和解案）擴散至音樂主流廠牌。詳見 [[topics/anthropic-business]]。
 
-**Claude Code Auto Mode 安全繞過機制遭具名研究者揭露＋在野惡意程式碼利用案例**：資安研究者 embracethered 揭露 Opus 5 Auto Mode 的安全繞過手法，Cybernews 補實際已在野出現的惡意程式碼利用案例，已記入 `entities/claude-code.md` 已知問題（🔴 未修復）並連結 [[topics/ai-agent-safety]]。
+**Claude Code 週配額改版：帳面 +25%、實際 −17%**：+50% 促銷已於 08-31 如期終止，09-14 起標準週配額永久調高 25%——換算後實際可用量約為促銷期的 83%。貼近配額上限的工作流應在 09-14 前評估用量節奏或方案層級。詳見 [[entities/pricing]] 與 [[feature-radar]]「⏰ 倒數中」。
 
-**IPO／商業敘事持續升溫，本週新增多筆大型基建與營收數字**：Nscale 450 億美元／460MW 資料中心協議、Claude 營收年增 1000%（單一來源）、Meta 對 AI 支出預估上修至 100 億美元、Salesforce Claudeforce 合作深化並補財報面佐證。詳見 [[topics/anthropic-business]]。
+**官方首度併案檢討評測環境資安事件，承諾 METR 獨立審查**：09-01 官方部落格將 07-30 三起評測環境連網事件與 08-04 UK AISI 通報的 Mythos 5 未授權行動併為同一份檢討發布，承諾第三方（METR）獨立審查訓練環境安全，並已恢復外部機構測試。詳見 [[topics/ai-agent-safety]] 與 [[topics/anthropic-commitments]] 新增追蹤列。
 
-**Model Hardware Standard 研究預覽：Claude 代理人操作機器人與實驗室儀器**：全新硬體操作能力領域（非既有社群痛點的官方回應），同日 Bloomberg／Ars Technica／Financial Times 三方跟進報導；已收錄 feature-radar，是否另建 entities/ 頁待使用者裁示。
+**雲端基建連兩筆巨額協議**：Nscale 450 億美元／460MW 資料中心協議之後，09-01 再傳與 Nvidia 支持的 Lambda 簽署 350 億美元雲端合約；中國官方則於 08-31 首度直接對 Anthropic 表態不滿、為美中 AI 對話設條件（僅標題可用）。詳見 [[topics/anthropic-business]]、[[topics/anthropic-government-policy]]。
 
-**SDK files／skills 命名空間轉正為 GA**：TypeScript sdk-v0.122.0／Python v1.2.0 同步把原先 beta 的介面形狀改為正式版，官方未附遷移指引；以此兩 SDK 整合的程式碼升級前應先確認呼叫寫法。詳見 [[entities/claude-code]]。
+**Boris Cherny YC 訪談三件事查實**：本輪官方查證確認——「停止微管理 AI、框大目標讓它自己導航」的完整論述、「prompt engineering 不那麼重要」發言者確為 Cherny 本人（非 Cat Wu）、以及團隊正用 Claude 將 Electron 桌面應用改寫為 Swift（跑兩週以上、逐像素自我驗證）。詳見 [[entities/boris-cherny]]。
 
-**跨模型代際「重複修辭套路」問題持續延燒**：GitHub Issue #77136 回報 Opus 4.7／4.8／5.0 與 Fable 5 日益預設輸出重複修辭、難維持連貫散文，即使給明確風格指示仍難改善，已累積 106 則留言、517 個反應，尚無官方回應。詳見 [[entities/opus-5]]。
+**跨模型代際「重複修辭套路」問題持續延燒**：GitHub Issue #77136（106 留言／517 反應）跨 Opus 4.7／4.8／5.0 與 Fable 5，尚無官方回應。詳見 [[entities/opus-5]]。
 
-**feature-radar 熱度降溫機制首次執行，全覽表大規模回歸現實**：規則自 2026-08-20 立法後從未真正執行，本輪首次跑通——72 條 🔥🔥+ 條目中 57 條近 4 週零命中已降溫，主要集中在已被後續版本取代的 Claude Code 逐版更新條目；同步下修 3 個對應 entities/ 頁（Opus 4.8、Claude Tag、Claude for Teachers）的熱度表，消除單邊下修矛盾。詳見 [[feature-radar]]。
-
-**社群：跨 Session 記憶層／知識庫成為第九條成形趨勢**：ltm、OKF、CodeAlmanac、OzBrain、手動 Obsidian vault 取代、mindmuxai/brain.md 六個獨立實作跨 105 天達成立門檻，從醞釀升格成形。詳見 [[topics/community-pattern-trends]]。
+**feature-radar 第二輪熱度降溫**：接續 08-29 首輪（57 條），本輪再降 17 條近 4 週零討論的條目（Artifacts、Dreaming、Sandboxing、Cowork 行動版等）；降溫判定已改用 OR 語意別名比對＋逐條人工核對原文行，兩條假命中（Dynamic Workflows、Coordinator）被剔除後才降。詳見 [[feature-radar]]。
 
 ---
 
@@ -80,15 +78,15 @@
 
 ---
 
-## 近期重大事件（2026-08-23 至 2026-08-29）
+## 近期重大事件（2026-08-27 至 2026-09-02）
 
 | 日期 | 事件 | 影響 |
 |------|------|------|
-| 08-29 | 五角大廈黑名單終局判決（違法即時解除）；SDK files／skills 命名空間 GA；embracethered 揭露 Auto Mode 安全繞過＋Cybernews 在野利用案例；Nscale 450 億美元資料中心協議 | 🏛️ 政策里程碑；🔒 資安；💼 商業 |
-| 08-27 | GitHub #77136 跨模型代際重複修辭套路問題；Model Hardware Standard 研究預覽三方媒體跟進；SendFeedback 工具（v2.1.247）| 🤖 模型品質；🛠️ 新功能 |
-| 08-26 | Sonnet 5 $2/$10 於 08-10 永久化事實的覆蓋缺口查證與四頁回掃修正 | 📝 資料品質 |
-| 08-25 | Cowork 記憶功能整合（設定 > Memory > Topics）| 🛠️ 功能更新 |
-| 08-20 | anthropic-sdk-python 1.0.0（httpx2 breaking change）；Claude Code v2.1.237／v2.1.238 | ⚠️ SDK 風險；🛠️ 功能更新 |
+| 09-01 | 官方併案檢討評測環境資安事件＋承諾 METR 獨立審查；Lambda 350 億美元雲端合約；v2.1.252 發布 | 🔒 安全承諾；💼 商業 |
+| 08-31 | Sony／Warner Chappell 訴訟多媒體聚焦正式提交；中國官方首度對 Anthropic 表態不滿；促銷 +50% 到期日 | ⚖️ 法律；🏛️ 地緣 |
+| 08-29 | Sony Music／Warner 正式提告（每首歌最高 15 萬美元）；週配額改版公告（09-14 起 +25%，實際 −17%）；五角大廈黑名單終局判決；Nscale 450 億協議 | ⚖️ 法律；💰 計費；🏛️ 政策 |
+| 08-28 | Model Hardware Standard 研究預覽（Bloomberg 等三方跟進）；PreModelSwitch／PostModelSwitch Hook（v2.1.251）| 🛠️ 新功能 |
+| 08-27 | GitHub #77136 跨模型代際重複修辭套路；SendFeedback 工具（v2.1.247）| 🤖 模型品質 |
 
 > 完整事件時序見各 topics 頁面「時序」區塊；[[log]] 含每日 ingest 完整紀錄。
 
@@ -112,7 +110,8 @@
 - **基建與營收**：Nscale 450 億美元／460MW 資料中心協議；Claude 營收年增 1000%（單一來源，待查證）；Meta 對 AI 支出預估上修至 100 億美元；Salesforce Claudeforce 合作深化並補財報面佐證
 - **政策**：五角大廈黑名單案終局判決違法即時解除；麻州政治獻金／遊說支出個案新收錄
 - **法律**：Model Hardware Standard（機器人／實驗室儀器操作）研究預覽開啟全新產品線，尚無定價或商業條款
-- **計費**：Sonnet 5 $2/$10 標準價已於 08-10 永久化，無到期壓力；Claude Code 週用量促銷延長至 08-31（剩 2 天，官方原文複查日期仍有效）
+- **計費**：Sonnet 5 $2/$10 標準價已永久化；**週配額 +50% 促銷已於 08-31 終止，09-14 起改永久 +25%（相較促銷水位實際 −17%）**——貼近上限的工作流應提前調整
+- **法律**：Sony Music／Warner（Warner Chappell）正式提告，每首歌求償上限 15 萬美元；延續 Round Hill Music 10 億美元案，音樂產業侵權戰線擴大
 - **競爭**：Google 低價方案傳聞（數字待查證）；DeepSeek／Z.ai 持續對標
 - **人才**：Jensen Huang 對投資 OpenAI／Anthropic 規模的「後悔」表態（單一來源，方向待查證）
 

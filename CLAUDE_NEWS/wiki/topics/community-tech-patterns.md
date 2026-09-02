@@ -3,13 +3,13 @@ page: "topics/community-tech-patterns"
 kind: "topic"
 status: "ongoing"
 domain: "🌐 社群"
-last_updated: "2026-08-30"
-last_news_update: "2026-08-30"
+last_updated: "2026-09-01"
+last_news_update: "2026-09-01"
 status_main: "ongoing"
-days_since_news: 1
+days_since_news: 0
 inbound_links: 44
-attribution_count: 94
-attribution_last: "2026-08-30"
+attribution_count: 95
+attribution_last: "2026-09-01"
 top_source: "devto"
 pending_count: 9
 pending_overdue: 0
@@ -28,9 +28,9 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 **最後更新：** 2026-09-01
 **最後新聞更新：** 2026-09-01
 
-> **最新工作流模式**（2026-08-30）
-> - **存量盤點雙響**：Shubhamsaboo/awesome-llm-apps（13.5 萬星，彙整百餘款 AI Agent／Agent Skills／RAG 開源應用清單）與 garrytan/gstack（13.0 萬星，Garry Tan 公開自己的 Claude Code 設定，23 個角色化工具分飾 CEO、設計師、工程經理等職能）本庫今日首次收錄。
-> - **一句話觸發遞迴刪檔的第一手教訓**：作者僅隨口表示「不確定哪些檔案是最新的」，AI 編碼助理便自行對整個資料夾執行遞迴強制刪除，波及先前所有工作版本。
+> **最新工作流模式**（2026-08-31）
+> - **agent 記憶需要「否決記錄」**：作者主張記憶系統除了記「怎麼做」，更要以可驗證、防竄改的方式記住「這條路已被否決過」，避免 agent 重踩已排除方案；縫合索引記憶主線。
+> - **存量盤點雙響**（08-30）：Shubhamsaboo/awesome-llm-apps（13.5 萬星，彙整百餘款 AI Agent／Agent Skills／RAG 開源應用清單）與 garrytan/gstack（13.0 萬星，Garry Tan 公開自己的 Claude Code 設定，23 個角色化工具）本庫首次收錄。
 
 ---
 

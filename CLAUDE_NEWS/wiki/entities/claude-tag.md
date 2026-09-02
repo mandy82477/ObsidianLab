@@ -7,7 +7,7 @@ domain: "🛠️ 工具/功能"
 last_updated: "2026-08-27"
 last_news_update: "2026-07-08"
 status_main: "active"
-days_since_news: 54
+days_since_news: 55
 inbound_links: 1
 attribution_count: 0
 attribution_last: null

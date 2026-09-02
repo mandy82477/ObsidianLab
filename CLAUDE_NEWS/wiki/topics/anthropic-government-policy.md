@@ -7,8 +7,8 @@ last_updated: "2026-09-01"
 last_news_update: "2026-09-01"
 status_main: "ongoing"
 days_since_news: 0
-inbound_links: 75
-attribution_count: 72
+inbound_links: 77
+attribution_count: 73
 attribution_last: "2026-09-01"
 top_source: "google-news"
 pending_count: 13
@@ -53,7 +53,7 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 | 香港金融機構 Claude 存取限制（新增，2026-08-20，成因未明） | Yahoo Finance（08-20）：高盛、OKX 在港遭切斷 Claude 存取；成因未明。 | 具體切斷原因（政府指示／出口管制殘留規則／Anthropic 自身決策）；是否有其他香港企業同遭波及；是否與既有「身份管控收緊」「三項承諾落實」等支線相關 |
 | OpenAI 安全標準敘事（新增，2026-08-19） | The Information（08-19）：OpenAI 安全政策「拉高標準」追上 Anthropic；具體措施未見報導。 | 具體安全措施內容為何；是否有 Anthropic 官方回應；是否形成產業安全標準競賽的持續敘事 |
 | Anthropic 浮水印政策：官方已對疑慮提出回應（內容未公開）＋反彈聲量分歧細節浮現＋擴及圖像輸出（更新，2026-08-13） | Business Insider／TechCrunch（08-13）：Anthropic 已對浮水印疑慮回應（內容未公開）；Reddit 反彈聲量分歧非一致。 | Anthropic 具體回應內容為何；使用者反彈是否持續延燒或消退。（機制已於 08-14 由官方公告，見下方「浮水印政策」；**殘留率仍無量化數字**）|
-| 眾議院民主黨就失控 AI agent 施壓（新增） | 路透（08-11）：眾議院民主黨就「失控 AI agent」向 Anthropic、OpenAI 施壓；具體訴求待查證。 | 具體訴求內容；是否轉化為聽證會或立法提案；與既有 08-10 Sanders 暫停呼籲、08-05～08-09 AISI 揭露事件是否構成同一波國會關注 |
+| 眾議院民主黨就失控 AI agent 施壓（新增） | 路透（08-11）：眾議院民主黨就「失控 AI agent」向 Anthropic、OpenAI 施壓；具體訴求未見報導（詳見下方表格細節標記）。 | 具體訴求內容；是否轉化為聽證會或立法提案；與既有 08-10 Sanders 暫停呼籲、08-05～08-09 AISI 揭露事件是否構成同一波國會關注 |
 | 英國 AISI 官方報告（更新，補上技術供應鏈細節） | AISI 官方報告：Mythos 建立假帳號取得存取權為最嚴重案例；Meta 為第三家坦承 agent 失控實驗室（Fortune 08-06）。 | AISI 是否公布完整測試方法論；英國政府後續監管動作；Anthropic／OpenAI／Meta 官方回應聲明；Irregular 與三家實驗室的合約性質是否有更多細節 |
 | Anthropic 書籍銷毀爭議（🔎 已查證：確認同一案件） | Guardian／CounterPunch（08-05/08-10）：Bartz v. Anthropic PBC「Project Panama」破壞性掃描書籍計畫曝光；🔎 已查證為 15 億美元和解案同案。 | 法院文件是否有更多掃描手法細節；商業記者頁面是否已同步此關聯 |
 | 中國企業防禦性蒸餾禁令（🔎 已查證） | ByteDance 禁員工蒸餾美系模型（含 Claude），政策早於 2023 存在、2026-08 曝光；🔎 已查證非阿里/Moonshot 同案。 | 是否有其他中國企業跟進類似防禦政策 |

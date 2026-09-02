@@ -4,13 +4,13 @@ kind: "entity"
 type: "policy"
 status: "active（持續調整中）"
 domain: "💼 商業"
-last_updated: "2026-08-31"
-last_news_update: "2026-08-31"
+last_updated: "2026-09-01"
+last_news_update: "2026-09-01"
 status_main: "active"
 days_since_news: 0
-inbound_links: 119
-attribution_count: 72
-attribution_last: "2026-08-31"
+inbound_links: 120
+attribution_count: 73
+attribution_last: "2026-09-01"
 top_source: "google-news"
 pending_count: 2
 pending_overdue: 0
@@ -29,7 +29,7 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 **最後新聞更新：** 2026-09-01
 
 > **最新計費政策異動**（2026-08-31）
-> - **週配額規則改版：09-14 起標準週配額永久 +25%，但現行 +50% 促銷 08-31 到期不續，相較目前水位實際減少約 17%**：詳見「當前生效的計費規則」新增／更新列，回報主編同步 feature-radar「⏰ 倒數中」。
+> - **週配額規則改版：09-14 起標準週配額永久 +25%，但現行 +50% 促銷 08-31 到期不續，相較目前水位實際減少約 17%**：詳見「當前生效的計費規則」新增／更新列，另見 [[feature-radar]]「⏰ 倒數中」。
 > - **社群質疑「20x」用量宣稱的實質定義**（2026-08-31，HN）：發文者指出官方行銷所稱的「20x」用量只放大 5 小時視窗、非週上限，用語易誤導；討論串提及既有 Max 20x 用量集體訴訟，詳見「事故與爭議」新增節。
 
 ## 現況
@@ -204,11 +204,11 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 - **對照本頁既有紀錄**：本頁已記錄 Karl Kahn 於 2026-06-16 提起之集體訴訟，指控 Max 20x 方案**實際用量僅為 Pro 的 6–8 倍**、而非廣告宣稱的 20 倍（見上方「重要政策變動紀錄→事故與爭議」06-16 相關條目、方案細節「Max 20x 用量上限集體訴訟進行中」）；本則 HN 討論從**用量計算基準**（5 小時視窗 vs 週上限）切入質疑同一個「20x」命名的準確性，與訴訟指控的「倍數不實」屬同一爭議的不同角度——一個質疑「20 倍算得對不對」，一個質疑「20 倍算的是哪個時間窗」，兩者互為佐證但非同一指控內容，不可合併為單一事實。
 - **未解之處**：官方是否曾明確定義「20x」的計算基準（5 小時視窗、日、週）未見官方文件逐字說明，本頁「我的方案現在有什麼」表與「模型 API 定價現況」均未涵蓋此一命名定義層級的細節；具體是否構成訴訟新增指控依據、或僅為既有訴訟的社群側佐證討論，均未見報導後續（僅單一 HN 討論串，score 未知，未見主流媒體跟進）。
 
-#### 2026-08-28：Reddit 整理十週時間軸——官方曾稱 Fable 5 將恢復訂閱內含，Pro 方案至今仍按 token 計費（承諾未兌現，回報主編同步 anthropic-commitments）
+#### 2026-08-28：Reddit 整理十週時間軸——官方曾稱 Fable 5 將恢復訂閱內含，Pro 方案至今仍按 token 計費（承諾兌現追蹤見 [[topics/anthropic-commitments]]）
 
 - **Reddit r/ClaudeAI（2026-08-28）**：使用者整理 Fable 5 計費爭議時間軸，指出官方曾表態 Fable 5 將恢復為訂閱內含，惟十週後 Pro 方案仍按 token 計費，情緒標記 😤。
 - **對照本頁既有紀錄**：本頁 07-20 分界（見上方「當前生效的計費規則」）已官方查證確認——Pro 方案／Team standard seats 的 Fable 5 用量**設計上就是**不計入方案週用量、須以 usage credits 按 API 費率付費，並非暫時性技術故障。**十週」回推約落在 06 月中旬**，早於本頁 07-20 官方分界生效日，具體是哪一則官方表態、措辭是否為「將恢復」而非「維持既有分層」未見報導原文可查核，本頁尚無法判定是否存在與現行分界矛盾的官方舊承諾。
-- **處置**：此為「官方承諾與現況落差」型讀者情緒，非本頁計費事實本身的新資訊——依 `.claude/rules/wiki-ingest-commercial.md`「官方文件查證優先於媒體轉述」精神，此類承諾兌現判定超出商業記者職權，回報主編同步 [[topics/anthropic-commitments]] 追蹤表（原始官方表態內容待主編查證後補列）。
+- **與本頁定位的關係**：此為「官方承諾與現況落差」型讀者情緒，非本頁計費事實本身的新資訊——承諾是否兌現需另行查證官方原始表態，追蹤見 [[topics/anthropic-commitments]]（原始官方表態內容尚待補列）。
 
 #### 2026-08-15：Fable 5／Opus 5 是否共用同一週用量池 → ✅ 官方確認共用，「50% 上限」是池內天花板不是額外配額（2026-08-22 查證結案）
 
@@ -218,8 +218,8 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 
 #### 2026-08-14：Max 方案 session 額度自 3/23 起異常快速耗盡（本頁互動量最高配額回報）+ 社群質疑用量被暗中調降
 
-- **GitHub Issue #38335（👍 543，2026-08-14 查證，CLI 使用情境）**：使用者回報 Claude Max 方案的 session（工作階段）限制自 **2026-03-23** 起異常快速耗盡；543 個 👍 反應遠超 GitHub Issue 高門檻（≥50 留言對照表，本則為反應數非留言數，量級仍屬本頁近期配額類回報互動量最高者）。功能記者同步處理機制面（詳見 [[entities/claude-code]] 已知問題，若已收錄）；此處僅記配額/計費面：問題若屬實，代表訂閱方案配額計算自 3 月下旬起可能存在系統性異常，而非近期（07-20 旗艦分界後）才出現的新問題（推論，具體根因、是否與既有 Fable 5 用量點數異常 Issue #79337 同源，均未見報導或官方回應證實）（GitHub https://github.com/anthropics/claude-code/issues/38335）
-- **Reddit r/ClaudeCode：使用者質疑用量是否配合 8/19「50% 提升永久化」而暗中調降（單一貼文，未經證實）**：使用者發文質疑 Anthropic 是否正暗中調降用量，以便在傳聞中「50% 用量提升」政策於 8/19 轉為永久生效前後製造對比效果（score=0，Reddit RSS 天生無讚數非低互動指標，但為單一未經證實貼文，屬使用者質疑／推測，非既定事實）。**查證本頁既有紀錄**：本頁已記錄之「週用量 +50%」促銷（2026-06-15 起臨時提高，多次延長至 2026-07-19 到期）已由 07-20 旗艦模型訂閱分界取代（見上方「已失效並移除的規則」），**未見與「8/19 永久化」直接對應的官方承諾或公告**；該 Reddit 貼文所稱「8/19」與本頁既有促銷時程（7/19 到期）不吻合，可能指涉另一項未被本頁收錄的官方承諾，或屬使用者對時程的誤記/混淆，需主編查證是否有獨立於本頁既有紀錄的「8/19」相關官方訊息（Reddit r/ClaudeCode，2026-08-14）
+- **GitHub Issue #38335（👍 543，2026-08-14 查證，CLI 使用情境）**：使用者回報 Claude Max 方案的 session（工作階段）限制自 **2026-03-23** 起異常快速耗盡；543 個 👍 反應遠超 GitHub Issue 高門檻（≥50 留言對照表，本則為反應數非留言數，量級仍屬本頁近期配額類回報互動量最高者）。機制面詳見 [[entities/claude-code]] 已知問題（若已收錄）；此處僅記配額/計費面：問題若屬實，代表訂閱方案配額計算自 3 月下旬起可能存在系統性異常，而非近期（07-20 旗艦分界後）才出現的新問題（推論，具體根因、是否與既有 Fable 5 用量點數異常 Issue #79337 同源，均未見報導或官方回應證實）（GitHub https://github.com/anthropics/claude-code/issues/38335）
+- **Reddit r/ClaudeCode：使用者質疑用量是否配合 8/19「50% 提升永久化」而暗中調降（單一貼文，未經證實）**：使用者發文質疑 Anthropic 是否正暗中調降用量，以便在傳聞中「50% 用量提升」政策於 8/19 轉為永久生效前後製造對比效果（score=0，Reddit RSS 天生無讚數非低互動指標，但為單一未經證實貼文，屬使用者質疑／推測，非既定事實）。**查證本頁既有紀錄**：本頁已記錄之「週用量 +50%」促銷（2026-06-15 起臨時提高，多次延長至 2026-07-19 到期）已由 07-20 旗艦模型訂閱分界取代（見上方「已失效並移除的規則」），**未見與「8/19 永久化」直接對應的官方承諾或公告**；該 Reddit 貼文所稱「8/19」與本頁既有促銷時程（7/19 到期）不吻合，可能指涉另一項未被本頁收錄的官方承諾，或屬使用者對時程的誤記/混淆，是否存在獨立的「8/19」官方訊息尚待查證（Reddit r/ClaudeCode，2026-08-14）
 - **✅ 08-18 官方公告部分澄清（非「永久化」，而係「延長至 8/31」）**：本頁 08-18 記錄之官方公告（見「定價與促銷」08-18 條目）證實「週用量 +50%」促銷確實持續延長中，**並未如本頁此前誤記般已於 07-19 失效**——本則 Reddit 貼文對促銷仍生效的直覺並非空穴來風。惟官方措辭為「延長至 **2026-08-31**」，性質為暫時延長，非本貼文所稱的永久政策。
 - ❓ **待查證**（標 2026-08-14｜查 暗中調降用量、throttling｜複 2026-09-12）｜**貼文中「暗中調降用量以製造對比效果」的具體指控**仍未獲官方證實或否認，不因促銷延長本身而視為解決。已掃日報至 2026-08-29 無後續；官方頁面未查證
 
@@ -235,7 +235,7 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 
 #### 2026-08-04：Reddit 回報 Max 20x 用量在未使用期間半小時內從 0% 衝到 100%，疑似配額計算異常
 
-- **Reddit r/ClaudeAI 週熱門回報**：使用者發文指出 Max 20x 方案用量在**未使用 Claude 的情況下**，半小時內從 0% 攀升至 100%（Reddit，週熱門，達互動門檻對照表「低」門檻，2026-08-04）。**與既有已知問題的關聯（推論，待證實同源）**：症狀與功能記者已記錄於 [[entities/claude-code]] 已知問題的 GitHub Issue #41788〈Max 20 plan: rate limit 100% exhausted within ~70 minutes after reset〉（版本迴歸 bug）高度相似——皆描述用量上限在短時間、無明顯使用下被耗盡；惟本則 Reddit 貼文與該 GitHub Issue 是否為同一根因、同一批受影響用戶，均未見報導或貼文本身交叉確認，不可逕自合併認定為單一事件（Reddit https://www.reddit.com/r/ClaudeAI/comments/1vf6i4y/max_20x_usage_went_from_0_to_100_in_half_an_hour/）
+- **Reddit r/ClaudeAI 週熱門回報**：使用者發文指出 Max 20x 方案用量在**未使用 Claude 的情況下**，半小時內從 0% 攀升至 100%（Reddit，週熱門，達互動門檻對照表「低」門檻，2026-08-04）。**與既有已知問題的關聯（推論，待證實同源）**：症狀與 [[entities/claude-code]] 已知問題已記錄的 GitHub Issue #41788〈Max 20 plan: rate limit 100% exhausted within ~70 minutes after reset〉（版本迴歸 bug）高度相似——皆描述用量上限在短時間、無明顯使用下被耗盡；惟本則 Reddit 貼文與該 GitHub Issue 是否為同一根因、同一批受影響用戶，均未見報導或貼文本身交叉確認，不可逕自合併認定為單一事件（Reddit https://www.reddit.com/r/ClaudeAI/comments/1vf6i4y/max_20x_usage_went_from_0_to_100_in_half_an_hour/）
 
 #### 2026-08-02：Max 5x → Max 20x 訂閱升級持續失敗，與此前三起已知 issue 同源
 
@@ -255,7 +255,7 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 
 #### 2026-07-20：Fable 5 免費期到期後社群反映存取異常，含官方已證實的 Max 誤判事件
 
-- **Reddit r/ClaudeAI：Max 方案用戶反映無法使用 Fable 5**：Reddit 用戶（score 0，Reddit RSS 抓取機制下不可信為互動門檻，source_count=1）反映 Max 方案疑似無法存取 Fable 5。**與官方 Status 事件吻合**：時間點與 Anthropic Status 頁面同日（07-20 07:35 UTC）公告的「Max 方案用戶被誤判需使用點數才能存取 Fable 5」事件吻合，官方已確認為誤判並建議受影響用戶重啟；官方事件細節由功能記者同步記錄於 [[entities/claude-code]]（Reddit https://www.reddit.com/r/ClaudeAI/comments/1v1g5yy/so_i_cant_use_fable_with_my_max_plan_ey/；Anthropic Status https://status.claude.com/incidents/tnypgb2jbqnq）
+- **Reddit r/ClaudeAI：Max 方案用戶反映無法使用 Fable 5**：Reddit 用戶（score 0，Reddit RSS 抓取機制下不可信為互動門檻，source_count=1）反映 Max 方案疑似無法存取 Fable 5。**與官方 Status 事件吻合**：時間點與 Anthropic Status 頁面同日（07-20 07:35 UTC）公告的「Max 方案用戶被誤判需使用點數才能存取 Fable 5」事件吻合，官方已確認為誤判並建議受影響用戶重啟；官方事件細節詳見 [[entities/claude-code]]（Reddit https://www.reddit.com/r/ClaudeAI/comments/1v1g5yy/so_i_cant_use_fable_with_my_max_plan_ey/；Anthropic Status https://status.claude.com/incidents/tnypgb2jbqnq）
 - **Reddit r/ClaudeAI：App 內 Pro 方案顯示異常消失（單一回報，未經證實）**：另一則 Reddit 貼文（score 0，source_count=1）反映 App 內 Pro 方案顯示異常消失/變動，原因不明。**注意**：與上則 Max 誤判事件同日出現，但官方 Status 頁面僅證實 Max 方案誤判一事，本則 Pro 方案異常未見官方對應公告或其他來源佐證，暫不推論兩者為同一根因，僅並列記錄待後續查證（Reddit https://www.reddit.com/r/ClaudeAI/comments/1v1hiu8/anthropic_nuked_the_pro_plans_on_the_app_for_some/）
 
 #### 2026-07-12/13：Anthropic 證實 1660 萬美元帳務錯誤，稽核發現企業多收 170 萬美元
@@ -313,20 +313,20 @@ git commit 歷史出現大寫字串「HERMES.md」會觸發靜默切換至 API �
 
 - **Google News／MarkTechPost、Dealroom、Palo Alto Networks Unit 42、The New Stack（四方跟進報導）**：Anthropic 將 Claude Mythos 5 導入 Claude Security 產品線，企業團隊透過產品介面即可取得 frontier 等級漏洞掃描能力，同時官方承諾提供 **3,500 萬美元**額度（credits）；四家媒體同步跟進同一事件，僅標題與導言層級可用，具體額度發放對象（既有客戶／新客戶）、使用期限、是否綁定特定產品用量或方案未見報導細節。
 - **與「我的方案現在有什麼」表的關係**：本額度屬**產品導入型促銷**（綁定 Claude Security 產品線的企業客戶），非該表涵蓋的一般訂閱方案優惠，暫不列入表內；模型能力釋出面詳見 [[entities/mythos]]，產品功能細節見 [[entities/claude-security]]。
-- **⚠️ 需主編查證官方說明中心**：$35M 額度方案的官方公告原文、適用範圍與截止日均未見報導，僅媒體轉述金額，屬 `support.claude.com` 或 Anthropic 官方部落格層級事實，記者無 web 工具不可自行推斷（Google News/MarkTechPost；Google News/Dealroom；Google News/Palo Alto Networks Unit 42；Google News/The New Stack）
+- ❓ **待查證**（標 2026-08-21｜查 Claude Security、3500 萬美元｜複 2026-09-04）｜**$35M 額度方案細節**：官方公告原文、適用範圍與截止日均未見報導，僅媒體轉述金額（Google News/MarkTechPost；Google News/Dealroom；Google News/Palo Alto Networks Unit 42；Google News/The New Stack）
 
 #### 2026-08-21：Techzine 報導 Anthropic 允許企業將 AI 資料存放於自有雲端環境（單一來源，未經官方確認）
 
 - **Techzine Global（2026-08-21 07:46 UTC）**：報導稱 Anthropic 讓企業客戶可以將 AI 資料存放在自有雲端環境中，僅標題可用，未見具體實作機制（是否限特定雲端商、涵蓋哪些模型／方案）、生效時間或官方公告連結。
 - **與下方 08-20 資料保留政策異動報導的關係（待確認，不逕自認定為同一事件）**：時間點相近、主題同屬企業資料治理，但來源與措辭均不同（一稱「自有雲端存放」、一稱「保留政策調整」），無法從現有標題層級資訊判斷是否為同一政策的不同描述角度，或兩項獨立變動；不可推測合併。
-- **⚠️ 需主編查證官方說明中心**：企業資料存放位置是否有官方文件更新，屬 `support.claude.com` 說明中心層級事實，記者無 web 工具不可自行推斷（Google News/Techzine Global）
+- ❓ **待查證**（標 2026-08-21｜查 Techzine、自有雲端環境｜複 2026-09-04）｜**企業資料存放於自有雲端環境**：官方文件是否已更新支援此作法未見報導，僅標題可用（Google News/Techzine Global）
 
 #### 2026-08-20：路透社／彭博社（消息人士）報導 Anthropic 計畫調整企業資料保留政策（未經官方證實）
 
 - **Reuters（19:34 UTC）／Bloomberg（17:51 UTC）同日報導**：兩家媒體均引述消息人士，稱 Anthropic 計畫調整企業客戶的資料保留政策；Bloomberg 標題聚焦「進階 AI」（advanced AI）的適用範圍，兩則均僅標題與極簡導言可用，具體調整內容（保留天數延長／縮短、涵蓋模型範圍、生效時間）均未見報導細節。
 - **與既有「30 天資料保留政策」記錄的關係（見上方 2026-06-09 條目）**：本頁已記錄 Fable 5／Mythos 5 流量（含 AWS Bedrock）強制保留 30 天之既有政策；本則消息來源報導的「計畫調整」是否即針對此既有政策、調整方向為何，均未見報導細節，不可逕自推定延長或縮短。
 - **與競品動態的呼應**：同期 The Register／TechCrunch 報導 OpenAI 祭出「零資料保留」（zero data retention）承諾搶攻 Anthropic 企業客戶，被解讀為競爭回應，詳見 [[topics/competitor-landscape]]「OpenAI ChatGPT Work / GPT-5.6」子區塊。
-- **⚠️ 需主編查證官方說明中心**：企業資料保留政策異動內容，屬 `support.claude.com` 說明中心層級事實，消息來源均為匿名「source says」，記者無 web 工具不可自行推斷（Google News/Reuters；Google News/Bloomberg.com）
+- ❓ **待查證**（標 2026-08-20｜查 Reuters、資料保留政策｜複 2026-09-03）｜**企業資料保留政策調整細節**：消息來源均為匿名「source says」，具體調整內容未見官方公告（Google News/Reuters；Google News/Bloomberg.com）
 
 #### 2026-08-19：DevOps.com 稱「暫時性用量提升」當晚到期，與週用量 +50% 促銷延長是否同一時程尚無法確認
 
@@ -349,7 +349,7 @@ git commit 歷史出現大寫字串「HERMES.md」會觸發靜默切換至 API �
 
 - **官方公告**：Anthropic 官方帳號宣布「making Claude Sonnet 5's introductory pricing permanent」——Sonnet 5 於 6 月發布時載明 $2/$10 per Mtok 為入門價、有效期至 2026-08-31，該價格**維持不變**；原定 2026-09-01 起調至 $3/$15（各降幅 50% 的漲幅）**不會發生**（部分媒體記為 08-11）
 - **官方文件佐證（2026-08-26 查證）**：官方模型總覽頁 Sonnet 5 定價欄現為 `$2 / input MTok, $10 / output MTok`，**已無任何 introductory／temporary／到期字樣**；官方定價文件另載明該價格「is now the standard price」
-- **⚠️ 本庫覆蓋缺口**：此則為官方定價變動，但**日報 12 個來源於 08-10～08-26 全數未收錄**——官方公告走 X 與 support/pricing 說明中心，兩者皆不在來源清單（X 為設計上排除、說明中心為已知缺口，見 `.claude/rules/wiki-ingest-commercial.md`）。結果是本頁在漲價日前 5 天仍掛著「⏰ 08-31 到期」倒數，讀者會據以做錯誤的成本決策
+- **⚠️ 收錄延遲**：此則為官方定價變動，但**本站日常追蹤的新聞來源於 08-10～08-26 全數未提及**——官方公告發布於 X 與官方說明中心，兩者皆非本站例行監看範圍。結果是本頁在漲價日前 5 天仍掛著「⏰ 08-31 到期」倒數，讀者會據以做錯誤的成本決策
 - **連帶更正**：本頁「模型 API 定價現況」表、「⏰ 倒數中」、[[feature-radar]]、[[topics/model-comparison]]、[[entities/sonnet-5]] 的到期敘述已於 2026-08-26 一併上修
 - **缺口已修補（2026-08-28）**：官方 API 定價頁（`platform.claude.com/docs/en/about-claude/pricing`，即記載本次變動的那一頁）已納入官方文件監看清單；同時官方頁的變更偵測由「只說變了」升級為列出新增／移除的段落——本次這種「少了一句到期字樣」的移除型變動，先前的偵測方式看不出來
 
@@ -475,7 +475,7 @@ The Information 報導企業客戶即使面對成本上漲仍持續採用；Anth
 
 - **r/ClaudeCode（2026-08-21 09:26 UTC）**：使用者回報本次配額重置後，token 分配出現明顯變化，貼文未附具體帳號數據、變化方向（增加或減少）或方案別；Reddit RSS 抓取 score 恆為 0，非真實低互動指標，亦未見「週熱門」標記，暫不視為已達收錄門檻之系統性訊號。
 - **與既有配額異常回報的呼應（推論）**：與本頁已記錄之多起配額/用量異常回報（如 08-14 Max 方案 session 額度異常耗盡、08-12「用量限制遭調降」疑慮）同屬「使用者感受配額被調整、官方未公告」的重複性模式，惟本則未提供具體方案別或變化方向，訊號強度較既有紀錄更弱。
-- **⚠️ 需主編查證官方說明中心**：配額重置機制是否有變動，屬 `support.claude.com` 說明中心層級事實，記者無 web 工具不可自行推斷（Reddit https://www.reddit.com/r/ClaudeCode/comments/1vubdkb/huge_change_in_token_allocation_this_reset/）
+- ❓ **待查證**（標 2026-08-21｜查 token allocation、配額重置｜複 2026-09-04）｜**配額重置機制是否有變動**：僅單一 Reddit 回報，官方尚無對應公告（Reddit https://www.reddit.com/r/ClaudeCode/comments/1vubdkb/huge_change_in_token_allocation_this_reset/）
 
 #### 2026-08-12：官方文件釐清 usage limits 與 length limits 為兩種不同機制；同日再現「用量限制遭調降？」社群疑慮
 

@@ -5189,3 +5189,50 @@ GH Actions 抓料排 10:23 UTC，到 14:45 UTC 仍未落地（+4.4 小時且持�
 **點出什麼：** 專案成熟度自評指出「系統品質的最後一道防線是使用者的好奇心」後，使用者要求解決此單點依賴。追查發現：(a) 排程內抽查（收報核對、行為層抽驗、5d）全由 AI 主編執行，使用者的角色其實是「考卷外質疑者」；(b) 回顧全部 35 筆 Query 條目，歷史上所有重大品質問題（25 則靜默消失、漏收 48%、Dreaming 假死案、懸置 20 天、排程從未建立…）零次來自排程檢查、全部來自使用者不定期質疑；(c) 該質疑歸納後僅七種模式，全部可操作化；(d) 順帶揪出行為層抽驗的「隨機抽」無擲骰程序——LLM 自由心證的隨機會養出免檢區。
 
 **處置：** `scripts/inquiry_bank.py` 七題質疑題庫（溯源／缺席偵測／沉默質疑／讀者查找／可讀性／結構健檢／宣稱對帳，每題附機械探針、seed 綁 ISO 週防重擲換題）；`/wiki-lint` 新增 7b 歷史質疑代打（每輪抽 2 題）；`scripts/open_loops.py` 新增 [6] 人類質疑時效燈（最新 Query 逾 21 天亮 ⚠——題庫只代打已知模式，新型質疑仍靠使用者，燈不因代打而熄）；行為層抽驗補真隨機擲骰程序；規則檔 `.claude/rules/wiki-lint-inquiry.md`＋registry sync_pair＋4 組回歸測試。commit 9ba6b03a、e60a4000（後者為連帶修復：懸置棘輪 147→145）。
+
+## 2026-09-02 Lint（本機執行，7b 質疑代打首跑）
+
+- 修正矛盾：無（六記者跨頁比對均一致）
+- 補連結：無（全庫無孤立頁面）
+- 狀態更新：無
+- resolved 收尾：無
+- 新增 entities：無（步驟 4 掃描 Nscale／Lambda／Muse Code／Claude Academy／Trifecta 均僅 1 頁提及，未達 3 次門檻）
+- 呈現品質：商業 4 頁 ⚠️ 已修復（pricing 12 處維運術語洩漏、anthropic-business 5 處、competitor-landscape 4 處、ai-talent-flow 1 處——「留給 X 記者／需主編查證」等內部用語改寫為讀者語言或轉標準懸置標記）；社群 3 頁 ⚠️ 已修復（patterns／discussions callout 未反映 09-01 節點已覆寫、timeline 凍結頁 callout 誠實化）；其餘全部通過
+- 入口層健檢：>500 行七頁（claude-code 793、coding-workflow-guide 608、patterns 1696、discussions 1304、ai-agent-safety 1201、pricing 719、anthropic-business 886 等）均具入口層，無語意分岔／死案候選
+- 待查證回訪：功能 4 筆改寫新語法（claude-code：Auto-continue、AWS Gateway、dreaming API ⟨Q-15⟩、1Password）；安全政策 4 筆改寫（LDAP、Cybernews 疑心較重、WSJ/SOFX、Yellow.com）＋清 4 處冗餘措辭；人物 5 筆改寫（Eureka Labs、Bloomberg 受訪者、數千 agent 出處、員工原型 ×2、STAT News）；商業 4 筆轉標準語法（pricing）；社群 3 筆補複查日；均註明「已掃日報至 2026-09-02 無後續；官方頁面未查證」
+- 規則檔健檢：
+  - 矛盾：無新增（check_rules 65 組 sync_pairs 全綠；本輪範圍：近期改動之 7b／inquiry 規則與既有檔）
+  - 引用驗證：全部通過（6b 七項錨點皆在）
+  - 遵守率：全部通過（近 3 次 ingest 3/3：品質標記／radar／格式）
+  - 過期規則（> 60 天）：25 條 `[加入:]` 逾閾值（94 條在閾值內）——多為 5–6 月基礎條款，行為與現狀吻合者不動；未發現描述已失效者
+  - 來源健康：13 來源 7 天全 ok=true；清冊型（Claude API Release Notes、Official Skills）count=0 屬正常；記分卡：Blogroll 51 天樣本充足、Google News 低信譽桶 0 筆
+  - 跨檔案語意矛盾（6f）：✅ 全部配對語意一致（check_rules sync_pairs 65 組全綠）
+  - 成長迴路（月度）：立法提案 0 條；觀察中 1 條（功能記者 08-27「全覽表缺口不存在」回報與實況不符，同型僅 1 次，已由行為層抽驗制度覆蓋）
+- 品質指標（6g）：
+  - ref 覆蓋率（每週）：100%（08-27~09-01，26/26），缺 ref 日期：無
+  - 採用驗證率（月度）：radar 面 14 天前標 ⏳ 約 11 條，14 天內升級 0 條（0%，僅供判讀）
+  - 外部死鏈（每週讀檔）：checked_at 2026-08-30（新鮮），dead 6／anti_bot 79；6 筆 dead 全數已標「（原文已失效）」（本輪補標 2 筆：community-tech-discussions 的 claude-needs-input、anthropic-business 的 daytondailynews；其餘 4 筆前輪已標）
+  - 趨勢判讀：持平（連續 7 期 ≥97%）
+- 跨家榜單週更（5b）：已更新素材取得 15 榜／3 榜無法取得（Search Arena、WebDev Arena、METR Time Horizon——METR 連續多輪僅互動圖表）；本輪依 Haiku 抓取回報整表覆寫至 model-task-leaderboard（含 SWE-bench 飽和、Terminal-Bench 版本混雜、AA 系列無官方日期、LMArena 重新基準化四項異常註記）
+- 逾期待查證清算（5c）：盤點 67 筆（A1／B66），本輪處理 6 筆（查實 5／Lane A 推複查日 1／查無官方 0／失效移除 0），結案回掃上修 0 頁（探針回掃命中皆無關或已一致），剩餘 61 筆。查實明細：andrej-karpathy（Eureka Labs 為暫停非解散，Karpathy 自述日後恢復）、boris-cherny ×3（微管理原文全文——框大目標讓 agent 自行導航；Electron 桌面應用改寫為 Swift、跑逾兩週、逐像素自我驗證；SEJ「prompt engineering 不重要」發言者具名查實為 Cherny）、cat-wu（同前，該頁改為歸屬澄清）；claude-security ⟨Q-01⟩ 依 Lane A 第四列維持 ❓ 推複查日至 09-16。完整報告 WARN：探針偵測力退化 2 頁（code-quality-decline:36、official-community-gap:77）已登轉知帳（H→功能記者）
+  - 📊 產消對帳（概估）：近 7 天新增 18 筆｜每週產能 15 筆（A 10＋B 5）｜本輪實際可消 6 筆｜淨增 3 筆/週；📈 趨勢：08-30 51 筆 → 今日 67 筆（+16）；⏳ Lane B 依現行額度約 13.2 週排空。⚠️ 產出快過消費——處置建議：舊語法盲區 135 筆回填後會再湧入，建議（a）記者端提高標記門檻（僅具體可探針之事實才標）或（b）Lane B 額度暫時提高至 8，請使用者裁示
+- 歸因抽查（5d）：抽 5 筆，相符 3／修正漂移 0／無對應 0；另發現歸因日期誤差 2 筆（Maximizing 條目實際在 08-15 日報、歸因記 08-16；Claude Academy 實際 08-24、歸因記 08-26——頁面內容忠實，屬 ingest 端歸因 metadata 誤差，帳本 append-only 不回改，供 ingest 端留意）
+- pricing 通路與乘數（5e）：資料截至 08-29（4 天），未逾 30 天複查門檻，本輪免查；無新模型世代
+- 讀者模擬：3 題全 ✅ 2 跳命中——①「9/14 週配額 +25% 是真的嗎」→ pricing 計費規則（含 −17% 換算與該做的事）②「Model Hardware Standard 能用了嗎」→ feature-radar ⏳ 觀望 ③「Sony/Warner 訴訟進展」→ anthropic-business 商業風險表
+- 質疑代打（7b，首跑）：seed 2026-W36 抽 Q2（缺席偵測）＋Q7（宣稱對帳）
+  - Q7 ✅：抽中 pricing「計費切割已暫停、當前維持訂閱配額制」現況句；證據行：`news_mentions --since 4w "Agent SDK" "程式化用量" "usage-based"` 命中 0 天，06-16 暫停後無重啟訊號，宣稱成立
+  - Q2 ❌ 待辦：funnel 09-01 無「gathered>0 且 emitted=0」來源，改查落差最大者 GitHub（35 抓 9 刊）——**探針撞上資料缺口：`src/gathered_archive/` 只存刊出後的 71 條，被擋的 54 條不留存，「昨天擋掉了什麼」無從逐條稽核**（25 則靜默消失的結構性條件部分仍在：有 funnel 數字可見性、無條目級可考性）。待使用者裁示：是否讓 gather 落一份全量（或被擋清單）archive
+  - 人類質疑時效燈：✅ 0 天前有質疑（2026-09-02），未亮
+- lint 自我遵守率：6/6 位記者回報一次過（形狀層八項均有明確結果，無退回）
+- 行為層抽驗：N=18 項宣稱，seed 2026-W36 擲骰抽中 #8（商業記者：anthropic-business 5 處維運字眼修復）——git diff 核對如實（移除行含「留給安全政策記者」等字樣、殘留 grep 0 命中），✅ 通過
+- 懸置語法 WARN：2 條（探針偵測力退化 ×2），已登轉知帳予功能記者；另本輪 lint 前置修復：新語法標記行內散文重複「待查證」3 處措辭消除，存量棘輪 147→145
+- 熱度降溫（5a）：檢查 42 條（含 4 條探針重試），降 17 條：Artifacts 4→3、自架沙箱+MCP 隧道 3→2、/loop・/batch・/background 3→2、Reflect 3→2、Outcomes 3→2、Cowork 行動/網頁 3→2、Dynamic Workflows 3→2、Coordinator 模式 3→2、hard_deny 2→1、小企業 Skills 2→1、ultracode 重命名 2→1、sandbox.credentials 2→1、/rewind 2→1、Dreaming 2→1、v2.1.212 2→1、Agent View 2→1、Sandboxing 2→1；同步詳細條目標頭 1 處（v2.1.212，並修其原有表 2／詳 3 之不一致）；entities 頁熱度表 0 處涉及。判定紀律：AND 語意初判 25+4 條零命中 → 改 --any（OR）重跑後 15 條仍零命中、14 條有命中逐條看原文行 → 剔除 2 條假命中（Dynamic Workflows 命中為 fork subagent 討論、Coordinator 命中為 Simon Willison code review 文）後定案 17 條。⏳ 逾 90 天處置：0 條（Dreaming 已帶註記且零後續，依「已加註者不重複處置」跳過）
+- 渲染層驗收：（見 step 10 執行後補記於心跳）
+- overview.md：已更新（音樂訴訟升級、週配額 −17%、METR 併案檢討、Lambda/Nscale 基建、Boris 三件事查實、第二輪降溫；近期重大事件表改為 08-27~09-02 窗口）
+- 待使用者裁示：
+  - ⏳ 已擱置 0 週｜**Q2 資料缺口**：gathered_archive 只存刊出量，被擋條目無處稽核——是否讓 daily-gather 落全量（或 rejected 清單）archive？
+  - ⏳ 已擱置 0 週｜**5c 產消失衡**：淨增 3 筆/週＋盲區 135 筆待湧入——記者端提高標記門檻 or Lane B 額度暫升 8？
+  - ⏳ 已擱置 0 週｜**ai-agent-safety-archive 狀態統一**（安全政策記者觀察）：純封存頁掛 monitoring，是否比照社群封存頁慣例改 `resolved（封存頁）` 並同步 index？
+  - ⏳ 已擱置 0 週｜**patterns 淘汰審查 dry run**（社群記者）：7 類 60 天沉寂候選（跨環境 Agent 記憶、架構邊界合約、可靠性測試、Agent 預算控制、確定性 Agent 框架、Agent 記憶保護、跨 Repo 依賴可視化）確認後執行刪除
+  - ⏳ 已擱置 0 週｜**5d 歸因日期誤差**：2 筆歸因 date 與日報實際日期差 1–2 天，是否要求 ingest 端以日報檔名為準寫入？
+  - ⏳ 已擱置 1 週｜**6c 表格式 rollup 行**（08-29 首提）：表格式 ingest 紀錄是否要求保留「呈現品質：✅」明文行——本輪依 08-30 裁決「明文 rollup 與表格式等價」已視為合格，此項可望結案

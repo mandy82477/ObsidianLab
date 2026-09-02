@@ -7,7 +7,7 @@ last_updated: "2026-08-29"
 last_news_update: "2026-08-29"
 update_freq: "🗓️ 週更（每週策展一次；更新日期停留數天屬正常節奏）"
 status_main: "ongoing"
-days_since_news: 2
+days_since_news: 3
 inbound_links: 14
 attribution_count: 0
 attribution_last: null
@@ -25,11 +25,11 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 **領域：** 🌐 社群
 **更新頻率：** 🗓️ 週更（每週策展一次；更新日期停留數天屬正常節奏）
 **開始日期：** 2026-04-25
-**最後更新：** 2026-08-29
-**最後新聞更新：** 2026-08-29
+**最後更新：** 2026-09-02
+**最後新聞更新：** 2026-09-02
 
-> **最新工具動態**（2026-08-29）
-> 本輪（讀 08-15～08-29 news）新增 9 筆達門檻工具：**tare**（CLI 用量監測，Show HN score 84）、**opslane**（監看 session 找真實 bug 才開 PR，HN 34）、**ambient-context**（背景記錄畫面文字為逐日 Markdown，HN 51、source_count 2）、**OzBrain**（agent／團隊共享知識庫，HN 69、source_count 2）、**Proliferate**（YC S25，自架多 agent IDE，HN 39、source_count 2）、**Frugal Tokens**（跨 coding agent 成本探索，HN 33、source_count 2）、**machine0**（YC S26，Launch HN，持久 CPU/GPU VM，HN 78）、**internet-court-skill**（agent-to-agent 商務信任層 skill，3,793 星）、**claw-orchestrator**（跨 harness 統一 runtime，547 星；修正 [[topics/community-tech-patterns]] 08-17 節點聲稱「已收錄於本頁」但實際缺漏的落差）。存量盤點 **obra/superpowers**（27.9 萬星）併入收錄，僅星數佐證＋ Reddit 間接使用回饋，forks／issues 未驗證；同批 **affaan-m/ECC**（24.4 萬星）無任何佐證，標「待查證」不收。汰除 4 筆逾 30 天無後續的 ⏳ 條目：**CodeAlmanac**（此前已宣稱移除但實際殘留，本輪確實刪除）、**Claude-thermos**、**OneCLI**、**Palmier Pro**（創意工具分類因此併空，移除該子標題）。精選層同步淘汰 5 筆最舊未升級條目（Claude-thermos、OneCLI、Minicor、bulk-delete-claude-chat、Workweave Router）換入 5 筆新達精選門檻工具（tare、OzBrain、ambient-context、machine0、internet-court-skill），環境/部署層由 machine0 取代 Minicor。「Token 成本不透明」「跨 session 記憶歸零」「多 agent 協調混亂」三痛點列近期工具日期與代表工具同步更新，記憶歸零痛點因 14 天內兩筆新工具由 🌙 冷卻觀望升溫為 🔥 持續升溫。
+> **最新工具動態**（2026-09-02）
+> 本輪（讀 08-24～08-30 news，接續上輪 08-29 收尾點）新增 8 筆達門檻工具：**x1xhlol/system-prompts-and-models-of-ai-tools**（存量盤點，14.3 萬星，長期彙整型參考資源，升入精選層）、**Shubhamsaboo/awesome-llm-apps**（存量盤點，13.5 萬星，同上升入精選層）、**multica-ai/andrej-karpathy-skills**（20.9 萬星，惟增速異常，星數不作獨立驗證訊號）、**garrytan/gstack**（Garry Tan 具名公開設定，13.0 萬星，增速同樣異常存疑）、**JimLiu/baoyu-design**（官方 Claude Design 移植為 Agent Skill，3,637 星）、**rsmdt/the-startup**（commands/skills/agents 套件，507 星）、**mindmuxai/brain.md**（零依賴檔案式記憶層，504 星）、**l3a0/claude-plugins**（Kindle 畫線筆記 OCR 復原，HN 45）。本輪無條目達 30 天無後續汰除門檻（現有 ⏳ 條目均在 30 天窗口內或已升級）。新增兩筆彙整型參考資源另開「參考資源／彙整清單」精選子分類，因其內容為靜態清單而非工作流工具，不歸入既有六類。
 
 ---
 
@@ -140,6 +140,13 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 | --- | --- | --- |
 | [**internet-court-skill**](https://github.com/internet-court/internet-court-skill) | ⏳（3,793 星）| agent-to-agent 商務信任層 skill：自然語言 mandate、ERC-7710 委任權限、x402 支付、託管與爭議解決 |
 
+### 參考資源／彙整清單
+
+| 工具 | 採用 | 亮點 |
+| --- | --- | --- |
+| [**x1xhlol/system-prompts-and-models-of-ai-tools**](https://github.com/x1xhlol/system-prompts-and-models-of-ai-tools) | ✅ | 彙整數十款 AI 編碼工具（含 Cursor、Devin AI、Replit）完整系統提示詞與模型設定，14.3 萬星 |
+| [**Shubhamsaboo/awesome-llm-apps**](https://github.com/Shubhamsaboo/awesome-llm-apps) | ✅ | 彙整百餘款 AI Agent、Agent Skills 與 RAG 開源應用清單，13.5 萬星 |
+
 ---
 
 ## 指標說明
@@ -156,6 +163,14 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 
 | 工具 | 類型 | 採用 | 首次出現 | 簡介 |
 | --- | --- | --- | --- | --- |
+| [**x1xhlol/system-prompts-and-models-of-ai-tools**](https://github.com/x1xhlol/system-prompts-and-models-of-ai-tools) | 其他 | ✅ | 2026-08-29 | 彙整 Claude Code、Cursor、Devin AI、Replit 等數十款 AI 編碼工具完整系統提示詞與模型設定；[存量盤點] 14.3 萬星，2025-03 出生，長期累積型參考資源 |
+| [**Shubhamsaboo/awesome-llm-apps**](https://github.com/Shubhamsaboo/awesome-llm-apps) | Skills | ✅ | 2026-08-30 | 彙整百餘款 AI Agent、Agent Skills 與 RAG 開源應用清單；[存量盤點] 13.5 萬星，2024-04 出生，長期累積型參考資源 |
+| [**multica-ai/andrej-karpathy-skills**](https://github.com/multica-ai/andrej-karpathy-skills) | Skills | ⏳ | 2026-08-29 | 單一 CLAUDE.md 檔案改善 Claude Code 行為，取材自 Karpathy 對 LLM coding 常見缺陷的觀察；20.9 萬星，惟僅 GitHub Search 星數、無 forks／issues 佐證可查，增速異常值得存疑，不作為獨立驗證訊號 |
+| [**garrytan/gstack**](https://github.com/garrytan/gstack) | 多 Agent | ⏳ | 2026-08-30 | Garry Tan（YC 總裁）公開自己的 Claude Code 設定，23 個角色化工具分飾 CEO、設計師、工程經理等職能；13.0 萬星，僅 5.5 個月即達此規模，增速明顯快於同類存量盤點案例，星數真實性未經驗證，作者具名且內容具體故收錄 |
+| [**JimLiu/baoyu-design**](https://github.com/JimLiu/baoyu-design) | Skills | ⏳ | 2026-08-29 | 本機以 Agent Skill 執行 [[entities/claude-design]]，供 Cursor／Claude Code 產出自足式 HTML UI 原型，官方建議搭配 Opus 4.8；3,637 星 |
+| [**rsmdt/the-startup**](https://github.com/rsmdt/the-startup) | 工作流 | ⏳ | 2026-08-25 | 「The Agentic Startup」風格 Claude Code commands／skills／agents 集合；507 星 |
+| [**mindmuxai/brain.md**](https://github.com/mindmuxai/brain.md) | 記憶工具 | ⏳ | 2026-08-25 | 零依賴、檔案式跨 session 持久記憶層，為 coding agent 保存決策／需求／限制的「專案大腦」；504 星 |
+| [**l3a0/claude-plugins**](https://github.com/l3a0/claude-plugins) | 其他 | ⏳ | 2026-08-24 | Claude Code Skill 用 OCR 從 Kindle Cloud Reader 復原被限制匯出的畫線筆記；HN score 45 |
 | [**obra/superpowers**](https://github.com/obra/superpowers) | Skills | ⏳ | 2026-08-28 | Agentic skills 框架與軟體開發方法論；[存量盤點] 累計 27.9 萬星，2025-10 出生，本庫今日首次收錄；僅星數佐證，forks／issues 未驗證，惟已見於 Reddit 使用者抱怨（間接證明有實際採用） |
 | [**tare**](https://github.com/kelviq/tare) | 費用監測 | ⏳ | 2026-08-27 | CLI 底部即時顯示 usage/context/model 狀態並配合 hook 監測用量暴增；Show HN score 84 |
 | [**opslane**](https://github.com/opslane/opslane) | 工作流 | ⏳ | 2026-08-27 | 監看 user session 找出真實影響使用者的 bug，僅在能驗證修復後才開 PR；Show HN score 34 |

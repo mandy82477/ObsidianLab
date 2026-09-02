@@ -3,13 +3,13 @@ page: "topics/competitor-landscape"
 kind: "topic"
 status: "ongoing"
 domain: "💼 商業"
-last_updated: "2026-08-31"
-last_news_update: "2026-08-31"
+last_updated: "2026-09-01"
+last_news_update: "2026-09-01"
 status_main: "ongoing"
 days_since_news: 0
 inbound_links: 50
-attribution_count: 89
-attribution_last: "2026-08-31"
+attribution_count: 90
+attribution_last: "2026-09-01"
 top_source: "google-news"
 pending_count: 1
 pending_overdue: 0
@@ -94,7 +94,7 @@ Claude Code 已成為 AI 輔助編碼的標竿產品，但競爭正快速升溫�
 
 ## 觀察重點
 
-- **Claude Code 拒採 AGENTS.md 業界標準，引發開發者社群不滿（2026-08-26，36Kr）**：標題稱 Claude Code 拒絕採用 AGENTS.md 這項業界標準，官方後續回應引發開發者社群不滿；僅標題可用，無法得知官方回應具體內容。**對產業定位/生態關係的意涵**：AGENTS.md 是多個 AI 編碼工具間互通的檔案格式慣例，若 Anthropic 確定不跟進，可能使 Claude Code 在「跨工具生態相容性」上與採用該標準的競品（如 Codex、OpenCode 等，具體採用名單未見報導）產生分歧，對願意多工具並行部署的企業與開發者形成額外整合成本，與本頁既有「聊天/協作平台層漸趨中立於底層模型商」（見 Slack Code 子區塊）的生態中立化趨勢方向相反——本次是 Anthropic 主動選擇不相容，而非被動被排除（推論）；開發者社群反應面向已同步交由社群記者處理，具體標準內容、拒絕理由、後續官方回應均未見報導細節，僅標題層級資訊（Google News/36Kr）
+- **Claude Code 拒採 AGENTS.md 業界標準，引發開發者社群不滿（2026-08-26，36Kr）**：標題稱 Claude Code 拒絕採用 AGENTS.md 這項業界標準，官方後續回應引發開發者社群不滿；僅標題可用，無法得知官方回應具體內容。**對產業定位/生態關係的意涵**：AGENTS.md 是多個 AI 編碼工具間互通的檔案格式慣例，若 Anthropic 確定不跟進，可能使 Claude Code 在「跨工具生態相容性」上與採用該標準的競品（如 Codex、OpenCode 等，具體採用名單未見報導）產生分歧，對願意多工具並行部署的企業與開發者形成額外整合成本，與本頁既有「聊天/協作平台層漸趨中立於底層模型商」（見 Slack Code 子區塊）的生態中立化趨勢方向相反——本次是 Anthropic 主動選擇不相容，而非被動被排除（推論）；開發者社群反應面向另見 [[topics/community-tech-discussions]]，具體標準內容、拒絕理由、後續官方回應均未見報導細節，僅標題層級資訊（Google News/36Kr）
 - **Claude 旗艦模型在一般消費者市場不敵較便宜競品（2026-08-23/24，Financial Times／dev.to／Simon Willison 轉引）**：Financial Times 報導 Anthropic 旗艦模型在吸引一般使用者（general consumer users，非開發者／企業客戶）上，不敵定價較低的競品工具；dev.to（adilaidev）與 Simon Willison 部落格同期分別發文轉引同一敘事，三個獨立管道（FT 原文、dev.to 轉述、Simon Willison 附加觀察）同源疊加，訊號密度提高但未見新增具體流失規模或競品名稱數字。**與本頁既有敘事的關係**：與上方「觀察重點」既有「開源替代加速」「企業成本臨界點」兩點聚焦**開發者/企業端**的成本敏感度不同，本則首次點出**一般消費者端**的价格敏感度流失，與本頁既有 08-14「中美 AI 定價戰敘事」、多筆中國模型「降價數十至上百倍」訊號（DeepSeek V4 Flash、Kimi K3）方向一致——低價競品的壓力面正從企業採購擴散至一般消費者選擇（推論）；商業面 PMF 觀察同步記於 [[topics/anthropic-business]]「產品市場契合度（PMF）觀察」；具體流失規模、受影響競品名稱、量化數字未見報導細節，僅標題與部落格轉述層級資訊
 - **投資 vs 競爭的矛盾**：Google 400 億投資 Anthropic 的同時開發競品，Amazon 雙品牌並行部署（Claude Code + Codex）——大型科技公司不押注單一供應商
 - **開源替代加速**：OpenCode 157K、DeepClaude 17x 成本節省——訂閱政策收緊（OpenClaw 禁令、6/15 計費結構）正在為開源方案創造需求
@@ -154,7 +154,7 @@ Claude Code 已成為 AI 輔助編碼的標竿產品，但競爭正快速升溫�
 
 | 日期 | 來源 | 內容 | 量化數字 |
 |------|------|------|---------|
-| 2026-08-22 | 36Kr | 「Codex 是否開始反擊 Claude Code？」產業競爭態勢觀察，與同日 HN 高分貼文呼應同一主題（已由社群記者收錄，詳見下方細節） | ❓ 待查證：僅標題可用，具體評測方法論或量化分數未見報導細節 |
+| 2026-08-22 | 36Kr | 「Codex 是否開始反擊 Claude Code？」產業競爭態勢觀察，與同日 HN 高分貼文呼應同一主題（另見 [[topics/community-tech-discussions]]，詳見下方細節） | ❓ 待查證：僅標題可用，具體評測方法論或量化分數未見報導細節 |
 | 2026-07-15 | HackerNoon（source_count=2） | 「Claude Code vs Codex vs OpenCode：全端工程師誠實裁決」，三方比較文 | 🔎 查無官方（標 2026-08-10｜複 2026-09-13）：為工程師個人觀點比較文，查證後仍未見具體評分數據 |
 | 2026-07-22 | South China Morning Post（source_count=2） | 中國 Qiushi Engine（浙江大學團隊）於 ResearchClawBench 自主研究排行榜奪冠，Claude Code 第三、Open Science Desktop 第二 | 已查證：2026-08-13，[SCMP 原文](https://www.scmp.com/news/china/science/article/3361370/chinese-ai-agent-outperforms-anthropics-claude-code-autonomous-research) |
 | 2026-07-25 | SitePoint | 「Codex 5.3 生產環境工作流——何時該選它而非 Claude 做複雜重構」，工作流選型建議文 | 🔎 查無官方（標 2026-08-10｜複 2026-09-13）：為工作流選型建議文，查證後仍未見具體評測方法論或分數 |
@@ -165,7 +165,7 @@ Claude Code 已成為 AI 輔助編碼的標竿產品，但競爭正快速升溫�
 **讀者速答**：截至 2026-08-13 查證，已有多組第三方量化數據可供比較——Supabase Evals（Build 階段 Opus 5／Kimi K3 100%，其他模型經 skills 輔助追平）、SWE-bench Verified（兩者持平 ~88.6–88.7%，Opus 5 發布後 Claude 升至 97.0%）、SWE-bench Pro（Claude Opus 4.8 領先 69.2% vs 58.6%）、Terminal-Bench（Codex 領先 82.7% vs 69.4%）；不同基準測不同能力面向，無單一「孰優孰劣」結論，需依任務類型參照對應基準。
 
 **頭對頭比較細節**
-- **36Kr（08-22）**：「Codex 是否開始反擊 Claude Code？」產業競爭態勢觀察報導，與同日 Hacker News 高分貼文「Quick impressions: A week of using Codex more than Claude」呼應同一主題（該則已由社群記者以個人觀察角度收錄）。
+- **36Kr（08-22）**：「Codex 是否開始反擊 Claude Code？」產業競爭態勢觀察報導，與同日 Hacker News 高分貼文「Quick impressions: A week of using Codex more than Claude」呼應同一主題（該則個人觀察角度另見 [[topics/community-tech-discussions]]）。
 - **MarkTechPost（08-01）**：Supabase Evals 已查證（2026-08-13）——Build 階段 Opus 5／Kimi K3 均 100%（未輔助）；Sonnet 5 經 skills 輔助由 78%→100%、GPT-5.6 Sol 由 89%→100%（[supabase.com/evals](https://supabase.com/blog/introducing-supabase-evals)）。
 - **quasa.io（08-01）**：已查證（2026-08-13），第三方彙整顯示 SWE-bench Verified 兩者持平（~88.6–88.7%，Opus 5 於 07 月發布後 Claude 升至 97.0%）；SWE-bench Pro Claude Opus 4.8 領先（69.2% vs 58.6%）；Terminal-Bench Codex 領先（82.7% vs 69.4%）。
 
@@ -372,7 +372,7 @@ Claude Code 已成為 AI 輔助編碼的標竿產品，但競爭正快速升溫�
 - **[中國用戶 VPN 繞過限制，新增] the-decoder.com：中國灰色市場以遠低於官方定價轉售 Claude API token**：詳見「主要競品追蹤」中國用戶子區塊新增（Google News/the-decoder.com）
 
 ### 2026-08-22
-- **[OpenAI Codex CLI，頭對頭比較彙整新增] 36Kr：「Codex 是否開始反擊 Claude Code？」產業競爭態勢觀察**：與同日 Hacker News 高分貼文呼應同一主題（該則已交社群記者處理），詳見「主要競品追蹤」OpenAI Codex CLI 子區塊「頭對頭比較彙整」表新增列（Google News/36Kr）
+- **[OpenAI Codex CLI，頭對頭比較彙整新增] 36Kr：「Codex 是否開始反擊 Claude Code？」產業競爭態勢觀察**：與同日 Hacker News 高分貼文呼應同一主題（另見 [[topics/community-tech-discussions]]），詳見「主要競品追蹤」OpenAI Codex CLI 子區塊「頭對頭比較彙整」表新增列（Google News/36Kr）
 
 ### 2026-08-21
 - **[觀察重點，新增，專頁定向] Startup Fortune：廠商鎖定型 AI 編碼 agent 悄悄推高企業工程成本**：詳見「觀察重點」新增（Topic Watch/competitor-landscape）

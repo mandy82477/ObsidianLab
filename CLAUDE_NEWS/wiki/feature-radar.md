@@ -91,7 +91,7 @@
 | **Claude Code v2.1.217**（Prompt input 新增表情符號 shortcode 自動完成，輸入 `:heart:` 插入 ❤️，可用 `emojiCompletionEnabled` 設定關閉；同版新增警告訊息，細節未知） | 2026-07-21 | 🔥 | ⏳ 觀察中 | 正式發布 |
 | **Claude Code v2.1.216**（新增 `sandbox.filesystem.disabled` 設定，可在維持網路出口控管下跳過檔案系統隔離；同版修復長會話訊息正規化速度變慢問題） | 2026-07-20 | 🔥 | ⚡ 有條件推薦 | 正式發布 |
 | **Claude Code v2.1.215**（Claude 不再自動執行 `/verify` 與 `/code-review` 兩項技能，須手動呼叫指令觸發；⚠️ Breaking change 無過渡期） | 2026-07-19 | 🔥 | ⚡ 有條件推薦 | 正式發布 |
-| **Claude Code v2.1.212**（`/fork` 改為背景 session 化，原同 session 子 agent 功能改名 `/subtask`；⚠️ Breaking change 無過渡期） | 2026-07-17 | 🔥🔥 | ⚡ 有條件推薦 | 正式發布 |
+| **Claude Code v2.1.212**（`/fork` 改為背景 session 化，原同 session 子 agent 功能改名 `/subtask`；⚠️ Breaking change 無過渡期） | 2026-07-17 | 🔥 | ⚡ 有條件推薦 | 正式發布 |
 | **Claude 1Password 整合**（透過已存 1Password 憑證登入網站免暴露密碼，官方一手公告未附） | 2026-07-17 | 🔥 | ⏳ 觀望 | 官方新功能（狀態未明） |
 | **Claude for Teachers**（美國通過認證 K-12 教師免費開放進階 Claude 功能與教學技能庫，對接全美 50 州學術標準） | 2026-07-15 | 🔥🔥 | ⏳ 觀望 | 正式發布（限定對象） |
 | **Claude Code v2.1.211**（`--forward-subagent-text` 旗標，stream-json 輸出含 subagent 文字與思考內容） | 2026-07-15 | 🔥 | ⚡ 有條件推薦 | 正式發布 |
@@ -99,22 +99,22 @@
 | **Claude Code v2.1.207**（Auto mode 在 Bedrock/Vertex/Foundry 改預設開啟、修復終端機凍結） | 2026-07-11 | 🔥 | ⚡ 有條件推薦 | 正式發布 |
 | **Claude Code Desktop 內建瀏覽器**（AI 可在外部網站讀取/點擊/輸入文字，雙方媒體來源，細節見下方詳情） | 2026-07-11 | 🔥 | ⏳ 觀望 | 官方新功能（狀態未明，雙方媒體來源） |
 | **Claude Code v2.1.206**（`/cd` 目錄路徑建議、`/doctor` CLAUDE.md 精簡檢查） | 2026-07-10 | 🔥 | ⚡ 有條件推薦 | 正式發布 |
-| **Reflect with Claude**（Settings 內使用模式儀表板，媒體廣泛報導但 HN 僅 29 分） | 2026-07-09 | 🔥🔥🔥 | ⚡ 有條件推薦 | Preview |
-| **Claude Cowork 行動版 / 網頁版**（雲端持續執行，闔上裝置任務不中斷，首波 Max 訂閱戶，涵蓋政府客戶） | 2026-07-07 | 🔥🔥🔥 | ⚡ 有條件推薦 | Preview（限 Max） |
+| **Reflect with Claude**（Settings 內使用模式儀表板，媒體廣泛報導但 HN 僅 29 分） | 2026-07-09 | 🔥🔥 | ⚡ 有條件推薦 | Preview |
+| **Claude Cowork 行動版 / 網頁版**（雲端持續執行，闔上裝置任務不中斷，首波 Max 訂閱戶，涵蓋政府客戶） | 2026-07-07 | 🔥🔥 | ⚡ 有條件推薦 | Preview（限 Max） |
 | **`/config` Dynamic workflow size**（v2.1.202，調整動態工作流 agent 規模 小/中/大，建議性引導值） | 2026-07-07 | 🔥 | ⚡ 有條件推薦 | 正式發布 |
 | **Claude Sonnet 5**（Claude Code v2.1.197 新預設，1M context，$2/$10 per Mtok 標準價，原 8/31 到期已於 08-10 永久化） | 2026-07-01 | 🔥🔥🔥🔥🔥 | ✅ 強烈推薦 | 正式發布 |
 | **Claude Science**（科學家專用 AI 工作台，整合研究工具套件、可稽核 artifact、彈性雲端運算） | 2026-07-01 | 🔥🔥 | ⚡ 有條件推薦 | 正式發布 |
 | **Org Default Model**（Claude Code v2.1.196，管理員設定組織預設模型，使用者 `/model` 顯示「Org default」） | 2026-06-29 | 🔥 | ⚡ 有條件推薦 | 正式發布 |
 | **`CLAUDE_CODE_DISABLE_MOUSE_CLICKS` 環境變數**（Claude Code v2.1.195，全螢幕模式停用滑鼠點擊/拖拉/懸停） | 2026-06-26 | 🔥 | ⚡ 有條件推薦 | 正式發布 |
 | **`autoMode.classifyAllShell` 設定**（Claude Code v2.1.193，所有 Bash/PowerShell 路由 auto-mode 分類器） | 2026-06-25 | 🔥 | ⚡ 有條件推薦 | 正式發布 |
-| **`/rewind` 指令**（Claude Code，從 `/clear` 前節點恢復 context） | 2026-06-25 | 🔥🔥 | ⚡ 有條件推薦 | 正式發布 |
+| **`/rewind` 指令**（Claude Code，從 `/clear` 前節點恢復 context） | 2026-06-25 | 🔥 | ⚡ 有條件推薦 | 正式發布 |
 | **SDK `client.system.message`**（TypeScript v0.106.0 / Python v0.112.0） | 2026-06-25 | 🔥 | ⚡ 有條件推薦 | 正式發布 |
 | **Claude Tag**（Slack-native AI 協作工具，65% Anthropic 程式碼由其生成） | 2026-06-24 | 🔥 | ⚡ 有條件推薦 | 正式發布 |
-| **sandbox.credentials + 組織模型限制**（Claude Code v2.1.187） | 2026-06-24 | 🔥🔥 | ⚡ 有條件推薦 | 正式發布 |
+| **sandbox.credentials + 組織模型限制**（Claude Code v2.1.187） | 2026-06-24 | 🔥 | ⚡ 有條件推薦 | 正式發布 |
 | **MCP CLI 認證指令**（`claude mcp login/logout`，v2.1.186） | 2026-06-22 | 🔥 | ⚡ 有條件推薦 | 正式發布 |
 | **MCP Enterprise Authorization**（Okta / VS Code 零設定 SSO） | 2026-06-19 | 🔥 | ⚡ 有條件推薦 | 正式發布 |
 | **破壞性 Git 指令自動封鎖**（Claude Code v2.1.183） | 2026-06-19 | 🔥🔥 | ✅ 推薦 | 正式發布 |
-| **Claude Code Artifacts**（工作階段即時輸出可共享互動網頁） | 2026-06-18 | 🔥🔥🔥🔥 | ⚡ 有條件推薦 | 正式發布 |
+| **Claude Code Artifacts**（工作階段即時輸出可共享互動網頁） | 2026-06-18 | 🔥🔥🔥 | ⚡ 有條件推薦 | 正式發布 |
 | **Tool(param:value) permission 語法 + 巢狀 Skills**（v2.1.178） | 2026-06-15 | 🔥 | ✅ 推薦 | 正式發布 |
 | **enforceAvailableModels 企業管控**（Claude Code v2.1.175） | 2026-06-12 | 🔥 | ✅ 推薦 | 正式發布 |
 | **Claude Fable 5**（Mythos 架構公開版，$10/$50 per M token） | 2026-06-09 | 🔥🔥🔥🔥🔥 | ✅ 推薦 | 正式發布（出口管制 2026-07-01 全面解除，Pro/Max/Team 7/7 前 50% 配額） |
@@ -123,35 +123,35 @@
 | **Claude Opus 4.1 SDK 棄用**（Python SDK v0.106.0） | 2026-06-06 | 🔥 | ✅ 推薦 | 正式發布 |
 | **`waitingFor` 可見性 + `--tools` 目錄遍歷**（v2.1.162） | 2026-06-04 | 🔥 | ✅ 推薦 | 正式發布 |
 | **OTEL metrics + claude agents 改善**（v2.1.161） | 2026-06-03 | 🔥 | ✅ 推薦 | 正式發布 |
-| **workflow → ultracode 重命名**（⚠️ Breaking Change, v2.1.160） | 2026-06-02 | 🔥🔥 | ✅ 推薦 | 正式發布 |
+| **workflow → ultracode 重命名**（⚠️ Breaking Change, v2.1.160） | 2026-06-02 | 🔥 | ✅ 推薦 | 正式發布 |
 | **Claude Code v2.1.158**（Auto mode on Bedrock/Vertex/Foundry） | 2026-05-30 | 🔥 | ✅ 推薦 | 正式發布 |
 | **Claude Opus 4.8**（SWE-bench Pro 69.2%、1M context、Fast Mode 1/3 費用） | 2026-05-28 | 🔥🔥🔥🔥 | ⚡ 有條件推薦 | 正式發布 |
-| **Dynamic Workflows**（最多 1,000 平行子代理，UltraCode 1.7M token bug 無退款） | 2026-05-28 | 🔥🔥🔥 | ❌ 暫不推薦 | Research Preview |
+| **Dynamic Workflows**（最多 1,000 平行子代理，UltraCode 1.7M token bug 無退款） | 2026-05-28 | 🔥🔥 | ❌ 暫不推薦 | Research Preview |
 | **`skipLfs` 選項 + npm 版本通知**（v2.1.153） | 2026-05-28 | 🔥 | ⚡ 有條件推薦 | 正式發布 |
-| **Coordinator 模式 + `/code-review --fix`**（v2.1.152） | 2026-05-27 | 🔥🔥🔥 | ✅ 推薦 | 正式發布 |
-| **小企業 Skills**（31 個官方 Skills） | 2026-05-24 | 🔥🔥 | ✅ 推薦 | 正式發布 |
+| **Coordinator 模式 + `/code-review --fix`**（v2.1.152） | 2026-05-27 | 🔥🔥 | ✅ 推薦 | 正式發布 |
+| **小企業 Skills**（31 個官方 Skills） | 2026-05-24 | 🔥 | ✅ 推薦 | 正式發布 |
 | **`/code-review`**（原 `/simplify`，v2.1.146） | 2026-05-21 | 🔥 | ✅ 推薦 | 正式發布 |
 | **`claude agents --json`**（v2.1.145） | 2026-05-20 | 🔥 | ✅ 推薦 | 正式發布 |
-| **自架沙箱 + MCP 隧道**（完整文件） | 2026-05-22 | 🔥🔥🔥 | ⚡ 有條件推薦 | 公開測試 |
+| **自架沙箱 + MCP 隧道**（完整文件） | 2026-05-22 | 🔥🔥 | ⚡ 有條件推薦 | 公開測試 |
 | **`/resume` 背景 session 擴展**（v2.1.144） | 2026-05-19 | 🔥 | ✅ 推薦 | 正式發布 |
 | **Proactive Workflows**（公告後 102 天無後續報導，細節未公布） | 2026-05-18 | 🔥 | ⏳ 觀望 | 公告（細節待確認） |
 | **Capability Curve**（公告後 102 天無後續報導，細節未公布） | 2026-05-18 | 🔥 | ⏳ 觀望 | 公告（細節待確認） |
 | **Plugin 依賴關係強制執行**（v2.1.143） | 2026-05-16 | 🔥 | ✅ 推薦 | 正式發布 |
 | **`claude agents` 細粒度旗標**（v2.1.142） | 2026-05-14 | 🔥 | ⚡ 有條件 | 正式發布 |
-| **`/loop`・`/batch`・`/background`** | 2026-05-14 | 🔥🔥🔥 | ✅ 推薦 | 正式發布 |
+| **`/loop`・`/batch`・`/background`** | 2026-05-14 | 🔥🔥 | ✅ 推薦 | 正式發布 |
 | **`/goal` 指令** | 2026-05-12 | 🔥🔥🔥🔥 | ✅ 推薦 | 正式發布 |
-| **Agent View** | 2026-05-12 | 🔥🔥 | ⚡ 有條件 | Research Preview |
+| **Agent View** | 2026-05-12 | 🔥 | ⚡ 有條件 | Research Preview |
 | **Managed Agents**（全套） | 2026-05-11 | 🔥🔥🔥🔥🔥 | ⚡ 有條件 | 正式發布 |
 | **macOS Computer Use** | 2026-05-03 | 🔥🔥 | ✅ 推薦 | 正式發布 |
-| **Claude Code Sandboxing** | 2026-05-10 | 🔥🔥 | ⚡ 有條件 | 正式發布 |
-| **操作安全 + `hard_deny`** | 2026-05-09 | 🔥🔥 | ✅ 推薦 | 正式發布 |
+| **Claude Code Sandboxing** | 2026-05-10 | 🔥 | ⚡ 有條件 | 正式發布 |
+| **操作安全 + `hard_deny`** | 2026-05-09 | 🔥 | ✅ 推薦 | 正式發布 |
 | **Claude Security**（公開 Beta） | 2026-05-06 | 🔥🔥🔥🔥 | ⚡ 有條件推薦 | 公開測試 |
 | **Claude Connectors 創意工作** | 2026-05-04 | 🔥 | ⚡ 有條件 | 正式發布 |
 | **MCP `alwaysLoad`** | 2026-04-28 | 🔥 | ✅ 推薦 | 正式發布 |
 | **`worktree.baseRef` 設定** | 2026-05-08 | 🔥 | ⚡ 有條件 | 正式發布 |
 | **Claude Design** | 2026-04-27 | 🔥🔥 | ❌ 暫不推薦 | 正式發布 |
-| **Dreaming 記憶整合**（最後後續 2026-07-17：Python SDK 0.117.0 新增 dreaming API 支援；尚無採用回報） | 2026-05-07 | 🔥🔥 | ⏳ 觀望 | Research Preview |
-| **Outcomes 規格驗證** | 2026-05-07 | 🔥🔥🔥 | ⚡ 有條件 | 公開測試 |
+| **Dreaming 記憶整合**（最後後續 2026-07-17：Python SDK 0.117.0 新增 dreaming API 支援；尚無採用回報） | 2026-05-07 | 🔥 | ⏳ 觀望 | Research Preview |
+| **Outcomes 規格驗證** | 2026-05-07 | 🔥🔥 | ⚡ 有條件 | 公開測試 |
 
 ---
 
@@ -583,7 +583,7 @@ Claude Code Desktop（macOS）→ 開啟專案 → iOS Simulator 面板
 **注意事項：** 停用檔案系統隔離會降低沙箱防護層級，僅建議在已信任本機檔案系統存取的前提下使用。
 
 ### `/fork` 背景 Session 化與 `/subtask` 語意拆分
-**發布：** 2026-07-17（v2.1.212） | **熱度：** 🔥🔥🔥 | **試用價值：** ⚡ 有條件推薦 | **狀態：** 正式發布
+**發布：** 2026-07-17（v2.1.212） | **熱度：** 🔥 | **試用價值：** ⚡ 有條件推薦 | **狀態：** 正式發布
 
 **是什麼：** `/fork` 不再於同一 session 內啟動子 agent，而是將目前對話複製進一個新的背景 session（在 `claude agents` 列表中自成一列），使用者可同時繼續原本工作；原本 `/fork` 提供的「同 session 子 agent」功能改由新指令 `/subtask` 承接。
 
