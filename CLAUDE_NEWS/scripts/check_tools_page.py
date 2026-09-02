@@ -37,9 +37,9 @@ def check(text: str):
     fails = []
 
     # ── 1. 數字必帶日期（決策表＋細節＋精選；目錄沿用舊制不查，待後續波次遷移）──
-    scope = _section(text, "我卡在這裡") + _section(text, "不綁症狀的精選")
+    scope = _section(text, "我卡在這裡") + _section(text, "不綁症狀的精選") + _section(text, "🧩 Skills 速查（依 coding 用途分類）")
     offset_lines = []
-    for name in ("我卡在這裡", "不綁症狀的精選"):
+    for name in ("我卡在這裡", "不綁症狀的精選", "🧩 Skills 速查（依 coding 用途分類）"):
         m = re.search(rf"^## {re.escape(name)}", text, re.M)
         if m:
             offset_lines.append((name, text[: m.start()].count("\n") + 1))
