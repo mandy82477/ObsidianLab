@@ -101,5 +101,5 @@ Claude Security 於 2026-04-30 宣布推出公開測試版，並於 2026-05-01 �
 | 2026-04-30 | Claude Security 公開測試版正式推出，多家資安媒體同步報導 |
 
 **懸置細節**
-- ⟨Q-01⟩ ❓ **待查證**（標 2026-08-10｜查 Workflow tool、存取權限｜訊 2026-08-10｜複 2026-09-16）：Reddit 使用者反映 Claude Security 沒有 Workflow tool 的存取權限；同日 [[entities/claude-code]] 查證官方文件確認 Workflow 功能需在 `/config` 內另行啟用「dynamic workflows」才可使用（opt-in 設計），可能即為該回報者的成因，但未見官方直接回應此則個案，是否為既有設計限制或待補功能嚴格而言仍未 100% 確認，維持待查證。
+- ⟨Q-01⟩ ❓ **待查證**（標 2026-08-10｜查 Workflow tool、存取權限｜複 2026-09-16｜訊 2026-08-10）：Reddit 使用者反映 Claude Security 沒有 Workflow tool 的存取權限；同日 [[entities/claude-code]] 查證官方文件確認 Workflow 功能需在 `/config` 內另行啟用「dynamic workflows」才可使用（opt-in 設計），可能即為該回報者的成因，但未見官方直接回應此則個案，是否為既有設計限制或待補功能嚴格而言仍未 100% 確認，維持待查證。
 - ⟨Q-02⟩ ❓ **待查證**（標 2026-08-10｜查 MarkTechPost、Claude Security Plugin）：MarkTechPost 報導「Claude Security Plugin」Beta 版，與既有 2026-04-30 推出、2026-05-01 對全部 Enterprise 客戶開放的 Claude Security 是同一產品重新包裝／再報導、或另一獨立外掛發布，尚未確認。
