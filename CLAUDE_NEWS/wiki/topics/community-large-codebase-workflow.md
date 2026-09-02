@@ -112,7 +112,7 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 | 子問題 | 社群走到哪 | 代表實作 | 證據強度 |
 |---|---|---|---|
 | 統一框架 | Repo-as-Memory：決策外化；跨 repo 依賴圖需另注入（`nx graph` 等） | Repo-as-Memory、Cross-repo Blast Radius | 單一深度分析＋推論 |
-| 本地索引 | 向量 DB（39ms 檢索）／圖資料庫／SQLite session 索引／Markdown+git，各走一路 | Memex、session-indexer、Iantha 等 | 多來源 |
+| 本地索引 | 向量 DB（39ms 檢索）／圖資料庫／SQLite session 索引／Markdown+git，各走一路；圖譜路線採用量最大（graphify，08-31 訊號 11.3 萬星） | graphify、Memex、session-indexer 等，見 [[topics/community-tech-patterns]] | 多來源 |
 | 零依賴檔案式 | 決策／需求／限制三類專案層級資訊，CLI 直存檔案不依賴外部服務 | mindmuxai/brain.md（504★）| 單一實測 |
 | 取代官方記憶 | 主張使用者手動策展比官方自動記憶更可控、更可信賴 | 手動維護 Obsidian vault（LLM Wiki 形式） | 單一實測 |
 | 團隊共享 | 鎖定「跟著使用者走」而非留在人類設計的筆記/任務管理系統 | OzBrain（HN 69）| 單一實測 |
