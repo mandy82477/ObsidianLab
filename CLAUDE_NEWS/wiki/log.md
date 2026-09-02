@@ -5287,3 +5287,15 @@ GH Actions 抓料排 10:23 UTC，到 14:45 UTC 仍未落地（+4.4 小時且持�
 **各工具修正後的定位：** archify——HN 全文 0 篇（73 命中全是 2012 年同名新創），「X 圈傳播、HN 真沒有」成立；OpenMontage——HN 有 5 篇但最高 7 分，未達低門檻，非關鍵字問題；codegraph——HN 12 分那篇在 2026-03-09（收錄窗之前）。**結論：三個工具三種漏法**（X 圈／未達門檻／窗前＋關鍵字閘），「平台缺口」只對 archify 成立。
 
 **待裁示（pipeline 改動，未擅動）：** HN 關鍵字閘是既有設計取捨（蒐集邊界），但 169 分的 in-scope 工具漏球顯示閘太窄。候選補強：HN 每日高分榜（如 ≥100 分）條目若帶 GitHub 連結，抓 repo description 判 claude/anthropic 字樣（確定性規則、無需 LLM）——此法可接住 Understand-Anything 型漏球。採納與否待使用者裁決，動工前後須跑 /pipeline-change-check。
+
+## 2026-09-02 GitHub 發現機制改善方案：雙 agent 產出＋Phase 0 探針實測
+
+**產出：** 構思 agent（opus）設計 D/E/F 三新窗＋現有窗收斂；調研 agent（sonnet）盤點市面做法。Phase 0 四探針當日實測結果——
+- ✅ **D 窗（HN ≥100 分帶 GitHub 連結補撈）介面成立**：Algolia 空 query＋numericFilters 可用（26h 母體 36 則）；歷史回測命中 Understand-Anything（05-01，169 分）——本窗存在理由已驗證
+- ✅ search API 回應含 `language`/`topics` 欄（F 窗與 D 窗第二道過濾的資料面成立）
+- ❌ **F 窗 R1–R3 規則校準失敗**：67 repo 語料擋掉 44 個，含 anthropics/skills、addyosmani/agent-skills、vercel-labs/skills 等明顯工程級（R3 工程詞 allow 過嚴）——F 窗退回重設計，不上線
+- ❌ **OSS Insight Trends API 已死**（調研首推，文件完美、實測回 `data_quality: unavailable`，事件擷取自 2026-03-01 跌至基線 0.3%）——velocity 只剩自建 E 窗一條路；「文件層查證≠實測層可用」再添一例（D6）
+- 🐛 **順手抓到當日新 bug**：daily-gather workflow 指名 commit 清單缺 `inventory_queue_history.csv`，雲端對帳寫入會靜默丟失——已修（同型風險正是設計稿對 E 窗歷史檔的警告）
+- 共識否決：github.com/trending 抓取（無 API 契約、壞得像正常）、GH Archive/BigQuery（帳號依賴/資料量）、star-history（無時序 API）
+
+**Phase 1 待使用者裁決後動工**：共用已報導閘（防重吐 154 清倉 repo）、對帳 CSV 泛化五欄制、A/B 硬上限＋B 帶擴至 5000、D 窗上線、E 窗記錄端、6e 逐窗判讀。動工前後跑 /pipeline-change-check。
