@@ -1,0 +1,130 @@
+# 興趣類別 skill 榜
+
+**狀態：** ongoing
+**開始日期：** 2026-09-03
+**領域：** 🌐 社群
+**更新頻率：** 🗓️ 每日快照（機器產出；「本週竄升」以七日星數差計）
+**最後更新：** 2026-09-02
+**最後新聞更新：** 2026-09-02
+
+> **本頁是什麼**（2026-09-02 快照）
+> 針對讀者指定的 12 個類別，每天到 GitHub 問「這一類現在誰最熱、本週誰竄上來」。熱度榜只回答「大家在看什麼」，這頁回答「**我這幾類**現在有什麼」——治理型需求（agent 誠實、派工、規則不腐爛）在生態裡是少數派，上不了熱度榜，只能定向搜。**星數是規模不是品質**：本頁不做推薦，推薦見 [[topics/community-tech-tools]]「我卡在這裡」。
+
+---
+
+## 怎麼讀
+
+| 欄 | 意思 |
+|---|---|
+| 目前前 5 | 該類別 query 命中的 repo 依星數排序，星數為快照當日值 |
+| 本週竄升 | 七日內星數增量 ≥ 200 者，依增量排序；資料來自各發現窗每日記錄的星史檔 |
+| 📰 | 本庫日報或清倉帳本已報導過（點連結可查 wiki 有無收錄） |
+
+> ⚠️ 星史檔目前只涵蓋 0 天（需 7 天），「本週竄升」欄尚在冷啟動，本週先只看「目前前 5」。
+
+## A. 開發實務（按流程階段，對應 [[topics/coding-workflow-guide]]）
+
+### 專案設定／CLAUDE.md 生成（對應 [[topics/coding-workflow-guide]] 第 1 段）
+
+| 目前前 5 | ★ | 一句話 |
+|---|---|---|
+| [multica-ai/andrej-karpathy-skills](https://github.com/multica-ai/andrej-karpathy-skills) 📰 | 209,598 | A single CLAUDE.md file to improve Claude Code behavior, derived from Andrej Karpathy's ob |
+| [Piebald-AI/claude-code-system-prompts](https://github.com/Piebald-AI/claude-code-system-prompts) 📰 | 12,552 | All parts of Claude Code's system prompt, 27 builtin tool descriptions, sub agent prompts  |
+| [drona23/claude-token-efficient](https://github.com/drona23/claude-token-efficient) | 6,006 | One CLAUDE.md file. Keeps Claude responses terse. Reduces output verbosity on heavy workfl |
+| [gadievron/raptor](https://github.com/gadievron/raptor) | 3,696 | Raptor turns Claude Code into a general-purpose AI offensive/defensive security agent. By  |
+| [centminmod/my-claude-code-setup](https://github.com/centminmod/my-claude-code-setup) | 2,615 | Shared starter template configuration and CLAUDE.md memory bank system for Claude Code |
+
+### codebase 探索與理解（對應 [[topics/coding-workflow-guide]] 第 2a 段）
+
+| 目前前 5 | ★ | 一句話 |
+|---|---|---|
+| [Graphify-Labs/graphify](https://github.com/Graphify-Labs/graphify) 📰 | 113,891 | Turn any codebase, with its docs, SQL schemas, configs, and PDFs, into a queryable knowled |
+| [Egonex-AI/Understand-Anything](https://github.com/Egonex-AI/Understand-Anything) 📰 | 81,327 | Graphs that teach > graphs that impress. Turn any code into an interactive knowledge graph |
+| [colbymchenry/codegraph](https://github.com/colbymchenry/codegraph) 📰 | 69,263 | Pre-indexed code knowledge graph, auto syncs on code changes, for Claude Code, Codex, Gemi |
+| [abhigyanpatwari/GitNexus](https://github.com/abhigyanpatwari/GitNexus) | 46,885 | GitNexus: The Zero-Server Code Intelligence Engine -       GitNexus is a client-side knowl |
+| [DeusData/codebase-memory-mcp](https://github.com/DeusData/codebase-memory-mcp) | 41,867 | High-performance code intelligence MCP server. Indexes codebases into a persistent knowled |
+
+### 規劃與拆解（對應 [[topics/coding-workflow-guide]] 第 3 段）
+
+| 目前前 5 | ★ | 一句話 |
+|---|---|---|
+| [github/spec-kit](https://github.com/github/spec-kit) | 133,049 | 💫 Toolkit to help you get started with Spec-Driven Development |
+| [Fission-AI/OpenSpec](https://github.com/Fission-AI/OpenSpec) | 67,046 | Spec-driven development (SDD) for AI coding assistants. |
+| [gsd-build/get-shit-done](https://github.com/gsd-build/get-shit-done) 📰 | 64,604 | A light-weight and powerful meta-prompting, context engineering and spec-driven developmen |
+| [gsd-build/gsd-2](https://github.com/gsd-build/gsd-2) | 7,771 | A powerful meta-prompting, context engineering and spec-driven development system that ena |
+| [buildermethods/agent-os](https://github.com/buildermethods/agent-os) | 5,363 | Agent OS is a system for injecting your codebase standards and writing better specs for sp |
+
+### 實作期攔錯（hook／lint／型別）（對應 [[topics/coding-workflow-guide]] 第 4 段）
+
+> ⚠️ 尚未校準出有辨識力的 GitHub query（兩輪實測皆被巨頭洗版或 0 命中，見設定檔 `why`）——**本類暫無榜，不代表沒有工具**；需求真實存在，先看 [[topics/community-tech-patterns]] 的社群節點。
+
+### Code review（對應 [[topics/coding-workflow-guide]] 第 5 段）
+
+| 目前前 5 | ★ | 一句話 |
+|---|---|---|
+| [go-gitea/gitea](https://github.com/go-gitea/gitea) | 57,772 | Git with a cup of tea! Painless self-hosted all-in-one software development service, inclu |
+| [tirth8205/code-review-graph](https://github.com/tirth8205/code-review-graph) | 31,106 | Local-first code intelligence graph for MCP and CLI. Builds a persistent map of your codeb |
+| [alibaba/open-code-review](https://github.com/alibaba/open-code-review) | 21,826 | Fast, efficient, battle-tested at Alibaba's scale. Hybrid architecture code review tool: d |
+| [Untrivial-ai/agent-orchestrator](https://github.com/Untrivial-ai/agent-orchestrator) | 10,853 | Agent IDE that enables you to manage fleets of coding agents. It comes with an agentic orc |
+| [reviewdog/reviewdog](https://github.com/reviewdog/reviewdog) | 9,558 | 🐶 Automated code review tool integrated with any code analysis tools regardless of program |
+
+### 測試與驗證（含 evidence-gated done）（對應 [[topics/coding-workflow-guide]] 第 6 段）
+
+> ⚠️ 尚未校準出有辨識力的 GitHub query（兩輪實測皆被巨頭洗版或 0 命中，見設定檔 `why`）——**本類暫無榜，不代表沒有工具**；需求真實存在，先看 [[topics/community-tech-patterns]] 的社群節點。
+
+### 除錯與靜默失敗偵測（對應 [[topics/coding-workflow-guide]] 第 9 段）
+
+> ⚠️ 尚未校準出有辨識力的 GitHub query（兩輪實測皆被巨頭洗版或 0 命中，見設定檔 `why`）——**本類暫無榜，不代表沒有工具**；需求真實存在，先看 [[topics/community-tech-patterns]] 的社群節點。
+
+### 規則維護不腐爛（CLAUDE.md 跟上改動）（對應 [[topics/coding-workflow-guide]] 第 8 段）
+
+| 目前前 5 | ★ | 一句話 |
+|---|---|---|
+| [steipete/agent-rules](https://github.com/steipete/agent-rules) | 5,694 | Rules and Knowledge to work better with agents such as Claude Code or Cursor |
+| [awslabs/aidlc-workflows](https://github.com/awslabs/aidlc-workflows) | 4,282 | AI-Driven Life Cycle (AI-DLC) adaptive workflow steering rules for AI coding agents |
+| [dromara/liteflow](https://github.com/dromara/liteflow) | 3,844 | Lightweight, fast, stable, programmable component-based rule engine — where AI Agents orch |
+| [gadievron/raptor](https://github.com/gadievron/raptor) | 3,696 | Raptor turns Claude Code into a general-purpose AI offensive/defensive security agent. By  |
+| [intellectronica/ruler](https://github.com/intellectronica/ruler) | 2,907 | Ruler — apply the same rules to all coding agents |
+
+## B. 治理（管 agent 的需求）
+
+### multi-agent orchestration
+
+| 目前前 5 | ★ | 一句話 |
+|---|---|---|
+| [stablyai/orca](https://github.com/stablyai/orca) | 59,844 | Orca is the ADE for working with a fleet of parallel agents. Run any coding agent with you |
+| [Yeachan-Heo/oh-my-codex](https://github.com/Yeachan-Heo/oh-my-codex) | 32,963 | OmX - Oh My codeX: Your codex is not alone. Add hooks, agent teams, HUDs, and so much more |
+| [revfactory/harness](https://github.com/revfactory/harness) | 8,881 | A meta-skill that designs domain-specific agent teams, defines specialized agents, and gen |
+| [automazeio/ccpm](https://github.com/automazeio/ccpm) | 8,361 | Project management skill system for Agents that uses GitHub Issues and Git worktrees for p |
+| [ZSeven-W/openpencil](https://github.com/ZSeven-W/openpencil) | 5,790 | The world's first open-source AI-native vector design tool and the first to feature concur |
+
+### git／commit 衛生自動化
+
+> ⚠️ 尚未校準出有辨識力的 GitHub query（兩輪實測皆被巨頭洗版或 0 命中，見設定檔 `why`）——**本類暫無榜，不代表沒有工具**；需求真實存在，先看 [[topics/community-tech-patterns]] 的社群節點。
+
+### LLM 知識庫／文件策展／知識傳承
+
+| 目前前 5 | ★ | 一句話 |
+|---|---|---|
+| [yusufkaraaslan/Skill_Seekers](https://github.com/yusufkaraaslan/Skill_Seekers) | 14,888 | Convert documentation websites, GitHub repositories, and PDFs into Claude AI skills with a |
+| [PleasePrompto/notebooklm-mcp](https://github.com/PleasePrompto/notebooklm-mcp) 📰 | 3,385 | MCP server for NotebookLM - Let your AI agents (Claude Code, Codex) research documentation |
+| [cyberagiinc/DevDocs](https://github.com/cyberagiinc/DevDocs) | 2,105 | Completely free, private, UI based Tech Documentation MCP server. Designed for coders and  |
+| [trailofbits/claude-code-config](https://github.com/trailofbits/claude-code-config) | 2,094 | Opinionated defaults, documentation, and workflows for Claude Code at Trail of Bits |
+| [timescale/pg-aiguide](https://github.com/timescale/pg-aiguide) | 1,830 | MCP server and Claude plugin for Postgres skills and documentation. Helps AI coding tools  |
+
+### 資料源韌性與監測
+
+| 目前前 5 | ★ | 一句話 |
+|---|---|---|
+| [FreshRSS/FreshRSS](https://github.com/FreshRSS/FreshRSS) | 15,908 | A free, self-hostable news aggregator… |
+| [finaldie/auto-news](https://github.com/finaldie/auto-news) | 905 | A personal news aggregator to pull information from multi-sources + LLM (ChatGPT/Gemini/Ol |
+| [CyberShadow/DFeed](https://github.com/CyberShadow/DFeed) | 386 | D news aggregator, newsgroup client, web newsreader and IRC bot |
+| [janlukasschroeder/realtime-newsapi](https://github.com/janlukasschroeder/realtime-newsapi) | 373 | Financial News Aggregator - Real Time & Query API for Financial News |
+| [SuYxh/ai-news-aggregator](https://github.com/SuYxh/ai-news-aggregator) | 331 | 🤖 AI News Aggregator - 自动聚合 80+ AI/科技资讯源，支持 RSS 订阅导入，智能过滤 AI 相关内容，双语标题翻译，每 2 小时自动更新 |
+
+---
+
+## 參考來源
+
+- 設定檔與 query 校準紀錄：`data/skill_interest_watch.json`；產出腳本 `scripts/skill_interest_snapshot.py`
+- 星史：`data/repo_star_history.csv`（各發現窗每日記錄，保留 60 天）

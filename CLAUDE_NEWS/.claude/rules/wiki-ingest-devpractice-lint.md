@@ -10,7 +10,7 @@
 
 ### 1. 覆寫 guide「本週 coding 亮點」節
 
-讀近 7 天 `data/devpractice-candidates.jsonl`，在 `wiki/topics/coding-workflow-guide.md` 維護 `## 本週 coding 亮點` 節（首次執行時建立，位置在「我想問的是」表之前）：
+讀近 7 天 `data/devpractice-candidates.jsonl`，**並讀 [[topics/skill-interest-watch]] 各類「本週竄升」欄**（機器快照，`[加入: 2026-09-03]`——竄升者是「這週值得知道」的第一手候選，但星數是規模不是品質，入亮點須另有一句為什麼），在 `wiki/topics/coding-workflow-guide.md` 維護 `## 本週 coding 亮點` 節（首次執行時建立，位置在「我想問的是」表之前）：
 
 - **覆寫不 prepend**（同 feature-radar「本週推薦」哲學——它回答「這禮拜」，不是編年史）
 - ≤ 10 行條列，每條：一句話＋指向細節所在頁的 wikilink（事實的家在原頁，本節只做導流）

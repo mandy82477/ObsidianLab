@@ -1,0 +1,168 @@
+{
+  "_doc": "興趣類別 skill 榜（2026-09-03 使用者裁決）：不等熱門的來，每天對指定類別去 GitHub 搜「這類現在誰最熱、本週誰新竄升」。由 scripts/skill_interest_snapshot.py 讀取，輸出覆寫式快照頁 wiki/topics/skill-interest-watch.md，不進日報。A 組按 coding-workflow-guide 九段流程分類（每類連頁＋「第 N 段」提示，連頁不連錨——段標題帶會變的狀態標記，錨定必腐化），B 組是治理型需求（管 agent 的）。設計依據見 wiki/log.md 2026-09-03。",
+  "_query_rules": "抄 Topic Watch 紀律：新 query 上線前必實測命中率（--probe），0 命中或全雜訊者不上線、記入 _rejected。2026-09-03 兩輪校準（24＋14 條）得出的 GitHub Search 行為：①多組 (A OR B) 括號在 in:description 下幾乎等於「任一詞命中」，只要含 agent/skill/claude 等通用詞就被同一批巨頭（ECC、karpathy-skills、claude-code 本體、system-prompts、gstack）洗版——這種 query 沒有類別辨識力，等於沒問；②有效的是「單一類別專屬名詞片語」（\"knowledge graph\"、\"spec-driven\"、\"agent teams\"、adversarial review），頂多再加一個限定詞；③in:name 配通用詞同樣被 awesome-* 清單洗版。找不到有辨識力 query 的類別誠實標 status=needs_calibration、queries 留空，頁面印 ⚠️，不硬塞寬 query 上榜。min_stars 是雜訊地板不是品質訊號。",
+  "min_stars": 100,
+  "top_n": 5,
+  "rise_window_days": 7,
+  "rise_min_delta": 200,
+  "categories": [
+    {
+      "group": "A",
+      "slug": "project-setup",
+      "name": "專案設定／CLAUDE.md 生成",
+      "status": "active",
+      "queries": [
+        "\"CLAUDE.md\" in:name,description"
+      ],
+      "why": "09-03 校準：命中 karpathy-skills、claude-code-system-prompts、claude-token-efficient、raptor、my-claude-code-setup——切題。",
+      "guide_section": "第 1 段"
+    },
+    {
+      "group": "A",
+      "slug": "codebase-understanding",
+      "name": "codebase 探索與理解",
+      "status": "active",
+      "queries": [
+        "\"knowledge graph\" (codebase OR code) in:description"
+      ],
+      "why": "09-03 校準：前 5 為 graphify、Understand-Anything、codegraph、GitNexus、codebase-memory-mcp——全數切題，本榜最乾淨的一類。",
+      "guide_section": "第 2a 段"
+    },
+    {
+      "group": "A",
+      "slug": "planning",
+      "name": "規劃與拆解",
+      "status": "active",
+      "queries": [
+        "\"spec-driven\" (agent OR \"claude code\") in:description",
+        "\"plan mode\" \"claude code\" in:description"
+      ],
+      "why": "09-03 校準：spec-kit、OpenSpec、get-shit-done、agent-os 切題；plan mode 一條僅 3 命中但相關，保留補位。",
+      "guide_section": "第 3 段"
+    },
+    {
+      "group": "A",
+      "slug": "implementation-guard",
+      "name": "實作期攔錯（hook／lint／型別）",
+      "status": "needs_calibration",
+      "queries": [],
+      "why": "09-03 兩輪皆無辨識力：hooks 配 claude 被本體與 awesome 清單洗版；PreToolUse 專有詞 0 命中；lint \"coding agent\" 撈到 harness 本體。待試 topic: 限定或 SKILL.md 存在性探測。",
+      "guide_section": "第 4 段"
+    },
+    {
+      "group": "A",
+      "slug": "code-review",
+      "name": "Code review",
+      "status": "active",
+      "queries": [
+        "\"code review\" (claude OR \"ai agent\" OR llm) in:name,description",
+        "adversarial review agent in:description"
+      ],
+      "why": "09-03 校準：code-review-graph、open-code-review、reviewdog 切題（gitea 為雜訊，接受）；adversarial 一條 5 命中含 claude-forge、flow-next，切題。",
+      "guide_section": "第 5 段"
+    },
+    {
+      "group": "A",
+      "slug": "testing-verification",
+      "name": "測試與驗證（含 evidence-gated done）",
+      "status": "needs_calibration",
+      "queries": [],
+      "why": "09-03 兩輪皆無辨識力：test/tdd 配 agent 被巨頭洗版；verify/evidence 專有詞 0 命中。此類需求（誠實驗證）在 GitHub 描述層幾乎無專屬詞彙，可能得靠 patterns 頁的社群節點而非搜尋。",
+      "guide_section": "第 6 段"
+    },
+    {
+      "group": "A",
+      "slug": "debugging",
+      "name": "除錯與靜默失敗偵測",
+      "status": "needs_calibration",
+      "queries": [],
+      "why": "09-03 兩輪皆無辨識力：debug 配 claude in:name 0 命中；\"silent failure\" 僅 2 命中且一則為監控工具；observability 被巨頭洗版。",
+      "guide_section": "第 9 段"
+    },
+    {
+      "group": "A",
+      "slug": "rules-maintenance",
+      "name": "規則維護不腐爛（CLAUDE.md 跟上改動）",
+      "status": "active",
+      "queries": [
+        "agent rules (audit OR validate OR drift) in:description"
+      ],
+      "why": "09-03 校準：steipete/agent-rules、intellectronica/ruler、awslabs/aidlc-workflows 切題。",
+      "guide_section": "第 8 段"
+    },
+    {
+      "group": "B",
+      "slug": "orchestration",
+      "name": "multi-agent orchestration",
+      "status": "active",
+      "queries": [
+        "(\"agent teams\" OR \"parallel agents\") in:description"
+      ],
+      "why": "09-03 校準：orca、oh-my-codex、harness、ccpm 切題；orchestrat* 寬 query 被巨頭洗版已棄。",
+      "guide_section": null
+    },
+    {
+      "group": "B",
+      "slug": "git-hygiene",
+      "name": "git／commit 衛生自動化",
+      "status": "needs_calibration",
+      "queries": [],
+      "why": "09-03 兩輪皆無辨識力：commit/git 配 claude 被巨頭與 awesome-claude-skills 清單洗版；pre-commit 撈到傳統非 AI 工具；\"commit message\" 專有詞 0 命中。",
+      "guide_section": null
+    },
+    {
+      "group": "B",
+      "slug": "knowledge-curation",
+      "name": "LLM 知識庫／文件策展／知識傳承",
+      "status": "active",
+      "queries": [
+        "documentation (agent OR skill) claude in:description"
+      ],
+      "why": "09-03 校準：Skill_Seekers、DevDocs、notebooklm-mcp、pg-aiguide 切題；\"knowledge base\" 寬 query 被巨頭洗版已棄，llm-wiki 專有詞 0 命中。",
+      "guide_section": null
+    },
+    {
+      "group": "B",
+      "slug": "source-resilience",
+      "name": "資料源韌性與監測",
+      "status": "active",
+      "queries": [
+        "\"news aggregator\" (llm OR claude OR agent) in:description"
+      ],
+      "why": "09-03 校準：16 命中，auto-news、ai-news-aggregator 切題、FreshRSS 為傳統工具雜訊；此類在 GitHub 本就稀薄，命中弱屬預期。",
+      "guide_section": null
+    }
+  ],
+  "_rejected": [
+    {
+      "query": "\"claude code\" (hook OR hooks|test OR testing|debug|orchestrat OR multi-agent|commit OR git) in:name,description",
+      "date": "2026-09-03",
+      "reason": "五類共用同一形狀，全部回傳同一批巨頭（ECC/karpathy-skills/claude-code/system-prompts/gstack）——OR 通用詞無類別辨識力。"
+    },
+    {
+      "query": "codebase (index OR indexer) (\"claude code\" OR \"coding agent\") in:description",
+      "date": "2026-09-03",
+      "reason": "freeCodeCamp 45 萬星進前 5，index 一詞過寬。"
+    },
+    {
+      "query": "(lint OR linter) \"coding agent\" in:description",
+      "date": "2026-09-03",
+      "reason": "撈到 opencode/codex/pi 等 harness 本體。"
+    },
+    {
+      "query": "(\"llm wiki\" OR \"knowledge base\") (agent OR skill OR claude) in:description",
+      "date": "2026-09-03",
+      "reason": "knowledge base 配 agent/skill 被巨頭洗版。"
+    },
+    {
+      "query": "(scraper OR aggregator) (health OR monitoring) (llm OR agent) in:description",
+      "date": "2026-09-03",
+      "reason": "被巨頭洗版。"
+    },
+    {
+      "query": "\"pre-commit\" (\"ai agent\" OR llm OR claude) in:description",
+      "date": "2026-09-03",
+      "reason": "回傳 pre-commit 傳統生態（非 AI）。"
+    }
+  ]
+}

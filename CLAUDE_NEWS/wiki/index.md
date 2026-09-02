@@ -27,6 +27,7 @@
 | 做某件事該下哪個 **官方** skill（按流程階段／產出物） | [[topics/coding-workflow-guide]] |
 | 我卡住了，找 **社群** 首選工具（按症狀） | [[topics/community-tech-tools]]「我卡在這裡」決策表 |
 | 找 coding 用途的社群 skill（按用途分類） | [[topics/community-tech-tools]]「🧩 Skills 速查」 |
+| 我關心的某類 skill，現在誰最熱、本週誰竄升 | [[topics/skill-interest-watch]]（按開發流程段分類的榜） |
 | 寫 code 該用哪個模型 | [[topics/model-comparison]] |
 | 大型 codebase 的做法主線（並行／context／記憶／把關） | [[topics/community-large-codebase-workflow]] |
 | Claude Code 壞了嗎、該不該升版 | [[entities/claude-code]] 已知問題＋[[feature-radar]] 升版風險 |
@@ -93,6 +94,7 @@
 | [[topics/code-quality-decline]] | 🌐 社群 | ongoing | Claude Code 效能退步事件，Anthropic 已承認工程疏失 |
 | [[topics/competitor-landscape]] | 💼 商業 | ongoing | Google 祕密開發競品 + OpenCode 157K 分流 + DeepSeek clone 低成本替代生態 |
 | [[topics/community-tech-tools]] | 🌐 社群 | ongoing | 🗓️ 週更策展：社群工具目錄——58 工具的活躍度、採用狀態追蹤（每日 ingest 不更新） |
+| [[topics/skill-interest-watch]] | 🌐 社群 | ongoing | 🗓️ 每日快照 興趣類別 skill 榜：12 個指定類別（8 段開發流程＋4 類治理需求）到 GitHub 問「這一類現在誰最熱、本週誰竄升」；機器產出、星數是規模不是品質，推薦仍看社群工具目錄 |
 | [[topics/community-tech-patterns]] | 🌐 社群 | ongoing | 社群實戰模式庫（日更）：multi-agent、skills 設計、工作流最佳實踐的可複用做法 |
 | [[topics/community-large-codebase-workflow]] | 🌐 社群 | ongoing | 🗓️ 週更 大型 codebase 規模化開發主線——每條線先給「現在的答案」，再列子問題表；節點證據在模式庫 |
 | [[topics/community-pattern-trends]] | 🌐 社群 | ongoing | 🗓️ 週更：社群趨勢觀察——從模式庫萃取的宏觀層，7 條成形趨勢的熱度曲線 + 對現有設計的啟示 |

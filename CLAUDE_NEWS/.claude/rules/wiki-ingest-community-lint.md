@@ -23,6 +23,10 @@
 
 ---
 
+## skill-interest-watch：機器快照頁，不手改 `[加入: 2026-09-03]`
+
+`wiki/topics/skill-interest-watch.md` 由 `scripts/skill_interest_snapshot.py` 每日（daily-gather workflow）**整頁覆寫**，設定與 query 校準紀錄在 `data/skill_interest_watch.json`。社群記者 lint 時只做呈現品質檢查，**發現內容問題不得手改頁面**（下次快照會蓋掉）——改設定檔或回報主編；新 query 依設定檔 `_query_rules` 先 `--probe` 實測再上線。它與 tools 頁分工：本頁答「這類現在誰最熱」（規模），tools 頁答「該裝哪個」（推薦）；榜上的 repo 若日後進日報，照策展規則正常收錄，不因已在榜上豁免門檻。
+
 ## community-tech-tools 策展規則 `[加入: 2026-06-19]`
 
 **步驟：**

@@ -5309,3 +5309,9 @@ GH Actions 抓料排 10:23 UTC，到 14:45 UTC 仍未落地（+4.4 小時且持�
 **改動（commit 見本日）：** ① D 窗新來源 `hn_repo_bridge.py`——HN 26h 內 ≥100 分故事，GitHub 連結者對 repo description+topics+homepage 做確定性關鍵字閘，每日上限 3；母體為 0 時拋例外（存在性斷言：HN 每天必有高分故事，0=介面壞了，不回空 list 假裝正常）。② 共用已報導閘：日報＋清倉帳本升為 A/B/C 全窗去重（改版前 A/B 只有 14 天 TTL cache，會重吐清倉 repo）。③ 上限收斂：A/B 各 3、B 帶 500..5000（與 C 刻意重疊防接縫）、來源總量 40→16。④ E 窗記錄端：各窗看到的 repo 星數逐日記 `data/repo_star_history.csv`（保留 60 天、同日 upsert、零額外 API）；吐出端待 ≥2 週資料校準閾值（Phase 2）。⑤ 對帳泛化 `data/discovery_queue_history.csv` 五欄制（date,window,queued,emitted,note），lint 6e 改逐窗判讀＋「連 3 天缺列＝窗死」＋星史檔增長看守。⑥ workflow 指名 commit 補兩個新 csv——並抓到前日埋的字面 `\n` bug（git add 行被寫成單行，雲端會失敗）一併修正。
 
 **首跑實測：** D 窗母體 38 則、吐 1 則（Fable 5.1 發布，HN 1352 分官方網域直收）；GitHub 來源四窗對帳全寫入、星史 197 repo 入檔、inventory 清倉後歸 0、總量 10≤16。迴歸測試 7 案例鎖 Understand-Anything 過閘錨點與對帳語意。pipeline-change-check baseline 已拍（digest 2026-09-01，HEAD 46eef944）；**compare 待下次完整 pipeline 跑完執行**（預期：GitHub gathered 下降、emitted 持平或微升、新增 HN Repo Bridge 來源列）。
+
+## 2026-09-03 興趣類別 skill 榜上線（使用者裁決 12 類，「coding 實務開發也很重要」）
+
+**是什麼：** 熱度管線答「大家在看什麼」（推播），使用者要的是「我這幾類現在誰最熱、本週誰竄升」（拉取）——治理型需求在生態裡是少數派、上不了熱度榜，只能定向搜。新頁 `wiki/topics/skill-interest-watch.md` 由 `scripts/skill_interest_snapshot.py` 每日（daily-gather workflow，continue-on-error）整頁覆寫；設定 `data/skill_interest_watch.json`；A 組 8 類按 guide 九段流程（連頁＋「第 N 段」提示，**連頁不連錨**——段標題帶 [社群面待補] 這類會變的標記，首版錨定即建置 8 個 WARN，當場改掉）、B 組 4 類治理。E 窗星史檔第一個消費者（「本週竄升」＝七日星數差，冷啟動明寫）；每類寫 discovery 對帳（window=interest:<slug>），lint 6e 逐窗看守。index 目錄列＋💻 入口列、devpractice 週彙整讀本頁竄升欄、社群 lint 規則明訂機器頁不手改。
+
+**query 校準（兩輪 38 條實測）的發現：** GitHub Search 多組 (A OR B) 括號在 in:description 下幾乎等於「任一詞命中」，含 agent/skill/claude 等通用詞即被同一批巨頭（ECC、karpathy-skills、claude-code 本體、system-prompts、gstack）洗版——6 類的首版 query 全部回傳同一前 5，等於沒問。有效的只有「單一類別專屬名詞片語」。**8 類上線、4 類（實作攔錯／測試驗證／除錯／git 衛生）兩輪皆無辨識力 → 誠實標 needs_calibration、頁面印 ⚠️ 不硬塞**；已登 workaround-register 複查（試 topic: 限定、SKILL.md 存在性探測、或改由 patterns 頁社群節點餵）。首跑：222 repo 入榜、星史 410 列。
