@@ -328,21 +328,6 @@
       "id": "code-quality-decline",
       "name": "Claude Code 效能退步事件",
       "pageType": "topic"
-    },
-    {
-      "id": "community-large-codebase-workflow",
-      "name": "大型 Codebase 規模化開發：社群工作流主線",
-      "pageType": "topic"
-    },
-    {
-      "id": "community-pattern-trends",
-      "name": "社群趨勢觀察（週更）",
-      "pageType": "topic"
-    },
-    {
-      "id": "community-tech-tools",
-      "name": "社群工具目錄",
-      "pageType": "topic"
     }
   ]
 }
