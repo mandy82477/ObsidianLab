@@ -5279,3 +5279,11 @@ GH Actions 抓料排 10:23 UTC，到 14:45 UTC 仍未落地（+4.4 小時且持�
 ③ **補課期（吞吐塞車）**：C 窗上線 5 天積 154 候選、每日 2 則 77 天排空（已於同日徹查條目詳述）。
 
 **清倉執行（使用者裁決 b）：** 154 個候選寫入 `data/inventory_clearance.md`（機器清單、未策展、防刷未逐一驗，檔頭明示）；`_emitted_repo_urls()` 改為將清倉帳本與日報同等計入——**刻意放 data/ 不放 news/**（news 會被 build_web 上網站、被多支掃描腳本消費，塞非日報格式會污染所有消費端）。驗證：archify/OpenMontage/codegraph/claude-mem 皆已入帳，佇列歸零；此後新越過 3000★ 者由 C 窗正常吐出、產消對帳（inventory_queue_history.csv＋6e）看守。workaround-register C 窗條目結案。
+
+## 2026-09-02 Query：「只有 X 熱、還是該類別熱？」→ 漏球第二層結論更正：HN 其實熱過，是關鍵字閘掉的
+
+**點出什麼：** 使用者質疑「聲量只在 X」的說法。直查 HN Algolia 全文（不經本庫關鍵字閘）發現：**Understand-Anything 於 2026-05-01 上過 HN 169 分／49 留言**——在本庫收錄窗（04-25 起）內、遠超高門檻（≥50 分），且為同一 repo（Lum1104→Egonex-AI 為 GitHub 組織轉移，星數/forks/建立日/官網全同）。本庫 HN 來源以「claude」關鍵字查 Algolia，該篇標題「Understand Anything」不含關鍵字，抓取端即掉球——**repo 描述明寫 Works with Claude Code，是 in-scope 內容，球在我們的場上、被自己的閘擋掉**。
+
+**各工具修正後的定位：** archify——HN 全文 0 篇（73 命中全是 2012 年同名新創），「X 圈傳播、HN 真沒有」成立；OpenMontage——HN 有 5 篇但最高 7 分，未達低門檻，非關鍵字問題；codegraph——HN 12 分那篇在 2026-03-09（收錄窗之前）。**結論：三個工具三種漏法**（X 圈／未達門檻／窗前＋關鍵字閘），「平台缺口」只對 archify 成立。
+
+**待裁示（pipeline 改動，未擅動）：** HN 關鍵字閘是既有設計取捨（蒐集邊界），但 169 分的 in-scope 工具漏球顯示閘太窄。候選補強：HN 每日高分榜（如 ≥100 分）條目若帶 GitHub 連結，抓 repo description 判 claude/anthropic 字樣（確定性規則、無需 LLM）——此法可接住 Understand-Anything 型漏球。採納與否待使用者裁決，動工前後須跑 /pipeline-change-check。
