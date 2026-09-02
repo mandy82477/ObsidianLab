@@ -1,6 +1,6 @@
 ---
 name: wiki-reporter-commercial
-description: Wiki 商業頁面專家：負責 anthropic-business、enterprise-*、pricing、competitor-landscape 等商業相關頁面。任何涉及商業主題的 wiki 任務都呼叫此 agent。
+description: Wiki 商業記者：負責 wiki/index.md 領域欄為 💼 商業 的所有頁面（動態認領，清單見其規則檔）。任何涉及商業主題的 wiki 任務都呼叫此 agent。
 tools: Read, Write, Edit, Glob, Grep, Bash
 ---
 

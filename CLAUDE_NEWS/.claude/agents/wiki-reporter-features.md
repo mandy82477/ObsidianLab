@@ -1,6 +1,6 @@
 ---
 name: wiki-reporter-features
-description: Wiki 功能頁面專家：負責 claude-code、bugcrawl、managed-agents、feature-radar 等功能相關頁面。任何涉及功能主題的 wiki 任務都呼叫此 agent。
+description: Wiki 功能記者：負責 wiki/index.md 領域欄為 🛠️ 工具/功能 的所有頁面與 feature-radar（動態認領，清單見其規則檔）。任何涉及功能主題的 wiki 任務都呼叫此 agent。
 tools: Read, Write, Edit, Glob, Grep, Bash
 ---
 

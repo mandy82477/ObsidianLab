@@ -1,6 +1,6 @@
 ---
 name: wiki-reporter-people
-description: Wiki 人物頁面專家：負責 boris-cherny、dario-amodei、andrej-karpathy 等人物相關頁面。任何涉及人物主題的 wiki 任務都呼叫此 agent。
+description: Wiki 人物記者：負責 wiki/index.md 領域欄為 👤 人物 的所有頁面（動態認領，清單見其規則檔）。任何涉及人物主題的 wiki 任務都呼叫此 agent。
 tools: Read, Write, Edit, Glob, Grep, Bash
 ---
 

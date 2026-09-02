@@ -1,6 +1,6 @@
 ---
 name: wiki-reporter-models
-description: Wiki 模型頁面專家：負責 fable-5、opus-*、mythos 等模型相關頁面。任何涉及模型主題的 wiki 任務都呼叫此 agent。
+description: Wiki 模型記者：負責 wiki/index.md 領域欄為 🤖 模型 的所有頁面（動態認領，清單見其規則檔）。任何涉及模型主題的 wiki 任務都呼叫此 agent。
 tools: Read, Write, Edit, Glob, Grep, Bash
 ---
 

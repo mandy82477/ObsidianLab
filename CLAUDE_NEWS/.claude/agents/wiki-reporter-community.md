@@ -1,6 +1,6 @@
 ---
 name: wiki-reporter-community
-description: Wiki 社群頁面專家：負責 community-tech-*、code-quality-decline 等社群相關頁面。任何涉及社群主題的 wiki 任務都呼叫此 agent。
+description: Wiki 社群記者：負責 wiki/index.md 領域欄為 🌐 社群 的所有頁面（動態認領，清單見其規則檔）。任何涉及社群主題的 wiki 任務都呼叫此 agent。
 tools: Read, Write, Edit, Glob, Grep, Bash
 ---
 

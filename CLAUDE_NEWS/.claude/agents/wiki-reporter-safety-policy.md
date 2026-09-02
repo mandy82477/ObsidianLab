@@ -1,6 +1,6 @@
 ---
 name: wiki-reporter-safety-policy
-description: Wiki 安全政策頁面專家：負責 ai-agent-safety、anthropic-government-policy、recursive-self-improvement 等安全政策頁面。任何涉及安全政策主題的 wiki 任務都呼叫此 agent。
+description: Wiki 安全政策記者：負責 wiki/index.md 領域欄為 🏛️ 政策/安全 的所有頁面（動態認領，清單見其規則檔）。任何涉及安全政策主題的 wiki 任務都呼叫此 agent。
 tools: Read, Write, Edit, Glob, Grep, Bash
 ---
 
