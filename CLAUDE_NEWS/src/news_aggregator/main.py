@@ -30,6 +30,7 @@ from news_aggregator.sources.github_releases import GitHubReleases
 from news_aggregator.sources.github_issues import GitHubIssues
 from news_aggregator.sources.google_news import GoogleNews
 from news_aggregator.sources.hackernews import HackerNews
+from news_aggregator.sources.hn_repo_bridge import HNRepoBridge
 from news_aggregator.sources.reddit import Reddit
 
 
@@ -281,6 +282,7 @@ def main() -> None:
         ("GitHub", GitHubReleases()),
         ("GitHub Issues", GitHubIssues()),
         ("Hacker News", HackerNews()),
+        ("HN Repo Bridge", HNRepoBridge()),
         ("Reddit", Reddit()),
         ("Google News", GoogleNews()),
         ("dev.to", DevTo()),

@@ -89,7 +89,7 @@ flowchart TD
 
 ```mermaid
 flowchart TD
-    subgraph SRC["13 個來源（ThreadPoolExecutor 並行抓取）"]
+    subgraph SRC["14 個來源（ThreadPoolExecutor 並行抓取）"]
         direction LR
         S1["Anthropic Blog\n(/news + /engineering)"]
         S2["Anthropic Status\n(status RSS)"]
@@ -97,6 +97,9 @@ flowchart TD
 ＋repo 搜尋三窗 A/B/C"]
         S4["GitHub Issues"]
         S5["Hacker News"]
+        S5b["HN Repo Bridge
+(D 窗：≥100 分帶 GitHub 連結
+repo 描述關鍵字補撈)"]
         S6["Reddit\n(含 r/ClaudeCode)"]
         S7["Google News\n(category=media)"]
         S8["dev.to\n(API + reactions)"]

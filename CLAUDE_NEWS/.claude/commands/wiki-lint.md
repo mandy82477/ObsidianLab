@@ -382,9 +382,11 @@ Citation drift 是 LLM wiki 文獻點名的最嚴重失效模式：**claim 被�
 - 輸出各來源 7 天貢獻統計表，供判斷來源價值
 發現 ⚠️ 時回報使用者，不自行修改管線程式。
 
-**C 窗佇列產消對帳 `[加入: 2026-09-02]`：** 讀 `data/inventory_queue_history.csv`（C 窗每日抓取時寫入：date,unreported,emitted），回報最新佇列量與排空預估（unreported ÷ 每日上限 2）。判讀：
-- 佇列量連兩週上升、或排空預估 > 30 天 → ⚠️ 回報使用者（提高 `INVENTORY_PER_DAY`／一次清倉擇一），不得只抄數字
-- 檔案缺失或最新列距今 > 3 天 → ⚠️「C 窗未寫入對帳，查 daily gather 是否失敗」——**掃描失敗不得當成 0**
+**發現窗產消對帳 `[加入: 2026-09-02，泛化: 2026-09-03]`：** 讀 `data/discovery_queue_history.csv`（各發現窗每日抓取時寫入，schema `date,window,queued,emitted,note`；window 現值 `rising`／`crossing`／`inventory`／`hn_bridge`，note 值域 `ok|cold_start|disabled|error`）。**逐 window 判讀**：
+- 某 window 佇列量（queued−emitted 積壓）連兩週上升、或排空預估 > 30 天 → ⚠️ 回報使用者（提高該窗配額／一次清倉擇一），不得只抄數字
+- **某 window 連 3 天完全缺列 → ⚠️「該窗未執行或靜默死亡，查 daily gather」**——「今天沒有候選」（queued=0 的列）與「窗沒跑」（整列缺席）必須分得開
+- 檔案缺失或全檔最新日期距今 > 3 天 → ⚠️「對帳未寫入，查 daily gather 是否失敗」——**掃描失敗不得當成 0**
+- 另讀 `data/repo_star_history.csv`（E 窗記錄端）**行數與最新日期**：連兩週不增長 → ⚠️「星史檔未被保存（雲端 commit 清單？）」——E 窗壞掉時會**永遠冷啟動且吐 0，看起來像正常**，這行檢查是它唯一的看守
 - 起因：C 窗上線 5 天悄悄積 154 個未報導候選（archify 43k★ 排第 20、約 10 天才輪到），佇列長度只寫在 logger.info、無消費端——與 pending 佇列 19 天 0→51 同病（2026-09-02 徹查，見 `wiki/log.md` 當日 Query）
 
 **來源記分卡 `[加入: 2026-07-16]`：** 執行 `python scripts/source_scorecard.py`，將輸出表格附入本節回報。判讀規則（指標定義見 `docs/source-scoring-optimization.md`）：

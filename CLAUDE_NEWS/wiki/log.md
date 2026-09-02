@@ -5303,3 +5303,9 @@ GH Actions 抓料排 10:23 UTC，到 14:45 UTC 仍未落地（+4.4 小時且持�
 ## 2026-09-03 補查：GitHub 事件流生態 2026 現況（調研 agent 二輪，實測型）
 
 **查明的事：** GitHub 公開事件流退化是**永久性、結構性、且官方從未公告**——agent 實際下載三個時間點的 GH Archive 小時檔解壓計數：WatchEvent 佔比 2026-02 為 2.19% → 06 起 0.09%，PR/Issue 事件同步崩盤，僅 Push/Create/Delete 正常；ClickHouse 官方分析站原文確認「2025 年中衰退、2026 崩塌，是資料源的變化不是使用者行為的變化」。GitHub 官方 changelog／可用性月報零提及；2025-08 payload 精簡公告時間接近但無文件證實因果（標註推論）。整個「吃事件流」的第三方生態（OSS Insight trends、GH Archive velocity 分析）連帶陣亡；**Search API 走 GitHub 自家搜尋索引、不吃事件流，完全未受影響**——本庫 A/B/C 窗地基安然。2026 年倖存/新生做法全部收斂到同一架構：**星數快照輪詢＋自算差值**（daily-stars-explorer 等），與本方案 E 窗同構——E 窗從「自己想的設計」獲得市面獨立收斂驗證。GH Archive 路線從候選除名（不是複雜度問題，是「做出來也在算噪聲」）；trendshift 計量單位改「mentions」來歷可疑待查。最終方案維持前日版本不變，信心上修。
+
+## 2026-09-03 GitHub 發現機制 Phase 1 上線（使用者裁決「好」後動工）
+
+**改動（commit 見本日）：** ① D 窗新來源 `hn_repo_bridge.py`——HN 26h 內 ≥100 分故事，GitHub 連結者對 repo description+topics+homepage 做確定性關鍵字閘，每日上限 3；母體為 0 時拋例外（存在性斷言：HN 每天必有高分故事，0=介面壞了，不回空 list 假裝正常）。② 共用已報導閘：日報＋清倉帳本升為 A/B/C 全窗去重（改版前 A/B 只有 14 天 TTL cache，會重吐清倉 repo）。③ 上限收斂：A/B 各 3、B 帶 500..5000（與 C 刻意重疊防接縫）、來源總量 40→16。④ E 窗記錄端：各窗看到的 repo 星數逐日記 `data/repo_star_history.csv`（保留 60 天、同日 upsert、零額外 API）；吐出端待 ≥2 週資料校準閾值（Phase 2）。⑤ 對帳泛化 `data/discovery_queue_history.csv` 五欄制（date,window,queued,emitted,note），lint 6e 改逐窗判讀＋「連 3 天缺列＝窗死」＋星史檔增長看守。⑥ workflow 指名 commit 補兩個新 csv——並抓到前日埋的字面 `\n` bug（git add 行被寫成單行，雲端會失敗）一併修正。
+
+**首跑實測：** D 窗母體 38 則、吐 1 則（Fable 5.1 發布，HN 1352 分官方網域直收）；GitHub 來源四窗對帳全寫入、星史 197 repo 入檔、inventory 清倉後歸 0、總量 10≤16。迴歸測試 7 案例鎖 Understand-Anything 過閘錨點與對帳語意。pipeline-change-check baseline 已拍（digest 2026-09-01，HEAD 46eef944）；**compare 待下次完整 pipeline 跑完執行**（預期：GitHub gathered 下降、emitted 持平或微升、新增 HN Repo Bridge 來源列）。

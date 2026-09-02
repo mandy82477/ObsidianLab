@@ -91,6 +91,7 @@ slug | 類別 | page路徑 | item_url | item_title
 | 日報 `來源` 前綴 | slug |
 |---|---|
 | Hacker News | `hacker-news` |
+| HN Repo Bridge | `hn-repo-bridge` |
 | Reddit | `reddit` |
 | GitHub Issues | `github-issues` |
 | GitHub、GitHub Search | `github` |

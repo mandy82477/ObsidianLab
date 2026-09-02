@@ -146,6 +146,15 @@
       "curation_mode": "whitelist",
       "notes": "使用者提問通道（2026-09-02 立法）：使用者在對話中點名的事實，經主編以 web 工具查證一手來源後直接沉澱進 wiki，不經日報。歸因 item_url 填查證來源、item_title 填提問一句話。category 掛 official 的理由：入口即主編查證，證據等級等同官方一手（記者通道反而無 web 工具）。pipeline=false：非抓取來源（無 fetch 程式），不受「active 須在 main.py sources」約束。",
       "pipeline": false
+    },
+    {
+      "name": "HN Repo Bridge",
+      "slug": "hn-repo-bridge",
+      "active": true,
+      "category": "community",
+      "score_reliability": "trusted",
+      "curation_mode": "score",
+      "notes": "D 窗（2026-09-03）：HN ≥100 分帶 GitHub 連結的故事，對 repo description/topics 做確定性關鍵字測試後補撈——接住「標題不含 claude 的 in-scope 工具」（Understand-Anything 型漏球）。分數同 hacker-news 的可信度依據。"
     }
   ]
 }

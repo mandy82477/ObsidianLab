@@ -36,8 +36,13 @@ _REPO_SEARCH_SCOPES = [
 
 RISING_WINDOW_DAYS = 90    # A 窗：出生多久內算「新星」
 RISING_MIN_STARS = 100     # A 窗：最低星數（對照互動門檻表「低」檔）
-CROSSING_STAR_RANGE = "500..3000"  # B 窗：穿越帶
+CROSSING_STAR_RANGE = "500..5000"  # B 窗：穿越帶（2026-09-03 上限 3000→5000，與 C 窗
+#   下限 3000 刻意重疊——接壤設計在 repo 跨帶的那幾天恰好誰都排序不到它時會漏，
+#   重疊帶是接縫保險，成本只是既有去重）
 CROSSING_ACTIVE_DAYS = 30  # B 窗：多久內有 push 才算活躍
+AB_WINDOW_CAP = 3          # A/B 窗每日各自硬上限（2026-09-03）：上限的意義是壞掉時
+#   的爆炸半徑——改版前 A/B 滿載可灌 40 則進日報
+SOURCE_TOTAL_CAP = 16      # 本來源總回傳硬上限（官方 releases ＋ 各窗合計）
 
 
 # ── C 窗：存量盤點（2026-08-28 加入）───────────────────────────────────────
@@ -111,16 +116,19 @@ class GitHubReleases(BaseSource):
 
             # ── Community repo search（成長偵測，設計說明見檔頭常數區）──────────
             now = datetime.now(tz=timezone.utc)
+            emitted = _emitted_repo_urls()  # 2026-09-03：升為所有窗的共用已報導閘
+            star_seen: dict[str, int] = {}  # E 窗記錄端：本次各窗看到的 repo 星數
             rising_cutoff = (now - timedelta(days=RISING_WINDOW_DAYS)).strftime("%Y-%m-%d")
             active_cutoff = (now - timedelta(days=CROSSING_ACTIVE_DAYS)).strftime("%Y-%m-%d")
             search_windows = []
             for scope in _REPO_SEARCH_SCOPES:
                 search_windows.append(  # A 新星窗
-                    (f"{scope} created:>{rising_cutoff} stars:>={RISING_MIN_STARS}", "desc"))
+                    ("rising", f"{scope} created:>{rising_cutoff} stars:>={RISING_MIN_STARS}", "desc"))
                 search_windows.append(  # B 穿越窗（升冪取剛越過門檻者）
-                    (f"{scope} stars:{CROSSING_STAR_RANGE} pushed:>{active_cutoff}", "asc"))
+                    ("crossing", f"{scope} stars:{CROSSING_STAR_RANGE} pushed:>{active_cutoff}", "asc"))
 
-            for query, order in search_windows:
+            window_pool: dict[str, list] = {"rising": [], "crossing": []}
+            for window, query, order in search_windows:
                 try:
                     resp = requests.get(
                         "https://api.github.com/search/repositories",
@@ -139,28 +147,51 @@ class GitHubReleases(BaseSource):
                         break
                     resp.raise_for_status()
                     for repo in resp.json().get("items", []):
-                        # published 用「被偵測到的時間」而非 created_at：成長偵測下
-                        # repo 出生可能在數月前，掛舊日期會被日報排序沉底、在補跑
-                        # 模式被 until_dt 上界誤傷；「何時越過門檻被看見」才是這則
-                        # 條目的新聞時間（新生兒偵測時代兩者恰好等價，所以沒暴露）
-                        desc = (repo.get("description") or "")[:300]
-                        items.append(FeedItem(
-                            title=repo["full_name"],
-                            url=repo["html_url"],
-                            source="GitHub Search",
-                            published=now,
-                            score=repo.get("stargazers_count", 0),
-                            score_unit="星",
-                            summary=desc,
-                            category="community",
-                        ))
+                        star_seen[repo["html_url"].rstrip("/")] = repo.get("stargazers_count", 0)
+                        url_key = repo["html_url"].rstrip("/").lower()
+                        # 共用已報導閘：日報＋清倉帳本出現過的不再吐（改版前 A/B 只有
+                        # 14 天 TTL 的 emitted-cache，清倉後的 repo 會被重吐）
+                        if emitted is not None and url_key in emitted:
+                            continue
+                        window_pool[window].append(repo)
                 except Exception as e:
                     logger.warning("GitHub repo search '%s' failed: %s", query, e)
 
-            # C 窗接在截斷之後：它每日至多 INVENTORY_PER_DAY 則，若排在截斷內
-            # 會被 A/B 窗的量洗掉（A/B 兩窗滿載即 48 則 > 上限 40），等於裝了
-            # 偵測器卻讀不到讀數。
-            return items[:MAX_ITEMS_PER_SOURCE * 2] + _inventory_sweep(headers, now)
+            for window, pool in window_pool.items():
+                # 各窗硬上限：rising 依星數降冪取前 N、crossing 依星數升冪取前 N
+                pool.sort(key=lambda r: r.get("stargazers_count", 0),
+                          reverse=(window == "rising"))
+                picked = []
+                seen_urls_local = set()
+                for repo in pool:
+                    if repo["html_url"] in seen_urls_local:
+                        continue
+                    seen_urls_local.add(repo["html_url"])
+                    picked.append(repo)
+                    if len(picked) >= AB_WINDOW_CAP:
+                        break
+                _record_queue(window, queued=len(pool), emitted_n=len(picked), now=now)
+                for repo in picked:
+                    # published 用「被偵測到的時間」而非 created_at：成長偵測下
+                    # repo 出生可能在數月前，掛舊日期會被日報排序沉底、在補跑
+                    # 模式被 until_dt 上界誤傷；「何時越過門檻被看見」才是這則
+                    # 條目的新聞時間（新生兒偵測時代兩者恰好等價，所以沒暴露）
+                    desc = (repo.get("description") or "")[:300]
+                    items.append(FeedItem(
+                        title=repo["full_name"],
+                        url=repo["html_url"],
+                        source="GitHub Search",
+                        published=now,
+                        score=repo.get("stargazers_count", 0),
+                        score_unit="星",
+                        summary=desc,
+                        category="community",
+                    ))
+
+            items = items + _inventory_sweep(headers, now, emitted, star_seen)
+            _record_star_history(star_seen, now)
+            # 總量硬上限：壞掉時的爆炸半徑（改版前為 MAX_ITEMS_PER_SOURCE*2=40）
+            return items[:SOURCE_TOTAL_CAP]
         except Exception as e:
             logger.warning("GitHubReleases.fetch failed: %s", e)
             return []
@@ -203,13 +234,76 @@ def _emitted_repo_urls() -> "set[str] | None":
     return urls
 
 
-def _inventory_sweep(headers: dict, now: datetime) -> list[FeedItem]:
+def _record_queue(window: str, queued: int, emitted_n: int, now: datetime, note: str = "ok") -> None:
+    """發現窗產消對帳（D7 量規）：每窗每日一列，同日 upsert。
+
+    schema：date,window,queued,emitted,note（note 值域 ok|cold_start|disabled|error）。
+    「今天沒有候選」（queued=0 的列）與「今天這個窗沒跑」（整列缺席）必須分得開——
+    lint 6e 以「某窗連 3 天缺列」判窗靜默死亡。
+    """
+    try:
+        hist = NEWS_DIR.parent / "data" / "discovery_queue_history.csv"
+        today = now.strftime("%Y-%m-%d")
+        prefix = f"{today},{window},"
+        if hist.exists():
+            rows = [l for l in hist.read_text(encoding="utf-8").splitlines()
+                    if l and not l.startswith(prefix)]
+        else:
+            rows = ["date,window,queued,emitted,note"]
+        rows.append(f"{today},{window},{queued},{emitted_n},{note}")
+        hist.write_text("\n".join(rows) + "\n", encoding="utf-8")
+    except Exception as e:
+        logger.warning("Discovery queue history write failed (%s): %s", window, e)
+
+
+STAR_HISTORY_RETENTION_DAYS = 60  # E 窗歷史檔保留天數（每日 ~數百列，防無限增長）
+
+
+def _record_star_history(star_seen: "dict[str, int]", now: datetime) -> None:
+    """E 窗記錄端（Phase 1，2026-09-03）：把本次各窗查詢看到的每個 repo 星數記一列。
+
+    資料已在記憶體裡，零額外 API 成本。只記錄、不吐條目——吐出端（星速觸發）
+    待 ≥2 週真實資料校準閾值後另行上線（Phase 2）。schema：date,repo_url,stars，
+    同日同 repo upsert。壞掉時的樣子：本函式失敗只 warning 不中斷抓取；
+    「歷史檔沒在長」由 lint 6e 的產消對帳看守（雲端保存靠 daily-gather 指名 commit）。
+    """
+    if not star_seen:
+        return
+    try:
+        hist = NEWS_DIR.parent / "data" / "repo_star_history.csv"
+        today = now.strftime("%Y-%m-%d")
+        keep_after = (now - timedelta(days=STAR_HISTORY_RETENTION_DAYS)).strftime("%Y-%m-%d")
+        rows = []
+        if hist.exists():
+            for l in hist.read_text(encoding="utf-8").splitlines()[1:]:
+                if not l:
+                    continue
+                parts = l.split(",")
+                d, url = parts[0], parts[1] if len(parts) > 1 else ""
+                if d < keep_after:
+                    continue  # 逾保留期
+                if d == today and url in star_seen:
+                    continue  # 同日同 repo upsert
+                rows.append(l)
+        for url, stars in sorted(star_seen.items()):
+            rows.append(f"{today},{url},{stars}")
+        hist.write_text("date,repo_url,stars\n" + "\n".join(rows) + "\n", encoding="utf-8")
+        logger.info("Star history: recorded %d repos (file now %d rows)", len(star_seen), len(rows))
+    except Exception as e:
+        logger.warning("Star history write failed: %s", e)
+
+
+def _inventory_sweep(headers: dict, now: datetime,
+                     emitted: "set[str] | None" = None,
+                     star_seen: "dict[str, int] | None" = None) -> list[FeedItem]:
     """C 窗：把每條 scope 底下「已成名但本庫從未報導過」的 repo 逐日補進來。
 
     設計說明見檔頭 `_INVENTORY_SCOPES` 常數區。
     """
-    emitted = _emitted_repo_urls()
     if emitted is None:
+        emitted = _emitted_repo_urls()
+    if emitted is None:
+        _record_queue("inventory", 0, 0, now, note="error")
         return []
 
     candidates: dict[str, dict] = {}
@@ -232,7 +326,11 @@ def _inventory_sweep(headers: dict, now: datetime) -> list[FeedItem]:
             resp.raise_for_status()
             for repo in resp.json().get("items", []):
                 url = (repo.get("html_url") or "").rstrip("/")
-                if url and url.lower() not in emitted:
+                if not url:
+                    continue
+                if star_seen is not None:  # E 窗記錄端：C 窗看到的也記
+                    star_seen[url] = repo.get("stargazers_count", 0)
+                if url.lower() not in emitted:
                     candidates[url] = repo
         except Exception as e:
             logger.warning("Inventory sweep '%s' failed: %s", scope, e)
@@ -242,21 +340,10 @@ def _inventory_sweep(headers: dict, now: datetime) -> list[FeedItem]:
     logger.info("Inventory sweep: %d unreported repos in range, emitting %d",
                 len(candidates), len(picked))
 
-    # 產消對帳（2026-09-02）：佇列量寫進歷史檔供 lint 6e 讀取告警。教訓：C 窗上線
-    # 5 天悄悄積到 154 個未報導候選（每日吐 2 ≈ 77 天排空），佇列長度只在上面那行
-    # logger.info——訊號無消費端，與 pending 佇列 19 天 0→51 同病。同日 upsert。
-    try:
-        hist = NEWS_DIR.parent / "data" / "inventory_queue_history.csv"
-        today = now.strftime("%Y-%m-%d")
-        if hist.exists():
-            rows = [l for l in hist.read_text(encoding="utf-8").splitlines()
-                    if l and not l.startswith(today + ",")]
-        else:
-            rows = ["date,unreported,emitted"]
-        rows.append(f"{today},{len(candidates)},{len(picked)}")
-        hist.write_text("\n".join(rows) + "\n", encoding="utf-8")
-    except Exception as e:
-        logger.warning("Inventory queue history write failed: %s", e)
+    # 產消對帳（2026-09-02 建，09-03 泛化為逐窗五欄制）。教訓：C 窗上線 5 天悄悄積
+    # 到 154 個未報導候選（每日吐 2 ≈ 77 天排空），佇列長度只在上面那行 logger.info
+    # ——訊號無消費端，與 pending 佇列 19 天 0→51 同病。
+    _record_queue("inventory", queued=len(candidates), emitted_n=len(picked), now=now)
 
     items = []
     for repo in picked:
