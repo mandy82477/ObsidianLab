@@ -382,7 +382,7 @@ Citation drift 是 LLM wiki 文獻點名的最嚴重失效模式：**claim 被�
 - 輸出各來源 7 天貢獻統計表，供判斷來源價值
 發現 ⚠️ 時回報使用者，不自行修改管線程式。
 
-**發現窗產消對帳 `[加入: 2026-09-02，泛化: 2026-09-03]`：** 讀 `data/discovery_queue_history.csv`（各發現窗每日抓取時寫入，schema `date,window,queued,emitted,note`；window 現值 `rising`／`crossing`／`inventory`／`hn_bridge`，note 值域 `ok|cold_start|disabled|error`）。**逐 window 判讀**：
+**發現窗產消對帳 `[加入: 2026-09-02，泛化: 2026-09-03]`：** 讀 `data/discovery_queue_history.csv`（各發現窗每日抓取時寫入，schema `date,window,queued,emitted,note`；window 現值 `rising`／`crossing`／`inventory`／`hn_bridge`，note 值域 `ok|cold_start|disabled|retired|error`；`retired`＝該類已判定結構性不適任、刻意撤下，**不得判為窗死**）。**逐 window 判讀**：
 - 某 window 佇列量（queued−emitted 積壓）連兩週上升、或排空預估 > 30 天 → ⚠️ 回報使用者（提高該窗配額／一次清倉擇一），不得只抄數字
 - **某 window 連 3 天完全缺列 → ⚠️「該窗未執行或靜默死亡，查 daily gather」**——「今天沒有候選」（queued=0 的列）與「窗沒跑」（整列缺席）必須分得開
 - 檔案缺失或全檔最新日期距今 > 3 天 → ⚠️「對帳未寫入，查 daily gather 是否失敗」——**掃描失敗不得當成 0**

@@ -1,5 +1,5 @@
 {
-  "_doc": "興趣類別 skill 榜（2026-09-03 使用者裁決）：不等熱門的來，每天對指定類別去 GitHub 搜「這類現在誰最熱、本週誰新竄升」。由 scripts/skill_interest_snapshot.py 讀取，輸出覆寫式快照頁 wiki/topics/skill-interest-watch.md，不進日報。A 組按 coding-workflow-guide 九段流程分類（每類連頁＋「第 N 段」提示，連頁不連錨——段標題帶會變的狀態標記，錨定必腐化），B 組是治理型需求（管 agent 的）。設計依據見 wiki/log.md 2026-09-03。",
+  "_doc": "興趣類別 skill 榜（2026-09-03 使用者裁決）：不等熱門的來，每天對指定類別去 GitHub 搜「這類現在誰最熱、本週誰新竄升」。由 scripts/skill_interest_snapshot.py 讀取，輸出覆寫式快照頁 wiki/topics/skill-interest-watch.md，不進日報。A 組按 coding-workflow-guide 九段流程分類（每類連頁＋「第 N 段」提示，連頁不連錨——段標題帶會變的狀態標記，錨定必腐化），B 組是治理型需求（管 agent 的）。設計依據見 wiki/log.md 2026-09-03。 8 類上榜、4 類 retired（結構性不適任）改印指路段。",
   "_query_rules": "抄 Topic Watch 紀律：新 query 上線前必實測命中率（--probe），0 命中或全雜訊者不上線、記入 _rejected。2026-09-03 兩輪校準（24＋14 條）得出的 GitHub Search 行為：①多組 (A OR B) 括號在 in:description 下幾乎等於「任一詞命中」，只要含 agent/skill/claude 等通用詞就被同一批巨頭（ECC、karpathy-skills、claude-code 本體、system-prompts、gstack）洗版——這種 query 沒有類別辨識力，等於沒問；②有效的是「單一類別專屬名詞片語」（\"knowledge graph\"、\"spec-driven\"、\"agent teams\"、adversarial review），頂多再加一個限定詞；③in:name 配通用詞同樣被 awesome-* 清單洗版。找不到有辨識力 query 的類別誠實標 status=needs_calibration、queries 留空，頁面印 ⚠️，不硬塞寬 query 上榜。min_stars 是雜訊地板不是品質訊號。",
   "min_stars": 100,
   "top_n": 5,
@@ -15,7 +15,9 @@
         "\"CLAUDE.md\" in:name,description"
       ],
       "why": "09-03 校準：命中 karpathy-skills、claude-code-system-prompts、claude-token-efficient、raptor、my-claude-code-setup——切題。",
-      "guide_section": "第 1 段"
+      "guide_section": "第 1 段",
+      "tools_symptom": null,
+      "tools_note": null
     },
     {
       "group": "A",
@@ -26,7 +28,9 @@
         "\"knowledge graph\" (codebase OR code) in:description"
       ],
       "why": "09-03 校準：前 5 為 graphify、Understand-Anything、codegraph、GitNexus、codebase-memory-mcp——全數切題，本榜最乾淨的一類。",
-      "guide_section": "第 2a 段"
+      "guide_section": "第 2a 段",
+      "tools_symptom": null,
+      "tools_note": null
     },
     {
       "group": "A",
@@ -38,16 +42,20 @@
         "\"plan mode\" \"claude code\" in:description"
       ],
       "why": "09-03 校準：spec-kit、OpenSpec、get-shit-done、agent-os 切題；plan mode 一條僅 3 命中但相關，保留補位。",
-      "guide_section": "第 3 段"
+      "guide_section": "第 3 段",
+      "tools_symptom": null,
+      "tools_note": null
     },
     {
       "group": "A",
       "slug": "implementation-guard",
       "name": "實作期攔錯（hook／lint／型別）",
-      "status": "needs_calibration",
+      "status": "retired",
       "queries": [],
-      "why": "09-03 兩輪皆無辨識力：hooks 配 claude 被本體與 awesome 清單洗版；PreToolUse 專有詞 0 命中；lint \"coding agent\" 撈到 harness 本體。待試 topic: 限定或 SKILL.md 存在性探測。",
-      "guide_section": "第 4 段"
+      "why": "09-03 兩輪皆無辨識力：hooks 配 claude 被本體與 awesome 清單洗版；PreToolUse 專有詞 0 命中；lint \"coding agent\" 撈到 harness 本體。待試 topic: 限定或 SKILL.md 存在性探測。 → 2026-09-03 判定結構性不適任（感測器裝錯層：治理型需求是讀者講痛點的語言，在 HN／dev.to 全文不在 repo 描述），從榜撤下、改由 tools 決策表承接，見 log 當日 Query。",
+      "guide_section": "第 4 段",
+      "tools_symptom": "CLAUDE.md 寫了它不聽",
+      "tools_note": null
     },
     {
       "group": "A",
@@ -59,25 +67,31 @@
         "adversarial review agent in:description"
       ],
       "why": "09-03 校準：code-review-graph、open-code-review、reviewdog 切題（gitea 為雜訊，接受）；adversarial 一條 5 命中含 claude-forge、flow-next，切題。",
-      "guide_section": "第 5 段"
+      "guide_section": "第 5 段",
+      "tools_symptom": null,
+      "tools_note": null
     },
     {
       "group": "A",
       "slug": "testing-verification",
       "name": "測試與驗證（含 evidence-gated done）",
-      "status": "needs_calibration",
+      "status": "retired",
       "queries": [],
-      "why": "09-03 兩輪皆無辨識力：test/tdd 配 agent 被巨頭洗版；verify/evidence 專有詞 0 命中。此類需求（誠實驗證）在 GitHub 描述層幾乎無專屬詞彙，可能得靠 patterns 頁的社群節點而非搜尋。",
-      "guide_section": "第 6 段"
+      "why": "09-03 兩輪皆無辨識力：test/tdd 配 agent 被巨頭洗版；verify/evidence 專有詞 0 命中。此類需求（誠實驗證）在 GitHub 描述層幾乎無專屬詞彙，可能得靠 patterns 頁的社群節點而非搜尋。 → 2026-09-03 判定結構性不適任（感測器裝錯層：治理型需求是讀者講痛點的語言，在 HN／dev.to 全文不在 repo 描述），從榜撤下、改由 tools 決策表承接，見 log 當日 Query。",
+      "guide_section": "第 6 段",
+      "tools_symptom": "它說做完了，但根本沒做",
+      "tools_note": null
     },
     {
       "group": "A",
       "slug": "debugging",
       "name": "除錯與靜默失敗偵測",
-      "status": "needs_calibration",
+      "status": "retired",
       "queries": [],
-      "why": "09-03 兩輪皆無辨識力：debug 配 claude in:name 0 命中；\"silent failure\" 僅 2 命中且一則為監控工具；observability 被巨頭洗版。",
-      "guide_section": "第 9 段"
+      "why": "09-03 兩輪皆無辨識力：debug 配 claude in:name 0 命中；\"silent failure\" 僅 2 命中且一則為監控工具；observability 被巨頭洗版。 → 2026-09-03 判定結構性不適任（感測器裝錯層：治理型需求是讀者講痛點的語言，在 HN／dev.to 全文不在 repo 描述），從榜撤下、改由 tools 決策表承接，見 log 當日 Query。",
+      "guide_section": "第 9 段",
+      "tools_symptom": null,
+      "tools_note": "候選症狀「感覺變笨，想先量測歸因」掛在 [[topics/code-quality-decline]]，決策表尚未開列（≥2 頁需求證據門檻）"
     },
     {
       "group": "A",
@@ -88,7 +102,9 @@
         "agent rules (audit OR validate OR drift) in:description"
       ],
       "why": "09-03 校準：steipete/agent-rules、intellectronica/ruler、awslabs/aidlc-workflows 切題。",
-      "guide_section": "第 8 段"
+      "guide_section": "第 8 段",
+      "tools_symptom": null,
+      "tools_note": null
     },
     {
       "group": "B",
@@ -99,16 +115,20 @@
         "(\"agent teams\" OR \"parallel agents\") in:description"
       ],
       "why": "09-03 校準：orca、oh-my-codex、harness、ccpm 切題；orchestrat* 寬 query 被巨頭洗版已棄。",
-      "guide_section": null
+      "guide_section": null,
+      "tools_symptom": "一堆 agent 在跑，看不到誰卡住",
+      "tools_note": null
     },
     {
       "group": "B",
       "slug": "git-hygiene",
       "name": "git／commit 衛生自動化",
-      "status": "needs_calibration",
+      "status": "retired",
       "queries": [],
-      "why": "09-03 兩輪皆無辨識力：commit/git 配 claude 被巨頭與 awesome-claude-skills 清單洗版；pre-commit 撈到傳統非 AI 工具；\"commit message\" 專有詞 0 命中。",
-      "guide_section": null
+      "why": "09-03 兩輪皆無辨識力：commit/git 配 claude 被巨頭與 awesome-claude-skills 清單洗版；pre-commit 撈到傳統非 AI 工具；\"commit message\" 專有詞 0 命中。 → 2026-09-03 判定結構性不適任（感測器裝錯層：治理型需求是讀者講痛點的語言，在 HN／dev.to 全文不在 repo 描述），從榜撤下、改由 tools 決策表承接，見 log 當日 Query。",
+      "guide_section": null,
+      "tools_symptom": "多個 agent 在同一 repo 互相覆蓋",
+      "tools_note": null
     },
     {
       "group": "B",
@@ -119,7 +139,9 @@
         "documentation (agent OR skill) claude in:description"
       ],
       "why": "09-03 校準：Skill_Seekers、DevDocs、notebooklm-mcp、pg-aiguide 切題；\"knowledge base\" 寬 query 被巨頭洗版已棄，llm-wiki 專有詞 0 命中。",
-      "guide_section": null
+      "guide_section": null,
+      "tools_symptom": null,
+      "tools_note": null
     },
     {
       "group": "B",
@@ -130,7 +152,9 @@
         "\"news aggregator\" (llm OR claude OR agent) in:description"
       ],
       "why": "09-03 校準：16 命中，auto-news、ai-news-aggregator 切題、FreshRSS 為傳統工具雜訊；此類在 GitHub 本就稀薄，命中弱屬預期。",
-      "guide_section": null
+      "guide_section": null,
+      "tools_symptom": null,
+      "tools_note": null
     }
   ],
   "_rejected": [
@@ -164,5 +188,6 @@
       "date": "2026-09-03",
       "reason": "回傳 pre-commit 傳統生態（非 AI）。"
     }
-  ]
+  ],
+  "_bridge": "單向橋（2026-09-03 方案 D）：榜（感測層，機器）→ tools（判斷層，人工）。每類 tools_symptom 為決策表症狀句原文，render 印「本庫判斷 →」行，check_tools_page.check_spokes 對帳（改壞會紅）；tools_note 為無對應列時的指路文字。機器唯讀 tools 頁（🧭 標記＝該 repo 已在 tools 頁），人不抄榜；retired 類不得為湊數重上線。"
 }

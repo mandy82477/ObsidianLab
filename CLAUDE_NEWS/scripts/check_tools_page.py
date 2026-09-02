@@ -5,7 +5,7 @@
 新增了兩種對讀者的承諾，各配一條機械檢查（reviewer 審查結論：承諾
 不配偵測器就是本庫病史的複製——規則有了、執行點沒有）：
 
-  1. 數字必帶日期：決策表與「推薦細節」「不綁症狀的精選」區裡含
+  1. 數字必帶日期：決策表與「推薦細節」「Skills 速查」區裡含
      量化宣稱（%、倍、星數、token 數）的行，同行必須有日期
      （YYYY-MM-DD 或 MM-DD）。證據值是收錄當時的快照，沒有日期
      的快照半年後仍讀作現況——這正是 pricing 頁「資料截至」紀律
@@ -37,9 +37,10 @@ def check(text: str):
     fails = []
 
     # ── 1. 數字必帶日期（決策表＋細節＋精選；目錄沿用舊制不查，待後續波次遷移）──
-    scope = _section(text, "我卡在這裡") + _section(text, "不綁症狀的精選") + _section(text, "🧩 Skills 速查（依 coding 用途分類）")
+    # 「不綁症狀的精選」已於 2026-09-03 退役（規模型清單的家改為 skill-interest-watch 機器榜）
+    scope = _section(text, "我卡在這裡") + _section(text, "🧩 Skills 速查（依 coding 用途分類）")
     offset_lines = []
-    for name in ("我卡在這裡", "不綁症狀的精選", "🧩 Skills 速查（依 coding 用途分類）"):
+    for name in ("我卡在這裡", "🧩 Skills 速查（依 coding 用途分類）"):
         m = re.search(rf"^## {re.escape(name)}", text, re.M)
         if m:
             offset_lines.append((name, text[: m.start()].count("\n") + 1))
@@ -99,6 +100,21 @@ def check_spokes(text: str, wiki_dir: Path):
                     continue
                 if q not in symptoms:
                     fails.append(f"spoke 引用失效 {f.name}:{n}：「{q}」不在決策表症狀欄")
+
+    # 榜→決策表的單向橋（2026-09-03 方案 D）：skill_interest_watch.json 每類的
+    # tools_symptom 是決策表症狀句原文，render 印「本庫判斷 →」行。症狀列改寫時
+    # 這條橋會靜默斷掉——與 🧰 行同病，所以同一函式對帳（改壞驗紅）。
+    cfg_path = wiki_dir.parent / "data" / "skill_interest_watch.json"
+    if cfg_path.exists():
+        import json
+        try:
+            cfg = json.loads(cfg_path.read_text(encoding="utf-8"))
+        except json.JSONDecodeError as e:
+            return fails + [f"skill_interest_watch.json 無法解析：{e}"]
+        for cat in cfg.get("categories", []):
+            sym = cat.get("tools_symptom")
+            if sym and sym not in symptoms:
+                fails.append(f"榜橋引用失效 skill_interest_watch.json[{cat['slug']}]：「{sym}」不在決策表症狀欄")
     return fails
 
 

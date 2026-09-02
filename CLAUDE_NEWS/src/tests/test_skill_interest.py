@@ -26,14 +26,42 @@ class TestConfigContract(unittest.TestCase):
         self.assertEqual(len(slugs), len(set(slugs)))
         self.assertTrue(all(c["group"] in ("A", "B") for c in self.cfg["categories"]))
 
-    def test_needs_calibration_has_no_queries_and_why(self):
-        """誠實標未校準的類別：queries 必空、why 必說明——不得偷塞寬 query。"""
+    def test_retired_has_no_queries_and_bridge(self):
+        """retired 類別：queries 必空、why 必說明、且必有指路（tools_symptom 或 tools_note）——
+        不得偷塞寬 query 重上線，也不得撤下後讓需求無處可去。"""
         for c in self.cfg["categories"]:
-            if c.get("status") == "needs_calibration":
+            if c.get("status") == "retired":
                 self.assertEqual(c["queries"], [], c["slug"])
                 self.assertTrue(c.get("why"), c["slug"])
+                self.assertTrue(c.get("tools_symptom") or c.get("tools_note"), f"{c['slug']} 撤下卻無指路")
             else:
                 self.assertTrue(c["queries"], f"{c['slug']} active 卻無 query")
+
+    def test_bridge_symptoms_exist_in_decision_table(self):
+        """單向橋對帳：tools_symptom 必須是決策表症狀句原文（check_spokes 同源）。"""
+        import importlib.util as iu
+        spec2 = iu.spec_from_file_location("ctp", ROOT / "scripts" / "check_tools_page.py")
+        ctp = iu.module_from_spec(spec2); spec2.loader.exec_module(ctp)
+        text = ctp.PAGE.read_text(encoding="utf-8")
+        fails = [f for f in ctp.check_spokes(text, ctp.PAGE.parent.parent) if "榜橋" in f]
+        self.assertEqual(fails, [])
+        # 改壞驗紅：塞一個不存在的症狀句，check_spokes 必須抓到
+        bad = json.loads(CONFIG.read_text(encoding="utf-8"))
+        bad["categories"][0]["tools_symptom"] = "這句不在決策表"
+        tmp = ROOT / "data" / "_tmp_siw.json"
+        tmp.write_text(json.dumps(bad, ensure_ascii=False), encoding="utf-8")
+        try:
+            wiki_dir = ROOT / "wiki"
+            import shutil
+            backup = CONFIG.read_text(encoding="utf-8")
+            CONFIG.write_text(tmp.read_text(encoding="utf-8"), encoding="utf-8")
+            try:
+                fails = [f for f in ctp.check_spokes(text, wiki_dir) if "榜橋" in f]
+                self.assertTrue(fails, "塞錯症狀句 check_spokes 未轉紅")
+            finally:
+                CONFIG.write_text(backup, encoding="utf-8")
+        finally:
+            tmp.unlink(missing_ok=True)
 
     def test_active_queries_are_scoped(self):
         """每條 query 必含 in: 或 topic: 限定，避免 README 全文命中。"""
@@ -64,7 +92,9 @@ class TestRender(unittest.TestCase):
         finally:
             sis.STAR_HISTORY = orig
         self.assertIn("冷啟動", md)                       # 星史不足 → 明寫，不留白
-        self.assertIn("尚未校準出有辨識力", md)             # 未校準類別 → ⚠️ 不裝正常
+        self.assertIn("無法用 GitHub 辨識的需求", md)       # retired 類別 → 指路段，不掛空榜
+        self.assertIn("本庫判斷 →", md)                    # 每類單向橋
+        self.assertNotIn("### 測試與驗證", md)              # retired 類不印空節
         self.assertIn("| [github/spec-kit]", md)
         self.assertIn("Spec-Driven ／ Development", md)   # 儲存格 | 轉義
         self.assertIn("**最後更新：** 2026-09-03", md)

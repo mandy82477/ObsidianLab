@@ -25,11 +25,11 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 **領域：** 🌐 社群
 **更新頻率：** 🗓️ 週更（每週策展一次；更新日期停留數天屬正常節奏）
 **開始日期：** 2026-04-25
-**最後更新：** 2026-09-02
+**最後更新：** 2026-09-03
 **最後新聞更新：** 2026-09-02
 
-> **改版**（2026-09-02）
-> 本頁重組為「症狀 → 首選」決策表：8 條痛點各給一個首選工具、一條改用分界、一個帶日期的證據等級。原「痛點洞察＋值得關注」兩層併入決策表與細節區；工具目錄照舊（沿用原採用符號，滾動封存為後續改版）。上輪（08-24～08-30）新增 8 筆工具已入目錄。
+> **最新改版**（2026-09-03）
+> 「不綁症狀的精選」區退役——規模型清單（誰大、誰在漲）的家改為 [[topics/skill-interest-watch]]（機器每日榜，按開發流程段分類）；本頁只留**判斷**：症狀決策表、推薦細節、Skills 速查、工具目錄。榜→本頁單向連結（榜上每類指回決策表對應症狀），本頁不抄榜。
 
 ---
 
@@ -77,19 +77,6 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 
 ---
 
-## 不綁症狀的精選
-
-上表以外、因規模或門檻值得單獨認識的條目：
-
-| 條目 | 證據 | 一句話 |
-|---|---|---|
-| [**machine0**](https://machine0.io) | 🟡（08-18，Launch HN 78） | 持久化 CPU/GPU 雲端 VM 供長時間自主 agent 運算，$0.013/hr 起 |
-| [**internet-court-skill**](https://github.com/internet-court/internet-court-skill) | ⚪（08-18，3,793 星） | agent 對 agent 商務信任層 skill：委任權限、支付、託管與爭議解決 |
-| [**x1xhlol/system-prompts…**](https://github.com/x1xhlol/system-prompts-and-models-of-ai-tools) | ⚪（08-29，14.3 萬星） | 數十款 AI 編碼工具的系統提示詞彙整（靜態參考資源） |
-| [**Shubhamsaboo/awesome-llm-apps**](https://github.com/Shubhamsaboo/awesome-llm-apps) | ⚪（08-30，13.5 萬星） | 百餘款 Agent／Skills／RAG 開源應用清單（靜態參考資源） |
-
----
-
 ## 🧩 Skills 速查（依 coding 用途分類）
 
 社群 Agent Skills 的用途索引（**官方** skill 另有兩條軸：按工程流程階段與按產出物格式選用，見 [[topics/coding-workflow-guide]]）。安裝多為一行（`/plugin` 或 `npx skills add`），隨時可拔。
@@ -128,7 +115,7 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 | [**Shortcuts Playground**](https://www.macstories.net/stories/introducing-shortcuts-playground/) | 🟡（05-23） | 自然語言生成 Apple Shortcuts |
 | [**l3a0/claude-plugins**](https://github.com/l3a0/claude-plugins) | 🟡（08-24，HN 45） | OCR 復原 Kindle 被限制匯出的畫線筆記 |
 
-> skill 分享基建（Sx 2.0）與彙整清單（awesome-llm-apps）不入本節——前者見工具目錄，後者見「不綁症狀的精選」。
+> skill 分享基建（Sx 2.0）與彙整清單（awesome-llm-apps）不入本節——前者見工具目錄，後者這類「規模大但不對應症狀」的條目見 [[topics/skill-interest-watch]]（機器榜）。本節每組 ≤ 5 列：超過就汰除證據最弱者，不往下加——避免長成榜的手抄本。
 
 ---
 

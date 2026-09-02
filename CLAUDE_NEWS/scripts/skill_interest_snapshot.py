@@ -115,11 +115,29 @@ def collect(cfg: dict, probe: bool = False) -> dict:
     return out
 
 
+TOOLS_PAGE = ROOT / "wiki" / "topics" / "community-tech-tools.md"
+TOOLS_LINK = "topics/community-tech-tools"
+
+
+def judged_repo_urls() -> set[str]:
+    """tools 頁（判斷層）出現過的 GitHub repo URL——機器唯讀人工頁，只用來標 🧭。"""
+    try:
+        text = TOOLS_PAGE.read_text(encoding="utf-8")
+    except OSError:
+        return set()
+    import re
+    return {m.group(0).rstrip("/").lower()
+            for m in re.finditer(r"https://github\.com/[\w.\-]+/[\w.\-]+", text)}
+
+
 def render(cfg: dict, data: dict, now: datetime) -> str:
     today = now.strftime("%Y-%m-%d")
     before, span = stars_days_ago(cfg["rise_window_days"])
     cold = span < cfg["rise_window_days"]
     emitted = _emitted_repo_urls() or set()
+    judged = judged_repo_urls()
+    active = [c for c in cfg["categories"] if c.get("status") != "retired" and c.get("queries")]
+    retired = [c for c in cfg["categories"] if c.get("status") == "retired"]
     lines = [
         "# 興趣類別 skill 榜",
         "",
@@ -131,10 +149,10 @@ def render(cfg: dict, data: dict, now: datetime) -> str:
         f"**最後新聞更新：** {today}",
         "",
         f"> **本頁是什麼**（{today} 快照）",
-        "> 針對讀者指定的 12 個類別，每天到 GitHub 問「這一類現在誰最熱、本週誰竄上來」。"
-        "熱度榜只回答「大家在看什麼」，這頁回答「**我這幾類**現在有什麼」——治理型需求"
-        "（agent 誠實、派工、規則不腐爛）在生態裡是少數派，上不了熱度榜，只能定向搜。"
-        "**星數是規模不是品質**：本頁不做推薦，推薦見 [[topics/community-tech-tools]]「我卡在這裡」。",
+        f"> 針對讀者指定的類別（{len(active)} 類可用 GitHub 辨識），每天到 GitHub 問「這一類現在誰最熱、本週誰竄上來」。"
+        "本頁是**感測層**（機器、規模、零判斷）；**判斷層**在 [[topics/community-tech-tools]]——"
+        "該裝哪個、證據多強、為什麼。每類末的「本庫判斷 →」是唯一的橋（單向：榜連 tools，tools 不抄榜）。"
+        "**星數是規模不是品質**。",
         "",
         "---",
         "",
@@ -145,7 +163,8 @@ def render(cfg: dict, data: dict, now: datetime) -> str:
         "| 目前前 5 | 該類別 query 命中的 repo 依星數排序，星數為快照當日值 |",
         "| 本週竄升 | 七日內星數增量 ≥ "
         f"{cfg['rise_min_delta']:,} 者，依增量排序；資料來自各發現窗每日記錄的星史檔 |",
-        "| 📰 | 本庫日報或清倉帳本已報導過（點連結可查 wiki 有無收錄） |",
+        "| 📰 | 本庫日報或清倉帳本已報導過 |",
+        "| 🧭 | 本庫已有判斷——該 repo 出現在 [[topics/community-tech-tools]]（決策表／速查／目錄） |",
         "",
     ]
     if cold:
@@ -153,8 +172,15 @@ def render(cfg: dict, data: dict, now: datetime) -> str:
                   "「本週竄升」欄尚在冷啟動，本週先只看「目前前 5」。", ""]
     groups = {"A": "## A. 開發實務（按流程階段，對應 [[topics/coding-workflow-guide]]）",
               "B": "## B. 治理（管 agent 的需求）"}
+    def bridge_line(cat: dict) -> str:
+        if cat.get("tools_symptom"):
+            return f"本庫判斷 → 見 [[{TOOLS_LINK}]]「我卡在這裡」的「{cat['tools_symptom']}」列"
+        if cat.get("tools_note"):
+            return f"本庫判斷 → {cat['tools_note']}"
+        return f"本庫判斷 → 見 [[{TOOLS_LINK}]]（🧭 者已有證據等級與一句為什麼）"
+
     current_group = None
-    for cat in cfg["categories"]:
+    for cat in active:
         if cat["group"] != current_group:
             current_group = cat["group"]
             lines += [groups[current_group], ""]
@@ -164,11 +190,6 @@ def render(cfg: dict, data: dict, now: datetime) -> str:
         anchor = f"（對應 [[{GUIDE}]] {cat['guide_section']}）" if cat.get("guide_section") else ""
         lines += [f"### {cat['name']}{anchor}", ""]
         hits = [n for _, n in d["per_query"]]
-        if cat.get("status") == "needs_calibration" or not cat.get("queries"):
-            lines += ["> ⚠️ 尚未校準出有辨識力的 GitHub query（兩輪實測皆被巨頭洗版或 0 命中，"
-                      "見設定檔 `why`）——**本類暫無榜，不代表沒有工具**；需求真實存在，"
-                      "先看 [[topics/community-tech-patterns]] 的社群節點。", ""]
-            continue
         if not repos:
             lines += ["> ⚠️ 本類別本次零命中"
                       + ("（query 失敗）" if any(n < 0 for n in hits) else "（query 需校準）")
@@ -178,7 +199,7 @@ def render(cfg: dict, data: dict, now: datetime) -> str:
         lines += ["| 目前前 5 | ★ | 一句話 |", "|---|---|---|"]
         for r in top:
             url = r["html_url"].rstrip("/")
-            mark = " 📰" if url.lower() in emitted else ""
+            mark = (" 🧭" if url.lower() in judged else "") + (" 📰" if url.lower() in emitted else "")
             desc = (r.get("description") or "").replace("|", "／")[:90]
             lines.append(f"| [{r['full_name']}]({url}){mark} | {r['stargazers_count']:,} | {desc} |")
         risers = []
@@ -194,6 +215,20 @@ def render(cfg: dict, data: dict, now: datetime) -> str:
                 lines.append(f"| [{r['full_name']}]({r['html_url']}) | +{delta:,} | {r['stargazers_count']:,} |")
         elif not cold:
             lines += ["", f"本週無 ≥{cfg['rise_min_delta']:,} 星的竄升者。"]
+        lines += ["", bridge_line(cat), ""]
+    if retired:
+        lines += [
+            "## 無法用 GitHub 辨識的需求（指路）",
+            "",
+            "以下需求兩輪 query 校準皆被巨頭洗版或 0 命中——不是還沒調好，是**感測器裝錯層**："
+            "治理型需求是讀者講痛點的語言（「它說做完了但沒做」），在 HN／dev.to 全文，不在 repo 描述。"
+            "本頁不掛空榜；答案在判斷層：",
+            "",
+            "| 需求 | 本庫判斷 |",
+            "|---|---|",
+        ]
+        for cat in retired:
+            lines.append(f"| {cat['name']} | {bridge_line(cat).replace('本庫判斷 → ', '')} |")
         lines.append("")
     lines += [
         "---",
@@ -229,7 +264,9 @@ def main() -> int:
     for cat in cfg["categories"]:
         d = data[cat["slug"]]
         failed = any(n < 0 for _, n in d["per_query"])
-        if cat.get("status") == "needs_calibration" or not cat.get("queries"):
+        if cat.get("status") == "retired":
+            note = "retired"  # 刻意撤下，lint 6e 不得判為窗死
+        elif not cat.get("queries"):
             note = "disabled"
         elif failed and not d["repos"]:
             note = "error"

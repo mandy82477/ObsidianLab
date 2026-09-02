@@ -781,7 +781,7 @@ window.WIKI_DATA = {
       "pill": "active",
       "firstSeen": "",
       "startDate": "2026-04-25",
-      "lastUpdated": "2026-09-02",
+      "lastUpdated": "2026-09-03",
       "lastNewsUpdate": "2026-09-02",
       "updateFreq": "🗓️ 週更（每週策展一次；更新日期停留數天屬正常節奏）",
       "summary": "**我卡住了，社群有什麼能救？** 本頁把社群工具依「症狀」排列，每個症狀給一個首選、一條改用分界、一個帶日期的證據等級。 按開發流程階段找官方做法見 coding-workflow-guide；做法背後的機制與實測見 community-tech-patterns；概念辯論見 community-tech-discu…",
@@ -2013,7 +2013,7 @@ window.WIKI_DATA = {
       "lastUpdated": "2026-09-02",
       "lastNewsUpdate": "2026-09-02",
       "updateFreq": "🗓️ 每日快照（機器產出；「本週竄升」以七日星數差計）",
-      "summary": "針對讀者指定的 12 個類別，每天到 GitHub 問「這一類現在誰最熱、本週誰竄上來」。熱度榜只回答「大家在看什麼」，這頁回答「我這幾類現在有什麼」——治理型需求（agent 誠實、派工、規則不腐爛）在生態裡是少數派，上不了熱度榜，只能定向搜。星數是規模不是品質：本頁不做推薦，推薦見 community-tech-t…",
+      "summary": "針對讀者指定的類別（8 類可用 GitHub 辨識），每天到 GitHub 問「這一類現在誰最熱、本週誰竄上來」。本頁是感測層（機器、規模、零判斷）；判斷層在 community-tech-tools——該裝哪個、證據多強、為什麼。每類末的「本庫判斷 →」是唯一的橋（單向：榜連 tools，tools 不抄榜）。星數是…",
       "latestHeadline": ""
     }
   ],

@@ -93,8 +93,8 @@
 | [[topics/anthropic-commitments]] | 🏛️ 政策/安全 | ongoing | 承諾兌現追蹤：「Anthropic 說過要做的事做了嗎」——官方承諾/拒絕建檔，狀態變化時由每日 ingest 更新 |
 | [[topics/code-quality-decline]] | 🌐 社群 | ongoing | Claude Code 效能退步事件，Anthropic 已承認工程疏失 |
 | [[topics/competitor-landscape]] | 💼 商業 | ongoing | Google 祕密開發競品 + OpenCode 157K 分流 + DeepSeek clone 低成本替代生態 |
-| [[topics/community-tech-tools]] | 🌐 社群 | ongoing | 🗓️ 週更策展：社群工具目錄——58 工具的活躍度、採用狀態追蹤（每日 ingest 不更新） |
-| [[topics/skill-interest-watch]] | 🌐 社群 | ongoing | 🗓️ 每日快照 興趣類別 skill 榜：12 個指定類別（8 段開發流程＋4 類治理需求）到 GitHub 問「這一類現在誰最熱、本週誰竄升」；機器產出、星數是規模不是品質，推薦仍看社群工具目錄 |
+| [[topics/community-tech-tools]] | 🌐 社群 | ongoing | 🗓️ 週更策展：社群工具目錄——91 工具的活躍度、採用狀態追蹤（每日 ingest 不更新） |
+| [[topics/skill-interest-watch]] | 🌐 社群 | ongoing | 🗓️ 每日快照 興趣類別 skill 榜：8 個可用 GitHub 辨識的類別（開發流程段＋治理）每日問「這一類現在誰最熱、本週誰竄升」；4 類治理需求無法用星數找、指路到社群工具目錄決策表；機器產出、星數是規模不是品質 |
 | [[topics/community-tech-patterns]] | 🌐 社群 | ongoing | 社群實戰模式庫（日更）：multi-agent、skills 設計、工作流最佳實踐的可複用做法 |
 | [[topics/community-large-codebase-workflow]] | 🌐 社群 | ongoing | 🗓️ 週更 大型 codebase 規模化開發主線——每條線先給「現在的答案」，再列子問題表；節點證據在模式庫 |
 | [[topics/community-pattern-trends]] | 🌐 社群 | ongoing | 🗓️ 週更：社群趨勢觀察——從模式庫萃取的宏觀層，7 條成形趨勢的熱度曲線 + 對現有設計的啟示 |

@@ -5315,3 +5315,9 @@ GH Actions 抓料排 10:23 UTC，到 14:45 UTC 仍未落地（+4.4 小時且持�
 **是什麼：** 熱度管線答「大家在看什麼」（推播），使用者要的是「我這幾類現在誰最熱、本週誰竄升」（拉取）——治理型需求在生態裡是少數派、上不了熱度榜，只能定向搜。新頁 `wiki/topics/skill-interest-watch.md` 由 `scripts/skill_interest_snapshot.py` 每日（daily-gather workflow，continue-on-error）整頁覆寫；設定 `data/skill_interest_watch.json`；A 組 8 類按 guide 九段流程（連頁＋「第 N 段」提示，**連頁不連錨**——段標題帶 [社群面待補] 這類會變的標記，首版錨定即建置 8 個 WARN，當場改掉）、B 組 4 類治理。E 窗星史檔第一個消費者（「本週竄升」＝七日星數差，冷啟動明寫）；每類寫 discovery 對帳（window=interest:<slug>），lint 6e 逐窗看守。index 目錄列＋💻 入口列、devpractice 週彙整讀本頁竄升欄、社群 lint 規則明訂機器頁不手改。
 
 **query 校準（兩輪 38 條實測）的發現：** GitHub Search 多組 (A OR B) 括號在 in:description 下幾乎等於「任一詞命中」，含 agent/skill/claude 等通用詞即被同一批巨頭（ECC、karpathy-skills、claude-code 本體、system-prompts、gstack）洗版——6 類的首版 query 全部回傳同一前 5，等於沒問。有效的只有「單一類別專屬名詞片語」。**8 類上線、4 類（實作攔錯／測試驗證／除錯／git 衛生）兩輪皆無辨識力 → 誠實標 needs_calibration、頁面印 ⚠️ 不硬塞**；已登 workaround-register 複查（試 topic: 限定、SKILL.md 存在性探測、或改由 patterns 頁社群節點餵）。首跑：222 repo 入榜、星史 410 列。
+
+## 2026-09-03 Query：「興趣表跟 tools 表有點重疊」→ fable 重設計，方案 D 第一波
+
+**點出什麼：** 使用者要重想兩頁目的（含移除選項）。派 fable 從零設計，結論：兩頁答不同問題——tools「我卡住了該裝哪個」（決策，需證據與分界）、榜「我這幾類這週有什麼沒看到」（感知，需每天掃不漏）——值得各留一頁；但重疊真實存在且**位置具體**：① tools「不綁症狀的精選」是手抄的榜（4 列全 ⚪、無更新機制）；② 榜的 4 個未校準類——**病因不是 query 沒調好，是感測器裝錯層**：GitHub 描述是作者講功能的語言，治理型需求是讀者講痛點的語言，在 HN／dev.to 全文；反證是決策表早有其中 3 類的人工首選（Groundtruth、hooks 機制、Merge Queue），來源全是 Show HN／dev.to、無一來自 GitHub 搜尋。四方案評估：A 砍榜（倒退）、B 砍 tools 判斷層（違反「只看星星找不到需求」）、C 合併（機器與人共寫一檔，違反機器頁約束）、**D 兩頁重劃邊界（採納）**。
+
+**第一波執行：** tools 刪「不綁症狀的精選」、callout 覆寫、速查每組 ≤5 列閘；榜 4 類 `status=retired`（不再掛 ⚠️ 空榜，改印「無法用 GitHub 辨識的需求」指路表）；單向橋：設定檔每類 `tools_symptom`（決策表症狀句原文）→ render「本庫判斷 →」行，`check_tools_page.check_spokes` 對帳（改壞驗紅，測試含反向案例）；🧭 標記＝repo 已在 tools 頁（機器唯讀人工頁，零 API）；對帳 note 加 `retired` 值域（lint 6e 不判窗死）；index／社群 lint 規則同步；register 4 類未校準結案、新開「症狀語言感測器」待裁決。**第二波未動**：速查四組對齊 guide 段號、症狀語言感測器（需 probe＋change-check）。
