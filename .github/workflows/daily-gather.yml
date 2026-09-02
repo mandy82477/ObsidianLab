@@ -89,6 +89,16 @@ jobs:
         working-directory: CLAUDE_NEWS
         run: python scripts/archive_gathered.py
 
+      # 興趣類別 skill 榜（2026-09-03）：對使用者指定類別搜 GitHub，覆寫式快照頁。
+      # 放在 gather 之後：共用 GITHUB_TOKEN 額度與 repo_star_history.csv（E 窗記錄端）。
+      # 失敗不阻擋後續 commit（continue-on-error）——榜是附加價值，不是日報的前置。
+      - name: Skill interest snapshot (GitHub category boards, no LLM)
+        working-directory: CLAUDE_NEWS
+        continue-on-error: true
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: python scripts/skill_interest_snapshot.py
+
       - name: Commit gathered data + dedup caches
         working-directory: .  # repo root
         run: |
@@ -102,7 +112,8 @@ jobs:
                   CLAUDE_NEWS/src/news_aggregator/sources/official_skills_repos_state.json \
                   CLAUDE_NEWS/data/source_funnel.jsonl \
                   CLAUDE_NEWS/data/discovery_queue_history.csv \
-                  CLAUDE_NEWS/data/repo_star_history.csv
+                  CLAUDE_NEWS/data/repo_star_history.csv \
+                  CLAUDE_NEWS/wiki/topics/skill-interest-watch.md
           # 兩個 *_state.json 是清冊型來源（Official Docs / Official Skills）的
           # 「上次看到的樣子」。不 commit → 每次全新 checkout 都拿 repo 舊基線比對，
           # 同一筆異動天天重複偵測，且 state 只有本機手動跑才會前進（2026-08-15 發現：
