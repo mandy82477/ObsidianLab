@@ -5299,3 +5299,7 @@ GH Actions 抓料排 10:23 UTC，到 14:45 UTC 仍未落地（+4.4 小時且持�
 - 共識否決：github.com/trending 抓取（無 API 契約、壞得像正常）、GH Archive/BigQuery（帳號依賴/資料量）、star-history（無時序 API）
 
 **Phase 1 待使用者裁決後動工**：共用已報導閘（防重吐 154 清倉 repo）、對帳 CSV 泛化五欄制、A/B 硬上限＋B 帶擴至 5000、D 窗上線、E 窗記錄端、6e 逐窗判讀。動工前後跑 /pipeline-change-check。
+
+## 2026-09-03 補查：GitHub 事件流生態 2026 現況（調研 agent 二輪，實測型）
+
+**查明的事：** GitHub 公開事件流退化是**永久性、結構性、且官方從未公告**——agent 實際下載三個時間點的 GH Archive 小時檔解壓計數：WatchEvent 佔比 2026-02 為 2.19% → 06 起 0.09%，PR/Issue 事件同步崩盤，僅 Push/Create/Delete 正常；ClickHouse 官方分析站原文確認「2025 年中衰退、2026 崩塌，是資料源的變化不是使用者行為的變化」。GitHub 官方 changelog／可用性月報零提及；2025-08 payload 精簡公告時間接近但無文件證實因果（標註推論）。整個「吃事件流」的第三方生態（OSS Insight trends、GH Archive velocity 分析）連帶陣亡；**Search API 走 GitHub 自家搜尋索引、不吃事件流，完全未受影響**——本庫 A/B/C 窗地基安然。2026 年倖存/新生做法全部收斂到同一架構：**星數快照輪詢＋自算差值**（daily-stars-explorer 等），與本方案 E 窗同構——E 窗從「自己想的設計」獲得市面獨立收斂驗證。GH Archive 路線從候選除名（不是複雜度問題，是「做出來也在算噪聲」）；trendshift 計量單位改「mentions」來歷可疑待查。最終方案維持前日版本不變，信心上修。
