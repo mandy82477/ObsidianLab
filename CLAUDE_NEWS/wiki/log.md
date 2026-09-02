@@ -5338,4 +5338,5 @@ GH Actions 抓料排 10:23 UTC，到 14:45 UTC 仍未落地（+4.4 小時且持�
 - 轉知帳本：本輪新開 7 筆（H-3f85a1／H-afe923／H-969fc1／H-398ffe／H-5dee92／H-a2cc40／H-f5c58d），其中 H-969fc1 模型記者已於同日獨立處理並即時結案；其餘 6 筆留待次日對應記者接手
 - 摘要：Claude Fable 5.1／Mythos 5.1 發布為今日最大事件（HN 1338 分、十餘家媒體跟進），同日並有 Anthropic 對 7/30、8/4 兩起未授權存取事件的深入檢討部落格（坦承「並未完全對齊」、將與 METR 合作審查）、Enterprise Frontier Safeguards 企業級零留存安全監控上線，以及 Claude Code Auto Mode 遭提示注入劫持且官方無修復計畫的資安警示
 - 呈現品質：全部通過；`community-tech-discussions.md` 表格既有債務（多列 core論點欄 >120 字元）記錄待辦，非本輪新增
+- devpractice 沉澱：基準線 964d72a → 8c04ac5，候選 14 筆（claude-code 已知問題與版本更新 3、ai-agent-safety 提示注入相關 2、community-tech-patterns 工具與實作心得 5、community-tech-tools 3、fable-5／pricing 快取降價與配額更正 2）；首次執行，帳本原為空檔，無需查重
 - 品質備註：無

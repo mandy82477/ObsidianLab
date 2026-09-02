@@ -1,0 +1,14 @@
+{"date": "2026-09-02", "page": "entities/claude-code", "summary": "v2.1.258 修復 macOS 12 啟動失敗回歸與 remote／排程 session 因空訊息而失敗的問題", "why": "已知問題修復，受影響環境升版後恢復可用"}
+{"date": "2026-09-02", "page": "entities/claude-code", "summary": "新增已知問題：宣告 draft-07 outputSchema 的 MCP server 被判定 unsupported dialect，完全無法使用（issue #86142）", "why": "接 MCP server 時若用舊版 schema 會直接被擋，選型／除錯要先排除這個成因"}
+{"date": "2026-09-02", "page": "entities/claude-code", "summary": "官方桌面版文件確認：Auto Mode 開放給所有 API 使用者但需 Opus／Sonnet 4.6 以上，且 Extended Thinking 現為預設開啟", "why": "預設行為變了，會直接影響 token 用量與成本，升版前該知道"}
+{"date": "2026-09-02", "page": "topics/ai-agent-safety", "summary": "Auto Mode 提示注入劫持成功率經量化達 60–80%（vs 官方評測宣稱 0%），媒體稱官方無修復計畫", "why": "使用 Auto Mode 處理不可信內容（如摘要網頁）時的實際風險遠高於官方數字，選用前要重新評估"}
+{"date": "2026-09-02", "page": "topics/ai-agent-safety", "summary": "惡意 .git 設定檔可誘使 Claude Code、Codex、Cursor 等多款 AI coding agent 執行攻擊者程式碼，跨廠通用", "why": "clone 或開啟不明來源 repo 這個日常動作本身變成攻擊面，工具箱層級的信任邊界要重新畫"}
+{"date": "2026-09-02", "page": "topics/community-tech-discussions", "summary": "印度 Mythic Society 使用 Claude Code 時意外遺失多年文化遺產紀錄，HN 討論聚焦自主 agent 損害究責與備份習慣", "why": "真實案例印證『爆炸半徑』框架的必要性——授權 agent 自主執行前先確認可回復性與備份"}
+{"date": "2026-09-02", "page": "topics/community-tech-patterns", "summary": "thedotmack/claude-mem：跨 7+ harness（含 Claude Code、Codex、Gemini 等）的持久記憶工具，擷取 session 過程並用 AI 壓縮注入後續 session，9.3 萬星、已存在逾 1 年", "why": "記憶管理工具箱新增一個跨工具可攜的選項，不綁死單一 harness"}
+{"date": "2026-09-02", "page": "topics/community-tech-patterns", "summary": "addyosmani/agent-skills：Google 資深工程師 Addy Osmani 具名策展的生產級 AI coding agent 技能集合，9.2 萬星", "why": "具名資深工程師背書的技能集合，可作為自建 skill 的參考基準"}
+{"date": "2026-09-02", "page": "topics/community-tech-patterns", "summary": "wanghuan9/skilldock：桌面應用可安裝、整理、同步 Skills／MCP servers／plugins，橫跨 Claude Code、Cursor、Codex、Windsurf、Gemini CLI", "why": "解掉『Skills/MCP 散落各處難發現』的老問題，值得知道有這個選項"}
+{"date": "2026-09-02", "page": "topics/community-tech-patterns", "summary": "dev.to 實測：8 個自訂 subagent 中 7 個 30 天零呼叫，作者建立自動偵測『殭屍 agent』機制", "why": "可複用的維護做法——定期盤點 subagent 使用率，砍掉閒置配置"}
+{"date": "2026-09-02", "page": "topics/community-tech-patterns", "summary": "dev.to 提出『爆炸半徑』框架：依錯誤修復成本（而非任務難度）劃分三個風險區，決定哪些改動可放心讓 agent 自主執行", "why": "把『多授權 agent 自主性』從單一事故教訓變成可複用的判準框架"}
+{"date": "2026-09-02", "page": "topics/community-tech-tools", "summary": "新增三個 codebase 理解工具：codegraph（改 code 自動同步的知識圖，graphify 競品）、Understand-Anything（給人的互動式探索知識圖）、archify（給人的交付級架構圖產出）", "why": "『讓 agent 記住 repo』『讓人看懂 repo』『把架構講給人聽』三種不同需求現在各有對應工具可選"}
+{"date": "2026-09-02", "page": "entities/fable-5", "summary": "Claude Fable 5.1 正式發布（GA），取代 5.0 成為旗艦；快取讀取費率降至基礎輸入價 0.025 倍（原 0.1 倍，約省 75%）", "why": "旗艦模型選型與長對話／大量快取重複 session 的成本結構都變了，該重新評估要不要升"}
+{"date": "2026-09-02", "page": "entities/pricing", "summary": "官方更正：Claude Code 週用量 +50% 促銷並未如期於 08-31 終止，實際延長至 09-13，接著 09-14 起轉為永久 +25%（但相較加成期水位淨減約 17%）", "why": "配額規劃要用新時程算，尤其若工作流貼近週配額上限，09-14 前後預期可用量下降"}
