@@ -35,7 +35,7 @@ BANK = [
         "question": "近 7 天寫進 wiki 的具體數字，答得出「你哪來的」嗎？",
         "origin": "2026-08-08 pricing 官方查證（懸置 20 天）；CLAUDE_BIZ 96GB 事件同型",
         "probe": [
-            "列近 7 天 wiki 新增的帶單位數字：git diff \"HEAD@{7 days ago}\" -- wiki/entities wiki/topics | grep '^+' | grep -oE '[0-9][0-9,.]*(%|倍|萬|億|美元|/Mtok|天)' | sort -u",
+            "列近 7 天 wiki 新增的帶單位數字：git diff $(git rev-list -1 --before=\"7 days ago\" HEAD) -- wiki/entities wiki/topics | grep '^+' | grep -oE '[0-9][0-9,.]*(%|倍|萬|億|美元|/Mtok|天)' | sort -u（不可用 HEAD@{...}——雲端 lint 是 fresh clone，reflog 為空）",
             "用本週 seed 擲骰抽 1 個數字（同週重跑須同題）",
             "回查：該數字在 news/*.md 或該頁「參考來源」有沒有對應條目／官方連結",
             "答不出來源 → 依 .claude/rules/wiki-ingest-format.md 懸置標記語法標記，或退回對應記者",
@@ -47,8 +47,8 @@ BANK = [
         "question": "有沒有東西該進來卻沒進來？（抓到的 vs 刊出的）",
         "origin": "2026-07-13 emitted-cache 25 則靜默消失；2026-07-26 日報漏收 48%；2026-08-28 Dreaming 假死案",
         "probe": [
-            "讀 data/source_funnel.jsonl 最新一列，列各來源 gathered 數 vs 刊出數",
-            "抽 1 個「gathered>0 且刊出=0」的來源（無則抽 gathered 最高者）",
+            "讀 data/source_funnel.jsonl 最新一列的 sources 欄（每來源有 gathered/filtered/emitted 三數）",
+            "抽 1 個「gathered>0 且 emitted=0」的來源（無則抽 gathered−emitted 落差最大者）",
             "開當日 src/gathered_archive/ 對應檔，逐條判斷被擋條目「擋得對嗎」（對照收錄門檻，不可只看數字就結案）",
             "發現該收未收 → 走補跑流程並記 log；判斷模稜 → 記待辦回報使用者",
         ],
@@ -81,7 +81,7 @@ BANK = [
         "question": "冷讀者打開近期改過的頁，前 160 字讀得懂嗎？表格爆版了嗎？",
         "origin": "2026-07-28 網站 review 15 項修正；2026-08-05 model-comparison 表格爆版",
         "probe": [
-            "列近 7 天有改動的頁：git diff --name-only \"HEAD@{7 days ago}\" -- wiki/entities wiki/topics，擲骰抽 1 頁",
+            "列近 7 天有改動的頁：git diff --name-only $(git rev-list -1 --before=\"7 days ago\" HEAD) -- wiki/entities wiki/topics，擲骰抽 1 頁（不可用 HEAD@{...}，雲端 reflog 為空）",
             "跑儲存格量測（>120 字元即違規，指令見 .claude/rules/wiki-ingest-format.md「表格放結論，細節下沉」）",
             "讀該頁前 160 字：能否不看背景就懂（delta-first ＋ 可獨立閱讀）",
             "違規依 .claude/rules/wiki-ingest-format.md 修復；修不動記待辦",
@@ -94,7 +94,7 @@ BANK = [
         "origin": "2026-07-13 trigger 從未建立；2026-08-16 週報規格範本錯了三週沒人回頭校對",
         "probe": [
             "從 docs/daily-automation.md 與 docs/cloud-runbooks/ 宣稱的元件（workflow／trigger／腳本名）擲骰抽 1 個",
-            "驗兩層：存在（workflow 檔在 .github/workflows/、腳本在 scripts/）＋活著（近 7 天有對應 run／commit／產出／心跳）",
+            "驗兩層：存在（workflow 檔在 git repo 根層的 .github/workflows/——注意在父層 ObsidianLab/，不在 CLAUDE_NEWS/ 內；腳本在 scripts/）＋活著（近 7 天有對應 run／commit／產出／心跳）",
             "雲端 trigger 本機驗不了 → 記「需雲端 RemoteTrigger list 核對」待辦，不可宣稱已驗——文件寫了 ID 不代表它存在",
         ],
     },

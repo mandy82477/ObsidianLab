@@ -79,6 +79,23 @@ class TestProbesPointAtRealFiles(unittest.TestCase):
                     )
 
 
+class TestProbesRunInCloud(unittest.TestCase):
+    """探針必須在雲端 lint 的執行環境（fresh clone）跑得動。
+
+    2026-09-02 首次審計抓到：兩題探針用 `HEAD@{7 days ago}`——那是 reflog 語法，
+    本機有效、fresh clone 的 reflog 是空的，等於這兩題在正式執行環境必壞。
+    正確寫法是 commit-history 基底的 `git rev-list -1 --before=...`。
+    """
+
+    def test_探針不得依賴_reflog(self):
+        for q in inquiry_bank.BANK:
+            for step in q["probe"]:
+                self.assertNotIn(
+                    "HEAD@{", step,
+                    f"{q['id']} 探針用了 reflog 語法，雲端 fresh clone 會壞",
+                )
+
+
 class TestCli(unittest.TestCase):
     def _run(self, *args):
         p = subprocess.run(
