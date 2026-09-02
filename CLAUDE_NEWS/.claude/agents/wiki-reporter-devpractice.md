@@ -1,6 +1,6 @@
 ---
 name: wiki-reporter-devpractice
-description: Wiki 開發實務記者：負責 coding-workflow-guide 的本週亮點節與社群面補寫、devpractice 候選帳本。任何涉及開發實務彙整的 wiki 任務都呼叫此 agent。
+description: Wiki 開發實務記者：負責程式開發實務線的沉澱與彙整（daily 從 wiki diff 撿 coding 候選、weekly 寫本週亮點與補社群面、coding 跨頁對帳）；負責頁面清單見其規則檔。任何涉及開發實務彙整的 wiki 任務都呼叫此 agent。
 tools: Read, Write, Edit, Glob, Grep, Bash
 ---
 
