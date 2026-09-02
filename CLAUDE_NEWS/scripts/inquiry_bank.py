@@ -35,7 +35,7 @@ BANK = [
         "question": "近 7 天寫進 wiki 的具體數字，答得出「你哪來的」嗎？",
         "origin": "2026-08-08 pricing 官方查證（懸置 20 天）；CLAUDE_BIZ 96GB 事件同型",
         "probe": [
-            "列近 7 天 wiki 新增的帶單位數字：git diff $(git rev-list -1 --before=\"7 days ago\" HEAD) -- wiki/entities wiki/topics | grep '^+' | grep -oE '[0-9][0-9,.]*(%|倍|萬|億|美元|/Mtok|天)' | sort -u（不可用 HEAD@{...}——雲端 lint 是 fresh clone，reflog 為空）",
+            "列近 7 天 wiki 新增的帶單位數字：git diff $(git rev-list -1 --before=\"7 days ago\" HEAD) -- wiki/entities wiki/topics | grep '^+' | grep -oE '[0-9][0-9,.]*(%|倍|萬|億|美元|/Mtok|天)' | sort -u（不可用 reflog 語法——雲端 lint 是 fresh clone，reflog 為空）",
             "用本週 seed 擲骰抽 1 個數字（同週重跑須同題）",
             "回查：該數字在 news/*.md 或該頁「參考來源」有沒有對應條目／官方連結",
             "答不出來源 → 依 .claude/rules/wiki-ingest-format.md 懸置標記語法標記，或退回對應記者",
@@ -81,7 +81,7 @@ BANK = [
         "question": "冷讀者打開近期改過的頁，前 160 字讀得懂嗎？表格爆版了嗎？",
         "origin": "2026-07-28 網站 review 15 項修正；2026-08-05 model-comparison 表格爆版",
         "probe": [
-            "列近 7 天有改動的頁：git diff --name-only $(git rev-list -1 --before=\"7 days ago\" HEAD) -- wiki/entities wiki/topics，擲骰抽 1 頁（不可用 HEAD@{...}，雲端 reflog 為空）",
+            "列近 7 天有改動的頁：git diff --name-only $(git rev-list -1 --before=\"7 days ago\" HEAD) -- wiki/entities wiki/topics，擲骰抽 1 頁（不可用 reflog 語法，雲端 reflog 為空）",
             "跑儲存格量測（>120 字元即違規，指令見 .claude/rules/wiki-ingest-format.md「表格放結論，細節下沉」）",
             "讀該頁前 160 字：能否不看背景就懂（delta-first ＋ 可獨立閱讀）",
             "違規依 .claude/rules/wiki-ingest-format.md 修復；修不動記待辦",
