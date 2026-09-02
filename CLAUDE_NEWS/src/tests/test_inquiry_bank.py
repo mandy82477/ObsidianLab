@@ -24,9 +24,10 @@ class TestBankIntegrity(unittest.TestCase):
         inquiry_bank.check_integrity()  # 不拋即過
         self.assertGreaterEqual(len(inquiry_bank.BANK), 7)
 
-    def test_七種模式名各就各位(self):
+    def test_模式名各就各位(self):
         names = {q["name"] for q in inquiry_bank.BANK}
-        for expected in ("溯源", "缺席偵測", "沉默質疑", "讀者查找", "可讀性", "結構健檢", "宣稱對帳"):
+        for expected in ("溯源", "缺席偵測", "沉默質疑", "讀者查找", "可讀性",
+                         "結構健檢", "宣稱對帳", "資產重用審計"):
             self.assertIn(expected, names)
 
     def test_題數不足會被自檢擋下(self):

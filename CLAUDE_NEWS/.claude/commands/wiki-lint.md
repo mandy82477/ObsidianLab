@@ -465,7 +465,7 @@ python -c "import json;d=json.load(open('data/link_health.json',encoding='utf-8'
 
 讀 `.claude/rules/wiki-lint-inquiry.md` 後執行：跑 `python scripts/inquiry_bank.py draw` 抽 2 題（seed 綁本 ISO 週，同週重跑同題），逐題執行探針、產出三態結果（✅ 附證據行／⚠️ 已修復／❌ 記待辦並回報使用者）。
 
-> 這一步代打的是**使用者歷史質疑的已知模式**（溯源、缺席偵測、沉默質疑、讀者查找、可讀性、結構健檢、宣稱對帳七種，蒸餾自 `wiki/log.md` 35 筆 Query）；新型質疑仍靠使用者，`scripts/open_loops.py` 的人類質疑時效燈不因本步驟而熄滅。與步驟 7 的分工：7 出「本週熱點」的讀者題，7b 抽「考卷外」的系統質疑題。
+> 這一步代打的是**使用者歷史質疑的已知模式**（溯源、缺席偵測、沉默質疑、讀者查找、可讀性、結構健檢、宣稱對帳、資產重用審計八種，蒸餾自 `wiki/log.md` Query 條目）；新型質疑仍靠使用者，`scripts/open_loops.py` 的人類質疑時效燈不因本步驟而熄滅。與步驟 7 的分工：7 出「本週熱點」的讀者題，7b 抽「考卷外」的系統質疑題。
 
 ### 8. 記錄本次 lint
 

@@ -10,7 +10,7 @@
 
 另附一盞「人類質疑時效燈」（[6]，不入檔尾總計）：`wiki/log.md` 最新 Query 條目
 距今 >21 天即亮 ⚠。語意：歷史上所有重大品質問題全部來自使用者的考卷外質疑
-（Query 條目是其紀錄），`/wiki-lint` 7b 的題庫只代打**已知**七種質疑模式——
+（Query 條目是其紀錄），`/wiki-lint` 7b 的題庫只代打**已知**質疑模式——
 燈亮代表「黑天鵝偵測器離線中，新型錯誤無人看守」，這不是積壓也不是承諾，
 是可見性，所以另計不進三個數字。
 
@@ -259,7 +259,7 @@ def main() -> int:
         print("\n[6] 人類質疑時效燈：❌ 無法判定（wiki/log.md 缺檔或查無 Query 條目）——不可當成 0 天")
     elif inq_days > INQUIRY_LAMP_DAYS:
         print(f"\n[6] 人類質疑時效燈：⚠️ 已 {inq_days} 天未經人類質疑（最新 Query：{inq_date.isoformat()}）")
-        print("    → 題庫（`/wiki-lint` 7b）只在代打已知七種模式，新型錯誤無人看守；此燈另計不入總")
+        print("    → 題庫（`/wiki-lint` 7b）只在代打已知模式，新型錯誤無人看守；此燈另計不入總")
     else:
         print(f"\n[6] 人類質疑時效燈：✅ {inq_days} 天前有質疑（{inq_date.isoformat()}，門檻 {INQUIRY_LAMP_DAYS} 天）")
 
