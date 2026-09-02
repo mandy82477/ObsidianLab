@@ -469,3 +469,13 @@
 [Wed 2026/09/02 12:06:08.06] ABORTED: gathered_items.json date=2026-09-01 items=71，非目標日期的新鮮資料（gathered_archive/2026-09-02.json 不存在，上游抓料延遲）
 [cloud daily-news-pipeline-cloud STARTED 2026-09-02T17:03:10Z]
 [cloud daily-news-pipeline-cloud STARTED 2026-09-02T22:04:17Z]
+[Wed 2026/09/02 22:42:16.00] === Agent pipeline start (2026-09-02) ===
+[Wed 2026/09/02 22:42:16.00] Step 0 昨日缺跑檢查 OK - news/2026-09-01.md 存在
+[Wed 2026/09/02 22:42:16.00] Step 0b 冪等閘 OK - news/2026-09-02.md 不存在，正常繼續
+[Wed 2026/09/02 22:42:16.00] Step 1a replay OK - cp src/gathered_archive/2026-09-02.json（97 條，13/13 來源）
+[Wed 2026/09/02 22:42:16.00] Step 1b 新鮮度防線 OK；原料健康檢查 OK（13/13 來源正常）；日報生成完成 news/2026-09-02.md；忠實度自檢：抽 10 條，改寫 0 條
+[Wed 2026/09/02 22:42:16.00] Step 1c 確認 emitted-cache OK（97 項，已 commit）
+[Wed 2026/09/02 22:42:16.00] Wiki ingest OK - 六類記者全數完成（模型/功能/商業/安全政策/社群/人物），devpractice daily 沉澱 OK（14 筆候選）；feature-radar 新增 2 條；轉知帳本新開 7 筆（1 筆同日結案）
+[Wed 2026/09/02 22:42:16.00] Step 3 Wiki commit OK（多筆，含彙整）
+[Wed 2026/09/02 22:42:16.00] Step 4 web build gate：測試失敗且非單元測試案例（規則一致性檢查等）- web build 擋下（check_wiki_freshness.py exit 1：topics/skill-interest-watch 最後新聞更新宣稱與 source_attribution 零歸因無從對照——該頁為機器快照頁，由另一 session 09-02 建立時未登記進 DERIVED_PAGES，非本輪 ingest 造成，修復需改 scripts/check_*.py，依規則不可自行修，已記錄 docs/workaround-register.md 待人工登記）
+[Wed 2026/09/02 22:42:16.00] build_web SKIPPED - gate 擋下，僅推送 news/wiki
