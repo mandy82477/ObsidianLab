@@ -55,6 +55,8 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 - 先從 10–20 個 agent 驗證協調機制；每次倍增規模重新驗證，不要線性外推
 - 協調有兩種互不取代的型態：統一容器（meta-harness 換底層 agent 不必重寫協作邏輯）與任務脈絡互通（Concord 讓各自獨立的 agent 像 Slack 一樣互相知會，不吃底層 agent）
 
+**🧰 現在就能下的解**：見 [[topics/community-tech-tools]]「我卡在這裡」——「多個 agent 在同一 repo 互相覆蓋」列（首選 Harness）與「一堆 agent 在跑，看不到誰卡住」列（首選 Omar）
+
 **還沒解決**：官方 20 路並行、創始人「每晚數千子代理」與社群實測「4→20 就崩」之間的落差沒人系統驗證（推論）。fork 子代理疑似每次工具呼叫重送整段對話歷史（四個平行子代理耗 200 萬 token）若屬實，是規模上限的新增放大源，未經官方證實。
 
 | 子問題 | 社群走到哪 | 代表實作 | 證據強度 |
@@ -76,6 +78,8 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 - 不預先 @ 一堆檔案，按需取回、並限制單次讀取量；長 session 退化的解法是裁剪輸入，不是加 context
 - 「變笨」先量 context 組成再怪工具——MCP 工具清單、CLAUDE.md、headless 冷啟動都是可量的固定成本
 - CLAUDE.md 每行都是對每個請求課的「context 稅」：依觸發頻率決定放 CLAUDE.md／skill／hook／docs 哪一層
+
+**🧰 現在就能下的解**：見 [[topics/community-tech-tools]]「我卡在這裡」——「context 一直被工具輸出撐爆」列（首選 pxpipe）與「帳單爆了，看不到錢花在哪」列（首選 tare）；官方省 token 指南見 [[topics/coding-workflow-guide]]
 
 **還沒解決**：「該裁多少」沒有跨案例統一標準，多為個別作者自訂閾值；圖片化 context（pxpipe）與 grep 輸出裁剪（Graft）都只有單一案例，且 Graft 的降幅宣稱本身遭社群質疑。fork 子代理若真的每次工具呼叫重送整段對話歷史，裁剪的是工具輸出、放大的卻是對話歷史本身——屬於此前未被量測過的另一種撐爆來源。
 
@@ -101,6 +105,8 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 - 本地優先的索引（向量 DB／圖資料庫／SQLite／純 Markdown）按需語義查詢，不把全部記憶塞進 context
 - 「什麼不該再做」也要記——已否決方案沒進 agent 可讀的知識源，agent 會重做一次
 
+**🧰 現在就能下的解**：見 [[topics/community-tech-tools]]「我卡在這裡」——「每開新 session 都要重講一遍」列（首選 brain.md，零依賴檔案式；團隊共享與 Obsidian 路線的分界在同列第三欄）
+
 **還沒解決**：跨工具可攜（ltm／OKF）仍是少數派；「codebase 文件自動維護」只有 CodeAlmanac 一例；「已否決方案索引」累積到第二個獨立觀察（8/31 補上「可驗證、防竄改」的具體要求），但仍停在問題點名、無工具實作。三個近期實作路線各走各的（零依賴檔案式、手動策展取代官方、團隊共享），尚無交叉比較或共識收斂。
 
 | 子問題 | 社群走到哪 | 代表實作 | 證據強度 |
@@ -124,6 +130,8 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 - 審查者 agent 不掛編輯工具、只能輸出意見——工具範圍限制比「你是 QA」的角色描述可靠
 - 對抗式審查分兩階段：計畫前由另一 agent 讀 codebase 挑戰計畫、程式碼後由第二個 Claude 挑毛病，可串接；跨模型交叉審查（Claude 審 Codex）通過率 71.6%→89.7%，反向反而下降
 - 審查負荷撐不住時往上游移：把把關前移到任務拆解與驗收條件，而非降低審查標準
+
+**🧰 現在就能下的解**：見 [[topics/community-tech-tools]]「我卡在這裡」——「它說做完了，但根本沒做」列（首選 Groundtruth；要留可稽核證據給團隊 → 同列第三欄 Proof Loop）
 
 **還沒解決**：工具範圍只擋「能不能做壞事」，擋不了「有沒有誠實回報」——subagent 靜默失敗（317 項清理、4 種失敗模式回報卻乾淨）仍是缺口；loopx 是第一個針對它的工具，尚無使用回饋。
 
