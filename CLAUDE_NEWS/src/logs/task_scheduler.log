@@ -479,3 +479,5 @@
 [Wed 2026/09/02 22:42:16.00] Step 3 Wiki commit OK（多筆，含彙整）
 [Wed 2026/09/02 22:42:16.00] Step 4 web build gate：測試失敗且非單元測試案例（規則一致性檢查等）- web build 擋下（check_wiki_freshness.py exit 1：topics/skill-interest-watch 最後新聞更新宣稱與 source_attribution 零歸因無從對照——該頁為機器快照頁，由另一 session 09-02 建立時未登記進 DERIVED_PAGES，非本輪 ingest 造成，修復需改 scripts/check_*.py，依規則不可自行修，已記錄 docs/workaround-register.md 待人工登記）
 [Wed 2026/09/02 22:42:16.00] build_web SKIPPED - gate 擋下，僅推送 news/wiki
+[Wed 2026/09/02 22:42:16.00] Step 5 Single push done (news + wiki, web skipped) - 首次嘗試即成功，無需重試 (3b97796..505ff29)
+[Wed 2026/09/02 22:42:16.00] === Pipeline complete (agent, web build skipped) ===
