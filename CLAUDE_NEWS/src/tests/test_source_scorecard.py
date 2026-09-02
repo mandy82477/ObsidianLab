@@ -112,7 +112,8 @@ class TestRegistryIntegrity(unittest.TestCase):
 
     def test_covers_main_py_registered_sources(self):
         main_py = (REPO_ROOT / "src" / "news_aggregator" / "main.py").read_text(encoding="utf-8")
-        active_names = {s["name"] for s in self.registry if s["active"]}
+        # pipeline=false 的通道（如 user-query 使用者提問）無 fetch 程式，不在 main.py
+        active_names = {s["name"] for s in self.registry if s["active"] and s.get("pipeline", True)}
         for name in active_names:
             self.assertIn(f'("{name}"', main_py, f"registry 標 active 的來源 {name} 不在 main.py sources 清單")
 
