@@ -90,6 +90,39 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 
 ---
 
+## 🧩 Skills 速查（依 coding 用途分類）
+
+社群 Agent Skills 的用途索引（**官方** skill 另有兩條軸：按工程流程階段與按產出物格式選用，見 [[topics/coding-workflow-guide]]）。安裝多為一行（`/plugin` 或 `npx skills add`），隨時可拔。
+
+**寫碼紀律／方法論**——改變 Claude 寫 code 的行為
+
+| Skill | 證據 | 一句話 |
+|---|---|---|
+| [**obra/superpowers**](https://github.com/obra/superpowers) | ⚪（08-28，27.9 萬星，Reddit 有實際採用跡象） | Agentic skills 框架＋軟體開發方法論 |
+| [**andrej-karpathy-skills**](https://github.com/multica-ai/andrej-karpathy-skills) | ⚪（08-29，星數增速異常存疑） | 單檔改善 LLM coding 常見缺陷，取材 Karpathy 觀察 |
+| **Groundtruth** | 🟡（04-27） | Stop Hook 強制出示可驗證證明才准宣告完成 |
+| **awesome-ux-skills** | 🟡（05-08） | Nielsen＋Shape of AI 等 UX 原則技能集 |
+
+**產出與呈現**——生成特定產物或改變輸出形式
+
+| Skill | 證據 | 一句話 |
+|---|---|---|
+| [**baoyu-design**](https://github.com/JimLiu/baoyu-design) | ⚪（08-29，3,637 星） | 本機執行 Claude Design 產自足式 HTML UI 原型 |
+| [**/show-me**](https://www.humanlayer.com/blog/show-me-skill) | 🟡（08-13，雙來源） | 精簡視覺化取代大量文字輸出 |
+
+**領域資料**——接特定資料域（coding 周邊，非核心寫碼流程）
+
+| Skill | 證據 | 一句話 |
+|---|---|---|
+| [**Geosql**](https://github.com/dekart-xyz/geosql) | 🟢（07-08，機制已查證見懸置細節） | 地理空間資料（PostGIS／BigQuery／Snowflake）；4 倍提升僅在連 Dekart 時成立 |
+| [**youtube-skills**](https://github.com/ZeroPointRepo/youtube-skills) | ⚪（08-12，防刷已查證） | YouTube 字幕擷取，跨 harness |
+| [**Shortcuts Playground**](https://www.macstories.net/stories/introducing-shortcuts-playground/) | 🟡（05-23） | 自然語言生成 Apple Shortcuts |
+| [**l3a0/claude-plugins**](https://github.com/l3a0/claude-plugins) | 🟡（08-24，HN 45） | OCR 復原 Kindle 被限制匯出的畫線筆記 |
+
+> skill 分享基建（Sx 2.0）與彙整清單（awesome-llm-apps）不入本節——前者見工具目錄，後者見「不綁症狀的精選」。
+
+---
+
 ## 指標說明
 
 | 指標 | 說明 |
