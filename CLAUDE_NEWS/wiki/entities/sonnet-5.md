@@ -25,7 +25,7 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 **狀態：** active（正式發布）
 **領域：** 🤖 模型
 **首次出現：** 2026-07-01
-**最後更新：** 2026-08-26
+**最後更新：** 2026-09-02
 **最後新聞更新：** 2026-07-31
 
 > **最新動態**（2026-07-31）
@@ -41,7 +41,7 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 
 Claude Sonnet 5 於 2026-07-01 正式發布，定位為 Anthropic **最 agentic 的 Sonnet 模型**，在 reasoning、tool use、coding、knowledge work 等多個面向均有顯著提升，效能接近 Opus 4.8。
 
-**與 [[entities/fable-5]] 的定位差異**：Fable 5 是目前最高階旗艦（Mythos 級推理能力，適合最複雜的多步驟任務）；Sonnet 5 則是主力平衡選項——以約 60% 的成本換取接近 Opus 4.8 的效能，適合日常 agentic 工作流與成本敏感場景，非追求極致推理深度的定位。
+**與 [[entities/fable-5]] 的定位差異**：Fable 5（2026-09-01 起為 5.1）是最高階旗艦（Mythos 級推理能力，適合最複雜的多步驟任務）；Sonnet 5 則是主力平衡選項——以約 60% 的成本換取接近 Opus 4.8 的效能，適合日常 agentic 工作流與成本敏感場景，非追求極致推理深度的定位。
 
 **Claude Code 預設模型**：Claude Code v2.1.197 起已將 Sonnet 5 設為預設模型，取代前一代 Sonnet 版本。
 
