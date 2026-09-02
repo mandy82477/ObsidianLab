@@ -742,7 +742,7 @@ window.WIKI_DATA = {
     {
       "id": "community-tech-patterns",
       "pageType": "topic",
-      "name": "",
+      "name": "社群實戰模式庫",
       "entityType": "",
       "status": "ongoing",
       "domain": "🌐 社群",
@@ -784,8 +784,8 @@ window.WIKI_DATA = {
       "lastUpdated": "2026-09-02",
       "lastNewsUpdate": "2026-09-02",
       "updateFreq": "🗓️ 週更（每週策展一次；更新日期停留數天屬正常節奏）",
-      "summary": "追蹤 Claude Code 社群發布的工具、插件與 skill 專案。本頁採每週策展：彙整近兩週日報中達收錄門檻的工具，並汰除長期無後續者，因此更新日期停留數天屬正常。日常工作流模式見 community-tech-patterns，概念辯論見 community-tech-discussions。 官方功能見 fe…",
-      "latestHeadline": "追蹤 Claude Code 社群發布的工具、插件與 skill 專案。本頁採每週策展：彙整近兩週日報中達收錄門檻的工具，並汰除長期無後續者，因此更新日期停留數天屬正常。日常工作流模式見 community-tech-patterns，概念辯論見 community-tech-discussions。"
+      "summary": "**我卡住了，社群有什麼能救？** 本頁把社群工具依「症狀」排列，每個症狀給一個首選、一條改用分界、一個帶日期的證據等級。 按開發流程階段找官方做法見 coding-workflow-guide；做法背後的機制與實測見 community-tech-patterns；概念辯論見 community-tech-discu…",
+      "latestHeadline": "我卡住了，社群有什麼能救？ 本頁把社群工具依「症狀」排列，每個症狀給一個首選、一條改用分界、一個帶日期的證據等級。"
     },
     {
       "id": "competitor-landscape",
