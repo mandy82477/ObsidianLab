@@ -173,6 +173,18 @@ def _emitted_repo_urls() -> "set[str] | None":
     事實不同步的東西，而 121 篇日報全讀不到一秒。
     """
     urls: set[str] = set()
+    # 清倉帳本（2026-09-02）：一次性清倉的 repo 不經日報、記在此檔，與日報同等視為
+    # 「已報導」。放 data/ 而非 news/ 的理由：news/*.md 會被 build_web 當日報解析
+    # 上網站、被多支掃描腳本讀取，塞一份非日報格式的清單會污染所有消費端。
+    # 檔案不存在屬正常（尚未清倉過），不觸發任何保護性跳過。
+    try:
+        clearance = NEWS_DIR.parent / "data" / "inventory_clearance.md"
+        if clearance.exists():
+            for m in re.finditer(r"https://github\.com/[\w.\-]+/[\w.\-]+",
+                                 clearance.read_text(encoding="utf-8")):
+                urls.add(m.group(0).rstrip("/").lower())
+    except Exception as e:
+        logger.warning("Inventory clearance ledger read failed: %s", e)
     try:
         digests = sorted(NEWS_DIR.glob("*.md"))
         # 空集合等價於「全部沒報導過」，會讓 C 窗把整個存量灌進日報。而

@@ -5270,3 +5270,12 @@ GH Actions 抓料排 10:23 UTC，到 14:45 UTC 仍未落地（+4.4 小時且持�
 **首次適用：** archify／Understand-Anything／codegraph 三工具寫入 tools 頁（Skills 速查「Codebase 理解」組觸發三工種細分：給 agent·索引／給人·探索／給人·交付；工具目錄各一列，採用 ⏳、簡介帶 [使用者提問] 前綴＋查證日）；歸因 3 筆 append。
 
 **同輪機制（使用者指示「想一個機制避免這個問題」）：** C 窗佇列產消對帳——`github_releases.py` 抓取時將佇列量寫 `data/inventory_queue_history.csv`（同日 upsert），lint 6e 新增判讀（連兩週上升或排空 > 30 天 → 告警；檔案過期 → 告警，掃描失敗不得當成 0）。並升格為通用原則 D7「建佇列必附產消對帳」（`~/.claude/system-design-principles.md`）。C 窗塞車處置（提配額 vs 一次清倉）仍待使用者裁決——三個關鍵工具已由 user-query 通道先行入庫，急迫性降低。
+
+## 2026-09-02 Query：「為什麼之前會漏球」→ 漏球三層解剖＋C 窗清倉執行
+
+**點出什麼：** 使用者追問 archify 類漏球的根因。解剖為三層，各有不同機制缺口：
+① **出生期（結構性盲區）**：A/B 窗 scope 綁 claude 關鍵字，Agent Skills 生態 repo（archify 2026-04-15 出生）名稱描述不含 claude，新星窗／穿越窗自始看不見。08-28 補的「agent skills」scope 只進 C 窗不進 A/B——刻意取捨（100–3000★ 帶被內容型 skill 洗版，該 scope 上星數即品質過濾器），代價是**此生態的工程級 repo 結構上只能在 20k★+ 才被看見，永遠遲到**，C 窗即其唯一感測器。
+② **成長期（平台缺口）**：archify 聲量走 X／YouTube／daily.dev——前者明文不收（設計取捨）、後兩者不在來源清單；HN/Reddit/dev.to 121 篇日報＋14 天原料層零命中，不是漏抓是真沒出現。
+③ **補課期（吞吐塞車）**：C 窗上線 5 天積 154 候選、每日 2 則 77 天排空（已於同日徹查條目詳述）。
+
+**清倉執行（使用者裁決 b）：** 154 個候選寫入 `data/inventory_clearance.md`（機器清單、未策展、防刷未逐一驗，檔頭明示）；`_emitted_repo_urls()` 改為將清倉帳本與日報同等計入——**刻意放 data/ 不放 news/**（news 會被 build_web 上網站、被多支掃描腳本消費，塞非日報格式會污染所有消費端）。驗證：archify/OpenMontage/codegraph/claude-mem 皆已入帳，佇列歸零；此後新越過 3000★ 者由 C 窗正常吐出、產消對帳（inventory_queue_history.csv＋6e）看守。workaround-register C 窗條目結案。
