@@ -5260,3 +5260,13 @@ GH Actions 抓料排 10:23 UTC，到 14:45 UTC 仍未落地（+4.4 小時且持�
 **點出什麼：** 使用者問 archify（43,355★ 架構圖 agent skill）本庫有無收錄——三層查證（日報／gathered_archive 原料層／data）全零命中，且從未進漏斗。徹查 C 窗機制定案：**查詢抓得到（實測在 scope 結果內），病灶是佇列塞車**——未報導合格候選 154 個、每日吐 2 個、依星數降冪，archify 排第 20（約 10 天）、OpenMontage 真身 calesthio/OpenMontage（55,576★，先前誤登 shingo257 為 0 星仿品）排第 13；排空約 77 天，產出恐快過消費（同 pending 佇列病），且佇列長度只在 logger.info、無消費端。處置選項 (a)提高配額/(b)一次清倉/(c)佇列納入 6e 產消對帳，已登 workaround-register 待裁決。
 
 **沉澱（使用者按讚的分類）：** 追查中發現佇列前 20 名裡「知識傳承」一格藏三個定義級工具，實為**三個工種**：①給人·探索式理解（Understand-Anything，81,325★，可探索可提問的互動知識圖）②給人·交付級圖表（archify，43,378★，精緻架構/時序/資料流圖，自包含 HTML）③給 agent·程式碼索引（codegraph，69,253★，預索引＋改 code 自動同步＋全本機——與已收錄 graphify 113k★ 直接競品，auto-sync 主張更進一步）。三者皆過防刷指標（forks 比例、活躍 push）但**零社群實測證據**，排序僅星數。**待辦：** 三工具經 pipeline 入庫後，社群記者按此三工種重整「🧩 Skills 速查」的「Codebase 理解／索引」組（拆給人/給 agent），並評估 codegraph vs graphify 對比列；「傳給人」屬候選症狀，湊滿 ≥2 頁需求證據再開決策表列。
+
+## 2026-09-02 Query：「使用者提問也可沉澱進 wiki」→ 原則放寬立法＋首次適用＋D7 佇列量規
+
+**點出什麼：** 使用者裁決 wiki 沉澱來源由「日報唯一」放寬為「日報＋使用者提問」。此通道證據等級不低於日報：入口在主編層、有 web 工具、可即時查證一手來源（記者通道反而無 web 工具）。
+
+**立法：** ① 專案 CLAUDE.md「蒐集範圍」加「使用者提問」列（查證是入場券、必標查證日＋來源連結、slug `user-query`、log Query 為溯源記錄）；② `data/source_registry.json` 註冊 user-query（category=official，理由入口即查證）；③ 記者共用規則 slug 表加列；④ tools 頁策展規則「來源」行改寫（user-query 條目視同達標維護，不因無日報出處汰除）。
+
+**首次適用：** archify／Understand-Anything／codegraph 三工具寫入 tools 頁（Skills 速查「Codebase 理解」組觸發三工種細分：給 agent·索引／給人·探索／給人·交付；工具目錄各一列，採用 ⏳、簡介帶 [使用者提問] 前綴＋查證日）；歸因 3 筆 append。
+
+**同輪機制（使用者指示「想一個機制避免這個問題」）：** C 窗佇列產消對帳——`github_releases.py` 抓取時將佇列量寫 `data/inventory_queue_history.csv`（同日 upsert），lint 6e 新增判讀（連兩週上升或排空 > 30 天 → 告警；檔案過期 → 告警，掃描失敗不得當成 0）。並升格為通用原則 D7「建佇列必附產消對帳」（`~/.claude/system-design-principles.md`）。C 窗塞車處置（提配額 vs 一次清倉）仍待使用者裁決——三個關鍵工具已由 user-query 通道先行入庫，急迫性降低。

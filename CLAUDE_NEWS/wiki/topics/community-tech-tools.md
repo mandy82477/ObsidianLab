@@ -94,11 +94,14 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 
 社群 Agent Skills 的用途索引（**官方** skill 另有兩條軸：按工程流程階段與按產出物格式選用，見 [[topics/coding-workflow-guide]]）。安裝多為一行（`/plugin` 或 `npx skills add`），隨時可拔。
 
-**Codebase 理解／索引**——讓 agent 讀懂大 repo（建程式庫的一次性設定首選）
+**Codebase 理解／索引**——知識傳承的三個工種：讓 **agent** 記住 repo、讓**人**看懂 repo、把架構**講給人聽**（建程式庫的一次性設定首選在「給 agent」列）
 
 | Skill | 證據 | 一句話 |
 |---|---|---|
-| [**graphify**](https://github.com/Graphify-Labs/graphify) | 🟢（05-02 收錄 40k★＋71× 宣稱；08-31 訊號 11.3 萬星、`/graphify` skill、本機 AST 免向量 DB） | 把 codebase（含文件、SQL schema）建成知識圖譜供跨 harness 查詢 |
+| [**graphify**](https://github.com/Graphify-Labs/graphify) | 🟢（05-02 收錄 40k★＋71× 宣稱；08-31 訊號 11.3 萬星、`/graphify` skill、本機 AST 免向量 DB） | 【給 agent·索引】把 codebase（含文件、SQL schema）建成知識圖譜供跨 harness 查詢 |
+| [**codegraph**](https://github.com/colbymchenry/codegraph) | ⚪（09-02 查證 user-query；69,253★、forks 4,420、活躍 push） | 【給 agent·索引】預索引 code 知識圖、**改 code 自動同步**、全本機——與 graphify 直接競品，auto-sync 主張更進一步，社群實測待累積 |
+| [**Understand-Anything**](https://github.com/Egonex-AI/Understand-Anything) | ⚪（09-02 查證 user-query；81,325★、forks 6,841） | 【給人·探索式理解】把任意 code 變成可探索、可搜尋、可提問的互動知識圖——新人接手看懂 codebase 的那一格 |
+| [**archify**](https://github.com/tt-a1i/archify) | ⚪（09-02 查證 user-query；43,378★、forks 2,777、214 commits） | 【給人·交付級圖表】架構／時序／資料流／生命週期圖，自包含 HTML 可匯出——把架構講給別人聽、寫進文件 |
 
 **寫碼紀律／方法論**——改變 Claude 寫 code 的行為
 
@@ -144,6 +147,9 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 
 | 工具 | 類型 | 採用 | 首次出現 | 簡介 |
 | --- | --- | --- | --- | --- |
+| [**Understand-Anything**](https://github.com/Egonex-AI/Understand-Anything) | 搜尋/診斷 | ⏳ | 2026-09-02 | 互動式 code 知識圖（可探索/搜尋/提問），跨 harness；[使用者提問] 81,325★、2026-03 出生，09-02 查證（防刷通過），社群實測待累積 |
+| [**codegraph**](https://github.com/colbymchenry/codegraph) | 記憶工具 | ⏳ | 2026-09-02 | 預索引 code 知識圖、改 code 自動同步、全本機省 token；[使用者提問] 69,253★、2026-01 出生，09-02 查證（防刷通過），graphify 競品 |
+| [**archify**](https://github.com/tt-a1i/archify) | Skills | ⏳ | 2026-09-02 | 架構/時序/資料流圖 agent skill，自包含 HTML；[使用者提問] 43,378★、2026-04 出生，09-02 查證（防刷通過） |
 | [**x1xhlol/system-prompts-and-models-of-ai-tools**](https://github.com/x1xhlol/system-prompts-and-models-of-ai-tools) | 其他 | ✅ | 2026-08-29 | 彙整 Claude Code、Cursor、Devin AI、Replit 等數十款 AI 編碼工具完整系統提示詞與模型設定；[存量盤點] 14.3 萬星，2025-03 出生，長期累積型參考資源 |
 | [**Shubhamsaboo/awesome-llm-apps**](https://github.com/Shubhamsaboo/awesome-llm-apps) | Skills | ✅ | 2026-08-30 | 彙整百餘款 AI Agent、Agent Skills 與 RAG 開源應用清單；[存量盤點] 13.5 萬星，2024-04 出生，長期累積型參考資源 |
 | [**multica-ai/andrej-karpathy-skills**](https://github.com/multica-ai/andrej-karpathy-skills) | Skills | ⏳ | 2026-08-29 | 單一 CLAUDE.md 檔案改善 Claude Code 行為，取材自 Karpathy 對 LLM coding 常見缺陷的觀察；20.9 萬星，惟僅 GitHub Search 星數、無 forks／issues 佐證可查，增速異常值得存疑，不作為獨立驗證訊號 |

@@ -382,6 +382,11 @@ Citation drift 是 LLM wiki 文獻點名的最嚴重失效模式：**claim 被�
 - 輸出各來源 7 天貢獻統計表，供判斷來源價值
 發現 ⚠️ 時回報使用者，不自行修改管線程式。
 
+**C 窗佇列產消對帳 `[加入: 2026-09-02]`：** 讀 `data/inventory_queue_history.csv`（C 窗每日抓取時寫入：date,unreported,emitted），回報最新佇列量與排空預估（unreported ÷ 每日上限 2）。判讀：
+- 佇列量連兩週上升、或排空預估 > 30 天 → ⚠️ 回報使用者（提高 `INVENTORY_PER_DAY`／一次清倉擇一），不得只抄數字
+- 檔案缺失或最新列距今 > 3 天 → ⚠️「C 窗未寫入對帳，查 daily gather 是否失敗」——**掃描失敗不得當成 0**
+- 起因：C 窗上線 5 天悄悄積 154 個未報導候選（archify 43k★ 排第 20、約 10 天才輪到），佇列長度只寫在 logger.info、無消費端——與 pending 佇列 19 天 0→51 同病（2026-09-02 徹查，見 `wiki/log.md` 當日 Query）
+
 **來源記分卡 `[加入: 2026-07-16]`：** 執行 `python scripts/source_scorecard.py`，將輸出表格附入本節回報。判讀規則（指標定義見 `docs/source-scoring-optimization.md`）：
 - 標 ⚠️ 樣本不足的來源只讀趨勢，**不得**據以建議汰換
 - 樣本充足（✅）且 Wilson 下界與 Presence 雙低的來源 → 列入「觀察名單」回報使用者，不自行動 pipeline 或 registry

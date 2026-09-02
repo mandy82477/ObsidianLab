@@ -230,6 +230,22 @@ def _inventory_sweep(headers: dict, now: datetime) -> list[FeedItem]:
     logger.info("Inventory sweep: %d unreported repos in range, emitting %d",
                 len(candidates), len(picked))
 
+    # 產消對帳（2026-09-02）：佇列量寫進歷史檔供 lint 6e 讀取告警。教訓：C 窗上線
+    # 5 天悄悄積到 154 個未報導候選（每日吐 2 ≈ 77 天排空），佇列長度只在上面那行
+    # logger.info——訊號無消費端，與 pending 佇列 19 天 0→51 同病。同日 upsert。
+    try:
+        hist = NEWS_DIR.parent / "data" / "inventory_queue_history.csv"
+        today = now.strftime("%Y-%m-%d")
+        if hist.exists():
+            rows = [l for l in hist.read_text(encoding="utf-8").splitlines()
+                    if l and not l.startswith(today + ",")]
+        else:
+            rows = ["date,unreported,emitted"]
+        rows.append(f"{today},{len(candidates)},{len(picked)}")
+        hist.write_text("\n".join(rows) + "\n", encoding="utf-8")
+    except Exception as e:
+        logger.warning("Inventory queue history write failed: %s", e)
+
     items = []
     for repo in picked:
         created = (repo.get("created_at") or "")[:10]

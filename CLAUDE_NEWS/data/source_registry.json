@@ -136,6 +136,15 @@
       "score_reliability": "none",
       "curation_mode": "content",
       "notes": "wiki 專頁定向抓取（sources/topic_watch.json），來源標籤 `Topic Watch / <topic slug>`。curation_mode=whitelist 的理由：query 清單是人工實測校準過的策展名單（等同 Blogroll 的性質），且本來源明文不套互動門檻——判準是「對該 wiki 專頁有無價值」，不是分數。歸因 publisher 欄回填後即為 topic slug，可按 topic 看命中；query 層級命中量見 news_aggregator.log 的 per-query INFO 行。"
+    },
+    {
+      "name": "User Query",
+      "slug": "user-query",
+      "active": true,
+      "category": "official",
+      "score_reliability": "none",
+      "curation_mode": "whitelist",
+      "notes": "使用者提問通道（2026-09-02 立法）：使用者在對話中點名的事實，經主編以 web 工具查證一手來源後直接沉澱進 wiki，不經日報。歸因 item_url 填查證來源、item_title 填提問一句話。category 掛 official 的理由：入口即主編查證，證據等級等同官方一手（記者通道反而無 web 工具）。"
     }
   ]
 }
