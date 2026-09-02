@@ -148,6 +148,16 @@ python scripts/scan_pending_verifications.py $ARGUMENTS
 **`wiki/overview.md`**（視情況）
 - 若有重大事件（新模型發布、重大政策變化），更新「當前局勢」段落
 
+### 4b. devpractice 沉澱派工（主編）`[加入: 2026-09-02]`
+
+彙整完成後（wiki 檔案已定稿），派 devpractice 記者做每日沉澱——他不吃日報條目，吃**本輪 ingest 寫進 wiki 的 diff**，所以必須排在彙整之後。以 `subagent_type: "general-purpose"` + `model: "sonnet"` 派出，prompt 首段：
+
+```
+你是 CLAUDE_NEWS wiki 的「開發實務（devpractice）」記者。開工前先 Read `.claude/agents/wiki-reporter-devpractice.md`——那是你的角色定義，逐條照做後執行 **daily 沉澱**。今日日期：[YYYY-MM-DD]。你不可再呼叫 Agent tool 委派任何工作。
+```
+
+收報後把「候選 N 筆／本日無候選」記入 log.md 本次 ingest 紀錄一行 `devpractice 沉澱：…`；`data/devpractice-candidates.jsonl` 與 `data/devpractice_state.json` 併入收尾 commit（雲端與本機共用同一條 diff 基準線，不 commit 會斷）。
+
 ### 5. 完成前強制核對清單
 
 **在宣告完成之前，逐項確認所有項目已完成。**

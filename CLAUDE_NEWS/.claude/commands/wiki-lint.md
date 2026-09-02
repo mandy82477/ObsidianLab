@@ -284,6 +284,16 @@ Citation drift 是 LLM wiki 文獻點名的最嚴重失效模式：**claim 被�
 3. 商業記者本週回報「⚠️ 需主編查證官方計價文件」→ 逐筆查證後寫入，標來源連結與查證日
 4. 本區塊為非新聞性維護：只更新 pricing 的「最後更新」，**不動「最後新聞更新」**
 
+### 5f. devpractice 週彙整（主編派工）`[加入: 2026-09-02]`
+
+六記者收報**之後**（功能記者的 guide 清冊週更、社群記者的 tools 策展已完成，寫入不會互踩），派 devpractice 記者做週彙整。以 `subagent_type: "general-purpose"` + `model: "sonnet"` 派出，prompt 首段：
+
+```
+你是 CLAUDE_NEWS wiki 的「開發實務（devpractice）」記者。開工前先 Read `.claude/agents/wiki-reporter-devpractice.md`——那是你的角色定義，逐條照做後執行 **weekly 彙整**（三件事：本週 coding 亮點、guide 社群面待補逐段深查、coding 跨頁對帳）。今日日期：[YYYY-MM-DD]。你不可再呼叫 Agent tool 委派任何工作。
+```
+
+收報後：「⚠️ 需主編轉知」逐筆登 `data/pending-handoffs.jsonl`；回報摘要記入 Step 8 log 一行 `devpractice 週彙整：…`。
+
 ### 6. CLAUDE.md 健檢
 
 讀取 `wiki/CLAUDE.md`、`.claude/rules/wiki-ingest.md`、`.claude/rules/wiki-ingest-format.md`、`.claude/rules/wiki-reporter-shared.md` 與**本檔（`.claude/commands/wiki-lint.md`）自身** `[加入: 2026-08-28]`，依序執行下列各項檢查。
