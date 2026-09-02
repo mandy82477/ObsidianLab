@@ -312,8 +312,8 @@ Citation drift 是 LLM wiki 文獻點名的最嚴重失效模式：**claim 被�
 | 規則描述中的引用 | 應存在於 | 驗證方式 |
 |---------------|---------|---------|
 | `首次出現` 欄 | `wiki/topics/community-tech-tools.md` | grep `\| 首次出現 \|` |
-| `## 痛點洞察` 區塊 | `wiki/topics/community-tech-tools.md` | grep `## 痛點洞察` |
-| `近期工具` 欄 | `wiki/topics/community-tech-tools.md` | grep `近期工具` |
+| `## 我卡在這裡` 區塊 | `wiki/topics/community-tech-tools.md` | grep `## 我卡在這裡` |
+| `先裝這個` 欄 | `wiki/topics/community-tech-tools.md` | grep `先裝這個` |
 | `## 技術彙整` 區塊 | `wiki/topics/community-tech-discussions.md` | grep `## 技術彙整` |
 | `熱門討論` 表格 | `wiki/topics/community-tech-discussions.md` | grep `熱門討論` |
 | `衍生` 欄 | `wiki/topics/community-tech-discussions.md` | grep `衍生` |

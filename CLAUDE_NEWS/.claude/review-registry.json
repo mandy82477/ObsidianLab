@@ -102,13 +102,15 @@
   },
   {
    "label": "痛點洞察 區塊",
-   "pattern": "## 痛點洞察",
-   "file": "wiki/topics/community-tech-tools.md"
+   "pattern": "## 我卡在這裡",
+   "file": "wiki/topics/community-tech-tools.md",
+   "name": "我卡在這裡 區塊"
   },
   {
    "label": "近期工具 欄",
-   "pattern": "近期工具",
-   "file": "wiki/topics/community-tech-tools.md"
+   "pattern": "先裝這個",
+   "file": "wiki/topics/community-tech-tools.md",
+   "name": "先裝這個 欄"
   },
   {
    "label": "技術彙整 區塊",
