@@ -467,3 +467,4 @@
 [Wed 2026/09/02 12:05:18.07] [cloud daily-news-pipeline-cloud STARTED 2026-09-02T12:05:18Z]
 [Wed 2026/09/02 12:06:08.06] === Agent pipeline start (2026-09-02) ===
 [Wed 2026/09/02 12:06:08.06] ABORTED: gathered_items.json date=2026-09-01 items=71，非目標日期的新鮮資料（gathered_archive/2026-09-02.json 不存在，上游抓料延遲）
+[cloud daily-news-pipeline-cloud STARTED 2026-09-02T17:03:10Z]
