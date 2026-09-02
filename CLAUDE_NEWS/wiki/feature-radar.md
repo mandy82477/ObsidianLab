@@ -4,23 +4,23 @@
 僅收錄官方 changelog、release note 或官方公告來源；社群工具見 [[topics/community-tech-tools]]。
 每日更新：新增功能、更新熱度、補充社群回饋。
 
-**最後更新：** 2026-08-29
+**最後更新：** 2026-09-02
 
 ---
 
 ## ⭐ 本週推薦
 
+- **Claude Fable 5.1**（熱度 🔥🔥🔥🔥🔥）：2026-09-01 發布，新一代旗艦模型 GA 取代 Fable 5.0，快取讀取費率降至基礎輸入價 0.025 倍（原 0.1 倍，約省 75%），長對話、大量快取重複的 session 受益最大
 - **Claude Code Auto 模式已預設化**（熱度 🔥🔥🔥🔥🔥）：8/14 起正式生效，成為 Pro/Max/Team 方案預設權限模式並取代手動確認流程，分類器 token 用量免收費；**依賴手動確認做安全把關者請立即確認自身設定是否要主動關閉**——媒體已發 PSA 提醒
 - **Claude Opus 5**（熱度 🔥🔥🔥🔥🔥）：2026-07-25 正式發布，編碼與知識工作評測逼近 Fable 5、官方稱定價為其一半，現為 Claude Max 新預設模型、Claude Pro 最強模型，適合日常 agentic 使用與知識工作任務
-- **Claude Code 跨 session 訊息互通**（熱度 🔥🔥🔥🔥）：2026-08-08 官方文件確認（需 v2.1.224+、macOS/Linux），用 `ListAgents`+`SendMessage` 跨 session 傳訊；已在平行跑多個 session 的使用者可直接試用
 
-> 本週無新達標功能，維持上週推薦（最後輪替：2026-08-15）。08-27 的 SendFeedback、08-29 的 SDK 命名空間轉正皆為 🔥🔥，未達 🔥🔥🔥🔥 門檻；Claude Opus 5 已超出 30 天時間閘，依規則放寬至 60 天後仍達標而留任。
+> 09-02 換上 Claude Fable 5.1（新發布、🔥🔥🔥🔥🔥），依熱度降序＋新發布優先，汰換原第三名「跨 session 訊息互通」（🔥🔥🔥🔥，2026-08-08，最後輪替 2026-08-15，已逾 7 天且今日未變動）。08-27 的 SendFeedback、08-29 的 SDK 命名空間轉正、09-01 的使用者個人資料 API 皆為 🔥🔥，未達 🔥🔥🔥🔥 門檻；Claude Opus 5 已超出 30 天時間閘，依規則放寬至 60 天後仍達標而留任。
 
 ---
 
 ## ⚠️ 升版風險
 
-**最新版本：** v2.1.251（2026-08-28，新增 `PreModelSwitch`／`PostModelSwitch` hook 事件，可攔截、確認或標註模型切換；`SessionStart` resume hook 現在回傳 session 新鮮度與估計流失的內容量；非 breaking change）。上一版 v2.1.250（同日，僅錯誤修復與穩定性改善，release note 無具體異動項目，非 breaking change）。上一版 v2.1.247（2026-08-26 發布，新增 `SendFeedback` 工具：session 出錯時 Claude 可草擬回報供使用者於 `/feedback` 檢視後送出，可用 `feedbackDisabled` 關閉；屬新增功能，非 breaking change）。上一版 v2.1.246（2026-08-26，新增啟動警告：Bash 允許規則在子指令前使用萬用字元［如 `Bash(git * main)`］時，此寫法也會意外比對插入在子指令前的選項參數；屬安全提示而非新指令/旗標，純提醒非 breaking change）。上一版 v2.1.245（2026-08-25，修復搭載 glibc 2.44 的 Linux 發行版［如 Arch Linux、CachyOS、Fedora Rawhide］啟動當機問題，純 bug fix，非 breaking change）。再上一筆有具體異動記錄的版本為 v2.1.241（2026-08-23，release notes 僅載明「Bug fixes and reliability improvements」，無具體異動項目，純可靠性修正，非 breaking change；v2.1.242–244 無日報報導，不代表未發布）。再前一版 v2.1.239（2026-08-21，`/cost`／狀態列／`--max-budget-usd` 成本估算計入資料常駐工作區 1.1 倍純美國推理附加費；屬既有成本顯示機制的計算口徑調整，非 breaking change）。再前一版 v2.1.238（2026-08-20）新增 `keybindingFlavor` 設定；再前一版 v2.1.237（同日）修復 LLM gateway／自訂 base URL session 的 prompt caching 失效問題，並新增內建「Concise」輸出風格。最後一次重大 breaking change 仍為 v2.1.212／v2.1.215（見下表）；另有一項於 8/14 已生效的 breaking change（auto 模式預設化，已對 Pro/Max/Team 上線，詳見 [[entities/claude-code]] 現況）。⚠️ **另注意**：anthropic-sdk-python 同日發布 v1.0.0，含獨立於 Claude Code CLI 之外的 breaking change（client 升級至 httpx2，官方未提供遷移時程），影響對象為以該 SDK 建置的整合程式碼，非 CLI 升版本身，詳見 [[entities/claude-code]] 現況。
+**最新版本：** v2.1.258（2026-09-01，修正 macOS 12［Monterey］啟動失敗問題［v2.1.255 引入的迴歸］，並修正 remote／排程 session 因「使用者訊息不得為空」而失敗的問題；純 bug fix，非 breaking change；中間版本 v2.1.252–257 本庫日報未見報導，不代表未發布）。再上一筆有具體異動記錄的版本為 v2.1.251（2026-08-28，新增 `PreModelSwitch`／`PostModelSwitch` hook 事件，可攔截、確認或標註模型切換；`SessionStart` resume hook 現在回傳 session 新鮮度與估計流失的內容量；非 breaking change）。上一版 v2.1.250（同日，僅錯誤修復與穩定性改善，release note 無具體異動項目，非 breaking change）。上一版 v2.1.247（2026-08-26 發布，新增 `SendFeedback` 工具：session 出錯時 Claude 可草擬回報供使用者於 `/feedback` 檢視後送出，可用 `feedbackDisabled` 關閉；屬新增功能，非 breaking change）。上一版 v2.1.246（2026-08-26，新增啟動警告：Bash 允許規則在子指令前使用萬用字元［如 `Bash(git * main)`］時，此寫法也會意外比對插入在子指令前的選項參數；屬安全提示而非新指令/旗標，純提醒非 breaking change）。上一版 v2.1.245（2026-08-25，修復搭載 glibc 2.44 的 Linux 發行版［如 Arch Linux、CachyOS、Fedora Rawhide］啟動當機問題，純 bug fix，非 breaking change）。再上一筆有具體異動記錄的版本為 v2.1.241（2026-08-23，release notes 僅載明「Bug fixes and reliability improvements」，無具體異動項目，純可靠性修正，非 breaking change；v2.1.242–244 無日報報導，不代表未發布）。再前一版 v2.1.239（2026-08-21，`/cost`／狀態列／`--max-budget-usd` 成本估算計入資料常駐工作區 1.1 倍純美國推理附加費；屬既有成本顯示機制的計算口徑調整，非 breaking change）。再前一版 v2.1.238（2026-08-20）新增 `keybindingFlavor` 設定；再前一版 v2.1.237（同日）修復 LLM gateway／自訂 base URL session 的 prompt caching 失效問題，並新增內建「Concise」輸出風格。最後一次重大 breaking change 仍為 v2.1.212／v2.1.215（見下表）；另有一項於 8/14 已生效的 breaking change（auto 模式預設化，已對 Pro/Max/Team 上線，詳見 [[entities/claude-code]] 現況）。⚠️ **另注意**：anthropic-sdk-python 同日發布 v1.0.0，含獨立於 Claude Code CLI 之外的 breaking change（client 升級至 httpx2，官方未提供遷移時程），影響對象為以該 SDK 建置的整合程式碼，非 CLI 升版本身，詳見 [[entities/claude-code]] 現況。
 
 | 風險 | 嚴重度 | 說明 |
 |------|--------|------|
@@ -38,7 +38,7 @@
 |--------|------|--------|------------|
 | **2026-09-14** | Claude Code 週配額規則換軌：標準週配額**永久 +25%**，同時取消目前暫行的 **+50%** 加成（官方 2026-08-29 公告） | 相對「目前」水位淨減約 **17%**；適用 Pro／Max／Team 與座位制 Enterprise | 目前吃滿週配額的人：9/14 前重估用量，或把重活挪到 5 小時窗（該窗不受此變動影響） |
 
-> 2026-08-31 的「+50% 促銷結束」已由上列 09-14 換軌公告取代——該促銷不是單純到期，是被永久 +25% 接手，但接手後的水位低於現況。
+> 2026-08-31 的「+50% 促銷結束」已由上列 09-14 換軌公告取代——該促銷不是單純到期，是被永久 +25% 接手，但接手後的水位低於現況。官方促銷頁面已於 09-02 更新到期日為 **2026-09-13**（原載 08-31），與上列 09-14 換軌時間點恰好銜接、互相印證。
 > Fable 5 免費期限（原訂 7/19）已到期並移出本表；今日報導方向趨於一致指向 Pro 訂閱免費存取已結束、Max/Team 動向未明，詳見 [[entities/pricing]]「當前生效的計費規則」與時序。
 
 ---
@@ -64,6 +64,8 @@
 
 | 功能 | 發布日期 | 熱度 | 試用價值 | 狀態 |
 |------|----------|------|----------|------|
+| **Claude Fable 5.1**（新一代旗艦，取代 5.0；同步發布信任機構限定 Mythos 5.1） | 2026-09-01 | 🔥🔥🔥🔥🔥 | ⚡ 有條件推薦 | 正式發布 |
+| **使用者個人資料 API**（Beta，TS sdk-v0.123.0／Python v1.3.0，含 `external_user_onboarding` 欄位） | 2026-09-01 | 🔥🔥 | ⏳ 觀望 | Beta |
 | **PreModelSwitch／PostModelSwitch Hook 事件**（v2.1.251，可攔截/確認/標註模型切換，SessionStart resume 回傳新鮮度） | 2026-08-28 | 🔥🔥🔥 | ⚡ 有條件推薦 | 正式發布 |
 | **SDK files／skills 命名空間轉正**（TypeScript sdk-v0.122.0／Python v1.2.0，beta 介面形狀改為 GA） | 2026-08-27 | 🔥🔥 | ⚡ 有條件推薦 | 正式發布 |
 | **SendFeedback 工具**（v2.1.247，session 出錯時 Claude 草擬回報，經 `/feedback` 檢視後送出；可用 `feedbackDisabled` 關閉） | 2026-08-27 | 🔥🔥 | ⏳ 觀望 | 正式發布 |
@@ -152,6 +154,41 @@
 | **Claude Design** | 2026-04-27 | 🔥🔥 | ❌ 暫不推薦 | 正式發布 |
 | **Dreaming 記憶整合**（最後後續 2026-07-17：Python SDK 0.117.0 新增 dreaming API 支援；尚無採用回報） | 2026-05-07 | 🔥 | ⏳ 觀望 | Research Preview |
 | **Outcomes 規格驗證** | 2026-05-07 | 🔥🔥 | ⚡ 有條件 | 公開測試 |
+
+---
+
+## 🆕 最新功能（2026-09）
+
+### Claude Fable 5.1
+**發布：** 2026-09-01 | **熱度：** 🔥🔥🔥🔥🔥 | **試用價值：** ⚡ 有條件推薦 | **狀態：** 正式發布
+
+**是什麼：** Anthropic 新一代旗艦模型，GA 取代 Fable 5.0；同步發布信任機構限定版 Mythos 5.1（同一模型、不同防護層級，護欄專為資安與生命科學設計），新增反萃取（anti-distillation）機制。
+
+**為何熱：** 官方公告 HN 討論達 1,338 分，屬近期互動度最高的官方公告之一；Terminal-Bench-Science 得分 52.6%、快取讀取費率降至基礎輸入價 0.025 倍（原 0.1 倍，約 75% 降幅）帶動十餘家媒體同日跟進。
+
+**現在要試嗎：** 現有付費方案用戶可直接使用（GA，官方說明頁 09-02 確認方案內含範圍不變）；長對話／大量快取重複的 session 受快取降價影響最大。Mythos 5.1 僅限信任機構，一般開發者無法使用，公開陣容資安首選仍是 Fable 5.1。
+
+**快速上手：** 官方公告未列出確切 `--model` id 字串，暫不提供指令範例以免誤導。
+
+**注意事項：** The New Stack 報導浮水印機制仍有偵測盲區；成本降幅各家媒體說法不一（25%／45%／75%，可能對應不同計費項目），詳見 [[entities/pricing]]。
+
+### 使用者個人資料 API（User Profiles，Beta）
+**發布：** 2026-09-01（anthropic-sdk-typescript sdk-v0.123.0、anthropic-sdk-python v1.3.0） | **熱度：** 🔥🔥 | **試用價值：** ⏳ 觀望 | **狀態：** Beta
+
+**是什麼：** 官方 TypeScript／Python 兩個 SDK 同日同步新增 beta 版使用者個人資料（user profiles）API 支援，含 `external_user_onboarding` 等欄位。
+
+**為何熱：** 兩個 SDK 同日同步發布，屬全新 beta API 平面；官方 release notes 未附使用文件或呼叫範例，用途待官方文件補充。
+
+**現在要試嗎：** 僅適合想搶先摸索 API 形狀、可接受介面隨時變動的開發者；正式流程整合者應等官方文件與非 beta 版本發布。
+
+**快速上手：**
+```
+pip install --upgrade anthropic   # >= 1.3.0
+npm install @anthropic-ai/sdk@0.123.0
+# 官方 release notes 未附具體呼叫範例；已知 schema 含 external_user_onboarding 欄位
+```
+
+**注意事項：** Beta 階段，欄位與介面可能異動；官方尚未發布對應文件頁面。
 
 ---
 

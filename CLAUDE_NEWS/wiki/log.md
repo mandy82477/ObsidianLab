@@ -5321,3 +5321,21 @@ GH Actions 抓料排 10:23 UTC，到 14:45 UTC 仍未落地（+4.4 小時且持�
 **點出什麼：** 使用者要重想兩頁目的（含移除選項）。派 fable 從零設計，結論：兩頁答不同問題——tools「我卡住了該裝哪個」（決策，需證據與分界）、榜「我這幾類這週有什麼沒看到」（感知，需每天掃不漏）——值得各留一頁；但重疊真實存在且**位置具體**：① tools「不綁症狀的精選」是手抄的榜（4 列全 ⚪、無更新機制）；② 榜的 4 個未校準類——**病因不是 query 沒調好，是感測器裝錯層**：GitHub 描述是作者講功能的語言，治理型需求是讀者講痛點的語言，在 HN／dev.to 全文；反證是決策表早有其中 3 類的人工首選（Groundtruth、hooks 機制、Merge Queue），來源全是 Show HN／dev.to、無一來自 GitHub 搜尋。四方案評估：A 砍榜（倒退）、B 砍 tools 判斷層（違反「只看星星找不到需求」）、C 合併（機器與人共寫一檔，違反機器頁約束）、**D 兩頁重劃邊界（採納）**。
 
 **第一波執行：** tools 刪「不綁症狀的精選」、callout 覆寫、速查每組 ≤5 列閘；榜 4 類 `status=retired`（不再掛 ⚠️ 空榜，改印「無法用 GitHub 辨識的需求」指路表）；單向橋：設定檔每類 `tools_symptom`（決策表症狀句原文）→ render「本庫判斷 →」行，`check_tools_page.check_spokes` 對帳（改壞驗紅，測試含反向案例）；🧭 標記＝repo 已在 tools 頁（機器唯讀人工頁，零 API）；對帳 note 加 `retired` 值域（lint 6e 不判窗死）；index／社群 lint 規則同步；register 4 類未校準結案、新開「症狀語言感測器」待裁決。**第二波未動**：速查四組對齊 guide 段號、症狀語言感測器（需 probe＋change-check）。
+
+## 2026-09-02 Ingest | news/2026-09-02.md（97 則抓取，38 則進日報）
+
+- 來源日報：[[news/2026-09-02]]（13/13 來源正常，97 則；日報收錄 38 則，另 59 則透過 `list_digest_omissions.py` 一併提供給記者判斷）
+- 分類派工：模型 10 則、功能 12 則、商業 10 則、安全政策 12 則、社群 21 則、人物 1 則（六類並行 foreground，`subagent_type: general-purpose` + `model: sonnet`，正典派工路徑）
+- 更新頁面：
+  - **模型**：`entities/fable-5.md`、`entities/mythos.md`（Claude Fable 5.1、Claude Mythos 5.1 發布——同一模型不同防護層級，Fable 5.1 GA、Mythos 5.1 限信任機構；反萃取機制；08-29／08-10 兩筆待查證標記補訊 2026-09-02）；`topics/model-comparison.md`（新增陣容列，3 跳自檢通過）；`entities/sonnet-5.md`（過時措辭修正）
+  - **功能**：`entities/claude-code.md`（v2.1.258 macOS 12 啟動修復；SDK TS/Python 新增 user profiles beta；4 則已知問題新增：Windows Desktop 孤兒程序鎖檔 #42776、Remote Control 重連失效 #34255、Advisor 無回應 #69238、MCP draft-07 outputSchema #86142；Fable5 usage credits 誤判 #79337 更新；Auto Mode 提示注入劫持與惡意 .git config RCE 兩則安全性已知問題連結 ai-agent-safety）；`topics/long-context-1m.md`（同步 #79337 [1m] 覆蓋事件）
+  - **商業**：`entities/pricing.md`（Enterprise Frontier Safeguards／EFS 發布，快取讀取費率降至 0.025x，週用量促銷延至 09-13，INR 定價請求；EFS 相關兩筆既有待查證標記補訊）；`topics/anthropic-business.md`（EFS、Nvidia $35B pact 考證為與既有 Lambda 合約同一交易、AWS Fable5.1 上線、IPO 分析）；`topics/enterprise-tool-tracker.md`（Samsung 晶片設計案例第四次媒體重申）
+  - **安全政策**：`topics/ai-agent-safety.md`（Guardian「並未完全對齊」新增細節、Auto Mode 提示注入劫持無修復計畫、teiss 提示注入自我傳播論述、惡意 .git config RCE、AISLE curl CVE 聲稱存疑記錄；「Anthropic banned me」經評估不符任一頁觸發條件，未落地）；`topics/anthropic-government-policy.md`（中國官媒雙重標準指控、SCMP 美中模型競賽分析，與既有 08-31 Bloomberg 主題並陳未逕自合併）
+  - **社群**：`topics/community-tech-patterns.md`（10 則：claude-mem／agent-skills 存量盤點、internet-court-skill／cumora／trinity／skilldock、4 則 dev.to 第一手實作；DevnorsAI/devnors-data-mcp 因品質存疑排除）；`topics/community-tech-discussions.md`（3 則：Anthropic 帳號停權經驗、AISLE 資安行銷質疑、Bengaluru 文化遺產遺失究責討論）
+  - **人物**：`entities/tom-blomfield.md`（Business Insider 談新同事文化，既有 ❓ 待查證標記補訊 2026-09-02）
+- 新增頁面：無
+- feature-radar：新增 2 條（Claude Fable 5.1 🔥🔥🔥🔥🔥／使用者個人資料 API Beta 🔥🔥）；本週推薦換上 Fable 5.1，汰換跨 session 訊息互通（🔥🔥🔥🔥，逾 7 天未變動）；升版風險最新版本更新為 v2.1.258；⏰ 倒數中 09-14 換軌事件補充官方促銷頁已同步更新到期日 09-13，互相印證
+- 轉知帳本：本輪新開 7 筆（H-3f85a1／H-afe923／H-969fc1／H-398ffe／H-5dee92／H-a2cc40／H-f5c58d），其中 H-969fc1 模型記者已於同日獨立處理並即時結案；其餘 6 筆留待次日對應記者接手
+- 摘要：Claude Fable 5.1／Mythos 5.1 發布為今日最大事件（HN 1338 分、十餘家媒體跟進），同日並有 Anthropic 對 7/30、8/4 兩起未授權存取事件的深入檢討部落格（坦承「並未完全對齊」、將與 METR 合作審查）、Enterprise Frontier Safeguards 企業級零留存安全監控上線，以及 Claude Code Auto Mode 遭提示注入劫持且官方無修復計畫的資安警示
+- 呈現品質：全部通過；`community-tech-discussions.md` 表格既有債務（多列 core論點欄 >120 字元）記錄待辦，非本輪新增
+- 品質備註：無

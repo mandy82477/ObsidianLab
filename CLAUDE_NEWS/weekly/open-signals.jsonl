@@ -67,3 +67,5 @@
 {"date": "2026-08-31", "week": "2026-W35", "forecast": "版權訴訟：Sony Music、Warner 等控告 Anthropic 以 BT 大規模下載受版權保護音樂訓練模型，求償每首歌最高 15 萬美元（08-30）", "origin": "新立", "probe": "15 萬", "entries": []}
 {"date": "2026-08-31", "week": "2026-W35", "forecast": "代理讀進來的東西沒人驗：`llms.txt` 供應鏈攻擊面（8,265 份檔案中 120 份指向未註冊套件，08-29）＋ Auto Mode 繞過（08-28）＋ dev.to 一句模糊敘述觸發遞迴刪檔（08-30）", "origin": "新立", "probe": "供應鏈", "entries": []}
 {"date": "2026-08-31", "week": "2026-W35", "forecast": "代理讀進來的東西沒人驗：`llms.txt` 供應鏈攻擊面（8,265 份檔案中 120 份指向未註冊套件，08-29）＋ Auto Mode 繞過（08-28）＋ dev.to 一句模糊敘述觸發遞迴刪檔（08-30）", "origin": "新立", "probe": "Auto Mode", "entries": []}
+{"date": "2026-09-02", "week": "2026-W35", "forecast": "代理讀進來的東西沒人驗：`llms.txt` 供應鏈攻擊面（8,265 份檔案中 120 份指向未註冊套件，08-29）＋ Auto Mode 繞過（08-28）＋ dev.to 一句模糊敘述觸發遞迴刪檔（08-30）", "origin": "新立", "probe": "Auto Mode", "entries": []}
+{"date": "2026-09-02", "week": "2026-W35", "forecast": "代理讀進來的東西沒人驗：`llms.txt` 供應鏈攻擊面（8,265 份檔案中 120 份指向未註冊套件，08-29）＋ Auto Mode 繞過（08-28）＋ dev.to 一句模糊敘述觸發遞迴刪檔（08-30）", "origin": "新立", "probe": "信任", "entries": []}

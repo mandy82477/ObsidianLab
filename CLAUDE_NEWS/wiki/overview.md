@@ -7,6 +7,8 @@
 
 ## 當前局勢
 
+**Claude Fable 5.1／Mythos 5.1 發布，新一代旗艦上線**：09-01 Anthropic 發布 Claude Fable 5.1（GA，取代 Fable 5）與 Claude Mythos 5.1（僅限信任機構，護欄專為資安與生命科學設計），新增反萃取機制，快取讀取費率降至基礎輸入價 0.025 倍（原 0.1 倍，約省 75%）。HN 討論達 1,338 分，十餘家媒體同日跟進；同日 Anthropic 另發布 Enterprise Frontier Safeguards（EFS），結合零資料留存與濫用偵測，今秋起分階段開放。詳見 [[entities/fable-5]]、[[entities/mythos]]、[[entities/pricing]]。
+
 **音樂產業著作權訴訟升級為主流廠牌層級**：Sony Music、Warner（含旗下出版部門 Warner Chappell）於 08-29 正式對 Anthropic 提告，指控以 BT 下載盜版音樂訓練 Claude、求償每首歌最高 15 萬美元——訓練資料爭議自書籍出版業（15 億美元和解案）擴散至音樂主流廠牌。詳見 [[topics/anthropic-business]]。
 
 **Claude Code 週配額改版：帳面 +25%、實際 −17%**：+50% 促銷已於 08-31 如期終止，09-14 起標準週配額永久調高 25%——換算後實際可用量約為促銷期的 83%。貼近配額上限的工作流應在 09-14 前評估用量節奏或方案層級。詳見 [[entities/pricing]] 與 [[feature-radar]]「⏰ 倒數中」。
@@ -27,10 +29,10 @@
 
 | 模型 | 狀態 | 備注 |
 |------|------|------|
+| **Claude Fable 5.1** | 🟢 旗艦（2026-09-01 發布，取代 Fable 5）| 反萃取機制；快取讀取費率降至 0.025x（約省 75%）；一般可用 |
+| **Claude Mythos 5.1** | 🟢 政策限定（2026-09-01 發布，取代 Mythos 5）| 僅限信任機構，護欄專為資安與生命科學設計 |
 | **Claude Opus 5** | 🟢 次旗艦（2026-07-25 發布）| Claude Max 新預設模型、Claude Pro 最強模型；跨模型代際「重複修辭套路」問題持續（GitHub #77136）|
-| **Claude Fable 5** | 🟢 全面恢復 | Defense in Depth 安全分類器；$10/$50 per M token；出口管制長期追蹤案（黑名單）本週終局解除 |
 | **Claude Sonnet 5** | 🟢 Claude Code 預設 | 1M context；$2/$10 per Mtok（**標準價，已於 2026-08-10 永久化**，無到期壓力）|
-| **Claude Mythos 5 / Preview** | 🟢 全面恢復（政策限定）| 僅限授權機構／安全研究用途 |
 | Claude Opus 4.8 | ⚠️ 已被取代 | 次旗艦地位已由 Opus 5 接手；feature-radar 熱度本輪降溫（🔥🔥🔥🔥🔥→🔥🔥🔥🔥）|
 | Claude Sonnet 4.6 | ✅ Active | 仍可選用 |
 | Claude Haiku 4.5 | ✅ Active | 低延遲／高頻批量任務的現行選項 |
@@ -82,6 +84,7 @@
 
 | 日期 | 事件 | 影響 |
 |------|------|------|
+| 09-02 | Claude Fable 5.1／Mythos 5.1 發布（HN 1338 分）；Enterprise Frontier Safeguards 企業級零留存安全監控上線；Claude Code Auto Mode 遭提示注入劫持、官方無修復計畫 | 🤖 模型；🔒 安全 |
 | 09-01 | 官方併案檢討評測環境資安事件＋承諾 METR 獨立審查；Lambda 350 億美元雲端合約；v2.1.252 發布 | 🔒 安全承諾；💼 商業 |
 | 08-31 | Sony／Warner Chappell 訴訟多媒體聚焦正式提交；中國官方首度對 Anthropic 表態不滿；促銷 +50% 到期日 | ⚖️ 法律；🏛️ 地緣 |
 | 08-29 | Sony Music／Warner 正式提告（每首歌最高 15 萬美元）；週配額改版公告（09-14 起 +25%，實際 −17%）；五角大廈黑名單終局判決；Nscale 450 億協議 | ⚖️ 法律；💰 計費；🏛️ 政策 |
