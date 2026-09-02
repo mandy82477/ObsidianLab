@@ -26,11 +26,12 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 **領域：** 💼 商業
 **首次出現：** 2026-04-25
 **最後更新：** 2026-09-02
-**最後新聞更新：** 2026-09-01
+**最後新聞更新：** 2026-09-02
 
-> **最新計費政策異動**（2026-08-31）
-> - **週配額規則改版：09-14 起標準週配額永久 +25%，但現行 +50% 促銷 08-31 到期不續，相較目前水位實際減少約 17%**：詳見「當前生效的計費規則」新增／更新列，另見 [[feature-radar]]「⏰ 倒數中」。
-> - **社群質疑「20x」用量宣稱的實質定義**（2026-08-31，HN）：發文者指出官方行銷所稱的「20x」用量只放大 5 小時視窗、非週上限，用語易誤導；討論串提及既有 Max 20x 用量集體訴訟，詳見「事故與爭議」新增節。
+> **最新計費政策異動**（2026-09-02）
+> - **官方更正：Claude Code 週用量 +50% 促銷並未如期於 08-31 終止，實際再延長至 09-13**：官方說明中心 09-02 更新原文明載延長，銜接 09-14 起生效的「標準週配額永久 +25%」規則，兩者間不留缺口。適用 Pro、Max、Team。詳見「當前生效的計費規則」更新列，另見 [[feature-radar]]「⏰ 倒數中」（需主編同步）。
+> - **Fable 5.1／Mythos 5.1 快取讀取費率降至 0.025x**（標準為 0.1x）：官方定價文件更新，長對話快取成本最多省 75%；兩版本名稱首度出現於官方一手文件，詳見「模型 API 定價現況」新增列。
+> - **印度盧比定價訴求 GitHub Issue #17432**：留言數再攀升至 213（首次記錄 👍628，本輪商業類條目互動量最高），Claude Code 涵蓋範圍仍未見官方回應。
 
 ## 現況
 
@@ -89,6 +90,8 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 
 **本表數字之官方查證（2026-08-20）**：Fable 5 $10/$50、Opus 5 與 Opus 4.8 $5/$25、Sonnet 5 $2/$10、Sonnet 4.6 $3/$15、Haiku 4.5 $1/$5，均與官方模型總覽頁一致（[Models overview](https://platform.claude.com/docs/en/about-claude/models/overview)，2026-08-20 查證）。**（2026-08-28 更正）** 此註原寫「8/31 之後的 $3/$15 走向待定」——該說法在寫下時就已過期：官方早於 **2026-08-10** 宣布 $2/$10 永久化、9/1 漲價取消。已無到期日可等。
 
+**Fable 5.1／Mythos 5.1 快取費率新增（2026-09-02）**：官方定價文件新增條目——兩版本的快取讀取／刷新費率為**標準輸入價的 0.025 倍**（本頁「標準」快取命中乘數為 0.1 倍，見下方「通路與乘數」），長對話快取成本較前代最多省 75%。兩版本**基礎 $/Mtok 定價尚未公布**，本表暫不新增列；版本存在的佐證與待辦見上方「定價與促銷」09-02 條目、[[entities/fable-5]]。
+
 > 模型能力與評測細節見 [[topics/model-comparison]]；此表僅列價格。
 > **注意（2026-07-14）**：The Register 分析指出 Anthropic tokenizer 設計較為複雜，使 API 定價與跨供應商成本估算更難以直接比較（標題式報導，無進一步量化細節，source_count=2）。
 > **注意（2026-07-18）**：MakeUseOf 報導 Claude 存在「最便宜的 API 模式」，每項任務僅需幾分錢成本，但多數使用者不知其存在；報導未點名具體模式或模型（推測涉及 Haiku 或 Batch API），僅標題層級資訊，待後續補充具體費率（Google News/MakeUseOf）。
@@ -101,8 +104,8 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 
 - **✅ 2026-07-20 生效｜旗艦模型的訂閱分界（官方文件已確認）**：Max 方案、Team premium seats、舊制席位制 Enterprise premium seats — Fable 5 為標配，可用至多**每週用量上限的 50%**，不額外收費；Pro 方案、Team standard seats、Enterprise standard seats — Fable 5 **不計入方案用量**，需以 usage credits 按 API 費率（$10/$50 per Mtok）付費。合格 Pro 與 Team standard seats 另有**一次性過渡 credit $100**（Team 每 standard seat $100、每組織上限 $2,500），領取窗已於 2026-08-02 關閉、已領 credits 於 2026-09-17 到期，且可用於任何模型（[官方促銷條目](https://support.claude.com/en/articles/15862783)，2026-08-22 查證）。先前將 Fable 5 納入方案週用量的促銷結束於 2026-07-19 23:59:59 PT（來源：[Claude Fable 5 on your plan](https://support.claude.com/en/articles/15424964-claude-fable-5-on-your-plan)，2026-08-08 查證）
 - **⚠️ usage credits 開啟後，方案用量上限不再是硬停止**：credits 為 opt-in、預設關閉，於 `Settings > Usage` 開關，可設 auto-reload（每日兌換上限 $2,000）。開啟後 Claude 會在額度用盡後繼續回答並從 credits 扣款，體感與額度內無異，但每則超額回應皆計費——靠方案硬上限控管支出者需主動確認此開關（來源：[Manage usage credits](https://support.claude.com/en/articles/12429409-manage-usage-credits-for-paid-claude-plans)，2026-08-08 查證）
-- **✅ 2026-08-31 到期（結局已定）｜Claude Code 週用量 +50% 促銷**：此暫時性促銷（原訂 2026-05-13 起，歷經 06-22→07-07→07-12→07-19→08-18 多次延長至 08-31）**如期於 2026-08-31 終止**，官方 2026-08-29 公告確認不再延長，改由下方「⏰ 2026-09-14｜標準週配額永久 +25%」規則接手（來源：[Bluesky @anthropicbot](https://bsky.app/profile/anthropicbot.bsky.social/post/3muaaxs5nx424)，2026-08-29）
-- **⏰ 2026-09-14 生效｜標準週配額永久調高 25%，但取消目前 +50% 加成 → 相較「目前」水位實際減少約 17%**：Anthropic 官方公告（Bluesky @anthropicbot，2026-08-29）自 2026-09-14 起將 Claude Code 標準週配額**永久**調高 **25%**，適用 **Pro、Max、Team 與座位制 Enterprise** 方案；同時上方「+50% 促銷」於 08-31 到期不再延續。換算：`1.25 ÷ 1.50 ≈ 0.833`，即讀者 09-14 起實際可用週配額約為現在（+50% 加成下）的 83%，較現況**減少約 17%**（BleepingComputer〈Anthropic is cutting Claude Code's current weekly limits by 17 percent〉標題即以此為框架）。**讀者該做的事**：09-14 前後若工作流貼近週配額上限，應預期實際可用量下降，評估是否需調整用量節奏或方案層級（來源：[Bluesky @anthropicbot](https://bsky.app/profile/anthropicbot.bsky.social/post/3muaaxs5nx424)、[BleepingComputer](https://www.bleepingcomputer.com/news/artificial-intelligence/anthropic-is-cutting-claude-codes-current-weekly-limits-by-17-percent/)，2026-08-29）
+- **✅ 2026-09-13 到期（更正：非如期於 08-31 終止）｜Claude Code 週用量 +50% 促銷**：此暫時性促銷（原訂 2026-05-13 起，歷經 06-22→07-07→07-12→07-19→08-18→**09-02（本次更正）**多次延長）曾於 08-29 被官方公告記為「08-31 到期、不再延長」，但官方說明中心 **2026-09-02** 更新原文——「We've extended this promotion. Increased weekly limits now run through September 13, 2026.」——顯示促銷實際上又獲延長至 **2026-09-13**，並未如 08-29 公告所述終止；09-14 起銜接下方「標準週配額永久 +25%」規則，兩者間不留缺口。適用 **Pro、Max、Team** 方案（來源：[Claude Code May–August 2026 Weekly Limits Promotion](https://support.claude.com/en/articles/15910845-claude-code-may-august-2026-weekly-limits-promotion)，2026-09-02 查證）
+- **⏰ 2026-09-14 生效｜標準週配額永久調高 25%，但取消 +50% 加成 → 相較「加成期間」水位實際減少約 17%**：Anthropic 官方公告（Bluesky @anthropicbot，2026-08-29）自 2026-09-14 起將 Claude Code 標準週配額**永久**調高 **25%**，適用 **Pro、Max、Team 與座位制 Enterprise** 方案；上方「+50% 促銷」延長至 **09-13** 屆滿後、09-14 起由本規則接手（2026-09-02 官方更正，見上方，兩者間不留缺口）。換算：`1.25 ÷ 1.50 ≈ 0.833`，即讀者 09-14 起實際可用週配額約為 +50% 加成期間的 83%，較加成期間**減少約 17%**（BleepingComputer〈Anthropic is cutting Claude Code's current weekly limits by 17 percent〉標題即以此為框架）。**讀者該做的事**：09-14 前後若工作流貼近週配額上限，應預期實際可用量下降，評估是否需調整用量節奏或方案層級（來源：[Bluesky @anthropicbot](https://bsky.app/profile/anthropicbot.bsky.social/post/3muaaxs5nx424)、[BleepingComputer](https://www.bleepingcomputer.com/news/artificial-intelligence/anthropic-is-cutting-claude-codes-current-weekly-limits-by-17-percent/)，2026-08-29）
 - **訂閱配額制維持**：原定 2026-06-15 生效的 Agent SDK／`claude -p` 計費切割已於 2026-06-16 暫停，重新推行時間未定；Agent SDK、`claude -p`、第三方 Agent SDK app 用量持續計入訂閱配額，無需額外信用池（來源：2026-06-16、2026-06-18 DevOps.com）
 - **1M context window 觸發獨立 API 計費通道**：即使儀表板顯示 0% 訂閱用量，1M context window 仍會產生額外費用（實例：2026-05-11 用戶 0% 用量下遭收取 $3.37 Extra Usage）。1M 的世代分界與控制權缺口見 [[topics/long-context-1m]]
 - **`ANTHROPIC_API_KEY` 環境變數陷阱**：雲端環境（CI/CD、Docker、K8s）若設置此環境變數，所有 Claude Code 呼叫自動改走 API 計費通道而非訂閱配額（來源：2026-04-30）
@@ -110,7 +113,7 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 - **印度盧比在地化定價生效（2026-07-13）**：Pro 方案 **Rs 2,000／月**，為美國以外最大市場首次官方在地化定價；Max／Team／Enterprise 是否同步在地化未見報導（來源：2026-07-13～14 TechCrunch、NDTV、Times of India、bestmediainfo.com）
 - **Max 用量上限爭議進入司法程序**：2026-06-16 集體訴訟指控 Max 5x／Max 20x 實際限制遠低於廣告宣稱（Max 20x 實測僅 Pro 的 6–8 倍），訴訟結果將影響方案信任度與可能的退款／調整義務（來源：2026-06-16 CNET、Decrypt）
 
-> **已失效並移除的規則**：Fable 5 免費使用期（2026-07-19 到期，已由上方 07-20 分界取代）；Claude Code 週用量 +50% 促銷（如期於 2026-08-31 到期，未再延長，由上方「⏰ 2026-09-14｜標準週配額永久 +25%」規則接手）。沿革見下方「重要政策變動紀錄」。
+> **已失效並移除的規則**：Fable 5 免費使用期（2026-07-19 到期，已由上方 07-20 分界取代）。**更正（2026-09-02）**：先前記於本欄之「Claude Code 週用量 +50% 促銷已如期於 08-31 到期、未再延長」為誤植——官方 09-02 更新公告顯示該促銷實際延長至 2026-09-13，該規則現仍生效，已移回上方「當前生效的計費規則」。沿革見下方「重要政策變動紀錄」。
 
 ---
 
@@ -301,6 +304,12 @@ git commit 歷史出現大寫字串「HERMES.md」會觸發靜默切換至 API �
 
 ### 定價與促銷（模型定價、方案設計）
 
+#### 2026-09-02：官方更正週用量促銷延長至 09-13（非如期於 08-31 終止）；定價文件新增 Fable 5.1／Mythos 5.1 快取費率；印度盧比訴求互動再攀升
+
+- **Official Docs（support.claude.com）更正促銷狀態**：Claude Code 週用量 +50% 促銷再度延長，新到期日 **2026-09-13**（原記 2026-08-31 到期），適用 Pro、Max、Team。原文：「We've extended this promotion. Increased weekly limits now run through September 13, 2026.」**更正本頁既有記錄**：08-29 條目曾記「促銷如期於 08-31 終止、不再延長」，本次官方更新顯示該促銷實際上又獲延長，並非終止；上方「當前生效的計費規則」與「已失效並移除的規則」均已同步修正（來源：[Claude Code May–August 2026 Weekly Limits Promotion](https://support.claude.com/en/articles/15910845-claude-code-may-august-2026-weekly-limits-promotion)，2026-09-02）
+- **Official Docs（platform.claude.com/docs/en/about-claude/pricing）新增快取費率**：定價頁更新反映 Claude Fable 5.1、Claude Mythos 5.1 的快取讀取／刷新費率降至**標準輸入價的 0.025 倍**（標準快取讀取為 0.1 倍），長對話情境下快取成本較前代最多省下 75%；方案與定價頁（claude.com/pricing）同步大幅改版（新增/移除多段定價說明，完整差異未見比對）。**與模型頁的關係**：Fable 5.1／Mythos 5.1 為官方定價文件首度出現的具體版本號，此前僅見於 08-28 Reddit 社群臆測（[[entities/fable-5]] 待查證標記）；本則為一手來源，強力佐證兩版本已存在，⚠️ 已標記轉知主編轉知模型記者查證版本狀態。本頁僅記錄快取乘數，兩版本完整基礎 $/Mtok 定價未見公布，暫不列入上方「模型 API 定價現況」表。**乘數異動歸屬提醒**：此快取乘數變動屬「通路與乘數」節維護範圍（模型世代分界類，見 `.claude/rules/wiki-ingest-models.md` I 條），⚠️ 已標記轉知主編於下次 lint 查證納入乘數對照表（來源：[Pricing](https://platform.claude.com/docs/en/about-claude/pricing)、[claude.com/pricing](https://claude.com/pricing)，2026-09-02）
+- **GitHub Issue #17432 留言數更新**：留言數由 08-17 查證的 212 增至 **213**，本次首度記錄 reactions 達 **628 👍**（本輪商業類條目互動量最高之功能請求）；訴求內容不變——使用者要求 Anthropic 仿照 OpenAI（ChatGPT）、Google（Gemini）推出印度盧比定價方案，涵蓋 Claude Pro 與 Claude Code 兩項訂閱。與既有記錄相同：07-13 官方回應僅確認 Pro 方案訂閱定價，Claude Code 涵蓋範圍缺口依然存在（GitHub https://github.com/anthropics/claude-code/issues/17432，2026-09-01）
+
 #### 2026-08-29：官方公告週配額改版——09-14 起標準週配額永久 +25%，但 08-31 起不再延續 +50% 促銷，實際減少約 17%
 
 - **官方公告**：Anthropic 官方（[Bluesky @anthropicbot](https://bsky.app/profile/anthropicbot.bsky.social/post/3muaaxs5nx424)）宣布自 **2026-09-14** 起將 Claude Code 標準週配額**永久**調高 **25%**，適用 **Pro、Max、Team 與座位制 Enterprise** 方案；同時本頁已追蹤逾三個月的「週用量 +50% 促銷」（見上方「當前生效的計費規則」）如期於 **2026-08-31** 到期、不再延長。
@@ -319,14 +328,14 @@ git commit 歷史出現大寫字串「HERMES.md」會觸發靜默切換至 API �
 
 - **Techzine Global（2026-08-21 07:46 UTC）**：報導稱 Anthropic 讓企業客戶可以將 AI 資料存放在自有雲端環境中，僅標題可用，未見具體實作機制（是否限特定雲端商、涵蓋哪些模型／方案）、生效時間或官方公告連結。
 - **與下方 08-20 資料保留政策異動報導的關係（待確認，不逕自認定為同一事件）**：時間點相近、主題同屬企業資料治理，但來源與措辭均不同（一稱「自有雲端存放」、一稱「保留政策調整」），無法從現有標題層級資訊判斷是否為同一政策的不同描述角度，或兩項獨立變動；不可推測合併。
-- ❓ **待查證**（標 2026-08-21｜查 Techzine、自有雲端環境｜複 2026-09-04）｜**企業資料存放於自有雲端環境**：官方文件是否已更新支援此作法未見報導，僅標題可用（Google News/Techzine Global）
+- ❓ **待查證**（標 2026-08-21｜查 Techzine、自有雲端環境｜複 2026-09-04｜訊 2026-09-02）｜**企業資料存放於自有雲端環境**：官方文件是否已更新支援此作法未見報導，僅標題可用（Google News/Techzine Global）。**09-02 強力後續（非結案，留待主編核對後判定）**：Anthropic 官方發布 Enterprise Frontier Safeguards（EFS），明載「資料存放於客戶控制之雲端基礎設施，而非 Anthropic」，與本則傳聞高度吻合；惟 EFS 定位為「安全監控產品」而非單純儲存政策說明，措辭與涵蓋範圍是否完全對應同一件事仍待主編核對官方全文，詳見 [[topics/anthropic-business]]「戰略合作」EFS 條目（[Anthropic Blog](https://www.anthropic.com/news/enterprise-frontier-safeguards)，2026-09-02）
 
 #### 2026-08-20：路透社／彭博社（消息人士）報導 Anthropic 計畫調整企業資料保留政策（未經官方證實）
 
 - **Reuters（19:34 UTC）／Bloomberg（17:51 UTC）同日報導**：兩家媒體均引述消息人士，稱 Anthropic 計畫調整企業客戶的資料保留政策；Bloomberg 標題聚焦「進階 AI」（advanced AI）的適用範圍，兩則均僅標題與極簡導言可用，具體調整內容（保留天數延長／縮短、涵蓋模型範圍、生效時間）均未見報導細節。
 - **與既有「30 天資料保留政策」記錄的關係（見上方 2026-06-09 條目）**：本頁已記錄 Fable 5／Mythos 5 流量（含 AWS Bedrock）強制保留 30 天之既有政策；本則消息來源報導的「計畫調整」是否即針對此既有政策、調整方向為何，均未見報導細節，不可逕自推定延長或縮短。
 - **與競品動態的呼應**：同期 The Register／TechCrunch 報導 OpenAI 祭出「零資料保留」（zero data retention）承諾搶攻 Anthropic 企業客戶，被解讀為競爭回應，詳見 [[topics/competitor-landscape]]「OpenAI ChatGPT Work / GPT-5.6」子區塊。
-- ❓ **待查證**（標 2026-08-20｜查 Reuters、資料保留政策｜複 2026-09-03）｜**企業資料保留政策調整細節**：消息來源均為匿名「source says」，具體調整內容未見官方公告（Google News/Reuters；Google News/Bloomberg.com）
+- ❓ **待查證**（標 2026-08-20｜查 Reuters、資料保留政策｜複 2026-09-03｜訊 2026-09-02）｜**企業資料保留政策調整細節**：消息來源均為匿名「source says」，具體調整內容未見官方公告（Google News/Reuters；Google News/Bloomberg.com）。**09-02 強力後續（非結案，留待主編核對後判定）**：Anthropic 官方發布的 Enterprise Frontier Safeguards（EFS，零資料留存＋濫用偵測）可能即為本則所稱「計畫調整」的官方版本，惟 08-20 報導口徑（保留天數延長／縮短）與 EFS 官方措辭（客戶控制雲端基礎設施＋安全監控）不完全一致，是否為同一政策的不同揭露階段待主編核對官方全文，詳見 [[topics/anthropic-business]]「戰略合作」EFS 條目（[Anthropic Blog](https://www.anthropic.com/news/enterprise-frontier-safeguards)，2026-09-02）
 
 #### 2026-08-19：DevOps.com 稱「暫時性用量提升」當晚到期，與週用量 +50% 促銷延長是否同一時程尚無法確認
 

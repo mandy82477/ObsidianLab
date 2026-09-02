@@ -34,3 +34,7 @@
 {"id": "H-871320", "closed": "2026-08-30", "status": "done", "by": "功能", "result": "已於 claude-code.md 安全與隱私分組新增 llms.txt 信任誘騙條目"}
 {"id": "H-616500", "opened": "2026-08-31", "from": "安全政策", "to": "功能", "page": "entities/claude-code", "note": "Auto Mode 提示注入條目 08-31 新增量化數字（60–80% vs 官方 0%），嚴重度升級，請評估同步 claude-code.md 已知問題／安全提醒（08-27 曾轉知過同議題，本次為升級後再提醒）", "status": "open"}
 {"id": "H-616500", "closed": "2026-09-01", "status": "done", "by": "功能", "result": "Auto Mode 注入量化數字（60–80% vs 0%）已同步 claude-code 安全與隱私條目並升級嚴重度"}
+{"id": "H-3f85a1", "opened": "2026-09-02", "from": "功能", "to": "模型", "page": "entities/fable-5.md", "note": "第 234 行 issue #79337（Fable 5 usage credits／[1m] 覆蓋）互動數與「已於 07-20 確認為誤判」措辭已過期——問題已持續逾 6 週未解（累積 76 則留言、26 個讚），請同步更新該行敘述與數字", "status": "open"}
+{"id": "H-afe923", "opened": "2026-09-02", "from": "功能", "to": "社群", "page": "topics/community-tech-patterns.md", "note": "36Kr 報導「Claude Desktop 本機 Ollama proxy 讓 Opus 5 欄位改跑 Kimi K3」屬社群發現的工作流／workaround，型態上更貼近 community-tech-patterns（繞過官方模型限制的做法），建議評估收錄並註記相關風險與政策疑慮", "status": "open"}
+{"id": "H-969fc1", "opened": "2026-09-02", "from": "商業", "to": "模型", "page": "entities/fable-5.md", "note": "官方定價文件（2026-09-02）與 AWS 官方部落格已首度以一手來源確認 Fable 5.1／Mythos 5.1 存在，可望更新該頁 08-29 標記的「Fable 5.1 是否即將發布」待查證項", "status": "open"}
+{"id": "H-398ffe", "opened": "2026-09-02", "from": "商業", "to": "安全政策", "page": "topics/ai-agent-safety.md", "note": "評估 Enterprise Frontier Safeguards（EFS）的濫用偵測技術機制是否需在本頁補充（pricing.md 僅記商業／採用面）", "status": "open"}

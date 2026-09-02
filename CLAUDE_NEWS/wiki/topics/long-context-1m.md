@@ -24,11 +24,11 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 **領域：** 🛠️ 工具/功能
 **別名：** 1M context window, long context, `[1m]`
 **開始日期：** 2026-04-10
-**最後更新：** 2026-08-31
-**最後新聞更新：** 2026-08-31
+**最後更新：** 2026-09-02
+**最後新聞更新：** 2026-09-02
 
-> **最新動態**（2026-08-30）
-> 使用者回報選用 opus-plan 模型時，即使已達成 1M context 資格仍被要求另開用量額度（#61869）——「資格達成」與「計費閘門」互相打架的訊號再添一筆，繼「狀態列顯示不準」（08-29，#61734，24 則留言）與「Pro 預設開啟關不掉」（08-25，62 則留言）之後。三者官方均未回應。
+> **最新動態**（2026-09-02）
+> `[1m]` 變體遭覆蓋（#79337）互動數更新至 76 則留言、26 個讚，已持續逾 6 週未解——排除官方 07-20「誤判」定性下應已消退的可能性，「選定狀態保不住」缺口比原先認定的更頑固。此前接續動態：選用 opus-plan 模型時即使已達成 1M context 資格仍被要求另開用量額度（#61869）——「資格達成」與「計費閘門」互相打架的訊號再添一筆，繼「狀態列顯示不準」（08-29，#61734，24 則留言）與「Pro 預設開啟關不掉」（08-25，62 則留言）之後。四者官方均未回應。
 
 ---
 
@@ -58,7 +58,7 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 |---|---|---|
 | **預設開啟、找不到關閉方式**（Pro）| 62 則留言、44 個讚，2026-08-25 | 🔴 官方未回應 |
 | **選定狀態保不住**——1M 變體從 model picker 消失，session 中途被降級 | [#46221](https://github.com/anthropics/claude-code/issues/46221)，2026-04-10 開立 | ❓ 以 duplicate 關閉（關聯 #45978），全程無官方留言確認修復 |
-| **`[1m]` 後綴自成一個模型 id**，會影響配額判定 | 受影響帳號存的是 `claude-fable-5[1m]`；[#79337](https://github.com/anthropics/claude-code/issues/79337) Max 誤判需買 credits | 官方 07-20 定性為誤判，社群回報延燒至 08-07 |
+| **`[1m]` 後綴自成一個模型 id**，會影響配額判定 | 受影響帳號存的是 `claude-fable-5[1m]`；[#79337](https://github.com/anthropics/claude-code/issues/79337) Max 誤判需買 credits，即使 session 已存 `[1m]` 設定仍遭覆蓋 | 官方 07-20 定性為誤判，但問題持續未解，社群回報延燒逾 6 週至 09-02（累積 76 則留言、26 個讚）|
 | **你看不出自己在不在 1M 上**——狀態列對 Sonnet 4.6 顯示 200k，而該模型實際支援 1M | [#61734](https://github.com/anthropics/claude-code/issues/61734)，24 則留言，2026-08-29 | 🔴 官方未回應 |
 | **已達 1M 資格仍要求另開用量額度**（opus-plan 模型）| [#61869](https://github.com/anthropics/claude-code/issues/61869)，2026-08-30 開立 | 🔴 官方未回應 |
 
@@ -86,6 +86,9 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 - [[topics/code-quality-decline]] — 模型釘選／靜默降級訊號群
 
 ## 時序
+
+### 2026-09-02
+[#79337](https://github.com/anthropics/claude-code/issues/79337) 互動數更新（76 則留言、26 個讚）：使用者確認即使 session 已存 `claude-fable-5[1m]` 設定，仍會被靜默覆蓋並要求額外 usage credits——排除「使用者未正確設定」的可能，官方 07-20 的「誤判」定性與實際持續時間（逾 6 週）不符，官方尚未再次回應。
 
 ### 2026-08-30
 [#61869](https://github.com/anthropics/claude-code/issues/61869)：使用者回報選用 opus-plan 模型時，即使已達成 1M context 使用資格，仍被要求另開用量額度（Usage credits）才能使用——與既有「`[1m]` 後綴自成模型 id 影響配額判定」（#79337）同屬資格與計費閘門不一致，涉及模型不同，暫分列追蹤。
