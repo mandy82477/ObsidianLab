@@ -37,6 +37,7 @@ CHECK_WEEKLY_LEDGER = REPO_ROOT / "scripts" / "check_weekly_ledger.py"
 CHECK_WIKI_FRESHNESS = REPO_ROOT / "scripts" / "check_wiki_freshness.py"
 CHECK_FEATURE_RADAR = REPO_ROOT / "scripts" / "check_feature_radar.py"
 CHECK_PENDING_MARKERS = REPO_ROOT / "scripts" / "check_pending_markers.py"
+CHECK_TOOLS_PAGE = REPO_ROOT / "scripts" / "check_tools_page.py"
 
 
 def main() -> int:
@@ -150,8 +151,22 @@ def main() -> int:
         stream.write(f"\nWARN: {CHECK_PENDING_MARKERS} 不存在，跳過懸置標記語法檢查\n")
     stream.flush()
 
+    # tools 決策表契約（數字帶日期／首選唯一——2026-09-02 改版的兩個讀者承諾）
+    tools_ok = True
+    if CHECK_TOOLS_PAGE.exists():
+        proc = subprocess.run(
+            [sys.executable, str(CHECK_TOOLS_PAGE)], capture_output=True, text=True, encoding="utf-8"
+        )
+        stream.write("\n" + proc.stdout + "\n")
+        if proc.stderr:
+            stream.write(proc.stderr + "\n")
+        tools_ok = proc.returncode == 0
+    else:
+        stream.write(f"\nWARN: {CHECK_TOOLS_PAGE} 不存在，跳過 tools 決策表契約檢查\n")
+    stream.flush()
+
     return 0 if (unit_ok and rules_ok and arch_docs_ok and weekly_ledger_ok
-                 and freshness_ok and radar_ok and pending_ok) else 1
+                 and freshness_ok and radar_ok and pending_ok and tools_ok) else 1
 
 
 if __name__ == "__main__":

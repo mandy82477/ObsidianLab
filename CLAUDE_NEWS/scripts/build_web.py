@@ -279,9 +279,12 @@ def _headings_of(target: str) -> set[str] | None:
     return {re.sub(r'\*{1,3}([^*]+)\*{1,3}', r'\1', h).strip() for h in HEADING_RE.findall(raw)}
 
 
-def check_wikilink_anchors(all_md_files: list[Path]) -> None:
+def check_wikilink_anchors(all_md_files: list[Path]) -> int:
     """[[頁面#錨點]] 的錨點必須真的是目標頁的 h2–h4 標題，否則讀者點過去只會落在頁首。
-    純頁面斷鏈由 check_wikilinks 負責，本函式只管錨點；同樣不中斷建置。"""
+    純頁面斷鏈由 check_wikilinks 負責，本函式只管錨點；同樣不中斷建置。
+    回傳 WARN 數——WARN 原本只印在滾動輸出裡沒有消費端（2026-09-02 reviewer：
+    「讓 WARN 有消費端」），呼叫端會在建置尾行印合計供心跳抄錄。"""
+    warns = 0
     for f in all_md_files:
         try:
             raw = read_md(f)
@@ -295,10 +298,12 @@ def check_wikilink_anchors(all_md_files: list[Path]) -> None:
                 if headings is None:
                     continue  # 頁面本身斷鏈 → 交給 check_wikilinks 報
                 if anchor not in headings:
+                    warns += 1
                     print(f"WARN: {f.relative_to(ROOT)} 的 [[{target}#{anchor}]] 錨點不存在於該頁標題")
+    return warns
 
 
-def check_wikilinks(all_md_files: list[Path]) -> None:
+def check_wikilinks(all_md_files: list[Path]) -> int:
     """Scan wiki/*.md for [[target]] / [[target|alias]] wikilinks and print a
     WARN for any target that doesn't resolve to a real page. Never raises —
     purely advisory, does not interrupt the build."""
@@ -313,6 +318,7 @@ def check_wikilinks(all_md_files: list[Path]) -> None:
     valid_targets |= topic_slugs | {f"topics/{s}" for s in topic_slugs}
     valid_targets |= {f"news/{d}" for d in news_dates}
 
+    warns = 0
     for f in all_md_files:
         try:
             raw = read_md(f)
@@ -325,7 +331,9 @@ def check_wikilinks(all_md_files: list[Path]) -> None:
                 continue
             if target in headings:
                 continue  # in-page section self-reference (e.g. [[已知問題]])
+            warns += 1
             print(f"WARN: {f.relative_to(ROOT)} 含斷鏈 wikilink [[{target}]]")
+    return warns
 
 
 def parse_enterprise_tracker(f: Path) -> dict | None:
@@ -757,7 +765,8 @@ def parse_wiki(f: Path, page_type: str) -> dict:
     raw = read_md(f)
     lines = raw.splitlines()
 
-    name = lines[0].lstrip("# ").strip() if lines else f.stem
+    _first = next((l for l in lines if l.strip()), "")
+    name = _first.lstrip("# ").strip() or f.stem  # 取首個非空行：frontmatter 後多一空行曾讓 name 變空、全站 wikilink 退化為 slug（2026-09-02）
     entity_id = f.stem
 
     meta: dict = {
@@ -1054,8 +1063,9 @@ def parse_digest(f: Path) -> dict:
 def build():
     # ── Internal wikilink dead-link check (free, runs every build) ───────────
     all_wiki_md = sorted(WIKI_DIR.glob("*.md")) + sorted(WIKI_ENTITIES.glob("*.md")) + sorted(WIKI_TOPICS.glob("*.md"))
-    check_wikilinks(all_wiki_md)
-    check_wikilink_anchors(all_wiki_md)
+    _broken = check_wikilinks(all_wiki_md)
+    _anchor = check_wikilink_anchors(all_wiki_md)
+    print(f"wikilink 健檢合計：斷鏈 WARN {_broken}／錨點 WARN {_anchor}（此行供 lint 心跳抄錄——WARN 要有消費端）")
 
     # 解析失敗 = 該頁在網站上直接消失。原本只印一行 [warn] 就繼續，build 照樣 exit 0，
     # 於是「少了一頁」沒有任何人會發現（2026-08-08：標頭領域欄一個全形斜線就讓整頁蒸發，
