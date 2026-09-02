@@ -489,12 +489,16 @@
     if (!all.length) return;
     const _d = new Date(); const today = `${_d.getFullYear()}-${String(_d.getMonth()+1).padStart(2,'0')}-${String(_d.getDate()).padStart(2,'0')}`;
     const sorted = sortItems(all, kbSort.key, kbSort.dir);
+    const codingIds = new Set((window.WIKI_DATA || {}).codingPages || []);
     const filtered = activeDomain === 'all' ? sorted
       : activeDomain === 'weekly' ? sorted.filter(i => !!i.updateFreq)
+      : activeDomain === 'coding' ? sorted.filter(i => codingIds.has(i.id))
       : sorted.filter(i => i.domain === activeDomain);
     // 週更篩選時置頂一行說明：日期停留數天是策展節奏，不是漏更新
     const weeklyNote = activeDomain === 'weekly'
       ? '<div class="kb-filter-note">這些頁面採每週策展維護，更新日期停留數天屬正常節奏，並非漏更新。</div>'
+      : activeDomain === 'coding'
+      ? '<div class="kb-filter-note">程式開發相關頁面的跨領域集合——做某件事該下哪個 skill、卡住了找社群首選、寫 code 選哪個模型。</div>'
       : '';
     container.innerHTML = weeklyNote + filtered.map(item => {
       const kbType = kbTypeOf(item);

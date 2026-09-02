@@ -2001,6 +2001,16 @@ window.WIKI_DATA = {
       "latestHeadline": "Anthropic 首度公開否認中國官方「後門」指控（多家獨立媒體報導）；同日發布「Inviting hard questions」聲明，兩者關聯（推論，2026-07-10 觀察，已掃日報至 2026-08-14 無後續證實；官方頁面未查證）"
     }
   ],
+  "codingPages": [
+    "coding-workflow-guide",
+    "community-tech-tools",
+    "model-comparison",
+    "community-large-codebase-workflow",
+    "claude-code",
+    "feature-radar",
+    "code-quality-decline",
+    "community-tech-patterns"
+  ],
   "digestIndex": [
     {
       "date": "2026-09-01",

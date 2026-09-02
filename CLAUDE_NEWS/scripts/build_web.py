@@ -1172,9 +1172,30 @@ def build():
     def slim(item):
         return {k: v for k, v in item.items() if k != "markdown"}
 
+    def coding_pages():
+        """從 wiki/index.md「## 💻 開發實務入口」表萃取頁面 id。
+
+        「💻 開發實務」chip 是跨領域集合（coding 頁散在 🛠️ 與 🌐 兩領域），
+        成員名單的單一來源就是 index.md 的入口路由表——入口表改，網站分頁跟著改。
+        """
+        try:
+            text = (WIKI_DIR / "index.md").read_text(encoding="utf-8")
+        except OSError:
+            return []
+        m = re.search(r"^## 💻[^\n]*\n(.*?)(?=^## |\Z)", text, re.M | re.S)
+        if not m:
+            return []
+        ids = []
+        for target in re.findall(r"\[\[([^\]|#]+)", m.group(1)):
+            base = target.strip().split("/")[-1]
+            if base and base not in ids:
+                ids.append(base)
+        return ids
+
     wiki_data = {
         "entities":    [slim(e) for e in entities],
         "topics":      [slim(t) for t in topics],
+        "codingPages": coding_pages(),
         "digestIndex": digest_index,
         "weeklyIndex": weekly_index,
         "radar": radar if radar else None,  # include markdown — rendered inline, no fetch needed
