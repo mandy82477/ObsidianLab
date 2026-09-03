@@ -481,3 +481,4 @@
 [Wed 2026/09/02 22:42:16.00] build_web SKIPPED - gate 擋下，僅推送 news/wiki
 [Wed 2026/09/02 22:42:16.00] Step 5 Single push done (news + wiki, web skipped) - 首次嘗試即成功，無需重試 (3b97796..505ff29)
 [Wed 2026/09/02 22:42:16.00] === Pipeline complete (agent, web build skipped) ===
+[cloud daily-news-pipeline-cloud STARTED 2026-09-03T12:05:34Z]
