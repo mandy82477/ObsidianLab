@@ -130,7 +130,7 @@ Claude Code 在 2026 年 3 月至 4 月間出現長達約一個月的效能明�
 
 **未經佐證的具體宣稱（2026-08-04，單一 Reddit 來源，待觀察）：** r/ClaudeCode 貼文宣稱以實測記錄四種繞過模型釘選機制的方式，並稱 Sonnet 4.6 遭靜默移除；此貼文所指的「模型釘選不可靠／靜默降級」**現象**方向與上述四則已獨立佐證的節點一致，但貼文獨有的「4 measured bypass vectors」與「Sonnet 4.6 silently removed」**具體技術細節**仍僅有單一 Reddit 來源、無「週熱門」標記、近 14 天 news 查無第二來源覆核——佐證及於現象，不及於該貼文的具體量化宣稱，措辭上不可視為對其全部內容的背書（來源：[Reddit r/ClaudeCode](https://www.reddit.com/r/ClaudeCode/comments/1vf7uv5/model_pinning_is_completely_broken_in_claude_code/)）。
 
-**對選型的影響 `[加入: 2026-08-29]`：** 這一缺口讓成本估算的前提失效——[[topics/model-comparison]] 的實付成本換算假設你跑在你選的模型上，但上述 #46221 記錄的正是「1M context 變體從 picker 消失、選定狀態無法保持」。**在該頁做模型／context 的成本比較前，先確認釘選是否成立**（1M 這一項的完整脈絡見 [[topics/long-context-1m]]）；跨世代的成本差距（新舊 tokenizer 同文字差約 30%）大於多數人願意承受的靜默切換誤差。
+**對選型的影響：** 這一缺口讓成本估算的前提失效——[[topics/model-comparison]] 的實付成本換算假設你跑在你選的模型上，但上述 #46221 記錄的正是「1M context 變體從 picker 消失、選定狀態無法保持」。**在該頁做模型／context 的成本比較前，先確認釘選是否成立**（1M 這一項的完整脈絡見 [[topics/long-context-1m]]）；跨世代的成本差距（新舊 tokenizer 同文字差約 30%）大於多數人願意承受的靜默切換誤差。
 
 **目前定位：** 四種機制橫跨六個月，均指向「使用者宣告的模型選擇不被保證兌現」這一系統性缺口，而非單次意外。08-04 的 Reddit 貼文延續同一現象方向；❓ **待查證**（標 2026-08-10｜查 bypass vectors、silently removed｜複 2026-09-13）｜**貼文具體量化宣稱**（2026-08-04 單一 Reddit 來源）：已掃日報至 2026-09-02 無後續；官方頁面未查證；本頁僅計入現象層級的第五個獨立訊號，不採計其具體技術細節。
 

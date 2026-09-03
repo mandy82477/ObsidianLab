@@ -549,7 +549,7 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 
 - **Session 語義搜尋**（Claude-Find）：解決 `/resume` 僅支援第一條訊息或名稱篩選的痛點；每月累積數百個 session 的重度用戶可用語義搜尋定位過去決策脈絡，並注入現有 session
 - **本地 RAG 持久記憶**（Memex）：本地 RAG + 離線 embedding，所有資料留存本機，以 MCP 接入，無需額外 API 金鑰；直接解決雲端 AI 記憶的隱私疑慮
-> **官方趨勢觀察 `[加入: 2026-08-30]`：** 本節原有的第三個子條目「多 session 互通（Claude Relay）」與另一節點「跨 Session 通訊插件」（`/qu`／`/ans` 雙向問答橋，2026-05-07）**已由官方功能完全取代**——Claude Code v2.1.224 起內建 `ListAgents` 與 `SendMessage`（官方文件 2026-08-09 確認，限 macOS／Linux），兩者均已移除。**未被取代的是編排層**：官方提供的是點對點訊息傳遞原語，不含依相依性自動排序高階流程（見 [[entities/claude-code]] issue #24798 與 [[topics/official-community-gap]]）。本節保留的語義搜尋與本地 RAG 兩個子條目，官方亦尚未對應。
+> **官方趨勢觀察：** 本節原有的第三個子條目「多 session 互通（Claude Relay）」與另一節點「跨 Session 通訊插件」（`/qu`／`/ans` 雙向問答橋，2026-05-07）**已由官方功能完全取代**——Claude Code v2.1.224 起內建 `ListAgents` 與 `SendMessage`（官方文件 2026-08-09 確認，限 macOS／Linux），兩者均已移除。**未被取代的是編排層**：官方提供的是點對點訊息傳遞原語，不含依相依性自動排序高階流程（見 [[entities/claude-code]] issue #24798 與 [[topics/official-community-gap]]）。本節保留的語義搜尋與本地 RAG 兩個子條目，官方亦尚未對應。
 
 
 #### Token 大量降耗策略集中出現（2026-05-05）

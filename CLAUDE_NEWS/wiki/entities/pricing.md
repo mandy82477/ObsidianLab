@@ -33,15 +33,15 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 **最後新聞更新：** 2026-09-02
 
 > **最新計費政策異動**（2026-09-02）
-> - **官方更正：Claude Code 週用量 +50% 促銷並未如期於 08-31 終止，實際再延長至 09-13**：官方說明中心 09-02 更新原文明載延長，銜接 09-14 起生效的「標準週配額永久 +25%」規則，兩者間不留缺口。適用 Pro、Max、Team。詳見「當前生效的計費規則」更新列，另見 [[feature-radar]]「⏰ 倒數中」。
-> - **Fable 5.1／Mythos 5.1 快取讀取費率降至 0.025x**（標準為 0.1x）：官方定價文件更新，長對話快取成本最多省 75%；兩版本名稱首度出現於官方一手文件，詳見「模型 API 定價現況」新增列。
-> - **印度盧比定價訴求 GitHub Issue #17432**：留言數再攀升至 213（首次記錄 👍628，本輪商業類條目互動量最高），Claude Code 涵蓋範圍仍未見官方回應。
+> - **官方更正：Claude Code 週用量 +50% 促銷未於 08-31 終止，延長至 09-13**：官方說明中心 09-02 原文明載延長，銜接 09-14 起的「標準週配額永久 +25%」，兩者不留缺口，適用 Pro、Max、Team。詳見「當前生效的計費規則」與 [[feature-radar]]「⏰ 倒數中」。
+> - **Fable 5.1／Mythos 5.1 快取讀取費率降至 0.025x**（標準 0.1x）：長對話快取成本最多省 75%。兩版本名稱首度出現於官方一手文件，詳見「模型 API 定價現況」。
+> - **印度盧比定價訴求 GitHub Issue #17432**：留言數攀升至 213（首次記錄 👍628，本輪商業類最高互動），Claude Code 涵蓋範圍仍無官方回應。
 
 ## 現況
 
-**2026-07-20 起，旗艦模型（現為 Fable 5）在訂閱體系中被切成兩層**：Max 與 Team premium 席位維持標配、上限為週用量的 50%；Pro 與 Team standard 席位改以 usage credits 按 API 費率付費，並發放一次性過渡 credit。此分界於 2026-08-08 由官方 Help Center 查證確認，終結 07-18～21 間四則媒體互相矛盾的報導。詳細對照見下方「我的方案現在有什麼」。
+**2026-07-20 起，旗艦模型（現為 Fable 5）在訂閱體系中被切成兩層**：Max 與 Team premium 席位維持標配、上限為週用量的 50%；Pro 與 Team standard 席位改以 usage credits 按 API 費率付費，並發放一次性過渡 credit。此分界經 2026-08-08 官方 Help Center 查證確認，終結 07-18～21 間四則互相矛盾的媒體報導。對照見下方「我的方案現在有什麼」。
 
-其餘計費結構未變：所有付費方案用量仍維持原訂閱配額制——原定 2026-06-15 實施的「程式化用量（Agent SDK、`claude -p`）脫離訂閱、改按 API 費率計費」政策已於 **2026-06-16 宣布暫停**，重新推行時間未定；2026-07-04 起企業方案可用支出控管（spend controls）。核心爭點：Anthropic 訂閱方案設計以人工互動為前提，大規模自動化工作流的長期計費方向尚未確定。
+其餘結構未變：所有付費方案仍為訂閱配額制——原定 2026-06-15 實施的「程式化用量（Agent SDK、`claude -p`）脫離訂閱、改按 API 費率計費」已於 **2026-06-16 暫停**，重新推行時間未定；2026-07-04 起企業方案可用支出控管（spend controls）。核心爭點：訂閱方案以人工互動為設計前提，大規模自動化工作流的長期計費方向尚未確定。
 
 ---
 
@@ -71,7 +71,7 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 - **Max 5x 月費曾記載矛盾**：06-26 Reddit 貼文誤植 $50，已依 2026-05-14 xda-developers／dev.to 官方公告原文更正為 **$100**；該貼文「兩個 Max 5x = 一個 Max 20x」的價格假設有誤
 - **Max 20x 用量上限集體訴訟進行中**：Karl Kahn 訴訟（2026-06-16 提起）指控實際僅 Pro 的 6–8 倍而非廣告的 20 倍
 - **Team／Free／Enterprise 月費（2026-08-08 官方查證）**：Team 可混搭席位型別（mix and match），standard $20／premium $100（年繳，月繳各為 $25／$125），未見最低席位數規定；Free $0；Enterprise 未公開完整報價，頁面標示為「席位費＋依 API 費率計量」並提及 $20／席，實際價格需洽業務（來源：[claude.com/pricing](https://claude.com/pricing)）
-- **Free／Pro 功能組成補充（2026-08-12 官方查證，原文於 Max 方案段落截斷）**：Free 方案含 web 搜尋、記憶、桌面擴充、connector；Pro 方案另含 Claude Code／Cowork／Design／Science、無限 projects、Research、更多模型選擇、Microsoft 365 整合。此為功能清單補充，不影響上方六欄表的月費／計費規則；完整原文（含 Max／Team／Enterprise 段落）待後續查證（來源：[claude.com/pricing](https://claude.com/pricing)）
+- **Free／Pro 功能組成（2026-08-12 官方查證，原文於 Max 段落截斷）**：Free 含 web 搜尋、記憶、桌面擴充、connector；Pro 另含 Claude Code／Cowork／Design／Science、無限 projects、Research、更多模型選擇、Microsoft 365 整合。此為功能清單補充，不影響上表的月費／計費規則；Max／Team／Enterprise 段落待後續查證（來源：[claude.com/pricing](https://claude.com/pricing)）
 - **各方案最強可用模型（2026-07-24 起）**：Opus 5 為 Pro 方案最強可用模型、Max 方案新預設模型（原為 Opus 4.8），見 [[entities/opus-5]]
 - **Max 20x 的差異不只用量**：context window、Claude Code 額度、優先排隊等有結構性差異，非單純 Pro 的 20 倍
 - **Enterprise 附加功能**：含 Compliance API、Enterprise Gateway 等；合作分級 Select／Preferred 差異未公開。Team 方案於 2026-06-19 官方速率翻倍時同步適用
@@ -91,11 +91,11 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 | Claude Sonnet 4.6 | **$3 / $15** | 前代 Sonnet，官方列為 legacy 仍可用；1M context / 128k 輸出。（Sonnet 5 原訂 8/31 後回到此價位的計畫已取消）|
 | Claude Haiku 4.5 | **$1 / $5** | 陣容中最低價；200K context / 64k 輸出（非 1M，與其餘四者不同）。適合高頻批量與延遲敏感的 sub-agent |
 
-**Opus 5 定價「歧異」已解消（2026-08-08 官方查證）**：官方文件載明 **$5 / $25 per Mtok，且「unchanged from Claude Opus 4.8」**。此前並存的兩種說法**其實同時成立**——「為 Fable 5 的一半」（$5 vs $10）與 MarkTechPost「維持原 Opus 定價」（與 4.8 相同）講的是同一組數字的兩個對照對象，並非矛盾。Fast mode（research preview，僅 Claude API）另計 **$10 / $50**（來源：[What's new in Claude Opus 5](https://platform.claude.com/docs/en/about-claude/models/whats-new-opus-5)）。能力細節見 [[entities/opus-5]]、[[topics/model-comparison]]。
+**Opus 5 定價「歧異」已解消（2026-08-08 官方查證）**：官方文件載明 **$5 / $25 per Mtok，「unchanged from Claude Opus 4.8」**。此前兩種說法其實同時成立——「為 Fable 5 的一半」（$5 vs $10）與 MarkTechPost「維持原 Opus 定價」（與 4.8 相同）是同一組數字的兩個對照對象。Fast mode（research preview，僅 Claude API）另計 **$10 / $50**（來源：[What's new in Claude Opus 5](https://platform.claude.com/docs/en/about-claude/models/whats-new-opus-5)）。能力細節見 [[entities/opus-5]]、[[topics/model-comparison]]。
 
 **本表數字之官方查證（2026-08-20）**：Fable 5 $10/$50、Opus 5 與 Opus 4.8 $5/$25、Sonnet 5 $2/$10、Sonnet 4.6 $3/$15、Haiku 4.5 $1/$5，均與官方模型總覽頁一致（[Models overview](https://platform.claude.com/docs/en/about-claude/models/overview)，2026-08-20 查證）。**（2026-08-28 更正）** 此註原寫「8/31 之後的 $3/$15 走向待定」——該說法在寫下時就已過期：官方早於 **2026-08-10** 宣布 $2/$10 永久化、9/1 漲價取消。已無到期日可等。
 
-**Fable 5.1／Mythos 5.1 快取費率新增（2026-09-02）**：官方定價文件新增條目——兩版本的快取讀取／刷新費率為**標準輸入價的 0.025 倍**（本頁「標準」快取命中乘數為 0.1 倍，見下方「通路與乘數」），長對話快取成本較前代最多省 75%。**（2026-09-03 更正）** 官方[定價頁](https://platform.claude.com/docs/en/about-claude/pricing)已載兩版本基礎定價 **$10 / $50 per Mtok**（與 Fable 5／Mythos 5 相同；Batch $5 / $25），上表已補列；長脈絡仍不加價、tokenizer 仍為 Claude 4.7 起的新版（官方未載再換代）。版本能力見 [[entities/fable-5]]。
+**Fable 5.1／Mythos 5.1 快取費率新增（2026-09-02）**：官方定價文件載明兩版本的快取讀取／刷新費率為**標準輸入價的 0.025 倍**（標準快取命中乘數為 0.1 倍，見下方「通路與乘數」），長對話快取成本較前代最多省 75%。**（2026-09-03 更正）** 官方[定價頁](https://platform.claude.com/docs/en/about-claude/pricing)已載兩版本基礎定價 **$10 / $50 per Mtok**（與 Fable 5／Mythos 5 相同；Batch $5 / $25），上表已補列；長脈絡仍不加價、tokenizer 仍為 Claude 4.7 起的新版（官方未載再換代）。版本能力見 [[entities/fable-5]]。
 
 > 模型能力與評測細節見 [[topics/model-comparison]]；此表僅列價格。
 > **注意（2026-07-14）**：The Register 分析指出 Anthropic tokenizer 設計較為複雜，使 API 定價與跨供應商成本估算更難以直接比較（標題式報導，無進一步量化細節，source_count=2）。
@@ -122,7 +122,7 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 
 ---
 
-## 通路與乘數 `[加入: 2026-08-29]`
+## 通路與乘數
 
 上方三個區塊是**牌價**。實付金額還取決於兩件事：**走哪條通路**，以及**套了哪些乘數**——兩者都會讓帳單與牌價對不上。資料截至 **2026-09-03**（官方文件查證；本次新增 Fable 5.1／Mythos 5.1 的快取命中特例，其餘與 08-29 一致）。
 

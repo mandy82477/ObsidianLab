@@ -95,7 +95,7 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 
 ---
 
-## 學術對照：多智能體 orchestration 術語 `[加入: 2026-07-22]`
+## 學術對照：多智能體 orchestration 術語
 
 Claude Code 的三種多 agent 機制，可對應到 Anthropic《Building Effective Agents》與多智能體（MAS）綜述的既有名詞。用**兩軸**區分最清楚：**控制流**（static 寫死／dynamic 模型當場決定）與**通訊原語**（blackboard 共享記憶／direct message passing／event-driven）。
 
@@ -107,7 +107,7 @@ Claude Code 的三種多 agent 機制，可對應到 Anthropic《Building Effect
 
 **補充對照：** 手動開兩個 session ＋ 共享檔案協調 = 純 **blackboard architecture**（只有 shared memory 一個原語、被動輪詢），這解釋了它為何無法自動反應；Agent Teams 是在 blackboard 之上補上 message passing ＋ event-driven，才做到即時互通。
 
-### 誰負責拆分（decomposition）——human / 強 planner / 凍結的 skill `[加入: 2026-07-22]`
+### 誰負責拆分（decomposition）——human / 強 planner / 凍結的 skill
 
 「誰來拆分任務」是選用三種機制的核心軸。拆分能力有四種來源，對應不同場景：
 
@@ -136,7 +136,7 @@ Claude Code 的三種多 agent 機制，可對應到 Anthropic《Building Effect
 - [How to Steer Your Multi-Agent System: Human-LLM Collaborative Planning（arXiv:2605.23023）](https://arxiv.org/pdf/2605.23023)、[JumpStarter（arXiv:2410.03882）](https://arxiv.org/pdf/2410.03882)（mixed-initiative／共享計畫協調）
 - [Spec-Driven Development with AI Coding Agents（2026）](https://zeroshot.ghost.io/spec-driven-development-with-ai-coding-agents/)（Spec→Plan→Tasks→Implement；skill 讓流程可重複）
 
-### 缺口追蹤：文獻主張 × Claude Code 現況 `[加入: 2026-08-22]`
+### 缺口追蹤：文獻主張 × Claude Code 現況
 
 上方文獻對「拆分」與「協調」提出多項主張，其中有幾項是 Claude Code 現行機制尚未補上的缺口。下表逐項核對現況，狀態判定為盤點結論（推論），非逐篇論文原文比對；標「已補」者仍可能只補了部分。
 

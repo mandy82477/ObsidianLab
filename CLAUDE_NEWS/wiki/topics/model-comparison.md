@@ -137,7 +137,7 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 
 **矛盾之處：** 前者是受控測量（同任務對比新舊模型），後者是用戶主觀感受同一模型近期帳單變化，測的不是同一件事——不直接互斥，但共同指向「新一代模型 token 消耗與實際成本的關係，社群尚無共識」。相關省額度策略見 [[entities/fable-5]]。
 
-### 換代的實付成本：牌價相同不等於花費相同 `[加入: 2026-08-29]`
+### 換代的實付成本：牌價相同不等於花費相同
 
 **Claude 4.7 起換用新 tokenizer，同一段文字約多產生 30% token**（官方[定價頁](https://platform.claude.com/docs/en/about-claude/pricing)註記，2026-08-29 查證；原文為「約 30%，確切增幅視內容與工作型態而定」，[遷移指南](https://platform.claude.com/docs/en/about-claude/models/migration-guide)給的範圍是 1×–1.35×）。Sonnet 4.6 及更早的模型仍用舊 tokenizer。
 
@@ -157,7 +157,7 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 - **Sonnet 5 比 Sonnet 4.6 便宜，即使 token 變多**——牌價降 33%、token 增 30%，淨結果仍是省（$0.33 vs $0.38）。新專案選 Sonnet 5 的理由不只是牌價。
 - **Opus 5 比 Opus 4.6 貴約 30%，即使牌價一模一樣**——同為 $5 / $25，但新 tokenizer 讓同一份文字多算 30% token。**帳面沒漲，實付漲了**；這是升版後最容易被帳單意外到的一條。（Opus 4.6 不在現行陣容，本列是**換代前的基準線**，用來標出漲幅發生在哪一步。）
 
-### Fable 5.1／Mythos 5.1：快取讀取費率大降（官方定值，非換算）`[加入: 2026-09-02]`
+### Fable 5.1／Mythos 5.1：快取讀取費率大降（官方定值，非換算）
 
 與上表「+30% 概值換算」不同，這是**官方定價頁直接載明的費率變動**，不需自行估算：Fable 5.1／Mythos 5.1 的快取讀取（cache hit）與 refresh 費率，由基礎輸入價的 **0.1 倍降至 0.025 倍**（官方原文：「Cache hits and refreshes on Claude Fable 5.1 and Claude Mythos 5.1 are priced at 0.025x the base input price」，[定價頁](https://platform.claude.com/docs/en/about-claude/pricing)，2026-09-02 查證）。以 Fable 5.1 基礎輸入價 $10/Mtok 計算，快取讀取單價約為 **$0.25/Mtok**（原約 $1/Mtok）——**對長對話／重複大量 context 的 session 影響最大**，一次性短任務受益有限。此變動**只適用於 Fable 5.1／Mythos 5.1**，其他模型（Opus 5、Sonnet 5 等）的快取倍率沿用既有 ×0.1，見下方「使用限制」與 [[entities/pricing]]。
 
