@@ -5440,3 +5440,4 @@ GH Actions 抓料排 10:23 UTC，到 14:45 UTC 仍未落地（+4.4 小時且持�
 **處置：** ① 下架：`data/skill_interest_watch.json` C 組移至 `_rejected`（保留校準紀錄與下架理由）、刪頁、index 列、`check_wiki_freshness.DERIVED_PAGES`、`daily-gather.yml` commit 路徑、`skill_interest_snapshot.render_site` 與測試一併移除；新測試 `test_no_site_ops_group` 擋回流。② 網站分類：`build_web.py` 為每頁算 `readerDomain`——index「💻 開發實務入口」表的頁一律歸 💻 開發實務（獨佔），其餘沿用領域值；`app.js` 篩選改看 readerDomain，💻 chip 從「跨領域集合」升為正式分類、移到分隔線前；wiki 標頭「領域」欄與六份規則檔的認領邏輯**零改動**（維護面照舊）。
 
 **未做、留待裁決：** 詳頁標頭目前不顯示領域（meta 列只有類型／狀態／日期），故不需再遮；若日後要在詳頁顯示分類，用 readerDomain 不用 domain。「領域」欄改名為「主責記者」屬規則檔層改動，本輪不動。
+- **同日追加裁決（不獨佔）**：使用者選擇多標籤——`readerDomains`＝領域值＋（入口表成員再加）💻 開發實務；模型選型在 🤖 與 💻 下都找得到，實戰手冊在 🛠️ 與 💻 下都找得到。獨佔版只上線一個 commit 即改。

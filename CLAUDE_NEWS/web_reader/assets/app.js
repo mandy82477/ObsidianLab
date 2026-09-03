@@ -494,12 +494,12 @@
     const childCount = {};
     all.forEach(i => { if (i.parent) { const p = i.parent.split('/').pop(); childCount[p] = (childCount[p] || 0) + 1; } });
     const roots = sorted.filter(i => !i.parent);
-    // 讀者分類（2026-09-03）：篩選看 readerDomain（build 端算好：index 💻 入口表的頁歸 💻 開發實務，
-    // 其餘沿用領域值）；舊資料無 readerDomain 時退回 domain／codingPages，避免快取舊 data.js 時整頁空白
-    const readerDomain = i => i.readerDomain || (codingIds.has(i.id) ? '💻 開發實務' : i.domain);
+    // 讀者分類（2026-09-03）：篩選看 readerDomains 多標籤（build 端算好：領域值照放，index 💻 入口表
+    // 的頁再加一枚 💻 開發實務，不獨佔）；舊資料無此欄時退回 domain＋codingPages，避免快取舊 data.js 時整頁空白
+    const readerDomains = i => i.readerDomains || [i.domain].concat(codingIds.has(i.id) ? ['💻 開發實務'] : []);
     const filtered = activeDomain === 'all' ? roots
       : activeDomain === 'weekly' ? roots.filter(i => !!i.updateFreq)
-      : roots.filter(i => readerDomain(i) === activeDomain);
+      : roots.filter(i => readerDomains(i).includes(activeDomain));
     // 週更篩選時置頂一行說明：日期停留數天是策展節奏，不是漏更新
     const weeklyNote = activeDomain === 'weekly'
       ? '<div class="kb-filter-note">這些頁面採每週策展維護，更新日期停留數天屬正常節奏，並非漏更新。</div>'
