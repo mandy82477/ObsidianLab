@@ -20,7 +20,7 @@
 
 ## 💻 開發實務入口
 
-程式開發這條線橫跨三位記者的頁面，此表是它的單一入口（路由，不放事實）。**先分清兩頁**：[[topics/community-tech-tools]] 回答「該裝哪個」（人工判斷、帶證據等級）；[[topics/skill-interest-watch]] 回答「這類誰大、誰在漲」（機器每日榜、只有星數）——榜上標 🧭 的工具代表工具頁已有判斷，先看工具頁。
+程式開發這條線橫跨三個領域的頁面，此表是它的單一入口（路由，不放事實）。**先分清兩頁**：[[topics/community-tech-tools]] 回答「該裝哪個」（人工判斷、帶證據等級）；[[topics/skill-interest-watch]] 回答「這類誰大、誰在漲」（機器每日榜、只有星數）——榜上標 🧭 的工具代表工具頁已有判斷，先看工具頁。
 
 | 我想…… | 去哪 |
 |---|---|
@@ -28,6 +28,7 @@
 | 我卡住了（帳單爆、context 撐爆、agent 互踩、它說做完了沒做、agent 讀不懂大 repo……），**社群首選**是哪個 | [[topics/community-tech-tools]]「我卡在這裡」決策表 |
 | 按用途翻社群 skill（codebase 理解、寫碼紀律、產出呈現、領域資料） | [[topics/community-tech-tools]]「🧩 Skills 速查」 |
 | 它說做完了，我怎麼知道是真的——**官方**做法（要證據、`/goal`、Stop hook） | [[topics/coding-workflow-guide]] 第 9 段 |
+| code review 該用哪個入口、怎麼審得起（本庫刻意不推薦單一社群工具，官方六個入口＋明價） | [[topics/coding-workflow-guide]] 第 5 段 |
 | 我關心的某類工具，現在誰最大（本週竄升欄累積一週星史後啟用） | [[topics/skill-interest-watch]]（按開發流程段分類的榜） |
 | 寫 code 該用哪個模型 | [[topics/model-comparison]] |
 | 大型 codebase 的做法主線（並行／context／記憶／把關） | [[topics/community-large-codebase-workflow]] |
@@ -91,11 +92,11 @@
 | [[topics/long-context-1m]] | 🛠️ 工具/功能 | ongoing | 1M context 的計費與控制權：加不加價看模型世代（舊世代 ×2 輸入）、Pro 預設開啟且關不掉、選定的 1M 變體會從選單消失 |
 | [[topics/model-comparison]] | 🤖 模型 | ongoing | 模型選型對照：「我該用哪個模型」單一入口——快速選型表、情境推薦、benchmark 對照（陣容變化時同步更新） |
 | [[topics/model-task-leaderboard]] | 🤖 模型 | ongoing | 🗓️ 週更 任務 × 跨家模型領先者快照：「做某類任務目前哪家最強」——寫 code／文案／畫圖／改圖／影片／情商／幻覺率等 18 類任務的活榜單每週速讀＋各榜評比方式索引 |
-| [[topics/anthropic-commitments]] | 🏛️ 政策/安全 | ongoing | 承諾兌現追蹤：「Anthropic 說過要做的事做了嗎」——官方承諾/拒絕建檔，狀態變化時由每日 ingest 更新 |
+| [[topics/anthropic-commitments]] | 🏛️ 政策/安全 | ongoing | 承諾兌現追蹤：「Anthropic 說過要做的事做了嗎」——官方承諾/拒絕建檔，狀態變化時每日更新 |
 | [[topics/code-quality-decline]] | 🌐 社群 | ongoing | Claude Code 效能退步事件，Anthropic 已承認工程疏失 |
 | [[topics/competitor-landscape]] | 💼 商業 | ongoing | Google 祕密開發競品 + OpenCode 157K 分流 + DeepSeek clone 低成本替代生態 |
-| [[topics/community-tech-tools]] | 🌐 社群 | ongoing | 🗓️ 週更策展：社群工具目錄——91 工具的活躍度、採用狀態追蹤（每日 ingest 不更新） |
-| [[topics/skill-interest-watch]] | 🌐 社群 | ongoing | 🗓️ 每日快照 興趣類別 skill 榜：8 個可用 GitHub 辨識的類別（開發流程段＋治理）每日問「這一類現在誰最熱、本週誰竄升」；4 類治理需求無法用星數找、指路到社群工具目錄決策表；機器產出、星數是規模不是品質 |
+| [[topics/community-tech-tools]] | 🌐 社群 | ongoing | 🗓️ 週更策展：社群工具目錄——91 工具的活躍度、採用狀態追蹤（每週策展一次） |
+| [[topics/skill-interest-watch]] | 🌐 社群 | ongoing | 🗓️ 每日快照 興趣類別 skill 榜：可用 GitHub 辨識的類別（開發流程段＋治理）每日問「這一類現在誰最熱、本週誰竄升」；無法用星數找的治理需求誠實指路到社群工具目錄決策表或實戰手冊；機器產出、星數是規模不是品質 |
 | [[topics/community-tech-patterns]] | 🌐 社群 | ongoing | 社群實戰模式庫（日更）：multi-agent、skills 設計、工作流最佳實踐的可複用做法 |
 | [[topics/community-large-codebase-workflow]] | 🌐 社群 | ongoing | 🗓️ 週更 大型 codebase 規模化開發主線——每條線先給「現在的答案」，再列子問題表；節點證據在模式庫 |
 | [[topics/community-pattern-trends]] | 🌐 社群 | ongoing | 🗓️ 週更：社群趨勢觀察——從模式庫萃取的宏觀層，7 條成形趨勢的熱度曲線 + 對現有設計的啟示 |
@@ -110,5 +111,5 @@
 | [[topics/enterprise-tool-tracker]] | 💼 商業 | ongoing | 大型企業 AI 編碼工具使用追蹤：Microsoft/Amazon/Uber/Apple 等企業當前工具選擇與變化軌跡；07-03 Alibaba 以疑似後門風險禁用 Claude Code（❌ 退出） |
 | [[topics/community-tech-timeline]] | 🌐 社群 | monitoring | 社群技術應用趨勢完整時序（2026-04-25 至今），從 community-tech-patterns 拆分 |
 | [[topics/anthropic-business]] | 💼 商業 | ongoing | Anthropic 商業健康度：企業採用率 34.4%、17 倍訂閱補貼、PMF 觀察、Microsoft 退出風險；07-03 藥物開發野心（The Verge）、大廠員工進駐客戶模式 |
-| [[topics/recursive-self-improvement]] | 🏛️ 政策/安全 | ongoing | AI 遞歸自我改進：官方《Risk Report August 2026》（08-14）首度就內部 AI R&D 加速幅度提供量化區間自評，並確認 Model 2 暫無釋出計畫；08-22 lint 回升 |
-| [[topics/ai-talent-flow]] | 💼 商業 | ongoing | AI 實驗室人才流動與對各公司影響：Google DeepMind 高層與核心研究員異動（事件 08-05，08-13 查證補記），Anthropic 主要承接；08-22 lint 回升 |
+| [[topics/recursive-self-improvement]] | 🏛️ 政策/安全 | ongoing | AI 遞歸自我改進：官方《Risk Report August 2026》（08-14）首度就內部 AI R&D 加速幅度提供量化區間自評，並確認 Model 2 暫無釋出計畫 |
+| [[topics/ai-talent-flow]] | 💼 商業 | ongoing | AI 實驗室人才流動與對各公司影響：Google DeepMind 高層與核心研究員異動（事件 08-05，08-13 查證補記），Anthropic 主要承接 |

@@ -105,7 +105,7 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 - 本地優先的索引（向量 DB／圖資料庫／SQLite／純 Markdown）按需語義查詢，不把全部記憶塞進 context
 - 「什麼不該再做」也要記——已否決方案沒進 agent 可讀的知識源，agent 會重做一次
 
-**🧰 現在就能下的解**：見 [[topics/community-tech-tools]]「我卡在這裡」——「每開新 session 都要重講一遍」列（首選 brain.md，零依賴檔案式；團隊共享與 Obsidian 路線的分界在同列第三欄）
+**🧰 現在就能下的解**：見 [[topics/community-tech-tools]]「我卡在這裡」——接手大 repo 讓 agent 讀懂走「接手沒碰過的大 repo，agent 讀不懂」列（首選 graphify）；跨 session 記憶走「每開新 session 都要重講一遍」列（首選 brain.md，零依賴檔案式；團隊共享與 Obsidian 路線的分界在同列第三欄）
 
 **還沒解決**：跨工具可攜（ltm／OKF）仍是少數派；「codebase 文件自動維護」只有 CodeAlmanac 一例；「已否決方案索引」累積到第二個獨立觀察（8/31 補上「可驗證、防竄改」的具體要求），但仍停在問題點名、無工具實作。三個近期實作路線各走各的（零依賴檔案式、手動策展取代官方、團隊共享），尚無交叉比較或共識收斂。
 

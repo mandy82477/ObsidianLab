@@ -172,8 +172,11 @@ def render(cfg: dict, data: dict, now: datetime) -> str:
     groups = {"A": "## A. 開發實務（按流程階段，對應 [[topics/coding-workflow-guide]]）",
               "B": "## B. 治理（管 agent 的需求）"}
     def bridge_line(cat: dict, has_judged: bool = False) -> str:
-        if cat.get("tools_symptom"):
-            return f"本庫判斷 → 見 [[{TOOLS_LINK}]]「我卡在這裡」的「{cat['tools_symptom']}」列"
+        sym = cat.get("tools_symptom")
+        if sym:
+            syms = [sym] if isinstance(sym, str) else sym
+            return (f"本庫判斷 → 見 [[{TOOLS_LINK}]]「我卡在這裡」的"
+                    + "、".join(f"「{s}」" for s in syms) + "列")
         if cat.get("tools_note"):
             return f"本庫判斷 → {cat['tools_note']}"
         if has_judged:

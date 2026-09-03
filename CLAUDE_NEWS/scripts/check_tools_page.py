@@ -113,8 +113,9 @@ def check_spokes(text: str, wiki_dir: Path):
             return fails + [f"skill_interest_watch.json 無法解析：{e}"]
         for cat in cfg.get("categories", []):
             sym = cat.get("tools_symptom")
-            if sym and sym not in symptoms:
-                fails.append(f"榜橋引用失效 skill_interest_watch.json[{cat['slug']}]：「{sym}」不在決策表症狀欄")
+            for s in ([sym] if isinstance(sym, str) else (sym or [])):
+                if s and s not in symptoms:
+                    fails.append(f"榜橋引用失效 skill_interest_watch.json[{cat['slug']}]：「{s}」不在決策表症狀欄")
     return fails
 
 

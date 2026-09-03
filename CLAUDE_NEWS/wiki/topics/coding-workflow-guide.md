@@ -40,7 +40,7 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 - **社群 coding skill 有了專門索引**——新增「🧩 Skills 速查」，依用途分三組（Codebase 理解／寫碼紀律／領域資料），見 [[topics/community-tech-tools]]
 - **graphify 補進兩處**——11.3 萬星、`/graphify` skill、本機 AST 免向量 DB，補入 Skills 速查「Codebase 理解」組，也補進 [[topics/community-large-codebase-workflow]] 線 3「本地索引記憶」代表實作
 - **問題頁→解法的直達連結上線**——`code-quality-decline`、`enterprise-cost-management`、[[topics/community-large-codebase-workflow]] 四條主線首鋪「🧰 現在就能下的解」行，讀者從問題描述可直接連到 tools 決策表對應症狀列
-- **開發實務有了單一入口**——[[index]] 新增「💻 開發實務入口」路由表，橫跨三位記者的頁面一次列清楚
+- **開發實務有了單一入口**——[[index]] 新增「💻 開發實務入口」路由表，橫跨三個領域的頁面一次列清楚
 - **本頁第 9 段（除錯）補齊社群面證據**——靜默失敗偵測與對抗性雙 Claude 審查兩路做法，見下方第 9 段
 
 ---

@@ -88,7 +88,7 @@
       "why": "09-03 兩輪皆無辨識力：debug 配 claude in:name 0 命中；\"silent failure\" 僅 2 命中且一則為監控工具；observability 被巨頭洗版。 → 2026-09-03 判定結構性不適任（感測器裝錯層：治理型需求是讀者講痛點的語言，在 HN／dev.to 全文不在 repo 描述），從榜撤下、改由 tools 決策表承接，見 log 當日 Query。",
       "guide_section": "第 9 段",
       "tools_symptom": null,
-      "tools_note": "候選症狀「感覺變笨，想先量測歸因」掛在 [[topics/code-quality-decline]]，決策表尚未開列（≥2 頁需求證據門檻）"
+      "tools_note": "「感覺變笨，想先量測歸因」目前沒有成熟到可推薦單一工具，量測起點與訊號群見 [[topics/code-quality-decline]]"
     },
     {
       "group": "A",
@@ -113,7 +113,10 @@
       ],
       "why": "09-03 校準：orca、oh-my-codex、harness、ccpm 切題；orchestrat* 寬 query 被巨頭洗版已棄。",
       "guide_section": null,
-      "tools_symptom": "一堆 agent 在跑，看不到誰卡住",
+      "tools_symptom": [
+        "多個 agent 在同一 repo 互相覆蓋",
+        "一堆 agent 在跑，看不到誰卡住"
+      ],
       "tools_note": null
     },
     {
@@ -143,7 +146,7 @@
     {
       "group": "B",
       "slug": "source-resilience",
-      "name": "資料源韌性與監測",
+      "name": "資料源韌性與監測（本站自身抓料需求，非 coding 工具）",
       "status": "active",
       "queries": [
         "\"news aggregator\" (llm OR claude OR agent) in:description"

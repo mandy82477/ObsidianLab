@@ -62,11 +62,11 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 
 | 目前前 5 | ★ | 一句話 |
 |---|---|---|
-| [Graphify-Labs/graphify](https://github.com/Graphify-Labs/graphify) 🧭 📰 | 114,056 | Turn any codebase, with its docs, SQL schemas, configs, and PDFs, into a queryable knowle… |
+| [Graphify-Labs/graphify](https://github.com/Graphify-Labs/graphify) 🧭 📰 | 114,058 | Turn any codebase, with its docs, SQL schemas, configs, and PDFs, into a queryable knowle… |
 | [Egonex-AI/Understand-Anything](https://github.com/Egonex-AI/Understand-Anything) 🧭 📰 | 81,348 | Graphs that teach > graphs that impress. Turn any code into an interactive knowledge grap… |
 | [colbymchenry/codegraph](https://github.com/colbymchenry/codegraph) 🧭 📰 | 69,316 | Pre-indexed code knowledge graph, auto syncs on code changes, for Claude Code, Codex, Gem… |
 | [abhigyanpatwari/GitNexus](https://github.com/abhigyanpatwari/GitNexus) | 46,910 | GitNexus: The Zero-Server Code Intelligence Engine -       GitNexus is a client-side know… |
-| [DeusData/codebase-memory-mcp](https://github.com/DeusData/codebase-memory-mcp) | 41,957 | High-performance code intelligence MCP server. Indexes codebases into a persistent knowle… |
+| [DeusData/codebase-memory-mcp](https://github.com/DeusData/codebase-memory-mcp) | 41,956 | High-performance code intelligence MCP server. Indexes codebases into a persistent knowle… |
 
 本庫判斷 → 見 [[topics/community-tech-tools]]「我卡在這裡」的「接手沒碰過的大 repo，agent 讀不懂」列
 
@@ -100,13 +100,13 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 
 | 目前前 5 | ★ | 一句話 |
 |---|---|---|
-| [stablyai/orca](https://github.com/stablyai/orca) | 60,189 | Orca is the ADE for working with a fleet of parallel agents. Run any coding agent with yo… |
+| [stablyai/orca](https://github.com/stablyai/orca) | 60,190 | Orca is the ADE for working with a fleet of parallel agents. Run any coding agent with yo… |
 | [Yeachan-Heo/oh-my-codex](https://github.com/Yeachan-Heo/oh-my-codex) | 32,969 | OmX - Oh My codeX: Your codex is not alone. Add hooks, agent teams, HUDs, and so much mor… |
 | [revfactory/harness](https://github.com/revfactory/harness) | 8,886 | A meta-skill that designs domain-specific agent teams, defines specialized agents, and ge… |
-| [automazeio/ccpm](https://github.com/automazeio/ccpm) | 8,361 | Project management skill system for Agents that uses GitHub Issues and Git worktrees for… |
+| [automazeio/ccpm](https://github.com/automazeio/ccpm) | 8,360 | Project management skill system for Agents that uses GitHub Issues and Git worktrees for… |
 | [ZSeven-W/openpencil](https://github.com/ZSeven-W/openpencil) | 5,797 | The world's first open-source AI-native vector design tool and the first to feature concu… |
 
-本庫判斷 → 見 [[topics/community-tech-tools]]「我卡在這裡」的「一堆 agent 在跑，看不到誰卡住」列
+本庫判斷 → 見 [[topics/community-tech-tools]]「我卡在這裡」的「多個 agent 在同一 repo 互相覆蓋」、「一堆 agent 在跑，看不到誰卡住」列
 
 ### LLM 知識庫／文件策展／知識傳承
 
@@ -120,7 +120,7 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 
 本庫尚無判斷（榜上無 🧭 條目）——星數不是推薦，裝前自行查證
 
-### 資料源韌性與監測
+### 資料源韌性與監測（本站自身抓料需求，非 coding 工具）
 
 | 目前前 5 | ★ | 一句話 |
 |---|---|---|
@@ -141,7 +141,7 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 | 實作期攔錯（hook／lint／型別） | 見 [[topics/community-tech-tools]]「我卡在這裡」的「CLAUDE.md 寫了它不聽」列 |
 | Code review | 本類本庫不推薦單一工具——官方 `/code-review`、ultra、GitHub App 等六個入口與明價，見 [[topics/coding-workflow-guide]] 第 5 段；社群面做法（Read-Only Reviewer、跨模型互審）見 [[topics/community-tech-patterns]] |
 | 測試與驗證（含 evidence-gated done） | 見 [[topics/community-tech-tools]]「我卡在這裡」的「它說做完了，但根本沒做」列 |
-| 除錯與靜默失敗偵測 | 候選症狀「感覺變笨，想先量測歸因」掛在 [[topics/code-quality-decline]]，決策表尚未開列（≥2 頁需求證據門檻） |
+| 除錯與靜默失敗偵測 | 「感覺變笨，想先量測歸因」目前沒有成熟到可推薦單一工具，量測起點與訊號群見 [[topics/code-quality-decline]] |
 | git／commit 衛生自動化 | 見 [[topics/community-tech-tools]]「我卡在這裡」的「多個 agent 在同一 repo 互相覆蓋」列 |
 
 ---

@@ -77,7 +77,7 @@ Claude Code 在 2026 年 3 月至 4 月間出現長達約一個月的效能明�
 
 ---
 
-**🧰 現在就能下的解**：—（決策表暫無對應列｜候選症狀：感覺變笨，想先量測歸因）——社群現有起點是 CC-Canary（讀 session log 偵測效能漂移，見 [[topics/community-tech-tools]] 工具目錄）與「先量 context 組成再怪工具」原則（[[topics/community-large-codebase-workflow]] 線 2），但「版本前後受控對照」尚無工具承接。
+**🧰 現在就能下的解**：—（這個症狀目前還沒有成熟到可推薦單一工具，量測起點見本頁訊號群｜候選症狀：感覺變笨，想先量測歸因）——社群現有起點是 CC-Canary（讀 session log 偵測效能漂移，見 [[topics/community-tech-tools]] 工具目錄）與「先量 context 組成再怪工具」原則（[[topics/community-large-codebase-workflow]] 線 2），但「版本前後受控對照」尚無工具承接。
 
 ## Opus 5 上線後品質感知訊號群（2026-07-25 起）
 
