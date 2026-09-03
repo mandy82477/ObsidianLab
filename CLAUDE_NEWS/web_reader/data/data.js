@@ -2034,8 +2034,6 @@ window.WIKI_DATA = {
     }
   ],
   "codingPages": [
-    "feature-radar",
-    "claude-code",
     "coding-workflow-guide",
     "skill-interest-watch",
     "model-comparison",

@@ -1186,7 +1186,10 @@ def build():
         if not m:
             return []
         ids = []
-        for target in re.findall(r"\[\[([^\]|#]+)", m.group(1)):
+        # 只取路由表格列的連結：導言散文裡的「產品動態住別頁」出口連結（feature-radar、
+        # claude-code）不是 tab 成員——2026-09-03 使用者裁決 tab 只留開發實務強相關
+        table_text = "\n".join(l for l in m.group(1).splitlines() if l.lstrip().startswith("|"))
+        for target in re.findall(r"\[\[([^\]|#]+)", table_text):
             base = target.strip().split("/")[-1]
             if base and base not in ids:
                 ids.append(base)
