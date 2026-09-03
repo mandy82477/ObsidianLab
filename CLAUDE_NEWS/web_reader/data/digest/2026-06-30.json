@@ -318,5 +318,11 @@
   "topicRadar": [],
   "sourceStatus": [],
   "preview": "Claude Code 被發現自 v2.1.91 起嵌入偵測中國代理伺服器的程式碼，會在系統提示中靜默傳遞使用者是否位於中國、是否使用中國 URL 代理、是否隸屬中國 AI 實驗室等資訊，Anthropic 更試圖混淆此段程式碼；v2.1.196 更進一步封鎖代理模式的遠端控制，引爆社群強烈反彈。",
-  "sedimentedToday": []
+  "sedimentedToday": [
+    {
+      "id": "community-tech-patterns-archive",
+      "name": "社群實戰模式庫——原始條目封存",
+      "pageType": "topic"
+    }
+  ]
 }

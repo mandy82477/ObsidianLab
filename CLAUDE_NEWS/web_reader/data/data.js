@@ -786,6 +786,23 @@ window.WIKI_DATA = {
       "latestHeadline": "Cache miss 12.5 倍成本首次量化（Reddit）；686 skills 向量索引實測 progressive disclosure 機制（Reddit）；JSONL session 知識化討論（57MB/1026 sessions，Reddit + CC-Wiki 工具）"
     },
     {
+      "id": "community-tech-patterns-archive",
+      "pageType": "topic",
+      "name": "社群實戰模式庫——原始條目封存",
+      "entityType": "",
+      "status": "resolved（封存頁）",
+      "domain": "🌐 社群",
+      "pill": "gray",
+      "firstSeen": "",
+      "startDate": "2026-04-25",
+      "lastUpdated": "2026-09-03",
+      "lastNewsUpdate": "2026-06-30",
+      "updateFreq": "",
+      "parent": "topics/community-tech-patterns",
+      "summary": "本頁為 community-tech-patterns 的原始條目封存——重點層（月度總結、目前結論、趨勢）留在主頁，本頁保存被蒸餾月份的完整原始條目供下鑽查證。條目一字不刪，只是搬離主頁以維持主頁可讀性（月度蒸餾機制見 `.claude/rules/wiki-ingest-community-lint.md` 「月度…",
+      "latestHeadline": ""
+    },
+    {
       "id": "community-tech-patterns",
       "pageType": "topic",
       "name": "社群實戰模式庫",
