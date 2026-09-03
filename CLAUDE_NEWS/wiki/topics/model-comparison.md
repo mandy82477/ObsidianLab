@@ -3,7 +3,7 @@ page: "topics/model-comparison"
 kind: "topic"
 status: "ongoing"
 domain: "🤖 模型"
-last_updated: "2026-09-02"
+last_updated: "2026-09-03"
 last_news_update: "2026-09-02"
 status_main: "ongoing"
 days_since_news: 1
@@ -27,7 +27,7 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 **狀態：** ongoing
 **領域：** 🤖 模型
 **開始日期：** 2026-07-02
-**最後更新：** 2026-09-02
+**最後更新：** 2026-09-03
 **最後新聞更新：** 2026-09-02
 
 > **最新對照更新**（2026-09-01）
@@ -105,7 +105,7 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 - **綜合定位**：Opus 4.8 第三方小輸 Gemini 3.5 Flash 主因為指令遵循；各數據測試日期與條件見各模型 entities 頁。
 - **token 消耗**：「小勝」需連成本一起讀——分差 0.9、token 代價約 2 倍（Reddit r/ClaudeAI，2026-06-12，社群整理）。
 - **多模型協作**：官方基準，經 Reddit r/ClaudeAI 整理轉載（週熱門標記，來源貼文 2026-07-08，原始官方連結未附，尚未直接查證）。與上一列形成對照：協作模式可望大幅壓低整體成本。
-- **延伸閱讀（2026-08-10 補齊量化數字）**：MarkTechPost（2026-07-13）Sonnet 5 / Sonnet 4.6 / Opus 4.8 三模型對照——Sonnet 5 於所有已公布指標超越 Sonnet 4.6（SWE-bench Pro 63.2%、OSWorld-Verified 81.2%、HLE 57.4%），拉近與 Opus 4.8（SWE-bench Pro 69.2%、OSWorld-Verified 83.4%）的差距；定價 Sonnet 5 早鳥 $2/$10（至 8/31，其後 $3/$15）vs Opus 4.8 $5/$25。成本效益取捨：low／medium effort 下 Sonnet 5 最划算，但 xhigh effort 因輸出 token 量大增，成本可能超過 Opus 4.8（[MarkTechPost](https://www.marktechpost.com/2026/07/13/anthropic-claude-sonnet-5-vs-sonnet-4-6-vs-opus-4-8-agentic-coding-benchmarks-api-pricing-and-cost-performance-tradeoffs-compared/)，2026-07-13）。
+- **延伸閱讀（2026-08-10 補齊量化數字）**：MarkTechPost（2026-07-13）Sonnet 5 / Sonnet 4.6 / Opus 4.8 三模型對照——Sonnet 5 於所有已公布指標超越 Sonnet 4.6（SWE-bench Pro 63.2%、OSWorld-Verified 81.2%、HLE 57.4%），拉近與 Opus 4.8（SWE-bench Pro 69.2%、OSWorld-Verified 83.4%）的差距；定價 Sonnet 5 $2/$10（發布時為早鳥價，已於 08-10 永久化）vs Opus 4.8 $5/$25。成本效益取捨：low／medium effort 下 Sonnet 5 最划算，但 xhigh effort 因輸出 token 量大增，成本可能超過 Opus 4.8（[MarkTechPost](https://www.marktechpost.com/2026/07/13/anthropic-claude-sonnet-5-vs-sonnet-4-6-vs-opus-4-8-agentic-coding-benchmarks-api-pricing-and-cost-performance-tradeoffs-compared/)，2026-07-13）。
 
 ### 社群實測觀察（弱訊號，未達決策級）
 

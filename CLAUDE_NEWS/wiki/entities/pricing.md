@@ -4,7 +4,7 @@ kind: "entity"
 type: "policy"
 status: "active（持續調整中）"
 domain: "💼 商業"
-last_updated: "2026-09-02"
+last_updated: "2026-09-03"
 last_news_update: "2026-09-02"
 status_main: "active"
 days_since_news: 1
@@ -12,14 +12,14 @@ parent: null
 children: "[]"
 page_role: "root"
 days_since_news_subtree: 1
-inbound_links: 131
+inbound_links: 134
 attribution_count: 77
 attribution_last: "2026-09-02"
 top_source: "google-news"
-pending_count: 6
-pending_overdue: 2
+pending_count: 4
+pending_overdue: 1
 pending_next_review: "2026-09-04"
-pending_signalled: 2
+pending_signalled: 0
 signal: "健康"
 generated_by: "scripts/gen_wiki_frontmatter.py"
 ---
@@ -29,7 +29,7 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 **狀態：** active（持續調整中）
 **領域：** 💼 商業
 **首次出現：** 2026-04-25
-**最後更新：** 2026-09-02
+**最後更新：** 2026-09-03
 **最後新聞更新：** 2026-09-02
 
 > **最新計費政策異動**（2026-09-02）
@@ -84,6 +84,7 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 | 模型 | Input / Output per Mtok | 備注 |
 |------|------|------|
 | Claude Sonnet 5 | $2 / $10 | **標準定價（不再是促銷）**：原訂 2026-08-31 到期的入門價已於 2026-08-10 永久化，9/1 漲至 $3/$15 的計畫取消；Claude Code 新預設模型，相較 Opus 4.8 估計省 60% 成本 |
+| Claude Fable 5.1 | **$10 / $50** | 與 Fable 5 同價（官方定價頁 2026-09-03 查證）；**快取命中 ×0.025**（其餘模型 ×0.1），Batch $5/$25。Mythos 5.1 同價但僅限授權機構 |
 | Claude Fable 5 | $10 / $50 | Pro／Team standard 走此費率以 usage credits 計費；Max／Team premium 為標配（週用量 50% 內）。訂閱端分界見上方「我的方案現在有什麼」|
 | Claude Opus 5 | **$5 / $25** | 官方文件逐字確認，與 Opus 4.8 相同；Fast mode 另計 $10/$50 |
 | Claude Opus 4.8 | **$5 / $25** | 官方載明 Opus 5 定價「unchanged from Claude Opus 4.8」；2026-07-24 起次旗艦地位被 Opus 5 取代，各平台仍可用 |
@@ -94,7 +95,7 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 
 **本表數字之官方查證（2026-08-20）**：Fable 5 $10/$50、Opus 5 與 Opus 4.8 $5/$25、Sonnet 5 $2/$10、Sonnet 4.6 $3/$15、Haiku 4.5 $1/$5，均與官方模型總覽頁一致（[Models overview](https://platform.claude.com/docs/en/about-claude/models/overview)，2026-08-20 查證）。**（2026-08-28 更正）** 此註原寫「8/31 之後的 $3/$15 走向待定」——該說法在寫下時就已過期：官方早於 **2026-08-10** 宣布 $2/$10 永久化、9/1 漲價取消。已無到期日可等。
 
-**Fable 5.1／Mythos 5.1 快取費率新增（2026-09-02）**：官方定價文件新增條目——兩版本的快取讀取／刷新費率為**標準輸入價的 0.025 倍**（本頁「標準」快取命中乘數為 0.1 倍，見下方「通路與乘數」），長對話快取成本較前代最多省 75%。兩版本**基礎 $/Mtok 定價尚未公布**，本表暫不新增列；版本存在的佐證與待辦見上方「定價與促銷」09-02 條目、[[entities/fable-5]]。
+**Fable 5.1／Mythos 5.1 快取費率新增（2026-09-02）**：官方定價文件新增條目——兩版本的快取讀取／刷新費率為**標準輸入價的 0.025 倍**（本頁「標準」快取命中乘數為 0.1 倍，見下方「通路與乘數」），長對話快取成本較前代最多省 75%。**（2026-09-03 更正）** 官方[定價頁](https://platform.claude.com/docs/en/about-claude/pricing)已載兩版本基礎定價 **$10 / $50 per Mtok**（與 Fable 5／Mythos 5 相同；Batch $5 / $25），上表已補列；長脈絡仍不加價、tokenizer 仍為 Claude 4.7 起的新版（官方未載再換代）。版本能力見 [[entities/fable-5]]。
 
 > 模型能力與評測細節見 [[topics/model-comparison]]；此表僅列價格。
 > **注意（2026-07-14）**：The Register 分析指出 Anthropic tokenizer 設計較為複雜，使 API 定價與跨供應商成本估算更難以直接比較（標題式報導，無進一步量化細節，source_count=2）。
@@ -123,7 +124,7 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 
 ## 通路與乘數 `[加入: 2026-08-29]`
 
-上方三個區塊是**牌價**。實付金額還取決於兩件事：**走哪條通路**，以及**套了哪些乘數**——兩者都會讓帳單與牌價對不上。資料截至 **2026-08-29**（官方文件查證）。
+上方三個區塊是**牌價**。實付金額還取決於兩件事：**走哪條通路**，以及**套了哪些乘數**——兩者都會讓帳單與牌價對不上。資料截至 **2026-09-03**（官方文件查證；本次新增 Fable 5.1／Mythos 5.1 的快取命中特例，其餘與 08-29 一致）。
 
 ### 通路：誰定價、怎麼開票
 
@@ -146,7 +147,7 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 
 | 乘數 | 倍率 | 套用範圍 | 觸發條件 |
 |------|------|---------|---------|
-| 快取命中 | ×0.1 | 讀取的 token | 命中既有快取 |
+| 快取命中 | ×0.1（Fable 5.1／Mythos 5.1 為 **×0.025**） | 讀取的 token | 命中既有快取 |
 | Batch API | ×0.5 | 輸入＋輸出 | 非即時工作負載 |
 | 快取寫入（5 分／1 小時） | ×1.25／×2.0 | 寫入的 token | 建立快取 |
 | 資料落地 | ×1.1 | **輸入、輸出、快取讀寫全部** | `inference_geo:"us"`；Azure 為 US Data Zone Standard；Claude 4.6 以後 |
@@ -158,6 +159,7 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 **乘數細節**
 
 - **會疊乘**：例如 Batch ×0.5 與資料落地 ×1.1 同時成立時兩者相乘。往下的只有快取命中與 Batch
+- **快取命中的特例**：Fable 5.1／Mythos 5.1 的命中／刷新費率為基準輸入價的 ×0.025（$0.25/Mtok），其餘所有模型維持 ×0.1；快取寫入倍率兩者相同（官方定價頁 Prompt caching 節，2026-09-03 查證）
 - **長脈絡的分界是模型世代，不是「1M」這個功能**。Claude 4.6 以後內含 1M 且不加價（官方[定價頁](https://platform.claude.com/docs/en/about-claude/pricing) Long context pricing 節）；Sonnet 4／4.5 世代的 1M 為 public preview，[AWS 公告](https://aws.amazon.com/about-aws/whats-new/2025/08/anthropic-claude-sonnet-bedrock-expanded-context-window/)明載超過 20 萬 token 的 prompt 約為兩倍輸入價、1.5 倍輸出價。**兩代混用時，兩套規則會出現在同一份帳單上**
 - **診斷法**：價差只在大請求出現 → 舊世代長脈絡溢價；小請求也貴同樣比例 → 資料落地或地區端點
 - 模型之間「同一份工作換個模型差多少」的換算（含 tokenizer 換代的影響）不在本頁，見 [[topics/model-comparison#同一份工作，換設定差多少]]
@@ -311,7 +313,7 @@ git commit 歷史出現大寫字串「HERMES.md」會觸發靜默切換至 API �
 #### 2026-09-02：官方更正週用量促銷延長至 09-13（非如期於 08-31 終止）；定價文件新增 Fable 5.1／Mythos 5.1 快取費率；印度盧比訴求互動再攀升
 
 - **Official Docs（support.claude.com）更正促銷狀態**：Claude Code 週用量 +50% 促銷再度延長，新到期日 **2026-09-13**（原記 2026-08-31 到期），適用 Pro、Max、Team。原文：「We've extended this promotion. Increased weekly limits now run through September 13, 2026.」**更正本頁既有記錄**：08-29 條目曾記「促銷如期於 08-31 終止、不再延長」，本次官方更新顯示該促銷實際上又獲延長，並非終止；上方「當前生效的計費規則」與「已失效並移除的規則」均已同步修正（來源：[Claude Code May–August 2026 Weekly Limits Promotion](https://support.claude.com/en/articles/15910845-claude-code-may-august-2026-weekly-limits-promotion)，2026-09-02）
-- **Official Docs（platform.claude.com/docs/en/about-claude/pricing）新增快取費率**：定價頁更新反映 Claude Fable 5.1、Claude Mythos 5.1 的快取讀取／刷新費率降至**標準輸入價的 0.025 倍**（標準快取讀取為 0.1 倍），長對話情境下快取成本較前代最多省下 75%；方案與定價頁（claude.com/pricing）同步大幅改版（新增/移除多段定價說明，完整差異未見比對）。**與模型頁的關係**：Fable 5.1／Mythos 5.1 為官方定價文件首度出現的具體版本號，此前僅見於 08-28 Reddit 社群臆測（[[entities/fable-5]] 待查證標記）；本則為一手來源，強力佐證兩版本已存在，⚠️ 已標記轉知主編轉知模型記者查證版本狀態。本頁僅記錄快取乘數，兩版本完整基礎 $/Mtok 定價未見公布，暫不列入上方「模型 API 定價現況」表。**乘數異動歸屬提醒**：此快取乘數變動屬「通路與乘數」節維護範圍（模型世代分界類，見 `.claude/rules/wiki-ingest-models.md` I 條），⚠️ 已標記轉知主編於下次 lint 查證納入乘數對照表（來源：[Pricing](https://platform.claude.com/docs/en/about-claude/pricing)、[claude.com/pricing](https://claude.com/pricing)，2026-09-02）
+- **Official Docs（platform.claude.com/docs/en/about-claude/pricing）新增快取費率**：定價頁更新反映 Claude Fable 5.1、Claude Mythos 5.1 的快取讀取／刷新費率降至**標準輸入價的 0.025 倍**（標準快取讀取為 0.1 倍），長對話情境下快取成本較前代最多省下 75%；方案與定價頁（claude.com/pricing）同步大幅改版（新增/移除多段定價說明，完整差異未見比對）。**與模型頁的關係**：Fable 5.1／Mythos 5.1 為官方定價文件首度出現的具體版本號，此前僅見於 08-28 Reddit 社群臆測（[[entities/fable-5]] 待查證標記）；本則為一手來源，強力佐證兩版本已存在。本頁僅記錄快取乘數，兩版本完整基礎 $/Mtok 定價未見公布，暫不列入上方「模型 API 定價現況」表；此快取乘數變動屬本頁「通路與乘數」節範疇，待納入該節乘數對照表（來源：[Pricing](https://platform.claude.com/docs/en/about-claude/pricing)、[claude.com/pricing](https://claude.com/pricing)，2026-09-02）
 - **GitHub Issue #17432 留言數更新**：留言數由 08-17 查證的 212 增至 **213**，本次首度記錄 reactions 達 **628 👍**（本輪商業類條目互動量最高之功能請求）；訴求內容不變——使用者要求 Anthropic 仿照 OpenAI（ChatGPT）、Google（Gemini）推出印度盧比定價方案，涵蓋 Claude Pro 與 Claude Code 兩項訂閱。與既有記錄相同：07-13 官方回應僅確認 Pro 方案訂閱定價，Claude Code 涵蓋範圍缺口依然存在（GitHub https://github.com/anthropics/claude-code/issues/17432，2026-09-01）
 
 #### 2026-08-29：官方公告週配額改版——09-14 起標準週配額永久 +25%，但 08-31 起不再延續 +50% 促銷，實際減少約 17%
@@ -331,15 +333,15 @@ git commit 歷史出現大寫字串「HERMES.md」會觸發靜默切換至 API �
 #### 2026-08-21：Techzine 報導 Anthropic 允許企業將 AI 資料存放於自有雲端環境（單一來源，未經官方確認）
 
 - **Techzine Global（2026-08-21 07:46 UTC）**：報導稱 Anthropic 讓企業客戶可以將 AI 資料存放在自有雲端環境中，僅標題可用，未見具體實作機制（是否限特定雲端商、涵蓋哪些模型／方案）、生效時間或官方公告連結。
-- **與下方 08-20 資料保留政策異動報導的關係（待確認，不逕自認定為同一事件）**：時間點相近、主題同屬企業資料治理，但來源與措辭均不同（一稱「自有雲端存放」、一稱「保留政策調整」），無法從現有標題層級資訊判斷是否為同一政策的不同描述角度，或兩項獨立變動；不可推測合併。
-- ❓ **待查證**（標 2026-08-21｜查 Techzine、自有雲端環境｜複 2026-09-04｜訊 2026-09-02）｜**企業資料存放於自有雲端環境**：官方文件是否已更新支援此作法未見報導，僅標題可用（Google News/Techzine Global）。**09-02 強力後續（非結案，留待主編核對後判定）**：Anthropic 官方發布 Enterprise Frontier Safeguards（EFS），明載「資料存放於客戶控制之雲端基礎設施，而非 Anthropic」，與本則傳聞高度吻合；惟 EFS 定位為「安全監控產品」而非單純儲存政策說明，措辭與涵蓋範圍是否完全對應同一件事仍待主編核對官方全文，詳見 [[topics/anthropic-business]]「戰略合作」EFS 條目（[Anthropic Blog](https://www.anthropic.com/news/enterprise-frontier-safeguards)，2026-09-02）
+- **與下方 08-20 資料保留政策異動報導的關係（待確認，不逕自認定為同一事件）**：時間點相近、主題同屬企業資料治理，但來源與措辭均不同（一稱「自有雲端存放」、一稱「保留政策調整」），無法從現有標題層級資訊判斷是否為同一政策的不同描述角度，或兩項獨立變動；不可推測合併。**後續（2026-09-03）**：官方 09-01 的 EFS 公告同時涵蓋兩者（資料留在客戶自有雲端＝Anthropic 端不留存），見下方查證結果。
+- **企業資料存放於自有雲端環境——官方已確認（2026-09-03 查證）**：Anthropic 09-01 公告 Enterprise Frontier Safeguards（EFS），明載企業用量資料存放於**客戶自行控制的雲端基礎設施**而非 Anthropic 端，EFS 本身免費、自 2026 年秋季起分階段對企業客戶開放；08-21 Techzine 標題所述即此政策的預告（[Anthropic Blog](https://www.anthropic.com/news/enterprise-frontier-safeguards)，2026-09-01；詳見 [[topics/anthropic-business]]「戰略合作」EFS 條目）
 
 #### 2026-08-20：路透社／彭博社（消息人士）報導 Anthropic 計畫調整企業資料保留政策（未經官方證實）
 
 - **Reuters（19:34 UTC）／Bloomberg（17:51 UTC）同日報導**：兩家媒體均引述消息人士，稱 Anthropic 計畫調整企業客戶的資料保留政策；Bloomberg 標題聚焦「進階 AI」（advanced AI）的適用範圍，兩則均僅標題與極簡導言可用，具體調整內容（保留天數延長／縮短、涵蓋模型範圍、生效時間）均未見報導細節。
 - **與既有「30 天資料保留政策」記錄的關係（見上方 2026-06-09 條目）**：本頁已記錄 Fable 5／Mythos 5 流量（含 AWS Bedrock）強制保留 30 天之既有政策；本則消息來源報導的「計畫調整」是否即針對此既有政策、調整方向為何，均未見報導細節，不可逕自推定延長或縮短。
 - **與競品動態的呼應**：同期 The Register／TechCrunch 報導 OpenAI 祭出「零資料保留」（zero data retention）承諾搶攻 Anthropic 企業客戶，被解讀為競爭回應，詳見 [[topics/competitor-landscape]]「OpenAI ChatGPT Work / GPT-5.6」子區塊。
-- ❓ **待查證**（標 2026-08-20｜查 Reuters、資料保留政策｜複 2026-09-03｜訊 2026-09-02）｜**企業資料保留政策調整細節**：消息來源均為匿名「source says」，具體調整內容未見官方公告（Google News/Reuters；Google News/Bloomberg.com）。**09-02 強力後續（非結案，留待主編核對後判定）**：Anthropic 官方發布的 Enterprise Frontier Safeguards（EFS，零資料留存＋濫用偵測）可能即為本則所稱「計畫調整」的官方版本，惟 08-20 報導口徑（保留天數延長／縮短）與 EFS 官方措辭（客戶控制雲端基礎設施＋安全監控）不完全一致，是否為同一政策的不同揭露階段待主編核對官方全文，詳見 [[topics/anthropic-business]]「戰略合作」EFS 條目（[Anthropic Blog](https://www.anthropic.com/news/enterprise-frontier-safeguards)，2026-09-02）
+- **企業資料保留政策調整——官方版本為 EFS（2026-09-03 查證）**：08-20 Reuters／Bloomberg 匿名消息稱 Anthropic 計畫調整企業資料保留政策；官方 09-01 公告的 Enterprise Frontier Safeguards 即其落地形式——資料留在客戶自有雲端、Anthropic 端不留存，並搭配濫用偵測。官方公告**未載**媒體先前傳的「保留天數」數字，該口徑僅為媒體稱（Reuters、Bloomberg），不得視為官方數字（[Anthropic Blog](https://www.anthropic.com/news/enterprise-frontier-safeguards)，2026-09-01；詳見 [[topics/anthropic-business]]「戰略合作」EFS 條目）
 
 #### 2026-08-19：DevOps.com 稱「暫時性用量提升」當晚到期，與週用量 +50% 促銷延長是否同一時程尚無法確認
 

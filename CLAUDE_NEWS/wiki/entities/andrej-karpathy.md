@@ -4,7 +4,7 @@ kind: "entity"
 type: "person"
 status: "active"
 domain: "👤 人物"
-last_updated: "2026-09-02"
+last_updated: "2026-09-03"
 last_news_update: "2026-08-02"
 status_main: "active"
 days_since_news: 32
@@ -29,7 +29,7 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 **狀態：** active
 **領域：** 👤 人物
 **首次出現：** 2026-05-17（CLAUDE.md 維護討論中被引用）
-**最後更新：** 2026-09-02
+**最後更新：** 2026-09-03
 **最後新聞更新：** 2026-08-02
 
 > **加入 Anthropic 已確認**（2026-05-19，2026-08-13 查證）
@@ -40,7 +40,7 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 
 ## 現況
 
-Andrej Karpathy 為知名 AI 研究者，已於 2026-05-19 加入 Anthropic pre-training 團隊（本人於 X 宣布，[TechCrunch](https://techcrunch.com/2026/05/19/openai-co-founder-andrej-karpathy-joins-anthropics-pre-training-team/)、[CNBC](https://www.cnbc.com/2026/05/19/anthropic-hires-openai-cofounder-andrej-karpathy-former-tesla-ai-lead.html)、[Axios](https://www.axios.com/2026/05/19/anthropic-openai-karpathy-andrej-claude) 同日獨立報導，2026-08-13 查證）。以 OpenAI 聯合創始人/研究總監及 Tesla AI/Autopilot 負責人身份廣為人知。其分享的「CLAUDE.md 四條規則」中強調「不讓 agent 讀超過必要內容（最小必要 context）」原則——此原則在 $6,000 徹夜帳單事件廣傳後，成為社群費用控管的重要共識依據，被 engramx 等工具作者直接引用。另，Karpathy 創立的 Eureka Labs（AI 教育新創）或已停止活動（依據：GitHub org 停更、LinkedIn 資訊移除，2026-05-29）。2026-08-02 另有 Benzinga 單一媒體報導引述其對 Claude Opus 3D 建構案例的評論，查證狀態見上方標記。
+Andrej Karpathy 為知名 AI 研究者，已於 2026-05-19 加入 Anthropic pre-training 團隊（本人於 X 宣布，[TechCrunch](https://techcrunch.com/2026/05/19/openai-co-founder-andrej-karpathy-joins-anthropics-pre-training-team/)、[CNBC](https://www.cnbc.com/2026/05/19/anthropic-hires-openai-cofounder-andrej-karpathy-former-tesla-ai-lead.html)、[Axios](https://www.axios.com/2026/05/19/anthropic-openai-karpathy-andrej-claude) 同日獨立報導，2026-08-13 查證）。以 OpenAI 聯合創始人/研究總監及 Tesla AI/Autopilot 負責人身份廣為人知。其分享的「CLAUDE.md 四條規則」中強調「不讓 agent 讀超過必要內容（最小必要 context）」原則——此原則在 $6,000 徹夜帳單事件廣傳後，成為社群費用控管的重要共識依據，被 engramx 等工具作者直接引用。另，Karpathy 創立的 Eureka Labs（AI 教育新創）已於加入 Anthropic 時**暫停**營運，非先前社群推測的解散——本人表示仍深具教育熱情、計畫日後恢復（2026-09-02 查證，詳見歷史記錄）。2026-08-02 另有 Benzinga 單一媒體報導引述其對 Claude Opus 3D 建構案例的評論，查證狀態見上方標記。
 
 ---
 

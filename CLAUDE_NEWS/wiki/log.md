@@ -5378,3 +5378,49 @@ GH Actions 抓料排 10:23 UTC，到 14:45 UTC 仍未落地（+4.4 小時且持�
 **設計（使用者裁決）：** 維持一頁一故事；厚度 >600 行只是鬧鐘；切線只落在故事邊界——**子故事三題**（有自己的問題／有自己的結論與時序／被獨立引用）為唯一判準；parent＝part-of 不是衍生；單一 parent、規則遞迴、**無深度上限**；子頁不入 index、不在網站平鋪、只從母頁下鑽；母頁必須仍是故事。fable reviewer 對抗審查判「現在不該動工」並列前置條件——全部採納：(a) 母頁自身「最後新聞更新」不因子頁動、改驗 callout 日期 ≥ 子樹最新（原設計與 freshness 第 2 類互斥、會擋站）；(b) index 改機器投影「↳ 子故事：」而非豁免（查詢 2 跳、13 處認領字面不改）；(c) 不重用 `kind` 欄（Bases 在用）改 `page_role`；(d) 子頁扁平＋領域繼承機械驗；(e) 併回留 redirect 殼；(f) 母頁結論層＝週更整線重寫（照 large-codebase 契約），每日唯讀除 callout／目錄／訊；(g) 💻 tab 不遞迴含子頁；(h) 試點改 ai-agent-safety、patterns 先跑既有蒸餾（1,087 行舊月份從未蒸餾）。
 
 **機械件：** 新 `scripts/check_hierarchy.py`（掛 run_tests：扁平／上層有效／成環／領域繼承／archive 掛父／hub 不落後／index 投影，改壞驗紅測試 9 案例）；`gen_wiki_frontmatter.py` 產 parent／children／page_role／days_since_news_subtree、家族邊不計入鏈、index 投影；`check_wiki_freshness.py` 母頁第 2 類看子樹歸因；`test_index_sync` 子頁由投影涵蓋；`build_web`＋`app.js` 麵包屑、子頁卡、列表只顯根頁、「含 N 子故事」徽章；`wiki_graph` 階層邊分型不入 cluster。首例：`ai-agent-safety-archive` 掛上層 ai-agent-safety、退出 index 列、由投影涵蓋。**verify 流程**寫進拆分原則（六階段：前置蒸餾→盤點 dry run→同一 commit 手術＋run_tests＋錨點不增→devpractice mark→push→冷讀者 2 題→一週回訪）。
+
+## 2026-09-03 Lint（本機執行，試跑：09-02 lint 後 1 天；期間六記者中安全政策記者因 API 529＋session 配額中斷兩次，以 SendMessage 續用原 agent 完成）
+
+- 修正矛盾：人物 2（karpathy 現況「或已停止」vs 歷史「暫停非解散」統一；boris 補 cat-wu 承諾的 SEJ 報導）；主編 3（overview 兩處「+50% 促銷 08-31 終止」與 pricing 09-02 更正衝突→改「延長至 09-13」；model-comparison 一處「Sonnet 5 早鳥至 8/31 其後 $3/$15」過期→改永久化）
+- 補連結：功能 1（site-source-tooling 孤島→skill-interest-watch 參考來源互指）
+- 狀態更新：無
+- resolved 收尾：無
+- 新增 entities：無（步驟 4 掃描：Simon Willison 14 頁、Cursor 16 頁、graphify 8 頁、Terminal-Bench 6 頁提及而無專頁——皆為引用來源／競品／工具名，未達「具體事物有足夠描述」門檻；列入待裁示）
+- 呈現品質：模型 1 頁 ⚠️（fable-5 #79337 互動數與過期措辭）；商業 1 頁 ⚠️（pricing 09-02 條目維運術語）；人物 3 頁 ⚠️（jensen-huang／amir-salek 維運字眼、boris 舊式表格標記改 ⟨Q-02⟩⟨Q-03⟩）；功能 1 頁 ⚠️（claude-code 33 處「今日彙整」等維運術語，對應 H-29a5db）；社群 3 頁 ⚠️（patterns 11 處、tools 8 處通道前綴＋internet-court 重複列合併＋補 5 工具、code-quality-decline 補第二探針）；安全政策 3 頁 ⚠️（safety-china 6 處舊式散文＋⟨Q-nn⟩ 對帳修復、ai-agent-safety 4 處＋2 格 >150 字下沉、gov-policy 4 處＋標題日期同步＋2 格下沉）；其餘 ✅
+- 入口層健檢：>500 行頁（patterns 1791、discussions 1315、ai-agent-safety 1249、anthropic-business 903、claude-code ~800、pricing 732、gov-policy 703）均具入口層；無語意分岔／死案候選
+- 待查證回訪：舊語法改寫 14 筆（人物 2、安全政策 12）；加訊 0；各記者逐筆比對日報無新後續
+- 轉知帳本：結案 5（H-3f85a1 模型／H-5dee92、H-a2cc40、H-29a5db 功能／H-398ffe 安全政策）；void 2（H-afe923 不達門檻、H-f5c58d 誤派）；新開 1（H-d48bee →社群，接手 f5c58d 議題狀態調整）
+- 規則檔健檢：
+  - 矛盾（6a）：1 條待裁示——`.claude/commands/wiki-lint.md` 6c 表「新工具加入時更新痛點洞察近期工具欄」引用的「痛點洞察」區塊已於 09-02 改版為「我卡在這裡」決策表且脫離每日 ingest，該列判準已無對應物
+  - 引用驗證（6b）：7 項錨點全在（首次出現 282／我卡在這裡／先裝這個／技術彙整／熱門討論 10／衍生 3／全覽表）
+  - 遵守率（6c）：近 3 次 ingest（08-31、09-01、09-02）品質標記 3/3（09-02 為明文 rollup 行，依 08-30 裁決等價）、feature-radar 3/3、格式欄位 3/3
+  - 過期規則（6d）：135 條 `[加入:]` 中 29 條逾 60 天，均為 5–6 月基礎條款，行為與現狀吻合者不動；未發現描述已失效者
+  - 來源健康（6e）：7 天無 ok=false、無社群來源連續 3 天 0；發現窗對帳 09-02 四窗（hn_bridge／rising／crossing／inventory）皆有列、09-03 尚無（gather 班次未到，非缺席）；星史 597 列／2 天；記分卡 HHI 0.223、HN Repo Bridge 樣本 0 天（新窗，只讀趨勢）
+  - 跨檔案語意矛盾（6f）：✅ 65 組 sync_pairs 機械全綠；語意抽查派工路徑對（六記者名稱兩側一致）
+  - 成長迴路（月度）：非本月首次 lint（09-02 已跑），跳過
+- 品質指標（6g）：ref 覆蓋率 100%（25/25）；死鏈報告 08-30（4 天，新鮮）dead 6／anti_bot 79——6 筆先前已全數標「原文已失效」，本輪新增 0；採用驗證率：非本月首次，跳過
+- 跨家榜單週更（5b）：haiku 抓取 18 榜取得 16 榜，整表覆寫（WebDev Arena 恢復取得 Opus 5 登頂；圖像編輯／TTS 第二三名換人；MTEB 首位 QZhou-Embedding 僅首位可確認）；Search Arena 連續 2 週無法取得、Aider 停更 5 週→待裁示；SWE-bench／OpenRouter 二手來源歧異並陳於註記。註：前一次 haiku 回報隨 context 壓縮遺失，本輪重派一次（成本 haiku 級）
+- 逾期待查證清算（5c）：盤點 68 筆（A3／B65），本輪處理 9 筆——查實 7（pricing 337／344 EFS 官方公告；dario:127 STAT News 專訪內容；boris ⟨Q-02⟩ Bloomberg 受訪者、⟨Q-03⟩ Fortune Brainstorm Tech 出處、boris:222＋cat-wu:92 inc.com 發言人＝Cherny）／Lane A 第四列推複查日 2（mythos:180、tom-blomfield:35 →複 09-17）／查無官方 0／失效移除 0；結案回掃上修 6 處（index boris 摘要、boris 歷史、dario 參考來源、anthropic-business 509、pricing 336、ai-agent-safety 253）
+  - 完整報告 WARN：claude-code:223「✅ 已修復內嵌 🔎 子問題」經功能記者確認為合理結構非殘留；official-community-gap:84 探針偵測力退化（僅 A2A 協定有效）→ 留待功能記者下輪補探針
+  - 📊 產消對帳（概估）：近 7 天新增 17 筆｜每週產能 15 筆（A 10＋B 5）｜本輪實際可消 9 筆｜淨增 2 筆/週 ⚠️；📈 趨勢：67→68；⏳ Lane B 排空約 13 週；舊語法盲區 143 筆（ai-agent-safety 23、claude-code 19、anthropic-business 11）
+- 歸因抽查（5d）：抽 5 筆（Cognizant／#13354／session 劫持／How well／v2.1.214），相符 5／修正漂移 0／無對應 0（連續第 1 週 B=0）
+- pricing 通路與乘數（5e）：Fable 5.1 本週發布→WebFetch 官方定價頁：基礎定價 $10/$50 與 Fable 5 同（商業記者原記「尚未公布」已更正並補表列）；快取命中特例 ×0.025 寫入乘數表；長脈絡仍不加價；tokenizer 仍為 4.7 世代新版、官方未載再換代→不轉知模型記者；資料截至更新為 09-03
+- devpractice 週彙整（5f）：本週亮點 9 條（Fable 5.1 快取降價、Auto Mode 注入風險量測、.git 設定攻擊面、促銷時程更正、codegraph／Understand-Anything／archify、claude-mem、殭屍 subagent 偵測、MCP draft-07）；深查第 4 段（實際動手寫）已補庫內證據、標記升為 [已補：庫內證據]；跨頁對帳三處 ✅ 一致
+- 讀者模擬：3 題 ✅——①「Fable 5.1 快取到底多便宜」→ index pricing 列→模型 API 定價現況表（2 跳）②「EFS 是什麼、資料存哪」→ index anthropic-business→callout（2 跳；index 摘要格未提 EFS，屬慢變路由設計）③「接手大 repo agent 讀不懂該裝什麼」→ index 💻 入口→tools 決策表→graphify（3 跳）
+- 質疑代打（7b）：seed 2026-W36 抽 Q4（缺席偵測）＋Q2（漏斗對帳）
+  - Q4 ✅：擲骰事實「Anthropic tightens security on its training environment after Claude agents went rogue 3 times」→ index→ai-agent-safety→事件記錄（07-30 三起評估事件／09-01 官方併案檢討，callout 與前一態勢均在），3 跳內命中
+  - Q2 ✅：funnel 無 gathered>0 且 emitted=0 來源；落差最大 GitHub（archive 10 條：刊 5／未刊 5：internet-court-skill 5,317★、cumora 3,416★、trinity 503、skilldock 503、devnors-data-mcp 242）——未刊 5 條已由 omissions 清單餵 wiki，社群記者 09-02／09-03 已收錄 internet-court、skilldock、cumora、trinity 於 tools 目錄，判「擋得對」（日報呈現層取捨，沉澱層未漏）
+  - 人類質疑時效燈：✅ 1 天前有質疑（2026-09-02），未亮
+- lint 自我遵守率：6/6 位記者回報一次過（形狀層八項均有明確結果，無退回）
+- 行為層抽驗：N=18 項宣稱，seed 2026-W36 擲骰抽中 #8（功能記者：claude-code 33 處維運術語清空）——git diff 核對如實（移除行含「今日彙整」33 行、新增行 0、現檔殘留 0）
+- 熱度降溫（5a）：與 09-02 lint 同一 4 週窗，上輪已降 17 條；本輪 OR 複查零命中者（Reflect、Artifacts、Dynamic Workflows、Coordinator、自架沙箱、Outcomes、/goal）皆屬上輪已降，不重複降；⏳ 逾期處置上輪已做，無新增
+- feature-radar：第 17 行「本週推薦」選錄規則說明改寫為讀者語言（功能記者建議、主編執行）
+- overview.md：已更新（Fable 5.1 官方定價、EFS 查證結案、促銷延長至 09-13 更正、Boris 三筆查實）
+- 渲染層驗收：（見 step 10 執行後補記於心跳）
+- 待使用者裁示：
+  - ⏳ 已擱置 0 週｜**月度蒸餾提案**（社群記者 dry run）：patterns 2026-06（49 條／30k 字）與 2026-05（37 條／15k 字）達門檻；discussions 2026-05 含 🌊延燒首見日期不提案。執行即等於子故事流程「0 前置」的第一步
+  - ⏳ 已擱置 0 週｜**patterns 淘汰候選**：Fast Context Task Router（07-05，Microsoft 專案已下架、⏳ 60 天）——移除或降註記？（本輪僅重點掃描，未逐條複查全表）
+  - ⏳ 已擱置 0 週｜**榜單汰換**：Search Arena 連續 2 週無法取得、Aider Polyglot 停更 5 週——是否汰換／由 SWE-bench Pro 或 Terminal-Bench 3.0 承接
+  - ⏳ 已擱置 0 週｜**6a 規則矛盾**：wiki-lint.md 6c「痛點洞察近期工具欄」判準已無對應物，建議改為「新工具加入時 tools 目錄同步（lint 週更）」或刪列
+  - ⏳ 已擱置 0 週｜**步驟 4 建頁候選**：Simon Willison（14 頁提及，人物）、graphify（8 頁，決策表首選）是否建 entities 頁
+  - ⏳ 已擱置 1 週｜Q2 資料缺口（gathered_archive 只存刊出量）；5c 產消失衡（本輪淨增 2/週）；ai-agent-safety-archive 狀態統一；5d 歸因日期誤差；6c 表格式 rollup 行（09-02 起）

@@ -4,7 +4,7 @@ kind: "entity"
 type: "person"
 status: "active（待核實）"
 domain: "👤 人物"
-last_updated: "2026-08-29"
+last_updated: "2026-09-03"
 last_news_update: "2026-08-24"
 status_main: "active"
 days_since_news: 10
@@ -29,7 +29,7 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 **狀態：** active（待核實）
 **領域：** 👤 人物
 **首次出現：** 2026-08-23
-**最後更新：** 2026-08-29
+**最後更新：** 2026-09-03
 **最後新聞更新：** 2026-08-24
 
 > ❓ **待查證**（標 2026-08-23｜查 Amir Salek、chip programme｜訊 2026-08-24）｜**Anthropic 延攬 Amir Salek，前 Google 自研晶片計畫創辦人**（2026-08-23 報導）：The Times of India（經 Google News 轉載）報導 Anthropic 延攬 Amir Salek，其先前身份為「Google 自研晶片計畫創辦人（founder of Google's custom chip programme）」——推測與 Google TPU（Tensor Processing Unit）專案相關，惟報導僅標題層級可用，正文未見，過往經歷細節、加入 Anthropic 後職掌與到任時間均未能確認。**後續**（2026-08-24）：citybiz 獨立報導同一任命，標題稱其為「former Google TPU chief」，與 Times of India 版本互為第二來源佐證，惟仍僅標題層級可用，過往經歷、職掌與到任時間細節依然未見。
@@ -38,7 +38,7 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 
 ## 現況
 
-2026-08-23，The Times of India（經 Google News 轉載）報導 Anthropic 已聘用 Amir Salek，標題稱其為「Google 自研晶片計畫創辦人（founder of Google's custom chip programme）」——依字面推測應與 Google TPU 專案的創始團隊有關，但報導僅有標題可讀，正文內容未見，Salek 過往完整經歷、此次在 Anthropic 的具體職掌與到任時間均待查證。**後續**（2026-08-24）：citybiz 獨立報導同一任命，標題稱其為「former Google TPU chief」，構成第二來源佐證，惟同樣僅標題層級可用，細節仍未展開，查證狀態見頁首標記。此事件與 Anthropic 近期硬體／晶片布局（含先前 Anthropic-Samsung 客製晶片洽談報導）的關聯性，屬商業/戰略面延伸議題，已轉交商業記者評估併入 [[topics/ai-talent-flow]]。
+2026-08-23，The Times of India（經 Google News 轉載）報導 Anthropic 已聘用 Amir Salek，標題稱其為「Google 自研晶片計畫創辦人（founder of Google's custom chip programme）」——依字面推測應與 Google TPU 專案的創始團隊有關，但報導僅有標題可讀，正文內容未見，Salek 過往完整經歷、此次在 Anthropic 的具體職掌與到任時間均待查證。**後續**（2026-08-24）：citybiz 獨立報導同一任命，標題稱其為「former Google TPU chief」，構成第二來源佐證，惟同樣僅標題層級可用，細節仍未展開，查證狀態見頁首標記。此事件與 Anthropic 近期硬體／晶片布局（含先前 Anthropic-Samsung 客製晶片洽談報導）的關聯性，屬商業/戰略面延伸議題，詳見 [[topics/ai-talent-flow]]。
 
 ## 核心論述
 

@@ -141,18 +141,23 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 
 | 工具 | 類型 | 採用 | 首次出現 | 簡介 |
 | --- | --- | --- | --- | --- |
-| [**Understand-Anything**](https://github.com/Egonex-AI/Understand-Anything) | 搜尋/診斷 | ⏳ | 2026-09-02 | 互動式 code 知識圖（可探索/搜尋/提問），跨 harness；[使用者提問] 81,325★、2026-03 出生，09-02 查證（防刷通過），社群實測待累積 |
-| [**codegraph**](https://github.com/colbymchenry/codegraph) | 記憶工具 | ⏳ | 2026-09-02 | 預索引 code 知識圖、改 code 自動同步、全本機省 token；[使用者提問] 69,253★、2026-01 出生，09-02 查證（防刷通過），graphify 競品 |
-| [**archify**](https://github.com/tt-a1i/archify) | Skills | ⏳ | 2026-09-02 | 架構/時序/資料流圖 agent skill，自包含 HTML；[使用者提問] 43,378★、2026-04 出生，09-02 查證（防刷通過） |
-| [**x1xhlol/system-prompts-and-models-of-ai-tools**](https://github.com/x1xhlol/system-prompts-and-models-of-ai-tools) | 其他 | ✅ | 2026-08-29 | 彙整 Claude Code、Cursor、Devin AI、Replit 等數十款 AI 編碼工具完整系統提示詞與模型設定；[存量盤點] 14.3 萬星，2025-03 出生，長期累積型參考資源 |
-| [**Shubhamsaboo/awesome-llm-apps**](https://github.com/Shubhamsaboo/awesome-llm-apps) | Skills | ✅ | 2026-08-30 | 彙整百餘款 AI Agent、Agent Skills 與 RAG 開源應用清單；[存量盤點] 13.5 萬星，2024-04 出生，長期累積型參考資源 |
+| [**thedotmack/claude-mem**](https://github.com/thedotmack/claude-mem) | 記憶工具 | ✅ | 2026-09-02 | 跨 harness（Claude Code、OpenClaw、Codex、Gemini 等 7 種以上）持久記憶，擷取 session 過程並用 AI 壓縮注入後續 session；9.3 萬星，2025-08-31 出生，本庫首次收錄 |
+| [**addyosmani/agent-skills**](https://github.com/addyosmani/agent-skills) | Skills | ⏳ | 2026-09-02 | Addy Osmani（Google Chrome DevRel）具名生產級工程技能集合；9.2 萬星，2026-02 出生，僅星數佐證未另查證 |
+| [**yetone/cumora**](https://github.com/yetone/cumora) | 工作流 | ⏳ | 2026-09-02 | 跨平台團隊聊天工具，讓 AI agent 成為聊天中的「一等公民」隊友，可接 Claude Code／Codex；3,416 星，作者具名知名開源開發者 |
+| [**Abilityai/trinity**](https://github.com/Abilityai/trinity) | 多 Agent | ⏳ | 2026-09-02 | 自架 AI Agents 平台，支援 Claude Code、Codex、Gemini，Apache 2.0；503 星 |
+| [**wanghuan9/skilldock**](https://github.com/wanghuan9/skilldock) | Skills | ⏳ | 2026-09-02 | AI skill 管理桌面應用，安裝/整理/編輯/同步/更新 Skills、MCP servers、plugins，跨 5 種 AI coding 工具；503 星 |
+| [**Understand-Anything**](https://github.com/Egonex-AI/Understand-Anything) | 搜尋/診斷 | ⏳ | 2026-09-02 | 互動式 code 知識圖（可探索/搜尋/提問），跨 harness；81,325★、2026-03 出生，09-02 查證（防刷通過），社群實測待累積 |
+| [**codegraph**](https://github.com/colbymchenry/codegraph) | 記憶工具 | ⏳ | 2026-09-02 | 預索引 code 知識圖、改 code 自動同步、全本機省 token；69,253★、2026-01 出生，09-02 查證（防刷通過），graphify 競品 |
+| [**archify**](https://github.com/tt-a1i/archify) | Skills | ⏳ | 2026-09-02 | 架構/時序/資料流圖 agent skill，自包含 HTML；43,378★、2026-04 出生，09-02 查證（防刷通過） |
+| [**x1xhlol/system-prompts-and-models-of-ai-tools**](https://github.com/x1xhlol/system-prompts-and-models-of-ai-tools) | 其他 | ✅ | 2026-08-29 | 彙整 Claude Code、Cursor、Devin AI、Replit 等數十款 AI 編碼工具完整系統提示詞與模型設定；14.3 萬星，2025-03 出生，長期累積型參考資源 |
+| [**Shubhamsaboo/awesome-llm-apps**](https://github.com/Shubhamsaboo/awesome-llm-apps) | Skills | ✅ | 2026-08-30 | 彙整百餘款 AI Agent、Agent Skills 與 RAG 開源應用清單；13.5 萬星，2024-04 出生，長期累積型參考資源 |
 | [**multica-ai/andrej-karpathy-skills**](https://github.com/multica-ai/andrej-karpathy-skills) | Skills | ⏳ | 2026-08-29 | 單一 CLAUDE.md 檔案改善 Claude Code 行為，取材自 Karpathy 對 LLM coding 常見缺陷的觀察；20.9 萬星，惟僅 GitHub Search 星數、無 forks／issues 佐證可查，增速異常值得存疑，不作為獨立驗證訊號 |
 | [**garrytan/gstack**](https://github.com/garrytan/gstack) | 多 Agent | ⏳ | 2026-08-30 | Garry Tan（YC 總裁）公開自己的 Claude Code 設定，23 個角色化工具分飾 CEO、設計師、工程經理等職能；13.0 萬星，僅 5.5 個月即達此規模，增速明顯快於同類存量盤點案例，星數真實性未經驗證，作者具名且內容具體故收錄 |
 | [**JimLiu/baoyu-design**](https://github.com/JimLiu/baoyu-design) | Skills | ⏳ | 2026-08-29 | 本機以 Agent Skill 執行 [[entities/claude-design]]，供 Cursor／Claude Code 產出自足式 HTML UI 原型，官方建議搭配 Opus 4.8；3,637 星 |
 | [**rsmdt/the-startup**](https://github.com/rsmdt/the-startup) | 工作流 | ⏳ | 2026-08-25 | 「The Agentic Startup」風格 Claude Code commands／skills／agents 集合；507 星 |
 | [**mindmuxai/brain.md**](https://github.com/mindmuxai/brain.md) | 記憶工具 | ⏳ | 2026-08-25 | 零依賴、檔案式跨 session 持久記憶層，為 coding agent 保存決策／需求／限制的「專案大腦」；504 星 |
 | [**l3a0/claude-plugins**](https://github.com/l3a0/claude-plugins) | 其他 | ⏳ | 2026-08-24 | Claude Code Skill 用 OCR 從 Kindle Cloud Reader 復原被限制匯出的畫線筆記；HN score 45 |
-| [**obra/superpowers**](https://github.com/obra/superpowers) | Skills | ⏳ | 2026-08-28 | Agentic skills 框架與軟體開發方法論；[存量盤點] 累計 27.9 萬星，2025-10 出生，本庫今日首次收錄；僅星數佐證，forks／issues 未驗證，惟已見於 Reddit 使用者抱怨（間接證明有實際採用） |
+| [**obra/superpowers**](https://github.com/obra/superpowers) | Skills | ⏳ | 2026-08-28 | Agentic skills 框架與軟體開發方法論；累計 27.9 萬星，2025-10 出生，本庫今日首次收錄；僅星數佐證，forks／issues 未驗證，惟已見於 Reddit 使用者抱怨（間接證明有實際採用） |
 | [**tare**](https://github.com/kelviq/tare) | 費用監測 | ⏳ | 2026-08-27 | CLI 底部即時顯示 usage/context/model 狀態並配合 hook 監測用量暴增；Show HN score 84 |
 | [**opslane**](https://github.com/opslane/opslane) | 工作流 | ⏳ | 2026-08-27 | 監看 user session 找出真實影響使用者的 bug，僅在能驗證修復後才開 PR；Show HN score 34 |
 | [**ambient-context**](https://github.com/dragthelake/ambient-context) | 記憶工具 | ⏳ | 2026-08-25 | macOS 選單列 app，透過 Accessibility API 讀取焦點視窗文字寫成逐日 Markdown，供 Claude Code 查詢近況；Show HN score 51，source_count 2 |
@@ -160,7 +165,7 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 | [**Proliferate**](https://github.com/proliferate-ai/proliferate) | 多 Agent | ⏳ | 2026-08-21 | YC S25，開源自架 AI IDE，統一操作 Claude Code／Codex／OpenCode／Cursor／Grok；Show HN score 39，source_count 2 |
 | [**Frugal Tokens**](https://demo.frugaltokens.com/) | 費用監測 | ⏳ | 2026-08-19 | 探索跨 coding agent（含 Claude Code）的成本與用量，含 cache miss 對花費的影響；Show HN score 33，source_count 2 |
 | [**machine0**](https://machine0.io) | 整合工具 | ⏳ | 2026-08-18 | YC S26，持久化 CPU/GPU 雲端 VM 供長時間自主 agent 運算，`machine0 new mybox` 即開機，$0.013/hr 起；Launch HN score 78 |
-| [**internet-court-skill**](https://github.com/internet-court/internet-court-skill) | 安全工具 | ⏳ | 2026-08-18 | agent-to-agent 商務信任層 skill：自然語言 mandate、ERC-7710 委任權限、x402 支付、託管與爭議解決；3,793 星 |
+| [**internet-court-skill**](https://github.com/internet-court/internet-court-skill) | 安全工具 | ⏳ | 2026-08-18 | agent-to-agent 商務信任層 skill：自然語言 mandate、ERC-7710 委任權限、x402 支付、託管與爭議解決；5,317 星（09-02 更新，前次 08-18 為 3,793 星），無出生日期標記、無 forks/issues 佐證可查 |
 | [**claw-orchestrator**](https://github.com/Enderfga/claw-orchestrator) | 多 Agent | ⏳ | 2026-08-17 | 跨 harness 統一 runtime（Claude Code／Codex／Antigravity／Cursor／OpenCode），持久 session＋multi-agent councils＋MCP server；547 星 |
 | [**statuslin.es**](https://statuslin.es) | UI 工具 | ⏳ | 2026-08-17 | 社群策展的 Claude Code status line 樣式展示網站，每則附真實 sandbox 容器截圖；同時被 2 個獨立來源收錄 |
 | [**Graft**](https://github.com/NanoNets/Graft) | 費用監測 | ⚠️ | 2026-08-15 | Claude Code hooks 削減 grep 輸出 token，宣稱降幅 42%（HN 39，跨 2 來源）；HN 討論串質疑 README 的 benchmark 段落疑似 AI 代寫，數字未經第三方覆核 |

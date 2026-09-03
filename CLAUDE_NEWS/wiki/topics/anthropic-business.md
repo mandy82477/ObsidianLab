@@ -3,7 +3,7 @@ page: "topics/anthropic-business"
 kind: "topic"
 status: "ongoing"
 domain: "💼 商業"
-last_updated: "2026-09-02"
+last_updated: "2026-09-03"
 last_news_update: "2026-09-02"
 status_main: "ongoing"
 days_since_news: 1
@@ -11,7 +11,7 @@ parent: null
 children: "[]"
 page_role: "root"
 days_since_news_subtree: 1
-inbound_links: 65
+inbound_links: 69
 attribution_count: 191
 attribution_last: "2026-09-02"
 top_source: "google-news"
@@ -27,7 +27,7 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 **狀態：** ongoing
 **領域：** 💼 商業
 **開始日期：** 2026-05-28
-**最後更新：** 2026-09-02
+**最後更新：** 2026-09-03
 **最後新聞更新：** 2026-09-02
 
 > **最新動態**（2026-09-02）
@@ -506,7 +506,7 @@ Financial Times 報導 Anthropic 旗艦模型在吸引一般使用者（general 
 #### 2026-08-20
 - **[IPO 前瞻，新增] Bloomberg：Anthropic 據傳預期 IPO 規模將比肩甚至超越 SpaceX 先前紀錄發行規模；Yahoo Finance：Anthropic 有可能最快本月遞交 IPO 文件**：均僅標題可用，詳見「IPO 前瞻與估值追蹤」表新增列（Google News/Bloomberg.com；Google News/Yahoo Finance）
 - **[戰略合作，新增] crn.com／Seeking Alpha／The Information：與 Anthropic 關聯之 Ode 收購顧問公司 Casper Studios**：延續 07-16 已記錄之 Ode 合資公司動態，詳見「戰略合作」表新增列（Google News/crn.com；Google News/Seeking Alpha；Google News/The Information）
-- **[計費/合規政策，詳見 pricing] 路透社／彭博社（消息人士）：Anthropic 據傳計畫調整企業資料保留政策**：未經官方證實，本頁不重複列出，詳見 [[entities/pricing]]「定價與促銷」；競爭面（OpenAI 零資料保留承諾）詳見 [[topics/competitor-landscape]]（Google News/Reuters；Google News/Bloomberg.com）
+- **[計費/合規政策，詳見 pricing] 路透社／彭博社（消息人士）：Anthropic 據傳計畫調整企業資料保留政策**：當時未經官方證實，本頁不重複列出，詳見 [[entities/pricing]]「定價與促銷」（**後續（2026-09-03）**：官方版本即 09-01 公告的 Enterprise Frontier Safeguards，見本頁「戰略合作」EFS 列）；競爭面（OpenAI 零資料保留承諾）詳見 [[topics/competitor-landscape]]（Google News/Reuters；Google News/Bloomberg.com）
 - **[具名企業退出，詳見 enterprise-tool-tracker] Yahoo Finance：Goldman Sachs、OKX 雙雙於香港被切斷 Claude AI 存取權限**：涉及地緣政治與合規因素，成因未明；本頁不重複列出，詳見 [[topics/enterprise-tool-tracker]]、[[topics/anthropic-government-policy]]（Google News/Yahoo Finance）
 - **[財務狀況，新增] CNBC：Anthropic 已超越 OpenAI 成為市場最熱門 AI 新創（含股票贏家/輸家分析）**：詳見「財務狀況」表新增列（Google News/CNBC）
 - **[財務狀況，新增，安全面另見 ai-agent-safety] The Information：OpenAI 安全政策追上 Anthropic 之際，Anthropic 營收領先幅度仍在擴大**：本頁僅記錄商業面，詳見「財務狀況」表新增列（Google News/The Information）

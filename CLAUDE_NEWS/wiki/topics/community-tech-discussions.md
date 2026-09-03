@@ -11,7 +11,7 @@ parent: null
 children: "[]"
 page_role: "root"
 days_since_news_subtree: 1
-inbound_links: 46
+inbound_links: 47
 attribution_count: 124
 attribution_last: "2026-09-02"
 top_source: "hacker-news"

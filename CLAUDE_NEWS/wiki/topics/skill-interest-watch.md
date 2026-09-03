@@ -207,3 +207,4 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 - 決策表與判斷：[[topics/community-tech-tools]]（每週人工策展；本頁每日抄錄）
 - 規模榜：GitHub Search API（依星數排序，每日快照）；「本週竄升」以本庫每日記錄的星數差計算，保留 60 天
 - 類別與搜尋條件由維護者校準（每條 query 上線前實測命中；找不到有辨識力 query 的類別只印判斷，不掛空榜）
+- 同機制的另一份日更規模榜：[[topics/site-source-tooling]]（本站自身資料源維運參考，非開發實務）

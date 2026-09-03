@@ -43,3 +43,11 @@
 {"id": "H-f5c58d", "opened": "2026-09-02", "from": "社群", "to": "功能", "page": "topics/official-community-gap.md", "note": "wanghuan9/skilldock 直接解掉 community-tech-discussions「工具生態發現性問題」長期議題（🌙靜候）的痛點，評估是否調整該長期議題狀態", "status": "open"}
 {"id": "H-969fc1", "closed": "2026-09-02", "status": "done", "by": "模型", "result": "模型記者已於同日獨立比對並補標訊 2026-09-02，08-29 待查證項已補記官方證實"}
 {"id": "H-29a5db", "opened": "2026-09-03", "from": "社群", "to": "功能", "page": "entities/claude-code", "note": "冷讀者第三輪（09-03）：157 行「依互動門檻自行收錄，非當日日報選題」、276/281「已達高門檻」、512/513「不進 feature-radar」、653/674「今日彙整」為維運字眼外洩；另 feature-radar 全覽 17 行把本週推薦選錄規則（門檻/時間閘/最後輪替）當內容印給讀者，改為讀者語言", "status": "open"}
+{"id": "H-3f85a1", "closed": "2026-09-03", "status": "done", "by": "模型", "result": "fable-5 #79337 互動數更新至 76 留言/26 讚並修正過期措辭"}
+{"id": "H-5dee92", "closed": "2026-09-03", "status": "done", "by": "功能", "result": "評估後證據密度不足不新增矩陣列，已寫入時序觸發條件"}
+{"id": "H-a2cc40", "closed": "2026-09-03", "status": "done", "by": "功能", "result": "official-community-gap 新增「Agent 間商業/支付基礎設施」矩陣列"}
+{"id": "H-29a5db", "closed": "2026-09-03", "status": "done", "by": "功能", "result": "claude-code.md 維運術語 33 處清空；feature-radar 第 17 行由主編改寫"}
+{"id": "H-afe923", "closed": "2026-09-03", "status": "void", "by": "主編", "result": "社群：36Kr 單一來源、無 repo/可跑指令，不達 patterns 收錄門檻"}
+{"id": "H-d48bee", "opened": "2026-09-03", "from": "功能", "to": "社群", "page": "topics/community-tech-discussions", "note": "調整「工具生態發現性問題」議題狀態（原 H-f5c58d 誤派功能記者，頁面屬社群）", "status": "open"}
+{"id": "H-f5c58d", "closed": "2026-09-03", "status": "void", "by": "主編", "result": "功能：頁面屬社群記者，已改開新筆給社群"}
+{"id": "H-398ffe", "closed": "2026-09-03", "status": "done", "by": "安全政策", "result": "EFS 濫用偵測機制已收錄 ai-agent-safety（結論表列＋技術彙整節＋時序）"}

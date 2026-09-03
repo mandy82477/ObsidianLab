@@ -4,7 +4,7 @@ kind: "entity"
 type: "model"
 status: "active（出口管制解除，2026-07-01 起全球恢復存取；5.1 已於 2026-09-01 發布，維持信任機構限定存取，未轉為全面公開）"
 domain: "🤖 模型"
-last_updated: "2026-09-02"
+last_updated: "2026-09-03"
 last_news_update: "2026-09-02"
 status_main: "active"
 days_since_news: 1
@@ -17,7 +17,7 @@ attribution_count: 16
 attribution_last: "2026-09-02"
 top_source: "google-news"
 pending_count: 5
-pending_overdue: 3
+pending_overdue: 2
 pending_next_review: "2026-09-07"
 pending_signalled: 1
 signal: "健康"
@@ -29,7 +29,7 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 **狀態：** active（出口管制解除，2026-07-01 起全球恢復存取；5.1 已於 2026-09-01 發布，維持信任機構限定存取，未轉為全面公開）
 **領域：** 🤖 模型
 **首次出現：** 2026-04（限定夥伴 Preview）
-**最後更新：** 2026-09-02
+**最後更新：** 2026-09-03
 **最後新聞更新：** 2026-09-02
 
 > **最新進展**（2026-09-01）
@@ -177,7 +177,7 @@ Anthropic 的官方 AI 資安能力研究計畫，Mythos Preview 為核心工具
 - **Oxide 加入 Project Glasswing**：Oxide Computer 宣布加入 Project Glasswing，將 Claude Mythos 5 應用於主動識別並修補自家開源程式碼庫（韌體、作業系統、控制平面、網路堆疊）中的潛在漏洞（[Oxide Blog](https://oxide.computer/blog/oxide-anthropic-project-glasswing)，HN score 16）。Oxide 強調其一貫信念「所有關鍵軟體都應可被檢視」，故開源自身全部程式碼；此為 Project Glasswing 又一具名企業夥伴案例，能力面詳見本頁，商業/安全政策面另見對應記者頁面。
 
 #### 2026-07-25
-❓ **待查證**（標 2026-08-10｜查 Mashable、public release｜訊 2026-09-02）｜**Mashable：Claude Mythos 或類似模型可能對外公開發布**（僅標題可用）：
+❓ **待查證**（標 2026-08-10｜查 Mashable、public release｜複 2026-09-17｜訊 2026-09-02）｜**Mashable：Claude Mythos 或類似模型可能對外公開發布**（僅標題可用；09-01 發布的 Mythos 5.1 仍限信任機構，「公開發布」猜測依日報未成立，Mashable 原文與官方是否另有公開時程未查）：
 - Google News 轉載 Mashable 標題「Anthropic's Claude Mythos, or a model like it, to get public release」（[Google News/Mashable](https://mashable.com/tech/anthropic-mythos-might-get-public-release)）；RSS 僅提供標題與轉址連結，無正文摘要，無法確認具體時程、版本形態（完整無護欄版 vs 附加護欄新版本）或與現有 Fable 5 的關係
 - 若屬實將是繼 Fable 5（2026-06-09，Mythos 架構附加護欄公開版）後，Mythos 級能力進一步向大眾開放的重大政策轉向；暫無第二來源佐證，待後續報導補充具體內容再擴寫分析
 - **後續（2026-09-01）**：Anthropic 正式發布 Claude Mythos 5.1，但**存取模式維持信任機構限定**（「available only through our trusted access programs」），並未如標題所暗示轉為全面公開發布；版本迭代屬實，「公開發布」的猜測則未成立。詳見上方「現況」（[Anthropic Blog](https://www.anthropic.com/claude-fable-and-mythos-5-1)，2026-09-01）

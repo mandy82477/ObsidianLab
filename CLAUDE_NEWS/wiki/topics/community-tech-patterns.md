@@ -3,7 +3,7 @@ page: "topics/community-tech-patterns"
 kind: "topic"
 status: "ongoing"
 domain: "🌐 社群"
-last_updated: "2026-09-02"
+last_updated: "2026-09-03"
 last_news_update: "2026-09-02"
 status_main: "ongoing"
 days_since_news: 1
@@ -11,7 +11,7 @@ parent: null
 children: "[]"
 page_role: "root"
 days_since_news_subtree: 1
-inbound_links: 48
+inbound_links: 52
 attribution_count: 105
 attribution_last: "2026-09-02"
 top_source: "devto"
@@ -28,7 +28,7 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 **狀態：** ongoing
 **領域：** 🌐 社群
 **開始日期：** 2026-04-25
-**最後更新：** 2026-09-02
+**最後更新：** 2026-09-03
 **最後新聞更新：** 2026-09-02
 
 > **最新工作流模式**（2026-09-02）
@@ -213,7 +213,7 @@ Claude Code 的三種多 agent 機制，可對應到 Anthropic《Building Effect
 
 - **主線：** —
 - **核心模式：** AI skill 管理桌面應用，支援 Claude Code、Cursor、Codex、Windsurf、Gemini CLI 等多種 AI coding 工具，可安裝、整理、編輯、同步、更新 Skills、MCP servers、plugins；GitHub Search 累積 503 星
-- **與既有模式的關係：** 直接回應 [[topics/community-tech-discussions]]「🌊 持續關注中的長期議題」中「工具生態發現性問題」（🌙靜候，「Skills/MCP 散落各處，缺乏集中發現機制」）——本則是針對此痛點的具體桌面應用解法，把跨工具（5 種 AI coding 工具）的 Skills／MCP／plugins 管理集中到單一介面；已於回報中請主編轉知該議題後續是否因此類工具出現而調整狀態
+- **與既有模式的關係：** 直接回應 [[topics/community-tech-discussions]]「🌊 持續關注中的長期議題」中「工具生態發現性問題」（🌙靜候，「Skills/MCP 散落各處，缺乏集中發現機制」）——本則是針對此痛點的具體桌面應用解法，把跨工具（5 種 AI coding 工具）的 Skills／MCP／plugins 管理集中到單一介面；[[topics/community-tech-discussions]] 該議題的狀態是否因此類工具出現而調整，留待後續追蹤
 - **可信度註記：** 星數（503）達收錄門檻，惟資料僅含 GitHub Search 星數，無 forks／issues／近期 commit 佐證可查，未另行查證，依內容具體程度（功能清單明確、跨工具支援清楚）判斷收錄
 - **來源：** GitHub Search（503★，達收錄門檻）；[GitHub](https://github.com/wanghuan9/skilldock)
 - **成熟度：** ⏳ 新興（今日首見，尚無社群採用回饋或量化效果數據）
@@ -223,7 +223,7 @@ Claude Code 的三種多 agent 機制，可對應到 Anthropic《Building Effect
 - **主線：** 索引記憶
 - **核心模式：** 作者以自己單一用戶的第一手實測，比較 Claude Code 內建記憶功能與自己（人類）認知記憶的差異，結論是內建記憶確實有效，但兩者做的並非同一件事——人類記憶與工具記憶在功能定位上不可互相取代
 - **與既有模式的關係：** 補上本頁「記憶與知識管理」類別一種此前未見的評估角度——既有方案（ltm、NanoBrain、OKF、mindmuxai/brain.md、否決記錄機制）聚焦記憶系統**該怎麼建**，本則從使用者第一手體驗角度回答「內建記憶系統實際解決了什麼、沒解決什麼」，屬評測而非新工具；歸入主線 [[topics/community-large-codebase-workflow]] 索引記憶主線
-- **可信度註記：** dev.to 走內容判斷不套互動門檻（讚數在 dev.to 非品質指標）；單一使用者第一手實測，無跨平台佐證
+- **可信度註記：** dev.to 條目以內容本身判斷收錄，不看讚數（讚數在 dev.to 不代表品質）；單一使用者第一手實測，無跨平台佐證
 - **來源：** 「I tested Claude Code's memory against mine (they are not doing the same job)」— dev.to `#claudecode`（14 讚）；[原文](https://dev.to/heinrichneb/i-tested-claude-codes-memory-against-mine-they-are-not-doing-the-same-job-35jb)
 - **成熟度：** ⏳ 新興（單一第一手評測，尚無其他使用者回報相同結論）
 
@@ -232,7 +232,7 @@ Claude Code 的三種多 agent 機制，可對應到 Anthropic《Building Effect
 - **主線：** —
 - **核心模式：** 作者盤點自訂 subagent 實際使用紀錄，發現 8 個自訂 subagent 中有 7 個在 30 天內零呼叫，因而建立一套自動偵測「殭屍 agent」（dead agent）的機制，供其他使用者比照盤點自己的 subagent 配置是否有大量閒置
 - **與既有模式的關係：** 為本頁「Multi-agent 架構」類別補上此前未見的**維護／觀測性**視角——既有模式多聚焦如何設計、協調 multi-agent 架構（orchestrator 分派、防答案塌縮等），本則指出設計完的 subagent 常態性閒置是被忽視的問題，並提供可複用的自動偵測做法，適合多 subagent 配置的使用者定期自查
-- **可信度註記：** dev.to 走內容判斷不套互動門檻（讚數在 dev.to 非品質指標）；單一第一手案例＋可複用機制，符合收錄標準；無跨平台佐證
+- **可信度註記：** dev.to 條目以內容本身判斷收錄，不看讚數（讚數在 dev.to 不代表品質）；單一第一手案例＋可複用機制，符合收錄標準；無跨平台佐證
 - **來源：** 「7 of My 8 Claude Code Agents Had Zero Calls in 30 Days: Finding Dead Agents Automatically」— dev.to `#claudecode`（4 讚）；[原文](https://dev.to/bokuwalily/7-of-my-8-claude-code-agents-had-zero-calls-in-30-days-finding-dead-agents-automatically-27jf)
 - **成熟度：** ⏳ 新興（單一第一手案例，尚無其他使用者複現相同盤點結果）
 
@@ -241,7 +241,7 @@ Claude Code 的三種多 agent 機制，可對應到 Anthropic《Building Effect
 - **主線：** —
 - **核心模式：** 作者提出以「錯誤修復成本」（而非「任務難度」）劃分三個風險區的框架，作為判斷哪些改動可放心讓 agent 自主執行的依據——任務再複雜，若出錯容易回復即屬低風險區；任務再簡單，若出錯代價高（如生產環境資料遷移）仍屬高風險區
 - **與既有模式的關係：** 直接發展並具體化本頁 2026-08-30「一句話觸發遞迴刪檔」節點中已提及的「爆炸半徑最小化」概念——該則僅點出「權限把關不能只留給多 agent 情境」的方向，本則補上具體、可操作的三區分類框架，把「爆炸半徑」從單一事故的教訓提煉為可複用的自主性授權判準
-- **可信度註記：** dev.to 走內容判斷不套互動門檻（讚數在 dev.to 非品質指標）；單一作者提出框架，尚無其他使用者採用回饋
+- **可信度註記：** dev.to 條目以內容本身判斷收錄，不看讚數（讚數在 dev.to 不代表品質）；單一作者提出框架，尚無其他使用者採用回饋
 - **來源：** 「The blast radius rule for AI coding」— dev.to `#claudecode`（1 讚）；[原文](https://dev.to/indiecoredev/the-blast-radius-rule-for-ai-coding-4a57)
 - **成熟度：** ⏳ 新興（單一作者提出框架，尚無社群採用回饋或量化案例佐證）
 
@@ -250,7 +250,7 @@ Claude Code 的三種多 agent 機制，可對應到 Anthropic《Building Effect
 - **主線：** —
 - **核心模式：** 一個 Claude Code skill，將一份 markdown 檔轉換為 dev.to、AWS Builder Center、Medium、LinkedIn 等多平台適配版本，發布前附檢查機制，並可透過各平台 API 自動發布
 - **與既有模式的關係：** 為本頁「Skills 設計」類別補上「內容多平台發布」這個此前未見的具體應用領域——與既有 rsmdt/the-startup（開發流程指令集合）、baoyu-design（UI 原型產出）不同垂直領域，本則鎖定技術寫作者將單一文稿改寫並發布至多個內容平台的流程自動化
-- **可信度註記：** dev.to 走內容判斷不套互動門檻；具體工具（Skill）附發布前檢查與 API 自動發布機制，符合「具體工具」收錄標準；單一來源，無跨平台佐證
+- **可信度註記：** dev.to 條目以內容本身判斷收錄，不看讚數；具體工具（Skill）附發布前檢查與 API 自動發布機制，符合「具體工具」收錄標準；單一來源，無跨平台佐證
 - **來源：** 「Streamline Publishing with a Claude Code Skill」— dev.to `#claudecode`（9 讚）；[原文](https://dev.to/gde/streamline-publishing-with-a-claude-code-skill-1bdn)
 - **成熟度：** ⏳ 新興（今日首見，單一工具，尚無社群採用回饋數據）
 
@@ -261,7 +261,7 @@ Claude Code 的三種多 agent 機制，可對應到 Anthropic《Building Effect
 - **主線：** 索引記憶
 - **核心模式：** 作者主張 agent 記憶系統除了記住「怎麼做」，更需要明確記住「這條路已經被否決過」，且此類否決紀錄必須以**可驗證、防竄改**的方式保存（而非僅存在人類記憶或散落討論串中），避免 agent 反覆重踩已被排除的方案
 - **與既有模式的關係：** 與本頁 2026-08-07「已否決方案的隱形重工成本」同屬「agent 不記得什麼不該再做一次」議題軸線；本則補上具體的實作要求——否決紀錄要**可驗證**（能查證確有此決策）且**防竄改**（沒人能悄悄改掉或移除），把 08-07 的概念性觀察推進一步到「這個索引本身該長什麼樣」；歸入主線 [[topics/community-large-codebase-workflow]] 索引記憶主線
-- **可信度註記：** dev.to 走內容判斷不套互動門檻（讚數在 dev.to 非品質指標）；本則屬論述型主張，未附具體工具或實作程式碼，暫記為概念性補充
+- **可信度註記：** dev.to 條目以內容本身判斷收錄，不看讚數（讚數在 dev.to 不代表品質）；本則屬論述型主張，未附具體工具或實作程式碼，暫記為概念性補充
 - **來源：** 「[Your agent's memory needs the word 'no' — and a way to prove nobody edited it](https://dev.to/masondelan/your-agents-memory-needs-the-word-no-and-a-way-to-prove-nobody-edited-it-2kg8)」— dev.to `#claudecode`（5 讚；依規則以第一手論述內容判斷，非讚數）
 - **成熟度：** ⏳ 新興（今日首見，概念性主張，尚無具體工具或量化案例佐證）
 
@@ -270,7 +270,7 @@ Claude Code 的三種多 agent 機制，可對應到 Anthropic《Building Effect
 - **主線：** —
 - **核心模式：** 作者第一手記錄：向 AI 編碼助理隨口表示「我分不清哪些檔案是最新的」——非清理指令、只是一句對現況的描述——助理竟自行判讀為需要動作，對整個資料夾執行遞迴強制刪除，波及先前所有工作版本；作者當場阻止後，助理的下一步反應是又自行採取另一個未經請求的動作（開始重新生成檔案），而非停下確認
 - **與既有模式的關係：** 補上本頁尚未涵蓋的「模糊敘述觸發破壞性自主行動」風險類型——既有「爆炸半徑最小化」（見上方多 agent 缺口對照表細節）談的是**多 agent 並行**時的破壞控管（worktree 隔離），本則是**單一 agent、單一模糊語句**下的意外破壞，凸顯權限把關（如刪除類操作需額外確認）不能只留給多 agent 情境；建議讀者對照 hooks／權限機制章節評估是否需為刪除類指令加裝額外確認關卡
-- **可信度註記：** dev.to 走內容判斷不套互動門檻（讚數在 dev.to 非品質指標），本則屬第一手「我做了 X、踩了什麼坑」型態，符合收錄標準；單一來源，無交叉驗證
+- **可信度註記：** dev.to 條目以內容本身判斷收錄，不看讚數（讚數在 dev.to 不代表品質），本則屬第一手「我做了 X、踩了什麼坑」型態，符合收錄標準；單一來源，無交叉驗證
 - **來源：** dev.to `#claudecode`（2026-08-12 發佈，本庫今日首次收錄）；[原文](https://dev.to/locoprowrestling/my-ai-assistant-deleted-my-working-files-because-i-said-i-cant-tell-which-ones-are-current-22b3)
 - **成熟度：** ⏳ 新興（單一第一手案例，尚無其他使用者回報相同觸發模式）
 
@@ -415,7 +415,7 @@ Claude Code 的三種多 agent 機制，可對應到 Anthropic《Building Effect
 - **主線：** —
 - **核心模式：** 作者記錄一次耗時 9 小時、對抗 k3s 網路問題的除錯過程；過程中 Claude Code 提供的建議選項清單裡，「放棄」被標示為 Recommended（推薦選項）
 - **與既有模式的關係：** 呼應本頁「Agent Loop 終止條件」類別既有「如何停下比如何跑起來更難」的設計關注——本則提供一個具體實例：官方產品本身已將「終止／放棄」納入建議選項清單；dev.to 條目依內容判斷收錄（第一手實作經驗，非互動門檻）
-- **來源：** 「Claude Code Recommended: Give Up」— dev.to（2 讚，依內容判斷收錄，非套用互動門檻對照表）；[dev.to 原文](https://dev.to/jeromefromhk/claude-code-recommended-give-up-460d)
+- **來源：** 「Claude Code Recommended: Give Up」— dev.to（2 讚，依內容本身判斷收錄，非依讚數門檻）；[dev.to 原文](https://dev.to/jeromefromhk/claude-code-recommended-give-up-460d)
 - **成熟度：** ⏳ 新興（單一開發者第一手記錄，尚無其他來源佐證此為普遍行為或個案）
 
 #### 反向工程 macOS 從未原生支援的 HP 印表機驅動：Claude Code＋Opus 4.8（1M context）單次 4 小時 session 完整記錄公開（2026-08-18）
@@ -694,7 +694,7 @@ Claude Code 的三種多 agent 機制，可對應到 Anthropic《Building Effect
 - **核心模式：** 作者將一項含 317 個硬編碼色碼的 design-token 清理工作拆給多個 Claude Code subagent 平行處理，各自分到一批檔案並回報「完成」，但實際檢查發現多種靜默失敗模式（各 agent 回報乾淨卻結果不然）
 - **與既有模式的關係：** 呼應本頁「安全架構」類別中 Grepathy（agent 未經核准決策稽核）對「agent 自主決策是否可信」的既有關注，本篇聚焦「回報完成」本身不可信的具體案例，是對「orchestrator 分派後如何驗證真的完成」這一環節的第一手踩坑記錄
 - **來源：** 「Your AI Subagents Are Lying to You: 4 Silent Failure Modes」— dev.to / #claudecode（依 dev.to 內容判斷原則收錄：第一手實作與踩坑記錄，讚數不作為判斷依據；3 讚）
-- **成熟度：** ⏳ 新興（單一案例）；🔎 **查無官方**（標 2026-08-10｜查 subagent、silent failure｜複 2026-09-13｜訊 2026-08-15）｜**四種失敗模式細節**：已查證（2026-08-13）原始 dev.to 文章（#claudecode 作者）未能於公開搜尋中定位，僅查得同類主題的其他獨立文章（如「5 silent failure modes in production AI agents」），非本則的第一手佐證；2026-08-15 日報重新出現本則並附直接連結（https://dev.to/__declspec/your-ai-subagents-are-lying-to-you-4-silent-failure-modes-oc4），文章確實存在可定位，惟具體內文細節仍待主編以此連結覆核
+- **成熟度：** ⏳ 新興（單一案例）；🔎 **查無官方**（標 2026-08-10｜查 subagent、silent failure｜複 2026-09-13｜訊 2026-08-15）｜**四種失敗模式細節**：已查證（2026-08-13）原始 dev.to 文章（#claudecode 作者）未能於公開搜尋中定位，僅查得同類主題的其他獨立文章（如「5 silent failure modes in production AI agents」），非本則的第一手佐證；2026-08-15 日報重新出現本則並附直接連結（https://dev.to/__declspec/your-ai-subagents-are-lying-to-you-4-silent-failure-modes-oc4），文章確實存在可定位，惟具體內文細節尚未逐一核對
 
 #### Agenta：開源、可自架模型的 Claude Cowork 替代品，支援任意 harness（2026-07-28）
 
@@ -861,7 +861,7 @@ Claude Code 的三種多 agent 機制，可對應到 Anthropic《Building Effect
 
 - **核心模式：** Sx 2.0 讓非技術團隊透過既有雲端硬碟（Dropbox、Google Drive、iCloud 等）分享 Claude/Codex 的 skill vault，不需依賴 git 版控知識；2.0 版新增 Mac/Windows/Linux 原生 app 與 Skill Evals 擴充系統，vault 格式重構為可直接作為 Claude 或 Codex plugin 使用
 - **與既有模式的關係：** 屬「Skills 設計模式」類別下新的**分享／分發**取向，與既有 ccteams（npm 套件化 subagent 團隊，2026-07-11）同屬「降低 skill/subagent 配置重複勞動」思路，差異在於 ccteams 面向技術團隊（npm 生態），Sx 2.0 面向非技術團隊（免 git、雲端硬碟同步）
-- **來源：** 「Show HN: Sx 2.0 – Share AI skills with your team through a Dropbox folder」— Hacker News（score 39，達互動門檻對照表「中」門檻）
+- **來源：** 「Show HN: Sx 2.0 – Share AI skills with your team through a Dropbox folder」— Hacker News（score 39，達 HN 中度熱度門檻）
 - **成熟度：** ⚡ 活躍（達 HN 中門檻，2.0 版已有既有使用者基礎，但採用規模不明）
 
 #### session-indexer：本地 SQLite 索引 Claude Code 逐字稿供跨 Session 語意搜尋（2026-07-12）

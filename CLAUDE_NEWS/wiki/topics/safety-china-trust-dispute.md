@@ -3,7 +3,7 @@ page: "topics/safety-china-trust-dispute"
 kind: "topic"
 status: "monitoring（核心「後門」敘事自 07-10 雙方首度正面否認後未見新進展，轉低頻觀察；新出現的相關但獨立事件見下方說明）"
 domain: "🏛️ 政策/安全"
-last_updated: "2026-08-15"
+last_updated: "2026-09-03"
 last_news_update: "2026-07-11"
 status_main: "monitoring"
 days_since_news: 54
@@ -15,9 +15,9 @@ inbound_links: 18
 attribution_count: 0
 attribution_last: null
 top_source: null
-pending_count: 0
+pending_count: 5
 pending_overdue: 0
-pending_next_review: null
+pending_next_review: "2026-09-17"
 pending_signalled: 0
 signal: "⚠️ 高引用但停滯"
 generated_by: "scripts/gen_wiki_frontmatter.py"
@@ -27,11 +27,11 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 **狀態：** monitoring（核心「後門」敘事自 07-10 雙方首度正面否認後未見新進展，轉低頻觀察；新出現的相關但獨立事件見下方說明）
 **領域：** 🏛️ 政策/安全
 **開始日期：** 2026-06-30
-**最後更新：** 2026-08-15
+**最後更新：** 2026-09-03
 **最後新聞更新：** 2026-07-11
 
 > **最新動態**（2026-07-10，議題轉入低頻觀察）
-> 中國「後門」指控延燒第三天，UC Today、BankInfoSecurity、Technology Org、TechRepublic、TechRadar、CISO Series、Fox Business 等多家獨立媒體續報導；**Anthropic 今日首度公開反駁該指控**——為本議題自 06-30 起追蹤以來，官方第一次正面回應「中國官方層級」指控本身（此前 07-07「實驗」定調僅回應社群層級的原始指控，未直接對應中國官方警示的用詞與框架）。同日 Anthropic Blog 另發布「Inviting hard questions」回應外界安全疑慮的立場聲明，兩者關聯（推論，2026-07-10 觀察，已掃日報至 2026-08-14 無後續；官方頁面未查證）。雙方框架仍各執一詞，均無第三方技術驗證。**截至 2026-07-26，本頁核心「後門」敘事線已 16 天無新進展**（中國官方與 Alibaba 均未就 Anthropic 的否認再表態），故狀態轉為 monitoring；07-22 起浮現的 Moonshot AI 蒸餾指控與財政部制裁威脅、07-23 digitimes「Claude Code 外洩內容縮小差距」指控，雖同屬中美 AI 信任/能力落差的廣義敘事，但性質與本頁「Claude Code 後門/隱寫術」主線不同（前者為模型蒸餾與外洩指控，非 Claude Code 產品層機制指控），依主歸屬原則追蹤於 [[topics/anthropic-government-policy]]，本頁不重複收錄。
+> 中國「後門」指控延燒第三天，UC Today、BankInfoSecurity、Technology Org、TechRepublic、TechRadar、CISO Series、Fox Business 等多家獨立媒體續報導；**Anthropic 今日首度公開反駁該指控**——為本議題自 06-30 起追蹤以來，官方第一次正面回應「中國官方層級」指控本身（此前 07-07「實驗」定調僅回應社群層級的原始指控，未直接對應中國官方警示的用詞與框架）。同日 Anthropic Blog 另發布「Inviting hard questions」回應外界安全疑慮的立場聲明，兩者關聯屬推論，尚未見官方證實或否證。雙方框架仍各執一詞，均無第三方技術驗證。**截至 2026-07-26，本頁核心「後門」敘事線已 16 天無新進展**（中國官方與 Alibaba 均未就 Anthropic 的否認再表態），故狀態轉為 monitoring；07-22 起浮現的 Moonshot AI 蒸餾指控與財政部制裁威脅、07-23 digitimes「Claude Code 外洩內容縮小差距」指控，雖同屬中美 AI 信任/能力落差的廣義敘事，但性質與本頁「Claude Code 後門/隱寫術」主線不同（前者為模型蒸餾與外洩指控，非 Claude Code 產品層機制指控），依主歸屬原則追蹤於 [[topics/anthropic-government-policy]]，本頁不重複收錄。
 
 ---
 
@@ -80,7 +80,7 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 
 - **揭露來源**：dev.to（作者 adioof；「Anthropic hid tracking signals in Unicode apostrophes. That's not telemetry, that's steganography.」）
 - **核心主張**：作者指控 Claude Code 在特定條件下（透過競品網域路由請求、使用中國時區）以 Unicode 撇號變體與日期格式作隱藏標記，明確主張此非單純 telemetry 而是刻意隱藏的 steganography
-- **與 thereallo.dev 條目的關係**：同日發布（2026-07-01），主張高度相似——同樣聚焦 Unicode 撇號/日期字串替換作隱寫標記；兩篇文章間的引用關係未明確標示，**可能為同一原始發現的獨立平行報導，也可能其中一篇引用另一篇**，需查證
+- **與 thereallo.dev 條目的關係**：同日發布（2026-07-01），主張高度相似——同樣聚焦 Unicode 撇號/日期字串替換作隱寫標記；兩篇文章間的引用關係未明確標示，**可能為同一原始發現的獨立平行報導，也可能其中一篇引用另一篇**。❓ **待查證**（標 2026-09-03｜查 adioof、thereallo）：兩者引用關係尚無法判定
 - **可信度評估**：單一作者主張（dev.to 個人部落格），尚無其他來源佐證；情緒化標題與框架顯示強烈立場，需與較中立的技術報告（thereallo.dev）區分可信度層級
 - **未解問題**：此指控與 thereallo.dev 條目是否為技術上獨立的另一機制（如「透過競品網域路由」與「連線至中國 AI Lab」的觸發條件是否相同）無法從現有報導判定
 
@@ -95,7 +95,7 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 - **07-07 補細節**：PYMNTS、Benzinga、BeInCrypto 三獨立媒體再確認，並補充明確替代工具——員工被指示改用內部工具 **Qoder**
 - **07-05（印度快報首報生效日）**：The Indian Express 報導阿里巴巴將自 **7 月 10 日**起禁止員工使用 Claude Code
 - **產業政策背景**（digitimes，07-06）：中國網路安全監管趨嚴，同時中國正轉向扶植本土 AI 編碼工具
-- **證據狀態**：報導始終未附具體技術細節、程式碼樣本或 CVE 編號；Alibaba、Meta、Anthropic 三方均未就技術層面正式回應或否認（2026-07-06／07-07 報導，已掃日報至 2026-08-14 無後續；官方頁面未查證）——媒體確認的是「禁令存在＋替代工具」，不是「後門指控成立」
+- **證據狀態**：報導始終未附具體技術細節、程式碼樣本或 CVE 編號；Alibaba、Meta、Anthropic 三方均未就技術層面正式回應或否認（2026-07-06／07-07 報導）——媒體確認的是「禁令存在＋替代工具」，不是「後門指控成立」。❓ **待查證**（標 2026-09-03｜查 Alibaba、Qoder）：三方均未就技術層面正式回應或否認
 - **企業採用面完整分析**：見 [[topics/enterprise-tool-tracker]]（商業記者負責）
 
 ### FT：Anthropic 封堵中國企業間接存取漏洞（2026-07-03）
@@ -124,8 +124,8 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 ### 延燒第三天 + Anthropic 首度公開否認（2026-07-10）
 
 - **延燒**：UC Today、BankInfoSecurity、Technology Org、TechRepublic、TechRadar、CISO Series、Fox Business 續報導；CISO Series 將本次事件與 Interpol 全球詐欺掃蕩、GitHub 帳號詐騙並列為本週資安新聞焦點，顯示議題已進入主流資安媒體常態關注清單
-- **官方首度否認**：Anthropic 今日**首度公開反駁**中國官方「後門」指控本身——為整條敘事線（社群指控 → 官方警示 → 07-07「實驗」定調）中，官方第一次針對「中國官方層級」指控正面回應；反駁的具體技術內容、是否附證據，多篇轉載報導未提供細節（2026-07-10 報導，已掃日報至 2026-08-14 無後續原文釋出；官方頁面未查證）
-- **同日聲明**：Anthropic Blog 發布「Inviting hard questions」（07-10 12:19 UTC），正面回應外界對 AI 安全性、是否取代工作等疑慮的質疑；發布時間與後門否認同日，兩者是否為同一波公關回應（推論，2026-07-10 觀察，已掃日報至 2026-08-14 無後續證實或否證；官方頁面未查證）
+- **官方首度否認**：Anthropic 今日**首度公開反駁**中國官方「後門」指控本身——為整條敘事線（社群指控 → 官方警示 → 07-07「實驗」定調）中，官方第一次針對「中國官方層級」指控正面回應；反駁的具體技術內容、是否附證據，多篇轉載報導未提供細節（2026-07-10 報導）。❓ **待查證**（標 2026-09-03｜查 後門警示、Adnane Khan）：官方原文尚未釋出
+- **同日聲明**：Anthropic Blog 發布「Inviting hard questions」（07-10 12:19 UTC），正面回應外界對 AI 安全性、是否取代工作等疑慮的質疑；發布時間與後門否認同日，兩者是否為同一波公關回應屬推論。❓ **待查證**（標 2026-09-03｜查 Inviting hard questions）：尚未見官方證實或否證
 - **可信度評估**：多家獨立媒體同步報導「Anthropic 已公開否認」一事，此一「否認的存在」可信度高；但否認內容本身的技術可信度未經第三方驗證，與中國官方警示同樣缺乏可獨立查核的技術證據，維持「雙方各執一詞」格局，僅是首次雙方正面交鋒而非各說各話
 
 ---
@@ -138,14 +138,17 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 | 中國「後門」指控延燒第二天，多沿用中方說法框架，TechRadar 首次建議解除安裝 | 🔴 政府層級指控延燒中 | 2026-07-09 |
 | 中國工業主管機關正式發布「後門」資安警示，8+ 媒體同步報導 | 🔴 政府層級指控（與 Anthropic「實驗」說法正面矛盾） | 2026-07-08 |
 | 「embedded spyware」指控：Anthropic 定調為內部「實驗」 | 🟡 官方回應（隔日遭中國官方升級推翻） | 2026-07-07 |
-| Alibaba 禁用 Claude Code（改用 Qoder）+ Meta 限制工程師使用 Claude | 🔴 多媒體聲稱，無技術細節（2026-07-06／07-07 報導，已掃日報至 2026-08-14 無後續；官方頁面未查證） | 2026-07-06／07-07 |
+| Alibaba 禁用 Claude Code（改用 Qoder）+ Meta 限制工程師使用 Claude | 🔴 多媒體聲稱，無技術細節（2026-07-06／07-07 報導）❓ 待查證 ⟨Q-02⟩ | 2026-07-06／07-07 |
 | Claude Code 同形字符隱寫術機制，36Kr 確認針對中國 AI Lab 連線注入系統提示 | 🔴 Anthropic 承諾修復（版本未定） | 2026-07-01 |
 | 中國代理偵測程式碼：v2.1.91 起偵測中國使用者／代理／AI 實驗室 | 🟡 官方已回應（07-07 定調「實驗」性質，07-10 進一步否認中國官方「後門」框架；均未經第三方驗證） | 2026-06-30 |
 
 **未解問題（跨技術與外交兩線）：**
 - 中國官方指控與社群原始指控（v2.1.91）是否為同一機制，或另一獨立技術主張，報導未明確說明
-- Anthropic 07-10 否認的具體技術內容與是否附證據（2026-07-10 起，至今無官方原文釋出或後續報導）
+- Anthropic 07-10 否認的具體技術內容與是否附證據，官方原文尚未釋出
 - 中國官方與 Alibaba 是否會就 Anthropic 的否認再表態，是本議題下一觀察點
+
+**懸置細節**
+- ⟨Q-02⟩ ❓ **待查證**（標 2026-09-03｜查 Alibaba、Qoder）：Alibaba 禁用 Claude Code、Meta 限制使用 Claude 的報導始終未附具體技術細節、程式碼樣本或 CVE 編號；Alibaba、Meta、Anthropic 三方均未就技術層面正式回應或否認。
 
 ---
 
@@ -174,7 +177,7 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 ## 時序
 
 ### 2026-07-10
-- Anthropic 首度公開否認中國官方「後門」指控（多家獨立媒體報導）；同日發布「Inviting hard questions」聲明，兩者關聯（推論，2026-07-10 觀察，已掃日報至 2026-08-14 無後續證實；官方頁面未查證）
+- Anthropic 首度公開否認中國官方「後門」指控（多家獨立媒體報導）；同日發布「Inviting hard questions」聲明，兩者關聯屬推論，尚未見官方證實或否證
 
 ### 2026-07-09
 - 中國「後門」指控延燒第二天：WSJ/Fox Business/TechRadar/Yahoo Tech 續報導，TechRadar 首次建議解除安裝

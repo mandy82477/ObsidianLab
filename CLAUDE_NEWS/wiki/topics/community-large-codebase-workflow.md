@@ -3,16 +3,16 @@ page: "topics/community-large-codebase-workflow"
 kind: "topic"
 status: "ongoing"
 domain: "🌐 社群"
-last_updated: "2026-09-02"
-last_news_update: "2026-09-02"
+last_updated: "2026-09-03"
+last_news_update: "2026-09-03"
 update_freq: "🗓️ 週更（每週從模式庫沉澱一次；更新日期停留數天屬正常節奏）"
 status_main: "ongoing"
-days_since_news: 1
+days_since_news: 0
 parent: null
 children: "[]"
 page_role: "root"
-days_since_news_subtree: 1
-inbound_links: 37
+days_since_news_subtree: 0
+inbound_links: 35
 attribution_count: 2
 attribution_last: "2026-08-05"
 top_source: "reddit"
@@ -29,11 +29,11 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 **領域：** 🌐 社群
 **更新頻率：** 🗓️ 週更（每週從模式庫沉澱一次；更新日期停留數天屬正常節奏）
 **開始日期：** 2026-05-02
-**最後更新：** 2026-09-02
-**最後新聞更新：** 2026-09-02
+**最後更新：** 2026-09-03
+**最後新聞更新：** 2026-09-03
 
-> **本週答案變動**（2026-09-02）
-> 僅「索引與記憶」線有新節點：8/31「否決記錄需可驗證、防竄改」補上 8/7「已否決方案索引」子軸線的第二個觀察，仍停在概念層、無工具實作，答案未變。其餘三條線（並行規模、Context/Token、除錯與分工）本週無帶「主線」tag 的新節點，答案不變。
+> **本週答案變動**（2026-09-03）
+> 「索引與記憶」線新增兩節點：09-02 thedotmack/claude-mem（跨 7+ harness、AI 壓縮 session 記憶，9.3 萬星）補上「可攜性」子軸線第一個規模較大的實作案例，惟僅星數佐證未經 forks/issues 覆核；同日一則 dev.to 第一手實測指出內建記憶與人類認知記憶「不做同一件事」，屬評測角度補充。8/31「否決記錄需可驗證、防竄改」仍停在概念層。其餘三條線（並行規模、Context/Token、除錯與分工）本輪無帶「主線」tag 的新節點，答案不變。
 
 ---
 
@@ -111,7 +111,7 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 
 **🧰 現在就能下的解**：見 [[topics/community-tech-tools]]「我卡在這裡」——接手大 repo 讓 agent 讀懂走「接手沒碰過的大 repo，agent 讀不懂」列（首選 graphify）；跨 session 記憶走「每開新 session 都要重講一遍」列（首選 brain.md，零依賴檔案式；團隊共享與 Obsidian 路線的分界在同列第三欄）
 
-**還沒解決**：跨工具可攜（ltm／OKF）仍是少數派；「codebase 文件自動維護」只有 CodeAlmanac 一例；「已否決方案索引」累積到第二個獨立觀察（8/31 補上「可驗證、防竄改」的具體要求），但仍停在問題點名、無工具實作。三個近期實作路線各走各的（零依賴檔案式、手動策展取代官方、團隊共享），尚無交叉比較或共識收斂。
+**還沒解決**：跨工具可攜有了第一個較大規模案例（claude-mem，09-02，惟僅星數佐證未經覆核），但 ltm／OKF 兩種協定路線仍是少數派、彼此不互通；「codebase 文件自動維護」只有 CodeAlmanac 一例；「已否決方案索引」累積到第二個獨立觀察（8/31 補上「可驗證、防竄改」的具體要求），但仍停在問題點名、無工具實作；「內建記憶到底解決了什麼」也剛出現第一則第一手評測（09-02），與人類認知記憶功能不重疊，尚無第二例覆核。三個近期實作路線各走各的（零依賴檔案式、手動策展取代官方、團隊共享），尚無交叉比較或共識收斂。
 
 | 子問題 | 社群走到哪 | 代表實作 | 證據強度 |
 |---|---|---|---|
@@ -120,7 +120,7 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 | 零依賴檔案式 | 決策／需求／限制三類專案層級資訊，CLI 直存檔案不依賴外部服務 | mindmuxai/brain.md（504★）| 單一實測 |
 | 取代官方記憶 | 主張使用者手動策展比官方自動記憶更可控、更可信賴 | 手動維護 Obsidian vault（LLM Wiki 形式） | 單一實測 |
 | 團隊共享 | 鎖定「跟著使用者走」而非留在人類設計的筆記/任務管理系統 | OzBrain（HN 69）| 單一實測 |
-| 可攜性 | Markdown 規則檔不跨工具 → JSON 協定或格式規約 | ltm、OKF | 單一實測 |
+| 可攜性 | Markdown 規則檔不跨工具 → JSON 協定或格式規約；claude-mem 以「AI 壓縮 session 過程」實作跨 7+ harness 記憶，規模較大但未經覆核 | ltm、OKF、claude-mem（見 [[topics/community-tech-patterns]]） | 單一實測＋大規模未覆核 |
 | 文件自動維護 | codebase wiki 隨對話自動更新，取代手維護 MANUAL.md | CodeAlmanac | 單一實測 |
 | 否決方案索引 | 「已被否決」只在人腦或討論串 → 隱形重工；8/31 補上「否決紀錄本身須可驗證、防竄改」的具體要求 | 兩則概念性觀察（8/7、8/31）| 推論 |
 

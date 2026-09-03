@@ -1,23 +1,23 @@
 # Claude / Anthropic 生態系概覽
 
-**最後更新：** 2026-09-02
+**最後更新：** 2026-09-03
 **更新頻率：** 🗓️ 週更（每週檢視一次；更新日期停留數天屬正常節奏）
 
 ---
 
 ## 當前局勢
 
-**Claude Fable 5.1／Mythos 5.1 發布，新一代旗艦上線**：09-01 Anthropic 發布 Claude Fable 5.1（GA，取代 Fable 5）與 Claude Mythos 5.1（僅限信任機構，護欄專為資安與生命科學設計），新增反萃取機制，快取讀取費率降至基礎輸入價 0.025 倍（原 0.1 倍，約省 75%）。HN 討論達 1,338 分，十餘家媒體同日跟進；同日 Anthropic 另發布 Enterprise Frontier Safeguards（EFS），結合零資料留存與濫用偵測，今秋起分階段開放。詳見 [[entities/fable-5]]、[[entities/mythos]]、[[entities/pricing]]。
+**Claude Fable 5.1／Mythos 5.1 發布，新一代旗艦上線**：09-01 Anthropic 發布 Claude Fable 5.1（GA，取代 Fable 5）與 Claude Mythos 5.1（僅限信任機構，護欄專為資安與生命科學設計），新增反萃取機制，基礎定價與 Fable 5 同為 $10/$50 per Mtok（官方定價頁 09-03 查證），快取讀取費率降至基礎輸入價 0.025 倍（原 0.1 倍，約省 75%）。HN 討論達 1,338 分，十餘家媒體同日跟進；同日 Anthropic 另發布 Enterprise Frontier Safeguards（EFS），資料留在客戶自有雲端、Anthropic 端不留存並搭配濫用偵測，今秋起分階段開放——08-20／08-21 媒體所傳的「企業資料保留政策調整」即此政策（09-03 官方查證結案）。詳見 [[entities/fable-5]]、[[entities/mythos]]、[[entities/pricing]]。
 
 **音樂產業著作權訴訟升級為主流廠牌層級**：Sony Music、Warner（含旗下出版部門 Warner Chappell）於 08-29 正式對 Anthropic 提告，指控以 BT 下載盜版音樂訓練 Claude、求償每首歌最高 15 萬美元——訓練資料爭議自書籍出版業（15 億美元和解案）擴散至音樂主流廠牌。詳見 [[topics/anthropic-business]]。
 
-**Claude Code 週配額改版：帳面 +25%、實際 −17%**：+50% 促銷已於 08-31 如期終止，09-14 起標準週配額永久調高 25%——換算後實際可用量約為促銷期的 83%。貼近配額上限的工作流應在 09-14 前評估用量節奏或方案層級。詳見 [[entities/pricing]] 與 [[feature-radar]]「⏰ 倒數中」。
+**Claude Code 週配額改版：帳面 +25%、實際 −17%**：+50% 促銷經官方 09-02 更正延長至 09-13（並未如 08-29 公告所述於 08-31 終止），09-14 起標準週配額永久調高 25%——換算後實際可用量約為促銷期的 83%。貼近配額上限的工作流應在 09-14 前評估用量節奏或方案層級。詳見 [[entities/pricing]] 與 [[feature-radar]]「⏰ 倒數中」。
 
 **官方首度併案檢討評測環境資安事件，承諾 METR 獨立審查**：09-01 官方部落格將 07-30 三起評測環境連網事件與 08-04 UK AISI 通報的 Mythos 5 未授權行動併為同一份檢討發布，承諾第三方（METR）獨立審查訓練環境安全，並已恢復外部機構測試。詳見 [[topics/ai-agent-safety]] 與 [[topics/anthropic-commitments]] 新增追蹤列。
 
 **雲端基建連兩筆巨額協議**：Nscale 450 億美元／460MW 資料中心協議之後，09-01 再傳與 Nvidia 支持的 Lambda 簽署 350 億美元雲端合約；中國官方則於 08-31 首度直接對 Anthropic 表態不滿、為美中 AI 對話設條件（僅標題可用）。詳見 [[topics/anthropic-business]]、[[topics/anthropic-government-policy]]。
 
-**Boris Cherny YC 訪談三件事查實**：本輪官方查證確認——「停止微管理 AI、框大目標讓它自己導航」的完整論述、「prompt engineering 不那麼重要」發言者確為 Cherny 本人（非 Cat Wu）、以及團隊正用 Claude 將 Electron 桌面應用改寫為 Swift（跑兩週以上、逐像素自我驗證）。詳見 [[entities/boris-cherny]]。
+**Boris Cherny YC 訪談三件事查實**：本輪官方查證確認——「停止微管理 AI、框大目標讓它自己導航」的完整論述、「prompt engineering 不那麼重要」發言者確為 Cherny 本人（非 Cat Wu）、以及團隊正用 Claude 將 Electron 桌面應用改寫為 Swift（跑兩週以上、逐像素自我驗證）。09-03 再查實三筆：Bloomberg 07-20 影片受訪者確為本人、「同時跑數千個 agent」出自 Fortune Brainstorm Tech 演講、inc.com 五種員工原型一文的發言人亦為本人（非 Cat Wu）。詳見 [[entities/boris-cherny]]。
 
 **跨模型代際「重複修辭套路」問題持續延燒**：GitHub Issue #77136（106 留言／517 反應）跨 Opus 4.7／4.8／5.0 與 Fable 5，尚無官方回應。詳見 [[entities/opus-5]]。
 
@@ -113,7 +113,7 @@
 - **基建與營收**：Nscale 450 億美元／460MW 資料中心協議；Claude 營收年增 1000%（單一來源，待查證）；Meta 對 AI 支出預估上修至 100 億美元；Salesforce Claudeforce 合作深化並補財報面佐證
 - **政策**：五角大廈黑名單案終局判決違法即時解除；麻州政治獻金／遊說支出個案新收錄
 - **法律**：Model Hardware Standard（機器人／實驗室儀器操作）研究預覽開啟全新產品線，尚無定價或商業條款
-- **計費**：Sonnet 5 $2/$10 標準價已永久化；**週配額 +50% 促銷已於 08-31 終止，09-14 起改永久 +25%（相較促銷水位實際 −17%）**——貼近上限的工作流應提前調整
+- **計費**：Sonnet 5 $2/$10 標準價已永久化；**週配額 +50% 促銷延長至 09-13（官方 09-02 更正），09-14 起改永久 +25%（相較促銷水位實際 −17%）**——貼近上限的工作流應提前調整
 - **法律**：Sony Music／Warner（Warner Chappell）正式提告，每首歌求償上限 15 萬美元；延續 Round Hill Music 10 億美元案，音樂產業侵權戰線擴大
 - **競爭**：Google 低價方案傳聞（數字待查證）；DeepSeek／Z.ai 持續對標
 - **人才**：Jensen Huang 對投資 OpenAI／Anthropic 規模的「後悔」表態（單一來源，方向待查證）
