@@ -436,7 +436,10 @@ git -C REPO_ROOT push || {
 
 - 最多重試 **2 次**，每次都先 `pull --rebase` 再 push
 - 先確認在 master 上：2026-07-14 曾因 session 啟動時 `origin/master` 快取落後而處於 detached HEAD，該狀態下 push 不會更新遠端分支
-- **唯一允許自動解的衝突：`src/news_aggregator/emitted_items.json`**——此檔有兩個寫者（GitHub Actions 加入未確認條目、pipeline 翻確認欄位）。解法固定：**放棄我方的 confirm commit、保留遠端版本**，因為日報上站遠比確認欄位重要，未確認的條目只會被重新提供一次，是良性退化。處理後標「emitted-cache 確認本次放棄，項目將於次日重新提供」
+- **允許自動解的衝突只有兩類**：
+  1. `src/news_aggregator/emitted_items.json`——此檔有兩個寫者（GitHub Actions 加入未確認條目、pipeline 翻確認欄位）。解法固定：**放棄我方的 confirm commit、保留遠端版本**，因為日報上站遠比確認欄位重要，未確認的條目只會被重新提供一次，是良性退化。處理後標「emitted-cache 確認本次放棄，項目將於次日重新提供」
+  2. **append-only 檔的 append-append 衝突 `[加入: 2026-09-03]`**——`wiki/log.md`、`data/source_attribution.jsonl` 等只會在檔尾各自新增的檔（白名單住 `scripts/resolve_append_only.py` 的 `APPEND_ONLY`，不在此重抄）。解法固定：**跑 `python scripts/resolve_append_only.py`**，它以 `git merge-file --union` 三方合併保留兩側新增（順序 base→ours→theirs），只動白名單內的檔；有任何白名單外的衝突它會 exit 1 且不動任何檔——此時走下一條 abort。成功後 `git -c core.editor=true rebase --continue` 再 push。
+     > 起因：2026-09-02 雲端 17:00 UTC 班完整跑完日報＋wiki＋web，push 撞上本機同時間的 commit，衝突檔只有 `wiki/log.md`（兩側各自 append 段落，無語意衝突），依舊規則放棄整輪，22:00 班重做一遍。沒有判斷成分的衝突不該逼整班重跑。
 - **其他任何檔案的衝突 → 不自行解**：`git rebase --abort`，Step 6 log 記 `Push FAILED - rebase conflict`，並列出衝突檔案清單
 - 兩次都失敗 → Step 6 log 記 `Push FAILED`，完成摘要明確標示**本次產出全部未上站**，不可寫成完成
 
