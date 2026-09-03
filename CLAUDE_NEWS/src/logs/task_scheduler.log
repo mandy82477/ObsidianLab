@@ -489,3 +489,4 @@
 [Thu 2026/09/03 12:06:12.00 UTC] ABORTED: gathered_items.json date=2026-09-02 items=97，非目標日期的新鮮資料
 [Thu 2026/09/03 12:06:12.00 UTC] === Pipeline aborted (cloud, 12:00 UTC shift) ===
 [Thu 2026/09/03 14:24:04.00 UTC] Weekly lint OK - 修 12 頁（6 記者＋主編 5c 查實 7 筆／5e／5b／devpractice），7 項待確認；測試全綠 - web build 放行；build OK 60 wiki 檔；渲染驗收：pricing 頁 DOM 驗（乘數表 8 列、callout 正常、無 console error；瀏覽器 pane 隱藏截圖全黑，改 DOM 驗）＋boris/leaderboard 產物字串驗；push 待執行
+[cloud daily-news-pipeline-cloud STARTED 2026-09-03T17:04:29Z]
