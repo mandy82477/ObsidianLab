@@ -37,7 +37,7 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 ## 本週 coding 亮點
 
 - **社群策展 skill 決策表大改版**——[[topics/community-tech-tools]]「我卡在這裡」症狀決策表正式上線，8 種常見痛點各配單一首選工具，取代舊版塞滿工具名的兩層結構
-- **社群 coding skill 有了專門索引**——新增「🧩 Skills 速查」，依用途分三組（Codebase 理解／寫碼紀律／領域資料），見 [[topics/community-tech-tools]]
+- **社群 coding skill 有了專門索引**——新增「🧩 Skills 速查」，依用途分四組（Codebase 理解／寫碼紀律／產出呈現／領域資料），見 [[topics/community-tech-tools]]
 - **graphify 補進兩處**——11.3 萬星、`/graphify` skill、本機 AST 免向量 DB，補入 Skills 速查「Codebase 理解」組，也補進 [[topics/community-large-codebase-workflow]] 線 3「本地索引記憶」代表實作
 - **問題頁→解法的直達連結上線**——`code-quality-decline`、`enterprise-cost-management`、[[topics/community-large-codebase-workflow]] 四條主線首鋪「🧰 現在就能下的解」行，讀者從問題描述可直接連到 tools 決策表對應症狀列
 - **開發實務有了單一入口**——[[index]] 新增「💻 開發實務入口」路由表，橫跨三個領域的頁面一次列清楚
@@ -369,7 +369,7 @@ Boris Cherny 反對「vibe coding」推動術語向 spec-driven 靠攏，2026-05
 - **學術**（arXiv 2604.05278，128 runs）：+3.0% judge 分數、+1.7pp SWE-bench——效果量極小。
 - **ANMA 的 0/20 vs 13/19 不能當 spec-driven 的證據**：受測模型是 Haiku 4.5，而該 benchmark 自己寫著 Opus 4.8 有無 ANMA 都是 0 violations。它證明的是「便宜模型需要機器可執行的邊界」。
 
-`github/spec-kit` 生態是真的活躍（⭐125,858、fork 11,241、321 open issues、2026-08-07 仍在 push），但——
+`github/spec-kit` 生態是真的活躍（08-07 查證時 ⭐125,858、fork 11,241、321 open issues，仍在 push；即時星數見 [[topics/skill-interest-watch]]），但——
 
 ⚠️ **方法論註記（重要）**：拿「熱門專案根目錄沒有 `specs/`」當反證是無效的。n8n 的 plan 指令原始檔寫著計畫存到 `.claude/plans/<TICKET-ID>.md` 而該目錄是 gitignored。計畫檔是刻意不進版控的暫存物，任何掃 repo 的方法在結構上就看不到規劃行為。
 

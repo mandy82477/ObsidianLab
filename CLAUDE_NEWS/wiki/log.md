@@ -5350,3 +5350,13 @@ GH Actions 抓料排 10:23 UTC，到 14:45 UTC 仍未落地（+4.4 小時且持�
 ## 2026-09-03 裁決執行：刪 17:03 班備份分支＋Step 5 自解白名單擴至 append-only 檔
 
 使用者「好」：① 遠端分支 `cloud-pending-2026-09-02-1703` 已刪（12 commit 全由 22:03 班重做取代）；② 新增 `scripts/resolve_append_only.py`——rebase 衝突檔全在 `APPEND_ONLY` 白名單（log.md、source_attribution／devpractice-candidates／pending-signals／open-signals jsonl、task_scheduler.log）時以 `git merge-file --union` 三方合併保留兩側新增，白名單外任一衝突即 exit 1 不動檔交回人工；測試在臨時 git repo 實測 rebase 衝突→union→continue 全流程。`.claude/commands/news-pipeline-steps.md` Step 5 自解規則由「唯一 emitted_items.json」改為兩類。本次不動日報格式與收錄門檻，不需 pipeline-change-check；Phase 1 的 compare 仍待下次完整 pipeline（今日 12:00 UTC 班）跑完執行。
+
+## 2026-09-03 Query：「派冷讀者 review 開發實務入口能否定位資訊」→ 三輪自主迴圈 1/6 → 6/6
+
+**方法：** 三位冷讀者（接手大 repo／跑多 agent／技術主管）六題，只准讀讀者看得到的頁，從 index 💻 入口出發計跳數；3 跳內須拿到「單一答案含連結＋為什麼＋怎麼裝」或「誠實不推薦＋改看 Y 且 Y 可執行」。使用者指示自審自改再派、直到沒問題。
+
+**第一輪 1/6**——架構對、末端交付壞：首選 Harness／Groundtruth 全站無連結（次選反而有）；決策表無「agent 讀不懂大 repo」症狀，guide 2a 與速查各答一套互不轉介；榜 code review 類 query 撈到 gitea；「本庫判斷 →」在無 🧭 的類別照印指向空處；「本週竄升」冷啟動但入口照賣；榜頁開始日期>最後更新、半字截斷、參考來源列 data/scripts 路徑；「感測層／判斷層」內部話。**修**：連結補齊（frenchie4111/harness、vnmoorthy/groundtruth）；決策表開列「接手沒碰過的大 repo，agent 讀不懂」（首選 graphify，候選症狀 9 正式開列）；guide 2a 加社群側轉介、推薦細節加「官方設定先做、索引再裝」與 Harness 同名提醒；入口表改讀者語言＋「先分清兩頁」導言＋guide 第 9 段列；榜 code-review 退役指路 guide 第 5 段；橋無 🧭 改印「本庫尚無判斷」；截斷加省略號；日期、參考來源改讀者語言。
+
+**第二輪 6/6、9 刺**：維運字眼（index「三位記者」「每日 ingest」「lint 回升」×4、patterns「本記者」21 處）、index 對榜的類別數漂移、入口缺 code review 列、缺口態語法外洩、榜 multi-agent 橋只接一個症狀、large-codebase 線 3 🧰 接記憶列不接索引列、資料源類別在 coding 榜像雜訊。**修**：全數處理（tools_symptom 支援多症狀、check_spokes 同步；數字改敘述；缺口態保留機器記號改前半句為讀者語言）。
+
+**第三輪 6/6、無阻擋級**：兩頁分工冷讀者能用自己的話說出且指得出在哪句弄懂（index:23＋榜 callout）。殘餘小刺：feature-radar:253 內部對話、guide 亮點「三組」漂移、spec-kit 星數無日期（本輪已擦）；patterns 互動門檻字眼 9 處、claude-code 歷史區維運字眼、tools 目錄 [存量盤點]/[使用者提問] 前綴——開三筆轉知帳交社群／功能記者下次 lint 處理。**結論**：入口現在能讓冷讀者定位並拿到可執行答案；壞的從來不是架構，是末端交付（連結、對應列、橋的誠實度）。
