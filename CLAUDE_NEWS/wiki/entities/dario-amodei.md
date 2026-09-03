@@ -4,16 +4,16 @@ kind: "entity"
 type: "person"
 status: "active"
 domain: "👤 人物"
-last_updated: "2026-08-30"
+last_updated: "2026-09-02"
 last_news_update: "2026-08-29"
 status_main: "active"
-days_since_news: 3
+days_since_news: 5
 inbound_links: 12
 attribution_count: 18
 attribution_last: "2026-08-29"
 top_source: "google-news"
-pending_count: 6
-pending_overdue: 4
+pending_count: 7
+pending_overdue: 5
 pending_next_review: "2026-09-08"
 pending_signalled: 0
 signal: "健康"

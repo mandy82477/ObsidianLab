@@ -2,20 +2,20 @@
 page: "entities/fable-5"
 kind: "entity"
 type: "model"
-status: "active（正式發布；出口管制已解除，2026-07-01 起全球恢復存取；免費期已於 2026-07-19 到期，Max/Team 後續存取政策已於 2026-08-08 經官方 Help Center 查證收斂，見 [[entities/pricing]]）"
+status: "active（正式發布；出口管制已解除，2026-07-01 起全球恢復存取；免費期已於 2026-07-19 到期，Max/Team 後續存取政策已於 2026-08-08 經官方 Help Center 查證收斂，見 [[entities/pricing]]；5.1 已於 2026-09-01 GA 發布並取代 5.0 為現行旗艦版本，見「歷史記錄」）"
 domain: "🤖 模型"
-last_updated: "2026-08-29"
-last_news_update: "2026-08-29"
+last_updated: "2026-09-02"
+last_news_update: "2026-09-02"
 status_main: "active"
-days_since_news: 3
-inbound_links: 33
-attribution_count: 24
-attribution_last: "2026-08-28"
+days_since_news: 1
+inbound_links: 42
+attribution_count: 29
+attribution_last: "2026-09-02"
 top_source: "google-news"
-pending_count: 4
+pending_count: 5
 pending_overdue: 0
 pending_next_review: "2026-09-09"
-pending_signalled: 0
+pending_signalled: 1
 signal: "健康"
 generated_by: "scripts/gen_wiki_frontmatter.py"
 ---

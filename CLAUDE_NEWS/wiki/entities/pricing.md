@@ -4,18 +4,18 @@ kind: "entity"
 type: "policy"
 status: "active（持續調整中）"
 domain: "💼 商業"
-last_updated: "2026-09-01"
-last_news_update: "2026-09-01"
+last_updated: "2026-09-02"
+last_news_update: "2026-09-02"
 status_main: "active"
-days_since_news: 0
-inbound_links: 120
-attribution_count: 73
-attribution_last: "2026-09-01"
+days_since_news: 1
+inbound_links: 131
+attribution_count: 77
+attribution_last: "2026-09-02"
 top_source: "google-news"
-pending_count: 2
-pending_overdue: 0
-pending_next_review: "2026-09-03"
-pending_signalled: 0
+pending_count: 6
+pending_overdue: 2
+pending_next_review: "2026-09-04"
+pending_signalled: 2
 signal: "健康"
 generated_by: "scripts/gen_wiki_frontmatter.py"
 ---

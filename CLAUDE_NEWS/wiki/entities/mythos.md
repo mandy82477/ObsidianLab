@@ -2,20 +2,20 @@
 page: "entities/mythos"
 kind: "entity"
 type: "model"
-status: "active（出口管制解除，2026-07-01 起全球恢復存取）"
+status: "active（出口管制解除，2026-07-01 起全球恢復存取；5.1 已於 2026-09-01 發布，維持信任機構限定存取，未轉為全面公開）"
 domain: "🤖 模型"
-last_updated: "2026-09-01"
-last_news_update: "2026-09-01"
+last_updated: "2026-09-02"
+last_news_update: "2026-09-02"
 status_main: "active"
-days_since_news: 0
-inbound_links: 26
-attribution_count: 14
-attribution_last: "2026-09-01"
+days_since_news: 1
+inbound_links: 29
+attribution_count: 16
+attribution_last: "2026-09-02"
 top_source: "google-news"
 pending_count: 5
 pending_overdue: 3
 pending_next_review: "2026-09-07"
-pending_signalled: 0
+pending_signalled: 1
 signal: "健康"
 generated_by: "scripts/gen_wiki_frontmatter.py"
 ---

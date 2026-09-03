@@ -4,19 +4,19 @@ kind: "entity"
 type: "person"
 status: "active（待核實）"
 domain: "👤 人物"
-last_updated: "2026-08-28"
-last_news_update: "2026-07-13"
+last_updated: "2026-09-02"
+last_news_update: "2026-09-02"
 status_main: "active"
-days_since_news: 50
+days_since_news: 1
 inbound_links: 6
-attribution_count: 1
-attribution_last: "2026-07-13"
+attribution_count: 2
+attribution_last: "2026-09-02"
 top_source: "google-news"
 pending_count: 1
 pending_overdue: 1
 pending_next_review: null
-pending_signalled: 0
-signal: "休眠"
+pending_signalled: 1
+signal: "健康"
 generated_by: "scripts/gen_wiki_frontmatter.py"
 ---
 # Tom Blomfield

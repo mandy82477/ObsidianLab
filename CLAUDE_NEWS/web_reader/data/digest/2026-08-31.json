@@ -380,11 +380,6 @@
   "preview": "資安研究者示範只要請 Claude Code Opus 5 Auto Mode「摘要一個網頁」，就能在小樣本測試中達成 60–80% 的攻擊成功率並取得程式碼執行權限——與 Anthropic 委託第三方針對 Auto Mode 進行的評測（宣稱提示注入攻擊成功率 0%）形成明顯落差。",
   "sedimentedToday": [
     {
-      "id": "long-context-1m",
-      "name": "1M context：加不加價、你能不能關",
-      "pageType": "topic"
-    },
-    {
       "id": "recursive-self-improvement",
       "name": "AI 遞歸自我改進與全球暫停呼籲",
       "pageType": "topic"

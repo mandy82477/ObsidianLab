@@ -1,3 +1,24 @@
+---
+page: "topics/skill-interest-watch"
+kind: "topic"
+status: "ongoing"
+domain: "🌐 社群"
+last_updated: "2026-09-02"
+last_news_update: "2026-09-02"
+update_freq: "🗓️ 每日快照（機器產出；「本週竄升」以七日星數差計）"
+status_main: "ongoing"
+days_since_news: 1
+inbound_links: 2
+attribution_count: 0
+attribution_last: null
+top_source: null
+pending_count: 0
+pending_overdue: 0
+pending_next_review: null
+pending_signalled: 0
+signal: "孤島"
+generated_by: "scripts/gen_wiki_frontmatter.py"
+---
 # 興趣類別 skill 榜
 
 **狀態：** ongoing

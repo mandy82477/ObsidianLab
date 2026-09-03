@@ -5340,3 +5340,9 @@ GH Actions 抓料排 10:23 UTC，到 14:45 UTC 仍未落地（+4.4 小時且持�
 - 呈現品質：全部通過；`community-tech-discussions.md` 表格既有債務（多列 core論點欄 >120 字元）記錄待辦，非本輪新增
 - devpractice 沉澱：基準線 964d72a → 8c04ac5，候選 14 筆（claude-code 已知問題與版本更新 3、ai-agent-safety 提示注入相關 2、community-tech-patterns 工具與實作心得 5、community-tech-tools 3、fable-5／pricing 快取降價與配額更正 2）；首次執行，帳本原為空檔，無需查重
 - 品質備註：無
+
+## 2026-09-03 Query：「昨天的日報怎麼沒有生成」→ 兩班故事＋兩個自己埋的雷
+
+**查明：** 日報**有生成**（22:00 UTC 班於 22:43 推上 master），本機未拉才看不到；網站停在 09-01 是真的。三班全紀錄：① 12:05 正確中止（GH Actions 抓料延遲 4 小時，14:34 才到）；② 17:03 班完整跑完日報＋六記者＋devpractice 首跑＋web，**push 撞上本機同時間的 commit（wiki/log.md append-append 衝突）**，依規則不自解、備份到分支 `cloud-pending-2026-09-02-1703` 後結束——但沒寫 abort 心跳，從 git 看像靜默死亡；③ 22:03 班因冪等閘看不到日報而重做一輪，news＋wiki 推上，**web build 被 `check_wiki_freshness.py` 擋下：`skill-interest-watch` 標頭宣稱有新聞更新卻零歸因、且未登記 DERIVED_PAGES**——建頁者（本機 09-02）漏登記，D6「機制首跑前審計」沒做到位。
+
+**處置：** DERIVED_PAGES 補登記；**防再犯**：check_wiki_freshness 新增「[未登記衍生頁]」檢查——標頭有「更新頻率」欄即視為不走每日 ingest、必須登記，建頁當天就紅，不等當晚 gate；本機重建 web 推上；weekly/open-signals.jsonl 的 stash 衝突以聯集解（jsonl append-append）。**待裁決：** (a) 17:03 班備份分支已被 22:03 班完整取代，建議刪除（內容為同日重複、日報版本不同）；(b) wiki/log.md 是 append-only，append-append 衝突可機械聯集——建議 Step 5 的自解白名單從 emitted_items.json 擴到 log.md（union 策略），否則本機與雲端班次重疊時每次都得整班重跑。

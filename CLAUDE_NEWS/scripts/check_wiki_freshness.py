@@ -71,6 +71,10 @@ DERIVED_PAGES = {
     "topics/engineering-skill-playbook":
         ".claude/rules/wiki-ingest-features.md「工程流程 Skill 指南維護」"
         "（週更，讀官方 skills repo 清冊，非新聞條目；每日 ingest 不更新）",
+    "topics/skill-interest-watch":
+        ".claude/rules/wiki-ingest-community-lint.md「skill-interest-watch：機器快照頁」"
+        "（每日由 scripts/skill_interest_snapshot.py 覆寫，吃 GitHub Search 非新聞條目；"
+        "2026-09-02 建頁時漏登記，擋掉當日雲端 web build——教訓見同日 log）",
 }
 
 LAST_NEWS_RE = re.compile(r"^\*\*最後新聞更新：\*\*\s*(\d{4}-\d{2}-\d{2})\s*$", re.MULTILINE)
@@ -105,6 +109,9 @@ def load_last_attribution() -> dict[str, str]:
     return last
 
 
+UPDATE_FREQ_RE = re.compile(r"^\*\*更新頻率：\*\*", re.MULTILINE)
+
+
 def scan_pages() -> list[tuple[str, str | None]]:
     """回傳 (頁面相對路徑不含 .md, 最後新聞更新日期 or None)。"""
     out = []
@@ -113,6 +120,23 @@ def scan_pages() -> list[tuple[str, str | None]]:
             slug = f"{sub}/{path.stem}"
             m = LAST_NEWS_RE.search(path.read_text(encoding="utf-8"))
             out.append((slug, m.group(1) if m else None))
+    return out
+
+
+def unregistered_derived_pages() -> list[str]:
+    """標頭有「更新頻率」欄（週更／機器快照＝不吃日報條目）卻未登記 DERIVED_PAGES 的頁。
+
+    2026-09-02 教訓：skill-interest-watch 建頁當天沒登記，當晚雲端 web build gate
+    被本檢查擋下、網站停一天。「更新頻率」欄本身就是「本頁不走每日 ingest」的宣告，
+    宣告了卻沒登記觸發邊，等於建頁者自己都說不出這頁靠什麼更新——當場擋，不等
+    第一次跑 gate 才發現。
+    """
+    out = []
+    for sub in ("entities", "topics"):
+        for path in sorted((WIKI_DIR / sub).glob("*.md")):
+            slug = f"{sub}/{path.stem}"
+            if UPDATE_FREQ_RE.search(path.read_text(encoding="utf-8")) and slug not in DERIVED_PAGES:
+                out.append(slug)
     return out
 
 
@@ -158,6 +182,15 @@ def main(argv: list[str]) -> int:
             stream.write(f"  - {s}\n")
         stream.write("  修法：把該頁「最後新聞更新」補為該筆歸因的日報日期"
                      "（填日報日，不是事件發生日）\n")
+
+    unregistered = unregistered_derived_pages()
+    if unregistered:
+        ok = False
+        stream.write(f"\n[未登記衍生頁] {len(unregistered)} 頁標頭宣告「更新頻率」卻未登記 DERIVED_PAGES：\n")
+        for s in unregistered:
+            stream.write(f"  - {s}\n")
+        stream.write("  修法：在本檔 DERIVED_PAGES 登記並填得出觸發邊的規則檔出處"
+                     "（建頁當天就做，不等 gate 擋）\n")
 
     if unverifiable:
         ok = False

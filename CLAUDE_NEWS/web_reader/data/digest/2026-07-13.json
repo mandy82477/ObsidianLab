@@ -144,12 +144,6 @@
       "body": "報導稱 Anthropic 聘請 Monzo 共同創辦人 Tom Blomfield。",
       "focusTags": [
         "[持續追蹤]"
-      ],
-      "sedimented": [
-        {
-          "id": "tom-blomfield",
-          "pageType": "entity"
-        }
       ]
     },
     {
@@ -700,11 +694,5 @@
     }
   ],
   "preview": "媒體報導 Claude Code 新增內建瀏覽器功能，讓 AI 可直接在外部網站上讀取、點擊與輸入文字，兩個獨立來源皆有報導。",
-  "sedimentedToday": [
-    {
-      "id": "tom-blomfield",
-      "name": "Tom Blomfield",
-      "pageType": "entity"
-    }
-  ]
+  "sedimentedToday": []
 }

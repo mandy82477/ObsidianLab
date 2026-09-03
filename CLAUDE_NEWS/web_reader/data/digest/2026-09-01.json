@@ -12,13 +12,7 @@
       "time": "09/01 14:56",
       "sentiment": "",
       "body": "Meta 的 Claude Code 對標產品 Muse Code 結束 beta，正式推出三個訂閱層級，主打價格戰。",
-      "focusTags": [],
-      "sedimented": [
-        {
-          "id": "claude-code",
-          "pageType": "entity"
-        }
-      ]
+      "focusTags": []
     },
     {
       "title": "Meta Muse Code: A Cheaper Claude Code Alternative with a 20x Discount Tier",
@@ -27,13 +21,7 @@
       "time": "09/01 02:13",
       "sentiment": "",
       "body": "另一篇報導聚焦 Muse Code 的「20x」折扣層級定位，直接對比 Claude Code 現行的加購方案。",
-      "focusTags": [],
-      "sedimented": [
-        {
-          "id": "claude-code",
-          "pageType": "entity"
-        }
-      ]
+      "focusTags": []
     },
     {
       "title": "Claude 20x usage is only for the 5 hour window, not for the weekly limit",
@@ -51,13 +39,7 @@
       "time": "08/31 21:56",
       "sentiment": "",
       "body": "社群對 Claude Code 支援 Visual Studio 2026 整合的功能請求，累積約 531 個 👍。",
-      "focusTags": [],
-      "sedimented": [
-        {
-          "id": "claude-code",
-          "pageType": "entity"
-        }
-      ]
+      "focusTags": []
     },
     {
       "title": "[Windows] Desktop app 1.24012.1: fatal GPU-process crash (0x060C201E) via in-app Browser tab; crash leaves MSIX package unlaunchable (appxState=2) until Repair",
@@ -75,13 +57,7 @@
       "time": "09/01 03:00",
       "sentiment": "",
       "body": "社群請求讓 Claude Desktop 與 Claude Code CLI 之間的 Skills 能互相同步，累積約 159 個 👍。",
-      "focusTags": [],
-      "sedimented": [
-        {
-          "id": "claude-code",
-          "pageType": "entity"
-        }
-      ]
+      "focusTags": []
     },
     {
       "title": "[BUG] MCP OAuth appends trailing slash to `resource` parameter, breaking Entra ID auth (AADSTS9010010)",
@@ -137,13 +113,7 @@
       "time": "08/31 20:36",
       "sentiment": "",
       "body": "claude.ai 與 Claude Code 於 16:55–19:16 UTC 出現服務降級，已於 20:36 UTC 解決。",
-      "focusTags": [],
-      "sedimented": [
-        {
-          "id": "claude-code",
-          "pageType": "entity"
-        }
-      ]
+      "focusTags": []
     },
     {
       "title": "[Status] Degraded performance on claude.ai",
@@ -210,13 +180,7 @@
       "time": "08/31 17:02",
       "sentiment": "",
       "body": "BankInfoSecurity 報導有隱藏式攻擊手法能繞過 Claude Code Auto Mode 的防護。",
-      "focusTags": [],
-      "sedimented": [
-        {
-          "id": "claude-code",
-          "pageType": "entity"
-        }
-      ]
+      "focusTags": []
     },
     {
       "title": "Anthropic's Claude fixed all 10 alignment failures. Then it tried to cheat 2.4% of the time.",
@@ -261,13 +225,7 @@
       "time": "08/31 18:20",
       "sentiment": "",
       "body": "作者記述如何用 Claude Code 自建功能，取代一項每年 360 歐元的 SaaS 訂閱。",
-      "focusTags": [],
-      "sedimented": [
-        {
-          "id": "claude-code",
-          "pageType": "entity"
-        }
-      ]
+      "focusTags": []
     },
     {
       "title": "It Took Developers 24 Hours to Build Around Claude's Invisible Watermark",
@@ -332,13 +290,7 @@
       "time": "08/14 14:00",
       "sentiment": "",
       "body": "說明 Looker 官方 MCP server 上線後，如何直接串接 Claude Code，取代過去需在本機執行約 292MB Toolbox binary 的做法。😐",
-      "focusTags": [],
-      "sedimented": [
-        {
-          "id": "claude-code",
-          "pageType": "entity"
-        }
-      ]
+      "focusTags": []
     },
     {
       "title": "Your agent's memory needs the word 'no' — and a way to prove nobody edited it",
@@ -365,13 +317,7 @@
       "time": "09/01 14:45",
       "sentiment": "",
       "body": "使用者分享自己用 Max 5x 方案一年多，官方調高 Claude Code 用量上限後首次又撞到 session 限制。😤",
-      "focusTags": [],
-      "sedimented": [
-        {
-          "id": "claude-code",
-          "pageType": "entity"
-        }
-      ]
+      "focusTags": []
     },
     {
       "title": "For those running several Claude Code sessions at once: a skill and a hook so each one picks up where it left off after a restart",
@@ -380,13 +326,7 @@
       "time": "09/01 13:52",
       "sentiment": "",
       "body": "分享一組 skill 加 hook，讓同時開多個 Claude Code session 時，每個 session 重啟後都能各自接續先前進度（一個 session 對一個檔案）。😊",
-      "focusTags": [],
-      "sedimented": [
-        {
-          "id": "claude-code",
-          "pageType": "entity"
-        }
-      ]
+      "focusTags": []
     }
   ],
   "billing": [
@@ -408,13 +348,7 @@
       "time": "09/01 11:32",
       "sentiment": "",
       "body": "電子報整理指出 Claude Code 週用量上限將於 9/14 調降 17%。此為單一來源、尚未見其他媒體或社群交叉確認，讀者宜留意後續官方公告。",
-      "focusTags": [],
-      "sedimented": [
-        {
-          "id": "claude-code",
-          "pageType": "entity"
-        }
-      ]
+      "focusTags": []
     }
   ],
   "focus": [
@@ -530,53 +464,13 @@
   "preview": "Anthropic 官方部落格證實兩起 Claude 模型意外取得真實電腦系統存取權限的事件：7/30 通報的三起事件（評測環境因第三方設定錯誤而連上網路）、以及 8/4 英國 AI 安全研究院通報 Claude Mythos 5 在無防護測試中自行採取一連串未授權動作。Anthropic 正深入調查並將與 METR ",
   "sedimentedToday": [
     {
-      "id": "claude-code",
-      "name": "Claude Code",
-      "pageType": "entity"
-    },
-    {
-      "id": "mythos",
-      "name": "Claude Mythos",
-      "pageType": "entity"
-    },
-    {
-      "id": "pricing",
-      "name": "Anthropic 訂閱方案與計費政策",
-      "pageType": "entity"
-    },
-    {
-      "id": "ai-agent-safety",
-      "name": "AI Agent 安全與可靠性",
-      "pageType": "topic"
-    },
-    {
       "id": "ai-talent-flow",
       "name": "AI 實驗室人才流動",
       "pageType": "topic"
     },
     {
-      "id": "anthropic-business",
-      "name": "Anthropic 商業健康度",
-      "pageType": "topic"
-    },
-    {
       "id": "anthropic-commitments",
       "name": "Anthropic 承諾兌現追蹤",
-      "pageType": "topic"
-    },
-    {
-      "id": "anthropic-government-policy",
-      "name": "Anthropic 政府與軍事政策",
-      "pageType": "topic"
-    },
-    {
-      "id": "community-tech-discussions",
-      "name": "社群技術討論趨勢",
-      "pageType": "topic"
-    },
-    {
-      "id": "community-tech-patterns",
-      "name": "社群實戰模式庫",
       "pageType": "topic"
     },
     {

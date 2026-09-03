@@ -351,11 +351,6 @@
       "id": "claude-skills",
       "name": "Claude Skills",
       "pageType": "entity"
-    },
-    {
-      "id": "model-comparison",
-      "name": "Claude 模型選型對照",
-      "pageType": "topic"
     }
   ]
 }

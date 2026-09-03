@@ -3,16 +3,16 @@ page: "topics/community-tech-discussions"
 kind: "topic"
 status: "ongoing"
 domain: "🌐 社群"
-last_updated: "2026-09-01"
-last_news_update: "2026-09-01"
+last_updated: "2026-09-02"
+last_news_update: "2026-09-02"
 status_main: "ongoing"
-days_since_news: 0
-inbound_links: 41
-attribution_count: 121
-attribution_last: "2026-09-01"
+days_since_news: 1
+inbound_links: 46
+attribution_count: 124
+attribution_last: "2026-09-02"
 top_source: "hacker-news"
 pending_count: 2
-pending_overdue: 1
+pending_overdue: 0
 pending_next_review: "2026-09-13"
 pending_signalled: 0
 signal: "健康"

@@ -3,16 +3,16 @@ page: "topics/ai-agent-safety"
 kind: "topic"
 status: "ongoing"
 domain: "🏛️ 政策/安全"
-last_updated: "2026-09-01"
-last_news_update: "2026-09-01"
+last_updated: "2026-09-02"
+last_news_update: "2026-09-02"
 status_main: "ongoing"
-days_since_news: 0
-inbound_links: 79
-attribution_count: 111
-attribution_last: "2026-09-01"
+days_since_news: 1
+inbound_links: 85
+attribution_count: 118
+attribution_last: "2026-09-02"
 top_source: "google-news"
-pending_count: 20
-pending_overdue: 11
+pending_count: 28
+pending_overdue: 15
 pending_next_review: "2026-09-04"
 pending_signalled: 3
 signal: "健康"
