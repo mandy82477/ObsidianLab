@@ -733,7 +733,7 @@ window.WIKI_DATA = {
       "pill": "active",
       "firstSeen": "",
       "startDate": "2026-04-27",
-      "lastUpdated": "2026-09-03",
+      "lastUpdated": "2026-09-04",
       "lastNewsUpdate": "2026-09-03",
       "updateFreq": "",
       "parent": "",
