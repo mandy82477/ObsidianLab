@@ -29,7 +29,7 @@
       ],
       "why": "09-03 校準：前 5 為 graphify、Understand-Anything、codegraph、GitNexus、codebase-memory-mcp——全數切題，本榜最乾淨的一類。",
       "guide_section": "第 2a 段",
-      "tools_symptom": null,
+      "tools_symptom": "接手沒碰過的大 repo，agent 讀不懂",
       "tools_note": null
     },
     {
@@ -61,15 +61,12 @@
       "group": "A",
       "slug": "code-review",
       "name": "Code review",
-      "status": "active",
-      "queries": [
-        "\"code review\" (claude OR \"ai agent\" OR llm) in:name,description",
-        "adversarial review agent in:description"
-      ],
-      "why": "09-03 校準：code-review-graph、open-code-review、reviewdog 切題（gitea 為雜訊，接受）；adversarial 一條 5 命中含 claude-forge、flow-next，切題。",
+      "status": "retired",
+      "queries": [],
+      "why": "09-03 校準：code-review-graph、open-code-review、reviewdog 切題（gitea 為雜訊，接受）；adversarial 一條 5 命中含 claude-forge、flow-next，切題。 → 2026-09-03 冷讀者驗收：query 撈到 go-gitea/gitea（Git 伺服器）與 reviewdog（linter 匯流）佔前五，類名與內容不符；本類本庫刻意不推薦單一工具——官方六個 review 入口＋明價已足，改指路 guide 第 5 段。",
       "guide_section": "第 5 段",
       "tools_symptom": null,
-      "tools_note": null
+      "tools_note": "本類本庫不推薦單一工具——官方 `/code-review`、ultra、GitHub App 等六個入口與明價，見 [[topics/coding-workflow-guide]] 第 5 段；社群面做法（Read-Only Reviewer、跨模型互審）見 [[topics/community-tech-patterns]]"
     },
     {
       "group": "A",

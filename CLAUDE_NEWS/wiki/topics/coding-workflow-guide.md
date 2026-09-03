@@ -8,7 +8,7 @@ last_news_update: "2026-08-16"
 update_freq: "🗓️ 週更（隨官方文件與社群策展更新；日期停留數天屬正常節奏）"
 status_main: "ongoing"
 days_since_news: 18
-inbound_links: 14
+inbound_links: 15
 attribution_count: 1
 attribution_last: "2026-08-16"
 top_source: "hacker-news"
@@ -224,6 +224,8 @@ Database queries use Knex in src/db/. Never write raw SQL strings in route handl
 這一段要拆成兩半，因為兩半的成熟度天差地遠：**「怎麼讀得省」官方已經很成熟；「怎麼探得對」是整個生態的驗證真空區。**
 
 ### 2a. 怎麼讀得省
+
+> **社群側**：本段是官方設定（先讀 CI、從子目錄啟動、LSP）。要另裝**索引工具讓 agent 記住 repo**（graphify 等），見 [[topics/community-tech-tools]] 決策表「接手沒碰過的大 repo，agent 讀不懂」列——兩者互補，官方設定先做、索引工具再裝。
 
 這半邊官方已經很成熟。
 

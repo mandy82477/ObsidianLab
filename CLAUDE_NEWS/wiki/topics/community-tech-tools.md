@@ -8,7 +8,7 @@ last_news_update: "2026-09-02"
 update_freq: "🗓️ 週更（每週策展一次；更新日期停留數天屬正常節奏）"
 status_main: "ongoing"
 days_since_news: 1
-inbound_links: 36
+inbound_links: 32
 attribution_count: 3
 attribution_last: "2026-09-02"
 top_source: "user-query"
@@ -48,10 +48,11 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 |---|---|---|---|
 | 帳單爆了，看不到錢花在哪 | ⌨️ **tare** | 不想動終端、要桌面常駐 → 🖥️ Claude Usage Widget；想比較多個 coding agent 的花費 → Frugal Tokens | 🟡（08-27） |
 | context 一直被工具輸出撐爆 | 🔌 **pxpipe** | 不能接受請求過代理層 → 🧩 Graft（數字有爭議，見細節）；還不確定是誰在撐爆 → 先跑 ⌨️ PrismoDev 診斷 | 🟡（08-05，附防刷佐證） |
+| 接手沒碰過的大 repo，agent 讀不懂 | 🧩 [**graphify**](https://github.com/Graphify-Labs/graphify) | 要讓**人**看懂而非 agent → Understand-Anything；要把架構畫成圖交付 → archify；改 code 要索引自動同步 → codegraph（社群實測待累積） | 🟢（05-02 起多來源；08-31 訊號 11.3 萬星） |
 | 每開新 session 都要重講一遍 | ⌨️ **brain.md** | 要團隊共享而非單機 → 🖥️ OzBrain；已在用 Obsidian → VIR | 🟡（08-25） |
-| 多個 agent 在同一 repo 互相覆蓋 | ⌨️ **Harness** | 隔離後 commit 落地仍打架 → Claude Code Merge Queue；要跨 harness 統一協作邏輯 → omnigent | 🟢（04-29 起多來源） |
+| 多個 agent 在同一 repo 互相覆蓋 | ⌨️ [**Harness**](https://github.com/frenchie4111/harness) | 隔離後 commit 落地仍打架 → Claude Code Merge Queue；要跨 harness 統一協作邏輯 → omnigent | 🟢（04-29 起多來源） |
 | 一堆 agent 在跑，看不到誰卡住 | ⌨️ **Omar** | 只跑 3–5 個、不想多花一毛 token → HUD（走官方 event stream）；要 GUI 主控台 → Cockpit | 🟢（05-02 起多來源） |
-| 它說做完了，但根本沒做 | 🧩 **Groundtruth** | 要留可稽核證據給團隊審 → Proof Loop（建構者／驗證者分離） | 🟡（04-27） |
+| 它說做完了，但根本沒做 | 🧩 [**Groundtruth**](https://github.com/vnmoorthy/groundtruth) | 要留可稽核證據給團隊審 → Proof Loop（建構者／驗證者分離） | 🟡（04-27） |
 | CLAUDE.md 寫了它不聽 | —（答案是機制不是工具，見細節） | 規則多到耗 token → Writ；跨工具設定碎片化 → Caliber | 🟢（08-25 實測） |
 | 不想被單一供應商綁死 | 🔌 **Workweave Router** | 只想改用本地模型、不動主配置 → claudely；想繞過計量計費 → clarp（⚠️ 政策風險，見細節） | 🟡（06-27） |
 
@@ -61,6 +62,8 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 
 - **pxpipe vs Graft 的數字強度不同**（08-30 彙整）：pxpipe 有作者實測（25,000 text token 壓至 2,700 image token、帳單降 59–70%，08-05；星數防刷已查證 forks 8.5%）；Graft 宣稱降 42%（08-15）但 HN 討論質疑 benchmark 段落疑似 AI 代寫、未經第三方覆核。接受走代理層就選 pxpipe（證據較強）；只想掛個 hook 隨時可拔、且不介意數字未覆核，才選 Graft。
 - **「CLAUDE.md 不聽」沒有工具首選是結論不是留白**：dev.to 一手實作（08-25）顯示**以 hooks 強制執行取代 prompt 建議後，規則遵循率達 100%**——這個痛點的答案是機制不是工具，做法見 [[topics/community-tech-patterns]]。失效的四個機理：規則被機率性忽略且無反饋、規則越多越貴（Writ 以語意檢索只注入相關規則）、規則腐化（Patina 偵測）、跨工具碎片化（Caliber 統一管理）——後三者才是工具能解的側面。
+- **接手大 repo 的分界**（09-03 開列，依 3 跳自檢與冷讀者驗收）：graphify 給 **agent** 用（本機 AST、免向量 DB，`/graphify` skill）；同組另三個工具解的是不同工種——Understand-Anything 給**人**探索、archify 給人**交付圖**、codegraph 是 graphify 的競品（自動同步索引，僅星數證據）。官方面的「接手大 repo 第一步」（先讀 CI、從子目錄啟動、LSP）在 [[topics/coding-workflow-guide]] 第 2a 段，兩者互補：官方設定先做，索引工具再裝。
+- **Harness 同名提醒**：本表首選 [frenchie4111/harness](https://github.com/frenchie4111/harness)（多 worktree 並行管理）與 [[topics/skill-interest-watch]] multi-agent 榜上的 `revfactory/harness`（設計 agent team 的 meta-skill）**不是同一個專案**，裝前認清 owner。
 - **多 agent 互踩**：Harness 為 ✅ 廣泛採用（04-29 收錄，多來源）；omnigent 星數 9,080（08-05 防刷查證時 8,150、forks 14.7%）但無第三方實測回報，列次選、證據 ⚪。
 - **監看首選的分界**：HUD 經官方 JSON event stream 運作、不額外耗 token（08-07），適合小規模；Omar 管到 100 個 agent（05-02）。兩者解同一症狀的不同規模段。
 - **clarp 的政策風險**（05-21 收錄）：以本地 PTY＋唯讀 API 代理規避 6/15 起的計量計費，屬計費規避而非最佳化；企業環境安裝前先確認與 Anthropic 合約條款的相容性。
@@ -88,7 +91,7 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 | [**graphify**](https://github.com/Graphify-Labs/graphify) | 🟢（05-02 收錄 40k★＋71× 宣稱；08-31 訊號 11.3 萬星、`/graphify` skill、本機 AST 免向量 DB） | 【給 agent·索引】把 codebase（含文件、SQL schema）建成知識圖譜供跨 harness 查詢 |
 | [**codegraph**](https://github.com/colbymchenry/codegraph) | ⚪（09-02 查證 user-query；69,253★、forks 4,420、活躍 push） | 【給 agent·索引】預索引 code 知識圖、**改 code 自動同步**、全本機——與 graphify 直接競品，auto-sync 主張更進一步，社群實測待累積 |
 | [**Understand-Anything**](https://github.com/Egonex-AI/Understand-Anything) | ⚪（09-02 查證 user-query；81,325★、forks 6,841） | 【給人·探索式理解】把任意 code 變成可探索、可搜尋、可提問的互動知識圖——新人接手看懂 codebase 的那一格 |
-| [**archify**](https://github.com/tt-a1i/archify) | ⚪（09-02 查證 user-query；43,378★、forks 2,777、214 commits） | 【給人·交付級圖表】架構／時序／資料流／生命週期圖，自包含 HTML 可匯出——把架構講給別人聽、寫進文件 |
+| [**archify**](https://github.com/tt-a1i/archify) | ⚪（09-02 查證 user-query；43,378★、forks 2,777、214 commits） | 【給人·交付級圖表】架構／時序／資料流／生命週期圖，自包含 HTML 可匯出——把架構講給別人聽、寫進文件；🧩 `npx skills add tt-a1i/archify -g` |
 
 **寫碼紀律／方法論**——改變 Claude 寫 code 的行為
 
@@ -96,7 +99,7 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 |---|---|---|
 | [**obra/superpowers**](https://github.com/obra/superpowers) | ⚪（08-28，27.9 萬星，Reddit 有實際採用跡象） | Agentic skills 框架＋軟體開發方法論 |
 | [**andrej-karpathy-skills**](https://github.com/multica-ai/andrej-karpathy-skills) | ⚪（08-29，星數增速異常存疑） | 單檔改善 LLM coding 常見缺陷，取材 Karpathy 觀察 |
-| **Groundtruth** | 🟡（04-27） | Stop Hook 強制出示可驗證證明才准宣告完成 |
+| [**Groundtruth**](https://github.com/vnmoorthy/groundtruth) | 🟡（04-27） | Stop Hook 強制出示可驗證證明才准宣告完成 |
 | **awesome-ux-skills** | 🟡（05-08） | Nielsen＋Shape of AI 等 UX 原則技能集 |
 
 **產出與呈現**——生成特定產物或改變輸出形式
@@ -247,12 +250,12 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 | **Mneme** | 工作流 | ⚡ | 2026-04-30 | repo-native ADR 注入，CI 攔截違反架構的 PR |
 | **Nimbalyst** | 多 Agent | ⚡ | 2026-04-30 | 多 agent 視覺化工作台，WYSIWYG diff 逐一審核各 Agent 修改 |
 | **Trent** | 安全工具 | ⚡ | 2026-04-30 | Claude Code 內嵌架構層安全評估，補足 CVE 掃描對業務邏輯的盲點 |
-| **Harness** | 多 Agent | ✅ | 2026-04-29 | 多 Git worktree 並行管理多個 Claude Code agent，補 cmux/Conductor 不足 |
+| [**Harness**](https://github.com/frenchie4111/harness) | 多 Agent | ✅ | 2026-04-29 | 多 Git worktree 並行管理多個 Claude Code agent，補 cmux/Conductor 不足 |
 | **CodeThis** | 整合工具 | ⚡ | 2026-04-29 | MCP 原生 paste bin，AI 可直接建立語法高亮程式碼分享貼文 |
 | **Claude Exporter** | 整合工具 | ⚡ | 2026-04-29 | Chrome 擴充功能，對話匯出 PDF/Word/Notion，填補持久化需求 |
 | **Jupyter MCP server** | 整合工具 | ⚡ | 2026-04-28 | 取代內建 NotebookEdit，支援完整 kernel 互動與輸出讀取 |
 | **PullMD** | 整合工具 | ⚡ | 2026-04-28 | 網頁抓取時先轉 Markdown，避免 token 浪費（有效內容僅佔 HTML 約 20%） |
-| **Groundtruth** | 工作流 | ⚡ | 2026-04-27 | Stop Hook，強制 Claude 提供可驗證執行證明才能宣告完成 |
+| [**Groundtruth**](https://github.com/vnmoorthy/groundtruth) | 工作流 | ⚡ | 2026-04-27 | Stop Hook，強制 Claude 提供可驗證執行證明才能宣告完成 |
 | **EvanFlow** | 工作流 | ⚡ | 2026-04-27 | TDD 驅動迴圈，16 技能 + 2 子代理人，每步人工確認，不自動 commit |
 | **Relay plugin** | 工作流 | ⚡ | 2026-04-27 | 強制 Claude Code 先對齊問題本質再動手，Plan Mode 提問升級 |
 | **SmolVM** | 安全工具 | ⚡ | 2026-04-27 | 本機沙盒執行 Claude Code / Codex，單指令啟動，保護宿主系統 |

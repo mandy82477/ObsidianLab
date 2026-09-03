@@ -2009,18 +2009,18 @@ window.WIKI_DATA = {
       "domain": "🌐 社群",
       "pill": "active",
       "firstSeen": "",
-      "startDate": "2026-09-03",
-      "lastUpdated": "2026-09-02",
-      "lastNewsUpdate": "2026-09-02",
+      "startDate": "2026-09-02",
+      "lastUpdated": "2026-09-03",
+      "lastNewsUpdate": "2026-09-03",
       "updateFreq": "🗓️ 每日快照（機器產出；「本週竄升」以七日星數差計）",
-      "summary": "針對讀者指定的類別（8 類可用 GitHub 辨識），每天到 GitHub 問「這一類現在誰最熱、本週誰竄上來」。本頁是感測層（機器、規模、零判斷）；判斷層在 community-tech-tools——該裝哪個、證據多強、為什麼。每類末的「本庫判斷 →」是唯一的橋（單向：榜連 tools，tools 不抄榜）。星數是…",
+      "summary": "每天到 GitHub 問「這一類現在誰最熱、本週誰竄上來」（7 類可用 GitHub 辨識）。星數是規模不是品質：本頁是機器產出、只有星數、不做推薦；該裝哪個、證據多強、為什麼在 community-tech-tools。榜上標 🧭 的工具代表工具頁已有判斷——先看那邊。每類末的「本庫判斷 →」指向對應的判斷。",
       "latestHeadline": ""
     }
   ],
   "codingPages": [
-    "coding-workflow-guide",
     "community-tech-tools",
     "skill-interest-watch",
+    "coding-workflow-guide",
     "model-comparison",
     "community-large-codebase-workflow",
     "claude-code",

@@ -20,14 +20,15 @@
 
 ## 💻 開發實務入口
 
-程式開發這條線橫跨三位記者的頁面，此表是它的單一入口（路由，不放事實）：
+程式開發這條線橫跨三位記者的頁面，此表是它的單一入口（路由，不放事實）。**先分清兩頁**：[[topics/community-tech-tools]] 回答「該裝哪個」（人工判斷、帶證據等級）；[[topics/skill-interest-watch]] 回答「這類誰大、誰在漲」（機器每日榜、只有星數）——榜上標 🧭 的工具代表工具頁已有判斷，先看工具頁。
 
 | 我想…… | 去哪 |
 |---|---|
-| 做某件事該下哪個 **官方** skill（按流程階段／產出物） | [[topics/coding-workflow-guide]] |
-| 我卡住了，找 **社群** 首選工具（按症狀） | [[topics/community-tech-tools]]「我卡在這裡」決策表 |
-| 找 coding 用途的社群 skill（按用途分類） | [[topics/community-tech-tools]]「🧩 Skills 速查」 |
-| 我關心的某類 skill，現在誰最熱、本週誰竄升 | [[topics/skill-interest-watch]]（按開發流程段分類的榜） |
+| 接手／新建一個 repo，**官方**建議先做哪些設定（CLAUDE.md、LSP、探索） | [[topics/coding-workflow-guide]] 第 1、2a 段 |
+| 我卡住了（帳單爆、context 撐爆、agent 互踩、它說做完了沒做、agent 讀不懂大 repo……），**社群首選**是哪個 | [[topics/community-tech-tools]]「我卡在這裡」決策表 |
+| 按用途翻社群 skill（codebase 理解、寫碼紀律、產出呈現、領域資料） | [[topics/community-tech-tools]]「🧩 Skills 速查」 |
+| 它說做完了，我怎麼知道是真的——**官方**做法（要證據、`/goal`、Stop hook） | [[topics/coding-workflow-guide]] 第 9 段 |
+| 我關心的某類工具，現在誰最大（本週竄升欄累積一週星史後啟用） | [[topics/skill-interest-watch]]（按開發流程段分類的榜） |
 | 寫 code 該用哪個模型 | [[topics/model-comparison]] |
 | 大型 codebase 的做法主線（並行／context／記憶／把關） | [[topics/community-large-codebase-workflow]] |
 | Claude Code 壞了嗎、該不該升版 | [[entities/claude-code]] 已知問題＋[[feature-radar]] 升版風險 |

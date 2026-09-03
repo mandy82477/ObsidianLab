@@ -552,11 +552,6 @@
       "id": "model-comparison",
       "name": "Claude 模型選型對照",
       "pageType": "topic"
-    },
-    {
-      "id": "skill-interest-watch",
-      "name": "興趣類別 skill 榜",
-      "pageType": "topic"
     }
   ]
 }

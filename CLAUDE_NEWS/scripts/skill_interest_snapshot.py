@@ -142,17 +142,16 @@ def render(cfg: dict, data: dict, now: datetime) -> str:
         "# 興趣類別 skill 榜",
         "",
         "**狀態：** ongoing",
-        "**開始日期：** 2026-09-03",
+        "**開始日期：** 2026-09-02",
         "**領域：** 🌐 社群",
         "**更新頻率：** 🗓️ 每日快照（機器產出；「本週竄升」以七日星數差計）",
         f"**最後更新：** {today}",
         f"**最後新聞更新：** {today}",
         "",
         f"> **本頁是什麼**（{today} 快照）",
-        f"> 針對讀者指定的類別（{len(active)} 類可用 GitHub 辨識），每天到 GitHub 問「這一類現在誰最熱、本週誰竄上來」。"
-        "本頁是**感測層**（機器、規模、零判斷）；**判斷層**在 [[topics/community-tech-tools]]——"
-        "該裝哪個、證據多強、為什麼。每類末的「本庫判斷 →」是唯一的橋（單向：榜連 tools，tools 不抄榜）。"
-        "**星數是規模不是品質**。",
+        f"> 每天到 GitHub 問「這一類現在誰最熱、本週誰竄上來」（{len(active)} 類可用 GitHub 辨識）。"
+        "**星數是規模不是品質**：本頁是機器產出、只有星數、不做推薦；**該裝哪個、證據多強、為什麼**在 [[topics/community-tech-tools]]。"
+        "榜上標 🧭 的工具代表工具頁已有判斷——先看那邊。每類末的「本庫判斷 →」指向對應的判斷。",
         "",
         "---",
         "",
@@ -172,12 +171,15 @@ def render(cfg: dict, data: dict, now: datetime) -> str:
                   "「本週竄升」欄尚在冷啟動，本週先只看「目前前 5」。", ""]
     groups = {"A": "## A. 開發實務（按流程階段，對應 [[topics/coding-workflow-guide]]）",
               "B": "## B. 治理（管 agent 的需求）"}
-    def bridge_line(cat: dict) -> str:
+    def bridge_line(cat: dict, has_judged: bool = False) -> str:
         if cat.get("tools_symptom"):
             return f"本庫判斷 → 見 [[{TOOLS_LINK}]]「我卡在這裡」的「{cat['tools_symptom']}」列"
         if cat.get("tools_note"):
             return f"本庫判斷 → {cat['tools_note']}"
-        return f"本庫判斷 → 見 [[{TOOLS_LINK}]]（🧭 者已有證據等級與一句為什麼）"
+        if has_judged:
+            return f"本庫判斷 → 標 🧭 者見 [[{TOOLS_LINK}]]（已有證據等級與一句為什麼）"
+        # 冷讀者驗收（2026-09-03）：橋指向空的比沒有橋更糟——沒 🧭 就明說
+        return "本庫尚無判斷（榜上無 🧭 條目）——星數不是推薦，裝前自行查證"
 
     current_group = None
     for cat in active:
@@ -197,10 +199,14 @@ def render(cfg: dict, data: dict, now: datetime) -> str:
             continue
         top = sorted(repos.values(), key=lambda r: r["stargazers_count"], reverse=True)[:cfg["top_n"]]
         lines += ["| 目前前 5 | ★ | 一句話 |", "|---|---|---|"]
+        any_judged = False
         for r in top:
             url = r["html_url"].rstrip("/")
-            mark = (" 🧭" if url.lower() in judged else "") + (" 📰" if url.lower() in emitted else "")
-            desc = (r.get("description") or "").replace("|", "／")[:90]
+            is_judged = url.lower() in judged
+            any_judged = any_judged or is_judged
+            mark = (" 🧭" if is_judged else "") + (" 📰" if url.lower() in emitted else "")
+            full = (r.get("description") or "").replace("|", "／")
+            desc = full if len(full) <= 90 else full[:89].rstrip() + "…"
             lines.append(f"| [{r['full_name']}]({url}){mark} | {r['stargazers_count']:,} | {desc} |")
         risers = []
         if not cold:
@@ -215,7 +221,7 @@ def render(cfg: dict, data: dict, now: datetime) -> str:
                 lines.append(f"| [{r['full_name']}]({r['html_url']}) | +{delta:,} | {r['stargazers_count']:,} |")
         elif not cold:
             lines += ["", f"本週無 ≥{cfg['rise_min_delta']:,} 星的竄升者。"]
-        lines += ["", bridge_line(cat), ""]
+        lines += ["", bridge_line(cat, any_judged), ""]
     if retired:
         lines += [
             "## 無法用 GitHub 辨識的需求（指路）",
@@ -235,8 +241,8 @@ def render(cfg: dict, data: dict, now: datetime) -> str:
         "",
         "## 參考來源",
         "",
-        "- 設定檔與 query 校準紀錄：`data/skill_interest_watch.json`；產出腳本 `scripts/skill_interest_snapshot.py`",
-        "- 星史：`data/repo_star_history.csv`（各發現窗每日記錄，保留 60 天）",
+        "- 資料來自 GitHub Search API（依星數排序，每日快照）；「本週竄升」以本庫每日記錄的星數差計算，保留 60 天",
+        "- 類別與搜尋條件由維護者校準（每條 query 上線前實測命中；找不到有辨識力 query 的類別誠實指路，不掛空榜）",
         "",
     ]
     return "\n".join(lines)
