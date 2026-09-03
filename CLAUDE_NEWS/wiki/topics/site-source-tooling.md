@@ -1,28 +1,3 @@
----
-page: "topics/site-source-tooling"
-kind: "topic"
-status: "ongoing"
-domain: "🛠️ 工具/功能"
-last_updated: "2026-09-03"
-last_news_update: "2026-09-03"
-update_freq: "🗓️ 每日快照（機器產出；只有星數，不做推薦）"
-status_main: "ongoing"
-days_since_news: 0
-parent: null
-children: "[]"
-page_role: "root"
-days_since_news_subtree: 0
-inbound_links: 1
-attribution_count: 0
-attribution_last: null
-top_source: null
-pending_count: 0
-pending_overdue: 0
-pending_next_review: null
-pending_signalled: 0
-signal: "孤島"
-generated_by: "scripts/gen_wiki_frontmatter.py"
----
 # 本站抓料工具規模榜
 
 **狀態：** ongoing
@@ -41,7 +16,7 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 
 | 目前前 5 | ★ | 一句話 |
 |---|---|---|
-| [FreshRSS/FreshRSS](https://github.com/FreshRSS/FreshRSS) | 15,917 | A free, self-hostable news aggregator… |
+| [FreshRSS/FreshRSS](https://github.com/FreshRSS/FreshRSS) | 15,920 | A free, self-hostable news aggregator… |
 | [finaldie/auto-news](https://github.com/finaldie/auto-news) | 905 | A personal news aggregator to pull information from multi-sources + LLM (ChatGPT/Gemini/O… |
 | [CyberShadow/DFeed](https://github.com/CyberShadow/DFeed) | 386 | D news aggregator, newsgroup client, web newsreader and IRC bot |
 | [janlukasschroeder/realtime-newsapi](https://github.com/janlukasschroeder/realtime-newsapi) | 373 | Financial News Aggregator - Real Time & Query API for Financial News |
