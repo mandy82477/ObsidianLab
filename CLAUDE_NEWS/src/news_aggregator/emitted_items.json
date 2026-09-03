@@ -4742,7 +4742,7 @@
   "https://aisle.com/blog/aisle-discovered-six-curl-cves-after-openai-and-anthropic-found-zero": {
     "first_emitted": "2026-09-02",
     "score_at_emit": 174,
-    "digest_confirmed": false
+    "digest_confirmed": true
   },
   "https://www.deccanherald.com/india/karnataka/bengaluru/when-claude-code-went-rogue-years-of-bengaluru-heritage-work-disappeared-4131958": {
     "first_emitted": "2026-09-02",
@@ -5067,161 +5067,161 @@
   "https://support.claude.com/en/articles/15424964-claude-fable-5-on-your-plan#65be1a791d22a03d": {
     "first_emitted": "2026-09-03",
     "score_at_emit": 0,
-    "digest_confirmed": false
+    "digest_confirmed": true
   },
   "https://status.claude.com/incidents/461yvfrzpwtt": {
     "first_emitted": "2026-09-03",
     "score_at_emit": 0,
-    "digest_confirmed": false
+    "digest_confirmed": true
   },
   "https://status.claude.com/incidents/288w7p4hk1l1": {
     "first_emitted": "2026-09-03",
     "score_at_emit": 0,
-    "digest_confirmed": false
+    "digest_confirmed": true
   },
   "https://github.com/anthropics/claude-code/releases/tag/v2.1.259": {
     "first_emitted": "2026-09-03",
     "score_at_emit": 0,
-    "digest_confirmed": false
+    "digest_confirmed": true
   },
   "https://github.com/snyk/agent-scan": {
     "first_emitted": "2026-09-03",
     "score_at_emit": 3002,
-    "digest_confirmed": false
+    "digest_confirmed": true
   },
   "https://github.com/superdesigndev/superdesign-skill": {
     "first_emitted": "2026-09-03",
     "score_at_emit": 501,
-    "digest_confirmed": false
+    "digest_confirmed": true
   },
   "https://github.com/PhiloLabs/fable51-worlds": {
     "first_emitted": "2026-09-03",
     "score_at_emit": 303,
-    "digest_confirmed": false
+    "digest_confirmed": true
   },
   "https://github.com/anthropics/claude-code/issues/24726": {
     "first_emitted": "2026-09-03",
     "score_at_emit": 70,
-    "digest_confirmed": false
+    "digest_confirmed": true
   },
   "https://github.com/anthropics/claude-code/issues/26302": {
     "first_emitted": "2026-09-03",
     "score_at_emit": 48,
-    "digest_confirmed": false
+    "digest_confirmed": true
   },
   "https://github.com/mezmo/aura": {
     "first_emitted": "2026-09-03",
     "score_at_emit": 21,
-    "digest_confirmed": false
+    "digest_confirmed": true
   },
   "https://internetofbugs.substack.com/p/noai-agents-did-not-build-secret": {
     "first_emitted": "2026-09-03",
     "score_at_emit": 15,
-    "digest_confirmed": false
+    "digest_confirmed": true
   },
   "https://github.com/speakeasy-api/kit": {
     "first_emitted": "2026-09-03",
     "score_at_emit": 12,
-    "digest_confirmed": false
+    "digest_confirmed": true
   },
   "https://adchestra.com": {
     "first_emitted": "2026-09-03",
     "score_at_emit": 8,
-    "digest_confirmed": false
+    "digest_confirmed": true
   },
   "https://dev.to/cseeman/claude-code-journal-plugin-notion-session-summaries-at-a-glance-940": {
     "first_emitted": "2026-09-03",
     "score_at_emit": 8,
-    "digest_confirmed": false
+    "digest_confirmed": true
   },
   "https://github.com/fosrl/pangolin": {
     "first_emitted": "2026-09-03",
     "score_at_emit": 3,
-    "digest_confirmed": false
+    "digest_confirmed": true
   },
   "https://tooljet.com": {
     "first_emitted": "2026-09-03",
     "score_at_emit": 3,
-    "digest_confirmed": false
+    "digest_confirmed": true
   },
   "https://whoorwhatisit.com": {
     "first_emitted": "2026-09-03",
     "score_at_emit": 2,
-    "digest_confirmed": false
+    "digest_confirmed": true
   },
   "https://github.com/tokencanopy/price": {
     "first_emitted": "2026-09-03",
     "score_at_emit": 2,
-    "digest_confirmed": false
+    "digest_confirmed": true
   },
   "https://github.com/aiusageball/ai-usage-ball": {
     "first_emitted": "2026-09-03",
     "score_at_emit": 1,
-    "digest_confirmed": false
+    "digest_confirmed": true
   },
   "https://profound.academy": {
     "first_emitted": "2026-09-03",
     "score_at_emit": 1,
-    "digest_confirmed": false
+    "digest_confirmed": true
   },
   "https://github.com/usebrb/brb": {
     "first_emitted": "2026-09-03",
     "score_at_emit": 1,
-    "digest_confirmed": false
+    "digest_confirmed": true
   },
   "https://verity.md": {
     "first_emitted": "2026-09-03",
     "score_at_emit": 1,
-    "digest_confirmed": false
+    "digest_confirmed": true
   },
   "https://www.reddit.com/r/ClaudeCode/comments/1w69016/claude_code_server_down_for_a_long_time_now_will": {
     "first_emitted": "2026-09-03",
     "score_at_emit": 0,
-    "digest_confirmed": false
+    "digest_confirmed": true
   },
   "https://www.reddit.com/r/ClaudeCode/comments/1w68y9y/how_do_spend_your_time_while_claude_code_is_down": {
     "first_emitted": "2026-09-03",
     "score_at_emit": 0,
-    "digest_confirmed": false
+    "digest_confirmed": true
   },
   "https://www.reddit.com/r/ClaudeCode/comments/1w68wrd/claude_code_is_fried": {
     "first_emitted": "2026-09-03",
     "score_at_emit": 0,
-    "digest_confirmed": false
+    "digest_confirmed": true
   },
   "https://www.reddit.com/r/ClaudeCode/comments/1w68w4u/my_project_is_more_important": {
     "first_emitted": "2026-09-03",
     "score_at_emit": 0,
-    "digest_confirmed": false
+    "digest_confirmed": true
   },
   "https://www.reddit.com/r/ClaudeCode/comments/1w68uj2/please_help_to_solve_it": {
     "first_emitted": "2026-09-03",
     "score_at_emit": 0,
-    "digest_confirmed": false
+    "digest_confirmed": true
   },
   "https://www.reddit.com/r/ClaudeCode/comments/1w68tn1/so_this_is_what_you_get_as_a_20x_claude_max": {
     "first_emitted": "2026-09-03",
     "score_at_emit": 0,
-    "digest_confirmed": false
+    "digest_confirmed": true
   },
   "https://www.reddit.com/r/LocalLLaMA/comments/1w682yl/i_left_gpt56sol_for_deepseek_v4_pro_0813_and_it": {
     "first_emitted": "2026-09-03",
     "score_at_emit": 0,
-    "digest_confirmed": false
+    "digest_confirmed": true
   },
   "https://www.reddit.com/r/LocalLLaMA/comments/1w65mdq/further_inference_tuning_for_higher_context": {
     "first_emitted": "2026-09-03",
     "score_at_emit": 0,
-    "digest_confirmed": false
+    "digest_confirmed": true
   },
   "https://www.reddit.com/r/LocalLLaMA/comments/1w65ise/we_built_an_opensource_modelneutral_agent_harness": {
     "first_emitted": "2026-09-03",
     "score_at_emit": 0,
-    "digest_confirmed": false
+    "digest_confirmed": true
   },
   "https://simonwillison.net/2026/Sep/2/llm-gemini": {
     "first_emitted": "2026-09-03",
     "score_at_emit": 0,
-    "digest_confirmed": false
+    "digest_confirmed": true
   }
 }
