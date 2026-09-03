@@ -1,5 +1,5 @@
 {
-  "_doc": "興趣類別 skill 榜（2026-09-03 使用者裁決）：不等熱門的來，每天對指定類別去 GitHub 搜「這類現在誰最熱、本週誰新竄升」。由 scripts/skill_interest_snapshot.py 讀取，輸出覆寫式快照頁 wiki/topics/skill-interest-watch.md，不進日報。A 組按 coding-workflow-guide 九段流程分類（每類連頁＋「第 N 段」提示，連頁不連錨——段標題帶會變的狀態標記，錨定必腐化），B 組是治理型需求（管 agent 的）。設計依據見 wiki/log.md 2026-09-03。 8 類上榜、4 類 retired（結構性不適任）改印指路段。 C 組＝本站維運需求，輸出到 wiki/topics/site-source-tooling.md（🛠️ 領域），不進開發實務總覽。",
+  "_doc": "興趣類別 skill 榜（2026-09-03 使用者裁決）：不等熱門的來，每天對指定類別去 GitHub 搜「這類現在誰最熱、本週誰新竄升」。由 scripts/skill_interest_snapshot.py 讀取，輸出覆寫式快照頁 wiki/topics/skill-interest-watch.md，不進日報。A 組按 coding-workflow-guide 九段流程分類（每類連頁＋「第 N 段」提示，連頁不連錨——段標題帶會變的狀態標記，錨定必腐化），B 組是治理型需求（管 agent 的）。設計依據見 wiki/log.md 2026-09-03。 8 類上榜、4 類 retired（結構性不適任）改印指路段。 C 組（本站維運）已於 2026-09-03 下架：營運參考不進 wiki，設定移至 _rejected。",
   "_query_rules": "抄 Topic Watch 紀律：新 query 上線前必實測命中率（--probe），0 命中或全雜訊者不上線、記入 _rejected。2026-09-03 兩輪校準（24＋14 條）得出的 GitHub Search 行為：①多組 (A OR B) 括號在 in:description 下幾乎等於「任一詞命中」，只要含 agent/skill/claude 等通用詞就被同一批巨頭（ECC、karpathy-skills、claude-code 本體、system-prompts、gstack）洗版——這種 query 沒有類別辨識力，等於沒問；②有效的是「單一類別專屬名詞片語」（\"knowledge graph\"、\"spec-driven\"、\"agent teams\"、adversarial review），頂多再加一個限定詞；③in:name 配通用詞同樣被 awesome-* 清單洗版。找不到有辨識力 query 的類別誠實標 status=needs_calibration、queries 留空，頁面印 ⚠️，不硬塞寬 query 上榜。min_stars 是雜訊地板不是品質訊號。",
   "min_stars": 100,
   "top_n": 5,
@@ -143,19 +143,6 @@
       "guide_section": null,
       "tools_symptom": null,
       "tools_note": null
-    },
-    {
-      "group": "C",
-      "slug": "source-resilience",
-      "name": "資料源韌性與監測（新聞聚合／抓料）",
-      "status": "active",
-      "queries": [
-        "\"news aggregator\" (llm OR claude OR agent) in:description"
-      ],
-      "why": "09-03 校準：16 命中，auto-news、ai-news-aggregator 切題、FreshRSS 為傳統工具雜訊；此類在 GitHub 本就稀薄，命中弱屬預期。 → 2026-09-03 冷讀者兩輪判「在開發實務頁像雜訊、自承非 coding 工具」，暫隱藏不印（設定保留，要回來改 status=active）。 → 2026-09-03 使用者裁決：改置本站維運頁 topics/site-source-tooling（C 組），不佔開發實務 tab。",
-      "guide_section": null,
-      "tools_symptom": null,
-      "tools_note": null
     }
   ],
   "_rejected": [
@@ -188,6 +175,20 @@
       "query": "\"pre-commit\" (\"ai agent\" OR llm OR claude) in:description",
       "date": "2026-09-03",
       "reason": "回傳 pre-commit 傳統生態（非 AI）。"
+    },
+    {
+      "group": "C",
+      "slug": "source-resilience",
+      "name": "資料源韌性與監測（新聞聚合／抓料）",
+      "status": "active",
+      "queries": [
+        "\"news aggregator\" (llm OR claude OR agent) in:description"
+      ],
+      "why": "09-03 校準：16 命中，auto-news、ai-news-aggregator 切題、FreshRSS 為傳統工具雜訊；此類在 GitHub 本就稀薄，命中弱屬預期。 → 2026-09-03 冷讀者兩輪判「在開發實務頁像雜訊、自承非 coding 工具」，暫隱藏不印（設定保留，要回來改 status=active）。 → 2026-09-03 使用者裁決：改置本站維運頁 topics/site-source-tooling（C 組），不佔開發實務 tab。",
+      "guide_section": null,
+      "tools_symptom": null,
+      "tools_note": null,
+      "retired_reason": "2026-09-03 使用者裁決下架：「本站抓料工具規模榜」是營運參考不是讀者內容，不進 wiki；日後要評估抓料工具直接跑 --probe 看 GitHub，不建頁。"
     }
   ],
   "_bridge": "單向橋（2026-09-03 方案 D）：榜（感測層，機器）→ tools（判斷層，人工）。每類 tools_symptom 為決策表症狀句原文，render 印「本庫判斷 →」行，check_tools_page.check_spokes 對帳（改壞會紅）；tools_note 為無對應列時的指路文字。機器唯讀 tools 頁（🧭 標記＝該 repo 已在 tools 頁），人不抄榜；retired 類不得為湊數重上線。"

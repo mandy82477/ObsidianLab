@@ -24,22 +24,17 @@ class TestConfigContract(unittest.TestCase):
     def test_slugs_unique_and_groups_valid(self):
         slugs = [c["slug"] for c in self.cfg["categories"]]
         self.assertEqual(len(slugs), len(set(slugs)))
-        self.assertTrue(all(c["group"] in ("A", "B", "C") for c in self.cfg["categories"]))
+        self.assertTrue(all(c["group"] in ("A", "B") for c in self.cfg["categories"]))
 
-    def test_group_c_is_site_ops_only(self):
-        """C 組＝本站維運（另出 site-source-tooling 頁），不得帶 guide_section／tools_symptom——
-        它不是讀者的開發實務，混進總覽頁就是冷讀者兩輪判的雜訊。"""
-        for c in self.cfg["categories"]:
-            if c["group"] == "C":
-                self.assertFalse(c.get("guide_section"), c["slug"])
-                self.assertFalse(c.get("tools_symptom"), c["slug"])
+    def test_no_site_ops_group(self):
+        """原 C 組（本站抓料工具規模榜）2026-09-03 使用者裁決下架：營運參考不是讀者內容，不進 wiki。
+        設定只能留在 _rejected，不得回到 categories；總覽頁不得再印它。"""
+        self.assertFalse(any(c.get("group") == "C" for c in self.cfg["categories"]))
         md = sis.render(self.cfg, {c["slug"]: {"repos": {}, "per_query": []} for c in self.cfg["categories"]},
                         datetime(2026, 9, 3, tzinfo=timezone.utc))
-        self.assertNotIn("資料源韌性", md)  # C 組不進總覽頁
-        site = sis.render_site(self.cfg, {c["slug"]: {"repos": {}, "per_query": []} for c in self.cfg["categories"]},
-                               datetime(2026, 9, 3, tzinfo=timezone.utc))
-        self.assertIn("# 本站抓料工具規模榜", site)
-        self.assertIn("資料源韌性", site)
+        self.assertNotIn("資料源韌性", md)
+        self.assertFalse(hasattr(sis, "render_site"))
+        self.assertFalse((sis.ROOT / "wiki" / "topics" / "site-source-tooling.md").exists())
 
     def test_retired_has_no_queries_and_bridge(self):
         """retired 類別：queries 必空、why 必說明、且必有指路（tools_symptom 或 tools_note）——

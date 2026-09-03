@@ -233,8 +233,8 @@ def render(cfg: dict, data: dict, now: datetime) -> str:
 
     current_group = None
     for cat in cfg["categories"]:
-        if cat.get("status") == "hidden" or cat.get("group") == "C":
-            continue  # hidden：設定保留不印；C 組＝本站維運需求，另出 site-source-tooling 頁
+        if cat.get("status") == "hidden":
+            continue  # hidden：設定保留不印（原 C 組「本站維運」類已於 2026-09-03 下架：營運參考不進 wiki）
         if cat["group"] != current_group:
             current_group = cat["group"]
             lines += [groups[current_group], ""]
@@ -288,51 +288,6 @@ def render(cfg: dict, data: dict, now: datetime) -> str:
     ]
     return "\n".join(lines)
 
-PAGE_SITE = ROOT / "wiki" / "topics" / "site-source-tooling.md"
-
-
-def render_site(cfg: dict, data: dict, now: datetime) -> str:
-    """C 組（本站維運需求）獨立頁：只有規模榜，不做判斷——2026-09-03 使用者裁決
-    「找個合適的頁面放」，理由：它服務的是本站怎麼抓料，不是讀者的開發實務。"""
-    today = now.strftime("%Y-%m-%d")
-    cats = [c for c in cfg["categories"] if c.get("group") == "C" and c.get("status") == "active"]
-    emitted = _emitted_repo_urls() or set()
-    lines = [
-        "# 本站抓料工具規模榜",
-        "",
-        "**狀態：** ongoing",
-        "**開始日期：** 2026-09-03",
-        "**領域：** 🛠️ 工具/功能",
-        "**更新頻率：** 🗓️ 每日快照（機器產出；只有星數，不做推薦）",
-        f"**最後更新：** {today}",
-        f"**最後新聞更新：** {today}",
-        "",
-        f"> **本頁是什麼**（{today} 快照）",
-        "> 本站自己的資料來源會壞（RSS 分數恆 0、事件流退化、來源改版），這頁每天到 GitHub 看「新聞聚合／爬蟲韌性這一類現在誰大」，"
-        "當本站評估抓料工具時的參考。**不是讀者的開發實務**——開發實務入口在 [[index]]；**星數是規模不是品質**。",
-        "",
-        "---",
-        "",
-    ]
-    for cat in cats:
-        d = data.get(cat["slug"], {"repos": {}, "per_query": []})
-        top = sorted(d["repos"].values(), key=lambda r: r["stargazers_count"], reverse=True)[:cfg["top_n"]]
-        lines += [f"## {cat['name']}", ""]
-        if not top:
-            lines += ["> ⚠️ 本次零命中（查詢失敗或搜尋條件需校準）。", ""]
-            continue
-        lines += ["| 目前前 5 | ★ | 一句話 |", "|---|---|---|"]
-        for r in top:
-            url = r["html_url"].rstrip("/")
-            mark = " 📰" if url.lower() in emitted else ""
-            full = (r.get("description") or "").replace("|", "／")
-            desc = full if len(full) <= 90 else full[:89].rstrip() + "…"
-            lines.append(f"| [{r['full_name']}]({url}){mark} | {r['stargazers_count']:,} | {desc} |")
-        lines.append("")
-    lines += ["---", "", "## 參考來源", "", "- GitHub Search API 每日快照；📰＝本庫日報已報導過。本站來源健康與記分卡見網站「關於」頁。", ""]
-    return "\n".join(lines)
-
-
 def main() -> int:
     ap = argparse.ArgumentParser()
     ap.add_argument("--probe", action="store_true", help="只印命中，供 query 校準")
@@ -366,8 +321,6 @@ def main() -> int:
         _record_queue(f"interest:{cat['slug']}", queued=len(d["repos"]),
                       emitted_n=min(len(d["repos"]), cfg["top_n"]), now=now, note=note)
     PAGE.write_text(render(cfg, data, now), encoding="utf-8")
-    if any(c.get("group") == "C" and c.get("status") == "active" for c in cfg["categories"]):
-        PAGE_SITE.write_text(render_site(cfg, data, now), encoding="utf-8")
     logger.info("skill-interest-watch: %d categories, %d repos, page written",
                 len(cfg["categories"]), len(star_seen))
     return 0
