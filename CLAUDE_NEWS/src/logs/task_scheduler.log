@@ -490,3 +490,14 @@
 [Thu 2026/09/03 12:06:12.00 UTC] === Pipeline aborted (cloud, 12:00 UTC shift) ===
 [Thu 2026/09/03 14:24:04.00 UTC] Weekly lint OK - 修 12 頁（6 記者＋主編 5c 查實 7 筆／5e／5b／devpractice），7 項待確認；測試全綠 - web build 放行；build OK 60 wiki 檔；渲染驗收：pricing 頁 DOM 驗（乘數表 8 列、callout 正常、無 console error；瀏覽器 pane 隱藏截圖全黑，改 DOM 驗）＋boris/leaderboard 產物字串驗；push 待執行
 [cloud daily-news-pipeline-cloud STARTED 2026-09-03T17:04:29Z]
+[Thu 2026/09/03 17:40:49.00 UTC] === Agent pipeline start (2026-09-03) ===
+[Thu 2026/09/03 17:40:49.00 UTC] Step 0 昨日缺跑檢查 OK - news/2026-09-02.md 存在
+[Thu 2026/09/03 17:40:49.00 UTC] Step 0b 冪等閘 OK - news/2026-09-03.md 不存在，正常繼續
+[Thu 2026/09/03 17:40:49.00 UTC] Step 1a replay OK - cp src/gathered_archive/2026-09-03.json（33 items，14/14 來源健康）
+[Thu 2026/09/03 17:40:49.00 UTC] Step 1b 生成日報 OK - news/2026-09-03.md（格式自檢 13、來源狀態表 14 列、忠實度自檢抽 8 條改寫 0 條）
+[Thu 2026/09/03 17:40:49.00 UTC] Step 1c confirm-digest OK - 33 items confirmed
+[Thu 2026/09/03 17:40:49.00 UTC] Wiki ingest OK - 功能/社群/安全政策 三記者派工完成（安全政策無變更）；devpractice 沉澱 5 筆候選；feature-radar 新增 managedMcpServers
+[Thu 2026/09/03 17:40:49.00 UTC] 測試全綠 - web build 放行
+[Thu 2026/09/03 17:40:49.00 UTC] Building web reader... OK 60 wiki 檔、128 digests、6 週報
+[Thu 2026/09/03 17:40:49.00 UTC] Single push done（news+wiki+web，分批 push：STARTED/digest、emitted-cache、wiki-ingest、devpractice、web+frontmatter，因等待背景記者 agent 期間容器風險考量提前保護，非同一次 push；最終狀態與單次push等價，遠端無 race）
+[Thu 2026/09/03 17:40:49.00 UTC] === Pipeline complete (agent, 17:00 UTC shift) ===
