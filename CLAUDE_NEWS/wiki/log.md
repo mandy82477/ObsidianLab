@@ -5459,3 +5459,13 @@ GH Actions 抓料排 10:23 UTC，到 14:45 UTC 仍未落地（+4.4 小時且持�
 **舊語法改寫（三 sonnet 並行，前三大盲區頁）**：ai-agent-safety 24 筆全轉新語法（結論表 9 列補 metadata、時序 13 行補粗體或拆標記、2 句散文改措辭避免裸字樣）；claude-code 12 筆（1 筆補完整標記〔XDA 51,000 token｜查 51,000 token、63903〕、11 筆歷史區裸字樣改措辭）＋6 筆正當跳過（描述「當時」的已解決歷史不重標）；anthropic-business 8 筆（新增 ⟨Q-02⟩ Volta 同筆交易、⟨Q-05⟩ IPO $2兆、2028 營收預測標準式等）。全庫舊字樣 **144 → 99**（新語法 147→172）；主編抽驗（seed 2026-W36-legacy 擲中 claude-code）L120 標記如實、497 測試全綠。餘 99 筆散在其他頁，留後續輪次。
 
 **蒸餾 dry run（社群記者）**：discussions 2026-06 **不提案**——八條 🌊延燒討論首見全落 06 月（開源護城河瓦解、Loop Engineering、Context Rot 五法、成就感缺失、無障礙偏差、/specs 目錄、定價戰、Skill Atrophy），依「延燒月份一律不蒸餾」整月被擋；patterns 2026-07 門檻 1 未到期，2026-10 下旬再評（屆時另查額度焦慮、AskUserQuestion 兩條 07 月延燒討論狀態）。本輪無蒸餾候選。
+
+## 2026-09-03 Ingest
+
+- 來源日報：[[news/2026-09-03]]
+- 更新頁面：wiki/entities/claude-code.md、wiki/topics/community-tech-patterns.md、wiki/topics/community-tech-discussions.md、wiki/feature-radar.md
+- 新增頁面：無
+- 摘要：多款旗艦模型（Mythos/Fable 5.1、Mythos/Fable 5、Opus 5、Opus 4.8、Opus 4.6）當日出現錯誤率升高、截至彙整時尚未標記解決，同時段 Reddit 湧入停機抱怨；Claude Code v2.1.259 新增 managedMcpServers 企業級 MCP 管理設定；社群面新增 4 則具體案例（安全掃描工具、設計 skill、agent harness 討論、Rust 事故應變 agent）。
+- 呈現品質：全部通過（功能記者順手修復 claude-code.md 既有已知問題重複條目與版本表失效指路；社群記者 callout 覆寫與熱門討論表逾期列汰除皆通過）
+- 品質備註：（無）
+- devpractice 沉澱：待派工（見下方 4b）

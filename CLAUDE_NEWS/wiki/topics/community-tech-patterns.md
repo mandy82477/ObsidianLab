@@ -29,11 +29,12 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 **領域：** 🌐 社群
 **開始日期：** 2026-04-25
 **最後更新：** 2026-09-03
-**最後新聞更新：** 2026-09-02
+**最後新聞更新：** 2026-09-03
 
-> **最新工作流模式**（2026-09-02）
-> - **存量盤點雙響再破紀錄**：thedotmack/claude-mem（9.3 萬星，跨 7 種以上 harness 的 AI 壓縮持久記憶）與 addyosmani/agent-skills（9.2 萬星，Addy Osmani 具名生產級技能集合）本庫首次收錄。
-> - **dev.to 四連發**：記憶實測、殭屍 subagent 自動偵測、發展「爆炸半徑」風險分區框架（承接 08-30 遞迴刪檔教訓）、多平台發布 Skill，皆屬第一手實作／框架分享。
+> **最新工作流模式**（2026-09-03）
+> - **Snyk 存量盤點首次收錄**：snyk/agent-scan（3,002 星，知名資安公司推出的 AI agent／MCP／agent skills 安全掃描工具）。
+> - **meta-harness 趨勢第五例**：Kit（Show HN）自「省 context」實驗發展成同時支援 ACP／A2A／subagent orchestrator 的單一執行檔，作者已用它取代日常的 Claude Code／Codex／OpenCode。
+> - 另收錄 superdesigndev/superdesign-skill（501 星，多 agent 通用設計 skill）與 dev.to `/journal` skill 包裝為 Notion 摘要卡片 plugin。
 
 ---
 
@@ -163,6 +164,41 @@ Claude Code 的三種多 agent 機制，可對應到 Anthropic《Building Effect
 ## 技術彙整
 
 ### 2026-09
+
+#### snyk/agent-scan：Snyk 推出的 AI agent／MCP 伺服器／agent skills 安全掃描工具（2026-09-03）
+
+- **主線：** —
+- **核心模式：** 知名資安公司 Snyk 推出的安全掃描工具，掃描對象涵蓋 AI agent、MCP 伺服器與 agent skills 三種新興攻擊面；GitHub Search 累積 3,002 星
+- **與既有模式的關係：** 補上本頁「安全架構」類別一個具名資安公司的產品化案例——既有安全架構模式多為社群個人專案（見上方模式概覽表），本則是主流資安廠商將既有漏洞掃描能力延伸至 agent／MCP／skills 三種攻擊面的官方產品
+- **可信度註記：** 星數（3,002）達收錄高門檻，僅取得 GitHub Search 星數，無 forks／issues／近期 commit 佐證可查，未另行查證；惟作者為知名資安公司 Snyk（既有商業信譽與產品線），依作者信譽判斷收錄；屬本庫首次收錄的既有 repo（2025-04-07 出生、本庫今日首次收錄，累積時間跨度近 1.5 年）
+- **來源：** GitHub Search（3,002★，存量盤點｜2025-04-07 出生、本庫今日首次收錄）；[GitHub](https://github.com/snyk/agent-scan)
+- **成熟度：** ⚡ 活躍（知名資安公司產品化，惟本庫首次收錄尚無社群採用回饋數據）
+
+#### superdesigndev/superdesign-skill：讓 AI 產出介面擺脫「AI slop」風格的多 agent 通用設計 skill（2026-09-03）
+
+- **主線：** —
+- **核心模式：** 供 Claude Code、Cursor 等多款 coding agent 使用的設計 skill，訴求讓 AI 產出的介面擺脫「AI slop」風格、變得可直接出貨；透過 `npx skills add superdesigndev/superdesign-skill` 安裝，Powered by superdesign.dev；GitHub Search 累積 501 星
+- **與既有模式的關係：** 補上本頁「Skills 設計」類別一個聚焦**視覺輸出品質**的案例——既有 Skills 設計模式多聚焦流程／知識封裝（書籍／流程 skill 化、Sx 2.0 分享管道），本則鎖定 AI 產出介面的美學品質問題，由既有產品 superdesign.dev 延伸推出的 skill 版本
+- **可信度註記：** 星數（501）達收錄中門檻，僅取得 GitHub Search 星數，無 forks／issues／近期 commit 佐證可查，未另行查證；依內容具體程度（安裝指令明確、有既有品牌背書）判斷收錄
+- **來源：** GitHub Search（501★，達收錄門檻）；[GitHub](https://github.com/superdesigndev/superdesign-skill)
+- **成熟度：** ⏳ 新興（今日首見，尚無社群採用回饋或量化效果數據）
+
+#### Show HN: Kit——「省 context」實驗發展成支援終端機／ACP／A2A／subagent orchestrator 的單一執行檔（2026-09-03）
+
+- **主線：** —
+- **核心模式：** 作者原本測試「headless agent 能多省 context」的實驗，發展成同時支援終端機、Agent Client Protocol（ACP）伺服器、A2A 端點與 subagent orchestrator 的單一靜態執行檔，已取代作者原本使用的 Claude Code、Codex、OpenCode 成為日常主力工具；特色包括 skills／plugins／MCP 伺服器動態 reload（免 `/reload-plugins` 等指令）、自訂語言 Runlet 最佳化 tool call 組合
+- **與既有模式的關係：** 屬本頁已記錄多輪的「meta-harness／跨代理 orchestration」趨勢（如 08-27 opencodex／metaharness／claw-orchestrator、09-02 Abilityai/trinity 等）第五個具體案例，差異在於以「省 context」實驗為出發點、同時支援多種協定端點（ACP、A2A），並自創 DSL（Runlet）取代單純 orchestrator 邏輯
+- **來源：** 「Show HN: Kit. Claude Code but Concise」— Hacker News（score 12，source_count=2，達收錄門檻「其他」欄）；[GitHub](https://github.com/speakeasy-api/kit)
+- **成熟度：** ⏳ 新興（作者本人已日常主力使用取代 Claude Code／Codex／OpenCode，惟尚無其他使用者回饋佐證）
+
+#### dev.to：把自製 `/journal` skill 包裝成可安裝 plugin，產生 Notion session 摘要卡片（2026-09-03）
+
+- **主線：** —
+- **核心模式：** 作者將自製的 `/journal` skill 包裝成任何人可安裝的 Claude Code plugin，可為每個主題產生一則依季節上色、附星期圖示的摘要卡片，每次執行呼叫 3 次 Notion API
+- **與既有模式的關係：** 補上本頁「記憶與知識管理」類別一個**對外分享成品**的案例——既有方案（如 ltm、OzBrain 等）多聚焦記憶系統本身的設計，本則是把個人已驗證的 session 摘要 skill 包裝為可安裝 plugin、對接外部知識庫（Notion）供他人直接使用，屬「skill → 可分享 plugin」的產品化路徑
+- **可信度註記：** dev.to 條目以內容本身判斷收錄，不看讚數（讚數在 dev.to 不代表品質）；單一作者第一手實作，附具體技術細節（3 次 Notion API 呼叫／依季節上色卡片），無跨平台佐證
+- **來源：** 「Claude Code journal plugin: Notion session summaries at a glance」— dev.to（8 讚）；[原文](https://dev.to/cseeman/claude-code-journal-plugin-notion-session-summaries-at-a-glance-940)
+- **成熟度：** ⏳ 新興（今日首見，單一工具，尚無社群採用回饋數據）
 
 #### thedotmack/claude-mem：跨 harness 持久記憶，擷取 session 過程並用 AI 壓縮，注入後續 session 作為上下文（2026-09-02）
 

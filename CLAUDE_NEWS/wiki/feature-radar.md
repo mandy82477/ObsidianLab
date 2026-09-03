@@ -20,9 +20,9 @@
 
 ## ⚠️ 升版風險
 
-**最新版本：** v2.1.258（2026-09-01）——修正 macOS 12［Monterey］啟動失敗（v2.1.255 引入的迴歸），以及 remote／排程 session 因「使用者訊息不得為空」而失敗的問題；純 bug fix。
+**最新版本：** v2.1.259（2026-09-02）——新增 `managedMcpServers` 管理設定，組織可統一為所有使用者提供 HTTP/SSE MCP 伺服器（設定格式比照 `.mcp.json`）；非 breaking change。
 
-往前有具體異動記錄的版本（**皆非 breaking change**）：v2.1.251（08-28，新增 `PreModelSwitch`／`PostModelSwitch` hook 事件，可攔截、確認或標註模型切換；`SessionStart` resume hook 回傳 session 新鮮度與估計流失的內容量）；v2.1.250（08-28，僅錯誤修復與穩定性改善，release note 無具體項目）；v2.1.247（08-26，新增 `SendFeedback` 工具，session 出錯時 Claude 可草擬回報供使用者於 `/feedback` 檢視後送出，可用 `feedbackDisabled` 關閉）；v2.1.246（08-26，新增啟動警告：Bash 允許規則在子指令前使用萬用字元［如 `Bash(git * main)`］時，也會意外比對插入在子指令前的選項參數）；v2.1.245（08-25，修復搭載 glibc 2.44 的 Linux 發行版［Arch Linux、CachyOS、Fedora Rawhide］啟動當機）；v2.1.241（08-23，release notes 僅載「Bug fixes and reliability improvements」）；v2.1.239（08-21，`/cost`／狀態列／`--max-budget-usd` 成本估算計入資料常駐工作區 1.1 倍純美國推理附加費，屬計算口徑調整）；v2.1.238（08-20，新增 `keybindingFlavor` 設定）；v2.1.237（08-20，修復 LLM gateway／自訂 base URL session 的 prompt caching 失效，新增內建「Concise」輸出風格）。v2.1.242–244 與 v2.1.252–257 本庫日報未見報導，不代表未發布。
+往前有具體異動記錄的版本（**皆非 breaking change**）：v2.1.258（09-01，修正 macOS 12［Monterey］啟動失敗［v2.1.255 引入的迴歸］，以及 remote／排程 session 因「使用者訊息不得為空」而失敗的問題；純 bug fix）；v2.1.251（08-28，新增 `PreModelSwitch`／`PostModelSwitch` hook 事件，可攔截、確認或標註模型切換；`SessionStart` resume hook 回傳 session 新鮮度與估計流失的內容量）；v2.1.250（08-28，僅錯誤修復與穩定性改善，release note 無具體項目）；v2.1.247（08-26，新增 `SendFeedback` 工具，session 出錯時 Claude 可草擬回報供使用者於 `/feedback` 檢視後送出，可用 `feedbackDisabled` 關閉）；v2.1.246（08-26，新增啟動警告：Bash 允許規則在子指令前使用萬用字元［如 `Bash(git * main)`］時，也會意外比對插入在子指令前的選項參數）；v2.1.245（08-25，修復搭載 glibc 2.44 的 Linux 發行版［Arch Linux、CachyOS、Fedora Rawhide］啟動當機）；v2.1.241（08-23，release notes 僅載「Bug fixes and reliability improvements」）；v2.1.239（08-21，`/cost`／狀態列／`--max-budget-usd` 成本估算計入資料常駐工作區 1.1 倍純美國推理附加費，屬計算口徑調整）；v2.1.238（08-20，新增 `keybindingFlavor` 設定）；v2.1.237（08-20，修復 LLM gateway／自訂 base URL session 的 prompt caching 失效，新增內建「Concise」輸出風格）。v2.1.242–244 與 v2.1.252–257 本庫日報未見報導，不代表未發布。
 
 最後一次重大 breaking change 仍為 v2.1.212／v2.1.215（見下表）；另有 8/14 已對 Pro/Max/Team 生效的 auto 模式預設化。⚠️ **另注意**：anthropic-sdk-python v1.0.0（2026-08-20 發布）含獨立於 CLI 之外的 breaking change（client 升級至 httpx2，官方未提供遷移時程），影響以該 SDK 建置的整合程式碼而非 CLI 升版本身。兩者詳見 [[entities/claude-code]] 現況。
 
@@ -75,6 +75,7 @@
 
 | 功能 | 發布日期 | 熱度 | 試用價值 | 狀態 |
 |------|----------|------|----------|------|
+| **managedMcpServers 管理設定**（v2.1.259，組織可統一佈署 HTTP/SSE MCP 伺服器） | 2026-09-02 | 🔥🔥 | ⏳ 觀望 | 正式發布 |
 | **Claude Fable 5.1**（新一代旗艦，取代 5.0；同步發布信任機構限定 Mythos 5.1） | 2026-09-01 | 🔥🔥🔥🔥🔥 | ⚡ 有條件推薦 | 正式發布 |
 | **使用者個人資料 API**（Beta，TS sdk-v0.123.0／Python v1.3.0，含 `external_user_onboarding` 欄位） | 2026-09-01 | 🔥🔥 | ⏳ 觀望 | Beta |
 | **PreModelSwitch／PostModelSwitch Hook 事件**（v2.1.251，可攔截/確認/標註模型切換，SessionStart resume 回傳新鮮度） | 2026-08-28 | 🔥🔥🔥 | ⚡ 有條件推薦 | 正式發布 |
@@ -169,6 +170,26 @@
 ---
 
 ## 🆕 最新功能（2026-09）
+
+### managedMcpServers 管理設定
+**發布：** 2026-09-02（v2.1.259） | **熱度：** 🔥🔥 | **試用價值：** ⏳ 觀望 | **狀態：** 正式發布
+
+**是什麼：** 組織可透過 managed settings 統一為所有使用者佈署 HTTP/SSE MCP 伺服器，設定格式比照 `.mcp.json`。
+
+**為何熱：** 官方 release notes 首次揭露，尚無社群討論或工具跟進；解決企業層級 MCP 伺服器需逐一手動設定的痛點。
+
+**現在要試嗎：** 適合需為全組織統一佈署 MCP 伺服器的企業管理員；一般個人使用者無感，仍以既有 `.mcp.json` 為主。
+
+**快速上手：**
+```json
+{
+  "mcpServers": {
+    "org-tool": { "type": "sse", "url": "https://mcp.example.com/sse" }
+  }
+}
+```
+
+**注意事項：** 官方 changelog 於「指定執行指令的項目」處遭截斷，涉及本機命令執行的 MCP 伺服器設定細節（是否允許、如何審核）尚未完整取得。
 
 ### Claude Fable 5.1
 **發布：** 2026-09-01 | **熱度：** 🔥🔥🔥🔥🔥 | **試用價值：** ⚡ 有條件推薦 | **狀態：** 正式發布
