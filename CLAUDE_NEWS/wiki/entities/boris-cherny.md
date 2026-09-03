@@ -12,7 +12,7 @@ parent: null
 children: "[]"
 page_role: "root"
 days_since_news_subtree: 30
-inbound_links: 25
+inbound_links: 26
 attribution_count: 5
 attribution_last: "2026-08-04"
 top_source: "google-news"
@@ -32,15 +32,17 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 **最後更新：** 2026-09-03
 **最後新聞更新：** 2026-08-04
 
-> **驗證方法論與 Electron 桌面應用重寫嘗試**（2026-08-03 報導，2026-09-02 查證）：Boris Cherny 在 Y Combinator Startup School 2026 訪談（07-25/26 舉行、07-28 發布）中表示，引導 Claude 完成困難任務的關鍵已從 prompt engineering 轉向「讓 Claude 能沿途驗證自己的工作」。重寫細節已查實：實驗為**用 Claude 將 Electron 版桌面應用改寫為 Swift 原生版**，從一段簡短對話式 prompt 起跑、已連續執行兩週以上，agent 以 **Electron 版與 Swift build 逐像素比對**作為自我驗證機制（[Daring Fireball 2026-08-02](https://daringfireball.net/linked/2026/08/02/cherny-claude-swift)、[barath.ai 紀要](https://www.barath.ai/learnings/boris-cherny-yc-startup-school-2026)，查證日 2026-09-02）。
+> **驗證方法論與 Electron 桌面應用重寫嘗試**（2026-08-03 報導，2026-09-02 查證）：Boris Cherny 在 Y Combinator Startup School 2026 訪談（07-25/26 舉行、07-28 發布）中表示，引導 Claude 完成困難任務的關鍵已從 prompt engineering 轉向「讓 Claude 能沿途驗證自己的工作」。該實驗已查實為**用 Claude 將 Electron 版桌面應用改寫為 Swift 原生版**：從一段簡短對話式 prompt 起跑、連續執行兩週以上，agent 以 **Electron 版與 Swift build 逐像素比對**自我驗證（[Daring Fireball 2026-08-02](https://daringfireball.net/linked/2026/08/02/cherny-claude-swift)、[barath.ai 紀要](https://www.barath.ai/learnings/boris-cherny-yc-startup-school-2026)，查證日 2026-09-02）。
 
 ---
 
 ## 現況
 
-2026-06-28，Boris Cherny 在 howborisusesclaudecode.com 公開個人日常 setup，展示同時開 5 個並行 Claude Code 實例的工作流，並強調「surprisingly vanilla」——無需特殊魔改即可完成。2026-06-24，他承認「AI 寫 100% 程式碼正在變得有問題」，與早先「coding is solved」立場形成對比，顯示其公開立場已出現調整。
+**截至 2026-08-03（本頁記錄的最近一次公開發言）**，Boris Cherny 的論述重心已從 prompt engineering 轉向「讓 Claude 能沿途驗證自己的工作」，並以團隊用 Claude 把 Electron 版桌面應用重寫為 Swift 原生版、以逐像素比對作自我驗證為例（YC Startup School 2026 訪談）。
 
-Boris Cherny 是 Anthropic Claude Code 的創始人與負責人（Head of Claude Code），是 Claude Code 產品方向最主要的公開代言人。他以高頻率的公開聲明、哲學宣言與工程分享，持續引發開發者社群廣泛討論，被視為 Anthropic 技術文化的外部窗口。
+Boris Cherny 是 Anthropic Claude Code 的創始人與負責人（Head of Claude Code），也是產品方向最主要的公開代言人；其高頻率的公開聲明與工程分享長期引發開發者社群討論，被視為 Anthropic 技術文化的外部窗口。
+
+**立場軌跡：** 2026-05-08「coding is solved」→ 06-24 承認「AI 寫 100% 程式碼正在變得有問題」→ 06-28 公開個人 setup（同時開 5 個並行實例，強調「surprisingly vanilla」）→ 07-27 呼籲停止微管理 AI。逐條見下方言論摘要表。
 
 ---
 
@@ -74,7 +76,7 @@ Boris Cherny 是 Anthropic Claude Code 的創始人與負責人（Head of Claude
 
 ### 驗證方法論與 Electron 桌面應用重寫嘗試（2026-08-03）
 
-Boris Cherny 在 Y Combinator Startup School 2026 由 Diana Hu 主持的現場訪談中（影片約 20:30 起）表示，如今引導 Claude 完成困難任務的關鍵，重點已不再是 prompt engineering，而是「如何給 Claude 一個看起來有點太難的任務，然後讓 Claude 有辦法沿途驗證自己的工作」。原話：「Verification 大概是人們最容易做錯的一件事。」他舉一個例子：團隊嘗試讓 Claude 重寫用 Electron 打造的 Claude 桌面應用（並提及已讓它變快）。日報擷取的原文在此例描述中途被截斷（"...We've made it quite fast. Now it" 後未完），重寫採用的具體技術路徑與最終結果未能確認，查證狀態見上方標記。此說法可視為其一貫「Loops 是未來」自主執行哲學的具體化——不是放棄監督，而是把監督重心從逐步下指令轉移到「事後可驗證」的機制設計，可與 [[topics/community-tech-patterns]] 的 agentic 工作流討論對照。
+Boris Cherny 在 Y Combinator Startup School 2026 由 Diana Hu 主持的現場訪談中（影片約 20:30 起）表示，如今引導 Claude 完成困難任務的關鍵，重點已不再是 prompt engineering，而是「如何給 Claude 一個看起來有點太難的任務，然後讓 Claude 有辦法沿途驗證自己的工作」。原話：「Verification 大概是人們最容易做錯的一件事。」他舉的例子是團隊讓 Claude 重寫 Electron 版 Claude 桌面應用（並提及已讓它變快）；日報擷取的原文在此中途被截斷（"...We've made it quite fast. Now it" 後未完），**技術路徑已於 2026-09-02 查實**——改寫為 Swift 原生版、以逐像素比對自我驗證（見頁首）。此說法可視為其一貫「Loops 是未來」自主執行哲學的具體化——不是放棄監督，而是把監督重心從逐步下指令轉移到「事後可驗證」的機制設計，可與 [[topics/community-tech-patterns]] 的 agentic 工作流討論對照。
 
 - 來源：[daringfireball.net，John Gruber，2026-08-02](https://daringfireball.net/linked/2026/08/02/cherny-claude-swift)（轉引自 YC Startup School 2026 現場訪談，Hacker News 收錄，69 分）
 
@@ -214,10 +216,10 @@ Boris Cherny 的公開言論呈現兩種截然不同的社群反應：
 
 ## 歷史記錄
 
-- 2026-08-03：於 YC Startup School 2026 訪談中表示，引導 Claude 完成困難任務的關鍵已從 prompt engineering 轉向「讓 Claude 能沿途驗證自己的工作」（「verification 大概是人們最容易做錯的一件事」），並以團隊嘗試用 Claude 重寫 Electron 版 Claude 桌面應用為例；重寫細節與結果未能確認（查證狀態見上方標記）（daringfireball.net 轉引 John Gruber，Hacker News 69 分，2026-08-02）
+- 2026-08-03：於 YC Startup School 2026 訪談中表示，引導 Claude 完成困難任務的關鍵已從 prompt engineering 轉向「讓 Claude 能沿途驗證自己的工作」（「verification 大概是人們最容易做錯的一件事」），並以團隊嘗試用 Claude 重寫 Electron 版 Claude 桌面應用為例（daringfireball.net 轉引 John Gruber，Hacker News 69 分，2026-08-02）。**後續（2026-09-02）**：重寫細節查實為改寫成 Swift 原生版、以逐像素比對自我驗證
 - 2026-07-27：Business Insider 報導呼籲使用者停止「微管理」（micromanaging）AI，延續其「Loops 是未來」設計哲學；原文正文未能擷取，僅標題可確認核心主張（查證狀態見「呼籲停止微管理」段落標記）（Google News / Business Insider，2026-07-27）
 - 2026-07-25：Boris Cherny 公開表示 Opus 5 是目前最難被提示注入攻破的模型（Simon Willison 部落格轉引 X 貼文，https://simonwillison.net/2026/Jul/25/boris-cherny/#atom-everything）
-- 2026-07-20：Bloomberg 發布影片／報導「Watch The Creator of Claude Code on The Hottest Piece of Software in the World」，標題未具名，佐以 Bloomberg 7/16 特稿與多平台「Creator of Claude Code」慣稱推測極可能為本人（已掃日報至 2026-09-02 無後續；官方頁面未查證，查證狀態見上方標記）（Google News / Bloomberg.com，2026-07-20）
+- 2026-07-20：Bloomberg 發布影片／報導「Watch The Creator of Claude Code on The Hottest Piece of Software in the World」，標題未具名，佐以 Bloomberg 7/16 特稿與多平台「Creator of Claude Code」慣稱推測極可能為本人（Google News / Bloomberg.com，2026-07-20）。**後續（2026-09-03）**：Bloomberg 影片頁面明列受訪者為 Boris Cherny，身分懸置解除
 - 2026-07-17：Startup Fortune 報導其表示現在同時執行數千個 Claude Code agent，呼應 5/13 揭露的夜間數千子代理工作流，（Google News / Startup Fortune，2026-07-17）。**後續（2026-09-03）**：出處查實為 Fortune Brainstorm Tech 2026-06-08 演講，詳見上方「現在同時執行數千個 Claude Code agent」節
 - 2026-07-08：inc.com 報導「Head of Claude Code」談新創公司需具備的 5 種員工原型（Prototyper／Builder／Sweeper／Grower／Maintainer）——**發言人經查證即 Boris Cherny 本人**（原文引述其 X 貼文；[inc.com，2026-07-07](https://www.inc.com/ashley-couto/claude-code-startup-needs-employee-archetypes/91370409)，2026-09-03 查證）；先前「可能為 [[entities/cat-wu]]」的懸置已解除
 - 2026-06-28：在 howborisusesclaudecode.com 公開 13 個日常 Claude Code 使用技巧，涵蓋 5 個並行實例搭配獨立 git checkout、`--teleport` 跨環境切換、iPhone 啟動電腦接力等；強調「surprisingly vanilla」setup（Hacker News，score 5）

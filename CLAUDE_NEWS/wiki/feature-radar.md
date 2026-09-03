@@ -1,10 +1,10 @@
 # 官方功能熱度雷達
 
 追蹤 Anthropic 官方發布的 Claude / Claude Code 功能熱度、試用價值與快速上手方式。
-僅收錄官方 changelog、release note 或官方公告來源；社群工具見 [[topics/community-tech-tools]]。
-每日更新：新增功能、更新熱度、補充社群回饋。
+僅收錄官方 changelog、release note 或官方公告；社群工具見 [[topics/community-tech-tools]]。
+每日更新新增功能、熱度與社群回饋。
 
-**最後更新：** 2026-09-02
+**最後更新：** 2026-09-03
 
 ---
 
@@ -14,21 +14,32 @@
 - **Claude Code Auto 模式已預設化**（熱度 🔥🔥🔥🔥🔥）：8/14 起正式生效，成為 Pro/Max/Team 方案預設權限模式並取代手動確認流程，分類器 token 用量免收費；**依賴手動確認做安全把關者請立即確認自身設定是否要主動關閉**——媒體已發 PSA 提醒
 - **Claude Opus 5**（熱度 🔥🔥🔥🔥🔥）：2026-07-25 正式發布，編碼與知識工作評測逼近 Fable 5、官方稱定價為其一半，現為 Claude Max 新預設模型、Claude Pro 最強模型，適合日常 agentic 使用與知識工作任務
 
-> 09-02 換上剛發布的 Claude Fable 5.1；原第三名「跨 session 訊息互通」討論熱度已降溫超過一週，讓出名額。08-27 的 SendFeedback、08-29 的 SDK 命名空間轉正、09-01 的使用者個人資料 API 熱度都還不到本欄門檻；Claude Opus 5 雖已發布一段時間，仍持續有分量地被提及，故繼續留在推薦內。
+> 09-02 換上剛發布的 Claude Fable 5.1，原第三名「跨 session 訊息互通」熱度降溫逾一週、讓出名額。SendFeedback（08-27）、SDK 命名空間轉正（08-29）、使用者個人資料 API（09-01）熱度均未達本欄門檻；Claude Opus 5 發布已有一段時間，但仍持續被有分量地提及，故留任。
 
 ---
 
 ## ⚠️ 升版風險
 
-**最新版本：** v2.1.258（2026-09-01，修正 macOS 12［Monterey］啟動失敗問題［v2.1.255 引入的迴歸］，並修正 remote／排程 session 因「使用者訊息不得為空」而失敗的問題；純 bug fix，非 breaking change；中間版本 v2.1.252–257 本庫日報未見報導，不代表未發布）。再上一筆有具體異動記錄的版本為 v2.1.251（2026-08-28，新增 `PreModelSwitch`／`PostModelSwitch` hook 事件，可攔截、確認或標註模型切換；`SessionStart` resume hook 現在回傳 session 新鮮度與估計流失的內容量；非 breaking change）。上一版 v2.1.250（同日，僅錯誤修復與穩定性改善，release note 無具體異動項目，非 breaking change）。上一版 v2.1.247（2026-08-26 發布，新增 `SendFeedback` 工具：session 出錯時 Claude 可草擬回報供使用者於 `/feedback` 檢視後送出，可用 `feedbackDisabled` 關閉；屬新增功能，非 breaking change）。上一版 v2.1.246（2026-08-26，新增啟動警告：Bash 允許規則在子指令前使用萬用字元［如 `Bash(git * main)`］時，此寫法也會意外比對插入在子指令前的選項參數；屬安全提示而非新指令/旗標，純提醒非 breaking change）。上一版 v2.1.245（2026-08-25，修復搭載 glibc 2.44 的 Linux 發行版［如 Arch Linux、CachyOS、Fedora Rawhide］啟動當機問題，純 bug fix，非 breaking change）。再上一筆有具體異動記錄的版本為 v2.1.241（2026-08-23，release notes 僅載明「Bug fixes and reliability improvements」，無具體異動項目，純可靠性修正，非 breaking change；v2.1.242–244 無日報報導，不代表未發布）。再前一版 v2.1.239（2026-08-21，`/cost`／狀態列／`--max-budget-usd` 成本估算計入資料常駐工作區 1.1 倍純美國推理附加費；屬既有成本顯示機制的計算口徑調整，非 breaking change）。再前一版 v2.1.238（2026-08-20）新增 `keybindingFlavor` 設定；再前一版 v2.1.237（同日）修復 LLM gateway／自訂 base URL session 的 prompt caching 失效問題，並新增內建「Concise」輸出風格。最後一次重大 breaking change 仍為 v2.1.212／v2.1.215（見下表）；另有一項於 8/14 已生效的 breaking change（auto 模式預設化，已對 Pro/Max/Team 上線，詳見 [[entities/claude-code]] 現況）。⚠️ **另注意**：anthropic-sdk-python 同日發布 v1.0.0，含獨立於 Claude Code CLI 之外的 breaking change（client 升級至 httpx2，官方未提供遷移時程），影響對象為以該 SDK 建置的整合程式碼，非 CLI 升版本身，詳見 [[entities/claude-code]] 現況。
+**最新版本：** v2.1.258（2026-09-01）——修正 macOS 12［Monterey］啟動失敗（v2.1.255 引入的迴歸），以及 remote／排程 session 因「使用者訊息不得為空」而失敗的問題；純 bug fix。
+
+往前有具體異動記錄的版本（**皆非 breaking change**）：v2.1.251（08-28，新增 `PreModelSwitch`／`PostModelSwitch` hook 事件，可攔截、確認或標註模型切換；`SessionStart` resume hook 回傳 session 新鮮度與估計流失的內容量）；v2.1.250（08-28，僅錯誤修復與穩定性改善，release note 無具體項目）；v2.1.247（08-26，新增 `SendFeedback` 工具，session 出錯時 Claude 可草擬回報供使用者於 `/feedback` 檢視後送出，可用 `feedbackDisabled` 關閉）；v2.1.246（08-26，新增啟動警告：Bash 允許規則在子指令前使用萬用字元［如 `Bash(git * main)`］時，也會意外比對插入在子指令前的選項參數）；v2.1.245（08-25，修復搭載 glibc 2.44 的 Linux 發行版［Arch Linux、CachyOS、Fedora Rawhide］啟動當機）；v2.1.241（08-23，release notes 僅載「Bug fixes and reliability improvements」）；v2.1.239（08-21，`/cost`／狀態列／`--max-budget-usd` 成本估算計入資料常駐工作區 1.1 倍純美國推理附加費，屬計算口徑調整）；v2.1.238（08-20，新增 `keybindingFlavor` 設定）；v2.1.237（08-20，修復 LLM gateway／自訂 base URL session 的 prompt caching 失效，新增內建「Concise」輸出風格）。v2.1.242–244 與 v2.1.252–257 本庫日報未見報導，不代表未發布。
+
+最後一次重大 breaking change 仍為 v2.1.212／v2.1.215（見下表）；另有 8/14 已對 Pro/Max/Team 生效的 auto 模式預設化。⚠️ **另注意**：anthropic-sdk-python v1.0.0（2026-08-20 發布）含獨立於 CLI 之外的 breaking change（client 升級至 httpx2，官方未提供遷移時程），影響以該 SDK 建置的整合程式碼而非 CLI 升版本身。兩者詳見 [[entities/claude-code]] 現況。
 
 | 風險 | 嚴重度 | 說明 |
 |------|--------|------|
-| Cowork／穩定性已知問題群（VM bundle 效能劣化 + 記憶體洩漏 + 檔案靜默截斷） | 🔴 | Cowork 功能會建立高達 10GB 的 VM bundle，導致啟動變慢、UI 延遲、效能隨時間持續劣化（#22543，76 留言、259 個讚）；另有進程記憶體洩漏可增長至 120GB+ 遭 OOM killed（#4953，97 留言、75 個讚，2026-08-19 互動數更新）；Edit/Write 工具另因緩衝區容量上限（byte-conservation buffer cap）靜默截斷檔案，任何檔案大小皆可重現（#53940，累計 16 個讚同反應），屬資料完整性風險，非邊緣情況 |
-| `/fork` 語意變更（⚠️ Breaking Change，無過渡期） | 🔴 | v2.1.212 起 `/fork` 不再於同一 session 內啟動子 agent，改為複製對話進新背景 session；依賴舊行為撰寫的 skill/hook/巨集需立即改用 `/subtask`，官方 release note 未附完整遷移指南 |
-| `/verify` `/code-review` 不再自動觸發（⚠️ Breaking Change，無過渡期） | 🔴 | v2.1.215 起 Claude 不再於背景自動執行 `/verify` 與 `/code-review`，須使用者手動呼叫指令；依賴自動驗證/審查隱性保護的既有工作流（CI、hook、慣例流程）升級後會失去這層保護，官方未附遷移指南 |
+| Cowork／穩定性已知問題群（VM bundle 效能劣化 + 記憶體洩漏 + 檔案靜默截斷） | 🔴 | 三個未修復問題疊加，其中 Edit/Write 靜默截斷屬資料完整性風險、非邊緣情況（見下方風險細節） |
+| `/fork` 語意變更（⚠️ Breaking Change，無過渡期） | 🔴 | v2.1.212 起 `/fork` 改為複製對話進新背景 session，不再於同一 session 內啟動子 agent；依賴舊行為者需改用 `/subtask` |
+| `/verify` `/code-review` 不再自動觸發（⚠️ Breaking Change，無過渡期） | 🔴 | v2.1.215 起須使用者手動呼叫；依賴自動驗證／審查作隱性保護的工作流升級後會失去這層保護 |
 
-**建議：** 升級前確認是否有依賴 `/fork` 舊行為（同 session 子 agent 委派）撰寫的 skill/hook/巨集，若有需立即改寫為 `/subtask`；同時確認既有流程是否依賴 Claude 自動觸發 `/verify` `/code-review`，若有須在 CI 或 hook 中新增顯式呼叫；**重度依賴 Cowork 的使用者近期應避免處理大型檔案或大量寫入操作**，Edit/Write 靜默截斷問題目前無官方修復時程。Fable 5 Defense in Depth 誤判問題持續存在，詳見 [[entities/fable-5]]，非版本升級可解決，本表暫不重複列出。
+**風險細節**
+
+- **Cowork VM bundle**：建立高達 10GB 的 bundle，導致啟動變慢、UI 延遲、效能隨時間持續劣化（#22543，76 留言、259 個讚）
+- **記憶體洩漏**：進程可增長至 120GB+ 遭 OOM killed（#4953，97 留言、75 個讚，2026-08-19 互動數更新）
+- **Edit/Write 靜默截斷**：緩衝區容量上限（byte-conservation buffer cap）所致，任何檔案大小皆可重現（#53940，累計 16 個讚同反應）
+- **`/fork`、`/verify`／`/code-review` 兩項 breaking change**：官方 release note 均未附完整遷移指南
+
+**建議：** 升級前確認有無依賴 `/fork` 舊行為（同 session 子 agent 委派）的 skill/hook/巨集，有則改寫為 `/subtask`；確認既有流程是否依賴 Claude 自動觸發 `/verify` `/code-review`，有則在 CI 或 hook 中新增顯式呼叫；**重度依賴 Cowork 者近期應避免處理大型檔案或大量寫入**，靜默截斷問題無官方修復時程。Fable 5 Defense in Depth 誤判問題非升版可解，見 [[entities/fable-5]]，本表不重複列出。
 
 ---
 
@@ -38,8 +49,8 @@
 |--------|------|--------|------------|
 | **2026-09-14** | Claude Code 週配額規則換軌：標準週配額**永久 +25%**，同時取消目前暫行的 **+50%** 加成（官方 2026-08-29 公告） | 相對「目前」水位淨減約 **17%**；適用 Pro／Max／Team 與座位制 Enterprise | 目前吃滿週配額的人：9/14 前重估用量，或把重活挪到 5 小時窗（該窗不受此變動影響） |
 
-> 2026-08-31 的「+50% 促銷結束」已由上列 09-14 換軌公告取代——該促銷不是單純到期，是被永久 +25% 接手，但接手後的水位低於現況。官方促銷頁面已於 09-02 更新到期日為 **2026-09-13**（原載 08-31），與上列 09-14 換軌時間點恰好銜接、互相印證。
-> Fable 5 免費期限（原訂 7/19）已到期並移出本表；今日報導方向趨於一致指向 Pro 訂閱免費存取已結束、Max/Team 動向未明，詳見 [[entities/pricing]]「當前生效的計費規則」與時序。
+> 2026-08-31 的「+50% 促銷結束」已由上列 09-14 換軌取代——該促銷不是單純到期，而是被永久 +25% 接手，但接手後水位低於現況。官方促銷頁 09-02 更新到期日為 **2026-09-13**（原載 08-31），與 09-14 換軌恰好銜接、互相印證。
+> Fable 5 免費期限（原訂 7/19）已到期並移出本表；報導一致指向 Pro 訂閱免費存取已結束，Max/Team 動向未明，詳見 [[entities/pricing]]「當前生效的計費規則」與時序。
 
 ---
 
@@ -77,11 +88,11 @@
 | **Managed Agents Web Search 設定**（anthropic-sdk-python v0.125.0 新增 SDK 層設定支援） | 2026-08-19 | 🔥 | ⏳ 觀望 | 正式發布（SDK 層）|
 | **spellcheck 輸入框拼字檢查**（v2.1.235，需本機 aspell／hunspell／ispell） | 2026-08-18 | 🔥 | ⚡ 有條件推薦 | 正式發布 |
 | **自訂專案 Transcript 目錄短名稱**（`CLAUDE_CODE_PROJECT_DIR_NAME` 環境變數，v2.1.234） | 2026-08-17 | 🔥 | ⚡ 有條件推薦 | 正式發布 |
-| **Claude Code v2.1.233**（`--worktree`／`claude agents` 視圖新增 GitLab MR URL 支援，MR 顯示為 `!N`；另有 opt-in `forward_user_identity` apps gateway 設定） | 2026-08-14 | 🔥🔥 | ⚡ 有條件推薦 | 正式發布 |
-| **Claude Code Auto 模式預設化**（⚠️ Breaking change：8/14 起 auto 成為 Pro／Max／Team 預設權限模式，取代手動確認流程；即日起免收分類器 token 費；Enterprise 與 API／雲端平台仍選用制） | 2026-08-14 生效（08-07 公告，08-10 官方部落格確認） | 🔥🔥🔥🔥 | ⚡ 有條件推薦 | 正式發布 |
-| **Claude Code 跨 session 訊息互通**（需 v2.1.224+、macOS／Linux，`ListAgents` 探索可連線 session、`SendMessage` 指定名稱傳訊，亦適用 subagent 與 team 隊友） | 2026-08-08 | 🔥🔥🔥🔥 | ⚡ 有條件推薦 | 正式發布 |
-| **Claude Code v2.1.232**（Subagent forking 預設開啟，`subagent_type: "fork"` 現繼承完整對話與 prompt cache；互動 session 非 teammate agent 派工行為亦調整，原文截斷） | 2026-08-13 | 🔥🔥 | ⚡ 有條件推薦 | 正式發布 |
-| **Claude Code v2.1.224**（新增 `claude self-hosted-runner`，可將自有機器或容器變成 Claude Code web／mobile／desktop session 執行環境，Team／Enterprise 適用） | 2026-08-07 | 🔥🔥 | ⚡ 有條件推薦 | 正式發布 |
+| **Claude Code v2.1.233**（`--worktree`／`claude agents` 視圖支援 GitLab MR URL，MR 顯示為 `!N`；另有 opt-in `forward_user_identity` 設定） | 2026-08-14 | 🔥🔥 | ⚡ 有條件推薦 | 正式發布 |
+| **Claude Code Auto 模式預設化**（⚠️ Breaking change：8/14 起 auto 成為 Pro／Max／Team 預設權限模式；免收分類器 token 費；Enterprise 與雲端平台仍選用制） | 2026-08-14 生效（08-07 公告，08-10 官方部落格確認） | 🔥🔥🔥🔥 | ⚡ 有條件推薦 | 正式發布 |
+| **Claude Code 跨 session 訊息互通**（需 v2.1.224+、macOS／Linux；`ListAgents` 探索可連線 session、`SendMessage` 指定名稱傳訊，亦適用 subagent 與隊友） | 2026-08-08 | 🔥🔥🔥🔥 | ⚡ 有條件推薦 | 正式發布 |
+| **Claude Code v2.1.232**（Subagent forking 預設開啟，`subagent_type: "fork"` 繼承完整對話與 prompt cache；派工行為亦調整，原文截斷） | 2026-08-13 | 🔥🔥 | ⚡ 有條件推薦 | 正式發布 |
+| **Claude Code v2.1.224**（新增 `claude self-hosted-runner`，可把自有機器或容器變成 web／mobile／desktop session 執行環境，Team／Enterprise 適用） | 2026-08-07 | 🔥🔥 | ⚡ 有條件推薦 | 正式發布 |
 | **API Inference Hooks**（Enterprise 組織 beta，claude.ai／Cowork／Claude Code 上受管治 prompt 可導向企業自有 AI 安全伺服器） | 2026-08-05 | 🔥 | ⏳ 觀望 | Beta（Enterprise） |
 | **Claude Code v2.1.222**（安全修復：worktree 隔離 session 及其 subagent 可對主 checkout 執行破壞性 git 指令的漏洞，隔離範圍擴及檔案編輯與 Bash 執行） | 2026-08-04 | 🔥🔥 | ✅ 建議升級 | 正式發布（安全修復） |
 | **Claude Code v2.1.221**（VSCode 新增 Focus view：chat-menu 切換選項，將工具活動摺疊為可展開的每輪摘要並附即時執行指示，`Ctrl+Alt+F` 開關） | 2026-08-04 | 🔥 | ⏳ 觀望 | 正式發布 |
@@ -90,7 +101,7 @@
 | **API 新增 Stop Reason `model_continue`**（anthropic-sdk-python v0.119.0／anthropic-sdk-typescript sdk-v0.114.0） | 2026-07-23 | 🔥 | ⏳ 觀望 | 正式發布（SDK 層） |
 | **Claude Code Desktop iOS Simulator**（Mac app 內建 iOS Simulator 面板，即時建置／執行／除錯 iPhone App，需已安裝 Xcode iOS 平台） | 2026-07-22（08-10 官方文件查證確認） | 🔥 | ⚡ 有條件推薦 | 公開測試（Pro／Max／Team） |
 | **Claude Code v2.1.218**（`/code-review` 改為背景 subagent 執行，審查工作不再佔用對話內容；同版新增螢幕報讀軟體相關無障礙改善） | 2026-07-22 | 🔥 | ✅ 推薦 | 正式發布 |
-| **Claude Code v2.1.217**（Prompt input 新增表情符號 shortcode 自動完成，輸入 `:heart:` 插入 ❤️，可用 `emojiCompletionEnabled` 設定關閉；同版新增警告訊息，細節未知） | 2026-07-21 | 🔥 | ⏳ 觀察中 | 正式發布 |
+| **Claude Code v2.1.217**（Prompt input 表情符號 shortcode 自動完成，`:heart:` 插入 ❤️，可用 `emojiCompletionEnabled` 關閉；同版新增警告訊息，細節未知） | 2026-07-21 | 🔥 | ⏳ 觀察中 | 正式發布 |
 | **Claude Code v2.1.216**（新增 `sandbox.filesystem.disabled` 設定，可在維持網路出口控管下跳過檔案系統隔離；同版修復長會話訊息正規化速度變慢問題） | 2026-07-20 | 🔥 | ⚡ 有條件推薦 | 正式發布 |
 | **Claude Code v2.1.215**（Claude 不再自動執行 `/verify` 與 `/code-review` 兩項技能，須手動呼叫指令觸發；⚠️ Breaking change 無過渡期） | 2026-07-19 | 🔥 | ⚡ 有條件推薦 | 正式發布 |
 | **Claude Code v2.1.212**（`/fork` 改為背景 session 化，原同 session 子 agent 功能改名 `/subtask`；⚠️ Breaking change 無過渡期） | 2026-07-17 | 🔥 | ⚡ 有條件推薦 | 正式發布 |
@@ -164,9 +175,9 @@
 
 **是什麼：** Anthropic 新一代旗艦模型，GA 取代 Fable 5.0；同步發布信任機構限定版 Mythos 5.1（同一模型、不同防護層級，護欄專為資安與生命科學設計），新增反萃取（anti-distillation）機制。
 
-**為何熱：** 官方公告 HN 討論達 1,338 分，屬近期互動度最高的官方公告之一；Terminal-Bench-Science 得分 52.6%、快取讀取費率降至基礎輸入價 0.025 倍（原 0.1 倍，約 75% 降幅）帶動十餘家媒體同日跟進。
+**為何熱：** 官方公告 HN 1,338 分，屬近期互動度最高的官方公告之一；Terminal-Bench-Science 52.6%、快取讀取費率降至基礎輸入價 0.025 倍（原 0.1 倍，約 75% 降幅），帶動十餘家媒體同日跟進。
 
-**現在要試嗎：** 現有付費方案用戶可直接使用（GA，官方說明頁 09-02 確認方案內含範圍不變）；長對話／大量快取重複的 session 受快取降價影響最大。Mythos 5.1 僅限信任機構，一般開發者無法使用，公開陣容資安首選仍是 Fable 5.1。
+**現在要試嗎：** 現有付費方案可直接使用（GA，官方說明頁 09-02 確認方案內含範圍不變）；長對話／大量快取重複的 session 受快取降價影響最大。Mythos 5.1 僅限信任機構，公開陣容資安首選仍是 Fable 5.1。
 
 **快速上手：** 官方公告未列出確切 `--model` id 字串，暫不提供指令範例以免誤導。
 
@@ -175,11 +186,11 @@
 ### 使用者個人資料 API（User Profiles，Beta）
 **發布：** 2026-09-01（anthropic-sdk-typescript sdk-v0.123.0、anthropic-sdk-python v1.3.0） | **熱度：** 🔥🔥 | **試用價值：** ⏳ 觀望 | **狀態：** Beta
 
-**是什麼：** 官方 TypeScript／Python 兩個 SDK 同日同步新增 beta 版使用者個人資料（user profiles）API 支援，含 `external_user_onboarding` 等欄位。
+**是什麼：** TypeScript／Python 兩個官方 SDK 同日新增 beta 版使用者個人資料（user profiles）API 支援，含 `external_user_onboarding` 等欄位。
 
-**為何熱：** 兩個 SDK 同日同步發布，屬全新 beta API 平面；官方 release notes 未附使用文件或呼叫範例，用途待官方文件補充。
+**為何熱：** 兩個 SDK 同日發布，屬全新 beta API 平面；官方 release notes 未附文件或呼叫範例，用途待補。
 
-**現在要試嗎：** 僅適合想搶先摸索 API 形狀、可接受介面隨時變動的開發者；正式流程整合者應等官方文件與非 beta 版本發布。
+**現在要試嗎：** 僅適合想搶先摸索 API 形狀、可接受介面隨時變動者；正式流程整合應等官方文件與非 beta 版本。
 
 **快速上手：**
 ```
@@ -197,11 +208,11 @@ npm install @anthropic-ai/sdk@0.123.0
 ### PreModelSwitch／PostModelSwitch Hook 事件
 **發布：** 2026-08-28（v2.1.251） | **熱度：** 🔥🔥🔥 | **試用價值：** ⚡ 有條件推薦 | **狀態：** 正式發布
 
-**是什麼：** Claude Code 新增 `PreModelSwitch`／`PostModelSwitch` 兩個 hook 事件，可在模型切換發生前後攔截、確認或標註該次切換；同時 `SessionStart` 的 resume hook 現在會回傳 session 新鮮度（freshness）與估計流失的內容量，讓外部工具能判斷 resume 的 session 是否完整。
+**是什麼：** 新增 `PreModelSwitch`／`PostModelSwitch` 兩個 hook 事件，可在模型切換前後攔截、確認或標註該次切換；`SessionStart` 的 resume hook 現會回傳 session 新鮮度（freshness）與估計流失的內容量，讓外部工具判斷 resume 的 session 是否完整。
 
-**為何熱：** GitHub Release v2.1.251，2026-08-29 日報標為 📌 今日聚焦［新工具］；為 hooks 生態新增可觀測模型切換這個先前無法攔截的事件點，對建置審計、成本監控或自訂路由邏輯的開發者具直接價值。
+**為何熱：** GitHub Release v2.1.251，2026-08-29 日報標為 📌 今日聚焦［新工具］；模型切換先前無法攔截，補上這個事件點對建置審計、成本監控或自訂路由的開發者有直接價值。
 
-**現在要試嗎：** 適合已用 hooks 做審計、成本監控或自訂路由邏輯的進階使用者；一般使用者可先觀望。
+**現在要試嗎：** 適合已用 hooks 做審計、成本監控或自訂路由的進階使用者；一般使用者可先觀望。
 
 **快速上手：**
 ```json
@@ -213,7 +224,7 @@ npm install @anthropic-ai/sdk@0.123.0
 }
 ```
 
-**注意事項：** 官方 release notes 未詳述 hook 事件的完整 payload 欄位、亦未說明 `SessionStart` resume freshness 的估算精確度，實際整合前建議先以 debug 模式檢視 hook 收到的實際資料。
+**注意事項：** 官方 release notes 未詳述 hook 事件的完整 payload 欄位，也未說明 `SessionStart` resume freshness 的估算精確度；整合前先以 debug 模式檢視 hook 實際收到的資料。
 
 ### SDK files／skills 命名空間轉正（GA）
 **發布：** 2026-08-27（anthropic-sdk-typescript sdk-v0.122.0／anthropic-sdk-python v1.2.0） | **熱度：** 🔥🔥 | **試用價值：** ⚡ 有條件推薦 | **狀態：** 正式發布
@@ -241,17 +252,6 @@ npm install @anthropic-ai/sdk@latest     # TypeScript，需 sdk-v0.122.0+
 
 **現在要試嗎：** 預設即在，不需主動啟用；回報內容含 session 脈絡，不希望 session 內容外送者可先設 `feedbackDisabled` 關閉。
 
-### Model Hardware Standard
-**發布：** 2026-08-27（Research Preview） | **熱度：** 🔥🔥🔥 | **試用價值：** ⏳ 觀望 | **狀態：** Research Preview
-
-**是什麼：** Anthropic 發布的統一介面標準，讓 Claude 代理人得以操作機器人與科學實驗室儀器，首波應用鎖定科學研究與製造場域。
-
-**為何熱：** 同日 Bloomberg、Ars Technica、Financial Times 三家重量級媒體跟進報導，Ars Technica 並解析其技術框架。
-
-**現在要試嗎：** 研究預覽階段，一般開發者暫無可用管道，建議觀望。
-
-**注意事項：** 研究預覽階段，官方尚未公布開發者可用的具體 API／SDK 呼叫方式，一般開發者可用範圍待補。（不列入 [[topics/official-community-gap]] 產品化矩陣——這是全新硬體操作能力領域，非既有社群痛點的官方回應）
-
 **快速上手：**
 ```
 # 出錯後 Claude 會主動草擬回報，於終端機輸入檢視並決定是否送出
@@ -261,16 +261,27 @@ npm install @anthropic-ai/sdk@latest     # TypeScript，需 sdk-v0.122.0+
 "feedbackDisabled": true
 ```
 
-**注意事項：** 剛發布，尚無已知限制或社群回饋可參考。送出前務必檢視草稿內容——回報由 Claude 起草，可能夾帶 session 中的專案細節。
+**注意事項：** 剛發布，尚無已知限制或社群回饋。送出前務必檢視草稿——回報由 Claude 起草，可能夾帶 session 中的專案細節。
+
+### Model Hardware Standard
+**發布：** 2026-08-27（Research Preview） | **熱度：** 🔥🔥🔥 | **試用價值：** ⏳ 觀望 | **狀態：** Research Preview
+
+**是什麼：** Anthropic 發布的統一介面標準，讓 Claude 代理人得以操作機器人與科學實驗室儀器，首波應用鎖定科學研究與製造場域。
+
+**為何熱：** 同日 Bloomberg、Ars Technica、Financial Times 三家重量級媒體跟進報導，Ars Technica 並解析其技術框架。
+
+**現在要試嗎：** 研究預覽階段，一般開發者暫無可用管道，建議觀望。
+
+**注意事項：** 官方尚未公布開發者可用的 API／SDK 呼叫方式，可用範圍待補。（不列入 [[topics/official-community-gap]] 產品化矩陣——這是全新硬體操作能力領域，非既有社群痛點的官方回應）
 
 ### Cowork 記憶功能整合
 **發布：** 2026-08-25（官方 Release Notes 標註日期） | **熱度：** 🔥🔥 | **試用價值：** ⚡ 有條件推薦 | **狀態：** 正式發布（部分方案預設開啟）
 
-**是什麼：** Claude Cowork 現在與網頁／App 對話共用記憶：所有記住項目集中列在設定 > Memory 底下的 Topics，可個別編輯或刪除；健康、信仰等敏感主題預設不納入記憶，須手動開啟「Include sensitive topics in memory」才會記錄。
+**是什麼：** Cowork 與網頁／App 對話共用記憶：記住的項目集中列在設定 > Memory 的 Topics，可個別編輯或刪除；健康、信仰等敏感主題預設不納入，須手動開啟「Include sensitive topics in memory」才會記錄。
 
-**為何熱：** 官方 Claude Help Center Release Notes 首發；TechCrunch、SiliconANGLE、CNET、Engadget、SD Times、The Register、Techzine、ZDNET 等多家媒體同步報導，隱私（敏感主題記憶）設定引發關注。
+**為何熱：** 官方 Claude Help Center Release Notes 首發；TechCrunch、SiliconANGLE、CNET、Engadget、SD Times、The Register、Techzine、ZDNET 等多家媒體同步報導，敏感主題記憶的隱私設定引發關注。
 
-**現在要試嗎：** 適合已跨 web／App／Cowork 多介面使用 Claude、想要記憶延續的使用者；在意隱私者應留意「Include sensitive topics in memory」預設關閉，須手動開啟才會記錄健康、信仰等敏感主題。
+**現在要試嗎：** 適合跨 web／App／Cowork 多介面使用、想要記憶延續者；在意隱私者留意敏感主題預設不記錄，開啟前想清楚。
 
 **快速上手：**
 ```

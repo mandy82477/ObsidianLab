@@ -51,3 +51,5 @@
 {"id": "H-d48bee", "opened": "2026-09-03", "from": "功能", "to": "社群", "page": "topics/community-tech-discussions", "note": "調整「工具生態發現性問題」議題狀態（原 H-f5c58d 誤派功能記者，頁面屬社群）", "status": "open"}
 {"id": "H-f5c58d", "closed": "2026-09-03", "status": "void", "by": "主編", "result": "功能：頁面屬社群記者，已改開新筆給社群"}
 {"id": "H-398ffe", "closed": "2026-09-03", "status": "done", "by": "安全政策", "result": "EFS 濫用偵測機制已收錄 ai-agent-safety（結論表列＋技術彙整節＋時序）"}
+{"id": "H-0f4ad3", "opened": "2026-09-03", "from": "模型", "to": "功能", "page": "wiki/entities/claude-code.md", "note": "2026-09-03 精修發現三筆事實問題：v2.1.247 發布日 radar 升版風險行寫 08-26、其餘三處皆 08-27，查 release 定案；版本表 v2.1.224『詳見上方現況』指路失效（事實在已知問題 #24798 與歷史 08-09）；Model Hardware Standard 日期 radar 08-27 vs claude-code 08-29 對一次", "status": "open"}
+{"id": "H-59da9e", "opened": "2026-09-03", "from": "模型", "to": "社群", "page": "wiki/topics/coding-workflow-guide.md", "note": "2026-09-03 精修發現：第 6 段段首標「社群面未查」、段末缺口欄卻寫「社群幾乎沒有累積」（一為未查一為查過的結論），統一措辭——頁屬功能記者但該段社群面素材屬社群，先由功能記者統一", "status": "open"}

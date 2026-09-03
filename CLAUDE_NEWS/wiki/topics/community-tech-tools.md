@@ -33,7 +33,7 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 **最後新聞更新：** 2026-09-02
 
 > **最新改版**（2026-09-03）
-> 「不綁症狀的精選」區退役——規模型清單（誰大、誰在漲）的家改為 [[topics/skill-interest-watch]]（機器每日榜，按開發流程段分類）；本頁只留**判斷**：症狀決策表、推薦細節、Skills 速查、工具目錄。榜→本頁單向連結（榜上每類指回決策表對應症狀），本頁不抄榜。
+> 「不綁症狀的精選」區退役——規模型清單（誰大、誰在漲）改看 [[topics/skill-interest-watch]] 的每日榜；本頁只留**判斷**：症狀決策表、推薦細節、Skills 速查、工具目錄。
 
 ---
 
@@ -65,8 +65,8 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 **推薦細節**
 
 - **pxpipe vs Graft 的數字強度不同**（08-30 彙整）：pxpipe 有作者實測（25,000 text token 壓至 2,700 image token、帳單降 59–70%，08-05；星數防刷已查證 forks 8.5%）；Graft 宣稱降 42%（08-15）但 HN 討論質疑 benchmark 段落疑似 AI 代寫、未經第三方覆核。接受走代理層就選 pxpipe（證據較強）；只想掛個 hook 隨時可拔、且不介意數字未覆核，才選 Graft。
-- **「CLAUDE.md 不聽」沒有工具首選是結論不是留白**：dev.to 一手實作（08-25）顯示**以 hooks 強制執行取代 prompt 建議後，規則遵循率達 100%**——這個痛點的答案是機制不是工具，做法見 [[topics/community-tech-patterns]]。失效的四個機理：規則被機率性忽略且無反饋、規則越多越貴（Writ 以語意檢索只注入相關規則）、規則腐化（Patina 偵測）、跨工具碎片化（Caliber 統一管理）——後三者才是工具能解的側面。
-- **接手大 repo 的分界**（09-03 依讀者實走測試補寫分界）：graphify 給 **agent** 用（本機 AST、免向量 DB，`/graphify` skill）；同組另三個工具解的是不同工種——Understand-Anything 給**人**探索、archify 給人**交付圖**、codegraph 是 graphify 的競品（自動同步索引，僅星數證據）。官方面的「接手大 repo 第一步」（先讀 CI、從子目錄啟動、LSP）在 [[topics/coding-workflow-guide]] 第 2a 段，兩者互補：官方設定先做，索引工具再裝。
+- **「CLAUDE.md 不聽」沒有工具首選是結論不是留白**：dev.to 一手實作（08-25）顯示**以 hooks 強制執行取代 prompt 建議後，規則遵循率達 100%**——答案是機制不是工具，做法見 [[topics/community-tech-patterns]]。四個失效機理中只有後三者是工具能解的：規則被機率性忽略且無反饋、規則越多越貴（Writ 以語意檢索只注入相關規則）、規則腐化（Patina 偵測）、跨工具碎片化（Caliber 統一管理）。
+- **接手大 repo 的分界**（09-03 補寫）：graphify 給 **agent** 用（本機 AST、免向量 DB，`/graphify` skill）；同組另三個解的是不同工種——Understand-Anything 給**人**探索、archify 給人**交付圖**、codegraph 是 graphify 的競品（自動同步索引，僅星數證據）。官方面的「接手大 repo 第一步」（先讀 CI、從子目錄啟動、LSP）在 [[topics/coding-workflow-guide]] 第 2a 段：官方設定先做，索引工具再裝。
 - **Harness 同名提醒**：本表首選 [frenchie4111/harness](https://github.com/frenchie4111/harness)（多 worktree 並行管理）與 [[topics/skill-interest-watch]] multi-agent 榜上的 `revfactory/harness`（設計 agent team 的 meta-skill）**不是同一個專案**，裝前認清 owner。
 - **多 agent 互踩**：Harness 為 ✅ 廣泛採用（04-29 收錄，多來源）；omnigent 星數 9,080（08-05 防刷查證時 8,150、forks 14.7%）但無第三方實測回報，列次選、證據 ⚪。
 - **監看首選的分界**：HUD 經官方 JSON event stream 運作、不額外耗 token（08-07），適合小規模；Omar 管到 100 個 agent（05-02）。兩者解同一症狀的不同規模段。
@@ -122,7 +122,7 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 | [**Shortcuts Playground**](https://www.macstories.net/stories/introducing-shortcuts-playground/) | 🟡（05-23） | 自然語言生成 Apple Shortcuts |
 | [**l3a0/claude-plugins**](https://github.com/l3a0/claude-plugins) | 🟡（08-24，HN 45） | OCR 復原 Kindle 被限制匯出的畫線筆記 |
 
-> skill 分享基建（Sx 2.0）與彙整清單（awesome-llm-apps）不入本節——前者見工具目錄，後者這類「規模大但不對應症狀」的條目見 [[topics/skill-interest-watch]]（機器榜）。本節每組 ≤ 5 列：超過就汰除證據最弱者，不往下加——避免長成榜的手抄本。
+> skill 分享基建（Sx 2.0）與彙整清單（awesome-llm-apps）不入本節——前者見工具目錄，後者這類「規模大但不對應症狀」的條目見 [[topics/skill-interest-watch]]。
 
 ---
 
@@ -151,8 +151,8 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 | [**archify**](https://github.com/tt-a1i/archify) | Skills | ⏳ | 2026-09-02 | 架構/時序/資料流圖 agent skill，自包含 HTML；43,378★、2026-04 出生，09-02 查證（防刷通過） |
 | [**x1xhlol/system-prompts-and-models-of-ai-tools**](https://github.com/x1xhlol/system-prompts-and-models-of-ai-tools) | 其他 | ✅ | 2026-08-29 | 彙整 Claude Code、Cursor、Devin AI、Replit 等數十款 AI 編碼工具完整系統提示詞與模型設定；14.3 萬星，2025-03 出生，長期累積型參考資源 |
 | [**Shubhamsaboo/awesome-llm-apps**](https://github.com/Shubhamsaboo/awesome-llm-apps) | Skills | ✅ | 2026-08-30 | 彙整百餘款 AI Agent、Agent Skills 與 RAG 開源應用清單；13.5 萬星，2024-04 出生，長期累積型參考資源 |
-| [**multica-ai/andrej-karpathy-skills**](https://github.com/multica-ai/andrej-karpathy-skills) | Skills | ⏳ | 2026-08-29 | 單一 CLAUDE.md 檔案改善 Claude Code 行為，取材自 Karpathy 對 LLM coding 常見缺陷的觀察；20.9 萬星，惟僅 GitHub Search 星數、無 forks／issues 佐證可查，增速異常值得存疑，不作為獨立驗證訊號 |
-| [**garrytan/gstack**](https://github.com/garrytan/gstack) | 多 Agent | ⏳ | 2026-08-30 | Garry Tan（YC 總裁）公開自己的 Claude Code 設定，23 個角色化工具分飾 CEO、設計師、工程經理等職能；13.0 萬星，僅 5.5 個月即達此規模，增速明顯快於同類存量盤點案例，星數真實性未經驗證，作者具名且內容具體故收錄 |
+| [**multica-ai/andrej-karpathy-skills**](https://github.com/multica-ai/andrej-karpathy-skills) | Skills | ⏳ | 2026-08-29 | 單一 CLAUDE.md 檔案改善 Claude Code 行為，取材自 Karpathy 對 LLM coding 常見缺陷的觀察；20.9 萬星，星數存疑（見收錄註記） |
+| [**garrytan/gstack**](https://github.com/garrytan/gstack) | 多 Agent | ⏳ | 2026-08-30 | Garry Tan（YC 總裁）公開自己的 Claude Code 設定，23 個角色化工具分飾 CEO、設計師、工程經理等職能；13.0 萬星，星數真實性未經驗證（見收錄註記） |
 | [**JimLiu/baoyu-design**](https://github.com/JimLiu/baoyu-design) | Skills | ⏳ | 2026-08-29 | 本機以 Agent Skill 執行 [[entities/claude-design]]，供 Cursor／Claude Code 產出自足式 HTML UI 原型，官方建議搭配 Opus 4.8；3,637 星 |
 | [**rsmdt/the-startup**](https://github.com/rsmdt/the-startup) | 工作流 | ⏳ | 2026-08-25 | 「The Agentic Startup」風格 Claude Code commands／skills／agents 集合；507 星 |
 | [**mindmuxai/brain.md**](https://github.com/mindmuxai/brain.md) | 記憶工具 | ⏳ | 2026-08-25 | 零依賴、檔案式跨 session 持久記憶層，為 coding agent 保存決策／需求／限制的「專案大腦」；504 星 |
@@ -165,7 +165,7 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 | [**Proliferate**](https://github.com/proliferate-ai/proliferate) | 多 Agent | ⏳ | 2026-08-21 | YC S25，開源自架 AI IDE，統一操作 Claude Code／Codex／OpenCode／Cursor／Grok；Show HN score 39，source_count 2 |
 | [**Frugal Tokens**](https://demo.frugaltokens.com/) | 費用監測 | ⏳ | 2026-08-19 | 探索跨 coding agent（含 Claude Code）的成本與用量，含 cache miss 對花費的影響；Show HN score 33，source_count 2 |
 | [**machine0**](https://machine0.io) | 整合工具 | ⏳ | 2026-08-18 | YC S26，持久化 CPU/GPU 雲端 VM 供長時間自主 agent 運算，`machine0 new mybox` 即開機，$0.013/hr 起；Launch HN score 78 |
-| [**internet-court-skill**](https://github.com/internet-court/internet-court-skill) | 安全工具 | ⏳ | 2026-08-18 | agent-to-agent 商務信任層 skill：自然語言 mandate、ERC-7710 委任權限、x402 支付、託管與爭議解決；5,317 星（09-02 更新，前次 08-18 為 3,793 星），無出生日期標記、無 forks/issues 佐證可查 |
+| [**internet-court-skill**](https://github.com/internet-court/internet-court-skill) | 安全工具 | ⏳ | 2026-08-18 | agent-to-agent 商務信任層 skill：自然語言 mandate、ERC-7710 委任權限、x402 支付、託管與爭議解決；5,317 星（09-02 更新），佐證不足（見收錄註記） |
 | [**claw-orchestrator**](https://github.com/Enderfga/claw-orchestrator) | 多 Agent | ⏳ | 2026-08-17 | 跨 harness 統一 runtime（Claude Code／Codex／Antigravity／Cursor／OpenCode），持久 session＋multi-agent councils＋MCP server；547 星 |
 | [**statuslin.es**](https://statuslin.es) | UI 工具 | ⏳ | 2026-08-17 | 社群策展的 Claude Code status line 樣式展示網站，每則附真實 sandbox 容器截圖；同時被 2 個獨立來源收錄 |
 | [**Graft**](https://github.com/NanoNets/Graft) | 費用監測 | ⚠️ | 2026-08-15 | Claude Code hooks 削減 grep 輸出 token，宣稱降幅 42%（HN 39，跨 2 來源）；HN 討論串質疑 README 的 benchmark 段落疑似 AI 代寫，數字未經第三方覆核 |
@@ -273,6 +273,11 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 | [**Claude Squad**](https://www.reddit.com/r/ClaudeAI/comments/1svmpkv/) | 多 Agent | ✅ | 2026-04-26 | 多人多 agent 並行開發，orchestrator 分派任務並合併分支 |
 | [**mux0**](https://mux0.com/) | IDE/終端 | ✅ | 2026-04-26 | 開源 macOS 終端，側邊欄即時顯示多 agent 狀態 |
 | **CC-Canary** | 工作流 | ✅ | 2026-04-25 | 讀取 session log 自動偵測效能漂移，HERMES.md bug 後更受重視；詳見 [[topics/code-quality-decline]] |
+
+**收錄註記**（表內「見收錄註記」的三筆）
+- **andrej-karpathy-skills**（08-29）：僅 GitHub Search 星數，無 forks／issues 佐證可查，增速異常值得存疑，不作為獨立驗證訊號。
+- **gstack**（08-30）：13.0 萬星僅用 5.5 個月達成，增速明顯快於同類存量盤點案例，星數真實性未經驗證；作者具名且內容具體故收錄。
+- **internet-court-skill**（08-18 收錄，09-02 更新星數）：5,317 星，前次 08-18 為 3,793 星；無出生日期標記、無 forks／issues 佐證可查。
 
 **懸置細節**
 - ⟨Q-01⟩ 已查證（2026-08-13）：「4 倍」宣稱的機制已釐清數據不一致的來源——GeoSQL 讓 agent 把空間查詢結果透過 Dekart 渲染成地圖並回看修正幾何錯誤（map-in-the-loop），4 倍準確度提升**只在連接 Dekart 時成立**；未連接 Dekart 時 GeoSQL 表現與一般 SQL agent 相當，先前細部任務成功率數據加總不一致即源於部分任務未啟用 Dekart 視覺回饋（[dekart.xyz 部落格](https://dekart.xyz/blog/claude-code-vs-aino-geospatial-agent/)、[Show HN](https://news.ycombinator.com/item?id=48829242)）；詳見 [[topics/community-tech-discussions]]
