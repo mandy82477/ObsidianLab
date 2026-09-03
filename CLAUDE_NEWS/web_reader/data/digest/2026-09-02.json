@@ -499,11 +499,6 @@
       "pageType": "entity"
     },
     {
-      "id": "ai-agent-safety",
-      "name": "AI Agent 安全與可靠性",
-      "pageType": "topic"
-    },
-    {
       "id": "anthropic-business",
       "name": "Anthropic 商業健康度",
       "pageType": "topic"
@@ -511,11 +506,6 @@
     {
       "id": "anthropic-government-policy",
       "name": "Anthropic 政府與軍事政策",
-      "pageType": "topic"
-    },
-    {
-      "id": "community-large-codebase-workflow",
-      "name": "大型 Codebase 規模化開發：社群工作流主線",
       "pageType": "topic"
     },
     {
