@@ -106,6 +106,7 @@ META_RE = {
     "lastUpdated":    re.compile(r"\*\*最後更新[：:]\*\*\s*(.+)"),
     "lastNewsUpdate": re.compile(r"\*\*最後新聞更新[：:]\*\*\s*(.+)"),
     "updateFreq":     re.compile(r"\*\*更新頻率[：:]\*\*\s*(.+)"),
+    "parent":         re.compile(r"\*\*上層[：:]\*\*\s*\[\[([^\]|#]+)\]\]"),  # 子故事階層（2026-09-03）
 }
 
 SUMMARY_HEADERS = ["## 現況", "## 摘要"]
@@ -782,6 +783,7 @@ def parse_wiki(f: Path, page_type: str) -> dict:
         "lastUpdated": "",
         "lastNewsUpdate": "",
         "updateFreq": "",
+        "parent": "",
         "summary": "",
         "latestHeadline": "",
         "markdown": raw,

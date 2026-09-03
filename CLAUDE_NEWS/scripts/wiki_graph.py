@@ -122,6 +122,8 @@ def _parse_page(slug: str, f: Path):
                 zone = "樣板" if h_title in TEMPLATE_ZONE_H2 else "正文"
             if any(a <= m.start() < b for a, b in anchored_spans):
                 zone = "錨點"
+            if ln.lstrip().startswith("**上層"):
+                zone = "階層"  # 子故事的 part-of 邊（2026-09-03），與引用邊分型：cluster／孤島不計
             links.append(Link(slug, dst, i, _semantic_heading(headings, i), zone))
     return headings, links
 
@@ -161,7 +163,7 @@ def cmd_explain(target: str, out) -> int:
         by_zone: dict[str, list[Link]] = defaultdict(list)
         for l in group:
             by_zone[l.zone].append(l)
-        for zone in ("正文", "錨點", "樣板"):
+        for zone in ("正文", "錨點", "階層", "樣板"):
             for l in sorted(by_zone.get(zone, []), key=lambda x: (x.src, x.line)):
                 other = l.dst if name.startswith("出") else l.src
                 sec = f" § {l.heading}" if l.heading else ""
@@ -234,7 +236,7 @@ def cmd_cluster(out) -> int:
     pages, _, links = build()
     w: dict[frozenset, int] = defaultdict(int)
     for l in links:
-        if l.zone != "樣板" and l.src != l.dst:
+        if l.zone not in ("樣板", "階層") and l.src != l.dst:  # 家族邊不參與分群，否則親屬互連淹掉主題結構
             w[frozenset((l.src, l.dst))] += 1
     adj: dict[str, dict[str, int]] = defaultdict(dict)
     for pair, n in w.items():

@@ -1228,6 +1228,17 @@ code {
   letter-spacing: -0.01em; line-height: 1.2;
   margin: 0 0 10px; color: var(--ink-1);
 }
+/* 子故事階層（2026-09-03）：麵包屑往上、子頁卡往下——子頁不在列表，只從母頁到 */
+.detail__crumbs {
+  font-family: var(--font-sans); font-size: 12px; color: var(--ink-3);
+  margin-bottom: 10px;
+}
+.detail__crumbs .wikilink { font-size: 12px; }
+.detail__children {
+  border: 1px solid var(--border-2); border-radius: 2px;
+  padding: 8px 12px 4px; margin-bottom: 28px;
+}
+.detail__children .wiki__section-h { margin-bottom: 6px; }
 .detail__meta {
   font-family: var(--font-mono); font-size: 12px;
   color: var(--ink-3); margin-bottom: 32px;

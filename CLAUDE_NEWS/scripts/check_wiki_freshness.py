@@ -153,12 +153,33 @@ def main(argv: list[str]) -> int:
     unverifiable: list[str] = []
     missing_field: list[str] = []
 
+    # 階層（2026-09-03）：母頁（有子頁者）的歸因會落在子頁——第 2 類對母頁改看子樹歸因，
+    # 否則母頁 bump 日期就紅、擋 web build（母不落後子 × 唯讀 × 本檢查三者互斥，reviewer B1）。
+    parent_re = re.compile(r"^\*\*上層[：:]\*\*\s*\[\[([^\]|#]+)", re.MULTILINE)
+    children: dict[str, list[str]] = {}
+    for sub in ("entities", "topics"):
+        for path in (WIKI_DIR / sub).glob("*.md"):
+            m = parent_re.search("\n".join(path.read_text(encoding="utf-8").splitlines()[:60]))
+            if m:
+                children.setdefault(m.group(1).strip(), []).append(f"{sub}/{path.stem}")
+
+    def subtree_att(slug: str) -> str:
+        best = last_att.get(slug, "")
+        stack = list(children.get(slug, []))
+        while stack:
+            k = stack.pop()
+            best = max(best, last_att.get(k, ""))
+            stack.extend(children.get(k, []))
+        return best
+
     for slug, last_news in scan_pages():
         if last_news is None:
             missing_field.append(slug)
             continue
 
         att = last_att.get(slug)
+        if slug in children:
+            att = subtree_att(slug) or None
         if att:
             # 1. 漏更：歸因記錄比頁面宣稱新
             if last_news < att:

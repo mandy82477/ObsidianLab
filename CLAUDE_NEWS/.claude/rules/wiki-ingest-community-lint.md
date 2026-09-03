@@ -134,7 +134,7 @@
 ```
 
 **執行步驟（經確認後）：**
-1. **封存**：把該月全部 `####` 原始條目**原文照搬** append 至對應 archive 頁的 `## YYYY-MM` 分組——`topics/community-tech-patterns-archive`／`topics/community-tech-discussions-archive`（首次蒸餾時建立：標頭領域同主頁、狀態 `resolved（封存頁）`、頂部 callout 說明「本頁為原始條目封存，重點層見主頁」，並回報主編補 `wiki/index.md` 列——index 同步檢查會驗）
+1. **封存**：把該月全部 `####` 原始條目**原文照搬** append 至對應 archive 頁的 `## YYYY-MM` 分組——`topics/community-tech-patterns-archive`／`topics/community-tech-discussions-archive`（首次蒸餾時建立：標頭領域同主頁、**`**上層：** [[主頁]]`**（封存頁掛在它封存的頁底下，2026-09-03 階層設計）、狀態 `resolved（封存頁）`、頂部 callout 說明「本頁為原始條目封存，重點層見主頁」；**不補 index 列**——跑 `python scripts/gen_wiki_frontmatter.py` 會把它投影進主頁列的「↳ 子故事：」，index 同步檢查與 `check_hierarchy.py` 會驗）
 2. **蒸餾**：主頁該月改寫為**月度總結 ≤ 15 行**——當月主要模式/討論、收斂結論、仍具引用價值的工具名，末行固定 `原始條目見 [[topics/community-tech-patterns-archive#YYYY-MM]]`（錨點建置會驗）
 3. **引用回掃**：grep 全庫指向被搬條目錨點的 `[[頁#條目標題]]` 連結，改指 archive 對應錨點——蒸餾是搬位置＋熬濃，不是刪除，斷鏈即違規
 4. 主頁只更新「最後更新」（非新聞性修改）

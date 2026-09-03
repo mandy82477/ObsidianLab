@@ -37,7 +37,8 @@ class WikiGraphSmoke(unittest.TestCase):
 
     def test_產地標記三值(self):
         zones = {l.zone for l in self.links}
-        self.assertTrue(zones <= {"正文", "樣板", "錨點"})
+        # 「階層」為子故事 part-of 邊（2026-09-03），與引用邊分型；cluster／孤島不計它
+        self.assertTrue(zones <= {"正文", "樣板", "錨點", "階層"})
         self.assertIn("正文", zones)
         self.assertIn("樣板", zones)
 

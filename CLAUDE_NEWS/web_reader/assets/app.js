@@ -490,10 +490,14 @@
     const _d = new Date(); const today = `${_d.getFullYear()}-${String(_d.getMonth()+1).padStart(2,'0')}-${String(_d.getDate()).padStart(2,'0')}`;
     const sorted = sortItems(all, kbSort.key, kbSort.dir);
     const codingIds = new Set((window.WIKI_DATA || {}).codingPages || []);
-    const filtered = activeDomain === 'all' ? sorted
-      : activeDomain === 'weekly' ? sorted.filter(i => !!i.updateFreq)
-      : activeDomain === 'coding' ? sorted.filter(i => codingIds.has(i.id))
-      : sorted.filter(i => i.domain === activeDomain);
+    // 子故事階層（2026-09-03）：子頁不平鋪，只從母頁詳頁下鑽；列表只顯示根頁
+    const childCount = {};
+    all.forEach(i => { if (i.parent) { const p = i.parent.split('/').pop(); childCount[p] = (childCount[p] || 0) + 1; } });
+    const roots = sorted.filter(i => !i.parent);
+    const filtered = activeDomain === 'all' ? roots
+      : activeDomain === 'weekly' ? roots.filter(i => !!i.updateFreq)
+      : activeDomain === 'coding' ? roots.filter(i => codingIds.has(i.id))
+      : roots.filter(i => i.domain === activeDomain);
     // 週更篩選時置頂一行說明：日期停留數天是策展節奏，不是漏更新
     const weeklyNote = activeDomain === 'weekly'
       ? '<div class="kb-filter-note">這些頁面採每週策展維護，更新日期停留數天屬正常節奏，並非漏更新。</div>'
@@ -508,7 +512,7 @@
       const rowCls = kbType === 'topic' ? 'entity-row entity-row--topic' : 'entity-row';
       return `
 <div class="${rowCls}" onclick="openWikiPage('${esc(item.id)}','${item._kbBaseType}')">
-  <div class="entity-row__name"><span class="entity-row__zh">${esc(item.name || item.id)}</span><span class="entity-row__slug">${esc(item.id)}</span></div>
+  <div class="entity-row__name"><span class="entity-row__zh">${esc(item.name || item.id)}</span><span class="entity-row__slug">${esc(item.id)}</span>${childCount[item.id] ? `<span class="pill pill--gray" title="子故事只從本頁下鑽">含 ${childCount[item.id]} 子故事</span>` : ''}</div>
   <div><span class="kb-type-pill kb-type-pill--${typePillCls}">${isWeeklyCadence ? '<svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:-1px;margin-right:3px"><rect x="3" y="5" width="18" height="16" rx="1"></rect><line x1="3" y1="9" x2="21" y2="9"></line><line x1="8" y1="3" x2="8" y2="7"></line><line x1="16" y1="3" x2="16" y2="7"></line></svg>' : ''}${esc(typeLabel)}</span></div>
   <div><span class="pill pill--${item.pill}">${esc(statusLabelShort(item.status))}</span></div>
   <div class="entity-row__summary">${esc(item.latestHeadline || '')}</div>
@@ -1234,15 +1238,37 @@ ${older.length ? `<div class="weekly-list-count">共 ${index.length} 份週報 �
       trackerHtml = renderEnterpriseMatrix(item.enterpriseTracker);
     }
 
+    // ── 子故事階層：麵包屑（往上）＋子頁卡（往下）——子頁不在列表，只從這裡到 ──
+    const kbAll = buildKbList();
+    const byId = Object.fromEntries(kbAll.map(i => [i.id, i]));
+    const crumbs = [];
+    let cur = item.parent ? byId[item.parent.split('/').pop()] : null;
+    while (cur && crumbs.length < 8) { crumbs.unshift(cur); cur = cur.parent ? byId[cur.parent.split('/').pop()] : null; }
+    if (crumb && crumbs.length) crumb.textContent = crumbs.map(c => c.name || c.id).join(' › ') + ' › ' + (item.name || id);
+    const kids = kbAll.filter(i => i.parent && i.parent.split('/').pop() === id);
+    const crumbHtml = crumbs.length
+      ? `<div class="detail__crumbs">${crumbs.map(c => `<button class="wikilink" onclick="openWikiPage('${esc(c.id)}','${c._kbBaseType}')">${esc(c.name || c.id)}</button>`).join(' › ')} › <span>${esc(item.name || id)}</span></div>`
+      : '';
+    const kidsHtml = kids.length
+      ? `<div class="detail__children"><div class="wiki__section-h">子故事（${kids.length}）</div>${kids.map(k =>
+          `<div class="entity-row entity-row--${k._kbBaseType}" onclick="openWikiPage('${esc(k.id)}','${k._kbBaseType}')" role="button" tabindex="0">
+  <div class="entity-row__name"><span class="entity-row__zh">${esc(k.name || k.id)}</span><span class="entity-row__slug">${esc(k.id)}</span></div>
+  <div class="entity-row__summary">${esc(k.latestHeadline || k.summary || '')}</div>
+  <div class="entity-row__updated">${esc(k.lastNewsUpdate || k.lastUpdated || '')}</div>
+</div>`).join('')}</div>`
+      : '';
+
     $('#detail-content').innerHTML = `
 <div class="detail__type-row">
   ${item.status ? `<span class="pill pill--${item.pill}">${esc(statusLabelFull(item.status))}</span>` : ''}
   <span class="pill pill--gray">${esc(item.entityType || typeLabel)}</span>
   ${item.updateFreq ? `<span class="pill pill--weekly">🗓️ 週更</span>` : ''}
 </div>
+${crumbHtml}
 <h1 class="detail__h1">${esc(item.name)}</h1>
 ${metaRows.length ? `<div class="detail__meta">${metaHtml}</div>` : ''}
 ${trackerHtml}
+${kidsHtml}
 <div class="detail__body">${bodyHtml}</div>`;
     makeTablesSortable($('#detail-content'));
     enhanceCallout($('#detail-content'));

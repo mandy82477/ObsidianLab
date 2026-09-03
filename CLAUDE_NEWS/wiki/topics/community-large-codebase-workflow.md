@@ -8,6 +8,10 @@ last_news_update: "2026-09-02"
 update_freq: "🗓️ 週更（每週從模式庫沉澱一次；更新日期停留數天屬正常節奏）"
 status_main: "ongoing"
 days_since_news: 1
+parent: null
+children: "[]"
+page_role: "root"
+days_since_news_subtree: 1
 inbound_links: 37
 attribution_count: 2
 attribution_last: "2026-08-05"

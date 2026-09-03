@@ -64,8 +64,15 @@ class IndexSync(unittest.TestCase):
         }
 
     def test_每頁都有_index_列(self):
-        missing = sorted(set(self.pages) - set(self.rows))
-        self.assertEqual(missing, [], f"這些頁在 index.md 無列（路由上不存在）：{missing}")
+        # 子頁（帶「上層」欄）不入 index 目錄表，改由母頁列的「↳ 子故事：」投影涵蓋
+        # （2026-09-03 階層設計；投影由 gen_wiki_frontmatter.py 生成、check_hierarchy.py 驗）
+        projected = set()
+        for line in (WIKI / "index.md").read_text(encoding="utf-8-sig").splitlines():
+            m = re.search(r"↳ 子故事：(.*?)\|\s*$", line)
+            if m:
+                projected |= set(re.findall(r"\[\[([^\]|#]+)\]\]", m.group(1)))
+        missing = sorted(set(self.pages) - set(self.rows) - projected)
+        self.assertEqual(missing, [], f"這些頁在 index.md 無列也無母頁投影（路由上不存在）：{missing}")
 
     def test_index_列都有對應頁(self):
         dead = sorted(set(self.rows) - set(self.pages))

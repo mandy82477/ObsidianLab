@@ -63,6 +63,41 @@ FIELD_RE = {
 }
 
 
+PARENT_RE = re.compile(r"^\*\*上層[：:]\*\*\s*\[\[([^\]|#]+)", re.MULTILINE)
+LAST_NEWS_RE_ANY = re.compile(r"^\*\*最後新聞更新[：:]\*\*\s*(\d{4}-\d{2}-\d{2})", re.MULTILINE)
+INDEX_ROW_RE = re.compile(r"^(\|\s*\[\[([^\]|#]+)\]\]\s*\|.*?)(\s*↳ 子故事：[^|]*)?(\|\s*)$")
+
+
+def project_children_into_index(children_of: dict, index_path: Path, dry_run: bool) -> int:
+    """把「↳ 子故事：[[a]]、[[b]]」投影寫進母頁的 index 列摘要格（機器投影，家在各子頁的上層欄）。
+
+    子頁不入 index（2026-09-03 裁決：子頁只從母頁下鑽），但 index 仍是查詢入口與 13 處
+    記者認領的依據——讓記者自己遍歷「上層」欄是把可靠性押在 sonnet 的主動性上。
+    投影由本腳本每次重生，idempotent；check_hierarchy.py 驗它存在。回傳改動列數。
+    """
+    if not index_path.exists():
+        return 0
+    lines = index_path.read_text(encoding="utf-8-sig").splitlines(keepends=True)
+    changed = 0
+    for i, line in enumerate(lines):
+        m = INDEX_ROW_RE.match(line.rstrip("\r\n"))
+        if not m:
+            continue
+        slug = m.group(2).strip()
+        kids = sorted(children_of.get(slug, []))
+        if not kids and not m.group(3):
+            continue  # 無子頁也無舊投影的列一律不碰——不做無關的空白正規化（避免 diff 噪音）
+        seg = ("　↳ 子故事：" + "、".join(f"[[{k}]]" for k in kids)) if kids else ""
+        new_line = m.group(1).rstrip() + seg + " " + m.group(4).strip()
+        eol = "\n" if line.endswith("\n") else ""
+        if new_line != line.rstrip("\r\n"):
+            lines[i] = new_line + eol
+            changed += 1
+    if changed and not dry_run:
+        index_path.write_text("".join(lines), encoding="utf-8")
+    return changed
+
+
 def _stdout():
     if hasattr(sys.stdout, "buffer"):
         return io.TextIOWrapper(sys.stdout.buffer, encoding="utf-8", errors="replace")
@@ -109,6 +144,21 @@ def main(argv: list[str]) -> int:
     ]
     slugs = {slug for slug, _, _ in pages}
 
+    # ── 階層（2026-09-03）：單一來源是標頭 `**上層：** [[slug]]`。parent→child 的目錄邊與
+    #    child→parent 的上層邊是「家族邊」，不算入鏈（否則每個子頁天生 1 入鏈、母頁被子頁灌爆，
+    #    孤島與高引用兩個訊號都失真）。
+    parent_of: dict[str, str] = {}
+    for slug, p, _ in pages:
+        m = PARENT_RE.search("\n".join(p.read_text(encoding="utf-8-sig").splitlines()[:60]))
+        if m and m.group(1).strip() in slugs and m.group(1).strip() != slug:
+            parent_of[slug] = m.group(1).strip()
+    children_of: dict[str, list[str]] = collections.defaultdict(list)
+    for c, par in parent_of.items():
+        children_of[par].append(c)
+
+    def _kin(a: str, b: str) -> bool:
+        return parent_of.get(a) == b or parent_of.get(b) == a
+
     # ── 入鏈：掃全 wiki 的 wikilink。index/log 是目錄與流水帳，指向所有頁面，
     #    計入會讓每頁齊頭加一、失去鑑別度，故排除。
     inbound: collections.Counter[str] = collections.Counter({s: 0 for s in slugs})
@@ -119,7 +169,7 @@ def main(argv: list[str]) -> int:
         page_text = strip_pending_probes(strip_body(f.read_text(encoding="utf-8-sig")))
         for target in WIKILINK_RE.findall(page_text):
             target = target.strip()
-            if target in slugs and target != me:
+            if target in slugs and target != me and not _kin(me, target):
                 inbound[target] += 1
 
     # ── 供料：歸因 ledger
@@ -165,6 +215,41 @@ def main(argv: list[str]) -> int:
         lnu = meta.get("last_news_update")
         days = (today - date.fromisoformat(str(lnu))).days if lnu else None
         meta["days_since_news"] = days
+
+        # 階層欄位：parent／children／page_role（root／hub／child／archive／redirect）。
+        # 刻意不重用既有 `kind`（entity|topic）——wiki/_views/wiki-health.base 以它為欄。
+        par = parent_of.get(slug)
+        kids = sorted(children_of.get(slug, []))
+        meta["parent"] = par
+        meta["children"] = kids
+        head60 = "\n".join(body.splitlines()[:60])
+        if "-archive" in slug.split("/")[-1]:
+            role = "archive"
+        elif par and "已併回" in head60:
+            role = "redirect"
+        elif kids and par:
+            role = "hub+child"
+        elif kids:
+            role = "hub"
+        elif par:
+            role = "child"
+        else:
+            role = "root"
+        meta["page_role"] = role
+        # 子樹新鮮度：hub 自身「最後新聞更新」不因子頁動（會與 freshness 第 2 類互斥），
+        # 訊號判準改看子樹——否則熱議題的根頁會被判「高引用但停滯」或在列表沉底。
+        subtree_days = days
+        stack = list(kids)
+        while stack:
+            k = stack.pop()
+            klnu = LAST_NEWS_RE_ANY.search("\n".join((WIKI_DIR / f"{k}.md").read_text(encoding="utf-8-sig").splitlines()[:60]))
+            if klnu:
+                kd = (today - date.fromisoformat(klnu.group(1))).days
+                subtree_days = kd if subtree_days is None else min(subtree_days, kd)
+            stack.extend(children_of.get(k, []))
+        meta["days_since_news_subtree"] = subtree_days
+        if kids:
+            days = subtree_days
 
         ib = inbound[slug]
         meta["inbound_links"] = ib
@@ -225,6 +310,10 @@ def main(argv: list[str]) -> int:
                 fh.write(new_raw)
 
     stream.write(f"頁面 {len(pages)}：寫入 {written}／未變 {unchanged}\n")
+    # index 投影：母頁列摘要格的「↳ 子故事：」由此重生（子頁不入 index，查詢與認領靠投影）
+    n_proj = project_children_into_index(children_of, WIKI_DIR / "index.md", dry_run)
+    if n_proj:
+        stream.write(f"index 子故事投影：改動 {n_proj} 列\n")
     stream.write("signal 分布：" + "、".join(f"{k} {v}" for k, v in signals.most_common()) + "\n")
     if dry_run:
         stream.write("(--dry-run，未寫入)\n")

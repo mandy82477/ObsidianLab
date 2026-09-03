@@ -8,7 +8,11 @@ last_updated: "2026-08-10"
 last_news_update: "2026-06-27"
 status_main: "monitoring"
 days_since_news: 68
-inbound_links: 7
+parent: "topics/ai-agent-safety"
+children: "[]"
+page_role: "archive"
+days_since_news_subtree: 68
+inbound_links: 0
 attribution_count: 0
 attribution_last: null
 top_source: null
@@ -24,6 +28,7 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 **類型：** event
 **狀態：** monitoring
 **領域：** 🏛️ 政策/安全
+**上層：** [[topics/ai-agent-safety]]
 **開始日期：** 2026-04-27
 **最後更新：** 2026-08-10
 **最後新聞更新：** 2026-06-27

@@ -8,6 +8,10 @@ last_updated: "2026-08-28"
 last_news_update: "2026-05-29"
 status_main: "active"
 days_since_news: 97
+parent: null
+children: "[]"
+page_role: "root"
+days_since_news_subtree: 97
 inbound_links: 4
 attribution_count: 0
 attribution_last: null

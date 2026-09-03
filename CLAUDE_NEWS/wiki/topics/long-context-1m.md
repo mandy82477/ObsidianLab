@@ -7,6 +7,10 @@ last_updated: "2026-09-02"
 last_news_update: "2026-09-02"
 status_main: "ongoing"
 days_since_news: 1
+parent: null
+children: "[]"
+page_role: "root"
+days_since_news_subtree: 1
 inbound_links: 9
 attribution_count: 3
 attribution_last: "2026-09-02"

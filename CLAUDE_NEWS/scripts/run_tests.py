@@ -38,6 +38,7 @@ CHECK_WIKI_FRESHNESS = REPO_ROOT / "scripts" / "check_wiki_freshness.py"
 CHECK_FEATURE_RADAR = REPO_ROOT / "scripts" / "check_feature_radar.py"
 CHECK_PENDING_MARKERS = REPO_ROOT / "scripts" / "check_pending_markers.py"
 CHECK_TOOLS_PAGE = REPO_ROOT / "scripts" / "check_tools_page.py"
+CHECK_HIERARCHY = REPO_ROOT / "scripts" / "check_hierarchy.py"
 
 
 def main() -> int:
@@ -165,8 +166,22 @@ def main() -> int:
         stream.write(f"\nWARN: {CHECK_TOOLS_PAGE} 不存在，跳過 tools 決策表契約檢查\n")
     stream.flush()
 
+    # 子故事階層契約（2026-09-03：扁平／上層有效／領域繼承／archive 掛父／hub 不落後／index 投影）
+    hierarchy_ok = True
+    if CHECK_HIERARCHY.exists():
+        proc = subprocess.run(
+            [sys.executable, str(CHECK_HIERARCHY)], capture_output=True, text=True, encoding="utf-8"
+        )
+        stream.write("\n" + proc.stdout + "\n")
+        if proc.stderr:
+            stream.write(proc.stderr + "\n")
+        hierarchy_ok = proc.returncode == 0
+    else:
+        stream.write(f"\nWARN: {CHECK_HIERARCHY} 不存在，跳過階層契約檢查\n")
+    stream.flush()
+
     return 0 if (unit_ok and rules_ok and arch_docs_ok and weekly_ledger_ok
-                 and freshness_ok and radar_ok and pending_ok and tools_ok) else 1
+                 and freshness_ok and radar_ok and pending_ok and tools_ok and hierarchy_ok) else 1
 
 
 if __name__ == "__main__":

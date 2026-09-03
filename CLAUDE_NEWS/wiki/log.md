@@ -5372,3 +5372,9 @@ GH Actions 抓料排 10:23 UTC，到 14:45 UTC 仍未落地（+4.4 小時且持�
 ## 2026-09-03 裁決：「資料源韌性」找到合適的家——本站抓料工具規模榜（🛠️ 領域獨立機器頁）
 
 使用者裁決「找個合適的頁面放」而非隱藏。它服務的是「本站怎麼抓料」，不是讀者的開發實務，故新頁 `wiki/topics/site-source-tooling.md`（🛠️ 工具/功能，每日快照，只有規模榜不做判斷），由同一支 `skill_interest_snapshot.py` 的 C 組輸出（`render_site`）；DERIVED_PAGES、index 目錄列、workflow commit 路徑同步；測試鎖住「C 組不得帶 guide_section／tools_symptom、不進總覽頁」。開發實務 tab 名單不變（五頁）。
+
+## 2026-09-03 子故事階層設計定案＋機械前置件上線（reviewer 審查後修訂版）
+
+**設計（使用者裁決）：** 維持一頁一故事；厚度 >600 行只是鬧鐘；切線只落在故事邊界——**子故事三題**（有自己的問題／有自己的結論與時序／被獨立引用）為唯一判準；parent＝part-of 不是衍生；單一 parent、規則遞迴、**無深度上限**；子頁不入 index、不在網站平鋪、只從母頁下鑽；母頁必須仍是故事。fable reviewer 對抗審查判「現在不該動工」並列前置條件——全部採納：(a) 母頁自身「最後新聞更新」不因子頁動、改驗 callout 日期 ≥ 子樹最新（原設計與 freshness 第 2 類互斥、會擋站）；(b) index 改機器投影「↳ 子故事：」而非豁免（查詢 2 跳、13 處認領字面不改）；(c) 不重用 `kind` 欄（Bases 在用）改 `page_role`；(d) 子頁扁平＋領域繼承機械驗；(e) 併回留 redirect 殼；(f) 母頁結論層＝週更整線重寫（照 large-codebase 契約），每日唯讀除 callout／目錄／訊；(g) 💻 tab 不遞迴含子頁；(h) 試點改 ai-agent-safety、patterns 先跑既有蒸餾（1,087 行舊月份從未蒸餾）。
+
+**機械件：** 新 `scripts/check_hierarchy.py`（掛 run_tests：扁平／上層有效／成環／領域繼承／archive 掛父／hub 不落後／index 投影，改壞驗紅測試 9 案例）；`gen_wiki_frontmatter.py` 產 parent／children／page_role／days_since_news_subtree、家族邊不計入鏈、index 投影；`check_wiki_freshness.py` 母頁第 2 類看子樹歸因；`test_index_sync` 子頁由投影涵蓋；`build_web`＋`app.js` 麵包屑、子頁卡、列表只顯根頁、「含 N 子故事」徽章；`wiki_graph` 階層邊分型不入 cluster。首例：`ai-agent-safety-archive` 掛上層 ai-agent-safety、退出 index 列、由投影涵蓋。**verify 流程**寫進拆分原則（六階段：前置蒸餾→盤點 dry run→同一 commit 手術＋run_tests＋錨點不增→devpractice mark→push→冷讀者 2 題→一週回訪）。

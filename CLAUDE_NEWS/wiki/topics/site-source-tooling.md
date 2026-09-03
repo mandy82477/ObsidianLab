@@ -8,6 +8,10 @@ last_news_update: "2026-09-03"
 update_freq: "🗓️ 每日快照（機器產出；只有星數，不做推薦）"
 status_main: "ongoing"
 days_since_news: 0
+parent: null
+children: "[]"
+page_role: "root"
+days_since_news_subtree: 0
 inbound_links: 0
 attribution_count: 0
 attribution_last: null
