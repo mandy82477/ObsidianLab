@@ -2001,6 +2001,22 @@ window.WIKI_DATA = {
       "latestHeadline": "Anthropic 首度公開否認中國官方「後門」指控（多家獨立媒體報導）；同日發布「Inviting hard questions」聲明，兩者關聯（推論，2026-07-10 觀察，已掃日報至 2026-08-14 無後續證實；官方頁面未查證）"
     },
     {
+      "id": "site-source-tooling",
+      "pageType": "topic",
+      "name": "本站抓料工具規模榜",
+      "entityType": "",
+      "status": "ongoing",
+      "domain": "🛠️ 工具/功能",
+      "pill": "active",
+      "firstSeen": "",
+      "startDate": "2026-09-03",
+      "lastUpdated": "2026-09-03",
+      "lastNewsUpdate": "2026-09-03",
+      "updateFreq": "🗓️ 每日快照（機器產出；只有星數，不做推薦）",
+      "summary": "本站自己的資料來源會壞（RSS 分數恆 0、事件流退化、來源改版），這頁每天到 GitHub 看「新聞聚合／爬蟲韌性這一類現在誰大」，當本站評估抓料工具時的參考。不是讀者的開發實務——開發實務入口在 index；星數是規模不是品質。",
+      "latestHeadline": ""
+    },
+    {
       "id": "skill-interest-watch",
       "pageType": "topic",
       "name": "興趣類別 skill 總覽",

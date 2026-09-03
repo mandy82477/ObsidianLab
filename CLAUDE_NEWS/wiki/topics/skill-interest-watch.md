@@ -75,7 +75,7 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 
 | 目前前 5 | ★ | 一句話 |
 |---|---|---|
-| [multica-ai/andrej-karpathy-skills](https://github.com/multica-ai/andrej-karpathy-skills) 🧭 📰 | 209,776 | A single CLAUDE.md file to improve Claude Code behavior, derived from Andrej Karpathy's o… |
+| [multica-ai/andrej-karpathy-skills](https://github.com/multica-ai/andrej-karpathy-skills) 🧭 📰 | 209,781 | A single CLAUDE.md file to improve Claude Code behavior, derived from Andrej Karpathy's o… |
 | [Piebald-AI/claude-code-system-prompts](https://github.com/Piebald-AI/claude-code-system-prompts) 📰 | 12,560 | All parts of Claude Code's system prompt, 27 builtin tool descriptions, sub agent prompts… |
 | [drona23/claude-token-efficient](https://github.com/drona23/claude-token-efficient) | 6,007 | One CLAUDE.md file. Keeps Claude responses terse. Reduces output verbosity on heavy workf… |
 | [gadievron/raptor](https://github.com/gadievron/raptor) | 3,701 | Raptor turns Claude Code into a general-purpose AI offensive/defensive security agent. By… |
@@ -91,10 +91,10 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 
 | 目前前 5 | ★ | 一句話 |
 |---|---|---|
-| [Graphify-Labs/graphify](https://github.com/Graphify-Labs/graphify) 🧭 📰 | 114,137 | Turn any codebase, with its docs, SQL schemas, configs, and PDFs, into a queryable knowle… |
+| [Graphify-Labs/graphify](https://github.com/Graphify-Labs/graphify) 🧭 📰 | 114,141 | Turn any codebase, with its docs, SQL schemas, configs, and PDFs, into a queryable knowle… |
 | [Egonex-AI/Understand-Anything](https://github.com/Egonex-AI/Understand-Anything) 🧭 📰 | 81,365 | Graphs that teach > graphs that impress. Turn any code into an interactive knowledge grap… |
-| [colbymchenry/codegraph](https://github.com/colbymchenry/codegraph) 🧭 📰 | 69,365 | Pre-indexed code knowledge graph, auto syncs on code changes, for Claude Code, Codex, Gem… |
-| [abhigyanpatwari/GitNexus](https://github.com/abhigyanpatwari/GitNexus) | 46,928 | GitNexus: The Zero-Server Code Intelligence Engine -       GitNexus is a client-side know… |
+| [colbymchenry/codegraph](https://github.com/colbymchenry/codegraph) 🧭 📰 | 69,369 | Pre-indexed code knowledge graph, auto syncs on code changes, for Claude Code, Codex, Gem… |
+| [abhigyanpatwari/GitNexus](https://github.com/abhigyanpatwari/GitNexus) | 46,929 | GitNexus: The Zero-Server Code Intelligence Engine -       GitNexus is a client-side know… |
 | [DeusData/codebase-memory-mcp](https://github.com/DeusData/codebase-memory-mcp) | 41,990 | High-performance code intelligence MCP server. Indexes codebases into a persistent knowle… |
 
 ### 規劃與拆解（對應 [[topics/coding-workflow-guide]] 第 3 段）
@@ -103,8 +103,8 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 
 | 目前前 5 | ★ | 一句話 |
 |---|---|---|
-| [github/spec-kit](https://github.com/github/spec-kit) | 133,200 | 💫 Toolkit to help you get started with Spec-Driven Development |
-| [Fission-AI/OpenSpec](https://github.com/Fission-AI/OpenSpec) | 67,118 | Spec-driven development (SDD) for AI coding assistants. |
+| [github/spec-kit](https://github.com/github/spec-kit) | 133,204 | 💫 Toolkit to help you get started with Spec-Driven Development |
+| [Fission-AI/OpenSpec](https://github.com/Fission-AI/OpenSpec) | 67,119 | Spec-driven development (SDD) for AI coding assistants. |
 | [gsd-build/get-shit-done](https://github.com/gsd-build/get-shit-done) 📰 | 64,604 | A light-weight and powerful meta-prompting, context engineering and spec-driven developme… |
 | [gsd-build/gsd-2](https://github.com/gsd-build/gsd-2) | 7,773 | A powerful meta-prompting, context engineering and spec-driven development system that en… |
 | [buildermethods/agent-os](https://github.com/buildermethods/agent-os) | 5,365 | Agent OS is a system for injecting your codebase standards and writing better specs for s… |
@@ -168,9 +168,9 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 
 | 目前前 5 | ★ | 一句話 |
 |---|---|---|
-| [stablyai/orca](https://github.com/stablyai/orca) | 60,409 | Orca is the ADE for working with a fleet of parallel agents. Run any coding agent with yo… |
+| [stablyai/orca](https://github.com/stablyai/orca) | 60,417 | Orca is the ADE for working with a fleet of parallel agents. Run any coding agent with yo… |
 | [Yeachan-Heo/oh-my-codex](https://github.com/Yeachan-Heo/oh-my-codex) | 32,967 | OmX - Oh My codeX: Your codex is not alone. Add hooks, agent teams, HUDs, and so much mor… |
-| [revfactory/harness](https://github.com/revfactory/harness) | 8,887 | A meta-skill that designs domain-specific agent teams, defines specialized agents, and ge… |
+| [revfactory/harness](https://github.com/revfactory/harness) | 8,888 | A meta-skill that designs domain-specific agent teams, defines specialized agents, and ge… |
 | [automazeio/ccpm](https://github.com/automazeio/ccpm) | 8,361 | Project management skill system for Agents that uses GitHub Issues and Git worktrees for… |
 | [ZSeven-W/openpencil](https://github.com/ZSeven-W/openpencil) | 5,802 | The world's first open-source AI-native vector design tool and the first to feature concu… |
 
@@ -190,7 +190,7 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 
 | 目前前 5 | ★ | 一句話 |
 |---|---|---|
-| [yusufkaraaslan/Skill_Seekers](https://github.com/yusufkaraaslan/Skill_Seekers) | 14,892 | Convert documentation websites, GitHub repositories, and PDFs into Claude AI skills with… |
+| [yusufkaraaslan/Skill_Seekers](https://github.com/yusufkaraaslan/Skill_Seekers) | 14,893 | Convert documentation websites, GitHub repositories, and PDFs into Claude AI skills with… |
 | [PleasePrompto/notebooklm-mcp](https://github.com/PleasePrompto/notebooklm-mcp) 📰 | 3,389 | MCP server for NotebookLM - Let your AI agents (Claude Code, Codex) research documentatio… |
 | [cyberagiinc/DevDocs](https://github.com/cyberagiinc/DevDocs) | 2,105 | Completely free, private, UI based Tech Documentation MCP server. Designed for coders and… |
 | [trailofbits/claude-code-config](https://github.com/trailofbits/claude-code-config) | 2,098 | Opinionated defaults, documentation, and workflows for Claude Code at Trail of Bits |

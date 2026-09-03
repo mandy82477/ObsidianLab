@@ -5368,3 +5368,7 @@ GH Actions 抓料排 10:23 UTC，到 14:45 UTC 仍未落地（+4.4 小時且持�
 ## 2026-09-03 冷讀者第四輪（單頁總覽）：6/6、無阻擋級——八刺修七、一項待裁決
 
 改版後六題最大跳數 2（四題 1 跳）。讀者判「判斷與規模同頁是淨改善」「抄錄日＋落後上限那句最讓人放心」。修：決策表分界工具加連結（archify 不在 codebase 榜前五——它是圖表工具、query 為 knowledge graph，屬不同工種，靠分界句連結補）；orchestration 判斷列下加 Harness 同名提醒（設定檔 `caveat`）；重印列標「同頁首決策表對應列」；圖例加「榜偶有跨類誤收」；tools 推薦細節去「3 跳自檢與冷讀者驗收」流程名；patterns「功能記者／縫合」28 處改讀者語言；index 導言加升版風險出口（連 feature-radar，不入表列、不把產品頁拉回 tab）。**待裁決**：「資料源韌性與監測」類別讀者兩輪判在開發實務頁像雜訊、自承非 coding 工具——已設 `status=hidden`（設定保留、頁面不印、不查配額），要回來改 active 即可。
+
+## 2026-09-03 裁決：「資料源韌性」找到合適的家——本站抓料工具規模榜（🛠️ 領域獨立機器頁）
+
+使用者裁決「找個合適的頁面放」而非隱藏。它服務的是「本站怎麼抓料」，不是讀者的開發實務，故新頁 `wiki/topics/site-source-tooling.md`（🛠️ 工具/功能，每日快照，只有規模榜不做判斷），由同一支 `skill_interest_snapshot.py` 的 C 組輸出（`render_site`）；DERIVED_PAGES、index 目錄列、workflow commit 路徑同步；測試鎖住「C 組不得帶 guide_section／tools_symptom、不進總覽頁」。開發實務 tab 名單不變（五頁）。

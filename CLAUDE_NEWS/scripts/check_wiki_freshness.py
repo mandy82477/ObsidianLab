@@ -75,6 +75,9 @@ DERIVED_PAGES = {
         ".claude/rules/wiki-ingest-community-lint.md「skill-interest-watch：機器快照頁」"
         "（每日由 scripts/skill_interest_snapshot.py 覆寫，吃 GitHub Search 非新聞條目；"
         "2026-09-02 建頁時漏登記，擋掉當日雲端 web build——教訓見同日 log）",
+    "topics/site-source-tooling":
+        ".claude/rules/wiki-ingest-community-lint.md「skill-interest-watch：機器快照頁」"
+        "（同一支 scripts/skill_interest_snapshot.py 的 C 組輸出，本站維運參考，每日覆寫）",
 }
 
 LAST_NEWS_RE = re.compile(r"^\*\*最後新聞更新：\*\*\s*(\d{4}-\d{2}-\d{2})\s*$", re.MULTILINE)
