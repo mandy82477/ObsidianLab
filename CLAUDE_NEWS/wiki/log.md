@@ -5469,3 +5469,5 @@ GH Actions 抓料排 10:23 UTC，到 14:45 UTC 仍未落地（+4.4 小時且持�
 - 呈現品質：全部通過（功能記者順手修復 claude-code.md 既有已知問題重複條目與版本表失效指路；社群記者 callout 覆寫與熱門討論表逾期列汰除皆通過）
 - 品質備註：（無）
 - devpractice 沉澱：待派工（見下方 4b）
+
+**devpractice 沉澱補記（2026-09-03，接續上方 Ingest 紀錄）：** 候選 5 筆——`topics/community-tech-patterns`：internet-court-skill（agent 間商業信任層 skill）、yetone/cumora（跨平台 agent 團隊聊天工具）、Abilityai/trinity（自架多 agent 平台）；`topics/long-context-1m`：`[1m]` 變體遭 Max 方案覆蓋逾 6 週未解；`entities/claude-code`：官方建議任務間執行 `/clear` 省 token。基準線技術備註：狀態檔記錄基準 sha 因本庫近期歷史重寫而遺失，腳本依文件化失敗模式自動退回 48 小時前基準，記者已逐頁核對排除與稍早批次重複的 14 筆，僅新增本輪確認未入帳的 5 筆；基準線已推進至 HEAD，非本次操作所致、後續執行不受影響。
