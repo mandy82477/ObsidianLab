@@ -30,13 +30,7 @@
       "time": "09/01 19:17",
       "sentiment": "",
       "body": "使用者請求 Anthropic 仿照 OpenAI、Google 推出印度盧比（INR）定價方案，適用於 Claude Pro 與 Claude Code 訂閱；累積 213 則留言、628 個 👍，是本輪最熱門的功能請求。",
-      "focusTags": [],
-      "sedimented": [
-        {
-          "id": "claude-code",
-          "pageType": "entity"
-        }
-      ]
+      "focusTags": []
     },
     {
       "title": "[BUG] Claude Code Desktop fails to Relaunch on Windows due to orphaned process file lock",
@@ -45,13 +39,7 @@
       "time": "09/01 21:21",
       "sentiment": "",
       "body": "回報 Windows 版 Claude Code 桌面應用因孤兒程序（orphaned process）鎖住檔案而無法重新啟動；累積 144 則留言、71 個 👍。",
-      "focusTags": [],
-      "sedimented": [
-        {
-          "id": "claude-code",
-          "pageType": "entity"
-        }
-      ]
+      "focusTags": []
     },
     {
       "title": "[BUG] Fable 5 prompts 'usage credits required' on Max plan from 2026-07-20, the day it became standard on Max",
@@ -60,13 +48,7 @@
       "time": "09/02 02:12",
       "sentiment": "",
       "body": "回報自 7/20 Fable 5 成為 Max 方案標準內含模型當天起，Claude Code 卻要求「需額外用量額度」並悄悄降級為 Opus 4.8；累積 76 則留言、26 個 👍。",
-      "focusTags": [],
-      "sedimented": [
-        {
-          "id": "claude-code",
-          "pageType": "entity"
-        }
-      ]
+      "focusTags": []
     },
     {
       "title": "Anthropic banned me for \"suspicious signals\"",
@@ -93,13 +75,7 @@
       "time": "09/02 08:01",
       "sentiment": "",
       "body": "報導指出印度 Mythic Society 使用 Claude Code 過程中，多年累積的班加羅爾文化遺產紀錄工作意外遺失，該機構現正投入資金強化備份系統；討論聚焦於自主 agent 造成損害時的究責歸屬。",
-      "focusTags": [],
-      "sedimented": [
-        {
-          "id": "claude-code",
-          "pageType": "entity"
-        }
-      ]
+      "focusTags": []
     }
   ],
   "techUpdates": [
@@ -228,13 +204,7 @@
       "time": "09/01 20:40",
       "sentiment": "",
       "body": "作者以自己單一用戶的實測，比較 Claude Code 內建記憶與自己的認知記憶差異，指出內建記憶確實有效，但兩者做的並非同一件事。🤔",
-      "focusTags": [],
-      "sedimented": [
-        {
-          "id": "claude-code",
-          "pageType": "entity"
-        }
-      ]
+      "focusTags": []
     },
     {
       "title": "7 of My 8 Claude Code Agents Had Zero Calls in 30 Days: Finding Dead Agents Automatically",
@@ -243,13 +213,7 @@
       "time": "09/02 00:00",
       "sentiment": "",
       "body": "作者盤點自訂 subagent 使用紀錄，發現 8 個裡有 7 個 30 天內零呼叫，因而建了一套自動偵測「殭屍 agent」的機制。🤔",
-      "focusTags": [],
-      "sedimented": [
-        {
-          "id": "claude-code",
-          "pageType": "entity"
-        }
-      ]
+      "focusTags": []
     },
     {
       "title": "The blast radius rule for AI coding",
@@ -267,13 +231,7 @@
       "time": "09/01 16:54",
       "sentiment": "",
       "body": "作者開源一套工具，讓 Claude Code、Codex、Gemini CLI 等多種 coding agent 的 session 可儲存、分享、公開或私有，並可跨 harness 匯入、fork 他人 session。😊",
-      "focusTags": [],
-      "sedimented": [
-        {
-          "id": "claude-code",
-          "pageType": "entity"
-        }
-      ]
+      "focusTags": []
     },
     {
       "title": "Show HN: Lanes, simple Claude coordination that exploits 0.1x cache-read pricing",
@@ -291,13 +249,7 @@
       "time": "09/02 12:01",
       "sentiment": "",
       "body": "團隊分享捨棄自建 11 個月的 multi-agent 系統、改用 MCP 讓 Claude Code、Codex 等 coding agent 直接建置內部工具的心路歷程。🤔",
-      "focusTags": [],
-      "sedimented": [
-        {
-          "id": "claude-code",
-          "pageType": "entity"
-        }
-      ]
+      "focusTags": []
     },
     {
       "title": "Claude's new system prompt really doesn't want to reproduce song lyrics",
@@ -350,13 +302,7 @@
       "time": "09/02 14:34",
       "sentiment": "",
       "body": "Claude Code「週用量提高 50%」的促銷再度延長，新到期日為 2026 年 9 月 13 日（原訂 8 月 31 日到期），適用 Pro、Max、Team 方案。",
-      "focusTags": [],
-      "sedimented": [
-        {
-          "id": "claude-code",
-          "pageType": "entity"
-        }
-      ]
+      "focusTags": []
     }
   ],
   "focus": [
@@ -474,11 +420,6 @@
   "preview": "Anthropic 發布新一代旗艦模型 Claude Fable 5.1 與 Claude Mythos 5.1——兩者為同一模型的不同防護層級，Fable 5.1 一般可用，Mythos 5.1 僅開放信任機構存取、針對資安與生命科學工作特別強化防護；新增反萃取（anti-distillation）機制，快取讀取費率",
   "sedimentedToday": [
     {
-      "id": "claude-code",
-      "name": "Claude Code",
-      "pageType": "entity"
-    },
-    {
       "id": "fable-5",
       "name": "Claude Fable 5",
       "pageType": "entity"
@@ -511,16 +452,6 @@
     {
       "id": "community-pattern-trends",
       "name": "社群趨勢觀察（週更）",
-      "pageType": "topic"
-    },
-    {
-      "id": "community-tech-discussions",
-      "name": "社群技術討論趨勢",
-      "pageType": "topic"
-    },
-    {
-      "id": "community-tech-patterns",
-      "name": "社群實戰模式庫",
       "pageType": "topic"
     },
     {
