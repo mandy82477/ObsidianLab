@@ -1197,10 +1197,18 @@ def build():
                 ids.append(base)
         return ids
 
+    # 讀者分類（2026-09-03 使用者裁決）：wiki 標頭的「領域」是記者認領欄（誰維護），網站不需要
+    # 知道記者是誰——讀者看到的分類是 readerDomain：index「💻 開發實務入口」表列出的頁一律
+    # 歸 💻 開發實務（獨佔，不再同時出現在 🛠️／🌐 篩選下），其餘沿用領域值。
+    _coding_ids = coding_pages()
+    _coding_set = set(_coding_ids)
+    for _it in entities + topics:
+        _it["readerDomain"] = "💻 開發實務" if _it["id"] in _coding_set else _it["domain"]
+
     wiki_data = {
         "entities":    [slim(e) for e in entities],
         "topics":      [slim(t) for t in topics],
-        "codingPages": coding_pages(),
+        "codingPages": _coding_ids,
         "digestIndex": digest_index,
         "weeklyIndex": weekly_index,
         "radar": radar if radar else None,  # include markdown — rendered inline, no fetch needed

@@ -494,15 +494,17 @@
     const childCount = {};
     all.forEach(i => { if (i.parent) { const p = i.parent.split('/').pop(); childCount[p] = (childCount[p] || 0) + 1; } });
     const roots = sorted.filter(i => !i.parent);
+    // 讀者分類（2026-09-03）：篩選看 readerDomain（build 端算好：index 💻 入口表的頁歸 💻 開發實務，
+    // 其餘沿用領域值）；舊資料無 readerDomain 時退回 domain／codingPages，避免快取舊 data.js 時整頁空白
+    const readerDomain = i => i.readerDomain || (codingIds.has(i.id) ? '💻 開發實務' : i.domain);
     const filtered = activeDomain === 'all' ? roots
       : activeDomain === 'weekly' ? roots.filter(i => !!i.updateFreq)
-      : activeDomain === 'coding' ? roots.filter(i => codingIds.has(i.id))
-      : roots.filter(i => i.domain === activeDomain);
+      : roots.filter(i => readerDomain(i) === activeDomain);
     // 週更篩選時置頂一行說明：日期停留數天是策展節奏，不是漏更新
     const weeklyNote = activeDomain === 'weekly'
       ? '<div class="kb-filter-note">這些頁面採每週策展維護，更新日期停留數天屬正常節奏，並非漏更新。</div>'
-      : activeDomain === 'coding'
-      ? '<div class="kb-filter-note">程式開發相關頁面的跨領域集合——做某件事該下哪個 skill、卡住了找社群首選、寫 code 選哪個模型。</div>'
+      : activeDomain === '💻 開發實務'
+      ? '<div class="kb-filter-note">程式開發實務——做某件事該下哪個 skill、卡住了找社群首選、寫 code 選哪個模型。</div>'
       : '';
     container.innerHTML = weeklyNote + filtered.map(item => {
       const kbType = kbTypeOf(item);
