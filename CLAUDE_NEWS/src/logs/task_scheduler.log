@@ -482,3 +482,9 @@
 [Wed 2026/09/02 22:42:16.00] Step 5 Single push done (news + wiki, web skipped) - 首次嘗試即成功，無需重試 (3b97796..505ff29)
 [Wed 2026/09/02 22:42:16.00] === Pipeline complete (agent, web build skipped) ===
 [cloud daily-news-pipeline-cloud STARTED 2026-09-03T12:05:34Z]
+[Thu 2026/09/03 12:06:12.00 UTC] === Agent pipeline start (2026-09-03) ===
+[Thu 2026/09/03 12:06:12.00 UTC] Step 0 昨日缺跑檢查 OK - news/2026-09-02.md 存在
+[Thu 2026/09/03 12:06:12.00 UTC] Step 0b 冪等閘 OK - news/2026-09-03.md 不存在，正常繼續
+[Thu 2026/09/03 12:06:12.00 UTC] Step 1a replay FAILED - src/gathered_archive/2026-09-03.json 不存在（上游抓料延遲）
+[Thu 2026/09/03 12:06:12.00 UTC] ABORTED: gathered_items.json date=2026-09-02 items=97，非目標日期的新鮮資料
+[Thu 2026/09/03 12:06:12.00 UTC] === Pipeline aborted (cloud, 12:00 UTC shift) ===
