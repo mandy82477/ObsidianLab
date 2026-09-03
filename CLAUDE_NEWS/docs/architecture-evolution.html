@@ -11,7 +11,7 @@
     <div class="wrap" style="padding-top: 1.25rem; padding-bottom: 1.25rem;">
       <div>
         <h1 class="arch-title">自動化新聞知識庫系統<span class="arch-title__sub"> / 架構演進</span></h1>
-        <p class="arch-subtitle">SCRIPT &middot; LLM 呼叫點 &middot; AGENT 設計 &mdash; 三條線的時間軸（2026-04-25 &rarr; 2026-08-27）</p>
+        <p class="arch-subtitle">SCRIPT &middot; LLM 呼叫點 &middot; AGENT 設計 &mdash; 三條線的時間軸（2026-04-25 &rarr; 2026-09-03）</p>
       </div>
       <nav class="arch-nav">
         <a href="architecture-evolution-v2.html" class="arch-tab arch-tab--active">架構演進</a>
@@ -1292,6 +1292,42 @@ pipeline 由 LLM agent 執行，失敗訊息它讀得懂也修得好；Step 4 �
 
       <p>wiki 懸置探針含千分位逗號 <code>$1,125</code> 被切成 <code>$1</code> 觸發 FAIL，日報與 wiki 全部正常、網站卻停更一天，瑕疵本身也沒人修。</p>
 <p><strong>做法：</strong> pipeline 由 LLM agent 執行，失敗訊息它讀得懂也修得好；Step 4 改為擋下先自修（限 wiki 內容格式，至多 2 輪重跑 gate），硬性禁止改 check 腳本、加 known-test-gaps 放行、刪內容了事。</p>
+    </div>
+  </button>
+</div>
+</div>
+<h2 class="timeline-month">2026-09</h2>
+<div class="timeline-track">
+<div class="event-card-wrap" data-track="script" data-search="GitHub 發現機制改版＋第七位記者＋進料放寬
+漏球徹查：archify（43k★）、Understand-Anything（81k★，曾上 HN 169 分）零收錄——三層病因：A/B 窗 scope 綁 claude 關鍵字（Agent Skills 生態結構性遲到）、HN 來源關鍵字閘擋掉標題不含 claude 的 in-scope 工具、C 窗佇列 154 候選每日 2 則塞車 77 天（佇列量只在 logger、無消費端）。
+處置：C 窗一次清倉入 data/inventory_clearance.md；D 窗 hn_repo_bridge.py（HN ≥100 分＋repo 描述關鍵字閘，回測命中 Understand-Anything）；E 窗星史記錄端（GitHub 事件流 2026 結構性退化、OSS Insight 陣亡，快照輪詢自算差值為市面唯一活路）；共用已報導閘；A/B 上限收斂；逐窗產消對帳 discovery_queue_history.csv＋lint 6e 看守；升格通用原則 D7「建佇列必附產消對帳」。
+第七位記者 devpractice：不靠他人標 tag，自己 git diff 撿料（跨記者耦合＝已知失效模式）；daily 只沉澱、weekly 於 lint 5f 彙整（本週 coding 亮點／guide 社群面補寫／跨頁對帳）。
+進料放寬：wiki 沉澱來源由「日報唯一」改為「日報＋使用者提問」（主編 web 查證後直接沉澱，slug user-query）。
+興趣類別 skill 榜 skill_interest_snapshot.py：12 類定向 GitHub 搜尋、每日覆寫快照頁；8 類上榜、4 類治理需求校準無辨識力（感測器裝錯層）改指路 tools 決策表；榜→tools 單向橋。
+兩個踩坑固化：check_wiki_freshness.py 新增「未登記衍生頁」檢查（建頁漏登記 DERIVED_PAGES 擋掉雲端 web build 一天）；Step 5 自解白名單擴至 append-only 檔（resolve_append_only.py union，本機與雲端班次撞 log.md 不再整輪重跑）。
+">
+  <span class="event-card-wrap__dot" style="background-color: var(--success);"></span>
+  <button class="event-card event-card--script" onclick="toggleEvent(this)">
+    <div class="event-card__head">
+      <div>
+        <div>
+          <span class="event-date">2026.09.02–03</span>
+          <span class="event-tag event-tag--script">來源機制改版</span>
+          <span class="event-tag event-tag--agent">第七位記者</span>
+
+        </div>
+        <h3 class="event-title">GitHub 發現機制改版＋第七位記者＋進料放寬</h3>
+      </div>
+      <span class="event-toggle">+</span>
+    </div>
+    <div class="event-body" hidden>
+
+      <p><strong>漏球徹查：</strong> archify（43k★）、Understand-Anything（81k★，曾上 HN 169 分）零收錄——三層病因：A/B 窗 scope 綁 claude 關鍵字（Agent Skills 生態結構性遲到）、HN 來源關鍵字閘擋掉標題不含 claude 的 in-scope 工具、C 窗佇列 154 候選每日 2 則塞車 77 天（佇列量只在 logger、無消費端）。</p>
+<p><strong>處置：</strong> C 窗一次清倉入 <code>data/inventory_clearance.md</code>；D 窗 <code>hn_repo_bridge.py</code>（HN ≥100 分＋repo 描述關鍵字閘，回測命中 Understand-Anything）；E 窗星史記錄端（GitHub 事件流 2026 結構性退化、OSS Insight 陣亡，快照輪詢自算差值為市面唯一活路）；共用已報導閘；A/B 上限收斂；逐窗產消對帳 <code>discovery_queue_history.csv</code>＋lint 6e 看守；升格通用原則 D7「建佇列必附產消對帳」。</p>
+<p><strong>第七位記者 devpractice：</strong> 不靠他人標 tag，自己 git diff 撿料（跨記者耦合＝已知失效模式）；daily 只沉澱、weekly 於 lint 5f 彙整（本週 coding 亮點／guide 社群面補寫／跨頁對帳）。</p>
+<p><strong>進料放寬：</strong> wiki 沉澱來源由「日報唯一」改為「日報＋使用者提問」（主編 web 查證後直接沉澱，slug user-query）。</p>
+<p><strong>興趣類別 skill 榜</strong> <code>skill_interest_snapshot.py</code>：12 類定向 GitHub 搜尋、每日覆寫快照頁；8 類上榜、4 類治理需求校準無辨識力（感測器裝錯層）改指路 tools 決策表；榜→tools 單向橋。</p>
+<p><strong>兩個踩坑固化：</strong> <code>check_wiki_freshness.py</code> 新增「未登記衍生頁」檢查（建頁漏登記 DERIVED_PAGES 擋掉雲端 web build 一天）；Step 5 自解白名單擴至 append-only 檔（<code>resolve_append_only.py</code> union，本機與雲端班次撞 log.md 不再整輪重跑）。</p>
     </div>
   </button>
 </div>
