@@ -92,9 +92,11 @@ class TestRender(unittest.TestCase):
         finally:
             sis.STAR_HISTORY = orig
         self.assertIn("冷啟動", md)                       # 星史不足 → 明寫，不留白
-        self.assertIn("無法用 GitHub 辨識的需求", md)       # retired 類別 → 指路段，不掛空榜
-        self.assertIn("本庫判斷 →", md)                    # 每類單向橋
-        self.assertNotIn("### 測試與驗證", md)              # retired 類不印空節
+        self.assertIn("## 我卡在這裡（決策表）", md)        # 決策表機械抄自 tools 頁
+        self.assertIn("| 我的症狀 | 先裝這個 |", md)        # 抄本有表頭（tools 頁契約）
+        self.assertIn("**本庫判斷**", md)                  # 每類判斷區塊
+        self.assertIn("規模榜：無", md)                    # retired 類只印判斷、不掛空榜
+        self.assertNotIn("本庫判斷 →", md)                 # 舊式指路橋已由抄錄取代
         self.assertIn("| [github/spec-kit]", md)
         self.assertIn("Spec-Driven ／ Development", md)   # 儲存格 | 轉義
         self.assertIn("**最後更新：** 2026-09-03", md)

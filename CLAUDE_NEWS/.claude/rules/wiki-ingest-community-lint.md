@@ -26,7 +26,7 @@
 
 `wiki/topics/skill-interest-watch.md` 由 `scripts/skill_interest_snapshot.py` 每日（daily-gather workflow）**整頁覆寫**，設定與 query 校準紀錄在 `data/skill_interest_watch.json`。社群記者 lint 時只做呈現品質檢查，**發現內容問題不得手改頁面**（下次快照會蓋掉）——改設定檔或回報主編；新 query 依設定檔 `_query_rules` 先 `--probe` 實測再上線。它與 tools 頁分工：本頁答「這類現在誰最熱」（規模），tools 頁答「該裝哪個」（推薦）；榜上的 repo 若日後進日報，照策展規則正常收錄，不因已在榜上豁免門檻。
 
-**單向橋與退役類（2026-09-03 方案 D）：** 榜＝感測層（機器）、tools＝判斷層（人工），只准 **榜→tools** 單向連結——機器唯讀 tools 頁（🧭 標記＝該 repo 已在 tools 頁；每類「本庫判斷 →」行連決策表症狀句，句子由設定檔 `tools_symptom` 欄提供，`check_tools_page.check_spokes` 對帳），**tools 頁不抄榜**（速查每組 ≤ 5 列，超過汰除證據最弱者）。設定檔 `status=retired` 的 4 類（實作攔錯／測試驗證／除錯／git 衛生）是結構性不適任——治理型需求是讀者講痛點的語言，在 HN／dev.to 全文不在 repo 描述——**不得為湊數重上線**；它們的需求由決策表承接，證據流靠日報與 user-query 通道。你維護的是設定檔的 `tools_symptom`／`tools_note`（症狀列改名時同步），不是榜頁本身。
+**單向橋與退役類（2026-09-03 方案 D）：** 榜＝感測層（機器）、tools＝判斷層（人工），只准 **榜→tools** 單向連結——機器唯讀 tools 頁（🧭 標記＝該 repo 已在 tools 頁；每類「本庫判斷 →」行連決策表症狀句，句子由設定檔 `tools_symptom` 欄提供，`check_tools_page.check_spokes` 對帳），**tools 頁不抄榜**（速查每組 ≤ 5 列，超過汰除證據最弱者）。設定檔 `status=retired` 的 4 類（實作攔錯／測試驗證／除錯／git 衛生）是結構性不適任——治理型需求是讀者講痛點的語言，在 HN／dev.to 全文不在 repo 描述——**不得為湊數重上線**；它們的需求由決策表承接，證據流靠日報與 user-query 通道。你維護的是設定檔的 `tools_symptom`／`tools_note`（症狀列改名時同步），不是榜頁本身。 **2026-09-03 再裁決**：開發實務 tab 只留總覽頁一頁，tools 頁退出 tab——總覽頁每日**機械抄錄**本頁「我卡在這裡」整張決策表與各類對應列給讀者讀；判斷仍只在本頁寫（單一寫者，抄本最多落後一天）。決策表的欄位形狀（四欄、症狀句原文）因此是總覽頁的解析契約，改欄位要同步 `scripts/skill_interest_snapshot.py` 的 `decision_table_from_tools`。
 
 ## community-tech-tools 策展規則 `[加入: 2026-06-19]`
 

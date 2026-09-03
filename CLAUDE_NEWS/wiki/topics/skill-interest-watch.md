@@ -5,10 +5,10 @@ status: "ongoing"
 domain: "🌐 社群"
 last_updated: "2026-09-03"
 last_news_update: "2026-09-03"
-update_freq: "🗓️ 每日快照（機器產出；「本週竄升」以七日星數差計）"
+update_freq: "🗓️ 每日快照（機器產出；決策表抄自社群工具目錄、最多落後一天；「本週竄升」以七日星數差計）"
 status_main: "ongoing"
 days_since_news: 0
-inbound_links: 3
+inbound_links: 4
 attribution_count: 0
 attribution_last: null
 top_source: null
@@ -16,137 +16,198 @@ pending_count: 0
 pending_overdue: 0
 pending_next_review: null
 pending_signalled: 0
-signal: "孤島"
+signal: "健康"
 generated_by: "scripts/gen_wiki_frontmatter.py"
 ---
-# 興趣類別 skill 榜
+# 興趣類別 skill 總覽
 
 **狀態：** ongoing
 **開始日期：** 2026-09-02
 **領域：** 🌐 社群
-**更新頻率：** 🗓️ 每日快照（機器產出；「本週竄升」以七日星數差計）
+**更新頻率：** 🗓️ 每日快照（機器產出；決策表抄自社群工具目錄、最多落後一天；「本週竄升」以七日星數差計）
 **最後更新：** 2026-09-03
 **最後新聞更新：** 2026-09-03
 
 > **本頁是什麼**（2026-09-03 快照）
-> 每天到 GitHub 問「這一類現在誰最熱、本週誰竄上來」（7 類可用 GitHub 辨識）。**星數是規模不是品質**：本頁是機器產出、只有星數、不做推薦；**該裝哪個、證據多強、為什麼**在 [[topics/community-tech-tools]]。榜上標 🧭 的工具代表工具頁已有判斷——先看那邊。每類末的「本庫判斷 →」指向對應的判斷。
+> 讀者關心的開發實務類別，一頁看完兩件事：**該裝哪個**（「我卡在這裡」決策表——有人判斷過、帶證據等級與判定日）與**這一類現在誰大、本週誰在漲**（GitHub 每日規模榜，7 類可用 GitHub 辨識）。**星數是規模不是品質**：榜不做推薦，推薦只看決策表；榜上標 🧭 的工具代表決策表或工具目錄已有判斷。判斷的完整證據、推薦細節、Skills 速查與 125 列工具目錄在 [[topics/community-tech-tools]]。
 
 ---
 
-## 怎麼讀
+## 我卡在這裡（決策表）
+
+本表每日機械抄自 [[topics/community-tech-tools]]（判斷與證據的家；改判斷請改那頁），抄錄日 2026-09-03。
+
+| 我的症狀 | 先裝這個 | 什麼時候改裝別的 | 證據 |
+|---|---|---|---|
+| 帳單爆了，看不到錢花在哪 | ⌨️ **tare** | 不想動終端、要桌面常駐 → 🖥️ Claude Usage Widget；想比較多個 coding agent 的花費 → Frugal Tokens | 🟡（08-27） |
+| context 一直被工具輸出撐爆 | 🔌 **pxpipe** | 不能接受請求過代理層 → 🧩 Graft（數字有爭議，見細節）；還不確定是誰在撐爆 → 先跑 ⌨️ PrismoDev 診斷 | 🟡（08-05，附防刷佐證） |
+| 接手沒碰過的大 repo，agent 讀不懂 | 🧩 [**graphify**](https://github.com/Graphify-Labs/graphify) | 要讓**人**看懂而非 agent → Understand-Anything；要把架構畫成圖交付 → archify；改 code 要索引自動同步 → codegraph（社群實測待累積） | 🟢（05-02 起多來源；08-31 訊號 11.3 萬星） |
+| 每開新 session 都要重講一遍 | ⌨️ **brain.md** | 要團隊共享而非單機 → 🖥️ OzBrain；已在用 Obsidian → VIR | 🟡（08-25） |
+| 多個 agent 在同一 repo 互相覆蓋 | ⌨️ [**Harness**](https://github.com/frenchie4111/harness) | 隔離後 commit 落地仍打架 → Claude Code Merge Queue；要跨 harness 統一協作邏輯 → omnigent | 🟢（04-29 起多來源） |
+| 一堆 agent 在跑，看不到誰卡住 | ⌨️ **Omar** | 只跑 3–5 個、不想多花一毛 token → HUD（走官方 event stream）；要 GUI 主控台 → Cockpit | 🟢（05-02 起多來源） |
+| 它說做完了，但根本沒做 | 🧩 [**Groundtruth**](https://github.com/vnmoorthy/groundtruth) | 要留可稽核證據給團隊審 → Proof Loop（建構者／驗證者分離） | 🟡（04-27） |
+| CLAUDE.md 寫了它不聽 | —（答案是機制不是工具，見細節） | 規則多到耗 token → Writ；跨工具設定碎片化 → Caliber | 🟢（08-25 實測） |
+| 不想被單一供應商綁死 | 🔌 **Workweave Router** | 只想改用本地模型、不動主配置 → claudely；想繞過計量計費 → clarp（⚠️ 政策風險，見細節） | 🟡（06-27） |
+
+**圖例**——證據：🟢 多來源實測／🟡 單一實測（多為作者自測）／⚪ 僅星數。**證據等級為收錄或查證當時的判定，括號內即判定日，不隨時間自動回訪**。安裝：🧩 skill/plugin（一行安裝隨時可拔）／⌨️ CLI／🖥️ 桌面 app（注意平台鎖定）／🔌 proxy·MCP（**流量過第三方層，裝前先評估安全**）。首選只在出現新證據時更換，不為輪替而換。
+
+---
+
+## 各類別：本庫判斷＋規模榜
 
 | 欄 | 意思 |
 |---|---|
-| 目前前 5 | 該類別 query 命中的 repo 依星數排序，星數為快照當日值 |
-| 本週竄升 | 七日內星數增量 ≥ 200 者，依增量排序；資料來自各發現窗每日記錄的星史檔 |
-| 📰 | 本庫日報或清倉帳本已報導過 |
-| 🧭 | 本庫已有判斷——該 repo 出現在 [[topics/community-tech-tools]]（決策表／速查／目錄） |
+| 本庫判斷 | 該類別對應的決策表列（同上表，就近重印方便對照） |
+| 目前前 5 | 該類別 GitHub 搜尋命中的 repo 依星數排序，星數為快照當日值 |
+| 本週竄升 | 七日內星數增量 ≥ 200 者，依增量排序；資料來自本庫每日記錄的星數 |
+| 📰 | 本庫日報已報導過 |
+| 🧭 | 決策表或工具目錄已有判斷 |
 
-> ⚠️ 星史檔目前只涵蓋 1 天（需 7 天），「本週竄升」欄尚在冷啟動，本週先只看「目前前 5」。
+> ⚠️ 星數記錄目前只涵蓋 1 天（需 7 天），「本週竄升」欄尚在冷啟動，本週先只看「目前前 5」。
 
 ## A. 開發實務（按流程階段，對應 [[topics/coding-workflow-guide]]）
 
 ### 專案設定／CLAUDE.md 生成（對應 [[topics/coding-workflow-guide]] 第 1 段）
 
+**本庫判斷**：標 🧭 者的判斷見 [[topics/community-tech-tools]] Skills 速查或工具目錄
+
 | 目前前 5 | ★ | 一句話 |
 |---|---|---|
-| [multica-ai/andrej-karpathy-skills](https://github.com/multica-ai/andrej-karpathy-skills) 🧭 📰 | 209,713 | A single CLAUDE.md file to improve Claude Code behavior, derived from Andrej Karpathy's o… |
-| [Piebald-AI/claude-code-system-prompts](https://github.com/Piebald-AI/claude-code-system-prompts) 📰 | 12,557 | All parts of Claude Code's system prompt, 27 builtin tool descriptions, sub agent prompts… |
+| [multica-ai/andrej-karpathy-skills](https://github.com/multica-ai/andrej-karpathy-skills) 🧭 📰 | 209,775 | A single CLAUDE.md file to improve Claude Code behavior, derived from Andrej Karpathy's o… |
+| [Piebald-AI/claude-code-system-prompts](https://github.com/Piebald-AI/claude-code-system-prompts) 📰 | 12,559 | All parts of Claude Code's system prompt, 27 builtin tool descriptions, sub agent prompts… |
 | [drona23/claude-token-efficient](https://github.com/drona23/claude-token-efficient) | 6,007 | One CLAUDE.md file. Keeps Claude responses terse. Reduces output verbosity on heavy workf… |
-| [gadievron/raptor](https://github.com/gadievron/raptor) | 3,698 | Raptor turns Claude Code into a general-purpose AI offensive/defensive security agent. By… |
-| [centminmod/my-claude-code-setup](https://github.com/centminmod/my-claude-code-setup) | 2,615 | Shared starter template configuration and CLAUDE.md memory bank system for Claude Code |
-
-本庫判斷 → 標 🧭 者見 [[topics/community-tech-tools]]（已有證據等級與一句為什麼）
+| [gadievron/raptor](https://github.com/gadievron/raptor) | 3,701 | Raptor turns Claude Code into a general-purpose AI offensive/defensive security agent. By… |
+| [centminmod/my-claude-code-setup](https://github.com/centminmod/my-claude-code-setup) | 2,617 | Shared starter template configuration and CLAUDE.md memory bank system for Claude Code |
 
 ### codebase 探索與理解（對應 [[topics/coding-workflow-guide]] 第 2a 段）
 
+**本庫判斷**
+
+| 我的症狀 | 先裝這個 | 什麼時候改裝別的 | 證據 |
+|---|---|---|---|
+| 接手沒碰過的大 repo，agent 讀不懂 | 🧩 [**graphify**](https://github.com/Graphify-Labs/graphify) | 要讓**人**看懂而非 agent → Understand-Anything；要把架構畫成圖交付 → archify；改 code 要索引自動同步 → codegraph（社群實測待累積） | 🟢（05-02 起多來源；08-31 訊號 11.3 萬星） |
+
 | 目前前 5 | ★ | 一句話 |
 |---|---|---|
-| [Graphify-Labs/graphify](https://github.com/Graphify-Labs/graphify) 🧭 📰 | 114,058 | Turn any codebase, with its docs, SQL schemas, configs, and PDFs, into a queryable knowle… |
-| [Egonex-AI/Understand-Anything](https://github.com/Egonex-AI/Understand-Anything) 🧭 📰 | 81,348 | Graphs that teach > graphs that impress. Turn any code into an interactive knowledge grap… |
-| [colbymchenry/codegraph](https://github.com/colbymchenry/codegraph) 🧭 📰 | 69,316 | Pre-indexed code knowledge graph, auto syncs on code changes, for Claude Code, Codex, Gem… |
-| [abhigyanpatwari/GitNexus](https://github.com/abhigyanpatwari/GitNexus) | 46,910 | GitNexus: The Zero-Server Code Intelligence Engine -       GitNexus is a client-side know… |
-| [DeusData/codebase-memory-mcp](https://github.com/DeusData/codebase-memory-mcp) | 41,956 | High-performance code intelligence MCP server. Indexes codebases into a persistent knowle… |
-
-本庫判斷 → 見 [[topics/community-tech-tools]]「我卡在這裡」的「接手沒碰過的大 repo，agent 讀不懂」列
+| [Graphify-Labs/graphify](https://github.com/Graphify-Labs/graphify) 🧭 📰 | 114,136 | Turn any codebase, with its docs, SQL schemas, configs, and PDFs, into a queryable knowle… |
+| [Egonex-AI/Understand-Anything](https://github.com/Egonex-AI/Understand-Anything) 🧭 📰 | 81,365 | Graphs that teach > graphs that impress. Turn any code into an interactive knowledge grap… |
+| [colbymchenry/codegraph](https://github.com/colbymchenry/codegraph) 🧭 📰 | 69,365 | Pre-indexed code knowledge graph, auto syncs on code changes, for Claude Code, Codex, Gem… |
+| [abhigyanpatwari/GitNexus](https://github.com/abhigyanpatwari/GitNexus) | 46,927 | GitNexus: The Zero-Server Code Intelligence Engine -       GitNexus is a client-side know… |
+| [DeusData/codebase-memory-mcp](https://github.com/DeusData/codebase-memory-mcp) | 41,990 | High-performance code intelligence MCP server. Indexes codebases into a persistent knowle… |
 
 ### 規劃與拆解（對應 [[topics/coding-workflow-guide]] 第 3 段）
 
+**本庫判斷**：本庫尚無判斷（榜上無 🧭 條目）——星數不是推薦，裝前自行查證
+
 | 目前前 5 | ★ | 一句話 |
 |---|---|---|
-| [github/spec-kit](https://github.com/github/spec-kit) | 133,136 | 💫 Toolkit to help you get started with Spec-Driven Development |
-| [Fission-AI/OpenSpec](https://github.com/Fission-AI/OpenSpec) | 67,079 | Spec-driven development (SDD) for AI coding assistants. |
-| [gsd-build/get-shit-done](https://github.com/gsd-build/get-shit-done) 📰 | 64,605 | A light-weight and powerful meta-prompting, context engineering and spec-driven developme… |
-| [gsd-build/gsd-2](https://github.com/gsd-build/gsd-2) | 7,771 | A powerful meta-prompting, context engineering and spec-driven development system that en… |
-| [buildermethods/agent-os](https://github.com/buildermethods/agent-os) | 5,364 | Agent OS is a system for injecting your codebase standards and writing better specs for s… |
+| [github/spec-kit](https://github.com/github/spec-kit) | 133,199 | 💫 Toolkit to help you get started with Spec-Driven Development |
+| [Fission-AI/OpenSpec](https://github.com/Fission-AI/OpenSpec) | 67,117 | Spec-driven development (SDD) for AI coding assistants. |
+| [gsd-build/get-shit-done](https://github.com/gsd-build/get-shit-done) 📰 | 64,604 | A light-weight and powerful meta-prompting, context engineering and spec-driven developme… |
+| [gsd-build/gsd-2](https://github.com/gsd-build/gsd-2) | 7,773 | A powerful meta-prompting, context engineering and spec-driven development system that en… |
+| [buildermethods/agent-os](https://github.com/buildermethods/agent-os) | 5,365 | Agent OS is a system for injecting your codebase standards and writing better specs for s… |
 
-本庫尚無判斷（榜上無 🧭 條目）——星數不是推薦，裝前自行查證
+### 實作期攔錯（hook／lint／型別）（對應 [[topics/coding-workflow-guide]] 第 4 段）
+
+**本庫判斷**
+
+| 我的症狀 | 先裝這個 | 什麼時候改裝別的 | 證據 |
+|---|---|---|---|
+| CLAUDE.md 寫了它不聽 | —（答案是機制不是工具，見細節） | 規則多到耗 token → Writ；跨工具設定碎片化 → Caliber | 🟢（08-25 實測） |
+
+規模榜：無——這類需求無法用 GitHub 描述辨識（治理型需求是讀者講痛點的語言，在 HN／dev.to 全文不在 repo 描述），本庫不掛空榜。
+
+### Code review（對應 [[topics/coding-workflow-guide]] 第 5 段）
+
+**本庫判斷**：本類本庫不推薦單一工具——官方 `/code-review`、ultra、GitHub App 等六個入口與明價，見 [[topics/coding-workflow-guide]] 第 5 段；社群面做法（Read-Only Reviewer、跨模型互審）見 [[topics/community-tech-patterns]]
+
+規模榜：無——這類需求無法用 GitHub 描述辨識（治理型需求是讀者講痛點的語言，在 HN／dev.to 全文不在 repo 描述），本庫不掛空榜。
+
+### 測試與驗證（含 evidence-gated done）（對應 [[topics/coding-workflow-guide]] 第 6 段）
+
+**本庫判斷**
+
+| 我的症狀 | 先裝這個 | 什麼時候改裝別的 | 證據 |
+|---|---|---|---|
+| 它說做完了，但根本沒做 | 🧩 [**Groundtruth**](https://github.com/vnmoorthy/groundtruth) | 要留可稽核證據給團隊審 → Proof Loop（建構者／驗證者分離） | 🟡（04-27） |
+
+規模榜：無——這類需求無法用 GitHub 描述辨識（治理型需求是讀者講痛點的語言，在 HN／dev.to 全文不在 repo 描述），本庫不掛空榜。
+
+### 除錯與靜默失敗偵測（對應 [[topics/coding-workflow-guide]] 第 9 段）
+
+**本庫判斷**：「感覺變笨，想先量測歸因」目前沒有成熟到可推薦單一工具，量測起點與訊號群見 [[topics/code-quality-decline]]
+
+規模榜：無——這類需求無法用 GitHub 描述辨識（治理型需求是讀者講痛點的語言，在 HN／dev.to 全文不在 repo 描述），本庫不掛空榜。
 
 ### 規則維護不腐爛（CLAUDE.md 跟上改動）（對應 [[topics/coding-workflow-guide]] 第 8 段）
+
+**本庫判斷**：本庫尚無判斷（榜上無 🧭 條目）——星數不是推薦，裝前自行查證
 
 | 目前前 5 | ★ | 一句話 |
 |---|---|---|
 | [steipete/agent-rules](https://github.com/steipete/agent-rules) | 5,694 | Rules and Knowledge to work better with agents such as Claude Code or Cursor |
-| [awslabs/aidlc-workflows](https://github.com/awslabs/aidlc-workflows) | 4,289 | AI-Driven Life Cycle (AI-DLC) adaptive workflow steering rules for AI coding agents |
+| [awslabs/aidlc-workflows](https://github.com/awslabs/aidlc-workflows) | 4,296 | AI-Driven Life Cycle (AI-DLC) adaptive workflow steering rules for AI coding agents |
 | [dromara/liteflow](https://github.com/dromara/liteflow) | 3,844 | Lightweight, fast, stable, programmable component-based rule engine — where AI Agents orc… |
-| [gadievron/raptor](https://github.com/gadievron/raptor) | 3,698 | Raptor turns Claude Code into a general-purpose AI offensive/defensive security agent. By… |
+| [gadievron/raptor](https://github.com/gadievron/raptor) | 3,701 | Raptor turns Claude Code into a general-purpose AI offensive/defensive security agent. By… |
 | [intellectronica/ruler](https://github.com/intellectronica/ruler) | 2,907 | Ruler — apply the same rules to all coding agents |
-
-本庫尚無判斷（榜上無 🧭 條目）——星數不是推薦，裝前自行查證
 
 ## B. 治理（管 agent 的需求）
 
 ### multi-agent orchestration
 
+**本庫判斷**
+
+| 我的症狀 | 先裝這個 | 什麼時候改裝別的 | 證據 |
+|---|---|---|---|
+| 多個 agent 在同一 repo 互相覆蓋 | ⌨️ [**Harness**](https://github.com/frenchie4111/harness) | 隔離後 commit 落地仍打架 → Claude Code Merge Queue；要跨 harness 統一協作邏輯 → omnigent | 🟢（04-29 起多來源） |
+| 一堆 agent 在跑，看不到誰卡住 | ⌨️ **Omar** | 只跑 3–5 個、不想多花一毛 token → HUD（走官方 event stream）；要 GUI 主控台 → Cockpit | 🟢（05-02 起多來源） |
+
 | 目前前 5 | ★ | 一句話 |
 |---|---|---|
-| [stablyai/orca](https://github.com/stablyai/orca) | 60,190 | Orca is the ADE for working with a fleet of parallel agents. Run any coding agent with yo… |
-| [Yeachan-Heo/oh-my-codex](https://github.com/Yeachan-Heo/oh-my-codex) | 32,969 | OmX - Oh My codeX: Your codex is not alone. Add hooks, agent teams, HUDs, and so much mor… |
-| [revfactory/harness](https://github.com/revfactory/harness) | 8,886 | A meta-skill that designs domain-specific agent teams, defines specialized agents, and ge… |
-| [automazeio/ccpm](https://github.com/automazeio/ccpm) | 8,360 | Project management skill system for Agents that uses GitHub Issues and Git worktrees for… |
-| [ZSeven-W/openpencil](https://github.com/ZSeven-W/openpencil) | 5,797 | The world's first open-source AI-native vector design tool and the first to feature concu… |
+| [stablyai/orca](https://github.com/stablyai/orca) | 60,403 | Orca is the ADE for working with a fleet of parallel agents. Run any coding agent with yo… |
+| [Yeachan-Heo/oh-my-codex](https://github.com/Yeachan-Heo/oh-my-codex) | 32,967 | OmX - Oh My codeX: Your codex is not alone. Add hooks, agent teams, HUDs, and so much mor… |
+| [revfactory/harness](https://github.com/revfactory/harness) | 8,887 | A meta-skill that designs domain-specific agent teams, defines specialized agents, and ge… |
+| [automazeio/ccpm](https://github.com/automazeio/ccpm) | 8,361 | Project management skill system for Agents that uses GitHub Issues and Git worktrees for… |
+| [ZSeven-W/openpencil](https://github.com/ZSeven-W/openpencil) | 5,802 | The world's first open-source AI-native vector design tool and the first to feature concu… |
 
-本庫判斷 → 見 [[topics/community-tech-tools]]「我卡在這裡」的「多個 agent 在同一 repo 互相覆蓋」、「一堆 agent 在跑，看不到誰卡住」列
+### git／commit 衛生自動化
+
+**本庫判斷**
+
+| 我的症狀 | 先裝這個 | 什麼時候改裝別的 | 證據 |
+|---|---|---|---|
+| 多個 agent 在同一 repo 互相覆蓋 | ⌨️ [**Harness**](https://github.com/frenchie4111/harness) | 隔離後 commit 落地仍打架 → Claude Code Merge Queue；要跨 harness 統一協作邏輯 → omnigent | 🟢（04-29 起多來源） |
+
+規模榜：無——這類需求無法用 GitHub 描述辨識（治理型需求是讀者講痛點的語言，在 HN／dev.to 全文不在 repo 描述），本庫不掛空榜。
 
 ### LLM 知識庫／文件策展／知識傳承
 
+**本庫判斷**：本庫尚無判斷（榜上無 🧭 條目）——星數不是推薦，裝前自行查證
+
 | 目前前 5 | ★ | 一句話 |
 |---|---|---|
-| [yusufkaraaslan/Skill_Seekers](https://github.com/yusufkaraaslan/Skill_Seekers) | 14,887 | Convert documentation websites, GitHub repositories, and PDFs into Claude AI skills with… |
-| [PleasePrompto/notebooklm-mcp](https://github.com/PleasePrompto/notebooklm-mcp) 📰 | 3,388 | MCP server for NotebookLM - Let your AI agents (Claude Code, Codex) research documentatio… |
+| [yusufkaraaslan/Skill_Seekers](https://github.com/yusufkaraaslan/Skill_Seekers) | 14,891 | Convert documentation websites, GitHub repositories, and PDFs into Claude AI skills with… |
+| [PleasePrompto/notebooklm-mcp](https://github.com/PleasePrompto/notebooklm-mcp) 📰 | 3,389 | MCP server for NotebookLM - Let your AI agents (Claude Code, Codex) research documentatio… |
 | [cyberagiinc/DevDocs](https://github.com/cyberagiinc/DevDocs) | 2,105 | Completely free, private, UI based Tech Documentation MCP server. Designed for coders and… |
 | [trailofbits/claude-code-config](https://github.com/trailofbits/claude-code-config) | 2,098 | Opinionated defaults, documentation, and workflows for Claude Code at Trail of Bits |
 | [timescale/pg-aiguide](https://github.com/timescale/pg-aiguide) | 1,832 | MCP server and Claude plugin for Postgres skills and documentation. Helps AI coding tools… |
 
-本庫尚無判斷（榜上無 🧭 條目）——星數不是推薦，裝前自行查證
-
 ### 資料源韌性與監測（本站自身抓料需求，非 coding 工具）
+
+**本庫判斷**：本庫尚無判斷（榜上無 🧭 條目）——星數不是推薦，裝前自行查證
 
 | 目前前 5 | ★ | 一句話 |
 |---|---|---|
-| [FreshRSS/FreshRSS](https://github.com/FreshRSS/FreshRSS) | 15,915 | A free, self-hostable news aggregator… |
+| [FreshRSS/FreshRSS](https://github.com/FreshRSS/FreshRSS) | 15,916 | A free, self-hostable news aggregator… |
 | [finaldie/auto-news](https://github.com/finaldie/auto-news) | 905 | A personal news aggregator to pull information from multi-sources + LLM (ChatGPT/Gemini/O… |
 | [CyberShadow/DFeed](https://github.com/CyberShadow/DFeed) | 386 | D news aggregator, newsgroup client, web newsreader and IRC bot |
 | [janlukasschroeder/realtime-newsapi](https://github.com/janlukasschroeder/realtime-newsapi) | 373 | Financial News Aggregator - Real Time & Query API for Financial News |
 | [SuYxh/ai-news-aggregator](https://github.com/SuYxh/ai-news-aggregator) | 331 | 🤖 AI News Aggregator - 自动聚合 80+ AI/科技资讯源，支持 RSS 订阅导入，智能过滤 AI 相关内容，双语标题翻译，每 2 小时自动更新 |
 
-本庫尚無判斷（榜上無 🧭 條目）——星數不是推薦，裝前自行查證
-
-## 無法用 GitHub 辨識的需求（指路）
-
-以下需求兩輪 query 校準皆被巨頭洗版或 0 命中——不是還沒調好，是**感測器裝錯層**：治理型需求是讀者講痛點的語言（「它說做完了但沒做」），在 HN／dev.to 全文，不在 repo 描述。本頁不掛空榜；答案在判斷層：
-
-| 需求 | 本庫判斷 |
-|---|---|
-| 實作期攔錯（hook／lint／型別） | 見 [[topics/community-tech-tools]]「我卡在這裡」的「CLAUDE.md 寫了它不聽」列 |
-| Code review | 本類本庫不推薦單一工具——官方 `/code-review`、ultra、GitHub App 等六個入口與明價，見 [[topics/coding-workflow-guide]] 第 5 段；社群面做法（Read-Only Reviewer、跨模型互審）見 [[topics/community-tech-patterns]] |
-| 測試與驗證（含 evidence-gated done） | 見 [[topics/community-tech-tools]]「我卡在這裡」的「它說做完了，但根本沒做」列 |
-| 除錯與靜默失敗偵測 | 「感覺變笨，想先量測歸因」目前沒有成熟到可推薦單一工具，量測起點與訊號群見 [[topics/code-quality-decline]] |
-| git／commit 衛生自動化 | 見 [[topics/community-tech-tools]]「我卡在這裡」的「多個 agent 在同一 repo 互相覆蓋」列 |
-
 ---
 
 ## 參考來源
 
-- 資料來自 GitHub Search API（依星數排序，每日快照）；「本週竄升」以本庫每日記錄的星數差計算，保留 60 天
-- 類別與搜尋條件由維護者校準（每條 query 上線前實測命中；找不到有辨識力 query 的類別誠實指路，不掛空榜）
+- 決策表與判斷：[[topics/community-tech-tools]]（每週人工策展；本頁每日抄錄）
+- 規模榜：GitHub Search API（依星數排序，每日快照）；「本週竄升」以本庫每日記錄的星數差計算，保留 60 天
+- 類別與搜尋條件由維護者校準（每條 query 上線前實測命中；找不到有辨識力 query 的類別只印判斷，不掛空榜）

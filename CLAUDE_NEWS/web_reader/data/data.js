@@ -2003,7 +2003,7 @@ window.WIKI_DATA = {
     {
       "id": "skill-interest-watch",
       "pageType": "topic",
-      "name": "興趣類別 skill 榜",
+      "name": "興趣類別 skill 總覽",
       "entityType": "",
       "status": "ongoing",
       "domain": "🌐 社群",
@@ -2012,20 +2012,16 @@ window.WIKI_DATA = {
       "startDate": "2026-09-02",
       "lastUpdated": "2026-09-03",
       "lastNewsUpdate": "2026-09-03",
-      "updateFreq": "🗓️ 每日快照（機器產出；「本週竄升」以七日星數差計）",
-      "summary": "每天到 GitHub 問「這一類現在誰最熱、本週誰竄上來」（7 類可用 GitHub 辨識）。星數是規模不是品質：本頁是機器產出、只有星數、不做推薦；該裝哪個、證據多強、為什麼在 community-tech-tools。榜上標 🧭 的工具代表工具頁已有判斷——先看那邊。每類末的「本庫判斷 →」指向對應的判斷。",
+      "updateFreq": "🗓️ 每日快照（機器產出；決策表抄自社群工具目錄、最多落後一天；「本週竄升」以七日星數差計）",
+      "summary": "讀者關心的開發實務類別，一頁看完兩件事：該裝哪個（「我卡在這裡」決策表——有人判斷過、帶證據等級與判定日）與這一類現在誰大、本週誰在漲（GitHub 每日規模榜，7 類可用 GitHub 辨識）。星數是規模不是品質：榜不做推薦，推薦只看決策表；榜上標 🧭 的工具代表決策表或工具目錄已有判斷。判斷的完整證據、推薦細節、S…",
       "latestHeadline": ""
     }
   ],
   "codingPages": [
-    "community-tech-tools",
-    "skill-interest-watch",
     "coding-workflow-guide",
+    "skill-interest-watch",
     "model-comparison",
     "community-large-codebase-workflow",
-    "claude-code",
-    "feature-radar",
-    "code-quality-decline",
     "community-tech-patterns"
   ],
   "digestIndex": [
