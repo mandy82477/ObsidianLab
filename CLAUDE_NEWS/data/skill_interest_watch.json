@@ -117,7 +117,8 @@
         "多個 agent 在同一 repo 互相覆蓋",
         "一堆 agent 在跑，看不到誰卡住"
       ],
-      "tools_note": null
+      "tools_note": null,
+      "caveat": "同名提醒：決策表首選 Harness＝frenchie4111/harness（多 worktree 並行管理）；榜上的 revfactory/harness（設計 agent team 的 meta-skill）不是同一個專案，裝前認清 owner。"
     },
     {
       "group": "B",
@@ -147,11 +148,11 @@
       "group": "B",
       "slug": "source-resilience",
       "name": "資料源韌性與監測（本站自身抓料需求，非 coding 工具）",
-      "status": "active",
+      "status": "hidden",
       "queries": [
         "\"news aggregator\" (llm OR claude OR agent) in:description"
       ],
-      "why": "09-03 校準：16 命中，auto-news、ai-news-aggregator 切題、FreshRSS 為傳統工具雜訊；此類在 GitHub 本就稀薄，命中弱屬預期。",
+      "why": "09-03 校準：16 命中，auto-news、ai-news-aggregator 切題、FreshRSS 為傳統工具雜訊；此類在 GitHub 本就稀薄，命中弱屬預期。 → 2026-09-03 冷讀者兩輪判「在開發實務頁像雜訊、自承非 coding 工具」，暫隱藏不印（設定保留，要回來改 status=active）。",
       "guide_section": null,
       "tools_symptom": null,
       "tools_note": null

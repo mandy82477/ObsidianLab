@@ -48,7 +48,7 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 |---|---|---|---|
 | 帳單爆了，看不到錢花在哪 | ⌨️ **tare** | 不想動終端、要桌面常駐 → 🖥️ Claude Usage Widget；想比較多個 coding agent 的花費 → Frugal Tokens | 🟡（08-27） |
 | context 一直被工具輸出撐爆 | 🔌 **pxpipe** | 不能接受請求過代理層 → 🧩 Graft（數字有爭議，見細節）；還不確定是誰在撐爆 → 先跑 ⌨️ PrismoDev 診斷 | 🟡（08-05，附防刷佐證） |
-| 接手沒碰過的大 repo，agent 讀不懂 | 🧩 [**graphify**](https://github.com/Graphify-Labs/graphify) | 要讓**人**看懂而非 agent → Understand-Anything；要把架構畫成圖交付 → archify；改 code 要索引自動同步 → codegraph（社群實測待累積） | 🟢（05-02 起多來源；08-31 訊號 11.3 萬星） |
+| 接手沒碰過的大 repo，agent 讀不懂 | 🧩 [**graphify**](https://github.com/Graphify-Labs/graphify) | 要讓**人**看懂而非 agent → [Understand-Anything](https://github.com/Egonex-AI/Understand-Anything)；要把架構畫成圖交付 → [archify](https://github.com/tt-a1i/archify)；改 code 要索引自動同步 → [codegraph](https://github.com/colbymchenry/codegraph)（社群實測待累積） | 🟢（05-02 起多來源；08-31 訊號 11.3 萬星） |
 | 每開新 session 都要重講一遍 | ⌨️ **brain.md** | 要團隊共享而非單機 → 🖥️ OzBrain；已在用 Obsidian → VIR | 🟡（08-25） |
 | 多個 agent 在同一 repo 互相覆蓋 | ⌨️ [**Harness**](https://github.com/frenchie4111/harness) | 隔離後 commit 落地仍打架 → Claude Code Merge Queue；要跨 harness 統一協作邏輯 → omnigent | 🟢（04-29 起多來源） |
 | 一堆 agent 在跑，看不到誰卡住 | ⌨️ **Omar** | 只跑 3–5 個、不想多花一毛 token → HUD（走官方 event stream）；要 GUI 主控台 → Cockpit | 🟢（05-02 起多來源） |
@@ -62,7 +62,7 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 
 - **pxpipe vs Graft 的數字強度不同**（08-30 彙整）：pxpipe 有作者實測（25,000 text token 壓至 2,700 image token、帳單降 59–70%，08-05；星數防刷已查證 forks 8.5%）；Graft 宣稱降 42%（08-15）但 HN 討論質疑 benchmark 段落疑似 AI 代寫、未經第三方覆核。接受走代理層就選 pxpipe（證據較強）；只想掛個 hook 隨時可拔、且不介意數字未覆核，才選 Graft。
 - **「CLAUDE.md 不聽」沒有工具首選是結論不是留白**：dev.to 一手實作（08-25）顯示**以 hooks 強制執行取代 prompt 建議後，規則遵循率達 100%**——這個痛點的答案是機制不是工具，做法見 [[topics/community-tech-patterns]]。失效的四個機理：規則被機率性忽略且無反饋、規則越多越貴（Writ 以語意檢索只注入相關規則）、規則腐化（Patina 偵測）、跨工具碎片化（Caliber 統一管理）——後三者才是工具能解的側面。
-- **接手大 repo 的分界**（09-03 開列，依 3 跳自檢與冷讀者驗收）：graphify 給 **agent** 用（本機 AST、免向量 DB，`/graphify` skill）；同組另三個工具解的是不同工種——Understand-Anything 給**人**探索、archify 給人**交付圖**、codegraph 是 graphify 的競品（自動同步索引，僅星數證據）。官方面的「接手大 repo 第一步」（先讀 CI、從子目錄啟動、LSP）在 [[topics/coding-workflow-guide]] 第 2a 段，兩者互補：官方設定先做，索引工具再裝。
+- **接手大 repo 的分界**（09-03 依讀者實走測試補寫分界）：graphify 給 **agent** 用（本機 AST、免向量 DB，`/graphify` skill）；同組另三個工具解的是不同工種——Understand-Anything 給**人**探索、archify 給人**交付圖**、codegraph 是 graphify 的競品（自動同步索引，僅星數證據）。官方面的「接手大 repo 第一步」（先讀 CI、從子目錄啟動、LSP）在 [[topics/coding-workflow-guide]] 第 2a 段，兩者互補：官方設定先做，索引工具再裝。
 - **Harness 同名提醒**：本表首選 [frenchie4111/harness](https://github.com/frenchie4111/harness)（多 worktree 並行管理）與 [[topics/skill-interest-watch]] multi-agent 榜上的 `revfactory/harness`（設計 agent team 的 meta-skill）**不是同一個專案**，裝前認清 owner。
 - **多 agent 互踩**：Harness 為 ✅ 廣泛採用（04-29 收錄，多來源）；omnigent 星數 9,080（08-05 防刷查證時 8,150、forks 14.7%）但無第三方實測回報，列次選、證據 ⚪。
 - **監看首選的分界**：HUD 經官方 JSON event stream 運作、不額外耗 token（08-07），適合小規模；Omar 管到 100 個 agent（05-02）。兩者解同一症狀的不同規模段。

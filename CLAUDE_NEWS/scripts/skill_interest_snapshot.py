@@ -96,6 +96,9 @@ def collect(cfg: dict, probe: bool = False) -> dict:
     for cat in cfg["categories"]:
         repos: dict[str, dict] = {}
         per_query = []
+        if cat.get("status") == "hidden":
+            out[cat["slug"]] = {"repos": repos, "per_query": per_query}
+            continue  # 隱藏類不查（省配額）、不印
         for q in cat["queries"]:
             try:
                 items = search(q, cfg["min_stars"])
@@ -204,6 +207,8 @@ def render(cfg: dict, data: dict, now: datetime) -> str:
         "| 📰 | 本庫日報已報導過 |",
         "| 🧭 | 決策表或工具目錄已有判斷 |",
         "",
+        "> 榜依 GitHub 描述機械比對，偶有跨類誤收（同一 repo 出現在兩類、或非本類工具混入）；星數與分類皆非推薦。",
+        "",
     ]
     if cold:
         lines += [f"> ⚠️ 星數記錄目前只涵蓋 {span} 天（需 {cfg['rise_window_days']} 天），"
@@ -216,7 +221,10 @@ def render(cfg: dict, data: dict, now: datetime) -> str:
         syms = ([sym] if isinstance(sym, str) else sym) if sym else []
         rows = [row_by_symptom[s] for s in syms if s in row_by_symptom]
         if rows:
-            return ["**本庫判斷**", "", "| 我的症狀 | 先裝這個 | 什麼時候改裝別的 | 證據 |", "|---|---|---|---|"] + rows
+            out = ["**本庫判斷**（同頁首決策表對應列）", "", "| 我的症狀 | 先裝這個 | 什麼時候改裝別的 | 證據 |", "|---|---|---|---|"] + rows
+            if cat.get("caveat"):
+                out += ["", f"> {cat['caveat']}"]
+            return out
         if cat.get("tools_note"):
             return [f"**本庫判斷**：{cat['tools_note']}"]
         if has_judged:
@@ -225,6 +233,8 @@ def render(cfg: dict, data: dict, now: datetime) -> str:
 
     current_group = None
     for cat in cfg["categories"]:
+        if cat.get("status") == "hidden":
+            continue  # 設定保留、頁面不印（如本站自身抓料需求類，非讀者的開發實務）
         if cat["group"] != current_group:
             current_group = cat["group"]
             lines += [groups[current_group], ""]
@@ -302,7 +312,7 @@ def main() -> int:
         failed = any(n < 0 for _, n in d["per_query"])
         if cat.get("status") == "retired":
             note = "retired"  # 刻意撤下，lint 6e 不得判為窗死
-        elif not cat.get("queries"):
+        elif cat.get("status") == "hidden" or not cat.get("queries"):
             note = "disabled"
         elif failed and not d["repos"]:
             note = "error"
