@@ -501,3 +501,7 @@
 [Thu 2026/09/03 17:40:49.00 UTC] Building web reader... OK 60 wiki 檔、128 digests、6 週報
 [Thu 2026/09/03 17:40:49.00 UTC] Single push done（news+wiki+web，分批 push：STARTED/digest、emitted-cache、wiki-ingest、devpractice、web+frontmatter，因等待背景記者 agent 期間容器風險考量提前保護，非同一次 push；最終狀態與單次push等價，遠端無 race）
 [Thu 2026/09/03 17:40:49.00 UTC] === Pipeline complete (agent, 17:00 UTC shift) ===
+[cloud daily-news-pipeline-cloud STARTED 2026-09-03T22:04:13Z]
+[Thu 2026/09/03 22:04:23.00 UTC] === Agent pipeline start (2026-09-03) ===
+[Thu 2026/09/03 22:04:23.00 UTC] Step 0b: digest already exists (news/2026-09-03.md) - ABORTED (22:00 UTC shift, idempotent no-op; 17:00 UTC shift already completed today's pipeline)
+[Thu 2026/09/03 22:04:23.00 UTC] === Pipeline complete (agent, 22:00 UTC shift, aborted at idempotency gate) ===
