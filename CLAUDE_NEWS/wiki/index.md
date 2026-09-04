@@ -91,7 +91,7 @@
 | [[topics/model-task-leaderboard]] | 🤖 模型 | ongoing | 🗓️ 週更 任務 × 跨家模型領先者快照：「做某類任務目前哪家最強」——寫 code／文案／畫圖／改圖／影片／情商／幻覺率等 18 類任務的活榜單每週速讀＋各榜評比方式索引 |
 | [[topics/anthropic-commitments]] | 🏛️ 政策/安全 | ongoing | 承諾兌現追蹤：「Anthropic 說過要做的事做了嗎」——官方承諾/拒絕建檔，狀態變化時每日更新 |
 | [[topics/code-quality-decline]] | 🌐 社群 | ongoing | Claude Code 效能退步事件，Anthropic 已承認工程疏失 |
-| [[topics/competitor-landscape]] | 💼 商業 | ongoing | Google 祕密開發競品 + OpenCode 157K 分流 + DeepSeek clone 低成本替代生態 |
+| [[topics/competitor-landscape]] | 💼 商業 | ongoing | Google 祕密開發競品 + OpenCode 157K 分流 + DeepSeek clone 低成本替代生態　↳ 子故事：[[topics/competitor-landscape-archive]] |
 | [[topics/community-tech-tools]] | 🌐 社群 | ongoing | 🗓️ 週更策展：社群工具目錄——91 工具的活躍度、採用狀態追蹤（每週策展一次） |
 | [[topics/skill-interest-watch]] | 🌐 社群 | ongoing | 🗓️ 每日快照 興趣類別 skill 總覽：一頁看完「該裝哪個」（每日抄錄社群工具目錄的決策表）與「這類誰大、誰在漲」；可用 GitHub 辨識的類別（開發流程段＋治理）每日問「這一類現在誰最熱、本週誰竄升」；無法用星數找的治理需求誠實指路到社群工具目錄決策表或實戰手冊；機器產出、星數是規模不是品質 |
 | [[topics/community-tech-patterns]] | 🌐 社群 | ongoing | 社群實戰模式庫（日更）：multi-agent、skills 設計、工作流最佳實踐的可複用做法　↳ 子故事：[[topics/community-tech-patterns-archive]] |
@@ -100,7 +100,7 @@
 | [[topics/community-tech-discussions]] | 🌐 社群 | ongoing | 社群技術討論趨勢：設計哲學辯論、實證研究、架構反思（HTML vs MD、Skill Atrophy 等） |
 | [[topics/safety-china-trust-dispute]] | 🏛️ 政策/安全 | monitoring | 中美 AI 工具信任對峙：中國代理偵測程式碼/隱寫術指控 → Alibaba/Meta 禁用 → 中國官方「後門」警示 vs Anthropic 07-10 首度公開否認（2026-07-12 自 ai-agent-safety / government-policy 拆出）|
 | [[topics/ai-agent-safety]] | 🏛️ 政策/安全 | ongoing | AI agent 安全：GitHub Repo prompt injection 多媒體確認 + 假冒安裝包 + CVE/DoS 漏洞（中國信任對峙已分流至 [[topics/safety-china-trust-dispute]]）　↳ 子故事：[[topics/ai-agent-safety-archive]] |
-| [[topics/anthropic-government-policy]] | 🏛️ 政策/安全 | ongoing | Anthropic 政府政策攻防：出口管制主線已於 2026-07-01 解除，剩餘承諾落實、歐洲據點爭奪、Legion 訴訟等衍生支線持續觀察（中國信任對峙已分流至 [[topics/safety-china-trust-dispute]]）|
+| [[topics/anthropic-government-policy]] | 🏛️ 政策/安全 | ongoing | Anthropic 政府政策攻防：出口管制主線已於 2026-07-01 解除，剩餘承諾落實、歐洲據點爭奪、Legion 訴訟等衍生支線持續觀察（中國信任對峙已分流至 [[topics/safety-china-trust-dispute]]）　↳ 子故事：[[topics/anthropic-government-policy-archive]] |
 | [[topics/official-community-gap]] | 🛠️ 工具/功能 | ongoing | 官方功能 vs 社群痛點缺口矩陣：哪些痛點官方正在解決、哪些結構性缺席；08-16 起持續有新缺口/矩陣更新 |
 | [[topics/coding-workflow-guide]] | 🛠️ 工具/功能 | ongoing | 🗓️ 週更 程式開發實戰手冊：我現在在做這件事，該下哪個 skill、它會做什麼、有什麼坑——以流程階段為軸（官方技能不按開發領域切） |
 | [[topics/enterprise-cost-management]] | 💼 商業 | ongoing | 企業規模採用 Claude 的成本結構挑戰：Uber/Microsoft 案例、缺失工具、因應策略；08-14 新增成本管控動態 |

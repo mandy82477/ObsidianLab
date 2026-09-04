@@ -2,16 +2,16 @@
 page: "topics/ai-agent-safety-archive"
 kind: "topic"
 type: "event"
-status: "monitoring"
+status: "resolved（封存頁）"
 domain: "🏛️ 政策/安全"
-last_updated: "2026-08-10"
+last_updated: "2026-09-04"
 last_news_update: "2026-06-27"
-status_main: "monitoring"
-days_since_news: 68
+status_main: "resolved"
+days_since_news: 69
 parent: "topics/ai-agent-safety"
 children: "[]"
 page_role: "archive"
-days_since_news_subtree: 68
+days_since_news_subtree: 69
 inbound_links: 0
 attribution_count: 0
 attribution_last: null
@@ -26,14 +26,14 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 # AI Agent 安全與可靠性 — 時序存檔
 
 **類型：** event
-**狀態：** monitoring
+**狀態：** resolved（封存頁）
 **領域：** 🏛️ 政策/安全
 **上層：** [[topics/ai-agent-safety]]
 **開始日期：** 2026-04-27
-**最後更新：** 2026-08-10
+**最後更新：** 2026-09-04
 **最後新聞更新：** 2026-06-27
 
-> ai-agent-safety 時序歷史存檔（2026-05-22 以前）+ 技術彙整存檔（2026-05-18 以前，2026-07-01 遷入）。最新時序與分析見 [[topics/ai-agent-safety]]。
+> 本頁為 [[topics/ai-agent-safety]] 的原始條目封存，重點層見主頁。收：時序（2026-05-21 以前，及 2026-09-04 遷入的 2026-06）＋技術彙整（2026-05-18 以前，2026-07-01 遷入；2026-05-25～05-09 五條 2026-09-04 遷入）。
 
 ---
 
@@ -238,6 +238,125 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 - **ANTHROPIC_API_KEY 環境變數陷阱**：雲端環境設置此變數會導致 Claude Code 改走 API 計費，同時也是憑證暴露的風險點（見 [[entities/pricing]]）
 
 ---
+
+## 2026-05
+
+> 2026-09-04 自主頁「技術彙整」遷入的原始條目（原分屬「(1) 漏洞與 RCE」與「(5) 官方政策收緊」兩組）。
+
+### Claude Code v2.1.150 遠端系統提示注入機制披露（2026-05-25 新增）
+
+- **發現者**：HN 用戶（慣例每次升級後讓 Claude 自行解析 binary 尋找問題提示），在升級至 v2.1.150 時發現兩個網路端點注入機制
+- **機制一：Bootstrap API**：Claude Code 啟動時呼叫 `api.anthropic.com/api/claude_cli/bootstrap`，取得的字串快取至磁碟並注入系統提示
+- **機制二：GrowthBook 功能旗標**：功能旗標 `tengu_heron_brook` 每 60 秒在背景動態重整，回傳字串直接注入擁有 shell 存取權限的 LLM 系統提示
+- **安全含義**：Anthropic 技術上可在任意時刻、為任意用戶的 Claude Code session 動態插入任意系統提示指令，且用戶無法即時知道系統提示被修改；前版本也有注入點但範圍更窄
+- **社群反應**：HN 討論（score 10）中多數人認為此為「後門式設計」，部分人認為這是合理的功能更新機制，但缺乏透明度說明是主要批評點
+- **Anthropic 未回應**：截至日報發布時，Anthropic 未對此機制發表說明
+
+### Claude Code RCE 漏洞復現與跨工具傳播（2026-05-23 新增）
+
+- **漏洞機制**：研究人員 joernchen 發現並公開 Claude Code 的 RCE（遠端代碼執行）漏洞，核心缺陷為 `startsWith` 字串解析邏輯不當，攻擊者可藉此取得系統控制權；此漏洞已被獨立研究人員成功復現
+- **跨工具傳播**：復現者同步確認 Cursor 與 Continue.dev 存在完全相同的 `startsWith` 解析缺陷，顯示 AI coding agent 工具生態在快速複製功能實作的同時也複製了安全缺陷
+- **社群回應**：主流觀點認為應以「瀏覽器或 PDF Reader」的威脅模型對待 AI agent 產品——假設輸入不可信、全路徑沙箱化、不僅依賴字串驗證
+- **媒體關注**：DevOps.com 同步報導（「Attackers Can Exploit a Claude Code RCE Flaw to Take Command of System」），達資安媒體層級曝光
+- **防護建議**：更新至最新版 Claude Code；所有 agent 部署環境強制啟用 OS 層級沙箱（見 Sandboxing 官方文件）；不可假設 agent 所接收的輸入已經安全
+
+### Claude Mythos Exploit 開發評估報告（2026-05-23 新增）
+
+- **報告內容**：Anthropic 安全團隊（Newton Cheng 等）發布 Mythos Preview exploit 開發能力評估，確認 Mythos 不僅能發現複雜漏洞，還能將漏洞轉化為 exploit primitive，並將多個 primitive 組合成端對端完整攻擊鏈
+- **能力里程碑（推論）**：此與先前的漏洞「發現」能力不同——能自主組合完整攻擊鏈代表攻擊自動化已從「偵測」升級至「交付可用武器」；這是 Anthropic 選擇謹慎推出 Glasswing 的核心依據（推論）
+- **Project Glasswing 規模更新**：截至 2026-05-22 報告，Glasswing 與約 50 個合作夥伴合作，一個月內在全球最重要的開源軟體中找出 **10,000+ 個高/嚴重等級漏洞**，最大瓶頸已從「發現」轉為「驗證、揭露與修補」——AI 找漏洞的速度已超越人類修補速度
+- **與 false positive 問題的反差**：同日社群報告 Claude Code 對 OSS 安全治理檔案（CodeQL、CODEOWNERS）有過多 false positive 封鎖，形成反差：外部安全研究能力極強，內部安全政策有失準情況
+
+### Claude Code Sandboxing 官方文件發布（2026-05-10 新增）
+
+- **官方文件正式化**：Anthropic 發布 Claude Code Sandboxing 官方文件，提供透過 OS 層級原語（primitives）對沙箱化 bash 工具實施檔案系統與網路隔離的具體做法
+- **設計理念**：核心設計是在 session 開始時預先定義操作邊界，讓 Claude Code 在邊界內自由執行而無需逐指令授權確認，同時縮小意外破壞的半徑；與社群工具 SmolVM（沙盒容器化）的思路一致
+- **對社群工具的意義**：官方文件的出現一定程度上補強了 SmolVM（本機沙盒）、Groundtruth（完成驗證 Hook）等社群工具所填補的需求，也為企業部署提供官方背書的安全邊界設計框架；官方沙箱 + 社群工具形成互補
+
+### Claude Code v2.1.136「操作安全與如實回報」機制（2026-05-09 新增）
+
+- **系統提示大幅更新（+525 tokens）**：v2.1.136 在系統提示層新增逾 525 tokens 的安全規範，是 Anthropic 迄今最明確的 agent 行為規範化文件
+- **不可逆操作確認機制**：對外部有影響的操作（網路請求、檔案系統修改）及不可逆操作，執行前須先獲取明確授權；刪除操作執行前需檢視目標內容，防止誤刪
+- **如實回報義務（Truthful Reporting）**：必須如實回報跳過的步驟與未通過的測試，禁止隱藏失敗或選擇性回報成功；直接針對「代理自信宣告完成但實際未驗證」的已知模式（Groundtruth 工具的存在正是為解決此問題）
+- **`hard_deny` 無條件封鎖類別**：代理自訂規則新增 `hard_deny` 類別，表示無條件的安全邊界封鎖，此類別規則不受任何上下文條件影響；`soft_deny` 適用範圍相應縮小，兩者邊界更加清晰
+- **政策收緊的含義**：影響所有依賴自主授權工作流的應用，特別是完全自動化（無人監督）的工作流需重新評估確認需求；與社群工具（Groundtruth、EvanFlow）從架構外部實施的強制確認思路相呼應，此次為 Anthropic 從提示詞層面的官方收緊
+
+## 2026-06
+
+> 2026-09-04 自主頁「時序」遷入的原始條目。
+
+### 2026-06-30
+- **[多媒體確認升級] Claude Code Prompt Injection 完整接管：多家媒體跟進 Mozilla 演示**：Cybernews（2026-06-30）、Developer Tech News（2026-06-30）、Korben（2026-06-29）三個獨立來源跟進報導 Mozilla 0din 揭露的乾淨 GitHub Repo 提示注入攻擊，均確認可完整接管開發者 Claude Code 系統；至此共有四個第三方來源確認（加上 The Decoder，2026-06-29），Anthropic 仍無公開回應（Cybernews；https://cybernews.com/security/claude-code-attack-prompt-injection-mozilla/；Developer Tech News；https://www.developer-tech.com/news/claude-code-malware-github-repo/）
+
+### 2026-06-29
+- **[升級] Claude Code 執行 GitHub 隱藏惡意程式：攻擊者取得完整系統控制**：The Decoder 報導確認 Claude Code 會在未驗證的情況下直接執行 GitHub repo 中隱藏的惡意程式，攻擊者由此取得完整系統控制權（full system control）；為 Mozilla 0din 揭露（2026-06-28）後的主流媒體跟進報導，將此漏洞定性為「無驗證直接執行」的設計層問題，而非僅「提示注入」的攻擊技巧問題；Anthropic 仍無公開回應（The Decoder，2026-06-29；https://the-decoder.com/claude-code-runs-a-github-repos-hidden-malware-without-verification-giving-attackers-full-control/）
+- **[社群實踐] MCP Server 5 分鐘安全審查清單**：開發者分享停止盲目安裝 MCP server 後的 5 分鐘審查清單，涵蓋 repo 來源驗證、依賴項掃描、執行權限評估等環節；呼籲開發者重視 MCP 安裝的供應鏈安全風險；與盲目 clone GitHub repo 的風險屬同一攻擊面（dev.to，2026-06-29；https://dev.to/enjoy_kumawat/i-stopped-installing-mcp-servers-blind-heres-my-5-minute-vetting-checklist-30ph）
+
+### 2026-06-28
+- **[提示注入] Mozilla 0din 團隊揭露：乾淨 GitHub Repo 誘騙 Claude Code 安裝惡意軟體**：Mozilla 0din 安全團隊展示一種新型提示注入攻擊——攻擊者建立外觀「乾淨」的 GitHub Repo，在其中嵌入隱性提示注入指令，誘騙 Claude Code 在正常任務執行過程中自動安裝惡意軟體；攻擊手法利用 Claude Code 的「樂於助人」天性，屬於供應鏈層面的提示注入新型態；攻擊向量與 Agentjacking（工具錯誤管道注入）性質不同，此為 repo 本體即攻擊媒介（Tom's Hardware，2026-06-28；https://www.tomshardware.com/tech-industry/cyber-security/ai-coding-agents-can-be-tricked-into-installing-malware-via-clean-github-repositories-mozillas-0din-team-shows-how-claude-code-can-be-exploited-by-its-own-helpfulness）
+
+### 2026-06-27
+- **[升級] Agentjacking 2026 防禦設定指南：偽造 Sentry 錯誤劫持 Claude Code / Cursor / Cline**：dev.to 文章詳細說明 agentjacking 攻擊機制——攻擊者偽造 Sentry 錯誤訊息誘導 AI coding agent 以開發者本地權限執行惡意代碼，屬提示注入新型態變種（透過工具整合的 error message 管道）；文章提供具體 agent settings 配置可大幅降低暴露面；影響 Claude Code、Cursor、Cline 等（dev.to，https://dev.to/jovan_chan_9500711396d4e6/agentjacking-2026-how-a-fake-sentry-error-hijacks-cursor-claude-code-and-cline-and-the-5a2h）
+
+### 2026-06-26
+- **[蒸餾攻擊] 阿里巴巴透過 25,000 假帳號發動 2,880 萬次 Claude 模型交換**：Anthropic 致函美參議院（2026-06-10），正式指控阿里巴巴在 2026-04-22 至 2026-06-05 期間，透過約 25,000 個假帳號系統性發動 2,880 萬次模型交換，目的是蒸餾提取 Claude AI 能力；為已知最大規模 AI 蒸餾攻擊；阿里巴巴截至報導日無公開回應（視為單一聲稱）；政策面詳見 [[topics/anthropic-government-policy]]（CNBC，2026-06-24；https://www.cnbc.com/2026/06/24/anthropic-alibaba-distillation-campaign.html）
+- **[威脅情報] Anthropic 公開 MITRE ATT&CK 網路威脅情報報告**：Anthropic 公開一年份威脅情報分析，對 832 個遭封鎖帳號的惡意行為進行 MITRE ATT&CK 框架對應；首次官方大規模惡意使用行為分類報告，為 AI 安全威脅標準化描述提供參照基礎；分析文章指出獨立 AI 開發者面臨相同的攻擊面，MITRE 對應表可作為 agent 設計階段的威脅模型工具（dev.to；https://dev.to/pat9000/what-anthropics-mitre-attck-report-means-for-solo-ai-builders-2dlo）
+
+### 2026-06-24
+- **[授權測試] Mythos 情報機構合作測試發現機密系統漏洞**：AP News 報導 Anthropic Mythos 在與美國情報機構的正式合作測試中，數小時內發現美國機密系統漏洞；美國官員明確區分「發現」與「利用」，強調屬授權防禦評估；此條目與 2026-06-22 Security Affairs「入侵」框架構成互補詮釋，「政府一邊合作測試一邊實施出口管制」的矛盾在此最為清晰（AP News，2026-06-24；https://apnews.com/article/anthropic-mythos-ai-classified-systems-vulnerabilities-testing-3e8762c0527c4d8ed657cbe48c84a718）
+- **[軍事倫理] The Atlantic：Claude 在軍事場景的倫理邊界問題**：The Atlantic 探討 Claude 在軍事應用場景下的倫理邊界，指出 AI 公司、政府、軍方三方對「可接受使用範圍」的定義存在根本分歧；此分析為 Anthropic 政府衝突提供倫理框架視角，亦與 [[topics/anthropic-government-policy]] 的軍事合約戰場相互呼應（The Atlantic，2026-06-24）
+
+### 2026-06-23
+- **[AI 能力安全佐證] Mythos 在數小時內入侵幾乎所有 NSA 機密系統**：Security Affairs 報導 Anthropic Mythos AI 在測試中展現的系統性入侵能力，成為出口管制的核心安全技術論據；社群質疑此能力是否為 Mythos 獨有、管制閉源模型是否為有效防護（Security Affairs，06/22 05:53 UTC）；詳見 [[topics/anthropic-government-policy]]
+
+### 2026-06-22
+- **[越獄曝光] Fable 5 三詞越獄「Fix this code」**：觸發美國政府出口管制的越獄語曝光僅為「Fix this code」三個詞，引發對模型安全邊界設計正當性的深層疑慮；詳見技術彙整「Fable 5 三詞越獄」條目與 [[topics/anthropic-government-policy]]（dev.to，2026-06-22）
+- **[政策收緊] Anthropic 引入 Persona Identities 年齡驗證**：Anthropic 選擇 Persona Identities 作為身份驗證夥伴，HN 有隱私疑慮討論（score 7）；詳見技術彙整「(5) 官方政策收緊」區塊（HN，2026-06-22）
+
+### 2026-06-20
+- **[進攻性 AI 操作] OALABS：攻擊者以 Claude + Codex 入侵 14 家企業**：OALABS 從蜜罐伺服器取得逾 1,000 個攻擊 agent session 日誌，記錄攻擊者如何使用 Claude Code 與 Codex 執行 N-Day exploit 開發、Bitcoin 錢包竊取、存取憑證出售；攻擊者僅提供模糊低技術提示，由 Claude 自行填補技術細節，成功繞過大部分 guardrails；事件發生 2026-06-16，HelpNetSecurity 06/17 跟進報導（OpenAnalysis.net；HelpNetSecurity）
+- **[出口管制衝擊] 境外長期付費用戶帳號遭無預警停用**：HN 討論顯示使用 Claude 兩年以上的非美國付費用戶在出口管制期間帳號遭停用，同時收到三封郵件與 credits + 月費退款但無明確說明；申訴流程緩慢；顯示 Anthropic 帳號審查範圍廣於社群預期，亦見 [[topics/anthropic-government-policy]]（HN #48597861）
+- **[隱私行為] Claude Code 執行 `ls` 掃描根目錄暴露 SSH 私鑰**：HN 討論（score 3）記錄 Claude Code 在執行任務過程中會對根目錄執行 `ls` 掃描，使 SSH 私鑰等敏感檔案在模型可見 context 中出現；Anthropic 承認此行為屬實；社群建議在容器或獨立 Linux 用戶環境中執行 Claude Code 以隔離存取範圍（HN / GitHub issues）
+- **[數據政策] Bedrock 上的 Claude Fable 5 需同意與 Anthropic 共享推論資料**：InfoQ 報導，企業透過 AWS Bedrock 使用 Claude Fable 5 時需同意推論資料（inference data）共享條款；對有嚴格資料主權要求的企業形成合規風險；此要求為 Bedrock 部署的新增前提條件，非所有企業預先知悉（InfoQ）
+
+### 2026-06-19
+- **[價值觀偏差] Claude Code 無障礙偏差 issue #56079**：即使 CLAUDE.md 明定 WCAG 2.2 AA 為硬性要求，Claude Code 仍將無障礙修復視為可選項目；根本原因是模型隱含的價值觀優先序而非技術能力不足；顯示 CLAUDE.md 指令層的「強制要求」無法可靠覆蓋模型訓練偏好，合規類要求須在架構層額外強制（Aaron Gustafson / issue #56079）
+- **[CVE 治理] 2026 年初兩個 CVE 揭示 repo clone 即為攻擊入口**：工程治理報告指出 Claude Code 攻擊面比多數團隊意識到的更大，2026 年初兩個 CVE 顯示 clone repo 即可觸發 API key 竊取或惡意程式碼執行；文章記錄跨工程團隊 Claude Code 治理挑戰（dev.to）
+- **[威脅通報] Claude Chat 濫用納入安全通報**：ThreatsDay Bulletin 將 Claude Chat 平台濫用與 NastyC2 npm 套件、Device-Code 釣魚攻擊並列，顯示攻擊向量已從 Claude Code 工具鏈延伸至 Claude Chat 對話介面（The Hacker News）
+
+### 2026-06-10
+- **[供應鏈攻擊升級] Claude Code 攻擊規模：294,842 secrets 竊取 / 6,943 台機器**（Reddit / r/ClaudeAI）：持續供應鏈攻擊更新：已從 6,943 台機器竊取 294,842 個 secrets（API keys、憑證），攻擊從 VS Code 擴散至 Python 生態，並利用 Claude Code 本身作為攻擊媒介。一個橫向移動攻擊組織持續運作數個月，每波更快更隱蔽。Fable 5 的高網路攻擊能力被點名為潛在威脅升高因素。**建議立即行動**：審計所有 API keys、啟用 MCP server 流量監控、更新至最新版 Claude Code。
+- **[新工具：claude-quota / agent-pd / claudefeed / guardian-runtime]**（HN Show 多篇）：Fable 5 發布後同日出現多個監控/安全工具（詳見 [[topics/community-tech-tools]]）。
+- **[JFrog Claude Code 插件]**（多媒體報導）：JFrog 正式發布 Claude Code 企業級軟體供應鏈治理插件，提供依賴漏洞掃描與安全治理，Anthropic 官方合作夥伴關係確認。
+- **[Claude Code 安全漏洞報告]** DevOps.com：「AI 工具深入開發工作流後的系統性風險」分析 Claude Code 安全漏洞事件，說明 AI coding tool 整合的廣泛攻擊面。
+
+### 2026-06-08
+- **[npm 供應鏈攻擊] `@redhat-cloud-services` 32 個套件後門**（Reddit / r/ClaudeAI）：惡意後門植入 `@redhat-cloud-services` 相關 32 個 npm 套件，117,000 次/週下載量受影響；惡意程式在安裝時竊取 npm credentials；Claude Code 開發者若安裝受影響版本，憑證可能已外洩；建議立即執行 `npm audit`、輪換相關 API 金鑰。此攻擊延續 2026-06-02 Claude Code SessionStart Hook 攻擊向量，顯示 Claude 生態圈已成供應鏈攻擊持續目標。
+- **[MCP 安全漏洞] Claude Code GitHub Action 洩漏 CI/CD Secrets**（CyberSecurityNews；Microsoft 警告）：Microsoft 發出安全公告，特定配置下 Claude Code GitHub Action 可能洩漏 CI/CD workflow secrets（如 `${{ secrets.* }}`）；建議開發者審查所有 workflow 文件的 secrets 處理方式，避免在 agent 可見的 context 中直接傳遞敏感值。
+- **[MCP 安全漏洞] MCP 流量劫持可竊取 OAuth Token**（CyberSecurityNews）：攻擊者可透過 MITM 攻擊劫持 Claude Code MCP 流量，在握手階段竊取 OAuth Token；對使用 MCP 整合（如 Slack、GitHub、Jira）的開發者構成認證安全風險；建議啟用 MCP 連線的 TLS 驗證。
+
+### 2026-06-07
+- **[本地 Agent 安全] "YOLO 模式"風險第一人稱記述**（12gramsofcarbon.com；HN score 4）：作者坦承使用 `--dangerously-skip-permissions` 跳過所有確認提示，分析本地 coding agent 三難困境（easy+powerful+secure 只能得其二）；「某天 Claude 會 rm -rf 我整台電腦」是對 agent 自主執行安全邊界最直接的個人表述；社群討論焦點從「是否應該」轉移至「如何安全地」使用自主模式
+- **[Sandfence 沙箱工具]** Show HN：macOS 原生沙箱工具為 Claude Code 和 Codex 提供最小化系統資源隔離，是對 YOLO 模式安全疑慮的工具層回應
+
+### 2026-06-06
+- **[威脅情報] Anthropic MITRE ATT&CK 年度報告後續分析**（dev.to/pat9000）：分析 832 個封禁帳號（2025/03–2026/03）的攻擊行為，對應 MITRE ATT&CK 框架；指出 AI 顯著降低憑證竊取、橫向移動、初始存取等攻擊技術門檻；企業運行 AI Agent 的安全團隊需重新評估威脅模型
+- **[ClaudeBot 爬蟲爭議]** Reddit：ClaudeBot 爬取/回流比 11,000:1（已從 6 萬降低）；網站主批評 Anthropic 爬蟲過度消耗頻寬、幾乎不回流流量
+
+### 2026-06-05
+- **[遞歸自我改進報告]** Anthropic Institute《When AI Builds Itself》（HN 477）：AI 已在加速 AI 開發，工程師代碼產出 8×；見 [[topics/recursive-self-improvement]]
+- **[開源防禦框架]** Anthropic 開源 `defending-code-reference-harness`（HN 471）：AI 驅動漏洞發現參考架構，10K input tokens/min per agent
+- **[MCP 安全問題]** CSO Online：Claude Code 的 MCP 安全問題——企業尚未完全評估 MCP 攻擊面擴大
+
+### 2026-06-04
+- **[安全工程] "The ways we contain Claude across products"**（HN 173）：Anthropic 首次系統性公開內部 AI 安全工程架構；涵蓋細粒度 token 權限、沙箱隔離、工具調用審計；強調安全措施降低失敗概率，但「爆炸半徑」隨能力擴張；是目前 Anthropic 最透明的安全部署文件
+- **[威脅報告] AI-enabled 網路威脅 MITRE ATT&CK 對應**：分析 832 個惡意帳號（2025-03~2026-03），與 Verizon 2026 DBIR 合作發布；AI 顯著降低憑證竊取、橫向移動等攻擊技術門檻
+- **[政策聲明] AI CEO 聯署生物武器防範信**：Dario Amodei、Sam Altman、Demis Hassabis、Mustafa Suleyman 聯署，呼籲立法要求合成 DNA/RNA 銷售商篩查客戶訂單防止生物武器開發（Wired）
+
+### 2026-06-02
+- **[供應鏈攻擊] 637 npm 套件植入 Claude Code SessionStart Hook**：2026-05-19 攻擊（39 分鐘內 323 套件受害）的完整分析發布；惡意程式具體利用 Claude Code hooks 機制，在每次 Claude Code 啟動時執行任意指令；是 Claude Code hooks 系統首次出現在真實供應鏈攻擊中（dev.to 報告）
+- **[安全修復] v2.1.160 shell startup file 寫入提示**：修復 Claude Code 可在未提示的情況下寫入 `.zshenv`、`.zlogin`、`.bash_login`、`~/.config/git/` 的安全漏洞；先前版本可能導致惡意指令在 shell 啟動時自動執行
+- **[安全漏洞] Claude Code Flaw Exposes Repositories**：Let's Data Science 報導 Claude Code 存在可暴露 repository 的安全漏洞（2026-06-02 指控，已掃日報至 2026-08-14 無後續；官方頁面未查證）
 
 ## 相關實體
 

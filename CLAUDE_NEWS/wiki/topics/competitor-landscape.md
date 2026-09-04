@@ -6,11 +6,11 @@ domain: "💼 商業"
 last_updated: "2026-09-04"
 last_news_update: "2026-09-01"
 status_main: "ongoing"
-days_since_news: 2
+days_since_news: 3
 parent: null
-children: "[]"
-page_role: "root"
-days_since_news_subtree: 2
+children: "['topics/competitor-landscape-archive']"
+page_role: "hub"
+days_since_news_subtree: 3
 inbound_links: 50
 attribution_count: 90
 attribution_last: "2026-09-01"
@@ -561,103 +561,22 @@ Claude Code 已成為 AI 輔助編碼的標竿產品，但競爭正快速升溫�
 ### 2026-06-19
 - **[SpaceX 完成 $60B Cursor 收購] 競爭格局重塑**：dev.to 分析文章評估 SpaceX 以 600 億美元完成收購 Cursor 對 Claude Code 競爭格局的影響；9to5Mac 確認收購正式完成（IPO 後一週）。Cursor 此前與 Anthropic 有深度整合關係，SpaceX 資源注入後 Cursor 的 Claude 依賴度可能降低，Elon Musk / xAI 生態與 Anthropic 的競爭軸線進一步明確（dev.to 2026-06-18、9to5Mac 2026-06-17）
 
-#### 企業競爭白熱化（2026-05-12 至 2026-05-22）
+#### 2026-05（封存總結）
 
-### 2026-05-23
-- **[Business Insider] 新創圈 Claude Code 已勝出，Cursor 正在消退**：Business Insider 報導顯示在新創生態中 Claude Code 已取得明確主導地位，Cursor 份額持續下滑——與 Microsoft 棄用 Claude Code 同日，形成「大型企業因成本退出 vs 新創因效果採用」的市場分層對比
-- **Microsoft 棄用 Claude Code 多媒體確認（HN 330 分）**：The Verge 深度報導獲 330 分 HN 討論，成為本週 Claude Code 最具影響力的企業新聞；核心邏輯：「太受歡迎 → 規模成本過高 → 強制切換 Copilot CLI」——這是大型企業 AI 工具採購的新型成本反饋機制
-- **Claude Code RCE 漏洞確認：同類 bug 在 Cursor、Continue.dev 也存在**：安全研究人員確認 Claude Code 的 startsWith 解析漏洞同樣存在於 Cursor、Continue.dev，顯示競品之間的功能移植也在移植安全缺陷；見 [[topics/ai-agent-safety]]
+- **Microsoft 退出是當月主線**：去年 12 月起向數千名員工開放的 Claude Code 授權因成本陸續取消、改推 GitHub Copilot CLI（05-15 首報；The Verge 05-22 報導 HN 493 分、05-23 續報 330 分）；dev.to 內部揭露記為「開發者愛它，財務殺了它」（05-19）。
+- **企業採用同時創高**：Ramp AI Index 顯示 Anthropic 企業採用率首次超越 OpenAI（34.4% vs 32.3%，05-15）；Business Insider 稱新創圈 Claude Code 已勝出、Cursor 消退（05-23）——大企業因成本退出、新創因效果採用的分層自此成形。
+- **競品整棧化**：DeepSeek 宣告要做「模型到開發工具」全棧並招募 Agent Harness 工程師（05-21～05-22）；Qwen3.7-Max 宣稱支援 Claude Code harness、可自主運行 35 小時（05-22）；Codex 下載量首度超越 Claude Code（8,610 萬次 +1,397% vs 720 萬次 −38%，05-05）。
+- **成本分流工具化**：vibe-skill 以 Claude 規劃＋Mistral 執行，10 天省 57M tokens、成本降逾九成（05-21）；6/15 programmatic 用量改按 API 費率加速轉換（05-14，見 [[entities/pricing]]）；OpenCode 達 157,000 名開發者（05-12）。
+- **整合面擴張**：UiPath、Signadot、Adobe Lightroom Linux 移植（05-12～05-17）；GitHub Copilot 新應用首次以產品名直接對標 Claude Code（05-16）。
 
-### 2026-05-22
-- **[The Verge 正式報導，HN 493 分] Microsoft 取消 Claude Code 授權最高曝光**：The Verge 報導 Microsoft 已開始取消內部 Claude Code 授權，去年 12 月向數千名工程師開放後因成本壓力陸續撤回，改推 GitHub Copilot CLI；本次 HN 493 分為此事件迄今最高討論熱度，確立其為 2026-05 企業 AI 工具採購結構性轉變的代表案例（初始記錄：2026-05-15，媒體跟進：2026-05-17、2026-05-18）
-- **DeepSeek 正式宣布建構自有 Claude Code 競品**：Decrypt 報導 DeepSeek 公開宣稱目標是「建立涵蓋模型到開發工具的完整技術棧」，戰略層級從低成本替代品升格為全棧競爭者；Anthropic 面臨的不再只是功能競爭，而是產品生態的整棧複製
-- **Qwen3.7-Max 宣稱支援 Claude Code harness，35 小時自主運行**：阿里巴巴 Qwen3.7-Max 聲稱可持續自主運行 35 小時並支援 Claude Code 等外部 harness，意味著競品開始主動定位為「Claude Code 相容」工具，而非建立自己的生態
-
-### 2026-05-21
-- **vibe-skill：Claude 規劃 + Mistral 執行，成本降逾九成**：開發者開源 vibe-skill，讓 Claude 負責高層規劃與 diff 審查，實際撰碼委派給 Mistral Vibe；10 天實測節省 57M tokens，成本降逾九成；是 6/15 計費壓力下「多 LLM 成本分流」策略的最具體落地案例，顯示 Anthropic 正以失去執行層 token 份額為代價換取規劃層地位
-- **DeepSeek Agent Harness R&D 招募**：DeepSeek 公開招募 Agent Harness 工程師，顯示其正在建立針對 Claude Code 場景的持續對標測試基礎建設；與 vibe-skill 等「以 DeepSeek 替代 Claude 執行層」工具生態形成呼應
-
-### 2026-05-19
-- **[dev.to 深度揭露] Microsoft 內部測試全貌：開發者愛它，財務殺了它**：「Microsoft Just Killed Claude Code Internally. Their Own Devs Loved It.」一文詳述 Experiences + Devices 部門六個月測試結果——開發者普遍認為 Claude Code 優於自家工具，但財務層以成本終止採購；此案例在 dev.to #claudecode 社群引發廣泛討論，成為「使用者滿意度 vs 企業採購決策」結構性落差的標準案例；與 [[topics/enterprise-cost-management]] 的成本壓力分析直接呼應
-
-### 2026-05-18
-- **Microsoft 遷移獲主流媒體確認**：Developer Tech News 正式報導「Microsoft moves engineers from Claude Code to GitHub Copilot CLI」，確認 2026-05-15 記錄的事件，在企業採購圈引發廣泛討論
-- **Forbes 深度報導 Uber 燒光 AI 預算**：四個月耗盡 2026 全年 AI 預算，Forbes 將此推向主流財經媒體；凸顯 Anthropic 缺乏企業層級細粒度配額工具的系統性問題（見 [[topics/enterprise-cost-management]]）
-- **「Codex 超越 Claude Code」三位創作者同步發聲**：同週三篇 dev.to 評測文章，以個人體驗為主；與 5/5 Codex 下載量 +1,397% 數據並列，顯示競爭敘事的媒體動能持續
-- **Claude Code + Codex 混搭工作流**：XDA 報導開發者同時使用兩工具，「依工作流組合 AI 工具」策略興起，市場從「二選一」走向「混搭」
-
-### 2026-05-17
-- **techbuzz.ai 再度報導 Microsoft 授權取消**：被 Google News / Phoronix 收錄；原始事件已於 5/15 確認，此波為額外媒體曝光
-- **Adobe Lightroom CC Linux 移植借助 Claude Code 完成**：Phoronix 報導，驗證 Claude Code 在跨平台高難度移植工程的實際能力
-
-### 2026-05-16
-- **GitHub Copilot 新應用程式明確點名 Claude Code**：首次以產品名直接對標，AI 編碼 agent 賽道從比功能進入正面搶用戶階段（The New Stack）
-- **Anthropic 積極尋找下一個「Claude Code 等級」突破**：據 Alex Heath 報導，管理層將 Claude Code 視為創新基準，承受持續創新壓力
-
-### 2026-05-15
-- **Microsoft 取消內部 Claude Code 授權**：去年 12 月起向數千名員工（工程師、PM、設計師）開放，因成本壓力陸續取消，改推 GitHub Copilot CLI；Anthropic 與 Microsoft 企業市場正面競爭首次明確浮現
-- **Anthropic 企業採用率首超 OpenAI**：Ramp AI Index 34.4% vs 32.3%，Claude Code 是主驅動力；但分析師提醒市場高度動盪，領先地位不穩固
-- **第三方工具分化**：Zed、Conductor、Superset 確認受 6/15 計費衝擊；Lanes 聲明不受影響（見 [[entities/pricing]]）
-
-### 2026-05-14
-- **6/15 programmatic 用量改按 API 費率，加速競品轉換**：`claude -p`、Agent SDK、CI/CD 全數剝離訂閱；已有用戶宣告轉向 Codex 或 Gemini（見 [[entities/pricing]]、[[entities/openclaw]]）
-- **多 LLM 混合策略成主流**：Opus 4.7 orchestrator + DeepSeek V4 Pro 執行層，Anthropic 不再是所有 token 的唯一供應商
-
-### 2026-05-12
-- **OpenCode 157,000 名開發者里程碑**：The New Stack 報導，即便 Anthropic 宣佈倍增速率限制，vendor lock-in 顧慮仍驅動開源轉移；是 Claude Code 崛起後最具體的競品分流數據
-- **UiPath 開放平台優先整合 Claude Code 與 Codex**：RPA 龍頭進入 AI 編碼工具市場，Claude Code 藉此進入企業流程自動化生態
-- **Signadot Kubernetes 整合**：讓 Claude Code、Codex、Cursor 直接在真實 K8s 環境驗證變更，競爭延伸至生產環境驗證階段
+原始條目見 [[topics/competitor-landscape-archive#2026-05]]
 
 ---
 
-#### Codex 崛起與分流（2026-05-01 至 2026-05-07）
+#### 2026-04（封存總結）
 
-### 2026-05-07
-- **DeepSeek V4 替換 Claude Opus 4 的 30 天實測**：1 億 token 成本與品質對比，社群待進一步驗證
-- **Cursor 重度用戶全面轉換至 Claude Code**：六個月雙工具對比後全面切換，月費高峰超過 $60
+- 早期格局以「Claude Code vs Codex 誰更好」為軸：HN「Is Anybody Using Codex?」認為 Claude Code 討論量遠超 Codex（04-30，此判斷已由 05-05 下載量數據取代）；大型 Python monolith 實測作者偏好 Codex（04-29）；XDA 四工具橫向評測（04-28）。
+- 採用面：哈佛 FAS 以 Claude 取代 ChatGPT Edu（04-28）、GameMaker 整合（04-30）。
+- 競爭訊號：Sergey Brin 親自主導 Google 版 Claude Code 競品、「投資者即競爭者」引發討論（04-25～26）；Anthropic CPO Mike Krieger 辭去 Figma 董事會（04-24）。
 
-### 2026-05-06
-- **DeepSeek Claude Code Clone 達 8,700 Stars**：同期 DeepClaude 聲稱降低 17 倍成本；低成本替代生態加速形成
-- **Claude Code 累積 121,000 GitHub Stars**：Augment Code 分析文章探討 CLI-first 工具勝出 IDE 的原因
-
-### 2026-05-05
-- **OpenAI Codex 下載量首次超越 Claude Code**：8,610 萬次（+1,397%）vs 720 萬次（-38%）；轉折點為 v0.128.0 新增持久化 `/goal` 工作流
-- **Amazon 雙品牌並行部署**：全體員工同時開放 Claude Code 與 Codex，反映大型企業不押注單一供應商的策略
-
-### 2026-05-04
-- **Claude Desktop 悄悄加入第三方 LLM 支援**：涵蓋 OpenAI、Gemini、本地模型、Bedrock/Vertex，無官方公告，完全由社群挖掘；競爭定位從「Claude vs others」轉向「Claude 作多模型接入層」
-- **Claude Connectors 進入創意工具**：Adobe、Blender、Ableton 整合，正式進入 Figma 競爭版圖
-
-### 2026-05-02
-- **OpenCode 被 XDA 評為可行替代方案**：功能與體驗與 Claude Code 相當，直接回應 OpenClaw 禁令後的替代需求
-
-### 2026-05-01
-- **五角大廈排除 Anthropic**：與 7 家公司簽署 AI 機密網路部署協議，Anthropic 因堅持安全護欄遭排除；見 [[topics/anthropic-government-policy]]
-- **Apple 內部採用 Claude**：外洩文件確認，企業滲透觸及科技業頂層
-- **Uber 四個月耗盡全年 AI 預算**：首次報導（Forbes 於 5/18 深度確認）
-- **The Atlantic：Claude Code 是 AI 商業化核心驅動**：指出 AI 產業實際營收正追上前期基礎建設投資，Anthropic 為核心受益者
-
----
-
-#### 早期格局（2026-04-24 至 2026-04-30）
-
-### 2026-04-30
-- **[討論量對比，已由 05-05 下載量數據取代]** 當時 HN 討論「Is Anybody Using Codex?」認為 Claude Code 討論量遠超 Codex 但能力相近；此判斷已由 05-05 條目的實際下載量數據（Codex +1,397% vs Claude Code -38%）取代
-- **GameMaker 整合 Claude Code**：垂直軟體深度整合的新案例
-
-### 2026-04-29
-- **Codex vs Claude Code 生產環境比較**：大型 Python monolith 測試，作者偏好 Codex；HN 結論「不同工具適合不同場景」
-
-### 2026-04-28
-- **哈佛 FAS 以 Claude 取代 ChatGPT Edu**：頂尖學術機構出現結構性轉變
-- **XDA 四工具橫向評測**：Claude Code、Codex、Lovable、Replit 並排比較
-
-### 2026-04-27
-- **HackerNoon**：AI 工具競爭護城河快速縮窄，開源替代使商業模型差異化愈來愈脆弱
-- **HN Claude vs GPT-5 體驗比較**：Claude 前端設計與初始結構佔優；GPT 核心邏輯更強；Claude 易忽略資安標頭
-
-### 2026-04-25–26
-- **Google 競品消息登上 HN**：Sergey Brin 親自主導 Claude Code 競品；「投資者即競爭者」的矛盾引發廣泛討論
-
-### 2026-04-24
-- **Anthropic CPO Mike Krieger 辭去 Figma 董事會**：暗示 Opus 4.7 將內建設計工具，可能直接與 Figma 競爭
+原始條目見 [[topics/competitor-landscape-archive#2026-04]]

@@ -5558,3 +5558,27 @@ GH Actions 抓料排 10:23 UTC，到 14:45 UTC 仍未落地（+4.4 小時且持�
 
 **主編重驗：** 三個指令實跑輸出一致、check_rules ✅、run_tests exit 0、commit 只含 7 個指名檔。首批候選與 2 頁停滯**未在本輪處置**，留給下次 lint 派記者。
 
+
+## 2026-09-04 蒸餾（首輪泛化，使用者裁決全清）
+
+**規則面：** 蒸餾契約自 `.claude/rules/wiki-ingest-community-lint.md` 泛化為全站通用，通用部分（對象判準、≥3 個月門檻、三條例外、≤15 行時段總結、archive 子頁規格、引用回掃、每頁至多 2 個時段、只動「最後更新」）住 `.claude/rules/wiki-ingest-format.md`「時段蒸餾與封存（全站通用）」；社群檔只留兩頁的 archive 頁名、月份分組口徑與三處引用檢查欄位。提案觸發邊為 `/wiki-lint` 步驟 2 的 3h，記者回報新增「蒸餾候選」欄、步驟 8 log 新增對應行。`check_hierarchy.py` 新增第 8 項檢查：archive 子頁狀態須為 `resolved（封存頁）`（首跑即抓到 `ai-agent-safety-archive` 掛著 monitoring，已修）。
+
+**Dry run 表（使用者已裁決全清，本輪不另等確認；留證用）：**
+
+| 頁 | 時段 | 條目數 | 字元數 | 擬總結一句 | 引用檢查 |
+|---|---|---|---|---|---|
+| topics/ai-agent-safety | 技術彙整 2026-05 | 5 | 2,687 | 系統提示注入機制與 RCE 跨工具傳播曝光，官方同期以 Sandboxing 文件與 v2.1.136 收緊 | 錨點邊 0（`explain --section 技術彙整`） |
+| topics/ai-agent-safety | 時序 2026-06 | 17 段 | 8,850 | 提示注入升級為完整系統控制、在野濫用成規模、供應鏈攻擊延燒至 hooks | 錨點邊 0（`explain --section 時序`） |
+| topics/anthropic-government-policy | 時序 2026-06 | 20 段 | 12,289 | 出口管制自 06-13 全面封鎖到 06-22 撤銷威脅標籤的完整攻防月 | 錨點邊 0 |
+| topics/anthropic-government-policy | 時序 2026-05 | 2 段 | 319 | 五角大廈排除與梵蒂岡封論兩則前史 | 錨點邊 0 |
+| topics/competitor-landscape | 時序 2026-05 | 18 段 | 4,855 | Microsoft 退出與企業採用創高並存，競品開始整棧複製 | 錨點邊 0 |
+| topics/competitor-landscape | 時序 2026-04 | 7 段 | 806 | Claude Code vs Codex 早期格局與首批採用案例 | 錨點邊 0 |
+
+**執行結果（每頁至多 2 個最舊時段，守節奏契約）：**
+
+- `topics/ai-agent-safety`：1,257 → 1,167 行；封存至既有 [[topics/ai-agent-safety-archive]] 新增 `## 2026-05`／`## 2026-06` 兩組（該頁狀態同步改為 `resolved（封存頁）`）
+- `topics/anthropic-government-policy`：705 → 605 行；新建 [[topics/anthropic-government-policy-archive]]
+- `topics/competitor-landscape`：663 → 582 行；新建 [[topics/competitor-landscape-archive]]
+- 引用回掃：三頁被搬時段的 `[[頁#條目標題]]` 錨點邊皆為 0，全庫改指 0 處；`build_web.py` 錨點 WARN 0 → 0、斷鏈 WARN 14 → 14（皆為既有 `[[news/*]]` 缺檔）
+- 兩個新 archive 子頁不入 index 目錄表，由 `gen_wiki_frontmatter.py` 投影進母頁列的「↳ 子故事：」（index 改動 2 列）；三頁只更新「最後更新」，未動「最後新聞更新」
+- `devpractice_diff.py mark` 已推進基準線——本輪為搬家 diff，不得被當成新料
