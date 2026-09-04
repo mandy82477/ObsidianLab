@@ -5640,3 +5640,13 @@ GH Actions 抓料排 10:23 UTC，到 14:45 UTC 仍未落地（+4.4 小時且持�
 ### 發現：density 的三個門檻看不見本次改善
 
 `density` 量測整檔行數／標記數／教訓行比例，對「教訓已下沉到檔尾、條文區變薄」這種處置**完全無感**——本輪跑完五檔仍全數在候選名單上，教訓行反而由 103 升到 127（沿革節的敘事段落每段一行，全部命中 `LESSON_RE`）。**刻意不改腳本口徑**：把量測改成只看條文區，等於為了讓自己這輪的工作看起來成功而調整尺——同 `weekly-report.md`「刻意不調到 1,485 讓 W35 通過」的判斷。真正的取捨是：處置 (a) 保住了考古鏈但**沒有省下 token**（agent 讀檔仍讀全檔）；能真正瘦身的只有處置 (b)(c)，本輪僅 6b 一處適用。若日後要讓 6h 的候選名單真的收斂，得先回答「沿革節該不該和條文一起被 agent 讀進去」——那是尚未裁決的問題，記於此待議。
+
+## 2026-09-04 Query：沿革拆檔——同檔下沉不省 token，改住 docs/rules-changelog/；density 未調口徑
+
+**點出什麼：** 上一則 Query 留的待議問題——「沿革節該不該和條文一起被 agent 讀進去」——使用者當場裁決：不該。`.claude/rules/*.md` 每個 session 開場即整檔載入、`.claude/commands/*.md` 呼叫時整檔載入，教訓敘事留在檔尾等於一個 token 都沒省，`lint_health.py density` 的量測（教訓行 103→127）恰好印證了這件事。
+
+**根因：** 首輪「規則密度減肥」把散文下沉到同檔檔尾的處置 (a)，只解決了「條文區變薄、人眼掃讀變快」，沒有解決「agent 每次讀規則檔的 token 成本」——同檔搬位置對 token 預算是零和。
+
+**處置：** `.claude/commands/wiki-lint.md`、`news-pipeline-steps.md`、`weekly-report.md`、`.claude/rules/wiki-ingest-format.md`、`wiki-ingest-features.md` 五檔的沿革節原文搬到 `docs/rules-changelog/<同名>.md`（不在任何 agent 的預設讀取範圍），原位置只留一行「沿革檔：`docs/...`」指路；條文區 37 處「本檔『沿革』YYYY-MM-DD」指路改寫為「沿革檔 YYYY-MM-DD」。`.claude/review-registry.json` 的 `bare_references`／`path_existence` glob 加入 `docs/rules-changelog/*.md`，新增 5 組 sync_pair 讓規則檔的指路行與沿革檔的標頭互相指認。`lint_health.py density` 的 `RULE_GLOBS` **刻意不改**——沿革檔不入量測範圍是本次改動的設計意圖（量測 agent 實際讀的東西），不是漏算；`.claude/commands/wiki-lint.md` 6h 與 `.claude/rules/claude-md-edit.md` 皆補一句指明此意圖，避免日後被誤判為疏漏而回頭「修正」。
+
+**結果：** 五檔行數 669/556/373/328/280 → 641/542/357/308/262（共 −96 行），標記 63/37/29/23/23 → 60/36/28/21/22，教訓行 32/14/26/8/9 → 26/13/23/7/8；`docs/rules-changelog/` 新增 5 檔、共約 110 行原文一字不刪。`check_rules.py`／`lint_health.py mutate`／`run_tests.py` 三者皆綠。

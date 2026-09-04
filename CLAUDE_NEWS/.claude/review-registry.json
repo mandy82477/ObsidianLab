@@ -4,7 +4,8 @@
     "globs": [
       ".claude/commands/*.md",
       ".claude/rules/*.md",
-      "docs/cloud-runbooks/*.md"
+      "docs/cloud-runbooks/*.md",
+      "docs/rules-changelog/*.md"
     ],
     "pattern": "CLAUDE\\.md",
     "exempt_files": [
@@ -54,7 +55,8 @@
     "globs": [
       ".claude/commands/*.md",
       ".claude/rules/*.md",
-      "docs/cloud-runbooks/*.md"
+      "docs/cloud-runbooks/*.md",
+      "docs/rules-changelog/*.md"
     ],
     "extensions": [
       ".md",
@@ -1226,6 +1228,61 @@
       ],
       "patterns": [
         "蒸餾候選"
+      ]
+    },
+    {
+      "name": ".claude/commands/wiki-lint.md <-> docs/rules-changelog/wiki-lint.md：指路行與沿革檔互相指認（沿革節拆檔 2026-09-04，只改一側會讓指路懸空或沿革檔失去歸屬）",
+      "assertion": "all_contain",
+      "files": [
+        ".claude/commands/wiki-lint.md",
+        "docs/rules-changelog/wiki-lint.md"
+      ],
+      "patterns": [
+        "docs/rules\\-changelog/wiki\\-lint\\.md|\\.claude/commands/wiki\\-lint\\.md 沿革"
+      ]
+    },
+    {
+      "name": ".claude/commands/news-pipeline-steps.md <-> docs/rules-changelog/news-pipeline-steps.md：指路行與沿革檔互相指認（沿革節拆檔 2026-09-04，只改一側會讓指路懸空或沿革檔失去歸屬）",
+      "assertion": "all_contain",
+      "files": [
+        ".claude/commands/news-pipeline-steps.md",
+        "docs/rules-changelog/news-pipeline-steps.md"
+      ],
+      "patterns": [
+        "docs/rules\\-changelog/news\\-pipeline\\-steps\\.md|\\.claude/commands/news\\-pipeline\\-steps\\.md 沿革"
+      ]
+    },
+    {
+      "name": ".claude/commands/weekly-report.md <-> docs/rules-changelog/weekly-report.md：指路行與沿革檔互相指認（沿革節拆檔 2026-09-04，只改一側會讓指路懸空或沿革檔失去歸屬）",
+      "assertion": "all_contain",
+      "files": [
+        ".claude/commands/weekly-report.md",
+        "docs/rules-changelog/weekly-report.md"
+      ],
+      "patterns": [
+        "docs/rules\\-changelog/weekly\\-report\\.md|\\.claude/commands/weekly\\-report\\.md 沿革"
+      ]
+    },
+    {
+      "name": ".claude/rules/wiki-ingest-format.md <-> docs/rules-changelog/wiki-ingest-format.md：指路行與沿革檔互相指認（沿革節拆檔 2026-09-04，只改一側會讓指路懸空或沿革檔失去歸屬）",
+      "assertion": "all_contain",
+      "files": [
+        ".claude/rules/wiki-ingest-format.md",
+        "docs/rules-changelog/wiki-ingest-format.md"
+      ],
+      "patterns": [
+        "docs/rules\\-changelog/wiki\\-ingest\\-format\\.md|\\.claude/rules/wiki\\-ingest\\-format\\.md 沿革"
+      ]
+    },
+    {
+      "name": ".claude/rules/wiki-ingest-features.md <-> docs/rules-changelog/wiki-ingest-features.md：指路行與沿革檔互相指認（沿革節拆檔 2026-09-04，只改一側會讓指路懸空或沿革檔失去歸屬）",
+      "assertion": "all_contain",
+      "files": [
+        ".claude/rules/wiki-ingest-features.md",
+        "docs/rules-changelog/wiki-ingest-features.md"
+      ],
+      "patterns": [
+        "docs/rules\\-changelog/wiki\\-ingest\\-features\\.md|\\.claude/rules/wiki\\-ingest\\-features\\.md 沿革"
       ]
     }
   ],
