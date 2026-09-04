@@ -65,6 +65,61 @@
 
 ---
 
+## 🆕 最新功能（2026-09）
+
+### managedMcpServers 管理設定
+**發布：** 2026-09-02（v2.1.259） | **熱度：** 🔥🔥 | **試用價值：** ⏳ 觀望 | **狀態：** 正式發布
+
+**是什麼：** 組織可透過 managed settings 統一為所有使用者佈署 HTTP/SSE MCP 伺服器，設定格式比照 `.mcp.json`。
+
+**為何熱：** 官方 release notes 首次揭露，尚無社群討論或工具跟進；解決企業層級 MCP 伺服器需逐一手動設定的痛點。
+
+**現在要試嗎：** 適合需為全組織統一佈署 MCP 伺服器的企業管理員；一般個人使用者無感，仍以既有 `.mcp.json` 為主。
+
+**快速上手：**
+```json
+{
+  "mcpServers": {
+    "org-tool": { "type": "sse", "url": "https://mcp.example.com/sse" }
+  }
+}
+```
+
+**注意事項：** 官方 changelog 於「指定執行指令的項目」處遭截斷，涉及本機命令執行的 MCP 伺服器設定細節（是否允許、如何審核）尚未完整取得。
+
+### Claude Fable 5.1
+**發布：** 2026-09-01 | **熱度：** 🔥🔥🔥🔥🔥 | **試用價值：** ⚡ 有條件推薦 | **狀態：** 正式發布
+
+**是什麼：** Anthropic 新一代旗艦模型，GA 取代 Fable 5.0；同步發布信任機構限定版 Mythos 5.1（同一模型、不同防護層級，護欄專為資安與生命科學設計），新增反萃取（anti-distillation）機制。
+
+**為何熱：** 官方公告 HN 1,338 分，屬近期互動度最高的官方公告之一；Terminal-Bench-Science 52.6%、快取讀取費率降至基礎輸入價 0.025 倍（原 0.1 倍，約 75% 降幅），帶動十餘家媒體同日跟進。
+
+**現在要試嗎：** 現有付費方案可直接使用（GA，官方說明頁 09-02 確認方案內含範圍不變）；長對話／大量快取重複的 session 受快取降價影響最大。Mythos 5.1 僅限信任機構，公開陣容資安首選仍是 Fable 5.1。
+
+**快速上手：** 官方公告未列出確切 `--model` id 字串，暫不提供指令範例以免誤導。
+
+**注意事項：** The New Stack 報導浮水印機制仍有偵測盲區；成本降幅各家媒體說法不一（25%／45%／75%，可能對應不同計費項目），詳見 [[entities/pricing]]。
+
+### 使用者個人資料 API（User Profiles，Beta）
+**發布：** 2026-09-01（anthropic-sdk-typescript sdk-v0.123.0、anthropic-sdk-python v1.3.0） | **熱度：** 🔥🔥 | **試用價值：** ⏳ 觀望 | **狀態：** Beta
+
+**是什麼：** TypeScript／Python 兩個官方 SDK 同日新增 beta 版使用者個人資料（user profiles）API 支援，含 `external_user_onboarding` 等欄位。
+
+**為何熱：** 兩個 SDK 同日發布，屬全新 beta API 平面；官方 release notes 未附文件或呼叫範例，用途待補。
+
+**現在要試嗎：** 僅適合想搶先摸索 API 形狀、可接受介面隨時變動者；正式流程整合應等官方文件與非 beta 版本。
+
+**快速上手：**
+```
+pip install --upgrade anthropic   # >= 1.3.0
+npm install @anthropic-ai/sdk@0.123.0
+# 官方 release notes 未附具體呼叫範例；已知 schema 含 external_user_onboarding 欄位
+```
+
+**注意事項：** Beta 階段，欄位與介面可能異動；官方尚未發布對應文件頁面。
+
+---
+
 ## 評分說明
 
 | 指標 | 說明 |
@@ -177,61 +232,6 @@
 | **Claude Design** | 2026-04-27 | 🔥🔥 | ❌ 暫不推薦 | 正式發布 |
 | **Dreaming 記憶整合**（最後後續 2026-07-17：Python SDK 0.117.0 新增 dreaming API 支援；尚無採用回報） | 2026-05-07 | 🔥 | ⏳ 觀望 | Research Preview |
 | **Outcomes 規格驗證** | 2026-05-07 | 🔥🔥 | ⚡ 有條件 | 公開測試 |
-
----
-
-## 🆕 最新功能（2026-09）
-
-### managedMcpServers 管理設定
-**發布：** 2026-09-02（v2.1.259） | **熱度：** 🔥🔥 | **試用價值：** ⏳ 觀望 | **狀態：** 正式發布
-
-**是什麼：** 組織可透過 managed settings 統一為所有使用者佈署 HTTP/SSE MCP 伺服器，設定格式比照 `.mcp.json`。
-
-**為何熱：** 官方 release notes 首次揭露，尚無社群討論或工具跟進；解決企業層級 MCP 伺服器需逐一手動設定的痛點。
-
-**現在要試嗎：** 適合需為全組織統一佈署 MCP 伺服器的企業管理員；一般個人使用者無感，仍以既有 `.mcp.json` 為主。
-
-**快速上手：**
-```json
-{
-  "mcpServers": {
-    "org-tool": { "type": "sse", "url": "https://mcp.example.com/sse" }
-  }
-}
-```
-
-**注意事項：** 官方 changelog 於「指定執行指令的項目」處遭截斷，涉及本機命令執行的 MCP 伺服器設定細節（是否允許、如何審核）尚未完整取得。
-
-### Claude Fable 5.1
-**發布：** 2026-09-01 | **熱度：** 🔥🔥🔥🔥🔥 | **試用價值：** ⚡ 有條件推薦 | **狀態：** 正式發布
-
-**是什麼：** Anthropic 新一代旗艦模型，GA 取代 Fable 5.0；同步發布信任機構限定版 Mythos 5.1（同一模型、不同防護層級，護欄專為資安與生命科學設計），新增反萃取（anti-distillation）機制。
-
-**為何熱：** 官方公告 HN 1,338 分，屬近期互動度最高的官方公告之一；Terminal-Bench-Science 52.6%、快取讀取費率降至基礎輸入價 0.025 倍（原 0.1 倍，約 75% 降幅），帶動十餘家媒體同日跟進。
-
-**現在要試嗎：** 現有付費方案可直接使用（GA，官方說明頁 09-02 確認方案內含範圍不變）；長對話／大量快取重複的 session 受快取降價影響最大。Mythos 5.1 僅限信任機構，公開陣容資安首選仍是 Fable 5.1。
-
-**快速上手：** 官方公告未列出確切 `--model` id 字串，暫不提供指令範例以免誤導。
-
-**注意事項：** The New Stack 報導浮水印機制仍有偵測盲區；成本降幅各家媒體說法不一（25%／45%／75%，可能對應不同計費項目），詳見 [[entities/pricing]]。
-
-### 使用者個人資料 API（User Profiles，Beta）
-**發布：** 2026-09-01（anthropic-sdk-typescript sdk-v0.123.0、anthropic-sdk-python v1.3.0） | **熱度：** 🔥🔥 | **試用價值：** ⏳ 觀望 | **狀態：** Beta
-
-**是什麼：** TypeScript／Python 兩個官方 SDK 同日新增 beta 版使用者個人資料（user profiles）API 支援，含 `external_user_onboarding` 等欄位。
-
-**為何熱：** 兩個 SDK 同日發布，屬全新 beta API 平面；官方 release notes 未附文件或呼叫範例，用途待補。
-
-**現在要試嗎：** 僅適合想搶先摸索 API 形狀、可接受介面隨時變動者；正式流程整合應等官方文件與非 beta 版本。
-
-**快速上手：**
-```
-pip install --upgrade anthropic   # >= 1.3.0
-npm install @anthropic-ai/sdk@0.123.0
-# 官方 release notes 未附具體呼叫範例；已知 schema 含 external_user_onboarding 欄位
-```
-
-**注意事項：** Beta 階段，欄位與介面可能異動；官方尚未發布對應文件頁面。
 
 ---
 
