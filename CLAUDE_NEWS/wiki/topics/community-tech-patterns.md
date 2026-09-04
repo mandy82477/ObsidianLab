@@ -4,16 +4,16 @@ kind: "topic"
 status: "ongoing"
 domain: "🌐 社群"
 last_updated: "2026-09-04"
-last_news_update: "2026-09-02"
+last_news_update: "2026-09-03"
 status_main: "ongoing"
-days_since_news: 2
+days_since_news: 1
 parent: null
 children: "['topics/community-tech-patterns-archive']"
 page_role: "hub"
-days_since_news_subtree: 2
+days_since_news_subtree: 1
 inbound_links: 52
-attribution_count: 105
-attribution_last: "2026-09-02"
+attribution_count: 109
+attribution_last: "2026-09-03"
 top_source: "devto"
 pending_count: 6
 pending_overdue: 0
@@ -29,7 +29,7 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 **領域：** 🌐 社群
 **開始日期：** 2026-04-25
 **最後更新：** 2026-09-04
-**最後新聞更新：** 2026-09-02
+**最後新聞更新：** 2026-09-03
 
 > **最新工作流模式**（2026-09-02）
 > - **存量盤點雙響再破紀錄**：thedotmack/claude-mem（9.3 萬星，跨 7 種以上 harness 的 AI 壓縮持久記憶）與 addyosmani/agent-skills（9.2 萬星，Addy Osmani 具名生產級技能集合）本庫首次收錄。

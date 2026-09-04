@@ -5,16 +5,16 @@ type: "product"
 status: "active"
 domain: "🛠️ 工具/功能"
 last_updated: "2026-09-04"
-last_news_update: "2026-09-02"
+last_news_update: "2026-09-03"
 status_main: "active"
-days_since_news: 2
+days_since_news: 1
 parent: null
 children: "[]"
 page_role: "root"
-days_since_news_subtree: 2
+days_since_news_subtree: 1
 inbound_links: 76
-attribution_count: 418
-attribution_last: "2026-09-02"
+attribution_count: 424
+attribution_last: "2026-09-03"
 top_source: "github-issues"
 pending_count: 30
 pending_overdue: 13
@@ -30,7 +30,7 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 **領域：** 🛠️ 工具/功能
 **首次出現：** 2025（正式推出）
 **最後更新：** 2026-09-04
-**最後新聞更新：** 2026-09-02
+**最後新聞更新：** 2026-09-03
 
 > **最新動態**（2026-09-02）
 > - **v2.1.258 發布**：修復 macOS 12（Monterey）啟動失敗（v2.1.255 引入的回歸），以及 remote／排程 session 因「使用者訊息不得為空」而失敗的問題；純 bug 修復。
