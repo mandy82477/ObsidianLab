@@ -10,6 +10,9 @@ from news_aggregator.sources.base import FeedItem
 #
 # 兩項優化都只作用在「📌 今日聚焦」小節，其餘小節（⭐ 重點話題 / 🔧 技術更新 /
 # 📰 媒體報導 / 💬 技術熱度討論 / 💰 付費方案動態 / 📡 來源狀態）逐字不動：
+# ⚠️ 此路徑非 pipeline 正典（正典為 news-pipeline-steps.md Step 1b，由 Claude session 生成）；
+# 本模組僅在 fallback 情境使用，呈現格式停留在 2026-07-24 版（[N] 腳注＋檔尾附錄），
+# 2026-09-04 的行內連結改版刻意未跟進——若要啟用此路徑先同步 Step 1b 現行格式。
 #
 #   a. ref 連結編號化：聚焦條目行內的 `（ref: URL）` 改成 `[N]` 編號引用，
 #      URL 移到檔尾一份彙整的參考清單（依首次出現順序編號、同 URL 去重共用

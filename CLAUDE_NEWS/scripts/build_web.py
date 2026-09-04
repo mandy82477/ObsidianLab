@@ -866,9 +866,17 @@ SOURCE_RE = re.compile(
 FOCUS_RE    = re.compile(r"^(?:-\s+)?\*\*(.+?)\*\*\s+(.*)")
 # 舊格式：今日聚焦行內直接嵌完整 URL，如 "（ref: https://...）"。
 FOCUS_REF_RE = re.compile(r"（ref:\s*(https?://[^\s（）)]+)[）)]")
-# 新格式（2026-07-24 起，見 digest.py::reformat_presentation）：行內只留編號
+# 中期格式（2026-07-24～2026-09-03，見 digest.py::reformat_presentation）：行內只留編號
 # 引用 "[N]"，完整 URL 移到檔尾「今日聚焦參考連結」清單，須另外解析還原。
 FOCUS_NUM_RE = re.compile(r"\[(\d+)\]")
+# 現行格式（2026-09-04 起，冷讀者 review 改版）：句末行內 markdown 連結
+# `（[來源名](url)）`，多則頓號並列。抽 URL 進 ref_urls（餵 focus badge 與典藏頁
+# 標籤），顯示文字把整個括號連結群移除——app.js 的 focus text 是純轉義不渲染
+# markdown，不移除會印出字面 `（[HN](https://…)）`。
+FOCUS_INLINE_LINK_RE = re.compile(r"\[([^\]]+)\]\((https?://[^\s)]+)\)")
+FOCUS_INLINE_GROUP_RE = re.compile(
+    r"[（(]\s*(?:\[[^\]]+\]\(https?://[^\s)]+\)\s*[、,]?\s*)+[）)]"
+)
 FOCUS_REF_LIST_RE = re.compile(
     r"今日聚焦參考連結[：:]\**\s*\n((?:\d+\.\s+\S+\s*\n?)+)"
 )
@@ -979,8 +987,12 @@ def parse_digest(f: Path) -> dict:
                 if m:
                     tag, text_raw = m.group(1).strip(), m.group(2).strip()
                     ref_urls = FOCUS_REF_RE.findall(text_raw)  # 舊格式：行內完整 URL
-                    ref_nums = [int(n) for n in FOCUS_NUM_RE.findall(text_raw)]  # 新格式：[N] 編號
-                    text = FOCUS_REF_RE.sub("", text_raw)
+                    ref_nums = [int(n) for n in FOCUS_NUM_RE.findall(text_raw)]  # 中期格式：[N] 編號
+                    # 現行格式（2026-09-04 起）：行內 markdown 連結——先抽 URL 再整群移除
+                    ref_urls += [u for _, u in FOCUS_INLINE_LINK_RE.findall(text_raw)]
+                    text = FOCUS_INLINE_GROUP_RE.sub("", text_raw)
+                    text = FOCUS_INLINE_LINK_RE.sub(r"\1", text)  # 群外落單連結：留來源名
+                    text = FOCUS_REF_RE.sub("", text)
                     text = FOCUS_NUM_RE.sub("", text).strip()
                     result["focus"].append({"tag": tag, "text": text, "ref_urls": ref_urls})
                     focus_ref_nums.append(ref_nums)
