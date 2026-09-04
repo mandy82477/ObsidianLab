@@ -2578,3 +2578,21 @@ code {
   .map__hint { display: none; }
   .map__find { width: 120px; }
 }
+
+/* Map：玩法補件（疊層脈動、連連看、隨機漫步、詳頁小星圖） */
+.map__btn, .map__link-btn { font-family: var(--font-sans); font-size: 12px; color: var(--ochre-9); background: transparent; border: 1px solid var(--ochre-7); border-radius: 2px; padding: 4px 9px; cursor: pointer; }
+.map__btn:hover, .map__link-btn:hover { background: var(--ochre-tint); }
+.map__link-btn { font-size: 11px; padding: 2px 7px; margin-left: 10px; vertical-align: middle; }
+.section__h-map { margin-left: auto; }
+.map__panel-actions { display: flex; flex-wrap: wrap; gap: 6px; margin: 12px 0 4px; }
+.map__panel-actions .map__panel-open { margin: 0; }
+.map__panel-ghost { font-family: var(--font-sans); font-size: 12px; color: var(--ink-3); background: transparent; border: 1px solid var(--border-2); border-radius: 2px; padding: 5px 9px; cursor: pointer; }
+.map__panel-ghost:hover { color: var(--ochre-9); border-color: var(--ochre-7); }
+.map__panel-chain { margin: 8px 0 0; padding-left: 18px; font-family: var(--font-sans); font-size: 12.5px; color: var(--ink-3); }
+.map__panel-chain li { padding: 2px 0; }
+.map__pulse { pointer-events: none; }
+.detail__minimap { margin-top: 40px; padding-top: 16px; border-top: 1px solid var(--border-2); }
+.detail__minimap .wiki__section-h { display: flex; align-items: center; margin-bottom: 8px; }
+.minimap__svg { display: block; max-width: 100%; height: auto; border: 1px solid var(--border-1); border-radius: 2px; background: var(--bg-1); }
+.minimap__node { cursor: pointer; }
+.minimap__node--me { cursor: default; }

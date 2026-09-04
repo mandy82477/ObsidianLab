@@ -1263,7 +1263,37 @@ def build():
         for _n in _nodes:
             _n["inBody"] = sum(1 for e in _edges.values() if e["d"] == _n["id"] and e["body"])
             _n["inAll"] = sum(1 for e in _edges.values() if e["d"] == _n["id"])
-        _graph = {"generated": str(_today), "nodes": _nodes,
+            _n["lastNewsUpdate"] = (_by_id.get(_n["id"]) or {}).get("lastNewsUpdate", "")[:10]
+            _n["sources"] = {}
+        # 來源疊層：哪個新聞來源餵哪頁（data/source_attribution.jsonl，主編每日 append）
+        _src_names = {"user-query": "使用者提問"}
+        try:
+            for _s in json.loads((ROOT / "data" / "source_registry.json").read_text(encoding="utf-8")).get("sources", []):
+                if _s.get("slug") and _s.get("name"):
+                    _src_names[_s["slug"]] = _s["name"]
+        except Exception:
+            pass
+        _node_by_id = {n["id"]: n for n in _nodes}
+        _attr = ROOT / "data" / "source_attribution.jsonl"
+        if _attr.exists():
+            for _ln in _attr.read_text(encoding="utf-8").splitlines():
+                if not _ln.strip():
+                    continue
+                try:
+                    _r = json.loads(_ln)
+                except ValueError:
+                    continue
+                _n = _node_by_id.get(str(_r.get("page", "")).split("/")[-1])
+                if _n and _r.get("source"):
+                    _n["sources"][_r["source"]] = _n["sources"].get(_r["source"], 0) + 1
+        _src_totals = {}
+        for _n in _nodes:
+            for _k, _v in _n["sources"].items():
+                _src_totals[_k] = _src_totals.get(_k, 0) + _v
+        _latest = max((n["lastNewsUpdate"] for n in _nodes if n["lastNewsUpdate"]), default="")
+        _graph = {"generated": str(_today), "latestNews": _latest, "nodes": _nodes,
+                  "sources": [{"slug": k, "name": _src_names.get(k, k), "count": v}
+                              for k, v in sorted(_src_totals.items(), key=lambda kv: -kv[1])],
                   "edges": [e for e in _edges.values() if e["s"] in _ids and e["d"] in _ids]}
         _out_graph = ROOT / "web_reader" / "data" / "graph.json"
         with _out_graph.open("w", encoding="utf-8") as fp:
