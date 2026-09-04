@@ -5460,7 +5460,6 @@ GH Actions 抓料排 10:23 UTC，到 14:45 UTC 仍未落地（+4.4 小時且持�
 
 **蒸餾 dry run（社群記者）**：discussions 2026-06 **不提案**——八條 🌊延燒討論首見全落 06 月（開源護城河瓦解、Loop Engineering、Context Rot 五法、成就感缺失、無障礙偏差、/specs 目錄、定價戰、Skill Atrophy），依「延燒月份一律不蒸餾」整月被擋；patterns 2026-07 門檻 1 未到期，2026-10 下旬再評（屆時另查額度焦慮、AskUserQuestion 兩條 07 月延燒討論狀態）。本輪無蒸餾候選。
 
-<<<<<<< HEAD
 ## 2026-09-03 Ingest
 
 - 來源日報：[[news/2026-09-03]]
@@ -5472,7 +5471,6 @@ GH Actions 抓料排 10:23 UTC，到 14:45 UTC 仍未落地（+4.4 小時且持�
 - devpractice 沉澱：待派工（見下方 4b）
 
 **devpractice 沉澱補記（2026-09-03，接續上方 Ingest 紀錄）：** 候選 5 筆——`topics/community-tech-patterns`：internet-court-skill（agent 間商業信任層 skill）、yetone/cumora（跨平台 agent 團隊聊天工具）、Abilityai/trinity（自架多 agent 平台）；`topics/long-context-1m`：`[1m]` 變體遭 Max 方案覆蓋逾 6 週未解；`entities/claude-code`：官方建議任務間執行 `/clear` 省 token。基準線技術備註：狀態檔記錄基準 sha 因本庫近期歷史重寫而遺失，腳本依文件化失敗模式自動退回 48 小時前基準，記者已逐頁核對排除與稍早批次重複的 14 筆，僅新增本輪確認未入帳的 5 筆；基準線已推進至 HEAD，非本次操作所致、後續執行不受影響。
-=======
 ## 2026-09-04 舊語法懸置清理第二輪（四 sonnet 並行，28 頁 81 筆）：全庫盲區 99 → 12
 
 **分組結果**：模型組 19 筆（opus-5 的 H-01~05 序號改合規 Q-、fable-5 一筆 08-26 已查實解除、model-comparison「待查證聲明」節改名「單一來源聲明」）；商業組 20 筆（competitor-landscape ⟨Q-01⟩⟨Q-02⟩ 新立、enterprise-tool-tracker ⟨Q-03⟩、pricing 兩筆已解決事件殘留改措辭）；功能安全組 19 筆（gov-policy 8 筆清零、claude-skills 表格變體＋細節區新建）；社群人物組 23 筆（large-codebase 證據強度欄轉 ⟨Q-01⟩~⟨Q-03⟩、timeline 一筆「暫停等待確認」假陽性改措辭）。主編另清 anthropic-commitments 1 筆散文裸字樣。
@@ -5480,7 +5478,6 @@ GH Actions 抓料排 10:23 UTC，到 14:45 UTC 仍未落地（+4.4 小時且持�
 **剩餘 12 筆全屬口徑豁免項，非真懸置**：人物頁 `active（待核實）` 狀態格式 8 筆（people 規則明訂必填）、狀態圖例 1（claude-code:92）、採用符號圖例 1（tools:134）、封存頁原文 1（archive，一字不刪原則）、合法短標記被計數 1（commitments ⟨C-01⟩）。**後續建議**：讓 `pending_markers.iter_legacy()` 豁免這四類（狀態格式／圖例／封存頁／合法短標記），使「存量殘餘」歸真零——列待裁示。
 
 **驗收**：四組各自測試綠；主編抽驗（seed 2026-W36-legacy2 擲中功能安全組）四頁 legacy 重掃全 0；最終 497 測試全綠；新語法標記 147→193（基線內）。
->>>>>>> b7f98af5... wiki: 舊語法懸置清理第二輪（28 頁 81 筆，全庫盲區 99→12，剩餘全屬口徑豁免項）
 
 ## 2026-09-04 Query：「重點話題的 skill 還是沒列理由」＋「週報／日報派冷讀者 review」→ 產製規則大修（日報 8 項＋週報 6 項）
 
