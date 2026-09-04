@@ -4,7 +4,7 @@ kind: "entity"
 type: "model"
 status: "active（正式發布；出口管制已解除，2026-07-01 起全球恢復存取；免費期已於 2026-07-19 到期，Max/Team 後續存取政策已於 2026-08-08 經官方 Help Center 查證收斂，見 [[entities/pricing]]；5.1 已於 2026-09-01 GA 發布並取代 5.0 為現行旗艦版本，見「歷史記錄」）"
 domain: "🤖 模型"
-last_updated: "2026-09-03"
+last_updated: "2026-09-04"
 last_news_update: "2026-09-02"
 status_main: "active"
 days_since_news: 1
@@ -29,7 +29,7 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 **狀態：** active（正式發布；出口管制已解除，2026-07-01 起全球恢復存取；免費期已於 2026-07-19 到期，Max/Team 後續存取政策已於 2026-08-08 經官方 Help Center 查證收斂，見 [[entities/pricing]]；5.1 已於 2026-09-01 GA 發布並取代 5.0 為現行旗艦版本，見「歷史記錄」）
 **領域：** 🤖 模型
 **首次出現：** 2026-06-09
-**最後更新：** 2026-09-03
+**最後更新：** 2026-09-04
 **最後新聞更新：** 2026-09-02
 
 > **最新進展**（2026-09-01）
@@ -39,7 +39,7 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 
 ## 現況
 
-**2026-09-01 最新（新一代旗艦發布）**：Anthropic 正式發布 Claude Fable 5.1（GA，向所有現有 Fable 5 用戶開放）與 Claude Mythos 5.1（沿用限信任機構存取模式，非全面公開）；兩者為**同一模型的不同防護層級**——Fable 5.1 面向一般用戶，Mythos 5.1 護欄「專為資安與生命科學工作設計」。官方稱其為「coding 與知識工作最先進的模型」，研究能力也對科學進展展現初步貢獻潛力；新增**反萃取（anti-distillation）機制**，防範他人萃取模型權重／行為訓練競品。發布日 HN 討論達 **1,338 分**，為近期官方公告中互動度最高之一（[Anthropic Blog](https://www.anthropic.com/claude-fable-and-mythos-5-1)，2026-09-01）。此為 08-28 社群傳聞（見下方「歷史記錄」待查證標記）的官方證實；三方基準與媒體報導細節見「歷史記錄」。
+**2026-09-01 最新（新一代旗艦發布）**：Anthropic 正式發布 Claude Fable 5.1（GA，向所有現有 Fable 5 用戶開放）與 Claude Mythos 5.1（沿用限信任機構存取模式，非全面公開）；兩者為**同一模型的不同防護層級**——Fable 5.1 面向一般用戶，Mythos 5.1 護欄「專為資安與生命科學工作設計」。官方稱其為「coding 與知識工作最先進的模型」，研究能力也對科學進展展現初步貢獻潛力；新增**反萃取（anti-distillation）機制**，防範他人萃取模型權重／行為訓練競品。發布日 HN 討論達 **1,338 分**，為近期官方公告中互動度最高之一（[Anthropic Blog](https://www.anthropic.com/claude-fable-and-mythos-5-1)，2026-09-01）。此為 08-28 社群傳聞（見下方「歷史記錄」08-28 條目）的官方證實；三方基準與媒體報導細節見「歷史記錄」。
 
 **2026-08-28**：Reddit r/ClaudeCode 質疑串「Is it even legal for Anthropic to nerf its models this hard?」，使用者抱怨 Opus 5 與 Fable 5 在 Claude Code 中的實際表現遜於預期，質疑模型遭「削弱」；單一使用者觀感回報，無具體案例或量化數字佐證，延續 08-13、08-20 等已記錄的社群觀感分歧模式，完整記錄與相關社群回饋見 [[entities/opus-5]]「歷史記錄」（[Reddit](https://www.reddit.com/r/ClaudeCode/comments/1w0t53b/is_it_even_legal_for_anthropic_to_nerf_its_models/)，2026-08-28）。
 
@@ -115,7 +115,7 @@ claude --model claude-fable-5-20260609
 - ⚠️ **Fable 5 成本高昂**：$200/月 Max 用戶一次 code review 可消耗 45% 週配額；社群回報消耗量個體差異極大
 - ⚠️ **30 天資料保留**：Bedrock 用戶數據強制離開 AWS 安全邊界，企業隱私顧慮
 - ⚠️ **「失去靈魂」討論**：部分用戶認為 Fable 5 相比 Opus 4.6 更工具性、減少人本關懷深度
-- ⚠️ **「Defense in Depth」分類器誤判（2026-07-02，新）**：redeploy 後新增的資安/程式碼請求分類器出現誤判案例——合法資安審查請求被攔截、化學問題被拒（後者待查證狀態見下方歷史記錄 2026-07-02），攔截範圍可能超出原設計的 coding/cybersecurity 場景
+- ⚠️ **「Defense in Depth」分類器誤判（2026-07-02，新）**：redeploy 後新增的資安/程式碼請求分類器出現誤判案例——合法資安審查請求被攔截、化學問題被拒（後者範圍已於 2026-08-26 查證確認不限於 coding/cybersecurity，見下方歷史記錄 2026-07-02）
 - 🔴 **Advisor 角色全面 unavailable（2026-07-10，新，未修復）**：GitHub Issue #73365 回報 Fable 5 advisor（Opus 4.8 main 底下的 advisor 角色）在所有 Claude Code session 中皆顯示「unavailable」，版本 v2.1.198，累積 50 則留言、100 個讚，情緒強烈。此為 Claude Code 功能面的呼叫失效，非模型能力本身劣化；完整 bug 追蹤見 [[entities/claude-code]] 已知問題（[GitHub Issues](https://github.com)，2026-07-10）
 - 🔴 **Max 方案誤判需購買 usage credits 才能執行 Fable 5（2026-07-20 起，官方 07-20 定性為誤判並建議重啟，但社群回報持續至 08-07 未解，留言數 35 → 67）**：GitHub Issue #79337（07-20 記錄 10 讚、35 留言；07-24 reaction 增至 13 個，留言數未見更新）回報，Fable 5 免費期到期後的 07-20 當天，Max 方案一度被要求額外購買 usage credits 才能執行 Fable 5，並將 session 靜默降級至 Opus 4.8；受影響帳號的已儲存模型設定顯示為 `claude-fable-5[1m]`（1M context 變體）。症狀與同日 Anthropic Status 已證實的 Max 誤判事件高度吻合，官方 07-20 已定性為誤判並建議重啟——**但該建議未解決問題**：留言數自 07-20 的 35 則增至 08-07 的 67 則，社群回報延燒逾 18 天仍無官方修復或說明（以 [[entities/pricing]] 08-07 查證為準；本頁先前標為「已解決」係停在 07-24 追蹤，2026-08-08 更正）。存取政策本身已於 2026-08-08 由官方文件釐清（Max／Team premium 標配、Pro／Team standard 走 credits），計費細節見 [[entities/pricing]]；`[1m]` 變體自成一個模型 id 所引發的通用問題見 [[topics/long-context-1m]]（[GitHub Issues](https://github.com/anthropics/claude-code/issues/79337)，2026-07-20；追蹤至 2026-08-07）
 - ⚠️ **「太危險」分級受競品追平質疑（2026-07-24 日報收錄，社群觀點，弱訊號）**：r/ClaudeCode 使用者認為 Fable 5 被「削弱」後感覺只比 Opus 4.8 聰明一點，開源模型已追上「太危險」等級模型的能力（2026-07-24，單一來源，score 恆 0）；同期 r/ClaudeAI 週熱門貼文（原貼 2026-07-18）另有一名自稱基因學/神經科學研究者，質疑 Fable/Mythos「對科學研究太危險」的分類與自身分析 RNA 等用途完全無關。兩則均為社群主觀觀點，非量化評測；分類爭議的安全政策脈絡另見安全政策記者對應頁面，此處僅記模型定位/能力落差角度
@@ -209,7 +209,7 @@ claude --model claude-fable-5-20260609
 
 #### 2026-09-01
 **Claude Fable 5.1 與 Claude Mythos 5.1 正式發布**：
-- Anthropic 官方公告，Fable 5.1 與 Mythos 5.1 為**同一模型的不同防護層級**——Fable 5.1 一般可用（GA），Mythos 5.1 僅開放信任機構存取，其防護「專為資安與生命科學工作設計」（官方原文：「Claude Fable 5.1 and Claude Mythos 5.1 are the same model, but with different levels of safeguards. Fable 5.1 is generally available, while Mythos 5.1 is available only through our trusted access programs; its safeguards are specifically designed to support work in cybersecurity and the life sciences.」）；此為 08-28 社群傳聞（見上方「歷史記錄」待查證標記）的官方證實
+- Anthropic 官方公告，Fable 5.1 與 Mythos 5.1 為**同一模型的不同防護層級**——Fable 5.1 一般可用（GA），Mythos 5.1 僅開放信任機構存取，其防護「專為資安與生命科學工作設計」（官方原文：「Claude Fable 5.1 and Claude Mythos 5.1 are the same model, but with different levels of safeguards. Fable 5.1 is generally available, while Mythos 5.1 is available only through our trusted access programs; its safeguards are specifically designed to support work in cybersecurity and the life sciences.」）；此為 08-28 社群傳聞（見上方「歷史記錄」08-28 條目）的官方證實
 - 官方稱其為「coding 與知識工作最先進的模型」，研究能力對科學進展已展現初步貢獻潛力；新增**反萃取（anti-distillation）機制**——防範他人萃取模型權重／行為用以訓練競品
 - HN 討論達 **1,338 分**，屬近期官方公告中互動度最高之一（[Anthropic Blog](https://www.anthropic.com/claude-fable-and-mythos-5-1)，2026-09-01）
 - **System Card 同步發布**：官方公布 Fable 5.1／Mythos 5.1 完整 System Card 文件（HN 16 分）（[Anthropic Document](https://www.anthropic.com/document/claude-fable-5-1-mythos-5-1-system-card)，2026-09-01）
@@ -230,9 +230,9 @@ claude --model claude-fable-5-20260609
 同日官方說明文件〈Claude Fable 5 on your plan〉重申存取依方案分流（Max 方案優先存取），與 08-19 已查證記錄的規則一致，無新資訊，不重複記錄計費細節（詳見 [[entities/pricing]]）。
 
 #### 2026-08-26
-**Futurism：企業轉向更便宜替代模型、Anthropic 旗艦採用意願下滑（僅標題可用，待查證）**：Google News 轉載 Futurism 標題〈Nobody Wants Anthropic's Best AI Model Anymore Now That There Are Way Cheaper Alternatives〉；RSS 僅提供標題與轉址連結，無正文可查證具體採用數據、樣本或方法論。與上方 08-18 analyticsindiamag.com〈Almost Nobody Is Using Anthropic's Fable 5〉標題主題相近，惟來源、標題涵蓋範圍（泛稱「最強模型」vs 明確指名 Fable 5）皆不完全相同，暫不合併視為同一事實的兩次獨立確認，亦不做因果推論。❓ **待查證**（標 2026-08-26｜查 Futurism、cheaper alternatives｜複 2026-09-09）｜**企業轉向更便宜替代方案的具體佐證**：僅標題可用，無採用數據、案例或方法論佐證（[Google News/Futurism](https://news.google.com/rss/articles/CBMingFBVV95cUxQcktnOVJUTlRkVG53NHl6ZlR4RFhTekx1ZlQ4cmRRZVROMG5vZzZNR0cwandpVlhfM3MzQnhNTEZDX0pQR1dfOVF2SnhJcmkwYWtaZXJGZF9LVlBKQ1cxRHdLeHFuZzlBR2FpT3JEb05QUTJGQ3JUQzlYeGlrRlJrQkNrdzFMR1F3WThfdW5wb1RwUkI4a2d0a2RWSWxKZw?oc=5)，2026-08-26）
+**Futurism：企業轉向更便宜替代模型、Anthropic 旗艦採用意願下滑（僅標題可用）**：Google News 轉載 Futurism 標題〈Nobody Wants Anthropic's Best AI Model Anymore Now That There Are Way Cheaper Alternatives〉；RSS 僅提供標題與轉址連結，無正文可查證具體採用數據、樣本或方法論。與上方 08-18 analyticsindiamag.com〈Almost Nobody Is Using Anthropic's Fable 5〉標題主題相近，惟來源、標題涵蓋範圍（泛稱「最強模型」vs 明確指名 Fable 5）皆不完全相同，暫不合併視為同一事實的兩次獨立確認，亦不做因果推論。❓ **待查證**（標 2026-08-26｜查 Futurism、cheaper alternatives｜複 2026-09-09）｜**企業轉向更便宜替代方案的具體佐證**：僅標題可用，無採用數據、案例或方法論佐證（[Google News/Futurism](https://news.google.com/rss/articles/CBMingFBVV95cUxQcktnOVJUTlRkVG53NHl6ZlR4RFhTekx1ZlQ4cmRRZVROMG5vZzZNR0cwandpVlhfM3MzQnhNTEZDX0pQR1dfOVF2SnhJcmkwYWtaZXJGZF9LVlBKQ1cxRHdLeHFuZzlBR2FpT3JEb05QUTJGQ3JUQzlYeGlrRlJrQkNrdzFMR1F3WThfdW5wb1RwUkI4a2d0a2RWSWxKZw?oc=5)，2026-08-26）
 
-**tech-insider.org 模板化定價比較標題（僅標題可用，待查證，模型能力面）**：同日另有 tech-insider.org（經 Google News 轉載）發布標題《Claude Fable 5 vs Opus 5 vs GPT-5.6 Sol: $1,125 Gap [2026]》，比較 Fable 5、[[entities/opus-5|Opus 5]] 與競品 GPT-5.6 Sol 定價；同站另有一篇比較 Opus 5 與 Grok 4.6、Gemini 3.1 Pro 的同系列標題，記於 [[entities/opus-5]]。本則僅標題可用、無正文，「$1,125 Gap」具體數字未經查證，不採信為事實；如經查證，具體定價數字應留給 [[entities/pricing]] 記錄。❓ **待查證**（標 2026-08-26｜查 tech-insider.org、GPT-5.6 Sol｜複 2026-09-09）｜**Fable 5 vs Opus 5 vs GPT-5.6 Sol 的 $1,125 差距計算基準**：僅標題可用，計算基準（per-token／月費等）與是否與現行定價一致均未經查證（[Google News/tech-insider.org](https://news.google.com/rss/articles/CBMiekFVX3lxTE1lT2hvNTRuTm5IVEt4WG5vV3BMQmxLdmZHX2lubDN4SzRvczBYblBJVFMteHM4V3UtM1l2NFZQYWFvbEZmaFVxdFIwSmlvRkpwc29KQzdOUXNPRWFpcDJyLWhDd0VfUkdlQ0Y3Vzk0MzBaUWtuanFLc1FR?oc=5)，2026-08-26）
+**tech-insider.org 模板化定價比較標題（僅標題可用，模型能力面）**：同日另有 tech-insider.org（經 Google News 轉載）發布標題《Claude Fable 5 vs Opus 5 vs GPT-5.6 Sol: $1,125 Gap [2026]》，比較 Fable 5、[[entities/opus-5|Opus 5]] 與競品 GPT-5.6 Sol 定價；同站另有一篇比較 Opus 5 與 Grok 4.6、Gemini 3.1 Pro 的同系列標題，記於 [[entities/opus-5]]。本則僅標題可用、無正文，「$1,125 Gap」具體數字未經查證，不採信為事實；如經查證，具體定價數字應留給 [[entities/pricing]] 記錄。❓ **待查證**（標 2026-08-26｜查 tech-insider.org、GPT-5.6 Sol｜複 2026-09-09）｜**Fable 5 vs Opus 5 vs GPT-5.6 Sol 的 $1,125 差距計算基準**：僅標題可用，計算基準（per-token／月費等）與是否與現行定價一致均未經查證（[Google News/tech-insider.org](https://news.google.com/rss/articles/CBMiekFVX3lxTE1lT2hvNTRuTm5IVEt4WG5vV3BMQmxLdmZHX2lubDN4SzRvczBYblBJVFMteHM4V3UtM1l2NFZQYWFvbEZmaFVxdFIwSmlvRkpwc29KQzdOUXNPRWFpcDJyLWhDd0VfUkdlQ0Y3Vzk0MzBaUWtuanFLc1FR?oc=5)，2026-08-26）
 
 **官方說明文件〈Claude Fable 5 on your plan〉重新抓取，內容未變（非新事件）**：官方頁面本輪被重新抓取，經比對內容與 08-19 已查證版本一致，仍為 7/19 促銷到期後的既定分流規則，非新公告；不重複記錄，計費細節仍以 [[entities/pricing]] 為準。
 

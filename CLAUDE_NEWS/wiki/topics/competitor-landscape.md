@@ -3,7 +3,7 @@ page: "topics/competitor-landscape"
 kind: "topic"
 status: "ongoing"
 domain: "💼 商業"
-last_updated: "2026-09-01"
+last_updated: "2026-09-04"
 last_news_update: "2026-09-01"
 status_main: "ongoing"
 days_since_news: 2
@@ -15,9 +15,9 @@ inbound_links: 50
 attribution_count: 90
 attribution_last: "2026-09-01"
 top_source: "google-news"
-pending_count: 1
-pending_overdue: 0
-pending_next_review: "2026-09-12"
+pending_count: 6
+pending_overdue: 4
+pending_next_review: "2026-09-05"
 pending_signalled: 0
 signal: "健康"
 generated_by: "scripts/gen_wiki_frontmatter.py"
@@ -28,7 +28,7 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 **領域：** 💼 商業
 **蒐集邊界：** 以 Claude 為參照系的競品動態為主，另針對競品發布與定價定向補抓（每日至多 2 則）；競品自身未與 Claude 對比的發布可能延遲或缺漏。**帶跑分數字的第三方對照評測收不到**——這類內容多發表於對照型部落格，不在本站蒐集範圍，因此本頁的競品能力比較以官方數字與社群並排實測為主，缺口處改指向外部活榜單（見 [[topics/model-comparison]] 的外部評測榜單節），不自行推算。
 **開始日期：** 2026-04
-**最後更新：** 2026-09-01
+**最後更新：** 2026-09-04
 **最後新聞更新：** 2026-09-01
 
 > **最新競品動態**（2026-09-01）
@@ -61,7 +61,7 @@ Claude Code 已成為 AI 輔助編碼的標竿產品，但競爭正快速升溫�
 
 | 工具/模型 | 定價 | vs Claude 定位 | 來源日期 |
 |---------|------|--------------|---------|
-| DeepSeek V4-Pro（API）| ❓ 待查證，僅見「較 V4 Flash 定價更高」之定性描述，具體費率未見報導 | 低價 Flash／高價 Pro 雙軌策略（推論）；與 KuCoin 對比 Claude 3 Opus 屬不同比較對象，不可混用（詳見下方細節） | 2026-08-14（Google News/VentureBeat）|
+| DeepSeek V4-Pro（API）| ❓ 待查證 ⟨Q-01⟩ | 低價 Flash／高價 Pro 雙軌策略（推論）；與 KuCoin 對比 Claude 3 Opus 屬不同比較對象，不可混用（詳見下方細節） | 2026-08-14（Google News/VentureBeat）|
 | Muse Glimmer（Meta，開源）| 免費（開源權重）| CNBC、Simon Willison 部落格報導 Meta 將開源目前最強模型，藉此對 OpenAI、Anthropic 表態競爭；具體 benchmark 數字、授權條款未見細節 | 2026-08-11（CNBC；Blog/Simon Willison https://simonwillison.net/2026/Aug/10/introducing-muse-glimmer/）|
 | Claude Code（自身，成本倍數宣稱）| 已查證：Composio 實測 $0.195/任務（最貴，但最快 122 秒/任務），OpenCode 最低 $0.073/任務（≈2.7 倍）| Composio 實測 4 款 agent 框架跑 30 項真實工具任務，證實 Claude Code「速度最快、成本最高」宣稱屬實（詳見下方細節） | 2026-08-06（the-decoder.com 原文，2026-08-13 查證）|
 | Muse Code / Muse Spark 1.2（Meta）| 無訂閱制，按量計費：標準層 $1.25／$4.25（input／output，每 M token）；Contributor 層 $0.10／$0.20（折扣換取資料可能用於訓練 Meta 模型）| Meta 正式推出的程式碼撰寫 agent，明確對標 Claude Code 與 OpenAI Codex；為本頁 07-09「Meta AI 程式輔助工具」傳聞的正式落地產品，詳見「主要競品追蹤」Meta 子區塊 | 2026-08-05／08-07（多方媒體）；定價為媒體整理，Meta 官方掛牌頁未見，2026-08-13 查證（詳見下方細節）|
@@ -81,6 +81,7 @@ Claude Code 已成為 AI 輔助編碼的標竿產品，但競爭正快速升溫�
 | Gemini CLI / Gemini 系列 | 已查證：2026-06-18 起免費／Google AI Pro／Ultra 帳號停止 Gemini CLI（併入 Antigravity CLI）；付費：Free $10 一次性／Pro $60/月／Max $200/月 | 免費層大幅緊縮後，個人開發者需轉向 Antigravity CLI 或改用付費 API key | 2026-08-13 查證（多方比較站彙整）|
 
 **競品定價細節**
+- ⟨Q-01⟩ ❓ **待查證**（標 2026-08-14｜查 DeepSeek V4-Pro、V4 Flash）：僅悉較 V4 Flash 定價更高，具體費率未見報導；已掃日報至 2026-09-03 無後續，官方頁面未查證。
 - **DeepSeek V4-Pro**：VentureBeat 報導 DeepSeek V4-Pro 隨開源工具 Harness 同步上線，API 定價較既有 V4 Flash（見下方「成本降低逾 100 倍」列）高，可能為「低價 Flash／高價 Pro」雙軌定價策略；與 08-13 已記錄 KuCoin「聲稱表現逼近 Claude 3 Opus、成本僅一小部分」對比對象不同（該則對比 Claude，本則為 DeepSeek 內部兩模型互比），兩者不可混用。
 - **Claude Code 成本倍數實測**：the-decoder.com 引述 AI 工具商 Composio 針對 DeepSeek V4 Flash，於 4 款 agent 框架（Claude Code、Codex、OpenCode、Oh My Pi）跑 30 項真實工具任務（Gmail/GitHub/Slack/Notion）的實測結果，證實「速度最快、成本最高」宣稱屬實（[the-decoder.com 原文](https://the-decoder.com/claude-code-is-the-fastest-agent-framework-but-costs-nearly-three-times-more-than-the-cheapest-rival/)）。
 - **Muse Code / Muse Spark 1.2 來源**：2026-08-05（Google News/CNET；Google News/Basic Tutorials；Blog/Simon Willison）／2026-08-07（Google News/WSJ）；定價數字為媒體整理（Wavect、The New Stack），Meta 官方獨立掛牌頁未見，2026-08-13 查證。
@@ -158,7 +159,7 @@ Claude Code 已成為 AI 輔助編碼的標竿產品，但競爭正快速升溫�
 
 | 日期 | 來源 | 內容 | 量化數字 |
 |------|------|------|---------|
-| 2026-08-22 | 36Kr | 「Codex 是否開始反擊 Claude Code？」產業競爭態勢觀察，與同日 HN 高分貼文呼應同一主題（另見 [[topics/community-tech-discussions]]，詳見下方細節） | ❓ 待查證：僅標題可用，具體評測方法論或量化分數未見報導細節 |
+| 2026-08-22 | 36Kr | 「Codex 是否開始反擊 Claude Code？」產業競爭態勢觀察，與同日 HN 高分貼文呼應同一主題（另見 [[topics/community-tech-discussions]]，詳見下方細節） | ❓ 待查證 ⟨Q-02⟩ |
 | 2026-07-15 | HackerNoon（source_count=2） | 「Claude Code vs Codex vs OpenCode：全端工程師誠實裁決」，三方比較文 | 🔎 查無官方（標 2026-08-10｜複 2026-09-13）：為工程師個人觀點比較文，查證後仍未見具體評分數據 |
 | 2026-07-22 | South China Morning Post（source_count=2） | 中國 Qiushi Engine（浙江大學團隊）於 ResearchClawBench 自主研究排行榜奪冠，Claude Code 第三、Open Science Desktop 第二 | 已查證：2026-08-13，[SCMP 原文](https://www.scmp.com/news/china/science/article/3361370/chinese-ai-agent-outperforms-anthropics-claude-code-autonomous-research) |
 | 2026-07-25 | SitePoint | 「Codex 5.3 生產環境工作流——何時該選它而非 Claude 做複雜重構」，工作流選型建議文 | 🔎 查無官方（標 2026-08-10｜複 2026-09-13）：為工作流選型建議文，查證後仍未見具體評測方法論或分數 |
@@ -170,6 +171,7 @@ Claude Code 已成為 AI 輔助編碼的標竿產品，但競爭正快速升溫�
 
 **頭對頭比較細節**
 - **36Kr（08-22）**：「Codex 是否開始反擊 Claude Code？」產業競爭態勢觀察報導，與同日 Hacker News 高分貼文「Quick impressions: A week of using Codex more than Claude」呼應同一主題（該則個人觀察角度另見 [[topics/community-tech-discussions]]）。
+- ⟨Q-02⟩ ❓ **待查證**（標 2026-08-22｜查 Codex、評測方法論）：僅標題可用，具體評測方法論或量化分數未見報導；已掃日報至 2026-09-03 無後續，官方頁面未查證。
 - **MarkTechPost（08-01）**：Supabase Evals 已查證（2026-08-13）——Build 階段 Opus 5／Kimi K3 均 100%（未輔助）；Sonnet 5 經 skills 輔助由 78%→100%、GPT-5.6 Sol 由 89%→100%（[supabase.com/evals](https://supabase.com/blog/introducing-supabase-evals)）。
 - **quasa.io（08-01）**：已查證（2026-08-13），第三方彙整顯示 SWE-bench Verified 兩者持平（~88.6–88.7%，Opus 5 於 07 月發布後 Claude 升至 97.0%）；SWE-bench Pro Claude Opus 4.8 領先（69.2% vs 58.6%）；Terminal-Bench Codex 領先（82.7% vs 69.4%）。
 
@@ -196,7 +198,7 @@ Claude Code 已成為 AI 輔助編碼的標竿產品，但競爭正快速升溫�
 - **狀態**：分析階段（Stocktwits 轉引 SemiAnalysis 觀點，僅標題層級資訊，2026-08-10）
 - **動態**：財經媒體 Stocktwits 轉引研究機構 SemiAnalysis 分析，討論 Microsoft 能否在 AI 基礎設施競賽中超越 OpenAI 與 Anthropic，文中提及每 GW 推理商機規模達**千億美元**（$100B-per-GW）的估算
 - **與既有觀察的呼應**：延續 07-07 Microsoft 傳出以自研模型逐步取代 OpenAI/Anthropic 模型（見上方「Microsoft 自研模型」子區塊）、07-15 訓練業務團隊淡化競品優勢等既有 Microsoft 對抗策略軌跡，本次從「產品/銷售」層面轉向「基礎設施投資規模」層面立論，若分析屬實，代表 Microsoft 對抗兩大競爭對手的路線正擴及運算基礎設施投資規模的直接比拼（推論）
-- **注意（待查證）**：$100B-per-GW 推理商機估算僅為轉引媒體標題層級資訊，SemiAnalysis 原文測算方法論、具體假設條件未見於本頁抓取資料，不可逕自採信為已查證數字（Google News/Stocktwits，轉引 SemiAnalysis）
+- ❓ **待查證**（標 2026-08-10｜查 SemiAnalysis、$100B-per-GW）：$100B-per-GW 推理商機估算僅為轉引標題層級資訊，原文測算方法論與假設條件未見；已掃日報至 2026-09-03 無後續，官方頁面未查證（Google News/Stocktwits，轉引 SemiAnalysis）。
 
 ### Microsoft 業務策略：訓練業務團隊淡化 OpenAI/Anthropic 優勢（傳聞，2026-07-15）
 - **狀態**：傳聞階段（Yahoo Finance 2026-07-15 報導，未經 Microsoft 官方證實）
@@ -262,7 +264,7 @@ Claude Code 已成為 AI 輔助編碼的標竿產品，但競爭正快速升溫�
 - **意義**：Claude Code 類產品已成為國家層面 AI 競爭的戰場；DeepSeek 轉向正面競爭標誌低成本替代生態進入下一階段；具名 API 客戶切換案例的累積正在成為可量化的市場份額流失訊號
 - **產品層再進一步（2026-07-07）**：DeepSeek 生態系推出開源程式設計 agent 工具「Deep Code」，被 finance.biggo.com 視為直接對標 Claude Code 的競品；與 Zhipu Z.ai 的 ZCode（07-06，免費）同週出現，顯示中國廠商正從「模型層對標」與「執行層替代」，加速擴展至「產品層開源工具」的第三條戰線（finance.biggo.com https://finance.biggo.com/news/a6f1bde2-c3a4-4aa4-93e9-911f6bce01e5）
 - **團隊化正面對抗（2026-08-13，重大，跨多來源）**：TradingView、Bloomberg（各自獨立報導，source_count=3）同日報導 DeepSeek 正式組建團隊、推出新一代 AI agent，明確以挑戰 Anthropic Claude Code 為目標。**對競爭格局的意涵**：延續 05-22「正式宣布建構 Claude Code 競品」以來的策略主軸，本次首度出現「組建專責團隊」的具體組織化訊號，顯示投入已從單一產品發布升級為建制化長期競爭（推論）；具體團隊規模、成員背景未見報導細節，僅標題層級資訊（Google News/TradingView；Google News/Bloomberg）
-- **V4 Pro 正式上線（2026-08-13）**：KuCoin 報導 DeepSeek V4 Pro 上線，聲稱其 agent 表現逼近 **Claude 3 Opus**、成本僅一小部分；Simon Willison 部落格（08-12）證實該模型已透過 OpenRouter 以 API 形式上線："The latest DeepSeek Pro model is now available, via API only."。**注意**：對標對象為已非最新旗艦的 Claude 3 Opus（非 Opus 4.8／Opus 5），比較基準是否具代表性待查證；具體 benchmark 數字未見報導細節（Google News/KuCoin；Blog/Simon Willison https://simonwillison.net/2026/Aug/12/deepseek-v4-pro-0813/）
+- **V4 Pro 正式上線（2026-08-13）**：KuCoin 報導 DeepSeek V4 Pro 上線，聲稱其 agent 表現逼近 **Claude 3 Opus**、成本僅一小部分；Simon Willison 部落格（08-12）證實該模型已透過 OpenRouter 以 API 形式上線："The latest DeepSeek Pro model is now available, via API only."。❓ **待查證**（標 2026-08-13｜查 DeepSeek V4 Pro、Claude 3 Opus）：對標對象為非最新旗艦 Claude 3 Opus，比較基準代表性與 benchmark 數字未見報導；已掃日報至 2026-09-03 無後續，官方頁面未查證（Google News/KuCoin；Blog/Simon Willison https://simonwillison.net/2026/Aug/12/deepseek-v4-pro-0813/）
 
 ### 騰訊 Hy4 🆕
 - **狀態**：新增追蹤（2026-08-29）——Simon Willison 部落格轉引騰訊今日發布新開放權重文字模型 **Hy4 Preview**，總參數量約 **770B**，不含視覺能力
@@ -359,7 +361,7 @@ Claude Code 已成為 AI 輔助編碼的標竿產品，但競爭正快速升溫�
 - **[新增追蹤] Simon Willison：騰訊發布開放權重模型 Hy4 Preview（約 770B 參數，不含視覺能力）**：中國陣營首度具名加入騰訊，詳見「主要競品追蹤」新增騰訊子區塊（Blog/Simon Willison）
 
 ### 2026-08-27
-- **[新增追蹤，待查證數字] CNBC：Google 推出低價 AI 方案，對 Anthropic、Microsoft 企業客戶形成定價壓力**：僅標題層級可用，無具體費率，詳見「主要競品追蹤」新增 Google 低價方案子區塊（Google News/CNBC）
+- **[新增追蹤，數字未定] CNBC：Google 推出低價 AI 方案，對 Anthropic、Microsoft 企業客戶形成定價壓力**：僅標題層級可用，無具體費率，詳見「主要競品追蹤」新增 Google 低價方案子區塊（Google News/CNBC）
 
 ### 2026-08-26
 - **[觀察重點，新增] 36Kr：Claude Code 拒採 AGENTS.md 業界標準，引發開發者社群不滿**：詳見「觀察重點」新增（Google News/36Kr）
@@ -405,13 +407,13 @@ Claude Code 已成為 AI 輔助編碼的標竿產品，但競爭正快速升溫�
 
 ### 2026-08-13
 - **[DeepSeek，重大，跨多來源] TradingView、Bloomberg（source_count=3）：DeepSeek 公開組建團隊挑戰 Claude Code；KuCoin、Simon Willison 部落格：V4 Pro 經 OpenRouter API 正式上線，聲稱 agent 表現逼近 Claude 3 Opus、成本大幅降低**：詳見「主要競品追蹤」DeepSeek 子區塊新增（Google News/TradingView；Google News/Bloomberg；Google News/KuCoin；Blog/Simon Willison）
-- **[xAI/Grok，單一來源，僅標題可用] Barron's：SpaceX 新版 Grok 發布，加壓 Anthropic 與 OpenAI**：僅標題可用，無正文細節，具體 Grok 版本號、能力提升內容待查證（Google News/Barron's）
+- ❓ **待查證**（標 2026-08-13｜查 Grok、SpaceX）｜**xAI/Grok 新版發布，加壓 Anthropic 與 OpenAI**：Barron's 報導僅標題可用，無正文細節，Grok 版本號與能力提升內容未見；已掃日報至 2026-09-03 無後續，官方頁面未查證（Google News/Barron's）
 
 ### 2026-08-11
 - **[重大，競品正式宣布，開源旗艦模型] CNBC、Simon Willison：Meta 宣布開源其最強模型 Muse Glimmer，對標 OpenAI、Anthropic**：與 08-05 發布的編碼 agent「Muse Code」不同，本次為通用旗艦模型開源，詳見「主要競品追蹤」新增 Meta「Muse Glimmer」子區塊與「競品定價對照」表新增列（Google News/CNBC；Blog/Simon Willison）
 
 ### 2026-08-10
-- **[競品基礎設施動態，標題層級，待查證] SemiAnalysis（經 Stocktwits 轉引）：Microsoft 能否「Out-AI」OpenAI 與 Anthropic，每 GW 推理商機估算達千億美元**：詳見「主要競品追蹤」新增 Microsoft 基礎設施競賽子區塊（Google News/Stocktwits）
+- **[競品基礎設施動態，標題層級，細節未載] SemiAnalysis（經 Stocktwits 轉引）：Microsoft 能否「Out-AI」OpenAI 與 Anthropic，每 GW 推理商機估算達千億美元**：詳見「主要競品追蹤」新增 Microsoft 基礎設施競賽子區塊（Google News/Stocktwits）
 
 ### 2026-08-07
 - **[重大，競品正式發布，跨 4 來源] WSJ：Meta 發布程式碼撰寫 agent「Muse Code」，明確對標 OpenAI 與 Anthropic**：WSJ 標題直指「Meta Releases Coding Agent to Compete With OpenAI and Anthropic」，與 08-05 CNET、Basic Tutorials、Simon Willison 部落格報導同一事件；詳見「主要競品追蹤」Meta「Muse Code」子區塊更新與「競品定價對照」表新增列（Google News/WSJ）

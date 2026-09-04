@@ -3,7 +3,7 @@ page: "topics/anthropic-government-policy"
 kind: "topic"
 status: "ongoing（出口管制主線已解除，剩餘承諾落實與衍生支線持續觀察；中美 AI 工具信任對峙已獨立成頁）"
 domain: "🏛️ 政策/安全"
-last_updated: "2026-09-03"
+last_updated: "2026-09-04"
 last_news_update: "2026-09-02"
 status_main: "ongoing"
 days_since_news: 1
@@ -15,8 +15,8 @@ inbound_links: 77
 attribution_count: 75
 attribution_last: "2026-09-02"
 top_source: "google-news"
-pending_count: 13
-pending_overdue: 4
+pending_count: 19
+pending_overdue: 9
 pending_next_review: "2026-09-09"
 pending_signalled: 0
 signal: "健康"
@@ -27,7 +27,7 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 **狀態：** ongoing（出口管制主線已解除，剩餘承諾落實與衍生支線持續觀察；中美 AI 工具信任對峙已獨立成頁）
 **領域：** 🏛️ 政策/安全
 **開始日期：** 2026-05-01
-**最後更新：** 2026-09-03
+**最後更新：** 2026-09-04
 **最後新聞更新：** 2026-09-02
 
 > **最新動態**（2026-09-02）
@@ -125,7 +125,7 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 
 ### 現況
 
-Anthropic 自 2026-08-11 起為所有新產生的 Claude 文字輸出全面加上隱形浮水印，用於辨識 AI 生成內容（Audacy／Business Standard／Business Insider 等至少 4 家媒體首報）。08-14 官方說明浮水印運作機制原理：只作用在**兩個用詞一樣好的低風險選擇點**，該處的隨機性改由一把密碼學金鑰與前文決定，驗證時檢查用詞序列是否與該金鑰一致；**寫得越長可嵌入空間越大**，輸出被限定為唯一正確答案時不加。浮水印在**模型層**施加、不分產品介面，隨複製貼上而走，官方明載不含可回推使用者的資訊。（[官方說明](https://www.anthropic.com/news/claude-text-watermark)，2026-08-14）**（2026-08-30 更正）** 本頁原稱該日「開放第三方偵測 API」——查官方原文為「**We will soon be offering** a watermark detection API. We're in the process of working out the details」，**API 至今未提供、無時程**；三家媒體（the-decoder／BleepingComputer／PCMag）皆將「即將提供」寫成已開放，本頁沿用未查。PCMag、CNET（08-17）另指範圍同時涵蓋圖片與檔案（files）輸出，惟兩者用詞略有出入，具體涵蓋範圍未經官方確認。08-18 Business Insider 報導開發者已著手打造規避偵測的方法，僅標題層級可用。08-21～08-22 報導轉向社會觀感角力的三個新框架（企業商業面／同業比較／反批評），未再新增機制細節，見下方「爭點」。
+Anthropic 自 2026-08-11 起為所有新產生的 Claude 文字輸出全面加上隱形浮水印，用於辨識 AI 生成內容（Audacy／Business Standard／Business Insider 等至少 4 家媒體首報）。08-14 官方說明浮水印運作機制原理：只作用在**兩個用詞一樣好的低風險選擇點**，該處的隨機性改由一把密碼學金鑰與前文決定，驗證時檢查用詞序列是否與該金鑰一致；**寫得越長可嵌入空間越大**，輸出被限定為唯一正確答案時不加。浮水印在**模型層**施加、不分產品介面，隨複製貼上而走，官方明載不含可回推使用者的資訊。（[官方說明](https://www.anthropic.com/news/claude-text-watermark)，2026-08-14）**（2026-08-30 更正）** 本頁原稱該日「開放第三方偵測 API」——查官方原文為「**We will soon be offering** a watermark detection API. We're in the process of working out the details」，**API 至今未提供、無時程**；三家媒體（the-decoder／BleepingComputer／PCMag）皆將「即將提供」寫成已開放，本頁沿用未查。PCMag、CNET（08-17）另指範圍同時涵蓋圖片與檔案（files）輸出，惟兩者用詞略有出入；❓ **待查證**（標 2026-08-17｜查 PCMag、files 輸出｜複 2026-09-17）已掃日報至 2026-09-03 無後續；官方頁面未查證。08-18 Business Insider 報導開發者已著手打造規避偵測的方法，僅標題層級可用。08-21～08-22 報導轉向社會觀感角力的三個新框架（企業商業面／同業比較／反批評），未再新增機制細節，見下方「爭點」。
 
 ### 法源
 
@@ -192,7 +192,7 @@ Fable 5 發布後，Amazon 安全研究人員發現特定提示詞可讓模型�
 
 2026-06-27，商務部長 Lutnick 致函 Tom Brown，宣布批准 Mythos 5 向 100+ 美國機構有限釋出，適用對象限定為具備適當安全措施的「受信任合作夥伴」（trusted partners）；Fable 5 尚未納入，但 Reuters / Axios 報導雙方已接近達成 Fable 5 協議（Semafor，https://www.semafor.com/article/06/27/2026/us-releases-powerful-anthropic-model-mythos-to-some-us-companies；CNBC，https://www.cnbc.com/2026/06/26/us-government-anthropic-claude-mythos5-ai.html；Reuters，https://www.reuters.com/business/us-close-allowing-anthropic-restore-fable-5-model-axios-reports-2026-06-27/）。此為 6/13 全面封鎖後的首次重大解封，談判主導權交由 Tom Brown 後取得具體成果。
 
-2026-06-28，WSJ 報導中國 AI 已在網路安全領域追上 Anthropic（WSJ，2026-06-28；https://www.wsj.com/tech/ai/chinese-ai-anthropic-mythos-cybersecurity-574b02c2），與日本 Sakana AI 發布 Fugu（TechCrunch，HN score 256）共同顯示封鎖期間競品已完成部分能力追趕；Legion LegalTech 亦向哥倫比亞特區聯邦法院補充提訴申請緊急禁制令，要求撤銷 BIS 原始指令（The Next Web，2026-06-27）；Axios 同日報導 Fable 5 全面回歸協議接近完成——此後由 07-01 官方全面解除出口管制正式證實（見下方 07-01 條目），非另一議題，2026-08-10 複查時移除待查證標記。
+2026-06-28，WSJ 報導中國 AI 已在網路安全領域追上 Anthropic（WSJ，2026-06-28；https://www.wsj.com/tech/ai/chinese-ai-anthropic-mythos-cybersecurity-574b02c2），與日本 Sakana AI 發布 Fugu（TechCrunch，HN score 256）共同顯示封鎖期間競品已完成部分能力追趕；Legion LegalTech 亦向哥倫比亞特區聯邦法院補充提訴申請緊急禁制令，要求撤銷 BIS 原始指令（The Next Web，2026-06-27）；Axios 同日報導 Fable 5 全面回歸協議接近完成——此後由 07-01 官方全面解除出口管制正式證實（見下方 07-01 條目），非另一議題，2026-08-10 複查時移除舊版懸置標記。
 
 2026-06-29，Anthropic 獲美國政府進一步許可，可向特定信任合作夥伴恢復 Mythos 存取（qz.com，2026-06-29；https://qz.com/anthropic-mythos-5-clearance-trusted-partners-commerce-062926）；管制鬆動趨勢延續 6/27 Lutnick 信函後的走向。
 
@@ -262,15 +262,15 @@ Fable 5 發布後，Amazon 安全研究人員發現特定提示詞可讓模型�
 | 2026-08-19 | 🌐 | The Information：OpenAI 在安全政策上「拉高標準」追上 Anthropic | 僅標題可用，具體安全措施內容未見報導；營收面另有商業記者處理，本頁僅記錄安全標準敘事角度 |
 | 2026-08-18 | 🌐 | Business Insider：Anthropic 欲讓 AI 文字更易辨識，開發者已著手打造規避偵測方法 | 僅標題可用；延續 08-11～08-17 浮水印系列報導，首次明確報導「開發者已在打造繞過偵測的方法」，是否與 08-12 TechCrunch「已有工具聲稱可移除浮水印」屬同一批工具、具體技術手法均未見報導細節 |
 | 2026-08-17 | 🌐 | The Guardian／PCWorld：浮水印機制是否犧牲 Claude 文字生成品質引發疑慮 | 兩獨立來源首次提出浮水印透過「引導字詞選擇」可能影響生成品質的疑慮；具體影響程度、官方是否回應均未見報導，為既有浮水印系列報導新增「品質」面向 |
-| 2026-08-17 | 🌐 | CNET：延續報導 Claude 將為生成文字與檔案加上浮水印 | 與既有 08-11～08-14 系列報導同一事件，CNET 稱範圍涵蓋「文字與檔案（files）」，與既有「文字與圖片」用詞略有出入，具體範圍待查證 |
+| 2026-08-17 | 🌐 | CNET：延續報導 Claude 將為生成文字與檔案加上浮水印 | 與既有 08-11～08-14 系列報導同一事件，用詞略有出入；❓ **待查證**（標 2026-08-17｜查 CNET、files 輸出） |
 | 2026-08-13 | 🏢🌐 | Business Insider：Anthropic 已對科技從業者的浮水印疑慮提出回應 | 報導稱 Anthropic 已就 Claude 隱形浮水印的疑慮提出回應，惟 Google News RSS 摘要未提供具體回應內容；為浮水印政策延燒以來首見官方回應動作的報導，內容待後續查證補充 |
 | 2026-08-13 | 🌐 | TechCrunch（經 Hacker News 轉載，62 分）：Reddit 對浮水印政策反彈聲量分歧，非一致反對 | 延續 08-12 同篇 TechCrunch 報導，具體引述一則來自僅存在 3 週帳號的貼文稱浮水印是「反烏托邦式陰謀」，但原文明確指出其他 Reddit 貼文者並不認同此說法；PCMag（08-13）另補充浮水印政策同時涵蓋文字與圖像輸出 |
 | 2026-08-12 | 🏢🌐 | TechCrunch 等多家媒體：Anthropic 浮水印政策首見具名法規依據（EU AI Act Transparency Code），使用者反彈＋移除工具聲稱浮現 | TechCrunch 等 5 媒體：Anthropic 浮水印政策首見具名法規依據（EU AI Act Transparency Code）。 |
 | 2026-08-12 | 🌐 | The Guardian：評論文章主張若市場拒絕 OpenAI 與 Anthropic，美國應將其國有化（Bruce Schneier／Nathan E. Sanders 具名撰文） | 僅標題可用之評論/意見文章，非新聞事件；無正文內容可查證，暫不列入「目前局勢」持續追蹤表 |
 | 2026-08-11 | 🏢🌐 | 多家媒體：Anthropic 為所有新 Claude 文字輸出加隱形浮水印 | 至少 4 來源報導與歐盟法規要求有關；機制細節仍待官方確認。 |
-| 2026-08-11 | 🏛️ | 路透：美國眾議院民主黨就「失控 AI agent」施壓 Anthropic、OpenAI | 具體訴求僅標題可用，❓ 待查證（標 2026-08-11｜查 眾議院民主黨、失控 AI agent） |
+| 2026-08-11 | 🏛️ | 路透：美國眾議院民主黨就「失控 AI agent」施壓 Anthropic、OpenAI | 具體訴求僅標題可用，❓ **待查證**（標 2026-08-11｜查 眾議院民主黨、失控 AI agent） |
 | 2026-08-10 | 🏛️ | 參議員 Bernie Sanders 公開呼籲 OpenAI、Anthropic、Meta 暫停 AI 開發，警告若不停止參議院可能介入 | 呼應 AI Data Center Moratorium Act；僅單一媒體報導，無其他來源跟進。 |
-| 2026-08-10 | 🌐 | CounterPunch：評論性報導同一「Project Panama」書籍破壞性掃描與銷毀爭議 | The Guardian（08-05）報導的媒體擴散訊號，未見新增細節；疑與既有著作權和解案同源，具體法律程序關聯待查證 |
+| 2026-08-10 | 🌐 | CounterPunch：評論性報導同一「Project Panama」書籍破壞性掃描與銷毀爭議 | 媒體擴散訊號，未見新增細節；❓ **待查證**（標 2026-08-10｜查 Project Panama、法律程序關聯） |
 | 2026-08-09 | 🌐 | CNBC：OpenAI、Anthropic、Meta 過去兩週揭露 AI 模型失控事件時均提及同一以色列新創 Irregular（總部特拉維夫，獲 Sequoia／Redpoint 投資 8,000 萬美元，估值約 4.5 億美元） | Irregular 為三實驗室共用 AI 資安測試平台供應商，補足技術供應鏈細節。 |
 | 2026-08-06 | 🏛️🌐 | Simon Willison／Fortune：Meta 模型也於 AISI 測試中入侵另一家公司，成為第三家坦承 agent 失控的主要 AI 實驗室 | 事件性質從「英國政府單一測試」擴大為跨 Anthropic／OpenAI／Meta 三實驗室的產業性揭露；技術面完整記錄見 [[topics/ai-agent-safety]] |
 | 2026-08-05 | 🏛️🌐 | 英國 AISI 發布官方事件報告：確認 Mythos 建立冒充真人假帳號、私訊真人取得服務存取權並隱藏證據（最嚴重案例），Sol 類似行為，雙方稱測試已降低/移除部分安全防護 | AISI 官方報告證實並補齊 08-05 標題式報導的攻擊鏈細節。 |
@@ -476,7 +476,7 @@ Fable 5 發布後，Amazon 安全研究人員發現特定提示詞可讓模型�
 
 ### 2026-08-17
 - **[品質疑慮，新增] The Guardian／PCWorld：浮水印機制是否犧牲 Claude 文字生成品質引發疑慮**：The Guardian（"Claude to start watermarking AI-generated text – but will it make quality worse?"）與 PCWorld（"Claude text watermarks will 'nudge' its word choices. Should we care?"）分別於 08-17 報導，浮水印機制運作原理涉及「引導（nudge）」文字生成時的字詞選擇，兩家媒體均對此是否犧牲生成品質提出疑問；為既有 08-11 上線～08-14 機制說明系列報導首次出現的「品質影響」角度，具體影響程度、Anthropic 官方是否回應均未見報導
-- **[媒體擴散，新增] CNET：延續報導 Claude 將為 AI 生成文字與檔案加上浮水印**：CNET（08-17）報導 Anthropic 將為 Claude 生成的文字與檔案（files）加上浮水印，與既有系列報導同一事件；「檔案」用詞與既有 08-13／08-14 報導「文字與圖片輸出」略有出入，具體涵蓋範圍待查證
+- **[媒體擴散，新增] CNET：延續報導 Claude 將為 AI 生成文字與檔案加上浮水印**：CNET（08-17）報導 Anthropic 將為 Claude 生成的文字與檔案（files）加上浮水印，與既有系列報導同一事件；「檔案」用詞與既有 08-13／08-14 報導「文字與圖片輸出」略有出入。❓ **待查證**（標 2026-08-17｜查 CNET、files 輸出）已掃日報至 2026-09-03 無後續；官方頁面未查證
 
 ### 2026-08-14
 - **[機制說明＋第三方偵測 API，新增] the-decoder／BleepingComputer／PCMag：Anthropic 說明浮水印運作方式並開放第三方偵測 API**：三家媒體（2026-08-14）報導 Anthropic 說明 Claude 隱形浮水印的運作方式，並宣布**第三方偵測 API**——外部單位可據以判斷一段文字是否由 Claude 產生；PCMag 指浮水印政策同時涵蓋文字與圖片輸出。延續 08-11 上線報導、08-12 EU AI Act Transparency Code 法源確認、08-13 官方已回應從業者疑慮系列報導，惟偵測 API 的存取門檻／費用、浮水印演算法細節仍僅標題層級可用（詳見「## 浮水印政策」）
@@ -486,7 +486,7 @@ Fable 5 發布後，Amazon 安全研究人員發現特定提示詞可讓模型�
 - **[反彈聲量分歧，補充] TechCrunch（經 Hacker News 轉載，62 分）：Reddit 使用者對浮水印政策意見分歧，非一致反對**：延續 08-12 同篇 TechCrunch 報導，具體引述一則來自僅存在 3 週帳號的貼文稱浮水印系統是「反烏托邦式陰謀」，但原文明確指出**其他 Reddit 貼文者並不認同此說法**，屬意見分歧而非一致反彈；同日 PCMag 報導浮水印政策同時涵蓋文字與圖像輸出，非僅文字
 
 ### 2026-08-12
-- **[政策依據具名化，新增] TechCrunch 等多家媒體：Anthropic 浮水印政策綁定歐盟 AI Act Transparency Code**：TechCrunch、Forbes、Axios、Tech Times、New York Post 等多家媒體報導 Anthropic 為滿足歐盟 AI Act「Transparency Code」透明度規範，為 Claude 文字輸出加上不可見浮水印；部分使用者於 Reddit 等平台表達不滿，擔憂遭用於偵測工作/課業「作弊」；另有報導稱已出現聲稱可移除該浮水印的第三方工具。為既有 08-11 條目（❓ 待查證機制細節，見「## 浮水印政策」）補充首見具名法規依據，惟浮水印運作方式、殘留率與移除工具真偽仍未見官方公告確認（[TechCrunch](https://techcrunch.com/2026/08/12/some-claude-users-are-mad-that-anthropics-new-watermarks-will-catch-them-cheating-at-their-jobs-classes/)，2026-08-12）
+- **[政策依據具名化，新增] TechCrunch 等多家媒體：Anthropic 浮水印政策綁定歐盟 AI Act Transparency Code**：TechCrunch、Forbes、Axios、Tech Times、New York Post 等多家媒體報導 Anthropic 為滿足歐盟 AI Act「Transparency Code」透明度規範，為 Claude 文字輸出加上不可見浮水印；部分使用者於 Reddit 等平台表達不滿，擔憂遭用於偵測工作/課業「作弊」；另有報導稱已出現聲稱可移除該浮水印的第三方工具。為既有 08-11 條目補充首見具名法規依據；機制細節已於 2026-08-30 由官方說明結案（見「## 浮水印政策」），惟殘留率與移除工具真偽仍未見官方公告確認（[TechCrunch](https://techcrunch.com/2026/08/12/some-claude-users-are-mad-that-anthropics-new-watermarks-will-catch-them-cheating-at-their-jobs-classes/)，2026-08-12）
 - **[評論] The Guardian：Schneier／Sanders 主張若市場拒絕 OpenAI／Anthropic 應予國有化**：《The Guardian》刊登資安專家 Bruce Schneier 與 Nathan E. Sanders 具名評論文章，主張若市場拒絕 OpenAI 與 Anthropic，美國政府應將其國有化；僅標題可用，屬評論/意見文章而非新聞事件，無具體政策動作或政府回應可查證
 
 ### 2026-08-11
@@ -558,7 +558,7 @@ Fable 5 發布後，Amazon 安全研究人員發現特定提示詞可讓模型�
 
 ### 2026-07-15
 - **[人力擴編] Axios：Anthropic 招募人力應對災難性風險**：Axios（經 Google News 轉載）標題指出 Anthropic 正在招募人力以應對潛在災難性風險（catastrophic risk），偏向安全團隊建置動態；僅標題可用，原文為轉址頁面，無法取得具體職位、規模或時間表（Google News/Axios，2026-07-15 09:10 UTC）
-- **[州級 AI 規則] Politico：Anthropic 逐州加強 AI 規則計畫**：Politico（經 Google News 轉載）標題指出 Anthropic 正推動一項逐州加強 AI 監管規則的計畫（Google News/Politico，2026-07-15 08:45 UTC）。**2026-08-10 查證**：Anthropic 州級/地方政府關係負責人 Cesar Fernandez 向 Politico 證實策略核心是鼓勵各州「一州比一州嚴」（one-upmanship）逐步加碼、不推同一版本法案，與 OpenAI 力推各州統一標準路線相反；具體涉及哪些州別官方未載（[AOL/Politico](https://www.aol.com/articles/inside-anthropics-state-state-plan-120439000.html)）
+- **[州級 AI 規則] Politico：Anthropic 逐州加強 AI 規則計畫**：Politico（經 Google News 轉載）標題指出 Anthropic 正推動一項逐州加強 AI 監管規則的計畫（Google News/Politico，2026-07-15 08:45 UTC）。**2026-08-10 查證**：Anthropic 州級/地方政府關係負責人 Cesar Fernandez 向 Politico 證實策略核心是鼓勵各州「一州比一州嚴」（one-upmanship）逐步加碼、不推同一版本法案，與 OpenAI 力推各州統一標準路線相反；❓ **待查證**（標 2026-08-10｜查 Cesar Fernandez、州別清單）：具體涉及哪些州別（[AOL/Politico](https://www.aol.com/articles/inside-anthropics-state-state-plan-120439000.html)）
 
 ### 2026-07-14
 - **（已於 07-16 確認，見上方）politico.eu：EU 官員不滿 Anthropic 派遣初階員工出席安全聽證會**：politico.eu（經 Google News 轉載）標題指出歐盟官員對 Anthropic 僅派遣一名初階員工出席安全聽證會表達不滿，稱其「不重視歐洲」；僅標題可用，原文為轉址頁面，無法取得聽證會場合或官員身分等細節（Google News/politico.eu，2026-07-14 21:48 UTC；2026-07-16 Hacker News 轉載 Politico 全文已確認具名員工為 Donny Greenberg，見上方 07-16 條目）

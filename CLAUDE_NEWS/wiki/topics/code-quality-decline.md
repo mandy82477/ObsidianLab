@@ -3,7 +3,7 @@ page: "topics/code-quality-decline"
 kind: "topic"
 status: "ongoing（官方已說明工程疏失，恢復情況見下方摘要）"
 domain: "🌐 社群"
-last_updated: "2026-09-03"
+last_updated: "2026-09-04"
 last_news_update: "2026-08-29"
 status_main: "ongoing"
 days_since_news: 5
@@ -27,7 +27,7 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 **狀態：** ongoing（官方已說明工程疏失，恢復情況見下方摘要）
 **領域：** 🌐 社群
 **開始日期：** 2026-03（推測）
-**最後更新：** 2026-09-03
+**最後更新：** 2026-09-04
 **最後新聞更新：** 2026-08-29
 
 > **最近效能退步事件**（2026-08-28）
@@ -99,7 +99,7 @@ Claude Code 在 2026 年 3 月至 4 月間出現長達約一個月的效能明�
 | 2026-08-13 | 「Opus 5 is actually almost rage-inducing to use.」：使用者稱已依官方建議調整、試過各種全域 CLAUDE.md 設定，仍無法讓 Opus 5 行為符合期待 | Reddit r/ClaudeAI（[原文](https://www.reddit.com/r/ClaudeAI/comments/1vn8ml6/opus_5_is_actually_almost_rageinducing_to_use/)，週熱門標記，達收錄低門檻） | 單一社群回報（週熱門達低門檻，惟無具體量化數字） |
 | 2026-08-19 | 「I've never felt Claude been degraded for so long before」：使用者反映過去兩週 Claude 表現反覆不穩，多半比平常差，詢問是否為運算資源問題 | Reddit r/ClaudeCode（[原文](https://www.reddit.com/r/ClaudeCode/comments/1vshkrf/)，0 留言、無「週熱門」標記，score 不可信） | 單一社群回報（無具體量化數字或版本號，僅主觀感受描述） |
 | 2026-08-19（週熱門重浮上，原發時間較早） | 「Claude is Losing Me After Being Heavy User Since Release」：重度使用者發文表達對 Claude 逐漸失望的心情，具體抱怨內容未見於本次摘要 | Reddit r/ClaudeAI（[原文](https://www.reddit.com/r/ClaudeAI/comments/1vqsas9/claude_is_losing_me_after_being_heavy_user_since/)，週熱門標記，達收錄低門檻） | 單一社群回報（僅標題可考，無具體量化數字或版本號） |
-| 2026-08-25 | 「Claude Opus 5 Code Quality: What Sonar's Benchmark Reveals」：程式碼品質分析工具 Sonar 對 Opus 5 生成程式碼進行基準測試，具體結果 ❓ 待查證 ⟨Q-01⟩ | Google News/HackerNoon（僅標題可用） | 待查證（第三方工具評測，具體數字未見報導）|
+| 2026-08-25 | 「Claude Opus 5 Code Quality: What Sonar's Benchmark Reveals」：程式碼品質分析工具 Sonar 對 Opus 5 生成程式碼進行基準測試，具體結果 ❓ 待查證 ⟨Q-01⟩ | Google News/HackerNoon（僅標題可用） | 第三方工具評測，具體數字未見報導（見 ⟨Q-01⟩）|
 | 2026-08-22（週熱門，08-26 收錄） | 「I spent the morning digging into Anthropic...」：作者懷疑 Anthropic 正在 A/B 測試降低 effort 版本（細節見表下） | Reddit r/artificial（[原文](https://www.reddit.com/r/artificial/comments/1vvjmmo/i_spent_the_morning_digging_into_anthropic_so_i/)，週熱門標記，達收錄低門檻） | 單一社群回報（週熱門達低門檻，惟查證過程無法覆核；細節見表下）|
 | 2026-08-26 | 「I can tell when I'm being A/B tested with nerfd models」：使用者稱可依 Claude 是否跳出「這次 session 表現如何」回饋彈窗，判斷自己是否被分到降規模測試模型版本 | Reddit r/ClaudeCode（[原文](https://www.reddit.com/r/ClaudeCode/comments/1vystw3/i_can_tell_when_im_being_ab_tested_with_nerfd/)，0 留言、無「週熱門」標記，score 不可信） | 單一社群回報（與同日 r/artificial 貼文方向一致，兩者互為呼應但均無具體量化數字或版本號）|
 | 2026-08-26 | 「I miss the old Claude Code」：部落格作者比較年初與近期使用經驗，稱換用新模型後同任務要花更久時間才真正開始寫程式，直指「有大量 pre-work」；未點名具體模型版本 | Hacker News（[原文](https://alexkras.com/focus-is-the-main-feature-why-i-miss-the-old-claude-code/)，HN score 25，達收錄低門檻） | 本訊號群少見附真實 HN 分數的訊號（多數既有訊號 score 不可信）；未指名模型版本，無法歸入特定模型的品質爭議，僅可佐證「泛化變慢」現象持續 |

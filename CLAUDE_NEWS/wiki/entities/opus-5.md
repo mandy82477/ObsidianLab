@@ -4,7 +4,7 @@ kind: "entity"
 type: "model"
 status: "active"
 domain: "🤖 模型"
-last_updated: "2026-08-29"
+last_updated: "2026-09-04"
 last_news_update: "2026-08-29"
 status_main: "active"
 days_since_news: 5
@@ -29,17 +29,17 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 **狀態：** active
 **領域：** 🤖 模型
 **首次出現：** 2026-07-25
-**最後更新：** 2026-08-29
+**最後更新：** 2026-09-04
 **最後新聞更新：** 2026-08-29
 
 > **最新動態**（2026-08-28）
-> Reddit 出現「Anthropic 是否在削弱模型」質疑串，使用者稱 Opus 5、Fable 5 在 Claude Code 中實際表現遜於預期，延續近期社群觀感分歧模式；同日另有 Opus 5 vs 4.7 vs 4.6 code review 表現比較貼文，僅標題可用、具體數字待查證。
+> Reddit 出現「Anthropic 是否在削弱模型」質疑串，使用者稱 Opus 5、Fable 5 在 Claude Code 中實際表現遜於預期，延續近期社群觀感分歧模式；同日另有 Opus 5 vs 4.7 vs 4.6 code review 表現比較貼文，僅標題可用（具體數字見下方 Q-01）。
 
 ---
 
 ## 現況
 
-**2026-08-28 最新**：Reddit r/ClaudeCode 質疑串「Is it even legal for Anthropic to nerf its models this hard?」，使用者抱怨 Opus 5 與 Fable 5 在 Claude Code 中的實際表現遜於預期，質疑模型遭「削弱」；單一使用者觀感回報，無具體案例或量化數字佐證，延續 08-13「rage-inducing」、08-20「smoking gun」等已記錄的社群觀感分歧模式（[Reddit](https://www.reddit.com/r/ClaudeCode/comments/1w0t53b/is_it_even_legal_for_anthropic_to_nerf_its_models/)，2026-08-28）。同日另有 Reddit 貼文比較 Opus 5、4.7、4.6 在同一份 code review 提示下的表現差異，情緒標記中性；RSS 摘要僅標題可用，無具體評測數字或方法論揭露，標「待查證」（詳見「歷史記錄」）。
+**2026-08-28 最新**：Reddit r/ClaudeCode 質疑串「Is it even legal for Anthropic to nerf its models this hard?」，使用者抱怨 Opus 5 與 Fable 5 在 Claude Code 中的實際表現遜於預期，質疑模型遭「削弱」；單一使用者觀感回報，無具體案例或量化數字佐證，延續 08-13「rage-inducing」、08-20「smoking gun」等已記錄的社群觀感分歧模式（[Reddit](https://www.reddit.com/r/ClaudeCode/comments/1w0t53b/is_it_even_legal_for_anthropic_to_nerf_its_models/)，2026-08-28）。同日另有 Reddit 貼文比較 Opus 5、4.7、4.6 在同一份 code review 提示下的表現差異，情緒標記中性；RSS 摘要僅標題可用，無具體評測數字或方法論揭露（詳見「歷史記錄」Q-01）。
 
 **2026-08-27**：GitHub Issue #77136 回報 Claude Opus 5（連同 Opus 4.7、4.8、Fable 5）日益預設輸出重複的修辭套路（rhetorical tics），即使給出明確風格指示仍難以維持連貫散文；此為跨模型代際的共同問題，已累積 106 則留言、517 個反應，尚無官方回應，屬**行為/風格面**觀察，非能力面退步（[GitHub Issue #77136](https://github.com/anthropics/claude-code/issues/77136)，2026-08-27）。同日 Reddit r/ClaudeCode 一則「不受歡迎的意見」貼文稱，使用一段時間後認為 Opus 5 的表達方式較 4.8 有改善——雖仍不算「好聊」，但要求改寫時解釋更清楚；score 恆為 0（RSS 限制，不可信），單一社群回報，與 GitHub Issue 反映的「重複修辭」問題並非直接矛盾（前者談連貫性退步、後者談解釋清晰度提升），並陳記錄不擇一（[Reddit](https://www.reddit.com/r/ClaudeAI/comments/1vzvcc4/unpopular_opinion_opus_5_language_just_became/)，2026-08-27）。此議題呼應上線以來持續的社群觀感分歧，詳見「歷史記錄」。
 
@@ -125,16 +125,16 @@ Anthropic 於 2026-07-25 正式發布 Claude Opus 5，是繼 2026-07-13 起多�
 
 | 日期 | 事件 |
 |------|------|
-| 2026-08-28 | Reddit 質疑「Anthropic 是否削弱模型」；另有三模型 code review 比較待查證 ⟨H-01⟩ |
+| 2026-08-28 | Reddit 質疑「Anthropic 是否削弱模型」；另有三模型 code review 比較 ❓待查證⟨Q-01⟩ |
 | 2026-08-27 | GitHub Issue #77136：跨模型代際重複修辭套路；同日另有回饋稱表達方式較 4.8 改善 |
-| 2026-08-26 | tech-insider.org 定價比較標題「$19 Gap」，計算基準待查證 ⟨H-02⟩ |
-| 2026-08-20 | Reddit 稱「不再是必要依賴」的證據，惟原文不可讀，待查證 ⟨H-03⟩ |
+| 2026-08-26 | tech-insider.org 定價比較標題「$19 Gap」，計算基準 ❓待查證⟨Q-02⟩ |
+| 2026-08-20 | Reddit 稱「不再是必要依賴」的證據，惟原文不可讀 ❓待查證⟨Q-03⟩ |
 | 2026-08-14 | Anthropic 八月風險報告揭露未發布「Model 2」，官方稱無釋出計畫（見 [[topics/ai-agent-safety]]） |
 | 2026-08-13 | Reddit 週熱門「幾近令人惱怒」，延續 08-07～08-08 已記錄的社群觀感分歧 |
-| 2026-08-11 | SitePoint 開發者效能評測整理，僅標題可用，待查證 ⟨H-04⟩ |
+| 2026-08-11 | SitePoint 開發者效能評測整理，僅標題可用 ❓待查證⟨Q-04⟩ |
 | 2026-08-08 | Reddit「PSA」提醒 WebFetch 研究可能捏造統計數字與引述，單一使用者回報 |
 | 2026-08-07 | Reddit「原本為 Opus 5 辯護後改觀」，聚焦 reasoning trace，結論方向不明 |
-| 2026-07-30 | Reddit 稱實際使用有落差、遇「minor」問題，具體所指待查證 ⟨H-05⟩ |
+| 2026-07-30 | Reddit 稱實際使用有落差、遇「minor」問題，具體所指 ❓待查證⟨Q-05⟩ |
 | 2026-07-29 | Reddit 稱 effort 旋鈕「非單調」——**2026-08-08 官方文件證偽**，說法不成立 |
 | 2026-07-26 | MLQ.ai／PCMag「tops」標題——**2026-08-10 第三方基準查證屬實**；定價「同價」與「減半」兩說法經查證皆成立 |
 | 2026-07-25 | 正式發布，取代 Opus 4.8 成為 Claude Max 新預設模型、Claude Pro 最強模型；HN 1587 分 |
@@ -142,16 +142,16 @@ Anthropic 於 2026-07-25 正式發布 Claude Opus 5，是繼 2026-07-13 起多�
 
 **歷史記錄細節**
 
-- **2026-08-28**：Reddit r/ClaudeCode 質疑串「Is it even legal for Anthropic to nerf its models this hard?」，使用者抱怨 Opus 5 與 Fable 5 在 Claude Code 中的實際表現遜於預期，質疑模型遭「削弱」；單一使用者觀感回報，無量化數字佐證，延續 08-13、08-20 已記錄的社群觀感分歧模式（[Reddit](https://www.reddit.com/r/ClaudeCode/comments/1w0t53b/is_it_even_legal_for_anthropic_to_nerf_its_models/)，2026-08-28）。同日另有 Reddit 貼文比較 Opus 5、4.7、4.6 在同一份 code review 提示下的表現，情緒中性，僅標題可用。⟨H-01⟩ ❓ **待查證**（標 2026-08-29｜查 1w0uyu7、code review｜複 2026-09-12）｜**三模型 code review 比較結果具體內容與數字**：RSS 摘要僅標題可用，未見測試方法或分數揭露（[Reddit](https://www.reddit.com/r/ClaudeCode/comments/1w0uyu7/a_comparison_of_opus_5_47_46_running_a_code/)，2026-08-28）
+- **2026-08-28**：Reddit r/ClaudeCode 質疑串「Is it even legal for Anthropic to nerf its models this hard?」，使用者抱怨 Opus 5 與 Fable 5 在 Claude Code 中的實際表現遜於預期，質疑模型遭「削弱」；單一使用者觀感回報，無量化數字佐證，延續 08-13、08-20 已記錄的社群觀感分歧模式（[Reddit](https://www.reddit.com/r/ClaudeCode/comments/1w0t53b/is_it_even_legal_for_anthropic_to_nerf_its_models/)，2026-08-28）。同日另有 Reddit 貼文比較 Opus 5、4.7、4.6 在同一份 code review 提示下的表現，情緒中性，僅標題可用。⟨Q-01⟩ ❓ **待查證**（標 2026-08-29｜查 1w0uyu7、code review｜複 2026-09-12）｜**三模型 code review 比較結果具體內容與數字**：RSS 摘要僅標題可用，未見測試方法或分數揭露（[Reddit](https://www.reddit.com/r/ClaudeCode/comments/1w0uyu7/a_comparison_of_opus_5_47_46_running_a_code/)，2026-08-28）
 - **2026-08-27**：GitHub Issue #77136 回報 Opus 5（連同 Opus 4.7、4.8、Fable 5）日益預設重複修辭套路、難維持連貫散文，即使給明確風格指示仍難改善；106 則留言、517 個反應，尚無官方回應。同日 Reddit「不受歡迎的意見」貼文稱 Opus 5 表達方式較 4.8 有改善（要求改寫時解釋更清楚），與前述問題並非直接矛盾，並陳記錄（[GitHub Issue #77136](https://github.com/anthropics/claude-code/issues/77136)；[Reddit](https://www.reddit.com/r/ClaudeAI/comments/1vzvcc4/unpopular_opinion_opus_5_language_just_became/)，2026-08-27）
-- **2026-08-26**：tech-insider.org（經 Google News 轉載）發布模板化定價比較標題《Claude Opus 5 vs Grok 4.6 vs Gemini 3.1 Pro: $19 Gap [2026]》，比較 Opus 5 與競品 Grok 4.6、Gemini 3.1 Pro 定價；同站同日另有《Claude Fable 5 vs Opus 5 vs GPT-5.6 Sol: $1,125 Gap [2026]》，記於 [[entities/fable-5]]。本則僅標題可用、無正文，「$19 Gap」具體數字未經查證，不採信為事實；如經查證應留給 [[entities/pricing]] 記錄。⟨H-02⟩ ❓ **待查證**（標 2026-08-26｜查 tech-insider.org、$19 Gap｜複 2026-09-09）｜**Opus 5 vs Grok 4.6 vs Gemini 3.1 Pro 的 $19 差距計算基準**：僅標題可用，未見正文說明計算方式（per-token／月費等）（[Google News/tech-insider.org](https://news.google.com/rss/articles/CBMigwFBVV95cUxNWkVkQU8xS2pPWVFZS2RMemJCQ0JFVnZyZFBia28xMlNlWWNPVFB2eHhxdVhBTWJJRFFmaDlOUU9IcGJUWDlBU0phQUhUUEFGRG51NkttME9tMTl0X1dsV2piR2lsQTZOeURZQV8yRExlTE93cFF2U1hYbUFTZGNRUTIxcw?oc=5)，2026-08-26）
-- **2026-08-20**：Reddit r/ClaudeCode 週熱門貼文標題稱「終於出現讓 Opus 不再是工作流『必要依賴』的證據」，惟原文僅有圖片預覽卡片，無法取得貼文正文或具體佐證內容。與同日社群另一則熱議（Claude Code effort 數值顯示方式測試，官方已澄清係測試 API serving 設定改變數值顯示方式、非實際降低使用者選擇的 effort 等級）為不同議題，不應混為一談。呼應 08-13、08-08、08-07 已記錄的社群觀感分歧，惟本則因原文不可讀，暫列觀察、不代入結論。⟨H-03⟩ ❓ **待查證**（標 2026-08-23｜查 load-bearing、smoking gun｜複 2026-09-06）｜**貼文具體證據內容**：僅標題可用，Opus「不再是必要依賴」的具體證據或案例未見報導（[Reddit](https://www.reddit.com/r/ClaudeCode/comments/1vt6gf8/finally_could_this_be_the_smoking_gun_that_makes/)，週熱門，2026-08-20）
+- **2026-08-26**：tech-insider.org（經 Google News 轉載）發布模板化定價比較標題《Claude Opus 5 vs Grok 4.6 vs Gemini 3.1 Pro: $19 Gap [2026]》，比較 Opus 5 與競品 Grok 4.6、Gemini 3.1 Pro 定價；同站同日另有《Claude Fable 5 vs Opus 5 vs GPT-5.6 Sol: $1,125 Gap [2026]》，記於 [[entities/fable-5]]。本則僅標題可用、無正文，「$19 Gap」具體數字未經查證，不採信為事實；如經查證應留給 [[entities/pricing]] 記錄。⟨Q-02⟩ ❓ **待查證**（標 2026-08-26｜查 tech-insider.org、$19 Gap｜複 2026-09-09）｜**Opus 5 vs Grok 4.6 vs Gemini 3.1 Pro 的 $19 差距計算基準**：僅標題可用，未見正文說明計算方式（per-token／月費等）（[Google News/tech-insider.org](https://news.google.com/rss/articles/CBMigwFBVV95cUxNWkVkQU8xS2pPWVFZS2RMemJCQ0JFVnZyZFBia28xMlNlWWNPVFB2eHhxdVhBTWJJRFFmaDlOUU9IcGJUWDlBU0phQUhUUEFGRG51NkttME9tMTl0X1dsV2piR2lsQTZOeURZQV8yRExlTE93cFF2U1hYbUFTZGNRUTIxcw?oc=5)，2026-08-26）
+- **2026-08-20**：Reddit r/ClaudeCode 週熱門貼文標題稱「終於出現讓 Opus 不再是工作流『必要依賴』的證據」，惟原文僅有圖片預覽卡片，無法取得貼文正文或具體佐證內容。與同日社群另一則熱議（Claude Code effort 數值顯示方式測試，官方已澄清係測試 API serving 設定改變數值顯示方式、非實際降低使用者選擇的 effort 等級）為不同議題，不應混為一談。呼應 08-13、08-08、08-07 已記錄的社群觀感分歧，惟本則因原文不可讀，暫列觀察、不代入結論。⟨Q-03⟩ ❓ **待查證**（標 2026-08-23｜查 load-bearing、smoking gun｜複 2026-09-06）｜**貼文具體證據內容**：僅標題可用，Opus「不再是必要依賴」的具體證據或案例未見報導（[Reddit](https://www.reddit.com/r/ClaudeCode/comments/1vt6gf8/finally_could_this_be_the_smoking_gun_that_makes/)，週熱門，2026-08-20）
 - **2026-08-14**：Anthropic 發布八月風險報告（部分遮蔽 PDF），首度揭露尚未發布的「Model 2」，Axios 報導官方稱目前無釋出更強模型的計畫；報告自陳內部 AI R&D 速度尚未達到「無 AI 協助情況下的兩倍」（自陳量測困難）。對齊疑慮面完整脈絡見安全政策記者對應頁面 [[topics/ai-agent-safety]]，本頁僅記模型陣容面（[Hacker News](https://www-cdn.anthropic.com/f61d49fa5596956a5dec75fea0e973bf6a6a8378/Redacted%20Risk%20Report%20August%202026%20.pdf)，55 分；[SiliconANGLE](https://siliconangle.com/2026/08/14/anthropic-details-unreleased-model-2-new-alignment-concerns-latest-ai-risk-report/)；[Axios](https://www.axios.com/2026/08/14/anthropic-model-2-ai-risk)，2026-08-14）
 - **2026-08-13**：Reddit r/ClaudeAI 週熱門貼文「Opus 5 is actually almost rage-inducing to use」：作者稱已依官方建議調整並試過各種全域 CLAUDE.md 設定，仍無法讓 Opus 5 的行為符合期待；單一使用者回報，無具體案例或量化數字佐證，延續 08-07～08-08 已記錄的社群觀感分歧（[Reddit](https://www.reddit.com/r/ClaudeAI/comments/1vn8ml6/opus_5_is_actually_almost_rageinducing_to_use/)，週熱門，2026-08-13）
-- **2026-08-11**：SitePoint 刊出針對開發者的 Claude Opus 5 效能評測整理，原文僅提供標題層級資訊。⟨H-04⟩ ❓ **待查證**（標 2026-08-11｜查 SitePoint、效能評測｜複 2026-08-25）｜**SitePoint 開發者效能評測具體數據**：未見量化基準、測試任務或對比對象，內容待查證（Google News/SitePoint，2026-08-11）
+- **2026-08-11**：SitePoint 刊出針對開發者的 Claude Opus 5 效能評測整理，原文僅提供標題層級資訊。⟨Q-04⟩ ❓ **待查證**（標 2026-08-11｜查 SitePoint、效能評測｜複 2026-08-25）｜**SitePoint 開發者效能評測具體數據**：未見量化基準、測試任務或對比對象（Google News/SitePoint，2026-08-11）
 - **2026-08-08**：Reddit r/ClaudeAI 週熱門貼文「PSA: Be careful letting Claude use WebFetch for research」：作者請 Opus 5 研究 AI agent 記憶架構時，發現其以 WebFetch 生成看似真實、實則捏造的具體統計數字、百分比與引述，提醒他人使用 WebFetch 做研究時需小心查核；單一使用者回報、無具體案例引文或跨來源佐證，列為待社群驗證的可靠性觀察，非量化評測結論（[Reddit](https://www.reddit.com/r/ClaudeAI/comments/1vim8b7/psa_be_careful_letting_claude_use_webfetch_for/)，週熱門，2026-08-08）
 - **2026-08-07**：Reddit r/ClaudeAI 週熱門貼文「I defended Opus 5 - and then I realised otherwise」稱作者原本認為 Opus 5 是目前最「奇特獨特」的模型、稱讚其思考過程（reasoning trace）而非單純能力，深入分析其思考過程後改變了看法；原文於「actually reading through and analysing it's thought process I find fascinati...」處截斷，具體轉折方向（趨向更正面或更負面）不可考。與 07-29～08-04 已記錄的「過度自信」「不如跑分預期」「令人挫折」負向回饋屬同一波「上線兩週後社群重新評估」現象，惟本則聚焦 reasoning trace 角度且結論方向不明，暫列觀察、不代入評測結論（[Reddit](https://www.reddit.com/r/ClaudeAI/comments/1vibkny/i_defended_opus_5_and_then_i_realised_otherwise/)，週熱門，2026-08-07）
-- **2026-07-30**：Reddit r/ClaudeCode 貼文（無「週熱門」標記，score 恆為 0 屬 RSS 已知限制不可信）稱使用者原先參考跑分認為 Opus 5 優於 Fable 5，實際使用後認為 Opus 5 仍有落差，提及遇到「minor」問題（原文於此截斷，具體細節不可得）；缺乏具體數字、跨來源佐證或問題細節，僅記錄社群出現不如預期的觀感回報，不代入評測結論。⟨H-05⟩ ❓ **待查證**（標 2026-08-10｜查 minor、效能落差｜複 2026-08-24）｜**「minor」問題具體所指**：Reddit 原文於此截斷，2026-08-10 查證嘗試無法再取得該貼文內容或後續討論，具體細節與效能落差幅度仍未經查證（[Reddit](https://www.reddit.com/r/ClaudeCode/comments/1var15k/opus_5_is_not_as_good_as_i_thought/)，2026-07-30）
+- **2026-07-30**：Reddit r/ClaudeCode 貼文（無「週熱門」標記，score 恆為 0 屬 RSS 已知限制不可信）稱使用者原先參考跑分認為 Opus 5 優於 Fable 5，實際使用後認為 Opus 5 仍有落差，提及遇到「minor」問題（原文於此截斷，具體細節不可得）；缺乏具體數字、跨來源佐證或問題細節，僅記錄社群出現不如預期的觀感回報，不代入評測結論。⟨Q-05⟩ ❓ **待查證**（標 2026-08-10｜查 minor、效能落差｜複 2026-08-24）｜**「minor」問題具體所指**：Reddit 原文於此截斷，2026-08-10 查證嘗試無法再取得該貼文內容或後續討論，具體細節與效能落差幅度仍未經查證（[Reddit](https://www.reddit.com/r/ClaudeCode/comments/1var15k/opus_5_is_not_as_good_as_i_thought/)，2026-07-30）
 - **2026-07-29**：Reddit r/artificial 週熱門貼文稱 Opus 5 的 effort 旋鈕「非單調」——超過 `high` 後（`xhigh`／`max`）程式碼任務分數反而下降，並稱官方 migration guide 本身即有此說明；**2026-08-08 查證官方文件後判定此說法不成立**——[What's new in Claude Opus 5](https://platform.claude.com/docs/en/about-claude/models/whats-new-opus-5) 明載「Claude Opus 5 converts additional effort into better results more reliably than any earlier Opus model」，並將 test-time compute scaling（效果隨 effort 提升直到 `max`）列為主要能力改進；官方對 `xhigh`／`max` 的唯一告誡是「須設較大 `max_tokens`」，以及 `thinking: disabled` 在 `xhigh`／`max` 會回 400。未見任何「高於 high 即單調下降」文字，社群措辭比官方原文更強烈——核心說法已證偽，無下降幅度可言，完整比對見 [[topics/model-comparison]]
 - **2026-07-26**：MLQ.ai／PCMag 媒體標題分別稱 Opus 5「Tops AI Benchmark Index」「Tops Fable 5 on Agentic Search」——**2026-08-10 第三方基準查證屬實**：Artificial Analysis Intelligence Index Opus 5 60.7% vs Fable 5 59.9%，GDPval-AA v2／AA-Briefcase 亦領先，詳見上方「現況」；EdTech Innovation Hub 報導稱 Opus 5 與 Opus 4.8 同價發布，與 MarkTechPost「維持原定價」方向一致——**2026-08-08 官方查證確認兩說皆成立**：$5/$25 per Mtok，官方逐字載明「unchanged from Claude Opus 4.8」，同時也確為 Fable 5（$10/$50）的一半，兩種描述指的是同一組數字的不同對照對象（見 [[entities/pricing]]）；Reddit r/ClaudeAI 週熱門貼文提及第三方 benchmark 平台 MineBench.ai 有 Fable 5 vs Opus 5 差異討論——**2026-08-08 查證後不可採信**：MineBench 測的是 3D voxel 空間推理（與編碼／agentic 能力無關），榜上查無 Fable 5 或 Opus 5 條目
 - **2026-07-25**：正式發布，取代 Opus 4.8 成為 Claude Max 新預設模型、Claude Pro 最強模型；HN score 1587；SDK（Python/TypeScript）同步加入模型支援；Boris Cherny 稱其為最難被提示注入攻破的模型

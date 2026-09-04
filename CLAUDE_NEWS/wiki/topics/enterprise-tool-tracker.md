@@ -3,7 +3,7 @@ page: "topics/enterprise-tool-tracker"
 kind: "topic"
 status: "ongoing"
 domain: "💼 商業"
-last_updated: "2026-09-02"
+last_updated: "2026-09-04"
 last_news_update: "2026-09-02"
 status_main: "ongoing"
 days_since_news: 1
@@ -15,8 +15,8 @@ inbound_links: 25
 attribution_count: 19
 attribution_last: "2026-09-02"
 top_source: "google-news"
-pending_count: 1
-pending_overdue: 0
+pending_count: 2
+pending_overdue: 1
 pending_next_review: "2026-09-12"
 pending_signalled: 0
 signal: "健康"
@@ -28,7 +28,7 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 **領域：** 💼 商業
 **蒐集邊界：** 僅涵蓋 Claude 相關報導所帶出的企業案例。未提及 Claude 的企業工具決策不在自動蒐集範圍——公開報導本就少見具名企業的內部工具決策，本表為已見報者的彙整，非市場全貌。
 **開始日期：** 2026-05-26
-**最後更新：** 2026-09-02
+**最後更新：** 2026-09-04
 **最後新聞更新：** 2026-09-02
 
 > **最新企業採用異動**（2026-08-26）
@@ -59,7 +59,7 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 - **Microsoft**（❌ 已停用 Claude Code）：成本考量；2026-06-21 確認於 Fable 5 封鎖期間加速退出，2026-06-22 The Jerusalem Post 跟進確認系統性降低對 Claude 依賴，GitHub Copilot 為主要替代方案
 - **JPMorgan Chase**（❌ 已退出）：香港分行因出口管制被迫退出
 - **Alibaba**（❌ 已禁用）：資安疑慮禁用 Claude Code，明確改用內部工具 Qoder
-- **Goldman Sachs、OKX**（❌ 已退出）：於香港被切斷 Claude AI 存取權限，涉及地緣政治與合規因素，成因未明（外觀近似 JPMorgan Chase 香港退出案例但是否同源尚待查證）
+- **Goldman Sachs、OKX**（❌ 已退出）：於香港被切斷 Claude AI 存取權限，涉及地緣政治與合規因素，成因未明（外觀近似 JPMorgan Chase 香港退出案例，同源查證見下表 ⟨Q-03⟩ 標記）
 - **Lindy**（🔄 已切換）：API 客戶 100% 切換至 DeepSeek，顯示 API 客戶對成本敏感度高、可能因競品定價優勢流失
 - **Uber**（⚠️ 縮減中）：成本管控
 
@@ -79,7 +79,7 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 |------|------|-----------|------|---------|------|---------|
 | Shopify | 頂尖 | Claude Code | ❓ | — | 執行長 Tobi Lütke 揚言封殺；Anthropic 早已關閉相關功能請求；未見官方確認執行，暫標未確認（詳見下方細節） | Google News/analyticsindiamag.com；Google News/The New Stack |
 | ReliaQuest | 大型（資安廠商） | Claude API（AI 驅動資安平台整合）| ✅ | — | 深化與 Anthropic 技術整合，作為去 SIEM 化資安策略一環；具體整合範疇、合作規模未見報導（詳見下方細節） | 2026-08-22 |
-| Goldman Sachs | 頂尖 | Claude AI | ❌ | — | 香港被切斷 Claude AI 存取權限，成因未明；與 JPMorgan 案是否同源尚待查證，詳見 [[topics/anthropic-government-policy]] | 2026-08-20 |
+| Goldman Sachs | 頂尖 | Claude AI | ❌ | — | 香港被切斷 Claude AI 存取權限，成因未明；❓ 待查證 ⟨Q-03⟩，詳見 [[topics/anthropic-government-policy]] | 2026-08-20 |
 | OKX | 大型（加密貨幣交易平台） | Claude AI | ❌ | — | 與高盛同批：香港被切斷 Claude AI 存取權限，成因未明，詳見 [[topics/anthropic-government-policy]] | 2026-08-20 |
 | Payward（Kraken 母公司） | 大型（全球加密貨幣交易平台母公司） | Claude Mythos 5 | ✅ | — | 採用僅限授權機構存取的 Claude Mythos 5，強化全球加密基礎設施；規模未見細節 | 2026-08-19 |
 | Duke University | 大型（高等教育機構） | Claude（pay-as-you-go 訂閱方案） | ✅ | — | 提供師生 pay-as-you-go Claude 訂閱方案；繼哈佛 FAS、Syracuse 後另一高教具名案例 | 2026-08-18 |
@@ -131,6 +131,7 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 - **Samsung（08-15，首見 08-14）**：跨 3 媒體確認具體量化成效，惟仍為媒體轉述、非三星或 Anthropic 官方發布：TechSpot（08-15）稱 Claude Code 能把晶片設計工作從「數週壓縮到數天」；Tech My Money（08-14）稱驗證階段「從一個月縮到兩天」——兩則數字不同，並陳不擇一。三則均明確指出 Claude Code **仍會犯嚴重錯誤**。延續 08-14 記錄之 ❓ 未確認狀態，08-15 升級為 ✅；與 [[topics/anthropic-business]] 已記錄之 Samsung 代工洽談（07-02/06）、Series H 投資人身份為不同性質事件——本則為 Samsung**使用**Claude Code 的採用案例，非供應鏈/投資關係（Google News/TechSpot；Google News/Tech My Money）。**08-25 三度確認（TechRadar，非新事實）**：TechRadar 報導同一事實——三星認為 Claude Code 有助其晶片設計，但坦言 AI 仍會犯下「令人擔憂的重大錯誤」；未見新增具體數字或案例細節，屬既有 08-14/08-15 記錄的第三方媒體再確認，狀態與量化數字均不變（Google News/TechRadar）。
 
 **懸置細節**
+- ⟨Q-03⟩ ❓ **待查證**（標 2026-08-20｜查 Goldman Sachs、JPMorgan Chase）：Goldman Sachs／OKX 香港斷線是否與 JPMorgan Chase 案同源未見報導證實；已掃日報至 2026-09-03 無後續，官方頁面未查證
 - ⟨Q-02⟩ ❓ **待查證**（標 2026-07-06｜查 Meta、限制工程師｜複 2026-09-12）｜**Meta 傳出限制工程師使用 Claude**：原文節錄未提供具體來源連結、規模範圍或生效日期；已掃日報至 2026-08-29 無後續，官方頁面未查證
 - ⟨Q-01⟩ 已查證（2026-08-13）：非混淆，為同一組事實的正確引用——tech-insider.org 報導確認封鎖係「兩起爭議交會」的結果：(1) 資安研究者指出 Claude Code 更新曾內含可辨識中國地區用戶的隱藏邏輯（「後門」爭議，Anthropic 否認為監控工具，稱是已在淘汰中的窄範圍反濫用實驗）；(2) 即為 06-25 已記錄之 Anthropic 蒸餾攻擊指控（約 2.5 萬假帳號、2,880 萬次對話）。兩者並非各自獨立的「新理由」，而是同一封鎖決策的兩項並存成因（[Tom's Hardware](https://www.tomshardware.com/tech-industry/artificial-intelligence/alibaba-bans-anthropics-claude-code-after-an-alleged-hidden-china-detection-backdoor-is-uncovered-employees-told-to-switch-to-qoder-as-the-rift-between-the-firms-widens)；[tech-insider.org](https://tech-insider.org/ie/alibaba-bans-claude-code-2026/)）
 

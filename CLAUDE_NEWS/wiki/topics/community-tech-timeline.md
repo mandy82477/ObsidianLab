@@ -3,7 +3,7 @@ page: "topics/community-tech-timeline"
 kind: "topic"
 status: "monitoring"
 domain: "🌐 社群"
-last_updated: "2026-09-02"
+last_updated: "2026-09-04"
 last_news_update: "2026-05-22"
 status_main: "monitoring"
 days_since_news: 104
@@ -27,7 +27,7 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 **狀態：** monitoring
 **領域：** 🌐 社群
 **開始日期：** 2026-04-25
-**最後更新：** 2026-09-02
+**最後更新：** 2026-09-04
 **最後新聞更新：** 2026-05-22
 
 > **最近時序紀錄**（2026-05-22）
@@ -104,7 +104,7 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 
 #### 2026-05-15
 - **MCP 麥克風整合——語音驅動 Claude Code**：開發者透過 MCP 整合麥克風，讓 Claude Code 在需要更多脈絡時主動發出語音提問，使用者口語回答後繼續執行；突破傳統文字輸入互動模式，是 Claude Code 人機介面實驗的代表案例，呼應 [[entities/cat-wu|Cat Wu]]「AI 主動性（proactivity）」方向
-- **破壞性操作安全閘門工具（GrapeRoot Pro）**：「Claude 刪除整個專案」類帖子持續增加（近期 700+ 留言），催生破壞性操作閘門設計——執行 `rm -rf` 等高危指令前自動顯示受影響檔案清單（含讀寫次數、最後存取時間）並暫停等待確認；見 [[topics/ai-agent-safety]]
+- **破壞性操作安全閘門工具（GrapeRoot Pro）**：「Claude 刪除整個專案」類帖子持續增加（近期 700+ 留言），催生破壞性操作閘門設計——執行 `rm -rf` 等高危指令前自動顯示受影響檔案清單（含讀寫次數、最後存取時間）並暫停，需使用者確認後才繼續執行；見 [[topics/ai-agent-safety]]
 - **長期 auto-memory 品質管理（3 個月案例）**：在同一專案跑三個月 auto-memory 後出現命名分歧、frontmatter 缺失、搜尋失效等退化問題，作者撰寫命名規範強制執行 skill + bash 審計腳本自動偵測品質漂移；是長期 agentic 工作流記憶管理挑戰的首個公開系統性應對案例；見 [[topics/ai-agent-safety]]
 - **平行子代理成本分析（有官方數字支撐）**：引用 Anthropic 官方數據（多 Agent 系統約消耗 15 倍 token，快取命中可降至 10%），以具體計算說明哪些任務適合平行子代理、哪些反而成本暴增；是近期少見有官方量化支撐的 multi-agent 成本分析文
 - **「monk」靜默模式 skill——節省 25% 上下文視窗**：讓 Agent 執行期間保持靜默、僅在完成後輸出標準化結果，實測節省約 25% 上下文視窗容量（佔全 session token 節省約 3–5%）；適合批次自動化任務、不需即時追蹤過程的場景；與 `/background` 指令應用場景高度重疊

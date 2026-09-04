@@ -3,7 +3,7 @@ page: "topics/ai-talent-flow"
 kind: "topic"
 status: "ongoing"
 domain: "💼 商業"
-last_updated: "2026-09-01"
+last_updated: "2026-09-04"
 last_news_update: "2026-09-01"
 status_main: "ongoing"
 days_since_news: 2
@@ -15,8 +15,8 @@ inbound_links: 18
 attribution_count: 7
 attribution_last: "2026-09-01"
 top_source: "topic-watch"
-pending_count: 2
-pending_overdue: 0
+pending_count: 3
+pending_overdue: 1
 pending_next_review: "2026-09-12"
 pending_signalled: 0
 signal: "健康"
@@ -28,7 +28,7 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 **領域：** 💼 商業
 **蒐集邊界：** 以與 Anthropic 相關的人才流動為主，另針對本主題定向補抓（每日至多 3 則）；其他實驗室之間、與 Anthropic 無關的異動仍可能延遲或缺漏，重大者由人工查證補記。
 **開始日期：** 2026-06-21
-**最後更新：** 2026-09-01
+**最後更新：** 2026-09-04
 **最後新聞更新：** 2026-09-01
 
 > **最新動態：Google DeepMind 同日再失四位創立元老級主管（未具名，2026-09-01）**
@@ -36,7 +36,7 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 > **Adgully.com 跟進報導 Google DeepMind 頂尖 AI 人才佔比明顯下滑**（2026-08-29）
 > 與 08-27 Fortune「持續流失頂尖人才」為同一趨勢的又一媒體佐證，延續本頁自 2026-06 以來記錄的「Google DeepMind 淨流出」格局；具體佔比數字、統計方法未見報導細節，僅標題可用（推論，待後續補充具名案例）。
 > **08-21/08-23 已記錄之 Anthropic 延攬 Google 自研晶片計畫創辦人 Amir Salek**，仍為本頁近期重點，詳見「對各公司的影響」表。
-> **待查證項目仍未有後續**：08-13 Sergey Brin 內部談話報導（標題截斷）已掃日報至 2026-08-29 無後續；官方頁面未查證。
+> **懸置事項仍無新進展**：08-13 Sergey Brin 內部談話報導（標題截斷）已掃日報至 2026-08-29 無後續；官方頁面未查證。
 > **另（背景訊號，非核心格局變動，2026-08-28）**：報導稱加拿大 5.41 億美元研究計畫吸引部分美國常春藤學者北遷，屬學界層級跨國政策訊號，僅標題可用，未見具名機構或與特定 AI 實驗室之關聯，詳見「時序」。
 
 ## 摘要
@@ -115,7 +115,7 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 
 ## 相關實體
 
-- [[entities/amir-salek]] — Google 自研晶片計畫創辦人，08-21/23 報導加入 Anthropic（待查證）
+- [[entities/amir-salek]] — Google 自研晶片計畫創辦人；❓ **待查證**（標 2026-08-21｜查 [[entities/amir-salek]]）：08-21/23 報導稱加入 Anthropic，尚未見官方或後續報導證實；已掃日報至 2026-09-03 無後續，官方頁面未查證。
 - [[entities/john-jumper]] — 諾貝爾獎得主，DeepMind → Anthropic（6/21 Reuters 確認）
 - [[entities/andrej-karpathy]] — 已查證（2026-08-13）：OpenAI 共同創辦人 Andrej Karpathy 已於 **2026-05-19** 正式加入 Anthropic，本人於 X 公開宣布，主導以 Claude 加速 pre-training 研究的新團隊，多家媒體同步確認（[TechCrunch](https://techcrunch.com/2026/05/19/openai-co-founder-andrej-karpathy-joins-anthropics-pre-training-team/)；[CNBC](https://www.cnbc.com/2026/05/19/anthropic-hires-openai-cofounder-andrej-karpathy-former-tesla-ai-lead.html)；[Axios](https://www.axios.com/2026/05/19/anthropic-openai-karpathy-andrej-claude)）
 - [[entities/teresa-carlson]] — 前 Microsoft/AWS 高管，2026-07-07 加入 Anthropic 主導公部門業務；🔎 查無官方（標 2026-08-10｜複 2026-09-13｜查 [[entities/teresa-carlson]]）：是否屬與研究員流動潮同期的整體人才佈局，查證後仍未見官方或報導將兩者明確定性為同一策略動作，非研究職與研究員潮之間僅時序相近，維持推論層級

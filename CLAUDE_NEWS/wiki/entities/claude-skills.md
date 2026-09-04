@@ -4,7 +4,7 @@ kind: "entity"
 type: "feature"
 status: "active"
 domain: "🛠️ 工具/功能"
-last_updated: "2026-08-24"
+last_updated: "2026-09-04"
 last_news_update: "2026-08-24"
 status_main: "active"
 days_since_news: 10
@@ -16,9 +16,9 @@ inbound_links: 5
 attribution_count: 9
 attribution_last: "2026-08-19"
 top_source: "github"
-pending_count: 1
+pending_count: 2
 pending_overdue: 1
-pending_next_review: null
+pending_next_review: "2026-09-19"
 pending_signalled: 0
 signal: "健康"
 generated_by: "scripts/gen_wiki_frontmatter.py"
@@ -29,7 +29,7 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 **狀態：** active
 **領域：** 🛠️ 工具/功能
 **首次出現：** 2026-04-27
-**最後更新：** 2026-08-24
+**最後更新：** 2026-09-04
 **最後新聞更新：** 2026-08-24
 
 > **最新官方動態**（2026-08-19）
@@ -124,7 +124,7 @@ description: 在 PR 或 diff review 前，依團隊規範檢查命名、測試�
 | 日期 | 事件 |
 |------|------|
 | 2026-08-24 | 第三方索引工具 SkillWorks（非官方）08-23 揭露其索引規模統計（503,570 listings、392,227 skills、80,636 subagents、23,442 plugins、7,265 marketplaces，48,190 個 skill 無法載入，2026-08-22 rebuilt）；HN 僅 2 分未達收錄門檻，數字未經官方驗證，供生態規模參考 |
-| 2026-08-19 | 官方技能庫目錄核對：`claude-academy-guide`（08-18 新增）改名為 `academy-guide`，原名同步從目錄移除；The New Stack 報導某 Claude Code skill 在回答問題前耗掉 20 萬 token，僅標題可用，已標待查證 |
+| 2026-08-19 | 官方技能庫目錄核對：`claude-academy-guide`（08-18 新增）改名為 `academy-guide`，原名同步從目錄移除；The New Stack 報導某 skill 耗掉 20 萬 token，❓ 待查證 ⟨Q-01⟩ |
 | 2026-08-18 | 官方技能庫（anthropics/skills）新增 2 項：`claude-academy-guide`、`discernment-nudge`；官方 repo 未附說明文字，用途待補 |
 | 2026-07-15 | Claude for Teachers 教學技能庫發布，向美國認證 K-12 教師免費開放（詳見 [[entities/claude-for-teachers]]） |
 | 2026-06-21 | 官方部落格《七種指令傳遞方法》，將 Skills 納入 CLAUDE.md／rules／subagents／hooks／output styles／system prompt append 六層控制決策框架 |
@@ -137,3 +137,6 @@ description: 在 PR 或 diff review 前，依團隊規範檢查命名、測試�
 | 2026-05-20 | 社群指出 Anthropic 建立了 skill runtime 卻無創作者變現機制的結構性缺口 |
 | 2026-05-17 | Claude Skills 靜默覆蓋指令爭議浮現：`ask_user_input_v0` 硬性限制（最多 3 問題／4 選項）與 subagent 意外衍生行為，引發社群對機制透明度的系統性質疑 |
 | 2026-04-27 | OpenCode-power-pack 移植 Anthropic 官方 11 個 skills 至 OpenCode，是本頁追蹤到的最早生態事件 |
+
+**懸置細節**
+- ⟨Q-01⟩ ❓ **待查證**（標 2026-08-19｜查 The New Stack、20 萬 token｜複 2026-09-19）：The New Stack 報導某 Claude Code skill 在回答問題前耗掉 20 萬 token，僅標題可用，具體是哪個 skill、是否為既有已知問題均未見報導細節；已掃日報至 2026-09-03 無後續，官方頁面未查證。

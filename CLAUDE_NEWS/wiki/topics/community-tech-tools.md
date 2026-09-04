@@ -3,7 +3,7 @@ page: "topics/community-tech-tools"
 kind: "topic"
 status: "ongoing"
 domain: "🌐 社群"
-last_updated: "2026-09-03"
+last_updated: "2026-09-04"
 last_news_update: "2026-09-02"
 update_freq: "🗓️ 週更（每週策展一次；更新日期停留數天屬正常節奏）"
 status_main: "ongoing"
@@ -29,7 +29,7 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 **領域：** 🌐 社群
 **更新頻率：** 🗓️ 週更（每週策展一次；更新日期停留數天屬正常節奏）
 **開始日期：** 2026-04-25
-**最後更新：** 2026-09-03
+**最後更新：** 2026-09-04
 **最後新聞更新：** 2026-09-02
 
 > **最新改版**（2026-09-03）
@@ -102,7 +102,7 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 | Skill | 證據 | 一句話 |
 |---|---|---|
 | [**obra/superpowers**](https://github.com/obra/superpowers) | ⚪（08-28，27.9 萬星，Reddit 有實際採用跡象） | Agentic skills 框架＋軟體開發方法論 |
-| [**andrej-karpathy-skills**](https://github.com/multica-ai/andrej-karpathy-skills) | ⚪（08-29，星數增速異常存疑） | 單檔改善 LLM coding 常見缺陷，取材 Karpathy 觀察 |
+| [**andrej-karpathy-skills**](https://github.com/multica-ai/andrej-karpathy-skills) | ⚪（08-29，星數增速異常，可信度低） | 單檔改善 LLM coding 常見缺陷，取材 Karpathy 觀察 |
 | [**Groundtruth**](https://github.com/vnmoorthy/groundtruth) | 🟡（04-27） | Stop Hook 強制出示可驗證證明才准宣告完成 |
 | **awesome-ux-skills** | 🟡（05-08） | Nielsen＋Shape of AI 等 UX 原則技能集 |
 
@@ -151,7 +151,7 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 | [**archify**](https://github.com/tt-a1i/archify) | Skills | ⏳ | 2026-09-02 | 架構/時序/資料流圖 agent skill，自包含 HTML；43,378★、2026-04 出生，09-02 查證（防刷通過） |
 | [**x1xhlol/system-prompts-and-models-of-ai-tools**](https://github.com/x1xhlol/system-prompts-and-models-of-ai-tools) | 其他 | ✅ | 2026-08-29 | 彙整 Claude Code、Cursor、Devin AI、Replit 等數十款 AI 編碼工具完整系統提示詞與模型設定；14.3 萬星，2025-03 出生，長期累積型參考資源 |
 | [**Shubhamsaboo/awesome-llm-apps**](https://github.com/Shubhamsaboo/awesome-llm-apps) | Skills | ✅ | 2026-08-30 | 彙整百餘款 AI Agent、Agent Skills 與 RAG 開源應用清單；13.5 萬星，2024-04 出生，長期累積型參考資源 |
-| [**multica-ai/andrej-karpathy-skills**](https://github.com/multica-ai/andrej-karpathy-skills) | Skills | ⏳ | 2026-08-29 | 單一 CLAUDE.md 檔案改善 Claude Code 行為，取材自 Karpathy 對 LLM coding 常見缺陷的觀察；20.9 萬星，星數存疑（見收錄註記） |
+| [**multica-ai/andrej-karpathy-skills**](https://github.com/multica-ai/andrej-karpathy-skills) | Skills | ⏳ | 2026-08-29 | 單一 CLAUDE.md 檔案改善 Claude Code 行為，取材自 Karpathy 對 LLM coding 常見缺陷的觀察；20.9 萬星，可信度低（見收錄註記） |
 | [**garrytan/gstack**](https://github.com/garrytan/gstack) | 多 Agent | ⏳ | 2026-08-30 | Garry Tan（YC 總裁）公開自己的 Claude Code 設定，23 個角色化工具分飾 CEO、設計師、工程經理等職能；13.0 萬星，星數真實性未經驗證（見收錄註記） |
 | [**JimLiu/baoyu-design**](https://github.com/JimLiu/baoyu-design) | Skills | ⏳ | 2026-08-29 | 本機以 Agent Skill 執行 [[entities/claude-design]]，供 Cursor／Claude Code 產出自足式 HTML UI 原型，官方建議搭配 Opus 4.8；3,637 星 |
 | [**rsmdt/the-startup**](https://github.com/rsmdt/the-startup) | 工作流 | ⏳ | 2026-08-25 | 「The Agentic Startup」風格 Claude Code commands／skills／agents 集合；507 星 |
@@ -275,7 +275,7 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 | **CC-Canary** | 工作流 | ✅ | 2026-04-25 | 讀取 session log 自動偵測效能漂移，HERMES.md bug 後更受重視；詳見 [[topics/code-quality-decline]] |
 
 **收錄註記**（表內「見收錄註記」的三筆）
-- **andrej-karpathy-skills**（08-29）：僅 GitHub Search 星數，無 forks／issues 佐證可查，增速異常值得存疑，不作為獨立驗證訊號。
+- **andrej-karpathy-skills**（08-29）：僅 GitHub Search 星數，無 forks／issues 佐證可查，增速異常，不作為獨立驗證訊號。
 - **gstack**（08-30）：13.0 萬星僅用 5.5 個月達成，增速明顯快於同類存量盤點案例，星數真實性未經驗證；作者具名且內容具體故收錄。
 - **internet-court-skill**（08-18 收錄，09-02 更新星數）：5,317 星，前次 08-18 為 3,793 星；無出生日期標記、無 forks／issues 佐證可查。
 

@@ -4,21 +4,21 @@ kind: "entity"
 type: "policy"
 status: "active（持續調整中）"
 domain: "💼 商業"
-last_updated: "2026-09-03"
+last_updated: "2026-09-04"
 last_news_update: "2026-09-02"
 status_main: "active"
-days_since_news: 1
+days_since_news: 2
 parent: null
 children: "[]"
 page_role: "root"
-days_since_news_subtree: 1
+days_since_news_subtree: 2
 inbound_links: 134
 attribution_count: 77
 attribution_last: "2026-09-02"
 top_source: "google-news"
-pending_count: 4
-pending_overdue: 1
-pending_next_review: "2026-09-04"
+pending_count: 5
+pending_overdue: 4
+pending_next_review: "2026-09-12"
 pending_signalled: 0
 signal: "健康"
 generated_by: "scripts/gen_wiki_frontmatter.py"
@@ -29,7 +29,7 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 **狀態：** active（持續調整中）
 **領域：** 💼 商業
 **首次出現：** 2026-04-25
-**最後更新：** 2026-09-03
+**最後更新：** 2026-09-04
 **最後新聞更新：** 2026-09-02
 
 > **最新計費政策異動**（2026-09-02）
@@ -95,7 +95,7 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 
 **本表數字之官方查證（2026-08-20）**：Fable 5 $10/$50、Opus 5 與 Opus 4.8 $5/$25、Sonnet 5 $2/$10、Sonnet 4.6 $3/$15、Haiku 4.5 $1/$5，均與官方模型總覽頁一致（[Models overview](https://platform.claude.com/docs/en/about-claude/models/overview)，2026-08-20 查證）。**（2026-08-28 更正）** 此註原寫「8/31 之後的 $3/$15 走向待定」——該說法在寫下時就已過期：官方早於 **2026-08-10** 宣布 $2/$10 永久化、9/1 漲價取消。已無到期日可等。
 
-**Fable 5.1／Mythos 5.1 快取費率新增（2026-09-02）**：官方定價文件載明兩版本的快取讀取／刷新費率為**標準輸入價的 0.025 倍**（標準快取命中乘數為 0.1 倍，見下方「通路與乘數」），長對話快取成本較前代最多省 75%。**（2026-09-03 更正）** 官方[定價頁](https://platform.claude.com/docs/en/about-claude/pricing)已載兩版本基礎定價 **$10 / $50 per Mtok**（與 Fable 5／Mythos 5 相同；Batch $5 / $25），上表已補列；長脈絡仍不加價、tokenizer 仍為 Claude 4.7 起的新版（官方未載再換代）。版本能力見 [[entities/fable-5]]。
+**Fable 5.1／Mythos 5.1 快取費率新增（2026-09-02）**：官方定價文件載明兩版本的快取讀取／刷新費率為**標準輸入價的 0.025 倍**（標準快取命中乘數為 0.1 倍，見下方「通路與乘數」），長對話快取成本較前代最多省 75%。**（2026-09-03 更正）** 官方[定價頁](https://platform.claude.com/docs/en/about-claude/pricing)已載兩版本基礎定價 **$10 / $50 per Mtok**（與 Fable 5／Mythos 5 相同；Batch $5 / $25），上表已補列；長脈絡仍不加價、tokenizer 仍為 Claude 4.7 起導入的版本（尚無新世代 tokenizer 公告）。版本能力見 [[entities/fable-5]]。
 
 > 模型能力與評測細節見 [[topics/model-comparison]]；此表僅列價格。
 > **注意（2026-07-14）**：The Register 分析指出 Anthropic tokenizer 設計較為複雜，使 API 定價與跨供應商成本估算更難以直接比較（標題式報導，無進一步量化細節，source_count=2）。
@@ -228,7 +228,7 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 #### 2026-08-14：Max 方案 session 額度自 3/23 起異常快速耗盡（本頁互動量最高配額回報）+ 社群質疑用量被暗中調降
 
 - **GitHub Issue #38335（👍 543，2026-08-14 查證，CLI 使用情境）**：使用者回報 Claude Max 方案的 session 限制自 **2026-03-23** 起異常快速耗盡；543 個 👍 遠超 GitHub Issue 高門檻（本則為反應數非留言數，量級仍屬本頁近期配額類最高）。機制面見 [[entities/claude-code]] 已知問題；此處僅記配額／計費面：問題若屬實，代表配額計算自 3 月下旬起即可能有系統性異常，而非 07-20 旗艦分界後才出現的新問題（推論；根因、是否與 Issue #79337 同源均未見證實）（GitHub https://github.com/anthropics/claude-code/issues/38335）
-- **Reddit r/ClaudeCode：質疑用量配合 8/19「50% 提升永久化」而暗中調降（單一貼文，未經證實）**：使用者質疑 Anthropic 暗中調降用量，以在傳聞的「50% 用量提升」8/19 永久生效前後製造對比（score=0，Reddit RSS 無讚數非低互動指標；屬使用者推測，非事實）。**查證本頁既有紀錄**：本頁記錄的「週用量 +50%」促銷（2026-06-15 起臨時提高、多次延長至 2026-07-19）已由 07-20 分界取代，**未見與「8/19 永久化」對應的官方公告**；貼文所稱「8/19」與既有時程（7/19）不吻合，可能指涉另一項未收錄的官方承諾，或屬時程誤記，尚待查證（Reddit r/ClaudeCode，2026-08-14）
+- **Reddit r/ClaudeCode：質疑用量配合 8/19「50% 提升永久化」而暗中調降（單一貼文，未經證實）**：使用者質疑 Anthropic 暗中調降用量，以在傳聞的「50% 用量提升」8/19 永久生效前後製造對比（score=0，Reddit RSS 無讚數非低互動指標；屬使用者推測，非事實）。**查證本頁既有紀錄**：本頁記錄的「週用量 +50%」促銷（2026-06-15 起臨時提高、多次延長至 2026-07-19）已由 07-20 分界取代，**未見與「8/19 永久化」對應的官方公告**；貼文所稱「8/19」與既有時程（7/19）不吻合，可能指涉另一項未收錄的官方承諾，或屬時程誤記；具體指控查證見下方標記（Reddit r/ClaudeCode，2026-08-14）
 - **✅ 08-18 官方公告部分澄清（是「延長至 8/31」，非「永久化」）**：08-18 官方公告證實「週用量 +50%」促銷持續延長中，**並未如本頁此前誤記般已於 07-19 失效**——貼文對促銷仍生效的直覺並非空穴來風。惟官方措辭為暫時延長至 **2026-08-31**，非永久政策。
 - ❓ **待查證**（標 2026-08-14｜查 暗中調降用量、throttling｜複 2026-09-12）｜**貼文中「暗中調降用量以製造對比效果」的具體指控**仍未獲官方證實或否認，不因促銷延長本身而視為解決。已掃日報至 2026-08-29 無後續；官方頁面未查證
 
@@ -313,7 +313,7 @@ git commit 歷史出現大寫字串「HERMES.md」會觸發靜默切換至 API �
 #### 2026-09-02：官方更正週用量促銷延長至 09-13（非如期於 08-31 終止）；定價文件新增 Fable 5.1／Mythos 5.1 快取費率；印度盧比訴求互動再攀升
 
 - **Official Docs（support.claude.com）更正促銷狀態**：Claude Code 週用量 +50% 促銷再度延長，新到期日 **2026-09-13**（原記 2026-08-31 到期），適用 Pro、Max、Team。原文：「We've extended this promotion. Increased weekly limits now run through September 13, 2026.」**更正本頁既有記錄**：08-29 條目曾記「促銷如期於 08-31 終止、不再延長」，本次官方更新顯示該促銷實際上又獲延長，並非終止；上方「當前生效的計費規則」與「已失效並移除的規則」均已同步修正（來源：[Claude Code May–August 2026 Weekly Limits Promotion](https://support.claude.com/en/articles/15910845-claude-code-may-august-2026-weekly-limits-promotion)，2026-09-02）
-- **Official Docs（platform.claude.com/docs/en/about-claude/pricing）新增快取費率**：定價頁更新反映 Claude Fable 5.1、Claude Mythos 5.1 的快取讀取／刷新費率降至**標準輸入價的 0.025 倍**（標準快取讀取為 0.1 倍），長對話情境下快取成本較前代最多省下 75%；方案與定價頁（claude.com/pricing）同步大幅改版（新增/移除多段定價說明，完整差異未見比對）。**與模型頁的關係**：Fable 5.1／Mythos 5.1 為官方定價文件首度出現的具體版本號，此前僅見於 08-28 Reddit 社群臆測（[[entities/fable-5]] 待查證標記）；本則為一手來源，強力佐證兩版本已存在。本頁僅記錄快取乘數，兩版本完整基礎 $/Mtok 定價未見公布，暫不列入上方「模型 API 定價現況」表；此快取乘數變動屬本頁「通路與乘數」節範疇，待納入該節乘數對照表（來源：[Pricing](https://platform.claude.com/docs/en/about-claude/pricing)、[claude.com/pricing](https://claude.com/pricing)，2026-09-02）
+- **Official Docs（platform.claude.com/docs/en/about-claude/pricing）新增快取費率**：定價頁更新反映 Claude Fable 5.1、Claude Mythos 5.1 的快取讀取／刷新費率降至**標準輸入價的 0.025 倍**（標準快取讀取為 0.1 倍），長對話情境下快取成本較前代最多省下 75%；方案與定價頁（claude.com/pricing）同步大幅改版（新增/移除多段定價說明，完整差異未見比對）。**與模型頁的關係**：Fable 5.1／Mythos 5.1 為官方定價文件首度出現的具體版本號，此前僅見於 08-28 Reddit 社群臆測（[[entities/fable-5]] 懸置標記）；本則為一手來源，強力佐證兩版本已存在。本頁僅記錄快取乘數，兩版本完整基礎 $/Mtok 定價未見公布，暫不列入上方「模型 API 定價現況」表；此快取乘數變動屬本頁「通路與乘數」節範疇，待納入該節乘數對照表（來源：[Pricing](https://platform.claude.com/docs/en/about-claude/pricing)、[claude.com/pricing](https://claude.com/pricing)，2026-09-02）
 - **GitHub Issue #17432 留言數更新**：留言數由 08-17 查證的 212 增至 **213**，本次首度記錄 reactions 達 **628 👍**（本輪商業類條目互動量最高之功能請求）；訴求內容不變——使用者要求 Anthropic 仿照 OpenAI（ChatGPT）、Google（Gemini）推出印度盧比定價方案，涵蓋 Claude Pro 與 Claude Code 兩項訂閱。與既有記錄相同：07-13 官方回應僅確認 Pro 方案訂閱定價，Claude Code 涵蓋範圍缺口依然存在（GitHub https://github.com/anthropics/claude-code/issues/17432，2026-09-01）
 
 #### 2026-08-29：官方公告週配額改版——09-14 起標準週配額永久 +25%，但 08-31 起不再延續 +50% 促銷，實際減少約 17%
@@ -330,7 +330,7 @@ git commit 歷史出現大寫字串「HERMES.md」會觸發靜默切換至 API �
 - **與「我的方案現在有什麼」表的關係**：本額度屬**產品導入型促銷**（綁定 Claude Security 產品線的企業客戶），非該表涵蓋的一般訂閱方案優惠，暫不列入表內；模型能力釋出面詳見 [[entities/mythos]]，產品功能細節見 [[entities/claude-security]]。
 - ❓ **待查證**（標 2026-08-21｜查 Claude Security、3500 萬美元｜複 2026-09-04）｜**$35M 額度方案細節**：官方公告原文、適用範圍與截止日均未見報導，僅媒體轉述金額（Google News/MarkTechPost；Google News/Dealroom；Google News/Palo Alto Networks Unit 42；Google News/The New Stack）
 
-#### 2026-08-21：Techzine 報導 Anthropic 允許企業將 AI 資料存放於自有雲端環境（單一來源，未經官方確認）
+#### 2026-08-21：Techzine 報導 Anthropic 允許企業將 AI 資料存放於自有雲端環境（單一來源，後於 09-03 由官方 EFS 公告確認）
 
 - **Techzine Global（2026-08-21 07:46 UTC）**：報導稱 Anthropic 讓企業客戶可將 AI 資料存放在自有雲端環境，僅標題可用，未見實作機制（是否限特定雲端商、涵蓋哪些模型／方案）、生效時間或官方公告連結。
 - **與下方 08-20 資料保留政策報導的關係**：時間相近、同屬企業資料治理，但措辭不同（一稱「自有雲端存放」、一稱「保留政策調整」），標題層級無從判斷是同一政策的兩種描述或兩項獨立變動。**後續（2026-09-03）**：官方 09-01 的 EFS 公告同時涵蓋兩者（資料留在客戶自有雲端＝Anthropic 端不留存）。
@@ -373,7 +373,7 @@ git commit 歷史出現大寫字串「HERMES.md」會觸發靜默切換至 API �
 - **官方 usage-credits 條目補充限制**：support.claude.com 說明中心確認行動 App 訂閱者無法直接於 App 內開啟 usage credits，須改至網頁版操作；額度用盡後可切換按量計費（API 標準費率）不中斷。詳見上方「方案細節」新增條目
 - **claude.com/pricing 確認方案分層**：官方定價頁列出 Free／Pro／Max 各方案，Pro 明確標示涵蓋 Claude Code／Cowork／Design／Science，與 2026-08-12 已記錄之「Free／Pro 功能組成補充」屬同一份官方頁面的不同時點查證，不重複記錄
 
-#### 2026-08-08：官方 Help Center 查證，07-18～21 四方矛盾報導收斂（✅ 待查證結案）
+#### 2026-08-08：官方 Help Center 查證，07-18～21 四方矛盾報導收斂（✅ 已收斂）
 
 - **查證動機**：本頁自 07-18 起累積四則互相矛盾的媒體報導（Tech Times「Max 永久」／Dawn「50% 上限」／the-decoder「Pro 導向 API 計費」／Reddit「轉為 metered」），懸置 20 天無官方澄清。日報來源不含 `support.claude.com`，媒體轉述始終只有標題層級，故直接查證官方說明中心原文。
 - **官方結論（[Claude Fable 5 on your plan](https://support.claude.com/en/articles/15424964-claude-fable-5-on-your-plan)）**：2026-07-20 生效。Max 方案／Team premium seats／舊制席位制 Enterprise premium seats — Fable 5 標配，可用至多**週用量上限的 50%**，不額外收費；Pro 方案／Team standard seats／Enterprise standard seats — Fable 5 **不計入方案用量**，改以 usage credits 按 API 費率付費。先前促銷結束於 **2026-07-19 23:59:59 PT**。合格 Pro 與 Team standard seats「qualify for a one-time credit to help with the change」。
@@ -496,7 +496,7 @@ The Information 報導企業客戶即使面對成本上漲仍持續採用；Anth
 
 - **官方 Help Center：《How do usage and length limits work?》（2026-08-12 查證）**：官方文件說明 usage limits（隨對話長度、複雜度、啟用功能、模型、effort 等級等變動的「額度」）與 length limits（單則訊息／對話長度上限）是兩種不同概念；不同方案（Pro／Max／Team 等）的額度規則亦不同。此文件首度明確說明 usage limits 具動態性，而非固定額度（來源：[How do usage and length limits work?](https://support.claude.com/en/articles/11647753-how-do-usage-and-length-limits-work)）
 - **同日 Reddit 疑慮（單一貼文，未經證實）**：r/ClaudeCode 用戶反映近幾天用量額度消耗速度明顯變快，詢問是否遭調降限額；無官方回應佐證，亦未見其他來源佐證（Reddit https://www.reddit.com/r/ClaudeCode/comments/1vm9135/did_anthropic_decreased_the_usage_limit/）
-- **與官方文件的潛在關聯（推論，非官方回應）**：若 usage limits 確實隨對話複雜度／effort 等級動態變動（見上方官方說明），使用者感受到的「額度消耗變快」有可能源於任務型態改變而非官方調降限額；惟官方文件未直接回應本則貼文的具體指控，也未證實或否認限額本身是否曾調整，不可視為已解釋
+- **與官方文件的潛在關聯（推論，非官方回應）**：若 usage limits 確實隨對話複雜度／effort 等級動態變動（見上方官方說明），使用者感受到的「額度消耗變快」有可能源於任務型態改變而非官方調降限額；惟官方文件未直接回應本則貼文的具體指控。❓ **待查證**（標 2026-08-12｜查 length limits、usage limits）：限額本身是否曾調整未經官方證實或否認，不可視為已解釋；已掃日報至 2026-09-03 無後續，官方頁面未查證
 
 #### 2026-07-22：Reddit 週熱門質疑 Anthropic 宣稱的用量提升未反映於實際體驗（單一貼文，2026-07-22 指控，已掃日報至 2026-08-14 無後續；官方頁面未查證）
 
