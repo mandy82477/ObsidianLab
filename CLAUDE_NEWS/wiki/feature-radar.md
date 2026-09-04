@@ -4,7 +4,7 @@
 僅收錄官方 changelog、release note 或官方公告；社群工具見 [[topics/community-tech-tools]]。
 每日更新新增功能、熱度與社群回饋。
 
-**最後更新：** 2026-09-03
+**最後更新：** 2026-09-04
 
 ---
 
@@ -22,9 +22,11 @@
 
 **最新版本：** v2.1.259（2026-09-02）——新增 `managedMcpServers` 管理設定，組織可統一為所有使用者提供 HTTP/SSE MCP 伺服器（設定格式比照 `.mcp.json`）；非 breaking change。
 
-往前有具體異動記錄的版本（**皆非 breaking change**）：v2.1.258（09-01，修正 macOS 12［Monterey］啟動失敗［v2.1.255 引入的迴歸］，以及 remote／排程 session 因「使用者訊息不得為空」而失敗的問題；純 bug fix）；v2.1.251（08-28，新增 `PreModelSwitch`／`PostModelSwitch` hook 事件，可攔截、確認或標註模型切換；`SessionStart` resume hook 回傳 session 新鮮度與估計流失的內容量）；v2.1.250（08-28，僅錯誤修復與穩定性改善，release note 無具體項目）；v2.1.247（08-26，新增 `SendFeedback` 工具，session 出錯時 Claude 可草擬回報供使用者於 `/feedback` 檢視後送出，可用 `feedbackDisabled` 關閉）；v2.1.246（08-26，新增啟動警告：Bash 允許規則在子指令前使用萬用字元［如 `Bash(git * main)`］時，也會意外比對插入在子指令前的選項參數）；v2.1.245（08-25，修復搭載 glibc 2.44 的 Linux 發行版［Arch Linux、CachyOS、Fedora Rawhide］啟動當機）；v2.1.241（08-23，release notes 僅載「Bug fixes and reliability improvements」）；v2.1.239（08-21，`/cost`／狀態列／`--max-budget-usd` 成本估算計入資料常駐工作區 1.1 倍純美國推理附加費，屬計算口徑調整）；v2.1.238（08-20，新增 `keybindingFlavor` 設定）；v2.1.237（08-20，修復 LLM gateway／自訂 base URL session 的 prompt caching 失效，新增內建「Concise」輸出風格）。v2.1.242–244 與 v2.1.252–257 本庫日報未見報導，不代表未發布。
+**v2.1.237 起至今的每一個版本都不是 breaking change**，逐版異動見 [[entities/claude-code#版本更新]]。
 
-最後一次重大 breaking change 仍為 v2.1.212／v2.1.215（見下表）；另有 8/14 已對 Pro/Max/Team 生效的 auto 模式預設化。⚠️ **另注意**：anthropic-sdk-python v1.0.0（2026-08-20 發布）含獨立於 CLI 之外的 breaking change（client 升級至 httpx2，官方未提供遷移時程），影響以該 SDK 建置的整合程式碼而非 CLI 升版本身。兩者詳見 [[entities/claude-code]] 現況。
+**最後一次 breaking change：** v2.1.212／v2.1.215（詳見下表），另有 8/14 已對 Pro/Max/Team 生效的 auto 模式預設化。
+
+⚠️ **CLI 之外另有一個**：anthropic-sdk-python v1.0.0（2026-08-20）把 client 升級至 httpx2，官方未給遷移時程。它影響的是**以該 SDK 建置的整合程式碼**，不是 CLI 升版本身。
 
 | 風險 | 嚴重度 | 說明 |
 |------|--------|------|
@@ -39,7 +41,16 @@
 - **Edit/Write 靜默截斷**：緩衝區容量上限（byte-conservation buffer cap）所致，任何檔案大小皆可重現（#53940，累計 16 個讚同反應）
 - **`/fork`、`/verify`／`/code-review` 兩項 breaking change**：官方 release note 均未附完整遷移指南
 
-**建議：** 升級前確認有無依賴 `/fork` 舊行為（同 session 子 agent 委派）的 skill/hook/巨集，有則改寫為 `/subtask`；確認既有流程是否依賴 Claude 自動觸發 `/verify` `/code-review`，有則在 CI 或 hook 中新增顯式呼叫；**重度依賴 Cowork 者近期應避免處理大型檔案或大量寫入**，靜默截斷問題無官方修復時程。Fable 5 Defense in Depth 誤判問題非升版可解，見 [[entities/fable-5]]，本表不重複列出。
+**升級前該做的事**
+
+| 你的情況 | 升級前要做 |
+|---|---|
+| 有 skill／hook／巨集依賴 `/fork` 舊行為（同 session 子 agent 委派） | 改寫為 `/subtask` |
+| 流程依賴 Claude 自動觸發 `/verify`／`/code-review` | 在 CI 或 hook 補上顯式呼叫 |
+| 重度使用 Cowork | 近期避免處理大型檔案或大量寫入——靜默截斷無官方修復時程 |
+| 以上皆非 | 可直接升級 |
+
+> Fable 5 Defense in Depth 誤判非升版可解，見 [[entities/fable-5]]。
 
 ---
 

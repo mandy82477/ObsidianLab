@@ -376,8 +376,11 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 
 ### 最新版本
 
+> 本表只收本庫日報報導過的版本。**v2.1.242–244 與 v2.1.252–257 未見報導，不代表未發布。**
+
 | 版本 | 日期 | 重點 |
 |------|------|------|
+| **v2.1.259** | 2026-09-02 | 新增 `managedMcpServers` 管理設定，組織可統一為所有使用者佈署 HTTP/SSE MCP 伺服器，設定格式比照 `.mcp.json`；非 breaking change（見 [Release](https://github.com/anthropics/claude-code/releases/tag/v2.1.259)）|
 | **v2.1.258** | 2026-09-01 | Bug fix：修復 macOS 12（Monterey）啟動失敗問題（v2.1.255 引入的回歸），並修復 remote／排程 session 因「使用者訊息不得為空」而失敗的問題；純 bug 修復，無新指令/旗標（見 [Release](https://github.com/anthropics/claude-code/releases/tag/v2.1.258)）|
 | **anthropic-sdk-typescript sdk-v0.123.0** | 2026-09-01 | Features：新增 beta 版使用者個人資料（user profiles）API 支援，含 `external_user_onboarding` 等欄位（見 [Release](https://github.com/anthropics/anthropic-sdk-typescript/releases/tag/sdk-v0.123.0)）|
 | **anthropic-sdk-python v1.3.0** | 2026-09-01 | Features：同步新增 beta 版使用者個人資料（user profiles）API 支援，含 `external_user_onboarding` 等欄位（見 [Release](https://github.com/anthropics/anthropic-sdk-python/releases/tag/v1.3.0)）|
