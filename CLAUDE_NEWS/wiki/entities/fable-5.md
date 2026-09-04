@@ -7,12 +7,12 @@ domain: "🤖 模型"
 last_updated: "2026-09-04"
 last_news_update: "2026-09-02"
 status_main: "active"
-days_since_news: 1
+days_since_news: 2
 parent: null
 children: "[]"
 page_role: "root"
-days_since_news_subtree: 1
-inbound_links: 45
+days_since_news_subtree: 2
+inbound_links: 43
 attribution_count: 29
 attribution_last: "2026-09-02"
 top_source: "google-news"
@@ -39,13 +39,13 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 
 ## 現況
 
-**2026-09-01 最新（新一代旗艦發布）**：Anthropic 正式發布 Claude Fable 5.1（GA，向所有現有 Fable 5 用戶開放）與 Claude Mythos 5.1（沿用限信任機構存取模式，非全面公開）；兩者為**同一模型的不同防護層級**——Fable 5.1 面向一般用戶，Mythos 5.1 護欄「專為資安與生命科學工作設計」。官方稱其為「coding 與知識工作最先進的模型」，研究能力也對科學進展展現初步貢獻潛力；新增**反萃取（anti-distillation）機制**，防範他人萃取模型權重／行為訓練競品。發布日 HN 討論達 **1,338 分**，為近期官方公告中互動度最高之一（[Anthropic Blog](https://www.anthropic.com/claude-fable-and-mythos-5-1)，2026-09-01）。此為 08-28 社群傳聞（見下方「歷史記錄」08-28 條目）的官方證實；三方基準與媒體報導細節見「歷史記錄」。
+**2026-09-01 最新（新一代旗艦發布）**：Anthropic 正式發布 Claude Fable 5.1（GA，向所有現有 Fable 5 用戶開放）與 Claude Mythos 5.1（沿用限信任機構存取模式，非全面公開）；兩者為**同一模型的不同防護層級**，官方稱其為「coding 與知識工作最先進的模型」，並新增**反萃取（anti-distillation）機制**防範他人萃取模型權重／行為訓練競品。發布日 HN 討論達 **1,338 分**，為近期官方公告中互動度最高之一，此為 08-28 社群傳聞（見下方「歷史記錄」08-28 條目）的官方證實（[Anthropic Blog](https://www.anthropic.com/claude-fable-and-mythos-5-1)，2026-09-01）。三方基準與媒體報導細節見「歷史記錄」。
 
 **2026-08-28**：Reddit r/ClaudeCode 質疑串「Is it even legal for Anthropic to nerf its models this hard?」，使用者抱怨 Opus 5 與 Fable 5 在 Claude Code 中的實際表現遜於預期，質疑模型遭「削弱」；單一使用者觀感回報，無具體案例或量化數字佐證，延續 08-13、08-20 等已記錄的社群觀感分歧模式，完整記錄與相關社群回饋見 [[entities/opus-5]]「歷史記錄」（[Reddit](https://www.reddit.com/r/ClaudeCode/comments/1w0t53b/is_it_even_legal_for_anthropic_to_nerf_its_models/)，2026-08-28）。
 
-Claude Fable 5 是 Anthropic 於 2026-06-09 發布的旗艦模型，為**史上首款向大眾開放的 Mythos 級模型**。Fable 5 與 Claude Mythos 5 共用相同的模型權重，差異在於 Fable 5 前置安全分類器——觸發時 fallback 至 Claude Opus 4.8（Anthropic 稱不到 5% 的 session 受影響）。核心定位：任務越複雜越長期，Fable 5 的優勢越明顯；在軟體工程、知識工作、視覺、科學研究等幾乎所有 benchmark 達到 SOTA。**2026-09-01 起，Fable 5.1／Mythos 5.1 為現行世代**（見上方「現況」與下方「歷史記錄」），本頁沿用原「Fable 5」頁面持續記錄後續版本迭代。
+Claude Fable 5 是 Anthropic 於 2026-06-09 發布的旗艦模型，為**史上首款向大眾開放的 Mythos 級模型**，與 Claude Mythos 5 共用相同模型權重，差異在於 Fable 5 前置安全分類器（觸發時 fallback 至 Opus 4.8，Anthropic 稱不到 5% 的 session 受影響）。核心定位：任務越複雜越長期，Fable 5 優勢越明顯，在軟體工程、知識工作、視覺、科學研究等幾乎所有 benchmark 達到 SOTA。**2026-09-01 起，Fable 5.1／Mythos 5.1 為現行世代**（見上方「現況」與下方「歷史記錄」），本頁沿用原「Fable 5」頁面持續記錄後續版本迭代。
 
-**當前狀態（2026-07-20 起）**：出口管制（2026-06-13 至 2026-07-01，歷時 18 天）已正式解除，全球恢復存取。免費使用期限已於 **2026-07-19 23:59:59 PT 到期**；07-20 起訂閱存取分為兩層——Max 方案／Team premium seats 為標配（可用至多週用量上限的 50%，不額外收費），Pro 方案／Team standard seats 不計入方案用量（該層另有一次性 $100 過渡 credit，領取窗已於 2026-08-02 關閉、已領者 09-17 到期，2026-08-22 官方查證，見 [[entities/pricing]]）、改以 usage credits 按 API 費率付費，合格 Pro／Team standard 另有一次性過渡 credit。此分界 2026-08-08 經官方 Help Center 查證確認，先前四則矛盾報導就此收斂，詳見 [[entities/pricing]]。Redeploy 同步導入「Defense in Depth」安全機制——更嚴格的資安/程式碼請求分類器，判定高風險時自動 fallback 至 Opus 4.8，首日已有誤判實測回報。管制事件完整經過見「出口管制：雙方立場」與「歷史記錄」。
+**當前狀態（2026-07-20 起）**：出口管制（2026-06-13 至 2026-07-01，歷時 18 天）已正式解除，全球恢復存取；免費使用期限已於 **2026-07-19 23:59:59 PT 到期**，07-20 起訂閱存取分為 Max／Team premium（標配，計入週用量上限 50%）與 Pro／Team standard（不計入方案用量、改按 usage credits 計費，另有一次性過渡 credit）兩層，計費細節見 [[entities/pricing]]（此分界已於 2026-08-08 經官方 Help Center 查證確認，先前四則矛盾報導就此收斂）。Redeploy 同步導入「Defense in Depth」安全機制——更嚴格的資安/程式碼請求分類器，判定高風險時自動 fallback 至 Opus 4.8，首日已有誤判實測回報。管制事件完整經過見「出口管制：雙方立場」與「歷史記錄」。
 
 | 指標 | 數值 |
 |------|------|

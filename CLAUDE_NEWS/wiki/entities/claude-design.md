@@ -4,14 +4,14 @@ kind: "entity"
 type: "feature"
 status: "active（初期，體驗粗糙）"
 domain: "🛠️ 工具/功能"
-last_updated: "2026-08-18"
+last_updated: "2026-09-04"
 last_news_update: "2026-08-18"
 status_main: "active"
-days_since_news: 16
+days_since_news: 17
 parent: null
 children: "[]"
 page_role: "root"
-days_since_news_subtree: 16
+days_since_news_subtree: 17
 inbound_links: 5
 attribution_count: 2
 attribution_last: "2026-08-18"
@@ -29,7 +29,7 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 **狀態：** active（初期，體驗粗糙）
 **領域：** 🛠️ 工具/功能
 **首次出現：** 2026-04-27
-**最後更新：** 2026-08-18
+**最後更新：** 2026-09-04
 **最後新聞更新：** 2026-08-18
 
 > **最新工具動態**（2026-08-18）
@@ -39,7 +39,11 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 
 ## 現況
 
-Claude Design 是 Anthropic 推出的 AI 設計工具功能，旨在讓 Claude 具備輔助 UI／視覺設計的能力。目前處於初期階段，社群評價以負面為主——幻覺嚴重、工具錯誤頻繁，且輸出設計風格過度貼近 Anthropic 自家品牌，忽略用戶提供的設計素材。截至 2026-07-10，無官方後續公開更新，初期問題是否已改善未知；❓ **待查證**（標 2026-08-10｜查 [[entities/claude-design]]、同步至程式碼庫）｜**dev.to 教學文章提及同步能力**（2026-07-16 提及，原文發表於 2026-06-21）：一篇 dev.to 教學文章提及「Claude Design 同步至程式碼庫」的設定方式，但缺乏具體操作細節與官方佐證，不改變現有試用評分。❓ **待查證**（標 2026-08-18｜查 /design、UI mockup｜複 2026-09-01）｜**the-decoder.com 報導 Claude Code 新增 `/design` 指令，可於終端機直接建立 UI mockup**（經 Google News 轉載，2026-08-18 報導）：僅有連結片段可用，無正文佐證，是否與本頁 Claude Design 功能同源或為 Claude Code 獨立新指令尚待官方確認。
+Claude Design 是 Anthropic 推出的 AI 設計工具功能，旨在讓 Claude 具備輔助 UI／視覺設計的能力。目前處於初期階段，社群評價以負面為主——幻覺嚴重、工具錯誤頻繁，且輸出設計風格過度貼近 Anthropic 自家品牌，忽略用戶提供的設計素材。截至 2026-07-10，無官方後續公開更新，初期問題是否已改善未知。
+
+❓ **待查證**（標 2026-08-10｜查 [[entities/claude-design]]、同步至程式碼庫）｜**dev.to 教學文章提及同步能力**（2026-07-16 提及，原文發表於 2026-06-21）：一篇 dev.to 教學文章提及「Claude Design 同步至程式碼庫」的設定方式，缺乏具體操作細節與官方佐證，不改變現有試用評分。
+
+❓ **待查證**（標 2026-08-18｜查 /design、UI mockup｜複 2026-09-01）｜**the-decoder.com 報導 Claude Code 新增 `/design` 指令，可於終端機直接建立 UI mockup**（經 Google News 轉載，2026-08-18 報導）：僅有連結片段可用，無正文佐證，是否與本頁 Claude Design 功能同源或為 Claude Code 獨立新指令尚待官方確認。
 
 ---
 
