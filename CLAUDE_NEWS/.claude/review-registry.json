@@ -475,7 +475,7 @@
       ],
       "patterns": [
         "行內連結",
-        "\\]\\(http"
+        "\\\\?\\]\\\\?\\(http"
       ],
       "_mutate_note": "2026-09-04 lint_health mutate 判過寬，收緊"
     },
