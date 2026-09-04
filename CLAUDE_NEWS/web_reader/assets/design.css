@@ -2604,3 +2604,10 @@ code {
 .map__mix { display: flex; flex-wrap: wrap; gap: 4px 12px; font-family: var(--font-sans); font-size: 12px; color: var(--ink-2); margin: 6px 0 10px; }
 .map__mix b { font-family: var(--font-mono); font-weight: var(--fw-regular); color: var(--ink-3); }
 @media (max-width: 719px) { .map__legend { position: static; padding: 8px 12px; max-width: none; justify-content: flex-start; border-top: 1px solid var(--border-1); } }
+
+/* 詳頁「你可能也想看」：圖算出來的間接關聯（不直接相連、共享鄰居多） */
+.alsosee { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 10px; }
+.alsosee__card { text-align: left; background: transparent; border: 1px solid var(--border-2); border-radius: 2px; padding: 10px 12px; cursor: pointer; display: flex; flex-direction: column; gap: 4px; }
+.alsosee__card:hover { background: var(--bg-1); border-color: var(--border-strong); }
+.alsosee__name { font-family: var(--font-display); font-size: 16px; color: var(--ink-1); }
+.alsosee__why { font-family: var(--font-sans); font-size: 11.5px; color: var(--ink-3); line-height: 1.5; }

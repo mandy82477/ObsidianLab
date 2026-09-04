@@ -1,0 +1,4 @@
+{
+  "_doc": "缺口偵測（python scripts/wiki_graph.py gaps）的「已審、無需連結」清單。每對登記 pages（兩個 slug）、reviewed（日期）、why（一句）。登記後該對不再列出；頁面改名時同步。",
+  "pairs": []
+}

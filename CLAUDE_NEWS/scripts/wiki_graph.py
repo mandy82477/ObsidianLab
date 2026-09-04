@@ -23,6 +23,10 @@ wiki 的圖從第一天起就存在：頁面＝節點、wikilink＝邊。本腳�
   sources <頁slug>     查原文：列出該頁在 data/source_attribution.jsonl 的歸因
                        （日期｜來源｜條目標題｜原始 URL，新到舊）——帳本 07-11 起收，
                        更早的事實走日報：頁內時序找日期 → news/該日.md 條目附原文連結
+  similar <頁slug>     「你可能也想看」：與該頁**不直接相連**但共享鄰居的頁，加權 Jaccard
+                       （鄰居權重 1/度數，壓樞紐）；build_web 用同一函式產讀者推薦
+  gaps [--top N]       缺口偵測（lint 用）：全庫兩兩算同一分數，取分數高卻互不相連的頁對；
+                       data/graph_gap_ignore.json 登記「已審、無需連結」的對，不再列出
 
 用法：python scripts/wiki_graph.py explain entities/pricing
 """
@@ -312,6 +316,112 @@ def cmd_sources(target: str, out) -> int:
     return 0
 
 
+
+# ── 相似度／缺口：加權 Jaccard（鄰居權重 1/度數，樞紐不霸榜）──────────────────
+def _neighbor_sets(links, pages):
+    """正文引用邊的無向鄰居表（樣板／階層邊不算：相關實體欄與家族邊不是語意證據）。"""
+    adj: dict[str, set] = defaultdict(set)
+    linked: set = set()
+    for l in links:
+        if l.src == l.dst or l.src not in pages or l.dst not in pages:
+            continue
+        linked.add(frozenset((l.src, l.dst)))          # 任何 zone 的邊都算「已相連」
+        if l.zone in ("樣板", "階層"):
+            continue
+        adj[l.src].add(l.dst)
+        adj[l.dst].add(l.src)
+    return adj, linked
+
+
+def weighted_jaccard(a: str, b: str, adj) -> float:
+    na, nb = adj.get(a, set()), adj.get(b, set())
+    if not na or not nb:
+        return 0.0
+    w = lambda n: 1.0 / max(1, len(adj.get(n, ())))
+    inter = sum(w(n) for n in na & nb)
+    union = sum(w(n) for n in na | nb)
+    return inter / union if union else 0.0
+
+
+MIN_SHARED = 2      # 只共享一個鄰居（通常是樞紐）不算相似——兩個人物頁都連 anthropic-business 曾拿到 1.0
+MIN_DEGREE = 3      # 太孤的頁沒有足夠證據談相似
+_ARCHIVE_RE = re.compile(r"(^|/)[^/]*archive")
+
+
+def similar_pages(target: str, pages, links, top: int = 3, min_score: float = 0.08, doms=None):
+    """回傳 [(slug, score, shared_neighbors)]：不直接相連、共享鄰居多者優先；封存頁不推。"""
+    adj, linked = _neighbor_sets(links, pages)
+    out = []
+    for other in pages:
+        if other == target or frozenset((target, other)) in linked or _ARCHIVE_RE.search(other):
+            continue
+        shared = adj[target] & adj[other]
+        if len(shared) < MIN_SHARED or len(adj[other]) < MIN_DEGREE:
+            continue
+        s = weighted_jaccard(target, other, adj)
+        if doms and doms.get(target) and doms.get(target) == doms.get(other):
+            s *= 1.3   # 同領域微加權：讀者順著同一條線往下讀的機率較高
+        if s >= min_score:
+            out.append((other, s, sorted(shared)))
+    out.sort(key=lambda x: -x[1])
+    return out[:top]
+
+
+def gap_pairs(pages, links, top: int = 10, min_score: float = 0.15):
+    import json
+    ignore_file = WIKI_DIR.parent / "data" / "graph_gap_ignore.json"
+    ignored = set()
+    if ignore_file.exists():
+        for pr in json.loads(ignore_file.read_text(encoding="utf-8")).get("pairs", []):
+            ignored.add(frozenset(pr["pages"]))
+    adj, linked = _neighbor_sets(links, pages)
+    out = []
+    slugs = sorted(pages)
+    for i, a in enumerate(slugs):
+        for b in slugs[i + 1:]:
+            key = frozenset((a, b))
+            if key in linked or key in ignored or _ARCHIVE_RE.search(a) or _ARCHIVE_RE.search(b):
+                continue
+            if len(adj[a] & adj[b]) < MIN_SHARED or min(len(adj[a]), len(adj[b])) < MIN_DEGREE:
+                continue
+            s = weighted_jaccard(a, b, adj)
+            if s >= min_score:
+                out.append((a, b, s, sorted(adj[a] & adj[b])))
+    out.sort(key=lambda x: -x[2])
+    return out[:top], len(ignored)
+
+
+def cmd_similar(target: str, out) -> int:
+    pages, _, links = build()
+    if target not in pages:
+        print(f"找不到頁面：{target}", file=out)
+        return 1
+    rows = similar_pages(target, pages, links, top=5, doms={s: _domain(f) for s, f in pages.items()})
+    print(f"# 你可能也想看（與 {target} 不直接相連、共享鄰居多）\n", file=out)
+    if not rows:
+        print("（無達標候選）", file=out)
+    for slug, s, shared in rows:
+        print(f"  {slug}  {s:.2f}  共享：{', '.join(shared[:4])}{' …' if len(shared) > 4 else ''}", file=out)
+    return 0
+
+
+def cmd_gaps(rest: list[str], out) -> int:
+    top = 10
+    if "--top" in rest:
+        top = int(rest[rest.index("--top") + 1])
+    pages, _, links = build()
+    rows, n_ign = gap_pairs(pages, links, top=top)
+    doms = {s: _domain(f) for s, f in pages.items()}
+    print(f"# 缺口偵測：分數高卻互不相連的頁對（前 {top}；已忽略 {n_ign} 對）\n", file=out)
+    print("| 頁 A | 頁 B | 分數 | 共享鄰居 |\n|---|---|---|---|", file=out)
+    for a, b, s, shared in rows:
+        print(f"| {a}（{doms[a]}） | {b}（{doms[b]}） | {s:.2f} | {', '.join(shared[:4])}{' …' if len(shared) > 4 else ''} |", file=out)
+    if not rows:
+        print("| （無候選） | | | |", file=out)
+    print("\n每對三選一：補 wikilink／併頁或蒸餾候選／登記 data/graph_gap_ignore.json（已審、無需連結）。", file=out)
+    return 0
+
+
 def main() -> int:
     out = _stdout()
     args = sys.argv[1:]
@@ -330,6 +440,10 @@ def main() -> int:
             return cmd_cluster(out)
         if cmd == "sources" and len(rest) == 1:
             return cmd_sources(rest[0], out)
+        if cmd == "similar" and len(rest) == 1:
+            return cmd_similar(rest[0], out)
+        if cmd == "gaps":
+            return cmd_gaps(rest, out)
         print(__doc__, file=out)
         return 1
     finally:

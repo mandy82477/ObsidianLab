@@ -1290,6 +1290,16 @@ def build():
         for _n in _nodes:
             for _k, _v in _n["sources"].items():
                 _src_totals[_k] = _src_totals.get(_k, 0) + _v
+        # 你可能也想看：與本頁不直接相連但共享鄰居多的頁（scripts/wiki_graph.py similar_pages）
+        _doms = {s: n["domain"] for s, n in ((nn["slug"], nn) for nn in _nodes)}
+        _slug_of = {n["id"]: n["slug"] for n in _nodes}
+        for _n in _nodes:
+            # 門檻 0.15：樞紐頁（pricing、claude-code）拿不到有意義的間接關聯就誠實不顯示，不湊數
+            _recs = _g.similar_pages(_n["slug"], _pages, _links, top=3, min_score=0.15, doms=_doms)
+            _deg = lambda sl: sum(1 for e in _edges.values() if e["body"] and sl.split("/")[-1] in (e["s"], e["d"]))
+            _n["alsoSee"] = [{"id": r[0].split("/")[-1],
+                              "shared": [x.split("/")[-1] for x in sorted(r[2], key=_deg)[:3]]}   # 最具體的共享鄰居優先，不列樞紐
+                             for r in _recs]
         _latest = max((n["lastNewsUpdate"] for n in _nodes if n["lastNewsUpdate"]), default="")
         _graph = {"generated": str(_today), "latestNews": _latest, "nodes": _nodes,
                   "sources": [{"slug": k, "name": _src_names.get(k, k), "count": v}

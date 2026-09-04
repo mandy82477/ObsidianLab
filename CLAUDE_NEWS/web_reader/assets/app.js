@@ -2342,6 +2342,15 @@ ${kidsHtml}
         node.attr('cx', n => n.x).attr('cy', n => n.y);
         label.attr('x', n => n.x).attr('y', n => n.y);
       });
+    // 你可能也想看：不直接相連但共享鄰居多的頁（build 端算好；達不到門檻就不顯示，不湊數）
+    const recs = (me.alsoSee || []).map(r => Object.assign({ shared: r.shared }, byId.get(r.id))).filter(r => r && r.name);
+    if (recs.length) {
+      host.insertAdjacentHTML('beforeend', `<div class="wiki__section-h" style="margin-top:18px">你可能也想看</div>
+<div class="alsosee">${recs.map(r => `<button type="button" class="alsosee__card" onclick="openWikiPage('${esc(r.id)}','${esc(r.pageType)}')">
+  <span class="alsosee__name">${esc(r.name)}</span>
+  <span class="alsosee__why">和本頁一起被 ${esc((r.shared || []).map(x => (byId.get(x) || {}).name || x).join('、'))} 引用，但兩頁互不相連</span>
+</button>`).join('')}</div>`);
+    }
   }
 
 })();

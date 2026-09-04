@@ -72,3 +72,34 @@ class GraphJsonContract(unittest.TestCase):
         ids = {n["id"] for n in g["nodes"]}
         bad = [e for e in g["edges"] if e["s"] not in ids or e["d"] not in ids]
         self.assertEqual(bad, [])
+
+
+class SimilarityAndGaps(unittest.TestCase):
+    """similar／gaps 的門檻契約：單一共享樞紐不算相似，封存頁不推不列。"""
+
+    def _toy(self):
+        import wiki_graph as g
+        pages = {"hub", "a", "b", "c", "d", "x", "y", "arch/old-archive"}
+        L = lambda s, d, z="正文": g.Link(s, d, 1, "", z)
+        links = [
+            # a 與 b 共享 c、d（不直接相連）→ 相似；x、y 只共享 hub → 不算
+            L("a", "c"), L("a", "d"), L("b", "c"), L("b", "d"), L("c", "hub"), L("d", "hub"),
+            L("x", "hub"), L("y", "hub"), L("hub", "a"), L("hub", "b"),
+            L("arch/old-archive", "c"), L("arch/old-archive", "d"),
+        ]
+        return g, pages, links
+
+    def test_共享兩個鄰居才算相似_封存頁不推(self):
+        g, pages, links = self._toy()
+        recs = [r[0] for r in g.similar_pages("a", pages, links, top=5, min_score=0.0)]
+        self.assertIn("b", recs)
+        self.assertNotIn("arch/old-archive", recs)
+        self.assertEqual([r[0] for r in g.similar_pages("x", pages, links, top=5, min_score=0.0)], [])
+
+    def test_gaps_排除已相連與封存(self):
+        g, pages, links = self._toy()
+        rows, _ = g.gap_pairs(pages, links, top=10, min_score=0.0)
+        pairs = {frozenset((a, b)) for a, b, *_ in rows}
+        self.assertIn(frozenset(("a", "b")), pairs)
+        self.assertFalse(any("archive" in p for pr in pairs for p in pr))
+        self.assertNotIn(frozenset(("a", "c")), pairs)   # 已相連
