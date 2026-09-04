@@ -31,11 +31,11 @@ window.WIKI_DATA = {
       "pill": "active",
       "firstSeen": "2026-05-17（CLAUDE.md 維護討論中被引用）",
       "startDate": "",
-      "lastUpdated": "2026-09-03",
+      "lastUpdated": "2026-09-04",
       "lastNewsUpdate": "2026-08-02",
       "updateFreq": "",
       "parent": "",
-      "summary": "Andrej Karpathy 為知名 AI 研究者，已於 2026-05-19 加入 Anthropic pre-training 團隊（本人於 X 宣布，TechCrunch、CNBC、Axios 同日獨立報導，2026-08-13 查證）。以 OpenAI 聯合創始人/研究總監及 Tesla AI/Autopil…",
+      "summary": "Andrej Karpathy 為知名 AI 研究者，已於 2026-05-19 加入 Anthropic pre-training 團隊（本人於 X 宣布，TechCrunch、CNBC、Axios 同日獨立報導，2026-08-13 查證），以 OpenAI 聯合創始人/研究總監及 Tesla AI/Autopil…",
       "latestHeadline": "Benzinga 報導引述 Karpathy 說法，以 Claude Opus 建構 3D《魔戒》（Lord of the Rings）場景為例，稱 AI 互動模式已跳脫單純提示詞問答（查證狀態見上方標記）",
       "readerDomains": [
         "👤 人物"
@@ -191,7 +191,7 @@ window.WIKI_DATA = {
       "pill": "active",
       "firstSeen": "2026-04-27",
       "startDate": "",
-      "lastUpdated": "2026-08-18",
+      "lastUpdated": "2026-09-04",
       "lastNewsUpdate": "2026-08-18",
       "updateFreq": "",
       "parent": "",
@@ -256,7 +256,7 @@ window.WIKI_DATA = {
       "updateFreq": "",
       "parent": "",
       "summary": "Anthropic 已將 **Claude Mythos 5**（見 mythos，目前僅限授權機構的安全模型）整合進 Claude Security，讓企業團隊取得前沿等級漏洞掃描能力，且**不需直接存取 Mythos 5 模型本身**——延續 2026-05-24 曾洩露的「Claude Security 將整合 …",
-      "latestHeadline": "⟨Q-01⟩ ❓ 待查證（標 2026-08-10｜查 Workflow tool、存取權限｜複 2026-09-16｜訊 2026-08-10）：Reddit 使用者反映 Claude Security 沒有 Workflow tool 的存取權限；同日 claude-code 查證官方文件確認 Workflow 功",
+      "latestHeadline": "⟨Q-01⟩ ❓ 待查證（標 2026-08-10｜查 Workflow tool、存取權限｜複 2026-09-16｜訊 2026-08-10）：Reddit 使用者反映 Claude Security 無 Workflow tool 存取權限；同日查證官方文件確認 Workflow 需於 `/config` 另行啟",
       "readerDomains": [
         "🛠️ 工具/功能"
       ]
@@ -335,8 +335,8 @@ window.WIKI_DATA = {
       "lastNewsUpdate": "2026-09-02",
       "updateFreq": "",
       "parent": "",
-      "summary": "**2026-09-01 最新（新一代旗艦發布）**：Anthropic 正式發布 Claude Fable 5.1（GA，向所有現有 Fable 5 用戶開放）與 Claude Mythos 5.1（沿用限信任機構存取模式，非全面公開）；兩者為**同一模型的不同防護層級**——Fable 5.1 面向一般用戶，Myt…",
-      "latestHeadline": "2026-09-01 最新（新一代旗艦發布）：Anthropic 正式發布 Claude Fable 5.1（GA，向所有現有 Fable 5 用戶開放）與 Claude Mythos 5.1（沿用限信任機構存取模式，非全面公開）；兩者為同一模型的不同防護層級——Fable 5.1 面向一般用戶，Mythos 5.1 ",
+      "summary": "**2026-09-01 最新（新一代旗艦發布）**：Anthropic 正式發布 Claude Fable 5.1（GA，向所有現有 Fable 5 用戶開放）與 Claude Mythos 5.1（沿用限信任機構存取模式，非全面公開）；兩者為**同一模型的不同防護層級**，官方稱其為「coding 與知識工作最先進…",
+      "latestHeadline": "2026-09-01 最新（新一代旗艦發布）：Anthropic 正式發布 Claude Fable 5.1（GA，向所有現有 Fable 5 用戶開放）與 Claude Mythos 5.1（沿用限信任機構存取模式，非全面公開）；兩者為同一模型的不同防護層級，官方稱其為「coding 與知識工作最先進的模型」，並新增",
       "readerDomains": [
         "🤖 模型"
       ]
@@ -531,7 +531,7 @@ window.WIKI_DATA = {
       "pill": "active",
       "firstSeen": "2026-05-28",
       "startDate": "",
-      "lastUpdated": "2026-08-29",
+      "lastUpdated": "2026-09-04",
       "lastNewsUpdate": "2026-08-27",
       "updateFreq": "",
       "parent": "",
@@ -671,11 +671,11 @@ window.WIKI_DATA = {
       "pill": "active",
       "firstSeen": "2026-07-13",
       "startDate": "",
-      "lastUpdated": "2026-09-03",
+      "lastUpdated": "2026-09-04",
       "lastNewsUpdate": "2026-09-02",
       "updateFreq": "",
       "parent": "",
-      "summary": "2026-07-13，Business Insider 報導 Anthropic 新聘 Monzo（英國數位銀行）共同創辦人 Tom Blomfield 加入公司，報導提及此事與 AI compute、Y Combinator 背景相關，惟未提供明確職稱或具體職掌說明。Blomfield 先前為 Y Combinato…",
+      "summary": "2026-07-13，Business Insider 報導 Anthropic 新聘 Monzo（英國數位銀行）共同創辦人 Tom Blomfield 加入公司，報導提及此事與 AI compute、Y Combinator 背景相關，惟未提供明確職稱或具體職掌說明；Blomfield 先前為 Y Combinato…",
       "latestHeadline": "Business Insider 報導 Blomfield 形容 Anthropic 新同事為「hyper-earnest group of meganerds」且「lack of ego」（來源：Business Insider）",
       "readerDomains": [
         "👤 人物"
@@ -708,16 +708,16 @@ window.WIKI_DATA = {
       "pageType": "topic",
       "name": "AI Agent 安全與可靠性 — 時序存檔",
       "entityType": "event",
-      "status": "monitoring",
+      "status": "resolved（封存頁）",
       "domain": "🏛️ 政策/安全",
-      "pill": "warn",
+      "pill": "gray",
       "firstSeen": "",
       "startDate": "2026-04-27",
-      "lastUpdated": "2026-08-10",
+      "lastUpdated": "2026-09-04",
       "lastNewsUpdate": "2026-06-27",
       "updateFreq": "",
       "parent": "topics/ai-agent-safety",
-      "summary": "ai-agent-safety 時序歷史存檔（2026-05-22 以前）+ 技術彙整存檔（2026-05-18 以前，2026-07-01 遷入）。最新時序與分析見 ai-agent-safety。",
+      "summary": "本頁為 ai-agent-safety 的原始條目封存，重點層見主頁。收：時序（2026-05-21 以前，及 2026-09-04 遷入的 2026-06）＋技術彙整（2026-05-18 以前，2026-07-01 遷入；2026-05-25～05-09 五條 2026-09-04 遷入）。",
       "latestHeadline": "",
       "readerDomains": [
         "🏛️ 政策/安全"
@@ -799,6 +799,26 @@ window.WIKI_DATA = {
       "parent": "",
       "summary": "本頁回答一個問題：**「Anthropic 說過要做的事，做了嗎？」** 官方每次承諾修復、承諾政策、或明確拒絕時，在此建檔追蹤後續；狀態有變化時會即時更新。已兌現或已死案的條目移入「已結案」。 **狀態符號：** 🔴 未兌現 / 🟡 部分兌現 / ✅ 已兌現 / ⛔ 明確拒絕（不會做）/ ❓ 待官方回應",
       "latestHeadline": "spyware 指控回應再度升級——Anthropic 首度公開反駁中國官方「後門」框架本身（🟡 已回應，爭議持續升級）",
+      "readerDomains": [
+        "🏛️ 政策/安全"
+      ]
+    },
+    {
+      "id": "anthropic-government-policy-archive",
+      "pageType": "topic",
+      "name": "Anthropic 與政府政策 — 原始條目封存",
+      "entityType": "",
+      "status": "resolved（封存頁）",
+      "domain": "🏛️ 政策/安全",
+      "pill": "gray",
+      "firstSeen": "",
+      "startDate": "2026-05-01",
+      "lastUpdated": "2026-09-04",
+      "lastNewsUpdate": "2026-06-30",
+      "updateFreq": "",
+      "parent": "topics/anthropic-government-policy",
+      "summary": "本頁為 anthropic-government-policy 的時序原始條目封存，一字未刪；重點層（時段總結、目前局勢、攻防紀錄）見主頁。",
+      "latestHeadline": "",
       "readerDomains": [
         "🏛️ 政策/安全"
       ]
@@ -1007,6 +1027,26 @@ window.WIKI_DATA = {
       ]
     },
     {
+      "id": "competitor-landscape-archive",
+      "pageType": "topic",
+      "name": "競品格局 — 原始條目封存",
+      "entityType": "",
+      "status": "resolved（封存頁）",
+      "domain": "💼 商業",
+      "pill": "gray",
+      "firstSeen": "",
+      "startDate": "2026-04-24",
+      "lastUpdated": "2026-09-04",
+      "lastNewsUpdate": "2026-05-23",
+      "updateFreq": "",
+      "parent": "topics/competitor-landscape",
+      "summary": "本頁為 competitor-landscape 的時序原始條目封存，一字未刪；重點層（時段總結、競品定價對照、主要競品追蹤）見主頁。",
+      "latestHeadline": "",
+      "readerDomains": [
+        "💼 商業"
+      ]
+    },
+    {
       "id": "competitor-landscape",
       "pageType": "topic",
       "name": "AI 編碼工具競品動態",
@@ -1036,7 +1076,7 @@ window.WIKI_DATA = {
       "pill": "active",
       "firstSeen": "",
       "startDate": "2026-05-01",
-      "lastUpdated": "2026-09-02",
+      "lastUpdated": "2026-09-04",
       "lastNewsUpdate": "2026-08-25",
       "updateFreq": "",
       "parent": "",
@@ -2226,7 +2266,7 @@ window.WIKI_DATA = {
       "pill": "active",
       "firstSeen": "",
       "startDate": "2026-06-04",
-      "lastUpdated": "2026-09-01",
+      "lastUpdated": "2026-09-04",
       "lastNewsUpdate": "2026-08-31",
       "updateFreq": "",
       "parent": "",

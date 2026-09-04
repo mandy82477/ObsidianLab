@@ -272,5 +272,11 @@
   "topicRadar": [],
   "sourceStatus": [],
   "preview": "Microsoft 宣布取消大量 Claude Code 授權，改推 GitHub Copilot CLI，數千名內部工程師受影響——這是迄今規模最大的企業轉出案例，值得追蹤後續市占影響。",
-  "sedimentedToday": []
+  "sedimentedToday": [
+    {
+      "id": "competitor-landscape-archive",
+      "name": "競品格局 — 原始條目封存",
+      "pageType": "topic"
+    }
+  ]
 }
