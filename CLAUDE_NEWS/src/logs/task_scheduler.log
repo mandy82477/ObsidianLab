@@ -505,3 +505,4 @@
 [Thu 2026/09/03 22:04:23.00 UTC] === Agent pipeline start (2026-09-03) ===
 [Thu 2026/09/03 22:04:23.00 UTC] Step 0b: digest already exists (news/2026-09-03.md) - ABORTED (22:00 UTC shift, idempotent no-op; 17:00 UTC shift already completed today's pipeline)
 [Thu 2026/09/03 22:04:23.00 UTC] === Pipeline complete (agent, 22:00 UTC shift, aborted at idempotency gate) ===
+[cloud daily-news-pipeline-cloud STARTED 2026-09-04T12:05:19Z]
