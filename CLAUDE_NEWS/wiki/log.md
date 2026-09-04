@@ -5581,4 +5581,16 @@ GH Actions 抓料排 10:23 UTC，到 14:45 UTC 仍未落地（+4.4 小時且持�
 - `topics/competitor-landscape`：663 → 582 行；新建 [[topics/competitor-landscape-archive]]
 - 引用回掃：三頁被搬時段的 `[[頁#條目標題]]` 錨點邊皆為 0，全庫改指 0 處；`build_web.py` 錨點 WARN 0 → 0、斷鏈 WARN 14 → 14（皆為既有 `[[news/*]]` 缺檔）
 - 兩個新 archive 子頁不入 index 目錄表，由 `gen_wiki_frontmatter.py` 投影進母頁列的「↳ 子故事：」（index 改動 2 列）；三頁只更新「最後更新」，未動「最後新聞更新」
+
+## 2026-09-04 書寫上限清理（存量，Sonnet 批次）
+
+**範圍：** `.claude/rules/wiki-reporter-shared.md`「書寫風格」硬上限（2026-09-03 立法）只管增量寫入，存量頁從未清過。先寫腳本掃全部 entities/topics 候選頁，量測四項：表格細節區條列 >200 字元（剝連結 URL 後）、頂部 callout 單則 >120 字元、`## 現況`/`## 摘要` 段落 >3 句、禁填充語命中（值得關注／引發廣泛討論／有待觀察等）；「進一步」作為修飾動詞的合法用法（如「進一步確認」「進一步鎖定」）逐一人工核對後判定非違規，不計入、不刪除。
+
+**排除：** 跳過本輪與另一 Opus agent 蒸餾工作重疊的頁面（`ai-agent-safety`、`ai-agent-safety-archive`、`anthropic-government-policy`、`competitor-landscape`、`community-tech-patterns`、`community-tech-patterns-archive`、`community-tech-discussions`）；跳過本週已由雙 Opus 精修過的十頁（`pricing`、`model-comparison`、`feature-radar`、`claude-code`、`coding-workflow-guide`、`community-tech-tools`、`anthropic-business`、`boris-cherny`、`managed-agents`，另 `ai-agent-safety` 重複）；跳過機器每日整頁覆寫的 `skill-interest-watch`（手改會被下次快照蓋掉）。
+
+**掃描與清理：** 44 頁候選中 26 頁有違規（初測，含「進一步」誤判前）；人工複核後真正需要動手的違規落在 22 頁，共 41 項（含 2 頁不屬本次範圍的新增 archive 頁），實際清理 15 頁：`entities/andrej-karpathy`、`claude-design`、`claude-security`、`fable-5`、`mythos`、`opus-4-8`、`opus-5`、`tom-blomfield`；`topics/ai-talent-flow`、`code-quality-decline`、`community-tech-timeline`、`enterprise-cost-management`、`enterprise-tool-tracker`、`official-community-gap`、`recursive-self-improvement`。違規總數（原始 44 頁候選池，扣除 2 個新 archive 頁乾擾）：56 → 33（細節超長 12→4、callout 超長 0→0、現況超句 9→2、填充語 35→27〔扣除誤判與 archive 頁後〕、派工句 0→0）。殘留的 4 項細節超長為懸置標記／歸因語句被拆分後仍受限於必填 metadata 本身佔用字元數（202–233 字元，超額 1–16%），判斷為 metadata 佔比高的邊際案例，不再進一步拆碎影響可讀性。`community-pattern-trends`、`model-task-leaderboard` 的「現況超句」為腳本誤判（問句內嵌 `？` 被誤判為句界），核對原文後判定非違規、未修改、未動日期。
+
+**驗證：** 每批 commit 後 `python scripts/run_tests.py` exit code 0；commit `196280f5`（第 1 批 8 頁）、`5e8906d0`（第 2 批 7 頁）。
+
+**過程觀察（意外發現，非本次任務缺陷）：** 執行期間 wiki/ 幾乎全部頁面顯示 git 未提交變動，複查後確認絕大多數僅為 `scripts/gen_wiki_frontmatter.py` 的衍生欄位（`days_since_news`／`inbound_links` 等）隨其他頁面異動自動重算，屬預期行為；`ai-agent-safety`／`anthropic-government-policy`／`competitor-landscape` 三頁的實質改動經確認為另一 Opus agent 執行中的月度蒸餾工作（見上方 2026-09-04 蒸餾條目），未與本次清理衝突。
 - `devpractice_diff.py mark` 已推進基準線——本輪為搬家 diff，不得被當成新料
