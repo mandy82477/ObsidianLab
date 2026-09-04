@@ -514,3 +514,6 @@
 [Fri 2026/09/04 17:04:37.00 UTC] ABORTED: gathered_items.json date=2026-09-03 items=33，非目標日期的新鮮資料
 [Fri 2026/09/04 17:04:37.00 UTC] === Pipeline aborted (cloud, 17:00 UTC shift) ===
 [cloud daily-news-pipeline-cloud STARTED 2026-09-04T22:04:10Z]
+[Fri 2026/09/04 22:05:43.00 UTC] Step 1a replay FAILED - src/gathered_archive/2026-09-04.json 不存在（上游抓料延遲）
+[Fri 2026/09/04 22:05:43.00 UTC] ABORTED: gathered_items.json date=2026-09-03 items=33，非目標日期的新鮮資料
+[Fri 2026/09/04 22:05:43.00 UTC] === Pipeline aborted (cloud, 22:00 UTC shift) ===
