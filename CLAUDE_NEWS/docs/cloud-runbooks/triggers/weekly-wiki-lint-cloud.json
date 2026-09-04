@@ -28,7 +28,7 @@
           "Grep",
           "Task"
         ],
-        "model": "claude-sonnet-5",
+        "model": "claude-opus-5",
         "sources": [
           {
             "git_repository": {
