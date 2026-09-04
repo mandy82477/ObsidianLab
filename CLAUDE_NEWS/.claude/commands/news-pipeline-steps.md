@@ -34,8 +34,7 @@ TARGET_DATE 由 Agent prompt 傳入。
 | 哪些步驟不適用該環境（雲端跳過 Step 1a，因抓料由 GitHub Actions 完成） | 步驟本身的做法與判準 |
 | 無人值守政策（需使用者確認的動作改寫成待辦） | 需要確認的是哪些動作 |
 
-> 判斷標準：這條規則換到另一個環境還成立嗎？成立 → 寫在本檔。只在特定環境成立 → 才進 runbook。
-> 反例（2026-07-25 曾犯）：冪等閘、push 重試最初只寫進雲端 runbook，等於本機跑同一條 pipeline 卻少了兩道保護。
+> 判斷標準：這條規則換到另一個環境還成立嗎？成立 → 寫在本檔。只在特定環境成立 → 才進 runbook。（反例見本檔「沿革」2026-07-25 A）
 
 ---
 
@@ -80,7 +79,7 @@ PYTHON -m news_aggregator.main --gather-only [--date TARGET_DATE]
 PYTHON REPO_ROOT\scripts\archive_gathered.py
 ```
 
-把原料存一份到 `src/gathered_archive/<date>.json`（保留 14 天）。`gathered_items.json` 沒有按日分檔、每次抓料直接覆寫，沒有這份副本的話，**日報沒產出的那天、已經抓到手的原料會在隔天被蓋掉，之後補跑只能回頭重抓，而來源視窗早已滾過去——那天就永久漏了**。GitHub Actions 的 `daily-gather` 呼叫的是同一支腳本，兩邊行為一致。
+把原料存一份到 `src/gathered_archive/<date>.json`（保留 14 天）。`gathered_items.json` 沒有按日分檔、每次抓料直接覆寫，沒有這份副本的話，**日報沒產出的那天、已抓到手的原料會在隔天被蓋掉，而來源視窗早已滾過去——那天就永久漏了**。GitHub Actions 的 `daily-gather` 呼叫同一支腳本，兩邊行為一致。
 
 ---
 
@@ -246,7 +245,7 @@ PYTHON REPO_ROOT\scripts\check_gather_health.py
 - 標題行必須是 `**[標題](url)**`（方括號連結），**不可**寫成 `- **標題**：內文` 的 bullet 形式
 - 來源行必須是 `` `來源` · 時間 `` 獨立一行
 - 違反此格式時 web reader 會解析出空區塊，讀者只看得到今日聚焦
-- **多來源條目要把來源全部列出 `[加入: 2026-08-16]`**：`gathered_items.json` 的 `contributors` 非空時（dedup 併掉的其他來源），來源欄寫成 `` `勝出來源 ＋其他來源、其他來源` ``，例如 `` `Hacker News ＋Anthropic Blog、Google News / PCMag` ``。只寫勝出來源會讓其餘來源在下游完全消失——記者依日報來源欄做歸因、`data/source_attribution.jsonl` 再餵 `scripts/source_scorecard.py` 的 wiki 率，於是低流量官方來源（幾乎必定輸給 HN／Google News）長期看起來零貢獻（2026-08-15：Anthropic Blog 供了當日最大條的浮水印報導，掛名全歸 HN）。解析器不受影響——`SOURCE_RE` 對反引號內是自由文字
+- **多來源條目要把來源全部列出 `[加入: 2026-08-16]`**：`gathered_items.json` 的 `contributors` 非空時（dedup 併掉的其他來源），來源欄寫成 `` `勝出來源 ＋其他來源、其他來源` ``，例如 `` `Hacker News ＋Anthropic Blog、Google News / PCMag` ``。只寫勝出來源會讓低流量官方來源在下游的來源記分卡上長期顯示零貢獻（教訓見本檔「沿革」2026-08-15）。解析器不受影響——`SOURCE_RE` 對反引號內是自由文字
 - `gathered_items.json` 每條含 `score_unit` 欄位（分＝HN points、留言＝評論數），選材比較熱度時注意單位不同不可直接互比
 - 跨來源比較熱度時的粗略等價量級：HN 30 分 ≈ Reddit 50 讚 ≈ 10 則留言 ≈ dev.to 20 讚；source_count ≥ 2（跨來源報導）視為高於任何單來源分數的訊號
 - `source_count > 1` 表示多個獨立來源報導同一事件，選材時視為重要度加權訊號
@@ -343,7 +342,7 @@ PYTHON -m news_aggregator.main --confirm-digest --date TARGET_DATE
   git -C REPO_ROOT commit -m "data: confirm emitted-cache TARGET_DATE"
   ```
   （無變更則跳過。**不要單獨 push**，一律留給 Step 5。這樣「日報上站」與「快取確認」同批推送，要嘛一起成功、要嘛一起回到未確認狀態，不會出現「確認了但日報沒上站」的不一致）
-- 漏做的實際後果：2026-07-14～07-24 雲端自動化期間，每日確認率幾乎為 0（僅本機手動執行的 07-19、07-22 為 100%），兩階段確認機制形同空轉，跨日去重完全靠 `seen_urls.json` 獨撐
+- 漏做的實際後果見本檔「沿革」2026-07-24
 
 ---
 
@@ -384,7 +383,7 @@ PYTHON REPO_ROOT\scripts\gate_web_build.py
 
 ### gate 擋下時的修復迴圈 `[加入: 2026-08-26]`
 
-你是 LLM agent，gate 印出的失敗訊息你讀得懂也多半修得好——擋下就放棄等於把「讀者今天看不到網站」當成對一個格式瑕疵的懲罰（2026-08-26 教訓：wiki 懸置探針含千分位逗號 `$1,125` 被切成 `$1` 而 FAIL，日報與 wiki 全部正常，網站卻停更一天，瑕疵本身也沒人修）。
+你是 LLM agent，gate 印出的失敗訊息你讀得懂也多半修得好——擋下就放棄等於把「讀者今天看不到網站」當成對一個格式瑕疵的懲罰。（教訓見本檔「沿革」2026-08-26）
 
 **流程（至多修 2 輪，每輪：讀失敗 → 修 → 重跑 gate）：**
 
@@ -407,7 +406,7 @@ PYTHON REPO_ROOT\scripts\gate_web_build.py
 
 Step 6 的 log 一律抄腳本輸出的**最後一行摘要**（例如 `測試失敗 3 案，全屬已登記缺口（feedparser-sgmllib）- web build 放行`），不要自己改寫措辭——log 是日後判斷「哪天為什麼沒上站」的唯一證據。
 
-> **為何是 gate 而不是直接看測試結果 `[加入: 2026-08-01]`：** 舊規則是「整包測試過才建 web」。2026-07-31 雲端日更因 3 個抓料端的 `ModuleNotFoundError` 判定失敗而跳過 build，網站整天停在前一天——但日報與 wiki 都已正常產出並 commit，那 3 個案例跟 `build_web.py` 的輸入毫無關係。過緊的 gate 用「正確性」的名義製造「可用性」的損失。放寬的邊界很嚴格：**只有登記在 `docs/known-test-gaps.json`、且錯誤訊息也對得上的失敗才放行，出現任何一個沒登記的失敗就照舊全擋**；允許清單空的時候，行為等同舊規則。
+> **為何是 gate 而不是直接看測試結果 `[加入: 2026-08-01]`：** 過緊的 gate 用「正確性」的名義製造「可用性」的損失。放寬的邊界很嚴格：**只有登記在 `docs/known-test-gaps.json`、且錯誤訊息也對得上的失敗才放行，出現任何一個沒登記的失敗就照舊全擋**；允許清單空的時候，行為等同舊規則。（教訓見本檔「沿革」2026-07-31）
 
 - 放行後依序執行（frontmatter 必須先於 build_web，兩者都吃當日已寫完的 wiki）：
 
@@ -459,7 +458,7 @@ git -C REPO_ROOT push || {
 - **允許自動解的衝突只有兩類**：
   1. `src/news_aggregator/emitted_items.json`——此檔有兩個寫者（GitHub Actions 加入未確認條目、pipeline 翻確認欄位）。解法固定：**放棄我方的 confirm commit、保留遠端版本**，因為日報上站遠比確認欄位重要，未確認的條目只會被重新提供一次，是良性退化。處理後標「emitted-cache 確認本次放棄，項目將於次日重新提供」
   2. **append-only 檔的 append-append 衝突 `[加入: 2026-09-03]`**——`wiki/log.md`、`data/source_attribution.jsonl` 等只會在檔尾各自新增的檔（白名單住 `scripts/resolve_append_only.py` 的 `APPEND_ONLY`，不在此重抄）。解法固定：**跑 `python scripts/resolve_append_only.py`**，它以 `git merge-file --union` 三方合併保留兩側新增（順序 base→ours→theirs），只動白名單內的檔；有任何白名單外的衝突它會 exit 1 且不動任何檔——此時走下一條 abort。成功後 `git -c core.editor=true rebase --continue` 再 push。
-     > 起因：2026-09-02 雲端 17:00 UTC 班完整跑完日報＋wiki＋web，push 撞上本機同時間的 commit，衝突檔只有 `wiki/log.md`（兩側各自 append 段落，無語意衝突），依舊規則放棄整輪，22:00 班重做一遍。沒有判斷成分的衝突不該逼整班重跑。
+     > 沒有判斷成分的衝突不該逼整班重跑。（起因見本檔「沿革」2026-09-02）
 - **其他任何檔案的衝突 → 不自行解**：`git rebase --abort`，Step 6 log 記 `Push FAILED - rebase conflict`，並列出衝突檔案清單
 - 兩次都失敗 → Step 6 log 記 `Push FAILED`，完成摘要明確標示**本次產出全部未上站**，不可寫成完成
 
@@ -537,3 +536,21 @@ REPO_ROOT\src\logs\task_scheduler.log
 - **Step 6 log 寫入必須執行**，即使前面步驟失敗也不能跳過
 - **Phase A、Phase C 兩個背景 agent 皆不可 spawn 子 agent**；唯一會呼叫 Agent tool 派工的 Step 2，已移出本檔案、改由呼叫 session 親自執行
 - 繁體中文輸出
+
+---
+
+## 沿革（教訓存檔）`[加入: 2026-09-04]`
+
+本節是**歷史敘事，不是待執行步驟**——步驟已在上方，執行 pipeline 時不必讀本節。存放於此的原因：步驟本身已能獨立執行，敘事只在有人想問「為什麼有這條」時才需要。考古鏈為 `[加入: 日期]` → 本節 → `wiki/log.md` 同日 Query 條目。
+
+**2026-07-25 A**（本機／雲端行為一致）：冪等閘、push 重試最初只寫進雲端 runbook，等於本機跑同一條 pipeline 卻少了兩道保護。
+
+**2026-07-24**（Step 1c 漏做的後果）：2026-07-14～07-24 雲端自動化期間，每日確認率幾乎為 0（僅本機手動執行的 07-19、07-22 為 100%），兩階段確認機制形同空轉，跨日去重完全靠 `seen_urls.json` 獨撐。
+
+**2026-07-31**（web build gate 的由來）：舊規則是「整包測試過才建 web」。當日雲端日更因 3 個抓料端的 `ModuleNotFoundError` 判定失敗而跳過 build，網站整天停在前一天——但日報與 wiki 都已正常產出並 commit，那 3 個案例跟 `build_web.py` 的輸入毫無關係。
+
+**2026-08-15**（多來源條目的來源欄）：記者依日報來源欄做歸因、`data/source_attribution.jsonl` 再餵 `scripts/source_scorecard.py` 的 wiki 率，於是低流量官方來源（幾乎必定輸給 HN／Google News）長期看起來零貢獻——當日 Anthropic Blog 供了最大條的浮水印報導，掛名全歸 HN。
+
+**2026-08-26**（gate 擋下時的修復迴圈）：wiki 懸置探針含千分位逗號 `$1,125` 被切成 `$1` 而 FAIL，日報與 wiki 全部正常，網站卻停更一天，瑕疵本身也沒人修。
+
+**2026-09-02**（append-only 衝突自動解）：雲端 17:00 UTC 班完整跑完日報＋wiki＋web，push 撞上本機同時間的 commit，衝突檔只有 `wiki/log.md`（兩側各自 append 段落，無語意衝突），依舊規則放棄整輪，22:00 班重做一遍。
