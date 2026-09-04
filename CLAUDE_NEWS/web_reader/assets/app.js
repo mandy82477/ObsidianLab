@@ -1948,6 +1948,28 @@ ${kidsHtml}
     return true;
   }
 
+
+  // 關聯領域：鄰居（正文邊）按領域計數，畫成一列小條——回答「這個人／這頁跟哪些領域有關」
+  function mapDomainMix(nodeId, edges, byId, excludeSelfDomain) {
+    const cnt = new Map();
+    edges.forEach(e => {
+      const a = e.source?.id ?? e.source ?? e.s, b = e.target?.id ?? e.target ?? e.d;
+      if (a !== nodeId && b !== nodeId) return;
+      const other = byId.get(a === nodeId ? b : a);
+      if (!other || !other.domain) return;
+      cnt.set(other.domain, (cnt.get(other.domain) || 0) + 1);
+    });
+    const rows = [...cnt.entries()].sort((x, y) => y[1] - x[1]);
+    const total = rows.reduce((s, r) => s + r[1], 0);
+    if (!total) return '';
+    return `<div class="map__mix" title="鄰居頁按領域計數">${rows.map(([d, c]) =>
+      `<span class="map__mix-item"><i class="map__mix-dot" style="background:${mapCss(MAP_DOMAIN_TOKEN[d] || '--ink-2')}"></i>${esc(d.replace(/^[^\s]+\s/, ''))} <b>${Math.round(c / total * 100)}%</b></span>`).join('')}</div>`;
+  }
+  function mapLegendHtml() {
+    return Object.entries(MAP_DOMAIN_TOKEN).filter(([d]) => d).map(([d, tok]) =>
+      `<span class="map__legend-item"><i class="map__mix-dot" style="background:${mapCss(tok)}"></i>${esc(d.replace(/^[^\s]+\s/, ''))}</span>`).join('');
+  }
+
   async function renderMap() {
     const canvas = $('#map-canvas');
     if (!canvas) return;
@@ -2049,12 +2071,13 @@ ${kidsHtml}
       labelG.selectAll('text').attr('x', n => n.x).attr('y', n => n.y);
     });
     mapRestyle();
+    const legend = $('#map-legend'); if (legend) legend.innerHTML = mapLegendHtml();
 
     // 從日報／詳頁帶進來的請求（在圖建好之前就被叫到）
     if (mapState.pendingSelect) { const req = mapState.pendingSelect; mapState.pendingSelect = null; setTimeout(() => mapApplyRequest(req), 900); }
 
     // 主題切換時重取 token 色
-    new MutationObserver(() => mapRestyle()).observe(document.documentElement, { attributes: true, attributeFilter: ['data-theme'] });
+    new MutationObserver(() => { mapRestyle(); const lg = $('#map-legend'); if (lg) lg.innerHTML = mapLegendHtml(); }).observe(document.documentElement, { attributes: true, attributeFilter: ['data-theme'] });
   }
 
   function mapUpdateSub() {
@@ -2181,6 +2204,7 @@ ${kidsHtml}
     const outbound = s.edges.filter(e => e.source.id === n.id).map(e => ({ n: e.target, c: s.bodyOnly ? e.body : e.n })).sort((a, b) => b.c - a.c);
     const li = arr => arr.length ? arr.slice(0, 12).map(x => `<li><button class="map__panel-link" data-map-go="${esc(x.n.id)}">${esc(x.n.name)}</button><span class="map__panel-count">${x.c}</span></li>`).join('') + (arr.length > 12 ? `<li class="map__panel-more">…還有 ${arr.length - 12} 頁</li>` : '') : '<li class="map__panel-more">—</li>';
     const age = n.daysSinceNews == null ? '無新聞日期' : n.daysSinceNews === 0 ? '今天有新聞' : `${n.daysSinceNews} 天前有新聞`;
+    const mixHtml = mapDomainMix(n.id, s.edges, s.byId);
     const topSrc = Object.entries(n.sources || {}).sort((a, b) => b[1] - a[1]).slice(0, 3)
       .map(([k, v]) => `${esc((s.sourcesMeta.find(m => m.slug === k) || {}).name || k)} ${v}`).join(' · ');
     panel.innerHTML = `
@@ -2189,6 +2213,7 @@ ${kidsHtml}
       <div class="map__panel-title">${esc(n.name)}</div>
       <div class="map__panel-meta">${age} · 被引用 ${n.inBody} 頁 · ${n.lines} 行</div>
       ${topSrc ? `<div class="map__panel-meta">餵養來源：${topSrc}</div>` : ''}
+      ${mixHtml ? `<div class="map__panel-h">關聯領域</div>${mixHtml}` : ''}
       <div class="map__panel-actions">
         ${mapOpenable(n) ? `<button class="map__panel-open" data-map-open="${esc(n.id)}" data-map-type="${esc(n.pageType)}">開啟頁面 →</button>` : ''}
         <button class="map__panel-ghost" data-map-path="1">連到另一頁…</button>
@@ -2292,6 +2317,7 @@ ${kidsHtml}
     const links = edges.map(e => ({ source: e.s, target: e.d, n: e.body || e.n || 1 }));
     const W = Math.min(host.clientWidth || 640, 760), H = nbIds.length > 14 ? 320 : 240;
     host.innerHTML = `<div class="wiki__section-h">連結鄰居（${nbIds.length}）<button class="map__link-btn" onclick="openMapAt('${esc(id)}')">在星圖上看 →</button></div>`;
+    host.insertAdjacentHTML('beforeend', mapDomainMix(id, edges, byId));
     const svg = d3.select(host).append('svg').attr('width', W).attr('height', H).attr('viewBox', `0 0 ${W} ${H}`).attr('class', 'minimap__svg');
     const link = svg.append('g').selectAll('line').data(links).join('line').attr('stroke', mapCss('--ink-4')).attr('stroke-opacity', 0.5).attr('stroke-width', l => 0.6 + Math.sqrt(l.n) * 0.5);
     const node = svg.append('g').selectAll('circle').data(nodes).join('circle')
