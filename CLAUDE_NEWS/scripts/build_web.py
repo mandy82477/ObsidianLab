@@ -1183,6 +1183,44 @@ def build():
         with (OUT_WEEKLY_DIR / f"{week_id}.json").open("w", encoding="utf-8") as fp:
             json.dump(w, fp, ensure_ascii=False, indent=2)
 
+    # ── Write slim data.js (no markdown, no DIGEST_ALL) ───────────────────────
+    def slim(item):
+        return {k: v for k, v in item.items() if k != "markdown"}
+
+    def coding_pages():
+        """從 wiki/index.md「## 💻 開發實務入口」表萃取頁面 id。
+
+        「💻 開發實務」chip 是跨領域集合（coding 頁散在 🛠️ 與 🌐 兩領域），
+        成員名單的單一來源就是 index.md 的入口路由表——入口表改，網站分頁跟著改。
+        """
+        try:
+            text = (WIKI_DIR / "index.md").read_text(encoding="utf-8")
+        except OSError:
+            return []
+        m = re.search(r"^## 💻[^\n]*\n(.*?)(?=^## |\Z)", text, re.M | re.S)
+        if not m:
+            return []
+        ids = []
+        # 只取路由表格列的連結：導言散文裡的「產品動態住別頁」出口連結（feature-radar、
+        # claude-code）不是 tab 成員——2026-09-03 使用者裁決 tab 只留開發實務強相關
+        table_text = "\n".join(l for l in m.group(1).splitlines() if l.lstrip().startswith("|"))
+        for target in re.findall(r"\[\[([^\]|#]+)", table_text):
+            base = target.strip().split("/")[-1]
+            if base and base not in ids:
+                ids.append(base)
+        return ids
+
+    # 讀者分類（2026-09-03 使用者裁決）：wiki 標頭的「領域」是記者認領欄（誰維護），網站不需要
+    # 知道記者是誰——讀者看到的分類是 readerDomains（多標籤）：領域值照放，index「💻 開發實務入口」
+    # 表列出的頁再加一枚 💻 開發實務（不獨佔——模型選型頁在 🤖 與 💻 下都找得到；同日第二次裁決）。
+    _coding_ids = coding_pages()
+    _coding_set = set(_coding_ids)
+    for _it in entities + topics:
+        _tags = [_it["domain"]] if _it["domain"] else []
+        if _it["id"] in _coding_set:
+            _tags.append("💻 開發實務")
+        _it["readerDomains"] = _tags
+
     # ── 連結地圖 graph.json（網站「地圖」頁；資料源 scripts/wiki_graph.py）────────
     # 節點＝wiki 頁、邊＝wikilink（依 zone 分 正文／樣板／階層）。讀者視角：頁名、領域、
     # 距上次新聞天數、被引用數；不放維運診斷字眼（孤兒／盲區那些留在 wiki_graph CLI）。
@@ -1233,44 +1271,6 @@ def build():
         print(f"    -> {_out_graph} ({len(_nodes)} nodes, {len(_graph['edges'])} edges)")
     except Exception as e:  # 地圖失敗不阻擋 build，前端優雅缺席
         print(f"WARN: graph.json skipped ({e})")
-
-    # ── Write slim data.js (no markdown, no DIGEST_ALL) ───────────────────────
-    def slim(item):
-        return {k: v for k, v in item.items() if k != "markdown"}
-
-    def coding_pages():
-        """從 wiki/index.md「## 💻 開發實務入口」表萃取頁面 id。
-
-        「💻 開發實務」chip 是跨領域集合（coding 頁散在 🛠️ 與 🌐 兩領域），
-        成員名單的單一來源就是 index.md 的入口路由表——入口表改，網站分頁跟著改。
-        """
-        try:
-            text = (WIKI_DIR / "index.md").read_text(encoding="utf-8")
-        except OSError:
-            return []
-        m = re.search(r"^## 💻[^\n]*\n(.*?)(?=^## |\Z)", text, re.M | re.S)
-        if not m:
-            return []
-        ids = []
-        # 只取路由表格列的連結：導言散文裡的「產品動態住別頁」出口連結（feature-radar、
-        # claude-code）不是 tab 成員——2026-09-03 使用者裁決 tab 只留開發實務強相關
-        table_text = "\n".join(l for l in m.group(1).splitlines() if l.lstrip().startswith("|"))
-        for target in re.findall(r"\[\[([^\]|#]+)", table_text):
-            base = target.strip().split("/")[-1]
-            if base and base not in ids:
-                ids.append(base)
-        return ids
-
-    # 讀者分類（2026-09-03 使用者裁決）：wiki 標頭的「領域」是記者認領欄（誰維護），網站不需要
-    # 知道記者是誰——讀者看到的分類是 readerDomains（多標籤）：領域值照放，index「💻 開發實務入口」
-    # 表列出的頁再加一枚 💻 開發實務（不獨佔——模型選型頁在 🤖 與 💻 下都找得到；同日第二次裁決）。
-    _coding_ids = coding_pages()
-    _coding_set = set(_coding_ids)
-    for _it in entities + topics:
-        _tags = [_it["domain"]] if _it["domain"] else []
-        if _it["id"] in _coding_set:
-            _tags.append("💻 開發實務")
-        _it["readerDomains"] = _tags
 
     wiki_data = {
         "entities":    [slim(e) for e in entities],

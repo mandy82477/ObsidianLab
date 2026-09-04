@@ -45,3 +45,30 @@ class WikiGraphSmoke(unittest.TestCase):
 
 if __name__ == "__main__":
     unittest.main()
+
+
+class GraphJsonContract(unittest.TestCase):
+    """網站地圖的資料契約（web_reader/data/graph.json，build_web.py 產出）。"""
+
+    def _graph(self):
+        import json
+        from pathlib import Path
+        p = Path(__file__).resolve().parents[2] / "web_reader" / "data" / "graph.json"
+        if not p.exists():
+            self.skipTest("graph.json 尚未建置")
+        return json.loads(p.read_text(encoding="utf-8"))
+
+    def test_節點標籤非空_否則領域chip全淡(self):
+        """2026-09-04 實例：產圖區塊排在 readerDomains 計算之前，tags 全空 → 任何領域 chip 點下去整張圖變淡。"""
+        g = self._graph()
+        pages = [n for n in g["nodes"] if n["pageType"] in ("entity", "topic")]
+        self.assertGreater(len(pages), 40)
+        untagged = [n["id"] for n in pages if not n.get("tags")]
+        self.assertEqual(untagged, [], f"無標籤節點：{untagged[:5]}")
+        self.assertTrue(any("💻 開發實務" in n["tags"] for n in pages), "開發實務多標籤未投影進地圖")
+
+    def test_邊端點皆為節點(self):
+        g = self._graph()
+        ids = {n["id"] for n in g["nodes"]}
+        bad = [e for e in g["edges"] if e["s"] not in ids or e["d"] not in ids]
+        self.assertEqual(bad, [])
