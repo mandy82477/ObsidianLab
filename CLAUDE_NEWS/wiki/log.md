@@ -5516,3 +5516,13 @@ GH Actions 抓料排 10:23 UTC，到 14:45 UTC 仍未落地（+4.4 小時且持�
 5. **真人入口**：GitHub Issue 範本 `reader-feedback` ＋網站頁尾「這段看不懂／這條錯了？回報」；`/wiki-weekly-review` 1b 步以 `gh issue list` 消費進 reader-notes（雲端無 gh 時明寫「無法讀取」不得寫「無回饋」）。
 6. **規則版本戳**：步驟 8 記 `git log -1 -- .claude/`，跨週趨勢才可比。
 測試 509 綠（新增 test_lint_health 7 案例），check_rules 77 組綠。
+
+---
+
+## 2026-09-04 Query：「artifact 那個放到網站上某一頁怎麼樣」→ 連結星圖上站成「地圖」tab
+
+**點出什麼：** 星圖原定位「不進網站的快照」（reader-notes 09-03），但它是全站唯一不用讀字就看得出結構的入口；使用者確認手機版可顯示後裁決上站。
+
+**處置：** `scripts/build_web.py` 建置時從 `scripts/wiki_graph.py` 產 `web_reader/data/graph.json`（63 節點／473 邊，邊分正文／樣板／階層）；前端新增 `#view-map`：d3 首次開啟才自 cdnjs 載入，領域篩選（讀者分類含 💻 開發實務）、大小三視角（被引用／頁長／距上次新聞）、正文引用開關、搜尋、點選看入出邊並可開頁、主題切換重取色。**設計例外：**六領域色取既有語意 token（ochre／info／success／warn／danger／ink），比照「emoji 只允許在資料值」——顏色在此是資料值不是 UI 強調，待使用者裁決是否改單色。手機：標籤只標樞紐、面板改落版下方、無橫向捲動（375px 實測）。維運診斷字眼（孤兒／盲區）不上站，留 CLI。
+
+**順手：** `check_wiki_freshness` 漏更 2 頁（claude-code、community-tech-patterns 09-03 有歸因落地但欄位仍 09-02，雲端班次遺留）已補為 09-03。
