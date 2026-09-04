@@ -354,7 +354,14 @@
 <ul class="focus-list">`);
       d.focus.forEach(f => {
         const cls = focusTagCls(f.tag);
-        parts.push(`<li class="focus-item"><span class="focus-tag focus-tag--${cls}">${esc(f.tag)}</span><span>${esc(f.text)}</span></li>`);
+        // ref_urls 由 build_web 從行內連結抽出（2026-09-04 格式）；聚焦條目在網站上
+        // 原本一個連結都沒有，改版理由正是「等於聚焦沒有連結」——此處補回可點來源。
+        const refUrls = f.ref_urls || [];
+        const refs = refUrls.length
+          ? `<span class="focus-item__refs">${refUrls.map((u, i) =>
+              `<a href="${esc(u)}" target="_blank" rel="noopener">來源${refUrls.length > 1 ? ' ' + (i + 1) : ''}</a>`).join('')}</span>`
+          : '';
+        parts.push(`<li class="focus-item"><span class="focus-tag focus-tag--${cls}">${esc(f.tag)}</span><span>${esc(f.text)}</span>${refs}</li>`);
       });
       parts.push('</ul>');
       // 常駐導流：重度使用者的核心問題「該不該升版」答案在熱度雷達頁，

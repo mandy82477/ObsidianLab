@@ -2290,7 +2290,7 @@ window.WIKI_DATA = {
       "date": "2026-09-03",
       "articleCount": 33,
       "preview": "Anthropic 狀態頁通報 Mythos/Fable 5.1、Mythos/Fable 5、Opus 5、Opus 4.8、Opus 4.6 多款模型錯誤率升高，官方已鎖定原因但截至資料蒐集時尚未標記為已解決；同一時段 Reddit r/ClaudeCode 湧入多則服務中斷回報，兩者時間點吻合。",
-      "topCount": 5
+      "topCount": 3
     },
     {
       "date": "2026-09-02",

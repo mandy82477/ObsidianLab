@@ -156,7 +156,7 @@ PYTHON REPO_ROOT\scripts\check_gather_health.py
 
 **每一條聚焦項目，凡有對應的參考新聞，在句末用行內連結引用** `[改版: 2026-09-04]`：格式 `（[來源名](url)）`，多則用頓號並列 `（[HN](url1)、[官方](url2)）`。來源名寫讀者認得的短名（媒體名／HN／官方／issue 編號），**不寫裸 URL、不用 `[N]` 腳注**——腳注要讀者跳到檔尾再跳回來，5 分鐘讀者不會做這個動作，等於聚焦沒有連結（2026-09-04 冷讀者實測；舊期的 `[N]` 檔尾清單格式已退場，不回溯改舊檔）。
 - 若確實找不到對應新聞（例如是推論或背景說明）→ 可省略連結
-- **此格式為機械契約**：`scripts/build_web.py` 的 `FOCUS_INLINE_LINK_RE`／`FOCUS_INLINE_GROUP_RE` 把連結抽成 `ref_urls`（餵各區塊聚焦 badge 與典藏頁 preview）並從顯示文字移除；改此格式必須同步該解析器（回歸測試 `src/tests/test_focus_inline_links.py` 會紅）
+- **此格式為機械契約**：`scripts/build_web.py` 的 `FOCUS_INLINE_LINK_RE`／`FOCUS_INLINE_GROUP_RE` 把連結抽成 `ref_urls`（餵各區塊聚焦 badge 與典藏頁 preview）並從顯示文字移除；改此格式必須同步該解析器與 `web_reader/assets/app.js` 的 focus 渲染（回歸測試 `src/tests/test_focus_inline_links.py` 會紅）
 
 範例：
 - **[重大事件]** Claude 發布 Sonnet 4，context window 翻倍。（[官方](https://example.com/announcement)）
@@ -247,7 +247,7 @@ grep -cE '^\*\*\[.+\]\(https?://' news/TARGET_DATE.md
 
 3a-2. **內規外洩自檢（強制）`[加入: 2026-09-04]`**：
 ```
-grep -nE '選材門檻|准入|冷讀者|讀者契約|機械契約|\[改版:|\[加入:|存活率|source_count' news/TARGET_DATE.md
+grep -nE '選材門檻|准入|冷讀者|讀者契約|機械契約|本區|\[改版:|\[加入:|存活率|source_count' news/TARGET_DATE.md
 ```
 （**應為零命中**——任何命中都代表規格文字被印進讀者版；2026-07-25 與 09-03 都發生過。刪除該段再檢）
 

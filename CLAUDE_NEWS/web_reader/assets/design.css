@@ -2526,3 +2526,11 @@ code {
 }
 .trans__note a { color: var(--ink-2); text-decoration: underline; text-underline-offset: 2px; }
 .trans__note a:hover { color: var(--ochre-9); }
+
+/* 聚焦條目行內來源連結（2026-09-04 行內連結格式；hairline、無填色，見 web-reader-design.md） */
+.focus-item__refs { margin-left: 6px; white-space: nowrap; }
+.focus-item__refs a {
+  font-family: var(--font-sans); font-size: 11px; color: var(--ink-3);
+  border-bottom: 1px solid var(--border-2); text-decoration: none; margin-left: 6px;
+}
+.focus-item__refs a:hover { color: var(--ochre-9); border-bottom-color: var(--ochre-5); }

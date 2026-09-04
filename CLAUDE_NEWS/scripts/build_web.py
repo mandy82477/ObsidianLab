@@ -873,9 +873,9 @@ FOCUS_NUM_RE = re.compile(r"\[(\d+)\]")
 # `（[來源名](url)）`，多則頓號並列。抽 URL 進 ref_urls（餵 focus badge 與典藏頁
 # 標籤），顯示文字把整個括號連結群移除——app.js 的 focus text 是純轉義不渲染
 # markdown，不移除會印出字面 `（[HN](https://…)）`。
-FOCUS_INLINE_LINK_RE = re.compile(r"\[([^\]]+)\]\((https?://[^\s)]+)\)")
+FOCUS_INLINE_LINK_RE = re.compile(r"\[([^\]]+)\]\((https?://(?:[^\s()]|\([^\s()]*\))+)\)")
 FOCUS_INLINE_GROUP_RE = re.compile(
-    r"[（(]\s*(?:\[[^\]]+\]\(https?://[^\s)]+\)\s*[、,]?\s*)+[）)]"
+    r"[（(]\s*(?:\[[^\]]+\]\(https?://(?:[^\s()]|\([^\s()]*\))+\)\s*[、,，]?\s*)+[）)]"
 )
 FOCUS_REF_LIST_RE = re.compile(
     r"今日聚焦參考連結[：:]\**\s*\n((?:\d+\.\s+\S+\s*\n?)+)"
@@ -994,6 +994,7 @@ def parse_digest(f: Path) -> dict:
                     text = FOCUS_INLINE_LINK_RE.sub(r"\1", text)  # 群外落單連結：留來源名
                     text = FOCUS_REF_RE.sub("", text)
                     text = FOCUS_NUM_RE.sub("", text).strip()
+                    text = re.sub(r"\s+([。．.，,])", r"", text)  # 半形括號群移除後的收尾空白
                     result["focus"].append({"tag": tag, "text": text, "ref_urls": ref_urls})
                     focus_ref_nums.append(ref_nums)
                 continue
