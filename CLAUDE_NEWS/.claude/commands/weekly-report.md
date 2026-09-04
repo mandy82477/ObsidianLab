@@ -35,7 +35,7 @@ argument-hint: [YYYY-Wnn]
 | 討論段子標題 `### 本週版本`／`### 討論綜述`／`### 深挖：主題` | `build_web.py` 討論子段切分（h3）、`check_weekly_ledger.py` check_deepdive | versionNote／roundup／deepDive 變 None，內容被併進整段 body |
 | 新開表頭 `\| 類型 \| 預告 \| 判準 \|` | `build_web.py` WEEKLY_FORECAST_HEADER_RE、`check_weekly_ledger.py` FORECAST_HEADER_RE | 新開表整張不進 JSON，條數與查證線索檢查全部落空 |
 | 新開小標 `### 下週值得關注：新開 N 條` | `check_weekly_ledger.py` 導言檢查（`build_web` 不認此小標） | 導言缺漏檢查失效（⚠️ 級） |
-| 回收小標 `### 上週的線怎麼了（YYYY-Wnn）`（須逐字等於實際上一期檔名）＋表頭 `\| 上週預告 \| 判準 \| 本週結果 \|` | `build_web.py` WEEKLY_RECAP_HEADING_RE／RECAP_HEADER_RE、`check_weekly_ledger.py`、`scan_open_forecasts.py`（表頭） | 回收表消失／帳目對不上硬擋 |
+| 回收小標 `### 上週的線怎麼了（YYYY-Wnn）`（須逐字等於實際上一期檔名）＋表頭 `\| 上週預告 \| 判準 \| 本週結果 \|` | `build_web.py` WEEKLY_RECAP_HEADING_RE／WEEKLY_RECAP_HEADER_RE、`check_weekly_ledger.py` RECAP_HEADING_RE／RECAP_HEADER_RE、`scan_open_forecasts.py` RECAP_HEADER_RE（表頭） | 回收表消失／帳目對不上硬擋 |
 | 回收結果欄狀態符號 ✅❌⏰（結案）／⏳🟡（續盯，含「續盯」二字） | `check_weekly_ledger.py` CLOSED_MARKS／OPEN_MARKS | 結案與殭屍規則判錯，未結案條目靜默漏收 |
 | 判準欄尾 `｜查證：關鍵字1、關鍵字2` | `scan_open_forecasts.py` PROBE_RE、`check_weekly_ledger.py` 查證線索硬擋 | 預告失去日報偵測，且每條新開判準被判缺線索而報錯 |
 | 新開條數 3–6 | `check_weekly_ledger.py` MIN_FORECASTS／MAX_FORECASTS | 規格與程式各說一套，硬擋門檻不等於規格 |

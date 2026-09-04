@@ -1083,19 +1083,6 @@
       "_note": "pattern 容許規格表格的 \\| 逃逸與程式 regex 的 \\s*\\| 兩種寫法，只鎖欄名順序"
     },
     {
-      "name": "週報節標題與數字條列：`## 四、本週數字`／`## 一、` 是 check_weekly_ledger 兩支檢查的唯一入口，不中即靜默跳過；`——` 全形破折號同理",
-      "assertion": "all_contain",
-      "files": [
-        ".claude/commands/weekly-report.md",
-        "scripts/check_weekly_ledger.py"
-      ],
-      "patterns": [
-        "四、本週數字",
-        "一、",
-        "——"
-      ]
-    },
-    {
       "name": "日報 emoji 看守補完：📌（今日聚焦）與 📡（來源狀態）在規格與 build_web 解析器必須同在（pair 45 因 app.js 無此二符號涵蓋不到）",
       "assertion": "all_contain",
       "files": [
@@ -1105,6 +1092,39 @@
       "patterns": [
         "📌",
         "📡"
+      ]
+    },
+    {
+      "name": "週報節標題：`## 一、`／`## 四、本週數字` 是 check_weekly_ledger 兩支檢查的唯一入口，不中即靜默跳過（不報錯）",
+      "assertion": "all_contain",
+      "files": [
+        ".claude/commands/weekly-report.md",
+        "scripts/check_weekly_ledger.py"
+      ],
+      "patterns": [
+        "## 一、",
+        "四、本週數字"
+      ]
+    },
+    {
+      "name": "本週數字條列（規格端）：`- **值**——說明` 的全形破折號——散文裡的 —— 有 60 處，必須連標籤一起比對",
+      "assertion": "all_contain",
+      "files": [
+        ".claude/commands/weekly-report.md"
+      ],
+      "patterns": [
+        "\\*\\*值\\*\\*——說明"
+      ]
+    },
+    {
+      "name": "本週數字條列（程式端）：build_web WEEKLY_STAT_RE 與 check_weekly_ledger STAT_BULLET_RE 都必須仍認全形破折號",
+      "assertion": "all_contain",
+      "files": [
+        "scripts/build_web.py",
+        "scripts/check_weekly_ledger.py"
+      ],
+      "patterns": [
+        "(WEEKLY_STAT_RE|STAT_BULLET_RE).*——"
       ]
     }
   ],
