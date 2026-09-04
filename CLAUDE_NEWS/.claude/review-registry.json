@@ -1203,6 +1203,30 @@
         "⚠️ 高引用但停滯"
       ],
       "_note": "2026-09-04 加入。判準（INBOUND_HIGH／STALE_DAYS）的家在 gen_wiki_frontmatter，列表刻意不另寫一支，否則會有第二份門檻。"
+    },
+    {
+      "name": "蒸餾契約三側：通用住 wiki-ingest-format.md「時段蒸餾與封存（全站通用）」、社群特有住 wiki-ingest-community-lint.md、提案觸發邊住 wiki-lint.md 3h（少一側就會變成有契約沒提案端、或六類記者各自抄一份而漂移）",
+      "assertion": "all_contain",
+      "files": [
+        ".claude/rules/wiki-ingest-format.md",
+        ".claude/rules/wiki-ingest-community-lint.md",
+        ".claude/commands/wiki-lint.md"
+      ],
+      "patterns": [
+        "時段蒸餾與封存"
+      ],
+      "_note": "2026-09-04 全站泛化。原契約只寫在社群 lint 檔，ai-agent-safety／anthropic-government-policy／competitor-landscape 等 prepend-only 長頁結構上沒有封存路徑。"
+    },
+    {
+      "name": "蒸餾提案端：wiki-lint.md 記者回報欄「蒸餾候選」與 format 檔契約的回報格式必須同時在（只有契約沒回報欄＝提案永遠不會發生）",
+      "assertion": "all_contain",
+      "files": [
+        ".claude/rules/wiki-ingest-format.md",
+        ".claude/commands/wiki-lint.md"
+      ],
+      "patterns": [
+        "蒸餾候選"
+      ]
     }
   ],
   "coupling_hints": {

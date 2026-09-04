@@ -15,8 +15,8 @@ ch = importlib.util.module_from_spec(spec)
 spec.loader.exec_module(ch)
 
 
-def page(domain="🌐 社群", parent=None, last_news="2026-09-01", callout="2026-09-01", body=""):
-    lines = ["# 頁", "", "**狀態：** ongoing", f"**領域：** {domain}"]
+def page(domain="🌐 社群", parent=None, last_news="2026-09-01", callout="2026-09-01", body="", status="ongoing"):
+    lines = ["# 頁", "", f"**狀態：** {status}", f"**領域：** {domain}"]
     if parent:
         lines.append(f"**上層：** [[{parent}]]")
     lines += ["**最後更新：** 2026-09-01", f"**最後新聞更新：** {last_news}", ""]
@@ -97,6 +97,21 @@ class HierarchyFixture(unittest.TestCase):
         self.w("topics/x-archive", page())
         fails, _ = ch.check(self.d)
         self.assertTrue(any("archive 未掛父" in f for f in fails), fails)
+
+    def test_archive_status_must_be_archive_page(self):
+        """封存頁掛 monitoring／ongoing → 會被過期掃描與訊號排序當活躍頁，必須紅。"""
+        self.w("topics/hub", page(callout="2026-09-02"))
+        self.w("topics/hub-archive", page(parent="topics/hub", status="monitoring"))
+        self.index(["| [[topics/hub]] | 🌐 社群 | ongoing | 摘要 ↳ 子故事：[[topics/hub-archive]] |"])
+        fails, _ = ch.check(self.d)
+        self.assertTrue(any("archive 狀態非封存頁" in f for f in fails), fails)
+
+    def test_archive_page_with_correct_status_passes(self):
+        self.w("topics/hub", page(callout="2026-09-02"))
+        self.w("topics/hub-archive", page(parent="topics/hub", status="resolved（封存頁）", last_news="2026-06-30"))
+        self.index(["| [[topics/hub]] | 🌐 社群 | ongoing | 摘要 ↳ 子故事：[[topics/hub-archive]] |"])
+        fails, _ = ch.check(self.d)
+        self.assertEqual(fails, [])
 
     def test_redirect_shell_skips_freshness(self):
         self.w("topics/hub", page(callout="2026-09-01"))

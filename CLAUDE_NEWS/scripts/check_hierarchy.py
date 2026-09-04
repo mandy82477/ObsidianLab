@@ -9,7 +9,9 @@
                  子目錄裡的頁會被一半機制看見、一半看不見，且沒有任何一處報錯
   2. 上層有效    上層必須是存在的頁、不可指向自己、不可成環（樹，不是 DAG）
   3. 領域繼承    子頁領域＝母頁領域——懸置命中靠頁面領域派記者，子頁領域寫錯就永遠派錯且看起來「無命中」
-  4. archive 掛父 slug 含 -archive 的頁必須有上層（封存頁掛在它封存的頁底下，不參與三題）
+  4. archive 掛父 slug 含 -archive 的頁必須有上層（封存頁掛在它封存的頁底下，不參與三題），
+                 且狀態必須是 `resolved（封存頁）`——證據層頁若掛著 ongoing／monitoring，會被過期議題
+                 掃描與訊號排序當成活躍頁追殺，也讓讀者以為那是還在更新的敘事
   5. hub 不落後  母頁 callout 日期 ≥ 子樹最新「最後新聞更新」——母頁自身的「最後新聞更新」不因子頁動
                  （動了會與 freshness 第 2 類互斥、擋 web build），改驗 callout（本來就每日覆寫）
   6. index 投影  子頁不入 index 目錄表，但母頁該列的摘要格必須帶 `↳ 子故事：[[a]]、[[b]]` 投影
@@ -28,6 +30,7 @@ WIKI_DIR = Path(__file__).resolve().parent.parent / "wiki"
 
 PARENT_RE = re.compile(r"^\*\*上層[：:]\*\*\s*\[\[([^\]|#]+)", re.M)
 DOMAIN_RE = re.compile(r"^\*\*領域[：:]\*\*\s*(.+?)\s*$", re.M)
+STATUS_RE = re.compile(r"^\*\*狀態[：:]\*\*\s*(.+?)\s*$", re.M)
 LAST_NEWS_RE = re.compile(r"^\*\*最後新聞更新[：:]\*\*\s*(\d{4}-\d{2}-\d{2})", re.M)
 CALLOUT_DATE_RE = re.compile(r"^> \*\*[^\n]*?（(\d{4}-\d{2}-\d{2})）", re.M)
 INDEX_ROW_RE = re.compile(r"^\|\s*\[\[([^\]|#]+)\]\]\s*\|(.*)\|\s*$")
@@ -39,12 +42,14 @@ def page_info(path: Path, wiki_dir: Path) -> dict:
     head = "\n".join(text.splitlines()[:60])
     m = PARENT_RE.search(head)
     d = DOMAIN_RE.search(head)
+    st = STATUS_RE.search(head)
     ln = LAST_NEWS_RE.search(head)
     cd = CALLOUT_DATE_RE.search(head)
     return {
         "slug": path.relative_to(wiki_dir).as_posix()[:-3],
         "parent": m.group(1).strip() if m else None,
         "domain": d.group(1).strip() if d else "",
+        "status": st.group(1).strip() if st else "",
         "last_news": ln.group(1) if ln else "",
         "callout_date": cd.group(1) if cd else "",
         "redirect": bool(m) and "已併回" in head,
@@ -115,8 +120,14 @@ def check(wiki_dir: Path = WIKI_DIR) -> tuple[list[str], int]:
         par = info["parent"]
         if par and par in pages and info["domain"] and pages[par]["domain"] and info["domain"] != pages[par]["domain"]:
             fails.append(f"領域未繼承：{slug}『{info['domain']}』≠ 上層 {par}『{pages[par]['domain']}』")
-        if "-archive" in slug.split("/")[-1] and not par:
-            fails.append(f"archive 未掛父：{slug} 缺「上層」欄（封存頁必須掛在它封存的頁底下）")
+        if "-archive" in slug.split("/")[-1]:
+            if not par:
+                fails.append(f"archive 未掛父：{slug} 缺「上層」欄（封存頁必須掛在它封存的頁底下）")
+            if "封存頁" not in info["status"]:
+                fails.append(
+                    f"archive 狀態非封存頁：{slug}『{info['status'] or '缺'}』"
+                    "（封存頁狀態須為 resolved（封存頁），否則會被過期掃描與訊號排序當活躍頁）"
+                )
     # hub 不落後、index 投影
     proj = index_children_projection(wiki_dir)
     for hub, kids in children.items():

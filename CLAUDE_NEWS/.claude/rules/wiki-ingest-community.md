@@ -102,7 +102,7 @@
 | 🌋重燃 | 等同 🌊延燒，無期限 |
 | 🌙靜候 | 永久保留 |
 
-**技術彙整保留：** 條目長期保留於原頁（月份分組即入口層，見 `.claude/rules/wiki-ingest-format.md`「頁面拆分原則」）；收斂月份的減重走「月度蒸餾與細節封存」機制（lint 時執行，規則見 `.claude/rules/wiki-ingest-community-lint.md`「月度蒸餾與細節封存」），不再歸檔至 `wiki/topics/community-tech-timeline.md`（timeline 維持趨勢時序頁角色，不兼任封存箱）。
+**技術彙整保留：** 條目長期保留於原頁（月份分組即入口層，見 `.claude/rules/wiki-ingest-format.md`「頁面拆分原則」）；收斂月份的減重走時段蒸餾機制（lint 時執行；通用契約見 `.claude/rules/wiki-ingest-format.md`「時段蒸餾與封存（全站通用）」，社群特有部分見 `.claude/rules/wiki-ingest-community-lint.md`「月度蒸餾與細節封存」），不再歸檔至 `wiki/topics/community-tech-timeline.md`（timeline 維持趨勢時序頁角色，不兼任封存箱）。
 
 ---
 
