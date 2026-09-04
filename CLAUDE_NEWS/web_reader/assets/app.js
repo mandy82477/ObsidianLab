@@ -505,8 +505,6 @@
     const sorted = sortItems(all, kbSort.key, kbSort.dir);
     const codingIds = new Set((window.WIKI_DATA || {}).codingPages || []);
     // 子故事階層（2026-09-03）：子頁不平鋪，只從母頁詳頁下鑽；列表只顯示根頁
-    const childCount = {};
-    all.forEach(i => { if (i.parent) { const p = i.parent.split('/').pop(); childCount[p] = (childCount[p] || 0) + 1; } });
     const roots = sorted.filter(i => !i.parent);
     // 讀者分類（2026-09-03）：篩選看 readerDomains 多標籤（build 端算好：領域值照放，index 💻 入口表
     // 的頁再加一枚 💻 開發實務，不獨佔）；舊資料無此欄時退回 domain＋codingPages，避免快取舊 data.js 時整頁空白
