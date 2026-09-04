@@ -6,11 +6,11 @@ domain: "🌐 社群"
 last_updated: "2026-09-04"
 last_news_update: "2026-05-22"
 status_main: "monitoring"
-days_since_news: 104
+days_since_news: 105
 parent: null
 children: "[]"
 page_role: "root"
-days_since_news_subtree: 104
+days_since_news_subtree: 105
 inbound_links: 3
 attribution_count: 0
 attribution_last: null
@@ -97,7 +97,7 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 #### 2026-05-16
 - **API 費用焦慮達本週最顯著集體高峰**：6/15 計費調整背景下，同日出現大量成本控管教學——「7 種降費策略」（$200–800 月費區間開發者適用）、「不修改代碼省 10–30%」（prompt caching 與路由優化）、bootstrapped 創業者費用管控討論、Claude Code 替代方案整理；成本焦慮主導本週技術熱度，形成集體情緒；見 [[entities/pricing]]
 - **Custom base URL 串接多 API provider**：Claude Code 透過自訂 base URL 串接非 Anthropic 的 API 提供商（GPT-4o、Gemini 等），達到降價、自動 failover 或多模型混用；在 6/15 計費調整前夕，此類繞道方案關注度明顯上升，是 6/15 後「多 LLM 混合策略」的實踐路徑之一
-- **Agentic RAG + eval harness 防幻覺（50K→5K token 案例）**：開發者以 BM25 + Obsidian vault 建立工程書籍 RAG 系統，token 消耗從 50,000 降至 5,000；更值得關注的是同時建立 eval harness 驗證 Claude 是否幻覺，是少數將「驗證機制」系統性納入工作流的實戰案例；見 [[topics/community-tech-discussions]]
+- **Agentic RAG + eval harness 防幻覺（50K→5K token 案例）**：開發者以 BM25 + Obsidian vault 建立工程書籍 RAG 系統，token 消耗從 50,000 降至 5,000，同時建立 eval harness 驗證 Claude 是否幻覺，是少數將「驗證機制」系統性納入工作流的實戰案例；見 [[topics/community-tech-discussions]]
 - **X 開源演算法 + Claude Code 文件化案例**：開發者使用 Claude Code 閱讀 X（Twitter）開源的推薦演算法，整理為平易近人英文說明（完整 8 步驟），是 Claude Code 用於「理解大型陌生程式碼庫並文件化」的典型案例，展示技術文件化上的實用價值
 - **非工程師 × Claude Code = 完整 MCP 伺服器（6 個月心得）**：台灣非工程師背景創業者獨自用 Claude Code 開發 MCP 伺服器六個月；核心洞察：「Claude 能寫任何代碼，但產品決策、架構取捨仍需人來做；非工程師的優勢在於沒有技術偏見，更容易做出以產品為中心的架構決定」
 - **新工具**：Code Quest（Web UI 互動模式，針對 6/15 計費設計）、CostHawk（公開 token 用量排行榜，Claude Code/Codex/Cursor 三方比較）、AI 引用資格稽核 MCP（13 工具，AI 原生 SEO，無需 API key）、answering machine MCP（Claude Code 用戶間留言功能）
@@ -184,7 +184,7 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 - **120 提示詞模式實測**：目前社群最大規模的實證型 prompt 效果研究，以可量測差異（非主觀感受）為驗證標準，是本週最具參考價值的方法論貢獻
 - **3.77 億 token / 月案例**：Claude Code + Codex 雙工具並用兩個月，揭露單月 token 消耗極端值，引發效率管理與成本討論
 - **整合模式選擇框架**：社群系統化比較編輯器嵌入 vs 終端機原生 vs 橋接方案三種模式，形成選擇依據清單
-- **Boris Cherny「coding is solved」+ 厭倦「vibe coding」**：「Code with Claude」大會言論在 Business Insider、HN、YouTube 多平台引發廣泛討論，社群對「coding is solved」論斷反應兩極
+- **Boris Cherny「coding is solved」+ 厭倦「vibe coding」**：「Code with Claude」大會言論經 Business Insider、HN、YouTube 多平台轉載，社群對「coding is solved」論斷反應兩極
 - **新工具**：Claudy（Rust 多供應商管理）、DataMoat（AES-256-GCM 工作記錄加密）、4-agent Code Review（架構師 + 三模型審查，MIT）、awesome-ux-skills（UX 原則技能集）、OpticOdds MCP（首個運動賠率 MCP API，垂直產業擴展案例）
 
 #### 2026-05-07
@@ -222,7 +222,7 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 
 #### 2026-05-05
 - **Boris Cherny「Loops 是未來」**：Claude Code 創始人在 podcast 宣示已 100% 用 Claude Code 取代手動編碼，並提出「迴圈執行是 AI 編碼未來」的設計哲學；是理解 Claude Code 工具設計原則的第一手資料
-- **Claude Relay — 多 session P2P 協作**：plugin 讓多個本地 Claude Code session 互相傳訊，兩位開發者的 P2P 多 agent 聊天室工作流引發廣泛討論（HN 正面評價），被視為「非正式 multi-agent」的具體實作
+- **Claude Relay — 多 session P2P 協作**：plugin 讓多個本地 Claude Code session 互相傳訊，兩位開發者的 P2P 多 agent 聊天室工作流獲 HN 正面評價，被視為「非正式 multi-agent」的具體實作
 - **Memex — 本地 RAG 持久記憶（MCP）**：本地 RAG + 離線 embedding，無需雲端 API，以 MCP 接入；與 Brifly / NanoBrain 並列為跨 session 記憶方案的主流選項
 - **Claude-Find — 語義 session 搜尋**：解決 /resume 只能依第一條訊息篩選的痛點，讓重度用戶用語義搜尋快速找到過去決策，注入現有 session；補足 Claude-Find + Relay + Memex 三工具構成完整的 session 管理工具鏈
 - **Askdiff — diff 介面直問原始 session**：在 PR 風格 diff 介面中點擊行號直接問生成此程式碼的 Claude Code session，串流取得決策理由；解決 code review 時 context 斷層的痛點

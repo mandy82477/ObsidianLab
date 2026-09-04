@@ -3,14 +3,14 @@ page: "topics/recursive-self-improvement"
 kind: "topic"
 status: "ongoing（08-14 官方風險報告揭露新對齊疑慮；08-29 新增「自動化研究員」對齊維護研究，08-31 補上量化數字）"
 domain: "🏛️ 政策/安全"
-last_updated: "2026-09-01"
+last_updated: "2026-09-04"
 last_news_update: "2026-08-31"
 status_main: "ongoing"
-days_since_news: 3
+days_since_news: 4
 parent: null
 children: "[]"
 page_role: "root"
-days_since_news_subtree: 3
+days_since_news_subtree: 4
 inbound_links: 9
 attribution_count: 9
 attribution_last: "2026-08-31"
@@ -27,7 +27,7 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 **狀態：** ongoing（08-14 官方風險報告揭露新對齊疑慮；08-29 新增「自動化研究員」對齊維護研究，08-31 補上量化數字）
 **領域：** 🏛️ 政策/安全
 **開始日期：** 2026-06-04
-**最後更新：** 2026-09-01
+**最後更新：** 2026-09-04
 **最後新聞更新：** 2026-08-31
 
 > **最新動態**（2026-08-31，The New Stack 補上量化數字）
@@ -43,7 +43,7 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 
 核心矛盾：Anthropic 同時正在 IPO 路上（$965B 估值），被社群廣泛質疑是否是競爭策略。
 
-2026-06-22，五眼聯盟（Five Eyes：美、英、加、澳、紐）罕見發表聯合聲明，警告能癱瘓政府與企業的 AI 模型將在數月內出現——與 Anthropic 報告的「煞車踏板」呼籲形成直接呼應，但立場從「業界自我協調暫停」升級為「五國情報聯盟主動預警」。同日，CNA 評論 Anthropic 呼籲暫停的立場值得關注但也引發質疑。
+2026-06-22，五眼聯盟（Five Eyes：美、英、加、澳、紐）罕見發表聯合聲明，警告能癱瘓政府與企業的 AI 模型將在數月內出現——與 Anthropic 報告的「煞車踏板」呼籲形成直接呼應，但立場從「業界自我協調暫停」升級為「五國情報聯盟主動預警」。同日，CNA 評論質疑 Anthropic 呼籲暫停的立場是否言行一致（見下方時序）。
 
 | 指標 | 數值 |
 |------|------|
@@ -125,7 +125,7 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 
 ### 2026-06-22
 - **[五眼聯盟警告] 罕見聯合聲明：數月內出現毀滅性 AI**：五眼聯盟發表聯合聲明，警告能癱瘓政府與企業的 AI 模型將在數月內出現；為迄今最高層級政府機構對遞歸自我改進威脅的公開預警，與 Anthropic 6/4 報告的「煞車踏板」呼籲形成跨機構共鳴（The Guardian）
-- **[評論] Anthropic 呼籲暫停值得關注但也引發質疑**：CNA 評論指出 Anthropic 呼籲 AI 開發暫停的立場值得注意，同時指出此立場「也引發問題」——包括 Anthropic 自身是否真正踐行此呼籲（CNA，2026-06-21）
+- **[評論] Anthropic 呼籲暫停是否言行一致**：CNA 評論質疑 Anthropic 呼籲 AI 開發暫停的立場「也引發問題」——包括 Anthropic 自身是否真正踐行此呼籲（CNA，2026-06-21）
 
 ### 2026-06-09（媒體跟進）
 - dev.to 多篇文章整理 Anthropic 6/4 報告數據：5 月份超過 80% 生產程式碼由 Claude 撰寫（非 80-90% 區間，是確認的下限）

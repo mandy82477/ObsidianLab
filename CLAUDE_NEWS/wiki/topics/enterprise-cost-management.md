@@ -3,14 +3,14 @@ page: "topics/enterprise-cost-management"
 kind: "topic"
 status: "ongoing"
 domain: "💼 商業"
-last_updated: "2026-09-02"
+last_updated: "2026-09-04"
 last_news_update: "2026-08-25"
 status_main: "ongoing"
-days_since_news: 9
+days_since_news: 10
 parent: null
 children: "[]"
 page_role: "root"
-days_since_news_subtree: 9
+days_since_news_subtree: 10
 inbound_links: 23
 attribution_count: 5
 attribution_last: "2026-08-25"
@@ -27,7 +27,7 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 **狀態：** ongoing
 **領域：** 💼 商業
 **開始日期：** 2026-05-01
-**最後更新：** 2026-09-02
+**最後更新：** 2026-09-04
 **最後新聞更新：** 2026-08-25
 
 > **最新成本管控動態**（2026-08-25）
@@ -263,7 +263,7 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 - **[agent-estimate：以 agent 速度估算任務時間]**：工具 agent-estimate 以 PERT 方法論搭配 agent 速度乘數（XS–XL 任務分類），解決因訓練資料基於人類速度導致的任務時間估算偏差，間接輔助預算規劃
 
 #### 2026-05-19
-- **[dev.to 深度揭露] Microsoft 六個月測試後棄用：開發者愛它，財務殺了它**：dev.to 文章詳述 Microsoft Experiences + Devices 部門的六個月內部測試：開發者普遍認為 Claude Code 優於 GitHub Copilot CLI，但財務決策層以成本為由單方面終止；此案例成為「使用者滿意度與預算決策結構性落差」的標準引用案例，在 dev.to #claudecode 社群引發廣泛討論
+- **[dev.to 深度揭露] Microsoft 六個月測試後棄用：開發者愛它，財務殺了它**：dev.to 文章詳述 Microsoft Experiences + Devices 部門的六個月內部測試：開發者普遍認為 Claude Code 優於 GitHub Copilot CLI，但財務決策層以成本為由單方面終止；此案例成為「使用者滿意度與預算決策結構性落差」的標準引用案例，於 dev.to #claudecode 社群被多次轉引
 - **[HN 討論] 企業月帳單達雲端費用三倍、即將全面停用**：Hacker News 討論串揭示另一家企業月 AI 工具費用已達雲端 SaaS 費用三倍，即將全面停用 Claude Code 並禁止使用個人方案；討論聚焦在高效益與高成本如何取捨，以及本地模型（DeepSeek 等）的可行替代性；情緒：😤 負面
 
 #### 2026-05-18

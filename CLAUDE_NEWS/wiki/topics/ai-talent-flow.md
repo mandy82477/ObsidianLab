@@ -6,11 +6,11 @@ domain: "💼 商業"
 last_updated: "2026-09-04"
 last_news_update: "2026-09-01"
 status_main: "ongoing"
-days_since_news: 2
+days_since_news: 3
 parent: null
 children: "[]"
 page_role: "root"
-days_since_news_subtree: 2
+days_since_news_subtree: 3
 inbound_links: 18
 attribution_count: 7
 attribution_last: "2026-09-01"
@@ -54,8 +54,12 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 | **OpenAI** | 次要承接方 | 獲得一名 Google 頂尖研究員（6/23 SEJ 報導，姓名未具名）| 🟡 同步受惠於 Google 人才外流，規模小於 Anthropic |
 
 **對各公司的影響細節**
-- **Google DeepMind**：兩週內連失 Jumper（科學/生物）、Adler（AI 編碼）、Pritzel（訓練）、額外 2 位資深研究員（6/28），另有一名研究員轉投 OpenAI；市值蒸發約 $2,700 億美元；Gemini 3.5 Pro 延期至七月（推論）；被迫重組 AI 編碼突擊隊。**08-05／08-06**：Hassabis 卸任 DeepMind CEO 轉任 Alphabet 首席科學家（留任集團，非離職）；Jeff Dean、Sanjay Ghemawat、Oriol Vinyals、Quoc Le 離職創辦 Discovery Loop（PBC，Dean 任 CEO，**Alphabet 亦為投資方**），市值影響各家估 1,600–2,000 億美元（盤中估算區間）；Kavukcuoglu 升任 DeepMind SVP；**08-27（Fortune）**：新數據顯示人才流失情況持續，具體人數與流向未見細節（推論）。評估：傷在痛點＋領導層可見度雙重打擊——技術核心（Attention 論文八作者至此全數離開 Google）與高層治理同步震盪，儘管此波未直接流向 Anthropic，仍削弱 Google 作為對手的組織穩定性訊號（推論）；已查證（2026-08-13，TechCrunch 一手）。
-- **Anthropic**：補強科學計算（Jumper / AlphaFold）、AI 編碼（Adler）、模型訓練（Pritzel）、安全/經濟（FT 經濟學家）等多方向縱深；**08-21/08-23 新增晶片自研人才**——延攬 Amir Salek（Google 自研晶片計畫創辦人，Google TPU 專案創始人物之一）。評估：訊號 > 實質（研究員流動一貫評估）；晶片人才屬**性質不同的新戰場**——若屬實，代表 Anthropic 招募已從「模型能力」擴及「硬體自主設計」，與既有 Samsung 代工洽談、AMD/Micron 投資路線同屬降低 Nvidia 依賴的布局，惟具體職位、團隊規模、時程仍未見報導細節，戰力影響待觀察（推論）。
+- **Google DeepMind**：兩週內連失 Jumper（科學/生物）、Adler（AI 編碼）、Pritzel（訓練）、額外 2 位資深研究員（6/28），另有一名研究員轉投 OpenAI；市值蒸發約 $2,700 億美元；Gemini 3.5 Pro 延期至七月（推論）；被迫重組 AI 編碼突擊隊
+  - **08-05／08-06**：Hassabis 卸任 DeepMind CEO 轉任 Alphabet 首席科學家（留任集團，非離職）；Jeff Dean、Sanjay Ghemawat、Oriol Vinyals、Quoc Le 離職創辦 Discovery Loop（PBC，Dean 任 CEO，**Alphabet 亦為投資方**），市值影響各家估 1,600–2,000 億美元（盤中估算區間）；Kavukcuoglu 升任 DeepMind SVP
+  - **08-27（Fortune）**：新數據顯示人才流失情況持續，具體人數與流向未見細節（推論）
+  - **評估**：傷在痛點＋領導層可見度雙重打擊——技術核心（Attention 論文八作者至此全數離開 Google）與高層治理同步震盪，儘管此波未直接流向 Anthropic，仍削弱 Google 作為對手的組織穩定性訊號（推論）；已查證（2026-08-13，TechCrunch 一手）
+- **Anthropic**：補強科學計算（Jumper / AlphaFold）、AI 編碼（Adler）、模型訓練（Pritzel）、安全/經濟（FT 經濟學家）等多方向縱深；**08-21/08-23 新增晶片自研人才**——延攬 Amir Salek（Google 自研晶片計畫創辦人，Google TPU 專案創始人物之一）
+  - **評估**：訊號 > 實質（研究員流動一貫評估）；晶片人才屬**性質不同的新戰場**——若屬實，代表 Anthropic 招募已從「模型能力」擴及「硬體自主設計」，與既有 Samsung 代工洽談、AMD/Micron 投資路線同屬降低 Nvidia 依賴的布局，惟具體職位、團隊規模、時程仍未見報導細節，戰力影響待觀察（推論）
 
 **懸置細節**
 - ⟨Q-01⟩ 已查證（2026-08-13）：市值蒸發數字獲多方分析佐證（因統計時間窗不同，單月人才出走批次估算 $225B–270B，累計一個月內達 $425B）；Gemini 3.5 Pro 延期主因，據報導引述 DeepMind 內部說法，為「內部效能目標未達標，缺口集中在 coding 能力」，方向與人才流失（AI 編碼研究員出走）一致，但 Google 官方未直接承認兩者因果關係，故延期「肇因於人才流失」本身仍屬情境佐證下的合理推論，非官方確認（[The Agent Report](https://the-agent-report.com/2026/07/google-gemini-3-5-pro-delayed-july-2026/)；[FourWeekMBA](https://fourweekmba.com/ai-google-gemini-35-pro-delayed-coding-gap/)）

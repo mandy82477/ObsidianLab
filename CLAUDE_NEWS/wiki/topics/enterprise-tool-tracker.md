@@ -6,11 +6,11 @@ domain: "💼 商業"
 last_updated: "2026-09-04"
 last_news_update: "2026-09-02"
 status_main: "ongoing"
-days_since_news: 1
+days_since_news: 2
 parent: null
 children: "[]"
 page_role: "root"
-days_since_news_subtree: 1
+days_since_news_subtree: 2
 inbound_links: 25
 attribution_count: 19
 attribution_last: "2026-09-02"
@@ -126,8 +126,10 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 | 哈佛 FAS | 大型 | Claude API | ✅ | 2026-04-28 | 取代 ChatGPT Edu，學術授權 | 2026-04-28 |
 
 **使用現況細節**
-- **Shopify（08-26）**：analyticsindiamag.com、The New Stack 報導 Shopify 執行長 Tobi Lütke 揚言封殺（"ban"）Claude Code；The New Stack 另指出 Anthropic 其實早已關閉（closed）相關功能請求。**對商業與生態的意涵**：是本頁首見具名科技公司高層公開揚言封殺 Claude Code 的案例，區別於既有退出案例多為成本（Microsoft）、出口管制（JPMorgan）、安全疑慮（Alibaba）三類理由——本次爭議點未見報導具體說明（是否涉資安、成本或政策爭議），且尚未見 Shopify 官方確認實際執行封鎖（僅為 CEO 公開表態），故暫標「未確認」而非「已退出」；具體爭議緣由、封鎖範圍、是否已生效均未見報導細節，僅標題層級資訊（推論）。
-- **ReliaQuest（08-22）**：TipRanks 報導資安廠商 ReliaQuest 深化與 Anthropic 的技術整合，作為其去 SIEM 化（SIEM-less）資安策略的一環；延續近期 Cyberhaven（07-23）、Orca Security（07-21）、Tenable（06-29）等資安廠商整合 Claude Compliance API 的既有生態擴張模式（推論），惟本則整合範疇更廣（去 SIEM 化整體策略，非單一 Compliance API 功能）；具體整合範疇、合作規模、技術細節均未見報導，僅標題層級資訊。
+- **Shopify（08-26）**：analyticsindiamag.com、The New Stack 報導 Shopify 執行長 Tobi Lütke 揚言封殺（"ban"）Claude Code；The New Stack 另指出 Anthropic 早已關閉（closed）相關功能請求（僅標題層級資訊）
+  - **對商業與生態的意涵**：本頁首見具名科技公司高層公開揚言封殺 Claude Code 的案例，區別於既有退出案例多為成本（Microsoft）、出口管制（JPMorgan）、安全疑慮（Alibaba）三類理由；爭議緣由、封鎖範圍均未見報導細節，Shopify 官方未確認實際執行封鎖，暫標「未確認」而非「已退出」（推論）
+- **ReliaQuest（08-22）**：TipRanks 報導資安廠商 ReliaQuest 深化與 Anthropic 技術整合，作為其去 SIEM 化（SIEM-less）資安策略一環（僅標題層級資訊）
+  - 延續近期 Cyberhaven（07-23）、Orca Security（07-21）、Tenable（06-29）等資安廠商整合 Claude Compliance API 的既有生態擴張模式（推論），惟本則整合範疇更廣（去 SIEM 化整體策略，非單一 Compliance API 功能）
 - **Samsung（08-15，首見 08-14）**：跨 3 媒體確認具體量化成效，惟仍為媒體轉述、非三星或 Anthropic 官方發布：TechSpot（08-15）稱 Claude Code 能把晶片設計工作從「數週壓縮到數天」；Tech My Money（08-14）稱驗證階段「從一個月縮到兩天」——兩則數字不同，並陳不擇一。三則均明確指出 Claude Code **仍會犯嚴重錯誤**。延續 08-14 記錄之 ❓ 未確認狀態，08-15 升級為 ✅；與 [[topics/anthropic-business]] 已記錄之 Samsung 代工洽談（07-02/06）、Series H 投資人身份為不同性質事件——本則為 Samsung**使用**Claude Code 的採用案例，非供應鏈/投資關係（Google News/TechSpot；Google News/Tech My Money）。**08-25 三度確認（TechRadar，非新事實）**：TechRadar 報導同一事實——三星認為 Claude Code 有助其晶片設計，但坦言 AI 仍會犯下「令人擔憂的重大錯誤」；未見新增具體數字或案例細節，屬既有 08-14/08-15 記錄的第三方媒體再確認，狀態與量化數字均不變（Google News/TechRadar）。
 
 **懸置細節**

@@ -6,11 +6,11 @@ domain: "🌐 社群"
 last_updated: "2026-09-04"
 last_news_update: "2026-08-29"
 status_main: "ongoing"
-days_since_news: 5
+days_since_news: 6
 parent: null
 children: "[]"
 page_role: "root"
-days_since_news_subtree: 5
+days_since_news_subtree: 6
 inbound_links: 31
 attribution_count: 24
 attribution_last: "2026-08-28"
@@ -50,7 +50,7 @@ Claude Code 在 2026 年 3 月至 4 月間出現長達約一個月的效能明�
 | 日期 | 訊號 | 來源 | 強度 |
 |------|------|------|------|
 | 2026-07-01 | 「Claude Code Just Got 5x More Expensive」：用戶回報原先兩天用量的 $50 配額現在一小時燒完 | Vincent Schmalbach blog（[原文](https://www.vincentschmalbach.com/claude-code-quietly-looks-5x-more-expensive/)，HN score 53） | 中高（HN score 53 達對照表中門檻）|
-| 2026-07-01 | 獨立開發者單月燒 $62,021 token 的具名案例 | Reddit r/ClaudeAI（[原文](https://www.reddit.com/r/ClaudeAI/comments/1ukli2u/i_burned_62021_in_claude_tokens_in_june_solo_dev/)）| 個案但引發廣泛討論 |
+| 2026-07-01 | 獨立開發者單月燒 $62,021 token 的具名案例 | Reddit r/ClaudeAI（[原文](https://www.reddit.com/r/ClaudeAI/comments/1ukli2u/i_burned_62021_in_claude_tokens_in_june_solo_dev/)）| 單一具名個案，非可複現統計 |
 | 2026-07-03 | GitHub issue #16856：升級至 2.1.1 版後 token 消耗速度較前版快 4 倍以上 | [GitHub Issues #16856](https://github.com/anthropics/claude-code/issues/16856) | 具體版本號可複現主張 |
 | 2026-07-03 | GitHub issue #38335：Max 方案 session 額度自 3/23 起異常加速消耗；截至 07-09 累積 791 則留言、536 個讚，社群互動量最高條目之一 | [GitHub Issues #38335](https://github.com/anthropics/claude-code/issues/38335) | 高（留言數達對照表高門檻，且持續增長）|
 | 2026-07-08 | GitHub issue #41506：Max 方案（$100/月）token 消耗量自 3/28-29 起在未變更設定下增加約 3-5 倍，累積 54 則留言、29 個讚 | [GitHub Issues #41506](https://github.com/anthropics/claude-code/issues/41506) | 高（留言數達對照表高門檻，與 #38335 同期同方向）|
@@ -74,7 +74,8 @@ Claude Code 在 2026 年 3 月至 4 月間出現長達約一個月的效能明�
 
 **假說細節**
 - **模型真退步**：若 4.8 或近期模型版本在等量任務上確實需要更多 tool call 或更長 thinking，將直接反映為 token 消耗上升。缺乏官方或第三方在同一 prompt 集合上做版本前後 token 用量對照（benchmark 層級證據）；目前全部是用戶主觀感受 + 帳單金額，非受控實驗
-- **計費／計量問題**：$62,021 案例與「5x 更貴」報導都聚焦帳單/配額消耗速度而非任務品質下降；07-08「cache 命中率下降 20% 帳單翻倍」首度提供具體技術機制——若 prompt caching 命中率因 context 結構變化或後端調度改變而下降，重複計算的 token 會直接反映為帳單增加，不需模型能力真的變差；07-09「單一 session 27% 時間耗掉週額度 7%」進一步指向額度計算本身可能存在非線性放大；[[topics/community-tech-discussions]] 技術彙整已記錄社群懷疑「agent 模式的 token 計費方式變更」與「subagent 呼叫計費細節未透明揭示」。Anthropic 未就計費機制或 cache 命中率變化做出官方說明；cache 命中率下降的根因（使用者 context 結構改變 vs 後端調度變更）尚未釐清；無法排除只是使用習慣改變（如更多 subagent/parallel session）導致實際消耗上升
+- **計費／計量問題**：$62,021 案例與「5x 更貴」報導聚焦帳單/配額消耗速度而非任務品質下降；07-08「cache 命中率下降 20% 帳單翻倍」首度提供具體機制——命中率因 context 結構或後端調度變化下降時，重複計算的 token 會直接推高帳單，不需模型能力真的變差；07-09「單一 session 27% 時間耗掉週額度 7%」指向額度計算可能存在非線性放大
+  - [[topics/community-tech-discussions]] 已記錄社群懷疑「agent 模式計費方式變更」與「subagent 呼叫計費細節未透明」；Anthropic 未就計費機制或 cache 命中率變化做官方說明，根因（使用者端 context 變化 vs 後端調度變更）尚未釐清，也無法排除純粹使用習慣改變（如更多 subagent/parallel session）推升消耗
 - **Context／工具配置問題**：multi-agent／MCP 工具調用疊加成本是 [[topics/community-tech-discussions]] 已記錄的系統性問題；cache 命中率下降若源於使用者端 context 結構變化（如頻繁插入不同前綴內容），亦可能是配置問題而非後端變更。若確為 context 腐蝕或配置問題，理論上應可透過調整 CLAUDE.md／減少 subagent 層級緩解，但目前無用戶回報「調整配置後消耗恢復正常」的驗證案例
 
 **目前立場：** 訊號鏈自 06-27（quota 焦慮早期訊號）延燒至 07-13，跨 17 天持續出現同方向訊號且來源獨立，密度已足以將定調從「值得觀察」上調為**「結構性未解問題」**——三種假說均有部分支持證據且互不排斥，07-08 起新增的 cache 命中率機制觀察與兩則額度異常比例回報，首度讓「計費/計量問題」假說有了具體技術描述，07-13 再添一則 Max 5x 額度消耗變快回報但仍屬單一貼文，但仍缺乏官方說明或受控實驗佐證。訊號鏈其後沉寂 43 天，08-25 再度出現同方向質疑（單一貼文、無具體數字），僅計入現象延續，未提供新證據，三種假說的證據強度分布未變。截至 2026-08-25，Anthropic 尚未對此訊號群做出官方回應。與 [[topics/community-tech-discussions]] 對應的「Claude Code 成本 5x 暴漲」與「額度焦慮系列」條目互相引用，細節不重複展開。
@@ -106,7 +107,7 @@ Claude Code 在 2026 年 3 月至 4 月間出現長達約一個月的效能明�
 | 2026-08-28 | 「Is it even legal for Anthropic to nerf its models this hard?」：使用者質疑 Opus 5 與 Fable 5 在 Claude Code 中表現遜於預期，指控模型遭「削弱」 | Reddit r/ClaudeCode（[原文](https://www.reddit.com/r/ClaudeCode/comments/1w0t53b/is_it_even_legal_for_anthropic_to_nerf_its_models/)，無「週熱門」標記、score 不可信） | 單一社群回報（無具體量化數字或版本號），與 08-22／08-26「A/B 測試降 effort」主張同方向，僅計入現象延續 |
 
 **懸置細節**
-- ⟨Q-01⟩ ❓ **待查證**（標 2026-08-25｜查 Sonar、code quality benchmark）：HackerNoon 標題「Claude Opus 5 Code Quality: What Sonar's Benchmark Reveals」僅標題可用，程式碼品質分析工具 Sonar 對 Opus 5 生成程式碼的基準測試具體評測數字、樣本規模與測試方法論均未見報導；若查得具體數字，將是本訊號群目前唯一的量化／第三方工具評測證據（現有 10 則社群訊號均為主觀回報，無量化數字）。
+- ⟨Q-01⟩ ❓ **待查證**（標 2026-08-25｜查 Sonar、code quality benchmark）：HackerNoon「Claude Opus 5 Code Quality: What Sonar's Benchmark Reveals」（僅標題可用）——查實將是本訊號群唯一的量化／第三方工具評測證據，現有 10 則社群訊號均為主觀回報。
 
 **表格細節**
 - **07-25 effort dial**：原標題「Opus 5's effort dial is not monotonic. Above "high", coding scores go down, and Anthropic's own migration guide says so.」——effort 旋鈕超過「high」後，編碼任務分數反而下降，Anthropic 官方 migration guide 自承此現象

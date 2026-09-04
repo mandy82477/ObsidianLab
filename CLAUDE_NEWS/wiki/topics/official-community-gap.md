@@ -6,11 +6,11 @@ domain: "🛠️ 工具/功能"
 last_updated: "2026-09-04"
 last_news_update: "2026-09-03"
 status_main: "ongoing"
-days_since_news: 0
+days_since_news: 1
 parent: null
 children: "[]"
 page_role: "root"
-days_since_news_subtree: 0
+days_since_news_subtree: 1
 inbound_links: 24
 attribution_count: 8
 attribution_last: "2026-08-23"
@@ -66,8 +66,11 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 | Agent 間直接通訊協定 | 2026-07-08 [GitHub issue #24798](https://github.com/anthropics/claude-code/issues/24798)（多 Claude session 間直接通訊，累積 78 則留言、21 個 👍，2026-08-16 互動數更新）；2026-07-14 [issue #28300](https://github.com/anthropics/claude-code/issues/28300)（跨機器多 agent 協作 A2A 協定） | 無專屬社群工具，訴求以 GitHub issue 形式累積 | 官方文件（2026-08-09 查證，[code.claude.com/docs/en/cross-session-messaging](https://code.claude.com/docs/en/cross-session-messaging)）：Cross-session messaging，需 v2.1.224 以上版本、限 macOS／Linux，工具為 `ListAgents`＋`SendMessage`，同機制涵蓋 subagent／team 內部訊息 | 🧪 部分產品化（官方文件確認同機 session 通訊；跨機器 A2A 需求 #28300 涵蓋範圍未載明） | 官方文件確認同機 session 通訊(v2.1.224)；跨機器場景與依賴排序需求未確認涵蓋 ⟨G-10⟩⟨Q-01⟩ |
 
 **缺口細節**
-- ⟨G-01⟩ Subagent 派工/編排：Boris Cherny 揭露內部「數千子代理夜間跑批」工作流（2026-05-13），早期社群模式已被涵蓋；2026-07-17 官方將「背景多開新 session」（`/fork`）與「同 session 委派子任務」（`/subtask`）拆成兩個明確指令，派工模式操作介面更成熟；2026-08-13 v2.1.232 將 `subagent_type: "fork"` 的完整對話與 prompt cache 繼承改為預設開啟，降低手動設定門檻（官方 changelog 原文截斷，細節待補）；2026-08-23 GitHub issue #24316（41 則留言、43 個讚）反映一項子項缺口仍未補齊——自訂 `.claude/agents/` 定義目前無法直接加入 agent team 作為隊友，見 [[entities/claude-code]] 已知問題，整體 ✅ 已產品化 判斷不變。
-- ⟨G-02⟩ Multi-agent workflow 腳本化：feature-radar 明確標「❌ 暫不推薦」（UltraCode 1.7M token bug 無退款）；v2.1.202 新增規模引導值屬易用性微調，未解決核心退款爭議；手機遠端操控場景出現初步官方線索——2026-07-13 GitHub issue #28322 顯示 `/remote-control`（`/rc`）指令已存在但既有 session 無法辨識（需新 session），同日 issue #29006 社群仍在請求 Desktop App 遠端控制 CC session，顯示官方可能已悄悄鋪路但尚未正式發布/文件化，缺口尚未完全補上。
+- ⟨G-01⟩ Subagent 派工/編排：Boris Cherny 揭露內部「數千子代理夜間跑批」工作流（2026-05-13），早期社群模式已被涵蓋；2026-07-17 官方將「背景多開新 session」（`/fork`）與「同 session 委派子任務」（`/subtask`）拆成兩個明確指令，派工模式操作介面更成熟
+  - 2026-08-13 v2.1.232 將 `subagent_type: "fork"` 的完整對話與 prompt cache 繼承改為預設開啟，降低手動設定門檻（官方 changelog 原文截斷，細節待補）
+  - 2026-08-23 GitHub issue #24316（41 則留言、43 個讚）反映一項子項缺口仍未補齊——自訂 `.claude/agents/` 定義目前無法直接加入 agent team 作為隊友，見 [[entities/claude-code]] 已知問題；整體 ✅ 已產品化 判斷不變
+- ⟨G-02⟩ Multi-agent workflow 腳本化：feature-radar 明確標「❌ 暫不推薦」（UltraCode 1.7M token bug 無退款）；v2.1.202 新增規模引導值屬易用性微調，未解決核心退款爭議
+  - 手機遠端操控場景出現初步官方線索——2026-07-13 GitHub issue #28322 顯示 `/remote-control`（`/rc`）指令已存在但既有 session 無法辨識（需新 session），同日 issue #29006 社群仍在請求 Desktop App 遠端控制 CC session，顯示官方可能已悄悄鋪路但尚未正式發布/文件化，缺口尚未完全補上
 - ⟨G-03⟩ Agent 需要輸入時的通知：官方僅提供被動可見性（需主動查看畫面），社群工具補上主動提醒（變色、聲音、實體燈號），官方尚未涉足。
 - ⟨G-04⟩ 破壞性指令防護：官方對 git 層級防護已完整覆蓋且評價高（🔥🔥🔥 ✅ 推薦）；社群沙盒工具仍在更廣泛的資源限制場景（非僅 git）補位。
 - ⟨G-05⟩ 跨 session 記憶持久化：Dreaming 兩個月後仍為 Research Preview、試用價值「⏳ 觀望」；社群工具（OKF）跨工具跨模型，Dreaming（僅限 Anthropic 生態）無法取代；OzBrain（2026-08-21 Show HN，score 69，跨 2 來源）進一步鎖定「團隊共用」而非單一使用者跨 session 記憶，主張取代筆記/任務管理工具而非僅作輔助記憶層，凸顯 Dreaming 目前仍是單一 Anthropic 生態內的個人記憶方案，未觸及團隊共享面向；v0.117.0 的 SDK 級「dreaming」支援用途未明（[[entities/managed-agents]] 標記待更多資訊確認是既有機制正式曝光還是新能力）；2026-08-25 新增兩個機制互異的記憶工具——ambient-context 走「被動螢幕活動記錄」路線（不觸碰 agent 本身狀態，靠外部日誌供 Claude 讀取），mindmuxai/brain.md 走「agent 決策/需求顯式寫入」路線，皆與 Dreaming 的自動記憶鞏固方向不同，官方仍無對應，狀態暫不變動。
