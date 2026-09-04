@@ -1183,6 +1183,57 @@ def build():
         with (OUT_WEEKLY_DIR / f"{week_id}.json").open("w", encoding="utf-8") as fp:
             json.dump(w, fp, ensure_ascii=False, indent=2)
 
+    # ── 連結地圖 graph.json（網站「地圖」頁；資料源 scripts/wiki_graph.py）────────
+    # 節點＝wiki 頁、邊＝wikilink（依 zone 分 正文／樣板／階層）。讀者視角：頁名、領域、
+    # 距上次新聞天數、被引用數；不放維運診斷字眼（孤兒／盲區那些留在 wiki_graph CLI）。
+    try:
+        import importlib.util as _ilu
+        from datetime import datetime, timezone
+        _g_spec = _ilu.spec_from_file_location("wiki_graph", ROOT / "scripts" / "wiki_graph.py")
+        _g = _ilu.module_from_spec(_g_spec)
+        _g_spec.loader.exec_module(_g)
+        _pages, _, _links = _g.build()
+        _by_id = {it["id"]: it for it in entities + topics}
+        _today = datetime.now(timezone.utc).date()
+        _nodes, _edges = [], {}
+        for _slug, _f in sorted(_pages.items()):
+            _pid = _slug.split("/")[-1]
+            _it = _by_id.get(_pid)
+            if _it:
+                _name, _dom, _ptype = _it["name"], _it["domain"], _it["pageType"]
+                _tags, _lnu, _parent = _it.get("readerDomains", []), _it.get("lastNewsUpdate", ""), _it.get("parent", "")
+            else:  # feature-radar / overview / 封存頁等根層頁
+                _first = next((l.lstrip("# ").strip() for l in _f.read_text(encoding="utf-8-sig").split("\n")
+                               if l.startswith("# ")), _pid)
+                _name, _dom, _ptype, _tags, _lnu, _parent = _first, "", "root", [], "", ""
+            _days = None
+            if _lnu and re.match(r"\d{4}-\d{2}-\d{2}", _lnu):
+                try:
+                    _days = (_today - datetime.strptime(_lnu[:10], "%Y-%m-%d").date()).days
+                except ValueError:
+                    _days = None
+            _nodes.append({"id": _pid, "slug": _slug, "name": _name, "domain": _dom, "tags": _tags,
+                           "pageType": _ptype, "daysSinceNews": _days, "parent": _parent,
+                           "lines": sum(1 for _ in _f.open(encoding="utf-8-sig"))})
+        for _l in _links:
+            if _l.src == _l.dst:
+                continue
+            _k = (_l.src.split("/")[-1], _l.dst.split("/")[-1])
+            _e = _edges.setdefault(_k, {"s": _k[0], "d": _k[1], "body": 0, "tpl": 0, "part": 0})
+            _e["part" if _l.zone == "階層" else "tpl" if _l.zone == "樣板" else "body"] += 1
+        _ids = {n["id"] for n in _nodes}
+        for _n in _nodes:
+            _n["inBody"] = sum(1 for e in _edges.values() if e["d"] == _n["id"] and e["body"])
+            _n["inAll"] = sum(1 for e in _edges.values() if e["d"] == _n["id"])
+        _graph = {"generated": str(_today), "nodes": _nodes,
+                  "edges": [e for e in _edges.values() if e["s"] in _ids and e["d"] in _ids]}
+        _out_graph = ROOT / "web_reader" / "data" / "graph.json"
+        with _out_graph.open("w", encoding="utf-8") as fp:
+            json.dump(_graph, fp, ensure_ascii=False, separators=(",", ":"))
+        print(f"    -> {_out_graph} ({len(_nodes)} nodes, {len(_graph['edges'])} edges)")
+    except Exception as e:  # 地圖失敗不阻擋 build，前端優雅缺席
+        print(f"WARN: graph.json skipped ({e})")
+
     # ── Write slim data.js (no markdown, no DIGEST_ALL) ───────────────────────
     def slim(item):
         return {k: v for k, v in item.items() if k != "markdown"}

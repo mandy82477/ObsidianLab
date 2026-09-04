@@ -5,7 +5,7 @@
 
   const $ = s => document.querySelector(s);
   const $$ = s => document.querySelectorAll(s);
-  let rendered = { today: false, wiki: false, archive: false, about: false, weekly: false };
+  let rendered = { today: false, wiki: false, archive: false, about: false, weekly: false, map: false };
   let detailReturnView = 'wiki';
 
   // ── On-demand fetch caches ───────────────────────────────────────────────────
@@ -173,6 +173,7 @@
     if (id === 'archive' && !rendered.archive)  { renderArchive();      rendered.archive = true; }
     if (id === 'about'   && !rendered.about)    { renderTransparency(); rendered.about   = true; }
     if (id === 'weekly'  && !rendered.weekly)   { renderWeekly();       rendered.weekly  = true; }
+    if (id === 'map'     && !rendered.map)      { renderMap();          rendered.map     = true; }
   };
 
   // ── Helpers ─────────────────────────────────────────────────────────────────
@@ -1885,5 +1886,240 @@ ${kidsHtml}
       if (subEl)  subEl.textContent = `${latest.articleCount} articles · 10 sources · curated daily`;
     }
   });
+
+  // ── Map：wiki 連結地圖（data/graph.json，d3 首次開啟才載入）────────────────────
+  // 讀者視角：頁名、領域、被引用數、距上次新聞。維運診斷（孤兒、盲區）不在此頁。
+  // 領域色取既有語意 token（ochre/info/success/warn/danger/ink），單一強調色原則的
+  // 例外比照「emoji 只允許在資料值」：顏色在這裡是資料值，不是 UI 強調。
+  const MAP_DOMAIN_TOKEN = {
+    '🤖 模型': '--ochre-9', '🛠️ 工具/功能': '--info', '💼 商業': '--success',
+    '🏛️ 政策/安全': '--danger', '🌐 社群': '--warn', '👤 人物': '--ink-3', '': '--ink-2',
+  };
+  const MAP_CHIPS = ['全部', '🤖 模型', '🛠️ 工具/功能', '💼 商業', '🏛️ 政策/安全', '🌐 社群', '👤 人物', '💻 開發實務'];
+  let mapState = null;
+
+  function loadD3() {
+    if (window.d3) return Promise.resolve(window.d3);
+    return new Promise((resolve, reject) => {
+      const s = document.createElement('script');
+      s.src = 'https://cdnjs.cloudflare.com/ajax/libs/d3/7.9.0/d3.min.js';
+      s.onload = () => resolve(window.d3);
+      s.onerror = () => reject(new Error('d3 載入失敗'));
+      document.head.appendChild(s);
+    });
+  }
+
+  function mapCss(name) {
+    return getComputedStyle(document.documentElement).getPropertyValue(name).trim() || '#888';
+  }
+  function mapAgeOpacity(days) {
+    if (days == null) return 0.85;
+    if (days <= 7) return 1; if (days <= 30) return 0.78; if (days <= 90) return 0.55; return 0.35;
+  }
+  function mapRadius(n, mode) {
+    if (mode === 'lines') return 3.5 + Math.sqrt((n.lines || 0) / 30);
+    if (mode === 'age')   return 3.5 + Math.min(n.daysSinceNews == null ? 60 : n.daysSinceNews, 180) / 16;
+    return 3.5 + Math.sqrt(n.inBody || 0) * 2.1;
+  }
+  function mapOpenable(n) {
+    return n.pageType === 'entity' || n.pageType === 'topic' || n.id === 'feature-radar';
+  }
+
+  async function renderMap() {
+    const canvas = $('#map-canvas');
+    if (!canvas) return;
+    canvas.innerHTML = '<div class="map__loading">載入星圖…</div>';
+    let d3, data;
+    try {
+      [d3, data] = await Promise.all([loadD3(), fetch('data/graph.json').then(r => { if (!r.ok) throw new Error('graph.json ' + r.status); return r.json(); })]);
+    } catch (e) {
+      canvas.innerHTML = `<div class="map__loading">星圖暫時無法載入（${esc(e.message)}）。</div>`;
+      return;
+    }
+    const sub = $('#map-sub');
+    if (sub) sub.innerHTML = `每頁一顆點，頁與頁之間的 wikilink 是線。點越大，被引用越多；顏色越淡，離上次新聞越久。<b>${data.nodes.length}</b> 頁 · <b>${data.edges.length}</b> 條連結 · 資料 ${esc(data.generated || '')}`;
+
+    const nodes = data.nodes.map(n => Object.assign({}, n));
+    const byId = new Map(nodes.map(n => [n.id, n]));
+    const edgesAll = data.edges.filter(e => byId.has(e.s) && byId.has(e.d))
+      .map(e => ({ source: e.s, target: e.d, body: e.body, tpl: e.tpl, part: e.part, n: e.body + e.tpl + e.part }));
+
+    mapState = { d3, nodes, byId, edgesAll, domain: '全部', size: 'in', bodyOnly: true, selected: null, query: '' };
+
+    // chips
+    const chipWrap = $('#map-domains');
+    chipWrap.innerHTML = MAP_CHIPS.map(c => `<button class="domain-chip${c === '全部' ? ' domain-chip--active' : ''}" data-map-domain="${esc(c)}">${esc(c.replace(/^[^\s]+\s/, ''))}</button>`).join('');
+    chipWrap.querySelectorAll('[data-map-domain]').forEach(b => b.addEventListener('click', () => {
+      mapState.domain = b.dataset.mapDomain;
+      chipWrap.querySelectorAll('.domain-chip').forEach(x => x.classList.toggle('domain-chip--active', x === b));
+      mapRestyle();
+    }));
+    $('#map-size').addEventListener('change', e => { mapState.size = e.target.value; mapRestyle(true); });
+    $('#map-body-only').addEventListener('change', e => { mapState.bodyOnly = e.target.checked; mapRebuildLinks(); });
+    const find = $('#map-find');
+    find.addEventListener('input', () => { mapState.query = find.value.trim().toLowerCase(); mapRestyle(); });
+    find.addEventListener('keydown', ev => {
+      if (ev.key !== 'Enter' || !mapState.query) return;
+      const hit = nodes.find(n => n.name.toLowerCase().includes(mapState.query) || n.id.includes(mapState.query));
+      if (hit) mapSelect(hit, true);
+    });
+
+    // svg
+    const isMobile = window.innerWidth < 720;
+    const W = canvas.clientWidth || 900;
+    const H = isMobile ? Math.max(420, Math.round(window.innerHeight * 0.62)) : Math.min(720, Math.max(480, window.innerHeight - 300));
+    canvas.innerHTML = '';
+    const svg = d3.select(canvas).append('svg').attr('width', W).attr('height', H).attr('viewBox', `0 0 ${W} ${H}`).attr('class', 'map__svg');
+    const root = svg.append('g');
+    const linkG = root.append('g').attr('class', 'map__links');
+    const nodeG = root.append('g').attr('class', 'map__nodes');
+    const labelG = root.append('g').attr('class', 'map__labels');
+    const zoom = d3.zoom().scaleExtent([0.35, 4]).on('zoom', ev => {
+      root.attr('transform', ev.transform);
+      mapState.k = ev.transform.k;
+      mapLabelVisibility();
+    });
+    svg.call(zoom).on('dblclick.zoom', null);
+    svg.on('click', ev => { if (ev.target === svg.node()) mapSelect(null); });
+    Object.assign(mapState, { svg, root, linkG, nodeG, labelG, zoom, W, H, k: 1, isMobile });
+
+    const sim = d3.forceSimulation(nodes)
+      .force('charge', d3.forceManyBody().strength(isMobile ? -140 : -230))
+      .force('center', d3.forceCenter(W / 2, H / 2))
+      .force('collide', d3.forceCollide().radius(n => mapRadius(n, mapState.size) + 4))
+      .force('x', d3.forceX(W / 2).strength(0.05))
+      .force('y', d3.forceY(H / 2).strength(0.09));
+    mapState.sim = sim;
+
+    const node = nodeG.selectAll('circle').data(nodes, n => n.id).join('circle')
+      .attr('class', 'map__node')
+      .attr('r', n => mapRadius(n, 'in'))
+      .call(d3.drag()
+        .on('start', (ev, n) => { if (!ev.active) sim.alphaTarget(0.25).restart(); n.fx = n.x; n.fy = n.y; })
+        .on('drag', (ev, n) => { n.fx = ev.x; n.fy = ev.y; })
+        .on('end', (ev, n) => { if (!ev.active) sim.alphaTarget(0); n.fx = null; n.fy = null; }))
+      .on('click', (ev, n) => { ev.stopPropagation(); mapSelect(n); })
+      .on('mouseenter', (ev, n) => { if (!mapState.selected) mapHover(n); })
+      .on('mouseleave', () => { if (!mapState.selected) mapHover(null); });
+    node.append('title').text(n => `${n.name}\n${n.domain || '根層頁'} · 被引用 ${n.inBody} · ${n.daysSinceNews == null ? '無新聞日期' : n.daysSinceNews + ' 天前有新聞'}`);
+
+    labelG.selectAll('text').data(nodes, n => n.id).join('text')
+      .attr('class', 'map__label').attr('dy', n => mapRadius(n, 'in') + 11).attr('text-anchor', 'middle')
+      .text(n => n.name.length > 14 ? n.name.slice(0, 13) + '…' : n.name);
+
+    mapRebuildLinks();
+    sim.on('tick', () => {
+      mapState.linkSel.attr('x1', e => e.source.x).attr('y1', e => e.source.y).attr('x2', e => e.target.x).attr('y2', e => e.target.y);
+      nodeG.selectAll('circle').attr('cx', n => n.x).attr('cy', n => n.y);
+      labelG.selectAll('text').attr('x', n => n.x).attr('y', n => n.y);
+    });
+    mapRestyle();
+
+    // 主題切換時重取 token 色
+    new MutationObserver(() => mapRestyle()).observe(document.documentElement, { attributes: true, attributeFilter: ['data-theme'] });
+  }
+
+  function mapVisibleEdges() {
+    const s = mapState;
+    return s.bodyOnly ? s.edgesAll.filter(e => e.body > 0) : s.edgesAll;
+  }
+  function mapRebuildLinks() {
+    const s = mapState, d3 = s.d3;
+    const edges = mapVisibleEdges().map(e => Object.assign({}, e));
+    s.linkSel = s.linkG.selectAll('line').data(edges, e => (e.source.id || e.source) + '>' + (e.target.id || e.target)).join('line')
+      .attr('class', 'map__link').attr('stroke-width', e => 0.6 + Math.sqrt(s.bodyOnly ? e.body : e.n) * 0.5);
+    s.sim.force('link', d3.forceLink(edges).id(n => n.id).distance(e => 60 + 26 / Math.sqrt(e.n)).strength(e => Math.min(0.9, 0.25 + e.n * 0.08)));
+    s.edges = edges;
+    s.neighbors = new Map();
+    edges.forEach(e => {
+      const a = e.source.id || e.source, b = e.target.id || e.target;
+      if (!s.neighbors.has(a)) s.neighbors.set(a, new Set());
+      if (!s.neighbors.has(b)) s.neighbors.set(b, new Set());
+      s.neighbors.get(a).add(b); s.neighbors.get(b).add(a);
+    });
+    s.sim.alpha(0.6).restart();
+    mapRestyle();
+  }
+
+  function mapNodeVisible(n) {
+    const s = mapState;
+    if (s.domain !== '全部' && !(n.tags || []).includes(s.domain)) return false;
+    if (s.query && !(n.name.toLowerCase().includes(s.query) || n.id.includes(s.query))) return false;
+    return true;
+  }
+
+  function mapRestyle(resize) {
+    const s = mapState; if (!s || !s.nodeG) return;
+    const focus = s.selected || s.hovered;
+    const nb = focus ? (s.neighbors.get(focus.id) || new Set()) : null;
+    const color = n => mapCss(MAP_DOMAIN_TOKEN[n.domain] || '--ink-2');
+    s.nodeG.selectAll('circle')
+      .attr('fill', color)
+      .attr('r', n => mapRadius(n, s.size))
+      .attr('fill-opacity', n => {
+        if (!mapNodeVisible(n)) return 0.06;
+        const base = mapAgeOpacity(n.daysSinceNews);
+        if (!focus) return base;
+        return (n.id === focus.id || nb.has(n.id)) ? Math.max(base, 0.9) : 0.08;
+      })
+      .attr('stroke', n => focus && n.id === focus.id ? mapCss('--ochre-9') : 'none')
+      .attr('stroke-width', 2);
+    if (resize) { s.sim.force('collide').radius(n => mapRadius(n, s.size) + 4); s.sim.alpha(0.3).restart(); s.labelG.selectAll('text').attr('dy', n => mapRadius(n, s.size) + 11); }
+    s.linkSel
+      .attr('stroke', e => focus && (e.source.id === focus.id || e.target.id === focus.id) ? mapCss('--ochre-7') : mapCss('--ink-4'))
+      .attr('stroke-opacity', e => {
+        const vis = mapNodeVisible(e.source) && mapNodeVisible(e.target);
+        if (!vis) return 0.03;
+        if (!focus) return 0.35;
+        return (e.source.id === focus.id || e.target.id === focus.id) ? 0.85 : 0.04;
+      });
+    mapLabelVisibility();
+  }
+
+  function mapLabelVisibility() {
+    const s = mapState; if (!s || !s.labelG) return;
+    const focus = s.selected || s.hovered;
+    const nb = focus ? (s.neighbors.get(focus.id) || new Set()) : null;
+    const k = s.k || 1;
+    const threshold = s.isMobile ? 13 : 8.5;   // 未放大時只標樞紐，避免手機字疊成一團
+    s.labelG.selectAll('text')
+      .attr('font-size', Math.max(9, 11 / Math.sqrt(k)))
+      .attr('opacity', n => {
+        if (!mapNodeVisible(n)) return 0;
+        if (focus) return (n.id === focus.id || nb.has(n.id)) ? 1 : 0;
+        if (s.query) return 1;
+        return (mapRadius(n, s.size) >= threshold || k >= 1.6) ? 0.85 : 0;
+      });
+  }
+
+  function mapHover(n) { mapState.hovered = n; mapRestyle(); }
+
+  function mapSelect(n, center) {
+    const s = mapState; s.selected = n; s.hovered = null;
+    const panel = $('#map-panel');
+    if (!n) { panel.hidden = true; mapRestyle(); return; }
+    const inbound = s.edges.filter(e => e.target.id === n.id).map(e => ({ n: e.source, c: s.bodyOnly ? e.body : e.n })).sort((a, b) => b.c - a.c);
+    const outbound = s.edges.filter(e => e.source.id === n.id).map(e => ({ n: e.target, c: s.bodyOnly ? e.body : e.n })).sort((a, b) => b.c - a.c);
+    const li = arr => arr.length ? arr.slice(0, 12).map(x => `<li><button class="map__panel-link" data-map-go="${esc(x.n.id)}">${esc(x.n.name)}</button><span class="map__panel-count">${x.c}</span></li>`).join('') + (arr.length > 12 ? `<li class="map__panel-more">…還有 ${arr.length - 12} 頁</li>` : '') : '<li class="map__panel-more">—</li>';
+    const age = n.daysSinceNews == null ? '無新聞日期' : n.daysSinceNews === 0 ? '今天有新聞' : `${n.daysSinceNews} 天前有新聞`;
+    panel.innerHTML = `
+      <button class="map__panel-close" aria-label="關閉">×</button>
+      <div class="map__panel-kicker">${esc(n.domain || '根層頁')}${n.pageType === 'entity' ? ' · 實體' : n.pageType === 'topic' ? ' · 議題' : ''}</div>
+      <div class="map__panel-title">${esc(n.name)}</div>
+      <div class="map__panel-meta">${age} · 被引用 ${n.inBody} 頁 · ${n.lines} 行</div>
+      ${mapOpenable(n) ? `<button class="map__panel-open" data-map-open="${esc(n.id)}" data-map-type="${esc(n.pageType)}">開啟頁面 →</button>` : ''}
+      <div class="map__panel-h">誰引用它（${inbound.length}）</div><ul class="map__panel-list">${li(inbound)}</ul>
+      <div class="map__panel-h">它引用誰（${outbound.length}）</div><ul class="map__panel-list">${li(outbound)}</ul>`;
+    panel.hidden = false;
+    panel.querySelector('.map__panel-close').addEventListener('click', () => mapSelect(null));
+    panel.querySelectorAll('[data-map-go]').forEach(b => b.addEventListener('click', () => mapSelect(s.byId.get(b.dataset.mapGo), true)));
+    const openBtn = panel.querySelector('[data-map-open]');
+    if (openBtn) openBtn.addEventListener('click', () => openWikiPage(openBtn.dataset.mapOpen, openBtn.dataset.mapType));
+    if (center && n.x != null) {
+      const t = s.d3.zoomIdentity.translate(s.W / 2 - n.x * Math.max(s.k, 1.2), s.H / 2 - n.y * Math.max(s.k, 1.2)).scale(Math.max(s.k, 1.2));
+      s.svg.transition().duration(450).call(s.zoom.transform, t);
+    }
+    mapRestyle();
+  }
 
 })();
