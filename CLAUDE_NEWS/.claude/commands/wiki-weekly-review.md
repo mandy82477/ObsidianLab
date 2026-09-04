@@ -25,6 +25,16 @@ description: 每週判斷本週有哪些主題值得加碼追蹤（建頁/加開
 - `wiki/index.md`
 - `wiki/reader-notes.md` — 使用者「記一下」的待辦收件匣（本週要消費的讀者需求訊號）
 
+### 1b. 讀者回饋入口（GitHub Issues）`[加入: 2026-09-04]`
+
+網站頁尾「這段看不懂／這條錯了？」連到 GitHub Issue 範本（label `reader-feedback`），是唯一的**真人**訊號入口——冷讀者 review 再多都是模擬。本步：
+
+```
+gh issue list --label reader-feedback --state open --json number,title,createdAt
+```
+
+每筆依內容分類 append 進 `wiki/reader-notes.md`（🎨 版面／📝 內容修正／🔍 興趣主題），註明 issue 編號，隨既有消費路徑處理；處理完在 issue 留一句去向並關閉。**雲端環境無 `gh` 或無網路時寫「讀者回饋：本輪無法讀取（環境限制）」，不得寫成「無回饋」。**
+
 ### 2. 六位記者並行判斷（同一訊息中平行呼叫全部）
 
 沿用 `.claude/commands/wiki-lint.md` 「步驟 2」的類別對應表與派工方式（`subagent_type: "general-purpose"`＋prompt 首段角色前導導向 `.claude/agents/wiki-reporter-[category].md`）。每個 Agent 呼叫必須帶 `model: "sonnet"`（lint 與策展為有界判斷任務，不需旗艦模型；未指定會繼承主 session 模型，六記者並行足以打穿訂閱配額）。

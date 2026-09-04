@@ -462,6 +462,41 @@ python -c "import json;d=json.load(open('data/link_health.json',encoding='utf-8'
 
 **趨勢表 append：** 算完以上指標後，在 `wiki/metrics.md` 表格 append 一列（只 append 不改舊列；月度指標非首次 lint 時該欄填「跳過」）；並讀最近 3 列，輸出一句趨勢判讀（持平／惡化中／已回升），**惡化中即使未破警戒線也要標 ⚠️**。
 
+#### 6h. 規則密度審查 `[加入: 2026-09-04]`
+
+lint 原本只會長不會縮：6d 問「逾 60 天的規則還吻合嗎」，從不問「還需要存在嗎、能不能只留判準」。密度沒有消費端，就跟 wiki 蒸餾上線前的 patterns 頁一樣單向增長（2026-09-04 量測：30 檔 4,585 行、235 個 `[加入:]` 標記、95 行教訓敘事；`wiki-lint.md` 自己 567 行 50 標記——檢查者最肥，同「檢查者把自己排除在檢查範圍外」形狀）。
+
+```
+python scripts/lint_health.py density
+```
+
+- 門檻：檔 >300 行、或標記 >20、或教訓行 >5%（改門檻改腳本常數）
+- 超門檻者為**蒸餾候選**：以 `| 檔 | 段落 | 現況行數 | 擬處置 | 省多少行 |` 提案——處置三選一：教訓散文下沉到該檔尾「沿革」節或 `wiki/log.md`（考古鏈靠 `[加入:]` 日期→log Query 保持可追）／併入判準一句／規則已被機械檢查接住者改為一句＋指向檢查器
+- **每次 lint 至多提案 2 檔，經使用者確認才動**（同 wiki 月度蒸餾節奏）；無候選回報「無密度候選」
+- 規則的閱讀者是每個 agent——規則債跟內容債一樣會壓垮閱讀者
+
+#### 6i. 檢查器的檢查：突變測試 `[加入: 2026-09-04]`
+
+「連續滿分與抓不到問題是同一枚硬幣」原本只是一句話。本步讓它變成動作：
+
+```
+python scripts/lint_health.py mutate          # registry 每組配對：抹掉命中後斷言仍綠＝假看守
+python scripts/lint_health.py hits report     # 各步驟連續零命中輪數（≥8 輪 ⚠️）
+```
+
+- `mutate` 每輪跑（成本秒級）：回報的假看守當場改 pattern（2026-09-04 實例：`——` 全形破折號在散文出現 60 次，pattern 恆真）
+- `hits report` 標 ⚠️ 的步驟：先做人工突變（故意弄壞一個該步該抓的東西，重跑該步看會不會紅）；不會紅 → 檢查失效，修；會紅但世界真的乾淨 → 排入 6h 評估降頻或合併
+- 每月首次 lint 另抽 3 個非 registry 檢查（`check_*.py`）做人工突變，用 `random.seed('YYYY-Wnn')` 擲骰選
+
+#### 6j. 對抗輪（月度）`[加入: 2026-09-04]`
+
+每月首次 lint（判斷同月度蒸餾）依 `.claude/rules/wiki-lint-adversarial.md` 派三個對抗 agent：冷讀者審日報、冷讀者審週報＋隨機 3 頁 wiki、prompt reviewer 審近 30 天改過的規則檔。發現逐項修到「無阻擋意見」，並依該檔「收報後」登記 `lint_health.py misses`。非月度首次寫「非本月首次 lint，跳過」。
+
+#### 漏抓帳與規則版本戳（每輪）`[加入: 2026-09-04]`
+
+- **漏抓帳**：本輪任何由使用者質疑、對抗輪或記者回報揭露、而 lint 既有步驟**本該抓到卻沒抓到**的缺陷，一律 `python scripts/lint_health.py misses add --date … --issue … --should-catch <步驟> --why <考卷外|考卷內抽樣不足|檢查失效|無對應檢查> --fix …`；每季看 `misses stats` 決定投資哪一步（在此之前「重大問題全來自使用者質疑」只是印象）
+- **規則版本戳**：步驟 8 記 `規則版本：` ＝ `git log -1 --format=%h -- .claude/`，否則跨週的命中率趨勢無法比較
+
 ### 7. 讀者模擬驗收 `[加入: 2026-07-02]`
 
 站在三種目標讀者（根目錄 `CLAUDE.md`「目標讀者」）的角度各出一題**本週真實會問的問題**（從近 7 天日報事件取材），模擬讀者從 `wiki/index.md` 出發：
@@ -507,6 +542,9 @@ python -c "import json;d=json.load(open('data/link_health.json',encoding='utf-8'
   - 來源健康：（各來源 7 天統計，異常者列出 or 全部正常）
   - 跨檔案語意矛盾（6f）：（列出配對與建議，若無則寫「✅ 全部配對語意一致」）
   - 成長迴路（月度）：（立法提案 N 條／採納 M 條／觀察中 K 條，或「非本月首次 lint，跳過」）
+  - 規則密度（6h）：（`lint_health density` 候選 N 檔，提案 M 檔／無密度候選）
+  - 突變測試（6i）：（`mutate` 假看守 N 處已修；`hits report` ⚠️ 步驟列出或「無」）
+  - 對抗輪（6j）：（三 agent 發現 🔴/🟡/🟢 各 N，修至無阻擋意見；類型分佈一句／非本月首次 lint，跳過）
 - 品質指標（6g）：
   - ref 覆蓋率（每週）：XX%（閾值 80%），缺 ref 日期：（列出或「無」）
   - 採用驗證率（月度）：N 條中 M 條達成（XX%，僅供判讀）／非本月首次 lint，跳過
@@ -522,6 +560,8 @@ python -c "import json;d=json.load(open('data/link_health.json',encoding='utf-8'
 - 熱度降溫（5a）：（檢查 N 條，降 M 條：條目名 舊→新；同步 entities 頁 M 處；無則寫「無條目達標」）
 - 渲染層驗收：（查了哪 2 頁、本機實開或雲端讀產物、結果）
 - overview.md：已更新
+- 規則版本：（`git log -1 --format=%h -- .claude/`）
+- 漏抓帳：（本輪 `misses add` N 筆，各一句；無則寫「無」）
 - 待使用者裁示：（逐項列出，**每項標「⏳ 已擱置 N 週」** `[加入: 2026-08-28]`——N 由 Grep 前幾次 lint 紀錄同一事項推得；無則寫「無」）
 ```
 
@@ -553,6 +593,8 @@ python -c "import json;d=json.load(open('data/link_health.json',encoding='utf-8'
    > **為什麼不能只信 build 綠燈 `[加入: 2026-08-28]`**：2026-08-09 踩過——資料層檢查全綠、網站上 18 條 wikilink 死掉，因為壞的是 renderer 不是資料。`build_web.py` 只證明「資料層對」，不證明「讀者看到的東西對」。全域 `REVIEW-PRINCIPLES.md` 第 11 條明言 DOM／資料斷言不可替代眼睛驗收。
 
 4. **心跳紀錄（無論成功／no-op／中止都必須寫）`[加入: 2026-07-27]`**：append 一行結果到 `src/logs/task_scheduler.log`（格式沿用該檔既有慣例，如 `[週六 YYYY/MM/DD hh:mm:ss.00] Weekly lint OK - 修 N 頁，M 項待確認，測試/build/push 結果`；no-op 寫 `Weekly lint OK (no-op) - 無頁面需修正`；中途失敗寫 `Weekly lint FAILED - <卡在哪一步>`）→ `git -C REPO_ROOT add src/logs/task_scheduler.log` → `git -C REPO_ROOT commit -m "chore: weekly lint heartbeat YYYY-MM-DD"`。**這一步是本步驟序列中唯一保證產生 commit 的步驟**——目的是讓「跑了但無事可改」與「靜默死亡」在 GitHub 上可分辨（2026-07-25 雲端 lint 無聲失敗、死因不可考的教訓：當時成功與死亡的 artifact 都是零）。對應每日 pipeline 的 `.claude/commands/news-pipeline-steps.md`「Step 6」（無論前面成敗都必須寫），本機與雲端行為一致。
+4b. **命中帳（每輪必記）`[加入: 2026-09-04]`**：`python scripts/lint_health.py hits record --date YYYY-MM-DD --rules-rev <規則版本> --step 3a=N --step 3b=N … --step 7b=N`——每個執行過的步驟各一筆命中數（0 也要記，零命中才是訊號），`data/lint_step_hits.jsonl` 併入本步 push
+
 5. **單一 push**：`git -C REPO_ROOT push`（本次所有 commit 一次推送，一次 push = 一個 Pages 部署，避免並發競爭；理由同 `.claude/commands/news-pipeline-steps.md` Step 5）
 
 > 本步 commit 為實質改動閉迴路的一部分，**不可只留在對話裡**（同 SessionStart hook 的未 commit 提醒對象）。心跳紀錄在中止情境下照樣執行——lint 中途放棄時，先寫 FAILED 心跳並 commit push 再結束，不可靜默離開。

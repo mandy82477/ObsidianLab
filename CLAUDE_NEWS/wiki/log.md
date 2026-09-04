@@ -5503,3 +5503,16 @@ GH Actions 抓料排 10:23 UTC，到 14:45 UTC 仍未落地（+4.4 小時且持�
 
 **處置（三層）：** ① `weekly-report.md` 與 `news-pipeline-steps.md` Step 1b 各設「機械契約字串」表（字串｜消費端｜改壞後果），正文引用指回表格；② `.claude/review-registry.json` 補 6 組契約配對（本週一句話↔WEEKLY_LEDE_RE、素材涵蓋窗↔WEEKLY_FOOTER_RE、兩表小標／表頭三方、｜查證↔PROBE_RE、FOCUS_INLINE 互認），check_rules 看守；③ 修改規範 `claude-md-edit.md` 新增「機械契約字串住固定區」條＋跨專案通用原則檔 D8。配對按各腳本**真實依賴**登記（初版過度假設 scan_open_forecasts 吃小標，實查只吃表頭，已修正——契約登記本身也要對照實況，不能照規格想像）。
 - **契約固定區 review 落地（2026-09-04）**：reviewer 3🔴8🟡——兩個未入表的硬契約錨點（`## 四、本週數字`、`## 一、`：check_weekly_ledger 不中即靜默跳過）、「正文指回表格」一處都沒執行（等於多加一份副本，且 all_contain 全檔搜尋讓副本互相掩護）、回收小標 `（Wnn）` 寫錯應為 `（YYYY-Wnn）`、新開表 build_web 其實不認小標、｜查證 漏 check_weekly_ledger 硬擋、app.js 消費的是 JSON key 非 emoji、三列漏網（狀態符號／討論子標題／3–6 條數）、registry pattern 太寬（詞不認形狀、alternation 任一存活即綠）、判斷式無 grep 指令、D8 掉出章節。全部落地：週報契約表 7→11 列、日報表 6→7 列並精修、正文五處純重複改指回表格、registry 重寫為規格端／程式端分列的 7 組精確 pattern（表頭 pattern 容許 \| 逃逸與 \s*\| 兩種寫法）、修改規範補 grep 指令、D8 搬回 D 區降為 ###。
+
+## 2026-09-04 Query：「有沒有讓 lint 持續進化的機制」→ 五條迴路全部落地
+
+**點出什麼：** lint 是靜態考卷，進化只靠使用者不定期質疑；「歷史上所有重大問題全來自使用者質疑」是印象不是統計；「連續滿分與抓不到問題是同一枚硬幣」只是一句話沒有動作。
+
+**處置（`scripts/lint_health.py` 四子命令＋規格接線）：**
+1. **漏抓帳** `data/lint_misses.jsonl`（`misses add/list/stats`）：結構化記「哪一步本該抓到／為什麼沒抓到（考卷外／抽樣不足／檢查失效／無對應檢查）」。首批登記本週 8 筆：無對應檢查 4、檢查失效 2——最值得投資的步驟 6c。
+2. **檢查器的檢查**（6i）：`mutate` 對 registry 每組配對做突變（抹掉命中後仍綠＝假看守）＋過寬啟發式（同檔命中 ≥10）；**首跑即抓到 5 組過寬 pattern**（`深挖`、`5c`、`凍結`、`＋`、`/weekly`），前四組收緊、`/weekly` 加明示豁免（詞本身即契約，理由寫進 `_mutate_exempt`）。`hits record/report` 命中帳：每輪記各步命中數，連續 ≥8 輪零命中標 ⚠️。首筆 09-03 lint 21 步已記。
+3. **對抗輪**（6j，月度）：`.claude/rules/wiki-lint-adversarial.md` 固化本週三種派工（冷讀者日報／冷讀者週報＋隨機 3 頁／prompt reviewer 近 30 天規則檔），發現走 misses 帳與題庫。
+4. **規則密度審查**（6h）：`density` 量測（首跑 4 檔超門檻：wiki-lint 567 行 50 標記最肥）→ 每次 lint 至多提案 2 檔蒸餾，經使用者確認。
+5. **真人入口**：GitHub Issue 範本 `reader-feedback` ＋網站頁尾「這段看不懂／這條錯了？回報」；`/wiki-weekly-review` 1b 步以 `gh issue list` 消費進 reader-notes（雲端無 gh 時明寫「無法讀取」不得寫「無回饋」）。
+6. **規則版本戳**：步驟 8 記 `git log -1 -- .claude/`，跨週趨勢才可比。
+測試 509 綠（新增 test_lint_health 7 案例），check_rules 77 組綠。

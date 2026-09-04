@@ -1,0 +1,8 @@
+{"date": "2026-09-03", "issue": "日報重點話題被 GitHub 存量 repo（9.3 萬星）霸榜且無理由句", "should_catch": "6c", "why": "無對應檢查", "fix": "Step 1b 重點話題三條准入＋存量條目退出本區；6c 尚無「重點話題有理由句」抽樣", "source": "user-query"}
+{"date": "2026-09-03", "issue": "wiki 十頁維運術語外洩（「已提報 feature-radar」「需主編查證」等 33＋ 處）", "should_catch": "3e", "why": "考卷內抽樣不足", "fix": "書寫風格立法「派工過程不上頁」；3e 逐字檢查抓不到改寫版", "source": "cold-reader"}
+{"date": "2026-09-04", "issue": "週報判準欄／檔尾整片內部維運語言（涵蓋窗、帳本、本指令、判準第 N 支）", "should_catch": "無", "why": "無對應檢查", "fix": "weekly-report 讀者版禁用內部詞表；建議 check_weekly_ledger 加禁用詞掃描", "source": "cold-reader"}
+{"date": "2026-09-04", "issue": "日報檔尾「選材門檻」附錄裸露規則檔路徑與內規；聚焦與內文逐字重複", "should_catch": "6c", "why": "無對應檢查", "fix": "附錄廢除、3a-2 內規外洩 grep 自檢、聚焦防重複規則", "source": "cold-reader"}
+{"date": "2026-09-04", "issue": "聚焦行內連結改版後 build_web 解析器未同步（裸 markdown 上站、badge 全站消失）", "should_catch": "6f", "why": "檢查失效", "fix": "契約字串固定區＋registry 規格端/程式端互認配對；回歸測試 test_focus_inline_links", "source": "prompt-reviewer"}
+{"date": "2026-09-04", "issue": "build_web 收尾標點清理寫入 U+0001 控制字元（heredoc 把 r\"\\1\" 解成 SOH）", "should_catch": "無", "why": "無對應檢查", "fix": "lambda 回填＋回歸案例；教訓：heredoc 內含反斜線一律改寫檔執行", "source": "prompt-reviewer"}
+{"date": "2026-09-04", "issue": "registry pattern `——` 恆真（散文 60 處）——假看守", "should_catch": "6f", "why": "檢查失效", "fix": "拆規格端/程式端精確 pattern；lint_health mutate 突變測試制度化", "source": "prompt-reviewer"}
+{"date": "2026-09-04", "issue": "boris-cherny／managed-agents 高引用但停滯，現況段以現在式描述 30 天前的事", "should_catch": "3c", "why": "考卷外", "fix": "Opus 精修改「截至 YYYY-MM-DD」措辭；3c 只看狀態不看時態", "source": "cold-reader"}

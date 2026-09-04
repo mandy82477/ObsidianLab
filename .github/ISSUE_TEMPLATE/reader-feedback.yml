@@ -1,0 +1,30 @@
+name: 讀者回饋
+description: 這段看不懂／這條錯了／想看什麼——來自 CLAUDE NEWS 網站的讀者回饋
+title: "[讀者回饋] "
+labels: ["reader-feedback"]
+body:
+  - type: dropdown
+    id: kind
+    attributes:
+      label: 類型
+      options:
+        - 看不懂（術語、前情、內部語言）
+        - 內容有錯（事實、數字、日期）
+        - 想看什麼（主題、頁面、比較）
+        - 版面問題（排版、連結、手機）
+    validations:
+      required: true
+  - type: input
+    id: where
+    attributes:
+      label: 哪一頁／哪一期
+      placeholder: 例：2026-09-03 日報「重點話題」第 2 則；wiki 頁 pricing「通路與乘數」
+    validations:
+      required: true
+  - type: textarea
+    id: what
+    attributes:
+      label: 說明
+      placeholder: 一句話就夠。看不懂的請貼原句。
+    validations:
+      required: true
