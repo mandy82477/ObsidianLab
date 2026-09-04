@@ -994,7 +994,7 @@ def parse_digest(f: Path) -> dict:
                     text = FOCUS_INLINE_LINK_RE.sub(r"\1", text)  # 群外落單連結：留來源名
                     text = FOCUS_REF_RE.sub("", text)
                     text = FOCUS_NUM_RE.sub("", text).strip()
-                    text = re.sub(r"\s+([。．.，,])", r"", text)  # 半形括號群移除後的收尾空白
+                    text = re.sub(r"\s+([。．.，,])", lambda m: m.group(1), text)  # 半形括號群移除後的收尾空白
                     result["focus"].append({"tag": tag, "text": text, "ref_urls": ref_urls})
                     focus_ref_nums.append(ref_nums)
                 continue

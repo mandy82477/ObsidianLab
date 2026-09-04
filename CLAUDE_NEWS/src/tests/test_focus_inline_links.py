@@ -28,6 +28,7 @@ SAMPLE = """# Claude Code & Anthropic 每日新聞摘要
 - **[重大事件]** Claude 發布 Sonnet 6，context 翻倍。（[官方](https://example.com/ann)）
 - **[社群趨勢]** 三款工具同批亮相。（[HN](https://example.com/a)、[HN](https://example.com/b)）
 - **[持續追蹤]** 無連結的推論句。
+- **[新工具]** 半形括號收尾 ([HN](https://example.com/g)).
 
 ### ⭐ 重點話題
 
@@ -57,6 +58,13 @@ class FocusInlineLinks(unittest.TestCase):
 
     def test_badge_對回區塊條目(self):
         self.assertEqual(self.r["topStories"][0]["focusTags"], ["[重大事件]"])
+
+    def test_收尾標點不被吃掉也不注入控制字元(self):
+        """三審 T1：r"\\1" 曾被寫檔工具解成 U+0001，吞句末標點並注入非法字元。"""
+        t = self.r["focus"][3]["text"]
+        self.assertTrue(t.endswith("."), t)
+        self.assertNotIn("\x01", t)
+        self.assertEqual(self.r["focus"][3]["ref_urls"], ["https://example.com/g"])
 
     def test_preview_乾淨(self):
         self.assertNotIn("http", self.r["preview"])

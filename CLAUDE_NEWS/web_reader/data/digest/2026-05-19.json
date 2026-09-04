@@ -219,7 +219,7 @@
     },
     {
       "tag": "[風險警示]",
-      "text": "資安研究人員揭露 Claude Code 存在 RCE 漏洞，攻擊者可透過惡意 deeplink 執行任意指令，同日另有工具揭露 Claude Code 等 AI 工具會將\u0001env 金鑰以明文永久留存於本地資料庫，安全疑慮集中爆發。",
+      "text": "資安研究人員揭露 Claude Code 存在 RCE 漏洞，攻擊者可透過惡意 deeplink 執行任意指令，同日另有工具揭露 Claude Code 等 AI 工具會將.env 金鑰以明文永久留存於本地資料庫，安全疑慮集中爆發。",
       "ref_urls": []
     },
     {

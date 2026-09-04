@@ -227,7 +227,7 @@
     },
     {
       "tag": "[重大事件]",
-      "text": "Claude Code v2.1.183 發布：強化 auto mode 安全性，`git reset --hard`、`git checkout --\u0001`、`git clean -fd`、`git stash drop` 等破壞性指令在未明確要求時將自動封鎖。",
+      "text": "Claude Code v2.1.183 發布：強化 auto mode 安全性，`git reset --hard`、`git checkout --.`、`git clean -fd`、`git stash drop` 等破壞性指令在未明確要求時將自動封鎖。",
       "ref_urls": [
         "https://github.com/anthropics/claude-code/releases/tag/v2.1.183"
       ]
