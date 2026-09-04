@@ -106,6 +106,19 @@ PYTHON REPO_ROOT\scripts\archive_gathered.py
 
 ## Step 1b：生成日報
 
+### 機械契約字串（勿改；新增時登記 `.claude/review-registry.json`）`[加入: 2026-09-04]`
+
+**script 會 grep 的字串只住這張表**，下方規則引用時指回本表、不另抄。改任何一格必須同步右欄消費端。
+
+| 契約字串／形狀 | 消費端 | 改壞的後果 |
+|---|---|---|
+| 區塊標題的 emoji（📌⭐🔧📰💬💰🧭📡） | `build_web.py` SECTION_EMOJI、`app.js` | 該區塊整段不進網站 |
+| 聚焦行 `- **[標籤]** 說明（[來源名](url)）` | `build_web.py` FOCUS_RE／FOCUS_INLINE_LINK_RE／FOCUS_INLINE_GROUP_RE、`app.js` focus 渲染 | 裸 markdown 上站、badge 全站消失 |
+| 條目三行式：`**[標題](url)**`＋說明＋`` `來源` · MM/DD HH:MM UTC``（討論區末加 `情緒：`） | `build_web.py` STORY_RE／SOURCE_RE、3a 自檢 | 條目解析不到，整則消失 |
+| 🧭 行 `- **[標題](url)** — 說明（→ 專頁名）` | `build_web.py` TOPIC_RADAR_RE | 雷達區不進網站 |
+| 📡 表 `\| 來源 \| ✅/❌ \| 條數 \|` | `build_web.py` SOURCE_TABLE_RE、3b 自檢、lint 6e | 來源健康檢查斷炊 |
+| 聚焦歸因（行內連結） | wiki-lint 6g ref 覆蓋率量測 | 覆蓋率誤報暴跌 |
+
 **0-1. 新鮮度防線（強制，生成前先做）`[加入: 2026-07-25]`**：讀取 `src/gathered_items.json`，確認 `date` 等於 TARGET_DATE 且 `items` 非空。
 
 - 兩者皆滿足 → 繼續

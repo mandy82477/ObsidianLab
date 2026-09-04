@@ -24,6 +24,22 @@ argument-hint: [YYYY-Wnn]
 
 ---
 
+## 機械契約字串（勿改；新增時登記 `.claude/review-registry.json`）`[加入: 2026-09-04]`
+
+**script 會 grep 的字串只住這張表**，正文條文引用時指回本表、不另抄一份。改任何一格必須同步右欄消費端（`check_rules.py` 依 registry 看守）。
+
+| 契約字串 | 消費端 | 改壞的後果 |
+|---|---|---|
+| `> **本週一句話**：` | `build_web.py` WEEKLY_LEDE_RE | 網站 lede 空白，無警告 |
+| `### 下週值得關注：新開 N 條`＋表頭 `類型｜預告｜判準` | `build_web.py`、`check_weekly_ledger.py` | 新開表整張不進 JSON |
+| `### 上週的線怎麼了（Wnn）`＋表頭 `上週預告｜判準｜本週結果` | `build_web.py`、`check_weekly_ledger.py`、`scan_open_forecasts.py` | 回收表消失／帳目對不上 |
+| 判準欄尾 `｜查證：關鍵字1、關鍵字2` | `scan_open_forecasts.py` PROBE_RE | 預告失去日報偵測 |
+| 檔尾 `---` 分隔線＋下一行 `**素材涵蓋窗**` 起頭、位於全檔最末 | `build_web.py` WEEKLY_FOOTER_RE | 檔尾不上站並污染「本週數字」 |
+| 檔尾數字 `- **值**——說明`（全形破折號條列） | `build_web.py` WEEKLY_STAT_RE、`check_weekly_ledger.py` | 數字節網站空殼 |
+| 深挖小標 `### 深挖：` | `build_web.py` h3 切分、`check_weekly_ledger.py` check_deepdive | 深挖不成獨立區塊／字數檢查失效 |
+
+---
+
 ## 步驟
 
 ### 1. 決定週次與輸出路徑

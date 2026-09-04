@@ -48,6 +48,16 @@ command / skill 中永遠使用明確路徑，**禁止裸露的 `CLAUDE.md`**：
 
 ---
 
+## 修改時：機械契約字串住固定區 `[加入: 2026-09-04]`
+
+**任何會被 script grep／regex 消費的字串（小標、表頭、標籤、格式形狀），在規格檔裡只能住「機械契約字串」表**（`weekly-report.md` 與 `news-pipeline-steps.md` Step 1b 已各設一張），正文條文引用時指回該表，不另抄一份；新增契約字串時同步登記 `.claude/review-registry.json` 的 `sync_pairs`（規格端與消費端互相指認），讓 `check_rules.py` 看守。
+
+> 立法依據（2026-09-04 prompt review）：六個 🔴 有五個是「規格改了、機器沒跟」——契約字串散在散文裡，改文案順手就改斷（聚焦連結格式、`素材涵蓋窗`、判準凍結比對各中一次）。字串住固定表＋registry 雙看守後，這類失效在 commit 前就會紅。
+
+**判斷式：** 這個字串有沒有任何 script 在 grep？有 → 進契約表＋registry；沒有 → 一般文案，自由改。
+
+---
+
 ## 修改後：強制驗證
 
 **修改完成後執行 `/review-commands`，直到零錯誤才可收工。**
