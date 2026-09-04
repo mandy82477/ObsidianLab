@@ -843,7 +843,8 @@
         "5c[\\.）)]",
         "回掃"
       ],
-      "_mutate_note": "2026-09-04 lint_health mutate 判過寬（散文即可滿足），收緊"
+      "_mutate_note": "2026-09-04 lint_health mutate 判過寬（散文即可滿足），收緊",
+      "_mutate_exempt": "2026-09-04：「5c」是步驟編號、在 wiki-lint.md 天然高頻；契約語意是「format 的權限表指向的 5c 步驟存在且含回掃」，由 patterns 懸置標記／回掃 兩詞與路徑存在性共同守"
     },
     {
       "name": "reader-notes 的消費者清單必須與實際消費者一致：weekly-report 選題讀它，該檔的「消費」節也要列出它",
