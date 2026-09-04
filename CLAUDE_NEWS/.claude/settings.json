@@ -1,0 +1,50 @@
+{
+  "_doc": "可共享的專案設定：hooks（Stop 擋規則檔未驗證、SessionStart 提醒未 commit、PostToolUse wiki lint、PreToolUse 大檔讀取觀測）。路徑用 $CLAUDE_PROJECT_DIR，任何 clone 都能跑。個人權限允許清單住 settings.local.json（已 gitignore）。",
+  "hooks": {
+    "PostToolUse": [
+      {
+        "matcher": "Edit|Write",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python \"$CLAUDE_PROJECT_DIR/.claude/hooks/lint_wiki_if_wiki.py\""
+          }
+        ]
+      }
+    ],
+    "SessionStart": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "c=$(git status --porcelain 2>/dev/null | grep -vE 'gathered_items\\.json|emitted_items\\.json|seen_urls\\.json|\\.stackdump|settings\\.local\\.json|\\.obsidian/|\\.gitignore|\\.canvas|smart-connections' | grep -c . || true); [ \"${c:-0}\" -gt 0 ] && printf '{\"systemMessage\":\"⚠️ %s 個未 commit 的實質改動（code/規則/wiki）待收尾——git status 查看\"}' \"$c\" || true",
+            "timeout": 10
+          }
+        ]
+      }
+    ],
+    "Stop": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python \"$CLAUDE_PROJECT_DIR/.claude/hooks/check_rules_on_stop.py\"",
+            "timeout": 15
+          }
+        ]
+      }
+    ],
+    "PreToolUse": [
+      {
+        "matcher": "Read",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python \"$CLAUDE_PROJECT_DIR/.claude/hooks/observe_large_reads.py\"",
+            "timeout": 10
+          }
+        ]
+      }
+    ]
+  }
+}

@@ -47,3 +47,6 @@ desktop.ini
 # core-plugins / community-plugins）與外掛本體仍追蹤，只排除這兩個純 UI 檔。
 .obsidian/workspace.json
 .obsidian/graph.json
+
+# Claude Code 個人設定（權限允許清單，含本機絕對路徑）——每台機器自己的，不進 repo（2026-09-04 公開前掃描）
+**/.claude/settings.local.json
