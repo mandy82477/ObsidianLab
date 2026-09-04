@@ -1,19 +1,19 @@
 {
   "tool": "scripts/audit_pending_markers.py",
-  "pages_scanned": 60,
+  "pages_scanned": 65,
   "totals": {
-    "legacy_total": 31,
-    "already_new_syntax": 276,
-    "P": 11,
+    "legacy_total": 27,
+    "already_new_syntax": 193,
+    "P": 14,
     "M": 6,
-    "R": 9,
-    "U": 5
+    "R": 0,
+    "U": 7
   },
   "records": [
     {
-      "id": "cb49a028",
-      "page": "entities/andrej-karpathy",
-      "file": "wiki/entities/andrej-karpathy.md",
+      "id": "77ec50e3",
+      "page": "entities/amir-salek",
+      "file": "wiki/entities/amir-salek.md",
       "line": 5,
       "word": "待核實",
       "cls": "M",
@@ -29,10 +29,10 @@
       "backfilled": false
     },
     {
-      "id": "d4bf0f12",
-      "page": "entities/andrej-karpathy",
-      "file": "wiki/entities/andrej-karpathy.md",
-      "line": 25,
+      "id": "aff9b54c",
+      "page": "entities/amir-salek",
+      "file": "wiki/entities/amir-salek.md",
+      "line": 29,
       "word": "待核實",
       "cls": "P",
       "cls_reason": "",
@@ -47,106 +47,10 @@
       "backfilled": false
     },
     {
-      "id": "031d6e13",
-      "page": "entities/boris-cherny",
-      "file": "wiki/entities/boris-cherny.md",
-      "line": 218,
-      "word": "待核實",
-      "cls": "R",
-      "cls_reason": "PRE「解除」",
-      "shape": "list",
-      "in_table_cell": false,
-      "cell_len": null,
-      "segment": "本頁解除待核實",
-      "event_dates": [
-        "2026-06-22"
-      ],
-      "wikilinks": [
-        "entities/fiona-fung"
-      ],
-      "domain": "👤 人物",
-      "reporter": "wiki-reporter-people",
-      "backfilled": false
-    },
-    {
-      "id": "75d89e11",
-      "page": "entities/cat-wu",
-      "file": "wiki/entities/cat-wu.md",
-      "line": 89,
-      "word": "待核實",
-      "cls": "R",
-      "cls_reason": "PRE「解除」",
-      "shape": "list",
-      "in_table_cell": false,
-      "cell_len": null,
-      "segment": "本頁解除待核實",
-      "event_dates": [
-        "2026-06-22"
-      ],
-      "wikilinks": [
-        "entities/fiona-fung"
-      ],
-      "domain": "👤 人物",
-      "reporter": "wiki-reporter-people",
-      "backfilled": false
-    },
-    {
-      "id": "cb699116",
-      "page": "entities/claude-code",
-      "file": "wiki/entities/claude-code.md",
-      "line": 32,
-      "word": "未經官方確認",
-      "cls": "R",
-      "cls_reason": "PRE「解除」",
-      "shape": "callout",
-      "in_table_cell": false,
-      "cell_len": null,
-      "segment": "解除 08-08 媒體報導階段「未經官方確認」標記，已同步 [[topics/official-community-gap]] 並將已知問題 #2479",
-      "event_dates": [],
-      "wikilinks": [
-        "topics/official-community-gap"
-      ],
-      "domain": "🛠️ 工具/功能",
-      "reporter": "wiki-reporter-features",
-      "backfilled": false
-    },
-    {
-      "id": "d6aec642",
-      "page": "entities/claude-code",
-      "file": "wiki/entities/claude-code.md",
-      "line": 42,
-      "word": "未經官方確認",
-      "cls": "R",
-      "cls_reason": "PRE「解除」",
-      "shape": "prose",
-      "in_table_cell": false,
-      "cell_len": null,
-      "segment": "解除 08-08 媒體報導階段「未經官方確認」的暫定狀態，已同步更新 [[topics/official-community-gap]]「Agent 間",
-      "event_dates": [
-        "2026-08-08",
-        "2026-08-07",
-        "2026-08-04",
-        "2026-08-04",
-        "2026-08-05",
-        "2026-08-09",
-        "2026-08-14"
-      ],
-      "wikilinks": [
-        "feature-radar",
-        "feature-radar",
-        "topics/official-community-gap",
-        "feature-radar",
-        "feature-radar"
-      ],
-      "domain": "🛠️ 工具/功能",
-      "reporter": "wiki-reporter-features",
-      "backfilled": false
-    },
-    {
       "id": "ce70ba06",
       "page": "entities/claude-code",
       "file": "wiki/entities/claude-code.md",
-      "line": 65,
+      "line": 92,
       "word": "待查證",
       "cls": "M",
       "cls_reason": "符號圖例",
@@ -158,204 +62,6 @@
       "wikilinks": [],
       "domain": "🛠️ 工具/功能",
       "reporter": "wiki-reporter-features",
-      "backfilled": false
-    },
-    {
-      "id": "5fc343d2",
-      "page": "entities/claude-code",
-      "file": "wiki/entities/claude-code.md",
-      "line": 72,
-      "word": "待查證",
-      "cls": "P",
-      "cls_reason": "",
-      "shape": "list",
-      "in_table_cell": false,
-      "cell_len": null,
-      "segment": "**隱寫術標記／代理偵測指控（2026-06-30 至 07-01，待查證）**：Reddit 貼文（2026-06-30）指控 Claude Code 自 v2.1.91 起嵌入偵測中國",
-      "event_dates": [
-        "2026-06-30",
-        "2026-06-30",
-        "2026-07-01",
-        "2026-07-01"
-      ],
-      "wikilinks": [
-        "topics/ai-agent-safety",
-        "topics/anthropic-commitments"
-      ],
-      "domain": "🛠️ 工具/功能",
-      "reporter": "wiki-reporter-features",
-      "backfilled": false
-    },
-    {
-      "id": "71f87db9",
-      "page": "entities/claude-code",
-      "file": "wiki/entities/claude-code.md",
-      "line": 72,
-      "word": "單方指控",
-      "cls": "P",
-      "cls_reason": "",
-      "shape": "list",
-      "in_table_cell": false,
-      "cell_len": null,
-      "segment": "此為社群單方指控，Anthropic 尚未就此回應或證實",
-      "event_dates": [
-        "2026-06-30",
-        "2026-06-30",
-        "2026-07-01",
-        "2026-07-01"
-      ],
-      "wikilinks": [
-        "topics/ai-agent-safety",
-        "topics/anthropic-commitments"
-      ],
-      "domain": "🛠️ 工具/功能",
-      "reporter": "wiki-reporter-features",
-      "backfilled": false
-    },
-    {
-      "id": "b5109cb4",
-      "page": "entities/claude-code",
-      "file": "wiki/entities/claude-code.md",
-      "line": 161,
-      "word": "待查證",
-      "cls": "P",
-      "cls_reason": "",
-      "shape": "list",
-      "in_table_cell": false,
-      "cell_len": null,
-      "segment": "macOS/Linux），但 GitHub release changelog 未見對應條目佐證，當時官方回應狀態暫維持待查證",
-      "event_dates": [
-        "2026-07-08",
-        "2026-07-30",
-        "2026-08-09",
-        "2026-09-09",
-        "2026-08-08",
-        "2026-08-09"
-      ],
-      "wikilinks": [
-        "topics/official-community-gap"
-      ],
-      "domain": "🛠️ 工具/功能",
-      "reporter": "wiki-reporter-features",
-      "backfilled": false
-    },
-    {
-      "id": "7247c6da",
-      "page": "entities/claude-code",
-      "file": "wiki/entities/claude-code.md",
-      "line": 161,
-      "word": "待查證",
-      "cls": "R",
-      "cls_reason": "POST「轉為」",
-      "shape": "list",
-      "in_table_cell": false,
-      "cell_len": null,
-      "segment": "狀態自待查證轉為已修復，見 [[topics/official-community-gap]]",
-      "event_dates": [
-        "2026-07-08",
-        "2026-07-30",
-        "2026-08-09",
-        "2026-09-09",
-        "2026-08-08",
-        "2026-08-09"
-      ],
-      "wikilinks": [
-        "topics/official-community-gap"
-      ],
-      "domain": "🛠️ 工具/功能",
-      "reporter": "wiki-reporter-features",
-      "backfilled": false
-    },
-    {
-      "id": "2d6c07be",
-      "page": "entities/claude-code",
-      "file": "wiki/entities/claude-code.md",
-      "line": 482,
-      "word": "未經官方確認",
-      "cls": "R",
-      "cls_reason": "PRE「解除」",
-      "shape": "table",
-      "in_table_cell": true,
-      "cell_len": 934,
-      "segment": "解除 08-08 媒體報導階段「未經官方確認」狀態，已知問題 #24798 狀態自待查證轉為 ✅ 已修復 v2.1.224，並同步更新 [[topics",
-      "event_dates": [
-        "2026-08-09",
-        "2026-08-14"
-      ],
-      "wikilinks": [
-        "topics/official-community-gap",
-        "feature-radar",
-        "feature-radar"
-      ],
-      "domain": "🛠️ 工具/功能",
-      "reporter": "wiki-reporter-features",
-      "backfilled": false
-    },
-    {
-      "id": "77edf0ba",
-      "page": "entities/claude-code",
-      "file": "wiki/entities/claude-code.md",
-      "line": 482,
-      "word": "待查證",
-      "cls": "R",
-      "cls_reason": "POST「轉為」",
-      "shape": "table",
-      "in_table_cell": true,
-      "cell_len": 934,
-      "segment": "解除 08-08 媒體報導階段「未經官方確認」狀態，已知問題 #24798 狀態自待查證轉為 ✅ 已修復 v2.1.224，並同步更新 [[topics/official-community-gap]]",
-      "event_dates": [
-        "2026-08-09",
-        "2026-08-14"
-      ],
-      "wikilinks": [
-        "topics/official-community-gap",
-        "feature-radar",
-        "feature-radar"
-      ],
-      "domain": "🛠️ 工具/功能",
-      "reporter": "wiki-reporter-features",
-      "backfilled": false
-    },
-    {
-      "id": "d3aba865",
-      "page": "entities/claude-code",
-      "file": "wiki/entities/claude-code.md",
-      "line": 611,
-      "word": "待查證",
-      "cls": "P",
-      "cls_reason": "",
-      "shape": "list",
-      "in_table_cell": false,
-      "cell_len": null,
-      "segment": "推廣部落格自行發布，未見獨立第三方覆核或 Hacker News 討論串內的具體反證內容，實際成效爭議本身仍未解決，維持待查證",
-      "event_dates": [
-        "2026-08-09",
-        "2026-09-09",
-        "2026-08-10"
-      ],
-      "wikilinks": [],
-      "domain": "🛠️ 工具/功能",
-      "reporter": "wiki-reporter-features",
-      "backfilled": false
-    },
-    {
-      "id": "91fbcd69",
-      "page": "entities/pricing",
-      "file": "wiki/entities/pricing.md",
-      "line": 220,
-      "word": "待查證",
-      "cls": "R",
-      "cls_reason": "POST「結案」",
-      "shape": "heading",
-      "in_table_cell": false,
-      "cell_len": null,
-      "segment": "#### 2026-08-08：官方 Help Center 查證，07-18～21 四方矛盾報導收斂（✅ 待查證結案）",
-      "event_dates": [
-        "2026-08-08"
-      ],
-      "wikilinks": [],
-      "domain": "💼 商業",
-      "reporter": "wiki-reporter-commercial",
       "backfilled": false
     },
     {
@@ -380,7 +86,7 @@
       "id": "bbdcf147",
       "page": "entities/robert-mahari",
       "file": "wiki/entities/robert-mahari.md",
-      "line": 25,
+      "line": 29,
       "word": "待核實",
       "cls": "P",
       "cls_reason": "",
@@ -416,7 +122,7 @@
       "id": "a2c49c03",
       "page": "entities/teresa-carlson",
       "file": "wiki/entities/teresa-carlson.md",
-      "line": 25,
+      "line": 29,
       "word": "待核實",
       "cls": "P",
       "cls_reason": "",
@@ -452,7 +158,7 @@
       "id": "d23a009d",
       "page": "entities/tom-blomfield",
       "file": "wiki/entities/tom-blomfield.md",
-      "line": 25,
+      "line": 29,
       "word": "待核實",
       "cls": "P",
       "cls_reason": "",
@@ -467,10 +173,68 @@
       "backfilled": false
     },
     {
+      "id": "adeb128e",
+      "page": "feature-radar",
+      "file": "wiki/feature-radar.md",
+      "line": 151,
+      "word": "待確認",
+      "cls": "U",
+      "cls_reason": "脈絡過短（9 字元）",
+      "shape": "table",
+      "in_table_cell": true,
+      "cell_len": 11,
+      "segment": "公告（細節待確認）",
+      "event_dates": [
+        "2026-05-18"
+      ],
+      "wikilinks": [],
+      "domain": null,
+      "reporter": null,
+      "backfilled": false
+    },
+    {
+      "id": "adeb128e",
+      "page": "feature-radar",
+      "file": "wiki/feature-radar.md",
+      "line": 152,
+      "word": "待確認",
+      "cls": "U",
+      "cls_reason": "脈絡過短（9 字元）",
+      "shape": "table",
+      "in_table_cell": true,
+      "cell_len": 11,
+      "segment": "公告（細節待確認）",
+      "event_dates": [
+        "2026-05-18"
+      ],
+      "wikilinks": [],
+      "domain": null,
+      "reporter": null,
+      "backfilled": false
+    },
+    {
+      "id": "a21ed974",
+      "page": "feature-radar",
+      "file": "wiki/feature-radar.md",
+      "line": 265,
+      "word": "官方未載",
+      "cls": "P",
+      "cls_reason": "",
+      "shape": "prose",
+      "in_table_cell": false,
+      "cell_len": null,
+      "segment": "**注意事項：** 官方未載明 breaking change 清單，升級前建議查閱完整 changelog",
+      "event_dates": [],
+      "wikilinks": [],
+      "domain": null,
+      "reporter": null,
+      "backfilled": false
+    },
+    {
       "id": "b9f1d9d9",
       "page": "feature-radar",
       "file": "wiki/feature-radar.md",
-      "line": 411,
+      "line": 743,
       "word": "待確認",
       "cls": "P",
       "cls_reason": "",
@@ -488,27 +252,7 @@
       "id": "f2ff9017",
       "page": "index",
       "file": "wiki/index.md",
-      "line": 44,
-      "word": "待核實",
-      "cls": "U",
-      "cls_reason": "脈絡過短（11 字元）",
-      "shape": "table",
-      "in_table_cell": true,
-      "cell_len": 12,
-      "segment": "active（待核實）",
-      "event_dates": [],
-      "wikilinks": [
-        "entities/andrej-karpathy"
-      ],
-      "domain": null,
-      "reporter": null,
-      "backfilled": false
-    },
-    {
-      "id": "f2ff9017",
-      "page": "index",
-      "file": "wiki/index.md",
-      "line": 48,
+      "line": 65,
       "word": "待核實",
       "cls": "U",
       "cls_reason": "脈絡過短（11 字元）",
@@ -530,7 +274,7 @@
       "id": "f2ff9017",
       "page": "index",
       "file": "wiki/index.md",
-      "line": 54,
+      "line": 71,
       "word": "待核實",
       "cls": "U",
       "cls_reason": "脈絡過短（11 字元）",
@@ -552,7 +296,7 @@
       "id": "f2ff9017",
       "page": "index",
       "file": "wiki/index.md",
-      "line": 57,
+      "line": 74,
       "word": "待核實",
       "cls": "U",
       "cls_reason": "脈絡過短（11 字元）",
@@ -571,17 +315,161 @@
       "backfilled": false
     },
     {
-      "id": "c25fa508",
-      "page": "overview",
-      "file": "wiki/overview.md",
-      "line": 135,
-      "word": "未證實",
+      "id": "f2ff9017",
+      "page": "index",
+      "file": "wiki/index.md",
+      "line": 75,
+      "word": "待核實",
       "cls": "U",
-      "cls_reason": "表格列無日期且無 wikilink，無從推探針",
+      "cls_reason": "脈絡過短（11 字元）",
       "shape": "table",
       "in_table_cell": true,
-      "cell_len": 77,
-      "segment": "⚡ 有條件推薦——Max/Pro 已為預設或最強選項，惟 Claude Code 內對其有未證實的硬編碼工具限制，重度 subagent 工作流先實測",
+      "cell_len": 12,
+      "segment": "active（待核實）",
+      "event_dates": [
+        "2026-08-27"
+      ],
+      "wikilinks": [
+        "entities/jensen-huang"
+      ],
+      "domain": null,
+      "reporter": null,
+      "backfilled": false
+    },
+    {
+      "id": "6f542d63",
+      "page": "index",
+      "file": "wiki/index.md",
+      "line": 75,
+      "word": "待查證",
+      "cls": "P",
+      "cls_reason": "",
+      "shape": "table",
+      "in_table_cell": true,
+      "cell_len": 86,
+      "segment": "傳出對投資 OpenAI／Anthropic 的規模表示「後悔」（Yahoo Finance 單一來源，後悔方向 ❓ 待查證）",
+      "event_dates": [
+        "2026-08-27"
+      ],
+      "wikilinks": [
+        "entities/jensen-huang"
+      ],
+      "domain": null,
+      "reporter": null,
+      "backfilled": false
+    },
+    {
+      "id": "f2ff9017",
+      "page": "index",
+      "file": "wiki/index.md",
+      "line": 76,
+      "word": "待核實",
+      "cls": "U",
+      "cls_reason": "脈絡過短（11 字元）",
+      "shape": "table",
+      "in_table_cell": true,
+      "cell_len": 12,
+      "segment": "active（待核實）",
+      "event_dates": [
+        "2026-08-23"
+      ],
+      "wikilinks": [
+        "entities/amir-salek"
+      ],
+      "domain": null,
+      "reporter": null,
+      "backfilled": false
+    },
+    {
+      "id": "8b4ea667",
+      "page": "index",
+      "file": "wiki/index.md",
+      "line": 76,
+      "word": "待查證",
+      "cls": "P",
+      "cls_reason": "",
+      "shape": "table",
+      "in_table_cell": true,
+      "cell_len": 84,
+      "segment": "e 自研晶片計畫創辦人（2026-08-23，The Times of India 單一來源，僅標題可用，過往經歷與職掌待查證）",
+      "event_dates": [
+        "2026-08-23"
+      ],
+      "wikilinks": [
+        "entities/amir-salek"
+      ],
+      "domain": null,
+      "reporter": null,
+      "backfilled": false
+    },
+    {
+      "id": "415cf346",
+      "page": "overview",
+      "file": "wiki/overview.md",
+      "line": 69,
+      "word": "待查證",
+      "cls": "P",
+      "cls_reason": "",
+      "shape": "prose",
+      "in_table_cell": false,
+      "cell_len": null,
+      "segment": "8. **[[entities/mythos]] — Project Glasswing 醫療應用進展**（待查證，僅標題可用）",
+      "event_dates": [],
+      "wikilinks": [
+        "entities/mythos"
+      ],
+      "domain": null,
+      "reporter": null,
+      "backfilled": false
+    },
+    {
+      "id": "d5f0eee2",
+      "page": "overview",
+      "file": "wiki/overview.md",
+      "line": 113,
+      "word": "待查證",
+      "cls": "P",
+      "cls_reason": "",
+      "shape": "list",
+      "in_table_cell": false,
+      "cell_len": null,
+      "segment": "Claude 營收年增 1000%（單一來源，待查證）",
+      "event_dates": [],
+      "wikilinks": [],
+      "domain": null,
+      "reporter": null,
+      "backfilled": false
+    },
+    {
+      "id": "32eead7c",
+      "page": "overview",
+      "file": "wiki/overview.md",
+      "line": 118,
+      "word": "待查證",
+      "cls": "P",
+      "cls_reason": "",
+      "shape": "list",
+      "in_table_cell": false,
+      "cell_len": null,
+      "segment": "- **競爭**：Google 低價方案傳聞（數字待查證）",
+      "event_dates": [],
+      "wikilinks": [],
+      "domain": null,
+      "reporter": null,
+      "backfilled": false
+    },
+    {
+      "id": "e1eb65f7",
+      "page": "overview",
+      "file": "wiki/overview.md",
+      "line": 119,
+      "word": "待查證",
+      "cls": "P",
+      "cls_reason": "",
+      "shape": "list",
+      "in_table_cell": false,
+      "cell_len": null,
+      "segment": "- **人才**：Jensen Huang 對投資 OpenAI／Anthropic 規模的「後悔」表態（單一來源，方向待查證）",
       "event_dates": [],
       "wikilinks": [],
       "domain": null,
@@ -592,7 +480,7 @@
       "id": "023a42af",
       "page": "topics/ai-agent-safety-archive",
       "file": "wiki/topics/ai-agent-safety-archive.md",
-      "line": 54,
+      "line": 59,
       "word": "待確認",
       "cls": "P",
       "cls_reason": "",
@@ -607,59 +495,41 @@
       "backfilled": false
     },
     {
-      "id": "527e7ce5",
-      "page": "topics/community-tech-timeline",
-      "file": "wiki/topics/community-tech-timeline.md",
-      "line": 103,
-      "word": "待確認",
+      "id": "980f3c41",
+      "page": "topics/anthropic-commitments",
+      "file": "wiki/topics/anthropic-commitments.md",
+      "line": 49,
+      "word": "待查證",
       "cls": "P",
       "cls_reason": "",
-      "shape": "list",
-      "in_table_cell": false,
-      "cell_len": null,
-      "segment": "催生破壞性操作閘門設計——執行 `rm -rf` 等高危指令前自動顯示受影響檔案清單（含讀寫次數、最後存取時間）並暫停等待確認",
-      "event_dates": [],
-      "wikilinks": [
-        "topics/ai-agent-safety"
+      "shape": "table",
+      "in_table_cell": true,
+      "cell_len": 14,
+      "segment": "❓ 待查證 ⟨C-01⟩",
+      "event_dates": [
+        "2026-08-29"
       ],
-      "domain": "🌐 社群",
-      "reporter": "wiki-reporter-community",
+      "wikilinks": [],
+      "domain": "🏛️ 政策/安全",
+      "reporter": "wiki-reporter-safety-policy",
       "backfilled": false
     },
     {
-      "id": "88670d71",
+      "id": "5666fc20",
       "page": "topics/community-tech-tools",
       "file": "wiki/topics/community-tech-tools.md",
-      "line": 163,
+      "line": 134,
       "word": "存疑",
       "cls": "M",
       "cls_reason": "符號圖例（多狀態符號同行）",
       "shape": "table",
       "in_table_cell": true,
-      "cell_len": 44,
-      "segment": "✅ 廣泛採用 / ⚡ 小圈子使用 / ⏳ 觀望中 / ⚠️ 效果存疑 / ❌ 已放棄",
+      "cell_len": 72,
+      "segment": "✅ 廣泛採用 / ⚡ 小圈子使用 / ⏳ 觀望中 / ⚠️ 效果存疑 / ❌ 已放棄——與證據等級**不同軸**：採用量廣度 ≠ 宣稱可信度",
       "event_dates": [],
       "wikilinks": [],
       "domain": "🌐 社群",
       "reporter": "wiki-reporter-community",
-      "backfilled": false
-    },
-    {
-      "id": "80eb336a",
-      "page": "topics/official-community-gap",
-      "file": "wiki/topics/official-community-gap.md",
-      "line": 162,
-      "word": "待查證",
-      "cls": "R",
-      "cls_reason": "POST「轉為」",
-      "shape": "list",
-      "in_table_cell": false,
-      "cell_len": null,
-      "segment": "已知問題 #24798 狀態自待查證轉為 ✅ 已修復 v2.1.224，矩陣狀態維持 🧪 部分產品化（同機通訊已確認，跨機器 A2A 需求 #2830",
-      "event_dates": [],
-      "wikilinks": [],
-      "domain": "🛠️ 工具/功能",
-      "reporter": "wiki-reporter-features",
       "backfilled": false
     }
   ]
