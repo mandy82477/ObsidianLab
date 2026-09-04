@@ -528,7 +528,7 @@
       const rowCls = kbType === 'topic' ? 'entity-row entity-row--topic' : 'entity-row';
       return `
 <div class="${rowCls}" onclick="openWikiPage('${esc(item.id)}','${item._kbBaseType}')">
-  <div class="entity-row__name"><span class="entity-row__zh">${esc(item.name || item.id)}</span><span class="entity-row__slug">${esc(item.id)}</span>${childCount[item.id] ? `<span class="pill pill--gray" title="子故事只從本頁下鑽">含 ${childCount[item.id]} 子故事</span>` : ''}</div>
+  <div class="entity-row__name"><span class="entity-row__zh">${esc(item.name || item.id)}</span><span class="entity-row__slug">${esc(item.id)}</span></div>
   <div><span class="kb-type-pill kb-type-pill--${typePillCls}">${isWeeklyCadence ? '<svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:-1px;margin-right:3px"><rect x="3" y="5" width="18" height="16" rx="1"></rect><line x1="3" y1="9" x2="21" y2="9"></line><line x1="8" y1="3" x2="8" y2="7"></line><line x1="16" y1="3" x2="16" y2="7"></line></svg>' : ''}${esc(typeLabel)}</span></div>
   <div><span class="pill pill--${item.pill}">${esc(statusLabelShort(item.status))}</span></div>
   <div class="entity-row__summary">${esc(item.latestHeadline || '')}</div>
