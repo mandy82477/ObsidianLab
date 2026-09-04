@@ -5545,3 +5545,16 @@ GH Actions 抓料排 10:23 UTC，到 14:45 UTC 仍未落地（+4.4 小時且持�
 
 **落地：** `scripts/wiki_graph.py` 新增 `similar <頁>`／`gaps [--top N]`；`data/graph_gap_ignore.json`（已審、無需連結——沒有第三個出口同一對會每週重現）；`/wiki-lint` 6k 步驟（每對三選一：補 wikilink／併頁或蒸餾候選／登記忽略；連續 2 輪全是忽略 → 閾值太鬆）；build 時每節點 `alsoSee` 寫進 graph.json，詳頁小星圖下方渲染三張卡，卡上寫「和本頁一起被 X、Y 引用，但兩頁互不相連」。測試 +2（單一共享樞紐不算相似、封存頁不推不列）。**首批 12 對候選留給下次 lint 處理，未在本輪動頁面。**
 
+---
+
+## 2026-09-04 Query：「有什麼可以使用這個優化治理的地方」→ 圖治理三項（Opus 實作，主編重驗）
+
+**點出什麼：** 使用者追問圖對治理層的用處，從六個提案中裁決先做三個。共同點：全用現有資料、把「訊號產出了沒人消費」與「靠人想關鍵字」兩種老病換成機械清單。
+
+**落地（commit 1f77d8bc）：**
+1. **同一則新聞落地兩頁卻不互連**：`wiki_graph.py co-landed`／`gaps --with-news`，證據來自歸因帳本的 `item_url`——不是「像」，是同一件事寫在兩處。門檻 K=1（實測 1,451 筆帳本下 K=1 僅 5 對、K=2 僅 2 對，先驗的 2 會靜默丟 3 對真候選；理由與數字進 docstring）。接進 `/wiki-lint` 6k 第二張表，與 ignore 檔共用。首批 5 對：opus-5×community-tech-discussions（3 則）、opus-5×recursive-self-improvement（3）、fable-5×code-quality-decline、opus-4-8×competitor-landscape、ai-agent-safety×model-comparison。
+2. **更正回掃改吃入邊**：`explain <頁> --section "標題"` 列「指到這一節的錨點邊」與「整頁邊」兩組（Link 加目標端 anchor 欄）；`wiki-reporter-shared.md`「事實更正必回掃」與 lint 5c 第 5 步同步改為「先入邊清單、關鍵字 grep 降為補充」，回報行 `回掃：入邊 N 處（改 M）＋關鍵字 X 命中 K 處（改 J）`；inquiry_bank Q7 探針同步。registry 新增 5 組 sync_pair，mutate 全數轉紅。
+3. **高引用但停滯接上消費端**：`gen_wiki_frontmatter.py --list-signal`（列表留在判準所在檔，不另養第二份門檻），新設 lint 5g（3c 在記者 prompt 內跑不了腳本、5a 管的是 radar 熱度）。今日命中 boris-cherny（入鏈 26／31 天）、safety-china-trust-dispute（18／55 天）。
+
+**主編重驗：** 三個指令實跑輸出一致、check_rules ✅、run_tests exit 0、commit 只含 7 個指名檔。首批候選與 2 頁停滯**未在本輪處置**，留給下次 lint 派記者。
+
