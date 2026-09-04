@@ -103,3 +103,99 @@ class SimilarityAndGaps(unittest.TestCase):
         self.assertIn(frozenset(("a", "b")), pairs)
         self.assertFalse(any("archive" in p for pr in pairs for p in pr))
         self.assertNotIn(frozenset(("a", "c")), pairs)   # 已相連
+
+
+class CoLanded(unittest.TestCase):
+    """co-landed：同一則新聞落地兩頁卻不互連。
+
+    全部用臨時帳本，**不得讀 data/source_attribution.jsonl**——真實帳本每天成長，
+    拿它當斷言基準的測試會在某天無關的 ingest 後變紅或變假綠。
+    """
+
+    def _fixture(self, tmp, rows, ignore=None):
+        import json
+        import wiki_graph as g
+        pages = {"a", "b", "c", "linked1", "linked2", "old/x-archive"}
+        L = lambda s, d, z="正文": g.Link(s, d, 1, "", z)
+        links = [
+            L("linked1", "linked2"),          # 正文邊 → 已相連
+            L("a", "c", "樣板"),               # 樣板邊也算已相連（相關實體欄有連結就不算缺）
+        ]
+        ledger = Path(tmp) / "att.jsonl"
+        ledger.write_text(
+            "\n".join(json.dumps(r, ensure_ascii=False) for r in rows) + "\n",
+            encoding="utf-8",
+        )
+        ig = Path(tmp) / "ig.json"
+        ig.write_text(json.dumps({"pairs": ignore or []}, ensure_ascii=False), encoding="utf-8")
+        return g, pages, links, ledger, ig
+
+    @staticmethod
+    def _row(url, page, date="2026-09-01", title="T"):
+        return {"item_url": url, "page": page, "date": date, "item_title": title}
+
+    def test_計數_已相連不列_封存不列(self):
+        import tempfile
+        rows = [
+            # u1、u2 都落在 a 與 b（不相連）→ 應列出，計數 2
+            self._row("u1", "a"), self._row("u1", "b"),
+            self._row("u2", "a", "2026-09-03", "最新標題"), self._row("u2", "b", "2026-09-03", "最新標題"),
+            # linked1/linked2 已相連 → 不列
+            self._row("u3", "linked1"), self._row("u3", "linked2"),
+            # a/c 有樣板邊 → 算已相連，不列
+            self._row("u4", "a"), self._row("u4", "c"),
+            # 封存頁 → 不列
+            self._row("u5", "b"), self._row("u5", "old/x-archive"),
+            # 不在圖上的頁（已刪／改名）→ 不列
+            self._row("u6", "b"), self._row("u6", "topics/gone"),
+        ]
+        with tempfile.TemporaryDirectory() as tmp:
+            g, pages, links, ledger, ig = self._fixture(tmp, rows)
+            out, n_ign = g.co_landed_pairs(pages, links, attribution_path=ledger,
+                                           min_shared=1, ignore_path=ig)
+            got = {(a, b): (n, title) for a, b, n, title, _ in out}
+            self.assertEqual(set(got), {("a", "b")})
+            self.assertEqual(got[("a", "b")][0], 2)
+            self.assertEqual(got[("a", "b")][1], "最新標題")  # 例＝最新一則
+            self.assertEqual(n_ign, 0)
+
+    def test_min_門檻(self):
+        import tempfile
+        rows = [self._row("u1", "a"), self._row("u1", "b")]
+        with tempfile.TemporaryDirectory() as tmp:
+            g, pages, links, ledger, ig = self._fixture(tmp, rows)
+            kw = dict(attribution_path=ledger, ignore_path=ig)
+            self.assertEqual(len(g.co_landed_pairs(pages, links, min_shared=1, **kw)[0]), 1)
+            self.assertEqual(len(g.co_landed_pairs(pages, links, min_shared=2, **kw)[0]), 0)
+
+    def test_ignore_檔生效_且與gaps共用格式(self):
+        import tempfile
+        rows = [self._row("u1", "a"), self._row("u1", "b")]
+        with tempfile.TemporaryDirectory() as tmp:
+            g, pages, links, ledger, ig = self._fixture(tmp, rows, ignore=[{"pages": ["a", "b"]}])
+            out, n_ign = g.co_landed_pairs(pages, links, attribution_path=ledger,
+                                           min_shared=1, ignore_path=ig)
+            self.assertEqual(out, [])
+            self.assertEqual(n_ign, 1)
+
+    def test_預設門檻為1_改動需連同docstring實測數字一起改(self):
+        import wiki_graph as g
+        self.assertEqual(g.CO_LANDED_MIN_DEFAULT, 1)
+
+
+class ExplainSection(unittest.TestCase):
+    """explain --section：回掃的必查名單靠 anchor 分組，anchor 解析壞掉即失去分組能力。"""
+
+    def test_錨點邊帶目標端anchor(self):
+        import wiki_graph as g
+        _, _, links = g.build()
+        anchored = [l for l in links if l.anchor]
+        self.assertTrue(anchored, "全庫零錨點邊＝ANCHORED_WIKILINK_RE 解析失效")
+        for l in anchored:
+            self.assertEqual(l.zone, "錨點")
+            self.assertNotIn("#", l.dst, "dst 不該含錨點，錨點要落在 anchor 欄")
+
+    def test_整頁邊不帶anchor(self):
+        import wiki_graph as g
+        _, _, links = g.build()
+        self.assertTrue(any(l.anchor is None for l in links))

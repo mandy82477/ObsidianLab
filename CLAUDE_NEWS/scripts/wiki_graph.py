@@ -15,7 +15,10 @@ wiki 的圖從第一天起就存在：頁面＝節點、wikilink＝邊。本腳�
   - 「參考來源」等樣板區的邊標記 zone=樣板；指向 news/ 的連結排除（日報是原料不是節點）
 
 子命令：
-  explain <頁slug>      雙向引用，出邊按產地分組，含「頁 § 最近標題 § 行號」
+  explain <頁slug> [--section "標題"]
+                       雙向引用，出邊按產地分組，含「頁 § 最近標題 § 行號」。
+                       --section 改列「指到這一節的錨點邊」＋「指到整頁的邊」兩組，
+                       供事實更正後的回掃當必查名單（見 wiki-reporter-shared.md「事實更正必回掃」）
   path <頁A> <頁B>      頁層 BFS 最短路徑（樣板區邊不參與）
   sections <關鍵詞>     跨頁找「議題散在哪幾節」，回傳限定名＋行號
   cluster              頁層 references 投影分群（label propagation），與 frontmatter
@@ -25,8 +28,14 @@ wiki 的圖從第一天起就存在：頁面＝節點、wikilink＝邊。本腳�
                        更早的事實走日報：頁內時序找日期 → news/該日.md 條目附原文連結
   similar <頁slug>     「你可能也想看」：與該頁**不直接相連**但共享鄰居的頁，加權 Jaccard
                        （鄰居權重 1/度數，壓樞紐）；build_web 用同一函式產讀者推薦
-  gaps [--top N]       缺口偵測（lint 用）：全庫兩兩算同一分數，取分數高卻互不相連的頁對；
-                       data/graph_gap_ignore.json 登記「已審、無需連結」的對，不再列出
+  gaps [--top N] [--with-news]
+                       缺口偵測（lint 用）：全庫兩兩算同一分數，取分數高卻互不相連的頁對；
+                       data/graph_gap_ignore.json 登記「已審、無需連結」的對，不再列出。
+                       --with-news 於原表後附印 co-landed 表（同一則新聞落地兩頁卻不互連）
+  co-landed [--top N] [--min K]
+                       同一則新聞（同一 item_url）落地在兩頁、兩頁之間卻無任何 zone 的邊。
+                       與 gaps 的差別：gaps 說「像」（共享鄰居），本表說「是同一件事」——
+                       證據來自 data/source_attribution.jsonl，不是結構推論
 
 用法：python scripts/wiki_graph.py explain entities/pricing
 """
@@ -80,10 +89,18 @@ def _clean(target: str) -> str:
 
 
 class Link:
-    __slots__ = ("src", "dst", "line", "heading", "zone")
+    """一條 wikilink 邊。
 
-    def __init__(self, src, dst, line, heading, zone):
+    `heading` 是**來源端**的最近語意標題（這句話寫在哪一節）；`anchor` 是**目標端**被指到的
+    段落（`[[頁#段]]` 的 `#` 之後，整頁連結為 None）。兩者方向相反、都需要：回掃時要問的是
+    「誰指到我這一節」，答案在 anchor，不在 heading。
+    """
+
+    __slots__ = ("src", "dst", "line", "heading", "zone", "anchor")
+
+    def __init__(self, src, dst, line, heading, zone, anchor=None):
         self.src, self.dst, self.line, self.heading, self.zone = src, dst, line, heading, zone
+        self.anchor = anchor
 
 
 def _semantic_heading(headings: list[tuple[int, str]], line: int) -> str:
@@ -114,7 +131,7 @@ def _parse_page(slug: str, f: Path):
                 h2_zones.append((i, title))
     links: list[Link] = []
     for i, ln in enumerate(lines, 1):
-        anchored_spans = [m.span() for m in ANCHORED_WIKILINK_RE.finditer(ln)]
+        anchored = [(m.start(), m.end(), _clean(m.group(2))) for m in ANCHORED_WIKILINK_RE.finditer(ln)]
         for m in WIKILINK_RE.finditer(ln):
             dst = _clean(m.group(1))
             if dst.startswith("news/") or dst in EXCLUDE_PAGES:
@@ -124,11 +141,12 @@ def _parse_page(slug: str, f: Path):
                 if h_line > i:
                     break
                 zone = "樣板" if h_title in TEMPLATE_ZONE_H2 else "正文"
-            if any(a <= m.start() < b for a, b in anchored_spans):
+            anchor = next((a for s, e, a in anchored if s <= m.start() < e), None)
+            if anchor is not None:
                 zone = "錨點"
             if ln.lstrip().startswith("**上層"):
                 zone = "階層"  # 子故事的 part-of 邊（2026-09-03），與引用邊分型：cluster／孤島不計
-            links.append(Link(slug, dst, i, _semantic_heading(headings, i), zone))
+            links.append(Link(slug, dst, i, _semantic_heading(headings, i), zone, anchor))
     return headings, links
 
 
@@ -153,14 +171,31 @@ def _domain(f: Path) -> str:
     return "—"
 
 
-def cmd_explain(target: str, out) -> int:
+def cmd_explain(target: str, out, section: str | None = None) -> int:
     pages, _, links = build()
     if target not in pages:
         cands = [s for s in pages if target in s]
         print(f"找不到頁 {target}" + (f"；相近：{cands[:5]}" if cands else ""), file=out)
         return 1
+    inbound_all = [l for l in links if l.dst == target]
+    if section is not None:
+        # 回掃用：改了某一節時，指到那一節的錨點邊是必查名單的核心，整頁邊是外圈
+        key = section.strip().lstrip("#").strip()
+        hit = [l for l in inbound_all if l.anchor and key in l.anchor]
+        whole = [l for l in inbound_all if not l.anchor]
+        print(f"# {target} § {key} 的入邊（錨點 {len(hit)} ／ 整頁 {len(whole)}）\n", file=out)
+        for name, group in (("指到這一節（錨點邊）", hit), ("指到整頁（未指定段落，仍須逐一確認）", whole)):
+            print(f"## {name}", file=out)
+            for l in sorted(group, key=lambda x: (x.src, x.line)):
+                sec = l.heading or "—"
+                anc = f" →#{l.anchor}" if l.anchor else ""
+                print(f"  [{l.zone}] {l.src}（{sec} :L{l.line}）{anc}", file=out)
+            if not group:
+                print("  （無）", file=out)
+            print(file=out)
+        return 0
     outbound = [l for l in links if l.src == target]
-    inbound = [l for l in links if l.dst == target]
+    inbound = inbound_all
     print(f"# {target}（出 {len(outbound)} ／ 入 {len(inbound)}）\n", file=out)
     for name, group in (("出邊（本頁引用誰）", outbound), ("入邊（誰引用本頁）", inbound)):
         print(f"## {name}", file=out)
@@ -367,13 +402,19 @@ def similar_pages(target: str, pages, links, top: int = 3, min_score: float = 0.
     return out[:top]
 
 
-def gap_pairs(pages, links, top: int = 10, min_score: float = 0.15):
+def load_ignored(ignore_path=None) -> set:
+    """已審、無需連結的頁對（gaps 與 co-landed 共用同一份 data/graph_gap_ignore.json）。"""
     import json
-    ignore_file = WIKI_DIR.parent / "data" / "graph_gap_ignore.json"
+    ignore_file = ignore_path or (WIKI_DIR.parent / "data" / "graph_gap_ignore.json")
     ignored = set()
-    if ignore_file.exists():
-        for pr in json.loads(ignore_file.read_text(encoding="utf-8")).get("pairs", []):
+    if Path(ignore_file).exists():
+        for pr in json.loads(Path(ignore_file).read_text(encoding="utf-8")).get("pairs", []):
             ignored.add(frozenset(pr["pages"]))
+    return ignored
+
+
+def gap_pairs(pages, links, top: int = 10, min_score: float = 0.15):
+    ignored = load_ignored()
     adj, linked = _neighbor_sets(links, pages)
     out = []
     slugs = sorted(pages)
@@ -389,6 +430,102 @@ def gap_pairs(pages, links, top: int = 10, min_score: float = 0.15):
                 out.append((a, b, s, sorted(adj[a] & adj[b])))
     out.sort(key=lambda x: -x[2])
     return out[:top], len(ignored)
+
+
+CO_LANDED_MIN_DEFAULT = 1
+"""co-landed 的預設共同落地數門檻＝1（2026-09-04 dry run 實測後定案）。
+
+**先驗是 2，實測推翻了它。** 立此門檻時的預期是「K=1 會被當天巧合淹掉」——一則跨類別大事
+讓所有沾到邊的頁兩兩配對一次，候選量以組合數成長。實測不是這樣：帳本 1,451 筆歸因下，
+**K=1 只有 5 對、K=2 只有 2 對**。原因是本表在配對前先剔除「已相連」，而剔除用的是**任何
+zone 的邊**（含樣板區的相關實體欄）——本庫 wikilink 已經夠密，同一則新聞落地的兩頁多半早
+就互連，剩下的殘差本來就少。組合爆炸的擔憂在這個密度下不存在。
+
+於是 K=2 的成本大於效益：它會**靜默丟掉 3 對**，而那 3 對正是本表要抓的形狀——例如
+`entities/fable-5` × `topics/code-quality-decline` 共同落地「Is it even legal for
+Anthropic to nerf its models this hard?」，兩頁講的顯然是同一件事卻零連結。單則歸因本身
+就是硬證據（同一個 `item_url`，不是結構推論），沒有理由要求它出現兩次才准被看見。
+
+門檻留成參數而非寫死：帳本成長或記者歸因習慣改變後，若 K=1 的候選量長到一輪讀不完，
+先跑 `--min 2` 對照再改這個常數，**並把新的實測數字寫進本段**——這段的價值在於它記的是
+量測不是直覺。
+"""
+
+
+def co_landed_pairs(pages, links, attribution_path=None, top: int = 10,
+                    min_shared: int = CO_LANDED_MIN_DEFAULT, ignore_path=None):
+    """同一則新聞落地多頁 → 兩頁應互連。回傳 ([(a, b, n, 例標題, 例日期)], 已忽略對數)。
+
+    判準（與 gaps 對稱，共用 ignore 檔與封存頁排除）：
+      - 同一 `item_url` 出現在兩個不同 `page`
+      - 兩頁之間**任何 zone**都沒有邊（`_neighbor_sets` 的 linked，含樣板與階層邊——
+        相關實體欄裡有連結就不算缺）
+      - 兩頁都仍存在於圖上（帳本會留下已改名／已刪頁的歷史列）
+      - 封存頁不列（證據層，原文照搬、不改寫）
+    """
+    import json
+    ledger = Path(attribution_path or (WIKI_DIR.parent / "data" / "source_attribution.jsonl"))
+    ignored = load_ignored(ignore_path)
+    _, linked = _neighbor_sets(links, pages)
+    by_url: dict[str, dict[str, tuple[str, str]]] = defaultdict(dict)  # url -> page -> (date, title)
+    if ledger.exists():
+        for ln in ledger.read_text(encoding="utf-8").splitlines():
+            if not ln.strip():
+                continue
+            try:
+                r = json.loads(ln)
+            except ValueError:
+                continue
+            url, pg = r.get("item_url"), r.get("page")
+            if not url or pg not in pages or _ARCHIVE_RE.search(pg):
+                continue
+            by_url[url][pg] = (r.get("date", ""), r.get("item_title", "—"))
+    tally: dict[frozenset, list] = defaultdict(list)
+    for url, per_page in by_url.items():
+        if len(per_page) < 2:
+            continue
+        pgs = sorted(per_page)
+        for i, a in enumerate(pgs):
+            for b in pgs[i + 1:]:
+                key = frozenset((a, b))
+                if key in linked or key in ignored:
+                    continue
+                d, t = per_page[a]
+                tally[key].append((d, t))
+    rows = []
+    for key, items in tally.items():
+        if len(items) < min_shared:
+            continue
+        a, b = sorted(key)
+        items.sort(key=lambda x: x[0], reverse=True)
+        rows.append((a, b, len(items), items[0][1], items[0][0]))
+    rows.sort(key=lambda x: (-x[2], x[0], x[1]))
+    return rows[:top], len(ignored)
+
+
+def _print_co_landed(pages, links, out, top: int, min_shared: int) -> None:
+    rows, n_ign = co_landed_pairs(pages, links, top=top, min_shared=min_shared)
+    doms = {s: _domain(f) for s, f in pages.items()}
+    print(f"# 同一則新聞落地兩頁卻不互連（前 {top}；門檻 ≥{min_shared} 則；已忽略 {n_ign} 對）\n", file=out)
+    print("| 頁 A | 頁 B | 共同落地新聞數 | 例（最新一則標題） |\n|---|---|---|---|", file=out)
+    for a, b, n, title, d in rows:
+        t = title if len(title) <= 60 else title[:57] + "…"
+        print(f"| {a}（{doms.get(a, '—')}） | {b}（{doms.get(b, '—')}） | {n} | {d}｜{t} |", file=out)
+    if not rows:
+        print("| （無候選） | | | |", file=out)
+    print("\n每對三選一：補 wikilink／併頁或蒸餾候選／登記 data/graph_gap_ignore.json（與 gaps 共用）。", file=out)
+
+
+def cmd_co_landed(rest: list[str], out) -> int:
+    top = 10
+    min_shared = CO_LANDED_MIN_DEFAULT
+    if "--top" in rest:
+        top = int(rest[rest.index("--top") + 1])
+    if "--min" in rest:
+        min_shared = int(rest[rest.index("--min") + 1])
+    pages, _, links = build()
+    _print_co_landed(pages, links, out, top, min_shared)
+    return 0
 
 
 def cmd_similar(target: str, out) -> int:
@@ -419,6 +556,10 @@ def cmd_gaps(rest: list[str], out) -> int:
     if not rows:
         print("| （無候選） | | | |", file=out)
     print("\n每對三選一：補 wikilink／併頁或蒸餾候選／登記 data/graph_gap_ignore.json（已審、無需連結）。", file=out)
+    if "--with-news" in rest:
+        # 同一支指令印兩張表：lint 6k 只需記一行指令，改欄位／改門檻時不會有一張表悄悄沒人跑
+        print(file=out)
+        _print_co_landed(pages, links, out, top, CO_LANDED_MIN_DEFAULT)
     return 0
 
 
@@ -430,8 +571,14 @@ def main() -> int:
         return 0
     cmd, rest = args[0], args[1:]
     try:
-        if cmd == "explain" and len(rest) == 1:
-            return cmd_explain(rest[0], out)
+        if cmd == "explain" and rest:
+            section = None
+            if "--section" in rest:
+                i = rest.index("--section")
+                section = rest[i + 1] if i + 1 < len(rest) else None
+                rest = rest[:i]
+            if len(rest) == 1:
+                return cmd_explain(rest[0], out, section)
         if cmd == "path" and len(rest) == 2:
             return cmd_path(rest[0], rest[1], out)
         if cmd == "sections" and len(rest) == 1:
@@ -444,6 +591,8 @@ def main() -> int:
             return cmd_similar(rest[0], out)
         if cmd == "gaps":
             return cmd_gaps(rest, out)
+        if cmd == "co-landed":
+            return cmd_co_landed(rest, out)
         print(__doc__, file=out)
         return 1
     finally:

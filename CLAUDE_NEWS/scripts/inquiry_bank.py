@@ -118,7 +118,7 @@ BANK = [
         "origin": "2026-08-28 Sonnet 促銷殘留 5 處（距不存在的到期日 3 天）；2026-08-08 上修沒回掃 12 天",
         "probe": [
             "grep -rnE '(截至|預計|即將|促銷|到期|生效)' wiki/entities wiki/topics 取帶日期者，擲骰抽 1 筆",
-            "該日期已過 → 查日報／官方後續，依 .claude/rules/wiki-reporter-shared.md「事實更正必回掃」處理：改掉＋拿關鍵字回掃全庫",
+            "該日期已過 → 查日報／官方後續，依 .claude/rules/wiki-reporter-shared.md「事實更正必回掃」處理：改掉＋回掃（先 `wiki_graph.py explain <頁> --section`，再拿關鍵字 grep 補漏）",
             "未過期 → 驗敘述與最新日報一致即結案",
         ],
     },

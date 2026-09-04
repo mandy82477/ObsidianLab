@@ -1142,6 +1142,67 @@
       "patterns": [
         "深挖"
       ]
+    },
+    {
+      "name": "回掃入邊必查名單（規格端）：wiki-reporter-shared.md「事實更正必回掃」與 wiki-lint 5c 結案回掃，兩處都必須以 explain --section 為第一步（2026-09-04 改版；只改一處會讓兩條回掃路徑一新一舊，而 5c 正是引用 shared.md 那套語意）",
+      "assertion": "all_contain",
+      "files": [
+        ".claude/rules/wiki-reporter-shared.md",
+        ".claude/commands/wiki-lint.md"
+      ],
+      "patterns": [
+        "wiki_graph\\.py explain [^\\n]*--section"
+      ],
+      "_note": "2026-09-04 加入。原第一步是『想出關鍵字』，靠記憶列舉——2026-08 三次漏回掃全敗在關鍵字沒想到。pattern 釘住指令與旗標同行出現，改掉旗標名或退回純 grep 版即紅。"
+    },
+    {
+      "name": "回掃入邊必查名單（程式端）：wiki_graph.py 必須真的支援 explain --section，且錨點邊要帶目標端 anchor（規格叫記者跑的指令若不存在或不分組，回掃會退回整頁邊亂槍打鳥）",
+      "assertion": "all_contain",
+      "files": [
+        "scripts/wiki_graph.py"
+      ],
+      "patterns": [
+        "\"--section\" in rest",
+        "l\\.anchor and key in l\\.anchor"
+      ],
+      "_note": "2026-09-04 加入。pattern 刻意釘 argv 解析與篩選條件兩處實作，不釘 docstring——文件裡的 --section 是說明，不是能力。"
+    },
+    {
+      "name": "co-landed 同新聞候選（規格端 <-> 程式端）：wiki-lint 6k 的指令必須帶 --with-news，且 wiki_graph 必須真的實作該旗標與 co_landed_pairs（只改規格＝lint 每輪少印一張表且無人察覺；只改程式＝功能沒有消費端，同 signal 白算的病）",
+      "assertion": "all_contain",
+      "files": [
+        ".claude/commands/wiki-lint.md",
+        "scripts/wiki_graph.py"
+      ],
+      "patterns": [
+        "gaps --top 10 --with-news|\"--with-news\" in rest"
+      ],
+      "_note": "2026-09-04 加入。alternation 兩支各對應一端：規格端釘完整指令列，程式端釘 argv 判斷。"
+    },
+    {
+      "name": "co-landed 的證據來源與 ignore 共用（程式端）：歸因帳本欄名 item_url 與共用 load_ignored 必須都在——換欄名會讓整張表靜默空白（帳本每列都有 page，只有 url 對不上時不會報錯，只會零候選）",
+      "assertion": "all_contain",
+      "files": [
+        "scripts/wiki_graph.py"
+      ],
+      "patterns": [
+        "def co_landed_pairs",
+        "item_url",
+        "def load_ignored"
+      ]
+    },
+    {
+      "name": "高引用但停滯 signal 的產出端 <-> 消費端：gen_wiki_frontmatter 產出 signal 並提供 --list-signal，wiki-lint 5g 讀它（訊號產出了沒人消費，正是 2026-08-28 懸置 WARN 與 C 窗佇列的同型死法）",
+      "assertion": "all_contain",
+      "files": [
+        "scripts/gen_wiki_frontmatter.py",
+        ".claude/commands/wiki-lint.md"
+      ],
+      "patterns": [
+        "--list-signal",
+        "⚠️ 高引用但停滯"
+      ],
+      "_note": "2026-09-04 加入。判準（INBOUND_HIGH／STALE_DAYS）的家在 gen_wiki_frontmatter，列表刻意不另寫一支，否則會有第二份門檻。"
     }
   ],
   "coupling_hints": {

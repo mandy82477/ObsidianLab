@@ -23,9 +23,14 @@ Bases 才能直接排序篩選，不需要外部腳本。
 | `休眠` | 入鏈 < 15 且 超過 21 天無新聞 | 正常，該主題近期沒事發生 |
 | `健康` | 其餘 | — |
 
+`signal` 有消費端才不會白算：`⚠️ 高引用但停滯` 由 `/wiki-lint` 步驟 5g 逐頁處置
+（`--list-signal` 即其入口）。**列出方式刻意留在本檔而非 wiki_graph**——判準（入鏈 ≥ 15、
+> 21 天無新聞、子樹聚合）在這裡定義，列表若另寫一支就會有第二份門檻，改一邊忘一邊。
+
 用法：
     python scripts/gen_wiki_frontmatter.py --dry-run   # 只報告
     python scripts/gen_wiki_frontmatter.py             # 實際寫入
+    python scripts/gen_wiki_frontmatter.py --list-signal "⚠️ 高引用但停滯"   # 只列該訊號的頁（不寫入）
 """
 
 from __future__ import annotations
@@ -134,7 +139,12 @@ def strip_pending_probes(text: str) -> str:
 
 def main(argv: list[str]) -> int:
     stream = _stdout()
-    dry_run = "--dry-run" in argv
+    list_signal = None
+    if "--list-signal" in argv:
+        i = argv.index("--list-signal")
+        list_signal = argv[i + 1] if i + 1 < len(argv) else "⚠️ 高引用但停滯"
+    # 列出模式一律不寫入：它是 lint 的查詢入口，不該有副作用
+    dry_run = "--dry-run" in argv or list_signal is not None
     today = date.today()
 
     pages = [
@@ -194,6 +204,7 @@ def main(argv: list[str]) -> int:
 
     written = unchanged = 0
     signals: collections.Counter[str] = collections.Counter()
+    signal_rows: list[tuple[str, str, int, int | None]] = []
 
     for slug, path, sub in pages:
         with path.open(encoding="utf-8-sig", newline="") as fh:
@@ -291,6 +302,7 @@ def main(argv: list[str]) -> int:
             signal = "健康"
         meta["signal"] = signal
         signals[signal] += 1
+        signal_rows.append((signal, slug, ib, days))
 
         meta["generated_by"] = "scripts/gen_wiki_frontmatter.py"
 
@@ -308,6 +320,17 @@ def main(argv: list[str]) -> int:
         if not dry_run:
             with path.open("w", encoding="utf-8", newline="") as fh:
                 fh.write(new_raw)
+
+    if list_signal is not None:
+        rows = sorted((r for r in signal_rows if r[0] == list_signal), key=lambda r: (-r[2], r[1]))
+        stream.write(f"# signal = {list_signal}（{len(rows)} 頁；入鏈多者在前）\n\n")
+        stream.write("| 頁 | 入鏈 | 距上次新聞 |\n|---|---|---|\n")
+        for _, slug, ib, days in rows:
+            stream.write(f"| {slug} | {ib} | {'—' if days is None else str(days) + ' 天'} |\n")
+        if not rows:
+            stream.write("| （無） | | |\n")
+        stream.flush()
+        return 0
 
     stream.write(f"頁面 {len(pages)}：寫入 {written}／未變 {unchanged}\n")
     # index 投影：母頁列摘要格的「↳ 子故事：」由此重生（子頁不入 index，查詢與認領靠投影）
