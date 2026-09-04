@@ -112,12 +112,13 @@ PYTHON REPO_ROOT\scripts\archive_gathered.py
 
 | 契約字串／形狀 | 消費端 | 改壞的後果 |
 |---|---|---|
-| 區塊標題的 emoji（📌⭐🔧📰💬💰🧭📡） | `build_web.py` SECTION_EMOJI、`app.js` | 該區塊整段不進網站 |
+| 區塊標題 emoji（📌⭐🔧💰📰💬🧭📡） | `build_web.py` SECTION_EMOJI → JSON key（`app.js` 消費的是 key，不是 emoji） | 該區塊整段不進網站，且被吞進前一區的 body |
+| 標頭 `**日期：** … \| **來源：** X/10 \| **文章數：** N \| **更新時間：** …` | `build_web.py` header_re／gen_re／src_count_re | 日期／文章數／來源比全部落空（`test_digest_contract.py` 會擋） |
 | 聚焦行 `- **[標籤]** 說明（[來源名](url)）` | `build_web.py` FOCUS_RE／FOCUS_INLINE_LINK_RE／FOCUS_INLINE_GROUP_RE、`app.js` focus 渲染 | 裸 markdown 上站、badge 全站消失 |
 | 條目三行式：`**[標題](url)**`＋說明＋`` `來源` · MM/DD HH:MM UTC``（討論區末加 `情緒：`） | `build_web.py` STORY_RE／SOURCE_RE、3a 自檢 | 條目解析不到，整則消失 |
 | 🧭 行 `- **[標題](url)** — 說明（→ 專頁名）` | `build_web.py` TOPIC_RADAR_RE | 雷達區不進網站 |
 | 📡 表 `\| 來源 \| ✅/❌ \| 條數 \|` | `build_web.py` SOURCE_TABLE_RE、3b 自檢、lint 6e | 來源健康檢查斷炊 |
-| 聚焦歸因（行內連結） | wiki-lint 6g ref 覆蓋率量測 | 覆蓋率誤報暴跌 |
+| 聚焦區塊錨點 `### 📌 今日聚焦`（含 `###` 層級）＋聚焦條列必以 `- **[` 起頭（連字號 6g 必要） | wiki-lint 6g 分子分母 awk／grep、`build_web.py` FOCUS_RE | 覆蓋率誤報暴跌或灌大分母 |
 
 **0-1. 新鮮度防線（強制，生成前先做）`[加入: 2026-07-25]`**：讀取 `src/gathered_items.json`，確認 `date` 等於 TARGET_DATE 且 `items` 非空。
 
@@ -169,7 +170,7 @@ PYTHON REPO_ROOT\scripts\check_gather_health.py
 
 **每一條聚焦項目，凡有對應的參考新聞，在句末用行內連結引用** `[改版: 2026-09-04]`：格式 `（[來源名](url)）`，多則用頓號並列 `（[HN](url1)、[官方](url2)）`。來源名寫讀者認得的短名（媒體名／HN／官方／issue 編號），**不寫裸 URL、不用 `[N]` 腳注**——腳注要讀者跳到檔尾再跳回來，5 分鐘讀者不會做這個動作，等於聚焦沒有連結（2026-09-04 冷讀者實測；舊期的 `[N]` 檔尾清單格式已退場，不回溯改舊檔）。
 - 若確實找不到對應新聞（例如是推論或背景說明）→ 可省略連結
-- **此格式為機械契約**：`scripts/build_web.py` 的 `FOCUS_INLINE_LINK_RE`／`FOCUS_INLINE_GROUP_RE` 把連結抽成 `ref_urls`（餵各區塊聚焦 badge 與典藏頁 preview）並從顯示文字移除；改此格式必須同步該解析器與 `web_reader/assets/app.js` 的 focus 渲染（回歸測試 `src/tests/test_focus_inline_links.py` 會紅）
+- **此格式為機械契約**：形狀與消費端見本 Step 上方「機械契約字串」表；回歸測試 `src/tests/test_focus_inline_links.py` 會紅
 
 範例：
 - **[重大事件]** Claude 發布 Sonnet 4，context window 翻倍。（[官方](https://example.com/announcement)）

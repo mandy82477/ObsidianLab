@@ -1002,40 +1002,6 @@
       "pattern": "python scripts/inquiry_bank\\.py (\\w+)"
     },
     {
-      "name": "週報 lede 契約：`> **本週一句話**：` 逐字存在於規格與 build_web（WEEKLY_LEDE_RE）——改標籤網站 lede 消失且無警告",
-      "assertion": "all_contain",
-      "files": [
-        ".claude/commands/weekly-report.md",
-        "scripts/build_web.py"
-      ],
-      "patterns": [
-        "本週一句話"
-      ]
-    },
-    {
-      "name": "週報 footer 契約：`素材涵蓋窗` 標籤存在於規格與 build_web（WEEKLY_FOOTER_RE）——改標籤檔尾不上站並污染本週數字",
-      "assertion": "all_contain",
-      "files": [
-        ".claude/commands/weekly-report.md",
-        "scripts/build_web.py"
-      ],
-      "patterns": [
-        "素材涵蓋窗"
-      ]
-    },
-    {
-      "name": "週報兩表小標與表頭：各消費端與規格對各自真實依賴的字串逐字一致（改任一方整表消失或誤報）",
-      "assertion": "all_contain",
-      "files": [
-        ".claude/commands/weekly-report.md",
-        "scripts/check_weekly_ledger.py"
-      ],
-      "patterns": [
-        "上週的線怎麼了",
-        "上週預告"
-      ]
-    },
-    {
       "name": "判準查證尾巴分隔符：`｜查證` 存在於規格與 scan_open_forecasts（PROBE_RE）——改分隔符全部預告失去偵測",
       "assertion": "all_contain",
       "files": [
@@ -1059,15 +1025,86 @@
       ]
     },
     {
-      "name": "週報回收小標／表頭的程式端依賴：build_web 認「上週的線怎麼了」小標、scan_open_forecasts 認「上週預告」表頭——規格改名兩支各自靜默失效",
+      "name": "週報 lede（規格端）：`> **本週一句話**：` 粗體與冒號緊貼——多一個空格 WEEKLY_LEDE_RE 即失效且網站無警告",
       "assertion": "all_contain",
       "files": [
-        "scripts/build_web.py",
-        "scripts/scan_open_forecasts.py",
         ".claude/commands/weekly-report.md"
       ],
       "patterns": [
-        "上週的線怎麼了|上週預告"
+        "> \\*\\*本週一句話\\*\\*[：:]"
+      ]
+    },
+    {
+      "name": "週報 lede（程式端）：build_web 的 WEEKLY_LEDE_RE 必須仍認「本週一句話」",
+      "assertion": "all_contain",
+      "files": [
+        "scripts/build_web.py"
+      ],
+      "patterns": [
+        "WEEKLY_LEDE_RE.*本週一句話"
+      ]
+    },
+    {
+      "name": "週報檔尾（規格端＋程式端）：`**素材涵蓋窗**` 與 WEEKLY_FOOTER_RE 同名同形",
+      "assertion": "all_contain",
+      "files": [
+        ".claude/commands/weekly-report.md",
+        "scripts/build_web.py"
+      ],
+      "patterns": [
+        "\\*\\*素材涵蓋窗|WEEKLY_FOOTER_RE.*素材涵蓋窗"
+      ]
+    },
+    {
+      "name": "週報回收小標：規格、build_web、check_weekly_ledger 三邊都認「上週的線怎麼了」（非 alternation，抓得到改名）",
+      "assertion": "all_contain",
+      "files": [
+        ".claude/commands/weekly-report.md",
+        "scripts/build_web.py",
+        "scripts/check_weekly_ledger.py"
+      ],
+      "patterns": [
+        "上週的線怎麼了"
+      ]
+    },
+    {
+      "name": "週報兩表表頭：新開（類型｜預告｜判準）與回收（上週預告｜判準｜本週結果）欄名逐字一致於規格與三支消費端",
+      "assertion": "all_contain",
+      "files": [
+        ".claude/commands/weekly-report.md",
+        "scripts/build_web.py",
+        "scripts/check_weekly_ledger.py",
+        "scripts/scan_open_forecasts.py"
+      ],
+      "patterns": [
+        "類型.{0,8}預告.{0,8}判準",
+        "上週預告.{0,8}判準.{0,8}本週結果"
+      ],
+      "_note": "pattern 容許規格表格的 \\| 逃逸與程式 regex 的 \\s*\\| 兩種寫法，只鎖欄名順序"
+    },
+    {
+      "name": "週報節標題與數字條列：`## 四、本週數字`／`## 一、` 是 check_weekly_ledger 兩支檢查的唯一入口，不中即靜默跳過；`——` 全形破折號同理",
+      "assertion": "all_contain",
+      "files": [
+        ".claude/commands/weekly-report.md",
+        "scripts/check_weekly_ledger.py"
+      ],
+      "patterns": [
+        "四、本週數字",
+        "一、",
+        "——"
+      ]
+    },
+    {
+      "name": "日報 emoji 看守補完：📌（今日聚焦）與 📡（來源狀態）在規格與 build_web 解析器必須同在（pair 45 因 app.js 無此二符號涵蓋不到）",
+      "assertion": "all_contain",
+      "files": [
+        ".claude/commands/news-pipeline-steps.md",
+        "scripts/build_web.py"
+      ],
+      "patterns": [
+        "📌",
+        "📡"
       ]
     }
   ],
