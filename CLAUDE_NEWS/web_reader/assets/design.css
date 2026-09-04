@@ -468,6 +468,14 @@ code {
 .focus-tag--tool  { color: var(--success); border-color: var(--success); }
 .focus-tag--trend { color: var(--ink-2);   border-color: var(--ink-3); }
 .focus-tag--risk  { color: var(--danger);  border-color: var(--danger); }
+/* 投資訊號 — 導流到判讀頁，用品牌 ochre（不引入第二強調色） */
+.focus-tag--market { color: var(--ochre-9); border-color: var(--ochre-7); }
+.focus-item__link {
+  background: transparent; border: none; padding: 0; cursor: pointer; text-align: left;
+  font-family: var(--font-sans); font-size: 13px;
+  color: var(--ochre-9); border-bottom: 1px solid var(--ochre-5);
+}
+.focus-item__link:hover { border-bottom-color: var(--ochre-9); }
 
 /* 技術更新區摺疊 — 非 actionable 條目預設收合 */
 .section__toggle-wrap { margin: 4px 0 8px; }

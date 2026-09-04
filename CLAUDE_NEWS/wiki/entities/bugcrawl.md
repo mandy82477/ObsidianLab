@@ -7,11 +7,11 @@ domain: "🛠️ 工具/功能"
 last_updated: "2026-07-10"
 last_news_update: "2026-06-20"
 status_main: "beta"
-days_since_news: 75
+days_since_news: 77
 parent: null
 children: "[]"
 page_role: "root"
-days_since_news_subtree: 75
+days_since_news_subtree: 77
 inbound_links: 3
 attribution_count: 0
 attribution_last: null

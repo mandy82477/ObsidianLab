@@ -5650,3 +5650,15 @@ GH Actions 抓料排 10:23 UTC，到 14:45 UTC 仍未落地（+4.4 小時且持�
 **處置：** `.claude/commands/wiki-lint.md`、`news-pipeline-steps.md`、`weekly-report.md`、`.claude/rules/wiki-ingest-format.md`、`wiki-ingest-features.md` 五檔的沿革節原文搬到 `docs/rules-changelog/<同名>.md`（不在任何 agent 的預設讀取範圍），原位置只留一行「沿革檔：`docs/...`」指路；條文區 37 處「本檔『沿革』YYYY-MM-DD」指路改寫為「沿革檔 YYYY-MM-DD」。`.claude/review-registry.json` 的 `bare_references`／`path_existence` glob 加入 `docs/rules-changelog/*.md`，新增 5 組 sync_pair 讓規則檔的指路行與沿革檔的標頭互相指認。`lint_health.py density` 的 `RULE_GLOBS` **刻意不改**——沿革檔不入量測範圍是本次改動的設計意圖（量測 agent 實際讀的東西），不是漏算；`.claude/commands/wiki-lint.md` 6h 與 `.claude/rules/claude-md-edit.md` 皆補一句指明此意圖，避免日後被誤判為疏漏而回頭「修正」。
 
 **結果：** 五檔行數 669/556/373/328/280 → 641/542/357/308/262（共 −96 行），標記 63/37/29/23/23 → 60/36/28/21/22，教訓行 32/14/26/8/9 → 26/13/23/7/8；`docs/rules-changelog/` 新增 5 檔、共約 110 行原文一字不刪。`check_rules.py`／`lint_health.py mutate`／`run_tests.py` 三者皆綠。
+
+## 2026-09-05 Query：投資訊號——消息面判讀從「要不要做」收斂到「薄觀點層專頁＋教學型定位」
+
+**點出什麼：** 使用者問「本庫的消息，能不能拿來當投資訊號讀」。逐步對話把這個模糊需求收斂成四個裁決：(1) **定位**——不做選股訊號、做**教學型事件研究**，禁止一切指令式買賣措辭，頁面常駐免責；(2) **交付形態**——每則判讀必須有 action item，五段固定（方向／時效／打折／⏰ 接下來看什麼／你的選項／一課），沒有 action item 的判讀只是評論；(3) **落點**——不散在商業各頁、不進日報正文，開一頁**薄觀點層**專頁，事實一律 wikilink 指回 [[topics/anthropic-business]]／[[entities/pricing]] 等事實頁，本頁不複製任何事實敘述；(4) **可信前提**——分級只收 🔴🟡，**無訊號的日子頁面不動**，並以兩週後的回顧結算讓判準的錯誤被看見。
+
+**根因：** 消息面判讀天然會滑向兩個失敗態——變成明牌（越界且不可信）或變成事實副本（與商業頁重複、雙重維護）。四個裁決分別堵住這兩條路：定位與禁詞表堵前者，「事實不搬家」與薄觀點層堵後者；回顧結算則是對「預測性宣稱必須回來對答案」這條全庫標準的落實（同週報「下週看什麼」逐條結算）。
+
+**處置：** 建 `wiki/topics/market-signals.md`（種子判讀 2 則、回顧結算表 2 列 ⏳、里程碑懸置 1 筆）；新增投資分析（market）記者——`.claude/rules/wiki-ingest-market.md`（daily 判讀）、`.claude/rules/wiki-ingest-market-lint.md`（weekly 回顧環）、`.claude/agents/wiki-reporter-market.md`（角色檔）。觸發邊登記兩處：`.claude/rules/wiki-ingest.md` 新增「第四步：衍生記者派工」（與 devpractice 並列）、`.claude/commands/wiki-ingest.md` 4c；回顧環登記為 `/wiki-lint` 5h（主編親做，雲端 egress 封鎖時跳過、由本機 `/weekly` 承接）。`.claude/rules/wiki-ingest-commercial.md` 加一條例外，避免「領域＝商業的頁面都是商業記者的」與新記者相牴觸。網站端：`scripts/build_web.py` 解析判讀標題契約 `### 💰 事件名（YYYY-MM-DD）`，最新一則日期等於某日日報時在該日 digest JSON 注入 `marketSignal`，`app.js` 於今日聚焦列表末尾渲染一則 💰 導流條目；契約已登記 `.claude/review-registry.json` sync_pair（規格端釘標題原形、程式端釘 `MARKET_SIGNAL_RE`），新增 `src/tests/test_market_signals.py` 8 例。
+
+**IPO 事實沉澱（user-query 通道）：** 使用者提供的「6/1 祕密遞件、目標 10 月上市、私募輪估值約 $9,650 億」經主編查證後判定**僅二手彙整站等級**（Forge、UnusualWhales 等），非一手文件——依使用者提問通道紀律，寫入時全部標「媒體稱＋二手彙整站＋2026-09-05 查證」，並在 `## 追蹤中的里程碑` 以懸置標記登記「公開版 S-1 是否遞交」（探針：Nasdaq、承銷商、公開遞件）。歸因 slug `user-query`，`item_url` 留空並在標題註明無一手連結可附。
+
+**結果：** `check_rules.py` ✅ 零錯誤（90 組配對）｜`lint_health.py mutate` ✅ 83 組全數轉紅｜`run_tests.py` exit 0（529 例）｜`build_web.py` 錨點 WARN 0（未增加），2026-08-26 digest 已注入 marketSignal。

@@ -319,6 +319,19 @@ python scripts/gen_wiki_frontmatter.py --list-signal "⚠️ 高引用但停滯"
 - 回報：`高引用停滯：N 頁（處置：派記者確認 a／改引用方連結 b／確認無誤留原狀 c）`——`c` 只在該頁確實仍是該主題的正確落點、且停滯已在頁面上寫明時才可用，並附一句理由
 - **連續 2 輪同一頁仍在清單且處置皆為 c** → 回報使用者：門檻（21 天／入鏈 15）可能不適用於該頁型態，評估調 `gen_wiki_frontmatter.py` 的 `STALE_DAYS`／`INBOUND_HIGH`
 
+### 5h. 投資訊號回顧環（主編親查）`[加入: 2026-09-05]`
+
+`wiki/topics/market-signals.md` 的判讀是**預測性宣稱**，本步是它唯一的結算端：對 `## 回顧結算` 表中「兩週後實際」為 ⏳ 且判讀日距今 ≥ 14 天的列，查該標的兩週粗方向（↑／↓／～）並回填實際與對錯。記者無 web 工具，查不了股價，這是本步不派工的唯一理由。
+
+**⚠️ 雲端一律跳過**（同 5b、5c）：需外部網域，雲端沙盒 egress 封鎖。雲端執行時不查、不改頁面，寫一條待辦「投資訊號回顧環因雲端 egress 封鎖跳過，留待本機 `/weekly` 承接」並列入待使用者確認區。
+
+執行細節（回填格式、不可驗證的寫法、不得回頭改寫「當時方向」、連續 4 週全錯的處置）見 `.claude/rules/wiki-ingest-market-lint.md`。
+
+**回報格式（納入步驟 8 的 lint 紀錄）：**
+```
+投資訊號回顧（5h）：結算 N 列（✅ a／❌ b／～ c／不可驗證 d），剩餘 ⏳ M 列／雲端 egress 封鎖，跳過
+```
+
 ### 6. CLAUDE.md 健檢
 
 讀取 `wiki/CLAUDE.md`、`.claude/rules/wiki-ingest.md`、`.claude/rules/wiki-ingest-format.md`、`.claude/rules/wiki-reporter-shared.md` 與**本檔（`.claude/commands/wiki-lint.md`）自身** `[加入: 2026-08-28]`，依序執行下列各項檢查。
@@ -579,6 +592,7 @@ python scripts/wiki_graph.py gaps --top 10 --with-news
   - 趨勢判讀：（持平／惡化中／已回升，一句話）
 - 跨家榜單週更（5b）：（已更新 N 榜／M 榜無法取得（列出）／雲端 egress 封鎖，跳過）
 - 逾期待查證清算（5c）：（盤點 N 筆，本輪處理 M 筆：查實 A／確認官方未載 B／失效移除 C，結案回掃上修 D 頁，剩餘 N-M 筆／雲端 egress 封鎖，跳過）
+- 投資訊號回顧（5h）：（結算 N 列：✅ a／❌ b／～ c／不可驗證 d，剩餘 ⏳ M 列／雲端 egress 封鎖，跳過）
 - 讀者模擬：（3 題結果：✅/⚠️ 已修復/❌ 待辦，各附一句說明）
 - 質疑代打（7b）：（seed 與抽中題號，各題 ✅ 附證據行/⚠️ 修了什麼/❌ 待辦；時效燈亮時原樣轉述）
 - lint 自我遵守率：（N/6 位記者回報一次過；退回者列出類別與缺項）

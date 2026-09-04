@@ -110,6 +110,19 @@ slug 對照表見 `.claude/rules/wiki-reporter-shared.md`「來源歸因回報�
 
 ---
 
+## 第四步：衍生記者派工（不在分類路由內）`[加入: 2026-09-05]`
+
+彙整完成、wiki 檔案定稿後，派兩位**不吃分類路由**的衍生記者。他們沒有任何日報條目會被分類過來，本節即其明文觸發邊（依 `.claude/rules/wiki-ingest-format.md`「建頁時必須確認觸發邊」）；派工方式與六記者相同（`subagent_type: "general-purpose"` + `model: "sonnet"` + 角色前導），逐字 prompt 見 `.claude/commands/wiki-ingest.md` 的 4b／4c。
+
+| 記者 | 吃什麼 | 角色檔 | daily 規則 | 為何排在彙整之後 |
+|---|---|---|---|---|
+| 開發實務（devpractice） | 本輪 ingest 寫進 wiki 的 diff | `.claude/agents/wiki-reporter-devpractice.md` | `.claude/rules/wiki-ingest-devpractice.md` | diff 必須先存在 |
+| 投資分析（market） | 當日日報本身（換市場框架重讀） | `.claude/agents/wiki-reporter-market.md` | `.claude/rules/wiki-ingest-market.md` | 判讀要 wikilink 指向已定稿的事實頁 |
+
+投資分析記者只寫 `wiki/topics/market-signals.md`，且該頁的 `## 回顧結算` 回填屬 `/wiki-lint` 5h 主編工作（`.claude/rules/wiki-ingest-market-lint.md`）。
+
+---
+
 ## 記者回報格式（標準化）
 
 每個記者完成後必須輸出：

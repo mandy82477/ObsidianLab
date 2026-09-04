@@ -7,11 +7,11 @@ last_updated: "2026-09-03"
 last_news_update: "2026-09-03"
 update_freq: "🗓️ 每日快照（機器產出；決策表抄自社群工具目錄、最多落後一天；「本週竄升」以七日星數差計）"
 status_main: "ongoing"
-days_since_news: 0
+days_since_news: 2
 parent: null
 children: "[]"
 page_role: "root"
-days_since_news_subtree: 0
+days_since_news_subtree: 2
 inbound_links: 4
 attribution_count: 0
 attribution_last: null

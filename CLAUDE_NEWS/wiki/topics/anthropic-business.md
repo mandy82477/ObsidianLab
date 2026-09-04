@@ -3,15 +3,15 @@ page: "topics/anthropic-business"
 kind: "topic"
 status: "ongoing"
 domain: "💼 商業"
-last_updated: "2026-09-04"
+last_updated: "2026-09-05"
 last_news_update: "2026-09-02"
 status_main: "ongoing"
-days_since_news: 1
+days_since_news: 3
 parent: null
 children: "[]"
 page_role: "root"
-days_since_news_subtree: 1
-inbound_links: 69
+days_since_news_subtree: 3
+inbound_links: 74
 attribution_count: 191
 attribution_last: "2026-09-02"
 top_source: "google-news"
@@ -27,7 +27,7 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 **狀態：** ongoing
 **領域：** 💼 商業
 **開始日期：** 2026-05-28
-**最後更新：** 2026-09-04
+**最後更新：** 2026-09-05
 **最後新聞更新：** 2026-09-02
 
 > **最新動態**（2026-09-02）
@@ -71,6 +71,8 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 ## IPO 前瞻與估值追蹤
 
 **這條鏈子在回答：Anthropic 離上市有多近？估值撐得住嗎？誰先受益、誰先質疑？**
+
+> 本節是事實層。把這些消息放進市場框架的判讀（方向、該打幾折、接下來看哪個里程碑）見 [[topics/market-signals]]——教學型事件研究，非投資建議。
 
 **估值算術（本頁計算，2026-08-29）：**
 - Damodaran 稱撐起 2兆美元估值，反推需**第 10 年（約 2036）營收達 1.2兆美元**（隱含稅後營業利益 3,600億美元），前提為稅後營業利益率 30%、資金成本 10%、10 年達成熟期；若因監管或採用放緩使成熟期拉長至 15 年，門檻升至接近 2兆美元（Yahoo Finance，08-21／08-23）

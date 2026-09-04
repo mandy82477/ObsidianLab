@@ -464,6 +464,38 @@ def attach_sedimented_badges(digest_all: dict, entities: list, topics: list) -> 
                     ]
 
 
+# ── 投資訊號（wiki/topics/market-signals.md → 日報頁 💰 條目）───────────────
+# 判讀標題是規格與程式的共同契約：`### 💰 事件名（YYYY-MM-DD）`。規格端住
+# `.claude/rules/wiki-ingest-market.md`「判讀格式（機械契約字串）」表，兩端互相指認
+# 並登記於 .claude/review-registry.json 的 sync_pairs——標題形狀改了而這裡沒跟，
+# 網站上的 💰 條目會靜默消失（同 2026-08-14 日報區塊 emoji 的死法）。
+MARKET_SIGNALS_PAGE = ROOT / "wiki" / "topics" / "market-signals.md"
+MARKET_SIGNAL_RE = re.compile(r"^###\s+💰\s*(.+?)（(\d{4}-\d{2}-\d{2})）\s*$", re.MULTILINE)
+
+
+def parse_market_signal(f: Path) -> dict | None:
+    """取最新一則判讀（頁面 `## 近期判讀` 最新在上，故第一個命中即最新）。"""
+    if not f.exists():
+        return None
+    m = MARKET_SIGNAL_RE.search(read_md(f))
+    if not m:
+        return None
+    return {"title": m.group(1).strip(), "date": m.group(2)}
+
+
+def attach_market_signal(digest_all: dict, signal: dict | None) -> None:
+    """最新判讀的日期若等於某日日報，該日 digest JSON 掛上 marketSignal。
+
+    只掛最新一則、只掛日期對得上的那一天——舊判讀不回頭補（日報頁是當日快照，
+    補歷史等於讓舊頁面在讀者不知情下長出新東西）。
+    """
+    if not signal:
+        return
+    d = digest_all.get(signal["date"])
+    if d is not None:
+        d["marketSignal"] = signal
+
+
 # ── Weekly 結構化解析（journal 版面用，§A）──────────────────────────────────
 # 週報是自由行文的四段式 markdown；解析器用內容關鍵字對應四大段（頭條/技術討論/
 # 下週/數字），不依賴「一、二、三、四、」編號（編號可能改版），任一段缺失時
@@ -1126,6 +1158,9 @@ def build():
 
     # ── 已沉澱徽章／今日 wiki 動態（用既有 lastNewsUpdate 欄位比對，不新增管線）──
     attach_sedimented_badges(digest_all, entities, topics)
+
+    # ── 投資訊號：最新判讀日期對得上的那天，日報頁末尾加一則 💰 條目 ──────────
+    attach_market_signal(digest_all, parse_market_signal(MARKET_SIGNALS_PAGE))
 
     # ── Parse weekly reports (weekly/YYYY-Wnn.md) ─────────────────────────────
     weekly_all, weekly_index = collect_weekly(WEEKLY_DIR)

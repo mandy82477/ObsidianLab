@@ -215,7 +215,7 @@
     return `<span class="sentiment sentiment--neutral">${esc(raw)}</span>`;
   }
 
-  const FOCUS_TAG_MAP = { '重大事件':'major','持續追蹤':'track','新工具':'tool','社群趨勢':'trend','風險警示':'risk' };
+  const FOCUS_TAG_MAP = { '重大事件':'major','持續追蹤':'track','新工具':'tool','社群趨勢':'trend','風險警示':'risk','投資訊號':'market' };
   function focusTagCls(tag) { return FOCUS_TAG_MAP[tag.replace(/^\[|\]$/g, '')] || 'track'; }
 
   // ── 技術更新區摺疊 ────────────────────────────────────────────────────────────
@@ -360,6 +360,11 @@
         const refs = '';
         parts.push(`<li class="focus-item"><span class="focus-tag focus-tag--${cls}">${esc(f.tag)}</span><span>${esc(f.text)}</span>${refs}</li>`);
       });
+      // 投資訊號（wiki/topics/market-signals.md 的最新判讀日期＝本日時才有）：
+      // 沿用 focus-item 版式接在聚焦列表末尾，點擊進判讀頁。教學型事件研究、非投資建議。
+      if (d.marketSignal) {
+        parts.push(`<li class="focus-item focus-item--market"><span class="focus-tag focus-tag--market">投資訊號</span><button type="button" class="focus-item__link" onclick="openWikiPage('market-signals','topic')">${esc(d.marketSignal.title)} — 看判讀 →</button></li>`);
+      }
       parts.push('</ul>');
       // 常駐導流：重度使用者的核心問題「該不該升版」答案在熱度雷達頁，
       // 但從日報頁原本沒有任何入口（2026-07-28 讀者 review 高影響項）

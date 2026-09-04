@@ -158,6 +158,16 @@ python scripts/scan_pending_verifications.py $ARGUMENTS
 
 收報後把「候選 N 筆／本日無候選」記入 log.md 本次 ingest 紀錄一行 `devpractice 沉澱：…`；`data/devpractice-candidates.jsonl` 與 `data/devpractice_state.json` 併入收尾 commit（雲端與本機共用同一條 diff 基準線，不 commit 會斷）。
 
+### 4c. market 判讀派工（主編）`[加入: 2026-09-05]`
+
+與 4b 同批派出（兩者互不相干，可並行）。投資分析記者不吃分類路由，吃**當日日報本身**換市場框架重讀，但判讀要 wikilink 指向已定稿的事實頁，故同樣排在彙整之後。以 `subagent_type: "general-purpose"` + `model: "sonnet"` 派出，prompt 首段：
+
+```
+你是 CLAUDE_NEWS wiki 的「投資分析（market）」記者。開工前先 Read `.claude/agents/wiki-reporter-market.md`——那是你的角色定義，逐條照做後執行 **daily 判讀**。今日日期：[YYYY-MM-DD]。你不可再呼叫 Agent tool 委派任何工作。
+```
+
+其後附今日日報條目節錄（與六記者同一份 Step 2 產物，不另篩）。收報後把「判讀 N 則／本日無訊號」記入 log.md 本次 ingest 紀錄一行 `market 判讀：…`；記者回報的來源歸因照第 4 步 append 至 `data/source_attribution.jsonl`（slug 用該則日報條目的來源，不是 `user-query`）。
+
 ### 5. 完成前強制核對清單
 
 **在宣告完成之前，逐項確認所有項目已完成。**

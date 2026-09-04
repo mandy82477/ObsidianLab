@@ -1284,6 +1284,19 @@
       "patterns": [
         "docs/rules\\-changelog/wiki\\-ingest\\-features\\.md|\\.claude/rules/wiki\\-ingest\\-features\\.md 沿革"
       ]
+    },
+    {
+      "name": "投資訊號判讀標題（規格端 <-> 程式端）：`### 💰 事件名（YYYY-MM-DD）` 的形狀與 build_web 的 MARKET_SIGNAL_RE 必須互相指認——標題改形狀而解析器沒跟，日報頁的 💰 條目靜默消失（同 2026-08-14 區塊 emoji 的死法）",
+      "assertion": "all_contain",
+      "files": [
+        ".claude/rules/wiki-ingest-market.md",
+        "scripts/build_web.py"
+      ],
+      "patterns": [
+        "### 💰 事件名（YYYY-MM-DD）|MARKET_SIGNAL_RE",
+        "market-signals"
+      ],
+      "_note": "2026-09-05 加入。alternation 兩支各對應一端：規格端釘判讀標題原形（機械契約字串表），程式端釘 regex 常數名；第二個 pattern 釘兩端都得認得同一份來源頁。"
     }
   ],
   "coupling_hints": {
