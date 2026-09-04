@@ -451,7 +451,8 @@
       "ref_urls": [
         "https://www.reuters.com/world/us-judge-approves-anthropics-15-billion-settlement-copyright-lawsuit-2026-07-20/",
         "https://news.google.com/rss/articles/CBMikwFBVV95cUxNbFZveFpoRGhfYUt6WXBKU3R3aFMwanRuV19BeExrUjlmWXJEV2ctSEdSYlRXbUtMX2JOZFFhcE5TZ2xXSXlpWTRvU2wxUTk0T3FpWmJhdy1uT3RQX053T3hvbXZJZlAzZVdJV0VXcXpOcmVnRjhBYXNsODFlWnhMRkgxWmg4ZTBnb2VQdUdpLWNkLTg?oc=5"
-      ]
+      ],
+      "ref_names": []
     },
     {
       "tag": "[持續追蹤]",
@@ -459,7 +460,8 @@
       "ref_urls": [
         "https://www.emergingtrajectories.com/lh/frontier-lab-economics/",
         "https://news.google.com/rss/articles/CBMiZEFVX3lxTFBmbDhVNkhkVUJfNm1OTFozTVk0cWdWR3FEWmxtQjV6OXltZUNEdGtyOGpsWFVOMVhBUlc5VVB4WFJwT1Fpa1Rzc25UMVVZcGF2X3ZiU2NIRDBtY0VnUVpSNHlHVDU?oc=5"
-      ]
+      ],
+      "ref_names": []
     },
     {
       "tag": "[風險警示]",
@@ -467,21 +469,24 @@
       "ref_urls": [
         "https://status.claude.com/incidents/lw0sb1srtznh",
         "https://status.claude.com/incidents/v35b71rthzhp"
-      ]
+      ],
+      "ref_names": []
     },
     {
       "tag": "[新工具]",
       "text": "Claude Code v2.1.216 發布，新增 `sandbox.filesystem.disabled` 設定可在維持網路出口控管下跳過檔案系統隔離，並修復長會話中訊息正規化造成的速度變慢問題。",
       "ref_urls": [
         "https://github.com/anthropics/claude-code/releases/tag/v2.1.216"
-      ]
+      ],
+      "ref_names": []
     },
     {
       "tag": "[風險警示]",
       "text": "媒體報導阿里巴巴以偵測出 2.5 萬個虛假帳號為由封鎖 Claude Code 存取。",
       "ref_urls": [
         "https://news.google.com/rss/articles/CBMiakFVX3lxTE1rVGJvTDhuSkFTdXBoRnduRlZyamhxT1Jub1NVRFdUTEZDMzVZdEs0cTBuQkhBeVBRcHlYSUdkVVU3azZvdVo0SXZ0T1hLRWp5OG1vRjFERDM0UEY4VVBvYzdHdXU1MTA2M1E?oc=5"
-      ]
+      ],
+      "ref_names": []
     }
   ],
   "topicRadar": [],

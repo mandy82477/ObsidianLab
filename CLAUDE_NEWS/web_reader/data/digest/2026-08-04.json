@@ -299,7 +299,8 @@
       "ref_urls": [
         "https://github.com/anthropics/claude-code/issues/16157",
         "https://github.com/anthropics/claude-code/issues/26224"
-      ]
+      ],
+      "ref_names": []
     },
     {
       "tag": "[風險警示]",
@@ -309,7 +310,8 @@
         "https://news.google.com/rss/articles/CBMi0gFBVV95cUxPYkNiVjEwUi1aUUZXdFRPMXB4WE1RRFFCUTdpaTlRaGhyWEZlTzNiUTlEQlhqNVFOUDc4c0RJXzdlXzNucVR4bGJzVjdwRVJESDVweDZWQjE2REhaVDJjX1g5eXdwbFlwZ1JTZ0ZXMzF6NXJFY184bUpWRlI4V3B3N2tkNnRoSjc2UFJQT0Myb2NOTE9raEg2REh2NmFEM2ZzVHJfTTE1dFR5WGRnbzhEVGpBakdmWlJPejFBdC1GajFZREtfdnBiSXNfOUp6eU0yTVE?oc=5",
         "https://news.google.com/rss/articles/CBMivwFBVV95cUxPM0I4S00xWEM2VDRrV3RfbWFlNTh1NmY5OU44TEpkMVpDYUhmd1BfVG1sWGRjZWJ0UGdFUFc5bExYMzB6VktGVVhtSDdodjVMVFA0UnFxRmdaWTdNRG1Ra0ppaTRPYVY3bmw3cjh3SnFZcV9jcjBhb0tOVzVkcjFWdUlrR210OEFqSTdWemRlT2RKQkQ5ZnRuVDlUNnRjSUY0T29ramp3ejNTSkR3UUh4RmUwWkZSVEwwQkhWNW5XUQ?oc=5",
         "https://news.google.com/rss/articles/CBMi0gFBVV95cUxNUjhjZGJJM3ZCQ2EtWndKQ3pmTkd0U2dBdi1jbmRsUEFISDR0NnZxR1A4Vk9EZlpyQ2JkTlZEem1kcXd2eHVvQmk0ZFhlSXNVbDJZMFpuXzlTZEtSMUZPRlMzNHRHYlAzaUZJU1R6bmhncXpmdXVjOHoxV2hnQXFvMmQ5SlB5c19KdU9SQUpXbTYydGFNYWRlb2NuOVdILWRiYlk4NDE1Yk5rNjVJeVpfdXg0azRLbWFMZ2ZGcFRRUzNheW5kcXVaSF9OZTlETUZibEE?oc=5"
-      ]
+      ],
+      "ref_names": []
     },
     {
       "tag": "[持續追蹤]",
@@ -317,7 +319,8 @@
       "ref_urls": [
         "https://news.google.com/rss/articles/CBMiqgFBVV95cUxObWVNalU0cV9OY2Q0RHFkdFJtakZJRTdzV1BiUDVvamY3RlVRX3ZydGl5YnAzU2dxQldBTVVMMW1wMWl0ekI1eXZJdm84bjBtUFBZc2JBeVJfblJEMVhDZGs4UWpaZXZTTUQtYy1QVFVsYmxsUG1jVHZTd2VFWEJXV2FlNXg4ZVZmRUI5SWpxMWo2cGFTT0hWRUJmNUpyaXZFRnRISnhvNy1YUQ?oc=5",
         "https://news.google.com/rss/articles/CBMisgFBVV95cUxQZ3hBOWtTak5hM3JQdjc2Z1E1anpYS0RtQW5Razg4UXdNdmNpeGN1UnVjMzRJY19IdGY3VkVOUC1JSWsxYno3ZlRXOEtDYm5wNmU4c0ZyT0dwUG1yYS1YejZqZ2hYbENNc041REV2VldRc1p2V1c1TXdvOURmOUZQaDFJY3luQTRGNEt3eFR1cTdHdzk4aVhvR2R3WW5CRkwtbDVNR0llRS1sRHFEd2hGNE5n?oc=5"
-      ]
+      ],
+      "ref_names": []
     },
     {
       "tag": "[社群趨勢]",
@@ -325,14 +328,16 @@
       "ref_urls": [
         "https://twitter.com/Techmeme/status/2084238055368687932",
         "https://news.google.com/rss/articles/CBMif0FVX3lxTE02SFppeGVDVmRocnlILUprTHgyTFgta0lSVmxseEtUODhpTURLeDhXQ2FBWDNmN2ZpS09wVnZLZlc4UmV5QXYyUnJBTzdHbkJuZHJncnhDVW9nVjNKNWpYUE9GYmJGYlE4eEdNempvNUJJOVJveWZfNUxDUndfUFk?oc=5"
-      ]
+      ],
+      "ref_names": []
     },
     {
       "tag": "[新工具]",
       "text": "Y Combinator 新創 Hoplite（YC S26）在 Hacker News 發布雲端部署 coding agent 的服務，讓開發者能將本機的 session、記憶與 MCP 伺服器設定搬遷到雲端執行。",
       "ref_urls": [
         "https://hoplite.sh"
-      ]
+      ],
+      "ref_names": []
     }
   ],
   "topicRadar": [],

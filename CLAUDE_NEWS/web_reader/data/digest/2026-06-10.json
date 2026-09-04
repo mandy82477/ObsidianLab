@@ -357,7 +357,8 @@
       "ref_urls": [
         "https://www.anthropic.com/news/claude-fable-5-mythos-5",
         "https://www.anthropic.com/claude/fable"
-      ]
+      ],
+      "ref_names": []
     },
     {
       "tag": "[風險警示]",
@@ -365,7 +366,8 @@
       "ref_urls": [
         "https://news.ycombinator.com/item?id=48473166",
         "https://support.claude.com/en/articles/15425996-data-retention-practices-for-mythos-class-models"
-      ]
+      ],
+      "ref_names": []
     },
     {
       "tag": "[社群趨勢]",
@@ -373,21 +375,24 @@
       "ref_urls": [
         "https://old.reddit.com/r/LocalLLaMA/comments/1u1s2oz/anthropic_is_intentionally_nerfing_fable_when/",
         "https://www.reddit.com/r/ClaudeAI/comments/1u23bhr/anthropic_is_secretly_degrading_fable_5_when_it/"
-      ]
+      ],
+      "ref_names": []
     },
     {
       "tag": "[持續追蹤]",
       "text": "Anthropic 訂閱方案縮水：6/15 起 Agent SDK 呼叫、headless 使用、第三方 app 存取將移出 Pro 訂閱，改為 API 計費，社群討論激烈。",
       "ref_urls": [
         "https://www.reddit.com/r/ClaudeAI/comments/1u208d3/why_is_anyone_surprised_anthropic_is_tightening/"
-      ]
+      ],
+      "ref_names": []
     },
     {
       "tag": "[風險警示]",
       "text": "Claude Code 供應鏈攻擊持續擴大：已從 294,842 個機器竊取 secrets，攻擊蔓延至 Python 生態，並利用 Claude Code 本身作為攻擊媒介。",
       "ref_urls": [
         "https://www.reddit.com/r/ClaudeAI/comments/1u1zv25/the_claude_code_active_attack_didnt_stop_294842/"
-      ]
+      ],
+      "ref_names": []
     }
   ],
   "topicRadar": [],

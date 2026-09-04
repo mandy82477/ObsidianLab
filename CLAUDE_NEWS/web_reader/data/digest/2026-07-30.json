@@ -197,7 +197,8 @@
       "ref_urls": [
         "https://blog.cryptographyengineering.com/2026/07/29/some-notes-about-anthropics-new-results/",
         "https://simonwillison.net/2026/Jul/29/matthew-green/#atom-everything"
-      ]
+      ],
+      "ref_names": []
     },
     {
       "tag": "[持續追蹤]",
@@ -206,28 +207,32 @@
         "https://github.com/anthropics/claude-code/issues/18435",
         "https://github.com/anthropics/claude-code/issues/30154",
         "https://github.com/anthropics/claude-code/issues/2511"
-      ]
+      ],
+      "ref_names": []
     },
     {
       "tag": "[持續追蹤]",
       "text": "Claude Code 主控台輸出文字時捲軸被拉回歷史頂端的 bug，累積 821 個反應與 354 則留言，是今日社群互動量最高的單一問題回報。",
       "ref_urls": [
         "https://github.com/anthropics/claude-code/issues/826"
-      ]
+      ],
+      "ref_names": []
     },
     {
       "tag": "[風險警示]",
       "text": "資安研究者 Håkon Måløy 揭露透過 Word 文件觸發的新型 prompt injection 攻擊變種，具體描述攻擊思路。",
       "ref_urls": [
         "https://simonwillison.net/2026/Jul/29/ai-worming-through-word/#atom-everything"
-      ]
+      ],
+      "ref_names": []
     },
     {
       "tag": "[新工具]",
       "text": "開發者釋出本地合併佇列工具，讓多個平行執行的 Claude Code agent 依序合併並完整測試提交，緩解低規格機器同時建置的資源競爭，獲跨來源關注。",
       "ref_urls": [
         "https://github.com/funador/claude-code-merge-queue"
-      ]
+      ],
+      "ref_names": []
     }
   ],
   "topicRadar": [],

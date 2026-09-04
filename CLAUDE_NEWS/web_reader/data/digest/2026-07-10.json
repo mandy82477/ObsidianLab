@@ -563,7 +563,8 @@
         "https://www.uctoday.com/security-compliance-risk/china-calls-claude-code-a-security-risk-amid-deepening-anthropic-alibaba-dispute/",
         "https://www.bankinfosecurity.com/anthropic-rejects-chinas-claim-about-claude-code-backdoor-a-32184",
         "https://www.techradar.com/pro/china-warns-users-of-alleged-security-backdoor-vulnerabilities-in-anthropics-claude-code-tells-users-to-uninstall-for-sfaety-reasons"
-      ]
+      ],
+      "ref_names": []
     },
     {
       "tag": "[重大事件]",
@@ -571,14 +572,16 @@
       "ref_urls": [
         "https://www.anthropic.com/news/ben-bernanke",
         "https://www.reuters.com/business/former-fed-chair-ben-bernanke-joins-anthropics-ai-oversight-trust-2026-07-09/"
-      ]
+      ],
+      "ref_names": []
     },
     {
       "tag": "[新工具]",
       "text": "Claude Code v2.1.206 發布，新增 `/cd` 目錄路徑建議、`/doctor` 檢查 CLAUDE.md 精簡建議等功能。",
       "ref_urls": [
         "https://github.com/anthropics/claude-code/releases/tag/v2.1.206"
-      ]
+      ],
+      "ref_names": []
     },
     {
       "tag": "[持續追蹤]",
@@ -586,7 +589,8 @@
       "ref_urls": [
         "https://github.com/anthropics/claude-code/issues/16157",
         "https://github.com/anthropics/claude-code/issues/6235"
-      ]
+      ],
+      "ref_names": []
     },
     {
       "tag": "[新工具]",
@@ -595,7 +599,8 @@
         "https://www.anthropic.com/news/reflect-with-claude",
         "https://www.axios.com/2026/07/09/anthropic-reflection-ai-screen-time",
         "https://www.theverge.com/ai-artificial-intelligence/963105/anthropic-claude-wrapped-reflection-ai-usage"
-      ]
+      ],
+      "ref_names": []
     }
   ],
   "topicRadar": [],

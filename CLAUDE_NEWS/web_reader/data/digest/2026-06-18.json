@@ -226,21 +226,24 @@
       "ref_urls": [
         "https://www.koreajoongangdaily.com/business/anthropic-confident-of-reenabling-mythos-fable-5-access-in-coming-days-executive/12727522",
         "https://www.wired.com/story/sk-telecom-anthropic-mythos-export-controls/"
-      ]
+      ],
+      "ref_names": []
     },
     {
       "tag": "[持續追蹤]",
       "text": "白宮要求 Anthropic 徹底封鎖所有 jailbreak 才允許 Fable 5 復活，Anthropic 認為風險被高估並已進行技術會議，政策局面進入最終攤牌。",
       "ref_urls": [
         "https://www.wired.com/story/the-white-house-wants-anthropic-to-block-all-jailbreaks-that-may-not-be-possible/"
-      ]
+      ],
+      "ref_names": []
     },
     {
       "tag": "[重大事件]",
       "text": "Claude Code 正式推出 Artifacts 功能，可將 AI 工作階段即時輸出為可共享的互動網頁（PR 摘要、系統說明文件、儀表板等），面向企業場景。",
       "ref_urls": [
         "https://claude.com/blog/artifacts-in-claude-code"
-      ]
+      ],
+      "ref_names": []
     },
     {
       "tag": "[持續追蹤]",
@@ -248,14 +251,16 @@
       "ref_urls": [
         "https://www.ft.com/content/de83d303-6a03-456b-bfb9-7b11dd502ab3",
         "https://techcrunch.com/2026/06/13/as-anthropic-suspends-access-to-new-models-india-debates-its-ai-future/"
-      ]
+      ],
+      "ref_names": []
     },
     {
       "tag": "[持續追蹤]",
       "text": "Anthropic 宣布暫緩 Claude Agent SDK 計費架構變更，原本預計切割為多費率的方案因社群反彈而暫停，目前維持現行計費模式。",
       "ref_urls": [
         "https://news.google.com/rss/articles/CBMiiwFBVV95cUxNOWlGX0RCS2hyVlN2U1llUl9JR1NYQjhzMVhZZmRrSlFNa1dQTGFxRzFVN1lmWHBPUVBwTmpqNGJfTkdWQlh0eGw4VlgtdGZ6VTdrdVFIWW1xc0ROUWwzekxNSG5WNWtabkQwUmdjOFNhUGIxamotcUNveE5FRzB3RmV0dnhfellMNHMw"
-      ]
+      ],
+      "ref_names": []
     }
   ],
   "topicRadar": [],

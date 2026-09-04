@@ -143,21 +143,24 @@
       "text": "Anthropic 推出 Claude Partner Network「服務軌道」（Services Track）與合作夥伴中心，配套 $1 億美元合作夥伴培訓投資；自 3 月以來超過 40,000 家公司申請加入、10,000 名顧問完成認證——IPO 前夕的企業生態布局加速。",
       "ref_urls": [
         "https://www.anthropic.com/news/services-track-partner-hub"
-      ]
+      ],
+      "ref_names": []
     },
     {
       "tag": "[重大事件]",
       "text": "Project Glasswing 社群首批實測回饋浮現（HN score 176）：一手帳號指出 Mythos 產出「數百乃至數千個假陽性或次要問題」，對真正重要漏洞的比例低；高層卻把每個問題都當緊急事項處理——揭示 Glasswing 在企業部署中的訊噪比挑戰。",
       "ref_urls": [
         "https://www.anthropic.com/news/expanding-project-glasswing"
-      ]
+      ],
+      "ref_names": []
     },
     {
       "tag": "[重大事件]",
       "text": "Anthropic 總裁 Daniela Amodei 首度公開談論 Mythos 的網路戰能力：「非常擅長網路戰」——在 $965B IPO 申請背景下的聲明，引發對 Anthropic 安全承諾與商業化壓力之間張力的廣泛討論。",
       "ref_urls": [
         "https://www.reddit.com/r/ClaudeAI/comments/1tvbmec/very_good_at_cyber_warfare_anthropic_president/"
-      ]
+      ],
+      "ref_names": []
     },
     {
       "tag": "[持續追蹤]",
@@ -165,14 +168,16 @@
       "ref_urls": [
         "https://www.bloomberg.com/news/articles/2026-06-02/uber-caps-usage-of-ai-tools-like-claude-code-to-cut-costs",
         "https://fortune.com/2026/06/01/openais-guardian-ben-jerrys-ice-cream-anthropic/"
-      ]
+      ],
+      "ref_names": []
     },
     {
       "tag": "[社群趨勢]",
       "text": "兩大 CLAUDE.md 問題同日引爆：① 7 個排程 AI agent，2 個靜默失敗 18 天未被察覺；② 5 人團隊有 5 個互相矛盾的 CLAUDE.md——多 agent 可靠性與團隊一致性正成為下一波痛點。",
       "ref_urls": [
         "https://dev.to/kenimo49/i-cron-scheduled-7-ai-agents-2-silently-failed-for-18-days-tracing-wouldnt-have-caught-it-24fa"
-      ]
+      ],
+      "ref_names": []
     }
   ],
   "topicRadar": [],

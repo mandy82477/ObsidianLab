@@ -156,28 +156,32 @@
       "text": "Claude Code v2.1.207 發布：Auto mode 在 Bedrock、Vertex AI、Foundry 上不再需要 `CLAUDE_CODE_ENABLE_AUTO_MODE` opt-in（可用 `disableAutoMode` 關閉），並修復終端機凍結問題。",
       "ref_urls": [
         "https://github.com/anthropics/claude-code/releases/tag/v2.1.207"
-      ]
+      ],
+      "ref_names": []
     },
     {
       "tag": "[風險警示]",
       "text": "社群回報：commit 歷史含大小寫敏感字串 `HERMES.md` 時，Claude Code 會把請求誤導向 extra usage 計費，而非計入 Max 方案內含額度，該 issue 已獲 533 個讚同、93 則留言。",
       "ref_urls": [
         "https://github.com/anthropics/claude-code/issues/53262"
-      ]
+      ],
+      "ref_names": []
     },
     {
       "tag": "[風險警示]",
       "text": "另一則回報指出，自 3 月 23 日起 Claude Max 方案的 CLI session 額度出現異常快速耗盡的情形，累計 792 則留言/讚同關注，目前尚未有官方定論。",
       "ref_urls": [
         "https://github.com/anthropics/claude-code/issues/38335"
-      ]
+      ],
+      "ref_names": []
     },
     {
       "tag": "[社群趨勢]",
       "text": "Hacker News 一篇分析指出，單一 Wikipedia 頁面經 WebFetch 抓取的原始 HTML 約消耗 68,000 tokens，凸顯 agent 讀網頁時的 token 成本問題，作者並嘗試開發對應的開源工具。",
       "ref_urls": [
         "https://news.ycombinator.com/item?id=48867021"
-      ]
+      ],
+      "ref_names": []
     },
     {
       "tag": "[新工具]",
@@ -185,7 +189,8 @@
       "ref_urls": [
         "https://dev.to/houleixx/i-built-a-local-reverse-proxy-to-see-what-claude-code-actually-sends-to-anthropic-5foo",
         "https://dev.to/toffy/one-command-turns-claude-code-into-a-full-dev-team-1d1e"
-      ]
+      ],
+      "ref_names": []
     }
   ],
   "topicRadar": [],

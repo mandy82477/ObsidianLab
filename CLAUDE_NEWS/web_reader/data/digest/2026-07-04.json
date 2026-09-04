@@ -272,7 +272,8 @@
       "text": "TechCrunch 證實 Alibaba 傳出禁止員工在職場使用 Claude Code，延續昨日路透社報導的中國企業資安疑慮態勢。",
       "ref_urls": [
         "https://techcrunch.com/2026/07/04/alibaba-reportedly-bans-employees-from-using-claude-code/"
-      ]
+      ],
+      "ref_names": []
     },
     {
       "tag": "[社群趨勢]",
@@ -281,14 +282,16 @@
         "https://github.com/anthropics/claude-code/issues/18435",
         "https://github.com/anthropics/claude-code/issues/36151",
         "https://github.com/anthropics/claude-code/issues/73125"
-      ]
+      ],
+      "ref_names": []
     },
     {
       "tag": "[持續追蹤]",
       "text": "Hacker News 上一則貼文指出曾有實例出現 session/cache 在不同工作區或帳號間錯置，引發對多租戶隔離安全性的討論。",
       "ref_urls": [
         "https://github.com/anthropics/claude-code/issues/74066"
-      ]
+      ],
+      "ref_names": []
     },
     {
       "tag": "[新工具]",
@@ -296,14 +299,16 @@
       "ref_urls": [
         "https://github.com/0xmmo/crew",
         "https://github.com/haabe/mycelium"
-      ]
+      ],
+      "ref_names": []
     },
     {
       "tag": "[風險警示]",
       "text": "Tech Times 報導企業級 Agentic AI 帳單超出預算，Anthropic 推出企業 Claude 支出控管功能因應。",
       "ref_urls": [
         "https://www.techtimes.com/articles/319687/20260704/claude-enterprise-spend-controls-arrive-agentic-ai-bills-blow-past-budgets.htm"
-      ]
+      ],
+      "ref_names": []
     }
   ],
   "topicRadar": [],

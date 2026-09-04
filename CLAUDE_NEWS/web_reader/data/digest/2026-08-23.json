@@ -165,7 +165,8 @@
         "https://news.google.com/rss/articles/CBMimAFBVV95cUxOaTA0UFo2UllNT2EtZGFDeWRqbHV0MHhmNFFVaE9SWi1zMm1ZeE1EeHg4c2ZKQVlyN014Ui1DcU9HYWNiSVByejBtNXVFUXBRTFdJNVIzdnU3elRmbVZ0TWd0NlZMcldvdjVEc3h1UXNtbFNEbjkwZlpNMVE2a3FyRDF1Vm16a0dtTGdYMXFkS2FhdEllQjFrdQ?oc=5",
         "https://news.google.com/rss/articles/CBMimwFBVV95cUxPSy1GSHhzQ3RhZnNlUXRGdUU0UXAzYUdjNm5leHBlR2lsQmtMeFhhTl83Qy0zcThqSVBWRTl2REM1dDVHVUpaRG1heUNGRTNicmc3OHctX0pOSm4xTFNTRFpGU0VOTklnMUxMaVRFcWJqLUlsRy1aUmV5b1lfTmpVOUdqaS12Mzcxa3F6RlJFTVdWZDZ4MWZvZWl2VQ?oc=5",
         "https://www.cnbc.com/2026/08/21/-anthropic-ipo-filing-will-show-ai-backlash-as-risk-sources-say.html"
-      ]
+      ],
+      "ref_names": []
     },
     {
       "tag": "[社群趨勢]",
@@ -173,14 +174,16 @@
       "ref_urls": [
         "https://twitter.com/argofowl/status/2091150597374537729",
         "https://www.reddit.com/r/ClaudeCode/comments/1vw2len/claude_code_has_become_nearly_useless_with_the/"
-      ]
+      ],
+      "ref_names": []
     },
     {
       "tag": "[社群趨勢]",
       "text": "GitHub Issue 回報：一個已通過 Anthropic Cyber Verification Program 核准的 Claude.ai 組織，在 Claude Code 中仍持續遭資安防護機制封鎖，累積 141 則留言，為今日 GitHub Issue 互動量最高者。",
       "ref_urls": [
         "https://github.com/anthropics/claude-code/issues/84352"
-      ]
+      ],
+      "ref_names": []
     }
   ],
   "topicRadar": [],

@@ -187,27 +187,32 @@
     {
       "tag": "[重大事件]",
       "text": "傳 Microsoft 大規模取消內部 Claude Code 授權，轉回自家 Copilot CLI，揭示企業 AI 編碼助理市場的激烈競爭；消息來源可信度待驗證，但討論熱度不低。",
-      "ref_urls": []
+      "ref_urls": [],
+      "ref_names": []
     },
     {
       "tag": "[持續追蹤]",
       "text": "Anthropic API 於 05/16 18:08 UTC 出現大規模 500 錯誤，影響多個模型請求，官方狀態頁確認調查中，Claude Code 用戶同步受影響。",
-      "ref_urls": []
+      "ref_urls": [],
+      "ref_names": []
     },
     {
       "tag": "[社群趨勢]",
       "text": "Claude Skills 機制引發大量開發者討論：技術限制、靜默覆蓋指令、subagent 衍生等行為成為本週最熱話題。",
-      "ref_urls": []
+      "ref_urls": [],
+      "ref_names": []
     },
     {
       "tag": "[社群趨勢]",
       "text": "Opus 4.7 拒絕執行 `/end_conversation` 並陷入「存在主義危機」的案例在社群廣泛流傳，引發對模型自我意識邊界的討論。",
-      "ref_urls": []
+      "ref_urls": [],
+      "ref_names": []
     },
     {
       "tag": "[新工具]",
       "text": "多個 Claude Code 周邊工具同步出現：從隔離 VM、面試分析到 Chromium 多瀏覽器 MCP 工具，生態系工具化趨勢明顯。",
-      "ref_urls": []
+      "ref_urls": [],
+      "ref_names": []
     }
   ],
   "topicRadar": [],

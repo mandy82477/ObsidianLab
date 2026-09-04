@@ -195,7 +195,8 @@
       "ref_urls": [
         "https://www.cnbc.com/2026/06/24/anthropic-alibaba-distillation-campaign.html",
         "https://yipzap.com/anthropic-accuses-alibaba-of-largest-ai-distillation-attack-28-8m-fraudulent-exchanges/"
-      ]
+      ],
+      "ref_names": []
     },
     {
       "tag": "[持續追蹤]",
@@ -204,7 +205,8 @@
         "https://www.wired.com/story/the-trump-white-house-is-over-anthropics-dario-amodei/",
         "https://www.theverge.com/ai-artificial-intelligence/957327/anthropic-mythos-fable-ai-trump-administration-negotiations",
         "https://www.bloomberg.com/news/newsletters/2026-06-26/white-house-s-ban-on-anthropic-ai-access-may-boost-china-s-open-source-models"
-      ]
+      ],
+      "ref_names": []
     },
     {
       "tag": "[重大事件]",
@@ -212,21 +214,24 @@
       "ref_urls": [
         "https://dev.to/doremonai/googles-ai-brain-drain-4-top-researchers-leave-for-anthropic-in-one-week-270b-wiped-gemini-35-5ffl",
         "https://dev.to/peremptory/the-nobel-laureate-who-joined-anthropic-mid-crisis-5cfh"
-      ]
+      ],
+      "ref_names": []
     },
     {
       "tag": "[技術更新]",
       "text": "Claude Code v2.1.193 新增 `autoMode.classifyAllShell` 設定，將所有 Bash/PowerShell 指令路由至 auto-mode 分類器。",
       "ref_urls": [
         "https://github.com/anthropics/claude-code/releases/tag/v2.1.193"
-      ]
+      ],
+      "ref_names": []
     },
     {
       "tag": "[社群趨勢]",
       "text": "Anthropic 官方研究顯示 Claude Code 40 萬個 session 分析：使用者主導規劃決策，Claude 主導執行，各職業成功率與軟體工程師相近；領域專業越高，Claude 每條指令完成的工作量越大。",
       "ref_urls": [
         "https://www.anthropic.com/research/claude-code-expertise"
-      ]
+      ],
+      "ref_names": []
     },
     {
       "tag": "[風險警示]",
@@ -234,7 +239,8 @@
       "ref_urls": [
         "https://www.cnbc.com/2026/06/26/openai-anthropic-new-ai-spending-reality-as-users-shift-to-efficiency.html",
         "https://qz.com/enterprise-ai-spending-openai-anthropic-roi-pullback-062626"
-      ]
+      ],
+      "ref_names": []
     }
   ],
   "topicRadar": [],

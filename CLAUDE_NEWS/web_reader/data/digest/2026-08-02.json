@@ -200,21 +200,24 @@
       "text": "Morgan Stanley 領投 Anthropic 德州資料中心／校園計畫，規模達 150 億美元。",
       "ref_urls": [
         "https://news.google.com/rss/articles/CBMigAFBVV95cUxOT19meGRpQ0xGRDVEcGZtY0c2dFVvNDFUbHhzek1uWUQ3WHlXOWF3SkI3YjdNenV4WkFQMnNxZ2JSQzh2bTJLTS1XUlBuU0Z6SDdzVEVOMEVfVEFnYXlXWDBnRUJvenlOUk81M2hhTXM5VjBrTGNFUjVUM2lKdE5xRg?oc=5"
-      ]
+      ],
+      "ref_names": []
     },
     {
       "tag": "[持續追蹤]",
       "text": "Claude Code Max 5x → 20x 訂閱升級持續失敗，回報者指出與此前三起未解問題（#10832、#50710、#43118）同源。",
       "ref_urls": [
         "https://github.com/anthropics/claude-code/issues/55266"
-      ]
+      ],
+      "ref_names": []
     },
     {
       "tag": "[社群趨勢]",
       "text": "Andrej Karpathy 以 Claude Opus 建構 3D 魔戒場景為例，談 AI 互動已超越單純提示詞。",
       "ref_urls": [
         "https://news.google.com/rss/articles/CBMi8gFBVV95cUxQRW1mWkVOOEZ5LThqQ0ZhOEs5N1FGeWtyNEZEUmVkempQc0dFSXpWbWIxM3hyUUIxS3g0Tkx1dWxpYko2MEhXRnFESUdQN2lueDFCNUNQMG1mQWdzZWpDbG54Q3ozZVJyREpYX0F4Tm5FTG9lZ2p2cDluempEWmlqLTNCWlpsSFFCMUl2WkhIVzV4WmhZS19rVjYzTTI3SjdDQksxeEZnd0d0dWJKVHVYSjhzckJNR29kdkVRcWFrNG54YWZBcEw3TjV0N2V3RmJxNjBhdVlFMmE4cS12bU5SQ2tyN0RodEZ0aHV0SmVXcXZtdw?oc=5"
-      ]
+      ],
+      "ref_names": []
     }
   ],
   "topicRadar": [],

@@ -344,21 +344,24 @@
         "https://github.com/anthropics/anthropic-sdk-python/releases/tag/v0.120.0",
         "https://github.com/anthropics/anthropic-sdk-typescript/releases/tag/sdk-v0.115.0",
         "https://news.google.com/rss/articles/CBMilAFBVV95cUxOcC1KclhhSTJLLVVhUG83cGJIaWZzbmc3UnFueERxWFZpMmJzV2pwNm9ab2J5bklGbk53bTJaQ3hmZ3kxV3FjMFJNdkpuNGZDWVY4dkdiblI3NGE3V0tvUEVXMEU3eDh4eF82clZzQVBFN0J3Q1AyT1FxRVZjNWxmeFZocGU0SmczbHRCMGt2eklmckIz?oc=5"
-      ]
+      ],
+      "ref_names": []
     },
     {
       "tag": "[持續追蹤]",
       "text": "Claude Code 創辦人 Boris Cherny 表示，比起各項評測分數，他更看重 Opus 5 是「目前最難被提示注入（prompt injection）攻破」的模型。",
       "ref_urls": [
         "https://simonwillison.net/2026/Jul/25/boris-cherny/#atom-everything"
-      ]
+      ],
+      "ref_names": []
     },
     {
       "tag": "[持續追蹤]",
       "text": "GitHub Issues 湧入大量 Claude Code 穩定性與帳務回報，其中一則反映 Max 方案工作階段限制自 3 月起異常快速耗盡的回報已累積逾 800 則留言，為近期單一回報中最大宗。",
       "ref_urls": [
         "https://github.com/anthropics/claude-code/issues/38335"
-      ]
+      ],
+      "ref_names": []
     }
   ],
   "topicRadar": [],

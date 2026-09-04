@@ -215,27 +215,32 @@
     {
       "tag": "[重大事件]",
       "text": "Claude Code VS Code extension v2.1.128/129 的 Windows 啟動 regression 已在 v2.1.131 緊急修復，受影響用戶可直接更新。",
-      "ref_urls": []
+      "ref_urls": [],
+      "ref_names": []
     },
     {
       "tag": "[持續追蹤]",
       "text": "Claude Code 費用管理成為社群最熱議題：GitHub Copilot 27 倍 Opus 加價、94% Token 流向錯誤模型、工具迴圈造成帳單爆衝——多篇貼文同步反映開發者對 AI 工具成本失控的高度焦慮。",
-      "ref_urls": []
+      "ref_urls": [],
+      "ref_names": []
     },
     {
       "tag": "[新工具]",
       "text": "DeepSeek 衍生的 Claude Code clone 突破 8,700 GitHub Stars，同步出現宣稱「17 倍更便宜」的 DeepClaude 開源替代方案，低成本替代生態正加速形成。",
-      "ref_urls": []
+      "ref_urls": [],
+      "ref_names": []
     },
     {
       "tag": "[社群趨勢]",
       "text": "dev.to 出現 CLAUDE.md 語言別規則集發文潮（Rails、Kotlin、Flutter、Scala、C++），社群正快速建立各語言 AI 導向的開發規範。",
-      "ref_urls": []
+      "ref_urls": [],
+      "ref_names": []
     },
     {
       "tag": "[新工具]",
       "text": "Python SDK v0.99.0 與 TypeScript SDK v0.94.0 同步發布，新增 workspace 定向功能，SDK 雙線同步更新節奏穩定。",
-      "ref_urls": []
+      "ref_urls": [],
+      "ref_names": []
     }
   ],
   "topicRadar": [],

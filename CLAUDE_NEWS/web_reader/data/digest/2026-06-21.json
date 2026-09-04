@@ -233,7 +233,8 @@
       "ref_urls": [
         "https://thenextweb.com/news/trump-anthropic-not-national-security-threat-axios-interview",
         "https://news.google.com/rss/articles/CBMiWEFVX3lxTFBNSVRoUFUyTGZOR2xMdE1tVkR4S1ExX2pydnoxNWRrZG1rODFzVzRCWVQtLUJoTVhGOVZLa3JnMUlNOUtlci1vTko0c1lIczdBOTdsZFlJWUg?oc=5"
-      ]
+      ],
+      "ref_names": []
     },
     {
       "tag": "[持續追蹤]",
@@ -241,28 +242,32 @@
       "ref_urls": [
         "https://www.economist.com/briefing/2026/06/14/donald-trumps-blocking-of-anthropic-is-capricious-and-chaotic",
         "https://news.google.com/rss/articles/CBMiowJBVV95cUxOYmk5T1dfQlo3OTlyaFVUOEVia0Nabm5LTGE0aFkzdVRYdGY4TmFqcWQzSnRRbnByaV9OYlp4VDFDb096TnZ0Mk9NR1E2Rk9hd21FRGZpeWVqWVJCaXdrMmpnbFR3X2NMNGVNaUZOTV9zOExRbjlwZ0lRM19NSFYyOWlBZjZsY2Z6ZVZRV3hLT2ZqN2hpdGFBQ3liSFJSWUdXSnpONGNLWm5FWUtnMFhBV1FTTDVreU5ZM21ZSkxob2RtZ01xWEh1UklRQThQQS1TVUtlUXhvT3lzZXZ2Q2c2a21IaUZhNzZHLWZMTERGbDZKUGY1U2VFeENua1hLbkJOdHlZVlRUSFhETkUyZkpZWGRjSUZQdU41Z3dqWVFwRFM1Sjg?oc=5"
-      ]
+      ],
+      "ref_names": []
     },
     {
       "tag": "[重大事件]",
       "text": "AlphaFold 創作者、2024 諾貝爾化學獎得主 John Jumper 宣布離開 Google DeepMind 加入 Anthropic，繼 Noam Shazeer 之後再添頂尖人才。",
       "ref_urls": [
         "https://www.reuters.com/technology/us-scientist-john-jumper-leave-google-deepmind-anthropic-2026-06-19/"
-      ]
+      ],
+      "ref_names": []
     },
     {
       "tag": "[重大事件]",
       "text": "Microsoft 宣布將逐步停止為內部工程師提供 Claude Code，此舉引發社群對企業 AI 工具切換趨勢的廣泛討論。",
       "ref_urls": [
         "https://news.google.com/rss/articles/CBMipANBVV95cUxOR2ZmZzRMWHI3Mm9sVDNfakR4Y3JTSnYtdFZsOU9pQl9MYTJwc2xrNi0teEpiNkRIVU9iUDZybFBYTVU4dVpkcTRuME9ZbkU0S2FKeWVSMFlSUzdmZnVkVTlQWGJYVzg3V3BXWE11bmZjNzNhR09XS3hfUW1KVEZBV2NvOGVlako5bkwxQ0hERDlrZmRjNi1EdFN2ZGVxbXRSaWprM2xWaUJfQjRuSXQ3YUxNdExRNV94NEMzbkxTNTFYOVRBaC1XV0VURlZUNTVTd1M2X1Njb2t4WUhIYUxhalNKX3ZCNU9qUnNaeEpnSVNoSmF6V3N6aWZHRXBieVhGQVR3cHpGbzRRM2puVkh2YUd6elNqMTN5WEJFLUoyZ3FOOUJJam4yWnFla0dDYmFqVkFkRVVlZ3U5VU1LMUhqNDA2SkRxUDRRVW5lb1NnZW9qSWNsSjR6Nmd2ekEweEh4TVB1M1RJajZYeTMxYUhEWUJnMjR6T1ZkeFNWZThBakFWNjVwOTVRRnlSd2RZZ3VBR3JlSlpqM0tBaUxSaGE4ZWJmX0c?oc=5"
-      ]
+      ],
+      "ref_names": []
     },
     {
       "tag": "[新工具]",
       "text": "Anthropic 官方發布「七種指令傳遞方法」指南（CLAUDE.md、rules、skills、subagents、hooks、output styles、system prompt append），提供決策框架讓使用者選擇最適合的控制層。",
       "ref_urls": [
         "https://claude.com/blog/steering-claude-code-skills-hooks-rules-subagents-and-more"
-      ]
+      ],
+      "ref_names": []
     },
     {
       "tag": "[新工具]",
@@ -272,14 +277,16 @@
         "https://github.com/nikitadoudikov/claude-pulse",
         "https://github.com/KarelTestSpecial/real-agent-setup",
         "https://github.com/ethanhq/cc-fleet"
-      ]
+      ],
+      "ref_names": []
     },
     {
       "tag": "[風險警示]",
       "text": "MCP Server 安全警示：連接 MCP 後 agent 可觸及外部系統，等同為攻擊者提供了一條進入路徑，社群呼籲謹慎審查所有 MCP 來源。",
       "ref_urls": [
         "https://dev.to/rapls/connecting-an-mcp-server-gives-your-agent-hands-it-also-gives-a-stranger-a-way-in-3mgi"
-      ]
+      ],
+      "ref_names": []
     }
   ],
   "topicRadar": [],

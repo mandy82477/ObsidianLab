@@ -206,7 +206,8 @@
       "ref_urls": [
         "https://startupfortune.com/researcher-alon-hertz-tricked-claude-codex-and-hermes-into-running-malware/",
         "https://news.google.com/rss/articles/CBMi3wFBVV95cUxOcEJRR0xyaG52RVZRaC1EckZCaFRDX3VXcklHYXFUMU0xTDdiem51N2VWR3h6emx3allSN2RhVlBMNmJkTzFwTkctbVlPSUFCd2JOcU9vby1GVHJKTVNILXpfak13eVBqSlB2MF9yVVdOV2ZTa1FlakdvS0Q5Z20zVTFrY1pmUl9DOXJ2NmpmVXgzaWRWN0RrREFlSHZCYTczekVUbGNsaU5QaGJTcE8zcERaUmktdTU3bTRRNUEyWlhicDBXOHh1QXNmOG1KZ0ExN1M0Q0VpOXRZdlh4d3Aw?oc=5"
-      ]
+      ],
+      "ref_names": []
     },
     {
       "tag": "[持續追蹤]",
@@ -214,14 +215,16 @@
       "ref_urls": [
         "https://news.google.com/rss/articles/CBMijAFBVV95cUxQMm12QTFLek9sVlhENXNNaFlpUHlnbEl5dDRNZTBCbG1iSUtndjBhaUQ3UGl6N2VOWFppR19kbGhHWjlGaWRnby1BcHNlM0lNLUFaZXVrWV9MTFFOcjg0dmpFcWc0cHkyUTd1d2Z3bjNjaU9FeUQzUnpKbFloc1lRVDRPNjBHQ2JRVDh6cg?oc=5",
         "https://news.google.com/rss/articles/CBMioAFBVV95cUxQVWxDd0dWRWpuaG4tdUlVWDktVWQwdTNVUFVTVlRxVlZqX0hSa1RBcHZGSEtiX2Y3aHl3YWxxWE5TNnVwX01aVjBqLXhkQjVNSHl1aU0taWhJeGEzLVNSMUlKbi1FTzBKTmU1Z3d4VUpjTHJwcXBLVlhzU2Y4bDRRRVY3MU9UWUdwQlZpM01SUjlhYkYxTXRYQTBudDlBTnVL?oc=5"
-      ]
+      ],
+      "ref_names": []
     },
     {
       "tag": "[新工具]",
       "text": "Claude Code v2.1.251 新增 `PreModelSwitch`／`PostModelSwitch` hook 事件，讓使用者可攔截、確認或標註模型切換動作；`SessionStart` resume hook 現在也會回傳 session 新鮮度與估計流失的內容量。",
       "ref_urls": [
         "https://github.com/anthropics/claude-code/releases/tag/v2.1.251"
-      ]
+      ],
+      "ref_names": []
     }
   ],
   "topicRadar": [

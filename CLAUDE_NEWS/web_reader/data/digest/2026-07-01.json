@@ -260,7 +260,8 @@
         "https://www.anthropic.com/news/redeploying-fable-5",
         "https://www.bbc.com/news/articles/cdr42623e1do",
         "https://www.nytimes.com/2026/06/30/technology/us-lifts-restrictions-anthropic.html"
-      ]
+      ],
+      "ref_names": []
     },
     {
       "tag": "[重大事件]",
@@ -268,14 +269,16 @@
       "ref_urls": [
         "https://www.anthropic.com/news/claude-sonnet-5",
         "https://github.com/anthropics/claude-code/releases/tag/v2.1.197"
-      ]
+      ],
+      "ref_names": []
     },
     {
       "tag": "[重大事件]",
       "text": "Anthropic 推出 Claude Science，科學家專用 AI 工作台，整合研究常用工具與套件、可稽核 artifact、彈性運算資源，並宣布將自行開發藥物。",
       "ref_urls": [
         "https://www.anthropic.com/news/claude-science-ai-workbench"
-      ]
+      ],
+      "ref_names": []
     },
     {
       "tag": "[風險警示]",
@@ -283,7 +286,8 @@
       "ref_urls": [
         "https://thereallo.dev/blog/claude-code-prompt-steganography",
         "https://eu.36kr.com/en/p/3876461674917892"
-      ]
+      ],
+      "ref_names": []
     },
     {
       "tag": "[持續追蹤]",
@@ -292,7 +296,8 @@
         "https://www.vincentschmalbach.com/claude-code-quietly-looks-5x-more-expensive/",
         "https://github.com/anthropics/claude-code/issues/62476",
         "https://www.404media.co/companies-are-making-claude-and-codex-talk-like-cavemen-to-stop-ais-soaring-costs/"
-      ]
+      ],
+      "ref_names": []
     }
   ],
   "topicRadar": [],

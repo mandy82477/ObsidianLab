@@ -341,27 +341,32 @@
     {
       "tag": "[重大事件]",
       "text": "Google 確認 400 億美元追加投資 Anthropic，同日 CoreWeave 也宣布算力合作，Anthropic 的資金與基礎設施優勢持續強化；接下來需關注競爭對手 OpenAI 與 Google DeepMind 是否跟進反制。",
-      "ref_urls": []
+      "ref_urls": [],
+      "ref_names": []
     },
     {
       "tag": "[風險警示]",
       "text": "HERMES.md 計費 bug 可靜默消耗真實金錢而非 Max 方案配額，已在 GitHub 開票，建議所有 Claude Code Max 用戶立即執行 `git log --all | grep HERMES.md` 自查，並密切關注 Anthropic 的官方修復聲明。",
-      "ref_urls": []
+      "ref_urls": [],
+      "ref_names": []
     },
     {
       "tag": "[重大事件]",
       "text": "Project Deal 實驗首次以實證方式探索 AI 代理人雙邊交易市場，但法律媒體同步指出相關法律框架付之闕如，AI 代理人經濟的監管議題正式浮上檯面。",
-      "ref_urls": []
+      "ref_urls": [],
+      "ref_names": []
     },
     {
       "tag": "[社群趨勢]",
       "text": "Claude Code 周邊工具生態今日爆發：TDD 迭代框架（EvanFlow）、「說完再做」插件（Relay）、沙盒環境（SmolVM）、完成驗證 hook（Groundtruth）等同步出現，社群正快速填補官方功能的空白。",
-      "ref_urls": []
+      "ref_urls": [],
+      "ref_names": []
     },
     {
       "tag": "[持續追蹤]",
       "text": "Mythos SWE-bench 評測方法論的爭議持續發酵，作者指出過濾機制存在統計缺陷，若 Anthropic 無法提出有效反駁，其未來基準測試聲明的公信力將受到更嚴格審視。",
-      "ref_urls": []
+      "ref_urls": [],
+      "ref_names": []
     }
   ],
   "topicRadar": [],

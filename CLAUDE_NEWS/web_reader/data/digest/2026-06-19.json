@@ -215,7 +215,8 @@
       "ref_urls": [
         "https://www.wired.com/story/sk-telecom-anthropic-mythos-export-controls/",
         "https://www.wired.com/story/the-white-house-wants-anthropic-to-block-all-jailbreaks-that-may-not-be-possible/"
-      ]
+      ],
+      "ref_names": []
     },
     {
       "tag": "[持續追蹤]",
@@ -223,21 +224,24 @@
       "ref_urls": [
         "https://news.ycombinator.com/item?id=48589194",
         "https://www.koreajoongangdaily.com/business/anthropic-confident-of-reenabling-mythos-fable-5-access-in-coming-days-executive/12727522"
-      ]
+      ],
+      "ref_names": []
     },
     {
       "tag": "[重大事件]",
       "text": "Claude Code v2.1.183 發布：強化 auto mode 安全性，`git reset --hard`、`git checkout --.`、`git clean -fd`、`git stash drop` 等破壞性指令在未明確要求時將自動封鎖。",
       "ref_urls": [
         "https://github.com/anthropics/claude-code/releases/tag/v2.1.183"
-      ]
+      ],
+      "ref_names": []
     },
     {
       "tag": "[新工具]",
       "text": "Claude Code 正式支援 Artifacts：AI session 進行中可即時產生可分享的互動網頁（PR walkthrough、儀表板、release checklist），供團隊協作瀏覽。",
       "ref_urls": [
         "https://claude.com/blog/artifacts-in-claude-code"
-      ]
+      ],
+      "ref_names": []
     },
     {
       "tag": "[社群趨勢]",
@@ -245,7 +249,8 @@
       "ref_urls": [
         "https://dev.to/patilanupam/cursor-vs-claude-code-elon-musks-big-ai-bet-4o02",
         "https://news.google.com/rss/articles/CBMic0FVX3lxTE81RWxLeDdZZ0h3RHB4RU5ISFZYVjROTldWdnloRmloOXVNUXNvU0Eyc2xhQjVjNDNMclRDSTNhbUxlNlFMSzZnb0JiTWFRTE9iTU5CUF9YZHNBZURRaHZCQWd4SG1XWUpxdmV2eEVKOTBKTjg?oc=5"
-      ]
+      ],
+      "ref_names": []
     }
   ],
   "topicRadar": [],

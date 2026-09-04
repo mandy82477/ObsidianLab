@@ -357,10 +357,16 @@
         const cls = focusTagCls(f.tag);
         // ref_urls 由 build_web 從行內連結抽出（2026-09-04 格式）；聚焦條目在網站上
         // 原本一個連結都沒有，改版理由正是「等於聚焦沒有連結」——此處補回可點來源。
+        // 2026-09-04 使用者：「來源 1、來源 2」字串插在句尾打斷閱讀 → 改為無文字的小箭頭圖示，
+        // hover／title 顯示來源名（build 端從行內連結抽出 ref_names）。
         const refUrls = f.ref_urls || [];
+        const refNames = f.ref_names || [];
+        const REF_ICON = '<svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7"/><path d="M8 7h9v9"/></svg>';
         const refs = refUrls.length
-          ? `<span class="focus-item__refs">${refUrls.map((u, i) =>
-              `<a href="${esc(u)}" target="_blank" rel="noopener">來源${refUrls.length > 1 ? ' ' + (i + 1) : ''}</a>`).join('')}</span>`
+          ? `<span class="focus-item__refs">${refUrls.map((u, i) => {
+              const name = refNames[i] || `來源${refUrls.length > 1 ? ' ' + (i + 1) : ''}`;
+              return `<a href="${esc(u)}" target="_blank" rel="noopener" title="${esc(name)}" aria-label="${esc(name)}">${REF_ICON}</a>`;
+            }).join('')}</span>`
           : '';
         parts.push(`<li class="focus-item"><span class="focus-tag focus-tag--${cls}">${esc(f.tag)}</span><span>${esc(f.text)}</span>${refs}</li>`);
       });

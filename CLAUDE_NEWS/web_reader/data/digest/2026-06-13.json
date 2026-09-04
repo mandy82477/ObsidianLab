@@ -239,7 +239,8 @@
       "ref_urls": [
         "https://www.anthropic.com/news/fable-mythos-access",
         "https://www.cnbc.com/2026/06/12/anthropic-disables-access-to-fable-5-and-mythos-5-to-comply-with-government-directive.html"
-      ]
+      ],
+      "ref_names": []
     },
     {
       "tag": "[持續追蹤]",
@@ -247,7 +248,8 @@
       "ref_urls": [
         "https://www.reuters.com/technology/us-blocks-foreign-access-anthropics-most-advanced-ai-models-axios-reports-2026-06-13/",
         "https://www.axios.com/2026/06/12/anthropic-trump-mythos-fable-national-security"
-      ]
+      ],
+      "ref_names": []
     },
     {
       "tag": "[社群趨勢]",
@@ -255,14 +257,16 @@
       "ref_urls": [
         "https://koenvangilst.nl/lab/claude-fable-shepherds-dog",
         "https://www.reddit.com/r/ClaudeAI/comments/1u4l7m8/i_built_real_time_chess_under_10_hours_with/"
-      ]
+      ],
+      "ref_names": []
     },
     {
       "tag": "[風險警示]",
       "text": "6 月 15 日計費規則變更加上 Fable 5 下線，打亂多個自行搭建 multi-agent Claude Code harness 的開發者計畫；一位 Reddit 用戶表示花六個月打造的 orchestration 工具幾乎全被 Claude Code 內建功能取代。",
       "ref_urls": [
         "https://www.reddit.com/r/ClaudeAI/comments/1u4pf9e/spent_6_months_building_a_multiagent_claude_code/"
-      ]
+      ],
+      "ref_names": []
     },
     {
       "tag": "[技術更新]",
@@ -270,7 +274,8 @@
       "ref_urls": [
         "https://github.com/anthropics/claude-code/releases/tag/v2.1.177",
         "https://red.anthropic.com/2026/n-days/"
-      ]
+      ],
+      "ref_names": []
     }
   ],
   "topicRadar": [],

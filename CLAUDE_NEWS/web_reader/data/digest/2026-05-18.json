@@ -269,27 +269,32 @@
     {
       "tag": "[風險警示]",
       "text": "Claude Code 被揭露存在 RCE 安全漏洞，攻擊者可透過惡意 deeplink 執行任意指令，使用者應立即關注官方修補進度。",
-      "ref_urls": []
+      "ref_urls": [],
+      "ref_names": []
     },
     {
       "tag": "[重大事件]",
       "text": "Microsoft 將工程師從 Claude Code 遷移至 GitHub Copilot CLI，是 AI 編碼工具市場格局變化的重要訊號。",
-      "ref_urls": []
+      "ref_urls": [],
+      "ref_names": []
     },
     {
       "tag": "[重大事件]",
       "text": "Forbes 報導 Uber 在四個月內燒光 2026 年全年 AI 預算，主因正是大規模使用 Claude Code，企業成本控制問題浮上檯面。",
-      "ref_urls": []
+      "ref_urls": [],
+      "ref_names": []
     },
     {
       "tag": "[持續追蹤]",
       "text": "Anthropic 發表 Managed Agents 與主動式工作流程（Proactive Workflows）架構，標誌 Claude Code 向企業 Agent 平台演進。",
-      "ref_urls": []
+      "ref_urls": [],
+      "ref_names": []
     },
     {
       "tag": "[社群趨勢]",
       "text": "社群湧現大量圍繞速率限制、Token 計費的自製工具與討論，反映使用者對配額壓力的普遍不滿。",
-      "ref_urls": []
+      "ref_urls": [],
+      "ref_names": []
     }
   ],
   "topicRadar": [],

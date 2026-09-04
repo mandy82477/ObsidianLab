@@ -267,14 +267,16 @@
       "ref_urls": [
         "https://embracethered.com/blog/posts/2026/breaking-claude-code-opus-5-and-automode/",
         "https://www.theregister.com/research/2026/08/28/researcher-shows-how-claude-code-can-be-tricked-simply-by-asking-it-to-summarize-a-website/5293372"
-      ]
+      ],
+      "ref_names": []
     },
     {
       "tag": "[重大事件]",
       "text": "媒體報導 Anthropic 為 Claude Code 新增合規 API（Compliance API）、本機操作可視性與身分治理功能，主打企業端安全控管需求。",
       "ref_urls": [
         "https://thehackernews.com/2026/08/securing-claude-code-new-compliance-api.html"
-      ]
+      ],
+      "ref_names": []
     },
     {
       "tag": "[風險警示]",
@@ -282,7 +284,8 @@
       "ref_urls": [
         "https://www.securityweek.com/anthropic-warns-claude-users-of-infostealer-malware-infections/",
         "https://www.searchenginejournal.com/anthropic-warns-hackers-are-stealing-claude-sessions-to-hijack-accounts/587566/"
-      ]
+      ],
+      "ref_names": []
     },
     {
       "tag": "[重大事件]",
@@ -290,7 +293,8 @@
       "ref_urls": [
         "https://www.technology.org/2026/08/31/sony-warner-chappell-anthropic-copyright-lawsuit/",
         "https://www.theguardian.com/business/2026/aug/31/aanthropic-sued-alleged-theft-songs-ai-train-claude"
-      ]
+      ],
+      "ref_names": []
     },
     {
       "tag": "[持續追蹤]",
@@ -298,7 +302,8 @@
       "ref_urls": [
         "https://twitter.com/ClaudeDevs/status/2093742322525810912",
         "https://www.androidheadlines.com/2026/08/anthropic-claude-code-weekly-limits-update.html"
-      ]
+      ],
+      "ref_names": []
     }
   ],
   "topicRadar": [

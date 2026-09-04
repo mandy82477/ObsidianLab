@@ -323,27 +323,32 @@
     {
       "tag": "[風險警示]",
       "text": "Claude Code 沙箱存在兩個獨立的網路繞過漏洞，均自 2025-10-20 正式啟用起持續存在，研究者已公開 PoC，且 Claude 自身也確認漏洞屬實；受影響版本覆蓋 2.0.2 至今，使用者應關注官方修補進度。",
-      "ref_urls": []
+      "ref_urls": [],
+      "ref_names": []
     },
     {
       "tag": "[重大事件]",
       "text": "`claude -p`（print mode）與 Agent SDK 將於 **6 月 15 日起改為計量計費**，社群已出現多個替代方案（clarp、vibe-skill 等），開發者應在此日期前評估工作流程影響。",
-      "ref_urls": []
+      "ref_urls": [],
+      "ref_names": []
     },
     {
       "tag": "[持續追蹤]",
       "text": "Opus 4.6／4.7 效能退化投訴持續累積，已有用戶以三週結構化日誌記錄失敗案例，並發現競品模型能捕捉到 Claude 遺漏的錯誤，值得持續觀察 Anthropic 是否回應。",
-      "ref_urls": []
+      "ref_urls": [],
+      "ref_names": []
     },
     {
       "tag": "[重大事件]",
       "text": "Claude Code v2.1.146 正式將 `/simplify` 指令更名為 `/code-review`，並新增可選的強度參數（如 `/code-review high`），同時調整 auto mode 行為。",
-      "ref_urls": []
+      "ref_urls": [],
+      "ref_names": []
     },
     {
       "tag": "[社群趨勢]",
       "text": "社群工具生態快速膨脹：技能管理器、沙箱替代、Token 節省方案、狀態列客製化等工具密集出現，顯示 Claude Code 的周邊生態已進入爆發期。",
-      "ref_urls": []
+      "ref_urls": [],
+      "ref_names": []
     }
   ],
   "topicRadar": [],

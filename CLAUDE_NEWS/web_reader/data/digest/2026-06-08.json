@@ -269,7 +269,8 @@
       "ref_urls": [
         "https://www.reddit.com/r/ClaudeAI/comments/1u05t5e/an_active_attack_is_planting_backdoors_inside/",
         "https://news.google.com/rss/articles/CBMibkFVX3lxTE5hZUhBeUFpUkc3c3VLeE03Vmxub3JlekNzS0JNMkxZR1djZ0dQdEY5cy0tOUFURHNBNVFTS0FwTlRzNmlqSWtnZHpLd2ZuLVVxdEt4dlZsb0kzNFA0eFlVUmVwSVdSTEpaSWVXMnFn0gFzQVVfeXFMUEZjU2F1a0QtUkhSMmwxZ1Uxd1hzT29yWE00bjB5SmtKME9tXzZSSXJtZ1lmTkFFN0xydm5EZmp2cExaZFo2NEZtdGQzYUVUUmpSbWZTTFgxdkpTY21LdlNGcDFsczhMZ2h4UzdFeHZweTZMNA?oc=5"
-      ]
+      ],
+      "ref_names": []
     },
     {
       "tag": "[重大事件]",
@@ -277,7 +278,8 @@
       "ref_urls": [
         "https://news.google.com/rss/articles/CBMiiwFBVV95cUxQSV9MNmprVUs3QXl0ZjR4TW8yYTYwNU1CMThhTThJQ1FuTVZpbVdWamtvMzlCVGpNS0NtcTFQUnB3R0FSSUdwNWlwdVBoM1drTnhRanJQYUpaaWlkcXJydXpWUmhZeE1uUEZKbVRLbS0zU2JiVG5vdVBoSnJTVHZOT1dKS1Bhek5IenpR?oc=5",
         "https://news.google.com/rss/articles/CBMiiAFBVV95cUxQcGJoWnZyOTFkUXNFSXlVRVFrcTdLeUh5QzFMS0V3TTZoUWdmYnI1QjB2ejc4Zk80OGRtQzhkTnlyRy1NVTRJczc2R3VhSXBHUmhHLW5wZnFuNW9VUUFNX2NXbWlPREZtUVRFcEZUWjhQYWFKS2YxUnczdDBhQmdCd1VmXzktNWdN?oc=5"
-      ]
+      ],
+      "ref_names": []
     },
     {
       "tag": "[新工具]",
@@ -287,7 +289,8 @@
         "https://ttanv.github.io/levi/",
         "https://github.com/CrypticCortex/agam",
         "https://github.com/sricola/arouter"
-      ]
+      ],
+      "ref_names": []
     },
     {
       "tag": "[社群趨勢]",
@@ -295,14 +298,16 @@
       "ref_urls": [
         "https://www.reddit.com/r/ClaudeAI/comments/1u089t4/set_up_a_claudemd_for_our_codebase_the_code/",
         "https://dev.to/kenimo49/i-rebuilt-my-ai-agent-from-a-600-line-script-into-a-harness-token-cost-dropped-40-2n0f"
-      ]
+      ],
+      "ref_names": []
     },
     {
       "tag": "[持續追蹤]",
       "text": "Google Colab CLI 正式支援 Claude Code 與 Codex，開發者可直接在 Colab 雲端 runtime 執行 agentic 工作流。",
       "ref_urls": [
         "https://news.google.com/rss/articles/CBMiiwFBVV95cUxNOXBrYkdMV2FEdnltWkJuV1ZiSnBqWmc0alp1ZGEzcTRZdWhuYkhLRTBoOUxfTVFrMmtNT2IxUTZBYW5zM1ZhYTRNdXNZWXhoLTdCUEtyQWJYb3F5cVBQNjZsdzJqdXJqbTZCQVhsbmF0bnA1ZEF6ZWxydm1MUDJObDBKTnVIOUdYb1FJ?oc=5"
-      ]
+      ],
+      "ref_names": []
     }
   ],
   "topicRadar": [],

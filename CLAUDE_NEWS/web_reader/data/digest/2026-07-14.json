@@ -539,7 +539,8 @@
       "ref_urls": [
         "https://news.google.com/rss/articles/CBMiwwFBVV95cUxQbFBRU053WVRiX3NPQ0FBdHJzNUxJMk9xY19CMEJkUFZ3LVk5UjctQm9FM2tlSzAxMHo2WnBBdnJzVjRjWk1RemZGSk9SMDk2TWZLNmt4YkhRTDBhRDFGbjVjM1ViRmVHeVZ5cEc2WlhBNzQ1bmZnNDh3NXZBb0phUzg2UktJUW10ZWNHTHQ4a0xCUVN4NjJsSXNpRVctTHN2NWdkNTFndTRtZldhMXdlY3kyUk5YcTNsdEc1U3h4NGNhLWc?oc=5",
         "https://news.google.com/rss/articles/CBMiggFBVV95cUxNUDlEeGNiWl9aemN6cHk1cE5vcFllRnI4Vk5BMEdxMTVUUTNmWVVLMEdyOS1TcTVJdURfWGZTLTZMaUJGTmluejdMVG5IYkhfS3JZV1J5MWdXOThCQ2ZNdngycVJLaFRDdmVZZGl5N1pOaGdSTG5uM0lyanVKSjlqREZn?oc=5"
-      ]
+      ],
+      "ref_names": []
     },
     {
       "tag": "[重大事件]",
@@ -547,7 +548,8 @@
       "ref_urls": [
         "https://news.google.com/rss/articles/CBMiuwFBVV95cUxPQmFacXVma1BoV2RmOXgwdFdpdEhlOHphVnVyWk5RRGxJYWpmM0t4d3BpUEpnRGNQbGJSTVZLeWdXdlJEZlV0QXdtRGJxMmR6SzJTN0JSUWdQMWFPemJMbnBjTUNPLThnaVFQTzMtdGQ0NEtoUUNmODdjaHZ1aWpHeWkzeXdfY2VsOWtiVU1WS2NieTQ4Umt5cnZvZl9HOFRLVVpTNXJIdXQtZUo1eGNNWDJIVjY0Z2FSMXZn?oc=5",
         "https://news.google.com/rss/articles/CBMiuwFBVV95cUxPdUpJcjhkSkljM0ktRElaTzRtRy1JdlQxYlh1OWc3ZzlRYmpDR2haZXhmWVdQcnZfZzBYb1BlX0FNdzBZTk9Vd3lBTFhhQ0dOU0xNT09IbjVnWm5xUXVYNG9TS0lPNERMdjVzWGFYWWdTQVB4TFQwX2V6SlRXa3lZRzh3X3pPYi05ekRDbzNnSERZLVFSdkZlclBhcFBxWklJZURWR0F1Wm9RN3l4MDJGLXM2VWxTejJndUZF0gHDAUFVX3lxTFBkVEVEazVxWkp6ZnQweGN5TktVVUU2SGkwd3Zhemw1aTkydXpGeV9ESEZWdTFtS250b2ZPckd2eGZMYnhjRWRXend1NVZPRkFkSTZWVUhvZnotRGVuNFJ5Y01tT29UTlRCcklNSzB2ZUQySFpKVVN1NU1aWWVpVFNJWWRZSnVPcl9xVHZEY3pHSV85WndJZW1hNHhIS0x2cExPTlRDNm9rVXc2cmhneGNNWGhDWmhBa25pSU1LSEFwb3oyZw?oc=5"
-      ]
+      ],
+      "ref_names": []
     },
     {
       "tag": "[持續追蹤]",
@@ -556,7 +558,8 @@
         "https://news.google.com/rss/articles/CBMixwFBVV95cUxPSXc2RnNtV08tVUtmMmdOUE1DbVVqM1ppYUpKX2YwRmtxZ2gtZU1oN1ZkX0pKVFNSTW5hLWJMaHV5T2I2V1BnZWNsVzd3UW53SXhuZ0V1S0VraXQ5bC0weGZWaDRqbFpwOWZpS1VGWjZSQ3hfT2xwUk9CNlBld1pSZXhVaV9hUDdEd2pCeGFwbTZwUHB0SVZjVk5QUTM3TmR6UlhsTUFFRXhqeG5vRmFHTWZURjVNVmIzUzZTSjlsbkVHV1BVMmJj?oc=5",
         "https://news.google.com/rss/articles/CBMiWkFVX3lxTE8yNEJKTG8tWWgxb0czbE9iRW5qYWZDbFJNakN1Ykw0T1JGcklxNUNSbjdKMFZUYmJEYnJDY2lVRGtXWG05SWRSYjhZZWJKTkZFVVR3Y1paSlY3QQ?oc=5",
         "https://www.reddit.com/r/ClaudeCode/comments/1uw54cl/fable5_plan/"
-      ]
+      ],
+      "ref_names": []
     },
     {
       "tag": "[社群趨勢]",
@@ -565,14 +568,16 @@
         "https://github.com/anthropics/claude-code/issues/63875",
         "https://github.com/anthropics/claude-code/issues/53915",
         "https://github.com/anthropics/claude-code/issues/62123"
-      ]
+      ],
+      "ref_names": []
     },
     {
       "tag": "[風險警示]",
       "text": "使用者回報 Claude Code OAuth 登入因 `auth.anthropic.com` 無法透過 DNS 解析而完全無法驗證，該則 issue 累積 150 則留言，為本日互動量最高的條目。",
       "ref_urls": [
         "https://github.com/anthropics/claude-code/issues/33238"
-      ]
+      ],
+      "ref_names": []
     }
   ],
   "topicRadar": [],

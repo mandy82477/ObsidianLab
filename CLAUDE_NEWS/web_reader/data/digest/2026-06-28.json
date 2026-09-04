@@ -166,7 +166,8 @@
       "ref_urls": [
         "https://techcrunch.com/2026/06/26/trump-admin-releases-anthropic-mythos-to-be-used-by-more-than-100-us-companies-agencies/",
         "https://www.axios.com/2026/06/27/anthropic-fable-5-return-soon"
-      ]
+      ],
+      "ref_names": []
     },
     {
       "tag": "[持續追蹤]",
@@ -174,7 +175,8 @@
       "ref_urls": [
         "https://arstechnica.com/tech-policy/2026/06/anthropic-claims-alibaba-defied-trump-to-attack-claude-and-steal-capabilities/",
         "https://fortune.com/2026/06/28/anthropic-alibaba-fight-raises-ipo-question-frontier-ai-moat-defensible/"
-      ]
+      ],
+      "ref_names": []
     },
     {
       "tag": "[重大事件]",
@@ -182,14 +184,16 @@
       "ref_urls": [
         "https://www.bloomberg.com/news/articles/2026-06-28/austria-lobbies-eu-to-host-anthropic-after-us-access-curbs",
         "https://www.reuters.com/business/austria-lobbies-eu-host-anthropic-ai-after-us-curbs-bloomberg-news-reports-2026-06-28/"
-      ]
+      ],
+      "ref_names": []
     },
     {
       "tag": "[風險警示]",
       "text": "Mozilla 0din 團隊揭露 Claude Code 可被「乾淨」的 GitHub Repo 欺騙安裝惡意軟體；提示注入利用 AI agent 的「樂於助人」天性。",
       "ref_urls": [
         "https://www.tomshardware.com/tech-industry/cyber-security/ai-coding-agents-can-be-tricked-into-installing-malware-via-clean-github-repositories-mozillas-0din-team-shows-how-claude-code-can-be-exploited-by-its-own-helpfulness"
-      ]
+      ],
+      "ref_names": []
     },
     {
       "tag": "[新工具]",
@@ -199,7 +203,8 @@
         "https://agent-watch.dev/",
         "https://claudete.co",
         "https://ai-creed.dev/projects/ai-whisper/"
-      ]
+      ],
+      "ref_names": []
     }
   ],
   "topicRadar": [],

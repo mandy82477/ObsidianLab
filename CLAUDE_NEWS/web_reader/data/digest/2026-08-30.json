@@ -145,7 +145,8 @@
       "ref_urls": [
         "https://bsky.app/profile/anthropicbot.bsky.social/post/3muaaxs5nx424",
         "https://www.bleepingcomputer.com/news/artificial-intelligence/anthropic-is-cutting-claude-codes-current-weekly-limits-by-17-percent/"
-      ]
+      ],
+      "ref_names": []
     },
     {
       "tag": "[重大事件]",
@@ -153,21 +154,24 @@
       "ref_urls": [
         "https://techcrunch.com/2026/08/29/sony-music-warner-sue-anthropic-alleging-a-brazen-campaign-of-intellectual-property-theft/",
         "https://www.businessinsider.com/anthropic-claude-training-copyright-music-lyrics-sony-lawsuit-2026-8"
-      ]
+      ],
+      "ref_names": []
     },
     {
       "tag": "[風險警示]",
       "text": "GitHub Issues 回報一起帳號層級的迴歸缺陷：GitHub connector 顯示已成功連結儲存庫，但 Claude 無法讀取「任何」儲存庫的內容（公開與私有皆然），已累積 60 則留言。",
       "ref_urls": [
         "https://github.com/anthropics/claude-code/issues/71542"
-      ]
+      ],
+      "ref_names": []
     },
     {
       "tag": "[重大事件]",
       "text": "Yahoo Finance 獨家報導稱 Claude 相關營收年增達 1,000%，正在拉近與 ChatGPT 的差距（報導僅標題可見，細節待後續查證）。",
       "ref_urls": [
         "https://finance.yahoo.com/technology/ai/articles/exclusive-claude-revenue-surges-1-133046476.html"
-      ]
+      ],
+      "ref_names": []
     }
   ],
   "topicRadar": [

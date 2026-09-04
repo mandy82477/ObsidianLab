@@ -191,21 +191,24 @@
       "ref_urls": [
         "https://thenewstack.io/claude-code-auto-mode/",
         "https://simonwillison.net/2026/Aug/8/auto-mode/"
-      ]
+      ],
+      "ref_names": []
     },
     {
       "tag": "[重大事件]",
       "text": "Anthropic 正式推出跨 session 訊息功能，需 Claude Code v2.1.224 以上、支援 macOS 與 Linux，可用 ListAgents 探索其他可連線的 session，並透過 SendMessage 直接跨 session 傳訊，亦適用於單一 session／team 內的 subagent 與隊友。",
       "ref_urls": [
         "https://code.claude.com/docs/en/cross-session-messaging"
-      ]
+      ],
+      "ref_names": []
     },
     {
       "tag": "[風險警示]",
       "text": "GitHub Issue 回報圖片處理失敗會導致對話 token 大量浪費，回報者提及單一情況就燒掉 5 小時額度的 70%，該串已累積 72 則留言、19 個👍反應。",
       "ref_urls": [
         "https://github.com/anthropics/claude-code/issues/60334"
-      ]
+      ],
+      "ref_names": []
     },
     {
       "tag": "[持續追蹤]",
@@ -213,7 +216,8 @@
       "ref_urls": [
         "https://github.com/anthropics/claude-code/issues/34556",
         "https://github.com/anthropics/claude-code/issues/14227"
-      ]
+      ],
+      "ref_names": []
     }
   ],
   "topicRadar": [],

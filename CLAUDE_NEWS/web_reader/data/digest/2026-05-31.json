@@ -248,14 +248,16 @@
       "ref_urls": [
         "https://qazinform.com/news/anthropic-surpasses-openai-to-become-worlds-most-valuable-ai-startup",
         "https://www.reddit.com/r/ClaudeAI/comments/1tscc9q/anthropics_valuation_surges_to_965_billion/"
-      ]
+      ],
+      "ref_names": []
     },
     {
       "tag": "[重大事件]",
       "text": "Anthropic 工程部落格發布《We contain Claude across products》，首次公開說明如何在內部給予 Claude 足以影響關鍵服務的存取權限，並以「爆炸半徑」框架管控風險——agent 能力越強，不部署的機會成本也越大。",
       "ref_urls": [
         "https://www.anthropic.com/engineering/how-we-contain-claude"
-      ]
+      ],
+      "ref_names": []
     },
     {
       "tag": "[新工具]",
@@ -263,21 +265,24 @@
       "ref_urls": [
         "https://dev.to/layzerzero105/opus-48-ships-dynamic-workflows-hundreds-of-parallel-subagents-per-session-read-this-before-you-4178",
         "https://www.reddit.com/r/ClaudeAI/comments/1tsqezk/asked_claude_code_for_a_deep_search_in_ultracode/"
-      ]
+      ],
+      "ref_names": []
     },
     {
       "tag": "[風險警示]",
       "text": "Opus 4.8 + Thinking 模式每輪最高寫入 90 萬 cache tokens，比 Opus 4.7 的 1.4–3.4 萬高出 40–60 倍，context window 快速耗盡；重度使用者需重新評估工作流設計。",
       "ref_urls": [
         "https://www.reddit.com/r/ClaudeAI/comments/1tshmz6/opus_48_thinking_is_draining_context_windows/"
-      ]
+      ],
+      "ref_names": []
     },
     {
       "tag": "[社群趨勢]",
       "text": "Claude Code 原始碼深度分析系列更新 Part VI（Multi-Agent System）與 Part VII（Context Compression），源自 51.2 萬行 TypeScript 原始碼洩漏，是目前最完整的 Claude Code 內部架構解析。",
       "ref_urls": [
         "https://www.reddit.com/r/ClaudeAI/comments/1tse583/claude_code_source_deep_dive_part_vi_multiagent/"
-      ]
+      ],
+      "ref_names": []
     }
   ],
   "topicRadar": [],

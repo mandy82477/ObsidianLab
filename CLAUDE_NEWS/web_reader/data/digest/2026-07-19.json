@@ -535,21 +535,24 @@
       "text": "Claude Code v2.1.215 發布：不再自動執行 `/verify` 與 `/code-review` 兩項技能，須由使用者手動呼叫指令觸發。",
       "ref_urls": [
         "https://github.com/anthropics/claude-code/releases/tag/v2.1.215"
-      ]
+      ],
+      "ref_names": []
     },
     {
       "tag": "[持續追蹤]",
       "text": "使用者回報方案 5 小時用量限額在不到 1 小時 30 分鐘內即用罄，GitHub Issue 累積 120 則留言與 31 個讚同反應。",
       "ref_urls": [
         "https://github.com/anthropics/claude-code/issues/6457"
-      ]
+      ],
+      "ref_names": []
     },
     {
       "tag": "[持續追蹤]",
       "text": "Simon Willison 透過字串比對驗證：Claude Code 自 v2.1.181（6/17 發布）起，底層改用 Rust 重寫版的 Bun runtime，Linux 平台啟動速度提升約 10%，但多數使用者對此毫無察覺。",
       "ref_urls": [
         "https://simonwillison.net/2026/Jul/19/claude-code-in-bun-in-rust/"
-      ]
+      ],
+      "ref_names": []
     },
     {
       "tag": "[社群趨勢]",
@@ -557,7 +560,8 @@
       "ref_urls": [
         "https://news.google.com/rss/articles/CBMiwgFBVV95cUxOZ0pnQUJvcE51TUxiU2JEWXBQeFdSYllaMVd5bkoxOTRYWEM4MUJHRG5NZ29GMUV5bDZVVVpzLVA1ckJlZzdPVW9kMWplRjE2WVdFeWJfNzJUOFFsVkJlbGxVQWx2c1BFZS13azBEU0hfaTdFc00zcFlhVEx0bEdwRjRwUEh3QW9Ta1NNUUJpRUZidlVOSEUxU3hVM2lua0VjMWJLUldLNXdVY09pT3IyN3N2d0V0Tkp6SG5RNTk4OUJBUQ?oc=5",
         "https://news.google.com/rss/articles/CBMiSEFVX3lxTE53WFNCTm9NMTRGdzNMMHpQTEJVRTZ6NkJsM2N0Rzc4R0pYYy00Y2VrWGFtNGEwV3BET2ZNQ0pXTnBGMHpxcmFMNw?oc=5"
-      ]
+      ],
+      "ref_names": []
     }
   ],
   "topicRadar": [],

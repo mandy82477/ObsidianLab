@@ -271,7 +271,8 @@
       "text": "Jane Street 設計師分享：現在用 Claude Code 做設計比用 Figma 更多，AI 輔助讓設計工作流徹底改變。",
       "ref_urls": [
         "https://blog.janestreet.com/i-design-with-claude-code-more-than-figma-now-index/"
-      ]
+      ],
+      "ref_names": []
     },
     {
       "tag": "[持續追蹤]",
@@ -279,21 +280,24 @@
       "ref_urls": [
         "https://github.com/anthropics/anthropic-sdk-python/releases/tag/v0.107.0",
         "https://github.com/anthropics/anthropic-sdk-typescript/releases/tag/sdk-v0.102.0"
-      ]
+      ],
+      "ref_names": []
     },
     {
       "tag": "[風險警示]",
       "text": "Hacker News 高票貼文揭露 Anthropic/OpenAI 可能每收 $100 就花費超過 $1000，AI 公司財務永續性受質疑。",
       "ref_urls": [
         "https://ea.rna.nl/2026/06/07/anthropic-openai-may-be-spending-more-than-1000-for-every-100-you-pay-them/"
-      ]
+      ],
+      "ref_names": []
     },
     {
       "tag": "[風險警示]",
       "text": "PSA：若專案設有 `ANTHROPIC_API_KEY`，Claude Code 將向 API 帳戶計費而非 Max 方案，需注意帳單風險。",
       "ref_urls": [
         "https://old.reddit.com/r/ClaudeAI/comments/1tbaq2d/psa_if_your_project_has_an_anthropic_api_key_in/"
-      ]
+      ],
+      "ref_names": []
     },
     {
       "tag": "[新工具]",
@@ -302,7 +306,8 @@
         "https://github.com/ingram-technologies/claude-git-sessions",
         "https://github.com/sheremetyev/sandfence",
         "https://github.com/wavever/CCLimitPing"
-      ]
+      ],
+      "ref_names": []
     }
   ],
   "topicRadar": [],

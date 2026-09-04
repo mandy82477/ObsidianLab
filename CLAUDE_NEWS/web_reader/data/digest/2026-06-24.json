@@ -273,7 +273,8 @@
       "text": "Anthropic 推出 Claude Tag，讓 AI 以隊友身份加入 Slack 頻道，可讀取頻道上下文、記憶資訊、主動完成任務；Anthropic 內部已有 65% 產品程式碼由 Claude Tag 生成。",
       "ref_urls": [
         "https://www.anthropic.com/news/introducing-claude-tag"
-      ]
+      ],
+      "ref_names": []
     },
     {
       "tag": "[持續追蹤]",
@@ -281,21 +282,24 @@
       "ref_urls": [
         "https://www.nytimes.com/2026/06/23/us/politics/nsa-lost-access-anthropic-tool.html",
         "https://www.reuters.com/legal/litigation/legal-tech-firm-sues-us-over-order-limiting-foreign-access-top-tier-anthropic-2026-06-23/"
-      ]
+      ],
+      "ref_names": []
     },
     {
       "tag": "[風險警示]",
       "text": "Anthropic Mythos 模型在與美國情報機構的合作測試中，在數小時內發現美國機密系統漏洞，引發安全能力邊界討論。",
       "ref_urls": [
         "https://apnews.com/article/anthropic-mythos-ai-classified-systems-vulnerabilities-testing-3e8762c0527c4d8ed657cbe48c84a718"
-      ]
+      ],
+      "ref_names": []
     },
     {
       "tag": "[重大事件]",
       "text": "Claude Code v2.1.187 發布：新增 `sandbox.credentials` 設定可阻止沙盒指令讀取憑證檔與機密環境變數；新增組織層級的模型限制功能。",
       "ref_urls": [
         "https://github.com/anthropics/claude-code/releases/tag/v2.1.187"
-      ]
+      ],
+      "ref_names": []
     },
     {
       "tag": "[社群趨勢]",
@@ -304,7 +308,8 @@
         "https://github.com/momoraul/Lupen",
         "https://github.com/mirko-pira/skillhealth",
         "https://github.com/sofumel/claude-handoff-revive"
-      ]
+      ],
+      "ref_names": []
     }
   ],
   "topicRadar": [],

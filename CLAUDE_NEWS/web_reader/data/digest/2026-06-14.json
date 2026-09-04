@@ -203,7 +203,8 @@
       "ref_urls": [
         "https://www.theverge.com/ai-artificial-intelligence/949601/amazon-anthropic-fablemythos-government-ban",
         "https://news.google.com/rss/articles/CBMibkFVX3lxTE1Ral9kZkV6VDBnTWQ1X1ZWdlVWRlJrazdORXFxLVJYU1NGVXJQNUFMZ1pCNXRTeUxORGVXWEliX0NEZ3hXT2dFLXdmRGlzYkstbEk1ZlR1VG83bXVNbDVPZEZlX2Qtb3ZpSFBFVlB3?oc=5"
-      ]
+      ],
+      "ref_names": []
     },
     {
       "tag": "[持續追蹤]",
@@ -211,35 +212,40 @@
       "ref_urls": [
         "https://www.reuters.com/legal/litigation/eu-commission-looking-practical-consequences-anthropic-decision-spokesperson-2026-06-14/",
         "https://techcrunch.com/2026/06/13/as-anthropic-suspends-access-to-new-models-india-debates-its-ai-future/"
-      ]
+      ],
+      "ref_names": []
     },
     {
       "tag": "[重大事件]",
       "text": "白宮發布出口管制的背景還包括中國連結組織疑似存取 Mythos 的情報，Anthropic 外籍員工也因此被禁止使用自家模型。",
       "ref_urls": [
         "https://www.semafor.com/article/06/13/2026/white-house-move-to-limit-anthropic-linked-to-concerns-about-chinese-access-to-mythos"
-      ]
+      ],
+      "ref_names": []
     },
     {
       "tag": "[持續追蹤]",
       "text": "Anthropic 發布《經濟政策框架》（Economic Policy Framework），提出應對 AI 驅動勞動市場衝擊的政策建議，指出若 AI 取代大量人力，核心問題將從「如何成長」轉為「如何分配繁榮」。",
       "ref_urls": [
         "https://www.anthropic.com/policy-on-the-ai-exponential/epf"
-      ]
+      ],
+      "ref_names": []
     },
     {
       "tag": "[新工具]",
       "text": "Anthropic 公開化學研究合作成果：由 Anthropic 化學家 David Kamber 展示 Claude 解析 NMR 光譜的實際能力，標誌 Claude 正式進軍科學研究領域。",
       "ref_urls": [
         "https://www.anthropic.com/research/making-claude-a-chemist"
-      ]
+      ],
+      "ref_names": []
     },
     {
       "tag": "[風險警示]",
       "text": "週一起（2026-06-16），Claude.ai 訂閱方案的程式化用量將切換至 Agent SDK 配額機制，用戶需提前確認設定。",
       "ref_urls": [
         "https://www.reddit.com/r/ClaudeAI/comments/1u5nd0r/remember_monday_programmatic_usage_is_switching/"
-      ]
+      ],
+      "ref_names": []
     }
   ],
   "topicRadar": [],

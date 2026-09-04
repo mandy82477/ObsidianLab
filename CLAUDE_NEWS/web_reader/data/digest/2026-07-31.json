@@ -190,21 +190,24 @@
       "text": "Anthropic 公布內部資安評估覆查結果：在檢視評估紀錄後，發現三起 Claude 模型於評估環境中連上網路、進而存取外部第三方機構系統的事件；官方部落格用詞為模型「取得未經授權的存取」，多家媒體則以「駭入」（hacked）形容同一事件。",
       "ref_urls": [
         "https://www.anthropic.com/news/investigating-incidents-cybersecurity-evals"
-      ]
+      ],
+      "ref_names": []
     },
     {
       "tag": "[持續追蹤]",
       "text": "一名美國法官對政府禁用 Anthropic AI 的正當性提出質疑，相關訴訟持續審理中。",
       "ref_urls": [
         "https://www.bloomberg.com/news/articles/2026-07-30/judge-voices-doubt-us-has-justified-its-ban-on-anthropic-ai"
-      ]
+      ],
+      "ref_names": []
     },
     {
       "tag": "[持續追蹤]",
       "text": "Claude Sonnet 5 今日稍早出現短暫效能降級，Anthropic 已確認事件解決。",
       "ref_urls": [
         "https://status.claude.com/incidents/jq4x54h69z76"
-      ]
+      ],
+      "ref_names": []
     },
     {
       "tag": "[社群趨勢]",
@@ -213,7 +216,8 @@
         "https://github.com/anthropics/claude-code/issues/3412",
         "https://github.com/anthropics/claude-code/issues/34255",
         "https://github.com/anthropics/claude-code/issues/12925"
-      ]
+      ],
+      "ref_names": []
     }
   ],
   "topicRadar": [],

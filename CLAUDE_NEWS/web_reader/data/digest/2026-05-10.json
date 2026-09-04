@@ -197,27 +197,32 @@
     {
       "tag": "[風險警示]",
       "text": "Google 搜尋「claude code」的頭號結果出現偽冒官網並植入木馬，已有資深用戶在 Windows 上中招；安裝前請務必直接前往 claude.ai 官方頁面。",
-      "ref_urls": []
+      "ref_urls": [],
+      "ref_names": []
     },
     {
       "tag": "[持續追蹤]",
       "text": "社群發現 CLAUDE.md 被 Claude CLI 以 `<system-reminder>` 包裹並標注「may or may not be relevant」，解釋了為何 Claude Code 時常忽略其中指令，Anthropic 尚未正式回應此設計選擇。",
-      "ref_urls": []
+      "ref_urls": [],
+      "ref_names": []
     },
     {
       "tag": "[持續追蹤]",
       "text": "ServeTheHome 報導 Anthropic 於 5 月初調降 Claude Opus API 速率限制，重度 API 用戶需留意使用量變化。",
-      "ref_urls": []
+      "ref_urls": [],
+      "ref_names": []
     },
     {
       "tag": "[社群趨勢]",
       "text": "Claude Code 周邊生態持續爆發：本日湧現排程、安全掃描、跨 session 記憶、Token 預算等多款社群工具，顯示開發者正快速填補官方功能空白。",
-      "ref_urls": []
+      "ref_urls": [],
+      "ref_names": []
     },
     {
       "tag": "[社群趨勢]",
       "text": "「如何壓低 Claude Code session Token 成本」成為今日最熱討論主軸，快取不跨 session 的限制推動多種結構化記憶解法出現。",
-      "ref_urls": []
+      "ref_urls": [],
+      "ref_names": []
     }
   ],
   "topicRadar": [],

@@ -628,7 +628,8 @@
         "https://www.anthropic.com/news/reflect-with-claude",
         "https://techcrunch.com/2026/07/09/anthropics-new-claude-feature-is-quietly-selling-you-on-ai/",
         "https://www.theverge.com/ai-artificial-intelligence/963105/anthropic-claude-wrapped-reflection-ai-usage"
-      ]
+      ],
+      "ref_names": []
     },
     {
       "tag": "[持續追蹤]",
@@ -637,7 +638,8 @@
         "https://www.wsj.com/tech/ai/china-says-it-has-found-security-vulnerabilities-in-anthropics-claude-code-5ecf05dc",
         "https://www.techradar.com/pro/china-warns-users-of-alleged-security-backdoor-vulnerabilities-in-anthropics-claude-code-tells-users-to-uninstall-for-sfaety-reasons",
         "https://tech.yahoo.com/ai/claude/articles/china-flags-anthropic-claude-code-123941154.html"
-      ]
+      ],
+      "ref_names": []
     },
     {
       "tag": "[新工具]",
@@ -645,14 +647,16 @@
       "ref_urls": [
         "https://mashable.com/tech/anthropic-releases-claude-sonnet-5",
         "https://tech-insider.org/claude-sonnet-5-release-2026/"
-      ]
+      ],
+      "ref_names": []
     },
     {
       "tag": "[社群趨勢]",
       "text": "GitHub Issue「Feature Request: Support AGENTS.md」累積 5627 個讚反應，為今日社群互動量最高條目，呼籲 Claude Code 跟進業界正在標準化的 AGENTS.md 格式。",
       "ref_urls": [
         "https://github.com/anthropics/claude-code/issues/6235"
-      ]
+      ],
+      "ref_names": []
     },
     {
       "tag": "[持續追蹤]",
@@ -660,7 +664,8 @@
       "ref_urls": [
         "https://qz.com/anthropic-secondary-market-valuation-1-2-trillion-070926",
         "https://www.businessinsider.com/anthropic-soared-1-2-trillion-valuation-on-secondary-markets-2026-7"
-      ]
+      ],
+      "ref_names": []
     }
   ],
   "topicRadar": [],

@@ -152,35 +152,40 @@
       "text": "Fable 5 出口管制持續延燒：中國 AI 實驗室 Z.ai 創辦人 Jie Tang 宣稱，中國追上 Fable 5 等級的模型速度比馬斯克預測的 Q1 還要快，引發國際 AI 競爭討論。",
       "ref_urls": [
         "https://www.tomshardware.com/tech-industry/artificial-intelligence/elon-musk-says-that-china-will-have-a-fable-5-class-ai-model-probably-q1-next-year-ceo-of-chinese-anthropic-rival-says-it-wont-take-that-long"
-      ]
+      ],
+      "ref_names": []
     },
     {
       "tag": "[持續追蹤]",
       "text": "Anthropic 出口管制政治角力：Politico 深度報導 Anthropic 在美國出口管制爭議中的政治處境，揭露公司如何在政策倡議與商業利益間取得平衡。",
       "ref_urls": [
         "https://www.politico.com/news/2026/06/19/he-has-to-find-a-way-to-be-friends-the-political-fight-behind-anthropics-export-controls-00968597"
-      ]
+      ],
+      "ref_names": []
     },
     {
       "tag": "[風險警示]",
       "text": "Claude Code 磁碟掃描爭議：HN 討論指出 Claude Code 執行 `ls` 掃描根目錄的行為，引發使用者對隱私的疑慮，包括 SSH 私鑰可見性問題，建議在容器環境中執行以隔離風險。",
       "ref_urls": [
         "https://github.com/anthropics/claude-code/issues"
-      ]
+      ],
+      "ref_names": []
     },
     {
       "tag": "[重大事件]",
       "text": "Claude Fable 5 在 AWS Bedrock 要求分享推理資料：InfoQ 報導指出，在 AWS Bedrock 使用 Fable 5 模型時，需同意與 Anthropic 共享推論數據，企業用戶需評估資料政策影響。",
       "ref_urls": [
         "https://news.google.com/rss/articles/CBMickFVX3lxTE5zX04xd0ZSdENqUDEzZlcyN2g0bVBRR01fOC1JQXlrXzJSNVhfSGdRME1zOVlvRmFvd0F2clZEa05ERXREa3NvRjRwZlZzOGVkeFFBLUgxX3QwWVJzU1VmbFVaY2JUQ2RaenVJQWFtZXlkZw?oc=5"
-      ]
+      ],
+      "ref_names": []
     },
     {
       "tag": "[人才動態]",
       "text": "AlphaFold 共同創造者 John Jumper 加入 Anthropic：諾貝爾獎得主 Jumper 離開 Google DeepMind 加入 Anthropic，被視為 Anthropic 向科學計算領域擴展的重要人才訊號。",
       "ref_urls": [
         "https://dev.to/damogallagher/anthropic-hiring-alphafold-co-creator-john-jumper-is-a-real-frontier-lab-talent-signal-3p4f"
-      ]
+      ],
+      "ref_names": []
     }
   ],
   "topicRadar": [],

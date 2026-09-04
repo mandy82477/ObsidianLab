@@ -259,14 +259,16 @@
         "https://www.pcmag.com/news/anthropics-newest-ai-model-opus-5-is-now-available",
         "https://www.testingcatalog.com/anthropic-launched-claude-opus-5-across-all-platforms/",
         "https://www.chosun.com/english/industry-en/2026/07/26/CEBZ5CRUSBDG3OHX2MVH7CX5MQ/"
-      ]
+      ],
+      "ref_names": []
     },
     {
       "tag": "[重大事件]",
       "text": "Anthropic 部落格發文說明「Claude 5 世代模型的 context engineering 新規則」，揭露針對更先進模型已移除超過 80% 的 Claude Code 系統提示詞，並提供將此經驗應用於自訂 agent 的建議；該文在 Hacker News 獲 393 分討論熱度。",
       "ref_urls": [
         "https://claude.com/blog/the-new-rules-of-context-engineering-for-claude-5-generation-models"
-      ]
+      ],
+      "ref_names": []
     },
     {
       "tag": "[持續追蹤]",
@@ -276,7 +278,8 @@
         "https://status.claude.com/incidents/j6gv862066n7",
         "https://status.claude.com/incidents/f1q2wvw4qj4j",
         "https://status.claude.com/incidents/1019wwb67615"
-      ]
+      ],
+      "ref_names": []
     },
     {
       "tag": "[持續追蹤]",
@@ -285,7 +288,8 @@
         "https://github.com/anthropics/claude-code/issues/6235",
         "https://github.com/anthropics/claude-code/issues/69415",
         "https://github.com/anthropics/claude-code/issues/1669"
-      ]
+      ],
+      "ref_names": []
     },
     {
       "tag": "[持續追蹤]",
@@ -293,7 +297,8 @@
       "ref_urls": [
         "https://www.forbes.com/sites/sandycarter/2026/07/25/huangs-open-weights-letter-doubled-to-50-without-amazon-and-anthropic/",
         "https://www.indiatoday.in/technology/news/story/chinese-ai-models-split-silicon-valley-nvidia-and-others-want-open-access-while-anthropic-pushes-for-ban-2956551-2026-07-26"
-      ]
+      ],
+      "ref_names": []
     }
   ],
   "topicRadar": [],

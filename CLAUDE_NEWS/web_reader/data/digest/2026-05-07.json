@@ -251,27 +251,32 @@
     {
       "tag": "[重大事件]",
       "text": "Anthropic 宣布與 SpaceX 簽訂運算合作協議，即日起將 Claude Code Pro/Max 方案的五小時速率上限翻倍、取消尖峰時段降速——對長時間跑 agent 的重度開發者影響最為直接，各大科技媒體齊聚報導。",
-      "ref_urls": []
+      "ref_urls": [],
+      "ref_names": []
     },
     {
       "tag": "[重大事件]",
       "text": "Anthropic 在「Code with Claude」開發者大會上推出 Managed Agents 重大更新，包含「Dreaming」記憶整合機制、最高 20 路子代理並行，以及 Outcomes 規格驗證功能，標誌 Agent 框架從無狀態走向有狀態設計。",
-      "ref_urls": []
+      "ref_urls": [],
+      "ref_names": []
     },
     {
       "tag": "[新工具]",
       "text": "Python SDK 突破 v0.100.0 里程碑，TypeScript SDK 同步升至 v0.95.0，兩者均新增對 Managed Agents 的原生支援，值得跟進 API 介面變化。",
-      "ref_urls": []
+      "ref_urls": [],
+      "ref_names": []
     },
     {
       "tag": "[社群趨勢]",
       "text": "社群開發者積極分享 Claude Code 工作流最佳實踐，涵蓋記憶管理、技能組合、Git commit 結構化等，使用者生態正快速成熟，但也出現對「理解外包給 AI」的反思聲浪。",
-      "ref_urls": []
+      "ref_urls": [],
+      "ref_names": []
     },
     {
       "tag": "[風險警示]",
       "text": "有用戶回報撤銷 Claude Code 存取授權後仍出現 session 紀錄與 token 消耗，Anthropic 支援團隊兩週未回應，值得密切關注帳號安全狀況。",
-      "ref_urls": []
+      "ref_urls": [],
+      "ref_names": []
     }
   ],
   "topicRadar": [],

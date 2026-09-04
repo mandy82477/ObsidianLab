@@ -173,7 +173,8 @@
       "ref_urls": [
         "https://www.reuters.com/world/china/anthropic-says-alibaba-illicitly-extracted-claude-ai-model-capabilities-2026-06-24/",
         "https://dev.to/tekmag/anthropic-vs-alibaba-the-largest-known-ai-model-distillation-attack-288-million-claude-25ol"
-      ]
+      ],
+      "ref_names": []
     },
     {
       "tag": "[持續追蹤]",
@@ -182,7 +183,8 @@
         "https://www.wired.com/story/the-trump-white-house-is-over-anthropics-dario-amodei/",
         "https://www.bloomberg.com/news/articles/2026-06-25/eu-held-talks-with-white-house-on-anthropic-after-mythos-cutoff",
         "https://www.lesswrong.com/posts/zhRe3tdBpsZbGCdDK/world-modeling-the-us-vs-anthropic-standoff-on-claude-fable"
-      ]
+      ],
+      "ref_names": []
     },
     {
       "tag": "[重大事件]",
@@ -190,7 +192,8 @@
       "ref_urls": [
         "https://www.bloomberg.com/news/articles/2026-06-24/google-poised-to-lose-two-more-high-profile-ai-staffers-to-anthropic",
         "https://www.theinformation.com/articles/google-revamps-new-ai-coding-strike-team-amid-struggle-catch-anthropic"
-      ]
+      ],
+      "ref_names": []
     },
     {
       "tag": "[新工具]",
@@ -199,14 +202,16 @@
         "https://github.com/anthropics/claude-code/releases/tag/v2.1.191",
         "https://github.com/anthropics/anthropic-sdk-typescript/releases/tag/sdk-v0.106.0",
         "https://github.com/anthropics/anthropic-sdk-python/releases/tag/v0.112.0"
-      ]
+      ],
+      "ref_names": []
     },
     {
       "tag": "[社群趨勢]",
       "text": "Notion 正式整合 Claude Agents 與 Cursor 作為外部 agent，進入工作區協作流程，為 Claude 在企業生產力工具的落地提供新路徑。",
       "ref_urls": [
         "https://letsdatascience.com/news/notion-integrates-claude-agents-into-workspaces-f0ad6afb"
-      ]
+      ],
+      "ref_names": []
     }
   ],
   "topicRadar": [],

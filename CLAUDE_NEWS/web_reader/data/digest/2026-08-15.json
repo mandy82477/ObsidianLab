@@ -275,7 +275,8 @@
         "https://www.anthropic.com/news/claude-text-watermark",
         "https://the-decoder.com/anthropic-announces-watermark-detection-api-that-will-let-third-parties-detect-claudes-ai-texts/",
         "https://www.bleepingcomputer.com/news/artificial-intelligence/how-anthropic-plans-to-watermark-claudes-ai-generated-text"
-      ]
+      ],
+      "ref_names": []
     },
     {
       "tag": "[重大事件]",
@@ -284,7 +285,8 @@
         "https://www-cdn.anthropic.com/f61d49fa5596956a5dec75fea0e973bf6a6a8378/Redacted%20Risk%20Report%20August%202026%20.pdf",
         "https://siliconangle.com/2026/08/14/anthropic-details-unreleased-model-2-new-alignment-concerns-latest-ai-risk-report/",
         "https://www.axios.com/2026/08/14/anthropic-model-2-ai-risk"
-      ]
+      ],
+      "ref_names": []
     },
     {
       "tag": "[重大事件]",
@@ -292,14 +294,16 @@
       "ref_urls": [
         "https://www.reuters.com/business/anthropic-ipo-valuation-hinges-190-200-billion-2028-revenue-forecast-sources-say-2026-0",
         "https://finance.yahoo.com/technology/ai/articles/anthropic-revenue-surges-over-11-210857853.html"
-      ]
+      ],
+      "ref_names": []
     },
     {
       "tag": "[持續追蹤]",
       "text": "Auto 模式如期於 8/14 起成為預設——多家媒體發 PSA 提醒使用者確認自身設定。",
       "ref_urls": [
         "https://9to5mac.com/2026/08/14/psa-claude-code-enabling-auto-mode-as-default-next-week-anthropic-says/"
-      ]
+      ],
+      "ref_names": []
     },
     {
       "tag": "[新工具]",
@@ -307,7 +311,8 @@
       "ref_urls": [
         "https://www.techspot.com/news/113487-samsung-claude-code-can-cut-chip-design-work.html",
         "https://techmymoney.com/2026/08/14/samsung-claude-code-reportedly-cut-chip-verification-from-a-month-to-two-days/"
-      ]
+      ],
+      "ref_names": []
     }
   ],
   "topicRadar": [

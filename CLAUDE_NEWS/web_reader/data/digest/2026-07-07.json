@@ -449,7 +449,8 @@
       "ref_urls": [
         "https://www.malwarebytes.com/blog/news/2026/07/claude-codes-hidden-tracker-was-an-experiment-says-anthropic",
         "https://www.theneurondaily.com/p/anthropic-found-claude-s-hidden-workspace"
-      ]
+      ],
+      "ref_names": []
     },
     {
       "tag": "[持續追蹤]",
@@ -458,28 +459,32 @@
         "https://www.pymnts.com/news/artificial-intelligence/2026/alibaba-blocks-staff-from-using-anthropic-ai-amid-security-concerns/",
         "https://www.benzinga.com/markets/tech/26/07/60297708/alibaba-reportedly-bans-anthropics-claude-for-employees-citing-security-risks-directs-them-to-use-qoder-instead",
         "https://beincrypto.com/alibaba-bans-anthropic-claude-code/"
-      ]
+      ],
+      "ref_names": []
     },
     {
       "tag": "[重大事件]",
       "text": "Claude Code v2.1.202 發布，`/config` 新增「Dynamic workflow size」設定，可調整動態工作流的 agent 數量規模（小/中/大），屬建議性引導值。",
       "ref_urls": [
         "https://github.com/anthropics/claude-code/releases/tag/v2.1.202"
-      ]
+      ],
+      "ref_names": []
     },
     {
       "tag": "[新工具]",
       "text": "Anthropic Blog 分享案例：Alberta 省政府自 2025 年起使用 Claude Code（Opus 與 Sonnet 模型）掃描 4.66 億行程式碼，20 小時內完成資安漏洞盤點與修補。",
       "ref_urls": [
         "https://www.anthropic.com/news/alberta-government-claude-cybersecurity"
-      ]
+      ],
+      "ref_names": []
     },
     {
       "tag": "[社群趨勢]",
       "text": "GitHub Issue 呼籲 Anthropic 為印度市場推出盧比計價方案，累積 594 個反應與 205 則留言，為今日社群互動量最高條目。",
       "ref_urls": [
         "https://github.com/anthropics/claude-code/issues/17432"
-      ]
+      ],
+      "ref_names": []
     }
   ],
   "topicRadar": [],

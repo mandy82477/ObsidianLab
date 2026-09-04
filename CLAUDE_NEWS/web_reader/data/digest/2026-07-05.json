@@ -165,28 +165,32 @@
       "text": "Claude Max 方案自 3 月 23 日起 session 額度異常快速耗盡的 CLI bug 回報累積至 793 則留言、535 個讚，是今日互動量最高的條目，反映升版/額度異常已是社群長期未解痛點。",
       "ref_urls": [
         "https://github.com/anthropics/claude-code/issues/38335"
-      ]
+      ],
+      "ref_names": []
     },
     {
       "tag": "[持續追蹤]",
       "text": "支援 `AGENTS.md` 統一標準的 feature request 累積 333 則留言、高達 5598 個讚反應，社群持續施壓要求 Claude Code 比照 Codex、Amp、Cursor 支援跨工具通用的 agent 設定檔。",
       "ref_urls": [
         "https://github.com/anthropics/claude-code/issues/6235"
-      ]
+      ],
+      "ref_names": []
     },
     {
       "tag": "[風險警示]",
       "text": "據印度快報報導，阿里巴巴將自 7 月 10 日起禁止員工使用 Claude Code，凸顯美中 AI 競爭加劇下企業工具選用受地緣政治牽動。",
       "ref_urls": [
         "https://indianexpress.com/article/technology/artificial-intelligence/alibaba-ban-claude-code-us-china-ai-10772429/"
-      ]
+      ],
+      "ref_names": []
     },
     {
       "tag": "[重大事件]",
       "text": "AFR 報導 Anthropic 計畫在澳洲採購 1.4GW 資料中心容量，顯示其基礎建設擴張規模持續加大。",
       "ref_urls": [
         "https://www.afr.com/street-talk/anthropic-s-plans-to-buy-1-4gw-of-aussie-data-centre-capacity-20260705-p60cpz"
-      ]
+      ],
+      "ref_names": []
     },
     {
       "tag": "[新工具]",
@@ -194,7 +198,8 @@
       "ref_urls": [
         "https://www.reddit.com/r/ClaudeCode/comments/1unzr2u/sonnet_5_is_a_really_good_orchestrator/",
         "https://www.reddit.com/r/ClaudeCode/comments/1unzp07/i_went_through_7_threads_of_people_who_ran_both/"
-      ]
+      ],
+      "ref_names": []
     }
   ],
   "topicRadar": [],

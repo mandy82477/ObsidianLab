@@ -134,7 +134,8 @@
       "text": "Anthropic 發布工程博文《The ways we contain Claude across products》（HN score 173）：揭示 Anthropic 如何在高存取權限的內部部署中系統性降低 Claude 的「爆炸半徑」——從細粒度權限、沙箱隔離到模型訓練的多層防禦架構，是 Anthropic 迄今最詳盡的 AI 安全工程公開說明。",
       "ref_urls": [
         "https://www.anthropic.com/engineering/how-we-contain-claude"
-      ]
+      ],
+      "ref_names": []
     },
     {
       "tag": "[重大事件]",
@@ -142,7 +143,8 @@
       "ref_urls": [
         "https://news.google.com/rss/articles/CBMipgFBVV95cUxOX1Z5SnN2TXZiQXh3YWd5TXBiRmhmMFlCMlV1TTRnR0lxSzhfdEhGYmVSbmEzVGRJVHNPRHQ0MF8yU3g3VXIyY2lrLXlZRlNoRVBvU2ktUnBETUJrRzNnS04yRVdVRkRyX1IycTlrb0RtV1FzclN3RWNYT0JCNTFyNWRqWWNIMWZXYjNKcnRxS3V5ZzlOVkwxQ3c5TkJQbWpTUy1PLUdR",
         "https://news.ycombinator.com/item?id=48390573"
-      ]
+      ],
+      "ref_names": []
     },
     {
       "tag": "[重大事件]",
@@ -150,14 +152,16 @@
       "ref_urls": [
         "https://www.anthropic.com/news/AI-enabled-cyber-threats-mitre-attack",
         "https://www.wired.com/story/openai-anthropic-letter-ai-biological-weapons/"
-      ]
+      ],
+      "ref_names": []
     },
     {
       "tag": "[風險警示]",
       "text": "Anthropic 盈利聲明受質疑（Ed Zitron，HN score 8）：所謂「首次盈利」僅因 SpaceX 給予臨時算力折扣，製造出兩個月的盈利期；IPO 前夕的財務工程質疑對估值論述構成壓力。",
       "ref_urls": [
         "https://www.youtube.com/watch?v=zbKDmkJPVvI"
-      ]
+      ],
+      "ref_names": []
     },
     {
       "tag": "[社群趨勢]",
@@ -165,7 +169,8 @@
       "ref_urls": [
         "https://www.reddit.com/r/ClaudeAI/comments/1twhqty/claudes_referral_traffic_grew_386_in_4_monthsbut/",
         "https://dev.to/akaranjkar08/switch-from-github-copilot-to-claude-code-migration-guide-2026-28nk"
-      ]
+      ],
+      "ref_names": []
     }
   ],
   "topicRadar": [],

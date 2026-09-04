@@ -132,7 +132,8 @@
         "https://www.theguardian.com/technology/2026/jun/22/anthropic-claude-fable-ai-model-artificial-intelligence-national-security",
         "https://www.tomshardware.com/tech-industry/artificial-intelligence/anthropics-powerful-mythos-ai-reportedly-breached-almost-all-nsa-classified-systems-within-a-few-hours-during-red-team-test-report-sheds-more-light-on-the-u-s-governments-sudden-ban-on-the-flagship-models",
         "https://www.technologyreview.com/2026/06/22/1139424/three-things-to-watch-amid-anthropics-latest-feud-with-the-government/"
-      ]
+      ],
+      "ref_names": []
     },
     {
       "tag": "[重大事件]",
@@ -140,14 +141,16 @@
       "ref_urls": [
         "https://www.reuters.com/business/micron-anthropic-sign-ai-infrastructure-supply-agreement-2026-06-22/",
         "https://www.benzinga.com/markets/tech/26/06/60034685/micron-and-anthropic-strike-strategic-ai-partnership-spanning-memory-storage-and-claude"
-      ]
+      ],
+      "ref_names": []
     },
     {
       "tag": "[風險警示]",
       "text": "Claude Code Extended Thinking 透明度問題：工程師發現思考區塊僅回傳加密簽名而非實際推理文字，完整輸出需企業協議才可取得，意味著 Claude Code 的「審計軌跡」承諾實際上無法自行核驗。",
       "ref_urls": [
         "https://patrickmccanna.net/the-text-in-claude-codes-extended-thinking-output-is-not-authentic/"
-      ]
+      ],
+      "ref_names": []
     },
     {
       "tag": "[重大事件]",
@@ -155,14 +158,16 @@
       "ref_urls": [
         "https://www.barrons.com/articles/alphabet-stock-jumper-deepmind-anthropic-3242f738",
         "https://www.searchenginejournal.com/google-loses-two-top-ai-researchers-to-openai-anthropic/580201/"
-      ]
+      ],
+      "ref_names": []
     },
     {
       "tag": "[風險警示]",
       "text": "Anthropic 計畫要求部分用戶進行身份識別與臉部掃描，最快 7 月上路，涵蓋 Free、Pro、Max 訂閱方案。",
       "ref_urls": [
         "https://www.pymnts.com/cybersecurity/fraud-prevention/2026/claude-users-could-face-new-id-checks-anthropic-says/"
-      ]
+      ],
+      "ref_names": []
     }
   ],
   "topicRadar": [],

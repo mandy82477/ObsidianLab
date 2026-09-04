@@ -228,7 +228,8 @@
       "ref_urls": [
         "https://www.anthropic.com/news/claude-opus-4-8",
         "https://claude.com/blog/introducing-dynamic-workflows-in-claude-code"
-      ]
+      ],
+      "ref_names": []
     },
     {
       "tag": "[重大事件]",
@@ -236,7 +237,8 @@
       "ref_urls": [
         "https://www.anthropic.com/news/series-h",
         "https://www.reuters.com/business/anthropic-raises-65-billion-now-valued-965-billion-2026-05-28/"
-      ]
+      ],
+      "ref_names": []
     },
     {
       "tag": "[持續追蹤]",
@@ -244,7 +246,8 @@
       "ref_urls": [
         "https://www.reuters.com/business/anthropic-roll-out-claude-mythos-coming-weeks-launches-opus-48-2026-05-28/",
         "https://news.ycombinator.com/item?id=48320822"
-      ]
+      ],
+      "ref_names": []
     },
     {
       "tag": "[社群趨勢]",
@@ -252,7 +255,8 @@
       "ref_urls": [
         "https://marginlab.ai/blog/claude-code-degraded-before-opus-4-8/",
         "https://www.reddit.com/r/ClaudeAI/comments/1tr3y72/48_is_a_dumpster_fire/"
-      ]
+      ],
+      "ref_names": []
     },
     {
       "tag": "[新工具]",
@@ -262,7 +266,8 @@
         "https://github.com/scanaislop/aislop",
         "https://extraheadroom.com/",
         "https://github.com/Kaelio/ktx"
-      ]
+      ],
+      "ref_names": []
     }
   ],
   "topicRadar": [],

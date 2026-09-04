@@ -145,21 +145,24 @@
       "ref_urls": [
         "https://www.engadget.com/2180028/anthropic-claude-mythos-preview-project-glasswing-update/",
         "https://red.anthropic.com/2026/cvd/"
-      ]
+      ],
+      "ref_names": []
     },
     {
       "tag": "[重大事件]",
       "text": "Anthropic 官方發布 31 個小企業 Skills，據報首日下載量達 38.2 萬次，AI 技能包開始向非工程師商業使用者擴張。",
       "ref_urls": [
         "https://www.reddit.com/r/ClaudeAI/comments/1tm94ai/skills_for_small_businesses_officially_released/"
-      ]
+      ],
+      "ref_names": []
     },
     {
       "tag": "[持續追蹤]",
       "text": "Claude Mythos 被發現準備登陸 Claude Code 和 Claude Security，app 字串洩露顯示「Access to the Claude Mythos model in Claude Code and Claude Security」，但 Anthropic 聲明一般用戶不保證獲得存取。",
       "ref_urls": [
         "https://www.reddit.com/r/ClaudeAI/comments/1tlwg2f/mythos_is_being_prepared_for_a_release_on_claude/"
-      ]
+      ],
+      "ref_names": []
     },
     {
       "tag": "[社群趨勢]",
@@ -167,14 +170,16 @@
       "ref_urls": [
         "https://github.com/tejpalv/cc-wiki",
         "https://www.reddit.com/r/ClaudeAI/comments/1tlu3np/claude_code_has_been_writing_every_session_to/"
-      ]
+      ],
+      "ref_names": []
     },
     {
       "tag": "[風險警示]",
       "text": "Cache miss 成本衝擊：Reddit 詳解 cache miss 比 cache hit 貴 12.5 倍（prompt cache 寫入 1.25×、讀取 0.1×），並列出 session 中 5 種常見觸發 cache 失效的操作，對長 session 用戶影響顯著。",
       "ref_urls": [
         "https://www.reddit.com/r/ClaudeAI/comments/1tlzqpl/cache_miss_in_claude_code_costs_125_more_than_a/"
-      ]
+      ],
+      "ref_names": []
     }
   ],
   "topicRadar": [],

@@ -441,7 +441,8 @@
       "text": "Claude Code OAuth 登入因 `auth.anthropic.com` 完全無法透過 DNS 解析而逾時失敗，該則 issue 累積 151 則留言，為本日互動量最高的條目。",
       "ref_urls": [
         "https://github.com/anthropics/claude-code/issues/33238"
-      ]
+      ],
+      "ref_names": []
     },
     {
       "tag": "[新工具]",
@@ -449,14 +450,16 @@
       "ref_urls": [
         "https://www.anthropic.com/news/claude-for-teachers",
         "https://news.google.com/rss/articles/CBMifkFVX3lxTE9LZ0hrSDhsTHprNnhsc0tGSDd4aGpUQ095bmhWRHp6eTlrdmVzRHdtT1RqRUxOb1lXVmhMZlNDSG5sdUlKakR6b3hWQ1RvWDVmYlpvbUNKV3NEai1zX2FWdTdPenY1SkNFenJLbHpGQlU5NTZzT2lPclZHc1pWd9IBgwFBVV95cUxPVGg3MUxmUWp1TG5xbzZyN2VQVEZtT1p6MmNhR0lOdjNvN1N2NUh3dDlfSkdYaXAwWVoxTS0weWNOTlVNWERYdkdhdnlZWkt3LVRBQ0txc3FmaWdSNERqSmxWRjNWTnF4R05LWmdaZng4aTFXXzhyeE9FWkRBM0NIdC0xdw?oc=5"
-      ]
+      ],
+      "ref_names": []
     },
     {
       "tag": "[持續追蹤]",
       "text": "AWS 推出 Claude Apps Gateway，作為 Claude Code 與 Claude Desktop 可自架部署的控制平面。",
       "ref_urls": [
         "https://news.google.com/rss/articles/CBMia0FVX3lxTE0waHRaUzRTcGcweklYZHRzS1pDZ29VdXZHYzZUd2p0ZVY2MkJLUll1SlZLTlJOaWdsR3N3YzB1N3JBNFhQZjEyd1hpQVpxUFVmbUtheHBTT2hSdkJKUG95NnoxYXlCVlBVY1Jr?oc=5"
-      ]
+      ],
+      "ref_names": []
     },
     {
       "tag": "[風險警示]",
@@ -464,14 +467,16 @@
       "ref_urls": [
         "https://github.com/anthropics/claude-code/issues/32479",
         "https://github.com/anthropics/claude-code/issues/34255"
-      ]
+      ],
+      "ref_names": []
     },
     {
       "tag": "[新工具]",
       "text": "Claude Code 發布 v2.1.210，為收合的工具摘要列加入即時耗時計數器，並為 `Write(path)` 新增啟動警告。",
       "ref_urls": [
         "https://github.com/anthropics/claude-code/releases/tag/v2.1.210"
-      ]
+      ],
+      "ref_names": []
     }
   ],
   "topicRadar": [],

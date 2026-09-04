@@ -604,7 +604,8 @@
       "ref_urls": [
         "https://wersm.com/claude-code-can-now-browse-the-web-without-opening-chrome/",
         "https://the-decoder.com/claude-code-now-has-a-built-in-browser-that-lets-the-ai-read-click-and-type-on-external-websites/"
-      ]
+      ],
+      "ref_names": []
     },
     {
       "tag": "[持續追蹤]",
@@ -612,7 +613,8 @@
       "ref_urls": [
         "https://www.forbes.com/sites/tylerroush/2026/07/13/ai-model-wars-anthropic-extends-fable-access-again-after-openais-sol-release/",
         "https://www.helpnetsecurity.com/2026/07/13/claude-code-weekly-limits-promotion-extended/"
-      ]
+      ],
+      "ref_names": []
     },
     {
       "tag": "[社群趨勢]",
@@ -620,7 +622,8 @@
       "ref_urls": [
         "https://github.com/anthropics/claude-code/issues/5826",
         "https://github.com/anthropics/claude-code/issues/38993"
-      ]
+      ],
+      "ref_names": []
     },
     {
       "tag": "[商業動態]",
@@ -629,7 +632,8 @@
         "https://www.techtimes.com/articles/320266/20260712/anthropic-confirms-166m-billing-error-auditors-find-17m-enterprise-overcharges.htm",
         "https://mashable.com/tech/anthropic-claude-cowork-to-web-mobile-launch",
         "https://www.tweaktown.com/news/112601/cursor-builds-ai-agent-sand-to-rival-anthropics-claude-cowork/index.html"
-      ]
+      ],
+      "ref_names": []
     },
     {
       "tag": "[持續追蹤]",
@@ -637,7 +641,8 @@
       "ref_urls": [
         "https://www.businessinsider.com/anthropic-hires-monzo-cofounder-tom-blomfield-ai-compute-y-combinator-2026-7",
         "https://finance.yahoo.com/technology/ai/articles/ltm-partners-anthropic-accelerate-claude-113000192.html"
-      ]
+      ],
+      "ref_names": []
     }
   ],
   "topicRadar": [],

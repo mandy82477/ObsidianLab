@@ -264,7 +264,8 @@
         "https://news.google.com/rss/articles/CBMikgFBVV95cUxQRlV4bzBCa2VxRlZkN1VMdzh3UVR0VmJ5d0VIUEpLQkZBRFBpaC1sSkFuTzAtaU0zZkdjNmh1dFB0ZXdQLW5rcU82Q3g3SW1xOEpXWjl6MmpuOUQzVkhFcXBFRFRsWnpXb0t6RFNFRlZfV0d5VXdJSVVKUjBKcGI0YTJvM2ltekctTHQ0WlhyWkFQQQ?oc=5",
         "https://news.google.com/rss/articles/CBMihAFBVV95cUxQUWRXMGN5WXlraTZ5dzRnUHVkcEtuUnhDV1FJU1pBNUVndnJXRkM5dkdrSDVXbDVLckNaOTZnUm9uRks4ZDRPN1JJSDF2SmFwX2tTTHNncTZiT21hd1hoc1VyVEJPZnlHZnNMcVRGczM4QVlVV1R6TG96VnpjWUktbUJHVVM?oc=5",
         "https://www.bloomberg.com/news/articles/2026-08-13/anthropic-said-in-talks-to-buy-ai-startup-decart-for-6-billion"
-      ]
+      ],
+      "ref_names": []
     },
     {
       "tag": "[社群趨勢]",
@@ -272,7 +273,8 @@
       "ref_urls": [
         "https://techcrunch.com/2026/08/12/some-claude-users-are-mad-that-anthropics-new-watermarks-will-catch-them-cheating-at-their-jobs-classes/",
         "https://news.google.com/rss/articles/CBMi0wFBVV95cUxNck5yejlwcy1qaWtMWUt0bWROWS1OU2FuelN6ZjJ2bzM4Sk9yUmVOa1VLeDFGb2J5Y2E1WlBFYVpGTFF0R1IxRlhkQkMzaXVJc2x5Tnh1Z29GR1BuSFNscThtUFU1SG1RM01XNUJZbnFjd29NT0h5cFJ0U01IVDJjWlR6T0dNYll3cXhXTkNqeW9QNkw4NGNFRHRkaGFHWHFCUnl1bzYtTUcxSVB5U2IzcnN6VlJfWjZiNUtDMXo2dnVweEdSaDdUdHlmTThjQ1Qta1JB?oc=5"
-      ]
+      ],
+      "ref_names": []
     },
     {
       "tag": "[持續追蹤]",
@@ -280,7 +282,8 @@
       "ref_urls": [
         "https://news.google.com/rss/articles/CBMi1wFBVV95cUxNMHV4cjVfb0QxWkZ1anJESGRPdnR6REJMSlkwSkwtZHFybmdFMWxjc0I4b0Q2bmE1ZGZkMzVNdEN4MlJmN0JrRUdLNHdHMmU5bG9CYWoyQTVqaFJGdmtwc3ZnQkVEUHBvYUg1ajFaQWZrOFJPWUFwaEdFTVEtdTc5OERtNFpVQ01CRDJuS0U2NnlDcFllYm9hSFBFOHhRcDliVTBwN2ZwRmY5ZEk4VWN4b2hyMGZrNGg0R2ZzZkhodWlMR1M3R1JvQ203cF9ycFJxcWtONElJSQ?oc=5",
         "https://news.google.com/rss/articles/CBMivgFBVV95cUxPUFIzWVdVaDVIZXdDdGkxUEtZQUt4dmZUYWdtaHUwSjZMOEVFeXdtUmhkYjVvbWtXdFRIQVpBLVh6VmZjYzhySm9OTE9DMllUMW5CUFJIc01GRjRYdWlYRWlxWFZkLTFaUjB4WE9HaV91dEtvdUhTSVdFVGU5UUlSRTc0S1Zwd0RZTk5YQTlqLUtUMFA3Rm9qd0dMVG1hTG95QUdySnh0WmFoRHo4Vlh5TGxDSm9CMzJRdTlFYTRB?oc=5"
-      ]
+      ],
+      "ref_names": []
     },
     {
       "tag": "[社群趨勢]",
@@ -288,7 +291,8 @@
       "ref_urls": [
         "https://github.com/anthropics/claude-code/issues/65697",
         "https://github.com/anthropics/claude-code/issues/27302"
-      ]
+      ],
+      "ref_names": []
     }
   ],
   "topicRadar": [],

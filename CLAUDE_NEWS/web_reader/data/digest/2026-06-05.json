@@ -125,7 +125,8 @@
       "text": "Anthropic Institute 發布《When AI Builds Itself》報告（HN 477）：AI 正在加速其自身的開發——Anthropic 工程師平均每人可交付的程式碼量已提升 8 倍；報告首次披露 Claude 現在負責 Anthropic 超過 **80-90% 的生產程式碼**；並呼籲業界在「遞歸自我改進」成真之前建立全球協調的暫停機制（「煞車踏板」）。",
       "ref_urls": [
         "https://www.anthropic.com/institute/recursive-self-improvement"
-      ]
+      ],
+      "ref_names": []
     },
     {
       "tag": "[重大事件]",
@@ -133,7 +134,8 @@
       "ref_urls": [
         "https://www.ft.com/content/d02d91b3-2636-454e-9442-dc7e69f51815",
         "https://github.com/anthropics/defending-code-reference-harness"
-      ]
+      ],
+      "ref_names": []
     },
     {
       "tag": "[重大事件]",
@@ -141,7 +143,8 @@
       "ref_urls": [
         "https://www.wsj.com/tech/ai/anthropic-urges-global-pause-in-ai-development-flags-self-improvement-risk-99cefb73",
         "https://news.google.com/rss/articles/CBMi2wFBVV95cUxNbzBTUlhlNzdLejQ4LTZzMlJpZXBQalFXanV0NThyYnNTVEI2SWRHRUpqN2ZxVHc2MTBuYVJUN1RLc25xY3QxN0szY1BhWDFDLTZrQjhjOWpTR0xRN0NnYmJWLVBWSTFvXzUyTmZISFpMMFpTWkVOUFhDRnZobWpRWFJWa3RNdTRaaEE1ODRpdkd4RXZxRTd2UnlPT3lCX0paNmlzZnZLRE14R2U0TlR4dlBXMjJyX1FSbjJOWkFfejcxMXJ3VmZiOVNiNGtGNUhYZVJYN0RWdnZZVFE"
-      ]
+      ],
+      "ref_names": []
     },
     {
       "tag": "[風險警示]",
@@ -149,14 +152,16 @@
       "ref_urls": [
         "https://www.tradingview.com/news/cointelegraph:52f56f35b094b:0-zec-drops-30-after-anthropic-ai-finds-zcash-counterfeit-vulnerability/",
         "https://news.google.com/rss/articles/CBMingFBVV95cUxNT3U4QV84NjlESFlKcjBJNkJWeEwyZ3BURV9Yc0R2VGY1NzdManhGbUkySmFpR0RQTE5OMDVQZU43dDI0VGVralJ1N0w4UkkzMFBad2daN1dSbXN5bm9NTXJqd0lCY3RuY1kyZnVKMDVwbzhFajZ2cmdSblVOelRUaVprSmxpVUJ1ZC14c2luMW9wVWNaTzRZUE5hRDJnUQ"
-      ]
+      ],
+      "ref_names": []
     },
     {
       "tag": "[重大事件]",
       "text": "Anthropic 官方發布《Lessons from building Claude Code: How we use skills》（claude.com blog）：Anthropic 內部數百個 Skills 的實戰心得——什麼值得做成 skill、如何結構化、何時分享；是目前最權威的 Claude Code Skills 設計指南。",
       "ref_urls": [
         "https://claude.com/blog/lessons-from-building-claude-code-how-we-use-skills"
-      ]
+      ],
+      "ref_names": []
     }
   ],
   "topicRadar": [],

@@ -215,27 +215,32 @@
     {
       "tag": "[重大事件]",
       "text": "Anthropic 宣布收購 SDK 與 MCP 伺服器生成商 Stainless，傳聞金額逾 $300M，此舉將強化 Anthropic 對開發者工具生態的掌控，MCP 伺服器生成能力可能成為 agent 時代的核心基礎設施。",
-      "ref_urls": []
+      "ref_urls": [],
+      "ref_names": []
     },
     {
       "tag": "[風險警示]",
       "text": "資安研究人員揭露 Claude Code 存在 RCE 漏洞，攻擊者可透過惡意 deeplink 執行任意指令，同日另有工具揭露 Claude Code 等 AI 工具會將.env 金鑰以明文永久留存於本地資料庫，安全疑慮集中爆發。",
-      "ref_urls": []
+      "ref_urls": [],
+      "ref_names": []
     },
     {
       "tag": "[持續追蹤]",
       "text": "Microsoft 內部實測六個月後以成本為由放棄 Claude Code，儘管開發者反應熱烈；同日有企業工程師透露公司月帳單已達雲端費用三倍、即將全面停用，企業 AI 工具成本壓力成為顯著趨勢。",
-      "ref_urls": []
+      "ref_urls": [],
+      "ref_names": []
     },
     {
       "tag": "[新工具]",
       "text": "跨 session 記憶、MCP 上下文管理、開源桌面替代品等工具密集發布，反映社群積極填補 Claude Code 原生能力空白。",
-      "ref_urls": []
+      "ref_urls": [],
+      "ref_names": []
     },
     {
       "tag": "[社群趨勢]",
       "text": "MCP context bloat 問題首次被量化：9 個伺服器造成 38k tokens 冷啟動成本，引發對 MCP 實際使用效益的重新審視。",
-      "ref_urls": []
+      "ref_urls": [],
+      "ref_names": []
     }
   ],
   "topicRadar": [],

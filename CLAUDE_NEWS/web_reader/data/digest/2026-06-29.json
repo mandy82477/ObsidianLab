@@ -263,35 +263,40 @@
       "ref_urls": [
         "https://qz.com/anthropic-mythos-5-clearance-trusted-partners-commerce-062926",
         "https://www.axios.com/2026/06/27/anthropic-fable-5-return-soon"
-      ]
+      ],
+      "ref_names": []
     },
     {
       "tag": "[重大事件]",
       "text": "加州州長 Newsom 與 Anthropic 簽署協議，擴大政府使用 AI 範圍，AI 走入美國州政府。",
       "ref_urls": [
         "https://www.politico.com/news/2026/06/29/exclusive-newsom-anthropic-ink-deal-to-expand-government-use-00979584"
-      ]
+      ],
+      "ref_names": []
     },
     {
       "tag": "[風險警示]",
       "text": "Claude Code 被揭露會直接執行 GitHub repo 中的隱藏惡意程式，未做驗證即賦予攻擊者完整系統控制權。",
       "ref_urls": [
         "https://the-decoder.com/claude-code-runs-a-github-repos-hidden-malware-without-verification-giving-attackers-full-control/"
-      ]
+      ],
+      "ref_names": []
     },
     {
       "tag": "[持續追蹤]",
       "text": "Alibaba 旗下 Qwen 實驗室關聯運營商於 4 月至 6 月期間對 Claude 發出 2880 萬次查詢，Anthropic 已向美國參議院揭露此事。",
       "ref_urls": [
         "https://dev.to/peremptory/anthropic-told-the-senate-that-alibaba-queried-claude-288-million-times-5epd"
-      ]
+      ],
+      "ref_names": []
     },
     {
       "tag": "[社群趨勢]",
       "text": "奧地利遊說歐盟吸引 Anthropic 在歐盟境內設立據點，歐洲積極回應美國 AI 出口管制衝擊，AI 地緣政治角力持續延燒。",
       "ref_urls": [
         "https://www.bloomberg.com/news/articles/2026-06-28/austria-lobbies-eu-to-host-anthropic-after-us-access-curbs"
-      ]
+      ],
+      "ref_names": []
     }
   ],
   "topicRadar": [],

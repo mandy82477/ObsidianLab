@@ -218,7 +218,8 @@
       "text": "Anthropic 宣布與 DXC Technology 展開多年全球聯盟，DXC 將訓練數萬名 Claude 認證工程師，把 Claude 導入全球最大銀行、航空公司、政府機構等受嚴格合規監管的系統。",
       "ref_urls": [
         "https://www.anthropic.com/news/dxc-anthropic-alliance"
-      ]
+      ],
+      "ref_names": []
     },
     {
       "tag": "[重大事件]",
@@ -226,14 +227,16 @@
       "ref_urls": [
         "https://qz.com/anthropic-claude-corps-fellowship-nonprofits-150-million-061126",
         "https://dev.to/mdpulok443/anthropic-launches-150-million-claude-corps-to-place-1000-ai-fellows-in-us-nonprofits-3j1g"
-      ]
+      ],
+      "ref_names": []
     },
     {
       "tag": "[技術更新]",
       "text": "Claude Code v2.1.175 新增 `enforceAvailableModels` 管理設定，允許企業管理員鎖定可用模型白名單並同步限制預設模型，強化組織控管能力。",
       "ref_urls": [
         "https://github.com/anthropics/claude-code/releases/tag/v2.1.175"
-      ]
+      ],
+      "ref_names": []
     },
     {
       "tag": "[持續追蹤]",
@@ -241,7 +244,8 @@
       "ref_urls": [
         "https://twitter.com/elder_plinius/status/2064776322979676227",
         "https://news.google.com/rss/articles/CBMieEFVX3lxTE51d0YxWGdWWXdvSHFjUmVJaV9uaGZYUnhoVHV5QkswNkc5cl9OMTZpVFJXTlJ0ZzNCeTFrYTBQeFlWeEpic3N2UHVmWmRsYV9HQ3VmQmZabTZFRFhoS1YyZGg0S0Y0Si11blhmZWxRaGdwb19HcmlFadIBfkFVX3lxTE1sVWl3bDdjeVJqaElzM2oyMW1pMWNQODgtWU1wQ1ZHTnU2aGVBei0xeldzem5YUlNBZFF4U29CN3RfRGNZTFNDTl9FT3Q0T04wWUpYMC1Ob3luWHE5V3k0anMyS1VTc1paQjNrLVBNNEpsLVotWHZ0RXdlS3o3QQ"
-      ]
+      ],
+      "ref_names": []
     },
     {
       "tag": "[社群趨勢]",
@@ -249,7 +253,8 @@
       "ref_urls": [
         "https://www.wsj.com/tech/ai/openai-considers-drastic-price-cuts-anticipating-war-for-users-with-anthropic-9b8c178e",
         "https://www.wsj.com/tech/ai/the-ai-price-war-is-here-piling-pressure-on-openai-and-anthropic-86e1d21b"
-      ]
+      ],
+      "ref_names": []
     }
   ],
   "topicRadar": [],

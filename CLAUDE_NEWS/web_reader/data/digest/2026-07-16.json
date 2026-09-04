@@ -524,7 +524,8 @@
       "text": "使用者回報 Claude Code 帳號的手機號碼驗證機制出現問題，該 issue 累積 741 則留言與 892 個讚同反應，為本日互動量最高的條目。",
       "ref_urls": [
         "https://github.com/anthropics/claude-code/issues/34229"
-      ]
+      ],
+      "ref_names": []
     },
     {
       "tag": "[重大事件]",
@@ -532,7 +533,8 @@
       "ref_urls": [
         "https://news.google.com/rss/articles/CBMijwFBVV95cUxOeHFQYkNnd05RT1dqSERjTm1MUnBsWDhkQ281emdIa3Z3bzdReHA0VmdibnpjdjVkamRtdTl3RlNEdWdEVE9QZ3ZNR1lxQTBBTHpRM0t3ZXh5ejZ0dXpqM0JaTzBTUEJfeTJWeVNtTGQ5b3ZHREkxOHNCaHJ3b2p6UWNjT1I4emxGYmkzS193QQ?oc=5",
         "https://news.google.com/rss/articles/CBMiwwFBVV95cUxOZjhJWWR3ejJUNmp4Q1ZfU1l2ZXBaOUgwUXU5S3BBWU5KaVc0WF9BdnBqOXV3dWdMODdGTWpaZEN1YUctOXV4T005NXFra25RVTh0aC00NWFCMFNwN0tKY2hIYXc0bTBVcXBDUWduYkpTT0JpeVB2LW9XRmVMeE1XMHB0cnFyY1UyRGRKSWRhR2ljaHRod2IxU3YwZ3hKYnR2RzJyS3Y3dms5c1pBbWlvYlFXMVlzMWRvQ2ZtWC1VSVhQbWc?oc=5"
-      ]
+      ],
+      "ref_names": []
     },
     {
       "tag": "[持續追蹤]",
@@ -541,21 +543,24 @@
         "https://news.google.com/rss/articles/CBMiqwFBVV95cUxQNkVmYUVXbHZhdWlJaWFhLTJsc0Q3cFFCQ3otMGltb0hoYkozS25fOEIwUE1jNTBSYXZXQk5WUzRoQUZjb1Ffel9oSDRIZ0kwX0drWXFRcUVjVjhnQWQzSmg5TWFXSHVNd0Q3WGc3QzBGc3NhMU0tbWRGZHRTN0R0VVN6T29YTFAwZEV2V3YzclZER3UxSTFjRmJiWnB5aUJjaXQ2NktJa2NjNkk?oc=5",
         "https://news.google.com/rss/articles/CBMif0FVX3lxTFBoMmdQUDFHY0FnQXJQclVJNHdFbmt1M25LREN2dXB0VjF6Nmt6RHV3YVVvb2dTZzhqYWtSd0JDZ0M5ejEwbXZYUHphWEJPaWdERG80WTh5d1hkbFZIazlmdENjZmhQSF95cS1tS1N6XzB4ekRhb2FfSXZ1eWx5RmPSAYQBQVVfeXFMT2FQMi0zc0hGQjJ4Vk9QYUxCZWRvWW1xUXJEM3NwejVWUjAtRXBkN3g2ZnhIMGkxY0dLRFV3bjk2akg2VEJycV9vQk5Vdmx0OHpJanJrUHFDb0RPNlVKSEptSVRZQW8zbkkta3E3Ty16OXV2X205dEM0bm1VclJ0aUg1RHJV?oc=5",
         "https://news.google.com/rss/articles/CBMitgFBVV95cUxQUmoxVDhqZ1NBaXFHcUJtX3plQ0t6dDl4dGk2SXZjVk42RVJGR1BVbWJCei0zMWtVUzI3WTRxSGJYRk1jSTAyY0hRSjJBSGJIcG1BMlZkbmRVcFl5UVNFYXB6RW1vZlNJOV96YkhTVXl6SWlVZUhUVzBUVXFsQ1dwQmFzUGRqcWl3T0hoblpDR2ZiWmpHWkV3Z1RVVWQyWl9yQ280UDNaYm1rTzhGUDhBQ3Q1dHNDdw?oc=5"
-      ]
+      ],
+      "ref_names": []
     },
     {
       "tag": "[風險警示]",
       "text": "資安研究部落格披露一起透過 web fetch 誘導 Claude 洩漏使用者機密資訊的手法。",
       "ref_urls": [
         "https://simonwillison.net/2026/Jul/15/claude-web-fetch-exfiltration/#atom-everything"
-      ]
+      ],
+      "ref_names": []
     },
     {
       "tag": "[新工具]",
       "text": "Claude Code 發布 v2.1.211，新增 `--forward-subagent-text` 旗標與對應環境變數，可在 stream-json 輸出中包含 subagent 的文字與思考內容。",
       "ref_urls": [
         "https://github.com/anthropics/claude-code/releases/tag/v2.1.211"
-      ]
+      ],
+      "ref_names": []
     }
   ],
   "topicRadar": [],

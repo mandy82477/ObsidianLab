@@ -533,14 +533,16 @@
       "text": "Anthropic Status 頁面顯示 Opus 4.5 出現錯誤率上升事件，官方已實施修復並持續監控結果。",
       "ref_urls": [
         "https://status.claude.com/incidents/hlt0yqp4lkww"
-      ]
+      ],
+      "ref_names": []
     },
     {
       "tag": "[風險警示]",
       "text": "部分 Claude Code Max 方案用戶被系統誤判需使用點數才能存取 Fable 5（該功能實屬方案內建），官方確認為誤判，並提示受影響用戶重新啟動。",
       "ref_urls": [
         "https://status.claude.com/incidents/tnypgb2jbqnq"
-      ]
+      ],
+      "ref_names": []
     },
     {
       "tag": "[持續追蹤]",
@@ -549,21 +551,24 @@
         "https://news.google.com/rss/articles/CBMioAFBVV95cUxQTzB1S012cHg4eEkzckQ5QndPdG14Q0FPcUpyLUdGWUZGUldBTnhYWGltdnQ5bUdLOEluV05iYkd2cm44SEYyZEtqMlctbE9PNGMtUzI3MzhDdFVwRTM4MENFalE5aUx5cklkamVvX3dsWG1SSnZYakcxeEMyWWUyVFJCaks1Y0RDR2trUldGcG5JbHFwX3lkbGh1NV9WOFA4?oc=5",
         "https://news.google.com/rss/articles/CBMiswFBVV95cUxPakRPRHUwd1M1b09VMGxEN2t6V3JfNzVsc3Zpcko1djRPaXVpdlAxYTh1eld2MkVSTUVlV1VCOXExUHkzSnFMQ2h3aXV0SHdEN2g4UXRBTlYzMm5rQnBVQmVpNzZwSWdkRG1ybU4zQ1p4dXFaWjUwTGxFQzRQM0FzVUE1TTM4UjllUDFWRjRKZS14MjdTbmhkZVYtR1BaenF2RlRydXZvTWstdmJMRFNhSGZKONIBswFBVV95cUxPLVNNNUpSUTZvb3ZlaUVrN2NWOF9nX21xNTFfbl9BUEg0VkpfZnh5M05HcVhoT0g3NDZsLWVRNlJud21VWGRSdzlweXR5dTN0NzFSLU5Rc1N1cks3SzZkd0JveFdPb0swTC01LWhlbmpfVXF2U3BFQTUtb2RjaXJxQUVqUXpSVlBZWGQzak1BMm5GTUJUZGdNUDc3c3VLeXhSd0pESkdTRXQ5WkkyNGMtdFlfdw?oc=5",
         "https://news.google.com/rss/articles/CBMib0FVX3lxTFBPaEFIdkhwZHd5bUtuQmY1NzRDdHIzajdWZWU4N29HdXpVS1dIODQtNEhPY1ZPSi1RanBiZFV2OWg5aG8xUDNwQi1xVFBlclI5bWRfenFqSm56UUNhVnlaVnRSZUtVYWl2dXZFUzVZUQ?oc=5"
-      ]
+      ],
+      "ref_names": []
     },
     {
       "tag": "[商業動態]",
       "text": "Yahoo Finance 報導 Meta 正評估對 Anthropic 挹注最高 100 億美元的 AI 運算合作。",
       "ref_urls": [
         "https://news.google.com/rss/articles/CBMilgFBVV95cUxPdlFKa0lQZzNHbV9WSEZCODZ5d245LWhvRHJuNDlsZmlRcVZGVndvLXM5UUczUHpJbldTYkU0UjFSWmNwQ1l0Tjl1WUtiaUx5ZWlPUjBZbmloNUx2N2NZZVQ4UXg2MUtxUE9HSnlxTzdNMFYyZDVSVm05b0daWlA2M0dhTUFZNzNRcUpuRUduVDZXX2oxSXc?oc=5"
-      ]
+      ],
+      "ref_names": []
     },
     {
       "tag": "[商業動態]",
       "text": "Yahoo Finance 報導 Anthropic 傳出仿效 SpaceX 模式，於 IPO 前尋求數十億美元規模的信貸額度。",
       "ref_urls": [
         "https://news.google.com/rss/articles/CBMipwFBVV95cUxNNmJUYXZDTllxeUtmc1h6aHFQdnE4UEE3eGpLUFM4T2RCMGE3Z3dMSEI3dHZMQ2ZadVJKX25QekdmV3k4TktFazhKUW8tbHVpWVNWUDg2WXB4ZVFwSUJZUzBZWVQ0Y0tnX1VRc2w1a0VNV29UV1MxNzN1cEVuRUlDLW81b1ZaX0doZC0yYXdLcVlpSGFMdldTblRQNXZZMEdsc2FvZTYyRQ?oc=5"
-      ]
+      ],
+      "ref_names": []
     }
   ],
   "topicRadar": [],

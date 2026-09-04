@@ -308,14 +308,16 @@
       "text": "Anthropic 發布 Claude Corps 計畫，招募 1,000 名 Fellows 協助全美非營利組織導入 AI，並由 Anthropic 全薪聘用一年。",
       "ref_urls": [
         "https://www.anthropic.com/news/claude-corps"
-      ]
+      ],
+      "ref_names": []
     },
     {
       "tag": "[重大事件]",
       "text": "Anthropic 就 Fable 5 的隱性 LLM 研究限制政策道歉並撤回，承認「做了錯誤的取捨」，將改為可見的防護措施。",
       "ref_urls": [
         "https://www.wired.com/story/anthropic-responds-to-backlash-on-claudes-secret-sabotage-on-ai-research/"
-      ]
+      ],
+      "ref_names": []
     },
     {
       "tag": "[持續追蹤]",
@@ -324,21 +326,24 @@
         "https://techcrunch.com/2026/06/10/cybersecurity-researchers-arent-happy-about-the-guardrails-on-anthropics-fable/",
         "https://github.com/0xSufi/fable-jailbreak/",
         "https://news.google.com/rss/articles/CBMi8AFBVV95cUxOd1dEMHZkT2VEVEhhT05rZ0YzNkFCM3pxRGhXNVVUNUJqZ245dlBIRHBsZGpQOU9BMWZLV1ZseVlPWXNwdnRaX3FuV2t2Wnc0RUFhcEdFalFpNDQ1NkZuQXdPMFhPNndObXhVbUctV3RZSFpSbHFiZ0x5cExmQXJ1Y0o1b0RFTk90SEcyTjhnNmt3RTBkaEJNZnhZX1RZLWFGRkFaUG5NVjN6RTFtVGNSekxtRE1VeGVEazAwTFBsVmZkRDdfNU1oVzc5WGpWeWRZWUNQMXBWLVZMUGoyX1ZGZjdnLTFyX3RIOUl0VkV6WFPSAfYBQVVfeXFMTWR1OExhOGhzd3RtYzdTRzBHYWRteEprN2l4anYwTkZLS0lJUTdsS1AtR21sR0RYSkZzZVYyQk5oNWxiS3hsUHdQeDlUZW1sSktTSG9Ka3RPRTdEbG1UTVBiQUs5SFNBd1I1TWUzZ1ppLVFhcVRoUWJQYk9KVXZENTJEN2o1bXA0TWtOQ29tVlk0ZXVVYlc4N0N1Zlg2ZW5tc0Y1MUtDZ2VrVGRkbS1xYV80YWNWR3otNXkzVW1yNVFINmxsR1JheHN4VUVibXZiVWZFMG8yQlhaUko1U3lZUE0tbDVybkowMzR3aEo0QjhTZnI1NURR?oc=5"
-      ]
+      ],
+      "ref_names": []
     },
     {
       "tag": "[社群趨勢]",
       "text": "OpenAI 考慮大幅降價，明確指出是「預期 Anthropic 即將降價」所致，AI 定價戰正式展開。",
       "ref_urls": [
         "https://www.cnbc.com/2026/06/11/openai-mulls-slashing-prices-ahead-of-competition-from-anthropic-wsj.html"
-      ]
+      ],
+      "ref_names": []
     },
     {
       "tag": "[新工具]",
       "text": "TCS 與 Anthropic 宣布 Global Premier Partnership，向 5 萬名員工推廣 Claude；同時 Foyer、Claumon、5dive、Workplane、ShellShot 等 Claude Code 周邊工具持續湧現。",
       "ref_urls": [
         "https://www.moneycontrol.com/europe/?url=https://www.moneycontrol.com/news/business/tcs-ties-up-with-anthropic-to-roll-out-claude-ai-access-to-50-000-employees-13946875.html"
-      ]
+      ],
+      "ref_names": []
     }
   ],
   "topicRadar": [],

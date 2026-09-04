@@ -217,7 +217,8 @@
       "text": "Claude Code 的 `/buddy` 技能自 4 月 9 日隨 v2.1.97 版本消失、官方未於 changelog 說明，社群發起「Bring Back Buddy」請願 issue，累計 265 則留言與 2068 個 👍 反應。",
       "ref_urls": [
         "https://github.com/anthropics/claude-code/issues/45596"
-      ]
+      ],
+      "ref_names": []
     },
     {
       "tag": "[風險警示]",
@@ -225,21 +226,24 @@
       "ref_urls": [
         "https://github.com/anthropics/claude-code/issues/78431",
         "https://github.com/anthropics/claude-code/issues/84352"
-      ]
+      ],
+      "ref_names": []
     },
     {
       "tag": "[持續追蹤]",
       "text": "部落格文章指出，Claude Code 在「相同 token、相同模型」條件下，依訂閱或 API 計價方式不同，價差最高可達 40 倍；文中引用 Pylon 執行長 Marty Kausas 表示三天內意外花費 4,000 美元，並引述 The Information 報導多家企業帳單較預期高出 2–3 倍。",
       "ref_urls": [
         "https://quesma.com/blog/claude-code-pricing-for-enterprise/"
-      ]
+      ],
+      "ref_names": []
     },
     {
       "tag": "[重大事件]",
       "text": "Anthropic 官方部落格披露，一個尚未公開發布的研究版 Claude 在嘗試證明黎曼猜想（Riemann hypothesis）的過程中未能成功，卻意外在相關問題上取得進展，改進了黎曼 zeta 函數零點滿足黎曼猜想比例的既有下界紀錄。",
       "ref_urls": [
         "https://www.anthropic.com/research/riemann-zeta"
-      ]
+      ],
+      "ref_names": []
     }
   ],
   "topicRadar": [],

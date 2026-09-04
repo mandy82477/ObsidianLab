@@ -195,7 +195,8 @@
       "text": "Claude Code v2.1.150 被發現允許 Anthropic 遠端注入系統提示：啟動時呼叫 `api.anthropic.com/api/claude_cli/bootstrap` 並快取至磁碟，GrowthBook 功能旗標（`tengu_heron_brook`）每 60 秒背景同步，回傳字串直接注入 shell 存取 LLM 的系統提示；研究者指出前版本也有注入點但此次範圍更廣。",
       "ref_urls": [
         "https://news.ycombinator.com/item?id=48259288"
-      ]
+      ],
+      "ref_names": []
     },
     {
       "tag": "[重大事件]",
@@ -204,14 +205,16 @@
         "https://red.anthropic.com/2026/exploit-evals/",
         "https://www.politico.com/news/2026/05/24/anthropic-openai-mythos-what-to-know-00934668",
         "https://news.google.com/rss/articles/CBMirwFBVV95cUxPN3FJd2VYLTBpT25reWRTb1hrTWhZdGN1RFA4SFNrcFg0ZUhiS2prMWpERDI3N2FSbXJjalNoS1FSN1VBMWpjcVROeGo5UG5JRkQ3UVMyNE40emx5TzBVVHBpU25EZFh1OFJuNFhGcU5uUjFoYWtUQUN4X1BMR2NBbUxVRVVYd1ZyX0JVNTBoX2syaWdfLW0zaE9CQVNSN0hWMWhnYzNQRklZSzhsTmtN"
-      ]
+      ],
+      "ref_names": []
     },
     {
       "tag": "[重大事件]",
       "text": "Anthropic 發布《2028：AI 全球領導力的兩種情境》報告，分析美中 AI 競爭走向，強調晶片是最關鍵資源，主張美國及盟友需保持領先以防威權政府大規模利用 AI 壓制人民。",
       "ref_urls": [
         "https://www.anthropic.com/research/2028-ai-leadership"
-      ]
+      ],
+      "ref_names": []
     },
     {
       "tag": "[風險警示]",
@@ -219,7 +222,8 @@
       "ref_urls": [
         "https://news.google.com/rss/articles/CBMif0FVX3lxTFBWbzNuNVNvclRMNmo1czZFRUxCX0hITFZiZHZ3T001OW9LbW5hSzBfRHdic3hrbWM5X3pfaW9rTndYRVJJeXRWbVl6REM4SWo5Q1IzVGg1eTFaZTVSMFJHZ21XME5kaVNDUHNxS3pUWFdRYVVUMGhVZE45RWZHSFk",
         "https://news.google.com/rss/articles/CBMiuAFBVV95cUxNendSZUJXdEJhTkFlZjJCMEhUR0JqZ01zX2t4M2VKQXpGT0Z1NFZXaVR4RUtmaFhnNUNBOEloWi0zQm13a3VaZzFFYWdkT2ZmSkducGFISzM5RnJubHVsVUs1T01SRTdDTm5kRkZsYTlMYUlnV1JWQXhSNWxXb1Rfd2xDQWZibmFBbVI5UXNVVTN3VmFuSkl2bFd1Z3RNSzdfQjZEbWVvR1lYR2E5bEdpaGpnMklKamJo"
-      ]
+      ],
+      "ref_names": []
     },
     {
       "tag": "[社群趨勢]",
@@ -227,7 +231,8 @@
       "ref_urls": [
         "https://www.reddit.com/r/ClaudeAI/comments/1tn2o1w/i_ran_claude_desktop_for_a_month_and_73_of_my/",
         "https://www.reddit.com/r/ClaudeAI/comments/1tn6cey/i_measured_my_claude_code_mcp_stack_on_two_axes/"
-      ]
+      ],
+      "ref_names": []
     }
   ],
   "topicRadar": [],

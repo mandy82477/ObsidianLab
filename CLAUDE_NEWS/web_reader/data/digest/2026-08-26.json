@@ -261,7 +261,8 @@
         "https://support.claude.com/en/articles/12138966-release-notes",
         "https://news.google.com/rss/articles/CBMinAFBVV95cUxOWTdycFBzMHU4NzJmSzlIU3phVElhQ014U3BRUHU5UXRvMlhJNGg5OE51QnR6c2Vabk93d0lCQjNvVWo4SjVST0hEV0hMWDdiMGYydlgyaGI0RnNUODdhc09nRUM3TUdaYnp5ZnJwMERvR05JVWdXWHZ2bFI3M1h5NHJER0VFZmg4LTdWbVpvRjNqdFhtNEkyMFIyNUo?oc=5",
         "https://news.google.com/rss/articles/CBMiwAFBVV95cUxQdFZRVHFsaUZEUDlSZGJ1YU9xRmRKUHd5aHV1LXZLZzUxRVVTOXB2TW41VThRZ3kwRlFTTGtjMkVOQjNIWlZxQllob3JmanFGQjhlZTFHeTNheU04bl93MjVxRmM0R193SFpGd2NCOG5ONE5rbVZDdU50VlZYQ3pwMzBUZ2NNOUFqQ0x5VEdmcVdUUzVDQUg0V3dWSFBNQ1NqYWhBVDlybW9lWWNUdVgteE02NUxTVlhnTFFHZ0RhMHk?oc=5"
-      ]
+      ],
+      "ref_names": []
     },
     {
       "tag": "[重大事件]",
@@ -269,7 +270,8 @@
       "ref_urls": [
         "https://www.wsj.com/tech/ai/anthropic-expected-to-tell-investors-it-sees-over-30-trillion-in-potential-revenue-a611efea",
         "https://news.google.com/rss/articles/CBMiqgFBVV95cUxQN1JNLS1oTUIxdTdab29yOXE0TFRhTjNBaWF4UFk2WGpzX2wyektleXotNkdpRVNjZmZOY04xUWdqRG53d1ZUMTYya2tZOFJxckJFNjlXcDNjcUxTcXJIOWtzdnczMk1Ia2JxV3c0QmJGNkh4Ni11dkRkOVBvY3NyZ2JjYzV1bHB0WmMzMWZITEEwQW40UV9lZG5lVk0zRHRxOTVwYlhpN1lLdw?oc=5"
-      ]
+      ],
+      "ref_names": []
     },
     {
       "tag": "[社群趨勢]",
@@ -277,7 +279,8 @@
       "ref_urls": [
         "https://news.google.com/rss/articles/CBMiYkFVX3lxTE9kOEpmSGtkU2M5SnROVV9kVVM0Z1liN1B6aW5pZkI4UC1ZV2VYaFU4WlNHbXU3a1NUVUxYOERxc2dJOU5Hak9DOTJmUEFYLXA5bnJjZFVPdlpxSzd1aDdaWlVB?oc=5",
         "https://news.google.com/rss/articles/CBMiU0FVX3lxTE1IeWhZak5Hdkd3S2M3clQ3YVVMeUxLYVg3YzJhbmZkM2JtMGQ0UEZOaThZbURKa3Zhem5jMU9EOTZPMDFzemk2blY0eWZSaEcweFhn?oc=5"
-      ]
+      ],
+      "ref_names": []
     },
     {
       "tag": "[社群趨勢]",
@@ -287,14 +290,16 @@
         "https://github.com/anthropics/claude-code/issues/32668",
         "https://github.com/anthropics/claude-code/issues/63147",
         "https://github.com/anthropics/claude-code/issues/62063"
-      ]
+      ],
+      "ref_names": []
     },
     {
       "tag": "[持續追蹤]",
       "text": "本月 Claude 服務穩定性議題持續延燒：據報今日再度發生三起重大中斷，分別影響 API、App 與 Cowork。",
       "ref_urls": [
         "https://news.google.com/rss/articles/CBMipwFBVV95cUxQTWpXRVlaemJrLXZGZThkUDl3WDNGaF9hNGE5X3FLclF1QVpaSDNDM3BfZTZfVVlCb1JEYnltdGZNLVlBWjdfX0c3aGdSTzhMdlJZY1J3UXFVOEdQNkllUmx2WkpQMlZrcE9NV1h3bU01RE1sb05JUVo4VzRFaF8zNFBUeWhCRzVIS2RZNDBpYktYUHI3a3Z1b0R1R1NDTzQ3cTBqWmdKOA?oc=5"
-      ]
+      ],
+      "ref_names": []
     }
   ],
   "topicRadar": [

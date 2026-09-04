@@ -311,14 +311,16 @@
         "https://news.google.com/rss/articles/CBMilgFBVV95cUxPSmtqanI4ZERZSnZ6VlRPQXNCbnBhRTZYY016YVluUkU0QW11eTNKMmJtRHF0R3Z1NE1TTnZxM1dDWUpTcWJ0Z29Zc00wT3pMekFoRk16VmxMOWl0dXNodU04SFhLVjF0VE05Tm1TLURWRTNWN2NQSjFCcEIyVGt1a3lnSUxSVzJGUHBONDZtVWhodTJwcVE?oc=5",
         "https://news.google.com/rss/articles/CBMinwFBVV95cUxNc3hnTE9YRFhXak1JWXFVUVNsRVlGN2IwMzhadzA1M2gyQ2x4X1RiaFhBVUhmajMtbkd3V1RUN0lkSGpyeGxwcDdyd3BzX0ZhdHVzN2RDN0xPN201b0hDLXk1bUZyVDNwbmZIRl9ObFlkbjlaa2JQWFNzOEpRWWlDVDlidGNXZ3NQUEtRUDN4aTlkamFTUkoyQl9ldDZMQ2c?oc=5",
         "https://news.google.com/rss/articles/CBMi4gFBVV95cUxQYzR6Tkp4Q2R0d3FJLWYtbDVoeXVLZGZsN2ZlWS1TNERMVVJiSHRxVXJJNUpZSXJ2V0N0d2lrQmRiaG85QUU4WDVuX2hoLWcxLTFTT2dkQzhfSTlvNEktOGpVMlRVQzdYV0cxUjR0NWticjJHUUQtMlNMbkpaYU8waUpUM3BTdlZsbTJ4RlRjTkpnZFBpM0VKV1hyTVVZNWR2Y2twM0hTWDlkTzMwT3hJVjNmYkRnUzdJVDBORWpDaGVJNHNxUGdCaE4xUUxxVHNKdDlQa0VtQXpuM1c5dld4WGZB?oc=5"
-      ]
+      ],
+      "ref_names": []
     },
     {
       "tag": "[重大事件]",
       "text": "有媒體報導 Anthropic 將為 Claude 工具生成的內容加上浮水印。",
       "ref_urls": [
         "https://news.google.com/rss/articles/CBMinwFBVV95cUxOWlZoaFl6aEFqWUlSdGh5MU8xdjNwSmxKNUtoT2VQalNGVk9TWlN1QUJRVl9wZmdvcjhqSlg5WW5aTEVPUFZzYWtiZUtxSVVMUEVkQVBXWkZEVFFpZ2NOVWV2RVRheVU3V2F5bzZ1QnVTQmJJUU9hay1zeVh4UHZpY1RBRGdMbmgyN3BqSlVMNXZSazc5QTlyeGMyT2Z2c0U?oc=5"
-      ]
+      ],
+      "ref_names": []
     },
     {
       "tag": "[社群趨勢]",
@@ -327,14 +329,16 @@
         "https://github.com/anthropics/claude-code/issues/50246",
         "https://github.com/anthropics/claude-code/issues/60705",
         "https://github.com/anthropics/claude-code/issues/2805"
-      ]
+      ],
+      "ref_names": []
     },
     {
       "tag": "[新工具]",
       "text": "Show HN 推出免截圖的螢幕活動記憶工具，讓 Claude Code 讀取每日活動紀錄回答「那天做了什麼」，登上 HN 熱門並獲跨來源討論。",
       "ref_urls": [
         "https://github.com/dragthelake/ambient-context"
-      ]
+      ],
+      "ref_names": []
     }
   ],
   "topicRadar": [],

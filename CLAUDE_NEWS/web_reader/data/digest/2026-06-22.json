@@ -243,7 +243,8 @@
       "ref_urls": [
         "https://news.google.com/rss/articles/CBMiiAJBVV95cUxOMlgtNGxIZmxGLU5DZnRQWjh2OWlYX1hTYmdYNWNhMzlzVFRiOEdpQmRMNUNtemZvbkMxS0pidU9EdGdWd292MDIzYllORXdzU1JDODJQZE5YdW9LSzFtaXNnVnVNYnU2NU0xN3FDZVNfV18yaTNFQlF5MlFITWlXVGxnamdoR3ZHb0dUMFFKMk9BdHdYc0pvRE9RcEhhNE42aWx6ZnNSeVlNWjJHWWFVNTNOcTk1ZmU1R3FNVDB5U0hQRXVwMGk0Z0tPMTZpLTd5MFhXWGtLNHpzZ21ZWE1aZGd2SVllbDdPX21pcVFxSmc1N3otUnhZYTBnVG0zT3FvUk8zbWM0al8?oc=5",
         "https://news.google.com/rss/articles/CBMiwgFBVV95cUxNbHY0cFhVTGtoRnNma1QwOS1WVHREc1pROVEyVXc0SnZoQWtMYmRXaE5XM3laeUxRZFBvY0F6QWNwRVYxT2c1T05rRERyS3FSQllGS3RVbDVTMklTU3JRU2Z6Qkd5eDFORXFaRDIydjVKNVpTRXRBcFYyVTFnMjg3UngwdmUwN2VWLTQtTGJZZFdwQVBpU19kZFlvSTQ1VS1TZlM5WVl2NGh5UXVESVRrVHBQcUpLaUdYUVoyS2R5ekdTUQ?oc=5"
-      ]
+      ],
+      "ref_names": []
     },
     {
       "tag": "[重大事件]",
@@ -251,7 +252,8 @@
       "ref_urls": [
         "https://news.google.com/rss/articles/CBMikAFBVV95cUxQdHRvYXlSMDQ5VnBBTkpkcV85QlNOTkd1Z1RyNWZLenZfeGNMZzVsWmZnckx1SUxrekhnOEhLMmN0VzZ3cHgyVDZ0TjNWVzJSRFU0LURuRDRxaGtjdWtDZURzNnVTUlYzb1JIcXh2YW5YVUdQVTJyMXdLQ2RkaTBrU0RjUnZyMlRSaWVpck9YM3o?oc=5",
         "https://dev.to/peremptory/the-fable-5-jailbreak-was-three-words-long-457j"
-      ]
+      ],
+      "ref_names": []
     },
     {
       "tag": "[風險警示]",
@@ -259,7 +261,8 @@
       "ref_urls": [
         "https://news.ycombinator.com/item?id=48624168",
         "https://dev.to/damogallagher/anthropic-says-claude-api-and-claude-code-are-in-partial-outage-for-opus-and-sonnet-errors-33kc"
-      ]
+      ],
+      "ref_names": []
     },
     {
       "tag": "[持續追蹤]",
@@ -267,7 +270,8 @@
       "ref_urls": [
         "https://news.google.com/rss/articles/CBMiuwFBVV95cUxNS3lHV0hMNWZHYTZYWnFhTTJNekM0ZzMxLVFKSDRKa05GLXd1TjYzT3dnc25FRERQUzFieFF3dkdNa0pjSWR1WWVXRDJiVWFZekVzVDVwQ2JBTk9vU2thR21mcWs5cy1RMjQ4UmtkLWs3NmRsaXhmSlZ4V1pudzJsZm1wQ1FiOE1kRGhfSVoxaTNyZWQxTjZhQjYxcnplcWZsV2VsR010Wmdyc1pieGxhOC11bzJLNHcyWXpj?oc=5",
         "https://news.google.com/rss/articles/CBMiwgFBVV95cUxNTklxTWJwcms1UlBCeUYyTGtNTGFtdEtGcmR3bEJJWHY2VHRpbUJqR3lUdW13RkF6MWJ4SklkWEtEYUlOLURENnRDNWNjN1dCclZVVGNOQVV0OEg5U0gyY2pGWDVDY3JUR3lKelJGSHdxUUM1UXY2UXFpa09idjN1Z0ZLNFZWX2dmR1FyaDRrM2NVY2trNFJwbjJHdWZuYUUtck1rWU9VRWZEbV9kT2hXOUNxbm1iU3FwTlp3dzkzdUhQdw?oc=5"
-      ]
+      ],
+      "ref_names": []
     },
     {
       "tag": "[新工具]",
@@ -277,7 +281,8 @@
         "https://news.ycombinator.com/item?id=48619320",
         "https://github.com/anma-labs/anma",
         "https://www.woltspace.com/"
-      ]
+      ],
+      "ref_names": []
     }
   ],
   "topicRadar": [],

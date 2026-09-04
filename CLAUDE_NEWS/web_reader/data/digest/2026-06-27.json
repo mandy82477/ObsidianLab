@@ -135,28 +135,32 @@
         "https://www.semafor.com/article/06/27/2026/us-releases-powerful-anthropic-model-mythos-to-some-us-companies",
         "https://www.cnbc.com/2026/06/26/us-government-anthropic-claude-mythos5-ai.html",
         "https://www.reuters.com/business/us-close-allowing-anthropic-restore-fable-5-model-axios-reports-2026-06-27/"
-      ]
+      ],
+      "ref_names": []
     },
     {
       "tag": "[技術更新]",
       "text": "Claude Code v2.1.195 釋出：新增 `CLAUDE_CODE_DISABLE_MOUSE_CLICKS` 環境變數可在全螢幕模式下停用滑鼠點擊/拖拉，同步修復帶連字號識別符的 hook matcher 錯誤。",
       "ref_urls": [
         "https://github.com/anthropics/claude-code/releases/tag/v2.1.195"
-      ]
+      ],
+      "ref_names": []
     },
     {
       "tag": "[新工具]",
       "text": "Workweave Router（HN score 181）：直接嵌入 Claude Code / Codex / Cursor 的智能模型路由器，自動判斷任務難度並分配最合適的模型，解決 Opus 4.7 tokenizer 改版後成本暴增問題。",
       "ref_urls": [
         "https://github.com/workweave/router"
-      ]
+      ],
+      "ref_names": []
     },
     {
       "tag": "[持續追蹤]",
       "text": "Anthropic 指控 Alibaba 旗下研究人員向 Claude 發送 2900 萬次假查詢以複製模型行為，為今年最大規模的模型竊取指控。",
       "ref_urls": [
         "https://www.pymnts.com/news/artificial-intelligence/2026/anthropic-accuses-alibaba-of-running-29-million-fake-queries-to-clone-claude/"
-      ]
+      ],
+      "ref_names": []
     },
     {
       "tag": "[社群趨勢]",
@@ -164,7 +168,8 @@
       "ref_urls": [
         "https://qz.com/enterprise-ai-spending-openai-anthropic-roi-pullback-062626",
         "https://techcrunch.com/2026/06/25/anthropics-claude-is-winning-over-paid-consumers-a-market-owned-by-chatgpt/"
-      ]
+      ],
+      "ref_names": []
     }
   ],
   "topicRadar": [],

@@ -265,7 +265,8 @@
       "text": "美國正式解除對 Anthropic Claude Fable 5 與 Claude Mythos 5 的出口管制，結束長達 19 天的服務中斷。",
       "ref_urls": [
         "https://www.marketscale.com/industries/software-and-technology/us-lifts-export-controls-on-anthropics-claude-fable-5-and-mythos-5-ending-19-day-shutdown"
-      ]
+      ],
+      "ref_names": []
     },
     {
       "tag": "[風險警示]",
@@ -274,7 +275,8 @@
         "https://www.reuters.com/world/china/alibaba-ban-claude-code-workplace-over-alleged-backdoor-risks-source-says-2026-07-03/",
         "https://americanbazaaronline.com/2026/07/03/alibaba-bans-use-of-anthropics-claude-code-over-security-risks-484010/",
         "https://seekingalpha.com/news/4609862-alibaba-bars-employees-from-using-anthropics-claude-code"
-      ]
+      ],
+      "ref_names": []
     },
     {
       "tag": "[持續追蹤]",
@@ -282,14 +284,16 @@
       "ref_urls": [
         "https://www.ft.com/content/ad033063-60f9-4c0c-8d8a-9193a83e6f60?syn-25a6b1a6=1",
         "https://www.investing.com/news/stock-market-news/anthropic-targets-loopholes-used-by-chinese-firms-to-access-claude-ft-reports-4774998"
-      ]
+      ],
+      "ref_names": []
     },
     {
       "tag": "[持續追蹤]",
       "text": "Anthropic Status 顯示 Claude Fable 5 與 Claude Mythos 5 一度發生錯誤率升高事件，已於當日修復並解決。",
       "ref_urls": [
         "https://status.claude.com/incidents/mphfs246cjg1"
-      ]
+      ],
+      "ref_names": []
     },
     {
       "tag": "[社群趨勢]",
@@ -297,7 +301,8 @@
       "ref_urls": [
         "https://github.com/anthropics/claude-code/issues/6235",
         "https://github.com/anthropics/claude-code/issues/38335"
-      ]
+      ],
+      "ref_names": []
     }
   ],
   "topicRadar": [],

@@ -204,7 +204,8 @@
       "text": "媒體報導 Anthropic 目前能力最強的模型（代號「Model 2」）暫僅供內部使用，尚未對外開放。",
       "ref_urls": [
         "https://news.google.com/rss/articles/CBMikwFBVV95cUxQNFNjOV9kU1NNbl9IcUpyWHRpQjBpeHR1VU4tZm5iTmt5LVBreEdYOVRLRUdERUx6b0JIUTVKNmNmWWdqOVN0eTZwdzhrdnVTWnhFa1RJUDRWcjBRdkpqeHFlTjktTjNhZXZ1UzlwMzA4SWJjZUZJX2ZqNFg0SURhdGl0MTFfQlN2MmxQVGR6QUdFSUk?oc=5"
-      ]
+      ],
+      "ref_names": []
     },
     {
       "tag": "[持續追蹤]",
@@ -212,7 +213,8 @@
       "ref_urls": [
         "https://www.reddit.com/r/ClaudeAI/comments/1vrzmx9/anthropic_extends_50_limit_increase_to_aug_31/",
         "https://news.google.com/rss/articles/CBMinwFBVV95cUxPRkh5TFNKWHNTQXZzUV9XTGthdUZBQzJzRThrQlRwZ1YzalBhUEYtU29Sc2FBcWNDbWctQzFRRkxiQ2xtaWRxT2pUOGsyclBLME9udDgyX0tpRjM3NlV2V0dKME5QMDF1VHNHZ0VSSGF0amNaU09SSXljNzd2S1ZYN2twTUlyUWJHVG5iTDNmbExPN3ZDWjBqTU10U2JRTFU?oc=5"
-      ]
+      ],
+      "ref_names": []
     },
     {
       "tag": "[重大事件]",
@@ -224,14 +226,16 @@
         "https://github.com/anthropics/claude-code/issues/27801",
         "https://github.com/anthropics/claude-code/issues/50270",
         "https://github.com/anthropics/claude-code/issues/10199"
-      ]
+      ],
+      "ref_names": []
     },
     {
       "tag": "[社群趨勢]",
       "text": "Hacker News 熱門討論「Opus 5.0 drives incoherence into the stratosphere」（181 分）批評模型輸出用詞浮誇失真；留言指出 Anthropic 工程師的回覆本身疑似由 Claude 代寫、且措辭仍帶有被抱怨的同類「行話」，引發讀者兩極反應。",
       "ref_urls": [
         "https://github.com/anthropics/claude-code/issues/77136"
-      ]
+      ],
+      "ref_names": []
     },
     {
       "tag": "[重大事件]",
@@ -239,7 +243,8 @@
       "ref_urls": [
         "https://news.google.com/rss/articles/CBMirwFBVV95cUxPWmFhYU5mVjhXb0FnQ0NHTk1CMXE1azlabnZiN1pnZVN6aXhqUkdNLTVsMU9DTDJVVWVxVGxVMHFtaGx5QmRNWlc4ODljVnJYOXgxZEpUV1ZrYXBJUFplSXhHeDJKN293TXRUUHh4c1ZkVDFvdFBzSXJ0WXg0OVZVWUJFdVJmUmdlTFB5NjFJV0xQTWloM1lGZEQ4aFFWMDlYRkVFTGxiVDdLYmZCVVYw?oc=5",
         "https://news.google.com/rss/articles/CBMimAFBVV95cUxNcFRGOU4yeWxxeVUwTDRZclYtSi1HNnltYWVfVF9DRWtxSXVVUHZocHByVE9Bb2FNWE1qRWI0T0FnQ1lGajlOTWJFa01kS0pCZkQtLVc0UkwyV25fTV9sVWxibElqSnJUc3QyRGI5UUhpOGhBNDJObVdENHF6WXEyTzZ3b0ZfcV96b21JLTVQeDFma2tLbzJLdA?oc=5"
-      ]
+      ],
+      "ref_names": []
     }
   ],
   "topicRadar": [

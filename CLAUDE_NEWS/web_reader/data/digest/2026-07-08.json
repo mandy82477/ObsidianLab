@@ -709,14 +709,16 @@
         "https://www.wsj.com/tech/ai/china-says-it-has-found-security-vulnerabilities-in-anthropics-claude-code-5ecf05dc",
         "https://www.cnbc.com/2026/07/08/china-anthropic-ai-claude-code-backdoor-security-threat.html",
         "https://cybernews.com/ai-news/china-backdoor-security-alert-anthropics-claude-code/"
-      ]
+      ],
+      "ref_names": []
     },
     {
       "tag": "[持續追蹤]",
       "text": "阿里巴巴以資安疑慮為由禁止員工使用 Claude Code，Yahoo Finance 將此舉定調為「AI 資安爭端升溫」，與中方後門指控同屬一條敘事線。",
       "ref_urls": [
         "https://finance.yahoo.com/technology/ai/articles/alibaba-bans-anthropics-claude-code-175649089.html"
-      ]
+      ],
+      "ref_names": []
     },
     {
       "tag": "[新工具]",
@@ -724,7 +726,8 @@
       "ref_urls": [
         "https://www.theverge.com/ai-artificial-intelligence/961978/anthropic-claude-cowork-mobile-web",
         "https://www.wired.com/story/shut-those-laptops-anthropic-puts-its-claude-cowork-agent-on-your-phone/"
-      ]
+      ],
+      "ref_names": []
     },
     {
       "tag": "[持續追蹤]",
@@ -732,14 +735,16 @@
       "ref_urls": [
         "https://timesofindia.indiatimes.com/technology/tech-news/anthropic-extends-claude-fable-5-free-offer-till-july-12-eligibility-and-other-details-explained/articleshow/132255396.cms",
         "https://www.forbes.com/sites/sandycarter/2026/07/07/claude-fable-5-extends-by-five-more-days-10-moves-to-make-now/"
-      ]
+      ],
+      "ref_names": []
     },
     {
       "tag": "[社群趨勢]",
       "text": "GitHub Issue 回報 Claude Max 方案 session 額度自 3 月 23 日起異常快速耗盡（CLI 使用情境），累積 790 則留言與 536 個讚，為今日社群互動量最高條目。",
       "ref_urls": [
         "https://github.com/anthropics/claude-code/issues/38335"
-      ]
+      ],
+      "ref_names": []
     }
   ],
   "topicRadar": [],

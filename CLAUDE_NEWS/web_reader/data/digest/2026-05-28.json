@@ -233,21 +233,24 @@
       "text": "Simon Willison 在 HN 970 分的高分文章中寫道「Anthropic 和 OpenAI 已找到 product-market fit」——企業客戶正以 API 原始價格付費、Anthropic 首次盈利季傳言成真、員工 AI 帳單讓企業驚訝，是目前對 AI 商業化局勢最具說服力的公開論述之一。",
       "ref_urls": [
         "https://simonwillison.net/2026/May/27/product-market-fit/"
-      ]
+      ],
+      "ref_names": []
     },
     {
       "tag": "[持續追蹤]",
       "text": "Anthropic 宣布開設米蘭辦公室，成為歐洲第六個辦公室（倫敦、都柏林、巴黎、蘇黎世、慕尼黑之後），梵蒂岡封論事件後立即跟進中歐市場擴張。",
       "ref_urls": [
         "https://www.anthropic.com/news/milan-office-opening"
-      ]
+      ],
+      "ref_names": []
     },
     {
       "tag": "[技術更新]",
       "text": "Claude Code v2.1.153：新增 `skipLfs` 選項至 github/git plugin 市集來源（clone 與 update 時跳過 Git LFS 下載），同時加入 npm 全域安裝版本過期的一次性通知。",
       "ref_urls": [
         "https://github.com/anthropics/claude-code/releases/tag/v2.1.153"
-      ]
+      ],
+      "ref_names": []
     },
     {
       "tag": "[風險警示]",
@@ -255,7 +258,8 @@
       "ref_urls": [
         "https://news.google.com/rss/articles/CBMimwJBVV95cUxQR09uSjJXQ0diSXN5dnBkVHBZTFdNQ25MZ3pGWi1SX3lPbThTMVhNUk9jbzJUdW1NcVVScWxsRDR6YUUyNGNIbkJ0cXhQN0hpV2ZkZjd3Yl9yUWxQN0JlYm13ZzhYaFdBZHVWRGc0WHFwendzcUVGWWR6YS1RelNUN1Y0R1Axejd0azJ4M1RJOEtCYThZQ25LYVllamYzaWdTOEgwX3RfUlN2ZllvdVVUX1YwTHlCSzFqcDhiQXZHb3hGUnIxM2xIR1gwa01rUzI3N3ZpNHFPcDJDTS0tRnRwQWxmMVRTNlhXeXdIellOLUk4Tm5OMWp2LVlGcHhHdUZWSERkSGZoQUNzSlJrU05NeDlTQ096UDJmY0NR?oc=5",
         "https://news.google.com/rss/articles/CBMiogFBVV95cUxOTnl3YjBtSXdSQWVobDhaRFQyTHFWVG94MXY0ZXdVekJFN3NQWDdWNE0xZWt1U3pYaXJ1WkhBdEFGblJuRmRDcERINEs1WGxxcFNEQ1RtMHVBZlE5NzNQck50Vm01Z05oNkMwVEowc0hXVE1sRzljTmtwS3hHUFRNOHVNSzBsczZnREY1RnoxbTkzQzA0WnNRU1NReUh6dnRfcnc?oc=5"
-      ]
+      ],
+      "ref_names": []
     },
     {
       "tag": "[社群趨勢]",
@@ -263,7 +267,8 @@
       "ref_urls": [
         "https://news.google.com/rss/articles/CBMiugFBVV95cUxNMUJnR2NCZXZsbWVsbGRvNTVSTk1XRk9Vc2k0aWVJZHZSanVDeGNTMzBTSTJVcThHY3B2Yi0yLVpvS0NuTk5hRVNIdFUtblUwdV85OWh6N0NWNkZCaXhoWUFVZWtlMlRpcWRMSGJJQVFjYnJNdEhzUGdxYk5TWWVCRTlNZG0taTkteGVOd3BENE11UXlyZXF0UTNMbFZtWGpmMVBOWjhNNjVFWWNxYXp0eTcydFFYRjBjOXc?oc=5",
         "https://github.com/Coral-Bricks-AI/coral-ai/tree/main/claude-code-token-xray"
-      ]
+      ],
+      "ref_names": []
     }
   ],
   "topicRadar": [],

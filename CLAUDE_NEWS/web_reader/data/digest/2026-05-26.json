@@ -237,7 +237,8 @@
         "https://www.anthropic.com/news/chris-olah-pope-leo-encyclical",
         "https://apnews.com/article/pope-ai-tech-trump-vatican-anthropic-d92d0108730d146baa46da041b8523da",
         "https://www.reuters.com/world/europe/anthropics-olah-says-ai-must-be-guided-outside-big-tech-2026-05-25/"
-      ]
+      ],
+      "ref_names": []
     },
     {
       "tag": "[持續追蹤]",
@@ -245,14 +246,16 @@
       "ref_urls": [
         "https://news.google.com/rss/articles/CBMihAFBVV95cUxPMHFpejc2bG9QRlgwRERHVjM1YlR1M2xtV3JVS3BLQlhZOUgxY3A0RU1fVEVnSk9SeWhyMk1LRHBjVXlwVWFVSHN3c0VUS1lueVlJYlFuQ1pIUjE1Z08tYUJUM2JFWHZoMVFKcFIwTDZmZ2N0OVJqcG5CN2k0V2dUSmJXdlA?oc=5",
         "https://www.theregister.com/security/2026/05/25/anthropic-to-release-mythos-class-models-to-the-public/5245596"
-      ]
+      ],
+      "ref_names": []
     },
     {
       "tag": "[新工具]",
       "text": "企業整合浪潮：Notion 開放工作區給 Claude Code、Cursor、Codex 作為原生 AI 代理；Varonis 推出 Claude Compliance API；Forcepoint 將安全防護擴展至 Claude Enterprise；Anthropic 宣布 28 項企業安全整合——AI 工具進入主流企業軟體生態。",
       "ref_urls": [
         "https://news.google.com/rss/articles/CBMiuwFBVV95cUxNQnJocFRBYjZZTlBLLWhXZUpjSjlXTXJhdzNGOUlGRUlyOTNEaC1icGhhcUtNaWN5SUdpU3VjaW01elVxUF9Pd205Y2tFOGFKcXpmaTZ0NUdzVEFWZkNnWFl1dmdrcmxQVzFiM1JsRXFoQ2NPakxUb2c4QkNlc25XMllJcElzWHotWGMzZ3VYRVd2VzN0c3FOMFFhN3NCQnFpanJRc09CRWhPa2ZZRTlBZVdOZDBDOXRpWFdR?oc=5"
-      ]
+      ],
+      "ref_names": []
     },
     {
       "tag": "[社群趨勢]",
@@ -261,7 +264,8 @@
         "https://dev.to/tamil89/i-built-toklock-the-only-anthropic-rate-limit-proxy-that-queues-requests-instead-of-crashing-your-5053",
         "https://www.reddit.com/r/ClaudeAI/comments/1to7byy/i_benchmarked_anthropics_toolsearchtool_head_to/",
         "https://signoz.io/blog/claude-code-measure-degradation-opentelemetry/"
-      ]
+      ],
+      "ref_names": []
     },
     {
       "tag": "[新工具]",
@@ -269,7 +273,8 @@
       "ref_urls": [
         "https://www.anthropic.com/research/Evaluating-Claude-For-Bioinformatics-With-BioMysteryBench",
         "https://github.com/human-avatar/skills-for-humanity"
-      ]
+      ],
+      "ref_names": []
     }
   ],
   "topicRadar": [],

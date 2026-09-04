@@ -240,28 +240,32 @@
       "text": "Claude 多款模型（含 Opus 5）今日一度出現請求錯誤率上升，Anthropic 官方狀態頁顯示事故發生於 04:50–07:36 UTC，已於 08:30 UTC 確認解決。",
       "ref_urls": [
         "https://status.claude.com/incidents/vgz5psbjmt1h"
-      ]
+      ],
+      "ref_names": []
     },
     {
       "tag": "[重大事件]",
       "text": "Anthropic 宣布擴大 Mythos 5 安全模型給更多防禦端使用者存取，並成立 3,500 萬美元開源資安基金。",
       "ref_urls": [
         "https://news.google.com/rss/articles/CBMirwFBVV95cUxQY1E3Um1LaDRvamd5R3M4TDFIdEpIQ1dSY09DV2tsM0FXOTMtUVkxcnlBZ2ZKeEdOcXhYOGtRdFNYQkhab1drZE9WZzhDeHBwbl9vQzlUV29vLXVfcG9WNU5RWDV1cEdHMDBDb0xBVjZiaE5UVDFmeG93OUhpRzRuQnJYOGswcHJwVkJrS1dBeTRSUk5LWXo1S01LVmhLMHZPZU9WWmNhOVRqZ3EwSjZv0gG0AUFVX3lxTE5qdktfNnExbm9jVUYxMlYtMHZ4WmpldE5Qbzg2Ujljdk12NUpTODFLSHNYMEVXUDNIc29lVmNJSGNvS2FuWVBBRW11UlBqTHFhbUhMNURHVEpqUWFSX2RpRlZvSTBzMXZkMjFFVkhXRW1EbjBUZm9QeFJibnZWR242VUhNa1AxN2xuMUxQUGxocGNEVjNVWlZiQjNrRjI4Z2lIOWRMOHNGN0RvZHJvdVkxZF9XLQ?oc=5"
-      ]
+      ],
+      "ref_names": []
     },
     {
       "tag": "[持續追蹤]",
       "text": "Claude Code 出現「Hang／凍結 5–20 分鐘」的緊急高互動 bug 回報，GitHub Issue 已累積上百則留言，為今日社群互動量最高的技術問題。",
       "ref_urls": [
         "https://github.com/anthropics/claude-code/issues/26224"
-      ]
+      ],
+      "ref_names": []
     },
     {
       "tag": "[重大事件]",
       "text": "有報導指 Anthropic 延攬前 Google 自研 TPU 團隊負責人 Amir Salek，外界解讀為公司評估自研晶片、跨入硬體領域的訊號。",
       "ref_urls": [
         "https://news.google.com/rss/articles/CBMiwAFBVV95cUxPdXJlWHJEOE9lVzdhLW1md0RZMTMzVkJGc2wwX3ZsOTR6eGFrbnRud2N0SElkeHNrRm1WdXc4ZVBKQ00wS21kMmJGYzNyTDlieEYwakZQbnB4Z19pYl81Z3duYUcyQ1ZoQnkyUnJKMUtvOVF2enhmbUhfaW5NTy1DeVpZTXRIdGQ5NUxTVlhfRUF4emRsblpqakhDZGVwbXF0NzN0VDRUZ1dUdHRIcjVlSkJVbVcwdWFza0lHaU40U1Q?oc=5"
-      ]
+      ],
+      "ref_names": []
     }
   ],
   "topicRadar": [

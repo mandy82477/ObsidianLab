@@ -211,14 +211,16 @@
       "ref_urls": [
         "https://www.reddit.com/r/ClaudeAI/comments/1u13ljr/rumor_anthropic_planning_to_release_public/",
         "https://news.google.com/rss/articles/CBMiakFVX3lxTFBfblNrMHYwX2VCQS03ak5wczFtaF94emFVWGpFWHpGMkYyWVF6cGlBVWUxUHFSSmVQVjktN21IR1lvb2d6ZjVHQXBKY01xR1p1N09pUExFMHR2akg5R0d0dGllb2hyeVZCS1E?oc=5"
-      ]
+      ],
+      "ref_names": []
     },
     {
       "tag": "[風險警示]",
       "text": "2026-06-15 起 Pro/Max 計劃停止補貼 agent 執行費用，`claude -p` 與 Agent SDK 移入獨立月度預算（Pro $20、Max 5x $100、Max 20x $200），超額依 API 定價計費或暫停，開發者**務必在 15 日前確認「usage credits」設定**，否則 CI/CD pipeline 將中斷。",
       "ref_urls": [
         "https://www.reddit.com/r/ClaudeAI/comments/1u0y424/june_15_your_pro_plan_stops_subsidizing_agent/"
-      ]
+      ],
+      "ref_names": []
     },
     {
       "tag": "[重大事件]",
@@ -226,7 +228,8 @@
       "ref_urls": [
         "https://www.cnbc.com/2026/06/09/perplexity-ipo-2028-as-anthropic-openai-prepare-listings.html",
         "https://news.google.com/rss/articles/CBMihAFBVV95cUxQOTBGSExqSGEzcFlST05vbW5wcXZGVHJ0dTlEa1VwbXAxSXVvY2lkUjJpY3ZvZURURWFVWHB5VG5Ic0xpbDQtMlp1YWpuYWdfd092UExCYnc0c3RhNWVLazFrMTZrTGI2SU5BYm1YTklRYVhOc3ZhV0pSRWJXanFOYnpBdGc?oc=5"
-      ]
+      ],
+      "ref_names": []
     },
     {
       "tag": "[重大事件]",
@@ -234,7 +237,8 @@
       "ref_urls": [
         "https://dev.to/docdavkitty/claude-now-writes-80-of-its-own-code-anthropics-self-improvement-milestone-arrives-faster-than-39c8",
         "https://news.google.com/rss/articles/CBMi9wFBVV95cUxPZk9tNTlzVUVfWENaaEVLSDdkdmdGM1NrZkFrWWEwX1RldllsRV9aRU1pTkxGSEJnSHlXV2ZrWnNaN2h5MUdnZHNtc2paY1FtZjZTWEwxWG9qY0x2XzlIMWVHWkpMcHdOMUNSS01mbjdFRmFhRHd5RWMxcm82ZTBIb284a2hSUlBRZ1l3ai1VRUhQZlNlNGRRVmdyY09XZnlpTEpMVEJ2aUR4c0lSNWFfZ1lHbk1mbVZ5VFNQV0N1Zm53X1I2SHV6TVk3ZGhnNndGWDl1OU5SY3poeVY2M3BNTl91Sm5mQUtSYmZHaEh5R2M1NjNlcXJF?oc=5"
-      ]
+      ],
+      "ref_names": []
     },
     {
       "tag": "[新工具]",
@@ -243,7 +247,8 @@
         "https://github.com/anthropics/claude-code/releases/tag/v2.1.169",
         "https://news.google.com/rss/articles/CBMiZ0FVX3lxTFAwZGRQY2E2aHdtLUw2Qkh3VlVHd29yRHpOZUFlTkNVRnFVenlObGxrVW0zRFp4d2VQU3R5VUFwQjR1Mnc5Y3dZeW9FUmNLSUNZb3dtUnpmSy1tYmE2OE5xa0ZxMkVNV28?oc=5",
         "https://news.google.com/rss/articles/CBMiugFBVV95cUxQZGgtYnVSTmpneWhYOVNwM2lhZ2gyNk5FclNPSTZES1ptYzdVRHJwQ0hSanktT3RnRVpFblpkQkdXTzhTVHF2alhVYlgwTFVZcjRhanlvT0k3b1Z1NjgxUzc0bXBvTW9IQnF6eXo3eUNyWEd3SzZfdTRXREg5YzJXdWVpNW5qR1BSR3dhQ29OSDJtUHVlbnJUUzU2c3FYeXdCWFJwQnNKM2NoMmxkMnBjVnVsTG9kM0VMa1E?oc=5"
-      ]
+      ],
+      "ref_names": []
     }
   ],
   "topicRadar": [],

@@ -277,7 +277,8 @@
       "ref_urls": [
         "https://www.anthropic.com/news/position-open-weights-models",
         "https://news.google.com/rss/articles/CBMigwFBVV95cUxQbndXX3ltNnRzWkh2aFdJTGs5clRQc3BKT1J2YmJyaUw4YldNLWE4SXVkNzNJWHpNWDF6ZnlTdU9nSWhxV0UwaEdDRDJBNk5CYjVXNVczMDU3cGtvMEY1aEk3LTR0amJEakRvNTZDbHptVXFZbFV3dllHY2d3TnVZdTdRWQ?oc=5"
-      ]
+      ],
+      "ref_names": []
     },
     {
       "tag": "[風險警示]",
@@ -285,14 +286,16 @@
       "ref_urls": [
         "https://news.google.com/rss/articles/CBMiWkFVX3lxTE9WbnpDZDliX05XS1E5bnBmZ201cHc0alFOb0Q4MXFsTXYwem9ySkg4R0luZDhIQmpaYXRzbnV2dno3cEN4NEZXZHBrWnlQMGpxLWdEbnB6Q2Z1dw?oc=5",
         "https://news.google.com/rss/articles/CBMirAFBVV95cUxPSnM0amMwNUwzZlloZUxNUll3QTBWYmNUeXY5UktSLVZXaDlzeGh3YTlOV1lmYTlIM0V2UVN2MTdZMVpydi1aMTRudkdZaldadmZrRVA5Qk9mdWVveWFybDNoODE2WmVmeXFBZHpJUWNoNWMxLVdGVzhDaGdJNHViMmVSNXZidHFCbUd6bGY0RWJoeHBVN0c1ejBVUWU5cm43OXp6Mzc4M2ZyajFD?oc=5"
-      ]
+      ],
+      "ref_names": []
     },
     {
       "tag": "[風險警示]",
       "text": "資安媒體 gbhackers.com 揭露 Claude Code 存在 symlink 相關瑕疵，可能導致敏感檔案在未經使用者核准下外流。",
       "ref_urls": [
         "https://news.google.com/rss/articles/CBMigAFBVV95cUxQazBJbkRkczhpWjZTSkhib2d2WHhaM08xaGFMdkM0OFNlWFFVck15YVp2Z3AwdzROVDF4NFAxZmMzZDZodU1MTl9DbkRDd3I0WTZJRVA5SmtsOUt4bF8wZXNZdjRmd21wczR6WGd5N2NKLVdDZm9EWEV1Nzc5TjJscNIBhgFBVV95cUxOeUsybXF3OEVFMU84RTVUN0g3V2lmNDR0aW04SUJTNWdBTTNrRzRCSFNrSmNTbjJ5UjdENFd2ZkRrSjNXRHgxZmx4YjAtUzdURUpPMXI2a25rSGlUZjdBaU5YUjQ2aS1lS1MtUU93UTZCeDM5Z3huZ3MwdFY4aDI1WDQzTDZzZw?oc=5"
-      ]
+      ],
+      "ref_names": []
     },
     {
       "tag": "[持續追蹤]",
@@ -300,14 +303,16 @@
       "ref_urls": [
         "https://www.anthropic.com/news/cognizant-anthropic",
         "https://news.google.com/rss/articles/CBMirwFBVV95cUxNMDBiQjR2TTBiamhQMjJNamVUSE9BemRvekw5T2lwdFRMQzdWWHFjTkpqNlhtaXUyMWV4WWIwU2xWblhLRTFWWXN3M0FLRlc5anZNSDhxZmFYWlF4VGpHVGJLRk5LNTlJbUNYSUVlTzRPclFDeU0tdWZCbXh4LWRseUYyR1FtZV9xMDZqZ2RBVmNzbDRoWFZFdGJqRTNUakpieHlna01EYTlFS2ktR2U4?oc=5"
-      ]
+      ],
+      "ref_names": []
     },
     {
       "tag": "[持續追蹤]",
       "text": "Axios 報導 Anthropic 市值已超越 Starbucks 與 McDonald's，反映近期 AI 熱潮下公司估值快速攀升。",
       "ref_urls": [
         "https://news.google.com/rss/articles/CBMiiAFBVV95cUxQLWsxRVptU010cTRHWS15WERCRFcyaHkyX3ZTRmhsUlZIUmczcjBPRzBjQXdEVkI1MG5Ub1JOR2Qxemxja1NHMXBQWFB4S1lCUUx4V3VUeHN0ZXlKWnpyQmh6bEZiaXJyaElQZnFKQ3F1ZjVPYUFBVzZvRE1wNlV3VzNUOGs2Vzcy?oc=5"
-      ]
+      ],
+      "ref_names": []
     }
   ],
   "topicRadar": [],

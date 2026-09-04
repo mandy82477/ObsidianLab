@@ -989,13 +989,15 @@ def parse_digest(f: Path) -> dict:
                     ref_urls = FOCUS_REF_RE.findall(text_raw)  # 舊格式：行內完整 URL
                     ref_nums = [int(n) for n in FOCUS_NUM_RE.findall(text_raw)]  # 中期格式：[N] 編號
                     # 現行格式（2026-09-04 起）：行內 markdown 連結——先抽 URL 再整群移除
+                    ref_names = [n for n, _ in FOCUS_INLINE_LINK_RE.findall(text_raw)]  # 來源名，網站 hover 用
                     ref_urls += [u for _, u in FOCUS_INLINE_LINK_RE.findall(text_raw)]
                     text = FOCUS_INLINE_GROUP_RE.sub("", text_raw)
                     text = FOCUS_INLINE_LINK_RE.sub(r"\1", text)  # 群外落單連結：留來源名
                     text = FOCUS_REF_RE.sub("", text)
                     text = FOCUS_NUM_RE.sub("", text).strip()
                     text = re.sub(r"\s+([。．.，,])", lambda m: m.group(1), text)  # 半形括號群移除後的收尾空白
-                    result["focus"].append({"tag": tag, "text": text, "ref_urls": ref_urls})
+                    result["focus"].append({"tag": tag, "text": text, "ref_urls": ref_urls,
+                                            "ref_names": ref_names if len(ref_names) == len(ref_urls) else []})
                     focus_ref_nums.append(ref_nums)
                 continue
 

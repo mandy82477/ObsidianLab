@@ -139,21 +139,24 @@
       "ref_urls": [
         "https://news.google.com/rss/articles/CBMihgFBVV95cUxQWmtMWmdtVmdWUjBRa1ZqcXpsOGpOUkJTQThkUzEtZnU5WW5qRnU0d2w0WHdwdHJkTF85OUJlX29hanhuNlNsR2g3WXhuU0xGbUpuU2lWRkI1bDlFeExfTWNDRWNRdlZoeDg5WFdtOGJ5TS1SUThvYjhfS292TEZ2MzcxRmJPZw?oc=5",
         "https://news.google.com/rss/articles/CBMie0FVX3lxTFB0RnNOUnNIRk0wb2FJR0ViSElsc1c4UTRQX2Q5M05SbU5vbF9HQUItbktGNWtVaThGLURGWlBQenlEWUpNeGRQak1OblFZZHdtVngzVkd4ZWNRSnhydHEwaFFGZHdOYll1N2xleEtRZDd3VW9jd3Z0c3pKSQ?oc=5"
-      ]
+      ],
+      "ref_names": []
     },
     {
       "tag": "[持續追蹤]",
       "text": "Claude Code 的 GitHub Issues 今日湧入多起臭蟲與功能請求討論，其中 macOS 上的 ECONNRESET 連線錯誤回報累積 51 則留言，是今日社群互動最高的議題。",
       "ref_urls": [
         "https://github.com/anthropics/claude-code/issues/5674"
-      ]
+      ],
+      "ref_names": []
     },
     {
       "tag": "[持續追蹤]",
       "text": "Reddit 上「Claude Pro 5 小時用量限制」的抱怨持續在週熱門討論區延燒，使用者反映官方尚未積極處理此爭議。",
       "ref_urls": [
         "https://www.reddit.com/r/ClaudeAI/comments/1vaykt8/claude_pro_5h_limit_is_broken_and_anthropic_isnt/"
-      ]
+      ],
+      "ref_names": []
     }
   ],
   "topicRadar": [],

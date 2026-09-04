@@ -454,35 +454,40 @@
       "text": "Claude Code Max 訂閱用戶回報幾乎立即就撞到用量上限，該 GitHub issue 累積約 1480 則留言、722 個讚同反應，是本日互動量最高的條目。",
       "ref_urls": [
         "https://github.com/anthropics/claude-code/issues/16157"
-      ]
+      ],
+      "ref_names": []
     },
     {
       "tag": "[重大事件]",
       "text": "一份實測研究指出，Claude Code 在讀取 prompt 前就先送出約 33k tokens，相較之下 OpenCode 只送出約 7k；作者透過攔截 API 請求量測快取策略與 harness token 開銷差異，該發現有兩個獨立來源報導。",
       "ref_urls": [
         "https://systima.ai/blog/claude-code-vs-opencode-token-overhead"
-      ]
+      ],
+      "ref_names": []
     },
     {
       "tag": "[持續追蹤]",
       "text": "Anthropic 將 Claude Code 每週用量上限提高 50% 的促銷活動再次延長，目前效期至 2026 年 7 月 19 日，適用 Pro／Max／Team 及舊制 Enterprise 席位，5 小時額度不受影響。",
       "ref_urls": [
         "https://support.claude.com/en/articles/15910845-claude-code-may-july-2026-weekly-limits-promotion"
-      ]
+      ],
+      "ref_names": []
     },
     {
       "tag": "[新工具]",
       "text": "媒體報導 Claude Code 新增內建瀏覽器功能，讓 AI 可直接在外部網站上讀取、點擊與輸入文字。",
       "ref_urls": [
         "https://the-decoder.com/claude-code-now-has-a-built-in-browser-that-lets-the-ai-read-click-and-type-on-external-websites/"
-      ]
+      ],
+      "ref_names": []
     },
     {
       "tag": "[社群趨勢]",
       "text": "開發者回報，自 v2.1.77 之後的所有新版 Claude Code，`--dangerously-skip-permissions`（bypass permissions）功能均已失效。",
       "ref_urls": [
         "https://github.com/anthropics/claude-code/issues/36168"
-      ]
+      ],
+      "ref_names": []
     }
   ],
   "topicRadar": [],

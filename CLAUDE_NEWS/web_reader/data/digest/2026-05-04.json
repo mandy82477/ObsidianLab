@@ -251,27 +251,32 @@
     {
       "tag": "[社群趨勢]",
       "text": "DeepClaude 專案在 Hacker News 累積 543 則討論，展示以環境變數將 Claude Code agent loop 接入 DeepSeek V4 Pro，熱議程度反映社群對「低成本後端替換」需求旺盛。",
-      "ref_urls": []
+      "ref_urls": [],
+      "ref_names": []
     },
     {
       "tag": "[持續追蹤]",
       "text": "Claude Code 原始碼外洩事件持續延燒，Anthropic 已發出逾 8,100 次 DMCA 下架請求，並引發 AI 生成程式碼版權歸屬的法律辯論，社群分支「Claw-Code」亦隨之誕生。",
-      "ref_urls": []
+      "ref_urls": [],
+      "ref_names": []
     },
     {
       "tag": "[重大事件]",
       "text": "Anthropic 悄悄在 Claude Cowork/Desktop 中開放支援任意第三方 LLM（GPT、Gemini、本地模型、企業閘道），無任何官方公告，由社群自行發現，後續說明值得關注。",
-      "ref_urls": []
+      "ref_urls": [],
+      "ref_names": []
     },
     {
       "tag": "[新工具]",
       "text": "圍繞 Claude Code 的生態工具本週爆發式增長：行動版 IDE、JupyterLab 擴充套件、VS Code LSP 橋接器、CLAUDE.md 維護 CLI 等工具接連出現，開發者社群創造力持續迸發。",
-      "ref_urls": []
+      "ref_urls": [],
+      "ref_names": []
     },
     {
       "tag": "[風險警示]",
       "text": "多名 Claude Pro 訂閱者在 7 天後收到「Claude Code 試用結束」提示，與官方定價頁面說明相矛盾，Anthropic 的方案權益說明有待釐清。",
-      "ref_urls": []
+      "ref_urls": [],
+      "ref_names": []
     }
   ],
   "topicRadar": [],

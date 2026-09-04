@@ -454,7 +454,8 @@
       "text": "Anthropic 多個模型一度出現大規模錯誤，Fable 5 也一併受影響，事件已於同日解決。",
       "ref_urls": [
         "https://status.claude.com/incidents/tl8x3p1msff2"
-      ]
+      ],
+      "ref_names": []
     },
     {
       "tag": "[持續追蹤]",
@@ -463,7 +464,8 @@
         "https://www.wsj.com/finance/investing/terawulf-signs-19-billion-lease-with-anthropic-for-ai-infrastructure-campus-ef26be27",
         "https://www.cnbc.com/2026/07/06/anthropic-terawulf-data-center-ai.html",
         "https://www.barrons.com/articles/terawulf-stock-anthropic-ai-data-centers-43d5629a"
-      ]
+      ],
+      "ref_names": []
     },
     {
       "tag": "[風險警示]",
@@ -471,7 +473,8 @@
       "ref_urls": [
         "https://qz.com/alibaba-ban-claude-code-anthropic-backdoor-070626",
         "https://www.techradar.com/pro/alibaba-is-banning-its-workers-from-using-claude-code-as-us-v-china-ai-battle-heats-up"
-      ]
+      ],
+      "ref_names": []
     },
     {
       "tag": "[社群趨勢]",
@@ -480,14 +483,16 @@
         "https://github.com/anthropics/claude-code/issues/73125",
         "https://github.com/anthropics/claude-code/issues/4953",
         "https://github.com/anthropics/claude-code/issues/5674"
-      ]
+      ],
+      "ref_names": []
     },
     {
       "tag": "[持續追蹤]",
       "text": "Meta 也被報導限制工程師使用 Anthropic Claude，與阿里巴巴禁令同日出現，企業對外部 AI 編碼工具的資安審查似有擴散跡象。",
       "ref_urls": [
         "https://finance.yahoo.com/technology/ai/articles/why-meta-platforms-inc-meta-224947515.html"
-      ]
+      ],
+      "ref_names": []
     }
   ],
   "topicRadar": [],

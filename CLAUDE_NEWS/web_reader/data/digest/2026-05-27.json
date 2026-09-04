@@ -244,7 +244,8 @@
       "ref_urls": [
         "https://github.com/anthropics/claude-code/releases/tag/v2.1.152",
         "https://www.reddit.com/r/ClaudeAI/comments/1tory70/whats_new_in_cc_21152_4566_tokens/"
-      ]
+      ],
+      "ref_names": []
     },
     {
       "tag": "[持續追蹤]",
@@ -252,21 +253,24 @@
       "ref_urls": [
         "https://www.anthropic.com/news/kiyoung-choi-representative-director-anthropic-korea",
         "https://news.google.com/rss/articles/CBMiZEFVX3lxTE5oRGRzeFZPZTM0MktOQnBTNG5CS0ZpSW91U0RSOW1YSU8yRG01NW1NS3RBUVktbDJSX2V6bVRlRU5LOGVGaF9neGhfLU5EajdiUjVCZ2x2eWwxNTVhRFJnN3FneFI?oc=5"
-      ]
+      ],
+      "ref_names": []
     },
     {
       "tag": "[重大事件]",
       "text": "Claude Code 安全插件全面開放：Anthropic 發布 security-guidance plugin，讓所有 Claude Code 用戶（非僅 Enterprise）可在寫碼時即時偵測漏洞——這是首次將企業安全功能下放至一般開發者工作流。",
       "ref_urls": [
         "https://news.google.com/rss/articles/CBMif0FVX3lxTFBrSmhBT0FXZTliZENfSGV1QUR5Q2R5LVJhSElvbXZZMUZTWVJfTDNUTVUzMnAzU1Y2NmhobC1GTWhUOHlHX3ZKTERQQnVTcFB3dnh1ODg0OGJ6RDVRa2dWSkpIa1M3VFBVX3dpUkpLRUtJUXptSG9XTTBfQ0lOWms?oc=5"
-      ]
+      ],
+      "ref_names": []
     },
     {
       "tag": "[社群趨勢]",
       "text": "HN score 176 的 \"Claude Code as a Daily Driver\" 指南引爆社群——作者系統性整理 CLAUDE.md、Skills、Subagents、Plugins、MCPs 的進階用法，被視為從「提示用戶」進化到「代理人駕駛員」的最完整路線圖。",
       "ref_urls": [
         "https://arps18.github.io/posts/claude-code-mastery/"
-      ]
+      ],
+      "ref_names": []
     },
     {
       "tag": "[持續追蹤]",
@@ -274,7 +278,8 @@
       "ref_urls": [
         "https://news.google.com/rss/articles/CBMi7gJBVV95cUxOQjRvVzNKLUR2STVGMWVQUU1kSWg1dGMyemkxVjUxajMzVlV4OW1oc1RyT1YwLV81X1ZES3RsdEF2eVVtWUdYMkI1SmtDRWZvbkl2cHJQUEVHYXVJS2FTVXR4VXVkdWNoeFp4eGNmUFVJcjFUSXlSZVA5M1ZkWGhLeTV3Rl9BbDdBZUVGRUNFTEZOQXNZQlhmd0tMVFFnRkJibk8tZm1kMHlRa0NoTDVPSnAwV2FBU0R1SHNSb0lEOGhUSEpGeVg0ZXdvRjNoTnBKTUNxaGg1Q2hhTGlYemVJcE43Q3hVR0RuZ1lxOXUyQXBjcGF2WHlFZzhnYmJXbm1xZnVUbE9HVVVVcFpEX2NkRHJfbVRQR1hCMnMyYlFPcU9fUDhKTUFILUxCZjU5TVJQMWdMdU9JYWZzTGp4RHpYMFllNmRZN280N0lnd0ZxT0JVZFNfZ21UMjdSdDd0N0ZST2VYdXZnUUlERlZwWkHSAfMCQVVfeXFMT3dUa1BTd3BLRE15TnBhMFRCa0tCTkxGVDZRalotT2FnV19obGZLLTNnVlFValVvVFNEbkhvbjFsNkNEYVVQcFZ6a1pQdnowSkxuSUJ0T2I1U3ZPbHdQdDlWSnk0QVdTY3VHTTNPLTh3cklOdmdUTjZSQTlsWF9wa0sxRUhRNjFiLXpMNF94T2dkZ1BNTGFBRTNkZUFHcWtscW1QMTlTV0RzTnNyRmJRZDFUUkQtcjVKeXpEblJ6YVZidDJRZ2htdUN2aU81X01UOGdDazJFbTRTaDd4c0xTaW81Y3pvandlcW9Qa0JvR09LbEM5bUVTbzlMeWJmXzRlbGxCYVJIaXA0d3pSelU2cTBJR2JsU2tvMWkxT196UWpkQnF1dlAxMVRtbWlyOXUtSjJHcW5HeXNoZVFsbXFrREE5UUVsdnFoZW5TRnktR1NPMl9iWnhnSXVzeWZSVW92d3lSVkN1Ny1wLTRJVDhzVnNIYVE?oc=5",
         "https://news.google.com/rss/articles/CBMiwgFBVV95cUxQZ1BpZkRLWVg3bUpUb0lYcW9xRngxTU9qb3ZMUFZRSl9FaHhSZkxLa2hLQWVITVVOOV92alR2bFhhajJRU3RjUDNxSXdrR2tnVHRuZHU0OWJtVk9GNGpjWnhzOTNqRkE5bmY2UzFoaHA3cXEzQy1HdG5rVV9JZFdJYmVEa2txRnJvclJvLUdzNG56dVlJRW9vWTdvTFI4WWJYbUFTMTNYdFQwQ1BJelQ4YU9QblBuOGhhSUVTa2ptOUZodw?oc=5"
-      ]
+      ],
+      "ref_names": []
     }
   ],
   "topicRadar": [],

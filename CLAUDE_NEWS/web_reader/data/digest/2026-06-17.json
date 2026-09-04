@@ -221,7 +221,8 @@
         "https://www.wired.com/story/anthropic-is-still-at-odds-with-the-white-house-over-claude-fable-5/",
         "https://nypost.com/2026/06/16/business/trump-admin-open-to-talks-with-anthropic-over-foreigner-ban/",
         "https://www.techdirt.com/2026/06/16/apparently-the-real-reason-anthropics-models-are-offline-a-six-year-old-trump-grudge/"
-      ]
+      ],
+      "ref_names": []
     },
     {
       "tag": "[重大事件]",
@@ -229,14 +230,16 @@
       "ref_urls": [
         "https://news.ycombinator.com/item?id=48557371",
         "https://arstechnica.com/ai/2026/06/anthropic-pauses-token-based-billing-for-its-claude-agent-sdk/"
-      ]
+      ],
+      "ref_names": []
     },
     {
       "tag": "[持續追蹤]",
       "text": "Pentagon 轉移 AI 工作負載：DoD 已將至少三分之二的 AI 用量從 Anthropic 轉向競爭對手，根源是雙方對「Claude 軍事用途可接受邊界」的持續分歧。",
       "ref_urls": [
         "https://cryptobriefing.com/pentagon-reduces-anthropic-reliance-competitors/"
-      ]
+      ],
+      "ref_names": []
     },
     {
       "tag": "[新工具]",
@@ -247,14 +250,16 @@
         "https://github.com/ToxicPine/offloads",
         "https://provi.me/cc-reflection",
         "https://github.com/hvardhan878/kevin"
-      ]
+      ],
+      "ref_names": []
     },
     {
       "tag": "[技術更新]",
       "text": "Claude Code v2.1.179 發布：修復串流中斷導致部分回應遺失、spinner 卡住、滑鼠滾輪等問題。",
       "ref_urls": [
         "https://github.com/anthropics/claude-code/releases/tag/v2.1.179"
-      ]
+      ],
+      "ref_names": []
     }
   ],
   "topicRadar": [],

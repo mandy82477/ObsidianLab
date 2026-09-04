@@ -379,35 +379,40 @@
         "https://www.reuters.com/technology/salesforce-raises-annual-revenue-forecast-2026-08-26/",
         "https://qz.com/salesforce-anthropic-claudeforce-ai-sales-plugin-082726",
         "https://www.cnbc.com/2026/08/26/cnbc-exclusive-transcript-salesforce-chair-ceo-marc-benioff-and-anthropic-co-founder-ceo-dario-amodei-speak-with-cnbcs-jim-cramer-on-closing-bell-overtime-today.html"
-      ]
+      ],
+      "ref_names": []
     },
     {
       "tag": "[重大事件]",
       "text": "Claude Code 發布 v2.1.247，新增 `SendFeedback` 工具：session 出錯時 Claude 可草擬一份回報，經使用者確認後透過 `/feedback` 送出（可用 `feedbackDisabled` 設定關閉）。",
       "ref_urls": [
         "https://github.com/anthropics/claude-code/releases/tag/v2.1.247"
-      ]
+      ],
+      "ref_names": []
     },
     {
       "tag": "[風險警示]",
       "text": "開發者回報 Claude 4.7、4.8、5.0 與 Fable 模型日益出現重複修辭、難以維持連貫散文的問題，即使給出明確風格指示仍難改善；該 GitHub Issue 已累積 106 則留言、517 個反應。",
       "ref_urls": [
         "https://github.com/anthropics/claude-code/issues/77136"
-      ]
+      ],
+      "ref_names": []
     },
     {
       "tag": "[持續追蹤]",
       "text": "開發者社群持續對 Claude Code 未支援業界正逐漸標準化的 AGENTS.md 格式表達不滿，相關功能請求累積 384 則留言、6496 個反應，是今日 GitHub Issues 討論度最高的項目。",
       "ref_urls": [
         "https://github.com/anthropics/claude-code/issues/6235"
-      ]
+      ],
+      "ref_names": []
     },
     {
       "tag": "[社群趨勢]",
       "text": "紐約時報報導稱 Meta 一邊公開批評 Anthropic，卻同時是其最大客戶之一，形容兩者關係「亦敵亦友」。",
       "ref_urls": [
         "https://www.nytimes.com/2026/08/27/technology/meta-anthropic-frenemies.html"
-      ]
+      ],
+      "ref_names": []
     }
   ],
   "topicRadar": [

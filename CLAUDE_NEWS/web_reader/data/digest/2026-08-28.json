@@ -390,7 +390,8 @@
       "ref_urls": [
         "https://www.reuters.com/legal/government/us-judge-blocks-pentagons-anthropic-blacklisting-2026-08-28/",
         "https://www.reuters.com/world/how-anthropic-pentagon-dispute-over-ai-safeguards-escalated-2026-08-28/"
-      ]
+      ],
+      "ref_names": []
     },
     {
       "tag": "[重大事件]",
@@ -398,7 +399,8 @@
       "ref_urls": [
         "https://www.anthropic.com/news/model-hardware-standard-research-preview",
         "https://www.anthropic.com/news/expanding-support-for-scientists"
-      ]
+      ],
+      "ref_names": []
     },
     {
       "tag": "[重大事件]",
@@ -406,7 +408,8 @@
       "ref_urls": [
         "https://www.forbes.com/sites/jonmarkman/2026/08/28/anthropics-45-billion-nscale-deal-buys-460-megawatts-of-vera-rubin/",
         "https://www.ft.com/content/0ec76ba3-5f7f-4085-88fb-acf21954bc85?syn-25a6b1a6=1"
-      ]
+      ],
+      "ref_names": []
     },
     {
       "tag": "[重大事件]",
@@ -414,7 +417,8 @@
       "ref_urls": [
         "https://www.wsj.com/business/earnings/salesforce-profit-revenue-rise-expands-partnership-with-anthropics-claude-f17aa26f",
         "https://www.salesforce.com/news/press-releases/2026/08/26/salesforce-and-anthropic-announce-claudeforce/"
-      ]
+      ],
+      "ref_names": []
     },
     {
       "tag": "[風險警示]",
@@ -422,7 +426,8 @@
       "ref_urls": [
         "https://simonwillison.net/2026/Aug/27/breaking-claude-code-opus-5-auto-mode/",
         "https://cybernews.com/security/claude-code-auto-mode-malware-vulnerability/"
-      ]
+      ],
+      "ref_names": []
     }
   ],
   "topicRadar": [

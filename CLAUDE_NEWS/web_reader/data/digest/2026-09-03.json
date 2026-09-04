@@ -142,21 +142,24 @@
       "ref_urls": [
         "https://status.claude.com/incidents/461yvfrzpwtt",
         "https://www.reddit.com/r/ClaudeCode/comments/1w69016/claude_code_server_down_for_a_long_time_now_will/"
-      ]
+      ],
+      "ref_names": []
     },
     {
       "tag": "[重大事件]",
       "text": "Claude Code v2.1.259 新增 `managedMcpServers` 管理設定，組織可統一為所有使用者佈署 HTTP/SSE MCP 伺服器，設定格式比照 `.mcp.json`。",
       "ref_urls": [
         "https://github.com/anthropics/claude-code/releases/tag/v2.1.259"
-      ]
+      ],
+      "ref_names": []
     },
     {
       "tag": "[社群趨勢]",
       "text": "HN 高分討論串（303 分）圍繞 fable51-worlds 專案的 AI 生成遊戲世界模型展開，留言比較不同模型的建模效果與成本，也有人質疑展示成果的可信度。",
       "ref_urls": [
         "https://github.com/PhiloLabs/fable51-worlds"
-      ]
+      ],
+      "ref_names": []
     }
   ],
   "topicRadar": [],

@@ -273,7 +273,8 @@
       "ref_urls": [
         "https://dev.to/docdavkitty/anthropic-files-for-ipo-the-first-trillion-dollar-ai-listing-takes-shape-4b3a",
         "https://arstechnica.com/tech-policy/2026/06/sp-500-blocks-fast-spacex-entry-wont-waive-rule-for-unprofitable-ai-firms/"
-      ]
+      ],
+      "ref_names": []
     },
     {
       "tag": "[持續追蹤]",
@@ -281,7 +282,8 @@
       "ref_urls": [
         "https://abc7news.com/post/san-francisco-based-anthropic-calls-global-freeze-ai-development-warns-could-soon-escape-human-control/19240090/",
         "https://www.engadget.com/2188066/anthropic-proposes-global-ai-development-slowdown/"
-      ]
+      ],
+      "ref_names": []
     },
     {
       "tag": "[重大事件]",
@@ -289,7 +291,8 @@
       "ref_urls": [
         "https://news.google.com/rss/articles/CBMijwFBVV95cUxQb3k4c0hWRjkxUHg2LXVzUWJxWXJidm14V1BlcmlOWHFEMDNsX2ZrZmpqYmFYX1ZKcjNQb3ViVVZtdEs2cEctaThiSU16SEFfdnM4ZDR0S3pkWFNuMURRMWdaT0ZWUVF3d3FZVTczSmsxZXBodDVqMmQ0cEhTS3BnSjUtYnhsZ0lXWU9lbzliMA?oc=5",
         "https://news.google.com/rss/articles/CBMi4AFBVV95cUxQOVFENjNkMjdwWlYwYmZRMDYyVThyMnRZSTdaY3c3cjc1ZXZ2NE01UWkyQW9samhkMEdiQkFOMHRITTQzdWdhLUE0ZmNOZFNmVlcwaDQ1b3JtTlBBSUctZXpHOHJ1Yy04aUxteVR1MVdWMEJKcC1fWEpWZ1dRUGZFQXBOR3VqN3l4Y0N6MENMc3pmSElBa3FpUmhDeG94YmdSclBXdEQ3Tlo1UzNWdXJyNDNUZTBYNnJYRWNmQXpvVnZlV2NPT3o1azM4T2NTSE41TW9CTUxKSW1BOTZZNk04eA?oc=5"
-      ]
+      ],
+      "ref_names": []
     },
     {
       "tag": "[技術更新]",
@@ -298,7 +301,8 @@
         "https://github.com/anthropics/claude-code/releases/tag/v2.1.167",
         "https://github.com/anthropics/anthropic-sdk-python/releases/tag/v0.106.0",
         "https://github.com/anthropics/anthropic-sdk-typescript/releases/tag/vertex-sdk-v0.17.0"
-      ]
+      ],
+      "ref_names": []
     },
     {
       "tag": "[新工具]",
@@ -307,7 +311,8 @@
         "https://github.com/RPate97/lich",
         "https://news.ycombinator.com/item?id=48420833",
         "https://github.com/Nayjest/Gito/releases/tag/v4.1.0"
-      ]
+      ],
+      "ref_names": []
     }
   ],
   "topicRadar": [],

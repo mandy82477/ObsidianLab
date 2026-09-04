@@ -311,7 +311,8 @@
       "text": "Anthropic 發布新一代旗艦模型 Claude Fable 5.1 與 Claude Mythos 5.1——兩者為同一模型的不同防護層級，Fable 5.1 一般可用，Mythos 5.1 僅開放信任機構存取、針對資安與生命科學工作特別強化防護；新增反萃取（anti-distillation）機制，快取讀取費率也由基礎輸入價的 0.1 倍降至 0.025 倍，較前代大幅降低長對話成本。",
       "ref_urls": [
         "https://www.anthropic.com/claude-fable-and-mythos-5-1"
-      ]
+      ],
+      "ref_names": []
     },
     {
       "tag": "[風險警示]",
@@ -319,7 +320,8 @@
       "ref_urls": [
         "https://news.google.com/rss/articles/CBMi1gFBVV95cUxOc3p1SGhSbXp4dmt2YnpRWVhvcE44VDNpby1pU2RKS2Vwd1BpYm1fUDRrcHdGSTRUTTNRbVVsNVpfVGtIZkg1dWRoZ1lRQmlRdVdkcFZnZ0RIb1NpRmtOdFZtSDBtelQ1Sjd0MWlZQjc4T2ZKZmRlcEtpT3RYdWxtOGVMc1d2WTQ1cnRiQ3lFYjFmRTFvUDJBaXR0SkY4dzZ2Sm9KNEh5VkNhb1FGSWtFM2hRblByckRpY0NKckRac21CTFdQci00VEZETUxTNUMxQ3hEOGJB?oc=5",
         "https://news.google.com/rss/articles/CBMijAFBVV95cUxOTDVQck8tZ05Sd2N2YWprNWdpMVRKNHRjVGpuWFlNZERSVVMzcy1lOWY4SXE0cmFsYlBTNTF0andjenVRM3Jab1kxZTRmVW56UWFFcnNsZUZVbkhTYllMUlZEREg5UnBBNHpDbFJxV3JlWjV1VGNsUDU3eE1iZ2JFTWlFWkxjNXZOMUxsVg?oc=5"
-      ]
+      ],
+      "ref_names": []
     },
     {
       "tag": "[持續追蹤]",
@@ -327,14 +329,16 @@
       "ref_urls": [
         "https://www.anthropic.com/news/improving-alignment-security-efforts",
         "https://www.theguardian.com/technology/2026/sep/01/anthropic-claude-ai-hacking-human-values"
-      ]
+      ],
+      "ref_names": []
     },
     {
       "tag": "[重大事件]",
       "text": "Anthropic 推出 Enterprise Frontier Safeguards（EFS），結合零資料留存（資料存放於客戶自有雲端環境而非 Anthropic）與最新的濫用偵測技術，將於今秋起分階段開放，並與 AWS、Google Cloud、Microsoft Azure 等雲端夥伴合作；過渡期間符合資格的企業客戶可在 Fable 5／5.1 上取得零資料留存待遇。",
       "ref_urls": [
         "https://www.anthropic.com/news/enterprise-frontier-safeguards"
-      ]
+      ],
+      "ref_names": []
     }
   ],
   "topicRadar": [

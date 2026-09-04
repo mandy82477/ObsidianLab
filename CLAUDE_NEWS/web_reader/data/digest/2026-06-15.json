@@ -190,7 +190,8 @@
       "ref_urls": [
         "https://www.axios.com/2026/06/14/anthropic-white-house-mythos-fable",
         "https://techcrunch.com/2026/06/13/as-anthropic-suspends-access-to-new-models-india-debates-its-ai-future/"
-      ]
+      ],
+      "ref_names": []
     },
     {
       "tag": "[持續追蹤]",
@@ -198,14 +199,16 @@
       "ref_urls": [
         "https://www.axios.com/2026/06/15/anthropic-white-house-fable-mythos",
         "https://www.wsj.com/tech/ai/anthropic-dispatches-staff-to-d-c-racing-to-resolve-ai-export-restrictions-71303d42"
-      ]
+      ],
+      "ref_names": []
     },
     {
       "tag": "[社群趨勢]",
       "text": "出口管制消息傳出後，中國 AI 股 Zhipu（智譜）股價暴漲 33%，市場視此為中美 AI 競爭加劇的訊號。",
       "ref_urls": [
         "https://news.google.com/rss/articles/CBMitgFBVV95cUxPaUdFaUFxYVdoVWxNc2tVU21pdmVGZUhHc0M0UlRZV0VxU0kyWUxiQmY0TDc1aTNlRFJxLXNiSWczbF9HSG1wNG1Ubkp2eGFXM2oyaHNESnBIa2ZHV0lmVXRtbnMycDVGNkt4OTNvTC0ya2VYYkRPaTZSZE1VU1lfNW55OF8xMkJNeGhzTWF4cXhHODMwbzBpZndQd09iYThoRm5TY3lZdG5fdk9tZURPcWI0ZThTUdIBuwFBVV95cUxNTUVnWFBIa3BfWS1YYnhzOVMwS2Q3U3gyMmVFTEtSWE0tQmpOT2R3aTRuNkxwRWpPS3B0aGZVQk9BTEk1R2RDSXhISW84NUNPU0FlSXZreThiakp6d3phQU5tOC1wQU5WcE5fNkVGYzhUaTJGb3dyaXl4Qy1sYkRPamR0aTc0UzhYQ1Z1bTVMQVBXTUExOGFjb3Biamh1cklfd0M5QUI4eVR4TnVCSVFhS2pUQjZPY3lnQU1V?oc=5"
-      ]
+      ],
+      "ref_names": []
     },
     {
       "tag": "[風險警示]",
@@ -213,7 +216,8 @@
       "ref_urls": [
         "https://dev.to/aws-builders/your-claude-automation-starts-metering-today-june-15-a-quick-checklist-to-avoid-surprise-charges-3c3k",
         "https://clor.com/blog/anthropics-new-agent-sdk-pricing"
-      ]
+      ],
+      "ref_names": []
     },
     {
       "tag": "[新工具]",
@@ -223,7 +227,8 @@
         "https://github.com/juliensimon/canopy",
         "https://www.conan.sh/",
         "https://github.com/tanweai/pua"
-      ]
+      ],
+      "ref_names": []
     }
   ],
   "topicRadar": [],

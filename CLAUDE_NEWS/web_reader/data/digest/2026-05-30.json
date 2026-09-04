@@ -160,35 +160,40 @@
       "ref_urls": [
         "https://qazinform.com/news/anthropic-surpasses-openai-to-become-worlds-most-valuable-ai-startup",
         "https://news.google.com/rss/articles/CBMif0FVX3lxTE93aExISU5kYkdtQUpKbl9OZnhSQ1gyZmdaMUlWWHNlYjdiVXR1U0hLdC1EZUF4OEo2UmZFdVluM3NiUkJ1UzZSMUVTa1J5YW1ZME44akkxSWlmZDdwRkdFNlFaay0xWHFsTFJtdmdBNWgzN295OGFuZjlLclRCbVk"
-      ]
+      ],
+      "ref_names": []
     },
     {
       "tag": "[重大事件]",
       "text": "Claude Opus 4.8 正式發布：Dynamic Workflows（最多 1,000 子代理並行）、努力程度控制（Effort Controls）、Fast Mode（1/3 費用）；SWE-bench Pro 69.2% 是核心賣點；dev.to 同日出現多篇評測與路由指南。",
       "ref_urls": [
         "https://news.google.com/rss/articles/CBMixwFBVV95cUxQX2VrWjZzay0yNXBLTmdkbnZBTGR4Q0ZnYzdOd3BwYTBaNXFUdENoMnJqa0hUWDRFTHdmSzFGRGo0TTJWX2hWWFJGTTZ1OWtUMU1rekI2dkI3YW9wRTRPZDlQZXVXajVHbEtZajY4WVM3QWZraVVqZS1lQnNuNE5VNXJ4NGgybWRtdFFzcGRGXzlDUHJXZ09RdUxDSlp2UUZJaVRTSWNvUlNWRWJJU19EQnNHOThaOTc4VER2bzhHNXE5dm1qNy1v"
-      ]
+      ],
+      "ref_names": []
     },
     {
       "tag": "[重大事件]",
       "text": "v2.1.158：Auto mode 開放 Bedrock、Vertex、Foundry（Opus 4.7 & 4.8），透過環境變數 `CLAUDE_CODE_ENABLE_AUTO_MODE=1` 啟用。",
       "ref_urls": [
         "https://github.com/anthropics/claude-code/releases/tag/v2.1.158"
-      ]
+      ],
+      "ref_names": []
     },
     {
       "tag": "[風險警示]",
       "text": "UltraCode 嚴重 bug 警告：用戶回報 1.7M tokens 消耗後無任何輸出，8 個子代理陷入退化迴圈，Anthropic 無退款機制；Dynamic Workflows 早期穩定性存疑。",
       "ref_urls": [
         "https://www.reddit.com/r/ClaudeAI/comments/1trpxfl/careful_with_the_new_ultracode_its_a_mega_token/"
-      ]
+      ],
+      "ref_names": []
     },
     {
       "tag": "[持續追蹤]",
       "text": "距 6/15 Agent SDK 計費分拆剩 16 天，企業自動化工作流（`claude -p`）正式改走 API 費率；dev.to 文章整理企業因應策略。",
       "ref_urls": [
         "https://dev.to/mjmirza/16-days-until-anthropics-agent-sdk-billing-splits-what-enterprise-teams-should-do-now-c0c"
-      ]
+      ],
+      "ref_names": []
     }
   ],
   "topicRadar": [],

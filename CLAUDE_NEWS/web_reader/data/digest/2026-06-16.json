@@ -221,7 +221,8 @@
         "https://arstechnica.com/ai/2026/06/anthropic-shuts-down-fable-mythos-models-following-trump-admin-directive/",
         "https://www.tomshardware.com/tech-industry/artificial-intelligence/trump-adviser-david-sacks-says-anthropic-refused-to-fix-fable-5-jailbreak-before-us-export-controls",
         "https://techcrunch.com/2026/06/15/the-us-governments-anthropic-models-ban-was-never-about-an-ai-jailbreak/"
-      ]
+      ],
+      "ref_names": []
     },
     {
       "tag": "[持續追蹤]",
@@ -229,7 +230,8 @@
       "ref_urls": [
         "https://www.cnbc.com/2026/06/15/anthropic-mythos-trump-ai.html",
         "https://www.theatlantic.com/technology/2026/06/trump-anthropic-export-control-ai-race/687555/"
-      ]
+      ],
+      "ref_names": []
     },
     {
       "tag": "[重大事件]",
@@ -237,7 +239,8 @@
       "ref_urls": [
         "https://news.ycombinator.com/item?id=48546618",
         "https://news.ycombinator.com/item?id=48545980"
-      ]
+      ],
+      "ref_names": []
     },
     {
       "tag": "[風險警示]",
@@ -245,14 +248,16 @@
       "ref_urls": [
         "https://www.cnet.com/tech/services-and-software/anthropic-sued-alleged-false-advertising-claude-max-subscription-usage-limits/",
         "https://decrypt.co/371201/anthropic-lawsuit-allegedly-misleading-claude-ai-pricing"
-      ]
+      ],
+      "ref_names": []
     },
     {
       "tag": "[新工具]",
       "text": "SpaceX 以 600 億美元收購 AI 編碼工具 Cursor，直接進軍 AI 開發工具市場，被視為與 Anthropic / Claude Code 的正面競爭。",
       "ref_urls": [
         "https://news.google.com/rss/articles/CBMi0AFBVV95cUxPek9WVE9iUnE2QUtaNHh3Z0JSYklhMnE1a3BCaTlvZ1dZQ2I5NlBHai1uU19OVFp3cHo3QnplVFhDWFYtamFpVjdTSjZFNlFvYjZTaHZlaGUzYTkyWmVZRHhYdzZ6T3Z6RkdxRDRjM1ZIeExoMDZnUmVNeXJsamV2WHRIRTVyOExTYlE1T3hOWk44N3poc3FpQ2lpbjFZX3h0a3VpODRqR0hKaTBvU0RrRkl4N3ZjaWtJeFpDVHFHTXJRUXBDVHdvZmYxVmdUWUVp?oc=5"
-      ]
+      ],
+      "ref_names": []
     }
   ],
   "topicRadar": [],

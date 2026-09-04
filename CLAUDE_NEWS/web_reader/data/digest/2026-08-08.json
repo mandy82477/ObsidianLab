@@ -164,7 +164,8 @@
       "ref_urls": [
         "https://twitter.com/ClaudeDevs/status/2085794862608318627",
         "https://news.google.com/rss/articles/CBMipAFBVV95cUxOLXV5d0YyUkM0elFOVWJFNWFEV2dwZDFDUmxvZk5rbWFlanlSMGpjc2dLQ2ZGajRsOHhoWjNyd0ZXMVN5ZGl1QjN5blRKV0hIbjhZenFEcGNyVkdIbXNYcjdDMm10NF9iVmVWSkhYUUhsc3hLcV9fOEFoRmJvZVppYzNvYzgtNXIzTjdPTlBoVXI3anh4N2JXRHJXT2gtLXpYMWN5MQ?oc=5"
-      ]
+      ],
+      "ref_names": []
     },
     {
       "tag": "[重大事件]",
@@ -175,7 +176,8 @@
         "https://news.google.com/rss/articles/CBMidkFVX3lxTE54ZTFzN1B4RmNudWRaUjNtVDVMWWlZMlhad2kyWEVldTdQeFAyS25Ja1Z2YlYyVkV4eWdWVHVnSFJ3MjJoOGw0QzJ1d2JXT0dHR3JRZTQyb053anFEeEVhNXRuU1pYSTl5ellfLVl6bi0zNUoyNWc?oc=5",
         "https://news.google.com/rss/articles/CBMiqgFBVV95cUxOMTV4RVd2LWpEQjJuc1pHV3dPMVgxZmxVV1dHeElZSFRMalVFQVRsa1B5ZnU4RkFGampTVlZpNFp1X053bHhLSWRwaXQyc1F3MU5RZWFkRTgtN0tNZk14ZGV4V3ZvY3BDZUktYllaeEdnTkphOVJ5V2lSaE51cEpLZzR0M2QyckdNY2tFRjctZDM1d3Q1MEItTEsxZC1WSkVrRFpjel91RXExZ9IBrwFBVV95cUxPQmpfT2hEX0dmTzJKTC1PalFXMkFBT2lQSU5vRTBFTTJPT0tXMWRxaV96OUNPS0lhZWxzRDdBQnk3Ml81OGNsanNDdzdDdGRYX21KRHF0MXE3RFItMUt4bnNKVm5ZUEtROGRoLVd4VXd0eVF1SURVWkstT29ROEtaYTZPYkx1Ymw5TnZyaS15QXNiMUo0UHF5RG1PY0xPN2g5dUdGS3YzdUR5TXRHZTgw?oc=5",
         "https://news.google.com/rss/articles/CBMikwFBVV95cUxQZ3FjdE96ZWR2clJwWWVYWFludkdweUNwNEp6ZDRZNTU1ZHRkOEtIX29MZVlKV3l3RE84TFJXZ1pCZVJDSlpUQW1oemZPUEJjYmE2dHB4VEJhMmhfV1VJNkdTUXdiT2dmMUV4SEg4RzR6UHdTRUVuOVJUdFM5eEkxNDItam5zVjk0R0RNQXh4SE9zR28?oc=5"
-      ]
+      ],
+      "ref_names": []
     },
     {
       "tag": "[社群趨勢]",
@@ -186,7 +188,8 @@
         "https://github.com/anthropics/claude-code/issues/23626",
         "https://github.com/anthropics/claude-code/issues/28300",
         "https://github.com/anthropics/claude-code/issues/44243"
-      ]
+      ],
+      "ref_names": []
     }
   ],
   "topicRadar": [],

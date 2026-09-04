@@ -282,21 +282,24 @@
       "ref_urls": [
         "https://old.reddit.com/r/ClaudeAI/comments/1ujila1/anthropic_embedded_spyware_in_claude_code_and/",
         "https://www.vincentschmalbach.com/claude-code-china-router-fingerprint/"
-      ]
+      ],
+      "ref_names": []
     },
     {
       "tag": "[重大事件]",
       "text": "Claude Code v2.1.196 正式推出「組織預設模型」功能，管理員可在 org console 設定組織預設模型，使用者在 `/model` 選單中會看到「Org default」或「Role default」選項。",
       "ref_urls": [
         "https://github.com/anthropics/claude-code/releases/tag/v2.1.196"
-      ]
+      ],
+      "ref_names": []
     },
     {
       "tag": "[持續追蹤]",
       "text": "Claude Code 2.1.197 洩露的 `/model` 選單中出現 Sonnet 5，雖尚無法選用，但社群預測正式發布在即。",
       "ref_urls": [
         "https://www.reddit.com/r/ClaudeAI/comments/1ujpq1d/claude_code_21197_has_sonnet_5_in_model_list/"
-      ]
+      ],
+      "ref_names": []
     },
     {
       "tag": "[風險警示]",
@@ -304,7 +307,8 @@
       "ref_urls": [
         "https://www.developer-tech.com/news/claude-code-malware-github-repo/",
         "https://cybernews.com/security/claude-code-attack-prompt-injection-mozilla/"
-      ]
+      ],
+      "ref_names": []
     },
     {
       "tag": "[重大事件]",
@@ -312,7 +316,8 @@
       "ref_urls": [
         "https://fortune.com/2026/06/30/anthropic-clash-with-u-s-government-shows-its-failure-to-play-by-trump-administration-playbook/",
         "https://old.reddit.com/r/ClaudeAI/comments/1ujila1/anthropic_embedded_spyware_in_claude_code_and/"
-      ]
+      ],
+      "ref_names": []
     }
   ],
   "topicRadar": [],

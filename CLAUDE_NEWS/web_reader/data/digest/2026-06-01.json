@@ -139,7 +139,8 @@
       "ref_urls": [
         "https://www.ft.com/content/f88d62e3-5b67-4aed-ad69-6f38b62559b3",
         "https://news.google.com/rss/articles/CBMizAFBVV95cUxQa0xoMlJfcGlrWFR5c3B6Qmtya0NfYnY5WUNjWFRoYXlrSjd4ZUc0Q3dkTkpnT3hZd2dDSnhpZ2xjejhvS1Z3QWZSNDNyQ3hKSFI1ZW1Dd2p6eEgwU0xGdUFfQkd0WEJ6cGFNRTh3Y1RndF9KUU52bHNOZjRNZVFhTUlROEJpUGtSaTNGTnJMNkpjbm1ZSVp0Ym5sdGJ3V0F5b3VaYmttUS1ybW5paXRuc2JwWkZDVUpRQnlSY25kS0ktUHcxMlVHN0ZTSnbSAVpBVV95cUxOODFrV2FPOWFoRFc3cGpBOGxNMUpFeVlQOXBuZGFZSlo0U3VZN0E4cDJDX3duYk9aM0ljRWcwcGRFUlIyeGZ0Zm53LUhvc1ViVVFlUzBXR0JSTlE"
-      ]
+      ],
+      "ref_names": []
     },
     {
       "tag": "[重大事件]",
@@ -147,7 +148,8 @@
       "ref_urls": [
         "https://www.nytimes.com/2026/05/30/us/politics/anthropic-openai-super-pacs-midterms.html",
         "https://news.google.com/rss/articles/CBMieEFVX3lxTE8wY0x4bjdLN01XZklMLTBaUTk4b3hvNF83ZHdtaGVNWmNPR0NCdkMwYUNBa2FlRlRvNU9uVXRzUmlrcmpFVEV6QXBkb0d2LXBNeE1fUU5ydnpCa3FIc2RNam5aeVBPREVNdFdVVThZVFYzeFgxUG4wZg"
-      ]
+      ],
+      "ref_names": []
     },
     {
       "tag": "[新工具]",
@@ -157,7 +159,8 @@
         "https://agents-cli.sh",
         "https://nexo.sh/posts/agentpack/",
         "https://dashvox.ai"
-      ]
+      ],
+      "ref_names": []
     },
     {
       "tag": "[持續追蹤]",
@@ -165,7 +168,8 @@
       "ref_urls": [
         "https://news.google.com/rss/articles/CBMilgJBVV95cUxPUDVJbVJqOXNGTktpbjJ3Nk1HWFlobnppcF9sQWNaRERhcUFJaXQ2NXFXNnN0eEZXTDFVN09TSzk2QlUzVkZ0b01EY2s3ZDByTVprRUpWSVY1TkU0NGo3NTRoWWxlTHl3Um5aR3ZDZGlNSmNnU0tfajFvdnphTUFpaVBSaDNJaS12QVpqc0lfZk4ySXNFSC1qc1lxMXh4cmR6X2tyX3VjQ1cyVi1jclc0NEI5MUk0TUpTN3pIU0VpZklidUNnVEtZNHZhNmEwZm5adEloYXFXM3Fma3BLU1pOcFViUVFHQnpITUR3b3dyeVY0ODYxS3FnaEg4RUl6WjY3bTBKNlpPbWVFaEtvc1JEbTA5Y28yQQ",
         "https://news.google.com/rss/articles/CBMipAFBVV95cUxPWjRfdmJfdkJMV0k1cllDLVRBZFp1RzZ4VE9DNVBhOGpGY2JMeEtpZEZXVGhjQUctNnd6QUlCTkszSFpVY2JWQ0JHMk8yZWg1eUhMSGNRUFpzU0pLLTAzazJpajg0S2FQVGoyeDNMR0t3RmZRSWhFYjRCZ1BiZ0NndWMzUXFiMXJOVUxyVDVjMThNWks0bmcwRFNGRzNYdlctcXJHVw"
-      ]
+      ],
+      "ref_names": []
     },
     {
       "tag": "[社群趨勢]",
@@ -173,7 +177,8 @@
       "ref_urls": [
         "https://news.ycombinator.com/item?id=48352045",
         "https://cryptobriefing.com/san-francisco-home-accepts-ai-stock-payment/"
-      ]
+      ],
+      "ref_names": []
     }
   ],
   "topicRadar": [],
