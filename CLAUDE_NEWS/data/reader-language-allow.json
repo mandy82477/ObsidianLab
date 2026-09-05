@@ -13,6 +13,18 @@
       "reason": "「自主編程代理」的字面子串，非編輯部角色詞（2026-09-05 B 組清理誤報）"
     },
     {
+      "page": "topics/model-comparison",
+      "term": "主編",
+      "line_contains": "自主編碼",
+      "reason": "「數小時自主編碼」的字面子串，非編輯部角色詞（2026-09-05 G2 組清理誤報）"
+    },
+    {
+      "page": "topics/official-community-gap",
+      "term": "派工",
+      "line_contains": "Subagent 派工",
+      "reason": "「Subagent 派工/編排」指 Claude Code 本身把任務指派給子代理的架構模式（產品化追蹤矩陣的分類名），非編輯部記者派工流程（2026-09-05 G2 組清理誤報）"
+    },
+    {
       "page": "topics/community-tech-patterns",
       "term": "覆寫",
       "line_contains": "非預期覆寫",
@@ -23,6 +35,72 @@
       "term": "覆寫",
       "line_contains": "個人化覆寫",
       "reason": "config override 技術語意（CLAUDE.local.md 覆寫共用設定），非頁面維護動作"
+    },
+    {
+      "page": "entities/chris-ciauri",
+      "term": "記者",
+      "line_contains": "記者會",
+      "reason": "「首爾記者會／召開記者會」指真實新聞發布會，非編輯部記者角色詞（2026-09-05 G1 組清理誤報）"
+    },
+    {
+      "page": "entities/fable-5",
+      "term": "記者",
+      "line_contains": "記者會",
+      "reason": "「首爾記者會」指真實新聞發布會，非編輯部記者角色詞（2026-09-05 G3 組清理誤報）"
+    },
+    {
+      "page": "entities/mythos",
+      "term": "記者",
+      "line_contains": "記者會",
+      "reason": "「首爾記者會」指真實新聞發布會，非編輯部記者角色詞（2026-09-05 G3 組清理誤報）"
+    },
+    {
+      "page": "index",
+      "term": "記者",
+      "line_contains": "記者會",
+      "reason": "「首爾記者會」指真實新聞發布會，非編輯部記者角色詞（2026-09-05 G4 組清理誤報）"
+    },
+    {
+      "page": "topics/community-tech-timeline",
+      "term": "主編",
+      "line_contains": "自主編程",
+      "reason": "「自主編程代理」的字面子串，非編輯部角色詞（2026-09-05 G4 組清理誤報）"
+    },
+    {
+      "page": "feature-radar",
+      "term": "派工",
+      "line_contains": "派工行為亦調整，原文截斷",
+      "reason": "指 Claude Code 本身 subagent forking 的派工行為變更，非編輯部記者派工流程（2026-09-05 G4 組清理誤報）"
+    },
+    {
+      "page": "feature-radar",
+      "term": "派工",
+      "line_contains": "agent 派工行為亦有相應調整",
+      "reason": "同上，描述 Claude Code subagent 派工機制本身（2026-09-05 G4 組清理誤報）"
+    },
+    {
+      "page": "feature-radar",
+      "term": "派工",
+      "line_contains": "非 teammate agent 派工行為調整",
+      "reason": "同上（2026-09-05 G4 組清理誤報）"
+    },
+    {
+      "page": "feature-radar",
+      "term": "派工",
+      "line_contains": "Subagent 派工/編排」列",
+      "reason": "指 wiki 產品化矩陣中「Subagent 派工/編排」這個既有分類名稱，非編輯部記者派工流程（2026-09-05 G4 組清理誤報）"
+    },
+    {
+      "page": "topics/skill-interest-watch",
+      "term": "lint",
+      "line_contains": "hook／lint／型別",
+      "reason": "「lint」指程式碼靜態檢查工具（linter），非編輯部週更檢查流程（2026-09-05 G4 組清理誤報）"
+    },
+    {
+      "page": "topics/coding-workflow-guide",
+      "term": "覆寫",
+      "line_contains": "改為建議改進而不覆寫",
+      "reason": "描述 Claude Code `/init` 不會覆寫既有 CLAUDE.md 檔案，是讀者需要知道的產品行為，非頁面維護動作（2026-09-05 G4 組清理誤報）"
     }
   ]
 }

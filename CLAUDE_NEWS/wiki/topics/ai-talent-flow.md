@@ -28,11 +28,11 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 **領域：** 💼 商業
 **蒐集邊界：** 以與 Anthropic 相關的人才流動為主，另針對本主題定向補抓（每日至多 3 則）；其他實驗室之間、與 Anthropic 無關的異動仍可能延遲或缺漏，重大者由人工查證補記。
 **開始日期：** 2026-06-21
-**最後更新：** 2026-09-04
+**最後更新：** 2026-09-05
 **最後新聞更新：** 2026-09-01
 
 > **最新動態：Google DeepMind 同日再失四位創立元老級主管（未具名，2026-09-01）**
-> Google News 定向抓取報導稱 DeepMind 同一天失去四位創立元老級主管，惟報導細節僅標題可見，四人身分、去向均未見具體姓名，依規則標為懸置事項、不得杜撰人名，詳見「時序」新增節。
+> Google News 報導稱 DeepMind 同一天失去四位創立元老級主管，惟報導細節僅標題可見，四人身分、去向均未見具體姓名，標為懸置事項、不得杜撰人名，詳見「時序」新增節。
 > **Adgully.com 跟進報導 Google DeepMind 頂尖 AI 人才佔比明顯下滑**（2026-08-29）
 > 與 08-27 Fortune「持續流失頂尖人才」為同一趨勢的又一媒體佐證，延續本頁自 2026-06 以來記錄的「Google DeepMind 淨流出」格局；具體佔比數字、統計方法未見報導細節，僅標題可用（推論，待後續補充具名案例）。
 > **08-21/08-23 已記錄之 Anthropic 延攬 Google 自研晶片計畫創辦人 Amir Salek**，仍為本頁近期重點，詳見「對各公司的影響」表。
@@ -71,16 +71,16 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 
 ## 時序
 
-### 2026-09-01（Topic Watch 定向抓取）
-- ❓ **待查證**（標 2026-09-01｜查 DeepMind、founding、四位主管｜複 2026-09-15）｜**Google DeepMind 同一天失去四位創立元老級主管**：Google News 定向抓取報導稱 DeepMind 同日再失四位創立元老級主管，惟原文僅標題可用，**四人身分均未見具體姓名**，不得推測與 08-05/08-06 已記錄之 Jeff Dean／Sanjay Ghemawat／Oriol Vinyals／Quoc Le 出走批次（Discovery Loop 創業潮）為同一事件——時間點相隔近一個月，且本則措辭為「創立元老級」（founding-level），與既有批次的職稱描述不完全一致，兩者關係待後續報導補充人名後才可判定是否重複或為獨立新一波流失。與本頁既有「Google DeepMind 淨流失」格局方向一致，惟本則暫不計入「對各公司的影響」表評估，待具名後補列（Google News，2026-09-01）
+### 2026-09-01
+- ❓ **待查證**（標 2026-09-01｜查 DeepMind、founding、四位主管｜複 2026-09-15）｜**Google DeepMind 同一天失去四位創立元老級主管**：Google News 報導稱 DeepMind 同日再失四位創立元老級主管，惟原文僅標題可用，**四人身分均未見具體姓名**，不得推測與 08-05/08-06 已記錄之 Jeff Dean／Sanjay Ghemawat／Oriol Vinyals／Quoc Le 出走批次（Discovery Loop 創業潮）為同一事件——時間點相隔近一個月，且本則措辭為「創立元老級」（founding-level），與既有批次的職稱描述不完全一致，兩者關係待後續報導補充人名後才可判定是否重複或為獨立新一波流失。與本頁既有「Google DeepMind 淨流失」格局方向一致，惟本則暫不計入「對各公司的影響」表評估，待具名後補列（Google News，2026-09-01）
 
-### 2026-08-29（Topic Watch 定向抓取，跟進）
+### 2026-08-29（跟進）
 - **Adgully.com：Google DeepMind 頂尖 AI 人才佔比明顯下滑，競爭對手正在拉近差距**：與 08-27 Fortune 報導「DeepMind 持續流失頂尖人才」方向一致，本則換以「頂尖人才佔比」角度描述同一趨勢；僅標題可用，未見具體佔比數字、統計方法或競爭對手名單，視為既有趨勢的又一媒體佐證，非新增具名個案（Google News/Adgully.com）
 
-### 2026-08-28（Topic Watch 定向抓取，蒐集邊界外背景訊號）
+### 2026-08-28（蒐集邊界外背景訊號）
 - **加拿大 5.41 億美元研究計畫吸引美國常春藤學者北遷**：報導稱受美國研究政策環境影響，部分常春藤學者轉往加拿大新設立的 5.41 億美元研究計畫，涉及 AI 相關研究人才跨國流動；僅標題與轉址連結可用，原文內容未能取得，未見具體學校名單、人數、或與特定 AI 實驗室／公司的關聯。**與本頁核心追蹤格局的關係**：本頁聚焦「AI 前沿實驗室之間」的人才流動（Google DeepMind → Anthropic/OpenAI 一類），此則為學界層級、跨國政策驅動的人才外流，屬更上游的總體背景訊號而非個案（推論），暫記於此供後續若出現具名學者／機構銜接 AI 實驗室的報導時參照；另見 [[topics/anthropic-government-policy]] 美國 AI 研究政策環境（Topic Watch/ai-talent-flow，僅標題可用）
 
-### 2026-08-27（Topic Watch 定向抓取）
+### 2026-08-27
 - **Fortune：新數據顯示 Google DeepMind 持續流失頂尖 AI 人才至競爭實驗室與新創**：報導指出最新資料顯示 DeepMind 人才流失情況延續，惟具體人數、流向公司名單、統計期間均未見報導細節，僅標題可用（推論，待後續補充具名案例）。與本頁既有記錄（06-21～08-06 批次流失至 Anthropic／OpenAI／Discovery Loop）方向一致，屬既有趨勢的持續佐證，非新增具名個案（Google News/Fortune https://fortune.com/2026/08/27/google-deepmind-losing-talent-to-rival-ai-labs-startups-new-data-show/）
 
 ### 2026-08-24（跟進，非新事實）
@@ -89,7 +89,7 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 ### 2026-08-23（具名確認，延續 08-21）
 - **The Times of India：具名確認 Anthropic 延攬 Google 自研晶片計畫創辦人 Amir Salek**：延續 08-21 已記錄之「前 Google 晶片工程師」（未具名，Seeking Alpha／Bloomberg），本則首次具名確認為 **Amir Salek**——Google 自研晶片計畫（custom chip programme）創辦人，即 Google TPU 專案創始人物之一。**對戰力與市場意涵**：與本頁既有以研究員流動為主的追蹤格局不同，此案屬**晶片設計人才**流入，且延攬對象非一般工程師而是曾主導 Google 整條自研晶片專案的創始層級人物，顯示 Anthropic 自研晶片布局（見 [[topics/anthropic-business]]「戰略合作」表 08-05～07 已記錄之內部晶片設計團隊籌建）可能取得具備從零打造整條晶片專案經驗的核心人才；具體職位、加入時間、團隊規模、與既有晶片團隊籌建進度的銜接關係均未見報導細節，僅標題層級資訊（推論）（Google News/The Times of India）
 
-### 2026-08-13（Topic Watch 專頁定向抓取）
+### 2026-08-13
 - ❓ **待查證**（標 2026-08-13｜查 Sergey Brin｜複 2026-09-12）｜**Sergey Brin 在 Hassabis 卸任 DeepMind CEO 後對內部員工發表談話（標題截斷，內容未知）**：Times of India 標題稱 Google 共同創辦人 Sergey Brin 在 Demis Hassabis 卸任 DeepMind CEO 後對內部員工發表談話，標題本身遭 RSS 截斷為「Catch u...」，具體談話內容、發表場合均未見報導。**與既有記錄的關係**：本頁已於 08-05／08-06 事件（08-13 查證補記，見下方）記錄 Hassabis「卸下 DeepMind 日常營運、轉任 DeepMind 董事長兼 Alphabet 首席科學家（留任集團，非離職）」；本則標題用詞「exits as CEO」與該既有記錄方向一致（確實卸任 CEO 職務，但留任集團），惟無法排除為另一波後續發展或純粹是同一事件的重新報導角度，因標題截斷、正文未提供，暫不逕自合併或視為新增獨立事實。已掃日報至 2026-08-29 無後續；官方頁面未查證（Google News/Times of India）
 
 ### 2026-08-05／08-06（補記於 2026-08-13）
