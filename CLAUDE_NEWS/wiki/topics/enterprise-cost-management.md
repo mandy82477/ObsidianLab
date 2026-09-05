@@ -37,20 +37,22 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 
 ## 摘要
 
-大型組織採用 Claude Code 後，成本結構挑戰迅速浮現。Uber 四個月耗盡全年 AI 預算（Forbes 報導）是目前最具代表性的公開案例，揭示企業在缺乏細粒度使用量控管工具的情況下，AI 工具成本極易失控。此議題已從開發者社群的個人抱怨升級至 Forbes、Business Insider 等主流財經媒體的報導層級，成為企業 CTO 層級必須正視的採購決策問題。Anthropic 企業採用率（34.4%，Ramp AI Index）已首次超越 OpenAI，但成本壓力也正推著企業從「單一供應商依賴」走向多模型混合策略。
+大型組織採用 Claude Code 後，成本結構挑戰迅速浮現。Uber 四個月耗盡全年 AI 預算（Forbes，2026-05-17）是本頁最早的公開案例，揭示企業在缺乏細粒度使用量控管工具的情況下，AI 工具成本極易失控。此議題已從開發者社群的個人抱怨升級至 Forbes、Business Insider 等主流財經媒體的報導層級，成為企業 CTO 層級必須正視的採購決策問題。
 
-| 指標 | 現況（2026-09-06 重算）|
+| 指標 | 現況（2026-09-06 更新）|
 |------|------|
 | 公開企業案例數 | 12 個（正面優化 1、縮減或切換 5、採用或並行 3、單點失控 3）|
 | 官方企業成本工具 | 組織／部門／每人三層皆有，混合計費管理仍缺 |
-| 已量化的訂閱與 API 價差 | 三個獨立方法論指向 40–44 倍 |
+| 已量化的訂閱與 API 價差 | 兩個獨立量測指向 40–44 倍（第三個來源只給訂閱等值月額，未算倍數）|
 | 社群因應工具 | 個人視角為主（tare、engram、CostHawk 等），無部門層方案 |
+
+Anthropic 企業採用率（34.4%，Ramp AI Index）已首次超越 OpenAI，成本壓力也正推著企業從「單一供應商依賴」走向多模型混合策略。
 
 ---
 
 ## 缺口 vs 官方對應
 
-本頁自 2026-05-01 起持續記錄企業級成本管控的四項結構性缺口。2026-07-02 官方 [Spend Controls](https://claude.com/blog/giving-admins-more-visibility-and-control-over-claude-usage-and-spend) 公開控管粒度後，四項中三項已結案，僅剩混合計費管理仍無官方對應：
+本頁自 2026-05-01 起持續記錄企業級成本管控的四項結構性缺口。**以下三項的官方對應僅限 Enterprise 方案**（官方 blog 2026-07-02 明載），Pro／Max／Team 取不到；非 Enterprise 組織的四項缺口實質全部仍為 ❌。2026-07-02 官方 [Spend Controls](https://claude.com/blog/giving-admins-more-visibility-and-control-over-claude-usage-and-spend) 公開控管粒度後，Enterprise 方案下四項中三項已結案，僅剩混合計費管理仍無官方對應：
 
 | 缺口 | 社群/企業呼籲起點 | 官方對應 | 狀態 | 備注 |
 |------|------|------|------|------|
@@ -59,9 +61,7 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 | 即時消費警報與自動暫停機制 | $6,000 /loop 徹夜運行事件（2026-05-22）；計費儀表板滯後問題（2026-05-01 起持續）| Spend Controls（官方 blog，2026-07-02）| 🧪 部分回應 | 有 75%／90%（組織層）與 75%／95%（每人）警示通知，**無自動暫停**——超過上限仍會繼續計費 |
 | API 費率 vs 訂閱方案的混合計費管理 | 6/15 計費結構改變爭議（[[entities/pricing]]，2026-05-14 起）；Agent SDK/CI/CD 用量脫離訂閱疑慮 | 無官方對應 | ❌ 無官方對應 | Spend Controls 報導聚焦支出管控，未提及混合計費規則調整 |
 
-以下三項的官方對應**僅限 Enterprise 方案**（官方 blog 2026-07-02 明載），Pro／Max／Team 取不到；非 Enterprise 組織的四項缺口實質全部仍為 ❌。
-
-**判讀原則：** 一缺口一列，狀態四選一（✅／🧪 部分回應／❌／⏸ 需求已消失）；標 🧪 逾 90 天無新細節者，備注須寫「官方已 N 天無進一步說明」。與 [[topics/official-community-gap]] 官方功能追蹤矩陣互為對照。
+%% 維運備忘：判讀原則——一缺口一列，狀態四選一（✅／🧪 部分回應／❌／⏸ 需求已消失）；標 🧪 逾 90 天無新細節者，備注須寫「官方已 N 天無進一步說明」。與 [[topics/official-community-gap]] 官方功能追蹤矩陣互為對照。 %%
 
 ---
 

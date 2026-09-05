@@ -612,7 +612,7 @@ window.WIKI_DATA = {
       "pill": "active",
       "firstSeen": "2026-04-25",
       "startDate": "",
-      "lastUpdated": "2026-09-05",
+      "lastUpdated": "2026-09-06",
       "lastNewsUpdate": "2026-09-05",
       "updateFreq": "",
       "parent": "",
@@ -1123,8 +1123,8 @@ window.WIKI_DATA = {
       "lastNewsUpdate": "2026-09-04",
       "updateFreq": "",
       "parent": "",
-      "summary": "大型組織採用 Claude Code 後，成本結構挑戰迅速浮現。Uber 四個月耗盡全年 AI 預算（Forbes 報導）是目前最具代表性的公開案例，揭示企業在缺乏細粒度使用量控管工具的情況下，AI 工具成本極易失控。此議題已從開發者社群的個人抱怨升級至 Forbes、Business Insider 等主流財經媒體的…",
-      "latestHeadline": "大型組織採用 Claude Code 後，成本結構挑戰迅速浮現。Uber 四個月耗盡全年 AI 預算（Forbes 報導）是目前最具代表性的公開案例，揭示企業在缺乏細粒度使用量控管工具的情況下，AI 工具成本極易失控。此議題已從開發者社群的個人抱怨升級至 Forbes、Business Insider 等主流財經媒體的",
+      "summary": "大型組織採用 Claude Code 後，成本結構挑戰迅速浮現。Uber 四個月耗盡全年 AI 預算（Forbes，2026-05-17）是本頁最早的公開案例，揭示企業在缺乏細粒度使用量控管工具的情況下，AI 工具成本極易失控。此議題已從開發者社群的個人抱怨升級至 Forbes、Business Insider 等主流…",
+      "latestHeadline": "大型組織採用 Claude Code 後，成本結構挑戰迅速浮現。Uber 四個月耗盡全年 AI 預算（Forbes，2026-05-17）是本頁最早的公開案例，揭示企業在缺乏細粒度使用量控管工具的情況下，AI 工具成本極易失控。此議題已從開發者社群的個人抱怨升級至 Forbes、Business Insider 等主流",
       "readerDomains": [
         "💼 商業"
       ]

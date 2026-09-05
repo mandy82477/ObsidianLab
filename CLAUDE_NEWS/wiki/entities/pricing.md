@@ -4,7 +4,7 @@ kind: "entity"
 type: "policy"
 status: "active（持續調整中）"
 domain: "💼 商業"
-last_updated: "2026-09-05"
+last_updated: "2026-09-06"
 last_news_update: "2026-09-05"
 status_main: "active"
 days_since_news: 1
@@ -29,13 +29,13 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 **狀態：** active（持續調整中）
 **領域：** 💼 商業
 **首次出現：** 2026-04-25
-**最後更新：** 2026-09-05
+**最後更新：** 2026-09-06
 **最後新聞更新：** 2026-09-05
 
 > **最新計費政策異動**（2026-09-06）
 > - **09-14 起你的週配額變成現在的 83%**：+50% 加成 09-13 23:59 PT 到期（[官方說明中心](https://support.claude.com/en/articles/15910845-claude-code-may-august-2026-weekly-limits-promotion)），接手的是永久 +25%（08-29 官方 Bluesky 公告），換算後相對現在少約 17%。適用 Pro、Max、Team 與座位制 Enterprise。
 > - **$100 過渡 credit 09-17 23:59 PT 到期即作廢**，不可續買、不轉存。
-> - **三件計費事故仍未解**：續訂扣款後帳號停用、旗艦用量點數誤扣、升級付款流程作廢。見「事故現在還在發生嗎」。
+> - **四件計費事故仍未解**：續訂扣款後帳號停用、旗艦用量點數誤扣、升級付款流程作廢、$16.6M 帳務錯誤的退款未定。見「事故現在還在發生嗎」。
 
 ## 現況
 
@@ -43,7 +43,9 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 
 **2026-07-20 起，旗艦模型（現為 Fable 5）在訂閱體系中被切成兩層**：Max 與 Team premium 席位維持標配、上限為週用量的 50%；Pro 與 Team standard 席位改以 usage credits 按 API 費率付費，並發放一次性過渡 credit。此分界經 2026-08-08 官方 Help Center 查證確認，終結 07-18～21 間四則互相矛盾的媒體報導。對照見下方「我的方案現在有什麼」。
 
-**09-14 之後你會少多少（換算法）**：官方不公布每週配額的絕對量，只在 `Settings > Usage` 顯示你自己的數字。**你會看到的變化**：09-14 之後做同樣份量的工作，`Settings > Usage` 的用量百分比會比現在多跑約 **20%**（1 ÷ 0.83）——這是唯一能自己對號的方式。**升到 Max 20x 能多拿多少，官方未載明，本庫不推估**。
+**09-14 之後你會少多少（換算法）**：官方不公布每週配額的絕對量，只在 `Settings > Usage` 顯示你自己的數字。**你會看到的變化**：09-14 之後做同樣份量的工作，`Settings > Usage` 的用量百分比會比現在多跑約 **20%**（1 ÷ 0.83）——這是唯一能自己對號的方式。**升到 Max 20x 能多拿多少，官方未載明，本站不推估**。
+
+**你的選項**：什麼都不做（同樣工作用量百分比多跑約 20%）／把重活挪進 5 小時窗（該窗不受影響）／評估 Max 20x（增量官方未載明，本站不推估）。
 
 其餘結構未變：所有付費方案仍為訂閱配額制——原定 2026-06-15 實施的「程式化用量（Agent SDK、`claude -p`）脫離訂閱、改按 API 費率計費」已於 **2026-06-16 暫停**，重新推行時間未定；2026-07-04 起企業方案可用支出控管（spend controls）。核心爭點：訂閱方案以人工互動為設計前提，大規模自動化工作流的長期計費方向尚未確定。
 
@@ -65,7 +67,7 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 
 **⚠️ usage credits 是「用量上限失效開關」**：credits 為 opt-in、預設關閉（`Settings > Usage`）。**一旦開啟，方案用量上限就不再是硬停止**——Claude 會繼續回答並從 credits 扣款，體感與額度內完全相同，但每則超額回應都在計費。靠 Pro 硬上限控管支出者，領取過渡 credit 後務必確認 auto-reload 未開啟（auto-reload 每日兌換上限 $2,000）。（來源：[Claude Fable 5 on your plan](https://support.claude.com/en/articles/15424964-claude-fable-5-on-your-plan)、[Manage usage credits](https://support.claude.com/en/articles/12429409-manage-usage-credits-for-paid-claude-plans)，2026-08-08 查證）
 
-> **09-13／09-17 兩個到期時點的時分**（23:59 PT）為多家媒體引官方公告的一致轉述，官方說明中心原文本庫尚未取得。
+> **09-13／09-17 兩個到期時點的時分**（23:59 PT）為多家媒體引官方公告的一致轉述，官方說明中心原文本站尚未取得。
 
 ### 方案細節
 
@@ -87,7 +89,9 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 
 ## 一小時／一個月大概多少
 
-> 口徑固定：**一小時 agent 工作 ＝ 50k 輸入 ＋ 15k 輸出 token ＋ 一個 session-hour**，取自官方 Managed Agents 算例。只有 Opus 5 那列是官方算的，其餘是同一份工作量代入各自牌價的推算，**不是實測**。資料截至 2026-09-06。
+本頁給的是「一小時多少」，[[topics/model-comparison#同一份工作，換設定差多少]] 給的是「這一件工作多少」。
+
+> 本表假設：**一小時 agent 工作 ＝ 50k 輸入 ＋ 15k 輸出 token ＋ 一個 session-hour**，取自官方 Managed Agents 算例。只有 Opus 5 那列是官方算的，其餘是同一份工作量代入各自牌價的推算，**不是實測**。資料截至 2026-09-06（Managed Agents 為 beta，須 beta header）。
 
 | 模型 | 一小時 | 一個月（每天 4 小時 × 22 天） | 這個數字哪來的 |
 |------|--------|------|------|
@@ -102,7 +106,7 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 - **你的實際 token 量不會是 50k／15k**。要估自己的，先用 `count_tokens` 量一次真實的 prompt，再照上表比例縮放。
 - **一整個月的真實落差有人量過，數字比這裡大得多**：訂閱與純 API 之間最高 40 倍，具名企業案例與方法論見 [[topics/enterprise-cost-management]]，本頁不重複列。
 - **上表沒有算乘數**。快取命中、Batch、資料落地都會再乘一次，見下方「通路與乘數」。
-- **換一個模型跑同一件工作差多少**（含 tokenizer 換代讓同一段文字多產生約 30% token）不在本頁，見 [[topics/model-comparison#同一份工作，換設定差多少]]。本頁給的是「一小時多少」，那頁給的是「這一件工作多少」。
+- **換一個模型跑同一件工作差多少**（含 tokenizer 換代讓同一段文字多產生約 30% token）不在本頁，見 [[topics/model-comparison#同一份工作，換設定差多少]]。
 
 ---
 
@@ -131,7 +135,9 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 
 ## 當前生效的計費規則
 
-一條一規則，附來源日期；失效規則移除，計費事故與爭議見下方「事故與爭議」分組。
+計費事故與爭議見下方「事故現在還在發生嗎」。
+
+%% 維運備忘：一條一規則，附來源日期；失效規則移除 %%
 
 - **✅ 2026-09-13 到期（更正：非如期於 08-31 終止）｜Claude Code 週用量 +50% 促銷**：此促銷原訂 2026-05-13 起，歷經 06-22→07-07→07-12→07-19→08-18→**09-02（本次更正）**多次延長。08-29 官方公告曾記為「08-31 到期、不再延長」，但官方說明中心 **2026-09-02** 更新原文——「We've extended this promotion. Increased weekly limits now run through September 13, 2026.」——實際延長至 **2026-09-13**；09-14 起銜接下方「標準週配額永久 +25%」，兩者不留缺口。適用 **Pro、Max、Team**（來源：[Claude Code May–August 2026 Weekly Limits Promotion](https://support.claude.com/en/articles/15910845-claude-code-may-august-2026-weekly-limits-promotion)，2026-09-02 查證）
 - **⏰ 2026-09-14 生效｜標準週配額永久調高 25%，但取消 +50% 加成 → 相較「加成期間」水位實際減少約 17%**：官方公告（Bluesky @anthropicbot，2026-08-29）自 2026-09-14 起將 Claude Code 標準週配額**永久**調高 **25%**，適用 **Pro、Max、Team 與座位制 Enterprise**；上方 +50% 促銷 09-13 屆滿後由本規則接手，不留缺口。換算 `1.25 ÷ 1.50 ≈ 0.833`——09-14 起實際可用週配額約為加成期間的 83%，**減少約 17%**（BleepingComputer〈Anthropic is cutting Claude Code's current weekly limits by 17 percent〉即以此為框架）。**你該做的事**：工作流若貼近週配額上限，09-14 前後應預期可用量下降，評估調整用量節奏或方案層級（來源：[Bluesky @anthropicbot](https://bsky.app/profile/anthropicbot.bsky.social/post/3muaaxs5nx424)、[BleepingComputer](https://www.bleepingcomputer.com/news/artificial-intelligence/anthropic-is-cutting-claude-codes-current-weekly-limits-by-17-percent/)，2026-08-29）
@@ -202,7 +208,7 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 
 ## 事故現在還在發生嗎
 
-**一事故一列，只收狀態為 🔴 或 ⚖️ 者；轉為 ✅／⏸ 即移出表，條目留在事件流。** 狀態五值定義（供讀者對號）：🔴 未解＝官方未公開回應、也未載明修復版本；✅ 已修＝官方確認或載明修復版本；⛔ 官方拒修＝官方已明確表態不修；⚖️ 司法中＝已進入訴訟程序；⏸ 無後續＝距最後動態逾 90 天且無新回報，**但 ⚖️ 在判決或撤訴前一律留表，官方曾公開承認過的事故也不因時間轉 ⏸**（改標 ⛔ 或維持 🔴 到官方給出結果）。**這五值不看留言數，只看官方有沒有給出答案**——示範列中 #79337 最後動態 2026-08-07（距今逾 30 天）仍是 🔴，因為它未逾 90 天且官方無回應。本表上限 6 列。
+**一事故一列，只收 🔴、⛔、⚖️ 三種狀態；轉 ✅／⏸ 即移出表，條目留在下方事件流。本表上限 6 列，滿載時較新的活躍事故會暫時列在下方事件流（標「未列入總表」），一併掃一次才完整。** 狀態五值定義（供讀者對號）：🔴 未解＝官方未公開回應、也未載明修復版本；✅ 已修＝官方確認或載明修復版本；⛔ 官方拒修＝官方已明確表態不修；⚖️ 司法中＝已進入訴訟程序；⏸ 無後續＝距最後動態逾 90 天且無新回報，**但 ⚖️ 在判決或撤訴前一律留表，官方曾公開承認過的事故也不因時間轉 ⏸**（改標 ⛔ 或維持 🔴 到官方給出結果）。**這五值不看留言數，只看官方有沒有給出答案**——例如 #79337 最後動態 2026-08-07（距今逾 30 天）仍是 🔴，因為它未逾 90 天且官方無回應。
 
 %% 維運備忘：上限與退場判準見 .claude/rules/wiki-ingest-commercial.md「pricing 事件流的上限與退場」 %%
 
@@ -215,11 +221,11 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 | 升級付款流程 PaymentIntent 提前作廢 | 🔴 未解 | 2026-08-12，Issue #55982 累積 77 則留言 | 升級失敗時不要重複送出，先查有無重複授權 |
 | 旗艦模型仍被要求額外用量點數 | 🔴 未解 | 2026-08-07，Issue #79337 累積 67 則留言，延燒逾 18 天 | 若被要求購點，先確認方案內的 50% 上限是否已用盡 |
 
-**已結案三件（供對照）**：共用池機制（2026-08-22 官方確認）、Opus 5 定價兩說收斂（2026-08-08）、Sonnet 5 $2/$10 永久化（2026-08-10）。下方「事故與爭議」事件流每個 `####` 小標已補一個狀態符號。
+**已結案三件（供對照）**：共用池機制（2026-08-22 官方確認）、Opus 5 定價兩說收斂（2026-08-08）、Sonnet 5 $2/$10 永久化（2026-08-10）。下方「事故與爭議」事件流每則事故標題前的符號就是它的狀態。
 
 ---
 
-省錢技巧與策略見 [[topics/enterprise-cost-management]]，本頁不重複維護。
+省錢技巧與具名企業案例見 [[topics/enterprise-cost-management]]。
 
 ---
 
@@ -230,7 +236,7 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 ### 灰色市場與轉售現象
 
 - 轉售商以最高 90% 折扣轉賣 Claude／Codex API 存取權，違反 Anthropic 消費者條款（禁止 resell、禁止分享帳號憑證）。
-- 灰市管道「Poison Claude」已被兩獨立媒體證實會讓中間營運者讀取客戶傳送的全部 prompt——安全事件細節與可信度評估見 [[topics/ai-agent-safety]]，此頁不重複維護。
+- 灰市管道「Poison Claude」已被兩獨立媒體證實會讓中間營運者讀取客戶傳送的全部 prompt——安全事件細節與可信度評估見 [[topics/ai-agent-safety]]。
 - 🔎 **查無官方**（標 2026-08-10｜查 [[topics/ai-agent-safety]]、resale scope｜訊 2026-08-29｜複 2026-09-30）｜轉售規模與 Anthropic 執法回應均未見官方聲明或第三方媒體佐證。
 
 ### 事故與爭議（誤扣費、靜默計費改動、帳號安全）
@@ -340,7 +346,7 @@ Anthropic 於 4 月初靜默縮短預設 prompt cache 窗口，實質提高 toke
 
 ### 定價與促銷（模型定價、方案設計）
 
-#### 2026-09-05：官方定價頁再爆大改版（新增110+／移除168+段），完整結構待查證；同日媒體稱「Anthropic 重置 Claude 限制」
+#### 2026-09-05：官方定價頁再爆大改版（新增110+／移除168+段）；同日媒體稱「Anthropic 重置 Claude 限制」（2026-09-06 查證：價格結構未變）
 
 - **Official Docs（claude.com/pricing）機械頁面比對**：頁面新增逾 **110** 個段落（多為 Mtok 計價區間，如 $0.10、$0.20、$0.25、$0.30、$0.50）、移除逾 **168** 個段落（多為依企業人數規模分類的介紹文字，如「20–100 人」「100+ 人」）。
 - **字數變化**：頁面整體字數由約 **24,384** 字縮減至約 **20,870** 字；改版後最終呈現方式尚待人工開啟頁面全文確認。

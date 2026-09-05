@@ -26,7 +26,7 @@
 | 1 | topics/model-task-leaderboard | 葉子(5)→升輕量卡 | 2026-09-05 | 定稿：摘要宣告「跨家到此為止」、承認本頁量模型不量工具＋懸置登記、index 補路由 | ✅ 複驗過（Q1 死路→3 跳拿到帶數字答案；Q2–Q4 由 2 跳→1 跳） | 2026-09-12 | 併入同一波產物 |
 | 2 | entities/managed-agents | 樞紐(31) | 2026-09-05 | 定稿：留頁、使命句「做到哪一格＋怎麼選」（使用者委由主 session 判）、砍使用指南 75 行留官方連結、新增四軸選型分界表、零件表提位、熱度 🔥🔥🔥🔥🔥→🔥🔥 一次性下修；**主編查證更正**：狀態 beta 非正式發布、計費 $0.08/hr＋token 直接寫入取代懸置 | ✅ 複驗過（四題全拿到：Q1 4 跳沒拿到→2 跳、Q3 零覆蓋→拿到計費；首屏 index L31 直達；唯一殘留卡點「訂閱配額 vs token 兩種貨幣怎麼換算」屬資料缺口） | 2026-09-13 | `managed-agents-2026-09-05{,-final,-review,-verified}.md`、`wave2-cold-reader-2026-09-05.md` |
 
-| 3 | entities/pricing ＋ topics/enterprise-cost-management（併卡） | 樞紐(136)＋樞紐低標(24) | 2026-09-06 | 定稿：使命句定稿（使用者選 A）「Claude 現在怎麼收你的錢，以及最近哪幾件事改變了這個答案」；ECM「一家公司導入 Claude 之後帳單會怎麼長，別人踩到什麼、怎麼收斂」；三子故事皆不拆；主編查證：數字七項全對、**$35M 事實錯誤**已更正（Defender Advantage Fund 非企業額度）、Spend Controls 三項已結案；新增「一小時／一個月大概多少」「事故現在還在發生嗎」兩張結論表、事故小標補五值狀態符號、蒸餾 2 個時段建 `entities/pricing-archive`、讀者語言閘加四詞並重建全庫基線 | — 待冷讀者複驗 | — | `pricing-2026-09-06{,-verified,-proposal,-proposal-map,-review}.md` |
+| 3 | entities/pricing ＋ topics/enterprise-cost-management（併卡） | 樞紐(136)＋樞紐低標(24) | 2026-09-06 | 定稿：使命句 A「Claude 現在怎麼收你的錢，以及最近哪幾件事改變了這個答案」（使用者裁決）；ECM「一家公司導入 Claude 之後帳單會怎麼長，別人踩到什麼、怎麼收斂」；三子故事不拆；pricing 753→688 行改「三結論表打頭（我的方案／一小時多少／事故還在不在）＋事件流證據層」，22 條事故補五值狀態、總表 6 列＋留表優先序入規則檔、蒸餾 2 時段建 `entities/pricing-archive`（全庫首個 entities archive）、砍 4 節；ECM 缺口三項依官方 blog 結案（Enterprise-only 明示）、指標表重算 12 案例、砍「目前結論」；讀者語言閘 +4 詞基線重建；index 首屏補「錢」路由；**主編查證**：數字七項全對、$35M 事實更正、促銷頁一手原文；主 session 代判 3 裁決點（砍兩節、加四詞）與 4 條狀態符號 | ✅ 複驗過（Q2 半→**拿到**，Q3 半→**拿到 1 跳**；Q1／Q4 由「拿到」改「半拿到」是頁面改成不虛報的結果：官方不公布配額絕對量、Spend Controls 僅限 Enterprise）；複驗抓到 40–44 倍撐不起與 10 條洩漏已修 | 2026-09-13 | `pricing-2026-09-06{,-verified,-proposal,-proposal-map,-review}.md`、`wave3-cold-reader{,-recheck}-2026-09-06.md` |
 
 > 第 1 波同時吃掉 `wiki/reader-notes.md` 的 ⏳「『誰比較強』三頁互踢」——考題集必含「Codex 和 Claude 誰強」，落點必須唯一。
 
@@ -59,6 +59,15 @@
 
 - **2026-09-06｜熱度上限式判準不成法（選 b）**：維持「連續 4 週零命中 −1 格」，接受版號流水撐熱度的假陽性；managed-agents 的 🔥🔥 屬本頁一次性下修，不寫進 `wiki-ingest-features.md`。條文原文留在 `managed-agents-2026-09-05-final.md` §3-(2) 供日後翻案。
 - **2026-09-06｜第 3 波走 P3「成本與衝擊」**（`entities/pricing` 為主、`topics/enterprise-cost-management` 為鄰居）。
+
+## 2026-09-13 回訪要查什麼（第 3 波）
+
+1. 事故總表有沒有被 ingest 寫回編年史（商業記者是否照「計費事故」列填狀態、覆寫總表）；06-24 盜刷 09-22 起應轉 ⏸
+2. 09-14 換軌過後：callout 第一則與計費規則第 1 條有沒有人改成「已生效」；feature-radar ⏰ 該列移除後 pricing L1xx 是否仍在
+3. 「一小時／一個月」表有沒有被加第二種口徑；牌價變動時是否整表重算
+4. ECM 指標表案例數與實列數是否仍一致；「目前結論」有沒有被 lint 3c 長回來
+5. 未修項：model-comparison L99／L119 編輯政策混在標題與儲存格（冷讀者複驗第 4 節第 10 條，第 1 波頁面）；ECM 🧰 圖例缺（社群格式）；「已掃日報至」四處同改待辦
+6. 健檢卡下波要加的四問（校準表）有沒有真的加進派工前綴
 
 ## 待使用者裁決（第 2 波遺留，已於 2026-09-06 裁決 b，留作原文）
 
