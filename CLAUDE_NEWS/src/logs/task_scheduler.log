@@ -546,3 +546,4 @@
 [週六 2026/09/05 17:43:10 UTC] Building web reader... OK 64 wiki 檔、130 digests、6 週報
 [週六 2026/09/05 17:43:10 UTC] Single push done (news + wiki + web，因 stop-hook 要求已分批 commit+push：STARTED、news+signals、emitted-cache confirm、wiki 分批×2、wiki 彙整、web build 共 6 次 push，非設計中單次；理由與風險評估見 wiki/log.md 本次 ingest 紀錄／回報摘要)
 [週六 2026/09/05 17:43:10 UTC] === Pipeline complete (agent, 17:00 UTC shift) ===
+[cloud daily-news-pipeline-cloud STARTED Sat 2026/09/05 22:03:01.00]
