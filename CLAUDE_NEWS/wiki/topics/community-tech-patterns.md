@@ -29,11 +29,11 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 **領域：** 🌐 社群
 **開始日期：** 2026-04-25
 **最後更新：** 2026-09-04
-**最後新聞更新：** 2026-09-03
+**最後新聞更新：** 2026-09-04
 
-> **最新工作流模式**（2026-09-02）
-> - **存量盤點雙響再破紀錄**：thedotmack/claude-mem（9.3 萬星，跨 7 種以上 harness 的 AI 壓縮持久記憶）與 addyosmani/agent-skills（9.2 萬星，Addy Osmani 具名生產級技能集合）本庫首次收錄。
-> - **dev.to 四連發**：記憶實測、殭屍 subagent 自動偵測、發展「爆炸半徑」風險分區框架（承接 08-30 遞迴刪檔教訓）、多平台發布 Skill，皆屬第一手實作／框架分享。
+> **最新工作流模式**（2026-09-04）
+> - **並行規模再添案例**：Show HN 開發者以 147 個 subagent、單一長時間 session、24 天將 F-Zero X 移植到 New 3DS。
+> - **具名大型企業成本實證**：Spotify Portal 依任務型態把「純 I/O」工作路由給便宜模型，Claude Code token 用量降 90%。
 
 ---
 
@@ -163,6 +163,24 @@ Claude Code 的三種多 agent 機制，可對應到 Anthropic《Building Effect
 ## 技術彙整
 
 ### 2026-09
+
+#### Show HN：單一長時間 session＋147 個 subagent、24 天把 F-Zero X 移植到 New 3DS（2026-09-04）
+
+- **主線：** 並行規模
+- **核心模式：** 開發者以單一長時間 Claude Code session 搭配 147 個 subagent，花費 24 天將 F-Zero X 逆向移植到 New 3DS，達成原生 60fps 立體 3D 運行
+- **與既有模式的關係：** 為「大量 subagent＋長時間單一 session」這條並行規模主線再添一個具體數量級案例（147 個 subagent、24 天），可與既有規模案例並列比較；歸入主線 [[topics/community-large-codebase-workflow]] 並行規模主線
+- **可信度註記：** Show HN 一手貼文，附完整 postmortem 文章可查證流程細節；單一開發者案例，尚無其他使用者複現相同規模
+- **來源：** 「Show HN: Unofficial 3DS Port of F-Zero X Written by Claude Code」— Hacker News；[原文](https://cruxxxxxx.github.io/gdx-3ds/postmortem/index.html)
+- **成熟度：** ⏳ 新興（單一開發者案例，尚無其他使用者複現相同規模）
+
+#### Spotify Portal：依任務型態把「純 I/O」工作路由給便宜模型，Token 用量降 90%（2026-09-04）
+
+- **主線：** —
+- **核心模式：** Spotify 內部工具 Portal 依任務型態分派——判斷為「純 I/O」（無需深度推理）的工作路由給便宜模型執行，使 Claude Code 整體 token 用量降低 90%
+- **與既有模式的關係：** 為本頁「模型使用策略」類別既有「分層模型／多模型路由」補上一個具名大型企業（Spotify）的生產環境實證案例，且量化效果（90%）具體可查；成本面事實見 [[topics/enterprise-cost-management]]，本頁只記路由模式本身
+- **可信度註記：** 官方工程部落格一手發布，附具體量化數字（90%），具名大型企業（Spotify）實證
+- **來源：** 「Portal by Spotify cut my Claude Code token usage by 90%」— Spotify Engineering；[原文](https://engineering.atspotify.com/2026/9/portal-by-spotify-cut-my-claude-code-token-usage-by-90)
+- **成熟度：** ⚡ 活躍（具名大型企業生產環境實證，量化效果具體）
 
 #### thedotmack/claude-mem：跨 harness 持久記憶，擷取 session 過程並用 AI 壓縮，注入後續 session 作為上下文（2026-09-02）
 

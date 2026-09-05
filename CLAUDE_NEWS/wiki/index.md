@@ -64,6 +64,7 @@
 | [[entities/dario-amodei]] | person | 👤 人物 | active | Anthropic CEO：政府監管立場、企業文化論述、Code with Claude 大會現場宣布速率政策 |
 | [[entities/teresa-carlson]] | person | 👤 人物 | active（待核實）| 前 Microsoft、AWS 高管；2026-07-07 加入 Anthropic 主導公部門（public sector）業務（FedScoop）|
 | [[entities/chris-olah]] | person | 👤 人物 | active | Anthropic 共同創辦人、AI 可解釋性研究先驅；2026-05-26 梵蒂岡封論揭幕演講 |
+| [[entities/kevin-buzzard]] | person | 👤 人物 | active | Imperial College London 數學教授、Xena Project 主持人，主持 EPSRC 資助的 FLT Lean 形式化計畫；2026-09-04 公開回應 Anthropic 搶先完成形式化（「Anthropic has beaten me to it」）|
 | [[entities/opencode]] | product | 🛠️ 工具/功能 | active（快速成長）| Claude Code 主要開源替代品，157K 開發者分流，OpenCode-power-pack 移植官方 11 個 skills |
 | [[entities/claude-tag]] | feature | 🛠️ 工具/功能 | active | Claude Tag：Slack-native AI 協作工具，可讀取頻道上下文、跨 session 記憶、主動完成任務；Anthropic 內部 65% 程式碼由其生成 |
 | [[entities/claude-skills]] | feature | 🛠️ 工具/功能 | active | Claude Skills：官方 Skills 產品線與生態單一入口——六大控制層之一，官方小企業/教師技能包、平台支援、第三方移植動態；設計面歸 [[topics/community-tech-patterns]] |

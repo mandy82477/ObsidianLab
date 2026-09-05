@@ -5662,3 +5662,29 @@ GH Actions 抓料排 10:23 UTC，到 14:45 UTC 仍未落地（+4.4 小時且持�
 **IPO 事實沉澱（user-query 通道）：** 使用者提供的「6/1 祕密遞件、目標 10 月上市、私募輪估值約 $9,650 億」經主編查證後判定**僅二手彙整站等級**（Forge、UnusualWhales 等），非一手文件——依使用者提問通道紀律，寫入時全部標「媒體稱＋二手彙整站＋2026-09-05 查證」，並在 `## 追蹤中的里程碑` 以懸置標記登記「公開版 S-1 是否遞交」（探針：Nasdaq、承銷商、公開遞件）。歸因 slug `user-query`，`item_url` 留空並在標題註明無一手連結可附。
 
 **結果：** `check_rules.py` ✅ 零錯誤（90 組配對）｜`lint_health.py mutate` ✅ 83 組全數轉紅｜`run_tests.py` exit 0（529 例）｜`build_web.py` 錨點 WARN 0（未增加），2026-08-26 digest 已注入 marketSignal。
+
+## 2026-09-04 Ingest（補跑）
+
+**補跑原因：** 09-04 的 GH Actions `daily-gather` 在 commit 步驟失敗——09-03「下架 site-source-tooling」刪了 wiki 頁卻漏刪 `daily-gather.yml` 的 `git add` 登記，`git add` 撞到不存在的 pathspec 直接 exit 128，commit+push 整步連坐，**當天抓料一筆未落地**，雲端 routine（fresh clone）看不到新料，故 09-04 日報從未產生。三個抓取步驟全綠，失敗訊息看起來像 git 問題而非「有人刪了一個檔」。09-05 於本機以 `--date 2026-09-04` 現抓補齊（非 replay，`gathered_archive/2026-09-04.json` 當時不存在）。
+
+**抓取結果：** 14/14 來源、dedup 前 117 → dedup 後 100 → 裁至 09-04 視窗 74 → relevance filter 後 71 則；日報 39 條目（📌5 ⭐3 🔧3 💰0 📰10 💬16 🧭2）。Reddit 全數 429，最終仍湊出 14 則但 RSS score 恆 0 不可信。補跑窗口為「目標日 00:00 UTC 到現在」再裁切，社群記者據此攔下 2 則與既有條目重複的 dev.to 文章（記憶實測、hooks 強制執行）。
+
+**記者回報摘要：**
+- 模型：`entities/fable-5`（費馬最後定理 Lean 形式化＋實驗室自主操作；官方未指名模型版本，以懸置標記登記，探針 `formalizing-fermats-last-theorem`／`Fable 5.1`）
+- 功能：`entities/claude-code`（版本表 3 列：v2.1.261／sdk-python v1.4.0／vertex-sdk v0.19.7；10 則已知問題互動數更新）；feature-radar 新增無
+- 商業：`anthropic-business`（IPO $2 兆估值、自建支付、開源轉單、Amadeus）、`enterprise-tool-tracker`（PicPay，Claude API 計數 27→28）、`enterprise-cost-management`（Spotify Portal）、`competitor-landscape`（OpenAI 停供 Cursor 11/12、HydraFusion）、`entities/pricing`（#5088 計費爭議）
+- 安全政策：`anthropic-government-policy`（FedScoop 五角大廈）、`ai-agent-safety`（OpenAI rogue agents，以**產業對照**而非 Claude 風險記錄，沿用 Hugging Face／OpenAI 入侵案先例）
+- 社群：`community-tech-patterns`（F-Zero X 3DS 移植 147 subagent／24 天，主線「並行規模」；Spotify Portal 模型路由）、`community-tech-discussions`（NYT 開源轉單，HN 274 分，🔥🔥🔥 ☄️閃現）
+- 人物：新頁 `entities/kevin-buzzard`（主編查證具名後達門檻）
+- 開發實務：候選 5 筆入帳本；**基準線未推進**（本輪未 commit，mark 會讓這批新增永遠落在基準線後）
+- 投資分析：`topics/market-signals` 判讀 1 則 🔴（IPO），里程碑 1 筆、回顧結算 ⏳ 1 列
+
+**主編查證（web 工具）：** Xena Project 作者具名為 **Kevin Buzzard**（Imperial College London 數學教授、Xena Project 主持人、EPSRC 資助 FLT 形式化計畫主持人）；一手來源為本人部落格，另以 Terence Tao 於 Mathstodon 指認 `@xenaproject` 佐證。查證日 2026-09-05。
+
+**主編彙整：** feature-radar 最新版本行同步 v2.1.261；本週推薦依防霸榜規則維持不動並註明「本週無新達標功能（最後輪替 2026-09-02）」。index.md 補 `kevin-buzzard` 列。`data/source_attribution.jsonl` append 35 筆——其中 Simon Willison 一則的 slug 由記者回報的 `topic-watch` 更正為 `blog`（日報來源欄為 `Blog / Simon Willison`）。
+
+**品質備註：功能 記者誤用 `git stash` 抹除兩位並行記者的成果。** 功能記者為整理自己檔案的狀態執行 `git stash`，取回自己那份後 `git stash drop`——`git stash` 的作用域是**整個共用工作區**，於是模型記者的 `entities/fable-5.md` 與社群記者的兩頁技術彙整一併消失。安全政策與商業記者各自獨立回報「檔案兩度整檔回退、必須重做」，是同一事故的旁證。兩位受害記者已帶著自己的原回報當規格重跑並 grep 複驗落地。當事記者無惡意，其回報甚至誠實寫著「未觸碰其他記者的工作」——它真心那樣以為，因為 `git stash` 從自身視角看只是在整理自己的桌面。**並行下工作區的共用性不是記者從自己視角看得見的東西**，故立法為明文禁令而非「請小心」：`.claude/rules/wiki-reporter-shared.md` 邊界限制新增一條，禁止 `git stash`／`checkout --`／`restore`／`reset`／`clean`／`pull`／`rebase`，並規定遇 git 狀態異常一律回報主編、不自行動手。
+
+**其他待辦（未處理，留待 lint）：**
+- `topics/ai-agent-safety` 的「未修補風險現況」表既有多列儲存格達 240+ 字元，遠超全站 120 上限（既有債務，非本次新增）——安全政策記者回報
+- `devpractice_diff.py show` 只比對已 commit 範圍，抓不到當輪未 commit 的改動；本輪記者以 `git diff --unified=0` 繞過。需判定這是設計意圖（刻意落後一天撿已入庫內容）還是缺口

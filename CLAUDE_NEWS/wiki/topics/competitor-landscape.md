@@ -28,14 +28,12 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 **領域：** 💼 商業
 **蒐集邊界：** 以 Claude 為參照系的競品動態為主，另針對競品發布與定價定向補抓（每日至多 2 則）；競品自身未與 Claude 對比的發布可能延遲或缺漏。**帶跑分數字的第三方對照評測收不到**——這類內容多發表於對照型部落格，不在本站蒐集範圍，因此本頁的競品能力比較以官方數字與社群並排實測為主，缺口處改指向外部活榜單（見 [[topics/model-comparison]] 的外部評測榜單節），不自行推算。
 **開始日期：** 2026-04
-**最後更新：** 2026-09-04
-**最後新聞更新：** 2026-09-01
+**最後更新：** 2026-09-05
+**最後新聞更新：** 2026-09-04
 
-> **最新競品動態**（2026-09-01）
-> - **Meta「Muse Code」結束 beta、正式推出三個訂閱層級，主打價格戰**：另一篇聚焦其「20x」折扣層級定位，直接對比 Claude Code 現行加購方案；均無具體月費數字可引，詳見「主要競品追蹤」Meta Muse Code 子區塊新增細節。
-> - **HN：Claude「20x」用量宣稱只放大 5 小時視窗，非週上限**：發文者指官方行銷用語易誤導，討論串提及已有行銷不實訴訟，詳見 [[entities/pricing]]「事故與爭議」同步記錄。
-> - **36Kr：中國市場出現免費「DeepSeek Harness」替代方案討論，社群質疑付費訂閱 Claude Code 是否仍值得**（08-31）：延續本頁既有 DeepSeek Harness 開源工具追蹤，詳見「主要競品追蹤」DeepSeek 子區塊新增細節。
-> - **CNBC 影音報導再度提及 Google 低價 AI 定價策略劍指 Anthropic 與 Microsoft**（08-31）：與 08-27 已記錄事件同源，非新增數字，詳見「主要競品追蹤」Google 子區塊更新。
+> **最新競品動態**（2026-09-04）
+> - **Reddit：OpenAI 傳將於 11/12 終止對 Cursor 的模型供應合約**：與 Cursor 控制權變更（SpaceX 收購）有關，明確截止日，詳見「主要競品追蹤」Cursor／Windsurf 子區塊新增細節。
+> - **VentureBeat：GitHub「HydraFusion」多數基準大幅壓低 AI 編碼成本，但品質僅在單一基準打平**：屬「降本不降質」宣稱的反例，詳見「競品定價對照」表新增列。
 
 ---
 
@@ -61,6 +59,7 @@ Claude Code 已成為 AI 輔助編碼的標竿產品，但競爭正快速升溫�
 
 | 工具/模型 | 定價 | vs Claude 定位 | 來源日期 |
 |---------|------|--------------|---------|
+| HydraFusion（GitHub）| 未見具體掛牌價，僅見「多數基準大幅壓低成本」定性描述 | VentureBeat：於多數基準大幅壓低 AI 編碼成本，但品質**僅在單一基準與對照組打平**——「降本不降質」宣稱首見反例（詳見下方細節）| 2026-09-04（Google News/VentureBeat）|
 | DeepSeek V4-Pro（API）| ❓ 待查證 ⟨Q-01⟩ | 低價 Flash／高價 Pro 雙軌策略（推論）；與 KuCoin 對比 Claude 3 Opus 屬不同比較對象，不可混用（詳見下方細節） | 2026-08-14（Google News/VentureBeat）|
 | Muse Glimmer（Meta，開源）| 免費（開源權重）| CNBC、Simon Willison 部落格報導 Meta 將開源目前最強模型，藉此對 OpenAI、Anthropic 表態競爭；具體 benchmark 數字、授權條款未見細節 | 2026-08-11（CNBC；Blog/Simon Willison https://simonwillison.net/2026/Aug/10/introducing-muse-glimmer/）|
 | Claude Code（自身，成本倍數宣稱）| 已查證：Composio 實測 $0.195/任務（最貴，但最快 122 秒/任務），OpenCode 最低 $0.073/任務（≈2.7 倍）| Composio 實測 4 款 agent 框架跑 30 項真實工具任務，證實 Claude Code「速度最快、成本最高」宣稱屬實（詳見下方細節） | 2026-08-06（the-decoder.com 原文，2026-08-13 查證）|
@@ -81,6 +80,7 @@ Claude Code 已成為 AI 輔助編碼的標竿產品，但競爭正快速升溫�
 | Gemini CLI / Gemini 系列 | 已查證：2026-06-18 起免費／Google AI Pro／Ultra 帳號停止 Gemini CLI（併入 Antigravity CLI）；付費：Free $10 一次性／Pro $60/月／Max $200/月 | 免費層大幅緊縮後，個人開發者需轉向 Antigravity CLI 或改用付費 API key | 2026-08-13 查證（多方比較站彙整）|
 
 **競品定價細節**
+- **HydraFusion（09-04）**：VentureBeat 報導 GitHub 的編碼成本優化工具 HydraFusion，在多數 benchmark 中大幅壓低 AI 編碼成本，但品質表現僅在其中一項基準與對照組打平；標題明確點出「cuts costs in every benchmark, only matches quality in one」的落差，是本頁近期「降本」類報導中首見同時附上品質權衡的具體案例（此前如 DeepSeek Flash「逾 100 倍」、Kimi K3「三分之一」等多僅強調成本降幅，未見同等篇幅的品質對照）；具體 benchmark 名稱、成本降幅數字、GitHub 是否將其產品化（獨立工具或併入 Copilot）均未見報導細節，僅標題可用（Google News/VentureBeat）。
 - ⟨Q-01⟩ ❓ **待查證**（標 2026-08-14｜查 DeepSeek V4-Pro、V4 Flash）：僅悉較 V4 Flash 定價更高，具體費率未見報導；已掃日報至 2026-09-03 無後續，官方頁面未查證。
 - **DeepSeek V4-Pro**：VentureBeat 報導 DeepSeek V4-Pro 隨開源工具 Harness 同步上線，API 定價較既有 V4 Flash（見下方「成本降低逾 100 倍」列）高，可能為「低價 Flash／高價 Pro」雙軌定價策略；與 08-13 已記錄 KuCoin「聲稱表現逼近 Claude 3 Opus、成本僅一小部分」對比對象不同（該則對比 Claude，本則為 DeepSeek 內部兩模型互比），兩者不可混用。
 - **Claude Code 成本倍數實測**：the-decoder.com 引述 AI 工具商 Composio 針對 DeepSeek V4 Flash，於 4 款 agent 框架（Claude Code、Codex、OpenCode、Oh My Pi）跑 30 項真實工具任務（Gmail/GitHub/Slack/Notion）的實測結果，證實「速度最快、成本最高」宣稱屬實（[the-decoder.com 原文](https://the-decoder.com/claude-code-is-the-fastest-agent-framework-but-costs-nearly-three-times-more-than-the-cheapest-rival/)）。
@@ -252,6 +252,7 @@ Claude Code 已成為 AI 輔助編碼的標竿產品，但競爭正快速升溫�
 - **狀態**：Active（IDE 整合型，與 Claude Code CLI-first 定位有別）
 - **重大事件**：SpaceX 以 $60B 正式完成收購 Cursor（2026-06-17 確認）；收購整合 SpaceX / xAI 生態，使 Cursor 獲得 SpaceX 資源支撐，直接衝擊 Claude Code vs Cursor 競爭態勢；Cursor 此前與 Anthropic 有深度整合關係，收購後生態歸屬方向待觀察（dev.to、9to5Mac）
 - **推出程式碼託管平台「Origin」，藉 GitHub 中斷事件切入市場（2026-08-17）**：VentureBeat 報導 Cursor 推出名為 Origin 的程式碼託管平台，報導將此舉與同期 GitHub 服務中斷事件並置，稱其「暴露 AI 編碼賽道的市場空隙」。**對競爭格局的意涵**：是繼「Sand」agent（07-13 對標 Claude Cowork）之後，Cursor 產品線再度擴張——從「IDE／agent 工具」延伸至「程式碼託管基礎設施」層，直接挑戰 GitHub（Microsoft/Copilot 母公司）的核心業務範疇，若時機確與 GitHub 中斷事件相關，顯示 Cursor 正積極利用競品服務缺口搶佔市場（推論）；具體平台功能、與既有 GitHub/GitLab 的差異化、上線範圍未見報導細節，僅標題層級資訊（Google News/VentureBeat）
+- **OpenAI 傳將於 11/12 終止對 Cursor 的模型供應合約（2026-09-04，明確截止日）**：Reddit r/artificial（週熱門，達低門檻）討論指出 OpenAI 計畫於 **2026-11-12** 終止向 Cursor 供應模型的合約，討論串認為理由與 Cursor 控制權變更（見上方 SpaceX $60B 收購）有關。**對競爭格局的意涵**：若屬實，Cursor 將被迫更倚重 Anthropic（Claude）與其他模型供應商填補 OpenAI 缺口，可能反而強化 Cursor 平台對 Claude 模型的依賴度，與本頁既有「Cursor 此前與 Anthropic 有深度整合關係」的既有觀察方向一致（推論）；具體終止原因、Cursor 因應方案（增加 Claude 配額、轉向自研或其他供應商）均未見報導，Reddit RSS score 恆為 0 不可信，僅「週熱門」標記可作低門檻依據，屬單一討論串消息，尚待主流媒體或官方確認。
 
 ### DeepSeek 🔴
 - **狀態**：正式宣布建構 Claude Code 競品（2026-05-22）；DeepSeek V4 Flash 顛覆 agent 定價（2026-06-26）；Lindy 100% 切換案例（2026-06-29）；推出開源 agent 工具「Deep Code」直接對標 Claude Code（2026-07-07）；公開組建團隊、V4 Pro 正式上線正面挑戰 Claude Code（2026-08-13）；開源工具正式定名「DeepSeek Harness」、V4-Pro API 定價較高上線（2026-08-14）；中國市場出現免費替代方案討論、質疑 Claude Code 付費訂閱價值（2026-08-31）
@@ -352,6 +353,10 @@ Claude Code 已成為 AI 輔助編碼的標竿產品，但競爭正快速升溫�
 ---
 
 ## 時序
+
+### 2026-09-04
+- **[新增追蹤，明確截止日] Reddit：OpenAI 傳將於 11/12 終止對 Cursor 的模型供應合約**：詳見「主要競品追蹤」Cursor／Windsurf 子區塊新增細節（Reddit/r/artificial · 週熱門）
+- **[新增，競品定價對照] VentureBeat：GitHub「HydraFusion」多數基準大幅壓低 AI 編碼成本，僅單一基準與對照組打平品質**：詳見「競品定價對照」表新增列與細節（Google News/VentureBeat）
 
 #### 近期單日動態彙整（2026-07-02 至 2026-07-26）
 

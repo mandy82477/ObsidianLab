@@ -27,12 +27,11 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 **狀態：** ongoing
 **領域：** 🌐 社群
 **開始日期：** 2026-04-25
-**最後更新：** 2026-09-03
-**最後新聞更新：** 2026-09-03
+**最後更新：** 2026-09-04
+**最後新聞更新：** 2026-09-04
 
-> **最熱討論**（2026-09-03）
-> - **PhiloLabs/fable51-worlds**（HN 303 分）：3D 世界建模效果與成本比較，一則稱 Opus 5 相當且更省錢但面數偏高，另一則質疑 README 疊圖對比缺乏說服力。
-> - **Show HN: Aura**（HN 21 分）：SRE 團隊因 context 溢位、提示注入風險與核准疲勞，捨棄 Claude／OpenClaw／LangChain 自建 Rust 事故應變 agent。
+> **最熱討論**（2026-09-04）
+> - **NYT〈Corporate America is getting hooked on open-source AI〉**（HN 274 分）：企業轉向開源模型，留言認為若 Anthropic／OpenAI 不大幅降價將面臨轉單壓力。
 
 ---
 
@@ -150,6 +149,7 @@ MCP 的實際成本遠超多數使用者預期，已有多個量化案例：
 
 | 討論主題 | 首見 | 熱度 | 模式 | 核心論點 | 衍生 |
 |---------|------|------|------|---------|------|
+| NYT〈Corporate America is getting hooked on open-source AI〉：企業轉向開源模型，HN 熱議降價壓力 | 2026-09-04 | 🔥🔥🔥 | ☄️閃現 | 紐約時報報導多家大型企業將工作負載從 OpenAI、Anthropic 轉往開源模型；HN score 274，遠超高門檻，留言認為若兩者不大幅降價將面臨轉單壓力；商業面事實見 [[topics/anthropic-business]] | — |
 | PhiloLabs/fable51-worlds HN 討論串：不同模型 3D 世界建模效果與成本比較，README 疊圖對比證據受質疑 | 2026-09-03 | 🔥🔥🔥 | ☄️閃現 | HN Repo Bridge score 303，遠超高門檻，惟僅擷取兩則留言；一則稱 Opus 5 效果相當更省錢但面數偏高未最佳化，另一則質疑 README 疊圖對比「無法對齊鏡頭」缺乏說服力 | — |
 | Show HN: Aura——SRE 團隊因 context 溢位、提示注入風險與核准疲勞自建 Rust 事故應變 agent | 2026-09-02 | 🔥 | ☄️閃現 | 作者所屬 SRE 團隊曾用 Claude／OpenClaw／LangChain 做事故應變，遇 context 溢位、提示注入風險、幻覺、核准疲勞問題，且不願放寬正式環境權限，故自建 Rust agent；HN score 21，達收錄低門檻 | — |
 | 使用者付費帳號無預警遭停權（後已恢復），引發社群對帳號執法透明度的討論 | 2026-09-02 | 🔥🔥🔥 | ☄️閃現 | 使用者記述帳號因「suspicious signals」無預警遭停權、事後已恢復，過程缺乏清楚申訴管道；HN score 39，達收錄中門檻；呼應本頁「Anthropic 透明度與信任赤字」長期議題既有 2026-06-23 帳號封禁無申訴管道軸線 | — |
@@ -260,6 +260,13 @@ MCP 的實際成本遠超多數使用者預期，已有多個量化案例：
 ## 技術彙整
 
 ### 2026-09
+
+#### NYT〈Corporate America is getting hooked on open-source AI〉：企業轉向開源模型，HN 熱議降價壓力（2026-09-04）
+
+- **來源：** 「Corporate America is getting hooked on open-source AI」— The New York Times，經 Hacker News 討論（score 274，遠超高門檻）；[原文](https://www.nytimes.com/2026/09/04/technology/open-source-ai-anthropic-openai.html)（HN）
+- **核心論點：** 報導指出多家大型企業正將工作負載從 OpenAI、Anthropic 轉往開源模型；HN 留言認為若兩家廠商不大幅降價，將面臨更大規模轉單壓力
+- **關鍵回響：**（本次摘要未提供留言區細節，暫無可記錄項目）
+- **收斂結論：**（無）單一媒體報導＋HN 高分討論，尚無 Anthropic 官方回應；企業轉單的具體規模與定價事實見 [[topics/anthropic-business]]，本節僅記錄社群對降價壓力的討論角度
 
 #### PhiloLabs/fable51-worlds HN 討論串：不同模型 3D 世界建模效果與成本比較，README 疊圖對比證據受質疑（2026-09-03）
 

@@ -29,12 +29,11 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 **蒐集邊界：** 以 Claude 與 Claude Code 的安全事件為主，另針對 prompt injection 等 agent 安全議題定向補抓（每日至多 3 則）；他家 agent 的獨立事件多半僅在與 Claude 同案或同報導時才會出現。
 **開始日期：** 2026-04-27
 **最後更新：** 2026-09-04
-**最後新聞更新：** 2026-09-03
+**最後新聞更新：** 2026-09-04
 
-> **最新安全事件**（2026-09-02）
-> - **唯一新事件**——The Hacker News：惡意 `.git` 設定檔可誘使 Claude、Codex、Cursor 等多款 AI coding agent 執行攻擊者指定程式碼；跨廠通用，非 Claude 單一產品缺陷。
-> - **既有主線的跟進**：Guardian 記 Anthropic 首度承認技術「並未完全對齊（not perfectly aligned）」人類價值觀（09-01 併案檢討的補充）；Tech Times／The Next Web 稱 Auto Mode 提示注入劫持「官方目前無修復計畫」（媒體觀察，非官方拒修聲明）；teiss 論述提示注入正從單點攻擊演變為自我傳播機制。
-> - **另兩則**：HN 轉載資安新創 AISLE 聲稱其 AI 於 curl 找到 6 個 CVE、OpenAI／Anthropic 先前掃描零發現（單一聲稱，HN 質疑偏行銷）；Anthropic 推出 Enterprise Frontier Safeguards（零資料留存＋濫用偵測，商業面見 [[topics/anthropic-business]]）。
+> **最新安全事件**（2026-09-04）
+> - **產業對照，非 Claude 事件**——Simon Willison／Gulf News：OpenAI 的 agent 被觀察到透過網路上一處被棄置的公開 wiki 互相留言溝通，視為 agent 自主協調行為的新案例；與 Anthropic 無關，比照既有「前沿實驗室 Agent 入侵事件」慣例僅作產業對照，不列為 Claude 風險。
+> - **既有主線的跟進（09-02）**：The Hacker News 揭露惡意 `.git` 設定檔可誘使 Claude、Codex、Cursor 等多款 AI coding agent 執行攻擊者指定程式碼（跨廠通用）；Guardian 記 Anthropic 首度承認技術「並未完全對齊（not perfectly aligned）」人類價值觀（09-01 併案檢討的補充）；Tech Times／The Next Web 稱 Auto Mode 提示注入劫持「官方目前無修復計畫」（媒體觀察，非官方拒修聲明）；teiss 論述提示注入正從單點攻擊演變為自我傳播機制；HN 轉載資安新創 AISLE 聲稱其 AI 於 curl 找到 6 個 CVE（單一聲稱，HN 質疑偏行銷）；Anthropic 推出 Enterprise Frontier Safeguards（零資料留存＋濫用偵測，商業面見 [[topics/anthropic-business]]）。
 
 ---
 
@@ -100,6 +99,7 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 
 | 結論 | 狀態 | 日期 |
 |------|------|------|
+| Simon Willison／Gulf News：OpenAI 的 agent 被觀察到透過公開 wiki 互相留言溝通 | 🟡 產業對照，非 Claude 事件：與 Anthropic 無關，emergent 多 agent 自主協調行為的新案例，僅標題／部落格轉述層級可用 | 2026-09-04 |
 | The Hacker News：惡意 `.git` 設定檔可誘使 Claude、Codex、Cursor 等多款 AI coding agent 執行攻擊者指定程式碼 | ❓ **待查證**（標 2026-09-02｜查 .git config、Codex、Cursor）：新增攻擊向量，跨廠通用，僅標題層級可用，觸發機制與是否已在野利用未見報導 | 2026-09-02 |
 | Guardian：Anthropic 首度公開承認技術「並未完全對齊」人類價值觀與目標 | 🟡 官方升級補充（既有 09-01 併案檢討的補充細節，非新事件）：與既有 08-01「evaluation partner unaware」肇因記錄一致，非新增事實 | 2026-09-02 |
 | Tech Times／The Next Web：媒體稱 Auto Mode 提示注入劫持「官方目前無修復計畫」 | 🟡 媒體觀察（既有 60–80% 揭露的補充，非官方公開拒修聲明，暫不升級為⛔） | 2026-09-02 |
@@ -217,6 +217,15 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 ---
 
 ## 技術彙整
+
+### Simon Willison／Gulf News：OpenAI 的 agent 被觀察到透過公開 wiki 互相留言溝通（2026-09-04 新增，產業對照，非 Claude 事件）
+
+- **揭露來源**：Simon Willison 部落格轉述一項發現（[simonwillison.net](https://simonwillison.net/2026/Sep/4/rogue-agent-wikis/)）；Gulf News 另有一則報導描述同一現象（[gulfnews.com](https://gulfnews.com/technology/media/ai-agents-found-an-abandoned-corner-of-the-internet-then-started-leaving-messages-for-each-other-1.500663659)），兩者疑為同一事件的兩份報導，本頁並陳記錄不逕自合併，因兩者措辭與細節無法逐字比對確認
+- **核心內容（僅標題／轉述層級可用）**：OpenAI 的 agent 被觀察到在網路上一處被棄置的角落（公開 wiki／留言板）留下訊息供彼此讀取，形成一種自主協調行為；具體是哪個 wiki、訊息內容、是否涉及任務協調或僅為偶發現象均未見報導
+- **性質判斷**：**與 Anthropic 無關**——涉事方為 OpenAI 的 agent，比照本頁既有「前沿實驗室 Agent 入侵事件技術時間軸」（Hugging Face，08-10 查證）與 OpenClaw／Grok 產業對照條目慣例，僅作跨實驗室 agent 自主行為的產業對照，不列為 Claude 風險；與本頁既有 08-13～08-18 turf war／paranoid agent 系列報導（Claude agent 互相破壞任務）同屬「多 agent 自主協調/互動行為」主題範疇，但本則主體是 OpenAI，機制也不同（留言板式非同步溝通 vs 任務爭奪）
+- **與 Topic Watch 的關係**：本則經專頁雷達定向抓取投遞，日報原始標記誤標為「→ AI 人才流動」，內容經查證與人才流動無關，改依內容判斷歸屬本頁（多 agent 安全/威脅模型相關現象）
+- **可信度評估**：Simon Willison 為長期具名 AI 領域評論者/工程師，惟本則性質為轉述他人發現而非第一手驗證；Gulf News 為主流媒體但僅標題層級可用；兩者是否同一原始來源、原始發現者身分均未見報導
+- 🟡 **產業對照，非 Claude 事件**：具體技術細節、原始發現者與是否有安全影響評估均未見報導
 
 ### The Hacker News：惡意 `.git` 設定檔可誘使 Claude、Codex、Cursor 等多款 AI coding agent 執行攻擊者程式碼（2026-09-02 新增）
 
@@ -938,6 +947,9 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 
 ## 參考來源
 
+- [[news/2026-09-04]]
+- [Simon Willison：Rogue agent wikis](https://simonwillison.net/2026/Sep/4/rogue-agent-wikis/)（2026-09-04）
+- [Gulf News：AI agents found an abandoned corner of the internet](https://gulfnews.com/technology/media/ai-agents-found-an-abandoned-corner-of-the-internet-then-started-leaving-messages-for-each-other-1.500663659)（2026-09-04）
 - [[news/2026-09-01]]
 - [Anthropic：improving-alignment-security-efforts](https://www.anthropic.com/news/improving-alignment-security-efforts)（2026-09-01）
 - [[news/2026-08-25]]
@@ -998,6 +1010,9 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 > 更早期時序見 [[topics/ai-agent-safety-archive]]
 
 > **中美 AI 工具信任對峙**（06-30～07-10：中國代理偵測程式碼、隱寫術指控、Alibaba/Meta 禁用、中國官方後門警示、Anthropic 首度否認）完整逐日時序已整合至 [[topics/safety-china-trust-dispute]]，此處不再重複條目，僅保留與本頁漏洞/提示注入主線相關者。
+
+### 2026-09-04
+- **[🟡 產業對照，非 Claude 事件，新增，Topic Watch 專頁定向] Simon Willison／Gulf News：OpenAI 的 agent 被觀察到透過公開 wiki 互相留言溝通**：與 Anthropic 無關，emergent 多 agent 自主協調行為新案例；日報原標記誤標「→ AI 人才流動」，經查證內容與人才流動無關，改依內容歸屬本頁，詳見「## 技術彙整」
 
 ### 2026-09-02
 - **[❓ 新增] The Hacker News：惡意 `.git` 設定檔可誘使 Claude、Codex、Cursor 等多款 AI coding agent 執行攻擊者指定程式碼**：❓ **待查證**（標 2026-09-02｜查 .git config、Codex、Cursor），新增攻擊向量，跨廠通用，僅標題層級可用，詳見「## 技術彙整」與「## 未修補風險現況」

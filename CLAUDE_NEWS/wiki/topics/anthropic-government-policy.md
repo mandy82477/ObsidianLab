@@ -28,11 +28,10 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 **領域：** 🏛️ 政策/安全
 **開始日期：** 2026-05-01
 **最後更新：** 2026-09-04
-**最後新聞更新：** 2026-09-02
+**最後新聞更新：** 2026-09-04
 
-> **最新動態**（2026-09-02）
-> - **TechRepublic：中國官媒指控 Anthropic 對中、美 AI 發展採取雙重標準**：主題與既有 08-31 Bloomberg「中國官方對 Anthropic 表態不滿」報導相近，惟出處不同（官媒 vs Bloomberg 外交報導），暫不逕自合併為同一事件，並陳記錄，完整分析見「## 目前局勢」。
-> - **SCMP：Fable 5.1 發布如何牽動美中前沿模型競賽態勢**：出口管制主線解除（07-01）後，Fable 5.1 成為首個被媒體置入地緣政治框架分析的後續模型世代，完整分析見「## 目前局勢」。
+> **最新動態**（2026-09-04）
+> - **FedScoop：Anthropic 與五角大廈合約爭議持續之際，美國政府各部門對其因應態度不一**：08-28 聯邦法官已裁定五角大廈「供應鏈風險」黑名單違法並即時解除，但本則顯示部門間立場未隨判決統一，僅標題可用，完整分析見「## 目前局勢」與「## 三個戰場」🪖 軍事合約段落。
 
 ---
 
@@ -66,7 +65,7 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 | 參議員 Sanders 呼籲暫停 AI 開發（新增，❓ 單一媒體來源） | cryptobriefing.com（08-10）：參議員 Sanders 呼籲 OpenAI/Anthropic/Meta 暫停 AI 開發；單一媒體來源。 | 是否有其他媒體跟進；Sanders 或參議院是否有具體立法動作；Anthropic 是否回應 |
 | EU 對高風險 AI 系統的監管姿態（新增） | Reuters（07-31）：歐盟稱將加強監控高風險 AI 系統部署；具體措施未見報導。 | 歐盟是否提出具體監管措施或時程；是否與既有「EU 對 Anthropic 投入度觀感」支線匯流；技術面事件詳見 [[topics/ai-agent-safety]] |
 | 美國政府新指示疑雲（新增，❓ 單一匿名聲稱，未經證實） | Reddit 匿名貼文（07-28）：稱其公司收到美國政府指示停用 Anthropic；無官方或媒體佐證。 | 是否有官方文件或主流媒體證實；若屬實將是出口管制解除（07-01）後首見的政府層級新禁令動作；若持續無第三方佐證，應評估自本表移除 |
-| 🔴→✅ **五角大廈「供應鏈風險」黑名單已裁定違法、即時解除（2026-08-28 結案）** | 聯邦法官裁定五角大廈黑名單違法、即時解除（Reuters／Washington Post，08-28）；🔎 已查證與 Fable 5 出口管制為獨立政策線。 | 政府是否上訴；解除後 Anthropic 與國防部門實際合作動向（呼應「三個戰場」🪖 軍事合約段落）；模型面另見 [[entities/fable-5]] |
+| 🔴→✅ **五角大廈「供應鏈風險」黑名單已裁定違法、即時解除，惟部門間因應態度分歧（更新，2026-09-04）** | 聯邦法官裁定五角大廈黑名單違法、即時解除（Reuters／Washington Post，08-28）；🔎 已查證與 Fable 5 出口管制為獨立政策線。**FedScoop（09-04）**：判決落地後，美國政府各部門對 Anthropic 的因應態度並不一致，僅標題可用，細節見下方「表格細節」。 | 具體是哪些部門立場分歧、分歧內容為何；政府是否上訴；解除後 Anthropic 與國防部門實際合作動向（呼應「三個戰場」🪖 軍事合約段落）；模型面另見 [[entities/fable-5]] |
 | Anthropic 麻州州級政治獻金與遊說支出增加（新增，2026-08-28，僅標題可用） | The Boston Globe（08-28）：Anthropic 在麻州州議會（Beacon Hill）的政治獻金與遊說支出增加；僅標題可用，具體金額與遊說對象未見報導。 | 具體金額、遊說對象與訴求內容；是否與既有「州級 AI 規則倡議」（Cesar Fernandez 證實的「以州為單位逐一加碼」策略，見上）構成同一佈局的具體個案 |
 | 澳洲著作權遊說                  | Anthropic 向澳洲財長 Chalmers 表態：210 億美元投資案取決於著作權法規明確性；澳洲總理不急於處理（2026-07-13，AFR + TechXplore 兩獨立來源）                                                                                                                                                     | 澳洲政府是否啟動著作權修法或正式回應；投資案是否附時程或出現撤回表態                                                                                     |
 | 中美 AI 工具信任對峙（已獨立成頁）| 敘事線（社群指控 → 企業禁用 → 官方定調「實驗」→ 政府層級升級 → Anthropic 07-10 首度否認）已於 2026-07-12 整合拆出至 [[topics/safety-china-trust-dispute]] | 中國官方與 Alibaba 是否就 Anthropic 否認再表態；中國是否有後續監管動作（如限制/禁售）；完整時序見新頁 |
@@ -89,6 +88,7 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 
 **表格細節**
 
+- **五角大廈合約爭議持續，政府各部門因應態度不一**：FedScoop〈Anthropic faces different government responses as Pentagon battle continues〉（2026-09-04，僅標題可用）報導 08-28 聯邦法官裁定黑名單違法解除後，美國政府各部門對 Anthropic 的因應態度並不一致；具體哪些部門立場分歧、分歧內容為何均未見報導，完整脈絡見「## 三個戰場」🪖 軍事合約段落。
 - **中國官方表態不滿，為美中 AI 對話設條件**：Bloomberg（08-31）報導中國官方對 Anthropic 表態不滿，並為關鍵美中 AI 對話設下條件；僅標題可用，具體不滿內容、設定條件與涉及哪場對話均未見報導。TechRepublic（09-02）報導中國**官媒**指控 Anthropic 對中、美 AI 發展採取雙重標準——主題呼應但出處不同（官媒評論 vs Bloomberg 外交線報導），暫不逕自判定為同一事件的內容補齊，並陳記錄。
 - **Fable 5.1 與美中前沿模型競賽**：SCMP〈Frontier AI at a cost: what Anthropic's Fable 5.1 means for US-China model race〉分析 Fable 5.1 發布如何牽動美中前沿模型競賽態勢，為出口管制主線解除後首見以地緣政治框架分析新世代模型的深度報導；具體論點與數據僅標題可用。
 - **矽谷產業對 Anthropic 對中 AI 限制立場的反彈**：The Information（07-23，僅標題可用）首見報導矽谷業界聯合反對 Anthropic 對中國 AI 限制立場；Forbes（07-25）與 India Today（07-26）補足具名細節：Nvidia 發起的開放權重連署已擴大至 50 家企業，Amazon 與 Anthropic 明確未加入，India Today 將此定性為「矽谷分裂——Nvidia 陣營主張開放存取，Anthropic 推動限制」；**07-28 新增：** Anthropic CEO Dario Amodei 部落格文章「Our position on open-weights models」（HN 972 分）首度正面回應，明確聲明從未主張禁止開源權重模型，但呼籲加強對中國晶片出口管制與安全測試；Axios/TechCrunch/Politico 等媒體跟進，Yahoo Tech 稱 Anthropic 因此仍被批評為「唯一不支持開源模型的主要 AI 實驗室」；**07-29 追加：** Nextgov/FCW 以「Anthropic calls for threading the needle on open-source AI」為題延續此系列報導，僅標題可用，未見超出既有共識的新細節；同日 Techdirt（HN 38 分）刊出批評分析，指 Anthropic「反對全面禁令、卻想禁掉讓開放權重模型變好的一切」，將 Amodei 聲明定性為自相矛盾，並提及 Nvidia 主導的產業界公開信反對以「中國 AI 威脅論」禁用中國模型。
@@ -174,7 +174,7 @@ Anthropic 的整個品牌建立在一個論述上：「我們建造了史上最�
 
 2026-07-16，Politico（僅標題可用）報導參議員 Mike Rounds 就 Mythos 接受五角大廈簡報，顯示儘管 DoD 已大幅轉移工作量，國會軍事委員會層級對 Mythos 軍用能力的關注並未消退；具體簡報內容與 Rounds 立場僅標題可用（2026-07-16 報導）。
 
-2026-08-28，聯邦法官裁定黑名單違法、即時解除禁令：Reuters／Washington Post 報導聯邦法官裁定國防部將 Anthropic 列入「供應鏈風險」黑名單一事違法且毫無根據，即時解除禁令；此為 07-30/31 首見的 Rita F. Lin 一案終局判決，爭議根源正是本段所述 Anthropic 與國防部因護欄立場不相容而談判破裂、DoD 轉移工作量的既有矛盾。The Register 指出黑名單當初所依據的 Claude「能力」實際上並不存在，是判決翻案的關鍵理由之一——呼應「根本矛盾」段落所述，Anthropic 自身安全論述曾被政府援引作為干預正當性，本案顯示此正當性未能通過司法審查。The American Prospect 從批判角度分析，質疑禁令解除後 Anthropic 是否會與國防部門加深合作、「護欄優先」立場是否因此鬆動，仍待觀察。**2026-08-29 補充判決法律依據**：ibtimes.com（經 Hacker News 轉載）具體化判決理由——法官認定政府因 Anthropic 拒絕放寬 Claude 軍事用途限制而報復，侵犯其第一修正案權利、剝奪正當程序（第五修正案）保障，並認定國防部長 Pete Hegseth 有相關責任；此與 07-13 NYT〈What the Government's Fight With Anthropic Reveals About Free Speech in America〉的「言論自由報復」框架分析（見「## 攻防紀錄」07-13 條目）相互印證。The Guardian、FedScoop、SiliconANGLE 同日跟進報導同一裁決，未見超出 Reuters 首發的新事實；The Washington Post 另刊評論文章，將本案定性為政府對 Anthropic「不必要戰爭」中的一役。**2026-08-31 補充評論角度**：Inc.com 重申判決用語「違法且毫無依據」，未見超出 08-28/08-29 已記錄事實的新內容；Reason.com 另刊評論，將本案定性為確立「私部門可對政府合作附加條件的權利」之先例——與本段既有「Anthropic 核心產品主張與軍事需求結構性不相容」的分析框架相呼應，補上「此案對其他私部門與政府談判的示範效果」這一新的評論角度。
+2026-08-28，聯邦法官裁定黑名單違法、即時解除禁令：Reuters／Washington Post 報導聯邦法官裁定國防部將 Anthropic 列入「供應鏈風險」黑名單一事違法且毫無根據，即時解除禁令；此為 07-30/31 首見的 Rita F. Lin 一案終局判決，爭議根源正是本段所述 Anthropic 與國防部因護欄立場不相容而談判破裂、DoD 轉移工作量的既有矛盾。The Register 指出黑名單當初所依據的 Claude「能力」實際上並不存在，是判決翻案的關鍵理由之一——呼應「根本矛盾」段落所述，Anthropic 自身安全論述曾被政府援引作為干預正當性，本案顯示此正當性未能通過司法審查。The American Prospect 從批判角度分析，質疑禁令解除後 Anthropic 是否會與國防部門加深合作、「護欄優先」立場是否因此鬆動，仍待觀察。**2026-08-29 補充判決法律依據**：ibtimes.com（經 Hacker News 轉載）具體化判決理由——法官認定政府因 Anthropic 拒絕放寬 Claude 軍事用途限制而報復，侵犯其第一修正案權利、剝奪正當程序（第五修正案）保障，並認定國防部長 Pete Hegseth 有相關責任；此與 07-13 NYT〈What the Government's Fight With Anthropic Reveals About Free Speech in America〉的「言論自由報復」框架分析（見「## 攻防紀錄」07-13 條目）相互印證。The Guardian、FedScoop、SiliconANGLE 同日跟進報導同一裁決，未見超出 Reuters 首發的新事實；The Washington Post 另刊評論文章，將本案定性為政府對 Anthropic「不必要戰爭」中的一役。**2026-08-31 補充評論角度**：Inc.com 重申判決用語「違法且毫無依據」，未見超出 08-28/08-29 已記錄事實的新內容；Reason.com 另刊評論，將本案定性為確立「私部門可對政府合作附加條件的權利」之先例——與本段既有「Anthropic 核心產品主張與軍事需求結構性不相容」的分析框架相呼應，補上「此案對其他私部門與政府談判的示範效果」這一新的評論角度。**2026-09-04 新增**：FedScoop〈Anthropic faces different government responses as Pentagon battle continues〉報導判決落地後，美國政府各部門對 Anthropic 的因應態度並不一致——呼應 The American Prospect（08-28）對「解除禁令後合作是否加深」的疑問，顯示司法勝訴並未讓政府內部立場統一；僅標題可用，具體是哪些部門分歧、分歧內容為何均未見報導。
 
 ### 🚫 出口管制：誰來管最強的模型
 
@@ -242,6 +242,7 @@ Fable 5 發布後，Amazon 安全研究人員發現特定提示詞可讓模型�
 
 | 日期 | 方 | 動作 | 效果 |
 |------|----|------|------|
+| 2026-09-04 | 🏛️ | FedScoop：08-28 判決落地後，美國政府各部門對 Anthropic 因應態度不一，Pentagon 合約爭議持續 | 顯示司法解除黑名單未讓政府對 Anthropic 的立場統一，具體哪些部門分歧、分歧內容僅標題可用 |
 | 2026-09-02 | 🌐 | SCMP 分析 Fable 5.1 發布對美中前沿模型競賽態勢的意涵 | 出口管制主線解除後首見以地緣政治框架分析新世代模型的深度報導，具體論點僅標題可用 |
 | 2026-09-02 | 🏛️ | TechRepublic：中國官媒指控 Anthropic 對中、美 AI 發展採取雙重標準 | 與既有 08-31 Bloomberg「表態不滿」主題相近，出處不同（官媒 vs 外交線報導），並陳記錄，未逕自合併 |
 | 2026-09-01 | 🌐 | Homeland Security Today 跟進報導五角大廈「供應鏈風險」違法判決 | 第三家媒體重申 08-28 已結案判決，未見超出既有記錄的新內容 |
@@ -437,6 +438,9 @@ Fable 5 發布後，Amazon 安全研究人員發現特定提示詞可讓模型�
 - [Chris Olah Vatican Remarks](https://www.anthropic.com/news/chris-olah-pope-leo-encyclical) — Anthropic Blog
 
 ## 時序
+
+### 2026-09-04
+- **[🏛️ 新增] FedScoop：Anthropic 與五角大廈合約爭議持續之際，美國政府各部門因應態度不一**：08-28 聯邦法官已裁定黑名單違法並即時解除，本則顯示部門間立場並未隨判決統一；僅標題可用，具體哪些部門分歧、分歧內容為何未見報導，詳見「## 目前局勢」與「## 三個戰場」🪖 軍事合約段落
 
 ### 2026-09-02
 - **[新事件，新增，僅標題可用] SCMP：Fable 5.1 發布對美中前沿模型競賽態勢的意涵**：〈Frontier AI at a cost: what Anthropic's Fable 5.1 means for US-China model race〉分析出口管制主線解除（07-01）後，Fable 5.1 世代對美中前沿模型競賽的地緣政治意涵，具體論點與數據僅標題可用，詳見「## 目前局勢」

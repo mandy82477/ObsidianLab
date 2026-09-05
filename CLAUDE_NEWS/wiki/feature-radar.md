@@ -15,12 +15,14 @@
 - **Claude Opus 5**（熱度 🔥🔥🔥🔥🔥）：2026-07-25 正式發布，編碼與知識工作評測逼近 Fable 5、官方稱定價為其一半，現為 Claude Max 新預設模型、Claude Pro 最強模型，適合日常 agentic 使用與知識工作任務
 
 > 09-02 換上剛發布的 Claude Fable 5.1，原第三名「跨 session 訊息互通」熱度降溫逾一週、讓出名額。SendFeedback（08-27）、SDK 命名空間轉正（08-29）、使用者個人資料 API（09-01）熱度均未達本欄門檻；Claude Opus 5 發布已有一段時間，但仍持續被有分量地提及，故留任。
+>
+> 本週無新達標功能，維持上週推薦（最後輪替：2026-09-02）——09-04 的 v2.1.261、anthropic-sdk-python v1.4.0 均屬既有指令欄位擴充與 SDK API 新增，未達 🔥🔥🔥🔥 門檻。
 
 ---
 
 ## ⚠️ 升版風險
 
-**最新版本：** v2.1.259（2026-09-02）——新增 `managedMcpServers` 管理設定，組織可統一為所有使用者提供 HTTP/SSE MCP 伺服器（設定格式比照 `.mcp.json`）；非 breaking change。
+**最新版本：** v2.1.261（2026-09-04）——`/status` 與 `claude doctor` 新增「Organization policy」欄位，說明組織政策載入失敗的原因（例如代理伺服器未正確轉發 endpoint）；非 breaking change。
 
 **v2.1.237 起至今的每一個版本都不是 breaking change**，逐版異動見 [[entities/claude-code#版本更新]]。
 

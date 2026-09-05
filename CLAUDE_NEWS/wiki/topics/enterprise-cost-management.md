@@ -27,12 +27,11 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 **狀態：** ongoing
 **領域：** 💼 商業
 **開始日期：** 2026-05-01
-**最後更新：** 2026-09-04
-**最後新聞更新：** 2026-08-25
+**最後更新：** 2026-09-05
+**最後新聞更新：** 2026-09-04
 
-> **最新成本管控動態**（2026-08-25）
-> Business Insider 報導具名企業 **Thomson Reuters** 正設法降低對 Claude 的高額依賴成本，僅標題層級可用，詳見下方「企業案例」新增段落。08-14 cookbook-meter、08-11 Quesma「40 倍」等既有量化訊號仍為近期重點。
-> Show HN 工具 cookbook-meter（HN，社群單一回報）將 Claude 訂閱方案的實際使用量換算為 API 等值花費：作者本人訂閱上月換算相當於 **$5,868** 的 API 用量；留言中一名使用者稱 3 天內即累積出相近量級花費，另一名使用者稱單一部電腦的等值用量已達 **$27,428**。這是繼 07-23 modelplane.ai「44 倍」、08-11 Quesma「40 倍」之後，**第三個獨立方法論**（使用量換算工具，區別於前兩者的定價對照分析）指向同一數量級的訂閱／API 價差，詳見「企業案例」新增段落。08-11 Quesma 與 07-23 Amazon Alexa 等既有事件仍為近期重大事件，未見進一步後續報導。
+> **最新成本管控動態**（2026-09-04）
+> Spotify Engineering 部落格公開內部工具 **Portal**：把「純 I/O」型工作路由給便宜模型，實測使 Claude Code token 用量降低 **90%**；是本頁第一個公開技術細節的「成功案例」（而非既有多為「縮減依賴」的案例），詳見下方「企業案例」新增段落。08-25 Thomson Reuters、08-14 cookbook-meter、08-11 Quesma「40 倍」等既有量化訊號仍為近期重點。
 
 ---
 
@@ -86,7 +85,7 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 
 | 策略 | 說明 | 適用規模 |
 |------|------|------|
-| multi-step agent 混用 Sonnet/Haiku | 避免全程 Opus，以 Opus 僅負責決策層、Haiku/Sonnet 負責執行層，實測可削減成本達 90% | 中大型企業規模化 |
+| multi-step agent 混用 Sonnet/Haiku | 避免全程 Opus，以 Opus 僅負責決策層、Haiku/Sonnet 負責執行層，實測可削減成本達 90%；Spotify 內部工具 Portal 為具名落地案例（純 I/O 型工作路由給便宜模型，見下方「企業案例」，2026-09-04）| 中大型企業規模化 |
 | Opus+Sonnet 分層 | Opus 4.7 規劃 → Sonnet 4.6 執行，降低整體 token 單價 | 中大型 |
 | 多 LLM 混合 | Opus orchestrator + DeepSeek worker，低成本執行層 | 大型 |
 | 速率上限前轉移（agent-baton）| 利用使用量 API 預測上限到達時間，提前轉移工作 | 個人→企業 |
@@ -97,6 +96,12 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 ---
 
 ## 企業案例
+
+### Spotify — 內部工具 Portal 路由「純 I/O」工作，Claude Code token 用量降低 90%（2026-09-04 新增）
+- **來源**：Spotify Engineering 官方部落格（經 Hacker News，2026-09-04）
+- **情況**：Spotify 公開內部工具 Portal，將「純 I/O」型工作（即無需複雜推理、僅涉及讀寫/搬運資料的任務）路由給成本較低的模型，實測使 Claude Code 的 token 用量降低 **90%**
+- **與既有策略的關係**：與本頁「企業成本因應策略」表既有「multi-step agent 混用 Sonnet/Haiku」「Opus+Sonnet 分層」策略同屬「依任務複雜度分層路由模型」的思路，惟 Spotify 是本頁首個**公開官方部落格技術細節**（而非僅媒體轉述降幅數字）的具名案例，且量化降幅 90% 恰與既有策略表已記錄的理論上限一致，屬理論策略的實際落地驗證（推論：本則未見具體任務分類方法論、路由判斷邏輯的完整揭露，僅標題與部落格摘要層級資訊）
+- **意義**：是繼 Thomson Reuters（08-25，「縮減依賴」型案例）、Lindy（06-29，「完全切換競品」型案例）之後，本頁**首個「透過內部工具優化用量、而非縮減或切換」的正面成本管控案例**，可能為其他企業提供可複製的技術路徑；工具本身與工作流模式面另見 [[topics/community-tech-tools]]（Spotify Portal 已同步派給社群記者評估收錄）
 
 ### Thomson Reuters — 設法降低對 Claude 的高額依賴成本（2026-08-25 新增）
 - **來源**：Business Insider（經 Google News，2026-08-25）
@@ -163,6 +168,7 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 
 ## 目前結論
 
+- 🛠️ **本頁首個公開技術細節的正面成本管控案例（2026-09-04）**：Spotify Engineering 部落格公開內部工具 Portal，將「純 I/O」型工作路由給較便宜模型，實測降低 Claude Code token 用量 90%；與既有多為「縮減依賴」或「完全切換」的企業案例不同，本則是「優化用量而非放棄 Claude」的具名技術路徑，且降幅恰好驗證本頁「企業成本因應策略」表既有的理論估算（推論，具體路由判斷邏輯未見完整揭露）
 - 💸 **新增產業別案例：傳統媒體/專業資訊業出現成本縮減訊號（2026-08-25）**：Business Insider 報導 Thomson Reuters 正設法降低對 Claude 的高額依賴成本，是繼 Amazon Alexa（07-23）、Lindy（06-29）之後第三個具名企業縮減案例，惟僅標題層級可用，具體幅度與替代方案未見細節（推論）
 - 💸 **第三個獨立方法論指向同一價差量級（2026-08-14）**：Show HN 工具 cookbook-meter 將訂閱使用量換算為 API 等值花費，作者本人上月換算 $5,868，留言另有使用者稱單機等值用量達 $27,428；與 07-23 modelplane.ai「44 倍」、08-11 Quesma「40 倍」屬三種各自獨立的量化路徑（定價對照 × 2、使用量換算 × 1），指向同一數量級的訂閱／API 價差，惟本則訊號強度僅為單一社群回報（HN score 2），不可與前兩則等量齊觀（推論）
 - 💸 **訂閱制對 API 計費落差再獲獨立來源量化為 40 倍（2026-08-11）**：Quesma 部落格與既有 07-23 modelplane.ai 實測（44 倍）方向一致，兩則獨立樣本均指向 40–44 倍區間；新增具名個案 Pylon CEO 三天內誤支 $4,000，加上 The Information「多家企業帳單較預期高 2–3 倍」，顯示成本可預測性不足已從單一極端案例（Uber 燒光年度預算）擴散為更廣泛的日常計費風險（推論）
@@ -199,6 +205,11 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 - [[news/2026-05-22]]
 
 ## 時序
+
+### 2026-09
+
+#### 2026-09-04
+- **[本頁首個公開技術細節的正面案例] Spotify Engineering：內部工具 Portal 路由純 I/O 工作，Claude Code token 用量降低 90%**：詳見「企業案例」新增段落與「企業成本因應策略」表更新（Hacker News/Spotify Engineering）
 
 ### 2026-08
 
