@@ -5,5 +5,24 @@
     "page 可寫 \"*\"（全庫），term 可寫 \"*\"（全部禁詞）——兩者都寫 \"*\" 等於關掉檢查，不得如此。",
     "登記前先問：這個詞出現在這裡，冷讀者看得懂嗎？看不懂就是改寫或移進 %% 備忘，不是登記例外。"
   ],
-  "allow": []
+  "allow": [
+    {
+      "page": "topics/community-tech-discussions",
+      "term": "主編",
+      "line_contains": "自主編程",
+      "reason": "「自主編程代理」的字面子串，非編輯部角色詞（2026-09-05 B 組清理誤報）"
+    },
+    {
+      "page": "topics/community-tech-patterns",
+      "term": "覆寫",
+      "line_contains": "非預期覆寫",
+      "reason": "技術語境的檔案覆寫（regex 誤改記憶檔），非頁面維護動作"
+    },
+    {
+      "page": "topics/community-tech-patterns",
+      "term": "覆寫",
+      "line_contains": "個人化覆寫",
+      "reason": "config override 技術語意（CLAUDE.local.md 覆寫共用設定），非頁面維護動作"
+    }
+  ]
 }

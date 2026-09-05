@@ -5724,3 +5724,16 @@ GH Actions 抓料排 10:23 UTC，到 14:45 UTC 仍未落地（+4.4 小時且持�
 **示範頁：** `topics/competitor-landscape` 的 7 句改為讀者語言（「受 12 列上限汰出」→「未列入上表（⚪ 級，動態仍記在下方時序）」＋`%%` 備忘；「已移交 X」→「完整脈絡見 X」；`## 查證快照（2026-08-13，不回訪）`→`（2026-08-13）`，到期日與「不回訪」進 `%%`），該頁清乾淨後從基線移除，**40 → 39 頁**。
 
 **結果：** `check_rules.py` ✅ 零錯誤（92 組配對）｜`lint_health.py mutate` ✅ 85 組全數轉紅｜`run_tests.py` exit 0｜`build_web.py` 錨點 WARN 0（未增加）｜preview 實開競品頁與 pricing 頁確認：metadata 12 處全數摺疊、正文零外洩、`%%` 備忘未上站、樣式為 hairline dotted／無陰影／無圓角。
+
+---
+
+## 2026-09-05 Query：「內部用語外洩有沒有比較好的方式避免」→ 三層防線＋存量首批清理
+
+**點出什麼：** 競品頁健檢兩輪冷讀者都抓到內部用語外洩（「12 列上限汰出」「不回訪」「標｜查｜複」「請使用者裁示」「已移交」「每日抄錄」），且是全站病。病因：同一份 markdown 同時服務主編與讀者，記者把維運備忘寫進正文；禁詞清單只會讓 agent 換說法，治本是給備忘一個家。
+
+**三層（順序 2→1→3）：** ② `scripts/check_reader_language.py` 讀者語言閘（22 個禁詞各附理由與替代詞；`%%`／frontmatter／code fence 跳過；`data/reader-language-allow.json` 逐行例外；`data/reader-language-baseline.json` 存量基線只擋新增）掛 `run_tests.py`，lint 新步驟 6l 每輪派 Sonnet 清 2 頁。① `build_web.py` 原本完全不剝 Obsidian `%% %%`（備忘會進搜尋索引）→ `read_md()` 加 `strip_editorial_comments()`；規則新節「維運備忘的家」；競品頁 7 句示範。③ 網站渲染把懸置標記 metadata 括號摺成 hover、`⟨Q-nn⟩` 掛細節首句，markdown 不動；契約測試＋registry 兩組配對。
+
+**首跑基線 40 頁／477 筆**（ai-agent-safety 109、community-tech-discussions 84、patterns 60、anthropic-business 32、government-policy 24）。使用者裁決先清前五頁：三個 Sonnet 並行（A/B/C），五頁全部歸零，**基線 477→171 筆／36 頁**。誤報 3 筆進白名單（「自主編程」「非預期覆寫」「個人化覆寫」——字面子串撞禁詞）。清法統計：換詞為主、派工句整句刪或移 `%%`、「收錄理由／專頁定向」標籤全數刪除（讀者不需要知道抓取管道）。patterns 頁 H1 由「社群實戰模式庫」改「Claude Code 社群工作流模式」（slug 不動）。
+
+**剩餘 171 筆／36 頁**由 lint 6l 每週消化；下一批最肥：pricing 17、community-pattern-trends 16、code-quality-decline 12、model-task-leaderboard 12、fable-5 11。
+
