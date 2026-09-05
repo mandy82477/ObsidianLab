@@ -530,3 +530,7 @@
 [週六 2026/09/05 11:08:45.00] Single push done (news + wiki; web build skipped, gate blocked)
 [週六 2026/09/05 11:09:00.00] === Pipeline complete (agent) ===
 [cloud daily-news-pipeline-cloud STARTED 2026-09-05T12:05:34Z]
+[Sat 2026/09/05 12:06:00.00 UTC] === Agent pipeline start (2026-09-05) ===
+[Sat 2026/09/05 12:06:00.00 UTC] Step 1a replay FAILED - src/gathered_archive/2026-09-05.json 不存在（上游抓料延遲）
+[Sat 2026/09/05 12:06:00.00 UTC] ABORTED: gathered_items.json date=2026-09-03 items=33，非目標日期的新鮮資料
+[Sat 2026/09/05 12:06:00.00 UTC] === Pipeline aborted (cloud, 12:00 UTC shift) ===
