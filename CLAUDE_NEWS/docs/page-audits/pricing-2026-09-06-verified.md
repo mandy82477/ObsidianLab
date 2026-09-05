@@ -49,3 +49,9 @@ pricing 頁的**數字本身是準的**（七項全對），問題不在事實�
 | V5 Fable 5.1 每小時算例 | 官方定價頁**只有 Opus 5** 一小時算例（$0.705）；Fable 5.1 無 | pricing 頁 Managed Agents 節 | Q2 的錨要自己算：同算例代 Fable 5.1 牌價＝50k×$10＋15k×$50＋$0.08 ≈ **$1.33／小時**（標明「依官方 Opus 5 算例的 token 量代入 Fable 5.1 牌價」，屬推算） |
 | V6 Spend Controls 粒度 | 官方 blog 2026-07-02：Enterprise 專屬；**org 層 spend cap（75%／90% 警示）＋ group／部門層 cost 報表 ＋ per-user 可見度與限額（75%／95% 通知）**；model entitlements 可依角色鎖模型；有 Admin API；Claude Code 有專屬分析（cost per commit 等，每日更新） | [官方 blog](https://claude.com/blog/giving-admins-more-visibility-and-control-over-claude-usage-and-spend) | **ECM L58–61 三項「🧪 部分回應」可結案為 ✅ 有官方對應**，只剩「混合計費管理」仍 ❌。這是 ECM 頁最大的一筆過期 |
 | V7 $100 過渡 credit | 2026-09-17 23:59 PT 到期，**到期即作廢**，不可續買、不轉存；適用 07-19 前的 Pro／Team standard，Max 與 premium seat 本無此 credit | 多家轉述官方說明中心（二手交叉，口徑一致） | L55「記得用掉」正確；可補「到期作廢」四字＋ feature-radar ⏰ 是否已有此列待查 |
+
+## 六、第三輪（UTC 20:3x）：V1 升級為一手＋雲端 09-05 新懸置結案
+
+- **V1 一手確認**：[官方促銷說明頁](https://support.claude.com/en/articles/15910845-claude-code-may-august-2026-weekly-limits-promotion) 逐字：「From May 13, 2026 through September 13, 2026, your weekly usage limit in Claude Code is 50% higher」「valid … through September 13, 2026 at 11:59 PM PT」「available for Pro, Max, and Team plans, as well as legacy seat-based users on Enterprise plans」「5-hour usage limits are not affected by this promotion」。**該頁不提 09-14 +25%**（那是 08-29 Bluesky 公告，非說明中心）——頁面若把兩者寫成同一出處要拆開。第二節「二手交叉」註記可撤。
+- **雲端 09-05 ingest 新增懸置**（pricing 現行 L327「改版後完整價格結構待查證，複 09-19」）：主編 09-06 已開官方定價頁全文，結構＝本檔第一節那張表（模型牌價 × 5 欄快取／輸出、Batch 表、Managed Agents 節、AWS／Foundry CCU 節、tool 計價節）。記者機械 diff 看到的「新增 Mtok 區間段、移除企業人數規模段」對應的是 platform 文件頁改版，非價格變動。**結案：價格未變，結構見 verified 第一節**。
+- **同日「Anthropic Resets Claude Limits」媒體副標**：與 09-13／09-14 換軌一致，無新事實；callout 該句可撤。
