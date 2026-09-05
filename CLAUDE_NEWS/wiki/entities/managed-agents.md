@@ -57,7 +57,8 @@ Anthropic Managed Agents 是 Claude Platform 上的官方 agent 框架（[概覽
 
 > 跨功能的熱度對比見 [[feature-radar]]；四個選項怎麼挑見下一節。
 
-**降到 🔥🔥 的一次性下修（2026-09-05 頁面健檢）**：近 4 週（08-09~09-06）日報提及 2 天（`python scripts/news_mentions.py --since 4w --any "Managed Agents" "受管代理"`，命中 08-20、09-03），性質為 `news/2026-08-20.md` 版號無細節與 `news/2026-09-03.md` 他人拿它當對照組；正向採用回報 0 則、實質新功能停在 05-22。現行「連續 4 週零命中 −1 格」對本頁降 0 格，故本次為編輯判斷而非規則計算。`wiki/feature-radar.md` L226 同步。
+**為什麼只剩 🔥🔥**：近四週（08-09～09-06）只被提到兩天——一次是 SDK 版號、一次是別人拿它當對照組——沒有任何正向採用回報，實質新功能停在 05-22。
+%% 維運備忘：2026-09-05 頁面健檢一次性下修。量測：python scripts/news_mentions.py --since 4w --any "Managed Agents" "受管代理" → 命中 08-20（版號無細節）、09-03（負向對照）。現行「連續 4 週零命中 −1 格」對本頁降 0 格，故為編輯判斷；上限式判準是否成法見 docs/page-audits/ledger.md 待裁決。feature-radar L226 已同步。%%
 
 ---
 
