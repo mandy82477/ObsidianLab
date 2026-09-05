@@ -29,7 +29,7 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 **狀態：** active
 **領域：** 👤 人物
 **首次出現：** 2026-04-25
-**最後更新：** 2026-09-03
+**最後更新：** 2026-09-05
 **最後新聞更新：** 2026-08-29
 
 > ❓ **待查證**（標 2026-08-25｜查 airline industry、marketing and safety）｜**Fortune 評論比較 Anthropic 安全論述與航空業經驗**（2026-08-24 報導）：Fortune 發表評論文章〈What Anthropic's Dario Amodei can learn from the airline industry's lesson on marketing and safety〉，以航空業在行銷與安全議題上的經驗為借鏡，討論 Dario Amodei 可以從中學到什麼；僅標題可用，具體論點與建議內容未見報導。
@@ -90,7 +90,7 @@ Dario Amodei 是 Anthropic 共同創辦人兼執行長（CEO），與 [[entities
 - [Google News（2026-08-28）→ Business Insider](https://news.google.com/rss/articles/CBMiiAFBVV95cUxOeVBkTWk1R2dsdEpLODZObWllTjlrdlVIX3dybGRta1pZbFcxMTRNNlVNcEVCMFFpOElIY3N3WjU3SUpYd28xQ3ZqcjF4X2gwQkZCc3lBX3ppMHdVUmRyQnB0X0M3Mk03OEhWX0lCYnhkWTA0dlJUVTY0RXFlNEpNLVQtQS05T3BK?oc=5)：「Dario Amodei Says Anthropic Is 'Not Interested in Destroying Anyone'」，公開回應外界對 AI 威脅論的疑慮；僅標題與轉址連結可用，查證狀態見下方歷史記錄
 - [CNBC（2026-08-26）](https://www.cnbc.com/2026/08/26/cnbc-exclusive-transcript-salesforce-chair-ceo-marc-benioff-and-anthropic-co-founder-ceo-dario-amodei-speak-with-cnbcs-jim-cramer-on-closing-bell-overtime-today.html)：與 Salesforce 董事長暨執行長 Marc Benioff 共同接受 Jim Cramer 專訪，完整逐字稿公開（Google News/CNBC）
 - Hacker News（26分，2026-08-16）→ Business Insider：「Anthropic CEO says the way for AI to win over the public is to cure cancer」，Dario Amodei 在 X 上稱唯有具體科學突破才能扭轉大眾對 AI 的不信任
-- Hacker News（12分，source_count=2，2026-08-16）→ TechCrunch：「Anthropic CEO says AI backlash is 'fundamentally a crisis of trust'」，回應投資人 Gavin Baker 於 All-In podcast 及 X 上的批評
+- Hacker News（12分，另有 Google News 同題報導，2026-08-16）→ TechCrunch：「Anthropic CEO says AI backlash is 'fundamentally a crisis of trust'」，回應投資人 Gavin Baker 於 All-In podcast 及 X 上的批評
 - Google News（2026-08-16）→ Business Insider：「Anthropic CEO Dario Amodei says the way for AI to win over the public is to 'actually' cure cancer」，與上則 Business Insider 報導同一事件的另一篇報導，僅供交叉核對
 - Simon Willison Blog（2026-08-16）：〈Quoting Dario Amodei〉，引述其 X 原文全文：「I do agree that the public has a negative view of AI (and that this is a big problem), but I don't think it is primarily...」，為信任危機／治癒癌症表態的第一手佐證來源
 - [Google News（2026-08-17）→ Business Insider](https://news.google.com/rss/articles/CBMimAFBVV95cUxOUHF1YnFCRW55ek5WeFpCSkgtWkdOcFBrM3c5dVhBd0xXSFY4VngwNHpLMzcwWTZmOUVzUXF3Q1dDT2xtVnNwVm5nN01yc1E2TGlUR2JRSnhtalFKYjJhUjl1bGk1OWRKZ1FHb0hETGxrcHJKaFhFTHdaYzZQTE9KNk5xc2w2V2k5d3p1WHhfUWJtT0ZmUmlvQQ?oc=5)：「Fidji Simo says she believes AI can 'cure all diseases,' agreeing with Anthropic CEO Dario Amodei」，Fidji Simo（非 Anthropic 人員）公開呼應 Dario Amodei 08-16 的治癒疾病論述
@@ -113,7 +113,7 @@ Dario Amodei 是 Anthropic 共同創辦人兼執行長（CEO），與 [[entities
 - 2026-08-26：與 Salesforce 董事長暨執行長 Marc Benioff 共同接受 CNBC《Closing Bell: Overtime》主持人 Jim Cramer 專訪，CNBC 公開完整逐字稿；日報僅載逐字稿已公開一事，未節錄任何具體發言內容，合作動態詳見 [[topics/anthropic-business]]（來源：Google News／CNBC）
 - 2026-08-24：Fortune 發表評論文章〈What Anthropic's Dario Amodei can learn from the airline industry's lesson on marketing and safety〉，以航空業在行銷與安全議題上的經驗為借鏡討論 Dario Amodei 可以從中學到什麼；僅標題可用，具體論點與建議內容未見報導，查證狀態見頁首標記（來源：Google News／Fortune）
 - 2026-08-17：Fidji Simo（非 Anthropic 人員）公開表態同意 Dario Amodei 稱「AI 可治癒所有疾病」的說法，呼應其 08-16 主張唯有具體科學突破才能扭轉大眾對 AI 不信任的論述（來源：Google News／Business Insider）
-- 2026-08-16：Dario Amodei 在 X 上發表兩則具名表態，均為本人第一手發言：（1）回應投資人 Gavin Baker（於 All-In podcast 及 X 上）批評其「過度悲觀描繪 AI」，稱大眾對 AI 的反彈「根本上是一場信任危機」（TechCrunch，source_count=2，另有 Google News 同題報導）；（2）稱扭轉大眾對 AI 不信任的唯一辦法是產業交出具體科學突破，並舉「治癒癌症」為例（Business Insider；同事件另有標題含「actually」一詞的 Google News／Business Insider 版本，交叉核對內容一致）。Simon Willison 部落格〈Quoting Dario Amodei〉引述其 X 原文全文：「I do agree that the public has a negative view of AI (and that this is a big problem), but I don't think it is primarily...」，作為此事件的第一手佐證來源（來源：Hacker News／Business Insider、Hacker News／TechCrunch、Google News／Business Insider、Simon Willison Blog，2026-08-16）
+- 2026-08-16：Dario Amodei 在 X 上發表兩則具名表態，均為本人第一手發言：（1）回應投資人 Gavin Baker（於 All-In podcast 及 X 上）批評其「過度悲觀描繪 AI」，稱大眾對 AI 的反彈「根本上是一場信任危機」（TechCrunch，另有 Google News 同題報導）；（2）稱扭轉大眾對 AI 不信任的唯一辦法是產業交出具體科學突破，並舉「治癒癌症」為例（Business Insider；同事件另有標題含「actually」一詞的 Google News／Business Insider 版本，交叉核對內容一致）。Simon Willison 部落格〈Quoting Dario Amodei〉引述其 X 原文全文：「I do agree that the public has a negative view of AI (and that this is a big problem), but I don't think it is primarily...」，作為此事件的第一手佐證來源（來源：Hacker News／Business Insider、Hacker News／TechCrunch、Google News／Business Insider、Simon Willison Blog，2026-08-16）
 
 > 🔎 **查無官方**（標 2026-08-10｜查 Axios、Yahoo Finance｜訊 2026-08-24｜複 2026-09-30）｜**人才招募疑慮延燒**（2026-08-07 報導）：Axios 報導（經 Yahoo Finance 轉載）稱 Dario Amodei 據稱憂心新進員工只為高薪而非公司使命加入 Anthropic，並對照公司同期開出年薪 32-40 萬美元的活動企劃負責人職缺，遠高於市場行情；為二手轉述，具體發言未經證實。**後續**（2026-08-24）：Axios 獨家報導（news/2026-08-24、2026-08-25 兩則跟進）證實 Anthropic 面試流程中會直接詢問候選人如何看待「使命」與「金錢」的優先順序，甚至問「若公司未來因安全考量放棄 AI 願景導致股票歸零，你會作何感受」；此為公司官方招募實務的獨立報導，與 08-07 憂慮傳言方向一致。**（2026-08-30 查證）**Anthropic 官方管道未刊載該發言，Axios 原文為付費牆二手轉述——**招募實務已由獨立報導證實，但 Dario 本人的具體發言場合與逐字稿查無官方紀錄**，改標查無官方。
 

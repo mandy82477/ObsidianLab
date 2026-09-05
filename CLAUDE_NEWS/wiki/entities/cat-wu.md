@@ -29,7 +29,7 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 **狀態：** active
 **領域：** 👤 人物
 **首次出現：** 2026-05-14
-**最後更新：** 2026-09-04
+**最後更新：** 2026-09-05
 **最後新聞更新：** 2026-07-31
 
 > **最新動態**（2026-06-22）
@@ -39,7 +39,7 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 
 ## 現況
 
-2026-05-14，Cat Wu 在公開訪問中提出 AI 下一個重大躍進是「**主動性（proactivity）**」——AI 代理應能主動完成任務，而非等待使用者提示。這是 Claude Code 從「互動工具」轉向「自主代理平台」的產品定位宣言，迄今仍是她最後一次公開論述。
+2026-05-14，Cat Wu 在公開訪問中提出 AI 下一個重大躍進是「**主動性（proactivity）**」——AI 代理應能主動完成任務，而非被動等提示才動作。這是 Claude Code 從「互動工具」轉向「自主代理平台」的產品定位宣言，迄今仍是她最後一次公開論述。
 
 Cat Wu 是 Anthropic Claude Code 產品負責人（Head of Claude Code Products），與創始人 Boris Cherny（見 [[entities/boris-cherny]]）共同主導 Claude Code 的產品方向。她的主動性論述與 Claude Code 同期推出的 `/goal`、`/loop`、`/batch`、`/background` 等自主執行指令套件方向完全呼應。
 

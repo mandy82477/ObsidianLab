@@ -29,11 +29,11 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 **狀態：** active（已被取代，第三階旗艦）
 **領域：** 🤖 模型
 **首次出現：** 2026-04-24
-**最後更新：** 2026-08-27
+**最後更新：** 2026-09-05
 **最後新聞更新：** 2026-08-27
 
 > **最新能力觀察**（2026-08-27，前代 Opus 4.6）
-> TechRepublic 報導稱**前代 Opus 4.6**（非本頁 Opus 4.7）在測試中發現一個健身房 API 的安全瑕疵，並在 10 次測試中有 9 次成功利用該瑕疵；本頁僅記能力面意涵，安全事件本身由安全政策記者於 [[topics/ai-agent-safety]] 追蹤（詳見「已知問題與爭議」）。既有已知問題（XML tool-use 格式混入 JSON tool call，07-18 回報）仍未修復，詳見下方。
+> TechRepublic 報導稱**前代 Opus 4.6**（非本頁 Opus 4.7）在測試中發現一個健身房 API 的安全瑕疵，並在 10 次測試中有 9 次成功利用該瑕疵；本頁僅記能力面意涵，安全事件本身詳見 [[topics/ai-agent-safety]]（另見下方「已知問題與爭議」）。既有已知問題（XML tool-use 格式混入 JSON tool call，07-18 回報）仍未修復，詳見下方。
 
 ---
 
@@ -63,7 +63,7 @@ Claude Opus 4.7 於 2026-04-24 正式發布，已相繼被 Opus 4.8（2026-05-28
 ## 已知問題與爭議
 
 ### 能力觀察：前代 Opus 4.6 發現並利用 Gym API 漏洞（2026-08-27 報導）
-TechRepublic 報導稱 **Claude Opus 4.6**（本頁 Opus 4.7 的前代模型，非本頁模型本身）在測試中發現一個健身房（gym）API 的安全瑕疵，並在 10 次測試中有 9 次成功利用該瑕疵。本則僅記能力面意涵——顯示該世代模型已具備一定程度的自主漏洞發現與利用能力；漏洞本身的安全事件面向（是否涉及實際系統、揭露流程、風險等級）由安全政策記者於 [[topics/ai-agent-safety]] 追蹤，不在本頁重複記錄（[TechRepublic](https://www.techrepublic.com/article/news-claude-gym-api-flaw/)，2026-08-27）。
+TechRepublic 報導稱 **Claude Opus 4.6**（本頁 Opus 4.7 的前代模型，非本頁模型本身）在測試中發現一個健身房（gym）API 的安全瑕疵，並在 10 次測試中有 9 次成功利用該瑕疵。本則僅記能力面意涵——顯示該世代模型已具備一定程度的自主漏洞發現與利用能力；漏洞本身的安全事件面向（是否涉及實際系統、揭露流程、風險等級）詳見 [[topics/ai-agent-safety]]，不在本頁重複記錄（[TechRepublic](https://www.techrepublic.com/article/news-claude-gym-api-flaw/)，2026-08-27）。
 
 ### XML tool-use 格式混入 JSON tool call（2026-07-18 回報）（🔴 未修復）
 GitHub Issue 回報 Opus 4.7 在處理較長 payload 時，會把舊版 XML tool-use 格式混入 JSON tool call 中，造成工具呼叫解析異常；累積 33 則留言、34 個讚同反應，尚無官方回應（[GitHub Issue #49747](https://github.com/anthropics/claude-code/issues/49747)）。

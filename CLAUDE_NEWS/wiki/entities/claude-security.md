@@ -29,11 +29,11 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 **狀態：** beta（公開測試版）
 **領域：** 🛠️ 工具/功能
 **首次出現：** 2026-04-30
-**最後更新：** 2026-09-04
+**最後更新：** 2026-09-05
 **最後新聞更新：** 2026-08-22
 
 > **最新資安產品動態**（2026-08-21）
-> Anthropic 將 **Claude Mythos 5** 整合進 Claude Security，企業團隊可在**不直接存取模型本身**的前提下取得前沿（frontier）等級漏洞掃描能力；MarkTechPost 首發報導，Dealroom、Palo Alto Networks Unit 42、The New Stack 三方跟進（source_count 4）。額度／定價面（Dealroom 提及承諾提供 $35M credits）留給 [[entities/pricing]] 處理，本頁僅記產品功能面。
+> Anthropic 將 **Claude Mythos 5** 整合進 Claude Security，企業團隊可在**不直接存取模型本身**的前提下取得前沿（frontier）等級漏洞掃描能力；MarkTechPost 首發報導，Dealroom、Palo Alto Networks Unit 42、The New Stack 三方跟進。額度／定價面（Dealroom 提及承諾提供 $35M credits）詳見 [[entities/pricing]]，本頁僅記產品功能面。
 
 ## 現況
 
@@ -93,7 +93,7 @@ Claude Security 於 2026-04-30 宣布推出公開測試版，並於 2026-05-01 �
 
 | 日期 | 事件 |
 |------|------|
-| 2026-08-21 | **Claude Mythos 5 整合進 Claude Security**：企業團隊在不直接存取模型本身的前提下取得前沿等級漏洞掃描能力；MarkTechPost 首發報導，Dealroom、Palo Alto Networks Unit 42、The New Stack 三方跟進（source_count 4）；額度／定價面（Dealroom 提及 $35M credits 承諾）留給 [[entities/pricing]] 處理；來源：Google News / MarkTechPost（另有 Dealroom、Palo Alto Networks Unit 42、The New Stack） |
+| 2026-08-21 | **Claude Mythos 5 整合進 Claude Security**：企業團隊在不直接存取模型本身的前提下取得前沿等級漏洞掃描能力；MarkTechPost 首發報導，Dealroom、Palo Alto Networks Unit 42、The New Stack 三方跟進；額度／定價面（Dealroom 提及 $35M credits 承諾）詳見 [[entities/pricing]]；來源：Google News / MarkTechPost（另有 Dealroom、Palo Alto Networks Unit 42、The New Stack） |
 | 2026-07-24 | **社群反映無 Workflow tool 存取權限**：Reddit 使用者（自稱使用 Claude Code 未滿一個月）反映摸索過程燒費大量 token 才發現 Claude Security 沒有 Workflow tool 的存取權限；是否為既有設計限制或待補功能 ❓ 待查證 ⟨Q-01⟩；來源：Reddit / r/ClaudeCode |
 | 2026-08-10 | [[entities/claude-code]] 查證：官方文件確認 Claude Security 的 Workflow 功能需在 `/config` 內另行啟用「dynamic workflows」才可使用，屬 opt-in 設計，可能即為 07-24 該回報者的成因；惟未見官方直接回應此則個案（詳見 ⟨Q-01⟩） |
 | 2026-07-23 | **MarkTechPost 報導「Claude Security Plugin」Beta 版**：標題強調「終端機內執行的多代理漏洞掃描工具」，僅標題可用、無正文細節；與既有版本的定位關係 ❓ 待查證 ⟨Q-02⟩；來源：Google News / MarkTechPost |

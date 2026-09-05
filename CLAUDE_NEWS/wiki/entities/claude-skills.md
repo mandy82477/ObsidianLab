@@ -29,7 +29,7 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 **狀態：** active
 **領域：** 🛠️ 工具/功能
 **首次出現：** 2026-04-27
-**最後更新：** 2026-09-04
+**最後更新：** 2026-09-05
 **最後新聞更新：** 2026-08-24
 
 > **最新官方動態**（2026-08-19）
@@ -96,7 +96,7 @@ description: 在 PR 或 diff review 前，依團隊規範檢查命名、測試�
 - **OpenCode-power-pack**：2026-04-27 移植 Anthropic 官方 11 個 skills 至 OpenCode，打破官方插件僅限 Claude Code 環境的相容性限制，詳見 [[entities/opencode]]
 - **Claudinho**：2026-06-03 上線的 Claude Skills 探索與安裝介面，鎖定非技術用戶「技能難以發現、難以評估價值」的痛點；為第三方工具，非官方產物
 - **創作者變現缺口**：2026-05-20 社群開發者指出 Anthropic 建立了 skill runtime 卻無創作者變現機制，自製 skill 只能免費開源分享，無法商業化（推論：這是官方生態目前最明顯的結構性缺口之一）
-- **第三方索引工具揭露生態規模統計（訊號待驗）**：第三方索引工具 SkillWorks（skillworks.kynth.studio，非官方）2026-08-23 揭露其重建後（2026-08-22 rebuilt）的索引規模：503,570 筆 listings、392,227 個 skills、80,636 個 subagents、23,442 個 plugins、7,265 個 marketplaces，另有 48,190 個 skill 無法載入；Hacker News 討論僅 2 分，未達本庫收錄門檻（見 `.claude/rules/wiki-reporter-shared.md` 互動門檻對照表），數字未經官方或本庫獨立驗證，僅供讀者對生態規模量級參考，不代表已查證事實
+- **第三方索引工具揭露生態規模統計（訊號待驗）**：第三方索引工具 SkillWorks（skillworks.kynth.studio，非官方）2026-08-23 揭露其重建後（2026-08-22 rebuilt）的索引規模：503,570 筆 listings、392,227 個 skills、80,636 個 subagents、23,442 個 plugins、7,265 個 marketplaces，另有 48,190 個 skill 無法載入；Hacker News 討論僅 2 分，互動偏低，數字未經官方或獨立驗證，僅供讀者對生態規模量級參考，不代表已查證事實
 - ❓ **待查證**（標 2026-08-19｜查 200000 tokens、The New Stack｜複 2026-09-02）｜**The New Stack 報導某 Claude Code skill 在回答任何問題之前就先耗掉 20 萬 token**（Google News 轉載，2026-08-18 報導）：原文僅標題層級可用，未見具體是哪個 skill、成因是否為漸進式揭露機制未生效或 skill 本身設計不當，亦未見是否為官方或第三方 skill；若屬實則是與本頁「漸進式揭露三層架構」設計初衷（節省 token）相牴觸的反例，惟細節待補
 
 ## 相關議題
@@ -123,7 +123,7 @@ description: 在 PR 或 diff review 前，依團隊規範檢查命名、測試�
 
 | 日期 | 事件 |
 |------|------|
-| 2026-08-24 | 第三方索引工具 SkillWorks（非官方）08-23 揭露其索引規模統計（503,570 listings、392,227 skills、80,636 subagents、23,442 plugins、7,265 marketplaces，48,190 個 skill 無法載入，2026-08-22 rebuilt）；HN 僅 2 分未達收錄門檻，數字未經官方驗證，供生態規模參考 |
+| 2026-08-24 | 第三方索引工具 SkillWorks（非官方）08-23 揭露其索引規模統計（503,570 listings、392,227 skills、80,636 subagents、23,442 plugins、7,265 marketplaces，48,190 個 skill 無法載入，2026-08-22 rebuilt）；HN 僅 2 分，互動偏低，數字未經官方驗證，供生態規模參考 |
 | 2026-08-19 | 官方技能庫目錄核對：`claude-academy-guide`（08-18 新增）改名為 `academy-guide`，原名同步從目錄移除；The New Stack 報導某 skill 耗掉 20 萬 token，❓ 待查證 ⟨Q-01⟩ |
 | 2026-08-18 | 官方技能庫（anthropics/skills）新增 2 項：`claude-academy-guide`、`discernment-nudge`；官方 repo 未附說明文字，用途待補 |
 | 2026-07-15 | Claude for Teachers 教學技能庫發布，向美國認證 K-12 教師免費開放（詳見 [[entities/claude-for-teachers]]） |

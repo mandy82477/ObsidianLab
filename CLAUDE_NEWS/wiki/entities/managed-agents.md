@@ -29,7 +29,7 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 **狀態：** active（正式發布）
 **領域：** 🛠️ 工具/功能
 **首次出現：** 2026-04-28
-**最後更新：** 2026-09-03
+**最後更新：** 2026-09-05
 **最後新聞更新：** 2026-08-20
 
 > **最新 SDK 更新**（2026-08-19）
@@ -147,7 +147,7 @@ while (!['completed', 'failed'].includes(task.status)) {
 | Outcomes 規格驗證 | Agent 自我驗證輸出是否符合規格文件 | 公開測試 |
 | Agent View | 統一面板管理所有並行 session 即時狀態（`claude agents`） | 研究預覽 |
 | `/goal` 指令 | fire-and-forget 自動化，小型快速模型驗證完成條件 | 正式發布（v2.1.139） |
-| Proactive Workflows | Agent 可主動排程並自動觸發任務，無需等待使用者輸入 | 公開測試 |
+| Proactive Workflows | Agent 可主動排程並自動觸發任務，不需人工輸入即可啟動 | 公開測試 |
 | Capability Curve | Agent 能力曲線追蹤，評估不同任務類型能力進展 | 公開測試 |
 | 自架沙箱（Self-hosted Sandboxes） | 企業在自有基礎設施執行 agent 工作流，資料不出境 | 公開測試 |
 | MCP 隧道（MCP Tunnels） | 私有 MCP 伺服器安全連接 Claude Code，無需暴露公網 | 公開測試 |

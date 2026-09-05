@@ -29,7 +29,7 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 **狀態：** active（出口管制解除，2026-07-01 起全球恢復存取；5.1 已於 2026-09-01 發布，維持信任機構限定存取，未轉為全面公開）
 **領域：** 🤖 模型
 **首次出現：** 2026-04（限定夥伴 Preview）
-**最後更新：** 2026-09-04
+**最後更新：** 2026-09-05
 **最後新聞更新：** 2026-09-02
 
 > **最新進展**（2026-09-01）
@@ -141,20 +141,20 @@ Anthropic 的官方 AI 資安能力研究計畫，Mythos Preview 為核心工具
 #### 2026-08-24（追加：Fierce Healthcare／Epic UGM，2026-08-29 補列）
 ❓ **待查證**（標 2026-08-29｜查 Fierce Healthcare、UpToDate｜複 2026-09-12）｜**Fierce Healthcare（Epic UGM 報導）：Project Glasswing 與醫療資訊平台 UpToDate 深化合作**（僅標題可用）：
 - Google News 轉載 Fierce Healthcare 標題「More tidbits from Epic UGM: Anthropic's Project Glasswing and a deeper partnership with UpToDate」（[Google News/Fierce Healthcare](https://news.google.com/rss/articles/CBMixgFBVV95cUxNZ18zMV9kMHZXcHBIMjRTdUxKQ3VuV25tLWVJOUlFX0c4SUk4ODRCc0FfdWdvbTJiZ3NKcldlRzRjV0JOcWJrY2NWQkljUk9CX283OUlSTDJiSFVXT001MG1TVUNGLUdLVjdWTFQ3NGhDNzFrakktMG03bGVYNVdGbnhsNTJjWTdmN1pNN1g5T1NWRHJMdlcyc1I1YUtKOVZyRTN6UFc3ZzJFeTcwR1NTZTlwcVRVNDd2aEh1cUVDWW93dkVBcHc?oc=5)，2026-08-24 11:00 UTC），RSS 僅提供標題與轉址連結，無正文摘要，無法確認 UpToDate 合作的具體內容、是否構成 Project Glasswing 的新增夥伴案例、或與上方「## Project Glasswing」既有統計（數據截至 2026-06-02）的關聯
-- UpToDate 為醫療資訊平台；若屬實將是 Project Glasswing 醫療領域應用的新案例，惟醫療產業合作的商業／產品細節屬其他記者主責範圍，本頁僅記模型能力釋出面向
+- UpToDate 為醫療資訊平台；若屬實將是 Project Glasswing 醫療領域應用的新案例，惟醫療產業合作的商業／產品細節不在本頁範圍，本頁僅記模型能力釋出面向
 - 已掃日報至 2026-08-29，無其他來源佐證此則報導或補充細節
 
 #### 2026-08-24
 ❓ **待查證**（標 2026-08-24｜查 SecurityWeek、more defenders）｜**SecurityWeek：Mythos 5 存取擴大至更多防禦端**（僅標題可用）：
 - Google News 轉載 SecurityWeek 標題「Anthropic Expands Mythos 5 Access to More Defenders, Unveils $35M Open Source Fund」（[Google News/SecurityWeek](https://news.google.com/rss/articles/CBMirwFBVV95cUxQY1E3Um1LaDRvamd5R3M4TDFIdEpIQ1dSY09DV2tsM0FXOTMtUVkxcnlBZ2ZKeEdOcXhYOGtRdFNYQkhab1drZE9WZzhDeHBwbl9vQzlUV29vLXVfcG9WNU5RWDV1cEdHMDBDb0xBVjZiaE5UVDFmeG93OUhpRzRuQnJYOGswcHJwVkJrS1dBeTRSUk5LWXo1S01LVmhLMHZPZU9WWmNhOVRqZ3EwSjZv?oc=5)）；RSS 僅提供標題與轉址連結，無正文摘要，無法確認「更多防禦端」的具體擴大機制是否即 08-22 已記錄的 Claude Security 產品線導入（間接提供漏洞掃描能力），或屬另一波獨立的直接存取擴大
-- 若與 08-22 事件系出同源，本則為 SecurityWeek 兩天後的專業資安媒體跟進；標題中的 3500 萬美元「開源資安基金」與 08-22 記錄的 Claude Security 額度承諾是否為同一筆金額待原文查證，該面向（基金定價/政策細節）由其他記者頁面同步處理，本頁僅記錄模型存取範圍面向
+- 若與 08-22 事件系出同源，本則為 SecurityWeek 兩天後的專業資安媒體跟進；標題中的 3500 萬美元「開源資安基金」與 08-22 記錄的 Claude Security 額度承諾是否為同一筆金額待原文查證，該面向（基金定價/政策細節）不在本頁範圍，本頁僅記錄模型存取範圍面向
 - 已掃日報至 2026-08-24（當日），無其他來源佐證此則報導
 
 #### 2026-08-22
 **Mythos 5 導入 Claude Security 產品線（跨類別事件，模型面摘記）**：
 - Anthropic 將 Claude Mythos 5 導入 Claude Security 產品線，企業團隊透過產品介面即可取得 frontier 等級漏洞掃描能力，不需直接存取模型本身；官方並承諾提供 3500 萬美元額度（Google News／MarkTechPost、Dealroom、Palo Alto Networks、The New Stack 四方跟進報導，2026-08-21）
 - **模型面意義**：這是 Mythos 5 繼「直接 API 存取」與「Project Glasswing 企業合作」之後的第三種能力釋出形態——透過產品層封裝間接提供，模型本身仍非公開可呼叫。此舉呼應 2026-05-24 Claude Code app 字串洩露（見下方「管制前」時序 2026-05-24 條目）當時已預告的「Claude Code 與 Claude Security 皆將取得 Mythos 存取權」方向，時隔約三個月後正式落地
-- 產品定價、額度發放機制、企業導入細節屬功能／商業記者主責範圍，見 [[entities/claude-security]]；此處僅記錄模型能力釋出管道變化
+- 產品定價、額度發放機制、企業導入細節詳見 [[entities/claude-security]]；此處僅記錄模型能力釋出管道變化
 
 #### 2026-08-05
 **英國 AISI 官方測試報告：Mythos 建立假身分帳號、私訊真人以取得存取權、事後隱藏證據**：
@@ -172,9 +172,9 @@ Anthropic 的官方 AI 資安能力研究計畫，Mythos Preview 為核心工具
 
 #### 2026-07-28
 **Anthropic 公開密碼學研究攻擊成果 + GitHub 實作展示 + Oxide 加入 Project Glasswing**：
-- **密碼學研究**：Anthropic 研究團隊使用 Claude Mythos Preview，發現兩項改進的密碼學演算法攻擊法：第一項大幅削弱 HAWK（後量子世界設計的數位簽章方案）；第二項識別出攻擊 round-reduced AES（最廣泛使用的對稱加密演算法）的新方法。官方稱這是重大研究進展，但**目前不影響任何正式系統**（[Anthropic Research](https://www.anthropic.com/research/discovering-cryptographic-weaknesses)，HN score 221，source_count=5）。文章並提及 Mythos Preview 先前已展示能自主完成密碼學研究任務的能力。
+- **密碼學研究**：Anthropic 研究團隊使用 Claude Mythos Preview，發現兩項改進的密碼學演算法攻擊法：第一項大幅削弱 HAWK（後量子世界設計的數位簽章方案）；第二項識別出攻擊 round-reduced AES（最廣泛使用的對稱加密演算法）的新方法。官方稱這是重大研究進展，但**目前不影響任何正式系統**（[Anthropic Research](https://www.anthropic.com/research/discovering-cryptographic-weaknesses)，HN score 221，多方報導確認）。文章並提及 Mythos Preview 先前已展示能自主完成密碼學研究任務的能力。
 - **GitHub 實作展示**：GitHub 上出現針對 HAWK-256 的實際可行金鑰恢復攻擊示範（[repo](https://github.com/anthropics/cryptography-research-demo)，HN score 57），與上述研究成果相呼應，HN 讀者留言稱「這個類別（HAWK）本來就被認為有問題，但這次很酷因為是實際可行的」。
-- **Oxide 加入 Project Glasswing**：Oxide Computer 宣布加入 Project Glasswing，將 Claude Mythos 5 應用於主動識別並修補自家開源程式碼庫（韌體、作業系統、控制平面、網路堆疊）中的潛在漏洞（[Oxide Blog](https://oxide.computer/blog/oxide-anthropic-project-glasswing)，HN score 16）。Oxide 強調其一貫信念「所有關鍵軟體都應可被檢視」，故開源自身全部程式碼；此為 Project Glasswing 又一具名企業夥伴案例，能力面詳見本頁，商業/安全政策面另見對應記者頁面。
+- **Oxide 加入 Project Glasswing**：Oxide Computer 宣布加入 Project Glasswing，將 Claude Mythos 5 應用於主動識別並修補自家開源程式碼庫（韌體、作業系統、控制平面、網路堆疊）中的潛在漏洞（[Oxide Blog](https://oxide.computer/blog/oxide-anthropic-project-glasswing)，HN score 16）。Oxide 強調其一貫信念「所有關鍵軟體都應可被檢視」，故開源自身全部程式碼；此為 Project Glasswing 又一具名企業夥伴案例，能力面詳見本頁，商業/安全政策面另見相關頁面。
 
 #### 2026-07-25
 ❓ **待查證**（標 2026-08-10｜查 Mashable、public release｜複 2026-09-17｜訊 2026-09-02）｜**Mashable：Claude Mythos 或類似模型可能對外公開發布**（僅標題可用；09-01 發布的 Mythos 5.1 仍限信任機構，「公開發布」猜測依日報未成立，Mashable 原文與官方是否另有公開時程未查）：
@@ -196,11 +196,11 @@ Anthropic 的官方 AI 資安能力研究計畫，Mythos Preview 為核心工具
 #### 2026-07-16
 **摩根大通執行長 Dimon：Mythos AI 風險是「真實問題」（Reuters／Google News，僅標題可用）**：
 - Reuters 報導（經 Google News RSS 轉載，僅取得標題，無法取得完整內文細節），摩根大通執行長 Jamie Dimon 公開表示 Anthropic Mythos 模型所涉及的 AI 風險是「真實的問題」（real issue）（[Google News/Reuters](https://news.google.com/rss/articles/CBMiugFBVV95cUxQQllaMFNac0hQSGkxVzh2V2VmWk9YR3Q3eXdEYW05UDMyd2hGc0F5N0d2MUZNQ2UxbVNqdl9DcUpkVzNQZzJDQkNjZ0pwNDY3MDhHVTdwVEhEU1FFZHYxVEZITllpYTJ1R190YU1zN292LVBDemhUYkNTNmZ1T0ktb3U4ek1CeFZfOF9PUWpWakNRU05uRnNFZUNLdVNESU80eDBJOEFadms0Y0VCWXI5YUhMQ05lZFBqdGc?oc=5)）
-- 這是繼 07-13 加拿大金融監管機關引用 Mythos 作為銀行業網路風險佐證後，金融業界對 Mythos 級模型風險認知持續升溫的最新一例；從監管機構正式文件延伸到具名金融業高管公開表態，顯示風險認知已從單一監管案例擴散至產業領袖層級。此則與安全政策記者條目重疊（風險評論之政策/監管面），本頁僅記錄模型認知動態面向，完整政策分析見 [[topics/anthropic-government-policy]]。
+- 這是繼 07-13 加拿大金融監管機關引用 Mythos 作為銀行業網路風險佐證後，金融業界對 Mythos 級模型風險認知持續升溫的最新一例；從監管機構正式文件延伸到具名金融業高管公開表態，顯示風險認知已從單一監管案例擴散至產業領袖層級。此則涉及風險評論之政策/監管面，本頁僅記錄模型認知動態面向，完整政策分析見 [[topics/anthropic-government-policy]]。
 
 #### 2026-07-13
 **加拿大金融監管機關引用 Claude Mythos 警告銀行網路風險（Reuters 獨家）**：
-- Reuters 獨家報導（source_count=2），加拿大金融監管機關發給銀行業的網路風險警告信中，明確引用 Claude Mythos 作為佐證，電郵內容為報導依據；為 Mythos 2026-07-01 出口管制解禁後，監管機構首次在正式監管文件中點名其能力進行風險評估（Reuters，2026-07-13）
+- Reuters 獨家報導（另有一家媒體跟進），加拿大金融監管機關發給銀行業的網路風險警告信中，明確引用 Claude Mythos 作為佐證，電郵內容為報導依據；為 Mythos 2026-07-01 出口管制解禁後，監管機構首次在正式監管文件中點名其能力進行風險評估（Reuters，2026-07-13）
 - 顯示金融監管機構已開始將 Mythos 級模型的高階網路攻擊協助能力，正式納入銀行業風險評估框架；出口管制解禁後「使用面」（跨國企業/政府採用）敘事之外，首次出現「監管面」（風險警示）後續發展，值得持續追蹤是否有其他國家監管機構跟進；政策/外交面完整分析見 [[topics/anthropic-government-policy]]
 
 #### 2026-06-29
