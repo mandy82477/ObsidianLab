@@ -1081,7 +1081,7 @@ window.WIKI_DATA = {
       "updateFreq": "",
       "parent": "",
       "summary": "競爭的主戰場已從「誰更強」移到「誰更便宜」：Meta 以三層訂閱打價格戰、Google 推低價企業方案、中國市場出現「免費夠用」的論述。同一時間開源陣營把旗艦模型的權重也放了出來，低價層第一次同時具備可用的工具與可用的模型。對用 Claude 的人，眼前要判斷的不是換不換，而是自己所在的那一層有沒有出現可比的價格或能力…",
-      "latestHeadline": "Cursor：Reddit 週熱門討論串稱 OpenAI 將於 11/12 終止對 Cursor 的模型供應合約，理由與控制權變更有關（Reddit/r/artificial · 週熱門）",
+      "latestHeadline": "Cursor：斷供傳聞理由指向控制權變更（Reddit/r/artificial · 週熱門）",
       "readerDomains": [
         "💼 商業"
       ]
