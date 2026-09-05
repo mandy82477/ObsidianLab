@@ -547,3 +547,6 @@
 [週六 2026/09/05 17:43:10 UTC] Single push done (news + wiki + web，因 stop-hook 要求已分批 commit+push：STARTED、news+signals、emitted-cache confirm、wiki 分批×2、wiki 彙整、web build 共 6 次 push，非設計中單次；理由與風險評估見 wiki/log.md 本次 ingest 紀錄／回報摘要)
 [週六 2026/09/05 17:43:10 UTC] === Pipeline complete (agent, 17:00 UTC shift) ===
 [cloud daily-news-pipeline-cloud STARTED Sat 2026/09/05 22:03:01.00]
+[Sat 2026/09/05 22:03:23.00 UTC] === Agent pipeline start (2026-09-05) ===
+[Sat 2026/09/05 22:03:23.00 UTC] Step 0b 冪等閘 ABORTED - digest already exists (news/2026-09-05.md，17:00 UTC 班次已產出，本班 22:00 UTC 直接中止，無多班次例外)
+[Sat 2026/09/05 22:03:23.00 UTC] === Pipeline aborted (cloud, 22:00 UTC shift) ===
