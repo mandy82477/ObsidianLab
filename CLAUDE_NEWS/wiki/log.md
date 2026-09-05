@@ -5737,3 +5737,15 @@ GH Actions 抓料排 10:23 UTC，到 14:45 UTC 仍未落地（+4.4 小時且持�
 
 **剩餘 171 筆／36 頁**由 lint 6l 每週消化；下一批最肥：pricing 17、community-pattern-trends 16、code-quality-decline 12、model-task-leaderboard 12、fable-5 11。
 
+---
+
+## 2026-09-05 讀者語言存量全清（四 Sonnet 並行，31 頁 161 筆 → 0）
+
+使用者裁決「流量還夠就全清」。首批五頁後基線 168 筆／34 頁，分四組並行：G1 pricing／pattern-trends／ai-talent-flow／chris-ciauri（44）、G2 code-quality-decline／榜單／official-community-gap／tools／tracker／cost／model-comparison（45）、G3 十個 entities 頁（39）、G4 index／radar／overview／skill-interest-watch 等十頁（33）。**基線降至 7 筆／3 頁，全是封存頁（原文照搬原則刻意不清）。**
+
+**清法統計（四組合計）**：換詞為主（「達…門檻」→ 刪或具體數字、「source_count N」→「多家報導」、「模式庫」→ wikilink 或「工作流模式」、「X 記者負責」→ 直接 wikilink、「請使用者裁示」→「尚未定案」）；派工句整句刪或移 `%%`；白名單 16 筆——字面子串誤報三類：**「記者會」**（真實新聞發布會，G1／G3／G4 各撞到）、**「自主編程／自主編碼」**（子串撞「主編」）、**「覆寫」與「派工」的產品語意**（`/init` 不覆寫 CLAUDE.md、Subagent 派工功能）。
+
+**機器頁處理正確**：skill-interest-watch 由 `skill_interest_snapshot.py` 每日覆寫，G4 追到腳本第 189／284 行模板字串（「機械抄錄」「每日抄錄」）改「同步」後重跑快照歸零——改頁面會被蓋掉，改產生器才是家。
+
+**紀律事件**：G2 誤動 `data/reader-language-baseline.json` 後自行還原未進 commit；G4 誤判 allow.json 被 gitignore（實為已追蹤）；G2 的白名單條目因共用工作目錄被 G1 的 commit 先收走——並行 agent 共寫同一檔的既知風險，功能無誤。快照重跑順手 append 的兩個 data csv 已還原，留給當晚 pipeline 正常產出。
+
