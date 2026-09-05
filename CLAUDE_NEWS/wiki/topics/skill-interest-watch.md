@@ -54,8 +54,8 @@
 
 | 目前前 5 | ★ | 一句話 |
 |---|---|---|
-| [multica-ai/andrej-karpathy-skills](https://github.com/multica-ai/andrej-karpathy-skills) 🧭 📰 | 210,264 | A single CLAUDE.md file to improve Claude Code behavior, derived from Andrej Karpathy's o… |
-| [Piebald-AI/claude-code-system-prompts](https://github.com/Piebald-AI/claude-code-system-prompts) 📰 | 12,579 | All parts of Claude Code's system prompt, 27 builtin tool descriptions, sub agent prompts… |
+| [multica-ai/andrej-karpathy-skills](https://github.com/multica-ai/andrej-karpathy-skills) 🧭 📰 | 210,287 | A single CLAUDE.md file to improve Claude Code behavior, derived from Andrej Karpathy's o… |
+| [Piebald-AI/claude-code-system-prompts](https://github.com/Piebald-AI/claude-code-system-prompts) 📰 | 12,580 | All parts of Claude Code's system prompt, 27 builtin tool descriptions, sub agent prompts… |
 | [drona23/claude-token-efficient](https://github.com/drona23/claude-token-efficient) | 6,009 | One CLAUDE.md file. Keeps Claude responses terse. Reduces output verbosity on heavy workf… |
 | [gadievron/raptor](https://github.com/gadievron/raptor) | 3,712 | Raptor turns Claude Code into a general-purpose AI offensive/defensive security agent. By… |
 | [centminmod/my-claude-code-setup](https://github.com/centminmod/my-claude-code-setup) | 2,621 | Shared starter template configuration and CLAUDE.md memory bank system for Claude Code |
@@ -70,11 +70,11 @@
 
 | 目前前 5 | ★ | 一句話 |
 |---|---|---|
-| [Graphify-Labs/graphify](https://github.com/Graphify-Labs/graphify) 🧭 📰 | 114,888 | Turn any codebase, with its docs, SQL schemas, configs, and PDFs, into a queryable knowle… |
-| [Egonex-AI/Understand-Anything](https://github.com/Egonex-AI/Understand-Anything) 🧭 📰 | 81,546 | Graphs that teach > graphs that impress. Turn any code into an interactive knowledge grap… |
-| [colbymchenry/codegraph](https://github.com/colbymchenry/codegraph) 🧭 📰 | 69,696 | Pre-indexed code knowledge graph, auto syncs on code changes, for Claude Code, Codex, Gem… |
-| [abhigyanpatwari/GitNexus](https://github.com/abhigyanpatwari/GitNexus) | 47,033 | GitNexus: The Zero-Server Code Intelligence Engine -       GitNexus is a client-side know… |
-| [DeusData/codebase-memory-mcp](https://github.com/DeusData/codebase-memory-mcp) | 42,284 | High-performance code intelligence MCP server. Indexes codebases into a persistent knowle… |
+| [Graphify-Labs/graphify](https://github.com/Graphify-Labs/graphify) 🧭 📰 | 114,921 | Turn any codebase, with its docs, SQL schemas, configs, and PDFs, into a queryable knowle… |
+| [Egonex-AI/Understand-Anything](https://github.com/Egonex-AI/Understand-Anything) 🧭 📰 | 81,561 | Graphs that teach > graphs that impress. Turn any code into an interactive knowledge grap… |
+| [colbymchenry/codegraph](https://github.com/colbymchenry/codegraph) 🧭 📰 | 69,703 | Pre-indexed code knowledge graph, auto syncs on code changes, for Claude Code, Codex, Gem… |
+| [abhigyanpatwari/GitNexus](https://github.com/abhigyanpatwari/GitNexus) | 47,036 | GitNexus: The Zero-Server Code Intelligence Engine -       GitNexus is a client-side know… |
+| [DeusData/codebase-memory-mcp](https://github.com/DeusData/codebase-memory-mcp) | 42,293 | High-performance code intelligence MCP server. Indexes codebases into a persistent knowle… |
 
 ### 規劃與拆解（對應 [[topics/coding-workflow-guide]] 第 3 段）
 
@@ -82,10 +82,10 @@
 
 | 目前前 5 | ★ | 一句話 |
 |---|---|---|
-| [github/spec-kit](https://github.com/github/spec-kit) | 133,552 | 💫 Toolkit to help you get started with Spec-Driven Development |
-| [Fission-AI/OpenSpec](https://github.com/Fission-AI/OpenSpec) | 67,359 | Spec-driven development (SDD) for AI coding assistants. |
-| [gsd-build/get-shit-done](https://github.com/gsd-build/get-shit-done) 📰 | 64,598 | A light-weight and powerful meta-prompting, context engineering and spec-driven developme… |
-| [gsd-build/gsd-2](https://github.com/gsd-build/gsd-2) | 7,775 | A powerful meta-prompting, context engineering and spec-driven development system that en… |
+| [github/spec-kit](https://github.com/github/spec-kit) | 133,562 | 💫 Toolkit to help you get started with Spec-Driven Development |
+| [Fission-AI/OpenSpec](https://github.com/Fission-AI/OpenSpec) | 67,364 | Spec-driven development (SDD) for AI coding assistants. |
+| [gsd-build/get-shit-done](https://github.com/gsd-build/get-shit-done) 📰 | 64,597 | A light-weight and powerful meta-prompting, context engineering and spec-driven developme… |
+| [gsd-build/gsd-2](https://github.com/gsd-build/gsd-2) | 7,774 | A powerful meta-prompting, context engineering and spec-driven development system that en… |
 | [buildermethods/agent-os](https://github.com/buildermethods/agent-os) | 5,376 | Agent OS is a system for injecting your codebase standards and writing better specs for s… |
 
 ### 實作期攔錯（hook／lint／型別）（對應 [[topics/coding-workflow-guide]] 第 4 段）
@@ -127,7 +127,7 @@
 | 目前前 5 | ★ | 一句話 |
 |---|---|---|
 | [steipete/agent-rules](https://github.com/steipete/agent-rules) | 5,693 | Rules and Knowledge to work better with agents such as Claude Code or Cursor |
-| [awslabs/aidlc-workflows](https://github.com/awslabs/aidlc-workflows) | 4,360 | AI-Driven Life Cycle (AI-DLC) adaptive workflow steering rules for AI coding agents |
+| [awslabs/aidlc-workflows](https://github.com/awslabs/aidlc-workflows) | 4,361 | AI-Driven Life Cycle (AI-DLC) adaptive workflow steering rules for AI coding agents |
 | [dromara/liteflow](https://github.com/dromara/liteflow) | 3,844 | Lightweight, fast, stable, programmable component-based rule engine — where AI Agents orc… |
 | [gadievron/raptor](https://github.com/gadievron/raptor) | 3,712 | Raptor turns Claude Code into a general-purpose AI offensive/defensive security agent. By… |
 | [intellectronica/ruler](https://github.com/intellectronica/ruler) | 2,909 | Ruler — apply the same rules to all coding agents |
@@ -147,11 +147,11 @@
 
 | 目前前 5 | ★ | 一句話 |
 |---|---|---|
-| [stablyai/orca](https://github.com/stablyai/orca) | 61,978 | Orca is the ADE for working with a fleet of parallel agents. Run any coding agent with yo… |
-| [Yeachan-Heo/oh-my-codex](https://github.com/Yeachan-Heo/oh-my-codex) | 32,992 | OmX - Oh My codeX: Your codex is not alone. Add hooks, agent teams, HUDs, and so much mor… |
-| [revfactory/harness](https://github.com/revfactory/harness) | 8,902 | A meta-skill that designs domain-specific agent teams, defines specialized agents, and ge… |
+| [stablyai/orca](https://github.com/stablyai/orca) | 62,016 | Orca is the ADE for working with a fleet of parallel agents. Run any coding agent with yo… |
+| [Yeachan-Heo/oh-my-codex](https://github.com/Yeachan-Heo/oh-my-codex) | 32,993 | OmX - Oh My codeX: Your codex is not alone. Add hooks, agent teams, HUDs, and so much mor… |
+| [revfactory/harness](https://github.com/revfactory/harness) | 8,903 | A meta-skill that designs domain-specific agent teams, defines specialized agents, and ge… |
 | [automazeio/ccpm](https://github.com/automazeio/ccpm) | 8,363 | Project management skill system for Agents that uses GitHub Issues and Git worktrees for… |
-| [ZSeven-W/openpencil](https://github.com/ZSeven-W/openpencil) | 5,833 | The world's first open-source AI-native vector design tool and the first to feature concu… |
+| [ZSeven-W/openpencil](https://github.com/ZSeven-W/openpencil) | 5,834 | The world's first open-source AI-native vector design tool and the first to feature concu… |
 
 ### git／commit 衛生自動化
 
@@ -171,7 +171,7 @@
 |---|---|---|
 | [yusufkaraaslan/Skill_Seekers](https://github.com/yusufkaraaslan/Skill_Seekers) | 14,916 | Convert documentation websites, GitHub repositories, and PDFs into Claude AI skills with… |
 | [PleasePrompto/notebooklm-mcp](https://github.com/PleasePrompto/notebooklm-mcp) 📰 | 3,405 | MCP server for NotebookLM - Let your AI agents (Claude Code, Codex) research documentatio… |
-| [cyberagiinc/DevDocs](https://github.com/cyberagiinc/DevDocs) | 2,105 | Completely free, private, UI based Tech Documentation MCP server. Designed for coders and… |
+| [cyberagiinc/DevDocs](https://github.com/cyberagiinc/DevDocs) | 2,106 | Completely free, private, UI based Tech Documentation MCP server. Designed for coders and… |
 | [trailofbits/claude-code-config](https://github.com/trailofbits/claude-code-config) | 2,101 | Opinionated defaults, documentation, and workflows for Claude Code at Trail of Bits |
 | [timescale/pg-aiguide](https://github.com/timescale/pg-aiguide) | 1,835 | MCP server and Claude plugin for Postgres skills and documentation. Helps AI coding tools… |
 
