@@ -28,7 +28,7 @@
 
 | 3 | entities/pricing ＋ topics/enterprise-cost-management（併卡） | 樞紐(136)＋樞紐低標(24) | 2026-09-06 | 定稿：使命句 A「Claude 現在怎麼收你的錢，以及最近哪幾件事改變了這個答案」（使用者裁決）；ECM「一家公司導入 Claude 之後帳單會怎麼長，別人踩到什麼、怎麼收斂」；三子故事不拆；pricing 753→688 行改「三結論表打頭（我的方案／一小時多少／事故還在不在）＋事件流證據層」，22 條事故補五值狀態、總表 6 列＋留表優先序入規則檔、蒸餾 2 時段建 `entities/pricing-archive`（全庫首個 entities archive）、砍 4 節；ECM 缺口三項依官方 blog 結案（Enterprise-only 明示）、指標表重算 12 案例、砍「目前結論」；讀者語言閘 +4 詞基線重建；index 首屏補「錢」路由；**主編查證**：數字七項全對、$35M 事實更正、促銷頁一手原文；主 session 代判 3 裁決點（砍兩節、加四詞）與 4 條狀態符號 | ✅ 複驗過（Q2 半→**拿到**，Q3 半→**拿到 1 跳**；Q1／Q4 由「拿到」改「半拿到」是頁面改成不虛報的結果：官方不公布配額絕對量、Spend Controls 僅限 Enterprise）；複驗抓到 40–44 倍撐不起與 10 條洩漏已修 | 2026-09-13 | `pricing-2026-09-06{,-verified,-proposal,-proposal-map,-review}.md`、`wave3-cold-reader{,-recheck}-2026-09-06.md` |
 
-| 4 | wiki/feature-radar ＋ entities/claude-code（併卡；topics/code-quality-decline 為鄰居） | 樞紐(39)＋樞紐(75) | 2026-09-06 | **進行中**（使用者 2026-09-06 授權自跑兩頁，使命句由主 session 定，只在拆頁／砍整節時問）。**報價**：6 新 agent（健檢卡＋冷讀者平行、設計者、評審、Sonnet 實作、複驗）＋ 4 次續用，估 120–160 萬 token（兩頁合計 1,678 行，比第 3 波多六成）；主編查證：Claude Code 最新版與 changelog、品質退步官方處置、claude-code 頁 10 筆逾期懸置 | — | — | `p2-2026-09-06{,-verified,-proposal,-review}.md`、`wave4-cold-reader{,-recheck}-2026-09-06.md` |
+| 4 | wiki/feature-radar ＋ entities/claude-code（併卡；topics/code-quality-decline 只動兩處） | 樞紐(39)＋樞紐(75) | 2026-09-06 | 定稿（使用者授權自跑，使命句主 session 定）：radar「這禮拜官方動了什麼、值不值得你現在跟，以及跟上去會壞什麼」；claude-code「Claude Code 現在有什麼毛病、哪些修了、哪些你得繞過去」。radar：升版風險改「從你現在的版本升上去會遇到什麼」**版本階梯表 12 列**（依 gh 抓完整 changelog，非報導覆蓋率）、熱度與試用價值**只住全覽表**（刪 39 處副本，`check_feature_radar.py` 加單一家檢查已驗紅）、推薦節改名補「怎麼開始」、keybindingFlavor 已失效三處同改；claude-code：新增「現在會咬到你的」7 列結論表（判準：壞掉而非還沒做、每列寫誰會遇到）、13 筆逾期懸置 7 結案＋Apps Gateway 事實更正、7 處節名消費端同步、帳本 6 筆；code-quality-decline 懸置以官方 v2.1.116 結案。**裁決**：砍「近期重要更新（2026 Q2 精選）」使用者未回→預設不砍只搬警示；熱度單一家與腳本五行主 session 代判 | ✅ 複驗過（Q1 半→**拿到**、Q2 半→**拿到**、Q4 拿到；Q3 仍半拿到：區塊名「這禮拜」含 07-25 條、Fable 5.1 model id 自打——已修）；評審複核有條件放行 3 🔴 已修 | 2026-09-13 | `p2-2026-09-06{,-verified,-proposal,-proposal-map,-draft,-review}.md`、`wave4-cold-reader{,-recheck}-2026-09-06.md` |
 
 > 第 1 波同時吃掉 `wiki/reader-notes.md` 的 ⏳「『誰比較強』三頁互踢」——考題集必含「Codex 和 Claude 誰強」，落點必須唯一。
 
@@ -55,6 +55,7 @@
 
 | 波 | 卡點命中 | 跳數命中 | 六問抓不到、下波要加的 |
 |---|---|---|---|
+| 4 | 4/4 | 3/4（口徑統一後跳數可信；Q4 沒對上是「讀者起點」假設錯——冷讀者走 index L28 而非 claude-code） | (1) **結論句反向掃描**：結論句對同頁反例（「以上皆非可直接升級」vs 靜默截斷）；(2) 首屏路由加「看不看得見」（量路由句所在段落字數）；(3) 考題集加「讀者起點」欄；(4) 鄰居頁數字掃描射程要涵蓋 Q4 分工的頁；(5) 內部用語閘清單缺口連兩波命中（懸置括號語法／候選症狀／補跑日報／標題進度標記）——該提案補閘而非逐波人工 |
 | 3 | 4/4 | 0/4（健檢卡把頁內捲動當一跳、冷讀者把開頁當一跳；下波統一用「開了幾頁」） | (1) index 首屏有沒有路由到本頁——六問無此問；(2) 數字自洽掃描（pricing L216「184 僅次於 67」）；(3) 鄰居清單要由 `wiki_graph.py explain` 的入出邊機械產生，健檢卡憑印象挑漏了真被搞混的那對（pricing↔model-comparison）；(4) 讀者語言閘清單缺「已掃日報至」「候選症狀」「不重複維護」類維運句 |
 
 ## 使用者裁決紀錄
@@ -70,6 +71,16 @@
 4. ECM 指標表案例數與實列數是否仍一致；「目前結論」有沒有被 lint 3c 長回來
 5. 未修項：model-comparison L99／L119 編輯政策混在標題與儲存格（冷讀者複驗第 4 節第 10 條，第 1 波頁面）；ECM 🧰 圖例缺（社群格式）；「已掃日報至」四處同改待辦
 6. 健檢卡下波要加的四問（校準表）有沒有真的加進派工前綴
+
+## 2026-09-13 回訪要查什麼（第 4 波）
+
+1. **版本階梯表有沒有人續抓 changelog**（唯一無機械看守的單點）：`gh api repos/anthropics/claude-code/contents/CHANGELOG.md -H "Accept: application/vnd.github.raw"` 本機 grep 破壞性／預設值改變；建議固化進 `/wiki-lint` 週步驟並寫腳本 `scripts/changelog_ladder.py`（待辦）
+2. 熱度副本有沒有被 ingest 寫回（`check_feature_radar.py` 應擋）；「現在值得跟的三件」的「怎麼開始」有沒有被磨掉
+3. claude-code「現在會咬到你的」七列狀態有沒有人翻；🧠 組頭統計是否仍與實列一致
+4. 砍「近期重要更新（2026 Q2 精選）」整節——使用者裁決仍懸；懸則下次 lint 再問一次
+5. 他頁未修項（本波不動，記回訪或轉知）：coding-workflow-guide 標題進度標記 `[已深查]／[社群面待補]／[已補：庫內證據]`（L230／L384／L444 等）與 L51 進度自述；code-quality-decline L89「候選症狀」L107 `⟨Q-01⟩`；skill-interest-watch L31／L72 機器產出自述、**L82 星數 210,287 vs claude-code L66「131,000+」矛盾且榜無抓取日期**、L52 Groundtruth 單一 04-27 實測當唯一首選 vs guide 第 9 段不提；index L28「它說做完了沒做」兩頁給不同首選
+6. 字元上限基線本波 `--rebuild` 回填 7 筆（4 持平 3 縮短，主編核對未增長；其中兩筆只改複查日即脫離指紋——指紋含日期屬設計缺口，待辦：指紋排除懸置括號內日期）
+7. 帳本 6 筆（H-881390／H-34f143／H-fbfbc0／H-a55c12／H-849df2／H-3c570b）有沒有被接手
 
 ## 待使用者裁決（第 2 波遺留，已於 2026-09-06 裁決 b，留作原文）
 

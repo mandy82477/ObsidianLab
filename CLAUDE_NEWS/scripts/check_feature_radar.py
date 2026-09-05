@@ -5,7 +5,7 @@
 `wiki/feature-radar.md` 的 `## 📋 功能全覽表` 與 `## 🆕 最新功能（YYYY-MM）` 是同一件事的
 兩個入口：表是掃描用的索引，詳細條目是內文。只寫詳細條目不補表列，該功能在索引上等於
 不存在——2026-08-09 讀者回報：08 月 6 條詳細條目只有 4 條進表，漏的正是跨 session 訊息
-互通與 Auto 模式預設化，當月最重要的兩條，且雙雙已進「本週推薦」與「⏰ 倒數中」，唯獨
+互通與 Auto 模式預設化，當月最重要的兩條，且雙雙已進「現在值得跟的三件」與「⏰ 倒數中」，唯獨
 索引查無。
 
 規則已寫進 `.claude/rules/wiki-ingest-features.md`，但當初失敗的正是「靠記者記得補」這一層，
@@ -42,7 +42,7 @@ RECOMMEND_SECTION_RE = re.compile(r"^##\s+⭐")
 
 
 def check_hotness_single_home(raw: str) -> list[str]:
-    """回傳違規訊息列表：detail-entry 標頭或「本週推薦」節內出現熱度副本。"""
+    """回傳違規訊息列表：detail-entry 標頭或「現在值得跟的三件」節內出現熱度副本。"""
     violations: list[str] = []
     lines = raw.split("\n")
 
