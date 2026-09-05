@@ -529,3 +529,4 @@
 [週六 2026/09/05 11:08:30.00] Push retry: non-fast-forward rejected, pull --rebase origin master 後重試成功（無衝突，遠端僅多一筆雲端 lint 啟動標記 commit）
 [週六 2026/09/05 11:08:45.00] Single push done (news + wiki; web build skipped, gate blocked)
 [週六 2026/09/05 11:09:00.00] === Pipeline complete (agent) ===
+[cloud daily-news-pipeline-cloud STARTED 2026-09-05T12:05:34Z]
