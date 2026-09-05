@@ -518,3 +518,4 @@
 [Fri 2026/09/04 22:05:43.00 UTC] ABORTED: gathered_items.json date=2026-09-03 items=33，非目標日期的新鮮資料
 [Fri 2026/09/04 22:05:43.00 UTC] === Pipeline aborted (cloud, 22:00 UTC shift) ===
 [Sat 2026/09/05 01:38:05.00 UTC] Watchdog push SENT - 每日新聞 2026-09-04 缺件：抓料、日報。本機跑 /news-pipeline 2026-09-04 補
+[cloud weekly-wiki-lint-cloud STARTED 2026-09-05T03:04:11Z]
