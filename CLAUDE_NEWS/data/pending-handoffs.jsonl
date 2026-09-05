@@ -65,3 +65,12 @@
 {"id": "H-402a37", "opened": "2026-09-05", "from": "模型", "to": "商業", "page": "topics/competitor-landscape", "note": "MC 社群實測跨家 2 列（Fable 5 vs GPT-5.6 Sol；MineBench 已查證不可採信）已移出 MC；請判是否入雷達表硬度欄", "status": "open"}
 {"id": "H-4d498f", "opened": "2026-09-06", "from": "功能", "to": "商業", "page": "entities/pricing", "note": "主編已依官方定價頁（2026-09-06 查證）在「當前生效的計費規則」prepend Managed Agents 計費一條（token 依牌價＋session runtime $0.08/hr、不適用 Batch 與 partner 雲）；請複核措辭、確認「現行方案一覽」是否需連動，並核對 managed-agents 頁「計費」格與本條一致", "status": "open"}
 {"id": "H-b4a266", "opened": "2026-09-06", "from": "社群", "to": "功能", "page": "entities/managed-agents", "note": "2026-09-03 Reddit 貼文（r/LocalLLaMA）拿 Managed Agents 當對照組宣稱同模型同準度、成本低最多 75%，未附測試方法與資料集。本輪已由頁面健檢直接寫入 entities/managed-agents 選型細節與歷史記錄；此筆為新規則「官方功能的負向對照要回流」的首次示例，供下次同型條目對照（評審原稿寫 --from 主編，腳本只收六類別，改以實際發訊端社群登記）", "status": "open"}
+{"id": "H-b432d2", "closed": "2026-09-05", "status": "done", "by": "功能", "result": "確認 competitor-landscape 移交的 2 條技術彙整已存在於 claude-code.md 05-04 歷史記錄，未重複寫入"}
+{"id": "H-7dbf7a", "closed": "2026-09-05", "status": "done", "by": "功能", "result": "確認 89%/13.6% Auto模式分類器評測已完整存在於 claude-code.md 08-10 歷史記錄；懸置標記因原文已刪除且會突破字元上限未重掛，已於回報標註需查證方法論"}
+{"id": "H-b591b1", "closed": "2026-09-05", "status": "done", "by": "功能", "result": "OpenCode 下載量 5.4 倍事實與 🔎 標記已整筆移入 entities/opencode.md 現況段，保留原標記 metadata"}
+{"id": "H-b4a266", "closed": "2026-09-05", "status": "void", "by": "主編", "result": "已由其他輪次頁面健檢直接處理，entities/managed-agents.md 已含對應選型細節與歷史記錄（社群記者確認）"}
+{"id": "H-4d498f", "closed": "2026-09-05", "status": "void", "by": "主編", "result": "查證 entities/pricing.md 已含 Managed Agents 計費完整條目（2026-09-06 查證版本），確認已由其他輪次（managed-agents 頁健檢）處理，本輪不重複"}
+{"id": "H-27721d", "closed": "2026-09-05", "status": "void", "by": "主編", "result": "評估後判定不適用：該研究為跨模型/跨語言價值觀比較論述，非安全事件/漏洞披露/提示注入案例，不符 ai-agent-safety 蒐集邊界，不強行安置"}
+{"id": "H-402a37", "closed": "2026-09-05", "status": "done", "by": "商業", "result": "查證兩列原文後判定皆不宜入雷達表硬度欄：Fable5 vs GPT-5.6 Sol 僅單一無數字社群心得；MineBench 實為 Fable5 vs Opus5（同廠模型）且已查證不可採信，未寫入"}
+{"id": "H-ab0af9", "closed": "2026-09-05", "status": "done", "by": "安全政策", "result": "透過 git log --all -p 尋回被移除的原文，已完整補入 anthropic-government-policy.md「出口管制」段落、攻防紀錄與時序（08-13、08-23 兩則）"}
+{"id": "H-abb47e", "closed": "2026-09-05", "status": "done", "by": "社群", "result": "以 git show 尋回改版前原文，確認三筆事實（多LLM混合架構/claude-anyteam/CC-Canary）連同確切日期皆已存在於 community-tech-timeline.md，未重複新增；順手修正一處指向已移除頁面的失效 wikilink"}

@@ -176,7 +176,8 @@ Claude Code 的三種多 agent 機制，可對應到 Anthropic《Building Effect
 #### GitHub Search 同日湧現五款 Claude Code／Codex 週邊 Skill：影片分鏡、短劇製作、簡報生成、API 相容伺服器、SSH 工作流（2026-09-05）
 
 - **主線：** —
-- **核心模式：** 五款新 Skill／工具同日出現：video-shotcraft（152 張分鏡卡＋209 個運鏡預覽，Remotion 產出電影感產品影片模板，7,524★）、shuohao-skills（AI 短劇製作 skill 集合，涵蓋角色／大綱／場景道具／劇本／分鏡，2,999★）、slides_maker（把論文、程式碼與文件轉為可原生編輯 PPTX，含圖表公式與獨立審閱機制，502★）、anti-api（把 Antigravity／Codex／GitHub Copilot 轉為相容 Anthropic／OpenAI API 的伺服器，可搭配 Claude Code／Xcode，500★）、ssh-skill（面向 Codex 與 Claude Code 的跨平台 SSH 工作流 Skill，支援 Windows／macOS／Linux，500★）
+- **核心模式：** 五款新 Skill／工具同日出現，涵蓋影片分鏡、短劇製作、簡報生成、API 相容伺服器、SSH 工作流五個不同用途，星數 500～7,524★ 不等，詳見下方「來源」逐一連結
+- **五款簡介：** video-shotcraft（分鏡卡＋運鏡預覽影片模板）、shuohao-skills（短劇製作 skill 集合）、slides_maker（論文/文件轉可編輯 PPTX）、anti-api（多 agent 介面轉 API 相容伺服器）、ssh-skill（跨平台 SSH 工作流）
 - **與既有模式的關係：** 延續本頁持續記錄的「Skill 生態多元化」趨勢（產出格式類：slides_maker、shuohao-skills；領域串接類：ssh-skill、anti-api）；非大型 codebase 特有痛點，暫不歸入 [[topics/community-large-codebase-workflow]] 四條主線
 - **可信度註記：** anti-api 與 ssh-skill 星數恰好同為 500，落在同一狹窄區間、缺乏佐證（同 08-12「GitHub 熱門清單」先例的星數叢集現象）；五款皆僅取得 GitHub Search 星數，無 forks／issues／近期 commit 佐證可查，未另行查證
 - **來源：** GitHub Search；[video-shotcraft](https://github.com/Vincentwei1021/video-shotcraft)、[shuohao-skills](https://github.com/eternityspring/shuohao-skills)、[slides_maker](https://github.com/addsumtech/slides_maker)、[anti-api](https://github.com/silasxbt/anti-api)、[ssh-skill](https://github.com/badseal/ssh-skill)

@@ -5809,3 +5809,15 @@ GH Actions 抓料排 10:23 UTC，到 14:45 UTC 仍未落地（+4.4 小時且持�
 **待辦：** 熱度上限判準成法與否（ledger）；一週回訪 2026-09-13（零件表週更有沒有人做、負向對照回流有沒有第二例、熱度 🔥🔥 有沒有被 ingest 加回去）。
 
 **冷讀者複驗（同四題）：** Q1 4 跳沒拿到 → **2 跳拿到**（分界句可自我對號）；Q2 → 2 跳拿到，官方說法與「第三方回饋為零」分得乾淨；Q3 零覆蓋 → 拿到 $0.08/hr＋算例，**唯一殘留卡點**是「比自己跑貴多少」——訂閱配額與 token 牌價是兩種貨幣、頁面未給換算（資料缺口，非版面問題，記回訪）；Q4 → 2 跳拿到。首屏 index L31 直達；beta 標示四處一致附出處。複驗抓到本波自造洩漏一處（熱度下修說明段含 `python scripts/...` 指令與「編輯判斷而非規則計算」預先辯解）→ 改為讀者語言一句＋`%%` 維運備忘。**教訓：讀者語言閘只擋清單上的詞，抓不到「整段寫給自己看」的結構性洩漏——這一類仍靠冷讀者。**
+
+## 2026-09-05 Ingest
+
+- 來源日報：[[news/2026-09-05]]
+- 更新頁面：entities/claude-code、entities/opencode、entities/pricing、topics/anthropic-government-policy、topics/competitor-landscape、topics/community-tech-patterns、topics/community-tech-timeline
+- 新增頁面：無
+- 摘要：官方定價頁大規模改版（新增逾 110 段 MTok 計價區間、移除逾 168 段企業規模分類文字）與 GPT-6 Astra 報導提及 Anthropic 重置用量限制並列待查證；社群同日出現 5 款新 Claude Code／Codex 週邊 Skill 工具＋1 則存量盤點（AIHawk，30,311★）；功能面新增 4 則高互動 GitHub Issue（Function Hooks 提案 107 留言、3 則 Desktop／清理相關 bug）；安全政策面 Bernie Sanders 提案可能使 AI 公司執行長入獄（待查證）＋補齊 08-13/08-23 VPN 繞過與灰市轉售段落（自 competitor-landscape 移交）。
+- 呈現品質：全部通過（含新上線字元上限機械閘 check_cell_limits.py 命中 4 筆，已全數修復至 200 字元內：anthropic-government-policy.md 3 筆、community-tech-patterns.md 1 筆）
+- devpractice 沉澱：候選 10 筆（Function Hooks 提案、Cursor 擴充套件悄悄刪除對話紀錄、AGENTS.md 標準格式訴求 385 留言、Graft token 裁剪工具惟 benchmark 遭質疑、本地合併佇列、Codex 遷移心得、machine0 常駐雲端 GPU、跨 session 記憶層趨勢、model-comparison effort 官方證偽、managed-agents 四選一決策表定案）；基準線 fa9bd2c→e7180f3
+- market 判讀：本日無訊號（已檢視 5 條候選：NYT 和解金角力、Barron's Nvidia 交易、官方定價頁改版、GPT-6 Astra／用量重置、Sanders 法案；最接近門檻者為 Nvidia 交易報導，因原文未能取得無法寫出方向與打折論證）
+- 品質備註：本次刻意排除大量與 2026-09-04 完全重複的條目（費馬最後定理形式化、Anthropic/OpenAI/xAI 罕見同步中斷、$2兆 IPO 摩根士丹利/高盛、Spotify Portal token 節省 90%、PicPay/CarPlay/SFPD/FedScoop/五角大廈/In-House Payments/HydraFusion/AI-talent-flow 等）——根因是 09-04 的 `--confirm-digest` 未成功提交（emitted_items.json 顯示 digest_confirmed:false），導致 GitHub Actions 09-05 抓料的跨日去重失效、同批項目再次進入 09-05 archive。本輪已重新執行並 commit confirm-digest（62 items confirmed），修復此缺口，理論上不會再延續到 09-06。
+

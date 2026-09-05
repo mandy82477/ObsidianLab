@@ -448,7 +448,7 @@ Fable 5 發布後，Amazon 安全研究人員發現特定提示詞可讓模型�
 ## 時序
 
 ### 2026-09-05
-- **[🏛️ 新增] NDTV：參議員 Bernie Sanders 提出新法案，內容可能使 OpenAI、Anthropic 等公司執行長面臨數年徒刑**：僅標題可用，法案具體條文、觸發條件與立法進度均未見報導；呼應既有 08-10 Sanders 暫停 AI 開發呼籲，本次為具體立法動作。❓ **待查證**（標 2026-09-05｜查 Bernie Sanders、jail｜複 2026-09-19）
+- **[🏛️ 新增] NDTV：參議員 Bernie Sanders 提出新法案，內容可能使 OpenAI、Anthropic 等公司執行長面臨數年徒刑**：僅標題可用，法案條文與進度未見報導；延續 08-10 Sanders 暫停 AI 開發呼籲。❓ **待查證**（標 2026-09-05｜查 Bernie Sanders、jail｜複 2026-09-19）
 
 ### 2026-09-04
 - **[🏛️ 新增] FedScoop：Anthropic 與五角大廈合約爭議持續之際，美國政府各部門因應態度不一**：08-28 聯邦法官已裁定黑名單違法並即時解除，本則顯示部門間立場並未隨判決統一；僅標題可用，具體哪些部門分歧、分歧內容為何未見報導，詳見「## 目前局勢」與「## 三個戰場」🪖 軍事合約段落
@@ -475,7 +475,7 @@ Fable 5 發布後，Amazon 安全研究人員發現特定提示詞可讓模型�
 - **[媒體擴散，新增，無新機制細節] New Atlas：「Claude will now watermark all content generated using its tools」**：New Atlas（08-25）重申 Claude 已為其工具產生的內容加上浮水印；僅標題可用，與既有 08-11 上線～08-22 系列報導同一政策事件，未見超出既有記錄的新機制細節，屬既有系列報導的又一次媒體重申
 
 ### 2026-08-23
-- **[灰市轉售，新增] the-decoder.com：中國灰色市場以遠低於官方定價轉售 Claude API token**：延續 08-13 VPN／境外 SIM／API wrapper 繞過地理限制的查證，從「繞過存取限制」延伸至「商業化轉售」層級，可能反映官方定價與灰市定價間存在套利空間（推論）；具體轉售規模、價格倍數、額度來源均未見報導細節，僅標題層級資訊，詳見「## 三個戰場」出口管制段落
+- **[灰市轉售，新增] the-decoder.com：中國灰色市場以遠低於官方定價轉售 Claude API token**：延續 08-13 VPN／境外 SIM 繞過地理限制的查證，延伸至「商業化轉售」層級；具體規模與價格倍數未見報導，詳見「## 三個戰場」出口管制段落
 
 ### 2026-08-22
 - **[反批評評論，新增] The Independent：主張外界對 Claude 浮水印的批評「錯過了最重要的一點」**：The Independent（08-22）刊出評論文章，主張圍繞 Claude AI 浮水印的批評聲浪「missing the most important point」；為系列報導首見明確站在政策辯護方的評論文章（先前 08-19 Forbes「破除迷思」屬技術面澄清，本篇屬立場辯護），具體反駁論點僅標題可用，未見報導
@@ -500,7 +500,7 @@ Fable 5 發布後，Amazon 安全研究人員發現特定提示詞可讓模型�
 - **[機制說明＋第三方偵測 API，新增] the-decoder／BleepingComputer／PCMag：Anthropic 說明浮水印運作方式並開放第三方偵測 API**：三家媒體（2026-08-14）報導 Anthropic 說明 Claude 隱形浮水印的運作方式，並宣布**第三方偵測 API**——外部單位可據以判斷一段文字是否由 Claude 產生；PCMag 指浮水印政策同時涵蓋文字與圖片輸出。延續 08-11 上線報導、08-12 EU AI Act Transparency Code 法源確認、08-13 官方已回應從業者疑慮系列報導，惟偵測 API 的存取門檻／費用、浮水印演算法細節仍僅標題層級可用（詳見「## 浮水印政策」）
 
 ### 2026-08-13
-- **[管制實效，深度查證] Wired：VPN／境外 SIM／第三方 API wrapper 可繞過中國地理限制，「地理定位只是減速丘不是牆」**：Wired 深度報導引述安全研究者原話，首度第一手證實地理限制形同虛設，用戶亦可在淘寶／閒魚購買已設定帳號、透過 Telegram 頻道取得完整繞過教學；延續 06-28 標題式報導，本則為深度查證版，「管制犧牲收入」代價成立、「保護能力」效果存疑，詳見「## 三個戰場」出口管制段落（[Wired](https://www.wired.com/story/how-people-in-china-keep-outsmarting-anthropics-geolocation-restrictions/)，2026-08-13）
+- **[管制實效，深度查證] Wired：VPN／境外 SIM 可繞過中國地理限制，「地理定位只是減速丘不是牆」**：安全研究者證實限制形同虛設，可購買已設定帳號取得完整繞過教學；延續 06-28 報導，「保護能力」效果存疑，詳見「## 三個戰場」出口管制段落（[Wired](https://www.wired.com/story/how-people-in-china-keep-outsmarting-anthropics-geolocation-restrictions/)，2026-08-13）
 - **[官方回應，新增] Business Insider：Anthropic 已對科技從業者的浮水印疑慮提出回應**：報導稱 Anthropic 已就從業者對 Claude 隱形浮水印的疑慮提出回應，惟 Google News RSS 摘要未提供具體回應內容；為浮水印政策延燒以來首見官方回應動作的報導，具體內容待後續查證補充
 - **[反彈聲量分歧，補充] TechCrunch（經 Hacker News 轉載，62 分）：Reddit 使用者對浮水印政策意見分歧，非一致反對**：延續 08-12 同篇 TechCrunch 報導，具體引述一則來自僅存在 3 週帳號的貼文稱浮水印系統是「反烏托邦式陰謀」，但原文明確指出**其他 Reddit 貼文者並不認同此說法**，屬意見分歧而非一致反彈；同日 PCMag 報導浮水印政策同時涵蓋文字與圖像輸出，非僅文字
 
