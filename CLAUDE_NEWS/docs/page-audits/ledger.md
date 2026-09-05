@@ -28,6 +28,8 @@
 
 | 3 | entities/pricing ＋ topics/enterprise-cost-management（併卡） | 樞紐(136)＋樞紐低標(24) | 2026-09-06 | 定稿：使命句 A「Claude 現在怎麼收你的錢，以及最近哪幾件事改變了這個答案」（使用者裁決）；ECM「一家公司導入 Claude 之後帳單會怎麼長，別人踩到什麼、怎麼收斂」；三子故事不拆；pricing 753→688 行改「三結論表打頭（我的方案／一小時多少／事故還在不在）＋事件流證據層」，22 條事故補五值狀態、總表 6 列＋留表優先序入規則檔、蒸餾 2 時段建 `entities/pricing-archive`（全庫首個 entities archive）、砍 4 節；ECM 缺口三項依官方 blog 結案（Enterprise-only 明示）、指標表重算 12 案例、砍「目前結論」；讀者語言閘 +4 詞基線重建；index 首屏補「錢」路由；**主編查證**：數字七項全對、$35M 事實更正、促銷頁一手原文；主 session 代判 3 裁決點（砍兩節、加四詞）與 4 條狀態符號 | ✅ 複驗過（Q2 半→**拿到**，Q3 半→**拿到 1 跳**；Q1／Q4 由「拿到」改「半拿到」是頁面改成不虛報的結果：官方不公布配額絕對量、Spend Controls 僅限 Enterprise）；複驗抓到 40–44 倍撐不起與 10 條洩漏已修 | 2026-09-13 | `pricing-2026-09-06{,-verified,-proposal,-proposal-map,-review}.md`、`wave3-cold-reader{,-recheck}-2026-09-06.md` |
 
+| 4 | wiki/feature-radar ＋ entities/claude-code（併卡；topics/code-quality-decline 為鄰居） | 樞紐(39)＋樞紐(75) | 2026-09-06 | **進行中**（使用者 2026-09-06 授權自跑兩頁，使命句由主 session 定，只在拆頁／砍整節時問）。**報價**：6 新 agent（健檢卡＋冷讀者平行、設計者、評審、Sonnet 實作、複驗）＋ 4 次續用，估 120–160 萬 token（兩頁合計 1,678 行，比第 3 波多六成）；主編查證：Claude Code 最新版與 changelog、品質退步官方處置、claude-code 頁 10 筆逾期懸置 | — | — | `p2-2026-09-06{,-verified,-proposal,-review}.md`、`wave4-cold-reader{,-recheck}-2026-09-06.md` |
+
 > 第 1 波同時吃掉 `wiki/reader-notes.md` 的 ⏳「『誰比較強』三頁互踢」——考題集必含「Codex 和 Claude 誰強」，落點必須唯一。
 
 ## 待辦（第 3 波遺留）
