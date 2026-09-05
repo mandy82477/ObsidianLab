@@ -5821,3 +5821,4 @@ GH Actions 抓料排 10:23 UTC，到 14:45 UTC 仍未落地（+4.4 小時且持�
 - market 判讀：本日無訊號（已檢視 5 條候選：NYT 和解金角力、Barron's Nvidia 交易、官方定價頁改版、GPT-6 Astra／用量重置、Sanders 法案；最接近門檻者為 Nvidia 交易報導，因原文未能取得無法寫出方向與打折論證）
 - 品質備註：本次刻意排除大量與 2026-09-04 完全重複的條目（費馬最後定理形式化、Anthropic/OpenAI/xAI 罕見同步中斷、$2兆 IPO 摩根士丹利/高盛、Spotify Portal token 節省 90%、PicPay/CarPlay/SFPD/FedScoop/五角大廈/In-House Payments/HydraFusion/AI-talent-flow 等）——根因是 09-04 的 `--confirm-digest` 未成功提交（emitted_items.json 顯示 digest_confirmed:false），導致 GitHub Actions 09-05 抓料的跨日去重失效、同批項目再次進入 09-05 archive。本輪已重新執行並 commit confirm-digest（62 items confirmed），修復此缺口，理論上不會再延續到 09-06。
 
+- 收尾備註：本輪因環境 stop-hook（偵測未提交/未推送變更即擋下）多次要求先 commit+push 才能繼續等待背景記者，導致偏離「單一 push」設計、實際分 6 次推送（STARTED 心跳、news+signals、emitted-cache confirm、wiki 分批×2、web build）。經評估：分散在數十分鐘內的循序推送（非同時競爭）不致觸發 Pages 部署互搶，且提早推送降低了容器中途回收的資料遺失風險，故接受此次偏離；沿革記錄於此供之後檢討是否需要調整 stop-hook 與本 routine 單推push設計的相容性。
