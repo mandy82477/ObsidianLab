@@ -31,7 +31,7 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 **最後新聞更新：** 2026-09-05
 
 > **最新動態**（2026-09-05）
-> - **參議員 Bernie Sanders 提出新法案，內容可能使 OpenAI、Anthropic 等公司執行長面臨數年徒刑**（NDTV，僅標題可用）：呼應 08-10 Sanders 暫停 AI 開發呼籲，本次升級為具體立法提案；法案條文、觸發條件與立法進度均未見報導，標「待查證」，完整分析見「## 目前局勢」表格細節。
+> - **參議員 Bernie Sanders 提出新法案，內容可能使 OpenAI、Anthropic 執行長面臨數年徒刑**（NDTV，僅標題可用，待查證）。
 
 ---
 

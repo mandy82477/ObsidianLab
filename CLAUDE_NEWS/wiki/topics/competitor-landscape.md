@@ -29,7 +29,7 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 **蒐集邊界：** 以 Claude 為參照系的競品動態為主，另針對競品發布與定價定向補抓（每日至多 2 則）；競品自身未與 Claude 對比的發布可能延遲或缺漏。**帶跑分數字的第三方對照評測收不到**——這類內容多發表於對照型部落格，不在本站蒐集範圍，因此本頁的競品能力比較以官方數字與社群並排實測為主，缺口處改指向外部活榜單（見 [[topics/model-comparison]] 的外部評測榜單節），不自行推算。
 **開始日期：** 2026-04
 **最後更新：** 2026-09-05
-**最後新聞更新：** 2026-09-04
+**最後新聞更新：** 2026-09-05
 
 > **本週衝擊**（2026-09-04）
 > - 🔴 **價格戰打到產品層**：Meta Muse Code 結束 beta、推三層訂閱主打低價（09-01）——但月費沒公布，想比價還比不了，先別急著算換算成本。
@@ -48,10 +48,10 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 
 | 對手 | 最新動態（日期） | 衝擊面 | 衝擊度 | 這個消息有多硬 |
 |---|---|---|---|---|
+| **OpenAI（Codex CLI／ChatGPT Work・GPT-5.6）** 🏢 | GPT-6 Astra 上線 Pro／Enterprise／API（09-05，僅標題）；零資料保留承諾搶企業客戶（08-20）→ 新旗艦已鋪貨三層，能力與定價未載，暫不改變選型 | 能力 | 🔴 | 單一標題（Google News/Pasquale Pillitteri），原文未取得；「重置 Claude 限制」關聯未證實 |
+| **Microsoft／GitHub** 🏢 | Copilot 終結「無限量」方案（08-17）；HydraFusion 多數基準降本、品質僅一項打平（09-04）→ 降本宣稱要先問品質在哪個基準測的 | 定價 | 🔴 | VentureBeat 標題層級，降幅數字與是否產品化均未見；自研模型取代仍屬傳聞（07-07，2 來源，官方無回應） |
 | **Meta（Muse Code／Muse Glimmer）** | 結束 beta、三訂閱層主打價格戰（09-01）；旗艦模型 Muse Glimmer 開源（08-11）→ 想比價卻比不了，月費未公布 | 定價 | 🔴 | 跨 2 媒體（The New Stack／Intelligent Living），月費與 20x 層費率均缺 |
 | **DeepSeek** 🏢 | Harness 開源＋V4-Pro 上線（08-14）、中國市場「免費夠用」論述（08-31）→ 低價層已有可用替代 | 定價 | 🔴 | VentureBeat 2 來源；V4-Pro 費率未載 ❓ 待查證 ⟨Q-01⟩ |
-| **OpenAI（Codex CLI／ChatGPT Work・GPT-5.6）** 🏢 | 「零資料保留」承諾搶企業客戶（08-20）；各基準互有勝負、黏著度仍 Claude 領先（08-13 查證）→ 選型看任務類型，不看單一分數 | 能力 | 🔴 | 第三方彙整＋官方基準；當時數字見「查證快照」節 |
-| **Microsoft／GitHub** 🏢 | Copilot 終結「無限量」方案（08-17）；HydraFusion 多數基準降本、品質僅一項打平（09-04）→ 降本宣稱要先問品質在哪個基準測的 | 定價 | 🔴 | VentureBeat 標題層級，降幅數字與是否產品化均未見；自研模型取代仍屬傳聞（07-07，2 來源，官方無回應） |
 | **Zhipu Z.AI** | GLM-5.3 主打資安、稱抓 bug 優於 Anthropic 與 OpenAI（08-17）→ 靠 Claude 做安全審查的人值得找機會實測對照 | 能力 | 🔴 | 2 家媒體（The Register／VentureBeat），無方法論、無 benchmark 數字 |
 | **Moonshot AI（Kimi K3）** | 權重開源，效果與 Fable 5 相當、成本約三分之一但慢約 4 倍（07-27）→ 可離線批次的工作有便宜選項 | 能力 | 🔴 | The New Stack 量化實測＋官方一手規格；官方自陳整體仍落後 Fable 5 |
 | **Cursor** 🏢 | OpenAI 傳 11/12 斷供（09-04）→ 只影響 Cursor 使用者，Claude Code 使用者不必動 | 生態 | 🟡 | 單一 Reddit 週熱門討論串，無官方、無主流媒體 |
@@ -142,6 +142,7 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 - 企業側戰線已擴至資料隱私：08-20「零資料保留」承諾明確定位為爭奪 Anthropic 企業客戶。
 **還沒解決**
 - 「零資料保留」的技術實作與涵蓋範圍、以及 OpenAI 企業用戶「追近」的量化數字均未見。
+- GPT-6 Astra 全面上線 Pro／Enterprise／API 的具體規格、對上述基準結論是否有影響均未見報導（09-05，僅標題）。
 
 ### Microsoft／GitHub
 **現在的答案**
@@ -208,6 +209,9 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 - [[entities/claude-code]]、[[entities/google-investment]]、[[entities/opencode]]、[[topics/enterprise-cost-management]] — 對應實體與成本主題。
 
 ## 時序
+
+### 2026-09-05
+- **OpenAI**：Google News/Pasquale Pillitteri 報導稱 GPT-6 Astra 全面上線 Pro、Enterprise、API，副標提及「Anthropic 重置 Claude 用量限制」，原文全文未能取得（Google News/Pasquale Pillitteri）
 
 ### 2026-09-04
 - **Cursor**：斷供傳聞理由指向控制權變更（Reddit/r/artificial · 週熱門）

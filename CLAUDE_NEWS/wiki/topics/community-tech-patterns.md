@@ -29,11 +29,11 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 **領域：** 🌐 社群
 **開始日期：** 2026-04-25
 **最後更新：** 2026-09-05
-**最後新聞更新：** 2026-09-04
+**最後新聞更新：** 2026-09-05
 
-> **最新工作流模式**（2026-09-04）
-> - **並行規模再添案例**：Show HN 開發者以 147 個 subagent、單一長時間 session、24 天將 F-Zero X 移植到 New 3DS。
-> - **具名大型企業成本實證**：Spotify Portal 依任務型態把「純 I/O」工作路由給便宜模型，Claude Code token 用量降 90%。
+> **最新工作流模式**（2026-09-05）
+> - **存量盤點新收錄**：feder-cr/AIHawk——開源瀏覽器自動化 agent，含 Claude Code／Gemini CLI 適用 Browser MCP（3.03 萬星）。
+> - **Skill 生態批次亮相**：GitHub Search 同日新增五款週邊 Skill——影片分鏡、短劇製作、簡報生成、API 相容伺服器、SSH 工作流。
 
 ---
 
@@ -163,6 +163,24 @@ Claude Code 的三種多 agent 機制，可對應到 Anthropic《Building Effect
 ## 技術彙整
 
 ### 2026-09
+
+#### GitHub Search 存量盤點：feder-cr/AIHawk——開源瀏覽器自動化與電腦操作 agent，含 Claude Code／Gemini CLI 適用 Browser MCP（2026-09-05）
+
+- **主線：** —
+- **核心模式：** 開源 AI 瀏覽器自動化 agent，以自然語言操作網頁瀏覽與電腦操作（web browsing agent + computer-use agent），另提供可供 Claude Code 與 Gemini CLI 使用的 Browser MCP；GitHub Search 累積 30,311 星
+- **與既有模式的關係：** 補上本頁「Plugin/MCP 整合」類別一個具體案例——不同於既有 Playwright／Chrome DevTools 類瀏覽器 MCP，AIHawk 本身是完整瀏覽器自動化 agent 再外掛 MCP 介面；非大型 codebase 特有痛點，暫不歸入 [[topics/community-large-codebase-workflow]] 四條主線
+- **可信度註記：** 存量盤點條目，2024-08-04 出生、本庫今日首次收錄，累積時間跨度逾 1 年；僅取得 GitHub Search 星數，無 forks／issues／近期 commit 佐證可查，未另行查證
+- **來源：** GitHub Search（3.03 萬★，存量盤點｜2024-08-04 出生、本庫今日首次收錄）；[GitHub](https://github.com/feder-cr/AIHawk)
+- **成熟度：** ⏳ 新興（本庫首次收錄，尚無星數以外的社群採用回饋數據）
+
+#### GitHub Search 同日湧現五款 Claude Code／Codex 週邊 Skill：影片分鏡、短劇製作、簡報生成、API 相容伺服器、SSH 工作流（2026-09-05）
+
+- **主線：** —
+- **核心模式：** 五款新 Skill／工具同日出現：video-shotcraft（152 張分鏡卡＋209 個運鏡預覽，Remotion 產出電影感產品影片模板，7,524★）、shuohao-skills（AI 短劇製作 skill 集合，涵蓋角色／大綱／場景道具／劇本／分鏡，2,999★）、slides_maker（把論文、程式碼與文件轉為可原生編輯 PPTX，含圖表公式與獨立審閱機制，502★）、anti-api（把 Antigravity／Codex／GitHub Copilot 轉為相容 Anthropic／OpenAI API 的伺服器，可搭配 Claude Code／Xcode，500★）、ssh-skill（面向 Codex 與 Claude Code 的跨平台 SSH 工作流 Skill，支援 Windows／macOS／Linux，500★）
+- **與既有模式的關係：** 延續本頁持續記錄的「Skill 生態多元化」趨勢（產出格式類：slides_maker、shuohao-skills；領域串接類：ssh-skill、anti-api）；非大型 codebase 特有痛點，暫不歸入 [[topics/community-large-codebase-workflow]] 四條主線
+- **可信度註記：** anti-api 與 ssh-skill 星數恰好同為 500，落在同一狹窄區間、缺乏佐證（同 08-12「GitHub 熱門清單」先例的星數叢集現象）；五款皆僅取得 GitHub Search 星數，無 forks／issues／近期 commit 佐證可查，未另行查證
+- **來源：** GitHub Search；[video-shotcraft](https://github.com/Vincentwei1021/video-shotcraft)、[shuohao-skills](https://github.com/eternityspring/shuohao-skills)、[slides_maker](https://github.com/addsumtech/slides_maker)、[anti-api](https://github.com/silasxbt/anti-api)、[ssh-skill](https://github.com/badseal/ssh-skill)
+- **成熟度：** ⏳ 新興（同日批次亮相，尚無社群採用回饋數據）
 
 #### Show HN：單一長時間 session＋147 個 subagent、24 天把 F-Zero X 移植到 New 3DS（2026-09-04）
 

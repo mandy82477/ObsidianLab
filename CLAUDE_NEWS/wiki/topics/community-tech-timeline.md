@@ -27,7 +27,7 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 **狀態：** monitoring
 **領域：** 🌐 社群
 **開始日期：** 2026-04-25
-**最後更新：** 2026-09-04
+**最後更新：** 2026-09-05
 **最後新聞更新：** 2026-05-22
 
 > **最近時序紀錄**（2026-05-22）
@@ -115,7 +115,7 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 
 #### 2026-05-14
 - **訂閱 programmatic 用量剝離——費用可觀測性工具需求爆發**：6/15 起 `claude -p` / Agent SDK 改按全額 API 費率計費，直接推動 token 成本分析工具密集出現同一天：Ledger（Rust，PR 層級 token 追蹤 + macOS 選單欄 + Web dashboard）、Clawdmeter（ESP32-S3 實體 token 監控面板）、Grafana + Prometheus 監控 dashboard；費用可觀測性從「選配」成為「必備」；見 [[entities/pricing]]
-- **多 LLM 混合架構作為訂閱費用因應策略**：Opus 4.7 擔任決策 orchestrator、DeepSeek V4 Pro 承擔大量 token 輸出的混合架構，在 Max20 方案下最大化性價比；「高能力 orchestrator + 低成本 worker」的跨廠商架構預計成為 6/15 後的主流因應方式；見 [[topics/competitor-landscape]]
+- **多 LLM 混合架構作為訂閱費用因應策略**：Opus 4.7 擔任決策 orchestrator、DeepSeek V4 Pro 承擔大量 token 輸出的混合架構，在 Max20 方案下最大化性價比；「高能力 orchestrator + 低成本 worker」的跨廠商架構預計成為 6/15 後的主流因應方式；見 [[entities/pricing]]
 - **PTY 終端模擬繞過工具（claude-pee）**：透過 PTY 模擬互動終端執行 claude、注入輸入並用 stop hook 截取輸出，使 `-p` 用量不進入獨立信用池；繼 Claw-Code 後第二個以工程手段繞過 Anthropic 限制的社群工具，作者坦言為臨時方案
 - **雙向 HTML 工件生成（agent-html-skills）**：受「HTML 的非凡有效性」文章啟發，讓 Claude Code 在認為必要時**主動**生成 HTML 視覺化輸出（非用戶觸發），並支援自動提交回介面；是「agent 主動視覺化」工作流的首個開源實現，與 [[entities/cat-wu|Cat Wu]] 訪問「主動性（proactivity）」方向呼應
 - **「週末 + Claude Code = 替代商業訂閱工具」持續驗證**：同一天出現兩個案例——Tauri macOS 語音輸入 app（取代 $15/月 Wispr Flow）與 Bloomberg 風格股票分析工具（取代付費訂閱），均由領域知識持有者（非工程背景）用幾天完成；印證「領域專家 × Claude Code」的快速工具化路徑持續成熟
