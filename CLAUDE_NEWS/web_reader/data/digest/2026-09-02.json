@@ -142,13 +142,7 @@
       "time": "09/01 21:03",
       "sentiment": "",
       "body": "指出 Claude Fable 5.1 的隱形浮水印機制仍存在開發者無法忽視的偵測盲區。",
-      "focusTags": [],
-      "sedimented": [
-        {
-          "id": "fable-5",
-          "pageType": "entity"
-        }
-      ]
+      "focusTags": []
     },
     {
       "title": "Anthropic Details Response to Security Incidents, Unveils Enterprise Safeguards - SecurityWeek",
@@ -287,13 +281,7 @@
       "time": "09/02 14:34",
       "sentiment": "",
       "body": "Claude Fable 5.1、Mythos 5.1 上線後定價頁同步更新：快取讀取（cache hit）費率由標準的基礎輸入價 0.1 倍降至 0.025 倍，較前代最多省下 75% 的長對話快取成本；VentureBeat、Yellow.com 等媒體同步報導此定價變化。",
-      "focusTags": [],
-      "sedimented": [
-        {
-          "id": "fable-5",
-          "pageType": "entity"
-        }
-      ]
+      "focusTags": []
     },
     {
       "title": "官方文件更新：Claude Code 週用量促銷（May–August 2026）",
@@ -424,34 +412,14 @@
   "preview": "Anthropic 發布新一代旗艦模型 Claude Fable 5.1 與 Claude Mythos 5.1——兩者為同一模型的不同防護層級，Fable 5.1 一般可用，Mythos 5.1 僅開放信任機構存取、針對資安與生命科學工作特別強化防護；新增反萃取（anti-distillation）機制，快取讀取費率",
   "sedimentedToday": [
     {
-      "id": "fable-5",
-      "name": "Claude Fable 5",
-      "pageType": "entity"
-    },
-    {
       "id": "mythos",
       "name": "Claude Mythos",
-      "pageType": "entity"
-    },
-    {
-      "id": "pricing",
-      "name": "Anthropic 訂閱方案與計費政策",
       "pageType": "entity"
     },
     {
       "id": "tom-blomfield",
       "name": "Tom Blomfield",
       "pageType": "entity"
-    },
-    {
-      "id": "anthropic-business",
-      "name": "Anthropic 商業健康度",
-      "pageType": "topic"
-    },
-    {
-      "id": "anthropic-government-policy",
-      "name": "Anthropic 政府與軍事政策",
-      "pageType": "topic"
     },
     {
       "id": "community-pattern-trends",
@@ -461,11 +429,6 @@
     {
       "id": "community-tech-tools",
       "name": "社群工具目錄",
-      "pageType": "topic"
-    },
-    {
-      "id": "enterprise-tool-tracker",
-      "name": "大型企業 AI 編碼工具使用追蹤",
       "pageType": "topic"
     },
     {

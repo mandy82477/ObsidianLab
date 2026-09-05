@@ -476,11 +476,6 @@
       "id": "anthropic-commitments",
       "name": "Anthropic 承諾兌現追蹤",
       "pageType": "topic"
-    },
-    {
-      "id": "competitor-landscape",
-      "name": "AI 編碼工具競品動態",
-      "pageType": "topic"
     }
   ]
 }

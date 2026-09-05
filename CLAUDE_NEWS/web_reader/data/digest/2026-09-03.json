@@ -74,13 +74,7 @@
       "time": "09/03 14:38",
       "sentiment": "",
       "body": "官方說明文件更新版本需求措辭：使用 Claude Code 者，Fable 5 需 2.1.170（含）以上版本、Fable 5.1 需 2.1.255（含）以上版本；並補充在 Claude 網頁版／桌面版／行動版的模型選單可選取「Fable 5」或「Fable 5.1」。",
-      "focusTags": [],
-      "sedimented": [
-        {
-          "id": "claude-code",
-          "pageType": "entity"
-        }
-      ]
+      "focusTags": []
     }
   ],
   "mediaReports": [],
@@ -101,13 +95,7 @@
       "time": "09/02 15:30",
       "sentiment": "",
       "body": "作者將原本測試「headless agent 能多省 context」的實驗，發展成同時支援終端機、ACP、A2A 的單一靜態執行檔，並已取代自己原本使用的 Claude Code、Codex、OpenCode 成為日常主力工具。😊",
-      "focusTags": [],
-      "sedimented": [
-        {
-          "id": "claude-code",
-          "pageType": "entity"
-        }
-      ]
+      "focusTags": []
     },
     {
       "title": "Claude Code journal plugin: Notion session summaries at a glance",
@@ -116,13 +104,7 @@
       "time": "09/02 23:11",
       "sentiment": "",
       "body": "作者將自製的 `/journal` skill 包裝成可安裝的 Claude Code plugin，能為每個主題產生一則依季節上色、附星期圖示的摘要卡片，每次執行呼叫 3 次 Notion API。😊",
-      "focusTags": [],
-      "sedimented": [
-        {
-          "id": "claude-code",
-          "pageType": "entity"
-        }
-      ]
+      "focusTags": []
     },
     {
       "title": "We built an open-source, model-neutral agent harness and compared it with claude managed agents - for the same model, got same accuracy, upto 75% lower cost",
@@ -238,28 +220,8 @@
   "preview": "Anthropic 狀態頁通報 Mythos/Fable 5.1、Mythos/Fable 5、Opus 5、Opus 4.8、Opus 4.6 多款模型錯誤率升高，官方已鎖定原因但截至資料蒐集時尚未標記為已解決；同一時段 Reddit r/ClaudeCode 湧入多則服務中斷回報，兩者時間點吻合。",
   "sedimentedToday": [
     {
-      "id": "claude-code",
-      "name": "Claude Code",
-      "pageType": "entity"
-    },
-    {
-      "id": "ai-agent-safety",
-      "name": "AI Agent 安全與可靠性",
-      "pageType": "topic"
-    },
-    {
       "id": "community-large-codebase-workflow",
       "name": "大型 Codebase 規模化開發：社群工作流主線",
-      "pageType": "topic"
-    },
-    {
-      "id": "community-tech-discussions",
-      "name": "社群技術討論趨勢",
-      "pageType": "topic"
-    },
-    {
-      "id": "community-tech-patterns",
-      "name": "社群實戰模式庫",
       "pageType": "topic"
     },
     {
