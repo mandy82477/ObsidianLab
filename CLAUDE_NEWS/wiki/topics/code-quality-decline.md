@@ -27,7 +27,7 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 **狀態：** ongoing（官方已說明工程疏失，恢復情況見下方摘要）
 **領域：** 🌐 社群
 **開始日期：** 2026-03（推測）
-**最後更新：** 2026-09-04
+**最後更新：** 2026-09-05
 **最後新聞更新：** 2026-08-29
 
 > **最近效能退步事件**（2026-08-28）
@@ -49,11 +49,11 @@ Claude Code 在 2026 年 3 月至 4 月間出現長達約一個月的效能明�
 
 | 日期 | 訊號 | 來源 | 強度 |
 |------|------|------|------|
-| 2026-07-01 | 「Claude Code Just Got 5x More Expensive」：用戶回報原先兩天用量的 $50 配額現在一小時燒完 | Vincent Schmalbach blog（[原文](https://www.vincentschmalbach.com/claude-code-quietly-looks-5x-more-expensive/)，HN score 53） | 中高（HN score 53 達對照表中門檻）|
+| 2026-07-01 | 「Claude Code Just Got 5x More Expensive」：用戶回報原先兩天用量的 $50 配額現在一小時燒完 | Vincent Schmalbach blog（[原文](https://www.vincentschmalbach.com/claude-code-quietly-looks-5x-more-expensive/)，HN score 53） | 中高（HN score 53）|
 | 2026-07-01 | 獨立開發者單月燒 $62,021 token 的具名案例 | Reddit r/ClaudeAI（[原文](https://www.reddit.com/r/ClaudeAI/comments/1ukli2u/i_burned_62021_in_claude_tokens_in_june_solo_dev/)）| 單一具名個案，非可複現統計 |
 | 2026-07-03 | GitHub issue #16856：升級至 2.1.1 版後 token 消耗速度較前版快 4 倍以上 | [GitHub Issues #16856](https://github.com/anthropics/claude-code/issues/16856) | 具體版本號可複現主張 |
-| 2026-07-03 | GitHub issue #38335：Max 方案 session 額度自 3/23 起異常加速消耗；截至 07-09 累積 791 則留言、536 個讚，社群互動量最高條目之一 | [GitHub Issues #38335](https://github.com/anthropics/claude-code/issues/38335) | 高（留言數達對照表高門檻，且持續增長）|
-| 2026-07-08 | GitHub issue #41506：Max 方案（$100/月）token 消耗量自 3/28-29 起在未變更設定下增加約 3-5 倍，累積 54 則留言、29 個讚 | [GitHub Issues #41506](https://github.com/anthropics/claude-code/issues/41506) | 高（留言數達對照表高門檻，與 #38335 同期同方向）|
+| 2026-07-03 | GitHub issue #38335：Max 方案 session 額度自 3/23 起異常加速消耗；截至 07-09 累積 791 則留言、536 個讚，社群互動量最高條目之一 | [GitHub Issues #38335](https://github.com/anthropics/claude-code/issues/38335) | 高（791 則留言、536 個讚，且持續增長）|
+| 2026-07-08 | GitHub issue #41506：Max 方案（$100/月）token 消耗量自 3/28-29 起在未變更設定下增加約 3-5 倍，累積 54 則留言、29 個讚 | [GitHub Issues #41506](https://github.com/anthropics/claude-code/issues/41506) | 高（54 則留言、29 個讚，與 #38335 同期同方向）|
 | 2026-07-08 | 「Cache hit rate dropping by 20% doubles your agent's bills」：使用者以圖表分享 cache 命中率下降 20% 會讓 agent 帳單翻倍 | Reddit r/ClaudeCode（[原文](https://www.reddit.com/r/ClaudeCode/comments/1uqsah2/cache_hit_rate_dropping_by_20_doubles_your_agents_bills/)）| 首度提出具體技術機制，補足假說二的解釋空缺；圖片為主、文字說明有限，尚待第三方覆核（07-09～07-31 news 查無直接跟進，至今無後續） |
 | 2026-07-08 | 「Claude Max (20x) weekly limit exhausted in less than a day」：Max 20x 方案週額度不到一天用盡 | Reddit r/ClaudeCode（[原文](https://www.reddit.com/r/ClaudeCode/comments/1uqs99q/claude_max_20x_weekly_limit_exhausted_in_less/)）| 具體異常比例回報，與同日 GitHub 額度耗盡回報呼應 |
 | 2026-07-09 | 「Claude Max 20x: Why did 27% of one session consume 7% of my entire weekly limit?」：單一 session 27% 的時間即消耗掉整週額度 7% | Reddit r/ClaudeAI（[原文](https://www.reddit.com/r/ClaudeAI/comments/1urqgqx/claude_max_20x_why_did_27_of_one_session_consume/)）| 具體異常比例回報，質疑額度計算機制本身 |
@@ -61,7 +61,7 @@ Claude Code 在 2026 年 3 月至 4 月間出現長達約一個月的效能明�
 | 2026-08-25 | 「Is Claude Code intentionally burning more tokens now?」——隔 43 天再現同方向質疑 | Reddit r/ClaudeCode（[原文](https://www.reddit.com/r/ClaudeCode/comments/1vxw3fi/is_claude_code_intentionally_burning_more_tokens/)，0 留言、無「週熱門」標記，score 不可信） | 第十則訊號，無新機制性證據 |
 
 **表格細節**
-- **07-13「Usage limits getting lower」**：尚待第三方覆核——07-14～07-31 news 無同一主張的直接覆核，但 07-21 GitHub issue #29579「16% 用量即觸發 rate limit」153 則留言延續同一「額度異常消耗」大主題方向一致，屬功能記者已知問題追蹤範疇，本頁不重複收錄細節
+- **07-13「Usage limits getting lower」**：尚待第三方覆核——07-14～07-31 news 無同一主張的直接覆核，但 07-21 GitHub issue #29579「16% 用量即觸發 rate limit」153 則留言延續同一「額度異常消耗」大主題方向一致，完整追蹤見 [[entities/claude-code]] 已知問題，本頁不重複收錄細節
 - **08-25「intentionally burning more tokens」**：使用者質疑近幾個月來 Claude Code 是否比過去消耗更多 token 才能完成相同任務；單一貼文、無具體數字或版本號佐證，屬本訊號群自 07-13 沉寂 43 天後的第十則訊號，僅計入現象延續
 
 **核心分析：三種假說目前證據各支持什麼**
@@ -97,13 +97,13 @@ Claude Code 在 2026 年 3 月至 4 月間出現長達約一個月的效能明�
 | 2026-07-30 | 「Opus 5 is not as good as i thought」：使用者原先依跑分預期 Opus 5 優於 Fable 5，實際使用後認為仍有落差 | Reddit r/ClaudeCode（[原文](https://www.reddit.com/r/ClaudeCode/comments/1var15k/opus_5_is_not_as_good_as_i_thought/)，見 [[news/2026-07-30]]） | 單一社群回報 |
 | 2026-08-14 | 「Serious question regarding CC quality」：近 3 個月觀察到 Claude Code 品質「大幅」（MASSIVE）下滑，不限特定模型，內文提及 Opus 5 表現尤其令人失望（原文截斷） | Reddit r/ClaudeCode（[原文](https://www.reddit.com/r/ClaudeCode/comments/1vo3ygk/serious_question_regarding_cc_quality_no_hate_or/)，無「週熱門」標記、score 不可信） | 單一社群回報 |
 | 2026-08-14 | 「Claude Code got slower since I upgraded from Pro to Max」：升級後 session 時長變為 3 倍，任務難度、規模與專案皆未變 | Reddit r/ClaudeCode（[原文](https://www.reddit.com/r/ClaudeCode/comments/1vo3y1g/claude_code_got_slower_since_i_upgraded_from_pro/)，無「週熱門」標記、score 不可信） | 單一社群回報 |
-| 2026-08-13 | 「Opus 5 is actually almost rage-inducing to use.」：使用者稱已依官方建議調整、試過各種全域 CLAUDE.md 設定，仍無法讓 Opus 5 行為符合期待 | Reddit r/ClaudeAI（[原文](https://www.reddit.com/r/ClaudeAI/comments/1vn8ml6/opus_5_is_actually_almost_rageinducing_to_use/)，週熱門標記，達收錄低門檻） | 單一社群回報（週熱門達低門檻，惟無具體量化數字） |
+| 2026-08-13 | 「Opus 5 is actually almost rage-inducing to use.」：使用者稱已依官方建議調整、試過各種全域 CLAUDE.md 設定，仍無法讓 Opus 5 行為符合期待 | Reddit r/ClaudeAI（[原文](https://www.reddit.com/r/ClaudeAI/comments/1vn8ml6/opus_5_is_actually_almost_rageinducing_to_use/)，週熱門標記） | 單一社群回報（週熱門，惟無具體量化數字） |
 | 2026-08-19 | 「I've never felt Claude been degraded for so long before」：使用者反映過去兩週 Claude 表現反覆不穩，多半比平常差，詢問是否為運算資源問題 | Reddit r/ClaudeCode（[原文](https://www.reddit.com/r/ClaudeCode/comments/1vshkrf/)，0 留言、無「週熱門」標記，score 不可信） | 單一社群回報（無具體量化數字或版本號，僅主觀感受描述） |
-| 2026-08-19（週熱門重浮上，原發時間較早） | 「Claude is Losing Me After Being Heavy User Since Release」：重度使用者發文表達對 Claude 逐漸失望的心情，具體抱怨內容未見於本次摘要 | Reddit r/ClaudeAI（[原文](https://www.reddit.com/r/ClaudeAI/comments/1vqsas9/claude_is_losing_me_after_being_heavy_user_since/)，週熱門標記，達收錄低門檻） | 單一社群回報（僅標題可考，無具體量化數字或版本號） |
+| 2026-08-19（週熱門重浮上，原發時間較早） | 「Claude is Losing Me After Being Heavy User Since Release」：重度使用者發文表達對 Claude 逐漸失望的心情，具體抱怨內容未見於本次摘要 | Reddit r/ClaudeAI（[原文](https://www.reddit.com/r/ClaudeAI/comments/1vqsas9/claude_is_losing_me_after_being_heavy_user_since/)，週熱門標記） | 單一社群回報（僅標題可考，無具體量化數字或版本號） |
 | 2026-08-25 | 「Claude Opus 5 Code Quality: What Sonar's Benchmark Reveals」：程式碼品質分析工具 Sonar 對 Opus 5 生成程式碼進行基準測試，具體結果 ❓ 待查證 ⟨Q-01⟩ | Google News/HackerNoon（僅標題可用） | 第三方工具評測，具體數字未見報導（見 ⟨Q-01⟩）|
-| 2026-08-22（週熱門，08-26 收錄） | 「I spent the morning digging into Anthropic...」：作者懷疑 Anthropic 正在 A/B 測試降低 effort 版本（細節見表下） | Reddit r/artificial（[原文](https://www.reddit.com/r/artificial/comments/1vvjmmo/i_spent_the_morning_digging_into_anthropic_so_i/)，週熱門標記，達收錄低門檻） | 單一社群回報（週熱門達低門檻，惟查證過程無法覆核；細節見表下）|
+| 2026-08-22（週熱門，08-26 收錄） | 「I spent the morning digging into Anthropic...」：作者懷疑 Anthropic 正在 A/B 測試降低 effort 版本（細節見表下） | Reddit r/artificial（[原文](https://www.reddit.com/r/artificial/comments/1vvjmmo/i_spent_the_morning_digging_into_anthropic_so_i/)，週熱門標記） | 單一社群回報（週熱門，惟查證過程無法覆核；細節見表下）|
 | 2026-08-26 | 「I can tell when I'm being A/B tested with nerfd models」：使用者稱可依 Claude 是否跳出「這次 session 表現如何」回饋彈窗，判斷自己是否被分到降規模測試模型版本 | Reddit r/ClaudeCode（[原文](https://www.reddit.com/r/ClaudeCode/comments/1vystw3/i_can_tell_when_im_being_ab_tested_with_nerfd/)，0 留言、無「週熱門」標記，score 不可信） | 單一社群回報（與同日 r/artificial 貼文方向一致，兩者互為呼應但均無具體量化數字或版本號）|
-| 2026-08-26 | 「I miss the old Claude Code」：部落格作者比較年初與近期使用經驗，稱換用新模型後同任務要花更久時間才真正開始寫程式，直指「有大量 pre-work」；未點名具體模型版本 | Hacker News（[原文](https://alexkras.com/focus-is-the-main-feature-why-i-miss-the-old-claude-code/)，HN score 25，達收錄低門檻） | 本訊號群少見附真實 HN 分數的訊號（多數既有訊號 score 不可信）；未指名模型版本，無法歸入特定模型的品質爭議，僅可佐證「泛化變慢」現象持續 |
+| 2026-08-26 | 「I miss the old Claude Code」：部落格作者比較年初與近期使用經驗，稱換用新模型後同任務要花更久時間才真正開始寫程式，直指「有大量 pre-work」；未點名具體模型版本 | Hacker News（[原文](https://alexkras.com/focus-is-the-main-feature-why-i-miss-the-old-claude-code/)，HN score 25） | 本訊號群少見附真實 HN 分數的訊號（多數既有訊號 score 不可信）；未指名模型版本，無法歸入特定模型的品質爭議，僅可佐證「泛化變慢」現象持續 |
 | 2026-08-28 | 「Is it even legal for Anthropic to nerf its models this hard?」：使用者質疑 Opus 5 與 Fable 5 在 Claude Code 中表現遜於預期，指控模型遭「削弱」 | Reddit r/ClaudeCode（[原文](https://www.reddit.com/r/ClaudeCode/comments/1w0t53b/is_it_even_legal_for_anthropic_to_nerf_its_models/)，無「週熱門」標記、score 不可信） | 單一社群回報（無具體量化數字或版本號），與 08-22／08-26「A/B 測試降 effort」主張同方向，僅計入現象延續 |
 
 **懸置細節**
@@ -210,19 +210,19 @@ Claude Code 在 2026 年 3 月至 4 月間出現長達約一個月的效能明�
 
 #### 2026-08-26
 - **「Opus 5 上線後品質感知訊號群」首度出現「懷疑正在被即時 A/B 測試」直接主張**：r/ClaudeCode 貼文「I can tell when I'm being A/B tested with nerfd models」稱可依 Claude 是否跳出「這次 session 表現如何」回饋彈窗判斷自己是否被分到降規模測試模型；同日補記 08-22 r/artificial 週熱門貼文「I spent the morning digging into Anthropic so I could write it up properly」，作者稱查閱一手資料後認為 Anthropic 似乎正在 Claude Code 上 A/B 測試降低 effort 的版本，兩者方向一致；均無具體量化數字或版本號，但與 07-25 官方 migration guide 自承 effort dial 非單調現象呼應，是本訊號群首次從「效能感受變差」進展到「懷疑正在被主動測試」的主張（來源：[Reddit「nerfd models」](https://www.reddit.com/r/ClaudeCode/comments/1vystw3/i_can_tell_when_im_being_ab_tested_with_nerfd/)、[Reddit「digging into Anthropic」](https://www.reddit.com/r/artificial/comments/1vvjmmo/i_spent_the_morning_digging_into_anthropic_so_i/)）
-- **「I miss the old Claude Code」：泛化「新模型變慢」抱怨，附真實 HN 分數**：部落格作者比較年初與近期使用經驗，稱換用新模型後同任務要花更久時間才真正開始寫程式；HN score 25（達收錄低門檻，本訊號群少見的真實分數），惟未點名具體模型版本，僅可佐證「泛化變慢」現象持續，不歸入特定模型爭議（來源：[alexkras.com](https://alexkras.com/focus-is-the-main-feature-why-i-miss-the-old-claude-code/)）
+- **「I miss the old Claude Code」：泛化「新模型變慢」抱怨，附真實 HN 分數**：部落格作者比較年初與近期使用經驗，稱換用新模型後同任務要花更久時間才真正開始寫程式；HN score 25（本訊號群少見的真實分數），惟未點名具體模型版本，僅可佐證「泛化變慢」現象持續，不歸入特定模型爭議（來源：[alexkras.com](https://alexkras.com/focus-is-the-main-feature-why-i-miss-the-old-claude-code/)）
 
 #### 2026-08-25
 - **「Token 消耗異常訊號群」沉寂 43 天後再現**：r/ClaudeCode 貼文「Is Claude Code intentionally burning more tokens now?」質疑近幾個月來 Claude Code 是否比過去消耗更多 token 才能完成相同任務；0 留言、無「週熱門」標記，score 不可信，屬「Token 消耗異常訊號群」自 07-13 以來第十則訊號，僅計入現象延續，不提供新機制性證據（來源：[Reddit](https://www.reddit.com/r/ClaudeCode/comments/1vxw3fi/is_claude_code_intentionally_burning_more_tokens/)）
 
 #### 2026-08-20（週熱門重浮上，原發時間較早）
-- **「Claude is Losing Me After Being Heavy User Since Release」**：r/ClaudeAI 重度使用者發文表達對 Claude 逐漸失望的心情，具體抱怨內容未見於本次摘要；週熱門標記，達收錄低門檻，屬「Opus 5 上線後品質感知訊號群」第十則訊號，僅計入現象延續（來源：[Reddit](https://www.reddit.com/r/ClaudeAI/comments/1vqsas9/claude_is_losing_me_after_being_heavy_user_since/)）
+- **「Claude is Losing Me After Being Heavy User Since Release」**：r/ClaudeAI 重度使用者發文表達對 Claude 逐漸失望的心情，具體抱怨內容未見於本次摘要；週熱門標記，屬「Opus 5 上線後品質感知訊號群」第十則訊號，僅計入現象延續（來源：[Reddit](https://www.reddit.com/r/ClaudeAI/comments/1vqsas9/claude_is_losing_me_after_being_heavy_user_since/)）
 
 #### 2026-08-19
 - **「過去兩週表現反覆不穩」**：r/ClaudeCode 貼文「I've never felt Claude been degraded for so long before」，使用者反映過去兩週 Claude 表現反覆不穩、多半比平常差，詢問是否為運算資源問題；0 留言、無「週熱門」標記，score 不可信，無具體量化數字或版本號，屬「Opus 5 上線後品質感知訊號群」第九則訊號，僅計入現象延續（來源：[Reddit](https://www.reddit.com/r/ClaudeCode/comments/1vshkrf/)）
 
 #### 2026-08-13（補記，08-15 日報收錄）
-- **「幾乎令人惱火」：已依官方建議調整仍無法馴服 Opus 5**：r/ClaudeAI 貼文「Opus 5 is actually almost rage-inducing to use.」，使用者稱已依官方建議調整、試過各種全域 CLAUDE.md 設定，仍無法讓 Opus 5 行為符合期待；週熱門標記，達收錄低門檻，但無具體量化數字，屬「Opus 5 上線後品質感知訊號群」第八則訊號，僅計入現象延續（來源：[Reddit](https://www.reddit.com/r/ClaudeAI/comments/1vn8ml6/opus_5_is_actually_almost_rageinducing_to_use/)）
+- **「幾乎令人惱火」：已依官方建議調整仍無法馴服 Opus 5**：r/ClaudeAI 貼文「Opus 5 is actually almost rage-inducing to use.」，使用者稱已依官方建議調整、試過各種全域 CLAUDE.md 設定，仍無法讓 Opus 5 行為符合期待；週熱門標記，但無具體量化數字，屬「Opus 5 上線後品質感知訊號群」第八則訊號，僅計入現象延續（來源：[Reddit](https://www.reddit.com/r/ClaudeAI/comments/1vn8ml6/opus_5_is_actually_almost_rageinducing_to_use/)）
 
 #### 2026-08-14
 - **「泛化品質下滑」投訴延續，兩則新增均為單一 Reddit 來源**：r/ClaudeCode 同日兩則獨立貼文——「Serious question regarding CC quality」指近 3 個月「大幅」（MASSIVE）品質下滑、不限特定模型、內文提及 Opus 5 尤其令人失望（原文截斷）；「Claude Code got slower since I upgraded from Pro to Max」反映升級後 session 時長變為 3 倍、任務難度與規模未變。兩者皆無「週熱門」標記、score 不可信、無跨平台佐證，屬「Opus 5 上線後品質感知訊號群」第六、七則訊號，僅計入現象延續，未提供新的機制性證據（來源：[Reddit「CC quality」](https://www.reddit.com/r/ClaudeCode/comments/1vo3ygk/serious_question_regarding_cc_quality_no_hate_or/)、[Reddit「got slower」](https://www.reddit.com/r/ClaudeCode/comments/1vo3y1g/claude_code_got_slower_since_i_upgraded_from_pro/)）
@@ -254,7 +254,7 @@ Claude Code 在 2026 年 3 月至 4 月間出現長達約一個月的效能明�
 - **訊號群補上具體技術機制與兩則異常比例回報**：Reddit「cache 命中率下降 20% 導致 agent 帳單翻倍」首度為「計費/計量問題」假說提供技術描述；同日另有「Max 20x 方案週額度不到一天用盡」回報；加上 GitHub issue #41506 回報 Max 方案（$100/月）token 消耗量自 3 月底起在未變更設定下增加約 3-5 倍（累積 54 則留言、29 個讚）；三者與 07-03 的 #38335、07-01 的兩則社群訊號方向一致，訊號密度使定調上調為「結構性未解問題」；官方尚未回應（來源：[GitHub Issues #41506](https://github.com/anthropics/claude-code/issues/41506)、[Reddit cache 命中率](https://www.reddit.com/r/ClaudeCode/comments/1uqsah2/cache_hit_rate_dropping_by_20_doubles_your_agents_bills/)、[Reddit Max 20x 週額度](https://www.reddit.com/r/ClaudeCode/comments/1uqs99q/claude_max_20x_weekly_limit_exhausted_in_less/)）
 
 #### 2026-07-04
-- **Plan mode 逾時自動代答 + 整體變慢投訴延續**：Reddit r/ClaudeCode 用戶（source_count 2）反映 plan mode 逾時後自動選擇非預期選項，並主觀感受近期回應變慢、能力下降；與 07-02 已記錄的 AskUserQuestion 60 秒逾時自動代答爭議（見 [[topics/community-tech-discussions]]）屬同一「逾時代答破壞決策體驗」機制的延續投訴，「變慢/能力下降」部分仍屬主觀感受，無 benchmark 或版本號佐證（來源：[Reddit r/ClaudeCode](https://www.reddit.com/r/ClaudeCode/comments/1und5g7/claude_code_cli_is_getting_harder_to_use_plus/)）
+- **Plan mode 逾時自動代答 + 整體變慢投訴延續**：Reddit r/ClaudeCode 用戶（兩則獨立回報）反映 plan mode 逾時後自動選擇非預期選項，並主觀感受近期回應變慢、能力下降；與 07-02 已記錄的 AskUserQuestion 60 秒逾時自動代答爭議（見 [[topics/community-tech-discussions]]）屬同一「逾時代答破壞決策體驗」機制的延續投訴，「變慢/能力下降」部分仍屬主觀感受，無 benchmark 或版本號佐證（來源：[Reddit r/ClaudeCode](https://www.reddit.com/r/ClaudeCode/comments/1und5g7/claude_code_cli_is_getting_harder_to_use_plus/)）
 
 #### 2026-07-03
 - **Token 消耗異常訊號群成形**：GitHub issue #16856（2.1.1 版 token 消耗達 4 倍以上）與 issue #38335（Max 方案額度自 3/23 起異常消耗，大量留言）同日浮上，與 07-01 的兩則社群訊號（HN「5x 更貴」、$62,021 具名案例）共同構成四個獨立來源的成本異常訊號群；詳見「Token 消耗異常訊號群」子區塊；官方尚未回應（GitHub Issues）

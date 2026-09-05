@@ -217,19 +217,19 @@ Claude Code 是工程師日常編碼工具（CLI），成本隨使用量線性�
 - **[媒體後續報導，無新增具體事實，不改變既有狀態] The Times of India：Microsoft 內部備忘錄再傳對 Anthropic 更多「壞消息」**：報導標題提及 Microsoft 稍早已要求員工停用 Claude Code（呼應上方使用現況表 Microsoft 列，狀態 ❌ 已退出，事件日期 2026-06-21），如今內部備忘錄再度傳出對 Anthropic 不利訊息。**注意**：原文摘要僅提供標題層級資訊，未見備忘錄具體內容或新增事實，本則視為既有「Microsoft 減少對 Claude 依賴」敘事的後續媒體關注度延續，非獨立新增退出/縮減事件，不更新使用現況表狀態（Google News/The Times of India）
 
 #### 2026-08-04
-- **[媒體二次確認，非新增合作事實] Fierce Biotech 跟進報導 ICON 與 Anthropic 臨床試驗合作**：Fierce Biotech（source_count=2）報導與 07-29 Clinical Trials Arena 首報同一事件，未見新增合作細節，詳見上方使用現況表 ICON 列更新（Google News/Fierce Biotech）
+- **[媒體二次確認，非新增合作事實] Fierce Biotech 跟進報導 ICON 與 Anthropic 臨床試驗合作**：Fierce Biotech 報導與 07-29 Clinical Trials Arena 首報同一事件，未見新增合作細節，詳見上方使用現況表 ICON 列更新（Google News/Fierce Biotech）
 
 ### 2026-07
 
 #### 2026-07-29
-- **ICON 與 Anthropic 合作，將 Claude AI 整合進臨床試驗流程**：Clinical Trials Arena（source_count=2）報導，詳見上方使用現況表新增列（Google News/Clinical Trials Arena）
+- **ICON 與 Anthropic 合作，將 Claude AI 整合進臨床試驗流程**：Clinical Trials Arena 報導，詳見上方使用現況表新增列（Google News/Clinical Trials Arena）
 - **[市場反應追蹤，非新增合作事實] Cognizant（CTSH）股價於 07-28 合作公告後第二日再漲 8%**：TipRanks 報導 Cognizant 股價在與 Anthropic 的 Claude 合作宣布後第二天上漲 8%，為既有 07-28 Cognizant 全球首要夥伴升級案（見上方使用現況表 Cognizant 列）的投資人反應追蹤，僅標題可用，具體合作細節未見新增（Google News/TipRanks）
 
 #### 2026-07-28
 - **Cognizant 與 Anthropic 擴大既有合作，升級為 Global Premier Partner**：Anthropic Blog 官方公告，Cognizant 將 Claude 用於自身建置並為客戶運行的系統，橫跨製造業、生命科學、保險等產業，並將 Claude 嵌入自身商業與工程平台、打造「Claude 認證」（Frontier Certified）人才梯隊，同步升級為 Claude Partner Network 的全球首要夥伴（Global Premier Partner）；延續近期 TCS（06-11）、DXC（06-12）等頂尖 IT 服務商全面深化合作模式（推論），詳見上方使用現況表新增列與 [[topics/anthropic-business]]（Anthropic Blog https://www.anthropic.com/news/cognizant-anthropic；Google News/Seeking Alpha 同日跟進，未見新增細節）
 
 #### 2026-07-21
-- **[❓ 未確認，單一非主流媒體，疑似與蒸餾指控混淆] tech-insider.org：阿里巴巴據稱因偵測 2.5萬假帳號封鎖 Claude Code**：tech-insider.org（source_count=2）報導阿里巴巴以偵測到 2.5 萬個虛假帳號為由封鎖 Claude Code 存取。**注意**：阿里巴巴已於 07-03/07-10 因「疑似後門風險」封鎖 Claude Code 並改用 Qoder（見上方使用現況表 Alibaba 列，狀態 ❌ 已退出）；本則報導的「2.5萬假帳號」數字與 06-25 Anthropic 指控阿里巴巴蒸餾攻擊所用的假帳號數字（詳見 [[topics/competitor-landscape]]）完全相同，高度疑似報導方將「Alibaba 封鎖 Claude Code」與「Anthropic 指控 Alibaba 蒸餾攻擊」兩起不同事件的細節混淆或誤植；來源為單一非主流媒體且細節有限，暫不視為新增獨立事件或狀態變更，僅於既有 Alibaba 列備註補充查證註記（tech-insider.org）
+- **[❓ 未確認，單一非主流媒體，疑似與蒸餾指控混淆] tech-insider.org：阿里巴巴據稱因偵測 2.5萬假帳號封鎖 Claude Code**：tech-insider.org 報導阿里巴巴以偵測到 2.5 萬個虛假帳號為由封鎖 Claude Code 存取。**注意**：阿里巴巴已於 07-03/07-10 因「疑似後門風險」封鎖 Claude Code 並改用 Qoder（見上方使用現況表 Alibaba 列，狀態 ❌ 已退出）；本則報導的「2.5萬假帳號」數字與 06-25 Anthropic 指控阿里巴巴蒸餾攻擊所用的假帳號數字（詳見 [[topics/competitor-landscape]]）完全相同，高度疑似報導方將「Alibaba 封鎖 Claude Code」與「Anthropic 指控 Alibaba 蒸餾攻擊」兩起不同事件的細節混淆或誤植；來源為單一非主流媒體且細節有限，暫不視為新增獨立事件或狀態變更，僅於既有 Alibaba 列備註補充查證註記（tech-insider.org）
 
 #### 2026-07-15
 - **[企業採購認知層，傳聞，2026-09-05 自 [[topics/competitor-landscape]] 移入] Yahoo Finance：Microsoft 據報訓練業務團隊向客戶淡化 OpenAI 與 Anthropic 的競爭優勢**：延續 Microsoft 06-21 退出 Claude Code（成本）、改推 GitHub Copilot CLI（05-15 內部切換，見上方使用現況表 Microsoft 兩列）的既有軌跡，本次從「產品替代」延伸至「銷售話術」層面，直接鎖定客戶認知層，可能影響企業採購決策（推論，未經 Microsoft 官方證實；僅標題可用，具體話術內容與涵蓋客戶範圍未見細節）（Google News/Yahoo Finance）
@@ -250,7 +250,7 @@ Claude Code 是工程師日常編碼工具（CLI），成本隨使用量線性�
 - **Alibaba 禁令生效日確認為 7/10**：The Indian Express 跟進報導，確認阿里巴巴將於 2026-07-10 起正式禁止員工使用 Claude Code，作為美中 AI 競爭加劇下的因應措施；提供 07-03 Reuters 獨家報導以來首個具體生效日期，此前僅知禁令已宣布但無明確時間點；事件日期欄已由報導日 07-03 更新為生效日 07-10（The Indian Express https://indianexpress.com/article/technology/artificial-intelligence/alibaba-ban-claude-code-us-china-ai-10772429/）
 
 #### 2026-07-03
-- **Alibaba 傳出禁止員工職場使用 Claude Code（疑似後門風險）**：Reuters 獨家報導（HN score 313，source_count 5），Alibaba 以「疑似後門風險」為由禁止員工在職場使用 Claude Code；指控來源未經 Anthropic 證實。是繼 Microsoft（成本，06-21）、JPMorgan Chase 香港（出口管制，06-18）後第三個具名企業退出案例，也是首次以「安全疑慮」為退出理由，區別於此前的成本與法規兩類驅動因素；此事件亦與 6/24–6/29 Anthropic 指控阿里巴巴大規模蒸餾攻擊 Claude 模型的爭端同期發生，雙方關係持續緊張（詳見 [[topics/anthropic-business]] 相關時序、安全面向見 [[topics/ai-agent-safety]]）（Reuters https://www.reuters.com/world/china/alibaba-ban-claude-code-workplace-over-alleged-backdoor-risks-source-says-2026-07-03/）
+- **Alibaba 傳出禁止員工職場使用 Claude Code（疑似後門風險）**：Reuters 獨家報導（HN score 313，多家媒體跟進），Alibaba 以「疑似後門風險」為由禁止員工在職場使用 Claude Code；指控來源未經 Anthropic 證實。是繼 Microsoft（成本，06-21）、JPMorgan Chase 香港（出口管制，06-18）後第三個具名企業退出案例，也是首次以「安全疑慮」為退出理由，區別於此前的成本與法規兩類驅動因素；此事件亦與 6/24–6/29 Anthropic 指控阿里巴巴大規模蒸餾攻擊 Claude 模型的爭端同期發生，雙方關係持續緊張（詳見 [[topics/anthropic-business]] 相關時序、安全面向見 [[topics/ai-agent-safety]]）（Reuters https://www.reuters.com/world/china/alibaba-ban-claude-code-workplace-over-alleged-backdoor-risks-source-says-2026-07-03/）
 
 ### 2026-06
 
