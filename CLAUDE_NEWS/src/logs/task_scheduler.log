@@ -519,3 +519,4 @@
 [Fri 2026/09/04 22:05:43.00 UTC] === Pipeline aborted (cloud, 22:00 UTC shift) ===
 [Sat 2026/09/05 01:38:05.00 UTC] Watchdog push SENT - 每日新聞 2026-09-04 缺件：抓料、日報。本機跑 /news-pipeline 2026-09-04 補
 [cloud weekly-wiki-lint-cloud STARTED 2026-09-05T03:04:11Z]
+[Sat 2026/09/05 03:39:56.00 UTC] Weekly lint OK (cloud) - 修 30 頁（矛盾 9 處／呈現品質 24 頁次／措辭鐵則 6 處／懸置配對 3 處退回修復），6k 補連結 10 處＋ignore 4 對，熱度降溫 2 條，5g 停滯 2 頁均已處置；待使用者裁示 17 項（含 6a 矛盾 3 項、runbook 步驟表不同步、5a 指令缺 --any、轉知帳本值域缺口）；5b/5c/5e/5h 雲端 egress 封鎖跳過（5c 佇列 68→83，淨增 8 筆/週）；gate 測試全綠 - web build 放行（529 例），build 斷鏈 WARN 16／錨點 WARN 0（與 lint 前基線相同，零新增），渲染層驗收 2 頁通過，單一 push 完成
