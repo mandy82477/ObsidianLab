@@ -49,17 +49,19 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 | 對手 | 最新動態（日期） | 衝擊面 | 衝擊度 | 這個消息有多硬 |
 |---|---|---|---|---|
 | **Meta（Muse Code／Muse Glimmer）** | 結束 beta、三訂閱層主打價格戰（09-01）；旗艦模型 Muse Glimmer 開源（08-11）→ 想比價卻比不了，月費未公布 | 定價 | 🔴 | 跨 2 媒體（The New Stack／Intelligent Living），月費與 20x 層費率均缺 |
-| **DeepSeek** | Harness 開源＋V4-Pro 上線（08-14）、中國市場「免費夠用」論述（08-31）→ 低價層已有可用替代 | 定價 | 🔴 | VentureBeat 2 來源；V4-Pro 費率未載 ❓ 待查證 ⟨Q-01⟩ |
-| **OpenAI（Codex CLI／ChatGPT Work・GPT-5.6）** | 「零資料保留」承諾搶企業客戶（08-20）；各基準互有勝負、黏著度仍 Claude 領先（08-13 查證）→ 選型看任務類型，不看單一分數 | 能力 | 🔴 | 第三方彙整＋官方基準，**不回訪**；當時數字見「查證快照」節 |
-| **Microsoft／GitHub** | Copilot 終結「無限量」方案（08-17）；HydraFusion 多數基準降本、品質僅一項打平（09-04）→ 降本宣稱要先問品質在哪個基準測的 | 定價 | 🔴 | VentureBeat 標題層級，降幅數字與是否產品化均未見；自研模型取代仍屬傳聞（07-07，2 來源，官方無回應） |
+| **DeepSeek** 🏢 | Harness 開源＋V4-Pro 上線（08-14）、中國市場「免費夠用」論述（08-31）→ 低價層已有可用替代 | 定價 | 🔴 | VentureBeat 2 來源；V4-Pro 費率未載 ❓ 待查證 ⟨Q-01⟩ |
+| **OpenAI（Codex CLI／ChatGPT Work・GPT-5.6）** 🏢 | 「零資料保留」承諾搶企業客戶（08-20）；各基準互有勝負、黏著度仍 Claude 領先（08-13 查證）→ 選型看任務類型，不看單一分數 | 能力 | 🔴 | 第三方彙整＋官方基準，**不回訪**；當時數字見「查證快照」節 |
+| **Microsoft／GitHub** 🏢 | Copilot 終結「無限量」方案（08-17）；HydraFusion 多數基準降本、品質僅一項打平（09-04）→ 降本宣稱要先問品質在哪個基準測的 | 定價 | 🔴 | VentureBeat 標題層級，降幅數字與是否產品化均未見；自研模型取代仍屬傳聞（07-07，2 來源，官方無回應） |
 | **Zhipu Z.AI** | GLM-5.3 主打資安、稱抓 bug 優於 Anthropic 與 OpenAI（08-17）→ 靠 Claude 做安全審查的人值得找機會實測對照 | 能力 | 🔴 | 2 家媒體（The Register／VentureBeat），無方法論、無 benchmark 數字 |
 | **Moonshot AI（Kimi K3）** | 權重開源，效果與 Fable 5 相當、成本約三分之一但慢約 4 倍（07-27）→ 可離線批次的工作有便宜選項 | 能力 | 🔴 | The New Stack 量化實測＋官方一手規格；官方自陳整體仍落後 Fable 5 |
-| **Cursor** | OpenAI 傳 11/12 斷供（09-04）→ 只影響 Cursor 使用者，Claude Code 使用者不必動 | 生態 | 🟡 | 單一 Reddit 週熱門討論串，無官方、無主流媒體 |
-| **Google** | 低價企業方案劍指 Anthropic 與 Microsoft（08-27，08-31 再報）→ 動到的是企業採購的價格帶，個人使用者現在不必動 | 定價 | 🟡 | CNBC 兩度報導；方案名稱、費率、與 Antigravity 的關係全缺 🔎 查無官方 ⟨Q-06⟩ |
+| **Cursor** 🏢 | OpenAI 傳 11/12 斷供（09-04）→ 只影響 Cursor 使用者，Claude Code 使用者不必動 | 生態 | 🟡 | 單一 Reddit 週熱門討論串，無官方、無主流媒體 |
+| **Google** 🏢 | 低價企業方案劍指 Anthropic 與 Microsoft（08-27，08-31 再報）→ 動到的是企業採購的價格帶，個人使用者現在不必動 | 定價 | 🟡 | CNBC 兩度報導；方案名稱、費率、與 Antigravity 的關係全缺 🔎 查無官方 ⟨Q-06⟩ |
 | **Alibaba（Qwen3.8）** | 免費開放「最強」模型、稱幾乎追平 Claude（08-04）→ 低價層再多一個免費選項，能力宣稱待證 | 能力 | 🟡 | Decrypt 單一來源，無模型名稱、無 benchmark（🔎 見下方定價細節） |
 | **Kiro（AWS）** | spec-driven 編碼 agent，Free 至 Power $200 五級訂閱（08-03）→ 已在 AWS 生態的人可直接比價 | 定價 | 🟡 | 官網定價已查證（08-13）；標題並列的 80.8% SWE-bench 歸屬未獲證實 |
 | **OpenCode** | 開源免費替代，社群採用規模仍是主要訊號（08-01）→ 想離開訂閱制時的第一個候選 | 定價 | 🟡 | 下載量倍數的統計方法未揭露，該事實與其標記已移交 [[entities/opencode]] |
 | **騰訊 Hy4** | 開放權重 770B、不含視覺（08-29）→ 尚無對比對象，先不列入選型 | 能力 | ⚪ | Simon Willison 轉引標題，無 benchmark、無定價 |
+
+**🏢 圖例**：具名企業採用記錄（見 [[topics/enterprise-tool-tracker]]）或官方企業方案，缺一不標。企業評估候選名單：雷達表帶 🏢 者；具名採用／退出記錄見 [[topics/enterprise-tool-tracker]]。
 
 **懸置細節**
 - ⟨Q-06⟩ 🔎 **查無官方**（標 2026-08-29｜查 Google、企業定價、Antigravity｜複 2026-09-12）：Google 低價 AI 方案的方案名稱、費率、與 Antigravity 的關係均未見；08-31 CNBC 影音再報同一敘事，無新增數字。
@@ -80,20 +82,21 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 ## 競品定價對照
 
 > 這裡回答「競品各多少錢」。Claude 自身方案價格不重複列，完整版本見 [[entities/pricing]]「現行方案一覽」。數字均回溯 `news/` 原文查證；查無具體公開數字者依懸置標記語法標示，不可假設。
+> **vs Claude** 欄基準取自 [[entities/pricing]] 2026-08-20 牌價（Sonnet 5 $2/$10 per Mtok），比例隨兩邊調價變動；訂閱制或免費工具無按 token 計費基礎，標 `—` 並註明理由。
 
-| 工具/模型 | 定價 | vs Claude 定位 | 來源日期 |
-|---------|------|--------------|---------|
-| Muse Code / Muse Spark 1.2 / Muse Glimmer（Meta）| 按量計費：標準層 $1.25／$4.25、Contributor 層 $0.10／$0.20（每 M token）；Glimmer 開源免費；09-01 三訂閱層月費未公布 | 明確對標 Claude Code 與 Codex，第一步策略是價格而非能力 | 2026-09-01（定價數字為媒體整理，2026-08-13 查證）|
-| DeepSeek（V4-Pro／V4 Flash／Lindy 案例）| V4-Pro 費率未見掛牌價；V4 Flash 僅見「成本較 Claude API 降低逾 100 倍」定性描述 | 低價 Flash／高價 Pro 雙軌（推論）；Lindy 全量切換每月省數百萬美元 | 2026-08-14（Google News/VentureBeat）|
-| Alibaba「最強」模型（名稱未指明）| 免費開放 | Decrypt 稱效能「幾乎追平」Claude 與 ChatGPT，未提供 benchmark 或模型名稱｜🔎 查無官方 ⟨Q-03⟩ | 2026-08-04（Google News/Decrypt）|
-| Kiro（AWS） | Free（50 credits）／Pro $20／Pro+ $40／Pro Max $100／Power $200，每人每月 | AWS 旗下 spec-driven 編碼 agent（IDE/CLI/Web）；$200 為其自身頂層方案，非跨產品比較 | 2026-08-03（[kiro.dev](https://kiro.dev/)，2026-08-13 查證定價）|
-| OpenCode | 免費（開源）| 開源免費 vs 訂閱付費（$20/月）的採用落差，是本頁最早的分流訊號｜🔎 查無官方 ⟨Q-04⟩ | 2026-08-01（Google News/tech-insider.org）|
-| Antigravity（Google） | Free（20 次/日）／Pro ~$20／Ultra ~$100／Ultra Max $200（原 $249.99 調降）| 依附 Google AI 訂閱框架；與 Cursor、Claude Code 並列比較 | 2026-07-23（第三方比較站彙整，2026-08-13 查證）|
-| Cline | 免費（Free）| 開源 VS Code 擴充，定位在 Claude Code（$20/月）與 GitHub Copilot（$10/月）之間的免費替代｜🔎 查無官方 ⟨Q-05⟩ | 2026-07-22（Google News/tech-insider.org）|
-| Cursor | Hobby 免費／Pro $20／Pro+ $60／Ultra $200／Teams $40/user／Enterprise 客製 | 已查證：SpaceX 收購後未見因收購而生的定價異動，6 級方案為既有架構延續 | 2026-08-13 查證（收購確認 2026-06-17）|
-| OpenAI Codex CLI | Free（試用）／Go $8／Plus $20／Pro 5x $100／Pro 20x $200／Business $30/user／Enterprise 客製 | 已查證：2026-04-02 起改按 token 用量計費，非固定訊息數 | 2026-08-13 查證（多方比較站彙整）|
-| GPT-5.6（OpenAI API） | 已查證：Luna 降 80%（$0.20／$1.20）；Terra 降 20%（$2／$12）；Sol 未降價但提速 2.5 倍 | OpenAI 官方明確訴求以更低價格對打 Anthropic | 2026-07-30（OpenAI 官方；2026-08-13 查證數字）|
-| Gemini CLI / Gemini 系列 | 已查證：Free $10 一次性／Pro $60/月／Max $200/月；2026-06-18 起免費層併入 Antigravity CLI | 免費層緊縮後，個人開發者需轉 Antigravity CLI 或付費 API key | 2026-08-13 查證（多方比較站彙整）|
+| 工具/模型 | 定價 | vs Claude | vs Claude 定位 | 來源日期 |
+|---------|------|-----------|--------------|---------|
+| Muse Code / Muse Spark 1.2 / Muse Glimmer（Meta）| 按量計費：標準層 $1.25／$4.25、Contributor 層 $0.10／$0.20（每 M token）；Glimmer 開源免費 | 標準層≈0.43×、Contributor 層≈0.02×（對 Sonnet 5 $10/Mtok 輸出）；Glimmer 免費 | 明確對標 Claude Code 與 Codex，第一步策略是價格而非能力 | 2026-09-01（定價數字為媒體整理，2026-08-13 查證）|
+| DeepSeek（V4-Pro／V4 Flash／Lindy 案例）| V4-Pro 費率未見掛牌價；V4 Flash 僅見「成本較 Claude API 降低逾 100 倍」定性描述 | —（未見掛牌價；「降逾 100 倍」宣稱未指明對比模型，無法算倍數） | 低價 Flash／高價 Pro 雙軌（推論）；Lindy 全量切換每月省數百萬美元 | 2026-08-14（Google News/VentureBeat）|
+| Alibaba「最強」模型（名稱未指明）| 免費開放 | 免費（無倍數可算） | Decrypt 稱效能「幾乎追平」Claude 與 ChatGPT，未提供 benchmark 或模型名稱｜🔎 查無官方 ⟨Q-03⟩ | 2026-08-04（Google News/Decrypt）|
+| Kiro（AWS） | Free（50 credits）／Pro $20／Pro+ $40／Pro Max $100／Power $200，每人每月 | —（訂閱制，非按 token 計費，不可比） | AWS 旗下 spec-driven 編碼 agent（IDE/CLI/Web）；$200 為其自身頂層方案，非跨產品比較 | 2026-08-03（[kiro.dev](https://kiro.dev/)，2026-08-13 查證定價）|
+| OpenCode | 免費（開源）| —（免費開源工具，實際成本取決於所接模型） | 開源免費 vs 訂閱付費（$20/月）的採用落差，是本頁最早的分流訊號｜🔎 查無官方 ⟨Q-04⟩ | 2026-08-01（Google News/tech-insider.org）|
+| Antigravity（Google） | Free（20 次/日）／Pro ~$20／Ultra ~$100／Ultra Max $200（原 $249.99 調降）| —（訂閱制，不可比） | 依附 Google AI 訂閱框架；與 Cursor、Claude Code 並列比較 | 2026-07-23（第三方比較站彙整，2026-08-13 查證）|
+| Cline | 免費（Free）| —（免費開源工具） | 開源 VS Code 擴充，定位在 Claude Code（$20/月）與 GitHub Copilot（$10/月）之間的免費替代｜🔎 查無官方 ⟨Q-05⟩ | 2026-07-22（Google News/tech-insider.org）|
+| Cursor | Hobby 免費／Pro $20／Pro+ $60／Ultra $200／Teams $40/user／Enterprise 客製 | —（訂閱制，不可比） | 已查證：SpaceX 收購後未見因收購而生的定價異動，6 級方案為既有架構延續 | 2026-08-13 查證（收購確認 2026-06-17）|
+| OpenAI Codex CLI | Free（試用）／Go $8／Plus $20／Pro 5x $100／Pro 20x $200／Business $30/user／Enterprise 客製 | —（訂閱制，不可比） | 已查證：2026-04-02 起改按 token 用量計費，非固定訊息數 | 2026-08-13 查證（多方比較站彙整）|
+| GPT-5.6（OpenAI API） | 已查證：Luna 降 80%（$0.20／$1.20）；Terra 降 20%（$2／$12）；Sol 未降價但提速 2.5 倍 | Luna≈0.12×、Terra≈1.2×（對 Sonnet 5 $10/Mtok 輸出）；Sol 未提新價 | OpenAI 官方明確訴求以更低價格對打 Anthropic | 2026-07-30（OpenAI 官方；2026-08-13 查證數字）|
+| Gemini CLI / Gemini 系列 | 已查證：Free $10 一次性／Pro $60/月／Max $200/月；2026-06-18 起免費層併入 Antigravity CLI | —（訂閱制，不可比） | 免費層緊縮後，個人開發者需轉 Antigravity CLI 或付費 API key | 2026-08-13 查證（多方比較站彙整）|
 
 **競品定價細節**
 - ⟨Q-01⟩ ❓ **待查證**（標 2026-08-14｜查 DeepSeek V4-Pro、V4 Flash）：僅悉較 V4 Flash 定價更高，具體費率未見報導；已掃日報至 2026-09-03 無後續，官方頁面未查證。
@@ -205,11 +208,10 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 ## 時序
 
 ### 2026-09-04
-- **Cursor**：Reddit 週熱門討論串稱 OpenAI 將於 11/12 終止對 Cursor 的模型供應合約，理由與控制權變更有關（Reddit/r/artificial · 週熱門）
-- **GitHub**：VentureBeat 報導 HydraFusion 多數基準大幅壓低編碼成本，品質僅單一基準與對照組打平（Google News/VentureBeat）
+- **Cursor**：斷供傳聞理由指向控制權變更（Reddit/r/artificial · 週熱門）
 
 ### 2026-09-01
-- **Meta**：Muse Code 結束 beta、推出三個訂閱層級主打價格戰，月費未公布；另一篇聚焦其「20x」折扣層對比 Claude Code 加購方案（Google News/The New Stack；Google News/Intelligent Living）
+- **Meta**：另一篇報導聚焦其「20x」折扣層對比 Claude Code 加購方案（Google News/The New Stack；Google News/Intelligent Living）
 
 ### 2026-08-31
 - **DeepSeek**：36Kr 報導中國市場出現以 Harness 為核心的免費替代方案討論，質疑付費編碼 agent 訂閱是否仍值得（Google News/36Kr）
