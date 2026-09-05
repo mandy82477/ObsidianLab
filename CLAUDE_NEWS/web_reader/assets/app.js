@@ -874,6 +874,61 @@
     return html.replace(/<p><strong>([^<]*：)<\/strong>/g, '<p><strong class="run-in-lead">$1</strong>');
   }
 
+  // ── 懸置標記的渲染層摺疊 ────────────────────────────────────────────────
+  // markdown 來源不動（Obsidian 與 scripts/check_pending_markers.py 照舊吃四段式），
+  // 只在網站上把「機器區」收起來：`❓ **待查證**（標 …｜查 …｜複 …｜訊 …）｜**題目**：內文`
+  // 渲染成「❓ 待查證 ⋯ 題目：內文」，metadata 進 title（hover 可看）。
+  // 語法規格見 `.claude/rules/wiki-ingest-format.md`「懸置標記語法」節；
+  // 本組 regex 與該節的機械契約由 src/tests/test_pending_render_contract.py 對帳。
+  const PENDING_KINDS = '待查證|查無官方';
+  const PENDING_META_FIELDS = ['標', '查', '複', '訊'];
+  // marked 產出的形狀：<strong>待查證</strong>（標 2026-08-07｜查 A、B｜複 …）｜<strong>題目</strong>：
+  // 類別詞的粗體是規格要求，但表格儲存格裡的存量寫法有不加粗的，兩種都要吃；
+  // 括號必須以「標」或「查」開頭才算 metadata，否則會誤吞正常的括號補述。
+  const PENDING_META_RE =
+    /((?:<strong>)?(?:待查證|查無官方)(?:<\/strong>)?)（((?:標|查)[^）]*)）(｜)?/g;
+  const QID_RE = /(<li>\s*)?⟨Q-(\d+)⟩/g;
+
+  // metadata 括號內含 wikilink 按鈕（探針常寫成 [[topics/x]]）——title 只能放純文字，
+  // 故先剝掉標籤再入 title，按鈕本身連同括號一起收起來。
+  function pendingMetaTitle(inner) {
+    return inner.replace(/<[^>]*>/g, '').replace(/\s+/g, ' ').trim();
+  }
+
+  function collapsePendingMeta(html) {
+    return html.replace(PENDING_META_RE, (_, kind, inner, bar) => {
+      const title = pendingMetaTitle(inner);
+      // 原文的「｜」是題目分隔符，留著；沒有它的（細節區條列）後面直接接「：」，
+      // 此時不補空白，否則會渲染成「查無官方⋯ ：」那樣的懸空空格。
+      return `${kind}<span class="pending-meta" tabindex="0" title="${esc(title)}">⋯</span>${bar || ''}`;
+    });
+  }
+
+  // 表格儲存格裡的 ⟨Q-nn⟩ 短標記：把同頁「懸置細節」區該筆的首句掛進 title，
+  // 讀者不必為了一個代號捲到頁尾。細節區條列本身（<li>⟨Q-nn⟩…）保留原樣不加 title。
+  function pendingDetailMap(md) {
+    const map = {};
+    const re = /^\s*-\s*⟨Q-(\d+)⟩\s*(.+)$/gm;
+    let m;
+    while ((m = re.exec(md || '')) !== null) {
+      const plain = m[2]
+        .replace(/\[\[(?:[^\]|]+\|)?([^\]]+)\]\]/g, '$1')
+        .replace(/\*{1,3}([^*]+)\*{1,3}/g, '$1')
+        .replace(/（(?:標|查)[^）]*）/g, '')
+        .trim();
+      const first = plain.split(/[。\n]/)[0].trim();
+      if (first) map[m[1]] = first.slice(0, 200);
+    }
+    return map;
+  }
+
+  function annotateQids(html, detailMap) {
+    return html.replace(QID_RE, (whole, liPrefix, n) => {
+      if (liPrefix || !detailMap[n]) return whole;
+      return `<span class="pending-qid" tabindex="0" title="${esc(detailMap[n])}">⟨Q-${n}⟩</span>`;
+    });
+  }
+
   function renderMarkdownBody(raw, opts = {}) {
     let md = raw || '';
     md = md.replace(/^#[^#][^\n]*\n/, '');
@@ -883,8 +938,10 @@
     if (typeof marked === 'undefined') {
       return `<pre style="white-space:pre-wrap;font-size:13px">${esc(md)}</pre>`;
     }
+    const detailMap = pendingDetailMap(md);
     md = md.replace(/\[\[([^\]]+)\]\]/g, (_, p) => `<WIKILINK>${p}</WIKILINK>`);
-    return addHeadingIds(markRunInLeads(linkifyWikilinks(marked.parse(md))));
+    let html = addHeadingIds(markRunInLeads(linkifyWikilinks(marked.parse(md))));
+    return annotateQids(collapsePendingMeta(html), detailMap);
   }
 
   // 這版 marked 不產生標題 id（headerIds 已移除），所以 md 內的 `[文字](#錨點)` 在站上

@@ -1297,6 +1297,37 @@
         "market-signals"
       ],
       "_note": "2026-09-05 加入。alternation 兩支各對應一端：規格端釘判讀標題原形（機械契約字串表），程式端釘 regex 常數名；第二個 pattern 釘兩端都得認得同一份來源頁。"
+    },
+    {
+      "name": "懸置標記渲染契約（規格端）：wiki-ingest-format.md 四段形狀",
+      "assertion": "all_contain",
+      "files": [
+        ".claude/rules/wiki-ingest-format.md"
+      ],
+      "patterns": [
+        "待查證",
+        "查無官方",
+        "標 YYYY-MM-DD",
+        "查 A、B",
+        "複 YYYY-MM-DD",
+        "訊 YYYY-MM-DD",
+        "⟨Q-nn⟩",
+        "括號寫在粗體外"
+      ]
+    },
+    {
+      "name": "懸置標記渲染契約（消費端）：app.js 摺疊 regex 與接線",
+      "assertion": "all_contain",
+      "files": [
+        "web_reader/assets/app.js"
+      ],
+      "patterns": [
+        "const PENDING_KINDS = '待查證\\|查無官方'",
+        "const PENDING_META_RE =",
+        "const QID_RE = /",
+        "collapsePendingMeta",
+        "annotateQids"
+      ]
     }
   ],
   "coupling_hints": {

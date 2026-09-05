@@ -5709,3 +5709,18 @@ GH Actions 抓料排 10:23 UTC，到 14:45 UTC 仍未落地（+4.4 小時且持�
 **實作前後：** 587 → 421 行（含 2026-06 時段蒸餾封存 30 行原文至 archive `## 2026-06`）；跑錯家的五塊內容中，同記者的三塊直接寫進 `ai-talent-flow`／`anthropic-business`／`enterprise-tool-tracker`，跨記者的四筆走 `pending_handoffs.py` 登帳（H-ab0af9 安全政策／H-b591b1 功能／H-abb47e 社群／H-b432d2 功能），**帳本開完才刪本頁段落**。
 
 **留給主編：** `wiki/index.md` 該列摘要格的鉤子句仍是 04–05 月舊事實（Microsoft 退出、OpenCode 157K），與新首列（Meta 價格戰）已失步；規則第 9 條明訂記者不得自行改 index，故此處只作轉知。建議新鉤子見本輪實作回報。
+
+## 2026-09-05 Query：「內部用語外洩有沒有比較好的方式避免」→ 三層防線（家／閘／渲染）
+
+**點出什麼：** 競品頁健檢的兩輪冷讀者都抓到同一件事——讀者看不懂「12 列上限汰出」「不回訪」「已移交」「每日抄錄」「模式庫」「二手」，以及懸置標記的 `（標…｜查…｜複…）`。使用者不問「幫我改這幾句」，問的是**怎樣之後不再犯**。
+
+**根因：** 規則早就有了。`.claude/rules/wiki-ingest-format.md`「無維運術語洩漏」列與 `.claude/rules/wiki-reporter-shared.md`「派工過程不上頁」都明文禁止，但兩條都**沒有偵測器**——本庫病史的標準形狀（承諾有了、執行點沒有）。而且光靠禁止不夠：有些備忘**刪不掉**（這張表為什麼只留 12 列、這節不回訪到期日是哪天），沒有家就只能留在正文；懸置標記的 metadata 也不是能刪的東西，它是掃描器的輸入。三個症狀三個成因，所以是三層。
+
+**處置：**
+1. **給備忘一個家**——`scripts/build_web.py` 的 `read_md()`（唯一讀檔漏斗）加 `strip_editorial_comments()`，剝 Obsidian `%% … %%` 與 HTML 註解。原本**完全沒剝**，備忘會直接進 `markdown` 欄位、`search-index.json` 與日報 digest。regex 非貪婪且不跨越另一組 `%%`，否則兩則相鄰備忘中間的正文會被吞掉。規則寫進 `.claude/rules/wiki-reporter-shared.md`「維運備忘的家」（判斷式：這句話是讀者需要知道的，還是我需要記得的），語法表兩處（根 `CLAUDE.md`、`wiki/CLAUDE.md`）各補一列——前者原本明文「表外語法一律不得寫入 wiki/」，不補等於禁止。
+2. **機械閘**——`scripts/check_reader_language.py`，22 個禁詞住腳本頂部常數（單一來源，每詞附「為什麼是內部語言」＋讀者語言替代詞，`--list` 可印），跳過 frontmatter／code fence／`%%`／HTML 註解。首跑命中 **485 筆／40 頁**（最重：ai-agent-safety 109、community-tech-discussions 84、community-tech-patterns 60），照 `data/pending-legacy-baseline.json` 的先例存量寫進 `data/reader-language-baseline.json` **只擋新增**，存量印 WARN 摘要、每週於 `/wiki-lint` 6l 清 2 頁。留白名單 `data/reader-language-allow.json`（page 與 term 不得同時 `*`）。
+3. **渲染層摺疊**——`web_reader/assets/app.js` 把 `❓ **待查證**（標 …｜查 …｜複 …）` 渲染成「❓ 待查證 ⋯」，metadata 進 hover title；表格短標記 `⟨Q-nn⟩` 掛上同頁細節區首句。**markdown 一字不改**（Obsidian 與 `check_pending_markers.py` 照舊吃四段式）。渲染層是第三個吃這份語法的地方，故加 `src/tests/test_pending_render_contract.py`（7 例）並登記 registry sync_pair 規格端／消費端各一組——規格改了而渲染層沒跟，症狀是「網站上靜默不再摺疊」，沒有任何既有檢查會轉紅。
+
+**示範頁：** `topics/competitor-landscape` 的 7 句改為讀者語言（「受 12 列上限汰出」→「未列入上表（⚪ 級，動態仍記在下方時序）」＋`%%` 備忘；「已移交 X」→「完整脈絡見 X」；`## 查證快照（2026-08-13，不回訪）`→`（2026-08-13）`，到期日與「不回訪」進 `%%`），該頁清乾淨後從基線移除，**40 → 39 頁**。
+
+**結果：** `check_rules.py` ✅ 零錯誤（92 組配對）｜`lint_health.py mutate` ✅ 85 組全數轉紅｜`run_tests.py` exit 0｜`build_web.py` 錨點 WARN 0（未增加）｜preview 實開競品頁與 pricing 頁確認：metadata 12 處全數摺疊、正文零外洩、`%%` 備忘未上站、樣式為 hairline dotted／無陰影／無圓角。
