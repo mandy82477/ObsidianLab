@@ -27,7 +27,7 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 **狀態：** ongoing（08-14 官方風險報告揭露新對齊疑慮；08-29 新增「自動化研究員」對齊維護研究，08-31 補上量化數字）
 **領域：** 🏛️ 政策/安全
 **開始日期：** 2026-06-04
-**最後更新：** 2026-09-04
+**最後更新：** 2026-09-05
 **最後新聞更新：** 2026-08-31
 
 > **最新動態**（2026-08-31，The New Stack 補上量化數字）
@@ -115,7 +115,7 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 - **[官方研究，新增] Anthropic：「自動化研究員」可靠緩解對齊失誤，媒體定調為「自我改進」初步跡象**：Anthropic 官方部落格發表〈Automated researchers can reliably mitigate alignment failures〉，稱其自動化 AI 系統能可靠緩解模型對齊失誤；TechCrunch〈An Anthropic researcher just gave us a peek at self-improving AI〉、Startup Fortune〈Anthropic Says Claude Is Showing Early Signs of Self-Improvement〉同日跟進，將此定調為「AI 自我改進」初步跡象。三則均僅標題與轉址連結可用，具體機制與量化成效未見報導，詳見「## 技術彙整」
 
 ### 2026-08-14
-- **[官方風險報告，新增] Anthropic《Risk Report August 2026》：新對齊疑慮＋內部 AI R&D 加速量化自評＋Model 2 暫無釋出計畫**：部分遮蔽版風險報告（Hacker News 55 分；SiliconANGLE、Axios 跟進）揭露新的對齊疑慮，並確認尚未發布的 Model 2 目前無釋出計畫；Axios 稱 Anthropic 認為 AI 風險正在上升。報告原文自陳：「內部 AI R&D 明顯比沒有 AI 協助時快，但尚未達兩倍（且我們不確定、量測困難）」，為官方首度就自身內部 AI 研發加速幅度提供量化區間自評，較 06-04 報告「工程師代碼交付量 8 倍」更保守具體；報告全文遭部分遮蔽，對齊疑慮細節與量測方法論未見完整揭露（[PDF](https://www-cdn.anthropic.com/f61d49fa5596956a5dec75fea0e973bf6a6a8378/Redacted%20Risk%20Report%20August%202026%20.pdf) ／ [SiliconANGLE](https://siliconangle.com/2026/08/14/anthropic-details-unreleased-model-2-new-alignment-concerns-latest-ai-risk-report/) ／ [Axios](https://www.axios.com/2026/08/14/anthropic-model-2-ai-risk)，2026-08-14；Model 2 陣容面詳見模型記者負責頁面）
+- **[官方風險報告，新增] Anthropic《Risk Report August 2026》：新對齊疑慮＋內部 AI R&D 加速量化自評＋Model 2 暫無釋出計畫**：部分遮蔽版風險報告（Hacker News 55 分；SiliconANGLE、Axios 跟進）揭露新的對齊疑慮，並確認尚未發布的 Model 2 目前無釋出計畫；Axios 稱 Anthropic 認為 AI 風險正在上升。報告原文自陳：「內部 AI R&D 明顯比沒有 AI 協助時快，但尚未達兩倍（且我們不確定、量測困難）」，為官方首度就自身內部 AI 研發加速幅度提供量化區間自評，較 06-04 報告「工程師代碼交付量 8 倍」更保守具體；報告全文遭部分遮蔽，對齊疑慮細節與量測方法論未見完整揭露（[PDF](https://www-cdn.anthropic.com/f61d49fa5596956a5dec75fea0e973bf6a6a8378/Redacted%20Risk%20Report%20August%202026%20.pdf) ／ [SiliconANGLE](https://siliconangle.com/2026/08/14/anthropic-details-unreleased-model-2-new-alignment-concerns-latest-ai-risk-report/) ／ [Axios](https://www.axios.com/2026/08/14/anthropic-model-2-ai-risk)，2026-08-14；Model 2 陣容面詳見 [[entities/opus-5]]）
 
 ### 2026-08-10
 - **[國會層級呼籲，單一媒體來源] Sanders 呼籲 OpenAI、Anthropic、Meta 暫停 AI 開發**：美國參議員 Bernie Sanders 公開呼籲 OpenAI、Anthropic、Meta 暫停 AI 開發，警告若不停止參議院可能介入，呼應其提出的 AI Data Center Moratorium Act；報導提及此舉呼應 Anthropic 6/4 自身「煞車踏板」呼籲。目前僅 cryptobriefing.com 單一媒體報導，無其他媒體或社群跟進佐證（[cryptobriefing.com](https://cryptobriefing.com/sanders-urges-openai-anthropic-meta-to-pause-ai-development-amid-regulatory-push/)，2026-08-10 13:16 UTC；完整政府互動記錄見 [[topics/anthropic-government-policy]]）

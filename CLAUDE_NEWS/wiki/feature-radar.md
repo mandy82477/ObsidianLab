@@ -4,7 +4,7 @@
 僅收錄官方 changelog、release note 或官方公告；社群工具見 [[topics/community-tech-tools]]。
 每日更新新增功能、熱度與社群回饋。
 
-**最後更新：** 2026-09-04
+**最後更新：** 2026-09-05
 
 ---
 
@@ -14,9 +14,9 @@
 - **Claude Code Auto 模式已預設化**（熱度 🔥🔥🔥🔥🔥）：8/14 起正式生效，成為 Pro/Max/Team 方案預設權限模式並取代手動確認流程，分類器 token 用量免收費；**依賴手動確認做安全把關者請立即確認自身設定是否要主動關閉**——媒體已發 PSA 提醒
 - **Claude Opus 5**（熱度 🔥🔥🔥🔥🔥）：2026-07-25 正式發布，編碼與知識工作評測逼近 Fable 5、官方稱定價為其一半，現為 Claude Max 新預設模型、Claude Pro 最強模型，適合日常 agentic 使用與知識工作任務
 
-> 09-02 換上剛發布的 Claude Fable 5.1，原第三名「跨 session 訊息互通」熱度降溫逾一週、讓出名額。SendFeedback（08-27）、SDK 命名空間轉正（08-29）、使用者個人資料 API（09-01）熱度均未達本欄門檻；Claude Opus 5 發布已有一段時間，但仍持續被有分量地提及，故留任。
+> 09-02 換上剛發布的 Claude Fable 5.1，原第三名「跨 session 訊息互通」熱度降溫逾一週、讓出名額。SendFeedback（08-27）、SDK 命名空間轉正（08-29）、使用者個人資料 API（09-01）熱度都還不夠高，暫未上榜；Claude Opus 5 發布已有一段時間，但仍持續被有分量地提及，故留任。
 >
-> 本週無新達標功能，維持上週推薦（最後輪替：2026-09-02）——09-04 的 v2.1.261、anthropic-sdk-python v1.4.0 均屬既有指令欄位擴充與 SDK API 新增，未達 🔥🔥🔥🔥 門檻。
+> 本週無新達標功能，維持上週推薦（最後輪替：2026-09-02）——09-04 的 v2.1.261、anthropic-sdk-python v1.4.0 均屬既有指令欄位擴充與 SDK API 新增，熱度不到 🔥🔥🔥🔥。
 
 ---
 
@@ -576,7 +576,7 @@ Ctrl+Alt+F（或 chat 選單內切換 Focus view）
 
 **是什麼：** Anthropic 新一代次旗艦模型，可用 `--model` 選用。官方稱編碼與知識工作評測（Frontier-Bench、GDPval-AA）逼近 Fable 5 的 frontier intelligence，資安任務上仍落後 Mythos 5；現為 Claude Max 新預設模型、Claude Pro 最強模型，取代 Opus 4.8。
 
-**為何熱：** HN 1587 分（今日全站最高）、source_count 3；六家以上媒體同步報導；SDK（Python v0.120.0／TypeScript sdk-v0.115.0）同日新增模型支援；GitHub Copilot 同步上線。Claude Code 創辦人 Boris Cherny 公開稱其為目前最難被提示注入攻破的模型（待社群驗證）。
+**為何熱：** HN 1587 分（今日全站最高），跨 3 個獨立來源、六家以上媒體同步報導；SDK（Python v0.120.0／TypeScript sdk-v0.115.0）同日新增模型支援；GitHub Copilot 同步上線。Claude Code 創辦人 Boris Cherny 公開稱其為目前最難被提示注入攻破的模型（待社群驗證）。
 
 **現在要試嗎：** 適合日常 agentic 使用、編碼與知識工作任務、Claude Max/Pro 用戶；資安/滲透測試等安全導向任務仍建議用 Mythos 5。發布首日，長期穩定性與定價數字（官方稱「Fable 5 一半」，另有報導稱「維持原 Opus 定價」，兩說法方向不完全一致）待觀察，詳見 [[entities/pricing]]。
 

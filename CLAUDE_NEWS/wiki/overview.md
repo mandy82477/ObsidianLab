@@ -1,6 +1,6 @@
 # Claude / Anthropic 生態系概覽
 
-**最後更新：** 2026-09-03
+**最後更新：** 2026-09-05
 **更新頻率：** 🗓️ 週更（每週檢視一次；更新日期停留數天屬正常節奏）
 
 ---
@@ -91,15 +91,15 @@
 | 08-28 | Model Hardware Standard 研究預覽（Bloomberg 等三方跟進）；PreModelSwitch／PostModelSwitch Hook（v2.1.251）| 🛠️ 新功能 |
 | 08-27 | GitHub #77136 跨模型代際重複修辭套路；SendFeedback 工具（v2.1.247）| 🤖 模型品質 |
 
-> 完整事件時序見各 topics 頁面「時序」區塊；[[log]] 含每日 ingest 完整紀錄。
+> 完整事件時序見各 topics 頁面「時序」區塊；[[log]] 含每日更新完整紀錄。
 
 ---
 
 ## 社群工具生態
 
-社群工具目錄（[[topics/community-tech-tools]]）本輪（2026-08-29 lint）**新增 9 筆**（tare／opslane／ambient-context／OzBrain／Proliferate／Frugal Tokens／machine0／internet-court-skill／claw-orchestrator）／**汰除 4 筆**（CodeAlmanac／Claude-thermos／OneCLI／Palmier Pro，逾 30 天無後續）／精選層淘汰 5 換入 5（維持 19 筆上限內）。
+社群工具目錄（[[topics/community-tech-tools]]）本輪（2026-08-29 整理）**新增 9 筆**（tare／opslane／ambient-context／OzBrain／Proliferate／Frugal Tokens／machine0／internet-court-skill／claw-orchestrator）／**淘汰 4 筆**（CodeAlmanac／Claude-thermos／OneCLI／Palmier Pro，逾 30 天無後續）／精選層淘汰 5 換入 5（維持 19 筆上限內）。
 
-- 🔥🔥🔥🔥 **跨 Session 記憶層／知識庫（趨勢九，本輪升格成形）** — ltm／OKF／CodeAlmanac／OzBrain／手動 Obsidian vault 取代／mindmuxai brain.md 六個獨立實作跨 105 天達成立門檻
+- 🔥🔥🔥🔥 **跨 Session 記憶層／知識庫（趨勢九，本輪升格成形）** — ltm／OKF／CodeAlmanac／OzBrain／手動 Obsidian vault 取代／mindmuxai brain.md 六個獨立實作跨 105 天，證據已站穩成形
 - 🔥🔥🔥🔥 **規格驅動開發（Spec-Driven Development，趨勢七）** — 已站穩成形趨勢
 - 🔥🔥🔥 **大型 codebase 並行規模化** — 統一容器（第三波 meta-harness）與任務脈絡互通（Concord）兩條互補協調路線本輪新增
 - 🔥🔥🔥 **額度/成本焦慮** — Max 額度異常耗盡持續累積

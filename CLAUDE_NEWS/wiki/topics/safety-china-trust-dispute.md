@@ -27,7 +27,7 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 **狀態：** monitoring（核心「後門」敘事自 07-10 雙方首度正面否認後未見新進展，轉低頻觀察；新出現的相關但獨立事件見下方說明）
 **領域：** 🏛️ 政策/安全
 **開始日期：** 2026-06-30
-**最後更新：** 2026-09-03
+**最後更新：** 2026-09-05
 **最後新聞更新：** 2026-07-11
 
 > **最新動態**（2026-07-10，議題轉入低頻觀察）
@@ -96,7 +96,7 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 - **07-05（印度快報首報生效日）**：The Indian Express 報導阿里巴巴將自 **7 月 10 日**起禁止員工使用 Claude Code
 - **產業政策背景**（digitimes，07-06）：中國網路安全監管趨嚴，同時中國正轉向扶植本土 AI 編碼工具
 - **證據狀態**：報導始終未附具體技術細節、程式碼樣本或 CVE 編號；Alibaba、Meta、Anthropic 三方均未就技術層面正式回應或否認（2026-07-06／07-07 報導）——媒體確認的是「禁令存在＋替代工具」，不是「後門指控成立」。❓ **待查證**（標 2026-09-03｜查 Alibaba、Qoder）：三方均未就技術層面正式回應或否認
-- **企業採用面完整分析**：見 [[topics/enterprise-tool-tracker]]（商業記者負責）
+- **企業採用面完整分析**：見 [[topics/enterprise-tool-tracker]]
 
 ### FT：Anthropic 封堵中國企業間接存取漏洞（2026-07-03）
 
@@ -119,7 +119,7 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 
 ### 延燒第二天（2026-07-09）
 
-- WSJ（source_count 4，該日跨最多來源引用）、Fox Business、TechRadar（**首次出現具體行動建議**——建議使用者解除安裝）、Yahoo Tech 續報導；多數延續「中方說法」框架，Anthropic 未見新回應
+- WSJ（該日引用最多來源，4 家獨立來源同步報導）、Fox Business、TechRadar（**首次出現具體行動建議**——建議使用者解除安裝）、Yahoo Tech 續報導；多數延續「中方說法」框架，Anthropic 未見新回應
 
 ### 延燒第三天 + Anthropic 首度公開否認（2026-07-10）
 

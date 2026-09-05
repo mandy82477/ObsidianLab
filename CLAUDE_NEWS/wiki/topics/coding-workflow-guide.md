@@ -29,7 +29,7 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 **開始日期：** 2026-08-08
 **領域：** 🛠️ 工具/功能
 **更新頻率：** 🗓️ 週更（隨官方文件與社群策展更新；日期停留數天屬正常節奏）
-**最後更新：** 2026-09-03
+**最後更新：** 2026-09-05
 **最後新聞更新：** 2026-08-16
 
 > **本頁在回答什麼**（2026-08-08 重寫）
@@ -600,7 +600,7 @@ Boris Cherny 反對「vibe coding」推動術語向 spec-driven 靠攏，2026-05
 - [[entities/claude-code]] — 版本、已知問題、指令與旗標
 - [[entities/claude-skills]] — 官方 Skills 產品線與生態動態
 - [[entities/boris-cherny]] — 反 vibe coding、spec-driven 論述來源
-- [[topics/community-tech-patterns]] — 社群模式庫，本頁社群做法的出處
+- [[topics/community-tech-patterns]] — 社群實戰做法集，本頁社群做法的出處
 - [[topics/community-large-codebase-workflow]] — 大型 codebase 的四條主線
 - [[topics/model-comparison]] — 選模型與 effort
 - [[topics/official-community-gap]] — 官方與社群的缺口全貌

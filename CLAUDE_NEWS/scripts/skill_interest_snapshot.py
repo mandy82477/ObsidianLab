@@ -186,7 +186,7 @@ def render(cfg: dict, data: dict, now: datetime) -> str:
         "",
         "## 我卡在這裡（決策表）",
         "",
-        f"本表每日機械抄自 [[topics/community-tech-tools]]（判斷與證據的家；改判斷請改那頁），抄錄日 {today}。",
+        f"本表每日同步自 [[topics/community-tech-tools]]（判斷與證據的家；改判斷請改那頁），同步日 {today}。",
         "",
     ]
     if table_rows:
@@ -281,7 +281,7 @@ def render(cfg: dict, data: dict, now: datetime) -> str:
         "",
         "## 參考來源",
         "",
-        "- 決策表與判斷：[[topics/community-tech-tools]]（每週人工策展；本頁每日抄錄）",
+        "- 決策表與判斷：[[topics/community-tech-tools]]（每週整理；本頁每日同步）",
         "- 規模榜：GitHub Search API（依星數排序，每日快照）；「本週竄升」以本庫每日記錄的星數差計算，保留 60 天",
         "- 類別與搜尋條件由維護者校準（每條 query 上線前實測命中；找不到有辨識力 query 的類別只印判斷，不掛空榜）",
         "",

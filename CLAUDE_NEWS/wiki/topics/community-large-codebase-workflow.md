@@ -27,9 +27,9 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 
 **狀態：** ongoing
 **領域：** 🌐 社群
-**更新頻率：** 🗓️ 週更（每週從模式庫沉澱一次；更新日期停留數天屬正常節奏）
+**更新頻率：** 🗓️ 週更（每週從 [[topics/community-tech-patterns]] 沉澱一次；更新日期停留數天屬正常節奏）
 **開始日期：** 2026-05-02
-**最後更新：** 2026-09-04
+**最後更新：** 2026-09-05
 **最後新聞更新：** 2026-09-03
 
 > **本週答案變動**（2026-09-03）
@@ -39,7 +39,7 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 
 ## 摘要
 
-小專案上好用的做法——單一 CLAUDE.md、單一 session、讀完整檔案——搬進大型 codebase 就開始失靈：並行 agent 互踩、context 被工具輸出撐爆、agent 記不住昨天的架構決策、多 agent 產出沒人把關。本頁把 [[topics/community-tech-patterns]] 裡屬於這四個痛點的節點，每週沉澱成「現在該怎麼做、還缺什麼」；節點證據與出處一律在模式庫，本頁不重複。官方機制以 [[entities/claude-code]]、[[entities/managed-agents]] 為準。
+小專案上好用的做法——單一 CLAUDE.md、單一 session、讀完整檔案——搬進大型 codebase 就開始失靈：並行 agent 互踩、context 被工具輸出撐爆、agent 記不住昨天的架構決策、多 agent 產出沒人把關。本頁把 [[topics/community-tech-patterns]] 裡屬於這四個痛點的節點，每週沉澱成「現在該怎麼做、還缺什麼」；節點證據與出處一律在 [[topics/community-tech-patterns]]，本頁不重複。官方機制以 [[entities/claude-code]]、[[entities/managed-agents]] 為準。
 
 | 主線 | 一句話問題 | 現在的答案 |
 |------|-----------|-----------|
