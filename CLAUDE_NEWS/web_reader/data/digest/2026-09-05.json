@@ -1,0 +1,398 @@
+{
+  "date": "2026-09-05",
+  "generatedAt": "2026-09-05 17:30 UTC",
+  "articleCount": 62,
+  "sourceCount": "14/14",
+  "bulletin": "",
+  "topStories": [
+    {
+      "title": "Function Hooks - make plugins 10x more powerful",
+      "url": "https://github.com/anthropics/claude-code/issues/91870",
+      "source": "GitHub Issues / claude-code",
+      "time": "09/05 13:17",
+      "sentiment": "",
+      "body": "提案為 Claude Code 新增 Function Hooks，讓外掛能以參數化的 `$` 物件追蹤副作用並安全地深度修改行為、彼此組合註冊；累積 107 則留言、94 個 👍，是本輪互動最高的功能提案。",
+      "focusTags": [],
+      "sedimented": [
+        {
+          "id": "claude-code",
+          "pageType": "entity"
+        }
+      ]
+    },
+    {
+      "title": "[BUG] Claude Desktop fails to launch on Windows — orphaned Silo / Job Object after app crash, only logoff or reboot recovers",
+      "url": "https://github.com/anthropics/claude-code/issues/53247",
+      "source": "GitHub Issues / claude-code",
+      "time": "09/05 09:32",
+      "sentiment": "",
+      "body": "回報 Windows 版 Claude Desktop 崩潰後會留下孤兒 Silo／Job Object，導致應用無法重新啟動，僅登出或重開機才能恢復；累積 64 則留言、29 個 👍。",
+      "focusTags": []
+    },
+    {
+      "title": "[BUG] Session Disappeared After Logout / Restart of Claude Code Desktop - HOW to restore the sessions ASAP???",
+      "url": "https://github.com/anthropics/claude-code/issues/26452",
+      "source": "GitHub Issues / claude-code",
+      "time": "09/04 16:14",
+      "sentiment": "",
+      "body": "回報登出或重啟 Claude Code Desktop 後過往 session 全部消失，使用者急於尋求恢復方法；累積 52 則留言、31 個 👍。",
+      "focusTags": [],
+      "sedimented": [
+        {
+          "id": "claude-code",
+          "pageType": "entity"
+        }
+      ]
+    },
+    {
+      "title": "Silent retention cleanup deletes session transcripts with no warning, opt-in, or recovery",
+      "url": "https://github.com/anthropics/claude-code/issues/59248",
+      "source": "GitHub Issues / claude-code",
+      "time": "09/04 13:05",
+      "sentiment": "",
+      "body": "回報使用者在 Cursor 版 Claude Code 擴充套件（2.1.141）正常使用中，所有對話紀錄被保留清理機制悄悄刪除，事前無警告、無需選擇加入、事後也無法復原；累積 38 則留言、33 個 👍。",
+      "focusTags": [],
+      "sedimented": [
+        {
+          "id": "claude-code",
+          "pageType": "entity"
+        }
+      ]
+    }
+  ],
+  "techUpdates": [],
+  "mediaReports": [
+    {
+      "title": "Claude Code found 5 bugs in my project that I never would have caught",
+      "url": "https://news.google.com/rss/articles/CBMickFVX3lxTFBXemlqa0ZzcDlBczVNSFBiR1BqbTJ3T0hfal9TZmpCUXNnbThPTUp0QWNsZDdJbGxmV21Jc2hwS2Nyd091ZjFkZ3ozcnhjX3ROaHFVdmRZZ05WRV9NMjRvTVFZQ1lNZWtYR0d6bE10SmNYUQ?oc=5",
+      "source": "Google News / MakeUseOf",
+      "time": "09/05 11:00",
+      "sentiment": "",
+      "body": "報導分享作者以 Claude Code 找出自己專案中 5 個原本不會發現的 bug 的經驗。",
+      "focusTags": [],
+      "sedimented": [
+        {
+          "id": "claude-code",
+          "pageType": "entity"
+        }
+      ]
+    },
+    {
+      "title": "The Demotion Ladder: A Year of Governing Claude Code",
+      "url": "https://news.google.com/rss/articles/CBMif0FVX3lxTE5UeDQ3TlVrWXZxYkFDUGUxN0VRSHpXSnNuMC02Ulhka2hnS3Jpd09Sa2NkeW84WnBObjNRSW1FbkZ2WHlXbG9wSURUUmRJNFFDa2s1MEJGUlBvVmFVQlVaT056U0tfTGlDS0FUTG12MDE5RndNRjBwMFdtYmZFLUU?oc=5",
+      "source": "Google News / HackerNoon",
+      "time": "09/05 06:32",
+      "sentiment": "",
+      "body": "文章回顧一年來組織治理 Claude Code 使用的經驗與制度演變。",
+      "focusTags": [],
+      "sedimented": [
+        {
+          "id": "claude-code",
+          "pageType": "entity"
+        }
+      ]
+    },
+    {
+      "title": "Claude Code Review: How It Works and Where Cosmos Wins",
+      "url": "https://news.google.com/rss/articles/CBMidEFVX3lxTFAxNmRpQ0dteC1CWU5LNnlERWNPVWdlX082WDFOaFE0Q1MxaHpXYlRiRjhnNGZveDNINFZjMHdXV3lEMVZNMTkxZDJuVXJnZnEtMXBfMXdHNk12VUVOYm5VM3F2Y0drd1RjNUdhbGlXd0tIUjYx?oc=5",
+      "source": "Google News / Augment Code",
+      "time": "09/05 01:57",
+      "sentiment": "",
+      "body": "文章比較 Claude Code 與競品 Cosmos，指出 Cosmos 在部分情境勝出。",
+      "focusTags": [],
+      "sedimented": [
+        {
+          "id": "claude-code",
+          "pageType": "entity"
+        }
+      ]
+    },
+    {
+      "title": "Nvidia Deal Is Good for Stock and Bad for Anthropic and OpenAI",
+      "url": "https://news.google.com/rss/articles/CBMie0FVX3lxTE5ndF9FbDFvTW84WDROWUtmRnVDbF9YSkZxSzVUYmNQUHZMUmJySGJhYmdoY2tuOEMyWmUzWW9uUFdJQ0Vrc3haNU9RQldWRUJ6SDFYUEJuVGpHMnFxeHREeFVabUMwWEhYQ0FvRkFtRHYzTkxpM3hHMUVNaw?oc=5",
+      "source": "Google News / Barron's",
+      "time": "09/04 18:21",
+      "sentiment": "",
+      "body": "報導分析一項 Nvidia 交易對股價有利，但對 Anthropic 與 OpenAI 的競爭處境不利。",
+      "focusTags": []
+    }
+  ],
+  "discussions": [
+    {
+      "title": "AI video skill for Claude Code & Codex — cinematic product videos with Remotion",
+      "url": "https://github.com/Vincentwei1021/video-shotcraft",
+      "source": "GitHub Search",
+      "time": "09/05 13:29",
+      "sentiment": "",
+      "body": "新工具提供 152 張分鏡腳本卡與 209 個運鏡預覽，搭配 Remotion 產出電影感產品影片模板；累積 7,524 星。",
+      "focusTags": [],
+      "sedimented": [
+        {
+          "id": "claude-code",
+          "pageType": "entity"
+        }
+      ]
+    },
+    {
+      "title": "AI 短劇製作 skill 集合",
+      "url": "https://github.com/eternityspring/shuohao-skills",
+      "source": "GitHub Search",
+      "time": "09/05 13:29",
+      "sentiment": "",
+      "body": "社群釋出一套涵蓋角色設定、大綱、場景道具、劇本與分鏡的短劇製作 skill 合集，適用於 Claude Code 與 Codex；累積 2,999 星。",
+      "focusTags": [],
+      "sedimented": [
+        {
+          "id": "claude-code",
+          "pageType": "entity"
+        }
+      ]
+    },
+    {
+      "title": "Turn papers, code, and docs into presentation-ready PPTX",
+      "url": "https://github.com/addsumtech/slides_maker",
+      "source": "GitHub Search",
+      "time": "09/05 13:29",
+      "sentiment": "",
+      "body": "新工具可在 Codex／Claude Code 中把論文、程式碼與文件轉為可原生編輯的簡報，含圖表公式與獨立審閱機制；累積 502 星。",
+      "focusTags": [],
+      "sedimented": [
+        {
+          "id": "claude-code",
+          "pageType": "entity"
+        }
+      ]
+    },
+    {
+      "title": "Turn Antigravity / codex / github copilot into Anthropic & OpenAI API compatible server",
+      "url": "https://github.com/silasxbt/anti-api",
+      "source": "GitHub Search",
+      "time": "09/05 13:29",
+      "sentiment": "",
+      "body": "新工具把其他 agent 介面轉換為相容 Anthropic／OpenAI API 的伺服器，可搭配 Claude Code、Xcode 等使用；累積 500 星。",
+      "focusTags": [],
+      "sedimented": [
+        {
+          "id": "claude-code",
+          "pageType": "entity"
+        }
+      ]
+    },
+    {
+      "title": "跨平台 SSH 工作流 Skill",
+      "url": "https://github.com/badseal/ssh-skill",
+      "source": "GitHub Search",
+      "time": "09/05 13:29",
+      "sentiment": "",
+      "body": "面向 Codex 與 Claude Code 的跨平台 SSH 工作流 skill，支援 Windows、macOS、Linux；累積 500 星。",
+      "focusTags": [],
+      "sedimented": [
+        {
+          "id": "claude-code",
+          "pageType": "entity"
+        }
+      ]
+    },
+    {
+      "title": "Claude Code Recommended: Give Up",
+      "url": "https://dev.to/jeromefromhk/claude-code-recommended-give-up-460d",
+      "source": "dev.to / #claudecode",
+      "time": "08/19 07:11",
+      "sentiment": "",
+      "body": "作者記錄一次長達 9 小時排查 k3s 網路問題的過程，Claude Code 給出的三個選項中「(Recommended)」的建議選項竟是放棄。",
+      "focusTags": [],
+      "sedimented": [
+        {
+          "id": "claude-code",
+          "pageType": "entity"
+        }
+      ]
+    },
+    {
+      "title": "feder-cr/AIHawk",
+      "url": "https://github.com/feder-cr/AIHawk",
+      "source": "GitHub Search",
+      "time": "09/05 13:29",
+      "sentiment": "",
+      "body": "",
+      "focusTags": []
+    }
+  ],
+  "billing": [
+    {
+      "title": "官方文件更新：方案與定價（Plans & Pricing）",
+      "url": "https://claude.com/pricing",
+      "source": "Official Docs",
+      "time": "09/05 13:29",
+      "sentiment": "",
+      "body": "官方定價頁今日出現大規模改版：頁面內容比對顯示新增逾 110 個段落（含多組以每百萬 token／MTok 計價的價格區間，如 $0.10、$0.20、$0.25、$0.30、$0.50 等）、移除逾 160 個段落（多為依企業人數規模分類的介紹文字，如「20–100 人」「100+ 人」等）；同時「Claude Code 週用量促銷（May–August 2026）」說明頁也同步更新，惟本次比對到的異動僅頁首／頁尾樣板文字。頁面整體字數由約 2.4 萬字縮減至約 2.1 萬字。",
+      "focusTags": [],
+      "sedimented": [
+        {
+          "id": "claude-code",
+          "pageType": "entity"
+        }
+      ]
+    },
+    {
+      "title": "GPT-6 Astra Lands on Pro, Enterprise and the API as Anthropic Resets Claude Limits",
+      "url": "https://news.google.com/rss/articles/CBMilAFBVV95cUxQV0NpRkJRMGM1QUkxSDhwQlFNQW5HS3o0VlJXamUxZ3VyU2pqUXdqNjRJQU9PVFM1TjB1WF9sWmdsdGdka0wtYklLMXJzSURWdVlLcENkZXBCaFhxR0ZzeGFWbThIODEyY1RTR3pXeW1yV0VyTy1xUDJsb3BXZU9lTFJ2bjlORGphZFNhaFh6ZWc1ZVdp?oc=5",
+      "source": "Google News / Pasquale Pillitteri",
+      "time": "09/05 04:46",
+      "sentiment": "",
+      "body": "媒體標題提及 Anthropic 重置 Claude 用量限制，與上述定價頁改版時間點相近，但原文內容未能取得，具體異動仍待人工查證確認。",
+      "focusTags": [
+        "[重大事件]"
+      ]
+    }
+  ],
+  "focus": [
+    {
+      "tag": "[重大事件]",
+      "text": "據紐約時報報導，作者與出版商正就先前 15 億美元 Anthropic 著作權侵權和解金的分配方式出現角力。",
+      "ref_urls": [
+        "https://news.google.com/rss/articles/CBMijgFBVV95cUxQM0JCcDFiX0pScndEQWkwM1FBYXpPVEhPVVBhTFJoVV9JTW4xZllRX2MzLUI3UVJuTGdaZEROM2FPcXhPWGgxTm9WbFJpVkJXMmtMbzFUakpuVWZqRG5KY25GZzZNdlZpT1hweHZ3b3FJZVBtUUpVSTJINUUyMFhSM1AtMEpvaklaaFJKWXVn?oc=5"
+      ],
+      "ref_names": [
+        "NYT"
+      ]
+    },
+    {
+      "tag": "[風險警示]",
+      "text": "據 NDTV 報導，聯邦參議員 Bernie Sanders 提出新法案，內容可能讓 OpenAI、Anthropic 等公司執行長因故面臨數年徒刑；報導未提供法案具體條文細節。",
+      "ref_urls": [
+        "https://news.google.com/rss/articles/CBMi1wFBVV95cUxOWEtTaXNNbm9KYll0VEtzWGF3WlpfR1ZhSEZtM2cwU0QtdkFwN0l3UnlQc1BpcjhEZWExai1DaWgxdzcwQ1N1bTZDRm04VmdKeWlrSGdYSWFpNk9oaFJZSWt5SEQ0eE9ONVdxOGViU0JmNEM1aWZCbURxRDJwUkxJMzhSbkM0WTl1ZzZnQlBxaDJoaVltR1R6ZEl1TDZtQl9uZFFBalVaOE5oTDlQRXRSa0Zhb3dpdFMxLUVNZkJ1VmJhbFB1b3dBTXdjWnh4UEFwZnJKS0JzWdIB3wFBVV95cUxQd3JoT3drQVhJWTUzT3pnOVh1S3p1NG1uejJJc2tzR0p4SVJUdkpUNjBpWjR4aHA0dWVVWXA1LUJMWkV1UzU3X3dzZ2xwYXFzOS15a3FZYVBlMkJ3NUdqUTVzWWZDc1lJblJ3RFJnbXFJcWRzNXFGbEp2cEdyMDZ3cElUd0Y3RkxpZlg3V1V4V2RVR1F6dlFnUVVmeWtoSjN1TC1UVmxTSjFKdzU4T0NIYi1qWTVoekJLNlBtajhSc2pieTl4N3ZmZk9NaWhVTHFlbmlLV0E4Vy1SLWM3WlVF?oc=5"
+      ],
+      "ref_names": [
+        "NDTV"
+      ]
+    },
+    {
+      "tag": "[重大事件]",
+      "text": "官方定價頁（Plans & Pricing）今日出現大規模改版，同時「Claude Code 週用量促銷（May–August 2026）」說明頁也同步更新；另有媒體報導提及 Anthropic 重置 Claude 用量限制，但具體異動內容需人工比對頁面全文才能確認。",
+      "ref_urls": [
+        "https://news.google.com/rss/articles/CBMilAFBVV95cUxQV0NpRkJRMGM1QUkxSDhwQlFNQW5HS3o0VlJXamUxZ3VyU2pqUXdqNjRJQU9PVFM1TjB1WF9sWmdsdGdka0wtYklLMXJzSURWdVlLcENkZXBCaFhxR0ZzeGFWbThIODEyY1RTR3pXeW1yV0VyTy1xUDJsb3BXZU9lTFJ2bjlORGphZFNhaFh6ZWc1ZVdp?oc=5"
+      ],
+      "ref_names": [
+        "GPT-6 Astra 報導"
+      ]
+    },
+    {
+      "tag": "[社群趨勢]",
+      "text": "GitHub 今日一口氣出現多款 Claude Code／Codex 週邊技能與工具，含一則存量盤點條目——2024 年出生、累積 30,311 星的瀏覽器自動化 agent AIHawk。",
+      "ref_urls": [],
+      "ref_names": []
+    }
+  ],
+  "topicRadar": [],
+  "sourceStatus": [
+    {
+      "name": "Anthropic Status",
+      "ok": true,
+      "count": 0
+    },
+    {
+      "name": "Hacker News",
+      "ok": true,
+      "count": 18
+    },
+    {
+      "name": "Anthropic Blog",
+      "ok": true,
+      "count": 0
+    },
+    {
+      "name": "dev.to",
+      "ok": true,
+      "count": 12
+    },
+    {
+      "name": "HN Repo Bridge",
+      "ok": true,
+      "count": 1
+    },
+    {
+      "name": "Google News",
+      "ok": true,
+      "count": 30
+    },
+    {
+      "name": "Claude API Release Notes",
+      "ok": true,
+      "count": 0
+    },
+    {
+      "name": "GitHub Issues",
+      "ok": true,
+      "count": 15
+    },
+    {
+      "name": "Official Skills",
+      "ok": true,
+      "count": 0
+    },
+    {
+      "name": "Topic Watch",
+      "ok": true,
+      "count": 2
+    },
+    {
+      "name": "Blogroll",
+      "ok": true,
+      "count": 3
+    },
+    {
+      "name": "Official Docs",
+      "ok": true,
+      "count": 7
+    },
+    {
+      "name": "GitHub",
+      "ok": true,
+      "count": 15
+    },
+    {
+      "name": "Reddit",
+      "ok": true,
+      "count": 11
+    }
+  ],
+  "preview": "據紐約時報報導，作者與出版商正就先前 15 億美元 Anthropic 著作權侵權和解金的分配方式出現角力。",
+  "sedimentedToday": [
+    {
+      "id": "claude-code",
+      "name": "Claude Code",
+      "pageType": "entity"
+    },
+    {
+      "id": "pricing",
+      "name": "Anthropic 訂閱方案與計費政策",
+      "pageType": "entity"
+    },
+    {
+      "id": "anthropic-government-policy",
+      "name": "Anthropic 政府與軍事政策",
+      "pageType": "topic"
+    },
+    {
+      "id": "community-tech-patterns",
+      "name": "Claude Code 社群工作流模式",
+      "pageType": "topic"
+    },
+    {
+      "id": "competitor-landscape",
+      "name": "AI 編碼工具競品動態",
+      "pageType": "topic"
+    },
+    {
+      "id": "market-signals",
+      "name": "投資訊號判讀",
+      "pageType": "topic"
+    },
+    {
+      "id": "skill-interest-watch",
+      "name": "興趣類別 skill 總覽",
+      "pageType": "topic"
+    }
+  ]
+}

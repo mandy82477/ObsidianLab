@@ -7,12 +7,12 @@ last_updated: "2026-09-05"
 last_news_update: "2026-09-03"
 update_freq: "🗓️ 週更（每週從 [[topics/community-tech-patterns]] 沉澱一次；更新日期停留數天屬正常節奏）"
 status_main: "ongoing"
-days_since_news: 3
+days_since_news: 2
 parent: null
 children: "[]"
 page_role: "root"
-days_since_news_subtree: 3
-inbound_links: 36
+days_since_news_subtree: 2
+inbound_links: 38
 attribution_count: 2
 attribution_last: "2026-08-05"
 top_source: "reddit"

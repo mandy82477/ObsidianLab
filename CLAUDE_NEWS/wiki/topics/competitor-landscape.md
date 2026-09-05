@@ -4,16 +4,16 @@ kind: "topic"
 status: "ongoing"
 domain: "💼 商業"
 last_updated: "2026-09-05"
-last_news_update: "2026-09-04"
+last_news_update: "2026-09-05"
 status_main: "ongoing"
-days_since_news: 2
+days_since_news: 0
 parent: null
 children: "['topics/competitor-landscape-archive']"
 page_role: "hub"
-days_since_news_subtree: 2
-inbound_links: 58
-attribution_count: 92
-attribution_last: "2026-09-04"
+days_since_news_subtree: 0
+inbound_links: 57
+attribution_count: 93
+attribution_last: "2026-09-05"
 top_source: "google-news"
 pending_count: 9
 pending_overdue: 4

@@ -142,13 +142,7 @@
       "time": "09/03 23:21",
       "sentiment": "",
       "body": "報導旅遊科技公司 Amadeus 將其技術整合進 Claude Code 與 Cowork。",
-      "focusTags": [],
-      "sedimented": [
-        {
-          "id": "claude-code",
-          "pageType": "entity"
-        }
-      ]
+      "focusTags": []
     },
     {
       "title": "Claude Fable 5.1 Anti-Distillation: What Changed [2026] - tech-insider.org",
@@ -174,13 +168,7 @@
       "time": "09/04 09:34",
       "sentiment": "",
       "body": "使用者要求同一 connector 能同時綁定多組不同帳號，目前 Claude 與 Claude Code on the web 皆僅支援單一帳號；累積 240 則留言、523 個 👍。",
-      "focusTags": [],
-      "sedimented": [
-        {
-          "id": "claude-code",
-          "pageType": "entity"
-        }
-      ]
+      "focusTags": []
     },
     {
       "title": "[FEATURE] Multi-account switching in Claude Mobile app without shared email",
@@ -207,13 +195,7 @@
       "time": "09/04 15:10",
       "sentiment": "",
       "body": "回報 Claude Code 執行 Bash 指令時會建立 `/tmp/claude-*-cwd` 追蹤目前工作目錄的暫存檔，但從未清除，長期使用會持續累積；累積 111 則留言、71 個 👍。",
-      "focusTags": [],
-      "sedimented": [
-        {
-          "id": "claude-code",
-          "pageType": "entity"
-        }
-      ]
+      "focusTags": []
     },
     {
       "title": "[BUG] Claude Desktop (Windows 11): main window stays always-on-top of other applications, with no setting to disable it",
@@ -231,13 +213,7 @@
       "time": "09/04 19:19",
       "sentiment": "",
       "body": "回報 Claude Code 幾乎每天都要求透過網頁重新登入驗證身份，認為頻率過高且無必要；累積 83 則留言、70 個 👍。",
-      "focusTags": [],
-      "sedimented": [
-        {
-          "id": "claude-code",
-          "pageType": "entity"
-        }
-      ]
+      "focusTags": []
     },
     {
       "title": "[FEATURE] Add GitLab Integration (Repository Connection, MRs, Mobile Access)",
@@ -264,13 +240,7 @@
       "time": "09/04 22:52",
       "sentiment": "",
       "body": "社群釋出一套聚焦 context engineering 技巧與模式的 Claude Code skills 合集。",
-      "focusTags": [],
-      "sedimented": [
-        {
-          "id": "claude-code",
-          "pageType": "entity"
-        }
-      ]
+      "focusTags": []
     },
     {
       "title": "Show HN: Gage – Rust based tool to scan Claude sessions for bugs, other issues",
@@ -279,13 +249,7 @@
       "time": "09/04 16:13",
       "sentiment": "",
       "body": "開源 CLI／TUI 工具 Gage 掃描 Claude Code session 紀錄找出可能的錯誤並附上證據，作者稱它曾發現一個自己已核准放行、但 session 紀錄中 Claude 曾示警的 bug；掃描在使用者自己的登入額度下執行。",
-      "focusTags": [],
-      "sedimented": [
-        {
-          "id": "claude-code",
-          "pageType": "entity"
-        }
-      ]
+      "focusTags": []
     },
     {
       "title": "Show HN: Unofficial 3DS Port of F-Zero X Written by Claude Code",
@@ -294,13 +258,7 @@
       "time": "09/04 14:49",
       "sentiment": "",
       "body": "開發者用單一長時間 Claude session 搭配 147 個 subagent，花 24 天把 F-Zero X 移植到 New 3DS，達成原生 60fps 立體 3D 運行。",
-      "focusTags": [],
-      "sedimented": [
-        {
-          "id": "claude-code",
-          "pageType": "entity"
-        }
-      ]
+      "focusTags": []
     },
     {
       "title": "OpenAI's rogue agents were caught communicating via public wikis",
@@ -318,13 +276,7 @@
       "time": "09/01 20:40",
       "sentiment": "",
       "body": "作者以「教一個只在自己情境成立的事實、重開 session 後看記不記得」測試 Claude Code 內建記憶功能，結果通過，但強調樣本僅來自個人四台伺服器與自身提問，能否推廣尚待驗證。",
-      "focusTags": [],
-      "sedimented": [
-        {
-          "id": "claude-code",
-          "pageType": "entity"
-        }
-      ]
+      "focusTags": []
     },
     {
       "title": "Stop asking your AI agent to follow rules. Enforce them.",
@@ -333,13 +285,7 @@
       "time": "08/25 15:25",
       "sentiment": "",
       "body": "作者把可用程式判斷的編碼規則從 prompt 改用 Claude Code hooks 強制執行，稱規則遵守率因此從機率性變成 100%，連帶讓用 Haiku 當 builder 也不再顯得冒進。",
-      "focusTags": [],
-      "sedimented": [
-        {
-          "id": "claude-code",
-          "pageType": "entity"
-        }
-      ]
+      "focusTags": []
     },
     {
       "title": "OpenAI plans to stop supplying models to Cursor on Nov. 12",
@@ -516,11 +462,6 @@
   "preview": "Claude 歷時 11 天自主完成費馬最後定理的完整電腦驗證證明，以 Lean 語言正式化",
   "sedimentedToday": [
     {
-      "id": "claude-code",
-      "name": "Claude Code",
-      "pageType": "entity"
-    },
-    {
       "id": "fable-5",
       "name": "Claude Fable 5",
       "pageType": "entity"
@@ -528,11 +469,6 @@
     {
       "id": "kevin-buzzard",
       "name": "Kevin Buzzard",
-      "pageType": "entity"
-    },
-    {
-      "id": "pricing",
-      "name": "Anthropic 訂閱方案與計費政策",
       "pageType": "entity"
     },
     {
@@ -546,23 +482,8 @@
       "pageType": "topic"
     },
     {
-      "id": "anthropic-government-policy",
-      "name": "Anthropic 政府與軍事政策",
-      "pageType": "topic"
-    },
-    {
       "id": "community-tech-discussions",
       "name": "社群技術討論趨勢",
-      "pageType": "topic"
-    },
-    {
-      "id": "community-tech-patterns",
-      "name": "Claude Code 社群工作流模式",
-      "pageType": "topic"
-    },
-    {
-      "id": "competitor-landscape",
-      "name": "AI 編碼工具競品動態",
       "pageType": "topic"
     },
     {
