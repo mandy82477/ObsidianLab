@@ -104,17 +104,33 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add CLAUDE_NEWS/src/gathered_items.json \
-                  CLAUDE_NEWS/src/gathered_archive \
-                  CLAUDE_NEWS/src/news_aggregator/emitted_items.json \
-                  CLAUDE_NEWS/src/news_aggregator/seen_urls.json \
-                  CLAUDE_NEWS/src/news_aggregator/sources/official_watch_state.json \
-                  CLAUDE_NEWS/src/news_aggregator/sources/official_skills_repos_state.json \
-                  CLAUDE_NEWS/data/source_funnel.jsonl \
-                  CLAUDE_NEWS/data/discovery_queue_history.csv \
-                  CLAUDE_NEWS/data/repo_star_history.csv \
-                  CLAUDE_NEWS/wiki/topics/skill-interest-watch.md \
-                  CLAUDE_NEWS/wiki/topics/site-source-tooling.md
+          # 抓料產出路徑清單（單一來源）。CLAUDE.md 明訂任何情境不得 git add -A，
+          # 故一律指名路徑；新增產出檔時加進這個陣列即可。
+          # scripts/check_workflow_paths.py（掛在 run_tests.py）會驗每一筆都存在——
+          # 2026-09-04 事故：09-03 下架 site-source-tooling 時刪了頁面卻漏刪這裡的
+          # 登記，git add 撞到不存在的 pathspec 直接 exit 128，整個 commit+push 步驟
+          # 連坐失敗 → 當天抓料整包不落地、日報缺一天，而三個抓取步驟全是綠的。
+          GATHER_PATHS=(
+            CLAUDE_NEWS/src/gathered_items.json
+            CLAUDE_NEWS/src/gathered_archive
+            CLAUDE_NEWS/src/news_aggregator/emitted_items.json
+            CLAUDE_NEWS/src/news_aggregator/seen_urls.json
+            CLAUDE_NEWS/src/news_aggregator/sources/official_watch_state.json
+            CLAUDE_NEWS/src/news_aggregator/sources/official_skills_repos_state.json
+            CLAUDE_NEWS/data/source_funnel.jsonl
+            CLAUDE_NEWS/data/discovery_queue_history.csv
+            CLAUDE_NEWS/data/repo_star_history.csv
+            CLAUDE_NEWS/wiki/topics/skill-interest-watch.md
+          )
+          # 逐筆 add：缺件只告警不中止。單一路徑失效不該讓當天的料整包丟掉——
+          # 抓料落地優先於清單完整性，缺件由上面那支檢查器在 commit 前先擋下。
+          for p in "${GATHER_PATHS[@]}"; do
+            if [ -e "$p" ]; then
+              git add "$p"
+            else
+              echo "::warning::抓料產出路徑不存在，已略過（請修 daily-gather.yml 的 GATHER_PATHS）：$p"
+            fi
+          done
           # 兩個 *_state.json 是清冊型來源（Official Docs / Official Skills）的
           # 「上次看到的樣子」。不 commit → 每次全新 checkout 都拿 repo 舊基線比對，
           # 同一筆異動天天重複偵測，且 state 只有本機手動跑才會前進（2026-08-15 發現：

@@ -21,7 +21,9 @@ run_tests.py — 執行 src/tests/ 下所有確定性單元測試（unittest dis
 （頁面「最後新聞更新」宣稱 × 歸因記錄交叉比對：漏更/無從對照/欄位缺失）、
 scripts/check_feature_radar.py（feature-radar 當月詳細條目 ↔ 全覽表列對帳）與
 scripts/check_pending_markers.py（懸置標記語法：日期/符號對應/排版/探針品質/
-wikilink 目標存在/⟨Q-nn⟩ 雙向對帳）；任一失敗都會讓本腳本整體 exit 1。
+wikilink 目標存在/⟨Q-nn⟩ 雙向對帳）與 scripts/check_workflow_paths.py（GH Actions
+workflow 指名的產出路徑逐一驗存在，防 2026-09-04 那種「刪了檔沒刪登記 → git add
+exit 128 → 當天抓料整包不落地」）；任一失敗都會讓本腳本整體 exit 1。
 """
 import io
 import subprocess
@@ -39,6 +41,7 @@ CHECK_FEATURE_RADAR = REPO_ROOT / "scripts" / "check_feature_radar.py"
 CHECK_PENDING_MARKERS = REPO_ROOT / "scripts" / "check_pending_markers.py"
 CHECK_TOOLS_PAGE = REPO_ROOT / "scripts" / "check_tools_page.py"
 CHECK_HIERARCHY = REPO_ROOT / "scripts" / "check_hierarchy.py"
+CHECK_WORKFLOW_PATHS = REPO_ROOT / "scripts" / "check_workflow_paths.py"
 
 
 def main() -> int:
@@ -180,8 +183,23 @@ def main() -> int:
         stream.write(f"\nWARN: {CHECK_HIERARCHY} 不存在，跳過階層契約檢查\n")
     stream.flush()
 
+    # workflow 指名路徑存在性（2026-09-04：刪頁漏刪 git add 登記 → 抓料整包不落地）
+    workflow_paths_ok = True
+    if CHECK_WORKFLOW_PATHS.exists():
+        proc = subprocess.run(
+            [sys.executable, str(CHECK_WORKFLOW_PATHS)], capture_output=True, text=True, encoding="utf-8"
+        )
+        stream.write("\n" + proc.stdout + "\n")
+        if proc.stderr:
+            stream.write(proc.stderr + "\n")
+        workflow_paths_ok = proc.returncode == 0
+    else:
+        stream.write(f"\nWARN: {CHECK_WORKFLOW_PATHS} 不存在，跳過 workflow 路徑檢查\n")
+    stream.flush()
+
     return 0 if (unit_ok and rules_ok and arch_docs_ok and weekly_ledger_ok
-                 and freshness_ok and radar_ok and pending_ok and tools_ok and hierarchy_ok) else 1
+                 and freshness_ok and radar_ok and pending_ok and tools_ok and hierarchy_ok
+                 and workflow_paths_ok) else 1
 
 
 if __name__ == "__main__":
