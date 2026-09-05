@@ -29,7 +29,7 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 **狀態：** active（快速成長）
 **領域：** 🛠️ 工具/功能
 **首次出現：** 2026-04-27
-**最後更新：** 2026-08-27
+**最後更新：** 2026-09-05
 **最後新聞更新：** 2026-05-22
 
 > **最新動態**（2026-05-22）
@@ -42,6 +42,8 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 **最新動態（2026-05-22）：** XDA 正式評為 Claude Code 的可行開源替代方案，同期 `OpenCode-power-pack` 完成移植官方 11 個 skills；截至目前（最後新聞更新 2026-05-22）無更新後續報導。
 
 OpenCode 是 Claude Code 的主要開源替代品，截至 2026-05-12 已吸引 **157,000 名開發者**轉向（The New Stack 報導）。功能與體驗被 XDA 評測認為與 Claude Code 相當，且完全開源免費。即便 Anthropic 宣布倍增速率限制，對 vendor lock-in 的顧慮仍持續驅動開發者轉向開源方案。
+
+另有 tech-insider.org（Google News 轉載，2026-08-01）稱 OpenCode 下載量達 Claude Code 的 **5.4 倍**（比較定價 Free vs $20）。🔎 **查無官方**（標 2026-08-10｜查 tech-insider.org、OpenCode 下載量｜複 2026-09-13）：此下載量倍數之統計方法與時間範圍，查證後仍未見揭露。
 
 ## 熱度與試用價值
 
