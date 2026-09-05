@@ -583,6 +583,26 @@ window.WIKI_DATA = {
       ]
     },
     {
+      "id": "pricing-archive",
+      "pageType": "entity",
+      "name": "Anthropic 訂閱方案與計費政策 — 原始條目封存",
+      "entityType": "policy",
+      "status": "resolved（封存頁）",
+      "domain": "💼 商業",
+      "pill": "gray",
+      "firstSeen": "2026-04-25",
+      "startDate": "",
+      "lastUpdated": "2026-09-06",
+      "lastNewsUpdate": "2026-05-19",
+      "updateFreq": "",
+      "parent": "entities/pricing",
+      "summary": "本頁是 pricing 的原始條目封存，重點層（現行規則、牌價、還在發生的事故）都在主頁。",
+      "latestHeadline": "",
+      "readerDomains": [
+        "💼 商業"
+      ]
+    },
+    {
       "id": "pricing",
       "pageType": "entity",
       "name": "Anthropic 訂閱方案與計費政策",
@@ -596,10 +616,11 @@ window.WIKI_DATA = {
       "lastNewsUpdate": "2026-09-05",
       "updateFreq": "",
       "parent": "",
-      "summary": "**2026-07-20 起，旗艦模型（現為 Fable 5）在訂閱體系中被切成兩層**：Max 與 Team premium 席位維持標配、上限為週用量的 50%；Pro 與 Team standard 席位改以 usage credits 按 API 費率付費，並發放一次性過渡 credit。此分界經 2026-0…",
-      "latestHeadline": "2026-07-20 起，旗艦模型（現為 Fable 5）在訂閱體系中被切成兩層：Max 與 Team premium 席位維持標配、上限為週用量的 50%；Pro 與 Team standard 席位改以 usage credits 按 API 費率付費，並發放一次性過渡 credit。此分界經 2026-08-08",
+      "summary": "**09-14 是下一個會動到你帳單的日子**：週配額換軌後水位約為現在的 83%，同一週還有過渡 credit 09-17 到期。兩者都不需要你做任何設定，但都會改變你這個月能用多少。 **2026-07-20 起，旗艦模型（現為 Fable 5）在訂閱體系中被切成兩層**：Max 與 Team premium 席位…",
+      "latestHeadline": "09-14 是下一個會動到你帳單的日子：週配額換軌後水位約為現在的 83%，同一週還有過渡 credit 09-17 到期。兩者都不需要你做任何設定，但都會改變你這個月能用多少。",
       "readerDomains": [
-        "💼 商業"
+        "💼 商業",
+        "💻 開發實務"
       ]
     },
     {
@@ -1098,7 +1119,7 @@ window.WIKI_DATA = {
       "pill": "active",
       "firstSeen": "",
       "startDate": "2026-05-01",
-      "lastUpdated": "2026-09-05",
+      "lastUpdated": "2026-09-06",
       "lastNewsUpdate": "2026-09-04",
       "updateFreq": "",
       "parent": "",
@@ -2388,6 +2409,7 @@ window.WIKI_DATA = {
   "codingPages": [
     "coding-workflow-guide",
     "skill-interest-watch",
+    "pricing",
     "managed-agents",
     "model-comparison",
     "model-task-leaderboard",

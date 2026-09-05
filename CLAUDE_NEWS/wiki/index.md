@@ -20,12 +20,13 @@
 
 ## 💻 開發實務入口
 
-只放**開發實務強相關**的頁面（怎麼做、裝什麼、選什麼）；產品動態與事件追蹤住各自的頁，整理後沉澱到這幾頁——**升版前想知道會壞什麼**：[[feature-radar]]「⚠️ 升版風險」；版本與已知問題：[[entities/claude-code]]（兩者在 🛠️ 工具/功能 分頁）。工具的判斷（該裝哪個、證據多強）由社群工具目錄每週整理，每日同步進「興趣類別 skill 總覽」——讀者只需看總覽一頁。
+只放**開發實務強相關**的頁面（怎麼做、裝什麼、選什麼、**要花多少**）；產品動態與事件追蹤住各自的頁，整理後沉澱到這幾頁——**升版前想知道會壞什麼**：[[feature-radar]]「⚠️ 升版風險」；版本與已知問題：[[entities/claude-code]]（兩者在 🛠️ 工具/功能 分頁）。工具的判斷（該裝哪個、證據多強）由社群工具目錄每週整理，每日同步進「興趣類別 skill 總覽」——讀者只需看總覽一頁。
 
 | 我想…… | 去哪 |
 |---|---|
 | 接手／新建一個 repo，**官方**建議先做哪些設定（CLAUDE.md、LSP、探索） | [[topics/coding-workflow-guide]] 第 1、2a 段 |
 | 我卡住了（帳單爆、context 撐爆、agent 互踩、它說做完了沒做、agent 讀不懂大 repo……），**社群首選**是哪個 | [[topics/skill-interest-watch]]「我卡在這裡」決策表 |
+| 這個月我會多花／少花多少（方案內含什麼、一小時多少、有沒有在扣錯錢） | [[entities/pricing]] |
 | 我關心的某類工具，現在誰最大、本庫怎麼判斷（本週竄升欄累積一週星史後啟用） | [[topics/skill-interest-watch]] 各類別（按開發流程段） |
 | 它說做完了，我怎麼知道是真的——**官方**做法（要證據、`/goal`、Stop hook） | [[topics/coding-workflow-guide]] 第 9 段 |
 | 我想讓 agent 自己跑幾小時／過夜，該用哪個（`/goal`、subagent、Managed Agents、Agent SDK） | [[entities/managed-agents]]「你該用哪個」 |
@@ -47,7 +48,7 @@
 | [[entities/opus-5]] | model | 🤖 模型 | active | Claude Opus 5：新次旗艦，2026-07-25 發布，編碼/知識工作評測逼近 Fable 5，定價定位待彙整，現為 Claude Max 新預設模型、Claude Pro 最強模型 |
 | [[entities/opus-4-8]] | model | 🤖 模型 | active（已被取代） | Opus 4.8：SWE-bench Pro 69.2%、1M context、Dynamic Workflows（1,000 子代理）、Fast Mode 1/3 費用；次旗艦地位已於 2026-07-25 由 [[entities/opus-5]] 接手 |
 | [[entities/opus-4-7]] | model | 🤖 模型 | active（已被取代）| Opus 4.7 發布細節、思考深度爭議、cache 問題 |
-| [[entities/pricing]] | policy | 💼 商業 | active | 訂閱方案、近期政策變動、token 成本注意事項；印度盧比定價 07-13 已回應 Pro 方案（Rs 2,000/月），Claude Code 涵蓋範圍仍未見官方確認（issue #17432 留言 213） |
+| [[entities/pricing]] | policy | 💼 商業 | active | 訂閱方案、牌價與乘數、計費規則現況；09-14 起週配額換軌、還在發生的計費事故　↳ 子故事：[[entities/pricing-archive]] |
 | [[entities/mythos]] | model | 🤖 模型 | active（已解禁） | 高能力安全模型；2026-07-01 出口管制解除，全球恢復存取；僅限授權機構/安全研究用途，非一般消費市場 |
 | [[entities/bugcrawl]] | feature | 🛠️ 工具/功能 | beta | Anthropic 測試中的 Claude Code 漏洞偵測工具 |
 | [[entities/claude-design]] | feature | 🛠️ 工具/功能 | active（初期）| Anthropic AI 設計工具，首日社群反映幻覺多、風格偏移、Claude Code 整合差 |

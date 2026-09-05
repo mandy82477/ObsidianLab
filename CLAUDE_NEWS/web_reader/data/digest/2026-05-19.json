@@ -277,5 +277,11 @@
     }
   ],
   "preview": "Anthropic 宣布收購 SDK 與 MCP 伺服器生成商 Stainless，傳聞金額逾 $300M，此舉將強化 Anthropic 對開發者工具生態的掌控，MCP 伺服器生成能力可能成為 agent 時代的核心基礎設施。",
-  "sedimentedToday": []
+  "sedimentedToday": [
+    {
+      "id": "pricing-archive",
+      "name": "Anthropic 訂閱方案與計費政策 — 原始條目封存",
+      "pageType": "entity"
+    }
+  ]
 }

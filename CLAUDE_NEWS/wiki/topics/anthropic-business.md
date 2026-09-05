@@ -6,11 +6,11 @@ domain: "💼 商業"
 last_updated: "2026-09-05"
 last_news_update: "2026-09-04"
 status_main: "ongoing"
-days_since_news: 1
+days_since_news: 2
 parent: null
 children: "[]"
 page_role: "root"
-days_since_news_subtree: 1
+days_since_news_subtree: 2
 inbound_links: 78
 attribution_count: 196
 attribution_last: "2026-09-04"

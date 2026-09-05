@@ -1,0 +1,18 @@
+{
+  "id": "pricing-archive",
+  "pageType": "entity",
+  "name": "Anthropic 訂閱方案與計費政策 — 原始條目封存",
+  "entityType": "policy",
+  "status": "resolved（封存頁）",
+  "domain": "💼 商業",
+  "pill": "gray",
+  "firstSeen": "2026-04-25",
+  "startDate": "",
+  "lastUpdated": "2026-09-06",
+  "lastNewsUpdate": "2026-05-19",
+  "updateFreq": "",
+  "parent": "entities/pricing",
+  "summary": "本頁是 pricing 的原始條目封存，重點層（現行規則、牌價、還在發生的事故）都在主頁。",
+  "latestHeadline": "",
+  "markdown": "# Anthropic 訂閱方案與計費政策 — 原始條目封存\n\n**類型：** policy\n**狀態：** resolved（封存頁）\n**領域：** 💼 商業\n**上層：** [[entities/pricing]]\n**首次出現：** 2026-04-25\n**最後更新：** 2026-09-06\n**最後新聞更新：** 2026-05-19\n\n> 本頁是 [[entities/pricing]] 的原始條目封存，重點層（現行規則、牌價、還在發生的事故）都在主頁。\n\n## 2026-04\n\n#### ⏸ 2026-04-29：Token 費用預估翻倍（靜默修訂，逾 90 天無後續，2026-09-06 轉 ⏸）\n\nBusiness Insider 報導 Anthropic 低調調高 Claude Code 預期 Token 費用估算值一倍，無官方公告。\n\n#### ✅ 2026-04-28：Opus「圍牆內圍牆」事件（已修正）\n\nPro 用戶無預告須額外購買才能使用 Opus；Anthropic 事後澄清 Pro 仍可存取，但信任損失已造成。\n\n#### ⛔ 2026-04-25：HERMES.md 靜默計費 Bug\n\ngit commit 歷史出現大寫字串「HERMES.md」會觸發靜默切換至 API 額外計費模式，已知損失單日 $200；Anthropic 確認為 bug 但**拒絕退款**。\n**立即行動**：`git log --all | grep -i HERMES`\n來源：[GitHub Issue #53262](https://github.com/anthropics/claude-code/issues/53262)\n\n## 2026-05\n\n#### 2026-05-19：臨時用量提升優惠、企業成本壓力持續\n\n- **Anthropic 臨時用量提升**：部分使用者收到 Anthropic 提供的臨時優惠——5 小時使用量加倍（x2）+ 每週上限提高 50%；社群反應熱烈，積極利用有限期額度進行密集開發；此舉可能是為緩解近期用量限制帶來的用戶不滿，或配合 Max 方案促銷；具體受惠條件 Anthropic 未公開說明\n- **企業帳單達雲端費用三倍**：HN 討論串揭示多家企業月 AI 工具費用已達雲端 SaaS 費用三倍，部分企業即將全面停用 Claude Code 並禁止個人方案；顯示用量暴增 + 計費透明度不足的問題仍在持續（見 [[topics/enterprise-cost-management]]）\n\n#### 2026-05-16：Max 用量上限未實際生效、社群促銷驗證、成本焦慮高峰\n\n- **Max 20x 用量上限未生效（數學實證）**：一位 Max 20x 重度用戶以計算明確證明——5/6 宣佈的 2 倍 session 上限與 5/13 宣佈的 1.5 倍週用量上限均未在其帳號生效；客服零回應；多位用戶跟進驗證，顯示「宣告即生效」與實際體驗可能存在系統性落差\n- **社群系統驗證 Anthropic 促銷時序**：Reddit 用戶系統整理 2025 年 8 月以來所有官方用量促銷完整時序（對照官方來源），引發對方案透明度的廣泛質疑，討論串聚焦「宣告與實際生效」之間的落差\n- **Lanes.sh 說明 6/15 影響範圍**：Lanes.sh 因架構不同而未受波及，並提供清楚分析：Zed、Conductor、T3 Code、superset.sh 等建構於 Agent SDK 之上的平台的 Max 5x 訂閱用戶實際可用量大幅縮水\n- **API 費用焦慮達本週最顯著高峰**：同日出現多篇 Claude Code API 費用優化指南（7 種降費策略、不改代碼省 10–30%、bootstrapped 創業者費用管控討論、Claude Code 替代方案整理），顯示開發者對 API 費用的集體焦慮達近期峰值\n- **週用量配額意外提前重置（bug 或後端調整）**：部分用戶反映在正常重置日前週配額意外歸零，原重置日期未變（等同一輪額外免費用量）；不清楚是後端調整副作用或 bug；社群擔心用量可能被「追回」\n- **「用 credit 包裝的漲價」批評**：部分開發者在優化指南中明確指出 6/15 公告本質是 API token 上限收緊而非計費重組；Anthropic 對此立場無官方回應\n\n#### 2026-05-10：Opus API 速率限制悄悄調降\n\nServeTheHome 首報；與 SpaceX 算力到位（Sonnet 速率翻倍）同時期出現，顯示差異化模型速率管理。\n\n#### 2026-05-07–09：SpaceX 算力到位，速率上限翻倍\n\n三項變更同步生效：Pro/Max Claude Code 五小時視窗速率翻倍、取消 Pro/Max 尖峰時段降速、API Tier 4+ 速率提升。Dario Amodei 在 Code with Claude 大會現場宣布。\n"
+}

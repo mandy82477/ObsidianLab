@@ -1,11 +1,39 @@
 {
   "_note": "讀者語言閘的存量基線（頁 → 命中指紋）。check_reader_language.py 只對基線外的新增命中 FAIL，基線內的印為 WARN 摘要。清乾淨一頁就把該頁整筆移除——棘輪只能往下轉，不可為了轉綠而加回去。指紋 = 禁詞 + 該行正規化內容雜湊，改寫該行即失效。",
   "_baseline_set": "2026-09-05",
-  "_pages": 3,
-  "_hits": 7,
+  "_pages": 8,
+  "_hits": 25,
   "pages": {
+    "entities/fable-5": [
+      "收錄標準:a453fbcb3e43"
+    ],
+    "entities/managed-agents": [
+      "未收錄:578aa4591833"
+    ],
+    "entities/pricing": [
+      "收錄標準:f0c03a177141",
+      "未收錄:574e27845257",
+      "未收錄:e616ca1b2995"
+    ],
     "topics/anthropic-government-policy-archive": [
       "記者:a712097d295b"
+    ],
+    "topics/code-quality-decline": [
+      "候選症狀:bcf6d9565eb6"
+    ],
+    "topics/community-tech-patterns": [
+      "收錄標準:086550baccde",
+      "收錄標準:0cb6ca4dd488",
+      "收錄標準:16a121e927a1",
+      "收錄標準:1720b805269b",
+      "收錄標準:23036727f7f5",
+      "收錄標準:239333c2b4f2",
+      "收錄標準:39e15a65b234",
+      "收錄標準:7cb6ea650d3a",
+      "收錄標準:89ed6e6832ae",
+      "收錄標準:dcebecc0d4a6",
+      "收錄標準:e72ad61f289d",
+      "收錄標準:f9b75d3261b1"
     ],
     "topics/community-tech-patterns-archive": [
       "ingest:3e475af37ad2",

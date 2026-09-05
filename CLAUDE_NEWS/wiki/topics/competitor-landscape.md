@@ -6,11 +6,11 @@ domain: "💼 商業"
 last_updated: "2026-09-05"
 last_news_update: "2026-09-05"
 status_main: "ongoing"
-days_since_news: 0
+days_since_news: 1
 parent: null
 children: "['topics/competitor-landscape-archive']"
 page_role: "hub"
-days_since_news_subtree: 0
+days_since_news_subtree: 1
 inbound_links: 57
 attribution_count: 93
 attribution_last: "2026-09-05"
@@ -82,7 +82,7 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 
 ## 競品定價對照
 
-> 這裡回答「競品各多少錢」。Claude 自身方案價格不重複列，完整版本見 [[entities/pricing]]「現行方案一覽」。數字均回溯 `news/` 原文查證；查無具體公開數字者依懸置標記語法標示，不可假設。
+> 這裡回答「競品各多少錢」。Claude 自身方案價格不重複列，完整版本見 [[entities/pricing]]「我的方案現在有什麼」。數字均回溯 `news/` 原文查證；查無具體公開數字者依懸置標記語法標示，不可假設。
 > **vs Claude** 欄基準取自 [[entities/pricing]] 2026-08-20 牌價（Sonnet 5 $2/$10 per Mtok），比例隨兩邊調價變動；訂閱制或免費工具無按 token 計費基礎，標 `—` 並註明理由。
 
 | 工具/模型 | 定價 | vs Claude | vs Claude 定位 | 來源日期 |

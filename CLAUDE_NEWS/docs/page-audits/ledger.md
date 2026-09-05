@@ -26,9 +26,13 @@
 | 1 | topics/model-task-leaderboard | 葉子(5)→升輕量卡 | 2026-09-05 | 定稿：摘要宣告「跨家到此為止」、承認本頁量模型不量工具＋懸置登記、index 補路由 | ✅ 複驗過（Q1 死路→3 跳拿到帶數字答案；Q2–Q4 由 2 跳→1 跳） | 2026-09-12 | 併入同一波產物 |
 | 2 | entities/managed-agents | 樞紐(31) | 2026-09-05 | 定稿：留頁、使命句「做到哪一格＋怎麼選」（使用者委由主 session 判）、砍使用指南 75 行留官方連結、新增四軸選型分界表、零件表提位、熱度 🔥🔥🔥🔥🔥→🔥🔥 一次性下修；**主編查證更正**：狀態 beta 非正式發布、計費 $0.08/hr＋token 直接寫入取代懸置 | ✅ 複驗過（四題全拿到：Q1 4 跳沒拿到→2 跳、Q3 零覆蓋→拿到計費；首屏 index L31 直達；唯一殘留卡點「訂閱配額 vs token 兩種貨幣怎麼換算」屬資料缺口） | 2026-09-13 | `managed-agents-2026-09-05{,-final,-review,-verified}.md`、`wave2-cold-reader-2026-09-05.md` |
 
-| 3 | entities/pricing ＋ topics/enterprise-cost-management（併卡） | 樞紐(136)＋樞紐低標(24) | 2026-09-06 | **進行中**：使命句定稿（使用者選 A）「Claude 現在怎麼收你的錢，以及最近哪幾件事改變了這個答案」；ECM「一家公司導入 Claude 之後帳單會怎麼長，別人踩到什麼、怎麼收斂」；三子故事皆不拆；主編查證：數字七項全對、**$35M 事實錯誤**（Defender Advantage Fund 非企業額度）、Spend Controls 三項可結案 | — | — | `pricing-2026-09-06{,-verified,-proposal}.md`、`wave3-cold-reader-2026-09-06.md` |
+| 3 | entities/pricing ＋ topics/enterprise-cost-management（併卡） | 樞紐(136)＋樞紐低標(24) | 2026-09-06 | 定稿：使命句定稿（使用者選 A）「Claude 現在怎麼收你的錢，以及最近哪幾件事改變了這個答案」；ECM「一家公司導入 Claude 之後帳單會怎麼長，別人踩到什麼、怎麼收斂」；三子故事皆不拆；主編查證：數字七項全對、**$35M 事實錯誤**已更正（Defender Advantage Fund 非企業額度）、Spend Controls 三項已結案；新增「一小時／一個月大概多少」「事故現在還在發生嗎」兩張結論表、事故小標補五值狀態符號、蒸餾 2 個時段建 `entities/pricing-archive`、讀者語言閘加四詞並重建全庫基線 | — 待冷讀者複驗 | — | `pricing-2026-09-06{,-verified,-proposal,-proposal-map,-review}.md` |
 
 > 第 1 波同時吃掉 `wiki/reader-notes.md` 的 ⏳「『誰比較強』三頁互踢」——考題集必含「Codex 和 Claude 誰強」，落點必須唯一。
+
+## 待辦（第 3 波遺留）
+
+- **讀者語言閘缺詞「已掃日報至」——四處同改**：`.claude/commands/wiki-lint.md:94` 措辭改為「截至 YYYY-MM-DD 未見後續報導」、`.claude/review-registry.json:713` 同步更新、`scripts/check_reader_language.py` TERMS 加入該禁詞、`data/reader-language-baseline.json` 全庫基線重建。四處須同一 commit 完成，否則規則檔與禁詞互打（見 `pricing-2026-09-06-proposal.md` 第二輪 🟡-5 反駁）。
 
 ## 本波順帶落地的機械看守（第 1 波）
 
