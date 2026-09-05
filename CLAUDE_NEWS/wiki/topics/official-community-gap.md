@@ -3,7 +3,7 @@ page: "topics/official-community-gap"
 kind: "topic"
 status: "ongoing"
 domain: "🛠️ 工具/功能"
-last_updated: "2026-09-04"
+last_updated: "2026-09-05"
 last_news_update: "2026-09-03"
 status_main: "ongoing"
 days_since_news: 2
@@ -27,7 +27,7 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 **狀態：** ongoing
 **領域：** 🛠️ 工具/功能
 **開始日期：** 2026-05-17
-**最後更新：** 2026-09-04
+**最後更新：** 2026-09-05
 **最後新聞更新：** 2026-09-03
 
 > **最新功能缺口**（2026-09-03）
@@ -50,8 +50,8 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 
 | 模式 | 社群起源 | 代表社群工具 | 官方對應 | 狀態 | 缺口分析 |
 |------|---------|------------|---------|------|---------|
-| Subagent 派工/編排 | 2026-05 前，Claude Squad orchestrator 模式 | Claude Squad、Harness（multi-worktree） | Managed Agents（2026-04-30 Beta→2026-05-11 正式）+ `subagent_type` 匹配改善（v2.1.140）+ `/fork`／`/subtask` 語意拆分（v2.1.212，2026-07-17）+ Subagent forking 預設開啟（v2.1.232，2026-08-13） | ✅ 已產品化 | 官方能力已超前，早期社群模式已涵蓋；子項缺口：自訂 agents 定義無法加入 team（issue #24316）⟨G-01⟩ |
-| Multi-agent workflow 腳本化 | 2026-06-18 Gorchestra（手機遠端多 agent 控制）；2026-07-01 動態 fan-out 教學 | Gorchestra、TBD（agent-channels）、Superset | Dynamic Workflows（2026-05-28，Research Preview，最多 1,000 平行子代理）＋ `/config` **Dynamic workflow size** 設定（v2.1.202，2026-07-07，可調整 agent 規模小/中/大）；Coordinator 模式（v2.1.152） | 🧪 部分產品化 | 官方版本存在但 feature-radar 標❌暫不推薦（退款爭議）；手機遠端操控線索初現尚未正式發布 ⟨G-02⟩ |
+| Subagent 派工/編排 | 2026-05 前，Claude Squad orchestrator 模式 | Claude Squad、Harness（multi-worktree） | Managed Agents（04-30→05-11 正式）＋ `subagent_type` 改善＋ `/fork`／`/subtask` 拆分＋ forking 預設開啟；詳見 [[entities/claude-code]] | ✅ 已產品化 | 官方能力已超前，早期社群模式已涵蓋；子項缺口：自訂 agents 定義無法加入 team（issue #24316）⟨G-01⟩ |
+| Multi-agent workflow 腳本化 | 2026-06-18 Gorchestra（手機遠端多 agent 控制）；2026-07-01 動態 fan-out 教學 | Gorchestra、TBD（agent-channels）、Superset | Dynamic Workflows（05-28，Preview，最多 1,000 子代理）＋ workflow size 設定＋ Coordinator 模式；詳見 [[entities/managed-agents]] | 🧪 部分產品化 | 官方版本存在但 feature-radar 標❌暫不推薦（退款爭議）；手機遠端操控線索初現尚未正式發布 ⟨G-02⟩ |
 | Agent 需要輸入時的通知 | 2026-06-28 Stop Hook 音效通知；2026-07-02 氛圍狀態燈；2026-07-03 claude-needs-input | claude-needs-input（終端機標籤變色）、氛圍狀態燈（實體 LED） | `waitingFor` 可見性（v2.1.162，2026-06-04） | 🧪 部分產品化 | 官方僅被動可見性（需主動查看畫面），社群補主動提醒（變色/聲音/實體燈）⟨G-03⟩ |
 | 破壞性指令防護 | 長期社群關注（沙盒隔離、git 安全腳本） | SmolVM、Sandfence、CapaKit | 破壞性 Git 指令自動封鎖（v2.1.183，2026-06-19）；Claude Code Sandboxing（2026-05-10）、`hard_deny`（2026-05-09） | ✅ 已產品化 | git 層級防護已完整覆蓋（🔥🔥🔥✅推薦）；社群沙盒補位更廣泛資源限制場景 ⟨G-04⟩ |
 | 跨 session 記憶持久化 | 2026-05-05 起記憶工具浪潮；2026-06-28 OKF 格式；2026-08-21 OzBrain（跨 agent／團隊共享知識庫）；2026-08-25 ambient-context／mindmuxai/brain.md | ltm（Core Memory Packet）、VIR、CoreMem、OKF、OzBrain、ambient-context、mindmuxai/brain.md | Dreaming 記憶整合（2026-05-07，Research Preview）＋ anthropic-sdk-python v0.117.0（2026-07-16）新增「dreaming」API 支援 | 🧪 部分產品化 | Dreaming 仍 Research Preview、限 Anthropic 生態；社群工具持續擴張（OKF/OzBrain/ambient-context 等）⟨G-05⟩ |
@@ -59,11 +59,11 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 | 成本感知模型路由 | 2026-06-27，Opus 4.7 tokenizer 改版成本大漲後爆發 | Workweave Router（HN 181，實測降 40%+）、Dragoman、Rayline | 無 | ❌ 無官方對應 | 官方無路由/成本最佳化功能，社群工具是唯一解法；漲幅量級見 [[topics/model-comparison#同一份工作，換設定差多少]] |
 | 額度/用量監控 | 2026-05 起持續累積，2026-07-03 因 7/7 計費轉換臨近急遽爆發 | LimitBar、CCLimitPing、claude-needs-input | 企業版 Spend Controls（2026-07-04 宣布，控管粒度未公開，見 [[topics/enterprise-cost-management]]）；個人用戶仍無官方儀表板/告警 UI | 🧪 部分產品化（僅企業版） | 企業版 Spend Controls 已上線；個人用戶仍無官方儀表板，隨計費轉換 deadline 迫切性升高 ⟨G-07⟩ |
 | Slack 內 AI 隊友 | 弱社群前驅（Ano 等輕量 Slack + Claude 整合，2026-06-04） | Ano | [[entities/claude-tag\|Claude Tag]]（2026-06-24，Slack-native，Anthropic 內部 65% 程式碼由其生成） | ✅ 已產品化 | 此列較弱屬「社群發明」框架——官方主導色彩強，社群前驅稀薄，列入僅供對照參考 |
-| 跨 harness 統一操作層 | 2026-08-24 起一週內密集湧現（loopx 5,067★、Graft 4,842★、devspace 4,020★、headroom-desktop 522★；08-27 單日五款 opencodex／omnigent／metaharness／claw-orchestrator 等同批亮相）| loopx、Graft、metaharness、claw-orchestrator、opencodex | 無 | ❌ 無官方對應 | 與上方 AGENTS.md 列**不同層**：那條談設定檔格式相容，本條談執行期統一操作層 ⟨G-11⟩ |
+| 跨 harness 統一操作層 | 2026-08-24 起一週內密集湧現（loopx／Graft／devspace／headroom-desktop 皆逾 500★；08-27 單日五款同批亮相）| loopx、Graft、metaharness、claw-orchestrator、opencodex | 無 | ❌ 無官方對應 | 與上方 AGENTS.md 列**不同層**：那條談設定檔格式相容，本條談執行期統一操作層 ⟨G-11⟩ |
 | Agent 間商業/支付基礎設施 | 2026-08-18，internet-court-skill 首見 | internet-court-skill | 無 | ❌ 無官方對應 | 全新類別——agent 之間經濟往來的信任與爭議解決，非協作/操作層問題；❓ 待查證 ⟨Q-02⟩ ⟨G-12⟩ |
 | 跨工具 agent 設定標準（AGENTS.md） | 2026-05-02 起，[GitHub issue #6235](https://github.com/anthropics/claude-code/issues/6235) 累積 335 則留言、5889 個讚（2026-08-14，全站已知問題讚數之最）| Codex、Amp、Cursor（均已採用 AGENTS.md 標準） | 無 | ❌ 無官方對應 | Claude Code 仍不支援 AGENTS.md，多工具維護痛點；反應數持續攀升；/doctor 精簡建議非互操作標準 ⟨G-08⟩ |
-| 多平行 agent 即時可觀測性／協調地圖 | 2026-07-06 Show HN live-log-viewer-next（讀本機 JSONL transcript 呈現即時對話地圖）；既有 1000 Subagents Fan-out、20-instance 崩潰分析持續堆疊 | live-log-viewer-next、（fan-out/多 instance 分析工具鏈） | Agent View（`claude agents` 多 session 列表管理，v2.1.139）＋ `--forward-subagent-text` 旗標（v2.1.211，2026-07-15）＋ `/fork` 背景 session 化（v2.1.212，2026-07-17） | ❌ 無官方對應 | Agent View 為列表式非即時 live map；--forward-subagent-text 提供資料來源但非觀測產品本身 ⟨G-09⟩ |
-| Agent 間直接通訊協定 | 2026-07-08 [GitHub issue #24798](https://github.com/anthropics/claude-code/issues/24798)（多 Claude session 間直接通訊，累積 78 則留言、21 個 👍，2026-08-16 互動數更新）；2026-07-14 [issue #28300](https://github.com/anthropics/claude-code/issues/28300)（跨機器多 agent 協作 A2A 協定） | 無專屬社群工具，訴求以 GitHub issue 形式累積 | 官方文件（2026-08-09 查證，[code.claude.com/docs/en/cross-session-messaging](https://code.claude.com/docs/en/cross-session-messaging)）：Cross-session messaging，需 v2.1.224 以上版本、限 macOS／Linux，工具為 `ListAgents`＋`SendMessage`，同機制涵蓋 subagent／team 內部訊息 | 🧪 部分產品化（官方文件確認同機 session 通訊；跨機器 A2A 需求 #28300 涵蓋範圍未載明） | 官方文件確認同機 session 通訊(v2.1.224)；跨機器場景與依賴排序需求未確認涵蓋 ⟨G-10⟩⟨Q-01⟩ |
+| 多平行 agent 即時可觀測性／協調地圖 | 2026-07-06 Show HN live-log-viewer-next（讀本機 JSONL transcript 呈現即時對話地圖）；既有 1000 Subagents Fan-out、20-instance 崩潰分析持續堆疊 | live-log-viewer-next、（fan-out/多 instance 分析工具鏈） | Agent View（`claude agents` 列表管理）＋ `--forward-subagent-text` 旗標＋ `/fork` 背景化；詳見 [[entities/claude-code]] | ❌ 無官方對應 | Agent View 為列表式非即時 live map；--forward-subagent-text 提供資料來源但非觀測產品本身 ⟨G-09⟩ |
+| Agent 間直接通訊協定 | 2026-07-08 issue #24798（多 session 直接通訊，78 留言）；2026-07-14 issue #28300（跨機器 A2A 協定） | 無專屬社群工具，訴求以 GitHub issue 形式累積 | 官方文件（08-09 查證）：Cross-session messaging，需 v2.1.224+、限 macOS／Linux，工具為 `ListAgents`＋`SendMessage` | 🧪 部分產品化（官方文件確認同機 session 通訊；跨機器 A2A 需求 #28300 涵蓋範圍未載明） | 官方文件確認同機 session 通訊(v2.1.224)；跨機器場景與依賴排序需求未確認涵蓋 ⟨G-10⟩⟨Q-01⟩ |
 
 **缺口細節**
 - ⟨G-01⟩ Subagent 派工/編排：Boris Cherny 揭露內部「數千子代理夜間跑批」工作流（2026-05-13），早期社群模式已被涵蓋；2026-07-17 官方將「背景多開新 session」（`/fork`）與「同 session 委派子任務」（`/subtask`）拆成兩個明確指令，派工模式操作介面更成熟
@@ -95,7 +95,7 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 |---------|---------|-------------|---------|
 | 多 agent 協調管理 | ⭐⭐⭐⭐ | Managed Agents、Agent View、`/goal`、`/loop`/`/batch`、`claude agents` 旗標 | ✅ 高度對應 |
 | 輸出品質驗證 | ⭐⭐⭐⭐ | Outcomes 規格驗證、`/goal` 自動判定完成條件 | ⚡ 部分對應 |
-| 安全隔離 | ⭐⭐⭐ | Claude Code Sandboxing、`hard_deny`、Claude Security、`sandbox.filesystem.disabled`（v2.1.216，2026-07-20，可在維持網路出口控管同時跳過檔案系統隔離）、worktree session 隔離修復（v2.1.222，2026-08-04，隔離範圍擴大至檔案編輯與 Bash） | ✅ 高度對應 |
+| 安全隔離 | ⭐⭐⭐ | Claude Code Sandboxing、`hard_deny`、Claude Security；worktree 隔離修復；詳見 [[entities/claude-code]] 版本表 | ✅ 高度對應 |
 | 跨 session 記憶歸零 | ⭐⭐⭐⭐⭐ | Dreaming（Research Preview，仍實驗性） | ⏳ 正在做但遠未解決 |
 | CLAUDE.md 規則失效 | ⭐⭐⭐ | 無 | ❌ 完全未對應 |
 | Token 成本不透明 | ⭐⭐⭐⭐ | 無（6/15 信用池改制反而使問題惡化） | ❌ 完全未對應 |

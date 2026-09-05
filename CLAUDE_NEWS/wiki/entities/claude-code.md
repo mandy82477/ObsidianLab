@@ -4,7 +4,7 @@ kind: "entity"
 type: "product"
 status: "active"
 domain: "🛠️ 工具/功能"
-last_updated: "2026-09-04"
+last_updated: "2026-09-05"
 last_news_update: "2026-09-03"
 status_main: "active"
 days_since_news: 2
@@ -12,7 +12,7 @@ parent: null
 children: "[]"
 page_role: "root"
 days_since_news_subtree: 2
-inbound_links: 75
+inbound_links: 77
 attribution_count: 424
 attribution_last: "2026-09-03"
 top_source: "github-issues"
@@ -29,15 +29,15 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 **狀態：** active
 **領域：** 🛠️ 工具/功能
 **首次出現：** 2025（正式推出）
-**最後更新：** 2026-09-04
+**最後更新：** 2026-09-05
 **最後新聞更新：** 2026-09-03
 
-> **最新動態**（2026-09-02）
-> - **v2.1.258 發布**：修復 macOS 12（Monterey）啟動失敗（v2.1.255 引入的回歸），以及 remote／排程 session 因「使用者訊息不得為空」而失敗的問題；純 bug 修復。
-> - **SDK 更新**：anthropic-sdk-typescript v0.123.0、anthropic-sdk-python v1.3.0 同步新增 beta 版使用者個人資料（user profiles）API 支援，含 `external_user_onboarding` 等欄位。
-> - **新增已知問題 1 則**：宣告 draft-07 `outputSchema` 的 MCP server 被判為「unsupported dialect」，在客戶端派發前即遭拒絕而完全無法使用（issue #86142，49 則留言、14 個讚）。
-> - **已知問題互動數更新 4 則**：Windows Desktop 孤兒程序鎖檔無法重啟（#42776，122→144 留言、59→71 讚）、Remote Control 自動重連失效（#34255，65→70 留言、104→107 讚）、Advisor 觸發時「No response from API」（#69238，60→64 留言、首次補上 110 讚）、Fable 5 於 Max 方案持續要求 usage credits 並靜默降級（#79337，67→76 留言、25→26 讚）。
-> - **安全研究**：資安研究者示範僅需請 Claude Code Auto Mode 摘要一個惡意網頁即可劫持該次執行，報導稱官方尚無修復計畫；The Hacker News 另報導惡意 `.git` 設定檔可讓 Claude、Codex、Cursor 等 agent 執行攻擊者程式碼，風險分析見 [[topics/ai-agent-safety]]。
+> **最新動態**（2026-09-03）
+> - **v2.1.259 發布**：新增 `managedMcpServers`，組織可統一部署 HTTP/SSE MCP 伺服器。
+> - **v2.1.258 修復**：macOS 12 啟動失敗回歸、remote／排程 session 因空訊息失敗的問題。
+> - **09-03 多模型錯誤率升高**：Fable 5.1／5、Opus 5／4.8／4.6 同時受影響，官方鎖定原因中；Sonnet 5 另一起已解決。
+> - **新增已知問題**：draft-07 `outputSchema` 的 MCP server 判為 unsupported dialect 遭拒，完全無法使用（#86142）。
+> - **安全研究**：Auto Mode 摘要惡意網頁即可被劫持執行，官方尚無修復計畫；詳見 [[topics/ai-agent-safety]]。
 ---
 
 ## 現況
@@ -689,7 +689,7 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 | 2026-06-30 | **v2.1.197**（初報）：`/model` 選單出現 Sonnet 5 選項（當時無法選用），社群預測正式發布在即；07-01 官方確認正式切換 |
 | 2026-06-30 | **Explore subagent 鎖定 Haiku 分析**：社群深入分析內建 subagent 類型，發現 Explore subagent 固定使用 Haiku 模型，除錯場景可能因模型能力不足導致問題（見 [[已知問題]]）|
 | 2026-06-30 | **Session 30天自動刪除：Anthropic 拒絕修復**：官方在 GitHub issue #62476 明確表示不修復此行為，社群建議透過 CLAUDE.md + `.claude/changelog` 手動保留記錄 |
-| 2026-06-30 | **36Kr 報導背景任務升級**（2026-06-30 指控，至今無後續）：36Kr 報導 Claude Code 下一重大升級方向為讓系統在背景完成所有任務、同時使用者繼續對話互動；官方尚未正式公告 |
+| 2026-06-30 | **36Kr 報導背景任務升級**（2026-06-30 指控，已掃日報至 2026-09-03 無後續；官方頁面未查證）：36Kr 報導 Claude Code 下一重大升級方向為讓系統在背景完成所有任務、同時使用者繼續對話互動；官方尚未正式公告 |
 | 2026-06-29 | **v2.1.196**：新增 org default model 功能，企業管理員在 org console 設定後，使用者在 `/model` 看到「Org default」或「Role default」選項 |
 | 2026-06-25 | **v2.1.191**：新增 `/rewind` 指令，可從 `/clear` 執行前任一對話節點恢復，無需重新輸入指令背景；修正 streaming 捲軸自動跳底部問題（UX 改善）；TypeScript SDK v0.106.0 與 Python SDK v0.112.0 同日發布，新增 `client.system.message` 支援 |
 | 2026-06-24 | **v2.1.187**：新增 `sandbox.credentials` 設定，可阻止沙盒指令讀取憑證檔案與機密環境變數（AWS 金鑰、API token 等），防止沙盒內惡意指令竊取敏感資訊；新增組織層級模型限制功能，企業管理員可統一管控可用模型清單 |

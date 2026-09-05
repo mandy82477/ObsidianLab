@@ -3,7 +3,7 @@ page: "topics/community-large-codebase-workflow"
 kind: "topic"
 status: "ongoing"
 domain: "🌐 社群"
-last_updated: "2026-09-04"
+last_updated: "2026-09-05"
 last_news_update: "2026-09-03"
 update_freq: "🗓️ 週更（每週從模式庫沉澱一次；更新日期停留數天屬正常節奏）"
 status_main: "ongoing"
@@ -29,11 +29,11 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 **領域：** 🌐 社群
 **更新頻率：** 🗓️ 週更（每週從模式庫沉澱一次；更新日期停留數天屬正常節奏）
 **開始日期：** 2026-05-02
-**最後更新：** 2026-09-04
+**最後更新：** 2026-09-05
 **最後新聞更新：** 2026-09-03
 
 > **本週答案變動**（2026-09-03）
-> 「索引與記憶」線新增兩節點：09-02 thedotmack/claude-mem（跨 7+ harness、AI 壓縮 session 記憶，9.3 萬星）補上「可攜性」子軸線第一個規模較大的實作案例，惟僅星數佐證未經 forks/issues 覆核；同日一則 dev.to 第一手實測指出內建記憶與人類認知記憶「不做同一件事」，屬評測角度補充。8/31「否決記錄需可驗證、防竄改」仍停在概念層。其餘三條線（並行規模、Context/Token、除錯與分工）本輪無帶「主線」tag 的新節點，答案不變。
+> 「索引與記憶」線新增兩節點：claude-mem 補上可攜性首個較大案例（未覆核）；內建記憶 vs 人類認知記憶首則實測。其餘三線本輪無新節點，答案不變。
 
 ---
 

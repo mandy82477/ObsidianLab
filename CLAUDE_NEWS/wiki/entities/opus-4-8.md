@@ -4,7 +4,7 @@ kind: "entity"
 type: "model"
 status: "active（已被取代，次旗艦地位由 Opus 5 接手）"
 domain: "🤖 模型"
-last_updated: "2026-09-04"
+last_updated: "2026-09-05"
 last_news_update: "2026-08-27"
 status_main: "active"
 days_since_news: 9
@@ -29,7 +29,7 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 **狀態：** active（已被取代，次旗艦地位由 Opus 5 接手）
 **領域：** 🤖 模型
 **首次出現：** 2026-05-28
-**最後更新：** 2026-09-04
+**最後更新：** 2026-09-05
 **最後新聞更新：** 2026-08-27
 
 > **最新進展**（2026-08-27）
@@ -43,7 +43,7 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 
 **2026-07-25**：Claude Opus 5 正式發布，取代 Opus 4.8 成為次旗艦、Claude Max 新預設模型、Claude Pro 最強模型（詳見 [[entities/opus-5]]）。近兩週的「Opus 5」傳聞（HackerNoon 07-24、TestingCatalog 07-23 等，見下方「下一代模型觀察」歷史記錄）就此獲得官方證實。Opus 4.8 本身能力與規格未變，仍是 Fable 5 護欄觸發時的 fallback 模型，但已不再是次高階公開模型的首選。
 
-Claude Opus 4.8 於 2026-05-28 正式發布，同步推出 Dynamic Workflows（Research Preview）與 Fast Mode 降價，是 2026 年以來 Anthropic 發布規模最大的旗艦更新。**2026-06-09 Claude Fable 5 發布後，Opus 4.8 不再是最高階公開模型**，現作為 Fable 5 安全分類器觸發時的 fallback 模型（< 5% session 觸發）——出口管制期間（2026-06-13 至 07-01）Opus 4.8 曾是 Fable 5 全面下線時的唯一替代選項，管制已於 2026-07-01 解除，現行 fallback 角色改由 Fable 5「Defense in Depth」分類器觸發（詳見 [[entities/fable-5]]）。核心指標：SWE-bench Pro 69.2%（1M context window）；Fast Mode 速度為標準的 2.5 倍、費率降至前代的 1/3。
+Claude Opus 4.8 於 2026-05-28 正式發布，同步推出 Dynamic Workflows（Research Preview）與 Fast Mode 降價，是 2026 年以來 Anthropic 發布規模最大的旗艦更新。**2026-06-09 Claude Fable 5 發布後，Opus 4.8 不再是最高階公開模型**，現作為 Fable 5 安全分類器觸發時的 fallback 模型（< 5% session 觸發）——出口管制期間（2026-06-13 至 07-01）Opus 4.8 曾是 Fable 5 全面下線時的唯一替代選項，管制已於 2026-07-01 解除，現行 fallback 角色改由 Fable 5「Defense in Depth」分類器觸發（詳見 [[entities/fable-5]]）。核心指標：SWE-bench Pro 69.2%（1M context window）；Fast Mode 速度為標準的 2.5 倍、費率降至前代的 1/3。1M context 的計費規則、預設行為與控制權缺口見 [[topics/long-context-1m]]。
 
 ---
 
@@ -184,4 +184,4 @@ claude.ai 用戶現可調節 Claude 在任務上投入的努力程度，不再�
 **懸置細節**
 - ⟨Q-01⟩ **2026-08-10 官方／第三方媒體查證**：查得 TipRanks 全文（非僅標題），確認非單純舊事重炒。核心事實：Anthropic 於 2026-06-10 致函美國參議院銀行委員會，指控與 Alibaba Qwen Lab 有關的操作者對 Claude 發動迄今最大規模蒸餾攻擊（約 25,000 個詐騙帳號、28.8M 次交流，2026-04-22 至 06-05 間）
   - 隨後開發者發現 Claude Opus 4.8 在部分語言測試中會自稱是 Qwen，媒體以此建構「Anthropic 對外指控蒸餾、自身卻疑似蒸餾對手」的雙標敘事
-  - 多方技術分析（含 [blog.kilo.ai](https://blog.kilo.ai/p/did-claude-opus-48-distill-alibabas)）認為較可能的解釋並非真實蒸餾，而是訓練資料汙染／提示脆弱性／proxy 路由造成的中文語系身份錯亂 bug——與上方 05-30 條目「proxy 詐騙服務假冒 Claude」判斷方向一致，屬同一根因的延伸報導而非獨立新事件（[TipRanks](https://www.tipranks.com/news/anthropic-faces-distillation-hypocrisy-backlash-as-claude-claims-to-be-alibabas-qwen-ai)，2026-07-21）
+  - 多方技術分析（含 [blog.kilo.ai](https://blog.kilo.ai/p/did-claude-opus-48-distill-alibabas)）認為較可能的解釋並非真實蒸餾，而是訓練資料汙染／提示脆弱性／proxy 路由造成的中文語系身份錯亂 bug——與上方 05-30 條目「proxy 詐騙服務假冒 Claude」判斷方向一致，屬同一根因的延伸報導而非獨立新事件（[TipRanks](https://www.tipranks.com/news/anthropic-faces-distillation-hypocrisy-backlash-as-claude-claims-to-be-alibabas-qwen-ai)，2026-07-21）；Anthropic 對 Alibaba 蒸餾攻擊的官方指控與競品追趕態勢完整脈絡見 [[topics/competitor-landscape]]（商業記者維護）

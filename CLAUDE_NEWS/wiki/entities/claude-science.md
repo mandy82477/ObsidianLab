@@ -29,7 +29,7 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 **狀態：** active
 **領域：** 🛠️ 工具/功能
 **首次出現：** 2026-07-01
-**最後更新：** 2026-08-27
+**最後更新：** 2026-09-05
 **最後新聞更新：** 2026-08-17
 
 > **最新動態**（2026-08-17）
@@ -90,6 +90,6 @@ Claude Science 是 Anthropic 於 2026-07-01 發布的科學家專用 AI 工作�
 
 | 日期 | 事件 |
 |------|------|
-| 2026-08-17 | GitHub Search 發現官方 repo `anthropics/life-sciences`（576★），為「Claude for Life Sciences Launch」的 Claude Code Marketplace，長期託管 `marketplace.json`；與「Claude Science」品牌關係待後續報導釐清 |
+| 2026-08-17 | GitHub Search 發現官方 repo `anthropics/life-sciences`（576★），為「Claude for Life Sciences Launch」用的 Marketplace，關係待後續報導釐清 |
 | 2026-07-15 | the-scientist.com 報導科學研究者早期評價：工作流程加快，但仍存在功能缺口；僅標題可用，細節待補 |
 | 2026-07-01 | 正式發布，科學家專用 AI 工作台 app，整合研究工具套件、可稽核 artifact 與彈性雲端運算 |

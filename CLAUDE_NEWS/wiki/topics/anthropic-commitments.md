@@ -3,7 +3,7 @@ page: "topics/anthropic-commitments"
 kind: "topic"
 status: "ongoing"
 domain: "🏛️ 政策/安全"
-last_updated: "2026-09-01"
+last_updated: "2026-09-05"
 last_news_update: "2026-09-01"
 status_main: "ongoing"
 days_since_news: 4
@@ -11,7 +11,7 @@ parent: null
 children: "[]"
 page_role: "root"
 days_since_news_subtree: 4
-inbound_links: 12
+inbound_links: 11
 attribution_count: 0
 attribution_last: null
 top_source: null
@@ -27,11 +27,11 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 **狀態：** ongoing
 **領域：** 🏛️ 政策/安全
 **開始日期：** 2026-07-03
-**最後更新：** 2026-09-01
+**最後更新：** 2026-09-05
 **最後新聞更新：** 2026-09-01
 
 > **最新動態**（2026-09-01，新增追蹤項）
-> 新增「與 METR 合作獨立審查訓練環境安全事件」追蹤列（🟡 進行中）：官方部落格就 07-30 三起評測環境連網事件與 08-04 UK AISI 通報的 Mythos 5 未授權行動承諾獨立審查，並已恢復外部機構測試（事件詳見 [[topics/ai-agent-safety]]）。其餘既有追蹤中承諾（Fable 5 恢復訂閱內含 ⟨C-01⟩、隱寫術修復、解禁三承諾、spyware 指控回應、Agent SDK 計費切割暫停、HERMES.md 拒絕退款）狀態未變。
+> 新增「與 METR 合作獨立審查訓練環境安全事件」追蹤列（🟡 進行中，詳見 [[topics/ai-agent-safety]]）。其餘追蹤中承諾狀態未變，見下表。
 
 ---
 
@@ -45,7 +45,7 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 
 | 承諾 / 表態 | 承諾日 | 目前狀態 | 最後檢查 | 說明 |
 |---|---|---|---|---|
-| **與 METR 合作獨立審查訓練環境安全事件** | 2026-09-01 | 🟡 進行中 | 2026-09-01 | 官方部落格就 07-30 三起評測環境連網事件＋08-04 UK AISI 通報 Mythos 5 未授權行動承諾獨立審查；已恢復外部機構測試（Reuters 08-31）。事件詳見 [[topics/ai-agent-safety]] |
+| **與 METR 合作獨立審查訓練環境安全事件** | 2026-09-01 | 🟡 進行中 | 2026-09-01 | 官方部落格就 07-31 三起評測環境連網事件＋08-04 UK AISI 通報 Mythos 5 未授權行動承諾獨立審查；已恢復外部機構測試（Reuters 08-31）。事件詳見 [[topics/ai-agent-safety]] |
 | **Fable 5 恢復訂閱內含** | ❓ 待查證 ⟨C-01⟩ | 🔴 未兌現 | 2026-08-29 | 社群整理時間軸稱官方曾表態將恢復，十週後 Pro 仍按 token 計費；官方原始表態出處未明 ⟨C-01⟩，詳見表下 |
 | **修復隱寫術（同形字符替換）機制** | 2026-07-01 | 🔴 未兌現 | 2026-07-02 | HN 2263 分爭議後官方承諾修復；修復版尚未發布，07-02 爭議還升級為 spyware 指控 |
 | **解禁三承諾**（主動偵測安全風險 / 配合標準協議 / 通報惡意活動） | 2026-07-01 | 🟡 部分兌現 | 2026-07-02 | 07-02 Defense in Depth 分類器為「主動偵測」首次具體落實，但首日即有誤判實測；另兩項尚無公開動作 |

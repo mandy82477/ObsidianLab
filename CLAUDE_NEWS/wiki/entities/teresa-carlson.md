@@ -4,7 +4,7 @@ kind: "entity"
 type: "person"
 status: "active（待核實）"
 domain: "👤 人物"
-last_updated: "2026-08-28"
+last_updated: "2026-09-05"
 last_news_update: "2026-07-07"
 status_main: "active"
 days_since_news: 60
@@ -29,10 +29,10 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 **狀態：** active（待核實）
 **領域：** 👤 人物
 **首次出現：** 2026-07-07
-**最後更新：** 2026-08-28
+**最後更新：** 2026-09-05
 **最後新聞更新：** 2026-07-07
 
-> ❓ **待查證**（標 2026-08-10｜查 Carlson、FedScoop）｜**加入 Anthropic 傳聞**（2026-07-07 報導）：Teresa Carlson（曾任職 Microsoft、AWS）加入 Anthropic，主導公部門（public sector）業務；確切職稱與到任日期僅 FedScoop 單一媒體標題層級報導，尚無進一步獨立確認。
+> ❓ **待查證**（標 2026-08-10｜查 Carlson、FedScoop）｜**加入 Anthropic 傳聞**（2026-07-07 報導）：Teresa Carlson（曾任職 Microsoft、AWS）加入 Anthropic，主導公部門（public sector）業務；確切職稱與到任日期僅 FedScoop 單一媒體標題層級報導，尚無進一步獨立確認。已掃日報至 2026-09-03 無後續；官方頁面未查證。
 
 ---
 

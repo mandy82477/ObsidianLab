@@ -4,7 +4,7 @@ kind: "entity"
 type: "feature"
 status: "active"
 domain: "🛠️ 工具/功能"
-last_updated: "2026-09-04"
+last_updated: "2026-09-05"
 last_news_update: "2026-08-24"
 status_main: "active"
 days_since_news: 12
@@ -29,7 +29,7 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 **狀態：** active
 **領域：** 🛠️ 工具/功能
 **首次出現：** 2026-04-27
-**最後更新：** 2026-09-04
+**最後更新：** 2026-09-05
 **最後新聞更新：** 2026-08-24
 
 > **最新官方動態**（2026-08-19）
@@ -78,7 +78,7 @@ description: 在 PR 或 diff review 前，依團隊規範檢查命名、測試�
 | 面向 | 內容 | 日期 |
 |------|------|------|
 | 機制本身 | 可重複使用的任務封裝單元，Claude 依描述語意自動觸發，無需手動呼叫；採「漸進式揭露」三層架構（啟動只讀名稱+簡述，命中後才載入完整內容），兼顧 token 效率與觸發準確度 | 官方設計揭露 2026-05-31 |
-| 官方 skills bundle | 新增 `academy-guide`（2026-08-18 以 `claude-academy-guide` 之名新增，2026-08-19 改名，原名同步移除）、`discernment-nudge`；官方 repo 未附說明文字，用途待補 | 2026-08-19（改名） |
+| 官方 skills bundle | 新增 `academy-guide`（08-18 以 `claude-academy-guide` 新增，08-19 改名）、`discernment-nudge`；用途待補 | 2026-08-19（改名） |
 | | 官方核心 11 個 Skills（代碼審查、安全審計、前端設計等），首見於社群移植而非官方公告本身 | 2026-04-27（移植事件） |
 | | 官方發布「31 個小企業 Skills」技能包，首日下載 38.2 萬次 | 2026-05-24 |
 | | Claude for Teachers 教學技能庫（美國認證 K-12 教師專用），詳見 [[entities/claude-for-teachers]] | 2026-07-15 |
@@ -87,9 +87,9 @@ description: 在 PR 或 diff review 前，依團隊規範檢查命名、測試�
 | | v2.1.178：Skills 在巢狀子 Agent 中可正常運作（搭配新版 `Tool(param:value)` permission 語法） | 2026-06-16 |
 | 官方設計指南 | 《Lessons from building Claude Code: How we use skills》——內部數百個 Skills 的實戰心得 | 2026-06-05 |
 | | 《七種指令傳遞方法》——Skills 與 CLAUDE.md/rules/subagents/hooks/output styles/system prompt append 六層控制的定位框架 | 2026-06-21 |
-| 分享／同步機制 | ✅ **已有官方市集**（2026-08-08 查證官方文件更正）：`claude-plugins-official`（Anthropic 策展，首次互動啟動時自動註冊）與 `claude-plugins-community`（第三方送審後上架，需自行 `/plugin marketplace add`）；目錄另可於 [claude.com/plugins](https://claude.com/plugins) 瀏覽，送審有自動驗證與安全篩查。**創作者變現機制仍缺** | 市集已就位；變現無官方時程 |
+| 分享／同步機制 | ✅ **已有官方市集**（2026-08-08 查證更正）：`claude-plugins-official`（官方策展）與 `claude-plugins-community`（第三方送審）；詳見官方目錄。**變現機制仍缺** | 市集已就位；變現無官方時程 |
 | | Enterprise 方案可開啟 skill／plugin 安全掃描（beta），第三方 skill／plugin 上傳或編輯時自動檢查惡意內容 | 2026-08-06 |
-| 行為變更 | v2.1.215：`/verify` 與 `/code-review` 兩項官方技能不再由 Claude 自動觸發，須使用者手動呼叫指令才會執行；與上方「機制本身」列所述「依描述語意自動觸發、無需手動呼叫」的通則產生例外，依賴自動驗證/審查的既有工作流需改為顯式呼叫，無過渡期即刻生效。詳見 [[entities/claude-code]] 版本表 | 2026-07-19 |
+| 行為變更 | v2.1.215：`/verify` 與 `/code-review` 不再自動觸發，須手動呼叫；與上方「機制本身」通則產生例外，無過渡期即刻生效，詳見 [[entities/claude-code]] 版本表 | 2026-07-19 |
 
 ## 第三方生態動態
 
@@ -117,14 +117,15 @@ description: 在 PR 或 diff review 前，依團隊規範檢查命名、測試�
 - [Claude Code v2.1.169 Release](https://github.com/anthropics/claude-code/releases/tag/v2.1.169)（2026-06-09）
 - [Claude Code v2.1.178 Release](https://github.com/anthropics/claude-code/releases/tag/v2.1.178)（2026-06-16）
 - [Show HN: Claudinho — Find and Install Claude Skills](https://www.claudinho.xyz/)（2026-06-03）
+- [官方 Plugin 目錄](https://claude.com/plugins)（`claude-plugins-official`／`claude-plugins-community` 瀏覽入口，2026-08-08 查證）
 - [[news/2026-04-27]]、[[news/2026-05-17]]、[[news/2026-05-20]]、[[news/2026-05-24]]、[[news/2026-05-27]]、[[news/2026-05-31]]、[[news/2026-06-05]]、[[news/2026-06-09]]、[[news/2026-06-16]]、[[news/2026-06-21]]、[[news/2026-07-15]]、[[news/2026-08-18]]、[[news/2026-08-19]]
 
 ## 歷史記錄
 
 | 日期 | 事件 |
 |------|------|
-| 2026-08-24 | 第三方索引工具 SkillWorks（非官方）08-23 揭露其索引規模統計（503,570 listings、392,227 skills、80,636 subagents、23,442 plugins、7,265 marketplaces，48,190 個 skill 無法載入，2026-08-22 rebuilt）；HN 僅 2 分未達收錄門檻，數字未經官方驗證，供生態規模參考 |
-| 2026-08-19 | 官方技能庫目錄核對：`claude-academy-guide`（08-18 新增）改名為 `academy-guide`，原名同步從目錄移除；The New Stack 報導某 skill 耗掉 20 萬 token，❓ 待查證 ⟨Q-01⟩ |
+| 2026-08-24 | 第三方索引工具 SkillWorks（非官方）08-23 揭露索引規模：50 萬+ listings、39 萬+ skills、8 萬+ subagents；HN 僅 2 分未達收錄門檻，數字未經官方驗證 |
+| 2026-08-19 | 官方技能庫目錄核對：`claude-academy-guide`（08-18 新增）改名為 `academy-guide`；The New Stack 報導某 skill 耗 20 萬 token ❓ 待查證 ⟨Q-01⟩ |
 | 2026-08-18 | 官方技能庫（anthropics/skills）新增 2 項：`claude-academy-guide`、`discernment-nudge`；官方 repo 未附說明文字，用途待補 |
 | 2026-07-15 | Claude for Teachers 教學技能庫發布，向美國認證 K-12 教師免費開放（詳見 [[entities/claude-for-teachers]]） |
 | 2026-06-21 | 官方部落格《七種指令傳遞方法》，將 Skills 納入 CLAUDE.md／rules／subagents／hooks／output styles／system prompt append 六層控制決策框架 |

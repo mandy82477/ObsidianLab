@@ -3,7 +3,7 @@ page: "topics/code-quality-decline"
 kind: "topic"
 status: "ongoing（官方已說明工程疏失，恢復情況見下方摘要）"
 domain: "🌐 社群"
-last_updated: "2026-09-04"
+last_updated: "2026-09-05"
 last_news_update: "2026-08-29"
 status_main: "ongoing"
 days_since_news: 7
@@ -11,7 +11,7 @@ parent: null
 children: "[]"
 page_role: "root"
 days_since_news_subtree: 7
-inbound_links: 31
+inbound_links: 32
 attribution_count: 24
 attribution_last: "2026-08-28"
 top_source: "reddit"
@@ -27,11 +27,11 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 **狀態：** ongoing（官方已說明工程疏失，恢復情況見下方摘要）
 **領域：** 🌐 社群
 **開始日期：** 2026-03（推測）
-**最後更新：** 2026-09-04
+**最後更新：** 2026-09-05
 **最後新聞更新：** 2026-08-29
 
 > **最近效能退步事件**（2026-08-28）
-> 「Opus 5 上線後品質感知訊號群」累計第 14 則訊號：Reddit r/ClaudeCode 使用者質疑 Opus 5／Fable 5 表現遜於預期、指控遭「削弱」，無週熱門標記、score 不可信，方向與 08-22／08-26 的「A/B 測試降 effort」懷疑一致，僅計入現象延續，未提供新機制證據。
+> Opus 5 品質感知訊號群第 14 則：使用者質疑 Opus 5／Fable 5 遭「削弱」，方向與既有 A/B 測試降 effort 懷疑一致，未提供新機制證據。
 
 ---
 
@@ -54,7 +54,7 @@ Claude Code 在 2026 年 3 月至 4 月間出現長達約一個月的效能明�
 | 2026-07-03 | GitHub issue #16856：升級至 2.1.1 版後 token 消耗速度較前版快 4 倍以上 | [GitHub Issues #16856](https://github.com/anthropics/claude-code/issues/16856) | 具體版本號可複現主張 |
 | 2026-07-03 | GitHub issue #38335：Max 方案 session 額度自 3/23 起異常加速消耗；截至 07-09 累積 791 則留言、536 個讚，社群互動量最高條目之一 | [GitHub Issues #38335](https://github.com/anthropics/claude-code/issues/38335) | 高（留言數達對照表高門檻，且持續增長）|
 | 2026-07-08 | GitHub issue #41506：Max 方案（$100/月）token 消耗量自 3/28-29 起在未變更設定下增加約 3-5 倍，累積 54 則留言、29 個讚 | [GitHub Issues #41506](https://github.com/anthropics/claude-code/issues/41506) | 高（留言數達對照表高門檻，與 #38335 同期同方向）|
-| 2026-07-08 | 「Cache hit rate dropping by 20% doubles your agent's bills」：使用者以圖表分享 cache 命中率下降 20% 會讓 agent 帳單翻倍 | Reddit r/ClaudeCode（[原文](https://www.reddit.com/r/ClaudeCode/comments/1uqsah2/cache_hit_rate_dropping_by_20_doubles_your_agents_bills/)）| 首度提出具體技術機制，補足假說二的解釋空缺；圖片為主、文字說明有限，尚待第三方覆核（07-09～07-31 news 查無直接跟進，至今無後續） |
+| 2026-07-08 | 「Cache hit rate dropping by 20% doubles your agent's bills」：使用者以圖表分享 cache 命中率下降 20% 會讓 agent 帳單翻倍 | Reddit r/ClaudeCode（[原文](https://www.reddit.com/r/ClaudeCode/comments/1uqsah2/cache_hit_rate_dropping_by_20_doubles_your_agents_bills/)）| 首度提出具體技術機制，補足假說二的解釋空缺；圖片為主、文字說明有限，尚待第三方覆核（07-09～07-31 news 查無直接跟進；已掃日報至 2026-09-03 無後續；官方未查證） |
 | 2026-07-08 | 「Claude Max (20x) weekly limit exhausted in less than a day」：Max 20x 方案週額度不到一天用盡 | Reddit r/ClaudeCode（[原文](https://www.reddit.com/r/ClaudeCode/comments/1uqs99q/claude_max_20x_weekly_limit_exhausted_in_less/)）| 具體異常比例回報，與同日 GitHub 額度耗盡回報呼應 |
 | 2026-07-09 | 「Claude Max 20x: Why did 27% of one session consume 7% of my entire weekly limit?」：單一 session 27% 的時間即消耗掉整週額度 7% | Reddit r/ClaudeAI（[原文](https://www.reddit.com/r/ClaudeAI/comments/1urqgqx/claude_max_20x_why_did_27_of_one_session_consume/)）| 具體異常比例回報，質疑額度計算機制本身 |
 | 2026-07-13 | 「Usage limits getting lower」：Max 5x 訂閱用戶回報近一週用量額度消耗速度明顯變快，5 小時額度約 2 小時即用完 | Reddit r/ClaudeCode（[原文](https://www.reddit.com/r/ClaudeCode/comments/1uve90h/usage_limits_getting_lower/)）| 單一貼文，方向與既有額度異常訊號一致（細節見表下）|

@@ -4,7 +4,7 @@
 僅收錄官方 changelog、release note 或官方公告；社群工具見 [[topics/community-tech-tools]]。
 每日更新新增功能、熱度與社群回饋。
 
-**最後更新：** 2026-09-04
+**最後更新：** 2026-09-05
 
 ---
 
@@ -155,11 +155,11 @@ npm install @anthropic-ai/sdk@0.123.0
 | **Managed Agents Web Search 設定**（anthropic-sdk-python v0.125.0 新增 SDK 層設定支援） | 2026-08-19 | 🔥 | ⏳ 觀望 | 正式發布（SDK 層）|
 | **spellcheck 輸入框拼字檢查**（v2.1.235，需本機 aspell／hunspell／ispell） | 2026-08-18 | 🔥 | ⚡ 有條件推薦 | 正式發布 |
 | **自訂專案 Transcript 目錄短名稱**（`CLAUDE_CODE_PROJECT_DIR_NAME` 環境變數，v2.1.234） | 2026-08-17 | 🔥 | ⚡ 有條件推薦 | 正式發布 |
-| **Claude Code v2.1.233**（`--worktree`／`claude agents` 視圖支援 GitLab MR URL，MR 顯示為 `!N`；另有 opt-in `forward_user_identity` 設定） | 2026-08-14 | 🔥🔥 | ⚡ 有條件推薦 | 正式發布 |
+| **Claude Code v2.1.233**（`--worktree`／`claude agents` 支援 GitLab MR URL，顯示為 `!N`；另有 opt-in identity 設定） | 2026-08-14 | 🔥🔥 | ⚡ 有條件推薦 | 正式發布 |
 | **Claude Code Auto 模式預設化**（⚠️ Breaking change：8/14 起 auto 成為 Pro／Max／Team 預設權限模式；免收分類器 token 費；Enterprise 與雲端平台仍選用制） | 2026-08-14 生效（08-07 公告，08-10 官方部落格確認） | 🔥🔥🔥🔥 | ⚡ 有條件推薦 | 正式發布 |
-| **Claude Code 跨 session 訊息互通**（需 v2.1.224+、macOS／Linux；`ListAgents` 探索可連線 session、`SendMessage` 指定名稱傳訊，亦適用 subagent 與隊友） | 2026-08-08 | 🔥🔥🔥🔥 | ⚡ 有條件推薦 | 正式發布 |
+| **Claude Code 跨 session 訊息互通**（需 v2.1.224+、macOS／Linux；`ListAgents`／`SendMessage` 傳訊，亦適用 subagent） | 2026-08-08 | 🔥🔥🔥🔥 | ⚡ 有條件推薦 | 正式發布 |
 | **Claude Code v2.1.232**（Subagent forking 預設開啟，`subagent_type: "fork"` 繼承完整對話與 prompt cache；派工行為亦調整，原文截斷） | 2026-08-13 | 🔥🔥 | ⚡ 有條件推薦 | 正式發布 |
-| **Claude Code v2.1.224**（新增 `claude self-hosted-runner`，可把自有機器或容器變成 web／mobile／desktop session 執行環境，Team／Enterprise 適用） | 2026-08-07 | 🔥🔥 | ⚡ 有條件推薦 | 正式發布 |
+| **Claude Code v2.1.224**（新增 `claude self-hosted-runner`，自有機器可變 web／mobile／desktop 執行環境，Team／Enterprise） | 2026-08-07 | 🔥 | ⚡ 有條件推薦 | 正式發布 |
 | **API Inference Hooks**（Enterprise 組織 beta，claude.ai／Cowork／Claude Code 上受管治 prompt 可導向企業自有 AI 安全伺服器） | 2026-08-05 | 🔥 | ⏳ 觀望 | Beta（Enterprise） |
 | **Claude Code v2.1.222**（安全修復：worktree 隔離 session 及其 subagent 可對主 checkout 執行破壞性 git 指令的漏洞，隔離範圍擴及檔案編輯與 Bash 執行） | 2026-08-04 | 🔥🔥 | ✅ 建議升級 | 正式發布（安全修復） |
 | **Claude Code v2.1.221**（VSCode 新增 Focus view：chat-menu 切換選項，將工具活動摺疊為可展開的每輪摘要並附即時執行指示，`Ctrl+Alt+F` 開關） | 2026-08-04 | 🔥 | ⏳ 觀望 | 正式發布 |
@@ -168,7 +168,7 @@ npm install @anthropic-ai/sdk@0.123.0
 | **API 新增 Stop Reason `model_continue`**（anthropic-sdk-python v0.119.0／anthropic-sdk-typescript sdk-v0.114.0） | 2026-07-23 | 🔥 | ⏳ 觀望 | 正式發布（SDK 層） |
 | **Claude Code Desktop iOS Simulator**（Mac app 內建 iOS Simulator 面板，即時建置／執行／除錯 iPhone App，需已安裝 Xcode iOS 平台） | 2026-07-22（08-10 官方文件查證確認） | 🔥 | ⚡ 有條件推薦 | 公開測試（Pro／Max／Team） |
 | **Claude Code v2.1.218**（`/code-review` 改為背景 subagent 執行，審查工作不再佔用對話內容；同版新增螢幕報讀軟體相關無障礙改善） | 2026-07-22 | 🔥 | ✅ 推薦 | 正式發布 |
-| **Claude Code v2.1.217**（Prompt input 表情符號 shortcode 自動完成，`:heart:` 插入 ❤️，可用 `emojiCompletionEnabled` 關閉；同版新增警告訊息，細節未知） | 2026-07-21 | 🔥 | ⏳ 觀察中 | 正式發布 |
+| **Claude Code v2.1.217**（表情符號 shortcode 自動完成，`:heart:` 插入 ❤️，可用 `emojiCompletionEnabled` 關閉） | 2026-07-21 | 🔥 | ⏳ 觀察中 | 正式發布 |
 | **Claude Code v2.1.216**（新增 `sandbox.filesystem.disabled` 設定，可在維持網路出口控管下跳過檔案系統隔離；同版修復長會話訊息正規化速度變慢問題） | 2026-07-20 | 🔥 | ⚡ 有條件推薦 | 正式發布 |
 | **Claude Code v2.1.215**（Claude 不再自動執行 `/verify` 與 `/code-review` 兩項技能，須手動呼叫指令觸發；⚠️ Breaking change 無過渡期） | 2026-07-19 | 🔥 | ⚡ 有條件推薦 | 正式發布 |
 | **Claude Code v2.1.212**（`/fork` 改為背景 session 化，原同 session 子 agent 功能改名 `/subtask`；⚠️ Breaking change 無過渡期） | 2026-07-17 | 🔥 | ⚡ 有條件推薦 | 正式發布 |
@@ -193,7 +193,7 @@ npm install @anthropic-ai/sdk@0.123.0
 | **sandbox.credentials + 組織模型限制**（Claude Code v2.1.187） | 2026-06-24 | 🔥 | ⚡ 有條件推薦 | 正式發布 |
 | **MCP CLI 認證指令**（`claude mcp login/logout`，v2.1.186） | 2026-06-22 | 🔥 | ⚡ 有條件推薦 | 正式發布 |
 | **MCP Enterprise Authorization**（Okta / VS Code 零設定 SSO） | 2026-06-19 | 🔥 | ⚡ 有條件推薦 | 正式發布 |
-| **破壞性 Git 指令自動封鎖**（Claude Code v2.1.183） | 2026-06-19 | 🔥🔥 | ✅ 推薦 | 正式發布 |
+| **破壞性 Git 指令自動封鎖**（Claude Code v2.1.183） | 2026-06-19 | 🔥 | ✅ 推薦 | 正式發布 |
 | **Claude Code Artifacts**（工作階段即時輸出可共享互動網頁） | 2026-06-18 | 🔥🔥🔥 | ⚡ 有條件推薦 | 正式發布 |
 | **Tool(param:value) permission 語法 + 巢狀 Skills**（v2.1.178） | 2026-06-15 | 🔥 | ✅ 推薦 | 正式發布 |
 | **enforceAvailableModels 企業管控**（Claude Code v2.1.175） | 2026-06-12 | 🔥 | ✅ 推薦 | 正式發布 |
@@ -501,7 +501,7 @@ SendMessage        # 依名稱傳訊給指定 session／subagent／team 隊友
 ---
 
 ### Claude Code v2.1.224 — self-hosted-runner
-**發布：** 2026-08-07（v2.1.224） | **熱度：** 🔥🔥 | **試用價值：** ⚡ 有條件推薦 | **狀態：** 正式發布
+**發布：** 2026-08-07（v2.1.224） | **熱度：** 🔥 | **試用價值：** ⚡ 有條件推薦 | **狀態：** 正式發布
 
 **是什麼：** 新增 `claude self-hosted-runner` 指令，可將使用者自有的機器或容器變成 Claude Code web、mobile、desktop session 的執行環境，開放給 Team 與 Enterprise 方案。
 

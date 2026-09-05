@@ -29,7 +29,7 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 **狀態：** active
 **領域：** 🛠️ 工具/功能
 **首次出現：** 2026-07-15
-**最後更新：** 2026-08-27
+**最後更新：** 2026-09-05
 **最後新聞更新：** 2026-07-18
 
 > **最新動態**（2026-07-17）
@@ -86,4 +86,4 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 | 日期 | 事件 |
 |------|------|
 | 2026-07-17 | Education Week 報導部分評論者對此產品表達疑慮（具體疑慮內容原文未展開）；WDET 101.9 FM 報導 Anthropic 將此教師版 AI 產品導入底特律課堂，屬地方教育單位採用案例 |
-| 2026-07-15 | 正式發布，向美國通過認證的 K-12 教師免費開放進階 Claude 功能、教學技能庫，並對接全美 50 州學術標準的實證課綱；CBS News、The Hill、Forbes、9to5Mac、Central Oregon Daily 等至少六家獨立媒體同步報導 |
+| 2026-07-15 | 正式發布，向美國通過認證的 K-12 教師免費開放進階 Claude 功能、教學技能庫，並對接全美 50 州學術標準；CBS News、The Hill、Forbes 等至少六家媒體同步報導 |

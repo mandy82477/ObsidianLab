@@ -4,7 +4,7 @@ kind: "entity"
 type: "feature"
 status: "active（正式發布）"
 domain: "🛠️ 工具/功能"
-last_updated: "2026-09-03"
+last_updated: "2026-09-05"
 last_news_update: "2026-08-20"
 status_main: "active"
 days_since_news: 16
@@ -12,7 +12,7 @@ parent: null
 children: "[]"
 page_role: "root"
 days_since_news_subtree: 16
-inbound_links: 31
+inbound_links: 32
 attribution_count: 3
 attribution_last: "2026-08-20"
 top_source: "github"
@@ -29,7 +29,7 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 **狀態：** active（正式發布）
 **領域：** 🛠️ 工具/功能
 **首次出現：** 2026-04-28
-**最後更新：** 2026-09-03
+**最後更新：** 2026-09-05
 **最後新聞更新：** 2026-08-20
 
 > **最新 SDK 更新**（2026-08-19）
@@ -193,7 +193,7 @@ while (!['completed', 'failed'].includes(task.status)) {
 | 2026-05-19 | 新增**自架沙箱（self-hosted sandboxes）**與 **MCP 隧道（MCP tunnels）**：企業可於自有基礎設施執行 agent 工作流，私有 MCP 伺服器無需公開即可連接（the-decoder.com）|
 | 2026-05-18 | InfoQ：Anthropic 於 Code With Claude 正式公告 **Proactive Workflows** 與 **Capability Curve** 兩項新能力（各自解什麼見歷史細節）|
 | 2026-05-16 | dev.to 深度解析 Dreaming——Agent 於非活躍期間透過 Outcomes 與 Orchestration 自我優化，副標「How Agents Self-Improve While You Sleep」（見歷史細節）|
-| 2026-05-13 | v2.1.140 的 `subagent_type` 改為大小寫與分隔符號不敏感（`"Code Reviewer"` → `code-reviewer`），降低配置摩擦；同期 Boris Cherny 公開每晚數千子代理工作流（見歷史細節）|
+| 2026-05-13 | v2.1.140 的 `subagent_type` 改為大小寫與分隔符號不敏感（降低配置摩擦）；同期 Boris Cherny 公開每晚數千子代理工作流（見歷史細節）|
 | 2026-05-12 | v2.1.139 新增 Agent View（Research Preview，多 session 管理面板，`claude agents`）與 `/goal` 指令，是邁向非同步工作流的里程碑 |
 | 2026-05-11 | 正式發布（從研究預覽升格）；社群自建 70 天多代理架構開發者分享實戰：Opus 決策層 + OpenCode 工程師層 + 並行研究代理，核心結論是任務簡報品質決定系統成敗；官方 vs 社群自組方案的比較進入主流討論 |
 | 2026-05-07 | Python SDK v0.100.0 + TypeScript SDK v0.95.0 新增 Managed Agents 原生支援，雙線同日發布 |

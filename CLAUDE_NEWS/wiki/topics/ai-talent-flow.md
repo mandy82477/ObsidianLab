@@ -3,7 +3,7 @@ page: "topics/ai-talent-flow"
 kind: "topic"
 status: "ongoing"
 domain: "💼 商業"
-last_updated: "2026-09-04"
+last_updated: "2026-09-05"
 last_news_update: "2026-09-01"
 status_main: "ongoing"
 days_since_news: 4
@@ -11,7 +11,7 @@ parent: null
 children: "[]"
 page_role: "root"
 days_since_news_subtree: 4
-inbound_links: 18
+inbound_links: 19
 attribution_count: 7
 attribution_last: "2026-09-01"
 top_source: "topic-watch"
@@ -28,16 +28,11 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 **領域：** 💼 商業
 **蒐集邊界：** 以與 Anthropic 相關的人才流動為主，另針對本主題定向補抓（每日至多 3 則）；其他實驗室之間、與 Anthropic 無關的異動仍可能延遲或缺漏，重大者由人工查證補記。
 **開始日期：** 2026-06-21
-**最後更新：** 2026-09-04
+**最後更新：** 2026-09-05
 **最後新聞更新：** 2026-09-01
 
-> **最新動態：Google DeepMind 同日再失四位創立元老級主管（未具名，2026-09-01）**
-> Google News 定向抓取報導稱 DeepMind 同一天失去四位創立元老級主管，惟報導細節僅標題可見，四人身分、去向均未見具體姓名，依規則標為懸置事項、不得杜撰人名，詳見「時序」新增節。
-> **Adgully.com 跟進報導 Google DeepMind 頂尖 AI 人才佔比明顯下滑**（2026-08-29）
-> 與 08-27 Fortune「持續流失頂尖人才」為同一趨勢的又一媒體佐證，延續本頁自 2026-06 以來記錄的「Google DeepMind 淨流出」格局；具體佔比數字、統計方法未見報導細節，僅標題可用（推論，待後續補充具名案例）。
-> **08-21/08-23 已記錄之 Anthropic 延攬 Google 自研晶片計畫創辦人 Amir Salek**，仍為本頁近期重點，詳見「對各公司的影響」表。
-> **懸置事項仍無新進展**：08-13 Sergey Brin 內部談話報導（標題截斷）已掃日報至 2026-08-29 無後續；官方頁面未查證。
-> **另（背景訊號，非核心格局變動，2026-08-28）**：報導稱加拿大 5.41 億美元研究計畫吸引部分美國常春藤學者北遷，屬學界層級跨國政策訊號，僅標題可用，未見具名機構或與特定 AI 實驗室之關聯，詳見「時序」。
+> **最新動態**（2026-09-01）
+> Google DeepMind 同一天再失四位創立元老級主管（未具名），僅標題可用，四人身分均未見具體姓名，依規則標為懸置事項，詳見「時序」新增節。
 
 ## 摘要
 

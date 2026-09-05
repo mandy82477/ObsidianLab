@@ -2,9 +2,9 @@
 page: "entities/jensen-huang"
 kind: "entity"
 type: "person"
-status: "active"
+status: "active（待核實）"
 domain: "👤 人物"
-last_updated: "2026-09-03"
+last_updated: "2026-09-05"
 last_news_update: "2026-08-27"
 status_main: "active"
 days_since_news: 9
@@ -26,10 +26,10 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 # Jensen Huang
 
 **類型：** person
-**狀態：** active
+**狀態：** active（待核實）
 **領域：** 👤 人物
 **首次出現：** 2026-08-27
-**最後更新：** 2026-09-03
+**最後更新：** 2026-09-05
 **最後新聞更新：** 2026-08-27
 
 > ❓ **待查證**（標 2026-08-27｜查 Jensen Huang、Hugging Face｜複 2026-09-10）｜**黃仁勳談對 OpenAI、Anthropic 投資規模「後悔」**（2026-08-27 報導）：Yahoo Finance 報導 Nvidia 傳出將投資 Hugging Face 129 億美元，同篇引述執行長黃仁勳表示對先前投資 OpenAI、Anthropic 的規模感到「後悔」；日報摘要僅載「regret」一詞，究竟是後悔投得太少（錯失更大獲利）或太多（規模風險），原文脈絡未展開，不得擇一推斷。

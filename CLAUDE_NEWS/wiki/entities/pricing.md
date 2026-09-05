@@ -4,7 +4,7 @@ kind: "entity"
 type: "policy"
 status: "active（持續調整中）"
 domain: "💼 商業"
-last_updated: "2026-09-04"
+last_updated: "2026-09-05"
 last_news_update: "2026-09-02"
 status_main: "active"
 days_since_news: 3
@@ -16,8 +16,8 @@ inbound_links: 136
 attribution_count: 77
 attribution_last: "2026-09-02"
 top_source: "google-news"
-pending_count: 5
-pending_overdue: 4
+pending_count: 4
+pending_overdue: 3
 pending_next_review: "2026-09-12"
 pending_signalled: 0
 signal: "健康"
@@ -29,11 +29,11 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 **狀態：** active（持續調整中）
 **領域：** 💼 商業
 **首次出現：** 2026-04-25
-**最後更新：** 2026-09-04
+**最後更新：** 2026-09-05
 **最後新聞更新：** 2026-09-02
 
 > **最新計費政策異動**（2026-09-02）
-> - **官方更正：Claude Code 週用量 +50% 促銷未於 08-31 終止，延長至 09-13**：官方說明中心 09-02 原文明載延長，銜接 09-14 起的「標準週配額永久 +25%」，兩者不留缺口，適用 Pro、Max、Team。詳見「當前生效的計費規則」與 [[feature-radar]]「⏰ 倒數中」。
+> - **官方更正：週用量 +50% 促銷未於 08-31 終止，延長至 09-13**，銜接 09-14 起「週配額永久 +25%」。詳見「當前生效的計費規則」與 [[feature-radar]]「⏰ 倒數中」。
 > - **Fable 5.1／Mythos 5.1 快取讀取費率降至 0.025x**（標準 0.1x）：長對話快取成本最多省 75%。兩版本名稱首度出現於官方一手文件，詳見「模型 API 定價現況」。
 > - **印度盧比定價訴求 GitHub Issue #17432**：留言數攀升至 213（首次記錄 👍628，本輪商業類最高互動），Claude Code 涵蓋範圍仍無官方回應。
 
@@ -328,7 +328,7 @@ git commit 歷史出現大寫字串「HERMES.md」會觸發靜默切換至 API �
 
 - **Google News／MarkTechPost、Dealroom、Palo Alto Networks Unit 42、The New Stack（四方跟進報導）**：Anthropic 將 Claude Mythos 5 導入 Claude Security 產品線，企業團隊透過產品介面即可取得 frontier 等級漏洞掃描能力，同時官方承諾提供 **3,500 萬美元**額度（credits）；四家媒體同步跟進同一事件，僅標題與導言層級可用，具體額度發放對象（既有客戶／新客戶）、使用期限、是否綁定特定產品用量或方案未見報導細節。
 - **與「我的方案現在有什麼」表的關係**：本額度屬**產品導入型促銷**（綁定 Claude Security 產品線的企業客戶），非該表涵蓋的一般訂閱方案優惠，暫不列入表內；模型能力釋出面詳見 [[entities/mythos]]，產品功能細節見 [[entities/claude-security]]。
-- ❓ **待查證**（標 2026-08-21｜查 Claude Security、3500 萬美元｜複 2026-09-04）｜**$35M 額度方案細節**：官方公告原文、適用範圍與截止日均未見報導，僅媒體轉述金額（Google News/MarkTechPost；Google News/Dealroom；Google News/Palo Alto Networks Unit 42；Google News/The New Stack）
+- ❓ **待查證**（標 2026-08-21｜查 Claude Security、3500 萬美元｜訊 2026-08-24｜複 2026-09-04）｜**$35M 額度方案細節**：官方公告原文、適用範圍與截止日均未見報導，僅媒體轉述金額（Google News/MarkTechPost；Google News/Dealroom；Google News/Palo Alto Networks Unit 42；Google News/The New Stack）。**08-24 跟進**：SecurityWeek 報導同一 3,500 萬美元金額，但描述為「開源資安基金」而非「企業導入 Claude Security 產品線的額度」，與 MarkTechPost 等四方原始描述的性質不同，兩者是否為同一筆款項仍待官方原文釐清（Google News/SecurityWeek）
 
 #### 2026-08-21：Techzine 報導 Anthropic 允許企業將 AI 資料存放於自有雲端環境（單一來源，後於 09-03 由官方 EFS 公告確認）
 

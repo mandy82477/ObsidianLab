@@ -3,7 +3,7 @@ page: "topics/anthropic-government-policy"
 kind: "topic"
 status: "ongoing（出口管制主線已解除，剩餘承諾落實與衍生支線持續觀察；中美 AI 工具信任對峙已獨立成頁）"
 domain: "🏛️ 政策/安全"
-last_updated: "2026-09-04"
+last_updated: "2026-09-05"
 last_news_update: "2026-09-02"
 status_main: "ongoing"
 days_since_news: 3
@@ -11,7 +11,7 @@ parent: null
 children: "['topics/anthropic-government-policy-archive']"
 page_role: "hub"
 days_since_news_subtree: 3
-inbound_links: 77
+inbound_links: 76
 attribution_count: 75
 attribution_last: "2026-09-02"
 top_source: "google-news"
@@ -27,11 +27,11 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 **狀態：** ongoing（出口管制主線已解除，剩餘承諾落實與衍生支線持續觀察；中美 AI 工具信任對峙已獨立成頁）
 **領域：** 🏛️ 政策/安全
 **開始日期：** 2026-05-01
-**最後更新：** 2026-09-04
+**最後更新：** 2026-09-05
 **最後新聞更新：** 2026-09-02
 
 > **最新動態**（2026-09-02）
-> - **TechRepublic：中國官媒指控 Anthropic 對中、美 AI 發展採取雙重標準**：主題與既有 08-31 Bloomberg「中國官方對 Anthropic 表態不滿」報導相近，惟出處不同（官媒 vs Bloomberg 外交報導），暫不逕自合併為同一事件，並陳記錄，完整分析見「## 目前局勢」。
+> - **TechRepublic：中國官媒指控 Anthropic 對中、美 AI 發展採取雙重標準**：與既有 08-31 Bloomberg 報導相近但出處不同，並陳記錄，見「## 目前局勢」。
 > - **SCMP：Fable 5.1 發布如何牽動美中前沿模型競賽態勢**：出口管制主線解除（07-01）後，Fable 5.1 成為首個被媒體置入地緣政治框架分析的後續模型世代，完整分析見「## 目前局勢」。
 
 ---

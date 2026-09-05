@@ -4,7 +4,7 @@ kind: "entity"
 type: "model"
 status: "active（已被取代，第三階旗艦）"
 domain: "🤖 模型"
-last_updated: "2026-08-27"
+last_updated: "2026-09-05"
 last_news_update: "2026-08-27"
 status_main: "active"
 days_since_news: 9
@@ -29,7 +29,7 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 **狀態：** active（已被取代，第三階旗艦）
 **領域：** 🤖 模型
 **首次出現：** 2026-04-24
-**最後更新：** 2026-08-27
+**最後更新：** 2026-09-05
 **最後新聞更新：** 2026-08-27
 
 > **最新能力觀察**（2026-08-27，前代 Opus 4.6）
@@ -41,7 +41,7 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 
 **當前狀態：** 已被 Opus 4.8 / Fable 5 取代，現為第三階旗艦；agentic coding 場景仍有口碑，一般對話評價分歧。
 
-Claude Opus 4.7 於 2026-04-24 正式發布，已相繼被 Opus 4.8（2026-05-28）與 Fable 5（2026-06-09）取代，現為第三階旗艦，不再是 Anthropic 最高階公開模型。伴隨發布的還有 Rate Limits API（管理員可程式化查詢速率限制）與 Managed Agents Memory Beta（在 `managed-agents-2026-04-01` 請求標頭下啟用）。
+Claude Opus 4.7 於 2026-04-24 正式發布，已相繼被 Opus 4.8（2026-05-28）與 Fable 5（2026-06-09）取代，現為第三階旗艦，不再是 Anthropic 最高階公開模型。伴隨發布的還有 Rate Limits API（管理員可程式化查詢速率限制）與 Managed Agents Memory Beta（在 `managed-agents-2026-04-01` 請求標頭下啟用）。Context window 上限為 200K，未獲後續世代的 1M 擴充；1M 的計費世代分界與控制權缺口見 [[topics/long-context-1m]]。
 
 然而，該模型在社群中引發大量爭議，主要集中在定價策略與自適應思考深度的問題。
 
@@ -200,6 +200,8 @@ Reddit r/ClaudeAI 實測分享：Opus 4.7 在 **Claude Code 搭配 max effort �
 - [[entities/fable-5]]（現任最高階公開模型）
 - [[topics/code-quality-decline]]
 - [[entities/pricing]]
+- [[topics/long-context-1m]]（context window 世代分界）
+- [[topics/community-tech-timeline]]（提示詞行為轉變、effort 拒絕姿態測試等社群節點完整時序）
 
 ## 參考來源
 

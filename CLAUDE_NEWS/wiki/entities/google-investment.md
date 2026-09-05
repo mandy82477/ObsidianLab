@@ -29,7 +29,7 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 **狀態：** resolved（已完成，後續新輪融資進行中）
 **領域：** 💼 商業
 **首次出現：** 2026-04-24
-**最後更新：** 2026-07-24
+**最後更新：** 2026-09-05
 **最後新聞更新：** 2026-07-24
 
 ---
@@ -104,7 +104,7 @@ Bloomberg、TechCrunch、Reuters、NYT、Axios 等多個主流媒體同步報導
 ## 時序
 
 ### 2026-07-23
-- **Bloomberg 報導 Alphabet 持有 Anthropic 股權市值已跳升至約 1,240 億美元**：Bloomberg.com 報導 Alphabet 帳面持有的 Anthropic 股權市值已成長至約 **$124 billion**。**注意**：此為股權市值（帳面評估），非新一輪投資金額，與本頁記錄之 2026-04-24 官方投資額（最高 $400 億美元、當時估值 $3,500 億美元）為不同性質數字——市值跳升反映 Anthropic 整體估值自 04-24 以來的持續墊高（對照 Series H $965B、次級市場 $1.2 兆美元等既有估值訊號，見 [[topics/anthropic-business]]「IPO 前瞻與估值追蹤」表），惟具體換算所依據的 Anthropic 整體估值基準、Google 持股比例未見報導細節（推論，待後續查證）（Google News/Bloomberg.com）
+- **Bloomberg 報導 Alphabet 持有 Anthropic 股權市值已跳升至約 1,240 億美元**：Bloomberg.com 報導 Alphabet 帳面持有的 Anthropic 股權市值已成長至約 **$124 billion**。**注意**：此為股權市值（帳面評估），非新一輪投資金額，與本頁記錄之 2026-04-24 官方投資額（最高 $400 億美元、當時估值 $3,500 億美元）為不同性質數字——市值跳升反映 Anthropic 整體估值自 04-24 以來的持續墊高（對照 Series H $965B、次級市場 $1.2 兆美元等既有估值訊號，見 [[topics/anthropic-business]]「IPO 前瞻與估值追蹤」表），惟具體換算所依據的 Anthropic 整體估值基準、Google 持股比例未見報導細節（推論，待後續查證）。此類股權市值是否構成可投資訊號的判讀，見 [[topics/market-signals]]（Google News/Bloomberg.com）
 
 ### 2026-05-01
 - Data Center Knowledge 報導：Google 與 Anthropic 的算力合作已達到 **gigawatt 等級的預購規模**，反映 AI 基礎建設的資本投入正進一步集中，Anthropic 對自身長期算力需求的預判已超越一般規模

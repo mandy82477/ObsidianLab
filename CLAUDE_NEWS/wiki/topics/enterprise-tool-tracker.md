@@ -3,7 +3,7 @@ page: "topics/enterprise-tool-tracker"
 kind: "topic"
 status: "ongoing"
 domain: "💼 商業"
-last_updated: "2026-09-04"
+last_updated: "2026-09-05"
 last_news_update: "2026-09-02"
 status_main: "ongoing"
 days_since_news: 3
@@ -28,11 +28,11 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 **領域：** 💼 商業
 **蒐集邊界：** 僅涵蓋 Claude 相關報導所帶出的企業案例。未提及 Claude 的企業工具決策不在自動蒐集範圍——公開報導本就少見具名企業的內部工具決策，本表為已見報者的彙整，非市場全貌。
 **開始日期：** 2026-05-26
-**最後更新：** 2026-09-04
+**最後更新：** 2026-09-05
 **最後新聞更新：** 2026-09-02
 
 > **最新企業採用異動**（2026-08-26）
-> - **Shopify 執行長 Tobi Lütke 揚言封殺 Claude Code；The New Stack 指出 Anthropic 早已關閉相關功能請求**：本頁首見具名科技公司高層公開表態封殺 Claude Code 的案例，尚未見官方確認實際執行，暫標「未確認」，詳見下方使用現況表新增列。
+> - **Shopify 執行長 Tobi Lütke 揚言封殺 Claude Code**：本頁首見具名科技公司高層公開表態封殺案例，未見官方確認執行，暫標「未確認」，詳見下方使用現況表新增列。
 
 ## 摘要
 
@@ -135,7 +135,7 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 **懸置細節**
 - ⟨Q-03⟩ ❓ **待查證**（標 2026-08-20｜查 Goldman Sachs、JPMorgan Chase）：Goldman Sachs／OKX 香港斷線是否與 JPMorgan Chase 案同源未見報導證實；已掃日報至 2026-09-03 無後續，官方頁面未查證
 - ⟨Q-02⟩ ❓ **待查證**（標 2026-07-06｜查 Meta、限制工程師｜複 2026-09-12）｜**Meta 傳出限制工程師使用 Claude**：原文節錄未提供具體來源連結、規模範圍或生效日期；已掃日報至 2026-08-29 無後續，官方頁面未查證
-- ⟨Q-01⟩ 已查證（2026-08-13）：非混淆，為同一組事實的正確引用——tech-insider.org 報導確認封鎖係「兩起爭議交會」的結果：(1) 資安研究者指出 Claude Code 更新曾內含可辨識中國地區用戶的隱藏邏輯（「後門」爭議，Anthropic 否認為監控工具，稱是已在淘汰中的窄範圍反濫用實驗）；(2) 即為 06-25 已記錄之 Anthropic 蒸餾攻擊指控（約 2.5 萬假帳號、2,880 萬次對話）。兩者並非各自獨立的「新理由」，而是同一封鎖決策的兩項並存成因（[Tom's Hardware](https://www.tomshardware.com/tech-industry/artificial-intelligence/alibaba-bans-anthropics-claude-code-after-an-alleged-hidden-china-detection-backdoor-is-uncovered-employees-told-to-switch-to-qoder-as-the-rift-between-the-firms-widens)；[tech-insider.org](https://tech-insider.org/ie/alibaba-bans-claude-code-2026/)）
+- ⟨Q-01⟩ 已查證（2026-08-13）：非混淆，為同一組事實的正確引用——tech-insider.org 報導確認封鎖係「兩起爭議交會」的結果：(1) 資安研究者指出 Claude Code 更新曾內含可辨識中國地區用戶的隱藏邏輯（「後門」爭議，Anthropic 否認為監控工具，稱是已在淘汰中的窄範圍反濫用實驗；官方後續回應是否兌現詳見 [[topics/anthropic-commitments]]「spyware 指控回應」列）；(2) 即為 06-25 已記錄之 Anthropic 蒸餾攻擊指控（約 2.5 萬假帳號、2,880 萬次對話）。兩者並非各自獨立的「新理由」，而是同一封鎖決策的兩項並存成因（[Tom's Hardware](https://www.tomshardware.com/tech-industry/artificial-intelligence/alibaba-bans-anthropics-claude-code-after-an-alleged-hidden-china-detection-backdoor-is-uncovered-employees-told-to-switch-to-qoder-as-the-rift-between-the-firms-widens)；[tech-insider.org](https://tech-insider.org/ie/alibaba-bans-claude-code-2026/)）
 
 ---
 

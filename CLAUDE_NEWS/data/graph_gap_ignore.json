@@ -1,4 +1,25 @@
 {
   "_doc": "缺口偵測（python scripts/wiki_graph.py gaps）的「已審、無需連結」清單。每對登記 pages（兩個 slug）、reviewed（日期）、why（一句）。登記後該對不再列出；頁面改名時同步。",
-  "pairs": []
+  "pairs": [
+    {
+      "pages": ["entities/claude-design", "entities/opus-4-7"],
+      "reviewed": "2026-09-05",
+      "why": "無共同事實，分數僅來自共同鄰居（claude-code／feature-radar／community-tech-patterns）；claude-design 為設計工具、opus-4-7 為已被取代的舊代模型，無自然語意連結點"
+    },
+    {
+      "pages": ["topics/community-large-codebase-workflow", "topics/skill-interest-watch"],
+      "reviewed": "2026-09-05",
+      "why": "單向橋裁決（2026-09-03）：skill-interest-watch 只准連 community-tech-tools 單一中介，不連其他問題頁；兩頁共享鄰居正是 community-tech-tools，非漏連。"
+    },
+    {
+      "pages": ["topics/community-large-codebase-workflow", "topics/community-tech-timeline"],
+      "reviewed": "2026-09-05",
+      "why": "community-tech-timeline 為刻意凍結的歷史時序頁（05-22 後不再新增，內容已被 community-tech-patterns 承接），large-codebase-workflow 明訂只從 patterns 節點縫成；兩頁已透過 community-tech-patterns（timeline 列於其相關實體）間接互通，直接連結對讀者無新增價值。"
+    },
+    {
+      "pages": ["entities/claude-design", "topics/skill-interest-watch"],
+      "reviewed": "2026-09-05",
+      "why": "skill-interest-watch 無「產出與呈現／設計」類別（機器只掃可用 GitHub 辨識的開發流程段＋治理類），且單向橋裁決只准其連 community-tech-tools；claude-design 與本頁僅透過 community-tech-patterns／community-tech-tools（皆已收錄 baoyu-design 等設計類 skill）間接相關，非漏連。"
+    }
+  ]
 }

@@ -3,15 +3,15 @@ page: "topics/community-tech-tools"
 kind: "topic"
 status: "ongoing"
 domain: "🌐 社群"
-last_updated: "2026-09-04"
-last_news_update: "2026-09-02"
+last_updated: "2026-09-05"
+last_news_update: "2026-09-03"
 update_freq: "🗓️ 週更（每週策展一次；更新日期停留數天屬正常節奏）"
 status_main: "ongoing"
-days_since_news: 3
+days_since_news: 2
 parent: null
 children: "[]"
 page_role: "root"
-days_since_news_subtree: 3
+days_since_news_subtree: 2
 inbound_links: 28
 attribution_count: 3
 attribution_last: "2026-09-02"
@@ -29,8 +29,8 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 **領域：** 🌐 社群
 **更新頻率：** 🗓️ 週更（每週策展一次；更新日期停留數天屬正常節奏）
 **開始日期：** 2026-04-25
-**最後更新：** 2026-09-04
-**最後新聞更新：** 2026-09-02
+**最後更新：** 2026-09-05
+**最後新聞更新：** 2026-09-03
 
 > **最新改版**（2026-09-03）
 > 「不綁症狀的精選」區退役——規模型清單（誰大、誰在漲）改看 [[topics/skill-interest-watch]] 的每日榜；本頁只留**判斷**：症狀決策表、推薦細節、Skills 速查、工具目錄。
@@ -141,6 +141,7 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 
 | 工具 | 類型 | 採用 | 首次出現 | 簡介 |
 | --- | --- | --- | --- | --- |
+| [**speakeasy-api/kit**](https://github.com/speakeasy-api/kit) | 整合工具 | ⏳ | 2026-09-03 | 單一靜態執行檔的 coding agent runtime，終端機／ACP／A2A 三介面合一，作者已用它取代 Claude Code／Codex／OpenCode 成為日常主力工具；HN 12 分，source_count 2 |
 | [**thedotmack/claude-mem**](https://github.com/thedotmack/claude-mem) | 記憶工具 | ✅ | 2026-09-02 | 跨 harness（Claude Code、OpenClaw、Codex、Gemini 等 7 種以上）持久記憶，擷取 session 過程並用 AI 壓縮注入後續 session；9.3 萬星，2025-08-31 出生，本庫首次收錄 |
 | [**addyosmani/agent-skills**](https://github.com/addyosmani/agent-skills) | Skills | ⏳ | 2026-09-02 | Addy Osmani（Google Chrome DevRel）具名生產級工程技能集合；9.2 萬星，2026-02 出生，僅星數佐證未另查證 |
 | [**yetone/cumora**](https://github.com/yetone/cumora) | 工作流 | ⏳ | 2026-09-02 | 跨平台團隊聊天工具，讓 AI agent 成為聊天中的「一等公民」隊友，可接 Claude Code／Codex；3,416 星，作者具名知名開源開發者 |

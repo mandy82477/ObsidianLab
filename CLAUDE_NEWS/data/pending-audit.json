@@ -1,10 +1,10 @@
 {
   "tool": "scripts/audit_pending_markers.py",
-  "pages_scanned": 65,
+  "pages_scanned": 68,
   "totals": {
-    "legacy_total": 27,
+    "legacy_total": 30,
     "already_new_syntax": 193,
-    "P": 14,
+    "P": 17,
     "M": 6,
     "R": 0,
     "U": 7
@@ -62,6 +62,28 @@
       "wikilinks": [],
       "domain": "🛠️ 工具/功能",
       "reporter": "wiki-reporter-features",
+      "backfilled": false
+    },
+    {
+      "id": "00376b15",
+      "page": "entities/pricing",
+      "file": "wiki/entities/pricing.md",
+      "line": 331,
+      "word": "待查證",
+      "cls": "P",
+      "cls_reason": "",
+      "shape": "list",
+      "in_table_cell": false,
+      "cell_len": null,
+      "segment": "- ❓ **待查證**（標 2026-08-21",
+      "event_dates": [
+        "2026-08-21",
+        "2026-08-24",
+        "2026-09-04"
+      ],
+      "wikilinks": [],
+      "domain": "💼 商業",
+      "reporter": "wiki-reporter-commercial",
       "backfilled": false
     },
     {
@@ -176,7 +198,7 @@
       "id": "adeb128e",
       "page": "feature-radar",
       "file": "wiki/feature-radar.md",
-      "line": 151,
+      "line": 217,
       "word": "待確認",
       "cls": "U",
       "cls_reason": "脈絡過短（9 字元）",
@@ -196,7 +218,7 @@
       "id": "adeb128e",
       "page": "feature-radar",
       "file": "wiki/feature-radar.md",
-      "line": 152,
+      "line": 218,
       "word": "待確認",
       "cls": "U",
       "cls_reason": "脈絡過短（9 字元）",
@@ -216,7 +238,7 @@
       "id": "a21ed974",
       "page": "feature-radar",
       "file": "wiki/feature-radar.md",
-      "line": 265,
+      "line": 276,
       "word": "官方未載",
       "cls": "P",
       "cls_reason": "",
@@ -234,7 +256,7 @@
       "id": "b9f1d9d9",
       "page": "feature-radar",
       "file": "wiki/feature-radar.md",
-      "line": 743,
+      "line": 754,
       "word": "待確認",
       "cls": "P",
       "cls_reason": "",
@@ -495,6 +517,24 @@
       "backfilled": false
     },
     {
+      "id": "e4ab5020",
+      "page": "topics/ai-agent-safety",
+      "file": "wiki/topics/ai-agent-safety.md",
+      "line": 37,
+      "word": "待查證",
+      "cls": "P",
+      "cls_reason": "",
+      "shape": "callout",
+      "in_table_cell": false,
+      "cell_len": null,
+      "segment": "> - **另兩則**：AISLE 聲稱其 AI 於 curl 找到 6 個 CVE（單一聲稱，待查證）",
+      "event_dates": [],
+      "wikilinks": [],
+      "domain": "🏛️ 政策/安全",
+      "reporter": "wiki-reporter-safety-policy",
+      "backfilled": false
+    },
+    {
       "id": "980f3c41",
       "page": "topics/anthropic-commitments",
       "file": "wiki/topics/anthropic-commitments.md",
@@ -530,6 +570,29 @@
       "wikilinks": [],
       "domain": "🌐 社群",
       "reporter": "wiki-reporter-community",
+      "backfilled": false
+    },
+    {
+      "id": "a82af433",
+      "page": "topics/market-signals",
+      "file": "wiki/topics/market-signals.md",
+      "line": 72,
+      "word": "待查證",
+      "cls": "P",
+      "cls_reason": "",
+      "shape": "prose",
+      "in_table_cell": false,
+      "cell_len": null,
+      "segment": "（PYMNTS／FT／WSJ 同日報導，非官方，該筆在 [[topics/anthropic-business]] 標為待查證）",
+      "event_dates": [
+        "2026-09-05",
+        "2026-09-02"
+      ],
+      "wikilinks": [
+        "topics/anthropic-business"
+      ],
+      "domain": "💼 商業",
+      "reporter": "wiki-reporter-commercial",
       "backfilled": false
     }
   ]

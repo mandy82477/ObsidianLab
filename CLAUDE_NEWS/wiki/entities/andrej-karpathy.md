@@ -4,7 +4,7 @@ kind: "entity"
 type: "person"
 status: "active"
 domain: "👤 人物"
-last_updated: "2026-09-04"
+last_updated: "2026-09-05"
 last_news_update: "2026-08-02"
 status_main: "active"
 days_since_news: 34
@@ -29,12 +29,12 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 **狀態：** active
 **領域：** 👤 人物
 **首次出現：** 2026-05-17（CLAUDE.md 維護討論中被引用）
-**最後更新：** 2026-09-04
+**最後更新：** 2026-09-05
 **最後新聞更新：** 2026-08-02
 
 > **加入 Anthropic 已確認**（2026-05-19，2026-08-13 查證）
 > Karpathy 於 2026-05-19 本人在 X 宣布加入 Anthropic，進入 Nick Joseph 領導的 pre-training 團隊，並將籌組以 Claude 加速 pre-training 研究的新團隊；TechCrunch、CNBC、Axios 同日獨立報導。原文：「I've joined Anthropic. I think the next few years at the frontier of LLMs will be especially formative.」
-> ❓ **待查證**（標 2026-08-15｜查 Benzinga、Lord of the Rings）｜**Claude Opus 建構 3D 場景評論**（2026-08-02 報導）：Benzinga 單一媒體報導引述 Karpathy 評論，稱其以 Claude Opus 建構《魔戒》3D 場景為例說明 AI 互動模式演進，未見其他來源獨立確認。
+> ❓ **待查證**（標 2026-08-15｜查 Benzinga、Lord of the Rings）｜**Claude Opus 建構 3D 場景評論**（2026-08-02 報導）：Benzinga 單一媒體報導引述 Karpathy 評論，稱其以 Claude Opus 建構《魔戒》3D 場景為例說明 AI 互動模式演進，未見其他來源獨立確認。已掃日報至 2026-09-03 無後續；官方頁面未查證。
 
 ---
 

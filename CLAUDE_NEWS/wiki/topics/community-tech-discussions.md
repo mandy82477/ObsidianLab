@@ -27,7 +27,7 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 **狀態：** ongoing
 **領域：** 🌐 社群
 **開始日期：** 2026-04-25
-**最後更新：** 2026-09-03
+**最後更新：** 2026-09-05
 **最後新聞更新：** 2026-09-03
 
 > **最熱討論**（2026-09-03）
@@ -112,7 +112,7 @@ Claude Code 創始人的設計哲學已形成獨立討論主線：
 - **「Loops 是未來」**（2026-05-05）：迴圈執行 > 單次問答——這是 Claude Code 工具設計的核心場景，Hooks/Skills/session 持久化均以此為前提。
 - **「coding is solved」**（2026-05-08）：「我從未手寫一行程式」引發社群兩極化辯論，術語從 vibe coding 演化為 spec-driven development。
 - **Loop Engineering 完整文章**（2026-06-20）：PR review、測試、push 如何抽象為 loop 的完整拆解，代表社群對此哲學的持續深入消化。
-- **立場收縮**（2026-06-24）：Boris Cherny 公開承認 AI 全量代碼在企業場景引發問題，首度為「coding is solved」論述設下邊界（Times of India 單一報導，無社群延燒，至今無後續；完整記錄見 [[entities/boris-cherny]]）。
+- **立場收縮**（2026-06-24）：Boris Cherny 公開承認 AI 全量代碼在企業場景引發問題，首度為「coding is solved」論述設下邊界（Times of India 單一報導，無社群延燒，已掃日報至 2026-09-03 無後續；官方頁面未查證；完整記錄見 [[entities/boris-cherny]]）。
 
 ### MCP 成本結構
 
@@ -518,7 +518,7 @@ MCP 的實際成本遠超多數使用者預期，已有多個量化案例：
 - **來源：** [Why did Microsoft pull Fast Context from public domain?](https://www.reddit.com/r/ClaudeCode/comments/1unz1s5/why_did_microsoft_pull_fast_context_from_public/)（Reddit r/ClaudeCode，07-05；原專案含 arXiv 論文、GitHub repo、自訓練模型）
 - **核心論點：** 使用者重新測試 Microsoft 已下架的 Fast Context 專案——將程式碼探索工作委派給本地小型 LLM（local-Ollama task router）分流，聲稱可節省 50–60% context token，代價是執行時間增加；貼文討論該專案為何被無預警從公開領域下架
 - **關鍵回響：**
-  - 🧪 跟進實測：貼文作者重新測試已下架版本，確認節省幅度數字，但下架原因仍未有官方說明（2026-07-05 指控，至今無後續，07-12～08-07 news 查無跟進）
+  - 🧪 跟進實測：貼文作者重新測試已下架版本，確認節省幅度數字，但下架原因仍未有官方說明（2026-07-05 指控，日報無後續，07-12～08-07 news 查無跟進；官方未查證）
 - **收斂結論：** 尚無共識；「本地小模型分流節省 context」的機制本身具參考價值，已同步記錄至 [[topics/community-tech-patterns]] 技術彙整；下架原因（License 爭議／內部政策／效果不如預期）目前僅為社群猜測，無官方回應（推論）
 
 #### Anthropic 疑似對使用者執行 Prompt Injection：單一 Reddit 指控（2026-07-05）

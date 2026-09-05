@@ -1,6 +1,6 @@
 # Claude / Anthropic 生態系概覽
 
-**最後更新：** 2026-09-03
+**最後更新：** 2026-09-05
 **更新頻率：** 🗓️ 週更（每週檢視一次；更新日期停留數天屬正常節奏）
 
 ---
@@ -21,7 +21,9 @@
 
 **跨模型代際「重複修辭套路」問題持續延燒**：GitHub Issue #77136（106 留言／517 反應）跨 Opus 4.7／4.8／5.0 與 Fable 5，尚無官方回應。詳見 [[entities/opus-5]]。
 
-**feature-radar 第二輪熱度降溫**：接續 08-29 首輪（57 條），本輪再降 17 條近 4 週零討論的條目（Artifacts、Dreaming、Sandboxing、Cowork 行動版等）；降溫判定已改用 OR 語意別名比對＋逐條人工核對原文行，兩條假命中（Dynamic Workflows、Coordinator）被剔除後才降。詳見 [[feature-radar]]。
+**兩條長期線確認停滯，已寫在頁面上**：[[topics/safety-china-trust-dispute]]（核心敘事自 07-11 起無後續）與 [[entities/boris-cherny]]（自 08-04 起無新公開發言）本輪逐條核對日報後，在頁面明寫停滯範圍——兩頁入鏈合計 44 條，讀者被導過去時應看得出「查過確認沒有」而非「沒人在管」。
+
+**feature-radar 第三輪熱度降溫**：09-02 第二輪（17 條）之後，本輪再降 2 條（self-hosted-runner、破壞性 Git 指令自動封鎖），其餘零討論條目因與上輪 4 週窗高度重疊、不重複扣格。詳見 [[feature-radar]]。
 
 ---
 
@@ -80,10 +82,11 @@
 
 ---
 
-## 近期重大事件（2026-08-27 至 2026-09-02）
+## 近期重大事件（2026-08-27 至 2026-09-03）
 
 | 日期 | 事件 | 影響 |
 |------|------|------|
+| 09-03 | Claude Code v2.1.259 新增 `managedMcpServers`（組織統一佈署 HTTP/SSE MCP 伺服器）；狀態頁通報 Mythos／Fable 5.1、Opus 5／4.8／4.6 多款模型錯誤率升高 | 🛠️ 新功能；⚠️ 服務品質 |
 | 09-02 | Claude Fable 5.1／Mythos 5.1 發布（HN 1338 分）；Enterprise Frontier Safeguards 企業級零留存安全監控上線；Claude Code Auto Mode 遭提示注入劫持、官方無修復計畫 | 🤖 模型；🔒 安全 |
 | 09-01 | 官方併案檢討評測環境資安事件＋承諾 METR 獨立審查；Lambda 350 億美元雲端合約；v2.1.252 發布 | 🔒 安全承諾；💼 商業 |
 | 08-31 | Sony／Warner Chappell 訴訟多媒體聚焦正式提交；中國官方首度對 Anthropic 表態不滿；促銷 +50% 到期日 | ⚖️ 法律；🏛️ 地緣 |
@@ -97,7 +100,7 @@
 
 ## 社群工具生態
 
-社群工具目錄（[[topics/community-tech-tools]]）本輪（2026-08-29 lint）**新增 9 筆**（tare／opslane／ambient-context／OzBrain／Proliferate／Frugal Tokens／machine0／internet-court-skill／claw-orchestrator）／**汰除 4 筆**（CodeAlmanac／Claude-thermos／OneCLI／Palmier Pro，逾 30 天無後續）／精選層淘汰 5 換入 5（維持 19 筆上限內）。
+社群工具目錄（[[topics/community-tech-tools]]）本輪（2026-09-05 策展）**新增 1 筆**（speakeasy-api/kit，09-03 HN 12 分＋跨 2 來源達中門檻）／**汰除 0 筆**（omnigent／pxpipe／Cockpit／Claude Code Merge Queue 四筆雖逾 30 天 ⏳，但皆為決策表現行首選或次選，依規不移除——推薦的證據底不能被搬空）／「我卡在這裡」決策表本輪不動。
 
 - 🔥🔥🔥🔥 **跨 Session 記憶層／知識庫（趨勢九，本輪升格成形）** — ltm／OKF／CodeAlmanac／OzBrain／手動 Obsidian vault 取代／mindmuxai brain.md 六個獨立實作跨 105 天達成立門檻
 - 🔥🔥🔥🔥 **規格驅動開發（Spec-Driven Development，趨勢七）** — 已站穩成形趨勢

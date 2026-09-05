@@ -4,7 +4,7 @@ kind: "entity"
 type: "person"
 status: "active"
 domain: "👤 人物"
-last_updated: "2026-09-04"
+last_updated: "2026-09-05"
 last_news_update: "2026-08-04"
 status_main: "active"
 days_since_news: 32
@@ -29,7 +29,7 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 **狀態：** active
 **領域：** 👤 人物
 **首次出現：** 2026-04-23（事後報告發布）
-**最後更新：** 2026-09-04
+**最後更新：** 2026-09-05
 **最後新聞更新：** 2026-08-04
 
 > **驗證方法論與 Electron 桌面應用重寫嘗試**（2026-08-03 報導，2026-09-02 查證）：Boris Cherny 在 Y Combinator Startup School 2026 訪談（07-25/26 舉行、07-28 發布）中表示，引導 Claude 完成困難任務的關鍵已從 prompt engineering 轉向「讓 Claude 能沿途驗證自己的工作」。該實驗已查實為**用 Claude 將 Electron 版桌面應用改寫為 Swift 原生版**：從一段簡短對話式 prompt 起跑、連續執行兩週以上，agent 以 **Electron 版與 Swift build 逐像素比對**自我驗證（[Daring Fireball 2026-08-02](https://daringfireball.net/linked/2026/08/02/cherny-claude-swift)、[barath.ai 紀要](https://www.barath.ai/learnings/boris-cherny-yc-startup-school-2026)，查證日 2026-09-02）。
@@ -38,7 +38,7 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 
 ## 現況
 
-**截至 2026-08-03（本頁記錄的最近一次公開發言）**，Boris Cherny 的論述重心已從 prompt engineering 轉向「讓 Claude 能沿途驗證自己的工作」，並以團隊用 Claude 把 Electron 版桌面應用重寫為 Swift 原生版、以逐像素比對作自我驗證為例（YC Startup School 2026 訪談）。
+**截至 2026-08-03（本頁記錄的最近一次公開發言）**，Boris Cherny 的論述重心已從 prompt engineering 轉向「讓 Claude 能沿途驗證自己的工作」，並以團隊用 Claude 把 Electron 版桌面應用重寫為 Swift 原生版、以逐像素比對作自我驗證為例（YC Startup School 2026 訪談）。**自 2026-08-03 起未見 Boris Cherny 新公開發言或動態**；2026-08-13～09-03 期間的更新（Bloomberg 07-20 影片受訪者身分、「同時執行數千個 agent」出處、inc.com 五種員工原型發言人）皆屬既有發言的來源查證，非新事件（已掃日報至 2026-09-03 無新後續）。
 
 Boris Cherny 是 Anthropic Claude Code 的創始人與負責人（Head of Claude Code），也是產品方向最主要的公開代言人；其高頻率的公開聲明與工程分享長期引發開發者社群討論，被視為 Anthropic 技術文化的外部窗口。
 

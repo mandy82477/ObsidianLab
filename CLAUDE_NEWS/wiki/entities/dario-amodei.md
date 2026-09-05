@@ -4,7 +4,7 @@ kind: "entity"
 type: "person"
 status: "active"
 domain: "👤 人物"
-last_updated: "2026-09-03"
+last_updated: "2026-09-05"
 last_news_update: "2026-08-29"
 status_main: "active"
 days_since_news: 7
@@ -29,7 +29,7 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 **狀態：** active
 **領域：** 👤 人物
 **首次出現：** 2026-04-25
-**最後更新：** 2026-09-03
+**最後更新：** 2026-09-05
 **最後新聞更新：** 2026-08-29
 
 > ❓ **待查證**（標 2026-08-25｜查 airline industry、marketing and safety）｜**Fortune 評論比較 Anthropic 安全論述與航空業經驗**（2026-08-24 報導）：Fortune 發表評論文章〈What Anthropic's Dario Amodei can learn from the airline industry's lesson on marketing and safety〉，以航空業在行銷與安全議題上的經驗為借鏡，討論 Dario Amodei 可以從中學到什麼；僅標題可用，具體論點與建議內容未見報導。
@@ -66,7 +66,7 @@ Dario Amodei 是 Anthropic 共同創辦人兼執行長（CEO），與 [[entities
 | 多次 | 聯署 AI CEO 生物武器防範信（與 Altman、Hassabis、Suleiman 共同發表） | Wired |
 
 **懸置細節**
-- ⟨Q-01⟩ ❓ **待查證**（標 2026-08-10｜查 Techmeme、The Next Web）：具體發言場合與逐字稿未能取得
+- ⟨Q-01⟩ ❓ **待查證**（標 2026-08-10｜查 Techmeme、The Next Web）：具體發言場合與逐字稿未能取得。已掃日報至 2026-09-03 無後續；官方頁面未查證。
 - ⟨Q-02⟩ ❓ **待查證**（標 2026-08-29｜查 destroying anyone）：僅標題與轉址連結可用，發言的具體場合與完整脈絡未見報導
 
 ## 在 Anthropic 的角色與影響
@@ -118,12 +118,12 @@ Dario Amodei 是 Anthropic 共同創辦人兼執行長（CEO），與 [[entities
 > 🔎 **查無官方**（標 2026-08-10｜查 Axios、Yahoo Finance｜訊 2026-08-24｜複 2026-09-30）｜**人才招募疑慮延燒**（2026-08-07 報導）：Axios 報導（經 Yahoo Finance 轉載）稱 Dario Amodei 據稱憂心新進員工只為高薪而非公司使命加入 Anthropic，並對照公司同期開出年薪 32-40 萬美元的活動企劃負責人職缺，遠高於市場行情；為二手轉述，具體發言未經證實。**後續**（2026-08-24）：Axios 獨家報導（news/2026-08-24、2026-08-25 兩則跟進）證實 Anthropic 面試流程中會直接詢問候選人如何看待「使命」與「金錢」的優先順序，甚至問「若公司未來因安全考量放棄 AI 願景導致股票歸零，你會作何感受」；此為公司官方招募實務的獨立報導，與 08-07 憂慮傳言方向一致。**（2026-08-30 查證）**Anthropic 官方管道未刊載該發言，Axios 原文為付費牆二手轉述——**招募實務已由獨立報導證實，但 Dario 本人的具體發言場合與逐字稿查無官方紀錄**，改標查無官方。
 
 - 2026-08-07：Axios 報導（經 Yahoo Finance 轉載）稱 Dario Amodei 據稱憂心新進員工僅為薪資而非公司使命加入 Anthropic，與 08-03 Techmeme／The Next Web 報導同一主題的後續補充；報導另附帶對照——公司同期開出一則活動企劃負責人（brand marketing events lead）職缺，年薪達 32-40 萬美元，遠高於同類職位市場行情；具體發言場合與逐字稿仍未能取得（查證狀態見上方標記）（來源：Hacker News 50分／Yahoo Finance／Axios）
-> ❓ **待查證**（標 2026-08-10｜查 The Information、Silicon Valley）｜**The Information 深度剖析**（2026-08-06 報導）：發布《How Dario Amodei Spread Anthropic's Religion and Stirred Up Silicon Valley》，探討其個人影響力與外界對 Anthropic 企業文化的觀感；原文僅標題層級資訊可用，暫無具體引述內容。
+> ❓ **待查證**（標 2026-08-10｜查 The Information、Silicon Valley）｜**The Information 深度剖析**（2026-08-06 報導）：發布《How Dario Amodei Spread Anthropic's Religion and Stirred Up Silicon Valley》，探討其個人影響力與外界對 Anthropic 企業文化的觀感；原文僅標題層級資訊可用，暫無具體引述內容。已掃日報至 2026-09-03 無後續；官方頁面未查證。
 
 - 2026-08-06：The Information 發布深度剖析報導《How Dario Amodei Spread Anthropic's Religion and Stirred Up Silicon Valley》，探討其個人影響力對矽谷的攪動與外界對 Anthropic 企業文化的觀感；原文僅標題層級資訊可用，尚無具體引述內容補充（查證狀態見上方標記）（來源：Google News／The Information）
 - 2026-08-03：公開表態憂心部分員工是為金錢而非公司使命加入 Anthropic；Hacker News（經 Twitter/Techmeme，11 分）討論反應兩極——有人認為多數人本就為錢工作，也有人認為這是科技業近 30 年被資本侵蝕的縮影；The Next Web 同步以「Anthropic's CEO says staff want money over mission」為題報導，與 Techmeme 互為佐證；具體發言場合與逐字稿未能取得（查證狀態見公開立場表格標記）（來源：Hacker News/Techmeme、The Next Web，2026-08-03）
 - 2026-07-28：於 Anthropic Blog 發表聲明「Our position on open-weights models」，澄清 Anthropic 從未主張禁止開源權重模型，並呼籲加強對中國晶片出口管制；人物角度僅記個人具名立場表態，政策細節詳見 [[topics/anthropic-government-policy]]（來源：Anthropic Blog）
-- 2026-07-16：❓ **待查證**（標 2026-08-10｜查 Politico、super PAC）｜**捐款人身分歸屬未具名確認**：Politico 報導（經 Google News 轉載）指「Anthropic 執行長」捐款 100 萬美元予某 super PAC，捲入 AI 陣營之間鉅額政治獻金角力戰局；原文標題未具名確認捐款人身分，現任執行長為 Dario Amodei，此事實歸屬本人仍未確認（來源：Politico）。**後續**：07-17 員工集體捐款 300 萬美元（SFGATE）；07-22 官方證實再捐 2000 萬美元予 Public First Action（累計 4000 萬美元），WSJ／The Hill／Axios 框架為「期中選舉支出翻倍推動 AI 監管」，與官方非選舉用途聲明有敘事張力。❓ **待查證**（標 2026-08-10｜查 [[topics/anthropic-government-policy]]、Public First Action）｜**三筆捐款是否同一資金脈絡**：尚未確認，詳見 [[topics/anthropic-government-policy]]（來源：Anthropic Blog、WSJ、The Hill、Axios，2026-07-22）
+- 2026-07-16：❓ **待查證**（標 2026-08-10｜查 Politico、super PAC）｜**捐款人身分歸屬未具名確認**：Politico 報導（經 Google News 轉載）指「Anthropic 執行長」捐款 100 萬美元予某 super PAC，捲入 AI 陣營之間鉅額政治獻金角力戰局；原文標題未具名確認捐款人身分，現任執行長為 Dario Amodei，此事實歸屬本人仍未確認（來源：Politico）。**後續**：07-17 員工集體捐款 300 萬美元（SFGATE）；07-22 官方證實再捐 2000 萬美元予 Public First Action（累計 4000 萬美元），WSJ／The Hill／Axios 框架為「期中選舉支出翻倍推動 AI 監管」，與官方非選舉用途聲明有敘事張力。❓ **待查證**（標 2026-08-10｜查 [[topics/anthropic-government-policy]]、Public First Action）｜**三筆捐款是否同一資金脈絡**：尚未確認，詳見 [[topics/anthropic-government-policy]]（來源：Anthropic Blog、WSJ、The Hill、Axios，2026-07-22）。已掃日報至 2026-09-03 無後續；官方頁面未查證。
 - 2026-07-06：接受 STAT News 專訪談 AI 對生技產業的影響——Amodei 表示他「壓縮 21 世紀」（十年內完成百年生醫進展）的願景**目前還做不到**，坦承現階段 AI 在生技的貢獻仍以加速個別研究環節為主，並以同期發布的 [[entities/claude-science]] 為例說明 Anthropic 的切入方式（[STAT News，2026-07-06](https://www.statnews.com/2026/07/06/anthropic-ai-biotech-impact/)，2026-09-03 查證）
 - 2026-06-26：Wired 延伸報導確認 Trump 政府已不再信任 Amodei，改由 Tom Brown（GPT-3 共同研發者、Anthropic 聯合創辦人）全面接管政府溝通；Dario 以商業成功推動 AI 安全的政策立場持續受到質疑（來源：WIRED）
 - 2026-06-25：WIRED 報導 Amodei 退出與白宮 Fable 5 出口管制談判，由聯合創辦人 Tom Brown 接管；白宮人士批評其「行為怪異」無法有效與 Trump 政府溝通（來源：WIRED）

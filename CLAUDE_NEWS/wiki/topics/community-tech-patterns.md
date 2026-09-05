@@ -3,7 +3,7 @@ page: "topics/community-tech-patterns"
 kind: "topic"
 status: "ongoing"
 domain: "🌐 社群"
-last_updated: "2026-09-04"
+last_updated: "2026-09-05"
 last_news_update: "2026-09-03"
 status_main: "ongoing"
 days_since_news: 2
@@ -28,11 +28,11 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 **狀態：** ongoing
 **領域：** 🌐 社群
 **開始日期：** 2026-04-25
-**最後更新：** 2026-09-04
+**最後更新：** 2026-09-05
 **最後新聞更新：** 2026-09-03
 
 > **最新工作流模式**（2026-09-02）
-> - **存量盤點雙響再破紀錄**：thedotmack/claude-mem（9.3 萬星，跨 7 種以上 harness 的 AI 壓縮持久記憶）與 addyosmani/agent-skills（9.2 萬星，Addy Osmani 具名生產級技能集合）本庫首次收錄。
+> - **存量盤點雙響**：thedotmack/claude-mem（9.3 萬星，跨 7+ harness AI 壓縮記憶）與 addyosmani/agent-skills（9.2 萬星，Osmani 具名技能集）首次收錄。
 > - **dev.to 四連發**：記憶實測、殭屍 subagent 自動偵測、發展「爆炸半徑」風險分區框架（承接 08-30 遞迴刪檔教訓）、多平台發布 Skill，皆屬第一手實作／框架分享。
 
 ---

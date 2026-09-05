@@ -11,7 +11,7 @@ parent: null
 children: "[]"
 page_role: "root"
 days_since_news_subtree: 3
-inbound_links: 9
+inbound_links: 12
 attribution_count: 3
 attribution_last: "2026-09-02"
 top_source: "github-issues"
@@ -28,7 +28,7 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 **領域：** 🛠️ 工具/功能
 **別名：** 1M context window, long context, `[1m]`
 **開始日期：** 2026-04-10
-**最後更新：** 2026-09-02
+**最後更新：** 2026-09-05
 **最後新聞更新：** 2026-09-02
 
 > **最新動態**（2026-09-02）
@@ -48,6 +48,8 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 |---|---|---|
 | Claude 4.6 以後（Fable 5／Opus 5／Sonnet 5／Sonnet 4.6）| **不加價**，900k 與 9k 同費率 | 官方定價頁 Long context pricing（2026-08-29 查證）|
 | Sonnet 4／4.5 世代 | **×2.0 輸入、×1.5 輸出** | 該世代 1M 為 public preview（AWS 公告）|
+| Opus 4.7 | 不適用——未獲 1M 擴充，上限 200K | [[entities/opus-4-7]] |
+| Opus 4.8 | ❓ **待查證**（標 2026-09-05｜查 [[entities/opus-4-8]]、long context pricing）｜**加不加價未確認**：官方分界清單未點名此代 | 核心指標載 1M context，惟未列於上列命名清單 |
 | Haiku 4.5 | 不適用——上限 200K | 官方模型總覽頁（2026-08-20 查證）|
 
 **分界是模型世代，不是「1M」這個功能。** 這也是為什麼在 Amazon Bedrock 的模型清單裡，同一個家族會同時出現 1M 與 200K 兩種條目並列——那不是兩個等級的方案，是兩個世代的模型放在同一頁。兩代混用時，**兩套規則會出現在同一份帳單上**。

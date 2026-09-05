@@ -27,7 +27,7 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 **狀態：** ongoing
 **領域：** 🤖 模型
 **開始日期：** 2026-07-02
-**最後更新：** 2026-09-04
+**最後更新：** 2026-09-05
 **最後新聞更新：** 2026-09-02
 
 > **最新對照更新**（2026-09-01）
@@ -179,7 +179,7 @@ Anthropic 研究部落格於 2026-07-15 發布〈Claude's values across models a
 
 Reddit r/ClaudeAI 週熱門貼文〈Anthropic Flips Claude Code to Auto Mode by Default Aug 14〉稱引一項對 1,053 名付費測試者的對照研究：Auto 模式攔截危險指令準確率 **89%**，人工逐一審核僅 **13.6%**；貼文標題另稱「blocks 80%+ ... humans only 14%」，與內文 TL;DR 數字（89% / 13.6%）不完全一致，兩組數字並陳，不擇一（[Reddit](https://www.reddit.com/r/ClaudeAI/comments/1vjqcvf/anthropic_flips_claude_code_to_auto_mode_by/)，週熱門，2026-08-09）。
 
-**訊號強度：單一社群報導。** ❓ **待查證**（標 2026-08-15｜查 1053名、13.6%）｜**對照研究來源與方法未經官方證實**：原始對照研究是否經 Anthropic 官方發布、測試方法與「危險指令」的認定標準均未附連結佐證，除樣本規模（1,053 名付費測試者）外的條件不可考（2026-08-09 報導）。此為 Claude Code Auto 模式背後分類器的安全行為評測，與模型間選型（Fable 5 / Opus 5 / Sonnet 5…）無直接對應關係，不進快速選型表；Auto 模式預設化本身（生效日期 08-14、開關機制）由 [[entities/claude-code]] 追蹤，本頁僅記錄評測數字本身。
+**訊號強度：單一社群報導。** ❓ **待查證**（標 2026-08-15｜查 1053名、13.6%）｜**對照研究來源與方法未經官方證實**：原始對照研究是否經 Anthropic 官方發布、測試方法與「危險指令」的認定標準均未附連結佐證，除樣本規模（1,053 名付費測試者）外的條件不可考（2026-08-09 報導）。此為 Claude Code Auto 模式背後分類器的安全行為評測，與模型間選型（Fable 5 / Opus 5 / Sonnet 5…）無直接對應關係，不進快速選型表；Auto 模式預設化本身（生效日期 08-14、開關機制）由 [[entities/claude-code]] 追蹤，本頁僅記錄評測數字本身。同一組數字亦記於 [[topics/ai-agent-safety]]（安全政策記者維護，含後續 60–80% 攻擊成功率的落差對照）。
 
 ## 單一來源聲明：36氪報導 Claude 推理能力遭「秘密降低」
 

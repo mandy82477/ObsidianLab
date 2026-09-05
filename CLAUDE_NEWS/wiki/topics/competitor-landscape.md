@@ -3,7 +3,7 @@ page: "topics/competitor-landscape"
 kind: "topic"
 status: "ongoing"
 domain: "💼 商業"
-last_updated: "2026-09-04"
+last_updated: "2026-09-05"
 last_news_update: "2026-09-01"
 status_main: "ongoing"
 days_since_news: 4
@@ -11,7 +11,7 @@ parent: null
 children: "['topics/competitor-landscape-archive']"
 page_role: "hub"
 days_since_news_subtree: 4
-inbound_links: 52
+inbound_links: 53
 attribution_count: 90
 attribution_last: "2026-09-01"
 top_source: "google-news"
@@ -28,13 +28,13 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 **領域：** 💼 商業
 **蒐集邊界：** 以 Claude 為參照系的競品動態為主，另針對競品發布與定價定向補抓（每日至多 2 則）；競品自身未與 Claude 對比的發布可能延遲或缺漏。**帶跑分數字的第三方對照評測收不到**——這類內容多發表於對照型部落格，不在本站蒐集範圍，因此本頁的競品能力比較以官方數字與社群並排實測為主，缺口處改指向外部活榜單（見 [[topics/model-comparison]] 的外部評測榜單節），不自行推算。
 **開始日期：** 2026-04
-**最後更新：** 2026-09-04
+**最後更新：** 2026-09-05
 **最後新聞更新：** 2026-09-01
 
 > **最新競品動態**（2026-09-01）
-> - **Meta「Muse Code」結束 beta、正式推出三個訂閱層級，主打價格戰**：另一篇聚焦其「20x」折扣層級定位，直接對比 Claude Code 現行加購方案；均無具體月費數字可引，詳見「主要競品追蹤」Meta Muse Code 子區塊新增細節。
-> - **HN：Claude「20x」用量宣稱只放大 5 小時視窗，非週上限**：發文者指官方行銷用語易誤導，討論串提及已有行銷不實訴訟，詳見 [[entities/pricing]]「事故與爭議」同步記錄。
-> - **36Kr：中國市場出現免費「DeepSeek Harness」替代方案討論，社群質疑付費訂閱 Claude Code 是否仍值得**（08-31）：延續本頁既有 DeepSeek Harness 開源工具追蹤，詳見「主要競品追蹤」DeepSeek 子區塊新增細節。
+> - **Meta「Muse Code」結束 beta、推出三訂閱層級主打價格戰**，無具體月費數字，詳見「主要競品追蹤」Meta 子區塊。
+> - **HN：Claude「20x」用量宣稱只放大 5 小時視窗，非週上限**，詳見 [[entities/pricing]]「事故與爭議」同步記錄。
+> - **36Kr：中國出現免費「DeepSeek Harness」替代方案討論**（08-31），詳見「主要競品追蹤」DeepSeek 子區塊。
 > - **CNBC 影音報導再度提及 Google 低價 AI 定價策略劍指 Anthropic 與 Microsoft**（08-31）：與 08-27 已記錄事件同源，非新增數字，詳見「主要競品追蹤」Google 子區塊更新。
 
 ---
