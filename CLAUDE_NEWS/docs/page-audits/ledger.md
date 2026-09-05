@@ -24,6 +24,7 @@
 | 0（試點） | topics/competitor-landscape | 樞紐(52) | 2026-09-05 | 已定稿（雷達表／一行制時序／06 月封存；587→423 行） | ✅ 原考題複驗過 | 2026-09-12 | `competitor-landscape-2026-09-05{,-proposals,-review,-final}.md` |
 | 1 | topics/model-comparison | 樞紐(28) | 2026-09-05 | 定稿：使命句定稿、三節移出正文、Benchmark 表凍結降位第 8 節（到期 2027-03-04）、摘要補真答案＋出口 | ✅ 複驗過（Q1 死路→3 跳拿到帶數字答案；Q2–Q4 由 2 跳→1 跳） | 2026-09-12 | `model-comparison-2026-09-05{,-proposals,-review,-final}.md`、`wave1-cold-reader-2026-09-05.md` |
 | 1 | topics/model-task-leaderboard | 葉子(5)→升輕量卡 | 2026-09-05 | 定稿：摘要宣告「跨家到此為止」、承認本頁量模型不量工具＋懸置登記、index 補路由 | ✅ 複驗過（Q1 死路→3 跳拿到帶數字答案；Q2–Q4 由 2 跳→1 跳） | 2026-09-12 | 併入同一波產物 |
+| 2 | entities/managed-agents | 樞紐(31) | 2026-09-05 | 進行中（使用者點名；新契約首用：健檢卡＋冷讀者 2 棒起，Q2 判定後決定是否加設計者） | — | — | `managed-agents-2026-09-05*.md`、`wave2-cold-reader-2026-09-05.md` |
 
 > 第 1 波同時吃掉 `wiki/reader-notes.md` 的 ⏳「『誰比較強』三頁互踢」——考題集必含「Codex 和 Claude 誰強」，落點必須唯一。
 
