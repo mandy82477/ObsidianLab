@@ -11,7 +11,7 @@ parent: null
 children: "['topics/competitor-landscape-archive']"
 page_role: "hub"
 days_since_news_subtree: 1
-inbound_links: 57
+inbound_links: 56
 attribution_count: 93
 attribution_last: "2026-09-05"
 top_source: "google-news"

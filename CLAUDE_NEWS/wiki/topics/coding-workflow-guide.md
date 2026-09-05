@@ -12,7 +12,7 @@ parent: null
 children: "[]"
 page_role: "root"
 days_since_news_subtree: 21
-inbound_links: 21
+inbound_links: 23
 attribution_count: 1
 attribution_last: "2026-08-16"
 top_source: "hacker-news"

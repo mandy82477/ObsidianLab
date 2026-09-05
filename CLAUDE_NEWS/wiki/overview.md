@@ -130,7 +130,7 @@
 | SDK files／skills 命名空間（GA）| 🔥🔥 | ⚡ 有條件推薦——以 TypeScript／Python SDK 整合 files/skills 者升級前先確認呼叫寫法 |
 | Model Hardware Standard | 🔥🔥🔥 | ⏳ 觀望——研究預覽階段，一般開發者暫無可用管道 |
 
-> 完整功能熱度評分、升版風險與倒數中事件見 **[[feature-radar]]**
+> 完整功能熱度評分、**升上去會遇到什麼**與倒數中事件見 **[[feature-radar]]**
 
 ---
 

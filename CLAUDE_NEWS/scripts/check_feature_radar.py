@@ -35,6 +35,31 @@ MONTH_SECTION_RE = re.compile(r"^##\s+🆕\s+最新功能（(\d{4}-\d{2})）")
 # 表列的發布日期欄：允許「2026-08-14 生效（08-07 公告）」這類未生效寫法
 ROW_DATE_RE = re.compile(r"\|\s*(\d{4}-\d{2})-\d{2}[^|]*\|")
 
+# 熱度／試用價值單一家守門（2026-09-06）：只住 ## 📋 功能全覽表，詳細條目標頭與
+# 推薦節不得再複製一份——範圍寫死兩條，不可全檔搜「熱度 🔥」（會誤中 ## 評分說明 圖例）。
+DETAIL_HEADER_RE = re.compile(r"^\*\*發布：\*\*")
+RECOMMEND_SECTION_RE = re.compile(r"^##\s+⭐")
+
+
+def check_hotness_single_home(raw: str) -> list[str]:
+    """回傳違規訊息列表：detail-entry 標頭或「本週推薦」節內出現熱度副本。"""
+    violations: list[str] = []
+    lines = raw.split("\n")
+
+    in_recommend = False
+    for i, line in enumerate(lines, start=1):
+        if line.startswith("## "):
+            in_recommend = bool(RECOMMEND_SECTION_RE.match(line))
+            continue
+
+        if DETAIL_HEADER_RE.match(line) and "**熱度：**" in line:
+            violations.append(f"  行 {i}：詳細條目標頭仍含 **熱度：**（應只住全覽表）：{line.strip()}")
+
+        if in_recommend and "熱度 🔥" in line:
+            violations.append(f"  行 {i}：「## ⭐」節內出現「熱度 🔥」副本（應只住全覽表）：{line.strip()}")
+
+    return violations
+
 
 def _stdout():
     if hasattr(sys.stdout, "buffer"):
@@ -90,7 +115,20 @@ def main(argv: list[str]) -> int:
     today = date.fromisoformat(argv[1]) if len(argv) > 1 else date.today()
     month = today.strftime("%Y-%m")
 
-    table_rows, details = parse(RADAR.read_text(encoding="utf-8-sig"))
+    raw = RADAR.read_text(encoding="utf-8-sig")
+    table_rows, details = parse(raw)
+
+    hotness_violations = check_hotness_single_home(raw)
+    if hotness_violations:
+        stream.write("\n[熱度單一家] feature-radar 出現熱度／試用價值副本：\n")
+        for v in hotness_violations:
+            stream.write(v + "\n")
+        stream.write(
+            "  修法：熱度與試用價值只寫在 ## 📋 功能全覽表；詳細條目標頭只留「發布」與「狀態」，\n"
+            "        推薦節不寫熱度括號（.claude/rules/wiki-ingest-features.md §7(a)）\n"
+        )
+        stream.flush()
+        return 1
 
     n_detail = len(details.get(month, []))
     n_rows = table_rows.get(month, 0)

@@ -79,7 +79,7 @@ prompt 只准放**當日資料**（日期、條目節錄、待查證命中清單
 
 收到所有記者回報後，統一更新：
 
-**`wiki/feature-radar.md`**：彙整模型 + 功能記者回報的新增條目，依 `.claude/rules/wiki-ingest-features.md` 格式寫入（含本週推薦、升版風險、⏰ 倒數中三個 section）。
+**`wiki/feature-radar.md`**：彙整模型 + 功能記者回報的新增條目，依 `.claude/rules/wiki-ingest-features.md` 格式寫入（含「這禮拜值得跟的三件」「從你現在的版本升上去，會遇到什麼」「⏰ 倒數中」三個 section）。
 
 **`wiki/topics/anthropic-commitments.md`**：任一記者回報中出現「官方承諾修復 / 承諾政策 / 明確拒絕 / 兌現先前承諾」事件時，更新追蹤表對應列的狀態與最後檢查日；新承諾則新增列；兌現或死案移入「已結案」。無相關事件則不動此頁。
 

@@ -74,3 +74,9 @@
 {"id": "H-402a37", "closed": "2026-09-05", "status": "done", "by": "商業", "result": "查證兩列原文後判定皆不宜入雷達表硬度欄：Fable5 vs GPT-5.6 Sol 僅單一無數字社群心得；MineBench 實為 Fable5 vs Opus5（同廠模型）且已查證不可採信，未寫入"}
 {"id": "H-ab0af9", "closed": "2026-09-05", "status": "done", "by": "安全政策", "result": "透過 git log --all -p 尋回被移除的原文，已完整補入 anthropic-government-policy.md「出口管制」段落、攻防紀錄與時序（08-13、08-23 兩則）"}
 {"id": "H-abb47e", "closed": "2026-09-05", "status": "done", "by": "社群", "result": "以 git show 尋回改版前原文，確認三筆事實（多LLM混合架構/claude-anyteam/CC-Canary）連同確切日期皆已存在於 community-tech-timeline.md，未重複新增；順手修正一處指向已移除頁面的失效 wikilink"}
+{"id": "H-881390", "opened": "2026-09-06", "from": "功能", "to": "社群", "page": "topics/code-quality-decline", "note": "同一頁六處在報同一批訊號的筆數且互不相同；請定一處為家（建議表格實列數），其餘改為指路", "status": "open"}
+{"id": "H-34f143", "opened": "2026-09-06", "from": "功能", "to": "社群", "page": "topics/code-quality-decline", "note": "結論節每條需能答『你該做什麼』，或整節併入摘要；冷讀者實測此節零選項句", "status": "open"}
+{"id": "H-fbfbc0", "opened": "2026-09-06", "from": "功能", "to": "社群", "page": "topics/code-quality-decline", "note": "照 topics/enterprise-cost-management:81 先例，把括號內的候選症狀包進 %% ... %%", "status": "open"}
+{"id": "H-a55c12", "opened": "2026-09-06", "from": "功能", "to": "社群", "page": "topics/code-quality-decline", "note": "callout 是給讀者的最新一則，不是收錄理由；改寫成發生了什麼", "status": "open"}
+{"id": "H-849df2", "opened": "2026-09-06", "from": "功能", "to": "社群", "page": "topics/skill-interest-watch", "note": "外洩句住設定檔 data/skill_interest_watch.json，改設定不改頁——該頁每日整頁覆寫（:42）", "status": "open"}
+{"id": "H-3c570b", "opened": "2026-09-06", "from": "功能", "to": "社群", "page": "topics/skill-interest-watch", "note": "外洩句住設定檔 data/skill_interest_watch.json，改設定不改頁——該頁每日整頁覆寫（:72）", "status": "open"}

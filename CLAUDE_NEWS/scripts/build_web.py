@@ -451,7 +451,7 @@ def parse_radar(f: Path) -> dict:
         "pill": "warn",
         "lastUpdated": last_updated,
         "markdown": strip_llm_sections(raw),
-        "summary": "追蹤 Claude / Claude Code 每個新發布功能的社群熱度、試用價值與快速上手方式。",
+        "summary": "這禮拜官方動了什麼、值不值得現在跟，以及跟上去會遇到什麼。",
     }
 
 

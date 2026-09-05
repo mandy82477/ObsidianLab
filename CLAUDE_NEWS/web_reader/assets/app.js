@@ -368,7 +368,7 @@
       parts.push('</ul>');
       // 常駐導流：重度使用者的核心問題「該不該升版」答案在熱度雷達頁，
       // 但從日報頁原本沒有任何入口（2026-07-28 讀者 review 高影響項）
-      parts.push(`<div class="focus-radar-cta">該不該升版？<button type="button" class="focus-radar-cta__link" onclick="openWikiPage('feature-radar','radar')">看功能熱度雷達的升版風險與建議 →</button></div>`);
+      parts.push(`<div class="focus-radar-cta">該不該升版？<button type="button" class="focus-radar-cta__link" onclick="openWikiPage('feature-radar','radar')">看熱度雷達：升上去會遇到什麼 →</button></div>`);
       parts.push('</div>');
     }
 

@@ -63,7 +63,7 @@ BANK = [
         "probe": [
             "驗三個心跳：news/ 最新檔距今 ≤1 天；weekly/ 最新 ≤8 天；git log --since=\"36 hours\" --oneline 有自動線 commit",
             "任一沉默：找「no-op 證據」（心跳紀錄／watchdog run 綠）或「死因」，二選一，不可只看產出缺席就宣稱正常或逕行補跑",
-            "feature-radar「本週推薦」最後輪替日 >14 天 → 依防霸榜規則覆核",
+            "feature-radar「這禮拜值得跟的三件」最後輪替日 >14 天 → 依防霸榜規則覆核",
         ],
     },
     {
