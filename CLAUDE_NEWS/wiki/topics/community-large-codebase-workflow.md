@@ -3,9 +3,9 @@ page: "topics/community-large-codebase-workflow"
 kind: "topic"
 status: "ongoing"
 domain: "🌐 社群"
-last_updated: "2026-09-04"
+last_updated: "2026-09-05"
 last_news_update: "2026-09-03"
-update_freq: "🗓️ 週更（每週從模式庫沉澱一次；更新日期停留數天屬正常節奏）"
+update_freq: "🗓️ 週更（每週從 [[topics/community-tech-patterns]] 沉澱一次；更新日期停留數天屬正常節奏）"
 status_main: "ongoing"
 days_since_news: 2
 parent: null

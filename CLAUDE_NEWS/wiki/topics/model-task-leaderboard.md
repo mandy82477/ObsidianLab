@@ -3,7 +3,7 @@ page: "topics/model-task-leaderboard"
 kind: "topic"
 status: "ongoing"
 domain: "🤖 模型"
-last_updated: "2026-09-03"
+last_updated: "2026-09-05"
 last_news_update: "2026-08-05"
 update_freq: "🗓️ 週更（每週抓取一次外部榜單快照；更新日期停留數天屬正常節奏）"
 status_main: "ongoing"
@@ -12,13 +12,13 @@ parent: null
 children: "[]"
 page_role: "root"
 days_since_news_subtree: 31
-inbound_links: 5
+inbound_links: 10
 attribution_count: 0
 attribution_last: null
 top_source: null
-pending_count: 0
+pending_count: 1
 pending_overdue: 0
-pending_next_review: null
+pending_next_review: "2026-09-19"
 pending_signalled: 0
 signal: "休眠"
 generated_by: "scripts/gen_wiki_frontmatter.py"
@@ -27,6 +27,7 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 
 **狀態：** ongoing
 **領域：** 🤖 模型
+**蒐集邊界：** 每週抓取 18 個公開活榜單的領先者，抓不到的榜會在「本週註記」寫明；只涵蓋**模型**層排名，Codex CLI、OpenCode 這類工具（harness）不在榜上。帶跑分數字的第三方對照評測不在本站蒐集範圍，因此本頁沒有「Claude 對某家」的頭對頭實測。
 **更新頻率：** 🗓️ 週更（每週抓取一次外部榜單快照；更新日期停留數天屬正常節奏）
 **開始日期：** 2026-08-05
 **最後更新：** 2026-09-05
@@ -39,7 +40,12 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 
 ## 摘要
 
-回答「**做某類任務，目前哪家模型最強？**」——按任務類型列出各活榜單的本週領先者快照，涵蓋跨家模型（OpenAI、Google、開源等）與非文字生成（畫圖、影片、語音）。每列標資料日期；即時精確數字請點榜單連結（活榜單永遠最新，本頁只是每週速讀），各榜怎麼算分見下方評比方式索引。Claude 家內選型見 [[topics/model-comparison]]。
+**跨家與跨工具的「誰強」到這一頁為止**——回答「做某類任務，目前哪家模型最強？」，按任務類型列出各活榜單的本週領先者快照，涵蓋跨家模型（OpenAI、Google、開源等）與非文字生成（畫圖、影片、語音）。每列標資料日期；即時精確數字請點榜單連結（活榜單永遠最新，本頁只是每週速讀），各榜怎麼算分見下方評比方式索引。
+
+**現在的答案，先說清楚：** Claude 對 Codex 最近一次頭對頭查證是 **2026-08-13**，結論是沒有單一答案（數字見 [[topics/competitor-landscape#硬答案]]）；此後本站未再收到新的頭對頭實測，只有下方各榜的每週排名可看。Claude 家內選型與換模型的實付差額見 [[topics/model-comparison]]。
+
+- **本頁量的是模型，不是工具**：讀者常問的 Codex CLI、OpenCode 是 harness（工具），本表列不到它們；換一個工具，同一個模型的分數就會變。
+- ❓ **待查證**（標 2026-09-05｜查 Codex CLI、OpenCode、harness）｜**這些工具各自跑什麼模型**：各工具官方文件是否載明預設模型，本站尚未查得；查到之前不從榜上出現的模型名反推。
 
 ## 本週快照
 
@@ -67,7 +73,7 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 ## 本週註記（僅列異常）
 
 - **本輪 18 榜取得 16 榜（2026-09-03）**：Search Arena 連續 2 週無法取得（JS 渲染、無媒體轉述報導），是否改用其他榜單尚未定案；MTEB 僅能確認首位。
-- **SWE-bench 二手來源歧異**：09-02 二手（morphllm）前三為 Opus 5 > Mythos 5 > Fable 5；09-03 二手（llm-stats）為 Opus 5 97% > DeepSeek V4 Pro 96.4% > Kimi K3 93.4%。兩者僅首位一致，可能一為 Verified 一為 Pro，本頁列最新者並保留兩說；榜已飽和（前三差距小於評測雜訊）。
+- **SWE-bench 二手來源歧異**：09-02（morphllm）前三為 Opus 5 > Mythos 5 > Fable 5；09-03（llm-stats）為 Opus 5 97% > DeepSeek V4 Pro 96.4% > Kimi K3 93.4%。僅首位一致，可能一為 Verified 一為 Pro，本頁列最新者並保留兩說；榜已飽和。
 - **OpenRouter 二手與直接抓取歧異**：09-02 直接抓取首位 Hermes Agent（35.7 兆 token）；09-03 二手稱 GPT-5.6 Luna 居首、無具體數字。本頁維持直接抓取結果，下週複抓判定。
 - **LMArena 二手來源彼此不一致**：一說 Fable 5 居首、一說 Opus 4.8 居首；整表 07-01 重新基準化後前期排名不可追溯。
 - **Terminal-Bench 2.1 與 3.0 排名相反，不可跨版比較**：3.0 Claude Opus 5 42.7% 領先；通用版／2.1 為 GPT-5.6 Sol 65.9%、Fable 5 62.9%。本頁快照列 3.0 並註明版次。
@@ -190,6 +196,6 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 
 ## 相關實體
 
-- Claude 家內選型：[[topics/model-comparison]]
+- Claude 家內選型與實付：[[topics/model-comparison]] — 決定「我這份工作該用哪個模型、實付差多少」；本頁只給排名與算分方式。
 - 各模型深度資訊：[[entities/fable-5]] · [[entities/opus-5]] · [[entities/sonnet-5]]
 - 競品動態：[[topics/competitor-landscape]]

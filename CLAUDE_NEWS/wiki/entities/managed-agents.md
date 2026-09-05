@@ -4,7 +4,7 @@ kind: "entity"
 type: "feature"
 status: "active（正式發布）"
 domain: "🛠️ 工具/功能"
-last_updated: "2026-09-03"
+last_updated: "2026-09-05"
 last_news_update: "2026-08-20"
 status_main: "active"
 days_since_news: 16

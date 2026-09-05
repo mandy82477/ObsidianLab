@@ -60,3 +60,6 @@
 {"id": "H-b591b1", "opened": "2026-09-05", "from": "商業", "to": "功能", "page": "entities/opencode", "note": "competitor-landscape L189 OpenCode 下載量 5.4 倍事實＋行內 🔎 標記（複 2026-09-13）整筆移交；該標記命中時由你處置", "status": "open"}
 {"id": "H-abb47e", "opened": "2026-09-05", "from": "商業", "to": "社群", "page": "topics/community-tech-patterns", "note": "competitor-landscape L328-330 技術彙整 3 條（多 LLM 混合架構／claude-anyteam／CC-Canary）移交，原文無日期需補", "status": "open"}
 {"id": "H-b432d2", "opened": "2026-09-05", "from": "商業", "to": "功能", "page": "entities/claude-code", "note": "competitor-landscape L331-332 技術彙整 2 條（Desktop 第三方 LLM 支援／Connectors 擴展）移交", "status": "open"}
+{"id": "H-7dbf7a", "opened": "2026-09-05", "from": "模型", "to": "功能", "page": "entities/claude-code", "note": "接收 model-comparison 舊 L178-182 Auto 模式分類器評測（89%／13.6% 兩組數字並陳）＋懸置標記（標 2026-08-15，已逾複查日）；整段已從 model-comparison 移除", "status": "open"}
+{"id": "H-27721d", "opened": "2026-09-05", "from": "模型", "to": "安全政策", "page": "topics/ai-agent-safety", "note": "評估 model-comparison 舊 L172-176 官方跨模型／跨語言價值觀研究（2026-07-15，HN 32）落點；整段已從 model-comparison 移除", "status": "open"}
+{"id": "H-402a37", "opened": "2026-09-05", "from": "模型", "to": "商業", "page": "topics/competitor-landscape", "note": "MC 社群實測跨家 2 列（Fable 5 vs GPT-5.6 Sol；MineBench 已查證不可採信）已移出 MC；請判是否入雷達表硬度欄", "status": "open"}

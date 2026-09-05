@@ -22,7 +22,14 @@
 | 波 | 頁面 | 層 | 健檢日 | 裁決 | 複驗 | 回訪日 | 產物 |
 |---|---|---|---|---|---|---|---|
 | 0（試點） | topics/competitor-landscape | 樞紐(52) | 2026-09-05 | 已定稿（雷達表／一行制時序／06 月封存；587→423 行） | ✅ 原考題複驗過 | 2026-09-12 | `competitor-landscape-2026-09-05{,-proposals,-review,-final}.md` |
-| 1 | topics/model-comparison | 樞紐(28) | 2026-09-05 | 進行中 | — | — | `model-comparison-2026-09-05*.md` |
-| 1 | topics/model-task-leaderboard | 葉子(5)→升輕量卡 | 2026-09-05 | 進行中 | — | — | 併入同一波產物 |
+| 1 | topics/model-comparison | 樞紐(28) | 2026-09-05 | 定稿：使命句定稿、三節移出正文、Benchmark 表凍結降位第 8 節（到期 2027-03-04）、摘要補真答案＋出口 | 待複驗 | 2026-09-12 | `model-comparison-2026-09-05{,-proposals,-review,-final}.md`、`wave1-cold-reader-2026-09-05.md` |
+| 1 | topics/model-task-leaderboard | 葉子(5)→升輕量卡 | 2026-09-05 | 定稿：摘要宣告「跨家到此為止」、承認本頁量模型不量工具＋懸置登記、index 補路由 | 待複驗 | 2026-09-12 | 併入同一波產物 |
 
 > 第 1 波同時吃掉 `wiki/reader-notes.md` 的 ⏳「『誰比較強』三頁互踢」——考題集必含「Codex 和 Claude 誰強」，落點必須唯一。
+
+## 本波順帶落地的機械看守（第 1 波）
+
+| 閘 | 治什麼 | 存量處置 | 驗證 |
+|---|---|---|---|
+| `scripts/check_cell_limits.py`（掛 `run_tests.py`） | 儲存格 >120／細節區條列 >200 —— 規則檔明文兩個月、零偵測器 | `data/cell-limit-baseline.json` 1191 筆／38 頁，只擋新增 | 注入 121／201 字元 → FAIL；邊界值 → 通過 |
+| `build_web.py` 錨點掃描補 `weekly/` 並改致命 | 節名凍結的第二把鎖（registry `anchors` 只擋節名被改，擋不到別頁把錨點打錯） | 存量失效 0 筆，今天成本 0 | 注入壞錨點 → exit 1 指名該筆；還原 → exit 0 且 byte-identical |

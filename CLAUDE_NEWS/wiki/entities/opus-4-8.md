@@ -12,7 +12,7 @@ parent: null
 children: "[]"
 page_role: "root"
 days_since_news_subtree: 9
-inbound_links: 12
+inbound_links: 11
 attribution_count: 6
 attribution_last: "2026-07-25"
 top_source: "google-news"

@@ -153,6 +153,16 @@
       "label": "蒐集邊界欄位（企業採用涵蓋範圍）——主題延伸到 Claude/Anthropic 之外的頁面必須誠實標示會漏什麼，欄位被刪＝讀者又看不出缺口",
       "pattern": "\\*\\*蒐集邊界：\\*\\*",
       "file": "wiki/topics/enterprise-tool-tracker.md"
+    },
+    {
+      "label": "MC 成本節節名（wiki 內 5 筆錨點入邊：fable-5 L187／pricing L140／long-context-1m L31／official-community-gap L35／reader-notes L31，另 weekly/2026-W35 L43 無任何工具掃得到）",
+      "pattern": "## 同一份工作，換設定差多少",
+      "file": "wiki/topics/model-comparison.md"
+    },
+    {
+      "label": "蒐集邊界欄位（跨家榜單涵蓋範圍）——主題延伸到 Claude/Anthropic 之外的頁面必須誠實標示會漏什麼，欄位被刪＝讀者又看不出缺口",
+      "pattern": "\\*\\*蒐集邊界：\\*\\*",
+      "file": "wiki/topics/model-task-leaderboard.md"
     }
   ],
   "sync_pairs": [
@@ -1327,6 +1337,17 @@
         "const QID_RE = /",
         "collapsePendingMeta",
         "annotateQids"
+      ]
+    },
+    {
+      "name": "CL 蒐集邊界句 <-> MC 節名：CL L29 逐字引用『外部評測榜單』節名，兩邊必須同時存在",
+      "assertion": "all_contain",
+      "files": [
+        "wiki/topics/competitor-landscape.md",
+        "wiki/topics/model-comparison.md"
+      ],
+      "patterns": [
+        "外部評測榜單"
       ]
     }
   ],

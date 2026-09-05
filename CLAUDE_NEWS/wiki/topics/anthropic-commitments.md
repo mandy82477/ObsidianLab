@@ -3,7 +3,7 @@ page: "topics/anthropic-commitments"
 kind: "topic"
 status: "ongoing"
 domain: "🏛️ 政策/安全"
-last_updated: "2026-09-01"
+last_updated: "2026-09-05"
 last_news_update: "2026-09-01"
 status_main: "ongoing"
 days_since_news: 4

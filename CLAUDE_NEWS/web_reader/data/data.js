@@ -1083,7 +1083,8 @@ window.WIKI_DATA = {
       "summary": "競爭的主戰場已從「誰更強」移到「誰更便宜」：Meta 以三層訂閱打價格戰、Google 推低價企業方案、中國市場出現「免費夠用」的論述。同一時間開源陣營把旗艦模型的權重也放了出來，低價層第一次同時具備可用的工具與可用的模型。對用 Claude 的人，眼前要判斷的不是換不換，而是自己所在的那一層有沒有出現可比的價格或能力…",
       "latestHeadline": "Cursor：斷供傳聞理由指向控制權變更（Reddit/r/artificial · 週熱門）",
       "readerDomains": [
-        "💼 商業"
+        "💼 商業",
+        "💻 開發實務"
       ]
     },
     {
@@ -2269,12 +2270,12 @@ window.WIKI_DATA = {
       "pill": "active",
       "firstSeen": "",
       "startDate": "2026-07-02",
-      "lastUpdated": "2026-09-04",
+      "lastUpdated": "2026-09-05",
       "lastNewsUpdate": "2026-09-02",
       "updateFreq": "",
       "parent": "",
-      "summary": "**現行公開陣容：Fable 5.1 > Opus 5 > Sonnet 5 > Sonnet 4.6 > Haiku 4.5**（Opus 4.8 / 4.7 已被取代；Fable 5.0 於 2026-09-01 由 5.1 取代；Mythos 5.1 僅限授權機構）。本頁只回答「**我該用哪個 Claude 模型…",
-      "latestHeadline": "現行公開陣容：Fable 5.1 > Opus 5 > Sonnet 5 > Sonnet 4.6 > Haiku 4.5（Opus 4.8 / 4.7 已被取代；Fable 5.0 於 2026-09-01 由 5.1 取代；Mythos 5.1 僅限授權機構）。本頁只回答「我該用哪個 Claude 模型？」——橫向",
+      "summary": "**現行公開陣容：Fable 5.1 > Opus 5 > Sonnet 5 > Sonnet 4.6 > Haiku 4.5**（Opus 4.8 / 4.7 已被取代；Fable 5.0 於 2026-09-01 由 5.1 取代；Mythos 5.1 僅限授權機構）。本頁只回答「**我這份工作該用哪個 Claud…",
+      "latestHeadline": "現行公開陣容：Fable 5.1 > Opus 5 > Sonnet 5 > Sonnet 4.6 > Haiku 4.5（Opus 4.8 / 4.7 已被取代；Fable 5.0 於 2026-09-01 由 5.1 取代；Mythos 5.1 僅限授權機構）。本頁只回答「我這份工作該用哪個 Claude 模型、換",
       "readerDomains": [
         "🤖 模型",
         "💻 開發實務"
@@ -2294,10 +2295,11 @@ window.WIKI_DATA = {
       "lastNewsUpdate": "2026-08-05",
       "updateFreq": "🗓️ 週更（每週抓取一次外部榜單快照；更新日期停留數天屬正常節奏）",
       "parent": "",
-      "summary": "回答「**做某類任務，目前哪家模型最強？**」——按任務類型列出各活榜單的本週領先者快照，涵蓋跨家模型（OpenAI、Google、開源等）與非文字生成（畫圖、影片、語音）。每列標資料日期；即時精確數字請點榜單連結（活榜單永遠最新，本頁只是每週速讀），各榜怎麼算分見下方評比方式索引。Claude 家內選型見 model…",
-      "latestHeadline": "回答「做某類任務，目前哪家模型最強？」——按任務類型列出各活榜單的本週領先者快照，涵蓋跨家模型（OpenAI、Google、開源等）與非文字生成（畫圖、影片、語音）。每列標資料日期；即時精確數字請點榜單連結（活榜單永遠最新，本頁只是每週速讀），各榜怎麼算分見下方評比方式索引。Claude 家內選型見 model-com",
+      "summary": "**跨家與跨工具的「誰強」到這一頁為止**——回答「做某類任務，目前哪家模型最強？」，按任務類型列出各活榜單的本週領先者快照，涵蓋跨家模型（OpenAI、Google、開源等）與非文字生成（畫圖、影片、語音）。每列標資料日期；即時精確數字請點榜單連結（活榜單永遠最新，本頁只是每週速讀），各榜怎麼算分見下方評比方式索引。…",
+      "latestHeadline": "跨家與跨工具的「誰強」到這一頁為止——回答「做某類任務，目前哪家模型最強？」，按任務類型列出各活榜單的本週領先者快照，涵蓋跨家模型（OpenAI、Google、開源等）與非文字生成（畫圖、影片、語音）。每列標資料日期；即時精確數字請點榜單連結（活榜單永遠最新，本頁只是每週速讀），各榜怎麼算分見下方評比方式索引。",
       "readerDomains": [
-        "🤖 模型"
+        "🤖 模型",
+        "💻 開發實務"
       ]
     },
     {
@@ -2386,6 +2388,8 @@ window.WIKI_DATA = {
     "coding-workflow-guide",
     "skill-interest-watch",
     "model-comparison",
+    "model-task-leaderboard",
+    "competitor-landscape",
     "community-large-codebase-workflow",
     "community-tech-patterns"
   ],

@@ -24,8 +24,9 @@ scripts/check_pending_markers.py（懸置標記語法：日期/符號對應/排�
 wikilink 目標存在/⟨Q-nn⟩ 雙向對帳）與 scripts/check_workflow_paths.py（GH Actions
 workflow 指名的產出路徑逐一驗存在，防 2026-09-04 那種「刪了檔沒刪登記 → git add
 exit 128 → 當天抓料整包不落地」）與 scripts/check_reader_language.py（讀者語言閘：
-內部維運用語外洩到 wiki 正文，只擋 data/reader-language-baseline.json 之外的新增）；
-任一失敗都會讓本腳本整體 exit 1。
+內部維運用語外洩到 wiki 正文，只擋 data/reader-language-baseline.json 之外的新增）與
+scripts/check_cell_limits.py（字元上限機械閘：表格儲存格 >120／細節區條列 >200，只擋
+data/cell-limit-baseline.json 之外的新增超限）；任一失敗都會讓本腳本整體 exit 1。
 """
 import io
 import subprocess
@@ -45,6 +46,7 @@ CHECK_TOOLS_PAGE = REPO_ROOT / "scripts" / "check_tools_page.py"
 CHECK_HIERARCHY = REPO_ROOT / "scripts" / "check_hierarchy.py"
 CHECK_WORKFLOW_PATHS = REPO_ROOT / "scripts" / "check_workflow_paths.py"
 CHECK_READER_LANGUAGE = REPO_ROOT / "scripts" / "check_reader_language.py"
+CHECK_CELL_LIMITS = REPO_ROOT / "scripts" / "check_cell_limits.py"
 
 
 def main() -> int:
@@ -214,9 +216,23 @@ def main() -> int:
         stream.write(f"\nWARN: {CHECK_READER_LANGUAGE} 不存在，跳過讀者語言閘\n")
     stream.flush()
 
+    # 字元上限機械閘（2026-09-05：表格放結論、細節下沉；只擋基線外的新增超限）
+    cell_limits_ok = True
+    if CHECK_CELL_LIMITS.exists():
+        proc = subprocess.run(
+            [sys.executable, str(CHECK_CELL_LIMITS)], capture_output=True, text=True, encoding="utf-8", errors="replace"
+        )
+        stream.write("\n" + (proc.stdout or "") + "\n")
+        if proc.stderr:
+            stream.write(proc.stderr + "\n")
+        cell_limits_ok = proc.returncode == 0
+    else:
+        stream.write(f"\nWARN: {CHECK_CELL_LIMITS} 不存在，跳過字元上限機械閘\n")
+    stream.flush()
+
     return 0 if (unit_ok and rules_ok and arch_docs_ok and weekly_ledger_ok
                  and freshness_ok and radar_ok and pending_ok and tools_ok and hierarchy_ok
-                 and workflow_paths_ok and reader_lang_ok) else 1
+                 and workflow_paths_ok and reader_lang_ok and cell_limits_ok) else 1
 
 
 if __name__ == "__main__":

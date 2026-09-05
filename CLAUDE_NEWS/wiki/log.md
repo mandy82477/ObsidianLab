@@ -5749,3 +5749,33 @@ GH Actions 抓料排 10:23 UTC，到 14:45 UTC 仍未落地（+4.4 小時且持�
 
 **紀律事件**：G2 誤動 `data/reader-language-baseline.json` 後自行還原未進 commit；G4 誤判 allow.json 被 gitignore（實為已追蹤）；G2 的白名單條目因共用工作目錄被 G1 的 commit 先收走——並行 agent 共寫同一檔的既知風險，功能無誤。快照重跑順手 append 的兩個 data csv 已還原，留給當晚 pipeline 正常產出。
 
+
+---
+
+## 2026-09-05 全站頁面 review 第 1 波：model-comparison ／ model-task-leaderboard
+
+**使用者兩項裁決（開工前）：** 起點取讀者三個根問題各走一條路徑（非從單一樞紐擴散）；裁決節奏授權主 session 下非阻擋級判斷，拆頁／砍整節／改使命句仍須裁決。總帳與分層判準見 `docs/page-audits/ledger.md`，共用派工前綴見 `docs/page-audits/dispatch-prefix.md`。
+
+**Query（本波考題來源）：** `wiki/reader-notes.md` 2026-09-05 的 ⏳「『誰比較強』三頁互踢皮球」。冷讀者實測重現：問「Codex 和 Claude 誰強」被轉介 2 次、第 3 跳死路。
+
+**診斷（健檢卡與冷讀者對得上）：** 環的斷點**不在措辭**——`model-comparison` L193 與 `competitor-landscape` L149 都正確把跨家問題轉出去，但 `model-task-leaderboard` 18 列全是**模型層**榜，讀者問的 Codex 是**工具／harness 層**，兩個箭頭指向一個接不住的終點；且該頁零 index 入口、入邊 5 筆全在他頁內文深處。健檢卡預測的第二個卡點（「以為終於找對頁了，卻發現沒有 Codex，比第一踢更傷」）與冷讀者實測逐字相符。
+
+**評審 6 條 🔴（設計第一輪推薦案被推翻）：** 最關鍵一條是提案的新節名含「不回訪」——那正是 `check_reader_language.py` 22 個禁詞之一，兩頁基線為零，寫進去 `run_tests.py` 當場變紅：**提案會踩到本庫自己三個月前立的防線**。另拆穿兩項宣稱：「5 筆錨點入邊」實為 wiki 內 5＋weekly 1（`check_wikilink_anchors()` 不掃 `weekly/` 且僅印 WARN）、「90／180 天自動退場」腳本裡不存在（退場改寫成人工步驟，落點 `/wiki-lint` 3e）。定稿改採「只修橋接與過期＋兩頁摘要各補一句真答案，不建任何新表」。
+
+**三個裁決點（使用者全選建議案）：** ① 使命句定稿＋MC 三節（自陳「不影響本頁選型建議」卻擋在讀者與跨家出口之間 18 行）移出正文；② Benchmark 表凍結降位為第 8 節（節名 `## 2026-07 世代對照（2026-07-09 一次性查證）`，到期 2027-03-04，維護承諾住 `%%`）；③ 字元上限閘與錨點硬紅本波做。
+
+**成果：** MC 220→192 行、LB 195→201 行；六張表全部有明文機制；MC 一筆逾期懸置清空。LB 摘要現在第一句宣告「跨家與跨工具的『誰強』到這一頁為止」並**誠實承認本頁量的是模型不是工具**，附懸置標記登記「Codex CLI／OpenCode 各跑什麼模型尚未查得，查到之前不從榜上模型名反推」。MC 摘要末段給出真答案（2026-08-13 頭對頭結論為「沒有單一答案」）＋兩個出口。
+
+**新機械閘兩支（本庫病史的標準形狀：承諾有了、執行點沒有）：** `scripts/check_cell_limits.py`（儲存格 >120／細節區條列 >200，剝連結 URL 後量測，archive 頁豁免；`data/cell-limit-baseline.json` 存量 1191 筆／38 頁只擋新增，照讀者語言閘先例）掛進 `run_tests.py`；`build_web.py` 錨點掃描補 `weekly/` 並由 WARN 改致命（另建 `anchor_scan`，不併進 `all_wiki_md`，否則 `check_wikilinks()` 會對 `news/` 連結誤報）。兩者主 session 獨立複驗：注入壞錨點 → build exit 1 並指名該筆，還原後 exit 0 且 byte-identical。**規則檔明文兩個月、零偵測器**的落差自此關上。
+
+**誤擋預告（寫進 FAIL 訊息本身，不只留在回報裡）：** 字元上限閘的指紋是內容雜湊，改寫既有超限文字（哪怕沒變長）也會脫離基線被判新增；訊息已教操作者如何分辨誤擋與真違規。
+
+**待辦（下次 ingest 交模型記者，同記者故不走轉知帳本——`pending_handoffs.py` 正確擋下 from==to）：**
+- `entities/mythos.md`：加一句區分 06-10 條件式降級條目與 36氪「偷偷降級」傳聞（逐字見定稿 §3.2(5)）
+- `entities/sonnet-5.md`：MarkTechPost 三模型完整分數（SWE-bench Pro／OSWorld-Verified、effort 成本取捨），因 MC 凍結區細節條列 ≤200 字元而切出
+
+**轉知帳本三筆：** H-7dbf7a（→功能，Auto 模式分類器評測＋逾期懸置移交 `entities/claude-code`）、H-27721d（→安全政策，官方跨模型價值觀研究落點）、H-402a37（→商業，MC 移出的跨家實測 2 列是否入雷達表硬度欄）。
+
+**新開 ⏳（交使用者裁決）：** `.claude/rules/wiki-ingest-format.md`「無維運術語洩漏」列指定的合規範例逐字「🗓️ 週更（每週策展一次；更新日期停留數天屬正常節奏）」，冷讀者對同一句的評語是「像在對我預先辯解」——規則檔指定的範例本身可能就是維運口吻，記者與主編都無權推翻。
+
+**產物：** `docs/page-audits/model-comparison-2026-09-05{,-proposals,-review,-final}.md`＋`wave1-cold-reader-2026-09-05.md`。一週回訪日 2026-09-12（看每日更新有沒有把版面磨回去、凍結節名有沒有被改）。

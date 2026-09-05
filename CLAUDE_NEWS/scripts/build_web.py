@@ -1136,14 +1136,24 @@ def parse_digest(f: Path) -> dict:
 def build():
     # ── Internal wikilink dead-link check (free, runs every build) ───────────
     all_wiki_md = sorted(WIKI_DIR.glob("*.md")) + sorted(WIKI_ENTITIES.glob("*.md")) + sorted(WIKI_TOPICS.glob("*.md"))
+    # 錨點檢查另外補掃 weekly/——`[[頁#錨點]]` 也會出現在週報裡（2026-09-05 model-comparison
+    # 健檢 §8.2 實測：weekly/ 內錨點連結 1 個，先前完全沒被掃到）。不可併入 all_wiki_md 本身，
+    # 否則 check_wikilinks() 會對 weekly/ 裡的 news/ 連結誤報斷鏈。
+    anchor_scan = all_wiki_md + sorted(WEEKLY_DIR.glob("*.md"))
     _broken = check_wikilinks(all_wiki_md)
-    _anchor = check_wikilink_anchors(all_wiki_md)
+    _anchor = check_wikilink_anchors(anchor_scan)
     print(f"wikilink 健檢合計：斷鏈 WARN {_broken}／錨點 WARN {_anchor}（此行供 lint 心跳抄錄——WARN 要有消費端）")
 
     # 解析失敗 = 該頁在網站上直接消失。原本只印一行 [warn] 就繼續，build 照樣 exit 0，
     # 於是「少了一頁」沒有任何人會發現（2026-08-08：標頭領域欄一個全形斜線就讓整頁蒸發，
     # 而輸出只差在 53 vs 54 個檔）。改為蒐集後統一致命，讓 gate_web_build 攔得到。
     wiki_parse_failures: list[str] = []
+
+    # 錨點失效併入同一組致命集合（2026-09-05 §8.2 裁決：改為致命，不再只印 WARN）——
+    # 錨點打錯字會讓讀者點過去落在頁首，且今天的存量成本是 0（實測 wiki 20 個、
+    # weekly 1 個錨點連結全部有效），把它擋在 pipeline 之外遠比事後才發現划算。
+    if _anchor:
+        wiki_parse_failures.append(f"錨點健檢：{_anchor} 筆 [[頁面#錨點]] 指向的標題不存在（見上方明細）")
 
     entities = []
     for f in sorted(WIKI_ENTITIES.glob("*.md")):
