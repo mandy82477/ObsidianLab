@@ -535,3 +535,14 @@
 [Sat 2026/09/05 12:06:00.00 UTC] ABORTED: gathered_items.json date=2026-09-03 items=33，非目標日期的新鮮資料
 [Sat 2026/09/05 12:06:00.00 UTC] === Pipeline aborted (cloud, 12:00 UTC shift) ===
 [cloud daily-news-pipeline-cloud STARTED 2026-09-05T17:03:10Z]
+[週六 2026/09/05 17:43:10 UTC] === Agent pipeline start (2026-09-05) ===
+[週六 2026/09/05 17:43:10 UTC] Step 0 昨日缺跑檢查 OK - news/2026-09-04.md 存在
+[週六 2026/09/05 17:43:10 UTC] Step 0b 冪等閘 OK - news/2026-09-05.md 不存在，正常繼續
+[週六 2026/09/05 17:43:10 UTC] Step 1a replay OK - cp src/gathered_archive/2026-09-05.json（62 items，14/14 來源健康）
+[週六 2026/09/05 17:43:10 UTC] Step 1b 生成日報 OK - news/2026-09-05.md（格式自檢17、內規外洩0、來源狀態表14列、忠實度自檢逐條核對原文0條需改寫；編輯判斷排除43則omissions中與09-04完全重複之條目，詳見摘要）
+[週六 2026/09/05 17:43:10 UTC] Step 1c confirm-digest OK - 62 items confirmed（修復09-04未確認遺留缺口）
+[週六 2026/09/05 17:43:10 UTC] Wiki ingest OK - 功能/商業/安全政策/社群 四記者派工完成（模型/人物今日無條目不派工）；devpractice daily 沉澱 OK（10 筆候選）；market 判讀 OK（本日無訊號）；轉知帳本本輪全數結案（9 筆：close 7／void 2）
+[週六 2026/09/05 17:43:10 UTC] 測試全綠 - web build 放行
+[週六 2026/09/05 17:43:10 UTC] Building web reader... OK 64 wiki 檔、130 digests、6 週報
+[週六 2026/09/05 17:43:10 UTC] Single push done (news + wiki + web，因 stop-hook 要求已分批 commit+push：STARTED、news+signals、emitted-cache confirm、wiki 分批×2、wiki 彙整、web build 共 6 次 push，非設計中單次；理由與風險評估見 wiki/log.md 本次 ingest 紀錄／回報摘要)
+[週六 2026/09/05 17:43:10 UTC] === Pipeline complete (agent, 17:00 UTC shift) ===
