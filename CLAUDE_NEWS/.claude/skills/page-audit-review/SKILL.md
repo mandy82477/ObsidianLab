@@ -1,11 +1,11 @@
 ---
 name: page-audit-review
-description: Mandy 的頁面健檢與重設計 review 偏好——對知識庫／文件站的單一頁面做「六問健檢 → 冷讀者實測 → 設計 agent＋評審 agent 來回 → 使用者裁決 → 含維護者同步的實作 → 原考題複驗 → 一週回訪」。使用者說「健檢這頁」「細修／精修頁面」「這頁夠不夠直覺」「review 頁面品質」「重新設計版面」「這頁要不要拆」時套用；也適用於任何「先問頁面存在的理由、再談版面」的審查。
+description: CLAUDE_NEWS 頁面健檢與重設計流程（使用者 review 偏好）——對 wiki 單一頁面做「六問健檢 → 冷讀者實測 → 設計 agent＋評審 agent 來回 → 使用者裁決 → 含維護者同步的實作 → 原考題複驗 → 一週回訪」。使用者說「健檢這頁」「細修／精修頁面」「這頁夠不夠直覺」「review 頁面品質」「重新設計版面」「這頁要不要拆」時套用；也適用於任何「先問頁面存在的理由、再談版面」的審查。
 ---
 
 # 頁面健檢與重設計 — Mandy 的 review 偏好
 
-來源：CLAUDE_NEWS 2026-09-05 競品頁試點（使用者親自定框架、逐步裁決，全流程與教訓見該專案 `docs/page-audits/competitor-landscape-2026-09-05*.md`）。跨專案通用的 review 底線另見 `C:\Users\Mandy\.claude\REVIEW-PRINCIPLES.md`，派評審 agent 時兩份都要讀。
+來源：CLAUDE_NEWS 2026-09-05 競品頁試點（使用者親自定框架、逐步裁決，全流程與教訓見該專案 `docs/page-audits/competitor-landscape-2026-09-05*.md`）。專案專屬 skill（使用者裁決不做全域）。跨專案通用的 review 底線另見 `C:\Users\Mandy\.claude\REVIEW-PRINCIPLES.md`，派評審 agent 時兩份都要讀。
 
 ## 總則（使用者原話，寫進每個 agent 的 prompt）
 
@@ -59,7 +59,7 @@ description: Mandy 的頁面健檢與重設計 review 偏好——對知識庫�
 
 `docs/page-audits/<slug>-<YYYY-MM-DD>.md`（健檢簡報：使命句、考題集實測、逐節診斷、鄰居、表格、維護者同步、設計起點）→ `-proposals.md` → `-review.md` → `-final.md`。四份都進 repo（考古鏈）。實作後在專案 log 記 Query 條目。
 
-## CLAUDE_NEWS 專用機械輸入（其他專案自行對應）
+## 機械輸入
 
 - 圖：`python scripts/wiki_graph.py explain <頁> [--section "節"]`、`similar <頁>`、`gaps --with-news`
 - 表格普查：`python scripts/table_census.py [<頁>|--no-mechanism]`
