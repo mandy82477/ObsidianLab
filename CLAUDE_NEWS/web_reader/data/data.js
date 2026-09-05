@@ -1056,7 +1056,7 @@ window.WIKI_DATA = {
       "pill": "gray",
       "firstSeen": "",
       "startDate": "2026-04-24",
-      "lastUpdated": "2026-09-04",
+      "lastUpdated": "2026-09-05",
       "lastNewsUpdate": "2026-05-23",
       "updateFreq": "",
       "parent": "topics/competitor-landscape",
@@ -1080,8 +1080,8 @@ window.WIKI_DATA = {
       "lastNewsUpdate": "2026-09-04",
       "updateFreq": "",
       "parent": "",
-      "summary": "Claude Code 已成為 AI 輔助編碼的標竿產品，但競爭正快速升溫。2026-05 是關鍵轉折月：OpenAI Codex 下載量單週爆增 1,397%、OpenCode 吸走 15.7 萬開發者、Microsoft 取消數千名員工授權改推 Copilot CLI——分流訊號同步出現。另一方面，Anthropi…",
-      "latestHeadline": "[新增追蹤，明確截止日] Reddit：OpenAI 傳將於 11/12 終止對 Cursor 的模型供應合約：詳見「主要競品追蹤」Cursor／Windsurf 子區塊新增細節（Reddit/r/artificial · 週熱門）",
+      "summary": "競爭的主戰場已從「誰更強」移到「誰更便宜」：Meta 以三層訂閱打價格戰、Google 推低價企業方案、中國市場出現「免費夠用」的論述。同一時間開源陣營把旗艦模型的權重也放了出來，低價層第一次同時具備可用的工具與可用的模型。對用 Claude 的人，眼前要判斷的不是換不換，而是自己所在的那一層有沒有出現可比的價格或能力…",
+      "latestHeadline": "Cursor：Reddit 週熱門討論串稱 OpenAI 將於 11/12 終止對 Cursor 的模型供應合約，理由與控制權變更有關（Reddit/r/artificial · 週熱門）",
       "readerDomains": [
         "💼 商業"
       ]
