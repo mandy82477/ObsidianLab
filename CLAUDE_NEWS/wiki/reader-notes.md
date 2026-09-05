@@ -39,3 +39,5 @@
 - [✅] 2026-07-09｜🔍 興趣主題｜使用者關心 Anthropic **股票/IPO 投資管道**——目前無公開市場管道，次級市場「幾乎無人願賣」（qz.com/Business Insider，估值傳 1.2 兆美元）；weekly-review 留意後續 IPO 時程、次級市場流動性變化、可否加開追蹤子區塊於 [[topics/anthropic-business]]（✅ 2026-07-12 週度回顧已於 [[topics/anthropic-business]] 加開「IPO 前瞻與估值追蹤」子區塊）
 
 - [✅] 2026-07-07｜🔍 興趣主題｜想深入追蹤「**隱藏追蹤器**」技術線：v2.1.91 中國代理偵測程式碼 →「embedded spyware」指控 → 07-07 Anthropic 定調「實驗」；weekly-review 評估是否值得從 [[topics/ai-agent-safety]] 抽出獨立追蹤/深化（含混淆手法、與「hidden workspace」是否同一機制、出口管制關聯）（✅ 2026-07-12 週度回顧已拆出獨立頁 [[topics/safety-china-trust-dispute]]，整合技術指控＋外交/企業線五階段敘事）
+- [⏳] 2026-09-05｜🎨 版面｜**內部用語外洩（全站病，競品頁健檢冷讀者兩輪都抓到）**：讀者看不懂「12 列上限汰出」「不回訪」「標｜查｜複」「請使用者裁示」「已移交」「每日抄錄」「模式庫」「二手」。懸置標記語法本身對讀者不友善——建議 web reader 渲染層把 `（標…｜查…｜複…）` metadata 摺疊成 hover，正文只顯示狀態符號＋題目；規則層在書寫風格加「維護動作不上頁」的逐字檢查清單。處理端：`/wiki-lint` 3e＋web reader。
+- [⏳] 2026-09-05｜🔍 興趣主題｜**「誰比較強」三頁互踢皮球**：competitor-landscape 說看榜單頁、model-task-leaderboard 說 Claude 家內看 model-comparison、model-comparison 說跨家不記分數——冷讀者問「Codex 和 Claude 誰強」被踢兩次。建議下一次頁面健檢以「誰比較強」這個問題做**跨頁健檢**（page-audit-review skill，考題集從 index 出發走三頁），釐清三頁分工並給一個明確落點。
