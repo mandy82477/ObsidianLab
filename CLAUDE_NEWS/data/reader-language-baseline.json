@@ -1,8 +1,8 @@
 {
   "_note": "讀者語言閘的存量基線（頁 → 命中指紋）。check_reader_language.py 只對基線外的新增命中 FAIL，基線內的印為 WARN 摘要。清乾淨一頁就把該頁整筆移除——棘輪只能往下轉，不可為了轉綠而加回去。指紋 = 禁詞 + 該行正規化內容雜湊，改寫該行即失效。",
   "_baseline_set": "2026-09-05",
-  "_pages": 40,
-  "_hits": 482,
+  "_pages": 39,
+  "_hits": 474,
   "pages": {
     "entities/cat-wu": [
       "裁示:15affe86cd07"
@@ -503,16 +503,6 @@
       "source_count:ab8a1476d81b",
       "source_count:c55a24556e0b"
     ],
-    "topics/competitor-landscape": [
-      "不回訪:0a76d0d87cea",
-      "不回訪:b5f3ec16d9e9",
-      "不回訪:b89664a372fb",
-      "汰出:949e20b72bbf",
-      "移交:12a6d16dfe56",
-      "移交:4b536112a0b1",
-      "移交:66875e0ccaaf",
-      "移交:74345bda7515"
-    ],
     "topics/competitor-landscape-archive": [
       "門檻:9603226095b9"
     ],
@@ -566,5 +556,6 @@
       "抄錄:9f07cc3a538e",
       "每日抄錄:9f07cc3a538e"
     ]
-  }
+  },
+  "_history": "2026-09-05 首跑 40 頁；同日 topics/competitor-landscape 清乾淨（示範頁）後移除，剩 39 頁。"
 }

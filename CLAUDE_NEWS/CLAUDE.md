@@ -161,6 +161,7 @@ wiki 正文的連結寫法以 web reader 解析器（`web_reader/assets/app.js` 
 | `[[feature-radar]]`、`[[news/YYYY-MM-DD]]` | 根頁面、日報連結 | ✅ |
 | `[[頁面\|別名]]` | 別名顯示 | ✅ 只在句子需要特定措辭時用（如「取代 [[entities/opus-4-8\|Opus 4.8]] 成為次旗艦」）|
 | `[[頁面#標題]]`、`[[#本頁標題]]` | 跳到該頁某段 | ✅ 錨點須為目標頁的 **h2–h4 標題原文**；建置的 `check_wikilink_anchors()` 會驗，打錯或標題改名會 WARN |
+| `%% 維運備忘 %%` | 註解（單行或跨行）| ✅ Obsidian 顯示為註解、`scripts/build_web.py` 建置時剝除（正文、搜尋索引、日報 digest 都吃不到）。「刪不掉但讀者不該看到」的話寫這裡，見 `.claude/rules/wiki-reporter-shared.md`「維運備忘的家」 |
 | `![[頁面]]`、`![[圖片.png\|300]]` | 嵌入 / 轉引 | ❌ 網站無嵌入渲染，原樣輸出 `![[...]]` |
 | `[[頁面#^區塊id]]`、段落尾 `^區塊id` | 區塊引用 | ❌ 同上，解析器不支援 |
 

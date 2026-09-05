@@ -32,9 +32,32 @@ OUT_SEARCH_INDEX = ROOT / "web_reader" / "data" / "search-index.json"
 
 FRONTMATTER_RE = re.compile(r"\A---\r?\n.*?\r?\n---\r?\n", re.DOTALL)
 
+# Obsidian 註解 `%% … %%`（單行與跨行皆吃）——維運備忘的家，見
+# `.claude/rules/wiki-reporter-shared.md`「維運備忘的家」。非貪婪，且不跨越
+# 另一組 `%%`（否則兩則相鄰備忘之間的正文會被一起吞掉）。
+OBSIDIAN_COMMENT_RE = re.compile(r"%%(?:(?!%%).)*?%%", re.DOTALL)
+HTML_COMMENT_RE = re.compile(r"<!--.*?-->", re.DOTALL)
+
+
+def strip_editorial_comments(md: str) -> str:
+    """剝除註解區塊，讓維運備忘有地方寫而不外洩給讀者。
+
+    2026-09-05：內部維運用語外洩是冷讀者兩輪都抓到的全站病，而有些備忘本來就
+    刪不掉（「這張表為什麼只留 12 列」「這節不回訪、到期日是哪天」）。給它們一個
+    家的前提，是那個家真的不會上站——本函式即該保證，故放在 `read_md()` 這唯一
+    的讀檔漏斗裡，`markdown` 欄位、`search-index.json`、日報 digest 一次全涵蓋。
+
+    只留一行空白（不留空字串接空字串），避免剝除後把上下兩段黏成同一段。
+    """
+    md = OBSIDIAN_COMMENT_RE.sub("", md)
+    md = HTML_COMMENT_RE.sub("", md)
+    # 整行只剩空白的殘骸清掉，但保留段落分隔
+    md = re.sub(r"^[ \t]+$", "", md, flags=re.MULTILINE)
+    return re.sub(r"\n{4,}", "\n\n\n", md)
+
 
 def read_md(f: Path) -> str:
-    """讀 markdown 並剝掉檔頭 YAML frontmatter。
+    """讀 markdown 並剝掉檔頭 YAML frontmatter 與編輯備忘註解。
 
     wiki 頁面的 frontmatter 由 scripts/gen_wiki_frontmatter.py 生成，是給 Obsidian
     Bases 查詢用的機器投影，**不是給讀者看的內容**。若不在此剝除，下游 md_to_text()
@@ -43,7 +66,8 @@ def read_md(f: Path) -> str:
 
     對沒有 frontmatter 的檔案（news/、weekly/、以及尚未生成的頁面）為 no-op。
     """
-    return FRONTMATTER_RE.sub("", f.read_text(encoding="utf-8-sig"), count=1)
+    raw = FRONTMATTER_RE.sub("", f.read_text(encoding="utf-8-sig"), count=1)
+    return strip_editorial_comments(raw)
 
 
 # ── Markdown → plain text (for search index) ────────────────────────────────

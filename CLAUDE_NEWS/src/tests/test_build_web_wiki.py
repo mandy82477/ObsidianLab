@@ -212,3 +212,45 @@ class TestBomTolerance(unittest.TestCase):
             self.assertEqual(page["name"], "商業健康度")
             self.assertFalse(page["name"].startswith("\ufeff"))
             self.assertFalse(page["name"].startswith("#"))
+
+
+class TestEditorialCommentStripping(unittest.TestCase):
+    """`%% … %%` 是維運備忘的家（2026-09-05），前提是它真的不上站。
+
+    規則端：`.claude/rules/wiki-reporter-shared.md`「維運備忘的家」。剝除點刻意放在
+    `read_md()` 這唯一的讀檔漏斗，所以 `markdown` 欄位、search-index、digest 一次涵蓋——
+    本測試同時驗漏斗（read_md）與下游（parse_wiki 的 markdown、strip_markdown_to_text）。
+    """
+
+    def test_single_line_and_block_comments_are_stripped(self):
+        md = "正文一\n%% 主編備忘：這節不回訪 %%\n正文二\n%%\n跨行備忘\n第二行\n%%\n正文三\n"
+        out = build_web.strip_editorial_comments(md)
+        self.assertNotIn("備忘", out)
+        self.assertNotIn("%%", out)
+        for keep in ("正文一", "正文二", "正文三"):
+            self.assertIn(keep, out)
+
+    def test_two_adjacent_comments_do_not_swallow_the_prose_between(self):
+        """非貪婪且不跨越另一組 %%——否則兩則相鄰備忘中間的正文會一起消失。"""
+        out = build_web.strip_editorial_comments("%% 備忘甲 %%\n這句必須留下\n%% 備忘乙 %%\n")
+        self.assertIn("這句必須留下", out)
+        self.assertNotIn("備忘甲", out)
+        self.assertNotIn("備忘乙", out)
+
+    def test_html_comment_is_stripped_too(self):
+        out = build_web.strip_editorial_comments("正文\n<!-- 內部註記 -->\n尾巴\n")
+        self.assertNotIn("內部註記", out)
+        self.assertIn("尾巴", out)
+
+    def test_comment_never_reaches_markdown_field_or_search_index(self):
+        with tempfile.TemporaryDirectory() as d:
+            f = Path(d) / "commented.md"
+            f.write_text(
+                "# 測試頁\n\n**類型：** topic\n**狀態：** ongoing\n**領域：** 🌐 社群\n\n"
+                "## 摘要\n\n讀者看得到這句。\n%% 這節受 12 列上限汰出，暫不覆寫 %%\n",
+                encoding="utf-8",
+            )
+            page = build_web.parse_wiki(f, "topic")
+            self.assertIn("讀者看得到這句", page["markdown"])
+            self.assertNotIn("汰出", page["markdown"])
+            self.assertNotIn("汰出", build_web.strip_markdown_to_text(page["markdown"]))

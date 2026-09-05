@@ -50,7 +50,7 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 |---|---|---|---|---|
 | **Meta（Muse Code／Muse Glimmer）** | 結束 beta、三訂閱層主打價格戰（09-01）；旗艦模型 Muse Glimmer 開源（08-11）→ 想比價卻比不了，月費未公布 | 定價 | 🔴 | 跨 2 媒體（The New Stack／Intelligent Living），月費與 20x 層費率均缺 |
 | **DeepSeek** 🏢 | Harness 開源＋V4-Pro 上線（08-14）、中國市場「免費夠用」論述（08-31）→ 低價層已有可用替代 | 定價 | 🔴 | VentureBeat 2 來源；V4-Pro 費率未載 ❓ 待查證 ⟨Q-01⟩ |
-| **OpenAI（Codex CLI／ChatGPT Work・GPT-5.6）** 🏢 | 「零資料保留」承諾搶企業客戶（08-20）；各基準互有勝負、黏著度仍 Claude 領先（08-13 查證）→ 選型看任務類型，不看單一分數 | 能力 | 🔴 | 第三方彙整＋官方基準，**不回訪**；當時數字見「查證快照」節 |
+| **OpenAI（Codex CLI／ChatGPT Work・GPT-5.6）** 🏢 | 「零資料保留」承諾搶企業客戶（08-20）；各基準互有勝負、黏著度仍 Claude 領先（08-13 查證）→ 選型看任務類型，不看單一分數 | 能力 | 🔴 | 第三方彙整＋官方基準；當時數字見「查證快照」節 |
 | **Microsoft／GitHub** 🏢 | Copilot 終結「無限量」方案（08-17）；HydraFusion 多數基準降本、品質僅一項打平（09-04）→ 降本宣稱要先問品質在哪個基準測的 | 定價 | 🔴 | VentureBeat 標題層級，降幅數字與是否產品化均未見；自研模型取代仍屬傳聞（07-07，2 來源，官方無回應） |
 | **Zhipu Z.AI** | GLM-5.3 主打資安、稱抓 bug 優於 Anthropic 與 OpenAI（08-17）→ 靠 Claude 做安全審查的人值得找機會實測對照 | 能力 | 🔴 | 2 家媒體（The Register／VentureBeat），無方法論、無 benchmark 數字 |
 | **Moonshot AI（Kimi K3）** | 權重開源，效果與 Fable 5 相當、成本約三分之一但慢約 4 倍（07-27）→ 可離線批次的工作有便宜選項 | 能力 | 🔴 | The New Stack 量化實測＋官方一手規格；官方自陳整體仍落後 Fable 5 |
@@ -58,7 +58,7 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 | **Google** 🏢 | 低價企業方案劍指 Anthropic 與 Microsoft（08-27，08-31 再報）→ 動到的是企業採購的價格帶，個人使用者現在不必動 | 定價 | 🟡 | CNBC 兩度報導；方案名稱、費率、與 Antigravity 的關係全缺 🔎 查無官方 ⟨Q-06⟩ |
 | **Alibaba（Qwen3.8）** | 免費開放「最強」模型、稱幾乎追平 Claude（08-04）→ 低價層再多一個免費選項，能力宣稱待證 | 能力 | 🟡 | Decrypt 單一來源，無模型名稱、無 benchmark（🔎 見下方定價細節） |
 | **Kiro（AWS）** | spec-driven 編碼 agent，Free 至 Power $200 五級訂閱（08-03）→ 已在 AWS 生態的人可直接比價 | 定價 | 🟡 | 官網定價已查證（08-13）；標題並列的 80.8% SWE-bench 歸屬未獲證實 |
-| **OpenCode** | 開源免費替代，社群採用規模仍是主要訊號（08-01）→ 想離開訂閱制時的第一個候選 | 定價 | 🟡 | 下載量倍數的統計方法未揭露，該事實與其標記已移交 [[entities/opencode]] |
+| **OpenCode** | 開源免費替代，社群採用規模仍是主要訊號（08-01）→ 想離開訂閱制時的第一個候選 | 定價 | 🟡 | 下載量倍數的統計方法未揭露，完整脈絡見 [[entities/opencode]] |
 | **騰訊 Hy4** | 開放權重 770B、不含視覺（08-29）→ 尚無對比對象，先不列入選型 | 能力 | ⚪ | Simon Willison 轉引標題，無 benchmark、無定價 |
 
 **🏢 圖例**：具名企業採用記錄（見 [[topics/enterprise-tool-tracker]]）或官方企業方案，缺一不標。企業評估候選名單：雷達表帶 🏢 者；具名採用／退出記錄見 [[topics/enterprise-tool-tracker]]。
@@ -66,7 +66,8 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 **懸置細節**
 - ⟨Q-06⟩ 🔎 **查無官方**（標 2026-08-29｜查 Google、企業定價、Antigravity｜複 2026-09-12）：Google 低價 AI 方案的方案名稱、費率、與 Antigravity 的關係均未見；08-31 CNBC 影音再報同一敘事，無新增數字。
 
-**表外追蹤**（⚪ 級，受 12 列上限汰出，仍在時序累積）：Slack Code（Salesforce，08-26 官方確認，整合 Claude 與 ChatGPT 而非取代）、Inherent（08-23，公司自宣）、Thinking Machines Inkling（07-20 首款開源權重模型）、Perplexity（07-07 傳聞開發中）、中國 360 Tulongfeng（06-28，網路安全 AI，對標 Mythos 5）、Sakana AI Fugu（06-28，宣稱對標 Fable 5）、Google 未命名競品（Sergey Brin 主導，04 月起無新動態）；AgentConnect（新聞稿自宣）依准入不入表。
+%% 維運備忘：上表固定 12 列，⚪ 級一律不佔列，動態只在時序累積 %%
+**未列入上表**（⚪ 級，動態仍記在下方時序）：Slack Code（Salesforce，08-26 官方確認，整合 Claude 與 ChatGPT 而非取代）、Inherent（08-23，公司自宣）、Thinking Machines Inkling（07-20 首款開源權重模型）、Perplexity（07-07 傳聞開發中）、中國 360 Tulongfeng（06-28，網路安全 AI，對標 Mythos 5）、Sakana AI Fugu（06-28，宣稱對標 Fable 5）、Google 未命名競品（Sergey Brin 主導，04 月起無新動態）；AgentConnect（新聞稿自宣）依准入不入表。
 
 ## 硬答案
 
@@ -106,7 +107,7 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 - **Muse Code 定價來源**：定價數字為媒體整理（Wavect、The New Stack），Meta 官方獨立掛牌頁未見（2026-08-13 查證）；09-01 三訂閱層與「20x」折扣層的實際費率均未公布。
 - ⟨Q-03⟩ 🔎 **查無官方**（標 2026-08-10｜查 Decrypt、Qwen3.8｜複 2026-09-13）：查證後仍未見 Alibaba 官方公告或後續報導確認是否為 07-20 已報導之 Qwen3.8。
 - **Kiro 的 80.8% SWE-bench**：該分數歸屬（Kiro 或 Claude Code）查證後仍未見官方或後續報導證實，kiro.dev 官網未列此分數。
-- ⟨Q-04⟩ 🔎 **查無官方**（標 2026-08-10｜查 tech-insider.org、OpenCode 下載量｜複 2026-09-13）：OpenCode 下載量達 Claude Code 5.4 倍之統計方法與時間範圍查證後仍未見揭露；該事實本體已移交 [[entities/opencode]]。
+- ⟨Q-04⟩ 🔎 **查無官方**（標 2026-08-10｜查 tech-insider.org、OpenCode 下載量｜複 2026-09-13）：OpenCode 下載量達 Claude Code 5.4 倍之統計方法與時間範圍查證後仍未見揭露；該事實的完整脈絡見 [[entities/opencode]]。
 - ⟨Q-05⟩ 🔎 **查無官方**（標 2026-08-10｜查 Cline、tech-insider.org｜複 2026-09-13）：Cline 各工具用量限制、功能差異查證後仍未見官方揭露。
 - **已移出表**：GitHub Copilot Pro+（$39/月，Opus 採 27 倍加價換算）來源日期 2026-05-06 已逾 90 天，結論保留於「硬答案」；Kimi K3、HydraFusion 僅有相對成本的定性宣稱、無掛牌價，改記於「對手雷達」硬度欄與「雷達細節」。
 - **pi-coding-agent**：低成本編碼 agent 的成本數字已升格為「硬答案」條目（Databricks，2026-08-13 查證）。
@@ -166,9 +167,10 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 **還沒解決**
 - 開源授權條款、下載規模與訓練成本未見細節。
 
-## 查證快照（2026-08-13，不回訪）
+## 查證快照（2026-08-13）
 
-> 本節為 2026-08-13 的一次性查證結果，**不新增、不回訪**；最新排名請看 [[topics/model-task-leaderboard]] 本週快照。**到期日 2027-02-09**（建立日 +180 天），屆時整節移除。
+%% 維運備忘：本節不新增、不回訪。到期日 2027-02-09（建立日 +180 天），屆時整節移除 %%
+> 本節是 2026-08-13 那一天查到的數字，**之後沒有再更新**；要看最新排名請去 [[topics/model-task-leaderboard]]。
 >
 > 當時可引用的四組數字（不同基準測不同能力面向，無單一結論）：
 > - Supabase Evals：Build 階段 Opus 5／Kimi K3 均 100%，其他模型經 skills 輔助追平
@@ -196,7 +198,7 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 ## 相關頁面
 
 - [[topics/model-comparison]] — 決定「我這份工作該用哪個模型」；本頁只管外面出現了什麼。
-- [[topics/model-task-leaderboard]] — 跨家能力的活榜單；本頁不再新增跨家跑分數字。
+- [[topics/model-task-leaderboard]] — 跨家能力的活榜單——跨家跑分數字看那一頁，本頁只寫「這對選型代表什麼」。
 - [[entities/pricing]] — Claude 自身方案與計費規則；本頁只列競品價格。
 - [[topics/anthropic-business]] — Anthropic 自己的融資、合作、估值與資本支出。
 - [[topics/enterprise-tool-tracker]] — 具名企業採用／退出的事件層；本頁只留一句結論。
@@ -291,7 +293,7 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 - **Kiro（AWS）**：tech-insider.org 發表 Kiro vs Claude Code 比較文，並列 80.8% SWE-bench 與 $200 費用上限兩項數字（Google News/tech-insider.org）
 
 ### 2026-08-02
-- **OpenCode**：tech-insider.org 比較 OpenCode 與 Claude Code 的下載量與定價（Free vs $20，稱 5.4 倍），統計方法未揭露；事實已移交 [[entities/opencode]]（Google News/tech-insider.org）
+- **OpenCode**：tech-insider.org 比較 OpenCode 與 Claude Code 的下載量與定價（Free vs $20，稱 5.4 倍），統計方法未揭露；完整脈絡見 [[entities/opencode]]（Google News/tech-insider.org）
 
 ### 2026-08-01
 - **Supabase Evals**：MarkTechPost 報導 Supabase 推出開源評測套件，以真實任務對 Claude Code、Codex、OpenCode 評分（Google News/MarkTechPost）
@@ -394,7 +396,7 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 - **最省錢 > 最強模型的具名案例**：Lindy CEO 宣告 100% 流量自 Claude 切至 DeepSeek，每月省下數百萬美元（06-29，CNBC）——高吞吐 API 客戶的價格敏感度自此可量化。
 - **管制空窗成為追趕加速器**：Zhipu Z.AI 趁出口管制與法律審查期快速縮小差距，走開源路線繞開管制（06-27，CNBC）。
 - **法律戰開場**：Anthropic 正式指控阿里巴巴以約 25,000 個假帳號、2,880 萬次對話進行蒸餾攻擊，多家媒體同步報導（06-25，HN 605 分）；後續法律戰見 [[topics/anthropic-government-policy]]。
-- **管制實效遭第一手推翻**：Wired 揭露中國用戶長期以 VPN 等手段繞過地理限制（06-28）；該線索的完整脈絡已移交 [[topics/anthropic-government-policy]]。
+- **管制實效遭第一手推翻**：Wired 揭露中國用戶長期以 VPN 等手段繞過地理限制（06-28）；該線索的完整脈絡見 [[topics/anthropic-government-policy]]。
 - **格局重塑**：SpaceX 以 600 億美元完成收購 Cursor（06-19 確認），Cursor 的 Claude 依賴度與生態歸屬自此進入觀察期。
 - 人才流動對競爭格局的影響（誰流失、誰承接、戰力意涵）詳見 [[topics/ai-talent-flow]]。
 

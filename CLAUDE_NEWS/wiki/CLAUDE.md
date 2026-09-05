@@ -69,6 +69,7 @@ wiki/
 - 引用日報：`[[news/2026-04-25]]`
 - 外部：`[標題](url)`
 - **不可使用**嵌入 `![[頁面]]` 與區塊 id `^id`（網站無渲染支援）；完整語法契約見專案根目錄 `CLAUDE.md`「🔗 連結與嵌入語法」
+- 維運備忘：`%% 這張表只留 12 列，其餘在時序累積 %%` ✅ Obsidian 顯示為註解、網站建置剝除，是「刪不掉但讀者不該看到」的話唯一的家（規則見 `.claude/rules/wiki-reporter-shared.md`「維運備忘的家」）
 - 來源歸因不寫入 wiki 正文：記者在回報訊息的「來源歸因」欄回報，由主編 append 至 `data/source_attribution.jsonl`，規則見 `.claude/rules/wiki-reporter-shared.md`
 
 ---
