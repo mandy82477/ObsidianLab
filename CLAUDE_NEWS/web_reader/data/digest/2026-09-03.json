@@ -263,6 +263,11 @@
       "pageType": "topic"
     },
     {
+      "id": "community-tech-tools",
+      "name": "社群工具目錄",
+      "pageType": "topic"
+    },
+    {
       "id": "official-community-gap",
       "name": "官方功能 vs 社群痛點缺口分析",
       "pageType": "topic"
