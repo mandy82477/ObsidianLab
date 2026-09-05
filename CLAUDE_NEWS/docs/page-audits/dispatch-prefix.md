@@ -52,7 +52,7 @@
 
 ### 設計者（Opus，一位；只在健檢卡 Q2 不及格時派）`[改版: 2026-09-05，第 1 波教訓]`
 
-本環境**沒有子 agent 續用**（`SendMessage` 不存在，見記憶 `sendmessage-removed-midsession`），每多一棒就是一次全量重讀。設計者因此只派**一次**，交件就要能直接進評審、評審完主 session 直接照修——**不再有「設計第二輪」**。
+**先 `ToolSearch select:SendMessage`**：桌面版 Code tab 沒有子 agent 續用（`SendMessage` 被 agent teams 旗標閘住），每多一棒就是一次全量重讀——設計者只派**一次**，評審完主 session 直接照修，**沒有「設計第二輪」**。終端機 CLI ＋ `CLAUDE_CODE_EXPERIMENTAL_AGENT_TEAMS=1` 有 SendMessage（2026-09-06 使用者驗證）→ 可續用原設計者做第二輪，其餘契約不變。
 
 接續段必含（逐字）：
 
