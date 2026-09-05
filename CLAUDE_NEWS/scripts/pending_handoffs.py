@@ -132,6 +132,12 @@ def render(rows: list[dict], today: date | None = None) -> str:
 
 
 def main(argv: list[str] | None = None) -> int:
+    # cp950 主控台會讓表情符號與全形字元炸掉 UnicodeEncodeError（2026-09-05 實例）
+    for stream in (sys.stdout, sys.stderr):
+        try:
+            stream.reconfigure(encoding="utf-8")
+        except (AttributeError, ValueError):
+            pass
     ap = argparse.ArgumentParser(description=__doc__.split("\n\n")[0])
     sub = ap.add_subparsers(dest="cmd", required=True)
     p_open = sub.add_parser("open"); p_open.add_argument("--from", dest="src", required=True)
