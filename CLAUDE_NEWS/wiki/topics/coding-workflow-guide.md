@@ -3,7 +3,7 @@ page: "topics/coding-workflow-guide"
 kind: "topic"
 status: "ongoing"
 domain: "🛠️ 工具/功能"
-last_updated: "2026-09-03"
+last_updated: "2026-09-05"
 last_news_update: "2026-08-16"
 update_freq: "🗓️ 週更（隨官方文件與社群策展更新；日期停留數天屬正常節奏）"
 status_main: "ongoing"
@@ -29,7 +29,7 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 **開始日期：** 2026-08-08
 **領域：** 🛠️ 工具/功能
 **更新頻率：** 🗓️ 週更（隨官方文件與社群策展更新；日期停留數天屬正常節奏）
-**最後更新：** 2026-09-03
+**最後更新：** 2026-09-05
 **最後新聞更新：** 2026-08-16
 
 > **本頁在回答什麼**（2026-08-08 重寫）
@@ -40,15 +40,11 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 
 ## 本週 coding 亮點
 
-- **Fable 5.1 GA，快取讀取降 75%**——正式取代 5.0 成為旗艦，快取讀取費率由基礎輸入價 0.1 倍降至 0.025 倍，長對話／大量快取重複 session 的成本結構整個變了，見 [[entities/fable-5]]
-- **Auto Mode 實際風險遠高於官方數字**——提示注入劫持成功率經量化達 60–80%（官方評測宣稱 0%），媒體稱官方無修復計畫；同時官方文件確認 Extended Thinking 現為預設開啟，兩者一起影響「敢不敢拿它處理不可信內容」與 token 用量，見 [[topics/ai-agent-safety]]、[[entities/claude-code]]
-- **clone 不明來源 repo 本身變成攻擊面**——惡意 `.git` 設定檔可誘使 Claude Code、Codex、Cursor 等多款 coding agent 執行攻擊者程式碼，跨廠通用，見 [[topics/ai-agent-safety]]
-- **週配額時程更正**——+50% 促銷未如期 08-31 終止，延長至 09-13，接著轉為永久 +25%（相較加成期淨減約 17%），貼近週配額上限的工作流該重新抓時程，見 [[entities/pricing]]
-- **codebase 理解多了三個選項**——codegraph（改 code 自動同步索引，graphify 競品）、Understand-Anything（給人的互動探索知識圖）、archify（給人的交付級架構圖），三種不同需求現在各有對應工具，見 [[topics/community-tech-tools]] 決策表
-- **claude-mem：跨 7+ harness 的持久記憶工具**——9.3 萬星、已存在逾 1 年，記憶管理工具箱新增一個不綁死單一 harness 的選項，見 [[topics/community-tech-patterns]]
-- **可複用的維護做法：殭屍 subagent 偵測**——dev.to 實測 8 個自訂 subagent 中 7 個 30 天零呼叫，作者建立自動偵測機制；同一批還有「爆炸半徑」框架，依錯誤修復成本（而非任務難度）劃分風險區決定哪些改動可放心讓 agent 自主執行，見 [[topics/community-tech-patterns]]
-- **MCP server 接錯 schema 版本會直接被擋**——宣告 draft-07 `outputSchema` 的 MCP server 被判定 unsupported dialect、完全無法使用（issue #86142），選型／除錯先排除這個成因，見 [[entities/claude-code]]
-- **本頁第 4 段（實際動手寫）補齊社群面證據**——CLAUDE.md 規則遷移到 hooks 強制執行、語意化規則注入、開工前訪談三條做法，見下方第 4 段
+- **`[1m]` 變體覆蓋問題持續逾 6 週未解**——issue #79337 累積至 76 則留言、26 個讚，官方 07-20「誤判」定性與實際持續時間不符，選用 1M context 時無法信任已存設定會被保留，見 [[topics/long-context-1m]]
+- **agent 間出現「商業信任層」新類別，但證據薄弱**——internet-court-skill 提供自然語言協議＋委任權限＋x402 支付＋爭議仲裁，5,317★ 但缺 forks／issues 佐證、無出生日期，涉加密貨幣支付題材，用前務必自行核實，見 [[topics/community-tech-patterns]]
+- **多 agent 協作再添聊天介面選項**——cumora 讓 AI agent 在跨平台團隊聊天中成為「一等公民」隊友，可接 Claude Code／Codex，見 [[topics/community-tech-patterns]]
+- **自架多 agent orchestration 平台再添一例**——trinity（Apache 2.0，503★）為同類趨勢第 4 個具體實作，繼 omnigent、loopx+HarnessFlow、opencodex 之後，見 [[topics/community-tech-patterns]]
+- **本頁第 6 段（測試與上線）補齊社群面證據**——skill 穩定性驗證（pass@k）與 CI 語意層漂移偵測兩支做法，見下方第 6 段
 
 ---
 
@@ -71,7 +67,7 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 | 改動之後怎麼讓 CLAUDE.md 跟上          | [第 7 段](#7-改動之後怎麼讓既有規則跟上社群面待補) |
 | 規則怎麼不腐爛                       | [第 8 段](#8-規則怎麼不腐爛社群面待補)          |
 | 怎麼讓它照專案規矩寫、錯誤何時才被攔 | [第 4 段](#4-實際動手寫-錯誤何時被攔已補庫內證據) |
-| 測試策略要不要跟著變、上線前檢查什麼 | [第 6 段](#6-測試與上線-怎麼讓它自己驗完再交給你社群面待補) |
+| 測試策略要不要跟著變、上線前檢查什麼 | [第 6 段](#6-測試與上線-怎麼讓它自己驗完再交給你已補庫內證據) |
 | 它說做完了，我怎麼知道是真的 | [第 9 段](#9-除錯-怎麼知道它真的做了已補庫內證據) |
 
 「怎麼讓它照專案規矩寫」橫跨第 1 段的**強制力**小節與第 4 段——關鍵是 `CLAUDE.md` 與 skill 都只是建議層，要硬的得用 hook 或 permissions。若想看全流程而不是單一問題，看下面這張表。
@@ -87,14 +83,14 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 | [3 規劃改動](#3-規劃改動-先寫規格還是直接開工已深查)                        | ✅ Explore→Plan→Code     | 🟡    | 「要不要規劃」有判準，「切幾塊」沒有     |
 | [4 實際動手寫](#4-實際動手寫-錯誤何時被攔已補庫內證據)                          | ✅ LSP、security-guidance | 🟡    | 新規則該留 CLAUDE.md 還是升級成 hook，無事前判準 |
 | [5 Code review](#5-code-review-該用哪個入口怎麼審得起已深查)             | ✅ 六個入口，含明價              | 🟢    | 分層審查省多少，無人量測           |
-| [6 測試與上線](#6-測試與上線-怎麼讓它自己驗完再交給你社群面待補)                            | ✅ 驗證階梯四級                | 🟢    | 社群零累積，只有官方說法           |
+| [6 測試與上線](#6-測試與上線-怎麼讓它自己驗完再交給你已補庫內證據)                            | ✅ 驗證階梯四級                | 🟢    | 「測試策略該怎麼變」仍無判準，社群只補了穩定性與漂移偵測兩支           |
 | [7 讓 CLAUDE.md 跟上改動](#7-改動之後怎麼讓既有規則跟上社群面待補) | ⚠️ 有掛點無判準               | 🟡    | 什麼改動算讓規則過期             |
 | [8 長期維護](#8-規則怎麼不腐爛社群面待補)                      | ⚠️ 只診斷設定                | 🟡    | 規則是否仍與現狀相符，無機制         |
 | [9 除錯](#9-除錯-怎麼知道它真的做了已補庫內證據)                             | ✅ 驗證階梯＋失敗模式命名           | 🟢    | 評估者不跑工具，看不到 Claude 沒說的 |
 
-**兩欄怎麼讀。** 官方欄：✅ 有明文機制／⚠️ 有但不完整／❌ 無。「能照著做嗎」是官方加社群之後、讀者實際拿不拿得到可執行答案：🟢 拿得到／🟡 部分拿得到／🔴 拿不到。評的是同一件事，九段用同一把尺——所以第 5 段官方雖厚仍有「缺什麼」，第 6 段社群雖空但官方夠用仍是 🟢。
+**兩欄怎麼讀。** 官方欄：✅ 有明文機制／⚠️ 有但不完整／❌ 無。「能照著做嗎」是官方加社群之後、讀者實際拿不拿得到可執行答案：🟢 拿得到／🟡 部分拿得到／🔴 拿不到。評的是同一件事，九段用同一把尺——所以第 5 段官方雖厚仍有「缺什麼」，第 9 段社群雖已補仍列出「還沒解掉的那一塊」。
 
-⚠️ **證據深度不平均，讀「缺什麼」欄前先看這段。** 第 2、3、5 段做過專題查證（社群、學術、GitHub、HN 多輪交叉，含反證與量測數字），標 `[已深查]`；**第 6、7、8 段只掃過官方文件**，社群面未查，標 `[社群面待補]` 並在段首列出缺什麼。第 9 段（2026-09-02）與第 4 段（2026-09-03）的社群面標 `[已補：庫內證據]`，來自既有 `community-tech-patterns` 條目的萃取，非新一輪查證。第 1 段官方面查得完整，社群面只有 14 個 repo 的一手觀察。所以第 6 段的「社群零累積」是推斷，不是查證結果。
+⚠️ **證據深度不平均，讀「缺什麼」欄前先看這段。** 第 2、3、5 段做過專題查證（社群、學術、GitHub、HN 多輪交叉，含反證與量測數字），標 `[已深查]`；**第 7、8 段只掃過官方文件**，社群面未查，標 `[社群面待補]` 並在段首列出缺什麼。第 9 段（2026-09-02）、第 4 段（2026-09-03）與第 6 段（2026-09-05）的社群面標 `[已補：庫內證據]`，來自既有 `community-tech-patterns`／`community-tech-discussions` 條目的萃取，非新一輪查證。第 1 段官方面查得完整，社群面只有 14 個 repo 的一手觀察。
 本欄的限制：本庫日報收錄自 2026-04-25 起，來源以 HN／Reddit／dev.to／GitHub 與官方管道為主；更早的官方發布（如 2026-03-09 的 Code Review 功能）結構性收不到，本頁官方部分改以直接查證官方文件補足，查證日記於各段。
 
 **串起來的樣子：**
@@ -440,9 +436,7 @@ Boris Cherny 反對「vibe coding」推動術語向 spec-driven 靠攏，2026-05
 
 ---
 
-## 6. 測試與上線 — 怎麼讓它自己驗完再交給你　`[社群面待補]`
-
-⚠️ **本段只掃過官方文件，社群面未查**——「用 Claude Code 之後測試策略該怎麼變」社群有無累積，尚未查證。
+## 6. 測試與上線 — 怎麼讓它自己驗完再交給你　`[已補：庫內證據]`
 
 官方 `best-practices` 把「給 Claude 一個能驗證自己工作的方法」放在**全頁第一節**，排在 Explore→Plan→Code 之前。理由：
 
@@ -459,7 +453,9 @@ Boris Cherny 反對「vibe coding」推動術語向 spec-driven 靠攏，2026-05
 
 其餘：`/engineering:testing-strategy` 決定測什麼；`/engineering:deploy-checklist` 驗證 CI、依賴並要求**事先寫下 rollback 觸發條件**；官方 recipe 明說 Claude 會照著你既有測試檔的風格與框架寫。
 
-**缺口**：官方機制齊備，但社群對「用 Claude Code 之後測試策略該怎麼變」幾乎沒有累積——這是九段裡最安靜的一格。
+**社群面（2026-09-05 補，庫內證據）：** 社群補的不是「測試策略該怎麼變」，是官方四級階梯之外的兩種失效模式驗證：**穩定性驗證**——Caliper 主張「跑一次成功 ≠ 可靠」，用 pass@k（執行 k 次、至少成功 1 次的比率）取代單次成功判定，以 YAML 描述輸入與成功條件、本地輕量執行（HN Show HN score 3，2026-06-29）。**語意層漂移偵測**——長時間運行的 agent 可能悄悄偏離預期行為，傳統 CI 抓不到；社群方案是僅需六秒的 CI 測試，定期送探針任務並比對輸出分布，用統計指標而非固定預期值判斷是否偏移（2026-05-11）。兩者回應同一個結構性問題——「測試通過／linter 無誤」≠「功能真的完成」，此問題本身另有 Judge Gate 概念詳細討論（語意層 agent 品質驗證，2026-05-11），見 [[topics/community-tech-discussions]]。前兩者細節見 [[topics/community-tech-patterns-archive]]（已隨 05／06 月蒸餾封存）。
+
+**還沒解掉的那一塊：** 以上都是「怎麼確認沒有偏移／沒有偶發失敗」的驗證層工具，官方缺口本身——測試金字塔的比例、要不要為 agent 產出寫額外的測試類型——這塊依然無人談。
 
 ---
 
@@ -626,7 +622,7 @@ Boris Cherny 反對「vibe coding」推動術語向 spec-driven 靠攏，2026-05
 
 社群與一手觀察：
 
-- [anthropics/skills](https://github.com/anthropics/skills) ／ [knowledge-work-plugins](https://github.com/anthropics/knowledge-work-plugins) — 官方技能清冊，2026-08-08 查證
+- [anthropics/skills](https://github.com/anthropics/skills) ／ [knowledge-work-plugins](https://github.com/anthropics/knowledge-work-plugins) — 官方技能清冊，2026-08-08 查證（2026-09-05 週更複查：近 7 天 Official Skills 來源 0 新增／移除，清冊無異動）
 - [Putting Spec Kit through its paces](https://blog.scottlogic.com/2025/11/26/putting-spec-kit-through-its-paces-radical-idea-or-reinvented-waterfall.html) — spec-driven 反方實測
 - [Cross-Model LLM Code Review（arXiv 2607.21656）](https://arxiv.org/abs/2607.21656) — 跨模型互審通過率方法論，[[topics/community-tech-patterns]] 2026-08-13 查證
 - 熱門專案設定調查 — 14 個 repo，2026-08-08 一手觀察，樣本限制見該節
