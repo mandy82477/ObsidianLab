@@ -26,6 +26,7 @@ check_workflow_paths.py — GitHub Actions workflow 裡指名的產出路徑，�
 
 只用標準庫（不 import yaml），與 run_tests.py 的其餘檢查器一致。
 """
+import io
 import re
 import sys
 from pathlib import Path
@@ -89,6 +90,12 @@ def collect(workflow: Path):
 
 
 def main() -> int:
+    # 與其餘檢查器同慣例：本檔輸出含中文，被 run_tests.py 以 subprocess 收集時
+    # 若沿用 Windows 預設 locale（cp950）會讓母行程的 UTF-8 解碼失敗，
+    # 連帶讓 proc.stdout 變成 None、整個測試套件崩潰（2026-09-05 踩過，擋掉當天建站）。
+    if hasattr(sys.stdout, "buffer"):
+        sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding="utf-8", errors="replace")
+
     if not WORKFLOW_DIR.is_dir():
         print(f"WARN: {WORKFLOW_DIR} 不存在，跳過 workflow 路徑檢查")
         return 0

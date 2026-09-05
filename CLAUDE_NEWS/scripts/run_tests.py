@@ -76,8 +76,8 @@ def main() -> int:
     # 規則一致性機械檢查（commands / rules 的裸露引用、路徑存在性、錨點、同步配對）
     rules_ok = True
     if CHECK_RULES.exists():
-        proc = subprocess.run([sys.executable, str(CHECK_RULES)], capture_output=True, text=True, encoding="utf-8")
-        stream.write("\n" + proc.stdout + "\n")
+        proc = subprocess.run([sys.executable, str(CHECK_RULES)], capture_output=True, text=True, encoding="utf-8", errors="replace")
+        stream.write("\n" + (proc.stdout or "") + "\n")
         if proc.stderr:
             stream.write(proc.stderr + "\n")
         rules_ok = proc.returncode == 0
@@ -89,9 +89,9 @@ def main() -> int:
     arch_docs_ok = True
     if CHECK_ARCH_DOCS.exists():
         proc = subprocess.run(
-            [sys.executable, str(CHECK_ARCH_DOCS)], capture_output=True, text=True, encoding="utf-8"
+            [sys.executable, str(CHECK_ARCH_DOCS)], capture_output=True, text=True, encoding="utf-8", errors="replace"
         )
-        stream.write("\n" + proc.stdout + "\n")
+        stream.write("\n" + (proc.stdout or "") + "\n")
         if proc.stderr:
             stream.write(proc.stderr + "\n")
         arch_docs_ok = proc.returncode == 0
@@ -103,9 +103,9 @@ def main() -> int:
     weekly_ledger_ok = True
     if CHECK_WEEKLY_LEDGER.exists():
         proc = subprocess.run(
-            [sys.executable, str(CHECK_WEEKLY_LEDGER)], capture_output=True, text=True, encoding="utf-8"
+            [sys.executable, str(CHECK_WEEKLY_LEDGER)], capture_output=True, text=True, encoding="utf-8", errors="replace"
         )
-        stream.write("\n" + proc.stdout + "\n")
+        stream.write("\n" + (proc.stdout or "") + "\n")
         if proc.stderr:
             stream.write(proc.stderr + "\n")
         weekly_ledger_ok = proc.returncode == 0
@@ -117,9 +117,9 @@ def main() -> int:
     freshness_ok = True
     if CHECK_WIKI_FRESHNESS.exists():
         proc = subprocess.run(
-            [sys.executable, str(CHECK_WIKI_FRESHNESS)], capture_output=True, text=True, encoding="utf-8"
+            [sys.executable, str(CHECK_WIKI_FRESHNESS)], capture_output=True, text=True, encoding="utf-8", errors="replace"
         )
-        stream.write("\n" + proc.stdout + "\n")
+        stream.write("\n" + (proc.stdout or "") + "\n")
         if proc.stderr:
             stream.write(proc.stderr + "\n")
         freshness_ok = proc.returncode == 0
@@ -131,9 +131,9 @@ def main() -> int:
     radar_ok = True
     if CHECK_FEATURE_RADAR.exists():
         proc = subprocess.run(
-            [sys.executable, str(CHECK_FEATURE_RADAR)], capture_output=True, text=True, encoding="utf-8"
+            [sys.executable, str(CHECK_FEATURE_RADAR)], capture_output=True, text=True, encoding="utf-8", errors="replace"
         )
-        stream.write("\n" + proc.stdout + "\n")
+        stream.write("\n" + (proc.stdout or "") + "\n")
         if proc.stderr:
             stream.write(proc.stderr + "\n")
         radar_ok = proc.returncode == 0
@@ -145,9 +145,9 @@ def main() -> int:
     pending_ok = True
     if CHECK_PENDING_MARKERS.exists():
         proc = subprocess.run(
-            [sys.executable, str(CHECK_PENDING_MARKERS)], capture_output=True, text=True, encoding="utf-8"
+            [sys.executable, str(CHECK_PENDING_MARKERS)], capture_output=True, text=True, encoding="utf-8", errors="replace"
         )
-        stream.write("\n" + proc.stdout + "\n")
+        stream.write("\n" + (proc.stdout or "") + "\n")
         if proc.stderr:
             stream.write(proc.stderr + "\n")
         pending_ok = proc.returncode == 0
@@ -159,9 +159,9 @@ def main() -> int:
     tools_ok = True
     if CHECK_TOOLS_PAGE.exists():
         proc = subprocess.run(
-            [sys.executable, str(CHECK_TOOLS_PAGE)], capture_output=True, text=True, encoding="utf-8"
+            [sys.executable, str(CHECK_TOOLS_PAGE)], capture_output=True, text=True, encoding="utf-8", errors="replace"
         )
-        stream.write("\n" + proc.stdout + "\n")
+        stream.write("\n" + (proc.stdout or "") + "\n")
         if proc.stderr:
             stream.write(proc.stderr + "\n")
         tools_ok = proc.returncode == 0
@@ -173,9 +173,9 @@ def main() -> int:
     hierarchy_ok = True
     if CHECK_HIERARCHY.exists():
         proc = subprocess.run(
-            [sys.executable, str(CHECK_HIERARCHY)], capture_output=True, text=True, encoding="utf-8"
+            [sys.executable, str(CHECK_HIERARCHY)], capture_output=True, text=True, encoding="utf-8", errors="replace"
         )
-        stream.write("\n" + proc.stdout + "\n")
+        stream.write("\n" + (proc.stdout or "") + "\n")
         if proc.stderr:
             stream.write(proc.stderr + "\n")
         hierarchy_ok = proc.returncode == 0
@@ -187,9 +187,9 @@ def main() -> int:
     workflow_paths_ok = True
     if CHECK_WORKFLOW_PATHS.exists():
         proc = subprocess.run(
-            [sys.executable, str(CHECK_WORKFLOW_PATHS)], capture_output=True, text=True, encoding="utf-8"
+            [sys.executable, str(CHECK_WORKFLOW_PATHS)], capture_output=True, text=True, encoding="utf-8", errors="replace"
         )
-        stream.write("\n" + proc.stdout + "\n")
+        stream.write("\n" + (proc.stdout or "") + "\n")
         if proc.stderr:
             stream.write(proc.stderr + "\n")
         workflow_paths_ok = proc.returncode == 0
