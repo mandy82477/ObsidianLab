@@ -324,11 +324,5 @@
     }
   ],
   "preview": "媒體報導 Anthropic 目前能力最強的模型（代號「Model 2」）暫僅供內部使用，尚未對外開放。",
-  "sedimentedToday": [
-    {
-      "id": "managed-agents",
-      "name": "Managed Agents",
-      "pageType": "entity"
-    }
-  ]
+  "sedimentedToday": []
 }

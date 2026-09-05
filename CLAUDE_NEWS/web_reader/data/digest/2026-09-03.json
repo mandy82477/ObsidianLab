@@ -113,7 +113,13 @@
       "time": "09/03 12:07",
       "sentiment": "",
       "body": "貼文作者宣稱以同一個模型跑自製、與供應商無關的開源 agent harness，準確度與 Claude Managed Agents 打平、成本卻可低最多 75%；貼文未附測試方法與資料集細節。🤔",
-      "focusTags": []
+      "focusTags": [],
+      "sedimented": [
+        {
+          "id": "managed-agents",
+          "pageType": "entity"
+        }
+      ]
     }
   ],
   "billing": [],
@@ -219,6 +225,11 @@
   ],
   "preview": "Anthropic 狀態頁通報 Mythos/Fable 5.1、Mythos/Fable 5、Opus 5、Opus 4.8、Opus 4.6 多款模型錯誤率升高，官方已鎖定原因但截至資料蒐集時尚未標記為已解決；同一時段 Reddit r/ClaudeCode 湧入多則服務中斷回報，兩者時間點吻合。",
   "sedimentedToday": [
+    {
+      "id": "managed-agents",
+      "name": "Managed Agents",
+      "pageType": "entity"
+    },
     {
       "id": "community-large-codebase-workflow",
       "name": "大型 Codebase 規模化開發：社群工作流主線",

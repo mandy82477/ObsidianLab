@@ -154,7 +154,7 @@ npm install @anthropic-ai/sdk@0.123.0
 | **anthropic-sdk-python 1.0.0**（httpx2 Breaking Change，⚠️ 無過渡期） | 2026-08-20 | 🔥🔥 | ⚡ 有條件推薦 | 正式發布 |
 | **keybindingFlavor readline 模式**（v2.1.238，可選提示列刪除鍵行為） | 2026-08-20 | 🔥🔥 | ⚡ 有條件推薦 | 正式發布 |
 | **Concise 輸出風格**（v2.1.237 新增內建 output style，省略前言與敘述性文字） | 2026-08-20 | 🔥 | ⚡ 有條件推薦 | 正式發布 |
-| **Managed Agents Web Search 設定**（anthropic-sdk-python v0.125.0 新增 SDK 層設定支援） | 2026-08-19 | 🔥 | ⏳ 觀望 | 正式發布（SDK 層）|
+| **Managed Agents Web Search 設定**（anthropic-sdk-python v0.125.0 新增 SDK 層設定支援） | 2026-08-19 | 🔥 | ⏳ 觀望 | Beta（SDK 層；框架整體仍 beta）|
 | **spellcheck 輸入框拼字檢查**（v2.1.235，需本機 aspell／hunspell／ispell） | 2026-08-18 | 🔥 | ⚡ 有條件推薦 | 正式發布 |
 | **自訂專案 Transcript 目錄短名稱**（`CLAUDE_CODE_PROJECT_DIR_NAME` 環境變數，v2.1.234） | 2026-08-17 | 🔥 | ⚡ 有條件推薦 | 正式發布 |
 | **Claude Code v2.1.233**（`--worktree`／`claude agents` 視圖支援 GitLab MR URL，MR 顯示為 `!N`；另有 opt-in `forward_user_identity` 設定） | 2026-08-14 | 🔥🔥 | ⚡ 有條件推薦 | 正式發布 |
@@ -223,7 +223,7 @@ npm install @anthropic-ai/sdk@0.123.0
 | **`/loop`・`/batch`・`/background`** | 2026-05-14 | 🔥🔥 | ✅ 推薦 | 正式發布 |
 | **`/goal` 指令** | 2026-05-12 | 🔥🔥🔥🔥 | ✅ 推薦 | 正式發布 |
 | **Agent View** | 2026-05-12 | 🔥 | ⚡ 有條件 | Research Preview |
-| **Managed Agents**（全套） | 2026-05-11 | 🔥🔥🔥🔥🔥 | ⚡ 有條件 | 正式發布 |
+| **Managed Agents**（全套；官方仍標 beta，須 `managed-agents-2026-04-01` header） | 2026-05-11 | 🔥🔥 | ⚡ 有條件 | Beta（所有 API 帳號預設可用） |
 | **macOS Computer Use** | 2026-05-03 | 🔥🔥 | ✅ 推薦 | 正式發布 |
 | **Claude Code Sandboxing** | 2026-05-10 | 🔥 | ⚡ 有條件 | 正式發布 |
 | **操作安全 + `hard_deny`** | 2026-05-09 | 🔥 | ✅ 推薦 | 正式發布 |

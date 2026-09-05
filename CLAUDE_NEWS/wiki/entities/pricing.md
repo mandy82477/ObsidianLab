@@ -4,15 +4,15 @@ kind: "entity"
 type: "policy"
 status: "active（持續調整中）"
 domain: "💼 商業"
-last_updated: "2026-09-05"
+last_updated: "2026-09-06"
 last_news_update: "2026-09-04"
 status_main: "active"
-days_since_news: 1
+days_since_news: 2
 parent: null
 children: "[]"
 page_role: "root"
-days_since_news_subtree: 1
-inbound_links: 135
+days_since_news_subtree: 2
+inbound_links: 136
 attribution_count: 78
 attribution_last: "2026-09-04"
 top_source: "google-news"
@@ -29,7 +29,7 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 **狀態：** active（持續調整中）
 **領域：** 💼 商業
 **首次出現：** 2026-04-25
-**最後更新：** 2026-09-05
+**最後更新：** 2026-09-06
 **最後新聞更新：** 2026-09-04
 
 > **最新計費政策異動**（2026-09-02）
@@ -107,6 +107,10 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 
 一條一規則，附來源日期；失效規則移除，計費事故與爭議見下方「事故與爭議」分組。
 
+- **✅ Managed Agents 計費＝token＋session runtime（官方定價頁，2026-09-06 查證）**：token 依模型牌價（快取乘數、web search $10／1,000 次、`inference_geo` 1.1×、fast mode 溢價皆照 API 規則）；runtime **$0.08／session-hour**，只計 `running`
+- 上條來源：[Managed Agents pricing](https://platform.claude.com/docs/en/about-claude/pricing#claude-managed-agents-pricing)；`idle`／`rescheduling`／`terminated` 不計時，毫秒計量
+- **Managed Agents 不適用 Batch 折扣與 partner 雲端**（Bedrock／Vertex 無此產品）；runtime 取代 code execution 的 container-hour，不重複收。官方算例：Opus 5 跑 1 小時、50k 輸入／15k 輸出 ≈ **$0.705**，40k 輸入走快取 ≈ $0.525
+- **Managed Agents 框架整體仍 beta**（須 `managed-agents-2026-04-01` header；[overview](https://platform.claude.com/docs/en/managed-agents/overview)，2026-09-06 查證）；選型與零件成熟度見 [[entities/managed-agents]]
 - **✅ 2026-07-20 生效｜旗艦模型的訂閱分界（官方文件已確認）**：Max 方案、Team premium seats、舊制席位制 Enterprise premium seats — Fable 5 為標配，可用至多**每週用量上限的 50%**，不額外收費；Pro 方案、Team standard seats、Enterprise standard seats — Fable 5 **不計入方案用量**，需以 usage credits 按 API 費率（$10/$50 per Mtok）付費。合格 Pro 與 Team standard seats 另有**一次性過渡 credit $100**（Team 每 standard seat $100、每組織上限 $2,500），領取窗已於 2026-08-02 關閉、已領 credits 於 2026-09-17 到期，且可用於任何模型（[官方促銷條目](https://support.claude.com/en/articles/15862783)，2026-08-22 查證）。先前將 Fable 5 納入方案週用量的促銷結束於 2026-07-19 23:59:59 PT（來源：[Claude Fable 5 on your plan](https://support.claude.com/en/articles/15424964-claude-fable-5-on-your-plan)，2026-08-08 查證）
 - **⚠️ usage credits 開啟後，方案用量上限不再是硬停止**：credits 為 opt-in、預設關閉，於 `Settings > Usage` 開關，可設 auto-reload（每日兌換上限 $2,000）。開啟後 Claude 會在額度用盡後繼續回答並從 credits 扣款，體感與額度內無異，但每則超額回應皆計費——靠方案硬上限控管支出者需主動確認此開關（來源：[Manage usage credits](https://support.claude.com/en/articles/12429409-manage-usage-credits-for-paid-claude-plans)，2026-08-08 查證）
 - **✅ 2026-09-13 到期（更正：非如期於 08-31 終止）｜Claude Code 週用量 +50% 促銷**：此促銷原訂 2026-05-13 起，歷經 06-22→07-07→07-12→07-19→08-18→**09-02（本次更正）**多次延長。08-29 官方公告曾記為「08-31 到期、不再延長」，但官方說明中心 **2026-09-02** 更新原文——「We've extended this promotion. Increased weekly limits now run through September 13, 2026.」——實際延長至 **2026-09-13**；09-14 起銜接下方「標準週配額永久 +25%」，兩者不留缺口。適用 **Pro、Max、Team**（來源：[Claude Code May–August 2026 Weekly Limits Promotion](https://support.claude.com/en/articles/15910845-claude-code-may-august-2026-weekly-limits-promotion)，2026-09-02 查證）

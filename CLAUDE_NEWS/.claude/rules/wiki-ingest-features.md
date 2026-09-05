@@ -16,7 +16,7 @@
 | `wiki/entities/claude-security.md` | Claude Security 資安產品動態 |
 | `wiki/entities/claude-skills.md` | Skills 官方產品線與生態：官方技能包、平台支援、分享機制、第三方移植（設計面歸社群記者 patterns 頁） |
 | `wiki/topics/official-community-gap.md` | 官方功能 vs 社群痛點缺口變化 |
-| `wiki/topics/coding-workflow-guide.md` | 🗓️ 主體週更（吃技能清冊）；**官方對既有功能的使用指南**在每日 ingest 即寫入對應流程階段節——見下方「程式開發實戰手冊維護」|
+| `wiki/topics/coding-workflow-guide.md` | 🗓️ 主體週更（吃技能清冊）；**官方對既有功能的使用指南**在每日 ingest 即寫入對應流程階段節——見下方「程式開發實戰手冊維護」；`## 6. 測試與上線` 段末保留一行指向 [[entities/managed-agents]]「你該用哪個」的出口（連頁不連錨——該段標題帶進度標記會改名）|
 | `wiki/topics/long-context-1m.md` | 1M context 的**計費規則、預設行為、可控性、可見性**（世代加價分界、預設開啟／關閉、model picker 保不保得住 `[1m]` 變體、UI 顯示的 context 上限是否正確、1M 觸發獨立計費通道）——見下方「1M 專頁的觸發邊」 |
 | `wiki/feature-radar.md` | 新增/更新功能條目（**須回報主編彙整**，不直接寫入） |
 
@@ -97,6 +97,10 @@ feature-radar 只收**使用者可實際取用、呼叫、設定或執行的官�
 | 出現重大 bug 或集中負評 | 試用價值降級，回報主編 |
 | 功能從 Preview 升格正式 | 考慮升為 ✅，回報主編 |
 | 已追蹤功能連續 4 週未在日報出現 | 熱度 **−1 格**（下限 🔥），回報主編並同步對應 entities 頁的熱度表 `[加入: 2026-08-20]` |
+
+### 否定證據也要有路回來 `[加入: 2026-09-05]`
+
+**收到主編轉知的**日報條目若拿某個官方功能當對照組，宣稱替代方案在成本、準度或速度上更好（無論該條目被分類成社群、是否達收錄標準），在對應 `entities/` 頁的細節區記一行，**必附證據等級與缺什麼**（如「單一貼文，未附測試方法」），並於回報「同步自查」欄註明來源日期。**不進 feature-radar、不改熱度以外的評級**——它是讀者判斷「值不值得」的唯一反向材料，不是功能異動。發訊端規則見 `.claude/rules/wiki-ingest-community.md`「官方功能的負向對照要回流」。（立法依據見沿革檔 2026-09-05）
 
 **新功能條目格式（回報給主編時附上此格式）：**
 ```markdown
@@ -243,6 +247,14 @@ feature-radar 只收**使用者可實際取用、呼叫、設定或執行的官�
 **紀律：** 本頁只放「1M 這個旋鈕本身」。單一模型的費率數字屬 [[entities/pricing]]、選型建議屬 [[topics/model-comparison]]、單條 issue 的完整脈絡留在 `entities/` 原頁——本頁引 wikilink，不複製（同 `wiki/CLAUDE.md`「每個事實只有一個家」）。
 
 **若某條目只影響費率數字而與 1M 無關**（如 Opus 5 調價），不動本頁。
+
+---
+
+## Managed Agents 零件狀態表的回訪 `[加入: 2026-09-05]`
+
+`wiki/entities/managed-agents.md` 的 `## 各零件現在到哪` 是**覆寫式**狀態表：10 列的狀態欄（研究預覽／公開測試／正式發布）會變，但沒有任何日報條目會通知你它變了——近四個月該頁實際進料 100% 是 SDK release note，而 release note 從不說成熟度。
+
+**每次 `/wiki-lint`（週更）：** 逐列比對 `wiki/feature-radar.md` 全覽表與 `## 🆕 最新功能` 詳細條目中同名功能的狀態欄，不一致以 radar 為準覆寫本表，並更新表上方「資料截至 YYYY-MM-DD」為今日；radar 亦無該功能時保留原值、不臆測升格。`## 你該用哪個` 表第五欄與本表同源，一併**覆寫**、不得留舊值。lint 回報加一行：`零件狀態表：N 列比對／M 列已覆寫／資料截至 YYYY-MM-DD`。
 
 ---
 

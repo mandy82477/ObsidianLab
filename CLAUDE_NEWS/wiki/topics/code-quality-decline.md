@@ -6,11 +6,11 @@ domain: "🌐 社群"
 last_updated: "2026-09-05"
 last_news_update: "2026-08-29"
 status_main: "ongoing"
-days_since_news: 7
+days_since_news: 8
 parent: null
 children: "[]"
 page_role: "root"
-days_since_news_subtree: 7
+days_since_news_subtree: 8
 inbound_links: 30
 attribution_count: 24
 attribution_last: "2026-08-28"
