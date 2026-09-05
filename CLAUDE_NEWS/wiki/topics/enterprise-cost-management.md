@@ -3,17 +3,17 @@ page: "topics/enterprise-cost-management"
 kind: "topic"
 status: "ongoing"
 domain: "💼 商業"
-last_updated: "2026-09-04"
-last_news_update: "2026-08-25"
+last_updated: "2026-09-05"
+last_news_update: "2026-09-04"
 status_main: "ongoing"
-days_since_news: 11
+days_since_news: 1
 parent: null
 children: "[]"
 page_role: "root"
-days_since_news_subtree: 11
-inbound_links: 23
-attribution_count: 5
-attribution_last: "2026-08-25"
+days_since_news_subtree: 1
+inbound_links: 24
+attribution_count: 6
+attribution_last: "2026-09-04"
 top_source: "google-news"
 pending_count: 0
 pending_overdue: 0

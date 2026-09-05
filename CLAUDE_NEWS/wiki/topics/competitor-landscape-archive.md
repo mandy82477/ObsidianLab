@@ -3,7 +3,7 @@ page: "topics/competitor-landscape-archive"
 kind: "topic"
 status: "resolved（封存頁）"
 domain: "💼 商業"
-last_updated: "2026-09-04"
+last_updated: "2026-09-05"
 last_news_update: "2026-05-23"
 status_main: "resolved"
 days_since_news: 105
@@ -28,13 +28,46 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 **領域：** 💼 商業
 **上層：** [[topics/competitor-landscape]]
 **開始日期：** 2026-04-24
-**最後更新：** 2026-09-04
+**最後更新：** 2026-09-05
 **最後新聞更新：** 2026-05-23
 
 > **原始條目封存**（2026-09-04）
 > 本頁為 [[topics/competitor-landscape]] 的時序原始條目封存，一字未刪；重點層（時段總結、競品定價對照、主要競品追蹤）見主頁。
 
 ---
+
+## 2026-06
+
+#### 亞洲競品崛起與定價顛覆（2026-06-19 至 2026-06-29）
+
+### 2026-06-29
+- **[DeepSeek 具名勝出] Lindy CEO：100% 流量從 Claude 切至 DeepSeek，每月省下數百萬美元**：CNBC 報導 AI 新創 Lindy CEO Flo Crivello 公開宣告完成全量切換，是「最省錢 > 最強模型」論述中迄今最具代表性的具名 API 客戶案例。Lindy 服務屬高吞吐量自動化工作流，API 費率差異直接轉化為此量級的成本節省。**對競爭格局的意涵**：此類 API 應用層客戶的價格敏感度高，一旦競品達「夠用」門檻，成本成為決策主因；若此模式擴散，DeepSeek 在 API 客戶市場的份額將持續成長、侵蝕 Anthropic API 收入（推論）（CNBC https://www.cnbc.com/2026/06/26/openai-anthropic-new-ai-spending-reality-as-users-shift-to-efficiency.html；詳見 [[topics/enterprise-cost-management]]）
+- **[人才格局] 4 位 Google 資深研究員轉投 Anthropic，Gemini 3.5 Pro 據報延期至七月**：dev.to 報導（推論，未經 Google 官方確認）Google 資深研究員持續出走至 Anthropic，同期 Gemini 3.5 Pro 延期至七月；AI 研究人才集中流向 Anthropic 的趨勢延續，Google 在模型能力追趕上面臨人才與時程的雙重壓力（詳見 [[topics/ai-talent-flow]]）（dev.to https://dev.to/doremonai/gemini-35-pro-delayed-to-july-4-senior-google-researchers-defect-to-anthropic-47he）
+
+### 2026-06-28
+- **[亞洲競品湧現] 中國 360 Tulongfeng + 日本 Sakana AI Fugu 雙雙宣稱對標 Mythos 5**：TechCrunch（HN score 256）報導，趁 Anthropic 出口管制延宕期間，中國 360 發布 Tulongfeng（網路安全 AI）、日本 Sakana AI 發布 Fugu，均宣稱能力可比肩 Mythos / Fable 5。WSJ（HN 12）同步報導「中國已在網路安全 AI 追平 Anthropic」，直接質疑 Anthropic 在此細分領域的差異化護城河。**對競爭格局的意涵**：Anthropic 出口管制造成的服務真空，正系統性被亞洲競品填補；若 Mythos 解禁速度慢於競品追趕速度，市場份額流失難以逆轉（推論）（TechCrunch https://techcrunch.com/2026/06/27/asian-ai-startups-launch-mythos-like-models-as-anthropics-export-ban-drags-on/；WSJ https://www.wsj.com/tech/ai/chinese-ai-anthropic-mythos-cybersecurity-574b02c2；Reuters https://www.reuters.com）
+- **[管制實效，已查證]** Wired：中國用戶長期通過 VPN 繞過 Anthropic 地理限制：Wired 深度報導揭露，Anthropic 地理封鎖機制長期被 VPN 及其他技術手段繞過，中國用戶持續使用 Claude。已查證（2026-08-13）：安全研究者稱「Geolocation is a speed bump, not a wall」，管制實質阻隔效果有限，VPN／境外 SIM／API wrapper 均可繞過。**對競爭格局與管制政策的意涵**：「封鎖中國損失數億美元收入」的說法在此框架下顯得矛盾——部分收入可能仍在流入（推論）（Wired https://www.wired.com/story/how-people-in-china-keep-outsmarting-anthropics-geolocation-restrictions/）
+
+### 2026-06-27
+- **[中國競品加速] Zhipu Z.AI 趁出口管制空窗快速追趕 Anthropic 與 OpenAI**：CNBC 報導，中國 Zhipu 的開源模型 Z.AI 在 Anthropic 與 OpenAI 因出口管制（Anthropic Mythos 封鎖）與法律 / 政治審查拖累期間，快速縮小能力差距；Zhipu 採開源路線擴大市場滲透，策略類似 DeepSeek 以「免費的壁壘」繞開管制影響。**對競爭格局的意涵**：若管制持續壓制 Anthropic 在中國及部分市場的可用性，中國廠商的能力追趕視窗直接擴大（CNBC https://www.cnbc.com/2026/06/26/china-zhipu-z-ai-open-source-anthropic-openai.html）
+- **[政治代理戰雙輸] Anthropic 與 OpenAI 合計耗費 2700 萬美元支持紐約 12 選區，勝選者宣布與兩家保持距離**：Fortune 報導 Anthropic 與 OpenAI 在紐約第 12 選區支持不同候選人，形成政治代理戰；最終勝選候選人宣布與兩家公司保持距離，顯示 AI 大廠的政治投資換取政策支持的邏輯在本次選舉中完全失效。**對競爭格局的意涵**：在政治影響力層面 Anthropic 與 OpenAI 平局（雙輸），第三方（勝選者）主動切割削弱後續遊說能量（Fortune https://fortune.com/2026/06/26/anthropic-openai-ny12-proxy-war-no-winners-election-super-pac-donations/）
+
+### 2026-06-26
+- **[定價顛覆] DeepSeek V4 Flash 打破 Anthropic agent 服務定價邏輯，Microsoft 等廠商切換**：開發者分析文章指出，Anthropic 商業模式的隱含前提是「以較高 API 定價補貼自家 agent 服務（Claude Code 等）」；DeepSeek V4 Flash（開源、成本降低逾 100 倍）出現後，這個前提被動搖——Microsoft 等廠商已切換至 DeepSeek 作為執行層，Anthropic 面臨執行層 token 份額流失與定價護城河被侵蝕的雙重壓力（rtrvr.ai https://www.rtrvr.ai/blog/code-as-plan-deepseek-flash-text-only-browser-agent）
+
+> 人才流動對競爭格局的影響（誰流失、誰承接、戰力意涵）詳見 [[topics/ai-talent-flow]]。
+
+### 2026-06-25
+- **[重大法律事件] Anthropic 正式指控阿里巴巴 AI 模型蒸餾攻擊，阿里股價單日跌逾 33%**：Anthropic 指控阿里巴巴使用約 25,000 個假帳號、執行 2,880 萬次 Claude 對話，系統性竊取 Claude 模型能力用於訓練自家模型；是 AI 產業首起具名大規模模型蒸餾攻擊指控，Reuters、Bloomberg、WSJ、BBC、FT、CNBC、QZ 多媒體同步報導，HN score 605（Reuters https://www.reuters.com/world/china/anthropic-says-alibaba-illicitly-extracted-claude-ai-model-capabilities-2026-06-24/）
+- **[人才競爭] Google 失去 AI 編碼研究員至 Anthropic，同步重組 AI 編碼 strike team**：Jonas Adler（AI 編碼）與 Alexander Pritzel（AI 訓練）確認離開 Google 加入 Anthropic；Google 因應競爭壓力重組 AI 編碼精銳團隊；The Information 獨家報導 Google 內部重建計畫（Bloomberg https://www.bloomberg.com/news/articles/2026-06-24/google-poised-to-lose-two-more-high-profile-ai-staffers-to-anthropic；The Information https://www.theinformation.com/articles/google-revamps-new-ai-coding-strike-team-amid-struggle-catch-anthropic）
+- **[Alphabet 市值壓力] Alphabet 股價因 DeepMind 人才持續出走 Anthropic 而下滑**：CNBC 報導 Alphabet 股價受 AI 人才流失影響持續下跌，DeepMind 研究員轉向 Anthropic 的趨勢帶來資本市場壓力（CNBC https://www.cnbc.com/video/2026/06/24/alphabet-shares-slide-as-ai-talent-departs-deepmind-for-anthropic.html）
+
+### 2026-06-24
+- **[投資人表態] Reid Hoffman 批評 Elon Musk，稱 xAI「一塌糊塗」**：Reid Hoffman（身兼 Anthropic 與 OpenAI 投資人）在 Fortune 專訪中公開批評 Elon Musk，稱 xAI 為「一塌糊塗（a mess）」，並警告政府處理 Anthropic 模型下架的方式；此表態明確劃清 Anthropic 與 xAI 生態的投資人立場分野（Fortune https://fortune.com/2026/06/24/reid-hoffman-spacex-musk-openai-anthropic-gen-z-mistake/）
+- **[中國競品] 360 聲稱開發對標 Anthropic Mythos 的安全工具**：中國網路安全公司 360 聲稱已開發出對標 Anthropic Mythos 的工具，顯示 Anthropic 的安全產品線已吸引中國廠商直接定位競爭（Reuters 2026-06-24）
+
+### 2026-06-19
+- **[SpaceX 完成 $60B Cursor 收購] 競爭格局重塑**：dev.to 分析文章評估 SpaceX 以 600 億美元完成收購 Cursor 對 Claude Code 競爭格局的影響；9to5Mac 確認收購正式完成（IPO 後一週）。Cursor 此前與 Anthropic 有深度整合關係，SpaceX 資源注入後 Cursor 的 Claude 依賴度可能降低，Elon Musk / xAI 生態與 Anthropic 的競爭軸線進一步明確（dev.to 2026-06-18、9to5Mac 2026-06-17）
 
 ## 2026-05
 

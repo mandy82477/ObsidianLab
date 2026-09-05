@@ -5,16 +5,16 @@ type: "product"
 status: "active"
 domain: "🛠️ 工具/功能"
 last_updated: "2026-09-04"
-last_news_update: "2026-09-03"
+last_news_update: "2026-09-04"
 status_main: "active"
-days_since_news: 2
+days_since_news: 1
 parent: null
 children: "[]"
 page_role: "root"
-days_since_news_subtree: 2
-inbound_links: 75
-attribution_count: 424
-attribution_last: "2026-09-03"
+days_since_news_subtree: 1
+inbound_links: 76
+attribution_count: 437
+attribution_last: "2026-09-04"
 top_source: "github-issues"
 pending_count: 30
 pending_overdue: 13

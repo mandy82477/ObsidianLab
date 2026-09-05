@@ -4,19 +4,19 @@ kind: "topic"
 status: "ongoing"
 domain: "💼 商業"
 last_updated: "2026-09-05"
-last_news_update: "2026-09-02"
+last_news_update: "2026-09-04"
 status_main: "ongoing"
-days_since_news: 3
+days_since_news: 1
 parent: null
 children: "[]"
 page_role: "root"
-days_since_news_subtree: 3
-inbound_links: 74
-attribution_count: 191
-attribution_last: "2026-09-02"
+days_since_news_subtree: 1
+inbound_links: 70
+attribution_count: 196
+attribution_last: "2026-09-04"
 top_source: "google-news"
-pending_count: 6
-pending_overdue: 3
+pending_count: 7
+pending_overdue: 4
 pending_next_review: "2026-09-08"
 pending_signalled: 0
 signal: "健康"
