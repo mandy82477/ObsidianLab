@@ -136,10 +136,6 @@ Claude Code 已成為 AI 輔助編碼的標竿產品，但競爭正快速升溫�
 - **首報**：2026-04（India Today、HN 跟進）
 - **意義**：Google 同時是 Anthropic 股東（400 億投資），投資方與競爭者並存的矛盾結構
 
-### Google DeepMind 高層動盪（補記，事件 2026-08-05／08-06）
-- **狀態**：已查證（2026-08-13，[TechCrunch 一手報導](https://techcrunch.com/2026/08/05/jeff-dean-and-other-top-ai-researchers-are-leaving-google-to-launch-their-own-startup/)）｜**CEO 轉任＋核心研究員出走創業**：Demis Hassabis 卸下 DeepMind 日常營運、轉任 DeepMind 董事長兼 Alphabet 首席科學家（留任集團非離職），Koray Kavukcuoglu 升任 DeepMind SVP；Jeff Dean（27 年）、Sanjay Ghemawat、Oriol Vinyals、Quoc Le 離職共創 Discovery Loop（public benefit corporation，Dean 任 CEO），投資方含 Radical Ventures／Khosla Ventures 共同領投與 **Alphabet 本身**；股價盤中一度跌約 5%，市值影響各家估 1,600–2,000 億美元（盤中估算區間）。TechCrunch 全文未提及 Anthropic，此波非流向前沿實驗室競爭對手，主敘事見 [[topics/ai-talent-flow]]
-- **對競爭格局的意涵（推論）**：與既有「Google 同時是投資方與競爭者」的矛盾結構並置，高層與技術核心同步震盪可能削弱 Google 作為 Anthropic 對手的組織穩定性訊號；惟此波出走流向獨立新創而非 OpenAI 等直接競品，短期內對 Google AI 產品線（Gemini、Antigravity 等）競爭力的直接影響仍待觀察
-
 ### Inherent（DeepMind 校友創辦，新增追蹤，2026-08-23）
 - **狀態**：新創首見追蹤，公司自行發布聲明，尚無第三方驗證
 - **來源**：TechCrunch 報導由 DeepMind 校友創立的新創公司 Inherent 宣稱其 AI「隊友」（AI teammate）在複現研究任務（replicating research）上表現超越 Anthropic 與 OpenAI
@@ -186,25 +182,13 @@ Claude Code 已成為 AI 輔助編碼的標竿產品，但競爭正快速升溫�
 - **規模**：157,000 名開發者轉向（The New Stack，2026-05-12）
 - **定位**：開源替代 Claude Code；XDA 評測認為功能與體驗相當
 - **插件**：`OpenCode-power-pack` 已移植 Anthropic 官方 11 個 skills
-- **下載量比較**（2026-08-01）：tech-insider.org（source_count=2）稱 OpenCode 下載量達 Claude Code 的 **5.4 倍**，凸顯開源免費 vs 訂閱付費（$20/月）模式的採用落差；🔎 查無官方（標 2026-08-10｜複 2026-09-13｜查 tech-insider.org、下載量定義）：具體統計來源、時間範圍、下載量定義（累計/月活）查證後（2026-08-13）仍未見揭露，暫不覆寫上方「157,000 名開發者轉向」（05-18 數據），僅並列記錄（Google News/tech-insider.org）
+- **下載量比較**（2026-08-01）：下載量倍數的事實與其懸置標記已移交 [[entities/opencode]]；本頁定價面仍見「競品定價對照」OpenCode 列
 
 ### Microsoft 自研模型 🔴（傳聞，2026-07-07）
 - **狀態**：傳聞階段（SiliconANGLE、Bloomberg 兩獨立來源 2026-07-07 同步報導，未經 Microsoft/Anthropic 官方證實）
 - **動態**：Microsoft 傳出正逐步以自研模型取代部分產品中的 OpenAI 與 Anthropic 模型以降低成本
 - **與既有觀察的呼應**：延續 Microsoft 06-21 退出 Claude Code（成本原因）、06-04 Kevin Scott 公開批評 Anthropic 定價過高的既有軌跡，若屬實代表依賴度收斂從「編碼工具層」擴大至「底層模型層」的雙重收斂
 - **意義**：雲端大廠若成功以自研模型替代第三方模型，將直接侵蝕 Anthropic 的 API 收入來源，且此風險不受 Anthropic 內部定價或效能改善控制（推論）（SiliconANGLE https://siliconangle.com/2026/07/07/microsoft-reportedly-ditching-openais-anthropics-ai-models-favor-cut-costs/；Bloomberg https://www.bloomberg.com/news/articles/2026-07-07/microsoft-replaces-openai-anthropic-with-own-ai-in-some-apps）；商業風險面詳見 [[topics/anthropic-business]]
-
-### Microsoft 基礎設施競賽：SemiAnalysis 稱其對 OpenAI／Anthropic 具「Out-AI」潛力（分析文章，2026-08-10）
-- **狀態**：分析階段（Stocktwits 轉引 SemiAnalysis 觀點，僅標題層級資訊，2026-08-10）
-- **動態**：財經媒體 Stocktwits 轉引研究機構 SemiAnalysis 分析，討論 Microsoft 能否在 AI 基礎設施競賽中超越 OpenAI 與 Anthropic，文中提及每 GW 推理商機規模達**千億美元**（$100B-per-GW）的估算
-- **與既有觀察的呼應**：延續 07-07 Microsoft 傳出以自研模型逐步取代 OpenAI/Anthropic 模型（見上方「Microsoft 自研模型」子區塊）、07-15 訓練業務團隊淡化競品優勢等既有 Microsoft 對抗策略軌跡，本次從「產品/銷售」層面轉向「基礎設施投資規模」層面立論，若分析屬實，代表 Microsoft 對抗兩大競爭對手的路線正擴及運算基礎設施投資規模的直接比拼（推論）
-- ❓ **待查證**（標 2026-08-10｜查 SemiAnalysis、$100B-per-GW）：$100B-per-GW 推理商機估算僅為轉引標題層級資訊，原文測算方法論與假設條件未見；已掃日報至 2026-09-03 無後續，官方頁面未查證（Google News/Stocktwits，轉引 SemiAnalysis）。
-
-### Microsoft 業務策略：訓練業務團隊淡化 OpenAI/Anthropic 優勢（傳聞，2026-07-15）
-- **狀態**：傳聞階段（Yahoo Finance 2026-07-15 報導，未經 Microsoft 官方證實）
-- **動態**：報導指出 Microsoft 據稱正在訓練其業務（sales）團隊，向客戶淡化（talk down）OpenAI 與 Anthropic 的競爭優勢
-- **與既有觀察的呼應**：延續 Microsoft 06-21 退出 Claude Code（成本原因）、07-07/08 傳出以自研模型逐步取代 OpenAI/Anthropic 模型的既有軌跡，本次從「產品替代」延伸至「銷售話術」層面，顯示 Microsoft 對抗兩大競爭對手的策略正同時在產品與市場行銷兩條戰線推進（推論）
-- **意義**：若屬實，代表 Microsoft 作為 Anthropic 雲端夥伴兼競爭者的關係持續向競爭傾斜，且直接鎖定客戶認知層面，可能影響企業採購決策，與 [[topics/enterprise-tool-tracker]] 追蹤的企業工具選型動態相關（推論，僅標題可用，具體話術內容與涵蓋客戶範圍未見細節）（Google News/Yahoo Finance）
 
 ### OpenAI ChatGPT Work / GPT-5.6 🔴（2026-07-09）
 - **狀態**：正式推出（Reuters、ZDNET 2026-07-09）
@@ -245,7 +229,7 @@ Claude Code 已成為 AI 輔助編碼的標竿產品，但競爭正快速升溫�
 ### GitHub Copilot
 - **狀態**：Active（2026-05-16 推出全新應用程式，明確點名對標 Claude Code）
 - **母公司**：Microsoft / GitHub
-- **關鍵事件**：Microsoft 內部從 Claude Code 切換至 Copilot CLI（2026-05-15）
+- **關鍵事件**：Microsoft 內部切換案例見 [[topics/enterprise-tool-tracker]]
 - **計費模式改版，終結「無限量」方案（2026-08-17）**：Mshale 報導 GitHub Copilot 推出新計費模式，終結先前提供的「無限量」編碼方案；具體新方案內容、價格級距、生效時程未見報導細節，僅標題層級資訊，待後續補充。**對競爭格局的意涵**：與本頁「競品定價對照」表既有 Copilot Pro+（$39/月，Opus 存取採 27 倍加價換算）並置，顯示 GitHub Copilot 正從「無限量」吃到飽模式轉向更精細的用量計費，可能反映其自身 token 成本壓力，與 Anthropic 自身 6/15 計費結構收緊路線呈現同業趨同現象（推論）（Google News/Mshale）
 
 ### Cursor / Windsurf
@@ -302,12 +286,6 @@ Claude Code 已成為 AI 輔助編碼的標竿產品，但競爭正快速升溫�
 - **定位**：宣稱能力對標 Fable 5，趁 Anthropic 出口管制封鎖亞太市場空窗期推出
 - **意義**：亞洲競品從「學術跟進」升為「正面宣稱對標」，與 Mythos 解禁時程形成直接競爭壓力（TechCrunch https://techcrunch.com/2026/06/27/asian-ai-startups-launch-mythos-like-models-as-anthropics-export-ban-drags-on/）
 
-### 中國用戶 VPN 繞過限制（地理管制實效）
-- **狀態**：Active（長期現象，Wired 2026-06-28 確認）
-- **現象**：中國用戶長期通過 VPN 等方式繞過 Anthropic 地理限制；已查證（2026-08-13，Wired 原文）：地理限制形同虛設，Wired 引述安全研究者「Geolocation is a speed bump, not a wall」（地理定位只是減速丘，不是牆），VPN、境外 SIM 卡、第三方 API wrapper 均能繞過，用戶亦可在淘寶/閒魚購買已設定帳號、透過 Telegram 頻道取得完整繞過教學
-- **意義**：管制無法實質阻隔中國用戶使用 Claude 已獲第一手報導證實，「管制犧牲收入」的代價真實，「管制保護能力」的效果確有可疑（Wired https://www.wired.com/story/how-people-in-china-keep-outsmarting-anthropics-geolocation-restrictions/；2026-08-13 查證）
-- **灰色市場轉售 Claude API token（2026-08-23，the-decoder.com，僅標題可用）**：the-decoder.com 報導中國存在灰色市場，以遠低於官方定價的價格轉售 Claude API token 額度。**與既有記錄的關係**：延續本頁已記錄之「VPN／境外 SIM／第三方 API wrapper 繞過地理限制」現象（Wired 08-13 查證），本則從「繞過存取限制」進一步延伸至「商業化轉售」層級——顯示中國用戶不僅能繞過管制取得存取，還形成有規模的次級市場轉售官方額度，可能反映官方定價與灰市定價之間存在套利空間（推論）；具體轉售規模、價格倍數、額度來源（是否為境外帳號批量取得後轉賣）均未見報導細節，僅標題層級資訊（Google News/the-decoder.com）
-
 ### Alibaba Qwen3.7-Max / Alibaba 蒸餾攻擊 / Qwen3.8（2026-07-20 新增追蹤）
 - **免費釋出「最強」模型，宣稱追平 Claude／ChatGPT（08-04，Decrypt，僅標題可用）**：Decrypt 報導阿里巴巴免費開放其「最強」AI 模型，宣稱效能幾乎追平 Claude 與 ChatGPT。**注意**：報導未指明模型名稱（是否為 07-20 已報導、宣稱「僅次於 Fable 5」的 Qwen3.8，或另一新模型），亦未提供具體 benchmark 數字，僅標題層級資訊，待後續報導補充。**對競爭格局的意涵**：若確為 Qwen3.8，則呼應該模型持續以「免費＋高性能」策略正面對打 Anthropic 訂閱付費模式，與既有蒸餾指控（06-25）並置解讀時，外界可能將「免費卻高性能」再度視為蒸餾疑慮的佐證（推論）（Google News/Decrypt）
 - **蒸餾雙標爭議（07-21，TipRanks，僅標題可用，2026-07-21 指控，已掃日報至 2026-08-14 無後續；官方頁面未查證）**：TipRanks 報導 Claude 曾自稱是阿里巴巴的 Qwen AI，引發「Anthropic 蒸餾雙標」（distillation hypocrisy）批評。**注意**：僅標題可用，待補充——具體是在何種提問情境下自稱、多次或單次發生、Anthropic 是否已回應均未見報導。**對競爭格局的意涵**：與 06-25 Anthropic 正式指控 Alibaba 蒸餾 Claude 案（2.5 萬假帳號、2,880 萬次對話）形成敘事張力——若 Claude 自身也會誤稱為 Qwen，外界可能質疑蒸餾指控的舉證標準是否雙重，對 Anthropic 在中美模型蒸餾爭議中的道德制高點論述構成潛在削弱（推論）（Google News/TipRanks）
@@ -325,11 +303,6 @@ Claude Code 已成為 AI 輔助編碼的標竿產品，但競爭正快速升溫�
 
 - **Google 投資與競爭並存**：Google 是 Anthropic 最大外部投資方（$400 億），同時開發競品，詳見 [[entities/google-investment]]
 
-- **多 LLM 混合架構**：Opus 4.7 作 orchestrator + DeepSeek V4 Pro 承擔大量 token 輸出，是 Max20 方案下最大化性價比的主流策略
-- **claude-anyteam**：讓 OpenAI Codex CLI 加入 Claude Code Agent Teams，實現跨模型協作
-- **CC-Canary**：效能監測工具，讀取 `~/.claude/projects/` JSONL log（見 [[topics/code-quality-decline]]）
-- **Claude Desktop 第三方 LLM 支援**：Anthropic 悄悄加入 OpenAI、Gemini、本地模型、Bedrock/Vertex 支援，競爭格局從「Claude vs others」走向「Claude 作多模型接入層」
-- **Claude Connectors 擴展**：進入 Adobe、Blender、Ableton、Affinity、Autodesk Fusion 等創意工具，與 Figma 展開競爭
 
 ---
 

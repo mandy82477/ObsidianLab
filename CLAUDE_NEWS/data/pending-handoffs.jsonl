@@ -56,3 +56,7 @@
 {"id": "H-0f4ad3", "closed": "2026-09-03", "status": "done", "by": "功能", "result": "v2.1.247發布日三處內部一致08-27、radar升版風險08-26孤例待主編修正；v2.1.224『詳見上方現況』指路改指已知問題#24798；Model Hardware Standard日期已對齊feature-radar 08-27"}
 {"id": "H-d48bee", "closed": "2026-09-03", "status": "done", "by": "社群", "result": "已於community-tech-discussions.md補入09-02 skilldock解法並填衍生欄，狀態維持🌙靜候"}
 {"id": "H-59da9e", "closed": "2026-09-03", "status": "void", "by": "主編", "result": "功能記者已於coding-workflow-guide.md第97行將措辭統一為「推斷、非查證結果」，社群記者無需再處理"}
+{"id": "H-ab0af9", "opened": "2026-09-05", "from": "商業", "to": "安全政策", "page": "topics/anthropic-government-policy", "note": "competitor-landscape L305-309 VPN 繞過地理管制＋灰市轉售 token 段落移交（原文見該 commit 的 diff）", "status": "open"}
+{"id": "H-b591b1", "opened": "2026-09-05", "from": "商業", "to": "功能", "page": "entities/opencode", "note": "competitor-landscape L189 OpenCode 下載量 5.4 倍事實＋行內 🔎 標記（複 2026-09-13）整筆移交；該標記命中時由你處置", "status": "open"}
+{"id": "H-abb47e", "opened": "2026-09-05", "from": "商業", "to": "社群", "page": "topics/community-tech-patterns", "note": "competitor-landscape L328-330 技術彙整 3 條（多 LLM 混合架構／claude-anyteam／CC-Canary）移交，原文無日期需補", "status": "open"}
+{"id": "H-b432d2", "opened": "2026-09-05", "from": "商業", "to": "功能", "page": "entities/claude-code", "note": "competitor-landscape L331-332 技術彙整 2 條（Desktop 第三方 LLM 支援／Connectors 擴展）移交", "status": "open"}

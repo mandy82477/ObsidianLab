@@ -571,7 +571,8 @@ Financial Times 報導 Anthropic 旗艦模型在吸引一般使用者（general 
 #### 2026-08-10
 - **[戰略合作，疑似重複報導，詳見 ⟨Q-02⟩] Google News／Yahoo Finance：Anthropic 與「成立僅七個月」新創簽下 100 億美元歐洲算力合約**：金額與既有 08-04 Volta 案相同，但新創月齡與地區描述有出入，未見具名，詳見「戰略合作」表 Volta 列更新（Google News/Yahoo Finance）
 - **[財務狀況，新增，詳見 ⟨Q-01⟩] Hacker News 論戰：OpenAI／Anthropic 合計佔 AI 產業營收 70%**：YouTube 影片主張此比例，HN 討論串（73 分）出現反駁聲音質疑推理市場規模被高估，詳見「財務狀況」表新增列（Hacker News）
-- **[競品動態，詳見 competitor-landscape，非本頁新增] SemiAnalysis（經 Stocktwits 轉引）：討論 Microsoft 能否在 AI 基礎設施競賽中超越 OpenAI 與 Anthropic**：提及每 GW 推理商機規模達千億美元估算，詳見 [[topics/competitor-landscape]]
+- **[基礎設施投資規模，分析文章，2026-09-05 自 [[topics/competitor-landscape]] 移入] SemiAnalysis（經 Stocktwits 轉引）：討論 Microsoft 能否在 AI 基礎設施競賽中超越 OpenAI 與 Anthropic**：財經媒體 Stocktwits 轉引研究機構 SemiAnalysis 分析，文中提及每 GW 推理商機規模達**千億美元**（$100B-per-GW）的估算。**與既有觀察的呼應**：延續 07-07 Microsoft 傳出以自研模型逐步取代 OpenAI/Anthropic 模型、07-15 訓練業務團隊淡化競品優勢等既有對抗策略軌跡，本次從「產品/銷售」層面轉向「基礎設施投資規模」層面立論，若分析屬實，代表 Microsoft 對抗兩大競爭對手的路線正擴及運算基礎設施投資規模的直接比拼（推論）
+- ❓ **待查證**（標 2026-08-10｜查 SemiAnalysis、$100B-per-GW）：$100B-per-GW 推理商機估算僅為轉引標題層級資訊，原文測算方法論與假設條件未見；已掃日報至 2026-09-03 無後續，官方頁面未查證（Google News/Stocktwits，轉引 SemiAnalysis）。
 
 #### 2026-08-08
 - **[新事業/人才佈局，新增] Anthropic 任命 Robert Mahari 出任新設「Claude for Legal」部門負責人**：Legal IT Insider、Law.com 兩家獨立媒體同日報導，詳見「戰略合作」表新增列（Google News/Legal IT Insider；Google News/Law.com）

@@ -232,6 +232,7 @@ Claude Code 是工程師日常編碼工具（CLI），成本隨使用量線性�
 - **[❓ 未確認，單一非主流媒體，疑似與蒸餾指控混淆] tech-insider.org：阿里巴巴據稱因偵測 2.5萬假帳號封鎖 Claude Code**：tech-insider.org（source_count=2）報導阿里巴巴以偵測到 2.5 萬個虛假帳號為由封鎖 Claude Code 存取。**注意**：阿里巴巴已於 07-03/07-10 因「疑似後門風險」封鎖 Claude Code 並改用 Qoder（見上方使用現況表 Alibaba 列，狀態 ❌ 已退出）；本則報導的「2.5萬假帳號」數字與 06-25 Anthropic 指控阿里巴巴蒸餾攻擊所用的假帳號數字（詳見 [[topics/competitor-landscape]]）完全相同，高度疑似報導方將「Alibaba 封鎖 Claude Code」與「Anthropic 指控 Alibaba 蒸餾攻擊」兩起不同事件的細節混淆或誤植；來源為單一非主流媒體且細節有限，暫不視為新增獨立事件或狀態變更，僅於既有 Alibaba 列備註補充查證註記（tech-insider.org）
 
 #### 2026-07-15
+- **[企業採購認知層，傳聞，2026-09-05 自 [[topics/competitor-landscape]] 移入] Yahoo Finance：Microsoft 據報訓練業務團隊向客戶淡化 OpenAI 與 Anthropic 的競爭優勢**：延續 Microsoft 06-21 退出 Claude Code（成本）、改推 GitHub Copilot CLI（05-15 內部切換，見上方使用現況表 Microsoft 兩列）的既有軌跡，本次從「產品替代」延伸至「銷售話術」層面，直接鎖定客戶認知層，可能影響企業採購決策（推論，未經 Microsoft 官方證實；僅標題可用，具體話術內容與涵蓋客戶範圍未見細節）（Google News/Yahoo Finance）
 - **Grasshopper Bank 成為首家列入 Anthropic MCP 目錄的銀行**：Financial IT 報導 Grasshopper Bank 成為首家列入 Anthropic MCP（Model Context Protocol）目錄的銀行，為金融業具名採用 MCP 生態系的起點案例；具體整合規模、應用場景未見細節（僅標題可用，Google News 轉址）（Google News/Financial IT）
 
 #### 2026-07-08
