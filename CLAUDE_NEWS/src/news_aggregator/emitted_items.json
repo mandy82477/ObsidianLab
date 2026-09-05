@@ -5223,5 +5223,255 @@
     "first_emitted": "2026-09-03",
     "score_at_emit": 0,
     "digest_confirmed": true
+  },
+  "https://github.com/anthropics/anthropic-sdk-typescript/releases/tag/vertex-sdk-v0.19.7": {
+    "first_emitted": "2026-09-04",
+    "score_at_emit": 0,
+    "digest_confirmed": true
+  },
+  "https://github.com/anthropics/anthropic-sdk-python/releases/tag/v1.4.0": {
+    "first_emitted": "2026-09-04",
+    "score_at_emit": 0,
+    "digest_confirmed": true
+  },
+  "https://github.com/anthropics/claude-code/releases/tag/v2.1.261": {
+    "first_emitted": "2026-09-04",
+    "score_at_emit": 0,
+    "digest_confirmed": true
+  },
+  "https://www.anthropic.com/research/formalizing-fermats-last-theorem": {
+    "first_emitted": "2026-09-04",
+    "score_at_emit": 0,
+    "digest_confirmed": true
+  },
+  "https://www.nytimes.com/2026/09/04/technology/open-source-ai-anthropic-openai.html": {
+    "first_emitted": "2026-09-04",
+    "score_at_emit": 0,
+    "digest_confirmed": true
+  },
+  "https://www.wired.com/story/nobody-is-saying-why-openai-and-anthropic-had-outages-today": {
+    "first_emitted": "2026-09-04",
+    "score_at_emit": 0,
+    "digest_confirmed": true
+  },
+  "https://github.com/anthropics/claude-code/issues/8856": {
+    "first_emitted": "2026-09-04",
+    "score_at_emit": 0,
+    "digest_confirmed": true
+  },
+  "https://github.com/anthropics/fermats-last-theorem": {
+    "first_emitted": "2026-09-04",
+    "score_at_emit": 0,
+    "digest_confirmed": true
+  },
+  "https://github.com/anthropics/claude-code/issues/14828": {
+    "first_emitted": "2026-09-04",
+    "score_at_emit": 0,
+    "digest_confirmed": true
+  },
+  "https://github.com/anthropics/claude-code/issues/26452": {
+    "first_emitted": "2026-09-04",
+    "score_at_emit": 0,
+    "digest_confirmed": true
+  },
+  "https://github.com/anthropics/claude-code/issues/44243": {
+    "first_emitted": "2026-09-04",
+    "score_at_emit": 0,
+    "digest_confirmed": true
+  },
+  "https://engineering.atspotify.com/2026/9/portal-by-spotify-cut-my-claude-code-token-usage-by-90": {
+    "first_emitted": "2026-09-04",
+    "score_at_emit": 0,
+    "digest_confirmed": true
+  },
+  "https://xenaproject.wordpress.com/2026/09/04/flt-anthropic-has-beaten-me-to-it": {
+    "first_emitted": "2026-09-04",
+    "score_at_emit": 0,
+    "digest_confirmed": true
+  },
+  "https://moadim.io": {
+    "first_emitted": "2026-09-04",
+    "score_at_emit": 0,
+    "digest_confirmed": true
+  },
+  "https://github.com/NeoLabHQ/context-engineering-kit": {
+    "first_emitted": "2026-09-04",
+    "score_at_emit": 0,
+    "digest_confirmed": true
+  },
+  "https://chromewebstore.google.com/detail/sitetweak-edit-any-site-w/jnhmhgddbeljneddgcpglgchbdheakbk": {
+    "first_emitted": "2026-09-04",
+    "score_at_emit": 0,
+    "digest_confirmed": true
+  },
+  "https://sageling.ai": {
+    "first_emitted": "2026-09-04",
+    "score_at_emit": 0,
+    "digest_confirmed": true
+  },
+  "https://github.com/2hmad/ccswitch": {
+    "first_emitted": "2026-09-04",
+    "score_at_emit": 0,
+    "digest_confirmed": true
+  },
+  "https://github.com/gageml/gage": {
+    "first_emitted": "2026-09-04",
+    "score_at_emit": 0,
+    "digest_confirmed": true
+  },
+  "https://github.com/deepmemteam/deepmem-claude-plugin": {
+    "first_emitted": "2026-09-04",
+    "score_at_emit": 0,
+    "digest_confirmed": true
+  },
+  "https://github.com/bob-codedaptive/fleet-generator": {
+    "first_emitted": "2026-09-04",
+    "score_at_emit": 0,
+    "digest_confirmed": true
+  },
+  "https://cruxxxxxx.github.io/gdx-3ds/postmortem/index.html": {
+    "first_emitted": "2026-09-04",
+    "score_at_emit": 0,
+    "digest_confirmed": true
+  },
+  "https://github.com/RiccardoCataldi/claude_sniff": {
+    "first_emitted": "2026-09-04",
+    "score_at_emit": 0,
+    "digest_confirmed": true
+  },
+  "https://github.com/franzenzenhofer/chrome-tab-group-cleaner": {
+    "first_emitted": "2026-09-04",
+    "score_at_emit": 0,
+    "digest_confirmed": true
+  },
+  "https://simonwillison.net/2026/Sep/4/astra-pelicans": {
+    "first_emitted": "2026-09-04",
+    "score_at_emit": 0,
+    "digest_confirmed": true
+  },
+  "https://www.nytimes.com/2026/09/03/technology/anthropic-ipo-investors-winners.html": {
+    "first_emitted": "2026-09-04",
+    "score_at_emit": 0,
+    "digest_confirmed": true
+  },
+  "https://fedscoop.com/anthropic-government-responses-pentagon-battle-continues-claude": {
+    "first_emitted": "2026-09-04",
+    "score_at_emit": 0,
+    "digest_confirmed": true
+  },
+  "https://venturebeat.com/orchestration/githubs-hydrafusion-cuts-ai-coding-costs-in-every-benchmark-it-only-matches-quality-in-one": {
+    "first_emitted": "2026-09-04",
+    "score_at_emit": 0,
+    "digest_confirmed": true
+  },
+  "https://mashable.com/tech/openai-chatgpt-outage-updates-grok-gemini": {
+    "first_emitted": "2026-09-04",
+    "score_at_emit": 0,
+    "digest_confirmed": true
+  },
+  "https://www.reddit.com/r/artificial/comments/1w7gpyy/has_anyone_here_moved_away_from_opencode_recently": {
+    "first_emitted": "2026-09-04",
+    "score_at_emit": 0,
+    "digest_confirmed": true
+  },
+  "https://sfstandard.com/2026/09/04/anthropic-threat-claude-sfpd": {
+    "first_emitted": "2026-09-04",
+    "score_at_emit": 0,
+    "digest_confirmed": true
+  },
+  "https://www.macrumors.com/2026/09/04/anthropics-claude-is-coming-to-carplay": {
+    "first_emitted": "2026-09-04",
+    "score_at_emit": 0,
+    "digest_confirmed": true
+  },
+  "https://www.theregister.com/ai-and-ml/2026/09/04/anthropic-lays-groundwork-for-bots-that-shop-for-you/5294621": {
+    "first_emitted": "2026-09-04",
+    "score_at_emit": 0,
+    "digest_confirmed": true
+  },
+  "https://www.pymnts.com/news/artificial-intelligence/2026/picpay-launches-anthropic-claude-integration-for-banking-inquiries": {
+    "first_emitted": "2026-09-04",
+    "score_at_emit": 0,
+    "digest_confirmed": true
+  },
+  "https://www.ft.com/content/3c9d0a82-643b-44ef-96a0-74a00e3c72ba?syn-25a6b1a6=1": {
+    "first_emitted": "2026-09-04",
+    "score_at_emit": 0,
+    "digest_confirmed": true
+  },
+  "https://singularityhub.com/2026/09/04/anthropics-claude-can-now-autonomously-run-science-experiments-with-lab-equipment": {
+    "first_emitted": "2026-09-04",
+    "score_at_emit": 0,
+    "digest_confirmed": true
+  },
+  "https://gulfnews.com/technology/media/ai-agents-found-an-abandoned-corner-of-the-internet-then-started-leaving-messages-for-each-other-1.500663659": {
+    "first_emitted": "2026-09-04",
+    "score_at_emit": 0,
+    "digest_confirmed": true
+  },
+  "https://simonwillison.net/2026/Sep/4/rogue-agent-wikis": {
+    "first_emitted": "2026-09-04",
+    "score_at_emit": 0,
+    "digest_confirmed": true
+  },
+  "https://www.theinformation.com/articles/anthropics-house-payments-tech-push-chip-away-stripe": {
+    "first_emitted": "2026-09-04",
+    "score_at_emit": 0,
+    "digest_confirmed": true
+  },
+  "https://www.technology.org/2026/09/04/chatgpt-claude-grok-simultaneous-outage": {
+    "first_emitted": "2026-09-04",
+    "score_at_emit": 0,
+    "digest_confirmed": true
+  },
+  "https://www.performancemarketingworld.com/article/1969143/anthropic-launches-claude-commerce-agents": {
+    "first_emitted": "2026-09-04",
+    "score_at_emit": 0,
+    "digest_confirmed": true
+  },
+  "https://www.reddit.com/r/artificial/comments/1w6xb24/what_the_uncertainty_costs_a_commenter_broke_my": {
+    "first_emitted": "2026-09-04",
+    "score_at_emit": 0,
+    "digest_confirmed": true
+  },
+  "https://simonwillison.net/2026/Sep/4/august-newsletter": {
+    "first_emitted": "2026-09-04",
+    "score_at_emit": 0,
+    "digest_confirmed": true
+  },
+  "https://skift.com/2026/09/03/amadeus-brings-travel-tech-into-claude": {
+    "first_emitted": "2026-09-04",
+    "score_at_emit": 0,
+    "digest_confirmed": true
+  },
+  "https://tech-insider.org/claude-fable-5-1-anti-distillation-mechanisms-2026": {
+    "first_emitted": "2026-09-04",
+    "score_at_emit": 0,
+    "digest_confirmed": true
+  },
+  "https://www.reddit.com/r/artificial/comments/1w67jcu/which_ai_tool_to_make_this_architecture_diagram": {
+    "first_emitted": "2026-09-04",
+    "score_at_emit": 0,
+    "digest_confirmed": true
+  },
+  "https://www.reddit.com/r/artificial/comments/1w5qi0f/introducing_human_tool_a_claude_code_plugin_that": {
+    "first_emitted": "2026-09-04",
+    "score_at_emit": 0,
+    "digest_confirmed": true
+  },
+  "https://www.reddit.com/r/artificial/comments/1w4jzfy/claude_fable_51_and_claude_mythos_51_benchmarks": {
+    "first_emitted": "2026-09-04",
+    "score_at_emit": 0,
+    "digest_confirmed": true
+  },
+  "https://www.reddit.com/r/artificial/comments/1w2dfs3/gave_a_bunch_of_agents_a_task_to_make_1_online": {
+    "first_emitted": "2026-09-04",
+    "score_at_emit": 0,
+    "digest_confirmed": true
+  },
+  "https://www.reddit.com/r/artificial/comments/1w1w7f9/openai_plans_to_stop_supplying_models_to_cursor": {
+    "first_emitted": "2026-09-04",
+    "score_at_emit": 0,
+    "digest_confirmed": true
   }
 }
