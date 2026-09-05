@@ -519,3 +519,13 @@
 [Fri 2026/09/04 22:05:43.00 UTC] === Pipeline aborted (cloud, 22:00 UTC shift) ===
 [Sat 2026/09/05 01:38:05.00 UTC] Watchdog push SENT - 每日新聞 2026-09-04 缺件：抓料、日報。本機跑 /news-pipeline 2026-09-04 補
 [cloud weekly-wiki-lint-cloud STARTED 2026-09-05T03:04:11Z]
+[週六 2026/09/05 11:08:02.70] === Agent pipeline start (2026-09-04) ===
+[週六 2026/09/05 11:08:02.70] Aggregator OK
+[週六 2026/09/05 11:08:02.70] Wiki ingest OK
+[週六 2026/09/05 11:05:10.00] wiki: 補提交 .claude/rules/wiki-reporter-shared.md 防再犯條款（09-04 git stash 事故後補）
+[週六 2026/09/05 11:06:00.00] Wiki commit OK（17 files, incl. new page entities/kevin-buzzard.md）
+[週六 2026/09/05 11:07:00.00] 測試失敗且非單元測試案例（規則一致性檢查等）- web build 擋下（run_tests.py 於 test_resolve_append_only 情境下對子行程輸出解碼拋 UnicodeDecodeError，主流程接手再對 None 做字串串接拋 TypeError；屬腳本層 bug，非本輪 wiki/news 內容造成，依規範不可自行修改 run_tests.py，未進入修復迴圈）
+[週六 2026/09/05 11:07:00.00] build_web FAILED - pushing news/wiki only
+[週六 2026/09/05 11:08:30.00] Push retry: non-fast-forward rejected, pull --rebase origin master 後重試成功（無衝突，遠端僅多一筆雲端 lint 啟動標記 commit）
+[週六 2026/09/05 11:08:45.00] Single push done (news + wiki; web build skipped, gate blocked)
+[週六 2026/09/05 11:09:00.00] === Pipeline complete (agent) ===
