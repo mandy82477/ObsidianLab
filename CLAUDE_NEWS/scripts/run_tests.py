@@ -23,7 +23,9 @@ scripts/check_feature_radar.py（feature-radar 當月詳細條目 ↔ 全覽表�
 scripts/check_pending_markers.py（懸置標記語法：日期/符號對應/排版/探針品質/
 wikilink 目標存在/⟨Q-nn⟩ 雙向對帳）與 scripts/check_workflow_paths.py（GH Actions
 workflow 指名的產出路徑逐一驗存在，防 2026-09-04 那種「刪了檔沒刪登記 → git add
-exit 128 → 當天抓料整包不落地」）；任一失敗都會讓本腳本整體 exit 1。
+exit 128 → 當天抓料整包不落地」）與 scripts/check_reader_language.py（讀者語言閘：
+內部維運用語外洩到 wiki 正文，只擋 data/reader-language-baseline.json 之外的新增）；
+任一失敗都會讓本腳本整體 exit 1。
 """
 import io
 import subprocess
@@ -42,6 +44,7 @@ CHECK_PENDING_MARKERS = REPO_ROOT / "scripts" / "check_pending_markers.py"
 CHECK_TOOLS_PAGE = REPO_ROOT / "scripts" / "check_tools_page.py"
 CHECK_HIERARCHY = REPO_ROOT / "scripts" / "check_hierarchy.py"
 CHECK_WORKFLOW_PATHS = REPO_ROOT / "scripts" / "check_workflow_paths.py"
+CHECK_READER_LANGUAGE = REPO_ROOT / "scripts" / "check_reader_language.py"
 
 
 def main() -> int:
@@ -197,9 +200,23 @@ def main() -> int:
         stream.write(f"\nWARN: {CHECK_WORKFLOW_PATHS} 不存在，跳過 workflow 路徑檢查\n")
     stream.flush()
 
+    # 讀者語言閘（2026-09-05：內部維運用語外洩到讀者正文；只擋基線外的新增）
+    reader_lang_ok = True
+    if CHECK_READER_LANGUAGE.exists():
+        proc = subprocess.run(
+            [sys.executable, str(CHECK_READER_LANGUAGE)], capture_output=True, text=True, encoding="utf-8", errors="replace"
+        )
+        stream.write("\n" + (proc.stdout or "") + "\n")
+        if proc.stderr:
+            stream.write(proc.stderr + "\n")
+        reader_lang_ok = proc.returncode == 0
+    else:
+        stream.write(f"\nWARN: {CHECK_READER_LANGUAGE} 不存在，跳過讀者語言閘\n")
+    stream.flush()
+
     return 0 if (unit_ok and rules_ok and arch_docs_ok and weekly_ledger_ok
                  and freshness_ok and radar_ok and pending_ok and tools_ok and hierarchy_ok
-                 and workflow_paths_ok) else 1
+                 and workflow_paths_ok and reader_lang_ok) else 1
 
 
 if __name__ == "__main__":

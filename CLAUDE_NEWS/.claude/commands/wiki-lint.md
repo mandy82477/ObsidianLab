@@ -530,6 +530,21 @@ python scripts/wiki_graph.py gaps --top 10 --with-news
 - 回報：`連結缺口（6k）：相似候選 N 對（補連結 a／併頁候選 b／登記無需連結 c）；同新聞候選 M 對（補連結 d／併頁候選 e／登記 f）`；**連續 2 輪全是 c → 閾值太鬆，調腳本 `min_score`**
 - 同一支計算的讀者端是詳頁「你可能也想看」（build 時寫進 graph.json 的 `alsoSee`）：lint 補了連結，該對就從推薦消失，改進相連列表——兩端共用一個分數，不另養一套
 
+#### 6l. 讀者語言存量清理（每輪）`[加入: 2026-09-05]`
+
+內部維運用語（ingest／lint／派工／記者／汰出／不回訪／門檻／二手…）外洩到讀者正文，是 2026-09-05 競品頁健檢兩輪冷讀者都抓到的全站病。機械閘已上線，**只擋新增、不追殺存量**——存量得靠本步每週清。
+
+```
+python scripts/check_reader_language.py          # WARN 摘要（存量頁數／筆數／前 5 頁）
+python scripts/check_reader_language.py --list   # 禁詞清單＋讀者語言替代詞（給修的人抄）
+python scripts/check_reader_language.py --page <slug>   # 單頁清單
+```
+
+- 讀 WARN 摘要，從命中最多的頁取 **2 頁**，派 `subagent_type: "general-purpose"` + `model: "sonnet"`（機械式改寫，不需旗艦模型）逐條處理，每條三選一：**改寫成讀者語言**（用 `--list` 的替代詞）／**移進 `%% … %%` 維運備忘**（見 `.claude/rules/wiki-reporter-shared.md`「維運備忘的家」）／**登記 `data/reader-language-allow.json`**（附理由；page 與 term 不得同時填 `*`）
+- 清完該頁後從 `data/reader-language-baseline.json` 的 `pages` **移除該頁整筆**——棘輪只能往下轉，不得為了轉綠把新命中加回基線
+- 禁詞清單住 `scripts/check_reader_language.py` 頂部常數（單一來源），要增刪禁詞改那裡，不在規則檔另抄一份
+- 回報：`讀者語言（6l）：基線剩 N 頁，本輪清 M 頁，新增命中 K`——**K > 0 代表機械閘擋下了新外洩**，在回報寫出是哪頁哪句
+
 #### 漏抓帳與規則版本戳（每輪）`[加入: 2026-09-04]`
 
 - **漏抓帳**：本輪任何由使用者質疑、對抗輪或記者回報揭露、而 lint 既有步驟**本該抓到卻沒抓到**的缺陷，一律 `python scripts/lint_health.py misses add --date … --issue … --should-catch <步驟> --why <考卷外|考卷內抽樣不足|檢查失效|無對應檢查> --fix …`；每季看 `misses stats` 決定投資哪一步（在此之前「重大問題全來自使用者質疑」只是印象）
@@ -585,6 +600,7 @@ python scripts/wiki_graph.py gaps --top 10 --with-news
   - 突變測試（6i）：（`mutate` 假看守 N 處已修；`hits report` ⚠️ 步驟列出或「無」）
   - 對抗輪（6j）：（三 agent 發現 🔴/🟡/🟢 各 N，修至無阻擋意見；類型分佈一句／非本月首次 lint，跳過）
   - 連結缺口（6k）：（相似候選 N 對：補連結 a／併頁候選 b／登記無需連結 c；同新聞候選 M 對：補連結 d／併頁候選 e／登記 f）
+  - 讀者語言（6l）：（基線剩 N 頁，本輪清 M 頁，新增命中 K；K > 0 時列出哪頁哪句）
 - 品質指標（6g）：
   - ref 覆蓋率（每週）：XX%（閾值 80%），缺 ref 日期：（列出或「無」）
   - 採用驗證率（月度）：N 條中 M 條達成（XX%，僅供判讀）／非本月首次 lint，跳過
