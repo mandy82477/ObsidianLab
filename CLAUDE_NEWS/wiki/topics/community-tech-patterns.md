@@ -51,7 +51,7 @@ Multi-agent 架構與 Skills 設計已是社群定案的做法；還在試的十
 
 | 類別 | 代表技巧 | 成熟度 | 最後動態 | 核心概念 |
 |---|---|---|---|---|
-| **Multi-agent 架構** | Claude Squad、Speculative Parallelism、ccteams、OtoDock、omnigent（[[topics/community-tech-patterns#2026-09]]） | ✅ 成熟 | 2026-09-02 | orchestrator 分派 ＋ 獨立 git worktree，防答案塌縮 |
+| **Multi-agent 架構** | Claude Squad、Speculative Parallelism、ccteams、OtoDock、omnigent（[[topics/community-tech-patterns#2026-09]]） | ✅ 成熟 | 2026-09-04 | orchestrator 分派 ＋ 獨立 git worktree，防答案塌縮 |
 | **Skills 設計** | 知識框架化、流程 skill 化、免 git 雲端硬碟分享（[[topics/community-tech-patterns#2026-09]]） | ✅ 成熟 | 2026-09-02 | description 自動觸發，把書籍與流程封裝成可複用 skill |
 | **CLAUDE.md 管理** | 精簡規則策略、Self-improving Rules、防腐爛機制（[[topics/community-tech-patterns#2026-08]]） | ✅ 成熟 | 2026-08-04 | 寫成「規則」而非「建議」，CI 攔截違反架構的 PR |
 | **Hooks 與自動化** | PostToolUse 稽核、Git Hooks 品質門、Stop Hook 通知（[[topics/community-tech-patterns#2026-08]]） | ✅ 成熟 | 2026-08-02 | 強制執行勝過建議；CLAUDE.md 做偏好、Hooks 做邊界 |
@@ -185,7 +185,7 @@ Multi-agent 架構與 Skills 設計已是社群定案的做法；還在試的十
 
 - **主線：** 並行規模
 - **核心模式：** 開發者以單一長時間 Claude Code session 搭配 147 個 subagent，花費 24 天將 F-Zero X 逆向移植到 New 3DS，達成原生 60fps 立體 3D 運行
-- **與既有模式的關係：** 為「大量 subagent＋長時間單一 session」這條並行規模主線再添一個具體數量級案例（147 個 subagent、24 天），可與既有規模案例並列比較；歸入主線 [[topics/community-large-codebase-workflow]] 並行規模主線
+- **與既有模式的關係：** 為 Multi-agent 架構「大量 subagent＋長時間單一 session」這條並行規模主線再添一個具體數量級案例（147 個 subagent、24 天），可與既有規模案例並列比較；歸入主線 [[topics/community-large-codebase-workflow]] 並行規模主線
 - **可信度註記：** Show HN 一手貼文，附完整 postmortem 文章可查證流程細節；單一開發者案例，尚無其他使用者複現相同規模
 - **來源：** 「Show HN: Unofficial 3DS Port of F-Zero X Written by Claude Code」— Hacker News；[原文](https://cruxxxxxx.github.io/gdx-3ds/postmortem/index.html)
 - **成熟度：** ⏳ 新興（單一開發者案例，尚無其他使用者複現相同規模）
