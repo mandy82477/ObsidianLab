@@ -50,7 +50,7 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 | 爭論 | 現在狀態 | 最後一則證據 | 證據硬度 | 官方怎麼說 |
 |---|---|---|---|---|
 | **CLAUDE.md 與提示詞該寫多少**：寫滿規則讓它照做，還是愈精簡愈準 | 還在吵 | 2026-08-28「指令堆疊難以追溯」（[[topics/community-tech-discussions#🌊 持續關注中的長期議題]]） | 官方一手 ＋ 跨平台多來源 | 官方 2026-07-24 部落格：Claude 5 世代已移除逾八成 Claude Code 系統提示詞，程式評測無可測量的退步 |
-| **AI 輔助會不會讓人能力退化**（Skill Atrophy） | 還在吵 | 2026-08-28「市場硬性要求驅動的全面轉向」（[[topics/community-tech-discussions#🌊 持續關注中的長期議題]]） | 官方一手研究 ＋ 多則單一貼文自述 | Anthropic 2026-01 對照實驗：用 AI 的一組在剛學過的概念測驗低 17%，且「怎麼用」決定退化多少 |
+| **AI 輔助會不會讓人能力退化**（Skill Atrophy） | 還在吵 | 2026-08-28「市場硬性要求驅動的全面轉向」，該則為單一低互動（HN 13 分）（[[topics/community-tech-discussions#🌊 持續關注中的長期議題]]） | 官方一手研究 ＋ 四則獨立貼文自述，無跨平台佐證 | Anthropic 2026-01 對照實驗：用 AI 的一組在剛學過的概念測驗低 17%，且「怎麼用」決定退化多少 |
 | **換到開源模型的代價是不是接近零** | 還在吵 | 2026-09-04「NYT〈Corporate America is」（[[topics/community-tech-discussions#2026-09]]） | 跨媒體與社群多來源 | 無官方回應；商業面事實見 [[topics/anthropic-business]] |
 | **auto 模式算不算一道安全邊界** | 還在吵 | 2026-09-02「Show HN: Aura——SRE」（[[topics/community-tech-discussions#2026-09]]） | 官方文件 ＋ 社群單則實作經驗 | 官方：由第二個分類器模型逐一審動作，但對話裡設的邊界可能因壓縮而遺失，要硬保證得改用 deny 規則 |
 | **輸出浮水印與帳號執法透明到什麼程度才夠** | 還在吵 | 2026-09-02「付費帳號無預警遭停權」（[[topics/community-tech-discussions#🌊 持續關注中的長期議題]]） | 具名評論人 ＋ 四家媒體同日跟進 | 官方 2026-08-11 公告浮水印政策，適用全產品線且不可退出；停權申訴管道未見官方說明 |
@@ -58,7 +58,7 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 | **規格驅動還是 vibe coding** | 已吵出共識 | 2026-06-22「工業規格驅動 Claude Code」（[[topics/community-tech-discussions#2026-06]]） | 多來源，含工業規格導入案例 | 無官方回應 |
 | **AI 該寫多少程式碼、該不該把工作改寫成 loop** | 僵住 | 2026-06-24「立場收縮」（[[topics/community-tech-discussions#🌊 持續關注中的長期議題]]） | 具名表態，社群兩極化 | 無公司層說法；創始人本人言論軌跡見 [[entities/boris-cherny]] |
 | **thinking 內容能不能自己核驗** | 僵住 | 2026-06-23「Extended Thinking 為摘要」（[[topics/community-tech-discussions#2026-06]]） | 官方文件 ＋ 單次高互動討論 | 官方文件：5 世代預設不回思考內容、只回加密簽名，需要完整輸出得另行洽談（2026-09-06 查證） |
-| **HTML 還是 Markdown 當輸出格式** | 僵住 | 2026-05-20「HTML 取代 Markdown 作為」（[[topics/community-tech-discussions#2026-05]]） | 單次高互動討論 ＋ 官方部落格一則 | 無官方立場 |
+| **HTML 還是 Markdown 當輸出格式** | 僵住 | 首見 2026-05-09「HTML 取代 Markdown 作為」，最後證據 2026-05-20 官方 Blog 背書（同一則條目內，見[[topics/community-tech-discussions#2026-05]]） | 單次高互動討論 ＋ 官方部落格一則 | 無官方立場 |
 
 **狀態怎麼看：**還在吵＝六十天內雙方都還有人出手；已吵出共識＝多方指向同一結論、近期沒有新的反方證據；僵住＝超過六十天沒有新證據，雙方也都沒有再推進。
 
@@ -147,7 +147,7 @@ MCP 的實際成本遠超多數使用者預期，已有多個量化案例：
 
 | 討論主題 | 首見 · 最後動態 | 當時熱度 | 模式 | 核心論點 | 衍生 |
 |---------|------|------|------|---------|------|
-| PhiloLabs/fable51-worlds HN 討論串：不同模型 3D 世界建模效果與成本比較，README 疊圖對比證據受質疑 | 2026-09-03 · 2026-09-03 | 🔥🔥🔥 | ☄️閃現 | HN Repo Bridge score 303，惟僅擷取兩則留言；一則稱 Opus 5 效果相當更省錢但面數偏高未最佳化，另一則質疑 README 疊圖對比「無法對齊鏡頭」缺乏說服力 | — |
+| PhiloLabs/fable51-worlds HN 討論串：不同模型 3D 世界建模效果與成本比較，README 疊圖對比證據受質疑 | 2026-09-03 · 2026-09-03 | 🔥🔥🔥 | ☄️閃現 | 主帖比較不同模型 RTS 3D 建模成本；score 303 惟僅兩則留言：一稱 Opus 5 較省錢但面數偏高，一質疑疊圖對比無說服力 | — |
 | Show HN: Aura——SRE 團隊因 context 溢位、提示注入風險與核准疲勞自建 Rust 事故應變 agent | 2026-09-02 · 2026-09-02 | 🔥 | ☄️閃現 | 作者所屬 SRE 團隊曾用 Claude／OpenClaw／LangChain 做事故應變，遇 context 溢位、提示注入風險、幻覺、核准疲勞問題，且不願放寬正式環境權限，故自建 Rust agent；HN score 21 | — |
 | 使用者付費帳號無預警遭停權（後已恢復），引發社群對帳號執法透明度的討論 | 2026-09-02 · 2026-09-02 | 🔥🔥🔥 | ☄️閃現 | 使用者記述帳號因「suspicious signals」無預警遭停權、事後已恢復，過程缺乏清楚申訴管道；HN score 39；呼應本頁「Anthropic 透明度與信任赤字」長期議題既有 2026-06-23 帳號封禁無申訴管道軸線 | — |
 | HN 討論質疑 AISLE「curl 六個 CVE、OpenAI 與 Anthropic 掃出零個」資安行銷手法 | 2026-09-02 · 2026-09-02 | 🔥🔥🔥 | ☄️閃現 | AISLE 部落格宣稱其工具找出 6 個 curl CVE，同時暗示 OpenAI／Anthropic 的找漏洞工具零命中；HN score 31，留言質疑此為競爭性資安行銷手法，非公允能力對比 | — |
@@ -158,7 +158,7 @@ MCP 的實際成本遠超多數使用者預期，已有多個量化案例：
 | Simon Willison 轉介 Anil Madhavapeddy：僅憑漏洞傳聞就足以讓資安研究者鎖定並找到可利用漏洞 | 2026-08-28 · 2026-08-28 | 🔥 | ☄️閃現 | Anil Madhavapeddy 觀察筆記：僅漏洞傳聞已足以讓資安研究者鎖定並找到可利用漏洞，呼應近期多起 AI coding agent 資安事件（具名表態，無社群延燒）；[原文](https://simonwillison.net/2026/Aug/28/just-a-rumour-of-a-bug/)（Blog） | — |
 | 社群長期呼籲 Claude Code 支援 AGENTS.md 標準格式，跨平台已成競品共識 | 2026-08-27 · 2026-08-27 | 🔥🔥🔥🔥 | ☄️閃現 | [GitHub Issue #6235] 指出競品已統一採用 AGENTS.md，累積 385 則留言、6525 個 👍 | — |
 | Reddit r/artificial 週熱門：新基準 HarnessOpt-Bench 測試前沿 LLM 改寫其他 agent harness 的能力並防作弊 | 2026-08-27 · 2026-08-27 | 🔥 | ☄️閃現 | 社群發布 HarnessOpt-Bench，測試 5 款前沿 LLM 改寫其他 agent harness 的能力，並設計防作弊機制；Reddit r/artificial 週熱門標記 | — |
-| 用量限制驅動的「規劃用 Claude Code、實作交給本地模型」混合工作流小趨勢 | 2026-08-21 · 2026-08-26 | 🔥🔥 | 🌊延燒 | 近一週至少三則案例（Reddit×2＋XDA）主張因用量限制而「規劃用 Claude Code、執行交給本地模型」分流 | — |
+| 用量限制驅動的「規劃用 Claude Code、實作交給本地模型」混合工作流小趨勢 | 2026-08-21 · 2026-08-27 | 🔥🔥 | 🌊延燒 | 近一週至少三則案例（Reddit×2＋XDA）主張因用量限制而分流；最後動態 2026-08-27（XDA 報導） | — |
 | Anthropic 潛在市場規模「30 兆美元」說法引發社群質疑：留言指出這是產業潛在市場總量，非實際營收承諾 | 2026-08-26 · 2026-08-26 | 🔥 | ☄️閃現 | WSJ 報導 Anthropic 稱潛在市場規模達 30 兆美元；HN 留言（score 39）指出這是產業 TAM 估計，非營收承諾 | — |
 | Simon Willison 引述 Paul Dix：AI 寫了 100 萬行程式碼，仍需花數月精煉才能產出可靠軟體 | 2026-08-26 · 2026-08-26 | 🔥 | ☄️閃現 | Paul Dix：AI 一次寫出 100 萬行程式碼，仍需數月精煉才能產出可靠軟體（Simon Willison 轉引） | — |
 | Reddit r/ClaudeAI 週熱門：配偶遭資遣後用 Claude 打造求職平台，已促成三人獲聘 | 2026-08-24 · 2026-08-24 | 🔥 | ☄️閃現 | 使用者稱配偶遭資遣後用 Claude 打造求職平台，已促成三人獲聘（Reddit r/ClaudeAI 週熱門） | — |
@@ -169,7 +169,7 @@ MCP 的實際成本遠超多數使用者預期，已有多個量化案例：
 | Simon Willison：善用 coding agent 的核心技能是精準下達修改指令並確信驗證變更已如預期套用 | 2026-08-22 · 2026-08-22 | 🔥 | ☄️閃現 | Simon Willison 部落格主張，使用 coding agent 的關鍵技能並非傳統程式碼審查，而是「能自信地指示 agent 如何修改，並自信地驗證變更確實已依預期套用」；具名表態，無社群延燒；[原文](https://simonwillison.net/2026/Aug/22/more-than-just-code-review/)（Blog） | — |
 | Geeky Gadgets 教學文：面對新一代 Anthropic 模型，精簡提示詞優於逐步微觀管理 | 2026-08-22 · 2026-08-22 | 🔥 | ☄️閃現 | Geeky Gadgets 教學文：面對新一代 Anthropic 模型，精簡提示詞優於逐步微觀管理（媒體報導，待社群接力） | — |
 | 「一週改用 Codex 多過 Claude」個人心得重提工具選擇議題，附 skill 移植技巧 | 2026-08-21 · 2026-08-21 | 🔥🔥🔥 | ☄️閃現 | 改用 Codex 一週心得：Claude 累積較多自建 skills，靠 Codex 讀取轉換；HN score 91 | — |
-| Opus 5.0 用語浮誇引爆「行話」批評，Anthropic 疑似用 Claude 代寫官方回覆再添爭議：跨 HN／Reddit 延燒，issue 持續增溫 8 天 | 2026-08-19 · 2026-08-27 | 🔥🔥🔥🔥 | 🌊延燒 | Opus 5.0／Fable 用語浮誇批評延燒 8 天：Issue #77136 累積 106 則留言、517 反應，HN score 181，升格🌊延燒 | — |
+| Opus 5.0 用語浮誇引爆「行話」批評，Anthropic 疑似用 Claude 代寫官方回覆再添爭議：跨 HN／Reddit 延燒，issue 持續增溫 8 天 | 2026-08-19 · 2026-08-27 | 🔥🔥🔥🔥 | 🌊延燒 | Issue #77136 累積 106 則留言、517 反應，HN score 181；最後動態 2026-08-27（累積留言數截至日） | — |
 | Reddit r/ClaudeAI 週熱門：對無限 token 用量體驗的感想，與本頁「額度焦慮系列」形成對照 | 2026-08-21 · 2026-08-21 | 🔥 | ☄️閃現 | 使用者分享無限 token 用量體驗，與本頁「額度焦慮系列」形成對照（Reddit r/ClaudeAI 週熱門） | — |
 | arXiv 論文主張不應將模型解答前的中間 token 直接擬人化稱為「推理／思考痕跡」 | 2026-08-19 · 2026-08-19 | 🔥 | ☄️閃現 | arXiv 論文（2504.09762）主張不應將中間 token 擬人化稱「推理／思考痕跡」；HN score 38 | — |
 | Simon Willison：smolmachines/smolvm 作為執行不受信任 Python／JavaScript 的沙盒方案 | 2026-08-19 · 2026-08-19 | 🔥 | ☄️閃現 | smolmachines/smolvm 作為執行不受信任 Python／JavaScript 程式碼的沙盒方案（具名表態，無社群延燒） | — |
@@ -192,17 +192,19 @@ MCP 的實際成本遠超多數使用者預期，已有多個量化案例：
 | OpenAI vs Anthropic 定價戰：「AI 成本大戰開打」（最後動態 2026-06-11，逾 45 天無新證據改標靜候） | 2026-06-11 · 2026-06-11 | 🔥🔥🔥🔥 | 🌙靜候 | WSJ/CNBC：OpenAI 考慮大幅削減 token 費用因應 Anthropic 降價，AI 定價競爭轉向成本戰 | — |
 | AI Skill Atrophy：「做更多、理解更少」 | 2026-06-10 · 2026-08-28 | 🔥🔥🔥🔥 | 🌊延燒 | HN Ask：Prompt-Then-Review 迴圈讓能力侵蝕；社群無共識但警覺度升高；最後動態 08-28（市場全面轉向，見上方長期議題） | — |
 | Boris Cherny「coding is solved」/ 反 vibe coding（最後動態 2026-06-24，逾 45 天無新證據改標靜候） | 2026-05-08 · 2026-06-24 | 🔥🔥🔥🔥🔥 | 🌙靜候 | 多平台（HN/Business Insider/YouTube）廣泛討論，社群兩極化；術語從 vibe coding 走向 spec-driven；06-24 Boris Cherny 公開為此論述設下邊界（立場收縮，見上方長期議題） | — |
-| 工具生態發現性問題 | 持續 · 2026-09-02 | 🔥 | 🌙靜候 | Skills/MCP 散落各處，缺乏集中發現機制；2026-09-02 skilldock 針對此痛點推出集中管理桌面應用，惟生態層級的發現機制本身仍未解決，維持靜候 | skilldock |
+| 工具生態發現性問題 | 2026-05-15 · 2026-09-02 | 🔥 | 🌙靜候 | Skills/MCP 散落各處，缺乏集中發現機制；2026-09-02 skilldock 針對此痛點推出集中管理桌面應用，惟生態層級的發現機制本身仍未解決，維持靜候 | skilldock |
 
 > 當時熱度的意思是首見那時的討論規模：🔥🔥🔥🔥🔥 跨平台廣泛熱議 / 社群兩極化；🔥🔥🔥 單平台高互動 / 議題共鳴深；🔥🔥 多次被引用 / 催生後續工具；🔥 值得關注但尚未擴散
 
-**熱門討論細節**
+**已不在上表的討論：** 下列討論超過三個月沒有新證據，原文仍讀得到——LLMs 製造虛假忙碌、Context 管理是大型專案核心瓶頸、多 LLM 協作架構哲學（皆見 [[topics/community-tech-discussions-archive#2026-05]]）；HTML 還是 Markdown 當輸出格式的原文留在本頁 [[topics/community-tech-discussions#2026-05]]，那場爭論現在什麼狀態見上方「現在吵到哪」。
+
+**最近在討論什麼細節**
 
 - **使用者付費帳號無預警遭停權（後已恢復），引發社群對帳號執法透明度的討論**：使用者部落格文章記述自己付費帳號無預警因「suspicious signals」遭停權，事後已恢復，過程中缺乏清楚的申訴管道與說明；HN score 39；與本頁「🌊 持續關注中的長期議題」「Anthropic 透明度與信任赤字」既有 2026-06-23「帳號封禁無申訴管道」軸線同屬一條「帳號執法不透明」議題，本則是該軸線最新獨立訊號；本頁僅記錄社群對帳號執法透明度的反應角度，政策面（管制依據、申訴機制設計）不在此展開；[原文](https://kix.codes/anthropic-banned-me-for-suspicious-signals/)（HN）
 - **HN 討論質疑 AISLE「curl 六個 CVE、OpenAI 與 Anthropic 掃出零個」資安行銷手法**：資安新創 AISLE 部落格宣稱其自動化工具找出 curl 專案 6 個 CVE，同時暗示 OpenAI 與 Anthropic 的自動化找漏洞工具在同一目標上零命中；HN score 31，留言區普遍質疑這是刻意設計的競爭性資安行銷敘事而非嚴謹能力對比（如未說明測試方法論、樣本範圍是否公平）；本頁僅記錄社群對此類「拿 Claude/Anthropic 當對照組」資安行銷手法的信任度質疑，技術細節不在此展開；[原文](https://aisle.com/blog/aisle-discovered-six-curl-cves-after-openai-and-anthropic-found-zero)（HN）
 - **Claude Code 意外遺失印度 Mythic Society 多年累積的班加羅爾文化遺產紀錄工作，HN 討論聚焦自主 agent 損害究責與備份習慣**：Deccan Herald 報導，印度文化機構 Mythic Society 使用 Claude Code 過程中，多年累積的班加羅爾文化遺產紀錄工作意外遺失，該機構現正投入資金強化備份系統；HN score 17，討論聚焦於自主 agent 造成不可逆損害時的究責歸屬（該由使用者的備份習慣還是工具的預設安全邊界負責），與 [[topics/community-tech-patterns]] 2026-08-30「一句話觸發遞迴刪檔」節點同屬「模糊指示或自主行動觸發破壞性結果」議題軸線，本則是該軸線首個造成真實文化資產損失、非虛構個人專案的具名機構案例；[原文](https://www.deccanherald.com/india/karnataka/bengaluru/when-claude-code-went-rogue-years-of-bengaluru-heritage-work-disappeared-4131958)（HN）
 - **Claude Session URL 預設寫入 commit/PR，同日另一篇部落格主張「不再需要標註 Co-author」：AI 貢獻歸因方式正反並陳**：[GitHub Issue #66504](https://github.com/anthropics/claude-code/issues/66504) 討論串多數人贊成把 session 連結預設附加在 commit 訊息與 PR 說明中，認為這是合理的歸因方式，且使用者仍可自行選擇是否公開該 session；HN score 204。同日另一篇部落格〈[I am no longer letting Claude Code add itself as Co-author in my commits](https://igupta.in/blog/why-i-am-no-longer-letting-claude-code-add-itself-as-coauthor/)〉，作者說明自己曾長期主張為 LLM 產生的 commit 加註 Claude Code 共同作者，如今認為使用 LLM 已成常態、不再需要特別標註；HN score 20。兩篇同日出現、立場相反（「該不該標註 AI 參與」的兩種答案：預設公開歸因 vs 認為標註已無意義），並陳呈現、不擇一下定論；與本頁「Anthropic 透明度與信任赤字」長期議題相關但視角不同——本則關注**使用者自己**如何對外揭露 AI 參與程度，非 Anthropic 對使用者的透明度承諾；[原文 1](https://github.com/anthropics/claude-code/issues/66504)（GitHub Issue／HN）、[原文 2](https://igupta.in/blog/why-i-am-no-longer-letting-claude-code-add-itself-as-coauthor/)（HN）
-- **Reddit r/MachineLearning 週熱門：分析 31,352 筆逐時 LLM benchmark 分數**：同日波動 2.8 分、跨日 8.4 分，單次跑分可能低估雜訊；與既有議題軸線相關（[[topics/community-tech-discussions-archive#2026-05]]）；[原文](https://www.reddit.com/r/MachineLearning/comments/1w1jp1j/i_analyzed_31352_hourly_llm_benchmark_scores/)（Reddit · 週熱門）
+- **Reddit r/MachineLearning 週熱門：分析 31,352 筆逐時 LLM benchmark 分數**：同日波動 2.8 分、跨日 8.4 分；與「LLMs 製造虛假忙碌？」「多 LLM 協作架構哲學」軸線相關（[[topics/community-tech-discussions-archive#2026-05]]）；[原文](https://www.reddit.com/r/MachineLearning/comments/1w1jp1j/i_analyzed_31352_hourly_llm_benchmark_scores/)（Reddit · 週熱門）
 - **Ask HN：如何戒除 Claude Code「工作狂式」依賴，找回可長期維持的正常工作步調**：工程師發文求助：隨工作日推進、時間漸緊，其寫程式風格逐漸從「自己設計並撰寫、僅在卡關時求助 Claude Code」滑向對其依賴加深，目標是重新找回能穩定收工、對當日改動仍保有理解、下班後可放下工作的步調；HN score 11，屬個人反思型討論，尚未見跨平台延燒或具體解法共識；與本頁「Vibe coding 成就感缺失」（06-18）、「AI Skill Atrophy」（06-10+）同屬「AI 輔助程度與掌控感／能力保有」議題軸線，本則聚焦工作步調與收工感，非能力退化或認同困惑角度
 - **社群長期呼籲 Claude Code 支援 AGENTS.md 標準格式，跨平台已成競品共識**：[GitHub Issue #6235](https://github.com/anthropics/claude-code/issues/6235) 指出 Codex、Amp、Cursor 等競品已陸續統一採用 AGENTS.md 作為跨工具 agent 配置標準，Claude Code 目前僅支援自家 CLAUDE.md 格式；該 issue 已累積 385 則留言、6525 個 👍 反應；與本頁既有技術彙整「AGENTS.md 跨工具插件簡報」（Kobiton 案例）、[[topics/community-tech-patterns]] 記錄的 Caliber（跨工具設定統一管理工具）同屬「AGENTS.md 是否該成為業界標準」議題軸線，本則是該軸線首次以官方 issue 高互動度呈現的直接訴求；issue 本身完整記錄見 [[entities/claude-code]] 已知問題，此處僅記錄其作為跨平台標準之爭的社群訊號面；[GitHub Issue #6235](https://github.com/anthropics/claude-code/issues/6235)（GitHub Issues）
 - **用量限制驅動的「規劃用 Claude Code、實作交給本地模型」混合工作流小趨勢**：近一週至少三則同方向案例：r/LocalLLaMA 使用者戲謔宣告「Pro 訂閱到期後改用本地 Qwen3.8-27B，已 7 小時沒用 Claude Code」（[原文](https://www.reddit.com/r/LocalLLaMA/comments/1vu1e3u/i_did_it_im_free_its_been_7_hours_since_i_used/)，週熱門，08-21）；另一使用者因 Max 訂閱每日用完額度三次，設計 MCP 架構把部分工作分擔給本地 Qwen3.8-27B（[原文](https://www.reddit.com/r/LocalLLaMA/comments/1vze6jl/running_local_llms_as_agents_in_claude_code/)，08-27）；XDA 媒體報導同方向混合工作流，宣稱藉此不再撞到用量上限（[原文](https://www.xda-developers.com/use-claude-code-for-planning-but-a-local-model-for-building/)，08-27，Google News）；三則跨 2 平台、逾 6 天持續出現同一「本地模型分流因應用量限制」主張，與本頁 08-19「樹莓派本地模型宣稱超越 Opus 5 High」（☄️閃現、單一貼文、訊號強度極弱）方向一致但屬不同具體宣稱，本則聚焦「工作流分工」而非「效能對比」；與 [[topics/community-tech-patterns]] 07-05「本地小模型分流節省 Context」機制觀察同屬一條「用量限制→本地模型分流」實務軸線
@@ -300,7 +302,7 @@ MCP 的實際成本遠超多數使用者預期，已有多個量化案例：
   - 🧪 補充事實（NPR）：浮水印技術細節為「不可見」，隨複製貼上留存
   - 📝 延伸反彈（Yahoo Tech）：讀者擔憂使用 AI 生成內容的行為將被浮水印技術輕易識破
   - 📝 延伸反彈（inc.com）：報導聚焦訂閱用戶對此功能上線的具體不滿，提供與 NPR/Yahoo 報導不同的「訂閱用戶」切角
-- **收斂結論：**（無）尚無 Anthropic 官方對此輪媒體批評的公開回應；本輪升級屬於既有 08-11 Reddit 反彈議題的媒體規模放大，非全新事件——完整脈絡與 08-11/08-13 原始社群反彈記錄、政策細節查證見上方「熱門討論」表格對應列與懸置細節 ⟨Q-03⟩，本節僅記錄 08-17 媒體規模升級的獨立進展，不重複展開政策細節
+- **收斂結論：**（無）尚無 Anthropic 官方對此輪媒體批評的公開回應；本輪升級屬於既有 08-11 Reddit 反彈議題的媒體規模放大，非全新事件——完整脈絡與 08-11/08-13 原始社群反彈記錄、政策細節查證見上方「最近在討論什麼」表格對應列與懸置細節 ⟨Q-03⟩，本節僅記錄 08-17 媒體規模升級的獨立進展，不重複展開政策細節
 
 ### 2026-07
 
@@ -656,13 +658,13 @@ MCP 的實際成本遠超多數使用者預期，已有多個量化案例：
 
 **表下「沒有列進上表的一場」（AI 生成程式碼能不能直接上線）的唯一細節出處**
 
-- **90% AI 生成應用存在安全漏洞**：48 個應用程式掃描結果（44% 驗證缺口、33% RLS bypass、25% BOLA/IDOR）是目前最具說服力的具體數據，直接挑戰「AI 快速開發即可上線」假設
+- **90% AI 生成應用存在安全漏洞**：48 個應用程式掃描結果（44% 驗證缺口、33% RLS bypass、25% BOLA/IDOR）是目前最具說服力的具體數據，直接挑戰「AI 快速開發即可上線」假設。原文數字查無出處，外部研究為 45–62%（Veracode／OX 2026），見上方「現在吵到哪」表下說明
 - **開發流程含義**：Claude Code 開發者應將安全審查（如 Snyk + Claude Code 整合，2026-05-10）納入標準 PR 流程；AI 生成程式碼不比人工撰寫更安全，快速開發的速度優勢可能掩蓋安全問題
 - **與 Claude Security 的關係**：此研究為 Anthropic 的 Claude Security 公開 Beta（2026-05-06）和社群工具 Trent（架構層安全評估）提供了需求支撐；見 [[entities/claude-security]]、[[topics/ai-agent-safety]]
 
 #### HTML 取代 Markdown 作為 Claude Code 輸出格式（2026-05-09）
 
-**爭論表第 10 列「HTML 還是 Markdown 當輸出格式」的最後一則證據**
+**首見 2026-05-09（本則標題日期）；最後一則證據為下方 2026-05-20 官方 Blog 背書（爭論表第 10 列「HTML 還是 Markdown 當輸出格式」引用的正是這一則）**
 
 - **來源：** Twitter @trq212 貼文，引發 HN 187 則討論
 - **原始論點**：HTML 在視覺呈現與資訊密度上有顯著優勢，可利用 CSS 樣式呈現結構化資訊、鏈接、列表

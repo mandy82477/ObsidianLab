@@ -524,12 +524,6 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 - **Eval harness 驗證 Claude 是否幻覺**：更值得關注的是開發者同時建立了評估框架，主動驗證 Claude 回答是否存在幻覺，是社群中少數將「驗證機制」系統性納入 AI 工作流的案例；與 Judge Gate（2026-05-11）的語意層驗證概念相呼應——「不能只靠 AI 說它對就算對」
 - **意義**：RAG 降耗已成社群共識，此案例的亮點是「評估閉環」設計，為 AI 知識庫工作流提供了更可靠的品質保證路徑
 
-#### AI 生成程式碼安全審查必要性（2026-05-13）
-
-- **90% AI 生成應用存在安全漏洞**：48 個應用程式掃描結果（44% 驗證缺口、33% RLS bypass、25% BOLA/IDOR）是目前最具說服力的具體數據，直接挑戰「AI 快速開發即可上線」假設
-- **開發流程含義**：Claude Code 開發者應將安全審查（如 Snyk + Claude Code 整合，2026-05-10）納入標準 PR 流程；AI 生成程式碼不比人工撰寫更安全，快速開發的速度優勢可能掩蓋安全問題
-- **與 Claude Security 的關係**：此研究為 Anthropic 的 Claude Security 公開 Beta（2026-05-06）和社群工具 Trent（架構層安全評估）提供了需求支撐；見 [[entities/claude-security]]、[[topics/ai-agent-safety]]
-
 #### Context 管理是大型專案 Claude Code 的核心瓶頸（2026-05-12）
 
 - **主流認知更新**：在大型專案使用 Claude Code 的最大瓶頸被確認是 Context 管理，而非程式碼生成品質——LLM 的 attention 機制在缺乏完整系統全貌時，會生成「看起來正確但邏輯有誤」的程式碼
@@ -556,14 +550,6 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 - **多層防護必要性**：作者發現所有 PR 通過單一 AI reviewer 後仍上線 3 個 bug，轉而測試三層疊加式 AI code review 流程；對依賴單一 AI reviewer 作為最後防線的團隊是有用的警示
 - **與社群 4-agent Code Review 工作流的關係**：此文件測試的是「多層次（multi-layer）」而非「多代理（multi-agent）」review，關注深度層次分工 vs 角色分工，兩種方向互補
 
-#### HTML 取代 Markdown 作為 Claude Code 輸出格式（2026-05-09）
-
-- **來源：** Twitter @trq212 貼文，引發 HN 187 則討論
-- **原始論點**：HTML 在視覺呈現與資訊密度上有顯著優勢，可利用 CSS 樣式呈現結構化資訊、鏈接、列表
-- **反駁意見**：社群指出 HTML 文件難以讓人類協同編輯，對需要人機共同作者的文件場景可能反而是阻礙；Markdown 的簡潔性在版本控制與 diff 比較中有不可替代的優勢
-- **適用場景邊界**：社群反駁指出 HTML 難以人機協同編輯，隱含 HTML 更適合不需人工後續編輯的輸出；「純機器消費」為推論，非社群原文說法
-- **關鍵回響：** 📝 支持：2026-05-20 Anthropic 官方 Blog《The unreasonable effectiveness of HTML》正式背書，論據為表達能力強 + 瀏覽器直接開啟 + 分享便利
-
 #### Boris Cherny 反「vibe coding」與技術術語演化（2026-05-08）
 
 - **術語疲勞與主張**：Claude Code 創始人 Boris Cherny 在「Code with Claude」大會公開表示厭倦「vibe coding」一詞，正尋找替代描述，同時宣稱「寫程式問題已被解決」（coding is solved），2026 年自己從未手寫一行程式
@@ -587,12 +573,6 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 
 - **研究規模與方法**：系統性整理並實測 120 種提示詞模式，資料來源涵蓋 Discord、GitHub、Twitter 及個人使用三個月，是目前社群最大規模的實證型 prompt 效果驗證
 - **驗證標準**：以可量測的輸出差異為判斷依據而非主觀感受；相比 Caveman 基準測試（24 題），此研究規模與方法論更嚴謹，結果有助於建立社群 prompt engineering 共識
-
-#### Skill Atrophy 反思與對策（2026-05-07）
-
-- **「理解是租來的，不是賺來的」**：開發者公開坦誠使用 Claude Code 一週內可出三個功能，但三天後看不懂自己的程式碼；「AI 加速開發 + 理解外包」的副作用引發大量開發者共鳴，技能退化（skill atrophy）問題浮出水面
-- **36 個記憶檔案對策**：使用 Claude Code 60 天後整理出 36 個結構化記憶檔（per-project 持久記憶），根本解決 Agent 每次重啟都要重新說明背景的問題，對長期維護專案尤為實用
-- **recap 工具主動對抗 skill atrophy**：掃描過去 N 天的 Claude Code 與 Codex 對話，找出開發者遭遇陌生概念的片段，自動產出概念說明摘要，幫助開發者在 AI 加速開發中主動補強知識盲點
 
 #### Wire Trace 揭示的架構侷限（2026-05-07）
 
