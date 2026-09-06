@@ -165,7 +165,7 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 - **揭露來源**：SecurityWeek（[Anthropic Warns Claude Users of Infostealer Malware Infections](https://www.securityweek.com/anthropic-warns-claude-users-of-infostealer-malware-infections/)）；Search Engine Journal（[Anthropic Warns Hackers Are Stealing Claude Sessions To Hijack Accounts](https://www.searchenginejournal.com/anthropic-warns-hackers-are-stealing-claude-sessions-to-hijack-accounts/587566/)）
 - **核心主張（僅標題層級可用）**：Anthropic 官方發出警示，稱資訊竊取型（infostealer）惡意軟體正鎖定 Claude 使用者，竊取其 session 憑證，藉此劫持帳號存取權；感染管道（是否透過瀏覽器擴充功能、假冒安裝包或其他向量）、受影響規模、是否已有具體受害案例均未見報導
 - **性質判斷**：屬威脅情資通報而非產品漏洞揭露——由 Anthropic 官方主動示警，性質與本頁既有 07-21～07-22 FakeAgent 惡意廣告偽裝下載頁竊密木馬（SectopRAT）案例相近，皆為第三方攻擊者針對 Claude 使用者的社交工程/憑證竊取攻擊，非 Claude 產品本身缺陷
-- ✅ **2026-08-30 官方處置**：Anthropic 主動通知受影響用戶、強制登出、移除已存付款方式並退款未授權扣款；惡意軟體家族含 Vidar、LummaC2、StealC、RedLine、Acreed、AMOS，平台本身未被入侵
+- ✅ **2026-08-30 官方處置**：Anthropic 主動通知受影響用戶、強制登出、移除已存付款方式並退款未授權扣款；惡意軟體家族含 Vidar、LummaC2、StealC、RedLine、Acreed、AMOS，平台本身未被入侵。
 - **可信度評估**：兩獨立媒體（SecurityWeek、Search Engine Journal）均轉載同一 Anthropic 官方警示，惟均僅標題層級內容，Anthropic 原始公告全文未見引用
 
 ### LM Studio Bionic：82% shell 指令未經 AI reviewer 放行即可執行，reviewer 模型可被提示注入騙過（2026-08-31 新增）
