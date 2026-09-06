@@ -11,6 +11,7 @@
 | **fork（繼承脈絡的子代理）** | 「inherits the entire conversation so far instead of starting fresh」；「Forks skip both filters and receive the main conversation's exact tool pool」；`/subtask` 起（v2.1.212+） | 社群「Speculative Parallelism／答案塌縮」那類模式的官方原語 |
 | **背景執行預設** | 「Where fork mode is on … Claude Code runs the subagent in the background, forks and non-fork subagents alike」；fork mode 互動 session 預設 on；背景子代理工具集較小、權限提示全浮到主 session | 對讀者 Q1「跟兩個月前差在哪」的官方答案之一（2.1.232 起） |
 | **agent 間通訊原語** | 子代理收到 system reminder 列出 `main` 與所有具名 agent，皆為 `SendMessage` 的合法 `to`（v2.1.206+）；「Claude uses the `SendMessage` tool with the agent's ID or name as the `to` field to resume it」 | 學術「communication primitive」那欄：官方已有點對點訊息＋續用（resume），不只是 return value |
+| **orchestrator／worker 分別指定模型** | subagent 定義有 `model` 欄（`sonnet`／`opus`／`haiku`／`inherit`）；Agent tool 呼叫可帶 `model` 覆寫；`CLAUDE_CODE_SUBAGENT_MODEL` 全域指定；teams 文件：「Use Sonnet for each teammate」＋四級模型選擇順序 | 冷讀者抓到本頁自相矛盾：缺口表 L148 寫「無一級支援 ❌ 未補」，L71 卻引官方基準 46% 成本／96% 效能。官方**已有一級支援**，缺口表那列該翻 ✅ 並標日期 |
 | **agent teams／cross-session** | 文件分兩頁：agent teams（「a coordinated team of sessions Claude spawns and supervises」）與 cross-session messaging（「separate sessions that pass messages to each other」） | 見第二節 |
 
 ## 二、agent teams 與 cross-session messaging（[agent-teams](https://code.claude.com/docs/en/agent-teams)、[cross-session-messaging](https://code.claude.com/docs/en/cross-session-messaging)）
