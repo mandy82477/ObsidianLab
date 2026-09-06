@@ -94,7 +94,7 @@
 | [[topics/anthropic-commitments]] | 🏛️ 政策/安全 | ongoing | 承諾兌現追蹤：「Anthropic 說過要做的事做了嗎」——官方承諾/拒絕建檔，狀態變化時每日更新 |
 | [[topics/code-quality-decline]] | 🌐 社群 | ongoing | Claude Code 效能退步事件，Anthropic 已承認工程疏失 |
 | [[topics/competitor-landscape]] | 💼 商業 | ongoing | Meta 三層訂閱打價格戰 + 中國陣營「免費夠用」+ 開源旗艦權重釋出，戰場從「誰更強」移到「誰更便宜」　↳ 子故事：[[topics/competitor-landscape-archive]] |
-| [[topics/community-tech-tools]] | 🌐 社群 | ongoing | 🗓️ 週更：社群工具目錄——91 工具的活躍度、採用狀態追蹤（每週更新一次） |
+| [[topics/community-tech-tools]] | 🌐 社群 | ongoing | 🗓️ 週更：先查「我卡在這裡」症狀決策表拿首選，再看工具目錄的活躍度與採用狀態 |
 | [[topics/skill-interest-watch]] | 🌐 社群 | ongoing | 🗓️ 每日快照 興趣類別 skill 總覽：一頁看完「該裝哪個」（每日同步社群工具目錄的決策表）與「這類誰大、誰在漲」；可用 GitHub 辨識的類別（開發流程段＋治理）每日問「這一類現在誰最熱、本週誰竄升」；無法用星數找的治理需求誠實指路到社群工具目錄決策表或實戰手冊；機器產出、星數是規模不是品質 |
 | [[topics/community-tech-patterns]] | 🌐 社群 | ongoing | 社群做法盤點 21 類：四類已定案（Multi-agent、Skills、CLAUDE.md、Hooks）、十一類還在試，每類標最後動態日　↳ 子故事：[[topics/community-tech-patterns-archive]] |
 | [[topics/community-large-codebase-workflow]] | 🌐 社群 | ongoing | 🗓️ 週更 大型 codebase 規模化開發主線——每條線先給「現在的答案」，再列子問題表；節點證據見 [[topics/community-tech-patterns]] |
