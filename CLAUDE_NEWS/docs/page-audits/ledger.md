@@ -93,6 +93,8 @@
 - **2026-09-06｜併三個人物頁**：`entities/chris-olah`、`tom-brown`、`chris-ciauri` 併入 `topics/anthropic-government-policy`「誰在動這幾條線」一行一人，三頁留轉址殼（第 6 波裁決點 1，使用者「好」）。
 - **2026-09-06｜ai-agent-safety「目前結論」整節砍**：第 5 波預設留的 4 列「跨事件的四條結論」依設計者替代去向併入「拿什麼擋」引言與「官方現在擋到哪」第 3 點，一列不消失（使用者「好」）。
 
+- **2026-09-06｜timeline 併入 patterns-archive**：`topics/community-tech-timeline`（05-22 凍結、入邊 3、與 archive 同批封存）併入 `topics/community-tech-patterns-archive`，留轉址殼（第 8 波裁決點 1，使用者「好啊」）。
+- **2026-09-06｜pricing 回訪加拆頁**（使用者「好」）：第 3 波回訪（09-13）改為獨立一波——計費切割風波（102 行、0 入邊、06-16 凍結）歸檔進 pricing-archive；API 側（模型 API 定價現況＋通路與乘數，5 個錨點入邊佔 3）依「訂閱者 vs API 開發者」讀者分岔評估拆頁，定價與促銷 186 行逐條分家；事故線暫不拆。
 - **2026-09-06｜熱度上限式判準不成法（選 b）**：維持「連續 4 週零命中 −1 格」，接受版號流水撐熱度的假陽性；managed-agents 的 🔥🔥 屬本頁一次性下修，不寫進 `wiki-ingest-features.md`。條文原文留在 `managed-agents-2026-09-05-final.md` §3-(2) 供日後翻案。
 - **2026-09-06｜第 3 波走 P3「成本與衝擊」**（`entities/pricing` 為主、`topics/enterprise-cost-management` 為鄰居）。
 
