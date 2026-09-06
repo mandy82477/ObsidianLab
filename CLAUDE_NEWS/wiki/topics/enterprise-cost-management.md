@@ -43,7 +43,7 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 |------|------|
 | 公開企業案例數 | 12 個（正面優化 1、縮減或切換 5、採用或並行 3、單點失控 3）|
 | 官方企業成本工具 | 組織／部門／每人三層皆有，混合計費管理仍缺 |
-| 已量化的訂閱與 API 價差 | 兩個獨立量測指向 40–44 倍（第三個來源只給訂閱等值月額，未算倍數）|
+| 已量化的訂閱與 API 價差 | 社群估算 13–40 倍（三方法論）；44 倍是月費暴增倍數，非補貼倍數 |
 | 社群因應工具 | 個人視角為主（tare、engram、CostHawk 等），無部門層方案 |
 
 Anthropic 企業採用率（43.5%，Ramp AI Index 8 月指數，2026-08-12 發布）持續領先 OpenAI（39.7%），成本壓力也正推著企業從「單一供應商依賴」走向多模型混合策略。
@@ -219,7 +219,7 @@ Anthropic 企業採用率（43.5%，Ramp AI Index 8 月指數，2026-08-12 發�
 - **[第三個獨立量化來源] Show HN：cookbook-meter 將訂閱使用量換算 API 等值花費，作者 $5,868／留言單機達 $27,428**：開發者發布工具 cookbook-meter，將 Claude 訂閱方案實際使用量換算為對應 API 等值花費；作者本人上月換算相當於 $5,868 的 API 用量，留言中一名使用者稱 3 天內即累積出相近量級花費，另一名稱單一部電腦等值用量已達 $27,428。**對本頁的意涵**：與 07-23 modelplane.ai「44 倍」、08-11 Quesma「40 倍」屬第三個獨立方法論（使用量換算工具，非定價對照分析），三者殊途同歸指向同一數量級的訂閱／API 價差；惟本則僅 HN score 2，屬單一社群回報訊號強度，兩個具體數字未經第三方驗證，詳見「企業案例」新增段落（Hacker News/[cookbook-meter](https://github.com/dpro10/cookbook-meter)）
 
 #### 2026-08-11
-- **[量化落差＋新具名案例] Quesma 部落格：訂閱制 vs API 計費相同 token 價差最高 40 倍，Pylon CEO 三天內誤支 $4,000**：Hacker News 討論（score 31）。文章指相同 token、相同模型下訂閱制與純 API 計費落差最高達 40 倍，一年前 $20/月已夠用，如今入門方案已是 $100/月；Pylon CEO Marty Kausas 公開表示三天內意外花費 $4,000；The Information 另指多家企業帳單較預期高 2–3 倍；文章並補上 Uber 案例具體時間軸（2025-12 導入、2026-04 燒完預算）。**對本頁的意涵**：與 07-23 既有 44 倍實測互為獨立佐證，補強「訂閱制對 API 計費補貼倍數落在 40–44 倍區間」的可信度，且新增的 Pylon 案例代表成本失控風險已從「企業規模性燒光預算」擴散至「個人決策者短時間意外超支」的更廣泛型態（推論）；計費落差細節見 [[entities/pricing]]「成本案例與優化」（Hacker News/quesma.com https://quesma.com/blog/claude-code-pricing-for-enterprise/）
+- **[量化落差＋新具名案例] Quesma 部落格：訂閱制 vs API 計費相同 token 價差最高 40 倍，Pylon CEO 三天內誤支 $4,000**：Hacker News 討論（score 31）。文章指相同 token、相同模型下訂閱制與純 API 計費落差最高達 40 倍，一年前 $20/月已夠用，如今入門方案已是 $100/月；Pylon CEO Marty Kausas 公開表示三天內意外花費 $4,000；The Information 另指多家企業帳單較預期高 2–3 倍；文章並補上 Uber 案例具體時間軸（2025-12 導入、2026-04 燒完預算）。**對本頁的意涵**：與既有社群估算（13–40 倍，三個獨立方法論，詳見 [[topics/anthropic-business]]「現在的數字」）方向一致；本則 40 倍落在區間上緣，44 倍是月費暴增倍數不是補貼倍數（口徑同「補貼倍數」表列），且新增的 Pylon 案例代表成本失控風險已從「企業規模性燒光預算」擴散至「個人決策者短時間意外超支」的更廣泛型態（推論）；計費落差細節見 [[entities/pricing]]「成本案例與優化」（Hacker News/quesma.com https://quesma.com/blog/claude-code-pricing-for-enterprise/）
 
 ### 2026-07
 

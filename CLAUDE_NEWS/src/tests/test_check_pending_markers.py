@@ -6,6 +6,7 @@ wiki 目錄（`TemporaryDirectory`），呼叫 `check(report, wiki_dir=..., toda
 ——`check_pending_markers.check()` 明確接受這兩個參數以支援測試，不需 monkeypatch
 模組全域。
 """
+import json
 import unittest
 from datetime import date
 from pathlib import Path
@@ -183,6 +184,111 @@ class TestQueueMode(_WikiCase):
         self.assertEqual(len(entries), 2)
         # 有訊欄者（題目B）應排在前面，即便逾期天數較短
         self.assertTrue(entries[0][0])
+
+
+class TestMarkerCountGate(_WikiCase):
+    """全庫標記數看守閘（`[加入: 2026-09-06]`）——連續四波「砍表列時把懸置標記溶成
+    散文」的機械保命條款。基線檔＝`data/pending-marker-count.json`。"""
+
+    def setUp(self):
+        super().setUp()
+        self._baseline_dir = TemporaryDirectory()
+        self.baseline_path = Path(self._baseline_dir.name) / "pending-marker-count.json"
+
+    def tearDown(self):
+        self._baseline_dir.cleanup()
+        super().tearDown()
+
+    def run_check(self, today: date = TODAY):
+        report: list[str] = []
+        ok = mod.check(report, wiki_dir=self.wiki_dir, today=today,
+                        marker_baseline_path=self.baseline_path)
+        return ok, report
+
+    def _write_marker(self, rel_path: str, marked: str = "2026-08-01"):
+        self.write(
+            rel_path,
+            f"❓ **待查證**（標 {marked}｜查 issue-1234、version-string）｜**題目**：內文。",
+        )
+
+    def test_below_baseline_fails_and_names_missing_marker(self):
+        """基線 2、現況 1：FAIL 且指名少的那筆（探針字串＋頁面定位）。"""
+        self._write_marker("topics/alpha.md")
+        entries = mod._marker_fingerprints(self.wiki_dir)
+        # 現況先建 2 筆基線，再刪掉一頁只剩 1 筆，模擬「標記被溶成散文」。
+        self._write_marker("topics/bravo.md", marked="2026-08-02")
+        entries = mod._marker_fingerprints(self.wiki_dir)
+        self.baseline_path.write_text(
+            json.dumps({"count": 2, "updated": "2026-08-09", "note": "test", "fingerprints": entries}),
+            encoding="utf-8",
+        )
+        (self.wiki_dir / "topics" / "bravo.md").write_text("bravo 頁已無懸置標記。\n", encoding="utf-8")
+
+        ok, report = self.run_check()
+        self.assertFalse(ok)
+        joined = "\n".join(report)
+        self.assertIn("低於基線", joined)
+        self.assertIn("基線 2", joined)
+        self.assertIn("現況 1", joined)
+        self.assertIn("topics/bravo", joined)
+        self.assertIn("issue-1234", joined)
+
+    def test_equal_to_baseline_passes(self):
+        self._write_marker("topics/alpha.md")
+        entries = mod._marker_fingerprints(self.wiki_dir)
+        self.baseline_path.write_text(
+            json.dumps({"count": 1, "updated": "2026-08-09", "note": "test", "fingerprints": entries}),
+            encoding="utf-8",
+        )
+        ok, report = self.run_check()
+        self.assertTrue(ok, "\n".join(report))
+        self.assertIn("基線 1，未低於", "\n".join(report))
+
+    def test_above_baseline_passes_and_baseline_file_unchanged(self):
+        self._write_marker("topics/alpha.md")
+        entries = mod._marker_fingerprints(self.wiki_dir)
+        original = json.dumps(
+            {"count": 1, "updated": "2026-08-01", "note": "test", "fingerprints": entries}
+        )
+        self.baseline_path.write_text(original, encoding="utf-8")
+
+        self._write_marker("topics/bravo.md", marked="2026-08-05")
+        ok, report = self.run_check()
+        self.assertTrue(ok, "\n".join(report))
+        self.assertIn("懸置標記 2 筆", "\n".join(report))
+        # check() 本身不改基線檔——只有 --rebuild-count 才能動它。
+        self.assertEqual(self.baseline_path.read_text(encoding="utf-8"), original)
+
+    def test_no_baseline_file_does_not_fail(self):
+        self._write_marker("topics/alpha.md")
+        ok, report = self.run_check()
+        self.assertTrue(ok, "\n".join(report))
+        self.assertIn("尚無基線", "\n".join(report))
+
+    def test_rebuild_without_reason_is_rejected(self):
+        """`--rebuild-count` 無 `--reason`：main() 的 CLI 解析層必須拒絕。"""
+        self.assertIsNone(mod._rebuild_reason(["--rebuild-count"]))
+        self.assertIsNone(mod._rebuild_reason(["--rebuild-count", "--reason"]))
+        self.assertIsNone(mod._rebuild_reason(["--rebuild-count", "--reason", "  "]))
+        self.assertEqual(
+            mod._rebuild_reason(["--rebuild-count", "--reason", "首建基線"]), "首建基線"
+        )
+        with self.assertRaises(ValueError):
+            mod._do_rebuild("", self.wiki_dir, self.baseline_path)
+
+    def test_rebuild_with_reason_writes_baseline_with_current_state(self):
+        self._write_marker("topics/alpha.md")
+        self._write_marker("topics/bravo.md", marked="2026-08-05")
+        data = mod._do_rebuild("首建基線 2026-09-06", self.wiki_dir, self.baseline_path,
+                                today=date(2026, 9, 6))
+        self.assertEqual(data["count"], 2)
+        self.assertEqual(data["note"], "首建基線 2026-09-06")
+        self.assertEqual(data["updated"], "2026-09-06")
+        self.assertTrue(self.baseline_path.exists())
+
+        # 重建後再跑一次 check()：現況等於新基線，應通過。
+        ok, report = self.run_check()
+        self.assertTrue(ok, "\n".join(report))
 
 
 if __name__ == "__main__":

@@ -45,6 +45,7 @@ parser，只做「這筆標記合不合規格」的判定。
 from __future__ import annotations
 
 import io
+import json
 import re
 import sys
 from collections import Counter
@@ -55,8 +56,8 @@ sys.path.insert(0, str(Path(__file__).resolve().parent))
 
 from pending_markers import (  # noqa: E402
     Doc, WIKI_DIR, detective_aliases, iter_legacy, iter_pending,
-    probe_is_wikilink, probe_too_weak, wikilink_target, wiki_pages,
-    SHORT_RE, SYM_TO_KIND,
+    normalize_probe, probe_is_wikilink, probe_too_weak, wikilink_target,
+    wiki_pages, SHORT_RE, SYM_TO_KIND,
 )
 
 REVIEW_DEFAULT_DAYS = 14
@@ -200,9 +201,112 @@ def _legacy_baseline() -> int | None:
         return None
 
 
-def check(report: list[str], wiki_dir: Path | None = None, today: date | None = None) -> bool:
+MARKER_BASELINE_PATH = WIKI_DIR.parent / "data" / "pending-marker-count.json"
+
+
+def _marker_fingerprints(wiki_dir: Path) -> list[dict[str, str]]:
+    """全庫新語法標記的指紋清單，供基線比對與差集顯示用。
+
+    指紋鍵＝頁 slug＋標記日＋探針正規化字串——同一筆標記在查證結案前不會改變
+    這三者，足以判斷「這筆還在不在」；label 保留原始探針文字供報告顯示。
+    """
+    entries: list[dict[str, str]] = []
+    for path in wiki_pages(wiki_dir):
+        try:
+            text = path.read_text(encoding="utf-8-sig")
+        except Exception:
+            continue
+        slug = _slug(path, wiki_dir)
+        for mk in iter_pending(text, path):
+            key = f"{slug}::{mk.marked}::{normalize_probe(mk.probes_raw)}"
+            label = f"{slug}（標 {mk.marked}｜查 {mk.probes_raw}）"
+            entries.append({"key": key, "label": label})
+    return entries
+
+
+def _load_marker_baseline(path: Path) -> dict | None:
+    """標記總數基線。檔案不存在或壞掉一律回 None（不啟用棘輪），
+    讓新環境或尚未 --rebuild-count 建立基線前不會無故失敗。"""
+    try:
+        return json.loads(path.read_text(encoding="utf-8"))
+    except Exception:
+        return None
+
+
+def _rebuild_reason(args: list[str]) -> str | None:
+    """從 CLI 參數取出 --reason 的值；缺少旗標或缺值一律回 None（拒絕 rebuild 的依據）。"""
+    if "--reason" not in args:
+        return None
+    idx = args.index("--reason")
+    if idx + 1 >= len(args):
+        return None
+    val = args[idx + 1].strip()
+    return val or None
+
+
+def _do_rebuild(reason: str, wiki_dir: Path, baseline_path: Path, today: date | None = None) -> dict:
+    """以現況重寫基線。`reason` 必填——沒有理由就不知道這次減少是不是合法查證結案。"""
+    if not reason or not reason.strip():
+        raise ValueError("--rebuild-count 需要非空的 --reason")
+    today = today or date.today()
+    entries = _marker_fingerprints(wiki_dir)
+    data = {
+        "count": len(entries),
+        "updated": today.isoformat(),
+        "note": reason,
+        "fingerprints": entries,
+    }
+    baseline_path.parent.mkdir(parents=True, exist_ok=True)
+    baseline_path.write_text(json.dumps(data, ensure_ascii=False, indent=2), encoding="utf-8")
+    return data
+
+
+def _marker_count_gate(report: list[str], wiki_dir: Path, marker_baseline_path: Path) -> bool:
+    """全庫新語法標記總數不得低於基線——減少即 FAIL，增加不擋也不自動抬高基線。
+
+    立法依據：全站頁面 review 連續四波發生「實作者砍表列時把懸置標記溶成散文」，
+    每日掃描從此偵測不到後續。合法減少的出口是 `--rebuild-count --reason "..."`。
+    """
+    baseline = _load_marker_baseline(marker_baseline_path)
+    current_entries = _marker_fingerprints(wiki_dir)
+    current_count = len(current_entries)
+
+    if baseline is None:
+        report.append(
+            f"  ℹ️ 懸置標記 {current_count} 筆（尚無基線；建立："
+            f"`python scripts/check_pending_markers.py --rebuild-count --reason \"...\"`）"
+        )
+        return True
+
+    base_count = baseline.get("count", 0)
+    if current_count >= base_count:
+        report.append(f"  ℹ️ 懸置標記 {current_count} 筆（基線 {base_count}，未低於）")
+        return True
+
+    base_entries = baseline.get("fingerprints", [])
+    current_keys = {e["key"] for e in current_entries}
+    missing = [e for e in base_entries if e.get("key") not in current_keys]
+    report.append(
+        f"  ❌ 懸置標記總數低於基線：基線 {base_count}／現況 {current_count}"
+        f"（少了 {base_count - current_count} 筆）"
+    )
+    for e in missing:
+        report.append(f"     少了：{e.get('label', e.get('key'))}")
+    unaccounted = (base_count - current_count) - len(missing)
+    if unaccounted > 0:
+        report.append(f"     （另有 {unaccounted} 筆指紋不對應，可能因標記內容改寫而指紋改變）")
+    report.append(
+        "     若為合法查證結案，執行 "
+        "`python scripts/check_pending_markers.py --rebuild-count --reason \"...\"` 重建基線。"
+    )
+    return False
+
+
+def check(report: list[str], wiki_dir: Path | None = None, today: date | None = None,
+          marker_baseline_path: Path | None = None) -> bool:
     wiki_dir = wiki_dir or WIKI_DIR
     today = today or date.today()
+    marker_baseline_path = marker_baseline_path or MARKER_BASELINE_PATH
 
     ok = True
     total_legacy = 0
@@ -248,6 +352,11 @@ def check(report: list[str], wiki_dir: Path | None = None, today: date | None = 
             f"  ℹ️ 存量殘餘：舊字樣（未回填為新語法）共 {total_legacy} 筆，"
             f"新語法標記共 {total_markers} 筆{note}"
         )
+
+    # ── 標記數看守閘：全庫新語法標記總數不得低於基線 ────────────────────
+    if not _marker_count_gate(report, wiki_dir, marker_baseline_path):
+        ok = False
+
     return ok
 
 
@@ -478,6 +587,24 @@ def print_queue(out, wiki_dir: Path | None = None, today: date | None = None,
 def main() -> int:
     args = sys.argv[1:]
     out = _stdout()
+
+    if "--rebuild-count" in args:
+        reason = _rebuild_reason(args)
+        if not reason:
+            print(
+                "❌ --rebuild-count 需要附 --reason \"...\"，說明為何調整基線"
+                "（合法出口僅限主編查證結案移除標記時使用）",
+                file=out,
+            )
+            out.flush()
+            return 1
+        data = _do_rebuild(reason, WIKI_DIR, MARKER_BASELINE_PATH)
+        print(
+            f"✅ 懸置標記基線已重建：{data['count']} 筆（{data['updated']}｜{reason}）",
+            file=out,
+        )
+        out.flush()
+        return 0
 
     if "--queue" in args:
         print_queue(out, history_path=HISTORY_PATH)

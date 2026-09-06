@@ -1,0 +1,575 @@
+{
+  "count": 142,
+  "updated": "2026-09-06",
+  "note": "首建基線 2026-09-06",
+  "fingerprints": [
+    {
+      "key": "entities/andrej-karpathy::2026-08-15::benzinga、lord of the rings",
+      "label": "entities/andrej-karpathy（標 2026-08-15｜查 Benzinga、Lord of the Rings）"
+    },
+    {
+      "key": "entities/claude-code::2026-08-17::slack-like、claude desktop",
+      "label": "entities/claude-code（標 2026-08-17｜查 Slack-like、Claude Desktop）"
+    },
+    {
+      "key": "entities/claude-code::2026-06-30::中國代理、地區偵測",
+      "label": "entities/claude-code（標 2026-06-30｜查 中國代理、地區偵測）"
+    },
+    {
+      "key": "entities/claude-code::2026-08-31::compliance api、身分治理",
+      "label": "entities/claude-code（標 2026-08-31｜查 Compliance API、身分治理）"
+    },
+    {
+      "key": "entities/claude-code::2026-08-28::51,000 token、63903",
+      "label": "entities/claude-code（標 2026-08-28｜查 51,000 token、63903）"
+    },
+    {
+      "key": "entities/claude-code::2026-08-13::auto-continue、額度重置後自動繼續",
+      "label": "entities/claude-code（標 2026-08-13｜查 Auto-continue、額度重置後自動繼續）"
+    },
+    {
+      "key": "entities/claude-code::2026-08-27::fork subagent、resend on every",
+      "label": "entities/claude-code（標 2026-08-27｜查 fork subagent、resend on every）"
+    },
+    {
+      "key": "entities/claude-code::2026-08-09::#23377、prompt 過長",
+      "label": "entities/claude-code（標 2026-08-09｜查 #23377、prompt 過長）"
+    },
+    {
+      "key": "entities/claude-code::2026-08-09::#46221、[[topics/code-quality-decline]]",
+      "label": "entities/claude-code（標 2026-08-09｜查 #46221、[[topics/code-quality-decline]]）"
+    },
+    {
+      "key": "entities/claude-code::2026-08-09::#16856、token 消耗",
+      "label": "entities/claude-code（標 2026-08-09｜查 #16856、token 消耗）"
+    },
+    {
+      "key": "entities/claude-code::2026-08-09::[[topics/code-quality-decline]]、記憶過多",
+      "label": "entities/claude-code（標 2026-08-09｜查 [[topics/code-quality-decline]]、記憶過多）"
+    },
+    {
+      "key": "entities/claude-code::2026-08-09::#69238、advisor",
+      "label": "entities/claude-code（標 2026-08-09｜查 #69238、Advisor）"
+    },
+    {
+      "key": "entities/claude-code::2026-08-09::#60705、stop-hook",
+      "label": "entities/claude-code（標 2026-08-09｜查 #60705、stop-hook）"
+    },
+    {
+      "key": "entities/claude-code::2026-08-09::#28300、跨機器",
+      "label": "entities/claude-code（標 2026-08-09｜查 #28300、跨機器）"
+    },
+    {
+      "key": "entities/claude-code::2026-08-09::claude projects、對話消失",
+      "label": "entities/claude-code（標 2026-08-09｜查 Claude Projects、對話消失）"
+    },
+    {
+      "key": "entities/claude-code::2026-08-09::#34255、remote control",
+      "label": "entities/claude-code（標 2026-08-09｜查 #34255、Remote Control）"
+    },
+    {
+      "key": "entities/claude-code::2026-08-09::#12925、linear",
+      "label": "entities/claude-code（標 2026-08-09｜查 #12925、Linear）"
+    },
+    {
+      "key": "entities/claude-code::2026-08-09::linux 沙箱、隱性故障",
+      "label": "entities/claude-code（標 2026-08-09｜查 Linux 沙箱、隱性故障）"
+    },
+    {
+      "key": "entities/claude-code::2026-08-09::claude update、版本回退",
+      "label": "entities/claude-code（標 2026-08-09｜查 claude update、版本回退）"
+    },
+    {
+      "key": "entities/claude-code::2026-07-17::1password、憑證登入",
+      "label": "entities/claude-code（標 2026-07-17｜查 1Password、憑證登入）"
+    },
+    {
+      "key": "entities/claude-code::2026-08-09::governor、token 浪費",
+      "label": "entities/claude-code（標 2026-08-09｜查 Governor、token 浪費）"
+    },
+    {
+      "key": "entities/claude-code::2026-08-14::output_behavior、anthropic-sdk-python",
+      "label": "entities/claude-code（標 2026-08-14｜查 output_behavior、anthropic-sdk-python）"
+    },
+    {
+      "key": "entities/claude-code::2026-07-16::dreaming、anthropic-sdk-python",
+      "label": "entities/claude-code（標 2026-07-16｜查 dreaming、anthropic-sdk-python）"
+    },
+    {
+      "key": "entities/claude-design::2026-08-18::/design、ui mockup",
+      "label": "entities/claude-design（標 2026-08-18｜查 /design、UI mockup）"
+    },
+    {
+      "key": "entities/claude-design::2026-08-18::/design、ui mockup",
+      "label": "entities/claude-design（標 2026-08-18｜查 /design、UI mockup）"
+    },
+    {
+      "key": "entities/claude-design::2026-08-18::/design、ui mockup",
+      "label": "entities/claude-design（標 2026-08-18｜查 /design、UI mockup）"
+    },
+    {
+      "key": "entities/claude-security::2026-08-10::workflow tool、存取權限",
+      "label": "entities/claude-security（標 2026-08-10｜查 Workflow tool、存取權限）"
+    },
+    {
+      "key": "entities/claude-skills::2026-08-19::200000 tokens、the new stack",
+      "label": "entities/claude-skills（標 2026-08-19｜查 200000 tokens、The New Stack）"
+    },
+    {
+      "key": "entities/claude-skills::2026-08-19::the new stack、20 萬 token",
+      "label": "entities/claude-skills（標 2026-08-19｜查 The New Stack、20 萬 token）"
+    },
+    {
+      "key": "entities/dario-amodei::2026-08-25::airline industry、marketing and safety",
+      "label": "entities/dario-amodei（標 2026-08-25｜查 airline industry、marketing and safety）"
+    },
+    {
+      "key": "entities/dario-amodei::2026-08-29::destroying anyone",
+      "label": "entities/dario-amodei（標 2026-08-29｜查 destroying anyone）"
+    },
+    {
+      "key": "entities/dario-amodei::2026-08-10::politico、super pac",
+      "label": "entities/dario-amodei（標 2026-08-10｜查 Politico、super PAC）"
+    },
+    {
+      "key": "entities/dario-amodei::2026-08-10::[[topics/anthropic-government-policy]]、public first action",
+      "label": "entities/dario-amodei（標 2026-08-10｜查 [[topics/anthropic-government-policy]]、Public First Action）"
+    },
+    {
+      "key": "entities/fable-5::2026-09-04::formalizing-fermats-last-theorem、fable 5.1",
+      "label": "entities/fable-5（標 2026-09-04｜查 formalizing-fermats-last-theorem、Fable 5.1）"
+    },
+    {
+      "key": "entities/fable-5::2026-09-02::techcrunch.com、less restrictive",
+      "label": "entities/fable-5（標 2026-09-02｜查 techcrunch.com、less restrictive）"
+    },
+    {
+      "key": "entities/fable-5::2026-08-29::fable 5.1、1w0v676",
+      "label": "entities/fable-5（標 2026-08-29｜查 Fable 5.1、1w0v676）"
+    },
+    {
+      "key": "entities/fable-5::2026-08-26::futurism、cheaper alternatives",
+      "label": "entities/fable-5（標 2026-08-26｜查 Futurism、cheaper alternatives）"
+    },
+    {
+      "key": "entities/fable-5::2026-08-26::tech-insider.org、gpt-5.6 sol",
+      "label": "entities/fable-5（標 2026-08-26｜查 tech-insider.org、GPT-5.6 Sol）"
+    },
+    {
+      "key": "entities/fable-5::2026-08-26::analyticsindiamag.com、almost nobody",
+      "label": "entities/fable-5（標 2026-08-26｜查 analyticsindiamag.com、Almost Nobody）"
+    },
+    {
+      "key": "entities/jensen-huang::2026-08-27::jensen huang、hugging face",
+      "label": "entities/jensen-huang（標 2026-08-27｜查 Jensen Huang、Hugging Face）"
+    },
+    {
+      "key": "entities/john-jumper::2026-08-10::alphabet、gemini 3.5",
+      "label": "entities/john-jumper（標 2026-08-10｜查 Alphabet、Gemini 3.5）"
+    },
+    {
+      "key": "entities/managed-agents::2026-08-10::anthropic-sdk-python、managed agents api",
+      "label": "entities/managed-agents（標 2026-08-10｜查 anthropic-sdk-python、Managed Agents API）"
+    },
+    {
+      "key": "entities/mythos::2026-08-29::fierce healthcare、uptodate",
+      "label": "entities/mythos（標 2026-08-29｜查 Fierce Healthcare、UpToDate）"
+    },
+    {
+      "key": "entities/mythos::2026-08-24::securityweek、more defenders",
+      "label": "entities/mythos（標 2026-08-24｜查 SecurityWeek、more defenders）"
+    },
+    {
+      "key": "entities/mythos::2026-08-10::cryptography engineering、hawk 簽章",
+      "label": "entities/mythos（標 2026-08-10｜查 Cryptography Engineering、HAWK 簽章）"
+    },
+    {
+      "key": "entities/mythos::2026-08-10::mashable、public release",
+      "label": "entities/mythos（標 2026-08-10｜查 Mashable、public release）"
+    },
+    {
+      "key": "entities/mythos::2026-08-10::社群爆料、fable 5 傳聞",
+      "label": "entities/mythos（標 2026-08-10｜查 社群爆料、Fable 5 傳聞）"
+    },
+    {
+      "key": "entities/opencode::2026-08-10::tech-insider.org、opencode 下載量",
+      "label": "entities/opencode（標 2026-08-10｜查 tech-insider.org、OpenCode 下載量）"
+    },
+    {
+      "key": "entities/opus-4-7::2026-08-26::2604.24827、incompressible knowledge probes",
+      "label": "entities/opus-4-7（標 2026-08-26｜查 2604.24827、Incompressible Knowledge Probes）"
+    },
+    {
+      "key": "entities/opus-5::2026-08-29::1w0uyu7、code review",
+      "label": "entities/opus-5（標 2026-08-29｜查 1w0uyu7、code review）"
+    },
+    {
+      "key": "entities/opus-5::2026-08-26::tech-insider.org、$19 gap",
+      "label": "entities/opus-5（標 2026-08-26｜查 tech-insider.org、$19 Gap）"
+    },
+    {
+      "key": "entities/opus-5::2026-08-23::load-bearing、smoking gun",
+      "label": "entities/opus-5（標 2026-08-23｜查 load-bearing、smoking gun）"
+    },
+    {
+      "key": "entities/opus-5::2026-08-11::sitepoint、效能評測",
+      "label": "entities/opus-5（標 2026-08-11｜查 SitePoint、效能評測）"
+    },
+    {
+      "key": "entities/opus-5::2026-08-10::minor、效能落差",
+      "label": "entities/opus-5（標 2026-08-10｜查 minor、效能落差）"
+    },
+    {
+      "key": "entities/pricing::2026-09-04::max 5x、帳號停用",
+      "label": "entities/pricing（標 2026-09-04｜查 Max 5x、帳號停用）"
+    },
+    {
+      "key": "entities/pricing::2026-08-14::暗中調降用量、throttling",
+      "label": "entities/pricing（標 2026-08-14｜查 暗中調降用量、throttling）"
+    },
+    {
+      "key": "entities/robert-mahari::2026-08-10::legal it insider、law.com",
+      "label": "entities/robert-mahari（標 2026-08-10｜查 Legal IT Insider、Law.com）"
+    },
+    {
+      "key": "entities/sonnet-5::2026-08-10::terminal-bench、leaderboard",
+      "label": "entities/sonnet-5（標 2026-08-10｜查 Terminal-Bench、leaderboard）"
+    },
+    {
+      "key": "entities/sonnet-5::2026-08-26::tech-insider.org、57 score",
+      "label": "entities/sonnet-5（標 2026-08-26｜查 tech-insider.org、57 Score）"
+    },
+    {
+      "key": "entities/teresa-carlson::2026-08-10::carlson、fedscoop",
+      "label": "entities/teresa-carlson（標 2026-08-10｜查 Carlson、FedScoop）"
+    },
+    {
+      "key": "entities/tom-blomfield::2026-08-10::blomfield、monzo",
+      "label": "entities/tom-blomfield（標 2026-08-10｜查 Blomfield、Monzo）"
+    },
+    {
+      "key": "feature-radar::2026-08-10::claude code desktop、內建瀏覽器",
+      "label": "feature-radar（標 2026-08-10｜查 Claude Code Desktop、內建瀏覽器）"
+    },
+    {
+      "key": "index::2026-08-10::[[entities/robert-mahari]]、過往經歷",
+      "label": "index（標 2026-08-10｜查 [[entities/robert-mahari]]、過往經歷）"
+    },
+    {
+      "key": "topics/ai-agent-safety::2026-09-02::.git config、codex、cursor",
+      "label": "topics/ai-agent-safety（標 2026-09-02｜查 .git config、Codex、Cursor）"
+    },
+    {
+      "key": "topics/ai-agent-safety::2026-09-02::aisle、curl cve",
+      "label": "topics/ai-agent-safety（標 2026-09-02｜查 AISLE、curl CVE）"
+    },
+    {
+      "key": "topics/ai-agent-safety::2026-08-27::ars technica、unowned code、hermes",
+      "label": "topics/ai-agent-safety（標 2026-08-27｜查 Ars Technica、unowned code、Hermes）"
+    },
+    {
+      "key": "topics/ai-agent-safety::2026-08-27::mcp rce、blind prompt injection",
+      "label": "topics/ai-agent-safety（標 2026-08-27｜查 MCP RCE、blind prompt injection）"
+    },
+    {
+      "key": "topics/ai-agent-safety::2026-08-28::蜜罐遙測、ai 基礎設施蜜罐",
+      "label": "topics/ai-agent-safety（標 2026-08-28｜查 蜜罐遙測、AI 基礎設施蜜罐）"
+    },
+    {
+      "key": "topics/ai-agent-safety::2026-08-27::gym api flaw、9 of 10 tests",
+      "label": "topics/ai-agent-safety（標 2026-08-27｜查 Gym API Flaw、9 of 10 Tests）"
+    },
+    {
+      "key": "topics/ai-agent-safety::2026-08-24::self-replicating、地盤爭奪",
+      "label": "topics/ai-agent-safety（標 2026-08-24｜查 self-replicating、地盤爭奪）"
+    },
+    {
+      "key": "topics/ai-agent-safety::2026-08-18::ldap、勒索軟體",
+      "label": "topics/ai-agent-safety（標 2026-08-18｜查 LDAP、勒索軟體）"
+    },
+    {
+      "key": "topics/ai-agent-safety::2026-08-18::疑心較重、killer malware",
+      "label": "topics/ai-agent-safety（標 2026-08-18｜查 疑心較重、killer malware）"
+    },
+    {
+      "key": "topics/ai-agent-safety::2026-08-16::benzinga、business insider",
+      "label": "topics/ai-agent-safety（標 2026-08-16｜查 Benzinga、Business Insider）"
+    },
+    {
+      "key": "topics/ai-agent-safety::2026-08-14::prompt injection metrics、incompatible",
+      "label": "topics/ai-agent-safety（標 2026-08-14｜查 Prompt Injection Metrics、Incompatible）"
+    },
+    {
+      "key": "topics/ai-agent-safety::2026-08-21::gmail、未經詢問",
+      "label": "topics/ai-agent-safety（標 2026-08-21｜查 Gmail、未經詢問）"
+    },
+    {
+      "key": "topics/ai-agent-safety::2026-08-17::sofx、went rogue",
+      "label": "topics/ai-agent-safety（標 2026-08-17｜查 SOFX、Went Rogue）"
+    },
+    {
+      "key": "topics/ai-agent-safety::2026-08-13::弱模型、推理過程",
+      "label": "topics/ai-agent-safety（標 2026-08-13｜查 弱模型、推理過程）"
+    },
+    {
+      "key": "topics/ai-agent-safety::2026-08-12::deep_think、_can1357",
+      "label": "topics/ai-agent-safety（標 2026-08-12｜查 deep_think、_can1357）"
+    },
+    {
+      "key": "topics/ai-talent-flow::2026-09-01::deepmind、founding、四位主管",
+      "label": "topics/ai-talent-flow（標 2026-09-01｜查 DeepMind、founding、四位主管）"
+    },
+    {
+      "key": "topics/ai-talent-flow::2026-08-13::sergey brin",
+      "label": "topics/ai-talent-flow（標 2026-08-13｜查 Sergey Brin）"
+    },
+    {
+      "key": "topics/ai-talent-flow::2026-08-21::[[entities/amir-salek]]",
+      "label": "topics/ai-talent-flow（標 2026-08-21｜查 [[entities/amir-salek]]）"
+    },
+    {
+      "key": "topics/anthropic-business::2026-08-15::2028年營收預測、reuters獨家",
+      "label": "topics/anthropic-business（標 2026-08-15｜查 2028年營收預測、Reuters獨家）"
+    },
+    {
+      "key": "topics/anthropic-business::2026-08-09::產業營收占比",
+      "label": "topics/anthropic-business（標 2026-08-09｜查 產業營收占比）"
+    },
+    {
+      "key": "topics/anthropic-business::2026-08-13::自研模型、microsoft",
+      "label": "topics/anthropic-business（標 2026-08-13｜查 自研模型、Microsoft）"
+    },
+    {
+      "key": "topics/anthropic-business::2026-08-13::post-crescent、著作權訴訟",
+      "label": "topics/anthropic-business（標 2026-08-13｜查 Post-Crescent、著作權訴訟）"
+    },
+    {
+      "key": "topics/anthropic-business::2026-08-25::bastrop county、morgan stanley",
+      "label": "topics/anthropic-business（標 2026-08-25｜查 Bastrop County、Morgan Stanley）"
+    },
+    {
+      "key": "topics/anthropic-business::2026-08-26::ababnews.com、免費課程",
+      "label": "topics/anthropic-business（標 2026-08-26｜查 ababnews.com、免費課程）"
+    },
+    {
+      "key": "topics/anthropic-business::2026-08-10::volta、成立七個月",
+      "label": "topics/anthropic-business（標 2026-08-10｜查 Volta、成立七個月）"
+    },
+    {
+      "key": "topics/anthropic-business::2026-08-10::semianalysis、$100b-per-gw",
+      "label": "topics/anthropic-business（標 2026-08-10｜查 SemiAnalysis、$100B-per-GW）"
+    },
+    {
+      "key": "topics/anthropic-commitments::2026-08-29::fable 5 訂閱內含、per-token、[[entities/pricing]]",
+      "label": "topics/anthropic-commitments（標 2026-08-29｜查 Fable 5 訂閱內含、per-token、[[entities/pricing]]）"
+    },
+    {
+      "key": "topics/anthropic-government-policy::2026-08-10::阿里巴巴、蒸餾指控",
+      "label": "topics/anthropic-government-policy（標 2026-08-10｜查 阿里巴巴、蒸餾指控）"
+    },
+    {
+      "key": "topics/anthropic-government-policy::2026-08-30::偵測 api、殘留率",
+      "label": "topics/anthropic-government-policy（標 2026-08-30｜查 偵測 API、殘留率）"
+    },
+    {
+      "key": "topics/anthropic-government-policy::2026-08-17::cnet、files 輸出",
+      "label": "topics/anthropic-government-policy（標 2026-08-17｜查 CNET、files 輸出）"
+    },
+    {
+      "key": "topics/anthropic-government-policy::2026-08-11::眾議院民主黨、失控 ai agent",
+      "label": "topics/anthropic-government-policy（標 2026-08-11｜查 眾議院民主黨、失控 AI agent）"
+    },
+    {
+      "key": "topics/anthropic-government-policy::2026-08-10::project panama、法律程序關聯",
+      "label": "topics/anthropic-government-policy（標 2026-08-10｜查 Project Panama、法律程序關聯）"
+    },
+    {
+      "key": "topics/anthropic-government-policy::2026-08-10::forbes、中國 ai 公司",
+      "label": "topics/anthropic-government-policy（標 2026-08-10｜查 Forbes、中國 AI 公司）"
+    },
+    {
+      "key": "topics/anthropic-government-policy::2026-08-10::單一匿名聲稱、美國政府指示",
+      "label": "topics/anthropic-government-policy（標 2026-08-10｜查 單一匿名聲稱、美國政府指示）"
+    },
+    {
+      "key": "topics/anthropic-government-policy::2026-08-10::india today、nvidia 陣營對立",
+      "label": "topics/anthropic-government-policy（標 2026-08-10｜查 India Today、Nvidia 陣營對立）"
+    },
+    {
+      "key": "topics/anthropic-government-policy::2026-08-10::the information、矽谷業界反彈",
+      "label": "topics/anthropic-government-policy（標 2026-08-10｜查 The Information、矽谷業界反彈）"
+    },
+    {
+      "key": "topics/anthropic-government-policy::2026-08-10::mike rounds、五角大廈簡報",
+      "label": "topics/anthropic-government-policy（標 2026-08-10｜查 Mike Rounds、五角大廈簡報）"
+    },
+    {
+      "key": "topics/anthropic-government-policy::2026-08-10::cesar fernandez、州別清單",
+      "label": "topics/anthropic-government-policy（標 2026-08-10｜查 Cesar Fernandez、州別清單）"
+    },
+    {
+      "key": "topics/code-quality-decline::2026-08-25::sonar、code quality benchmark",
+      "label": "topics/code-quality-decline（標 2026-08-25｜查 Sonar、code quality benchmark）"
+    },
+    {
+      "key": "topics/code-quality-decline::2026-08-10::bypass vectors、silently removed",
+      "label": "topics/code-quality-decline（標 2026-08-10｜查 bypass vectors、silently removed）"
+    },
+    {
+      "key": "topics/community-large-codebase-workflow::2026-09-04::instances break down、fork 子代理",
+      "label": "topics/community-large-codebase-workflow（標 2026-09-04｜查 Instances Break Down、fork 子代理）"
+    },
+    {
+      "key": "topics/community-large-codebase-workflow::2026-09-04::graft、benchmark 代寫",
+      "label": "topics/community-large-codebase-workflow（標 2026-09-04｜查 Graft、benchmark 代寫）"
+    },
+    {
+      "key": "topics/community-large-codebase-workflow::2026-09-04::fork 子代理、對話歷史重送",
+      "label": "topics/community-large-codebase-workflow（標 2026-09-04｜查 fork 子代理、對話歷史重送）"
+    },
+    {
+      "key": "topics/community-tech-discussions::2026-08-10::制式措辭、翻譯成一般英文",
+      "label": "topics/community-tech-discussions（標 2026-08-10｜查 制式措辭、翻譯成一般英文）"
+    },
+    {
+      "key": "topics/community-tech-discussions::2026-08-10::prompt injection、llmdevs",
+      "label": "topics/community-tech-discussions（標 2026-08-10｜查 Prompt Injection、LLMDevs）"
+    },
+    {
+      "key": "topics/community-tech-patterns-archive::2026-08-10::compact memory、context token",
+      "label": "topics/community-tech-patterns-archive（標 2026-08-10｜查 compact memory、context token）"
+    },
+    {
+      "key": "topics/community-tech-patterns-archive::2026-08-10::git-lazy-mount、monorepo",
+      "label": "topics/community-tech-patterns-archive（標 2026-08-10｜查 git-lazy-mount、monorepo）"
+    },
+    {
+      "key": "topics/community-tech-patterns-archive::2026-08-10::iantha、kiloloop",
+      "label": "topics/community-tech-patterns-archive（標 2026-08-10｜查 Iantha、kiloloop）"
+    },
+    {
+      "key": "topics/community-tech-patterns::2026-08-10::diff量、驗收條件",
+      "label": "topics/community-tech-patterns（標 2026-08-10｜查 diff量、驗收條件）"
+    },
+    {
+      "key": "topics/community-tech-patterns::2026-08-10::auto-undo、rollback",
+      "label": "topics/community-tech-patterns（標 2026-08-10｜查 auto-undo、rollback）"
+    },
+    {
+      "key": "topics/community-tech-patterns::2026-08-10::certified architect、12 種",
+      "label": "topics/community-tech-patterns（標 2026-08-10｜查 Certified Architect、12 種）"
+    },
+    {
+      "key": "topics/community-tech-patterns::2026-08-10::subagent、silent failure",
+      "label": "topics/community-tech-patterns（標 2026-08-10｜查 subagent、silent failure）"
+    },
+    {
+      "key": "topics/community-tech-patterns::2026-08-10::ip_reminder、jsonl",
+      "label": "topics/community-tech-patterns（標 2026-08-10｜查 ip_reminder、JSONL）"
+    },
+    {
+      "key": "topics/community-tech-patterns::2026-08-10::ip_reminder、jsonl",
+      "label": "topics/community-tech-patterns（標 2026-08-10｜查 ip_reminder、JSONL）"
+    },
+    {
+      "key": "topics/competitor-landscape::2026-08-29::google、企業定價、antigravity",
+      "label": "topics/competitor-landscape（標 2026-08-29｜查 Google、企業定價、Antigravity）"
+    },
+    {
+      "key": "topics/competitor-landscape::2026-08-14::deepseek v4-pro、v4 flash",
+      "label": "topics/competitor-landscape（標 2026-08-14｜查 DeepSeek V4-Pro、V4 Flash）"
+    },
+    {
+      "key": "topics/competitor-landscape::2026-08-13::deepseek v4 pro、claude 3 opus",
+      "label": "topics/competitor-landscape（標 2026-08-13｜查 DeepSeek V4 Pro、Claude 3 Opus）"
+    },
+    {
+      "key": "topics/competitor-landscape::2026-08-10::decrypt、qwen3.8",
+      "label": "topics/competitor-landscape（標 2026-08-10｜查 Decrypt、Qwen3.8）"
+    },
+    {
+      "key": "topics/competitor-landscape::2026-08-10::tech-insider.org、opencode 下載量",
+      "label": "topics/competitor-landscape（標 2026-08-10｜查 tech-insider.org、OpenCode 下載量）"
+    },
+    {
+      "key": "topics/competitor-landscape::2026-08-10::cline、tech-insider.org",
+      "label": "topics/competitor-landscape（標 2026-08-10｜查 Cline、tech-insider.org）"
+    },
+    {
+      "key": "topics/competitor-landscape::2026-08-14::price war、定價戰",
+      "label": "topics/competitor-landscape（標 2026-08-14｜查 price war、定價戰）"
+    },
+    {
+      "key": "topics/competitor-landscape::2026-08-22::codex、評測方法論",
+      "label": "topics/competitor-landscape（標 2026-08-22｜查 Codex、評測方法論）"
+    },
+    {
+      "key": "topics/competitor-landscape::2026-08-13::grok、spacex",
+      "label": "topics/competitor-landscape（標 2026-08-13｜查 Grok、SpaceX）"
+    },
+    {
+      "key": "topics/enterprise-tool-tracker::2026-08-20::goldman sachs、jpmorgan chase",
+      "label": "topics/enterprise-tool-tracker（標 2026-08-20｜查 Goldman Sachs、JPMorgan Chase）"
+    },
+    {
+      "key": "topics/enterprise-tool-tracker::2026-07-06::meta、限制工程師",
+      "label": "topics/enterprise-tool-tracker（標 2026-07-06｜查 Meta、限制工程師）"
+    },
+    {
+      "key": "topics/market-signals::2026-09-05::nasdaq、承銷商、公開遞件",
+      "label": "topics/market-signals（標 2026-09-05｜查 Nasdaq、承銷商、公開遞件）"
+    },
+    {
+      "key": "topics/market-signals::2026-09-04::morgan stanley、goldman sachs",
+      "label": "topics/market-signals（標 2026-09-04｜查 Morgan Stanley、Goldman Sachs）"
+    },
+    {
+      "key": "topics/model-comparison::2026-08-24::秘密降低、secretly degraded",
+      "label": "topics/model-comparison（標 2026-08-24｜查 秘密降低、Secretly Degraded）"
+    },
+    {
+      "key": "topics/model-task-leaderboard::2026-09-05::codex cli、opencode、harness",
+      "label": "topics/model-task-leaderboard（標 2026-09-05｜查 Codex CLI、OpenCode、harness）"
+    },
+    {
+      "key": "topics/official-community-gap::2026-08-10::a2a 協定、#28300、跨 session 訊息互通",
+      "label": "topics/official-community-gap（標 2026-08-10｜查 A2A 協定、#28300、跨 session 訊息互通）"
+    },
+    {
+      "key": "topics/official-community-gap::2026-08-18::internet-court-skill、github search",
+      "label": "topics/official-community-gap（標 2026-08-18｜查 internet-court-skill、GitHub Search）"
+    },
+    {
+      "key": "topics/official-community-gap::2026-08-10::行動版、網頁版",
+      "label": "topics/official-community-gap（標 2026-08-10｜查 行動版、網頁版）"
+    },
+    {
+      "key": "topics/recursive-self-improvement::2026-08-31::automated researchers、2.4%",
+      "label": "topics/recursive-self-improvement（標 2026-08-31｜查 automated researchers、2.4%）"
+    },
+    {
+      "key": "topics/recursive-self-improvement::2026-08-29::automated researchers、alignment failures",
+      "label": "topics/recursive-self-improvement（標 2026-08-29｜查 Automated researchers、alignment failures）"
+    },
+    {
+      "key": "topics/safety-china-trust-dispute::2026-09-03::adioof、thereallo",
+      "label": "topics/safety-china-trust-dispute（標 2026-09-03｜查 adioof、thereallo）"
+    },
+    {
+      "key": "topics/safety-china-trust-dispute::2026-09-03::alibaba、qoder",
+      "label": "topics/safety-china-trust-dispute（標 2026-09-03｜查 Alibaba、Qoder）"
+    },
+    {
+      "key": "topics/safety-china-trust-dispute::2026-09-03::後門警示、adnane khan",
+      "label": "topics/safety-china-trust-dispute（標 2026-09-03｜查 後門警示、Adnane Khan）"
+    },
+    {
+      "key": "topics/safety-china-trust-dispute::2026-09-03::inviting hard questions",
+      "label": "topics/safety-china-trust-dispute（標 2026-09-03｜查 Inviting hard questions）"
+    },
+    {
+      "key": "topics/safety-china-trust-dispute::2026-09-03::alibaba、qoder",
+      "label": "topics/safety-china-trust-dispute（標 2026-09-03｜查 Alibaba、Qoder）"
+    }
+  ]
+}
