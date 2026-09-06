@@ -127,6 +127,38 @@ TERMS: list[dict] = [
     {"key": "低度信號", "pattern": r"低度信號",
      "why": "本庫內部的證據分級詞，不是讀者語言",
      "alt": "「證據不足」／「單一低互動來源」"},
+    {"key": "退場", "pattern": r"(?<!企業)退場(?!交易|機制)",
+     "why": "表格列存續與否的內部維運判準，讀者不需要知道一列什麼時候被拿掉",
+     "alt": "「不再列入表格」／「已解決，見歷史記錄」；描述真實事件用「下市」「退出」等具體詞",
+     "why_exception": "「退場交易」「退場機制」「企業退場」是財經／產業常用語（IPO、併購、退出市場），與本庫表格維護的「退場」語意不同，正則排除"},
+    {"key": "留表優先序", "pattern": r"留表優先序",
+     "why": "表格滿載時決定誰留誰讓位的內部排序規則，讀者看不到表格背後的排序邏輯",
+     "alt": "刪掉；要交代取捨就直接寫具體理由一句"},
+    {"key": "表滿載", "pattern": r"表滿載",
+     "why": "表格容量已滿的維運狀態描述，不是頁面內容",
+     "alt": "「未列入上表」，理由寫成 `%% … %%` 備忘"},
+    {"key": "讓位者", "pattern": r"讓位者",
+     "why": "表格滿載時被擠出去的那一列的內部稱呼",
+     "alt": "刪掉，或直接寫「移出表格」"},
+    {"key": "證據層", "pattern": r"證據層",
+     "why": "本庫的頁面分層術語（結論層 vs 證據層），讀者只看得到內容本身",
+     "alt": "刪掉，或直接描述這是什麼樣的證據"},
+    {"key": "結論層", "pattern": r"結論層",
+     "why": "同上，是內部的頁面結構分層詞",
+     "alt": "刪掉，或直接寫結論本身"},
+    {"key": "墊底下沉", "pattern": r"墊底下沉",
+     "why": "表格淘汰機制的內部稱呼",
+     "alt": "刪掉，或寫「移出表格」"},
+    {"key": "蒸餾", "pattern": r"蒸餾候選|時段蒸餾|月度蒸餾|下一輪蒸餾|待蒸餾|蒸餾工程",
+     "why": "本庫「厚頁減重」editorial 流程的內部稱呼，讀者不需要知道頁面怎麼被收斂",
+     "alt": "刪掉，或寫「本節為精簡摘要，完整記錄見 [[…封存頁]]」",
+     "why_exception": "只narrow 到與「候選/時段/月度/下一輪/待/工程」搭配的內部流程用法——裸字「蒸餾」在本庫也是真實新聞詞（Alibaba Qwen 對 Claude 的模型蒸餾攻擊指控、Opus 4.8「蒸餾雙標」爭議），裸字全面禁止會誤傷這條持續在報導的新聞線"},
+    {"key": "封存", "pattern": r"封存", "skip_if_archive": True,
+     "why": "頁面被移到 archive 子頁保存的內部維運動作，讀者只需要知道去哪讀最新內容",
+     "alt": "「完整記錄見 [[…]]」；archive 頁本身的說明文字不受此限（見白名單）"},
+    {"key": "保留最近", "pattern": r"保留最近",
+     "why": "內容保留窗口是編輯部的資料保存政策，不是頁面在講的事",
+     "alt": "刪掉，或直接寫「最新 N 天」而不解釋為什麼只留這些"},
 ]
 
 _COMPILED = [(t, re.compile(t["pattern"])) for t in TERMS]
@@ -251,6 +283,8 @@ def scan(files: list[Path] | None = None, allow: list[dict] | None = None) -> li
             is_table = line.lstrip().startswith("|")
             for term, rx in _COMPILED:
                 if term.get("scope") == "table" and not is_table:
+                    continue
+                if term.get("skip_if_archive") and pid.endswith("-archive"):
                     continue
                 if not rx.search(line):
                     continue

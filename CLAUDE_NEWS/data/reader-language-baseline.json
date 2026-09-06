@@ -1,9 +1,13 @@
 {
   "_note": "讀者語言閘的存量基線（頁 → 命中指紋）。check_reader_language.py 只對基線外的新增命中 FAIL，基線內的印為 WARN 摘要。清乾淨一頁就把該頁整筆移除——棘輪只能往下轉，不可為了轉綠而加回去。指紋 = 禁詞 + 該行正規化內容雜湊，改寫該行即失效。",
   "_baseline_set": "2026-09-05",
-  "_pages": 8,
-  "_hits": 25,
+  "_pages": 17,
+  "_hits": 51,
   "pages": {
+    "entities/claude-code": [
+      "封存:74b895bb6c67",
+      "封存:936c22cda815"
+    ],
     "entities/fable-5": [
       "收錄標準:a453fbcb3e43"
     ],
@@ -11,9 +15,34 @@
       "未收錄:578aa4591833"
     ],
     "entities/pricing": [
+      "封存:9adfa4de26a6",
+      "封存:f21b6baa854a",
       "收錄標準:f0c03a177141",
       "未收錄:574e27845257",
-      "未收錄:e616ca1b2995"
+      "未收錄:e616ca1b2995",
+      "表滿載:c4d09a471d55"
+    ],
+    "feature-radar": [
+      "封存:1f9daab2d340",
+      "封存:c9c8d225ce10"
+    ],
+    "index": [
+      "封存:9bd47bd9a4be"
+    ],
+    "topics/ai-agent-safety": [
+      "封存:0191d2c6eec4",
+      "封存:8c9888d4413c",
+      "封存:a38f79cc55ce",
+      "封存:b82189468832"
+    ],
+    "topics/anthropic-business": [
+      "封存:55b044565a55",
+      "封存:bd0038da9faa"
+    ],
+    "topics/anthropic-government-policy": [
+      "封存:7b23135dd4c0",
+      "封存:8c9888d4413c",
+      "封存:e00bffa57130"
     ],
     "topics/anthropic-government-policy-archive": [
       "記者:a712097d295b"
@@ -21,7 +50,14 @@
     "topics/code-quality-decline": [
       "候選症狀:bcf6d9565eb6"
     ],
+    "topics/community-tech-discussions": [
+      "保留最近:023680bee038"
+    ],
     "topics/community-tech-patterns": [
+      "封存:627c106fc361",
+      "封存:72e5d66aed75",
+      "封存:9201ac984161",
+      "封存:de0cc8584c30",
       "收錄標準:086550baccde",
       "收錄標準:0cb6ca4dd488",
       "收錄標準:16a121e927a1",
@@ -39,11 +75,19 @@
       "ingest:3e475af37ad2",
       "lint:3e475af37ad2",
       "模式庫:00322975cd67",
+      "蒸餾:3e475af37ad2",
       "覆寫:8629abb36fa5",
       "門檻:1d65f6ef700f"
     ],
+    "topics/competitor-landscape": [
+      "封存:19f3771d5c5b",
+      "封存:bc31f0ca1bda"
+    ],
     "topics/competitor-landscape-archive": [
       "門檻:9603226095b9"
+    ],
+    "topics/market-signals": [
+      "退場:d899d322b3e4"
     ]
   }
 }

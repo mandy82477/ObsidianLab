@@ -81,6 +81,71 @@ class TestScopeAndSkips(_Case):
         self.assertEqual(hits[0]["line"], 7)
 
 
+class TestNewTerms(_Case):
+    """2026-09-06 讀者語言閘補詞——三波頁面 review 抓到的規則條文洩漏。"""
+
+    def test_new_curation_terms_are_caught(self):
+        hits = self.scan(
+            "a.md",
+            "本表依留表優先序調整，表滿載時讓位者為最舊一列，證據層與結論層分開處理，"
+            "墊底下沉的候選見下一輪蒸餾候選；保留最近 30 天的條目。\n",
+        )
+        terms = {h["term"] for h in hits}
+        for key in ("留表優先序", "表滿載", "讓位者", "證據層", "結論層", "墊底下沉", "蒸餾", "保留最近"):
+            self.assertIn(key, terms, key)
+
+    def test_bare_exit_term_is_caught(self):
+        hits = self.scan("a.md", "本列距最後動態逾 90 天，依規則退場。\n")
+        self.assertEqual([h["term"] for h in hits], ["退場"])
+
+    def test_bare_archive_term_is_caught_on_non_archive_page(self):
+        hits = self.scan("a.md", "本節條目已封存，細節不再列於本頁。\n")
+        self.assertEqual([h["term"] for h in hits], ["封存"])
+
+    def test_distillation_attack_news_is_not_caught(self):
+        """裸字「蒸餾」是真實新聞詞（模型蒸餾攻擊指控），不可誤傷。"""
+        hits = self.scan(
+            "opus-4-8.md",
+            "Anthropic 指控阿里巴巴對 Claude 發動蒸餾攻擊，媒體稱之為蒸餾雙標。\n",
+        )
+        self.assertEqual(hits, [])
+
+
+class TestExitTermAllowlistPatterns(_Case):
+    """退場：企業/財經常用語（退場交易、退場機制、企業退場）需排除在禁詞外。"""
+
+    def test_exit_transaction_is_allowed(self):
+        hits = self.scan("a.md", "本季併購退場交易總額創新高。\n")
+        self.assertEqual(hits, [])
+
+    def test_exit_mechanism_is_allowed(self):
+        hits = self.scan("a.md", "投資人關心的退場機制尚未明朗。\n")
+        self.assertEqual(hits, [])
+
+    def test_enterprise_exit_is_allowed(self):
+        hits = self.scan("a.md", "企業退場潮持續延燒。\n")
+        self.assertEqual(hits, [])
+
+
+class TestArchivePageAllowlist(_Case):
+    """封存：archive 子頁（含 resolved（封存頁）標頭）整頁豁免「封存」一詞。"""
+
+    def test_archive_page_slug_is_exempt(self):
+        text = (
+            "# 某頁 — 原始條目封存\n\n"
+            "**狀態：** resolved（封存頁）\n\n"
+            "> 本頁是某頁的原始條目封存，重點層見主頁。\n"
+        )
+        hits = self.scan("some-topic-archive.md", text)
+        self.assertEqual(hits, [])
+
+    def test_non_archive_page_with_same_text_still_caught(self):
+        """對照組：同樣文字若不在 archive 頁，仍要命中——確認豁免只綁 slug，不是字串本身。"""
+        text = "> 本頁是某頁的原始條目封存，重點層見主頁。\n"
+        hits = self.scan("some-topic.md", text)
+        self.assertEqual([h["term"] for h in hits], ["封存"])
+
+
 class TestAllowlist(_Case):
     def test_allowlist_entry_suppresses_hit(self):
         allow = [{"page": "a", "term": "門檻", "line_contains": "低門檻", "reason": "測試"}]
