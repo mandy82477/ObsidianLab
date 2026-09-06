@@ -6,8 +6,13 @@
 2. `_mechanism()` 對通用節名（摘要／時序…）只要規則檔任何地方出現同名小標＋
    淘汰類關鍵詞就判「有」，命中的可能是別頁的規則。改為命中行必須同時出現
    該頁 slug／頁名，或落在該頁專屬規則節內。
+
+全部用合成 fixture（臨時目錄自建頁與規則檔），不依賴任何真實 wiki 頁的節名或
+行號——真實頁面會隨改版變動（2026-09-06 教訓：原版測試硬編了
+`wiki/topics/anthropic-business.md` 的節名，該頁改版後全部變紅）。
 """
 import sys
+import tempfile
 import unittest
 from pathlib import Path
 
@@ -15,8 +20,6 @@ SCRIPTS = Path(__file__).resolve().parents[2] / "scripts"
 sys.path.insert(0, str(SCRIPTS))
 
 import table_census as tc  # noqa: E402
-
-ROOT = Path(__file__).resolve().parents[2]
 
 
 class GrowthUnknown(unittest.TestCase):
@@ -32,54 +35,145 @@ class GrowthUnknown(unittest.TestCase):
         ]
         self.assertEqual(tc._growth(rows, has_date_col=True), "prepend")
 
+    def test_有日期欄由舊到新判為append(self):
+        rows = [
+            "| x | 2026-07-01 |",
+            "| y | 2026-08-01 |",
+            "| z | 2026-09-01 |",
+        ]
+        self.assertEqual(tc._growth(rows, has_date_col=True), "append")
+
     def test_有日期欄但證據不足仍回unknown(self):
         rows = ["| x | 無日期 |", "| y | 無日期 |"]
         self.assertEqual(tc._growth(rows, has_date_col=True), "unknown")
 
-    def test_全站掃描不再輸出static(self):
-        """static 字串整個從輸出詞彙表移除，不留半個殘值。"""
-        pages = []
-        for f in sorted((ROOT / "wiki").rglob("*.md")):
-            slug = f.relative_to(ROOT / "wiki").as_posix()[:-3]
-            if slug in tc.EXCLUDE or slug.startswith("_views/"):
-                continue
-            pages.append((slug, f))
-        rows = tc.census(pages)
-        self.assertNotIn("static", {r["growth"] for r in rows})
+    def test_census整合_無日期欄的表回unknown_非static(self):
+        """端到端：用合成頁驗證 census() 組裝出的 growth 欄不再出現 static 字面值。"""
+        with tempfile.TemporaryDirectory() as tmp:
+            page = Path(tmp) / "widget-page.md"
+            page.write_text(
+                "---\n"
+                "page: \"topics/widget-page\"\n"
+                "---\n"
+                "# 小工具頁\n\n"
+                "## 風險總覽\n\n"
+                "| 風險 | 狀況 |\n"
+                "|---|---|\n"
+                "| A | B |\n"
+                "| C | D |\n",
+                encoding="utf-8",
+            )
+            orig_rule_files = tc.RULE_FILES
+            tc.RULE_FILES = []  # 無規則檔命中，機制欄不受影響本測試只看 growth
+            try:
+                rows = tc.census([("topics/widget-page", page)])
+            finally:
+                tc.RULE_FILES = orig_rule_files
+            self.assertEqual(len(rows), 1)
+            self.assertEqual(rows[0]["growth"], "unknown")
+            self.assertNotEqual(rows[0]["growth"], "static")
 
 
-class MechanismPageScoped(unittest.TestCase):
-    def test_anthropic_business_商業風險表為unknown(self):
-        pages = [("topics/anthropic-business",
-                   ROOT / "wiki" / "topics" / "anthropic-business.md")]
-        rows = tc.census(pages)
-        risk = [r for r in rows if r["section"].startswith("商業風險")]
-        self.assertTrue(risk, "找不到「商業風險」表——頁面結構可能已變")
-        self.assertEqual(risk[0]["growth"], "unknown")
+class MechanismDirect(unittest.TestCase):
+    """`_mechanism()` 的頁面範圍過濾——直接餵合成 rules 清單，不碰真實規則檔。"""
 
-    def test_anthropic_business_摘要表機制為無(self):
-        """摘要表命中的是別頁通用規則（news-pipeline-steps、wiki-ingest-format 泛用條文），
-        不含 anthropic-business 字樣，修正後不應算「有」。"""
-        pages = [("topics/anthropic-business",
-                   ROOT / "wiki" / "topics" / "anthropic-business.md")]
-        rows = tc.census(pages)
+    def _rules(self, docs):
+        """docs: [(filename, text), ...] → [(Path, text), ...]（Path 不需真實存在，只取 .name）。"""
+        return [(Path(name), text) for name, text in docs]
+
+    def test_命中行落在無關節內時判為無(self):
+        rules = self._rules([
+            ("wiki-ingest-format.md",
+             "## 通用規則\n"
+             "`## 摘要` 內帶日期的段落超過 2 段時移除，其餘頁面比照辦理。\n"),
+        ])
+        got = tc._mechanism("摘要", rules, "topics/widget-page", "小工具頁")
+        self.assertEqual(got, "無")
+
+    def test_命中行所屬標題含頁slug時判為有(self):
+        rules = self._rules([
+            ("wiki-ingest-widget.md",
+             "## widget-page 更新規則\n"
+             "`## 摘要` 表格過期後移除，改寫為結論。\n"),
+        ])
+        got = tc._mechanism("摘要", rules, "topics/widget-page", "小工具頁")
+        self.assertEqual(got, "有（wiki-ingest-widget.md）")
+
+    def test_命中行本身含頁標題時也判為有(self):
+        rules = self._rules([
+            ("wiki-ingest-other.md",
+             "## 其他規則\n"
+             "小工具頁的『時序』區塊，逾期節點需汰除。\n"),
+        ])
+        got = tc._mechanism("時序", rules, "topics/widget-page", "小工具頁")
+        self.assertNotEqual(got, "無")
+        self.assertIn("wiki-ingest-other.md", got)
+
+    def test_多檔命中時各自列出_且無關檔不列入(self):
+        rules = self._rules([
+            ("wiki-ingest-widget-a.md", "## widget-page 更新規則\n`## 摘要` 表格過期後覆寫。\n"),
+            ("wiki-ingest-widget-b.md", "## widget-page 補充規則\n`## 摘要` 內容逾期後封存。\n"),
+            ("wiki-ingest-unrelated.md", "## 通用\n`## 摘要` 內容逾期後覆寫，各頁比照辦理。\n"),
+        ])
+        got = tc._mechanism("摘要", rules, "topics/widget-page", "小工具頁")
+        self.assertTrue(got.startswith("有（"), got)
+        self.assertIn("wiki-ingest-widget-a.md", got)
+        self.assertIn("wiki-ingest-widget-b.md", got)
+        self.assertNotIn("wiki-ingest-unrelated.md", got)
+
+
+class MechanismCensusIntegration(unittest.TestCase):
+    """端到端：census() 用合成頁 + 合成規則檔，驗證 slug/title 過濾確實接上 _mechanism。"""
+
+    def _census_with_rules(self, page_text, rule_docs):
+        with tempfile.TemporaryDirectory() as tmp:
+            page = Path(tmp) / "widget-page.md"
+            page.write_text(page_text, encoding="utf-8")
+            rule_files = []
+            for i, (name, text) in enumerate(rule_docs):
+                rf = Path(tmp) / f"rule{i}-{name}"
+                rf.write_text(text, encoding="utf-8")
+                rule_files.append(rf)
+            orig_rule_files = tc.RULE_FILES
+            tc.RULE_FILES = rule_files
+            try:
+                return tc.census([("topics/widget-page", page)])
+            finally:
+                tc.RULE_FILES = orig_rule_files
+
+    PAGE_TEXT = (
+        "---\n"
+        "page: \"topics/widget-page\"\n"
+        "---\n"
+        "# 小工具頁\n\n"
+        "## 摘要\n\n"
+        "| 風險 | 狀況 |\n"
+        "|---|---|\n"
+        "| A | B |\n"
+    )
+
+    def test_只有通用規則檔時機制為無(self):
+        rows = self._census_with_rules(
+            self.PAGE_TEXT,
+            [("wiki-ingest-format.md", "## 通用規則\n`## 摘要` 逾期段落應移除。\n")],
+        )
         summary = [r for r in rows if r["section"] == "摘要"]
         self.assertTrue(summary)
         self.assertEqual(summary[0]["mechanism"], "無")
+        self.assertEqual(summary[0]["growth"], "unknown")  # 無日期欄
 
-    def test_pricing_模型api定價現況表機制為有(self):
-        pages = [("entities/pricing", ROOT / "wiki" / "entities" / "pricing.md")]
-        rows = tc.census(pages)
-        hit = [r for r in rows if r["section"].startswith("模型 API 定價現況")]
-        self.assertTrue(hit, "找不到「模型 API 定價現況」表——頁面結構可能已變")
-        self.assertEqual(hit[0]["mechanism"], "有（wiki-ingest-commercial.md）")
-
-    def test_ai_agent_safety_現在會打到你的表機制為有(self):
-        pages = [("topics/ai-agent-safety", ROOT / "wiki" / "topics" / "ai-agent-safety.md")]
-        rows = tc.census(pages)
-        hit = [r for r in rows if r["section"].startswith("現在會打到你的")]
-        self.assertTrue(hit, "找不到「現在會打到你的」表——頁面結構可能已變")
-        self.assertNotEqual(hit[0]["mechanism"], "無")
+    def test_有頁專屬規則檔時機制為有(self):
+        rule_name = "wiki-ingest-widget.md"
+        rows = self._census_with_rules(
+            self.PAGE_TEXT,
+            [
+                ("wiki-ingest-format.md", "## 通用規則\n`## 摘要` 逾期段落應移除。\n"),
+                (rule_name, "## widget-page 更新規則\n`## 摘要` 表格過期後移除。\n"),
+            ],
+        )
+        summary = [r for r in rows if r["section"] == "摘要"]
+        self.assertTrue(summary)
+        self.assertIn(f"rule1-{rule_name}", summary[0]["mechanism"])
 
 
 if __name__ == "__main__":

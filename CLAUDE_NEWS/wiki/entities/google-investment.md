@@ -4,7 +4,7 @@ kind: "entity"
 type: "event"
 status: "resolved（已完成，後續新輪融資進行中）"
 domain: "💼 商業"
-last_updated: "2026-07-24"
+last_updated: "2026-09-06"
 last_news_update: "2026-07-24"
 status_main: "resolved"
 days_since_news: 44
@@ -29,14 +29,14 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 **狀態：** resolved（已完成，後續新輪融資進行中）
 **領域：** 💼 商業
 **首次出現：** 2026-04-24
-**最後更新：** 2026-07-24
+**最後更新：** 2026-09-06
 **最後新聞更新：** 2026-07-24
 
 ---
 
 ## 摘要
 
-2026-04-24，Google 宣布以現金與運算資源形式向 Anthropic 投資最高 **400 億美元**，初期承諾 100 億，其餘 300 億視績效目標達成情況追加。此次投資估值 Anthropic 為 **3,500 億美元**，是 AI 領域迄今規模最大的單筆投資之一。
+2026-04-24，Google 宣布以現金與運算資源形式向 Anthropic 投資最高 **400 億美元**，初期承諾 100 億，其餘 300 億視績效目標達成情況追加。此次投資估值 Anthropic 為 **3,500 億美元**，是 AI 領域迄今規模最大的單筆投資之一。**$3,500 億為 2026-04-24 當輪估值，現行估值見 [[topics/anthropic-business]]「現在的數字」。**
 
 Bloomberg、TechCrunch、Reuters、NYT、Axios 等多個主流媒體同步報導。
 
@@ -54,7 +54,7 @@ Bloomberg、TechCrunch、Reuters、NYT、Axios 等多個主流媒體同步報導
 - 保守：Anthropic 對 Google 基礎設施的依賴度增加，獨立性受限
 
 ### 估值
-- 本輪後估值：**3,500 億美元**
+- 本輪後估值：**3,500 億美元**（2026-04-24 當輪估值，現行估值見 [[topics/anthropic-business]]「現在的數字」）
 - 初期承諾：100 億美元
 - 視績效追加：最高 300 億美元（共 400 億）
 
@@ -72,7 +72,7 @@ Bloomberg、TechCrunch、Reuters、NYT、Axios 等多個主流媒體同步報導
 
 - **投資結構**：現金 + 運算資源混合形式；Anthropic 同步承諾購買 Google TPU 算力（循環融資）
 - **算力綁定**：此結構實質增加 Anthropic 對 Google Cloud TPU 基礎設施的依賴度
-- **估值計算基礎**：3,500 億美元估值含初期 100 億現金承諾，其餘 300 億為績效條件觸發
+- **估值計算基礎**：3,500 億美元估值含初期 100 億現金承諾，其餘 300 億為績效條件觸發（此為 2026-04-24 當輪估值，現行估值見 [[topics/anthropic-business]]「現在的數字」）
 - **股東關係**：Google 為多輪投資方，Amazon 亦為重要股東，形成多方大廠支持格局
 
 ---
@@ -104,7 +104,7 @@ Bloomberg、TechCrunch、Reuters、NYT、Axios 等多個主流媒體同步報導
 ## 時序
 
 ### 2026-07-23
-- **Bloomberg 報導 Alphabet 持有 Anthropic 股權市值已跳升至約 1,240 億美元**：Bloomberg.com 報導 Alphabet 帳面持有的 Anthropic 股權市值已成長至約 **$124 billion**。**注意**：此為股權市值（帳面評估），非新一輪投資金額，與本頁記錄之 2026-04-24 官方投資額（最高 $400 億美元、當時估值 $3,500 億美元）為不同性質數字——市值跳升反映 Anthropic 整體估值自 04-24 以來的持續墊高（對照 Series H $965B、次級市場 $1.2 兆美元等既有估值訊號，見 [[topics/anthropic-business]]「IPO 前瞻與估值追蹤」表），惟具體換算所依據的 Anthropic 整體估值基準、Google 持股比例未見報導細節（推論，待後續查證）（Google News/Bloomberg.com）
+- **Bloomberg 報導 Alphabet 持有 Anthropic 股權市值已跳升至約 1,240 億美元**：Bloomberg.com 報導 Alphabet 帳面持有的 Anthropic 股權市值已成長至約 **$124 billion**。**注意**：此為股權市值（帳面評估），非新一輪投資金額，與本頁記錄之 2026-04-24 官方投資額（最高 $400 億美元、當時估值 $3,500 億美元）為不同性質數字——市值跳升反映 Anthropic 整體估值自 04-24 以來的持續墊高（對照 Series H $965B、次級市場 $1.2 兆美元等既有估值訊號，見 [[topics/anthropic-business]]「IPO 走到哪一格」表），惟具體換算所依據的 Anthropic 整體估值基準、Google 持股比例未見報導細節（推論，待後續查證）（Google News/Bloomberg.com）
 
 ### 2026-05-01
 - Data Center Knowledge 報導：Google 與 Anthropic 的算力合作已達到 **gigawatt 等級的預購規模**，反映 AI 基礎建設的資本投入正進一步集中，Anthropic 對自身長期算力需求的預判已超越一般規模

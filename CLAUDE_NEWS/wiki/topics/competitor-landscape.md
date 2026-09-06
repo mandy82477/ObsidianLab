@@ -3,7 +3,7 @@ page: "topics/competitor-landscape"
 kind: "topic"
 status: "ongoing"
 domain: "💼 商業"
-last_updated: "2026-09-05"
+last_updated: "2026-09-06"
 last_news_update: "2026-09-05"
 status_main: "ongoing"
 days_since_news: 1
@@ -11,7 +11,7 @@ parent: null
 children: "['topics/competitor-landscape-archive']"
 page_role: "hub"
 days_since_news_subtree: 1
-inbound_links: 56
+inbound_links: 58
 attribution_count: 93
 attribution_last: "2026-09-05"
 top_source: "google-news"
@@ -28,7 +28,7 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 **領域：** 💼 商業
 **蒐集邊界：** 以 Claude 為參照系的競品動態為主，另針對競品發布與定價定向補抓（每日至多 2 則）；競品自身未與 Claude 對比的發布可能延遲或缺漏。**帶跑分數字的第三方對照評測收不到**——這類內容多發表於對照型部落格，不在本站蒐集範圍，因此本頁的競品能力比較以官方數字與社群並排實測為主，缺口處改指向外部活榜單（見 [[topics/model-comparison]] 的外部評測榜單節），不自行推算。
 **開始日期：** 2026-04
-**最後更新：** 2026-09-05
+**最後更新：** 2026-09-06
 **最後新聞更新：** 2026-09-05
 
 > **本週衝擊**（2026-09-04）
@@ -239,7 +239,7 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 - **一般消費者端價格敏感度**：Financial Times 報導 Anthropic 旗艦模型在一般消費者市場不敵較低價競品，dev.to 與 Simon Willison 同期轉引，未見流失規模數字（dev.to；Blog/Simon Willison）
 
 ### 2026-08-23
-- **OpenAI**：inc.com 稱 OpenAI 拓展企業用戶速度已超越 Anthropic，主張此比估值更能反映競爭力，無量化數字（Google News/inc.com）
+- **OpenAI**：inc.com 稱 OpenAI 拓展企業用戶速度已超越 Anthropic，主張此比估值更能反映競爭力，無量化數字；公司層級的採用率數字與資料日期見 [[topics/anthropic-business]]「現在的數字」（Google News/inc.com）
 - **Inherent**：TechCrunch 報導 DeepMind 校友創立的 Inherent 自宣其 AI「隊友」在複現研究任務上超越 Anthropic 與 OpenAI，未經第三方驗證（Google News/TechCrunch）
 - **灰市轉售**：the-decoder.com 報導中國以遠低於官方定價轉售 Claude API token 額度，管制實效面見 [[topics/anthropic-government-policy]]（Google News/the-decoder.com）
 

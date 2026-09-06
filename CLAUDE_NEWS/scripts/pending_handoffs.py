@@ -34,7 +34,7 @@ from pathlib import Path
 
 REPO_ROOT = Path(__file__).resolve().parent.parent
 LEDGER = REPO_ROOT / "data" / "pending-handoffs.jsonl"
-CATEGORIES = ("模型", "功能", "商業", "安全政策", "社群", "人物")
+CATEGORIES = ("模型", "功能", "商業", "安全政策", "社群", "人物", "投資分析", "開發實務")  # 後兩者為衍生記者（.claude/rules/wiki-ingest.md 第四步），2026-09-06 加
 STALE_DAYS = 14
 
 
@@ -73,7 +73,7 @@ def _append(row: dict, path: Path = LEDGER) -> None:
 def open_handoff(src: str, dst: str, page: str, note: str, opened: str | None = None,
                  path: Path = LEDGER) -> str:
     if src not in CATEGORIES or dst not in CATEGORIES:
-        raise SystemExit(f"from/to 必須是六類別之一：{', '.join(CATEGORIES)}")
+        raise SystemExit(f"from/to 必須是下列類別之一：{', '.join(CATEGORIES)}")
     if src == dst:
         raise SystemExit("from 與 to 相同——同記者的待辦不是轉知，寫進頁面或 log 即可")
     opened = opened or date.today().isoformat()

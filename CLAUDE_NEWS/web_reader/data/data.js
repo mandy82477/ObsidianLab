@@ -127,18 +127,18 @@ window.WIKI_DATA = {
       "name": "Chris Ciauri",
       "entityType": "person",
       "status": "active",
-      "domain": "👤 人物",
+      "domain": "🏛️ 政策/安全",
       "pill": "active",
       "firstSeen": "2026-06-19",
       "startDate": "",
-      "lastUpdated": "2026-09-05",
+      "lastUpdated": "2026-09-06",
       "lastNewsUpdate": "2026-06-18",
       "updateFreq": "",
-      "parent": "",
-      "summary": "2026-06-18，Chris Ciauri 在首爾 Conrad 飯店召開記者會，公開表態「非常有信心，數日內模型將重新開放」，針對 Fable 5 / Mythos 出口管制問題給出具體時間框架。這是 Anthropic 首次在亞太地區就此議題公開表態。**後續驗證**：出口管制已於 2026-07-01 正式解…",
-      "latestHeadline": "Fable 5 / Mythos 出口管制正式解除（見 anthropic-government-policy），驗證 Ciauri 06-18「數日內」信心表態方向正確",
+      "parent": "topics/anthropic-government-policy",
+      "summary": "已併回 anthropic-government-policy",
+      "latestHeadline": "",
       "readerDomains": [
-        "👤 人物"
+        "🏛️ 政策/安全"
       ]
     },
     {
@@ -147,18 +147,18 @@ window.WIKI_DATA = {
       "name": "Chris Olah",
       "entityType": "person",
       "status": "active",
-      "domain": "👤 人物",
+      "domain": "🏛️ 政策/安全",
       "pill": "active",
       "firstSeen": "2026-05-26",
       "startDate": "",
-      "lastUpdated": "2026-08-28",
+      "lastUpdated": "2026-09-06",
       "lastNewsUpdate": "2026-05-29",
       "updateFreq": "",
-      "parent": "",
-      "summary": "Chris Olah 自 2026-05-29 起未見進一步公開露面或發言報導；他最近一次公開活動為 2026-05-26 受邀出席梵蒂岡，為教宗良十四世（Pope Leo XIV）首份 AI 主題封論《Magnifica Humanitas》揭幕演講，成為唯一受邀出席的 AI 公司代表，此事件引發全球主流媒體大幅報導…",
-      "latestHeadline": "Wired 長文《The Vatican's Man Inside Anthropic》深度側寫 Olah 在梵蒂岡事件中的角色，Guardian 同日質疑 Anthropic 是否存在「Vatican-washing」",
+      "parent": "topics/anthropic-government-policy",
+      "summary": "已併回 anthropic-government-policy",
+      "latestHeadline": "",
       "readerDomains": [
-        "👤 人物"
+        "🏛️ 政策/安全"
       ]
     },
     {
@@ -196,7 +196,7 @@ window.WIKI_DATA = {
       "lastNewsUpdate": "2026-08-18",
       "updateFreq": "",
       "parent": "",
-      "summary": "Claude Design 是 Anthropic 推出的 AI 設計工具功能，旨在讓 Claude 具備輔助 UI／視覺設計的能力。目前處於初期階段，社群評價以負面為主——幻覺嚴重、工具錯誤頻繁，且輸出設計風格過度貼近 Anthropic 自家品牌，忽略用戶提供的設計素材。截至 2026-07-10，無官方後續公開更…",
+      "summary": "Claude Design 是 Anthropic 推出的 AI 設計工具功能，旨在讓 Claude 具備輔助 UI／視覺設計的能力。目前處於初期階段，社群評價以負面為主——幻覺嚴重、工具錯誤頻繁，且輸出設計風格過度貼近 Anthropic 自家品牌，忽略用戶提供的設計素材。初期問題是否已改善未見官方說明，但產品本身持…",
       "latestHeadline": "❓ 待查證（標 2026-08-18｜查 /design、UI mockup｜複 2026-09-01）｜the-decoder.com 報導 Claude Code 新增 `/design` 指令，可於終端機直接建立 UI mockup（經 Google News 轉載，2026-08-18 報導）：單一媒體來源，僅",
       "readerDomains": [
         "🛠️ 工具/功能"
@@ -372,11 +372,11 @@ window.WIKI_DATA = {
       "pill": "gray",
       "firstSeen": "2026-04-24",
       "startDate": "",
-      "lastUpdated": "2026-07-24",
+      "lastUpdated": "2026-09-06",
       "lastNewsUpdate": "2026-07-24",
       "updateFreq": "",
       "parent": "",
-      "summary": "2026-04-24，Google 宣布以現金與運算資源形式向 Anthropic 投資最高 **400 億美元**，初期承諾 100 億，其餘 300 億視績效目標達成情況追加。此次投資估值 Anthropic 為 **3,500 億美元**，是 AI 領域迄今規模最大的單筆投資之一。 Bloomberg、TechC…",
+      "summary": "2026-04-24，Google 宣布以現金與運算資源形式向 Anthropic 投資最高 **400 億美元**，初期承諾 100 億，其餘 300 億視績效目標達成情況追加。此次投資估值 Anthropic 為 **3,500 億美元**，是 AI 領域迄今規模最大的單筆投資之一。**$3,500 億為 2026…",
       "latestHeadline": "Bloomberg 報導 Alphabet 持有 Anthropic 股權市值已跳升至約 1,240 億美元：Bloomberg.com 報導 Alphabet 帳面持有的 Anthropic 股權市值已成長至約 $124 billion。注意：此為股權市值（帳面評估），非新一輪投資金額，與本頁記錄之 2026-04-",
       "readerDomains": [
         "💼 商業"
@@ -730,18 +730,18 @@ window.WIKI_DATA = {
       "name": "Tom Brown",
       "entityType": "person",
       "status": "active",
-      "domain": "👤 人物",
+      "domain": "🏛️ 政策/安全",
       "pill": "active",
       "firstSeen": "2026-06-25",
       "startDate": "",
-      "lastUpdated": "2026-08-08",
+      "lastUpdated": "2026-09-06",
       "lastNewsUpdate": "2026-06-26",
       "updateFreq": "",
-      "parent": "",
-      "summary": "Tom Brown 6/24 接管與白宮的 Fable 5 出口管制談判後，商務部長 Lutnick 於 6/27 致函批准 Mythos 5 向 100+ 受信任合作夥伴有限釋出，最終於 2026-07-01 促成 Fable 5 / Mythos 5 出口管制全面解除（封鎖期共 18–19 天，見 anthropi…",
-      "latestHeadline": "接管談判後促成 Fable 5 / Mythos 5 出口管制全面解除（商務部長 Lutnick 宣布，封鎖期共 18–19 天），為出口管制主線最終結局；詳見 anthropic-government-policy（來源：NYT、BBC、CNN、Reuters、WSJ、FT、WashPost、The Guardian",
+      "parent": "topics/anthropic-government-policy",
+      "summary": "已併回 anthropic-government-policy",
+      "latestHeadline": "",
       "readerDomains": [
-        "👤 人物"
+        "🏛️ 政策/安全"
       ]
     }
   ],
@@ -797,12 +797,32 @@ window.WIKI_DATA = {
       "pill": "active",
       "firstSeen": "",
       "startDate": "2026-06-21",
-      "lastUpdated": "2026-09-05",
+      "lastUpdated": "2026-09-06",
       "lastNewsUpdate": "2026-09-01",
       "updateFreq": "",
       "parent": "",
       "summary": "截至 2026-06-29，一週至兩週內 Google DeepMind 連失至少 4–5 位頂尖研究員至 Anthropic，市值蒸發約 $2,700 億美元（推論，分析師估算），Gemini 3.5 Pro 延期至七月（推論，dev.to 報導，未經 Google 官方確認）。最矚目的是 2024 諾貝爾化學獎得主…",
       "latestHeadline": "❓ 待查證（標 2026-09-01｜查 DeepMind、founding、四位主管｜複 2026-09-15）｜Google DeepMind 同一天失去四位創立元老級主管：Google News 報導稱 DeepMind 同日再失四位創立元老級主管，惟原文僅標題可用，四人身分均未見具體姓名，不得推測與 08-05",
+      "readerDomains": [
+        "💼 商業"
+      ]
+    },
+    {
+      "id": "anthropic-business-archive",
+      "pageType": "topic",
+      "name": "Anthropic 商業健康度 — 原始條目封存",
+      "entityType": "event",
+      "status": "resolved（封存頁）",
+      "domain": "💼 商業",
+      "pill": "gray",
+      "firstSeen": "",
+      "startDate": "2026-05-28",
+      "lastUpdated": "2026-09-06",
+      "lastNewsUpdate": "2026-06-14",
+      "updateFreq": "",
+      "parent": "topics/anthropic-business",
+      "summary": "本頁是 anthropic-business 的原始條目封存，重點層（現在的數字、IPO 走到哪一格、還打得到你的風險）都在主頁。",
+      "latestHeadline": "",
       "readerDomains": [
         "💼 商業"
       ]
@@ -817,14 +837,15 @@ window.WIKI_DATA = {
       "pill": "active",
       "firstSeen": "",
       "startDate": "2026-05-28",
-      "lastUpdated": "2026-09-05",
+      "lastUpdated": "2026-09-06",
       "lastNewsUpdate": "2026-09-04",
       "updateFreq": "",
       "parent": "",
-      "summary": "**最新（2026-09-04）：** FT／NYT 報導 Anthropic 洽談由 Morgan Stanley、Goldman Sachs 主辦、估值上看 2 兆美元的 IPO，首見具體承銷投行組合；同期 The Information 報導 Anthropic 自建支付技術傳將分食 Stripe 市場，NYT …",
-      "latestHeadline": "最新（2026-09-04）： FT／NYT 報導 Anthropic 洽談由 Morgan Stanley、Goldman Sachs 主辦、估值上看 2 兆美元的 IPO，首見具體承銷投行組合；同期 The Information 報導 Anthropic 自建支付技術傳將分食 Stripe 市場，NYT 另指企業",
+      "summary": "FT／NYT 報導 IPO 承銷傳由 Morgan Stanley、Goldman Sachs 主辦、估值上看 2 兆美元。這是投資人一方的預期，公司沒有給過這個數字，也還沒有公開版 S-1。",
+      "latestHeadline": "",
       "readerDomains": [
-        "💼 商業"
+        "💼 商業",
+        "💻 開發實務"
       ]
     },
     {
@@ -872,19 +893,20 @@ window.WIKI_DATA = {
       "pageType": "topic",
       "name": "Anthropic 政府與軍事政策",
       "entityType": "",
-      "status": "ongoing（出口管制主線已解除，剩餘承諾落實與衍生支線持續觀察；中美 AI 工具信任對峙已獨立成頁）",
+      "status": "ongoing（出口管制已結案；八條政府線在動，其中三條已經改到讀者手上的 Claude）",
       "domain": "🏛️ 政策/安全",
       "pill": "active",
       "firstSeen": "",
       "startDate": "2026-05-01",
-      "lastUpdated": "2026-09-05",
+      "lastUpdated": "2026-09-06",
       "lastNewsUpdate": "2026-09-05",
       "updateFreq": "",
       "parent": "",
-      "summary": "**出口管制已於 2026-07-01 全面解除。** 美國商務部長 Howard Lutnick 宣布解除 Fable 5 和 Mythos 5 的出口管制，正式生效；Anthropic 承諾三項義務換取解封（主動偵測安全風險、與政府合作制定協議與標準、通報惡意活動）；封鎖期共 18–19 天（2026-06-13 …",
-      "latestHeadline": "[🏛️ 新增] NDTV：參議員 Bernie Sanders 提出新法案，內容可能使 OpenAI、Anthropic 等公司執行長面臨數年徒刑：僅標題可用，法案條文與進度未見報導；延續 08-10 Sanders 暫停 AI 開發呼籲。❓ 待查證（標 2026-09-05｜查 Bernie Sanders、jail",
+      "summary": "**出口管制已於 2026-06-30 解除、07-01 恢復存取，封鎖 19 天**（2026-06-12 商務部 BIS 管制生效 → 06-30 商務部通知已移除、Anthropic 當晚公告翌日恢復；**天數含首尾兩日**，與 MarketScale 07-03 的「精確為 19 天」一致）。Anthropic…",
+      "latestHeadline": "出口管制已於 2026-06-30 解除、07-01 恢復存取，封鎖 19 天（2026-06-12 商務部 BIS 管制生效 → 06-30 商務部通知已移除、Anthropic 當晚公告翌日恢復；天數含首尾兩日，與 MarketScale 07-03 的「精確為 19 天」一致）。Anthropic 以三項義務換取",
       "readerDomains": [
-        "🏛️ 政策/安全"
+        "🏛️ 政策/安全",
+        "💻 開發實務"
       ]
     },
     {
@@ -1100,7 +1122,7 @@ window.WIKI_DATA = {
       "pill": "active",
       "firstSeen": "",
       "startDate": "2026-04",
-      "lastUpdated": "2026-09-05",
+      "lastUpdated": "2026-09-06",
       "lastNewsUpdate": "2026-09-05",
       "updateFreq": "",
       "parent": "",
@@ -2281,7 +2303,8 @@ window.WIKI_DATA = {
       "summary": "本頁回答一個問題：**本庫追的這則消息，如果放在市場的框架裡讀，該注意什麼、又該打幾折。** 每則判讀只放觀點，事實依據一律連回 anthropic-business、pricing、enterprise-tool-tracker、competitor-landscape，不在本頁複製一份。 分級只有兩檔會寫上來：🔴 …",
       "latestHeadline": "本頁回答一個問題：本庫追的這則消息，如果放在市場的框架裡讀，該注意什麼、又該打幾折。 每則判讀只放觀點，事實依據一律連回 anthropic-business、pricing、enterprise-tool-tracker、competitor-landscape，不在本頁複製一份。",
       "readerDomains": [
-        "💼 商業"
+        "💼 商業",
+        "💻 開發實務"
       ]
     },
     {
@@ -2315,7 +2338,7 @@ window.WIKI_DATA = {
       "pill": "active",
       "firstSeen": "",
       "startDate": "2026-08-05",
-      "lastUpdated": "2026-09-05",
+      "lastUpdated": "2026-09-06",
       "lastNewsUpdate": "2026-08-05",
       "updateFreq": "🗓️ 週更（每週抓取一次外部榜單快照；更新日期停留數天屬正常節奏）",
       "parent": "",
@@ -2415,12 +2438,15 @@ window.WIKI_DATA = {
     "feature-radar",
     "claude-code",
     "pricing",
+    "anthropic-business",
+    "market-signals",
     "managed-agents",
     "model-comparison",
     "model-task-leaderboard",
     "competitor-landscape",
     "community-large-codebase-workflow",
-    "community-tech-patterns"
+    "community-tech-patterns",
+    "anthropic-government-policy"
   ],
   "digestIndex": [
     {
@@ -3205,6 +3231,11 @@ window.WIKI_DATA = {
     }
   ],
   "weeklyIndex": [
+    {
+      "id": "2026-W36",
+      "name": "2026-W36 週報（08-31 ~ 09-05）",
+      "preview": "資安研究者 Johann Rehberger 08-26 公布的攻擊鏈證明，只要讓 Claude Code 摘要一個受控網頁，在 3–5 次的小樣本測試中就有 60–80% 拿到本機程式碼執行權（embracethered，作者自標「小樣本，不是普遍攻擊成功率量測」）。Auto Mode 繞過這條線本週才真正有了新東西"
+    },
     {
       "id": "2026-W35",
       "name": "2026-W35 週報（08-24 ~ 08-30）",

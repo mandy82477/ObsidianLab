@@ -20,7 +20,7 @@
 
 ## 💻 開發實務入口
 
-只放**開發實務強相關**的頁面（怎麼做、裝什麼、選什麼、**要花多少**）；產品動態與事件追蹤住各自的頁，整理後沉澱到這幾頁。工具的判斷（該裝哪個、證據多強）由社群工具目錄每週整理，每日同步進「興趣類別 skill 總覽」——讀者只需看總覽一頁。
+只放**開發實務強相關**的頁面（怎麼做、裝什麼、選什麼、**要花多少**、**這筆錢會不會變**）；產品動態與事件追蹤住各自的頁，整理後沉澱到這幾頁。工具的判斷（該裝哪個、證據多強）由社群工具目錄每週整理，每日同步進「興趣類別 skill 總覽」——讀者只需看總覽一頁。
 
 | 我想…… | 去哪 |
 |---|---|
@@ -28,6 +28,7 @@
 | 我卡住了（帳單爆、context 撐爆、agent 互踩、它說做完了沒做、agent 讀不懂大 repo、跑 auto 出事……），**社群首選**是哪個 | [[topics/skill-interest-watch]]「我卡在這裡」決策表；安全類 → [[topics/ai-agent-safety]] |
 | 我在舊版本，升上去會壞什麼 | [[feature-radar]]「從你現在的版本升上去，會遇到什麼」；壞掉的東西見 [[entities/claude-code]]「現在會咬到你的」 |
 | 這個月我會多花／少花多少（方案內含什麼、一小時多少、有沒有在扣錯錢） | [[entities/pricing]] |
+| 這家公司撐不撐得住、會不會漲價、該不該簽兩年約（估值、IPO、營收、風險） | [[topics/anthropic-business]]「現在的數字」；市場判讀見 [[topics/market-signals]] |
 | 我關心的某類工具，現在誰最大、本庫怎麼判斷（本週竄升欄累積一週星史後啟用） | [[topics/skill-interest-watch]] 各類別（按開發流程段） |
 | 它說做完了，我怎麼知道是真的——**官方**做法（要證據、`/goal`、Stop hook） | [[topics/coding-workflow-guide]] 第 9 段 |
 | 我想讓 agent 自己跑幾小時／過夜，該用哪個（`/goal`、subagent、Managed Agents、Agent SDK） | [[entities/managed-agents]]「你該用哪個」 |
@@ -110,7 +111,7 @@
 | [[topics/enterprise-cost-management]] | 💼 商業 | ongoing | 企業規模採用 Claude 的成本結構挑戰：Uber/Microsoft 案例、缺失工具、因應策略；08-14 新增成本管控動態 |
 | [[topics/enterprise-tool-tracker]] | 💼 商業 | ongoing | 大型企業 AI 編碼工具使用追蹤：Microsoft/Amazon/Uber/Apple 等企業當前工具選擇與變化軌跡；07-03 Alibaba 以疑似後門風險禁用 Claude Code（❌ 退出） |
 | [[topics/community-tech-timeline]] | 🌐 社群 | monitoring | 社群技術應用趨勢完整時序（2026-04-25 至今），從 community-tech-patterns 拆分 |
-| [[topics/anthropic-business]] | 💼 商業 | ongoing | Anthropic 商業健康度：企業採用率 34.4%、17 倍訂閱補貼、PMF 觀察、Microsoft 退出風險；07-03 藥物開發野心（The Verge）、大廠員工進駐客戶模式 |
+| [[topics/anthropic-business]] | 💼 商業 | ongoing | Anthropic 商業健康度：現在的數字、IPO 走到哪一格、合作會不會改到你的帳單；補貼倍數只有社群估算　↳ 子故事：[[topics/anthropic-business-archive]] |
 | [[topics/market-signals]] | 💼 商業 | ongoing | 投資訊號判讀：本庫追的消息放進市場框架會看到什麼——方向、時效、該打幾折、接下來看哪個里程碑，附兩週後回顧結算（教學型事件研究，非投資建議；事實在商業各頁，本頁只放觀點） |
 | [[topics/recursive-self-improvement]] | 🏛️ 政策/安全 | ongoing | AI 遞歸自我改進：官方《Risk Report August 2026》（08-14）首度就內部 AI R&D 加速幅度提供量化區間自評，並確認 Model 2 暫無釋出計畫 |
 | [[topics/ai-talent-flow]] | 💼 商業 | ongoing | AI 實驗室人才流動與對各公司影響：Google DeepMind 高層與核心研究員異動（事件 08-05，08-13 查證補記），Anthropic 主要承接 |

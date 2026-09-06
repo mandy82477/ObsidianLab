@@ -343,6 +343,17 @@ python scripts/gen_wiki_frontmatter.py --list-signal "⚠️ 高引用但停滯"
 安全兩頁結論表退場（5i）：safety（複查 N 列，移除 a／補位 b／不動 c）／gov-policy（複查 N 列，移除 a／補位 b／不動 c；產品節 M 項對 K 列）
 ```
 
+### 5j. 商業健康度四表退場複查（主編親做）`[加入: 2026-09-06]`
+
+`wiki/topics/anthropic-business.md` 的 `## 現在的數字`（上限 10 列）、`## 現在還打得到你的商業風險`（上限 6 列）、`## 哪個合作會改到你用的 Claude`（上限 6 列）與 `## 上面提到的人是誰`（上限 8 人）都有退場與補位條文，但沒有任何一步會去跑它——本步即其週更觸發邊，複查規則見 `.claude/rules/wiki-ingest-commercial.md`「anthropic-business 更新規則」第 1、4、5、6 條。
+
+逐列檢查：指標表看「資料日期」是否逾 180 天且無人發布新值，符合即移出並在細節區留結論；風險表看「風險」欄括號內的最後動態是否逾 90 天且本輪無新事實（**訴訟不適用 90 天**），符合即移除並在細節區補註記，表未滿載時依判準從細節區補位並移除其註記；合作表看該差異是否已消失或逾 180 天無新事實；人物表看每人所連的那一列或那一則是否仍在頁上。另核合作表上的「資料截至」日與 `entities/pricing`「通路與乘數」是否同批（見 5e）。
+
+**回報格式（納入步驟 8 的 lint 紀錄）：**
+```
+商業健康度四表健檢（5j）：指標 N 列（移除 a／補位 b）／風險 M 列（移除 c／補位 d）／合作 K 列／人物 P 人／通路快照資料截至 YYYY-MM-DD
+```
+
 ### 6. CLAUDE.md 健檢
 
 讀取 `wiki/CLAUDE.md`、`.claude/rules/wiki-ingest.md`、`.claude/rules/wiki-ingest-format.md`、`.claude/rules/wiki-reporter-shared.md` 與**本檔（`.claude/commands/wiki-lint.md`）自身** `[加入: 2026-08-28]`，依序執行下列各項檢查。
@@ -621,6 +632,7 @@ python scripts/check_reader_language.py --page <slug>   # 單頁清單
 - 逾期待查證清算（5c）：（盤點 N 筆，本輪處理 M 筆：查實 A／確認官方未載 B／失效移除 C，結案回掃上修 D 頁，剩餘 N-M 筆／雲端 egress 封鎖，跳過）
 - 投資訊號回顧（5h）：（結算 N 列：✅ a／❌ b／～ c／不可驗證 d，剩餘 ⏳ M 列／雲端 egress 封鎖，跳過）
 - 安全兩頁結論表退場（5i）：safety（複查 N 列，移除 a／補位 b／不動 c）／gov-policy（複查 N 列，移除 a／補位 b／不動 c；產品節 M 項對 K 列）
+- 商業健康度四表健檢（5j）：指標 N 列（移除 a／補位 b）／風險 M 列（移除 c／補位 d）／合作 K 列／人物 P 人／通路快照資料截至 YYYY-MM-DD
 - 讀者模擬：（3 題結果：✅/⚠️ 已修復/❌ 待辦，各附一句說明）
 - 質疑代打（7b）：（seed 與抽中題號，各題 ✅ 附證據行/⚠️ 修了什麼/❌ 待辦；時效燈亮時原樣轉述）
 - lint 自我遵守率：（N/6 位記者回報一次過；退回者列出類別與缺項）

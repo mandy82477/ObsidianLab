@@ -3,7 +3,7 @@ page: "topics/ai-talent-flow"
 kind: "topic"
 status: "ongoing"
 domain: "💼 商業"
-last_updated: "2026-09-05"
+last_updated: "2026-09-06"
 last_news_update: "2026-09-01"
 status_main: "ongoing"
 days_since_news: 5
@@ -28,14 +28,14 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 **領域：** 💼 商業
 **蒐集邊界：** 以與 Anthropic 相關的人才流動為主，另針對本主題定向補抓（每日至多 3 則）；其他實驗室之間、與 Anthropic 無關的異動仍可能延遲或缺漏，重大者由人工查證補記。
 **開始日期：** 2026-06-21
-**最後更新：** 2026-09-05
+**最後更新：** 2026-09-06
 **最後新聞更新：** 2026-09-01
 
 > **最新動態：Google DeepMind 同日再失四位創立元老級主管（未具名，2026-09-01）**
 > Google News 報導稱 DeepMind 同一天失去四位創立元老級主管，惟報導細節僅標題可見，四人身分、去向均未見具體姓名，標為懸置事項、不得杜撰人名，詳見「時序」新增節。
 > **Adgully.com 跟進報導 Google DeepMind 頂尖 AI 人才佔比明顯下滑**（2026-08-29）
 > 與 08-27 Fortune「持續流失頂尖人才」為同一趨勢的又一媒體佐證，延續本頁自 2026-06 以來記錄的「Google DeepMind 淨流出」格局；具體佔比數字、統計方法未見報導細節，僅標題可用（推論，待後續補充具名案例）。
-> **08-21/08-23 已記錄之 Anthropic 延攬 Google 自研晶片計畫創辦人 Amir Salek**，仍為本頁近期重點，詳見「對各公司的影響」表。
+> **Anthropic 延攬 Amir Salek**（前 Google TPU 計畫創辦人，2013–2022 主導前七代 TPU）已查實進入 compute 團隊、向 James Bradbury 匯報（Bloomberg，2026-09-06 查證），詳見「對各公司的影響」表。
 > **懸置事項仍無新進展**：08-13 Sergey Brin 內部談話報導（標題截斷）已掃日報至 2026-08-29 無後續；官方頁面未查證。
 > **另（背景訊號，非核心格局變動，2026-08-28）**：報導稱加拿大 5.41 億美元研究計畫吸引部分美國常春藤學者北遷，屬學界層級跨國政策訊號，僅標題可用，未見具名機構或與特定 AI 實驗室之關聯，詳見「時序」。
 
@@ -50,7 +50,7 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 | 公司 | 角色 | 具體影響 | 評估 |
 |------|------|---------|------|
 | **Google DeepMind** | 淨流失方＋高層動盪 | Jumper／Adler／Pritzel／+2 研究員出走（6/21–6/28）＋ Discovery Loop 創業潮（08-05/06）；市值蒸發約 $2,700 億美元；08-27 Fortune：流失持續（詳見下方細節） | 🔴 技術核心＋高層治理雙重動盪，削弱 Google 組織穩定性訊號（推論，已查證 2026-08-13）|
-| **Anthropic** | 主要承接方 | 科學計算（Jumper）／AI 編碼（Adler）／訓練（Pritzel）／安全經濟；08-21/23 新增晶片人才 Amir Salek（前 Google TPU 計畫創辦人）| 🟢 訊號 > 實質；晶片人才屬性質不同的新戰場，若屬實代表招募擴及硬體自主設計（推論，細節待觀察）|
+| **Anthropic** | 主要承接方 | 科學計算（Jumper）／AI 編碼（Adler）／訓練（Pritzel）／安全經濟；08-21/23 新增晶片人才 Amir Salek（前 Google TPU 計畫創辦人，入 compute 團隊）| 🟢 招募已擴及硬體自主設計；到任日未公開（推論：戰力影響待觀察）|
 | **OpenAI** | 次要承接方 | 獲得一名 Google 頂尖研究員（6/23 SEJ 報導，姓名未具名）| 🟡 同步受惠於 Google 人才外流，規模小於 Anthropic |
 
 **對各公司的影響細節**
@@ -84,10 +84,10 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 - **Fortune：新數據顯示 Google DeepMind 持續流失頂尖 AI 人才至競爭實驗室與新創**：報導指出最新資料顯示 DeepMind 人才流失情況延續，惟具體人數、流向公司名單、統計期間均未見報導細節，僅標題可用（推論，待後續補充具名案例）。與本頁既有記錄（06-21～08-06 批次流失至 Anthropic／OpenAI／Discovery Loop）方向一致，屬既有趨勢的持續佐證，非新增具名個案（Google News/Fortune https://fortune.com/2026/08/27/google-deepmind-losing-talent-to-rival-ai-labs-startups-new-data-show/）
 
 ### 2026-08-24（跟進，非新事實）
-- **citybiz：轉載 Anthropic 延攬 Amir Salek 消息**：與 08-23 具名確認為同一事件，未見新增職位、時程或團隊規模細節，僅為又一媒體重述；商業意涵仍見 [[topics/anthropic-business]]「戰略合作」表（Google News/citybiz）
+- **citybiz：轉載 Anthropic 延攬 Amir Salek 消息**：與 08-23 具名確認為同一事件，未見新增職位、時程或團隊規模細節，僅為又一媒體重述；商業意涵仍見 [[topics/anthropic-business]]「哪個合作會改到你用的 Claude」表（Google News/citybiz）
 
 ### 2026-08-23（具名確認，延續 08-21）
-- **The Times of India：具名確認 Anthropic 延攬 Google 自研晶片計畫創辦人 Amir Salek**：延續 08-21 已記錄之「前 Google 晶片工程師」（未具名，Seeking Alpha／Bloomberg），本則首次具名確認為 **Amir Salek**——Google 自研晶片計畫（custom chip programme）創辦人，即 Google TPU 專案創始人物之一。**對戰力與市場意涵**：與本頁既有以研究員流動為主的追蹤格局不同，此案屬**晶片設計人才**流入，且延攬對象非一般工程師而是曾主導 Google 整條自研晶片專案的創始層級人物，顯示 Anthropic 自研晶片布局（見 [[topics/anthropic-business]]「戰略合作」表 08-05～07 已記錄之內部晶片設計團隊籌建）可能取得具備從零打造整條晶片專案經驗的核心人才；具體職位、加入時間、團隊規模、與既有晶片團隊籌建進度的銜接關係均未見報導細節，僅標題層級資訊（推論）（Google News/The Times of India）
+- **The Times of India：具名確認 Anthropic 延攬 Google 自研晶片計畫創辦人 Amir Salek**：延續 08-21 已記錄之「前 Google 晶片工程師」（未具名，Seeking Alpha／Bloomberg），本則首次具名確認為 **Amir Salek**——Google 自研晶片計畫（custom chip programme）創辦人，即 Google TPU 專案創始人物之一。**對戰力與市場意涵**：與本頁既有以研究員流動為主的追蹤格局不同，此案屬**晶片設計人才**流入，且延攬對象非一般工程師而是曾主導 Google 整條自研晶片專案的創始層級人物，顯示 Anthropic 自研晶片布局（見 [[topics/anthropic-business]]「哪個合作會改到你用的 Claude」表 08-05～07 已記錄之內部晶片設計團隊籌建）可能取得具備從零打造整條晶片專案經驗的核心人才；具體職位、加入時間、團隊規模、與既有晶片團隊籌建進度的銜接關係均未見報導細節，僅標題層級資訊（推論）（Google News/The Times of India）。**後續（2026-09-06）：** Bloomberg 載明 Salek 2013–2022 創辦並領導 Google TPU 專案、經手前七代，加入後進 compute 團隊並向 James Bradbury 匯報；到任日未公開
 
 ### 2026-08-13
 - ❓ **待查證**（標 2026-08-13｜查 Sergey Brin｜複 2026-09-12）｜**Sergey Brin 在 Hassabis 卸任 DeepMind CEO 後對內部員工發表談話（標題截斷，內容未知）**：Times of India 標題稱 Google 共同創辦人 Sergey Brin 在 Demis Hassabis 卸任 DeepMind CEO 後對內部員工發表談話，標題本身遭 RSS 截斷為「Catch u...」，具體談話內容、發表場合均未見報導。**與既有記錄的關係**：本頁已於 08-05／08-06 事件（08-13 查證補記，見下方）記錄 Hassabis「卸下 DeepMind 日常營運、轉任 DeepMind 董事長兼 Alphabet 首席科學家（留任集團，非離職）」；本則標題用詞「exits as CEO」與該既有記錄方向一致（確實卸任 CEO 職務，但留任集團），惟無法排除為另一波後續發展或純粹是同一事件的重新報導角度，因標題截斷、正文未提供，暫不逕自合併或視為新增獨立事實。已掃日報至 2026-08-29 無後續；官方頁面未查證（Google News/Times of India）

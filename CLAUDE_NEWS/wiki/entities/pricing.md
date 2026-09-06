@@ -12,7 +12,7 @@ parent: null
 children: "['entities/pricing-archive']"
 page_role: "hub"
 days_since_news_subtree: 1
-inbound_links: 134
+inbound_links: 138
 attribution_count: 81
 attribution_last: "2026-09-05"
 top_source: "google-news"
@@ -380,14 +380,14 @@ Anthropic 於 4 月初靜默縮短預設 prompt cache 窗口，實質提高 toke
 
 - **Techzine Global（2026-08-21 07:46 UTC）**：報導稱 Anthropic 讓企業客戶可將 AI 資料存放在自有雲端環境，僅標題可用，未見實作機制（是否限特定雲端商、涵蓋哪些模型／方案）、生效時間或官方公告連結。
 - **與下方 08-20 資料保留政策報導的關係**：時間相近、同屬企業資料治理，但措辭不同（一稱「自有雲端存放」、一稱「保留政策調整」），標題層級無從判斷是同一政策的兩種描述或兩項獨立變動。**後續（2026-09-03）**：官方 09-01 的 EFS 公告同時涵蓋兩者（資料留在客戶自有雲端＝Anthropic 端不留存）。
-- **企業資料存放於自有雲端環境——官方已確認（2026-09-03 查證）**：Anthropic 09-01 公告 Enterprise Frontier Safeguards（EFS），明載企業用量資料存放於**客戶自行控制的雲端基礎設施**而非 Anthropic 端；EFS 免費，自 2026 年秋季起分階段對企業客戶開放。08-21 Techzine 標題所述即此政策的預告（[Anthropic Blog](https://www.anthropic.com/news/enterprise-frontier-safeguards)，2026-09-01；詳見 [[topics/anthropic-business]]「戰略合作」EFS 條目）
+- **企業資料存放於自有雲端環境——官方已確認（2026-09-03 查證）**：Anthropic 09-01 公告 Enterprise Frontier Safeguards（EFS），明載企業用量資料存放於**客戶自行控制的雲端基礎設施**而非 Anthropic 端；EFS 免費，自 2026 年秋季起分階段對企業客戶開放。08-21 Techzine 標題所述即此政策的預告（[Anthropic Blog](https://www.anthropic.com/news/enterprise-frontier-safeguards)，2026-09-01；詳見 [[topics/anthropic-business]]「哪個合作會改到你用的 Claude」EFS 條目）
 
 #### 2026-08-20：路透社／彭博社（消息人士）報導 Anthropic 計畫調整企業資料保留政策（未經官方證實）
 
 - **Reuters（19:34 UTC）／Bloomberg（17:51 UTC）同日報導**：兩家均引述消息人士稱 Anthropic 計畫調整企業客戶的資料保留政策；Bloomberg 標題聚焦「進階 AI」的適用範圍。兩則僅標題與極簡導言可用，調整內容（保留天數增減、涵蓋模型範圍、生效時間）未見細節。
 - **與既有「30 天資料保留政策」的關係（見 2026-06-09 條目）**：本頁已記錄 Fable 5／Mythos 5 流量（含 AWS Bedrock）強制保留 30 天；本則「計畫調整」是否針對此政策、方向為何均未見細節，不可推定延長或縮短。
 - **與競品動態的呼應**：同期 The Register／TechCrunch 報導 OpenAI 祭出「零資料保留」（zero data retention）承諾搶攻 Anthropic 企業客戶，被解讀為競爭回應，詳見 [[topics/competitor-landscape]]「OpenAI ChatGPT Work / GPT-5.6」子區塊。
-- **企業資料保留政策調整——官方版本為 EFS（2026-09-03 查證）**：08-20 Reuters／Bloomberg 匿名消息稱 Anthropic 計畫調整企業資料保留政策；官方 09-01 公告的 Enterprise Frontier Safeguards 即其落地形式——資料留在客戶自有雲端、Anthropic 端不留存，並搭配濫用偵測。官方公告**未載**媒體先前傳的「保留天數」數字，該口徑僅為媒體稱（Reuters、Bloomberg），不得視為官方數字（[Anthropic Blog](https://www.anthropic.com/news/enterprise-frontier-safeguards)，2026-09-01；詳見 [[topics/anthropic-business]]「戰略合作」EFS 條目）
+- **企業資料保留政策調整——官方版本為 EFS（2026-09-03 查證）**：08-20 Reuters／Bloomberg 匿名消息稱 Anthropic 計畫調整企業資料保留政策；官方 09-01 公告的 Enterprise Frontier Safeguards 即其落地形式——資料留在客戶自有雲端、Anthropic 端不留存，並搭配濫用偵測。官方公告**未載**媒體先前傳的「保留天數」數字，該口徑僅為媒體稱（Reuters、Bloomberg），不得視為官方數字（[Anthropic Blog](https://www.anthropic.com/news/enterprise-frontier-safeguards)，2026-09-01；詳見 [[topics/anthropic-business]]「哪個合作會改到你用的 Claude」EFS 條目）
 
 #### 2026-08-19：DevOps.com 稱「暫時性用量提升」當晚到期，與週用量 +50% 促銷延長是否同一時程尚無法確認
 
@@ -430,7 +430,7 @@ Anthropic 於 4 月初靜默縮短預設 prompt cache 窗口，實質提高 toke
 
 #### 2026-08-01：XDA 報導多數用戶未留意 Fable 5 免費促銷已悄悄改變計費方式（媒體視角補充，非新事實）
 
-- **XDA：免費促銷附帶靜默計費異動，多數用戶未察覺**：XDA 文章稱先前 Fable 5 相關的 $100 免費體驗促銷附帶改變了 Claude 計費方式，多數使用者並未留意。**與既有事實的關係（推論，待證實是否同一事件）**：本頁已記錄 Fable 5 免費期歷經多次延長（06-09→07-01→07-07/08→07-12→07-19）後轉為 usage-based billing；本則僅標題可用，無費率、額度換算或生效時間等新細節，無法確認是同一轉換事件或另一項獨立異動。若為同一事件，本則的獨特角度是「多數用戶未察覺計費已變」的認知落差，呼應本頁一貫記錄的「靜默計費改動損傷信任」風險（見 [[topics/anthropic-business]]「商業風險」表）（Google News/XDA）
+- **XDA：免費促銷附帶靜默計費異動，多數用戶未察覺**：XDA 文章稱先前 Fable 5 相關的 $100 免費體驗促銷附帶改變了 Claude 計費方式，多數使用者並未留意。**與既有事實的關係（推論，待證實是否同一事件）**：本頁已記錄 Fable 5 免費期歷經多次延長（06-09→07-01→07-07/08→07-12→07-19）後轉為 usage-based billing；本則僅標題可用，無費率、額度換算或生效時間等新細節，無法確認是同一轉換事件或另一項獨立異動。若為同一事件，本則的獨特角度是「多數用戶未察覺計費已變」的認知落差，呼應本頁一貫記錄的「靜默計費改動損傷信任」風險（見 [[topics/anthropic-business]]「現在還打得到你的商業風險」表）（Google News/XDA）
 
 #### 2026-07-29：印度盧比定價訴求 GitHub Issue #17432 互動持續攀升，距官方 07-13 回應已 16 天
 

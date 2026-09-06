@@ -11,7 +11,7 @@ parent: null
 children: "[]"
 page_role: "root"
 days_since_news_subtree: 2
-inbound_links: 27
+inbound_links: 29
 attribution_count: 6
 attribution_last: "2026-09-04"
 top_source: "google-news"
@@ -46,7 +46,7 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 | 已量化的訂閱與 API 價差 | 兩個獨立量測指向 40–44 倍（第三個來源只給訂閱等值月額，未算倍數）|
 | 社群因應工具 | 個人視角為主（tare、engram、CostHawk 等），無部門層方案 |
 
-Anthropic 企業採用率（34.4%，Ramp AI Index）已首次超越 OpenAI，成本壓力也正推著企業從「單一供應商依賴」走向多模型混合策略。
+Anthropic 企業採用率（43.5%，Ramp AI Index 8 月指數，2026-08-12 發布）持續領先 OpenAI（39.7%），成本壓力也正推著企業從「單一供應商依賴」走向多模型混合策略。
 
 ---
 
@@ -124,7 +124,7 @@ Anthropic 企業採用率（34.4%，Ramp AI Index）已首次超越 OpenAI，成
 - **來源**：modelplane.ai 部落格（經 Hacker News 討論，19 分）
 - **情況**：任職 Upbound 的作者記錄一名工程師將 Opus 4.8 從公司 Team 綁定方案（約 $125/月）改為透過 opencode 直連 API 計費後，同樣工作量單月花費暴增至約 **$5,500**（原月費的 44 倍），據此推估綁定方案的實際補貼倍數約 **13 倍**
 - **與既有補貼估計的關係**：與 token-xray（2026-05-28）「Max $200/月隱性補貼 17 倍」方法不同，但方向一致，均指向訂閱對重度使用者兩位數倍率補貼。
-- 出處：[modelplane.ai](https://modelplane.ai/blog/ai-coding-subsidy-multiple)；可持續性風險見 [[topics/anthropic-business]]「財務狀況」表。
+- 出處：[modelplane.ai](https://modelplane.ai/blog/ai-coding-subsidy-multiple)；可持續性風險見 [[topics/anthropic-business]]「這些數字是誰說的」表。
 
 ### 個人開發者 — AWS Bedrock 首日成本實測 $8.43（2026-09-06 新增，原 2026-06-16）
 - **來源**：dev.to（[原文](https://dev.to/aws-builders/how-my-first-claude-code-on-aws-bedrock-experiment-cost-me-843-in-just-one-day-1835)）
