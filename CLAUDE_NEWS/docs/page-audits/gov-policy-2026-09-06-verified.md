@@ -21,3 +21,7 @@
 1. 「目前局勢（截至 2026-09-05）」是 34 列 mixed 表且無機制，節名帶日期——這是本頁的「事故表」，該照 pricing／ai-agent-safety 的結論表形狀重做：一變數一列、狀態、對讀者的影響、下一個時點。
 2. 香港那筆從「成因未明」變成「區域政策」後，是全頁唯一直接打到讀者（產品可用性）的事實，應上首列。
 3. 人物頁六個（chris-olah／tom-brown／chris-ciauri／dario-amodei／tino-cuellar／bernanke）供料零、停滯兩三個月——節點三問要認真答；冷讀者 A 說人物頁對六題幫助接近零。
+
+## 四、Defense in Depth fallback 官方原文（Q2 的錨，UTC 05:4x）
+
+[Anthropic「Redeploying Claude Fable 5」2026-06-30](https://www.anthropic.com/news/redeploying-fable-5)：安全分類器判定為潛在有害的 cybersecurity 請求「the request will instead be sent to Opus 4.8」；「Users will be notified if a request to Fable 5 is blocked」；Amazon 報告所述特定技術「blocked in over 99% of cases」；官方明認代價「flagging benign requests more often during routine coding and debugging tasks」。**適用範圍只寫 Fable 5，未提 Fable 5.1**（09-01 發布）——頁面若寫成「現行」要標「Fable 5；5.1 是否沿用未見官方說明」。此即冷讀者兩輪都指的「唯一會改到你用的 Claude 的政府相關後果」，家應在本頁「會改到你用的 Claude」一節，並雙向指 [[entities/fable-5]]。
