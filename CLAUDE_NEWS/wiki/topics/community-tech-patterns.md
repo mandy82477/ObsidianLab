@@ -8,10 +8,10 @@ last_news_update: "2026-09-05"
 status_main: "ongoing"
 days_since_news: 1
 parent: null
-children: "['topics/community-tech-patterns-archive', 'topics/community-tech-timeline']"
+children: "['topics/community-tech-patterns-archive']"
 page_role: "hub"
 days_since_news_subtree: 1
-inbound_links: 50
+inbound_links: 51
 attribution_count: 117
 attribution_last: "2026-09-05"
 top_source: "devto"
@@ -1108,7 +1108,7 @@ Token/context 裁剪從討論走向實測：Compact Memory 提出 O(N²)→O(N) 
 - **還在試的十一類裡，只有五類近兩週有新動靜**：其餘停在七月，代表社群的注意力現在集中在規模化、終止條件與介面複用三個方向。
 
 **懸置細節**
-- ⟨Q-06⟩ ❓ **待查證**（標 2026-09-06｜查 multi-agent token、15 倍｜複 2026-09-20）：「多 agent 約耗 15 倍 token」本庫僅 [[topics/community-tech-patterns-archive#2026-05]] 轉述過，未取得官方原文與發布日期
+- ⟨Q-06⟩ ❓ **待查證**（標 2026-09-06｜查 multi-agent token、15 倍｜複 2026-09-20）：「多 agent 約耗 15 倍 token」本庫僅 [[topics/community-tech-patterns-archive]] 的時序流水帳轉述過，未取得官方原文與發布日期
 
 > 概念辯論與設計哲學見 [[topics/community-tech-discussions]]
 
@@ -1123,7 +1123,7 @@ Token/context 裁剪從討論走向實測：Compact Memory 提出 O(N²)→O(N) 
 - **Project Deal**（Claude 代理人交易談判實驗，multi-agent 應用的商業探索；詳見 [[entities/claude-code]]）
 - [[entities/claude-design]]（AI 設計工具，與 Claude Code + Figma MCP 工作流有定位重疊）
 - [[topics/community-tech-discussions]]（概念辯論、設計哲學、實證研究）
-- [[topics/community-tech-patterns-archive]]（2026-04-25～05-22 的原始時序完整記錄）
+- [[topics/community-tech-patterns-archive]]（2026-04-25～05-22 的社群時序流水帳，已併入該頁）
 - [[topics/community-large-codebase-workflow]]（大型 codebase 規模化開發主題式主線：並行規模、Context/Token 管理、索引與記憶、除錯與分工，從本頁節點縫成）
 
 ## 參考來源

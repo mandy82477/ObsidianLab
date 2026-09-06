@@ -8,10 +8,10 @@ last_news_update: "2026-06-30"
 status_main: "resolved"
 days_since_news: 68
 parent: "topics/community-tech-patterns"
-children: "[]"
+children: "['topics/community-tech-timeline']"
 page_role: "archive"
 days_since_news_subtree: 68
-inbound_links: 3
+inbound_links: 2
 attribution_count: 0
 attribution_last: null
 top_source: null
@@ -990,8 +990,6 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 
 
 ## 2026-04
-
-本分組原文來自已併回的社群技術應用趨勢時序頁
 
 ### 時序流水帳（併自原社群時序頁，2026-04-25～04-30）
 
