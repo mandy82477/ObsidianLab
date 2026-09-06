@@ -3772,7 +3772,7 @@
   "https://dev.to/heinrichneb/i-tested-claude-codes-memory-against-mine-they-are-not-doing-the-same-job-35jb": {
     "first_emitted": "2026-09-02",
     "score_at_emit": 30,
-    "digest_confirmed": false
+    "digest_confirmed": true
   },
   "https://llmobi.pages.dev": {
     "first_emitted": "2026-09-02",
@@ -4732,216 +4732,216 @@
   "https://github.com/anthropics/claude-code/releases/tag/v2.1.263": {
     "first_emitted": "2026-09-06",
     "score_at_emit": 0,
-    "digest_confirmed": false
+    "digest_confirmed": true
   },
   "https://github.com/Gentleman-Programming/gentle-ai": {
     "first_emitted": "2026-09-06",
     "score_at_emit": 6304,
-    "digest_confirmed": false
+    "digest_confirmed": true
   },
   "https://github.com/magnitudedev/magnitude": {
     "first_emitted": "2026-09-06",
     "score_at_emit": 3465,
-    "digest_confirmed": false
+    "digest_confirmed": true
   },
   "https://github.com/awdr74100/figwright": {
     "first_emitted": "2026-09-06",
     "score_at_emit": 684,
-    "digest_confirmed": false
+    "digest_confirmed": true
   },
   "https://github.com/EliaAlberti/cpr-compress-preserve-resume": {
     "first_emitted": "2026-09-06",
     "score_at_emit": 508,
-    "digest_confirmed": false
+    "digest_confirmed": true
   },
   "https://github.com/karanb192/claude-code-hooks": {
     "first_emitted": "2026-09-06",
     "score_at_emit": 500,
-    "digest_confirmed": false
+    "digest_confirmed": true
   },
   "https://github.com/anthropics/claude-code/issues/1935": {
     "first_emitted": "2026-09-06",
     "score_at_emit": 43,
-    "digest_confirmed": false
+    "digest_confirmed": true
   },
   "https://github.com/anthropics/claude-code/issues/14131": {
     "first_emitted": "2026-09-06",
     "score_at_emit": 41,
-    "digest_confirmed": false
+    "digest_confirmed": true
   },
   "https://github.com/anthropics/claude-code/issues/49917": {
     "first_emitted": "2026-09-06",
     "score_at_emit": 38,
-    "digest_confirmed": false
+    "digest_confirmed": true
   },
   "https://github.com/anthropics/claude-code/issues/69044": {
     "first_emitted": "2026-09-06",
     "score_at_emit": 38,
-    "digest_confirmed": false
+    "digest_confirmed": true
   },
   "https://github.com/anthropics/claude-code/issues/16550": {
     "first_emitted": "2026-09-06",
     "score_at_emit": 37,
-    "digest_confirmed": false
+    "digest_confirmed": true
   },
   "https://kk.org/cooltools/the-1930-poetry-book-that-anthropic-tried-to-censor": {
     "first_emitted": "2026-09-06",
     "score_at_emit": 32,
-    "digest_confirmed": false
+    "digest_confirmed": true
   },
   "https://github.com/alpbahadur/interns-review-plugin": {
     "first_emitted": "2026-09-06",
     "score_at_emit": 12,
-    "digest_confirmed": false
+    "digest_confirmed": true
   },
   "https://www.phntmcore.com": {
     "first_emitted": "2026-09-06",
     "score_at_emit": 4,
-    "digest_confirmed": false
+    "digest_confirmed": true
   },
   "https://github.com/LakBud/vernLLM": {
     "first_emitted": "2026-09-06",
     "score_at_emit": 3,
-    "digest_confirmed": false
+    "digest_confirmed": true
   },
   "https://anystation.net": {
     "first_emitted": "2026-09-06",
     "score_at_emit": 3,
-    "digest_confirmed": false
+    "digest_confirmed": true
   },
   "https://xbrlmetrics.com": {
     "first_emitted": "2026-09-06",
     "score_at_emit": 3,
-    "digest_confirmed": false
+    "digest_confirmed": true
   },
   "https://github.com/rashedInt32/claude-hl": {
     "first_emitted": "2026-09-06",
     "score_at_emit": 2,
-    "digest_confirmed": false
+    "digest_confirmed": true
   },
   "https://github.com/vitaliyhayda/claude-transplant": {
     "first_emitted": "2026-09-06",
     "score_at_emit": 2,
-    "digest_confirmed": false
+    "digest_confirmed": true
   },
   "https://chatpanel.net": {
     "first_emitted": "2026-09-06",
     "score_at_emit": 2,
-    "digest_confirmed": false
+    "digest_confirmed": true
   },
   "https://p.migdal.pl/genetic-distance-map": {
     "first_emitted": "2026-09-06",
     "score_at_emit": 2,
-    "digest_confirmed": false
+    "digest_confirmed": true
   },
   "https://www.reddit.com/r/ClaudeCode/comments/1w8vs8e/why_cancelling_subscriptions_now_will_matter": {
     "first_emitted": "2026-09-06",
     "score_at_emit": 0,
-    "digest_confirmed": false
+    "digest_confirmed": true
   },
   "https://www.reddit.com/r/ClaudeCode/comments/1w8vrw6/problem_with_usage": {
     "first_emitted": "2026-09-06",
     "score_at_emit": 0,
-    "digest_confirmed": false
+    "digest_confirmed": true
   },
   "https://www.reddit.com/r/ClaudeCode/comments/1w8vk90/day_1_i_gave_a_chatbot_shell_access_to_my_mac": {
     "first_emitted": "2026-09-06",
     "score_at_emit": 0,
-    "digest_confirmed": false
+    "digest_confirmed": true
   },
   "https://www.reddit.com/r/ClaudeCode/comments/1w8vi25/stop_posting_about_limits_fix_your_workflow": {
     "first_emitted": "2026-09-06",
     "score_at_emit": 0,
-    "digest_confirmed": false
+    "digest_confirmed": true
   },
   "https://www.reddit.com/r/ClaudeCode/comments/1w8vgxh/cancelled_my_20x_max_subscription": {
     "first_emitted": "2026-09-06",
     "score_at_emit": 0,
-    "digest_confirmed": false
+    "digest_confirmed": true
   },
   "https://www.reddit.com/r/ClaudeCode/comments/1w8vd3j/claude_fable_51_admitting_it_is_a_bullshitter": {
     "first_emitted": "2026-09-06",
     "score_at_emit": 0,
-    "digest_confirmed": false
+    "digest_confirmed": true
   },
   "https://news.google.com/rss/articles/CBMiqwFBVV95cUxOSjI1UDlNRFV5Rld3S19YbXM4Mi1sYjNmVjhEcGdPazVpN2RjWkVlem5iTjRiUmYtTEZJcDB2cl9ua1JiNHN6NTFvNVUzNHg0Zkhzbl9BVmQyZlFEV2RKbEZHNWlIWEVNOUJVaWtjZU1RdDVOSWFjV2JOUXJzbTVJZl9RVEFxdWFnWHJfQVFwTlFDckJwZjN1dzFLRDNzZGFHWnI5V01qb2ZqaVHSAbABQVVfeXFMUDhxTWw3SXRUd0pVdnR6T2RtbmVEX2FmMjhsTnMxYWlDVlQ5RzN2cFRNMkNhNm1kXzIyd1ZHTU1peWM0VHBQVVozT3hSNWhSVFZ0UHVvUDhTalNlQmQtZXRnekxubFN4cGVsVzhKUGp0NW4xY3UzUFdqZUpoWG1rQXkyVDhjS1dVbGx0V1RMcXRtdENoelkzMi1ZakRwcjdkX1loYl9BU3c0bWpMZHVjX2U?oc=5": {
     "first_emitted": "2026-09-06",
     "score_at_emit": 0,
-    "digest_confirmed": false
+    "digest_confirmed": true
   },
   "https://news.google.com/rss/articles/CBMimAFBVV95cUxQMzJWS0NkdHVTN0NXVVRVcEdWd0ozM0dRU0JWLUpFN24zdTVKc2o2NkxOb0FObWZQMDNKZDlSNGpTaWc0VW5oYlFIQkY1Szl0WkhxVE9qQUZDbHVOWXZGQkRyclZmdFpwbjBnQTZ1dS1iUmVtcGhvVDlaQjFrUThjMWd5dzFDNnBUdWxqUEZMLUw1Q1ktZ21fNA?oc=5": {
     "first_emitted": "2026-09-06",
     "score_at_emit": 0,
-    "digest_confirmed": false
+    "digest_confirmed": true
   },
   "https://news.google.com/rss/articles/CBMiekFVX3lxTFBsQkxWVDFMTnFDZUl0VjZLNHN2dXJNOTJVWk9VY2IxXzZLVldnWHV1OTBQNFJQUnFUX2pKdXExcHI5VFRkRFU0TS1kWXFZQTU0ZGQzRDZfOWpkQ0UyUW9xbERnczlJTmVyNF8zWVgzSzdpMUVmYnAteHNB?oc=5": {
     "first_emitted": "2026-09-06",
     "score_at_emit": 0,
-    "digest_confirmed": false
+    "digest_confirmed": true
   },
   "https://simonwillison.net/2026/Sep/5/introducing-gpt-6-astra-for-developers": {
     "first_emitted": "2026-09-06",
     "score_at_emit": 0,
-    "digest_confirmed": false
+    "digest_confirmed": true
   },
   "https://news.google.com/rss/articles/CBMimwFBVV95cUxNY3pTemdEQnd5U010bU5YVGVkcXdVOTItOS02STNZUE8zOTNJNkdPcERYRXRLNFBzLWw3UDlLUUczOENUMVc1NDNKY3hQU3EwUGM5a1VES0RFMTZnZERLYV95OTZpdHpYakNJQmZKMUs5Tl9CaDhlekN1VEVzME9YNi1kb3hyaDh2TUVnSDYxS3FmelBUcG5xUExwVQ?oc=5": {
     "first_emitted": "2026-09-06",
     "score_at_emit": 0,
-    "digest_confirmed": false
+    "digest_confirmed": true
   },
   "https://news.google.com/rss/articles/CBMijAFBVV95cUxOU3QtdS1qd0RPRXlYMVpXVU9La0N6bEJXd3VXZUJleEJ4S2RBZHNfQUFBTEsyejZpVWV3aUtZSmMwcl9pQk01MU1zNk9SRE9xOG1DVXFHSjRfVW96U05rcmNnRUhMMmQ1UUR3c3Q0VVNlM3hZS09KRkYyd01ZdWJGQ1BZRk1XRFpFOFh3TQ?oc=5": {
     "first_emitted": "2026-09-06",
     "score_at_emit": 0,
-    "digest_confirmed": false
+    "digest_confirmed": true
   },
   "https://news.google.com/rss/articles/CBMiZ0FVX3lxTE00dTRBYnJjWl84cHMzbC1QZWVlb0ZUd0JKMnVVX1kyQ191NlR2UXFDLUdWVGt2WW9TS1JkODNKVW5hSVFfNU0xYVZDcWxLUTMxRXFwalpoMGZua09KYmhXZkxVR21JXzA?oc=5": {
     "first_emitted": "2026-09-06",
     "score_at_emit": 0,
-    "digest_confirmed": false
+    "digest_confirmed": true
   },
   "https://news.google.com/rss/articles/CBMimAFBVV95cUxQOV9PVXRnLWdIN0tGUHZGcmJHeVJNYkJmekMzZzJQZFNUSWJIbnZzdlU1RUg0NXh4REp3ZURGdEZtaXZVQ0tMYW1xUWp3a1RuUFU2Qk9rUUx0Zlp4Y3VFNkZBR1hFZjJ6Z3Q3VGMtWnFQOFBCM0FBUDZRaHptbGZNLUoyaWtkNzFDZVdXWDdXdFBrRjhBeVhuXw?oc=5": {
     "first_emitted": "2026-09-06",
     "score_at_emit": 0,
-    "digest_confirmed": false
+    "digest_confirmed": true
   },
   "https://simonwillison.net/2026/Sep/5/blender-coding-agents-macos": {
     "first_emitted": "2026-09-06",
     "score_at_emit": 0,
-    "digest_confirmed": false
+    "digest_confirmed": true
   },
   "https://www.reddit.com/r/LocalLLaMA/comments/1w821fg/ninfer_vs_llamacpp_vs_vllm_quality_speed": {
     "first_emitted": "2026-09-06",
     "score_at_emit": 0,
-    "digest_confirmed": false
+    "digest_confirmed": true
   },
   "https://news.google.com/rss/articles/CBMimgFBVV95cUxPWHZOdV9tdXRibVdTUFUwRmVmUkczdHRLckdwSjZZSkRKTGdPT0RyWXp2ZkM3OTl3V0RSUWlKemw0R09paGdCaC1nc2JoZmJSMDQyTXR1TjVVUnVZQW9JTVJFVmtsc29UWmxRRFBiZnRhMkZTUDR5dUZES29GZFY0ZGJfcVRSby16aC1obG1ObVlvRnZtcU5IYzNn?oc=5": {
     "first_emitted": "2026-09-06",
     "score_at_emit": 0,
-    "digest_confirmed": false
+    "digest_confirmed": true
   },
   "https://www.reddit.com/r/LocalLLaMA/comments/1w7tndw/qwen38_27b_for_agentic_coding_and_next_what": {
     "first_emitted": "2026-09-06",
     "score_at_emit": 0,
-    "digest_confirmed": false
+    "digest_confirmed": true
   },
   "https://www.reddit.com/r/LocalLLaMA/comments/1w6z9oh/we_opensourced_paddock_our_rustc_inference_engine": {
     "first_emitted": "2026-09-06",
     "score_at_emit": 0,
-    "digest_confirmed": false
+    "digest_confirmed": true
   },
   "https://www.reddit.com/r/LocalLLaMA/comments/1w60hiv/repodify_a_fully_local_opensource_podcast": {
     "first_emitted": "2026-09-06",
     "score_at_emit": 0,
-    "digest_confirmed": false
+    "digest_confirmed": true
   },
   "https://www.reddit.com/r/LocalLLaMA/comments/1w5l8bw/muse_spark_open_weights_coming_soon": {
     "first_emitted": "2026-09-06",
     "score_at_emit": 0,
-    "digest_confirmed": false
+    "digest_confirmed": true
   },
   "https://www.reddit.com/r/LocalLLaMA/comments/1w35sc1/could_this_affect_m5_ultra_priceavailability": {
     "first_emitted": "2026-09-06",
     "score_at_emit": 0,
-    "digest_confirmed": false
+    "digest_confirmed": true
   }
 }
