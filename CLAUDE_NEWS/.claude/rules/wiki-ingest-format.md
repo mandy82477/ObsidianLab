@@ -291,7 +291,7 @@ hierarchy 最自然的衰退是母頁退化成目錄——那正是本原則要�
 2. 用 `Read` + `offset`/`limit` 只讀取需要的段落
 3. 同一次 ingest 中多個無關頁面的更新，在單一訊息中平行發出多個 Edit 呼叫
 
-典型大型頁面：`community-tech-patterns.md`、`community-tech-timeline.md`、`claude-code.md`
+典型大型頁面：`community-tech-patterns.md`、`community-tech-patterns-archive.md`、`claude-code.md`
 
 ---
 

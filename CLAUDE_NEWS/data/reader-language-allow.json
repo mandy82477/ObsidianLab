@@ -101,6 +101,17 @@
       "term": "覆寫",
       "line_contains": "改為建議改進而不覆寫",
       "reason": "描述 Claude Code `/init` 不會覆寫既有 CLAUDE.md 檔案，是讀者需要知道的產品行為，非頁面維護動作（2026-09-05 G4 組清理誤報）"
+    },
+    {
+      "page": "topics/community-tech-timeline",
+      "term": "封存",
+      "reason": "archive 殼的狀態值由 .claude/rules/wiki-ingest-format.md 規定，非維運術語外洩（第 8 波 timeline 併入 patterns-archive，轉址殼狀態值 resolved（封存頁）為規則強制值）"
+    },
+    {
+      "page": "topics/community-tech-patterns-archive",
+      "term": "主編",
+      "line_contains": "自主編程",
+      "reason": "「自主編程代理」的字面子串，非編輯部角色詞（第 8 波併入 timeline 原文，原文一字不刪搬家，原本已在 timeline 頁的白名單內）"
     }
   ]
 }

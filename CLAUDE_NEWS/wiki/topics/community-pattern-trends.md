@@ -3,7 +3,7 @@ page: "topics/community-pattern-trends"
 kind: "topic"
 status: "ongoing"
 domain: "🌐 社群"
-last_updated: "2026-09-05"
+last_updated: "2026-09-06"
 last_news_update: "2026-09-02"
 update_freq: "🗓️ 週更（無新趨勢節點時刻意不動——日期停留＝趨勢層無變化，非漏更新）"
 status_main: "ongoing"
@@ -12,7 +12,7 @@ parent: null
 children: "[]"
 page_role: "root"
 days_since_news_subtree: 4
-inbound_links: 9
+inbound_links: 7
 attribution_count: 0
 attribution_last: null
 top_source: null
@@ -29,7 +29,7 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 **領域：** 🌐 社群
 **更新頻率：** 🗓️ 週更（無新趨勢節點時刻意不動——日期停留＝趨勢層無變化，非漏更新）
 **開始日期：** 2026-06-29
-**最後更新：** 2026-09-05
+**最後更新：** 2026-09-06
 **最後新聞更新：** 2026-09-02
 
 > **本週趨勢觀察**（2026-09-02）
@@ -42,7 +42,7 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 本頁從 [[topics/community-tech-patterns]] 的具體模式中，**萃取出宏觀趨勢**——社群正在往哪些方向收斂，每條趨勢的熱度曲線（加溫 / 穩定 / 醞釀），以及**對現有設計的啟示**：工程師看到這條趨勢，該回頭重新思考自己現有設計的什麼。
 
 - **週更**：本頁每週檢視一次趨勢層，日期停留數天屬正常節奏。
-- **與其他頁分工**：具體模式條目見 [[topics/community-tech-patterns]]；何時首次出現的歷史流水帳見 [[topics/community-tech-timeline]]；思想辯論見 [[topics/community-tech-discussions]]。
+- **與其他頁分工**：具體模式條目見 [[topics/community-tech-patterns]]；何時首次出現的歷史流水帳見 [[topics/community-tech-patterns-archive]]；思想辯論見 [[topics/community-tech-discussions]]。
 - **熱度錨點（注意力，非技術力）**：🔥🔥🔥🔥 = HN ≥ 100 或跨平台廣泛熱議；🔥🔥🔥 = HN 30–99 或單平台高互動；🔥🔥 = HN 10–29 或多來源；🔥 = 單一來源或早期信號。無 HN 數據的節點為熱度估計。
 
 ---
@@ -319,7 +319,7 @@ Hook 的原理：exit 1 = 硬攔截，不是「提醒模型注意」，而是工
 ## 相關實體
 
 - [[topics/community-tech-patterns]]（具體模式型錄，本頁的素材來源）
-- [[topics/community-tech-timeline]]（4–5 月歷史流水帳，演進起點考據）
+- [[topics/community-tech-patterns-archive]]（4–5 月歷史流水帳，演進起點考據）
 - [[topics/community-tech-discussions]]（思想辯論，趨勢背後的社群共識）
 - [[entities/claude-code]]（多數趨勢圍繞的官方產品）
 - [[entities/boris-cherny]]（Loops 哲學影響多條趨勢的設計取向）

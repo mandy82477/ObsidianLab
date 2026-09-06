@@ -35,7 +35,8 @@
 | 寫 code 該用哪個模型 | [[topics/model-comparison]] |
 | 別家（Codex／OpenCode／GLM）跟 Claude 比，現在誰強 | [[topics/model-task-leaderboard]]（各榜每週排名）；最近一次頭對頭查證見 [[topics/competitor-landscape]]「硬答案」 |
 | 大型 codebase 的做法主線（並行／context／記憶／把關） | [[topics/community-large-codebase-workflow]] |
-| 看模式背後的機制與實測證據 | [[topics/community-tech-patterns]] |
+| 社群現在怎麼玩、哪些做法已經定案、哪個方向在加溫 | [[topics/community-tech-patterns]]「模式概覽」；加溫中的方向見 [[topics/community-pattern-trends]] |
+| 看某個做法的第一手證據（原文連結、實測數字） | [[topics/community-tech-patterns]] |
 | 我要開 auto 模式、接 MCP、或 clone 外部 repo，先看什麼會打到我 | [[topics/ai-agent-safety]]「現在會打到你的」 |
 | 政府動作會不會讓我哪天用不到 Claude、或用到被降級的版本（海外據點、輸出浮水印、高風險請求換模型） | [[topics/anthropic-government-policy]]「現在有哪幾條線在動」 |
 
@@ -95,7 +96,7 @@
 | [[topics/competitor-landscape]] | 💼 商業 | ongoing | Meta 三層訂閱打價格戰 + 中國陣營「免費夠用」+ 開源旗艦權重釋出，戰場從「誰更強」移到「誰更便宜」　↳ 子故事：[[topics/competitor-landscape-archive]] |
 | [[topics/community-tech-tools]] | 🌐 社群 | ongoing | 🗓️ 週更：社群工具目錄——91 工具的活躍度、採用狀態追蹤（每週更新一次） |
 | [[topics/skill-interest-watch]] | 🌐 社群 | ongoing | 🗓️ 每日快照 興趣類別 skill 總覽：一頁看完「該裝哪個」（每日同步社群工具目錄的決策表）與「這類誰大、誰在漲」；可用 GitHub 辨識的類別（開發流程段＋治理）每日問「這一類現在誰最熱、本週誰竄升」；無法用星數找的治理需求誠實指路到社群工具目錄決策表或實戰手冊；機器產出、星數是規模不是品質 |
-| [[topics/community-tech-patterns]] | 🌐 社群 | ongoing | 社群實戰做法集（日更）：multi-agent、skills 設計、工作流最佳實踐的可複用做法　↳ 子故事：[[topics/community-tech-patterns-archive]] |
+| [[topics/community-tech-patterns]] | 🌐 社群 | ongoing | 社群做法盤點 21 類：四類已定案（Multi-agent、Skills、CLAUDE.md、Hooks）、十一類還在試，每類標最後動態日　↳ 子故事：[[topics/community-tech-patterns-archive]] |
 | [[topics/community-large-codebase-workflow]] | 🌐 社群 | ongoing | 🗓️ 週更 大型 codebase 規模化開發主線——每條線先給「現在的答案」，再列子問題表；節點證據見 [[topics/community-tech-patterns]] |
 | [[topics/community-pattern-trends]] | 🌐 社群 | ongoing | 🗓️ 週更：社群趨勢觀察——從 [[topics/community-tech-patterns]] 萃取的宏觀層，7 條成形趨勢的熱度曲線 + 對現有設計的啟示 |
 | [[topics/community-tech-discussions]] | 🌐 社群 | ongoing | 社群技術討論趨勢：設計哲學辯論、實證研究、架構反思（HTML vs MD、Skill Atrophy 等） |
@@ -106,7 +107,6 @@
 | [[topics/coding-workflow-guide]] | 🛠️ 工具/功能 | ongoing | 🗓️ 週更 程式開發實戰手冊：我現在在做這件事，該下哪個 skill、它會做什麼、有什麼坑——以流程階段為軸（官方技能不按開發領域切） |
 | [[topics/enterprise-cost-management]] | 💼 商業 | ongoing | 企業規模採用 Claude 的成本結構挑戰：Uber/Microsoft 案例、缺失工具、因應策略；08-14 新增成本管控動態 |
 | [[topics/enterprise-tool-tracker]] | 💼 商業 | ongoing | 大型企業 AI 編碼工具使用追蹤：Microsoft/Amazon/Uber/Apple 等企業當前工具選擇與變化軌跡；07-03 Alibaba 以疑似後門風險禁用 Claude Code（❌ 退出） |
-| [[topics/community-tech-timeline]] | 🌐 社群 | monitoring | 社群技術應用趨勢完整時序（2026-04-25 至今），從 community-tech-patterns 拆分 |
 | [[topics/anthropic-business]] | 💼 商業 | ongoing | Anthropic 商業健康度：現在的數字、IPO 走到哪一格、合作會不會改到你的帳單；補貼倍數只有社群估算　↳ 子故事：[[topics/anthropic-business-archive]] |
 | [[topics/market-signals]] | 💼 商業 | ongoing | 投資訊號判讀：本庫追的消息放進市場框架會看到什麼——方向、時效、該打幾折、接下來看哪個里程碑，附兩週後回顧結算（教學型事件研究，非投資建議；事實在商業各頁，本頁只放觀點） |
 | [[topics/recursive-self-improvement]] | 🏛️ 政策/安全 | ongoing | AI 遞歸自我改進：官方《Risk Report August 2026》（08-14）首度就內部 AI R&D 加速幅度提供量化區間自評，並確認 Model 2 暫無釋出計畫 |

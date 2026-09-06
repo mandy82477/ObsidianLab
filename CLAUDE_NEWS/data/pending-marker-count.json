@@ -1,7 +1,7 @@
 {
-  "count": 141,
+  "count": 142,
   "updated": "2026-09-06",
-  "note": "index 鉤子禁短標記：移除 index.md 的 ⟨Q-01⟩ 副本（家在 entities/robert-mahari L35）",
+  "note": "patterns L755 與 L752 同節點同事實重複標記去重；新增 Q-06/Q-07",
   "fingerprints": [
     {
       "key": "entities/andrej-karpathy::2026-08-15::benzinga、lord of the rings",
@@ -444,6 +444,10 @@
       "label": "topics/community-tech-patterns-archive（標 2026-08-10｜查 Iantha、kiloloop）"
     },
     {
+      "key": "topics/community-tech-patterns::2026-09-06::/code-review 自動觸發、v2.1.215",
+      "label": "topics/community-tech-patterns（標 2026-09-06｜查 /code-review 自動觸發、v2.1.215）"
+    },
+    {
       "key": "topics/community-tech-patterns::2026-08-10::diff量、驗收條件",
       "label": "topics/community-tech-patterns（標 2026-08-10｜查 diff量、驗收條件）"
     },
@@ -464,8 +468,8 @@
       "label": "topics/community-tech-patterns（標 2026-08-10｜查 ip_reminder、JSONL）"
     },
     {
-      "key": "topics/community-tech-patterns::2026-08-10::ip_reminder、jsonl",
-      "label": "topics/community-tech-patterns（標 2026-08-10｜查 ip_reminder、JSONL）"
+      "key": "topics/community-tech-patterns::2026-09-06::multi-agent token、15 倍",
+      "label": "topics/community-tech-patterns（標 2026-09-06｜查 multi-agent token、15 倍）"
     },
     {
       "key": "topics/competitor-landscape::2026-08-29::google、企業定價、antigravity",

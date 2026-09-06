@@ -354,6 +354,17 @@ python scripts/gen_wiki_frontmatter.py --list-signal "⚠️ 高引用但停滯"
 商業健康度四表健檢（5j）：指標 N 列（移除 a／補位 b）／風險 M 列（移除 c／補位 d）／合作 K 列／人物 P 人／通路快照資料截至 YYYY-MM-DD
 ```
 
+### 5k. 社群模式概覽退場複查（主編派社群記者）`[加入: 2026-09-06]`
+
+`wiki/topics/community-tech-patterns.md` 的 `## 模式概覽`（上限 21 列）、`### 誰負責拆分`（五列固定）與 `### 缺口追蹤`（上限 8 列）都有退場、補位、留表優先序條文，但沒有任何一步會去跑它——本步即其週更觸發邊，複查規則見 `.claude/rules/wiki-ingest-community-lint.md`「community-tech-patterns 模式概覽週更」。
+
+派社群記者執行該節三步：重算「最後動態」（兩段式撈法覆寫日期欄與全頁式錨點）、跑退場與補位（逾 60 天或算不出日期者移出、剛跨線當週處理、表未滿載時從表下補位）、跑合併（代表技巧重疊過半者合併）；同批補填主線 tag（每週 20 則，從最新往回補，累計進度寫進回報）。上限滿載時的讓位交回主編裁決，不由記者自行決定。
+
+**回報格式（納入步驟 8 的 lint 紀錄）：**
+```
+社群模式概覽退場複查（5k）：列數 N／21（✅a／⚡b／⏳c）／最後動態已重算 N 列／退場 M 列／補位 K 列／合併 J 組／主線 tag 補填 20 則（累計 N/115）／滿載讓位：無 ／ ⚠️ 需裁決
+```
+
 ### 6. CLAUDE.md 健檢
 
 讀取 `wiki/CLAUDE.md`、`.claude/rules/wiki-ingest.md`、`.claude/rules/wiki-ingest-format.md`、`.claude/rules/wiki-reporter-shared.md` 與**本檔（`.claude/commands/wiki-lint.md`）自身** `[加入: 2026-08-28]`，依序執行下列各項檢查。
@@ -633,6 +644,7 @@ python scripts/check_reader_language.py --page <slug>   # 單頁清單
 - 投資訊號回顧（5h）：（結算 N 列：✅ a／❌ b／～ c／不可驗證 d，剩餘 ⏳ M 列／雲端 egress 封鎖，跳過）
 - 安全兩頁結論表退場（5i）：safety（複查 N 列，移除 a／補位 b／不動 c）／gov-policy（複查 N 列，移除 a／補位 b／不動 c；產品節 M 項對 K 列）
 - 商業健康度四表健檢（5j）：指標 N 列（移除 a／補位 b）／風險 M 列（移除 c／補位 d）／合作 K 列／人物 P 人／通路快照資料截至 YYYY-MM-DD
+- 社群模式概覽退場複查（5k）：列數 N／21（✅a／⚡b／⏳c）／最後動態已重算 N 列／退場 M 列／補位 K 列／合併 J 組／主線 tag 補填 20 則（累計 N/115）／滿載讓位：無 ／ ⚠️ 需裁決
 - 讀者模擬：（3 題結果：✅/⚠️ 已修復/❌ 待辦，各附一句說明）
 - 質疑代打（7b）：（seed 與抽中題號，各題 ✅ 附證據行/⚠️ 修了什麼/❌ 待辦；時效燈亮時原樣轉述）
 - lint 自我遵守率：（N/6 位記者回報一次過；退回者列出類別與缺項）

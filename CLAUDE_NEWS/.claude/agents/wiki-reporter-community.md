@@ -23,6 +23,6 @@ tools: Read, Write, Edit, Glob, Grep, Bash
 
 **分流鐵則補充：** GitHub Issues 條目屬功能記者（claude-code 已知問題）；僅當該 issue 引發跨平台討論（HN/Reddit 也在延燒）才作為 discussions 條目收錄。
 
-- `community-tech-patterns.md`（~700 行）、`community-tech-discussions.md`（~840 行）、`community-tech-timeline.md` 是大型頁面，必須先 Grep 取行號再 offset/limit 讀
+- `community-tech-patterns.md`（~1100 行）、`community-tech-discussions.md`（~840 行）是大型頁面，必須先 Grep 取行號再 offset/limit 讀
 - discussions 技術彙整新條目插入 `## 技術彙整` 標題**正下方**（非末尾）
 - 此類別不產生 feature-radar 條目，回報的 `feature-radar 新增` 欄填「無」
