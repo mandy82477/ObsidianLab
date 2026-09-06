@@ -7,7 +7,6 @@
 
 **最後更新：** 2026-09-05
 
-
 ---
 
 ## 概覽
@@ -76,12 +75,9 @@
 | [[entities/tom-blomfield]] | person | 👤 人物 | active（待核實）| 前 Monzo 共同創辦人，2026-07-13 加入 Anthropic（Business Insider 單一來源，AI compute／Y Combinator 背景）|
 | [[entities/claude-for-teachers]] | product | 🛠️ 工具/功能 | active | Anthropic 面向美國通過認證 K-12 教師的免費方案，開放進階 Claude 功能與教學技能庫，對接全美 50 州學術標準 |
 | [[entities/tino-cuellar]] | person | 👤 人物 | active | Anthropic 首任 Chief Global Affairs Officer（2026-08-05 到任），前 Carnegie Endowment for International Peace 總裁、加州最高法院大法官 |
-| [[entities/robert-mahari]] | person | 👤 人物 | active（待核實）| Anthropic 新設「Claude for Legal」部門負責人（2026-08-07 任命，Legal IT Insider、Law.com 同日獨立報導，僅標題可用，過往經歷 ❓ 待查證 ⟨Q-01⟩）|
+| [[entities/robert-mahari]] | person | 👤 人物 | active（待核實）| Anthropic 新設「Claude for Legal」部門負責人（2026-08-07 任命，Legal IT Insider、Law.com 同日獨立報導，僅標題可用，過往經歷 ❓ 待查證）|
 | [[entities/jensen-huang]] | person | 👤 人物 | active（待核實）| Nvidia 執行長；2026-08-27 傳出對投資 OpenAI／Anthropic 的規模表示「後悔」（Yahoo Finance 單一來源，後悔方向 ❓ 待查證）|
 | [[entities/amir-salek]] | person | 👤 人物 | active（待核實）| Anthropic 延攬前 Google 自研晶片計畫創辦人（2026-08-23，The Times of India 單一來源，僅標題可用，過往經歷與職掌待查證）|
-
-**懸置細節**
-- ⟨Q-01⟩ ❓ **待查證**（標 2026-08-10｜查 [[entities/robert-mahari]]、過往經歷）：Legal IT Insider、Law.com 兩則報導僅標題可用，Robert Mahari 過往具體背景與資歷尚未確認。
 
 ---
 

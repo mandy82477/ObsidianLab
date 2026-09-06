@@ -85,7 +85,7 @@
 |---|---|---|
 | 懸置標記數看守 | 保命條款四波四次命中（SOFX、Benzinga、阿里／浮水印、自研模型／Post-Crescent）：實作者砍表列時把標記溶成散文，每日掃描從此偵測不到 | 待做：`check_pending_markers.py` 加 `data/pending-marker-count.json` 基線，全庫新語法標記數低於基線即 FAIL，除非 commit 同批更新基線並附 `--allow-decrease "理由"` |
 | 讀者語言閘缺詞 | 「判準／退場／留表優先序／表滿載／讓位／證據層／蒸餾／封存／保留最近」連三波寫進正文而閘綠 | 待做：加進 `check_reader_language.py` TERMS 並全庫重建基線（同 commit）；「退場交易」等財經用語需白名單 |
-| index 鉤子含短標記 | `⟨Q-01⟩` 在 index 與本頁指不同東西 | index 鉤子禁止短標記（本波已移除；規則句待補進 `wiki/CLAUDE.md` index 節） |
+| index 鉤子含短標記 | `⟨Q-01⟩` 在 index 與本頁指不同東西 | ✅ 已做（第 8 波）：規則句補進 `wiki/CLAUDE.md` index 列；index 殘留的 robert-mahari ⟨Q-01⟩ 副本移除（家在頁內 L35），標記基線 142→141 附理由重建 |
 
 ## 使用者裁決紀錄
 

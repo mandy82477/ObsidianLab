@@ -1,7 +1,7 @@
 {
-  "count": 142,
+  "count": 141,
   "updated": "2026-09-06",
-  "note": "首建基線 2026-09-06",
+  "note": "index 鉤子禁短標記：移除 index.md 的 ⟨Q-01⟩ 副本（家在 entities/robert-mahari L35）",
   "fingerprints": [
     {
       "key": "entities/andrej-karpathy::2026-08-15::benzinga、lord of the rings",
@@ -250,10 +250,6 @@
     {
       "key": "feature-radar::2026-08-10::claude code desktop、內建瀏覽器",
       "label": "feature-radar（標 2026-08-10｜查 Claude Code Desktop、內建瀏覽器）"
-    },
-    {
-      "key": "index::2026-08-10::[[entities/robert-mahari]]、過往經歷",
-      "label": "index（標 2026-08-10｜查 [[entities/robert-mahari]]、過往經歷）"
     },
     {
       "key": "topics/ai-agent-safety::2026-09-02::.git config、codex、cursor",
