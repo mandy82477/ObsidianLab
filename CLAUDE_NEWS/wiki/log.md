@@ -5934,3 +5934,27 @@ GH Actions 抓料排 10:23 UTC，到 14:45 UTC 仍未落地（+4.4 小時且持�
 - **📊 產消對帳（概估）**：近 7 天新增 19 筆｜每週產能 15 筆（A 10＋B 5）｜本輪實際可消 5 筆｜**淨增 4 筆/週**，腳本標「⚠️ 產出快過消費」。📈 趨勢 09-03 68 筆 → 今日 43 筆（−25，靠前幾輪集中清算換來，結構性淨增未變）。⏳ 依現行額度 Lane B 需約 8.6 週排空。**主編處置建議（待裁示）**：Lane B 額度 5 → 8——本輪實測五筆中三筆一次 WebSearch 即解，貴的是逐頁回掃那一步，而該步不隨額度線性增加。
 - **⚠️ 舊語法盲區 55 筆**（不在佇列內）：前三頁 `topics/ai-agent-safety`(15)、`index`(7)、`entities/managed-agents`(4)。
 - **lint 待裁示呈報**：5 項已直接呈給使用者（不只寫進本檔）——(1) `.claude/commands/wiki-lint.md` L35／L381 仍引用已廢止的「精選層提拔規則」與已改版的「痛點洞察近期工具欄」；(2) 建頁候選 Simon Willison／Cursor／graphify／Terminal-Bench 四者判為未達門檻；(3) Search Arena／Aider 汰換；(4) `pending_markers.iter_legacy()` 四類口徑豁免；(5) HN 關鍵字閘補強（≥100 分帶 GitHub 連結者抓 repo description）。截至本輪收尾使用者尚未回覆此 5 項，維持待裁示。
+
+## 2026-09-06 Pipeline 改動：HN D 窗（高分榜補撈）上線
+
+**起因：** 09-02 使用者質疑「聲量只在 X」，追查發現 Understand-Anything 於 2026-05-01 上 HN 169 分／49 留言、repo 描述明寫「Works with Claude Code」，卻因標題不含 claude 字樣而從未被抓過——`src/news_aggregator/sources/hackernews.py` 以四個關鍵字 query 打 Algolia，不含關鍵字的東西**分數再高也不會進管線**。當時列為待裁示（pipeline 改動不擅動），2026-09-06 經使用者裁決採納。
+
+**做法（確定性規則，無 LLM）：** 空 query 撈當窗 ≥100 分故事 → 只取帶 GitHub repo 連結者 → 抓 repo description／topics 判 `claude|anthropic` 字樣。已被關鍵字閘撈到的（標題／內文含關鍵字）先排除，省一次 API。上限 `D_MAX_LOOKUPS = 40` 防母體暴增打爆額度。
+
+**改前基線：** `src/logs/pipeline_baseline.json`（digest 2026-09-05，articleCount 62，git HEAD 026964f7）。
+
+**驗證：**
+
+| 項目 | 結果 |
+|---|---|
+| 歷史回測 2026-05-01 | 母體 49 → repo 候選 7 → in-scope **1**，正是 Understand-Anything（0 誤收）|
+| 14 天回測（08-23~09-05）| 母體 595 → repo 候選 30 → in-scope **2**，兩則皆真 in-scope，**0 誤收** |
+| 成本 | 平均每日 GitHub API **2.1 次**（token 額度 5000/hr）|
+| 舊資料回歸 | `build_web.py` exit 0；130 份 digest 全量解析成功 |
+| 測試 | 616 案例全綠（新增 `src/tests/test_hn_dwindow.py` 9 案）|
+
+**回測撈到的第二顆漏球（本輪新發現）：** `SenteLabsAI/OpenExecutive`（2026-08-27，HN **1034 分**、3,847 星，描述「AI-powered virtual executive team — a single coherent executive persona backed by **8 specialist Claude agents**」，topics 含 anthropic／claude）——**全庫零收錄**。另一則 `PhiloLabs/fable51-worlds`（09-02，327 分）已由 GitHub Search 來源於 09-03 收錄，屬重複進料，由 `dedup.py` 處理。
+
+> 判斷式：**這個閘擋掉的東西，我們有辦法知道嗎？** 原本沒有——關鍵字閘的漏球在管線裡不留任何痕跡，只有人去 HN 全文查才看得到。D 窗把「有 GitHub repo 可問」的那一半變成機器查得到。剩下那一半（部落格文章、無 repo 的專案）仍然是盲區，因為沒有等價的描述欄可查。
+
+**未竟：** `/pipeline-change-check compare` 的 digest 指標對照需等下一次 pipeline 實跑後才能做（本改動未觸發重抓）。下輪 pipeline 跑完後對照 `src/logs/pipeline_baseline.json`，重點看 articleCount 與 discussions 區塊條目數有無非預期跳動。
