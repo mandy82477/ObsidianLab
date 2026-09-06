@@ -5,7 +5,7 @@ description: CLAUDE_NEWS 頁面健檢與重設計流程（使用者 review 偏�
 
 # 頁面健檢與重設計
 
-派任何 agent 前，prompt 開頭逐字貼 `docs/page-audits/dispatch-prefix.md` 的共用前綴。總帳與分層在 `docs/page-audits/ledger.md`。
+派任何 agent 前，prompt 開頭逐字貼 `.claude/skills/page-audit-review/dispatch-prefix.md` 的共用前綴。總帳與分層在 `docs/page-audits/ledger.md`。
 
 ## 總則（使用者原話）
 

@@ -1,6 +1,6 @@
 # 全站頁面 review 總帳
 
-流程與角色見 `.claude/skills/page-audit-review/SKILL.md`；共用派工前綴見 `docs/page-audits/dispatch-prefix.md`。
+流程與角色見 `.claude/skills/page-audit-review/SKILL.md`；共用派工前綴見 `.claude/skills/page-audit-review/dispatch-prefix.md`。
 
 **起點（使用者裁決 2026-09-05）：** 從讀者三個根問題各走一條路徑，不從單一樞紐頁擴散。
 **改為廣度優先（使用者裁決 2026-09-06）：** 從已審頁往下 BFS——A 審完接著審 A 連出去的所有子頁，一層審完再往下；同層依入邊排序、**一次一頁**（五頁一批是主 session 提案，使用者未批）。隊列算法：`scratchpad/bfsq.py`（第 1 層 37 頁：15 樞紐／12 中層／10 葉子；第 2 層 22；第 3 層 1；overview、metrics 不可達待補根）。
