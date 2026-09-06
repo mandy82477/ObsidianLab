@@ -3,7 +3,7 @@
 流程與角色見 `.claude/skills/page-audit-review/SKILL.md`；共用派工前綴見 `docs/page-audits/dispatch-prefix.md`。
 
 **起點（使用者裁決 2026-09-05）：** 從讀者三個根問題各走一條路徑，不從單一樞紐頁擴散。
-**改為廣度優先（使用者裁決 2026-09-06）：** 從已審頁往下 BFS——A 審完接著審 A 連出去的所有子頁，一層審完再往下；同層依入邊排序、五頁一批。隊列算法：`scratchpad/bfsq.py`（第 1 層 37 頁：15 樞紐／12 中層／10 葉子；第 2 層 22；第 3 層 1；overview、metrics 不可達待補根）。
+**改為廣度優先（使用者裁決 2026-09-06）：** 從已審頁往下 BFS——A 審完接著審 A 連出去的所有子頁，一層審完再往下；同層依入邊排序、**一次一頁**（五頁一批是主 session 提案，使用者未批）。隊列算法：`scratchpad/bfsq.py`（第 1 層 37 頁：15 樞紐／12 中層／10 葉子；第 2 層 22；第 3 層 1；overview、metrics 不可達待補根）。
 **裁決節奏（使用者裁決 2026-09-05）：** 授權主 session 下非阻擋級裁決（文筆、欄位、表格判準、蒸餾）；**拆頁／砍整節／改頁面使命句／砍整頁／併兩頁／新增一頁**必須停下來問使用者（後三項 2026-09-06 加：使用者指出四波從沒判過頁面層去留，skill Q4 已加「節點三問」：存在必要／該延伸／該合併）。
 
 ## 三條路徑
@@ -31,7 +31,7 @@
 
 | 4 | wiki/feature-radar ＋ entities/claude-code（併卡；topics/code-quality-decline 只動兩處） | 樞紐(39)＋樞紐(75) | 2026-09-06 | 定稿（使用者授權自跑，使命句主 session 定）：radar「這禮拜官方動了什麼、值不值得你現在跟，以及跟上去會壞什麼」；claude-code「Claude Code 現在有什麼毛病、哪些修了、哪些你得繞過去」。radar：升版風險改「從你現在的版本升上去會遇到什麼」**版本階梯表 12 列**（依 gh 抓完整 changelog，非報導覆蓋率）、熱度與試用價值**只住全覽表**（刪 39 處副本，`check_feature_radar.py` 加單一家檢查已驗紅）、推薦節改名補「怎麼開始」、keybindingFlavor 已失效三處同改；claude-code：新增「現在會咬到你的」7 列結論表（判準：壞掉而非還沒做、每列寫誰會遇到）、13 筆逾期懸置 7 結案＋Apps Gateway 事實更正、7 處節名消費端同步、帳本 6 筆；code-quality-decline 懸置以官方 v2.1.116 結案。**裁決**：砍「近期重要更新（2026 Q2 精選）」使用者未回→預設不砍只搬警示；熱度單一家與腳本五行主 session 代判 | ✅ 複驗過（Q1 半→**拿到**、Q2 半→**拿到**、Q4 拿到；Q3 仍半拿到：區塊名「這禮拜」含 07-25 條、Fable 5.1 model id 自打——已修）；評審複核有條件放行 3 🔴 已修 | 2026-09-13 | `p2-2026-09-06{,-verified,-proposal,-proposal-map,-draft,-review}.md`、`wave4-cold-reader{,-recheck}-2026-09-06.md` |
 
-| 5 | **廣度優先第 1 層批次 1**（使用者 2026-09-06 裁決：從已審 8 頁往下 BFS）：topics/ai-agent-safety(85)、anthropic-government-policy(80)、anthropic-business(78)、community-tech-patterns(54)、community-tech-discussions(46) | 5 樞紐 | 2026-09-06 | **進行中**。報價：5 健檢卡＋2 冷讀者（分線）平行、設計者與評審各一位吃整批、Sonnet 實作分頁、複驗 2 位；估 400–500 萬 token。使命句主 session 定；裁決點批末集中一次 | — | — | `batch1-<slug>-2026-09-06*.md`、`wave5-cold-reader-{A,B}{,-recheck}-2026-09-06.md` |
+| 5 | topics/ai-agent-safety（**廣度優先第 1 層第 1 頁**：使用者 2026-09-06 裁決從已審 8 頁往下 BFS，**一次一頁**；入邊 85、1175 行、逾期懸置 21） | 樞紐 | 2026-09-06 | **進行中**。報價：5 新 agent＋4 續用（同第 3 波），估 100–140 萬 token。主 session 曾誤派五頁一批（未經批准），使用者叫停，多派的四張健檢卡與一位冷讀者已停 | — | — | `batch1-ai-agent-safety-2026-09-06*.md`（檔名沿用）、`wave5-cold-reader-A-2026-09-06.md` |
 
 > 第 1 波同時吃掉 `wiki/reader-notes.md` 的 ⏳「『誰比較強』三頁互踢」——考題集必含「Codex 和 Claude 誰強」，落點必須唯一。
 
