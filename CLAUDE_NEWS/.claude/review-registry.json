@@ -120,8 +120,8 @@
       "file": "wiki/topics/community-tech-discussions.md"
     },
     {
-      "label": "熱門討論 表格",
-      "pattern": "熱門討論",
+      "label": "最近在討論什麼 表格",
+      "pattern": "## 最近在討論什麼",
       "file": "wiki/topics/community-tech-discussions.md"
     },
     {
