@@ -52,7 +52,7 @@
 | [[entities/opus-4-8]] | model | 🤖 模型 | active（已被取代） | Opus 4.8：SWE-bench Pro 69.2%、1M context、Dynamic Workflows（1,000 子代理）、Fast Mode 1/3 費用；次旗艦地位已於 2026-07-25 由 [[entities/opus-5]] 接手 |
 | [[entities/opus-4-7]] | model | 🤖 模型 | active（已被取代）| Opus 4.7 發布細節、思考深度爭議、cache 問題 |
 | [[entities/pricing]] | policy | 💼 商業 | active | 訂閱方案、牌價與乘數、計費規則現況；09-14 起週配額換軌、還在發生的計費事故　↳ 子故事：[[entities/pricing-archive]] |
-| [[entities/mythos]] | model | 🤖 模型 | active（已解禁） | 高能力安全模型；2026-07-01 出口管制解除，全球恢復存取；僅限授權機構/安全研究用途，非一般消費市場 |
+| [[entities/mythos]] | model | 🤖 模型 | active（已解禁） | 高能力安全模型；2026-06-30 出口管制解除，07-01 全球恢復存取；僅限授權機構/安全研究用途，非一般消費市場 |
 | [[entities/bugcrawl]] | feature | 🛠️ 工具/功能 | beta | Anthropic 測試中的 Claude Code 漏洞偵測工具 |
 | [[entities/claude-design]] | feature | 🛠️ 工具/功能 | active（初期）| Anthropic AI 設計工具，首日社群反映幻覺多、風格偏移、Claude Code 整合差 |
 | [[entities/claude-security]] | product | 🛠️ 工具/功能 | beta | Claude Security 資安產品，情境化安全評估，整合於 Claude Code 開發環境 |
