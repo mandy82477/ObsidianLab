@@ -333,6 +333,14 @@ def check_deepdive(report: list[str]) -> bool:
 # ❌，把真訊號淹掉，故以期號閘門排除。字串比較對 YYYY-Wnn 格式即字典序即時序。
 HEADLINE_RULES_SINCE = "2026-W35"
 
+# 規則 0：頭條標題（h2 冒號後那句）。W30–W34 五期都有、渲染層 weeklyHeadlineDeck()
+# 也一直支援，但**規格從未寫下它**——於是 W35 一漏，沒有任何東西擋得住，W36 補回的
+# 也只有另立的「本週一句話」callout。2026-09-06 合併兩者：句子住 h2，callout 退場。
+# 這條檢查存在的唯一理由，就是「上一次它是靠沒人注意而死的」。
+HEADLINE_DECK_SINCE = "2026-W36"
+HEADLINE_DECK_RE = re.compile(r"^##\s*一、頭條敘事[：:]\s*(\S.*?)\s*$", re.MULTILINE)
+HEADLINE_DECK_MAX = 60
+
 # 頭條節＝「## 一、…」到下一個 ## 之間。
 HEADLINE_SECTION_RE = re.compile(r"^##\s*一、[^\n]*\n(.*?)(?=^##\s)", re.MULTILINE | re.DOTALL)
 
@@ -377,6 +385,21 @@ def check_headline(report: list[str], weekly_dir: Path = WEEKLY_DIR) -> bool:
             report.append(f"  ⚠️ {path.stem}：找不到「## 一、」頭條節，頭條規則未檢查")
             continue
         section = "\n\n".join(paras)
+
+        # 規則 0：h2 冒號後必須有頭條標題，且 ≤60 字
+        if path.stem >= HEADLINE_DECK_SINCE:
+            dm = HEADLINE_DECK_RE.search(text)
+            if not dm:
+                report.append(
+                    f"  ❌ {path.stem}：`## 一、頭條敘事` 後缺頭條標題"
+                    "（格式 `## 一、頭條敘事：<一句話>`；規格見 weekly-report.md 第 (1) 段）"
+                )
+                ok = False
+            elif len(dm.group(1)) > HEADLINE_DECK_MAX:
+                report.append(
+                    f"  ❌ {path.stem}：頭條標題 {len(dm.group(1))} 字，上限 {HEADLINE_DECK_MAX}"
+                )
+                ok = False
 
         # 規則 7：與上一期（不受生效閘限制——上期是比對基準，不是受檢對象）同構
         if i > 0 and COLLAPSE_TEMPLATE_RE.search(section):

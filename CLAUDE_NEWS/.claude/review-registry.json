@@ -1043,17 +1043,27 @@
       ]
     },
     {
-      "name": "週報 lede（規格端）：`> **本週一句話**：` 粗體與冒號緊貼——多一個空格 WEEKLY_LEDE_RE 即失效且網站無警告",
+      "name": "週報頭條標題（規格端）：`## 一、頭條敘事：<一句話>` 冒號後那句是本期頭條標題；`頭條敘事` 四字不可省（build_web 以「頭條」認節）",
       "assertion": "all_contain",
       "files": [
         ".claude/commands/weekly-report.md"
       ],
       "patterns": [
-        "> \\*\\*本週一句話\\*\\*[：:]"
+        "## 一、頭條敘事[：:]"
       ]
     },
     {
-      "name": "週報 lede（程式端）：build_web 的 WEEKLY_LEDE_RE 必須仍認「本週一句話」",
+      "name": "週報頭條標題（程式端）：check_weekly_ledger 的 HEADLINE_DECK_RE 必須仍認同一形狀，否則規格硬擋落空",
+      "assertion": "all_contain",
+      "files": [
+        "scripts/check_weekly_ledger.py"
+      ],
+      "patterns": [
+        "HEADLINE_DECK_RE.*一、頭條敘事"
+      ]
+    },
+    {
+      "name": "週報 lede（程式端，凍結期數用）：build_web 的 WEEKLY_LEDE_RE 必須保留——W30–W34 仍寫著「本週一句話」，刪了那幾期副標會消失（新期已於 2026-09-06 改走頭條標題）",
       "assertion": "all_contain",
       "files": [
         "scripts/build_web.py"
