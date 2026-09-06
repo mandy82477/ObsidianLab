@@ -50,7 +50,7 @@ from pathlib import Path
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 
 from build_web import ANCHORED_WIKILINK_RE, WIKI_DIR, WIKILINK_RE  # noqa: E402
-from gen_wiki_frontmatter import strip_body, strip_pending_probes  # noqa: E402
+from gen_wiki_frontmatter import FRONTMATTER_RE, strip_body, strip_pending_probes  # noqa: E402
 
 # 樞紐與維運層：目錄/流水帳/規則/儀表，指向或被指向一切，無鑑別力（辯論共識 2）
 EXCLUDE_PAGES = {"index", "log", "CLAUDE", "metrics", "reader-notes"}
@@ -104,7 +104,11 @@ class Link:
 
 
 def _semantic_heading(headings: list[tuple[int, str]], line: int) -> str:
-    """回傳 line 所屬的最近「語意」標題（模板/日期標題上捲到前一個語意標題）。"""
+    """回傳 line 所屬的最近「語意」標題（模板/日期標題上捲到前一個語意標題）。
+
+    供 `sections` 查詢使用——該指令的目的是找到議題散落的**有鑑別力**標題，過寬的
+    模板詞（摘要／時序／現況…）與純日期小標對它沒有用，需要上捲。
+    """
     best = ""
     for h_line, title in headings:
         if h_line > line:
@@ -116,21 +120,49 @@ def _semantic_heading(headings: list[tuple[int, str]], line: int) -> str:
     return best
 
 
+def _nearest_heading(headings: list[tuple[int, str]], line: int) -> str:
+    """回傳 line 所屬的最近上一個標題（h2–h4，不上捲）。
+
+    供 `explain` 的節名歸屬使用——`_semantic_heading` 的上捲對這裡是錯的：把
+    「時序」「摘要」這類模板標題整段跳過、往前找最近的語意標題，會讓時序節內的
+    邊被貼上時序**之前**那一節的名字（如 anthropic-business 的時序邊全標「戰略
+    合作」），使用者拿行號回去對會對錯位置。這裡要的只是「這行實際落在哪個標題
+    底下」，不做語意過濾。
+    """
+    best = ""
+    for h_line, title in headings:
+        if h_line > line:
+            break
+        best = title.strip().strip("`")
+    return best
+
+
 def _parse_page(slug: str, f: Path):
-    """回傳 (headings[(line, title, level)], links[Link])。"""
-    text = strip_pending_probes(strip_body(f.read_text(encoding="utf-8-sig")))
+    """回傳 (headings[(line, title, level)], links[Link])。
+
+    行號＝檔案原始行號（含 frontmatter）：`strip_body` 剝掉 frontmatter 後行號會
+    整頁往前位移該頁 frontmatter 的行數，因此在切行號前先量出這段位移（offset），
+    每個行號都加回去，才會等於 `grep -n` 看到的行號。
+    """
+    raw = f.read_text(encoding="utf-8-sig")
+    fm = FRONTMATTER_RE.match(raw)
+    offset = raw[: fm.end()].count("\n") if fm else 0
+    body = raw[fm.end():] if fm else raw
+    text = strip_pending_probes(body)
     lines = text.split("\n")
-    headings: list[tuple[int, str]] = []      # (line_no, title)
+    headings: list[tuple[int, str]] = []      # (line_no, title)——原始檔案行號
     h2_zones: list[tuple[int, str]] = []      # (line_no, h2_title)
     for i, ln in enumerate(lines, 1):
         m = re.match(r"^(#{2,4})\s+(.+?)\s*$", ln)
         if m:
             title = m.group(2).strip().strip("`").split(" `[")[0]
-            headings.append((i, title))
+            real_i = i + offset
+            headings.append((real_i, title))
             if len(m.group(1)) == 2:
-                h2_zones.append((i, title))
+                h2_zones.append((real_i, title))
     links: list[Link] = []
     for i, ln in enumerate(lines, 1):
+        real_i = i + offset
         anchored = [(m.start(), m.end(), _clean(m.group(2))) for m in ANCHORED_WIKILINK_RE.finditer(ln)]
         for m in WIKILINK_RE.finditer(ln):
             dst = _clean(m.group(1))
@@ -138,7 +170,7 @@ def _parse_page(slug: str, f: Path):
                 continue
             zone = "正文"
             for h_line, h_title in h2_zones:
-                if h_line > i:
+                if h_line > real_i:
                     break
                 zone = "樣板" if h_title in TEMPLATE_ZONE_H2 else "正文"
             anchor = next((a for s, e, a in anchored if s <= m.start() < e), None)
@@ -146,7 +178,7 @@ def _parse_page(slug: str, f: Path):
                 zone = "錨點"
             if ln.lstrip().startswith("**上層"):
                 zone = "階層"  # 子故事的 part-of 邊（2026-09-03），與引用邊分型：cluster／孤島不計
-            links.append(Link(slug, dst, i, _semantic_heading(headings, i), zone, anchor))
+            links.append(Link(slug, dst, real_i, _nearest_heading(headings, real_i), zone, anchor))
     return headings, links
 
 
@@ -183,7 +215,8 @@ def cmd_explain(target: str, out, section: str | None = None) -> int:
         key = section.strip().lstrip("#").strip()
         hit = [l for l in inbound_all if l.anchor and key in l.anchor]
         whole = [l for l in inbound_all if not l.anchor]
-        print(f"# {target} § {key} 的入邊（錨點 {len(hit)} ／ 整頁 {len(whole)}）\n", file=out)
+        print(f"# {target} § {key} 的入邊（錨點 {len(hit)} ／ 整頁 {len(whole)}）", file=out)
+        print("行號＝檔案原始行號（含 frontmatter）\n", file=out)
         for name, group in (("指到這一節（錨點邊）", hit), ("指到整頁（未指定段落，仍須逐一確認）", whole)):
             print(f"## {name}", file=out)
             for l in sorted(group, key=lambda x: (x.src, x.line)):
@@ -196,7 +229,8 @@ def cmd_explain(target: str, out, section: str | None = None) -> int:
         return 0
     outbound = [l for l in links if l.src == target]
     inbound = inbound_all
-    print(f"# {target}（出 {len(outbound)} ／ 入 {len(inbound)}）\n", file=out)
+    print(f"# {target}（出 {len(outbound)} ／ 入 {len(inbound)}）", file=out)
+    print("行號＝檔案原始行號（含 frontmatter）\n", file=out)
     for name, group in (("出邊（本頁引用誰）", outbound), ("入邊（誰引用本頁）", inbound)):
         print(f"## {name}", file=out)
         by_zone: dict[str, list[Link]] = defaultdict(list)
@@ -247,11 +281,15 @@ def cmd_sections(keyword: str, out) -> int:
     pages, headings_by_page, _ = build()
     hits = []
     for slug, f in pages.items():
-        text = strip_body(f.read_text(encoding="utf-8-sig"))
+        raw = f.read_text(encoding="utf-8-sig")
+        fm = FRONTMATTER_RE.match(raw)
+        offset = raw[: fm.end()].count("\n") if fm else 0
+        text = strip_body(raw)
         for i, ln in enumerate(text.split("\n"), 1):
             if keyword.lower() in ln.lower():
-                sec = _semantic_heading(headings_by_page[slug], i)
-                hits.append((slug, sec, i))
+                real_i = i + offset
+                sec = _semantic_heading(headings_by_page[slug], real_i)
+                hits.append((slug, sec, real_i))
     seen = set()
     hot, cold = [], []
     for slug, sec, line in hits:

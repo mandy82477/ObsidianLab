@@ -71,10 +71,10 @@
 
 | 項 | 症狀 | 處置 |
 |---|---|---|
-| `wiki_graph.py explain` 行號 | 用去 frontmatter 後的行號，比檔案原始行號少 24；每波健檢卡／查證檔都被咬 | 2026-09-06 派 Sonnet 改為輸出檔案原始行號並在標頭註明口徑 |
-| `wiki_graph.py explain` 節名欄 | 時序節內所有邊的節名一律誤標成該頁第一張表的節名（anthropic-business「戰略合作」） | 同上，修節名歸屬 |
-| `table_census.py _growth()` | 無日期欄的表一律判 static（商業風險 17 列實為累積表） | 改回報 unknown |
-| `table_census.py _mechanism()` | 通用節名（「摘要」）在任何規則檔命中即判「有機制」 | 命中行須含頁名或 slug |
+| `wiki_graph.py explain` 行號 | 用去 frontmatter 後的行號，比檔案原始行號少 24；每波健檢卡／查證檔都被咬 | ✅ 2026-09-06 已修（`_parse_page` 加回 frontmatter 位移，標頭註明口徑；測試 `ExplainLineNumbers`） |
+| `wiki_graph.py explain` 節名欄 | 時序節內所有邊的節名一律誤標成該頁第一張表的節名（anthropic-business「戰略合作」） | ✅ 已修（`_nearest_heading`；測試 `ExplainHeadingZone`） |
+| `table_census.py _growth()` | 無日期欄的表一律判 static（商業風險 17 列實為累積表） | ✅ 已修（無日期欄→`unknown`，`static` 移除；`test_table_census.py`） |
+| `table_census.py _mechanism()` | 通用節名（「摘要」）在任何規則檔命中即判「有機制」 | ✅ 已修（命中行或所屬標題須含 slug／頁名） |
 
 ## 使用者裁決紀錄
 

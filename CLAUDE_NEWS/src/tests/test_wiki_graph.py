@@ -3,6 +3,7 @@
 守的是「衍生層必須有消費迴路」的定律（2026-08-27 節點政策辯論共識）：
 wiki 模板或 wikilink 語法改版若讓解析器失效，這裡當天紅，不會靜默腐爛。
 """
+import re
 import sys
 import unittest
 from pathlib import Path
@@ -199,3 +200,58 @@ class ExplainSection(unittest.TestCase):
         import wiki_graph as g
         _, _, links = g.build()
         self.assertTrue(any(l.anchor is None for l in links))
+
+
+class ExplainLineNumbers(unittest.TestCase):
+    """explain 的行號必須是檔案原始行號（含 frontmatter），不是去 frontmatter 後的行號。
+
+    2026-09-06 教訓：wiki_graph 對每頁做 strip_body（剝 frontmatter）後才切行號，
+    但顯示給人看的行號從未把 frontmatter 的行數加回去——導致每頁行號都比
+    `grep -n` 看到的真實行號少了該頁 frontmatter 的行數（各頁不同，anthropic-business
+    少 24 行）。回掃、開檔核對全部會對錯行。
+    """
+
+    PAGE = "topics/anthropic-business"
+    FILE = Path(__file__).resolve().parents[2] / "wiki" / "topics" / "anthropic-business.md"
+
+    def test_行號對得上grep_n看到的原始行號(self):
+        import wiki_graph as g
+        _, _, links = g.build()
+        raw_lines = self.FILE.read_text(encoding="utf-8-sig").splitlines()
+        # 533 為固定測試錨點：本頁時序節內一則指向 entities/pricing 的出邊（2026-09-06 核對）
+        target_raw_line = 533
+        self.assertIn("[[entities/pricing]]", raw_lines[target_raw_line - 1])
+        hit = [l for l in links if l.src == self.PAGE and l.dst == "entities/pricing"
+               and l.line == target_raw_line]
+        self.assertTrue(hit, "找不到行號等於原始檔案行號的出邊——行號可能仍是去 frontmatter 後的相對行號")
+
+    def test_無邊的行號落在去frontmatter前的相對行號之外(self):
+        """反向防呆：不能巧合對上——舊行號（去 frontmatter 後）在這個位置應該是 509，不是 533。"""
+        import wiki_graph as g
+        _, _, links = g.build()
+        stale = [l for l in links if l.src == self.PAGE and l.dst == "entities/pricing" and l.line == 509]
+        self.assertEqual(stale, [], "行號仍停留在去 frontmatter 後的相對值，offset 沒有加回去")
+
+
+class ExplainHeadingZone(unittest.TestCase):
+    """explain 的節名歸屬：時序節內的邊不該被上捲到時序之前的最後一個實質標題。
+
+    2026-09-06 教訓：`_semantic_heading` 對「時序」「摘要」等模板標題與純日期標題
+    一律跳過、往前找最近的「語意」標題——這個上捲邏輯是為 `sections` 查詢設計的
+    （避免命中詞落在過寬的通用標題上）。但套用到 `explain` 的節名顯示上就變成錯的：
+    anthropic-business `## 時序` 底下所有邊全部標成再往前的「戰略合作（商業擴張信號）」，
+    使用者拿著行號去查以為那則邊在戰略合作表附近，實際上在時序區。
+    """
+
+    PAGE = "topics/anthropic-business"
+
+    def test_時序節內的邊標為時序或其月份小標(self):
+        import wiki_graph as g
+        _, _, links = g.build()
+        hit = [l for l in g.build()[2] if l.src == self.PAGE and l.dst == "entities/pricing" and l.line == 533]
+        self.assertTrue(hit)
+        heading = hit[0].heading
+        self.assertTrue(
+            heading == "時序" or re.match(r"^\d{4}-\d{2}", heading),
+            f"時序節內的邊節名應為「時序」或其 h3 月份，實得：{heading!r}",
+        )
