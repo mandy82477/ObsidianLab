@@ -28,7 +28,7 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 **領域：** 🌐 社群
 **開始日期：** 2026-04-25
 **最後更新：** 2026-09-06
-**最後新聞更新：** 2026-09-04
+**最後新聞更新：** 2026-09-06
 
 > **最熱討論**（2026-09-04）
 > - **NYT〈Corporate America is getting hooked on open-source AI〉**（HN 274 分）：企業轉向開源模型，留言認為若 Anthropic／OpenAI 不大幅降價將面臨轉單壓力。
@@ -147,6 +147,9 @@ MCP 的實際成本遠超多數使用者預期，已有多個量化案例：
 
 | 討論主題 | 首見 · 最後動態 | 當時熱度 | 模式 | 核心論點 | 衍生 |
 |---------|------|------|------|---------|------|
+| Reddit r/ClaudeCode：反駁額度抱怨聲浪，資深後端工程師稱半年僅遇限額約一次 | 2026-09-06 · 2026-09-06 | 🔥 | ☄️閃現 | 針對本週一片抱怨用量限制的貼文，作者稱自己資深後端、用 Claude Code 半年很少碰到上限，主張問題出在工作流而非額度；無「週熱門」標記，score 不可信 | — |
+| Simon Willison：OpenAI 面向開發者發布 GPT-6 Astra | 2026-09-05 · 2026-09-05 | 🔥 | ☄️閃現 | Simon Willison 部落格記錄 OpenAI 面向開發者發布 GPT-6 Astra；具名表態，無社群延燒；[原文](https://simonwillison.net/2026/Sep/5/introducing-gpt-6-astra-for-developers/)（Blog） | — |
+| Simon Willison TIL：在 macOS 上讓 coding agent 操作 Blender | 2026-09-05 · 2026-09-05 | 🔥 | ☄️閃現 | Simon Willison TIL 筆記記錄在 macOS 上以 coding agent 操作 Blender 的實作方式；具名表態，無社群延燒；[原文](https://simonwillison.net/2026/Sep/5/blender-coding-agents-macos/)（Blog） | — |
 | PhiloLabs/fable51-worlds HN 討論串：不同模型 3D 世界建模效果與成本比較，README 疊圖對比證據受質疑 | 2026-09-03 · 2026-09-03 | 🔥🔥🔥 | ☄️閃現 | 主帖比較不同模型 RTS 3D 建模成本；score 303 惟僅兩則留言：一稱 Opus 5 較省錢但面數偏高，一質疑疊圖對比無說服力 | — |
 | Show HN: Aura——SRE 團隊因 context 溢位、提示注入風險與核准疲勞自建 Rust 事故應變 agent | 2026-09-02 · 2026-09-02 | 🔥 | ☄️閃現 | 作者所屬 SRE 團隊曾用 Claude／OpenClaw／LangChain 做事故應變，遇 context 溢位、提示注入風險、幻覺、核准疲勞問題，且不願放寬正式環境權限，故自建 Rust agent；HN score 21 | — |
 | 使用者付費帳號無預警遭停權（後已恢復），引發社群對帳號執法透明度的討論 | 2026-09-02 · 2026-09-02 | 🔥🔥🔥 | ☄️閃現 | 使用者記述帳號因「suspicious signals」無預警遭停權、事後已恢復，過程缺乏清楚申訴管道；HN score 39；呼應本頁「Anthropic 透明度與信任赤字」長期議題既有 2026-06-23 帳號封禁無申訴管道軸線 | — |

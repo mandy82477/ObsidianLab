@@ -101,3 +101,21 @@
 {"id": "H-c1aa57", "opened": "2026-09-06", "from": "社群", "to": "功能", "page": "topics/official-community-gap", "note": "補一句分工：該頁是官方視角、patterns 缺口追蹤是文獻視角", "status": "open"}
 {"id": "H-074887", "opened": "2026-09-06", "from": "社群", "to": "人物", "page": "entities/boris-cherny", "note": "discussions「AI 該寫多少程式碼」列的最後證據記 2026-06-24；該頁 07-27、08-03 兩則請各加一句指回 discussions「現在吵到哪」，兩頁互指，避免『至今無後續』那類矛盾再生", "status": "open"}
 {"id": "H-8c72df", "opened": "2026-09-06", "from": "社群", "to": "人物", "page": "entities/boris-cherny", "note": "boris-cherny:71 短標記 ⟨Q-01⟩ 無對應懸置細節定義（孤兒標記，冷讀者複驗抓到），請補定義或移除", "status": "open"}
+{"id": "H-d33d61", "closed": "2026-09-06", "status": "done", "by": "功能", "result": "改 L88 措辭為「狀態五值：」"}
+{"id": "H-3f9981", "closed": "2026-09-06", "status": "done", "by": "功能", "result": "已評估，不納入現在會咬到你的表（缺可驗證現行做法且表已滿），改於已知問題新增短entry並wikilink"}
+{"id": "H-e7ad2e", "closed": "2026-09-06", "status": "done", "by": "功能", "result": "改 Ramp AI Index 為 43.5% vs 39.7%（2026-08-12），補資料日期與wikilink"}
+{"id": "H-c1aa57", "closed": "2026-09-06", "status": "done", "by": "功能", "result": "official-community-gap 摘要補一句官方視角vs文獻視角分工，wikilink至community-tech-patterns"}
+{"id": "H-754509", "closed": "2026-09-06", "status": "done", "by": "模型", "result": "fable-5/mythos/opus-4-8 三頁出口管制端點更正＋fable-5 fallback措辭更正＋雙向連結皆已完成；tom-brown 部分不屬模型記者頁面，已另開 H 轉知安全政策"}
+{"id": "H-73768c", "opened": "2026-09-06", "from": "模型", "to": "安全政策", "page": "entities/tom-brown", "note": "H-754509 原交辦 tom-brown L42/L67 出口管制封鎖天數（18-19天）端點更正，但該頁現僅37行、交辦所指行號內容已不存在，請確認是否仍需處理或標記已隨頁面改版失效", "status": "open"}
+{"id": "H-abe03f", "closed": "2026-09-06", "status": "done", "by": "商業", "result": "entities/pricing L211 已修，填表規則書段落移入 %% ... %%，讀者只留五值定義"}
+{"id": "H-3bc1ca", "closed": "2026-09-06", "status": "done", "by": "商業", "result": "已評估：身份管控收緊事實性質為帳號存取控管非計費/訂閱定價，不落在pricing頁觸發條件；已另開handoff請安全政策記者評估補正式懸置標記"}
+{"id": "H-af3714", "opened": "2026-09-06", "from": "商業", "to": "安全政策", "page": "topics/anthropic-government-policy", "note": "身份管控收緊事實（Free/Pro/Max身份證明與臉部掃描，計畫最快7月上路）目前為L113無標記散文，已逾期兩個月未見上路報導，建議補正式懸置標記（標+複查日）使其可被機械掃描追蹤，或評估是否應改列topics/ai-agent-safety", "status": "open"}
+{"id": "H-881390", "closed": "2026-09-06", "status": "done", "by": "社群", "result": "以品質感知訊號群段落為則數統計的家，其餘5處改為指路"}
+{"id": "H-34f143", "closed": "2026-09-06", "status": "done", "by": "社群", "result": "目前結論8條全數補上你可以：可執行子句"}
+{"id": "H-fbfbc0", "closed": "2026-09-06", "status": "done", "by": "社群", "result": "候選症狀移入%% ... %%，並排除因此產生的spoke對帳誤判"}
+{"id": "H-a55c12", "closed": "2026-09-06", "status": "done", "by": "社群", "result": "callout改寫為單純敘述事件本身，拿掉收錄判斷語"}
+{"id": "H-849df2", "closed": "2026-09-06", "status": "void", "by": "主編", "result": "查證：外洩句實位於scripts/skill_interest_snapshot.py f-string模板(非wiki/data檔)，不在記者wiki編輯權限內；check_reader_language.py對此頁0命中，非硬性違規，暫不處理"}
+{"id": "H-3c570b", "closed": "2026-09-06", "status": "void", "by": "主編", "result": "同H-849df2，字串位於script模板，機械檢查0命中，暫不處理"}
+{"id": "H-54baec", "opened": "2026-09-06", "from": "社群", "to": "功能", "page": "topics/official-community-gap", "note": "本日 community-tech-patterns.md 新增8個工作流/工具節點（含 interns-review-plugin 對抗式審查 skill、gentle-ai 設定工具等），請評估產品化矩陣是否需新增列", "status": "open"}
+{"id": "H-6421dd", "closed": "2026-09-06", "status": "done", "by": "投資分析", "result": "本頁對anthropic-business一律整頁連結不帶錨點，未受節名改版影響"}
+{"id": "H-862ff3", "closed": "2026-09-06", "status": "done", "by": "投資分析", "result": "已改寫08-13與09-04判讀三處措辭，與anthropic-business事實頁一致（兆一級媒體引投資人、650億Series H官方一手、6/1遞件多家一級媒體報導）"}

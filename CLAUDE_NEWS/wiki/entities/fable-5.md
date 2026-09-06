@@ -45,7 +45,7 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 
 Claude Fable 5 是 Anthropic 於 2026-06-09 發布的旗艦模型，為**史上首款向大眾開放的 Mythos 級模型**，與 Claude Mythos 5 共用相同模型權重，差異在於 Fable 5 前置安全分類器（觸發時 fallback 至 Opus 4.8，Anthropic 稱不到 5% 的 session 受影響）。核心定位：任務越複雜越長期，Fable 5 優勢越明顯，在軟體工程、知識工作、視覺、科學研究等幾乎所有 benchmark 達到 SOTA。**2026-09-01 起，Fable 5.1／Mythos 5.1 為現行世代**（見上方「現況」與下方「歷史記錄」），本頁沿用原「Fable 5」頁面持續記錄後續版本迭代。
 
-**當前狀態（2026-07-20 起）**：出口管制（2026-06-13 至 2026-07-01，歷時 18 天）已正式解除，全球恢復存取；免費使用期限已於 **2026-07-19 23:59:59 PT 到期**，07-20 起訂閱存取分為 Max／Team premium（標配，計入週用量上限 50%）與 Pro／Team standard（不計入方案用量、改按 usage credits 計費，另有一次性過渡 credit）兩層，計費細節見 [[entities/pricing]]（此分界已於 2026-08-08 經官方 Help Center 查證確認，先前四則矛盾報導就此收斂）。Redeploy 同步導入「Defense in Depth」安全機制——更嚴格的資安/程式碼請求分類器，判定高風險時自動 fallback 至 Opus 4.8，首日已有誤判實測回報。管制事件完整經過見「出口管制：雙方立場」與「歷史記錄」。
+**當前狀態（2026-07-20 起）**：出口管制（2026-06-12 至 2026-06-30，歷時 18 天）已正式解除，2026-07-01 起全球恢復存取；免費使用期限已於 **2026-07-19 23:59:59 PT 到期**，07-20 起訂閱存取分為 Max／Team premium（標配，計入週用量上限 50%）與 Pro／Team standard（不計入方案用量、改按 usage credits 計費，另有一次性過渡 credit）兩層，計費細節見 [[entities/pricing]]（此分界已於 2026-08-08 經官方 Help Center 查證確認，先前四則矛盾報導就此收斂）。Redeploy 同步導入「Defense in Depth」安全機制——更嚴格的資安/程式碼請求分類器，判定高風險時自動 fallback 至 Opus 4.8，首日已有誤判實測回報。管制事件完整經過見「出口管制：雙方立場」與「歷史記錄」；此機制為 07-01 解封三項承諾之一，政府談判脈絡見 [[topics/anthropic-government-policy#政府動作對你的產品做了什麼]]。
 
 | 指標 | 數值 |
 |------|------|
@@ -100,7 +100,7 @@ claude --model claude-fable-5-20260609
 
 - **多模型協作基準（官方，2026-07-08）**：Anthropic 公布「Fable 5 orchestrates, cheap models execute」基準數字——Fable 5 負責任務調度、較便宜模型負責實際執行，可用 46% 成本達到 96% 效能，此協作模式現可在 Claude Code 中直接套用（Reddit r/ClaudeAI 整理轉載，週熱門標記，原始官方發布連結未附，暫列官方數據轉述）
 - **Mythos 架構公開版**：首次讓大眾使用 Mythos 等級推理能力
-- **安全分類器護欄**：觸發時靜默 fallback 至 Opus 4.8，不拒絕請求（< 5% session）
+- **安全分類器護欄**：觸發時 fallback 至 Opus 4.8，不拒絕請求；官方原文為「使用者將被告知請求遭攔截」，非靜默（< 5% session；[Anthropic Blog](https://www.anthropic.com/news/redeploying-fable-5)，2026-06-30）
 - **1M context + 128K output**：適合處理整個 codebase 或長文件的任務
 - **多模態**：軟體工程、視覺、科學研究均達 SOTA
 
@@ -306,7 +306,7 @@ claude --model claude-fable-5-20260609
 #### 2026-07-06
 **Anthropic 多模型錯誤率升高事件（同日解決）+ HN 實測佐證解封後能力**：
 - **服務中斷**：Anthropic Status 通報多個模型一度出現錯誤率升高，Fable 5 也一併受影響，事件於同日解決，無需採取行動（[Anthropic Status](https://status.claude.com/incidents/tl8x3p1msff2)）；同期 AOL 彙整讀者對 Claude API 不穩定的抱怨與詢問（Response incomplete Claude / Is Claude down / Claude api error，07-05 22:24 UTC），屬服務穩定性面向，非出口管制或護欄爭議重演
-- **Show HN 實測：Python 移植 Super Nintendo（6 分）**：作者以此專案作為 Fable 5 的實測案例——出口管制期間（6/13–7/1）專案卡關三週，Fable 5 解封後 90 分鐘內找出根本問題並修復 23 個編譯器 bug（[fabian-kuebler.com](https://fabian-kuebler.com/posts/fable-python-snes/)）；訊號雖弱（HN 6 分），但具體佐證解封後 Fable 5 在複雜除錯任務上的實際生產力
+- **Show HN 實測：Python 移植 Super Nintendo（6 分）**：作者以此專案作為 Fable 5 的實測案例——出口管制期間（6/12–6/30）專案卡關三週，Fable 5 解封後 90 分鐘內找出根本問題並修復 23 個編譯器 bug（[fabian-kuebler.com](https://fabian-kuebler.com/posts/fable-python-snes/)）；訊號雖弱（HN 6 分），但具體佐證解封後 Fable 5 在複雜除錯任務上的實際生產力
 
 #### 2026-07-03
 **配額重置規則釐清 + 消耗速度落差極大（社群策略彙整見「配額與計費過渡」子區塊）**：Reddit 社群釐清 Fable 5 額度重置時間依訂閱起始日而異，非統一週期（[Reddit r/ClaudeCode](https://www.reddit.com/r/ClaudeCode/comments/1umt5h5/fable_resets_on_monday_if_you_held_a_plan_already/)）；同日回報顯示個體消耗速度差異懸殊，2 天內燒完額度、大型基因體分析工作流受衝擊等案例並陳（[Reddit](https://www.reddit.com/r/ClaudeCode/comments/1umtox4/i_burned_through_my_fable_5_usage_in_2_days_so_i/)、[Reddit](https://www.reddit.com/r/ClaudeCode/comments/1umtlqh/sad_about_fable_restrictions/)）。
@@ -322,9 +322,9 @@ claude --model claude-fable-5-20260609
 **出口管制正式解除，全球恢復存取**：
 - **官方公告（[Anthropic Blog](https://www.anthropic.com/news/redeploying-fable-5)）**：美國出口管制解除，Fable 5 與 Mythos 5 於 2026-07-01 起向全球用戶恢復存取。過渡期計費：Pro/Max/Team 方案 7/7 前維持每週配額 50%；7/7 後改依用量計費，定價近期公布
 - **Anthropic-美國政府協議**：Anthropic 承諾主動偵測安全風險、配合標準協議、通報惡意活動；此協議為 Fable 5 全球解禁的交換條件，標誌管制事件正式落幕
-- **管制事件歷時 18 天**（2026-06-13 至 2026-07-01）
+- **管制事件歷時 18 天**（2026-06-12 至 2026-06-30）
 
-### 出口管制期（2026-06-13 至 06-30）
+### 出口管制期（2026-06-12 至 06-30）
 
 #### 2026-06-29
 **美國政府正式許可恢復 Mythos 存取 + Fable 5 可能本週回歸（後於 2026-07-01 官方證實回歸，見上方「2026-07-01」條目）**：

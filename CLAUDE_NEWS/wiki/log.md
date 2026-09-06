@@ -5986,3 +5986,14 @@ GH Actions 抓料排 10:23 UTC，到 14:45 UTC 仍未落地（+4.4 小時且持�
 > 判斷式：**這個閘擋掉的東西，我們有辦法知道嗎？** 原本沒有——關鍵字閘的漏球在管線裡不留任何痕跡，只有人去 HN 全文查才看得到。D 窗把「有 GitHub repo 可問」的那一半變成機器查得到。剩下那一半（部落格文章、無 repo 的專案）仍然是盲區，因為沒有等價的描述欄可查。
 
 **未竟：** `/pipeline-change-check compare` 的 digest 指標對照需等下一次 pipeline 實跑後才能做（本改動未觸發重抓）。下輪 pipeline 跑完後對照 `src/logs/pipeline_baseline.json`，重點看 articleCount 與 discussions 區塊條目數有無非預期跳動。
+
+## 2026-09-06 Ingest
+
+- 來源日報：[[news/2026-09-06]]
+- 更新頁面：entities/claude-code、topics/official-community-gap、entities/fable-5、entities/mythos、entities/opus-4-8、entities/pricing、topics/anthropic-business、topics/code-quality-decline、topics/community-tech-patterns、topics/community-tech-discussions、topics/market-signals
+- 新增頁面：無
+- 摘要：Anthropic IPO 延後與估值話題延燒；官方 claude-code repo 湧入多筆高留言 issue（MCP 孤兒行程、Windows 安裝失敗等）；社群持續回報用量／訂閱抱怨；商業記者藉此輪修正出口管制端點與 pricing 規則書外洩兩批既有轉知事項；功能與模型記者各自完成一批跨頁事實更正回掃；投資分析記者新增 1 則 🟡 判讀（IPO 延後說法，兩則報導方向相反），並回掃修正 anthropic-business 改版後三處措辭不符。
+- devpractice 沉澱：無法判斷（環境限制）——容器為淺 clone，狀態檔基準 sha 與 48 小時 fallback 皆不在本容器歷史中，記者正確選擇不執行 mark（避免上次基準線至今的新增永久遺失），待下次有完整歷史的執行接續
+- market 判讀：1 則（🔴 0／🟡 1）
+- 呈現品質：全部通過（各記者機械自查 `check_cell_limits.py` / `check_reader_language.py` / `check_pending_markers.py` / `check_tools_page.py` 均為 OK；安全政策記者判斷單一 kk.org 條目證據薄弱且不符三頁任一觸發條件，正確選擇不寫入）
+- 品質備註：[功能][社群] 各自獨立跑 `python scripts/run_tests.py` 全庫測試皆回報 1 個既有失敗——`test_devpractice_diff.TestStateRoundtrip.test_cli_show_runs`（`data/devpractice_state.json` 記錄的基準 commit sha 在本機 git 歷史中不存在，疑為淺層 clone 或基準線損毀）；[模型] 另跑一次全庫測試命中 `test_daily_health_check.test_nonzero_exit_yields_nothing`（git parked-branches 解析）FAIL——三者皆與本輪 wiki 內容編輯無關，屬環境層既有問題，記者正確地未嘗試修復並僅轉知主編；主編於 Step 4 web build gate 時一併確認是否已登記於 `docs/known-test-gaps.json`

@@ -29,11 +29,11 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 **領域：** 🌐 社群
 **開始日期：** 2026-04-25
 **最後更新：** 2026-09-06
-**最後新聞更新：** 2026-09-05
+**最後新聞更新：** 2026-09-06
 
-> **最新工作流模式**（2026-09-05）
-> - **本庫首次收錄**：feder-cr/AIHawk——開源瀏覽器自動化 agent，含 Claude Code／Gemini CLI 適用 Browser MCP（3.03 萬星）。
-> - **Skill 生態批次亮相**：GitHub Search 同日新增五款週邊 Skill——影片分鏡、短劇製作、簡報生成、API 相容伺服器、SSH 工作流。
+> **最新工作流模式**（2026-09-06）
+> - **對抗式審查新招**：Claude Skill 派 3 個 fable agent 扮演「實習生」對設計決策做對抗式審查，防過度工程化。
+> - **設定層再添一款**：gentle-ai 讓 Claude Code／Cursor／OpenCode／Codex 共用同一套持久記憶＋規格驅動設定（6,304 星）。
 
 ---
 
@@ -161,6 +161,78 @@ Multi-agent 架構與 Skills 設計已是社群定案的做法；還在試的十
 > ⟨Q-nn⟩ 標的是這一則還沒查實的地方，完整說明在該月份分組最後的「懸置細節」。
 
 ### 2026-09
+
+#### Gentleman-Programming/gentle-ai：一套設定讓 Claude Code／Cursor／OpenCode／Codex 共用持久記憶＋規格驅動開發（2026-09-06）
+
+- **主線：** 索引記憶
+- **核心模式：** 為多款既有 AI coding agent（Claude Code、Cursor、OpenCode、Codex 等）提供統一設定，可選配持久記憶、Spec-Driven Development、精選 skill／agent 套件；GitHub Search 累積 6,304 星
+- **與既有模式的關係：** 補上「記憶與知識管理」類別一種「一套設定跨多工具」的取向——既有方案（claude-mem、OKF、OzBrain）多聚焦記憶機制本身，本則把記憶、SDD、skill 套件打包成單一設定層；歸入主線 [[topics/community-large-codebase-workflow]] 索引記憶主線
+- **可信度註記：** 僅取得 GitHub Search 星數，無 forks／issues／近期 commit 佐證可查，未另行查證
+- **來源：** GitHub Search（6,304★）；[GitHub](https://github.com/Gentleman-Programming/gentle-ai)
+- **成熟度：** ⏳ 新興（本庫首次收錄，尚無星數以外的社群採用回饋數據）
+
+#### magnitudedev/magnitude：開源本地推論伺服器，可接掛 Claude Code 等既有 agent CLI（2026-09-06）
+
+- **主線：** —
+- **核心模式：** 在使用者自有硬體上運行本地模型的開源推論伺服器，可作為既有 agent CLI（Pi、OpenCode、Hermes、OpenClaw、Codex、Claude Code、Oh My Pi、Cline）的後端，不綁死單一 agent 工具；GitHub Search 累積 3,465 星
+- **與既有模式的關係：** 屬推論基礎設施層，非 Claude Code 特有的工作流模式——與本頁「模型使用策略」類別的路由工具不同層次（那些路由既有雲端模型，本則替換整個推論後端）；Claude Code 僅為其支援的 8 種 harness 之一，關聯薄弱
+- **可信度註記：** 僅取得 GitHub Search 星數，無 forks／issues／近期 commit 佐證可查，未另行查證
+- **來源：** GitHub Search（3,465★）；[GitHub](https://github.com/magnitudedev/magnitude)
+- **成熟度：** ⏳ 新興（本庫首次收錄，與 Claude Code 的關聯僅為其中一種可接掛 harness）
+
+#### alpbahadur/interns-review-plugin：Claude Skill 派 3 個 fable agent 扮演「實習生」做對抗式審查（2026-09-05）
+
+- **主線：** 除錯分工
+- **核心模式：** 設計決策後自動派出 3 個 fable agent 扮演「實習生」角色進行對抗式審查，要求開發者把回覆當作「沒經驗的生澀實習生意見」，藉此避免過度工程化
+- **與既有模式的關係：** 與「多代理 PR Review」既有代表技巧（4-agent Code Review、對抗性審查、Read-Only Reviewer）同屬對抗式審查取向，差異在於刻意把審查者意見「降階」為實習生等級以減少過度採信；歸入主線 [[topics/community-large-codebase-workflow]] 除錯分工主線
+- **可信度註記：** Hacker News Show HN，12 分，屬中低互動；單一開發者提案，尚無其他使用者實測回報
+- **來源：** 「Show HN: Claude Skill – Interns must review」— Hacker News（12 分）；[GitHub](https://github.com/alpbahadur/interns-review-plugin)
+- **成熟度：** ⏳ 新興（單一開發者提案，尚無社群採用回饋）
+
+#### awdr74100/figwright：雙向 Figma MCP，設計稿轉框架感知程式碼、程式碼變更可推回畫布（2026-09-06）
+
+- **主線：** —
+- **核心模式：** 免費雙向 Figma MCP 伺服器，可把 Figma 設計稿轉為框架感知的程式碼，也能把程式碼變更推回 Figma 畫布；支援 Claude Code、Cursor、Codex 等 MCP 客戶端；GitHub Search 累積 684 星
+- **與既有模式的關係：** 補上「Plugin / MCP 整合」類別一個設計稿↔程式碼雙向同步的具體案例，此前該類多聚焦工具鏈協調與 context 載入，本則是設計工具整合的新取向
+- **可信度註記：** 僅取得 GitHub Search 星數，無 forks／issues／近期 commit 佐證可查，未另行查證
+- **來源：** GitHub Search（684★）；[GitHub](https://github.com/awdr74100/figwright)
+- **成熟度：** ⏳ 新興（本庫首次收錄，尚無星數以外的社群採用回饋數據）
+
+#### EliaAlberti/cpr-compress-preserve-resume：跨 session 儲存、搜尋並還原對話上下文（2026-09-06）
+
+- **主線：** 索引記憶
+- **核心模式：** 為 Claude Code 提供持久記憶功能，可跨 session 儲存、搜尋並還原對話上下文；GitHub Search 累積 508 星
+- **與既有模式的關係：** 與「記憶與知識管理」既有方案（claude-mem、OKF）同屬跨 session 記憶取向，差異點是明確標榜「壓縮—保存—還原」三段式流程；歸入主線 [[topics/community-large-codebase-workflow]] 索引記憶主線
+- **可信度註記：** 僅取得 GitHub Search 星數，無 forks／issues／近期 commit 佐證可查，未另行查證
+- **來源：** GitHub Search（508★）；[GitHub](https://github.com/EliaAlberti/cpr-compress-preserve-resume)
+- **成熟度：** ⏳ 新興（本庫首次收錄，尚無星數以外的社群採用回饋數據）
+
+#### karanb192/claude-code-hooks：hooks 套件＋可安裝外掛市集，涵蓋安全性／成本／可觀測性／生產力（2026-09-06）
+
+- **主線：** —
+- **核心模式：** Claude Code hooks 套件搭配可安裝的外掛市集，涵蓋安全性、成本控管、可觀測性與生產力四個面向；GitHub Search 累積 500 星
+- **與既有模式的關係：** 補上「Hooks 與自動化」類別一個「市集化」取向——既有代表技巧（PostToolUse 稽核、Git Hooks 品質門、Stop Hook 通知）多為單一 hook 用途，本則把多個 hook 打包成可安裝的外掛市集
+- **可信度註記：** 僅取得 GitHub Search 星數，無 forks／issues／近期 commit 佐證可查，未另行查證
+- **來源：** GitHub Search（500★）；[GitHub](https://github.com/karanb192/claude-code-hooks)
+- **成熟度：** ⏳ 新興（本庫首次收錄，尚無星數以外的社群採用回饋數據）
+
+#### dev.to 實測：Claude Code 內建記憶與作者自建記憶系統的跨 session 持久測試（2026-09-01）
+
+- **主線：** 索引記憶
+- **核心模式：** 以「教一個只在自己世界為真的事實，關閉後在新 session 回來看記不記得住」的方法，重複測試 Claude Code 內建記憶功能與作者自建記憶系統是否都能跨 session 記住特定事實，兩者本輪測試皆通過
+- **與既有模式的關係：** 為「記憶與知識管理」類別補上一種可複製的驗證方法（教事實→關閉→跨 session 回測→計次），而非新工具；樣本僅單一使用者、單次測試回合，結論不宜推廣為通則
+- **可信度註記：** dev.to 第一手實作與測試方法文章，非新聞轉述；單一作者、單一測試回合，無第三方覆核
+- **來源：** 「I tested Claude Code's memory against mine. They are not doing the same job.」— dev.to；[原文](https://dev.to/heinrichneb/i-tested-claude-codes-memory-against-mine-they-are-not-doing-the-same-job-35jb)
+- **成熟度：** ⏳ 新興（單一使用者測試方法，尚待其他使用者覆核）
+
+#### 「先做拒絕」：Claude Code SDK 打造的 Mac Mini 個人助理，第一步是危險指令的把關機制（2026-09-06）
+
+- **主線：** —
+- **核心模式：** 以 Claude Code SDK 為底，在 Mac Mini M4（16GB）上打造透過 Discord 對話的個人助理，開發者第一步優先做的不是功能而是拒絕執行危險指令的把關機制
+- **與既有模式的關係：** 補上「安全架構」類別一個「先建護欄再建功能」的具體案例，順序上與既有代表技巧（Grepathy 事後偵測、Spare Mac 實體隔離）互補——本則是在賦予 shell 存取權前就先做拒絕層
+- **可信度註記：** Reddit r/ClaudeCode，未標「週熱門」，score 不可信，單一開發者敘事，僅第一天記錄，後續進度未知
+- **來源：** 「[Day 1] I gave a chatbot shell access to my Mac Mini. The first thing I built was the part that says no.」— Reddit r/ClaudeCode；[原文](https://www.reddit.com/r/ClaudeCode/comments/1w8vk90/day_1_i_gave_a_chatbot_shell_access_to_my_mac/)
+- **成熟度：** ⏳ 新興（單一開發者第一天記錄，方向仍在建立中）
 
 #### GitHub Search 存量盤點：feder-cr/AIHawk——開源瀏覽器自動化與電腦操作 agent，含 Claude Code／Gemini CLI 適用 Browser MCP（2026-09-05）
 

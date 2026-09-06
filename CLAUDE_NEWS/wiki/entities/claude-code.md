@@ -30,12 +30,11 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 **領域：** 🛠️ 工具/功能
 **首次出現：** 2025（正式推出）
 **最後更新：** 2026-09-06
-**最後新聞更新：** 2026-09-05
+**最後新聞更新：** 2026-09-06
 
-> **最新動態**（2026-09-04）
-%% 補跑日報：09-04 排程抓料失敗，隔日現抓補齊 %%
-> - **v2.1.261 發布**：`/status`／`claude doctor` 新增「Organization policy」欄位，顯示組織政策載入失敗原因。
-> - **SDK 更新**：anthropic-sdk-python v1.4.0 新增 Claude Tag 分類與使用者用量分項 API；vertex-sdk v0.19.7 為例行維護。
+> **最新動態**（2026-09-06）
+> - **v2.1.263 發布**：純可靠性修復，官方未列具體項目，無新增功能或指令。
+> - **新增已知問題**：MCP server 孤兒行程（#1935）、德文變音符號被替換（#14131）、Windows 安裝程式 HRESULT 0x80073CF6（#49917）。
 > - **這禮拜你會遇到什麼**：見下方「現在會咬到你的」；升版判斷見 [[feature-radar]]「從你現在的版本升上去，會遇到什麼」。
 > - **服務中斷**：Wired、Mashable 報導 Anthropic、OpenAI、xAI 三家服務同日上午罕見同步中斷，三方皆未說明成因。
 ---
@@ -68,7 +67,7 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 
 **官方使用研究：** Anthropic 發表基於 2025/10–2026/04 約 40 萬個 session 的分析研究，發現人類主導規劃決策、Claude 主導執行決策，且使用者領域專業越高，Claude 每條指令完成的工作量越大。
 
-**市場與競爭：** Microsoft 正陸續取消內部授權轉推 GitHub Copilot CLI（見 [[topics/competitor-landscape]]）；Ramp AI Index 數據顯示 Anthropic 企業採用率首次超越 OpenAI（34.4% vs 32.3%）；AWS 於 2026-07-15 推出「Claude Apps Gateway」，定位為 Claude Code 與 Claude Desktop 可自架部署（self-hosted）的控制平面，集中身分／政策／遙測／路由／支出上限，路由到 Bedrock 或 Claude Platform on AWS；**Claude Code CLI 官方內建支援**（`claude-apps-gateway` 專頁，2026-09-06 查證，[AWS 官方 blog](https://aws.amazon.com/blogs/) 07-08）。The GitHub Blog（2026-07-24，經 Google News 轉載）報導 Claude Opus 5 已在 GitHub Copilot 上線，屬 Anthropic 模型透過微軟生態系分發的延續；模型陣容細節見 [[topics/model-comparison]]。
+**市場與競爭：** Microsoft 正陸續取消內部授權轉推 GitHub Copilot CLI（見 [[topics/competitor-landscape]]）；Ramp AI Index 顯示 Anthropic 企業採用率持續領先 OpenAI（43.5% vs 39.7%，2026-08-12 發布，詳表見 [[topics/anthropic-business]]）；AWS 於 2026-07-15 推出「Claude Apps Gateway」，定位為 Claude Code 與 Claude Desktop 可自架部署（self-hosted）的控制平面，集中身分／政策／遙測／路由／支出上限，路由到 Bedrock 或 Claude Platform on AWS；**Claude Code CLI 官方內建支援**（`claude-apps-gateway` 專頁，2026-09-06 查證，[AWS 官方 blog](https://aws.amazon.com/blogs/) 07-08）。The GitHub Blog（2026-07-24，經 Google News 轉載）報導 Claude Opus 5 已在 GitHub Copilot 上線，屬 Anthropic 模型透過微軟生態系分發的延續；模型陣容細節見 [[topics/model-comparison]]。
 
 ## 熱度與試用價值
 
@@ -85,7 +84,7 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 
 ## 現在會咬到你的
 
-只列現在還會發生、而且是壞掉而非還沒做的問題。**每一列都寫出誰會遇到**——多數只發生在特定產品或平台上，對不上號就不會咬到你。狀態沿用本頁既有五值：🔴 未修復／✅ 已修復／⛔ 官方拒修／❓ 待查證／🔎 查無官方。上限 8 列；完整清單見下方「已知問題」分組。
+只列現在還會發生、而且是壞掉而非還沒做的問題。**每一列都寫出誰會遇到**——多數只發生在特定產品或平台上，對不上號就不會咬到你。狀態五值：🔴 未修復／✅ 已修復／⛔ 官方拒修／❓ 待查證／🔎 查無官方。上限 8 列；完整清單見下方「已知問題」分組。
 
 | 現在會咬到你的 | 誰會遇到 | 狀態 | 你能做什麼 |
 |---|---|---|---|
@@ -159,8 +158,11 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 - 🔴 **未修復**｜**一般開發操作在數分鐘內即異常耗盡 token／配額（GitHub issue #42249，累積 44 則留言、17 個讚，2026-08-22）**：使用者回報讀檔、編輯程式碼、執行 git 指令等一般開發任務，在數分鐘內即異常耗盡 token／配額，消耗速度遠超預期；與既有多起額度異常消耗回報（issue #16157、#38335 等）同屬配額消耗速度爭議，成因是否重疊尚待釐清，暫分列追蹤；官方尚未回應。
 - 🔴 **未修復**｜**選用 opus-plan 模型時，即使已達成 1M context 資格仍要求另開用量額度（GitHub issue #61869，2026-08-30）**：使用者回報選用 opus-plan 模型時，即使已達成 1M context 使用資格，仍被要求另外開通用量額度（Usage credits）才能使用；與既有「Fable 5 於 Max 方案持續要求 usage credits required」（issue #79337）同屬 1M 資格與用量額度門檻不一致的訊號但涉及模型不同，暫分列追蹤；官方尚未回應。1M 的計費與控制權全貌見 [[topics/long-context-1m]]。
 
-### 🧠 行為與品質（44 條未修復、2 條已修復、1 條拒修、6 條查無官方、1 條❓）
+### 🧠 行為與品質（47 條未修復、2 條已修復、1 條拒修、6 條查無官方、1 條❓）
 
+- 🔴 **未修復**｜**德文變音符號（ä、ö、ü）在輸出中隨機被替換為 ASCII 拼寫，如 ä→ae（GitHub issue #14131，累積 41 則留言、24 個讚）**：使用者回報 Claude Code 輸出中德文變音符號會不定期被替換為對應的 ASCII 拼寫；官方尚未回應。
+- 🔴 **未修復**｜**功能請求：開放 Claude 直接寫入／更新專案檔案的權限模式（GitHub issue #16550，累積 37 則留言、78 個讚，本輪互動最高功能請求）**：使用者呼籲提供讓 Claude 可直接寫入或更新專案檔案的權限模式；官方尚未回應或排入路線圖。
+- 🔴 **未修復**｜**Fable 5 高風險資安／程式碼審查請求自 2026-07-02 起由 Defense in Depth 分類器導向 Opus 4.8 執行，上線首日曾誤攔合法安全審查請求**：送出資安或程式碼審查類請求的人可能遭分類器誤判、被靜默換模型執行。事件全貌、你的選項與承諾追蹤見 [[topics/anthropic-government-policy]]。
 - ❓ **待查證**（標 2026-08-27｜查 fork subagent、resend on every｜複 2026-09-10）｜**"fork" subagent 據報每次工具呼叫皆重送整段對話歷史，四個平行子代理耗用約 200 萬 tokens**（Reddit r/ClaudeCode，2026-08-27 報導）：使用者觀察到帶 `subagent_type: "fork"` 的 subagent（v2.1.232 起預設繼承完整對話與 prompt cache，見上方版本表）用於平行分工重構時，四個子代理總計耗用約 200 萬 tokens，懷疑成因為每次工具呼叫皆重新傳送整段對話歷史；僅為單一社群觀察，未經官方證實或說明實際傳輸機制，token 經濟面另見 [[topics/community-tech-patterns]]。
 - 🔴 **未修復**｜**恢復曾用延伸思考的 session 永久失敗，API 錯誤 400 "thinking blocks cannot be modified"（GitHub issue #63147，累積 62 則留言、50 個讚，2026-08-25，環境：Claude Code v2.1.153／macOS）**：使用者回報恢復（resume）或延續一個曾使用延伸思考（extended thinking）的 session 會永久觸發 API 400 錯誤「thinking blocks cannot be modified」；transcript 檢視顯示思考文字被存為空白但仍保留 signature，與既有「修改 thinking block 觸發 API Error 400」（issue #10199）同屬 thinking block 引發 400 錯誤但觸發情境不同（一為主動修改內容、一為單純 resume 即觸發），暫分列追蹤；官方尚未回應。
 - 🔴 **未修復**｜**修改 thinking block 觸發 API Error 400（GitHub issue #10199，累積 100 則留言、65 個讚，2026-08-19）**：使用者回報修改（modify）thinking block 內容時會觸發 API 錯誤 400，屬高互動已知問題；官方尚未回應或說明成因。
@@ -250,10 +252,11 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 - 🔴 **未修復**｜**手機號碼驗證機制異常（GitHub issue #34229，累積 741 則留言、892 個讚，2026-07-16，全站已知問題今日互動量最高）**：使用者回報 Claude 帳號的手機號碼驗證流程出現問題；原文摘要於 preflight checklist 處被截斷，具體異常現象未知，僅能確認高互動量與「手機驗證」主題；官方尚未回應。見 [issue](https://github.com/anthropics/claude-code/issues/34229)
 - 🔴 **未修復**｜**Claude 全平台共通的帳號架構缺口——三平台各自提出多帳號管理訴求**：Mobile app 缺乏免共用 email 的多帳號切換（[issue #36151](https://github.com/anthropics/claude-code/issues/36151)，累積 170 則留言、944 個讚，首見 2026-07-08，2026-09-04 互動數更新，今日全站已知問題互動量最高）；Desktop app 缺乏多帳號管理與快速切換（[issue #18435](https://github.com/anthropics/claude-code/issues/18435)，累積 154 則留言、819 個讚，2026-07-10 首見，2026-08-14 互動數更新）；Claude／Claude Code on the web 缺乏同一 Connector 掛載多個帳號的支援（[issue #27302](https://github.com/anthropics/claude-code/issues/27302)，累積 240 則留言、523 個讚，首見 2026-07-10，2026-09-04 互動數更新）；三則 issue 分屬不同介面、互不重複，卻在同一週集中出現，共同反映 Claude 帳號模型尚未針對多身份使用情境（如工作／個人帳號分離、多客戶服務）設計統一的跨平台身份層；官方尚未於任一平台回應或排入路線圖。
 
-### 🔌 MCP 整合（13 條未修復）
+### 🔌 MCP 整合（14 條未修復）
 
 > 2026-07-13 集中爆發：連線認證（#5826 為當日全站互動最高條目）、token 生命週期（#5706）與計費透明度（#1785）三個面向同週同時升溫，加上既有的設定熱重載與 token 消耗問題，MCP 作為 Claude Code 核心整合機制的成熟度缺口成形。安全面的 Gmail MCP connector 黑暗設計模式批評另見「🛡️ 安全與隱私」分組。
 
+- 🔴 **未修復**｜**MCP servers 於 Claude Code 結束時未被正確終止，留下孤兒行程（GitHub issue #1935，累積 43 則留言、18 個讚，環境：Anthropic API／Claude CLI v1.0.18）**：使用者回報 Claude Code 結束時未正確終止其啟動的 MCP server 行程，留下孤兒行程持續佔用系統資源；官方尚未回應。
 - 🔴 **未修復**｜**宣告 draft-07 `outputSchema` 的 MCP server 完全無法使用（GitHub issue #86142，累積 49 則留言、14 個讚）**：使用者回報只要 MCP server 宣告 draft-07 版本的 `outputSchema`，就會被 Claude Code 判定為「unsupported dialect」而在派發給客戶端之前直接拒絕，導致該 server 完全無法使用；官方尚未回應。
 - 🔴 **未修復**｜**MCP OAuth 於 `resource` 參數尾端多加一個斜線，導致 Microsoft Entra ID 驗證失敗（AADSTS9010010）（GitHub issue #52871，累積 41 則留言、28 個讚，首見 2026-08-02，2026-09-01 互動數更新）**：使用者回報 MCP OAuth 流程會在 `resource` 參數尾端多加一個斜線，導致採用 Microsoft Entra ID 的企業 SSO 驗證失敗並拋出 AADSTS9010010 錯誤代碼；屬企業 SSO／驗證整合的具體技術性 bug；官方尚未回應。
 - 🔴 **未修復**｜**Microsoft 365 Connector 僅限 Team／Enterprise 方案，Max 個人版無法使用（GitHub issue #20469，累積 60 則留言、105 個讚，2026-07-26）**：使用者反映 Microsoft 365 connector 目前僅開放 Team／Enterprise 方案使用，訂閱 Max 方案（月費 $100 或 $200）的個人使用者即使付費仍無法存取此整合；官方尚未回應或說明是否將開放個人方案。
@@ -268,8 +271,9 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 - 🔴 **未修復**｜**提案：Function Hooks——外掛以 `$` 物件追蹤副作用、安全深度改行為並可組合註冊（issue #91870，107 則留言、94 讚，本輪互動最高功能提案，09-05）**：與 #24057 同屬 hooks／外掛成熟度議題，屬新機制提案；官方尚未回應。
 - 🔴 **未修復**｜**MCP Token 消耗問題**：多個 MCP Server 併用時，每條訊息可能消耗 20,000+ tokens
 
-### 🔌 平台相容性（65 條未修復、3 條查無官方）
+### 🔌 平台相容性（66 條未修復、3 條查無官方）
 
+- 🔴 **未修復**｜**Claude Desktop（Windows）安裝程式因先前一次「顯示成功」實則套件狀態不一致的安裝，導致後續安裝以 HRESULT 0x80073CF6 失敗（GitHub issue #49917，累積 38 則留言、8 個讚）**：官方尚未回應。
 - 🔴 **未修復**｜**Claude Desktop（Windows）反覆當機，須進「進階選項→修復」才能恢復（GitHub issue #85199，累積 40 則留言，2026-08-30）**：使用者回報 Windows 版 Claude Desktop 反覆當機，每次都須進入「進階選項→修復」才能恢復使用，屬穩定性問題；官方尚未回應。
 - 🔴 **未修復**｜**功能請求：新增 `--quiet`（或 `--minimal-output`）旗標抑制互動模式工具呼叫輸出（GitHub issue #9340，累積 32 則留言、47 個讚，2026-08-29）**：社群呼籲新增 `--quiet` 旗標，讓互動模式下的工具呼叫輸出可被抑制、僅顯示精簡進度，方便長時間執行時減少畫面雜訊；官方尚未回應或排入路線圖。
 - 🔴 **未修復**｜**context window 狀態列對 Claude Sonnet 4.6 僅顯示 200k 上限，但該模型實際支援 1M（GitHub issue #61734，累積 24 則留言，2026-08-29）**：使用者回報介面的 context window 狀態列對 Claude Sonnet 4.6 僅顯示 20 萬 token 上限，但該模型實際支援 100 萬 token，屬狀態列顯示與模型實際能力不同步的 UI bug；官方尚未回應。
@@ -403,6 +407,7 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 
 | 版本 | 發布日 | 重點 |
 |------|------|------|
+| **v2.1.263** | 2026-09-06 | Bug fixes and reliability improvements，官方 changelog 未列具體項目，純可靠性修正，無使用者端功能異動（見 [Release](https://github.com/anthropics/claude-code/releases/tag/v2.1.263)）|
 | **v2.1.261** | 2026-09-04 | `/status` 與 `claude doctor` 新增「Organization policy」欄位，說明組織政策載入失敗的原因（例如代理伺服器未正確轉發 endpoint）（見 [Release](https://github.com/anthropics/claude-code/releases/tag/v2.1.261)）|
 | **anthropic-sdk-python v1.4.0** | 2026-09-04 | Features：新增 Claude Tag 分類與使用者用量分項的 API 支援（見 [Release](https://github.com/anthropics/anthropic-sdk-python/releases/tag/v1.4.0)）|
 | **anthropic-sdk-typescript vertex-sdk v0.19.7** | 2026-09-04 | Chores：例行維護，官方 changelog 未列具體異動項目，無使用者端功能異動（見 [Release](https://github.com/anthropics/anthropic-sdk-typescript/releases/tag/vertex-sdk-v0.19.7)）|
