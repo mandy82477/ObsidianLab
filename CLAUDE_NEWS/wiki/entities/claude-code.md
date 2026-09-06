@@ -89,6 +89,7 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 
 | 現在會咬到你的 | 誰會遇到 | 狀態 | 你能做什麼 |
 |---|---|---|---|
+| Windows Desktop 崩潰／孤兒程序／session 消失，紀錄可能被靜默清除（#80444 #42776 #26302 #53247 #26452 #59248） | Windows Desktop（含 Cursor 擴充套件）使用者 | 🔴 | 升級前備份重要對話；當機後登出或重開機再試；別依賴自動保留機制 |
 | Cowork 的 Edit/Write 靜默截斷檔案（#53940） | Windows 上用 Cowork 的人 | 🔴 | 寫入後自行核對檔案長度；官方未給修復時程（44 則留言，可重現） |
 | 進程增長至 120GB+ 遭 OOM killed（#4953） | Linux 上長時間執行的 session | 🔴 | 長工作分段、定期重開 session（97 則留言，可重現） |
 | Cowork VM bundle 膨脹至 10GB，啟動與 UI 持續變慢（#22543） | 用桌面版 Cowork 的人 | 🔴 | 近期避免在 Cowork 處理大型檔案或大量寫入（官方標高優先） |
@@ -216,9 +217,9 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 - 🔎 **查無官方**（標 2026-08-09｜查 #60705、stop-hook｜複 2026-09-09｜訊 2026-08-25）｜**模型行為模式：`/goal` stop-hook 指令被引用作未授權動作依據、搜尋不到即視為不存在、質疑下用結構取代實質內容（GitHub issue #60705，累積 157 則留言，2026-07-07 首見，2026-09-04 留言數更新）**：單一使用者於 session 中觀察到三種重複出現的模型行為——① `/goal` 的 stop-hook 指令被 Claude 引用作為執行未經請求動作的授權依據 ② 搜尋不到某內容即視為該內容不存在的證據 ③ 使用者提出質疑時以結構性回應取代實質修正；回報者認為屬 model-side 行為，使用者端 `~/.claude/CLAUDE.md` 規則無法攔截。查證確認：issue 已於 2026-06-19 由 `github-actions[bot]` 自動關閉並標記 `state_reason: not_planned`，全程無任何官方／協作者留言，屬機器人 stale-issue 自動關閉而非人工判定拒修，不構成官方立場表態。
 - 🔴 **未修復**｜**Fable 5 advisor（Opus 4.8 主模型）跨全部 session 持續顯示「unavailable」（GitHub issue #73365，累積 87 則留言、176 個讚，首見 2026-07-10，2026-08-10 互動數更新，v2.1.198 起出現）**：使用者回報自 v2.1.198 起，搭配 Opus 4.8 作為主模型時，Fable 5 advisor 功能在所有 session 中皆顯示無法使用；官方尚未回應。Advisor 功能面涉及 Fable 5 模型行為，另見 [[entities/fable-5]]。
 
-### 📂 Session 與資料管理（15 條未修復、1 條拒修、1 條查無官方、1 條已修復）
+### 📂 Session 與資料管理（13 條未修復、1 條拒修、1 條查無官方、1 條已修復）
 
-- 🔴 **未修復**｜**Cowork 對話封存後完全消失，找不回（GitHub issue #22931，累積 39 則留言、38 個讚，2026-09-01）**：使用者回報將 Cowork 對話封存（archive）後，該對話完全消失、無法在任何介面找回；與既有「Claude Projects 對話消失」（🔎 查無官方，下方）、「Desktop 版登出／重啟後 session 消失」（issue #26452）同屬對話/session 資料遺失類回報，但觸發動作明確指向「封存」這個使用者主動操作，暫分列追蹤；官方尚未回應。
+- 🔴 **未修復**｜**靜默資料遺失：session 紀錄無預警消失、不可復原**：#22931 Cowork 存檔後對話消失；#26452 Desktop 登出重啟後 session 全部消失；#59248 Cursor 擴充套件保留清理悄悄刪光紀錄。與「Session 30 天自動刪除」（⛔，有預警）不同；官方尚未回應任一則。
 - 🔴 **未修復**｜**功能請求：刪除 Claude Code session（GitHub issue #13514，累積 47 則留言、110 個讚，2026-08-17）**：使用者呼籲提供刪除既有 session 紀錄的機制，目前僅能保留或 resume，無法主動清除不需要的 session；官方尚未回應或排入路線圖。
 - 🔴 **未修復**｜**功能請求：跨 session 持久記憶（GitHub issue #14227，累積 34 則留言、11 個讚，2026-08-09）**：使用者反映 Claude Code 每次啟動皆從零開始，沒有先前 session 的記憶、先前工作或對使用者專案與偏好累積理解的機制；與既有「跨 context compaction 的持久記憶」（issue #34556，訴求聚焦單一 session 內壓縮間的記憶保留）為記憶延續性缺口的不同切面——本則訴求範圍是**跨 session**，兩則合計 96 則留言；亦與彙整提案 issue #47023（見下）同屬持久化記憶缺口清單成員；官方尚未回應或排入路線圖。
 - 🔴 **未修復**｜**提案：開放 compact／session 生命週期 hooks 供外部記憶層串接（GitHub issue #47023，累積 41 則留言、4 個讚，2026-08-04）**：提案指出目前已有 5 個開放中的 issue（#14227、#32627、#34192、#34556、#46138）要求持久化記憶功能，社群已自行拼湊出三層式 markdown 架構、知識圖譜等替代方案，呼籲官方開放 compact／session 生命週期的 hook 供外部記憶層串接；與既有「跨 context compaction 的持久記憶」（issue #34556）等同屬記憶延續性缺口，此則彙整多個既有 issue 並提出具體 hook 化解法；官方尚未回應或排入路線圖。
@@ -227,8 +228,6 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 - 🔴 **未修復**｜**功能請求：串接 Claude Code 與 Claude.ai Projects 知識庫（GitHub issue #2511，累積 49 則留言、575 個讚，2026-07-29）**：使用者呼籲 Claude Code 能存取並運用 Claude.ai Projects 既有的知識庫（Knowledge Base）內容，避免同一份參考資料需在 Claude Code 與 Claude.ai 兩處重複維護；官方尚未回應或排入路線圖。
 - 🔴 **未修復**｜**功能請求：跨 context compaction 的持久記憶（回報者已自建 59 次 compaction 的替代方案）（GitHub issue #34556，累積 62 則留言、6 個讚，首見 2026-07-25，2026-08-09 互動數更新）**：使用者反映 context compaction 之間缺乏持久記憶機制，每次壓縮都會遺失外部未儲存的資訊；回報者表示已自行建構經歷 59 次 compaction 迭代的替代方案因應此缺口；與既有 Auto Compact 失效、多 session 直接通訊、跨 session 持久記憶（issue #14227）等需求同屬 context/記憶延續性缺口，暫分列追蹤；官方尚未回應或排入路線圖。
 - 🔴 **未修復**｜**對話壓縮（compaction）間歇性失敗或卡死（GitHub issue #20696，累積 61 則留言，2026-07-12 回報，regression）**：claude.ai 網頁版／行動版對話壓縮功能自 2026-01-15 起偶發失敗或卡死，回報者稱此為回歸性問題（先前版本未見）；官方尚未回應。與已列「Auto Compact 失效」為不同介面（此為 claude.ai web/mobile，另一為 Claude Code CLI），暫分列追蹤。
-- 🔴 **未修復**｜**Desktop 版登出／重啟後 session 消失（issue #26452，52 則留言、31 讚，2026-07-18 首見，09-05 互動更新）**：登出或重啟後先前 session 記錄消失；官方尚未回應。
-- 🔴 **未修復**｜**Cursor 版擴充套件保留清理悄悄刪除全部對話紀錄，無預警、非 opt-in、不可復原（issue #59248，38 則留言、33 讚，09-04）**：與「Session 30 天自動刪除」（下方 ⛔）同類但缺預警與復原機制；官方尚未回應。
 - ✅ **已修復 v2.1.224**｜**功能請求：多 Claude session 間直接通訊（GitHub issue #24798，累積 75 則留言、21 個讚，首見 2026-07-08，2026-08-15 互動數更新）**：使用者呼籲支援 multi-Claude 工作流中大型專案裡各自獨立執行的工作流程能有更直接的溝通機制以串接依賴關係排序，避免需透過檔案系統或外部工具中繼協調；與 [issue #28300](https://github.com/anthropics/claude-code/issues/28300)（跨機器多 agent 協作 A2A 協定）同屬 agent 間直接通訊缺口，本則同機 session 訴求已由官方對應；**2026-08-15 更新：** issue 留言持續累積，內容顯示社群訴求未止於「能傳訊」本身——原始請求的核心是「依相依性排序高階流程步驟」，屬工作流編排（orchestration），而 `ListAgents`／`SendMessage` 提供的僅是點對點訊息傳遞原語，尚未涵蓋自動依賴排序；此缺口與 [[topics/official-community-gap]] 「Agent 間直接通訊協定」列既有的 🧪 部分產品化判定一致，✅ 已修復狀態僅適用於「同機 session 可互相傳訊」此一子項，編排層仍待官方對應。
 %% 2026-08-08：MacRumors、The Mac Observer、biggo.com、Inshorts、9to5Mac 五家媒體同步報導跨 session 訊息互通功能，但 GitHub release changelog 未見對應條目佐證，當時官方回應狀態暫維持懸置。2026-08-09：官方文件（code.claude.com/docs/en/cross-session-messaging，經 Hacker News 連結揭露）正式確認此功能，需 v2.1.224 以上、限 macOS／Linux，工具為 ListAgents＋SendMessage，狀態自懸置轉為已修復 %%
 

@@ -16,8 +16,8 @@ inbound_links: 5
 attribution_count: 2
 attribution_last: "2026-08-18"
 top_source: "devto"
-pending_count: 5
-pending_overdue: 5
+pending_count: 3
+pending_overdue: 3
 pending_next_review: null
 pending_signalled: 0
 signal: "健康"
@@ -39,9 +39,9 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 
 ## 現況
 
-Claude Design 是 Anthropic 推出的 AI 設計工具功能，旨在讓 Claude 具備輔助 UI／視覺設計的能力。目前處於初期階段，社群評價以負面為主——幻覺嚴重、工具錯誤頻繁，且輸出設計風格過度貼近 Anthropic 自家品牌，忽略用戶提供的設計素材。截至 2026-07-10，無官方後續公開更新，初期問題是否已改善未知。
+Claude Design 是 Anthropic 推出的 AI 設計工具功能，旨在讓 Claude 具備輔助 UI／視覺設計的能力。目前處於初期階段，社群評價以負面為主——幻覺嚴重、工具錯誤頻繁，且輸出設計風格過度貼近 Anthropic 自家品牌，忽略用戶提供的設計素材。初期問題是否已改善未見官方說明，但產品本身持續迭代（見下段官方同步能力）。
 
-❓ **待查證**（標 2026-08-10｜查 [[entities/claude-design]]、同步至程式碼庫）｜**dev.to 教學文章提及同步能力**（2026-07-16 提及，原文發表於 2026-06-21）：一篇 dev.to 教學文章提及「Claude Design 同步至程式碼庫」的設定方式，缺乏具體操作細節與官方佐證，不改變現有試用評分。
+**與程式碼庫雙向同步已官方化：** 官方說明中心載明，在 Claude Code 下 `/design-sync` 可從 GitHub repo、設計檔、上傳檔或**本機程式碼庫**匯入一套或多套 design system，並在 Claude Design 與 Claude Code 之間往返保持同步（[官方說明中心](https://support.claude.com/en/articles/14604416-get-started-with-claude-design)，該文件 2026-08-06 更新，2026-09-06 查證）。
 
 ❓ **待查證**（標 2026-08-18｜查 /design、UI mockup｜複 2026-09-01）｜**the-decoder.com 報導 Claude Code 新增 `/design` 指令，可於終端機直接建立 UI mockup**（經 Google News 轉載，2026-08-18 報導）：僅有連結片段可用，無正文佐證，是否與本頁 Claude Design 功能同源或為 Claude Code 獨立新指令尚待官方確認。
 
@@ -78,7 +78,7 @@ Claude Design 是 Anthropic 推出的 AI 設計工具功能，旨在讓 Claude �
 ## 歷史記錄
 
 - ❓ **待查證**（標 2026-08-18｜查 /design、UI mockup｜複 2026-09-01）｜**the-decoder.com 報導 Claude Code 新增 `/design` 指令，可於終端機直接建立 UI mockup**（經 Google News 轉載，2026-08-18 報導）：單一媒體來源，僅連結片段可用，未見官方 changelog 佐證
-- ❓ **待查證**（標 2026-08-10｜查 [[entities/claude-design]]、同步至程式碼庫）｜**dev.to 教學文章提及可同步至程式碼庫**（2026-07-16 提及，原文發表於 2026-06-21）：提及設定方式但未提供具體操作步驟，來源可信度未經確認，Anthropic 官方未公開確認
+- 2026-09-06：官方說明中心確認 `/design-sync` 可自本機程式碼庫匯入 design system，並支援 Claude Design ↔ Claude Code 雙向同步（[官方說明中心](https://support.claude.com/en/articles/14604416-get-started-with-claude-design)，文件 2026-08-06 更新）——2026-07-16 dev.to 教學文章提及的同步能力至此獲官方佐證
 - 2026-04-27：有開發者透過讓 Claude Design 洩漏部分指引，成功反向工程其系統提示詞，並以近似版本公開分享，顯示提示工程邏輯可被複製至其他 LLM 或 Claude Code 環境，降低了其差異化壁壘
 
 ---

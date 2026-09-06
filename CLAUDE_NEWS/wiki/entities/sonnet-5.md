@@ -29,11 +29,11 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 **狀態：** active（正式發布）
 **領域：** 🤖 模型
 **首次出現：** 2026-07-01
-**最後更新：** 2026-09-02
-**最後新聞更新：** 2026-07-31
+**最後更新：** 2026-09-06
+**最後新聞更新：** 2026-09-03
 
-> **最新動態**（2026-07-31）
-> Anthropic Status 通報 Claude Sonnet 5 效能降級（degraded performance），06:18 UTC 起偵測、07:04 UTC 確認事件已解決，歷時約 46 分鐘，無需採取行動。Reddit r/ClaudeAI 出現對應事件 Megathread，內容與官方一致，屬社群對同一事件的跟進，非獨立事件。定價與 Opus 5 發布後的定位變化未受影響，詳見下方「現況」。
+> **最新動態**（2026-09-03）
+> Anthropic Status 通報 Claude Sonnet 5 錯誤率一度升高，12:37 UTC 調查中 → 12:47 UTC 監控修復結果 → 12:56 UTC 已解決，無需採取行動。同日另有一起影響 Fable/Mythos 5.1、Fable/Mythos 5、Opus 5、Opus 4.8、Opus 4.6 的多模型錯誤率事件（獨立事件，截至資料蒐集時尚未標記為已解決），完整記錄見 [[entities/fable-5]]。
 
 ---
 
@@ -109,6 +109,9 @@ claude --model claude-sonnet-5-20260701
 - [[news/2026-07-01]]
 
 ## 歷史記錄
+
+### 2026-09-03
+**錯誤率一度升高（同日解決，約 19 分鐘）**：Anthropic Status 通報 Claude Sonnet 5 錯誤率升高，官方時序為 12:37 UTC 調查中 → 12:47 UTC 監控修復結果 → 12:56 UTC 已解決，無需採取行動（[Anthropic Status](https://status.claude.com/incidents/288w7p4hk1l1)，2026-09-03）。同日另有一起**獨立**事件影響 Fable/Mythos 5.1、Fable/Mythos 5、Opus 5、Opus 4.8、Opus 4.6，13:41 UTC 已鎖定原因但截至資料蒐集（14:38 UTC）尚未標記為已解決，本頁模型不在受影響清單內，完整記錄見 [[entities/fable-5]]（[Anthropic Status](https://status.claude.com/incidents/461yvfrzpwtt)，2026-09-03）。屬穩定性事件，非能力或定價變化。
 
 ### 2026-07-31
 **Degraded performance 事件（同日解決，約 46 分鐘）**：Anthropic Status 通報 Claude Sonnet 5 效能降級，2026-07-31 06:18 UTC 起偵測，07:04 UTC 確認事件已解決，無需採取行動（[Anthropic Status](https://status.claude.com/)）。Reddit r/ClaudeAI 同步出現對應 Megathread「Megathread for New Claude Incident: Degraded performance on Claude Sonnet 5 on Jul 31, 2026」，互動 0 留言（可能因剛發布尚未累積），內容與官方 Status 一致，屬社群對同一事件的跟進討論，非獨立事件。屬穩定性事件，非能力或定價變化，與本頁 07-07、07-08 已記錄的同類型錯誤率事件屬同一模式。

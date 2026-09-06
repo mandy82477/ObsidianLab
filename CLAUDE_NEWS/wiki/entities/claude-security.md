@@ -16,8 +16,8 @@ inbound_links: 10
 attribution_count: 3
 attribution_last: "2026-08-22"
 top_source: "google-news"
-pending_count: 2
-pending_overdue: 1
+pending_count: 1
+pending_overdue: 0
 pending_next_review: "2026-09-16"
 pending_signalled: 1
 signal: "健康"
@@ -96,7 +96,7 @@ Claude Security 於 2026-04-30 宣布推出公開測試版，並於 2026-05-01 �
 | 2026-08-21 | **Claude Mythos 5 整合進 Claude Security**：企業團隊在不直接存取模型本身的前提下取得前沿等級漏洞掃描能力；MarkTechPost 首發報導，Dealroom、Palo Alto Networks Unit 42、The New Stack 三方跟進；額度／定價面（Dealroom 提及 $35M credits 承諾）詳見 [[entities/pricing]]；來源：Google News / MarkTechPost（另有 Dealroom、Palo Alto Networks Unit 42、The New Stack） |
 | 2026-07-24 | **社群反映無 Workflow tool 存取權限**：Reddit 使用者（自稱使用 Claude Code 未滿一個月）反映摸索過程燒費大量 token 才發現 Claude Security 沒有 Workflow tool 的存取權限；是否為既有設計限制或待補功能 ❓ 待查證 ⟨Q-01⟩；來源：Reddit / r/ClaudeCode |
 | 2026-08-10 | [[entities/claude-code]] 查證：官方文件確認 Claude Security 的 Workflow 功能需在 `/config` 內另行啟用「dynamic workflows」才可使用，屬 opt-in 設計，可能即為 07-24 該回報者的成因；惟未見官方直接回應此則個案（詳見 ⟨Q-01⟩） |
-| 2026-07-23 | **MarkTechPost 報導「Claude Security Plugin」Beta 版**：標題強調「終端機內執行的多代理漏洞掃描工具」，僅標題可用、無正文細節；與既有版本的定位關係 ❓ 待查證 ⟨Q-02⟩；來源：Google News / MarkTechPost |
+| 2026-07-23 | **MarkTechPost 報導「Claude Security Plugin」Beta 版**：標題強調「終端機內執行的多代理漏洞掃描工具」，僅標題可用、無正文細節；官方產品頁確認為與 Claude.ai 上 Claude Security app 並行的另一交付面（2026-09-06 查證，見下方 ⟨Q-02⟩）；來源：Google News / MarkTechPost |
 | 2026-05-28 | **Cisco LLM Security Leaderboard 首次發布**：Anthropic 模型佔前十名 8 個席位（8/10），成為企業採購 AI 工具時最強的第三方安全背書；調查同時顯示 83% 企業計畫部署 agentic AI，但僅 29% 認為已具備足夠安全管控能力——此數字直接推動 Claude Security 產品採購需求；來源：Cisco / The Deep View（HN score 3） |
 | 2026-05-26 | Anthropic 宣布 28 項企業安全整合（Anthropic + 28 security vendors），Varonis 將 Claude Compliance API 整合至 Atlas 企業安全平台（AI 治理 + 資料存取合規追蹤）；Forcepoint 將統一 AI 與資料安全防護延伸至 Claude Enterprise（Stopping Risk Before Agents Act 定位）；企業安全生態迅速擴張 |
 | 2026-05-24 | 社群發現 app 字串洩露「Access to the Claude Mythos model in Claude Code and Claude Security」，顯示 Anthropic 計畫將更強大的 Mythos 模型整合至 Claude Security；Anthropic 聲明一般用戶不保證獲得存取 |
@@ -106,4 +106,4 @@ Claude Security 於 2026-04-30 宣布推出公開測試版，並於 2026-05-01 �
 
 **懸置細節**
 - ⟨Q-01⟩ ❓ **待查證**（標 2026-08-10｜查 Workflow tool、存取權限｜複 2026-09-16｜訊 2026-08-10）：Reddit 使用者反映 Claude Security 無 Workflow tool 存取權限；同日查證官方文件確認 Workflow 需於 `/config` 另行啟用「dynamic workflows」（opt-in），可能即為成因，惟官方未直接回應此案例。
-- ⟨Q-02⟩ ❓ **待查證**（標 2026-08-10｜查 MarkTechPost、Claude Security Plugin）：MarkTechPost 報導「Claude Security Plugin」Beta 版，與既有 04-30 推出、05-01 全開放的 Claude Security 是否為同一產品重新包裝或獨立外掛，尚未確認。
+- ⟨Q-02⟩ **已查實（2026-09-06）**：兩者是同一產品線的兩個交付面，非重新包裝。官方產品頁 FAQ 明載「以 Claude Mythos 5 驅動的掃描只在 Claude.ai 上的 Claude Security app 提供；Claude Code 的 Claude Security plugin 只用你 Claude Code 帳號裡有的模型」（[官方產品頁](https://claude.com/product/claude-security)）。plugin 於 2026-07-22 進入 beta。

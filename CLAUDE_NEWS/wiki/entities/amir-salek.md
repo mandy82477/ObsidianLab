@@ -12,14 +12,14 @@ parent: null
 children: "[]"
 page_role: "root"
 days_since_news_subtree: 13
-inbound_links: 1
+inbound_links: 2
 attribution_count: 1
 attribution_last: "2026-08-23"
 top_source: "google-news"
-pending_count: 1
-pending_overdue: 1
+pending_count: 0
+pending_overdue: 0
 pending_next_review: null
-pending_signalled: 1
+pending_signalled: 0
 signal: "孤島"
 generated_by: "scripts/gen_wiki_frontmatter.py"
 ---
@@ -32,7 +32,8 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 **最後更新：** 2026-09-04
 **最後新聞更新：** 2026-08-24
 
-> ❓ **待查證**（標 2026-08-23｜查 Amir Salek、chip programme｜訊 2026-08-24）｜**Anthropic 延攬 Amir Salek，前 Google 自研晶片計畫創辦人**（2026-08-23 報導）：The Times of India（經 Google News 轉載）報導 Anthropic 延攬 Amir Salek，其先前身份為「Google 自研晶片計畫創辦人（founder of Google's custom chip programme）」——推測與 Google TPU（Tensor Processing Unit）專案相關，惟報導僅標題層級可用，正文未見，過往經歷細節、加入 Anthropic 後職掌與到任時間均未能確認。**後續**（2026-08-24）：citybiz 獨立報導同一任命，標題稱其為「former Google TPU chief」，與 Times of India 版本互為第二來源佐證，惟仍僅標題層級可用，過往經歷、職掌與到任時間細節依然未見。
+> **Anthropic 延攬 Amir Salek 進 compute 團隊**（2026-08-21 報導）
+> Salek 於 2013–2022 年創辦並領導 Google TPU 專案，經手前七代處理器；加入 Anthropic 後進入 compute 團隊、向 James Bradbury 匯報（[Bloomberg](https://www.bloomberg.com/news/articles/2026-08-21/anthropic-taps-google-chip-veteran-as-part-of-push-into-hardware)，2026-09-06 查證）。到任日 Anthropic 未公開。
 
 ---
 

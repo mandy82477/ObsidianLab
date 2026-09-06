@@ -5916,3 +5916,21 @@ GH Actions 抓料排 10:23 UTC，到 14:45 UTC 仍未落地（+4.4 小時且持�
 - 品質備註：本次刻意排除大量與 2026-09-04 完全重複的條目（費馬最後定理形式化、Anthropic/OpenAI/xAI 罕見同步中斷、$2兆 IPO 摩根士丹利/高盛、Spotify Portal token 節省 90%、PicPay/CarPlay/SFPD/FedScoop/五角大廈/In-House Payments/HydraFusion/AI-talent-flow 等）——根因是 09-04 的 `--confirm-digest` 未成功提交（emitted_items.json 顯示 digest_confirmed:false），導致 GitHub Actions 09-05 抓料的跨日去重失效、同批項目再次進入 09-05 archive。本輪已重新執行並 commit confirm-digest（62 items confirmed），修復此缺口，理論上不會再延續到 09-06。
 
 - 收尾備註：本輪因環境 stop-hook（偵測未提交/未推送變更即擋下）多次要求先 commit+push 才能繼續等待背景記者，導致偏離「單一 push」設計、實際分 6 次推送（STARTED 心跳、news+signals、emitted-cache confirm、wiki 分批×2、web build）。經評估：分散在數十分鐘內的循序推送（非同時競爭）不致觸發 Pages 部署互搶，且提早推送降低了容器中途回收的資料遺失風險，故接受此次偏離；沿革記錄於此供之後檢討是否需要調整 stop-hook 與本 routine 單推push設計的相容性。
+
+
+## 2026-09-06 週度延伸回顧
+
+- 延伸：4 項已執行——(A) [[entities/claude-code]]「現在會咬到你的」新增 Windows Desktop 集群列，收斂本週 6 個獨立 issue（#80444／#42776／#26302／#53247／#26452／#59248）；(B) 同頁「Session 與資料管理」把 #22931／#26452／#59248 三起同性質事件併為「靜默資料遺失」單一條目，組頭統計 15→13；(C) 補記 09-03 多模型錯誤率升高（incident 461yvfrzpwtt，14:38 UTC 仍未標記已解決）與 09-04 三家同步中斷至 [[entities/fable-5]]／[[entities/mythos]]／[[entities/opus-5]]／[[entities/sonnet-5]]，Sonnet 5 為另一起獨立事件（incident 288w7p4hk1l1，12:56 UTC 解決）照實分開寫；(D) Function Hooks 提案 `#91870` 錨點查證後發現 09-05 ingest 已建立，未重複寫入。主編後續把 (C) 產生的 3 筆超限條列短語化（fable-5:211／mythos:129／opus-5:146）。
+- 使用者跳過項目：**reader-notes 2026-09-06「agent 相關功能常態標註機制」的落點提案**——功能記者提議在 feature-radar 詳細條目加選填「**Agent 面向：**」欄（不放 official-community-gap 矩陣，理由是固定欄表格塞自由文字會壞掉可掃描性）；使用者回覆「我在想要不要補充在 managed agent」，落點未定案，本輪不動規則檔，該 note 維持 ⏳。
+- 六記者判斷：商業／安全政策／社群／人物四位皆回報「無」——三者各自附了誠實的否定證據（商業：IPO 表、商業風險表、對手雷達已吸收本週全部事件；安全政策：Auto Mode 繞過鏈已被「現在會打到你的」表＋提示注入收斂表接住，六則訊號無一遊離結構外；社群：Spotify Portal 與 claude-mem 本輪 ingest 已縫進 patterns 與 large-codebase 主線，reader-notes 第 27／29 條本週零新節點，維持 ⏳）。
+- 聚焦校準（9 月首次）：**73.7%（14/19）**，回看 08-02~08-08（08-03／08-06 缺檔跳過）。命中 12／半命中 4／誤報 3。[重大事件]／[風險警示] 存活率 9/9，既有判準有效不調整。新偏誤：[社群趨勢] 中「單純引述具名人士意見、未綁定具體事件」者 0/2 存活（Karpathy「AI 已超越提示詞」、Dario「員工為錢而非使命」）——**經使用者確認，已於 `.claude/commands/news-pipeline-steps.md` Step 1b 新增第四條選材門檻**（`check_rules.py` ✅；門檻文字判斷完即丟，不寫進日報）。漏報 2：Meta Muse Code（後成 competitor-landscape 09-01 🔴 頭條）、Poison Claude 灰市轉售（後成 ai-agent-safety 常駐 🔴），兩則當時皆只列在「⭐ 重點話題」。數字已 append `wiki/metrics.md`。
+- 讀者回饋（GitHub Issues）：`gh issue list --label reader-feedback --state open` 回傳空陣列，本輪無真人回饋。
+- reader-notes 雜記清理：唯一 📌 為 2026-09-03（3 天），未逾 30 天，不清除。
+
+## 2026-09-06 Weekly 步驟 0（本機專屬補跑）
+
+- **5b 跨家榜單週更**：haiku 抓取 18 榜**全數取得**（直接抓取 8 榜／媒體轉述 10 榜），整表覆寫。本週最大變動：WebDev Arena 換人——gpt-6-astra-max 1797 登頂，Claude Opus 5（1688）自首位跌至第三；STT 第二名換為 MAI-Transcribe-2；MTEB 本輪可確認前三名（前次僅首位）。**兩榜列汰換候選待裁決**：Search Arena 連續 3 週抓不到（JS 渲染，本輪亦無媒體轉述）、Aider Polyglot 停更滿 6 週（最新資料日期仍為 2025-08-23）。SWE-bench（Verified vs Pro）與 OpenRouter（直接抓取 vs 媒體轉述）兩榜歧異並陳未擇一。
+- **5c 逾期待查證清算**：完整報告 WARN 1 筆（`topics/official-community-gap:87` 探針偵測力僅剩 1 個有效詞）→ 當場改為「A2A 協定、#28300、跨 session 訊息互通」並補複查日。佇列處理 Lane A 1 筆＋Lane B 5 筆，**49 → 43**。查實 6 筆：Amir Salek 進 compute 團隊、向 James Bradbury 匯報（Bloomberg 2026-08-21）；`/design-sync` 可自本機程式碼庫匯入 design system 並雙向同步（官方說明中心，文件 08-06 更新）；Claude Security plugin 與 Claude.ai 上的 app 是同產品線兩個交付面、非重新包裝（官方產品頁 FAQ，plugin 07-22 進 beta）；Dario「為錢而非使命」非公開發言、無逐字稿（Axios 引述知情人士）；The Information 專文論旨（付費牆，逐字引述仍未取得）。**結案回掃改了 6 處**：`topics/ai-talent-flow`（callout／影響表／時序後續）、`topics/anthropic-business`（戰略合作表／細節區）、`entities/dario-amodei`（公開立場表「公開表態」措辭／參考來源／歷史記錄兩處後續）、`entities/claude-security`（時序表短標記）、`entities/claude-design`（現況「無官方後續更新」已失真）。
+- **📊 產消對帳（概估）**：近 7 天新增 19 筆｜每週產能 15 筆（A 10＋B 5）｜本輪實際可消 5 筆｜**淨增 4 筆/週**，腳本標「⚠️ 產出快過消費」。📈 趨勢 09-03 68 筆 → 今日 43 筆（−25，靠前幾輪集中清算換來，結構性淨增未變）。⏳ 依現行額度 Lane B 需約 8.6 週排空。**主編處置建議（待裁示）**：Lane B 額度 5 → 8——本輪實測五筆中三筆一次 WebSearch 即解，貴的是逐頁回掃那一步，而該步不隨額度線性增加。
+- **⚠️ 舊語法盲區 55 筆**（不在佇列內）：前三頁 `topics/ai-agent-safety`(15)、`index`(7)、`entities/managed-agents`(4)。
+- **lint 待裁示呈報**：5 項已直接呈給使用者（不只寫進本檔）——(1) `.claude/commands/wiki-lint.md` L35／L381 仍引用已廢止的「精選層提拔規則」與已改版的「痛點洞察近期工具欄」；(2) 建頁候選 Simon Willison／Cursor／graphify／Terminal-Bench 四者判為未達門檻；(3) Search Arena／Aider 汰換；(4) `pending_markers.iter_legacy()` 四類口徑豁免；(5) HN 關鍵字閘補強（≥100 分帶 GitHub 連結者抓 repo description）。截至本輪收尾使用者尚未回覆此 5 項，維持待裁示。

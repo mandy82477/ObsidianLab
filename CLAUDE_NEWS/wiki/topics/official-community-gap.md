@@ -16,7 +16,7 @@ attribution_count: 8
 attribution_last: "2026-08-23"
 top_source: "github-issues"
 pending_count: 3
-pending_overdue: 2
+pending_overdue: 1
 pending_next_review: "2026-09-18"
 pending_signalled: 0
 signal: "健康"
@@ -84,7 +84,7 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 - ⟨G-12⟩ Agent 間商業/支付基礎設施：internet-court/internet-court-skill（GitHub Search，5,317★，無出生日期標記，2026-08-18 首見）提出「agent 對 agent 商業往來的信任層」方案——自然語言協議＋ERC-7710 委任權限＋x402 支付機制＋履約爭議仲裁；與既有 ⟨G-01⟩ Subagent 派工/編排、⟨G-11⟩ 跨 harness 統一操作層皆不同層——那兩條談的是**協作/操作**，本條談的是 agent 之間**經濟往來**的信任與爭議解決，官方目前無任何對應功能或路線圖線索。可信度提醒：該工具星數雖高，但缺 forks／issues／近期 commit 佐證可查、無出生日期標記，讀者宜自行核實實際採用程度；本列先建立以標記缺口存在，待更多獨立工具佐證後再升級證據強度（⟨Q-02⟩ 詳見「懸置細節」）。
 
 **懸置細節**
-- ⟨Q-01⟩ ❓ **待查證**（標 2026-08-10｜查 [[entities/claude-code]]、A2A 協定）：官方文件未明確說明跨 session 訊息互通是否涵蓋跨機器場景，issue #28300（A2A 協定）訴求範圍是否被涵蓋尚未確認。
+- ⟨Q-01⟩ ❓ **待查證**（標 2026-08-10｜查 A2A 協定、#28300、跨 session 訊息互通｜複 2026-09-20）：官方文件未明確說明跨 session 訊息互通是否涵蓋跨機器場景，issue #28300（A2A 協定）訴求範圍是否被涵蓋尚未確認。
 - ⟨Q-02⟩ ❓ **待查證**（標 2026-08-18｜查 internet-court-skill、GitHub Search｜複 2026-09-18）internet-court/internet-court-skill 星數雖高，惟缺 forks／issues／近期 commit 等難造假佐證、無出生日期標記，實際採用程度未經確認；已掃日報至 2026-09-03 無後續，官方頁面未查證。
 
 ---

@@ -12,7 +12,7 @@ parent: null
 children: "[]"
 page_role: "root"
 days_since_news_subtree: 2
-inbound_links: 43
+inbound_links: 38
 attribution_count: 32
 attribution_last: "2026-09-04"
 top_source: "google-news"
@@ -29,7 +29,7 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 **狀態：** active（正式發布；出口管制已解除，2026-07-01 起全球恢復存取；免費期已於 2026-07-19 到期，Max/Team 後續存取政策已於 2026-08-08 經官方 Help Center 查證收斂，見 [[entities/pricing]]；5.1 已於 2026-09-01 GA 發布並取代 5.0 為現行旗艦版本，見「歷史記錄」）
 **領域：** 🤖 模型
 **首次出現：** 2026-06-09
-**最後更新：** 2026-09-05
+**最後更新：** 2026-09-06
 **最後新聞更新：** 2026-09-04
 
 > **最新進展**（2026-09-04）
@@ -204,6 +204,12 @@ claude --model claude-fable-5-20260609
 - 長期主導此形式化工作的 Xena Project 作者 [[entities/kevin-buzzard]] 於部落格公開表示「被 Anthropic 搶先」，指出 Anthropic 走的是 Darmon–Diamond–Taylor 於 1995 年闡述的 Wiles–Taylor–Wiles 證明路徑並開發 Fontaine 理論，此題也是 Freek Wiedijk 百大形式化挑戰清單最後完成的一項（[Xena Project](https://xenaproject.wordpress.com/2026/09/04/flt-anthropic-has-beaten-me-to-it/)，2026-09-04；人物背景查證日 2026-09-05）
 - SingularityHub 報導 Claude 已能自主操作實驗室設備執行科學實驗，與費馬定理證明同屬「長期自主研究任務」訊號，惟兩者是否為同一脈絡未經證實（Google News/SingularityHub，2026-09-04）
 - Reddit r/artificial 週熱門討論串彙整 Claude Fable 5.1 與 Mythos 5.1 基準測試結果，惟摘要未載具體分數，原始數字待查證（Reddit / r/artificial · 週熱門，2026-09-01）
+- **服務中斷（非模型特定）**：同日 Anthropic、OpenAI、xAI 三家模型服務上午同時發生罕見中斷，三方對外皆未說明確切成因，原文未指名受影響的具體 Claude 模型，是否與下方 09-03 多模型錯誤率事件相關亦未經證實（[Wired](https://www.wired.com/story/nobody-is-saying-why-openai-and-anthropic-had-outages-today/)，2026-09-04）
+
+#### 2026-09-03
+**Anthropic 狀態頁：多款模型錯誤率升高（截至資料蒐集時尚未標記為已解決）**：
+- Fable 5.1／5 與 Mythos、Opus 全系列同時錯誤率升高。官方 13:41 UTC 鎖定原因，**14:38 UTC 仍未標記已解決**；同時段 Reddit r/ClaudeCode 湧入中斷回報（[Anthropic Status](https://status.claude.com/incidents/461yvfrzpwtt)；[Reddit](https://www.reddit.com/r/ClaudeCode/comments/1w69016/claude_code_server_down_for_a_long_time_now_will/)，2026-09-03）
+- 屬穩定性事件，非能力或定價變化；Sonnet 5 同日另有一起獨立事件已於 12:56 UTC 解決，完整記錄見 [[entities/sonnet-5]]
 
 #### 2026-09-02
 **多家媒體跟進報導，成本降幅說法不一（並陳不選邊）＋ 官方文件確認方案內含範圍**：

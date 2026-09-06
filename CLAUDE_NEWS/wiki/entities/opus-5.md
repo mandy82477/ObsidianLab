@@ -29,11 +29,11 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 **狀態：** active
 **領域：** 🤖 模型
 **首次出現：** 2026-07-25
-**最後更新：** 2026-09-05
-**最後新聞更新：** 2026-08-29
+**最後更新：** 2026-09-06
+**最後新聞更新：** 2026-09-03
 
-> **最新動態**（2026-08-28）
-> Reddit 出現「Anthropic 是否在削弱模型」質疑串，使用者稱 Opus 5、Fable 5 在 Claude Code 中實際表現遜於預期，延續近期社群觀感分歧模式；同日另有 Opus 5 vs 4.7 vs 4.6 code review 表現比較貼文，僅標題可用（具體數字見下方 Q-01）。
+> **最新動態**（2026-09-03）
+> Anthropic 狀態頁通報 Opus 5（連同 Opus 4.8、4.6 與 Fable/Mythos 5.1、5）多款模型錯誤率升高，13:41 UTC 已鎖定原因，截至資料蒐集（14:38 UTC）尚未標記為已解決；屬穩定性事件，非能力或定價變化。
 
 ---
 
@@ -125,6 +125,7 @@ Anthropic 於 2026-07-25 正式發布 Claude Opus 5，是繼 2026-07-13 起多�
 
 | 日期 | 事件 |
 |------|------|
+| 2026-09-03 | Anthropic 狀態頁：多款模型錯誤率升高，截至資料蒐集時尚未標記為已解決 |
 | 2026-08-28 | Reddit 質疑「Anthropic 是否削弱模型」；另有三模型 code review 比較 ❓待查證⟨Q-01⟩ |
 | 2026-08-27 | GitHub Issue #77136：跨模型代際重複修辭套路；同日另有回饋稱表達方式較 4.8 改善 |
 | 2026-08-26 | tech-insider.org 定價比較標題「$19 Gap」，計算基準 ❓待查證⟨Q-02⟩ |
@@ -141,6 +142,8 @@ Anthropic 於 2026-07-25 正式發布 Claude Opus 5，是繼 2026-07-13 起多�
 | 2026-07-24 | Reddit 週熱門稱長時間任務表現最佳、low effort 成本效益高，無量化數字佐證 |
 
 **歷史記錄細節**
+
+- **2026-09-03**：Opus 5／4.8／4.6 與 Fable、Mythos 全系列同時錯誤率升高。官方 13:41 UTC 鎖定原因，**14:38 UTC 仍未標記已解決**。屬穩定性事件，非能力或定價變化；跨模型完整記錄見 [[entities/fable-5]]（[Anthropic Status](https://status.claude.com/incidents/461yvfrzpwtt)；[Reddit](https://www.reddit.com/r/ClaudeCode/comments/1w69016/claude_code_server_down_for_a_long_time_now_will/)，2026-09-03）
 
 - **2026-08-28**：Reddit r/ClaudeCode 質疑串「Is it even legal for Anthropic to nerf its models this hard?」，使用者抱怨 Opus 5 與 Fable 5 在 Claude Code 中的實際表現遜於預期，質疑模型遭「削弱」；單一使用者觀感回報，無量化數字佐證，延續 08-13、08-20 已記錄的社群觀感分歧模式（[Reddit](https://www.reddit.com/r/ClaudeCode/comments/1w0t53b/is_it_even_legal_for_anthropic_to_nerf_its_models/)，2026-08-28）
   - 同日另有 Reddit 貼文比較 Opus 5、4.7、4.6 在同一份 code review 提示下的表現，情緒中性，僅標題可用；⟨Q-01⟩ ❓ **待查證**（標 2026-08-29｜查 1w0uyu7、code review｜複 2026-09-12）｜**三模型 code review 比較結果具體內容與數字**：RSS 摘要僅標題可用，未見測試方法或分數揭露（[Reddit](https://www.reddit.com/r/ClaudeCode/comments/1w0uyu7/a_comparison_of_opus_5_47_46_running_a_code/)，2026-08-28）
