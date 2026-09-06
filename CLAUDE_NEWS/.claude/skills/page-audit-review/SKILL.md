@@ -57,6 +57,3 @@ description: CLAUDE_NEWS 頁面健檢與重設計流程（使用者 review 偏�
 ## 機械輸入
 
 `python scripts/wiki_graph.py explain <頁> [--section]` / `similar` / `gaps --with-news`；`table_census.py`；`check_pending_markers.py`；`pending_handoffs.py open`；閘：`check_reader_language.py`、`check_cell_limits.py`、`check_rules.py`、`run_tests.py`、`build_web.py`、`gen_wiki_frontmatter.py`。蒸餾契約在 `.claude/rules/wiki-ingest-format.md`，書寫上限在 `wiki-reporter-shared.md`。
-
----
-沿革：2026-09-05 競品頁試點定框架（`competitor-landscape-2026-09-05*.md`）。專案專屬，不做全域；評審不讀全域 REVIEW-PRINCIPLES（軟體驗收用）。
