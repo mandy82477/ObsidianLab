@@ -37,7 +37,7 @@
 
 | 7 | topics/anthropic-business（廣度優先第 1 層第 3 頁，入邊 78） | 樞紐 | 2026-09-06 | 定稿（使命句主 session 定）「Anthropic 的錢現在是什麼狀況、外面拿哪些數字在賭它，以及哪幾件事會反過來改到你用的 Claude」。928→797 行：四張覆寫式結論表——「現在的數字」10 列（數字／日期／來源等級五值／下一個時點；估值三版本定位：9,650 億最後定價／2 兆投資人預期／3,500 億 04 月歷史）、「IPO 走到哪一格」五格固定、「現在還打得到你的商業風險」6 列、「哪個合作會改到你用的 Claude」6 列衝擊表（其餘 86 列降一行制留最近 3 月）；補貼倍數改「社群估算 13–40 倍（三方法論）」（17 倍原是 token-xray 單一計算被抬成 index 鉤子）；採用率 34.4%→43.5% vs 39.7%（Ramp 08-12）；S-1「06-01／02 兩說」不選邊；archive 新建、時序 2 時段蒸餾；規則檔 anthropic-business 4 行→11 條、lint 5j；跨頁回掃五處、帳本 6 筆（含新增「投資分析」類別 H-6421dd）；index 首屏補商業路、鉤子去 17 倍。代判：合作表形式、5j、S-1 不選邊；**併四人物頁（bernanke／jensen-huang／robert-mahari／amir-salek）使用者未回→預設不併** | ✅ 複驗過（**四題全拿到**：Q2／Q3／Q4 半或沒拿到→拿到；Q3 ⚠️ 因跨頁數字打架：ECM「40–44」、market-signals 三處描述本頁錯誤）；評審複核不放行 2 🔴（**保命條款第四次命中**：兩筆 🔎 標記被溶成散文；條文洩漏復發：閘不含「蒸餾／封存／保留最近」）——最後一批已修 | 2026-09-13 | `biz-2026-09-06{,-verified,-proposal,-proposal-map,-draft,-review}.md`、`wave7-cold-reader{,-recheck}-2026-09-06.md` |
 
-| 8 | topics/community-tech-patterns（廣度優先第 1 層第 4 頁，入邊 54、1135 行、逾期懸置 0） | 樞紐 | 2026-09-06 | **進行中（設計者已派）**。使命句（主 session 定，健檢卡 A）「社群拿 Claude Code 玩出哪些做法、哪些已經站住腳、哪些還在試」。代判：學術對照不拆（三題過一半）、Q5 反向索引屬新增機制不在本波（**同日另一 session 已建家**：`wiki-ingest-features.md`「agent 相關功能：多標三件事」→ managed-agents「這些積木能組出什麼架構」，本頁只留一句指路）、模式概覽表改覆寫式＋最後動態欄＋退場（表格生命週期非砍整節）、discussions「本週熱點」過期與 index L104「7 條」留第 9 波與主編；**裁決點交使用者：community-tech-timeline 併入 patterns-archive（預設不併）**。健檢卡 agent 寫完後撞額度（19:30 重置），產物完整。報價：5 新 agent＋4 續用，估 100–140 萬 token。主編查證：官方 subagent／agent teams／orchestration 文件對照學術術語表、官方 multi-agent 研究文對照「誰負責拆分」；鄰居重點＝與 community-tech-discussions 的分工、community-tech-timeline（入邊 3、停滯 107 天）該不該存在 | — | — | `patterns-2026-09-06*.md`、`wave8-cold-reader{,-recheck}-2026-09-06.md` |
+| 8 | topics/community-tech-patterns（廣度優先第 1 層第 4 頁，入邊 54、1135 行、逾期懸置 0） | 樞紐 | 2026-09-06 | 定稿（使命句主 session 定，健檢卡 A）「社群拿 Claude Code 玩出哪些做法、哪些已經站住腳、哪些還在試」。頁不拆、節不砍、115 則證據一則不動，只重做 120 行結論層：`## 模式概覽` 25→21 列改覆寫式（五欄＋「最後動態」單一口徑：關係行逐字含類別名的最新節點，兩段式撈法；逾 60 天或算不出者降表下、四類移出；代表技巧全頁式錨點到月份組）；`## 目前結論` 改成指得回節點的結論層（70+／15 倍／6-15 政策三個過期數字各定值）；學術對照補官方三層階梯（subagent→agent teams 實驗性→cross-session）＋資料截至；缺口追蹤狀態改三值文字（已補／部分／未補，不再用 ✅❌ 撞成熟度符號）、「分模型」翻已補（官方 `model` 欄）；誰負責拆分五列固定加官方「自動委派／lead 拆＋自領」；懸置 6 筆→7 筆短標記化（L752／L755 同事實去重、新增 ⟨Q-06⟩⟨Q-07⟩，基線 141→142 附理由）；規則檔新增「四張結論表」8 條＋主線 tag 補填（37%→每週 20 則）＋index 鉤子失效轉知；lint「模式淘汰審查」改為直接執行的「模式概覽週更」＋5k；**timeline 併入 patterns-archive（使用者裁決）**：只丟三個包裝標題、264 行條目一字不動、轉址殼 `resolved（已併回）`、全庫 7 處引用改指、母頁 6→7；index 首屏補「社群現在怎麼玩」路由列、鉤子改 21 類盤點、tools 鉤子去工具數（快變事實不進 index）；帳本 H-c1aa57（→功能：official-community-gap 分工句）。代判：學術對照不拆、Q5 反向索引指 managed-agents（另一 session 同日建家）、lint 5k 加、概覽表退場屬表格生命週期。**同日 skill 改單檔**（使用者：只留原則／角色／派工／邊界） | ✅ 複驗過（Q2／Q3／Q4 半→**2 跳拿到**；Q1 仍半——「跟兩個月前差在哪」全站無直接答案，要到 trends 拼演進列）；評審複核放行 0 🔴、21 列全核、併頁一行不缺 | 2026-09-13 | `patterns-2026-09-06{,-verified,-proposal,-proposal-map,-draft,-review}.md`、`wave8-cold-reader{,-recheck}-2026-09-06.md` |
 
 > 第 1 波同時吃掉 `wiki/reader-notes.md` 的 ⏳「『誰比較強』三頁互踢」——考題集必含「Codex 和 Claude 誰強」，落點必須唯一。
 
@@ -144,6 +144,18 @@
 4. 併四人物頁裁決仍懸（bernanke／jensen-huang／robert-mahari／amir-salek）
 5. 他頁未修：overview 首屏路對商業讀者是整跳浪費（事件窗停 09-02、無估值無 IPO）；market-signals 與本頁頂部 callout 幾乎同句、讀者分不出事實層／觀點層
 6. 第 1 層下一頁：community-tech-patterns（入邊 54，1135 行）
+
+
+## 2026-09-13 回訪要查什麼（第 8 波）
+
+1. **首屏誤導列**：index L27「我卡住了…社群首選」仍排在新路由列之前，複驗冷讀者仍被吸進工具榜——設計刻意只補新門不動該列；回訪看第 9 波（discussions）冷讀者是否再撞，兩次即改列序或改該列文字。
+2. **「主線：—」外洩**：115 則節點每則掛 `**主線：** —`，冷讀者兩次列為最嚴重內部語言；它是週更撈料欄位，改進 `%%` 前要驗 `wiki-ingest-community-lint.md` 的 `Grep "\*\*主線：\*\* [^—]"` 仍命中、build 剝除——屬全頁 115 則的機械改寫，排獨立一批（Sonnet）。
+3. **最後動態嚴口徑的代價**：Multi-agent 列 09-02 vs 09-04 節點（關係行未逐字寫類別名）——本波已改該節點措辭；回訪看週更是否出現同型落差，連續兩週即在規則第 1 條加「新節點關係行必逐字寫類別名」。
+4. **四頁四個 callout 日期**（patterns／trends／large-codebase／discussions 09-02～09-05）看不出哪個是「現在」——第 9 波 discussions 一併看。
+5. **allowlist 兩筆「覆寫」**（regex 誤改記憶檔／config override）是技術語意但非強制值，下輪改寫掉。
+6. `table_census.py` 成長型對概覽表仍判 unknown（無日期欄→現在有「最後動態」欄，看它是否已能判）。
+7. 2026-07 分組於 2026-10 達蒸餾門檻——搬前先改概覽表指 `#2026-07` 的錨點與 context engineering 那則的指路句（規則第 8 條）。
+8. 主線 tag 補填進度（每週 20 則）第一次 lint 回報有沒有出現。
 
 ## 待使用者裁決（第 2 波遺留，已於 2026-09-06 裁決 b，留作原文）
 
