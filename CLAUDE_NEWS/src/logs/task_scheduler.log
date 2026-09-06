@@ -563,3 +563,6 @@
 [週7 2026/09/06 17:47:46.00] Single push done (news + wiki + docs)
 [週7 2026/09/06 17:47:46.00] === Pipeline complete (agent) ===
 [cloud daily-news-pipeline-cloud STARTED Sun 2026/09/06 22:04:07.00]
+[2026-09-06T22:05:39Z] === Agent pipeline start (2026-09-06) ===
+[2026-09-06T22:05:39Z] Step 0b 冪等閘 ABORTED - digest already exists (news/2026-09-06.md，17:00 UTC 班次已產出，本班 22:00 UTC 直接中止，無多班次例外)
+[cloud daily-news-pipeline-cloud ABORTED 2026-09-06] Step 0b 冪等閘攔截：news/2026-09-06.md 已存在，非 backfill 模式，正確中止
