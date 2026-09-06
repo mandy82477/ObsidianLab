@@ -25,3 +25,10 @@
 ## 四、Defense in Depth fallback 官方原文（Q2 的錨，UTC 05:4x）
 
 [Anthropic「Redeploying Claude Fable 5」2026-06-30](https://www.anthropic.com/news/redeploying-fable-5)：安全分類器判定為潛在有害的 cybersecurity 請求「the request will instead be sent to Opus 4.8」；「Users will be notified if a request to Fable 5 is blocked」；Amazon 報告所述特定技術「blocked in over 99% of cases」；官方明認代價「flagging benign requests more often during routine coding and debugging tasks」。**適用範圍只寫 Fable 5，未提 Fable 5.1**（09-01 發布）——頁面若寫成「現行」要標「Fable 5；5.1 是否沿用未見官方說明」。此即冷讀者兩輪都指的「唯一會改到你用的 Claude 的政府相關後果」，家應在本頁「會改到你用的 Claude」一節，並雙向指 [[entities/fable-5]]。
+
+## 五、出口管制四個日期一手定位（UTC 06:0x）
+
+- **06-12**：商務部 BIS 對 Anthropic 發出出口管制指令，暫停 Fable 5／Mythos 5 對外國人存取（Forbes 06-16 回溯）。
+- **06-30（週二晚）**：商務部**通知 Anthropic 已移除出口管制**；Anthropic 當晚公告「翌日起恢復存取」（[CNBC 06-30](https://www.cnbc.com/2026/06/30/anthropic-says-trump-admin-has-lifted-export-controls-on-claude-fable-5-and-mythos-5.html)、CNN 06-30）。Lutnick 條件：主動偵測處理模型安全風險、與政府合作制定後續模型標準、通報惡意活動，不再需要出口許可。
+- **07-01**：存取恢復日（Al Jazeera 07-01、Forbes 07-01 兩篇報導以此日發稿）。
+- 所以：**解除＝06-30（商務部通知＋公司公告同日）、恢復存取＝07-01**。頁面「07-01 全面解除」該改「06-30 解除、07-01 恢復存取」；封鎖期 06-12→06-30 ＝ **18 天**（含首尾則 19）——設計者定 19 天須註明「含首尾」，否則寫 18。
