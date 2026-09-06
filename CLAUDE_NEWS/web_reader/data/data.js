@@ -2411,6 +2411,7 @@ window.WIKI_DATA = {
   "codingPages": [
     "coding-workflow-guide",
     "skill-interest-watch",
+    "ai-agent-safety",
     "feature-radar",
     "claude-code",
     "pricing",
@@ -2419,8 +2420,7 @@ window.WIKI_DATA = {
     "model-task-leaderboard",
     "competitor-landscape",
     "community-large-codebase-workflow",
-    "community-tech-patterns",
-    "ai-agent-safety"
+    "community-tech-patterns"
   ],
   "digestIndex": [
     {

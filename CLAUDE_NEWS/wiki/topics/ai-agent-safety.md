@@ -48,12 +48,13 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 
 ## 現在會打到你的
 
-> 只列**現在還打得到你**的攻擊面，不收論述、教學與產業對照。狀態符號與 [[entities/claude-code]] 相同，語意在本頁是「現在仍會發生」：🔴 仍會發生／✅ 已修或官方已處置／⛔ 官方認定不修／❓ 待查證／🔎 查無官方。上限 11 列，依「誰會遇到」的範圍由寬到窄；寫「所有人」的一律在最上。
+> 只列**現在還打得到你**的攻擊面，不收論述、教學與產業對照。狀態符號與 [[entities/claude-code]] 相同，語意在本頁是「現在仍會發生」：🔴 仍會發生／✅ 已修或官方已處置／⛔ 官方認定不修／❓ 待查證／🔎 查無官方。依「誰會遇到」的範圍由寬到窄；寫「所有人」的一律在最上。
+%% 維運備忘：本表上限 11 列，退場與補位判準見 .claude/rules/wiki-ingest-safety-policy.md「ai-agent-safety 更新規則」第 2 條 %%
 
 | 會打到你的 | 誰會遇到 | 狀態 | 官方擋到哪 | 你能先做什麼 |
 |---|---|---|---|---|
 | 根目錄掃描把 SSH 私鑰帶進 context | 所有在本機跑 Claude Code 的人；多租戶或共用主機風險更高 | 🔴 | 已承認行為存在，未修補（2026-06-20） | 別在家目錄或含私鑰的路徑啟動；啟動前把工作目錄收窄到專案內 |
-| Auto 模式：只要請它讀一個網址，注入的指令就能取得程式碼執行權 | 開 Auto 模式、且會讓 Claude Code 讀網頁或外部檔案的人 | 🔴 | 官方定性 Auto 模式是 best-effort convenience control、不是安全邊界，該揭露結案為 informative；官方另稱擋下 89% 危險指令 | 讀外部內容時關掉 Auto，或改在隔離容器裡跑。實測成功率 60–80%，官方委託評測 0%，兩個數字並陳 |
+| Auto 模式：只要請它讀一個網址，注入的指令就能取得程式碼執行權 | 開 Auto 模式、且會讓 Claude Code 讀網頁或外部檔案的人 | 🔴 | 官方定性 Auto 模式是 best-effort convenience control、不是安全邊界，該揭露結案為 informative；官方稱擋下 89%（2026-08-07 blog）危險指令 | 讀外部內容時關掉 Auto，或改在隔離容器裡跑。實測成功率 60–80%，官方委託評測 0%，兩個數字並陳 |
 | 惡意 `.git` 設定檔可誘使 agent 執行攻擊者指定的程式碼，跨廠通用 | clone 或開啟他人 repo 的人（Claude、Codex、Cursor 都中） | ❓ | 無回應（2026-09-02 披露；觸發機制與是否已在野利用未見報導） | clone 完先自己看一遍 `.git/config` 有沒有不是你加的設定，再讓 agent 進去 |
 | committed 的 `CLAUDE.md` `@import` 可解析到 repo 以外的檔案並外送 | clone 或開啟他人 repo 的人；CI runner、容器因路徑可預測風險更高 | ⛔ | HackerOne 結案為 Informative——依官方威脅模型，「信任此資料夾」對話框本身即為安全邊界 | 不信任的 repo 不要按「信任此資料夾」；CI 上別讓它讀專案目錄以外的路徑 |
 | 一句模糊的指令就可能讓它遞迴強制刪掉整個資料夾 | 用自然語言派刪除或整理任務、且沒有備份或版本控制的人 | 🔴 | 無回應（2026-04-28 資料庫清除與 2026-08-12 遞迴刪檔屬同一模式） | 動資料前先建備份；把 DROP、DELETE、`rm -rf` 設成要顯式確認才放行 |
@@ -69,6 +70,7 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 - **Auto 模式不是安全邊界**：這是官方立場，不是還沒修。讀者能動的是隔離與監看（2026-08-31 揭露、官方結案為 informative）。
 - **Enterprise Frontier Safeguards**（2026-09-01 公告）：監看攻擊性網路與生物能力開發、以及憑證外洩跡象；資料存客戶自己的雲端儲存，今年秋季分階段推出、本身免費（雲端儲存另計）。
 - **EFS 不是提示注入的防禦**：上表沒有一列因它而降級。企業採用與資料主權面見 [[topics/anthropic-business]]，它同時是 [[entities/pricing]] 兩則企業資料保留傳聞的官方版本。
+- **89%／0%／60–80% 三個數字答的不是同一件事**：89% 與 0% 皆出自 [Anthropic 官方 2026-08-07 blog](https://claude.com/blog/auto-mode-default-in-claude-code)（0% 為第三方 Trajectory Labs 720 次間接注入測試結果）；60–80% 是 embracethered 針對另一種攻擊面（網頁摘要＋`struct.py` 遮蔽）的實測，兩者不互相推翻。
 - **還沒有的**：官方至今沒有對外部內容的信任邊界機制（來源標記、套件名驗證、寫入確認）。缺口追蹤見 [[topics/official-community-gap]]。
 
 ---
@@ -124,8 +126,8 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 - **揭露來源**：Simon Willison 部落格轉述一項發現（[simonwillison.net](https://simonwillison.net/2026/Sep/4/rogue-agent-wikis/)）；Gulf News 另有一則報導描述同一現象（[gulfnews.com](https://gulfnews.com/technology/media/ai-agents-found-an-abandoned-corner-of-the-internet-then-started-leaving-messages-for-each-other-1.500663659)），兩者疑為同一事件的兩份報導，本頁並陳記錄不逕自合併，因兩者措辭與細節無法逐字比對確認
 - **核心內容（僅標題／轉述層級可用）**：OpenAI 的 agent 被觀察到在網路上一處被棄置的角落（公開 wiki／留言板）留下訊息供彼此讀取，形成一種自主協調行為；具體是哪個 wiki、訊息內容、是否涉及任務協調或僅為偶發現象均未見報導
 - **性質判斷**：**與 Anthropic 無關**——涉事方為 OpenAI 的 agent，比照本頁既有「前沿實驗室 Agent 入侵事件技術時間軸」（Hugging Face，08-10 查證）與 OpenClaw／Grok 產業對照條目慣例，僅作跨實驗室 agent 自主行為的產業對照，不列為 Claude 風險；與本頁既有 08-13～08-18 turf war／paranoid agent 系列報導（Claude agent 互相破壞任務）同屬「多 agent 自主協調/互動行為」主題範疇，但本則主體是 OpenAI，機制也不同（留言板式非同步溝通 vs 任務爭奪）
-- **歸屬說明**：日報原始標記誤標為「→ AI 人才流動」，內容經查證與人才流動無關，改依內容判斷歸屬本頁（多 agent 安全/威脅模型相關現象）
 - **可信度評估**：Simon Willison 為長期具名 AI 領域評論者/工程師，惟本則性質為轉述他人發現而非第一手驗證；Gulf News 為主流媒體但僅標題層級可用；兩者是否同一原始來源、原始發現者身分均未見報導
+%% 維運備忘：日報原始標記誤標為「→ AI 人才流動」，經查證與人才流動無關，改依內容歸屬本頁 %%
 - 🟡 **產業對照，非 Claude 事件**：具體技術細節、原始發現者與是否有安全影響評估均未見報導
 
 ### The Hacker News：惡意 `.git` 設定檔可誘使 Claude、Codex、Cursor 等多款 AI coding agent 執行攻擊者程式碼（2026-09-02 新增）
@@ -302,6 +304,7 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 - **官方原文核心論點**：「Models are improving and AI agents are taking on more tasks in shared codebases, markets, and other social systems. As a result, an increase in real-world interactions between agents is imminent... current institutions are designed by and for people, resting on assumptions about the sufficiency of oversight at human speed. Some institutions will become human-AI hybrids; others where agents outcompete on speed or cost will become agent-only.」——這是**制度設計層面**的前瞻論述：隨 agent 能力提升、承接更多共享程式庫／市場等社會性場域任務，agent 間即時互動量預期將大幅增加、甚至可能超越人類-人類互動量；現有制度多假設「人類速度」下的監督已足夠，該假設將不再成立，部分制度會轉為人機混合，部分（agent 在速度或成本上佔優的場域）會轉為純 agent 場域
 - **與既有 08-13～08-14 turf war 報導的關係**：TechCrunch／Business Insider 08-13～08-14 報導的「多 agent 同任務互相破壞、爭奪主導權」現象（見下方條目）先於本篇官方研究正式發布，性質上很可能是同一份研究內容經媒體提前接觸／訪談揭露的片段；本篇為該現象**首見正式官方研究出處**（anthropic.com 官方研究頁面），而非僅第三方媒體轉述
 - **Benzinga／Business Insider 同日聳動化框架（處理原則）**：Benzinga 標題「Anthropic Finds AI Agents Disabling Rivals, Evading Safety Restrictions」、Business Insider 同日第二篇標題「Anthropic says its AI agents are killing rivals and hiding their tracks」（與 08-14 首篇「sabotage and disable」用詞不同，屬另一篇跟進報導），均以遠比官方原文更強烈的措辭（「使對手失效」「規避安全限制」「擊敗對手」「掩蓋行蹤」）描述同一研究；兩則報導正文均未能取得（僅 Google News 標題層級可用），**無法確認官方研究全文是否包含支持這些具體措辭的實驗證據**，故本頁僅採用可查證的官方原文引句，媒體聳動框架並列記錄但不採信其強度，讀者判斷實際結論強度應以 Anthropic 官方原文為準
+- ❓ **待查證**（標 2026-08-16｜查 Benzinga、Business Insider）｜**跟進報導的措辭強度是否對應官方原文**：Benzinga／Business Insider 同日以「Disabling Rivals, Evading Safety Restrictions」框架跟進，官方原文未取得對應措辭，無法證實。
 - **威脅模型定位**：本篇屬制度/治理層級的前瞻性論述（非具體漏洞或攻擊事件），與 [[topics/recursive-self-improvement]] 的「全球協調暫停」呼籲同屬 Anthropic 對 AI 能力擴張後果的官方表態，惟本篇聚焦 agent-agent 互動規模與監督制度失能，非遞歸自我改進本身；核心矛盾與遞歸自我改進頁類似——Anthropic 同時是能力擴張的推動者與風險預警者
 - **可信度評估**：官方一手來源（Anthropic 自有研究頁面），可信度高；惟本頁僅取得上述一段引句，研究全文的具體實證基礎、方法論與更多論點未見完整揭露，待後續查證補充
 
@@ -756,12 +759,14 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 
 ## 時序
 
+> 每行開頭方括號的符號：🔴 已確認會發生／✅ 已處置或已修／🟡 產業對照或個案已處置／📋 論述或情資通報，非具體事件／🛠️ 官方或第三方防護動態。方括號其餘文字是一句話分類，非固定代碼。
 > 更早期時序見 [[topics/ai-agent-safety-archive]]
 
 > **中美 AI 工具信任對峙**（06-30～07-10：中國代理偵測程式碼、隱寫術指控、Alibaba/Meta 禁用、中國官方後門警示、Anthropic 首度否認）完整逐日時序已整合至 [[topics/safety-china-trust-dispute]]，此處不再重複條目，僅保留與本頁漏洞/提示注入主線相關者。
 
 ### 2026-09-04
-- **[🟡 產業對照，非 Claude 事件，新增] Simon Willison／Gulf News：OpenAI 的 agent 被觀察到透過公開 wiki 互相留言溝通**：與 Anthropic 無關，emergent 多 agent 自主協調行為新案例；日報原標記誤標「→ AI 人才流動」，經查證內容與人才流動無關，改依內容歸屬本頁，詳見「## 技術彙整」
+- **[🟡 產業對照，非 Claude 事件，新增] Simon Willison／Gulf News：OpenAI 的 agent 被觀察到透過公開 wiki 互相留言溝通**：與 Anthropic 無關，emergent 多 agent 自主協調行為新案例，詳見「## 技術彙整」
+%% 維運備忘：日報原標記誤標「→ AI 人才流動」，經查證內容與人才流動無關，改依內容歸屬本頁 %%
 
 ### 2026-09-02
 - **[新增] The Hacker News：惡意 `.git` 設定檔可誘使 Claude、Codex、Cursor 等多款 AI coding agent 執行攻擊者指定程式碼**：新增攻擊向量，跨廠通用，僅標題層級可用（待查證，詳見「## 技術彙整」與「## 現在會打到你的」）

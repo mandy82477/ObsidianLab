@@ -25,7 +25,7 @@
 | 我想…… | 去哪 |
 |---|---|
 | 接手／新建一個 repo，**官方**建議先做哪些設定（CLAUDE.md、LSP、探索） | [[topics/coding-workflow-guide]] 第 1、2a 段 |
-| 我卡住了（帳單爆、context 撐爆、agent 互踩、它說做完了沒做、agent 讀不懂大 repo……），**社群首選**是哪個 | [[topics/skill-interest-watch]]「我卡在這裡」決策表 |
+| 我卡住了（帳單爆、context 撐爆、agent 互踩、它說做完了沒做、agent 讀不懂大 repo、跑 auto 出事……），**社群首選**是哪個 | [[topics/skill-interest-watch]]「我卡在這裡」決策表；安全類 → [[topics/ai-agent-safety]] |
 | 我在舊版本，升上去會壞什麼 | [[feature-radar]]「從你現在的版本升上去，會遇到什麼」；壞掉的東西見 [[entities/claude-code]]「現在會咬到你的」 |
 | 這個月我會多花／少花多少（方案內含什麼、一小時多少、有沒有在扣錯錢） | [[entities/pricing]] |
 | 我關心的某類工具，現在誰最大、本庫怎麼判斷（本週竄升欄累積一週星史後啟用） | [[topics/skill-interest-watch]] 各類別（按開發流程段） |

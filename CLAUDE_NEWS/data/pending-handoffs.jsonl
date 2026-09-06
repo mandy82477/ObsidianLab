@@ -83,3 +83,4 @@
 {"id": "H-d33d61", "opened": "2026-09-06", "from": "安全政策", "to": "功能", "page": "entities/claude-code", "note": "逐字：把 L88『狀態沿用本頁既有五值：』改成『狀態五值：』，其餘不動（冷讀者不滿的是『沿用本頁既有』六個字，該行已列出五值本身）", "status": "open"}
 {"id": "H-abe03f", "opened": "2026-09-06", "from": "安全政策", "to": "商業", "page": "entities/pricing", "note": "L211『狀態五值定義...這五值不看留言數，只看官方有沒有給出答案』整段填表規則書外洩，移進 %% ... %%，讀者只留五值定義本身", "status": "open"}
 {"id": "H-953d32", "opened": "2026-09-06", "from": "安全政策", "to": "商業", "page": "topics/anthropic-business", "note": "L88『口徑迥異於』改『這兩個數字算的不是同一件事』；L90『兩者並陳、不擇一（推論）』改『同一家媒體同日給了相反結論』，皆為編輯守則措辭外洩", "status": "open"}
+{"id": "H-f62a57", "opened": "2026-09-06", "from": "安全政策", "to": "商業", "page": "topics/anthropic-business", "note": "anthropic-business EFS 公告日 09-02（L302/390/472）應為 09-01（官方，見 batch1-ai-agent-safety verified 第四節）；該頁 L533 自己也寫 09-01，頁內先打架；另 L390『免費（雲端儲存另計）』未載，官方原文已載此點", "status": "open"}
