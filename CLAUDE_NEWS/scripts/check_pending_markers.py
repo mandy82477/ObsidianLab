@@ -55,13 +55,13 @@ from pathlib import Path
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 
 from pending_markers import (  # noqa: E402
-    Doc, WIKI_DIR, detective_aliases, iter_legacy, iter_pending,
+    Doc, WIKI_DIR, actionable, detective_aliases, iter_legacy, iter_pending,
     normalize_probe, probe_is_wikilink, probe_too_weak, wikilink_target,
     wiki_pages, SHORT_RE, SYM_TO_KIND,
 )
 
 REVIEW_DEFAULT_DAYS = 14
-QUEUE_LIMIT = 5  # Lane B（本輪額度 5）需 web 查證；四處同步見 .claude/review-registry.json
+QUEUE_LIMIT = 8  # Lane B（本輪額度 8）需 web 查證；四處同步見 .claude/review-registry.json
 SIGNAL_LIMIT = 10  # Lane A（本輪額度 10）已有日報訊號；四處同步見 .claude/review-registry.json
 RATE_WINDOW_DAYS = 7  # 產消對帳的回看窗口
 SHORT_PROBE_LEN = 6
@@ -184,7 +184,10 @@ def _page_report(path: Path, text: str, wiki_dir: Path, today: date) -> tuple[li
         if n > 1:
             fails.append(f"  ❌ {slug}：⟨{qid}⟩ 懸置細節重複定義 {n} 次")
 
-    legacy_count = len(iter_legacy(text, path))
+    # 口徑豁免項（人物頁狀態格式／符號圖例／封存頁原文／⟨X-nn⟩ 短標記）不計入存量：
+    # 它們回填成新語法不會變好，算進去只會讓這個數字永遠歸不了零，而永遠歸不了零的
+    # 數字沒有人會盯。判準與清單住 `scripts/pending_markers.py` 的 `_exempt()`。
+    legacy_count = len(actionable(iter_legacy(text, path)))
     return fails, warns, legacy_count
 
 
@@ -406,7 +409,7 @@ def _legacy_by_page(wiki_dir: Path) -> list[tuple[str, int]]:
             text = path.read_text(encoding="utf-8-sig")
         except Exception:
             continue
-        n = len(iter_legacy(text, path))
+        n = len(actionable(iter_legacy(text, path)))
         if n:
             rows.append((_slug(path, wiki_dir), n))
     rows.sort(key=lambda r: (-r[1], r[0]))

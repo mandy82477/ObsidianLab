@@ -11,6 +11,7 @@ that a first-pass classifier actually got wrong on 2026-08-09:
 
 那次盤點的四類誤判合計 11 筆。這些斷言存在的理由就是不讓它們回來。
 """
+import pathlib
 import unittest
 
 from tests._helpers import load_script_module
@@ -80,6 +81,46 @@ class TestShortMarkerExcludedFromLegacy(unittest.TestCase):
         text = "```\n❓ 待查證 ⟨Q-01⟩\n```\n"
         (hit,) = mod.iter_legacy(text)
         self.assertEqual(hit.cls, "M")
+
+
+class TestLegacyExemptions(unittest.TestCase):
+    """口徑豁免：這四類回填成新語法不會變好，算進存量只會讓數字永遠歸不了零。
+
+    立案 2026-09-03 lint 提案、2026-09-06 實作。`iter_legacy()` 仍回傳它們
+    （audit 要看得到），但 `actionable()` 濾掉，checker 的存量殘餘／盲區分佈／
+    棘輪三處都只數 actionable。"""
+
+    def _one(self, text, path=None):
+        (hit,) = mod.iter_legacy(text, path)
+        return hit
+
+    def test_people_status_format_is_exempt(self):
+        """`.claude/rules/wiki-ingest-people.md` 明訂待核實人物的索引欄狀態
+        必須是 `active（待核實）`——那是規則要求的格式，不是待處理的懸置。"""
+        for text in ('status: "active（待核實）"\n', "**狀態：** active（待核實）\n"):
+            self.assertEqual(self._one(text).exempt, "status_format", text)
+
+    def test_symbol_legend_is_exempt(self):
+        text = "> 狀態標記：🔴 未修復 / ✅ 已修復 / ⛔ 官方拒修 / ❓ 待查證\n"
+        self.assertEqual(self._one(text).exempt, "legend")
+
+    def test_archive_page_body_is_exempt(self):
+        """封存子頁照「時段蒸餾與封存」原文一字不刪，改寫即違規。"""
+        text = "- 某事件，官方細節待確認\n"
+        hit = self._one(text, pathlib.Path("wiki/topics/foo-archive.md"))
+        self.assertEqual(hit.exempt, "archive")
+
+    def test_non_q_short_marker_is_exempt(self):
+        """⟨C-nn⟩ 是合法的下沉短標記，只是序號前綴不是 SHORT_RE 認得的 Q-。"""
+        text = "| **某承諾** | ❓ 待查證 ⟨C-01⟩ | 🔴 未兌現 |\n"
+        self.assertEqual(self._one(text).exempt, "short_marker")
+
+    def test_real_pending_is_not_exempt(self):
+        """反向確認：一般散文裡的裸露舊字樣仍然要算進存量。"""
+        text = "- 官方是否已修補此漏洞待查證，攻擊鏈細節亦未見報導\n"
+        hit = self._one(text)
+        self.assertEqual(hit.exempt, "")
+        self.assertEqual(mod.actionable([hit]), [hit])
 
 
 class TestSemanticInversion(unittest.TestCase):

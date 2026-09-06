@@ -171,6 +171,7 @@ class LegacyHit:
     cell_len: int | None = None
     event_dates: list[str] = field(default_factory=list)
     wikilinks: list[str] = field(default_factory=list)
+    exempt: str = ""
 
 
 def split_probes(raw: str) -> list[str]:
@@ -430,8 +431,43 @@ def _shape(doc: Doc, pos: int) -> str:
     return "prose"
 
 
+# 口徑豁免：這四類命中在結構上就不是「該回填為新語法的懸置事實」，把它們算進
+# 存量會讓「舊語法盲區」永遠歸不了零，而一個永遠歸不了零的數字沒有人會盯。
+# 判斷式：**回填成新語法之後，這一筆會變得比較好嗎？** 不會 → 豁免。
+#   status_format  人物頁 `active（待核實）`——`.claude/rules/wiki-ingest-people.md`
+#                  明訂「待核實資訊」的索引欄狀態必須長這樣，它是格式不是懸置
+#   legend         狀態／採用符號圖例——列出符號的意義，本身不指涉任何事實
+#   archive        封存子頁原文——「時段蒸餾與封存」明訂一字不刪，改寫即違規
+#   short_marker   `⟨C-nn⟩` 這類頁內序號短標記——是合法的下沉語法，只是序號前綴
+#                  不是 `Q-`（SHORT_RE 只認 Q-），不該被當成裸露舊字樣
+# （立案：2026-09-03 lint 提案，2026-09-06 實作）
+STATUS_FORMAT_RE = re.compile(r"^\s*(?:status:|\*\*狀態[：:]\*\*)")
+OTHER_SHORT_RE = re.compile(r"⟨[A-Z]-\d{2}⟩")
+
+
+def _exempt(doc: "Doc", path: Path | None, m: re.Match, cls: str, reason: str) -> str:
+    if path is not None and "-archive" in path.stem:
+        return "archive"
+    line = doc.line_text(m.start())
+    if STATUS_FORMAT_RE.match(line) or (cls == "M" and reason == "frontmatter"):
+        return "status_format"
+    if cls == "M" and reason.startswith("符號圖例"):
+        return "legend"
+    if OTHER_SHORT_RE.search(line):
+        return "short_marker"
+    return ""
+
+
+def actionable(hits: list[LegacyHit]) -> list[LegacyHit]:
+    """去掉口徑豁免項，剩下的才是真的該回填的存量。"""
+    return [h for h in hits if not h.exempt]
+
+
 def iter_legacy(text: str, path: Path | None = None) -> list[LegacyHit]:
-    """掃描舊字樣並分類。已是新語法者不重複計入。"""
+    """掃描舊字樣並分類。已是新語法者不重複計入。
+
+    回傳含口徑豁免項（`exempt` 欄非空）；只要真存量請套 `actionable()`。
+    """
     doc = Doc(text, path)
     new_spans = [(mk.start, mk.end) for mk in iter_pending(text, path)]
     new_spans += [
@@ -454,6 +490,7 @@ def iter_legacy(text: str, path: Path | None = None) -> list[LegacyHit]:
             cell_len=len(cell) if cell is not None else None,
             event_dates=re.findall(r"\d{4}-\d{2}-\d{2}", line),
             wikilinks=WIKILINK_RE.findall(line),
+            exempt=_exempt(doc, path, m, cls, reason),
         ))
     return out
 

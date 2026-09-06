@@ -34,7 +34,7 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 **最後新聞更新：** 2026-08-05
 
 > **本週快照重點**（2026-09-06）
-> 18 榜全數取得（直接抓取 8 榜、媒體轉述 10 榜）。本週最大變動：**WebDev Arena 換人**——gpt-6-astra-max 以 1797 分登頂，Claude Opus 5（1688）自首位跌至第三；語音轉文字第二名換為 MAI-Transcribe-2，MTEB 本輪可確認到前三名。Search Arena **連續 3 週無法取得**、Aider Polyglot **停更滿 6 週**，兩榜均列汰換候選待裁決。
+> 18 榜全數嘗試（直接抓取 8 榜、媒體轉述 10 榜），其中 2 榜已無法給出本週答案（見下）。本週最大變動：**WebDev Arena 換人**——gpt-6-astra-max 以 1797 分登頂，Claude Opus 5（1688）自首位跌至第三；語音轉文字第二名換為 MAI-Transcribe-2，MTEB 本輪可確認到前三名。**Search Arena 連續 3 週抓不到、Aider Polyglot 停更滿一年**，這兩格本週起改為明說「答不了」並把讀者導向榜單本身，不再顯示過期名次。
 
 ---
 
@@ -52,9 +52,9 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 | 你想做的任務 | 本週前三名 | 資料日期 | 榜單 |
 |---|---|---|---|
 | [寫 code（agent 解 issue）](#eval-swebench) | Claude Opus 5 > DeepSeek V4 Pro > Claude Mythos 5／Kimi K3（96–97／96.4／93.4–95.5%；Verified 與 Pro 兩版歧異，見註記） | 09-03（媒體轉述） | [SWE-bench](https://www.swebench.com/) |
-| [寫 code（Aider 實戰）](#eval-aider) | gpt-5 (high) 88% > gpt-5 (medium) 86.7% > o3-pro 84.9%（⚠️ 榜停更，連續 6 週） | 2025-08-23 | [Aider Polyglot](https://aider.chat/docs/leaderboards/) |
+| [寫 code（Aider 實戰）](#eval-aider) | ⛔ **這個榜已經不動了**——最後一次更新是一年前，榜上沒有任何現役模型；想看寫 code 的排名請改看上一列 | 停更於 2025-08-23 | [Aider Polyglot](https://aider.chat/docs/leaderboards/) |
 | [寫文案、聊天、翻譯](#eval-lmarena) | Claude Fable 5（約 1525 Elo）> Claude Opus 4.8／GPT-5.5 Pro > Gemini 3.1 Pro Preview（媒體轉述彼此不一致，見註記） | 08–09 月（媒體轉述） | [LMArena](https://lmarena.ai/) |
-| [查資料（AI 搜尋）](#eval-search) | Claude Opus 4-6 Search > GPT-5.5 Search > Fable 5（⚠️ 連續 3 週無法取得，考慮汰換；沿用舊值） | 07-21 | [Search Arena](https://arena.ai/leaderboard) |
+| [查資料（AI 搜尋）](#eval-search) | ⛔ **本站連續 3 週抓不到這個榜**——下方名次是 07-21 的舊值，別當成本週答案；要現在的排名請直接點右邊連結 | 07-21（此後未能更新） | [Search Arena](https://arena.ai/leaderboard) |
 | [做網頁／前端](#eval-webdev) | gpt-6-astra-max（1797）> Qwen3.8-Max（1691）> Claude Opus 5（1688） | 09-05（媒體轉述） | [WebDev Arena](https://arena.ai/leaderboard) |
 | [畫圖（文生圖）](#eval-image) | GPT Image 2（1178）> MAI-Image-2.6（1149）> Reve 2.1（1127） | 榜頁未標日期（本次 09-06 抓取） | [AA 圖像榜](https://artificialanalysis.ai/image/leaderboard/text-to-image) |
 | [改圖（圖像編輯）](#eval-imageedit) | MAI-Image-2.6（1122）> GPT Image 2（1117）> Nano Banana 2（1105） | 榜頁未標日期（本次 09-06 抓取） | [AA 編輯榜](https://artificialanalysis.ai/image/leaderboard/editing) |
@@ -72,12 +72,12 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 
 ## 本週註記（僅列異常）
 
-- **本輪 18 榜全數取得（2026-09-06）**：直接抓取 8 榜、其餘 10 榜以媒體轉述補齊。Search Arena **連續 3 週**直接抓取失敗（JS 渲染），本輪亦無媒體轉述可用，沿用 07-21 舊值，是否改用其他榜單尚未定案。
+- **本輪 18 榜全數取得（2026-09-06）**：直接抓取 8 榜、其餘 10 榜以媒體轉述補齊。Search Arena **連續 3 週**直接抓取失敗（JS 渲染），本輪亦無媒體轉述可用；快照格改為明說抓不到並把讀者導向榜單本身，不再把 07-21 舊值當成本週答案。是否改用其他榜單尚未定案。
 - **SWE-bench 兩版歧異**：一說 Opus 5 > DeepSeek V4 Pro 96.4% > Kimi K3 93.4%，另一說 Opus 5 > Mythos 5 95.5% > 其他，差異來自 Verified 與 Pro 兩個版本。首位一致，本頁並陳兩說不擇一；榜已飽和。
 - **OpenRouter 歧異未解（連續 2 週）**：直接抓取首位為 Hermes Agent（35.7 兆 token）；媒體轉述稱 GPT-5.6 Luna 居首、無具體數字。本頁維持有數字的那一說，下週複抓判定。
 - **LMArena 二手來源彼此不一致**：一說 Fable 5（約 1525 Elo）居首、一說 Opus 4.8 居首，第三名有 GPT-5.5 Pro 與 Gemini 3.1 Pro Preview 兩說；整表 07-01 重新基準化後前期排名不可追溯。
 - **Terminal-Bench 2.1 與 3.0 排名相反，不可跨版比較**：3.0 Claude Opus 5 42.7% 領先；通用版／2.1 為 GPT-5.6 Sol 65.9%、Fable 5 62.9%。本頁快照列 3.0 並註明版次。
-- **Aider Polyglot 停更（連續 6 週）**：直接抓取最新資料日期仍為 2025-08-23。是否改由 SWE-bench Pro 或 Terminal-Bench 3.0 承接「寫 code 實戰」語意，尚未定案。
+- **Aider Polyglot 已降為停更狀態（連續 6 週）**：最新資料仍是 2025-08-23，榜上前三名皆非現役陣容，照它選型會選到已被取代的模型，故快照格不再列名次。該列暫留是要讓讀者知道「這題本站目前答不了」；由誰承接待定。
 - **METR 數據更新但仍不含現役陣容**：二手來源給出 2026-05-08 資料（Opus 4.6 14.5h、GPT-5.2 6.6h、Opus 4.5 4.8h），較先前記錄的 2026-02 新；官方仍附「≥16 小時量測不可信」免責，Opus 5／Fable 5 未入測，數字僅供尺度感。
 - **Vectara 幻覺率兩說**：直接抓取 finix_s1_32b 1.8%、二手稱 0.6%，疑為資料集版本差異；本頁採直接抓取。
 - **AA 系列多榜未載官方資料日期**：文生圖、圖像編輯、影片、TTS、STT、音樂六榜為直接抓取但頁面無快照日期，本頁一律以抓取日標示。

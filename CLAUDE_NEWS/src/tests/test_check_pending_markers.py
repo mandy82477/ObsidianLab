@@ -361,7 +361,8 @@ class QueueLaneSplitTest(_WikiCase):
         """本輪實際可消 = min(積壓, 額度) 逐 Lane 相加；產能仍是名目值（見 print_queue 註解）。"""
         self._fill(n_sig=3, n_nosig=20)
         out = self._queue()
-        self.assertIn("本輪實際可消 8 筆", out)
+        # 由常數推導，額度調整時不必改測試（2026-09-06 Lane B 5→8 時本行寫死過一次）
+        self.assertIn(f"本輪實際可消 {3 + mod.QUEUE_LIMIT} 筆", out)
 
     # ---- 趨勢／歷史子系統（2026-08-29 第二輪 review：N8–N12、N15 全存活，此處補洞）----
 
@@ -445,7 +446,7 @@ class QueueLaneSplitTest(_WikiCase):
         """X5 殺手：收尾行動行是操作者唯一照著做的一行，兩個數字不可對調。"""
         self._fill(n_sig=3, n_nosig=20)
         out = self._queue()
-        self.assertIn("Lane A 3 筆 ＋ Lane B 5 筆", out)
+        self.assertIn(f"Lane A 3 筆 ＋ Lane B {mod.QUEUE_LIMIT} 筆", out)
 
     # ---- 截斷提示與排空預估（N1–N5 全存活，此處補洞）----
 
@@ -453,8 +454,8 @@ class QueueLaneSplitTest(_WikiCase):
         """N1／N2／N3 殺手。"""
         self._fill(n_sig=14, n_nosig=12)
         out = self._queue()
-        self.assertIn("另 4 筆未顯示", out)   # Lane A: 14 - 10
-        self.assertIn("另 7 筆未顯示", out)   # Lane B: 12 - 5
+        self.assertIn(f"另 {14 - mod.SIGNAL_LIMIT} 筆未顯示", out)   # Lane A
+        self.assertIn(f"另 {12 - mod.QUEUE_LIMIT} 筆未顯示", out)   # Lane B
 
     def test_no_truncation_notice_when_within_quota(self):
         self._fill(n_sig=3, n_nosig=3)
@@ -467,10 +468,11 @@ class QueueLaneSplitTest(_WikiCase):
 
     def test_drain_estimate_divides_lane_b_by_its_own_quota(self):
         """N4 殺手：除以 SIGNAL_LIMIT 會把 8.6 週算成 4.3 週，低估一半。"""
-        # 刻意讓 clearable(3+5=8) 與 QUEUE_LIMIT(5) 分歧：除錯了會得到 2.5 週
+        # 刻意讓 clearable(3+QUEUE_LIMIT) 與 QUEUE_LIMIT 分歧：除錯了會低估一半
         self._fill(n_sig=3, n_nosig=20)
         out = self._queue()
-        self.assertIn("Lane B 需約 4.0 週排空", out)   # 20 / QUEUE_LIMIT(5)，非 20 / clearable
+        weeks = round(20 / mod.QUEUE_LIMIT, 1)
+        self.assertIn(f"Lane B 需約 {weeks} 週排空", out)   # 20 / QUEUE_LIMIT，非 20 / clearable
 
     def test_rate_window_boundary_is_exclusive_and_width_matters(self):
         """M4／M8 殺手：窗口寬度與邊界都要釘死。

@@ -455,6 +455,16 @@ git -C REPO_ROOT push || {
 ```
 
 - 最多重試 **2 次**，每次都先 `pull --rebase` 再 push
+- **工作樹不乾淨時不得走 `pull --rebase`** `[加入: 2026-09-06]`：本 repo `rebase.autoStash` 為 false，git 會在前置檢查就拒絕（`cannot pull with rebase: You have unstaged changes`），兩次重試必然失敗；而 `--autostash` 是**明文禁止**的——`git stash` 的作用域是整個工作區，多 session 並行時會連同別人正在寫的檔一起捲走（教訓見 `.claude/rules/wiki-reporter-shared.md`「不可執行改動工作區全域狀態的 git 指令」，2026-09-05 弄丟三位記者的成品）。改走：
+
+  ```
+  git -C REPO_ROOT fetch origin
+  git -C REPO_ROOT diff --name-only HEAD...origin/master     # 只有遠端多出來的檔
+  # 與 git status 的髒檔清單比對：無交集 → 可安全 merge
+  git -C REPO_ROOT merge --no-edit origin/master && git -C REPO_ROOT push
+  ```
+
+  **有交集就停手**：不 merge、不 stash、不 checkout，Step 6 log 記 `Push DEFERRED - dirty overlap`，列出重疊檔名交使用者處理。commit 還在本機不會遺失（雲端無此路徑——雲端是 fresh clone，工作樹本來就乾淨，走原 `pull --rebase` 即可）。
 - 先確認在 master 上：2026-07-14 曾因 session 啟動時 `origin/master` 快取落後而處於 detached HEAD，該狀態下 push 不會更新遠端分支
 - **允許自動解的衝突只有兩類**：
   1. `src/news_aggregator/emitted_items.json`——此檔有兩個寫者（GitHub Actions 加入未確認條目、pipeline 翻確認欄位）。解法固定：**放棄我方的 confirm commit、保留遠端版本**，因為日報上站遠比確認欄位重要，未確認的條目只會被重新提供一次，是良性退化。處理後標「emitted-cache 確認本次放棄，項目將於次日重新提供」
