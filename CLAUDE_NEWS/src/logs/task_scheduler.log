@@ -554,3 +554,11 @@
 [2026-09-06T12:06:51Z] ABORTED: gathered_items.json date=2026-09-05 items=62，非目標日期 2026-09-06 的新鮮資料（GitHub Actions daily-gather 尚未產出今日原料，archive 副本亦不存在）
 [cloud daily-news-pipeline-cloud ABORTED 2026-09-06] Step 1b 新鮮度防線擋下：src/gathered_items.json 停在 2026-09-05，src/gathered_archive/2026-09-06.json 不存在，代表上游抓料尚未到齊——依 daily.md 裁決（多班次接手），非本班失敗
 [週7 2026/09/06 17:03:02.00] [cloud daily-news-pipeline-cloud STARTED 2026-09-06T17:03:02Z]
+[週7 2026/09/06 17:47:46.00] === Agent pipeline start (2026-09-06) ===
+[週7 2026/09/06 17:47:46.00] Aggregator OK
+[週7 2026/09/06 17:47:46.00] Wiki ingest OK
+[週7 2026/09/06 17:47:46.00] Building web reader...
+[週7 2026/09/06 17:47:46.00] 測試失敗含未登記案例（test_cli_show_runs (tests.test_devpractice_diff.TestStateRoundtrip.test_cli_show_runs) x2，雲端淺clone環境問題，見 docs/workaround-register.md）- web build 擋下
+[週7 2026/09/06 17:47:46.00] build_web SKIPPED - pushing news/wiki only
+[週7 2026/09/06 17:47:46.00] Single push done (news + wiki + docs)
+[週7 2026/09/06 17:47:46.00] === Pipeline complete (agent) ===
