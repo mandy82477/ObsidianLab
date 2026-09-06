@@ -87,6 +87,24 @@ Anthropic Managed Agents 是 Claude Platform 上的官方 agent 框架（[概覽
 **懸置細節**
 - ⟨Q-02⟩ ❓ **待查證**（標 2026-08-10｜查 anthropic-sdk-python、Managed Agents API）：v0.118.0 changelog 未列出具體項目，是否與 v0.117.0 dreaming 支援同批次擴充尚未確認；Dreaming 本身已由官方 dreams 文件確認（2026-09-06 查證），僅 v0.118.0 內容不明待查。
 
+## 這些積木能組出什麼架構
+
+上面那張表回答「我該用哪個」，這一節回答「**它們之間怎麼組**」。按架構層級排，一層比一層外——你多半是從第一層開始，撞到牆才往下一層走。每層寫官方現在給了什麼、agent 之間怎麼互動、社群拿它玩出什麼。
+
+**一、一個 agent 把事做完。** 官方積木是 `/goal`（正式發布，v2.1.139）：你給一條可執行的完成檢查，它自己跑到符合為止。這一層沒有 agent 之間的互動可言——只有你和它。社群在這一層玩的不是架構而是**自主度邊界**：有人提出「爆炸半徑」規則，依錯誤修復成本（而非任務難度）把改動分三個風險區，決定哪些可以放手（2026-09-02）。
+
+**二、開分身，但分身彼此不講話。** 官方積木有兩組：Claude Code 內建 subagent（Explore／Plan／general-purpose，各開獨立 context）與 Managed Agents 的 20 路並行子代理（公開測試）。互動模式是**單向扇出**——主 agent 分配任務、收回結果，分身之間沒有通道，所以它們不會協調、也不會互相覆蓋（代價是重複工作）。社群把這一層推到極限：有人用單一長 session 搭 147 個 subagent、花 24 天把 F-Zero X 逆向移植到 New 3DS（2026-09-04）。反向證據同樣存在——一位開發者盤點自己 8 個自訂 subagent，發現 7 個 30 天內零呼叫，因而寫了偵測「殭屍 agent」的機制（2026-09-02）。
+
+**三、分身開始互相講話。** 官方積木是 `ListAgents` ＋ `SendMessage`（v2.1.224 起，限 macOS／Linux，[官方文件](https://code.claude.com/docs/en/cross-session-messaging)），以及互動 session 下的 agent teams——由主對話帶 `name` 派出的 teammate 可被點名傳訊。互動模式是**點對點傳訊**，這也是它現在的天花板：原始需求（issue #24798，75 則留言）要的是「依相依性排序高階流程步驟」，而傳訊原語不含依賴排序，**編排層仍是缺口**（見 [[topics/official-community-gap]]）。社群的補法是自建協調層：Concord 用 MCP server 讓 Claude Code、Codex、Cursor 三種工具互通任務脈絡，作者形容沒有它就「像把 Slack 從團隊裡拿走」（2026-08-27）；cumora 則走另一條路，做跨平台團隊聊天工具、把 agent 當一等公民隊友（2026-09-02）。
+
+**四、跨機器與跨工具。** 官方積木是 `claude self-hosted-runner`（v2.1.224，Team 與 Enterprise）與 MCP 隧道（公開測試，私有 MCP server 免暴露公網）。互動模式是**把執行環境搬到你自己的機器上**，但 agent 之間的通道沒有跟著跨機器——跨機器多 agent 協作的 A2A 協定仍是未回應的功能請求（issue #28300）。社群在這一層做的是 meta-harness：opencodex、metaharness、claw-orchestrator 同週湧現，共同訴求是讓 orchestration 層可替換底層 agent（2026-08-27）。
+
+**五、跨時間：狀態不隨 session 消失。** 官方積木是 Managed Agents 的持久記憶（公開測試）與 Dreaming（研究預覽，須申請並帶 header，一般使用者現在碰不到）。互動模式是**agent 與過去的自己互動**。社群不等官方：brain.md 用零依賴的檔案式記憶層給專案建「大腦」（2026-08-25）、OzBrain 做 agent 與團隊共用的跨 session 知識庫（2026-08-21），另有人主張記憶系統需要記住「此路已被否決」並讓那筆記錄可驗證、防竄改（2026-08-31）。
+
+**穿過所有層的一件事：hooks。** `PreModelSwitch`／`PostModelSwitch`（v2.1.251）這類事件不打開任何新架構，它讓你在既有架構的接縫上插手——攔截、確認或標註。判斷式：**你要的是多一個 agent，還是要在現有 agent 的某個動作前後插一句話？** 後者用 hook，別開分身。
+
+---
+
 ## 接下來看什麼
 
 - **等哪個訊號**：Agent View 從研究預覽升格、Proactive Workflows／Capability Curve 補上細節公告、出現第一則獨立生產環境回饋。三者任一發生，上面兩張表就會變。
