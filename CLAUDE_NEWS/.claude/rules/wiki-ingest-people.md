@@ -12,7 +12,6 @@
 | `wiki/entities/cat-wu.md` | Claude Code 產品負責人論述 |
 | `wiki/entities/andrej-karpathy.md` | Anthropic 加入確認、CLAUDE.md 論述 |
 | `wiki/entities/dario-amodei.md` | Anthropic CEO 公開聲明、政策立場 |
-| `wiki/entities/chris-olah.md` | 可解釋性研究、公開演講 |
 
 > 上表為核心頁面與觸發條件；此外 `wiki/index.md` 中領域為 👤 人物 的所有頁面（含日後新增）皆由本記者負責維護與 lint。
 

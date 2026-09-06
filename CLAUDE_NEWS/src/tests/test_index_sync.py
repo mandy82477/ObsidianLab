@@ -71,7 +71,15 @@ class IndexSync(unittest.TestCase):
             m = re.search(r"↳ 子故事：(.*?)\|\s*$", line)
             if m:
                 projected |= set(re.findall(r"\[\[([^\]|#]+)\]\]", m.group(1)))
-        missing = sorted(set(self.pages) - set(self.rows) - projected)
+        # redirect 殼（標頭含「已併回」＋「**上層：**」）`[加入: 2026-09-06]`：
+        # 併回的空殼不進 index 投影（見 gen_wiki_frontmatter.py 同步），也不該要求它有 index 列——
+        # 它本來就沒有內容，路由上「不存在」正是它的設計意圖，不是失步。
+        redirects = set()
+        for slug, p in self.pages.items():
+            head60 = "\n".join(p.read_text(encoding="utf-8-sig").splitlines()[:60])
+            if "已併回" in head60 and "**上層：**" in head60:
+                redirects.add(slug)
+        missing = sorted(set(self.pages) - set(self.rows) - projected - redirects)
         self.assertEqual(missing, [], f"這些頁在 index.md 無列也無母頁投影（路由上不存在）：{missing}")
 
     def test_index_列都有對應頁(self):

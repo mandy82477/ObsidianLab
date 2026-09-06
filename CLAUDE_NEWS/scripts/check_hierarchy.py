@@ -137,7 +137,9 @@ def check(wiki_dir: Path = WIKI_DIR) -> tuple[list[str], int]:
         if newest and (not cd or cd < newest):
             fails.append(f"hub 落後：{hub} callout 日期 {cd or '缺'} < 子樹最新新聞 {newest}（母頁 callout 須跟上子頁）")
         listed = proj.get(hub, set())
-        missing = sorted(set(kids) - listed)
+        # redirect 殼不進投影（`[加入: 2026-09-06]`，見 gen_wiki_frontmatter.py 同步）——
+        # 併回的空殼對讀者無內容價值，不該出現在母頁「↳ 子故事：」
+        missing = sorted(set(real_kids) - listed)
         if missing:
             fails.append(f"index 投影缺子頁：{hub} 列的「↳ 子故事：」未含 {missing}（跑 python scripts/gen_wiki_frontmatter.py 生成）")
     return fails, len(children)

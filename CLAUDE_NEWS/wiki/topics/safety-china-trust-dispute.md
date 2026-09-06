@@ -11,7 +11,7 @@ parent: null
 children: "[]"
 page_role: "root"
 days_since_news_subtree: 57
-inbound_links: 16
+inbound_links: 15
 attribution_count: 0
 attribution_last: null
 top_source: null
@@ -30,8 +30,8 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 **最後更新：** 2026-09-05
 **最後新聞更新：** 2026-07-11
 
-> **最新動態**（2026-07-10，議題轉入低頻觀察）
-> 中國「後門」指控延燒第三天，UC Today、BankInfoSecurity、Technology Org、TechRepublic、TechRadar、CISO Series、Fox Business 等多家獨立媒體續報導；**Anthropic 今日首度公開反駁該指控**——為本議題自 06-30 起追蹤以來，官方第一次正面回應「中國官方層級」指控本身（此前 07-07「實驗」定調僅回應社群層級的原始指控，未直接對應中國官方警示的用詞與框架）。同日 Anthropic Blog 另發布「Inviting hard questions」回應外界安全疑慮的立場聲明，兩者關聯屬推論，尚未見官方證實或否證。雙方框架仍各執一詞，均無第三方技術驗證。**截至 2026-07-26，本頁核心「後門」敘事線已 16 天無新進展**（中國官方與 Alibaba 均未就 Anthropic 的否認再表態），故狀態轉為 monitoring；07-22 起浮現的 Moonshot AI 蒸餾指控與財政部制裁威脅、07-23 digitimes「Claude Code 外洩內容縮小差距」指控，雖同屬中美 AI 信任/能力落差的廣義敘事，但性質與本頁「Claude Code 後門/隱寫術」主線不同（前者為模型蒸餾與外洩指控，非 Claude Code 產品層機制指控），依主歸屬原則追蹤於 [[topics/anthropic-government-policy]]，本頁不重複收錄。
+> **本頁記到 2026-07-11 為止**（07-10 Anthropic 首度公開否認中國官方的後門指控，此後該敘事線無新進展）
+> 之後的中國事件見 [[topics/anthropic-government-policy]]。
 
 ---
 
@@ -40,6 +40,8 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 本頁追蹤 2026-06-30 起延燒的「中美 AI 工具信任對峙」：一條由社群逆向工程指控起頭、逐步升級至中國政府正式警示、企業連鎖禁用、最終由 Anthropic 公開否認的敘事線。核心矛盾是**雙方均提出未經第三方驗證的技術指控**——社群/中國官方稱 Claude Code 內建「秘密追蹤中國使用者並回傳資料」的後門機制；Anthropic 先以「內部實驗」淡化，後於 07-10 正式否認中國官方的「後門」框架本身。與此同時，中國企業（Alibaba）與部分美國企業（Meta）分別以資安疑慮為由限制員工使用 Claude／Claude Code，形成技術指控、外交表態與企業行動三線並進的複合事件。
 
 原分別記錄於 [[topics/ai-agent-safety]]（技術面）與 [[topics/anthropic-government-policy]]（外交/政策面）；因敘事已跨越兩頁且形成獨立故事線（社群指控 → 企業禁用 → 官方定調實驗 → 政府層級升級 → 官方首度否認），2026-07-12 週度回顧確認拆出本頁整合單一時序。技術細節的逐項可信度評估、完整媒體來源列表仍以本頁時序為準；[[topics/ai-agent-safety]] 與 [[topics/anthropic-government-policy]] 僅保留與各自主軸直接相關的摘要 + 指標連結。
+
+本頁記錄 2026-06-30 至 07-11 的後門敘事線；2026-08-13 之後的中國相關政府事件（官方為美中對話設條件、官媒雙重標準指控、地理限制被繞過、灰市轉售）住 [[topics/anthropic-government-policy]] 的中國線。
 
 ---
 

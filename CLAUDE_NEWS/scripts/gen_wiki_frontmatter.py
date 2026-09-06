@@ -73,15 +73,19 @@ LAST_NEWS_RE_ANY = re.compile(r"^\*\*最後新聞更新[：:]\*\*\s*(\d{4}-\d{2}
 INDEX_ROW_RE = re.compile(r"^(\|\s*\[\[([^\]|#]+)\]\]\s*\|.*?)(\s*↳ 子故事：[^|]*)?(\|\s*)$")
 
 
-def project_children_into_index(children_of: dict, index_path: Path, dry_run: bool) -> int:
+def project_children_into_index(children_of: dict, index_path: Path, dry_run: bool, redirect_slugs: set | None = None) -> int:
     """把「↳ 子故事：[[a]]、[[b]]」投影寫進母頁的 index 列摘要格（機器投影，家在各子頁的上層欄）。
 
     子頁不入 index（2026-09-03 裁決：子頁只從母頁下鑽），但 index 仍是查詢入口與 13 處
     記者認領的依據——讓記者自己遍歷「上層」欄是把可靠性押在 sonnet 的主動性上。
     投影由本腳本每次重生，idempotent；check_hierarchy.py 驗它存在。回傳改動列數。
+
+    `redirect_slugs`（`[加入: 2026-09-06]`）：投影排除本身是 redirect 殼的子頁——併回的殼
+    對讀者沒有內容價值，母頁「↳ 子故事：」不該列出一個只寫著「已併回」的空殼。
     """
     if not index_path.exists():
         return 0
+    redirect_slugs = redirect_slugs or set()
     lines = index_path.read_text(encoding="utf-8-sig").splitlines(keepends=True)
     changed = 0
     for i, line in enumerate(lines):
@@ -89,7 +93,7 @@ def project_children_into_index(children_of: dict, index_path: Path, dry_run: bo
         if not m:
             continue
         slug = m.group(2).strip()
-        kids = sorted(children_of.get(slug, []))
+        kids = sorted(k for k in children_of.get(slug, []) if k not in redirect_slugs)
         if not kids and not m.group(3):
             continue  # 無子頁也無舊投影的列一律不碰——不做無關的空白正規化（避免 diff 噪音）
         seg = ("　↳ 子故事：" + "、".join(f"[[{k}]]" for k in kids)) if kids else ""
@@ -158,10 +162,14 @@ def main(argv: list[str]) -> int:
     #    child→parent 的上層邊是「家族邊」，不算入鏈（否則每個子頁天生 1 入鏈、母頁被子頁灌爆，
     #    孤島與高引用兩個訊號都失真）。
     parent_of: dict[str, str] = {}
+    redirect_slugs: set[str] = set()
     for slug, p, _ in pages:
-        m = PARENT_RE.search("\n".join(p.read_text(encoding="utf-8-sig").splitlines()[:60]))
+        head60 = "\n".join(p.read_text(encoding="utf-8-sig").splitlines()[:60])
+        m = PARENT_RE.search(head60)
         if m and m.group(1).strip() in slugs and m.group(1).strip() != slug:
             parent_of[slug] = m.group(1).strip()
+            if "已併回" in head60:
+                redirect_slugs.add(slug)
     children_of: dict[str, list[str]] = collections.defaultdict(list)
     for c, par in parent_of.items():
         children_of[par].append(c)
@@ -334,7 +342,7 @@ def main(argv: list[str]) -> int:
 
     stream.write(f"頁面 {len(pages)}：寫入 {written}／未變 {unchanged}\n")
     # index 投影：母頁列摘要格的「↳ 子故事：」由此重生（子頁不入 index，查詢與認領靠投影）
-    n_proj = project_children_into_index(children_of, WIKI_DIR / "index.md", dry_run)
+    n_proj = project_children_into_index(children_of, WIKI_DIR / "index.md", dry_run, redirect_slugs)
     if n_proj:
         stream.write(f"index 子故事投影：改動 {n_proj} 列\n")
     stream.write("signal 分布：" + "、".join(f"{k} {v}" for k, v in signals.most_common()) + "\n")

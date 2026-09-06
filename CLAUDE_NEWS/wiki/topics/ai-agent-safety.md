@@ -11,12 +11,12 @@ parent: null
 children: "['topics/ai-agent-safety-archive']"
 page_role: "hub"
 days_since_news_subtree: 2
-inbound_links: 86
+inbound_links: 82
 attribution_count: 120
 attribution_last: "2026-09-04"
 top_source: "google-news"
-pending_count: 14
-pending_overdue: 7
+pending_count: 15
+pending_overdue: 8
 pending_next_review: "2026-09-07"
 pending_signalled: 1
 signal: "健康"
@@ -71,18 +71,7 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 - **Enterprise Frontier Safeguards**（2026-09-01 公告）：監看攻擊性網路與生物能力開發、以及憑證外洩跡象；資料存客戶自己的雲端儲存，今年秋季分階段推出、本身免費（雲端儲存另計）。
 - **EFS 不是提示注入的防禦**：上表沒有一列因它而降級。企業採用與資料主權面見 [[topics/anthropic-business]]，它同時是 [[entities/pricing]] 兩則企業資料保留傳聞的官方版本。
 - **89%／0%／60–80% 三個數字答的不是同一件事**：89% 與 0% 皆出自 [Anthropic 官方 2026-08-07 blog](https://claude.com/blog/auto-mode-default-in-claude-code)（0% 為第三方 Trajectory Labs 720 次間接注入測試結果）；60–80% 是 embracethered 針對另一種攻擊面（網頁摘要＋`struct.py` 遮蔽）的實測，兩者不互相推翻。
-- **還沒有的**：官方至今沒有對外部內容的信任邊界機制（來源標記、套件名驗證、寫入確認）。缺口追蹤見 [[topics/official-community-gap]]。
-
----
-
-## 跨事件的四條結論
-
-| 結論 | 狀態 |
-|------|------|
-| Anthropic 回應策略受批評：「定義過窄」（Jonathan Nen）至「責怪使用者」（1-click RCE） | 📋 持續觀察 |
-| 社群防護工具（Groundtruth、SmolVM、DataMoat）先於官方指引出現 | 🛠️ 生態自組織 |
-| Anthropic 尚未發布高風險操作的官方 agent 安全指引 | 📋 缺口未補 |
-| 模型層安全（拒絕危險請求）≠ 產品層安全（防誤操作、修補沙箱逃逸） | 🔍 框架結論 |
+- **還沒有的**：官方至今沒有對外部內容的信任邊界機制（來源標記、套件名驗證、寫入確認）。缺口追蹤見 [[topics/official-community-gap]]。官方也還沒有高風險操作的 agent 安全指引；**模型層安全（拒絕危險請求）不等於產品層安全（防誤操作、修補沙箱逃逸）**，上表每一列問的都是後者。
 
 ---
 
@@ -109,7 +98,7 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 
 ## 拿什麼擋
 
-> 上表的「你能先做什麼」是不裝東西就能做的；本節是社群做出來的工具，一行對一個攻擊面。官方尚無對應產品，出處見 [[topics/community-tech-patterns]] 與 [[topics/community-tech-discussions]]。
+> 上表的「你能先做什麼」是不裝東西就能做的；本節是社群做出來的工具，一行對一個攻擊面。官方尚無對應產品，出處見 [[topics/community-tech-patterns]] 與 [[topics/community-tech-discussions]]。**社群的工具比官方指引先到**——官方至今未發布高風險操作的 agent 安全指引，而 Anthropic 對事件的回應也一再被批評定義過窄或責怪使用者。
 
 - **要擋 Auto 模式、惡意 `.git`、供應鏈三列** → 沙盒隔離（SmolVM）：讓 Claude Code 在隔離的本機容器裡跑，宿主系統不受影響。
 - **要擋遞迴刪檔那一列** → 每步驟人工確認（EvanFlow）＋備份先行：不自動 commit，動資料前先建備份。
