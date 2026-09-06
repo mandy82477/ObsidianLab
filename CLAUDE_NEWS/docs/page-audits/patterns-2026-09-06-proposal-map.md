@@ -73,18 +73,40 @@
 
 ## 整頁去向（`community-tech-timeline` 併入 `community-tech-patterns-archive`）——**使用者已裁「併」，本表即定稿**
 
-不再保留「不併」版。逐字殼見 draft **A-9**。
+不再保留「不併」版。逐字殼與搬家體例見 draft **A-9**。
+
+### 該頁自己
 
 | 該頁的節 | 定稿去向 |
 |---|---|
-| 標頭六欄 | 轉址殼：`**狀態：** resolved（封存頁）`、`**領域：** 🌐 社群`、`**上層：** [[topics/community-tech-patterns]]`、最後更新 2026-09-06。`page_role=redirect` 由 `gen_wiki_frontmatter.py` 依標頭生成，不手填 |
-| callout ＋ 摘要 | 換成單句識別字：「本頁已併回 [[topics/community-tech-patterns-archive]]——2026-04-25～05-22 的原始時序條目全部搬到那裡，之後的社群做法見 [[topics/community-tech-patterns]]。」 |
-| 時序條目 2026-05-01～05-22 | **原文一字不刪** append 進 archive 既有 `## 2026-05` 分組末 |
-| 時序條目 2026-04-25～04-30 | **原文一字不刪** append 進 archive **新開的 `## 2026-04` 分組**（archive 現在沒有這個月，是本波唯一的新分節） |
-| archive 反向指針 | 新開的 `## 2026-04` 分組首行加一句「本分組原文來自已併回的社群技術應用趨勢時序頁」；`## 2026-05` 既有首行不動 |
-| 該頁 L109「15 倍 token」轉述 | 隨條目搬進 archive；**本頁 ⟨Q-06⟩ 懸置細節的指路同批改成 `[[topics/community-tech-patterns-archive#2026-05]]`**（draft A-9 配套第 5 件） |
-| `wiki/index.md` L109 那一列 | **整列刪除**（主編執行）。redirect 不入 index，`gen_wiki_frontmatter.py` 已排除、`check_hierarchy.py` 會驗。**因為是刪列不是改狀態，🔴-4 指的 `test_index_sync` 狀態格不一致風險不成立**——那是「不併」版才會踩的坑 |
-| 入邊 3 條 | ①本頁 L1106 相關實體那一條 → `- [[topics/community-tech-patterns-archive]]（2026-04-25～05-22 的原始時序條目封存）`；②archive 自身的指回；③index L109（隨刪列消失）。三條全部改完才可轉殼 |
-| 其餘 wikilink | 轉殼前先跑 `python scripts/wiki_graph.py explain topics/community-tech-timeline` 核對入邊確為 3；多出來的逐筆改指 archive |
+| 標頭六欄 | 轉址殼：`**狀態：** resolved（**已併回**）`、`**領域：** 🌐 社群`、`**上層：** [[topics/community-tech-patterns-archive]]`、最後更新 2026-09-06、最後新聞更新維持 2026-05-22。`page_role=redirect` 由 `gen_wiki_frontmatter.py:244-248` 依 head60 裡的「已併回」三字生成，不手填 |
+| callout ＋ 摘要（L31–45） | 換成單句識別字，全文見 draft A-9-1。**「已併回」必須在前 60 行內**（`gen_wiki_frontmatter.py:167／244`、`check_hierarchy.py:55` 都只讀 head60） |
+| `## 時序`／`### 2026-05`／`### 2026-04` 三個包裝標題 | **丟棄**（只有這三行）。逐字稿寫「只丟包裝」，**不寫「一字不刪」**——那句話對包裝標題不成立（🔴-5） |
+| `### 2026-04` 之下的 `####` 條目 | **原文照搬**進 archive 新開的 `## 2026-04`，其下先放一行 `### 時序流水帳（併自原社群時序頁，2026-04-25～04-30）` |
+| `### 2026-05` 之下的 `####` 條目 | **原文照搬**進 archive 既有 `## 2026-05` **末尾**，其上先放一行 `### 時序流水帳（併自原社群時序頁，2026-05-01～05-22）` |
+| 該頁「15 倍 token」轉述 | 隨條目搬進 archive |
+| 懸置標記 | **0 筆**（評審複核）——本波併頁**無保命條款風險**，前四波每波都中的那條本次不適用 |
+
+### archive 目的地要動的兩處
+
+| 處 | 動作 |
+|---|---|
+| `community-tech-patterns-archive.md:35` callout | **改寫**（🟡-19）：去掉規則檔路徑與「月度蒸餾機制」，改成也涵蓋新併入的流水帳。逐字見 draft A-9-3。我上一輪判它「證據層、原文照搬、列回訪」——併頁後這句本來就要改，順手一併改掉 |
+| archive 標頭 | `**最後更新**` 改 2026-09-06；**`**最後新聞更新**` 維持 2026-06-30 不動**（併進來最新條目 05-22 更舊，且搬位置不是新聞） |
+
+### 全庫 7 處引用（🔴-4；我上一輪寫「三個入邊」是錯的，逐處複核如下）
+
+| # | 位置 | 現在寫什麼 | 改成 | 誰改 |
+|---|---|---|---|---|
+| 1 | `wiki/index.md:109` | 目錄列（monitoring） | **整列刪除**（redirect 不入 index，`gen_wiki_frontmatter.py:88` 的 `redirect_slugs` 與 `test_index_sync.py:74-82` 已排除） | 主編 |
+| 2 | `wiki/topics/community-tech-patterns.md:1107`（**不是 L1106**） | 相關實體「2026-04-25 至今完整時序記錄，從本頁拆分」 | `- [[topics/community-tech-patterns-archive]]（2026-04-25～05-22 的社群時序流水帳，已併入該頁）` | 社群記者 |
+| 3 | `wiki/topics/community-pattern-trends.md:45` | 分工句「何時首次出現的歷史流水帳見 [[topics/community-tech-timeline]]」 | 同句改指 `[[topics/community-tech-patterns-archive]]` | 社群記者（同維護者，屬入口句層級） |
+| 4 | `wiki/topics/community-pattern-trends.md:322` | 相關實體「（4–5 月歷史流水帳，演進起點考據）」 | 同上改指 archive | 社群記者 |
+| 5 | `.claude/rules/wiki-ingest-community.md:13` | 負責頁面表列 timeline | **刪列**——留著等於每天把時序類條目路由到一個轉址殼 | 主編 |
+| 6 | `.claude/rules/wiki-ingest-community.md:105` | 「不再歸檔至 timeline（timeline 維持趨勢時序頁角色，**不兼任封存箱**）」 | 「不再歸檔至獨立時序頁；封存一律走 [[topics/community-tech-patterns-archive]]（原 `community-tech-timeline` 已於 2026-09-06 併入該頁）」——這句併頁後直接與現狀相反 | 主編 |
+| 7 | `.claude/agents/wiki-reporter-community.md:26` ＋ `.claude/rules/wiki-ingest-format.md:294` | 兩處「典型大型頁面」清單含 timeline | 從清單移除（轉殼後約 12 行，不再是大型頁面）。format 檔那半句是刪一個檔名、不動任何條文 | 主編 |
+| — | ⟨Q-06⟩ 懸置細節內文（draft A-3） | 「本庫僅 [[topics/community-tech-timeline]] 轉述過」 | 改指 `[[topics/community-tech-patterns-archive]]`（🟡-18；探針字串 `multi-agent token、15 倍` 非 wikilink，不受影響） | 社群記者 |
+
+**收工判準：** `grep -rn "community-tech-timeline" wiki/ .claude/ scripts/ | grep -v log.md` 只剩 timeline 自己那一檔。
 
 **併的理由（已成裁決，記錄備查）：** 同一批 2026-05 的料被封存兩次（timeline 整頁 vs `patterns-archive` 的 `## 2026-05`），而兩個封存頁待遇相反——合規的 archive 不佔 index 列，凍結 107 天的 timeline 反而佔著。

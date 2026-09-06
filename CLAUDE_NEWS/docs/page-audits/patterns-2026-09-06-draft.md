@@ -85,7 +85,7 @@ map 的「L33–37 頂部 callout：留，一字不動」同步改成「留，�
 - **還在試的十一類裡，只有五類近兩週有新動靜**：其餘停在七月，代表社群的注意力現在集中在規模化、終止條件與介面複用三個方向。
 
 **懸置細節**
-- ⟨Q-06⟩ ❓ **待查證**（標 2026-09-06｜查 multi-agent token、15 倍｜複 2026-09-20）：「多 agent 約耗 15 倍 token」本庫僅 [[topics/community-tech-timeline]] 轉述過，未取得官方原文與發布日期
+- ⟨Q-06⟩ ❓ **待查證**（標 2026-09-06｜查 multi-agent token、15 倍｜複 2026-09-20）：「多 agent 約耗 15 倍 token」本庫僅 [[topics/community-tech-patterns-archive]] 的時序流水帳轉述過，未取得官方原文與發布日期
 
 ## A-4. `## 學術對照` 節（節名 L98，導言 L99、表 L101–108）＋ A-5 兩張子表（`### 誰負責拆分` 節名 L110、表 L114–119、核心經驗 L121；`### 缺口追蹤` 節名 L139、導言 L141、表 L143–151）整段替換，逐字。**實作時一律以列首文字定位，不用行號**
 
@@ -196,31 +196,43 @@ map 的「L33–37 頂部 callout：留，一字不動」同步改成「留，�
 
 **不由我改的兩處（轉知，不動）：** index L100 寫 pattern-trends「7 條成形趨勢」而該頁實有九條（`community-pattern-trends.md` L52–299）——屬主編；`community-tech-discussions`「本週熱點」含 2026-06 條目——屬第 9 波。
 
-## A-9. `community-tech-timeline` 轉址殼（使用者已裁「併」，逐字）
+## A-9. `community-tech-timeline` 併入 archive（使用者已裁「併」，逐字）
 
-原頁全文改成下列九行，時序條目原文一字不刪 append 進 `topics/community-tech-patterns-archive`：
+### A-9-1 轉址殼全文（原頁內容全部換成這九行）
 
 ```markdown
 # 社群技術應用趨勢時序
 
-**狀態：** resolved（封存頁）
+**狀態：** resolved（已併回）
 **領域：** 🌐 社群
-**上層：** [[topics/community-tech-patterns]]
+**上層：** [[topics/community-tech-patterns-archive]]
 **開始日期：** 2026-04-25
 **最後更新：** 2026-09-06
+**最後新聞更新：** 2026-05-22
 
-> 本頁已併回 [[topics/community-tech-patterns-archive]]——2026-04-25～05-22 的原始時序條目全部搬到那裡，之後的社群做法見 [[topics/community-tech-patterns]]。
+已併回 [[topics/community-tech-patterns-archive]]——2026-04-25～05-22 的原始時序條目全部搬到那裡，之後的社群做法見 [[topics/community-tech-patterns]]。
 ```
 
-**⚠️ 這一行會讓讀者語言閘紅（我實測過）：** `**狀態：** resolved（封存頁）` 命中禁詞「封存」，而這是 `.claude/rules/wiki-ingest-format.md` 對 archive／redirect 殼**強制規定**的狀態值（既有四個 archive 頁都這樣寫，只是早已在基線裡）。實作者寫這一行時同批登記 `data/reader-language-allow.json`：頁 `topics/community-tech-timeline`、詞 `封存`、理由「archive 殼的狀態值由 wiki-ingest-format.md 規定，非維運術語外洩」。**不可改寫這個值繞過閘**——`check_hierarchy.py` 在驗它。
+四個欄位的依據（我逐支核過）：`已併回` 三字必須落在**前 60 行**內（`gen_wiki_frontmatter.py:167／244` 與 `check_hierarchy.py:55` 都只讀 head60），這裡在第 10 行；`**上層：**` 掛 archive 而非 patterns，因為條目搬進 archive；領域 🌐 社群與 archive 一致（`check_hierarchy` 驗領域繼承）。**狀態採評審建議的 `resolved（已併回）`，不用 `resolved（封存頁）`**——`check_hierarchy.py:123-129` 只對 slug 含 `-archive` 的頁強制那個字串，timeline 借用會讓兩種角色共用同一個識別字；**而且這一改順帶解掉我上一輪自己抓到的問題**：`封存頁` 會命中讀者語言禁詞「封存」、要另外登記 allowlist，`已併回` 不會，allowlist 那一筆因此不必登記。前例 `wiki/entities/chris-olah.md` 的殼可對照（它的狀態是 `active`，本案選 `resolved` 是因為 timeline 本來就已凍結）。
 
-**配套六件（實作者逐件核銷）：**
-1. `wiki/index.md` **L109 整列刪除**（主編執行）。
-2. 條目搬進 archive：2026-05 併進既有 `## 2026-05` 分組，2026-04 **新開 `## 2026-04` 分組**（archive 現在沒有這個月）。
-3. **入邊 3 條改指**：本頁 L1106 相關實體那一條改成 `- [[topics/community-tech-patterns-archive]]（2026-04-25～05-22 的原始時序條目封存）`；archive 與 index 兩條隨上述 1、2 一併處理。
-4. **archive 反向指針**：archive 新開的 `## 2026-04` 分組首行加一句「本分組原文來自已併回的社群技術應用趨勢時序頁」。
-5. **⟨Q-06⟩ 的指路改指 archive**：A-3 懸置細節那一條的 `[[topics/community-tech-timeline]]` 改成 `[[topics/community-tech-patterns-archive#2026-05]]`（15 倍 token 的轉述隨條目搬家）。
-6. `page_role=redirect` 由 `gen_wiki_frontmatter.py` 依標頭生成，不手填。
+### A-9-2 條目搬進 archive：**只丟三個包裝標題，條目一字不動**（🔴-5）
+
+兩頁的標題體例對不上：archive 是 `## YYYY-MM` 之下直接放 `#### 主題名（YYYY-MM-DD）`（archive:39 起）；timeline 是 `## 時序` → `### 2026-05`（:48）／`### 2026-04`（:282）之下放 `#### 2026-05-22` 這種**純日期**標題。直接 append 會讓 `### 2026-05` 與外層 `## 2026-05` 同名重複，而且同一分組裡混兩種命名法，讀者分不出哪些是模式條目、哪些是流水帳。
+
+- archive **新開 `## 2026-04`**（archive 現在沒有這個月），其下先放一行 `### 時序流水帳（併自原社群時序頁，2026-04-25～04-30）`，再把 timeline `### 2026-04` 之下的 `####` 條目**原文照搬**。
+- archive **既有 `## 2026-05` 的末尾** append 一行 `### 時序流水帳（併自原社群時序頁，2026-05-01～05-22）`，再放 timeline `### 2026-05` 之下的 `####` 條目**原文照搬**。
+- **被丟掉的只有 timeline 的 `## 時序`／`### 2026-05`／`### 2026-04` 三個包裝標題**——逐字稿寫「只丟包裝、條目一字不動」，**不寫「一字不刪」**（那句話對包裝標題不成立）。
+- archive 的 `**最後更新**` 改 2026-09-06，**`**最後新聞更新**` 維持 2026-06-30 不動**（併進來的最新條目 05-22 比它舊，且搬位置不是新聞）。
+
+### A-9-3 archive callout 改寫（🟡-19，逐字）
+
+現行 `community-tech-patterns-archive.md:35` 的讀者 callout 直接寫出規則檔路徑與「月度蒸餾機制」。併頁本來就要改這句（要說明本頁現在也收原時序頁的流水帳），順手一併去掉維運術語：
+
+`> 本頁保存 [[topics/community-tech-patterns]] 被搬離主頁的原始條目，以及 2026-04-25～05-22 的社群時序流水帳。條目一字不刪，只是搬離主頁讓主頁讀得動。`
+
+### A-9-4 全庫 7 處引用逐處改法（🔴-4）
+
+我用 `grep -rn "community-tech-timeline" wiki/ .claude/ scripts/ src/` 複核，評審列的 7 處全部屬實，我上一輪寫的「三個入邊」是錯的（archive 根本沒有指向 timeline 的邊，trends 有兩條我完全沒提，patterns 那條是 **L1107** 不是 L1106）。逐處改法見 `-proposal-map.md` 的「整頁去向」表；其中第 3、4 處是同維護者鄰居 `community-pattern-trends` 的 wikilink 指向與一句描述，**這是併頁的必要配套，我上一輪「本案未改鄰居任何一行」的說法已不成立**。
 
 # B. 進規則檔（條文的家，頁面正文一句都不留）
 
