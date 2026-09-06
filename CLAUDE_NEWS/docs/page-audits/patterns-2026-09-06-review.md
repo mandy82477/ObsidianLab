@@ -3,9 +3,11 @@
 2026-09-06｜評審（Opus）｜受評：`-proposal.md`＋`-proposal-map.md`＋`-draft.md`（磁碟現行檔）
 適用區 **A／B／D／E**，**C 不適用**（無視覺成品、無現實體裁交付）｜⚠️ 疑似注入：無（對象頁、archive、timeline、五個鄰居、三份規則檔、兩支腳本皆無指令式文字）
 
-**總評：推薦案的方向對——證據底不動、結論層補「最後動態」與退場，正是本頁的病灶。但四件事會在實作當天壞掉：短標記寫法不合 `SHORT_RE`、`table_census` 的「有機制」不會亮、去向表在三個區塊錯行、timeline 預設案會讓 `test_index_sync` 紅。另有一條核心定義自相矛盾，導致設計者手跑的 22 列與規則重跑的結果不一致。**
+**裁決點 1 使用者已裁決「併」**，本檔以 map 末節「裁併」版為受評版本，「不併」版不評。
 
-🔴 4 條｜🟡 12 條｜實作單 9 步｜設計者第二輪必須親改：🔴-1／🔴-3／🟡-5／🟡-9／🟡-10
+**總評：推薦案的方向對——證據底不動、結論層補「最後動態」與退場，正是本頁的病灶。但五件事會在實作當天壞掉：短標記寫法不合 `SHORT_RE`、`table_census` 的「有機制」不會亮、去向表在三個區塊錯行、併頁的引用盤點漏 4 處（含 2 處在規則檔）、併入 archive 的標題層級對不上。另有一條核心定義自相矛盾，導致設計者手跑的 22 列與規則重跑的結果不一致。**
+
+🔴 5 條｜🟡 15 條｜實作單 11 步｜設計者第二輪必須親改：🔴-1／🔴-3／🔴-4／🔴-5／🟡-5／🟡-9／🟡-10
 
 ---
 
@@ -76,11 +78,33 @@ canonical         「🔎 查無官方 ⟨Q-02⟩」             -> HIT
 
 **修法：** 這五段的 map 列一律**改用列首文字定位**，不用行號。例：「強 planner ＞ 強 executor（PEAR）」那一列 → 狀態翻「已補（2026-09-06 查證）」；「社群工具生態活躍…（70+ 款工具持續追蹤）」那一條 → 砍數字改 wikilink。行號在同一波內會被前面的編輯推移，本來就不該當實作座標。
 
-### 🔴-4 timeline 預設案（不併）會讓 `test_index_sync` 紅
+### 🔴-4 併頁的引用盤點漏 4 處，其中 2 處在規則檔（使用者已裁決併，本條取代原「不併」版評語）
 
-map「整頁去向」裁決 B 把 timeline 標頭 `**狀態：** monitoring` 改成 `resolved（凍結頁）`，index L109 卻只寫「留列，描述改成…」。`src/tests/test_index_sync.py` 比對**狀態主值**（括號補充不計）：頁面 `resolved` vs index `monitoring` → FAIL。
+map 寫「三個入邊：本頁 L1106、archive、index——全部改指 archive 後可安全轉殼」。我用 `wiki_graph explain` 加全庫 grep 核過，**三條都不是那樣**：archive 根本沒有指向 timeline 的邊；`community-pattern-trends` 有**兩條**（map 完全沒提）；patterns 那條是 **L1107** 不是 L1106。照 map 執行會重演第 6 波 Q4 的病——讀者從鄰居頁點過去落在轉址殼折返。
 
-**修訂文字（併進 A-8 主編清單）：** `wiki/index.md` L109 狀態格 `monitoring` → `resolved`；摘要格改成「2026-04-25～05-22 的社群時序凍結記錄，之後見 [[topics/community-tech-patterns]]」。
+全庫指向 timeline 的地方共 **7 處**（錨點邊 0 條、registry 0 筆、腳本 0 處，這三項我確認乾淨）：
+
+| # | 位置 | 現在寫什麼 | 併頁後要改成 | map 有嗎 |
+|---|---|---|---|---|
+| 1 | `wiki/index.md:109` | 目錄列（monitoring） | **刪列**（redirect 不入 index，`gen_wiki_frontmatter.py:88` 的 `redirect_slugs` 與 `test_index_sync.py:74-82` 都已排除） | ✅ |
+| 2 | `wiki/topics/community-tech-patterns.md:1107` | 相關實體「2026-04-25 至今完整時序記錄，從本頁拆分」 | `- [[topics/community-tech-patterns-archive]]（2026-04-25～05-22 的社群時序流水帳，已併入封存頁）` | ⚠️ 行號錯（寫 L1106） |
+| 3 | `wiki/topics/community-pattern-trends.md:45` | 分工句「何時首次出現的歷史流水帳見 [[topics/community-tech-timeline]]」 | 改指 `[[topics/community-tech-patterns-archive]]` | ❌ |
+| 4 | `wiki/topics/community-pattern-trends.md:322` | 相關實體「（4–5 月歷史流水帳，演進起點考據）」 | 同上改指 archive | ❌ |
+| 5 | `.claude/rules/wiki-ingest-community.md:13` | 負責頁面表列 `community-tech-timeline.md｜社群技術應用趨勢時序` | **刪列**——留著等於每天把時序類條目路由到一個轉址殼 | ❌ |
+| 6 | `.claude/rules/wiki-ingest-community.md:105` | 「不再歸檔至 `community-tech-timeline`（timeline 維持趨勢時序頁角色，**不兼任封存箱**）」 | 併頁後這句直接與現狀相反，改成「不再歸檔至獨立時序頁；封存一律走 `topics/community-tech-patterns-archive`（原 `community-tech-timeline` 已於 2026-09-06 併入該頁）」 | ❌ |
+| 7 | `.claude/agents/wiki-reporter-community.md:26` ＋ `.claude/rules/wiki-ingest-format.md:294` | 兩處「典型大型頁面」清單含 timeline | 從清單移除（轉殼後約 12 行） | ❌ |
+
+第 3、4 兩處屬**同維護者**（社群記者）的鄰居頁，只改 wikilink 指向與一句描述，仍在「只改入口句」的授權內；第 5、6、7 屬規則檔與角色檔，由主編改，第 7 的 format 檔那半句是刪一個檔名、不動任何條文。
+
+### 🔴-5 併入 archive 的標題層級與條目體例不相容，「原文一字不刪」做不到
+
+map 寫「原文一字不刪 append 進 archive 的 `## 2026-05`／新開 `## 2026-04` 分組」。實際形狀對不上：archive 是 `## YYYY-MM` 之下直接放 `#### 主題名（YYYY-MM-DD）`（archive:39 起）；timeline 是 `## 時序` → `### 2026-05`（:48）／`### 2026-04`（:282）之下放 `#### 2026-05-22` 這種**純日期**標題。直接 append 會出現兩個後果：`### 2026-05` 這層包裝要嘛被刪（就不是一字不刪）、要嘛與外層 `## 2026-05` 同名重複；而同一個 `## 2026-05` 裡混兩種條目命名法，讀者分不出哪些是模式條目、哪些是流水帳。
+
+**修訂（map「整頁去向」逐字）：**
+- archive 新開 `## 2026-04`，其下先放一行 `### 時序流水帳（併自原社群時序頁，2026-04-25～04-30）`，再把 timeline `### 2026-04` 之下的 `####` 條目原文照搬。
+- archive 既有 `## 2026-05` 的**末尾**append 一行 `### 時序流水帳（併自原社群時序頁，2026-05-01～05-22）`，再放 timeline `### 2026-05` 之下的 `####` 條目原文照搬。
+- 被丟掉的只有 timeline 的 `## 時序`／`### 2026-05`／`### 2026-04` 三個包裝標題，逐字稿要明寫「只丟包裝、條目一字不動」，不要寫成「一字不刪」。
+- archive 的 `**最後更新**` 改今日，**`**最後新聞更新**` 維持 2026-06-30 不動**（併進來的最新條目 05-22 比它舊，且搬位置不是新聞）。
 
 ---
 
@@ -97,11 +121,16 @@ map「整頁去向」裁決 B 把 timeline 標頭 `**狀態：** monitoring` 改
 - **🟡-13 B-1 §7「懸置條列變體」是全站語法的第二個家。** `wiki-ingest-format.md`「懸置標記語法」是單一來源，社群檔另立一份必然漂移。**修訂：** §7 改成一句指路——「條列容器的短標記變體同 `.claude/rules/wiki-ingest-format.md`『懸置標記語法 → 表格變體』，容器由儲存格換成條列，短標記形式不變（符號＋類別詞＋`⟨Q-nn⟩`），細節區放該月份 `### YYYY-MM` 分組最末。」**本波不改 `wiki-ingest-format.md`**——那是全站立法，屬使用者裁決。
 - **🟡-14 B-1 新節與既有「multi-agent orchestration 學術對照維護」節重疊、無優先序，也漏了欄位紀律。** 既有節明載「此為參考層維護，屬非新聞性更新：只更新最後更新，不動最後新聞更新」與「記者無 web 工具不可自行查證論文」。**修訂：** B-1 §2／§3／§4 之前加一句「本節取代原『multi-agent orchestration 學術對照維護』節對這三張表的欄位規定；該節的『非新聞性更新（只動最後更新）』與『論文查證屬主編』兩條紀律繼續適用。」
 - **🟡-15 標記數閘不會像設計者說的那樣 FAIL。** `data/pending-marker-count.json` 的 `fingerprints` 裡 `ip_reminder、jsonl` 這個 key **出現兩次**（count 是 list 長度不是集合），刪 L755 後淨值 141−1＋2＝**142 ≥ 141**，`_marker_count_gate`（`check_pending_markers.py:267-305`，呼叫在 :365）判「未低於」直接放行。設計者「刪 L755 即 FAIL」只有在單獨提交時成立。**修訂：** A-7 保命條款改寫成「刪 L755 與新增 ⟨Q-06⟩⟨Q-07⟩ 必須同一批；同批後淨值 142 不觸發閘，但仍須 `--rebuild-count --reason` 把重複指紋清掉」。
+- **🟡-17（併頁）轉址殼的四個欄位。** 比照第 6 波前例（`wiki/entities/chris-olah.md`）：`**領域：** 🌐 社群`（`check_hierarchy` 規則 3 驗領域繼承，archive 也是 🌐 社群 ✓）、`**上層：** [[topics/community-tech-patterns-archive]]`、正文一行 `已併回 [[topics/community-tech-patterns-archive]]`。**狀態建議 `resolved（已併回）`**——map 寫 `resolved（封存頁）`，但 `check_hierarchy` 規則 4 只對 slug 含 `-archive` 的頁強制那個字串，timeline 借用它會讓兩種角色共用同一個識別字；index 列既已刪除，`test_index_sync` 的狀態比對不再適用，這格可以自由選。`已併回` 三個字必須落在**前 60 行**內——`gen_wiki_frontmatter.py:170` 與 `check_hierarchy.py:55` 都只讀 head60，殼很短不會有問題，但實作者不得把它寫到檔尾。
+- **🟡-18（併頁）⟨Q-06⟩ 的內文還指著轉址殼。** draft A-3 的懸置細節寫「本庫僅 [[topics/community-tech-timeline]] 轉述過」，併頁後要改成 `[[topics/community-tech-patterns-archive]]`。探針字串是 `multi-agent token、15 倍`（非 wikilink），不受影響。另核：**timeline 全頁 0 筆懸置標記**，所以這次併頁沒有保命條款風險（前四波每波都中的那條，本波確認不適用）。
+- **🟡-19（併頁）archive 的 callout 有維運術語，而它現在要當併入目的地。** `community-tech-patterns-archive.md:35` 的讀者 callout 直接寫出 `.claude/rules/wiki-ingest-community-lint.md` 這個路徑與「月度蒸餾機制」。map 原本判「archive 是證據層、原文照搬、列回訪」，但併頁本來就要改這句 callout（要說明本頁現在也收原時序頁的流水帳），**順手一併改掉**：`> 本頁保存 [[topics/community-tech-patterns]] 被搬離主頁的原始條目，以及 2026-04-25～05-22 的社群時序流水帳。條目一字不刪，只是搬離主頁讓主頁讀得動。`
 - **🟡-16 讀者語言基線數字。** 本頁基線實為 **16 筆**（12 個 `收錄標準` ＋ 4 個 `封存`），健檢卡的「12 筆」只算了前者。設計者 §11「4 筆封存誤擋、全是 phistory 這款工具的功能」我核對過 L345／L594／L596／L597，**判斷正確**，本波不改腳本也正確。§6 的「12 筆存量指紋」請改寫成「12 筆 `收錄標準` 指紋（本頁基線共 16 筆，另 4 筆 `封存` 屬誤擋）」。
 
 **核過沒問題的宣稱（逐條讀原始碼或實跑）：** `⟨Q-nn⟩` 雙向對帳確實與位置無關（:173-185 掃全文）｜⟨Q-06⟩⟨Q-07⟩ 兩組探針都過 `probe_too_weak` 與 `detective_aliases`，各 2 個有偵測力｜archive 的 `## 2026-06`／`## 2026-05` 實存（archive:39／:529），本頁 L1069／L1081 指針正確｜`TeamCreate` 全庫零命中｜`/wiki-lint` 全檔零處提到本頁｜index 行號 L27／L37／L38／L98／L100／L109 全部正確（健檢卡的 L31／L39／L102／L104／L113 才是錯的）｜`**主線：**` 不進 `%%` 的判斷正確——週更撈法與 build 剝除行為都會變成未驗證的賭注，而它是另一頁唯一的進料｜本波無合格蒸餾時段（2026-07 距今 2 個月）｜115 則節點／25 列／42 則主線 tag（非 `—` 11 則）三個存量數字全部複核相符。
 
-**四視角其餘結論：** **維護者**——「最後動態」由每日 ingest 覆寫、每週 5k 重算，兩端都有家，可執行；主線 tag 每週 20 則、73 則待補約四週補完，可執行；但**它與 B-2 三步都沒有觸發邊，全部綁在 5k 上**。**機器**——registry 不需新增條目（5i／5j 也沒有），但動了 `.claude/commands/wiki-lint.md` 就得跑 `/review-commands`。**冷讀者**——改版後預測 Q1 兩跳拿到（原三跳）、Q2 一至兩跳拿到且更硬、Q3 兩跳拿到（社群三則正好補上健檢卡指的核心缺陷）、Q4 兩跳拿到但錨點只跳到**月份分組**不是單則，仍要在組內找，屬可接受的半步；A-3 有三條寫了「接下來看什麼／你的選項」，列選項不下指令。**治理**——沒有偷偷立法到全站（B-3 明寫不改腳本，正確）；跨維護者兩筆都走 `pending_handoffs.py`；index 全部交主編；同維護者鄰居一行未改；整頁去向只有 timeline 一案且寫成裁決點、預設不併——**沒有順手併掉**。
+**併頁的機械前提，我逐支跑過確認不會擋：** 沒有任何 `[[topics/community-tech-timeline#…]]` 錨點邊（全庫零命中），所以轉殼不會製造死錨點｜`.claude/review-registry.json` 完全沒有 timeline 的登記，`check_rules.py` 不受影響｜`scripts/` 與 `src/` 零處引用 timeline｜`check_wiki_freshness.py` 現況綠，timeline 的「最後新聞更新 2026-05-22」早已在第 2 類的新鮮度窗之外、標頭也沒有「更新頻率」欄，轉殼後仍不需登記 `DERIVED_PAGES`｜`check_hierarchy.py` 現況綠（6 個母頁），規則 5／6 用的是 `real_kids`（:134 已排除 redirect），所以 patterns-archive 多一個轉址子頁不會被要求 callout 追日期或補 index 投影——第 6 波三個人物殼已證過同一條路｜timeline → patterns-archive → patterns 三層單一 parent 樹合法（規則 2 只擋自指與成環）。
+
+**四視角其餘結論：** **維護者**——「最後動態」由每日 ingest 覆寫、每週 5k 重算，兩端都有家，可執行；主線 tag 每週 20 則、73 則待補約四週補完，可執行；但**它與 B-2 三步都沒有觸發邊，全部綁在 5k 上**。**機器**——registry 不需新增條目（5i／5j 也沒有），但動了 `.claude/commands/wiki-lint.md` 就得跑 `/review-commands`。**冷讀者**——改版後預測 Q1 兩跳拿到（原三跳）、Q2 一至兩跳拿到且更硬、Q3 兩跳拿到（社群三則正好補上健檢卡指的核心缺陷）、Q4 兩跳拿到但錨點只跳到**月份分組**不是單則，仍要在組內找，屬可接受的半步；A-3 有三條寫了「接下來看什麼／你的選項」，列選項不下指令。**治理**——沒有偷偷立法到全站（B-3 明寫不改腳本，正確）；跨維護者兩筆都走 `pending_handoffs.py`；index 全部交主編；整頁去向只有 timeline 一案且照規定停下來問過使用者——**沒有順手併掉**。裁決改為「併」之後，同維護者鄰居（trends）從「一行未改」變成要改兩處 wikilink 指向，這是併頁的必要配套、仍屬入口句層級，但**提案原本寫的「本案未改它們任何一行」已不成立，逐字稿要補**。
 
 ---
 
@@ -109,14 +138,21 @@ map「整頁去向」裁決 B 把 timeline 標頭 `**狀態：** monitoring` 改
 
 | 步 | 做什麼 | 跑什麼驗證 | 預期輸出 |
 |---|---|---|---|
-| 1 | 設計者第二輪：改 🔴-1（三種短標記加符號與類別詞）、🔴-3（map 五段改列首文字定位）、🟡-5（定義寫死成關係行逐字比對＋撈法兩段式）、🟡-9（存量盤點二選一）、🟡-10（補新節點五欄逐字稿） | — | 更新後的 `-draft.md`／`-proposal-map.md` |
+| 1 | 設計者第二輪：改 🔴-1（三種短標記加符號與類別詞）、🔴-3（map 五段改列首文字定位）、**🔴-4（併頁引用盤點補到 7 處）、🔴-5（併入 archive 的層級與體例逐字稿）**、🟡-5（定義寫死成關係行逐字比對＋撈法兩段式）、🟡-9（存量盤點二選一）、🟡-10（補新節點五欄逐字稿）、🟡-17～19（轉址殼欄位、⟨Q-06⟩ 改指、archive callout 改寫） | — | 更新後的 `-draft.md`／`-proposal-map.md`，map 末節只留「裁併」版 |
 | 2 | 依修好的定義重出 A-2：**21 列**、Skills 設計改 **2026-09-02**、確定性 Agent 框架移出表、錨點全部改全頁式（🟡-6／🟡-7）；表上引言去掉「最多 22 列」（🟡-12） | `python scripts/check_cell_limits.py --page topics/community-tech-patterns` | `OK: 字元上限機械閘 — 無新增超限`（最長儲存格 105 字元） |
 | 3 | 頁面實作：摘要／概覽表／學術對照／誰負責拆分／缺口追蹤／結論層／六筆可信度註記／五筆懸置改短標記＋細節區／刪 L755；A-3 細節區移到六條之後（🟡-11） | `python scripts/check_reader_language.py --page topics/community-tech-patterns` | `OK: 讀者語言閘 — 無新增命中` |
 | 4 | 同批重建標記基線（🟡-15） | `python scripts/check_pending_markers.py --rebuild-count --reason "patterns L755 與 L752 同節點同事實重複標記去重；新增 Q-06／Q-07"` | `✅ 懸置標記基線已重建：142 筆` |
 | 5 | 規則檔：B-1 四個 h3 標題加 slug（🔴-2）、§7 改指路（🟡-13）、補優先序與欄位紀律句（🟡-14）、§6 index 鉤子條款、§5 主線補填；B-2 整節替換（刪掉 L35 死引用那半句，🟡-8） | `python scripts/table_census.py topics/community-tech-patterns` | 四張表「機制」欄由 `無` 全部變 `有（wiki-ingest-community.md）` |
 | 6 | `.claude/commands/wiki-lint.md` 新增 5k「社群模式概覽退場複查（主編派社群記者）」，比照 5i／5j 體例：指向 `wiki-ingest-community-lint.md`「模式概覽週更」，涵蓋重算最後動態／退場補位／合併／主線 tag 補填 20 則；步驟 8 的 lint 紀錄加對應回報行（檔內兩處：5k 節內與 L634 附近清單） | `python scripts/check_rules.py`，接著 `/review-commands` | 零錯誤 |
-| 7 | 主編執行 index 三處（A-8）＋ timeline 狀態格改 `resolved`（🔴-4）；timeline 標頭改 `resolved（凍結頁）`、callout 改寫 | `python scripts/gen_wiki_frontmatter.py` 後 `python scripts/run_tests.py` | 全綠，含 `test_index_sync`／`check_hierarchy`／`check_pending_markers` |
-| 8 | 跨維護者兩筆走帳本 | `python scripts/pending_handoffs.py open --from 社群 --to 功能 --page topics/official-community-gap --note "..."`，以及工具數那筆 | 各回一個 `H-xxxxxx` |
-| 9 | 建置 | `python scripts/build_web.py` | 錨點 WARN 不增（現況 `check_wikilink_anchors` 0、`check_wikilinks` 15）；新增錨點皆為全頁式，應維持 0 |
+| 7 | **併頁手術（同一批，順序不可換）：**（a）timeline `### 2026-04` 之下的 `####` 條目原文照搬進 archive 新開的 `## 2026-04`、`### 2026-05` 之下的照搬進 archive 既有 `## 2026-05` 末尾，各帶一行 `### 時序流水帳（併自原社群時序頁，…）` 包裝（🔴-5）；（b）archive callout 改寫（🟡-19）、`**最後更新**` 改今日、**`**最後新聞更新**` 不動**；（c）timeline 內容清空成轉址殼，四個欄位照 🟡-17 | `python scripts/check_hierarchy.py` | `✅ 通過`，母頁數 6 → 7（patterns-archive 成為母頁） |
+| 8 | **併頁的 7 處引用（🔴-4 表格逐列做完）**：index L109 刪列、patterns L1107、trends L45／L322、`wiki-ingest-community.md` L13 刪列與 L105 改寫、`wiki-reporter-community.md` L26 與 `wiki-ingest-format.md` L294 移除 timeline | `grep -rn "community-tech-timeline" wiki/ .claude/ scripts/ \| grep -v log.md` | 只剩 timeline 自己那一檔（轉址殼），其餘零命中 |
+| 9 | 主編執行 index 三處入口改動（A-8） | `python scripts/gen_wiki_frontmatter.py` 後 `python scripts/run_tests.py` | 全綠，含 `test_index_sync`（timeline 已刪列且被 redirect 白名單豁免）／`check_hierarchy`／`check_pending_markers`／`check_wiki_freshness` |
+| 10 | 跨維護者兩筆走帳本 | `python scripts/pending_handoffs.py open --from 社群 --to 功能 --page topics/official-community-gap --note "..."`，以及工具數那筆 | 各回一個 `H-xxxxxx` |
+| 11 | 建置 | `python scripts/build_web.py` | 錨點 WARN 不增（現況 `check_wikilink_anchors` 0、`check_wikilinks` 15）；新增錨點皆為全頁式，應維持 0 |
 
-**驗紅（第 3 步之後補做一次）：** 把任一短標記的類別詞拿掉、把任一錨點改成不存在的 `#2026-04`，重跑第 3 與第 9 步——應分別出現「⟨Q-nn⟩ 有懸置細節定義但無表格短標記引用」與「WARN: … 錨點不存在於該頁標題」；還原後歸零。**沒驗紅不得宣稱這兩把鎖在看守。**
+**驗紅（第 3 步與第 7 步之後各補做一次）：**
+1. 把任一短標記的類別詞拿掉 → 重跑第 3 步，應出現「⟨Q-nn⟩ 有懸置細節定義但無表格短標記引用」；還原後歸零。
+2. 把任一錨點改成不存在的 `#2026-03` → 重跑第 11 步，應出現「WARN: … 錨點不存在於該頁標題」；還原後歸零。
+3. **併頁專用**：把轉址殼的「已併回」三個字暫時刪掉 → 重跑第 7 步與 `gen_wiki_frontmatter.py`，`page_role` 應由 `redirect` 掉回 `child`、`test_index_sync` 應報 timeline 未在 index——證明 redirect 白名單真的是靠那三個字在認；還原後歸零。
+
+**沒驗紅不得宣稱這三把鎖在看守。**
