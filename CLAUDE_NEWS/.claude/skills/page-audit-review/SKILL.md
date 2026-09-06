@@ -31,7 +31,7 @@ description: CLAUDE_NEWS 頁面健檢與重設計流程（使用者 review 偏�
 | 5 | **SendMessage 續用設計者**做第二輪處置對照（評審指名親改項＋日期／數字更正）；評審若改版再通知設計者 | 續用 2 | ✓ |
 | 6 | 派 **Sonnet 實作者**（`templates/implementer.md`）；定稿若更新立刻通知 | — | checkpoint ✓ |
 | 7 | **續用評審**做實作複核＋派**新冷讀者**複驗（原四題逐字） | 平行；續用 3 | ✓ |
-| 8 | 兩者回來合併成最後一批，**續用實作者**改；主 session 抽驗三處、跑 `run_tests.py`＋`build_web.py` | 續用 4 | ✓ |
+| 8 | 兩者回來合併成最後一批，**續用實作者**改；主 session 抽驗三處、跑 `run_tests.py`＋`build_web.py`——**測試 exit 0 才 commit**（同一指令用 `&&` 串住，不可先 add 再看結果；第 7 波把紅的推上 remote） | 續用 4 | ✓ |
 | 9 | 寫 `wiki/log.md` Query 條目、ledger 定稿列＋回訪清單＋校準表；把這波學到的新問寫進本 skill；`git fetch` 無新 commit 才 push | — | push |
 
 裁決節奏：**拆頁／砍整節／改使命句／砍整頁／併頁／新增頁**停下來問使用者，未回覆照保守預設並在 ledger 標「主 session 代判」；其餘非阻擋裁決主 session 代判並記 ledger，**代判的數字要進評審重算**。額度耗盡：session cron 排時接手，不停 agent。工作區有其他 session 的未提交檔時不碰它、`git add` 指名。

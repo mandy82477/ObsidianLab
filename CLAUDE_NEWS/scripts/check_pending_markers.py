@@ -306,7 +306,12 @@ def check(report: list[str], wiki_dir: Path | None = None, today: date | None = 
           marker_baseline_path: Path | None = None) -> bool:
     wiki_dir = wiki_dir or WIKI_DIR
     today = today or date.today()
-    marker_baseline_path = marker_baseline_path or MARKER_BASELINE_PATH
+    # 基線路徑預設**相對於傳入的 wiki_dir 所屬 repo 根**解析，不可寫死指向真實 repo
+    # 的 MARKER_BASELINE_PATH——否則測試用 tempfile 合成的假 wiki（只有 1–2 筆標記）
+    # 一律去比對真實庫的 142 筆基線，穩死。假 wiki_dir 的 parent 底下沒有
+    # data/pending-marker-count.json，_load_marker_baseline() 讀不到即回 None，
+    # 閘自然跳過不擋（同既有 _legacy_baseline() 的「檔案不存在就不啟用棘輪」哲學）。
+    marker_baseline_path = marker_baseline_path or (wiki_dir.parent / "data" / "pending-marker-count.json")
 
     ok = True
     total_legacy = 0
