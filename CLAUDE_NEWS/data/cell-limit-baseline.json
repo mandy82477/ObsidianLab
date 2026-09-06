@@ -2,7 +2,7 @@
   "_note": "字元上限機械閘的存量基線（頁 → 命中指紋）。check_cell_limits.py 只對基線外的新增超限報 FAIL，基線內的印為 WARN 摘要。清乾淨一頁就把該頁整筆移除——棘輪只能往下轉，不可為了轉綠而加回去。指紋 = 類型 + 該格/該條正規化內容雜湊，改寫即失效。",
   "_baseline_set": "2026-09-05",
   "_pages": 38,
-  "_hits": 1124,
+  "_hits": 1125,
   "pages": {
     "entities/andrej-karpathy": [
       "list_item:47c0bdac05eb"
@@ -316,12 +316,13 @@
     ],
     "entities/claude-security": [
       "list_item:b8ef948f95fa",
+      "list_item:cb4f8167b4c2",
       "table_cell:08b9c6613977",
       "table_cell:092c99ed1525",
       "table_cell:11836ca06030",
       "table_cell:588f2a1d14a2",
-      "table_cell:75468aa6f4c3",
       "table_cell:812f01d01010",
+      "table_cell:97ba3324c002",
       "table_cell:b555da0e45d7",
       "table_cell:d8fbca7741ea"
     ],
@@ -338,13 +339,13 @@
     "entities/dario-amodei": [
       "list_item:1fb81d3ce8a5",
       "list_item:224d7d7cf87b",
+      "list_item:352c418beed1",
       "list_item:751e4f41882e",
       "list_item:92ef056fab3f",
       "list_item:a52f89fc267f",
       "list_item:c472aa2e0192",
-      "list_item:e296a737ec13",
-      "list_item:eaa6208e9660",
-      "list_item:fbb35025875a"
+      "list_item:c95e65443223",
+      "list_item:eaa6208e9660"
     ],
     "entities/fable-5": [
       "list_item:03458bf6f5e4",
@@ -626,12 +627,12 @@
       "list_item:26cf8cfa6a30",
       "list_item:27c11448bb70",
       "list_item:2aadced723a1",
-      "list_item:42e787243bf1",
       "list_item:4d2d023a8f75",
       "list_item:5eb1e714fc11",
       "list_item:7a4c7f508a99",
       "list_item:883094cae959",
       "list_item:996b01b9fc95",
+      "list_item:a31aadccff68",
       "list_item:a6fa5bddbf9b",
       "list_item:b9a01f01e027",
       "list_item:d8b957ef4053",
@@ -784,7 +785,6 @@
       "list_item:b45bc0fea13a",
       "list_item:b48e17a9670d",
       "list_item:b4f66dd3baaa",
-      "list_item:b656e6356608",
       "list_item:b8b885537d64",
       "list_item:b92ecdf4a6a5",
       "list_item:ba315053c228",
@@ -801,6 +801,7 @@
       "list_item:c595b1cd0b86",
       "list_item:c6a57a4ad79d",
       "list_item:c6b264ccb890",
+      "list_item:c8c1ed99b35a",
       "list_item:ca6ca4a0edd5",
       "list_item:caccd5bb718f",
       "list_item:cb4c9dc4927c",
@@ -869,6 +870,7 @@
       "list_item:3f9f3f3be86c",
       "list_item:403f33670baa",
       "list_item:40e336607405",
+      "list_item:41c5caf7cd49",
       "list_item:610b5419645f",
       "list_item:62d68af366e2",
       "list_item:6715c816309a",
@@ -908,8 +910,7 @@
       "list_item:f00916d6aa7e",
       "list_item:f77f25a4e29a",
       "list_item:fbc2d7e65448",
-      "list_item:fddc477e669c",
-      "list_item:ffd3c2bd7223"
+      "list_item:fddc477e669c"
     ],
     "topics/code-quality-decline": [
       "list_item:0525f8e46804",

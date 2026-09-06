@@ -104,7 +104,7 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 - **中國企業防禦性蒸餾禁令 ByteDance**：判準①刷掉（非政府、非產品後果）；政策由張一鳴下令，早於 2023 年存在，2026-08 才曝光；ByteDance 並非既有蒸餾指控中被點名的公司。
 - **白宮 AI 安全測試會議**：08-03 白宮召集 Meta、Anthropic、Google、OpenAI 就 AI 安全測試舉行會議，判準②③皆過但留表優先序墊底，議程未見報導。
 - **澳洲著作權遊說**：Anthropic 向澳洲財長 Chalmers 表態，210 億美元投資案取決於著作權法規明確性；澳洲總理不急於處理（07-13，AFR＋TechXplore 兩獨立來源）。判準②③皆過但留表優先序墊底，最後動態 07-13。
-- **Legion 司法挑戰**：已向 D.C. 聯邦法院補充提訴並申請緊急禁制令（06-28）。出口管制已於 07-01 解除，訴訟是否撤案或轉求償未見報導——這是未知不是已定案，不套用退場第 1 問，墊底下沉；最後動態 06-28，滿 90 天為 2026-09-26。
+- **Legion 司法挑戰**：已向 D.C. 聯邦法院補充提訴並申請緊急禁制令（06-28）。出口管制已於 06-30 解除，訴訟是否撤案或轉求償未見報導——這是未知不是已定案，不套用退場第 1 問，墊底下沉；最後動態 06-28，滿 90 天為 2026-09-26。
 - **NSA 存取權**：NSA 因爭議於 6/23 失去 Fable 存取權；管制解除後是否恢復存取未見報導，同樣不是已定案，墊底下沉；最後動態 06-23，滿 90 天為 2026-09-21。
 - **身份管控收緊**：計畫對部分 Free/Pro/Max 用戶要求身份證明與臉部掃描，最快 7 月上路，觸發條件未公開；截至 09-06 未見上路報導。判準①刷掉（Anthropic 自身帳號政策，非政府動作）。
 - **安全人力擴編**：Axios（07-15）報導 Anthropic 正在招募人力以應對潛在災難性風險，僅標題可用，判準①刷掉（非政府動作）。
@@ -169,7 +169,7 @@ Anthropic 的整個品牌建立在一個論述上：「我們建造了史上最�
 
 2026-07-16，南華早報（SCMP）獨家專訪「Pax Silica」政策架構主要推手，論述美國仍可望維持 AI 領先地位；此為「管制反而助長中國開源模型採用」論述（Bloomberg，2026-06-26）出現以來，首個公開為出口管制/美中科技對峙政策方向背書的正面反論。**2026-08-10 查證**：推手為白宮科技顧問 **Jacob Helberg**；Pax Silica 為美國於 2025-12 聯合英、日、韓、新加坡、荷蘭、以色列、阿聯等 15 國成立的策略性倡議，對抗中國半導體/AI 優勢，2026 年再有瑞典、印度加入（[SCMP](https://www.scmp.com/news/china/diplomacy/article/3360833/anthropic-china-and-why-pax-silica-architect-thinks-us-can-keep-ai-lead)）
 
-**2026-07-13～07-16，Mythos 風險論述四路同步重新浮現：** 出口管制已於 07-01 全面解除，理論上風險論述應隨解禁降溫，但本週內 Mythos 的風險認知同時在四個彼此獨立的角色浮現，共構同一圖像。**監管機構**：07-13 Reuters 獨家報導（另有一家媒體同步報導），加拿大金融監管機關發給銀行業的網路風險警告信中明確引用 Claude Mythos 作為佐證（電郵內容為報導依據），為出口管制解禁後監管機構首次在正式文件中點名 Mythos 進行風險評估。**金融業高管**：07-16 Reuters 報導摩根大通執行長 Jamie Dimon 公開表示 Mythos 的 AI 風險是「真實的問題」（real issue）。**2026-08-10 查證**：Dimon 於參議員 Dave McCormick「賓州國防與創新峰會」發言，具體表示「你正在把彈道飛彈交給擁有 Mythos 的個人」（"you're giving ballistic missiles to individuals with Mythos"），強調先進 AI 能力存取必須受控（[Bloomberg](https://www.bloomberg.com/news/articles/2026-07-15/dimon-warns-about-broad-mythos-access-calling-it-a-real-issue)），與 06-18 JPMorgan 香港分行因出口管制切斷 Anthropic 存取的既有商業摩擦相呼應。**國會與軍方**：07-16 Politico（經 Google News 轉載，僅標題可用）報導參議員 Mike Rounds 就 Mythos 接受五角大廈簡報，顯示儘管 06-17 DoD 已將三分之二 AI 工作量移出 Anthropic，國會軍事委員會層級對 Mythos 軍用能力的關注並未消退。🔎 **查無官方**（標 2026-08-10｜查 Mike Rounds、五角大廈簡報｜複 2026-09-09）：簡報確實舉行（Politico 08-10 查證存在此則報導），但具體簡報內容與 Rounds 立場官方管道未見更多揭露。**政府內部立場矛盾**：07-14 The National Interest 報導國防部長 Hegseth 曾稱 Anthropic 為「國家安全風險」，但 CISA（網路安全暨基礎設施安全局）現正使用其產品。**2026-08-10 查證**：Hegseth 於 2026-02-27 正式將 Anthropic 列為「供應鏈風險」；CISA 的 Attack Surface Evaluation 團隊現使用 Mythos 稽核聯邦政府軟體原始碼、找出可被駭客或國家級行為者利用的漏洞（[The National Interest](https://nationalinterest.org/blog/techland/pete-hegseth-called-anthropic-a-national-security-risk-now-cisa-is-using-it)），政府內部立場矛盾確認屬實。四則報導來源、角色與傳播管道各自獨立，目前無證據顯示彼此協調或存在因果關聯；但四方在同一週窗口內同步浮現風險論述，構成「出口管制解除≠風險論述降溫」的具體反例，值得持續觀察是否延燒為更廣泛的跨界監管動作。
+**2026-07-13～07-16，Mythos 風險論述四路同步重新浮現：** 出口管制已於 06-30 解除、07-01 恢復存取，理論上風險論述應隨解禁降溫，但本週內 Mythos 的風險認知同時在四個彼此獨立的角色浮現，共構同一圖像。**監管機構**：07-13 Reuters 獨家報導（另有一家媒體同步報導），加拿大金融監管機關發給銀行業的網路風險警告信中明確引用 Claude Mythos 作為佐證（電郵內容為報導依據），為出口管制解禁後監管機構首次在正式文件中點名 Mythos 進行風險評估。**金融業高管**：07-16 Reuters 報導摩根大通執行長 Jamie Dimon 公開表示 Mythos 的 AI 風險是「真實的問題」（real issue）。**2026-08-10 查證**：Dimon 於參議員 Dave McCormick「賓州國防與創新峰會」發言，具體表示「你正在把彈道飛彈交給擁有 Mythos 的個人」（"you're giving ballistic missiles to individuals with Mythos"），強調先進 AI 能力存取必須受控（[Bloomberg](https://www.bloomberg.com/news/articles/2026-07-15/dimon-warns-about-broad-mythos-access-calling-it-a-real-issue)），與 06-18 JPMorgan 香港分行因出口管制切斷 Anthropic 存取的既有商業摩擦相呼應。**國會與軍方**：07-16 Politico（經 Google News 轉載，僅標題可用）報導參議員 Mike Rounds 就 Mythos 接受五角大廈簡報，顯示儘管 06-17 DoD 已將三分之二 AI 工作量移出 Anthropic，國會軍事委員會層級對 Mythos 軍用能力的關注並未消退。🔎 **查無官方**（標 2026-08-10｜查 Mike Rounds、五角大廈簡報｜複 2026-09-09）：簡報確實舉行（Politico 08-10 查證存在此則報導），但具體簡報內容與 Rounds 立場官方管道未見更多揭露。**政府內部立場矛盾**：07-14 The National Interest 報導國防部長 Hegseth 曾稱 Anthropic 為「國家安全風險」，但 CISA（網路安全暨基礎設施安全局）現正使用其產品。**2026-08-10 查證**：Hegseth 於 2026-02-27 正式將 Anthropic 列為「供應鏈風險」；CISA 的 Attack Surface Evaluation 團隊現使用 Mythos 稽核聯邦政府軟體原始碼、找出可被駭客或國家級行為者利用的漏洞（[The National Interest](https://nationalinterest.org/blog/techland/pete-hegseth-called-anthropic-a-national-security-risk-now-cisa-is-using-it)），政府內部立場矛盾確認屬實。四則報導來源、角色與傳播管道各自獨立，目前無證據顯示彼此協調或存在因果關聯；但四方在同一週窗口內同步浮現風險論述，構成「出口管制解除≠風險論述降溫」的具體反例，值得持續觀察是否延燒為更廣泛的跨界監管動作。
 
 **2026-07-22，白宮指控 Moonshot AI 蒸餾 Fable，財政部揚言制裁：** TechCrunch 與南華早報兩獨立媒體（皆經 Google News 轉載，僅標題可用）報導，白宮官員指控中國 Moonshot AI 從 Anthropic 的 Fable 模型「蒸餾」竊取技術，美國財政部隨後揚言對 Moonshot 祭出制裁。此為繼 2026-06-10 Anthropic 自行致函參議院指控阿里巴巴 2,880 萬次蒸餾攻擊（見上文）後第二起蒸餾攻擊指控，但性質不同：前者是 Anthropic 單方對國會提出的企業指控，本次則是白宮官員主動點名並升級至財政部制裁層級，屬「政府對政府」的正式攻防動作，也呼應「阿里巴巴蒸餾指控」在「出口管制必要性論述」中的角色——中國行為者持續蒸餾提取受管制模型能力，為管制/制裁政策提供論述基礎。**2026-08-10 查證**：白宮官員身分為科技顧問 **Michael Kratsios**，指稱 Moonshot 建立系統性大規模蒸餾平台以對美國模型進行蒸餾，並能快速切換多種存取方式規避偵測，藉此開發其 Kimi K3 模型；財政部長 **Scott Bessent** 重申制裁「仍在考慮之中」，但具體制裁對象、法源依據與範圍官方尚未正式公布，Moonshot 方面仍無回應（[TechCrunch](https://techcrunch.com/2026/07/22/treasury-threatens-sanctions-after-white-house-claims-moonshot-distilled-anthropics-fable/)）。專家對「Fable 5 於 07-01 才公開發布、Kimi K3 於 07-16 即推出」的 15 天間隔是否足以完成大規模蒸餾持有異議，白宮則稱此間隔正符合工業規模蒸餾的特徵
 
@@ -230,7 +230,7 @@ Anthropic 的整個品牌建立在一個論述上：「我們建造了史上最�
 | 2026-08-21 | 🌐 | Business Insider：分析 Anthropic 浮水印做法「較同業更進一步（for now）」 | 僅標題可用，具體同業比較基準未見報導；系列報導首見同業比較角度，「for now」措辭暗示可能非長期優勢 |
 | 2026-08-21 | 🌐 | Business Chief：報導 Anthropic 為因應歐盟 AI Act 新規定，替 Claude 輸出加上浮水印 | 僅標題可用，重申既有 08-12 已確認的 EU AI Act Transparency Code 法規依據，未見新增機制細節 |
 | 2026-08-20 | 🌐 | CNET 評論文章：主張 AI 內容標示是大型科技公司的基本責任，文中提及 Claude 浮水印 | 意見/評論性文章，非新聞事件；呼應既有浮水印政策社會觀感角力，未提供新技術細節或事實 |
-| 2026-08-20 | 🌐 | Yahoo Finance：高盛（Goldman Sachs）與 OKX 均在香港被切斷 Claude AI 存取權限 | 僅標題可用，成因未知；與 06-18 JPMorgan Chase 香港分行切斷存取先例類似，惟該案肇因於出口管制（已於 07-01 解除），本次因果關係未明，不逕自視為同一原因 |
+| 2026-08-20 | 🌐 | Yahoo Finance：高盛（Goldman Sachs）與 OKX 均在香港被切斷 Claude AI 存取權限 | 僅標題可用，成因未知；與 06-18 JPMorgan Chase 香港分行切斷存取先例類似，惟該案肇因於出口管制（已於 06-30 解除），本次因果關係未明，不逕自視為同一原因 |
 | 2026-08-19 | 🌐 | WIRED：工程師稱已找到繞過 Claude 隱形浮水印的方法 | 較 08-18 Business Insider「開發者已在打造規避方法」更進一步，聲稱已有成功繞過手法；具體技術手段、規模與是否可驗證均未見報導細節，延續 08-11～08-18 浮水印系列報導 |
 | 2026-08-19 | 🌐 | Forbes：撰文破除外界對浮水印於校對／修正錯字情境下的迷思 | 僅標題可用，具體論點與技術細節未見報導；與既有「品質犧牲疑慮」（08-17）、「反彈聲量分歧」（08-13）系列報導同屬浮水印政策社會觀感角力的一環，惟本篇立場偏向澄清而非延燒 |
 | 2026-08-19 | 🌐 | The Information：OpenAI 在安全政策上「拉高標準」追上 Anthropic | 僅標題可用，具體安全措施內容未見報導；營收面詳見 [[topics/anthropic-business]]，本頁僅記錄安全標準敘事角度 |
@@ -285,15 +285,15 @@ Anthropic 的整個品牌建立在一個論述上：「我們建造了史上最�
 | 2026-07-13 | 🌐 | New York Post：指控中國「複製」前沿 AI 技術，未提供新技術證據，呼應既有蒸餾指控。 | 單一媒體來源、無第三方或官方確認，僅延續既有「中國竊取/複製前沿 AI 能力」敘事框架，未新增具體事實或機制細節（2026-07-13 刊文） |
 | 2026-07-03 | 🌐 | MarketScale 延遲報導確認 7/1 出口管制解除，封鎖期精確為 19 天（MarketScale） | 對既有 7/1 事件的媒體確認，補充精確天數；非新增事件 |
 | 2026-07-02 | 🏢 | Anthropic 為 Fable 5 新增「Defense in Depth」機制：高風險請求自動 fallback 至 Opus 4.8。 | 「主動偵測安全風險」承諾首次有可觀察的技術落實；但使用者實測（dev.to）已出現分類器誤判合法請求案例，顯示落實品質仍待觀察 |
-| 2026-07-01 | 🏛️ | 商務部長 Lutnick 宣布解除 Fable 5／Mythos 5 全部出口管制，2026-07-01 生效。 | 6/13 全面封鎖以來最重大結局；封鎖期 18–19 天；三項承諾成未來談判參照框架。 |
+| 2026-07-01 | 🏛️ | 商務部長 Lutnick 06-30 通知已移除 Fable 5／Mythos 5 出口管制，07-01 恢復存取。 | 6/13 全面封鎖以來最重大結局；封鎖期 19 天（含首尾）；三項承諾成未來談判參照框架。 |
 
 **攻防紀錄蒸餾：兩個時段總結**（原 2026-06 的 60 列、2026-05 的 2 列已搬至 archive，一字不刪）
 
 ### 2026-06（封存總結）
 
-- 06-12 商務部管制生效，06-13 Lutnick 致函要求 90 分鐘內對所有外籍人士停用 Fable 5 與 Mythos 5，Anthropic 約 90 分鐘內撤架（Axios，HN 2,662 分）。
+- 06-12 商務部管制生效，06-13 Lutnick 致函要求 90 分鐘內對所有外籍人士停用 Fable 5 與 Mythos 5，Anthropic 約 90 分鐘內撤架（Axios，HN 2,662 分）；**06-30 商務部通知管制已移除，Anthropic 當晚公告翌日恢復**，封鎖 19 天（含首尾）。
 - 觸發原因三說並存：Amazon 研究員讓 Fable 5 產出網路攻擊資訊、由 CEO Jassy 通報白宮（The Verge／WSJ 06-14）；SK Telecom 的中國關聯疑慮（Wired 06-18）；越獄語僅「Fix this code」（06-22）。
-- 談判線：06-15 赴華府，06-17 G7 盟友豁免遭拒，06-19 焦點轉向安全規範框架與零越獄要求，06-22 撤銷國安威脅標籤，06-25 改由 Tom Brown 接管，06-27 Mythos 5 對 100 家以上受信任合作夥伴有限釋出，06-29 進一步許可。
+- 談判線：06-15 赴華府，06-17 G7 盟友豁免遭拒，06-19 焦點轉向安全規範框架與零越獄要求，06-22 撤銷國安威脅標籤，06-25 改由 Tom Brown 接管，06-27 Mythos 5 對 100 家以上受信任合作夥伴有限釋出，06-29 進一步許可，06-30 全部管制移除。
 - 外溢損失：JPMorgan 香港分行斷線（FT 06-18）、五角大廈把三分之二 AI 用量移出（06-17）、NSA 失去 Fable 存取權（NYT 06-24）、境外長期付費用戶帳號遭停用（HN 06-20）。
 - 反效與外部壓力：Stratechery 安全論述雙面刃（06-15）、FT 量化 Anthropic 風險用語為 OpenAI 的 8 倍（06-23）、Bloomberg 稱管制可能反推中國開源模型（06-26）；EU 就管制與白宮直接對話（06-25）、五眼聯盟聯合聲明（06-22）、Legion 提起首起司法挑戰（06-23）。
 - 06-10 Anthropic 致函美參議院，指控阿里巴巴以約 25,000 個假帳號在 04-22 至 06-05 間發動 2,880 萬次模型交換蒸餾提取能力（CNBC 06-24）。
@@ -526,13 +526,13 @@ Anthropic 的整個品牌建立在一個論述上：「我們建造了史上最�
 - **[🌐] 分類器誤判合法安全審查請求**：使用者以 Fable 5 做資安審查（security review）任務，被新分類器誤判並攔截，為「深度防禦」機制上線後首個公開的誤判案例，顯示新機制精確度尚待觀察（dev.to，2026-07-02；https://dev.to/tecnomanu/i-tried-fable-5-for-a-security-review-and-it-flagged-my-own-request-2pbn）
 
 ### 2026-07-01（重大結局）
-- **[🏛️🏢] 商務部長 Lutnick 宣布全面解除 Fable 5／Mythos 5 出口管制**：2026-07-01 正式生效；Anthropic 承諾三項義務換取解封（偵測安全風險 / 合作制定標準 / 通報惡意活動）；封鎖期 18–19 天，為 2026-06-13 全面封鎖以來的最終結局（NYT、BBC、CNN、Reuters、WSJ、FT、WashPost、The Guardian，2026-06-30/07-01；Anthropic 官方公告：https://www.anthropic.com/news/redeploying-fable-5）。6/13 全面封鎖以來最重大結局；封鎖期 18–19 天（2026-07-03 MarketScale 確認為 19 天）；Reddit 流出商務部完整信函；「Anthropic 承諾換解封」成為先例，三項承諾將成未來 AI 出口管制談判的參照框架
-- **封鎖解除背景補充**：出口管制於 2026-06-12 生效，理由為模型可能被用於嚴重網路攻擊；封鎖期共 18–19 天
+- **[🏛️🏢] 商務部長 Lutnick 06-30 通知 Anthropic 已移除 Fable 5／Mythos 5 出口管制**：Anthropic 當晚公告，07-01 全球恢復存取；Anthropic 承諾三項義務換取解封（偵測安全風險 / 合作制定標準 / 通報惡意活動）；封鎖期 19 天（含首尾兩日，2026-06-12 生效 → 06-30 解除），為 2026-06-13 全面封鎖以來的最終結局（NYT、BBC、CNN、Reuters、WSJ、FT、WashPost、The Guardian，2026-06-30/07-01；Anthropic 官方公告：https://www.anthropic.com/news/redeploying-fable-5）。Reddit 流出商務部完整信函；「Anthropic 承諾換解封」成為先例，三項承諾將成未來 AI 出口管制談判的參照框架
+- **封鎖解除背景補充**：出口管制於 2026-06-12 生效，理由為模型可能被用於嚴重網路攻擊；06-30 解除、07-01 恢復存取；封鎖期共 19 天（含首尾）
 - **三項承諾的意義**：Anthropic 此次承諾框架（安全偵測 + 標準制定合作 + 惡意活動通報）為「私人 AI 公司換取模型存取特權的政府協議」建立首例；未來可能成為其他前沿模型出口管制談判的參照框架
 
 ### 2026-06（封存總結）
 
-- **出口管制起訖**：06-13 Trump 政府引用國安授權要求對所有外籍人士停用 Fable 5 與 Mythos 5，Anthropic 收到指令後約 90 分鐘內撤架（Axios）；HN 2,662 分。06-22 撤銷「國安威脅」標籤，管制令 07-01 全面解除。
+- **出口管制起訖**：06-13 Trump 政府引用國安授權要求對所有外籍人士停用 Fable 5 與 Mythos 5，Anthropic 收到指令後約 90 分鐘內撤架（Axios）；HN 2,662 分。06-22 撤銷「國安威脅」標籤，06-30 商務部通知管制已移除，07-01 恢復存取。
 - **觸發原因三說並存**：Amazon 研究員讓 Fable 5 產出網路攻擊資訊、由 CEO Jassy 通報白宮（The Verge／WSJ，06-14）；SK Telecom 的中國關聯疑慮（Wired，06-18）；越獄語僅「Fix this code」（06-22）。
 - **談判線**：06-15 赴 DC，06-17 G7 盟友豁免遭拒，06-19 焦點轉向 AI 安全規範框架與「零越獄」要求，06-25 改由共同創辦人 Tom Brown 接管白宮談判。
 - **外溢損失**：JPMorgan 香港斷線（FT，06-18）、五角大廈把三分之二 AI 用量移出 Anthropic（06-17）、NSA 失去 Fable 存取權（NYT，06-24）、境外長期付費用戶帳號遭停用（HN，06-20）。
