@@ -412,11 +412,6 @@
   "preview": "Anthropic 發布新一代旗艦模型 Claude Fable 5.1 與 Claude Mythos 5.1——兩者為同一模型的不同防護層級，Fable 5.1 一般可用，Mythos 5.1 僅開放信任機構存取、針對資安與生命科學工作特別強化防護；新增反萃取（anti-distillation）機制，快取讀取費率",
   "sedimentedToday": [
     {
-      "id": "mythos",
-      "name": "Claude Mythos",
-      "pageType": "entity"
-    },
-    {
       "id": "tom-blomfield",
       "name": "Tom Blomfield",
       "pageType": "entity"

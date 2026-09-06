@@ -65,7 +65,13 @@
       "time": "09/03 12:56",
       "sentiment": "",
       "body": "Claude Sonnet 5 錯誤率升高事件已於 12:56 UTC 解決，官方時序為 12:37 調查中 → 12:47 監控修復結果 → 12:56 已解決。",
-      "focusTags": []
+      "focusTags": [],
+      "sedimented": [
+        {
+          "id": "sonnet-5",
+          "pageType": "entity"
+        }
+      ]
     },
     {
       "title": "官方文件更新：Claude Fable 5 on your plan",
@@ -228,6 +234,21 @@
     {
       "id": "managed-agents",
       "name": "Managed Agents",
+      "pageType": "entity"
+    },
+    {
+      "id": "mythos",
+      "name": "Claude Mythos",
+      "pageType": "entity"
+    },
+    {
+      "id": "opus-5",
+      "name": "Claude Opus 5",
+      "pageType": "entity"
+    },
+    {
+      "id": "sonnet-5",
+      "name": "Claude Sonnet 5",
       "pageType": "entity"
     },
     {

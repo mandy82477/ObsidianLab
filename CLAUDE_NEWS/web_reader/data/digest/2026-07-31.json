@@ -26,12 +26,6 @@
       "body": "Claude Sonnet 5 於今日 06:18 UTC 起出現效能降級，Anthropic 於 07:04 UTC 確認事件已解決。",
       "focusTags": [
         "[持續追蹤]"
-      ],
-      "sedimented": [
-        {
-          "id": "sonnet-5",
-          "pageType": "entity"
-        }
       ]
     }
   ],
@@ -278,11 +272,6 @@
     {
       "id": "cat-wu",
       "name": "Cat Wu",
-      "pageType": "entity"
-    },
-    {
-      "id": "sonnet-5",
-      "name": "Claude Sonnet 5",
       "pageType": "entity"
     }
   ]
