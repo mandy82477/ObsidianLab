@@ -25,3 +25,8 @@
 1. 本頁最缺的一句是官方立場：**Auto Mode 不是安全邊界**。有了這句，Q1「最該防什麼、官方修了沒」才答得出：官方不會「修」到 0%，讀者的選項是隔離環境＋監看。
 2. EFS 與提示注入是兩件事；頁面把 EFS 放在「提示注入攻擊面」節下（L112）是跑錯家。
 3. 懸置重複掛在兩張表，是本頁 21 筆逾期的一半來源。
+
+## 四、複驗後補查（UTC 05:2x）
+
+- **「擋下 89% 危險指令」出處**：[Anthropic 官方 blog 2026-08-07](https://claude.com/blog/auto-mode-default-in-claude-code)——「auto mode caught 89% of the same commands」（人類測試者 13.6%）；提示注入由第三方 Trajectory Labs 測 72 個間接注入情境 × 10 次＝720 次，「none … succeeded against Claude Fable 5, Opus 5, or Sonnet 5 running auto mode」；同文明寫「relies on classification systems and therefore does not eliminate risk. For high-stakes changes to production infrastructure, we still recommend reviewing Claude's actions yourself」。→ 結論表 Auto 列「官方擋到哪」格：89% 補此出處與日期；0% 的方法論（瀏覽器整合＋MCP 包 Chrome API）可一句帶過，與 embracethered 60–80%（網頁摘要＋`struct.py` 遮蔽）是**不同攻擊面的兩個數字**，不是互相推翻。
+- **EFS 日期跨頁不一**：本頁 09-01（官方）；`topics/anthropic-business` 寫 09-02（該頁 L533 又寫 09-01）→ 屬商業記者頁，走轉知帳本，不在本波直接改。
