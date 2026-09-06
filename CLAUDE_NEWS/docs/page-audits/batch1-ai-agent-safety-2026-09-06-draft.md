@@ -80,3 +80,7 @@
 ## I. `entities/claude-code` 表下補一句
 
 本表只收 Claude Code 自身的故障；提示注入、供應鏈與帳號被劫這類會打到你的安全問題不在本表，見 [[topics/ai-agent-safety]]「現在會打到你的」。
+
+## J. 技術彙整 L275 infostealer 條目的狀態行
+
+- ✅ **2026-08-30 官方處置**：Anthropic 主動通知受影響用戶、強制登出、移除已存付款方式並退款未授權扣款；惡意軟體家族含 Vidar、LummaC2、StealC、RedLine、Acreed、AMOS，平台本身未被入侵。
