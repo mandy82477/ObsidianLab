@@ -36,6 +36,7 @@
 | 別家（Codex／OpenCode／GLM）跟 Claude 比，現在誰強 | [[topics/model-task-leaderboard]]（各榜每週排名）；最近一次頭對頭查證見 [[topics/competitor-landscape]]「硬答案」 |
 | 大型 codebase 的做法主線（並行／context／記憶／把關） | [[topics/community-large-codebase-workflow]] |
 | 看模式背後的機制與實測證據 | [[topics/community-tech-patterns]] |
+| 我要開 auto 模式、接 MCP、或 clone 外部 repo，先看什麼會打到我 | [[topics/ai-agent-safety]]「現在會打到你的」 |
 
 ---
 
@@ -104,7 +105,7 @@
 | [[topics/community-pattern-trends]] | 🌐 社群 | ongoing | 🗓️ 週更：社群趨勢觀察——從 [[topics/community-tech-patterns]] 萃取的宏觀層，7 條成形趨勢的熱度曲線 + 對現有設計的啟示 |
 | [[topics/community-tech-discussions]] | 🌐 社群 | ongoing | 社群技術討論趨勢：設計哲學辯論、實證研究、架構反思（HTML vs MD、Skill Atrophy 等） |
 | [[topics/safety-china-trust-dispute]] | 🏛️ 政策/安全 | monitoring | 中美 AI 工具信任對峙：中國代理偵測程式碼/隱寫術指控 → Alibaba/Meta 禁用 → 中國官方「後門」警示 vs Anthropic 07-10 首度公開否認（2026-07-12 自 ai-agent-safety / government-policy 拆出）|
-| [[topics/ai-agent-safety]] | 🏛️ 政策/安全 | ongoing | AI agent 安全：GitHub Repo prompt injection 多媒體確認 + 假冒安裝包 + CVE/DoS 漏洞（中國信任對峙已分流至 [[topics/safety-china-trust-dispute]]）　↳ 子故事：[[topics/ai-agent-safety-archive]] |
+| [[topics/ai-agent-safety]] | 🏛️ 政策/安全 | ongoing | AI agent 安全：Auto 模式非安全邊界，惡意 `.git` 跨廠可觸發程式碼執行　↳ 子故事：[[topics/ai-agent-safety-archive]] |
 | [[topics/anthropic-government-policy]] | 🏛️ 政策/安全 | ongoing | Anthropic 政府政策攻防：出口管制主線已於 2026-07-01 解除，剩餘承諾落實、歐洲據點爭奪、Legion 訴訟等衍生支線持續觀察（中國信任對峙已分流至 [[topics/safety-china-trust-dispute]]）　↳ 子故事：[[topics/anthropic-government-policy-archive]] |
 | [[topics/official-community-gap]] | 🛠️ 工具/功能 | ongoing | 官方功能 vs 社群痛點缺口矩陣：哪些痛點官方正在解決、哪些結構性缺席；08-16 起持續有新缺口/矩陣更新 |
 | [[topics/coding-workflow-guide]] | 🛠️ 工具/功能 | ongoing | 🗓️ 週更 程式開發實戰手冊：我現在在做這件事，該下哪個 skill、它會做什麼、有什麼坑——以流程階段為軸（官方技能不按開發領域切） |

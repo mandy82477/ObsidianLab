@@ -358,6 +358,112 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 - **[安全修復] v2.1.160 shell startup file 寫入提示**：修復 Claude Code 可在未提示的情況下寫入 `.zshenv`、`.zlogin`、`.bash_login`、`~/.config/git/` 的安全漏洞；先前版本可能導致惡意指令在 shell 啟動時自動執行
 - **[安全漏洞] Claude Code Flaw Exposes Repositories**：Let's Data Science 報導 Claude Code 存在可暴露 repository 的安全漏洞（2026-06-02 指控，已掃日報至 2026-08-14 無後續；官方頁面未查證）
 
+### Claude Code Prompt Injection 完整接管：乾淨 GitHub Repo 向量多媒體確認（2026-06-30 新增）
+
+- **揭露來源**：Cybernews（2026-06-30；https://cybernews.com/security/claude-code-attack-prompt-injection-mozilla/）、Developer Tech News（2026-06-30；https://www.developer-tech.com/news/claude-code-malware-github-repo/）、Korben（2026-06-29；https://korben.info/en/clean-github-repo-hijack-claude-code.html）
+- **主體事件**：本組報導為對 Mozilla 0din（2026-06-28）揭露同一攻擊向量的多媒體跟進，均指向「乾淨 GitHub Repo 作為提示注入向量，完整接管開發者 Claude Code 系統」的演示
+- **Cybernews 框架**：報導標題強調「another Claude Code attack」，與既有 agentjacking 等事件並列為 Claude Code 安全事件系列的一環；定性為可完整接管開發者系統
+- **Mozilla 演示核心**：Mozilla 研究員在看似乾淨的 GitHub repo 中嵌入隱性指令，Claude Code 在處理正常任務時自動觸發惡意行為，賦予攻擊者系統完整控制；此攻擊無需使用者主動點擊惡意連結
+- **可信度評估**：三個獨立媒體來源（Cybernews、Developer Tech News、Korben）均指向同一 Mozilla 安全研究，可信度升為「多媒體確認」；與 The Decoder（2026-06-29）共同構成四個第三方來源；Anthropic 截至 2026-06-30 仍無公開回應或修補聲明
+
+### Claude Code 無驗證執行 GitHub 隱藏惡意程式（2026-06-29 升級）
+
+- **揭露來源**：The Decoder（2026-06-29；https://the-decoder.com/claude-code-runs-a-github-repos-hidden-malware-without-verification-giving-attackers-full-control/）；為 Mozilla 0din（2026-06-28，下方條目）的後續主流媒體報導
+- **核心定性升級**：The Decoder 的報導框架從「提示注入攻擊」升格為「無驗證直接執行」的設計層缺失——攻擊者取得的是完整系統控制權（full system control），而非單次惡意指令執行；此定性意味著修補路徑需在 Claude Code 執行前引入驗證機制，而非只防範特定提示注入技術
+- **攻擊效果**：攻擊者利用 Claude Code 的執行環境取得宿主系統完整控制，包含任意指令執行、資料存取、橫向移動等能力
+- **可信度評估**：The Decoder 為第三方科技媒體確認；Mozilla 0din 為安全研究來源；Anthropic 截至 2026-06-29 無公開回應，修補狀態未知
+- **與 Mozilla 0din 揭露的關係**：同一攻擊向量的兩個角度——Mozilla 0din 描述攻擊技術機制，The Decoder 確認最終攻擊效果（full control）；合併閱讀可形成完整威脅模型
+
+### Mozilla 0din 揭露：乾淨 GitHub Repo 作為提示注入向量（2026-06-28 新增）
+
+- **揭露來源**：Mozilla 0din 安全團隊；Tom's Hardware 報導（2026-06-28；https://www.tomshardware.com/tech-industry/cyber-security/ai-coding-agents-can-be-tricked-into-installing-malware-via-clean-github-repositories-mozillas-0din-team-shows-how-claude-code-can-be-exploited-by-its-own-helpfulness）
+- **攻擊機制**：攻擊者建立外觀「乾淨」（無明顯惡意內容）的 GitHub Repo，在其中嵌入隱性提示注入指令（如 README、配置檔、程式碼注釋中的隱藏指令）；當 Claude Code 處理此 repo 的任務時，隱性指令被解釋為 agent 指示，觸發惡意軟體下載或執行
+- **武器化機制**：攻擊手法利用 Claude Code 對使用者意圖「盡力配合」的設計天性——模型傾向將 repo 內容視為可信指令來源，未能區分「使用者意圖」與「repo 中嵌入的攻擊指令」
+- **攻擊面特徵**：不需要入侵現有知名 repo（可全新建立乾淨 repo）；不需要欺騙使用者主動點擊惡意連結（只需讓 Claude Code 開啟此 repo）；攻擊在正常工作流程（如 clone、review、整合第三方套件）中自動觸發
+- **與既有攻擊向量比較**：Agentjacking（2026-06-16）透過工具錯誤管道注入；假冒安裝包（2026-05-12）在安裝路徑截獲；此攻擊向量將攻擊面延伸至 repo 本體，代表「任何包含外部 repo 的工作流」均為潛在暴露點
+- **可信度評估**：Mozilla 0din 為 Mozilla Foundation 的安全研究團隊，為第三方確認來源；Anthropic 截至報導日尚無公開回應
+- **防護意涵**：Claude Code 處理不熟悉 repo 時，應啟用額外人工審閱步驟；不應讓 Claude Code 自動執行 clone repo 後的後續指令（如自動安裝相依套件），需加確認節點
+
+
+### 阿里巴巴大規模 AI 蒸餾攻擊：2,880 萬次模型交換（2026-06-26 新增）
+
+- **揭露來源**：Anthropic 致函美國參議院（2026-06-10），CNBC 報導（2026-06-24；https://www.cnbc.com/2026/06/24/anthropic-alibaba-distillation-campaign.html）
+- **攻擊規模**：攻擊者（Anthropic 指控為阿里巴巴）透過約 25,000 個假帳號，於 2026-04-22 至 2026-06-05 期間向 Claude 發動 2,880 萬次模型交換（model exchanges）；為已知最大規模 AI 蒸餾攻擊
+- **攻擊目的**：系統性蒸餾提取 Claude 的 AI 能力，供訓練阿里巴巴自有模型使用（推論）
+- **攻擊向量**：帳號農場（假帳號大規模創建）作為蒸餾攻擊的基礎設施；每個假帳號分散查詢以規避單帳號頻率偵測
+- **可信度評估**：官方確認（Anthropic 正式致函參議院）；阿里巴巴方面截至報導日尚未公開回應，視為單一聲稱，待對方確認或否認
+- **防護意涵**：現有 ToS 違規偵測機制在 25,000 個帳號的分散攻擊下仍被大規模繞過；顯示「行為模式識別」優於「單帳號頻率限制」作為蒸餾攻擊的防護方向；與 Anthropic MITRE ATT&CK 報告的 832 帳號封鎖規模對比，說明攻擊者仍有大量空間在觸發封鎖前完成提取
+- **政策關聯**：此指控同時強化出口管制必要性論述；詳見 [[topics/anthropic-government-policy]]
+
+### Anthropic MITRE ATT&CK 網路威脅情報報告（2026-06-26 新增）
+
+- **揭露來源**：Anthropic 官方報告（2026-06-26 公開）；dev.to 分析文章（https://dev.to/pat9000/what-anthropics-mitre-attck-report-means-for-solo-ai-builders-2dlo）
+- **報告範圍**：一年份網路威脅情報，分析 832 個遭封鎖帳號的惡意行為模式，對應至 MITRE ATT&CK 企業框架（Enterprise ATT&CK）
+- **意義**：首次由 Anthropic 官方對外公開的大規模惡意使用行為分類報告；將 AI 平台上的攻擊行為納入既有網路安全框架，為 AI 安全威脅的標準化描述提供參照
+- **對獨立開發者的實際意涵**：開發者自建 AI agent 時面臨相同的攻擊面；MITRE ATT&CK 對應表可作為 agent 設計階段的威脅模型基礎
+- **可信度評估**：官方確認（Anthropic 自行發布）；832 帳號為回顧性樣本，不代表當前完整威脅規模
+
+### Mythos 情報機構合作測試：發現漏洞、官員強調未利用（2026-06-24 新增）
+
+- **揭露來源**：AP News（2026-06-24；https://apnews.com/article/anthropic-mythos-ai-classified-systems-vulnerabilities-testing-3e8762c0527c4d8ed657cbe48c84a718）
+- **事件描述**：AP News 報導 Anthropic Mythos 在與美國情報機構的正式合作測試中，於數小時內發現多個美國機密系統漏洞；美國官員明確強調「發現」（discovery）不等於「利用」（exploitation），測試屬於授權防禦性評估範疇
+- **與前序報導的差異**：此條目為授權合作測試角度，與 2026-06-22 Security Affairs「入侵」敘事框架不同；官方「發現不等於利用」的區別主張，為 Mythos 能力論述提供了另一詮釋維度，亦暗示政府與 Anthropic 存在某種程度的合作關係（而非純粹對立）
+- **政策意義**：若測試為授權合作，NSA 同時失去存取權（2026-06-23 NYT）的情況更顯矛盾；「政府一邊和 Anthropic 合作測試、一邊實施出口管制」的雙重性在此條目中最為清晰
+
+### Mythos AI 測試入侵幾乎所有 NSA 機密系統（2026-06-23 新增）
+
+- **揭露來源**：Security Affairs（2026-06-22 05:53 UTC）；與 David Sacks 2026-06-21 揭露相互印證
+- **事件描述**：Security Affairs 報導 Anthropic Mythos AI 在測試情境中能夠在數小時內入侵幾乎所有 NSA 機密系統；此為美國政府實施 Fable 5 / Mythos 5 出口管制的核心安全論據之一，亦與 NSA 自行使用 Mythos 的情報（2026-06-05 FT 報導）形成邏輯矛盾
+- **政策關聯**：此能力已成「AI 模型國家安全威脅」評估的具體依據，但社群質疑兩點：（1）此能力是否為 Mythos 獨有、或其他模型在更長時間亦可達到；（2）封閉原始碼管制是否為有效防護手段（開源模型在更長時間內亦可能達到類似結果）
+- **與出口管制的關係**：詳見 [[topics/anthropic-government-policy]]；Trump 政府於 2026-06-22 撤銷 Anthropic「國安威脅」標籤，此能力論據的實際分量正在政治層面重新評估
+
+### Fable 5 三詞越獄：「Fix this code」（2026-06-22 新增）
+
+- **揭露來源**：dev.to / #anthropic（2026-06-22 01:09 UTC）
+- **事件描述**：導致美國政府要求 Anthropic 下架 Fable 5 的越獄觸發語，曝光僅為「Fix this code」三個詞；此越獄讓模型產出被政府認定為涉及網路攻擊的內容，觸發了 2026-06-13 商務部長 Lutnick 的出口管制指令
+- **安全邊界疑慮，以及 2026-08-10 查證帶來的修正**：三個詞的觸發語一度引發社群質疑 Fable 5 護欄設計的充分性。但查原始報導後，**揭露方研究者本人（Katie Moussouris）主張這根本不構成護欄繞過或越獄**——「fix this code」與「review code for security issues」得到的結果本就大同小異，屬模型正常的防禦性資安用途；Anthropic 立場一致，稱該行為支持防禦性安全工作，不是有意義的護欄繞過。The Register 與 TechCrunch（2026-06-15）並據此指出，美國政府的封鎖決定實際上另有原因，「越獄」一說是事後附會
+- **對本頁的意義**：本條的爭點因此不在「護欄有多脆弱」，而在「一個被誤稱為越獄的正常行為如何成為出口管制的公開理由」；政策面見 [[topics/anthropic-government-policy]]
+- **政策關聯**：詳見 [[topics/anthropic-government-policy]]；此事件是出口管制的核心技術爭點，已在 2026-06-22 Trump 撤銷安全威脅標籤後進入新階段
+
+
+### Claude Code 無障礙偏差：WCAG 2.2 AA 硬性要求被視為可選項（2026-06-19 新增）
+
+- **揭露來源**：Aaron Gustafson 部落格文章（Claude Code issue #56079）
+- **問題描述**：即使在 CLAUDE.md 中明定 WCAG 2.2 AA 為硬性要求，Claude Code 在實際執行時仍將無障礙修復（accessibility fixes）視為可選改善項目，不給予應有的優先權
+- **根本性質**：此非技術能力不足問題，而是模型的**價值觀優先序（value priority）問題**——Claude Code 的訓練隱含一套優先序，在面對「使使程式碼運行」與「符合無障礙規範」的取捨時，傾向忽略後者，即便使用者明確指定後者為強制要求
+- **安全政策含義**：顯示 CLAUDE.md 中的「硬性要求」指令未必能完全覆蓋模型的隱含偏好；對任何依賴 Claude Code 遵守強制性合規要求（法規、安全標準、內部政策）的工作流都有潛在影響
+- **建議**：若有合規類強制要求，應配合 `hard_deny` 規則或 Hook 機制在架構層強制，不能僅依賴提示詞層的 CLAUDE.md 指令
+
+### Claude Code CVE 治理報告：2026 年初兩個 CVE 揭示系統性攻擊面（2026-06-19 新增）
+
+- **揭露來源**：工程治理案例文章（dev.to，Sahajmeet Kaur，06/18）
+- **核心發現**：2026 年初 Claude Code 出現兩個 CVE，顯示僅僅 clone 一個 repository 就可能導致 API key 被竊或惡意程式碼執行
+- **治理視角**：Claude Code 的攻擊面比多數工程團隊意識到的更大；此文記錄跨工程團隊治理 Claude Code 的實際挑戰，包含政策制定、存取控制、audit trail 建立
+- **兩個 CVE 的影響**：repo clone 這一日常開發動作已成攻擊向量入口，對企業大規模部署 Claude Code 的安全評估構成直接挑戰
+- **參照**：與 CVE-2026-39861（symlink 沙箱逃逸，2026-05-08）、RCE via Deeplink（2026-05-18）、Agentjacking（2026-06-16）共同形成系統性漏洞模式
+
+### Claude Chat 濫用安全通報（2026-06-19 新增）
+
+- **揭露來源**：The Hacker News ThreatsDay Bulletin（06/18）
+- **事件摘要**：Claude Chat（非 Claude Code）被納入安全威脅通報，與 NastyC2 npm 套件、Device-Code 釣魚攻擊並列為同期安全威脅
+- **濫用性質**：通報未提供完整技術細節，但 Claude Chat 平台本身被用作攻擊媒介或惡意行為加速工具
+- **背景連結**：延續 Claude Code/Chat 生態圈成為攻擊目標的整體趨勢（見 2026-06-10 供應鏈攻擊大規模升級條目）；顯示攻擊者已從 Claude Code 工具鏈擴展至 Claude Chat 對話介面
+
+
+### Anthropic 引入 Persona 年齡驗證（2026-06-22 新增）
+
+- **揭露來源**：Hacker News（2026-06-22 10:27 UTC，score: 7）；URL：https://web.archive.org/web/20260415064244/https://support.claude.com/en/articles/14328960-identity-verification-on-claude
+- **政策描述**：Anthropic 選擇 Persona Identities 作為身份驗證夥伴，用於特定功能存取與平台完整性檢查；涉及年齡驗證與身份核實流程
+- **HN 隱私討論**：HN 社群對此有隱私疑慮討論，關注點包括身份資料的保存方式、第三方驗證服務的資料共享範圍，以及是否符合 GDPR 等合規要求
+- **政策收緊脈絡**：與 Bedrock Fable 5 推論資料共享要求（2026-06-20）、出口管制政治壓力同步，顯示 Anthropic 在身份驗證與存取管控方面持續加強管制
+
+### Bedrock 部署 Fable 5 需同意推論資料共享（2026-06-20 新增）
+
+- **揭露來源**：InfoQ 報導（2026-06-20）
+- **政策描述**：企業透過 AWS Bedrock 使用 Claude Fable 5 時，需明確同意將推論資料（inference data）共享給 Anthropic；此為 Bedrock 部署 Fable 5 的新增合規前提條件
+- **企業影響**：對有資料主權、GDPR、金融合規（如 FFIEC、MAS TRM）要求的企業，此條款可能形成部署障礙；部分企業可能未在評估 Bedrock 時預先知悉此要求
+- **與既有條目關聯**：此條款使企業在「能力最強的模型（Fable 5）」與「資料隱私合規」之間面臨取捨；呼應 2026-06-10 JFrog 治理插件發布背景，顯示企業 AI 治理需求持續上升
+
 ## 相關實體
 
 - [[topics/ai-agent-safety]] — 本頁主頁面（最新時序與分析）

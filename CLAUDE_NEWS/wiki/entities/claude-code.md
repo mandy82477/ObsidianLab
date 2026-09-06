@@ -12,7 +12,7 @@ parent: null
 children: "[]"
 page_role: "root"
 days_since_news_subtree: 1
-inbound_links: 81
+inbound_links: 80
 attribution_count: 441
 attribution_last: "2026-09-05"
 top_source: "github-issues"
@@ -96,6 +96,8 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 | MCP server 沒有 token 刷新機制（#5706） | 自建 MCP server 的人 | 🔴 | 改用長效期 token |
 | MCP OAuth 在 `resource` 參數尾端多一個斜線，Entra ID 驗證失敗（#52871） | 企業 SSO 走 Microsoft Entra ID | 🔴 | 無繞法；改用非 SSO 的連線方式 |
 | 排程 routine 呼叫 custom connector 的 MCP 工具一律要求核准（#61015） | 用排程 routine 的人 | 🔴 | 無繞法；改為手動觸發 |
+
+本表只收 Claude Code 自身的故障；提示注入、供應鏈與帳號被劫這類會打到你的安全問題不在本表，見 [[topics/ai-agent-safety]]「現在會打到你的」。
 
 **接下來看什麼**：這幾條翻 ✅ 的那一天會寫在本頁分組裡，升版判斷見 [[feature-radar]]「從你現在的版本升上去，會遇到什麼」；官方建議的做法見 [[topics/coding-workflow-guide]]。
 

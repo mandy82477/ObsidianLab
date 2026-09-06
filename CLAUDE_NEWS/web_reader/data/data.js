@@ -776,14 +776,15 @@ window.WIKI_DATA = {
       "pill": "active",
       "firstSeen": "",
       "startDate": "2026-04-27",
-      "lastUpdated": "2026-09-05",
+      "lastUpdated": "2026-09-06",
       "lastNewsUpdate": "2026-09-04",
       "updateFreq": "",
       "parent": "",
-      "summary": "**最新態勢（2026-09-02）：** 唯一的新漏洞揭露是 The Hacker News 報導惡意 `.git` 設定檔可誘使 Claude、Codex、Cursor 等多款 AI coding agent 執行攻擊者指定程式碼，跨廠通用、非 Claude 單一缺陷。其餘四則都是既有主線的跟進：Guardian …",
-      "latestHeadline": "最新態勢（2026-09-02）： 唯一的新漏洞揭露是 The Hacker News 報導惡意 `.git` 設定檔可誘使 Claude、Codex、Cursor 等多款 AI coding agent 執行攻擊者指定程式碼，跨廠通用、非 Claude 單一缺陷。其餘四則都是既有主線的跟進：Guardian 為 09",
+      "summary": "**現在最該知道的：** 官方已把 Auto 模式定性為 best-effort convenience control、不是安全邊界，所以「等官方修到 0%」不會發生。你能動的是隔離環境與監看，不是等修補。下方「現在會打到你的」列出十一個面，以及各自能先做的一件事。 **這一個月的方向：** 提示注入已不是單點漏洞—…",
+      "latestHeadline": "現在最該知道的： 官方已把 Auto 模式定性為 best-effort convenience control、不是安全邊界，所以「等官方修到 0%」不會發生。你能動的是隔離環境與監看，不是等修補。下方「現在會打到你的」列出十一個面，以及各自能先做的一件事。",
       "readerDomains": [
-        "🏛️ 政策/安全"
+        "🏛️ 政策/安全",
+        "💻 開發實務"
       ]
     },
     {
@@ -2418,7 +2419,8 @@ window.WIKI_DATA = {
     "model-task-leaderboard",
     "competitor-landscape",
     "community-large-codebase-workflow",
-    "community-tech-patterns"
+    "community-tech-patterns",
+    "ai-agent-safety"
   ],
   "digestIndex": [
     {

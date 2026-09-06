@@ -332,6 +332,17 @@ python scripts/gen_wiki_frontmatter.py --list-signal "⚠️ 高引用但停滯"
 投資訊號回顧（5h）：結算 N 列（✅ a／❌ b／～ c／不可驗證 d），剩餘 ⏳ M 列／雲端 egress 封鎖，跳過
 ```
 
+### 5i. ai-agent-safety 三表退場複查（主編親做）`[加入: 2026-09-06]`
+
+`wiki/topics/ai-agent-safety.md` 的 `## 現在會打到你的`（上限 11 列）與 `## 提示注入已不是單點漏洞，是產業級攻擊面`（上限 8 列）都有退場條文，但沒有任何一步會去跑它——退場只在每日 ingest 順手做，逾 90 天那條實際上不會被主動觸發。本步即其週更觸發邊，複查規則見 `.claude/rules/wiki-ingest-safety-policy.md`「ai-agent-safety 更新規則」第 2、3 條。
+
+逐列檢查 `## 現在會打到你的` 的「最後動態」是否距今逾 90 天且本輪無新回報，符合即依規則移除並在事件記錄補註記；表未滿載時挑候選補位並移除其註記。`## 提示注入…攻擊面` 表滿 8 列時汰除最舊者，並確認導言／收斂點／「仍未有答案的」三處則數與表列數一致。
+
+**回報格式（納入步驟 8 的 lint 紀錄）：**
+```
+安全三表退場複查（5i）：（複查 N 列，移除 a／補位 b／不動 c）
+```
+
 ### 6. CLAUDE.md 健檢
 
 讀取 `wiki/CLAUDE.md`、`.claude/rules/wiki-ingest.md`、`.claude/rules/wiki-ingest-format.md`、`.claude/rules/wiki-reporter-shared.md` 與**本檔（`.claude/commands/wiki-lint.md`）自身** `[加入: 2026-08-28]`，依序執行下列各項檢查。
@@ -609,6 +620,7 @@ python scripts/check_reader_language.py --page <slug>   # 單頁清單
 - 跨家榜單週更（5b）：（已更新 N 榜／M 榜無法取得（列出）／雲端 egress 封鎖，跳過）
 - 逾期待查證清算（5c）：（盤點 N 筆，本輪處理 M 筆：查實 A／確認官方未載 B／失效移除 C，結案回掃上修 D 頁，剩餘 N-M 筆／雲端 egress 封鎖，跳過）
 - 投資訊號回顧（5h）：（結算 N 列：✅ a／❌ b／～ c／不可驗證 d，剩餘 ⏳ M 列／雲端 egress 封鎖，跳過）
+- 安全三表退場（5i）：（複查 N 列，移除 a／補位 b／不動 c）
 - 讀者模擬：（3 題結果：✅/⚠️ 已修復/❌ 待辦，各附一句說明）
 - 質疑代打（7b）：（seed 與抽中題號，各題 ✅ 附證據行/⚠️ 修了什麼/❌ 待辦；時效燈亮時原樣轉述）
 - lint 自我遵守率：（N/6 位記者回報一次過；退回者列出類別與缺項）
