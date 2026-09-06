@@ -1,11 +1,11 @@
 ---
 name: page-audit-review
-description: CLAUDE_NEWS 頁面健檢與重設計流程（使用者 review 偏好）——對 wiki 單一頁面做「六問健檢 → 冷讀者實測 → 設計 agent＋評審 agent 來回 → 使用者裁決 → 含維護者同步的實作 → 原考題複驗 → 一週回訪」。使用者說「健檢這頁」「細修／精修頁面」「這頁夠不夠直覺」「review 頁面品質」「重新設計版面」「這頁要不要拆」時套用；也適用於任何「先問頁面存在的理由、再談版面」的審查。
+description: CLAUDE_NEWS 頁面健檢與重設計流程（使用者 review 偏好）——對 wiki 單一頁面做「六問健檢 → 冷讀者實測 → 主編官方查證 → 設計 agent＋評審 agent 來回 → 使用者裁決 → 含維護者同步的實作 → 原考題複驗 → 一週回訪」。使用者說「健檢這頁」「細修／精修頁面」「這頁夠不夠直覺」「review 頁面品質」「重新設計版面」「這頁要不要拆」時套用；也適用於任何「先問頁面存在的理由、再談版面」的審查。
 ---
 
 # 頁面健檢與重設計
 
-派任何 agent 前，prompt 開頭逐字貼 `.claude/skills/page-audit-review/dispatch-prefix.md` 的共用前綴。總帳與分層在 `docs/page-audits/ledger.md`。
+本資料夾自成一套：`SKILL.md`（本檔，主 session 讀）、`dispatch-prefix.md`（每個 agent prompt 逐字貼的共用前綴＋設計者／評審契約＋交棒預算）、`templates/`（六種角色的派工模板與查證檔骨架）。總帳與各波產物在 `docs/page-audits/`（`ledger.md` 是總帳）。
 
 ## 總則（使用者原話）
 
@@ -16,12 +16,30 @@ description: CLAUDE_NEWS 頁面健檢與重設計流程（使用者 review 偏�
 - 行動導向仍要有：每則有「接下來看什麼」「你的選項」，列選項不下指令。
 - 輸出要短：結論五行內，細節下沉。
 - 拆頁是合法選項，用子故事三題判（自己的問題／自己的結論與時序／會被獨立引用），不用行數當理由；母頁拆完仍須是雷達不是目錄。
-- 模型：冷讀者、設計、評審用 Opus；機械掃描與實作用 Sonnet。派工前先報價。
+- 選頁順序：**廣度優先**——從已審頁往下，A 審完接著審 A 連出去的所有子頁，一層審完再往下；同層依入邊排序；**一次一頁**（規模改變要使用者明確批准，「接續做」＝沿用原規模）。
+- 模型：健檢卡、冷讀者、設計、評審用 Opus；實作與機械掃描用 Sonnet。每頁開工前把報價寫進 ledger（授權自跑時不必等批准）。
+
+## 一頁的執行順序（主 session）
+
+| 步 | 做什麼 | 平行／續用 | commit |
+|---|---|---|---|
+| 0 | `ToolSearch select:SendMessage` 驗續用可用；跑機械輸入；ledger 加報價列 | — | ✓ |
+| 1 | 派**健檢卡**（`templates/health-card.md`）與**冷讀者**（`templates/cold-reader.md`）；主 session 同時做**官方查證**（`templates/verified.md`） | 三者平行 | 各交件即 commit |
+| 2 | 冷讀者交件後 **SendMessage 續用健檢卡**做預測對照 | 續用 1 | ✓ |
+| 3 | 定使命句（授權自跑時主 session 定並記 ledger）；派**設計者**（`templates/designer.md`）——不必等第 2 步 | — | ✓ |
+| 4 | 派**評審**（`templates/reviewer.md`）；提案若中途更新，立刻通知評審「以現行檔為準」 | — | ✓ |
+| 5 | **SendMessage 續用設計者**做第二輪處置對照（評審指名親改項＋日期／數字更正）；評審若改版再通知設計者 | 續用 2 | ✓ |
+| 6 | 派 **Sonnet 實作者**（`templates/implementer.md`）；定稿若更新立刻通知 | — | checkpoint ✓ |
+| 7 | **續用評審**做實作複核＋派**新冷讀者**複驗（原四題逐字） | 平行；續用 3 | ✓ |
+| 8 | 兩者回來合併成最後一批，**續用實作者**改；主 session 抽驗三處、跑 `run_tests.py`＋`build_web.py` | 續用 4 | ✓ |
+| 9 | 寫 `wiki/log.md` Query 條目、ledger 定稿列＋回訪清單＋校準表；把這波學到的新問寫進本 skill；`git fetch` 無新 commit 才 push | — | push |
+
+裁決節奏：**拆頁／砍整節／改使命句／砍整頁／併頁／新增頁**停下來問使用者，未回覆照保守預設並在 ledger 標「主 session 代判」；其餘非阻擋裁決主 session 代判並記 ledger，**代判的數字要進評審重算**。額度耗盡：session cron 排時接手，不停 agent。工作區有其他 session 的未提交檔時不碰它、`git add` 指名。
 
 ## 健檢卡六問（每問附行號、節名、數字）
 
-1. **這頁要回答什麼**：(a) 使用者問過的〔Query 史、reader-notes、現場口述〕∪ (b) 設計上追蹤的〔index 路由、蒐集邊界、維護者規則、入邊語境〕→ 考題集，每題標 a/b、加「讀者起點」欄、預測跳數（**跳數＝開了幾頁**，頁內捲動不算）與卡點行號。使命句定稿要使用者確認（授權自跑時主 session 定並記 ledger）。
-2. **版面達得到嗎**：逐節答「服務哪幾題、雷達還是百科、留／改／併／砍／下沉／拆」。另做三項機械掃描：**首屏路由**（index 前 40 行有沒有路到本頁、看不看得見；**射程＝index 上指向本頁與本頁所有鄰居的每一列**，逐列問那條路送到的頁答不答得了本頁考題、多久沒更新——被送到錯的表或停更的鄰居比沒路更糟）、**數字自洽**（頁內互引的數字有無矛盾）、**結論句反向掃描**（結論句對同頁反例）、**懸置 metadata 裸露筆數**（`標／查／訊／複` 括號與 `⟨Q-nn⟩` 出現在表格正文的筆數；讀者語言閘不含這些，閘綠不等於合格）、**符號系統計數**（正文並存幾套狀態符號、各有無圖例；一頁只准一套讀者語言）、**證據等級混排**（匿名貼文與一級媒體同表同欄同權重）、**節名或標題帶日期時，內容最新日期對不對得上**。
+1. **這頁要回答什麼**：(a) 使用者問過的〔Query 史、reader-notes、現場口述〕∪ (b) 設計上追蹤的〔index 路由、蒐集邊界、維護者規則、入邊語境〕→ 考題集，每題標 a/b、加「讀者起點」欄、預測跳數（**跳數＝開了幾頁**）與卡點行號。
+2. **版面達得到嗎**：逐節答「服務哪幾題、雷達還是百科、留／改／併／砍／下沉／拆」。另做機械掃描：**首屏路由**（射程＝index 上指向本頁與所有鄰居的每一列，逐列問那條路送到的頁答不答得了本頁考題、多久沒更新——被送到錯的表或停更的鄰居比沒路更糟）、**數字自洽**、**結論句反向掃描**（結論句對同頁反例）、**懸置 metadata 裸露筆數**（讀者語言閘不含 `標／查／訊／複`、`⟨Q-nn⟩`，閘綠不等於合格）、**符號系統計數**（並存幾套、各有無圖例）、**證據等級混排**、**節名帶日期是否對得上內容**。
 3. **重設計丟什麼留什麼**：只在第 2 問不及格才進設計分支。
 4. **鄰居與節點三問**：鄰居清單由 `wiki_graph.py explain`／`similar` 機械產生。每對鄰居一句分工原則＋違反處行號。本頁與每個鄰居各答**節點三問**（使用者原話：「該節點存在是否必要、是否需要延伸、或是合併」）：(a) 存在必要——子故事三題反問，全否即砍或併的候選；(b) 該延伸——入邊高內容薄、考題落不到任何頁、供料塞不進現有節、同一子題三頁各記一份；(c) 該合併——similar 高、同一則新聞落兩頁、分工寫不出一句。落成「節點去留」欄：留／延伸（長什麼）／併入本頁／本頁併入它／砍／缺一頁。
 5. **表格淘汰機制**：表格普查（prepend／append／static × 規則有無淘汰詞），無機制的成長表是爆版點；每張表給「覆寫式或累積式＋判準句」。
@@ -29,42 +47,27 @@ description: CLAUDE_NEWS 頁面健檢與重設計流程（使用者 review 偏�
 
 第 4、5 問的腳本輸出先跑完當輸入，不讓 Opus 邊健檢邊手查。
 
-## 角色分離
+## 角色一覽
 
-| 角色 | 做什麼 | 紀律 |
-|---|---|---|
-| 健檢卡 | 六問＋預測卡點；冷讀者交件後**續用**做預測對照 | 只診斷，不開藥 |
-| 冷讀者 | 獨立 context，從 index 沿連結實答考題；記路徑、跳數、卡點、原句；總評百科或雷達＋三個最想改＋內部用語外洩＋哪兩頁搞混 | 不知產製流程；不可開已知檔名、不可讀 docs/ |
-| 主編查證 | 主 session WebFetch／gh 查官方現況，寫 `<slug>-<date>-verified.md` | 記者與 agent 無 web 工具，這是唯一抓得到「頁面 vs 官方」的層；樞紐頁必做 |
-| 設計者（一位，只派一次） | 一個推薦案＋被否決者各一行；逐行號去向表（含整頁去向小節）；維護者同步逐字；交件前自跑兩閘；契約逐字見 dispatch-prefix | 整頁動作一律裁決點交使用者 |
-| 評審 | 四視角（明天的維護者／機器／冷讀者／治理），每條 🔴🟡 附可貼上修法，結尾「照順序執行」清單＝實作單；治理視角核節點三問答了沒、整頁去向有無偷渡 | 沒有解法的 🔴 不是評審是抱怨 |
-| 設計者第二輪 | 有 SendMessage（CLI）→ 續用原設計者做評審條目→處置對照，只補「評審方向對、話沒說完」處；沒有（桌面版）→ 評審修法即實作單 | 重派＝全量重讀，只在拿不到續用時接受 |
-| 使用者 | 裁決：拆頁／砍整節／改使命句／砍整頁／併頁／新增頁；其餘主 session 代判並記 ledger | — |
-| 實作（Sonnet） | 照實作單做，維護者同步同一 commit；跨維護者走轉知帳本；不 git | 偏離定稿要列理由；狀態符號判不出標保守值回報，不猜 ✅ |
-| 評審複核 | 續用評審逐步核「照做／偏離／漏做」，抽驗去向表、驗紅新閘 | — |
-| 複驗冷讀者 | **一律新 agent**拿原考題再考；一週後回訪 | 禁續用 |
+| 角色 | 模型 | 一句紀律 | 模板 |
+|---|---|---|---|
+| 健檢卡 | Opus，每頁一位 | 只診斷不開藥；交件後續用做預測對照 | `templates/health-card.md` |
+| 冷讀者 | Opus，獨立 context | 不知流程檔名、只從 index 沿連結；複驗**一律新 agent** | `templates/cold-reader.md` |
+| 主編查證 | 主 session | 一手優先；每波 4–8 件；分次 append 並通知在跑的 agent | `templates/verified.md` |
+| 設計者 | Opus，只派一次 | 一個推薦案＋逐行去向表＋維護者同步；整頁動作一律裁決點；第二輪用續用 | `templates/designer.md` |
+| 評審 | Opus，一位 | 每條 🔴🟡 附可貼上修法，結尾實作單；實作後續用做複核 | `templates/reviewer.md` |
+| 實作 | Sonnet，一位 | 照實作單逐步驗；不 git；狀態判不出標保守值不猜 ✅；修正批次用續用 | `templates/implementer.md` |
 
-主 session：唯一可 git；評審與設計者互相改版時要明說哪份是現行檔；額度耗盡用 session cron 排時接手，不停 agent。
+## 主編官方查證
 
-## 主編官方查證（主 session 做，與健檢卡／冷讀者平行）
+記者、健檢卡、設計者都沒有 web 工具，這是唯一能抓到「頁面 vs 官方現況」落差的層；每波都抓到過事實錯誤。**查什麼**：帶數字或日期的結論句、去重後的逾期懸置、每題考題的官方錨句、健檢卡交來的查證表。**去哪查**：官方一手站優先，GitHub 用 `gh api`（完整 changelog 本機 grep）與 `gh issue view`；抓不到才 WebSearch 多家交叉並標二手。**行號口徑**：檔案原始行號含 frontmatter，不確定寫節名。**一手優先**：與任何一方衝突以一手為準；用頁面自己的記錄反駁一手是倒過來的。骨架與常用來源見 `templates/verified.md`。
 
-記者、健檢卡、設計者都沒有 web 工具，這是唯一能抓到「頁面 vs 官方現況」落差的層；每波都抓到過事實錯誤（$35M 基金性質、Apps Gateway 非第三方、Auto Mode 非安全邊界、日期定位）。
+## 評審檢查清單（實例病，逐條過）
 
-- **查什麼**：(1) 頁面每個帶數字或日期的結論句（牌價、版本、百分比、生效日）；(2) 全部逾期懸置——以事實為單位去重後逐件查；(3) 考題集每題的「錨」（那一句官方原文能直接答讀者的問題）；(4) 健檢卡交來的「需官方查證表」。
-- **去哪查**：官方一手優先——`platform.claude.com/docs`、`claude.com/blog`、`anthropic.com/news`、`support.claude.com`、`code.claude.com/docs`；GitHub 用 `gh`：`gh api repos/anthropics/claude-code/contents/CHANGELOG.md -H "Accept: application/vnd.github.raw"` 抓完整 changelog 本機 grep、`gh issue view <n> -R anthropics/claude-code --json state,updatedAt,comments,labels` 查 issue 狀態與標籤；官方頁抓不到（403／404）才用 WebSearch 多家交叉，並在檔裡標「二手交叉，未取得原文」。
-- **怎麼寫**：`<slug>-<date>-verified.md`，每筆一列：頁面位置／頁面現況／一手現況（逐字引用＋連結＋日期）／處置（✅ 一致、結案、事實更正、二手待補）。結尾「給設計者的三句話」：哪句官方立場是頁面最缺的、哪件事跑錯家、哪批懸置可合併。
-- **行號口徑**：用檔案原始行號（含 frontmatter）；健檢卡用 `wiki_graph` 口徑會少 24 行，第 5 波我自己用 `sed` 去掉 frontmatter 算，少了 140 行——不確定就寫節名不寫行號。
-- **一手優先**：verified 與頁面、健檢卡、設計者、評審任何一方衝突時，以一手為準；用頁面自己的記錄反駁一手是倒過來的。查證結果分次 append（第二輪、第三輪各一節），並主動 SendMessage 給正在跑的設計者與評審，說明哪一節新增。
-- **不查的**：媒體轉述型單一報導（記者依日報回訪）；主編每波只做 4 到 8 件，超過就是健檢卡沒篩。
+示範列違反自己判準／退場條文三句三答案／蒸餾月份或每次上限算錯／宣稱「lint 會看守」但腳本無此邏輯（**讀原始碼**）／叫記者改無權檔／懸置短標記與定義區拆錯（舊格式對機器隱形＝靜默壞掉）／事實跑錯家未走帳本／零看守力判準塞 registry／「先做最小改動」立下週要廢的規則／callout 數字與表不一致／標頭「最後更新」沒跟／「未列入」無條文依據／**砍任何列或節前先確認那裡不是某筆懸置僅存的家**（先補家再砍）／同一事件懸置掛多張表（以事實為單位定家）／主 session 代判的數字自己重算／拿頁面二手記錄反駁一手／退場條文連還在跑的產品行為一起跑（否則活的東西被 90 天抹掉→分流）／併頁殼：領域寫上層的、識別字「已併回」、投影與 index 列同批處理並豁免測試／「搬家」與「免動作」對實作者要寫動詞。
 
-## 評審檢查清單（實例病）
+## 產物與機械輸入
 
-示範列違反自己判準／退場條文三句三答案／蒸餾月份或每次上限算錯／宣稱「lint 會看守」但腳本無此邏輯（**讀原始碼**）／叫記者改無權檔／懸置短標記與定義區拆錯（舊格式對機器隱形＝靜默壞掉）／事實跑錯家未走帳本／零看守力判準塞 registry／「先做最小改動」立下週要廢的規則／callout 數字與表不一致／標頭「最後更新」沒跟／「未列入」無條文依據／**砍任何列或節前先確認那裡不是某筆懸置僅存的家**（先補家再砍）／同一事件懸置掛在多張表（以事實為單位定家，不以探針字串）／主 session 代判的數字自己重算（第 5 波「10 列全收」實為 11）／**拿頁面自己的二手記錄反駁 verified 的一手是倒過來的**（第 6 波日期定位：一手優先，頁面記錄是待改對象）／退場條文拿現有列跑一遍時**連還在跑的產品行為也要跑**（Defense in Depth 90 天就會被自己抹掉→分流）／併頁殼：領域寫上層的、識別字「已併回」、投影與 index 列同批處理並豁免測試。
+`docs/page-audits/<slug>-<date>.md`（健檢）→ `-verified.md` → `-proposal.md`（＋`-proposal-map.md`、`-draft.md`）→ `-review.md`（含實作複核）；冷讀者 `wave<N>-cold-reader{,-recheck}-<date>.md`。收尾：`wiki/log.md` Query 條目、ledger 定稿列、回訪清單、校準表（卡點命中／跳數命中／下波要加什麼問）。
 
-## 產物
-
-`docs/page-audits/<slug>-<date>.md`（健檢）→ `-verified.md` → `-proposal.md`（＋`-proposal-map.md` 去向表、`-draft.md` 逐字稿）→ `-review.md`（含實作複核）；冷讀者 `wave<N>-cold-reader{,-recheck}-<date>.md`。實作後 `wiki/log.md` 記 Query 條目、ledger 補定稿列、回訪清單、校準表。
-
-## 機械輸入
-
-`python scripts/wiki_graph.py explain <頁> [--section]` / `similar` / `gaps --with-news`；`table_census.py`；`check_pending_markers.py`；`pending_handoffs.py open`；閘：`check_reader_language.py`、`check_cell_limits.py`、`check_rules.py`、`run_tests.py`、`build_web.py`、`gen_wiki_frontmatter.py`。蒸餾契約在 `.claude/rules/wiki-ingest-format.md`，書寫上限在 `wiki-reporter-shared.md`。
+`python scripts/wiki_graph.py explain <頁> [--section]` / `similar` / `gaps --with-news`；`table_census.py`；`check_pending_markers.py`；`pending_handoffs.py open`（類別中文）；閘：`check_reader_language.py`、`check_cell_limits.py`、`check_rules.py`、`check_hierarchy.py`、`run_tests.py`、`build_web.py`、`gen_wiki_frontmatter.py`。蒸餾契約 `.claude/rules/wiki-ingest-format.md`，書寫上限 `wiki-reporter-shared.md`（儲存格 ≤120、條列 ≤200）。
