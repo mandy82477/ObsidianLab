@@ -1,7 +1,7 @@
 {
-  "count": 141,
+  "count": 140,
   "updated": "2026-09-07",
-  "note": "entities/fable-5 費馬歸屬經官方一手查證結案（內部研究模型，非 Fable 5／5.1）",
+  "note": "entities/opus-5 三筆逾期懸置經 2026-09-07 主編查證結案：⟨Q-03⟩⟨Q-05⟩ Reddit 原文兩次不可取得、⟨Q-04⟩ SitePoint 三項與官方不符不採信",
   "fingerprints": [
     {
       "key": "entities/andrej-karpathy::2026-08-15::benzinga、lord of the rings",
@@ -204,18 +204,6 @@
       "label": "entities/opus-5（標 2026-08-26｜查 tech-insider.org、$19 Gap）"
     },
     {
-      "key": "entities/opus-5::2026-08-23::load-bearing、smoking gun",
-      "label": "entities/opus-5（標 2026-08-23｜查 load-bearing、smoking gun）"
-    },
-    {
-      "key": "entities/opus-5::2026-08-11::sitepoint、效能評測",
-      "label": "entities/opus-5（標 2026-08-11｜查 SitePoint、效能評測）"
-    },
-    {
-      "key": "entities/opus-5::2026-08-10::minor、效能落差",
-      "label": "entities/opus-5（標 2026-08-10｜查 minor、效能落差）"
-    },
-    {
       "key": "entities/pricing::2026-09-04::max 5x、帳號停用",
       "label": "entities/pricing（標 2026-09-04｜查 Max 5x、帳號停用）"
     },
@@ -318,6 +306,10 @@
     {
       "key": "topics/ai-talent-flow::2026-08-21::[[entities/amir-salek]]",
       "label": "topics/ai-talent-flow（標 2026-08-21｜查 [[entities/amir-salek]]）"
+    },
+    {
+      "key": "topics/anthropic-business::2026-09-06::calcalistech、ipo 延後",
+      "label": "topics/anthropic-business（標 2026-09-06｜查 calcalistech、IPO 延後）"
     },
     {
       "key": "topics/anthropic-business::2026-08-15::2028年營收預測、reuters獨家",
@@ -518,6 +510,10 @@
     {
       "key": "topics/market-signals::2026-09-04::morgan stanley、goldman sachs",
       "label": "topics/market-signals（標 2026-09-04｜查 Morgan Stanley、Goldman Sachs）"
+    },
+    {
+      "key": "topics/market-signals::2026-09-06::calcalistech、ipo延後",
+      "label": "topics/market-signals（標 2026-09-06｜查 calcalistech、IPO延後）"
     },
     {
       "key": "topics/model-comparison::2026-08-24::秘密降低、secretly degraded",

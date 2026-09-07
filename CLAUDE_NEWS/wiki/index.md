@@ -33,7 +33,7 @@
 | 我想讓 agent 自己跑幾小時／過夜，該用哪個（`/goal`、subagent、Managed Agents、Agent SDK） | [[entities/managed-agents]]「你該用哪個」 |
 | code review 該用哪個入口、怎麼審得起（本庫刻意不推薦單一社群工具，官方六個入口＋明價） | [[topics/coding-workflow-guide]] 第 5 段 |
 | 寫 code 該用哪個模型 | [[topics/model-comparison]] |
-| 我要不要換到新旗艦、舊的會不會停掉（Fable 5 vs 5.1、退役日、護欄會不會擋我） | [[entities/fable-5]]「你現在拿到的是什麼」 |
+| 我要不要換到新旗艦、舊的會不會停掉（Fable 5 vs 5.1、Opus 4.8 vs 5、退役日、護欄會不會擋我、升上去會壞什麼） | [[entities/fable-5]]「你現在拿到的是什麼」；Opus 這一代見 [[entities/opus-5]] 同名節 |
 | 別家（Codex／OpenCode／GLM）跟 Claude 比，現在誰強 | [[topics/model-task-leaderboard]]（各榜每週排名）；最近一次頭對頭查證見 [[topics/competitor-landscape]]「硬答案」 |
 | 大型 codebase 的做法主線（並行／context／記憶／把關） | [[topics/community-large-codebase-workflow]] |
 | 社群現在怎麼玩、哪些做法已經定案、哪個方向在加溫 | [[topics/community-tech-patterns]]「模式概覽」；加溫中的方向見 [[topics/community-pattern-trends]] |
@@ -51,8 +51,8 @@
 | [[entities/sonnet-5]] | model | 🤖 模型 | active | Claude Sonnet 5：Claude Code v2.1.197 預設模型，1M context，$2/$10 per Mtok 標準價（08-10 永久化），agentic 效能接近 Opus 4.8 |
 | [[entities/claude-science]] | product | 🛠️ 工具/功能 | active | Claude Science：科學家專用 AI 工作台，整合研究工具套件、可稽核 artifact、彈性運算資源；Anthropic 宣布自行開發藥物 |
 | [[entities/claude-code]] | product | 🛠️ 工具/功能 | active | Claude Code CLI 主頁：功能、已知問題、社群工具 |
-| [[entities/opus-5]] | model | 🤖 模型 | active | Claude Opus 5：新次旗艦，2026-07-25 發布，編碼/知識工作評測逼近 Fable 5，定價定位待彙整，現為 Claude Max 新預設模型、Claude Pro 最強模型 |
-| [[entities/opus-4-8]] | model | 🤖 模型 | active（已被取代） | Opus 4.8：SWE-bench Pro 69.2%、1M context、Dynamic Workflows（1,000 子代理）、Fast Mode 1/3 費用；次旗艦地位已於 2026-07-25 由 [[entities/opus-5]] 接手 |
+| [[entities/opus-5]] | model | 🤖 模型 | active | Claude Opus 5：現行次旗艦，$5/$25 與 4.8 同價、知識晚四個月；Max／Team premium／API 的預設 Opus（Claude Code 整體預設仍 Sonnet） |
+| [[entities/opus-4-8]] | model | 🤖 模型 | active（Legacy） | Opus 4.8：SWE-bench Pro 69.2%、1M context、Fast Mode 1/3 費用；官方已列 Legacy、退役不早於 2027-05-28，建議遷移至 [[entities/opus-5]] |
 | [[entities/opus-4-7]] | model | 🤖 模型 | active（已被取代）| Opus 4.7 發布細節、思考深度爭議、cache 問題 |
 | [[entities/pricing]] | policy | 💼 商業 | active | 訂閱方案、牌價與乘數、計費規則現況；09-14 起週配額換軌、還在發生的計費事故　↳ 子故事：[[entities/pricing-archive]] |
 | [[entities/mythos]] | model | 🤖 模型 | active（已解禁） | 高能力安全模型；2026-06-30 出口管制解除，07-01 全球恢復存取；僅限授權機構/安全研究用途，非一般消費市場 |

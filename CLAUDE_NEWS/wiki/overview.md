@@ -31,7 +31,7 @@
 |------|------|------|
 | **Claude Fable 5.1** | 🟢 旗艦（2026-09-01 發布，取代 Fable 5）| 反萃取機制；快取讀取費率降至 0.025x（約省 75%）；一般可用 |
 | **Claude Mythos 5.1** | 🟢 政策限定（2026-09-01 發布，取代 Mythos 5）| 僅限信任機構，護欄專為資安與生命科學設計 |
-| **Claude Opus 5** | 🟢 次旗艦（2026-07-25 發布）| Claude Max 新預設模型、Claude Pro 最強模型；跨模型代際「重複修辭套路」問題持續（GitHub #77136）|
+| **Claude Opus 5** | 🟢 次旗艦（2026-07-25 發布）| Max／Team premium／Enterprise PAYG／API 的預設 Opus（Claude Code 整體預設仍是 Sonnet，09-07 官方查證）；跨模型代際「重複修辭套路」問題持續（GitHub #77136）|
 | **Claude Sonnet 5** | 🟢 Claude Code 預設 | 1M context；$2/$10 per Mtok（**標準價，已於 2026-08-10 永久化**，無到期壓力）|
 | Claude Opus 4.8 | ⚠️ 已被取代 | 次旗艦地位已由 Opus 5 接手；feature-radar 熱度本輪降溫（🔥🔥🔥🔥🔥→🔥🔥🔥🔥）|
 | Claude Sonnet 4.6 | ✅ Active | 仍可選用 |

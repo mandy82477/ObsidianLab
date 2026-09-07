@@ -13,7 +13,7 @@
 
 - **Claude Code Auto 模式已預設化**：8/14 起 auto 成為 Pro／Max／Team 預設權限模式，取代手動確認。**怎麼開始：** 打 `/permissions`，在 Auto 分頁確認要不要關掉——靠手動確認做安全把關的人尤其要看一次（提示注入實測見 [[entities/claude-code]] 已知問題 🛡️ 組）。
 - **Claude Fable 5.1**：09-01 發布的新一代旗艦，快取讀取費率降至基礎輸入價 0.025 倍。**怎麼開始：** 升到 v2.1.257 以上，Fable 的預設就是 5.1；用 `/model` 確認現在跑的是哪一個。
-- **Claude Opus 5**：07-25 發布，編碼與知識工作評測逼近 Fable 5、官方稱定價為其一半。**怎麼開始：** `/model` 切成 Opus 5。
+- **Claude Opus 5**：07-24 發布，$5/$25 與 Opus 4.8 同價（2026-09-07 官方查證），Max／Team premium／API 的預設 Opus。**怎麼開始：** `/model` 切成 Opus 5。
 
 %% 09-02 換上 Fable 5.1，原第三名「跨 session 訊息互通」熱度降溫逾一週、讓出名額；SendFeedback（08-27）、SDK 命名空間轉正（08-29）、使用者個人資料 API（09-01）熱度不夠高未上榜；本輪無新達標功能，維持不動，照 wiki-ingest-features.md §7(c) 覆寫 %%
 
@@ -144,7 +144,7 @@ npm install @anthropic-ai/sdk@0.123.0
 | **API Inference Hooks**（Enterprise 組織 beta，claude.ai／Cowork／Claude Code 上受管治 prompt 可導向企業自有 AI 安全伺服器） | 2026-08-05 | 🔥 | ⏳ 觀望 | Beta（Enterprise） |
 | **Claude Code v2.1.222**（安全修復：worktree 隔離 session 及其 subagent 可對主 checkout 執行破壞性 git 指令的漏洞，隔離範圍擴及檔案編輯與 Bash 執行） | 2026-08-04 | 🔥🔥 | ✅ 建議升級 | 正式發布（安全修復） |
 | **Claude Code v2.1.221**（VSCode 新增 Focus view：chat-menu 切換選項，將工具活動摺疊為可展開的每輪摘要並附即時執行指示，`Ctrl+Alt+F` 開關） | 2026-08-04 | 🔥 | ⏳ 觀望 | 正式發布 |
-| **Claude Opus 5**（新次旗艦模型，可用 `--model` 選用，編碼/知識工作評測逼近 Fable 5、官方稱定價為其一半，現為 Claude Max 新預設模型、Claude Pro 最強模型） | 2026-07-25 | 🔥🔥🔥🔥🔥 | ⚡ 有條件推薦 | 正式發布 |
+| **Claude Opus 5**（新次旗艦，`--model` 可選；$5/$25 與 4.8 同價、為 Fable 5 一半；Max／Team premium／API 的預設 Opus） | 2026-07-25 | 🔥🔥🔥🔥🔥 | ⚡ 有條件推薦 | 正式發布 |
 | **Claude 語音模式 Opus／Sonnet 選擇**（所有使用者開放於 Opus／Sonnet 間切換語音模式底層模型，六家媒體同步報導，無官方版本號） | 2026-07-24 | 🔥🔥🔥 | ⚡ 有條件推薦 | 正式發布（全使用者開放） |
 | **API 新增 Stop Reason `model_continue`**（anthropic-sdk-python v0.119.0／anthropic-sdk-typescript sdk-v0.114.0） | 2026-07-23 | 🔥 | ⏳ 觀望 | 正式發布（SDK 層） |
 | **Claude Code Desktop iOS Simulator**（Mac app 內建 iOS Simulator 面板，即時建置／執行／除錯 iPhone App，需已安裝 Xcode iOS 平台） | 2026-07-22（08-10 官方文件查證確認） | 🔥 | ⚡ 有條件推薦 | 公開測試（Pro／Max／Team） |
@@ -565,7 +565,7 @@ Ctrl+Alt+F（或 chat 選單內切換 Focus view）
 ### Claude Opus 5
 **發布：** 2026-07-25（官方公告） | **狀態：** 正式發布
 
-**是什麼：** Anthropic 新一代次旗艦模型，可用 `--model` 選用。官方稱編碼與知識工作評測（Frontier-Bench、GDPval-AA）逼近 Fable 5 的 frontier intelligence，資安任務上仍落後 Mythos 5；現為 Claude Max 新預設模型、Claude Pro 最強模型，取代 Opus 4.8。
+**是什麼：** Anthropic 新一代次旗艦模型，可用 `--model` 選用。官方稱編碼與知識工作評測（Frontier-Bench、GDPval-AA）逼近 Fable 5 的 frontier intelligence，資安任務上仍落後 Mythos 5；現為 Max／Team premium／Enterprise 隨用隨付／API 的預設 Opus（Claude Code 整體預設仍是 Sonnet，2026-09-07 官方查證），取代 Opus 4.8。
 
 **為何熱：** HN 1587 分（今日全站最高），跨 3 個獨立來源、六家以上媒體同步報導；SDK（Python v0.120.0／TypeScript sdk-v0.115.0）同日新增模型支援；GitHub Copilot 同步上線。Claude Code 創辦人 Boris Cherny 公開稱其為目前最難被提示注入攻破的模型（待社群驗證）。
 
