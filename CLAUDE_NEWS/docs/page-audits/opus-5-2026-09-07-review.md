@@ -1,0 +1,144 @@
+# 評審：`wiki/entities/opus-5.md` 第 11 波設計提案（2026-09-07）
+
+受評：`-proposal.md`（120 行）／`-proposal-map.md`（107 行）／`-draft.md`（312 行），磁碟現行檔。
+行號＝檔案原始行號（含 frontmatter）。機械項全部自己重跑，未採信提案的宣稱值。
+⚠️ 疑似注入：無。**適用區 A／B／D／E；C 不適用**（無視覺成品）。
+
+## 0. 我自己重算的數字
+
+| 項 | 提案說 | 我實測 | 判 |
+|---|---|---|---|
+| 懸置基線 | 141→138，opus-5 佔 5 筆 | `pending-marker-count.json` count=141、指紋 141 筆、`entities/opus-5` 恰 5 筆（1w0uyu7／$19 Gap／smoking gun／SitePoint／minor） | ✅ 提案對，`-verified.md`「懸置歸零」錯，設計者更正成立 |
+| 兩閘 | A 全文無新增命中 | 抽出 A 的 12 個 code block 共 105 行跑 36 個禁詞：**0 命中**；表格格 >120：**0**；條列 >200：**0**；callout 最長 79 字元 | ✅ |
+| `table_census._mechanism` | 三個 h3 皆判「有」 | 以 B-2／B-3 三個 h3 原文餵 `_mechanism`（`table_census.py:46–70`）：opus-5 三節皆「有」，fable-5 的兩代表仍「有」 | ✅ 3/3 |
+| 現況普查 | 兩張表皆「無」 | `table_census.py entities/opus-5` 實跑：歷史記錄「無」、熱度表「無」 | ✅ |
+| 規模 | 162／16,593 → 168／14,491 | 現況實測 137 行正文／**16,593** 字元完全吻合；照去向表重組實測 **約 164 行／14,421 字元** | ✅ 字元 −12.7% 成立，行數 +6 誠實 |
+| 錨點 | `grep -rn "opus-5#"` 零命中 | `wiki/ .claude/ scripts/` 實跑零命中 | ✅ |
+| 退役日全站零處 | 是 | `grep -rn "2027-05-28\|2027-07-24" wiki/` 零命中 | ✅ |
+| 腳本行號 | `check_pending_markers.py:172–185`／`:267–306` | 172 行＝`# ── 6. ⟨Q-nn⟩ 雙向對帳 ──`；267 行＝`def _marker_count_gate` | ✅ 兩處都對 |
+| `⟨Q-01⟩⟨Q-02⟩` | 短標記與定義兩邊都留 | `SHORT_RE`（`pending_markers.py:46`）要「符號＋未加粗類別詞＋⟨Q-nn⟩」——A-9 表列 `❓待查證⟨Q-01⟩` 命中；A-9 圖例句 `❓ ⟨Q-01⟩ 這類記號` 不命中（無類別詞），不會重複計數；定義由 `iter_pending` 取同行前綴 qid，L149／L151 不動即成對 | ✅ |
+| 去向表抽驗 | — | 抽 17 段核原文：L42／L44／L46／L48／L50／L52／L54／L56／L58／L60／L73／L132／L134／L135／L137／L138／L152／L155／L158 列首文字**全部對上**；L26–162 內容行零遺漏（未列者皆空行與 `---`） | ✅ 本頁去向表無錯行 |
+
+**但 map 第四節（鄰居 opus-4-8）的行號錯了**——見 🔴-3。
+
+---
+
+## 🔴（7 條，每條附可直接貼上的修訂文字）
+
+### 🔴-1 A-6 導言「全部量在官方自有的尺上」是事實錯誤，而它是全節的立論句
+
+表上五項裡 **CursorBench 3.2、ARC-AGI 3、OSWorld 2.0 是第三方公開基準**，不是 Anthropic 自有的尺；只有 Frontier-Bench v0.1／GDPval-AA 沾得上邊。成立的說法是「官方自己挑出來公布、分數由官方提交、沒有第三方複跑」。順帶修掉硬編的「44 天」（見 🟡-1）。
+
+```
+> 資料截至 2026-09-07。上表是官方在發布公告與模型頁上自己挑出來公布的成績——CursorBench 3.2、ARC-AGI 3、OSWorld 2.0 是公開基準，但分數由 Anthropic 自行提交、未見第三方複跑；自 2026-07-24 上線以來，社群沒有交出任何一則帶測試方法或數字的獨立複測。
+```
+
+B-3 判準句①同步改成：「這個基準是官方在發布公告或模型頁自己拿出來說的——不論該基準是官方自有或公開基準，**分數由官方提交即入表**」。
+
+### 🔴-2 「Claude Pro 最強模型」回掃只做了一半，漏三處
+
+`-verified.md` 判定這句**無官方出處**。全庫（排除 `log.md`）實測 10 份副本，B-5 與 map 只處置 4 份（本頁 L56、L141、index :54、radar :147）。漏的三處都是描述「現在」的句子，照「事實更正必回掃」第 3 步一律要改：
+
+- `wiki/feature-radar.md:568`：把「現為 Claude Max 新預設模型、Claude Pro 最強模型，取代 Opus 4.8。」改成
+  `現為 Max／Team premium／Enterprise 隨用隨付／API 的預設 Opus（Claude Code 整體預設仍是 Sonnet，2026-09-07 官方查證），取代 Opus 4.8。`
+- `wiki/overview.md:34` 第三格改成
+  `Max／Team premium／Enterprise 隨用隨付／API 的預設 Opus（Claude Code 整體預設仍是 Sonnet，2026-09-07 官方查證）；跨模型代際「重複修辭套路」問題持續（GitHub #77136）`
+- `wiki/entities/opus-4-8.md:44`：把「取代 Opus 4.8 成為次旗艦、Claude Max 新預設模型、Claude Pro 最強模型（詳見 [[entities/opus-5]]）」改成
+  `取代 Opus 4.8 成為次旗艦，並成為 Max／Team premium／Enterprise 隨用隨付／API 的預設 Opus（詳見 [[entities/opus-5#你現在拿到的是什麼]]）`
+
+opus-5:161、opus-4-8:169、model-comparison:187 三處是歷史條目寫「當時」，**照共用規則不改寫**——請在實作單裡明寫，免得實作者順手一併改掉。
+
+### 🔴-3 map 第四節行號錯：`opus-4-8:46` 不是那句
+
+實查：**`opus-4-8:44`** 才是「**2026-07-25**：…Opus 4.8 本身能力與規格未變，仍是 Fable 5 護欄觸發時的 fallback 模型，但已不再是次高階公開模型的首選。」；**`:46` 是 2026-05-28 發布那段**，結尾為「Fast Mode 速度為標準的 2.5 倍、費率降至前代的 1/3。」照 map 的行號改，會把 Legacy 句補到發布沿革段尾。
+
+**`:44` 同時是 🔴-2 要改的那句、map 要改的錨點、與 Legacy 句的落點——三處改動落在同一行，一次改完。**
+
+提案 §10 與 map 第三節寫的傳聞節 `:154–163` 也少了頭：實查 `## 下一代模型觀察…` 節標在 **`:152`**，節範圍是 `152–163`。日後若採 A 版整節移除，砍到 154 會留下孤兒節標。
+
+### 🔴-4 `index:55` 的逐字沒給——那是主 session 指定的本波主編項
+
+B-5 給了 index :54 與 :36、radar :16 與 :147，**獨缺 index :55**（opus-4-8 狀態格仍寫「active（已被取代）」、摘要格無退役日）。`test_index_sync` 只比狀態主值（兩邊都是 `active`），沒有任何機器會抓到它。逐字：
+
+```
+| [[entities/opus-4-8]] | model | 🤖 模型 | active（Legacy） | Opus 4.8：SWE-bench Pro 69.2%、1M context、Dynamic Workflows（1,000 子代理）、Fast Mode 1/3 費用；官方已列 Legacy、退役不早於 2027-05-28，建議遷移至 [[entities/opus-5]]（2026-09-07 查證） |
+```
+
+### 🔴-5 逐字稿六個區塊全缺 `##` 節標行
+
+A-3 到 A-9 的 code block 全部從內容開始，**零個 `## ` 行**（實測抽出的 105 行：`^## ` 0 命中）。逐字稿的契約是照抄即可，而 A-4 的節標正是 opus-4-8 新錨點 `[[entities/opus-5#你現在拿到的是什麼]]` 的目標——漏一行 `build_web.py` 的 `check_wikilink_anchors()` 就報 WARN。第二輪把七行補進 draft（節名逐字，含 🟡-9 的改名結果）：
+
+```
+## 現況 ／ ## 你現在拿到的是什麼 ／ ## 熱度與試用價值 ／ ## 這些數字是誰量的 ／ ## 核心功能 ／ ## 相關議題 ／ ## 歷史記錄
+```
+
+### 🔴-6 `## 相關議題` 靜默多一條
+
+A-8 的 block 實列 **11 條**，其中 `[[entities/claude-code]]` 在提案、map、draft 三處**都沒有登記**（map 與 A-8 註記皆只寫「新增 model-task-leaderboard 一條」，九留＋一＝十）。這一條該加（A-6 指它），但要進去向表——第 10 波「相關議題靜默增刪」同型復發。第二輪把 map 第一節「新增」補成兩筆，A-8 註記改成「九條全留，新增 2 條」。
+
+### 🔴-7 冷讀者 Q4 的答案在 managed-agents，而 A-8 沒有這條路
+
+Q4（長時間 agent 任務）⚠️ 半拿到，唯一有官方數字的落點是 `entities/managed-agents:82` 的算例「Opus 5 跑一小時 $0.705」——本頁改版後仍指不到它。一行修法：
+
+```
+- [[entities/managed-agents]] — 拿 Opus 5 跑長時間任務要花多少、該用哪一種代理形態
+```
+
+同時補進 map 第一節「新增」列。這是本波唯一碰得到 Q4 的動作，成本一行。
+
+---
+
+## 🟡（10 條）
+
+1. **硬編「上線 44 天」**（A-3、A-6 導言、B-3 條文各一份）——本波砍掉的正是「發布首日資料」這種會自己過期的句子，同型復發；且以新基準 07-24 算是 45 天，自打一天。一律改成「自 2026-07-24 上線以來（截至 2026-09-07）」。
+2. **B-2 判準句①自違**：條文要求寫不出值就寫「官方未載（YYYY-MM-DD 查證）」、不留白也不推算，而 A-4 第 5 列左格是「—（它是基準）」。建議改條文加一句「基準世代該格寫 `—（基準世代）`」，格子的寫法對讀者較清楚。
+3. **A-4 第 7 列一手與推導混寫**：Team standard 的「可用」來自 pricing :64「同 Pro」的推導，出處欄卻寫「官方公告與說明中心（2026-09-07）」。改成 `官方公告與說明中心（2026-09-07）；Team standard 依 [[entities/pricing]]「同 Pro」推得`。
+4. **歷史記錄表拿到的是假綠**：B-3 只給它一條封存條文（2026-10 才生效），`_mechanism` 卻會因此判「有機制」——健檢卡第 9 節的「缺上限、缺退場、缺圖例」一項未解。B-3 補一句：「`## 歷史記錄` 表為累積式，上限 20 列；逾上限時最舊時段先走封存，不逐列汰除。圖例一行固定放表下。」
+5. **index :36 改寫把「護欄會不會擋我」刪掉**——那是第 10 波剛為 fable-5 立的鉤子。建議括號寫成`（Fable 5 vs 5.1、Opus 4.8 vs Opus 5、退役日、護欄會不會擋我、升上去會壞什麼）`。
+6. **B-6 商業帳本與現有 H-c0b18f 撞同一張表**（`pending_handoffs.py list` 實查：H-c0b18f 於 2026-09-07 由模型記者開，改的正是 pricing「我的方案現在有什麼」旗艦欄）。新帳本 note 末補「與 H-c0b18f 同一張表，請同批處理」。
+7. **A-2 callout 拿掉「尚未標記已解決」**：09-03 事件現在解了沒，讀者看不出來，而 `-verified.md` 未查。句末補「官方是否已標記解除，本站截至 2026-09-07 未見更新」，或列 09-14 回訪。
+8. **A-6 表第 5 列**把「官方自陳的邊界」混進一張叫「官方拿來說的基準」的表。內容留，降到表下條列第一條，表回到四列純基準。
+9. **節名**：我判定改成 `## 這些數字是誰量的`（見下節）。
+10. **map 第五節收工判準少兩項**：改了 `.claude/rules/` 與 `.claude/commands/` 之後要跑 `check_rules.py`（`run_tests.py` 內含）與 `/review-commands` 到零錯誤（B-4 提了、收工表沒有）；另外「`build_web.py` WARN 不增」要先記改前基準數才驗得了。
+
+---
+
+## 節名判定
+
+**採替代名 `## 這些數字是誰量的`，不用「官方宣稱 vs 社群實測」。** 三個理由：(1) 對照式節名承諾兩側對等，而右側是空的——設計者說「讓版面誠實地不對稱」，但節名本身已經先許了一個對稱的諾；(2) 🔴-1 顯示設計者自己在導言裡滑向了「官方 vs 第三方」的勝負框架，節名是那個滑坡的上游；(3)「誰量的」直接命名這一節真正的軸，也就是證據來源，而那正是本波要交給讀者的東西，讀者不會把它讀成背書或拆台。內容一字不動。
+
+**改名要同批改五處**：頁面節標、A-3 現況末句的指路句、B-3 的 h3（`_mechanism` 靠 h3 逐字比對，改錯就從「有」掉回「無」）、B-4 的 5l ③、B-3 條文內文引用。
+
+---
+
+## 照順序執行（實作單）
+
+先貼新表、再砍舊節；先建本頁新節、再改 opus-4-8 的錨點。
+
+| # | 做什麼 | 驗證指令 | 期望輸出 |
+|---|---|---|---|
+| 1 | 記下改前基準 | `python scripts/build_web.py 2>&1 \| grep -c WARN`；`python scripts/check_cell_limits.py --page entities/opus-5` | 記下兩數；後者現值「存量基線內 13 筆／1 頁、無新增超限」 |
+| 2 | 規則檔：B-1 加 opus-5 一列；B-2 改 fable-5 第一個 h3 為兩頁共用（含 🟡-2）；B-3 新增「entities/opus-5 的兩張表」節，節名用 `這些數字是誰量的`，含 🔴-1 判準句與 🟡-4 條文 | `python scripts/check_rules.py` | exit 0 |
+| 3 | `.claude/commands/wiki-lint.md` 5l 依 B-4 擴充（節名同步改） | `python scripts/check_rules.py`；`/review-commands` | 零錯誤 |
+| 4 | 本頁 A-1 標頭、A-2 callout（含 🟡-7）、A-3 現況兩段（含 🟡-1、指路句用新節名）——**先貼，暫不刪 L42–60** | — | — |
+| 5 | 插入 `## 你現在拿到的是什麼` 整節（含 🔴-5 節標行、🟡-2／🟡-3） | `python scripts/check_cell_limits.py --page entities/opus-5` | 無新增超限；存量仍 13 筆 |
+| 6 | 插入 `## 這些數字是誰量的` 整節（🔴-1 導言、🟡-8 第 5 列下沉） | 同上 | 同上 |
+| 7 | 現在才砍舊的 L42–60、L73、L79–82 | `python scripts/check_pending_markers.py` | 本頁 5 筆標記此時**不得**減少（這幾行零標記） |
+| 8 | A-5 熱度表、A-7 核心功能、A-8 相關議題（11 條＋🔴-7 ＝ 12 條） | `python scripts/build_web.py` | 錨點 WARN 不高於第 1 步基準 |
+| 9 | A-9 歷史記錄表（15→12 列）與 A-10 三處細節改寫；⟨Q-01⟩⟨Q-02⟩ 的表列與 L149／L151 定義四處都不動 | `python scripts/check_pending_markers.py` | 出現「總數低於基線：基線 141／現況 138」FAIL——**這是預期的紅**，證明保命條款在看 |
+| 10 | 重建標記基線 | `python scripts/check_pending_markers.py --rebuild-count --reason "entities/opus-5 三筆逾期懸置經 2026-09-07 主編查證結案：⟨Q-03⟩⟨Q-05⟩ Reddit 原文兩次不可取得、⟨Q-04⟩ SitePoint 三項與官方不符不採信"`，再跑一次 | 第二次回「懸置標記 138 筆（基線 138，未低於）」，本頁逾期 WARN 歸零 |
+| 11 | 驗紅（做完用 python 還原，**不得用 git checkout／restore**）：注入一格 125 字元與一條 205 字元 | `python scripts/check_cell_limits.py --page entities/opus-5` | FAIL 指名兩筆；還原後回 OK |
+| 12 | opus-4-8 兩行：`:29` 狀態改 Legacy＋退役日；**`:44`**（不是 :46）同一行改掉「Claude Pro 最強模型」、補 Legacy 句、`[[entities/opus-5]]` 改指 `#你現在拿到的是什麼` | `python scripts/build_web.py` | 新錨點驗得過、WARN 不增 |
+| 13 | 回掃另兩處：`feature-radar.md:568`、`overview.md:34`（🔴-2 逐字） | `grep -rn "最強模型" wiki/` | 只剩三處歷史條目（opus-5 細節、opus-4-8 歷史表、model-comparison 時序）與無關頁面 |
+| 14 | 帳本兩筆（B-6，商業那筆補 🟡-6 一句） | `python scripts/pending_handoffs.py list` | 功能／商業各多一筆 |
+| 15 | frontmatter 與全測 | `python scripts/gen_wiki_frontmatter.py && python scripts/run_tests.py` | 全綠；本頁 `pending_count` 5→2、`pending_overdue` 3→0 |
+| 16 | 表格普查收尾 | `python scripts/table_census.py entities/opus-5` | 四張表（你現在拿到的是什麼／熱度／這些數字是誰量的／歷史記錄）機制欄皆「有」 |
+| 17 | 給主編（實作者不動）：index :36、:54、**:55**（🔴-4）、radar :16、:147；leaderboard 交 5b 評估 | `python scripts/run_tests.py` | `test_index_sync` 綠 |
+
+主編貼 index 前先數欄（第 10 波回訪第 7 項）：entities 表 5 欄、topics 表 4 欄。
+
+---
+
+## 設計者第二輪必須親改的
+
+🔴-1 導言與 B-3 判準句①／🔴-3 map 第四節與第三節行號／🔴-5 七行節標補進 draft／🔴-6 map 新增列補兩筆／🔴-7 A-8 加一條／🟡-9 節名連動五處。其餘 🔴-2、🔴-4 與 🟡-5、🟡-6 是逐字文字，可直接進實作單。
