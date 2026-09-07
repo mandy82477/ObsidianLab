@@ -2,7 +2,7 @@
   "_note": "字元上限機械閘的存量基線（頁 → 命中指紋）。check_cell_limits.py 只對基線外的新增超限報 FAIL，基線內的印為 WARN 摘要。清乾淨一頁就把該頁整筆移除——棘輪只能往下轉，不可為了轉綠而加回去。指紋 = 類型 + 該格/該條正規化內容雜湊，改寫即失效。",
   "_baseline_set": "2026-09-05",
   "_pages": 37,
-  "_hits": 1065,
+  "_hits": 1049,
   "pages": {
     "entities/andrej-karpathy": [
       "list_item:47c0bdac05eb"
@@ -348,25 +348,14 @@
     ],
     "entities/fable-5": [
       "list_item:03458bf6f5e4",
-      "list_item:07896e263fc9",
-      "list_item:17f2b65bb6ff",
-      "list_item:1ef4f17ee071",
       "list_item:20069531284d",
       "list_item:262fe76203bc",
       "list_item:352b18ae7a59",
-      "list_item:3c8ab955dd04",
       "list_item:41327c6a5ae3",
-      "list_item:5c39cf66008d",
-      "list_item:6c99b9a44f69",
       "list_item:74093f1387e0",
       "list_item:806360b16377",
       "list_item:a2cdabf0a1db",
-      "list_item:c131c0df15cf",
-      "list_item:d08c82782c8d",
-      "list_item:dfc61bd77169",
-      "list_item:e04af97b1bc4",
       "list_item:e7abb738061d",
-      "list_item:ea619973dd3d",
       "list_item:f68ff1bdcf45",
       "list_item:fe1c34733a38"
     ],
@@ -395,14 +384,11 @@
     ],
     "entities/opus-5": [
       "list_item:154042425b1e",
-      "list_item:1b90f51583b1",
       "list_item:2c4125f32ccb",
       "list_item:2cc8f124c8d3",
       "list_item:2ed5f2dccc8c",
-      "list_item:36f01f3e5591",
-      "list_item:38e43f41156b",
       "list_item:6aaa8bf47bfe",
-      "list_item:8ae3ba78a255",
+      "list_item:a7dc1b0c8c2b",
       "list_item:b443d43788ed",
       "list_item:dc76c234fb08",
       "list_item:ec60e427cf96",
@@ -502,7 +488,6 @@
       "table_cell:4d633f709ee5"
     ],
     "index": [
-      "table_cell:97a02c375091",
       "table_cell:b6ea4251fbb6",
       "table_cell:b908cba37613",
       "table_cell:cf3c05b8f76e"
@@ -905,7 +890,6 @@
       "list_item:cc5682184d59",
       "list_item:d6a3ad228d6a",
       "list_item:d805f1572222",
-      "list_item:dd9b992539a1",
       "list_item:e1fcd6da4ac8"
     ],
     "topics/coding-workflow-guide": [

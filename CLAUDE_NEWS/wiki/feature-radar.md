@@ -13,7 +13,7 @@
 
 - **Claude Code Auto 模式已預設化**：8/14 起 auto 成為 Pro／Max／Team 預設權限模式，取代手動確認。**怎麼開始：** 打 `/permissions`，在 Auto 分頁確認要不要關掉——靠手動確認做安全把關的人尤其要看一次（提示注入實測見 [[entities/claude-code]] 已知問題 🛡️ 組）。
 - **Claude Fable 5.1**：09-01 發布的新一代旗艦，快取讀取費率降至基礎輸入價 0.025 倍。**怎麼開始：** 升到 v2.1.257 以上，Fable 的預設就是 5.1；用 `/model` 確認現在跑的是哪一個。
-- **Claude Opus 5**：07-24 發布，$5/$25 與 Opus 4.8 同價（2026-09-07 官方查證），Max／Team premium／API 的預設 Opus。**怎麼開始：** `/model` 切成 Opus 5。
+- **Claude Opus 5**：07-25 收錄（官方 07-24 發布），$5/$25 與 Opus 4.8 同價（2026-09-07 官方查證），Max／Team premium／API 的預設 Opus。**怎麼開始：** `/model` 切成 Opus 5。
 
 %% 09-02 換上 Fable 5.1，原第三名「跨 session 訊息互通」熱度降溫逾一週、讓出名額；SendFeedback（08-27）、SDK 命名空間轉正（08-29）、使用者個人資料 API（09-01）熱度不夠高未上榜；本輪無新達標功能，維持不動，照 wiki-ingest-features.md §7(c) 覆寫 %%
 
@@ -569,7 +569,7 @@ Ctrl+Alt+F（或 chat 選單內切換 Focus view）
 
 **為何熱：** HN 1587 分（今日全站最高），跨 3 個獨立來源、六家以上媒體同步報導；SDK（Python v0.120.0／TypeScript sdk-v0.115.0）同日新增模型支援；GitHub Copilot 同步上線。Claude Code 創辦人 Boris Cherny 公開稱其為目前最難被提示注入攻破的模型（待社群驗證）。
 
-**現在要試嗎：** 適合日常 agentic 使用、編碼與知識工作任務、Claude Max/Pro 用戶；資安/滲透測試等安全導向任務仍建議用 Mythos 5。發布首日，長期穩定性與定價數字（官方稱「Fable 5 一半」，另有報導稱「維持原 Opus 定價」，兩說法方向不完全一致）待觀察，詳見 [[entities/pricing]]。
+**現在要試嗎：** 數小時、沒人盯著也要跑完的編碼任務與跨數十檔 refactor 先用它；日常規模開發改 Sonnet 5，資安／滲透測試仍建議 Mythos 5。$5/$25 與 Opus 4.8 同價、為 Fable 5 一半（2026-09-07 官方查證），詳見 [[entities/pricing]]。
 
 **快速上手：**
 ```
