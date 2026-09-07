@@ -377,6 +377,19 @@ python scripts/gen_wiki_frontmatter.py --list-signal "⚠️ 高引用但停滯"
 模型頁世代表（5l）：fable-5 資料截至 YYYY-MM-DD（重查 N 列）／護欄四類 一致 or 變動 M 項；opus-5 資料截至 YYYY-MM-DD（重查 N 列）／官方基準 一致 or 變動 K 項／社群獨立複測 無 or 已出現；熱度表 一致 or 已覆寫
 ```
 
+### 5m. code-quality-decline 三條線 issue 狀態複查（主編親做）`[加入: 2026-09-07]`
+
+「三條線現在到哪」的「現在還在嗎」欄吃 GitHub issue 狀態，不在日報來源清單內，記者無 web 工具。逐一跑（`gh issue view` 一次只吃一個 issue；本 repo 的 remote 是 `mandy82477/ObsidianLab`，不加 `-R` 會查到錯的 repo）：
+
+    for n in 41930 65687 77136 83510; do gh issue view $n -R anthropics/claude-code --json number,state,updatedAt; done
+
+與表上三列比對，不一致即改寫該格並更新表上方「資料截至」；任一列由「還在」翻「已結案」時，同批改寫 `## 摘要` 第一段並回報 index 鉤子。**⚠️ 雲端跳過**（egress 封鎖，同 5b／5c／5h），改寫成待辦交本機 `/weekly` 承接。
+
+**回報格式（納入步驟 8）：**
+```
+code-quality-decline 三條線（5m）：N 列比對／M 列已改／資料截至 YYYY-MM-DD ／雲端 egress 封鎖，跳過
+```
+
 ### 6. CLAUDE.md 健檢
 
 讀取 `wiki/CLAUDE.md`、`.claude/rules/wiki-ingest.md`、`.claude/rules/wiki-ingest-format.md`、`.claude/rules/wiki-reporter-shared.md` 與**本檔（`.claude/commands/wiki-lint.md`）自身** `[加入: 2026-08-28]`，依序執行下列各項檢查。
@@ -659,6 +672,7 @@ python scripts/check_reader_language.py --page <slug>   # 單頁清單
 - 社群模式概覽退場複查（5k）：列數 N／21（✅a／⚡b／⏳c）／最後動態已重算 N 列／退場 M 列／補位 K 列／合併 J 組／主線 tag 補填 20 則（累計 N/115）／滿載讓位：無 ／ ⚠️ 需裁決
 - 社群討論兩表（5k）：爭論 N/10（還在吵 a／已共識 b／僵住 c）／討論 M/50（移出 d／改標 e）／最後動態已重算 K 列
 - 模型頁世代表（5l）：結論表資料截至 YYYY-MM-DD（重查 N 列）／護欄四類 一致 or 變動 M 項／熱度表 一致 or 已覆寫
+- code-quality-decline 三條線（5m）：N 列比對／M 列已改／資料截至 YYYY-MM-DD ／雲端 egress 封鎖，跳過
 - 讀者模擬：（3 題結果：✅/⚠️ 已修復/❌ 待辦，各附一句說明）
 - 質疑代打（7b）：（seed 與抽中題號，各題 ✅ 附證據行/⚠️ 修了什麼/❌ 待辦；時效燈亮時原樣轉述）
 - lint 自我遵守率：（N/6 位記者回報一次過；退回者列出類別與缺項）

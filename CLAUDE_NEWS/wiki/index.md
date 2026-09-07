@@ -26,6 +26,7 @@
 | 接手／新建一個 repo，**官方**建議先做哪些設定（CLAUDE.md、LSP、探索） | [[topics/coding-workflow-guide]] 第 1、2a 段 |
 | 我卡住了（帳單爆、context 撐爆、agent 互踩、它說做完了沒做、agent 讀不懂大 repo、跑 auto 出事……），**社群首選**是哪個 | [[topics/skill-interest-watch]]「我卡在這裡」決策表；安全類 → [[topics/ai-agent-safety]] |
 | 我在舊版本，升上去會壞什麼 | [[feature-radar]]「從你現在的版本升上去，會遇到什麼」；壞掉的東西見 [[entities/claude-code]]「現在會咬到你的」 |
+| 我沒升版，但它好像變慢了、帳單也變多（是模型退步、計費、還是我的用法） | [[topics/code-quality-decline]]「三條線現在到哪」；帳單本身見 [[entities/pricing]] |
 | 這個月我會多花／少花多少（方案內含什麼、一小時多少、有沒有在扣錯錢） | [[entities/pricing]] |
 | 這家公司撐不撐得住、會不會漲價、該不該簽兩年約（估值、IPO、營收、風險） | [[topics/anthropic-business]]「現在的數字」；市場判讀見 [[topics/market-signals]] |
 | 我關心的某類工具，現在誰最大、本庫怎麼判斷（本週竄升欄累積一週星史後啟用） | [[topics/skill-interest-watch]] 各類別（按開發流程段） |
@@ -94,7 +95,7 @@
 | [[topics/model-comparison]] | 🤖 模型 | ongoing | 模型選型對照：「我該用哪個 Claude 模型、換一個實付差多少」單一入口——快速選型表、情境推薦、換代成本換算；跨家排名指向榜單頁 |
 | [[topics/model-task-leaderboard]] | 🤖 模型 | ongoing | 🗓️ 週更 任務 × 跨家模型領先者快照：「做某類任務目前哪家最強」——18 類任務的活榜單每週速讀＋各榜評比方式索引；跨家排名的終點在這頁，Claude 家內選型見模型選型對照 |
 | [[topics/anthropic-commitments]] | 🏛️ 政策/安全 | ongoing | 承諾兌現追蹤：「Anthropic 說過要做的事做了嗎」——官方承諾/拒絕建檔，狀態變化時每日更新 |
-| [[topics/code-quality-decline]] | 🌐 社群 | ongoing | Claude Code 效能退步事件，Anthropic 已承認工程疏失 |
+| [[topics/code-quality-decline]] | 🌐 社群 | ongoing | 「變笨了」三條線：04 月那次官方已結案，06 月起 token 異常與 Opus 5 品質觀感官方沒說法；先知道你釘不住你選的模型　↳ 子故事：[[topics/code-quality-decline-archive]] |
 | [[topics/competitor-landscape]] | 💼 商業 | ongoing | Meta 三層訂閱打價格戰 + 中國陣營「免費夠用」+ 開源旗艦權重釋出，戰場從「誰更強」移到「誰更便宜」　↳ 子故事：[[topics/competitor-landscape-archive]] |
 | [[topics/community-tech-tools]] | 🌐 社群 | ongoing | 🗓️ 週更：先查「我卡在這裡」症狀決策表拿首選，再看工具目錄的活躍度與採用狀態 |
 | [[topics/skill-interest-watch]] | 🌐 社群 | ongoing | 🗓️ 每日快照 興趣類別 skill 總覽：一頁看完「該裝哪個」（每日同步社群工具目錄的決策表）與「這類誰大、誰在漲」；可用 GitHub 辨識的類別（開發流程段＋治理）每日問「這一類現在誰最熱、本週誰竄升」；無法用星數找的治理需求誠實指路到社群工具目錄決策表或實戰手冊；機器產出、星數是規模不是品質 |

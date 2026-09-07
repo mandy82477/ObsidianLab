@@ -65,6 +65,12 @@
 
 ---
 
+## code-quality-decline 的 issue 狀態不由你維護 `[加入: 2026-09-07]`
+
+`wiki/topics/code-quality-decline.md`「三條線現在到哪」的「現在還在嗎」欄吃 GitHub issue 狀態，屬主編於 `/wiki-lint` 步驟 5m 的工作。你 lint 時只做呈現品質檢查；日報出現該三條線的新社群訊號時，照母規則檔「code-quality-decline 的三張表」更新對應的訊號表，**不自行翻「現在還在嗎」的值**。
+
+---
+
 ## community-large-codebase-workflow 週更整線重寫 `[加入: 2026-08-05，改版: 2026-08-15]`
 
 `community-large-codebase-workflow.md` 是**週更**頁（每日 ingest 只在 patterns 節點標 `**主線：**` tag，不寫此頁——規則見 `.claude/rules/wiki-ingest-community.md`「主線 tag 規則」）。每次 `/wiki-lint`：

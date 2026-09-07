@@ -4,16 +4,16 @@ kind: "topic"
 status: "ongoing"
 domain: "🌐 社群"
 last_updated: "2026-09-06"
-last_news_update: "2026-09-04"
+last_news_update: "2026-09-06"
 status_main: "ongoing"
-days_since_news: 3
+days_since_news: 1
 parent: null
 children: "['topics/community-tech-discussions-archive']"
 page_role: "hub"
-days_since_news_subtree: 3
-inbound_links: 45
-attribution_count: 127
-attribution_last: "2026-09-04"
+days_since_news_subtree: 1
+inbound_links: 41
+attribution_count: 130
+attribution_last: "2026-09-06"
 top_source: "hacker-news"
 pending_count: 2
 pending_overdue: 0
@@ -322,7 +322,7 @@ MCP 的實際成本遠超多數使用者預期，已有多個量化案例：
 - **來源：** 「Claude Code has a hardcoded instruction telling Opus 5 not to use subagents」— 原始討論見 Reddit r/ClaudeCode，經 Hacker News 轉載延燒（score 18，跨平台佐證）
 - **核心論點：** 討論指出 Claude Code 2.1.219／220 版編譯二進位中，內建僅針對 Opus 5 的兩行系統提示：除非使用者明確要求，否則不得呼叫 AgentTool、不得使用 workflows 或 deep-research；討論者認為此舉可能不成比例限制 Opus 5 的能力發揮
 - **關鍵回響：**（無，屬未經官方證實的單一社群觀察，尚無正反交鋒紀錄）
-- **收斂結論：** 已查證（2026-08-13）：硬編碼限制確實存在，記載於 [GitHub Issue #80988](https://github.com/anthropics/claude-code/issues/80988)——Claude Code 2.1.219 起，內部代號「heron_brook」的 prompt 區塊針對 Opus 5 注入「除非使用者明確要求，否則不得呼叫 AgentTool、不得使用 workflows 或 deep-research」，此限制由伺服器端依模型判斷觸發、與使用者自訂設定無關，且無官方文件說明、無 opt-out 選項；已知 workaround 是在提示中明確 @mention 該 subagent 以強制執行委派；官方尚未對此做出公開回應。已與 [[topics/code-quality-decline]]「Opus 5 上線後品質感知訊號群」互相引用
+- **收斂結論：** 已查證（2026-08-13）：硬編碼限制確實存在，記載於 [GitHub Issue #80988](https://github.com/anthropics/claude-code/issues/80988)——Claude Code 2.1.219 起，內部代號「heron_brook」的 prompt 區塊針對 Opus 5 注入「除非使用者明確要求，否則不得呼叫 AgentTool、不得使用 workflows 或 deep-research」，此限制由伺服器端依模型判斷觸發、與使用者自訂設定無關，且無官方文件說明、無 opt-out 選項；已知 workaround 是在提示中明確 @mention 該 subagent 以強制執行委派；官方尚未對此做出公開回應。已與 [[topics/code-quality-decline]]「Opus 5 上線後品質觀感」互相引用
 
 #### Show HN：promptster.ai — 分析 Claude Code/Codex 實際用法而非僅費用儀表板（2026-07-25）
 

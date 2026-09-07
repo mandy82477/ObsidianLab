@@ -74,7 +74,7 @@
 
 11. **[[topics/anthropic-commitments]] — 承諾兌現追蹤**：本輪新增 Fable 5 恢復訂閱內含承諾（🔴 未兌現，社群轉述待官方一手查證）
 
-12. **[[topics/code-quality-decline]]**（ongoing）— Max 額度異常耗盡訊號群持續累積
+12. **[[topics/code-quality-decline]]**（ongoing）— 三條退步線只有 2026-04 那條有官方說法，另兩條官方未回應
 
 13. **[[topics/enterprise-tool-tracker]]**（ongoing）
 
