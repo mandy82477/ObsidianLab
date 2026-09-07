@@ -28,8 +28,8 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 **領域：** 💼 商業
 **蒐集邊界：** 以 Claude 為參照系的競品動態為主，另針對競品發布與定價定向補抓（每日至多 2 則）；競品自身未與 Claude 對比的發布可能延遲或缺漏。**帶跑分數字的第三方對照評測收不到**——這類內容多發表於對照型部落格，不在本站蒐集範圍，因此本頁的競品能力比較以官方數字與社群並排實測為主，缺口處改指向外部活榜單（見 [[topics/model-comparison]] 的外部評測榜單節），不自行推算。
 **開始日期：** 2026-04
-**最後更新：** 2026-09-06
-**最後新聞更新：** 2026-09-05
+**最後更新：** 2026-09-07
+**最後新聞更新：** 2026-09-07
 
 > **本週衝擊**（2026-09-04）
 > - 🔴 **價格戰打到產品層**：Meta Muse Code 結束 beta、推三層訂閱主打低價（09-01）——但月費沒公布，想比價還比不了，先別急著算換算成本。
@@ -66,8 +66,8 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 **懸置細節**
 - ⟨Q-06⟩ 🔎 **查無官方**（標 2026-08-29｜查 Google、企業定價、Antigravity｜複 2026-09-12）：Google 低價 AI 方案的方案名稱、費率、與 Antigravity 的關係均未見；08-31 CNBC 影音再報同一敘事，無新增數字。
 
-%% 維運備忘：上表固定 12 列，⚪ 級一律不佔列，動態只在時序累積 %%
-**未列入上表**（⚪ 級，動態仍記在下方時序）：Slack Code（Salesforce，08-26 官方確認，整合 Claude 與 ChatGPT 而非取代）、Inherent（08-23，公司自宣）、Thinking Machines Inkling（07-20 首款開源權重模型）、Perplexity（07-07 傳聞開發中）、中國 360 Tulongfeng（06-28，網路安全 AI，對標 Mythos 5）、Sakana AI Fugu（06-28，宣稱對標 Fable 5）、Google 未命名競品（Sergey Brin 主導，04 月起無新動態）；AgentConnect（新聞稿自宣）依准入不入表。
+%% 維運備忘：上表固定 12 列，⚪ 級一律不佔列，動態只在時序累積。2026-09-07：騰訊 Hy4（唯一 ⚪ 列）讓位給新進 xAI（Grok 4.5，🟡），移入下方未列入清單。 %%
+**未列入上表**（⚪ 級，動態仍記在下方時序）：騰訊 Hy4（08-29，開放權重 770B、不含視覺，尚無對比對象）、Slack Code（Salesforce，08-26 官方確認，整合 Claude 與 ChatGPT 而非取代）、Inherent（08-23，公司自宣）、Thinking Machines Inkling（07-20 首款開源權重模型）、Perplexity（07-07 傳聞開發中）、中國 360 Tulongfeng（06-28，網路安全 AI，對標 Mythos 5）、Sakana AI Fugu（06-28，宣稱對標 Fable 5）、Google 未命名競品（Sergey Brin 主導，04 月起無新動態）；AgentConnect（新聞稿自宣）依准入不入表。
 
 ## 硬答案
 
@@ -98,6 +98,7 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 | OpenAI Codex CLI | Free（試用）／Go $8／Plus $20／Pro 5x $100／Pro 20x $200／Business $30/user／Enterprise 客製 | —（訂閱制，不可比） | 已查證：2026-04-02 起改按 token 用量計費，非固定訊息數 | 2026-08-13 查證（多方比較站彙整）|
 | GPT-5.6（OpenAI API） | 已查證：Luna 降 80%（$0.20／$1.20）；Terra 降 20%（$2／$12）；Sol 未降價但提速 2.5 倍 | Luna≈0.12×、Terra≈1.2×（對 Sonnet 5 $10/Mtok 輸出）；Sol 未提新價 | OpenAI 官方明確訴求以更低價格對打 Anthropic | 2026-07-30（OpenAI 官方；2026-08-13 查證數字）|
 | Gemini CLI / Gemini 系列 | 已查證：Free $10 一次性／Pro $60/月／Max $200/月；2026-06-18 起免費層併入 Antigravity CLI | —（訂閱制，不可比） | 免費層緊縮後，個人開發者需轉 Antigravity CLI 或付費 API key | 2026-08-13 查證（多方比較站彙整）|
+| Grok 4.5（xAI） | $2／$6 per Mtok（input／output） | 輸入 1.0×、輸出 ≈0.6×（對 Sonnet 5 $2/$10 per Mtok） | 宣稱優於 GPT-5 與 Claude，對標哪個 Claude 模型未指明，無 benchmark 佐證 | 2026-09-07（單一來源 shattered.io）|
 
 **競品定價細節**
 - ⟨Q-01⟩ ❓ **待查證**（標 2026-08-14｜查 DeepSeek V4-Pro、V4 Flash）：僅悉較 V4 Flash 定價更高，具體費率未見報導；已掃日報至 2026-09-03 無後續，官方頁面未查證。
@@ -210,6 +211,9 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 
 ## 時序
 
+### 2026-09-07
+- **xAI（Grok 4.5）**：官方定價 $2/$6 per Mtok，宣稱優於 GPT-5 與 Claude；詳見「對手雷達」與「競品定價對照」新增列（Google News/shattered.io）
+
 ### 2026-09-05
 - **OpenAI**：Google News/Pasquale Pillitteri 報導稱 GPT-6 Astra 全面上線 Pro、Enterprise、API，副標提及「Anthropic 重置 Claude 用量限制」，原文全文未能取得（Google News/Pasquale Pillitteri）
 
@@ -273,7 +277,8 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 
 ### 2026-08-13
 - **DeepSeek**：TradingView、Bloomberg 報導 DeepSeek 公開組建團隊挑戰 Claude Code；KuCoin 與 Simon Willison 報導 V4 Pro 經 OpenRouter 以 API 上線，聲稱逼近 Claude 3 Opus、成本大幅降低（Google News；Blog/Simon Willison）
-- ❓ **待查證**（標 2026-08-13｜查 Grok、SpaceX）｜**xAI/Grok 新版發布，加壓 Anthropic 與 OpenAI**：Barron's 報導僅標題可用，無正文細節，Grok 版本號與能力提升內容未見；已掃日報至 2026-09-03 無後續，官方頁面未查證（Google News/Barron's）
+- ❓ **待查證**（標 2026-08-13｜查 Grok、SpaceX｜訊 2026-09-07）｜**xAI/Grok 新版發布，加壓 Anthropic 與 OpenAI**：Barron's 報導僅標題可用，無正文細節，Grok 版本號與能力提升內容未見（Google News/Barron's）
+- **訊 2026-09-07**：Grok 4.5 官方定價 $2/$6 per Mtok，宣稱優於 GPT-5 與 Claude（shattered.io，單一來源），為此前訊號補上版本號與定價，詳見「競品定價對照」與「對手雷達」新增列。
 
 ### 2026-08-11
 - **Meta**：CNBC 與 Simon Willison 報導 Meta 宣布開源其最強模型 Muse Glimmer，戰線從產品層擴大至模型層權重（Google News/CNBC；Blog/Simon Willison）

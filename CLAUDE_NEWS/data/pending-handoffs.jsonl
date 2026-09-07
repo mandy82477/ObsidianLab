@@ -131,3 +131,20 @@
 {"id": "H-abc54a", "opened": "2026-09-07", "from": "社群", "to": "商業", "page": "entities/pricing", "note": "「事故現在還在發生嗎」（2026-09-07 當時六列）沒有「token 消耗異常」這一維度，讀者問「帳單變多是不是這個原因」時兩頁互不接（2026-09-07 冷讀者 Q3）；請評估補一列或在表下加一句指 [[topics/code-quality-decline]]", "status": "open"}
 {"id": "H-1da51a", "opened": "2026-09-07", "from": "社群", "to": "模型", "page": "entities/opus-5", "note": "「這些數字是誰量的」表下條列缺一句出口：該頁收 Opus 5 這個模型的逐則觀感，「有沒有系統性退步」這條線的狀態（三條線、官方回應到哪、怎麼自己量）在 [[topics/code-quality-decline]]。該頁目前對本頁零連結（我掃過該頁 24 個 wikilink 目標），讀者從模型頁進來看不到那一題有家（2026-09-07 冷讀者 Q5）。這一筆是裁決點 2 選「不併」能成立的前提，不是附加項", "status": "open"}
 {"id": "H-b04da9", "opened": "2026-09-07", "from": "社群", "to": "人物", "page": "entities/boris-cherny", "note": ":186 仍寫「2026-05-03，社群開發者開始逐一獨立驗證」的現在式敘事；本頁已於 2026-09-07 把「50+ 逐項驗證」結案為「未見完成結果、本站停止追蹤」，請同步該段時態與結論", "status": "open"}
+{"id": "H-e465cd", "closed": "2026-09-07", "status": "done", "by": "人物", "result": "dario-amodei.md L83/L84 已改指 [[topics/anthropic-government-policy#誰在動這幾條線]]"}
+{"id": "H-d100c7", "closed": "2026-09-07", "status": "done", "by": "人物", "result": "robert-mahari.md 已改寫為不指節名的說法"}
+{"id": "H-074887", "closed": "2026-09-07", "status": "done", "by": "人物", "result": "boris-cherny.md 07-27、08-03 兩則已加句指回 discussions 現在吵到哪"}
+{"id": "H-8c72df", "closed": "2026-09-07", "status": "done", "by": "人物", "result": "boris-cherny.md:71 孤兒短標記 ⟨Q-01⟩ 確認冗餘已移除"}
+{"id": "H-b04da9", "closed": "2026-09-07", "status": "done", "by": "人物", "result": "boris-cherny.md:186 已改為過去式並同步 code-quality-decline 結案說法"}
+{"id": "H-af3714", "closed": "2026-09-07", "status": "done", "by": "安全政策", "result": "已補正式懸置標記（❓待查證，標2026-09-07）於 anthropic-government-policy.md L113，評估後判定不改列 ai-agent-safety"}
+{"id": "H-73768c", "closed": "2026-09-07", "status": "void", "by": "主編", "result": "tom-brown.md 現為37行併回redirect殼，原交辦所指行號內容已隨頁面改版搬離，交辦已隨改版失效"}
+{"id": "H-54baec", "closed": "2026-09-07", "status": "done", "by": "功能", "result": "評估兩節點(interns-review-plugin、gentle-ai)皆對應official-community-gap既有列，未新增列"}
+{"id": "H-fa9b87", "closed": "2026-09-07", "status": "done", "by": "功能", "result": "已補列 GitHub Issue #77136 於 claude-code.md 行為與品質分組"}
+{"id": "H-730637", "closed": "2026-09-07", "status": "done", "by": "功能", "result": "claude-code.md:213 已更正三修版本口徑（v2.1.116/v2.1.101/04-20服務端回復）"}
+{"id": "H-0a8cfc", "closed": "2026-09-07", "status": "done", "by": "功能", "result": "claude-code.md:177/178 指路句已同步節名為「模型釘選：你選的不一定算數」"}
+{"id": "H-df90ba", "closed": "2026-09-07", "status": "done", "by": "功能", "result": "long-context-1m.md:69/90 指路句節名與措辭已同步"}
+{"id": "H-fa4680", "closed": "2026-09-07", "status": "done", "by": "功能", "result": "已評估並收錄 issue #56079 於 claude-code.md 行為與品質分組"}
+{"id": "H-c0b18f", "closed": "2026-09-07", "status": "done", "by": "商業", "result": "pricing.md「我的方案現在有什麼」旗艦欄已補列 Fable 5/5.1 並標查證日"}
+{"id": "H-ae970d", "closed": "2026-09-07", "status": "done", "by": "商業", "result": "pricing.md L61/L83 矛盾已改寫消除，Pro 免另計費最強為 Opus 5"}
+{"id": "H-abc54a", "closed": "2026-09-07", "status": "done", "by": "商業", "result": "pricing.md「事故現在還在發生嗎」表下已加一句指向 code-quality-decline 的Token消耗異常訊號群"}
+{"id": "H-7397a3", "closed": "2026-09-07", "status": "done", "by": "社群", "result": "community-tech-patterns.md與community-pattern-trends.md「46%成本達96%效能」來源等級已改為社群轉載"}

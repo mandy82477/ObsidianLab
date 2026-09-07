@@ -1028,7 +1028,7 @@ Multi-agent 架構與 Skills 設計已是社群定案的做法；還在試的十
 
 - **核心模式：** Reddit 社群整理流傳的多模型工作流量化數字：由 Fable 5 負責任務協調（orchestrate）、便宜模型負責實際執行（execute）的分工架構，宣稱可在僅 46% 成本下達到 96% 的效能表現；此模式並非未來規劃，而是可直接在 Claude Code 中設定使用的現行做法
 - **與既有模式的關係：** 與既有「模型使用策略」類別下社群自建的分層模型路由（Sonnet + Opus）、Workweave Router 同屬「依任務複雜度分流節省成本」思路，差異在於本則提供具體量化數字（46% 成本／96% 效能），將社群長期實務直覺量化為可比較的基準；惟數字來源為 Reddit 整理轉載，非官方逐字確認的第一方發布
-- **來源：** 「Anthropic just benchmarked "Fable 5 orchestrates, cheap models execute": 96% of the performance at 46% of the cost. You can run this pattern in Claude Code today」— Reddit r/ClaudeAI（週熱門，社群轉載，原始官方發布連結未見）；細節數字經第三方查證（2026-08-13）：BrowseComp 基準上，Fable 5 orchestrator + Sonnet 5 executor 達 86.8% 準確率（Fable 5 單獨為 90.8%），成本 $18.53 vs $40.56／題；另一組態（Sonnet 5 執行、Fable 5 僅作顧問）在 SWE-bench Pro 達 Fable 5 單獨表現的約 92%，成本約 63%；可透過 `~/.claude/agents/` 設定 `model: sonnet` 的 subagent 固定模型於 Claude Code 中直接複現此模式（[explainx.ai](https://explainx.ai/blog/fable-5-advisor-orchestrator-patterns-july-2026)、[Jon Krohn](https://www.jonkrohn.com/posts/2026/7/20/fable-5-as-advisor-anthropics-two-model-pattern-for-smarter-cheaper-agents)）
+- **來源：** Reddit r/ClaudeAI（週熱門，社群轉載，原始官方發布連結未見）；第三方查證（2026-08-13）：BrowseComp 上 Fable 5 orchestrator + Sonnet 5 executor 86.8%（Fable 5 單獨 90.8%），成本 $18.53 vs $40.56／題；細節見 [explainx.ai](https://explainx.ai/blog/fable-5-advisor-orchestrator-patterns-july-2026)、[Jon Krohn](https://www.jonkrohn.com/posts/2026/7/20/fable-5-as-advisor-anthropics-two-model-pattern-for-smarter-cheaper-agents)
 - **成熟度：** ✅ 成熟（社群轉載量化數字＋第三方查證，可直接複現於 Claude Code；原始官方發布連結未見，來源等級為社群轉載非官方基準，2026-09-07 更正，見 [[entities/fable-5]]）
 
 #### 語音提示／語音輸出小趨勢觀察：Mr. Meeseeks 語音提示外掛（HN 130，本日最高分）與 aloud TTS 輸出工具並現（2026-07-14）
