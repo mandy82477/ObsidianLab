@@ -51,7 +51,7 @@
 
 | 這一格 | Fable 5（Legacy） | Fable 5.1（現行） | 官方出處（查證日） |
 |---|---|---|---|
-| 現在誰是預設 | 否 | 是——Claude Code v2.1.257 起 Fable 的預設即 5.1，用 `/model` 確認 | [[feature-radar]] 版本階梯（2026-09-04）|
+| 現在誰是預設 | 否 | 是——Claude Code v2.1.257 起 Fable 預設即 5.1 | [[feature-radar]] 版本階梯（2026-09-04）|
 | 牌價（輸入／輸出，每百萬 token）| $10 ／ $50 | $10 ／ $50（同價）| 官方模型總覽頁（2026-09-07）|
 | 快取讀取 | 基礎輸入價 ×0.1（$1）| ×0.025（$0.25）——便宜 75% | 官方定價頁（2026-09-07）|
 | 知識截止 | 2026-01 | 2026-06 | 官方模型總覽頁（2026-09-07）|
@@ -126,7 +126,7 @@
 ```
 - L103「安全分類器護欄：觸發時靜默 fallback 至 Opus 4.8」**整條移除**，事實進 A-6（那一節是它的家）。
 
-## A-9. `## 爭議` 13 條 → 10 條（拿現有列跑一遍）
+## A-9. `## 爭議` 13 條 → 12 條（拿現有 13 條實跑；🔴-2）
 
 節標下加一行圖例：
 
@@ -142,6 +142,8 @@
 | L121「太危險」分級質疑 | 留，但刪掉「2026-07-24 日報收錄」「弱訊號」「score 恆 0」三處編輯台語言，改寫成「單一社群貼文，未附測試方法」（冷讀者外洩清單第 5 條）|
 | 其餘 9 條 | 一字不動，只依 🔴 → ⚠️ → ✅ 重排 |
 
+**落地是 12 條不是 10**：移除 1（L110 併入護欄節），L119／L120 降為指路句但**仍各佔一條**，9＋2＋1（L121 改寫後留）＝12。上限句依此寫成 12（B-2）。
+
 ## A-10. `## 相關議題`（取代 L160–164，每條補分工句）
 
 ```
@@ -151,9 +153,10 @@
 - [[topics/anthropic-government-policy]] — 政府那條線會不會讓你哪天用不到、或用到被改派的版本
 - [[entities/claude-code]] — Claude Code 現在有什麼毛病（Fable 相關的 issue 追蹤在這）
 - [[topics/long-context-1m]] — 1M context 這個旋鈕本身的計費與可見性
+- [[topics/ai-agent-safety]] — 護欄被繞過、越獄與提示注入這類攻擊面（本頁爭議節那幾條的安全政策脈絡）
 ```
 
-原 L163 [[topics/anthropic-business]] 移除（IPO 與商業策略與本頁使命無關，本頁內文無任何一處指它）；新增的兩條是 A-9 兩句指路的落點。
+**逐條增刪**：留 mythos／pricing／gov-policy／**ai-agent-safety**（L121 與 L280 兩處正文都指它，刪掉會留下孤兒引用，🔴-3）；**移除** anthropic-business；**新增** model-comparison、claude-code、long-context-1m。5 條 → 7 條。anthropic-business 移除的理由是 IPO 與商業策略與本頁使命無關，且本頁內文無任何一處指它。
 
 ## A-11. `## 歷史記錄` 的三處改動
 
@@ -175,9 +178,14 @@
 - 2026-06-30 管制解除、07-01 起全球恢復存取，同時導入 Defense in Depth 分類器。
 - 雙方立場的完整論點、逐日經過與商業衝擊（DoD 轉單、G7 不豁免、赴華府協商）見下方連結；攻防的家是 [[topics/anthropic-government-policy]]。
 
-原始條目見 [[entities/fable-5-archive#2026-06]]。
+原始條目見 [[entities/fable-5-archive#2026-06]]；雙方立場的兩張表見 [[entities/fable-5-archive#出口管制：雙方立場]]。
 ```
-3. **懸置標記改短標記**（冷讀者外洩清單第 1、2 條）：剩下 5 筆（L220、L238、L246、L248、L255）改為 `❓ 待查證 ⟨Q-nn⟩`，完整標記下沉到 `### 解禁後（2026-07-01 起）` 末新增的「懸置細節」區。**短標記與定義必須成對**——`scripts/pending_markers.py:46-48` 的 `SHORT_RE`（符號＋類別詞＋`⟨Q-nn⟩` 三段相連）與 `:50-52` 的 `QDEF_RE`（定義行須 `- ⟨Q-nn⟩ ` 後緊接 ❓／🔎），由 `scripts/check_pending_markers.py:173` 雙向對帳，格式寫錯即 FAIL。
+3. **另外四處單行改動**（皆在 `### 解禁後`，事實不改，只改口徑與措辭）：
+   - **L325**「- **管制事件歷時 18 天**（2026-06-13 至 2026-07-01）」→ `- **管制解除**：2026-06-30 宣布、07-01 全球恢復（天數口徑見 [[topics/anthropic-government-policy]]）`——這是本頁第二個結束日，🔴-4 抓到我漏列。
+   - **L275** 的「見 [[topics/anthropic-government-policy]]「## 目前局勢」與「## 三個戰場」」→ 把「## 目前局勢」改成「## 現在有哪幾條線在動」（該節第 6 波已改名，全庫除 log.md 外只剩這一處指舊名，🟡-3）。
+   - **L280**「（弱訊號，社群主觀）」→「（單一來源，社群觀點）」、「同期日報另收錄」→「同期另有」（與 L121 同一批事實、同型編輯台語言，🟡-6）。
+   - **L299** 條目標題逐字為「**官方基準：「Fable 5 orchestrates, cheap models execute」…**」，歷史條目不改寫，**append 一句**：`**後續（2026-09-07）**：本站核查未見原始官方發布連結，此數字改列為社群整理轉載，非官方基準。`（🟡-2；與 A-8 改後的 L101 同頁一致）
+4. **懸置標記改短標記**（冷讀者外洩清單第 1、2 條）：剩下 5 筆（L220、L238、L246、L248、L255）改為 `❓ 待查證 ⟨Q-nn⟩`，完整標記下沉到 `### 解禁後（2026-07-01 起）` 末新增的「懸置細節」區。**短標記與定義必須成對**——`scripts/pending_markers.py:46-48` 的 `SHORT_RE`（符號＋類別詞＋`⟨Q-nn⟩` 三段相連）與 `:50-52` 的 `QDEF_RE`（定義行須 `- ⟨Q-nn⟩ ` 後緊接 ❓／🔎），由 `scripts/check_pending_markers.py:173` 雙向對帳，格式寫錯即 FAIL。
 
 ## A-12. 新頁 `wiki/entities/fable-5-archive.md`（裁決點 1）
 
@@ -190,11 +198,11 @@
 **上層：** [[entities/fable-5]]
 **首次出現：** 2026-06-09
 **最後更新：** <實作日>
-**最後新聞更新：** 2026-06-29
+**最後新聞更新：** 2026-07-03
 
 > 本頁是 [[entities/fable-5]] 的原始條目封存，現在還成立的答案（哪一代、能不能用、護欄會不會擋你）都在主頁。
 
-## 出口管制：雙方立場（2026-06 定格）
+## 出口管制：雙方立場
 <原 L125–155 一字不動照搬>
 
 ## 配額與計費過渡（原訂 7/7，2026-07-19 到期）
@@ -204,7 +212,17 @@
 <原 L329–412 一字不動照搬，原有的兩個中間分節保留為 h3>
 ```
 
-`status` 必須逐字是 `resolved（封存頁）`、必須有 `**上層：**`、領域繼承母頁——三者由 `scripts/check_hierarchy.py:123-129` 驗；不補 index 列，跑 `python scripts/gen_wiki_frontmatter.py` 會投影成母頁列的「↳ 子故事：」。母頁 callout 日期 09-01 ≥ archive 的 06-29，`check_hierarchy.py:136-138` 的「hub 不落後」通過。
+`status` 必須逐字是 `resolved（封存頁）`、必須有 `**上層：**`、領域繼承母頁——三者由 `scripts/check_hierarchy.py:123-129` 驗；不補 index 列，跑 `python scripts/gen_wiki_frontmatter.py` 會投影成母頁列的「↳ 子故事：」。母頁 callout 日期 09-01 ≥ archive 的 07-03，`check_hierarchy.py:136-138` 的「hub 不落後」通過。
+
+## A-14. 同維護者回掃（評審採納，本波一起改）
+
+「事實更正必回掃」的射程涵蓋同一維護者的其他頁——把 46%／96% 的來源等級由官方基準改成社群轉載，改的是三個儲存格的等級標註，不是版面重寫，`wiki-reporter-shared.md`「事實更正必回掃」也沒有給同維護者例外。本波同批改：
+
+- `wiki/topics/model-comparison.md` :77 依據欄「官方基準：Fable 5 調度 46% 成本達 96% 效能」→ `社群轉載（Reddit，2026-07-08）：Fable 5 調度 46% 成本達 96% 效能`
+- 同檔 :86 整句 → `Fable 5 調度 46% 成本達 96% 效能為社群整理轉載（Reddit，週熱門，2026-07-08），未見原始官方發布連結`
+- 同檔 :165 「46% 成本達 96% 效能」→ 末補「（社群轉載，2026-07-08）」
+- `wiki/entities/mythos.md` :227 節標「### 出口管制期（2026-06-13 至 06-26）」→ `### 出口管制期（2026-06-13 至 06-30）`（第三個結束日；改節標前先跑 `python scripts/wiki_graph.py explain entities/mythos --section "出口管制期（2026-06-13 至 06-26）"` 確認無錨點邊）
+- `wiki/entities/opus-4-8.md` :46「出口管制期間（2026-06-13 至 07-01…」→ 改為「出口管制期間（2026-06-13 停用至 06-30 解除…」——**評審寫「opus-4-8 全檔零命中」是錯的**，該行實際存在（見第二輪處置表 🔴-4）
 
 ## A-13. 給主編的文字（index 與 feature-radar，本波不由實作者改）
 
@@ -220,7 +238,7 @@ Claude Fable 5 與 5.1：現行旗艦是 5.1（09-01 GA），5 轉 Legacy、退�
 ```
 > Fable 免費期限（原訂 7/19）已到期並移出本表；現在是常態分流：Max 與 Team premium 為標配（週用量 50% 內），Pro 與 standard 走 usage credits，5 與 5.1 同規則，詳見 [[entities/pricing]]。
 ```
-- **feature-radar L181**（Fable 5.0 那列的狀態欄仍寫「7/7 前 50% 配額」）：狀態欄改 `正式發布（Legacy，退役不早於 2027-06-09；現行世代見 Fable 5.1 那一列）`。
+- **feature-radar L181**（Fable 5.0 那列）：狀態欄改 `正式發布（Legacy，退役不早於 2027-06-09；現行世代見 Fable 5.1 那一列）`；**試用價值由 `✅ 推薦` 改 `⏳ 觀望（Legacy，改用 5.1）`**——官方建議遷移的舊世代掛 ✅，與同表 L126 現行世代的 ⚡ 並排會誤導（🟡-8）。
 
 ---
 
@@ -247,13 +265,13 @@ Claude Fable 5 與 5.1：現行旗艦是 5.1（09-01 GA），5 轉 Legacy、退�
 
 四欄固定：`會踩到的類別｜具體是什麼｜誰最容易誤觸｜你能先做什麼`。四列即官方公布的四個觸發類別（cybersecurity／biology and chemistry／distillation／窄範圍 frontier LLM development）。官方改變分類器行為即**覆寫**對應格並更新查證日；官方拿掉某一類即**移除**該列，結論留表下細節。**新增列的唯一入口是官方公布新的觸發類別**——社群回報的誤判案例只能更新「誰最容易誤觸」欄，不得新增列、不得改寫「你能先做什麼」。政策後果（政府談判換來的承諾、你的選項）的家是 [[topics/anthropic-government-policy]]「政府動作對你的產品做了什麼」，本節只寫模型面機制並互指，不複製。
 
-### fable-5 的 `## 熱度與試用價值`：同步對象是 feature-radar 全覽表現行世代那一列
+### fable-5 的 `## 熱度與試用價值`：同步 feature-radar 全覽表現行世代那一列，不一致即覆寫
 
 radar 全覽表同時有 Fable 5 與 Fable 5.1 兩列時，本表對照的一律是**現行世代**那一列（2026-09-07 起為 Fable 5.1），不一致時以 radar 為準**覆寫**本表並更新判定日；舊世代那一列的熱度不同步過來。
 
-### fable-5 的 `## 爭議`（上限 10 條）
+### fable-5 的 `## 爭議`（上限 12 條）
 
-**判準句（兩條全過才留）：** ① 它是對這個模型本身的爭議，不是 Claude Code 的缺陷或計費事故——後兩者的家是 [[entities/claude-code]] 與 [[entities/pricing]]，本節只留一句指路且**不抄互動數字**（抄了必然比家頁舊）；② 寫得出它現在還成不成立。狀態三值 🔴 現在還會遇到／⚠️ 有爭論、官方無結論／✅ 官方已處理，圖例一行固定放節標下、不重寫。排序 🔴 → ⚠️ → ✅。官方給出結果後改標 ✅，再滿 90 天無新事實即**移除**該條，結論併進對應的表或節。
+**判準句（兩條全過才留）：** ① 它是對這個模型本身的爭議，不是 Claude Code 的缺陷或計費事故——後兩者的家是 [[entities/claude-code]] 與 [[entities/pricing]]，本節只留一句指路且**不抄互動數字**（抄了必然比家頁舊）；② 寫得出它現在還成不成立。**上限 12 條**（其中「家在別頁、本節只留一句指路」的條目至多 2 條，不抄互動數字——**指路句仍佔一條**）。狀態三值 🔴 現在還會遇到／⚠️ 有爭論、官方無結論／✅ 官方已處理，圖例一行固定放節標下、不重寫。排序 🔴 → ⚠️ → ✅。官方給出結果後改標 ✅，再滿 90 天無新事實即**移除**該條，結論併進對應的表或節。
 
 ### fable-5 的封存
 
@@ -279,10 +297,12 @@ entities 頁的熱度表對照的是 radar 全覽表**現行世代**那一列；
 ## B-5. 帳本（`scripts/pending_handoffs.py`，不手改檔案）
 
 ```
-python scripts/pending_handoffs.py close H-754509 --by 模型 --result "本頁四處已處理：L48 與 L327 節標隨 2026-06 封存與現況改寫消失、L303 端點改為 06-30 解除／07-01 恢復、L103 靜默 fallback 依官方原文改寫並補回指政策頁。跨頁殘留分兩路：mythos／opus-4-8 屬同一維護者的其他頁，列 09-14 回訪；tom-brown 另開帳本"
-python scripts/pending_handoffs.py open --from 模型 --to 人物 --page entities/tom-brown --note "L42／L67「封鎖期共 18-19 天」的端點口徑：家是 topics/anthropic-government-policy（06-30 解除、07-01 恢復），請改為指路或照該頁口徑改寫"
+python scripts/pending_handoffs.py close H-754509 --by 模型 --result "本頁四處已處理：L48 現況改寫、L325 改為指路不寫天數、L327 節標隨 2026-06 封存消失、L103 靜默 fallback 依官方 06-30 原文改寫並補回指政策頁。帳本原列的 entities/tom-brown L42／L67 經 2026-09-07 實查已不存在（第 6 波併頁後為 36 行 redirect 殼）。全庫殘留兩處由同維護者同批改：entities/mythos:227 節標『出口管制期（2026-06-13 至 06-26）』、entities/opus-4-8:46『出口管制期間（2026-06-13 至 07-01）』"
 python scripts/pending_handoffs.py open --from 模型 --to 社群 --page topics/community-tech-patterns --note "「46% 成本達 96% 效能」在 patterns L892-896 與 community-pattern-trends L162／L171 寫成官方基準，但該數字的家 entities/fable-5 自承是 Reddit 整理轉載、原始官方發布連結未見（2026-09-07 定為社群轉載）。請把兩頁的來源等級改成社群轉載"
+python scripts/pending_handoffs.py open --from 模型 --to 商業 --page entities/pricing --note "「我的方案現在有什麼」表 L61-63 三列旗艦欄只寫 Fable 5，未提 Fable 5.1；官方說明中心載明兩代同一套規則（Max／Team premium 週用量 50% 內免費、Pro／standard 走 usage credits），07-19 到期的促銷只適用 Fable 5。請在旗艦欄補寫 5.1 並標查證日"
 ```
+
+**不開 tom-brown 那筆**（評審 🔴-4，實查為 redirect 殼）；mythos 與 opus-4-8 屬同一維護者，走 A-14 本波直接改，不進帳本。
 
 ## B-6. 兩支腳本的存量檔（實作者同批處理，不然閘會紅）
 
@@ -290,8 +310,21 @@ python scripts/pending_handoffs.py open --from 模型 --to 社群 --page topics/
 ```json
 {"page": "entities/fable-5-archive", "term": "記者", "line_contains": "記者會", "reason": "「首爾記者會」指真實新聞發布會，非編輯部角色詞（隨 2026-06 條目自 entities/fable-5 搬入，原頁已有同型例外）"}
 ```
-- **懸置標記基線**：費馬那筆結案後全庫由 142 降為 141，同批跑
+- **懸置標記基線**：費馬結案後全庫由 142 降為 **141**（短標記化**不改變總數**——基線只數 `PENDING_RE` 標準式，短標記只在 `check_pending_markers.py:173` 的雙向對帳用，見 `:210-227` 的 `_marker_fingerprints()`）。141 低於基線即 FAIL，所以 rebuild 是**必要步驟不是保險**：
 ```
 python scripts/check_pending_markers.py --rebuild-count --reason "entities/fable-5 費馬歸屬經官方一手查證結案（內部研究模型，非 Fable 5／5.1）"
 ```
-  若 A-11 第 3 點的 5 筆短標記化先落地（每筆各多一個標記），總數會回到 146、不會觸發 FAIL；**但仍要跑 rebuild**，否則基線與實況永久對不上。
+
+## B-7. `.claude/commands/wiki-lint.md` 新增 5l（🔴-6，三張表的週期看守）
+
+插在 5k 之後：
+
+```
+### 5l. 模型頁世代表複查（主編親做）`[加入: 2026-09-07]`
+
+對 `wiki/entities/fable-5.md` 三張表跑一次（判準見 `.claude/rules/wiki-ingest-models.md`「entities/fable-5 的三張表」）：① `## 你現在拿到的是什麼` 表上「資料截至」距今逾 60 天 → WebFetch 官方模型總覽頁重查七列並更新查證日；② `## 護欄會怎麼改寫你的請求` 四類是否仍為官方公布的四類；③ `## 熱度與試用價值` 對 feature-radar 全覽表**現行世代**那一列，不一致以 radar 為準覆寫。
+
+模型頁世代表（5l）：結論表資料截至 YYYY-MM-DD（重查 N 列）／護欄四類 一致 or 變動 M 項／熱度表 一致 or 已覆寫
+```
+
+同一行回報格式加進該檔步驟 8 的 lint 紀錄清單。改完照 `.claude/rules/claude-md-edit.md` 跑 `/review-commands` 到零錯誤，並核對 `.claude/review-registry.json` 是否需要登記新錨點。

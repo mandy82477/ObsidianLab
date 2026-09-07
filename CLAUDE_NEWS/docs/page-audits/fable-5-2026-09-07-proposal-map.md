@@ -2,7 +2,7 @@
 
 行號＝檔案原始行號（含 frontmatter 25 行），**以磁碟現行檔為準**（git 中為 `M`，差異只有 `last_updated`／`inbound_links` 兩行 frontmatter）。逐字稿見 `-draft.md` 的 A／B 欄。
 **行號只作參考，實作座標一律用「列首文字」**——同一波內前面的編輯會把後面的行推移（第 8 波 🔴-3 的教訓）。
-**一行不憑空消失**：凡「砍」「搬」皆註明事實落到哪裡。412 行 → 約 265 行。
+**一行不憑空消失**：凡「砍」「搬」皆註明事實落到哪裡。412 行 → **約 315 行**（第二輪逐節加總更正，🟡-1；原寫 265 未計入 07–09 三個月原文 130 行與 30 列參考來源）。
 
 ## 一、標頭與結論層（L1–105）
 
@@ -43,7 +43,7 @@
 
 | 行號 | 列首文字／現在是什麼 | 去向 | 落點 |
 |---|---|---|---|
-| L107 節名 | `## 爭議` | 留；節標下加圖例一行 | draft A-9 |
+| L107 節名 | `## 爭議` | 留；節標下加圖例一行。**13 條 → 12 條**（移除 1，兩條降指路句但仍各佔一條，🔴-2）| draft A-9 |
 | 列首「- ✅ **生物安全防護誤判大幅降低」（L109） | 08-07 官方 −85% | **留**；同一事實在護欄節表下細節區以一句摘要出現（同頁至多兩處）| draft A-6 第 2 列與表下 |
 | 列首「- ✅ **靜默降級競爭 LLM 開發」（L110） | 已撤回 | **移除本條**，事實併入護欄節「機制沿革」 | draft A-6。移除前確認：本條**不是**任何懸置標記的家（本頁 6 筆標記全在 L203–255）|
 | 列首「- ⚠️ **資安研究者護欄過激」（L111） | Palmiotti 批評 | 留，一字不動 | — |
@@ -55,7 +55,7 @@
 | L123 節名 | `## 出口管制：雙方立場` | **整節砍（裁決點 3，主 session 已代判）** | 兩張表搬 archive，母頁在現況第 2 段留一句指 [[topics/anthropic-government-policy]] |
 | L125–137 | 美國政府立場（5 列表＋立場底線） | **搬 archive，一字不動** | 例外 2 已逐名核過：Lutnick／Jassy／Starmer／Sacks／carve-out／personality clash／DoD 七個專有名詞在 gov-policy 或其 archive 全部另有家（`grep -rl` 實掃） |
 | L141–154 | Anthropic 立場（6 列表＋立場底線） | **搬 archive，一字不動** | 同上 |
-| L158–164 | `## 相關議題` 5 條（只有頁名沒有分工句） | **整節改寫成 6 條帶分工句** | draft A-10；移除 anthropic-business（本頁內文無一處指它），新增 claude-code 與 long-context-1m |
+| L158–164 | `## 相關議題` 5 條（只有頁名沒有分工句） | **整節改寫成 7 條帶分工句** | draft A-10。逐條增刪：**留** mythos／pricing／gov-policy／**ai-agent-safety**（L121 與 L280 兩處正文指它，刪掉會留孤兒引用，🔴-3）；**移除** anthropic-business（本頁內文無一處指它）；**新增** model-comparison／claude-code／long-context-1m |
 
 ## 三、參考來源與歷史記錄（L166–412）
 
@@ -67,7 +67,11 @@
 | 列首「**費馬最後定理形式化證明」（L201–208） | 09-04 條目 | **改寫首句歸屬**，L203 的 ❓ 標記結案移除 | draft A-11（1）＋B-6 基線重建。官方原文「internal research model roughly comparable to Fable 5.1」|
 | L209–219、L221–222 | 09-03 服務中斷、09-02 多家跟進 | 留，一字不動 | L218 那條含 `[[topics/model-comparison#同一份工作，換設定差多少]]` 錨點（registry :158 看守），**實作者不得動** |
 | L220、L238、L246、L248、L255 | 5 筆 ❓ 標準式懸置標記（`標／查／複／訊` 裸露在正文） | **改短標記 ⟨Q-01⟩～⟨Q-05⟩**，完整標記下沉到 `### 解禁後` 末的「懸置細節」區 | draft A-11（3）。冷讀者外洩清單第 1、2 條；成對格式由 `check_pending_markers.py:173` 對帳 |
-| L223–326 | 09-01 至 07-01 其餘條目 | **留，一字不動** | — |
+| 列首「見 [[topics/anthropic-government-policy]]「## 目前局勢」」（L275） | 指向第 6 波已改名的節 | **改節名**為「## 現在有哪幾條線在動」 | 🟡-3；全庫除 log.md 外只剩這一處指舊名 |
+| 列首「**社群觀點：「太危險」分級」（L280） | 含「弱訊號，社群主觀」「同期日報另收錄」 | **改三處措辭**，事實不動 | 🟡-6；與 L121 同批（同型編輯台語言）|
+| 列首「**官方基準：「Fable 5 orchestrates」（L299） | 標題含「官方基準」 | **標題不改**（歷史條目），**append 一句後續** | 🟡-2；否則與改後的 L101 同頁互斥 |
+| 列首「- **管制事件歷時 18 天**」（L325） | 第二個結束日 | **改寫**為「管制解除：06-30 宣布、07-01 全球恢復（天數口徑見 gov-policy）」 | 🔴-4；我原稿漏列，它在「留，一字不動」的區間內會活下來 |
+| L223–326 其餘 | 09-01 至 07-01 條目 | **留，一字不動** | — |
 | 列首「**與既有爭議的關係**」（L319） | 「可見防護…不同於 6/9 已撤回的舊爭議」 | 留，一字不動 | 它是護欄節「機制沿革」的證據底 |
 | L327 節名 | `### 出口管制期（2026-06-13 至 06-30）` | **整段搬 archive**（節標本身是 H-754509 點名的三個端點組合之一，隨搬家消失）| — |
 | L329–399 | 06-29 至 06-13 共 14 個日期條目 | **搬 archive，一字不動** | 母頁留 10 行時段總結（draft A-11(2)），末行 `原始條目見 [[entities/fable-5-archive#2026-06]]` |
@@ -79,7 +83,7 @@
 1. **L218 的錨點** `[[topics/model-comparison#同一份工作，換設定差多少]]`——`.claude/review-registry.json:158` 明列本頁為該節名的五筆錨點入邊之一。
 2. **`## 熱度與試用價值` 節名**——是 `.claude/rules/wiki-ingest-features.md`「熱度降溫」同步條款指名的落點。
 3. **`wiki/index.md` 與 `wiki/feature-radar.md`**——主編彙整區，draft A-13 只給文字。
-4. **`wiki/topics/model-comparison.md` 的 46%／96% 三處**（:77／:86／:165）——同一維護者的其他頁，「一次一頁」原則下本波只在本頁定說法，MC 列 09-14 回訪（見提案 §9）。
+4. ~~model-comparison 三處列回訪~~ **已推翻（評審採納，本波一起改）**：`wiki/topics/model-comparison.md` :77／:86／:165 的「官方基準」改「社群轉載」，`wiki/entities/mythos.md` :227 與 `wiki/entities/opus-4-8.md` :46 的管制端點同批改——逐字見 draft A-14。跨維護者的 patterns／trends 仍走帳本。
 
 ## 五、收工判準（實作者逐條抄輸出）
 
@@ -87,4 +91,7 @@
 2. `python scripts/check_cell_limits.py --page fable-5` 無新增超限（archive 頁本就不受此閘，`check_cell_limits.py:79` 排除 `-archive`）。
 3. `python scripts/check_pending_markers.py` 通過，且短標記與定義成對；基線已 rebuild 並附理由。
 4. `python scripts/table_census.py entities/fable-5` 三張表的「機制」欄全為「有」（本波前 5 張全「無」）。
-5. `python scripts/gen_wiki_frontmatter.py` → `python scripts/run_tests.py` 全綠 → `python scripts/build_web.py` 錨點 WARN 不增。
+5. `python scripts/check_pending_markers.py --rebuild-count --reason "…"` 印出「141 筆」——短標記化不改變總數，141 是必然結果（🔴-5）。
+6. 同維護者回掃兩道 grep 皆零命中：`grep -n "官方基準" wiki/topics/model-comparison.md`；`grep -rn "06-26\|06-13 至 2026-07-01" wiki/entities/ wiki/topics/ --include=*.md | grep -v log`。
+7. `.claude/commands/wiki-lint.md` 有 5l（draft B-7），`python scripts/check_rules.py` exit 0。
+8. `python scripts/gen_wiki_frontmatter.py` → `python scripts/run_tests.py` 全綠 → `python scripts/build_web.py` 錨點 WARN 不增。
