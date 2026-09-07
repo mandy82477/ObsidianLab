@@ -368,6 +368,15 @@ python scripts/gen_wiki_frontmatter.py --list-signal "⚠️ 高引用但停滯"
 社群討論兩表（5k）：爭論 N/10（還在吵 a／已共識 b／僵住 c）／討論 M/50（移出 d／改標 e）／最後動態已重算 K 列
 ```
 
+### 5l. 模型頁世代表複查（主編親做）`[加入: 2026-09-07]`
+
+對 `wiki/entities/fable-5.md` 三張表跑一次（判準見 `.claude/rules/wiki-ingest-models.md`「entities/fable-5 的三張表」）：① `## 你現在拿到的是什麼` 表上「資料截至」距今逾 60 天 → WebFetch 官方模型總覽頁重查七列並更新查證日；② `## 護欄會怎麼改寫你的請求` 四類是否仍為官方公布的四類；③ `## 熱度與試用價值` 對 feature-radar 全覽表**現行世代**那一列，不一致以 radar 為準覆寫。
+
+**回報格式（納入步驟 8 的 lint 紀錄）：**
+```
+模型頁世代表（5l）：結論表資料截至 YYYY-MM-DD（重查 N 列）／護欄四類 一致 or 變動 M 項／熱度表 一致 or 已覆寫
+```
+
 ### 6. CLAUDE.md 健檢
 
 讀取 `wiki/CLAUDE.md`、`.claude/rules/wiki-ingest.md`、`.claude/rules/wiki-ingest-format.md`、`.claude/rules/wiki-reporter-shared.md` 與**本檔（`.claude/commands/wiki-lint.md`）自身** `[加入: 2026-08-28]`，依序執行下列各項檢查。
@@ -649,6 +658,7 @@ python scripts/check_reader_language.py --page <slug>   # 單頁清單
 - 商業健康度四表健檢（5j）：指標 N 列（移除 a／補位 b）／風險 M 列（移除 c／補位 d）／合作 K 列／人物 P 人／通路快照資料截至 YYYY-MM-DD
 - 社群模式概覽退場複查（5k）：列數 N／21（✅a／⚡b／⏳c）／最後動態已重算 N 列／退場 M 列／補位 K 列／合併 J 組／主線 tag 補填 20 則（累計 N/115）／滿載讓位：無 ／ ⚠️ 需裁決
 - 社群討論兩表（5k）：爭論 N/10（還在吵 a／已共識 b／僵住 c）／討論 M/50（移出 d／改標 e）／最後動態已重算 K 列
+- 模型頁世代表（5l）：結論表資料截至 YYYY-MM-DD（重查 N 列）／護欄四類 一致 or 變動 M 項／熱度表 一致 or 已覆寫
 - 讀者模擬：（3 題結果：✅/⚠️ 已修復/❌ 待辦，各附一句說明）
 - 質疑代打（7b）：（seed 與抽中題號，各題 ✅ 附證據行/⚠️ 修了什麼/❌ 待辦；時效燈亮時原樣轉述）
 - lint 自我遵守率：（N/6 位記者回報一次過；退回者列出類別與缺項）

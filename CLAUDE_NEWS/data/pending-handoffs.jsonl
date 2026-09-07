@@ -119,3 +119,5 @@
 {"id": "H-54baec", "opened": "2026-09-06", "from": "社群", "to": "功能", "page": "topics/official-community-gap", "note": "本日 community-tech-patterns.md 新增8個工作流/工具節點（含 interns-review-plugin 對抗式審查 skill、gentle-ai 設定工具等），請評估產品化矩陣是否需新增列", "status": "open"}
 {"id": "H-6421dd", "closed": "2026-09-06", "status": "done", "by": "投資分析", "result": "本頁對anthropic-business一律整頁連結不帶錨點，未受節名改版影響"}
 {"id": "H-862ff3", "closed": "2026-09-06", "status": "done", "by": "投資分析", "result": "已改寫08-13與09-04判讀三處措辭，與anthropic-business事實頁一致（兆一級媒體引投資人、650億Series H官方一手、6/1遞件多家一級媒體報導）"}
+{"id": "H-7397a3", "opened": "2026-09-07", "from": "模型", "to": "社群", "page": "topics/community-tech-patterns", "note": "「46% 成本達 96% 效能」在 patterns L892-896 與 community-pattern-trends L162／L171 寫成官方基準，但該數字的家 entities/fable-5 自承是 Reddit 整理轉載、原始官方發布連結未見（2026-09-07 定為社群轉載）。請把兩頁的來源等級改成社群轉載", "status": "open"}
+{"id": "H-c0b18f", "opened": "2026-09-07", "from": "模型", "to": "商業", "page": "entities/pricing", "note": "「我的方案現在有什麼」表 L61-63 三列旗艦欄只寫 Fable 5，未提 Fable 5.1；官方說明中心載明兩代同一套規則（Max／Team premium 週用量 50% 內免費、Pro／standard 走 usage credits），07-19 到期的促銷只適用 Fable 5。請在旗艦欄補寫 5.1 並標查證日", "status": "open"}

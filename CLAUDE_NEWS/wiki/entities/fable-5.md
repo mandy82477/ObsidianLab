@@ -2,112 +2,118 @@
 page: "entities/fable-5"
 kind: "entity"
 type: "model"
-status: "active（正式發布；出口管制已解除，2026-07-01 起全球恢復存取；免費期已於 2026-07-19 到期，Max/Team 後續存取政策已於 2026-08-08 經官方 Help Center 查證收斂，見 [[entities/pricing]]；5.1 已於 2026-09-01 GA 發布並取代 5.0 為現行旗艦版本，見「歷史記錄」）"
+status: "active（現行世代為 Fable 5.1；Fable 5 為 Legacy，官方載明退役不早於 2027-06-09）"
 domain: "🤖 模型"
-last_updated: "2026-09-05"
+last_updated: "2026-09-07"
 last_news_update: "2026-09-04"
 status_main: "active"
-days_since_news: 2
+days_since_news: 3
 parent: null
-children: "[]"
-page_role: "root"
-days_since_news_subtree: 2
-inbound_links: 38
+children: "['entities/fable-5-archive']"
+page_role: "hub"
+days_since_news_subtree: 3
+inbound_links: 42
 attribution_count: 32
 attribution_last: "2026-09-04"
 top_source: "google-news"
-pending_count: 6
+pending_count: 5
 pending_overdue: 0
 pending_next_review: "2026-09-09"
 pending_signalled: 1
 signal: "健康"
 generated_by: "scripts/gen_wiki_frontmatter.py"
 ---
-# Claude Fable 5
+# Claude Fable 5 與 5.1
 
 **類型：** model
-**狀態：** active（正式發布；出口管制已解除，2026-07-01 起全球恢復存取；免費期已於 2026-07-19 到期，Max/Team 後續存取政策已於 2026-08-08 經官方 Help Center 查證收斂，見 [[entities/pricing]]；5.1 已於 2026-09-01 GA 發布並取代 5.0 為現行旗艦版本，見「歷史記錄」）
+**狀態：** active（現行世代為 Fable 5.1；Fable 5 為 Legacy，官方載明退役不早於 2027-06-09）
 **領域：** 🤖 模型
+**別名：** Fable 5, Fable 5.1, Claude Fable 5.1
 **首次出現：** 2026-06-09
-**最後更新：** 2026-09-06
+**最後更新：** 2026-09-07
 **最後新聞更新：** 2026-09-04
 
-> **最新進展**（2026-09-04）
-> Claude 歷時 11 天自主完成費馬最後定理的完整 Lean 形式化驗證，未指名具體模型版本（[Anthropic](https://www.anthropic.com/research/formalizing-fermats-last-theorem)）。長期主導此形式化工作的 Xena Project 作者 [[entities/kevin-buzzard]] 稱「被 Anthropic 搶先」，指出走的是 Darmon–Diamond–Taylor 1995 年闡述的證明路徑。
+> **最新進展**（2026-09-01）
+> Fable 5.1 GA 發布並取代 5.0 成為現行旗艦：同價、快取讀取便宜 75%、知識截止晚 5 個月；Fable 5 轉為 Legacy，官方載明退役不早於 2027-06-09。
 
 ---
 
 ## 現況
 
-**2026-09-04 最新（研究能力事件，模型版本未指名）**：Anthropic 官方研究文章宣布 Claude 歷時 11 天自主完成費馬最後定理（Fermat's Last Theorem）的完整電腦驗證證明，以 Lean 語言正式化；原文未指名具體模型版本，本頁標記待查證，暫不預設歸屬 Fable 5.1（[Anthropic](https://www.anthropic.com/research/formalizing-fermats-last-theorem)，2026-09-04）。長期主導此形式化工作的 Xena Project 作者 [[entities/kevin-buzzard]] 公開表示「被 Anthropic 搶先」，指出 Anthropic 採用 Darmon–Diamond–Taylor 於 1995 年闡述的 Wiles–Taylor–Wiles 證明路徑並開發 Fontaine 理論，此題也是 Freek Wiedijk 百大形式化挑戰清單最後完成的一項（[Xena Project](https://xenaproject.wordpress.com/2026/09/04/flt-anthropic-has-beaten-me-to-it/)，2026-09-04）。同日 SingularityHub 報導 Claude 已能自主操作實驗室設備執行科學實驗，與費馬定理證明同屬「長期自主研究任務」訊號，惟兩者是否同一脈絡未經證實（Google News/SingularityHub，2026-09-04）。詳見「歷史記錄」。
+現行世代是 **Fable 5.1**（2026-09-01 GA）；**Fable 5 仍可呼叫但已列為 Legacy**，官方建議遷移。兩者都是 Mythos 級模型的公開版——與同世代 Mythos 共用模型權重，差別在 Fable 前置了安全分類器，判定高風險時**會通知你**並改由 Opus 4.8 回答。
 
-**2026-09-01（新一代旗艦發布）**：Anthropic 正式發布 Claude Fable 5.1（GA，向所有現有 Fable 5 用戶開放）與 Claude Mythos 5.1（沿用限信任機構存取模式，非全面公開）；兩者為**同一模型的不同防護層級**，官方稱其為「coding 與知識工作最先進的模型」，並新增**反萃取（anti-distillation）機制**防範他人萃取模型權重／行為訓練競品。發布日 HN 討論達 **1,338 分**，為近期官方公告中互動度最高之一，此為 08-28 社群傳聞（見下方「歷史記錄」08-28 條目）的官方證實（[Anthropic Blog](https://www.anthropic.com/claude-fable-and-mythos-5-1)，2026-09-01）。三方基準與媒體報導細節見「歷史記錄」。
+出口管制已於 2026-06-30 解除、07-01 起全球恢復存取，現在不影響你拿不拿得到；政府那條線之後怎麼走見 [[topics/anthropic-government-policy]]。方案內含什麼、超出怎麼算見 [[entities/pricing]]。
 
-Claude Fable 5 是 Anthropic 於 2026-06-09 發布的旗艦模型，為**史上首款向大眾開放的 Mythos 級模型**，與 Claude Mythos 5 共用相同模型權重，差異在於 Fable 5 前置安全分類器（觸發時 fallback 至 Opus 4.8，Anthropic 稱不到 5% 的 session 受影響）。核心定位：任務越複雜越長期，Fable 5 優勢越明顯，在軟體工程、知識工作、視覺、科學研究等幾乎所有 benchmark 達到 SOTA。**2026-09-01 起，Fable 5.1／Mythos 5.1 為現行世代**（見上方「現況」與下方「歷史記錄」），本頁沿用原「Fable 5」頁面持續記錄後續版本迭代。
+## 你現在拿到的是什麼
 
-**當前狀態（2026-07-20 起）**：出口管制（2026-06-12 至 2026-06-30，歷時 18 天）已正式解除，2026-07-01 起全球恢復存取；免費使用期限已於 **2026-07-19 23:59:59 PT 到期**，07-20 起訂閱存取分為 Max／Team premium（標配，計入週用量上限 50%）與 Pro／Team standard（不計入方案用量、改按 usage credits 計費，另有一次性過渡 credit）兩層，計費細節見 [[entities/pricing]]（此分界已於 2026-08-08 經官方 Help Center 查證確認，先前四則矛盾報導就此收斂）。Redeploy 同步導入「Defense in Depth」安全機制——更嚴格的資安/程式碼請求分類器，判定高風險時自動 fallback 至 Opus 4.8，首日已有誤判實測回報。管制事件完整經過見「出口管制：雙方立場」與「歷史記錄」；此機制為 07-01 解封三項承諾之一，政府談判脈絡見 [[topics/anthropic-government-policy#政府動作對你的產品做了什麼]]。
+> 資料截至 2026-09-07（官方模型頁與說明中心查證）。一格一個你會問的問題，兩欄是兩代的答案。
 
-| 指標 | 數值 |
-|------|------|
-| Input 定價 | $10 / 百萬 token |
-| Output 定價 | $50 / 百萬 token |
-| Context Window | 1,000,000 token |
-| 最大 Output | 128,000 token |
-| 免費期限 | 已於 2026-07-19 到期；後續分流見下方「配額與計費過渡」與 [[entities/pricing]] |
+| 這一格 | Fable 5（Legacy） | Fable 5.1（現行） | 官方出處（查證日） |
+|---|---|---|---|
+| 現在誰是預設 | 否 | 是——Claude Code v2.1.257 起 Fable 預設即 5.1 | [[feature-radar]] 版本階梯（2026-09-04）|
+| 牌價（輸入／輸出，每百萬 token）| $10 ／ $50 | $10 ／ $50（同價）| 官方模型總覽頁（2026-09-07）|
+| 快取讀取 | 基礎輸入價 ×0.1（$1）| ×0.025（$0.25）——便宜 75% | 官方定價頁（2026-09-07）|
+| 知識截止 | 2026-01 | 2026-06 | 官方模型總覽頁（2026-09-07）|
+| 會不會停掉 | Legacy，退役**不早於 2027-06-09**，官方建議遷移 5.1 | 退役不早於 2027-09-01 | 官方模型總覽頁（2026-09-07）|
+| 官方推薦拿它做什麼 | 同右（官方已改推 5.1）| 高要求推理與長期 agentic 工作；Opus 5 調高 effort 仍不夠時 | 官方選型文件（2026-09-07）|
+| 我的方案能不能用 | Max 與 Team premium：週用量 50% 內免費；Pro 與 standard：走 usage credits | 同左，兩代同一套規則 | 官方說明中心（2026-09-07）→ [[entities/pricing]] |
+
+**表下細節**
+
+- **兩代共用一套方案規則**：官方說明中心寫「Fable 5 and Fable 5.1 are available on all paid plans」，但「拿得到」不等於「方案內含」——Pro 拿得到，是走 usage credits 付費。2026-07-19 到期的那檔免費促銷只適用 Fable 5，5.1 從未納入。
+- **Context 與輸出長度兩代相同**：1,000,000 token context、128,000 token 最大輸出。1M 這個旋鈕本身的計費與可見性見 [[topics/long-context-1m]]。
+- **5.1 新增反萃取（anti-distillation）機制**，防止他人萃取權重或行為訓練競品（官方 2026-09-01 公告）。
 
 ## 熱度與試用價值
 
 | 項目 | 評分 |
 |------|------|
 | 社群熱度 | 🔥🔥🔥🔥🔥 |
-| 試用價值 | ⚡ 有條件推薦 |
-| 最適合 | 多步驟複雜任務、長期 agentic 工作流、多天 PR 審查、安全漏洞分析 |
-| 不適合 | 日常短問答（成本過高）、從事前沿 LLM 開發（護欄會靜默降級） |
+| 試用價值 | ⚡ 有條件推薦（2026-09-07 判定）|
+| 最適合 | 跨多天的長期 agentic 工作流、多步驟深推理、安全漏洞分析 |
+| 不適合 | 日常短問答（成本過高）；分散式訓練基建、加速器設計這類前沿 LLM 開發（分類器會擋，見下一節）|
 
-> 詳細最新熱度見 [[feature-radar]]
+> 本表跟著 [[feature-radar]] 全覽表的現行世代那一列走；最新熱度以 [[feature-radar]] 為準。
 
-## 配額與計費過渡（原訂 7/7，已於 7/19 到期；後續分界已確認）
+## 護欄會怎麼改寫你的請求
 
-**規則（2026-07-01 原始公告）：** Pro/Max/Team 方案 7/7 前維持每週配額 50%（含 Fable 5 用量），7/7 後改依用量計費（usage-based billing），定價另行公布；Enterprise 方案需聯繫帳戶主管（[Anthropic Blog](https://www.anthropic.com/news/redeploying-fable-5)，2026-07-01）。**此 7/7 節點已因免費期限三度順延而延至 2026-07-19 才到期，免費期目前已結束**；07-20 起的實際分界（Max／Team premium 標配 50% 上限、Pro／Team standard 走 usage credits）已於 2026-08-08 由官方 Help Center 確認，並於 2026-08-19 由官方說明文件〈Claude Fable 5 on your plan〉再次重申（同樣明載 7/19 為到期日，非 7/7），詳見上方「現況」、頁首 callout 與 [[entities/pricing]]。
+送進去的請求若被前置安全分類器判為高風險，**你會收到通知**，該次請求改由 Opus 4.8 回答，不是安靜地把品質調低（官方 2026-06-30〈Redeploying Claude Fable 5〉：「Users will be notified if a request to Fable 5 is blocked」）。2026-06-09 發布時的「降級且不告知」已於 06-11 由官方道歉撤回。
 
-**配額重置時間因訂閱起始日而異**：Reddit 社群 07-03 釐清，Fable 5 額度重置規則並非統一週期，而是依各用戶訂閱方案的起始時間點各自輪轉（「Fable resets on Monday if you held a plan already」），並非所有人同一天重置（[Reddit r/ClaudeCode](https://www.reddit.com/r/ClaudeCode/comments/1umt5h5/fable_resets_on_monday_if_you_held_a_plan_already/)，2026-07-03）。
+| 會踩到的類別 | 具體是什麼 | 誰最容易誤觸 | 你能先做什麼 |
+|---|---|---|---|
+| 資安（cybersecurity）| 攻擊性資安任務 | **日常 coding 與 debugging 也會較常被誤標**（官方自己寫明的代價）| 看到通知就接受 Opus 4.8 的答案，或把安全審查拆成不觸發的小步驟 |
+| 生物與化學 | 高風險生物、化學請求 | 做相關研究的人 | 2026-08-07 官方更新分類器後生物領域誤判約降 85%，再遇到就換問法 |
+| 模型萃取（distillation）| 取得權重或行為以訓練競品 | 想拿它的輸出訓練自己模型的人 | 沒有繞法 |
+| 窄範圍前沿 LLM 開發 | 分散式訓練基建、ML 加速器設計、非標準晶片的 kernel 開發 | 做這三類工程的人 | 沒有繞法，這類工作改用其他模型 |
 
-**消耗速度落差極大**：同期回報顯示個體使用量差異懸殊——有用戶 2 天內就燒完額度（[Reddit r/ClaudeCode](https://www.reddit.com/r/ClaudeCode/comments/1umtox4/i_burned_through_my_fable_5_usage_in_2_days_so_i/)，07-03），也有用戶反映額度限制大幅衝擊原本仰賴 Fable 處理的大型基因體分析工作流（[Reddit r/ClaudeCode](https://www.reddit.com/r/ClaudeCode/comments/1umtlqh/sad_about_fable_restrictions/)，07-03）。
+**表下細節**
 
-**社群省額度策略：**
-
-| 策略 | 說明 | 來源 |
-|------|------|------|
-| Fable 主力 + Opus 4.8 subagent 分工 | 7/7 到期前，將部分工作分派給 Opus 4.8 subagent 執行，把 Fable 5 額度保留給真正需要旗艦能力的任務，藉此最大化訂閱內 token 使用效率 | [Reddit r/ClaudeAI](https://www.reddit.com/r/ClaudeAI/comments/1uli8as/maximizing_efficiency_with_fable_until_the_july/)，2026-07-02 |
-| 5 小時額度重置自動接續 | 社群工具 CCLimitPing（Show HN）在 5 小時額度重置的瞬間自動恢復任務，避免人工盯盤 | [GitHub](https://github.com/wavever/CCLimitPing)，2026-07-03 |
-| 用量即時監控 | LimitBar（macOS 選單列 App）即時顯示 Claude 使用額度，方便用戶主動調節任務排程 | [Gumroad](https://mikaweiss6.gumroad.com/l/limitbar)，2026-07-03 |
-
-**與既有成本爭議的關係**：以上省額度行為與 07-01 起延燒的「Claude Code 成本暴漲」爭議（用戶回報 $50 原可用兩天、現在一小時燒完）相互呼應，反映訂閱制配額吃緊下使用者的行為調整；成本爭議完整脈絡見 [[topics/model-comparison]] Benchmark 對照的 token 成本並陳。
+- **5.1 誤觸更少**：官方 2026-09-01 公告把「更少誤判」列為換代理由之一（媒體轉述，2026-09-07 查證）；資安領域是否同步改善，官方仍未逐項說明。
+- **分類器刻意調得保守**：官方〈Improving Fable 5 Safeguards〉原文寫 deliberately tuned to be cautious，並稱 Amazon 通報的那項特定技術已擋下逾 99%。被擋的比例，官方在 2026-06-09 發布時稱不到 5% 的 session。
+- **這件事對你的產品做了什麼**（政府談判換來的承諾落到你手上長什麼樣）見 [[topics/anthropic-government-policy]]「政府動作對你的產品做了什麼」；那一節也寫出你的選項。
+- **機制沿革**：06-09 發布版對前沿 LLM 開發降級且不告知（System Card），06-11 官方道歉改為可見防護；07-02 隨解禁導入 Defense in Depth 分類器，首日即有合法資安審查被誤攔的公開案例。
 
 ## 使用指南
 
-**快速上手（Claude Code）：**
-```
-claude --model claude-fable-5-20260609
-```
+**快速上手（Claude Code）：** 用 `/model` 選 Fable；Claude Code v2.1.257 起預設就是 5.1。要指定特定版本的 model id，見官方模型總覽頁（id 會隨版本更新，本頁不抄）。
 
 **注意事項：**
-- 促銷（週用量 50% 內免費使用 Fable 5）已於 **2026-07-19 23:59:59 PT** 到期（非早期公告的 7/7）；到期後 Max 方案／Team・舊制 Enterprise 的 premium seat 為方案標配，Pro 方案／Team・舊制 Enterprise 的 standard seat 改以 pay-as-you-go usage credits 付費，計費細節見 [[entities/pricing]]
-- 從事前沿 LLM 開發（訓練 pipeline、推論研究）時，Fable 5 護欄會靜默降級輸出品質，不告知用戶（System Card 明文記載）
-- 30 天資料保留政策適用於所有平台（含 AWS Bedrock），資料離開 AWS 安全邊界
+- 方案內含與 usage credits 的分界見 [[entities/pricing]]；Max 與 Team premium 為標配（週用量 50% 內），Pro 與 standard 走 usage credits。
+- 前沿 LLM 開發、攻擊性資安、生物化學、模型萃取四類請求會觸發分類器，見上一節。
+- 30 天資料保留政策適用於所有平台（含 AWS Bedrock），資料離開 AWS 安全邊界。
 
 ## 核心功能
 
-- **多模型協作基準（官方，2026-07-08）**：Anthropic 公布「Fable 5 orchestrates, cheap models execute」基準數字——Fable 5 負責任務調度、較便宜模型負責實際執行，可用 46% 成本達到 96% 效能，此協作模式現可在 Claude Code 中直接套用（Reddit r/ClaudeAI 整理轉載，週熱門標記，原始官方發布連結未附，暫列官方數據轉述）
+- **多模型協作數字（社群整理轉載，2026-07-08）**：「Fable 5 orchestrates, cheap models execute」——由 Fable 5 調度、便宜模型執行，宣稱以 46% 成本達到 96% 效能。此數字經 Reddit 整理轉載，**原始官方發布連結未見**，本站列為社群轉載而非官方基準。
 - **Mythos 架構公開版**：首次讓大眾使用 Mythos 等級推理能力
-- **安全分類器護欄**：觸發時 fallback 至 Opus 4.8，不拒絕請求；官方原文為「使用者將被告知請求遭攔截」，非靜默（< 5% session；[Anthropic Blog](https://www.anthropic.com/news/redeploying-fable-5)，2026-06-30）
 - **1M context + 128K output**：適合處理整個 codebase 或長文件的任務
 - **多模態**：軟體工程、視覺、科學研究均達 SOTA
 
 ## 爭議
 
+> 🔴 現在還會遇到｜⚠️ 有爭論、官方無結論｜✅ 官方已處理
+
 - ✅ **生物安全防護誤判大幅降低（2026-08-07，官方）**：Anthropic 官方部落格宣布更新生物安全分類器，測試顯示各產品面「生物相關降級」（誤判 fallback 至 Opus 4.8）情形減少約 85%；呼應下方「資安研究者護欄過激」等既有護欄過敏爭議，本次為官方對其中生物領域誤判的具體修復進展，資安領域的過敏問題是否同步改善未提及（[Anthropic Blog](https://www.anthropic.com/news/improving-fable-5-s-biology-safeguards)，2026-08-07）
-- ✅ **靜默降級競爭 LLM 開發（已部分撤回）**：Fable 5 初版在偵測到前沿 LLM 開發工作時靜默降級，系統卡承認「These safeguards will not be visible to the user」；2026-06-11 Anthropic 道歉撤回，改為「可見防護」——觸發時用戶將明確得知
 - ⚠️ **資安研究者護欄過激**：Fable 5 安全分類器過度敏感，連讀取資安部落格、分析 GitHub profile 等無害操作也被攔截；IBM X-Force 知名研究員 Valentina Palmiotti 公開批評（TechCrunch，HN score 512）
 - ⚠️ **「Fix this code」三詞越獄機制公開（2026-06-22）**：dev.to 文章《The Fable 5 Jailbreak Was Three Words Long》揭露引發出口管制的具體越獄機制——「Fix this code」三個字即可繞過 Fable 5 安全控制（[dev.to](https://dev.to/peremptory/the-fable-5-jailbreak-was-three-words-long-457j)）；此事件直接呼應美國政府「護欄不可靠」的管制論點，亦是 Amazon 研究人員向白宮通報的漏洞細節首次公開
 - ⚠️ **Jailbreak 已公開（早期 PoC）**：Pliny（@elder_plinius）與 0xSufi 已公開 Fable 5 護欄繞過 PoC，使用多步驟攻擊組合（請求拆解重組、敘事框架包裝、長 context 操作）
@@ -116,52 +122,19 @@ claude --model claude-fable-5-20260609
 - ⚠️ **30 天資料保留**：Bedrock 用戶數據強制離開 AWS 安全邊界，企業隱私顧慮
 - ⚠️ **「失去靈魂」討論**：部分用戶認為 Fable 5 相比 Opus 4.6 更工具性、減少人本關懷深度
 - ⚠️ **「Defense in Depth」分類器誤判（2026-07-02，新）**：redeploy 後新增的資安/程式碼請求分類器出現誤判案例——合法資安審查請求被攔截、化學問題被拒（後者範圍已於 2026-08-26 查證確認不限於 coding/cybersecurity，見下方歷史記錄 2026-07-02）
-- 🔴 **Advisor 角色全面 unavailable（2026-07-10，新，未修復）**：GitHub Issue #73365 回報 Fable 5 advisor（Opus 4.8 main 底下的 advisor 角色）在所有 Claude Code session 中皆顯示「unavailable」，版本 v2.1.198，累積 50 則留言、100 個讚，情緒強烈。此為 Claude Code 功能面的呼叫失效，非模型能力本身劣化；完整 bug 追蹤見 [[entities/claude-code]] 已知問題（[GitHub Issues](https://github.com)，2026-07-10）
-- 🔴 **Max 方案誤判需購買 usage credits 才能執行 Fable 5（2026-07-20 起，官方 07-20 定性為誤判並建議重啟，但社群回報持續至 08-07 未解，留言數 35 → 67）**：GitHub Issue #79337（07-20 記錄 10 讚、35 留言；07-24 reaction 增至 13 個，留言數未見更新）回報，Fable 5 免費期到期後的 07-20 當天，Max 方案一度被要求額外購買 usage credits 才能執行 Fable 5，並將 session 靜默降級至 Opus 4.8；受影響帳號的已儲存模型設定顯示為 `claude-fable-5[1m]`（1M context 變體）。症狀與同日 Anthropic Status 已證實的 Max 誤判事件高度吻合，官方 07-20 已定性為誤判並建議重啟——**但該建議未解決問題**：留言數自 07-20 的 35 則增至 08-07 的 67 則，社群回報延燒逾 18 天仍無官方修復或說明（以 [[entities/pricing]] 08-07 查證為準；本頁先前標為「已解決」係停在 07-24 追蹤，2026-08-08 更正）。存取政策本身已於 2026-08-08 由官方文件釐清（Max／Team premium 標配、Pro／Team standard 走 credits），計費細節見 [[entities/pricing]]；`[1m]` 變體自成一個模型 id 所引發的通用問題見 [[topics/long-context-1m]]（[GitHub Issues](https://github.com/anthropics/claude-code/issues/79337)，2026-07-20；追蹤至 2026-08-07）
-- ⚠️ **「太危險」分級受競品追平質疑（2026-07-24 日報收錄，社群觀點，弱訊號）**：r/ClaudeCode 使用者認為 Fable 5 被「削弱」後感覺只比 Opus 4.8 聰明一點，開源模型已追上「太危險」等級模型的能力（2026-07-24，單一來源，score 恆 0）；同期 r/ClaudeAI 週熱門貼文（原貼 2026-07-18）另有一名自稱基因學/神經科學研究者，質疑 Fable/Mythos「對科學研究太危險」的分類與自身分析 RNA 等用途完全無關。兩則均為社群主觀觀點，非量化評測；分類爭議的安全政策脈絡另見 [[topics/ai-agent-safety]]，此處僅記模型定位/能力落差角度
-
-## 出口管制：雙方立場
-
-### 美國政府立場
-
-**主張核心：** Fable 5 護欄可被繞過，進而存取 Mythos 5 的攻擊性網路安全能力，構成國家安全威脅。
-
-| 論點 | 說明 |
-|------|------|
-| 護欄不可靠 | Commerce 部長 Lutnick 致函（Bloomberg 6/16 全文刊出）：Fable 5 護欄無法有效阻止取得 Mythos 的網路攻擊能力 |
-| 中國情報威脅 | Semafor：中國關聯組織疑似存取 Mythos 5，為管制動機之一 |
-| Amazon 直報 | AWS CEO Andy Jassy 向白宮通報安全研究結果（可透過提示詞生成可用攻擊資訊），成為直接觸發原因 |
-| Dario 拒修 jailbreak | Trump 顧問 David Sacks：政府曾提前警告，但 Dario Amodei 拒絕修復也拒絕下架 |
-| G7 不豁免 | 英國首相 Starmer 提出 carve-out 請求，Trump 政府明確拒絕，盟友一視同仁 |
-
-**立場底線：** 出口管制架構問題，不限於 jailbreak 是否嚴重；Fable 5 本身即屬管制標的。
-
----
-
-### Anthropic 立場
-
-**主張核心：** 政府論點在技術上不成立；Anthropic 是在法律壓力下被迫合規，並非認同管制理由。
-
-| 論點 | 說明 |
-|------|------|
-| 否認護欄失效 | 持續否認 Fable 5 可繞過護欄存取 Mythos 攻擊能力，認為政府主張技術上不成立 |
-| jailbreak 不嚴重 | 官方回應 Sacks：被提前警告的 jailbreak「並不嚴重」，不構成下架理由 |
-| 安全論述反噬 | TechCrunch 分析（Anthropic 自己也承認的弔詭）：Anthropic 對 Fable 5「太危險」的安全論述，成為政府援引的正當性依據 |
-| 被迫全面下線 | 90 分鐘內關閉全球存取（含美國用戶），是為確保合規，不代表接受管制邏輯 |
-| 積極協商 | 派遣多名高層赴華府，持續與 Commerce 部工作組談判；Axios 爆料主因涉及人際衝突（personality clash） |
-| 商業損失 | DoD 已將三分之二 AI 工作量轉向競爭對手；TCS 企業合作受衝擊 |
-
-**立場底線：** 管制是政治決定，不是技術必要性；Anthropic 正尋求解除或豁免，同時主張己方安全架構足夠可靠。
-
----
+- 🔴 **Fable 5 advisor 跨全部 session 顯示 unavailable**：完整追蹤與最新互動數見 [[entities/claude-code]] 已知問題（GitHub #73365）
+- 🔴 **Max 方案被要求另購 usage credits 才能跑 Fable 5**：計費面見 [[entities/pricing]]、缺陷追蹤見 [[entities/claude-code]]；1M 變體引發的通用問題見 [[topics/long-context-1m]]
+- ⚠️ **「太危險」分級受競品追平質疑**：r/ClaudeCode 使用者認為 Fable 5 被「削弱」後只比 Opus 4.8 聰明一點，開源模型已追上「太危險」等級能力（單一社群貼文，未附測試方法）；分類爭議的安全政策脈絡見 [[topics/ai-agent-safety]]，此處僅記能力落差角度
 
 ## 相關議題
 
-- [[entities/mythos]] — Mythos 模型家族完整歷史
-- [[entities/pricing]] — Fable 5 定價與訂閱方案變動
-- [[topics/anthropic-government-policy]] — Anthropic vs 美國政府攻防完整時序
-- [[topics/anthropic-business]] — Anthropic IPO 背景與商業策略
-- [[topics/ai-agent-safety]] — Claude Code 供應鏈攻擊事件
+- [[entities/mythos]] — 同一權重的無護欄版，只開放信任機構；誰拿得到、拿去做什麼
+- [[entities/pricing]] — 我的方案內含什麼、超出後怎麼算、一小時大概多少
+- [[topics/model-comparison]] — 這份工作該用哪個模型（Fable 5.1 vs Opus 5 vs Sonnet 5）
+- [[topics/anthropic-government-policy]] — 政府那條線會不會讓你哪天用不到、或用到被改派的版本
+- [[entities/claude-code]] — Claude Code 現在有什麼毛病（Fable 相關的 issue 追蹤在這）
+- [[topics/long-context-1m]] — 1M context 這個旋鈕本身的計費與可見性
+- [[topics/ai-agent-safety]] — 護欄被繞過、越獄與提示注入這類攻擊面（本頁爭議節那幾條的安全政策脈絡）
 
 ## 參考來源
 
@@ -199,8 +172,8 @@ claude --model claude-fable-5-20260609
 ### 解禁後（2026-07-01 起）
 
 #### 2026-09-04
-**費馬最後定理形式化證明（研究能力事件，模型版本未指名）＋自主操作實驗室設備報導**：
-- ❓ **待查證**（標 2026-09-04｜查 formalizing-fermats-last-theorem、Fable 5.1）｜**Anthropic 官方研究文章**：Claude 歷時 11 天自主完成費馬最後定理的完整電腦驗證證明，以 Lean 語言正式化；原文未指名具體模型版本（Fable 5.1／Mythos 5.1 或其他），本頁暫不預設歸屬（[Anthropic](https://www.anthropic.com/research/formalizing-fermats-last-theorem)，2026-09-04）
+**費馬最後定理形式化證明（官方 2026-09-07 查證：使用內部研究模型，非 Fable 5 或 5.1）**：
+- **Anthropic 官方研究文章**：Claude 歷時 11 天完成費馬最後定理的電腦驗證證明。官方寫明用的是「內部研究模型，約略相當 Fable 5.1」，不是 Fable 5 或 5.1 本身，本頁僅作參考記錄（[Anthropic](https://www.anthropic.com/research/formalizing-fermats-last-theorem)，2026-09-04；歸屬 2026-09-07 查證）
 - 長期主導此形式化工作的 Xena Project 作者 [[entities/kevin-buzzard]] 於部落格公開表示「被 Anthropic 搶先」，指出 Anthropic 走的是 Darmon–Diamond–Taylor 於 1995 年闡述的 Wiles–Taylor–Wiles 證明路徑並開發 Fontaine 理論，此題也是 Freek Wiedijk 百大形式化挑戰清單最後完成的一項（[Xena Project](https://xenaproject.wordpress.com/2026/09/04/flt-anthropic-has-beaten-me-to-it/)，2026-09-04；人物背景查證日 2026-09-05）
 - SingularityHub 報導 Claude 已能自主操作實驗室設備執行科學實驗，與費馬定理證明同屬「長期自主研究任務」訊號，惟兩者是否為同一脈絡未經證實（Google News/SingularityHub，2026-09-04）
 - Reddit r/artificial 週熱門討論串彙整 Claude Fable 5.1 與 Mythos 5.1 基準測試結果，惟摘要未載具體分數，原始數字待查證（Reddit / r/artificial · 週熱門，2026-09-01）
@@ -217,7 +190,7 @@ claude --model claude-fable-5-20260609
 - MarkTechPost 報導 Fable 5.1／Mythos 5.1 在 Terminal-Bench-Science 得分 **52.6%**，並稱快取讀取成本降 75%（與官方定價頁 0.025 倍換算一致，見 09-01 條目）
 - **成本降幅各家說法不一，未見單一媒體逐項拆解**：the-decoder.com 稱「最多降 45%」、Pasquale Pillitteri 稱「25% 更便宜」、Yellow.com 稱快取讀取為 $0.25、MarkTechPost／VentureBeat／WinBuzzer 稱快取讀取降 75%——各數字可能對應不同計費項目（整體成本 vs 快取讀取單項），本頁不選邊，具體定價換算留給 [[entities/pricing]] 與 [[topics/model-comparison#同一份工作，換設定差多少]] 查證（Google News 綜合，2026-09-01～02）
 - Wccftech 報導 Samsung 將其晶片設計工作押注於 Claude Code（與本次發布同日報導，具體採用細節、是否具名確認未見原文佐證）
-- ❓ **待查證**（標 2026-09-02｜查 techcrunch.com、less restrictive）｜**TechCrunch：新版「更便宜、限制更少」**：標題稱 Fable 5.1「cheaper, less restrictive」，僅標題可用，未見正文說明「限制更少」具體所指（分類器誤判改善？護欄調整範圍擴大？），與上方 08-07 生物安全防護誤判降低 85% 的既有記錄是否為同一脈絡的延伸未經證實（Google News/TechCrunch，2026-09-01）
+- ❓ 待查證 ⟨Q-01⟩ **TechCrunch：新版「更便宜、限制更少」**：標題稱 Fable 5.1「cheaper, less restrictive」，僅標題可用，具體所指未經證實（詳見「懸置細節」）
 - **GitHub Issue #79337 逾 6 週未解**：07-20 首次回報的「Max 方案需額外 usage credits 才能執行 Fable 5、靜默降級至 Opus 4.8」事件持續延燒，累積留言數已增至 **76 則**、reaction 增至 **26 個**，距官方 07-20「確認為誤判並建議重啟」的結論已逾 6 週仍未見官方後續說明或關閉 issue，顯示問題可能非單次誤判；計費/配額面向見 [[entities/pricing]]（[GitHub Issues](https://github.com/anthropics/claude-code/issues/79337)，2026-09-02 02:12 UTC）
 
 #### 2026-09-01
@@ -235,7 +208,7 @@ claude --model claude-fable-5-20260609
 #### 2026-08-28
 **Reddit 質疑串：「Anthropic 是否在削弱模型」**：r/ClaudeCode 貼文「Is it even legal for Anthropic to nerf its models this hard?」，使用者抱怨 Opus 5 與 Fable 5 在 Claude Code 中的實際表現遜於預期，質疑模型遭「削弱」（nerf）；單一使用者觀感回報，無具體案例或量化數字佐證，延續 08-13「rage-inducing」、08-20「smoking gun」等已記錄的社群觀感分歧模式（完整同類記錄見 [[entities/opus-5]]「歷史記錄」）（[Reddit](https://www.reddit.com/r/ClaudeCode/comments/1w0t53b/is_it_even_legal_for_anthropic_to_nerf_its_models/)，2026-08-28）。
 
-❓ **待查證**（標 2026-08-29｜查 Fable 5.1、1w0v676｜複 2026-09-12｜訊 2026-09-02）｜**Fable 5.1 是否即將發布**：Reddit r/ClaudeCode 貼文「Do you guys think that Fable 5.1 is actually dropping today and will it be available in Claude Code?」討論版本傳聞，部分回覆稱疑似已被路由至新版本測試，純屬社群臆測，無官方公告或版本號佐證（[Reddit](https://www.reddit.com/r/ClaudeCode/comments/1w0v676/do_you_guys_think_that_fable_51_is_actually/)，2026-08-28）。**後續（2026-09-01）**：Anthropic 官方正式發布 Claude Fable 5.1 與 Claude Mythos 5.1，證實社群傳聞屬實；詳見上方「現況」與下方本節 2026-09-01 條目（[Anthropic Blog](https://www.anthropic.com/claude-fable-and-mythos-5-1)，2026-09-01）。
+❓ 待查證 ⟨Q-02⟩ **Fable 5.1 是否即將發布**：Reddit 傳聞疑似已被路由至新版本測試，無官方佐證（詳見「懸置細節」）。**後續（2026-09-01）**：Anthropic 官方正式發布 Claude Fable 5.1 與 Claude Mythos 5.1，證實社群傳聞屬實；詳見上方「現況」與下方本節 2026-09-01 條目（[Anthropic Blog](https://www.anthropic.com/claude-fable-and-mythos-5-1)，2026-09-01）。
 
 #### 2026-08-27
 **GitHub Issue #77136：跨模型代際重複修辭套路問題**：開發者回報 Claude 4.7、4.8、5.0 與 Fable 日益出現重複修辭、難以維持連貫散文的問題，即使給出明確風格指示仍難改善；已累積 106 則留言、517 個反應，尚無官方回應。此為**跨模型代際的共同問題**（非 Fable 5 獨有），完整記錄見 [[entities/opus-5]]「歷史記錄」（[GitHub Issue #77136](https://github.com/anthropics/claude-code/issues/77136)，2026-08-27）。
@@ -243,16 +216,16 @@ claude --model claude-fable-5-20260609
 同日官方說明文件〈Claude Fable 5 on your plan〉重申存取依方案分流（Max 方案優先存取），與 08-19 已查證記錄的規則一致，無新資訊，不重複記錄計費細節（詳見 [[entities/pricing]]）。
 
 #### 2026-08-26
-**Futurism：企業轉向更便宜替代模型、Anthropic 旗艦採用意願下滑（僅標題可用）**：Google News 轉載 Futurism 標題〈Nobody Wants Anthropic's Best AI Model Anymore Now That There Are Way Cheaper Alternatives〉；RSS 僅提供標題與轉址連結，無正文可查證具體採用數據、樣本或方法論。與上方 08-18 analyticsindiamag.com〈Almost Nobody Is Using Anthropic's Fable 5〉標題主題相近，惟來源、標題涵蓋範圍（泛稱「最強模型」vs 明確指名 Fable 5）皆不完全相同，暫不合併視為同一事實的兩次獨立確認，亦不做因果推論。❓ **待查證**（標 2026-08-26｜查 Futurism、cheaper alternatives｜複 2026-09-09）｜**企業轉向更便宜替代方案的具體佐證**：僅標題可用，無採用數據、案例或方法論佐證（[Google News/Futurism](https://news.google.com/rss/articles/CBMingFBVV95cUxQcktnOVJUTlRkVG53NHl6ZlR4RFhTekx1ZlQ4cmRRZVROMG5vZzZNR0cwandpVlhfM3MzQnhNTEZDX0pQR1dfOVF2SnhJcmkwYWtaZXJGZF9LVlBKQ1cxRHdLeHFuZzlBR2FpT3JEb05QUTJGQ3JUQzlYeGlrRlJrQkNrdzFMR1F3WThfdW5wb1RwUkI4a2d0a2RWSWxKZw?oc=5)，2026-08-26）
+**Futurism：企業轉向更便宜替代模型、Anthropic 旗艦採用意願下滑（僅標題可用）**：Google News 轉載 Futurism 標題〈Nobody Wants Anthropic's Best AI Model Anymore Now That There Are Way Cheaper Alternatives〉；RSS 僅提供標題與轉址連結，無正文可查證具體採用數據、樣本或方法論。與上方 08-18 analyticsindiamag.com〈Almost Nobody Is Using Anthropic's Fable 5〉標題主題相近，惟來源、標題涵蓋範圍（泛稱「最強模型」vs 明確指名 Fable 5）皆不完全相同，暫不合併視為同一事實的兩次獨立確認，亦不做因果推論。❓ 待查證 ⟨Q-03⟩ **企業轉向更便宜替代方案的具體佐證**：僅標題可用，無採用數據或方法論佐證（詳見「懸置細節」）
 
-**tech-insider.org 模板化定價比較標題（僅標題可用，模型能力面）**：同日另有 tech-insider.org（經 Google News 轉載）發布標題《Claude Fable 5 vs Opus 5 vs GPT-5.6 Sol: $1,125 Gap [2026]》，比較 Fable 5、[[entities/opus-5|Opus 5]] 與競品 GPT-5.6 Sol 定價；同站另有一篇比較 Opus 5 與 Grok 4.6、Gemini 3.1 Pro 的同系列標題，記於 [[entities/opus-5]]。本則僅標題可用、無正文，「$1,125 Gap」具體數字未經查證，不採信為事實；如經查證，具體定價數字應留給 [[entities/pricing]] 記錄。❓ **待查證**（標 2026-08-26｜查 tech-insider.org、GPT-5.6 Sol｜複 2026-09-09）｜**Fable 5 vs Opus 5 vs GPT-5.6 Sol 的 $1,125 差距計算基準**：僅標題可用，計算基準（per-token／月費等）與是否與現行定價一致均未經查證（[Google News/tech-insider.org](https://news.google.com/rss/articles/CBMiekFVX3lxTE1lT2hvNTRuTm5IVEt4WG5vV3BMQmxLdmZHX2lubDN4SzRvczBYblBJVFMteHM4V3UtM1l2NFZQYWFvbEZmaFVxdFIwSmlvRkpwc29KQzdOUXNPRWFpcDJyLWhDd0VfUkdlQ0Y3Vzk0MzBaUWtuanFLc1FR?oc=5)，2026-08-26）
+**tech-insider.org 模板化定價比較標題（僅標題可用，模型能力面）**：同日另有 tech-insider.org（經 Google News 轉載）發布標題《Claude Fable 5 vs Opus 5 vs GPT-5.6 Sol: $1,125 Gap [2026]》，比較 Fable 5、[[entities/opus-5|Opus 5]] 與競品 GPT-5.6 Sol 定價；同站另有一篇比較 Opus 5 與 Grok 4.6、Gemini 3.1 Pro 的同系列標題，記於 [[entities/opus-5]]。本則僅標題可用、無正文，「$1,125 Gap」具體數字未經查證，不採信為事實；如經查證，具體定價數字應留給 [[entities/pricing]] 記錄。❓ 待查證 ⟨Q-04⟩ **Fable 5 vs Opus 5 vs GPT-5.6 Sol 的 $1,125 差距計算基準**：僅標題可用，計算基準未經查證（詳見「懸置細節」）
 
 **官方說明文件〈Claude Fable 5 on your plan〉重新抓取，內容未變（非新事件）**：官方頁面本輪被重新抓取，經比對內容與 08-19 已查證版本一致，仍為 7/19 促銷到期後的既定分流規則，非新公告；不重複記錄，計費細節仍以 [[entities/pricing]] 為準。
 
 #### 2026-08-19
 **官方說明文件更新確認促銷結束日與分流政策（與 2026-08-08 查證結果一致）**：Anthropic 官方說明文件更新〈Claude Fable 5 on your plan〉頁面，明載先前促銷（允許用戶最多以週訂閱額度 50% 免費使用 Fable 5）已於 **2026-07-19 23:59:59 PT** 結束（並非早期 2026-07-01 公告所稱的 7/7）。促銷結束後：Max 方案、Team 方案 premium seat、舊制（legacy seat-based）Enterprise 方案 premium seat，Fable 5 成為方案標準內含項目；Pro 方案、Team 方案 standard seat、舊制 Enterprise 方案 standard seat，Fable 5 改以 pay-as-you-go usage credits 計費；目前所有付費方案（Pro/Max/Team/Enterprise）皆可使用 Fable 5。本次官方文件與 2026-08-08 Help Center 查證所得的分流結論一致；官方引文為「On Max plans, premium seats on Team plans, and premium seats on legacy seat-based Enterprise plans, Fable 5 will be a standard part of your plan. On Pro plans, standard seats on Team plans, and standard seats on legacy seat-based Enterprise plans, Fable 5 will run on pay-as-you-go usage credits.」。計費規則細節（含週用量 50% 上限是否延續等定價面問題）詳見 [[entities/pricing]]（Official Docs，2026-08-19）。
 
-❓ **待查證**（標 2026-08-26｜查 analyticsindiamag.com、Almost Nobody｜複 2026-09-09）｜**單一來源報導稱 Fable 5「幾乎無人使用」**：Google News 轉載 analyticsindiamag.com 標題〈Almost Nobody Is Using Anthropic's Fable 5〉，RSS 摘要未附正文，具體採用數據、統計方法、對比基準均未見報導，需開啟原文確認（[Google News/analyticsindiamag.com](https://news.google.com/rss/articles/CBMiiwFBVV95cUxQQWl5SUFPU3RoVmN3eFhjYXFWbUk2ZTIwN2tLWHhGT2h3Q2lsdjhuNTVtRHhTeS1GZXN2ZXZvTmg4Z1Y5RUo4aG1TODZHQmRHYTVvQkxaTEJ5bkFUV1lMV2xtdmFZMW80eVZXY0NyVUNkYlc0enlHWUpCVUpBM3I4V3ZGcXJzQkFKVFVR?oc=5)，2026-08-18 14:19 UTC）。**與其他條目的關係**：本則報導日期與同日「Claude Code 週用量促銷延長」報導、以及上方 08-19 官方文件確認的 07-19 促銷到期時間點相近，但原文未提供因果證據，本頁不做因果推論，僅並列記錄。2026-08-26 另有 Futurism 報導呼應類似主題但範圍不完全相同，見下方「2026-08-26」條目，兩則不合併視為同一事實。
+❓ 待查證 ⟨Q-05⟩ **單一來源報導稱 Fable 5「幾乎無人使用」**：僅標題可用，無採用數據或方法論佐證（詳見「懸置細節」）。**與其他條目的關係**：本則報導日期與同日「Claude Code 週用量促銷延長」報導、以及上方 08-19 官方文件確認的 07-19 促銷到期時間點相近，但原文未提供因果證據，本頁不做因果推論，僅並列記錄。2026-08-26 另有 Futurism 報導呼應類似主題但範圍不完全相同，見下方「2026-08-26」條目，兩則不合併視為同一事實。
 
 #### 2026-08-15
 **Anthropic Status：錯誤率一度升高（同日解決）**：Anthropic Status 通報 Fable 5 於 2026-08-14 20:00 至 2026-08-15 00:11 UTC 錯誤率升高，事件已解決，無需採取行動（[Anthropic Status](https://status.claude.com/incidents/hdynq1pc0fn8)，2026-08-15）。
@@ -272,12 +245,12 @@ claude --model claude-fable-5-20260609
 #### 2026-07-31
 **法官質疑聯邦政府「供應鏈風險」禁令正當性，與 Fable 5 出口管制為不同政策線**（2026-08-10 官方/媒體查證）：Hacker News 轉載 Bloomberg 報導《Judge Voices Doubt US Has Justified Its Ban on Anthropic AI》，查得全文確認：聯邦法官 Rita F. Lin 認為川普政府未充分證明將 Anthropic 列為「供應鏈風險」的正當性，稱以「Anthropic 公開批評國防部」作為禁令理由「令人憂慮」；爭議根源是 Anthropic 與美國國防部合約談判破裂，Anthropic 拒絕其 AI 被用於大規模監控或致命武器鎖定／開火決策。此案為**聯邦機構採購/使用限制爭議**，與 Fable 5 晶片**出口管制**（已於 2026-07-01 解除）是兩條獨立政策線，不應合併記錄；與 2026-06-24 Legion 提告出口管制令一案是否同一訴訟程序仍未經證實，不可逕自合併。完整法律論證內容與政策脈絡見 [[topics/anthropic-government-policy]]（[Bloomberg](https://www.bloomberg.com/news/articles/2026-07-30/judge-voices-doubt-us-has-justified-its-ban-on-anthropic-ai)、[HN 討論](https://news.ycombinator.com/item?id=49117486)，2026-07-30/31）。
 
-**終局判決（2026-08-28，🔴→✅ 結案）**：Rita F. Lin 法官裁定國防部「供應鏈風險」黑名單違法且毫無根據，即時解除禁令；The Register 指出黑名單當初所依據的 Claude「能力」實際上並不存在，為判決翻案的關鍵理由之一（Reuters／Washington Post，2026-08-28）。此案終局結果與 Fable 5 晶片出口管制（已於 2026-07-01 解除）仍是兩條獨立政策線，本則僅摘記模型面關聯；完整判決分析、後續 Anthropic 與國防部合作動向見 [[topics/anthropic-government-policy]]「## 目前局勢」與「## 三個戰場」🪖 軍事合約段落。
+**終局判決（2026-08-28，🔴→✅ 結案）**：Rita F. Lin 法官裁定國防部「供應鏈風險」黑名單違法且毫無根據，即時解除禁令；The Register 指出黑名單當初所依據的 Claude「能力」實際上並不存在，為判決翻案的關鍵理由之一（Reuters／Washington Post，2026-08-28）。此案終局結果與 Fable 5 晶片出口管制（已於 2026-07-01 解除）仍是兩條獨立政策線，本則僅摘記模型面關聯；完整判決分析、後續 Anthropic 與國防部合作動向見 [[topics/anthropic-government-policy]]「## 現在有哪幾條線在動」與「## 三個戰場」🪖 軍事合約段落。
 
 #### 2026-07-24
 **GitHub Issue #79337 持續追蹤：reaction 增至 13 個 + 新技術細節「已儲存模型 claude-fable-5[1m]」**：07-20 首次回報的 Max 方案誤判事件持續有讀者互動，reaction 數由 10 個增至 13 個（留言數維持 35 則、暫無更新資料）；本次追蹤新揭露受影響帳號的已儲存模型設定為 `claude-fable-5[1m]`，即 1M context 變體，有助釐清受影響的具體模型設定範圍。官方已於 07-20 確認為誤判並建議重啟，此結論未變，計費/配額面向詳見 [[entities/pricing]]（[GitHub Issues](https://github.com/anthropics/claude-code/issues/79337)，2026-07-24 01:16 UTC）。**後續（2026-09-02）**：issue 仍未關閉，留言數已增至 76 則、reaction 增至 26 個，距 07-20「已確認為誤判並建議重啟」的結論已逾 6 週，顯示問題非單次誤判或已復發；詳見下方「歷史記錄」2026-09-02 條目。
 
-**社群觀點：「太危險」分級與競品追平能力的落差（弱訊號，社群主觀）**：Reddit r/ClaudeCode 使用者認為 Fable 5 被「削弱」後感覺只比 Opus 4.8 聰明一點，開源模型已追上原本被列為「太危險」等級的模型能力（[Reddit r/ClaudeCode](https://www.reddit.com/r/ClaudeCode/comments/1v56yic/open_source_model_at_par_with_fable/)，2026-07-24，單一來源、score 恆 0）。同期日報另收錄 r/ClaudeAI 週熱門貼文（原貼 2026-07-18），一名自稱基因學/神經科學研究者質疑 Fable/Mythos「對科學研究太危險」的分類，認為自身分析 RNA 等用途與生物恐怖主義完全無關；此則安全分級爭議完整脈絡見 [[topics/ai-agent-safety]]，本頁僅並列記錄競品/能力落差角度。兩則均為個人觀點，非量化評測，不構成能力結論。
+**社群觀點：「太危險」分級與競品追平能力的落差（單一來源，社群觀點）**：Reddit r/ClaudeCode 使用者認為 Fable 5 被「削弱」後感覺只比 Opus 4.8 聰明一點，開源模型已追上原本被列為「太危險」等級的模型能力（[Reddit r/ClaudeCode](https://www.reddit.com/r/ClaudeCode/comments/1v56yic/open_source_model_at_par_with_fable/)，2026-07-24，單一來源、score 恆 0）。同期另有 r/ClaudeAI 週熱門貼文（原貼 2026-07-18），一名自稱基因學/神經科學研究者質疑 Fable/Mythos「對科學研究太危險」的分類，認為自身分析 RNA 等用途與生物恐怖主義完全無關；此則安全分級爭議完整脈絡見 [[topics/ai-agent-safety]]，本頁僅並列記錄競品/能力落差角度。兩則均為個人觀點，非量化評測，不構成能力結論。
 
 **（已排除）「Fable 5 min cache」貼文**：另有 r/ClaudeCode 圖片型貼文僅標題提及快取時間偏短，無正文內容佐證，單一來源，證據不足，本輪不予記錄。
 
@@ -296,7 +269,7 @@ claude --model claude-fable-5-20260609
 **GitHub Issue #73365：Advisor 角色全面 unavailable（🔴 未修復）**：Fable 5 advisor（Opus 4.8 main 底下的 advisor 角色）在所有 Claude Code session 中皆顯示「unavailable」，版本 v2.1.198，累積 50 則留言、100 個讚，情緒 😤。此為 Claude Code 呼叫層面的可用性問題，已同步記入 [[entities/claude-code]] 已知問題。
 
 #### 2026-07-09
-**官方基準：「Fable 5 orchestrates, cheap models execute」— 46% 成本達 96% 效能**：Reddit 使用者整理 Anthropic 官方公布的多模型協作模式基準數字，指出以 Fable 5 負責任務調度（orchestrator）、由較便宜模型負責實際執行，可用 46% 的成本達到 96% 的效能水準；此模式現可在 Claude Code 中直接套用（Reddit r/ClaudeAI，週熱門標記，來源貼文日期 2026-07-08 19:17 UTC）。屬官方基準數據轉述，原始發布連結未附於本則貼文，暫未直接查證官方原始頁面。
+**官方基準：「Fable 5 orchestrates, cheap models execute」— 46% 成本達 96% 效能**：Reddit 使用者整理 Anthropic 官方公布的多模型協作模式基準數字，指出以 Fable 5 負責任務調度（orchestrator）、由較便宜模型負責實際執行，可用 46% 的成本達到 96% 的效能水準；此模式現可在 Claude Code 中直接套用（Reddit r/ClaudeAI，週熱門標記，來源貼文日期 2026-07-08 19:17 UTC）。屬官方基準數據轉述，原始發布連結未附於本則貼文，暫未直接查證官方原始頁面。**後續（2026-09-07）**：本站核查未見原始官方發布連結，此數字改列為社群整理轉載，非官方基準。
 
 #### 2026-07-08
 **免費期限延長至 7/12 + zero-shot coding 實測**：
@@ -322,91 +295,25 @@ claude --model claude-fable-5-20260609
 **出口管制正式解除，全球恢復存取**：
 - **官方公告（[Anthropic Blog](https://www.anthropic.com/news/redeploying-fable-5)）**：美國出口管制解除，Fable 5 與 Mythos 5 於 2026-07-01 起向全球用戶恢復存取。過渡期計費：Pro/Max/Team 方案 7/7 前維持每週配額 50%；7/7 後改依用量計費，定價近期公布
 - **Anthropic-美國政府協議**：Anthropic 承諾主動偵測安全風險、配合標準協議、通報惡意活動；此協議為 Fable 5 全球解禁的交換條件，標誌管制事件正式落幕
-- **管制事件歷時 18 天**（2026-06-12 至 2026-06-30）
+- **管制解除**：2026-06-30 宣布、07-01 全球恢復（天數口徑見 [[topics/anthropic-government-policy]]）
 
-### 出口管制期（2026-06-12 至 06-30）
+**懸置細節**
 
-#### 2026-06-29
-**美國政府正式許可恢復 Mythos 存取 + Fable 5 可能本週回歸（後於 2026-07-01 官方證實回歸，見上方「2026-07-01」條目）**：
-- **政府正式許可（qz.com）**：Anthropic 獲得美國政府許可，可向特定信任合作夥伴恢復 Mythos 存取，Fable 5 全面回歸在望（[qz.com](https://qz.com/anthropic-mythos-5-clearance-trusted-partners-commerce-062926)）；這是繼 6/27 Mythos 5 部分解禁後，政府立場進一步鬆動的具體信號
-- **Axios：Fable 5 可能本週回歸**（HN score 8，後於 07-01 獲官方證實）：Axios 報導 Fable 5「on track to return soon, possibly this week」，Washington 軟化立場（[Axios](https://www.axios.com/2026/06/27/anthropic-fable-5-return-soon)）；HN score 8 訊號偏弱，「possibly this week」為消息人士說法，發稿當時尚無官方確認，實際於 07-01 全球恢復存取
-- **Washington 軟化立場（Yellow.com）**：Google News 報導確認談判進展，與 qz.com / Axios 方向一致（[Yellow.com](https://yellow.com/news/claude-fable-5-return)）
-- **社群回顧：音樂影片展示**（Reddit，score 不詳）：用戶分享在 Fable 5 下架前使用其製作音樂影片的體驗，展示視頻編輯與創意能力，說明即使在管制期間社群仍持續記錄 Fable 5 的多模態使用案例（[Reddit r/ClaudeAI](https://www.reddit.com/r/ClaudeAI/comments/1uipova/)）
-- **工程師實測：新版 Claude 燒更多 token 但每任務成本更低（2026-08-10 查證補上具體數字）**（HN score 5）：signoz.io 工程師以 Terminal-Bench 10 項任務、Claude Code + OpenTelemetry 儀器化對比 Sonnet 4.6／Opus 4.7／Opus 4.8，每任務各跑一輪。結果：總 token 用量約倍增（Sonnet 4.6 約 288 萬 → Opus 4.8 約 606 萬），但每個成功解決任務的實際成本反而下降 19.8%（Sonnet 4.6 約 $1.26／任務 → Opus 4.8 約 $1.01／任務）；原因是增加的 token 多數為便宜的 prompt cache 讀取，而非全新處理的原始輸入。作者自陳「每任務僅跑一輪」存在變異數風險，但選題已於見結果前排定以避免偏誤（[signoz.io](https://signoz.io/blog/claude-code-model-comparison/)，2026-08-10 查證）
+- ⟨Q-01⟩ ❓ **待查證**（標 2026-09-02｜查 techcrunch.com、less restrictive）：TechCrunch 標題稱 Fable 5.1「cheaper, less restrictive」，僅標題可用，「限制更少」具體所指未經證實（Google News/TechCrunch，2026-09-01）
+- ⟨Q-02⟩ ❓ **待查證**（標 2026-08-29｜查 Fable 5.1、1w0v676｜複 2026-09-12｜訊 2026-09-02）：Reddit r/ClaudeCode 討論 Fable 5.1 是否即將發布，部分回覆稱疑似已被路由至新版本測試，純屬社群臆測，無官方公告或版本號佐證（Reddit，2026-08-28）
+- ⟨Q-03⟩ ❓ **待查證**（標 2026-08-26｜查 Futurism、cheaper alternatives｜複 2026-09-09）：Futurism 標題稱企業轉向更便宜替代方案，僅標題可用，無採用數據、案例或方法論佐證（Google News/Futurism，2026-08-26）
+- ⟨Q-04⟩ ❓ **待查證**（標 2026-08-26｜查 tech-insider.org、GPT-5.6 Sol｜複 2026-09-09）：tech-insider.org 標題稱三模型定價差 $1,125，僅標題可用，計算基準未經查證（Google News/tech-insider.org，2026-08-26）
+- ⟨Q-05⟩ ❓ **待查證**（標 2026-08-26｜查 analyticsindiamag.com、Almost Nobody｜複 2026-09-09）：analyticsindiamag.com 標題稱 Fable 5「幾乎無人使用」，RSS 摘要未附正文，採用數據、統計方法、對比基準均未見報導（Google News，2026-08-18）
 
-#### 2026-06-28
-**Fable 5 協議接近完成（後於 2026-07-01 官方證實回歸）+ 競品效應分析**：
-- **Axios 報導 Fable 5 on track**（HN score 4，後於 07-01 獲官方證實）：Axios 報導 Fable 5 正走向全面回歸一般市場，美方協議接近完成；TechCrunch 同步補充「Fable 5 on track to return soon」（[Axios](https://www.axios.com/2026/06/27/anthropic-fable-5-return-soon)）。訊號弱（HN score 4），「接近完成」發稿當時不等於已批准，實際於 07-01 全球恢復存取
-- **HN 社群反應：競品急追佐證封鎖無效**：HN 評論普遍認為 Tulongfeng / Fugu 等競品急追 Mythos / Fable 5 的聲明，反而對 Anthropic 有利——強化「封鎖只讓競爭對手有時間填補市場」論點，媒體密集報導同時提升 Anthropic 品牌效應
+### 2026-06（發布與出口管制期）
 
-#### 2026-06-27
-**接近批准 Fable 5 重新上線（後於 2026-07-01 官方證實回歸）+ Mythos 5 先行部分解禁**：
-- **Fable 5 接近協議**（後於 07-01 獲官方證實）：Reuters / Axios 報導美方接近批准 Fable 5 重新上線，發稿當時尚未獲得 Anthropic 或商務部官方確認（[Reuters](https://www.reuters.com/business/us-close-allowing-anthropic-restore-fable-5-model-axios-reports-2026-06-27/)）；訊號強度：兩家主流媒體同步報導，「接近」發稿當時不等於已批准，實際於 07-01 全球恢復存取
-- **Mythos 5 先行部分解禁**：同日，商務部長 Howard Lutnick 在致 Anthropic 聯合創辦人、chief compute officer Tom Brown 的信中確認，Mythos 5 已獲批向 100+ 美國受信任機構（企業 + 聯邦機構）有限釋出（Semafor、CNBC）；Fable 5 與 Mythos 5 的解禁為獨立決定，不可相互推論
+- 2026-06-09 Fable 5 發布：首款向大眾開放的 Mythos 級模型，$10／$50、1M context、128K 輸出，與 Mythos 5 共用權重、差在前置安全分類器。
+- 2026-06-10～11 護欄爭議：System Card 揭露對前沿 LLM 開發降級且不告知，官方 06-11 道歉並改為可見防護。
+- 2026-06-13 美國政府要求停售，Anthropic 90 分鐘內關閉全球存取（含美國用戶）。
+- 2026-06-16 Commerce 部長 Lutnick 致函（Bloomberg 全文刊出）主張護欄無法阻止取得 Mythos 的網路攻擊能力；Anthropic 否認該主張在技術上成立。
+- 2026-06-18 Wired 揭露 SK Telecom 的中國關聯是管制的真正起點；Amazon 安全研究員向白宮通報是直接觸發原因。
+- 2026-06-22 越獄機制公開：dev.to 揭露「Fix this code」三個字即可繞過控制。
+- 2026-06-30 管制解除、07-01 起全球恢復存取，同時導入 Defense in Depth 分類器。
+- 雙方立場的完整論點、逐日經過與商業衝擊（DoD 轉單、G7 不豁免、赴華府協商）見下方連結；攻防的家是 [[topics/anthropic-government-policy]]。
 
-#### 2026-06-24
-**NSA 失去 Fable 存取權 + Legion 提告 + LessWrong 預測 7/9 解封**：
-- **NSA 失去存取權**：NYT 報導，NSA 因與 Anthropic 的出口管制爭議失去 Claude Fable 模型的存取權（[NYT](https://www.nytimes.com/2026/06/23/us/politics/nsa-lost-access-anthropic-tool.html)）；此為首次有具名情報機構因管制爭議而被正式切斷存取的報導，直接強化政府對 Anthropic 的施壓態勢
-- **Legion 法律科技新創提告**：Reuters 報導，法律科技新創 Legion 正式對美國政府提告，主張出口管制令違法限制外界使用 Fable（[Reuters](https://www.reuters.com/legal/litigation/legal-tech-firm-sues-us-over-order-limiting-foreign-access-top-tier-anthropic-2026-06-23/)）；是繼 Politico 法律分析後，首件具名企業以訴訟形式挑戰出口管制的案例
-- **LessWrong 預測分析**：LessWrong 發布詳細世界模型分析，將 Fable 重新上線的預期時間修正至 **7 月 9 日**（[LessWrong](https://www.lesswrong.com/posts/zhRe3tdBpsZbGCdDK/world-modeling-the-us-vs-anthropic-standoff-on-claude-fable)）；分析涵蓋雙方談判動態、法律障礙與市場壓力因素
-
-#### 2026-06-23
-**Five Eyes 聯合聲明 + Zhipu GLM-5.2 接觸被封鎖用戶 + HN 社群問「Fable 回來了嗎？」**：
-- **Five Eyes 情報聯盟聲明**：英美澳加紐五眼情報機構發表聯合聲明，警告「足以顛覆政府的 AI 模型距今僅數月」，Fable 5 等前沿模型帶來的網路安全威脅首次被五眼機構聯合點名（[The Guardian](https://www.theguardian.com/technology/2026/jun/22/anthropic-claude-fable-ai-model-artificial-intelligence-national-security)，2026-06-22）
-- **Zhipu GLM-5.2 趁機接觸被封鎖用戶**：Anthropic 出口管制後，中國 AI 公司 Zhipu 的 GLM-5.2 主動接觸遭 Fable 5 封鎖的用戶群，試圖填補存取空白（[SCMP](https://www.scmp.com/tech/article/3358067/how-anthropics-fable-5-shutdown-could-help-chinas-zhipu-glm-52-gain-ground)）；此為繼 6/22 Zhipu 競爭聲明後，中方市場動作的具體落地
-- **Fortune 歐洲高管警告**：Fortune 報導歐洲企業高管對 Fable 5 出口管制深感焦慮，原話：「This is the least crazy AI is ever going to be」，暗示前沿 AI 能力擴張不會停止，監管只是拖延
-- **HN：「Fable 回來了嗎？」（score 4）**：有使用者在 Hacker News 發帖回報，Claude Code 在工作流中啟動了一個 Fable 5 subagent 且未報錯，且該 subagent 自我識別為 Fable（[HN](https://news.ycombinator.com/item?id=48629948)）；訊號微弱（score 4），尚無法確認是部分解禁、快取問題或邊緣豁免案例
-
-#### 2026-06-22
-**「Fix this code」三詞越獄機制公開 + Zhipu 聲稱 2026 年追上 Fable 5**：
-- **三詞越獄細節首次公開**：dev.to 文章揭露引發出口管制的 Fable 5 越獄機制——「Fix this code」三個字即可繞過安全控制。這是美國政府「護欄不可靠」論點與 Amazon 研究人員向白宮通報漏洞的具體指向，是管制事件核心技術事實的首次公開說明（[dev.to](https://dev.to/peremptory/the-fable-5-jailbreak-was-three-words-long-457j)）
-- **Zhipu 競爭聲明**：中國 AI 公司 Zhipu 創辦人向馬斯克聲稱，其 GLM-5.2 將在 2026 年追上 Anthropic Fable 5 的能力水平（South China Morning Post，[SCMP](https://www.scmp.com/tech/article/3357926/china-ai-ready-match-anthropics-fable-5-musk-zhipus-tang-clash-over-glm-52-rise)）；是中美 AI 競爭背景下，Fable 5 作為中國追趕目標首次被具名企業公開宣示的案例
-
-#### 2026-06-20
-**全球媒體反應升溫 + 境外付費帳號遭停用**：
-- **多國主流媒體跟進報導**：Al Jazeera（出口禁令加劇盟友緊張）、DW.com（全球關切美國限制 Anthropic AI 存取）、SiliconANGLE（「Trump 削弱 Anthropic」）、dev.to（「美國政府強制關閉 Fable 5 和 Mythos 5：第一個 AI Kill-Switch」）同步報導，凸顯管制事件在美國以外持續發酵
-- **境外付費用戶帳號停用**：有確認案例顯示非美國 Claude 付費訂閱用戶在 Fable 5 / Mythos 管制期間帳號遭停用，進一步衝擊 Anthropic 境外用戶可及性
-- **解禁預期持續**：承接昨日 Ciauri「數日內恢復」聲明，待 Commerce 部正式解封通知
-
-#### 2026-06-19
-**解禁近況 + Wired 深度調查 + 早期用戶豁免**：
-- **Wired 深度調查（HN score 110）** 確認 SK Telecom 中國關聯是出口管制的根本動機：Anthropic 先前授予 SK Telecom 對 Mythos（非 Fable 5）的存取權，美方對 SK Telecom 中國關聯的疑慮觸發審查；此後 Amazon 研究人員向白宮揭露 Fable 5 的越獄漏洞，兩件事疊加加速了管制決定，澄清「jailbreak 是唯一原因」的既有說法
-- **Ciauri 首爾記者會**：Anthropic 國際總監 Chris Ciauri 與 Anthropic Korea 代表 Choi Ki-young 在首爾 Conrad 飯店召開記者會，聲明「非常有信心模型將在數日內恢復可用」
-- **Bloomberg**：部分 Mythos 早期用戶在美國政府指令後仍保有存取權（早期用戶豁免）
-- **印度 AI 主權討論**：TechCrunch 報導，Fable 5 / Mythos 停用引發印度 AI 主權辯論，尤其 Anthropic 與 TCS 企業合作宣布同日發生停用事件，凸顯依賴美國技術的地緣政治風險
-- **程式能力評測**：Towards Data Science 發布 Fable 5（Mythos）程式設計能力評測
-
-#### 2026-06-18
-**「數日內解禁」——SK Telecom / China 關聯首次曝光**：Anthropic 國際業務總監 Chris Ciauri 在首爾記者會表示「非常有信心模型將在數日內恢復可用」。同日 Wired 獨家報導揭露出口管制的根本起因：美國政府關切 SK Telecom 與中國的關聯，在 Anthropic 授予 SK Telecom 存取 Mythos（非 Fable 5）後啟動審查；Amazon 研究人員在 Fable 5 中發現的 jailbreak 進一步加速了管制決定。Politico 分析出口管制可能違法，國會議員要求政府說明。Anthropic 已向商務部長 Lutnick 提交解封提案（New York Post）。摩根大通香港分行被迫切斷 Anthropic 存取（Financial Times），是出口管制對具名頂尖企業的首批直接衝擊案例。
-
-#### 2026-06-17
-**G7 峰會無豁免，談判再度破裂**：Wired 報導週一 Commerce 部工作組會談結束，出口管制仍未解除。政府持續主張 Fable 5 護欄可被繞過以存取 Mythos 的攻擊性網路安全能力；Anthropic 再次否認此論點屬實。G7 國家（包括英國首相 Starmer 的「carve-out」請求）一概遭拒，Trump 政府明確表示 G7 盟友也不在豁免範圍內（NY Post、Euronews、Politico EU）。TechCrunch 報導：這次最新爭端諷刺地可能對 Anthropic 的銷售有利——五月 Anthropic 企業市佔首度超越 OpenAI（Ramp 數據），650 億美元融資、IPO 申請均在管制前完成。The Guardian 評論：Fable 5 事件是「AI 潘朵拉盒已開」的象徵，出口管制無法真正遏止能力擴散，需要全球集體行動。
-
-#### 2026-06-16
-**爭議焦點：Dario 被控拒絕修復 jailbreak + 用戶依賴感爆發**：Trump 顧問 David Sacks 在 X 上表示，美國政府曾提前警告 Anthropic Fable 5 被 jailbreak，但 Dario Amodei 拒絕修復也拒絕下架；Anthropic 回應稱該 jailbreak「並不嚴重」。TechCrunch 深度報導分析：此次出口管制從一開始就與 jailbreak 無關，而是更廣泛的出口管制架構問題（Dario 個人定義是否屬「外籍人士」）。白宮本週一協商已啟動。《The Atlantic》評論 Trump 政府持續升溫對 Anthropic 的戰爭，稱美國可能因此在 AI 競賽中落後。Reddit 大量用戶反映 Fable 5 下線後「無法回頭用舊模型」，分享對其他模型效果的落差感受。AI 價格戰分析指出此事件對 Anthropic 與 OpenAI 的商業壓力同步升溫。
-
-#### 2026-06-15
-**Axios 爆料「人際衝突」為主因，Stratechery 長文點名安全論述是雙面刃。**
-**協商持續推進 + 媒體深挖「個性衝突」**：Axios 報導內部消息稱 Anthropic 員工以「They screwed us」描述與白宮的關係，爆料主因是人際衝突（personality clash）而非純粹政策分歧。WSJ 同日報導 Anthropic 派遣多名高層員工赴華府與白宮官員緊急協商，試圖解除出口管制。Stratechery 長文分析（Ben Thompson，HN 128 分）：Fable 在親身體驗中「留下極深印象」，同時犀利指出 Anthropic 的安全論述是把雙面刃——使政府有現成正當性強制干預。加拿大總理 Carney 公開警告此事件顯示「過度依賴大型 AI 模型」的地緣政治風險。《經濟學人》評 Trump 的封鎖決策「反覆無常且混亂」。開發者社群出現非技術人員（PMM）展示 60 天使用 Claude Code 獨立完成多個商業專案、收入 $4K 的案例，引發對「非技術角色護城河消失」的廣泛討論。
-
-#### 2026-06-14
-**Amazon Jassy 直報白宮成為管制直接觸發原因，EU 與印度 AI 主權爭議同步浮現。**
-**出口管制事件後續：更多細節浮現 + 國際影響擴大**：Axios 揭露 Anthropic 僅有 90 分鐘執行撤架命令（下午 5:21pm ET 收到指令）。The Verge / WSJ 報導：Amazon 安全研究顯示 Fable 5 可透過一系列提示詞生成可用於網路攻擊的資訊，Amazon CEO Andy Jassy 直接向白宮官員通報，成為管制指令的直接觸發原因。Semafor 報導：白宮動機之一是中國關聯組織疑似存取 Mythos 5 的情報。TechCrunch 報導：Politico 分析此事件暴露歐盟 AI 主權弱點，EU 執委會宣布正在評估實際影響；印度科技界（Anthropic 第二大市場）重燃 AI 自主辯論，Anthropic 剛宣布與 TCS 的企業合作隨即受衝擊。社群層面：用戶抱怨 Opus 4.6 在書籍編輯任務上與 Fable 5 差距明顯，尋求替代 prompt 策略。美國戰爭部長 Hegseth 公開就此發表聲明但無法提供具體理由，社群批評「最無能政府」。Forbes 探討 Anthropic 是否需要提供 Fable 5 退款。
-
-#### 2026-06-13
-**Trump 政府下令停用，Anthropic 90 分鐘內對全體用戶關閉存取；Anthropic 安全論述反成政府援引依據。**
-**美國政府出口管制指令**：Trump 政府以「國家安全授權」發布出口管制指令，要求 Anthropic 停用 Fable 5 與 Mythos 5 對所有外籍人士的存取，包含美國境內外籍員工。Anthropic 於下午 5:21pm ET 收到指令，為確保合規對全體用戶停用兩款模型——即使這代表美國用戶也無法繼續使用。指令未提供具體國家安全顧慮說明。TechCrunch 分析：Anthropic 對 Fable 5「太危險」的安全論述，反而成為政府援引的理由，是「AI 安全敘事的意外後果」。社群熱議 Anthropic 安全立場與政府干預之間的弔詭關係（Reddit 用戶整理時序：Anthropic 主張自己有資格決定誰能用最強模型，政府隨即接管了這個決定）。Fable 5 在下線前的 72 小時窗口期，開發者展示了大量編碼成果：單次對話生成 2,319 行遊戲、10 小時打造多人棋藝平台、Go decimal 函式庫效能超越市場最快工具 35%。
-
-### 管制前（發布初期）
-
-#### 2026-06-12
-Jailbreak 持續爭議：有人再次聲稱破解成功，Anthropic 官方出面駁斥該說法。社群測試數據顯示 Fable 5 在對話中使用「honest」一詞比率（1.79%）為各代模型最高，引發對模型行為與誠實性設計的討論。Anthropic 在上市 48 小時內撤回了 Fable 5 的研究存取限制（前一日政策）。917 個 coding-agent 場景測試：Fable 5 以 0.9 分之差略勝 Opus 4.8，但 token 消耗約 2 倍（Reddit r/ClaudeAI）。
-
-#### 2026-06-11
-政策撤回事件：Anthropic 就隱性 LLM 研究限制政策道歉，承認「做了錯誤的取捨」，改為可見防護措施（Wired 報導）。多個 Jailbreak PoC 公開流傳（Pliny、0xSufi）。資安研究者護欄過激爭議持續延燒（HN 512 分）。Microsoft 內部律師建議禁用（Times of India、PYMNTS）。OpenAI 考慮降價應對 Anthropic 競爭（WSJ/CNBC）。TCS 宣布與 Anthropic 建立 Global Premier Partnership，5 萬員工使用 Claude。Claude Corps 公益計畫發布。
-
-#### 2026-06-10
-發布後第一天社群討論爆發：靜默降級爭議、30 天資料保留爭議、供應鏈攻擊威脅升高、Microsoft AI CEO 批評 Anthropic 意識論述、多個工具社群跟進（Lanes v0.43.0 加入 Fable 5 支援）。
-
-#### 2026-06-09
-正式發布。HN score 2,448，近 2,000 評論。6/22 前含括於訂閱方案。
+原始條目見 [[entities/fable-5-archive#2026-06]]；雙方立場的兩張表見 [[entities/fable-5-archive#出口管制：雙方立場]]。

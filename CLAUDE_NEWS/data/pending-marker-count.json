@@ -1,7 +1,7 @@
 {
-  "count": 142,
-  "updated": "2026-09-06",
-  "note": "patterns L755 與 L752 同節點同事實重複標記去重；新增 Q-06/Q-07",
+  "count": 141,
+  "updated": "2026-09-07",
+  "note": "entities/fable-5 費馬歸屬經官方一手查證結案（內部研究模型，非 Fable 5／5.1）",
   "fingerprints": [
     {
       "key": "entities/andrej-karpathy::2026-08-15::benzinga、lord of the rings",
@@ -134,10 +134,6 @@
     {
       "key": "entities/dario-amodei::2026-08-10::[[topics/anthropic-government-policy]]、public first action",
       "label": "entities/dario-amodei（標 2026-08-10｜查 [[topics/anthropic-government-policy]]、Public First Action）"
-    },
-    {
-      "key": "entities/fable-5::2026-09-04::formalizing-fermats-last-theorem、fable 5.1",
-      "label": "entities/fable-5（標 2026-09-04｜查 formalizing-fermats-last-theorem、Fable 5.1）"
     },
     {
       "key": "entities/fable-5::2026-09-02::techcrunch.com、less restrictive",

@@ -6,18 +6,18 @@ domain: "🤖 模型"
 last_updated: "2026-09-05"
 last_news_update: "2026-09-02"
 status_main: "ongoing"
-days_since_news: 4
+days_since_news: 5
 parent: null
 children: "[]"
 page_role: "root"
-days_since_news_subtree: 4
-inbound_links: 37
+days_since_news_subtree: 5
+inbound_links: 38
 attribution_count: 18
 attribution_last: "2026-09-02"
 top_source: "reddit"
 pending_count: 1
-pending_overdue: 0
-pending_next_review: "2026-09-07"
+pending_overdue: 1
+pending_next_review: null
 pending_signalled: 0
 signal: "健康"
 generated_by: "scripts/gen_wiki_frontmatter.py"
@@ -74,7 +74,7 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 | 想接近旗艦效能但成本減半 | **Opus 5** | 官方稱評測逼近 Fable 5；$5/$25 為 Fable 5 的一半（2026-08-08 官方確認）|
 | 跨多天的複雜 agentic 任務 | **Fable 5.1** | 917 場景以 0.9 分險勝 Opus 4.8（5.0 世代數據，5.1 尚無同口徑對照），但 token 約 2 倍 |
 | 資安審查 / 漏洞分析 | **Fable 5.1**（首選）→ 次選 **Opus 5** | Fable 5.1 能力最強惟有分類器誤判；Mythos 5.1 非公開選項 |
-| 需要壓成本的批量任務 | **Haiku 4.5 + Sonnet 5 協調**，或 **Fable 5 調度 + 便宜模型執行** | 官方基準：Fable 5 調度 46% 成本達 96% 效能 |
+| 需要壓成本的批量任務 | **Haiku 4.5 + Sonnet 5 協調**，或 **Fable 5 調度 + 便宜模型執行** | 社群轉載（Reddit，2026-07-08）：Fable 5 調度 46% 成本達 96% 效能 |
 | 生產環境求穩 | **Sonnet 4.6 或 Sonnet 5** | Opus 5 上線首兩週有多起錯誤率事件與分歧評價 |
 
 ### 情境推薦細節
@@ -83,7 +83,7 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 - **想接近旗艦效能但成本減半**：官方稱編碼與知識工作評測逼近 Fable 5.0（2026-07-25 對照，5.1 尚無同口徑數據），定價為 Fable 5.1 牌價一半（$5/$25 vs $10/$50，官方確認）。
 - **跨多天的複雜 agentic 任務**：官方定位 long-running agents；917 場景以 0.9 分之差略勝 Opus 4.8（Reddit，2026-06-12，5.0 世代數據），但 token 約 2 倍，需連成本一起讀。
 - **資安審查 / 漏洞分析**：Fable 5.1 能力最強，但 5.0 世代 07-02 起有 Defense in Depth 分類器誤判實測（5.1 是否延續未經查證）；Opus 5 官方文件（2026-07-25）自陳資安任務仍落後 Mythos，惟 Mythos 5.1 非公開選項，不構成 Opus 5 的淘汰理由。
-- **需要壓成本的批量任務**：Haiku 4.5 官方定位 sub-agent tasks／cost-sensitive；搭配 Sonnet 5 協調為社群驗證架構。Fable 5 調度 46% 成本達 96% 效能為官方基準（Reddit 轉載，週熱門，2026-07-08）。
+- **需要壓成本的批量任務**：Haiku 4.5 官方定位 sub-agent tasks／cost-sensitive；搭配 Sonnet 5 協調為社群驗證架構。Fable 5 調度 46% 成本達 96% 效能為社群整理轉載（Reddit，週熱門，2026-07-08），未見原始官方發布連結。
 - **生產環境求穩**：Opus 5 上線首週有 5 起模型錯誤率事件（Anthropic Status，07-26／07-28），皆數十分鐘至 1 小時內排除；社群自 07-29 起累積「過度自信」「不如跑分預期」「令人挫折」等分歧回饋，皆無量化數字，弱訊號。Sonnet 4.6/5 已累積較長驗證週期。
 
 > **換模型不是唯一旋鈕。** 官方明載「調 effort 通常比換模型更有效」（[choosing-a-model](https://platform.claude.com/docs/en/about-claude/models/choosing-a-model)）：Opus 5 起手用預設 `effort: high`，只有最吃重的編碼／agentic 任務才上探 `xhigh`。`max` 並非越高越好（官方稱報酬遞減、簡單任務易 overthinking），換模型前先針對自己的 evals 跑一次 effort sweep——官方原文與社群措辭的落差見下方「Effort dial 細節」。
@@ -162,14 +162,14 @@ Claude 家內選型看上方情境推薦；跨家比較（GLM、Qwen、Kimi 等�
 | SWE-bench Pro | SOTA（官方） | 69.2% | 接近 Opus 4.8（社群評測） |
 | 綜合定位 | 幾乎所有 benchmark SOTA | 第三方評測曾小輸 Gemini 3.5 Flash（35.4 vs 34.8） | agentic / tool use 接近次旗艦 |
 | token 消耗／每任務成本 | 917 場景以 0.9 分略勝 4.8，token 約 2 倍 | 基準對照組 | — |
-| 多模型協作（orchestrator） | 調度 + 便宜模型執行：46% 成本達 96% 效能 | — | — |
+| 多模型協作（orchestrator） | 調度 + 便宜模型執行：46% 成本達 96% 效能（社群轉載，2026-07-08） | — | — |
 
 **表格細節：**
 
 - **SWE-bench Pro**：Sonnet 5 官方對比圖表有修改爭議（2026-07-02，見 [[entities/sonnet-5]]）；Opus 5 尚無 SWE-bench Pro 數字可對照。
 - **綜合定位**：Opus 4.8 第三方小輸 Gemini 3.5 Flash 主因為指令遵循；各數據測試日期與條件見各模型 entities 頁。
 - **token 消耗**：「小勝」需連成本一起讀——分差 0.9、token 代價約 2 倍（Reddit r/ClaudeAI，2026-06-12，社群整理）。
-- **多模型協作**：官方基準，經 Reddit r/ClaudeAI 整理轉載（週熱門標記，來源貼文 2026-07-08，原始官方連結未附，尚未直接查證）。與上一列形成對照：協作模式可望大幅壓低整體成本。
+- **多模型協作**：社群整理轉載，經 Reddit r/ClaudeAI 整理（週熱門標記，來源貼文 2026-07-08），原始官方連結未附，非官方基準。與上一列形成對照：協作模式可望大幅壓低整體成本。
 - **延伸閱讀**：MarkTechPost（2026-07-13）Sonnet 5／Sonnet 4.6／Opus 4.8 三模型對照，Sonnet 5 全指標超越 Sonnet 4.6、拉近與 Opus 4.8 差距（[原文](https://www.marktechpost.com/2026/07/13/anthropic-claude-sonnet-5-vs-sonnet-4-6-vs-opus-4-8-agentic-coding-benchmarks-api-pricing-and-cost-performance-tradeoffs-compared/)）。逐項分數與成本取捨見 [[entities/sonnet-5]]。
 
 ## 相關實體
