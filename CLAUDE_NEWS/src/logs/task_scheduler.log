@@ -574,3 +574,4 @@
 [週1 2026/09/07 12:07:24.00] Step 1a: src/gathered_archive/2026-09-07.json 不存在（GitHub Actions 尚未抓料或延遲），依 daily.md 交給新鮮度防線
 [週1 2026/09/07 12:07:24.00] ABORTED: gathered_items.json date=2026-09-06 items=44，非目標日期的新鮮資料
 [週1 2026/09/07 12:07:24.00] === Pipeline aborted（第一班 12:00 UTC，交由後續班次接手）===
+[cloud daily-news-pipeline-cloud STARTED 2026/09/07 17:04:43.00 UTC]
