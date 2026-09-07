@@ -6039,3 +6039,14 @@ GH Actions 抓料排 10:23 UTC，到 14:45 UTC 仍未落地（+4.4 小時且持�
 - market 判讀：1 則（🔴 0／🟡 1）
 - 呈現品質：全部通過（各記者機械自查 `check_cell_limits.py` / `check_reader_language.py` / `check_pending_markers.py` / `check_tools_page.py` 均為 OK；安全政策記者判斷單一 kk.org 條目證據薄弱且不符三頁任一觸發條件，正確選擇不寫入）
 - 品質備註：[功能][社群] 各自獨立跑 `python scripts/run_tests.py` 全庫測試皆回報 1 個既有失敗——`test_devpractice_diff.TestStateRoundtrip.test_cli_show_runs`（`data/devpractice_state.json` 記錄的基準 commit sha 在本機 git 歷史中不存在，疑為淺層 clone 或基準線損毀）；[模型] 另跑一次全庫測試命中 `test_daily_health_check.test_nonzero_exit_yields_nothing`（git parked-branches 解析）FAIL——三者皆與本輪 wiki 內容編輯無關，屬環境層既有問題，記者正確地未嘗試修復並僅轉知主編；主編於 Step 4 web build gate 時一併確認是否已登記於 `docs/known-test-gaps.json`
+
+## 2026-09-07 Ingest
+
+- 來源日報：[[news/2026-09-07]]
+- 更新頁面：entities/claude-code、entities/pricing、entities/boris-cherny、entities/dario-amodei、entities/robert-mahari、topics/anthropic-business、topics/anthropic-government-policy、topics/ai-talent-flow、topics/competitor-landscape、topics/enterprise-tool-tracker、topics/community-tech-patterns、topics/community-pattern-trends、topics/long-context-1m、topics/recursive-self-improvement、topics/market-signals、entities/managed-agents
+- 新增頁面：無
+- 摘要：Max 訂閱用量上限爭議（GitHub Issue #16157，1,492 則留言全站居冠）與 Team 方案座位分級缺口同日並發，反映配額計算/顯示信任度下滑；Anthropic IPO 延至 10 月中並鎖定 150 億美元信用額度、15 億美元著作權和解金分配爭議（出版商 vs 作者）、五角大廈加碼維持採購黑名單（儘管一審已裁違法）三線同步延燒；社群同日 4 款 agent 工具（metaharness／XActions／Nomi／rabbithole）集中亮相；人物記者處理 5 筆跨頁事實更正回掃（dario-amodei/robert-mahari/boris-cherny）；devpractice 記者本輪成功排除淺 clone 環境限制（`git fetch --unshallow`），完整執行沉澱並推進基準線；市場記者新增 1 則 🔴 判讀（IPO 延後說法二次來源確認）。
+- devpractice 沉澱：候選 4 筆（entities/managed-agents 五層 agent 協調地圖、community-tech-patterns「誰負責拆分」官方查證表＋一項迴歸、3 款新工具、pricing #16157 互動數更新）；基準線 2ebcd4f8ac→6aeca0b320
+- market 判讀：1 則（🔴 1／🟡 0）
+- 呈現品質：全部通過（各記者機械自查 `check_cell_limits.py` / `check_reader_language.py` / `check_pending_markers.py` 均為 OK；主編於彙整階段對 `entities/claude-code.md:178/179`、`topics/community-tech-patterns.md:1031` 三筆因跨記者措辭同步觸發的既有超限段落做短語化修復，`check_cell_limits.py` 全庫掃描確認無新增超限）
+- 品質備註：本輪雲端環境的淺 clone 問題（連續多輪造成 `test_devpractice_diff.TestStateRoundtrip.test_cli_show_runs` FAIL）由 devpractice 記者以唯讀 `git fetch --unshallow` 排除，`python scripts/run_tests.py` 全庫 620 案例回歸全綠；此為環境層修復非本輪內容編輯所致，供後續 cloud_bootstrap.py 是否應納入 unshallow 步驟參考
