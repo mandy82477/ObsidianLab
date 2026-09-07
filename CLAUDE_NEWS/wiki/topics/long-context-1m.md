@@ -28,7 +28,7 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 **領域：** 🛠️ 工具/功能
 **別名：** 1M context window, long context, `[1m]`
 **開始日期：** 2026-04-10
-**最後更新：** 2026-09-02
+**最後更新：** 2026-09-07
 **最後新聞更新：** 2026-09-02
 
 > **最新動態**（2026-09-02）
@@ -66,7 +66,7 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 | **你看不出自己在不在 1M 上**——狀態列對 Sonnet 4.6 顯示 200k，而該模型實際支援 1M | [#61734](https://github.com/anthropics/claude-code/issues/61734)，24 則留言，2026-08-29 | 🔴 官方未回應 |
 | **已達 1M 資格仍要求另開用量額度**（opus-plan 模型）| [#61869](https://github.com/anthropics/claude-code/issues/61869)，2026-08-30 開立 | 🔴 官方未回應 |
 
-各條的完整脈絡：第一、二、四條見 [[entities/claude-code]] 的已知問題，第三條見 [[entities/fable-5]]。模型釘選／靜默降級的跨機制敘事見 [[topics/code-quality-decline]]。
+各條的完整脈絡：第一、二、四條見 [[entities/claude-code]] 的已知問題，第三條見 [[entities/fable-5]]。模型釘選的跨機制敘事見 [[topics/code-quality-decline#模型釘選：你選的不一定算數]]。
 
 > **這件事對成本估算的意義：** 任何「我選了 X 模型所以會花 Y」的估算，都預設了「我選的算數」。上表三條說明這個前提有缺口，估算前先確認釘選是否成立。
 
@@ -87,7 +87,7 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 - [[topics/model-comparison]] — 我該用哪個模型，含跨世代實付成本換算
 - [[entities/claude-code]] — 預設開啟與 model picker 兩條已知問題
 - [[entities/fable-5]] — `claude-fable-5[1m]` 與 #79337
-- [[topics/code-quality-decline]] — 模型釘選／靜默降級訊號群
+- [[topics/code-quality-decline]] — 模型釘選訊號群
 
 ## 時序
 

@@ -143,7 +143,7 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 - 🔴 **未修復**｜**API Error: Rate limit reached，儘管訂閱 Claude Max 且僅使用 16% 額度（GitHub issue #29579，累積 153 則留言、94 個讚，2026-07-21）**：使用者回報訂閱 Claude Max 方案、用量儀表板僅顯示已用 16% 額度的情況下，仍收到「Rate limit reached」速率限制錯誤，顯示速率限制觸發條件與實際額度顯示可能未同步；與既有「額度顯示 84% 卻收到已達上限」（issue #19673）同屬額度計算與實際限制不一致的疑慮，暫分列追蹤；官方尚未回應。
 - 🔴 **未修復**｜**方案 5 小時用量限額在不到 1 小時 30 分鐘內即用罄（GitHub Issues，累積 120 則留言、31 個讚，2026-07-19，今日互動量最高）**：使用者回報依標準 bug 回報範本提交，環境為 Anthropic API／Claude CLI v1.0.89，方案 5 小時用量限額實際不到 1 小時 30 分鐘即被用罄，遠低於預期使用時長；官方尚未回應，與既有「Max 訂閱方案立即觸及用量上限」（issue #16157）同屬配額消耗速度爭議，暫分列追蹤。
 - 🔴 **未修復**｜**「Server is temporarily limiting requests」錯誤與用量上限無關（GitHub issue #53915，累積 68 則留言、26 個讚，2026-07-13）**：使用者回報收到「伺服器暫時限制請求」的速率限制錯誤，官方訊息明確標註並非使用者用量上限所致；成因與是否可緩解官方尚未說明。
-- 🔴 **未修復**｜**Max 訂閱方案立即觸及用量上限（GitHub issue #16157，累積 1492 則留言、725 個讚，2026-08-04 今日聚焦頭條，2026-08-22 再度列入今日聚焦［持續追蹤］，2026-09-06 互動數更新，全站已知問題留言數與反應數持續居冠）**：使用者回報訂閱 Max 方案後幾乎立即觸及用量上限；2026-08-04 日報今日聚焦將此則與提示卡住問題（issue #26224）並列為近期兩則反映可靠度問題的熱門條目；官方尚未回應。計費／配額性質的事故評估另見 [[entities/pricing]]。
+- 🔴 **未修復**｜**Max 訂閱方案立即觸及用量上限（GitHub issue #16157，累積 1492 則留言、725 個讚，全站互動最高，2026-09-06 更新）**：使用者訂閱 Max 方案後幾乎立即觸頂；官方尚未回應。計費面另見 [[entities/pricing]]。
 - 🔴 **未修復**｜**圖片處理失敗導致 token 大量浪費（GitHub issue #60334，累積 72 則留言、19 個讚，首見 2026-07-12，2026-08-09 互動數更新）**：使用者回報一次圖片處理失敗即耗掉五小時額度約 70%；Anthropic API 端圖片處理錯誤直接反映為使用者額度損失，官方尚未回應。
 - 🔴 **未修復**｜**功能請求：印度地區專屬定價方案（INR 計價）（GitHub issue #17432，累積 212 則留言、613 個讚［讚數未更新］，首見 2026-07-10，2026-08-17 留言數更新）**：使用者要求提供印度盧比計價的地區專屬訂閱方案，降低匯率轉換造成的實際負擔，類似 OpenAI（ChatGPT）與 Google（Gemini）已提供的方案；官方尚未回應。定價/計費層面另見 [[entities/pricing]]。
 - 🔴 **未修復**｜**付款訂閱 Max 5x 方案後帳號反遭停用（GitHub issue #5088，累積 184 則留言、65 個讚，2026-07-10 首見，2026-09-04 留言數更新）**：使用者回報完成 Claude Code Max 5x 方案付款訂閱後，帳號反而遭到停用；官方尚未回應，定價/帳務退款層面另見 [[entities/pricing]]。
@@ -159,8 +159,8 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 
 ### 🧠 行為與品質（50 條未修復、2 條已修復、1 條拒修、6 條查無官方、1 條❓）
 
-- 🔴 **未修復**｜**Claude 4.7／4.8／5、Fable 日益預設重複修辭套路，難維持連貫散文，即使給明確風格指示仍難改善（GitHub issue #77136，累積 106 則留言、517 個反應，2026-08-27，跨模型代際共同問題）**：使用者回報輸出充斥「行話」（如 blast radius、earned its keep、spine 等被列入禁用詞清單的用語），給出明確風格指示仍難改善；此問題橫跨 Claude 4.7、4.8、5.0 與 Fable 5，非單一世代獨有，逐則細節見 [[entities/opus-5]]「歷史記錄」；官方尚未回應。
-- 🔴 **未修復**｜**功能請求：CJK 輸入法確認輸入時 Enter 鍵誤觸發送出訊息，籲提供 Enter 僅換行不送出的選項（GitHub issue #2054，累積 34 則留言、187 個讚，長年未解決的老 issue）**：使用者反映用中日韓輸入法（CJK IME）候選字確認時按下的 Enter 鍵常被誤判為送出訊息而非確認輸入，籲提供設定選項讓 Enter 鍵只換行、不觸發送出；官方尚未回應或排入路線圖。
+- 🔴 **未修復**｜**Claude 4.7／4.8／5、Fable 日益預設重複修辭套路，難維持連貫散文（GitHub issue #77136，累積 106 則留言、517 個反應，2026-08-27）**：跨模型代際共同問題，逐則見 [[entities/opus-5]]「歷史記錄」；官方尚未回應。
+- 🔴 **未修復**｜**功能請求：CJK 輸入法確認輸入時 Enter 鍵常誤觸發送出訊息（GitHub issue #2054，累積 34 則留言、187 個讚，長年未解）**：籲提供 Enter 僅換行不送出的選項；官方尚未回應或排入路線圖。
 - 🔴 **未修復**｜**德文變音符號（ä、ö、ü）在輸出中隨機被替換為 ASCII 拼寫，如 ä→ae（GitHub issue #14131，累積 41 則留言、24 個讚）**：使用者回報 Claude Code 輸出中德文變音符號會不定期被替換為對應的 ASCII 拼寫；官方尚未回應。
 - 🔴 **未修復**｜**功能請求：開放 Claude 直接寫入／更新專案檔案的權限模式（GitHub issue #16550，累積 37 則留言、78 個讚，本輪互動最高功能請求）**：使用者呼籲提供讓 Claude 可直接寫入或更新專案檔案的權限模式；官方尚未回應或排入路線圖。
 - 🔴 **未修復**｜**Fable 5 高風險資安／程式碼審查請求自 2026-07-02 起由 Defense in Depth 分類器導向 Opus 4.8 執行，上線首日曾誤攔合法安全審查請求**：送出資安或程式碼審查類請求的人可能遭分類器誤判、被靜默換模型執行。事件全貌、你的選項與承諾追蹤見 [[topics/anthropic-government-policy]]。
@@ -185,7 +185,7 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 - 🔴 **未修復**｜**Opus 5 xhigh 推理強度於 Claude Code Desktop 失效，因思考功能被強制關閉（Reddit r/ClaudeCode，2026-07-25，Opus 5 上線當天新增問題，單一來源待更多佐證）**：使用者回報 Claude Code Desktop 上將 Opus 5 設為 xhigh 推理強度時功能失效，追查發現是思考（thinking）功能被強制關閉所致；此為 Opus 5 於 Claude Code 上線當天即浮現的新 regression，目前僅單一 Reddit 貼文回報、尚無 GitHub Issue 或跨平台佐證，暫列待更多來源確認；官方尚未回應。
 - 🔴 **未修復**｜**Claude 自陳分析依據不足，卻仍在同一回應中完成該分析——自我識別的阻擋性缺口未真正阻止輸出（GitHub issue #60226，累積 47 則留言，2026-07-24）**：使用者回報 Claude 會在回應中明確指出目前分析依據不足（unfounded），卻在同一則回應裡繼續完成該分析並輸出結論，顯示模型自我識別的「阻擋性缺口」（blocking gap）並未真正阻擋輸出行為；官方尚未回應。
 - 🔴 **未修復**｜**功能請求：新增 `--screen-reader` 模式改善 NVDA／JAWS 無障礙體驗（GitHub issue #11002，累積 63 則留言、38 個讚，首見 2026-07-21，2026-07-21 22:04 UTC 留言數更新）**：使用者希望新增專用的螢幕報讀器（screen reader）模式，改善視障使用者搭配 NVDA、JAWS 等輔助工具的操作體驗；官方尚未回應或排入路線圖。v2.1.218（2026-07-22）changelog 提及新增螢幕報讀軟體相關無障礙改善，惟原文於「Added screen-reade[r]…」處截斷，具體對應範圍未知，暫不視為此功能請求的正式回應，待後續版本確認是否涵蓋此議題。
-- 🔴 **未修復**｜**無法用 `Ctrl+Shift+C` 或右鍵選單複製 Claude Code 輸出文字（GitHub issue #62699，累積 42 則留言、68 個讚，首見 2026-07-23，2026-09-06 互動數更新）**：使用者回報完全無法透過 `Ctrl+Shift+C` 或右鍵選單複製 Claude Code 輸出的文字內容；與既有「終端機複製夾帶多餘縮排與行尾空白」（issue #18170）同屬複製功能相關問題但現象不同（一為完全無法複製、一為複製內容格式不整潔），暫分列追蹤；官方尚未回應。
+- 🔴 **未修復**｜**無法用 `Ctrl+Shift+C` 或右鍵選單複製輸出文字（GitHub issue #62699，累積 42 則留言、68 個讚，2026-09-06 更新）**：與「終端機複製夾帶多餘縮排」（#18170）現象不同，暫分列；官方尚未回應。
 - 🔴 **未修復**｜**［META］`bypassPermissions` 模式並未真正略過權限檢查——9 個月未解、12+ 則重複回報（GitHub issue #39523，累積 33 則留言、18 個讚，首見 2026-07-23）**：回報者指出 `bypassPermissions` 模式並未如預期真正跳過權限檢查，此問題已延續 9 個月，累積 12 則以上重複回報仍無解決；與既有「`--dangerously-skip-permissions` 於 v2.1.77 後所有版本失效」（issue #36168）同屬權限跳過機制失效訴求但涵蓋範圍不同（此則為長期 META 彙整回報），暫分列追蹤；官方尚未回應。
 - 🔴 **未修復**｜**`autoMemoryEnabled=false` 未能抑制約 11–16k token 的記憶體前導文字（關聯已關閉的 issue #44829）（GitHub issue #63903，累積 40 則留言，首見 2026-07-23，2026-08-08 留言數更新）**：使用者回報將 `autoMemoryEnabled` 設為 `false` 後，系統確實不再嘗試寫入 auto-memory，但寫死的記憶體前導文字（memory preamble，約 11,000–16,000 token）仍未被抑制，設定未如預期完全生效；回報標題註明與先前已關閉的 issue #44829 相關；官方尚未回應。
 - 🔴 **未修復**｜**session 端無法得知 auto-memory 索引是否完整載入、遭截斷或未載入（GitHub issue #82056，累積 47 則留言、1 個讚，2026-08-28，環境：Claude Code CLI v2.1.220，主模型 Opus 5，子代理 Fable 5）**：使用者回報索引位於 `~/.claude/projects/<project>/memory/` 的 auto-memory 機制，session 端沒有任何管道可判斷該索引這次是完整載入、被截斷、還是完全沒載入，出錯時使用者與 Claude 本身皆無從得知記憶已失真；與既有「`autoMemoryEnabled=false` 未能抑制記憶體前導文字」（issue #63903）同屬 auto-memory 機制成熟度缺口但關注面不同（一為停用未生效、一為載入狀態不可見），暫分列追蹤；官方尚未回應。
@@ -210,9 +210,9 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 - 🔴 **未修復**｜**Extended Thinking「思考內容」實為摘要，非真實推理（2026-06-22 社群揭露）**：工程師 Patrick McCanna 分析 Claude Code session log 後發現，`thinking blocks` 呈現的文字為摘要，而非模型的真實推理過程。真實推理被 Anthropic 以加密方式存於 600 字元 signature 中，API 僅回傳摘要；完整思考內容需要企業級協議才可取用，Anthropic 持有解密金鑰。需依賴 thinking blocks 進行審計追蹤的工程師應特別注意此限制（HN score 98，見 [原文](https://patrickmccanna.net/the-text-in-claude-codes-extended-thinking-output-is-not-authentic/)）
 - 🔴 **未修復**｜**Explore subagent 固定使用 Haiku 模型（2026-06-30 社群分析）**：深入分析 Claude Code 內建 subagent 類型後發現，Explore subagent 被鎖定只能使用 Haiku 模型（見 [Reddit 討論](https://www.reddit.com/r/ClaudeAI/comments/1ujpz0t/caution_when_using_native_subagent_explore_for/)）。在複雜除錯場景中，Haiku 能力可能不足以完成任務，導致誤判或分析遺漏。使用前建議確認任務複雜度是否在 Haiku 能力範圍內；若需更強推理能力，考慮改用其他 subagent 類型或直接指定模型的自訂 agent。
 - 🔎 **查無官方**（標 2026-08-09｜查 [[topics/code-quality-decline]]、記憶過多｜複 2026-09-09）｜**記憶過多導致品質退步**（2026-06-22 指控）：用戶反映兩個進行中專案的 Claude Code 品質近期大幅退步，疑似 context 中累積過多歷史記憶導致干擾。查證確認：此則為獨立於已記錄的 2026-04 效能退步事件（見下方 Extended Thinking／CLAUDE.md system-reminder／已於 v2.1.116 修復的三項產品層問題）之外的另一批 06-22 回報，Anthropic 未曾針對此批回報單獨公開回應；與 04 月事件是否同源尚無官方說明。見 [[topics/code-quality-decline]]
-- 🔴 **未修復**｜**LLM 無障礙偏差：即使 CLAUDE.md 明定 WCAG 2.2 AA 為硬性要求，仍將無障礙修復視為可選項目（開發者 Aaron Gustafson 揭露，GitHub issue #56079，2026-06-18）**：模型自述在追求 coding speed 時將 accessibility 降級；此為價值觀優先序偏差，非知識或能力不足——CLAUDE.md 的「強制要求」無法可靠覆蓋模型訓練偏好，合規類要求須在架構層額外強制；官方尚未回應。
+- 🔴 **未修復**｜**LLM 無障礙偏差：CLAUDE.md 明定 WCAG 2.2 AA 為硬性要求，仍被視為可選項目（Aaron Gustafson 揭露，GitHub issue #56079，2026-06-18）**：價值觀優先序偏差，非能力不足；官方尚未回應。
 - 🔴 **未修復**｜**Stop Hooks 被忽略**（2026-04-24 回報）：Claude 4.7 開始無視自訂 stop hooks，影響依賴 hooks 的自動化工作流程，屬行為退步（regression）
-- ✅ **已修復（三項各自獨立的修法，見下）**｜**2026 年 4 月效能退步事件**：官方 04-23 說明三件各自獨立的工程變更並各自修復——reasoning effort 由 high 調回 medium（v2.1.116）、thinking 內容清除（v2.1.101）、system prompt 長度限制（04-20 服務端回復，非版本號），同時重置所有訂閱者用量；06 下旬與 07-25 起另兩批品質訊號為官方無對應說明的獨立回報，見 [[topics/code-quality-decline]]
+- ✅ **已修復（三項各自獨立的修法）**｜**2026 年 4 月效能退步事件**：官方 04-23 說明三件工程變更各自修復——effort（v2.1.116）、thinking 清除（v2.1.101）、prompt 長度（04-20 服務端回復）；另兩批訊號見 [[topics/code-quality-decline]]
 - 🔴 **未修復**｜**Usage Policy 隨機拒絕**（Opus 4.7 以來）：Claude Code 頻繁出現無明確觸發條件的 Usage Policy 拒絕；官方建議切換至 `/model claude-sonnet-4-20250514` 作為緩解手段；見 [[entities/opus-4-7]]
 - 🔴 **未修復**｜**Speed Bumps 增加**（2026-04-29 回報）：多位長期使用者反映本週起 Claude Code 明顯增加中途暫停詢問的頻率，即使簡單任務也頻繁打斷工作流程，社群猜測與系統層級的行為調整有關，無官方說明
 - 🔴 **未修復**｜**CLAUDE.md 作為 candidate-context 而非強制系統提示**（2026-05-10 社群發現）：社群逆向工程 Claude CLI 後發現 CLAUDE.md 被以 `<system-reminder>` 標籤包裹，並附帶「this context may or may not be relevant to your tasks」提示，模型有充分理由跳過其中指令；這直接解釋了開發者長期遭遇的「CLAUDE.md 指令被忽略」問題；Anthropic 尚未正式回應此架構設計決策。
@@ -275,7 +275,7 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 
 ### 🔌 平台相容性（67 條未修復、3 條查無官方）
 
-- 🔴 **未修復**｜**Claude Code Status v1.0.25 每次開啟 Cursor 或 VS Code 整合終端機皆重複跳出同一則環境貢獻警告（GitHub issue #3301，累積 46 則留言、86 個讚，2026-09-07）**：使用者回報每次開啟 Cursor 或 VS Code 整合終端機，介面皆重複顯示同一則「The following extensions want...」環境貢獻警告，無法一次核准後不再重複顯示；官方尚未回應。
+- 🔴 **未修復**｜**Claude Code Status v1.0.25 每次開啟 Cursor／VS Code 整合終端機皆重複跳出環境貢獻警告（GitHub issue #3301，累積 46 則留言、86 個讚，2026-09-07）**：無法一次核准後不再顯示；官方尚未回應。
 - 🔴 **未修復**｜**Claude Desktop（Windows）安裝程式因先前一次「顯示成功」實則套件狀態不一致的安裝，導致後續安裝以 HRESULT 0x80073CF6 失敗（GitHub issue #49917，累積 38 則留言、8 個讚）**：官方尚未回應。
 - 🔴 **未修復**｜**Claude Desktop（Windows）反覆當機，須進「進階選項→修復」才能恢復（GitHub issue #85199，累積 40 則留言，2026-08-30）**：使用者回報 Windows 版 Claude Desktop 反覆當機，每次都須進入「進階選項→修復」才能恢復使用，屬穩定性問題；官方尚未回應。
 - 🔴 **未修復**｜**功能請求：新增 `--quiet`（或 `--minimal-output`）旗標抑制互動模式工具呼叫輸出（GitHub issue #9340，累積 32 則留言、47 個讚，2026-08-29）**：社群呼籲新增 `--quiet` 旗標，讓互動模式下的工具呼叫輸出可被抑制、僅顯示精簡進度，方便長時間執行時減少畫面雜訊；官方尚未回應或排入路線圖。

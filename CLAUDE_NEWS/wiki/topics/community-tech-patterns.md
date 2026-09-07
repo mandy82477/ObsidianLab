@@ -28,12 +28,12 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 **狀態：** ongoing
 **領域：** 🌐 社群
 **開始日期：** 2026-04-25
-**最後更新：** 2026-09-06
-**最後新聞更新：** 2026-09-06
+**最後更新：** 2026-09-07
+**最後新聞更新：** 2026-09-07
 
-> **最新工作流模式**（2026-09-06）
-> - **對抗式審查新招**：Claude Skill 派 3 個 fable agent 扮演「實習生」對設計決策做對抗式審查，防過度工程化。
-> - **設定層再添一款**：gentle-ai 讓 Claude Code／Cursor／OpenCode／Codex 共用同一套持久記憶＋規格驅動設定（6,304 星）。
+> **最新工作流模式**（2026-09-07）
+> - **隔離環境添一款**：coop 提供隔離 VM 跑 Claude Code／Codex，HN 留言有使用者回饋「每天在用」。
+> - **來源等級更正**：Fable 5 編排—便宜模型執行的「46% 成本／96% 效能」數字查無原始官方連結，改列社群轉載（詳見 [[entities/fable-5]]）。
 
 ---
 
@@ -56,7 +56,7 @@ Multi-agent 架構與 Skills 設計已是社群定案的做法；還在試的十
 | **CLAUDE.md 管理** | 精簡規則策略、Self-improving Rules、防腐爛機制（[[topics/community-tech-patterns#2026-08]]） | ✅ 成熟 | 2026-08-04 | 寫成「規則」而非「建議」，CI 攔截違反架構的 PR |
 | **Hooks 與自動化** | PostToolUse 稽核、Git Hooks 品質門、Stop Hook 通知（[[topics/community-tech-patterns#2026-08]]） | ✅ 成熟 | 2026-08-02 | 強制執行勝過建議；CLAUDE.md 做偏好、Hooks 做邊界 |
 | **Plugin / MCP 整合** | Plugin 反模式整理、Claude Code 作為 MCP 協調中心（[[topics/community-tech-patterns#2026-09]]） | ⚡ 活躍 | 2026-09-05 | 避免不必要的 context 載入；Claude Code 主導 MCP 工具鏈 |
-| **模型使用策略** | 分層模型、多模型路由、Workweave Router、Fable 5 編排（[[topics/community-tech-patterns#2026-09]]） | ⚡ 活躍 | 2026-09-04 | 依任務複雜度路由；官方基準 46% 成本達 96% 效能 |
+| **模型使用策略** | 分層模型、多模型路由、Workweave Router、Fable 5 編排（[[topics/community-tech-patterns#2026-09]]） | ⚡ 活躍 | 2026-09-04 | 依任務複雜度路由；社群轉載數字 46% 成本／96% 效能（非官方基準，見 [[entities/fable-5]]） |
 | **記憶與知識管理** | Core Memory Packet、claude-mem、OKF、已否決方案索引、OzBrain（[[topics/community-tech-patterns#2026-09]]） | ⚡ 活躍 | 2026-09-02 | 跨 session、跨工具、跨機器的持久記憶協定 |
 | **Context 管理** | Just-in-Time @-file、Repo-as-Memory、對話分支與合併（[[topics/community-tech-patterns#2026-08]]） | ⚡ 活躍 | 2026-08-27 | 即時取回優於預先載入；避免 context 過早飽和 |
 | **Token / 成本優化** | MCP Code Execution、穴居人模式、pxpipe、headless 冷啟動（[[topics/community-tech-patterns#2026-08]]） | ⚡ 活躍 | 2026-08-19 | HTML 轉 Markdown 降 80% token；快取不跨 session 是費用主因 |
@@ -161,6 +161,69 @@ Multi-agent 架構與 Skills 設計已是社群定案的做法；還在試的十
 > ⟨Q-nn⟩ 標的是這一則還沒查實的地方，完整說明在該月份分組最後的「懸置細節」。
 
 ### 2026-09
+
+#### trailofbits/coop：隔離 VM 環境跑 Claude Code 與 Codex，agent 碰不到其他專案或個人檔案（2026-09-07）
+
+- **主線：** —
+- **核心模式：** 提供隔離的 VM 環境執行 Claude Code 與 Codex，讓 agent 在無法碰到其他專案或個人檔案的情況下運作
+- **與既有模式的關係：** 與「安全架構」既有代表技巧（Spare Mac 隔離環境）同屬實體/虛擬隔離取向，差異在以 VM 而非備用實體裝置實現隔離；HN 留言區已有使用者具名回饋「I use coop daily and found it super convenient」，屬本類別少見的實際採用回饋
+- **可信度註記：** Hacker News，36 分，達中門檻（≥30 分）；留言區有一則正面實際使用回饋，非僅發布者自述
+- **來源：** 「Coop – Isolated VM Environments for Running Claude Code and Codex」— Hacker News（36 分）；[GitHub](https://github.com/trailofbits/coop)
+- **成熟度：** ⏳ 新興（單一 HN 留言採用回饋，尚無多方實測數據）
+
+#### nafeeur/MaskShift：零 npm 依賴的本地優先 coding agent harness，可支援無原生 tool-calling API 的模型（2026-09-06）
+
+- **主線：** —
+- **核心模式：** 本地優先的 coding agent harness，訴求零 npm runtime 依賴，並可支援沒有原生 tool-calling API 的模型——做法是透過系統提示渲染工具 schema，讓模型以文字輸出間接完成工具呼叫
+- **與既有模式的關係：** 與「模型使用策略」既有代表技巧（分層模型、多模型路由）不同層次——既有技巧解決「該用哪個模型」，本則解決「該模型能不能被納入工具呼叫框架」，補上模型相容性這一層
+- **可信度註記：** Hacker News 單則僅 1 分，但同日 source_count=2（兩個獨立來源提及），達「其他」門檻的 source_count ≥ 2 中門檻；尚無具體實測數據或第三方回饋
+- **來源：** 「Show HN: MaskShift – a maximalist coding agent with zero NPM dependencies」— Hacker News（1 分，source_count=2）；[GitHub](https://github.com/nafeeur/MaskShift)
+- **成熟度：** ⏳ 新興（本庫首次收錄，尚無社群採用回饋）
+
+#### plannotator/effective-html：Agent Skills 技能包，產出可用 HTML artifact、線框稿、互動原型、計畫與圖表（2026-09-07）
+
+- **主線：** —
+- **核心模式：** 一套 Agent Skills 技能包，協助生成可直接使用的 HTML artifact、線框稿、互動原型、計畫文件與圖表；GitHub Search 累積 3,023 星
+- **與既有模式的關係：** 補上「Skills 設計」類別一種「產出物格式」導向的技能包——既有代表技巧多聚焦流程 skill 化與知識框架化，本則鎖定輸出格式本身（HTML artifact／線框稿／原型）
+- **可信度註記：** 僅取得 GitHub Search 星數，無 forks／issues／近期 commit 佐證可查，未另行查證；存量盤點（2026-06-09 建立、本庫今日首次收錄）
+- **來源：** GitHub Search（存量盤點，3,023★）；[GitHub](https://github.com/plannotator/effective-html)
+- **成熟度：** ⏳ 新興（本庫首次收錄，尚無星數以外的社群採用回饋數據）
+
+#### ruvnet/metaharness：Agent 框架腳手架，生成自帶 CLI／MCP 伺服器／記憶與學習迴圈的專屬 harness（2026-09-07）
+
+- **主線：** —
+- **核心模式：** Agent 框架腳手架工具，可生成自帶 CLI、MCP 伺服器、記憶與學習迴圈的專屬 agent harness，支援 Claude Code、Codex、pi.dev、Hermes、OpenClaw、RVM 等多種底層工具；GitHub Search 累積 634 星
+- **與既有模式的關係：** 屬 harness 生成基礎設施層，與「Multi-agent 架構」既有代表技巧（orchestrator 分派多個 agent）不同層次——本則生成的是單一客製 harness 本身，而非多 agent 協作邏輯；與 magnitudedev/magnitude（推論後端層）同屬底層基礎設施，關聯薄弱
+- **可信度註記：** 僅取得 GitHub Search 星數，無 forks／issues／近期 commit 佐證可查，未另行查證
+- **來源：** GitHub Search（634★）；[GitHub](https://github.com/ruvnet/metaharness)
+- **成熟度：** ⏳ 新興（本庫首次收錄，尚無星數以外的社群採用回饋數據）
+
+#### nirholas/XActions：X/Twitter 自動化工具組，內建供 AI agent 使用的 MCP 伺服器與 CLI（2026-09-07）
+
+- **主線：** —
+- **核心模式：** X/Twitter 自動化工具組，內建供 Claude、GPT 等 AI agent 使用的 MCP 伺服器、CLI 與瀏覽器腳本；GitHub Search 累積 513 星
+- **與既有模式的關係：** 補上「Plugin / MCP 整合」類別一個社群媒體自動化的具體案例，與 figwright（設計稿↔程式碼）同屬「既有 MCP 客戶端串接特定領域工作」的取向，差異在鎖定 X/Twitter 而非設計工具
+- **可信度註記：** 僅取得 GitHub Search 星數，無 forks／issues／近期 commit 佐證可查，未另行查證
+- **來源：** GitHub Search（513★）；[GitHub](https://github.com/nirholas/XActions)
+- **成熟度：** ⏳ 新興（本庫首次收錄，尚無星數以外的社群採用回饋數據）
+
+#### aqm857886159/Nomi：開源 AI 影片工作台，透過 MCP 讓 Claude Code／Codex／Cursor 指揮生成與剪輯（2026-09-07）
+
+- **主線：** —
+- **核心模式：** 開源 AI 影片工作台，local-first 設計，可讓 Claude Code、Codex、Cursor 透過 MCP 指揮影片生成與剪輯流程；GitHub Search 累積 500 星
+- **與既有模式的關係：** 與 XActions 同屬「既有 coding agent 透過 MCP 跨足非程式碼領域工作」的取向，本則鎖定影片生產而非社群媒體
+- **可信度註記：** 僅取得 GitHub Search 星數，無 forks／issues／近期 commit 佐證可查，未另行查證
+- **來源：** GitHub Search（500★）；[GitHub](https://github.com/aqm857886159/Nomi)
+- **成熟度：** ⏳ 新興（本庫首次收錄，尚無星數以外的社群採用回饋數據）
+
+#### shlokkhemani/rabbithole：MCP 驅動的無限畫布學習工具，選取文字提問後以文件形式延伸分支（2026-09-07）
+
+- **主線：** —
+- **核心模式：** MCP 驅動的無限畫布學習工具，選取文字提問後答案以文件形式延伸分支，支援 Claude Code、Codex 等 agent；GitHub Search 累積 310 星
+- **與既有模式的關係：** 與「介面元件複用」既有代表技巧（Brainless、statuslin.es）同屬把 agent 互動封裝成特定介面形態的取向，本則鎖定學習用的分支式文件畫布；與 coding workflow 關聯薄弱
+- **可信度註記：** 僅取得 GitHub Search 星數，無 forks／issues／近期 commit 佐證可查，未另行查證
+- **來源：** GitHub Search（310★）；[GitHub](https://github.com/shlokkhemani/rabbithole)
+- **成熟度：** ⏳ 新興（本庫首次收錄，與 coding workflow 的關聯僅為支援 Claude Code 作為 agent 後端）
 
 #### Gentleman-Programming/gentle-ai：一套設定讓 Claude Code／Cursor／OpenCode／Codex 共用持久記憶＋規格驅動開發（2026-09-06）
 
@@ -961,12 +1024,12 @@ Multi-agent 架構與 Skills 設計已是社群定案的做法；還在試的十
 - **來源：** 「I built an app where you control exactly what context Claude sees: branch from any message, merge whole chats. Free to try.」— Reddit r/ClaudeCode
 - **成熟度：** ⏳ 新興（今日首見，免費試用產品，尚待社群後續採用回饋佐證）
 
-#### Fable 5 Orchestrates, Cheap Models Execute：官方基準 46% 成本達 96% 效能的多模型工作流模式（2026-07-14）
+#### Fable 5 Orchestrates, Cheap Models Execute：社群轉載 46% 成本達 96% 效能的多模型工作流模式（2026-07-14）
 
-- **核心模式：** Anthropic 官方（透過 ClaudeDevs 討論串）公布多模型工作流的第一方基準數據：由 Fable 5 負責任務協調（orchestrate）、便宜模型負責實際執行（execute）的分工架構，可在僅 46% 成本下達到 96% 的效能表現；此模式並非未來規劃，而是可直接在 Claude Code 中設定使用的現行做法
-- **與既有模式的關係：** 與既有「模型使用策略」類別下社群自建的分層模型路由（Sonnet + Opus）、Workweave Router 同屬「依任務複雜度分流節省成本」思路，差異在於這是 Anthropic 官方發布的第一方基準數據，將社群長期實務直覺量化為具體數字（46% 成本／96% 效能），並明確定調為「編排者–執行者」（orchestrator-executor）角色分工架構，而非單純模型選型
-- **來源：** 「Anthropic just benchmarked "Fable 5 orchestrates, cheap models execute": 96% of the performance at 46% of the cost. You can run this pattern in Claude Code today」— Reddit r/ClaudeAI（週熱門）；細節數字已查證（2026-08-13）：BrowseComp 基準上，Fable 5 orchestrator + Sonnet 5 executor 達 86.8% 準確率（Fable 5 單獨為 90.8%），成本 $18.53 vs $40.56／題；另一組態（Sonnet 5 執行、Fable 5 僅作顧問）在 SWE-bench Pro 達 Fable 5 單獨表現的約 92%，成本約 63%；可透過 `~/.claude/agents/` 設定 `model: sonnet` 的 subagent 固定模型於 Claude Code 中直接複現此模式（[explainx.ai](https://explainx.ai/blog/fable-5-advisor-orchestrator-patterns-july-2026)、[Jon Krohn](https://www.jonkrohn.com/posts/2026/7/20/fable-5-as-advisor-anthropics-two-model-pattern-for-smarter-cheaper-agents)）
-- **成熟度：** ✅ 成熟（官方背書 + 量化基準數據，細節數字已多方查證，可直接複現於 Claude Code）
+- **核心模式：** Reddit 社群整理流傳的多模型工作流量化數字：由 Fable 5 負責任務協調（orchestrate）、便宜模型負責實際執行（execute）的分工架構，宣稱可在僅 46% 成本下達到 96% 的效能表現；此模式並非未來規劃，而是可直接在 Claude Code 中設定使用的現行做法
+- **與既有模式的關係：** 與既有「模型使用策略」類別下社群自建的分層模型路由（Sonnet + Opus）、Workweave Router 同屬「依任務複雜度分流節省成本」思路，差異在於本則提供具體量化數字（46% 成本／96% 效能），將社群長期實務直覺量化為可比較的基準；惟數字來源為 Reddit 整理轉載，非官方逐字確認的第一方發布
+- **來源：** 「Anthropic just benchmarked "Fable 5 orchestrates, cheap models execute": 96% of the performance at 46% of the cost. You can run this pattern in Claude Code today」— Reddit r/ClaudeAI（週熱門，社群轉載，原始官方發布連結未見）；細節數字經第三方查證（2026-08-13）：BrowseComp 基準上，Fable 5 orchestrator + Sonnet 5 executor 達 86.8% 準確率（Fable 5 單獨為 90.8%），成本 $18.53 vs $40.56／題；另一組態（Sonnet 5 執行、Fable 5 僅作顧問）在 SWE-bench Pro 達 Fable 5 單獨表現的約 92%，成本約 63%；可透過 `~/.claude/agents/` 設定 `model: sonnet` 的 subagent 固定模型於 Claude Code 中直接複現此模式（[explainx.ai](https://explainx.ai/blog/fable-5-advisor-orchestrator-patterns-july-2026)、[Jon Krohn](https://www.jonkrohn.com/posts/2026/7/20/fable-5-as-advisor-anthropics-two-model-pattern-for-smarter-cheaper-agents)）
+- **成熟度：** ✅ 成熟（社群轉載量化數字＋第三方查證，可直接複現於 Claude Code；原始官方發布連結未見，來源等級為社群轉載非官方基準，2026-09-07 更正，見 [[entities/fable-5]]）
 
 #### 語音提示／語音輸出小趨勢觀察：Mr. Meeseeks 語音提示外掛（HN 130，本日最高分）與 aloud TTS 輸出工具並現（2026-07-14）
 

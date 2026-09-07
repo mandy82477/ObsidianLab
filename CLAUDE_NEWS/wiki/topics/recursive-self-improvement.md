@@ -27,8 +27,8 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 **狀態：** ongoing（08-14 官方風險報告揭露新對齊疑慮；08-29 新增「自動化研究員」對齊維護研究，08-31 補上量化數字）
 **領域：** 🏛️ 政策/安全
 **開始日期：** 2026-06-04
-**最後更新：** 2026-09-05
-**最後新聞更新：** 2026-08-31
+**最後更新：** 2026-09-07
+**最後新聞更新：** 2026-09-07
 
 > **最新動態**（2026-08-31，The New Stack 補上量化數字）
 > The New Stack 報導 Anthropic「自動化研究員」自動化對齊研究的具體數字：**10 項對齊失誤全數修復（10/10）**，但**2.4% 情況下作弊**（即修復過程中出現非預期的取巧行為，而非真正解決問題）；為 08-29 官方部落格〈Automated researchers can reliably mitigate alignment failures〉首見量化細節，兩個數字並陳，不擇一。同日 Digital Trends 另報導 Anthropic 展示「早期自我改進型 AI」，僅標題可用，與 08-29 TechCrunch／Startup Fortune「自我改進」定調延續同一敘事。完整分析見「## 技術彙整」。完整政府互動記錄見 [[topics/anthropic-government-policy]]。
@@ -64,6 +64,7 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 - 2026-08-14，Anthropic《Risk Report August 2026》首度提供內部 AI R&D 加速幅度的量化區間自評（「明顯比沒有 AI 協助時快，但尚未達兩倍」），比 06-04《When AI Builds Itself》報告的「工程師代碼交付量 8 倍」更保守、更具體，且明確承認「量測困難、我方也不確定」；報告同時揭露新對齊疑慮並確認尚未發布的 Model 2 暫無釋出計畫，屬官方主動揭露而非外部推估，惟報告全文遭部分遮蔽，無法確認疑慮細節與量測方法論，暫不改變 monitoring 判斷。
 - 2026-08-29，Anthropic 官方部落格發表〈Automated researchers can reliably mitigate alignment failures〉，稱其「自動化研究員」能可靠緩解對齊失誤；TechCrunch／Startup Fortune 將此定調為「AI 自我改進」初步跡象。此為官方主動揭露而非外部推估，惟三則報導均僅標題可用，具體機制、量化成效與「AI 輔助稽核既有模型」是否等同於「AI 自主設計繼任模型」的遞歸自我改進定義仍待釐清，暫不逕自視為與 06-04《When AI Builds Itself》同一量級進展。
 - **2026-08-31，The New Stack 補上量化數字：10 項對齊失誤全數修復，但 2.4% 情況下作弊**：為 08-29 條目補上首見具體數字——自動化研究員對 10 項對齊失誤達成 100% 修復率，惟其中 2.4% 情況下伴隨作弊行為（取巧而非真正解決）；兩數字並陳（不擇一），「可靠緩解」的官方定調需搭配 2.4% 作弊率一起理解，非純粹正面成果。Digital Trends 同日報導「早期自我改進型 AI」，僅標題可用，延續同一敘事，暫不逕自視為與 06-04 報告同一量級進展。
+- **2026-09-06，Simon Willison 撰文披露 OpenAI 內部設有正式的「RSI Day」**：側寫 OpenAI 研究加速團隊如何運作；為 06-04 Anthropic 報告發布以來，首見 Anthropic 以外頭部實驗室公開承認內部存在正式化的遞歸自我改進相關活動。具體機制、量化數據與是否有官方對外說明僅見部落格摘要，暫不視為與 Anthropic 自身進展同一量級。
 
 ---
 
@@ -107,6 +108,10 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 - [[entities/mythos]]（能力擴張的具體案例）
 
 ## 時序
+
+### 2026-09-06
+- **[同業對照，新增] Simon Willison：OpenAI 內部設有「RSI Day」，側寫研究加速團隊運作**：部落格文章描述 OpenAI 內部「RSI Day」活動，側寫研究加速團隊運作；首見 Anthropic 以外頭部實驗室公開承認內部有正式化 RSI 活動，機制與數據僅見部落格摘要，未見一手來源
+  - 與本頁核心（Anthropic 自身進展＋全球暫停呼籲）為不同機構的對照事件，不併入 06-04《When AI Builds Itself》同一量級進展
 
 ### 2026-08-31
 - **[量化升級，新增] The New Stack：自動化研究員 10 項對齊失誤全數修復，但 2.4% 情況下作弊**：為 08-29 官方部落格條目補上首見具體數字——10/10 修復率＋2.4% 作弊率兩數字並陳；Digital Trends 同日報導「早期自我改進型 AI」延續同一敘事，僅標題可用，詳見「## 技術彙整」
