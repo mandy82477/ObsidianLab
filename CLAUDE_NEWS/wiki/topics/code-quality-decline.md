@@ -54,7 +54,7 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 |---|---|---|---|
 | **2026-03～04 效能退步**（2026-04-24） | 官方〈An update on recent Claude Code quality reports〉2026-04-23：三件各自獨立的工程變更，各有各的修法（見表下） | 已結案（[#41930](https://github.com/anthropics/claude-code/issues/41930) 於 2026-04-24 關閉） | 還停在 2026-04 之前的版本就先升版；三個修法各自的版本見表下 |
 | **token 消耗異常**（2026-08-25） | 無官方專文 | 還在（[#65687](https://github.com/anthropics/claude-code/issues/65687) 仍開啟，最後更新 2026-08-21） | 先量一次自己的用量再判斷，見「怎麼自己量一次」；帳單面見 [[entities/pricing]] |
-| **Opus 5 上線後的品質觀感**（2026-08-28） | 無官方回應 | 還在（[#77136](https://github.com/anthropics/claude-code/issues/77136) 最後更新 2026-09-03、[#83510](https://github.com/anthropics/claude-code/issues/83510) 最後更新 2026-08-28，兩則皆開啟） | 十五則裡十二則是單一使用者觀感，不足以據此換模型；逐則見 [[entities/opus-5]]「這些數字是誰量的」 |
+| **Opus 5 上線後的品質觀感**（2026-08-28） | 無官方回應 | 還在（[#77136](https://github.com/anthropics/claude-code/issues/77136) 最後更新 2026-09-03、[#83510](https://github.com/anthropics/claude-code/issues/83510) 最後更新 2026-08-28，兩則皆開啟） | 十四則裡十二則是單一使用者觀感（不含已證偽的 effort dial 那一則），不足以據此換模型；逐則見 [[entities/opus-5]]「這些數字是誰量的」 |
 
 **這張表怎麼讀**
 
@@ -68,7 +68,7 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 
 1. **量什麼**：`~/.claude/projects/` 下每個專案的 JSONL session log，裡面有每次對話用了哪個模型、幾輪、多少 token。訂閱端的水位看 `Settings > Usage` 的百分比。
 2. **跟什麼比**：挑同一個 repo、同一類任務的兩段 session——一段是你覺得正常的那幾週，一段是現在。不要跨 repo 比，context 規模差一個量級，結論就沒有意義。
-3. **多少算異常**：社群工具 CC-Canary 直接讀上述路徑做漂移偵測，給三個判定值 `HOLDING`（穩定）／`SUSPECTED REGRESSION`（疑似退步）／`CONFIRMED REGRESSION`（確認退步），可直接拿來當自己的判斷線（工具目錄見 [[topics/community-tech-tools]]）。
+3. **多少算異常**：社群工具 CC-Canary 直接讀上述路徑做漂移偵測，給三個判定值 `HOLDING`（穩定）／`SUSPECTED REGRESSION`（疑似退步）／`CONFIRMED REGRESSION`（確認退步），可直接拿來當自己的判斷線；本站未將它列為推薦工具，這三個判定值僅供你自己跟自己比對，不是官方或本站驗證過的異常門檻（工具目錄見 [[topics/community-tech-tools]]）。
 
 **限制先說在前面**：CC-Canary 比的是你自己的歷史，不是「4.7 對 4.8」——版本前後的對照實驗至今沒有工具承接。本站唯一一則第三方連續量測是 2026-05 MarginLab 每日跑 SWE-bench-Pro，對象是 Opus 4.7、不是 Opus 5（原始記錄見 [[topics/code-quality-decline-archive#2026-05]]）。另一條路是人工存證：2026-08-12 起有開發者把 bug、退化與設定異常整理成公開檔案，附上 HackerOne 回報紀錄。
 
@@ -139,7 +139,7 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 
 **懸置細節**
 
-- ⟨Q-01⟩ ❓ **待查證**（標 2026-08-25｜查 Sonar、code quality benchmark）：HackerNoon「Claude Opus 5 Code Quality: What Sonar's Benchmark Reveals」（僅標題可用）——查實的話會是這條線上唯一一則第三方量化評測，其餘 14 則都是主觀回報。
+- ⟨Q-01⟩ ❓ **待查證**（標 2026-08-25｜查 Sonar、code quality benchmark）：HackerNoon「Claude Opus 5 Code Quality: What Sonar's Benchmark Reveals」（僅標題可用）——查實會是唯一第三方量化評測，其餘 13 則多為主觀回報（12 單一觀感＋1 GitHub issue）。
 
 **兩件要講清楚的事**
 
@@ -158,7 +158,7 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 - **商業面（2026-07-25）**：Fable 5 的計費壓力下，超出上限會被換成 Opus 4.8。**這一項官方已改**：Anthropic 於 2026-06-11 對 Wired 承認當初的取捨錯了，並把回退改成會通知你（見 [[entities/fable-5]]）。仍有爭議的是換模型之後的計費算得對不對（[[entities/pricing]]）。
 - **產品面（2026-05-21）**：extended thinking 能力在沒有預告的情況下從 Claude Code 移除（見 [[entities/claude-code]] 已知問題）。
 
-**你會看到的後果**：一名開發者連續 36 天記錄使用數據，量出不同模型間高達 11.5 倍的效率差距，並觀察到模型有時在沒有明確通知下被換掉——同一筆工作跑在哪個模型上，會直接改變你的花費與完成時間。
+**你會看到的後果**：一名開發者連續 36 天記錄使用數據，量出不同模型間高達 11.5 倍的效率差距，並觀察到模型有時在沒有明確通知下被換掉——同一筆工作跑在哪個模型上，會直接改變你的花費與完成時間（[dev.to 原文](https://dev.to/recca0120/36-days-of-claude-code-logs-silent-model-switching-115x-efficiency-gap-1bgm)，2026-05-09）。
 
 **只有單一來源的具體宣稱（2026-08-04）：** r/ClaudeCode 一則貼文宣稱以實測記錄四種繞過模型釘選的方式，並稱 Sonnet 4.6 遭無預告移除。該貼文所指的**現象**方向與上述四個節點一致，但貼文獨有的「4 measured bypass vectors」與「Sonnet 4.6 silently removed」**具體技術細節**至今只有這一個來源、無第二來源核對，本頁只採計現象，不採計其量化宣稱（[Reddit 原文](https://www.reddit.com/r/ClaudeCode/comments/1vf7uv5/model_pinning_is_completely_broken_in_claude_code/)）。❓ **待查證**（標 2026-08-10｜查 bypass vectors、silently removed｜複 2026-09-13）｜**貼文的具體量化宣稱**（2026-08-04 單一 Reddit 來源）：截至 2026-09-07 未見第二來源。
 
@@ -180,9 +180,9 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 - 🔴 沒有任何一條線有版本前後的對照實驗；你能拿到最硬的證據是自己的 session log——**你可以：** 照「怎麼自己量一次」量一輪再下結論。
 - ⛔ 「換個模型就好」「回舊版就好」機制上不成立，官方 2026-02-23 已把鎖版需求以 not planned 關閉——**你可以：** 見「模型釘選：你選的不一定算數」，估成本前先確認釘選成不成立。
 - ⚠️ 帳單變多不等於模型變差：週配額換軌（09-14 生效），另有數件計費爭議未解——**你可以：** 先到 [[entities/pricing]] 對一次自己的帳，再回來看模型。
-- ✅ Boris Cherny 於 2026-04-23 事後報告承諾的 50+ 修復，社群自 2026-05-03 起的逐項驗證未見完成結果；本站於 2026-09-07 停止追蹤這一條，改以上表第一列的 issue 狀態為準。
+- — Boris Cherny 於 2026-04-23 事後報告承諾的 50+ 修復，社群自 2026-05-03 起的逐項驗證未見完成結果；本站於 2026-09-07 停止追蹤這一條，改以上表第一列的 issue 狀態為準。
 
-> ✅ 已有結果／🔴 現在仍無解／⛔ 官方明說不做／⚠️ 會被誤判成模型問題的事／🔍 還在等答案。
+> ✅ 已有結果／🔴 現在仍無解／⛔ 官方明說不做／⚠️ 會被誤判成模型問題的事／🔍 還在等答案／— 查不到結果、本站已停止追蹤。
 
 ---
 

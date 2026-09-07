@@ -54,7 +54,7 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 | **換到開源模型的代價是不是接近零** | 還在吵 | 2026-09-04「NYT〈Corporate America is」（[[topics/community-tech-discussions#2026-09]]） | 跨媒體與社群多來源 | 無官方回應；商業面事實見 [[topics/anthropic-business]] |
 | **auto 模式算不算一道安全邊界** | 還在吵 | 2026-09-02「Show HN: Aura——SRE」（[[topics/community-tech-discussions#2026-09]]） | 官方文件 ＋ 社群單則實作經驗 | 官方：由第二個分類器模型逐一審動作，但對話裡設的邊界可能因壓縮而遺失，要硬保證得改用 deny 規則 |
 | **輸出浮水印與帳號執法透明到什麼程度才夠** | 還在吵 | 2026-09-02「付費帳號無預警遭停權」（[[topics/community-tech-discussions#🌊 持續關注中的長期議題]]） | 具名評論人 ＋ 四家媒體同日跟進 | 官方 2026-08-11 公告浮水印政策，適用全產品線且不可退出；停權申訴管道未見官方說明 |
-| **「Claude 越用越笨」是模型退步還是 context 腐蝕** | 已吵出共識 | 2026-06-20「Context Rot 修復五法」（[[topics/community-tech-discussions#2026-06]]） | 多則實測，含 OpenTelemetry 量化 | 無官方回應 |
+| **「Claude 越用越笨」是模型退步還是 context 腐蝕** | 已吵出共識 | 2026-06-20「Context Rot 修復五法」（[[topics/community-tech-discussions#2026-06]]） | 多則實測，含 OpenTelemetry 量化 | 無官方回應；官方對 2026-06 起的 token 異常與 07-25 起的 Opus 5 觀感也沒有說明，那三條線的狀態見 [[topics/code-quality-decline]] |
 | **規格驅動還是 vibe coding** | 已吵出共識 | 2026-06-22「工業規格驅動 Claude Code」（[[topics/community-tech-discussions#2026-06]]） | 多來源，含工業規格導入案例 | 無官方回應 |
 | **AI 該寫多少程式碼、該不該把工作改寫成 loop** | 僵住 | 2026-06-24「立場收縮」（[[topics/community-tech-discussions#🌊 持續關注中的長期議題]]） | 具名表態，社群兩極化 | 無公司層說法；創始人本人言論軌跡見 [[entities/boris-cherny]] |
 | **thinking 內容能不能自己核驗** | 僵住 | 2026-06-23「Extended Thinking 為摘要」（[[topics/community-tech-discussions#2026-06]]） | 官方文件 ＋ 單次高互動討論 | 官方文件：5 世代預設不回思考內容、只回加密簽名，需要完整輸出得另行洽談（2026-09-06 查證） |
