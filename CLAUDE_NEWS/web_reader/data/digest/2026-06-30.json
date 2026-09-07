@@ -330,6 +330,11 @@
       "pageType": "topic"
     },
     {
+      "id": "community-tech-discussions-archive",
+      "name": "社群技術討論——原始條目封存",
+      "pageType": "topic"
+    },
+    {
       "id": "community-tech-patterns-archive",
       "name": "社群實戰模式庫——原始條目封存",
       "pageType": "topic"

@@ -359,5 +359,11 @@
     }
   ],
   "preview": "美國正式解除對 Anthropic Claude Fable 5 與 Claude Mythos 5 的出口管制，結束長達 19 天的服務中斷。",
-  "sedimentedToday": []
+  "sedimentedToday": [
+    {
+      "id": "fable-5-archive",
+      "name": "Claude Fable 5 — 原始條目封存",
+      "pageType": "entity"
+    }
+  ]
 }

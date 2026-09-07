@@ -151,13 +151,7 @@
       "time": "09/03 23:03",
       "sentiment": "",
       "body": "媒體整理 Claude Fable 5.1 反萃取（anti-distillation）機制的變動內容。",
-      "focusTags": [],
-      "sedimented": [
-        {
-          "id": "fable-5",
-          "pageType": "entity"
-        }
-      ]
+      "focusTags": []
     }
   ],
   "discussions": [
@@ -303,13 +297,7 @@
       "time": "09/01 18:10",
       "sentiment": "",
       "body": "Reddit 週熱門討論串彙整 Claude Fable 5.1 與 Mythos 5.1 的基準測試結果分享與討論。",
-      "focusTags": [],
-      "sedimented": [
-        {
-          "id": "fable-5",
-          "pageType": "entity"
-        }
-      ]
+      "focusTags": []
     }
   ],
   "billing": [],
@@ -463,7 +451,7 @@
   "sedimentedToday": [
     {
       "id": "fable-5",
-      "name": "Claude Fable 5",
+      "name": "Claude Fable 5 與 5.1",
       "pageType": "entity"
     },
     {
@@ -477,16 +465,6 @@
       "pageType": "topic"
     },
     {
-      "id": "anthropic-business",
-      "name": "Anthropic 商業健康度",
-      "pageType": "topic"
-    },
-    {
-      "id": "community-tech-discussions",
-      "name": "社群技術討論趨勢",
-      "pageType": "topic"
-    },
-    {
       "id": "enterprise-cost-management",
       "name": "企業規模 Claude 成本管理",
       "pageType": "topic"
@@ -496,9 +474,5 @@
       "name": "大型企業 AI 編碼工具使用追蹤",
       "pageType": "topic"
     }
-  ],
-  "marketSignal": {
-    "title": "摩根士丹利、高盛傳主辦 Anthropic 2 兆美元估值 IPO",
-    "date": "2026-09-04"
-  }
+  ]
 }
