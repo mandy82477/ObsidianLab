@@ -316,11 +316,6 @@
       "id": "dario-amodei",
       "name": "Dario Amodei",
       "pageType": "entity"
-    },
-    {
-      "id": "code-quality-decline",
-      "name": "Claude Code 效能退步事件",
-      "pageType": "topic"
     }
   ]
 }

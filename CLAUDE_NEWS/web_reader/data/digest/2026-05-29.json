@@ -278,6 +278,11 @@
       "id": "chris-olah",
       "name": "Chris Olah",
       "pageType": "entity"
+    },
+    {
+      "id": "code-quality-decline-archive",
+      "name": "Claude Code 效能退步事件 · 原始條目",
+      "pageType": "topic"
     }
   ]
 }
