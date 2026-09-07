@@ -29,7 +29,7 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 **狀態：** active
 **領域：** 👤 人物
 **首次出現：** 2026-04-23（事後報告發布）
-**最後更新：** 2026-09-04
+**最後更新：** 2026-09-07
 **最後新聞更新：** 2026-08-04
 
 > **驗證方法論與 Electron 桌面應用重寫嘗試**（2026-08-03 報導，2026-09-02 查證）：Boris Cherny 在 Y Combinator Startup School 2026 訪談（07-25/26 舉行、07-28 發布）中表示，引導 Claude 完成困難任務的關鍵已從 prompt engineering 轉向「讓 Claude 能沿途驗證自己的工作」。該實驗已查實為**用 Claude 將 Electron 版桌面應用改寫為 Swift 原生版**：從一段簡短對話式 prompt 起跑、連續執行兩週以上，agent 以 **Electron 版與 Swift build 逐像素比對**自我驗證（[Daring Fireball 2026-08-02](https://daringfireball.net/linked/2026/08/02/cherny-claude-swift)、[barath.ai 紀要](https://www.barath.ai/learnings/boris-cherny-yc-startup-school-2026)，查證日 2026-09-02）。
@@ -67,16 +67,13 @@ Boris Cherny 是 Anthropic Claude Code 的創始人與負責人（Head of Claude
 | 2026-04-25 | 商業 | 在 The Verge 報導中表示「訂閱方案的設計並非為這類第三方使用模式而生」 | — |
 | 2026-04-23 | 操作 | Claude Code 效能退步事件確認後發布事後報告，承諾超過 50 項修復 | — |
 
-**補充**
-- ⟨Q-01⟩ 原文內容已於 2026-09-02 查實，詳見「呼籲停止『微管理』AI」節（Yahoo Tech 轉載全文）
-
 ---
 
 ## 公開言論與主張
 
 ### 驗證方法論與 Electron 桌面應用重寫嘗試（2026-08-03）
 
-Boris Cherny 在 Y Combinator Startup School 2026 由 Diana Hu 主持的現場訪談中（影片約 20:30 起）表示，如今引導 Claude 完成困難任務的關鍵，重點已不再是 prompt engineering，而是「如何給 Claude 一個看起來有點太難的任務，然後讓 Claude 有辦法沿途驗證自己的工作」。原話：「Verification 大概是人們最容易做錯的一件事。」他舉的例子是團隊讓 Claude 重寫 Electron 版 Claude 桌面應用（並提及已讓它變快）；日報擷取的原文在此中途被截斷（"...We've made it quite fast. Now it" 後未完），**技術路徑已於 2026-09-02 查實**——改寫為 Swift 原生版、以逐像素比對自我驗證（見頁首）。此說法可視為其一貫「Loops 是未來」自主執行哲學的具體化——不是放棄監督，而是把監督重心從逐步下指令轉移到「事後可驗證」的機制設計，可與 [[topics/community-tech-patterns]] 的 agentic 工作流討論對照。
+Boris Cherny 在 Y Combinator Startup School 2026 由 Diana Hu 主持的現場訪談中（影片約 20:30 起）表示，如今引導 Claude 完成困難任務的關鍵，重點已不再是 prompt engineering，而是「如何給 Claude 一個看起來有點太難的任務，然後讓 Claude 有辦法沿途驗證自己的工作」。原話：「Verification 大概是人們最容易做錯的一件事。」他舉的例子是團隊讓 Claude 重寫 Electron 版 Claude 桌面應用（並提及已讓它變快）；日報擷取的原文在此中途被截斷（"...We've made it quite fast. Now it" 後未完），**技術路徑已於 2026-09-02 查實**——改寫為 Swift 原生版、以逐像素比對自我驗證（見頁首）。此說法可視為其一貫「Loops 是未來」自主執行哲學的具體化——不是放棄監督，而是把監督重心從逐步下指令轉移到「事後可驗證」的機制設計，可與 [[topics/community-tech-patterns]] 的 agentic 工作流討論對照。「AI 該寫多少程式碼」這場社群辯論本身已標記僵住（最後證據 2026-06-24），見 [[topics/community-tech-discussions#現在吵到哪]]；本則是 Cherny 個人立場的後續發言，非社群辯論的新證據。
 
 - 來源：[daringfireball.net，John Gruber，2026-08-02](https://daringfireball.net/linked/2026/08/02/cherny-claude-swift)（轉引自 YC Startup School 2026 現場訪談，Hacker News 收錄，69 分）
 
@@ -86,7 +83,7 @@ Boris Cherny 在 Y Combinator Startup School 2026 由 Diana Hu 主持的現場�
 
 ### 呼籲停止「微管理」AI（2026-07-27）
 
-**原文已查實**（2026-09-02，[Yahoo Tech 轉載](https://tech.yahoo.com/ai/claude/articles/creator-anthropics-claude-code-wants-220802157.html)）：Boris Cherny 於 YC 活動指出，使用者最常見的錯誤是**低估模型能承擔的任務**而給過度細碎的逐步指令（「你要做這個，但要用這個方式、先一再二再三再四」）；他建議改為**框定較大的目標、讓 agent 自行導航**（let it "cook"），而非餵一小步、等核可、再餵一步。他並稱 Anthropic 員工自己也仍在實驗中發現新能力，估計「還有數十甚至數百種有用的能力尚未被發現」。此說法與他 2026-06-20「我寫 loop 讓 loop 去 prompt Claude」的哲學表態一脈相承。
+**原文已查實**（2026-09-02，[Yahoo Tech 轉載](https://tech.yahoo.com/ai/claude/articles/creator-anthropics-claude-code-wants-220802157.html)）：Boris Cherny 於 YC 活動指出，使用者最常見的錯誤是**低估模型能承擔的任務**而給過度細碎的逐步指令（「你要做這個，但要用這個方式、先一再二再三再四」）；他建議改為**框定較大的目標、讓 agent 自行導航**（let it "cook"），而非餵一小步、等核可、再餵一步。他並稱 Anthropic 員工自己也仍在實驗中發現新能力，估計「還有數十甚至數百種有用的能力尚未被發現」。此說法與他 2026-06-20「我寫 loop 讓 loop 去 prompt Claude」的哲學表態一脈相承。「AI 該寫多少程式碼」這場社群辯論本身已標記僵住（最後證據 2026-06-24），見 [[topics/community-tech-discussions#現在吵到哪]]；本則是 Cherny 個人立場的後續發言，非社群辯論的新證據。
 
 - 來源：[Google News / Business Insider，2026-07-27](https://news.google.com/rss/articles/CBMiqAFBVV95cUxOWE9HZ3gzNnZRMTEyWkc5RXVRT0RWMjB4MHcxZDZzX0lzMHVGbi15cU5HQUFteFpwdXBGUGFDQ3JhbmhLbVZ6VkZPU1lHR01PVzJhV0RRVW52ODQ0R3JrOFFmMmVuRWpXNmJjaHNLV1Z1ckxqWU10LUxfbThhVFB6TFV4ZkN6N0t0SDZjSFZ5WVVoR0ZlYWRYZ0NiTXgxcnlvcHViNHFHalI?oc=5)（src_count=3，跨多來源，惟正文未能擷取）
 
@@ -183,7 +180,7 @@ Platformer 刊出 Boris Cherny 長篇專訪，標題「Claude Code's creator on 
 在 The Verge 報導中公開表示：「訂閱方案的設計並非為這類第三方使用模式而生」，被視為 Anthropic 將持續收緊第三方 agentic 工具門檻的明確信號。詳見 [[entities/pricing]] 與 [[entities/openclaw]]。
 
 ### 4/23 事後報告（2026-04-23）
-Claude Code 效能退步事件確認後，Boris Cherny 發布事後報告，承諾超過 50 項修復。2026-05-03，社群開發者開始逐一獨立驗證這些承諾，為少見的社群對官方承諾進行系統性問責案例。詳見 [[topics/code-quality-decline]]。
+Claude Code 效能退步事件確認後，Boris Cherny 發布事後報告，承諾超過 50 項修復。社群開發者自 2026-05-03 起逐一獨立驗證這些承諾，為少見的社群對官方承諾進行系統性問責案例；逐項驗證未見完成結果，本站已於 2026-09-07 停止追蹤這一條。詳見 [[topics/code-quality-decline]]。
 
 ---
 

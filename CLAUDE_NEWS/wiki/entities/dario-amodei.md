@@ -29,7 +29,7 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 **狀態：** active
 **領域：** 👤 人物
 **首次出現：** 2026-04-25
-**最後更新：** 2026-09-05
+**最後更新：** 2026-09-07
 **最後新聞更新：** 2026-08-29
 
 > ❓ **待查證**（標 2026-08-25｜查 airline industry、marketing and safety）｜**Fortune 評論比較 Anthropic 安全論述與航空業經驗**（2026-08-24 報導）：Fortune 發表評論文章〈What Anthropic's Dario Amodei can learn from the airline industry's lesson on marketing and safety〉，以航空業在行銷與安全議題上的經驗為借鏡，討論 Dario Amodei 可以從中學到什麼；僅標題可用，具體論點與建議內容未見報導。
@@ -80,8 +80,7 @@ Dario Amodei 是 Anthropic 共同創辦人兼執行長（CEO），與 [[entities
 - [[topics/anthropic-government-policy]] — 政府 AI 監管立場
 - [[topics/anthropic-business]] — 企業策略與商業動態
 - [[topics/recursive-self-improvement]] — 遞歸自我改進公開討論
-- [[entities/chris-olah]] — Anthropic 共同創辦人
-- [[entities/tom-brown]] — 接管政府談判的 Anthropic 聯合創辦人
+- [[topics/anthropic-government-policy#誰在動這幾條線]] — Chris Olah、Tom Brown 等共同創辦人在政府關係線上的角色
 - [[entities/fable-5]] — 2026 旗艦模型（個人出席大會宣布相關政策）
 - [[entities/bernanke]] — 前聯準會主席，2026-07-09 加入監督 Amodei 執行方向的「長期利益信託」董事會
 
