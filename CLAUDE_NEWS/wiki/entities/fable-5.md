@@ -60,7 +60,7 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 
 **表下細節**
 
-- **兩代共用一套方案規則**：官方說明中心寫「Fable 5 and Fable 5.1 are available on all paid plans」，但「拿得到」不等於「方案內含」——Pro 拿得到，是走 usage credits 付費。2026-07-19 到期的那檔免費促銷只適用 Fable 5，5.1 從未納入。
+- **兩代共用一套方案規則**：Pro 拿得到 5 與 5.1，是走 usage credits 付費。2026-07-19 到期的是**限時免費促銷**，只適用 Fable 5；上表「我的方案能不能用」那列是促銷結束後仍在的**常態規則**，兩者是兩件事，不互斥。
 - **Context 與輸出長度兩代相同**：1,000,000 token context、128,000 token 最大輸出。1M 這個旋鈕本身的計費與可見性見 [[topics/long-context-1m]]。
 - **5.1 新增反萃取（anti-distillation）機制**，防止他人萃取權重或行為訓練競品（官方 2026-09-01 公告）。
 
@@ -79,6 +79,8 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 
 送進去的請求若被前置安全分類器判為高風險，**你會收到通知**，該次請求改由 Opus 4.8 回答，不是安靜地把品質調低（官方 2026-06-30〈Redeploying Claude Fable 5〉：「Users will be notified if a request to Fable 5 is blocked」）。2026-06-09 發布時的「降級且不告知」已於 06-11 由官方道歉撤回。
 
+> 下表四個觸發類別是官方針對 **Fable 5** 公布的；Fable 5.1 是否原樣沿用，官方未明說——5.1 發布公告只稱「誤觸更少」，未逐項重申四類是否不變（查證 2026-09-07）。
+
 | 會踩到的類別 | 具體是什麼 | 誰最容易誤觸 | 你能先做什麼 |
 |---|---|---|---|
 | 資安（cybersecurity）| 攻擊性資安任務 | **日常 coding 與 debugging 也會較常被誤標**（官方自己寫明的代價）| 看到通知就接受 Opus 4.8 的答案，或把安全審查拆成不觸發的小步驟 |
@@ -92,6 +94,7 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 - **分類器刻意調得保守**：官方〈Improving Fable 5 Safeguards〉原文寫 deliberately tuned to be cautious，並稱 Amazon 通報的那項特定技術已擋下逾 99%。被擋的比例，官方在 2026-06-09 發布時稱不到 5% 的 session。
 - **這件事對你的產品做了什麼**（政府談判換來的承諾落到你手上長什麼樣）見 [[topics/anthropic-government-policy]]「政府動作對你的產品做了什麼」；那一節也寫出你的選項。
 - **機制沿革**：06-09 發布版對前沿 LLM 開發降級且不告知（System Card），06-11 官方道歉改為可見防護；07-02 隨解禁導入 Defense in Depth 分類器，首日即有合法資安審查被誤攔的公開案例。
+- **「靜默」在本頁有兩個不同意思，別搞混**：護欄被觸發時**你會收到通知**（上表機制）；下方「歷史記錄」與「爭議」節提到的「靜默降級至 Opus 4.8」（GitHub #79337）指的是另一件事——一起計費/存取層的誤判缺陷，不是護欄機制本身不通知你。
 
 ## 使用指南
 
@@ -223,7 +226,7 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 **官方說明文件〈Claude Fable 5 on your plan〉重新抓取，內容未變（非新事件）**：官方頁面本輪被重新抓取，經比對內容與 08-19 已查證版本一致，仍為 7/19 促銷到期後的既定分流規則，非新公告；不重複記錄，計費細節仍以 [[entities/pricing]] 為準。
 
 #### 2026-08-19
-**官方說明文件更新確認促銷結束日與分流政策（與 2026-08-08 查證結果一致）**：Anthropic 官方說明文件更新〈Claude Fable 5 on your plan〉頁面，明載先前促銷（允許用戶最多以週訂閱額度 50% 免費使用 Fable 5）已於 **2026-07-19 23:59:59 PT** 結束（並非早期 2026-07-01 公告所稱的 7/7）。促銷結束後：Max 方案、Team 方案 premium seat、舊制（legacy seat-based）Enterprise 方案 premium seat，Fable 5 成為方案標準內含項目；Pro 方案、Team 方案 standard seat、舊制 Enterprise 方案 standard seat，Fable 5 改以 pay-as-you-go usage credits 計費；目前所有付費方案（Pro/Max/Team/Enterprise）皆可使用 Fable 5。本次官方文件與 2026-08-08 Help Center 查證所得的分流結論一致；官方引文為「On Max plans, premium seats on Team plans, and premium seats on legacy seat-based Enterprise plans, Fable 5 will be a standard part of your plan. On Pro plans, standard seats on Team plans, and standard seats on legacy seat-based Enterprise plans, Fable 5 will run on pay-as-you-go usage credits.」。計費規則細節（含週用量 50% 上限是否延續等定價面問題）詳見 [[entities/pricing]]（Official Docs，2026-08-19）。
+**官方說明文件更新確認促銷結束日與分流政策（與 2026-08-08 查證結果一致）**：Anthropic 官方說明文件更新〈Claude Fable 5 on your plan〉頁面，明載先前促銷（允許用戶最多以週訂閱額度 50% 免費使用 Fable 5）已於 **2026-07-19 23:59:59 PT** 結束（並非早期 2026-07-01 公告所稱的 7/7）。促銷結束後：Max 方案、Team 方案 premium seat、舊制（legacy seat-based）Enterprise 方案 premium seat，Fable 5 成為方案標準內含項目；Pro 方案、Team 方案 standard seat、舊制 Enterprise 方案 standard seat，Fable 5 改以 pay-as-you-go usage credits 計費；目前所有付費方案（Pro/Max/Team/Enterprise）皆可使用 Fable 5。本次官方文件與 2026-08-08 Help Center 查證所得的分流結論一致；官方引文為「On Max plans, premium seats on Team plans, and premium seats on legacy seat-based Enterprise plans, Fable 5 will be a standard part of your plan. On Pro plans, standard seats on Team plans, and standard seats on legacy seat-based Enterprise plans, Fable 5 will run on pay-as-you-go usage credits.」。計費規則細節（含週用量 50% 上限是否延續等定價面問題）詳見 [[entities/pricing]]（Official Docs，2026-08-19）。**這裡結束的是限時促銷，不是常態規則**——促銷結束後 Max／Team premium 的週用量 50% 內免費本身仍在，是現行常態分流，見上方結論表。
 
 ❓ 待查證 ⟨Q-05⟩ **單一來源報導稱 Fable 5「幾乎無人使用」**：僅標題可用，無採用數據或方法論佐證（詳見「懸置細節」）。**與其他條目的關係**：本則報導日期與同日「Claude Code 週用量促銷延長」報導、以及上方 08-19 官方文件確認的 07-19 促銷到期時間點相近，但原文未提供因果證據，本頁不做因果推論，僅並列記錄。2026-08-26 另有 Futurism 報導呼應類似主題但範圍不完全相同，見下方「2026-08-26」條目，兩則不合併視為同一事實。
 
