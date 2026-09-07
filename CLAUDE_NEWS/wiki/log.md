@@ -6050,3 +6050,5 @@ GH Actions 抓料排 10:23 UTC，到 14:45 UTC 仍未落地（+4.4 小時且持�
 - market 判讀：1 則（🔴 1／🟡 0）
 - 呈現品質：全部通過（各記者機械自查 `check_cell_limits.py` / `check_reader_language.py` / `check_pending_markers.py` 均為 OK；主編於彙整階段對 `entities/claude-code.md:178/179`、`topics/community-tech-patterns.md:1031` 三筆因跨記者措辭同步觸發的既有超限段落做短語化修復，`check_cell_limits.py` 全庫掃描確認無新增超限）
 - 品質備註：本輪雲端環境的淺 clone 問題（連續多輪造成 `test_devpractice_diff.TestStateRoundtrip.test_cli_show_runs` FAIL）由 devpractice 記者以唯讀 `git fetch --unshallow` 排除，`python scripts/run_tests.py` 全庫 620 案例回歸全綠；此為環境層修復非本輪內容編輯所致，供後續 cloud_bootstrap.py 是否應納入 unshallow 步驟參考
+
+- 收尾備註（2026-09-07）：本輪因環境 stop-hook（偵測未提交/未推送變更即擋下）在等待背景記者（人物→安全政策→功能→社群→商業→devpractice/market）期間多次要求先 commit+push，導致偏離「單一 push」設計、實際分 8 次推送（STARTED 心跳、news+signals、emitted-cache confirm、wiki 分批×5、web build）。與 2026-09-05 同型態：分散在近一小時內的循序推送非同時競爭，不致觸發 Pages 部署互搶，且提早推送降低容器中途回收的資料遺失風險，故接受此次偏離。
