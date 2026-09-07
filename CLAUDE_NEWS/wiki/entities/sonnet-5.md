@@ -4,15 +4,15 @@ kind: "entity"
 type: "model"
 status: "active（正式發布）"
 domain: "🤖 模型"
-last_updated: "2026-09-02"
-last_news_update: "2026-07-31"
+last_updated: "2026-09-06"
+last_news_update: "2026-09-03"
 status_main: "active"
-days_since_news: 37
+days_since_news: 4
 parent: null
 children: "[]"
 page_role: "root"
-days_since_news_subtree: 37
-inbound_links: 10
+days_since_news_subtree: 4
+inbound_links: 11
 attribution_count: 3
 attribution_last: "2026-07-31"
 top_source: "google-news"
@@ -20,7 +20,7 @@ pending_count: 2
 pending_overdue: 1
 pending_next_review: "2026-11-26"
 pending_signalled: 0
-signal: "休眠"
+signal: "健康"
 generated_by: "scripts/gen_wiki_frontmatter.py"
 ---
 # Claude Sonnet 5
