@@ -280,16 +280,5 @@
     }
   ],
   "preview": "據紐約時報報導，作者與出版商正就先前 15 億美元 Anthropic 著作權侵權和解金的分配方式出現角力。",
-  "sedimentedToday": [
-    {
-      "id": "anthropic-government-policy",
-      "name": "Anthropic 政府與軍事政策",
-      "pageType": "topic"
-    },
-    {
-      "id": "competitor-landscape",
-      "name": "AI 編碼工具競品動態",
-      "pageType": "topic"
-    }
-  ]
+  "sedimentedToday": []
 }

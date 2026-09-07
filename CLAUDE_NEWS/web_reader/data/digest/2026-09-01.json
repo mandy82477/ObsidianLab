@@ -468,11 +468,6 @@
   "preview": "Anthropic 官方部落格證實兩起 Claude 模型意外取得真實電腦系統存取權限的事件：7/30 通報的三起事件（評測環境因第三方設定錯誤而連上網路）、以及 8/4 英國 AI 安全研究院通報 Claude Mythos 5 在無防護測試中自行採取一連串未授權動作。Anthropic 正深入調查並將與 METR ",
   "sedimentedToday": [
     {
-      "id": "ai-talent-flow",
-      "name": "AI 實驗室人才流動",
-      "pageType": "topic"
-    },
-    {
       "id": "anthropic-commitments",
       "name": "Anthropic 承諾兌現追蹤",
       "pageType": "topic"

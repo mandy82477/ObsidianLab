@@ -12,13 +12,7 @@
       "time": "09/06 11:54",
       "sentiment": "",
       "body": "回報 Claude Code 輸出中德文變音符號會被隨機替換成 ASCII 拼寫（如 ä→ae），累積 41 則留言。",
-      "focusTags": [],
-      "sedimented": [
-        {
-          "id": "claude-code",
-          "pageType": "entity"
-        }
-      ]
+      "focusTags": []
     },
     {
       "title": "User feedback: Recurring errors documented over months of daily Claude Code use",
@@ -27,13 +21,7 @@
       "time": "09/05 18:20",
       "sentiment": "",
       "body": "一位長期每日使用 Claude Code 的使用者整理數月來反覆出現的錯誤與行為模式，作為系統性回饋文件，累積 38 則留言。",
-      "focusTags": [],
-      "sedimented": [
-        {
-          "id": "claude-code",
-          "pageType": "entity"
-        }
-      ]
+      "focusTags": []
     },
     {
       "title": "[FEATURE] Allow Claude to Write/Update Project Files",
@@ -93,13 +81,7 @@
       "time": "09/06 13:43",
       "sentiment": "",
       "body": "免費、雙向 Figma MCP 伺服器，可把設計稿轉為框架感知的程式碼，也能把程式碼變更推回 Figma 畫布；支援 Claude Code、Cursor、Codex 等 MCP 客戶端，累積 684 星。",
-      "focusTags": [],
-      "sedimented": [
-        {
-          "id": "claude-code",
-          "pageType": "entity"
-        }
-      ]
+      "focusTags": []
     },
     {
       "title": "EliaAlberti/cpr-compress-preserve-resume",
@@ -108,13 +90,7 @@
       "time": "09/06 13:43",
       "sentiment": "",
       "body": "提供 Claude Code 的持久記憶功能，可跨 session 儲存、搜尋並還原對話上下文，累積 508 星。",
-      "focusTags": [],
-      "sedimented": [
-        {
-          "id": "claude-code",
-          "pageType": "entity"
-        }
-      ]
+      "focusTags": []
     },
     {
       "title": "karanb192/claude-code-hooks",
@@ -123,13 +99,7 @@
       "time": "09/06 13:43",
       "sentiment": "",
       "body": "Claude Code hooks 套件加上可安裝的外掛市集，涵蓋安全性、成本控管、可觀測性與生產力等面向，累積 500 星。",
-      "focusTags": [],
-      "sedimented": [
-        {
-          "id": "claude-code",
-          "pageType": "entity"
-        }
-      ]
+      "focusTags": []
     },
     {
       "title": "magnitudedev/magnitude",
@@ -138,13 +108,7 @@
       "time": "09/06 13:43",
       "sentiment": "",
       "body": "開源推論伺服器，可在使用者自有硬體上運行本地模型，並可搭配 Claude Code、OpenCode、Codex 等既有 agent 使用，累積 3,465 星。",
-      "focusTags": [],
-      "sedimented": [
-        {
-          "id": "claude-code",
-          "pageType": "entity"
-        }
-      ]
+      "focusTags": []
     },
     {
       "title": "rashedInt32/claude-hl",
@@ -153,13 +117,7 @@
       "time": "09/06 13:00",
       "sentiment": "",
       "body": "作者因不習慣 Claude Code 輸出中 shell 指令為純灰階文字，做了一個替 shell 指令加上語法配色的工具。",
-      "focusTags": [],
-      "sedimented": [
-        {
-          "id": "claude-code",
-          "pageType": "entity"
-        }
-      ]
+      "focusTags": []
     },
     {
       "title": "I tested Claude Code's memory against mine. They are not doing the same job.",
@@ -168,13 +126,7 @@
       "time": "09/01 20:40",
       "sentiment": "",
       "body": "作者以自建語料重複測試 Claude Code 內建記憶功能是否能跨 session 記住特定事實，記錄測試方法與結果，強調樣本僅來自單一使用者、結論不宜過度推廣。",
-      "focusTags": [],
-      "sedimented": [
-        {
-          "id": "claude-code",
-          "pageType": "entity"
-        }
-      ]
+      "focusTags": []
     },
     {
       "title": "Show HN: Claude Skill – Interns must review (your agent's design choices)",
@@ -201,13 +153,7 @@
       "time": "09/06 12:59",
       "sentiment": "",
       "body": "作者記錄以 Claude Code SDK 為底、在 Mac Mini M4 上打造透過 Discord 對話的個人助理專案，第一步先做的是拒絕執行危險指令的把關機制。",
-      "focusTags": [],
-      "sedimented": [
-        {
-          "id": "claude-code",
-          "pageType": "entity"
-        }
-      ]
+      "focusTags": []
     },
     {
       "title": "Stop posting about limits. Fix your workflow",
@@ -216,13 +162,7 @@
       "time": "09/06 12:57",
       "sentiment": "",
       "body": "與近期用量抱怨聲浪相反，作者稱自己身為資深後端工程師、使用 Claude Code 半年，很少碰到用量上限，並分享自己的工作流程作為對照。",
-      "focusTags": [],
-      "sedimented": [
-        {
-          "id": "claude-code",
-          "pageType": "entity"
-        }
-      ]
+      "focusTags": []
     },
     {
       "title": "Introducing GPT-6 Astra for developers",
@@ -400,43 +340,9 @@
   "preview": "財經媒體圍繞 Anthropic IPO 話題本日持續延燒：calcalistech 報導 Anthropic 已將 IPO 時程延後，另有多家媒體分析其估值與上市進程。",
   "sedimentedToday": [
     {
-      "id": "claude-code",
-      "name": "Claude Code",
-      "pageType": "entity"
-    },
-    {
-      "id": "pricing",
-      "name": "Anthropic 訂閱方案與計費政策",
-      "pageType": "entity"
-    },
-    {
-      "id": "anthropic-business",
-      "name": "Anthropic 商業健康度",
-      "pageType": "topic"
-    },
-    {
       "id": "community-tech-discussions",
       "name": "社群技術討論趨勢",
       "pageType": "topic"
-    },
-    {
-      "id": "community-tech-patterns",
-      "name": "Claude Code 社群工作流模式",
-      "pageType": "topic"
-    },
-    {
-      "id": "market-signals",
-      "name": "投資訊號判讀",
-      "pageType": "topic"
-    },
-    {
-      "id": "skill-interest-watch",
-      "name": "興趣類別 skill 總覽",
-      "pageType": "topic"
     }
-  ],
-  "marketSignal": {
-    "title": "傳 Anthropic IPO 已延後，同日另一報導方向相反",
-    "date": "2026-09-06"
-  }
+  ]
 }
