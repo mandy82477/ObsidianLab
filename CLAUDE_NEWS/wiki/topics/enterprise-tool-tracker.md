@@ -3,8 +3,8 @@ page: "topics/enterprise-tool-tracker"
 kind: "topic"
 status: "ongoing"
 domain: "💼 商業"
-last_updated: "2026-09-05"
-last_news_update: "2026-09-04"
+last_updated: "2026-09-07"
+last_news_update: "2026-09-07"
 status_main: "ongoing"
 days_since_news: 3
 parent: null
@@ -28,11 +28,11 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 **領域：** 💼 商業
 **蒐集邊界：** 僅涵蓋 Claude 相關報導所帶出的企業案例。未提及 Claude 的企業工具決策不在自動蒐集範圍——公開報導本就少見具名企業的內部工具決策，本表為已見報者的彙整，非市場全貌。
 **開始日期：** 2026-05-26
-**最後更新：** 2026-09-05
-**最後新聞更新：** 2026-09-04
+**最後更新：** 2026-09-07
+**最後新聞更新：** 2026-09-07
 
-> **最新企業採用異動**（2026-09-04）
-> - **PicPay（巴西金融科技公司）宣布導入 Claude 處理銀行相關客服詢問**：拉美市場首見具名金融科技公司採用案例，詳見下方使用現況表新增列。
+> **最新企業採用異動**（2026-09-07）
+> - **PicPay（巴西金融科技公司）擴大整合為對話式 AI 金融服務**：09-04 導入銀行客服詢問後，FF News 09-07 報導擴大範疇，詳見下方使用現況表 PicPay 列。
 
 ## 摘要
 
@@ -77,7 +77,7 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 
 | 企業 | 規模 | AI 編碼工具 | 狀態 | 事件日期 | 備註 | 確認日期 |
 |------|------|-----------|------|---------|------|---------|
-| PicPay | 大型（巴西金融科技公司） | Claude API（銀行客服詢問） | ✅ | 2026-09-04 | 導入 Claude 處理銀行相關客服詢問；拉美市場首見具名金融科技採用案例，具體整合範疇未見報導 | 2026-09-04 |
+| PicPay | 大型（巴西金融科技公司） | Claude API（對話式 AI 金融服務） | ✅ | 2026-09-04 | 導入 Claude 處理銀行客服詢問，09-07 FF News 稱擴大為對話式 AI 金融服務；拉美市場首見具名金融科技採用案例，具體整合範疇未見報導 | 2026-09-07（首見 2026-09-04）|
 | Shopify | 頂尖 | Claude Code | ❓ | — | 執行長 Tobi Lütke 揚言封殺；Anthropic 早已關閉相關功能請求；未見官方確認執行，暫標未確認（詳見下方細節） | Google News/analyticsindiamag.com；Google News/The New Stack |
 | ReliaQuest | 大型（資安廠商） | Claude API（AI 驅動資安平台整合）| ✅ | — | 深化與 Anthropic 技術整合，作為去 SIEM 化資安策略一環；具體整合範疇、合作規模未見報導（詳見下方細節） | 2026-08-22 |
 | Goldman Sachs | 頂尖 | Claude AI | ❌ | — | 香港被切斷 Claude AI 存取權限，成因未明；❓ 待查證 ⟨Q-03⟩，詳見 [[topics/anthropic-government-policy]] | 2026-08-20 |
@@ -174,6 +174,9 @@ Claude Code 是工程師日常編碼工具（CLI），成本隨使用量線性�
 ## 時序
 
 ### 2026-09
+
+#### 2026-09-07
+- **[既有企業擴大採用] FF News：PicPay 整合 Claude 擴大對話式 AI 金融服務**：延續 09-04 已記錄之銀行客服詢問導入，本則報導擴大整合範疇，具體技術細節未見報導，詳見上方使用現況表 PicPay 列更新（Google News/FF News）
 
 #### 2026-09-04
 - **[新增具名企業，✅ 使用中] PYMNTS.com：巴西金融科技公司 PicPay 導入 Claude 處理銀行客服詢問**：拉丁美洲市場首見具名金融科技採用案例，詳見上方使用現況表新增列與細節（Google News/PYMNTS.com）

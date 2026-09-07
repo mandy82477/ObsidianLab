@@ -59,7 +59,7 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 | **Alibaba（Qwen3.8）** | 免費開放「最強」模型、稱幾乎追平 Claude（08-04）→ 低價層再多一個免費選項，能力宣稱待證 | 能力 | 🟡 | Decrypt 單一來源，無模型名稱、無 benchmark（🔎 見下方定價細節） |
 | **Kiro（AWS）** | spec-driven 編碼 agent，Free 至 Power $200 五級訂閱（08-03）→ 已在 AWS 生態的人可直接比價 | 定價 | 🟡 | 官網定價已查證（08-13）；標題並列的 80.8% SWE-bench 歸屬未獲證實 |
 | **OpenCode** | 開源免費替代，社群採用規模仍是主要訊號（08-01）→ 想離開訂閱制時的第一個候選 | 定價 | 🟡 | 下載量倍數的統計方法未揭露，完整脈絡見 [[entities/opencode]] |
-| **騰訊 Hy4** | 開放權重 770B、不含視覺（08-29）→ 尚無對比對象，先不列入選型 | 能力 | ⚪ | Simon Willison 轉引標題，無 benchmark、無定價 |
+| **xAI（Grok 4.5）** | 官方定價 $2/$6 per Mtok，宣稱優於 GPT-5 與 Claude（09-07）→ 比較基準（對標哪個 Claude 模型）不明，先觀察不換 | 定價 | 🟡 | 單一來源（shattered.io），宣稱式標題，無 benchmark 佐證、比較對象未指明 |
 
 **🏢 圖例**：具名企業採用記錄（見 [[topics/enterprise-tool-tracker]]）或官方企業方案，缺一不標。企業評估候選名單：雷達表帶 🏢 者；具名採用／退出記錄見 [[topics/enterprise-tool-tracker]]。
 
