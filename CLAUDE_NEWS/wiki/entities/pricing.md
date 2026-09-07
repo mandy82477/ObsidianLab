@@ -4,8 +4,8 @@ kind: "entity"
 type: "policy"
 status: "active（持續調整中）"
 domain: "💼 商業"
-last_updated: "2026-09-06"
-last_news_update: "2026-09-06"
+last_updated: "2026-09-07"
+last_news_update: "2026-09-07"
 status_main: "active"
 days_since_news: 1
 parent: null
@@ -29,13 +29,13 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 **狀態：** active（持續調整中）
 **領域：** 💼 商業
 **首次出現：** 2026-04-25
-**最後更新：** 2026-09-06
-**最後新聞更新：** 2026-09-06
+**最後更新：** 2026-09-07
+**最後新聞更新：** 2026-09-07
 
-> **最新計費政策異動**（2026-09-06）
+> **最新計費政策異動**（2026-09-07）
 > - **09-14 起你的週配額變成現在的 83%**：+50% 加成 09-13 23:59 PT 到期（[官方說明中心](https://support.claude.com/en/articles/15910845-claude-code-may-august-2026-weekly-limits-promotion)），接手的是永久 +25%（08-29 官方 Bluesky 公告），換算後相對現在少約 17%。適用 Pro、Max、Team 與座位制 Enterprise。
 > - **$100 過渡 credit 09-17 23:59 PT 到期即作廢**，不可續買、不轉存。
-> - **四件計費事故仍未解**：續訂扣款後帳號停用、旗艦用量點數誤扣、升級付款流程作廢、$16.6M 帳務錯誤的退款未定。見「事故現在還在發生嗎」。
+> - **四件計費事故仍未解**：續訂扣款後帳號停用、Max 訂閱一開工就撞用量上限（GitHub Issue #16157，1,492 留言，本頁互動量最高）、升級付款流程作廢、$16.6M 帳務錯誤的退款未定。見「事故現在還在發生嗎」。
 
 ## 現況
 
@@ -58,8 +58,8 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 | 方案 | 月費 | 訂閱內含 | 需另計費 | 可領優惠 | 你該做的動作 |
 |------|------|---------|---------|---------|------------|
 | Free | $0 | 基本額度；旗艦存取未載 | — | — | 09-14 起週配額永久 +25% 不適用本方案（見下方週配額改版說明）|
-| Pro | $20（年繳 $17／月）| 全模型，**旗艦除外** | **Fable 5** — $10/$50 per Mtok，走 usage credits | **已截止**：一次性 $100 過渡 credit 領取窗於 2026-08-02 關閉 | 已領者記得在 09-17 到期前用掉；至 `Settings > Usage` 確認 auto-reload 未開 |
-| Max 5x | $100 | 全模型；**旗艦上限為週用量 50%** | 超出後走 usage credits | — | 留意旗艦誤要求購點問題（見事故區）|
+| Pro | $20（年繳 $17／月）| 全模型，**Fable 旗艦除外**（免另計費最強為 Opus 5）| **Fable 5／5.1** — $10/$50 per Mtok，走 usage credits | **已截止**：一次性 $100 過渡 credit 領取窗於 2026-08-02 關閉 | 已領者記得在 09-17 到期前用掉；至 `Settings > Usage` 確認 auto-reload 未開 |
+| Max 5x | $100 | 全模型；**旗艦（Fable 5／5.1）上限為週用量 50%** | 超出後走 usage credits | — | 留意旗艦誤要求購點問題（見事故區）|
 | Max 20x | $200 | 同上，額度更高 | 同上 | — | 用量上限集體訴訟進行中 |
 | Team standard seat | $20（年繳）／$25（月繳）每席 | 同 Pro | 同 Pro | 同 Pro | 同 Pro |
 | Team premium seat | $100（年繳）／$125（月繳）每席 | 同 Max | 同 Max | — | — |
@@ -80,7 +80,8 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 - **Max 20x 用量上限集體訴訟進行中**：Karl Kahn 訴訟（2026-06-16 提起）指控實際僅 Pro 的 6–8 倍而非廣告的 20 倍
 - **Team／Free／Enterprise 月費（2026-08-08 官方查證）**：Team 可混搭席位型別（mix and match），standard $20／premium $100（年繳，月繳各為 $25／$125），未見最低席位數規定；Free $0；Enterprise 未公開完整報價，頁面標示為「席位費＋依 API 費率計量」並提及 $20／席，實際價格需洽業務（來源：[claude.com/pricing](https://claude.com/pricing)）
 - **Free／Pro 功能組成（2026-08-12 官方查證，原文於 Max 段落截斷）**：Free 含 web 搜尋、記憶、桌面擴充、connector；Pro 另含 Claude Code／Cowork／Design／Science、無限 projects、Research、更多模型選擇、Microsoft 365 整合。此為功能清單補充，不影響上表的月費／計費規則；Max／Team／Enterprise 段落待後續查證（來源：[claude.com/pricing](https://claude.com/pricing)）
-- **各方案最強可用模型（2026-07-24 起）**：Opus 5 為 Pro 方案最強可用模型、Max 方案新預設模型（原為 Opus 4.8），見 [[entities/opus-5]]
+- **各方案最強「免另計費」模型（2026-07-24 起，2026-09-07 釐清用詞）**：Pro 方案**免另計費**可用的最強是 Opus 5；旗艦 Fable 5／5.1 仍可用，但走 usage credits 額外計費（見上表）。Opus 5 同時是 Max 方案新預設模型（原為 Opus 4.8），見 [[entities/opus-5]]
+- **旗艦分界同時適用 Fable 5 與 5.1（2026-09-07 補列）**：07-20 生效的官方規則（Max／Team premium 週用量 50% 內免費、Pro／Team standard 走 usage credits）兩代通用；07-19 到期的免費促銷僅適用 Fable 5，5.1 上線時（見 [[entities/fable-5]]）即直接適用付費分界，無促銷期
 - **Max 20x 的差異不只用量**：context window、Claude Code 額度、優先排隊等有結構性差異，非單純 Pro 的 20 倍
 - **Enterprise 附加功能**：含 Compliance API、Enterprise Gateway 等；合作分級 Select／Preferred 差異未公開。Team 方案於 2026-06-19 官方速率翻倍時同步適用
 - **usage credits 僅可在網頁版開通（2026-08-11 官方查證）**：官方說明中心 usage-credits 條目載明，行動 App（iOS／Android）訂閱者無法直接於 App 內開啟 usage credits，須改至網頁版 `Settings > Usage` 操作；額度用盡後可切換按量計費（API 標準費率）不中斷服務。此為既有「credits 為 opt-in、預設關閉」規則（見上方 2026-08-08 條目）的補充限制（來源：support.claude.com usage-credits 條目，2026-08-11）
@@ -221,9 +222,11 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 | Max 20x 實際用量與廣告宣稱落差 | ⚖️ 司法中 | 2026-06-16 集體訴訟，指實際僅 Pro 的 6–8 倍 | 依現況估算用量，不要以「20 倍」為預算基準 |
 | Max 5x 續訂扣款完成後帳號遭停用 | 🔴 未解 | 2026-09-04，GitHub Issue #5088 累積 184 則留言 | 續訂後立刻確認帳號可用，留下扣款紀錄 |
 | 升級付款流程 PaymentIntent 提前作廢 | 🔴 未解 | 2026-08-12，Issue #55982 累積 77 則留言 | 升級失敗時不要重複送出，先查有無重複授權 |
-| 旗艦模型仍被要求額外用量點數 | 🔴 未解 | 2026-08-07，Issue #79337 累積 67 則留言，延燒逾 18 天 | 若被要求購點，先確認方案內的 50% 上限是否已用盡 |
+| Max 訂閱幾乎一開工就撞上用量上限 | 🔴 未解 | 2026-09-06，Issue #16157 累積 1,492 則留言、725 👍，本頁互動量最高 | 先查 `Settings > Usage` 是否真的觸頂；異常請在 issue 附時間戳與模型名 |
 
 **已結案三件（供對照）**：共用池機制（2026-08-22 官方確認）、Opus 5 定價兩說收斂（2026-08-08）、Sonnet 5 $2/$10 永久化（2026-08-10）。下方「事故與爭議」事件流每則事故標題前的符號就是它的狀態。
+
+**帳單變多但找不到原因？** 若操作沒有異常、用量卻仍在漲，另一種可能是同樣工作消耗的 token 本身變多了，追蹤見 [[topics/code-quality-decline]]「Token 消耗異常訊號群」。
 
 ---
 
@@ -242,6 +245,14 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 - 🔎 **查無官方**（標 2026-08-10｜查 [[topics/ai-agent-safety]]、resale scope｜訊 2026-08-29｜複 2026-09-30）｜轉售規模與 Anthropic 執法回應均未見官方聲明或第三方媒體佐證。
 
 ### 事故與爭議（誤扣費、靜默計費改動、帳號安全）
+
+#### 🔴 2026-09-06：GitHub Issue 累積 1,492 則留言、725 👍——Max 訂閱幾乎一開工就撞上用量上限
+
+- **GitHub Issue #16157（1,492 留言、725 👍 reactions，2026-09-06 查證）**：Max 訂閱用戶回報幾乎一開工就撞上用量上限，留言數為本頁計費／配額爭議類目前最高（前次高點 #5088 的 184 則），是今日所有 GitHub Issue 中留言數最高者；功能記者同日也將此則登記為 [[entities/claude-code]] 已知問題。
+- 出處：[GitHub #16157](https://github.com/anthropics/claude-code/issues/16157)
+- **與既有事件的關係（推論，待證實同源）**：症狀與本頁已記錄的多起「用量無明顯使用即耗盡」事故（08-14 Issue #38335 session 額度異常、08-04 Reddit 回報 Max 20x 半小時 0%→100%）同屬「配額計算是否準確」一類，惟本則互動規模遠超其餘各案，且問題描述為「幾乎立即觸頂」而非既有案例的「一段時間內耗盡」，是否同根因未見官方交叉確認，不可合併
+- **同日 Reddit 疑似相關回報（單一貼文，score 0，非週熱門，未經證實）**：r/ClaudeCode 貼文稱收到「即將達上限」警告，但實際用量遠未接近門檻，與本則同屬「配額顯示是否準確」討論，惟訊號較弱（score 0、非週熱門標記），僅並列記錄不獨立成案（Reddit）
+- ❓ **待查證**（標 2026-09-07｜查 GitHub #16157、usage limits｜複 2026-09-21）：觸頂成因（配額計算 bug、顯示錯誤或其他）、官方是否已回應或提供修復時程，均未見報導；已掃日報至 2026-09-07 無官方回應，官方頁面未查證
 
 #### 🔴 2026-09-04：GitHub Issue 累積 184 則留言——Max 5x 續訂扣款後帳號遭停用
 
@@ -286,6 +297,7 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 #### 🔴 2026-08-07：Fable 5 Max 方案用量點數異常追蹤更新——留言數攀升至 67，延燒逾 18 天
 
 - **GitHub Issue #79337 互動量持續攀升**：**67 留言**（08-07 查證，較 07-25 的 42 留言攀升），延續追蹤自 07-20 Fable 5 成為 Max 標準模型第一天起爆發的用量點數異常，含此前記錄的「靜默降級 Opus 4.8」細節。**與既有事件的關係**：問題延燒逾 18 天，橫跨官方 07-20 Status「Max 誤判、重啟可解決」定性與 07-24（13 reactions）、07-25（42 留言、15 reactions）多輪查證；留言數持續攀升顯示影響擴大而非收斂，是本頁追蹤時間最長的未解計費／配額爭議（推論；官方是否修復、與「誤判」定性的關係均未見新公告釐清）（GitHub https://github.com/anthropics/claude-code/issues/79337）
+- （未列入總表：表滿載，2026-09-07，讓位給 #16157）
 
 #### 🔴 2026-08-04：Reddit 回報 Max 20x 用量在未使用期間半小時內從 0% 衝到 100%，疑似配額計算異常
 
@@ -347,6 +359,11 @@ Anthropic 於 4 月初靜默縮短預設 prompt cache 窗口，實質提高 toke
 **2026-04 事故（已封存）**：Token 費用預估靜默翻倍（04-29，⏸ 逾 90 天無後續）、Opus「圍牆內圍牆」事件已修正（04-28，✅）、HERMES.md 靜默計費 bug 官方確認但拒絕退款（04-25，⛔）。原始條目見 [[entities/pricing-archive#2026-04]]。
 
 ### 定價與促銷（模型定價、方案設計）
+
+#### 2026-09-06：GitHub Issue #47509（133 👍、35 留言）——使用者提案 Team 方案新增對等 Max 20x 用量的高階座位
+
+- **GitHub Issue #47509**：Team 方案目前僅 Standard（1.25x Pro 用量）與 Premium（6.25x）兩檔座位，使用者提案新增對等 Max 20x 用量的高階座位，供 CTO、技術主管等重度使用者選用；累積 133 個 👍、35 則留言，尚無官方回應。
+- **與既有社群訴求的關係**：與印度盧比在地化訴求（#17432，07-13 獲官方回應）同屬「社群提案、待官方回應」型座位／方案設計訴求，惟本則尚無時程跡象；若獲採用將改變上方「我的方案現在有什麼」表的 Team 分層。
 
 #### 2026-09-05：官方定價頁再爆大改版（新增110+／移除168+段）；同日媒體稱「Anthropic 重置 Claude 限制」（2026-09-06 查證：價格結構未變）
 

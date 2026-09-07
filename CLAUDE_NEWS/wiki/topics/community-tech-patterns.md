@@ -167,7 +167,7 @@ Multi-agent 架構與 Skills 設計已是社群定案的做法；還在試的十
 - **主線：** —
 - **核心模式：** 提供隔離的 VM 環境執行 Claude Code 與 Codex，讓 agent 在無法碰到其他專案或個人檔案的情況下運作
 - **與既有模式的關係：** 與「安全架構」既有代表技巧（Spare Mac 隔離環境）同屬實體/虛擬隔離取向，差異在以 VM 而非備用實體裝置實現隔離；HN 留言區已有使用者具名回饋「I use coop daily and found it super convenient」，屬本類別少見的實際採用回饋
-- **可信度註記：** Hacker News，36 分，達中門檻（≥30 分）；留言區有一則正面實際使用回饋，非僅發布者自述
+- **可信度註記：** Hacker News，36 分，屬中度互動；留言區有一則正面實際使用回饋，非僅發布者自述
 - **來源：** 「Coop – Isolated VM Environments for Running Claude Code and Codex」— Hacker News（36 分）；[GitHub](https://github.com/trailofbits/coop)
 - **成熟度：** ⏳ 新興（單一 HN 留言採用回饋，尚無多方實測數據）
 
@@ -176,8 +176,8 @@ Multi-agent 架構與 Skills 設計已是社群定案的做法；還在試的十
 - **主線：** —
 - **核心模式：** 本地優先的 coding agent harness，訴求零 npm runtime 依賴，並可支援沒有原生 tool-calling API 的模型——做法是透過系統提示渲染工具 schema，讓模型以文字輸出間接完成工具呼叫
 - **與既有模式的關係：** 與「模型使用策略」既有代表技巧（分層模型、多模型路由）不同層次——既有技巧解決「該用哪個模型」，本則解決「該模型能不能被納入工具呼叫框架」，補上模型相容性這一層
-- **可信度註記：** Hacker News 單則僅 1 分，但同日 source_count=2（兩個獨立來源提及），達「其他」門檻的 source_count ≥ 2 中門檻；尚無具體實測數據或第三方回饋
-- **來源：** 「Show HN: MaskShift – a maximalist coding agent with zero NPM dependencies」— Hacker News（1 分，source_count=2）；[GitHub](https://github.com/nafeeur/MaskShift)
+- **可信度註記：** Hacker News 單則僅 1 分，但同日另有一則獨立來源提及，屬多家報導；尚無具體實測數據或第三方回饋
+- **來源：** 「Show HN: MaskShift – a maximalist coding agent with zero NPM dependencies」— Hacker News（1 分，同日另有一則獨立來源提及）；[GitHub](https://github.com/nafeeur/MaskShift)
 - **成熟度：** ⏳ 新興（本庫首次收錄，尚無社群採用回饋）
 
 #### plannotator/effective-html：Agent Skills 技能包，產出可用 HTML artifact、線框稿、互動原型、計畫與圖表（2026-09-07）
