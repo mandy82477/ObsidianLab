@@ -178,7 +178,7 @@ npm install @anthropic-ai/sdk@0.123.0
 | **Claude Code Artifacts**（工作階段即時輸出可共享互動網頁） | 2026-06-18 | 🔥🔥🔥 | ⚡ 有條件推薦 | 正式發布 |
 | **Tool(param:value) permission 語法 + 巢狀 Skills**（v2.1.178） | 2026-06-15 | 🔥 | ✅ 推薦 | 正式發布 |
 | **enforceAvailableModels 企業管控**（Claude Code v2.1.175） | 2026-06-12 | 🔥 | ✅ 推薦 | 正式發布 |
-| **Claude Fable 5**（Mythos 架構公開版，$10/$50 per M token） | 2026-06-09 | 🔥🔥🔥🔥🔥 | ⏳ 觀望（Legacy，改用 5.1） | 正式發布（Legacy，退役不早於 2027-06-09；現行世代見 Fable 5.1 那一列） |
+| **Claude Fable 5**（Mythos 架構公開版，$10/$50 per M token） | 2026-06-09 | 🔥🔥🔥🔥🔥 | ❌ 改用 5.1（Legacy，仍可呼叫） | 正式發布（Legacy，退役不早於 2027-06-09；現行世代見 Fable 5.1 那一列） |
 | **`--safe-mode` 旗標**（v2.1.169） | 2026-06-08 | 🔥 | ✅ 推薦 | 正式發布 |
 | **Google Colab CLI 整合 Claude Code / Codex** | 2026-06-08 | 🔥 | ✅ 推薦 | 正式發布 |
 | **Claude Opus 4.1 SDK 棄用**（Python SDK v0.106.0） | 2026-06-06 | 🔥 | ✅ 推薦 | 正式發布 |

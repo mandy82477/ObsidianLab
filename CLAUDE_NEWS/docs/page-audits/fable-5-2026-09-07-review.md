@@ -148,3 +148,37 @@ python scripts/check_pending_markers.py --rebuild-count --reason "entities/fable
 8. **同維護者回掃**：`wiki/topics/model-comparison.md` :77／:86／:165 三處與 `wiki/entities/mythos.md` :227 節標，依「回掃射程」節改。驗：`grep -n "官方基準" wiki/topics/model-comparison.md` 預期零命中；`grep -rn "06-26\|06-13 至 2026-07-01" wiki/entities/ wiki/topics/ --include=*.md | grep -v log` 預期零命中。
 9. **帳本**：B-5 的 close（用 🔴-4(c) 逐字）＋ patterns／trends 那筆 open ＋ 🟡-5 的 pricing open；**不開** tom-brown 那筆。驗：`python scripts/pending_handoffs.py list` → 預期「模型 記者」待接手 0 筆。
 10. **收尾**：`python scripts/gen_wiki_frontmatter.py` → `python scripts/run_tests.py`（預期 exit 0）→ `python scripts/build_web.py`（預期錨點 WARN 不增）。主編另依 A-13（含 🟡-8 的 radar L181 試用價值）改 `wiki/index.md` L76 與 `wiki/feature-radar.md`，冷讀者複驗須排在其後。
+
+## 實作複核（2026-09-07）
+
+**放行，零剩餘 🔴。** 每一項都親自開檔或跑腳本核過，不採信回報。母頁 412 → **319 行**（我在初審預估 316，實作者沒有為了湊 265 而砍事實，正確）。
+
+| 步 | 判 | 親核證據 |
+|---|---|---|
+| 1 規則檔 | 照做 | 三個 h3 逐字含 `fable-5`；爭議上限句已改 12＋「指路句至多 2 條」 |
+| 2 lint 5l | 照做 | `wiki-lint.md:371` 步驟本文、`:377` 回報行、`:661` 步驟 8 清單三處都在 |
+| 3 archive | 照做 | `resolved（封存頁）`、`**上層：**`、領域 🤖 繼承；`check_hierarchy.py` ✅ 通過（**9 個母頁**，原 8） |
+| 4 allowlist | 照做 | `--page fable-5-archive` → 「無新增命中」且存量基線 0 筆（例外生效，非被基線吃掉） |
+| 5–6 母頁 | 照做 | `table_census.py entities/fable-5` **3/3「有（wiki-ingest-models.md、wiki-lint.md）」**；`check_cell_limits --page fable-5`／`check_reader_language --page fable-5` 皆「無新增」 |
+| 7 歷史記錄 | 照做 | 見下方保命條款欄 |
+| 8 回掃 | 照做＋合理追加 | 見下方回掃欄 |
+| 9 帳本 | 照做 | `list` 中「模型 記者」**0 筆**；新開 H-c0b18f（→商業／pricing）、H-7397a3（→社群／patterns，note 含 trends 兩處）；**未開 tom-brown** ✅ |
+| 10 收尾 | 照做 | `check_hierarchy` ✅、`grep -rn "fable-5#"` 零命中、`build_web.py` 13 筆 WARN **無一筆提及 fable**（全為 log.md／CLAUDE.md 的示範語法與 news 連結，屬存量） |
+
+**保命條款（親核）**：Q-01～Q-05 五筆短標記與五筆細節區定義一一對應，`check_pending_markers.py` **exit 0、無對帳 FAIL**；基線 `data/pending-marker-count.json` 為 **141（2026-09-07）**，reason 逐字寫「費馬歸屬經官方一手查證結案（內部研究模型，非 Fable 5／5.1）」。五筆的 `標／查／複／訊` metadata 一格不漏（Q-02 的 `訊 2026-09-02` 仍在）。費馬結案在頁面留下的依據是 L175–176：條目標題逐字寫「官方 2026-09-07 查證：使用內部研究模型，非 Fable 5 或 5.1」，內文引官方「內部研究模型，約略相當 Fable 5.1」——**移除標記的理由留在讀者看得到的地方**，這是保命條款要的形態。
+
+**結論表**：七列與 draft 逐字相同，唯一差異是第 1 列照我 🟡-9 縮成「是——v2.1.257 起 Fable 預設即 5.1」。四格對 verified 全中：退役 2027-06-09／2027-09-01、cache read ×0.025（$0.25）、知識截止 2026-01 vs 2026-06、Max 與 Team premium 週用量 50% 內免費 vs Pro 與 standard 走 usage credits。「資料截至 2026-09-07」在表上第一行。
+
+**護欄節**：四個官方觸發類別齊、首句「**你會收到通知**」＋「改由 Opus 4.8 回答」齊、回指 gov-policy「政府動作對你的產品做了什麼」齊。「靜默降級／靜默 fallback」全庫 grep：**母頁結論層零殘留**（熱度表、使用指南、核心功能、爭議節全部乾淨），僅存 L194／L258／L289 三處歷史記錄與 L292，那三處講的是 GitHub #79337 的計費缺陷（另一件事，家在 claude-code）與「可見防護」對照句，留著正確。H-754509 已 close，內容逐字採我 🔴-4(c)。
+
+**歸檔**：archive 176 行。逐名抽驗 14 個專有名詞（Lutnick／Jassy／Starmer／carve-out／personality clash／DoD／CCLimitPing／LimitBar／配額重置時間／消耗速度落差／與既有成本爭議的關係／首爾記者會／HN score 2,448／立場底線）**全部在 archive 有家**，母頁只在該留的地方留（消耗速度落差、Fix this code 各留一處）。母頁 2026-06 十行總結末行是雙錨點版（`#2026-06` ＋ `#出口管制：雙方立場`），archive 節名已去括號，兩個錨點都指得到實存 h2。母頁三句指路（現況第 2 段指 gov-policy、結論表第 7 列與 A-7 指 pricing）都在。爭議節 **12 條**（1✅／9⚠️／2🔴），與改後上限一致。相關議題 **7 條**，`[[topics/ai-agent-safety]]` 已補回。
+
+**回掃（含實作者追加兩處，我判可接受）**：model-comparison `:77`／`:86`／`:165` 三處「官方基準」已改「社群轉載」；追加的 `:172` 是細節區新增一句說明來源等級與原始連結未附——那正是 G 條要求的「下沉不刪除」，屬同一次更正的落地，**接受**。mythos `:227` 節標已由 06-26 改 06-30；追加的 `:46` 現讀「出口管制已全面解除」不帶天數，是把錯誤端點整句拿掉而非改寫歷史，**接受**。opus-4-8 `:46` 未動——正確，該頁全檔無出口管制敘述，帳本原列那筆本就是幽靈。「官方基準」全庫殘留只剩 fable-5:272（歷史條目，已依 🟡-2 append「後續（2026-09-07）」句，我實查該句在）與 patterns／trends（跨維護者，已走帳本）。
+
+**實作者兩處回話，我的判定**：(1) 四處為 200 字元閘縮寫——我逐條比對 draft 的 `- **` 條列與頁面，**零差異**，縮寫全發生在懸置細節區與爭議 L253，比對原標記後確認出處、日期、缺什麼三要素一個不少，僅刪掉「是否為同一脈絡未經證實」這類推測性尾巴，**事實無流失，同意**。(2) 我實作單第 8 步的驗證 grep `06-26` 確實過寬（全庫上百筆無關日期），**是我寫錯**，正確探針是 `grep -rn "至 06-26"`，實跑零命中。
+
+**剩餘 🟡（不擋放行）**：63 個 wiki 檔的 frontmatter drift 未 commit。它們是 `gen_wiki_frontmatter.py` 依今天日期重算 `days_since_news`／`signal`／`inbound_links` 的機器投影，不是別的 session 的手改，留著不會壞任何閘；但下週 `open_loops.py` 會報 63 筆未 commit 的實質改動，把真的那幾筆淹掉。建議主 session 另起一個只寫「chore(frontmatter): 重跑投影」的 commit 收掉，不與本波內容混。
+
+**我自己造成的工作區改動（誠實記錄）**：為核 WARN 數我跑了兩次 `python scripts/build_web.py`，因此 `web_reader/` 下的 data.js／graph.json／search-index.json／三個 digest json 與 wiki json 是我這次重新產生的（內容與實作者跑出來的一致，屬確定性建置輸出）；`web_reader/data/wiki/fable-5-archive.json` 為本波新頁應有的產物。除此之外未寫入任何檔，未執行 git。
+
+**冷讀者原五題，改版後預測**：Q1 由「2 跳、半個沒拿到（表裡無 5.1）」→ **拿到**（結論表第 7 列直接答 Max 與 Pro 的分界，且明寫兩代同規則）；Q2 由「3 跳、半拿到、下線日全站零答案」→ **1 跳拿到**（index L36 新路由列直達，退役 2027-06-09 首次落地）；Q3 維持 ✅ 2 跳，且本頁不再自帶第二個結束日；Q4 由「讀完更不確定」→ **拿到**（護欄節首句給官方答案，「日常 coding 與 debugging 會被誤標」進了「誰最容易誤觸」欄）；Q5 由「分不出本頁與另兩頁」→ **分得出**（七條相關議題各帶分工句，價格表與選型敘述已讓位）。唯一殘留風險是 index Entities 表仍 34 列，讀者若不走新路由列而掃全表，仍要掃到第 77 行。
