@@ -33,12 +33,12 @@
 | L83 | 提示注入抵抗力 | 留，改寫證據等級 | draft A-7 第 3 條 |
 | L84 | SDK 版本 | 留，補上架時間說明 | draft A-7 第 4 條 |
 | **新增** | — | **`## 你現在拿到的是什麼` 7 列 × 4 欄＋表下四條** | draft A-4，插在 `## 現況` 與 `## 熱度與試用價值` 之間 |
-| **新增** | — | **`## 官方宣稱 vs 社群實測` 5 列 × 2 欄＋表下六條** | draft A-6，插在熱度表之後 |
+| **新增** | — | **`## 這些數字是誰量的` 4 列 × 2 欄＋表下六條** | draft A-6，插在熱度表之後。節名依評審 🟡-9 判定；表由 5 列改 4 列，原「資安任務」列降表下第一條（🟡-8）|
 | **新增** | — | 核心功能兩條：兩個 breaking change、effort 更關鍵 | draft A-7 第 1、2 條（官方一手，本頁與全站皆首次寫）|
 | L88 節名 | `## 相關議題` | 留 | draft A-8 |
 | L90–93、L95–98 | 八條（fable-5／opus-4-8／mythos／sonnet-5／boris-cherny／model-comparison／feature-radar／ai-agent-safety） | **留，分工句逐條改寫得更具體** | draft A-8 |
 | L94 | pricing 那條（「兩說法待彙整查證」，過期宣稱第二份） | **留連結、砍過期宣稱** | 改成「牌價 $5／$25、我的方案內含什麼、一小時大概多少」|
-| **新增** | — | [[topics/model-task-leaderboard]] 一條 | draft A-8；A-6 指它，沒有這條會留下孤兒引用 |
+| **新增** | — | **[[topics/model-task-leaderboard]]、[[entities/claude-code]]、[[entities/managed-agents]] 三條**（九留＋3 ＝ 12）| draft A-8。leaderboard 與 claude-code 是 A-6 的出口（claude-code 我上一輪漏登記，🔴-6）；managed-agents 是冷讀者 Q4 唯一有官方數字的落點 `entities/managed-agents:82`（🔴-7）|
 
 ## 二、參考來源與歷史記錄（L100–162）
 
@@ -76,11 +76,13 @@
 | index :54 鉤子「定價定位待彙整」（過期 30 天） | index | 主編 | draft B-5 給逐字，實作者不改 index |
 | index :36 路由接不到 Opus 這一代 | index | 主編 | draft B-5 給逐字 |
 | feature-radar :16／:147「官方稱定價為其一半」（無金額無查證日） | feature-radar | 主編 | draft B-5 給逐字；熱度兩欄不動 |
+| index :55 opus-4-8 狀態格與摘要格（無 Legacy、無退役日） | index | 主編 | draft B-5 給逐字（🔴-4，上一輪漏給）。`test_index_sync` 只比狀態主值，兩邊都是 `active`，機器抓不到 |
+| feature-radar :568、overview :34「Claude Pro 最強模型」（無官方出處） | 兩頁 | 主編 | draft B-5 給逐字（🔴-2，回掃只做了一半）|
 | AA 三組跨家指數的**現值**（V5 未查） | 本頁 L54／L160 | 主編（`/wiki-lint` 5b） | draft B-5 末條：評估榜頁開一列 AA 綜合指數。**不走帳本**——榜頁是主編自己的 5b 工作 |
 | GitHub #77136 缺席規則指定家 | claude-code 沒收 | 功能記者 | `pending_handoffs.py open --to 功能`（draft B-6）|
 | pricing Team 兩層的旗艦分界 | pricing :64–65「同 Pro／同 Max」 | 商業記者 | `pending_handoffs.py open --to 商業`（draft B-6）|
-| opus-4-8 缺退役日與 Legacy 狀態 | opus-4-8 :29／:46 | **本波同批改（同維護者的事實更正）** | 見下方第四節 |
-| opus-4-8「Opus 5」傳聞 12 行死案 | opus-4-8 :154–163 | **使用者裁決**，未回覆則不動 | 提案 §10 裁決點，兩版去向 |
+| opus-4-8 缺退役日與 Legacy 狀態 | opus-4-8 :29／**:44** | **本波同批改（同維護者的事實更正）** | 見下方第四節。**:46 是我上一輪寫錯的行號**（🔴-3），那行是 2026-05-28 發布沿革段 |
+| opus-4-8「Opus 5」傳聞 12 行死案 | opus-4-8 **:152–163**（節標在 :152） | **使用者裁決**，未回覆則不動 | 提案 §10 裁決點，兩版去向。**上一輪寫 :154–163 少了節標那一行**（🔴-3），日後採 A 版整節移除時會留下孤兒節標 |
 
 ## 四、同維護者鄰居：opus-4-8 的三處事實更正（本波同批改）
 
@@ -89,8 +91,9 @@
 | 行 | 現在 | 改成 |
 |---|---|---|
 | opus-4-8 :29 標頭狀態 | `active（已被取代，次旗艦地位由 Opus 5 接手）` | `active（官方已列 Legacy，退役不早於 2027-05-28；次旗艦地位由 Opus 5 接手）` |
-| opus-4-8 :46 現況末句 | 「已不再是次高階公開模型的首選」 | 同句末補：「官方模型總覽頁已將它標為 Legacy、載明退役不早於 **2027-05-28**，並建議遷移至 [[entities/opus-5|Opus 5]]（2026-09-07 查證）」 |
-| opus-4-8 :44 「詳見 [[entities/opus-5]]」 | 只指整頁 | 改指本波新節：`詳見 [[entities/opus-5#你現在拿到的是什麼]]` |
+| **opus-4-8 :44**（同一行三處改動，一次改完）| 「取代 Opus 4.8 成為次旗艦、Claude Max 新預設模型、**Claude Pro 最強模型**（詳見 [[entities/opus-5]]）…已不再是次高階公開模型的首選。」 | ① 砍「Claude Pro 最強模型」改成官方分層（🔴-2）；② 錨點改指 `[[entities/opus-5#你現在拿到的是什麼]]`；③ 句末補 Legacy 與退役日。逐字：`取代 Opus 4.8 成為次旗艦，並成為 Max／Team premium／Enterprise 隨用隨付／API 的預設 Opus（詳見 [[entities/opus-5#你現在拿到的是什麼]]）`，末句後補「官方模型總覽頁已將它標為 Legacy、載明退役不早於 **2027-05-28**，建議遷移至 [[entities/opus-5|Opus 5]]（2026-09-07 查證）」 |
+| opus-4-8 :46 | 2026-05-28 發布沿革段（Fast Mode 2.5 倍…）| **不動**——這是我上一輪誤指的行，照原稿改會把 Legacy 句補進發布沿革段尾 |
+| opus-4-8 :169 歷史表列 | 「Claude Pro 最強模型」 | **不動**（歷史條目寫「當時」，同 opus-5:161、model-comparison:187）|
 
 **改錨點前先確認**：`python scripts/wiki_graph.py explain entities/opus-5 --section "你現在拿到的是什麼"`（新節，實作後才有）；`build_web.py` 的 `check_wikilink_anchors()` 會驗節名存在，實作順序必須是**先建新節、後改 opus-4-8 的錨點**。
 
@@ -104,4 +107,6 @@
 | `check_pending_markers.py` 逾期 WARN | opus-5 的 3 筆逾期 WARN 消失 |
 | `gen_wiki_frontmatter.py` → `run_tests.py` | 全綠；`pending_count` 5→2、`pending_overdue` 3→0 |
 | `build_web.py` | 錨點 WARN 不增；opus-4-8 新增的 `#你現在拿到的是什麼` 錨點驗得過 |
-| `table_census.py entities/opus-5` | 兩張新表皆判「有機制」（規則檔 h3 逐字含 `opus-5`）|
+| `table_census.py entities/opus-5` | **四張表**（你現在拿到的是什麼／熱度／這些數字是誰量的／歷史記錄）機制欄皆「有」（規則檔 h3 逐字含 `opus-5`）|
+| `check_rules.py`（含在 `run_tests.py`）＋ `/review-commands` | 改過 `.claude/rules/` 與 `.claude/commands/` 之後跑到零錯誤（🟡-10，B-4 提了但收工表漏列）|
+| `build_web.py` WARN 基準 | **動工前先記下改前的 WARN 數**，否則「不增」無從驗起（🟡-10）|
