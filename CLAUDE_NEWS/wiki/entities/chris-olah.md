@@ -12,7 +12,7 @@ parent: "topics/anthropic-government-policy"
 children: "[]"
 page_role: "redirect"
 days_since_news_subtree: 101
-inbound_links: 3
+inbound_links: 2
 attribution_count: 0
 attribution_last: null
 top_source: null

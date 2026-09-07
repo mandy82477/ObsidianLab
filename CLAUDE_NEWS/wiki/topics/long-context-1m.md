@@ -3,7 +3,7 @@ page: "topics/long-context-1m"
 kind: "topic"
 status: "ongoing"
 domain: "🛠️ 工具/功能"
-last_updated: "2026-09-02"
+last_updated: "2026-09-07"
 last_news_update: "2026-09-02"
 status_main: "ongoing"
 days_since_news: 5
@@ -11,7 +11,7 @@ parent: null
 children: "[]"
 page_role: "root"
 days_since_news_subtree: 5
-inbound_links: 13
+inbound_links: 12
 attribution_count: 3
 attribution_last: "2026-09-02"
 top_source: "github-issues"

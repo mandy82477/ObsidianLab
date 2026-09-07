@@ -3,22 +3,22 @@ page: "topics/anthropic-business"
 kind: "topic"
 status: "ongoing"
 domain: "💼 商業"
-last_updated: "2026-09-06"
-last_news_update: "2026-09-06"
+last_updated: "2026-09-07"
+last_news_update: "2026-09-07"
 status_main: "ongoing"
-days_since_news: 1
+days_since_news: 0
 parent: null
 children: "['topics/anthropic-business-archive']"
 page_role: "hub"
-days_since_news_subtree: 1
-inbound_links: 79
-attribution_count: 198
-attribution_last: "2026-09-06"
+days_since_news_subtree: 0
+inbound_links: 83
+attribution_count: 208
+attribution_last: "2026-09-07"
 top_source: "google-news"
 pending_count: 9
 pending_overdue: 2
 pending_next_review: "2026-09-08"
-pending_signalled: 0
+pending_signalled: 1
 signal: "健康"
 generated_by: "scripts/gen_wiki_frontmatter.py"
 ---
