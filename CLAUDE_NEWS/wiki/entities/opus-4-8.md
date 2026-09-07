@@ -33,7 +33,7 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 **最後新聞更新：** 2026-08-27
 
 > **最新進展**（2026-08-27）
-> GitHub Issue 回報 Claude 4.7、4.8、5.0 與 Fable 日益預設重複修辭套路、難維持連貫散文，即使給明確風格指示仍難改善，跨模型代際共同問題（106 則留言、517 個反應）；完整記錄見 [[entities/opus-5]]。Opus 4.8 本身自 2026-07-25 起已由 [[entities/opus-5|Claude Opus 5]] 取代次旗艦地位（詳見下方「現況」）。
+> 官方已列 Legacy、退役不早於 2027-05-28，建議遷移 Opus 5（[官方模型頁](https://platform.claude.com/docs/en/models/opus-4-8/overview)，2026-09-07 查證）。GitHub Issue 回報 Claude 4.7、4.8、5.0 與 Fable 日益預設重複修辭套路、難維持連貫散文，即使給明確風格指示仍難改善，跨模型代際共同問題（106 則留言、517 個反應）；完整記錄見 [[entities/opus-5]]。Opus 4.8 本身自 2026-07-25 起已由 [[entities/opus-5|Claude Opus 5]] 取代次旗艦地位（詳見下方「現況」）。
 
 ---
 
@@ -52,7 +52,7 @@ Claude Opus 4.8 於 2026-05-28 正式發布，同步推出 Dynamic Workflows（R
 | 項目 | 評分 |
 |------|------|
 | 社群熱度 | 🔥🔥🔥🔥 |
-| 試用價值 | ⚡ 有條件推薦 |
+| 試用價值 | ⚡ 有條件推薦（2026-09-07 判定）|
 | 最適合 | 大型 agentic 任務、multi-step 工作流、需要 1M context 的長文件處理 |
 | 不適合 | 追求穩定性的生產環境（初期社群反映有行為退步）|
 
@@ -66,7 +66,7 @@ Claude Opus 4.8 於 2026-05-28 正式發布，同步推出 Dynamic Workflows（R
 |------|------|
 | SWE-bench Pro | 69.2% |
 | Context Window | 1M tokens |
-| 定價 | 與 Opus 4.7 相同 |
+| 定價 | $5 / $25（與 Opus 5 同價）|
 | Fast Mode 速度 | 2.5× 標準速度 |
 | Fast Mode 費用 | 前代的 1/3 |
 | Dynamic Workflows 子代理上限 | 1,000 個平行子代理 |
