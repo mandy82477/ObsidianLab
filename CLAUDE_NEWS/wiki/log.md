@@ -6052,3 +6052,16 @@ GH Actions 抓料排 10:23 UTC，到 14:45 UTC 仍未落地（+4.4 小時且持�
 - 品質備註：本輪雲端環境的淺 clone 問題（連續多輪造成 `test_devpractice_diff.TestStateRoundtrip.test_cli_show_runs` FAIL）由 devpractice 記者以唯讀 `git fetch --unshallow` 排除，`python scripts/run_tests.py` 全庫 620 案例回歸全綠；此為環境層修復非本輪內容編輯所致，供後續 cloud_bootstrap.py 是否應納入 unshallow 步驟參考
 
 - 收尾備註（2026-09-07）：本輪因環境 stop-hook（偵測未提交/未推送變更即擋下）在等待背景記者（人物→安全政策→功能→社群→商業→devpractice/market）期間多次要求先 commit+push，導致偏離「單一 push」設計、實際分 8 次推送（STARTED 心跳、news+signals、emitted-cache confirm、wiki 分批×5、web build）。與 2026-09-05 同型態：分散在近一小時內的循序推送非同時競爭，不致觸發 Pages 部署互搶，且提早推送降低容器中途回收的資料遺失風險，故接受此次偏離。
+
+## 2026-09-08 Ingest
+
+- 來源日報：[[news/2026-09-08]]
+- 更新頁面：entities/claude-code、entities/opus-5、entities/fable-5、entities/mythos、entities/sonnet-5、topics/anthropic-business、topics/competitor-landscape、topics/anthropic-government-policy、topics/community-tech-patterns、topics/market-signals
+- 新增頁面：無
+- 摘要：Anthropic 傳 IPO 延至十月、估值上看兩兆美元，並與 OpenAI 同步爭取投資級信評；同日傳撤回以 60 億美元收購以色列新創 Decart，五家財經/以色列媒體同步跟進；Claude Code 爆出兩起高討論度 bug（#26224 卡死凍結 131 則留言、#32479 GitHub Connector 未辨識 96 則留言）；Claude 文字浮水印政策引發學生與作者疑慮；模型記者藉此輪一次更正 09-03 全模型錯誤率事件在 opus-5/fable-5/mythos/sonnet-5 四頁的解決時間口徑（14:38→16:16 UTC），並清 2 筆積壓轉知帳本（H-99db87、H-1da51a）；社群記者今日 13 則候選僅 1 則（Claude Code Skill 影片剪輯工具，500★）達收錄門檻，其餘因分數/來源不足判定不收；devpractice 記者沉澱 3 筆候選（auto-memory 門檻可設定化訴求、雲端 session 微虛擬機基礎架構一手拆解、Skill 工具收錄）；投資分析記者新增 1 則 🔴 判讀（IPO 與信評分屬股權/債權兩種資本市場動作），並主動標記本頁本週判讀密度略高於規則檔預期（5 則，高於每週 3–5 則區間上緣），提醒下週收斂判準。
+- devpractice 沉澱：候選 3 筆；基準線 6aeca0b320→18d5638870
+- market 判讀：1 則（🔴 1／🟡 0）；⚠️ 本週累計 5 則判讀，記者已自我收斂本輪判準（Decart 收購案因找不到可交易上市標的、答不出「方向」欄而不寫）
+- 呈現品質：全部通過（各記者機械自查 `check_cell_limits.py` / `check_reader_language.py` / `check_pending_markers.py` 均為 OK；投資分析記者首次執行 `check_reader_language.py` 命中「門檻」一詞內部語言外洩，已自行改寫為「這個標準」後重跑通過）
+- 品質備註：無
+
+- 收尾備註（2026-09-08）：本輪雲端環境（同前例）在等待背景記者期間多次被 stop-hook 要求先 commit，故沿用 2026-09-05／09-07 已接受的偏離模式——分批 interim commit（不 push），單一 push 仍留待 Step 5 統一執行；分批 commit 彼此相隔數分鐘至數十分鐘，無並發競爭風險。
