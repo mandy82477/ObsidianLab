@@ -28,8 +28,8 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 **領域：** 💼 商業
 **蒐集邊界：** 以 Claude 為參照系的競品動態為主，另針對競品發布與定價定向補抓（每日至多 2 則）；競品自身未與 Claude 對比的發布可能延遲或缺漏。**帶跑分數字的第三方對照評測收不到**——這類內容多發表於對照型部落格，不在本站蒐集範圍，因此本頁的競品能力比較以官方數字與社群並排實測為主，缺口處改指向外部活榜單（見 [[topics/model-comparison]] 的外部評測榜單節），不自行推算。
 **開始日期：** 2026-04
-**最後更新：** 2026-09-07
-**最後新聞更新：** 2026-09-07
+**最後更新：** 2026-09-08
+**最後新聞更新：** 2026-09-08
 
 > **本週衝擊**（2026-09-04）
 > - 🔴 **價格戰打到產品層**：Meta Muse Code 結束 beta、推三層訂閱主打低價（09-01）——但月費沒公布，想比價還比不了，先別急著算換算成本。
@@ -210,6 +210,9 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 - [[entities/claude-code]]、[[entities/google-investment]]、[[entities/opencode]]、[[topics/enterprise-cost-management]] — 對應實體與成本主題。
 
 ## 時序
+
+### 2026-09-08
+- **Logitech**：推出可自訂快捷鍵的 MX Keypad，鎖定開發者作為多應用 AI 控制中心，廠商自宣性質，無 Claude 對比（Topic Watch）
 
 ### 2026-09-07
 - **xAI（Grok 4.5）**：官方定價 $2/$6 per Mtok，宣稱優於 GPT-5 與 Claude；詳見「對手雷達」與「競品定價對照」新增列（Google News/shattered.io）
