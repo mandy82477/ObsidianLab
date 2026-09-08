@@ -21,13 +21,7 @@
       "time": "09/07 11:12",
       "sentiment": "",
       "body": "Claude Code Status v1.0.25 在每次開啟 Cursor 或 VS Code 整合終端機時都重複跳出同一則環境貢獻警告，累積 46 則留言、86 個讚。",
-      "focusTags": [],
-      "sedimented": [
-        {
-          "id": "claude-code",
-          "pageType": "entity"
-        }
-      ]
+      "focusTags": []
     },
     {
       "title": "[BUG] Text cannot be copied from Claude Code's output using Ctrl+Shift+C or right-click context menu.",
@@ -36,13 +30,7 @@
       "time": "09/06 23:04",
       "sentiment": "",
       "body": "使用者回報 Ctrl+Shift+C 與右鍵選單皆無法複製 Claude Code 輸出的文字，累積 42 則留言、68 個讚。",
-      "focusTags": [],
-      "sedimented": [
-        {
-          "id": "claude-code",
-          "pageType": "entity"
-        }
-      ]
+      "focusTags": []
     },
     {
       "title": "How a tiny Anthropic team became a surprisingly productive hit factory - Business Insider",
@@ -60,13 +48,7 @@
       "time": "09/07 15:55",
       "sentiment": "",
       "body": "Agent 框架腳手架工具，可生成自帶 CLI、MCP 伺服器、記憶與學習迴圈的專屬 agent harness，支援 Claude Code、Codex 等多種工具；634 星，達 GitHub repo 中門檻（≥300 星）。今日另有 3 款同類 agent 工具同批亮相（見下列三則）。",
-      "focusTags": [],
-      "sedimented": [
-        {
-          "id": "claude-code",
-          "pageType": "entity"
-        }
-      ]
+      "focusTags": []
     },
     {
       "title": "nirholas/XActions",
@@ -84,13 +66,7 @@
       "time": "09/07 15:55",
       "sentiment": "",
       "body": "開源 AI 影片工作台，可讓 Claude Code、Codex、Cursor 透過 MCP 指揮腳本、生成與剪輯流程；500 星。",
-      "focusTags": [],
-      "sedimented": [
-        {
-          "id": "claude-code",
-          "pageType": "entity"
-        }
-      ]
+      "focusTags": []
     },
     {
       "title": "shlokkhemani/rabbithole",
@@ -214,13 +190,7 @@
       "time": "09/07 04:18",
       "sentiment": "",
       "body": "Coop 提供隔離的 VM 環境跑 Claude Code 與 Codex，讓 agent 在無法碰到其他專案或個人檔案的情況下運作，Hacker News 討論中已有使用者表示每天在用。",
-      "focusTags": [],
-      "sedimented": [
-        {
-          "id": "claude-code",
-          "pageType": "entity"
-        }
-      ]
+      "focusTags": []
     },
     {
       "title": "The risks of switching to Codex?",
@@ -229,13 +199,7 @@
       "time": "09/07 15:48",
       "sentiment": "",
       "body": "r/ClaudeCode 貼文詢問從 Claude Code 轉去 Codex 有什麼風險，同日另有一篇分享實際切換心得（見下則），反映訂閱到期前的比較潮。",
-      "focusTags": [],
-      "sedimented": [
-        {
-          "id": "claude-code",
-          "pageType": "entity"
-        }
-      ]
+      "focusTags": []
     },
     {
       "title": "Switching from claude to codex",
@@ -433,11 +397,6 @@
   "preview": "Max 訂閱用戶回報幾乎一開工就撞上用量上限，GitHub Issue 湧入 1,492 則留言、725 個讚，配額計算方式與顯示是否透明尚無官方定論。",
   "sedimentedToday": [
     {
-      "id": "claude-code",
-      "name": "Claude Code",
-      "pageType": "entity"
-    },
-    {
       "id": "pricing",
       "name": "Anthropic 訂閱方案與計費政策",
       "pageType": "entity"
@@ -448,48 +407,14 @@
       "pageType": "topic"
     },
     {
-      "id": "anthropic-business",
-      "name": "Anthropic 商業健康度",
-      "pageType": "topic"
-    },
-    {
-      "id": "anthropic-government-policy",
-      "name": "Anthropic 政府與軍事政策",
-      "pageType": "topic"
-    },
-    {
-      "id": "community-tech-patterns",
-      "name": "Claude Code 社群工作流模式",
-      "pageType": "topic"
-    },
-    {
-      "id": "competitor-landscape",
-      "name": "AI 編碼工具競品動態",
-      "pageType": "topic"
-    },
-    {
       "id": "enterprise-tool-tracker",
       "name": "大型企業 AI 編碼工具使用追蹤",
-      "pageType": "topic"
-    },
-    {
-      "id": "market-signals",
-      "name": "投資訊號判讀",
       "pageType": "topic"
     },
     {
       "id": "recursive-self-improvement",
       "name": "AI 遞歸自我改進與全球暫停呼籲",
       "pageType": "topic"
-    },
-    {
-      "id": "skill-interest-watch",
-      "name": "興趣類別 skill 總覽",
-      "pageType": "topic"
     }
-  ],
-  "marketSignal": {
-    "title": "Forbes 二次來源確認 IPO 延後說法，補上時程與信用額度數字",
-    "date": "2026-09-07"
-  }
+  ]
 }

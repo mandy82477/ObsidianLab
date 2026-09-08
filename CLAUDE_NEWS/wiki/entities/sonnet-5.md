@@ -4,14 +4,14 @@ kind: "entity"
 type: "model"
 status: "active（正式發布）"
 domain: "🤖 模型"
-last_updated: "2026-09-06"
+last_updated: "2026-09-08"
 last_news_update: "2026-09-03"
 status_main: "active"
-days_since_news: 4
+days_since_news: 5
 parent: null
 children: "[]"
 page_role: "root"
-days_since_news_subtree: 4
+days_since_news_subtree: 5
 inbound_links: 11
 attribution_count: 3
 attribution_last: "2026-07-31"
