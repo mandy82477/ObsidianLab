@@ -28,12 +28,11 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 **狀態：** ongoing
 **領域：** 🌐 社群
 **開始日期：** 2026-04-25
-**最後更新：** 2026-09-07
-**最後新聞更新：** 2026-09-07
+**最後更新：** 2026-09-08
+**最後新聞更新：** 2026-09-08
 
-> **最新工作流模式**（2026-09-07）
-> - **隔離環境添一款**：coop 提供隔離 VM 跑 Claude Code／Codex，HN 留言有使用者回饋「每天在用」。
-> - **來源等級更正**：Fable 5 編排—便宜模型執行的「46% 成本／96% 效能」數字查無原始官方連結，改列社群轉載（詳見 [[entities/fable-5]]）。
+> **最新工作流模式**（2026-09-08）
+> - **Skills 生態添一款**：zenstory-ai/video-recap-skills 讓 Claude Code Skill 把任意影片剪成中文口述影評，支援剪映格式匯出（GitHub Search 500★）。
 
 ---
 
@@ -161,6 +160,15 @@ Multi-agent 架構與 Skills 設計已是社群定案的做法；還在試的十
 > ⟨Q-nn⟩ 標的是這一則還沒查實的地方，完整說明在該月份分組最後的「懸置細節」。
 
 ### 2026-09
+
+#### zenstory-ai/video-recap-skills：Claude Code Skill 把任意影片剪成中文口述影評，支援剪映匯出（2026-09-08）
+
+- **主線：** —
+- **核心模式：** Claude Code skill，將任意影片自動剪輯成中文口述影評（narration recap），並支援匯出至剪映格式；GitHub Search 累積 500 星
+- **與既有模式的關係：** 補上「Skills 設計」類別一個「影片內容自動化生產」的具體案例，與 aqm857886159/Nomi（開源 AI 影片工作台，MCP 驅動）同屬「coding agent 跨足非程式碼影片生產」取向，差異在本則鎖定單一垂直任務（剪輯成口述影評並匯出剪映格式）而非通用影片工作台
+- **可信度註記：** 僅取得 GitHub Search 星數，無 forks／issues／近期 commit 佐證可查，未另行查證
+- **來源：** GitHub Search（500★）；[GitHub](https://github.com/zenstory-ai/video-recap-skills)
+- **成熟度：** ⏳ 新興（本庫首次收錄，尚無星數以外的社群採用回饋數據）
 
 #### trailofbits/coop：隔離 VM 環境跑 Claude Code 與 Codex，agent 碰不到其他專案或個人檔案（2026-09-07）
 

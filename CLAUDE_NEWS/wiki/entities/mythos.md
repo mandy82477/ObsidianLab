@@ -29,7 +29,7 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 **狀態：** active（出口管制解除，2026-07-01 起全球恢復存取；5.1 已於 2026-09-01 發布，維持信任機構限定存取，未轉為全面公開）
 **領域：** 🤖 模型
 **首次出現：** 2026-04（限定夥伴 Preview）
-**最後更新：** 2026-09-06
+**最後更新：** 2026-09-08
 **最後新聞更新：** 2026-09-03
 
 > **最新進展**（2026-09-01）
@@ -125,8 +125,8 @@ Anthropic 的官方 AI 資安能力研究計畫，Mythos Preview 為核心工具
 ### 解禁後（2026-06-27 起）
 
 #### 2026-09-03
-**Anthropic 狀態頁：多款模型錯誤率升高（截至資料蒐集時尚未標記為已解決）**：
-- Mythos 5.1／5 與 Fable、Opus 全系列同時錯誤率升高。官方 13:41 UTC 鎖定原因，**14:38 UTC 仍未標記已解決**；同時段 Reddit r/ClaudeCode 湧入中斷回報（[Anthropic Status](https://status.claude.com/incidents/461yvfrzpwtt)；[Reddit](https://www.reddit.com/r/ClaudeCode/comments/1w69016/claude_code_server_down_for_a_long_time_now_will/)，2026-09-03）
+**Anthropic 狀態頁：多款模型錯誤率升高（同日 16:16 UTC 已解決，2026-09-07 查證）**：
+- Mythos 5.1／5 與 Fable、Opus 全系列同時錯誤率升高。官方 13:41 UTC 鎖定原因，**同日 16:16 UTC 標記已解決**（2026-09-07 查證，status.claude.com）；同時段 Reddit r/ClaudeCode 湧入中斷回報（[Anthropic Status](https://status.claude.com/incidents/461yvfrzpwtt)；[Reddit](https://www.reddit.com/r/ClaudeCode/comments/1w69016/claude_code_server_down_for_a_long_time_now_will/)，2026-09-03）
 - 屬穩定性事件，非能力或存取政策變化；完整跨模型記錄見 [[entities/fable-5]]
 
 #### 2026-09-01

@@ -29,11 +29,11 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 **狀態：** active（現行次旗艦；前代 Opus 4.8 已列 Legacy）
 **領域：** 🤖 模型
 **首次出現：** 2026-07-25
-**最後更新：** 2026-09-07
+**最後更新：** 2026-09-08
 **最後新聞更新：** 2026-09-03
 
 > **最新動態**（2026-09-03）
-> Opus 5 連同其他世代模型出現錯誤率升高，官方當日 13:41 UTC 鎖定原因；屬平台穩定性事件，非能力或定價變化。官方是否已標記解除，本站截至 2026-09-07 未見更新。
+> Opus 5 連同其他世代模型出現錯誤率升高，官方當日 13:41 UTC 鎖定原因、同日 16:16 UTC 標記已解決（2026-09-07 查證，status.claude.com）；屬平台穩定性事件，非能力或定價變化。
 
 ---
 
@@ -41,7 +41,7 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 
 Opus 5 是**現行的次旗艦**：官方 2026-07-24 發布（本站 07-25 收錄，兩個日期都會看到），取代 [[entities/opus-4-8|Opus 4.8]]。兩代同價，Opus 5 的知識截止晚四個月。它在 Max、Team premium、Enterprise 隨用隨付與 API 上是預設的 Opus，但 Claude Code 的整體預設仍是 Sonnet。
 
-自 2026-07-24 上線以來（截至 2026-09-07），社群累積的全是單一使用者觀感、沒有一則附測試方法或數字；官方那側公布了四個基準數字。兩邊各是什麼證據見下方「這些數字是誰量的」。牌價與方案內含見 [[entities/pricing]]，這份工作該用哪個模型見 [[topics/model-comparison]]。
+自 2026-07-24 上線以來（截至 2026-09-07），社群累積的絕大多數是單一使用者觀感、沒有一則附測試方法或數字——例外見下方「這些數字之外」的 GitHub #77136（106 則留言、517 個反應）與 [[topics/code-quality-decline]] 已查證屬實的 GitHub #80988；官方那側公布了四個基準數字。兩邊各是什麼證據見下方「這些數字是誰量的」。牌價與方案內含見 [[entities/pricing]]，這份工作該用哪個模型見 [[topics/model-comparison]]。
 
 ---
 
@@ -101,7 +101,7 @@ Opus 5 是**現行的次旗艦**：官方 2026-07-24 發布（本站 07-25 收�
 - **一則跨模型的重複修辭套路**（GitHub #77136，106 則留言、517 個反應，08-27）：4.7、4.8、5 與 Fable 同時出現，不是 Opus 5 獨有；追蹤見 [[entities/claude-code]]。
 - **一則第三方跨家指數**（Artificial Analysis，2026-08-10 一次性查證）：當時 Opus 5 在綜合指數微幅領先 Fable 5，數字與當時的比較見下方 07-26 那一則；**現在的跨家排名以 [[topics/model-task-leaderboard]] 為準**，本頁不留跨家分數。
 
-**所以呢**：官方那四個數字全部由 Anthropic 自己提交、沒有人複跑過；社群到今天也沒有一則量化實測能印證或推翻它。要別人量過的跨家排名去 [[topics/model-task-leaderboard]]；要決定這份工作用哪個模型去 [[topics/model-comparison]]。
+**所以呢**：官方那四個數字全部由 Anthropic 自己提交、沒有人複跑過；社群到今天也沒有一則量化實測能印證或推翻它。要別人量過的跨家排名去 [[topics/model-task-leaderboard]]；要決定這份工作用哪個模型去 [[topics/model-comparison]]；「有沒有系統性退步」這條線的狀態去 [[topics/code-quality-decline]]。
 
 ---
 
@@ -157,7 +157,7 @@ Opus 5 是**現行的次旗艦**：官方 2026-07-24 發布（本站 07-25 收�
 
 | 日期 | 事件 |
 |------|------|
-| 2026-09-03 | Anthropic 狀態頁：多款模型錯誤率升高，截至資料蒐集時尚未標記為已解決 |
+| 2026-09-03 | Anthropic 狀態頁：多款模型錯誤率升高，同日 16:16 UTC 已解決（2026-09-07 查證）|
 | 2026-08-28 | Reddit 質疑「Anthropic 是否削弱模型」；另有三模型 code review 比較 ❓待查證⟨Q-01⟩ |
 | 2026-08-27 | GitHub Issue #77136：跨模型代際重複修辭套路；同日另有回饋稱表達方式較 4.8 改善 |
 | 2026-08-26 | tech-insider.org 定價比較標題「$19 Gap」，計算基準 ❓待查證⟨Q-02⟩ |
@@ -172,7 +172,7 @@ Opus 5 是**現行的次旗艦**：官方 2026-07-24 發布（本站 07-25 收�
 
 **歷史記錄細節**
 
-- **2026-09-03**：Opus 5／4.8／4.6 與 Fable、Mythos 全系列同時錯誤率升高。官方 13:41 UTC 鎖定原因，**14:38 UTC 仍未標記已解決**。屬穩定性事件，非能力或定價變化；跨模型完整記錄見 [[entities/fable-5]]（[Anthropic Status](https://status.claude.com/incidents/461yvfrzpwtt)；[Reddit](https://www.reddit.com/r/ClaudeCode/comments/1w69016/claude_code_server_down_for_a_long_time_now_will/)，2026-09-03）
+- **2026-09-03**：Opus 5／4.8／4.6 與 Fable、Mythos 全系列同時錯誤率升高。官方 13:41 UTC 鎖定原因，**同日 16:16 UTC 標記已解決**（2026-09-07 查證）。屬穩定性事件，非能力或定價變化；跨模型完整記錄見 [[entities/fable-5]]（[Anthropic Status](https://status.claude.com/incidents/461yvfrzpwtt)；[Reddit](https://www.reddit.com/r/ClaudeCode/comments/1w69016/claude_code_server_down_for_a_long_time_now_will/)，2026-09-03）
 
 - **2026-08-28**：Reddit r/ClaudeCode 質疑串「Is it even legal for Anthropic to nerf its models this hard?」，使用者抱怨 Opus 5 與 Fable 5 在 Claude Code 中的實際表現遜於預期，質疑模型遭「削弱」；單一使用者觀感回報，無量化數字佐證，延續 08-13、08-20 已記錄的社群觀感分歧模式（[Reddit](https://www.reddit.com/r/ClaudeCode/comments/1w0t53b/is_it_even_legal_for_anthropic_to_nerf_its_models/)，2026-08-28）
   - 同日另有 Reddit 貼文比較 Opus 5、4.7、4.6 在同一份 code review 提示下的表現，情緒中性，僅標題可用；⟨Q-01⟩ ❓ **待查證**（標 2026-08-29｜查 1w0uyu7、code review｜複 2026-09-12）｜**三模型 code review 比較結果具體內容與數字**：RSS 摘要僅標題可用，未見測試方法或分數揭露（[Reddit](https://www.reddit.com/r/ClaudeCode/comments/1w0uyu7/a_comparison_of_opus_5_47_46_running_a_code/)，2026-08-28）

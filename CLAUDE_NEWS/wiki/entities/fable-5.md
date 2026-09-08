@@ -30,7 +30,7 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 **領域：** 🤖 模型
 **別名：** Fable 5, Fable 5.1, Claude Fable 5.1
 **首次出現：** 2026-06-09
-**最後更新：** 2026-09-07
+**最後更新：** 2026-09-08
 **最後新聞更新：** 2026-09-04
 
 > **最新進展**（2026-09-01）
@@ -183,8 +183,8 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 - **服務中斷（非模型特定）**：同日 Anthropic、OpenAI、xAI 三家模型服務上午同時發生罕見中斷，三方對外皆未說明確切成因，原文未指名受影響的具體 Claude 模型，是否與下方 09-03 多模型錯誤率事件相關亦未經證實（[Wired](https://www.wired.com/story/nobody-is-saying-why-openai-and-anthropic-had-outages-today/)，2026-09-04）
 
 #### 2026-09-03
-**Anthropic 狀態頁：多款模型錯誤率升高（截至資料蒐集時尚未標記為已解決）**：
-- Fable 5.1／5 與 Mythos、Opus 全系列同時錯誤率升高。官方 13:41 UTC 鎖定原因，**14:38 UTC 仍未標記已解決**；同時段 Reddit r/ClaudeCode 湧入中斷回報（[Anthropic Status](https://status.claude.com/incidents/461yvfrzpwtt)；[Reddit](https://www.reddit.com/r/ClaudeCode/comments/1w69016/claude_code_server_down_for_a_long_time_now_will/)，2026-09-03）
+**Anthropic 狀態頁：多款模型錯誤率升高（同日 16:16 UTC 已解決，2026-09-07 查證）**：
+- Fable 5.1／5 與 Mythos、Opus 全系列同時錯誤率升高。官方 13:41 UTC 鎖定原因，**同日 16:16 UTC 標記已解決**（2026-09-07 查證，status.claude.com）；同時段 Reddit r/ClaudeCode 湧入中斷回報（[Anthropic Status](https://status.claude.com/incidents/461yvfrzpwtt)；[Reddit](https://www.reddit.com/r/ClaudeCode/comments/1w69016/claude_code_server_down_for_a_long_time_now_will/)，2026-09-03）
 - 屬穩定性事件，非能力或定價變化；Sonnet 5 同日另有一起獨立事件已於 12:56 UTC 解決，完整記錄見 [[entities/sonnet-5]]
 
 #### 2026-09-02

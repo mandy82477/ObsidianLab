@@ -27,12 +27,12 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 **狀態：** ongoing
 **領域：** 💼 商業
 **開始日期：** 2026-05-28
-**最後更新：** 2026-09-07
-**最後新聞更新：** 2026-09-07
+**最後更新：** 2026-09-08
+**最後新聞更新：** 2026-09-08
 
-> **最新動態**（2026-09-07）
-> - **IPO 延至 10 月中，同步鎖定 $150 億信用額度**：Forbes 報導為 ⟨Q-03⟩「IPO 是否已延後」提供較具體的後續，仍非官方確認（見「IPO 走到哪一格」表）。
-> - **11 個月內累計談成 $5,170 億算力交易**：The Information 統計口徑，見「現在的數字」表。
+> **最新動態**（2026-09-08）
+> - **Decart 收購生變**：傳 60 億美元收購以色列新創 Decart 的計畫遭撤回，多家以色列與財經媒體同日跟進（見「哪個合作會改到你用的 Claude」一行制清單）。
+> - **IPO 延至十月、承銷名單將定案**：Yahoo Finance 稱延後十月，Banking Exchange 稱正敲定承銷銀行，估值傳聞仍為 $2 兆（見「IPO 走到哪一格」表）。
 
 ---
 
@@ -83,9 +83,9 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 | 這一格 | 現在的答案 | 誰說的（日期） | 來源等級 |
 |---|---|---|---|
 | 遞件了沒 | 機密遞交草稿已完成，公開版 S-1 未見；兩個遞交日都只有媒體轉述，機密遞交本來就不會有官方公告 | 多家報導（2026-06-01／06-02 兩說） | 一級媒體 |
-| 什麼時候上市 | 公司沒給過時程；投資人先前預期 9–10 月，09-06 單一標題稱已延後，09-07 Forbes 稱延至 10 月中並同步鎖定 $150 億信用額度 ❓ 待查證 ⟨Q-03⟩ | FT、Axios（2026-08-13／08-17）；calcalistech（09-06）；Forbes（09-07） | 一級媒體引投資人／傳聞（僅標題） |
+| 什麼時候上市 | 公司沒給過時程；投資人先前預期 9–10 月，09-07 Forbes 稱延至 10 月中並鎖定 $150 億信用額度，09-08 Yahoo Finance 同步稱延至十月 ❓ 待查證 ⟨Q-03⟩ | FT、Axios（2026-08-13／08-17）；calcalistech（09-06）；Forbes（09-07）；Yahoo Finance（09-08） | 一級媒體引投資人／傳聞（僅標題） |
 | 值多少 | 最後一次定價 $9,650 億；投資人預期 $2 兆 | Series H 公告；FT（2026-05-28／08-13） | 官方一手／一級媒體 |
-| 誰承銷 | Morgan Stanley、Goldman Sachs；JPMorgan 一項為媒體轉述 | FT、NYT（2026-09-04） | 一級媒體 |
+| 誰承銷 | Morgan Stanley、Goldman Sachs；JPMorgan 一項為媒體轉述；09-08 Banking Exchange 稱正敲定最終承銷名單 | FT、NYT（2026-09-04）；Banking Exchange（09-08） | 一級媒體 |
 | 誰說撐不住 | 撐住 $2 兆需第 10 年營收 $1.2 兆；另一說需微軟等級 70% 毛利率 | Damodaran、Stocktwits（2026-08-23／09-02） | 第三方研究 |
 
 **下一個時點：公開版 S-1。** 在它出現之前，所有估值數字都是轉述，彼此差一倍是常態。
@@ -100,8 +100,9 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 **資本佈局背景（推論）：** 近兩週兩條線同步升溫——基礎建設／算力合約線（見下方「哪個合作會改到你用的 Claude」表與其一行制清單：Riot $90 億／20 年、GIC、Macquarie、Volta $100 億、Morgan Stanley $150 億、Google 近 $2,000 億融資機制，其中 08-11 一天內四筆並發）與 IPO／估值／營收線（08-13 傳 $2 兆估值、08-15 Reuters 獨家指估值繫於 2028 年 $1,900–2,000 億營收預測、同日 Q2 營收超過 $115 億）。時間點重疊指向：長年期算力鎖定與遠期營收預測可能是同一套 IPO 敘事的兩面——算力合約支撐「產能撐得住 2028 年營收目標」的可信度，遠期營收預測則是估值定價的錨點（推論，非官方明述之因果）。兩條線本身各自完整記錄於既有表格與清單，此處僅為並置解讀，不重複列出個別事件。
 
 **IPO 細節**
-- ⟨Q-03⟩ ❓ **待查證**（標 2026-09-06｜查 calcalistech、IPO 延後｜複 2026-09-20｜訊 2026-09-07）｜**IPO 時程是否已延後**：calcalistech 標題稱 IPO 已延後；同日 ETF Trends 標題卻暗示已有 S-1 可解讀，兩者矛盾，均僅標題可用，原文未能取得。
+- ⟨Q-03⟩ ❓ **待查證**（標 2026-09-06｜查 calcalistech、IPO 延後｜複 2026-09-20｜訊 2026-09-08）｜**IPO 時程是否已延後**：calcalistech 標題稱 IPO 已延後；同日 ETF Trends 標題卻暗示已有 S-1 可解讀，兩者矛盾，均僅標題可用，原文未能取得。
 - **訊 2026-09-07 追蹤**：Forbes 報導 IPO 延至 10 月中，同步鎖定 $150 億信用額度（此前 08-18 報導規模為「逾 100 億」，本次更具體）；仍為單一媒體來源，未見官方確認，詳見「IPO 走到哪一格」表。
+- **訊 2026-09-08 追蹤**：Yahoo Finance 同日再稱 IPO 延至十月，與 09-07 Forbes 說法一致但仍為單一媒體轉述；同日 Banking Exchange 報導 Anthropic 就潛在 $2 兆 IPO 案即將敲定承銷銀行名單，兩者均未見官方確認，詳見「IPO 走到哪一格」表。
 - 若延後屬實，將是本鏈條首見「時程倒退」訊號，與既有「投資人預期 9–10 月」（FT、Axios，08-13／08-17）方向相反；具體延後至何時、原因均未見報導，官方頁面未查證。
 - **2026-08-26 TAM 30 兆美元**：Hacker News 雙帖（39 分，連結 WSJ；20 分，另有 Reuters 獨立報導同一事件）報導 Anthropic 傳將向投資人簡報，宣稱 AI 服務整體潛在市場（TAM）規模上看 30 兆美元；Anadolu Ajansı、Moomoo（兩則）同步報導。**須嚴格區分**：30 兆美元為 AI 服務整體潛在市場總量，非 Anthropic 宣稱可實際拿下的營收，HN 討論明確指出「$30T is probably absurd... total addressable market... not that they will capture 100% of that market」；與同日 Fortune 報導之 2 兆美元 IPO 估值傳聞相比，兩者衡量口徑（公司估值 vs 市場總量）不同，不可混為一談（推論，本頁首次並置提醒兩者口徑差異）。市場反應呈現「官方樂觀敘事 vs 外部懷疑」對立：Yahoo Finance 標題直指此數字「僅為整個科技業規模的 12 倍」帶懷疑語氣；Marcus on AI（Substack）評論文章直批「$30 trillion fantasy」；24/7 Wall St. 引述知名創投人 Chamath Palihapitiya 對 2 兆美元 IPO 前景提出質疑（詳見「現在還打得到你的商業風險」表）。具體簡報內容、對象、時程未見報導，均僅標題或部分內文可用。
 - **2026-08-24 治理權分析**：Bloomberg 發表分析文章〈Who Should Control Anthropic?〉，探討公司治理與控制權結構。與 08-18 的「創辦人保留超級投票權」籌備信號同屬公司治理敘事，本則首次以獨立分析文章形式正面探討「誰該控制 Anthropic」的治理權問題，可能反映市場對創辦人集中控制權（若超級投票權屬實）之於一般股東權益的疑慮開始浮上檯面（推論）；具體論點（董事會結構、創辦人持股比例、監理機構角色等）未見報導，僅標題可用，屬評論分析而非事實揭露。
@@ -322,7 +323,7 @@ Financial Times 報導 Anthropic 旗艦模型在吸引一般使用者（general 
 - **一般大眾／企業客戶（Claude Academy）**（2026-08-23）：推出免費 AI 課程與企業導入指南，首度面向一般大眾（EdTech Innovation Hub）
 - **Casper Studios**（2026-08-20）：Ode（Anthropic/Blackstone 合資）收購顧問公司 Casper Studios，金額未公開（crn.com；Seeking Alpha）
 - **Anthropic 關聯資料中心（未具名）**（2026-08-19）：取得 13 億美元私募信貸貸款（Yahoo Finance）
-- **Decart**（2026-08-13）：洽購以色列世界模型新創，約 60→70 億美元，仍在洽談中（Bloomberg；Reuters）
+- **Decart**（2026-08-13 洽購、2026-09-08 撤回）：原擬以約 60–70 億美元收購以色列世界模型新創 Decart，09-08 傳出計畫遭撤回，以色列與財經媒體同日密集跟進（PYMNTS；Bloomberg；calcalistech；Ynetnews；Globes）
 - **Riot Platforms**（2026-08-11）：與加密礦業公司簽署 90 億美元、20 年雲端運算協議（多家媒體）
 - **GIC**（2026-08-11）：與新加坡主權基金合作開發資料中心（多家媒體）
 - **Macquarie**（2026-08-11）：與澳洲金融集團合作開發資料中心（多家媒體）
@@ -414,7 +415,7 @@ Financial Times 報導 Anthropic 旗艦模型在吸引一般使用者（general 
 - **Claude Academy（08-23）**：EdTech Innovation Hub 報導 Anthropic 推出「Claude Academy」，提供免費 AI 課程與企業導入指南（workplace rollout guides）。與既有 UST（07-10，訓練兩萬名工程師顧問）、DXC（06-12，訓練數萬名認證工程師）等企業客戶端「培訓認證」模式不同，本次是 Anthropic 首度以自身名義面向一般大眾推出免費課程，可能是為即將到來的 IPO 路演強化「普及化 AI 教育」的公眾敘事，同時降低企業導入 Claude 的教育門檻（推論）；具體課程內容、涵蓋範圍、與既有「Claude 認證」（Frontier Certified，見 Cognizant 07-28 列）人才梯隊的關係未見報導，僅標題可用。08-26 跟進（ababnews.com，非新事實）：❓ **待查證**（標 2026-08-26｜查 ababnews.com、免費課程｜複 2026-09-09）｜**ababnews.com 來源可信度**：轉載同一 Claude Academy 免費課程消息，未見新增課程內容或範圍細節；來源網站知名度不明，本則資訊採信度低於 08-23 EdTech Innovation Hub 原始報導。已掃日報至 2026-09-02 無後續；官方頁面未查證。
 - **Casper Studios（08-20）**：crn.com、Seeking Alpha、The Information 三方同日報導：與 Anthropic 關聯的 AI 服務公司 Ode（見 07-16 的 Anthropic／Blackstone 合資 $15 億美元 AI 導入公司）收購顧問公司 Casper Studios。延續 07-15/16 的 Ode 定位論述——「下一個兆美元級 AI 商機在於實作，而非模型本身」，本次是 Ode 成立後首度公開的具名收購案，從「合資成立公司」進一步落實為「透過併購擴大導入服務能量」，若此模式延續，Ode 可能持續透過併購顧問/實作公司擴張版圖，直接進入 Accenture、TCS、DXC 等既有戰略夥伴業務領域（推論，延續 07-16 的潛在競合關係觀察）；具體收購金額、Casper Studios 規模與客戶基礎、整合時程均未見報導，僅標題可用。
 - **Anthropic 關聯資料中心私募信貸（08-19）**：Yahoo Finance 報導一座與 Anthropic 相關的資料中心取得規模達 13 億美元的私募信貸（private credit）貸款。延續近期 TeraWulf（07-06，$19B 20 年租約）、Volta（08-04，$100 億美元）、Morgan Stanley（08-02，$150 億美元）等基礎設施擴張系列信號，本則首次出現以「私募信貸」（債務融資，區別於股權投資或雲端運算協議）形式直接為 Anthropic 關聯資料中心籌資的具名案例，顯示算力基礎設施融資管道正進一步向債務資本市場延伸（推論）；具體資料中心名稱、地點、承貸方、與 Anthropic 的合約關係（自建、租賃或合資）均未見報導，僅標題可用。
-- **Decart（08-13起多輪跟進）**：Bloomberg、Reuters、Gizmodo 等多家媒體同日報導 Anthropic 正洽購世界模型 AI 新創 Decart，交易金額約 60 億美元；calcalistech 特別指出 Decart 為以色列 AI 新創。若成真將是 Anthropic 首度公開洽購「世界模型」（world model，區別於既有語言模型核心業務）新創的具名案例，可能代表產品線向多模態／物理世界模擬方向擴張的訊號（推論）；Hacker News 討論串（08-13）出現質疑聲音，部分留言認為此舉是為搶版面而非聚焦既有模型的成本與效能改善。具體交易條款、是否已簽署最終協議未見報導，僅屬洽談階段。08-14 跟進（延續報導，非新事實）：Yahoo Finance 確認交易仍在洽談階段、尚未定案，同一 $6B 數字；calcalistech 另發表分析文章解讀 Anthropic 為何願付此價碼，屬同一事件的分析視角，未見新增交易條款。08-16 跟進（單一來源，未經證實）：calcalistech 報導交易規模上修至約 70 億美元（此前 08-13/14 報導約 $60 億美元），並稱 Anthropic 在競價中先於 Nvidia 一步談成；此為單一來源消息，尚未見其他媒體佐證或官方確認，金額上修幅度與「先於 Nvidia 談成」的競價細節均待其他來源查證。08-23 跟進（分析文章，非新事實）：calcalistech 發表分析文章，主張若 Anthropic 順利完成 IPO，這筆 70 億美元交易的價值可能大幅升值；屬既有交易的估值後續分析視角，未見新增交易條款、進度或金額，僅標題可用。
+- **Decart（08-13起多輪跟進）**：Bloomberg、Reuters、Gizmodo 等多家媒體同日報導 Anthropic 正洽購世界模型 AI 新創 Decart，交易金額約 60 億美元；calcalistech 特別指出 Decart 為以色列 AI 新創。若成真將是 Anthropic 首度公開洽購「世界模型」（world model，區別於既有語言模型核心業務）新創的具名案例，可能代表產品線向多模態／物理世界模擬方向擴張的訊號（推論）；Hacker News 討論串（08-13）出現質疑聲音，部分留言認為此舉是為搶版面而非聚焦既有模型的成本與效能改善。具體交易條款、是否已簽署最終協議未見報導，僅屬洽談階段。08-14 跟進（延續報導，非新事實）：Yahoo Finance 確認交易仍在洽談階段、尚未定案，同一 $6B 數字；calcalistech 另發表分析文章解讀 Anthropic 為何願付此價碼，屬同一事件的分析視角，未見新增交易條款。08-16 跟進（單一來源，未經證實）：calcalistech 報導交易規模上修至約 70 億美元（此前 08-13/14 報導約 $60 億美元），並稱 Anthropic 在競價中先於 Nvidia 一步談成；此為單一來源消息，尚未見其他媒體佐證或官方確認，金額上修幅度與「先於 Nvidia 談成」的競價細節均待其他來源查證。08-23 跟進（分析文章，非新事實）：calcalistech 發表分析文章，主張若 Anthropic 順利完成 IPO，這筆 70 億美元交易的價值可能大幅升值；屬既有交易的估值後續分析視角，未見新增交易條款、進度或金額，僅標題可用。**09-08 交易生變**：PYMNTS 首報 Anthropic 撤回收購計畫，同日 Bloomberg、calcalistech（兩則）、Ynetnews、Globes 密集跟進，以色列與國際財經媒體反應之密集為本鏈條少見；calcalistech 一則標題另暗示有分析撤回原因，但本輪僅標題可用，具體原因、是否徹底終止談判或僅暫停均未見報導。
 - **Riot Platforms（08-11）**：多家媒體報導 Anthropic 與加密貨幣礦業公司 Riot Platforms 簽署規模達 90 億美元、為期 20 年的雲端運算協議。延續近期 Volta（08-04，$100 億美元）、Morgan Stanley（08-02，$150 億美元）等基礎設施擴張系列信號，Riot Platforms 是又一家非傳統雲端商（加密貨幣礦業公司轉型算力供應）加入 Anthropic 算力供應鏈的具名案例，且合約期限長達 20 年，顯示 Anthropic 正鎖定長期穩定算力來源以因應持續擴張的運算需求（推論）；具體交易結構、生效時程未見報導，僅標題可用。
 - **GIC（08-11）**：多家媒體報導 Anthropic 與新加坡主權財富基金 GIC 合作開發資料中心。與同日 Macquarie 合作並列，是 Anthropic 首度出現主權財富基金層級資料中心開發夥伴的具名案例，顯示其基礎設施融資管道正從傳統投行（Morgan Stanley）與科技公司延伸至主權基金（推論）；具體投資規模、資料中心地點未見報導，僅標題可用。
 - **Macquarie（08-11）**：多家媒體報導 Anthropic 與澳洲金融集團 Macquarie 合作開發資料中心，延續 07-05 的澳洲 1.4GW 算力採購佈局（推論），是澳洲市場基礎設施合作的再一具名案例；具體規模、時程未見報導，僅標題可用。
@@ -483,6 +484,13 @@ Financial Times 報導 Anthropic 旗艦模型在吸引一般使用者（general 
 ## 時序
 
 ### 2026-09
+
+#### 2026-09-08
+- **[戰略合作] PYMNTS 等 6 家媒體：Anthropic 撤回收購以色列新創 Decart 計畫**：原擬以約 60–70 億美元收購，09-08 傳出計畫遭撤回，以色列與國際財經媒體同日密集跟進，具體原因未見報導，詳見「哪個合作會改到你用的 Claude」一行制清單（PYMNTS；Bloomberg；calcalistech；Ynetnews；Globes）
+- **[IPO 前瞻] Yahoo Finance：IPO 延至十月**：與 09-07 Forbes 說法一致，仍為單一媒體轉述，詳見「IPO 走到哪一格」表與細節區 ⟨Q-03⟩（Google News/Yahoo Finance）
+- **[IPO 前瞻] Banking Exchange：就潛在 2 兆美元 IPO 案即將敲定承銷銀行名單**：詳見「IPO 走到哪一格」表「誰承銷」列（Google News/Banking Exchange）
+- **[IPO 前瞻] Yahoo Finance＋Financial Times：Anthropic、OpenAI 尋求 IPO 後投資級信評以降低借貸成本**：兩家媒體各自獨立報導同一事件，僅標題可用，具體評等機構、時程未見報導（Google News/Yahoo Finance；Google News/Financial Times）
+- **[公司動態] Fast Company：Anthropic 名列 2026 年最適合創新者工作榜首**（Google News/Fast Company）
 
 #### 2026-09-07
 - **[IPO 前瞻] Forbes：IPO 延至 10 月中，同步鎖定 150 億美元信用額度**：為 ⟨Q-03⟩「IPO 是否已延後」提供較具體後續，仍為單一媒體來源，詳見「IPO 走到哪一格」表與細節區 ⟨Q-03⟩（Google News/Forbes）
