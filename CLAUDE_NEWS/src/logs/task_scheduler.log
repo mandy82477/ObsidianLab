@@ -607,3 +607,4 @@
 [週2 2026/09/08 18:22:00.00] Building web reader...
 [週2 2026/09/08 18:23:00.00] Single push done (news + wiki + web)
 [週2 2026/09/08 18:23:00.00] === Pipeline complete (cloud, 17:00 UTC shift) ===
+[cloud daily-news-pipeline-cloud STARTED 2026-09-08T22:04:40Z]
