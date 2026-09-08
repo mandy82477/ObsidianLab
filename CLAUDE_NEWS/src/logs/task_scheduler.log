@@ -596,3 +596,14 @@
 [2026-09-08T12:05:53Z] === Pipeline aborted（第一班 12:00 UTC，交由後續班次接手）===
 [cloud daily-news-pipeline-cloud ABORTED 2026-09-08] Step 1b 新鮮度防線擋下：src/gathered_items.json 停在 2026-09-07，src/gathered_archive/2026-09-08.json 不存在，代表上游抓料尚未到齊——依 daily.md 裁決（多班次接手），非本班失敗
 [cloud daily-news-pipeline-cloud STARTED 2026-09-08T17:03:48Z]
+[週2 2026/09/08 17:03:48.00] === Cloud pipeline start (2026-09-08, 17:00 UTC shift) ===
+[週2 2026/09/08 17:03:48.00] Step 0: 昨日（2026-09-07）日報存在，正常
+[週2 2026/09/08 17:03:48.00] Step 0b: news/2026-09-08.md 不存在，正常繼續
+[週2 2026/09/08 17:13:00.00] Step 1a: replay src/gathered_archive/2026-09-08.json（50 則，14/14 來源正常）
+[週2 2026/09/08 17:13:00.00] Aggregator OK
+[週2 2026/09/08 17:13:58.00] Step 1c 確認 emitted-cache OK（50 筆確認）
+[週2 2026/09/08 18:20:00.00] Wiki ingest OK（六類記者 + devpractice + market 全數完成；投資分析記者標記本週判讀密度略高，已自我收斂）
+[週2 2026/09/08 18:22:00.00] 測試全綠 - web build 放行（gate 首輪擋下 1 筆懸置標記探針過短，已修復後重跑通過）
+[週2 2026/09/08 18:22:00.00] Building web reader...
+[週2 2026/09/08 18:23:00.00] Single push done (news + wiki + web)
+[週2 2026/09/08 18:23:00.00] === Pipeline complete (cloud, 17:00 UTC shift) ===
