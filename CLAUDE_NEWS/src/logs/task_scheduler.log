@@ -595,3 +595,4 @@
 [2026-09-08T12:05:53Z] ABORTED: gathered_items.json date=2026-09-07 items=44，非目標日期 2026-09-08 的新鮮資料
 [2026-09-08T12:05:53Z] === Pipeline aborted（第一班 12:00 UTC，交由後續班次接手）===
 [cloud daily-news-pipeline-cloud ABORTED 2026-09-08] Step 1b 新鮮度防線擋下：src/gathered_items.json 停在 2026-09-07，src/gathered_archive/2026-09-08.json 不存在，代表上游抓料尚未到齊——依 daily.md 裁決（多班次接手），非本班失敗
+[cloud daily-news-pipeline-cloud STARTED 2026-09-08T17:03:48Z]
