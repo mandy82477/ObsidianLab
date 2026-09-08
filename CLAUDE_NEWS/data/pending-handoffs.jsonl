@@ -148,3 +148,5 @@
 {"id": "H-ae970d", "closed": "2026-09-07", "status": "done", "by": "商業", "result": "pricing.md L61/L83 矛盾已改寫消除，Pro 免另計費最強為 Opus 5"}
 {"id": "H-abc54a", "closed": "2026-09-07", "status": "done", "by": "商業", "result": "pricing.md「事故現在還在發生嗎」表下已加一句指向 code-quality-decline 的Token消耗異常訊號群"}
 {"id": "H-7397a3", "closed": "2026-09-07", "status": "done", "by": "社群", "result": "community-tech-patterns.md與community-pattern-trends.md「46%成本達96%效能」來源等級已改為社群轉載"}
+{"id": "H-99db87", "closed": "2026-09-08", "status": "done", "by": "模型", "result": "09-03 事件解決時間口徑已於 opus-5/fable-5/mythos/sonnet-5 四頁一次更正為 16:16 UTC；opus-5:44「全是」改寫為「絕大多數」並各附指路"}
+{"id": "H-1da51a", "closed": "2026-09-08", "status": "done", "by": "模型", "result": "opus-5「這些數字是誰量的」節補上第三個出口，連結至 topics/code-quality-decline"}
