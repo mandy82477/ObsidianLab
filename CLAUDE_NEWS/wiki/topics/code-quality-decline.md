@@ -6,11 +6,11 @@ domain: "🌐 社群"
 last_updated: "2026-09-07"
 last_news_update: "2026-09-03"
 status_main: "ongoing"
-days_since_news: 5
+days_since_news: 6
 parent: null
 children: "['topics/code-quality-decline-archive']"
 page_role: "hub"
-days_since_news_subtree: 5
+days_since_news_subtree: 6
 inbound_links: 34
 attribution_count: 24
 attribution_last: "2026-08-28"
@@ -198,7 +198,7 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 
 本頁答的是「哪幾條退步線官方回應了、哪幾條沒有，以及你怎麼自己量」。相鄰的頁各答一題，不重複：
 
-- [[entities/claude-code]]「現在會咬到你的」——現在什麼壞了、誰會遇到、怎麼繞（逐個 issue）
+- [[entities/claude-code]]「現在還沒修好的」——現在什麼壞了、誰會遇到、怎麼繞（逐個 issue）
 - [[entities/opus-5]]「這些數字是誰量的」——Opus 5 這個模型的官方基準與社群觀感（逐則原文）
 - [[feature-radar]]「從你現在的版本升上去，會遇到什麼」——升上去會壞什麼；你沒升版卻覺得變慢，才是本頁
 - [[entities/pricing]]「事故現在還在發生嗎」——帳單被扣錯、配額換軌；token 燒得比以前快在本頁

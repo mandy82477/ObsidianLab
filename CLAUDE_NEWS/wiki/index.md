@@ -25,7 +25,7 @@
 |---|---|
 | 接手／新建一個 repo，**官方**建議先做哪些設定（CLAUDE.md、LSP、探索） | [[topics/coding-workflow-guide]] 第 1、2a 段 |
 | 我卡住了（帳單爆、context 撐爆、agent 互踩、它說做完了沒做、agent 讀不懂大 repo、跑 auto 出事……），**社群首選**是哪個 | [[topics/skill-interest-watch]]「我卡在這裡」決策表；安全類 → [[topics/ai-agent-safety]] |
-| 我在舊版本，升上去會壞什麼 | [[feature-radar]]「從你現在的版本升上去，會遇到什麼」；壞掉的東西見 [[entities/claude-code]]「現在會咬到你的」 |
+| 我在舊版本，升上去會壞什麼 | [[feature-radar]]「從你現在的版本升上去，會遇到什麼」；壞掉的東西見 [[entities/claude-code]]「現在還沒修好的」 |
 | 我沒升版，但它好像變慢了、帳單也變多（是模型退步、計費、還是我的用法） | [[topics/code-quality-decline]]「三條線現在到哪」；帳單本身見 [[entities/pricing]] |
 | 這個月我會多花／少花多少（方案內含什麼、一小時多少、有沒有在扣錯錢） | [[entities/pricing]] |
 | 這家公司撐不撐得住、會不會漲價、該不該簽兩年約（估值、IPO、營收、風險） | [[topics/anthropic-business]]「現在的數字」；市場判讀見 [[topics/market-signals]] |
@@ -40,7 +40,7 @@
 | 社群現在怎麼玩、哪些做法已經定案、哪個方向在加溫 | [[topics/community-tech-patterns]]「模式概覽」；加溫中的方向見 [[topics/community-pattern-trends]] |
 | 看某個做法的第一手證據（原文連結、實測數字） | [[topics/community-tech-patterns]] |
 | 社群在吵什麼觀念、哪些吵完了、哪些還僵著 | [[topics/community-tech-discussions]]「現在吵到哪」 |
-| 我要開 auto 模式、接 MCP、或 clone 外部 repo，先看什麼會打到我 | [[topics/ai-agent-safety]]「現在會打到你的」 |
+| 我要開 auto 模式、接 MCP、或 clone 外部 repo，先看什麼會打到我 | [[topics/ai-agent-safety]]「現在還擋不住的攻擊」 |
 | 政府動作會不會讓我哪天用不到 Claude、或用到被降級的版本（海外據點、輸出浮水印、高風險請求換模型） | [[topics/anthropic-government-policy]]「現在有哪幾條線在動」 |
 
 ---

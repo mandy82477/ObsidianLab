@@ -7,11 +7,11 @@ domain: "💼 商業"
 last_updated: "2026-09-07"
 last_news_update: "2026-09-07"
 status_main: "active"
-days_since_news: 1
+days_since_news: 2
 parent: null
 children: "['entities/pricing-archive']"
 page_role: "hub"
-days_since_news_subtree: 1
+days_since_news_subtree: 2
 inbound_links: 139
 attribution_count: 87
 attribution_last: "2026-09-07"
@@ -449,7 +449,7 @@ Anthropic 於 4 月初靜默縮短預設 prompt cache 窗口，實質提高 toke
 
 #### 2026-08-01：XDA 報導多數用戶未留意 Fable 5 免費促銷已悄悄改變計費方式（媒體視角補充，非新事實）
 
-- **XDA：免費促銷附帶靜默計費異動，多數用戶未察覺**：XDA 文章稱先前 Fable 5 相關的 $100 免費體驗促銷附帶改變了 Claude 計費方式，多數使用者並未留意。**與既有事實的關係（推論，待證實是否同一事件）**：本頁已記錄 Fable 5 免費期歷經多次延長（06-09→07-01→07-07/08→07-12→07-19）後轉為 usage-based billing；本則僅標題可用，無費率、額度換算或生效時間等新細節，無法確認是同一轉換事件或另一項獨立異動。若為同一事件，本則的獨特角度是「多數用戶未察覺計費已變」的認知落差，呼應本頁一貫記錄的「靜默計費改動損傷信任」風險（見 [[topics/anthropic-business]]「現在還打得到你的商業風險」表）（Google News/XDA）
+- **XDA：免費促銷附帶靜默計費異動，多數用戶未察覺**：XDA 文章稱先前 Fable 5 相關的 $100 免費體驗促銷附帶改變了 Claude 計費方式，多數使用者並未留意。**與既有事實的關係（推論，待證實是否同一事件）**：本頁已記錄 Fable 5 免費期歷經多次延長（06-09→07-01→07-07/08→07-12→07-19）後轉為 usage-based billing；本則僅標題可用，無費率、額度換算或生效時間等新細節，無法確認是同一轉換事件或另一項獨立異動。若為同一事件，本則的獨特角度是「多數用戶未察覺計費已變」的認知落差，呼應本頁一貫記錄的「靜默計費改動損傷信任」風險（見 [[topics/anthropic-business]]「還沒過去的風險」表）（Google News/XDA）
 
 #### 2026-07-29：印度盧比定價訴求 GitHub Issue #17432 互動持續攀升，距官方 07-13 回應已 16 天
 

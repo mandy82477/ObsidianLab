@@ -7,11 +7,11 @@ domain: "💼 商業"
 last_updated: "2026-09-06"
 last_news_update: "2026-06-14"
 status_main: "resolved"
-days_since_news: 86
+days_since_news: 87
 parent: "topics/anthropic-business"
 children: "[]"
 page_role: "archive"
-days_since_news_subtree: 86
+days_since_news_subtree: 87
 inbound_links: 0
 attribution_count: 0
 attribution_last: null
@@ -33,7 +33,7 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 **最後更新：** 2026-09-06
 **最後新聞更新：** 2026-06-14
 
-> 本頁是 [[topics/anthropic-business]] 的原始條目封存，重點層（現在的數字、IPO 走到哪一格、還打得到你的風險）都在主頁。
+> 本頁是 [[topics/anthropic-business]] 的原始條目封存，重點層（現在的數字、IPO 走到哪一格、還沒過去的風險）都在主頁。
 
 ## 2026-06
 

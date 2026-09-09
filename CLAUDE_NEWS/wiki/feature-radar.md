@@ -45,7 +45,7 @@
 **這張表不涵蓋什麼**
 
 - **CLI 之外**：anthropic-sdk-python v1.0.0（2026-08-20）把 client 升到 httpx2，影響的是用該 SDK 寫的整合程式碼，不是 CLI 升版本身。
-- **與版本無關的未修問題**：升不升版都在，而且各自只發生在特定產品或平台上，見 [[entities/claude-code]]「現在會咬到你的」。**上表你都對不上號，版本面就沒有東西擋著你升級。**
+- **與版本無關的未修問題**：升不升版都在，而且各自只發生在特定產品或平台上，見 [[entities/claude-code]]「現在還沒修好的」。**上表你都對不上號，版本面就沒有東西擋著你升級。**
 - **其餘預設值改變**（2.1.217–219 巢狀子代理深度、2.1.218、2.1.221、2.1.224、2.1.229、2.1.251）與三個月前的破壞性變更（2.1.160 `workflow` 更名 `ultracode`）見[官方 changelog](https://raw.githubusercontent.com/anthropics/claude-code/main/CHANGELOG.md)；逐版異動見 [[entities/claude-code#版本更新]]。
 
 > Fable 5 Defense in Depth 誤判非升版可解，見 [[entities/fable-5]]。

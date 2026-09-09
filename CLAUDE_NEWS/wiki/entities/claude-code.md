@@ -7,18 +7,18 @@ domain: "🛠️ 工具/功能"
 last_updated: "2026-09-08"
 last_news_update: "2026-09-08"
 status_main: "active"
-days_since_news: 0
+days_since_news: 1
 parent: null
 children: "[]"
 page_role: "root"
-days_since_news_subtree: 0
+days_since_news_subtree: 1
 inbound_links: 85
 attribution_count: 456
 attribution_last: "2026-09-08"
 top_source: "github-issues"
 pending_count: 22
-pending_overdue: 1
-pending_next_review: "2026-09-09"
+pending_overdue: 14
+pending_next_review: "2026-09-10"
 pending_signalled: 1
 signal: "健康"
 generated_by: "scripts/gen_wiki_frontmatter.py"
@@ -35,7 +35,7 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 > **最新動態**（2026-09-08）
 > - **新增已知問題**：功能請求「`MEMORY.md` 記憶壓縮提醒門檻可設定化」（#91188，見「行為與品質」）。
 > - **互動數更新**：提示卡住/凍結 5–20 分鐘以上（#26224，128→131 留言、150→151 讚，全站今日互動最高）；GitHub Connector 未被識別（#32479，76→96 留言、138→143 讚）；申訴表單重新導向迴圈（#62503，31→40 留言）。
-> - **這禮拜你會遇到什麼**：見下方「現在會咬到你的」；升版判斷見 [[feature-radar]]「從你現在的版本升上去，會遇到什麼」。
+> - **這禮拜你會遇到什麼**：見下方「現在還沒修好的」；升版判斷見 [[feature-radar]]「從你現在的版本升上去，會遇到什麼」。
 ---
 
 ## 現況
@@ -83,11 +83,11 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 
 ---
 
-## 現在會咬到你的
+## 現在還沒修好的
 
-只列現在還會發生、而且是壞掉而非還沒做的問題。**每一列都寫出誰會遇到**——多數只發生在特定產品或平台上，對不上號就不會咬到你。狀態五值：🔴 未修復／✅ 已修復／⛔ 官方拒修／❓ 待查證／🔎 查無官方。上限 8 列；完整清單見下方「已知問題」分組。
+只列現在還會發生、而且是壞掉而非還沒做的問題。**每一列都寫出誰會遇到**——多數只發生在特定產品或平台上，對不上號的就不會發生在你身上。狀態五值：🔴 未修復／✅ 已修復／⛔ 官方拒修／❓ 待查證／🔎 查無官方。上限 8 列；完整清單見下方「已知問題」分組。
 
-| 現在會咬到你的 | 誰會遇到 | 狀態 | 你能做什麼 |
+| 現在還沒修好的 | 誰會遇到 | 狀態 | 你能做什麼 |
 |---|---|---|---|
 | Windows Desktop 崩潰／孤兒程序／session 消失，紀錄可能被靜默清除（#80444 #42776 #26302 #53247 #26452 #59248） | Windows Desktop（含 Cursor 擴充套件）使用者 | 🔴 | 升級前備份重要對話；當機後登出或重開機再試；別依賴自動保留機制 |
 | Cowork 的 Edit/Write 靜默截斷檔案（#53940） | Windows 上用 Cowork 的人 | 🔴 | 寫入後自行核對檔案長度；官方未給修復時程（44 則留言，可重現） |
@@ -98,7 +98,7 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 | MCP OAuth 在 `resource` 參數尾端多一個斜線，Entra ID 驗證失敗（#52871） | 企業 SSO 走 Microsoft Entra ID | 🔴 | 無繞法；改用非 SSO 的連線方式 |
 | 排程 routine 呼叫 custom connector 的 MCP 工具一律要求核准（#61015） | 用排程 routine 的人 | 🔴 | 無繞法；改為手動觸發 |
 
-本表只收 Claude Code 自身的故障；提示注入、供應鏈與帳號被劫這類會打到你的安全問題不在本表，見 [[topics/ai-agent-safety]]「現在會打到你的」。
+本表只收 Claude Code 自身的故障；提示注入、供應鏈與帳號被劫這類外部攻擊面的安全問題不在本表，見 [[topics/ai-agent-safety]]「現在還擋不住的攻擊」。
 
 **接下來看什麼**：這幾條翻 ✅ 的那一天會寫在本頁分組裡，升版判斷見 [[feature-radar]]「從你現在的版本升上去，會遇到什麼」；官方建議的做法見 [[topics/coding-workflow-guide]]。
 
@@ -107,7 +107,7 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 ## 已知問題
 
 > 按主題分組；各組內大致依回報時間倒序。每條開頭的狀態標記回答「現在還會發生嗎」：🔴 未修復 / ✅ 已修復（註明修復版本）/ ⛔ 官方拒修 / ❓ 待查證。
-%% 上方「現在會咬到你的」為本組的結論層索引，非搬移 %%
+%% 上方「現在還沒修好的」為本組的結論層索引，非搬移 %%
 
 ### 🛡️ 安全與隱私（15 條未修復、3 條已修復、1 條拒修、1 條❓）
 
