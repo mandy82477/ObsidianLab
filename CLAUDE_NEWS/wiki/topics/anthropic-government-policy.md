@@ -27,12 +27,12 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 **狀態：** ongoing（出口管制已結案；八條政府線在動，其中三條已經改到讀者手上的 Claude）
 **領域：** 🏛️ 政策/安全
 **開始日期：** 2026-05-01
-**最後更新：** 2026-09-08
-**最後新聞更新：** 2026-09-08
+**最後更新：** 2026-09-09
+**最後新聞更新：** 2026-09-09
 
-> **最新動態**（2026-09-07）
-> - **五角大廈黑名單**：國防部加碼維持對 Anthropic 的採購黑名單，儘管 08-28 一審已裁定違法即時解除；不影響商用訂閱與 API。
-> - **英國 AI 政策**：英國 AI 政策主要設計者因 Anthropic 利益衝突疑慮請辭，具體人事與細節僅標題可用。
+> **最新動態**（2026-09-09）
+> - **英國 AISI 測試存取**：IT Pro／Financial Times／The Times 據稱 Anthropic 未依英國 AI 安全研究院要求提交 Mythos 5.1 供獨立測試，拒絕原因與官方回應均未見報導。
+> - **監控系統指控**：The American Prospect（單一來源）指控 Anthropic 正建構監控行動主義者的預測系統，證據薄弱，待查證。
 
 ---
 
@@ -218,6 +218,8 @@ Anthropic 的整個品牌建立在一個論述上：「我們建造了史上最�
 
 | 日期 | 方 | 動作 | 效果 |
 |------|----|------|------|
+| 2026-09-09 | 🏢 | IT Pro／Financial Times／The Times：Anthropic 據稱未依英國 AISI 要求提交 Mythos 5.1 供獨立測試 | 三家媒體同日報導，拒絕原因與 AISI 官方回應均未見報導，僅標題可用 |
+| 2026-09-09 | 🏢 | The American Prospect：指控 Anthropic 正建構用於監控行動主義者的預測性監控系統 | 單一來源、僅標題可用；與本頁既有「Anthropic 因拒絕 AI 用於大規模監控遭五角大廈列黑名單」立場方向相反，待查證 |
 | 2026-09-07 | 🏛️ | Yahoo Finance：五角大廈加碼維持對 Anthropic 供應鏈黑名單，儘管 08-28 一審已裁定違法即時解除 | 商業角度對 Amazon／Alphabet 投資人意涵另見 [[topics/anthropic-business]]；本頁僅記錄政府動作本身，具體法律依據僅標題可用 |
 | 2026-09-07 | 🏛️ | The Guardian：英國 AI 政策主要設計者因 Anthropic 利益衝突疑慮請辭 | 具體人名、職稱與辭職細節均僅標題可用 |
 | 2026-09-05 | 🏛️ | 參議員 Bernie Sanders 與眾議員 Greg Casar 09-03 提出 Ban Artificial Superintelligence Act，違者最高 20 年徒刑 | 狀態為提案，未進委員會；細節詳見下方時序 09-05 |
@@ -377,6 +379,10 @@ Anthropic 的整個品牌建立在一個論述上：「我們建造了史上最�
 ## 時序
 
 > 每行開頭符號：🏛️ 政府或法院／🏢 Anthropic／🌐 媒體與社群。
+
+### 2026-09-09
+- **[🏢] IT Pro／Financial Times／The Times：Anthropic 據稱未依英國 AISI 要求提交 Mythos 5.1 供獨立測試**：三家媒體同日報導同一事件，標題分別為「Anthropic reportedly withholds access to Mythos 5.1 from UK safety testing body」（IT Pro）、「Anthropic withheld latest AI model from UK testing agency」（Financial Times）、「Anthropic did not submit most powerful AI model for UK testing」（The Times）。❓ **待查證**（標 2026-09-09｜查 Mythos 5.1、AISI）：拒絕提交的具體原因、AISI 官方回應、是否已提交舊版模型供替代測試均未見報導，Google News RSS 未提供正文
+- **[🏢] The American Prospect：指控 Anthropic 正建構用於監控行動主義者的預測性監控系統**：單一來源報導（source_count 1），The American Prospect 為美國進步派政治雜誌，具一定立場傾向；本頁已記錄 Anthropic 因拒絕 AI 被用於大規模監控而遭五角大廈列入供應鏈黑名單（2026-02-27 認定，08-28 一審裁定違法，見「## 三個戰場」🪖 軍事合約段落），本則指控方向與該既有立場相反，惟證據薄弱（僅標題可用）。❓ **待查證**（標 2026-09-09｜查 American Prospect、監控系統）：具體系統描述、目標客戶、Anthropic 官方回應、其他媒體是否跟進均未見報導
 
 ### 2026-09-08
 - **[🌐] FinancialContent：學生與作者擔憂原創內容遭浮水印機制誤判為 AI 生成**：延續既有浮水印爭議系列追蹤，新增讀者群體（學生、作者）對誤判風險的疑慮；僅標題可用，具體誤判案例、官方回應與涉及機制細節均未見報導，詳見「### 浮水印：法源、爭點與未解」

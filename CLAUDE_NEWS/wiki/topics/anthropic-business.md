@@ -27,8 +27,8 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 **狀態：** ongoing
 **領域：** 💼 商業
 **開始日期：** 2026-05-28
-**最後更新：** 2026-09-08
-**最後新聞更新：** 2026-09-08
+**最後更新：** 2026-09-09
+**最後新聞更新：** 2026-09-09
 
 > **最新動態**（2026-09-08）
 > - **Decart 收購生變**：傳 60 億美元收購以色列新創 Decart 的計畫遭撤回，多家以色列與財經媒體同日跟進（見「哪個合作會改到你用的 Claude」一行制清單）。
@@ -302,9 +302,11 @@ Financial Times 報導 Anthropic 旗艦模型在吸引一般使用者（general 
 
 **其餘合作（一行制，日期倒序）** — 未列入上表者每筆一行：
 
+- **Visa／Mastercard**（2026-09-09）：Anthropic 推出 Claude Commerce Agents 商務代理功能，並與 Visa、Mastercard 建立合作關係，具體交易機制、資格與是否另計費均未見報導，僅標題可用（Crowdfund Insider）
+- **LoanPro**（2026-09-09）：貸款管理平台採用建構在 AWS 與 Claude 上的 AI 原生客服介面，客服通話時間最多縮短 15%，具體導入規模未見報導（citybiz）
 - **Fluidstack**（2026-09-07）：主導 Anthropic 一筆 500 億美元的算力建置案，詳見下方細節（AI Magazine）
 - **Hut 8**（2026-09-07）：比特幣礦業公司藉 350 億美元 Anthropic 合作案加速 AI 業務轉型，推論與 09-01 已記錄的 Lambda 交易為同一筆，詳見下方細節（Yahoo Finance）
-- **Amadeus**（2026-09-03）：旅遊科技公司將其技術整合進 Claude Code 與 Cowork，具體整合範疇未見報導（Skift）
+- **Amadeus**（2026-09-03）：旅遊科技公司將其技術整合進 Claude Code 與 Cowork，具體整合範疇未見報導（Skift）**訊 2026-09-09 追蹤**：Aviation Week 同日再報導此合作，未見新增整合範疇或金額細節，僅為又一媒體轉述（Google News/Aviation Week）
 - **Lambda**（2026-09-01）：Nvidia 支持之雲端業者簽署 350 億美元雲端運算合約，資金牽涉德州比特幣礦商營運的資料中心（多家媒體）
 - **Anthropic（培訓生態）**（2026-09-01）：Claude 認證累計達 8.5 萬張，擬擴大夥伴培訓規模（crn.com）
 - **Trifecta Technologies**（2026-09-01）：與 Anthropic 合作導入 Claude 服務（Morningstar）
@@ -313,7 +315,7 @@ Financial Times 報導 Anthropic 旗艦模型在吸引一般使用者（general 
 - **Cursor（SpaceX 旗下）**（2026-08-29）：OpenAI 退出與 Cursor 的合作，Anthropic 加碼投入運算資源承接需求（Wccftech）
 - **Nscale**（2026-08-28）：簽署 450 億美元資料中心協議，取得 460 MW Vera Rubin 世代算力（Forbes；Financial Times）
 - **Anthropic（營收信號）**（2026-08-28）：Yahoo Finance 獨家稱 Claude 營收年增達 1,000%，未經官方證實（Yahoo Finance）
-- **Salesforce**（2026-08-26）：深化合作發布 CRM 業務外掛「Claudeforce」，Salesforce 同步上修全年營收預測（Reuters；WSJ）
+- **Salesforce**（2026-08-26）：深化合作發布 CRM 業務外掛「Claudeforce」，Salesforce 同步上修全年營收預測（Reuters；WSJ）**訊 2026-09-08 追蹤**：Demand Gen Report 稱雙方「擴大」Claudeforce 合作，具體擴大範疇（新功能、新客戶層、金額）未見報導，僅標題可用（Google News/Demand Gen Report）
 - **CrowdStrike**（2026-08-27）：股價單日漲 13%，執行長歸功本季最佳表現部分來自與 Anthropic 合作（Forbes）
 - **Meta**（2026-08-27）：NYT 稱雙方「亦敵亦友」，Meta 公開批評 Anthropic 卻也是其最大客戶之一，傳支出達 100 億美元（NYT）
 - **Anthropic（澳洲市場）**（2026-08-25）：內部郵件揭露 Anthropic 澳洲佈局規模（ABC News）
@@ -485,6 +487,15 @@ Financial Times 報導 Anthropic 旗艦模型在吸引一般使用者（general 
 ## 時序
 
 ### 2026-09
+
+#### 2026-09-09
+- **[商業風險，詳見 pricing] Verge／Startup Fortune／The New Stack 三家媒體同日跟進 Max 20x 集體訴訟**：The New Stack 首度點名「20 倍用量」實為週用量上限機制；詳見 [[entities/pricing]]「事故現在還在發生嗎」表與事故與爭議細節區（Google News/The Verge；Google News/Startup Fortune；Google News/The New Stack）
+- **[商業風險，詳見 pricing] TechCrunch／Startup Fortune：駭客可在不竊取密碼情況下抽乾訂閱者用量額度**：本頁不記攻擊手法（見 [[topics/ai-agent-safety]]），計費衝擊面詳見 [[entities/pricing]]「事故與爭議」（Google News/TechCrunch；Google News/Startup Fortune）
+- **[戰略合作] Crowdfund Insider：Anthropic 推出 Claude Commerce Agents，與 Visa、Mastercard 建立合作關係**：詳見「哪個合作會改到你用的 Claude」一行制清單新增列（Google News/Crowdfund Insider）
+- **[戰略合作] citybiz：LoanPro 採用 AWS＋Claude AI 原生客服介面，通話時間最多縮短 15%**：詳見一行制清單新增列（Google News/citybiz）
+- **[戰略合作] Aviation Week：跟進報導 Amadeus 與 Anthropic 合作**：與 09-03 已記錄事件為同一合作案，未見新增整合範疇，詳見一行制清單 Amadeus 列（Google News/Aviation Week）
+- **[戰略合作] Demand Gen Report：Salesforce 與 Anthropic 擴大 Claudeforce 合作**：與 08-26 已記錄之 Claudeforce 發布為同一合作線的擴大報導，具體擴大範疇未見報導，詳見一行制清單 Salesforce 列（Google News/Demand Gen Report）
+- **[公司動態，僅標題可用] NPR：Anthropic 推出新模型，用於測試 AI 對美國經濟的可能衝擊**：僅標題可用，是否為可選用模型或研究性經濟指數工具未見報導，本頁不展開（Google News/NPR）
 
 #### 2026-09-08
 - **[戰略合作] PYMNTS 等多家媒體：Anthropic 撤回收購以色列新創 Decart 計畫**：原擬以約 60–70 億美元收購，09-08 傳出計畫遭撤回，以色列與國際財經媒體同日密集跟進，具體原因未見報導，詳見「哪個合作會改到你用的 Claude」一行制清單（PYMNTS；Bloomberg；calcalistech；Ynetnews；Globes）

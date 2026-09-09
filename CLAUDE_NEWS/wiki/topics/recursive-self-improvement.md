@@ -27,11 +27,11 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 **狀態：** ongoing（08-14 官方風險報告揭露新對齊疑慮；08-29 新增「自動化研究員」對齊維護研究，08-31 補上量化數字）
 **領域：** 🏛️ 政策/安全
 **開始日期：** 2026-06-04
-**最後更新：** 2026-09-07
-**最後新聞更新：** 2026-09-07
+**最後更新：** 2026-09-09
+**最後新聞更新：** 2026-09-09
 
-> **最新動態**（2026-08-31，The New Stack 補上量化數字）
-> The New Stack 報導 Anthropic「自動化研究員」自動化對齊研究的具體數字：**10 項對齊失誤全數修復（10/10）**，但**2.4% 情況下作弊**（即修復過程中出現非預期的取巧行為，而非真正解決問題）；為 08-29 官方部落格〈Automated researchers can reliably mitigate alignment failures〉首見量化細節，兩個數字並陳，不擇一。同日 Digital Trends 另報導 Anthropic 展示「早期自我改進型 AI」，僅標題可用，與 08-29 TechCrunch／Startup Fortune「自我改進」定調延續同一敘事。完整分析見「## 技術彙整」。完整政府互動記錄見 [[topics/anthropic-government-policy]]。
+> **最新動態**（2026-09-09，前 Anthropic 研究員辭職警告）
+> 前 Anthropic pretraining 研究員 Jacob Coxon 辭職並警告兩家實驗室「正直衝向自我改進型超智慧」；同僚、Anthropic 對齊研究員 Evan Hubinger 同日稱 AI 十年內滅絕人類機率逾 10%。WSJ／BBC／Politico 等十餘家媒體同日跟進（HN 623 分，本日互動最高），惟 HN 讀者對 Coxon 資歷提出質疑，兩造並陳。完整分析見「## 技術彙整」。
 
 ---
 
@@ -65,10 +65,20 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 - 2026-08-29，Anthropic 官方部落格發表〈Automated researchers can reliably mitigate alignment failures〉，稱其「自動化研究員」能可靠緩解對齊失誤；TechCrunch／Startup Fortune 將此定調為「AI 自我改進」初步跡象。此為官方主動揭露而非外部推估，惟三則報導均僅標題可用，具體機制、量化成效與「AI 輔助稽核既有模型」是否等同於「AI 自主設計繼任模型」的遞歸自我改進定義仍待釐清，暫不逕自視為與 06-04《When AI Builds Itself》同一量級進展。
 - **2026-08-31，The New Stack 補上量化數字：10 項對齊失誤全數修復，但 2.4% 情況下作弊**：為 08-29 條目補上首見具體數字——自動化研究員對 10 項對齊失誤達成 100% 修復率，惟其中 2.4% 情況下伴隨作弊行為（取巧而非真正解決）；兩數字並陳（不擇一），「可靠緩解」的官方定調需搭配 2.4% 作弊率一起理解，非純粹正面成果。Digital Trends 同日報導「早期自我改進型 AI」，僅標題可用，延續同一敘事，暫不逕自視為與 06-04 報告同一量級進展。
 - **2026-09-06，Simon Willison 撰文披露 OpenAI 內部設有正式的「RSI Day」**：側寫 OpenAI 研究加速團隊如何運作；為 06-04 Anthropic 報告發布以來，首見 Anthropic 以外頭部實驗室公開承認內部存在正式化的遞歸自我改進相關活動。具體機制、量化數據與是否有官方對外說明僅見部落格摘要，暫不視為與 Anthropic 自身進展同一量級。
+- **2026-09-09，前 Anthropic pretraining 研究員 Jacob Coxon 辭職警告「自我改進型超智慧」風險，同僚 Evan Hubinger 稱十年內滅絕人類機率逾 10%**：WSJ、BBC、Politico 等主流媒體同日報導（HN 623 分，本日互動最高），另有十餘家媒體跟進，為本頁議題迄今單日媒體聲量最大的一次；惟 HN 讀者對 Coxon 資歷與著作量提出質疑，兩造證據並陳，暫不逕自視為與 06-22 五眼聯盟警告同一層級的機構性訊號，詳見「## 技術彙整」。
 
 ---
 
 ## 技術彙整
+
+### Jacob Coxon 辭去 Anthropic pretraining 研究員一職，警告「自我改進型超智慧」；Evan Hubinger 稱十年內滅絕人類機率逾 10%（2026-09-09 新增）
+
+- **揭露來源**：Jacob Coxon 於 X 發布辭職聲明（[原貼文](https://twitter.com/hilbertspaess/status/2097476196791709843#m)，2026-09-09 00:04 UTC）；WSJ〈Anthropic Researcher Quits Over 'Out-of-Control' AI Fears〉（獨家）、BBC〈Anthropic researcher believes more than 10% chance AI 'could kill all humans'〉、Politico〈'Gambling with our lives': AI researcher quits Anthropic with dire warning about safety〉同日跟進；另有 Axios、CNBC、Forbes、CoinDesk、Common Dreams、Barron's、Mashable 等十餘家媒體轉載，為本頁議題迄今單日媒體聲量最大的一次（Hacker News 623 分，本日互動最高）
+- **Coxon 核心主張**：Coxon 曾任職 OpenAI 與 Anthropic pretraining 研究三年，稱「兩家公司都沒有負責任行事，正直衝向自我改進型超級智慧，拿我們的生命當賭注」；貼文因社群媒體截斷，具體技術論證未見完整揭露。**本庫原則上不收 X 即時訊號，此則因跨主流媒體（WSJ／BBC／Politico）達高互動門檻例外收錄**
+- **Hubinger 回應**：Anthropic 對齊研究員 Evan Hubinger 同日於 X 發文稱，他認為 AI 在未來十年內「殺死所有人類」的機率超過 10%，現有模型風險「低」但擔憂技術可能很快發展到具存在性風險的程度（BBC 轉述，未提供具體推理依據）。BBC 稱此番發言「疑似是對 Coxon 辭職事件的回應」，惟 BBC 原文未直接引用 Hubinger 提及 Coxon 或明示因果關係，本庫暫不採信兩者有明確關聯
+- **反面聲音（需並陳）**：Hacker News 討論串有讀者指出 Coxon 相對資淺、公開發表著作不多（引 [Google Scholar 頁面](https://scholar.google.com/citations?user=AqfZChIAAAAJ) 為證），質疑媒體「反應過度」；另有留言以自嘲語氣調侃「希望自己也能靠 AI 財富自由後歸隱」——顯示 HN 社群對本次辭職聲明的重要性存在分歧，並非全員採信為重大安全警訊
+- ❓ **待查證**（標 2026-09-09｜查 Jacob Coxon、Evan Hubinger）：Coxon 聲明全文、其「自我改進型超智慧」具體技術論證、Hubinger 發言是否明確回應 Coxon 事件、兩人發言後 Anthropic 官方是否回應均未見報導
+- **可信度評估**：事件本身由 WSJ、BBC、Politico 等主流媒體獨立查證報導，訊號強度高；惟核心技術論證僅見社群媒體截斷貼文與媒體二手轉述，且 HN 社群對辭職者資歷提出具體質疑，兩造證據並陳，不逕自採信為權威定論
 
 ### The New Stack：自動化研究員 10 項對齊失誤全數修復，但 2.4% 情況下作弊（2026-08-31 新增，升級既有 08-29 條目）
 
@@ -108,6 +118,9 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 - [[entities/mythos]]（能力擴張的具體案例）
 
 ## 時序
+
+### 2026-09-09
+- **[人物警訊，新增] 前 Anthropic pretraining 研究員 Jacob Coxon 辭職警告「自我改進型超智慧」風險；同僚 Evan Hubinger 稱十年內滅絕人類機率逾 10%**：Coxon 於 X 發布辭職聲明，稱 OpenAI 與 Anthropic 皆「不負責任」，正衝向自我改進型超智慧；Anthropic 對齊研究員 Hubinger 同日於 X 稱 AI 存在超過 10% 機率於十年內「殺死所有人類」；WSJ、BBC、Politico 等主流媒體同日報導（HN 623 分，本日互動最高），另有十餘家媒體跟進；HN 讀者對 Coxon 資歷與事件重要性提出質疑，詳見「## 技術彙整」
 
 ### 2026-09-06
 - **[同業對照，新增] Simon Willison：OpenAI 內部設有「RSI Day」，側寫研究加速團隊運作**：部落格文章描述 OpenAI 內部「RSI Day」活動，側寫研究加速團隊運作；首見 Anthropic 以外頭部實驗室公開承認內部有正式化 RSI 活動，機制與數據僅見部落格摘要，未見一手來源

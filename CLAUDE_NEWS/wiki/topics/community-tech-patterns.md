@@ -28,11 +28,12 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 **狀態：** ongoing
 **領域：** 🌐 社群
 **開始日期：** 2026-04-25
-**最後更新：** 2026-09-08
-**最後新聞更新：** 2026-09-08
+**最後更新：** 2026-09-09
+**最後新聞更新：** 2026-09-09
 
-> **最新工作流模式**（2026-09-08）
-> - **Skills 生態添一款**：zenstory-ai/video-recap-skills 讓 Claude Code Skill 把任意影片剪成中文口述影評，支援剪映格式匯出（GitHub Search 500★）。
+> **最新工作流模式**（2026-09-09）
+> - **Multi-agent 整合平台添一款**：Untrivial-ai/agent-orchestrator 可監督整組 coding agent、涵蓋規劃到合併全流程（GitHub Search 11,149★，存量盤點）。
+> - **Skills 生態添兩款**：borski/travel-hacking-toolkit（旅遊比價，657★）、I-have-ADHD（鎖定「Claudism」冗語，HN 499 分）。
 
 ---
 
@@ -160,6 +161,42 @@ Multi-agent 架構與 Skills 設計已是社群定案的做法；還在試的十
 > ⟨Q-nn⟩ 標的是這一則還沒查實的地方，完整說明在該月份分組最後的「懸置細節」。
 
 ### 2026-09
+
+#### Untrivial-ai/agent-orchestrator：可執行並監督一整組 coding agent 團隊、涵蓋規劃到合併全流程的整合平台（2026-09-09）
+
+- **主線：** —
+- **核心模式：** 可執行並監督一整組 coding agent 團隊，涵蓋從規劃到合併的完整流程；相容 25 種以上 harness（含 Claude Code、Codex），支援桌面、網頁、行動裝置與雲端 agent 形態；GitHub Search 累積 11,149 星
+- **與既有模式的關係：** 補上「Multi-agent 架構」既有代表技巧（ccteams、OtoDock、omnigent）之外一個涵蓋面更廣的整合平台——既有節點多聚焦單一機制（打包 subagent、跨 harness 協作邏輯解耦），本則主打「規劃到合併」全流程管理並支援多種終端裝置形態
+- **可信度註記：** 存量盤點條目（2026-02-13 出生、本庫今日首次收錄），僅取得 GitHub Search 星數，無 forks／issues／近期 commit 佐證可查，未另行查證
+- **來源：** GitHub Search（存量盤點，11,149★｜2026-02-13 出生、本庫今日首次收錄）；[GitHub](https://github.com/Untrivial-ai/agent-orchestrator)
+- **成熟度：** ⏳ 新興（本庫首次收錄，尚無星數以外的社群採用回饋數據）
+
+#### borski/travel-hacking-toolkit：旅遊比價 Skill 與 MCP server，跨 Claude／Codex／OpenCode（2026-09-09）
+
+- **主線：** —
+- **核心模式：** 提供可掛載的 skill 與 MCP server，協助搜尋現金、點數、里程與獎勵機票的省錢旅遊方案；相容 Claude、Codex、OpenCode；GitHub Search 累積 657 星
+- **與既有模式的關係：** 延續本頁「Skill 生態多元化」既有趨勢（coding agent 透過 Skill／MCP 跨足非程式碼垂直領域），與影片、簡報、SSH 等既有領域案例同屬一取向，本則鎖定旅遊比價這個此前未見的垂直領域
+- **可信度註記：** 僅取得 GitHub Search 星數，無 forks／issues／近期 commit 佐證可查，未另行查證
+- **來源：** GitHub Search（657★）；[GitHub](https://github.com/borski/travel-hacking-toolkit)
+- **成熟度：** ⏳ 新興（本庫首次收錄，尚無星數以外的社群採用回饋數據）
+
+#### I-have-ADHD：鎖定「Claudism」冗語——阻止 coding agent 完成任務後反覆交代哪些沒做的 Skill（2026-09-08）
+
+- **主線：** —
+- **核心模式：** 開源 skill，鎖定「Claudism」冗語風格——模型完成任務後仍反覆交代哪些檔案沒改、哪些事沒做（如「我改了 this.py 和 that.py，但沒改 README.md、也沒 commit」），或在程式碼註解中重複描述自己在做什麼
+- **與既有模式的關係：** 與「Token / 成本優化」既有代表技巧穴居人模式（CaveMan Skill，單次回覆 Token 從 70 降至 20）同屬壓縮輸出取向，差異在本則鎖定的是「交代未做之事」這種特定冗語模式，而非泛用輸出長度
+- **可信度註記：** Hacker News，499 分，跨 2 個獨立來源報導（source_count 2），屬本頁近期收錄中互動最高者之一；惟尚無具體實測數據佐證縮減幅度，亦無 forks／issues 佐證可查
+- **來源：** 「I-have-ADHD: A skill to stop coding agents from burying the answer」— Hacker News（499 分，跨 2 個獨立來源）；[GitHub](https://github.com/ayghri/i-have-adhd)
+- **成熟度：** ⏳ 新興（本庫首次收錄，尚無星數以外的社群採用回饋數據）
+
+#### 同日六款多代理協作／終端管理 Show HN 亮相：雲端 IDE、session 管理、角色分工團隊、共享記憶 ADE、tmux 狀態列、用量容錯路由（2026-09-09）
+
+- **主線：** —
+- **核心模式：** 同日六款鎖定多代理協作／終端管理的 Show HN 同時亮相：type.com（雲端多人協作 IDE，鎖定非技術使用者的「Codex/Claude in the cloud」）、Maxxwell（同時管理多個 coding-agent session 進度、context 與 blocker 的 IDE）、Castforge（讓 Claude Code、Codex、Gemini 組成 Lead/Coder/Tester/Reviewer 分工團隊）、Clor（Claude 與 Codex 共享記憶的 ADE，agent session 各自跑在獨立沙箱工作區）、AgentPulse（tmux 外掛，用生命週期 hooks 顯示 Claude Code／Codex 忙碌／等待／閒置／中斷狀態）、Bounce Router（依用量在 Claude、Codex、Muse 間自動切換的 TUI 路由器，貼文內文標記 [dead]）
+- **與既有模式的關係：** 延續本頁既有「同日批次亮相」先例（08-09 loopx+HarnessFlow、08-11 spec-driven 四款、08-12 六款熱門清單），與「Multi-agent 架構」類別既有代表技巧同屬多代理協調基礎設施取向；六款分屬「雲端 IDE」「session 管理」「角色分工模擬團隊」「共享記憶 ADE」「終端狀態顯示」「用量容錯路由」六個切角，顯示同類需求正被多方獨立重複造輪
+- **可信度註記：** 六則分數均低（HN 10／8／3／2／4／4 分），除 type.com 與 Clor 各有 1 則獨立來源提及（source_count 2）外皆單一來源；Bounce Router 貼文內文標記 [dead]，可信度存疑，本則僅記錄其存在、不採信其功能宣稱；六款均未見 forks／issues／commit 佐證可查
+- **來源：** 「Multiplayer Codex/Claude in the cloud for non-tech use cases」— Hacker News（10 分，2 個獨立來源）；[原文](https://news.ycombinator.com/item?id=49626148)｜「The IDE for Optimal Tokenmaxxing」— Hacker News（8 分）；[原文](https://maxxwell.dev/)｜「run Claude Code, Codex and Gemini as one dev team」— Hacker News（3 分）；[原文](https://castforge.ai/)｜「The ADE where Claude and Codex work together with shared memory」— Hacker News（2 分，2 個獨立來源）；[原文](https://news.ycombinator.com/item?id=49627194)｜「Claude Code and Codex status in tmux」— Hacker News（4 分）；[GitHub](https://github.com/jerriclynsjohn/tmux-agent-pulse)｜「A TUI over Claude, Codex and Muse with Usage Failover」— Hacker News（4 分，內文標記 [dead]）；[GitHub](https://github.com/richet/bounce-router)
+- **成熟度：** ⏳ 新興（六則分數皆低於本頁一般收錄門檻，僅因同日批次現象具觀察價值而記錄，個別工具實際採用情形未經驗證）
 
 #### zenstory-ai/video-recap-skills：Claude Code Skill 把任意影片剪成中文口述影評，支援剪映匯出（2026-09-08）
 

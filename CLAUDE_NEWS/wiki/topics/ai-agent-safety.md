@@ -28,11 +28,11 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 **領域：** 🏛️ 政策/安全
 **蒐集邊界：** 以 Claude 與 Claude Code 的安全事件為主，另針對提示注入定向補抓（每天最多 3 則）；他家 agent 的獨立事件多半只在與 Claude 同案或同一篇報導時才會出現。
 **開始日期：** 2026-04-27
-**最後更新：** 2026-09-06
-**最後新聞更新：** 2026-09-04
+**最後更新：** 2026-09-09
+**最後新聞更新：** 2026-09-09
 
-> **最新安全事件**（2026-09-02）
-> 惡意 `.git` 設定檔可誘使 Claude、Codex、Cursor 執行攻擊者指定的程式碼，clone 外部 repo 就可能中。
+> **最新安全事件**（2026-09-09）
+> TechCrunch 報導駭客能在不竊取密碼的情況下抽乾 Claude 訂閱者的用量額度，凸顯訂閱制帳號面臨的新型濫用手法；具體攻擊機制未見報導。
 
 ---
 
@@ -109,6 +109,13 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 ---
 
 ## 技術彙整
+
+### TechCrunch／Startup Fortune：駭客可在不竊取密碼情況下抽乾 Claude 訂閱者用量額度（2026-09-09 新增）
+
+- **揭露來源**：TechCrunch〈Hackers are stealing Claude tokens from subscribers〉（source_count 3）；Startup Fortune〈Hackers Are Draining Claude Subscribers Usage Without Stealing a Password〉
+- **核心主張（僅標題可用）**：報導稱駭客能在不竊取使用者密碼的情況下，耗盡 Claude 訂閱者的用量額度，凸顯訂閱制帳號面臨的新型濫用手法；Google News RSS 未提供正文，具體攻擊機制（API 金鑰外洩、session 劫持、或濫用官方整合介面等）、受影響規模、Anthropic 官方回應均未見報導
+- **與既有事件的關係**：本頁已記錄「資訊竊取型惡意軟體偷走 session 憑證，直接冒用你的帳號」（2026-08-31 新增，見「現在還擋不住的攻擊」表）——該事件明確經由惡意軟體竊取憑證；本則標題強調「不竊取密碼」，暗示可能是不同的攻擊向量，惟機制不明，暫不併入既有列，亦不逕自視為全新攻擊面
+- ❓ **待查證**（標 2026-09-09｜查 Draining、Startup Fortune）：具體攻擊機制、受影響規模、與既有 session 憑證竊取事件是否同源均未見報導
 
 ### Simon Willison／Gulf News：OpenAI 的 agent 被觀察到透過公開 wiki 互相留言溝通（2026-09-04 新增，產業對照，非 Claude 事件）
 
@@ -752,6 +759,9 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 > 更早期時序見 [[topics/ai-agent-safety-archive]]
 
 > **中美 AI 工具信任對峙**（06-30～07-10：中國代理偵測程式碼、隱寫術指控、Alibaba/Meta 禁用、中國官方後門警示、Anthropic 首度否認）完整逐日時序已整合至 [[topics/safety-china-trust-dispute]]，此處不再重複條目，僅保留與本頁漏洞/提示注入主線相關者。
+
+### 2026-09-09
+- **[🔴 新增] TechCrunch／Startup Fortune：駭客可在不竊取密碼的情況下抽乾 Claude 訂閱者用量額度**：新型訂閱帳號濫用手法，具體攻擊機制未見報導，詳見「## 技術彙整」
 
 ### 2026-09-04
 - **[🟡 產業對照，非 Claude 事件，新增] Simon Willison／Gulf News：OpenAI 的 agent 被觀察到透過公開 wiki 互相留言溝通**：與 Anthropic 無關，emergent 多 agent 自主協調行為新案例，詳見「## 技術彙整」

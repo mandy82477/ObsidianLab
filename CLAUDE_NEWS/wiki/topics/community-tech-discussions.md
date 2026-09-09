@@ -27,11 +27,11 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 **狀態：** ongoing
 **領域：** 🌐 社群
 **開始日期：** 2026-04-25
-**最後更新：** 2026-09-06
-**最後新聞更新：** 2026-09-06
+**最後更新：** 2026-09-09
+**最後新聞更新：** 2026-09-09
 
-> **最熱討論**（2026-09-04）
-> - **NYT〈Corporate America is getting hooked on open-source AI〉**（HN 274 分）：企業轉向開源模型，留言認為若 Anthropic／OpenAI 不大幅降價將面臨轉單壓力。
+> **最熱討論**（2026-09-09）
+> - **「回頭手寫」**（HN 48 分）：作者放棄用 Claude 開發新版 app、改回手寫，對照職場全面依賴 LLM 寫程式的現況。
 
 ---
 
@@ -147,6 +147,7 @@ MCP 的實際成本遠超多數使用者預期，已有多個量化案例：
 
 | 討論主題 | 首見 · 最後動態 | 當時熱度 | 模式 | 核心論點 | 衍生 |
 |---------|------|------|------|---------|------|
+| 作者放棄用 Claude 開發新版 app、改回手寫，對照職場全面依賴 LLM 寫程式的現況 | 2026-09-09 · 2026-09-09 | 🔥🔥 | ☄️閃現 | 作者有一款自建、擁有穩定用戶群的成功 app，過去約六個月斷續用 Claude 開發新版本後決定放棄、改回手寫；同時提及自己工作場所全面依賴 LLM 寫程式；HN score 48 | — |
 | Reddit r/ClaudeCode：反駁額度抱怨聲浪，資深後端工程師稱半年僅遇限額約一次 | 2026-09-06 · 2026-09-06 | 🔥 | ☄️閃現 | 針對本週一片抱怨用量限制的貼文，作者稱自己資深後端、用 Claude Code 半年很少碰到上限，主張問題出在工作流而非額度；無「週熱門」標記，score 不可信 | — |
 | Simon Willison：OpenAI 面向開發者發布 GPT-6 Astra | 2026-09-05 · 2026-09-05 | 🔥 | ☄️閃現 | Simon Willison 部落格記錄 OpenAI 面向開發者發布 GPT-6 Astra；具名表態，無社群延燒；[原文](https://simonwillison.net/2026/Sep/5/introducing-gpt-6-astra-for-developers/)（Blog） | — |
 | Simon Willison TIL：在 macOS 上讓 coding agent 操作 Blender | 2026-09-05 · 2026-09-05 | 🔥 | ☄️閃現 | Simon Willison TIL 筆記記錄在 macOS 上以 coding agent 操作 Blender 的實作方式；具名表態，無社群延燒；[原文](https://simonwillison.net/2026/Sep/5/blender-coding-agents-macos/)（Blog） | — |
@@ -255,6 +256,13 @@ MCP 的實際成本遠超多數使用者預期，已有多個量化案例：
 逐則原始筆記，最新的月份在最上面。回響符號：📝 是支持或反駁的後續說法，🧪 是有人真的去測了。❓ 表示這一則有事實還沒查實，🔎 表示查過官方但官方沒寫；`⟨Q-01⟩` 這種編號指向該月最下方的「懸置細節」。
 
 ### 2026-09
+
+#### 「回頭手寫」：作者放棄用 Claude 開發新版 app，對照職場全面依賴 LLM 寫程式的現況（2026-09-09）
+
+- **來源：** 「I'm going back to coding by hand」— Hacker News（48 分）；[原文](https://news.ycombinator.com/item?id=49622554)
+- **核心論點：** 作者有一款自己開發、擁有穩定用戶群的成功 app，過去約六個月斷續嘗試用 Claude 開發新版本，最終決定放棄、改回手寫程式碼；同時提及自己工作場所全面依賴 LLM 寫程式，工程師僅維持對系統的高層次理解、不再親自撰寫程式碼
+- **關鍵回響：**（本次摘要未提供留言區細節，暫無可記錄項目）
+- **收斂結論：**（無）單一 HN 貼文，尚無跨平台佐證；與本頁「Skill Atrophy 與技藝認同」長期議題相關但角度不同——既有討論多聚焦能力退化的焦慮，本則是「放棄 AI 開發、主動改回手寫」這個此前較少見的具體反向選擇案例
 
 #### NYT〈Corporate America is getting hooked on open-source AI〉：企業轉向開源模型，HN 熱議降價壓力（2026-09-04）
 
