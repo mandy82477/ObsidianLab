@@ -359,8 +359,7 @@ window.WIKI_DATA = {
       "summary": "現行世代是 **Fable 5.1**（2026-09-01 GA）；**Fable 5 仍可呼叫但已列為 Legacy**，官方建議遷移。兩者都是 Mythos 級模型的公開版——與同世代 Mythos 共用模型權重，差別在 Fable 前置了安全分類器，判定高風險時**會通知你**並改由 Opus 4.8 回答。 …",
       "latestHeadline": "現行世代是 Fable 5.1（2026-09-01 GA）；Fable 5 仍可呼叫但已列為 Legacy，官方建議遷移。兩者都是 Mythos 級模型的公開版——與同世代 Mythos 共用模型權重，差別在 Fable 前置了安全分類器，判定高風險時會通知你並改由 Opus 4.8 回答。",
       "readerDomains": [
-        "🤖 模型",
-        "💻 開發實務"
+        "🤖 模型"
       ]
     },
     {
@@ -601,8 +600,7 @@ window.WIKI_DATA = {
       "summary": "Opus 5 是**現行的次旗艦**：官方 2026-07-24 發布（本站 07-25 收錄，兩個日期都會看到），取代 Opus 4.8。兩代同價，Opus 5 的知識截止晚四個月。它在 Max、Team premium、Enterprise 隨用隨付與 API 上是預設的 Opus，但 Claude Code 的整…",
       "latestHeadline": "Opus 5／4.8／4.6 與 Fable、Mythos 全系列同時錯誤率升高。官方 13:41 UTC 鎖定原因，同日 16:16 UTC 標記已解決（2026-09-07 查證）。屬穩定性事件，非能力或定價變化；跨模型完整記錄見 fable-5（Anthropic Status；Reddit，2026-09-03",
       "readerDomains": [
-        "🤖 模型",
-        "💻 開發實務"
+        "🤖 模型"
       ]
     },
     {
@@ -866,8 +864,7 @@ window.WIKI_DATA = {
       "summary": "這家公司沒有公開財報。 下表每一列的最後兩欄告訴你這個數字是誰說的、下一次會有新數字的時點。五種數字量級不同，不可互相替代或加總——年化營收、單季營收、官方估值、IPO 估值預期、市場總量各答各的問題。",
       "latestHeadline": "",
       "readerDomains": [
-        "💼 商業",
-        "💻 開發實務"
+        "💼 商業"
       ]
     },
     {
@@ -1194,8 +1191,7 @@ window.WIKI_DATA = {
       "summary": "競爭的主戰場已從「誰更強」移到「誰更便宜」：Meta 以三層訂閱打價格戰、Google 推低價企業方案、中國市場出現「免費夠用」的論述。同一時間開源陣營把旗艦模型的權重也放了出來，低價層第一次同時具備可用的工具與可用的模型。對用 Claude 的人，眼前要判斷的不是換不換，而是自己所在的那一層有沒有出現可比的價格或能力…",
       "latestHeadline": "Logitech：推出可自訂快捷鍵的 MX Keypad，鎖定開發者作為多應用 AI 控制中心，廠商自宣性質，無 Claude 對比（Topic Watch）",
       "readerDomains": [
-        "💼 商業",
-        "💻 開發實務"
+        "💼 商業"
       ]
     },
     {
@@ -2507,12 +2503,8 @@ window.WIKI_DATA = {
       "managed-agents",
       "model-comparison",
       "model-task-leaderboard",
-      "fable-5",
-      "opus-5",
-      "competitor-landscape",
       "code-quality-decline",
       "pricing",
-      "anthropic-business",
       "ai-agent-safety",
       "anthropic-government-policy"
     ]
