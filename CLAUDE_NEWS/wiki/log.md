@@ -6091,3 +6091,13 @@ GH Actions 抓料排 10:23 UTC，到 14:45 UTC 仍未落地（+4.4 小時且持�
 **入口表也收斂（使用者：「要只放強相關」）：** 我原本打算改寫導言、讓它承認表上有非開發實務的出口，被使用者擋下——**標準不是放寬導言，是讓表符合導言**。移出兩整列（「這家公司撐不撐得住、該不該簽兩年約」、「我要不要換到新旗艦、舊的會不會停掉」）與一個次出口（「別家誰強」列的 competitor-landscape）。移出後表上**零個非成員出口**（feature-radar 除外，它不是知識庫條目、掛不了 chip）。
 
 **沒有弄丟讀者：** 五頁在 index 目錄表都還在（1–2 處），「最近一次頭對頭查證」這條路也還通——[[topics/model-task-leaderboard]] 摘要自己就連著 competitor-landscape 的硬答案節。**代價誠實記著：**「舊旗艦什麼時候退役、護欄會不會擋我」這題現在在開發實務入口表上沒有家（feature-radar 的「⏰ 倒數中」目前不收模型退役）；要補的話那才是它該去的地方。回流測試擴為五頁，每頁附不列的理由。
+
+**同日續：開發實務標籤收斂到「怎麼做」4 頁（14 → 4）。** 使用者裁決：💻 開發實務標籤**只放答「怎麼做」的頁**——接手 repo 該怎麼設定、卡住了先裝什麼、大 repo 怎麼並行、agent 該用哪種形態跑。留下的四頁：`coding-workflow-guide`、`skill-interest-watch`、`community-large-codebase-workflow`、`managed-agents`。
+
+**移出十頁與理由：** `claude-code`（產品本身的百科與已知問題，答「出事了」）、`model-comparison`、`model-task-leaderboard`（答「選哪個」）、`community-tech-patterns`、`community-pattern-trends`、`community-tech-discussions`（社群在玩什麼／在吵什麼，使用者原話「裡面東西蠻不實務的」）、`code-quality-decline`（答「是不是變差了」）、`pricing`（答「要花多少」）、`ai-agent-safety`、`anthropic-government-policy`（答「有什麼風險、管制怎麼走」）。這十頁在自己領域的分頁下都還在，讀者仍找得到——標籤與路由已脫鉤。
+
+**相關內容不會因此消失，蒸餾機制早就在：** 開發實務記者每日讀 wiki diff 撿 coding 候選、週更寫進 `topics/coding-workflow-guide` 的「本週 coding 亮點」（2026-09-02 使用者裁決「吃 diff 不吃 tag」）。跟寫 code 有關的結論走那條路進手冊，不是整頁掛標籤。**本次不改那條機制。**
+
+**一個已知的不一致留著給下次：** `wiki/index.md` 的「💻 開發實務入口」表仍有列指向已移出標籤的頁，表與標籤現在不完全對齊；表導言寫「只放開發實務強相關」，與標籤定義的「只放怎麼做」是兩把不同的尺。**待使用者裁決入口表要不要跟著收斂**——本次不動 index。
+
+回流測試 `src/tests/test_reader_tags.py` 的 `TestDecidedExclusions.EXCLUDED` 由 5 頁擴為 15 頁（每頁一句不列的理由），另加 `test_only_how_to_pages_remain`：名單須**恰好等於**上述四個 slug 的集合。

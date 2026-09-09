@@ -73,13 +73,38 @@ class TestDecidedExclusions(unittest.TestCase):
         "anthropic-business": "估值／IPO／營收，跟寫 code 的距離同 market-signals",
         "fable-5": "模型實體頁是那個模型的百科；選型的家是 model-comparison",
         "opus-5": "同上——模型頁一律不列，才不會出現「fable-5 在、預設模型 sonnet-5 不在」的不一致",
+        "claude-code": "產品本身的百科與已知問題，答的是「出事了」不是「怎麼做」",
+        "model-comparison": "答的是「選哪個模型」，不是「怎麼做」",
+        "model-task-leaderboard": "跨家榜單，答的是「選什麼／誰強」",
+        "community-tech-patterns": "社群在玩什麼（使用者原話：「裡面東西蠻不實務的」）",
+        "community-pattern-trends": "社群趨勢層，同上（使用者原話：「裡面東西蠻不實務的」）",
+        "community-tech-discussions": "社群在吵什麼，同上（使用者原話：「裡面東西蠻不實務的」）",
+        "code-quality-decline": "答的是「是不是變差了」，不是「怎麼做」",
+        "pricing": "答的是「要花多少」，不是「怎麼做」",
+        "ai-agent-safety": "答的是「有什麼風險」，不是「怎麼做」",
+        "anthropic-government-policy": "答的是「管制怎麼走」，不是「怎麼做」",
+    }
+
+    HOW_TO_PAGES = {
+        "coding-workflow-guide",
+        "skill-interest-watch",
+        "community-large-codebase-workflow",
+        "managed-agents",
     }
 
     def test_decided_exclusions_stay_out(self):
-        """2026-09-09 使用者逐頁裁決不列的五頁，不得悄悄回到名單。"""
+        """2026-09-09 使用者裁決不列的十五頁，不得悄悄回到名單。"""
         pages = _cfg()["tags"]["💻 開發實務"]["pages"]
         for slug, why in self.EXCLUDED.items():
             self.assertNotIn(slug, pages, f"{slug} 不算開發實務：{why}")
+
+    def test_only_how_to_pages_remain(self):
+        pages = set(_cfg()["tags"]["💻 開發實務"]["pages"])
+        self.assertEqual(
+            pages,
+            self.HOW_TO_PAGES,
+            "💻 只放「怎麼做」的頁（2026-09-09 使用者裁決）；要加頁先問頁面是不是在答「怎麼做」",
+        )
 
 
 if __name__ == "__main__":
