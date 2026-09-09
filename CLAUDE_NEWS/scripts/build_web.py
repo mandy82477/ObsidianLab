@@ -20,6 +20,7 @@ WIKI_DIR      = ROOT / "wiki"
 WIKI_ENTITIES = ROOT / "wiki" / "entities"
 WIKI_TOPICS   = ROOT / "wiki" / "topics"
 WIKI_RADAR    = ROOT / "wiki" / "feature-radar.md"
+READER_TAGS   = ROOT / "data" / "reader-tags.json"
 NEWS_DIR      = ROOT / "news"
 WEEKLY_DIR    = ROOT / "weekly"
 OUT_JS           = ROOT / "web_reader" / "data" / "data.js"
@@ -1258,39 +1259,42 @@ def build():
     def slim(item):
         return {k: v for k, v in item.items() if k != "markdown"}
 
-    def coding_pages():
-        """從 wiki/index.md「## 💻 開發實務入口」表萃取頁面 id。
+    def reader_tags():
+        """讀者標籤（只給網站 HTML）：`data/reader-tags.json` 是成員名單的唯一來源。
 
-        「💻 開發實務」chip 是跨領域集合（coding 頁散在 🛠️ 與 🌐 兩領域），
-        成員名單的單一來源就是 index.md 的入口路由表——入口表改，網站分頁跟著改。
+        與 wiki 標頭的「領域」無關——領域是記者認領欄（誰維護），標籤是讀者分類（網站
+        怎麼分頁）；一頁可掛多個標籤。**不再從 index 路由表推導**：2026-09-03 曾為了把
+        claude-code 擋出 tab 而改成只抽表格列，09-06 有人在表裡加一列就讓它靜默回來——
+        成員資格住進自己的檔，改動才會出現在 git diff 上。
         """
         try:
-            text = (WIKI_DIR / "index.md").read_text(encoding="utf-8")
-        except OSError:
-            return []
-        m = re.search(r"^## 💻[^\n]*\n(.*?)(?=^## |\Z)", text, re.M | re.S)
-        if not m:
-            return []
-        ids = []
-        # 只取路由表格列的連結：導言散文裡的「產品動態住別頁」出口連結（feature-radar、
-        # claude-code）不是 tab 成員——2026-09-03 使用者裁決 tab 只留開發實務強相關
-        table_text = "\n".join(l for l in m.group(1).splitlines() if l.lstrip().startswith("|"))
-        for target in re.findall(r"\[\[([^\]|#]+)", table_text):
-            base = target.strip().split("/")[-1]
-            if base and base not in ids:
-                ids.append(base)
-        return ids
+            cfg = json.loads(READER_TAGS.read_text(encoding="utf-8"))
+        except (OSError, ValueError) as e:
+            print(f"WARN: reader-tags.json 讀不到，讀者標籤全部跳過（{e}）")
+            return {}, {}
+        by_page: dict[str, list[str]] = {}
+        members: dict[str, list[str]] = {}
+        for tag, spec in (cfg.get("tags") or {}).items():
+            pages = list(spec.get("pages") or [])
+            members[tag] = pages
+            for slug in pages:
+                by_page.setdefault(slug, []).append(tag)
+        return by_page, members
 
     # 讀者分類（2026-09-03 使用者裁決）：wiki 標頭的「領域」是記者認領欄（誰維護），網站不需要
-    # 知道記者是誰——讀者看到的分類是 readerDomains（多標籤）：領域值照放，index「💻 開發實務入口」
-    # 表列出的頁再加一枚 💻 開發實務（不獨佔——模型選型頁在 🤖 與 💻 下都找得到；同日第二次裁決）。
-    _coding_ids = coding_pages()
-    _coding_set = set(_coding_ids)
+    # 知道記者是誰——讀者看到的是 readerDomains（多值）：領域值照放，再加上本頁掛的讀者標籤
+    # （不獨佔——模型選型頁在 🤖 與 💻 下都找得到；同日第二次裁決）。
+    _tag_by_page, _tag_members = reader_tags()
     for _it in entities + topics:
         _tags = [_it["domain"]] if _it["domain"] else []
-        if _it["id"] in _coding_set:
-            _tags.append("💻 開發實務")
+        _tags += [t for t in _tag_by_page.get(_it["id"], []) if t not in _tags]
         _it["readerDomains"] = _tags
+
+    # 名單裡的頁必須真的存在：打錯一個 slug，那頁就靜默從 tab 消失，畫面上看不出差別
+    # （舊機制留下的 feature-radar 就是這種死 id）。消費端＝src/tests/test_reader_tags.py
+    _dead = sorted(set(_tag_by_page) - {i["id"] for i in entities + topics})
+    if _dead:
+        print(f"WARN: reader-tags.json 有 {len(_dead)} 個 id 不是 wiki 頁面：{'、'.join(_dead)}")
 
     # ── 連結地圖 graph.json（網站「地圖」頁；資料源 scripts/wiki_graph.py）────────
     # 節點＝wiki 頁、邊＝wikilink（依 zone 分 正文／樣板／階層）。讀者視角：頁名、領域、
@@ -1386,7 +1390,7 @@ def build():
     wiki_data = {
         "entities":    [slim(e) for e in entities],
         "topics":      [slim(t) for t in topics],
-        "codingPages": _coding_ids,
+        "readerTags":  _tag_members,
         "digestIndex": digest_index,
         "weeklyIndex": weekly_index,
         "radar": radar if radar else None,  # include markdown — rendered inline, no fetch needed

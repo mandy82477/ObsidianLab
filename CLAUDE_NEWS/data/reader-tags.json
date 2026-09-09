@@ -1,0 +1,33 @@
+{
+  "_note": "讀者標籤：只給網站 HTML 的分類。與 wiki 標頭的「領域」無關——領域是記者認領欄（六類別對六記者，誰維護），標籤是讀者分類（網站怎麼分頁）。一頁可掛多個標籤。改成員＝改本檔，git diff 看得見。",
+  "_why_not_derived": "原本成員名單是掃 wiki/index.md「💻 開發實務入口」表的 wikilink 推導出來的，不分主次。2026-09-03 曾為了把 claude-code 擋出 tab 而改成只抽表格列；09-06 第 4 波實作在表裡加了「我在舊版本，升上去會壞什麼」一列，claude-code 就從表格列這條路靜默回來，沒有任何人做過裁決。成員資格住進自己的檔之後，這種回流會出現在 diff 上。",
+  "_adding_a_tag": "新增一個標籤值不只是加一段資料——chip 是寫死的，還要動三處前端：web_reader/index.html 的 chip 列（含自繪 inline SVG，設計規則禁用 emoji 當 UI 圖示）、web_reader/assets/app.js 的 MAP_CHIPS 與 DOMAIN_COLORS。src/tests/test_reader_tags.py 會驗前兩處有沒有跟上。",
+  "tags": {
+    "💻 開發實務": {
+      "label": "開發實務",
+      "定義": "程式開發實務：怎麼做、裝什麼、選什麼、要花多少、這筆錢會不會變。不是程式的頁不列。",
+      "維護": "主編（讀者分類是呈現決定，不是記者的維護分類）",
+      "不列的例子": "topics/market-signals——投資訊號判讀，跟寫 code 無關（2026-09-09 使用者裁決：「market signal 不是程式」）。它在 index 入口表仍有路由連結，讀者照樣找得到，兩件事已脫鉤。",
+      "pages": [
+        "coding-workflow-guide",
+        "skill-interest-watch",
+        "community-tech-patterns",
+        "community-pattern-trends",
+        "community-tech-discussions",
+        "community-large-codebase-workflow",
+        "claude-code",
+        "managed-agents",
+        "model-comparison",
+        "model-task-leaderboard",
+        "fable-5",
+        "opus-5",
+        "competitor-landscape",
+        "code-quality-decline",
+        "pricing",
+        "anthropic-business",
+        "ai-agent-safety",
+        "anthropic-government-policy"
+      ]
+    }
+  }
+}

@@ -498,12 +498,12 @@
     if (!all.length) return;
     const _d = new Date(); const today = `${_d.getFullYear()}-${String(_d.getMonth()+1).padStart(2,'0')}-${String(_d.getDate()).padStart(2,'0')}`;
     const sorted = sortItems(all, kbSort.key, kbSort.dir);
-    const codingIds = new Set((window.WIKI_DATA || {}).codingPages || []);
     // 子故事階層（2026-09-03）：子頁不平鋪，只從母頁詳頁下鑽；列表只顯示根頁
     const roots = sorted.filter(i => !i.parent);
-    // 讀者分類（2026-09-03）：篩選看 readerDomains 多標籤（build 端算好：領域值照放，index 💻 入口表
-    // 的頁再加一枚 💻 開發實務，不獨佔）；舊資料無此欄時退回 domain＋codingPages，避免快取舊 data.js 時整頁空白
-    const readerDomains = i => i.readerDomains || [i.domain].concat(codingIds.has(i.id) ? ['💻 開發實務'] : []);
+    // 讀者分類（2026-09-03）：篩選看 readerDomains 多值（build 端算好：領域值照放，再加上該頁
+    // 在 data/reader-tags.json 掛的讀者標籤，不獨佔）。快取到舊 data.js 時退回只有領域值——
+    // 標籤 chip 會暫時空著，但不會整頁空白，下次載入即自癒
+    const readerDomains = i => i.readerDomains || (i.domain ? [i.domain] : []);
     const filtered = activeDomain === 'all' ? roots
       : activeDomain === 'weekly' ? roots.filter(i => !!i.updateFreq)
       : roots.filter(i => readerDomains(i).includes(activeDomain));
