@@ -19,27 +19,17 @@
 
 ## 💻 開發實務入口
 
-只放**開發實務強相關**的頁面（怎麼做、裝什麼、選什麼、**要花多少**、**這筆錢會不會變**）；產品動態與事件追蹤住各自的頁，整理後沉澱到這幾頁。工具的判斷（該裝哪個、證據多強）由社群工具目錄每週整理，每日同步進「興趣類別 skill 總覽」——讀者只需看總覽一頁。
+只放**答「怎麼做」**的頁面（接手 repo 該怎麼設定、卡住了先裝什麼、大 repo 怎麼並行、agent 該用哪種形態跑）；選什麼、出事了、要花多少的頁在各自領域的分頁下；產品動態與事件追蹤住各自的頁，整理後沉澱到這幾頁。工具的判斷（該裝哪個、證據多強）由社群工具目錄每週整理，每日同步進「興趣類別 skill 總覽」——讀者只需看總覽一頁。
 
 | 我想…… | 去哪 |
 |---|---|
 | 接手／新建一個 repo，**官方**建議先做哪些設定（CLAUDE.md、LSP、探索） | [[topics/coding-workflow-guide]] 第 1、2a 段 |
-| 我卡住了（帳單爆、context 撐爆、agent 互踩、它說做完了沒做、agent 讀不懂大 repo、跑 auto 出事……），**社群首選**是哪個 | [[topics/skill-interest-watch]]「我卡在這裡」決策表；安全類 → [[topics/ai-agent-safety]] |
-| 我在舊版本，升上去會壞什麼 | [[feature-radar]]「從你現在的版本升上去，會遇到什麼」；壞掉的東西見 [[entities/claude-code]]「現在還沒修好的」 |
-| 我沒升版，但它好像變慢了、帳單也變多（是模型退步、計費、還是我的用法） | [[topics/code-quality-decline]]「三條線現在到哪」；帳單本身見 [[entities/pricing]] |
-| 這個月我會多花／少花多少（方案內含什麼、一小時多少、有沒有在扣錯錢） | [[entities/pricing]] |
+| 我卡住了（帳單爆、context 撐爆、agent 互踩、它說做完了沒做、agent 讀不懂大 repo、跑 auto 出事……），**社群首選**是哪個 | [[topics/skill-interest-watch]]「我卡在這裡」決策表 |
 | 我關心的某類工具，現在誰最大、本庫怎麼判斷（本週竄升欄累積一週星史後啟用） | [[topics/skill-interest-watch]] 各類別（按開發流程段） |
 | 它說做完了，我怎麼知道是真的——**官方**做法（要證據、`/goal`、Stop hook） | [[topics/coding-workflow-guide]] 第 9 段 |
 | 我想讓 agent 自己跑幾小時／過夜，該用哪個（`/goal`、subagent、Managed Agents、Agent SDK） | [[entities/managed-agents]]「你該用哪個」 |
 | code review 該用哪個入口、怎麼審得起（本庫刻意不推薦單一社群工具，官方六個入口＋明價） | [[topics/coding-workflow-guide]] 第 5 段 |
-| 寫 code 該用哪個模型 | [[topics/model-comparison]] |
-| 別家（Codex／OpenCode／GLM）跟 Claude 比，現在誰強 | [[topics/model-task-leaderboard]]（各榜每週排名） |
 | 大型 codebase 的做法主線（並行／context／記憶／把關） | [[topics/community-large-codebase-workflow]] |
-| 社群現在怎麼玩、哪些做法已經定案、哪個方向在加溫 | [[topics/community-tech-patterns]]「模式概覽」；加溫中的方向見 [[topics/community-pattern-trends]] |
-| 看某個做法的第一手證據（原文連結、實測數字） | [[topics/community-tech-patterns]] |
-| 社群在吵什麼觀念、哪些吵完了、哪些還僵著 | [[topics/community-tech-discussions]]「現在吵到哪」 |
-| 我要開 auto 模式、接 MCP、或 clone 外部 repo，先看什麼會打到我 | [[topics/ai-agent-safety]]「現在還擋不住的攻擊」 |
-| 政府動作會不會讓我哪天用不到 Claude、或用到被降級的版本（海外據點、輸出浮水印、高風險請求換模型） | [[topics/anthropic-government-policy]]「現在有哪幾條線在動」 |
 
 ---
 
