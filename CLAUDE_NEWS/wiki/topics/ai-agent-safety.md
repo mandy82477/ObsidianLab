@@ -112,7 +112,7 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 
 ### TechCrunch／Startup Fortune：駭客可在不竊取密碼情況下抽乾 Claude 訂閱者用量額度（2026-09-09 新增）
 
-- **揭露來源**：TechCrunch〈Hackers are stealing Claude tokens from subscribers〉（source_count 3）；Startup Fortune〈Hackers Are Draining Claude Subscribers Usage Without Stealing a Password〉
+- **揭露來源**：TechCrunch〈Hackers are stealing Claude tokens from subscribers〉（多家媒體跟進）；Startup Fortune〈Hackers Are Draining Claude Subscribers Usage Without Stealing a Password〉
 - **核心主張（僅標題可用）**：報導稱駭客能在不竊取使用者密碼的情況下，耗盡 Claude 訂閱者的用量額度，凸顯訂閱制帳號面臨的新型濫用手法；Google News RSS 未提供正文，具體攻擊機制（API 金鑰外洩、session 劫持、或濫用官方整合介面等）、受影響規模、Anthropic 官方回應均未見報導
 - **與既有事件的關係**：本頁已記錄「資訊竊取型惡意軟體偷走 session 憑證，直接冒用你的帳號」（2026-08-31 新增，見「現在還擋不住的攻擊」表）——該事件明確經由惡意軟體竊取憑證；本則標題強調「不竊取密碼」，暗示可能是不同的攻擊向量，惟機制不明，暫不併入既有列，亦不逕自視為全新攻擊面
 - ❓ **待查證**（標 2026-09-09｜查 Draining、Startup Fortune）：具體攻擊機制、受影響規模、與既有 session 憑證竊取事件是否同源均未見報導

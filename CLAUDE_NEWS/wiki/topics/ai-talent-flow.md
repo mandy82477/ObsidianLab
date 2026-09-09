@@ -54,7 +54,7 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 | **Google DeepMind** | 淨流失方＋高層動盪 | 研究員與元老出走批次（6/21–6/28）＋ Discovery Loop 創業潮（08-05/06）＋ Thore Graepel 出走創業（09-07）；市值蒸發約 $2,700 億美元（詳見下方細節） | 🔴 技術核心＋高層治理雙重動盪，削弱 Google 組織穩定性訊號（推論，已查證 2026-08-13）|
 | **Anthropic** | 主要承接方 | 科學計算（Jumper）／AI 編碼（Adler）／訓練（Pritzel）／安全經濟；08-21/23 新增晶片人才 Amir Salek（前 Google TPU 計畫創辦人，入 compute 團隊）| 🟢 招募已擴及硬體自主設計；到任日未公開（推論：戰力影響待觀察）|
 | **OpenAI** | 次要承接方 | 獲得一名 Google 頂尖研究員（6/23 SEJ 報導，姓名未具名）| 🟡 同步受惠於 Google 人才外流，規模小於 Anthropic |
-| **Meshy**（3D 生成新創，非 Anthropic 生態） | 人才承接方 | 電腦繪圖資深學者童欣（Dr. Xin Tong）加入出任首席科學家（09-09，僅標題可用，經專頁定向收錄）| 🔵 3D 生成賽道人才強化；與 Google／Anthropic 人才戰無直接關聯，具體職責與履歷未見報導 |
+| **Meshy**（3D 生成新創，非 Anthropic 生態） | 人才承接方 | 電腦繪圖資深學者童欣（Dr. Xin Tong）加入出任首席科學家（09-09，僅標題可用）| ℹ️ 3D 生成賽道人才強化；與 Google／Anthropic 人才戰無直接關聯，具體職責與履歷未見報導 |
 
 **對各公司的影響細節**
 - **Google DeepMind**：兩週內連失 Jumper（科學/生物）、Adler（AI 編碼）、Pritzel（訓練）、額外 2 位資深研究員（6/28），另有一名研究員轉投 OpenAI；市值蒸發約 $2,700 億美元；Gemini 3.5 Pro 延期至七月（推論）；被迫重組 AI 編碼突擊隊
@@ -77,7 +77,7 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 ## 時序
 
 ### 2026-09-09
-- **童欣（Dr. Xin Tong）加入 3D 生成新創 Meshy，出任首席科學家**：Macau Business 報導，電腦繪圖領域資深學者加入，僅標題可用，具體職責、履歷細節未見報導。**與本頁核心追蹤格局的關係**：非 Google DeepMind／Anthropic／OpenAI 人才戰的一部分，經 topics/ai-talent-flow 專頁定向通道收錄，不套用 Claude/Anthropic 關聯門檻；詳見「對各公司的影響」表 Meshy 列（Topic Watch/ai-talent-flow，source_count 2）
+- **童欣（Dr. Xin Tong）加入 3D 生成新創 Meshy，出任首席科學家**：Macau Business 等多家報導，電腦繪圖領域資深學者加入，僅標題可用。非 Google DeepMind／Anthropic／OpenAI 人才戰一部分，詳見「對各公司的影響」表 Meshy 列
 
 ### 2026-09-07
 - **DeepMind 研究老將 Thore Graepel 離職，投入 AI 推理新創事業**：未加入 Anthropic 或其他既有前沿實驗室，屬自行創業型態，詳見「對各公司的影響」表 Google DeepMind 列更新；具體新創名稱、職位、資金來源未見報導，僅標題可用（Google News）

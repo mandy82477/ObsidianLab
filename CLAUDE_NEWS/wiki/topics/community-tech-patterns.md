@@ -185,18 +185,18 @@ Multi-agent 架構與 Skills 設計已是社群定案的做法；還在試的十
 - **主線：** —
 - **核心模式：** 開源 skill，鎖定「Claudism」冗語風格——模型完成任務後仍反覆交代哪些檔案沒改、哪些事沒做（如「我改了 this.py 和 that.py，但沒改 README.md、也沒 commit」），或在程式碼註解中重複描述自己在做什麼
 - **與既有模式的關係：** 與「Token / 成本優化」既有代表技巧穴居人模式（CaveMan Skill，單次回覆 Token 從 70 降至 20）同屬壓縮輸出取向，差異在本則鎖定的是「交代未做之事」這種特定冗語模式，而非泛用輸出長度
-- **可信度註記：** Hacker News，499 分，跨 2 個獨立來源報導（source_count 2），屬本頁近期收錄中互動最高者之一；惟尚無具體實測數據佐證縮減幅度，亦無 forks／issues 佐證可查
-- **來源：** 「I-have-ADHD: A skill to stop coding agents from burying the answer」— Hacker News（499 分，跨 2 個獨立來源）；[GitHub](https://github.com/ayghri/i-have-adhd)
+- **可信度註記：** Hacker News，499 分，另有一家獨立來源同步報導，屬本頁近期收錄中互動最高者之一；惟尚無具體實測數據佐證縮減幅度，亦無 forks／issues 佐證可查
+- **來源：** 「I-have-ADHD: A skill to stop coding agents from burying the answer」— Hacker News（499 分，另有一家獨立來源報導）；[GitHub](https://github.com/ayghri/i-have-adhd)
 - **成熟度：** ⏳ 新興（本庫首次收錄，尚無星數以外的社群採用回饋數據）
 
 #### 同日六款多代理協作／終端管理 Show HN 亮相：雲端 IDE、session 管理、角色分工團隊、共享記憶 ADE、tmux 狀態列、用量容錯路由（2026-09-09）
 
 - **主線：** —
-- **核心模式：** 同日六款鎖定多代理協作／終端管理的 Show HN 同時亮相：type.com（雲端多人協作 IDE，鎖定非技術使用者的「Codex/Claude in the cloud」）、Maxxwell（同時管理多個 coding-agent session 進度、context 與 blocker 的 IDE）、Castforge（讓 Claude Code、Codex、Gemini 組成 Lead/Coder/Tester/Reviewer 分工團隊）、Clor（Claude 與 Codex 共享記憶的 ADE，agent session 各自跑在獨立沙箱工作區）、AgentPulse（tmux 外掛，用生命週期 hooks 顯示 Claude Code／Codex 忙碌／等待／閒置／中斷狀態）、Bounce Router（依用量在 Claude、Codex、Muse 間自動切換的 TUI 路由器，貼文內文標記 [dead]）
-- **與既有模式的關係：** 延續本頁既有「同日批次亮相」先例（08-09 loopx+HarnessFlow、08-11 spec-driven 四款、08-12 六款熱門清單），與「Multi-agent 架構」類別既有代表技巧同屬多代理協調基礎設施取向；六款分屬「雲端 IDE」「session 管理」「角色分工模擬團隊」「共享記憶 ADE」「終端狀態顯示」「用量容錯路由」六個切角，顯示同類需求正被多方獨立重複造輪
-- **可信度註記：** 六則分數均低（HN 10／8／3／2／4／4 分），除 type.com 與 Clor 各有 1 則獨立來源提及（source_count 2）外皆單一來源；Bounce Router 貼文內文標記 [dead]，可信度存疑，本則僅記錄其存在、不採信其功能宣稱；六款均未見 forks／issues／commit 佐證可查
-- **來源：** 「Multiplayer Codex/Claude in the cloud for non-tech use cases」— Hacker News（10 分，2 個獨立來源）；[原文](https://news.ycombinator.com/item?id=49626148)｜「The IDE for Optimal Tokenmaxxing」— Hacker News（8 分）；[原文](https://maxxwell.dev/)｜「run Claude Code, Codex and Gemini as one dev team」— Hacker News（3 分）；[原文](https://castforge.ai/)｜「The ADE where Claude and Codex work together with shared memory」— Hacker News（2 分，2 個獨立來源）；[原文](https://news.ycombinator.com/item?id=49627194)｜「Claude Code and Codex status in tmux」— Hacker News（4 分）；[GitHub](https://github.com/jerriclynsjohn/tmux-agent-pulse)｜「A TUI over Claude, Codex and Muse with Usage Failover」— Hacker News（4 分，內文標記 [dead]）；[GitHub](https://github.com/richet/bounce-router)
-- **成熟度：** ⏳ 新興（六則分數皆低於本頁一般收錄門檻，僅因同日批次現象具觀察價值而記錄，個別工具實際採用情形未經驗證）
+- **核心模式：** 同日六款 Show HN：type.com（雲端多人 IDE）、Maxxwell（多 session 進度管理）、Castforge（Lead/Coder/Tester/Reviewer 分工團隊）、Clor（Claude／Codex 共享記憶 ADE）、AgentPulse（tmux 狀態列外掛）、Bounce Router（跨模型用量容錯路由，內文標記 [dead]）
+- **與既有模式的關係：** 延續本頁既有「同日批次亮相」先例（08-09、08-11、08-12 三例），與「Multi-agent 架構」既有代表技巧同屬多代理協調基礎設施取向；六款分屬雲端 IDE、session 管理、角色分工、共享記憶、狀態顯示、用量路由六個切角，顯示同類需求正被多方獨立重複造輪
+- **可信度註記：** 六則分數均低（HN 10／8／3／2／4／4 分），除 type.com 與 Clor 各另有一家獨立來源提及外皆單一來源；Bounce Router 內文標記 [dead]，僅記錄其存在、不採信功能宣稱；六款均未見 forks／issues／commit 佐證可查
+- **來源：** Hacker News；[type.com](https://news.ycombinator.com/item?id=49626148)（10 分，另有一家獨立來源）、[Maxxwell](https://maxxwell.dev/)（8 分）、[Castforge](https://castforge.ai/)（3 分）、[Clor](https://news.ycombinator.com/item?id=49627194)（2 分，另有一家獨立來源）、[AgentPulse](https://github.com/jerriclynsjohn/tmux-agent-pulse)（4 分）、[Bounce Router](https://github.com/richet/bounce-router)（4 分，[dead]）
+- **成熟度：** ⏳ 新興（六則分數皆偏低，僅因同日批次現象具觀察價值而記錄，個別工具實際採用情形未經驗證）
 
 #### zenstory-ai/video-recap-skills：Claude Code Skill 把任意影片剪成中文口述影評，支援剪映匯出（2026-09-08）
 

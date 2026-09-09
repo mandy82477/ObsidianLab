@@ -315,7 +315,7 @@ Financial Times 報導 Anthropic 旗艦模型在吸引一般使用者（general 
 - **Cursor（SpaceX 旗下）**（2026-08-29）：OpenAI 退出與 Cursor 的合作，Anthropic 加碼投入運算資源承接需求（Wccftech）
 - **Nscale**（2026-08-28）：簽署 450 億美元資料中心協議，取得 460 MW Vera Rubin 世代算力（Forbes；Financial Times）
 - **Anthropic（營收信號）**（2026-08-28）：Yahoo Finance 獨家稱 Claude 營收年增達 1,000%，未經官方證實（Yahoo Finance）
-- **Salesforce**（2026-08-26）：深化合作發布 CRM 業務外掛「Claudeforce」，Salesforce 同步上修全年營收預測（Reuters；WSJ）**訊 2026-09-08 追蹤**：Demand Gen Report 稱雙方「擴大」Claudeforce 合作，具體擴大範疇（新功能、新客戶層、金額）未見報導，僅標題可用（Google News/Demand Gen Report）
+- **Salesforce**（2026-08-26，訊 2026-09-08）：深化合作發布 CRM 業務外掛「Claudeforce」，Salesforce 同步上修全年營收預測（Reuters；WSJ）。09-08 Demand Gen Report 稱雙方「擴大」合作，擴大範疇未見報導，僅標題可用（Google News/Demand Gen Report）
 - **CrowdStrike**（2026-08-27）：股價單日漲 13%，執行長歸功本季最佳表現部分來自與 Anthropic 合作（Forbes）
 - **Meta**（2026-08-27）：NYT 稱雙方「亦敵亦友」，Meta 公開批評 Anthropic 卻也是其最大客戶之一，傳支出達 100 億美元（NYT）
 - **Anthropic（澳洲市場）**（2026-08-25）：內部郵件揭露 Anthropic 澳洲佈局規模（ABC News）
@@ -489,7 +489,7 @@ Financial Times 報導 Anthropic 旗艦模型在吸引一般使用者（general 
 ### 2026-09
 
 #### 2026-09-09
-- **[商業風險，詳見 pricing] Verge／Startup Fortune／The New Stack 三家媒體同日跟進 Max 20x 集體訴訟**：The New Stack 首度點名「20 倍用量」實為週用量上限機制；詳見 [[entities/pricing]]「事故現在還在發生嗎」表與事故與爭議細節區（Google News/The Verge；Google News/Startup Fortune；Google News/The New Stack）
+- **[商業風險，詳見 pricing] Verge／Startup Fortune／The New Stack 三家媒體跟進 Max 20x 集體訴訟**：New Stack 點名「20 倍用量」實為週用量上限機制，詳見 [[entities/pricing]]「事故現在還在發生嗎」表（Google News/The Verge；Startup Fortune；The New Stack）
 - **[商業風險，詳見 pricing] TechCrunch／Startup Fortune：駭客可在不竊取密碼情況下抽乾訂閱者用量額度**：本頁不記攻擊手法（見 [[topics/ai-agent-safety]]），計費衝擊面詳見 [[entities/pricing]]「事故與爭議」（Google News/TechCrunch；Google News/Startup Fortune）
 - **[戰略合作] Crowdfund Insider：Anthropic 推出 Claude Commerce Agents，與 Visa、Mastercard 建立合作關係**：詳見「哪個合作會改到你用的 Claude」一行制清單新增列（Google News/Crowdfund Insider）
 - **[戰略合作] citybiz：LoanPro 採用 AWS＋Claude AI 原生客服介面，通話時間最多縮短 15%**：詳見一行制清單新增列（Google News/citybiz）

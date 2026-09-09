@@ -212,7 +212,7 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 ## 時序
 
 ### 2026-09-08
-- **Cognition**（Devin 開發商）：The Tech Buzz 報導完成新一輪募資，估值達 480 億美元，AI 編碼賽道戰力升級；僅標題可用，資金用途、投資人名單未見報導，經 topics/competitor-landscape 專頁定向通道收錄（Topic Watch/competitor-landscape）
+- **Cognition**（Devin 開發商）：The Tech Buzz 報導完成新一輪募資，估值達 480 億美元，AI 編碼賽道戰力升級；僅標題可用，資金用途、投資人名單未見報導（Topic Watch）
 - **Logitech**：推出可自訂快捷鍵的 MX Keypad，鎖定開發者作為多應用 AI 控制中心，廠商自宣性質，無 Claude 對比（Topic Watch）
 
 ### 2026-09-07
