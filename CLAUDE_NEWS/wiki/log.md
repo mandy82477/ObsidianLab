@@ -6112,7 +6112,7 @@ GH Actions 抓料排 10:23 UTC，到 14:45 UTC 仍未落地（+4.4 小時且持�
 - 更新頁面：entities/claude-code、entities/pricing、topics/anthropic-business、topics/ai-talent-flow、topics/competitor-landscape、topics/recursive-self-improvement、topics/ai-agent-safety、topics/anthropic-government-policy、topics/community-tech-patterns、topics/community-tech-discussions
 - 新增頁面：entities/evan-hubinger、entities/jacob-coxon
 - 摘要：前 OpenAI／Anthropic pretraining 研究員 Jacob Coxon 公開辭職控訴兩家公司「不負責任衝向自我改進超級智能」（HN 623 分全庫居冠），同日 Anthropic 安全研究員 Evan Hubinger 表態 AI 逾 10% 機率十年內「殺死所有人類」，事件經 WSJ 獨家與逾十家媒體同日跟進，人物記者建立兩頁分別記錄當事人身分（Coxon 資歷未經獨立查證、HN 讀者有異見，已標待核實）；同日並發 Anthropic 疑未依英國 AISI 要求提交 Mythos 5.1 測試（IT Pro／FT／The Times）、Claude Max 20x 集體訴訟與週用量上限爭議、駭客不竊密碼即抽乾訂閱者用量額度三線商業／安全交織新聞；社群記者收錄一則高互動 skill（I-have-ADHD，HN 499 分）與同日六款多代理協作工具批次亮相（Type.com／Maxxwell／Castforge／Clor／AgentPulse／Bounce Router）；模型記者三則候選（GPT-6 Astra 機械手臂測試、Opus 5 API 串流文章、Fable 5.1 vs Mythos 5.1 比較文）皆因互動不足或僅標題可用判定不收錄；功能記者收錄 v2.1.266 版本修復但因無新指令旗標未進 feature-radar；商業記者轉知兩筆待接手（童欣加入 Meshy 予人物記者評估建頁、NPR 新模型經濟影響報導予模型記者評估雙標）。
-- devpractice 沉澱：（本輪待派工後補記）
-- market 判讀：（本輪待派工後補記）
+- devpractice 沉澱：候選 7 筆（claude-code 兩則版本修復、SDK breaking change、惡意 `.git` 設定檔跨廠攻擊向量、pricing 駭客抽乾額度與週用量上限機制、agent-orchestrator、I-have-ADHD、同日六款 multi-agent 工具批次亮相）；基準線 18d5638870→8f1b64be98
+- market 判讀：2 則（🔴 0／🟡 2：Coxon 辭職＋Hubinger 表態＋AISI 爭議三線同日發酵之 IPO 前敘事風險；Cognition 480 億估值比較樣本）
 - 呈現品質：全部通過（商業記者於彙整前修復 pricing／anthropic-business／ai-talent-flow／competitor-landscape 共 4 處超限或內部語言洩漏；其餘記者機械自查 `check_cell_limits.py` / `check_reader_language.py` / `check_pending_markers.py` 均為 OK）
 - 品質備註：無
