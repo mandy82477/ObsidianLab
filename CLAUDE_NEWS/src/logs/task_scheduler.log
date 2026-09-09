@@ -612,3 +612,4 @@
 [2026-09-08T22:04:52Z] Step 0: 昨日（2026-09-07）日報存在，正常
 [2026-09-08T22:04:52Z] Step 0b 冪等閘 ABORTED - digest already exists (news/2026-09-08.md，17:00 UTC 班次已產出並完整收尾，本班 22:00 UTC 直接中止，無多班次例外)
 [cloud daily-news-pipeline-cloud ABORTED 2026-09-08] Step 0b 冪等閘攔截：news/2026-09-08.md 已存在，非 backfill 模式，正確中止
+[Wed 2026/09/09 12:05:40.78] === cloud daily-news-pipeline-cloud STARTED (TARGET_DATE=2026-09-09) ===
