@@ -7,11 +7,11 @@ last_updated: "2026-09-07"
 last_news_update: "2026-09-02"
 update_freq: "🗓️ 週更（無新趨勢節點時刻意不動——日期停留＝趨勢層無變化，非漏更新）"
 status_main: "ongoing"
-days_since_news: 6
+days_since_news: 7
 parent: null
 children: "[]"
 page_role: "root"
-days_since_news_subtree: 6
+days_since_news_subtree: 7
 inbound_links: 8
 attribution_count: 0
 attribution_last: null
