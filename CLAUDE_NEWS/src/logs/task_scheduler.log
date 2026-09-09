@@ -615,3 +615,4 @@
 [Wed 2026/09/09 12:05:40.78] === cloud daily-news-pipeline-cloud STARTED (TARGET_DATE=2026-09-09) ===
 [Wed 2026/09/09 12:06:24.20] ABORTED: src/gathered_archive/2026-09-09.json not found (Step 1a cp failed) - GitHub Actions daily-gather 尚未產出當日原料，非目標日期新鮮資料，正確中止（非 backfill，不自動重抓，交下一班或資料到齊後接手）
 [Wed 2026/09/09 12:06:24.20] [cloud daily-news-pipeline-cloud ABORTED 2026-09-09] Step 1a：src/gathered_archive/2026-09-09.json 不存在（GitHub Actions 抓料尚未到齊），交由 Step 1b 新鮮度防線邏輯判定中止，正確行為，非錯誤
+[cloud daily-news-pipeline-cloud STARTED 2026-09-09T17:04:35Z]
