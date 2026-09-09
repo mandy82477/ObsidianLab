@@ -12,13 +12,7 @@
       "time": "09/08 04:36",
       "sentiment": "",
       "body": "技術部落格拆解 Claude Code 雲端沙盒的基礎架構：每個 session 跑在獨立的 Firecracker microVM 上，以 Rust 撰寫的自訂 init 程序（`process_api`）作為 PID 1，並與 Instinct、Poke 等其他行動端 agent 平台的架構並列比較；當日在 Hacker News 取得 58 分（達中門檻 ≥30 分）。",
-      "focusTags": [],
-      "sedimented": [
-        {
-          "id": "claude-code",
-          "pageType": "entity"
-        }
-      ]
+      "focusTags": []
     },
     {
       "title": "[BUG] Appeal Form Redirect Loop After Account Restriction",
@@ -97,13 +91,7 @@
       "time": "09/08 07:30",
       "sentiment": "",
       "body": "報導指出 Claude iOS App 新增用量按鈕，並新增 Claude Code 設定區塊。",
-      "focusTags": [],
-      "sedimented": [
-        {
-          "id": "claude-code",
-          "pageType": "entity"
-        }
-      ]
+      "focusTags": []
     },
     {
       "title": "Anthropic is No. 1 on Best Workplaces for Innovators 2026 - Fast Company",
@@ -141,13 +129,7 @@
       "time": "09/08 14:39",
       "sentiment": "",
       "body": "新開源專案，提供 Claude Code skill 把任意影片剪成中文口述影評、支援剪映格式匯出，500 星（達 GitHub repo 中門檻 ≥300 星）。",
-      "focusTags": [],
-      "sedimented": [
-        {
-          "id": "claude-code",
-          "pageType": "entity"
-        }
-      ]
+      "focusTags": []
     },
     {
       "title": "Show HN: Claude Style Patch – A dropin Claude.MD section for improving Claudish",
@@ -156,13 +138,7 @@
       "time": "09/08 03:19",
       "sentiment": "",
       "body": "作者自述重度使用 Claude 期間，注意到自 Opus 4.6 之後的世代文筆明顯退化（長對話與 Claude Code 任務輸出皆然），因此診斷具體毛病後寫成一段可直接貼進 `CLAUDE.md` 的修正指引。",
-      "focusTags": [],
-      "sedimented": [
-        {
-          "id": "claude-code",
-          "pageType": "entity"
-        }
-      ]
+      "focusTags": []
     },
     {
       "title": "Show HN: Gremlord – Run Claude Code on any model, with a budget",
@@ -171,13 +147,7 @@
       "time": "09/08 12:47",
       "sentiment": "",
       "body": "Gremlord 用一個本地路由器包住 Claude Code：介面、工具、自動更新都不變，Anthropic 端逐位元組直通，OpenAI／xAI／Ollama／vLLM／OpenRouter 等則做完整請求轉譯，並用便宜分類器逐輪選模型、按預算計費。",
-      "focusTags": [],
-      "sedimented": [
-        {
-          "id": "claude-code",
-          "pageType": "entity"
-        }
-      ]
+      "focusTags": []
     },
     {
       "title": "I tested whether a bigger CLAUDE.md could result in more errors...",
@@ -195,13 +165,7 @@
       "time": "09/08 14:31",
       "sentiment": "",
       "body": "r/ClaudeCode 貼文詢問社群如何實際比較 Codex 與 Claude Code 的花費，作者表示光加總 `~/.claude` 與 `~/.codex` 的 token 數仍得不到明確答案。",
-      "focusTags": [],
-      "sedimented": [
-        {
-          "id": "claude-code",
-          "pageType": "entity"
-        }
-      ]
+      "focusTags": []
     },
     {
       "title": "rokbenko/quackd",
@@ -348,45 +312,5 @@
     }
   ],
   "preview": "Anthropic 傳將 IPO 時程延至十月、評估上看兩兆美元估值，並與 OpenAI 同步爭取投資級信評以降低借貸成本。",
-  "sedimentedToday": [
-    {
-      "id": "claude-code",
-      "name": "Claude Code",
-      "pageType": "entity"
-    },
-    {
-      "id": "anthropic-business",
-      "name": "Anthropic 商業健康度",
-      "pageType": "topic"
-    },
-    {
-      "id": "anthropic-government-policy",
-      "name": "Anthropic 政府與軍事政策",
-      "pageType": "topic"
-    },
-    {
-      "id": "community-tech-patterns",
-      "name": "Claude Code 社群工作流模式",
-      "pageType": "topic"
-    },
-    {
-      "id": "competitor-landscape",
-      "name": "AI 編碼工具競品動態",
-      "pageType": "topic"
-    },
-    {
-      "id": "market-signals",
-      "name": "投資訊號判讀",
-      "pageType": "topic"
-    },
-    {
-      "id": "skill-interest-watch",
-      "name": "興趣類別 skill 總覽",
-      "pageType": "topic"
-    }
-  ],
-  "marketSignal": {
-    "title": "Anthropic 與 OpenAI 同步爭取投資級信評，為 IPO 後舉債鋪路",
-    "date": "2026-09-08"
-  }
+  "sedimentedToday": []
 }

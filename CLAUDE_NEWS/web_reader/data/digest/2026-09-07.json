@@ -397,23 +397,8 @@
   "preview": "Max 訂閱用戶回報幾乎一開工就撞上用量上限，GitHub Issue 湧入 1,492 則留言、725 個讚，配額計算方式與顯示是否透明尚無官方定論。",
   "sedimentedToday": [
     {
-      "id": "pricing",
-      "name": "Anthropic 訂閱方案與計費政策",
-      "pageType": "entity"
-    },
-    {
-      "id": "ai-talent-flow",
-      "name": "AI 實驗室人才流動",
-      "pageType": "topic"
-    },
-    {
       "id": "enterprise-tool-tracker",
       "name": "大型企業 AI 編碼工具使用追蹤",
-      "pageType": "topic"
-    },
-    {
-      "id": "recursive-self-improvement",
-      "name": "AI 遞歸自我改進與全球暫停呼籲",
       "pageType": "topic"
     }
   ]

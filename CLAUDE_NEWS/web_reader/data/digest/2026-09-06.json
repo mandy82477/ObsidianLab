@@ -338,11 +338,5 @@
     }
   ],
   "preview": "財經媒體圍繞 Anthropic IPO 話題本日持續延燒：calcalistech 報導 Anthropic 已將 IPO 時程延後，另有多家媒體分析其估值與上市進程。",
-  "sedimentedToday": [
-    {
-      "id": "community-tech-discussions",
-      "name": "社群技術討論趨勢",
-      "pageType": "topic"
-    }
-  ]
+  "sedimentedToday": []
 }
