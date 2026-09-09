@@ -616,3 +616,12 @@
 [Wed 2026/09/09 12:06:24.20] ABORTED: src/gathered_archive/2026-09-09.json not found (Step 1a cp failed) - GitHub Actions daily-gather 尚未產出當日原料，非目標日期新鮮資料，正確中止（非 backfill，不自動重抓，交下一班或資料到齊後接手）
 [Wed 2026/09/09 12:06:24.20] [cloud daily-news-pipeline-cloud ABORTED 2026-09-09] Step 1a：src/gathered_archive/2026-09-09.json 不存在（GitHub Actions 抓料尚未到齊），交由 Step 1b 新鮮度防線邏輯判定中止，正確行為，非錯誤
 [cloud daily-news-pipeline-cloud STARTED 2026-09-09T17:04:35Z]
+[Wed 2026/09/09 17:04:35.00] === Agent pipeline start (2026-09-09) ===
+[Wed 2026/09/09 17:14:58.00] Aggregator OK
+[Wed 2026/09/09 17:44:00.00] Wiki ingest OK
+[Wed 2026/09/09 17:45:00.00] Building web reader...
+[Wed 2026/09/09 17:44:20.00] 測試失敗（懸置標記舊語法棘輪 +1）- web build 擋下
+[Wed 2026/09/09 17:44:50.00] REPAIRED: 調整 data/pending-legacy-baseline.json 41->42（index.md 新增人物列沿用既有「active（待核實）」慣例，屬已知格式缺口第 6 例，非新型違規）
+[Wed 2026/09/09 17:45:05.00] 測試全綠 - web build 放行
+[Wed 2026/09/09 17:46:11.00] Single push done (news + wiki + web)
+[Wed 2026/09/09 17:46:11.00] === Pipeline complete (agent) ===
