@@ -150,3 +150,5 @@
 {"id": "H-7397a3", "closed": "2026-09-07", "status": "done", "by": "社群", "result": "community-tech-patterns.md與community-pattern-trends.md「46%成本達96%效能」來源等級已改為社群轉載"}
 {"id": "H-99db87", "closed": "2026-09-08", "status": "done", "by": "模型", "result": "09-03 事件解決時間口徑已於 opus-5/fable-5/mythos/sonnet-5 四頁一次更正為 16:16 UTC；opus-5:44「全是」改寫為「絕大多數」並各附指路"}
 {"id": "H-1da51a", "closed": "2026-09-08", "status": "done", "by": "模型", "result": "opus-5「這些數字是誰量的」節補上第三個出口，連結至 topics/code-quality-decline"}
+{"id": "H-848909", "opened": "2026-09-09", "from": "商業", "to": "人物", "page": "entities/xin-tong", "note": "童欣（Dr. Xin Tong）加入 Meshy 出任首席科學家，具明確職稱＋具體事件，符合人物建頁門檻（來源：Macau Business，2026-09-09，topic-watch/ai-talent-flow）", "status": "open"}
+{"id": "H-36251d", "opened": "2026-09-09", "from": "商業", "to": "模型", "page": "entities/pricing", "note": "NPR 報導 Anthropic 推出新模型用於測試 AI 對美國經濟的影響（2026-09-09），僅標題可用；評估是否為可選用模型需模型記者雙標處理", "status": "open"}

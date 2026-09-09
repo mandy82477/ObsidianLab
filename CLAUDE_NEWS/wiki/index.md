@@ -70,6 +70,8 @@
 | [[entities/robert-mahari]] | person | 👤 人物 | active（待核實）| Anthropic 新設「Claude for Legal」部門負責人（2026-08-07 任命，Legal IT Insider、Law.com 同日獨立報導，僅標題可用，過往經歷 ❓ 待查證）|
 | [[entities/jensen-huang]] | person | 👤 人物 | active（待核實）| Nvidia 執行長；2026-08-27 傳出對投資 OpenAI／Anthropic 的規模表示「後悔」（Yahoo Finance 單一來源，後悔方向 ❓ 待查證）|
 | [[entities/amir-salek]] | person | 👤 人物 | active（待核實）| Anthropic 延攬前 Google 自研晶片計畫創辦人（2026-08-23，The Times of India 單一來源，僅標題可用，過往經歷與職掌待查證）|
+| [[entities/evan-hubinger]] | person | 👤 人物 | active | Anthropic 安全研究員；2026-09-09 公開估計 AI 十年內導致人類全滅機率逾 10%（BBC 具名報導） |
+| [[entities/jacob-coxon]] | person | 👤 人物 | active（待核實）| 前 OpenAI／剛離職 Anthropic pretraining 研究員；2026-09-09 辭職聲明指控兩家公司「不負責任衝向自我改進超級智能」（HN 623 分最高互動，資歷未經獨立查證）|
 
 ---
 

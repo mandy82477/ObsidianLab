@@ -6105,3 +6105,14 @@ GH Actions 抓料排 10:23 UTC，到 14:45 UTC 仍未落地（+4.4 小時且持�
 **同日續：index「💻 開發實務入口」表跟著標籤收成「怎麼做」（使用者：「請更新」）。** 移出 10 列（升版會壞什麼、沒升版變慢、這個月多花少花、寫 code 選哪個模型、別家誰強、社群怎麼玩、第一手證據、社群在吵什麼、開 auto 先看什麼、政府動作）；「我卡住了」列拿掉安全類次出口；導言改為「只放答『怎麼做』的頁面」並指明選什麼／出事了／要花多少在各自領域分頁。表上非成員出口歸零，表與標籤重新對齊。被移出的頁在 index 目錄表都還在（各 1–4 處）。**留給讀者的代價**：從開發實務入口走不到「該用哪個模型」「升版會壞什麼」「帳單」了，要從各自領域分頁進——這是「只放怎麼做」的直接後果，不是漏。
 
 **同日追補：「咬到你」用詞的來源鏈（使用者問「有 review 為什麼會出現這種用詞嗎」——前面只查了它為什麼通過，沒查它從哪生出來）。** 來源：第 4 波（P2）**設計 agent 自創**——commit `8aa87d5e` 之前 `claude-code.md` 全文零次「咬到你」，是提案裡新開結論表時取的名。傳染：第 5 波安全頁提案逐字寫「照抄 [[entities/claude-code]] 的欄位骨架」而生出「現在會打到你的」，第 7 波商業頁再仿成「現在還打得到你的商業風險」——**沒有任何規則要求這個句型，是後波設計者讀前波定稿當硬約束時把措辭一起抄了**。為什麼沒被擋：第 4 波評審對這節的檢查是「七列每列都過三條判準」「去向表抽驗」「冷讀者幾跳拿到」——**評審契約裡沒有一項在看標題措辭**；冷讀者三波都給過（見前條）。結論：這不是某個 agent 的失誤，是流程結構——設計者讀前波產物找形狀、評審只驗判準與去向、冷讀者是雙語 LLM——三段各自合理，合起來對翻譯腔零抵抗。修法已做的：規則檔不再指定措辭（後波不會再從規則抄）；沒做也不打算做的：加「措辭檢查」給評審——那是機器驗不了的，只會變成裝飾條文。
+
+## 2026-09-09 Ingest
+
+- 來源日報：[[news/2026-09-09]]
+- 更新頁面：entities/claude-code、entities/pricing、topics/anthropic-business、topics/ai-talent-flow、topics/competitor-landscape、topics/recursive-self-improvement、topics/ai-agent-safety、topics/anthropic-government-policy、topics/community-tech-patterns、topics/community-tech-discussions
+- 新增頁面：entities/evan-hubinger、entities/jacob-coxon
+- 摘要：前 OpenAI／Anthropic pretraining 研究員 Jacob Coxon 公開辭職控訴兩家公司「不負責任衝向自我改進超級智能」（HN 623 分全庫居冠），同日 Anthropic 安全研究員 Evan Hubinger 表態 AI 逾 10% 機率十年內「殺死所有人類」，事件經 WSJ 獨家與逾十家媒體同日跟進，人物記者建立兩頁分別記錄當事人身分（Coxon 資歷未經獨立查證、HN 讀者有異見，已標待核實）；同日並發 Anthropic 疑未依英國 AISI 要求提交 Mythos 5.1 測試（IT Pro／FT／The Times）、Claude Max 20x 集體訴訟與週用量上限爭議、駭客不竊密碼即抽乾訂閱者用量額度三線商業／安全交織新聞；社群記者收錄一則高互動 skill（I-have-ADHD，HN 499 分）與同日六款多代理協作工具批次亮相（Type.com／Maxxwell／Castforge／Clor／AgentPulse／Bounce Router）；模型記者三則候選（GPT-6 Astra 機械手臂測試、Opus 5 API 串流文章、Fable 5.1 vs Mythos 5.1 比較文）皆因互動不足或僅標題可用判定不收錄；功能記者收錄 v2.1.266 版本修復但因無新指令旗標未進 feature-radar；商業記者轉知兩筆待接手（童欣加入 Meshy 予人物記者評估建頁、NPR 新模型經濟影響報導予模型記者評估雙標）。
+- devpractice 沉澱：（本輪待派工後補記）
+- market 判讀：（本輪待派工後補記）
+- 呈現品質：全部通過（商業記者於彙整前修復 pricing／anthropic-business／ai-talent-flow／competitor-landscape 共 4 處超限或內部語言洩漏；其餘記者機械自查 `check_cell_limits.py` / `check_reader_language.py` / `check_pending_markers.py` 均為 OK）
+- 品質備註：無
