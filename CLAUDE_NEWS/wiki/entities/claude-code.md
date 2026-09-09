@@ -29,8 +29,8 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 **狀態：** active
 **領域：** 🛠️ 工具/功能
 **首次出現：** 2025（正式推出）
-**最後更新：** 2026-09-08
-**最後新聞更新：** 2026-09-08
+**最後更新：** 2026-09-09
+**最後新聞更新：** 2026-09-09
 
 > **最新動態**（2026-09-08）
 > - **新增已知問題**：功能請求「`MEMORY.md` 記憶壓縮提醒門檻可設定化」（#91188，見「行為與品質」）。
@@ -42,10 +42,9 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 
 **最新版本動態：**
 
+- **v2.1.266**（2026-09-08）：修復 2.1.265 一項迴歸，影響 LLM-gateway／proxy 的 `CLAUDE_CODE_USE_GATEWAY` 環境變數（原文截斷，細節未知）；純 bug 修復。
 - **v2.1.261**（2026-09-04）：`/status` 與 `claude doctor` 新增「Organization policy」欄位，說明組織政策載入失敗的原因（例如代理伺服器未正確轉發 endpoint）。
-- **v2.1.258**（2026-09-01）：修復 macOS 12（Monterey）啟動失敗（v2.1.255 引入的回歸），以及 remote／排程 session 因「使用者訊息不得為空」而失敗的問題；純 bug 修復。
-- **v2.1.251**（2026-08-28）：新增 `PreModelSwitch`／`PostModelSwitch` hook 事件，可攔截、確認或標註模型切換；`SessionStart` resume hook 回傳 session 新鮮度（freshness）與估計流失的內容量。
-- 其餘版本（含 anthropic-sdk-python v1.0.0 httpx2 breaking change）的逐版異動見下方「版本更新 → 最新版本」表。
+- 其餘版本（含 v2.1.258 macOS 12 啟動失敗修復、anthropic-sdk-python v1.0.0 httpx2 breaking change）的逐版異動見下方「版本更新 → 最新版本」表。
 
 **近期平台與文件異動：**
 
@@ -412,6 +411,7 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 
 | 版本 | 發布日 | 重點 |
 |------|------|------|
+| **v2.1.266** | 2026-09-08 | Bug fix：修復 2.1.265 一項迴歸，影響 LLM-gateway／proxy 的 `CLAUDE_CODE_USE_GATEWAY` 環境變數（原文截斷，細節未知）；純 bug 修復（見 [Release](https://github.com/anthropics/claude-code/releases/tag/v2.1.266)）|
 | **v2.1.263** | 2026-09-06 | Bug fixes and reliability improvements，官方 changelog 未列具體項目，純可靠性修正，無使用者端功能異動（見 [Release](https://github.com/anthropics/claude-code/releases/tag/v2.1.263)）|
 | **v2.1.261** | 2026-09-04 | `/status` 與 `claude doctor` 新增「Organization policy」欄位，說明組織政策載入失敗的原因（例如代理伺服器未正確轉發 endpoint）（見 [Release](https://github.com/anthropics/claude-code/releases/tag/v2.1.261)）|
 | **anthropic-sdk-python v1.4.0** | 2026-09-04 | Features：新增 Claude Tag 分類與使用者用量分項的 API 支援（見 [Release](https://github.com/anthropics/anthropic-sdk-python/releases/tag/v1.4.0)）|
