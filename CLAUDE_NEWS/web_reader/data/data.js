@@ -178,8 +178,7 @@ window.WIKI_DATA = {
       "summary": "**最新版本動態：** - **v2.1.261**（2026-09-04）：`/status` 與 `claude doctor` 新增「Organization policy」欄位，說明組織政策載入失敗的原因（例如代理伺服器未正確轉發 endpoint）。 - **v2.1.258**（2026-09-01）：修復…",
       "latestHeadline": "Cowork 可於 Chrome 側邊欄執行結案（官方 08-12 blog，Max／Team 即日、Pro 數週內，不支援其他 Chromium 瀏覽器與行動版）。",
       "readerDomains": [
-        "🛠️ 工具/功能",
-        "💻 開發實務"
+        "🛠️ 工具/功能"
       ]
     },
     {
@@ -640,8 +639,7 @@ window.WIKI_DATA = {
       "summary": "**09-14 是下一個會動到你帳單的日子**：週配額換軌後水位約為現在的 83%，同一週還有過渡 credit 09-17 到期。兩者都不需要你做任何設定，但都會改變你這個月能用多少。 **2026-07-20 起，旗艦模型（現為 Fable 5）在訂閱體系中被切成兩層**：Max 與 Team premium 席位…",
       "latestHeadline": "09-14 是下一個會動到你帳單的日子：週配額換軌後水位約為現在的 83%，同一週還有過渡 credit 09-17 到期。兩者都不需要你做任何設定，但都會改變你這個月能用多少。",
       "readerDomains": [
-        "💼 商業",
-        "💻 開發實務"
+        "💼 商業"
       ]
     },
     {
@@ -803,8 +801,7 @@ window.WIKI_DATA = {
       "summary": "**現在最該知道的：** 官方已把 Auto 模式定性為 best-effort convenience control、不是安全邊界，所以「等官方修到 0%」不會發生。你能動的是隔離環境與監看，不是等修補。下方「現在還擋不住的攻擊」列出十一個面，以及各自能先做的一件事。 **這一個月的方向：** 提示注入已不是單點漏…",
       "latestHeadline": "現在最該知道的： 官方已把 Auto 模式定性為 best-effort convenience control、不是安全邊界，所以「等官方修到 0%」不會發生。你能動的是隔離環境與監看，不是等修補。下方「現在還擋不住的攻擊」列出十一個面，以及各自能先做的一件事。",
       "readerDomains": [
-        "🏛️ 政策/安全",
-        "💻 開發實務"
+        "🏛️ 政策/安全"
       ]
     },
     {
@@ -924,8 +921,7 @@ window.WIKI_DATA = {
       "summary": "**出口管制已於 2026-06-30 解除、07-01 恢復存取，封鎖 19 天**（2026-06-12 商務部 BIS 管制生效 → 06-30 商務部通知已移除、Anthropic 當晚公告翌日恢復；**天數含首尾兩日**，與 MarketScale 07-03 的「精確為 19 天」一致）。Anthropic…",
       "latestHeadline": "出口管制已於 2026-06-30 解除、07-01 恢復存取，封鎖 19 天（2026-06-12 商務部 BIS 管制生效 → 06-30 商務部通知已移除、Anthropic 當晚公告翌日恢復；天數含首尾兩日，與 MarketScale 07-03 的「精確為 19 天」一致）。Anthropic 以三項義務換取",
       "readerDomains": [
-        "🏛️ 政策/安全",
-        "💻 開發實務"
+        "🏛️ 政策/安全"
       ]
     },
     {
@@ -965,8 +961,7 @@ window.WIKI_DATA = {
       "summary": "「Claude 變笨了」在本頁拆成三條線分開看：2026-04 那次是真的，官方認了也修了；06 月下旬起的 token 消耗異常與 07-25 起的 Opus 5 品質觀感，官方到今天沒有說法。三條線沒有一條有版本前後的對照實驗，你能拿到最硬的證據是自己的 session log。 **在你量任何東西之前，先知道一件…",
       "latestHeadline": "「Claude 變笨了」在本頁拆成三條線分開看：2026-04 那次是真的，官方認了也修了；06 月下旬起的 token 消耗異常與 07-25 起的 Opus 5 品質觀感，官方到今天沒有說法。三條線沒有一條有版本前後的對照實驗，你能拿到最硬的證據是自己的 session log。",
       "readerDomains": [
-        "🌐 社群",
-        "💻 開發實務"
+        "🌐 社群"
       ]
     },
     {
@@ -1028,8 +1023,7 @@ window.WIKI_DATA = {
       "summary": "本頁從 community-tech-patterns 的具體模式中，**萃取出宏觀趨勢**——社群正在往哪些方向收斂，每條趨勢的熱度曲線（加溫 / 穩定 / 醞釀），以及**對現有設計的啟示**：工程師看到這條趨勢，該回頭重新思考自己現有設計的什麼。 - **週更**：本頁每週檢視一次趨勢層，日期停留數天屬正常節奏。…",
       "latestHeadline": "本頁從 community-tech-patterns 的具體模式中，萃取出宏觀趨勢——社群正在往哪些方向收斂，每條趨勢的熱度曲線（加溫 / 穩定 / 醞釀），以及對現有設計的啟示：工程師看到這條趨勢，該回頭重新思考自己現有設計的什麼。",
       "readerDomains": [
-        "🌐 社群",
-        "💻 開發實務"
+        "🌐 社群"
       ]
     },
     {
@@ -1069,8 +1063,7 @@ window.WIKI_DATA = {
       "summary": "社群現在有五場關於 Claude Code 的觀念爭論還在吵，兩場已經吵出共識，三場僵住了——最新一則證據是 09-04 的企業轉用開源模型討論。本頁只記「該怎麼想這件事」的碰撞：什麼哲學正在成形、什麼假設被挑戰、誰拿得出證據。 做法怎麼做、哪些做法已經站住腳，見 community-tech-patterns；哪個方…",
       "latestHeadline": "Cache miss 12.5 倍成本首次量化（Reddit）；686 skills 向量索引實測 progressive disclosure 機制（Reddit）；JSONL session 知識化討論（57MB/1026 sessions，Reddit + CC-Wiki 工具）",
       "readerDomains": [
-        "🌐 社群",
-        "💻 開發實務"
+        "🌐 社群"
       ]
     },
     {
@@ -1110,8 +1103,7 @@ window.WIKI_DATA = {
       "summary": "Multi-agent 架構與 Skills 設計已是社群定案的做法；還在試的十一類裡，最近兩週有新動靜的只有五類，其餘停在七月。本頁把社群玩出來的做法逐則收下來，並標明每一類最後一次有人動它是什麼時候。 想知道哪個方向在加溫、熱度往哪走，見 community-pattern-trends（那頁有每條趨勢的時間軸）。…",
       "latestHeadline": "Multi-agent 架構與 Skills 設計已是社群定案的做法；還在試的十一類裡，最近兩週有新動靜的只有五類，其餘停在七月。本頁把社群玩出來的做法逐則收下來，並標明每一類最後一次有人動它是什麼時候。",
       "readerDomains": [
-        "🌐 社群",
-        "💻 開發實務"
+        "🌐 社群"
       ]
     },
     {
@@ -2384,8 +2376,7 @@ window.WIKI_DATA = {
       "summary": "**現行公開陣容：Fable 5.1 > Opus 5 > Sonnet 5 > Sonnet 4.6 > Haiku 4.5**（Opus 4.8 / 4.7 已被取代；Fable 5.0 於 2026-09-01 由 5.1 取代；Mythos 5.1 僅限授權機構）。本頁只回答「**我這份工作該用哪個 Claud…",
       "latestHeadline": "現行公開陣容：Fable 5.1 > Opus 5 > Sonnet 5 > Sonnet 4.6 > Haiku 4.5（Opus 4.8 / 4.7 已被取代；Fable 5.0 於 2026-09-01 由 5.1 取代；Mythos 5.1 僅限授權機構）。本頁只回答「我這份工作該用哪個 Claude 模型、換",
       "readerDomains": [
-        "🤖 模型",
-        "💻 開發實務"
+        "🤖 模型"
       ]
     },
     {
@@ -2405,8 +2396,7 @@ window.WIKI_DATA = {
       "summary": "**跨家模型的「誰強」到這一頁為止；跨工具（Codex CLI、OpenCode 這類 harness）本站目前答不了，原因見下方第一點**——本頁回答「做某類任務，目前哪家模型最強？」，按任務類型列出各活榜單的本週領先者快照，涵蓋跨家模型（OpenAI、Google、開源等）與非文字生成（畫圖、影片、語音）。每列標資…",
       "latestHeadline": "跨家模型的「誰強」到這一頁為止；跨工具（Codex CLI、OpenCode 這類 harness）本站目前答不了，原因見下方第一點——本頁回答「做某類任務，目前哪家模型最強？」，按任務類型列出各活榜單的本週領先者快照，涵蓋跨家模型（OpenAI、Google、開源等）與非文字生成（畫圖、影片、語音）。每列標資料日期；",
       "readerDomains": [
-        "🤖 模型",
-        "💻 開發實務"
+        "🤖 模型"
       ]
     },
     {
@@ -2495,18 +2485,8 @@ window.WIKI_DATA = {
     "💻 開發實務": [
       "coding-workflow-guide",
       "skill-interest-watch",
-      "community-tech-patterns",
-      "community-pattern-trends",
-      "community-tech-discussions",
       "community-large-codebase-workflow",
-      "claude-code",
-      "managed-agents",
-      "model-comparison",
-      "model-task-leaderboard",
-      "code-quality-decline",
-      "pricing",
-      "ai-agent-safety",
-      "anthropic-government-policy"
+      "managed-agents"
     ]
   },
   "digestIndex": [
