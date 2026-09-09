@@ -67,13 +67,19 @@ class TestFrontEndChipExists(unittest.TestCase):
 class TestDecidedExclusions(unittest.TestCase):
     """已裁決不列的頁面不得回流——這正是本檔存在的理由。"""
 
-    def test_market_signals_not_tagged_as_coding(self):
+    EXCLUDED = {
+        "market-signals": "投資訊號判讀，不是程式（使用者原話：「market signal 不是程式」）",
+        "competitor-landscape": "競品雷達＝市場在幹嘛；「別家誰強」的主出口 model-task-leaderboard 已在名單",
+        "anthropic-business": "估值／IPO／營收，跟寫 code 的距離同 market-signals",
+        "fable-5": "模型實體頁是那個模型的百科；選型的家是 model-comparison",
+        "opus-5": "同上——模型頁一律不列，才不會出現「fable-5 在、預設模型 sonnet-5 不在」的不一致",
+    }
+
+    def test_decided_exclusions_stay_out(self):
+        """2026-09-09 使用者逐頁裁決不列的五頁，不得悄悄回到名單。"""
         pages = _cfg()["tags"]["💻 開發實務"]["pages"]
-        self.assertNotIn(
-            "market-signals", pages,
-            "market-signals 是投資訊號判讀，2026-09-09 使用者裁決不算程式；"
-            "它在 index 入口表仍有路由連結，讀者照樣找得到",
-        )
+        for slug, why in self.EXCLUDED.items():
+            self.assertNotIn(slug, pages, f"{slug} 不算開發實務：{why}")
 
 
 if __name__ == "__main__":

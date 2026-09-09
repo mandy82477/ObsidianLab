@@ -28,14 +28,12 @@
 | 我在舊版本，升上去會壞什麼 | [[feature-radar]]「從你現在的版本升上去，會遇到什麼」；壞掉的東西見 [[entities/claude-code]]「現在還沒修好的」 |
 | 我沒升版，但它好像變慢了、帳單也變多（是模型退步、計費、還是我的用法） | [[topics/code-quality-decline]]「三條線現在到哪」；帳單本身見 [[entities/pricing]] |
 | 這個月我會多花／少花多少（方案內含什麼、一小時多少、有沒有在扣錯錢） | [[entities/pricing]] |
-| 這家公司撐不撐得住、會不會漲價、該不該簽兩年約（估值、IPO、營收、風險） | [[topics/anthropic-business]]「現在的數字」；市場判讀見 [[topics/market-signals]] |
 | 我關心的某類工具，現在誰最大、本庫怎麼判斷（本週竄升欄累積一週星史後啟用） | [[topics/skill-interest-watch]] 各類別（按開發流程段） |
 | 它說做完了，我怎麼知道是真的——**官方**做法（要證據、`/goal`、Stop hook） | [[topics/coding-workflow-guide]] 第 9 段 |
 | 我想讓 agent 自己跑幾小時／過夜，該用哪個（`/goal`、subagent、Managed Agents、Agent SDK） | [[entities/managed-agents]]「你該用哪個」 |
 | code review 該用哪個入口、怎麼審得起（本庫刻意不推薦單一社群工具，官方六個入口＋明價） | [[topics/coding-workflow-guide]] 第 5 段 |
 | 寫 code 該用哪個模型 | [[topics/model-comparison]] |
-| 我要不要換到新旗艦、舊的會不會停掉（Fable 5 vs 5.1、Opus 4.8 vs 5、退役日、護欄會不會擋我、升上去會壞什麼） | [[entities/fable-5]]「你現在拿到的是什麼」；Opus 這一代見 [[entities/opus-5]] 同名節 |
-| 別家（Codex／OpenCode／GLM）跟 Claude 比，現在誰強 | [[topics/model-task-leaderboard]]（各榜每週排名）；最近一次頭對頭查證見 [[topics/competitor-landscape]]「硬答案」 |
+| 別家（Codex／OpenCode／GLM）跟 Claude 比，現在誰強 | [[topics/model-task-leaderboard]]（各榜每週排名） |
 | 大型 codebase 的做法主線（並行／context／記憶／把關） | [[topics/community-large-codebase-workflow]] |
 | 社群現在怎麼玩、哪些做法已經定案、哪個方向在加溫 | [[topics/community-tech-patterns]]「模式概覽」；加溫中的方向見 [[topics/community-pattern-trends]] |
 | 看某個做法的第一手證據（原文連結、實測數字） | [[topics/community-tech-patterns]] |

@@ -7,7 +7,7 @@
       "label": "開發實務",
       "定義": "程式開發實務：怎麼做、裝什麼、選什麼、要花多少、這筆錢會不會變。不是程式的頁不列。",
       "維護": "主編（讀者分類是呈現決定，不是記者的維護分類）",
-      "不列的例子": "topics/market-signals——投資訊號判讀，跟寫 code 無關（2026-09-09 使用者裁決：「market signal 不是程式」）。它在 index 入口表仍有路由連結，讀者照樣找得到，兩件事已脫鉤。",
+      "不列的例子": "2026-09-09 使用者逐頁裁決，五頁明確不列：market-signals（投資判讀，「market signal 不是程式」）；competitor-landscape（競品雷達＝市場在幹嘛，不是怎麼寫 code；「別家誰強」的主出口 model-task-leaderboard 已在名單）；anthropic-business（估值／IPO／營收，跟寫 code 的距離同 market-signals）；fable-5、opus-5（模型實體頁是那個模型的百科，選型統一走 model-comparison＋model-task-leaderboard——模型頁一律不列，才不會出現「fable-5 在、Claude Code 預設模型 sonnet-5 不在」這種只因 index 括號寫沒寫到的不一致）。這五頁在 index 入口表的路由連結一律照留，讀者仍找得到——標籤與路由已脫鉤。",
       "pages": [
         "coding-workflow-guide",
         "skill-interest-watch",
@@ -19,12 +19,8 @@
         "managed-agents",
         "model-comparison",
         "model-task-leaderboard",
-        "fable-5",
-        "opus-5",
-        "competitor-landscape",
         "code-quality-decline",
         "pricing",
-        "anthropic-business",
         "ai-agent-safety",
         "anthropic-government-policy"
       ]
