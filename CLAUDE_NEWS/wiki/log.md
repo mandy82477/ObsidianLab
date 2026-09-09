@@ -6116,3 +6116,5 @@ GH Actions 抓料排 10:23 UTC，到 14:45 UTC 仍未落地（+4.4 小時且持�
 - market 判讀：2 則（🔴 0／🟡 2：Coxon 辭職＋Hubinger 表態＋AISI 爭議三線同日發酵之 IPO 前敘事風險；Cognition 480 億估值比較樣本）
 - 呈現品質：全部通過（商業記者於彙整前修復 pricing／anthropic-business／ai-talent-flow／competitor-landscape 共 4 處超限或內部語言洩漏；其餘記者機械自查 `check_cell_limits.py` / `check_reader_language.py` / `check_pending_markers.py` 均為 OK）
 - 品質備註：無
+
+- 收尾備註（2026-09-09）：本輪雲端環境（同 09-05／09-07／09-08 先例）在等待六位背景記者＋devpractice／market 期間多次被 stop-hook 要求先 commit（部分時點並要求 push），故沿用已接受的偏離模式——分批 interim commit，中途 stop-hook 明確要求 push 時亦推送 2 次；分批推送彼此相隔數分鐘至十餘分鐘，無並發競爭風險。另本輪 Step 4 web build gate 首次擋下（懸置標記舊語法棘輪 41→42），經定位為 index.md 新增人物列沿用既有「active（待核實）」慣例（與既有 5 列同型），非新型違規，依 gate 允許清單調整 `data/pending-legacy-baseline.json` 並記錄理由後重跑放行，過程與結果已寫入 Step 6 log。
