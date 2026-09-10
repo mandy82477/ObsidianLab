@@ -638,3 +638,4 @@
 [週四 2026/09/10 17:43:10.00] 測試失敗 2 輪修復後全綠（Round 1: check_cell_limits.py 4 筆超限字元下沉修復；Round 2: check_pending_markers.py 舊語法存量 +2 改寫為合規措辭）- web build 放行 - REPAIRED: 縮短 entities/claude-code.md 3 則已知問題條目與 topics/market-signals.md 1 則懸置標記至 ≤200 字元；改寫 entities/jacob-coxon.md 2 處「待核實」裸字樣為合規措辭，消除舊語法存量棘輪誤觸
 [週四 2026/09/10 17:44:20.00] Single push done (news + wiki + web)
 [週四 2026/09/10 17:44:55.13] === Pipeline complete (agent) ===
+[cloud daily-news-pipeline-cloud STARTED 2026-09-10T22:03:58Z]
