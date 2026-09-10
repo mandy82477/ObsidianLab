@@ -42,7 +42,7 @@ Jacob Coxon 於 2026-09-09 在 X 發文宣布辭去 Anthropic 職務，自述過
 
 本頁摘要中的職稱與經歷描述僅來自 Coxon 本人貼文。尚無獨立媒體對其身分、任職時間或具體職掌的查證，查證狀態見上方標記。事件的機制與政策面（自我改進超級智能爭論）見 [[topics/recursive-self-improvement]]，本頁僅記錄此人此言與其可信度爭議。
 
-2026-09-10 起，Forbes、CNN、Wired、PBS、Time、Axios、半島電視台等至少 7 家媒體跟進報導一名「剛辭去 Anthropic 職務的研究員」對 AI 存在性風險的警告，Forbes 另稱馬斯克公開嘲諷此人「看起來像是一場設局」。上述標題均未具名指出當事人身分，惟「辭職」「曾任 OpenAI 與 Anthropic pretraining 研究」「警告 AI 恐致人類滅絕」等細節與 Coxon 09-09 貼文高度吻合，研判極可能同屬此波報導（待核實，標題均未具名確認）。
+2026-09-10 起，Forbes、CNN、Wired、PBS、Time、Axios、半島電視台等至少 7 家媒體跟進報導一名「剛辭去 Anthropic 職務的研究員」對 AI 存在性風險的警告，Forbes 另稱馬斯克公開嘲諷此人「看起來像是一場設局」。上述標題均未具名指出當事人身分，惟「辭職」「曾任 OpenAI 與 Anthropic pretraining 研究」「警告 AI 恐致人類滅絕」等細節與 Coxon 09-09 貼文高度吻合，研判極可能同屬此波報導（標題均未具名，身分連結為推論，非逐字確認）。
 
 ## 核心論述
 
@@ -74,5 +74,5 @@ Hacker News 讀者對 Coxon 的資歷提出質疑，稱其「較資淺、公開�
 
 ## 歷史記錄
 
-- 2026-09-10：Forbes、CNN、Wired、PBS、Time、Axios、半島電視台等至少 7 家媒體跟進報導一名「剛辭去 Anthropic 職務的研究員」示警 AI 存在性風險，標題均未具名（待核實，研判即本人），Forbes 稱馬斯克公開嘲諷此人「看起來像是一場設局」
+- 2026-09-10：Forbes、CNN、Wired、PBS、Time、Axios、半島電視台等至少 7 家媒體跟進報導一名「剛辭去 Anthropic 職務的研究員」示警 AI 存在性風險，標題均未具名（研判即本人，身分連結為推論），Forbes 稱馬斯克公開嘲諷此人「看起來像是一場設局」
 - 2026-09-09：於 X 發文宣布辭去 Anthropic 職務，自述曾任 OpenAI／Anthropic pretraining 研究員三年，指控兩家公司「不負責任地衝向自我改進超級智能」；HN 讀者質疑其資歷（HN 623 分，WSJ 獨家報導跟進）
