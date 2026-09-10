@@ -4,15 +4,15 @@ kind: "entity"
 type: "feature"
 status: "beta（所有 API 帳號預設可用，須帶 beta header）"
 domain: "🛠️ 工具/功能"
-last_updated: "2026-09-06"
+last_updated: "2026-09-10"
 last_news_update: "2026-09-03"
 status_main: "beta"
-days_since_news: 6
-parent: null
+days_since_news: 7
+parent: "topics/anthropic-agent-stack"
 children: "[]"
-page_role: "root"
-days_since_news_subtree: 6
-inbound_links: 34
+page_role: "child"
+days_since_news_subtree: 7
+inbound_links: 32
 attribution_count: 4
 attribution_last: "2026-09-03"
 top_source: "github"
@@ -29,8 +29,9 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 **狀態：** beta（所有 API 帳號預設可用，須帶 beta header）
 **領域：** 🛠️ 工具/功能
 **別名：** Anthropic Managed Agents, 受管代理
+**上層：** [[topics/anthropic-agent-stack]]
 **首次出現：** 2026-04-28
-**最後更新：** 2026-09-06
+**最後更新：** 2026-09-10
 **最後新聞更新：** 2026-09-03
 
 > **最新動態**（2026-09-03）
@@ -55,59 +56,16 @@ Anthropic Managed Agents 是 Claude Platform 上的官方 agent 框架（[概覽
 | 最適合 | 要跑數小時以上、跨 session 保留狀態的工作流；需要資料不出境（自架沙箱） |
 | 不適合 | 單次 30 分鐘內做得完、或不需保留跨 session 狀態的任務——`/goal` 就夠 |
 
-> 跨功能的熱度對比見 [[feature-radar]]；四個選項怎麼挑見下一節。
+> 跨功能的熱度對比見 [[feature-radar]]；跟其他官方 agent 形態怎麼挑、積木怎麼組，見上層 [[topics/anthropic-agent-stack]]。
 
 **為什麼只剩 🔥🔥**：近四週（08-09～09-06）只被提到兩天——一次是 SDK 版號、一次是別人拿它當對照組——沒有任何正向採用回報，實質新功能停在 05-22。
 %% 維運備忘：2026-09-05 頁面健檢一次性下修。量測：python scripts/news_mentions.py --since 4w --any "Managed Agents" "受管代理" → 命中 08-20（版號無細節）、09-03（負向對照）。現行「連續 4 週零命中 −1 格」對本頁降 0 格，故為編輯判斷；上限式判準是否成法見 docs/page-audits/ledger.md 待裁決。feature-radar L226 已同步。%%
 
 ---
 
-## 你該用哪個
-
-以下分界只填本庫查得到出處的欄位，查不到的留 `—` 或標為待查證，不以通用工程常識補。
-
-| 選項 | 選它的分界（可自我對號） | 跨 session 記憶／執行位置 | 計費走哪條 | 現在拿得到嗎 |
-|------|------|------|------|------|
-| `/goal`（Claude Code 內建） | 單一 session 內跑得完，且完成條件寫得成一條可執行檢查（如 `npm test` exits 0） | 無／你自己的機器 | 計入訂閱配額 | ✅ 正式發布（v2.1.139） |
-| 內建 subagent（Explore／Plan／general-purpose） | 只是要把大量讀檔丟進獨立 context；Explore 唯讀、一次性、不能追問 | 無／你自己的機器 | 計入訂閱配額 | ✅ 正式發布 |
-| **Managed Agents** | 要跑數小時以上並跨 session 保留狀態，或需 20 路並行、資料不出境 | 有（持久記憶）／Claude Platform，企業可自架沙箱 | token 牌價＋$0.08／session-hr（僅 running） | ⚠️ beta（帳號預設可用），10 個零件中只有 `/goal` 正式發布 |
-| Agent SDK | 要把 agent 包進自己的產品或 CI，自己控制迴圈 | 由你自己實作／你自己的基礎設施 | 計入訂閱配額（2026-06-16 起計費切割暫停，重新推行時間未定） | ✅ 正式發布（Python SDK v0.100.0＋／TypeScript SDK v0.95.0＋） |
-
-**選型細節**
-
-- **`/goal` 的條件怎麼寫**：一個可量測的結束狀態、一條明確檢查方式、過程中不得改變的約束；條件上限 4,000 字元，可加「or stop after 20 turns」設界。最小用法 `/goal npm test 執行結果零失敗`；四級驗證階梯見 [[topics/coding-workflow-guide]] 第 6、9 段。
-- **`/goal` 官方文件**：文件站未收錄 `/goal`，以 [changelog](https://github.com/anthropics/claude-code/blob/main/CHANGELOG.md) 為據（v2.1.139 起）。
-- **內建 subagent 的限制**：Explore 唯讀、跳過 CLAUDE.md、一次性不能追問，模型繼承主對話但以 Opus 為上限（v2.1.198 起）；要來回追問得改用 `general-purpose`。見 [[topics/coding-workflow-guide]] 第 2 段。
-- **Managed Agents 怎麼計費**：依模型 token 牌價（快取乘數適用；session 內 web search 另計 $10／1,000 次；`inference_geo: "us"` 1.1×）＋ session runtime **$0.08／session-hour**（只計 `running` 狀態，取代 container-hour）。
-- **計費例外與算例**：不適用 Batch 折扣與 partner 雲端平台；官方算例 Opus 5 跑 1 小時、50k 輸入／15k 輸出 ≈ **$0.705**（[定價文件](https://platform.claude.com/docs/en/about-claude/pricing#claude-managed-agents-pricing)，2026-09-06 查證）。
-- **Dreaming 現在誰用得到**：research preview，須先在用 memory store 並[申請](https://claude.com/form/claude-managed-agents)，另需 `dreaming-2026-04-21` header；讀既有記憶與近 1–100 個 session transcript，非同步整理成新記憶庫（[dreams 文件](https://platform.claude.com/docs/en/managed-agents/dreams)，2026-09-06 查證）。一般使用者現在碰不到。
-- **成本對照的唯一第三方數字，本庫未採信**：2026-09-03 一則 Reddit 貼文宣稱以同一模型跑自建開源框架，準確度與 Managed Agents 打平、成本低最多 75%，但未附測試方法與資料集，屬單一未驗證宣稱，不列入上表（[原文](https://www.reddit.com/r/LocalLLaMA/comments/1w65ise/we_built_an_opensource_modelneutral_agent_harness/)）。
-- **社群自組替代**：Opus 決策層＋OpenCode 執行層的自組架構（Reddit 開發者 70 天實戰，2026-05-11）仍是可行選擇，核心結論是任務簡報品質決定成敗；與官方框架的對照見 [[topics/official-community-gap]]。
-
-**懸置細節**
-- ⟨Q-02⟩ ❓ **待查證**（標 2026-08-10｜查 anthropic-sdk-python、Managed Agents API）：v0.118.0 changelog 未列出具體項目，是否與 v0.117.0 dreaming 支援同批次擴充尚未確認；Dreaming 本身已由官方 dreams 文件確認（2026-09-06 查證），僅 v0.118.0 內容不明待查。
-
-## 這些積木能組出什麼架構
-
-上面那張表回答「我該用哪個」，這一節回答「**它們之間怎麼組**」。按架構層級排，一層比一層外——你多半是從第一層開始，撞到牆才往下一層走。每層寫官方現在給了什麼、agent 之間怎麼互動、社群拿它玩出什麼。
-
-**一、一個 agent 把事做完。** 官方積木是 `/goal`（正式發布，v2.1.139）：你給一條可執行的完成檢查，它自己跑到符合為止。這一層沒有 agent 之間的互動可言——只有你和它。社群在這一層玩的不是架構而是**自主度邊界**：有人提出「爆炸半徑」規則，依錯誤修復成本（而非任務難度）把改動分三個風險區，決定哪些可以放手（2026-09-02）。
-
-**二、開分身，但分身彼此不講話。** 官方積木有兩組：Claude Code 內建 subagent（Explore／Plan／general-purpose，各開獨立 context）與 Managed Agents 的 20 路並行子代理（公開測試）。互動模式是**單向扇出**——主 agent 分配任務、收回結果，分身之間沒有通道，所以它們不會協調、也不會互相覆蓋（代價是重複工作）。社群把這一層推到極限：有人用單一長 session 搭 147 個 subagent、花 24 天把 F-Zero X 逆向移植到 New 3DS（2026-09-04）。反向證據同樣存在——一位開發者盤點自己 8 個自訂 subagent，發現 7 個 30 天內零呼叫，因而寫了偵測「殭屍 agent」的機制（2026-09-02）。
-
-**三、分身開始互相講話。** 官方積木是 `ListAgents` ＋ `SendMessage`（v2.1.224 起，限 macOS／Linux，[官方文件](https://code.claude.com/docs/en/cross-session-messaging)），以及互動 session 下的 agent teams——由主對話帶 `name` 派出的 teammate 可被點名傳訊。互動模式是**點對點傳訊**，這也是它現在的天花板：原始需求（issue #24798，75 則留言）要的是「依相依性排序高階流程步驟」，而傳訊原語不含依賴排序，**編排層仍是缺口**（見 [[topics/official-community-gap]]）。社群的補法是自建協調層：Concord 用 MCP server 讓 Claude Code、Codex、Cursor 三種工具互通任務脈絡，作者形容沒有它就「像把 Slack 從團隊裡拿走」（2026-08-27）；cumora 則走另一條路，做跨平台團隊聊天工具、把 agent 當一等公民隊友（2026-09-02）。
-
-**四、跨機器與跨工具。** 官方積木是 `claude self-hosted-runner`（v2.1.224，Team 與 Enterprise）與 MCP 隧道（公開測試，私有 MCP server 免暴露公網）。互動模式是**把執行環境搬到你自己的機器上**，但 agent 之間的通道沒有跟著跨機器——跨機器多 agent 協作的 A2A 協定仍是未回應的功能請求（issue #28300）。社群在這一層做的是 meta-harness：opencodex、metaharness、claw-orchestrator 同週湧現，共同訴求是讓 orchestration 層可替換底層 agent（2026-08-27）。
-
-**五、跨時間：狀態不隨 session 消失。** 官方積木是 Managed Agents 的持久記憶（公開測試）與 Dreaming（研究預覽，須申請並帶 header，一般使用者現在碰不到）。互動模式是**agent 與過去的自己互動**。社群不等官方：brain.md 用零依賴的檔案式記憶層給專案建「大腦」（2026-08-25）、OzBrain 做 agent 與團隊共用的跨 session 知識庫（2026-08-21），另有人主張記憶系統需要記住「此路已被否決」並讓那筆記錄可驗證、防竄改（2026-08-31）。
-
-**穿過所有層的一件事：hooks。** `PreModelSwitch`／`PostModelSwitch`（v2.1.251）這類事件不打開任何新架構，它讓你在既有架構的接縫上插手——攔截、確認或標註。判斷式：**你要的是多一個 agent，還是要在現有 agent 的某個動作前後插一句話？** 後者用 hook，別開分身。
-
----
-
 ## 接下來看什麼
 
-- **等哪個訊號**：Agent View 從研究預覽升格、Proactive Workflows／Capability Curve 補上細節公告、出現第一則獨立生產環境回饋。三者任一發生，上面兩張表就會變。
+- **等哪個訊號**：Agent View 從研究預覽升格、Proactive Workflows／Capability Curve 補上細節公告、出現第一則獨立生產環境回饋。三者任一發生，本頁的零件表與熱度就會變。
 - **你的選項**：(a) 什麼都不做，先用 `/goal` 把單 session 的完成條件立起來；(b) 只在需要資料不出境時評估自架沙箱；(c) 想要跨 session 記憶又不想綁平台，先看社群自組架構——但目前唯一的成本數字未附方法。
 
 ---
@@ -181,3 +139,7 @@ Anthropic Managed Agents 是 Claude Platform 上的官方 agent 框架（[概覽
 - **Proactive Workflows 與 Capability Curve（2026-05-18）**：前者讓 Agent 可主動（而非被動等待觸發）排程並執行任務，與 Cat Wu「AI 的下一步是主動性（proactivity）」論述一致；後者提供能力曲線追蹤，協助評估 Agent 在不同任務類型的能力進展。
 - **dev.to 技術解析（2026-05-16）**：Code with Claude 大會功能的首篇深度技術解析，對關注 agent 長期自主執行行為的開發者有參考價值。
 - **Boris Cherny 的數千子代理工作流（2026-05-13）**：由 Business Insider 等主流媒體報導，是 Managed Agents 大規模並行能力的極端現實應用案例（見 [[entities/boris-cherny]]）。
+
+**懸置細節**
+- ⟨Q-02⟩ ❓ **待查證**（標 2026-08-10｜查 anthropic-sdk-python、Managed Agents API）：v0.118.0 changelog 未列出具體項目，是否與 v0.117.0 dreaming 支援同批次擴充尚未確認；Dreaming 本身已由官方 dreams 文件確認（2026-09-06 查證），僅 v0.118.0 內容不明待查。
+

@@ -6126,3 +6126,14 @@ GH Actions 抓料排 10:23 UTC，到 14:45 UTC 仍未落地（+4.4 小時且持�
 **同批兩項小修：** (a) 無 token 時 search API 節流 6.2 秒/次——一次 gather 恰 10 次 search 呼叫貼著匿名 10/min 上限，C 窗最後一條 scope（agent skills）先前會被靜默跳過；PAT 從必要降為提速選配。(b) D 窗 repo URL 判定放寬至 /tree、/blob 子路徑（monorepo 裡的 skill/工具連結先前整則丟棄），去重改用 repo 根 URL、保留字第一段路徑（orgs/topics…）擋下；issue/PR/release 連結維持不收。
 
 **驗證：** 新增 7 個回歸測試（星速閾值語意 6 案例鎖真實校準錨點＋子路徑 regex），全套測試綠（exit 0）。pipeline-change-check baseline 已拍（digest 2026-09-08、articleCount 50、HEAD 22908168）；compare 待下次 pipeline 實跑後執行（重點：GitHub Search +0～2 星速條目、HN Repo Bridge 微升）。lint 6e 逐窗對帳自動涵蓋新 velocity 窗（缺列即窗死）。
+
+
+## 2026-09-10 Query：agent 功能記錄頁盤點 → anthropic-agent-stack 升格建頁（使用者裁決）
+
+**使用者問了什麼：** 「目前有頁面專門記錄 agent 相關功能與使用範例嗎」「把所有官方 agent 指令都放進 managed-agents 會不會很亂」→ 裁決「建立新頁，把 managed-agents 變子頁面」。
+
+**點出什麼：** managed-agents 頁一直在做兩份工（產品頁＋借住的全庫 agent 選型頁，規則檔明文承認）；且 dynamic workflows（官方確定性編排）全庫零記錄——「agent 怎麼組」這群問題已大到頁名開始說謊。
+
+**處置：** (a) 建母頁 	opics/anthropic-agent-stack（官方 agent 積木：該用哪個、怎麼組），「你該用哪個」選型表與「這些積木能組出什麼架構」節自 managed-agents 移入（兩節皆零錨點入邊，wiki_graph 查證）；managed-agents 加「上層」欄降為子頁、退回純產品頁，index 目錄列依「子頁不入 index」移除。(b) user-query 通道查證三份官方文件（workflows／cross-session-messaging／agents 總覽，2026-09-10）：選型表新增 dynamic workflows 一列；積木節插入第三層「把編排寫成程式」；原第三層「傳訊」更正兩處過時事實——原生 Windows v2.1.234 起支援（原寫「限 macOS／Linux」）、issue #24798 的依賴排序需求已由 workflows 承接（「編排層仍是缺口」改寫為「傳訊層自身仍無編排」）；跨機器層補「經 Remote Control 可主動開話（v2.1.225）」。(c) 規則檔同步：wiki-ingest-features 負責頁面表加母頁列、「多標三件事」落點改母頁、零件狀態表回訪同步對象改母頁選型表；coding-workflow-guide 與 index 路由的出口連結改指母頁。(d) 歸因 slug user-query ×3 已入帳本。
+
+**同記者待辦（不入轉知帳本）：** official-community-gap 產品化矩陣的 orchestration 相關列，下次功能記者更新時依 workflows 官方文件同步「官方對應」與「狀態」欄。

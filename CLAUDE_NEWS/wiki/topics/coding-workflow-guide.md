@@ -7,12 +7,12 @@ last_updated: "2026-09-05"
 last_news_update: "2026-08-16"
 update_freq: "🗓️ 週更（隨官方文件與社群策展更新；日期停留數天屬正常節奏）"
 status_main: "ongoing"
-days_since_news: 24
+days_since_news: 25
 parent: null
 children: "[]"
 page_role: "root"
-days_since_news_subtree: 24
-inbound_links: 23
+days_since_news_subtree: 25
+inbound_links: 24
 attribution_count: 1
 attribution_last: "2026-08-16"
 top_source: "hacker-news"
@@ -73,7 +73,7 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 | 怎麼讓它照專案規矩寫、錯誤何時才被攔 | [第 4 段](#4-實際動手寫-錯誤何時被攔已補庫內證據) |
 | 測試策略要不要跟著變、上線前檢查什麼 | [第 6 段](#6-測試與上線-怎麼讓它自己驗完再交給你社群面待補) |
 | 它說做完了，我怎麼知道是真的 | [第 9 段](#9-除錯-怎麼知道它真的做了已補庫內證據) |
-| 我想讓它自己跑幾小時／過夜，該用哪個 | [第 6 段](#6-測試與上線-怎麼讓它自己驗完再交給你社群面待補)；四個選項的分界見 [[entities/managed-agents]]「你該用哪個」 |
+| 我想讓它自己跑幾小時／過夜，該用哪個 | [第 6 段](#6-測試與上線-怎麼讓它自己驗完再交給你社群面待補)；各選項的分界見 [[topics/anthropic-agent-stack]]「你該用哪個」 |
 
 「怎麼讓它照專案規矩寫」橫跨第 1 段的**強制力**小節與第 4 段——關鍵是 `CLAUDE.md` 與 skill 都只是建議層，要硬的得用 hook 或 permissions。若想看全流程而不是單一問題，看下面這張表。
 
@@ -460,7 +460,7 @@ Boris Cherny 反對「vibe coding」推動術語向 spec-driven 靠攏，2026-05
 
 其餘：`/engineering:testing-strategy` 決定測什麼；`/engineering:deploy-checklist` 驗證 CI、依賴並要求**事先寫下 rollback 觸發條件**；官方 recipe 明說 Claude 會照著你既有測試檔的風格與框架寫。
 
-`/goal` 只管單一 session；要跨 session 保留狀態或 20 路並行，官方的另一格是 Managed Agents——四個選項的分界見 [[entities/managed-agents]]「你該用哪個」。
+`/goal` 只管單一 session；要跨 session 保留狀態或 20 路並行，官方的另一格是 Managed Agents——各選項的分界見 [[topics/anthropic-agent-stack]]「你該用哪個」。
 
 **缺口**：官方機制齊備，但社群對「用 Claude Code 之後測試策略該怎麼變」幾乎沒有累積——這是九段裡最安靜的一格。
 

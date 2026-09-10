@@ -10,13 +10,14 @@
 |------|---------|
 | `wiki/entities/claude-code.md` | Claude Code 版本更新、新指令/旗標、Breaking change |
 | `wiki/entities/bugcrawl.md` | BugCrawl 漏洞偵測工具動態 |
-| `wiki/entities/managed-agents.md` | Managed Agents 框架更新 |
+| `wiki/topics/anthropic-agent-stack.md` | 官方 agent 積木總覽（母頁）：選型表與積木架構節。agent 架構相關功能經「多標三件事」寫入本頁（見下方該節）；官方查證欄位由主編維護 |
+| `wiki/entities/managed-agents.md` | Managed Agents 框架更新（[[topics/anthropic-agent-stack]] 的子頁，收代管平台產品事實：現況、計費、零件成熟度、歷史） |
 | `wiki/entities/openclaw.md` | OpenClaw 第三方整合政策變化 |
 | `wiki/entities/claude-design.md` | Claude Design 工具更新 |
 | `wiki/entities/claude-security.md` | Claude Security 資安產品動態 |
 | `wiki/entities/claude-skills.md` | Skills 官方產品線與生態：官方技能包、平台支援、分享機制、第三方移植（設計面歸社群記者 patterns 頁） |
 | `wiki/topics/official-community-gap.md` | 官方功能 vs 社群痛點缺口變化 |
-| `wiki/topics/coding-workflow-guide.md` | 🗓️ 主體週更（吃技能清冊）；**官方對既有功能的使用指南**在每日 ingest 即寫入對應流程階段節——見下方「程式開發實戰手冊維護」；`## 6. 測試與上線` 段末保留一行指向 [[entities/managed-agents]]「你該用哪個」的出口（連頁不連錨——該段標題帶進度標記會改名）|
+| `wiki/topics/coding-workflow-guide.md` | 🗓️ 主體週更（吃技能清冊）；**官方對既有功能的使用指南**在每日 ingest 即寫入對應流程階段節——見下方「程式開發實戰手冊維護」；`## 6. 測試與上線` 段末保留一行指向 [[topics/anthropic-agent-stack]]「你該用哪個」的出口（連頁不連錨——該段標題帶進度標記會改名）|
 | `wiki/topics/long-context-1m.md` | 1M context 的**計費規則、預設行為、可控性、可見性**（世代加價分界、預設開啟／關閉、model picker 保不保得住 `[1m]` 變體、UI 顯示的 context 上限是否正確、1M 觸發獨立計費通道）——見下方「1M 專頁的觸發邊」 |
 | `wiki/feature-radar.md` | 新增/更新功能條目（**須回報主編彙整**，不直接寫入） |
 
@@ -278,7 +279,7 @@ feature-radar 只收**使用者可實際取用、呼叫、設定或執行的官�
 
 **觸發：** 官方推出或更新一個功能，且你判定它**與 agent 架構有關**（架構、互動、協調層面）。UI、CLI 旗標、純效能改善不算——**先篩再標，不對每則功能都判一次**。
 
-判定為 agent 相關時，除了照常寫進 feature-radar 與對應 entities 頁，**另外更新 `wiki/entities/managed-agents.md` 的 `## 這些積木能組出什麼架構`**，回答三件事：
+判定為 agent 相關時，除了照常寫進 feature-radar 與對應 entities 頁，**另外更新 `wiki/topics/anthropic-agent-stack.md` 的 `## 這些積木能組出什麼架構`**（2026-09-10 起該節自 managed-agents 升格至母頁），回答三件事：
 
 1. **它打開了哪種架構**——讀者多了什麼做得到的事
 2. **agent 之間可以怎麼互動**——單向扇出／點對點傳訊／共享狀態／不互動，或它根本不是這一層的東西
@@ -286,7 +287,7 @@ feature-radar 只收**使用者可實際取用、呼叫、設定或執行的官�
 
 **寫法紀律：** 散文，不是表格——這一節的價值在教學與舉例，塞進儲存格會被字元上限砍掉具體案例（2026-09-06 使用者裁決：「表格不好，這樣教學性或舉例會受限」）。欄位是自由一句話，**不設封閉分類詞彙**（同一裁決）。新功能對得上既有某一層就補進該層；對不上任何一層代表官方開了新的一層，才新增層級。
 
-**為什麼落點在 managed-agents 而不是 feature-radar 條目：** 該頁的 `## 你該用哪個` 已橫跨 `/goal`、內建 subagent、Managed Agents、Agent SDK 四種形態，事實上是本庫的 agent 選型頁；而它原本只回答「我該用哪個」、答不出「它們之間怎麼講話」——本節補的正是那一層。feature-radar 條目是一則一則的功能卡，放不下跨功能的組合關係。
+**為什麼落點在 anthropic-agent-stack 而不是 feature-radar 條目：** 該頁的 `## 你該用哪個` 橫跨 `/goal`、內建 subagent、dynamic workflows、Managed Agents、Agent SDK 五種形態，是本庫的 agent 選型頁（2026-09-10 自 managed-agents 升格為母頁，使用者裁決）；積木架構節回答「它們之間怎麼講話」。feature-radar 條目是一則一則的功能卡，放不下跨功能的組合關係。**母頁契約**：每日 ingest 對母頁只動 callout（覆寫）、積木節對應層、既有懸置標記加 `訊`；子頁 [[entities/managed-agents]] 收代管平台產品事實，路由見「負責頁面」表。選型表的官方查證欄（可用性、版本門檻）由主編查證官方文件後填，記者只提列。
 
 > 判斷式：**這個功能讓 agent 多了一種「和誰打交道」的方式嗎？** 有 → 進本節；只是同一件事做得更快更好 → 不進。
 
@@ -296,7 +297,7 @@ feature-radar 只收**使用者可實際取用、呼叫、設定或執行的官�
 
 `wiki/entities/managed-agents.md` 的 `## 各零件現在到哪` 是**覆寫式**狀態表：10 列的狀態欄（研究預覽／公開測試／正式發布）會變，但沒有任何日報條目會通知你它變了——近四個月該頁實際進料 100% 是 SDK release note，而 release note 從不說成熟度。
 
-**每次 `/wiki-lint`（週更）：** 逐列比對 `wiki/feature-radar.md` 全覽表與 `## 🆕 最新功能` 詳細條目中同名功能的狀態欄，不一致以 radar 為準覆寫本表，並更新表上方「資料截至 YYYY-MM-DD」為今日；radar 亦無該功能時保留原值、不臆測升格。`## 你該用哪個` 表第五欄與本表同源，一併**覆寫**、不得留舊值。lint 回報加一行：`零件狀態表：N 列比對／M 列已覆寫／資料截至 YYYY-MM-DD`。
+**每次 `/wiki-lint`（週更）：** 逐列比對 `wiki/feature-radar.md` 全覽表與 `## 🆕 最新功能` 詳細條目中同名功能的狀態欄，不一致以 radar 為準覆寫本表，並更新表上方「資料截至 YYYY-MM-DD」為今日；radar 亦無該功能時保留原值、不臆測升格。母頁 [[topics/anthropic-agent-stack]] 的 `## 你該用哪個` 表「現在拿得到嗎」欄與本表同源（2026-09-10 起選型表住母頁），一併**覆寫**、不得留舊值；同一次順檢母頁「子頁怎麼分」表的最後動態欄。lint 回報加一行：`零件狀態表：N 列比對／M 列已覆寫／資料截至 YYYY-MM-DD`。
 
 ---
 
