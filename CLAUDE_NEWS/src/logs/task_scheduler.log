@@ -628,3 +628,6 @@
 [cloud daily-news-pipeline-cloud STARTED 2026-09-09T22:04:48Z]
 [cloud daily-news-pipeline-cloud ABORTED 2026-09-09T22:05:17Z] digest already exists (news/2026-09-09.md) - Step 0b 冪等閘中止，第三班（22 UTC）撞上前一班（17 UTC）已完成的日報
 [cloud daily-news-pipeline-cloud STARTED 2026-09-10T12:05:18Z]
+[週4 2026/09/10 12:06:30.00] === cloud daily-news-pipeline-cloud STARTED (TARGET_DATE=2026-09-10) ===
+[週4 2026/09/10 12:06:30.00] ABORTED: src/gathered_archive/2026-09-10.json not found (Step 1a cp failed) - GitHub Actions daily-gather 尚未產出當日原料，非目標日期新鮮資料，正確中止（非 backfill，不自動重抓，交下一班或資料到齊後接手）
+[cloud daily-news-pipeline-cloud ABORTED 2026-09-10] Step 1a：src/gathered_archive/2026-09-10.json 不存在（GitHub Actions 抓料尚未到齊），交由 Step 1b 新鮮度防線邏輯判定中止，正確行為，非錯誤
