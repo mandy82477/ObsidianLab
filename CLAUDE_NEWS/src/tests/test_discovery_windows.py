@@ -49,6 +49,21 @@ class TestDWindowScopeGate(unittest.TestCase):
         self.assertFalse(_GH_REPO_RE.match("https://github.com/a/b/issues/3"))
         self.assertFalse(_GH_REPO_RE.match("https://gist.github.com/a/b"))
 
+    def test_repo_url_regex_subpaths(self):
+        """2026-09-10 放寬：monorepo 子目錄連結（/tree、/blob）視為指向該 repo；
+        issue／PR／release 連結維持不收；保留字第一段路徑不是 repo。"""
+        from news_aggregator.sources.hn_repo_bridge import _GH_NON_REPO_OWNERS
+        m = _GH_REPO_RE.match("https://github.com/anthropics/skills/tree/main/skills/pdf")
+        self.assertIsNotNone(m)
+        self.assertEqual((m.group(1), m.group(2)), ("anthropics", "skills"))
+        m = _GH_REPO_RE.match("https://github.com/a/b/blob/main/README.md")
+        self.assertIsNotNone(m)
+        self.assertEqual(m.group(2), "b")
+        self.assertFalse(_GH_REPO_RE.match("https://github.com/a/b/pull/7"))
+        self.assertFalse(_GH_REPO_RE.match("https://github.com/a/b/releases/tag/v1"))
+        m = _GH_REPO_RE.match("https://github.com/orgs/anthropics/projects")
+        self.assertTrue(m is None or m.group(1).lower() in _GH_NON_REPO_OWNERS)
+
 
 class TestQueueAccounting(unittest.TestCase):
     def setUp(self):
@@ -90,6 +105,59 @@ class TestQueueAccounting(unittest.TestCase):
         self.assertIn("2026-09-03,https://github.com/a/b,120", text)
         self.assertNotIn(",100", text)
         self.assertIn("https://github.com/c/d,50", text)
+
+
+class TestEWindowVelocity(unittest.TestCase):
+    """E 窗吐出端（2026-09-10 Phase 2）：閾值語意鎖定。
+
+    校準錨點取自 2026-09-02～09-08 真實星史：
+    - 絕對暴衝型（orca +703★/日、僅 1.2%/日）→ 絕對線 300 單獨成立
+    - 年輕爆紅型（anti-slop 1.7k 星 +166★/日=24%/日）→ 100★/日＋5%/日成立
+    - 巨頭日常成長（superpowers 283k 星 +397★/日但 <1%/日）→ 絕對線也過（它就是在暴衝）；
+      但巨頭 +50★/日的日常速度兩條線都不過
+    """
+    TODAY = "2026-09-08"
+
+    def _cands(self, history, star_seen, emitted=frozenset()):
+        return gr._velocity_candidates(history, star_seen, set(emitted), self.TODAY)
+
+    def test_absolute_spike_fires(self):
+        cands = self._cands([("2026-09-02", "https://github.com/stablyai/orca", 59856)],
+                            {"https://github.com/stablyai/orca": 64073})
+        self.assertEqual(len(cands), 1)
+        self.assertGreaterEqual(cands[0][0], gr.VELOCITY_ABS)
+
+    def test_young_fast_riser_fires(self):
+        cands = self._cands([("2026-09-02", "https://github.com/m/anti-slop", 700)],
+                            {"https://github.com/m/anti-slop": 1696})
+        self.assertEqual(len(cands), 1)
+
+    def test_giant_daily_growth_blocked(self):
+        """大 repo 的日常成長（50★/日、0.02%/日）兩條線都不過。"""
+        cands = self._cands([("2026-09-02", "https://github.com/big/famous", 283000)],
+                            {"https://github.com/big/famous": 283300})
+        self.assertEqual(cands, [])
+
+    def test_small_relative_only_blocked(self):
+        """小 repo 相對成長高但絕對速度低（20★/日、20%/日）不觸發——防雜訊。"""
+        cands = self._cands([("2026-09-02", "https://github.com/tiny/new", 100)],
+                            {"https://github.com/tiny/new": 220})
+        self.assertEqual(cands, [])
+
+    def test_emitted_gate_and_min_span(self):
+        hist = [("2026-09-02", "https://github.com/a/reported", 1000),
+                ("2026-09-07", "https://github.com/b/too-fresh", 1000)]
+        seen = {"https://github.com/a/reported": 5000,
+                "https://github.com/b/too-fresh": 5000}
+        # 已報導者不吐；僅隔 1 天者算不出可信速度也不吐
+        cands = self._cands(hist, seen, emitted={"https://github.com/a/reported"})
+        self.assertEqual(cands, [])
+
+    def test_stale_history_outside_lookback_ignored(self):
+        """回看窗外的舊觀測不得當基準——半年前的星數會把日常成長算成暴衝。"""
+        cands = self._cands([("2026-06-01", "https://github.com/o/slowburn", 1000)],
+                            {"https://github.com/o/slowburn": 5000})
+        self.assertEqual(cands, [])
 
 
 if __name__ == "__main__":

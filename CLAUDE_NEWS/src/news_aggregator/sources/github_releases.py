@@ -1,5 +1,6 @@
 import logging
 import re
+import time
 from datetime import datetime, timedelta, timezone
 
 import requests
@@ -69,6 +70,46 @@ INVENTORY_MIN_STARS = 3000  # C 窗下限＝B 窗上限，兩窗接壤不重疊
 INVENTORY_PER_DAY = 2       # 每日至多吐幾則（防止首日灌入一批人盡皆知的條目）
 
 
+# ── E 窗吐出端：星速觸發（2026-09-10 Phase 2 上線）─────────────────────────
+#
+# 記錄端（_record_star_history，2026-09-03）累積各窗每日看到的星數快照；本吐出端
+# 拿快照自算星速，補 A/B/C/D 都接不到的那一種 repo：**已被某個窗「看見」過、
+# 但每天都排序不進該窗的吐出名單，而它正在暴衝**。星數帶窗（A/B/C）按星數排序，
+# 排序永遠輸給巨頭的中型 repo 在暴紅那幾天結構性隱形——星速是唯一能把「正在
+# 發生」與「一直都大」分開的訊號。
+#
+# 閾值校準（2026-09-10，取 09-02～09-08 六個資料日、388 個 ≥2 觀測 repo）：
+#   全體星速 p50=5、p90=114、p95=197 ★/日；未報導子集 top 名單顯示兩型值得吐——
+#   絕對暴衝型（orca +703★/日）與年輕爆紅型（anti-slop 1.7k 星 +166★/日=24%/日）。
+#   絕對線取 300（>p95，全體六日僅 7 個過線）；相對型取 100★/日 且 ≥5%/日
+#   （巨頭日常成長 <1%/日，5% 只有真的在爆的年輕 repo 過得了）。
+#   ⚠️ 校準基期僅 6 日，複查登記於 docs/workaround-register.md（2026-09-24）。
+VELOCITY_LOOKBACK_DAYS = 8   # 回看窗：與最舊比較點的最大距離
+VELOCITY_MIN_SPAN_DAYS = 2   # 兩筆觀測至少隔 2 天才算得出速度（單日雜訊不觸發）
+VELOCITY_ABS = 300           # ★/日：絕對暴衝線，單獨成立
+VELOCITY_FAST = 100          # ★/日：搭配相對成長率的較低線
+VELOCITY_REL_PCT = 5.0       # %/日：相對成長率（以區間起點星數為基底）
+VELOCITY_PER_DAY = 2         # 每日至多吐幾則（同 C 窗哲學：上限＝爆炸半徑）
+
+
+# 無 token 時 GitHub search API 限 10 次/分鐘，而本來源一次 fetch 恰好發出
+# 10 次 search 呼叫（A/B 窗 3 scope × 2 ＋ C 窗 4 scope）——第 10 次（C 窗
+# agent skills 那條 scope）會貼著限流線。雲端班次有 GITHUB_TOKEN（30/min）
+# 不受影響；本機無 token 補跑時以間隔節流換完整掃描（多花 ~1 分鐘）。
+_SEARCH_MIN_INTERVAL = 6.2
+_last_search_ts = 0.0
+
+
+def _search_throttle() -> None:
+    global _last_search_ts
+    if GITHUB_TOKEN:
+        return
+    wait = _SEARCH_MIN_INTERVAL - (time.monotonic() - _last_search_ts)
+    if wait > 0:
+        time.sleep(wait)
+    _last_search_ts = time.monotonic()
+
+
 class GitHubReleases(BaseSource):
     def fetch(self) -> list[FeedItem]:
         try:
@@ -130,6 +171,7 @@ class GitHubReleases(BaseSource):
             window_pool: dict[str, list] = {"rising": [], "crossing": []}
             for window, query, order in search_windows:
                 try:
+                    _search_throttle()
                     resp = requests.get(
                         "https://api.github.com/search/repositories",
                         headers=headers,
@@ -189,6 +231,7 @@ class GitHubReleases(BaseSource):
                     ))
 
             items = items + _inventory_sweep(headers, now, emitted, star_seen)
+            items = items + _velocity_sweep(headers, now, emitted, star_seen)
             _record_star_history(star_seen, now)
             # 總量硬上限：壞掉時的爆炸半徑（改版前為 MAX_ITEMS_PER_SOURCE*2=40）
             return items[:SOURCE_TOTAL_CAP]
@@ -309,6 +352,7 @@ def _inventory_sweep(headers: dict, now: datetime,
     candidates: dict[str, dict] = {}
     for scope in _INVENTORY_SCOPES:
         try:
+            _search_throttle()
             resp = requests.get(
                 "https://api.github.com/search/repositories",
                 headers=headers,
@@ -360,6 +404,121 @@ def _inventory_sweep(headers: dict, now: datetime,
             # 才第一次看見的存量。沒有它，一個 2 月出生的 9 萬星 repo 會被寫成
             # 今日新聞。
             summary=f"[存量盤點｜{created} 出生、本庫今日首次收錄] {desc}",
+            category="community",
+        ))
+    return items
+
+
+def _velocity_candidates(history_rows: "list[tuple[str, str, int]]",
+                         star_seen: "dict[str, int]",
+                         emitted: "set[str]",
+                         today: str) -> "list[tuple[float, float, int, int, int, str]]":
+    """E 窗判定核心（純函式，供測試鎖行為）。
+
+    輸入：星史列（date, url, stars）、今日觀測、已報導閘、今日日期字串。
+    輸出：達標候選 [(星速/日, 成長%/日, 星差, 天數, 現星數, url)]，星速降冪。
+    比較基準取回看窗內**最舊**且距今 ≥ VELOCITY_MIN_SPAN_DAYS 的觀測——取最舊
+    而非任兩點，讓速度量的是「這一週」而不是被單日抖動放大。
+    """
+    from datetime import date as _date
+    today_d = _date.fromisoformat(today)
+    obs: dict[str, dict[str, int]] = {}
+    for d, url, stars in history_rows:
+        try:
+            age = (today_d - _date.fromisoformat(d)).days
+        except ValueError:
+            continue
+        if 0 <= age <= VELOCITY_LOOKBACK_DAYS:
+            obs.setdefault(url, {})[d] = stars
+    for url, stars in star_seen.items():
+        obs.setdefault(url, {})[today] = stars
+
+    out = []
+    for url, series in obs.items():
+        if url.rstrip("/").lower() in emitted:
+            continue
+        if today not in series or len(series) < 2:
+            continue
+        oldest = min(series)
+        span = (today_d - _date.fromisoformat(oldest)).days
+        if span < VELOCITY_MIN_SPAN_DAYS:
+            continue
+        delta = series[today] - series[oldest]
+        base = series[oldest] or 1
+        v = delta / span
+        rel = 100.0 * delta / base / span
+        if v >= VELOCITY_ABS or (v >= VELOCITY_FAST and rel >= VELOCITY_REL_PCT):
+            out.append((v, rel, delta, span, series[today], url))
+    out.sort(reverse=True)
+    return out
+
+
+def _fetch_repo_meta(url: str, headers: dict) -> dict:
+    """取單一 repo 的 metadata（core REST，非 search 配額）；失敗回空 dict。"""
+    m = re.match(r"^https://github\.com/([\w.\-]+)/([\w.\-]+)$", url.rstrip("/"))
+    if not m:
+        return {}
+    try:
+        r = requests.get(f"https://api.github.com/repos/{m.group(1)}/{m.group(2)}",
+                         headers=headers, timeout=REQUEST_TIMEOUT)
+        if r.status_code == 200:
+            return r.json()
+    except Exception as e:
+        logger.warning("Velocity sweep repo lookup failed for %s: %s", url, e)
+    return {}
+
+
+def _velocity_sweep(headers: dict, now: datetime,
+                    emitted: "set[str] | None",
+                    star_seen: "dict[str, int]") -> list[FeedItem]:
+    """E 窗吐出端：星史快照自算星速，吐出正在暴衝但各窗排序不到的 repo。
+
+    設計說明與閾值校準見檔頭 VELOCITY_* 常數區。
+    """
+    if emitted is None:
+        _record_queue("velocity", 0, 0, now, note="error")
+        return []
+    today = now.strftime("%Y-%m-%d")
+    history_rows: list[tuple[str, str, int]] = []
+    try:
+        hist = NEWS_DIR.parent / "data" / "repo_star_history.csv"
+        if hist.exists():
+            for l in hist.read_text(encoding="utf-8").splitlines()[1:]:
+                parts = l.split(",")
+                if len(parts) >= 3:
+                    try:
+                        history_rows.append((parts[0], parts[1], int(parts[2])))
+                    except ValueError:
+                        continue
+    except Exception as e:
+        logger.warning("Velocity sweep: star history unreadable, skipping (%s)", e)
+        _record_queue("velocity", 0, 0, now, note="error")
+        return []
+    if not history_rows:
+        # 冷啟動（星史尚未累積）與「今天沒人達標」要分得開
+        _record_queue("velocity", 0, 0, now, note="cold_start")
+        return []
+
+    candidates = _velocity_candidates(history_rows, star_seen, emitted, today)
+    picked = candidates[:VELOCITY_PER_DAY]
+    _record_queue("velocity", queued=len(candidates), emitted_n=len(picked), now=now)
+    logger.info("Velocity sweep: %d over threshold, emitting %d", len(candidates), len(picked))
+
+    items = []
+    for v, rel, delta, span, stars, url in picked:
+        meta = _fetch_repo_meta(url, headers)
+        desc = (meta.get("description") or "")[:300]
+        name = meta.get("full_name") or "/".join(url.rstrip("/").split("/")[-2:])
+        items.append(FeedItem(
+            title=name,
+            url=url,
+            source="GitHub Search",
+            published=now,
+            score=stars,
+            score_unit="星",
+            # 前綴是給日報撰寫者的誠實訊號：這則的新聞點是「成長速度」本身，
+            # 不是 repo 剛出生也不是首次成名——寫作時應交代它正在暴衝。
+            summary=f"[星速偵測｜近 {span} 天 +{delta:,} 星（約 {v:,.0f} 星/日）] {desc}",
             category="community",
         ))
     return items

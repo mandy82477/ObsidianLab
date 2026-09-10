@@ -6118,3 +6118,11 @@ GH Actions 抓料排 10:23 UTC，到 14:45 UTC 仍未落地（+4.4 小時且持�
 - 品質備註：無
 
 - 收尾備註（2026-09-09）：本輪雲端環境（同 09-05／09-07／09-08 先例）在等待六位背景記者＋devpractice／market 期間多次被 stop-hook 要求先 commit（部分時點並要求 push），故沿用已接受的偏離模式——分批 interim commit，中途 stop-hook 明確要求 push 時亦推送 2 次；分批推送彼此相隔數分鐘至十餘分鐘，無並發競爭風險。另本輪 Step 4 web build gate 首次擋下（懸置標記舊語法棘輪 41→42），經定位為 index.md 新增人物列沿用既有「active（待核實）」慣例（與既有 5 列同型），非新型違規，依 gate 允許清單調整 `data/pending-legacy-baseline.json` 並記錄理由後重跑放行，過程與結果已寫入 Step 6 log。
+
+## 2026-09-10 GitHub 發現機制 Phase 2：E 窗星速吐出端上線（使用者裁決「好啊請補」後動工）
+
+**是什麼：** E 窗記錄端（09-03）累積的 repo_star_history.csv 迎來吐出端——快照自算星速，補 A/B/C/D 都接不到的「已被看見、但每天排序不進吐出名單、正在暴衝」的 repo。閾值以 09-02～09-08 六個資料日校準（388 repo：p50=5、p90=114、p95=197 星/日）：絕對線 300 星/日單獨成立（抓 orca 型 +703/日）、100 星/日＋5%/日抓年輕爆紅型（anti-slop 1.7k 星 24%/日）；每日至多 2 則、共用已報導閘、產消對帳 window=velocity（cold_start 與 error 分開記）。dry-run：5 候選、吐 orca＋anti-slop。**校準基期僅 6 日，複查 2026-09-24 登記 workaround-register。**
+
+**同批兩項小修：** (a) 無 token 時 search API 節流 6.2 秒/次——一次 gather 恰 10 次 search 呼叫貼著匿名 10/min 上限，C 窗最後一條 scope（agent skills）先前會被靜默跳過；PAT 從必要降為提速選配。(b) D 窗 repo URL 判定放寬至 /tree、/blob 子路徑（monorepo 裡的 skill/工具連結先前整則丟棄），去重改用 repo 根 URL、保留字第一段路徑（orgs/topics…）擋下；issue/PR/release 連結維持不收。
+
+**驗證：** 新增 7 個回歸測試（星速閾值語意 6 案例鎖真實校準錨點＋子路徑 regex），全套測試綠（exit 0）。pipeline-change-check baseline 已拍（digest 2026-09-08、articleCount 50、HEAD 22908168）；compare 待下次 pipeline 實跑後執行（重點：GitHub Search +0～2 星速條目、HN Repo Bridge 微升）。lint 6e 逐窗對帳自動涵蓋新 velocity 窗（缺列即窗死）。

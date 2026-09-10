@@ -49,7 +49,17 @@ _SCOPE_TERMS = [
 
 _OFFICIAL_HOSTS = ("claude.com", "anthropic.com", "docs.claude.com")
 
-_GH_REPO_RE = re.compile(r"^https://github\.com/([\w.\-]+)/([\w.\-]+)/?$")
+# repo 根路徑，另接受 /tree/…、/blob/…（HN 常直貼 monorepo 子目錄——skills 集合裡
+# 的單一 skill、工具庫裡的單一工具；連結主體仍是那個 repo）。issue／PR／release
+# 連結不收：那些貼文的主體是該事件，不是 repo 本身（2026-09-10 放寬，回歸測試鎖）。
+_GH_REPO_RE = re.compile(
+    r"^https://github\.com/([\w.\-]+)/([\w.\-]+?)(?:\.git)?(?:/(?:tree|blob)/\S+)?/?$")
+
+# github.com 第一段路徑不是 owner 的保留字（帳號名不可能取這些）
+_GH_NON_REPO_OWNERS = {
+    "orgs", "topics", "features", "collections", "sponsors", "marketplace",
+    "apps", "about", "trending", "search", "settings", "site", "events", "readme",
+}
 
 
 class HNRepoBridge(BaseSource):
@@ -99,9 +109,12 @@ class HNRepoBridge(BaseSource):
                 continue
 
             m = _GH_REPO_RE.match(url)
-            if not m:
+            if not m or m.group(1).lower() in _GH_NON_REPO_OWNERS:
                 continue
-            if emitted is not None and url.rstrip("/").lower() in emitted:
+            # 去重與吐出一律用 repo 根 URL——/tree 子路徑連結若用原樣比對，
+            # 同一 repo 會繞過已報導閘重進
+            canonical = f"https://github.com/{m.group(1)}/{m.group(2)}"
+            if emitted is not None and canonical.lower() in emitted:
                 continue
             # 第二道：主題閘（每則 1 次 core REST call，非 search 配額）
             checked += 1
@@ -124,7 +137,7 @@ class HNRepoBridge(BaseSource):
             desc = (repo.get("description") or "")[:250]
             candidates.append((points, FeedItem(
                 title=f"{repo.get('full_name', title)}",
-                url=repo.get("html_url", url),
+                url=repo.get("html_url", canonical),
                 source="HN Repo Bridge",
                 published=now,
                 score=points, score_unit="分",

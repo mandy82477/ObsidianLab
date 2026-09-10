@@ -94,7 +94,7 @@ flowchart TD
         S1["Anthropic Blog\n(/news + /engineering)"]
         S2["Anthropic Status\n(status RSS)"]
         S3["GitHub Releases
-＋repo 搜尋 A/B/C 窗＋E 星史記錄端
+＋repo 搜尋 A/B/C 窗＋E 星速窗（記錄＋吐出）
 （共用已報導閘：日報＋清倉帳本）"]
         S4["GitHub Issues"]
         S5["Hacker News"]
@@ -125,7 +125,7 @@ repo 描述關鍵字補撈)"]
 
     FILTER --> OUT["gathered_items.json\n（items + date + source_status\n+ score_unit + source_count）"]
     FILTER --> FUNNEL["data/source_funnel.jsonl\n（append：每次執行各來源\ngathered/filtered/emitted 漏斗數）"]
-    S3 -.-> DISC["data/discovery_queue_history.csv\n（逐窗產消對帳：date,window,queued,emitted,note）\n+ data/repo_star_history.csv（E 窗記錄端，60 天）"]
+    S3 -.-> DISC["data/discovery_queue_history.csv\n（逐窗產消對帳：date,window,queued,emitted,note）\n+ data/repo_star_history.csv（E 窗星史，60 天；\n2026-09-10 起吐出端上線：星速 ≥300★/日\n或 ≥100★/日且 ≥5%/日，每日至多 2 則）"]
     S5b -.-> DISC
 ```
 
