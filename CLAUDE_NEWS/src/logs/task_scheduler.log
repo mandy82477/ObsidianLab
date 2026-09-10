@@ -627,3 +627,4 @@
 [Wed 2026/09/09 17:46:11.00] === Pipeline complete (agent) ===
 [cloud daily-news-pipeline-cloud STARTED 2026-09-09T22:04:48Z]
 [cloud daily-news-pipeline-cloud ABORTED 2026-09-09T22:05:17Z] digest already exists (news/2026-09-09.md) - Step 0b 冪等閘中止，第三班（22 UTC）撞上前一班（17 UTC）已完成的日報
+[cloud daily-news-pipeline-cloud STARTED 2026-09-10T12:05:18Z]
