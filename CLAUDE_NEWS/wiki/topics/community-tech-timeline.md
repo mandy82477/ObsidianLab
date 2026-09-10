@@ -6,11 +6,11 @@ domain: "🌐 社群"
 last_updated: "2026-09-06"
 last_news_update: "2026-05-22"
 status_main: "resolved"
-days_since_news: 110
+days_since_news: 111
 parent: "topics/community-tech-patterns-archive"
 children: "[]"
 page_role: "redirect"
-days_since_news_subtree: 110
+days_since_news_subtree: 111
 inbound_links: 0
 attribution_count: 0
 attribution_last: null
