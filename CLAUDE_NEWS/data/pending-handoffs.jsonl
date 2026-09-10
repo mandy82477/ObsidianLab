@@ -152,3 +152,4 @@
 {"id": "H-1da51a", "closed": "2026-09-08", "status": "done", "by": "模型", "result": "opus-5「這些數字是誰量的」節補上第三個出口，連結至 topics/code-quality-decline"}
 {"id": "H-848909", "opened": "2026-09-09", "from": "商業", "to": "人物", "page": "entities/xin-tong", "note": "童欣（Dr. Xin Tong）加入 Meshy 出任首席科學家，具明確職稱＋具體事件，符合人物建頁門檻（來源：Macau Business，2026-09-09，topic-watch/ai-talent-flow）", "status": "open"}
 {"id": "H-36251d", "opened": "2026-09-09", "from": "商業", "to": "模型", "page": "entities/pricing", "note": "NPR 報導 Anthropic 推出新模型用於測試 AI 對美國經濟的影響（2026-09-09），僅標題可用；評估是否為可選用模型需模型記者雙標處理", "status": "open"}
+{"id": "H-36251d", "closed": "2026-09-10", "status": "done", "by": "模型", "result": "非可選用 LLM 模型，是 Anthropic 經濟研究團隊的情境模擬工具（econ-scenarios），與 Economic Index 互補；不進 feature-radar／模型類負責頁面，已記於 entities/fable-5 歷史記錄的僅標題可用線索之外不另立頁，交主編評估是否記入 topics/anthropic-business"}

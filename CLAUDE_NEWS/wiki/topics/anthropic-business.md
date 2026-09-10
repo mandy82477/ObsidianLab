@@ -27,8 +27,8 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 **狀態：** ongoing
 **領域：** 💼 商業
 **開始日期：** 2026-05-28
-**最後更新：** 2026-09-09
-**最後新聞更新：** 2026-09-09
+**最後更新：** 2026-09-10
+**最後新聞更新：** 2026-09-10
 
 > **最新動態**（2026-09-08）
 > - **Decart 收購生變**：傳 60 億美元收購以色列新創 Decart 的計畫遭撤回，多家以色列與財經媒體同日跟進（見「哪個合作會改到你用的 Claude」一行制清單）。
@@ -487,6 +487,11 @@ Financial Times 報導 Anthropic 旗艦模型在吸引一般使用者（general 
 ## 時序
 
 ### 2026-09
+
+#### 2026-09-10
+- **[公司動態，僅標題可用] The Boston Globe：Anthropic 在麻州劍橋 Kendall Square 附近簽下約 2.4 萬平方英尺辦公空間租約**：租約條款、進駐時程、與既有波士頓地區布局的關係均未見報導（Google News/The Boston Globe）
+- **[公司動態，媒體延伸解讀] NDTV Profit：報導稱 Anthropic 警告至 2030 年將有五分之一工作消失、薪資受壓**：與本頁 09-09 記錄之 NPR「Anthropic 推出新模型測試 AI 對美國經濟的可能衝擊」可能為同一經濟情境模型的媒體延伸解讀，具體模型方法論、預測依據均未見報導，僅標題可用（Google News/NDTV Profit）
+- **[戰略合作，僅標題可用] FedScoop：Anthropic 將 Fable 5.1 導入 Claude for Government 產品線**：供美國政府機關使用，具體採購/合約條件未見報導；模型可用性面見 [[entities/fable-5]]（Google News/FedScoop）
 
 #### 2026-09-09
 - **[商業風險，詳見 pricing] Verge／Startup Fortune／The New Stack 三家媒體跟進 Max 20x 集體訴訟**：New Stack 點名「20 倍用量」實為週用量上限機制，詳見 [[entities/pricing]]「事故現在還在發生嗎」表（Google News/The Verge；Startup Fortune；The New Stack）

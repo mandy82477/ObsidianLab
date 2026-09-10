@@ -29,19 +29,20 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 **狀態：** active
 **領域：** 🛠️ 工具/功能
 **首次出現：** 2025（正式推出）
-**最後更新：** 2026-09-09
-**最後新聞更新：** 2026-09-09
+**最後更新：** 2026-09-10
+**最後新聞更新：** 2026-09-10
 
-> **最新動態**（2026-09-08）
-> - **新增已知問題**：功能請求「`MEMORY.md` 記憶壓縮提醒門檻可設定化」（#91188，見「行為與品質」）。
-> - **互動數更新**：提示卡住/凍結 5–20 分鐘以上（#26224，128→131 留言、150→151 讚，全站今日互動最高）；GitHub Connector 未被識別（#32479，76→96 留言、138→143 讚）；申訴表單重新導向迴圈（#62503，31→40 留言）。
-> - **這禮拜你會遇到什麼**：見下方「現在還沒修好的」；升版判斷見 [[feature-radar]]「從你現在的版本升上去，會遇到什麼」。
+> **最新動態**（2026-09-10）
+> - **v2.1.267**：新增 `maxEffortLevel` 設定，對 Bedrock／Vertex／Foundry 等所有供應商統一設定推理努力上限，使用者仍可在上限內自選較低等級；見 [[feature-radar]]。
+> - **新增已知問題**：Cowork（Windows）Plan9 掛載因 KB5124008 更新全數失敗，移除該 KB 可修復（#92984）；C# LSP 缺 request handler 無法運作（#16360）。
+> - **互動數更新**：多帳號切換（#36151，980 讚，今日互動最高）；模型修辭套路問題（#77136，552 反應）；AskUserQuestion 逾時代答（#73125，414 讚）。
 ---
 
 ## 現況
 
 **最新版本動態：**
 
+- **v2.1.267**（2026-09-09）：新增 `maxEffortLevel` 設定（可放頂層或個別模型的 `modelSettings` 下），對所有供應商（含 Bedrock、Vertex、Foundry）統一設定推理努力（effort）上限，使用者仍可在上限內自行選擇較低等級。
 - **v2.1.266**（2026-09-08）：修復 2.1.265 一項迴歸，影響 LLM-gateway／proxy 的 `CLAUDE_CODE_USE_GATEWAY` 環境變數（原文截斷，細節未知）；純 bug 修復。
 - **v2.1.261**（2026-09-04）：`/status` 與 `claude doctor` 新增「Organization policy」欄位，說明組織政策載入失敗的原因（例如代理伺服器未正確轉發 endpoint）。
 - 其餘版本（含 v2.1.258 macOS 12 啟動失敗修復、anthropic-sdk-python v1.0.0 httpx2 breaking change）的逐版異動見下方「版本更新 → 最新版本」表。
@@ -67,7 +68,7 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 
 **官方使用研究：** Anthropic 發表基於 2025/10–2026/04 約 40 萬個 session 的分析研究，發現人類主導規劃決策、Claude 主導執行決策，且使用者領域專業越高，Claude 每條指令完成的工作量越大。
 
-**市場與競爭：** Microsoft 正陸續取消內部授權轉推 GitHub Copilot CLI（見 [[topics/competitor-landscape]]）；Ramp AI Index 顯示 Anthropic 企業採用率持續領先 OpenAI（43.5% vs 39.7%，2026-08-12 發布，詳表見 [[topics/anthropic-business]]）；AWS 於 2026-07-15 推出「Claude Apps Gateway」，定位為 Claude Code 與 Claude Desktop 可自架部署（self-hosted）的控制平面，集中身分／政策／遙測／路由／支出上限，路由到 Bedrock 或 Claude Platform on AWS；**Claude Code CLI 官方內建支援**（`claude-apps-gateway` 專頁，2026-09-06 查證，[AWS 官方 blog](https://aws.amazon.com/blogs/) 07-08）。The GitHub Blog（2026-07-24，經 Google News 轉載）報導 Claude Opus 5 已在 GitHub Copilot 上線，屬 Anthropic 模型透過微軟生態系分發的延續；模型陣容細節見 [[topics/model-comparison]]。
+**市場與競爭：** Microsoft 正陸續取消內部授權轉推 GitHub Copilot CLI（見 [[topics/competitor-landscape]]）；Ramp AI Index 顯示 Anthropic 企業採用率持續領先 OpenAI（43.5% vs 39.7%，2026-08-12 發布，詳表見 [[topics/anthropic-business]]）；AWS 於 2026-07-15 推出「Claude Apps Gateway」，定位為 Claude Code 與 Claude Desktop 可自架部署（self-hosted）的控制平面，集中身分／政策／遙測／路由／支出上限，路由到 Bedrock 或 Claude Platform on AWS；**Claude Code CLI 官方內建支援**（`claude-apps-gateway` 專頁，2026-09-06 查證，[AWS 官方 blog](https://aws.amazon.com/blogs/) 07-08）。The GitHub Blog（2026-07-24，經 Google News 轉載）報導 Claude Opus 5 已在 GitHub Copilot 上線，屬 Anthropic 模型透過微軟生態系分發的延續；模型陣容細節見 [[topics/model-comparison]]。Unity 於 2026-09-10 推出官方 Claude Code 外掛，內建 29 項遊戲引擎相關技能，讓開發者可在 Unity 專案中直接透過 Claude Code 呼叫引擎層級操作（Pocket Gamer.biz、Inven Global 兩家遊戲媒體獨立報導）；此為 Unity 自家發行的第三方外掛，非 Anthropic 官方產物，故不進 [[feature-radar]]。
 
 ## 熱度與試用價值
 
@@ -160,7 +161,7 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 
 ### 🧠 行為與品質（51 條未修復、2 條已修復、1 條拒修、6 條查無官方、1 條❓）
 
-- 🔴 **未修復**｜**Claude 4.7／4.8／5、Fable 日益預設重複修辭套路，難維持連貫散文（GitHub issue #77136，累積 106 則留言、517 個反應，2026-08-27）**：跨模型代際共同問題，逐則見 [[entities/opus-5]]「歷史記錄」；官方尚未回應。
+- 🔴 **未修復**｜**Claude 4.7／4.8／5、Fable 日益預設重複修辭套路，難維持連貫散文（GitHub issue #77136，累積 552 個反應，2026-09-10 反應數更新）**：跨模型代際共同問題，逐則見 [[entities/opus-5]]「歷史記錄」；與「Claude 變笨了」觀感爭論相關但聚焦文字風格非整體效能，見 [[topics/code-quality-decline]]；官方尚未回應。
 - 🔴 **未修復**｜**功能請求：CJK 輸入法確認輸入時 Enter 鍵常誤觸發送出訊息（GitHub issue #2054，累積 34 則留言、187 個讚，長年未解）**：籲提供 Enter 僅換行不送出的選項；官方尚未回應或排入路線圖。
 - 🔴 **未修復**｜**德文變音符號（ä、ö、ü）在輸出中隨機被替換為 ASCII 拼寫，如 ä→ae（GitHub issue #14131，累積 41 則留言、24 個讚）**：使用者回報 Claude Code 輸出中德文變音符號會不定期被替換為對應的 ASCII 拼寫；官方尚未回應。
 - 🔴 **未修復**｜**功能請求：開放 Claude 直接寫入／更新專案檔案的權限模式（GitHub issue #16550，累積 37 則留言、78 個讚，本輪互動最高功能請求）**：使用者呼籲提供讓 Claude 可直接寫入或更新專案檔案的權限模式；官方尚未回應或排入路線圖。
@@ -201,7 +202,7 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 - 🔴 **未修復**｜**功能請求：關閉輸入框貼上文字自動收合為 `[Pasted text #N +X lines]`（GitHub issue #23134，累積 47 則留言、151 個讚，首見 2026-07-16，2026-08-22 互動數更新）**：使用者希望能關閉輸入框將多行貼上文字自動收合顯示的行為，保留原始貼上內容的可視性；官方尚未回應或提供設定選項。
 - 🔴 **未修復**｜**社群請願恢復已移除的 `/buddy` 功能（GitHub issue #45596，累積 268 則留言、2076 個讚，2026-07-09 首見，2026-08-29 互動數更新）**：`/buddy` 功能已於 4 月 9 日自 Claude Code v2.1.97 起移除，官方 changelog 未提及；社群發起統整請願要求恢復，反應數居全站已知問題前列，官方尚未回應是否重新上架。
 - 🔴 **未修復**｜**終端機複製夾帶多餘縮排與行尾空白（GitHub issue #18170，累積 134 則留言、283 個讚，首見 2026-07-08，2026-08-06 互動數更新）**：從 Claude Code 終端機複製文字（段落或程式碼區塊）時會夾帶前導縮排與行尾空白，影響貼上至其他編輯器或文件時的格式整潔；官方尚未回應。
-- 🔴 **未修復**｜**AskUserQuestion 60 秒逾時自動代答（GitHub issue #73125，累積 142 則留言、403 個讚，2026-07-08 持續累積）**：互動詢問（AskUserQuestion）逾時 60 秒未回應會自動代答並繼續執行（提示訊息「No response after 60s — continued without an answer」），可能導致決策分岔點被略過而產生非預期結果；此行為早已存在（[issue #30740](https://github.com/anthropics/claude-code/issues/30740)），2026-07-02 因 Reddit 貼文才被社群大量注意到並引發體驗爭議，反應數持續攀升（07-02 起連續多日高居不下），官方尚無修復或設定可調整逾時時間；2026-07-17 Hacker News 部落格文章（olafalders.com「Claude Code: Anatomy of a Misfeature」，score 140）確認此為 2026-07-01（v2.1.198）刻意加入的「效率繞過」（efficiency bypass）設計，非單純 bug：逾時後 agent 會自行判斷並繼續執行，而非等待人工指示；同日另有 Hacker News 使用者具體案例（score 23）回報請求 agent 放慢步調、暫停以節省 token，多次嘗試澄清仍未能改變其行為，agent 持續以相同步調作業；討論詳見 [[topics/community-tech-discussions]]
+- 🔴 **未修復**｜**AskUserQuestion 60 秒逾時自動代答（GitHub issue #73125，累積 414 個讚，2026-09-10 反應數更新）**：互動詢問（AskUserQuestion）逾時 60 秒未回應會自動代答並繼續執行（提示訊息「No response after 60s — continued without an answer」），可能導致決策分岔點被略過而產生非預期結果；此行為早已存在（[issue #30740](https://github.com/anthropics/claude-code/issues/30740)），2026-07-02 因 Reddit 貼文才被社群大量注意到並引發體驗爭議，反應數持續攀升（07-02 起連續多日高居不下），官方尚無修復或設定可調整逾時時間；2026-07-17 Hacker News 部落格文章（olafalders.com「Claude Code: Anatomy of a Misfeature」，score 140）確認此為 2026-07-01（v2.1.198）刻意加入的「效率繞過」（efficiency bypass）設計，非單純 bug：逾時後 agent 會自行判斷並繼續執行，而非等待人工指示；同日另有 Hacker News 使用者具體案例（score 23）回報請求 agent 放慢步調、暫停以節省 token，多次嘗試澄清仍未能改變其行為，agent 持續以相同步調作業；討論詳見 [[topics/community-tech-discussions]]
 - 🔴 **未修復**｜**功能請求：READ 工具未標示目前正在讀取哪一個檔案（GitHub issue #21151，累積 133 則留言、186 個讚，2026-07-17 首次記錄，2026-07-21 留言數更新）**：使用者反映執行 READ 工具讀取檔案時，介面未顯示目前正在讀取的具體檔案名稱，多檔案讀取情境下難以追蹤進度；官方尚未回應或提供設定選項。
 - 🔴 **未修復**｜**功能請求：新增選項常駐顯示 Claude 的思考過程（GitHub issue #8477，累積 93 則留言、356 個讚，2026-07-17 首次記錄，2026-08-17 互動數更新）**：使用者希望新增設定選項讓 Claude 的 thinking／推理過程預設常駐顯示，而非需要每次手動展開或依賴目前的摘要呈現；官方尚未回應或排入路線圖。
 - 🔴 **未修復**｜**功能請求：送出前檢視並編輯「已貼上文字」區塊內容——官方曾承諾以 Editor 功能解決，issue 現已重開（GitHub issue #3412，累積 83 則留言、307 個讚，首見 2026-07-18，2026-08-17 互動數更新，環境：Claude Code 1.0.51／macOS 15 Sequoia／Ghostty；2026-08-10 查證）**：使用者（常見情境為搭配 MacWhisper 等聽寫軟體使用）希望能在送出前檢視並編輯輸入框中已收合的「已貼上文字」區塊內容；官方協作者 dicksontsai 曾於 2026-01-14 回應「下個版本起可用 Editor 功能檢視已貼上文字」，惟該次修復對應的 PR 觸發 GitHub 自動關閉、issue 隨後於當前回報週期被重新開啟（`state_reason: reopened`），顯示先前修復未能持續解決問題或涵蓋範圍不足；與既有「關閉輸入框貼上文字自動收合」需求（issue #23134）同屬貼上文字呈現方式相關訴求但方向不同，暫分列追蹤。
@@ -254,7 +255,7 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 - 🔴 **未修復**｜**Claude Code 要求使用者幾乎每天都須重新透過網頁驗證登入（GitHub issue #1757，累積 83 則留言、70 個讚，2026-08-03 首見，2026-09-04 互動數更新）**：使用者回報 Claude Code 幾乎每天都要求重新透過網頁驗證登入，認為過於頻繁且不必要；與既有「OAuth 登入逾時失敗，`auth.anthropic.com` 網域無法解析」（issue #33238）同屬登入／驗證體驗問題但現象不同（一為逾時失敗、一為驗證有效期過短），暫分列追蹤；官方尚未回應。
 - 🔴 **未修復**｜**功能請求：多帳號設定檔支援（Multi-Account Profile Support）（GitHub issue #20131，累積 39 則留言，2026-07-31）**：Claude Code 目前僅支援單一已驗證帳號，使用者呼籲支援同時設定多組帳號設定檔（例如同時管理一個 API 計費帳號與一個一般訂閱帳號），方便切換；與既有三平台多帳號缺口（Mobile／Desktop／Web connector）同屬帳號架構議題，此則聚焦 CLI 端設定檔機制；官方尚未回應或排入路線圖。
 - 🔴 **未修復**｜**手機號碼驗證機制異常（GitHub issue #34229，累積 741 則留言、892 個讚，2026-07-16，全站已知問題今日互動量最高）**：使用者回報 Claude 帳號的手機號碼驗證流程出現問題；原文摘要於 preflight checklist 處被截斷，具體異常現象未知，僅能確認高互動量與「手機驗證」主題；官方尚未回應。見 [issue](https://github.com/anthropics/claude-code/issues/34229)
-- 🔴 **未修復**｜**Claude 全平台共通的帳號架構缺口——三平台各自提出多帳號管理訴求**：Mobile app 缺乏免共用 email 的多帳號切換（[issue #36151](https://github.com/anthropics/claude-code/issues/36151)，累積 170 則留言、944 個讚，首見 2026-07-08，2026-09-04 互動數更新，今日全站已知問題互動量最高）；Desktop app 缺乏多帳號管理與快速切換（[issue #18435](https://github.com/anthropics/claude-code/issues/18435)，累積 154 則留言、819 個讚，2026-07-10 首見，2026-08-14 互動數更新）；Claude／Claude Code on the web 缺乏同一 Connector 掛載多個帳號的支援（[issue #27302](https://github.com/anthropics/claude-code/issues/27302)，累積 240 則留言、523 個讚，首見 2026-07-10，2026-09-04 互動數更新）；三則 issue 分屬不同介面、互不重複，卻在同一週集中出現，共同反映 Claude 帳號模型尚未針對多身份使用情境（如工作／個人帳號分離、多客戶服務）設計統一的跨平台身份層；官方尚未於任一平台回應或排入路線圖。
+- 🔴 **未修復**｜**Claude 全平台共通的帳號架構缺口——三平台各自提出多帳號管理訴求**：Mobile app 缺乏免共用 email 的多帳號切換（[issue #36151](https://github.com/anthropics/claude-code/issues/36151)，累積 980 個讚，首見 2026-07-08，2026-09-10 反應數更新，今日全站已知問題互動量最高）；Desktop app 缺乏多帳號管理與快速切換（[issue #18435](https://github.com/anthropics/claude-code/issues/18435)，累積 154 則留言、819 個讚，2026-07-10 首見，2026-08-14 互動數更新）；Claude／Claude Code on the web 缺乏同一 Connector 掛載多個帳號的支援（[issue #27302](https://github.com/anthropics/claude-code/issues/27302)，累積 240 則留言、523 個讚，首見 2026-07-10，2026-09-04 互動數更新）；三則 issue 分屬不同介面、互不重複，卻在同一週集中出現，共同反映 Claude 帳號模型尚未針對多身份使用情境（如工作／個人帳號分離、多客戶服務）設計統一的跨平台身份層；官方尚未於任一平台回應或排入路線圖。
 
 ### 🔌 MCP 整合（14 條未修復）
 
@@ -275,8 +276,10 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 - 🔴 **未修復**｜**提案：Function Hooks——外掛以 `$` 物件追蹤副作用、安全深度改行為並可組合註冊（issue #91870，107 則留言、94 讚，本輪互動最高功能提案，09-05）**：與 #24057 同屬 hooks／外掛成熟度議題，屬新機制提案；官方尚未回應。
 - 🔴 **未修復**｜**MCP Token 消耗問題**：多個 MCP Server 併用時，每條訊息可能消耗 20,000+ tokens
 
-### 🔌 平台相容性（66 條未修復、3 條查無官方）
+### 🔌 平台相容性（68 條未修復、3 條查無官方）
 
+- 🔴 **未修復**｜**Cowork（Windows）Plan9 共用資料夾因 Windows 更新 KB5124008（build 26200.9445）全數掛載失敗，錯誤「Plan9 mount failed: invalid argument」（GitHub issue #92984，累積 32 個讚，2026-09-10）**：回報者確認移除該 KB 可恢復正常運作；官方尚未回應。
+- 🔴 **未修復**｜**C# LSP（csharp-ls）在 Claude Code 中無法運作，缺少 `workspace/configuration` 等請求處理器（GitHub issue #16360，累積 34 個讚，長年未解）**：官方尚未回應或排入路線圖。
 - 🔴 **未修復**｜**Claude Desktop（Windows）安裝程式因先前一次「顯示成功」實則套件狀態不一致的安裝，導致後續安裝以 HRESULT 0x80073CF6 失敗（GitHub issue #49917，累積 38 則留言、8 個讚）**：官方尚未回應。
 - 🔴 **未修復**｜**Claude Desktop（Windows）反覆當機，須進「進階選項→修復」才能恢復（GitHub issue #85199，累積 40 則留言，2026-08-30）**：使用者回報 Windows 版 Claude Desktop 反覆當機，每次都須進入「進階選項→修復」才能恢復使用，屬穩定性問題；官方尚未回應。
 - 🔴 **未修復**｜**功能請求：新增 `--quiet`（或 `--minimal-output`）旗標抑制互動模式工具呼叫輸出（GitHub issue #9340，累積 32 則留言、47 個讚，2026-08-29）**：社群呼籲新增 `--quiet` 旗標，讓互動模式下的工具呼叫輸出可被抑制、僅顯示精簡進度，方便長時間執行時減少畫面雜訊；官方尚未回應或排入路線圖。
@@ -411,6 +414,7 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 
 | 版本 | 發布日 | 重點 |
 |------|------|------|
+| **v2.1.267** | 2026-09-09 | 新增 `maxEffortLevel` 設定，統一設定 Bedrock／Vertex／Foundry 等供應商的推理努力上限，仍可在上限內自選較低等級（見 [Release](https://github.com/anthropics/claude-code/releases/tag/v2.1.267)）|
 | **v2.1.266** | 2026-09-08 | Bug fix：修復 2.1.265 一項迴歸，影響 LLM-gateway／proxy 的 `CLAUDE_CODE_USE_GATEWAY` 環境變數（原文截斷，細節未知）；純 bug 修復（見 [Release](https://github.com/anthropics/claude-code/releases/tag/v2.1.266)）|
 | **v2.1.263** | 2026-09-06 | Bug fixes and reliability improvements，官方 changelog 未列具體項目，純可靠性修正，無使用者端功能異動（見 [Release](https://github.com/anthropics/claude-code/releases/tag/v2.1.263)）|
 | **v2.1.261** | 2026-09-04 | `/status` 與 `claude doctor` 新增「Organization policy」欄位，說明組織政策載入失敗的原因（例如代理伺服器未正確轉發 endpoint）（見 [Release](https://github.com/anthropics/claude-code/releases/tag/v2.1.261)）|

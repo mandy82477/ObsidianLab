@@ -30,8 +30,8 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 **領域：** 🤖 模型
 **別名：** Fable 5, Fable 5.1, Claude Fable 5.1
 **首次出現：** 2026-06-09
-**最後更新：** 2026-09-08
-**最後新聞更新：** 2026-09-04
+**最後更新：** 2026-09-10
+**最後新聞更新：** 2026-09-10
 
 > **最新進展**（2026-09-01）
 > Fable 5.1 GA 發布並取代 5.0 成為現行旗艦：同價、快取讀取便宜 75%、知識截止晚 5 個月；Fable 5 轉為 Legacy，官方載明退役不早於 2027-06-09。
@@ -174,6 +174,9 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 
 ### 解禁後（2026-07-01 起）
 
+#### 2026-09-10
+❓ 待查證 ⟨Q-06⟩ **FedScoop：Fable 5.1 導入 Claude for Government**：標題稱 Anthropic 將 Fable 5.1 加入 Claude for Government 產品線，僅標題可用，是新增可用性、既有分層變更或單純服務更新未經證實；政府採購角度另見 [[topics/anthropic-business]]（Google News/FedScoop，2026-09-10）（詳見「懸置細節」）
+
 #### 2026-09-04
 **費馬最後定理形式化證明（官方 2026-09-07 查證：使用內部研究模型，非 Fable 5 或 5.1）**：
 - **Anthropic 官方研究文章**：Claude 歷時 11 天完成費馬最後定理的電腦驗證證明。官方寫明用的是「內部研究模型，約略相當 Fable 5.1」，不是 Fable 5 或 5.1 本身，本頁僅作參考記錄（[Anthropic](https://www.anthropic.com/research/formalizing-fermats-last-theorem)，2026-09-04；歸屬 2026-09-07 查證）
@@ -307,6 +310,7 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 - ⟨Q-03⟩ ❓ **待查證**（標 2026-08-26｜查 Futurism、cheaper alternatives｜複 2026-09-09）：Futurism 標題稱企業轉向更便宜替代方案，僅標題可用，無採用數據、案例或方法論佐證（Google News/Futurism，2026-08-26）
 - ⟨Q-04⟩ ❓ **待查證**（標 2026-08-26｜查 tech-insider.org、GPT-5.6 Sol｜複 2026-09-09）：tech-insider.org 標題稱三模型定價差 $1,125，僅標題可用，計算基準未經查證（Google News/tech-insider.org，2026-08-26）
 - ⟨Q-05⟩ ❓ **待查證**（標 2026-08-26｜查 analyticsindiamag.com、Almost Nobody｜複 2026-09-09）：analyticsindiamag.com 標題稱 Fable 5「幾乎無人使用」，RSS 摘要未附正文，採用數據、統計方法、對比基準均未見報導（Google News，2026-08-18）
+- ⟨Q-06⟩ ❓ **待查證**（標 2026-09-10｜查 FedScoop、Claude for Government｜複 2026-09-24）：FedScoop 標題稱 Anthropic 將 Fable 5.1 加入 Claude for Government，僅標題可用，具體變更內容（新分層／既有服務更新）未經證實（Google News/FedScoop，2026-09-10）
 
 ### 2026-06（發布與出口管制期）
 

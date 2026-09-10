@@ -28,18 +28,11 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 **領域：** 💼 商業
 **蒐集邊界：** 以與 Anthropic 相關的人才流動為主，另針對本主題定向補抓（每日至多 3 則）；其他實驗室之間、與 Anthropic 無關的異動仍可能延遲或缺漏，重大者由人工查證補記。
 **開始日期：** 2026-06-21
-**最後更新：** 2026-09-09
-**最後新聞更新：** 2026-09-09
+**最後更新：** 2026-09-10
+**最後新聞更新：** 2026-09-10
 
-> **最新動態：DeepMind 老將 Thore Graepel 離職，投入 AI 推理新創**（2026-09-07）
-> Google News 報導 DeepMind 研究老將 Thore Graepel 離職，投入一項 AI 推理新創事業——**未加入 Anthropic 或其他既有前沿實驗室**，是「自行創業」而非「被既有對手承接」的一例，與 08-05／08-06 Jeff Dean 等人出走創辦 Discovery Loop 同屬此型態；具體新創名稱、資金來源、Graepel 職位均未見報導，詳見「對各公司的影響」表 Google DeepMind 列與「時序」新增節。
-> **Google DeepMind 同日再失四位創立元老級主管（未具名，2026-09-01）**
-> Google News 報導稱 DeepMind 同一天失去四位創立元老級主管，惟報導細節僅標題可見，四人身分、去向均未見具體姓名，標為懸置事項、不得杜撰人名，詳見「時序」新增節。
-> **Adgully.com 跟進報導 Google DeepMind 頂尖 AI 人才佔比明顯下滑**（2026-08-29）
-> 與 08-27 Fortune「持續流失頂尖人才」為同一趨勢的又一媒體佐證，延續本頁自 2026-06 以來記錄的「Google DeepMind 淨流出」格局；具體佔比數字、統計方法未見報導細節，僅標題可用（推論，待後續補充具名案例）。
-> **Anthropic 延攬 Amir Salek**（前 Google TPU 計畫創辦人，2013–2022 主導前七代 TPU）已查實進入 compute 團隊、向 James Bradbury 匯報（Bloomberg，2026-09-06 查證），詳見「對各公司的影響」表。
-> **懸置事項仍無新進展**：08-13 Sergey Brin 內部談話報導（標題截斷）已掃日報至 2026-08-29 無後續；官方頁面未查證。
-> **另（背景訊號，非核心格局變動，2026-08-28）**：報導稱加拿大 5.41 億美元研究計畫吸引部分美國常春藤學者北遷，屬學界層級跨國政策訊號，僅標題可用，未見具名機構或與特定 AI 實驗室之關聯，詳見「時序」。
+> **最新動態：傳有明星 AI 研究員將從 Meta 離職加入 Anthropic**（2026-09-10）
+> WSJ 報導，具體姓名與職稱均未見報導，詳見「對各公司的影響」表新增 Meta 列與「時序」新增節。
 
 ## 摘要
 
@@ -51,6 +44,7 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 
 | 公司 | 角色 | 具體影響 | 評估 |
 |------|------|---------|------|
+| **Meta** | 淨流失方 | 傳一位「明星」AI 研究員離職轉投 Anthropic（09-10，WSJ，僅標題可用，姓名與職稱未載）| ℹ️ 具體人名、職稱、加入 Anthropic 後的職位均未見報導，戰力影響待觀察 |
 | **Google DeepMind** | 淨流失方＋高層動盪 | 研究員與元老出走批次（6/21–6/28）＋ Discovery Loop 創業潮（08-05/06）＋ Thore Graepel 出走創業（09-07）；市值蒸發約 $2,700 億美元（詳見下方細節） | 🔴 技術核心＋高層治理雙重動盪，削弱 Google 組織穩定性訊號（推論，已查證 2026-08-13）|
 | **Anthropic** | 主要承接方 | 科學計算（Jumper）／AI 編碼（Adler）／訓練（Pritzel）／安全經濟；08-21/23 新增晶片人才 Amir Salek（前 Google TPU 計畫創辦人，入 compute 團隊）| 🟢 招募已擴及硬體自主設計；到任日未公開（推論：戰力影響待觀察）|
 | **OpenAI** | 次要承接方 | 獲得一名 Google 頂尖研究員（6/23 SEJ 報導，姓名未具名）| 🟡 同步受惠於 Google 人才外流，規模小於 Anthropic |
@@ -75,6 +69,9 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 - 人才流動為**雙向洗牌**（Google 同期亦失人至 OpenAI），非單向崩塌。
 
 ## 時序
+
+### 2026-09-10
+- **傳有明星 AI 研究員將從 Meta 離職轉投 Anthropic**：WSJ 報導，具體姓名與職稱均未見報導，詳見「對各公司的影響」表新增 Meta 列（Topic Watch/ai-talent-flow，原始來源 Google News/WSJ）
 
 ### 2026-09-09
 - **童欣（Dr. Xin Tong）加入 3D 生成新創 Meshy，出任首席科學家**：Macau Business 等多家報導，電腦繪圖領域資深學者加入，僅標題可用。非 Google DeepMind／Anthropic／OpenAI 人才戰一部分，詳見「對各公司的影響」表 Meshy 列
