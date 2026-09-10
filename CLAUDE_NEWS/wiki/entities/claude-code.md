@@ -161,7 +161,7 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 
 ### 🧠 行為與品質（51 條未修復、2 條已修復、1 條拒修、6 條查無官方、1 條❓）
 
-- 🔴 **未修復**｜**Claude 4.7／4.8／5、Fable 日益預設重複修辭套路，難維持連貫散文（GitHub issue #77136，累積 552 個反應，2026-09-10 反應數更新）**：跨模型代際共同問題，逐則見 [[entities/opus-5]]「歷史記錄」；與「Claude 變笨了」觀感爭論相關但聚焦文字風格非整體效能，見 [[topics/code-quality-decline]]；官方尚未回應。
+- 🔴 **未修復**｜**Claude 4.7／4.8／5、Fable 日益預設重複修辭套路，難維持連貫散文（GitHub issue #77136，累積 552 個反應，2026-09-10 更新）**：跨代際共同問題；與「Claude 變笨了」爭論相關但聚焦文字風格，見 [[topics/code-quality-decline]]；官方尚未回應。
 - 🔴 **未修復**｜**功能請求：CJK 輸入法確認輸入時 Enter 鍵常誤觸發送出訊息（GitHub issue #2054，累積 34 則留言、187 個讚，長年未解）**：籲提供 Enter 僅換行不送出的選項；官方尚未回應或排入路線圖。
 - 🔴 **未修復**｜**德文變音符號（ä、ö、ü）在輸出中隨機被替換為 ASCII 拼寫，如 ä→ae（GitHub issue #14131，累積 41 則留言、24 個讚）**：使用者回報 Claude Code 輸出中德文變音符號會不定期被替換為對應的 ASCII 拼寫；官方尚未回應。
 - 🔴 **未修復**｜**功能請求：開放 Claude 直接寫入／更新專案檔案的權限模式（GitHub issue #16550，累積 37 則留言、78 個讚，本輪互動最高功能請求）**：使用者呼籲提供讓 Claude 可直接寫入或更新專案檔案的權限模式；官方尚未回應或排入路線圖。
@@ -202,7 +202,7 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 - 🔴 **未修復**｜**功能請求：關閉輸入框貼上文字自動收合為 `[Pasted text #N +X lines]`（GitHub issue #23134，累積 47 則留言、151 個讚，首見 2026-07-16，2026-08-22 互動數更新）**：使用者希望能關閉輸入框將多行貼上文字自動收合顯示的行為，保留原始貼上內容的可視性；官方尚未回應或提供設定選項。
 - 🔴 **未修復**｜**社群請願恢復已移除的 `/buddy` 功能（GitHub issue #45596，累積 268 則留言、2076 個讚，2026-07-09 首見，2026-08-29 互動數更新）**：`/buddy` 功能已於 4 月 9 日自 Claude Code v2.1.97 起移除，官方 changelog 未提及；社群發起統整請願要求恢復，反應數居全站已知問題前列，官方尚未回應是否重新上架。
 - 🔴 **未修復**｜**終端機複製夾帶多餘縮排與行尾空白（GitHub issue #18170，累積 134 則留言、283 個讚，首見 2026-07-08，2026-08-06 互動數更新）**：從 Claude Code 終端機複製文字（段落或程式碼區塊）時會夾帶前導縮排與行尾空白，影響貼上至其他編輯器或文件時的格式整潔；官方尚未回應。
-- 🔴 **未修復**｜**AskUserQuestion 60 秒逾時自動代答（GitHub issue #73125，累積 414 個讚，2026-09-10 反應數更新）**：互動詢問（AskUserQuestion）逾時 60 秒未回應會自動代答並繼續執行（提示訊息「No response after 60s — continued without an answer」），可能導致決策分岔點被略過而產生非預期結果；此行為早已存在（[issue #30740](https://github.com/anthropics/claude-code/issues/30740)），2026-07-02 因 Reddit 貼文才被社群大量注意到並引發體驗爭議，反應數持續攀升（07-02 起連續多日高居不下），官方尚無修復或設定可調整逾時時間；2026-07-17 Hacker News 部落格文章（olafalders.com「Claude Code: Anatomy of a Misfeature」，score 140）確認此為 2026-07-01（v2.1.198）刻意加入的「效率繞過」（efficiency bypass）設計，非單純 bug：逾時後 agent 會自行判斷並繼續執行，而非等待人工指示；同日另有 Hacker News 使用者具體案例（score 23）回報請求 agent 放慢步調、暫停以節省 token，多次嘗試澄清仍未能改變其行為，agent 持續以相同步調作業；討論詳見 [[topics/community-tech-discussions]]
+- 🔴 **未修復**｜**AskUserQuestion 60 秒逾時自動代答（GitHub issue #73125，累積 414 個讚，2026-09-10 更新）**：逾時未回應會自動代答並繼續執行，可能略過決策分岔點；官方確認為刻意設計（v2.1.198），非 bug，尚無可調逾時設定。討論見 [[topics/community-tech-discussions]]。
 - 🔴 **未修復**｜**功能請求：READ 工具未標示目前正在讀取哪一個檔案（GitHub issue #21151，累積 133 則留言、186 個讚，2026-07-17 首次記錄，2026-07-21 留言數更新）**：使用者反映執行 READ 工具讀取檔案時，介面未顯示目前正在讀取的具體檔案名稱，多檔案讀取情境下難以追蹤進度；官方尚未回應或提供設定選項。
 - 🔴 **未修復**｜**功能請求：新增選項常駐顯示 Claude 的思考過程（GitHub issue #8477，累積 93 則留言、356 個讚，2026-07-17 首次記錄，2026-08-17 互動數更新）**：使用者希望新增設定選項讓 Claude 的 thinking／推理過程預設常駐顯示，而非需要每次手動展開或依賴目前的摘要呈現；官方尚未回應或排入路線圖。
 - 🔴 **未修復**｜**功能請求：送出前檢視並編輯「已貼上文字」區塊內容——官方曾承諾以 Editor 功能解決，issue 現已重開（GitHub issue #3412，累積 83 則留言、307 個讚，首見 2026-07-18，2026-08-17 互動數更新，環境：Claude Code 1.0.51／macOS 15 Sequoia／Ghostty；2026-08-10 查證）**：使用者（常見情境為搭配 MacWhisper 等聽寫軟體使用）希望能在送出前檢視並編輯輸入框中已收合的「已貼上文字」區塊內容；官方協作者 dicksontsai 曾於 2026-01-14 回應「下個版本起可用 Editor 功能檢視已貼上文字」，惟該次修復對應的 PR 觸發 GitHub 自動關閉、issue 隨後於當前回報週期被重新開啟（`state_reason: reopened`），顯示先前修復未能持續解決問題或涵蓋範圍不足；與既有「關閉輸入框貼上文字自動收合」需求（issue #23134）同屬貼上文字呈現方式相關訴求但方向不同，暫分列追蹤。
@@ -255,7 +255,7 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 - 🔴 **未修復**｜**Claude Code 要求使用者幾乎每天都須重新透過網頁驗證登入（GitHub issue #1757，累積 83 則留言、70 個讚，2026-08-03 首見，2026-09-04 互動數更新）**：使用者回報 Claude Code 幾乎每天都要求重新透過網頁驗證登入，認為過於頻繁且不必要；與既有「OAuth 登入逾時失敗，`auth.anthropic.com` 網域無法解析」（issue #33238）同屬登入／驗證體驗問題但現象不同（一為逾時失敗、一為驗證有效期過短），暫分列追蹤；官方尚未回應。
 - 🔴 **未修復**｜**功能請求：多帳號設定檔支援（Multi-Account Profile Support）（GitHub issue #20131，累積 39 則留言，2026-07-31）**：Claude Code 目前僅支援單一已驗證帳號，使用者呼籲支援同時設定多組帳號設定檔（例如同時管理一個 API 計費帳號與一個一般訂閱帳號），方便切換；與既有三平台多帳號缺口（Mobile／Desktop／Web connector）同屬帳號架構議題，此則聚焦 CLI 端設定檔機制；官方尚未回應或排入路線圖。
 - 🔴 **未修復**｜**手機號碼驗證機制異常（GitHub issue #34229，累積 741 則留言、892 個讚，2026-07-16，全站已知問題今日互動量最高）**：使用者回報 Claude 帳號的手機號碼驗證流程出現問題；原文摘要於 preflight checklist 處被截斷，具體異常現象未知，僅能確認高互動量與「手機驗證」主題；官方尚未回應。見 [issue](https://github.com/anthropics/claude-code/issues/34229)
-- 🔴 **未修復**｜**Claude 全平台共通的帳號架構缺口——三平台各自提出多帳號管理訴求**：Mobile app 缺乏免共用 email 的多帳號切換（[issue #36151](https://github.com/anthropics/claude-code/issues/36151)，累積 980 個讚，首見 2026-07-08，2026-09-10 反應數更新，今日全站已知問題互動量最高）；Desktop app 缺乏多帳號管理與快速切換（[issue #18435](https://github.com/anthropics/claude-code/issues/18435)，累積 154 則留言、819 個讚，2026-07-10 首見，2026-08-14 互動數更新）；Claude／Claude Code on the web 缺乏同一 Connector 掛載多個帳號的支援（[issue #27302](https://github.com/anthropics/claude-code/issues/27302)，累積 240 則留言、523 個讚，首見 2026-07-10，2026-09-04 互動數更新）；三則 issue 分屬不同介面、互不重複，卻在同一週集中出現，共同反映 Claude 帳號模型尚未針對多身份使用情境（如工作／個人帳號分離、多客戶服務）設計統一的跨平台身份層；官方尚未於任一平台回應或排入路線圖。
+- 🔴 **未修復**｜**Claude 全平台共通的帳號架構缺口——三平台各自提出多帳號管理訴求**：Mobile（[#36151](https://github.com/anthropics/claude-code/issues/36151)，980 讚，09-10 更新，全站最高）、Desktop（[#18435](https://github.com/anthropics/claude-code/issues/18435)，819 讚）、Web connector（[#27302](https://github.com/anthropics/claude-code/issues/27302)，523 讚）皆缺多帳號支援；官方尚未回應。
 
 ### 🔌 MCP 整合（14 條未修復）
 
