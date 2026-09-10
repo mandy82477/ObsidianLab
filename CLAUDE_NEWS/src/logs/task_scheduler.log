@@ -632,3 +632,9 @@
 [週4 2026/09/10 12:06:30.00] ABORTED: src/gathered_archive/2026-09-10.json not found (Step 1a cp failed) - GitHub Actions daily-gather 尚未產出當日原料，非目標日期新鮮資料，正確中止（非 backfill，不自動重抓，交下一班或資料到齊後接手）
 [cloud daily-news-pipeline-cloud ABORTED 2026-09-10] Step 1a：src/gathered_archive/2026-09-10.json 不存在（GitHub Actions 抓料尚未到齊），交由 Step 1b 新鮮度防線邏輯判定中止，正確行為，非錯誤
 [cloud daily-news-pipeline-cloud STARTED 2026/09/10 17:03:28.73 UTC]
+[週四 2026/09/10 17:03:28.73] === Agent pipeline start (2026-09-10) ===
+[週四 2026/09/10 17:12:01.43] Aggregator OK (replay: cp gathered_archive/2026-09-10.json, 71 items, 14/14 sources healthy)
+[週四 2026/09/10 17:44:00.00] Wiki ingest OK (6 記者 + devpractice + market，全部收齊；轉知帳本 open 3／close 1／void 1)
+[週四 2026/09/10 17:43:10.00] 測試失敗 2 輪修復後全綠（Round 1: check_cell_limits.py 4 筆超限字元下沉修復；Round 2: check_pending_markers.py 舊語法存量 +2 改寫為合規措辭）- web build 放行 - REPAIRED: 縮短 entities/claude-code.md 3 則已知問題條目與 topics/market-signals.md 1 則懸置標記至 ≤200 字元；改寫 entities/jacob-coxon.md 2 處「待核實」裸字樣為合規措辭，消除舊語法存量棘輪誤觸
+[週四 2026/09/10 17:44:20.00] Single push done (news + wiki + web)
+[週四 2026/09/10 17:44:55.13] === Pipeline complete (agent) ===
