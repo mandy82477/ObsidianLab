@@ -3,22 +3,22 @@ page: "topics/market-signals"
 kind: "topic"
 status: "ongoing"
 domain: "💼 商業"
-last_updated: "2026-09-09"
-last_news_update: "2026-09-09"
+last_updated: "2026-09-10"
+last_news_update: "2026-09-10"
 status_main: "ongoing"
-days_since_news: 1
+days_since_news: 0
 parent: null
 children: "[]"
 page_role: "root"
-days_since_news_subtree: 1
+days_since_news_subtree: 0
 inbound_links: 3
-attribution_count: 14
-attribution_last: "2026-09-09"
+attribution_count: 16
+attribution_last: "2026-09-10"
 top_source: "google-news"
-pending_count: 6
+pending_count: 7
 pending_overdue: 0
 pending_next_review: "2026-09-18"
-pending_signalled: 2
+pending_signalled: 3
 signal: "孤島"
 generated_by: "scripts/gen_wiki_frontmatter.py"
 ---

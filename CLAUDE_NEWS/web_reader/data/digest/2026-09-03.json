@@ -252,11 +252,6 @@
       "pageType": "entity"
     },
     {
-      "id": "code-quality-decline",
-      "name": "Claude Code 效能退步事件",
-      "pageType": "topic"
-    },
-    {
       "id": "community-large-codebase-workflow",
       "name": "大型 Codebase 規模化開發：社群工作流主線",
       "pageType": "topic"

@@ -4,17 +4,17 @@ kind: "entity"
 type: "person"
 status: "active"
 domain: "👤 人物"
-last_updated: "2026-09-09"
-last_news_update: "2026-09-09"
+last_updated: "2026-09-10"
+last_news_update: "2026-09-10"
 status_main: "active"
-days_since_news: 1
+days_since_news: 0
 parent: null
 children: "[]"
 page_role: "root"
-days_since_news_subtree: 1
+days_since_news_subtree: 0
 inbound_links: 2
-attribution_count: 1
-attribution_last: "2026-09-09"
+attribution_count: 3
+attribution_last: "2026-09-10"
 top_source: "hacker-news"
 pending_count: 0
 pending_overdue: 0
