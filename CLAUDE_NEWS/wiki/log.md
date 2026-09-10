@@ -6137,3 +6137,15 @@ GH Actions 抓料排 10:23 UTC，到 14:45 UTC 仍未落地（+4.4 小時且持�
 **處置：** (a) 建母頁 	opics/anthropic-agent-stack（官方 agent 積木：該用哪個、怎麼組），「你該用哪個」選型表與「這些積木能組出什麼架構」節自 managed-agents 移入（兩節皆零錨點入邊，wiki_graph 查證）；managed-agents 加「上層」欄降為子頁、退回純產品頁，index 目錄列依「子頁不入 index」移除。(b) user-query 通道查證三份官方文件（workflows／cross-session-messaging／agents 總覽，2026-09-10）：選型表新增 dynamic workflows 一列；積木節插入第三層「把編排寫成程式」；原第三層「傳訊」更正兩處過時事實——原生 Windows v2.1.234 起支援（原寫「限 macOS／Linux」）、issue #24798 的依賴排序需求已由 workflows 承接（「編排層仍是缺口」改寫為「傳訊層自身仍無編排」）；跨機器層補「經 Remote Control 可主動開話（v2.1.225）」。(c) 規則檔同步：wiki-ingest-features 負責頁面表加母頁列、「多標三件事」落點改母頁、零件狀態表回訪同步對象改母頁選型表；coding-workflow-guide 與 index 路由的出口連結改指母頁。(d) 歸因 slug user-query ×3 已入帳本。
 
 **同記者待辦（不入轉知帳本）：** official-community-gap 產品化矩陣的 orchestration 相關列，下次功能記者更新時依 workflows 官方文件同步「官方對應」與「狀態」欄。
+
+## 2026-09-10 Ingest
+
+- 來源日報：[[news/2026-09-10]]
+- 更新頁面：entities/claude-code、entities/fable-5、entities/pricing、entities/evan-hubinger、entities/jacob-coxon、topics/anthropic-business、topics/ai-talent-flow、topics/ai-agent-safety、topics/anthropic-government-policy、topics/recursive-self-improvement、topics/community-tech-patterns、topics/code-quality-decline、topics/market-signals、wiki/feature-radar.md
+- 新增頁面：無
+- 摘要：Anthropic 同日三線交織——第四起 AI 駭客事件揭露（早期版本 Opus 4.6，疏失致開放網路存取，官方發布對齊面向自我評估）、對齊主管 Evan Hubinger 公開稱 AI 十年內逾 10% 機率殺光全人類（延續 09-09 Jacob Coxon 辭職警告敘事，馬斯克嘲諷、國會籲修法）、The American Prospect 調查報導指控建立監控系統追蹤反 AI 社運人士（HN 297 分全站居冠）；功能記者收錄 v2.1.267（跨供應商 `maxEffortLevel` 推理努力上限，已寫入 feature-radar）並處理 5 則高互動已知問題（多帳號切換 980 讚、模型重複修辭套路 552 讚、AskUserQuestion 逾時 414 讚、Cowork Plan9 掛載失敗、C# LSP 長年未解）；商業記者核對官方 pricing 頁與既有表格無落差、追蹤 Claude Max 訂閱條款訴訟與 Kendall Square 辦公室擴張；社群記者收錄 7 款新工具/模式（含 4 來源同報的自架公司 OS、降低 72% 不安全程式碼的 Security Cards）；人物記者將多則未具名報導依敘事細節併入既有 jacob-coxon 頁（標「待核實」不逕自斷定身份一致）；投資分析記者對監控系統爭議發出 🟡 判讀。
+- 呈現品質：全部通過（各記者機械自查 `check_cell_limits.py`／`check_reader_language.py`／`check_pending_markers.py` 均為 OK）
+- 品質備註：[功能] `check_cell_limits.py --page claude-code` 顯示 3 筆既有超限儲存格（既有長篇「已知問題」條目，全庫基線已有 280 筆同類超限）因本輪例行更新互動數字與新增一句跨頁 wikilink 脫離雜湊基線觸發 FAIL，非本輪新創違規；留待後續視情況執行 `--rebuild`（記者無權限單獨執行跨庫重建）。[安全政策] `check_pending_markers.py` 顯示舊語法存量 +2，經該記者逐行核對非其三頁所出，研判為同輪社群／人物記者並行編輯所致，已於 Step 4 gate 一併核對。
+- devpractice 沉澱：候選 9 筆（entities/claude-code：maxEffortLevel、Cowork Plan9 掛載失敗繞法 ×2；topics/anthropic-agent-stack：dynamic workflows script 化編排、`claude --agent` 長駐領域專家 ×2；topics/community-tech-patterns：nightshift DAG context 管理、Security Cards 安全指引、OtoDock 自架架構細節、hordev skill 設計理念、avibe/ccteam 多 agent 整編 ×5）；基準線 222b010cc7→b4595f3173
+- market 判讀：1 則（🔴 0／🟡 1：監控系統爭議延燒＋國會同日籲修法，判讀「政治監督壓力延續升溫」）；里程碑登記 1 筆（Anthropic 是否就 American Prospect 監控指控發布正式回應）；回顧結算 ⏳ 新增 1 列（結算日 2026-09-24）
+- 轉知帳本：開 3 筆（H-4aee9b 商業→安全政策｜Fable 5.1 政府採購角度；H-6b6b4d、H-ca0433 社群→功能｜Nightshift 對 /goal 負向對照、多筆新 agent 模式評估 official-community-gap 矩陣）、close 1 筆（H-36251d 模型記者結案：判定經濟情境工具非可選用模型）、void 1 筆（H-848909：人物記者核實不符建頁邊界）
