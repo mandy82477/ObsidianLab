@@ -28,12 +28,13 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 **狀態：** ongoing
 **領域：** 🌐 社群
 **開始日期：** 2026-04-25
-**最後更新：** 2026-09-09
-**最後新聞更新：** 2026-09-09
+**最後更新：** 2026-09-10
+**最後新聞更新：** 2026-09-10
 
-> **最新工作流模式**（2026-09-09）
-> - **Multi-agent 整合平台添一款**：Untrivial-ai/agent-orchestrator 可監督整組 coding agent、涵蓋規劃到合併全流程（GitHub Search 11,149★，存量盤點）。
-> - **Skills 生態添兩款**：borski/travel-hacking-toolkit（旅遊比價，657★）、I-have-ADHD（鎖定「Claudism」冗語，HN 499 分）。
+> **最新工作流模式**（2026-09-10）
+> - **Context 管理添 Nightshift**：Rust DAG 調度 GitHub Issues，作者具名指出官方 `/goal` 在複雜多 issue 工作流中有 context rot 架構缺陷，改自製 PCC 記憶＋本地向量 RAG＋滑動視窗。
+> - **OtoDock 揭露自架公司作業系統細節**：多租戶、四種協作模式、kernel sandbox（bubblewrap）、恆常網路隔離（pasta）與遠端 WebSocket 配置（HN 46 分，4 個獨立來源）。
+> - **Multi-agent 架構再添兩款**：avibe（本機優先 Agent OS）、firstintent/ccteam（整編跨廠商既有 agent），各 501★。
 
 ---
 
@@ -51,26 +52,26 @@ Multi-agent 架構與 Skills 設計已是社群定案的做法；還在試的十
 
 | 類別 | 代表技巧 | 成熟度 | 最後動態 | 核心概念 |
 |---|---|---|---|---|
-| **Multi-agent 架構** | Claude Squad、Speculative Parallelism、ccteams、OtoDock、omnigent（[[topics/community-tech-patterns#2026-09]]） | ✅ 成熟 | 2026-09-04 | orchestrator 分派 ＋ 獨立 git worktree，防答案塌縮 |
-| **Skills 設計** | 知識框架化、流程 skill 化、免 git 雲端硬碟分享（[[topics/community-tech-patterns#2026-09]]） | ✅ 成熟 | 2026-09-02 | description 自動觸發，把書籍與流程封裝成可複用 skill |
+| **Multi-agent 架構** | Claude Squad、ccteams、OtoDock、omnigent、avibe、ccteam（[[topics/community-tech-patterns#2026-09]]） | ✅ 成熟 | 2026-09-10 | orchestrator 分派 ＋ 獨立 git worktree，防答案塌縮 |
+| **Skills 設計** | 知識框架化、流程 skill 化、免 git 雲端硬碟分享、hordev（[[topics/community-tech-patterns#2026-09]]） | ✅ 成熟 | 2026-09-09 | description 自動觸發，把書籍與流程封裝成可複用 skill |
 | **CLAUDE.md 管理** | 精簡規則策略、Self-improving Rules、防腐爛機制（[[topics/community-tech-patterns#2026-08]]） | ✅ 成熟 | 2026-08-04 | 寫成「規則」而非「建議」，CI 攔截違反架構的 PR |
 | **Hooks 與自動化** | PostToolUse 稽核、Git Hooks 品質門、Stop Hook 通知（[[topics/community-tech-patterns#2026-08]]） | ✅ 成熟 | 2026-08-02 | 強制執行勝過建議；CLAUDE.md 做偏好、Hooks 做邊界 |
 | **Plugin / MCP 整合** | Plugin 反模式整理、Claude Code 作為 MCP 協調中心（[[topics/community-tech-patterns#2026-09]]） | ⚡ 活躍 | 2026-09-05 | 避免不必要的 context 載入；Claude Code 主導 MCP 工具鏈 |
 | **模型使用策略** | 分層模型、多模型路由、Workweave Router、Fable 5 編排（[[topics/community-tech-patterns#2026-09]]） | ⚡ 活躍 | 2026-09-04 | 依任務複雜度路由；社群轉載數字 46% 成本／96% 效能（非官方基準，見 [[entities/fable-5]]） |
 | **記憶與知識管理** | Core Memory Packet、claude-mem、OKF、已否決方案索引、OzBrain（[[topics/community-tech-patterns#2026-09]]） | ⚡ 活躍 | 2026-09-02 | 跨 session、跨工具、跨機器的持久記憶協定 |
-| **Context 管理** | Just-in-Time @-file、Repo-as-Memory、對話分支與合併（[[topics/community-tech-patterns#2026-08]]） | ⚡ 活躍 | 2026-08-27 | 即時取回優於預先載入；避免 context 過早飽和 |
+| **Context 管理** | Just-in-Time @-file、Repo-as-Memory、對話分支與合併、nightshift（[[topics/community-tech-patterns#2026-09]]） | ⚡ 活躍 | 2026-09-10 | 即時取回優於預先載入；避免 context 過早飽和 |
 | **Token / 成本優化** | MCP Code Execution、穴居人模式、pxpipe、headless 冷啟動（[[topics/community-tech-patterns#2026-08]]） | ⚡ 活躍 | 2026-08-19 | HTML 轉 Markdown 降 80% token；快取不跨 session 是費用主因 |
 | **多代理 PR Review** | 4-agent Code Review、對抗性審查、Read-Only Reviewer（[[topics/community-tech-patterns#2026-08]]） | ⚡ 活躍 | 2026-08-04 | 架構師代理協調 ＋ 跨廠商模型交叉審查 |
 | **Agent 規模化** | 20-instance 崩潰分析、Personas vs Tool-scoping、agent-channels（[[topics/community-tech-patterns#2026-08]]） | ⏳ 新興 | 2026-08-27 | 超過 10 個並行 agent 需獨立 worktree ＋ orchestrator 協調層 |
 | **Agent Loop 終止條件** | Loop exit condition 設計模式（[[topics/community-tech-patterns#2026-08]]） | ⏳ 新興 | 2026-08-19 | 「怎麼停下」比「怎麼跑起來」更難；要有顯式終止條件 |
-| **介面元件複用** | Brainless、statuslin.es（[[topics/community-tech-patterns#2026-08]]） | ⏳ 新興 | 2026-08-17 | 把 AI coding 工具的介面美學封裝成可一鍵安裝的前端元件 |
+| **介面元件複用** | Brainless、statuslin.es、dsh-TUI、better-agent-terminal（[[topics/community-tech-patterns#2026-09]]） | ⏳ 新興 | 2026-09-10 | 把 AI coding 工具的介面美學封裝成可一鍵安裝的前端元件 |
 | **MCP 長 Session 穩健化** | MCP server 失效模式防護（[[topics/community-tech-patterns#2026-08]]） | ⏳ 新興 | 2026-08-14 | 連線中斷、工具超時、上下文失憶；對應心跳、重試、快照 |
 | **架構邊界合約** | ANMA YAML contracts、ISO 29148 規格驅動（[[topics/community-tech-patterns#2026-08]]） | ⏳ 新興 | 2026-08-12 | 用合約與工業標準定義不可越過的架構規則 |
 | **Agent 版本控制** | ADR 注入、架構決策文件先於實作（[[topics/community-tech-patterns#2026-07]]） | ⏳ 新興 | 2026-07-31 | 決策文件先於實作，降低代理方向偏移 |
-| **安全架構** | Grepathy、Spare Mac 隔離環境、OneCLI、語意層漂移 CI 測試（[[topics/community-tech-patterns#2026-07]]） | ⏳ 新興 | 2026-07-29 | AI 加速開發下的系統性防線；CI 攔截語義退化 |
+| **安全架構** | Grepathy、Spare Mac 隔離環境、OneCLI、語意層漂移 CI 測試、Security Cards（[[topics/community-tech-patterns#2026-09]]） | ⏳ 新興 | 2026-09-10 | AI 加速開發下的系統性防線；CI 攔截語義退化 |
 | **創意工具 Agent 整合** | Palmier Pro（[[topics/community-tech-patterns#2026-07]]） | ⏳ 新興 | 2026-07-23 | 把 agent 整合從程式碼場域擴到創作工具鏈 |
 | **Agent 預算控制** | AgentWatch runtime budget enforcement（[[topics/community-tech-patterns#2026-07]]） | ⏳ 新興 | 2026-07-22 | 在請求到達模型前攔截，強制執行費用或 token 上限 |
-| **行動裝置遠端控制** | ccgram、Android Remote Control MCP、Shellular（[[topics/community-tech-patterns#2026-07]]） | ⏳ 新興 | 2026-07-18 | 手機當 agent 控制介面，各自選不同傳輸層 |
+| **行動裝置遠端控制** | ccgram、Android Remote Control MCP、Shellular、Orchestrator（[[topics/community-tech-patterns#2026-09]]） | ⏳ 新興 | 2026-09-10 | 手機當 agent 控制介面，各自選不同傳輸層 |
 | **可靠性測試** | Caliper pass@k 指標測試、Skill Linter（[[topics/community-tech-patterns#2026-07]]） | ⏳ 新興 | 2026-07-12 | 用多次執行的通過率衡量 skill 可靠性，而非單次成功 |
 
 > 成熟度：✅ 成熟（社群廣泛實踐）／⚡ 活躍（持續演進中）／⏳ 新興（近期出現，尚在探索）
@@ -161,6 +162,87 @@ Multi-agent 架構與 Skills 設計已是社群定案的做法；還在試的十
 > ⟨Q-nn⟩ 標的是這一則還沒查實的地方，完整說明在該月份分組最後的「懸置細節」。
 
 ### 2026-09
+
+#### Shaurya-Sethi/nightshift：不限廠商的 Rust CLI，以任務相依圖（DAG）調度協調 GitHub Issues，作者稱官方 `/goal` 有 context rot 架構缺陷改自製（2026-09-10）
+
+- **主線：** Context 管理
+- **核心模式：** Agent-agnostic 的 Rust CLI 工具，用任務相依圖（DAG）調度協調完成 GitHub Issues；具備多層 context 管理方案——持久性 context chaining（PCC）記憶、本地向量嵌入 RAG、滑動視窗
+- **與既有模式的關係：** 補上「Context 管理」類別一種「多層方案疊加」取向的做法——既有代表技巧（Just-in-Time @-file、Repo-as-Memory、對話分支與合併）多聚焦單一機制，本則疊加 PCC 記憶＋本地向量 RAG＋滑動視窗三層因應複雜多 issue 工作流的 context rot
+- **可信度註記：** 作者具名指出官方 `/goal` 功能在複雜多 issue 工作流中有 context 管理架構缺陷，屬單一開發者對官方功能的負向對照，未見獨立第三方複測
+- **來源：** 「Show HN: Nightshift – Rust CLI to Orchestrate GitHub Issue Resolution with Dags」— Hacker News；[GitHub](https://github.com/Shaurya-Sethi/nightshift)
+- **成熟度：** ⏳ 新興（本庫首次收錄，尚無社群採用回饋數據）
+
+#### Reware-Labs/securitycards：13 種語言、80+ 函式庫的具體安全指引，搭配 Opus 4.7 使 Claude Code 產生不安全程式碼比例降低 72.3%（2026-09-10）
+
+- **主線：** —
+- **核心模式：** 開源「Security Cards」，針對 13 種程式語言、80 多個常用函式庫提供具體安全指引；實測顯示搭配 Opus 4.7 使用時，可讓 Claude Code 產生不安全程式碼的比例最多降低 72.3%
+- **與既有模式的關係：** 補上「安全架構」類別一種「具體函式庫級安全指引」取向的做法——既有代表技巧（Grepathy、Spare Mac、OneCLI）聚焦行為監控與隔離，本則鎖定生成階段的安全知識注入，屬預防而非事後攔截
+- **可信度註記：** 官方部落格公布 72.3% 降幅數字，未見本庫查得的獨立第三方複測；未見 forks／issues／近期 commit 佐證
+- **來源：** 「Show HN: Security Cards – Reducing insecure AI-generated code by 72%」— Hacker News；[GitHub](https://github.com/Reware-Labs/securitycards)、[官網](https://www.rewarelabs.com/blog/introducing-security-cards/)
+- **成熟度：** ⏳ 新興（本庫首次收錄，降幅數字為廠商自測，尚待獨立複測）
+
+#### markusbug/Orchestrator：手機遠端生成、下指令、終止並管理多個 Claude Code 實例，關閉 App 後任務仍在背景執行（2026-09-10）
+
+- **主線：** —
+- **核心模式：** 開源工具，可從手機遠端生成、下指令、終止並管理多個 Claude Code 實例；關閉 App 後任務仍在背景持續執行，之後可回來查看進度；支援 Android（GitHub 下載 build）與 iOS（TestFlight）
+- **與既有模式的關係：** 補上「行動裝置遠端控制」類別一個聚焦「多實例生命週期管理」的具體案例，與既有代表技巧（ccgram、Android Remote Control MCP、Shellular）同屬手機當 agent 控制介面取向，差異在本則強調背景持續執行與多實例並管
+- **可信度註記：** 未提供互動分數；未見 forks／issues／近期 commit 佐證
+- **來源：** 「Show HN: Orchestrator, spawn and manage Claude Code instances remotely」— Hacker News；[GitHub](https://github.com/markusbug/Orchestrator)
+- **成熟度：** ⏳ 新興（本庫首次收錄，尚無社群採用回饋數據）
+
+#### avibe-bot/avibe：本機優先 Agent OS，AI 夥伴常駐使用者機器，經瀏覽器或聊天 App 驅動官方 Claude Code／Codex／OpenCode（2026-09-10）
+
+- **主線：** —
+- **核心模式：** 主打「本機優先」的 Agent OS，AI 夥伴常駐在使用者自己的機器上，可透過瀏覽器或任何聊天 App 驅動官方 Claude Code、Codex 與 OpenCode
+- **與既有模式的關係：** 補上「Multi-agent 架構」類別一個「本機常駐 Agent OS」取向的案例，與 magnitudedev/magnitude（本地推論伺服器後端）不同層次——本則是驅動既有官方 harness 的本機作業系統層，而非替換推論後端
+- **可信度註記：** GitHub Search 星數 501，僅取得星數，無 forks／issues／近期 commit 佐證可查，未另行查證
+- **來源：** GitHub Search（501★）；[GitHub](https://github.com/avibe-bot/avibe)
+- **成熟度：** ⏳ 新興（本庫首次收錄，尚無星數以外的社群採用回饋數據）
+
+#### firstintent/ccteam：把已在跑的多個編程 agent（Claude Code、Codex、Grok、DeepSeek Harness、Kimi、Pi）整編成一支團隊，可跨廠商跨機器分派任務並經 Telegram／Lark／瀏覽器統一操控（2026-09-10）
+
+- **主線：** —
+- **核心模式：** 把使用者手邊已在跑的多個編程 agent（Claude Code、Codex、Grok、DeepSeek Harness、Kimi、Pi）整編成一支團隊，任何 session 皆可跨廠商、跨機器分派任務並收集成果，可經 Telegram、Lark 或瀏覽器分頁統一操控
+- **與既有模式的關係：** 補上「Multi-agent 架構」類別一個「跨廠商既有 agent 整編」取向的案例，與 avibe-bot/avibe（本機常駐 Agent OS）同日收錄、同屬統一操控多個編程 agent 的取向，差異在本則明確涵蓋非 Anthropic／OpenAI 廠商（Grok、DeepSeek、Kimi）並主打跨機器分派任務
+- **可信度註記：** GitHub Search 星數 501，僅取得星數，無 forks／issues／近期 commit 佐證可查，未另行查證
+- **來源：** GitHub Search（501★）；[GitHub](https://github.com/firstintent/ccteam)
+- **成熟度：** ⏳ 新興（本庫首次收錄，尚無星數以外的社群採用回饋數據）
+
+#### ccch1mneyyy/dsh-TUI：中國社群「DSH」官方收錄的 TUI 補位插件，Claude Code 風格介面元件（鯨魚頂欄、串流思考顯示、雙擊 Esc 回滾、含 TPS 的 context 進度條）（2026-09-10）
+
+- **主線：** —
+- **核心模式：** TUI 補位插件，提供 Claude Code 風格介面元件：鯨魚頂欄、即時狀態列、串流思考顯示、雙擊 Esc 回滾、含 TPS 的 context 進度條，npm 一鍵安裝；中國社群「DSH」官方公眾號收錄
+- **與既有模式的關係：** 補上「介面元件複用」類別一個聚焦 Claude Code 風格 TUI 元件的具體案例，與既有代表技巧（Brainless、statuslin.es）同屬把 agent 互動封裝成可安裝前端元件的取向
+- **可信度註記：** GitHub Search 星數 2,933，僅取得星數，無 forks／issues／近期 commit 佐證可查，未另行查證
+- **來源：** GitHub Search（2,933★）；[GitHub](https://github.com/ccch1mneyyy/dsh-TUI)
+- **成熟度：** ⏳ 新興（本庫首次收錄，尚無星數以外的社群採用回饋數據）
+
+#### tony1223/better-agent-terminal：多工作區終端機聚合工具，整合 Claude Code 的 AI 協作功能（2026-09-10）
+
+- **主線：** —
+- **核心模式：** 多工作區終端機聚合工具，整合 Claude Code 的 AI 協作功能
+- **與既有模式的關係：** 補上「介面元件複用」類別另一個終端機介面案例，與 dsh-TUI 同日收錄、同屬把 agent 互動封裝成可安裝前端元件的取向，差異在鎖定多工作區聚合而非單一 session 風格化
+- **可信度註記：** GitHub Search 星數 502，僅取得星數，無 forks／issues／近期 commit 佐證可查，未另行查證
+- **來源：** GitHub Search（502★）；[GitHub](https://github.com/tony1223/better-agent-terminal)
+- **成熟度：** ⏳ 新興（本庫首次收錄，尚無星數以外的社群採用回饋數據）
+
+#### OtoDock：揭露自架版正式定位為「公司作業系統」，多租戶協作與遠端 WebSocket 配置細節（2026-09-09）
+
+- **主線：** —
+- **核心模式：** OtoDock 定位為可自架的「公司作業系統」，多人可在同一組公司 agent 上以四種協作模式共同作業；agent 在伺服器上以持久程序跑 Claude Code 或 Codex，於 kernel sandbox（bubblewrap）執行、網路隔離（pasta）恆常開啟；同一組 agent 也可經單一 WebSocket 在遠端電腦同樣配置，免開放連接埠
+- **與既有模式的關係：** 延續本頁「Multi-agent 架構」既有代表技巧 OtoDock（2026-07-15 首次收錄：Claude Code＋Codex 組成協作團隊部署於自有伺服器）——本則補上多租戶、四種協作模式與 kernel sandbox／網路隔離的實作細節，屬同一工具的架構揭露而非新工具
+- **可信度註記：** Hacker News 46 分，另有 3 個獨立來源同日報導，互動與跨源程度優於 07-15 首次收錄時（score 2）
+- **來源：** 「Show HN: Self-hosted company OS, Claude Code and Codex agents in departments」— Hacker News（46 分，另有 3 個獨立來源同日報導）；[GitHub](https://github.com/OtoDock/oto-dock)
+- **成熟度：** ✅ 成熟（沿用既有代表技巧的成熟度判定，本則為既有工具的架構揭露更新）
+
+#### heffrey/hordev：Claude Code skills 集合，設計理念是遇到不確定情境時直接動手嘗試建構、而非停下反覆詢問使用者（2026-09-09）
+
+- **主線：** —
+- **核心模式：** 一套 Claude Code skills 集合，設計理念是遇到不確定情境時優先直接動手嘗試建構，而非停下反覆向使用者確認
+- **與既有模式的關係：** 補上「Skills 設計」類別一種「互動姿態」取向的做法——既有代表技巧多聚焦知識框架化與流程 skill 化，本則鎖定 skill 在不確定情境下的行為傾向（動手試 vs 反覆詢問）
+- **可信度註記：** Hacker News（討論串連結存在，本則摘要未提供分數）；未見 forks／issues／近期 commit 佐證
+- **來源：** 「Show HN: Hordev – Claude Code skills that build instead of asking questions」— Hacker News（[討論串](https://news.ycombinator.com/item?id=49630355)）；[GitHub](https://github.com/heffrey/hordev)
+- **成熟度：** ⏳ 新興（本庫首次收錄，尚無社群採用回饋數據）
 
 #### Untrivial-ai/agent-orchestrator：可執行並監督一整組 coding agent 團隊、涵蓋規劃到合併全流程的整合平台（2026-09-09）
 
