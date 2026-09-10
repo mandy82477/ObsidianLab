@@ -206,8 +206,8 @@
     }
   },
   "https://code.claude.com/docs/en/desktop.md": {
-    "hash": "c611147b53981cd871932419f63e244a27f34876d17a99a9fe8916fd763010d2",
-    "length": 81457,
+    "hash": "00fd107dabe32f2005b49b0846286a5d08c6fabd1560f86b7edbc0f5ff7d94fc",
+    "length": 81871,
     "segments": [
       "\"args\": [\"--verbose\"],",
       "\"autoPort\": false",
@@ -438,7 +438,7 @@
       "Anthropic checks connections to that host against your organization's IP allowlist using the address they arrive from. If your proxy sends traffic for it out through an address that isn't on that allowlist, Claude in Chrome and other features that connect through the bridge stop working while the rest of the app keeps working.",
       "Apps with broad reach, like terminals, Finder or File Explorer, and System Settings or Settings, show an extra warning in the prompt so you know what approving them grants.",
       "Artifacts can also load JavaScript libraries, such as React or a charting package, from `cdnjs.cloudflare.com`, `cdn.jsdelivr.net`, `cdn.tailwindcss.com`, and `code.jquery.com`, and from no other external host. If you block those hosts, the parts of an artifact that depend on a library don't work, and unlike a blocked font, a blocked library has no fallback. Block with a fast rejection here too, so a blocked library request fails at once rather than hanging until it times out.",
-      "Auto mode is available to all users on the Anthropic API and requires Claude Opus 4.6 or later, Sonnet 4.6 or later, or a Fable model. Organization administrators can turn auto mode off with the `disableAutoMode` key in [managed settings](#managed-settings).",
+      "Auto mode is available to all users on the Anthropic API and requires Claude Opus 4.6 or later, Sonnet 4.6 or later, or a [Fable model](/docs/en/model-config#work-with-fable). Organization administrators can turn auto mode off with the `disableAutoMode` key in [managed settings](#managed-settings).",
       "Auto-verify is on by default. Disable it per-project by adding `\"autoVerify\": false` to `.claude/launch.json`, or toggle it from the server dropdown menu.",
       "Before you send your first message, configure four things in the prompt area:",
       "By default, the preview opens `http://localhost: `. Set `url` when your server needs a different address. Common cases are servers that require local HTTPS, apps that use `*.localhost` subdomains, and apps that sign you in through a redirect.",
@@ -650,7 +650,7 @@
       "| ---------------------- | ------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |",
       "| ------------------------------------- | -------------------------------- |",
       "| ------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |",
-      "| ------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |",
+      "| ------------------------------------------ | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |",
       "| ----------------------------------------------------- | ------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |",
       "| :----------- | :------------------------------------------------------- | :-------------------------- |",
       "| @mention files | Text-based | With autocomplete; local and SSH sessions only |",
@@ -713,7 +713,7 @@
       "| `disableDesktopLocalSessions` | set to `true` to turn off [Code sessions that run on the device](#local-sessions-on-managed-devices), leaving SSH sessions to other hosts and cloud sessions available. The value must be the JSON boolean `true`. Read from managed settings only. Requires Claude Desktop v1.37937.0 or later. |",
       "| `disableMobileSimulatorTools` | set to `true` to block Claude's tools for controlling and capturing devices in the [iOS Simulator pane](/docs/en/desktop-ios-simulator#turn-off-simulator-access). The pane stays usable for the user's own taps; only Claude's access is removed. |",
       "| `env` | object | Additional environment variables as key-value pairs, such as `{ \"NODE_ENV\": \"development\" }`. Don't put secrets here since this file is committed to your repo. To pass secrets to your dev server, set them in the [local environment editor](#local-sessions) instead. |",
-      "| `managedMcpServers` | push MCP server configurations to all users. Available in third-party (3P) Desktop deployments only. In each entry, set a transport of `\"http\"`, `\"sse\"`, or `\"stdio\"`, connection details, and optionally a `toolPolicy` map to restrict which of that server's tools users can invoke. Deliver it through the managed settings file, MDM, or a Claude apps gateway policy's [`desktop` block](/docs/en/claude-apps-gateway-config#claude-desktop-overlay), since 3P deployments don't receive admin-console settings. To deliver it through the gateway, you need Claude Code v2.1.232 or later on the gateway server. |",
+      "| `managedMcpServers` | push MCP server configurations to all users. Available in third-party (3P) Desktop deployments only. In each entry, set a transport of `\"http\"`, `\"sse\"`, or `\"stdio\"`, connection details, and optionally a `toolPolicy` map to restrict which of that server's tools users can invoke. Deliver it through the managed settings file, MDM, or a Claude apps gateway policy's [`desktop` block](/docs/en/claude-apps-gateway-config#claude-desktop-overlay), since 3P deployments don't receive admin-console settings. To deliver it through the gateway, you need Claude Code v2.1.232 or later on the gateway server. This is the desktop app's own key; Claude Code reads a [same-named managed setting](/docs/en/managed-mcp#provide-servers-through-managed-settings) of its own, with a different entry shape. |",
       "| `name` | string | A unique identifier for this server |",
       "| `permissions.disableBypassPermissionsMode` | set to `\"disable\"` to prevent users from enabling Bypass permissions mode. |",
       "| `port` | number | The port your server listens on. Defaults to 3000 |",
@@ -727,8 +727,8 @@
     ]
   },
   "https://claude.com/pricing": {
-    "hash": "07622ea94d24cdbfab03a5f5d80185b2f6e285663afe7338a50376a73f772f7b",
-    "length": 20870,
+    "hash": "0a55d023a5f36029ada1d75c8266d6699f589dbb11e3627fc0fd8e3ef00c28c1",
+    "length": 20913,
     "segments": [
       "$0.05 per hour per container",
       "$0.08 per session-hour for active runtime",
@@ -753,6 +753,7 @@
       "Ability to search the web",
       "Ability to use more Claude models",
       "Academic research and learning mode",
+      "Access to Research",
       "Access to unlimited projects to organize chats and documents",
       "Adding seats midterm",
       "Additional hours",
@@ -1349,15 +1350,15 @@
     ]
   },
   "https://support.claude.com/en/articles/15910845-claude-code-may-august-2026-weekly-limits-promotion": {
-    "hash": "0d34743c07df8ced1d7bc655a242a81c380d98cdf4699590baf972566756346b",
-    "length": 2572,
+    "hash": "0e7cf3aa7ba589d7bf8b28048696fb3d8b5dca283628bb706bd1de9cf1958acb",
+    "length": 2627,
     "segments": [
       "After September 13, 2026, weekly usage limits in Claude Code return to their standard levels. There&#x27;s no change to your plan or billing.",
       "Claude Code May–August 2026 weekly limits promotion | Claude Help Center Skip to main content Claude Code May–August 2026 weekly limits promotion",
       "Claude Code on Console to Enterprise migration",
       "Claude Enterprise activation promo for Claude Code and Cowork",
       "Claude Fable models on your plan",
-      "Did this answer your question? 😞 😐 😃 Table of contents",
+      "Did this answer your question? Disappointed Reaction 😞 Neutral Reaction 😐 Smiley Reaction 😃 Table of contents",
       "Do I need to do anything to get the extra usage?",
       "Does this change my 5-hour usage limit?",
       "Frequently asked questions",
@@ -1382,8 +1383,8 @@
     ]
   },
   "https://support.claude.com/en/articles/15424964-claude-fable-5-on-your-plan": {
-    "hash": "46581d62bf1cb73a5d12e060714b94082fcf009806af8ddfcda26ef4e5bca964",
-    "length": 22838,
+    "hash": "800d8b4a192f6b9302dec385cec3240c1f2e7fb4578e51eb5be0eb01165a4b2a",
+    "length": 22893,
     "segments": [
       "API FAQ Can I have a Claude account and a Console account?",
       "API Key Best Practices: Keeping Your Keys Safe and Secure",
@@ -1510,7 +1511,7 @@
       "Designate support contacts for human support",
       "Designated point of contact for users in the EU",
       "Desktop extensions Enabling and using the desktop extension allowlist",
-      "Did this answer your question? Related Articles",
+      "Did this answer your question? Disappointed Reaction Neutral Reaction Smiley Reaction Related Articles",
       "Disable public projects for your organization",
       "Does Anthropic crawl data from the web, and how can site owners block the crawler?",
       "Enable US-only inference for your organization",
@@ -1788,8 +1789,8 @@
     ]
   },
   "https://support.claude.com/en/articles/12429409-manage-usage-credits-for-paid-claude-plans": {
-    "hash": "cc48642cedabec49977538e54fd09f1cc8a7f4371145f5fdbbac366df0451433",
-    "length": 22924,
+    "hash": "20305152828424eead41a5ae38394635f35ca91bc2a72c30f38697dabd0ee1b4",
+    "length": 22995,
     "segments": [
       "API FAQ Can I have a Claude account and a Console account?",
       "API Key Best Practices: Keeping Your Keys Safe and Secure",
@@ -1818,6 +1819,7 @@
       "Anthropic&#x27;s AI for Science Program",
       "Assign a program to workspaces in Claude Console",
       "Assign tasks from anywhere in Claude Cowork",
+      "August 10, 2026 Copy for LLM This article explains how usage credits work on your paid Claude plan (Pro, Max 5x, or Max 20x), allowing you to continue working with Claude after reaching your plan&#x27;s usage limits by switching to pay-as-you-go pricing.",
       "Authorize MCP connectors for your entire organization",
       "Auto-reload settings: Automatically add funds when your balance drops below a threshold.",
       "Automated Security Reviews in Claude Code",
@@ -1892,7 +1894,6 @@
       "Consumer Terms of Service Updates",
       "Control your usage credit spending with:",
       "Conversation management Delete or rename a conversation",
-      "Copy for LLM This article explains how usage credits work on your paid Claude plan (Pro, Max 5x, or Max 20x), allowing you to continue working with Claude after reaching your plan&#x27;s usage limits by switching to pay-as-you-go pricing.",
       "Cost and Usage Reporting in the Claude Console",
       "Covered Models",
       "Covered Models under a Business Associate Agreement (BAA)",
@@ -1914,7 +1915,7 @@
       "Designate support contacts for human support",
       "Designated point of contact for users in the EU",
       "Desktop extensions Enabling and using the desktop extension allowlist",
-      "Did this answer your question? Related Articles",
+      "Did this answer your question? Disappointed Reaction Neutral Reaction Smiley Reaction Related Articles",
       "Disable public projects for your organization",
       "Do usage credits expire?",
       "Documents stored in project files count toward your context when used in conversations. Usage credits apply to all tokens processed, including project content.",
@@ -2218,8 +2219,8 @@
     ]
   },
   "https://support.claude.com/en/articles/11647753-how-do-usage-and-length-limits-work": {
-    "hash": "ec9cb3ca0946b0378095be29088eb1831acd586e3cda4e91ecf1c925b28c3148",
-    "length": 22733,
+    "hash": "1a222f60bd3155045a25f01c34006518452b1440e69bb086dbc9ff01fbe8d579",
+    "length": 22788,
     "segments": [
       "API FAQ Can I have a Claude account and a Console account?",
       "API Key Best Practices: Keeping Your Keys Safe and Secure",
@@ -2335,7 +2336,7 @@
       "Designate support contacts for human support",
       "Designated point of contact for users in the EU",
       "Desktop extensions Enabling and using the desktop extension allowlist",
-      "Did this answer your question? Related Articles",
+      "Did this answer your question? Disappointed Reaction Neutral Reaction Smiley Reaction Related Articles",
       "Disable public projects for your organization",
       "Does Anthropic crawl data from the web, and how can site owners block the crawler?",
       "Enable US-only inference for your organization",
@@ -2620,8 +2621,8 @@
     ]
   },
   "https://support.claude.com/en/articles/11145838-use-claude-code-with-your-pro-or-max-plan": {
-    "hash": "951af60d9394a790868713cadbbe22d50d9c7cc2c9d7ba9c2f7c13901e893ca6",
-    "length": 23109,
+    "hash": "fbabc6a7085320386b4ef211354a109a30601520bf56aba232a48dc0e14a1259",
+    "length": 23164,
     "segments": [
       "API FAQ Can I have a Claude account and a Console account?",
       "API Key Best Practices: Keeping Your Keys Safe and Secure",
@@ -2753,7 +2754,7 @@
       "Designate support contacts for human support",
       "Designated point of contact for users in the EU",
       "Desktop extensions Enabling and using the desktop extension allowlist",
-      "Did this answer your question? Related Articles",
+      "Did this answer your question? Disappointed Reaction Neutral Reaction Smiley Reaction Related Articles",
       "Disable public projects for your organization",
       "Does Anthropic crawl data from the web, and how can site owners block the crawler?",
       "Enable US-only inference for your organization",
@@ -3057,8 +3058,8 @@
     ]
   },
   "https://support.claude.com/en/articles/12138966-release-notes": {
-    "hash": "a509b7103123b9671de23314be7fc275fe428d8491e4af346653fbc5ac8907f1",
-    "length": 43506,
+    "hash": "0343c4d181d065f50e49dd1df0b60365b8db6ae043ba4b481582b90398c4b366",
+    "length": 43561,
     "segments": [
       "/security-review command",
       "/slash commands: Save your best-working prompts as shortcuts (/slash commands) and reuse these proven workflows instantly without retyping instructions to Claude.",
@@ -3273,7 +3274,7 @@
       "Designate support contacts for human support",
       "Designated point of contact for users in the EU",
       "Desktop extensions Enabling and using the desktop extension allowlist",
-      "Did this answer your question? Related Articles",
+      "Did this answer your question? Disappointed Reaction Neutral Reaction Smiley Reaction Related Articles",
       "Disable public projects for your organization",
       "Does Anthropic crawl data from the web, and how can site owners block the crawler?",
       "Edit Claude’s drafts in place",
