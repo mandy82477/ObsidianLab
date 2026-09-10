@@ -2,10 +2,10 @@
 
 追蹤 Anthropic 官方發布的 Claude / Claude Code 功能熱度與試用價值；僅收官方 changelog、release note 或官方公告，社群工具見 [[topics/community-tech-tools]]。
 
-**最後更新：** 2026-09-06
+**最後更新：** 2026-09-10
 
-> **這禮拜動了什麼**（2026-09-06）
-> 最新 v2.1.261（09-04），v2.1.238 起無 breaking change，但換了幾個預設值：Fable 預設模型改 5.1、`keybindingFlavor` 失效。
+> **這禮拜動了什麼**（2026-09-10）
+> 最新 v2.1.267（09-09，新增跨供應商 `maxEffortLevel` 推理努力上限），v2.1.238 起無 breaking change，但換了幾個預設值：Fable 預設模型改 5.1、`keybindingFlavor` 失效。
 
 ---
 
@@ -67,6 +67,25 @@
 
 ## 🆕 最新功能（2026-09）
 
+### maxEffortLevel 推理努力上限設定
+**發布：** 2026-09-09（v2.1.267） | **狀態：** 正式發布
+
+**是什麼：** 新增 `maxEffortLevel` 設定（可放在設定檔頂層，或個別模型的 `modelSettings` 之下），對所有供應商（含 Bedrock、Vertex、Foundry）統一設定推理努力（effort）上限；使用者仍可在上限內自行選擇較低等級。
+
+**為何熱：** 官方 release notes 首次揭露，尚無社群討論或工具跟進；解決團隊／企業想跨供應商統一控管最高 reasoning effort（進而控管延遲與成本）的需求。
+
+**現在要試嗎：** 適合需要在 Bedrock／Vertex／Foundry 等多供應商環境統一設定最高 effort 等級的團隊管理員；只用單一供應商、不需限制他人選用最高等級的個人使用者可略過。
+
+**快速上手：**
+```json
+{
+  "maxEffortLevel": "medium"
+}
+```
+（可放在 `~/.claude/settings.json` 或專案 `.claude/settings.json` 頂層，或個別模型 `modelSettings` 下針對單一模型設上限；官方 release notes 僅一行公告，未附完整可用值列表與 schema 範例，正式數值請以官方文件或 `claude config` 為準）
+
+**注意事項：** 官方 release notes 僅一行公告，未附完整可用等級列表、schema 範例或文件連結；「上限」語意明確（使用者仍可選更低等級），非強制鎖定單一等級。
+
 ### managedMcpServers 管理設定
 **發布：** 2026-09-02（v2.1.259） | **狀態：** 正式發布
 
@@ -124,6 +143,7 @@ npm install @anthropic-ai/sdk@0.123.0
 
 | 功能 | 發布日期 | 熱度 | 試用價值 | 狀態 |
 |------|----------|------|----------|------|
+| **maxEffortLevel 推理努力上限設定**（v2.1.267，跨供應商統一設定 effort 上限，含 Bedrock/Vertex/Foundry） | 2026-09-09 | 🔥🔥 | ⏳ 觀望 | 正式發布 |
 | **managedMcpServers 管理設定**（v2.1.259，組織可統一佈署 HTTP/SSE MCP 伺服器） | 2026-09-02 | 🔥🔥 | ⏳ 觀望 | 正式發布 |
 | **Claude Fable 5.1**（新一代旗艦，取代 5.0；同步發布信任機構限定 Mythos 5.1） | 2026-09-01 | 🔥🔥🔥🔥🔥 | ⚡ 有條件推薦 | 正式發布 |
 | **使用者個人資料 API**（Beta，TS sdk-v0.123.0／Python v1.3.0，含 `external_user_onboarding` 欄位） | 2026-09-01 | 🔥🔥 | ⏳ 觀望 | Beta |
