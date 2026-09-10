@@ -60,6 +60,8 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 - **`/goal` 的條件怎麼寫**：一個可量測的結束狀態、一條明確檢查方式、過程中不得改變的約束；條件上限 4,000 字元，可加「or stop after 20 turns」設界。最小用法 `/goal npm test 執行結果零失敗`；四級驗證階梯見 [[topics/coding-workflow-guide]] 第 6、9 段。
 - **`/goal` 官方文件**：官方文件站沒有 `/goal` 的專頁，以 [changelog](https://github.com/anthropics/claude-code/blob/main/CHANGELOG.md) 為據（v2.1.139 起）。
 - **內建 subagent 的限制**：Explore 唯讀、跳過 CLAUDE.md、一次性不能追問，模型繼承主對話但以 Opus 為上限（v2.1.198 起）；要來回追問得改用 `general-purpose`。見 [[topics/coding-workflow-guide]] 第 2 段。
+- **subagent 角色檔可以直接當整個 session 的身分**：`claude --agent <名>` 讓互動 session 以該角色檔開機——body 整段取代預設 system prompt、resume 後身分保留（[官方 sub-agents 文件](https://code.claude.com/docs/en/sub-agents)，2026-09-10 查證；引入版本第三方 ClaudeLog 稱 v2.0.59，官方 changelog 未直接查得）。
+- **`--agent` 搭 `--name` 可組出長駐領域專家**：別的 session 用傳訊丟任務給他、隔天 `--continue` 接續，context 不歸零。
 - **Dynamic workflows 的形狀**：JavaScript script 持有整個計畫（`agent()`／`parallel()`／`pipeline()`／`phase()` 四原語），中間結果住 script 變數、不進主對話 context；背景執行、進度看 `/workflows`（[官方文件](https://code.claude.com/docs/en/workflows)，2026-09-10 查證）。
 - **Dynamic workflows 怎麼觸發**：prompt 帶 `ultracode` 關鍵字或直說「use a workflow」；跑得好的 script 可存成指令（專案 `.claude/workflows/` 或個人目錄）重複執行，內建範例 `/deep-research`。
 - **Dynamic workflows 的續跑語意**：同一 session 內重啟時已完成且輸入未變的 agent 直接回快取結果，只重跑失敗者與其後手；上限 16 路並行、單次 1,000 agent（官方限制表，2026-09-10 查證）。
@@ -111,3 +113,4 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 
 - 2026-09-10：建頁，選型表與積木架構自 [[entities/managed-agents]] 移入並增補；查證來源：[workflows](https://code.claude.com/docs/en/workflows)、[cross-session messaging](https://code.claude.com/docs/en/cross-session-messaging)、[agents 總覽](https://code.claude.com/docs/en/agents)。
 - 2026-09-10：查證重點——dynamic workflows 全付費方案開放；跨 session 傳訊原生 Windows v2.1.234 起支援、閒置通知 v2.1.236 起；agent teams 仍為實驗性、預設關閉。
+- 2026-09-10：補查 `claude --agent`（session 以角色檔開機、resume 保留身分），入選型細節。
