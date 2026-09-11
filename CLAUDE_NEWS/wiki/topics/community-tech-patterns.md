@@ -28,13 +28,11 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 **狀態：** ongoing
 **領域：** 🌐 社群
 **開始日期：** 2026-04-25
-**最後更新：** 2026-09-10
-**最後新聞更新：** 2026-09-10
+**最後更新：** 2026-09-11
+**最後新聞更新：** 2026-09-11
 
-> **最新工作流模式**（2026-09-10）
-> - **Context 管理添 Nightshift**：Rust DAG 調度 GitHub Issues，作者具名指出官方 `/goal` 在複雜多 issue 工作流中有 context rot 架構缺陷，改自製 PCC 記憶＋本地向量 RAG＋滑動視窗。
-> - **OtoDock 揭露自架公司作業系統細節**：多租戶、四種協作模式、kernel sandbox（bubblewrap）、恆常網路隔離（pasta）與遠端 WebSocket 配置（HN 46 分，4 個獨立來源）。
-> - **Multi-agent 架構再添兩款**：avibe（本機優先 Agent OS）、firstintent/ccteam（整編跨廠商既有 agent），各 501★。
+> **最新工作流模式**（2026-09-11）
+> Skills 設計新增 drawio-skill：把自然語言、程式碼、Terraform/K8s、SQL 與 OpenAPI 轉成可編輯、通過測試的 draw.io 架構圖，含 drift diff 與 CI 架構測試（存量盤點，本庫首次收錄）。
 
 ---
 
@@ -162,6 +160,15 @@ Multi-agent 架構與 Skills 設計已是社群定案的做法；還在試的十
 > ⟨Q-nn⟩ 標的是這一則還沒查實的地方，完整說明在該月份分組最後的「懸置細節」。
 
 ### 2026-09
+
+#### Agents365-ai/drawio-skill：把自然語言、程式碼、Terraform/K8s、SQL 與 OpenAPI 來源轉成可編輯、通過測試的 draw.io 架構圖（2026-09-11）
+
+- **主線：** —
+- **核心模式：** Agent Skill，將自然語言描述、程式碼、Terraform/K8s、SQL schema 與 OpenAPI 規格轉換為可編輯、經測試的 draw.io 架構圖；具備增量同步、多視角投影、drift diff（圖與程式碼歧異偵測）、CI 架構測試、手繪白板去光柵化、互動式 HTML/PPTX/Mermaid 匯出
+- **與既有模式的關係：** 補上「Skills 設計」類別一種「架構圖生成與同步」取向的做法——既有代表技巧（知識框架化、流程 skill 化、免 git 雲端硬碟分享、hordev）聚焦知識與流程封裝，本則鎖定把多種程式碼／規格來源轉成會隨程式碼變動同步更新、且可通過 CI 測試的視覺化文件
+- **可信度註記：** 本庫存量盤點通道首次收錄（已成名但本庫未報導過的 repo），未見 forks／issues／近期 commit 佐證，功能清單為廠商自述
+- **來源：** GitHub Search（存量盤點）；[GitHub](https://github.com/Agents365-ai/drawio-skill)
+- **成熟度：** ⏳ 新興（本庫首次收錄，尚無社群採用回饋數據）
 
 #### Shaurya-Sethi/nightshift：不限廠商的 Rust CLI，以任務相依圖（DAG）調度協調 GitHub Issues，作者稱官方 `/goal` 有 context rot 架構缺陷改自製（2026-09-10）
 
