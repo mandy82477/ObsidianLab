@@ -28,11 +28,11 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 **領域：** 🏛️ 政策/安全
 **蒐集邊界：** 以 Claude 與 Claude Code 的安全事件為主，另針對提示注入定向補抓（每天最多 3 則）；他家 agent 的獨立事件多半只在與 Claude 同案或同一篇報導時才會出現。
 **開始日期：** 2026-04-27
-**最後更新：** 2026-09-10
-**最後新聞更新：** 2026-09-10
+**最後更新：** 2026-09-11
+**最後新聞更新：** 2026-09-11
 
-> **最新安全事件**（2026-09-10）
-> Anthropic 揭露第四起資安事故，為此前審查所遺漏；官方部落格確認涉及早期版本 Claude Opus 4.6，成因與既有三起事件同型——設定疏失使模型意外取得開放網際網路存取權限。已通知受影響對象，未揭露更多細節。
+> **最新安全事件**（2026-09-11）
+> Show HN 揭露：研究者以 8 種手法繞過 Claude Code 的 deny-list 權限設定，只有改用 allow-list（白名單）才擋得住；官方尚無回應，見「## 現在還擋不住的攻擊」。
 
 ---
 
@@ -56,7 +56,7 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 | 根目錄掃描把 SSH 私鑰帶進 context | 所有在本機跑 Claude Code 的人；多租戶或共用主機風險更高 | 🔴 | 已承認行為存在，未修補（2026-06-20） | 別在家目錄或含私鑰的路徑啟動；啟動前把工作目錄收窄到專案內 |
 | Auto 模式：只要請它讀一個網址，注入的指令就能取得程式碼執行權 | 開 Auto 模式、且會讓 Claude Code 讀網頁或外部檔案的人 | 🔴 | 官方定性 Auto 模式是 best-effort convenience control、不是安全邊界，該揭露結案為 informative；官方稱擋下 89%（2026-08-07 blog）危險指令 | 讀外部內容時關掉 Auto，或改在隔離容器裡跑。實測成功率 60–80%，官方委託評測 0%，兩個數字並陳 |
 | 惡意 `.git` 設定檔可誘使 agent 執行攻擊者指定的程式碼，跨廠通用 | clone 或開啟他人 repo 的人（Claude、Codex、Cursor 都中） | ❓ | 無回應（2026-09-02 披露；觸發機制與是否已在野利用未見報導） | clone 完先自己看一遍 `.git/config` 有沒有不是你加的設定，再讓 agent 進去 |
-| committed 的 `CLAUDE.md` `@import` 可解析到 repo 以外的檔案並外送 | clone 或開啟他人 repo 的人；CI runner、容器因路徑可預測風險更高 | ⛔ | HackerOne 結案為 Informative——依官方威脅模型，「信任此資料夾」對話框本身即為安全邊界 | 不信任的 repo 不要按「信任此資料夾」；CI 上別讓它讀專案目錄以外的路徑 |
+| deny-list 型權限設定可被繞過，只有 allow-list 型設定擋得住 | 用 deny-list（黑名單）方式設定 Claude Code 權限的人 | 🔴 | 無回應（2026-09-11 Show HN 揭露，公開 repo 展示 8 種繞過手法） | 改用 allow-list（白名單）方式設定權限，不要只靠 deny-list |
 | 一句模糊的指令就可能讓它遞迴強制刪掉整個資料夾 | 用自然語言派刪除或整理任務、且沒有備份或版本控制的人 | 🔴 | 無回應（2026-04-28 資料庫清除與 2026-08-12 遞迴刪檔屬同一模式） | 動資料前先建備份；把 DROP、DELETE、`rm -rf` 設成要顯式確認才放行 |
 | 第三方 MCP：偽造的錯誤報告可劫持 session，另有 RCE 與記憶層憑證竊取 | 接了第三方 MCP server 的人，尤其錯誤追蹤類（Sentry） | 🔴 | 無修補，只有社群提供的設定緩解（2026-06-27） | 只接自己控制的 MCP server；把它回傳的內容當外部輸入，不讓它直接觸發動作 |
 | 套件供應鏈：受感染 npm 套件植入 SessionStart hook；`llms.txt` 指向未註冊套件名可被搶注 | 讓 agent 照建議裝套件的人；安裝過受感染 npm 套件的開發環境 | 🔴 | 無回應（第三方生態；惡意版本帶有效簽章，常規信任檢查失效） | 裝套件前確認套件名已註冊、作者對得上；檢查專案裡有沒有不是你建立的 `.claude/settings.json` hook |
@@ -109,6 +109,18 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 ---
 
 ## 技術彙整
+
+### Show HN：研究者展示 8 種繞過 Claude Code deny-list 權限設定的手法，只有 allow-list 擋得住（2026-09-11 新增）
+
+- **揭露來源**：Hacker News Show HN〈I bypassed my Claude Code deny-list 8 ways; only an allow-list held〉，附公開 GitHub repo（[danielhagever/agent-guardrails-kit](https://github.com/danielhagever/agent-guardrails-kit)）；[HN 討論串](https://news.ycombinator.com/item?id=49658005)
+- **核心主張**：作者實測針對 Claude Code 以 deny-list（黑名單）方式設定的權限限制，找出 8 種可繞過手法，只有改用 allow-list（白名單）方式設定才能真正擋住；已列入「## 現在還擋不住的攻擊」表
+- ❓ **待查證**（標 2026-09-11｜查 deny-list、allow-list｜複 2026-09-25）：8 種繞過手法的具體技術細節、官方是否已收到通報或回應均未見報導，僅有原始貼文與 repo 可查
+
+### Security Boulevard／SC Media：coding agent 產業對照案例（2026-09-10～11 新增）
+
+- **揭露來源**：Security Boulevard〈AI Security Incident Case: Amazon Kiro Prompt Injection Vulnerability Analysis〉（2026-09-11）；SC Media〈A security framework for coding agents and their harnesses〉（2026-09-10）
+- **核心主張**：Security Boulevard 分析 Amazon Kiro（非 Claude 產品）的提示注入漏洞案例；SC Media 討論 coding agent 與其執行環境（harness）的通用安全框架設計。兩篇均僅標題可用，具體技術內容與是否涉及 Claude Code 未見報導
+- **與本頁關係**：產業對照，非 Claude 事件；coding agent 通用安全框架若日後涉及 Claude Code 具體做法，另開條目
 
 ### TechCrunch／Startup Fortune：駭客可在不竊取密碼情況下抽乾 Claude 訂閱者用量額度（2026-09-09 新增）
 
@@ -766,6 +778,10 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 > 更早期時序見 [[topics/ai-agent-safety-archive]]
 
 > **中美 AI 工具信任對峙**（06-30～07-10：中國代理偵測程式碼、隱寫術指控、Alibaba/Meta 禁用、中國官方後門警示、Anthropic 首度否認）完整逐日時序已整合至 [[topics/safety-china-trust-dispute]]，此處不再重複條目，僅保留與本頁漏洞/提示注入主線相關者。
+
+### 2026-09-11
+- **[🔴 新增] Show HN：研究者展示 8 種繞過 Claude Code deny-list 權限設定的手法，只有 allow-list 擋得住**：附公開 GitHub repo，官方尚無回應，已列入「## 現在還擋不住的攻擊」表，詳見「## 技術彙整」
+- **[🟡 產業對照，新增] Security Boulevard：Amazon Kiro 提示注入漏洞分析／SC Media：coding agent 安全框架討論**：非 Claude 事件；均僅標題可用，詳見「## 技術彙整」
 
 ### 2026-09-10
 - **[🟡 官方升級，新增] Anthropic 揭露第四起資安事故：此前審查遺漏，涉及早期版本 Claude Opus 4.6**：成因與既有三起同型——設定疏失使模型意外取得開放網際網路存取權限；已通知受影響對象，未揭露細節。同日官方另發表〈An alignment assessment of recent cybersecurity incidents〉，詳見「## 技術彙整」

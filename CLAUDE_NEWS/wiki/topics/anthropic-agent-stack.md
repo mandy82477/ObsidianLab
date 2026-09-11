@@ -28,11 +28,11 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 **領域：** 🛠️ 工具/功能
 **別名：** agent stack, dynamic workflows, agent teams, cross-session messaging
 **開始日期：** 2026-09-10
-**最後更新：** 2026-09-10
-**最後新聞更新：** 2026-09-10
+**最後更新：** 2026-09-11
+**最後新聞更新：** 2026-09-11
 
-> **最新動態**（2026-09-10）
-> 官方文件確認 dynamic workflows 已對全部付費方案開放（Pro 需在設定開啟）：script 式確定性編排、同 session 可續跑——「傳訊有了、編排缺席」的格局自此改變。
+> **最新動態**（2026-09-11）
+> anthropic-sdk-python v1.5.0 為 Managed Agents 新增 auto mode 工具權限設定，細節見子頁 [[entities/managed-agents]]；積木架構本身無變動。
 
 ---
 
