@@ -150,7 +150,7 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 
 | 工具 | 企業採用數 | 趨勢 | 主要阻力 |
 |------|----------|------|---------|
-| Claude Code | 8 使用中（Amazon、UiPath、Rubrik、JFrog、Salesforce、Alberta 省政府、Samsung、T. Rowe Price）+ 1 縮減中（Uber）+ 2 退出（Microsoft、Alibaba → Qoder） | ⚠️ 成本壓力 + Fable 5 封鎖衝擊 + 安全疑慮新增退出理由；✅ 政府與晶片設計案例出現具體量化成效（Alberta 4.66 億行/20hr；Samsung 晶片設計/驗證時程壓縮，惟仍會犯嚴重錯誤） | 缺乏企業層級預算管控；Fable 5 出口管制加速部分企業評估替代方案；Alibaba 案例顯示「疑似後門」指控也可能成為退出理由（指控未經證實），且已確認具體替代方案（Qoder） |
+| Claude Code | 8 使用中（Amazon、UiPath、Rubrik、JFrog、Salesforce、Alberta、Samsung、T. Rowe Price）+ 1 縮減中（Uber）+ 2 退出（Microsoft、Alibaba） | ⚠️ 成本壓力 + Fable 5 封鎖衝擊 + 安全疑慮新增退出理由；✅ 政府與晶片設計案例出現具體量化成效（Alberta 4.66 億行/20hr；Samsung 晶片設計/驗證時程壓縮，惟仍會犯嚴重錯誤） | 缺乏企業層級預算管控；Fable 5 出口管制加速部分企業評估替代方案；Alibaba 案例顯示「疑似後門」指控也可能成為退出理由（指控未經證實），且已確認具體替代方案（Qoder） |
 | Claude API | 29（詳見下方「採用企業清單」）+ 1 退出中（Lindy → DeepSeek） | 🟢 快速擴張（政府/合規/服務業縱深加深，新增醫療研究 CRO 產業、金融科技銀行、大型 IT 服務商全球首要夥伴、加密貨幣基礎設施、教育機構訂閱方案、拉美金融科技客服、資產管理投資流程）；⚠️ 部分 API 客戶因成本敏感轉向競品 | — |
 | GitHub Copilot | 1（Microsoft） | 🟢 Microsoft 背書 | 生態鎖定 |
 | OpenAI Codex | 2（Amazon、UiPath） | 🟢 快速成長 | — |
@@ -177,6 +177,9 @@ Claude Code 是工程師日常編碼工具（CLI），成本隨使用量線性�
 ## 時序
 
 ### 2026-09
+
+#### 2026-09-10
+- **[新增具名企業，✅ 使用中] PR Newswire：T. Rowe Price 宣布擴大在投資流程中使用 Claude 與 Claude Code**：資產管理公司官方新聞稿宣布，marketscreener.com 同日獨立跟進報導；具體整合部門、規模、應用場景均未見細節，詳見上方使用現況表新增列（Google News/PR Newswire）
 
 #### 2026-09-07
 - **[既有企業擴大採用] FF News：PicPay 整合 Claude 擴大對話式 AI 金融服務**：延續 09-04 已記錄之銀行客服詢問導入，本則報導擴大整合範疇，具體技術細節未見報導，詳見上方使用現況表 PicPay 列更新（Google News/FF News）
