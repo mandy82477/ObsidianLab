@@ -48,13 +48,7 @@
       "time": "09/09 17:57",
       "sentiment": "",
       "body": "開發者釋出可自架的「公司作業系統」，讓 Claude Code 與 Codex agent 分別進駐不同部門協作，支援 bubblewrap 沙盒隔離與多租戶協作模式；本則今日由 4 個獨立來源報導。",
-      "focusTags": [],
-      "sedimented": [
-        {
-          "id": "claude-code",
-          "pageType": "entity"
-        }
-      ]
+      "focusTags": []
     }
   ],
   "techUpdates": [
@@ -98,13 +92,7 @@
       "time": "09/10 13:53",
       "sentiment": "",
       "body": "中國科技媒體 36Kr 綜合報導 AI 編程賽道近期動態，提及 Devin 完成 480 億美元融資、SpaceX 收購 Cursor，以及 Claude Code 使用率超越 GitHub Copilot 的市場格局變化。",
-      "focusTags": [],
-      "sedimented": [
-        {
-          "id": "claude-code",
-          "pageType": "entity"
-        }
-      ]
+      "focusTags": []
     },
     {
       "title": "US lawmakers call for new AI rules after Anthropic researchers' safety warnings - Reuters",
@@ -160,13 +148,7 @@
       "time": "09/10 12:50",
       "sentiment": "",
       "body": "Unity 官方推出 Claude Code 外掛，內建 29 項遊戲引擎相關技能，讓開發者可直接在 Unity 專案中透過 Claude Code 呼叫引擎層級操作；另一家遊戲媒體 Inven Global 也獨立做了同類報導。",
-      "focusTags": [],
-      "sedimented": [
-        {
-          "id": "claude-code",
-          "pageType": "entity"
-        }
-      ]
+      "focusTags": []
     }
   ],
   "discussions": [
@@ -186,13 +168,7 @@
       "time": "09/10 14:31",
       "sentiment": "",
       "body": "多工作區終端機聚合工具，整合 Claude Code 的 AI 協作功能，方便同時管理多個專案的終端機視窗。",
-      "focusTags": [],
-      "sedimented": [
-        {
-          "id": "claude-code",
-          "pageType": "entity"
-        }
-      ]
+      "focusTags": []
     },
     {
       "title": "avibe-bot/avibe",
@@ -201,13 +177,7 @@
       "time": "09/10 14:31",
       "sentiment": "",
       "body": "主打「本機優先」的 Agent OS，讓 AI 夥伴常駐在使用者自己的機器上，可透過瀏覽器或任何聊天 App 驅動官方 Claude Code、Codex 與 OpenCode。",
-      "focusTags": [],
-      "sedimented": [
-        {
-          "id": "claude-code",
-          "pageType": "entity"
-        }
-      ]
+      "focusTags": []
     },
     {
       "title": "firstintent/ccteam",
@@ -216,13 +186,7 @@
       "time": "09/10 14:31",
       "sentiment": "",
       "body": "把使用者手邊已在跑的多個編程 agent（Claude Code、Codex、Grok、DeepSeek Harness、Kimi 等）整編成一支團隊，任何 session 都能跨廠商、跨機器派工並收集成果，經 Telegram、Lark 或瀏覽器統一操控。",
-      "focusTags": [],
-      "sedimented": [
-        {
-          "id": "claude-code",
-          "pageType": "entity"
-        }
-      ]
+      "focusTags": []
     },
     {
       "title": "[BUG] Cowork (Windows): all Plan9 shares fail with \"Plan9 mount failed: invalid argument\" after Windows update KB5124008 (26200.9445) — uninstalling the KB fixes it",
@@ -240,13 +204,7 @@
       "time": "09/09 14:13",
       "sentiment": "",
       "body": "C# 語言伺服器 csharp-ls 在 Claude Code 中因缺少 workspace/configuration 等請求處理器而無法正常運作，該 issue 已累積 34 個 👍 反應仍未解決。",
-      "focusTags": [],
-      "sedimented": [
-        {
-          "id": "claude-code",
-          "pageType": "entity"
-        }
-      ]
+      "focusTags": []
     },
     {
       "title": "Show HN: Security Cards – Reducing insecure AI-generated code by 72%",
@@ -255,13 +213,7 @@
       "time": "09/10 12:03",
       "sentiment": "",
       "body": "團隊開源「Security Cards」，針對 13 種程式語言、80 多個常用函式庫提供具體安全指引，實測顯示可讓 Claude Code（搭配 Opus 4.7）產生不安全程式碼的比例最多降低 72.3%。",
-      "focusTags": [],
-      "sedimented": [
-        {
-          "id": "claude-code",
-          "pageType": "entity"
-        }
-      ]
+      "focusTags": []
     },
     {
       "title": "Show HN: Orchestrator, spawn and manage Claude Code instances remotely",
@@ -270,13 +222,7 @@
       "time": "09/10 13:46",
       "sentiment": "",
       "body": "開發者釋出可遠端生成、下指令、終止並管理多個 Claude Code 實例的工具，關閉 App 後任務仍會在背景持續執行，之後可再回來查看進度，並支援 Android 與 iOS TestFlight。",
-      "focusTags": [],
-      "sedimented": [
-        {
-          "id": "claude-code",
-          "pageType": "entity"
-        }
-      ]
+      "focusTags": []
     },
     {
       "title": "Show HN: Nightshift – Rust CLI to Orchestrate GitHub Issue Resolution with Dags",
@@ -294,13 +240,7 @@
       "time": "09/09 17:45",
       "sentiment": "",
       "body": "一套 Claude Code skills 集合，設計理念是遇到不確定情境時傾向直接動手嘗試、而非停下來反覆詢問使用者。",
-      "focusTags": [],
-      "sedimented": [
-        {
-          "id": "claude-code",
-          "pageType": "entity"
-        }
-      ]
+      "focusTags": []
     },
     {
       "title": "Show HN: Claude Project Downloader",
@@ -318,13 +258,7 @@
       "time": "09/10 14:27",
       "sentiment": "",
       "body": "使用者反思自己「先讓 Claude 規劃、逐一挑錯再動工」的流程總覺得哪裡不順，在 r/ClaudeCode 徵詢更好的工作流建議。",
-      "focusTags": [],
-      "sedimented": [
-        {
-          "id": "claude-code",
-          "pageType": "entity"
-        }
-      ]
+      "focusTags": []
     },
     {
       "title": "40% session usage on max plan in 30 mins",
@@ -360,13 +294,7 @@
       "time": "09/10 14:11",
       "sentiment": "",
       "body": "使用者分享在約 30 萬封信件的工作信箱上以 Claude Code 打造 Apple Mail MCP 的經驗，記錄七月間透過 AppleScript 介面送出的回信在「已送出」顯示正常、實際卻可能沒有真正送達的踩坑細節。",
-      "focusTags": [],
-      "sedimented": [
-        {
-          "id": "claude-code",
-          "pageType": "entity"
-        }
-      ]
+      "focusTags": []
     },
     {
       "title": "did anthropic nerf fable again or did claude nerf your brain?",
@@ -509,43 +437,13 @@
   "preview": "Anthropic 揭露第四起 AI 遭濫用發動駭客攻擊的事件，且是先前審查中遺漏、如今才對外揭露；官方稱源於一次疏失使早期版本 Claude Opus 4.6 意外取得開放網路存取權限，已通知受影響對象並發布技術性因應評估",
   "sedimentedToday": [
     {
-      "id": "claude-code",
-      "name": "Claude Code",
-      "pageType": "entity"
-    },
-    {
-      "id": "evan-hubinger",
-      "name": "Evan Hubinger",
-      "pageType": "entity"
-    },
-    {
-      "id": "fable-5",
-      "name": "Claude Fable 5 與 5.1",
-      "pageType": "entity"
-    },
-    {
-      "id": "jacob-coxon",
-      "name": "Jacob Coxon",
-      "pageType": "entity"
-    },
-    {
       "id": "pricing",
       "name": "Anthropic 訂閱方案與計費政策",
       "pageType": "entity"
     },
     {
-      "id": "ai-agent-safety",
-      "name": "AI Agent 安全與可靠性",
-      "pageType": "topic"
-    },
-    {
       "id": "ai-talent-flow",
       "name": "AI 實驗室人才流動",
-      "pageType": "topic"
-    },
-    {
-      "id": "anthropic-agent-stack",
-      "name": "官方 agent 積木：該用哪個、怎麼組",
       "pageType": "topic"
     },
     {
@@ -554,38 +452,9 @@
       "pageType": "topic"
     },
     {
-      "id": "anthropic-government-policy",
-      "name": "Anthropic 政府與軍事政策",
-      "pageType": "topic"
-    },
-    {
       "id": "code-quality-decline",
       "name": "Claude Code 效能退步事件",
       "pageType": "topic"
-    },
-    {
-      "id": "community-tech-patterns",
-      "name": "Claude Code 社群工作流模式",
-      "pageType": "topic"
-    },
-    {
-      "id": "market-signals",
-      "name": "投資訊號判讀",
-      "pageType": "topic"
-    },
-    {
-      "id": "recursive-self-improvement",
-      "name": "AI 遞歸自我改進與全球暫停呼籲",
-      "pageType": "topic"
-    },
-    {
-      "id": "skill-interest-watch",
-      "name": "興趣類別 skill 總覽",
-      "pageType": "topic"
     }
-  ],
-  "marketSignal": {
-    "title": "調查報導稱建立社運人士監控系統，同日國會籲修法，政治監督壓力延續升溫",
-    "date": "2026-09-10"
-  }
+  ]
 }
