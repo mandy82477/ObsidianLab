@@ -640,3 +640,4 @@
 [週四 2026/09/10 17:44:55.13] === Pipeline complete (agent) ===
 [cloud daily-news-pipeline-cloud STARTED 2026-09-10T22:03:58Z]
 [cloud daily-news-pipeline-cloud ABORTED 2026-09-10T22:04:19Z] Step 0b 冪等閘攔截：news/2026-09-10.md 已存在（17:00 UTC 班次已產出並完整收尾），非 backfill 模式，本班（22:00 UTC）正確中止，無多班次例外
+[cloud daily-news-pipeline-cloud STARTED 2026-09-11T12:04:24Z]
