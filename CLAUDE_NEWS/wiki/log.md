@@ -6162,3 +6162,8 @@ GH Actions 抓料排 10:23 UTC，到 14:45 UTC 仍未落地（+4.4 小時且持�
 - market 判讀：（待補，見下方追記）
 - 轉知帳本：開 2 筆（H-b70280 人物→商業｜Joe Benton／Josh Engels 是否列入 ai-talent-flow 承接方追蹤；H-817e3e 社群→功能｜Benzi 對 Claude Code 的負向 benchmark 對照）、close 3 筆（H-6b6b4d、H-ca0433 功能記者結案；H-4aee9b 安全政策記者結案，見上方摘要）
 - 未分類待裁示：「Claude 消費版年齡限制政策」（未滿 18 歲禁用、Yoti 第三方驗證，[官方說明](https://support.claude.com/en/articles/15171100-age-assurance-on-claude)）不落在安全政策記者現有三頁（`anthropic-government-policy`／`ai-agent-safety`／`recursive-self-improvement`）任一觸發條件，亦非既有其他類別明確主責——已被記者看過並評估（滿足「不收可以，沒看過不行」），但未寫入任何頁面，待主編指派分類或裁示是否需新增觸發邊
+
+## 2026-09-11 追記：devpractice 沉澱與 market 判讀（補上方 Ingest 條目留白）
+
+- devpractice 沉澱：候選 4 筆（entities/claude-code：AskUserQuestion 60 秒逾時官方確認為刻意設計非 bug；entities/managed-agents：SDK v1.5.0 新增 Managed Agents auto mode 工具權限設定；topics/ai-agent-safety：Claude Code deny-list 8 種手法可繞過、只有 allow-list 擋得住；topics/community-tech-patterns：drawio-skill 架構圖 Skill）；基準線 b4595f3173→4f4e283ccc
+- market 判讀：1 則（🔴 1／🟡 0：威脅情報報告揭露伊朗/俄羅斯/中國三方濫用案例）；已檢視 89 條，AI 研究員離職示警敘事延燒（Joe Benton／Josh Engels／川普／Musk）判為既有敘事延續、方向未變，不另開新則；里程碑登記 2 筆（政府正式調查或出口管制措施；Moonshot 官方回應非法蒸餾指控）；回顧結算 ⏳ 新增 1 列
