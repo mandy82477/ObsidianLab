@@ -30,8 +30,8 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 **領域：** 🤖 模型
 **別名：** Fable 5, Fable 5.1, Claude Fable 5.1
 **首次出現：** 2026-06-09
-**最後更新：** 2026-09-10
-**最後新聞更新：** 2026-09-10
+**最後更新：** 2026-09-11
+**最後新聞更新：** 2026-09-11
 
 > **最新進展**（2026-09-01）
 > Fable 5.1 GA 發布並取代 5.0 成為現行旗艦：同價、快取讀取便宜 75%、知識截止晚 5 個月；Fable 5 轉為 Legacy，官方載明退役不早於 2027-06-09。
@@ -173,6 +173,9 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 ## 歷史記錄
 
 ### 解禁後（2026-07-01 起）
+
+#### 2026-09-11
+**社群觀感：Fable 5.1 在 Claude Code 中回應速度明顯變快（單一來源，無量化數據）**：r/ClaudeCode 使用者發文描述 Fable 5.1 相較先前世代「回應速度明顯變快」，特別針對 scope/mechanism 類任務的完成速度；原文未附具體測試方法、延遲數字或版本對照基準，屬單一使用者主觀觀感，非量化評測（[Reddit](https://www.reddit.com/r/ClaudeCode/comments/1wdgwnj/is_it_just_me_or_is_fable_51_in_claude_code/)，2026-09-11 13:51 UTC，單一來源、score 恆 0）。
 
 #### 2026-09-10
 ❓ 待查證 ⟨Q-06⟩ **FedScoop：Fable 5.1 導入 Claude for Government**：標題稱 Anthropic 將 Fable 5.1 加入 Claude for Government 產品線，僅標題可用，是新增可用性、既有分層變更或單純服務更新未經證實；政府採購角度另見 [[topics/anthropic-business]]（Google News/FedScoop，2026-09-10）（詳見「懸置細節」）
