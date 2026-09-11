@@ -6149,3 +6149,16 @@ GH Actions 抓料排 10:23 UTC，到 14:45 UTC 仍未落地（+4.4 小時且持�
 - devpractice 沉澱：候選 9 筆（entities/claude-code：maxEffortLevel、Cowork Plan9 掛載失敗繞法 ×2；topics/anthropic-agent-stack：dynamic workflows script 化編排、`claude --agent` 長駐領域專家 ×2；topics/community-tech-patterns：nightshift DAG context 管理、Security Cards 安全指引、OtoDock 自架架構細節、hordev skill 設計理念、avibe/ccteam 多 agent 整編 ×5）；基準線 222b010cc7→b4595f3173
 - market 判讀：1 則（🔴 0／🟡 1：監控系統爭議延燒＋國會同日籲修法，判讀「政治監督壓力延續升溫」）；里程碑登記 1 筆（Anthropic 是否就 American Prospect 監控指控發布正式回應）；回顧結算 ⏳ 新增 1 列（結算日 2026-09-24）
 - 轉知帳本：開 3 筆（H-4aee9b 商業→安全政策｜Fable 5.1 政府採購角度；H-6b6b4d、H-ca0433 社群→功能｜Nightshift 對 /goal 負向對照、多筆新 agent 模式評估 official-community-gap 矩陣）、close 1 筆（H-36251d 模型記者結案：判定經濟情境工具非可選用模型）、void 1 筆（H-848909：人物記者核實不符建頁邊界）
+
+## 2026-09-11 Ingest
+
+- 來源日報：[[news/2026-09-11]]
+- 更新頁面：entities/fable-5、entities/claude-code、entities/managed-agents、entities/jacob-coxon、entities/evan-hubinger、topics/enterprise-tool-tracker、topics/anthropic-government-policy、topics/ai-agent-safety、topics/recursive-self-improvement、topics/official-community-gap、topics/community-tech-patterns、wiki/feature-radar.md
+- 新增頁面：entities/joe-benton、entities/josh-engels
+- 摘要：Anthropic 發布 2026-09 威脅情報報告，揭露伊朗/葉門胡塞武裝疑似用 Claude 追蹤美艦與規劃飛彈研發、俄羅斯駭客自動化規避防毒偵測、中國實驗室疑似非法蒸餾竊取訓練資料（含 Moonshot 個案），引發逾 25 家媒體同日跟進報導，安全政策記者依攻防紀錄／現在有哪幾條線在動兩張表整併收錄，未逐則複製；同日 AI 研究員離職示警敘事延燒，前 Anthropic 安全研究團隊負責人 Joe Benton 與前 Google DeepMind 安全研究員 Josh Engels 接受 NBC News 首次專訪警告 AI 研究進展恐失控，人物記者建立兩頁並與既有 jacob-coxon／evan-hubinger 互相 wikilink；功能記者收錄 v2.1.268（gateway pricing 透傳）、SDK v1.5.0（Managed Agents auto mode 工具權限）與三起 Anthropic Status 事件（Mythos 5.1/Fable 5.1 錯誤率已修復、Cowork on Windows 因 9/8 Windows 更新降級中、API 延遲已解決），並處理 5 則高互動 GitHub Issues（Claude Projects 知識庫整合 635 讚為史上新高、多視窗桌面版 249 讚）；feature-radar 新增 Smart Reports（Beta，官方團隊用量成本報表）；商業記者收錄 T. Rowe Price 擴大投資流程使用 Claude／Claude Code（PR Newswire＋marketscreener 雙來源）；社群記者收錄 drawio-skill（存量盤點）並轉知功能記者 Benzi 自建 benchmark 對 Claude Code 的負向對照；模型記者記錄 Fable 5.1 社群速度觀感（單一貼文，未升級為量化結論）。
+- 呈現品質：全部通過（各記者機械自查 `check_cell_limits.py`／`check_reader_language.py`／`check_pending_markers.py` 均為 OK；全庫測試套件於彙整前顯示 1 筆 `test_index_sync` FAIL，起因為新頁 joe-benton／josh-engels 尚未補入 index.md，已於彙整步驟同批補上）
+- 品質備註：[商業] 回報中將「經濟研究白皮書」「SerpApi 整合」兩批條目排除的理由誤述為「wiki ingest 讀取的是日報，非原始抓取節錄，不予寫入」，此說法與 `wiki-ingest.md`「不收可以，沒看過不行」原則牴觸（未進日報的條目本應與日報條目一併進入分類判斷）；經主編複核，排除結果本身合理（兩批內容對 enterprise-tool-tracker 頁面觸發條件無直接關聯），非需重做的實質疏漏，僅記錄措辭問題供下次派工提醒。
+- devpractice 沉澱：（待補，見下方追記）
+- market 判讀：（待補，見下方追記）
+- 轉知帳本：開 2 筆（H-b70280 人物→商業｜Joe Benton／Josh Engels 是否列入 ai-talent-flow 承接方追蹤；H-817e3e 社群→功能｜Benzi 對 Claude Code 的負向 benchmark 對照）、close 3 筆（H-6b6b4d、H-ca0433 功能記者結案；H-4aee9b 安全政策記者結案，見上方摘要）
+- 未分類待裁示：「Claude 消費版年齡限制政策」（未滿 18 歲禁用、Yoti 第三方驗證，[官方說明](https://support.claude.com/en/articles/15171100-age-assurance-on-claude)）不落在安全政策記者現有三頁（`anthropic-government-policy`／`ai-agent-safety`／`recursive-self-improvement`）任一觸發條件，亦非既有其他類別明確主責——已被記者看過並評估（滿足「不收可以，沒看過不行」），但未寫入任何頁面，待主編指派分類或裁示是否需新增觸發邊

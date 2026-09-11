@@ -2,7 +2,7 @@
 
 追蹤 Anthropic 官方發布的 Claude / Claude Code 功能熱度與試用價值；僅收官方 changelog、release note 或官方公告，社群工具見 [[topics/community-tech-tools]]。
 
-**最後更新：** 2026-09-10
+**最後更新：** 2026-09-11
 
 > **這禮拜動了什麼**（2026-09-10）
 > 最新 v2.1.267（09-09，新增跨供應商 `maxEffortLevel` 推理努力上限），v2.1.238 起無 breaking change，但換了幾個預設值：Fable 預設模型改 5.1、`keybindingFlavor` 失效。
@@ -66,6 +66,20 @@
 ---
 
 ## 🆕 最新功能（2026-09）
+
+### Smart Reports（Beta）
+**發布：** 2026-09-10（Claude Help Center release notes） | **狀態：** Beta
+
+**是什麼：** 官方新增團隊用量分析報表，彙整團隊使用 Claude 的狀況、完成的工作與花費成本。
+
+**為何熱：** 官方文件當日新增段落；截至彙整時尚無社群討論或實測回報。
+
+**快速上手：**
+```
+於帳號管理／admin console 查看 Smart reports（Beta）；官方文件段落於摘要處截斷，完整操作路徑與適用方案（個人／企業）尚未確認。
+```
+
+**注意事項：** 官方說明尚被截斷，涵蓋範圍與適用方案未明，待後續版本或文件補齊再升評級；與 [[topics/enterprise-cost-management]]（用量成本個案）主題相關。
 
 ### maxEffortLevel 推理努力上限設定
 **發布：** 2026-09-09（v2.1.267） | **狀態：** 正式發布
@@ -143,6 +157,7 @@ npm install @anthropic-ai/sdk@0.123.0
 
 | 功能 | 發布日期 | 熱度 | 試用價值 | 狀態 |
 |------|----------|------|----------|------|
+| **Smart Reports**（Beta，團隊用量分析報表：使用狀況、完成工作與成本） | 2026-09-10 | 🔥 | ⏳ 觀望 | Beta |
 | **maxEffortLevel 推理努力上限設定**（v2.1.267，跨供應商統一設定 effort 上限，含 Bedrock/Vertex/Foundry） | 2026-09-09 | 🔥🔥 | ⏳ 觀望 | 正式發布 |
 | **managedMcpServers 管理設定**（v2.1.259，組織可統一佈署 HTTP/SSE MCP 伺服器） | 2026-09-02 | 🔥🔥 | ⏳ 觀望 | 正式發布 |
 | **Claude Fable 5.1**（新一代旗艦，取代 5.0；同步發布信任機構限定 Mythos 5.1） | 2026-09-01 | 🔥🔥🔥🔥🔥 | ⚡ 有條件推薦 | 正式發布 |
