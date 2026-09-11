@@ -3,8 +3,8 @@ page: "topics/anthropic-agent-stack"
 kind: "topic"
 status: "ongoing"
 domain: "🛠️ 工具/功能"
-last_updated: "2026-09-10"
-last_news_update: "2026-09-10"
+last_updated: "2026-09-11"
+last_news_update: "2026-09-11"
 status_main: "ongoing"
 days_since_news: 0
 parent: null

@@ -4,23 +4,23 @@ kind: "entity"
 type: "person"
 status: "active（待核實）"
 domain: "👤 人物"
-last_updated: "2026-09-10"
-last_news_update: "2026-09-10"
+last_updated: "2026-09-11"
+last_news_update: "2026-09-11"
 status_main: "active"
 days_since_news: 0
 parent: null
 children: "[]"
 page_role: "root"
 days_since_news_subtree: 0
-inbound_links: 2
-attribution_count: 8
-attribution_last: "2026-09-10"
+inbound_links: 7
+attribution_count: 10
+attribution_last: "2026-09-11"
 top_source: "google-news"
 pending_count: 1
 pending_overdue: 0
 pending_next_review: "2026-09-23"
 pending_signalled: 0
-signal: "孤島"
+signal: "健康"
 generated_by: "scripts/gen_wiki_frontmatter.py"
 ---
 # Jacob Coxon
