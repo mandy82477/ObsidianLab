@@ -642,3 +642,4 @@
 [cloud daily-news-pipeline-cloud ABORTED 2026-09-10T22:04:19Z] Step 0b 冪等閘攔截：news/2026-09-10.md 已存在（17:00 UTC 班次已產出並完整收尾），非 backfill 模式，本班（22:00 UTC）正確中止，無多班次例外
 [cloud daily-news-pipeline-cloud STARTED 2026-09-11T12:04:24Z]
 [cloud daily-news-pipeline-cloud ABORTED 2026-09-11T12:05:08Z] TARGET_DATE=2026-09-11 12:00 UTC 班次: Step 1a cp gathered_archive/2026-09-11.json 失敗（檔不存在，GitHub Actions 抓料尚未到齊）→ Step 1b 0-1 新鮮度防線中止: gathered_items.json date=2026-09-10 items=71，非目標日期的新鮮資料。待資料到齊的班次（17/22 UTC）接手。
+[cloud daily-news-pipeline-cloud STARTED 2026-09-11T17:03:46Z] (17:00 UTC shift)
