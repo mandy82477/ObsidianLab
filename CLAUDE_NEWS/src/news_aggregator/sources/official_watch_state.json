@@ -206,8 +206,8 @@
     }
   },
   "https://code.claude.com/docs/en/desktop.md": {
-    "hash": "00fd107dabe32f2005b49b0846286a5d08c6fabd1560f86b7edbc0f5ff7d94fc",
-    "length": 81871,
+    "hash": "274d3d709523c10da3bc13aac8235fe070523fb746e2871379d636a757a9caae",
+    "length": 82016,
     "segments": [
       "\"args\": [\"--verbose\"],",
       "\"autoPort\": false",
@@ -322,6 +322,7 @@
       "##### When to use `program` vs `runtimeExecutable`",
       "* **@mention files**: type `@` followed by a filename to add a file to the conversation context. Claude can then read and reference that file. @mention is not available in cloud or WSL sessions.",
       "* **Accessibility**: lets Claude click, type, and scroll",
+      "* **Add an environment**: select **Add cloud environment**",
       "* **Agent teams**: coordinated teams, where Claude as the team lead assigns tasks to teammates from a shared task list, are available in the [CLI](/docs/en/agent-teams), not in Desktop. For multi-agent work inside one session, use [dynamic workflows](/docs/en/workflows), which run in Desktop; Claude can also [message and manage your other sessions](#work-across-sessions) directly.",
       "* **Attach as context**: add the file to your next prompt",
       "* **Attach files**: attach images, PDFs, and other files to your prompt using the attachment button, or drag and drop files directly into the prompt. This is useful for sharing screenshots of bugs, design mockups, or reference documents.",
@@ -335,6 +336,7 @@
       "* **Copy path**: copy the absolute path to your clipboard",
       "* **Denied apps**: add apps here to reject them without prompting. Claude may still affect a denied app indirectly through actions in an allowed app, but it can't interact with the denied app directly.",
       "* **Disable Bypass permissions mode**: prevent users in your organization from enabling bypass permissions mode",
+      "* **Edit or archive one of your own environments**: hover over it and click the gear icon",
       "* **Environment**: choose where Claude runs. Select **Local** for your machine, **Cloud** for a [cloud session](#cloud-sessions) that continues after you close the app, an [**SSH connection**](#ssh-sessions) for a remote machine you manage, or on Windows a [**WSL distribution**](/docs/en/desktop-wsl). See [environment configuration](#environment-configuration).",
       "* **Identity File**: path to your private key, such as `~/.ssh/id_rsa`. Leave empty to use the default key or your SSH config.",
       "* **Inline code suggestions**: Desktop does not provide autocomplete-style suggestions. It works through conversational prompts and explicit code changes.",
@@ -529,6 +531,7 @@
       "Right-click any file path in the chat, diff viewer, or file pane to open a context menu:",
       "SSH sessions let you run Claude Code on a remote machine while using the desktop app as your interface. This is useful for working with codebases that live on cloud VMs, dev containers, or servers with specific hardware or dependencies.",
       "See [Claude Code on the web](/docs/en/claude-code-on-the-web) for more on how cloud sessions work.",
+      "See [Configure cloud environments](/docs/en/cloud-environments) for details on configuring network access and environment variables.",
       "Session isolation requires [Git](https://git-scm.com/downloads). Most Macs include Git by default. Run `git --version` in Terminal to check; if it prints a version number, Git is installed. On Windows, Git is required for the Code tab to work: [download Git for Windows](https://git-scm.com/downloads/win), install it, and restart the app. If you run into Git errors, ask Claude in the [Cowork tab](https://claude.com/product/cowork) to help troubleshoot your setup.",
       "Side chats are available in local, SSH, and WSL sessions. The desktop app doesn't save side chats to disk, so you can't return to one after you close the app.",
       "Start complex tasks in Plan so Claude maps out an approach before making changes. Once you approve the plan, switch to Accept edits or Manual to execute it. See [explore first, then plan, then code](/docs/en/best-practices#explore-first-then-plan-then-code) for more on this workflow.",
@@ -610,7 +613,7 @@
       "Which managed settings reach a Desktop session depends on where that session runs. Model restrictions such as [`availableModels`](/docs/en/model-config#restrict-model-selection) are enforced in Desktop's Claude Code sessions the same way as in the terminal CLI; see [surface coverage](/docs/en/model-config#surface-coverage).",
       "Worktrees are stored in ` /.claude/worktrees/` by default. You can change this to a custom directory in Settings → Claude Code under \"Worktree location\". You can also set a branch prefix that gets prepended to every worktree branch name, which is useful for keeping Claude-created branches organized. To remove a worktree when you're done, hover over the session in the sidebar and click the archive icon. To have sessions archive themselves when their pull request merges or closes, turn on **Auto-archive after PR merge or close** in Settings → Claude Code. Auto-archive only applies to local sessions that have finished running.",
       "You can configure two settings in **Settings > General** (under **Desktop app**):",
-      "You can create custom cloud environments with different network access levels and environment variables. Select the environment dropdown when starting a cloud session and choose **Add cloud environment**. See [Configure cloud environments](/docs/en/cloud-environments) for details on configuring network access and environment variables.",
+      "You can create custom cloud environments with different network access levels and environment variables. When you start a cloud session, open the environment dropdown in the prompt box to manage them:",
       "You can define multiple configurations to run different servers from the same project, such as a frontend and an API. See the [examples](#examples) below.",
       "You can scope plugins to your user account, a specific project, or local-only. If your organization manages plugins centrally, those plugins are available in desktop sessions the same way they are in the CLI.",
       "You can send a command while Claude is working, the same as any other message, and the session returns to idle once the turn finishes. Before v2.1.206, a command sent mid-turn could leave the session showing as running and messages you sent afterward weren't delivered.",
@@ -1383,8 +1386,8 @@
     ]
   },
   "https://support.claude.com/en/articles/15424964-claude-fable-5-on-your-plan": {
-    "hash": "800d8b4a192f6b9302dec385cec3240c1f2e7fb4578e51eb5be0eb01165a4b2a",
-    "length": 22893,
+    "hash": "c933ca6beb436f078d9455195ea59144bb625fedfb9826ac5561c21a1f860e1c",
+    "length": 22924,
     "segments": [
       "API FAQ Can I have a Claude account and a Console account?",
       "API Key Best Practices: Keeping Your Keys Safe and Secure",
@@ -1534,6 +1537,7 @@
       "Get started with Claude Get started with Claude",
       "Get started with Claude Science",
       "Get started with skill and plugin scanning",
+      "Get started with smart reports",
       "Getting Started with Local MCP Servers on Claude Desktop",
       "Give Claude context: CLAUDE.md and better prompts",
       "HIPAA-ready Enterprise plans",
@@ -1789,8 +1793,8 @@
     ]
   },
   "https://support.claude.com/en/articles/12429409-manage-usage-credits-for-paid-claude-plans": {
-    "hash": "20305152828424eead41a5ae38394635f35ca91bc2a72c30f38697dabd0ee1b4",
-    "length": 22995,
+    "hash": "3cfacb464965173da2cd045e2af2d1e7733f6bc7c67f09a19c85e1430213e06d",
+    "length": 23026,
     "segments": [
       "API FAQ Can I have a Claude account and a Console account?",
       "API Key Best Practices: Keeping Your Keys Safe and Secure",
@@ -1939,6 +1943,7 @@
       "Get started with Claude Get started with Claude",
       "Get started with Claude Science",
       "Get started with skill and plugin scanning",
+      "Get started with smart reports",
       "Getting Started with Local MCP Servers on Claude Desktop",
       "Give Claude context: CLAUDE.md and better prompts",
       "HIPAA-ready Enterprise plans",
@@ -2219,8 +2224,8 @@
     ]
   },
   "https://support.claude.com/en/articles/11647753-how-do-usage-and-length-limits-work": {
-    "hash": "1a222f60bd3155045a25f01c34006518452b1440e69bb086dbc9ff01fbe8d579",
-    "length": 22788,
+    "hash": "d8cd522264c19e58aae1e59425a1c33d622a34e87459963ecc9342c7969e8d90",
+    "length": 22819,
     "segments": [
       "API FAQ Can I have a Claude account and a Console account?",
       "API Key Best Practices: Keeping Your Keys Safe and Secure",
@@ -2359,6 +2364,7 @@
       "Get started with Claude Get started with Claude",
       "Get started with Claude Science",
       "Get started with skill and plugin scanning",
+      "Get started with smart reports",
       "Getting Started with Local MCP Servers on Claude Desktop",
       "Give Claude context: CLAUDE.md and better prompts",
       "HIPAA-ready Enterprise plans",
@@ -2621,8 +2627,8 @@
     ]
   },
   "https://support.claude.com/en/articles/11145838-use-claude-code-with-your-pro-or-max-plan": {
-    "hash": "fbabc6a7085320386b4ef211354a109a30601520bf56aba232a48dc0e14a1259",
-    "length": 23164,
+    "hash": "ce3cd9360d7a358098652fad8959bfd84634c18c63b7e54259390c0bea70d4db",
+    "length": 23195,
     "segments": [
       "API FAQ Can I have a Claude account and a Console account?",
       "API Key Best Practices: Keeping Your Keys Safe and Secure",
@@ -2779,6 +2785,7 @@
       "Get started with Claude Get started with Claude",
       "Get started with Claude Science",
       "Get started with skill and plugin scanning",
+      "Get started with smart reports",
       "Getting Started with Local MCP Servers on Claude Desktop",
       "Give Claude context: CLAUDE.md and better prompts",
       "HIPAA-ready Enterprise plans",
@@ -3058,8 +3065,8 @@
     ]
   },
   "https://support.claude.com/en/articles/12138966-release-notes": {
-    "hash": "0343c4d181d065f50e49dd1df0b60365b8db6ae043ba4b481582b90398c4b366",
-    "length": 43561,
+    "hash": "1d17a7753e5343d566efdf7ee154ddb12c7a447b6266e669fbb1518aacd114dc",
+    "length": 43962,
     "segments": [
       "/security-review command",
       "/slash commands: Save your best-working prompts as shortcuts (/slash commands) and reuse these proven workflows instantly without retyping instructions to Claude.",
@@ -3311,6 +3318,7 @@
       "Get started with Claude Get started with Claude",
       "Get started with Claude Science",
       "Get started with skill and plugin scanning",
+      "Get started with smart reports",
       "Getting Started with Local MCP Servers on Claude Desktop",
       "GitHub Actions",
       "Give Claude context: CLAUDE.md and better prompts",
@@ -3510,6 +3518,7 @@
       "See your monthly recap",
       "Self-serve Enterprise plans",
       "September 1, 2026",
+      "September 10, 2026",
       "September 11, 2025",
       "September 16, 2025",
       "September 18, 2025",
@@ -3537,6 +3546,7 @@
       "Show Claude exactly what you mean: Upload images or take screenshots of specific screen areas to give Claude precise visual context. Much faster than describing what you&#x27;re looking at.",
       "Skill and plugin security scanning (beta)",
       "Skills for organizations, partners, and the ecosystem",
+      "Smart reports (beta)",
       "Smarter on the sites you use every day: Claude now understands how to navigate Slack, Google Calendar, Gmail, Google Docs, and GitHub without you having to direct every click. Ask Claude to &quot;schedule a meeting&quot; or &quot;update the doc&quot; and it knows what to do—no need to walk it through every step. We’re continuing to improve Claude’s understanding of other popular sites.",
       "Switching to a different Identity Provider (IdP)",
       "Team and Enterprise plans Plan overviews What is the Enterprise plan?",
@@ -3636,6 +3646,7 @@
       "We’re now including Claude Code access with every Team plan standard seat. Refer to this article for more information: Purchasing and managing seats on Team plans .",
       "We’ve changed our context window functionality to enable infinite-length conversations (with some exceptions) and significantly reduce length limit errors by summarizing earlier messages when a chat approaches its context limit. Read more here: Understanding Usage and Length Limits .",
       "We’ve improved our Claude for Excel and Claude for PowerPoint add-ins. They can now share the full context of your conversation, so every action Claude takes in one application is informed by everything that’s happened in the other. We also added support for skills in the add-ins, and the ability for Amazon Bedrock, Google Cloud’s Vertex AI, or Microsoft Foundry users to connect to them via an LLM gateway. For more information, refer to the following articles:",
+      "We’ve launched smart reports, which analyze how a team uses Claude and report on the work getting done, what it costs, where sessions run into friction, and which repeated patterns are worth packaging as shared skills. Smart reports are available in beta on Claude Enterprise plans. Learn more in Get started with smart reports .",
       "We’ve removed Claude Opus 4 and 4.1 from the Claude model selector and Claude Code. Refer to this article for further details and recommendations: Adapting to new model personas after deprecations .",
       "We’ve updated Claude for Excel so it uses Opus 4.6 and supports native Excel operations such as pivot table editing and conditional formatting. See our updated article for more information: Using Claude for Excel .",
       "We’ve upgraded Claude Opus to a new version. Claude Opus 4.8 shows improvements over Opus 4.7 in coding, agentic skills, reasoning, and practical knowledge work tasks. For more information, see our blog post: Introducing Claude Opus 4.8 .",
