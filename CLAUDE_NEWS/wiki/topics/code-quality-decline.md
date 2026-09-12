@@ -6,11 +6,11 @@ domain: "🌐 社群"
 last_updated: "2026-09-07"
 last_news_update: "2026-09-03"
 status_main: "ongoing"
-days_since_news: 7
+days_since_news: 9
 parent: null
 children: "['topics/code-quality-decline-archive']"
 page_role: "hub"
-days_since_news_subtree: 7
+days_since_news_subtree: 9
 inbound_links: 34
 attribution_count: 24
 attribution_last: "2026-08-28"

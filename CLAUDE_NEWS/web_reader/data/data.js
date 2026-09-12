@@ -2409,12 +2409,12 @@ window.WIKI_DATA = {
       "pill": "active",
       "firstSeen": "",
       "startDate": "2026-09-05",
-      "lastUpdated": "2026-09-09",
+      "lastUpdated": "2026-09-12",
       "lastNewsUpdate": "2026-09-09",
       "updateFreq": "",
       "parent": "",
-      "summary": "本頁回答一個問題：**本庫追的這則消息，如果放在市場的框架裡讀，該注意什麼、又該打幾折。** 每則判讀只放觀點，事實依據一律連回 anthropic-business、pricing、enterprise-tool-tracker、competitor-landscape，不在本頁複製一份。 分級只有兩檔會寫上來：🔴 …",
-      "latestHeadline": "本頁回答一個問題：本庫追的這則消息，如果放在市場的框架裡讀，該注意什麼、又該打幾折。 每則判讀只放觀點，事實依據一律連回 anthropic-business、pricing、enterprise-tool-tracker、competitor-landscape，不在本頁複製一份。",
+      "summary": "每則判讀照分析師看消息的六個問題寫：**這是新資訊嗎、動到哪個數字、誰的口袋會有感、可信到什麼程度、下一個會讓答案變清楚的事件是什麼、所以我做什麼**。前四題壓成第一行「一眼」，讓你三秒看到正負、標的、硬度；要學的東西在每則最後的「一課」，並彙整成下方的課程表。同一條消息線走到哪、標的能不能交易，只在「現在在動的敘事線…",
+      "latestHeadline": "每則判讀照分析師看消息的六個問題寫：這是新資訊嗎、動到哪個數字、誰的口袋會有感、可信到什麼程度、下一個會讓答案變清楚的事件是什麼、所以我做什麼。前四題壓成第一行「一眼」，讓你三秒看到正負、標的、硬度；要學的東西在每則最後的「一課」，並彙整成下方的課程表。同一條消息線走到哪、標的能不能交易，只在「現在在動的敘事線」那張表",
       "readerDomains": [
         "💼 商業"
       ]
