@@ -656,3 +656,4 @@
 [cloud weekly-wiki-lint-cloud STARTED 2026-09-12T03:04:30Z]
 [週六 2026/09/12 03:54:43.00] Weekly lint OK (cloud) - 六記者+devpractice 全數收報，修 15 頁，10 項待使用者確認；gate 第 1 輪修復後放行（測試全綠），build_web 成功（斷鏈 WARN 13／錨點 WARN 0），渲染層驗收抓到 overview 無頁面產物（已登漏抓帳並列待裁示）；5b/5c/5e/5h/5m 雲端 egress 封鎖跳過；月度項目（蒸餾/6g指標二/6j）非本月首次 lint 跳過
 [cloud weekly-wiki-lint-cloud COMPLETE 2026-09-12T03:54:43Z]
+[cloud daily-news-pipeline-cloud STARTED 2026-09-12T12:03:13Z]
