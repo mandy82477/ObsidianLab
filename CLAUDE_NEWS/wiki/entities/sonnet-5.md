@@ -29,7 +29,7 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 **狀態：** active（正式發布）
 **領域：** 🤖 模型
 **首次出現：** 2026-07-01
-**最後更新：** 2026-09-08
+**最後更新：** 2026-09-12
 **最後新聞更新：** 2026-09-03
 
 > **最新動態**（2026-09-03）
@@ -39,9 +39,7 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 
 ## 現況
 
-**2026-07-31 最新**：Anthropic Status 通報 Sonnet 5 效能降級，06:18 UTC 起偵測、07:04 UTC 確認已解決，歷時約 46 分鐘；Reddit r/ClaudeAI 出現對應事件 Megathread（0 留言，可能因剛發布尚未累積），內容與官方一致，屬社群對同一事件的跟進，非獨立事件。事件不影響模型能力或定價，屬穩定性範疇。
-
-**2026-07-25**：dev.to 分析文章重申 Sonnet 5 促銷定價的 60% 折扣「real but temporary」，未提供新數字（[[entities/pricing]] 有完整定價細節）；同日 [[entities/opus-5|Claude Opus 5]] 正式發布，Sonnet 5 本身定位不受影響。
+**2026-09-03 最新**：Anthropic Status 通報 Claude Sonnet 5 錯誤率一度升高，12:37 UTC 起調查、12:56 UTC 已解決（約 19 分鐘）；同日另有一起獨立事件影響 Fable/Mythos/Opus 全系列（本頁模型不在受影響清單內），完整記錄見下方「歷史記錄」與 [[entities/fable-5]]。
 
 Claude Sonnet 5 於 2026-07-01 正式發布，定位為 Anthropic **最 agentic 的 Sonnet 模型**，在 reasoning、tool use、coding、knowledge work 等多個面向均有顯著提升，效能接近 Opus 4.8。
 

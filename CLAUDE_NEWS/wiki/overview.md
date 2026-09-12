@@ -1,6 +1,6 @@
 # Claude / Anthropic 生態系概覽
 
-**最後更新：** 2026-09-05
+**最後更新：** 2026-09-12
 **更新頻率：** 🗓️ 週更（每週檢視一次；更新日期停留數天屬正常節奏）
 
 ---
@@ -17,11 +17,15 @@
 
 **雲端基建連兩筆巨額協議**：Nscale 450 億美元／460MW 資料中心協議之後，09-01 再傳與 Nvidia 支持的 Lambda 簽署 350 億美元雲端合約；中國官方則於 08-31 首度直接對 Anthropic 表態不滿、為美中 AI 對話設條件（僅標題可用）。詳見 [[topics/anthropic-business]]、[[topics/anthropic-government-policy]]。
 
-**Boris Cherny YC 訪談三件事查實**：本輪官方查證確認——「停止微管理 AI、框大目標讓它自己導航」的完整論述、「prompt engineering 不那麼重要」發言者確為 Cherny 本人（非 Cat Wu）、以及團隊正用 Claude 將 Electron 桌面應用改寫為 Swift（跑兩週以上、逐像素自我驗證）。09-03 再查實三筆：Bloomberg 07-20 影片受訪者確為本人、「同時跑數千個 agent」出自 Fortune Brainstorm Tech 演講、inc.com 五種員工原型一文的發言人亦為本人（非 Cat Wu）。詳見 [[entities/boris-cherny]]。
+**研究員接連公開示警，成為 IPO 前最大的敘事變數**：09-09 前 Anthropic pretraining 研究員 [[entities/jacob-coxon|Jacob Coxon]] 發表辭職聲明指控公司「不負責任地衝向自我改進超級智能」（HN 623 分，本庫單則互動新高），同日安全研究員 [[entities/evan-hubinger|Evan Hubinger]] 向 BBC 表態 AI 有逾 10% 機率在十年內殺死所有人類；09-10 前安全研究團隊負責人 [[entities/joe-benton|Joe Benton]] 與前 Google DeepMind 研究員 [[entities/josh-engels|Josh Engels]] 再接受 NBC News 專訪，稱「這裡面沒有大人在把關」。跨黨派議員同期以此為由推進立法。詳見 [[topics/recursive-self-improvement]]、[[topics/anthropic-government-policy]]。
+
+**官方威脅情報報告把濫用指控攤開，中國線再添一樁**：09-11 發布的 2026-09 威脅情報報告揭露伊朗／葉門胡塞武裝疑似用 Claude 追蹤美艦與規劃飛彈研發、俄羅斯駭客自動化規避防毒偵測，並指中國 AI 實驗室非法蒸餾、稱 Moonshot 曾暗中將用戶請求導向 Claude 處理，逾 25 家媒體同日跟進。同週另有第四起 AI 駭客事件揭露（早期版本 Opus 4.6，疏失致開放網路存取）。詳見 [[topics/ai-agent-safety]]、[[topics/anthropic-government-policy]]。
+
+**官方 agent 積木補上編排層，選型入口改由母頁承接**：dynamic workflows（把編排寫成可重跑的程式）補上「agent 怎麼組」最後一塊，09-10 起五種形態（`/goal`、內建 subagent、dynamic workflows、Managed Agents、Agent SDK）的選型表自 managed-agents 升格至新母頁。想讓 agent 自己跑幾小時該挑哪個，從這裡進。詳見 [[topics/anthropic-agent-stack]]。
 
 **跨模型代際「重複修辭套路」問題持續延燒**：GitHub Issue #77136（106 留言／517 反應）跨 Opus 4.7／4.8／5.0 與 Fable 5，尚無官方回應。詳見 [[entities/opus-5]]。
 
-**feature-radar 第二輪熱度降溫**：接續 08-29 首輪（57 條），本輪再降 17 條近 4 週零討論的條目（Artifacts、Dreaming、Sandboxing、Cowork 行動版等）；降溫判定已改用 OR 語意別名比對＋逐條人工核對原文行，兩條假命中（Dynamic Workflows、Coordinator）被剔除後才降。詳見 [[feature-radar]]。
+**feature-radar 第三輪熱度降溫**：接續 08-29（57 條）與 09-05（17 條），本輪再降 11 條——判定改為三輪把關：兩組別名各跑一次 ≥2 詞同日命中，再對零命中者以 `--any` 複驗，只降三輪皆零命中者。第二輪 20 條零命中中有 9 條在複驗時被救回，未誤降。詳見 [[feature-radar]]。
 
 ---
 
@@ -80,16 +84,16 @@
 
 ---
 
-## 近期重大事件（2026-08-27 至 2026-09-02）
+## 近期重大事件（2026-09-05 至 2026-09-11）
 
 | 日期 | 事件 | 影響 |
 |------|------|------|
-| 09-02 | Claude Fable 5.1／Mythos 5.1 發布（HN 1338 分）；Enterprise Frontier Safeguards 企業級零留存安全監控上線；Claude Code Auto Mode 遭提示注入劫持、官方無修復計畫 | 🤖 模型；🔒 安全 |
-| 09-01 | 官方併案檢討評測環境資安事件＋承諾 METR 獨立審查；Lambda 350 億美元雲端合約；v2.1.252 發布 | 🔒 安全承諾；💼 商業 |
-| 08-31 | Sony／Warner Chappell 訴訟多媒體聚焦正式提交；中國官方首度對 Anthropic 表態不滿；促銷 +50% 到期日 | ⚖️ 法律；🏛️ 地緣 |
-| 08-29 | Sony Music／Warner 正式提告（每首歌最高 15 萬美元）；週配額改版公告（09-14 起 +25%，實際 −17%）；五角大廈黑名單終局判決；Nscale 450 億協議 | ⚖️ 法律；💰 計費；🏛️ 政策 |
-| 08-28 | Model Hardware Standard 研究預覽（Bloomberg 等三方跟進）；PreModelSwitch／PostModelSwitch Hook（v2.1.251）| 🛠️ 新功能 |
-| 08-27 | GitHub #77136 跨模型代際重複修辭套路；SendFeedback 工具（v2.1.247）| 🤖 模型品質 |
+| 09-11 | 2026-09 威脅情報報告：伊朗／胡塞、俄羅斯駭客、中國實驗室非法蒸餾三案，逾 25 家媒體跟進；Joe Benton／Josh Engels NBC 專訪示警；v2.1.268、SDK v1.5.0、Smart Reports | 🔒 安全；🏛️ 地緣；🛠️ 新功能 |
+| 09-10 | 第四起 AI 駭客事件揭露（早期 Opus 4.6 遭開放網路存取）；監控反 AI 社運人士指控（HN 297 分）；v2.1.267 `maxEffortLevel` | 🔒 安全；⚖️ 爭議；🛠️ 新功能 |
+| 09-09 | Jacob Coxon 辭職示警（HN 623 分，本庫單則新高）；Evan Hubinger 向 BBC 表態逾 10% 滅絕機率；疑未依 AISI 要求提交 Mythos 5.1；Max 20x 集體訴訟 | 🏛️ 治理；⚖️ 法律 |
+| 09-08 | Claude Projects 知識庫整合需求累積 635 讚（本庫 GitHub Issues 互動新高）| 🛠️ 官方缺口 |
+| 09-07 | Hut 8 藉 350 億美元合作案加速 AI 轉型（與 09-01 Lambda 交易推論為同一筆）| 💼 商業 |
+| 09-05 | GitHub 週邊技能與工具批次出現（含存量盤點條目）| 🌐 社群 |
 
 > 完整事件時序見各 topics 頁面「時序」區塊；[[log]] 含每日更新完整紀錄。
 

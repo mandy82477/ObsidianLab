@@ -28,7 +28,7 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 **領域：** 💼 商業
 **蒐集邊界：** 本頁只讀本庫日報——也就是以 Anthropic 為中心的消息面（官方公告、企業合作、融資與定價、社群實測）。因此三件事會漏：與 Anthropic 無關的產業消息不在範圍；利空型消息（財測下修、客戶流失）的覆蓋明顯弱於利多；沒有籌碼面與技術面資料。消息本身也慢一天——本庫抓料到日報有約一天延遲，盤中即時反應追不上。
 **開始日期：** 2026-09-05
-**最後更新：** 2026-09-11
+**最後更新：** 2026-09-12
 **最後新聞更新：** 2026-09-11
 
 > ⚠️ **教學型事件研究，非投資建議**
@@ -79,7 +79,7 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 
 ### 💰 離職聲明、安全研究員表態與 AISI 提交爭議同日發酵，IPO 前敘事風險升溫（2026-09-09）
 
-**方向**：Anthropic 本體不可買（未上市）；間接曝險標的同前——Alphabet、Amazon（既有投資人）～ 未定案。三起獨立敘事同日集中出現：前 Anthropic pretraining 研究員 Jacob Coxon 於 X 發表辭職聲明，指控公司「不負責任地衝向自我改進超級智能」（HN 623 分，WSJ 獨家報導，逾十家媒體跟進）；現任安全研究員 Evan Hubinger 向 BBC 表態 AI 逾 10% 機率十年內「殺死所有人類」；IT Pro／Financial Times／The Times 同日報導 Anthropic 疑未依英國 AI 安全研究院（AISI）要求提交 Mythos 5.1 供測試。事實見 [[topics/recursive-self-improvement]]、[[topics/anthropic-government-policy]]、[[topics/anthropic-business]]。
+**方向**：Anthropic 本體不可買（未上市）；間接曝險標的同前——Alphabet、Amazon（既有投資人）～ 未定案。三起獨立敘事同日集中出現：前 Anthropic pretraining 研究員 [[entities/jacob-coxon|Jacob Coxon]] 於 X 發表辭職聲明，指控公司「不負責任地衝向自我改進超級智能」（HN 623 分，WSJ 獨家報導，逾十家媒體跟進）；現任安全研究員 [[entities/evan-hubinger|Evan Hubinger]] 向 BBC 表態 AI 逾 10% 機率十年內「殺死所有人類」；IT Pro／Financial Times／The Times 同日報導 Anthropic 疑未依英國 AI 安全研究院（AISI）要求提交 Mythos 5.1 供測試。事實見 [[topics/recursive-self-improvement]]、[[topics/anthropic-government-policy]]、[[topics/anthropic-business]]。
 
 **時效**：持續數週的敘事流，非單日事件——公司未上市，沒有股價可以立即反應，該看的是後續會不會轉成具體監管或合約行動。
 
