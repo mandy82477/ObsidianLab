@@ -12,6 +12,8 @@
 | `weekly-wiki-lint-cloud` | `trig_01E41amaGSNuL8jeUhCR8iUw` | `docs/cloud-runbooks/triggers/weekly-wiki-lint-cloud.json` | `docs/cloud-runbooks/weekly-lint.md` |
 | `daily-watchdog-push` | `trig_01FqjE53JVAKTnPxnt8iJCb6` | `docs/cloud-runbooks/triggers/daily-watchdog-push.json` | `docs/cloud-runbooks/watchdog-push.md` |
 
+**已停用的一次性探針（保留供 `RemoteTrigger list` 對帳，API 無 delete）：** `probe-custom-subagent-2026-09-12`（`trig_01RS1bLgV3MX9Ta6x7SceXrt`，enabled=false）——結果見 `docs/cloud-runbooks/probe-custom-subagent-2026-09-12.md`：雲端從 repo 根啟動，子目錄 `CLAUDE_NEWS/.claude/agents/` 的自訂 subagent 不可用（Read 過角色檔後仍不出現），skills 與子目錄 CLAUDE.md 則按需載入。
+
 **排程時間只寫在定義檔的 `cron_expression`，本檔不抄**——2026-08-29 改點時本檔抄的五個cron 全部沒跟上，副本刪掉比為它加護欄好。
 
 另有 `cloud-writeback-probe`（`trig_01KYk75uTSqLsXcmTNaawmLL`）為 2026-07-10 的寫回測試殘留，已 disabled，未納入備份。

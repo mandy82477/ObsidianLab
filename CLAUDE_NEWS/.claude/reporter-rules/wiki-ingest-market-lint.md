@@ -2,7 +2,7 @@
 
 `/wiki-lint` 步驟 5h 由**主編親做**（記者無 web 工具，查不了兩週後的股價方向，這是本步不派工的唯一理由）。每日 ingest 不讀此檔。
 
-**⚠️ 雲端只做庫內那一半**：股價方向需存取外部網域，雲端沙盒 egress 封鎖，該部分跳過並寫一條待辦「投資訊號股價結算因雲端 egress 封鎖跳過，留待本機 `/weekly` 承接」，列入 log 的待使用者確認區。**催化劑那一半只查本庫日報，雲端照做。**
+**⚠️ 雲端兩半都做** `[改版: 2026-09-12]`：催化劑那一半只查本庫日報；股價那一半用 **WebSearch**（下方執行步驟第 3 步），而 WebSearch 由 Anthropic 端執行、**不經沙盒 egress**，因此不受雲端網路白名單（Trusted／Custom，見 `docs/cloud-runbooks/_shared.md`「egress 限制」）影響——`python scripts/cloud_egress_check.py --group market` 的 market 組刻意為空、恆印 `EGRESS: market OK`，本步不需探測。唯一的跳過理由是該環境根本沒有 WebSearch 工具可用，此時寫待辦「投資訊號股價結算因該環境無 WebSearch 跳過，留待本機 `/weekly` 承接」列入 log 的待使用者確認區。日後若本步改用 WebFetch 直抓行情站，須把那些網域填進 market 組並改為探測式。
 
 ---
 
@@ -37,5 +37,5 @@
 ## 回報格式（納入 `/wiki-lint` 步驟 8 的 lint 紀錄）
 
 ```
-投資訊號回顧（5h）：結算 N 列（✅ a／❌ b／～ c／不可驗證 d），剩餘 ⏳ M 列／股價半邊雲端 egress 封鎖跳過
+投資訊號回顧（5h）：結算 N 列（✅ a／❌ b／～ c／不可驗證 d），剩餘 ⏳ M 列／股價半邊該環境無 WebSearch，跳過
 ```

@@ -45,7 +45,13 @@ python3 scripts/cloud_bootstrap.py
 
 上述腳本把那套手動修法固化：冪等（已存在就跳過）、不致命（失敗只印警告、退出碼恆為 0）。**它是 workaround 不是真解**——真解是雲端基礎映像預裝這些套件，見 `docs/workaround-register.md` 對應列。
 
-**egress 限制：** 雲端沙盒封鎖一般外部網域（Reddit / HN / Google News 全回 403），因此**任何需要抓取外部新聞的步驟都不在雲端執行**，由 GitHub Actions 負責（見 `docs/daily-automation.md`）。
+**egress 限制 `[改版: 2026-09-12]`：** 雲端環境的網路存取分四級（官方文件 `cloud-environments.md#network-access`）：None／**Trusted（預設，約 70 個網域白名單）**／Custom（使用者自填網域）／Full。本專案目前是 **Trusted**，所以 Reddit / HN / Google News / 官方文件站多半回 403 或 `EGRESS_BLOCKED`。這是**使用者可改的環境設定**（在 claude.ai 環境設定改成 Custom 並加入網域），不是永久事實。
+
+兩件事因此要分開看：
+
+- **抓新聞不在雲端跑，是設計不是 egress 問題**——抓料不需 LLM、生日報不需上網，拆給 GitHub Actions 是分裂架構的取捨（見 `docs/daily-automation.md`）。就算 egress 全開也不改回來。
+- **lint 需要外部網域的幾步（5b／5c／5e／5m）改為探測式**——各步先跑 `python scripts/cloud_egress_check.py --group <該步的組>`，印 `EGRESS: <組> OK` 就照做，`PARTIAL`／`BLOCKED` 才跳過留待辦。**不得未探測就跳過**：寫死「雲端一律跳過」的條文，在使用者把環境改好之後也不會自己好起來。組別與網域清單住該腳本（單一來源）。
+- 5h 的股價方向走 **WebSearch**，由 Anthropic 端執行、不經沙盒 egress，不受本節限制。
 
 ---
 

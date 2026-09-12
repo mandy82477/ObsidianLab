@@ -22,12 +22,14 @@
 | `4. 建議並建立新實體頁` | **只回報，不動手** → 寫入待辦 |
 | `5. 更新 wiki/overview.md` | 自主執行 |
 | `5a. feature-radar 熱度降溫（主編親做）` | 自主執行（`scripts/news_mentions.py` 純本地比對日報；⏳ 逾期處置照該節三選一） |
-| `5b. 跨家任務榜單週更（主編派工）` | **雲端一律跳過**（需抓外部榜單網站，egress 封鎖，實測 `www.swebench.com` 回 `EGRESS_BLOCKED`）→ 不必再寫待辦：已固定由本機 `/weekly` 步驟 0 承接 `[改版: 2026-08-20]` |
-| `5c. 逾期待查證清算（主編親查）` | **雲端一律跳過**（需查證官方說明中心等外部網域，egress 封鎖）→ 不必再寫待辦：已固定由本機 `/weekly` 步驟 0 承接，Lane A（本輪額度 10）＋Lane B（本輪額度 8）`[改版: 2026-08-29]` |
+| `5b. 跨家任務榜單週更（主編派工）` | **先探測再決定** `[改版: 2026-09-12]`：`python scripts/cloud_egress_check.py --group leaderboard` → 印 `EGRESS: leaderboard OK` 就照該節執行；`PARTIAL`／`BLOCKED` 才跳過並寫待辦（本機 `/weekly` 步驟 0 承接）。不得未探測就跳過 |
+| `5c. 逾期待查證清算（主編親查）` | **先探測再決定** `[改版: 2026-09-12]`：`python scripts/cloud_egress_check.py --group official` → `EGRESS: official OK` 就照該節執行（**Lane A（本輪額度 10）＋Lane B（本輪額度 8）**）；`PARTIAL`／`BLOCKED` 才整步跳過並寫待辦（本機 `/weekly` 步驟 0 承接）|
 | `5d. 歸因忠實度抽查（主編親做）` | 自主執行（帳本與日報皆為本地檔） |
-| `5e. pricing「通路與乘數」複查（主編親查）` | **雲端一律跳過**（需 WebFetch 官方計價頁，egress 封鎖）→ 由本機 `/weekly` 步驟 0 承接 `[加入: 2026-09-04]` |
+| `5e. pricing「通路與乘數」複查（主編親查）` | **先探測再決定** `[改版: 2026-09-12]`：`python scripts/cloud_egress_check.py --group official` → `EGRESS: official OK` 就 WebFetch 官方計價頁照該節執行；`PARTIAL`／`BLOCKED` 才跳過並寫待辦（本機 `/weekly` 步驟 0 承接）|
 | `5f. devpractice 週彙整（主編派工）` | 自主執行，派工帶 `model: "sonnet"`；回報的「⚠️ 需主編轉知」登 `data/pending-handoffs.jsonl` |
 | `5g. 高引用但停滯（signal 消費端，主編親做）` | 自主執行（`gen_wiki_frontmatter.py --list-signal` 純本地；每頁二選一派對應記者確認） `[加入: 2026-09-04]` |
+| `5h. 投資訊號回顧環（主編親查）` | 自主執行 `[加入: 2026-09-12]`：催化劑半邊純本地；股價半邊走 WebSearch（不經沙盒 egress），該環境無 WebSearch 工具時才跳過寫待辦 |
+| `5m. code-quality-decline 三條線 issue 狀態複查（主編親做）` | **先探測再決定** `[加入: 2026-09-12]`：`python scripts/cloud_egress_check.py --group github` → `EGRESS: github OK` 就跑 `gh issue view`；`PARTIAL`／`BLOCKED` 才跳過並寫待辦 |
 | `6. CLAUDE.md 健檢` | 分項處理，見下方「健檢分項」 |
 | `6h. 規則密度審查` | 跑 `lint_health.py density` 自主量測；蒸餾**提案只回報**（需使用者確認）→ 寫入待辦 `[加入: 2026-09-04]` |
 | `6i. 檢查器的檢查：突變測試` | 自主執行 `mutate`／`hits report`；抓到的假看守當場收緊 pattern，改完 `check_rules.py` 必須綠 `[加入: 2026-09-04]` |

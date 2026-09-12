@@ -50,6 +50,14 @@
       {
         "file": "docs/cloud-runbooks/weekly-lint.md",
         "pattern": "CLAUDE\\.md 健檢"
+      },
+      {
+        "file": "docs/cloud-runbooks/probe-custom-subagent-2026-09-12.md",
+        "pattern": "New skills discovered|子目錄的 `CLAUDE\\.md`|載入該目錄的 `CLAUDE\\.md`"
+      },
+      {
+        "file": "docs/cloud-runbooks/README.md",
+        "pattern": "子目錄 CLAUDE\\.md 則按需載入"
       }
     ]
   },
@@ -82,7 +90,9 @@
       "^weekly/YYYY-Wnn\\.md$",
       "^scripts/weekly_stats\\.py$",
       "^data/pending-signals\\.jsonl$",
-      "^data/pending-handoffs\\.jsonl$"
+      "^data/pending-handoffs\\.jsonl$",
+      "^CLAUDE_NEWS/CLAUDE\\.md$",
+      "^CLAUDE_NEWS/\\.claude/rules/claude-md-edit\\.md$"
     ],
     "_allowlist_note": "以上為 placeholder 或執行期才產生的產物檔，不強制存在。",
     "bare_name_search_dirs": {
@@ -98,7 +108,8 @@
       "community-tech-patterns.md": [
         "wiki/topics"
       ]
-    }
+    },
+    "_allowlist_note_cloud_paths": "2026-09-12：`CLAUDE_NEWS/…` 前綴的兩筆是 docs/cloud-runbooks/probe-custom-subagent-2026-09-12.md 逐字引述雲端 session 看到的路徑（雲端從 repo 根啟動，本檢查則以 CLAUDE_NEWS 為根），不是本庫的路徑引用。刻意寫成完整字串而非 `^CLAUDE_NEWS/` 前綴通配，避免掩蓋別處真的打錯的路徑。"
   },
   "anchors": [
     {
@@ -1363,6 +1374,39 @@
       "patterns": [
         "外部評測榜單"
       ]
+    },
+    {
+      "name": "雲端 egress 探測契約（規格端）：wiki-lint.md 四步各自問對組，並 grep 對的摘要行",
+      "assertion": "all_contain",
+      "files": [
+        ".claude/commands/wiki-lint.md"
+      ],
+      "patterns": [
+        "cloud_egress_check\\.py --group leaderboard",
+        "cloud_egress_check\\.py --group official",
+        "cloud_egress_check\\.py --group github",
+        "cloud_egress_check\\.py --group market",
+        "EGRESS: leaderboard OK",
+        "EGRESS: official OK",
+        "EGRESS: github OK",
+        "EGRESS: market OK"
+      ],
+      "_note": "2026-09-12 加入。5b／5c／5e／5m 由『雲端一律跳過』改為探測式，判斷依據是探測腳本印的 `EGRESS: <組> <狀態>` 那一行。組名改了而規格沒跟，lint grep 不到就一律走『跳過』分支——失效是靜默的（那幾步恢復成永遠不跑，沒有人會收到錯誤），所以兩端都要看守。"
+    },
+    {
+      "name": "雲端 egress 探測契約（消費端）：cloud_egress_check.py 的摘要行形狀與組名",
+      "assertion": "all_contain",
+      "files": [
+        "scripts/cloud_egress_check.py"
+      ],
+      "patterns": [
+        "EGRESS: \\{name\\} \\{status\\}",
+        "\"official\":",
+        "\"github\":",
+        "\"leaderboard\":",
+        "\"market\":"
+      ],
+      "_note": "2026-09-12 加入。摘要行是 f-string，literal 『EGRESS: official OK』不會出現在程式碼裡，故規格端釘實際字串、消費端釘 f-string 骨架與四個組名鍵。"
     }
   ],
   "coupling_hints": {
