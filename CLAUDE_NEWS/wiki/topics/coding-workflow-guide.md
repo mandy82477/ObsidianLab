@@ -29,7 +29,7 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 **開始日期：** 2026-08-08
 **領域：** 🛠️ 工具/功能
 **更新頻率：** 🗓️ 週更（隨官方文件與社群策展更新；日期停留數天屬正常節奏）
-**最後更新：** 2026-09-05
+**最後更新：** 2026-09-12
 **最後新聞更新：** 2026-08-16
 
 > **本頁在回答什麼**（2026-08-08 重寫）
@@ -40,15 +40,16 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 
 ## 本週 coding 亮點
 
-- **Fable 5.1 GA，快取讀取降 75%**——正式取代 5.0 成為旗艦，快取讀取費率由基礎輸入價 0.1 倍降至 0.025 倍，長對話／大量快取重複 session 的成本結構整個變了，見 [[entities/fable-5]]
-- **Auto Mode 實際風險遠高於官方數字**——提示注入劫持成功率經量化達 60–80%（官方評測宣稱 0%），媒體稱官方無修復計畫；同時官方文件確認 Extended Thinking 現為預設開啟，兩者一起影響「敢不敢拿它處理不可信內容」與 token 用量，見 [[topics/ai-agent-safety]]、[[entities/claude-code]]
-- **clone 不明來源 repo 本身變成攻擊面**——惡意 `.git` 設定檔可誘使 Claude Code、Codex、Cursor 等多款 coding agent 執行攻擊者程式碼，跨廠通用，見 [[topics/ai-agent-safety]]
-- **週配額時程更正**——+50% 促銷未如期 08-31 終止，延長至 09-13，接著轉為永久 +25%（相較加成期淨減約 17%），貼近週配額上限的工作流該重新抓時程，見 [[entities/pricing]]
-- **codebase 理解多了三個選項**——codegraph（改 code 自動同步索引，graphify 競品）、Understand-Anything（給人的互動探索知識圖）、archify（給人的交付級架構圖），三種不同需求現在各有對應工具，見 [[topics/community-tech-tools]] 決策表
-- **claude-mem：跨 7+ harness 的持久記憶工具**——9.3 萬星、已存在逾 1 年，記憶管理工具箱新增一個不綁死單一 harness 的選項，見 [[topics/community-tech-patterns]]
-- **可複用的維護做法：殭屍 subagent 偵測**——dev.to 實測 8 個自訂 subagent 中 7 個 30 天零呼叫，作者建立自動偵測機制；同一批還有「爆炸半徑」框架，依錯誤修復成本（而非任務難度）劃分風險區決定哪些改動可放心讓 agent 自主執行，見 [[topics/community-tech-patterns]]
-- **MCP server 接錯 schema 版本會直接被擋**——宣告 draft-07 `outputSchema` 的 MCP server 被判定 unsupported dialect、完全無法使用（issue #86142），選型／除錯先排除這個成因，見 [[entities/claude-code]]
-- **本頁第 4 段（實際動手寫）補齊社群面證據**——CLAUDE.md 規則遷移到 hooks 強制執行、語意化規則注入、開工前訪談三條做法，見下方第 4 段
+- **Managed Agents 選型定案＋官方五層 agent 協調地圖**——「該不該碰 Managed Agents」首度有清楚四選一分界（`/goal`／內建 subagent／Managed Agents／Agent SDK，附官方算例），並補上按層級排列的協調積木地圖（單向扇出、點對點傳訊、跨機器、持久記憶），見 [[entities/managed-agents]]
+- **換模型前先做 effort sweep**——官方文件證偽社群「effort 調高分數非單調下降」的說法，重申調 effort 通常比換模型更有效，見 [[topics/model-comparison]]
+- **AGENTS.md 跨工具訴求破 6,525 讚，Claude Code 仍未支援**——Codex／Amp／Cursor 已統一採用該標準格式，跨工具並用的人短期內仍得為 Claude Code 另外維護一份 CLAUDE.md，見 [[entities/claude-code]]
+- **`/verify`／`/code-review` 迴歸為手動觸發**——v2.1.215 起評估與改進迴路從自動降為手動，仰賴自動 code review 的工作流要注意不會再自動跑；同批官方查證表確認 subagent 可指定 `model` 欄自行拆分/執行者用不同模型，見 [[topics/community-tech-patterns]]
+- **Max 訂閱用量爭議延燒**——週配額觸頂案累積至 1,492 則留言官方未解，另有駭客可在不竊密碼下抽乾額度、「Max 20x」被點名實為週用量上限機制而非單純 20 倍換算，規劃預算前先查 `Settings > Usage`，見 [[entities/pricing]]
+- **Claude Code 權限 deny-list 可被 8 種手法繞過**——研究者實測顯示只有改用 allow-list 才真正擋得住，用 deny-list 限制權限的人這是直接改變安全配置的證據，見 [[topics/ai-agent-safety]]
+- **官方 dynamic workflows：編排從逐回合判斷改成可重跑 script**——固定會重複跑的流程現在能寫成 `pipeline()`／`parallel()` script 存起來重跑（全付費方案），見 [[topics/anthropic-agent-stack]]
+- **AskUserQuestion 60 秒逾時自動代答是刻意設計，非 bug**——用它設計審批分岔點的人要自行因應逾時代答，官方已確認不會改成 bug 修掉，見 [[entities/claude-code]]
+- **maxEffortLevel：跨供應商統一設 effort 上限**——一個開關同時管 Bedrock／Vertex／Foundry 等所有供應商，多供應商團隊不必逐一設定，也防止個別模型被意外調到最高 effort 推高成本，見 [[entities/claude-code]]
+- **跨 session 記憶層已達成形趨勢**——6 個獨立實作（claude-mem、OKF、CodeAlmanac、OzBrain、手動 Obsidian vault、brain.md）跨 105 天反覆出現，評估要不要導入時這個訊號比單一工具星數更值得參考，見 [[topics/community-tech-patterns]]
 
 ---
 
@@ -441,9 +442,7 @@ Boris Cherny 反對「vibe coding」推動術語向 spec-driven 靠攏，2026-05
 
 ---
 
-## 6. 測試與上線 — 怎麼讓它自己驗完再交給你　`[社群面待補]`
-
-⚠️ **本段只掃過官方文件，社群面未查**——「用 Claude Code 之後測試策略該怎麼變」社群有無累積，尚未查證。
+## 6. 測試與上線 — 怎麼讓它自己驗完再交給你　`[已補：庫內證據]`
 
 官方 `best-practices` 把「給 Claude 一個能驗證自己工作的方法」放在**全頁第一節**，排在 Explore→Plan→Code 之前。理由：
 
@@ -462,7 +461,15 @@ Boris Cherny 反對「vibe coding」推動術語向 spec-driven 靠攏，2026-05
 
 `/goal` 只管單一 session；要跨 session 保留狀態或 20 路並行，官方的另一格是 Managed Agents——各選項的分界見 [[topics/anthropic-agent-stack]]「你該用哪個」。
 
-**缺口**：官方機制齊備，但社群對「用 Claude Code 之後測試策略該怎麼變」幾乎沒有累積——這是九段裡最安靜的一格。
+**社群面（2026-09-12 補，庫內證據）：** 官方沒回答的問題——「規則寫了 Claude 真的會照做嗎」——社群有一份量化答案，且是負面的：**即使 CLAUDE.md 明寫 `## TDD First` 六行規則，30 天提交審計顯示 60% 的情況 Claude Code 仍先寫程式碼、事後才補測試**（規則遵守率僅 40%；dev.to「I Told Claude Code to Do TDD. It Wrote the Test AFTER the Code 6 Out of 10 Times.」，2026-05-25，原始條目見 [[topics/community-tech-discussions-archive#2026-05]]）。這與第 4 段「CLAUDE.md 規則遷移到 hooks 強制執行」是同一個機率性遵守問題的測試版本。
+
+**社群目前的結構性做法是把 TDD 從「寫在規則裡」改成「寫進流程指令裡」**：Pilot Shell 的 `/spec` 指令把完整 TDD 流程做成單一指令觸發，不依賴 Claude 自己記得規則（2026-05-04）；EvanFlow 的 TDD 驅動迴圈進一步在每個步驟設人工確認節點、不自動 commit，用人在迴圈中把關取代對規則遵守率的信任（2026-04-27）。兩者細節見 [[topics/community-tech-tools]] 工具目錄。
+
+**規模化之後，測試瓶頸從「測不測」轉移到「CI 撐不撐得住」**：多個平行 Claude Code agent 同時觸發建置與測試，會拖垮低規格機器、推高 CI 帳單（作者實測 4–5 個平行 agent 每天推近 90 次 commit）；社群做法是本地合併佇列——commit 排隊逐一完整測試後才合併，取代各分支各自即時觸發 CI（Hacker News「A local merge queue for parallel Claude Code agents」，2026-07-30，見 [[topics/community-tech-patterns#2026-07]]）。
+
+訊號強度：TDD 審計為單一作者、單一 30 天樣本，量化但未見第三方複測；merge queue 為今日首見單一開發者工具，尚待社群採用回饋；Pilot Shell／EvanFlow 為既有工具的既定設計，非針對本問題的新實測。
+
+**還沒解掉的那一塊**：三則證據答的是「規則會不會被遵守」與「測試規模化會不會拖垮 CI」，**沒有任何一則回答「用 Claude Code 之後，測試涵蓋率或測試型態本身該不該變」**——例如該不該因為它產出快而寫更多測試、或它容易漏邊界情況而該把測試重心移到邊界案例。這一題社群仍是空白。
 
 ---
 
