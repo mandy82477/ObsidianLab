@@ -2444,6 +2444,26 @@ window.WIKI_DATA = {
       ]
     },
     {
+      "id": "llm-wiki-pattern",
+      "pageType": "topic",
+      "name": "Karpathy 式 LLM wiki 模式",
+      "entityType": "",
+      "status": "monitoring",
+      "domain": "🌐 社群",
+      "pill": "warn",
+      "firstSeen": "",
+      "startDate": "2026-09-12",
+      "lastUpdated": "2026-09-12",
+      "lastNewsUpdate": "2026-09-12",
+      "updateFreq": "",
+      "parent": "",
+      "summary": "Karpathy 於 2026-04 提出的三層 wiki 模式，四個多月內長出至少四種路線互異的公開實作。本頁把那些實作的設計並排，再拿本庫自己對一次。對照結果：三層骨架本庫全有，甚至多數更嚴，真正缺的是「查詢」沒有自己的流程、頁面沒有機器讀得懂的查證日與信心欄位。",
+      "latestHeadline": "本頁建立：六個一手來源查證後並排四種公開實作，並完成本庫對照；同日補上查詢流程 `/wiki-query`。事實來自使用者提問後的查證，非當日日報。",
+      "readerDomains": [
+        "🌐 社群"
+      ]
+    },
+    {
       "id": "long-context-1m",
       "pageType": "topic",
       "name": "1M context：加不加價、你能不能關",
@@ -2593,8 +2613,8 @@ window.WIKI_DATA = {
       "pill": "active",
       "firstSeen": "",
       "startDate": "2026-09-02",
-      "lastUpdated": "2026-09-11",
-      "lastNewsUpdate": "2026-09-11",
+      "lastUpdated": "2026-09-12",
+      "lastNewsUpdate": "2026-09-12",
       "updateFreq": "🗓️ 每日快照（機器產出；決策表抄自社群工具目錄、最多落後一天；「本週竄升」以七日星數差計）",
       "parent": "",
       "summary": "讀者關心的開發實務類別，一頁看完兩件事：該裝哪個（「我卡在這裡」決策表——有人判斷過、帶證據等級與判定日）與這一類現在誰大、本週誰在漲（GitHub 每日規模榜，6 類可用 GitHub 辨識）。星數是規模不是品質：榜不做推薦，推薦只看決策表；榜上標 🧭 的工具代表決策表或工具目錄已有判斷。判斷的完整證據、推薦細節、S…",

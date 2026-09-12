@@ -12,7 +12,7 @@ parent: null
 children: "[]"
 page_role: "root"
 days_since_news_subtree: 0
-inbound_links: 8
+inbound_links: 10
 attribution_count: 0
 attribution_last: null
 top_source: null
@@ -301,6 +301,8 @@ Hook 的原理：exit 1 = 硬攔截，不是「提醒模型注意」，而是工
 - **codebase 文件自動化**（CodeAlmanac）：記憶對象從「agent 決策」擴大到「專案文件本身」，但 30 天無後續已顯示此路線目前僅一例、缺乏採用驗證
 - **團隊共享知識庫**（OzBrain）：記憶範疇從單一使用者延伸到團隊，主張取代而非補充現有筆記工具
 - **零依賴檔案式**（mindmuxai/brain.md）：不依賴外部服務或資料庫，直接以檔案存決策/需求/限制
+
+**這條路線怎麼設計：** Karpathy 式 LLM wiki 的三層模式、外面四種公開實作的並排對照見 [[topics/llm-wiki-pattern]]。
 
 **對現有設計的啟示：** 「Claude Code 內建自動記憶不夠用」不是單一抱怨，是社群過去 105 天反覆用五種不同路線在解的問題——如果你依賴內建記憶跨 session 保留架構決策，這條線的共識是：**要嘛把記憶外化成你自己能讀的格式（Markdown／JSON），要嘛乾脆整套換成手動策展。** 但留意：至今沒有一個實作經過第二方採用驗證或量化效果數據，全部是單一作者自陳，選型前先問「這個格式會不會只有我一個人在用」。
 

@@ -12,6 +12,7 @@
 | `wiki/topics/community-tech-discussions.md` | HN / Reddit 熱門技術討論 |
 | `wiki/topics/code-quality-decline.md` | 「Claude 變笨了」的三條線：官方已結案的 2026-03～04 退步、06 月起的 token 消耗異常、Opus 5 上線後的品質觀感；以及模型釘選與自我量測。**單一模型自身的社群觀感歸模型記者的 [[entities/opus-5]]，逐個 issue 的缺陷歸功能記者的 [[entities/claude-code]]，本頁只記「線」的狀態** |
 | `wiki/topics/community-large-codebase-workflow.md` | 🗓️ **週更，每日 ingest 不寫此頁**——每日只在 patterns 節點標 `**主線：**` tag（見下方「主線 tag 規則」）；週更整線重寫規則見 `.claude/reporter-rules/wiki-ingest-community-lint.md` |
+| `wiki/topics/llm-wiki-pattern.md` | 日報出現 LLM wiki／Karpathy wiki 的實作或設計討論，或 [[topics/skill-interest-watch]]「LLM 知識庫／文件策展／知識傳承」類出現竄升者且該 repo 屬此模式；詳細規則見下方「llm-wiki-pattern 更新規則」 |
 
 > 上表為核心頁面與觸發條件；此外 `wiki/index.md` 中領域為 🌐 社群 的所有頁面（含日後新增）皆由本記者負責維護與 lint。
 
@@ -29,6 +30,18 @@
 - ❌ **排除**：`Complete Guide` / `Everything you need to know` 型 SEO 農場文（常來自 `ai_made_tools`、`tokenmixai` 等內容農場帳號）；純新聞轉述（定價、發布、事件解釋——這些已由媒體/HN 來源覆蓋，dev.to 版本無獨特價值）；純帶貨 / growth hacking 自我推銷
 
 > 判斷原則：dev.to 的獨特價值是「工程師第一手實作經驗」，不是新聞或教學索引。內容答不出「作者具體做了什麼、學到什麼機制」→ 不收。
+
+---
+
+## llm-wiki-pattern 更新規則 `[加入: 2026-09-12]`
+
+本頁答「Karpathy 式 LLM wiki 這個模式怎麼設計、外面的實作長什麼樣、本庫對照起來有什麼、缺什麼」。建頁事實來自使用者提問通道（主編 2026-09-12 查證一手來源後直接寫入，見 `./CLAUDE.md`「使用者提問通道」與 `.claude/rules/collection-scope.md`），不是日報；日報後續動態照下列規則沉澱。
+
+- **`## 外面的實作` 一實作一列覆寫**：同一個實作有新動態只覆寫該列的「最有辨識度的一個設計」與查證日，不新增第二列；四欄固定（實作｜型態｜最有辨識度的一個設計｜查證日），儲存格 ≤ 120 字元，脈絡下沉表下「實作細節」條列。**新列的入口只有兩種訊號**：出現一個本表沒有的公開實作（有 repo／公開文章可查證），或既有實作的設計換了。媒體轉述與熱度回升不構成入口。
+- **`## CLAUDE_NEWS 對照起來` 兩表由主編於 `/wiki-lint` 複查**：「已經有的」與「還沒有的」吃的是本庫自己的規則與流程現況，不在日報來源清單內；記者發現失步（某列的本庫對應已不成立、或「還沒有的」已被補上）→ 在回報「同步自查」欄寫「⚠️ 需主編複查 llm-wiki-pattern 對照表：[哪一列]」，不自行翻值。
+- **規模不抄榜**：這一類誰大誰在漲的家是 [[topics/skill-interest-watch]]，本頁只留一句指路，不複製星數（抄了必然比快照舊）。
+- **查證日是硬欄位**：本頁每筆事實都標查證日與來源連結；記者無 web 工具，不得為新實作自填查證日——只能提列並回報主編查證。
+- 蒸餾與封存照 `.claude/reporter-rules/wiki-ingest-format.md`「時段蒸餾與封存（全站通用）」，對象為 `## 時序`；archive 子頁為 `topics/llm-wiki-pattern-archive`（尚未建立，達門檻時才建）。
 
 ---
 

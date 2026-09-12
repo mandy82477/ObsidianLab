@@ -14,7 +14,7 @@
 ## 這是一個 LLM wiki：三個動作
 
 - **Ingest（每日，`/news-pipeline`）**：爬蟲產日報（`news/` 唯讀原料）→ 主編分類、派六位記者各寫自己領域的頁 → 主編彙整 `wiki/index.md`、`feature-radar.md`、`log.md`。頁面是「被策展的現在」，log 是不可改的過去，index 只放路由；每個事實只有一個家，別處用 wikilink 指過去。
-- **Query（任何 session）**：專有名詞／issue 號／版本號 → 直接 Grep `wiki/`；概念、選型 → `wiki/index.md` 挑頁，頁頂 callout 是最新狀態；「最近怎樣」→ `wiki/log.md` 先 Grep 日期；誰負責哪頁 → `.claude/reporter-rules/` 的負責頁面表；引用關係 → `python scripts/wiki_graph.py`。完整六路見 `wiki/CLAUDE.md`「搜尋策略」。
+- **Query（任何 session）**：專有名詞／issue 號／版本號 → 直接 Grep `wiki/`；概念、選型 → `wiki/index.md` 挑頁，頁頂 callout 是最新狀態；「最近怎樣」→ `wiki/log.md` 先 Grep 日期；誰負責哪頁 → `.claude/reporter-rules/` 的負責頁面表；引用關係 → `python scripts/wiki_graph.py`。完整六路見 `wiki/CLAUDE.md`「搜尋策略」；查詢流程與答案回流見 `.claude/commands/wiki-query.md`（`/wiki-query`）。
 - **Lint（每週，`/weekly`、`/wiki-lint`）**：矛盾、孤兒、過期、蒸餾封存；歷史質疑抽題代打。
 - **使用者提問通道**：使用者在對話中點名的事實，由主編以 web 工具查證一手來源後直接寫進 wiki（標查證日＋來源），並在 `wiki/log.md` append 一筆 Query 條目；不經日報，歸因 slug `user-query`。
 
@@ -46,6 +46,7 @@
 
 - 🟢 每天：`/news-pipeline`（抓新聞 → 日報 → wiki ingest → 建置 web → push；已含 `/wiki-ingest`）
 - 🟡 每週：`/weekly`（週報 ＋ wiki 週度回顧 ＋ 開放迴路掃描 ＋ 單一 push；已含 `/weekly-report`、`/wiki-weekly-review`），另跑 `/wiki-lint` 做每週品質檢查
+- 問 wiki 內容、查某件事的現況、要出處：`/wiki-query`
 - 改完 `.claude/` 或本檔：`/review-commands`，直到零錯誤
 
 > 其餘指令（`/wiki-backfill`、`/wiki-readability`、`/pipeline-change-check` …）見 `.claude/commands/` 各檔的 description。

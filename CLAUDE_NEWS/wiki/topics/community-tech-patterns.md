@@ -11,7 +11,7 @@ parent: null
 children: "['topics/community-tech-patterns-archive']"
 page_role: "hub"
 days_since_news_subtree: 1
-inbound_links: 55
+inbound_links: 56
 attribution_count: 152
 attribution_last: "2026-09-11"
 top_source: "github"
@@ -80,7 +80,7 @@ Multi-agent 架構與 Skills 設計已是社群定案的做法；還在試的十
 - **Hooks 與自動化**：Stop Hook 要求可驗證完成證明；Pre-completion Hook 防模糊結束；hooks 可感知 agent 活躍狀態驅動環境副作用（螢幕喚醒、實體燈光顏色，見 Adrafinil、氛圍狀態燈）
 - **模型使用策略**：Dragoman / Workweave 自動路由，嵌入 Claude Code / Codex / Cursor 的成本感知路由；InstantVideos 將分工路由思路延伸至內容生成（文字/圖像/影音各交專門模型）
 - **Token / 成本優化**：極簡輸出模式（穴居人）企業採用獲 404 Media 確認，OpenAI、Nvidia、GitHub 開發者使用；claude-thermos 以保活請求維持快取不過期，但引發「成本轉嫁其他用戶」爭議；pxpipe 反其道而行，把文字 context 渲染成圖片傳遞以降低 token 用量；`claude -p` 未加 `--bare` 冷啟動實測約耗 15 萬 token
-- **記憶與知識管理**：OKF 標準化 agent 知識格式供團隊共用；已否決方案未結構化記錄會導致 agent 重新實作已被殺掉的方案；OzBrain 主張取代傳統筆記/任務管理工具，鎖定團隊共用而非單一使用者記憶
+- **記憶與知識管理**：OKF 標準化 agent 知識格式供團隊共用；已否決方案未結構化記錄會導致 agent 重新實作已被殺掉的方案；OzBrain 主張取代傳統筆記/任務管理工具，鎖定團隊共用而非單一使用者記憶；Karpathy 式 LLM wiki 這條路線的設計對照見 [[topics/llm-wiki-pattern]]
 - **Agent 規模化**：工具範圍限制比角色描述更可靠的邊界守護；無人監督排程任務已有完整 Mac Mini M4 方案；可觀測性層（live-log-viewer-next）開始補足「多 agent 進度難追蹤」的協調盲點；agent-channels 提供跨 worktree 通訊
 - **安全架構**：Grepathy 偵測、追蹤 agent 自主做出但未經人工核准的決策行為；Spare Mac 隔離環境以備用實體裝置作為 agent 全權控制沙箱，降低主力工作機風險（`--dangerously-skip-permissions` 風險隔離）；OneCLI 在網路層攔截請求並代換真實憑證，agent 本身全程不接觸密鑰
 

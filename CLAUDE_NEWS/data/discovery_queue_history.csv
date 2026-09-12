@@ -138,3 +138,14 @@ date,window,queued,emitted,note
 2026-09-11,interest:orchestration,30,5,ok
 2026-09-11,interest:git-hygiene,0,0,retired
 2026-09-11,interest:knowledge-curation,22,5,ok
+2026-09-12,interest:project-setup,30,5,ok
+2026-09-12,interest:codebase-understanding,30,5,ok
+2026-09-12,interest:planning,33,5,ok
+2026-09-12,interest:implementation-guard,0,0,retired
+2026-09-12,interest:code-review,0,0,retired
+2026-09-12,interest:testing-verification,0,0,retired
+2026-09-12,interest:debugging,0,0,retired
+2026-09-12,interest:rules-maintenance,30,5,ok
+2026-09-12,interest:orchestration,30,5,ok
+2026-09-12,interest:git-hygiene,0,0,retired
+2026-09-12,interest:knowledge-curation,64,5,ok
