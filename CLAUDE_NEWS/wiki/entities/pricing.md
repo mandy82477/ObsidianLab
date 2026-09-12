@@ -4,17 +4,17 @@ kind: "entity"
 type: "policy"
 status: "active（持續調整中）"
 domain: "💼 商業"
-last_updated: "2026-09-09"
-last_news_update: "2026-09-09"
+last_updated: "2026-09-10"
+last_news_update: "2026-09-10"
 status_main: "active"
-days_since_news: 3
+days_since_news: 2
 parent: null
 children: "['entities/pricing-archive']"
 page_role: "hub"
-days_since_news_subtree: 3
-inbound_links: 141
-attribution_count: 93
-attribution_last: "2026-09-09"
+days_since_news_subtree: 2
+inbound_links: 142
+attribution_count: 94
+attribution_last: "2026-09-10"
 top_source: "google-news"
 pending_count: 4
 pending_overdue: 1
@@ -29,8 +29,8 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 **狀態：** active（持續調整中）
 **領域：** 💼 商業
 **首次出現：** 2026-04-25
-**最後更新：** 2026-09-09
-**最後新聞更新：** 2026-09-09
+**最後更新：** 2026-09-10
+**最後新聞更新：** 2026-09-10
 
 > **最新計費政策異動**（2026-09-07）
 > - **09-14 起你的週配額變成現在的 83%**：+50% 加成 09-13 23:59 PT 到期（[官方說明中心](https://support.claude.com/en/articles/15910845-claude-code-may-august-2026-weekly-limits-promotion)），接手的是永久 +25%（08-29 官方 Bluesky 公告），換算後相對現在少約 17%。適用 Pro、Max、Team 與座位制 Enterprise。
@@ -213,13 +213,13 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 
 %% 維運備忘：⚖️ 在判決或撤訴前一律留表，官方曾公開承認過的事故也不因時間轉 ⏸（改標 ⛔ 或維持 🔴 到官方給出結果）。這五值不看留言數，只看官方有沒有給出答案——例如 #79337 最後動態 2026-08-07（距今逾 30 天）仍是 🔴，因為它未逾 90 天且官方無回應。 %%
 
-%% 維運備忘：上限與退場判準見 .claude/reporter-rules/wiki-ingest-commercial.md「pricing 事件流的上限與退場」 %%
+%% 維運備忘：上限與退場判準見 .claude/rules/wiki-ingest-commercial.md「pricing 事件流的上限與退場」 %%
 
 | 事故 | 狀態 | 最後動態 | 你該做的事 |
 |------|------|---------|-----------|
 | HERMES.md 字串觸發靜默切 API 計費 | ⛔ 官方拒修 | 2026-04-25，官方確認為 bug 但拒絕退款 | commit 訊息避開該大寫字串；已被扣費者官方不退 |
 | Anthropic 證實 $16.6M 帳務錯誤、企業多收 $1.7M（含南韓 $16.7M 個案） | 🔴 未解 | 2026-07-20 | 核對 7 月帳單有無異常扣款；退款與補救官方未載明 |
-| Max 20x 實際用量與廣告宣稱落差 | ⚖️ 司法中 | 2026-09-08，三家媒體同日跟進（Verge／Startup Fortune／The New Stack），首度點名「20 倍」實為週用量上限機制 | 依現況估算用量，不要以「20 倍」為預算基準 |
+| Max 20x 實際用量與廣告宣稱落差 | ⚖️ 司法中 | 2026-09-09，四家媒體跟進（Verge／Startup Fortune／The New Stack／Engadget），首度點名「20 倍」實為週用量上限機制 | 依現況估算用量，不要以「20 倍」為預算基準 |
 | Max 5x 續訂扣款完成後帳號遭停用 | 🔴 未解 | 2026-09-04，GitHub Issue #5088 累積 184 則留言 | 續訂後立刻確認帳號可用，留下扣款紀錄 |
 | 升級付款流程 PaymentIntent 提前作廢 | 🔴 未解 | 2026-08-12，Issue #55982 累積 77 則留言 | 升級失敗時不要重複送出，先查有無重複授權 |
 | Max 訂閱幾乎一開工就撞上用量上限 | 🔴 未解 | 2026-09-06，Issue #16157 累積 1,492 則留言、725 👍，本頁互動量最高 | 先查 `Settings > Usage` 是否真的觸頂；異常請在 issue 附時間戳與模型名 |
@@ -253,11 +253,12 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 
 %% 維運備忘：未列入事故總表，表滿載，2026-09-09 %%
 
-#### ⚖️ 2026-09-08：三家媒體同日跟進 Max 20x 集體訴訟——The New Stack 首度點名「週用量上限」為落差機制
+#### ⚖️ 2026-09-08／09-09：四家媒體跟進 Max 20x 集體訴訟——The New Stack 首度點名「週用量上限」為落差機制
 
 - **The Verge（2026-09-08）**：報導 AI 重度用戶已對 Anthropic 提起訴訟，指控訂閱方案用量宣稱具誤導性；僅標題可用。
 - **Startup Fortune（2026-09-09）**：同一起訴訟的另一篇報導，聚焦 Max 20x「20 倍用量」宣稱與實際體驗的落差；僅標題可用。
 - **The New Stack（09-08）**：首度點名機制——官方宣傳的「20 倍用量」實為**新設的週用量上限**（weekly ceiling）。與本頁 08-31 HN 討論、06-16 集體訴訟同屬一爭議延燒，非新指控；官方未見逐字定義（Google News/The New Stack）。
+- **Engadget（2026-09-09）**：同一起訴訟第四篇報導，標題聚焦訂閱用戶已對 Anthropic 提起訴訟、爭執點在 Max 方案條款內容；僅標題可用，未見新增求償金額或案情細節，與上列三則同屬同一起訴訟的媒體擴散（Google News/Engadget）。
 - **同日 Reddit 疑似相關回報（單一貼文，score 未知，未經證實）**：r/ClaudeCode 用戶（2026-09-09）稱同一天觸頂日限額兩次，第二次視窗重置約 50 分鐘後即再次觸及 100%；與本頁已記錄 09-06 GitHub Issue #16157（幾乎一開工就撞上限）症狀相似，是否同根因未見交叉確認，僅並列記錄（Reddit）。
 
 #### 🔴 2026-09-06：GitHub Issue 累積 1,492 則留言、725 👍——Max 訂閱幾乎一開工就撞上用量上限

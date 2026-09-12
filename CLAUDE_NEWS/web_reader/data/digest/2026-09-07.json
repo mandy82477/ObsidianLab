@@ -395,11 +395,5 @@
     }
   ],
   "preview": "Max 訂閱用戶回報幾乎一開工就撞上用量上限，GitHub Issue 湧入 1,492 則留言、725 個讚，配額計算方式與顯示是否透明尚無官方定論。",
-  "sedimentedToday": [
-    {
-      "id": "enterprise-tool-tracker",
-      "name": "大型企業 AI 編碼工具使用追蹤",
-      "pageType": "topic"
-    }
-  ]
+  "sedimentedToday": []
 }

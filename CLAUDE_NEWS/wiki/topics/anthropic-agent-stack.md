@@ -3,15 +3,15 @@ page: "topics/anthropic-agent-stack"
 kind: "topic"
 status: "ongoing"
 domain: "🛠️ 工具/功能"
-last_updated: "2026-09-10"
-last_news_update: "2026-09-10"
+last_updated: "2026-09-11"
+last_news_update: "2026-09-11"
 status_main: "ongoing"
-days_since_news: 2
+days_since_news: 1
 parent: null
 children: "['entities/managed-agents']"
 page_role: "hub"
-days_since_news_subtree: 2
-inbound_links: 2
+days_since_news_subtree: 1
+inbound_links: 4
 attribution_count: 4
 attribution_last: "2026-09-10"
 top_source: "user-query"
@@ -19,7 +19,7 @@ pending_count: 0
 pending_overdue: 0
 pending_next_review: null
 pending_signalled: 0
-signal: "孤島"
+signal: "健康"
 generated_by: "scripts/gen_wiki_frontmatter.py"
 ---
 # 官方 agent 積木：該用哪個、怎麼組
@@ -28,11 +28,11 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 **領域：** 🛠️ 工具/功能
 **別名：** agent stack, dynamic workflows, agent teams, cross-session messaging
 **開始日期：** 2026-09-10
-**最後更新：** 2026-09-10
-**最後新聞更新：** 2026-09-10
+**最後更新：** 2026-09-11
+**最後新聞更新：** 2026-09-11
 
-> **最新動態**（2026-09-10）
-> 官方文件確認 dynamic workflows 已對全部付費方案開放（Pro 需在設定開啟）：script 式確定性編排、同 session 可續跑——「傳訊有了、編排缺席」的格局自此改變。
+> **最新動態**（2026-09-11）
+> anthropic-sdk-python v1.5.0 為 Managed Agents 新增 auto mode 工具權限設定，細節見子頁 [[entities/managed-agents]]；積木架構本身無變動。
 
 ---
 

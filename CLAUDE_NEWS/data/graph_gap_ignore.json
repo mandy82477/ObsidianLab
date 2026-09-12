@@ -1,4 +1,60 @@
 {
   "_doc": "缺口偵測（python scripts/wiki_graph.py gaps）的「已審、無需連結」清單。每對登記 pages（兩個 slug）、reviewed（日期）、why（一句）。登記後該對不再列出；頁面改名時同步。",
-  "pairs": []
+  "pairs": [
+    {
+      "pages": ["entities/opus-5", "topics/community-tech-discussions"],
+      "reviewed": "2026-09-12",
+      "why": "三則共同落地新聞講的是「Claude 變笨了」，事實的家是 topics/code-quality-decline，兩頁皆已連向它；直接互連會在模型頁與爭論頁之間長出第三份副本"
+    },
+    {
+      "pages": ["entities/opus-4-8", "topics/competitor-landscape"],
+      "reviewed": "2026-09-12",
+      "why": "共同落地的是蒸餾爭議，其家為 topics/anthropic-government-policy；competitor-landscape 規則明文「Anthropic 自己的動作不進本頁」"
+    },
+    {
+      "pages": ["topics/ai-agent-safety", "topics/model-comparison"],
+      "reviewed": "2026-09-12",
+      "why": "Auto 模式的安全面住 ai-agent-safety、選型面住 model-comparison，兩頁回答不同問題；model-comparison 另有欄數與跨家紀律，不宜引入安全敘事"
+    },
+    {
+      "pages": ["topics/community-large-codebase-workflow", "topics/skill-interest-watch"],
+      "reviewed": "2026-09-12",
+      "why": "skill-interest-watch 是機器整頁覆寫的快照頁，且規則明訂單向橋（榜→tools）；large-codebase 的 🧰 行已正確連向 community-tech-tools 決策表"
+    },
+    {
+      "pages": ["entities/claude-design", "topics/skill-interest-watch"],
+      "reviewed": "2026-09-12",
+      "why": "同上單向橋規則：快照頁由機器覆寫，不接受他頁補入連結，手補下次快照即被蓋掉"
+    },
+    {
+      "pages": ["topics/anthropic-commitments", "topics/enterprise-tool-tracker"],
+      "reviewed": "2026-09-12",
+      "why": "官方承諾兌現追蹤與企業採用事件無直接因果；共享鄰居來自兩者都被商業線大量引用，屬樞紐效應而非缺漏"
+    },
+    {
+      "pages": ["entities/google-investment", "topics/market-signals"],
+      "reviewed": "2026-09-12",
+      "why": "market-signals 規則明訂事實不搬家、只連事實的家；Google 投資的現況已由 topics/anthropic-business 承接，該頁已被 market-signals 連結"
+    },
+    {
+      "pages": ["topics/long-context-1m", "topics/model-task-leaderboard"],
+      "reviewed": "2026-09-12",
+      "why": "1M 旋鈕的計費與控制權與跨家任務榜單無主題交集；共享鄰居僅 opus-5 與 model-comparison 兩個樞紐"
+    },
+    {
+      "pages": ["entities/chris-olah", "topics/safety-china-trust-dispute"],
+      "reviewed": "2026-09-12",
+      "why": "Chris Olah 在政策線上的動作是 2026-05 教宗封論出席，與中美工具信任對峙無關；共享鄰居全為 anthropic-government-policy 母子頁"
+    },
+    {
+      "pages": ["entities/mythos", "topics/long-context-1m"],
+      "reviewed": "2026-09-12",
+      "why": "Mythos 為授權機構限定模型，1M 頁的計費分界與預設行為皆以一般可取用陣容為對象，未涵蓋該模型"
+    },
+    {
+      "pages": ["entities/opus-4-8", "topics/long-context-1m"],
+      "reviewed": "2026-09-12",
+      "why": "1M 頁的世代分界表只列 Fable 5／Opus 5／Sonnet 5／Sonnet 4.6 與 Sonnet 4／4.5 兩組，Opus 4.8 不在任一表列，屬結構相似度假陽性"
+    }
+  ]
 }

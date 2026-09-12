@@ -4,7 +4,7 @@ kind: "entity"
 type: "product"
 status: "active"
 domain: "🛠️ 工具/功能"
-last_updated: "2026-08-27"
+last_updated: "2026-09-12"
 last_news_update: "2026-08-17"
 status_main: "active"
 days_since_news: 26
@@ -29,7 +29,7 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 **狀態：** active
 **領域：** 🛠️ 工具/功能
 **首次出現：** 2026-07-01
-**最後更新：** 2026-08-27
+**最後更新：** 2026-09-12
 **最後新聞更新：** 2026-08-17
 
 > **最新動態**（2026-08-17）
@@ -54,7 +54,7 @@ Claude Science 是 Anthropic 於 2026-07-01 發布的科學家專用 AI 工作�
 
 | 項目 | 評分 |
 |------|------|
-| 社群熱度 | 🔥🔥 |
+| 社群熱度 | 🔥 |
 | 試用價值 | ⚡ 有條件推薦 |
 | 最適合 | 學術研究者、資料科學家、需要 AI 輔助的實驗室工作流 |
 | 不適合 | 純軟體工程任務（用 Claude Code 更適合）；非研究場景 |

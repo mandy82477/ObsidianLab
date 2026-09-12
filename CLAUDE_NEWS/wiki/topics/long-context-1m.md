@@ -3,7 +3,7 @@ page: "topics/long-context-1m"
 kind: "topic"
 status: "ongoing"
 domain: "🛠️ 工具/功能"
-last_updated: "2026-09-07"
+last_updated: "2026-09-12"
 last_news_update: "2026-09-02"
 status_main: "ongoing"
 days_since_news: 10
@@ -28,7 +28,7 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 **領域：** 🛠️ 工具/功能
 **別名：** 1M context window, long context, `[1m]`
 **開始日期：** 2026-04-10
-**最後更新：** 2026-09-07
+**最後更新：** 2026-09-12
 **最後新聞更新：** 2026-09-02
 
 > **最新動態**（2026-09-02）
@@ -107,7 +107,7 @@ Pro 方案新開 session 預設開啟 1M 且找不到關閉方式（62 則留言
 Fable 5 免費期到期當天，Max 方案一度被誤判需購買 usage credits 才能執行 Fable 5，受影響帳號的已儲存模型為 `claude-fable-5[1m]`（[#79337](https://github.com/anthropics/claude-code/issues/79337)）；官方當日定性為誤判並建議重啟，社群回報延燒至 08-07。
 
 ### 2026-07-01
-Claude Code v2.1.197 將 Sonnet 5 設為預設模型，所有新 session 原生享有 1M context——**1M 由選項變成預設**，這是後續「關不掉」問題的起點。
+Claude Code v2.1.197 將 [[entities/sonnet-5|Sonnet 5]] 設為預設模型，所有新 session 原生享有 1M context——**1M 由選項變成預設**，這是後續「關不掉」問題的起點。
 
 ### 2026-06-11
 v2.1.173 修正模型名稱含 `[1m]` 後綴時無法正規化的問題（Fable 5 預設含 1M，後綴自動移除）。

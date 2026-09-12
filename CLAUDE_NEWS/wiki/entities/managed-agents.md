@@ -4,17 +4,17 @@ kind: "entity"
 type: "feature"
 status: "beta（所有 API 帳號預設可用，須帶 beta header）"
 domain: "🛠️ 工具/功能"
-last_updated: "2026-09-10"
-last_news_update: "2026-09-03"
+last_updated: "2026-09-11"
+last_news_update: "2026-09-11"
 status_main: "beta"
-days_since_news: 9
+days_since_news: 1
 parent: "topics/anthropic-agent-stack"
 children: "[]"
 page_role: "child"
-days_since_news_subtree: 9
-inbound_links: 32
-attribution_count: 4
-attribution_last: "2026-09-03"
+days_since_news_subtree: 1
+inbound_links: 33
+attribution_count: 5
+attribution_last: "2026-09-11"
 top_source: "github"
 pending_count: 1
 pending_overdue: 1
@@ -31,11 +31,11 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 **別名：** Anthropic Managed Agents, 受管代理
 **上層：** [[topics/anthropic-agent-stack]]
 **首次出現：** 2026-04-28
-**最後更新：** 2026-09-10
-**最後新聞更新：** 2026-09-03
+**最後更新：** 2026-09-11
+**最後新聞更新：** 2026-09-11
 
-> **最新動態**（2026-09-03）
-> Reddit 出現「同一模型、同準度、成本低最多 75%」的開源替代方案宣稱，未附測試方法；官方端自 05-22 起無新功能，只有 SDK 版號擴充。
+> **最新動態**（2026-09-11）
+> anthropic-sdk-python v1.5.0 新增 Managed Agents 的 auto mode 工具權限設定——是 05-22 以來四筆 SDK 更新中首次列出具體項目；細節仍待官方文件補充。
 
 ---
 
@@ -43,7 +43,7 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 
 Anthropic Managed Agents 是 Claude Platform 上的官方 agent 框架（[概覽文件](https://platform.claude.com/docs/en/managed-agents/overview)）：持久記憶（含 Dreaming 記憶整合）、20 路並行子代理、Outcomes 規格驗證、Proactive Workflows、企業自架沙箱。**狀態為 beta**（自 2026-05-11 起，所有 API 帳號預設可用，須帶 `managed-agents-2026-04-01` beta header）——各零件成熟度不一：只有 `/goal` 已達正式發布，Dreaming 與 Agent View 仍是 research preview（Dreaming 另需申請並帶 `dreaming-2026-04-21` header），Proactive Workflows 與 Capability Curve 自 2026-05-18 公告後逾 100 天無進一步細節公布。Outcomes 讓規格文件成為執行時的強制依據（官方語「Specs become load-bearing」）。
 
-實質新功能停在 2026-05-22；此後四筆全是 SDK 版號擴充，官方 changelog 未列細節。獨立第三方生產環境回饋至今為零——本頁引用到的兩則使用案例，一則用的是自組架構、一則來自 Claude Code 創始人。
+實質新功能停在 2026-05-22；此後多筆為 SDK 版號擴充，多數官方 changelog 未列細節，2026-09-11 的 anthropic-sdk-python v1.5.0 首度列出具體項目——新增 auto mode 工具權限設定，惟功能細節仍待官方文件補充。獨立第三方生產環境回饋至今為零——本頁引用到的兩則使用案例，一則用的是自組架構、一則來自 Claude Code 創始人。
 
 ---
 
@@ -117,6 +117,7 @@ Anthropic Managed Agents 是 Claude Platform 上的官方 agent 框架（[概覽
 
 | 日期 | 事件 |
 |------|------|
+| 2026-09-11 | **anthropic-sdk-python v1.5.0** 新增 Managed Agents auto mode 工具權限設定，changelog 首度列出具體項目（見 [Release](https://github.com/anthropics/anthropic-sdk-python/releases/tag/v1.5.0)）|
 | 2026-09-03 | Reddit 貼文宣稱自建開源 agent 框架以同一模型達同準度、成本低最多 75%，未附測試方法與資料集（[原文](https://www.reddit.com/r/LocalLLaMA/comments/1w65ise/we_built_an_opensource_modelneutral_agent_harness/)）|
 | 2026-08-19 | **anthropic-sdk-python v0.125.0** 新增 managed agents 的 web search 設定相關功能，官方 changelog 未列出具體項目（見 [Release](https://github.com/anthropics/anthropic-sdk-python/releases/tag/v0.125.0)）|
 | 2026-07-22 | **anthropic-sdk-python v0.118.0** 新增 Managed Agents API 支援，是否與 v0.117.0 dreaming 同批次擴充待確認 ❓ 待查證 ⟨Q-02⟩（見 [Release](https://github.com/anthropics/anthropic-sdk-python/releases/tag/v0.118.0)）|

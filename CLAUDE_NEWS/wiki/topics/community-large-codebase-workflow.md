@@ -3,15 +3,15 @@ page: "topics/community-large-codebase-workflow"
 kind: "topic"
 status: "ongoing"
 domain: "🌐 社群"
-last_updated: "2026-09-05"
-last_news_update: "2026-09-03"
+last_updated: "2026-09-12"
+last_news_update: "2026-09-10"
 update_freq: "🗓️ 週更（每週從 [[topics/community-tech-patterns]] 沉澱一次；更新日期停留數天屬正常節奏）"
 status_main: "ongoing"
-days_since_news: 9
+days_since_news: 2
 parent: null
 children: "[]"
 page_role: "root"
-days_since_news_subtree: 9
+days_since_news_subtree: 2
 inbound_links: 41
 attribution_count: 2
 attribution_last: "2026-08-05"
@@ -29,11 +29,11 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 **領域：** 🌐 社群
 **更新頻率：** 🗓️ 週更（每週從 [[topics/community-tech-patterns]] 沉澱一次；更新日期停留數天屬正常節奏）
 **開始日期：** 2026-05-02
-**最後更新：** 2026-09-05
-**最後新聞更新：** 2026-09-03
+**最後更新：** 2026-09-12
+**最後新聞更新：** 2026-09-10
 
-> **本週答案變動**（2026-09-03）
-> 「索引與記憶」線新增兩節點：09-02 thedotmack/claude-mem（跨 7+ harness、AI 壓縮 session 記憶，9.3 萬星）補上「可攜性」子軸線第一個規模較大的實作案例，惟僅星數佐證未經 forks/issues 覆核；同日一則 dev.to 第一手實測指出內建記憶與人類認知記憶「不做同一件事」，屬評測角度補充。8/31「否決記錄需可驗證、防竄改」仍停在概念層。其餘三條線（並行規模、Context/Token、除錯與分工）本輪無帶「主線」tag 的新節點，答案不變。
+> **本週答案變動**（2026-09-12）
+> 三條線各補一則新節點：「除錯與分工」09-05 interns-review-plugin（3 個 fable agent 扮「實習生」對抗式審查）補上對抗式審查又一個具體實作；「索引與記憶」09-06 兩則同日——gentle-ai（Claude Code／Cursor／OpenCode／Codex 共用設定＋持久記憶＋規格驅動開發）補「可攜性」子軸線第二個案例、cpr-compress-preserve-resume（壓縮—保存—還原三段式跨 session 記憶）補「本地索引」子軸線；「Context / Token」09-10 nightshift（DAG 調度多 issue 工作流，疊 PCC 記憶＋向量 RAG＋滑動視窗三層 context 管理）作者具名稱官方 `/goal` 有 context rot 架構缺陷，屬單一開發者對官方功能的負向對照，未見獨立複測。「並行規模」線本輪無帶「主線」tag 的新節點，答案不變。
 
 ---
 
@@ -89,7 +89,7 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 
 | 子問題 | 社群走到哪 | 代表實作 | 證據強度 |
 |---|---|---|---|
-| 按需取回 | 預先 @-mention 定為反模式；讀取上限＋索引層；不裁剪會 O(N²)（62.8–85.9% 額外 token） | Just-in-Time Retrieval、Compact Memory、Git Lazy Mount 等 | 多來源 |
+| 按需取回 | 預先 @-mention 定為反模式；讀取上限＋索引層；不裁剪會 O(N²)（62.8–85.9% 額外 token）；nightshift 疊三層因應多 issue context rot | Just-in-Time Retrieval、Compact Memory、Git Lazy Mount、nightshift 等 | 多來源 |
 | MCP 成本 | 9 個 server ≈ 每輪 38k token 冷啟動；設計（描述長度、回傳格式）實測有差 | MCP 信任邊界審查、隱藏成本實測 | 多來源 |
 | 極簡輸出 | 單次回覆 70→20 token；65% 降耗；企業已當降本策略 | Caveman Skill、404 Media 報導 | 多來源 |
 | CLAUDE.md 取捨 | 四層寄放地依觸發頻率；載入順序（CLAUDE.local.md 後載、受管理原則檔各 OS 路徑不同） | 「該裝什麼」「載入順序」兩篇 | 單一深度分析 |
@@ -111,16 +111,16 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 
 **🧰 現在就能下的解**：見 [[topics/community-tech-tools]]「我卡在這裡」——接手大 repo 讓 agent 讀懂走「接手沒碰過的大 repo，agent 讀不懂」列（首選 graphify）；跨 session 記憶走「每開新 session 都要重講一遍」列（首選 brain.md，零依賴檔案式；團隊共享與 Obsidian 路線的分界在同列第三欄）
 
-**還沒解決**：跨工具可攜有了第一個較大規模案例（claude-mem，09-02，惟僅星數佐證未經覆核），但 ltm／OKF 兩種協定路線仍是少數派、彼此不互通；「codebase 文件自動維護」只有 CodeAlmanac 一例；「已否決方案索引」累積到第二個獨立觀察（8/31 補上「可驗證、防竄改」的具體要求），但仍停在問題點名、無工具實作；「內建記憶到底解決了什麼」也剛出現第一則第一手評測（09-02），與人類認知記憶功能不重疊，尚無第二例覆核。三個近期實作路線各走各的（零依賴檔案式、手動策展取代官方、團隊共享），尚無交叉比較或共識收斂。
+**還沒解決**：跨工具可攜累積到第二個案例（claude-mem 09-02、gentle-ai 09-06，皆僅星數佐證未經覆核），但 ltm／OKF 兩種協定路線仍是少數派、彼此不互通；「codebase 文件自動維護」只有 CodeAlmanac 一例；「已否決方案索引」累積到第二個獨立觀察（8/31 補上「可驗證、防竄改」的具體要求），但仍停在問題點名、無工具實作；「內建記憶到底解決了什麼」也剛出現第一則第一手評測（09-02），與人類認知記憶功能不重疊，尚無第二例覆核。三個近期實作路線各走各的（零依賴檔案式、手動策展取代官方、團隊共享），尚無交叉比較或共識收斂。
 
 | 子問題 | 社群走到哪 | 代表實作 | 證據強度 |
 |---|---|---|---|
 | 統一框架 | Repo-as-Memory：決策外化；跨 repo 依賴圖需另注入（`nx graph` 等） | Repo-as-Memory、Cross-repo Blast Radius | 單一深度分析＋推論 |
-| 本地索引 | 向量 DB（39ms 檢索）／圖資料庫／SQLite session 索引／Markdown+git，各走一路；圖譜路線採用量最大（graphify，08-31 訊號 11.3 萬星） | graphify、Memex、session-indexer 等，見 [[topics/community-tech-patterns]] | 多來源 |
+| 本地索引 | 向量 DB（39ms 檢索）／圖資料庫／SQLite session 索引／Markdown+git，各走一路；圖譜路線採用量最大（graphify，11.3 萬星） | graphify、Memex、session-indexer、cpr-compress-preserve-resume 等，見 [[topics/community-tech-patterns]] | 多來源 |
 | 零依賴檔案式 | 決策／需求／限制三類專案層級資訊，CLI 直存檔案不依賴外部服務 | mindmuxai/brain.md（504★）| 單一實測 |
 | 取代官方記憶 | 主張使用者手動策展比官方自動記憶更可控、更可信賴 | 手動維護 Obsidian vault（LLM Wiki 形式） | 單一實測 |
 | 團隊共享 | 鎖定「跟著使用者走」而非留在人類設計的筆記/任務管理系統 | OzBrain（HN 69）| 單一實測 |
-| 可攜性 | Markdown 規則檔不跨工具 → JSON 協定或格式規約；claude-mem 以「AI 壓縮 session 過程」實作跨 7+ harness 記憶，規模較大但未經覆核 | ltm、OKF、claude-mem（見 [[topics/community-tech-patterns]]） | 單一實測＋大規模未覆核 |
+| 可攜性 | Markdown 規則檔不跨工具 → JSON 協定或格式規約；claude-mem／gentle-ai 各自實作跨工具記憶或設定層，規模較大但皆未經覆核 | ltm、OKF、claude-mem、gentle-ai（見 [[topics/community-tech-patterns]]） | 單一實測＋大規模未覆核 |
 | 文件自動維護 | codebase wiki 隨對話自動更新，取代手維護 MANUAL.md | CodeAlmanac | 單一實測 |
 | 否決方案索引 | 「已被否決」只在人腦或討論串 → 隱形重工；8/31 補上「否決紀錄本身須可驗證、防竄改」的具體要求 | 兩則概念性觀察（8/7、8/31）| 推論 |
 
@@ -142,7 +142,7 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 | 子問題 | 社群走到哪 | 代表實作 | 證據強度 |
 |---|---|---|---|
 | 邊界規則 | 11 條多 agent CLAUDE.md 規則（工作區邊界、禁改共享狀態、merge 責任）；PostToolUse 稽核日誌 | Multi-agent 衝突防範、稽核日誌模式 | 多來源 |
-| 對抗式審查 | 計畫前／程式碼後兩做法；唯讀審查者；跨模型交叉審查（arXiv 2607.21656 重現） | Read-Only Reviewer、Agent-plan-review-loop、adamsreview | 多來源＋學術重現 |
+| 對抗式審查 | 計畫前／程式碼後兩做法；唯讀審查者；跨模型交叉審查（arXiv 2607.21656 重現）；interns-review-plugin 把審查者意見刻意「降階」為實習生等級以減少過度採信（09-05，單一開發者提案） | Read-Only Reviewer、Agent-plan-review-loop、adamsreview、interns-review-plugin | 多來源＋學術重現 |
 | 規劃分層 | 規劃層「做什麼」／執行層「怎麼做」；把關前移 | beads 兩層架構、品質把關前移 | 單一實測 |
 | 長 session 穩健化 | 心跳／超時重試／狀態快照，從 MCP 層擴到 session（工具失敗、API 500、用量限制各有自動接續） | auto-undo、nightshift、resume-on-ratelimit | 多來源 |
 | 回報驗證 | 靜默失敗案例 → 證據紀錄＋可驗證交接 | 「Subagent 在騙你」、loopx（4,476 星） | 單一實測 |
@@ -155,7 +155,7 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 ## 目前結論
 
 - 四條線的共同做法是把小專案已驗證的原則（隔離、精簡、對抗式審查、決策外化）**加碼到更大的規模**，而非發明新機制。
-- 收斂最高的是「除錯與分工」（唯讀＋工具範圍），但它剛暴露「回報是否屬實」的新缺口；「並行規模」的規模上限無定論，可觀測性與整合序列化正在補位；「索引與記憶」正從「agent 記得住」轉向「文件不腐化」，待第二個案例。
+- 收斂最高的是「除錯與分工」（唯讀＋工具範圍），對抗式審查累積到第四個獨立實作；「並行規模」的規模上限無定論，可觀測性與整合序列化正在補位；「索引與記憶」跨工具可攜有了第二個案例（gentle-ai），仍全數僅星數佐證、無交叉比較。
 - 官方機制的最新狀態與版本號以 [[entities/claude-code]]、[[entities/managed-agents]] 為準。
 
 **懸置細節**

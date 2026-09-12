@@ -3,17 +3,17 @@ page: "topics/ai-talent-flow"
 kind: "topic"
 status: "ongoing"
 domain: "💼 商業"
-last_updated: "2026-09-09"
-last_news_update: "2026-09-09"
+last_updated: "2026-09-12"
+last_news_update: "2026-09-10"
 status_main: "ongoing"
-days_since_news: 3
+days_since_news: 2
 parent: null
 children: "[]"
 page_role: "root"
-days_since_news_subtree: 3
+days_since_news_subtree: 2
 inbound_links: 18
-attribution_count: 9
-attribution_last: "2026-09-09"
+attribution_count: 10
+attribution_last: "2026-09-10"
 top_source: "topic-watch"
 pending_count: 3
 pending_overdue: 2
@@ -28,18 +28,11 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 **領域：** 💼 商業
 **蒐集邊界：** 以與 Anthropic 相關的人才流動為主，另針對本主題定向補抓（每日至多 3 則）；其他實驗室之間、與 Anthropic 無關的異動仍可能延遲或缺漏，重大者由人工查證補記。
 **開始日期：** 2026-06-21
-**最後更新：** 2026-09-09
-**最後新聞更新：** 2026-09-09
+**最後更新：** 2026-09-12
+**最後新聞更新：** 2026-09-10
 
-> **最新動態：DeepMind 老將 Thore Graepel 離職，投入 AI 推理新創**（2026-09-07）
-> Google News 報導 DeepMind 研究老將 Thore Graepel 離職，投入一項 AI 推理新創事業——**未加入 Anthropic 或其他既有前沿實驗室**，是「自行創業」而非「被既有對手承接」的一例，與 08-05／08-06 Jeff Dean 等人出走創辦 Discovery Loop 同屬此型態；具體新創名稱、資金來源、Graepel 職位均未見報導，詳見「對各公司的影響」表 Google DeepMind 列與「時序」新增節。
-> **Google DeepMind 同日再失四位創立元老級主管（未具名，2026-09-01）**
-> Google News 報導稱 DeepMind 同一天失去四位創立元老級主管，惟報導細節僅標題可見，四人身分、去向均未見具體姓名，標為懸置事項、不得杜撰人名，詳見「時序」新增節。
-> **Adgully.com 跟進報導 Google DeepMind 頂尖 AI 人才佔比明顯下滑**（2026-08-29）
-> 與 08-27 Fortune「持續流失頂尖人才」為同一趨勢的又一媒體佐證，延續本頁自 2026-06 以來記錄的「Google DeepMind 淨流出」格局；具體佔比數字、統計方法未見報導細節，僅標題可用（推論，待後續補充具名案例）。
-> **Anthropic 延攬 Amir Salek**（前 Google TPU 計畫創辦人，2013–2022 主導前七代 TPU）已查實進入 compute 團隊、向 James Bradbury 匯報（Bloomberg，2026-09-06 查證），詳見「對各公司的影響」表。
-> **懸置事項仍無新進展**：08-13 Sergey Brin 內部談話報導（標題截斷）已掃日報至 2026-08-29 無後續；官方頁面未查證。
-> **另（背景訊號，非核心格局變動，2026-08-28）**：報導稱加拿大 5.41 億美元研究計畫吸引部分美國常春藤學者北遷，屬學界層級跨國政策訊號，僅標題可用，未見具名機構或與特定 AI 實驗室之關聯，詳見「時序」。
+> **最新動態：傳有明星 AI 研究員將從 Meta 離職加入 Anthropic**（2026-09-10）
+> WSJ 報導，具體姓名與職稱均未見報導，詳見「對各公司的影響」表新增 Meta 列與「時序」新增節。
 
 ## 摘要
 
@@ -51,6 +44,7 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 
 | 公司 | 角色 | 具體影響 | 評估 |
 |------|------|---------|------|
+| **Meta** | 淨流失方 | 傳一位「明星」AI 研究員離職轉投 Anthropic（09-10，WSJ，僅標題可用，姓名與職稱未載）| ℹ️ 具體人名、職稱、加入 Anthropic 後的職位均未見報導，戰力影響待觀察 |
 | **Google DeepMind** | 淨流失方＋高層動盪 | 研究員與元老出走批次（6/21–6/28）＋ Discovery Loop 創業潮（08-05/06）＋ Thore Graepel 出走創業（09-07）；市值蒸發約 $2,700 億美元（詳見下方細節） | 🔴 技術核心＋高層治理雙重動盪，削弱 Google 組織穩定性訊號（推論，已查證 2026-08-13）|
 | **Anthropic** | 主要承接方 | 科學計算（Jumper）／AI 編碼（Adler）／訓練（Pritzel）／安全經濟；08-21/23 新增晶片人才 Amir Salek（前 Google TPU 計畫創辦人，入 compute 團隊）| 🟢 招募已擴及硬體自主設計；到任日未公開（推論：戰力影響待觀察）|
 | **OpenAI** | 次要承接方 | 獲得一名 Google 頂尖研究員（6/23 SEJ 報導，姓名未具名）| 🟡 同步受惠於 Google 人才外流，規模小於 Anthropic |
@@ -76,56 +70,67 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 
 ## 時序
 
-### 2026-09-09
+### 2026-09
+
+#### 2026-09-10
+- **傳有明星 AI 研究員將從 Meta 離職轉投 Anthropic**：WSJ 報導，具體姓名與職稱均未見報導，詳見「對各公司的影響」表新增 Meta 列（Topic Watch/ai-talent-flow，原始來源 Google News/WSJ）
+
+#### 2026-09-09
 - **童欣（Dr. Xin Tong）加入 3D 生成新創 Meshy，出任首席科學家**：Macau Business 等多家報導，電腦繪圖領域資深學者加入，僅標題可用。非 Google DeepMind／Anthropic／OpenAI 人才戰一部分，詳見「對各公司的影響」表 Meshy 列
 
-### 2026-09-07
+#### 2026-09-07
 - **DeepMind 研究老將 Thore Graepel 離職，投入 AI 推理新創事業**：未加入 Anthropic 或其他既有前沿實驗室，屬自行創業型態，詳見「對各公司的影響」表 Google DeepMind 列更新；具體新創名稱、職位、資金來源未見報導，僅標題可用（Google News）
 
-### 2026-09-01
+#### 2026-09-01
 - ❓ **待查證**（標 2026-09-01｜查 DeepMind、founding、四位主管｜複 2026-09-15）｜**Google DeepMind 同一天失去四位創立元老級主管**：Google News 報導稱 DeepMind 同日再失四位創立元老級主管，惟原文僅標題可用，**四人身分均未見具體姓名**，不得推測與 08-05/08-06 已記錄之 Jeff Dean／Sanjay Ghemawat／Oriol Vinyals／Quoc Le 出走批次（Discovery Loop 創業潮）為同一事件——時間點相隔近一個月，且本則措辭為「創立元老級」（founding-level），與既有批次的職稱描述不完全一致，兩者關係待後續報導補充人名後才可判定是否重複或為獨立新一波流失。與本頁既有「Google DeepMind 淨流失」格局方向一致，惟本則暫不計入「對各公司的影響」表評估，待具名後補列（Google News，2026-09-01）
 
-### 2026-08-29（跟進）
+### 2026-08
+
+#### 2026-08-29（跟進）
 - **Adgully.com：Google DeepMind 頂尖 AI 人才佔比明顯下滑，競爭對手正在拉近差距**：與 08-27 Fortune 報導「DeepMind 持續流失頂尖人才」方向一致，本則換以「頂尖人才佔比」角度描述同一趨勢；僅標題可用，未見具體佔比數字、統計方法或競爭對手名單，視為既有趨勢的又一媒體佐證，非新增具名個案（Google News/Adgully.com）
 
-### 2026-08-28（蒐集邊界外背景訊號）
+#### 2026-08-28（蒐集邊界外背景訊號）
 - **加拿大 5.41 億美元研究計畫吸引美國常春藤學者北遷**：報導稱受美國研究政策環境影響，部分常春藤學者轉往加拿大新設立的 5.41 億美元研究計畫，涉及 AI 相關研究人才跨國流動；僅標題與轉址連結可用，原文內容未能取得，未見具體學校名單、人數、或與特定 AI 實驗室／公司的關聯。**與本頁核心追蹤格局的關係**：本頁聚焦「AI 前沿實驗室之間」的人才流動（Google DeepMind → Anthropic/OpenAI 一類），此則為學界層級、跨國政策驅動的人才外流，屬更上游的總體背景訊號而非個案（推論），暫記於此供後續若出現具名學者／機構銜接 AI 實驗室的報導時參照；另見 [[topics/anthropic-government-policy]] 美國 AI 研究政策環境（Topic Watch/ai-talent-flow，僅標題可用）
 
-### 2026-08-27
+#### 2026-08-27
 - **Fortune：新數據顯示 Google DeepMind 持續流失頂尖 AI 人才至競爭實驗室與新創**：報導指出最新資料顯示 DeepMind 人才流失情況延續，惟具體人數、流向公司名單、統計期間均未見報導細節，僅標題可用（推論，待後續補充具名案例）。與本頁既有記錄（06-21～08-06 批次流失至 Anthropic／OpenAI／Discovery Loop）方向一致，屬既有趨勢的持續佐證，非新增具名個案（Google News/Fortune https://fortune.com/2026/08/27/google-deepmind-losing-talent-to-rival-ai-labs-startups-new-data-show/）
 
-### 2026-08-24（跟進，非新事實）
+#### 2026-08-24（跟進，非新事實）
 - **citybiz：轉載 Anthropic 延攬 Amir Salek 消息**：與 08-23 具名確認為同一事件，未見新增職位、時程或團隊規模細節，僅為又一媒體重述；商業意涵仍見 [[topics/anthropic-business]]「哪個合作會改到你用的 Claude」表（Google News/citybiz）
 
-### 2026-08-23（具名確認，延續 08-21）
+#### 2026-08-23（具名確認，延續 08-21）
 - **The Times of India：具名確認 Anthropic 延攬 Google 自研晶片計畫創辦人 Amir Salek**：延續 08-21 已記錄之「前 Google 晶片工程師」（未具名，Seeking Alpha／Bloomberg），本則首次具名確認為 **Amir Salek**——Google 自研晶片計畫（custom chip programme）創辦人，即 Google TPU 專案創始人物之一。**對戰力與市場意涵**：與本頁既有以研究員流動為主的追蹤格局不同，此案屬**晶片設計人才**流入，且延攬對象非一般工程師而是曾主導 Google 整條自研晶片專案的創始層級人物，顯示 Anthropic 自研晶片布局（見 [[topics/anthropic-business]]「哪個合作會改到你用的 Claude」表 08-05～07 已記錄之內部晶片設計團隊籌建）可能取得具備從零打造整條晶片專案經驗的核心人才；具體職位、加入時間、團隊規模、與既有晶片團隊籌建進度的銜接關係均未見報導細節，僅標題層級資訊（推論）（Google News/The Times of India）。**後續（2026-09-06）：** Bloomberg 載明 Salek 2013–2022 創辦並領導 Google TPU 專案、經手前七代，加入後進 compute 團隊並向 James Bradbury 匯報；到任日未公開
 
-### 2026-08-13
+#### 2026-08-13
 - ❓ **待查證**（標 2026-08-13｜查 Sergey Brin｜複 2026-09-12）｜**Sergey Brin 在 Hassabis 卸任 DeepMind CEO 後對內部員工發表談話（標題截斷，內容未知）**：Times of India 標題稱 Google 共同創辦人 Sergey Brin 在 Demis Hassabis 卸任 DeepMind CEO 後對內部員工發表談話，標題本身遭 RSS 截斷為「Catch u...」，具體談話內容、發表場合均未見報導。**與既有記錄的關係**：本頁已於 08-05／08-06 事件（08-13 查證補記，見下方）記錄 Hassabis「卸下 DeepMind 日常營運、轉任 DeepMind 董事長兼 Alphabet 首席科學家（留任集團，非離職）」；本則標題用詞「exits as CEO」與該既有記錄方向一致（確實卸任 CEO 職務，但留任集團），惟無法排除為另一波後續發展或純粹是同一事件的重新報導角度，因標題截斷、正文未提供，暫不逕自合併或視為新增獨立事實。已掃日報至 2026-08-29 無後續；官方頁面未查證（Google News/Times of India）
 
-### 2026-08-05／08-06（補記於 2026-08-13）
+#### 2026-08-05／08-06（補記於 2026-08-13）
 - **Google DeepMind 高層轉任＋核心研究員出走創業，Alphabet 股價重挫**：Demis Hassabis 卸任 Google DeepMind CEO，轉任 Alphabet 首席科學家兼 DeepMind 董事長——**留任 Alphabet 集團，非離職**。同時 Jeff Dean（Google 27 年資深、首席科學家）、Sanjay Ghemawat（Google Brain 共同創辦人）、Oriol Vinyals、Quoc Le 離開 Google，共同創辦自動化科學研究新創 **Discovery Loop**；《Attention Is All You Need》八位作者至此全數離開 Google。Alphabet 股價盤中一度下跌約 5%（各家媒體估市值影響 1,600–2,000 億美元，屬盤中估算區間、非定值）。**Discovery Loop 為 public benefit corporation，Dean 出任 CEO，投資方含 Radical Ventures 與 Khosla Ventures 共同領投、Kleiner Perkins、Lightspeed、Doerr Capital，以及 Alphabet 本身**——集團同時是「被離開方」與「出資方」，此案性質介於人才流失與集團支持的 spin-out 之間（推論）。同期 Koray Kavukcuoglu 升任 DeepMind SVP。**與本頁核心追蹤格局的關係**：此波離職者流向獨立新創 Discovery Loop，非流向 Anthropic 或其他前沿實驗室，故不直接改變「Google DeepMind 淨流失、Anthropic 主要承接」的既有格局，但顯示 Google 高層與技術核心的動盪已從「單點人才流失」擴大至「創業出走潮」層級（推論）；流向 Anthropic 的研究員（Adler、Pritzel、Jumper）為更早的獨立批次，非本次事件的一部分。已於 2026-08-13 以 TechCrunch 原始報導交叉查證創辦人名單、公司結構與投資方（CNBC／Axios 原文無法讀取，改以 TechCrunch 一手報導與多方彙整佐證；市值數字各家不一致故以區間記錄）；本則屬本頁「蒐集邊界」節說明的已知缺口——事件報導標題以 Google 視角為主、不含 Anthropic/Claude 字樣，屬本站蒐集延遲補記，非日報當時無報導。（[TechCrunch（一手查證）](https://techcrunch.com/2026/08/05/jeff-dean-and-other-top-ai-researchers-are-leaving-google-to-launch-their-own-startup/)；其餘起點來源：[CNBC](https://www.cnbc.com/2026/08/05/google-is-expanding-its-ai-empire-and-losing-the-people-who-built-it.html)；[Axios](https://www.axios.com/2026/08/06/googles-ai-leadership-shuffle)）
 
-### 2026-07-13
+### 2026-07
+
+#### 2026-07-13
 - **[跨界執行層人才，非典型 AI 實驗室流動] Anthropic 新聘 Monzo 共同創辦人 [[entities/tom-blomfield|Tom Blomfield]]**：Business Insider 報導 Anthropic 聘請英國數位銀行 Monzo 共同創辦人 Tom Blomfield，背景涉及 AI compute 與 Y Combinator。**對商業的意涵**：與本頁核心追蹤的「Google DeepMind → Anthropic 研究員流動」模式不同，Blomfield 出身金融科技創業與加速器生態，而非競爭 AI 實驗室；若屬執行層人才佈局（而非研究職），可能反映 Anthropic 在 IPO 前加強營運/擴張團隊縱深的策略，與近期 [[entities/teresa-carlson|Teresa Carlson]]（前 Microsoft/AWS 高管）加入公部門業務團隊的模式類似（推論，具體職位與職責未見報導）（Business Insider https://www.businessinsider.com/anthropic-hires-monzo-cofounder-tom-blomfield-ai-compute-y-combinator-2026-7）
 
-### 2026-06-29
+### 2026-06
+
+#### 2026-06-29
 - dev.to 報導：Gemini 3.5 Pro 延期至七月，同期 4 位 Google 資深研究員轉投 Anthropic，AI 人才流動繼續向 Anthropic 傾斜（推論，未經 Google 官方確認）。（ref: https://dev.to/doremonai/gemini-35-pro-delayed-to-july-4-senior-google-researchers-defect-to-anthropic-47he）
 
-### 2026-06-26
+#### 2026-06-26
 - dev.to 深度報導：Google AI 人才出走潮一週內 4 位頂尖研究員離職，含諾貝爾獎得主 John Jumper；Google 市值蒸發約 $2,700 億美元（推論，分析師估算）、Gemini 3.5 延期；dev.to 另有報導 Jumper 在「危機中途」加入 Anthropic 的動機分析。（ref: https://dev.to/doremonai/googles-ai-brain-drain-4-top-researchers-leave-for-anthropic-in-one-week-270b-wiped-gemini-35-5ffl；ref: https://dev.to/peremptory/the-nobel-laureate-who-joined-anthropic-mid-crisis-5cfh）
 
-### 2026-06-25
+#### 2026-06-25
 - FT 報導 Anthropic 新聘一位對「人類長期存亡」有爭議觀點的經濟學家，引發 AI 安全社群討論。（ref: https://www.ft.com/content/bb04671c-4377-4231-96ef-0f8e57ed5d1b）
 - The Information：Google 重組 AI 編碼突擊隊以追趕 Anthropic。（ref: https://www.theinformation.com/articles/google-revamps-new-ai-coding-strike-team-amid-struggle-catch-anthropic）
 
-### 2026-06-24
+#### 2026-06-24
 - Bloomberg：Google DeepMind 確認再失兩名研究員至 Anthropic——Jonas Adler（AI 編碼）、Alexander Pritzel（訓練）。（ref: https://www.bloomberg.com/news/articles/2026-06-24/google-poised-to-lose-two-more-high-profile-ai-staffers-to-anthropic）
 
-### 2026-06-23
+#### 2026-06-23
 - Barron's / SEJ：Google 同週失去兩名頂尖 AI 研究員，分別轉投 OpenAI 與 Anthropic；Alphabet 股價受影響。（ref: https://www.barrons.com/articles/alphabet-stock-jumper-deepmind-anthropic-3242f738）（ref: https://www.searchenginejournal.com/google-loses-two-top-ai-researchers-to-openai-anthropic/580201/）
 
-### 2026-06-21
+#### 2026-06-21
 - Reuters：AlphaFold 共同創造者、2024 諾貝爾化學獎得主 John Jumper 離開 Google DeepMind 加入 Anthropic，被視為 Anthropic 向科學計算擴展的人才訊號；社群評「DeepMind 這週被掏空了」。繼 Noam Shazeer 之後再添頂尖人才。（Reuters 報導見報於 `news/2026-06-21.md`，Reuters URL 帶 2026-06-19 為原始報導日，與 [[entities/john-jumper]] 的 06-21 官方確認記載一致）（ref: https://www.reuters.com/technology/us-scientist-john-jumper-leave-google-deepmind-anthropic-2026-06-19/）
 
 ## 相關實體

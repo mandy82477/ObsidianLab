@@ -631,3 +631,28 @@
 [週4 2026/09/10 12:06:30.00] === cloud daily-news-pipeline-cloud STARTED (TARGET_DATE=2026-09-10) ===
 [週4 2026/09/10 12:06:30.00] ABORTED: src/gathered_archive/2026-09-10.json not found (Step 1a cp failed) - GitHub Actions daily-gather 尚未產出當日原料，非目標日期新鮮資料，正確中止（非 backfill，不自動重抓，交下一班或資料到齊後接手）
 [cloud daily-news-pipeline-cloud ABORTED 2026-09-10] Step 1a：src/gathered_archive/2026-09-10.json 不存在（GitHub Actions 抓料尚未到齊），交由 Step 1b 新鮮度防線邏輯判定中止，正確行為，非錯誤
+[cloud daily-news-pipeline-cloud STARTED 2026/09/10 17:03:28.73 UTC]
+[週四 2026/09/10 17:03:28.73] === Agent pipeline start (2026-09-10) ===
+[週四 2026/09/10 17:12:01.43] Aggregator OK (replay: cp gathered_archive/2026-09-10.json, 71 items, 14/14 sources healthy)
+[週四 2026/09/10 17:44:00.00] Wiki ingest OK (6 記者 + devpractice + market，全部收齊；轉知帳本 open 3／close 1／void 1)
+[週四 2026/09/10 17:43:10.00] 測試失敗 2 輪修復後全綠（Round 1: check_cell_limits.py 4 筆超限字元下沉修復；Round 2: check_pending_markers.py 舊語法存量 +2 改寫為合規措辭）- web build 放行 - REPAIRED: 縮短 entities/claude-code.md 3 則已知問題條目與 topics/market-signals.md 1 則懸置標記至 ≤200 字元；改寫 entities/jacob-coxon.md 2 處「待核實」裸字樣為合規措辭，消除舊語法存量棘輪誤觸
+[週四 2026/09/10 17:44:20.00] Single push done (news + wiki + web)
+[週四 2026/09/10 17:44:55.13] === Pipeline complete (agent) ===
+[cloud daily-news-pipeline-cloud STARTED 2026-09-10T22:03:58Z]
+[cloud daily-news-pipeline-cloud ABORTED 2026-09-10T22:04:19Z] Step 0b 冪等閘攔截：news/2026-09-10.md 已存在（17:00 UTC 班次已產出並完整收尾），非 backfill 模式，本班（22:00 UTC）正確中止，無多班次例外
+[cloud daily-news-pipeline-cloud STARTED 2026-09-11T12:04:24Z]
+[cloud daily-news-pipeline-cloud ABORTED 2026-09-11T12:05:08Z] TARGET_DATE=2026-09-11 12:00 UTC 班次: Step 1a cp gathered_archive/2026-09-11.json 失敗（檔不存在，GitHub Actions 抓料尚未到齊）→ Step 1b 0-1 新鮮度防線中止: gathered_items.json date=2026-09-10 items=71，非目標日期的新鮮資料。待資料到齊的班次（17/22 UTC）接手。
+[cloud daily-news-pipeline-cloud STARTED 2026-09-11T17:03:46Z] (17:00 UTC shift)
+[Fri 2026/09/11 17:42:21.00] === Agent pipeline start (2026-09-11) ===
+[Fri 2026/09/11 17:42:21.00] Aggregator OK
+[Fri 2026/09/11 17:42:21.00] Wiki ingest OK
+[Fri 2026/09/11 17:42:21.00] Building web reader...
+測試全綠 - web build 放行
+[Fri 2026/09/11 17:42:21.00] Single push done (news + wiki + web)
+[Fri 2026/09/11 17:42:21.00] === Pipeline complete (agent) ===
+[cloud daily-news-pipeline-cloud COMPLETE 2026-09-11T17:42:25Z] TARGET_DATE=2026-09-11 (17:00 UTC shift): digest 89 items, wiki ingest 6 記者+devpractice+market 全部完成（新增 entities/joe-benton, entities/josh-engels），web build 全綠，單一 push 成功。
+[cloud daily-news-pipeline-cloud STARTED 2026-09-11T22:04:05Z]
+[cloud daily-news-pipeline-cloud ABORTED 2026-09-11T22:04:54Z] digest already exists (news/2026-09-11.md) - Step 0b 冪等閘中止，第三班（22 UTC）撞上第二班（17 UTC）已完成的日報
+[cloud weekly-wiki-lint-cloud STARTED 2026-09-12T03:04:30Z]
+[週六 2026/09/12 03:54:43.00] Weekly lint OK (cloud) - 六記者+devpractice 全數收報，修 15 頁，10 項待使用者確認；gate 第 1 輪修復後放行（測試全綠），build_web 成功（斷鏈 WARN 13／錨點 WARN 0），渲染層驗收抓到 overview 無頁面產物（已登漏抓帳並列待裁示）；5b/5c/5e/5h/5m 雲端 egress 封鎖跳過；月度項目（蒸餾/6g指標二/6j）非本月首次 lint 跳過
+[cloud weekly-wiki-lint-cloud COMPLETE 2026-09-12T03:54:43Z]

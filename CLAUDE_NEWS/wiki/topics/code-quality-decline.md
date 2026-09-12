@@ -3,17 +3,17 @@ page: "topics/code-quality-decline"
 kind: "topic"
 status: "ongoing（2026-04 那次官方已結案；06 月起的兩條線官方未回應）"
 domain: "🌐 社群"
-last_updated: "2026-09-07"
-last_news_update: "2026-09-03"
+last_updated: "2026-09-10"
+last_news_update: "2026-09-10"
 status_main: "ongoing"
-days_since_news: 9
+days_since_news: 2
 parent: null
 children: "['topics/code-quality-decline-archive']"
 page_role: "hub"
-days_since_news_subtree: 9
-inbound_links: 34
-attribution_count: 24
-attribution_last: "2026-08-28"
+days_since_news_subtree: 2
+inbound_links: 35
+attribution_count: 26
+attribution_last: "2026-09-10"
 top_source: "reddit"
 pending_count: 2
 pending_overdue: 1
@@ -27,8 +27,8 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 **狀態：** ongoing（2026-04 那次官方已結案；06 月起的兩條線官方未回應）
 **領域：** 🌐 社群
 **開始日期：** 2026-03（推測）
-**最後更新：** 2026-09-07
-**最後新聞更新：** 2026-09-03
+**最後更新：** 2026-09-10
+**最後新聞更新：** 2026-09-10
 
 > **三條線，只有一條有官方說法**（2026-09-03）
 > 09-03 全模型錯誤率升高、同日排除，屬服務穩定性事件不是退步。04 月那次官方認了也修了；06 月起的 token 異常與 07-25 起的 Opus 5 品質觀感，到今天都沒有官方說法。
@@ -48,7 +48,7 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 ## 三條線現在到哪
 
 > 資料截至 2026-09-07。「現在還在嗎」看的是官方說明與 GitHub issue 的開關狀態，不看討論熱度。
-%% 維運備忘：上限 4 列、現有三列固定不移除、入口與退場判準見 .claude/reporter-rules/wiki-ingest-community.md「code-quality-decline 的三張表」第 1 條 %%
+%% 維運備忘：上限 4 列、現有三列固定不移除、入口與退場判準見 .claude/rules/wiki-ingest-community.md「code-quality-decline 的三張表」第 1 條 %%
 
 | 線（最後動態） | 官方說了什麼（日期） | 現在還在嗎 | 你能先做什麼 |
 |---|---|---|---|
@@ -80,7 +80,7 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 
 ## Token 消耗異常訊號群（2026-06 下旬起）
 
-**表上 10 則，從 06-27 到 08-25。** 沒有一則帶測試方法或版本前後對照；最硬的兩則是 GitHub 上帶可重現標籤、留言破百的 issue，最弱的幾則是連互動數都取不到的單一貼文。三種解釋互不排斥，見下方假說表。
+**表上 10 則，從 06-27 到 09-10。** 沒有一則帶測試方法或版本前後對照；最硬的兩則是 GitHub 上帶可重現標籤、留言破百的 issue，最弱的幾則是連互動數都取不到的單一貼文。三種解釋互不排斥，見下方假說表。
 
 | 日期 | 訊號 | 來源 | 證據硬度 |
 |------|------|------|------|
@@ -90,16 +90,19 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 | 2026-07-03 | GitHub issue #38335：Max 方案 session 額度自 3/23 起異常加速消耗；截至 07-09 累積 791 則留言、536 個讚，社群互動量最高條目之一 | [GitHub Issues #38335](https://github.com/anthropics/claude-code/issues/38335) | `GitHub issue（791 則留言、536 個讚，07-09 數）` |
 | 2026-07-08 | GitHub issue #41506：Max 方案（$100/月）token 消耗量自 3/28-29 起在未變更設定下增加約 3-5 倍，累積 54 則留言、29 個讚 | [GitHub Issues #41506](https://github.com/anthropics/claude-code/issues/41506) | `GitHub issue（54 則留言、29 個讚）` |
 | 2026-07-08 | 「Cache hit rate dropping by 20% doubles your agent's bills」：使用者以圖表分享 cache 命中率下降 20% 會讓 agent 帳單翻倍 | Reddit r/ClaudeCode（[原文](https://www.reddit.com/r/ClaudeCode/comments/1uqsah2/cache_hit_rate_dropping_by_20_doubles_your_agents_bills/)）| `單一貼文（圖為主，本群唯一機制解釋）` |
-| 2026-07-08 | 「Claude Max (20x) weekly limit exhausted in less than a day」：Max 20x 方案週額度不到一天用盡 | Reddit r/ClaudeCode（[原文](https://www.reddit.com/r/ClaudeCode/comments/1uqs99q/claude_max_20x_weekly_limit_exhausted_in_less/)）| `單一貼文（無互動數）` |
 | 2026-07-09 | 「Claude Max 20x: Why did 27% of one session consume 7% of my entire weekly limit?」：單一 session 27% 的時間即消耗掉整週額度 7% | Reddit r/ClaudeAI（[原文](https://www.reddit.com/r/ClaudeAI/comments/1urqgqx/claude_max_20x_why_did_27_of_one_session_consume/)）| `單一貼文（帶具體比例）` |
 | 2026-07-13 | 「Usage limits getting lower」：Max 5x 訂閱用戶回報近一週用量額度消耗速度明顯變快，5 小時額度約 2 小時即用完 | Reddit r/ClaudeCode（[原文](https://www.reddit.com/r/ClaudeCode/comments/1uve90h/usage_limits_getting_lower/)）| `單一貼文（無互動數）` |
 | 2026-08-25 | 「Is Claude Code intentionally burning more tokens now?」——隔 43 天再現同方向質疑 | Reddit r/ClaudeCode（[原文](https://www.reddit.com/r/ClaudeCode/comments/1vxw3fi/is_claude_code_intentionally_burning_more_tokens/)） | `單一貼文（無互動數）` |
+| 2026-09-10 | 「40% session usage on max plan in 30 mins」：先前以公司 $100 Teams 方案幾乎用不完週限額，改用 Opus 5 high／xHigh 後 30 分鐘內即耗掉週用量的 40% | Reddit r/ClaudeCode（[原文](https://www.reddit.com/r/ClaudeCode/comments/1wckk5k/40_session_usage_on_max_plan_in_30_mins/)） | `單一貼文（無互動數）` |
 
 **證據硬度五值（由來源決定，不由結論多強決定）：** 官方一手／GitHub issue（附留言數，可重現者標明）／具名個案／單一貼文（附真實互動數）／單一貼文（無互動數）。
 
 **表格細節**
+- **07-08「Claude Max (20x) weekly limit exhausted in less than a day」**：未列入上表（2026-09-10 起）；原文已在 [[topics/code-quality-decline#2026-07]] 07-08 時序條目一併提及，原始貼文見 [Reddit](https://www.reddit.com/r/ClaudeCode/comments/1uqs99q/claude_max_20x_weekly_limit_exhausted_in_less/)。
+%% 維運備忘：訊號表上限 10 列已滿，本則取單一貼文（無互動數）中最舊者讓位給 09-10 新訊號，見規則檔「code-quality-decline 的三張表」第 2 條 %%
 - **07-13「Usage limits getting lower」**：07-14～07-31 未見同一主張的第二來源；同方向的 07-21 GitHub issue #29579「16% 用量即觸發 rate limit」（153 則留言）完整追蹤在 [[entities/claude-code]] 已知問題。
 - **08-25「intentionally burning more tokens」**：質疑近幾個月是否要燒更多 token 才能完成同樣的任務；無數字、無版本號，只說明這個現象還在。
+- **09-10「40% session usage in 30 mins」**：與公司方案的低用量基準形成對比，帶具體百分比與時長，但無互動數可佐證；訊號方向與既有九則一致。
 
 ### 三種解釋，目前各自站在哪
 
@@ -124,7 +127,7 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 
 ## Opus 5 上線後品質觀感（2026-07-25 起）
 
-[[entities/opus-5]] 於 2026-07-24 上線後，本頁累積 **15 則**訊號：下表五種主張收 14 則，另一則（effort 旋鈕非單調）已證偽，見表下。收料起點是 Opus 5 的上線日，不是「這些抱怨都指向 Opus 5」——其中六則沒有指名模型版本。十四則裡十二則是單一使用者觀感，另兩則有外部依據（一則第三方基準待查證、一則 GitHub issue 已查證屬實）。逐則原文與 Opus 5 這個模型自己的官方基準見 [[entities/opus-5]]「這些數字是誰量的」；本頁只記它作為第三條退步線的狀態。
+[[entities/opus-5]] 於 2026-07-24 上線後，本頁累積 **16 則**訊號：下表五種主張收 15 則，另一則（effort 旋鈕非單調）已證偽，見表下。收料起點是 Opus 5 的上線日，不是「這些抱怨都指向 Opus 5」——其中六則沒有指名模型版本。十五則裡十三則是單一使用者觀感，另兩則有外部依據（一則第三方基準待查證、一則 GitHub issue 已查證屬實）。逐則原文與 Opus 5 這個模型自己的官方基準見 [[entities/opus-5]]「這些數字是誰量的」；本頁只記它作為第三條退步線的狀態。
 
 > 一種主張一列，同一批貼文不會在兩列各算一次。
 %% 維運備忘：上限 6 列、新貼文只改最後動態與則數、逾 90 天無新事實即移出，逐則原文留時序，見規則檔第 4 條 %%
@@ -133,7 +136,7 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 |---|---|---|---|
 | **泛化變慢／變囉唆**（不指名模型版本）| 6 | 2026-08-26「I miss the old Claude Code」 | 單一貼文（HN 25 分）＋五則無互動數貼文 |
 | **Opus 5 過度自信、難以調教** | 3 | 2026-08-13「rage-inducing to use」 | 單一貼文（其中一則登上該週熱門榜）|
-| **懷疑正在被 A/B 測試降 effort** | 3 | 2026-08-28「Is it even legal…nerf」 | 單一貼文（其中一則登上該週熱門榜，查證過程無法覆核）|
+| **懷疑正在被 A/B 測試降 effort** | 4 | 2026-09-10「did anthropic nerf fable again」 | 單一貼文（其中一則登上該週熱門榜，查證過程無法覆核）|
 | **第三方工具評測** | 1 | 2026-08-25 Sonar benchmark ❓ 待查證 ⟨Q-01⟩ | 僅標題可用，數字未見報導 |
 | **二進位對 Opus 5 的硬編碼限制** | 1 | 2026-07-26（已查證屬實，見 [[topics/community-tech-discussions]]）| GitHub issue #80988 |
 
@@ -229,6 +232,10 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 ## 時序（最新在上，按月分組）
 
 ### 2026-09
+
+#### 2026-09-10
+- **「40% session usage on max plan in 30 mins」：Token 消耗異常訊號群第十則**：使用者回報先前以公司 $100 Teams 方案幾乎用不完週限額，改用 Opus 5 high／xHigh 後 30 分鐘內即耗掉週用量的 40%；無互動數可佐證，訊號方向與既有九則一致（來源：[Reddit](https://www.reddit.com/r/ClaudeCode/comments/1wckk5k/40_session_usage_on_max_plan_in_30_mins/)）
+- **「did anthropic nerf fable again or did claude nerf your brain?」：「懷疑正在被 A/B 測試降 effort」主張第四則**：使用者質疑 Fable 是否又被降規格，延續 08-22～08-28 同方向懷疑；無互動數可佐證，只說明這個現象還在（來源：[Reddit](https://www.reddit.com/r/ClaudeCode/comments/1wckbl4/did_anthropic_nerf_fable_again_or_did_claude_nerf/)）
 
 #### 2026-09-03
 - **全模型錯誤率升高，同日排除**：12:43 UTC 起 Sonnet 5 錯誤率升高，Mythos、Fable 5／5.1、Opus 5／4.8／4.6 一併受影響，13:41 UTC 鎖定原因、16:16 UTC 標記解決；影響 claude.ai、API、Claude Code 與 Cowork。屬服務穩定性事件，非能力或計費變化（[Anthropic Status](https://status.claude.com/incidents/461yvfrzpwtt)）

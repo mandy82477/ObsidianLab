@@ -32,13 +32,7 @@
       "time": "09/08 23:55",
       "sentiment": "",
       "body": "修復 2.1.265 版本中的一項迴歸問題：先前未文件化的環境變數 `CLAUDE_CODE_USE_GATEWAY`，除非搭配特定條件否則會被忽略，影響採用 LLM-gateway 或 proxy 架構的部署，現已修正。",
-      "focusTags": [],
-      "sedimented": [
-        {
-          "id": "claude-code",
-          "pageType": "entity"
-        }
-      ]
+      "focusTags": []
     }
   ],
   "mediaReports": [
@@ -76,13 +70,7 @@
       "time": "09/09 00:43",
       "sentiment": "",
       "body": "36Kr 報導聚焦 Claude Code 團隊在公開溝通上罕見的透明作風。",
-      "focusTags": [],
-      "sedimented": [
-        {
-          "id": "claude-code",
-          "pageType": "entity"
-        }
-      ]
+      "focusTags": []
     },
     {
       "title": "Amadeus Teams Up With Claude Parent Anthropic - Aviation Week",
@@ -156,13 +144,7 @@
       "time": "09/09 14:40",
       "sentiment": "",
       "body": "（2026-02 出生、11,149 星，本庫今日首次收錄）可執行並監督一整組 coding agent 的團隊，涵蓋規劃到合併的完整流程，支援 Claude Code、Codex 等 25 種以上 harness，並提供桌面、網頁、行動與雲端多種使用介面。",
-      "focusTags": [],
-      "sedimented": [
-        {
-          "id": "claude-code",
-          "pageType": "entity"
-        }
-      ]
+      "focusTags": []
     }
   ],
   "billing": [
@@ -317,73 +299,9 @@
   "preview": "前 OpenAI／現任 Anthropic 研究員 Jacob Coxon 於 X 發表辭職聲明，直指公司「不負責任地衝向自我改進超級智能、拿全人類性命當賭注」；Anthropic 安全研究員 Evan Hubinger 稍早也表態，現有模型風險「低」，但擔憂技術持續進化將帶來逾 10% 機率「殺死所有人類」的存在風險",
   "sedimentedToday": [
     {
-      "id": "claude-code",
-      "name": "Claude Code",
-      "pageType": "entity"
-    },
-    {
-      "id": "evan-hubinger",
-      "name": "Evan Hubinger",
-      "pageType": "entity"
-    },
-    {
-      "id": "jacob-coxon",
-      "name": "Jacob Coxon",
-      "pageType": "entity"
-    },
-    {
-      "id": "pricing",
-      "name": "Anthropic 訂閱方案與計費政策",
-      "pageType": "entity"
-    },
-    {
-      "id": "ai-agent-safety",
-      "name": "AI Agent 安全與可靠性",
-      "pageType": "topic"
-    },
-    {
-      "id": "ai-talent-flow",
-      "name": "AI 實驗室人才流動",
-      "pageType": "topic"
-    },
-    {
-      "id": "anthropic-business",
-      "name": "Anthropic 商業健康度",
-      "pageType": "topic"
-    },
-    {
-      "id": "anthropic-government-policy",
-      "name": "Anthropic 政府與軍事政策",
-      "pageType": "topic"
-    },
-    {
       "id": "community-tech-discussions",
       "name": "社群技術討論趨勢",
       "pageType": "topic"
-    },
-    {
-      "id": "community-tech-patterns",
-      "name": "Claude Code 社群工作流模式",
-      "pageType": "topic"
-    },
-    {
-      "id": "competitor-landscape",
-      "name": "AI 編碼工具競品動態",
-      "pageType": "topic"
-    },
-    {
-      "id": "market-signals",
-      "name": "投資訊號判讀",
-      "pageType": "topic"
-    },
-    {
-      "id": "recursive-self-improvement",
-      "name": "AI 遞歸自我改進與全球暫停呼籲",
-      "pageType": "topic"
     }
-  ],
-  "marketSignal": {
-    "title": "離職聲明、安全研究員表態與 AISI 提交爭議同日發酵，IPO 前敘事風險升溫",
-    "date": "2026-09-09"
-  }
+  ]
 }

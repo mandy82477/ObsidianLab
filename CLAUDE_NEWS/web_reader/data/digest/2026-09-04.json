@@ -450,11 +450,6 @@
   "preview": "Claude 歷時 11 天自主完成費馬最後定理的完整電腦驗證證明，以 Lean 語言正式化",
   "sedimentedToday": [
     {
-      "id": "fable-5",
-      "name": "Claude Fable 5 與 5.1",
-      "pageType": "entity"
-    },
-    {
       "id": "kevin-buzzard",
       "name": "Kevin Buzzard",
       "pageType": "entity"

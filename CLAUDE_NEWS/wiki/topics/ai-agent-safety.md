@@ -3,19 +3,19 @@ page: "topics/ai-agent-safety"
 kind: "topic"
 status: "ongoing"
 domain: "🏛️ 政策/安全"
-last_updated: "2026-09-09"
-last_news_update: "2026-09-09"
+last_updated: "2026-09-11"
+last_news_update: "2026-09-11"
 status_main: "ongoing"
-days_since_news: 3
+days_since_news: 1
 parent: null
 children: "['topics/ai-agent-safety-archive']"
 page_role: "hub"
-days_since_news_subtree: 3
-inbound_links: 85
-attribution_count: 121
-attribution_last: "2026-09-09"
+days_since_news_subtree: 1
+inbound_links: 83
+attribution_count: 126
+attribution_last: "2026-09-11"
 top_source: "google-news"
-pending_count: 16
+pending_count: 18
 pending_overdue: 13
 pending_next_review: "2026-09-16"
 pending_signalled: 1
@@ -28,11 +28,11 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 **領域：** 🏛️ 政策/安全
 **蒐集邊界：** 以 Claude 與 Claude Code 的安全事件為主，另針對提示注入定向補抓（每天最多 3 則）；他家 agent 的獨立事件多半只在與 Claude 同案或同一篇報導時才會出現。
 **開始日期：** 2026-04-27
-**最後更新：** 2026-09-09
-**最後新聞更新：** 2026-09-09
+**最後更新：** 2026-09-11
+**最後新聞更新：** 2026-09-11
 
-> **最新安全事件**（2026-09-09）
-> TechCrunch 報導駭客能在不竊取密碼的情況下抽乾 Claude 訂閱者的用量額度，凸顯訂閱制帳號面臨的新型濫用手法；具體攻擊機制未見報導。
+> **最新安全事件**（2026-09-11）
+> Show HN 揭露：研究者以 8 種手法繞過 Claude Code 的 deny-list 權限設定，只有改用 allow-list（白名單）才擋得住；官方尚無回應，見「## 現在還擋不住的攻擊」。
 
 ---
 
@@ -49,14 +49,14 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 ## 現在還擋不住的攻擊
 
 > 只列**現在還擋不住**的攻擊面，不收論述、教學與產業對照。狀態符號與 [[entities/claude-code]] 相同，語意在本頁是「現在仍會發生」：🔴 仍會發生／✅ 已修或官方已處置／⛔ 官方認定不修／❓ 待查證／🔎 查無官方。依「誰會遇到」的範圍由寬到窄；寫「所有人」的一律在最上。
-%% 維運備忘：本表上限 11 列，退場與補位判準見 .claude/reporter-rules/wiki-ingest-safety-policy.md「ai-agent-safety 更新規則」第 2 條 %%
+%% 維運備忘：本表上限 11 列，退場與補位判準見 .claude/rules/wiki-ingest-safety-policy.md「ai-agent-safety 更新規則」第 2 條 %%
 
 | 擋不住的是什麼 | 誰會遇到 | 狀態 | 官方擋到哪 | 你能先做什麼 |
 |---|---|---|---|---|
 | 根目錄掃描把 SSH 私鑰帶進 context | 所有在本機跑 Claude Code 的人；多租戶或共用主機風險更高 | 🔴 | 已承認行為存在，未修補（2026-06-20） | 別在家目錄或含私鑰的路徑啟動；啟動前把工作目錄收窄到專案內 |
 | Auto 模式：只要請它讀一個網址，注入的指令就能取得程式碼執行權 | 開 Auto 模式、且會讓 Claude Code 讀網頁或外部檔案的人 | 🔴 | 官方定性 Auto 模式是 best-effort convenience control、不是安全邊界，該揭露結案為 informative；官方稱擋下 89%（2026-08-07 blog）危險指令 | 讀外部內容時關掉 Auto，或改在隔離容器裡跑。實測成功率 60–80%，官方委託評測 0%，兩個數字並陳 |
 | 惡意 `.git` 設定檔可誘使 agent 執行攻擊者指定的程式碼，跨廠通用 | clone 或開啟他人 repo 的人（Claude、Codex、Cursor 都中） | ❓ | 無回應（2026-09-02 披露；觸發機制與是否已在野利用未見報導） | clone 完先自己看一遍 `.git/config` 有沒有不是你加的設定，再讓 agent 進去 |
-| committed 的 `CLAUDE.md` `@import` 可解析到 repo 以外的檔案並外送 | clone 或開啟他人 repo 的人；CI runner、容器因路徑可預測風險更高 | ⛔ | HackerOne 結案為 Informative——依官方威脅模型，「信任此資料夾」對話框本身即為安全邊界 | 不信任的 repo 不要按「信任此資料夾」；CI 上別讓它讀專案目錄以外的路徑 |
+| deny-list 型權限設定可被繞過，只有 allow-list 型設定擋得住 | 用 deny-list（黑名單）方式設定 Claude Code 權限的人 | 🔴 | 無回應（2026-09-11 Show HN 揭露，公開 repo 展示 8 種繞過手法） | 改用 allow-list（白名單）方式設定權限，不要只靠 deny-list |
 | 一句模糊的指令就可能讓它遞迴強制刪掉整個資料夾 | 用自然語言派刪除或整理任務、且沒有備份或版本控制的人 | 🔴 | 無回應（2026-04-28 資料庫清除與 2026-08-12 遞迴刪檔屬同一模式） | 動資料前先建備份；把 DROP、DELETE、`rm -rf` 設成要顯式確認才放行 |
 | 第三方 MCP：偽造的錯誤報告可劫持 session，另有 RCE 與記憶層憑證竊取 | 接了第三方 MCP server 的人，尤其錯誤追蹤類（Sentry） | 🔴 | 無修補，只有社群提供的設定緩解（2026-06-27） | 只接自己控制的 MCP server；把它回傳的內容當外部輸入，不讓它直接觸發動作 |
 | 套件供應鏈：受感染 npm 套件植入 SessionStart hook；`llms.txt` 指向未註冊套件名可被搶注 | 讓 agent 照建議裝套件的人；安裝過受感染 npm 套件的開發環境 | 🔴 | 無回應（第三方生態；惡意版本帶有效簽章，常規信任檢查失效） | 裝套件前確認套件名已註冊、作者對得上；檢查專案裡有沒有不是你建立的 `.claude/settings.json` hook |
@@ -109,6 +109,18 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 ---
 
 ## 技術彙整
+
+### Show HN：研究者展示 8 種繞過 Claude Code deny-list 權限設定的手法，只有 allow-list 擋得住（2026-09-11 新增）
+
+- **揭露來源**：Hacker News Show HN〈I bypassed my Claude Code deny-list 8 ways; only an allow-list held〉，附公開 GitHub repo（[danielhagever/agent-guardrails-kit](https://github.com/danielhagever/agent-guardrails-kit)）；[HN 討論串](https://news.ycombinator.com/item?id=49658005)
+- **核心主張**：作者實測針對 Claude Code 以 deny-list（黑名單）方式設定的權限限制，找出 8 種可繞過手法，只有改用 allow-list（白名單）方式設定才能真正擋住；已列入「## 現在還擋不住的攻擊」表
+- ❓ **待查證**（標 2026-09-11｜查 deny-list、allow-list｜複 2026-09-25）：8 種繞過手法的具體技術細節、官方是否已收到通報或回應均未見報導，僅有原始貼文與 repo 可查
+
+### Security Boulevard／SC Media：coding agent 產業對照案例（2026-09-10～11 新增）
+
+- **揭露來源**：Security Boulevard〈AI Security Incident Case: Amazon Kiro Prompt Injection Vulnerability Analysis〉（2026-09-11）；SC Media〈A security framework for coding agents and their harnesses〉（2026-09-10）
+- **核心主張**：Security Boulevard 分析 Amazon Kiro（非 Claude 產品）的提示注入漏洞案例；SC Media 討論 coding agent 與其執行環境（harness）的通用安全框架設計。兩篇均僅標題可用，具體技術內容與是否涉及 Claude Code 未見報導
+- **與本頁關係**：產業對照，非 Claude 事件；coding agent 通用安全框架若日後涉及 Claude Code 具體做法，另開條目
 
 ### TechCrunch／Startup Fortune：駭客可在不竊取密碼情況下抽乾 Claude 訂閱者用量額度（2026-09-09 新增）
 
@@ -349,6 +361,13 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 - **可信度評估**：核心事實已由英國政府官方機構（AISI）報告證實，並經至少 5 家獨立媒體交叉確認，可信度高；測試主辦全名（AISI 已確認為主辦方）、受測企業/服務身分、Anthropic／OpenAI 是否有官方回應聲明、後續是否有具體修補或防護改進動作，仍未見報導，不推測補完
 - **09-01 新增（官方併案升級）：Anthropic 首度回應，將本案與 07-31 三起評估事件併入同一份檢討**：Anthropic 官方部落格〈improving-alignment-security-efforts〉（https://www.anthropic.com/news/improving-alignment-security-efforts）首度正面回應本案，與 07-31 三起評估事件（詳見「Anthropic 揭露三起資安評估事件」節）併為同一份官方檢討，確認正深入調查並將與 METR 合作進行獨立審查；Business Insider／Reuters 證實已因此暫停部分 AI 訓練並收緊訓練環境安全性，Reuters 稱已恢復外部測試。此為本案的官方升級，非新事件，AISI 官方報告先前未見的 Anthropic 回應聲明至此補齊
 - **09-02 新增（Guardian：官方首度公開承認「並未完全對齊」）**：The Guardian〈'Not perfectly aligned' with human values: Anthropic admits security failures behind AI hacking incidents〉（2026-09-01）在既有 09-01 官方併案檢討基礎上，引述 Anthropic 承認一系列事件反映「維運安全上的失守」，並首度以此措辭公開承認其技術「**並未完全對齊（not perfectly aligned）**」人類價值觀與目標；報導並重申受測機器因與第三方測試夥伴之間的誤解而連上開放網路一節，與本頁既有 08-01「人為疏失／`evaluation partner` 未察覺」記錄一致，非新增事實。Gizmodo〈Anthropic Says It Hit the Brakes on AI Testing Following Autonomous Hacks〉同日重申已暫停部分 AI 測試，與既有記錄一致，未見超出既有記錄的新細節
+- **09-09/10 新增（升級：第四起事故，此前審查遺漏）**：Reuters（經 Hacker News，HN 12 分）報導 Anthropic 揭露第四起資安事故，為先前審查所遺漏、現才對外揭露；成因與既有三起同型
+  - 官方原文：「The incidents stemmed from a mistake that inadvertently gave the models access to the open internet.」
+  - 官方部落格確認本次涉及**早期版本 Claude Opus 4.6**，已通知所有受影響對象，但未揭露更多細節
+  - 官方原文：「The company said in a blog post the incident involved an early version of Claude Opus 4.6. It said it had notified all the affected parties but did not disclose more details.」
+  - 同日官方另發表〈An alignment assessment of recent cybersecurity incidents〉，提供對齊面向自我評估（僅標題可用，RSS 未提供正文）
+  - 另有 qz.com、The Hacker News、PYMNTS、Yahoo Finance Canada 等媒體同日跟進，未見超出既有記錄的新內容；HN 討論質疑 AI 公司普遍難以建構妥善沙盒環境
+  - ❓ **待查證**（標 2026-09-10｜查 Opus 4.6、alignment assessment）：具體受影響對象、攻擊鏈細節、官方〈alignment assessment〉原文內容均未見報導
 
 ### Poison Claude：灰市轉售折扣 Claude 存取權，營運者可讀取所有客戶 prompt（2026-08-05～08-06 新增）
 
@@ -759,6 +778,13 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 > 更早期時序見 [[topics/ai-agent-safety-archive]]
 
 > **中美 AI 工具信任對峙**（06-30～07-10：中國代理偵測程式碼、隱寫術指控、Alibaba/Meta 禁用、中國官方後門警示、Anthropic 首度否認）完整逐日時序已整合至 [[topics/safety-china-trust-dispute]]，此處不再重複條目，僅保留與本頁漏洞/提示注入主線相關者。
+
+### 2026-09-11
+- **[🔴 新增] Show HN：研究者展示 8 種繞過 Claude Code deny-list 權限設定的手法，只有 allow-list 擋得住**：附公開 GitHub repo，官方尚無回應，已列入「## 現在還擋不住的攻擊」表，詳見「## 技術彙整」
+- **[🟡 產業對照，新增] Security Boulevard：Amazon Kiro 提示注入漏洞分析／SC Media：coding agent 安全框架討論**：非 Claude 事件；均僅標題可用，詳見「## 技術彙整」
+
+### 2026-09-10
+- **[🟡 官方升級，新增] Anthropic 揭露第四起資安事故：此前審查遺漏，涉及早期版本 Claude Opus 4.6**：成因與既有三起同型——設定疏失使模型意外取得開放網際網路存取權限；已通知受影響對象，未揭露細節。同日官方另發表〈An alignment assessment of recent cybersecurity incidents〉，詳見「## 技術彙整」
 
 ### 2026-09-09
 - **[🔴 新增] TechCrunch／Startup Fortune：駭客可在不竊取密碼的情況下抽乾 Claude 訂閱者用量額度**：新型訂閱帳號濫用手法，具體攻擊機制未見報導，詳見「## 技術彙整」

@@ -3,15 +3,15 @@ page: "topics/community-pattern-trends"
 kind: "topic"
 status: "ongoing"
 domain: "🌐 社群"
-last_updated: "2026-09-07"
-last_news_update: "2026-09-02"
+last_updated: "2026-09-12"
+last_news_update: "2026-09-12"
 update_freq: "🗓️ 週更（無新趨勢節點時刻意不動——日期停留＝趨勢層無變化，非漏更新）"
 status_main: "ongoing"
-days_since_news: 10
+days_since_news: 0
 parent: null
 children: "[]"
 page_role: "root"
-days_since_news_subtree: 10
+days_since_news_subtree: 0
 inbound_links: 8
 attribution_count: 0
 attribution_last: null
@@ -29,11 +29,11 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 **領域：** 🌐 社群
 **更新頻率：** 🗓️ 週更（無新趨勢節點時刻意不動——日期停留＝趨勢層無變化，非漏更新）
 **開始日期：** 2026-06-29
-**最後更新：** 2026-09-07
-**最後新聞更新：** 2026-09-02
+**最後更新：** 2026-09-12
+**最後新聞更新：** 2026-09-12
 
-> **本週趨勢觀察**（2026-09-02）
-> **趨勢九補上子觀察**：「否決記錄需可驗證、防竄改」（8/31，dev.to）與既有 8/7「已否決方案的隱形重工成本」同屬一條尚未獨立成線的子軸線（僅 2 來源，未達 3 來源標準），暫記入趨勢九演進列。08-29～09-01 其餘 patterns 新節點（存量盤點型彙整清單、單一遞迴刪檔事故等）均為單一個案或靜態參考資源，不構成新趨勢節點。趨勢一～八本輪無新節點，答案不變。
+> **本週趨勢觀察**（2026-09-12）
+> 七條線各補新節點：趨勢一（Hooks 市集化）、趨勢二（統一容器路線第四波：avibe／ccteam／agent-orchestrator／OtoDock 定位更新）、趨勢三（nightshift 三層 context 管理）、趨勢五（interns-review-plugin 對抗式審查的「降階」變體）、趨勢六（dsh-TUI／better-agent-terminal 介面元件延伸）、趨勢八（Orchestrator 為本線第 5 個獨立實作）、趨勢九（gentle-ai／cpr-compress-preserve-resume 格式標準化再添兩例）。趨勢四、七本輪無新節點，答案不變。
 
 ---
 
@@ -59,6 +59,7 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 - 🔥🔥 **環境感知條件觸發（Adrafinil）**（6/28，HN 113）：hooks 不再只是業務邏輯觸發器，而是升格為「感知 agent 活躍狀態 → 決定環境副作用是否觸發」的條件控制器；可延伸至 Slack DND、資源分配等場景
 - 🔥 **氛圍狀態燈**（7/2）：同一「hooks 感知 agent 活躍狀態」機制的第二個獨立實作——驅動實體 LED 燈號提示 agent 執行狀態，確認此條件觸發模式非單一作者的個案巧思，而是可複製的機制
 - 🔥 **規則遵循率變 100% 新實例**（8/25，dev.to）：將原寫在 prompt 裡的規則改用 hooks 強制執行，遵循率從「機率性」變成 100%；附帶效益是規則確定性提升後，改用較便宜的 Haiku 當 builder 也不再顯得冒險，補上「強制執行降低模型成本門檻」這個先前未明說的連結
+- 🔥 **claude-code-hooks 外掛市集**（9/6，GitHub Search，500★）：把多個 hook 打包成可安裝的市集，從「單一 hook 各自維護」進到「市集化分享」，延伸 Hooks 強制執行路線的散布方式
 
 **代表模式：**
 - **Hooks 強制執行取代 CLAUDE.md 規則**：把 deploy 保護、formatter、migration 防寫等「必做」遷到 PreToolUse / PostToolUse hook，用 exit code 控制放行或攔截
@@ -95,6 +96,7 @@ Hook 的原理：exit 1 = 硬攔截，不是「提醒模型注意」，而是工
 - 🔥 **本地合併佇列**（7/30，HN 39，多家報導）：隔離原語（worktree）與並行派發問題已收斂後，新缺口浮現在下游——多個平行 agent 產出的 commit 若各自即時觸發建置測試，會拖垮低規格機器並推高 CI 帳單；Claude Code Merge Queue 讓提交排隊依序落地、逐一完整測試後才合併，補上「執行後如何序列化整合」這個先前未被觸及的環節
 - 🔥 **常駐雲端運算基礎設施（machine0）**（8/18，Launch HN score 78）：YC S26 新創將「常駐化部署」從自架伺服器（OtoDock）延伸至商用雲端 VM——含 GPU、CLI/MCP 皆可操作，鎖定 6–8 小時起跳的長時間 agent 工作負載；作者同時點名常駐環境拉長 `--yolo` 曝露時間的安全代價，呼應 [[topics/ai-agent-safety]] 既有關注
 - 🔥🔥 **跨代理統一容器第三波（opencodex／metaharness／claw-orchestrator）**（8/27，GitHub Search）：08/05（omnigent）、08/09（loopx＋HarnessFlow）之後第三批同類專案湧現，確認「harness 無關、可換底層 agent」非單一事件而是持續性社群方向；同日 Concord（Show HN，MCP）補上互補而非取代的第二條協調路線——不統一容器，而是讓各自獨立運作的 agent 共享任務脈絡，形容為「agent 間的 Slack」
+- 🔥🔥 **統一容器路線第四波（avibe／ccteam／agent-orchestrator／OtoDock）**（9/9–9/10）：avibe（本機常駐 Agent OS）、ccteam（跨廠商團隊整編）、agent-orchestrator（全流程平台，11,149★）三種取向湧現；OtoDock 同期定位為「公司作業系統」，統一容器路線分化出 OS／團隊／平台三層
 
 **代表模式：**
 - **Git Worktrees 隔離原語**：多 agent 各持獨立 worktree，根除共享目錄的覆蓋衝突
@@ -130,6 +132,7 @@ Hook 的原理：exit 1 = 硬攔截，不是「提醒模型注意」，而是工
 - 🔥 **headless 呼叫冷啟動固定成本**（8/7）：量化實測——`claude -p` 未加 `--bare` 時冷啟動約先耗 15 萬 token，補上「多 agent pipeline 大量發起 headless 呼叫」這個此前未被量化的 context 成本來源
 - 🔥 **grep 輸出裁剪（Graft）**（8/15，HN 39，多家報導）：「context 精簡」家族補上第四條路徑——不裁剪檔案內容或轉換媒介，而是直接攔截並精簡 grep 搜尋本身的輸出，宣稱降幅 42%；但 HN 討論質疑其 benchmark 段落疑似 AI 代寫，是本頁少見「機制方向成立、量化宣稱本身未經第三方驗證」的案例
 - 🔥 **子代理歷史重送疑慮**（8/27，Reddit）：與既有「裁剪什麼」的四條路徑不同方向的新警訊——使用者觀察到 fork 子代理疑似每次工具呼叫都重送整段對話歷史，四個平行子代理共耗約 200 萬 token；若屬實，代表「裁得再乾淨，子代理機制本身若重複發送歷史」仍會抵銷裁剪成果，惟機制未經官方證實，單一回報
+- 🔥 **nightshift：DAG 調度＋三層 context 管理疊加**（9/10，Show HN）：不限廠商 Rust CLI，以任務相依圖調度協調 GitHub Issues，疊 PCC 記憶＋本地向量 RAG＋滑動視窗三層因應多 issue 工作流的 context rot；作者具名指出官方 `/goal` 有相同架構缺陷改自製，屬單一開發者對官方功能的負向對照，未經獨立覆核
 
 **代表模式：**
 - **Context 裁剪 Tool Output**：主動截斷或摘要化工具回應，而非全量塞入 context
@@ -195,6 +198,7 @@ Hook 的原理：exit 1 = 硬攔截，不是「提醒模型注意」，而是工
 - 🔥🔥 **Verity 自癒式 review gate**（6/27）：每次 agent 執行後自動修復不安全代碼並記憶學習；「reviewer 記憶讓下次起點更優」是對抗性設計的持久化延伸（HN Show HN）
 - 🔥🔥 **Agent-plan-review-loop**（7/10）：對抗性設計從「程式碼完成後審查」延伸至「計畫階段逐步挑戰」——對抗式 reviewer 在實作前逐條質疑計畫假設，補足計畫前審查的具體實作案例
 - 🔥🔥 **量化證據：Claude 審查 Codex 通過率 71.6%→89.7%**（8/4，Reddit 週熱門）：本線首個 A 層量化數字——跨模型交叉審查效益從「機制上合理」進展到「有具體通過率數字支撐」；測試方法與樣本規模已查證（2026-08-13）：學術論文 [Cross-Model LLM Code Review（arXiv 2607.21656）](https://arxiv.org/abs/2607.21656) 以 116 則 LiveCodeBench 中／難題、六種條件對照重現此數字，非單一來源自陳數據
+- 🔥 **對抗式審查的「降階」變體（interns-review-plugin）**（9/5，HN 12）：與既有唯讀審查者、跨模型交叉審查不同角度——刻意把審查者意見包裝成「沒經驗實習生」等級，藉此降低使用者對審查意見的過度採信，屬對抗性設計延伸至「怎麼呈現審查結果」的社會工程變體
 
 **代表模式：**
 - **對抗性審查設計**：引入對立角色打破 LLM 樂觀偏差；計畫前審查讓審查者讀真實 codebase，程式碼後審查在草稿階段挑模糊假設
@@ -232,6 +236,8 @@ Hook 的原理：exit 1 = 硬攔截，不是「提醒模型注意」，而是工
 
 10 個獨立實作跨 44 天反覆出現，8/7、8/19 兩度單日內出現 2 款以上同題工具，樣本密度持續加深，已符合成形趨勢的認定標準（≥3 來源、≥14 天、機制完整可複現）。
 
+- 🔥 **dsh-TUI／better-agent-terminal**（9/10，GitHub Search）：介面元件化的延伸——dsh-TUI（2,933★，中國社群「DSH」官方收錄，Claude Code 風格 TUI 元件市集）、better-agent-terminal（502★，多工作區終端聚合），從「獨立看板」進一步細分出「可複用介面元件」子取向
+
 **代表模式：**
 - **JSONL Transcript 讀取型**（live-log-viewer-next）：解析本機 session 逐字稿檔案重建對話地圖，不需官方額外介面支援
 - **官方 Event Stream 型**（HUD）：透過官方 CLI 既有的 JSON event stream + hook 取得狀態，不額外消耗 token，是目前技術上最乾淨的實作路徑
@@ -265,13 +271,14 @@ Hook 的原理：exit 1 = 硬攔截，不是「提醒模型注意」，而是工
 - 🔥 **Android Remote Control MCP**（7/8 前後）：MCP-based 方案，讓 Android 裝置可操作本機 Claude Code
 - 🔥 **Shellular**（7/8，HN 32）：專屬 web-app，從手機遠端操作本機 Claude Code / Codex session
 - 🔥 **Relay**（8/19，Hacker News，24 小時內批次亮相之一）：讓家用主機上已安裝的 Claude Code／Codex／OpenCode 可從任何裝置遠端操作，是本線第 4 個獨立實作，補上 8/19 之前「首見已逾 14 天但無第 4 例」的缺口
+- 🔥 **Orchestrator**（9/10，Show HN）：本線第 5 個獨立實作——手機遠端生成、下指令、終止並管理多個 Claude Code 實例，關閉 App 後任務仍在背景執行
 
-4 個獨立實作跨 52 天（6/28–8/19）反覆出現，已符合成形趨勢的認定標準（≥3 來源、≥14 天、機制可操作），自「醞釀中」升格為成形趨勢。
+5 個獨立實作跨 74 天（6/28–9/10）反覆出現，已符合成形趨勢的認定標準（≥3 來源、≥14 天、機制可操作），自「醞釀中」升格為成形趨勢。
 
 **代表模式：**
 - **行動裝置作為控制介面**：手機／任意裝置透過 bot、MCP 或專屬 web-app，遠端下達指令或監看本機 Claude Code session 狀態
 
-**對現有設計的啟示：** 如果你的 Claude Code 工作流綁死在單一終端機前，這條線代表社群已收斂出「本機常駐、行動裝置遙控」是可行且被重複驗證的形態。與趨勢六「多 Agent 可觀測性儀表板化」互補——趨勢六解決「怎麼看」，這條線解決「不在電腦前時怎麼看、怎麼下指令」。目前四個實作走三種不同技術路徑（bot、MCP、web-app），尚未收斂到單一標準做法。
+**對現有設計的啟示：** 如果你的 Claude Code 工作流綁死在單一終端機前，這條線代表社群已收斂出「本機常駐、行動裝置遙控」是可行且被重複驗證的形態。與趨勢六「多 Agent 可觀測性儀表板化」互補——趨勢六解決「怎麼看」，這條線解決「不在電腦前時怎麼看、怎麼下指令」。目前五個實作走三種不同技術路徑（bot、MCP、web-app），尚未收斂到單一標準做法。
 
 ---
 
@@ -285,8 +292,9 @@ Hook 的原理：exit 1 = 硬攔截，不是「提醒模型注意」，而是工
 - 🔥 **手動 Obsidian vault 取代官方自動記憶**（8/24，Reddit）：與前三者「補充記憶層」方向相反的第一個「取代」案例——使用者主張自己策展的 LLM Wiki 比官方自動記憶更可控、更可信賴
 - 🔥 **mindmuxai/brain.md**（8/25，504★）：第三種格式路線——零依賴、檔案式 CLI，鎖定決策／需求／限制三類專案層級資訊，補上「輕量、無外部服務依賴」這個此前未見的實作取向
 - 🔥 **否決記錄需可驗證、防竄改**（8/31，dev.to）：把記憶範疇從「記住怎麼做」延伸到「記住這條路已被否決」，且明確要求該紀錄本身要防竄改；與 8/7「已否決方案的隱形重工成本」（概念性觀察）屬同一子軸線的第二個訊號，尚未達獨立成線標準（僅 2 來源），暫記為本趨勢的子觀察
+- 🔥 **gentle-ai／cpr-compress-preserve-resume**（9/6）：格式標準化再添兩例——gentle-ai（6,304★）打包記憶／規格驅動／skill 為跨 4 種 agent CLI 的單一設定層；cpr（508★）走「壓縮—保存—還原」三段式跨 session 記憶；皆僅星數佐證
 
-5 個獨立實作跨 105 天（5/12–8/25）反覆出現，涵蓋協定標準化、文件自動化、團隊共享、手動取代、零依賴檔案式五種互不相同的路線，已符合成形趨勢的認定標準（≥3 來源、≥14 天、機制自洽可操作的 B 層證據）。
+7 個獨立實作跨 121 天（5/12–9/6）反覆出現，涵蓋協定標準化、文件自動化、團隊共享、手動取代、零依賴檔案式五種互不相同的路線，已符合成形趨勢的認定標準（≥3 來源、≥14 天、機制自洽可操作的 B 層證據）。
 
 **代表模式：**
 - **格式標準化**（ltm、OKF）：定義可攜的記憶資料格式，目標是跨工具/跨模型可讀，但兩個協定互不相容，尚未收斂到單一標準

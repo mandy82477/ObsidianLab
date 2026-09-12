@@ -3,17 +3,17 @@ page: "topics/anthropic-business"
 kind: "topic"
 status: "ongoing"
 domain: "💼 商業"
-last_updated: "2026-09-09"
-last_news_update: "2026-09-09"
+last_updated: "2026-09-10"
+last_news_update: "2026-09-10"
 status_main: "ongoing"
-days_since_news: 3
+days_since_news: 2
 parent: null
 children: "['topics/anthropic-business-archive']"
 page_role: "hub"
-days_since_news_subtree: 3
-inbound_links: 85
-attribution_count: 220
-attribution_last: "2026-09-09"
+days_since_news_subtree: 2
+inbound_links: 88
+attribution_count: 223
+attribution_last: "2026-09-10"
 top_source: "google-news"
 pending_count: 9
 pending_overdue: 5
@@ -27,8 +27,8 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 **狀態：** ongoing
 **領域：** 💼 商業
 **開始日期：** 2026-05-28
-**最後更新：** 2026-09-09
-**最後新聞更新：** 2026-09-09
+**最後更新：** 2026-09-10
+**最後新聞更新：** 2026-09-10
 
 > **最新動態**（2026-09-08）
 > - **Decart 收購生變**：傳 60 億美元收購以色列新創 Decart 的計畫遭撤回，多家以色列與財經媒體同日跟進（見「哪個合作會改到你用的 Claude」一行制清單）。
@@ -391,7 +391,7 @@ Financial Times 報導 Anthropic 旗艦模型在吸引一般使用者（general 
 - **Google（投資）**（2024）：$400 億美元，見 [[entities/google-investment]]
 - **Amazon（投資）**（2023–2024）：$40 億美元，算力＋生態綁定
 
-%% 維運備忘：原「意義」欄的敘述併進上方一句，不另外開細節條目；一句寫不下者才下沉「戰略合作細節」區。本清單只保留最近 3 個完整月，逾窗 21 列待下一輪蒸餾——實數 65 列日期 ≥2026-07-01（本清單），21 列 ≤2026-06-30（Rubrik…Amazon 投資）已逾 3 個月保留窗，但本波 `## 時序` 蒸餾已用滿「每頁至多 2 個時段」上限，這 21 列本波不搬，列為下一輪蒸餾候選。條文的家在 `.claude/reporter-rules/wiki-ingest-commercial.md` 第 5 條。 %%
+%% 維運備忘：原「意義」欄的敘述併進上方一句，不另外開細節條目；一句寫不下者才下沉「戰略合作細節」區。本清單只保留最近 3 個完整月，逾窗 21 列待下一輪蒸餾——實數 65 列日期 ≥2026-07-01（本清單），21 列 ≤2026-06-30（Rubrik…Amazon 投資）已逾 3 個月保留窗，但本波 `## 時序` 蒸餾已用滿「每頁至多 2 個時段」上限，這 21 列本波不搬，列為下一輪蒸餾候選。條文的家在 `.claude/rules/wiki-ingest-commercial.md` 第 5 條。 %%
 
 **戰略合作細節**
 - **Amadeus（09-03）**：Skift 報導旅遊科技公司 Amadeus 將其技術整合進 Claude Code 與 Cowork；延續本頁既有 SDK 夥伴生態邊緣擴張模式（如 Claranova、MixRoute），是旅遊產業首個具名整合案例，惟具體整合形式（MCP 連接器、資料 API 或其他）、涵蓋範圍未見報導，僅標題可用（Google News/Skift）。
@@ -487,6 +487,11 @@ Financial Times 報導 Anthropic 旗艦模型在吸引一般使用者（general 
 ## 時序
 
 ### 2026-09
+
+#### 2026-09-10
+- **[公司動態，僅標題可用] The Boston Globe：Anthropic 在麻州劍橋 Kendall Square 附近簽下約 2.4 萬平方英尺辦公空間租約**：租約條款、進駐時程、與既有波士頓地區布局的關係均未見報導（Google News/The Boston Globe）
+- **[公司動態，媒體延伸解讀] NDTV Profit：報導稱 Anthropic 警告至 2030 年將有五分之一工作消失、薪資受壓**：與本頁 09-09 記錄之 NPR「Anthropic 推出新模型測試 AI 對美國經濟的可能衝擊」可能為同一經濟情境模型的媒體延伸解讀，具體模型方法論、預測依據均未見報導，僅標題可用（Google News/NDTV Profit）
+- **[戰略合作，僅標題可用] FedScoop：Anthropic 將 Fable 5.1 導入 Claude for Government 產品線**：供美國政府機關使用，具體採購/合約條件未見報導；模型可用性面見 [[entities/fable-5]]（Google News/FedScoop）
 
 #### 2026-09-09
 - **[商業風險，詳見 pricing] Verge／Startup Fortune／The New Stack 三家媒體跟進 Max 20x 集體訴訟**：New Stack 點名「20 倍用量」實為週用量上限機制，詳見 [[entities/pricing]]「事故現在還在發生嗎」表（Google News/The Verge；Startup Fortune；The New Stack）
