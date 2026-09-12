@@ -32,19 +32,19 @@ python scripts/list_digest_omissions.py --date $ARGUMENTS
 python scripts/scan_pending_verifications.py $ARGUMENTS
 ```
 
-輸出依記者類別分組，供下一步派工時原樣附在對應記者的訊息裡；某類別無命中則該記者派工訊息此區塊寫「無」。規格見 `.claude/rules/wiki-ingest-format.md`「懸置標記語法」節。
+輸出依記者類別分組，供下一步派工時原樣附在對應記者的訊息裡；某類別無命中則該記者派工訊息此區塊寫「無」。規格見 `.claude/reporter-rules/wiki-ingest-format.md`「懸置標記語法」節。
 
-**再取轉知待接手清單 `[加入: 2026-08-15]`：** 執行 `python scripts/pending_handoffs.py list`，輸出依目標記者分組，派工時附在對應記者訊息的「轉知待接手」區塊；無則寫「無」。這是先前 ingest 的記者「⚠️ 需主編轉知」經主編登帳後的未結案項（帳本 `data/pending-handoffs.jsonl`，規格見 `.claude/rules/wiki-ingest.md`「第三步」轉知帳本段）。
+**再取轉知待接手清單 `[加入: 2026-08-15]`：** 執行 `python scripts/pending_handoffs.py list`，輸出依目標記者分組，派工時附在對應記者訊息的「轉知待接手」區塊；無則寫「無」。這是先前 ingest 的記者「⚠️ 需主編轉知」經主編登帳後的未結案項（帳本 `data/pending-handoffs.jsonl`，規格見 `.claude/reporter-rules/wiki-ingest.md`「第三步」轉知帳本段）。
 
 同時讀取：
 - `wiki/CLAUDE.md` — wiki 目錄結構與基本限制
-- `.claude/rules/wiki-ingest.md` — 分類標準與派工流程（主編指南）
+- `.claude/reporter-rules/wiki-ingest.md` — 分類標準與派工流程（主編指南）
 - `wiki/index.md` — 取得所有現有頁面清單
 - `wiki/log.md` — 確認最近是否已處理過同一份日報（避免重複 ingest）
 
 ### 2. 分類（主編）
 
-讀完**日報條目 + 上一步列出的未收錄條目**後，依 `.claude/rules/wiki-ingest.md` 的分類表為每則新聞標記類別。
+讀完**日報條目 + 上一步列出的未收錄條目**後，依 `.claude/reporter-rules/wiki-ingest.md` 的分類表為每則新聞標記類別。
 跨類別條目可標多個類別。
 
 未進日報的條目在原文節錄中標一行 `- **日報未收錄**（僅原始抓取資料，摘要較簡略）`，讓記者知道細節密度不同、判斷時以自己的類別門檻為準。
@@ -71,7 +71,7 @@ python scripts/scan_pending_verifications.py $ARGUMENTS
 
 ### 3. 派工（Agent tool）
 
-**對每個有條目的類別，呼叫 Agent tool**。有多個類別時，在同一訊息中同時發出所有 Agent 呼叫（並行執行）。每個呼叫一律 **`subagent_type: "general-purpose"` + `model: "sonnet"`**（本機與雲端唯一正典派工路徑，理由見 `.claude/rules/wiki-ingest.md`「派工方式」；sonnet 因分類與頁面更新為有界任務，不需旗艦模型；未指定會繼承主 session 模型，六記者並行足以打穿訂閱配額）。
+**對每個有條目的類別，呼叫 Agent tool**。有多個類別時，在同一訊息中同時發出所有 Agent 呼叫（並行執行）。每個呼叫一律 **`subagent_type: "general-purpose"` + `model: "sonnet"`**（本機與雲端唯一正典派工路徑，理由見 `.claude/reporter-rules/wiki-ingest.md`「派工方式」；sonnet 因分類與頁面更新為有界任務，不需旗艦模型；未指定會繼承主 session 模型，六記者並行足以打穿訂閱配額）。
 
 > ⚠️ **記者 agent 必須以 foreground（同步）方式啟動，不可設 `run_in_background: true`。** 背景記者的完成通知無法回到派工 agent，會造成永久等待。
 
@@ -107,7 +107,7 @@ python scripts/scan_pending_verifications.py $ARGUMENTS
 
 記者的角色、規則引用、回報格式只定義在角色檔 `.claude/agents/wiki-reporter-[category].md`（單一來源），由上方角色前導導入；派工 prompt 不重抄規則內文。
 
-**🚫 prompt 內不得臨場加寫「今日順手做 X」「記得同步 Y 頁」這類操作指示**——上方五個區塊（角色前導／日期／條目節錄／待查證命中／轉知待接手）加防偏誤說明即為完整 prompt，不再增加。針對單一條目的事實性提示寫在該條目的 `- **註：**` 行內。理由與 2026-08-15 教訓見 `.claude/rules/wiki-ingest.md`「派工 prompt 不得臨場加寫操作指示」。
+**🚫 prompt 內不得臨場加寫「今日順手做 X」「記得同步 Y 頁」這類操作指示**——上方五個區塊（角色前導／日期／條目節錄／待查證命中／轉知待接手）加防偏誤說明即為完整 prompt，不再增加。針對單一條目的事實性提示寫在該條目的 `- **註：**` 行內。理由與 2026-08-15 教訓見 `.claude/reporter-rules/wiki-ingest.md`「派工 prompt 不得臨場加寫操作指示」。
 
 ### 4. 彙整共用檔案（主編）
 
@@ -115,10 +115,10 @@ python scripts/scan_pending_verifications.py $ARGUMENTS
 
 **`wiki/feature-radar.md`**
 - 彙整模型 + 功能記者回報的所有 feature-radar 新增條目
-- 依 `.claude/rules/wiki-ingest-features.md` 的條目格式寫入「最新功能」區塊
+- 依 `.claude/reporter-rules/wiki-ingest-features.md` 的條目格式寫入「最新功能」區塊
 - 同步更新全覽表的熱度與試用價值
-- 依 `.claude/rules/wiki-ingest-features.md`「⭐ 現在值得跟的三件 自動更新規則」覆寫 `## ⭐ 現在值得跟的三件` section
-- 依 `.claude/rules/wiki-ingest-features.md`「⚠️ 從你現在的版本升上去，會遇到什麼 自動更新規則」更新 `## ⚠️ 從你現在的版本升上去，會遇到什麼` section
+- 依 `.claude/reporter-rules/wiki-ingest-features.md`「⭐ 現在值得跟的三件 自動更新規則」覆寫 `## ⭐ 現在值得跟的三件` section
+- 依 `.claude/reporter-rules/wiki-ingest-features.md`「⚠️ 從你現在的版本升上去，會遇到什麼 自動更新規則」更新 `## ⚠️ 從你現在的版本升上去，會遇到什麼` section
 
 **`wiki/index.md`**
 - 彙整所有記者回報的 `index.md 狀態變更` 欄位，逐一更新
@@ -137,7 +137,7 @@ python scripts/scan_pending_verifications.py $ARGUMENTS
 ```
 
 **`data/source_attribution.jsonl`**（append only，不可修改既有行）
-- 把所有記者回報的「來源歸因」欄逐筆轉成一行 JSON append，schema 與 slug 對照見 `.claude/rules/wiki-ingest.md`「第三步」與 `data/README.md`
+- 把所有記者回報的「來源歸因」欄逐筆轉成一行 JSON append，schema 與 slug 對照見 `.claude/reporter-rules/wiki-ingest.md`「第三步」與 `data/README.md`
 - 記者回報「無」則該記者不寫；全部記者皆「無」則不動此檔
 
 **`data/pending-handoffs.jsonl`**（轉知帳本，append only，透過腳本操作）

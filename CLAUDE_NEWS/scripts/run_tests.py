@@ -15,7 +15,7 @@ run_tests.py — 執行 src/tests/ 下所有確定性單元測試（unittest dis
 測試失敗時視同 Step 4 失敗，跳過 web build 與 web commit。
 
 跑完 unittest 全數通過後，另外執行 scripts/check_rules.py（.claude/commands、
-.claude/rules 的規則一致性機械檢查）、scripts/check_arch_docs.py（架構文件
+.claude/rules 與 .claude/reporter-rules 的規則一致性機械檢查）、scripts/check_arch_docs.py（架構文件
 來源清單/日期/charset/CSS token 漂移檢查）、scripts/check_weekly_ledger.py
 （週報預告帳本：漏收/判準遭改寫/殭屍條目/跳期）、scripts/check_wiki_freshness.py
 （頁面「最後新聞更新」宣稱 × 歸因記錄交叉比對：漏更/無從對照/欄位缺失）、

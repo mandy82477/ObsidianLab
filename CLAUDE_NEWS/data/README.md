@@ -20,7 +20,7 @@ Schema（每行一筆）：
 | 欄位 | 說明 |
 |------|------|
 | `date` | 日報日期（YYYY-MM-DD） |
-| `source` | 來源 slug（`hacker-news` / `reddit` / `github-issues` / `github` / `google-news` / `devto` / `anthropic-blog` / `anthropic-status` / `claude-api-release-notes` / `blog` / `official-docs` / `official-skills` / `topic-watch`；`lobsters` 僅存歷史資料，來源已於 2026-07-10 移出），對照表見 `.claude/rules/wiki-reporter-shared.md`，註冊表 `data/source_registry.json` |
+| `source` | 來源 slug（`hacker-news` / `reddit` / `github-issues` / `github` / `google-news` / `devto` / `anthropic-blog` / `anthropic-status` / `claude-api-release-notes` / `blog` / `official-docs` / `official-skills` / `topic-watch`；`lobsters` 僅存歷史資料，來源已於 2026-07-10 移出），對照表見 `.claude/reporter-rules/wiki-reporter-shared.md`，註冊表 `data/source_registry.json` |
 | `category` | 六類別之一：模型 / 功能 / 商業 / 安全政策 / 社群 / 人物 |
 | `page` | 寫入的 wiki 相對路徑，不含 `.md`（如 `topics/ai-agent-safety`） |
 | `item_url` | 日報條目原始連結 |

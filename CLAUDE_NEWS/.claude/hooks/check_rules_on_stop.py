@@ -6,7 +6,8 @@ Stop hook: 收工前檢查是否有「未驗證的規則改動」。
 記號檔（scripts/check_rules.py 全綠時寫入）。
 
 行為：
-- 掃描 .claude/commands/*.md、.claude/rules/*.md、根目錄 CLAUDE.md 的 mtime
+- 掃描 .claude/commands/*.md、.claude/rules/*.md、.claude/reporter-rules/*.md、
+  根目錄 CLAUDE.md 的 mtime
 - 任一檔案 mtime > .last-rules-check 的 mtime（或記號檔不存在）→ 輸出
   {"decision": "block", "reason": "..."} 要求先跑 check_rules.py
 - 防無限迴圈：stdin JSON 的 stop_hook_active 為 true（已在 block 後的續跑中）
@@ -34,6 +35,7 @@ BLOCK_REASON = (
 def rule_files():
     yield from (CLAUDE_DIR / "commands").glob("*.md")
     yield from (CLAUDE_DIR / "rules").glob("*.md")
+    yield from (CLAUDE_DIR / "reporter-rules").glob("*.md")
     root_claude = REPO_ROOT / "CLAUDE.md"
     if root_claude.exists():
         yield root_claude

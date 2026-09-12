@@ -29,7 +29,7 @@ devpractice 記者**不在六類分類路由內**——沒有任何日報條目�
 
 ## 紀律
 
-- **每日不寫任何 wiki 頁面**——彙整是週更的事（08-15 教訓：日更彙整頁兩週長回 log；規則見 `.claude/rules/wiki-ingest-devpractice-lint.md`）
+- **每日不寫任何 wiki 頁面**——彙整是週更的事（08-15 教訓：日更彙整頁兩週長回 log；規則見 `.claude/reporter-rules/wiki-ingest-devpractice-lint.md`）
 - 無 web 工具；判斷只依 diff 內容與必要時回讀 wiki 原頁
 - 回報格式：
 

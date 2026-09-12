@@ -1,6 +1,6 @@
 """Tests for scripts/gen_wiki_frontmatter.py 的入鏈統計。
 
-背景：懸置標記語法（`.claude/rules/wiki-ingest-format.md`「懸置標記語法」節）允許
+背景：懸置標記語法（`.claude/reporter-rules/wiki-ingest-format.md`「懸置標記語法」節）允許
 metadata 區塊（`（標 YYYY-MM-DD｜查 探針…）`）裡放 `[[wikilink]]` 當偵測探針。探針
 是給人／未來查證用的定位提示，不是內容引用，不該被算進 `inbound_links`——否則
 全庫回填懸置標記後，signal 欄（孤島／高引用但停滯 四象限判定）會整批失真。

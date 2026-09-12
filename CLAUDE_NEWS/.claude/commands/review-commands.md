@@ -4,7 +4,7 @@ description: 驗證所有 commands / rules / CLAUDE.md 修改後，相關指令�
 
 # Review Commands
 
-每次修改 `.claude/commands/`、`.claude/rules/` 或根目錄 `CLAUDE.md` 後執行。
+每次修改 `.claude/commands/`、`.claude/rules/`、`.claude/reporter-rules/` 或根目錄 `CLAUDE.md` 後執行。
 **終止條件：`python scripts/check_rules.py` 零 ❌ 才可結束。**
 
 ---

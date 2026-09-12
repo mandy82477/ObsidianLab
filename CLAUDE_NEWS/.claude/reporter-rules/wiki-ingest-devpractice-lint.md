@@ -1,6 +1,6 @@
 # Wiki Ingest — 開發實務（devpractice）週彙整指南（lint 層）`[加入: 2026-09-02]`
 
-`/wiki-lint` 步驟 5f 由主編派 devpractice 記者執行（此為週彙整的明文觸發邊）。每日 ingest 不讀此檔——daily 只沉澱候選帳本（`.claude/rules/wiki-ingest-devpractice.md`），彙整全在本檔。
+`/wiki-lint` 步驟 5f 由主編派 devpractice 記者執行（此為週彙整的明文觸發邊）。每日 ingest 不讀此檔——daily 只沉澱候選帳本（`.claude/reporter-rules/wiki-ingest-devpractice.md`），彙整全在本檔。
 
 **執行順序前提：** 5f 在六記者 lint 收報**之後**跑（功能記者的 guide 清冊週更、社群記者的 tools 策展已完成），所以本步讀到的都是本週最終狀態，寫入不會互踩。
 

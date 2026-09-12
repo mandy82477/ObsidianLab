@@ -2,7 +2,7 @@
 
 > **資料來源：** `wiki/entities/*.md` 與 `wiki/topics/*.md` 正文內的懸置標記（`❓ **待查證**` / `🔎 **查無官方**`），開啟時即時解析。這裡不存任何資料。
 >
-> 語法規格見 `.claude/rules/wiki-ingest-format.md`「懸置標記語法」節，本頁 regex 是 `scripts/pending_markers.py` 的 `PENDING_RE` 翻譯版——改一邊要改另一邊。frontmatter 的 `pending_count` 等四欄只是本頁的彙總數字（`scripts/gen_wiki_frontmatter.py` 產出），要看**每一筆**懸置標記還是得來這頁。
+> 語法規格見 `.claude/reporter-rules/wiki-ingest-format.md`「懸置標記語法」節，本頁 regex 是 `scripts/pending_markers.py` 的 `PENDING_RE` 翻譯版——改一邊要改另一邊。frontmatter 的 `pending_count` 等四欄只是本頁的彙總數字（`scripts/gen_wiki_frontmatter.py` 產出），要看**每一筆**懸置標記還是得來這頁。
 
 ```dataviewjs
 const ROOT = "CLAUDE_NEWS/wiki";

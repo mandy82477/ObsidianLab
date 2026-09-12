@@ -49,7 +49,7 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 ## 現在還擋不住的攻擊
 
 > 只列**現在還擋不住**的攻擊面，不收論述、教學與產業對照。狀態符號與 [[entities/claude-code]] 相同，語意在本頁是「現在仍會發生」：🔴 仍會發生／✅ 已修或官方已處置／⛔ 官方認定不修／❓ 待查證／🔎 查無官方。依「誰會遇到」的範圍由寬到窄；寫「所有人」的一律在最上。
-%% 維運備忘：本表上限 11 列，退場與補位判準見 .claude/rules/wiki-ingest-safety-policy.md「ai-agent-safety 更新規則」第 2 條 %%
+%% 維運備忘：本表上限 11 列，退場與補位判準見 .claude/reporter-rules/wiki-ingest-safety-policy.md「ai-agent-safety 更新規則」第 2 條 %%
 
 | 擋不住的是什麼 | 誰會遇到 | 狀態 | 官方擋到哪 | 你能先做什麼 |
 |---|---|---|---|---|

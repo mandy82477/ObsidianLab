@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """懸置標記的共用解析庫 — audit / scan / check 三支腳本的單一事實來源。
 
-語法規格見 `.claude/rules/wiki-ingest-format.md`「懸置標記語法」節。**規格與本檔
+語法規格見 `.claude/reporter-rules/wiki-ingest-format.md`「懸置標記語法」節。**規格與本檔
 的 regex 必須一致**，改一邊要改另一邊。
 
 設計的關鍵決定：**識別錨點不是「待查證」這個詞，而是散文裡不可能出現的 metadata
@@ -434,7 +434,7 @@ def _shape(doc: Doc, pos: int) -> str:
 # 口徑豁免：這四類命中在結構上就不是「該回填為新語法的懸置事實」，把它們算進
 # 存量會讓「舊語法盲區」永遠歸不了零，而一個永遠歸不了零的數字沒有人會盯。
 # 判斷式：**回填成新語法之後，這一筆會變得比較好嗎？** 不會 → 豁免。
-#   status_format  人物頁 `active（待核實）`——`.claude/rules/wiki-ingest-people.md`
+#   status_format  人物頁 `active（待核實）`——`.claude/reporter-rules/wiki-ingest-people.md`
 #                  明訂「待核實資訊」的索引欄狀態必須長這樣，它是格式不是懸置
 #   legend         狀態／採用符號圖例——列出符號的意義，本身不指涉任何事實
 #   archive        封存子頁原文——「時段蒸餾與封存」明訂一字不刪，改寫即違規

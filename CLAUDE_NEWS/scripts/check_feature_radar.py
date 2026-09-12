@@ -8,7 +8,7 @@
 互通與 Auto 模式預設化，當月最重要的兩條，且雙雙已進「現在值得跟的三件」與「⏰ 倒數中」，唯獨
 索引查無。
 
-規則已寫進 `.claude/rules/wiki-ingest-features.md`，但當初失敗的正是「靠記者記得補」這一層，
+規則已寫進 `.claude/reporter-rules/wiki-ingest-features.md`，但當初失敗的正是「靠記者記得補」這一層，
 所以再補一道機械檢查。
 
 **只對帳當月**：舊月份的詳細條目會被封存或裁撤（見 `feature-radar-archive-*.md`），
@@ -125,7 +125,7 @@ def main(argv: list[str]) -> int:
             stream.write(v + "\n")
         stream.write(
             "  修法：熱度與試用價值只寫在 ## 📋 功能全覽表；詳細條目標頭只留「發布」與「狀態」，\n"
-            "        推薦節不寫熱度括號（.claude/rules/wiki-ingest-features.md §7(a)）\n"
+            "        推薦節不寫熱度括號（.claude/reporter-rules/wiki-ingest-features.md §7(a)）\n"
         )
         stream.flush()
         return 1
@@ -154,7 +154,7 @@ def main(argv: list[str]) -> int:
         stream.write(f"  - 詳細條目：{title}\n")
     stream.write(
         "  修法：詳細條目與全覽表列必須一一對應。缺列 → 依 "
-        ".claude/rules/wiki-ingest-features.md\n"
+        ".claude/reporter-rules/wiki-ingest-features.md\n"
         "        「新條目必須同時補全覽表一列」補上（五欄，依發布日期插入，熱度／試用價值\n"
         "        須與詳細條目標頭逐字一致）；表列多於詳細條目 → 確認是否誤把舊月份條目\n"
         "        寫進當月區塊\n"

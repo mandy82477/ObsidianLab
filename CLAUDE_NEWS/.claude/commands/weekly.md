@@ -9,7 +9,7 @@ argument-hint: [YYYY-Wnn]
 
 | 順序 | 子指令 | 性質 | 產出 |
 |---|---|---|---|
-| 0 | 本檔步驟 0 | 本機專屬補跑 | 5b 榜單週更、5c 清算（5 筆）、lint 待裁示呈報 |
+| 0 | 本檔步驟 0 | 本機專屬補跑 | 5b 榜單週更、5c 清算、lint 待裁示呈報、開放迴路掃描 |
 | 1 | `.claude/commands/weekly-report.md` | 對外交付 | `weekly/YYYY-Wnn.md`（凍結存檔） |
 | 2 | `.claude/commands/wiki-weekly-review.md` | 對內策展 | `wiki/` 頁面加碼 + `wiki/log.md` |
 | 3 | 本檔步驟 3 | 收尾 | commit + test + build + **單一 push** |
@@ -43,7 +43,7 @@ argument-hint: [YYYY-Wnn]
 
 ### 0. 本機專屬步驟補跑（先做，不可略過）`[加入: 2026-08-20]`
 
-`/wiki-lint` 有三個步驟需要「網路 ＋ LLM 同時具備」，雲端 routine（egress 封鎖）做不到、GitHub Actions（無 LLM）也做不到——**只有本機 session 有**。它們原本寫「留待本機執行」，但沒有任何機制保證本機真的會跑，結果是系統性餓死：
+`/wiki-lint` 有幾個步驟需要「網路 ＋ LLM 同時具備」，雲端 routine（egress 封鎖）做不到、GitHub Actions（無 LLM）也做不到——**只有本機 session 有**。它們原本寫「留待本機執行」，但沒有任何機制保證本機真的會跑，結果是系統性餓死：
 
 | 佐證（`wiki/log.md`） | 現象 |
 |---|---|
@@ -51,7 +51,7 @@ argument-hint: [YYYY-Wnn]
 | `topics/model-task-leaderboard` 最後更新 = 建頁當天 | 號稱「週快照」的頁停更 15 天 |
 | 5c 上次執行是使用者親自要求 | 待查證存量的唯一消化端，實際消化速率趨近於零 |
 
-`/weekly` 是**本機每週固定會下的指令**，因此把這些步驟掛在這裡。誠實揭露其失效模式：**你哪週沒跑 `/weekly`，這兩步那週就沒跑**——但這遠優於現況（每週都跑不到）。
+`/weekly` 是**本機每週固定會下的指令**，因此把這些步驟掛在這裡。誠實揭露其失效模式：**你哪週沒跑 `/weekly`，這幾步那週就沒跑**——但這遠優於現況（每週都跑不到）。
 
 依序執行，全部讀 `.claude/commands/wiki-lint.md` 的對應節，不在此重述做法：
 
@@ -59,7 +59,19 @@ argument-hint: [YYYY-Wnn]
 2. **5c 逾期待查證清算**——照該檔「5c. 逾期待查證清算」執行，**Lane A（本輪額度 10）＋Lane B（本輪額度 8）**（`check_pending_markers.py --queue` 已內建兩條分流；Lane A 多數可免 web，但**雲端 egress 封鎖時整個 5c 跳過**，本步本來就在本機執行）。務必照 5c 第 5 步做結案回掃，並把輸出的「📊 產消對帳」與末尾「⚠️ 舊語法盲區」一併抄進回報
 3. **lint 待裁示事項呈報**——`Grep "待使用者確認\|待裁示" wiki/log.md` 取最近 3 次 lint 紀錄的未決事項，**直接列在本指令的輸出裡呈給使用者**，每項標「⏳ 已擱置 N 週」。理由：那些事項只寫進 `wiki/log.md`，而**使用者不讀該檔**——不呈報等於沒提過（實例：某建頁候選連續第 6 週被提出而未被看見）
 
-> 這三項的產出一律**併入步驟 3 的單一 push**，不自行 commit（同步驟 1、2 的收尾紀律）。
+4. **開放迴路掃描** `[移入: 2026-09-12]`——跑 `python scripts/open_loops.py`，它彙整**五類**開放迴路的可見性（只報數字與最舊年齡，不合併處理權——每類仍由各自流程消化）：未 commit 的實質改動、逾複查日的 workaround（表在 `docs/workaround-register.md`）、懸置標記逾期＋舊語法盲區（處理端 `/wiki-lint` 5c）、`wiki/reader-notes.md` 的 ⏳（處理端 `/wiki-weekly-review`）、`wiki/feature-radar.md` 的 ⏳（逾期判定端 `/wiki-lint` 5a）。另附一盞「人類質疑時效燈」：`wiki/log.md` 最新 Query 條目距今 >21 天即亮 ⚠（另計不入總；已知質疑模式由 `/wiki-lint` 7b 依 `.claude/reporter-rules/wiki-lint-inquiry.md` 抽題代打，新型質疑仍靠使用者）。**輸出原樣抄進本指令的回報**，同第 3 項的理由：只寫進 log 等於沒提過。日常另有 SessionStart hook 在開啟專案時提醒未 commit 的實質改動。
+
+   輸出末尾分成**三個數字**，各答一個問題：
+
+   | 數字 | 回答什麼 | 組成 |
+   |------|---------|------|
+   | **需收尾** | 這次該做完的 | 未 commit ＋ 逾期 workaround |
+   | **已跳票** | 已逾自身期限的承諾（同質、可追蹤） | 逾期 workaround ＋ 逾期懸置 ＋ reader-notes ⏳ ＋ feature-radar ⏳ 逾 90 天者 |
+   | **存量遷移** | 格式債，沒對讀者承諾過什麼 | 舊語法盲區（另計，不入總） |
+
+   掃描失敗時標「數量未知」、總計印下界 `≥`、exit code 非 0，不得靜默回 0。三個數字為何不合併、失敗為何不得當 0：見沿革檔 `docs/rules-changelog/CLAUDE.md` 2026-08-29。
+
+> 這四項的產出一律**併入步驟 3 的單一 push**，不自行 commit（同步驟 1、2 的收尾紀律）。
 
 ### 1. 週報產出（對外交付）
 
@@ -102,6 +114,7 @@ argument-hint: [YYYY-Wnn]
 - 週報：weekly/YYYY-Wnn.md（深挖題目：…）
 - 延伸回顧：執行 N 項 / 使用者跳過 M 項
 - 聚焦校準：（月度才有，或「非本月首次，跳過」）
+- 開放迴路：需收尾 N／已跳票 M／存量遷移 K（人類質疑時效燈：✅／⚠️ N 天）
 - 收尾：涵蓋窗補掃（新日報 N 份／無）｜測試 ✅／❌｜build ✅／跳過｜push ✅
 ```
 

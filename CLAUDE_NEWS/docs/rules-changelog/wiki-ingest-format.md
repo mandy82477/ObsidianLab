@@ -1,6 +1,6 @@
-# .claude/rules/wiki-ingest-format.md 沿革（教訓存檔）
+# .claude/reporter-rules/wiki-ingest-format.md 沿革（教訓存檔）
 
-本檔是 `.claude/rules/wiki-ingest-format.md` 的歷史敘事，不是待執行規則；條文處的「沿革檔 YYYY-MM-DD[ 字母]」皆指本檔對應段。考古鏈：`[加入: 日期]` → 本檔 → `wiki/log.md` 同日 Query 條目。
+本檔是 `.claude/reporter-rules/wiki-ingest-format.md` 的歷史敘事，不是待執行規則；條文處的「沿革檔 YYYY-MM-DD[ 字母]」皆指本檔對應段。考古鏈：`[加入: 日期]` → 本檔 → `wiki/log.md` 同日 Query 條目。
 
 本檔是**歷史敘事，不是待執行規則**——條文已在上方，建頁或格式審查時不必讀本檔。存放於此的原因：條文本身已能獨立執行，敘事只在有人想問「為什麼有這條」時才需要。考古鏈為 `[加入: 日期]` → 本檔 → `wiki/log.md` 同日 Query 條目。
 

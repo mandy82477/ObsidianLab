@@ -1,7 +1,7 @@
 """Tests for scripts/check_reader_language.py — 讀者語言閘。
 
-規則端：`.claude/rules/wiki-reporter-shared.md`「派工過程不上頁」與
-`.claude/rules/wiki-ingest-format.md`「無維運術語洩漏」列。
+規則端：`.claude/reporter-rules/wiki-reporter-shared.md`「派工過程不上頁」與
+`.claude/reporter-rules/wiki-ingest-format.md`「無維運術語洩漏」列。
 
 每個測試用假檔（`TemporaryDirectory`）餵 `scan(files=..., allow=...)`——
 `scan()` 明確接受這兩個參數以支援測試，不需 monkeypatch 模組全域。

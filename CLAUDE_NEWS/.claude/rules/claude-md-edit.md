@@ -1,6 +1,13 @@
+---
+paths:
+  - "CLAUDE.md"
+  - "wiki/CLAUDE.md"
+  - ".claude/**/*.md"
+  - ".claude/review-registry.json"
+---
 # CLAUDE.md 及規則檔修改規則
 
-修改 `CLAUDE.md`、`.claude/commands/*.md`、`.claude/rules/*.md` 前必須讀取此檔案。
+修改 `CLAUDE.md`、`.claude/commands/*.md`、`.claude/rules/*.md`、`.claude/reporter-rules/*.md` 前必須讀取此檔案。
 
 ---
 
@@ -8,7 +15,7 @@
 
 **先執行反向查詢，找出所有引用方：**
 ```
-grep -r "被修改的檔名" .claude/commands/ .claude/rules/
+grep -r "被修改的檔名" .claude/commands/ .claude/rules/ .claude/reporter-rules/
 ```
 
 逐一確認每個引用方在修改後仍能正確找到所需規則。若不確定影響範圍，寧可先查、再動手。
@@ -22,7 +29,7 @@ command / skill 中永遠使用明確路徑，**禁止裸露的 `CLAUDE.md`**：
 | 寫法 | 判斷 |
 |------|------|
 | `` `wiki/CLAUDE.md` `` | ✅ 明確 |
-| `` `.claude/rules/wiki-ingest.md` `` | ✅ 明確 |
+| `` `.claude/reporter-rules/wiki-ingest.md` `` | ✅ 明確 |
 | `` `CLAUDE.md` ``（無路徑前綴） | ❌ 禁止 |
 | `見 CLAUDE.md`（無路徑前綴） | ❌ 禁止 |
 
@@ -40,9 +47,8 @@ command / skill 中永遠使用明確路徑，**禁止裸露的 `CLAUDE.md`**：
 
 **不適合放進 CLAUDE.md 的內容：**
 - 快速上手、安裝說明（→ `README.md`）
-- 只有一個 skill 需要的格式模板（→ `.claude/rules/` 對應檔）
+- 格式模板／範本（→ 消費它的那份 rules 檔；跨 skill 共用且無單一消費者的，放共用載入點 `wiki/CLAUDE.md` 或 `.claude/reporter-rules/wiki-reporter-shared.md`，根目錄只留判準句＋指路）
 - 面向人類的操作範例（→ `README.md`）
-- 超過 3 行的格式範本（→ `.claude/rules/` 對應檔）
 - 教訓敘事（→ 該檔的沿革檔，`docs/rules-changelog/`）：條文只留判準＋「沿革檔 日期」指路，不進 agent 讀取範圍 `[加入: 2026-09-04]`
 
 > 規則檔以「內容是否精簡、有無重複」為準，不設行數上限；長度非簡化理由（同 wiki 頁面「一頁一故事」哲學）。
@@ -62,6 +68,28 @@ grep -rn "要改的字串" scripts/ web_reader/assets/ src/tests/
 ```
 
 有命中 → 進契約表＋registry（登記時**規格端與消費端各一組 pattern**，避免 `all_contain` 全檔搜尋讓同檔第二份副本掩護漂移）；零命中 → 一般文案，自由改。本檔上方「修改前：確認影響範圍」的反向查詢只掃 `.claude/`，接不到程式端——兩個 grep 都要跑。
+
+---
+
+## rules 檔必須有 `paths:` 範圍 `[加入: 2026-09-12]`
+
+無 `paths:` 的規則檔會在**每個 session 無條件載入**（2026-09-12 實測：19 檔合計 244 KB，為根目錄 `CLAUDE.md` 的 21 倍，且全部無範圍）。
+
+- **新增規則檔必帶 `paths:`**，寫在檔首 frontmatter，`---` 後緊接 `# 標題`：
+
+  ```
+  ---
+  paths:
+    - "wiki/entities/**/*.md"
+    - "wiki/topics/model-*.md"
+  ---
+  ```
+
+- **範圍＝消費這份規則的場景會讀到的檔案**（負責頁面、看守腳本、資料帳本）。寧可略寬也不要漏——漏了會讓該場景失去規則。
+- glob 相對專案根（`CLAUDE_NEWS/`），支援 `**` 與 `{a,b}`。
+- **載入靠明文 Read，不靠自動載入**：記者由角色檔（`.claude/agents/wiki-reporter-*.md`）列規則清單、主編由 command 內文指名，`paths:` 只是縮小無條件載入量。
+- **只給記者／主編明文 Read 的規則放 `.claude/reporter-rules/`，不放本資料夾**——那裡沒有自動載入機制，不需要也不應該帶 `paths:`（帶了只是裝飾）。本資料夾只留主 session 自己會用到的規則。
+- 由 `src/tests/test_rules_frontmatter.py` 看守：缺 `paths:`、空清單、或 glob 在庫內零匹配皆 FAIL（只掃 `.claude/rules/*.md`）。
 
 ---
 

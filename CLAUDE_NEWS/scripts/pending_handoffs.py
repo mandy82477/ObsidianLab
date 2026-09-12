@@ -34,7 +34,7 @@ from pathlib import Path
 
 REPO_ROOT = Path(__file__).resolve().parent.parent
 LEDGER = REPO_ROOT / "data" / "pending-handoffs.jsonl"
-CATEGORIES = ("模型", "功能", "商業", "安全政策", "社群", "人物", "投資分析", "開發實務")  # 後兩者為衍生記者（.claude/rules/wiki-ingest.md 第四步），2026-09-06 加
+CATEGORIES = ("模型", "功能", "商業", "安全政策", "社群", "人物", "投資分析", "開發實務")  # 後兩者為衍生記者（.claude/reporter-rules/wiki-ingest.md 第四步），2026-09-06 加
 STALE_DAYS = 14
 
 

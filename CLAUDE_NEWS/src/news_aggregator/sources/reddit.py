@@ -70,7 +70,7 @@ def _fetch_rss_all(cutoff: datetime, lookback: int) -> list[FeedItem]:
         # RSS carries no score, so the top-of-week pass tags its provenance in the
         # source label: "· 週熱門" tells the wiki reporters this item cleared Reddit's
         # weekly popularity bar and may be admitted despite score being unavailable
-        # (see .claude/rules/wiki-reporter-shared.md interaction-threshold table).
+        # (see .claude/reporter-rules/wiki-reporter-shared.md interaction-threshold table).
         marker = " · 週熱門" if sort_top else ""
         for subreddit, query in SUBREDDIT_QUERIES:
             if query is None:

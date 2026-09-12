@@ -1,6 +1,6 @@
 # Wiki Ingest — 模型記者指南
 
-分類為「模型」的新聞條目由此記者負責。讀此檔後直接操作，需建立新頁面時另讀 `.claude/rules/wiki-ingest-format.md`。
+分類為「模型」的新聞條目由此記者負責。讀此檔後直接操作，需建立新頁面時另讀 `.claude/reporter-rules/wiki-ingest-format.md`。
 
 ---
 
@@ -20,9 +20,9 @@
 
 > **`wiki/topics/model-task-leaderboard.md` 例外 `[加入: 2026-08-05]`**：此頁為跨家榜單週快照，吃外部榜單網站而非新聞條目，由 `/wiki-lint` 步驟 5b（主編派 Haiku 抓取）維護；每日 ingest **不更新**此頁，模型記者僅在 lint 時做呈現品質檢查、不自行抓榜（記者無 web 工具）。
 
-> `wiki/entities/pricing.md` 由**商業記者主責**（見 `.claude/rules/wiki-ingest-commercial.md`）。模型記者遇模型定價時，將定價細節留給商業記者，僅在模型頁記能力並加 wikilink 至 pricing。
+> `wiki/entities/pricing.md` 由**商業記者主責**（見 `.claude/reporter-rules/wiki-ingest-commercial.md`）。模型記者遇模型定價時，將定價細節留給商業記者，僅在模型頁記能力並加 wikilink 至 pricing。
 
-新模型發布時，依 `.claude/rules/wiki-ingest-format.md` 建立新 entities/ 頁。
+新模型發布時，依 `.claude/reporter-rules/wiki-ingest-format.md` 建立新 entities/ 頁。
 
 ---
 
@@ -122,7 +122,7 @@ C 條「數字必須進頁面」與 D 條「決策層必須歸因」的正確落
 
   有輸出且非引用來源格 → 違規，先短語化再收工
 
-  儲存格量測只量表格；**表格下方細節區的條列上限 200 字元**由 `python scripts/check_cell_limits.py` 看守（見 `.claude/rules/wiki-ingest-format.md`「表格放結論，細節下沉」）。
+  儲存格量測只量表格；**表格下方細節區的條列上限 200 字元**由 `python scripts/check_cell_limits.py` 看守（見 `.claude/reporter-rules/wiki-ingest-format.md`「表格放結論，細節下沉」）。
 
 ### H. 表格欄數與版面紀律 `[加入: 2026-08-05]`
 
@@ -146,7 +146,7 @@ E 條管的是**能力**骨架跟著陣容換代，本條管**成本**。兩者�
 2. **不得為此加欄**：H 條的快速選型表 ≤ 4 欄、對照表 ≤ 5 欄仍然有效，實付成本一律走上述獨立 h2 節（同 G 條「表格放結論，細節下沉」）
 3. 換算基準（假設的 token 量、tokenizer 增幅、資料來源與查證日）必須寫出來，並標明**這是換算不是實測**；同時附一句「遷移前應以 `count_tokens` 對自己真實的 prompt 量測」——官方明載增幅隨工作型態變動（1×–1.35×），照抄概值會誤導
 4. **膨脹率數字缺席時不得推算**：官方未載增幅時標懸置並回報主編查證官方 tokenizer／定價文件——記者無 web 工具，硬填等於把猜測制度化
-5. 乘數（快取、Batch、資料落地、地區端點）與通路差異**不在本頁展開**，加 wikilink 至 [[entities/pricing]]（該頁「通路與乘數」區塊由**主編**於 `/wiki-lint` 5e 維護，見 `.claude/rules/wiki-ingest-commercial-lint.md`）
+5. 乘數（快取、Batch、資料落地、地區端點）與通路差異**不在本頁展開**，加 wikilink 至 [[entities/pricing]]（該頁「通路與乘數」區塊由**主編**於 `/wiki-lint` 5e 維護，見 `.claude/reporter-rules/wiki-ingest-commercial-lint.md`）
 
 **為何不併進 pricing 頁：** pricing 回答「這個模型多少錢」，本頁回答「**我該用哪個**」——「同一份工作換個模型差多少」是選型問題，不是計費問題。兩頁互加 wikilink，不互相搬運。
 
@@ -187,7 +187,7 @@ radar 全覽表同時有 Fable 5 與 Fable 5.1 兩列時，本表對照的一律
 
 ### fable-5 的封存
 
-照 `.claude/rules/wiki-ingest-format.md`「時段蒸餾與封存（全站通用）」，archive 子頁為 `entities/fable-5-archive`，對象為 `## 歷史記錄` 的 `#### YYYY-MM-DD` 條目（以月為時段）。**2026-06 一個時段已於 2026-09-07 封存**（同批另有兩處死案歸檔：出口管制雙方立場兩張表、配額與計費過渡整節）；2026-07 於 2026-10 起達門檻。
+照 `.claude/reporter-rules/wiki-ingest-format.md`「時段蒸餾與封存（全站通用）」，archive 子頁為 `entities/fable-5-archive`，對象為 `## 歷史記錄` 的 `#### YYYY-MM-DD` 條目（以月為時段）。**2026-06 一個時段已於 2026-09-07 封存**（同批另有兩處死案歸檔：出口管制雙方立場兩張表、配額與計費過渡整節）；2026-07 於 2026-10 起達門檻。
 
 ## entities/opus-5 的兩張表 `[加入: 2026-09-07]`
 
@@ -203,7 +203,7 @@ radar 全覽表同時有 Fable 5 與 Fable 5.1 兩列時，本表對照的一律
 
 ### opus-5 的 `## 熱度與試用價值`：同步 feature-radar 全覽表 Opus 5 那一列，不一致即覆寫
 
-照本檔「熱度降溫」與 `.claude/rules/wiki-ingest-features.md` 的同步規則，對照 [[feature-radar]] 全覽表 Opus 5 那一列；不一致以 radar 為準覆寫本表並更新判定日。
+照本檔「熱度降溫」與 `.claude/reporter-rules/wiki-ingest-features.md` 的同步規則，對照 [[feature-radar]] 全覽表 Opus 5 那一列；不一致以 radar 為準覆寫本表並更新判定日。
 
 > h3 標題必須自己帶「覆寫」與 slug：`table_census.py` 的 `_mechanism()` 只認**命中行本身或其所屬最近標題**，把機制詞留在內文而標題只寫節名，該表會判「無機制」。
 
@@ -211,7 +211,7 @@ radar 全覽表同時有 Fable 5 與 Fable 5.1 兩列時，本表對照的一律
 
 `## 歷史記錄` 表為累積式（每則 prepend），**上限 20 列**；逾上限時最舊時段先走下方封存條文整段搬走，**不逐列汰除**（逐列汰會把同一個月拆成兩半，讀者在兩個地方各看到半段）。同一天的多則合為一列，日期欄逐字寫出每個日期。**圖例一行固定放表下方，不重寫。** 已有查證結果的列直接把結果寫進事件欄（「已證偽」「查證屬實」「不採信」），不另立符號——本表的 ❓ 只表示「還沒查到答案」。
 
-照 `.claude/rules/wiki-ingest-format.md`「時段蒸餾與封存（全站通用）」，archive 子頁為 `entities/opus-5-archive`（**2026-09-07 尚未建立**），對象為 `## 歷史記錄` 的表列與細節條目（以月為時段）。最舊時段 2026-07 於 2026-10 起達 3 個月門檻，屆時才建 archive 頁。
+照 `.claude/reporter-rules/wiki-ingest-format.md`「時段蒸餾與封存（全站通用）」，archive 子頁為 `entities/opus-5-archive`（**2026-09-07 尚未建立**），對象為 `## 歷史記錄` 的表列與細節條目（以月為時段）。最舊時段 2026-07 於 2026-10 起達 3 個月門檻，屆時才建 archive 頁。
 
 ---
 

@@ -46,7 +46,7 @@ _DATE_RE = re.compile(r"(\d{4})-(\d{2})-(\d{2})")
 READER_NOTES = REPO / "wiki" / "reader-notes.md"
 FEATURE_RADAR = REPO / "wiki" / "feature-radar.md"
 LOG_MD = REPO / "wiki" / "log.md"
-INQUIRY_LAMP_DAYS = 21  # 與 .claude/rules/wiki-lint-inquiry.md「人類質疑時效燈」同步
+INQUIRY_LAMP_DAYS = 21  # 與 .claude/reporter-rules/wiki-lint-inquiry.md「人類質疑時效燈」同步
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 
@@ -116,7 +116,7 @@ def reader_notes_pending(today: date) -> list[str]:
     """`- [⏳] YYYY-MM-DD｜…` 的待處理項，附放置天數。
 
     reader-notes 的 ⏳ 沒有期限規則（feature-radar 的 ⏳ 有 90 天，見
-    `.claude/rules/wiki-ingest-features.md`「⏳ 觀望是有期限的判斷，不是停車場」）。
+    `.claude/reporter-rules/wiki-ingest-features.md`「⏳ 觀望是有期限的判斷，不是停車場」）。
     在補上規則之前，至少讓它的年齡每週被看見一次。
     """
     if not READER_NOTES.exists():
@@ -139,7 +139,7 @@ def feature_radar_watching(today: date) -> tuple[int, int]:
     9 條同時出現在詳細條目標頭與全覽表（跨層重複）、1 個是圖例列。
     一支專門防低報的腳本在這一類**高報 77%**，而且吃進了總計。
 
-    只有「逾 90 天」那個數字進總計：依 `.claude/rules/wiki-ingest-features.md`
+    只有「逾 90 天」那個數字進總計：依 `.claude/reporter-rules/wiki-ingest-features.md`
     「⏳ 觀望是有期限的判斷，不是停車場」，兩天前發布的 ⏳ 不是積壓。
 
     **這個數字是上界**：純年齡判準分不出「零後續」與「有後續但仍觀望」——

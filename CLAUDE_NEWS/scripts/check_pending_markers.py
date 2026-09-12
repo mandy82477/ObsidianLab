@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """懸置標記語法檢查器 — 388 筆舊字樣回填為新語法時的每批驗收工具。
 
-語法規格見 `.claude/rules/wiki-ingest-format.md`「懸置標記語法」節，解析邏輯全部
+語法規格見 `.claude/reporter-rules/wiki-ingest-format.md`「懸置標記語法」節，解析邏輯全部
 複用 `scripts/pending_markers.py`（`PENDING_RE`／`SHORT_RE`／`QDEF_RE`／
 `iter_pending()`／`probe_too_weak()`／`wikilink_target()` 等），本檔不重新發明
 parser，只做「這筆標記合不合規格」的判定。
@@ -13,7 +13,7 @@ parser，只做「這筆標記合不合規格」的判定。
 已掛進 `scripts/run_tests.py`（回填完成、全庫 0 FAIL 後掛載），亦可獨立執行供單批
 回填後的手動驗收。
 
-檢查項對照 `.claude/rules/wiki-ingest-format.md`「懸置標記語法」節：
+檢查項對照 `.claude/reporter-rules/wiki-ingest-format.md`「懸置標記語法」節：
 
   1. 語法完整性（FAIL）   標記日為合法 ISO 日期且 ≤ 今日；複查日（若有）晚於標記日；
                           探針至少 1 個非空
@@ -348,7 +348,7 @@ def check(report: list[str], wiki_dir: Path | None = None, today: date | None = 
         ok = False
         report.append(
             f"  ❌ 舊語法存量增加：{baseline} → {total_legacy} 筆（+{total_legacy - baseline}）。"
-            f"新標記請直接用新語法（見 .claude/rules/wiki-ingest-format.md「懸置標記語法」）——"
+            f"新標記請直接用新語法（見 .claude/reporter-rules/wiki-ingest-format.md「懸置標記語法」）——"
             f"舊語法沒有探針欄，5c 的佇列永遠撈不到它，等於標了等於沒標。"
         )
         report.append(

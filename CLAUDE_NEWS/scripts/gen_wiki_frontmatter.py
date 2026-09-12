@@ -132,7 +132,7 @@ def strip_pending_probes(text: str) -> str:
     """移除懸置標記 metadata 區塊（`（標 …｜查 …）`），只留下 `❓**待查證**` 本身。
 
     metadata 括號段裡的 wikilink 是偵測用探針，不是內容引用（見
-    `.claude/rules/wiki-ingest-format.md`「懸置標記語法」節），入鏈統計不該算它。
+    `.claude/reporter-rules/wiki-ingest-format.md`「懸置標記語法」節），入鏈統計不該算它。
     標記後方的第四段（`｜**題目**：內文`）不在 PENDING_RE 的 match 範圍內，故
     這裡整段替換掉 match 不會動到它，內文若有 wikilink 仍照常留給 findall 計入。
     """

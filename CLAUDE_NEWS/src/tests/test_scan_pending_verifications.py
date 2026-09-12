@@ -1,6 +1,6 @@
 """Tests for scripts/scan_pending_verifications.py — 每日懸置掃描器。
 
-規格見 `.claude/rules/wiki-ingest-format.md`「懸置標記語法」節。所有測試用
+規格見 `.claude/reporter-rules/wiki-ingest-format.md`「懸置標記語法」節。所有測試用
 `TemporaryDirectory` 建假的 wiki_dir + 假日報 + 假 jsonl，`scan_digest()` 是
 唯一的可測核心（`main()` 只負責 CLI 與找檔案），不需要真的 repo 內容。
 """

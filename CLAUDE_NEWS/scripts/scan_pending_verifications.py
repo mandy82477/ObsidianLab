@@ -13,7 +13,7 @@
 3. **永遠 exit 0** —— 找不到日報／零 marker 都印訊息後 return 0，失敗只記錄
    不阻斷 pipeline。
 
-比對演算法（規格見 `.claude/rules/wiki-ingest-format.md`「懸置標記語法」節）：
+比對演算法（規格見 `.claude/reporter-rules/wiki-ingest-format.md`「懸置標記語法」節）：
 
   1. 條目切分：`ENTRY_RE` 把日報切成 entry，比對範圍是 entry.title 與
      entry.body 兩個獨立欄位，不是全檔 substring。

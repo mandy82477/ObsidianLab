@@ -58,4 +58,4 @@ description: CLAUDE_NEWS 頁面健檢與重設計流程（使用者 review 偏�
 - **併頁殼配套**：轉址殼領域寫上層的、識別字「已併回」、`**上層：**`、入邊逐一改指、index 列與投影同批處理。
 - **跨維護者的頁只能走 `pending_handoffs.py`**（類別中文）；同維護者鄰居只改入口句與互指句，不重寫（一次一頁）。
 - **主 session 自己的邊界**：其他 session 的未提交檔不碰、`git add` 指名、測試 exit 0 才 commit、remote 有新 commit 不 push。
-- **閘**：`check_reader_language.py`、`check_cell_limits.py`（儲存格 ≤120、條列 ≤200）、`check_pending_markers.py`、`check_rules.py`、`check_hierarchy.py`、`build_web.py`（錨點 WARN 不增）、`run_tests.py`；閘綠不等於合格，冷讀者才是最後一關。蒸餾契約在 `.claude/rules/wiki-ingest-format.md`。
+- **閘**：`check_reader_language.py`、`check_cell_limits.py`（儲存格 ≤120、條列 ≤200）、`check_pending_markers.py`、`check_rules.py`、`check_hierarchy.py`、`build_web.py`（錨點 WARN 不增）、`run_tests.py`；閘綠不等於合格，冷讀者才是最後一關。蒸餾契約在 `.claude/reporter-rules/wiki-ingest-format.md`。

@@ -35,14 +35,14 @@ description: 系統架構變動時，快速同步更新架構文件（Design Dia
 
 ### 1. 判斷變更範圍
 - 讀 `src/DesignDocument/Design Diagram.md` 標頭「最後更新」日期
-- `git log --oneline --since="<那個日期>"` 看這段期間的 commit，挑出**結構性**變動（pipeline 步驟增減、`sources/*.py` 增減、`.claude/rules/` 或 `.claude/commands/` 的流程改動、新治理機制）
+- `git log --oneline --since="<那個日期>"` 看這段期間的 commit，挑出**結構性**變動（pipeline 步驟增減、`sources/*.py` 增減、`.claude/rules/`、`.claude/reporter-rules/` 或 `.claude/commands/` 的流程改動、新治理機制）
 - 分類每筆變動：
   - **現況變動**（改了系統「現在怎麼運作」）→ 要更新 Design Diagram.md + current 頁
   - **里程碑**（一次有意義的架構演進，值得記入歷史）→ 額外在 evolution 頁加一筆事件
   - 純 bug fix / 微調 → 通常不進架構文件
 
 ### 2. 先更新事實來源 `Design Diagram.md`
-- 對照**實際系統**核實，不憑記憶：pipeline 讀 `.claude/commands/news-pipeline-steps.md` 與 `news-pipeline.md`；來源清單讀 `src/news_aggregator/main.py` 的 `sources = [...]`；lint 讀 `.claude/commands/wiki-lint.md`；派工讀 `.claude/rules/wiki-ingest.md`
+- 對照**實際系統**核實，不憑記憶：pipeline 讀 `.claude/commands/news-pipeline-steps.md` 與 `news-pipeline.md`；來源清單讀 `src/news_aggregator/main.py` 的 `sources = [...]`；lint 讀 `.claude/commands/wiki-lint.md`；派工讀 `.claude/reporter-rules/wiki-ingest.md`
 - 改對應的 mermaid 圖與文字；更新標頭「最後更新」為今日
 - 這是下游 HTML 的依據，**先它、後 HTML**
 

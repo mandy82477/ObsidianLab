@@ -8,7 +8,7 @@
     不定期質疑，沒有一次是排程檢查抓到的——排程檢查考的是「考卷內」，真問題在
     「考卷外」。而使用者的質疑歸納起來反覆只有少數幾種模式，每種都可操作化成探針
     （首版七種；2026-09-02 經使用者確認加入第八種「資產重用審計」——加題條件與
-    流程見 .claude/rules/wiki-lint-inquiry.md「題庫維護」）。
+    流程見 .claude/reporter-rules/wiki-lint-inquiry.md「題庫維護」）。
     本題庫把「已經問過的問題」變成常設檢查：使用者問過一次的，不需要再問第二次；
     但新型質疑仍然只有人問得出來——所以 `open_loops.py` 的
     「人類質疑時效燈」不因本題庫在跑而熄滅。
@@ -40,7 +40,7 @@ BANK = [
             "列近 7 天 wiki 新增的帶單位數字：git diff $(git rev-list -1 --before=\"7 days ago\" HEAD) -- wiki/entities wiki/topics | grep '^+' | grep -oE '[0-9][0-9,.]*(%|倍|萬|億|美元|/Mtok|天)' | sort -u（不可用 reflog 語法——雲端 lint 是 fresh clone，reflog 為空）",
             "用本週 seed 擲骰抽 1 個數字（同週重跑須同題）",
             "回查：該數字在 news/*.md 或該頁「參考來源」有沒有對應條目／官方連結",
-            "答不出來源 → 依 .claude/rules/wiki-ingest-format.md 懸置標記語法標記，或退回對應記者",
+            "答不出來源 → 依 .claude/reporter-rules/wiki-ingest-format.md 懸置標記語法標記，或退回對應記者",
         ],
     },
     {
@@ -84,9 +84,9 @@ BANK = [
         "origin": "2026-07-28 網站 review 15 項修正；2026-08-05 model-comparison 表格爆版",
         "probe": [
             "列近 7 天有改動的頁：git diff --name-only $(git rev-list -1 --before=\"7 days ago\" HEAD) -- wiki/entities wiki/topics，擲骰抽 1 頁（不可用 reflog 語法，雲端 reflog 為空）",
-            "跑儲存格量測（>120 字元即違規，指令見 .claude/rules/wiki-ingest-format.md「表格放結論，細節下沉」）",
+            "跑儲存格量測（>120 字元即違規，指令見 .claude/reporter-rules/wiki-ingest-format.md「表格放結論，細節下沉」）",
             "讀該頁前 160 字：能否不看背景就懂（delta-first ＋ 可獨立閱讀）",
-            "違規依 .claude/rules/wiki-ingest-format.md 修復；修不動記待辦",
+            "違規依 .claude/reporter-rules/wiki-ingest-format.md 修復；修不動記待辦",
         ],
     },
     {
@@ -118,7 +118,7 @@ BANK = [
         "origin": "2026-08-28 Sonnet 促銷殘留 5 處（距不存在的到期日 3 天）；2026-08-08 上修沒回掃 12 天",
         "probe": [
             "grep -rnE '(截至|預計|即將|促銷|到期|生效)' wiki/entities wiki/topics 取帶日期者，擲骰抽 1 筆",
-            "該日期已過 → 查日報／官方後續，依 .claude/rules/wiki-reporter-shared.md「事實更正必回掃」處理：改掉＋回掃（先 `wiki_graph.py explain <頁> --section`，再拿關鍵字 grep 補漏）",
+            "該日期已過 → 查日報／官方後續，依 .claude/reporter-rules/wiki-reporter-shared.md「事實更正必回掃」處理：改掉＋回掃（先 `wiki_graph.py explain <頁> --section`，再拿關鍵字 grep 補漏）",
             "未過期 → 驗敘述與最新日報一致即結案",
         ],
     },
@@ -181,7 +181,7 @@ def main(argv=None) -> int:
         return 2
 
     if args.cmd == "all":
-        print(f"質疑題庫共 {len(BANK)} 題（單一來源；機制說明見 .claude/rules/wiki-lint-inquiry.md）")
+        print(f"質疑題庫共 {len(BANK)} 題（單一來源；機制說明見 .claude/reporter-rules/wiki-lint-inquiry.md）")
         for q in BANK:
             _print_question(q)
         return 0

@@ -213,7 +213,7 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 
 %% 維運備忘：⚖️ 在判決或撤訴前一律留表，官方曾公開承認過的事故也不因時間轉 ⏸（改標 ⛔ 或維持 🔴 到官方給出結果）。這五值不看留言數，只看官方有沒有給出答案——例如 #79337 最後動態 2026-08-07（距今逾 30 天）仍是 🔴，因為它未逾 90 天且官方無回應。 %%
 
-%% 維運備忘：上限與退場判準見 .claude/rules/wiki-ingest-commercial.md「pricing 事件流的上限與退場」 %%
+%% 維運備忘：上限與退場判準見 .claude/reporter-rules/wiki-ingest-commercial.md「pricing 事件流的上限與退場」 %%
 
 | 事故 | 狀態 | 最後動態 | 你該做的事 |
 |------|------|---------|-----------|

@@ -5,7 +5,7 @@ argument-hint: baseline | compare
 
 # Pipeline Change Check
 
-修改 `src/news_aggregator/`、`scripts/build_web.py`、`.claude/commands/news-pipeline-steps.md` 的日報格式區、或收錄門檻規則（`.claude/rules/wiki-reporter-shared.md` 互動門檻對照表）**之前與之後**執行，防止改版靜默劣化產出。依 `$ARGUMENTS` 分兩種模式。
+修改 `src/news_aggregator/`、`scripts/build_web.py`、`.claude/commands/news-pipeline-steps.md` 的日報格式區、或收錄門檻規則（`.claude/reporter-rules/wiki-reporter-shared.md` 互動門檻對照表）**之前與之後**執行，防止改版靜默劣化產出。依 `$ARGUMENTS` 分兩種模式。
 
 ---
 

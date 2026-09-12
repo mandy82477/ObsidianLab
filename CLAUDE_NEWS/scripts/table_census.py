@@ -6,7 +6,7 @@
   `unknown`（判不出來：無日期欄，或有日期欄但列內找不到足夠日期樣本）。
   `unknown` 不是「已判定不會變」，是「這支腳本量不出來」——無日期欄的表可能仍在成長
   （如純累加列表），只是看不出方向；不可把 `unknown` 讀成「安全，不用管」。
-- 機制：在 `.claude/rules/*.md`、`.claude/commands/*.md` 搜該表所在節名，**命中行必須同時
+- 機制：在 `.claude/reporter-rules/*.md`、`.claude/rules/*.md`、`.claude/commands/*.md` 搜該表所在節名，**命中行必須同時
   含該頁 slug／頁名，或落在該頁專屬規則節內**，才算「有」；否則視為命中別頁同名節（規則檔
   常見「摘要」「時序」這類通用節名，任何頁都會字面命中，但講的是別頁的規則）。
   這是啟發式，「有」代表有人寫過規則，不代表規則被執行；「無」是真正的訊號——
@@ -26,7 +26,11 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
 WIKI = ROOT / "wiki"
-RULE_FILES = list((ROOT / ".claude" / "rules").glob("*.md")) + list((ROOT / ".claude" / "commands").glob("*.md"))
+RULE_FILES = (
+    list((ROOT / ".claude" / "reporter-rules").glob("*.md"))
+    + list((ROOT / ".claude" / "rules").glob("*.md"))
+    + list((ROOT / ".claude" / "commands").glob("*.md"))
+)
 MECH_RE = re.compile(r"淘汰|移除|保留|封存|覆寫|蒸餾|汰除|到期|清理")
 DATE_RE = re.compile(r"\b20\d\d-\d\d(?:-\d\d)?\b|\b\d{1,2}/\d{1,2}\b")
 EXCLUDE = {"index", "log", "CLAUDE", "metrics", "reader-notes"}

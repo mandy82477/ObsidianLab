@@ -3,7 +3,8 @@
 check_rules.py — 通用規則一致性檢查引擎（取代 /review-commands 手動機械檢查）。
 
 只用標準庫（re / json / pathlib），不 subprocess 呼叫 grep（跨平台考量）。
-讀取 REPO_ROOT/.claude/review-registry.json，對 .claude/commands/、.claude/rules/
+讀取 REPO_ROOT/.claude/review-registry.json，對 .claude/commands/、.claude/rules/、
+.claude/reporter-rules/
 （或 registry 指定的其他 glob）執行五類確定性檢查：
 
     1. bare_references   — 裸露引用（如無路徑前綴的 CLAUDE.md）

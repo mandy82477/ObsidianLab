@@ -50,7 +50,7 @@ HITS_PATH = DATA_DIR / "lint_step_hits.jsonl"
 MISSES_PATH = DATA_DIR / "lint_misses.jsonl"
 REGISTRY_PATH = REPO_ROOT / ".claude" / "review-registry.json"
 
-RULE_GLOBS = [".claude/rules/*.md", ".claude/commands/*.md", "CLAUDE.md", "wiki/CLAUDE.md"]
+RULE_GLOBS = [".claude/rules/*.md", ".claude/reporter-rules/*.md", ".claude/commands/*.md", "CLAUDE.md", "wiki/CLAUDE.md"]
 MARK_RE = re.compile(r"\[(?:加入|改版|裁決|使用者指示)")
 LESSON_RE = re.compile(r"踩過|教訓|反例|實測|實例|曾犯|曾發生|發生過|首次發現|立法依據")
 

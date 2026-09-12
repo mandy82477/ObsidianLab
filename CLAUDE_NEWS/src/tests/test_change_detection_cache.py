@@ -9,7 +9,7 @@ dropped forever, silently.
 
 Measured damage before the fix: 8 of 9 watched pages burned between 2026-08-07
 and 2026-08-12, including `claude.com/pricing` and the support-centre plan and
-quota articles that `.claude/rules/wiki-ingest-commercial.md` names as the
+quota articles that `.claude/reporter-rules/wiki-ingest-commercial.md` names as the
 authoritative source for billing facts. `api_docs` was burned too — it already
 put a per-note `#anchor` in the URL, but `_normalize_url` strips fragments, so
 every release note collapsed onto one key.

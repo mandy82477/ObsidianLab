@@ -51,7 +51,7 @@ description: 低成本可讀性掃描：單一 agent 只讀每頁開頭與結構
 ## 收到報告後
 
 1. 把「最需要處理的 5 頁」與共通問題呈現給使用者，**等待確認要修哪些**
-2. 依確認結果修復：單頁小修直接改；跨多頁的共通問題可派對應類別記者（見 `.claude/rules/wiki-ingest.md` 派工表）
+2. 依確認結果修復：單頁小修直接改；跨多頁的共通問題可派對應類別記者（見 `.claude/reporter-rules/wiki-ingest.md` 派工表）
 3. 修復後在 `wiki/log.md` 末尾 append：
 
 ```

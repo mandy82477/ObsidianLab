@@ -1,6 +1,8 @@
 # Wiki 知識庫規則
 
-一般 wiki 查詢時自動載入。**執行 ingest / lint 操作時，必須同時讀取 `.claude/rules/wiki-ingest.md`**（分類標準與派工流程）。頁面格式模板見 `.claude/rules/wiki-ingest-format.md`。
+一般 wiki 查詢時自動載入。**執行 ingest / lint 操作時，必須同時讀取 `.claude/reporter-rules/wiki-ingest.md`**（分類標準與派工流程）。頁面格式模板見 `.claude/reporter-rules/wiki-ingest-format.md`。
+
+**直接編輯任何 wiki 頁面前**（不限 ingest／lint，臨時改一頁也算），先讀 `.claude/reporter-rules/wiki-ingest-format.md`（表格儲存格上限、懸置標記語法）與 `.claude/reporter-rules/wiki-reporter-shared.md`（書寫風格硬上限、讀者語言禁詞）——這兩份不再自動載入，機械閘只在 `run_tests` 時才紅。
 
 ---
 
@@ -56,7 +58,7 @@ wiki/
 2. **概念／選型／主題**（「哪頁在講 X」）→ 讀 `wiki/index.md` 目錄表挑頁 → 讀該頁（頁面頂部 callout 即最新動態）。子故事頁不另列，藏在母頁列摘要格的 `↳ 子故事：` 投影裡（機器生成，家在各子頁標頭的「上層」欄）——挑根頁或投影中的子頁都算 2 跳 `[加入: 2026-09-03]`
 3. **結構性盤點**（哪些頁某狀態／某領域／多久沒更新）→ Grep 頁面標頭欄位（如 `最後新聞更新`、`狀態`），不需逐頁閱讀
 4. **「最近發生什麼」**→ `wiki/log.md`（append-only，先 Grep 日期定位再讀該段，不可整讀）或 `news/` 日報
-5. **「誰負責某頁／某頁何時更新」**→ 讀維護註冊表，不做全檔案查找：六份 `.claude/rules/wiki-ingest-[category].md` 的「負責頁面」表（含觸發條件與衍生頁節奏規則）＋ `.claude/rules/wiki-ingest.md` 第三步的主編彙整清單（feature-radar／index／log／overview／anthropic-commitments／source_attribution）。**讀表時必須確認處理條件**：頁面以明確列＋觸發條件出現 → 可信「會被更新」；只被「領域＝X 的所有頁面歸本記者」概括條款覆蓋 → 那只是所有權，無執行機制，「會被更新」未經證實（2026-08-05 教訓：large-codebase-workflow 僅有概括覆蓋，孤兒化 10 天）。全庫 grep 只保留給兩種情況：**否定證明**（「X 有沒有被收錄過」須全掃零命中）與**診斷註冊表本身失效**（頁面該更新而沒更新，活動記錄裡不會有缺席證據）。**子故事頁的處理條件**＝母頁對應規則檔的路由表（哪個子頁收什麼），母頁結論層為週更（觸發邊登記在該類 `*-lint.md`）——階層紀律見 `.claude/rules/wiki-ingest-format.md`「頁面拆分原則」`[加入: 2026-09-03]`
+5. **「誰負責某頁／某頁何時更新」**→ 讀維護註冊表，不做全檔案查找：六份 `.claude/reporter-rules/wiki-ingest-[category].md` 的「負責頁面」表（含觸發條件與衍生頁節奏規則）＋ `.claude/reporter-rules/wiki-ingest.md` 第三步的主編彙整清單（feature-radar／index／log／overview／anthropic-commitments／source_attribution）。**讀表時必須確認處理條件**：頁面以明確列＋觸發條件出現 → 可信「會被更新」；只被「領域＝X 的所有頁面歸本記者」概括條款覆蓋 → 那只是所有權，無執行機制，「會被更新」未經證實（2026-08-05 教訓：large-codebase-workflow 僅有概括覆蓋，孤兒化 10 天）。全庫 grep 只保留給兩種情況：**否定證明**（「X 有沒有被收錄過」須全掃零命中）與**診斷註冊表本身失效**（頁面該更新而沒更新，活動記錄裡不會有缺席證據）。**子故事頁的處理條件**＝母頁對應規則檔的路由表（哪個子頁收什麼），母頁結論層為週更（觸發邊登記在該類 `*-lint.md`）——階層紀律見 `.claude/reporter-rules/wiki-ingest-format.md`「頁面拆分原則」`[加入: 2026-09-03]`
 6. **引用關係／頁間路徑／議題散佈**（「誰引用 X」「A 到 B 怎麼連」「X 議題散在哪幾節」「分群 vs 領域健檢」）→ `python scripts/wiki_graph.py explain <頁slug>`／`path <頁A> <頁B>`／`sections <關鍵詞>`／`cluster`／`sources <頁slug>`（查原文：列出該頁歸因帳本的條目標題＋原始 URL；帳本 07-11 起收，更早走日報）——隨需解析 wikilink 圖（頁＋標題層，含行號可直接 Read offset 跳讀；樣板區邊與 log/index 樞紐已依節點衛生規則排除，規則與 `scripts/gen_wiki_frontmatter.py`／`scripts/build_web.py` 字面共用）。單跳找字串仍用 Grep（第 1 路），本路只走關係型查詢
 
 ---
@@ -71,7 +73,7 @@ wiki 正文的連結寫法以 web reader 解析器（`web_reader/assets/app.js` 
 | `[[feature-radar]]`、`[[news/YYYY-MM-DD]]` | 根頁面、日報連結 | ✅ |
 | `[[頁面\|別名]]` | 別名顯示 | ✅ 只在句子需要特定措辭時用（如「取代 [[entities/opus-4-8\|Opus 4.8]] 成為次旗艦」）|
 | `[[頁面#標題]]`、`[[#本頁標題]]` | 跳到該頁某段 | ✅ 錨點須為目標頁的 **h2–h4 標題原文**；建置的 `check_wikilink_anchors()` 會驗，打錯或標題改名會 WARN |
-| `%% 維運備忘 %%` | 註解（單行或跨行）| ✅ Obsidian 顯示為註解、`scripts/build_web.py` 建置時剝除（正文、搜尋索引、日報 digest 都吃不到）。「刪不掉但讀者不該看到」的話寫這裡，見 `.claude/rules/wiki-reporter-shared.md`「維運備忘的家」 |
+| `%% 維運備忘 %%` | 註解（單行或跨行）| ✅ Obsidian 顯示為註解、`scripts/build_web.py` 建置時剝除（正文、搜尋索引、日報 digest 都吃不到）。「刪不掉但讀者不該看到」的話寫這裡，見 `.claude/reporter-rules/wiki-reporter-shared.md`「維運備忘的家」 |
 | `![[頁面]]`、`![[圖片.png\|300]]` | 嵌入 / 轉引 | ❌ 網站無嵌入渲染，原樣輸出 `![[...]]` |
 | `[[頁面#^區塊id]]`、段落尾 `^區塊id` | 區塊引用 | ❌ 同上，解析器不支援 |
 
@@ -80,7 +82,7 @@ wiki 正文的連結寫法以 web reader 解析器（`web_reader/assets/app.js` 
 > 要改用嵌入或區塊 id → 先擴充 `parseWikilink()` / `wikilinkButtonHtml()` 與 `scripts/build_web.py` 的 `check_wikilinks()`，不可只改 wiki 內文。
 
 - 引用日報：`[[news/2026-04-25]]`；外部：`[標題](url)`
-- 來源歸因不寫入 wiki 正文：記者在回報訊息的「來源歸因」欄回報，由主編 append 至 `data/source_attribution.jsonl`，規則見 `.claude/rules/wiki-reporter-shared.md`
+- 來源歸因不寫入 wiki 正文：記者在回報訊息的「來源歸因」欄回報，由主編 append 至 `data/source_attribution.jsonl`，規則見 `.claude/reporter-rules/wiki-reporter-shared.md`
 
 ---
 

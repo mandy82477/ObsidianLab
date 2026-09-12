@@ -19,7 +19,7 @@
 衍生頁會孤兒化（2026-07-26 建立的 community-large-codebase-workflow 因此空轉 10 天）。
 新增衍生頁時同步在 DERIVED_PAGES 登記，登記時必須填得出 rule 欄位。
 
-欄位語意（`.claude/rules/wiki-reporter-shared.md`）：「最後新聞更新」填**日報日期**，
+欄位語意（`.claude/reporter-rules/wiki-reporter-shared.md`）：「最後新聞更新」填**日報日期**，
 不是新聞事件發生日。兩者常差一天，是第 1 類缺陷的主要來源。
 
 用法：
@@ -53,26 +53,26 @@ RECENT_DAYS = 14
 # rule 欄位＝該頁觸發邊的明文出處，登記時必須填得出來，否則不得列入。
 DERIVED_PAGES = {
     "topics/coding-workflow-guide":
-        ".claude/rules/wiki-ingest-features.md（週更，吃官方技能清冊與社群工具策展，非新聞條目）",
+        ".claude/reporter-rules/wiki-ingest-features.md（週更，吃官方技能清冊與社群工具策展，非新聞條目）",
     "topics/community-tech-tools":
-        ".claude/rules/wiki-ingest-community-lint.md（週策展，讀近 7–14 天日報）",
+        ".claude/reporter-rules/wiki-ingest-community-lint.md（週策展，讀近 7–14 天日報）",
     "topics/community-pattern-trends":
-        ".claude/rules/wiki-ingest-community-lint.md（週更，讀 patterns 頁）",
+        ".claude/reporter-rules/wiki-ingest-community-lint.md（週更，讀 patterns 頁）",
     "topics/community-large-codebase-workflow":
-        ".claude/rules/wiki-ingest-community-lint.md 週更整線重寫（吃 patterns 頁"
+        ".claude/reporter-rules/wiki-ingest-community-lint.md 週更整線重寫（吃 patterns 頁"
         "帶 `**主線：**` tag 的節點；每日 ingest 只標 tag、不寫此頁）",
     "topics/official-community-gap":
-        ".claude/rules/wiki-ingest-features.md 產品化矩陣同步",
+        ".claude/reporter-rules/wiki-ingest-features.md 產品化矩陣同步",
     "topics/anthropic-commitments":
-        ".claude/rules/wiki-ingest.md 第三步（主編彙整）",
+        ".claude/reporter-rules/wiki-ingest.md 第三步（主編彙整）",
     "topics/model-task-leaderboard":
-        ".claude/rules/wiki-ingest-models.md 例外條（吃外部榜單網站，"
+        ".claude/reporter-rules/wiki-ingest-models.md 例外條（吃外部榜單網站，"
         "由 /wiki-lint 步驟 5b 抓取；每日 ingest 不更新）",
     "topics/engineering-skill-playbook":
-        ".claude/rules/wiki-ingest-features.md「工程流程 Skill 指南維護」"
+        ".claude/reporter-rules/wiki-ingest-features.md「工程流程 Skill 指南維護」"
         "（週更，讀官方 skills repo 清冊，非新聞條目；每日 ingest 不更新）",
     "topics/skill-interest-watch":
-        ".claude/rules/wiki-ingest-community-lint.md「skill-interest-watch：機器快照頁」"
+        ".claude/reporter-rules/wiki-ingest-community-lint.md「skill-interest-watch：機器快照頁」"
         "（每日由 scripts/skill_interest_snapshot.py 覆寫，吃 GitHub Search 非新聞條目；"
         "2026-09-02 建頁時漏登記，擋掉當日雲端 web build——教訓見同日 log）",
 }

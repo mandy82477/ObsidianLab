@@ -1,5 +1,5 @@
 {
-  "_doc": "可共享的專案設定：hooks（Stop 擋規則檔未驗證、SessionStart 提醒未 commit、PostToolUse wiki lint、PreToolUse 大檔讀取觀測）。路徑用 $CLAUDE_PROJECT_DIR，任何 clone 都能跑。個人權限允許清單住 settings.local.json（已 gitignore）。",
+  "_doc": "可共享的專案設定：hooks（Stop 擋規則檔未驗證、SessionStart 提醒未 commit、PostToolUse wiki lint、PreToolUse 擋 git add -A／大檔讀取觀測）。路徑用 $CLAUDE_PROJECT_DIR，任何 clone 都能跑。個人權限允許清單住 settings.local.json（已 gitignore）。",
   "hooks": {
     "PostToolUse": [
       {
@@ -35,6 +35,16 @@
       }
     ],
     "PreToolUse": [
+      {
+        "matcher": "Bash|PowerShell",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python \"$CLAUDE_PROJECT_DIR/.claude/hooks/block_git_add_all.py\"",
+            "timeout": 10
+          }
+        ]
+      },
       {
         "matcher": "Read",
         "hooks": [

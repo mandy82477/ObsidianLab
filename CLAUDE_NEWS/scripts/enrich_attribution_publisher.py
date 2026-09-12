@@ -9,7 +9,7 @@ Bloomberg／NYT，和 tech-insider.org／Startup Fortune／Yogonet——`source_
 給 Google News 的那組品質標籤同時套在 Reuters 和 Yogonet 上，等於沒有標籤。
 
 出版者其實**從來沒有遺失**：`sources/google_news.py` 存的是 `Google News / Reuters`，
-日報 `news/*.md` 的來源標記也原樣保留。是歸因那一步（`.claude/rules/wiki-reporter-shared.md`
+日報 `news/*.md` 的來源標記也原樣保留。是歸因那一步（`.claude/reporter-rules/wiki-reporter-shared.md`
 規定 slug「取『/』前半段」）把斜線後半段丟掉的。本檔把它撿回來——不改上游、不改
 記者契約，純粹從日報回推。
 

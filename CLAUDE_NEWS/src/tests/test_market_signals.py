@@ -1,6 +1,6 @@
 """build_web 端的投資訊號解析契約（wiki/topics/market-signals.md → 日報頁 💰 條目）。
 
-判讀標題 `### 💰 事件名（YYYY-MM-DD）` 是規格（`.claude/rules/wiki-ingest-market.md`
+判讀標題 `### 💰 事件名（YYYY-MM-DD）` 是規格（`.claude/reporter-rules/wiki-ingest-market.md`
 「判讀格式（機械契約字串）」表）與程式（`MARKET_SIGNAL_RE`）的共同契約。形狀漂了
 不會有任何錯誤訊息——網站上的 💰 條目只是消失，正是 2026-08-14 日報區塊 emoji
 的死法。本檔把三件事釘住：

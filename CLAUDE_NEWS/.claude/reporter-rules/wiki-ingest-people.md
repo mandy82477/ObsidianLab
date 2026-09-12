@@ -1,6 +1,6 @@
 # Wiki Ingest — 人物記者指南
 
-分類為「人物」的新聞條目由此記者負責。讀此檔後直接操作，需建立新頁面時另讀 `.claude/rules/wiki-ingest-format.md`。
+分類為「人物」的新聞條目由此記者負責。讀此檔後直接操作，需建立新頁面時另讀 `.claude/reporter-rules/wiki-ingest-format.md`。
 
 ---
 

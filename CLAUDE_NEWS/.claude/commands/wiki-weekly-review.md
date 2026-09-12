@@ -19,7 +19,7 @@ description: 每週判斷本週有哪些主題值得加碼追蹤（建頁/加開
 
 同時讀取：
 - `wiki/CLAUDE.md` — wiki 目錄結構與基本限制
-- `.claude/rules/wiki-ingest.md` — 分類標準（沿用六類記者分工）
+- `.claude/reporter-rules/wiki-ingest.md` — 分類標準（沿用六類記者分工）
 - 過去 7 天的 `news/*.md`
 - `wiki/log.md` 近期 ingest 紀錄
 - `wiki/index.md`
@@ -52,7 +52,7 @@ gh issue list --label reader-feedback --state open --json number,title,createdAt
 
 另外讀 `wiki/reader-notes.md`，找屬於你領域、狀態為 ⏳ 的 🔍 興趣主題（使用者主動表達想多看的主題）——這是**需求面證據**：使用者問過但現有覆蓋不足，也算加碼理由，即使本週新聞訊號不強。回報時註明該建議來自 reader-notes 哪一條。
 
-判斷標準對照根目錄 `CLAUDE.md` 的「目標讀者」（Claude Code 重度使用者 / AI 系統開發者 / Anthropic 生態追蹤者）與「新增 source 或 command 時的判斷標準」——這份延伸能幫助這些讀者更了解 Claude/Anthropic 生態系嗎？若否，不建議。
+判斷標準先 Read `.claude/rules/collection-scope.md`，對照其「目標讀者」（Claude Code 重度使用者 / AI 系統開發者 / Anthropic 生態追蹤者）與檔首的唯一判準——這份延伸能幫助這些讀者更了解 Claude/Anthropic 生態系嗎？若否，不建議。
 
 給 0-3 條具體建議（沒有就寫「無」），格式：
 ## [頁面路徑/新主題名稱]
@@ -102,7 +102,7 @@ gh issue list --label reader-feedback --state open --json number,title,createdAt
 
 ### 4. 依確認執行
 
-使用者確認後，若牽涉多頁修改可再次平行派工對應記者執行；若牽涉新頁面建立，讀 `.claude/rules/wiki-ingest-format.md` 頁面格式模板。此階段派工同樣沿用 `model: "sonnet"`。
+使用者確認後，若牽涉多頁修改可再次平行派工對應記者執行；若牽涉新頁面建立，讀 `.claude/reporter-rules/wiki-ingest-format.md` 頁面格式模板。此階段派工同樣沿用 `model: "sonnet"`。
 
 ### 5. 記錄
 

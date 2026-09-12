@@ -30,7 +30,7 @@ class FeedItem:
     # score-reignition escape hatch (>=2x and +10) can never fire from 0. That silently
     # killed 8 of 9 watched pages between 2026-08-07 and 2026-08-12, including
     # claude.com/pricing and the support-centre plan/quota articles that
-    # `.claude/rules/wiki-ingest-commercial.md` names as the authoritative source.
+    # `.claude/reporter-rules/wiki-ingest-commercial.md` names as the authoritative source.
     #
     # Those sources set this to "<url>#<content-hash>", so each distinct change is a
     # distinct cache entry. Old bare-URL entries can never collide with it, so the

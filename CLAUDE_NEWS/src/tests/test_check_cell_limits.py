@@ -1,7 +1,7 @@
 """Tests for scripts/check_cell_limits.py — 字元上限機械閘。
 
-規則端：`.claude/rules/wiki-ingest-format.md`「表格放結論，細節下沉（全站
-通用）」與 `.claude/rules/wiki-reporter-shared.md`「書寫風格」硬上限。
+規則端：`.claude/reporter-rules/wiki-ingest-format.md`「表格放結論，細節下沉（全站
+通用）」與 `.claude/reporter-rules/wiki-reporter-shared.md`「書寫風格」硬上限。
 
 每個測試用假檔（`TemporaryDirectory`）餵 `scan(files=...)`——`scan()` 明確
 接受檔案清單以支援測試，不需 monkeypatch 模組全域，也不會污染真實 wiki 檔。

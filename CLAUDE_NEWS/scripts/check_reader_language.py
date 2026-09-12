@@ -3,8 +3,8 @@
 
 立法依據：2026-09-05 競品頁健檢，冷讀者兩輪都抓到同一件事——讀者看不懂
 「12 列上限汰出」「不回訪」「已移交」「每日抄錄」「模式庫」「二手」。
-`.claude/rules/wiki-ingest-format.md` 的「無維運術語洩漏」列與
-`.claude/rules/wiki-reporter-shared.md` 的「派工過程不上頁」早已明文禁止，
+`.claude/reporter-rules/wiki-ingest-format.md` 的「無維運術語洩漏」列與
+`.claude/reporter-rules/wiki-reporter-shared.md` 的「派工過程不上頁」早已明文禁止，
 但兩條都只是規則、沒有偵測器——本庫病史的標準形狀（承諾有了、執行點沒有）。
 本檔是那兩條規則的執行點。
 
@@ -17,7 +17,7 @@
 掃描範圍：wiki/entities/*.md、wiki/topics/*.md、wiki/feature-radar.md、
 wiki/overview.md、wiki/index.md 的**正文**——frontmatter、code fence、
 Obsidian `%% … %%` 註解、HTML 註解一律跳過（前兩者不上站，後兩者是
-「維運備忘的家」，見 `.claude/rules/wiki-reporter-shared.md`）。
+「維運備忘的家」，見 `.claude/reporter-rules/wiki-reporter-shared.md`）。
 
 存量基線（照 `data/pending-legacy-baseline.json` 的先例）：首跑必然命中大量
 存量，全部 FAIL 只會讓人把檢查關掉。故 `data/reader-language-baseline.json`

@@ -1,6 +1,6 @@
 """懸置標記的渲染契約 — app.js 的 regex ↔ 規格的四段形狀。
 
-規格端：`.claude/rules/wiki-ingest-format.md`「懸置標記語法」節
+規格端：`.claude/reporter-rules/wiki-ingest-format.md`「懸置標記語法」節
     `狀態符號` + `**類別詞**` + `（metadata）` + `｜**題目**：內文`
     狀態符號 ❓/🔎、類別詞 待查證/查無官方、metadata 欄位 標／查／複／訊、
     表格短標記 `⟨Q-nn⟩` 與細節區 `- ⟨Q-nn⟩ …` 一一對應。
@@ -20,7 +20,7 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[2]
 APP_JS = ROOT / "web_reader" / "assets" / "app.js"
-SPEC = ROOT / ".claude" / "rules" / "wiki-ingest-format.md"
+SPEC = ROOT / ".claude" / "reporter-rules" / "wiki-ingest-format.md"
 
 
 def _spec_section() -> str:

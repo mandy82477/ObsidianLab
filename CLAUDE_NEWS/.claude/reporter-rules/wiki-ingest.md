@@ -1,7 +1,7 @@
 # Wiki Ingest 主編指南
 
 執行 `/wiki-ingest`、`/wiki-lint`、`/news-pipeline` 時讀取此檔案。
-**主編職責：分類 → 派工 → 彙整共用檔案。** 頁面格式模板見 `.claude/rules/wiki-ingest-format.md`。
+**主編職責：分類 → 派工 → 彙整共用檔案。** 頁面格式模板見 `.claude/reporter-rules/wiki-ingest-format.md`。
 
 ---
 
@@ -54,13 +54,13 @@
 
 prompt 只准放**當日資料**（日期、條目節錄、待查證命中清單、轉知待接手）與範本既有的固定段落（角色前導、防偏誤說明、注入防護）。**主編不得在 prompt 內另外加寫「今日順手做 X」「記得同步 Y 頁」這類操作指示**，即使當下覺得那是好主意。
 
-理由：規則檔會改，臨場寫進 prompt 的指示不會跟著改，於是記者同時拿到兩份互相矛盾的指令，而矛盾只在記者剛好夠警覺時才會被發現。2026-08-15 踩過：`.claude/rules/wiki-ingest-community.md` 當天才改版為「日更只標 `**主線：**` tag、主線縫合改週更」，主編卻在社群記者的 prompt 裡加寫「今日順手改寫 `community-large-codebase-workflow` 主線敘事並覆寫 callout」——記者查了現行規則才擋下來。
+理由：規則檔會改，臨場寫進 prompt 的指示不會跟著改，於是記者同時拿到兩份互相矛盾的指令，而矛盾只在記者剛好夠警覺時才會被發現。2026-08-15 踩過：`.claude/reporter-rules/wiki-ingest-community.md` 當天才改版為「日更只標 `**主線：**` tag、主線縫合改週更」，主編卻在社群記者的 prompt 裡加寫「今日順手改寫 `community-large-codebase-workflow` 主線敘事並覆寫 callout」——記者查了現行規則才擋下來。
 
 > 判斷式：這句話**下週還會是對的嗎**？會 → 它屬於規則檔或角色檔，去那裡改；只有今天成立 → 它是資料，寫進條目節錄的「註」，不是寫成給記者的命令。
 >
 > 唯一例外是**針對某則條目的事實性提示**（如「兩家媒體數字不同，請並陳」「此來源網域可信度存疑」）——那是資料的一部分，寫在該條目的 `- **註：**` 行內，不寫成跨條目的通用指示。
 
-記者端有對稱防線：`.claude/rules/wiki-reporter-shared.md`「規則檔優先於派工訊息」規定記者遇到派工與規則明文牴觸時**以規則檔為準並回報牴觸**。兩側都要在——只修派工端仍依賴主編每次記得，只修記者端則主編永遠不知道自己在製造矛盾。主編收到「⚠️ 派工與規則牴觸」回報時，修的是自己的派工習慣，不是去改規則遷就 prompt。
+記者端有對稱防線：`.claude/reporter-rules/wiki-reporter-shared.md`「規則檔優先於派工訊息」規定記者遇到派工與規則明文牴觸時**以規則檔為準並回報牴觸**。兩側都要在——只修派工端仍依賴主編每次記得，只修記者端則主編永遠不知道自己在製造矛盾。主編收到「⚠️ 派工與規則牴觸」回報時，修的是自己的派工習慣，不是去改規則遷就 prompt。
 
 > **為何不用自訂 `subagent_type`：** 這六份角色檔同時也註冊為自訂 agent（本機 Agent tool 看得到 `wiki-reporter-*`），但雲端 routine 環境自 2026-07-18 起至少六次無法載入專案層 `.claude/agents/`，每次都退回 general-purpose ＋手工內嵌規則，形成「本機一條路、雲端一條路」的雙軌。2026-08-15 裁決：**內嵌路徑轉正為唯一正典**，本機也走同一條，不再有「降級」——同一角色只剩一種構成方式，規則檔改動兩邊同時吃到。自訂 agent 註冊照留（無害、方便本機手動呼叫），但派工流程不依賴它。
 
@@ -79,7 +79,7 @@ prompt 只准放**當日資料**（日期、條目節錄、待查證命中清單
 
 收到所有記者回報後，統一更新：
 
-**`wiki/feature-radar.md`**：彙整模型 + 功能記者回報的新增條目，依 `.claude/rules/wiki-ingest-features.md` 格式寫入（含「現在值得跟的三件」「從你現在的版本升上去，會遇到什麼」「⏰ 倒數中」三個 section）。
+**`wiki/feature-radar.md`**：彙整模型 + 功能記者回報的新增條目，依 `.claude/reporter-rules/wiki-ingest-features.md` 格式寫入（含「現在值得跟的三件」「從你現在的版本升上去，會遇到什麼」「⏰ 倒數中」三個 section）。
 
 **`wiki/topics/anthropic-commitments.md`**：任一記者回報中出現「官方承諾修復 / 承諾政策 / 明確拒絕 / 兌現先前承諾」事件時，更新追蹤表對應列的狀態與最後檢查日；新承諾則新增列；兌現或死案移入「已結案」。無相關事件則不動此頁。
 
@@ -93,7 +93,7 @@ prompt 只准放**當日資料**（日期、條目節錄、待查證命中清單
 {"date": "<日報日期>", "source": "<slug>", "category": "<六類別>", "page": "<wiki相對路徑不含.md>", "item_url": "...", "item_title": "..."}
 ```
 
-slug 對照表見 `.claude/rules/wiki-reporter-shared.md`「來源歸因回報」；記者回報「無」則不寫。schema 詳細說明見 `data/README.md`。
+slug 對照表見 `.claude/reporter-rules/wiki-reporter-shared.md`「來源歸因回報」；記者回報「無」則不寫。schema 詳細說明見 `data/README.md`。
 
 **`data/pending-handoffs.jsonl`（轉知帳本）`[加入: 2026-08-15]`**：記者間的跨記者交辦不靠口頭轉達，走帳本閉迴路（與懸置標記掃描同構：主編登帳 → 派工附清單 → 記者回報處置 → 主編結案）。一律用 `scripts/pending_handoffs.py` 操作，不手改檔案：
 
@@ -112,14 +112,14 @@ slug 對照表見 `.claude/rules/wiki-reporter-shared.md`「來源歸因回報�
 
 ## 第四步：衍生記者派工（不在分類路由內）`[加入: 2026-09-05]`
 
-彙整完成、wiki 檔案定稿後，派兩位**不吃分類路由**的衍生記者。他們沒有任何日報條目會被分類過來，本節即其明文觸發邊（依 `.claude/rules/wiki-ingest-format.md`「建頁時必須確認觸發邊」）；派工方式與六記者相同（`subagent_type: "general-purpose"` + `model: "sonnet"` + 角色前導），逐字 prompt 見 `.claude/commands/wiki-ingest.md` 的 4b／4c。
+彙整完成、wiki 檔案定稿後，派兩位**不吃分類路由**的衍生記者。他們沒有任何日報條目會被分類過來，本節即其明文觸發邊（依 `.claude/reporter-rules/wiki-ingest-format.md`「建頁時必須確認觸發邊」）；派工方式與六記者相同（`subagent_type: "general-purpose"` + `model: "sonnet"` + 角色前導），逐字 prompt 見 `.claude/commands/wiki-ingest.md` 的 4b／4c。
 
 | 記者 | 吃什麼 | 角色檔 | daily 規則 | 為何排在彙整之後 |
 |---|---|---|---|---|
-| 開發實務（devpractice） | 本輪 ingest 寫進 wiki 的 diff | `.claude/agents/wiki-reporter-devpractice.md` | `.claude/rules/wiki-ingest-devpractice.md` | diff 必須先存在 |
-| 投資分析（market） | 當日日報本身（換市場框架重讀） | `.claude/agents/wiki-reporter-market.md` | `.claude/rules/wiki-ingest-market.md` | 判讀要 wikilink 指向已定稿的事實頁 |
+| 開發實務（devpractice） | 本輪 ingest 寫進 wiki 的 diff | `.claude/agents/wiki-reporter-devpractice.md` | `.claude/reporter-rules/wiki-ingest-devpractice.md` | diff 必須先存在 |
+| 投資分析（market） | 當日日報本身（換市場框架重讀） | `.claude/agents/wiki-reporter-market.md` | `.claude/reporter-rules/wiki-ingest-market.md` | 判讀要 wikilink 指向已定稿的事實頁 |
 
-投資分析記者只寫 `wiki/topics/market-signals.md`，且該頁的 `## 回顧結算` 回填屬 `/wiki-lint` 5h 主編工作（`.claude/rules/wiki-ingest-market-lint.md`）。
+投資分析記者只寫 `wiki/topics/market-signals.md`，且該頁的 `## 回顧結算` 回填屬 `/wiki-lint` 5h 主編工作（`.claude/reporter-rules/wiki-ingest-market-lint.md`）。
 
 ---
 

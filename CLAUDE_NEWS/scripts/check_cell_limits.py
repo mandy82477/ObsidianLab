@@ -1,8 +1,8 @@
 #!/usr/bin/env python3
 """表格儲存格 / 細節區條列字元上限機械閘 — 「表格放結論，細節下沉」的執行點。
 
-立法依據：`.claude/rules/wiki-ingest-format.md`「表格放結論，細節下沉（全站
-通用）」與 `.claude/rules/wiki-reporter-shared.md`「書寫風格」——查證過程、
+立法依據：`.claude/reporter-rules/wiki-ingest-format.md`「表格放結論，細節下沉（全站
+通用）」與 `.claude/reporter-rules/wiki-reporter-shared.md`「書寫風格」——查證過程、
 演進脈絡、多來源歧異塞進表格儲存格會讓表格失去可掃描性並在網站爆版；下沉
 到表格正下方的細節區後，細節區條列本身仍受 200 字元上限拘束，不是換成無
 上限的傾倒區。2026-08-27 起這兩條規則只有規則檔明文，沒有偵測器（本庫病史

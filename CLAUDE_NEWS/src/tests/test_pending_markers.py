@@ -95,7 +95,7 @@ class TestLegacyExemptions(unittest.TestCase):
         return hit
 
     def test_people_status_format_is_exempt(self):
-        """`.claude/rules/wiki-ingest-people.md` 明訂待核實人物的索引欄狀態
+        """`.claude/reporter-rules/wiki-ingest-people.md` 明訂待核實人物的索引欄狀態
         必須是 `active（待核實）`——那是規則要求的格式，不是待處理的懸置。"""
         for text in ('status: "active（待核實）"\n', "**狀態：** active（待核實）\n"):
             self.assertEqual(self._one(text).exempt, "status_format", text)

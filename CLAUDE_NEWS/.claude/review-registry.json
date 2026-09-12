@@ -4,8 +4,10 @@
     "globs": [
       ".claude/commands/*.md",
       ".claude/rules/*.md",
+      ".claude/reporter-rules/*.md",
       "docs/cloud-runbooks/*.md",
-      "docs/rules-changelog/*.md"
+      "docs/rules-changelog/*.md",
+      ".claude/agents/*.md"
     ],
     "pattern": "CLAUDE\\.md",
     "exempt_files": [
@@ -42,7 +44,7 @@
         "pattern": "根目錄 `CLAUDE\\.md`"
       },
       {
-        "file": ".claude/rules/wiki-ingest-people.md",
+        "file": ".claude/reporter-rules/wiki-ingest-people.md",
         "pattern": "CLAUDE\\.md 論述"
       },
       {
@@ -55,8 +57,10 @@
     "globs": [
       ".claude/commands/*.md",
       ".claude/rules/*.md",
+      ".claude/reporter-rules/*.md",
       "docs/cloud-runbooks/*.md",
-      "docs/rules-changelog/*.md"
+      "docs/rules-changelog/*.md",
+      ".claude/agents/*.md"
     ],
     "extensions": [
       ".md",
@@ -65,7 +69,7 @@
       ".jsonl"
     ],
     "allowlist_patterns": [
-      "^\\.claude/rules/wiki-ingest-\\[.+\\]\\.md$",
+      "^\\.claude/reporter-rules/wiki-ingest-\\[.+\\]\\.md$",
       "^news/YYYY-MM-DD\\.md$",
       "^news/TARGET_DATE\\.md$",
       "^news/YESTERDAY\\.md$",
@@ -233,7 +237,7 @@
       "files": [
         ".claude/commands/wiki-ingest.md",
         ".claude/commands/wiki-lint.md",
-        ".claude/rules/wiki-ingest.md"
+        ".claude/reporter-rules/wiki-ingest.md"
       ],
       "patterns": [
         "subagent_type: \"general-purpose\"",
@@ -251,8 +255,8 @@
       "name": "wiki-ingest-community.md <-> wiki-ingest-community-lint.md：lint-only 邊界（共用「每日 ingest 不」語意標記）",
       "assertion": "all_contain",
       "files": [
-        ".claude/rules/wiki-ingest-community.md",
-        ".claude/rules/wiki-ingest-community-lint.md"
+        ".claude/reporter-rules/wiki-ingest-community.md",
+        ".claude/reporter-rules/wiki-ingest-community-lint.md"
       ],
       "patterns": [
         "每日 ingest 不"
@@ -262,7 +266,7 @@
       "name": "wiki-ingest-community.md 明文 lint 專用",
       "assertion": "all_contain",
       "files": [
-        ".claude/rules/wiki-ingest-community.md"
+        ".claude/reporter-rules/wiki-ingest-community.md"
       ],
       "patterns": [
         "lint 專用"
@@ -272,7 +276,7 @@
       "name": "wiki-ingest-community-lint.md 承接 tools 頁策展",
       "assertion": "all_contain",
       "files": [
-        ".claude/rules/wiki-ingest-community-lint.md"
+        ".claude/reporter-rules/wiki-ingest-community-lint.md"
       ],
       "patterns": [
         "已脫離每日 ingest",
@@ -283,13 +287,13 @@
       "name": "六份記者回報格式段皆含八欄（更新頁面/feature-radar 新增/index.md 狀態變更/新增頁面/同步自查/待查證命中處置/轉知處置/來源歸因）",
       "assertion": "all_contain",
       "files": [
-        ".claude/rules/wiki-reporter-shared.md",
-        ".claude/rules/wiki-ingest-models.md",
-        ".claude/rules/wiki-ingest-features.md",
-        ".claude/rules/wiki-ingest-commercial.md",
-        ".claude/rules/wiki-ingest-safety-policy.md",
-        ".claude/rules/wiki-ingest-community.md",
-        ".claude/rules/wiki-ingest-people.md"
+        ".claude/reporter-rules/wiki-reporter-shared.md",
+        ".claude/reporter-rules/wiki-ingest-models.md",
+        ".claude/reporter-rules/wiki-ingest-features.md",
+        ".claude/reporter-rules/wiki-ingest-commercial.md",
+        ".claude/reporter-rules/wiki-ingest-safety-policy.md",
+        ".claude/reporter-rules/wiki-ingest-community.md",
+        ".claude/reporter-rules/wiki-ingest-people.md"
       ],
       "patterns": [
         "更新頁面：",
@@ -306,7 +310,7 @@
       "name": "主編指南（rules/wiki-ingest.md）回報格式段同步八欄",
       "assertion": "all_contain",
       "files": [
-        ".claude/rules/wiki-ingest.md"
+        ".claude/reporter-rules/wiki-ingest.md"
       ],
       "patterns": [
         "更新頁面：",
@@ -327,7 +331,7 @@
       ],
       "patterns": [
         "wiki/feature-radar\\.md",
-        "\\.claude/rules/wiki-ingest-features\\.md",
+        "\\.claude/reporter-rules/wiki-ingest-features\\.md",
         "呈現品質",
         "完成前強制核對清單"
       ]
@@ -340,7 +344,7 @@
       ],
       "patterns": [
         "wiki/CLAUDE\\.md",
-        "\\.claude/rules/wiki-ingest\\.md",
+        "\\.claude/reporter-rules/wiki-ingest\\.md",
         "Wiki 頁面呈現品質標準",
         "規則引用驗證",
         "規則年齡審查"
@@ -417,7 +421,7 @@
       "name": "model-comparison 選型品質審核六條規則齊全（決策可用性的單一真相源）",
       "assertion": "all_contain",
       "files": [
-        ".claude/rules/wiki-ingest-models.md"
+        ".claude/reporter-rules/wiki-ingest-models.md"
       ],
       "patterns": [
         "model-comparison 選型品質審核",
@@ -598,8 +602,8 @@
       "name": "large-codebase 主線頁 tag/重寫兩側規則齊全（daily 標 `**主線：**` tag 在 community.md、weekly 整線重寫在 community-lint.md——只有一側時主線頁會再次孤兒化或長回 log）",
       "assertion": "all_contain",
       "files": [
-        ".claude/rules/wiki-ingest-community.md",
-        ".claude/rules/wiki-ingest-community-lint.md"
+        ".claude/reporter-rules/wiki-ingest-community.md",
+        ".claude/reporter-rules/wiki-ingest-community-lint.md"
       ],
       "patterns": [
         "community-large-codebase-workflow",
@@ -678,7 +682,7 @@
       "name": "本週推薦選取邏輯必須保留時間閘（熱度只加不減，無時間項時候選池會固化成歷代名人堂——2026-08-08 凍結 14 天的防再犯）",
       "assertion": "all_contain",
       "files": [
-        ".claude/rules/wiki-ingest-features.md"
+        ".claude/reporter-rules/wiki-ingest-features.md"
       ],
       "patterns": [
         "時間閘",
@@ -724,7 +728,7 @@
       "name": "coding-workflow-guide 觸發邊與軸線鐵則（吃技能清冊非新聞，類別路由接不到；且不得改以開發領域分欄——官方技能本身不按領域切，照領域組織會產出大量空格）",
       "assertion": "all_contain",
       "files": [
-        ".claude/rules/wiki-ingest-features.md"
+        ".claude/reporter-rules/wiki-ingest-features.md"
       ],
       "patterns": [
         "coding-workflow-guide",
@@ -784,7 +788,7 @@
       "name": "派工 prompt 不得臨場加寫操作指示：禁令須同時在正典規則（wiki-ingest.md 派工方式）與 wiki-ingest 指令骨架（只改一側，另一側的 prompt 範本會繼續被當成可自由增補）",
       "assertion": "all_contain",
       "files": [
-        ".claude/rules/wiki-ingest.md",
+        ".claude/reporter-rules/wiki-ingest.md",
         ".claude/commands/wiki-ingest.md"
       ],
       "patterns": [
@@ -796,8 +800,8 @@
       "name": "派工/規則牴觸的兩側防線：派工端禁止臨場加寫（wiki-ingest.md）必須與記者端「規則檔優先於派工訊息」（wiki-reporter-shared.md）成對存在",
       "assertion": "all_contain",
       "files": [
-        ".claude/rules/wiki-ingest.md",
-        ".claude/rules/wiki-reporter-shared.md"
+        ".claude/reporter-rules/wiki-ingest.md",
+        ".claude/reporter-rules/wiki-reporter-shared.md"
       ],
       "patterns": [
         "規則檔優先於派工訊息"
@@ -808,9 +812,9 @@
       "name": "官方內容的類別分流：正典分流鐵則（wiki-ingest.md）必須與功能側（coding-workflow-guide 進料）、社群側（patterns/discussions 不限出處）三邊齊全",
       "assertion": "all_contain",
       "files": [
-        ".claude/rules/wiki-ingest.md",
-        ".claude/rules/wiki-ingest-features.md",
-        ".claude/rules/wiki-ingest-community.md"
+        ".claude/reporter-rules/wiki-ingest.md",
+        ".claude/reporter-rules/wiki-ingest-features.md",
+        ".claude/reporter-rules/wiki-ingest-community.md"
       ],
       "patterns": [
         "官方內容不是社群類的禁區"
@@ -822,7 +826,7 @@
       "assertion": "all_contain",
       "files": [
         ".claude/commands/news-pipeline-steps.md",
-        ".claude/rules/wiki-reporter-shared.md"
+        ".claude/reporter-rules/wiki-reporter-shared.md"
       ],
       "patterns": [
         "來源.{0,12}＋|＋.{0,12}來源"
@@ -847,7 +851,7 @@
       "name": "懸置標記的定義處 <-> 唯一結案處：wiki-ingest-format.md「誰可以動這個標記」與 wiki-lint.md 5c 必須同步（format 定語法與權限、5c 是唯一有權移除標記並回掃引用方的角色；只改一側會讓權限表指向不存在的步驟，或讓結案少掉回掃這一半）",
       "assertion": "all_contain",
       "files": [
-        ".claude/rules/wiki-ingest-format.md",
+        ".claude/reporter-rules/wiki-ingest-format.md",
         ".claude/commands/wiki-lint.md"
       ],
       "patterns": [
@@ -985,10 +989,10 @@
       ]
     },
     {
-      "name": "開放迴路五類 <-> CLAUDE.md：類別與處理端必須同步（腳本加減一類而文件沒跟上，讀者會照舊以為只有兩類）",
+      "name": "開放迴路五類 <-> weekly.md：類別與處理端必須同步（腳本加減一類而文件沒跟上，讀者會照舊以為只有兩類）",
       "assertion": "all_contain",
       "files": [
-        "CLAUDE.md",
+        ".claude/commands/weekly.md",
         "scripts/open_loops.py"
       ],
       "patterns": [
@@ -1015,7 +1019,7 @@
       "assertion": "equal_values",
       "files": [
         ".claude/commands/wiki-lint.md",
-        ".claude/rules/wiki-lint-inquiry.md"
+        ".claude/reporter-rules/wiki-lint-inquiry.md"
       ],
       "pattern": "python scripts/inquiry_bank\\.py (\\w+)"
     },
@@ -1169,7 +1173,7 @@
       "name": "回掃入邊必查名單（規格端）：wiki-reporter-shared.md「事實更正必回掃」與 wiki-lint 5c 結案回掃，兩處都必須以 explain --section 為第一步（2026-09-04 改版；只改一處會讓兩條回掃路徑一新一舊，而 5c 正是引用 shared.md 那套語意）",
       "assertion": "all_contain",
       "files": [
-        ".claude/rules/wiki-reporter-shared.md",
+        ".claude/reporter-rules/wiki-reporter-shared.md",
         ".claude/commands/wiki-lint.md"
       ],
       "patterns": [
@@ -1230,8 +1234,8 @@
       "name": "蒸餾契約三側：通用住 wiki-ingest-format.md「時段蒸餾與封存（全站通用）」、社群特有住 wiki-ingest-community-lint.md、提案觸發邊住 wiki-lint.md 3h（少一側就會變成有契約沒提案端、或六類記者各自抄一份而漂移）",
       "assertion": "all_contain",
       "files": [
-        ".claude/rules/wiki-ingest-format.md",
-        ".claude/rules/wiki-ingest-community-lint.md",
+        ".claude/reporter-rules/wiki-ingest-format.md",
+        ".claude/reporter-rules/wiki-ingest-community-lint.md",
         ".claude/commands/wiki-lint.md"
       ],
       "patterns": [
@@ -1243,7 +1247,7 @@
       "name": "蒸餾提案端：wiki-lint.md 記者回報欄「蒸餾候選」與 format 檔契約的回報格式必須同時在（只有契約沒回報欄＝提案永遠不會發生）",
       "assertion": "all_contain",
       "files": [
-        ".claude/rules/wiki-ingest-format.md",
+        ".claude/reporter-rules/wiki-ingest-format.md",
         ".claude/commands/wiki-lint.md"
       ],
       "patterns": [
@@ -1284,32 +1288,32 @@
       ]
     },
     {
-      "name": ".claude/rules/wiki-ingest-format.md <-> docs/rules-changelog/wiki-ingest-format.md：指路行與沿革檔互相指認（沿革節拆檔 2026-09-04，只改一側會讓指路懸空或沿革檔失去歸屬）",
+      "name": ".claude/reporter-rules/wiki-ingest-format.md <-> docs/rules-changelog/wiki-ingest-format.md：指路行與沿革檔互相指認（沿革節拆檔 2026-09-04，只改一側會讓指路懸空或沿革檔失去歸屬）",
       "assertion": "all_contain",
       "files": [
-        ".claude/rules/wiki-ingest-format.md",
+        ".claude/reporter-rules/wiki-ingest-format.md",
         "docs/rules-changelog/wiki-ingest-format.md"
       ],
       "patterns": [
-        "docs/rules\\-changelog/wiki\\-ingest\\-format\\.md|\\.claude/rules/wiki\\-ingest\\-format\\.md 沿革"
+        "docs/rules\\-changelog/wiki\\-ingest\\-format\\.md|\\.claude/reporter\\-rules/wiki\\-ingest\\-format\\.md 沿革"
       ]
     },
     {
-      "name": ".claude/rules/wiki-ingest-features.md <-> docs/rules-changelog/wiki-ingest-features.md：指路行與沿革檔互相指認（沿革節拆檔 2026-09-04，只改一側會讓指路懸空或沿革檔失去歸屬）",
+      "name": ".claude/reporter-rules/wiki-ingest-features.md <-> docs/rules-changelog/wiki-ingest-features.md：指路行與沿革檔互相指認（沿革節拆檔 2026-09-04，只改一側會讓指路懸空或沿革檔失去歸屬）",
       "assertion": "all_contain",
       "files": [
-        ".claude/rules/wiki-ingest-features.md",
+        ".claude/reporter-rules/wiki-ingest-features.md",
         "docs/rules-changelog/wiki-ingest-features.md"
       ],
       "patterns": [
-        "docs/rules\\-changelog/wiki\\-ingest\\-features\\.md|\\.claude/rules/wiki\\-ingest\\-features\\.md 沿革"
+        "docs/rules\\-changelog/wiki\\-ingest\\-features\\.md|\\.claude/reporter\\-rules/wiki\\-ingest\\-features\\.md 沿革"
       ]
     },
     {
       "name": "投資訊號判讀標題（規格端 <-> 程式端）：`### 💰 事件名（YYYY-MM-DD）` 的形狀與 build_web 的 MARKET_SIGNAL_RE 必須互相指認——標題改形狀而解析器沒跟，日報頁的 💰 條目靜默消失（同 2026-08-14 區塊 emoji 的死法）",
       "assertion": "all_contain",
       "files": [
-        ".claude/rules/wiki-ingest-market.md",
+        ".claude/reporter-rules/wiki-ingest-market.md",
         "scripts/build_web.py"
       ],
       "patterns": [
@@ -1322,7 +1326,7 @@
       "name": "懸置標記渲染契約（規格端）：wiki-ingest-format.md 四段形狀",
       "assertion": "all_contain",
       "files": [
-        ".claude/rules/wiki-ingest-format.md"
+        ".claude/reporter-rules/wiki-ingest-format.md"
       ],
       "patterns": [
         "待查證",
@@ -1365,7 +1369,8 @@
     "enabled": true,
     "globs": [
       ".claude/commands/*.md",
-      ".claude/rules/*.md"
+      ".claude/rules/*.md",
+      ".claude/reporter-rules/*.md"
     ],
     "min_mutual_references": 2
   }

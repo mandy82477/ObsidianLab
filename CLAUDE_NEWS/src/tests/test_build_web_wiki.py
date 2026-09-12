@@ -217,7 +217,7 @@ class TestBomTolerance(unittest.TestCase):
 class TestEditorialCommentStripping(unittest.TestCase):
     """`%% … %%` 是維運備忘的家（2026-09-05），前提是它真的不上站。
 
-    規則端：`.claude/rules/wiki-reporter-shared.md`「維運備忘的家」。剝除點刻意放在
+    規則端：`.claude/reporter-rules/wiki-reporter-shared.md`「維運備忘的家」。剝除點刻意放在
     `read_md()` 這唯一的讀檔漏斗，所以 `markdown` 欄位、search-index、digest 一次涵蓋——
     本測試同時驗漏斗（read_md）與下游（parse_wiki 的 markdown、strip_markdown_to_text）。
     """

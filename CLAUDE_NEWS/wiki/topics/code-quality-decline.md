@@ -48,7 +48,7 @@ generated_by: "scripts/gen_wiki_frontmatter.py"
 ## 三條線現在到哪
 
 > 資料截至 2026-09-07。「現在還在嗎」看的是官方說明與 GitHub issue 的開關狀態，不看討論熱度。
-%% 維運備忘：上限 4 列、現有三列固定不移除、入口與退場判準見 .claude/rules/wiki-ingest-community.md「code-quality-decline 的三張表」第 1 條 %%
+%% 維運備忘：上限 4 列、現有三列固定不移除、入口與退場判準見 .claude/reporter-rules/wiki-ingest-community.md「code-quality-decline 的三張表」第 1 條 %%
 
 | 線（最後動態） | 官方說了什麼（日期） | 現在還在嗎 | 你能先做什麼 |
 |---|---|---|---|

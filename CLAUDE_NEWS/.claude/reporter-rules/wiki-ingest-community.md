@@ -1,6 +1,6 @@
 # Wiki Ingest — 社群記者指南
 
-分類為「社群」的新聞條目由此記者負責。讀此檔後直接操作，需建立新頁面時另讀 `.claude/rules/wiki-ingest-format.md`。
+分類為「社群」的新聞條目由此記者負責。讀此檔後直接操作，需建立新頁面時另讀 `.claude/reporter-rules/wiki-ingest-format.md`。
 
 ---
 
@@ -11,15 +11,15 @@
 | `wiki/topics/community-tech-patterns.md` | 工作流模式、multi-agent 設計、最佳實踐 |
 | `wiki/topics/community-tech-discussions.md` | HN / Reddit 熱門技術討論 |
 | `wiki/topics/code-quality-decline.md` | 「Claude 變笨了」的三條線：官方已結案的 2026-03～04 退步、06 月起的 token 消耗異常、Opus 5 上線後的品質觀感；以及模型釘選與自我量測。**單一模型自身的社群觀感歸模型記者的 [[entities/opus-5]]，逐個 issue 的缺陷歸功能記者的 [[entities/claude-code]]，本頁只記「線」的狀態** |
-| `wiki/topics/community-large-codebase-workflow.md` | 🗓️ **週更，每日 ingest 不寫此頁**——每日只在 patterns 節點標 `**主線：**` tag（見下方「主線 tag 規則」）；週更整線重寫規則見 `.claude/rules/wiki-ingest-community-lint.md` |
+| `wiki/topics/community-large-codebase-workflow.md` | 🗓️ **週更，每日 ingest 不寫此頁**——每日只在 patterns 節點標 `**主線：**` tag（見下方「主線 tag 規則」）；週更整線重寫規則見 `.claude/reporter-rules/wiki-ingest-community-lint.md` |
 
 > 上表為核心頁面與觸發條件；此外 `wiki/index.md` 中領域為 🌐 社群 的所有頁面（含日後新增）皆由本記者負責維護與 lint。
 
-> `wiki/topics/community-tech-tools.md` 已改為 **lint 專用**，每日 ingest 不更新此頁。策展規則見 `.claude/rules/wiki-ingest-community-lint.md`。
+> `wiki/topics/community-tech-tools.md` 已改為 **lint 專用**，每日 ingest 不更新此頁。策展規則見 `.claude/reporter-rules/wiki-ingest-community-lint.md`。
 
 **分流鐵則：** GitHub Issues 條目屬功能記者（claude-code 已知問題）；僅當該 issue 引發跨平台討論（HN/Reddit 也在延燒）才作為 discussions 條目收錄。
 
-**官方內容不是你的禁區 `[加入: 2026-08-16]`：** 「社群」是內容型態的類別名，不是出處篩選器——官方部落格、官方文件、Anthropic 員工具名發言，只要談的是技術討論或工作流模式，一樣是你的條目（discussions 的收錄門檻本就明列「重要人士具名表態」；patterns 的觸發條件從未限制出處）。與功能記者的界線依**它給讀者什麼**分：官方提出**可被複用的新工作流模式／agent 設計** → 你收進 patterns 並標明官方出處，與社群模式並列比較；官方講**怎麼用既有功能**（省 token、session 經營、設定建議） → 那是功能記者的 `topics/coding-workflow-guide`，你不寫。完整對照表見 `.claude/rules/wiki-ingest.md`「分流鐵則：官方內容不是社群類的禁區」。
+**官方內容不是你的禁區 `[加入: 2026-08-16]`：** 「社群」是內容型態的類別名，不是出處篩選器——官方部落格、官方文件、Anthropic 員工具名發言，只要談的是技術討論或工作流模式，一樣是你的條目（discussions 的收錄門檻本就明列「重要人士具名表態」；patterns 的觸發條件從未限制出處）。與功能記者的界線依**它給讀者什麼**分：官方提出**可被複用的新工作流模式／agent 設計** → 你收進 patterns 並標明官方出處，與社群模式並列比較；官方講**怎麼用既有功能**（省 token、session 經營、設定建議） → 那是功能記者的 `topics/coding-workflow-guide`，你不寫。完整對照表見 `.claude/reporter-rules/wiki-ingest.md`「分流鐵則：官方內容不是社群類的禁區」。
 
 **產品化矩陣轉知 `[加入: 2026-07-04]`：** 發現新的 agent 工作模式（patterns 頁新增條目）時，在回報中註明「請主編轉知功能記者評估產品化矩陣新增列」；`wiki/topics/official-community-gap.md` 的矩陣由功能記者維護，社群記者不直接寫該頁。
 
@@ -73,11 +73,11 @@
 
 ### 7. 懸置標記的條列變體 `[加入: 2026-09-06]`
 
-同 `.claude/rules/wiki-ingest-format.md`「懸置標記語法 → 表格變體」，容器由儲存格換成條列：條列只留短標記，完整標準式放**該月份 `### YYYY-MM` 分組最末**的「懸置細節」區。**短標記形式不變**（狀態符號＋類別詞＋`⟨Q-nn⟩`，缺一不可）。**同一則節點的同一個事實只標一次**——成熟度欄與核心模式欄不得各標一份。
+同 `.claude/reporter-rules/wiki-ingest-format.md`「懸置標記語法 → 表格變體」，容器由儲存格換成條列：條列只留短標記，完整標準式放**該月份 `### YYYY-MM` 分組最末**的「懸置細節」區。**短標記形式不變**（狀態符號＋類別詞＋`⟨Q-nn⟩`，缺一不可）。**同一則節點的同一個事實只標一次**——成熟度欄與核心模式欄不得各標一份。
 
 ### 8. 蒸餾 `[加入: 2026-09-06]`
 
-照 `.claude/rules/wiki-ingest-format.md`「時段蒸餾與封存（全站通用）」，archive 子頁為 `topics/community-tech-patterns-archive`，對象為 `## 技術彙整` 的 `### YYYY-MM` 分組。**2026-05／06 兩個時段已封存，2026-07 於 2026-10 起達 3 個月門檻**——搬走之前先做兩件事：(a) 確認 `## 模式概覽` 中指向 `#2026-07` 的列，錨點同批改指 archive；(b) 確認官方 context engineering 那一則在 `## 摘要` 或概覽表「Context 管理」列留有一句指路，否則本頁唯一的官方一手引用會隨搬家離開正文。
+照 `.claude/reporter-rules/wiki-ingest-format.md`「時段蒸餾與封存（全站通用）」，archive 子頁為 `topics/community-tech-patterns-archive`，對象為 `## 技術彙整` 的 `### YYYY-MM` 分組。**2026-05／06 兩個時段已封存，2026-07 於 2026-10 起達 3 個月門檻**——搬走之前先做兩件事：(a) 確認 `## 模式概覽` 中指向 `#2026-07` 的列，錨點同批改指 archive；(b) 確認官方 context engineering 那一則在 `## 摘要` 或概覽表「Context 管理」列留有一句指路，否則本頁唯一的官方一手引用會隨搬家離開正文。
 
 ---
 
@@ -121,7 +121,7 @@
 
 ### 4. community-tech-discussions 的蒸餾
 
-照 `.claude/rules/wiki-ingest-format.md`「時段蒸餾與封存（全站通用）」，archive 子頁為 `topics/community-tech-discussions-archive`，對象為 `## 技術彙整` 的 `### YYYY-MM` 分組。**2026-05／06 兩個時段已於 2026-09-06 封存；2026-07 於 2026-10 起達門檻**——搬走之前先確認 `## 現在吵到哪` 中「最後一則證據」欄指向 `#2026-07` 的列，錨點同批改指封存頁。通用契約的例外 2 與例外 3 在本頁的具體形態：**`## 現在吵到哪` 每一列「最後一則證據」所指的那一則條目不搬**（例外 2 唯一細節出處）；**模式為 🌊延燒／🌋重燃 的討論，其歷史月份條目不搬**（例外 3）。
+照 `.claude/reporter-rules/wiki-ingest-format.md`「時段蒸餾與封存（全站通用）」，archive 子頁為 `topics/community-tech-discussions-archive`，對象為 `## 技術彙整` 的 `### YYYY-MM` 分組。**2026-05／06 兩個時段已於 2026-09-06 封存；2026-07 於 2026-10 起達門檻**——搬走之前先確認 `## 現在吵到哪` 中「最後一則證據」欄指向 `#2026-07` 的列，錨點同批改指封存頁。通用契約的例外 2 與例外 3 在本頁的具體形態：**`## 現在吵到哪` 每一列「最後一則證據」所指的那一則條目不搬**（例外 2 唯一細節出處）；**模式為 🌊延燒／🌋重燃 的討論，其歷史月份條目不搬**（例外 3）。
 
 > 四個 h3 標題皆逐字含 slug `community-tech-discussions`——`scripts/table_census.py` 的 `_mechanism()` 要求命中行或其所屬標題含該頁 slug 基名，否則判「無機制」。
 
@@ -169,13 +169,13 @@
 
 ### 6. code-quality-decline 的封存
 
-照 `.claude/rules/wiki-ingest-format.md`「時段蒸餾與封存（全站通用）」，archive 子頁為 `topics/code-quality-decline-archive`，對象為 `## 時序` 的 `### YYYY-MM` 分組。**2026-03～04（合為一個時段）與 2026-05 已於 2026-09-07 封存**；2026-06 於 2026-10 起達門檻——搬走前先確認 `### 三種解釋，目前各自站在哪` 表第 3 列引用的 06-26「自訂編排路由失效」在正文或 `## 技術彙整` 留有一句。
+照 `.claude/reporter-rules/wiki-ingest-format.md`「時段蒸餾與封存（全站通用）」，archive 子頁為 `topics/code-quality-decline-archive`，對象為 `## 時序` 的 `### YYYY-MM` 分組。**2026-03～04（合為一個時段）與 2026-05 已於 2026-09-07 封存**；2026-06 於 2026-10 起達門檻——搬走前先確認 `### 三種解釋，目前各自站在哪` 表第 3 列引用的 06-26「自訂編排路由失效」在正文或 `## 技術彙整` 留有一句。
 
 ---
 
 ## community-large-codebase-workflow 主線 tag 規則（daily）`[加入: 2026-08-05，改版: 2026-08-15]`
 
-`community-large-codebase-workflow.md` 是把 patterns 節點沉澱成四條主線的**週更**頁；patterns 收「節點」（每日 append），主線頁每週從 patterns **整線重寫**（規則見 `.claude/rules/wiki-ingest-community-lint.md`）。**每日 ingest 不寫主線頁**——2026-08-05～08-15 的日更小縫實驗證明：每天只看一個節點的記者，結構上只做得到「往段尾加一句」，兩週就把綜合敘事頁長回 log；縫合需要看完整條線再重寫，那是週更的事（2026-08-15 使用者裁決）。
+`community-large-codebase-workflow.md` 是把 patterns 節點沉澱成四條主線的**週更**頁；patterns 收「節點」（每日 append），主線頁每週從 patterns **整線重寫**（規則見 `.claude/reporter-rules/wiki-ingest-community-lint.md`）。**每日 ingest 不寫主線頁**——2026-08-05～08-15 的日更小縫實驗證明：每天只看一個節點的記者，結構上只做得到「往段尾加一句」，兩週就把綜合敘事頁長回 log；縫合需要看完整條線再重寫，那是週更的事（2026-08-15 使用者裁決）。
 
 **每次為 `community-tech-patterns.md` 新增節點時，多填一個欄位：**
 
@@ -196,7 +196,7 @@
 
 | 訊號來源 | 收錄理由 | 最低門檻 |
 |---------|---------|---------|
-| **社群碰撞** | 多方驗證、正反交鋒 | 達對照表**低**門檻（見 `.claude/rules/wiki-reporter-shared.md` 互動門檻對照表），或同議題跨 2 個以上獨立來源（source_count ≥ 2）|
+| **社群碰撞** | 多方驗證、正反交鋒 | 達對照表**低**門檻（見 `.claude/reporter-rules/wiki-reporter-shared.md` 互動門檻對照表），或同議題跨 2 個以上獨立來源（source_count ≥ 2）|
 | **重要人士具名表態** | 因「誰說的」而有重量（Boris Cherny、Dario、Karpathy 等）| 具名 + 可信來源；同時回報人物記者更新對應 `entities/` 頁 |
 | **重要媒體深度報導** | 因觸及面與報導深度（36Kr、Platformer、WSJ 等）| 報導本身有實質內容，非純轉載標題 |
 
@@ -235,7 +235,7 @@
 
 保留期、上限與滿載讓位序見上方「community-tech-discussions 的兩張結論表」第 2 條——保留期一律讀「最後動態」，🌊延燒 與 🌙靜候 都有到期線，不再是永久保留。
 
-**技術彙整保留：** 條目長期保留於原頁（月份分組即入口層，見 `.claude/rules/wiki-ingest-format.md`「頁面拆分原則」）；收斂月份的減重走時段蒸餾機制（lint 時執行；通用契約見 `.claude/rules/wiki-ingest-format.md`「時段蒸餾與封存（全站通用）」，社群特有部分見 `.claude/rules/wiki-ingest-community-lint.md`「月度蒸餾與細節封存」），不再歸檔至獨立時序頁；封存一律走 `topics/community-tech-discussions-archive`。
+**技術彙整保留：** 條目長期保留於原頁（月份分組即入口層，見 `.claude/reporter-rules/wiki-ingest-format.md`「頁面拆分原則」）；收斂月份的減重走時段蒸餾機制（lint 時執行；通用契約見 `.claude/reporter-rules/wiki-ingest-format.md`「時段蒸餾與封存（全站通用）」，社群特有部分見 `.claude/reporter-rules/wiki-ingest-community-lint.md`「月度蒸餾與細節封存」），不再歸檔至獨立時序頁；封存一律走 `topics/community-tech-discussions-archive`。
 
 ---
 

@@ -163,7 +163,7 @@ PYTHON REPO_ROOT\scripts\check_gather_health.py
 標籤只描述類別，不授權升高語氣——即使掛 [風險警示]，說明文字的嚴重度仍以來源原文為準。
 
 選材門檻（下列四條是**給你判斷用的**；`[改版: 2026-09-04]` **判斷完即丟，任何門檻文字都不寫進日報**——冷讀者實測：檔尾「選材門檻」附錄裸露規則檔路徑與「存活率 0/9」這類內規，是全篇唯一寫給內部人看的段落，已廢除）：
-- **[新工具]**：單一 Show HN 工具未達互動門檻對照表（`.claude/rules/wiki-reporter-shared.md`）**中**門檻、且無跨來源佐證（source_count = 1）時，不單獨列入今日聚焦（校準顯示此類條目 30 天存活率 0/9）；多款工具同批亮相時歸入「⭐ 重點話題」，不逐一在聚焦具名——此時說明句以「同日 N 款同類工具亮相」作為今日訊號。
+- **[新工具]**：單一 Show HN 工具未達互動門檻對照表（`.claude/reporter-rules/wiki-reporter-shared.md`）**中**門檻、且無跨來源佐證（source_count = 1）時，不單獨列入今日聚焦（校準顯示此類條目 30 天存活率 0/9）；多款工具同批亮相時歸入「⭐ 重點話題」，不逐一在聚焦具名——此時說明句以「同日 N 款同類工具亮相」作為今日訊號。
 - **[風險警示]**：具名資安研究機構/研究者揭露、附具體攻擊鏈或 CVE 細節的條目優先；無具名背書的單一社群抱怨即使當日互動較高，也不優先於前者。
 - **[持續追蹤]**：此標籤語意上向讀者承諾「這是有跡象會延燒的故事線」，須有多方訊號佐證。僅有單一低分來源（HN < 10 分且 source_count = 1）的指控/爭議類條目、或當日已修復的服務監控事件，**不得**標為 [持續追蹤]，也不獨立佔一條聚焦名額——改標 [風險警示]，或併入其他既有故事線內文一句帶過（2026-08-01 校準顯示此類條目 30 天後續產出 0/2）。
 - **[社群趨勢]** `[加入: 2026-09-06]`：**單純引述具名人士的意見／評論、且未綁定具體產品發布、政策動作或爭議事件**者，不列入今日聚焦——改歸「⭐ 重點話題」或「💬 技術熱度討論」。綁定具體事件的社群趨勢（同批工具亮相、GitHub Issues 批量湧現、圍繞某次發布的實測串）不受此限（2026-09-06 校準：此型 30 天存活率 0/2，樣本偏薄，下輪校準複核）。
@@ -302,7 +302,7 @@ PYTHON REPO_ROOT\scripts\scan_open_forecasts.py TARGET_DATE
 PYTHON REPO_ROOT\scripts\scan_pending_verifications.py TARGET_DATE
 ```
 
-- 拿 wiki 全庫「懸置標記」（見 `.claude/rules/wiki-ingest-format.md`「懸置標記語法」節）的探針比對今日日報，命中則 append 至 `data/pending-signals.jsonl`，並在 stdout 印出依記者分組、可直接貼進派工的附件
+- 拿 wiki 全庫「懸置標記」（見 `.claude/reporter-rules/wiki-ingest-format.md`「懸置標記語法」節）的探針比對今日日報，命中則 append 至 `data/pending-signals.jsonl`，並在 stdout 印出依記者分組、可直接貼進派工的附件
 - 輸出由執行 Step 2（wiki ingest）的主 session 取用：把對應記者類別的派工附件段落原樣附在該記者的派工訊息裡，讓記者知道「今天日報可能回答了哪個懸置」
 - **B 級（僅單一弱探針命中且僅在內文）不進派工附件**，只記入 jsonl 供之後查核，不得轉貼給記者
 - **純字串比對，不做判斷、不改 wiki**；失敗只記錄不阻斷 pipeline，不影響本日其餘產出
@@ -455,7 +455,7 @@ git -C REPO_ROOT push || {
 ```
 
 - 最多重試 **2 次**，每次都先 `pull --rebase` 再 push
-- **工作樹不乾淨時不得走 `pull --rebase`** `[加入: 2026-09-06]`：本 repo `rebase.autoStash` 為 false，git 會在前置檢查就拒絕（`cannot pull with rebase: You have unstaged changes`），兩次重試必然失敗；而 `--autostash` 是**明文禁止**的——`git stash` 的作用域是整個工作區，多 session 並行時會連同別人正在寫的檔一起捲走（教訓見 `.claude/rules/wiki-reporter-shared.md`「不可執行改動工作區全域狀態的 git 指令」，2026-09-05 弄丟三位記者的成品）。改走：
+- **工作樹不乾淨時不得走 `pull --rebase`** `[加入: 2026-09-06]`：本 repo `rebase.autoStash` 為 false，git 會在前置檢查就拒絕（`cannot pull with rebase: You have unstaged changes`），兩次重試必然失敗；而 `--autostash` 是**明文禁止**的——`git stash` 的作用域是整個工作區，多 session 並行時會連同別人正在寫的檔一起捲走（教訓見 `.claude/reporter-rules/wiki-reporter-shared.md`「不可執行改動工作區全域狀態的 git 指令」，2026-09-05 弄丟三位記者的成品）。改走：
 
   ```
   git -C REPO_ROOT fetch origin

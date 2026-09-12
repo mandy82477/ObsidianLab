@@ -1,7 +1,7 @@
 """Tests for scripts/check_pending_markers.py — 懸置標記語法檢查器。
 
 回填全庫 388 筆舊字樣為新語法前的驗收工具（規格見
-`.claude/rules/wiki-ingest-format.md`「懸置標記語法」節）。每個測試用一個假
+`.claude/reporter-rules/wiki-ingest-format.md`「懸置標記語法」節）。每個測試用一個假
 wiki 目錄（`TemporaryDirectory`），呼叫 `check(report, wiki_dir=..., today=...)`
 ——`check_pending_markers.check()` 明確接受這兩個參數以支援測試，不需 monkeypatch
 模組全域。

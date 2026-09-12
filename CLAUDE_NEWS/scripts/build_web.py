@@ -34,7 +34,7 @@ OUT_SEARCH_INDEX = ROOT / "web_reader" / "data" / "search-index.json"
 FRONTMATTER_RE = re.compile(r"\A---\r?\n.*?\r?\n---\r?\n", re.DOTALL)
 
 # Obsidian 註解 `%% … %%`（單行與跨行皆吃）——維運備忘的家，見
-# `.claude/rules/wiki-reporter-shared.md`「維運備忘的家」。非貪婪，且不跨越
+# `.claude/reporter-rules/wiki-reporter-shared.md`「維運備忘的家」。非貪婪，且不跨越
 # 另一組 `%%`（否則兩則相鄰備忘之間的正文會被一起吞掉）。
 OBSIDIAN_COMMENT_RE = re.compile(r"%%(?:(?!%%).)*?%%", re.DOTALL)
 HTML_COMMENT_RE = re.compile(r"<!--.*?-->", re.DOTALL)
@@ -136,7 +136,7 @@ META_RE = {
 
 SUMMARY_HEADERS = ["## 現況", "## 摘要"]
 
-# 六個標準領域值（見 .claude/rules/wiki-ingest-format.md「命名與分類規則」）
+# 六個標準領域值（見 .claude/reporter-rules/wiki-ingest-format.md「命名與分類規則」）
 VALID_DOMAINS = {"🤖 模型", "🛠️ 工具/功能", "👤 人物", "💼 商業", "🏛️ 政策/安全", "🌐 社群"}
 
 
@@ -491,7 +491,7 @@ def attach_sedimented_badges(digest_all: dict, entities: list, topics: list) -> 
 
 # ── 投資訊號（wiki/topics/market-signals.md → 日報頁 💰 條目）───────────────
 # 判讀標題是規格與程式的共同契約：`### 💰 事件名（YYYY-MM-DD）`。規格端住
-# `.claude/rules/wiki-ingest-market.md`「判讀格式（機械契約字串）」表，兩端互相指認
+# `.claude/reporter-rules/wiki-ingest-market.md`「判讀格式（機械契約字串）」表，兩端互相指認
 # 並登記於 .claude/review-registry.json 的 sync_pairs——標題形狀改了而這裡沒跟，
 # 網站上的 💰 條目會靜默消失（同 2026-08-14 日報區塊 emoji 的死法）。
 MARKET_SIGNALS_PAGE = ROOT / "wiki" / "topics" / "market-signals.md"

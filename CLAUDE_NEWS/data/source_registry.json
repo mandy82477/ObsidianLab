@@ -1,7 +1,7 @@
 {
   "_doc": [
     "來源註冊表（單一真相源）：pipeline 註冊名 ↔ attribution slug ↔ 來源層品質標籤。",
-    "此檔取代散落於 .claude/rules/*.md 的來源特性補丁條文，程式端（scripts/source_scorecard.py）與規則端共用。",
+    "此檔取代散落於 .claude/reporter-rules/*.md 的來源特性補丁條文，程式端（scripts/source_scorecard.py）與規則端共用。",
     "score_reliability：trusted＝平台互動分數可作門檻訊號（僅限來源內比較，不可跨來源比絕對值）／",
     "untrusted＝分數失真（造假、恆 0、反指標），一律不得用數字門檻機械判定／none＝來源天生無互動分數。",
     "curation_mode：score＝來源內分數排序＋門檻／content＝逐條內容判斷（第一手實作、可驗證性）／",
@@ -89,7 +89,7 @@
       "category": "community",
       "score_reliability": "untrusted",
       "curation_mode": "content",
-      "notes": "實測讚數為反指標（第一手實作文 2–3 讚、SEO 農場文 5–6 讚，2026-07-10 教訓），一律內容判斷；規則見 .claude/rules/wiki-ingest-community.md。rate_comparable=false：top=30 抓法每日重抓 30 天窗，gathered 含跨日重複（由 emitted-cache 擋下），收錄率結構性偏低，不可與 26h 窗來源比較。",
+      "notes": "實測讚數為反指標（第一手實作文 2–3 讚、SEO 農場文 5–6 讚，2026-07-10 教訓），一律內容判斷；規則見 .claude/reporter-rules/wiki-ingest-community.md。rate_comparable=false：top=30 抓法每日重抓 30 天窗，gathered 含跨日重複（由 emitted-cache 擋下），收錄率結構性偏低，不可與 26h 窗來源比較。",
       "rate_comparable": false
     },
     {

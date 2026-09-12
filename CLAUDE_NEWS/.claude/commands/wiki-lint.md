@@ -12,14 +12,14 @@ description: 每週執行 wiki 品質檢查，修正矛盾/孤立/過期頁面�
 
 同時讀取：
 - `wiki/CLAUDE.md` — wiki 目錄結構與基本限制
-- `.claude/rules/wiki-ingest.md` — 分類標準與派工流程（主編指南）
-- `.claude/rules/wiki-ingest-format.md` — 頁面格式模板、欄位規則、品質標準
+- `.claude/reporter-rules/wiki-ingest.md` — 分類標準與派工流程（主編指南）
+- `.claude/reporter-rules/wiki-ingest-format.md` — 頁面格式模板、欄位規則、品質標準
 - `wiki/index.md` — 取得所有頁面清單
 - `wiki/log.md` — 了解最近的 ingest 紀錄與活動
 
 ### 2. 並行派工（六位記者同時執行）
 
-對每個類別呼叫 Agent tool，在**同一訊息中並行發出全部六個呼叫**。每個 Agent 呼叫一律 **`subagent_type: "general-purpose"` + `model: "sonnet"`**（本機與雲端唯一正典派工路徑，理由見 `.claude/rules/wiki-ingest.md`「派工方式」；sonnet 因 lint 與策展為有界判斷任務，不需旗艦模型；未指定會繼承主 session 模型，六記者並行足以打穿訂閱配額）。
+對每個類別呼叫 Agent tool，在**同一訊息中並行發出全部六個呼叫**。每個 Agent 呼叫一律 **`subagent_type: "general-purpose"` + `model: "sonnet"`**（本機與雲端唯一正典派工路徑，理由見 `.claude/reporter-rules/wiki-ingest.md`「派工方式」；sonnet 因 lint 與策展為有界判斷任務，不需旗艦模型；未指定會繼承主 session 模型，六記者並行足以打穿訂閱配額）。
 
 | 類別 | 角色檔（`.claude/agents/`） | 領域 |
 |------|--------------|------|
@@ -30,9 +30,9 @@ description: 每週執行 wiki 品質檢查，修正矛盾/孤立/過期頁面�
 | 社群 | `wiki-reporter-community` | 🌐 社群 |
 | 人物 | `wiki-reporter-people` | 👤 人物 |
 
-> **頁面範圍為動態認領，不是寫死清單：** 每位記者的負責頁面＝`wiki/index.md` 中「領域」欄等於自己那一組的所有 entities/ 與 topics/ 頁面（含近期新增），開工前先讀 index.md 認領清單，再加上自己規則檔（`.claude/rules/wiki-ingest-[category].md`）觸發條件表中列出的頁面。這樣新增頁面不需要回頭改這份派工表。
+> **頁面範圍為動態認領，不是寫死清單：** 每位記者的負責頁面＝`wiki/index.md` 中「領域」欄等於自己那一組的所有 entities/ 與 topics/ 頁面（含近期新增），開工前先讀 index.md 認領清單，再加上自己規則檔（`.claude/reporter-rules/wiki-ingest-[category].md`）觸發條件表中列出的頁面。這樣新增頁面不需要回頭改這份派工表。
 
-> **社群記者額外任務：** `community-tech-tools.md` 已脫離每日 ingest，是 **lint 專用策展頁**。除 3a–3g 品質檢查外，須額外依 `.claude/rules/wiki-ingest-community-lint.md` 的「策展規則」與「決策表驗收：3 跳自檢題」執行：讀取近 7–14 天 `news/*.md` 萃取達標新工具、汰除過氣條目、依新證據同步「我卡在這裡」決策表、收工前重跑 3 跳自檢題。派工 prompt 須附上「今日日期」供記者計算 news/ 範圍。
+> **社群記者額外任務：** `community-tech-tools.md` 已脫離每日 ingest，是 **lint 專用策展頁**。除 3a–3g 品質檢查外，須額外依 `.claude/reporter-rules/wiki-ingest-community-lint.md` 的「策展規則」與「決策表驗收：3 跳自檢題」執行：讀取近 7–14 天 `news/*.md` 萃取達標新工具、汰除過氣條目、依新證據同步「我卡在這裡」決策表、收工前重跑 3 跳自檢題。派工 prompt 須附上「今日日期」供記者計算 news/ 範圍。
 
 每個 Agent 呼叫的 prompt（第一段角色前導不可省略——它是記者拿到規則的唯一途徑）：
 
@@ -45,9 +45,9 @@ description: 每週執行 wiki 品質檢查，修正矛盾/孤立/過期頁面�
 轉知待接手（其他記者先前交辦給你的事；無則寫「無」）：
 [貼入 `python scripts/pending_handoffs.py list --to [類別]` 的輸出]
 
-你的負責頁面＝`wiki/index.md` 中領域為 [對應領域] 的所有頁面（含近期新增），開工前先讀 index.md 認領清單，再加上你規則檔（`.claude/rules/wiki-ingest-[category].md`）觸發條件表中列出的頁面。
+你的負責頁面＝`wiki/index.md` 中領域為 [對應領域] 的所有頁面（含近期新增），開工前先讀 index.md 認領清單，再加上你規則檔（`.claude/reporter-rules/wiki-ingest-[category].md`）觸發條件表中列出的頁面。
 
-讀取 `.claude/rules/wiki-ingest-format.md`，然後對每個頁面依序執行：
+讀取 `.claude/reporter-rules/wiki-ingest-format.md`，然後對每個頁面依序執行：
 
 **3a 矛盾偵測**
 同一事件的描述若與其他已知頁面矛盾（日期不同、結論相反）→ 以日報原文為準修正，兩頁互加 wikilink。
@@ -64,13 +64,13 @@ topics/ 頁面狀態為 `ongoing`，且「**最後新聞更新**」距今超過 
 **3c 的回升邊（與上段對稱，不可只做下修）`[加入: 2026-08-20]`**
 掃描狀態為 `monitoring` 的 topics/ 頁面，若「**最後新聞更新**」距今 ≤ 14 天 → 狀態改回 `ongoing`，並列入 index.md 狀態變更回報。
 
-> 下修有人管、回升沒人管，頁面就會單向沉底。2026-08-20 實例：`topics/ai-talent-flow` 於 08-01 因「近 3 週無新事件」下修為 monitoring，但 08-14 已有新聞進來，狀態掛著沒回去——讀者看到「低頻觀察」會理解為「這條線沒事了」，而它正在活躍更新。記者端的即時版規則見 `.claude/rules/wiki-reporter-shared.md`「每頁必做」；本步是每週的兜底掃描。
+> 下修有人管、回升沒人管，頁面就會單向沉底。2026-08-20 實例：`topics/ai-talent-flow` 於 08-01 因「近 3 週無新事件」下修為 monitoring，但 08-14 已有新聞進來，狀態掛著沒回去——讀者看到「低頻觀察」會理解為「這條線沒事了」，而它正在活躍更新。記者端的即時版規則見 `.claude/reporter-rules/wiki-reporter-shared.md`「每頁必做」；本步是每週的兜底掃描。
 
 **3d 已解決議題收尾**
 topics/ 狀態為 `resolved` → 確認「目前結論」已填寫、頂部 callout 註明已結案。**留在原路徑不遷移**（一頁一故事，遷移會斷 wikilink 與讀者動線）。
 
 **3e 呈現品質審查**
-依 `.claude/rules/wiki-ingest-format.md`「Wiki 頁面呈現品質標準」掃描：
+依 `.claude/reporter-rules/wiki-ingest-format.md`「Wiki 頁面呈現品質標準」掃描：
 必須修復：摘要可獨立閱讀、關鍵資訊前置、無 LLM 專屬指令
 警示觸發：頁面 > 200 行、連續 8+ 個無分組日期條目、方案比較未用表格
 
@@ -80,7 +80,7 @@ topics/ 狀態為 `resolved` → 確認「目前結論」已填寫、頂部 call
 
 **3g 待查證回訪**
 對你負責的頁面 grep「待查證」「單方指控」「無官方證實」「待核實」等懸置標記。
-標記語法與各角色可動範圍見 `.claude/rules/wiki-ingest-format.md`「懸置標記語法」節。
+標記語法與各角色可動範圍見 `.claude/reporter-rules/wiki-ingest-format.md`「懸置標記語法」節。
 
 已是新語法的標記（帶 `（標 YYYY-MM-DD｜查 …）`）：
 - 比對近 14 天 `news/*.md`，有後續 → **只加 `｜訊 YYYY-MM-DD`** 並更新題目後的內文
@@ -100,7 +100,7 @@ topics/ 狀態為 `resolved` → 確認「目前結論」已填寫、頂部 call
 > **措辭鐵則 `[加入: 2026-08-08]`**：你只掃了日報，就只能宣稱日報沒有。**不得寫成「至今無後續」**——那讀起來像「已經確認過了」，但答案可能一直躺在官方說明中心（2026-08-08 教訓：pricing 旗艦計費分界懸置 20 天，每天誠實回報「至今無後續」20 次，而官方文件從第一天就寫著答案）。把「沒查」講出來，該筆才會被步驟 5c 撈去真查。記者無 web 工具，不得自行查證外部來源。
 
 **3h 蒸餾候選提案**
-依 `.claude/rules/wiki-ingest-format.md`「時段蒸餾與封存（全站通用）」對你負責頁面的事件流區提案：每頁至多 2 個最舊時段，逐筆附引用檢查（`python scripts/wiki_graph.py explain <頁slug> --section "<段名>"` 的入邊）。**只提案不執行**——執行需使用者確認。無達標時段寫「無蒸餾候選」。
+依 `.claude/reporter-rules/wiki-ingest-format.md`「時段蒸餾與封存（全站通用）」對你負責頁面的事件流區提案：每頁至多 2 個最舊時段，逐筆附引用檢查（`python scripts/wiki_graph.py explain <頁slug> --section "<段名>"` 的入邊）。**只提案不執行**——執行需使用者確認。無達標時段寫「無蒸餾候選」。
 
 ```
 | 頁 | 時段 | 條目數 | 字元數 | 擬總結一句 | 引用檢查 |
@@ -125,7 +125,7 @@ resolved 收尾：[list or 無]
 index.md 狀態變更：[page: 舊狀態→新狀態 or 無]
 ```
 
-> lint 專用回報格式的「轉知處置」欄必須與 `.claude/rules/wiki-reporter-shared.md` 的回報契約同步 `[加入: 2026-08-28]`（教訓見沿革檔 2026-08-28 A）。
+> lint 專用回報格式的「轉知處置」欄必須與 `.claude/reporter-rules/wiki-reporter-shared.md` 的回報契約同步 `[加入: 2026-08-28]`（教訓見沿革檔 2026-08-28 A）。
 
 **收報核對（自我遵守率）`[加入: 2026-07-05，擴充: 2026-08-28]`：** 主編收到每份回報後，執行兩層核對：
 
@@ -139,7 +139,7 @@ index.md 狀態變更：[page: 舊狀態→新狀態 or 無]
 **月度蒸餾（記者成長迴路）`[加入: 2026-07-05]`：** 僅每月第一次 lint 執行（判斷方式同 6g 指標二：`wiki/log.md` 本月尚無 `Lint` 記錄），其餘週次輸出「非本月首次 lint，跳過月度蒸餾」。
 
 步驟：
-1. grep 過去 30 天 `wiki/log.md` 的**「退回」**記錄（收報核對段落）與**「品質備註」**行（ingest 紀錄，見 `.claude/rules/wiki-ingest.md` 第三步）
+1. grep 過去 30 天 `wiki/log.md` 的**「退回」**記錄（收報核對段落）與**「品質備註」**行（ingest 紀錄，見 `.claude/reporter-rules/wiki-ingest.md` 第三步）
 2. 按「記者類別 × 錯誤型態」統計出現次數
 3. **同一型態 ≥ 2 次**者產出立法提案；僅 1 次者只列入「觀察中」清單，不立法
 
@@ -193,13 +193,13 @@ index.md 狀態變更：[page: 舊狀態→新狀態 or 無]
 
 ### 5a. feature-radar 熱度降溫（主編親做）`[加入: 2026-08-28]`
 
-`.claude/rules/wiki-ingest-features.md`「熱度降溫：它不是棘輪」定的 −1 規則**原本沒有執行點**——規則指名「由主編在彙整 feature-radar 的同一段執行」，但 lint 全文零提及，於是自 2026-08-20 立法起零次觸發。本步是它的執行點。
+`.claude/reporter-rules/wiki-ingest-features.md`「熱度降溫：它不是棘輪」定的 −1 規則**原本沒有執行點**——規則指名「由主編在彙整 feature-radar 的同一段執行」，但 lint 全文零提及，於是自 2026-08-20 立法起零次觸發。本步是它的執行點。
 
 1. 取 `wiki/feature-radar.md` 全覽表中**熱度 ≥ 🔥🔥** 的條目（🔥 已是下限，不必檢查）
 2. 對每個條目查近 4 週日報有無提及——**用共用腳本查，不要臨場手刻 grep** `[加入: 2026-08-29]`：`python scripts/news_mentions.py --since 4w "英文名" "中文譯名"`。它強制 ≥2 別名、拒絕過寬詞、且輸出命中原文行——三者分別擋掉漏抓、假命中、與「只看次數就下結論」。理由與實例見該腳本檔頭。
 3. 零命中 → 熱度 −1 格，**同步對應 `entities/` 頁的「熱度與試用價值」表**——單邊下修是矛盾的來源
 4. **不降的例外**：狀態為「⏰ 倒數中」，或本輪熱度／試用價值有其他變動者
-5. **⏳ 逾期處置（同一趟做完）`[加入: 2026-08-28]`**：全覽表中標 ⏳ 且發布日距今 > 90 天者，依 `.claude/rules/wiki-ingest-features.md`「⏳ 觀望是有期限的判斷」三選一處置，不得留原狀
+5. **⏳ 逾期處置（同一趟做完）`[加入: 2026-08-28]`**：全覽表中標 ⏳ 且發布日距今 > 90 天者，依 `.claude/reporter-rules/wiki-ingest-features.md`「⏳ 觀望是有期限的判斷」三選一處置，不得留原狀
 6. 回報：`熱度降溫：檢查 N 條，降 M 條（列出 條目名 舊→新），同步 entities 頁 M 處；⏳ 逾期：K 條，處置（升 a／降 b／加註 c）`
 
 ### 5b. 跨家任務榜單週更（主編派工）`[加入: 2026-08-05]`
@@ -255,11 +255,11 @@ index.md 狀態變更：[page: 舊狀態→新狀態 or 無]
 
    > **第四列為何不可用 `🔎`** `[加入: 2026-08-29]`：`🔎 查無官方` 的定義是「**已查官方一手來源、確認未載**」；Lane A 沒查官方，用它等於宣稱做過沒做的事。（教訓見沿革檔 2026-08-29 B）
 
-   標記語法見 `.claude/rules/wiki-ingest-format.md`「懸置標記語法」節。**你是唯一有權移除標記或改狀態符號的角色**（記者只能加 `訊`）。
+   標記語法見 `.claude/reporter-rules/wiki-ingest-format.md`「懸置標記語法」節。**你是唯一有權移除標記或改狀態符號的角色**（記者只能加 `訊`）。
 
 4. **金額／數字分級**：官方文件未載而僅媒體有數字者，寫「媒體稱（媒體名）」，不得升格為官方數字
 
-5. **結案回掃（強制，每筆查實後立刻做，不得留到最後）** `[加入: 2026-08-20，改版: 2026-09-04]`：語意與 `.claude/rules/wiki-reporter-shared.md`「事實更正必回掃」同一套，**先入邊、後 grep**——
+5. **結案回掃（強制，每筆查實後立刻做，不得留到最後）** `[加入: 2026-08-20，改版: 2026-09-04]`：語意與 `.claude/reporter-rules/wiki-reporter-shared.md`「事實更正必回掃」同一套，**先入邊、後 grep**——
 
    ```
    python scripts/wiki_graph.py explain <該筆所在頁> --section "該筆所在的節標題"
@@ -285,10 +285,10 @@ Citation drift 是 LLM wiki 文獻點名的最嚴重失效模式：**claim 被�
 
 ### 5e. pricing「通路與乘數」複查（主編親查）`[加入: 2026-08-29]`
 
-`wiki/entities/pricing.md` 的 `## 通路與乘數` 吃的是**官方計價文件**（`platform.claude.com` 與各雲端平台），不是日報——記者無 web 工具，寫成記者責任會製造永遠空著的區塊。依 `.claude/rules/wiki-ingest-commercial-lint.md` 執行：
+`wiki/entities/pricing.md` 的 `## 通路與乘數` 吃的是**官方計價文件**（`platform.claude.com` 與各雲端平台），不是日報——記者無 web 工具，寫成記者責任會製造永遠空著的區塊。依 `.claude/reporter-rules/wiki-ingest-commercial-lint.md` 執行：
 
 1. 該區塊「資料截至 YYYY-MM-DD」距今 > 30 天 → WebFetch 官方定價頁與平台可用性頁複查；一致則只更新查證日
-2. 本週有新模型世代發布 → 確認長脈絡是否仍不加價、tokenizer 是否再換代；後者走 `data/pending-handoffs.jsonl` 轉知模型記者（`.claude/rules/wiki-ingest-models.md` I 條）
+2. 本週有新模型世代發布 → 確認長脈絡是否仍不加價、tokenizer 是否再換代；後者走 `data/pending-handoffs.jsonl` 轉知模型記者（`.claude/reporter-rules/wiki-ingest-models.md` I 條）
 3. 商業記者本週回報「⚠️ 需主編查證官方計價文件」→ 逐筆查證後寫入，標來源連結與查證日
 4. 本區塊為非新聞性維護：只更新 pricing 的「最後更新」，**不動「最後新聞更新」**
 
@@ -325,7 +325,7 @@ python scripts/gen_wiki_frontmatter.py --list-signal "⚠️ 高引用但停滯"
 
 **⚠️ 雲端一律跳過**（同 5b、5c）：需外部網域，雲端沙盒 egress 封鎖。雲端執行時不查、不改頁面，寫一條待辦「投資訊號回顧環因雲端 egress 封鎖跳過，留待本機 `/weekly` 承接」並列入待使用者確認區。
 
-執行細節（回填格式、不可驗證的寫法、不得回頭改寫「當時方向」、連續 4 週全錯的處置）見 `.claude/rules/wiki-ingest-market-lint.md`。
+執行細節（回填格式、不可驗證的寫法、不得回頭改寫「當時方向」、連續 4 週全錯的處置）見 `.claude/reporter-rules/wiki-ingest-market-lint.md`。
 
 **回報格式（納入步驟 8 的 lint 紀錄）：**
 ```
@@ -334,7 +334,7 @@ python scripts/gen_wiki_frontmatter.py --list-signal "⚠️ 高引用但停滯"
 
 ### 5i. 安全政策兩頁結論表退場複查（主編親做）`[加入: 2026-09-06，擴充: 2026-09-06]`
 
-`wiki/topics/ai-agent-safety.md` 的攻擊面結論表（現名 `## 現在還擋不住的攻擊`）（上限 11 列）與 `## 提示注入已不是單點漏洞，是產業級攻擊面`（上限 8 列）都有退場條文，但沒有任何一步會去跑它——退場只在每日 ingest 順手做，逾 90 天那條實際上不會被主動觸發。本步即其週更觸發邊，複查規則見 `.claude/rules/wiki-ingest-safety-policy.md`「ai-agent-safety 更新規則」第 2、3 條。`wiki/topics/anthropic-government-policy.md` 的 `## 現在有哪幾條線在動`（上限 8 列）同病同治，複查規則見同一規則檔「anthropic-government-policy 更新規則」第 2、3、4 條。
+`wiki/topics/ai-agent-safety.md` 的攻擊面結論表（現名 `## 現在還擋不住的攻擊`）（上限 11 列）與 `## 提示注入已不是單點漏洞，是產業級攻擊面`（上限 8 列）都有退場條文，但沒有任何一步會去跑它——退場只在每日 ingest 順手做，逾 90 天那條實際上不會被主動觸發。本步即其週更觸發邊，複查規則見 `.claude/reporter-rules/wiki-ingest-safety-policy.md`「ai-agent-safety 更新規則」第 2、3 條。`wiki/topics/anthropic-government-policy.md` 的 `## 現在有哪幾條線在動`（上限 8 列）同病同治，複查規則見同一規則檔「anthropic-government-policy 更新規則」第 2、3、4 條。
 
 逐列檢查該表的「最後動態」是否距今逾 90 天且本輪無新回報，符合即依規則移除並在事件記錄補註記；表未滿載時挑候選補位並移除其註記。`## 提示注入…攻擊面` 表滿 8 列時汰除最舊者，並確認導言／收斂點／「仍未有答案的」三處則數與表列數一致。政策頁逐列檢查『線』欄括號內的最後動態日期是否逾 90 天且本輪無新事實，符合即依規則移除並在 `## 時序` 對應條目補註記；表未滿載時從 `## 時序` 挑符合三條判準、最後動態最新者補位。另比對 `## 政府動作對你的產品做了什麼` 的項數是否等於上表標『會』的列數，不等即依規則增刪。
 
@@ -345,7 +345,7 @@ python scripts/gen_wiki_frontmatter.py --list-signal "⚠️ 高引用但停滯"
 
 ### 5j. 商業健康度四表退場複查（主編親做）`[加入: 2026-09-06]`
 
-`wiki/topics/anthropic-business.md` 的 `## 現在的數字`（上限 10 列）、商業風險表（現名 `## 還沒過去的風險`）（上限 6 列）、`## 哪個合作會改到你用的 Claude`（上限 6 列）與 `## 上面提到的人是誰`（上限 8 人）都有退場與補位條文，但沒有任何一步會去跑它——本步即其週更觸發邊，複查規則見 `.claude/rules/wiki-ingest-commercial.md`「anthropic-business 更新規則」第 1、4、5、6 條。
+`wiki/topics/anthropic-business.md` 的 `## 現在的數字`（上限 10 列）、商業風險表（現名 `## 還沒過去的風險`）（上限 6 列）、`## 哪個合作會改到你用的 Claude`（上限 6 列）與 `## 上面提到的人是誰`（上限 8 人）都有退場與補位條文，但沒有任何一步會去跑它——本步即其週更觸發邊，複查規則見 `.claude/reporter-rules/wiki-ingest-commercial.md`「anthropic-business 更新規則」第 1、4、5、6 條。
 
 逐列檢查：指標表看「資料日期」是否逾 180 天且無人發布新值，符合即移出並在細節區留結論；風險表看「風險」欄括號內的最後動態是否逾 90 天且本輪無新事實（**訴訟不適用 90 天**），符合即移除並在細節區補註記，表未滿載時依判準從細節區補位並移除其註記；合作表看該差異是否已消失或逾 180 天無新事實；人物表看每人所連的那一列或那一則是否仍在頁上。另核合作表上的「資料截至」日與 `entities/pricing`「通路與乘數」是否同批（見 5e）。
 
@@ -356,11 +356,11 @@ python scripts/gen_wiki_frontmatter.py --list-signal "⚠️ 高引用但停滯"
 
 ### 5k. 社群三張結論表退場複查（主編派社群記者）`[加入: 2026-09-06]`
 
-`wiki/topics/community-tech-patterns.md` 的 `## 模式概覽`（上限 21 列）、`### 誰負責拆分`（五列固定）與 `### 缺口追蹤`（上限 8 列）都有退場、補位、留表優先序條文，但沒有任何一步會去跑它——本步即其週更觸發邊，複查規則見 `.claude/rules/wiki-ingest-community-lint.md`「community-tech-patterns 模式概覽週更」。
+`wiki/topics/community-tech-patterns.md` 的 `## 模式概覽`（上限 21 列）、`### 誰負責拆分`（五列固定）與 `### 缺口追蹤`（上限 8 列）都有退場、補位、留表優先序條文，但沒有任何一步會去跑它——本步即其週更觸發邊，複查規則見 `.claude/reporter-rules/wiki-ingest-community-lint.md`「community-tech-patterns 模式概覽週更」。
 
 派社群記者執行該節三步：重算「最後動態」（兩段式撈法覆寫日期欄與全頁式錨點）、跑退場與補位（逾 60 天或算不出日期者移出、剛跨線當週處理、表未滿載時從表下補位）、跑合併（代表技巧重疊過半者合併）；同批補填主線 tag（每週 20 則，從最新往回補，累計進度寫進回報）。上限滿載時的讓位交回主編裁決，不由記者自行決定。
 
-`wiki/topics/community-tech-discussions.md` 的 `## 現在吵到哪`（上限 10 列）與 `## 最近在討論什麼`（上限 50 列）同批處理：重算每一列的最後動態與最後一則證據日期、依狀態三值重判、跑退場與補位、把逾 45 天的 🌊延燒 改標 🌙靜候、把逾 90 天的 🌙靜候 移出表。條文見 `.claude/rules/wiki-ingest-community.md`「community-tech-discussions 的兩張結論表」。
+`wiki/topics/community-tech-discussions.md` 的 `## 現在吵到哪`（上限 10 列）與 `## 最近在討論什麼`（上限 50 列）同批處理：重算每一列的最後動態與最後一則證據日期、依狀態三值重判、跑退場與補位、把逾 45 天的 🌊延燒 改標 🌙靜候、把逾 90 天的 🌙靜候 移出表。條文見 `.claude/reporter-rules/wiki-ingest-community.md`「community-tech-discussions 的兩張結論表」。
 
 **回報格式（納入步驟 8 的 lint 紀錄）：**
 ```
@@ -370,7 +370,7 @@ python scripts/gen_wiki_frontmatter.py --list-signal "⚠️ 高引用但停滯"
 
 ### 5l. 模型頁世代表複查（主編親做）`[加入: 2026-09-07]`
 
-對 `wiki/entities/fable-5.md` 與 `wiki/entities/opus-5.md` 的結論表各跑一次（判準見 `.claude/rules/wiki-ingest-models.md`「模型頁兩代對照表」與「entities/opus-5 的兩張表」）：① 兩頁 `## 你現在拿到的是什麼` 表上「資料截至」距今逾 60 天 → WebFetch 官方模型總覽頁重查七列並更新查證日；② fable-5 `## 護欄會怎麼改寫你的請求` 四類是否仍為官方公布的四類；③ opus-5 `## 這些數字是誰量的` 的官方基準是否仍為官方在引用的那幾項，社群側是否首次出現帶測試方法與數字的獨立複測（有則同批改寫導言那句承諾）；④ 兩頁 `## 熱度與試用價值` 對 feature-radar 全覽表對應世代那一列，不一致以 radar 為準覆寫。
+對 `wiki/entities/fable-5.md` 與 `wiki/entities/opus-5.md` 的結論表各跑一次（判準見 `.claude/reporter-rules/wiki-ingest-models.md`「模型頁兩代對照表」與「entities/opus-5 的兩張表」）：① 兩頁 `## 你現在拿到的是什麼` 表上「資料截至」距今逾 60 天 → WebFetch 官方模型總覽頁重查七列並更新查證日；② fable-5 `## 護欄會怎麼改寫你的請求` 四類是否仍為官方公布的四類；③ opus-5 `## 這些數字是誰量的` 的官方基準是否仍為官方在引用的那幾項，社群側是否首次出現帶測試方法與數字的獨立複測（有則同批改寫導言那句承諾）；④ 兩頁 `## 熱度與試用價值` 對 feature-radar 全覽表對應世代那一列，不一致以 radar 為準覆寫。
 
 **回報格式（納入步驟 8 的 lint 紀錄）：**
 ```
@@ -392,7 +392,7 @@ code-quality-decline 三條線（5m）：N 列比對／M 列已改／資料截�
 
 ### 6. CLAUDE.md 健檢
 
-讀取 `wiki/CLAUDE.md`、`.claude/rules/wiki-ingest.md`、`.claude/rules/wiki-ingest-format.md`、`.claude/rules/wiki-reporter-shared.md` 與**本檔（`.claude/commands/wiki-lint.md`）自身** `[加入: 2026-08-28]`，依序執行下列各項檢查。
+讀取 `wiki/CLAUDE.md`、`.claude/reporter-rules/wiki-ingest.md`、`.claude/reporter-rules/wiki-ingest-format.md`、`.claude/reporter-rules/wiki-reporter-shared.md` 與**本檔（`.claude/commands/wiki-lint.md`）自身** `[加入: 2026-08-28]`，依序執行下列各項檢查。
 
 > 本檔必須在掃描範圍內：**檢查者把自己排除在檢查範圍外，是這類缺陷的共同形狀。**（教訓見沿革檔 2026-08-28 D）
 
@@ -409,7 +409,7 @@ code-quality-decline 三條線（5m）：N 列比對／M 列已改／資料截�
 ```
 → **向使用者確認後再修改**，不自行決定保留哪條規則。
 
-> 修完矛盾後**必須回掃**：依 `.claude/rules/wiki-reporter-shared.md`「事實更正必回掃」，拿該事實的關鍵字 grep 全庫，把仍在講舊說法的引用方一併上修。3a 判矛盾時「以較嚴謹者為準」會把結論**下修**到低確信度頁面，而事後那個結論被查實**上修**時，被下修過的引用方不會自己回來——同步是雙向的，但機制原本只有單向。`[加入: 2026-08-28]`
+> 修完矛盾後**必須回掃**：依 `.claude/reporter-rules/wiki-reporter-shared.md`「事實更正必回掃」，拿該事實的關鍵字 grep 全庫，把仍在講舊說法的引用方一併上修。3a 判矛盾時「以較嚴謹者為準」會把結論**下修**到低確信度頁面，而事後那個結論被查實**上修**時，被下修過的引用方不會自己回來——同步是雙向的，但機制原本只有單向。`[加入: 2026-08-28]`
 
 #### 6b. 規則引用驗證
 
@@ -438,7 +438,7 @@ code-quality-decline 三條線（5m）：N 列比對／M 列已改／資料截�
 
 #### 6d. 規則年齡審查
 
-`.claude/rules/wiki-ingest-format.md`、`.claude/rules/wiki-reporter-shared.md`、各記者規則檔（`wiki-ingest-*.md`）、`.claude/rules/wiki-ingest.md`（主編指南）與**本檔（`.claude/commands/wiki-lint.md`）自身** `[加入: 2026-08-28]` 中帶有 `[加入: YYYY-MM-DD]` 標記的 `##` 區塊，計算距今天數。
+`.claude/reporter-rules/wiki-ingest-format.md`、`.claude/reporter-rules/wiki-reporter-shared.md`、各記者規則檔（`wiki-ingest-*.md`）、`.claude/reporter-rules/wiki-ingest.md`（主編指南）與**本檔（`.claude/commands/wiki-lint.md`）自身** `[加入: 2026-08-28]` 中帶有 `[加入: YYYY-MM-DD]` 標記的 `##` 區塊，計算距今天數。
 
 > 範圍刻意含 `wiki-ingest.md`（無後綴，接不到 `wiki-ingest-*.md` glob）與本檔（全庫 `[加入:]` 最密）。（教訓見沿革檔 2026-08-28 D）
 
@@ -566,7 +566,7 @@ python scripts/lint_health.py hits report     # 各步驟連續零命中輪數�
 
 #### 6j. 對抗輪（月度）`[加入: 2026-09-04]`
 
-每月首次 lint（判斷同月度蒸餾）依 `.claude/rules/wiki-lint-adversarial.md` 派三個對抗 agent：冷讀者審日報、冷讀者審週報＋隨機 3 頁 wiki、prompt reviewer 審近 30 天改過的規則檔。發現逐項修到「無阻擋意見」，並依該檔「收報後」登記 `lint_health.py misses`。非月度首次寫「非本月首次 lint，跳過」。
+每月首次 lint（判斷同月度蒸餾）依 `.claude/reporter-rules/wiki-lint-adversarial.md` 派三個對抗 agent：冷讀者審日報、冷讀者審週報＋隨機 3 頁 wiki、prompt reviewer 審近 30 天改過的規則檔。發現逐項修到「無阻擋意見」，並依該檔「收報後」登記 `lint_health.py misses`。非月度首次寫「非本月首次 lint，跳過」。
 
 #### 6k. 連結缺口偵測（每輪）`[加入: 2026-09-04]`
 
@@ -598,7 +598,7 @@ python scripts/check_reader_language.py --list   # 禁詞清單＋讀者語言�
 python scripts/check_reader_language.py --page <slug>   # 單頁清單
 ```
 
-- 讀 WARN 摘要，從命中最多的頁取 **2 頁**，派 `subagent_type: "general-purpose"` + `model: "sonnet"`（機械式改寫，不需旗艦模型）逐條處理，每條三選一：**改寫成讀者語言**（用 `--list` 的替代詞）／**移進 `%% … %%` 維運備忘**（見 `.claude/rules/wiki-reporter-shared.md`「維運備忘的家」）／**登記 `data/reader-language-allow.json`**（附理由；page 與 term 不得同時填 `*`）
+- 讀 WARN 摘要，從命中最多的頁取 **2 頁**，派 `subagent_type: "general-purpose"` + `model: "sonnet"`（機械式改寫，不需旗艦模型）逐條處理，每條三選一：**改寫成讀者語言**（用 `--list` 的替代詞）／**移進 `%% … %%` 維運備忘**（見 `.claude/reporter-rules/wiki-reporter-shared.md`「維運備忘的家」）／**登記 `data/reader-language-allow.json`**（附理由；page 與 term 不得同時填 `*`）
 - 清完該頁後從 `data/reader-language-baseline.json` 的 `pages` **移除該頁整筆**——棘輪只能往下轉，不得為了轉綠把新命中加回基線
 - 禁詞清單住 `scripts/check_reader_language.py` 頂部常數（單一來源），要增刪禁詞改那裡，不在規則檔另抄一份
 - 回報：`讀者語言（6l）：基線剩 N 頁，本輪清 M 頁，新增命中 K`——**K > 0 代表機械閘擋下了新外洩**，在回報寫出是哪頁哪句
@@ -610,7 +610,7 @@ python scripts/check_reader_language.py --page <slug>   # 單頁清單
 
 ### 7. 讀者模擬驗收 `[加入: 2026-07-02]`
 
-站在三種目標讀者（根目錄 `CLAUDE.md`「目標讀者」）的角度各出一題**本週真實會問的問題**（從近 7 天日報事件取材），模擬讀者從 `wiki/index.md` 出發：
+站在三種目標讀者（先 Read `.claude/rules/collection-scope.md`「目標讀者」）的角度各出一題**本週真實會問的問題**（從近 7 天日報事件取材），模擬讀者從 `wiki/index.md` 出發：
 
 | 讀者 | 問題類型範例 |
 |------|------------|
@@ -626,7 +626,7 @@ python scripts/check_reader_language.py --page <slug>   # 單頁清單
 
 ### 7b. 歷史質疑代打（題庫抽問）`[加入: 2026-09-02]`
 
-讀 `.claude/rules/wiki-lint-inquiry.md` 後執行：跑 `python scripts/inquiry_bank.py draw` 抽 2 題（seed 綁本 ISO 週，同週重跑同題），逐題執行探針、產出三態結果（✅ 附證據行／⚠️ 已修復／❌ 記待辦並回報使用者）。
+讀 `.claude/reporter-rules/wiki-lint-inquiry.md` 後執行：跑 `python scripts/inquiry_bank.py draw` 抽 2 題（seed 綁本 ISO 週，同週重跑同題），逐題執行探針、產出三態結果（✅ 附證據行／⚠️ 已修復／❌ 記待辦並回報使用者）。
 
 > 這一步代打的是**使用者歷史質疑的已知模式**（溯源、缺席偵測、沉默質疑、讀者查找、可讀性、結構健檢、宣稱對帳、資產重用審計八種，蒸餾自 `wiki/log.md` Query 條目）；新型質疑仍靠使用者，`scripts/open_loops.py` 的人類質疑時效燈不因本步驟而熄滅。與步驟 7 的分工：7 出「本週熱點」的讀者題，7b 抽「考卷外」的系統質疑題。
 

@@ -1,3 +1,10 @@
+---
+paths:
+  - "web_reader/index.html"
+  - "web_reader/**/*.css"
+  - "web_reader/**/*.js"
+  - "scripts/build_web.py"
+---
 # Web Reader 設計規範
 
 修改 `web_reader/index.html`、`web_reader/assets/design.css`、`web_reader/assets/app.js` 前必須讀取此檔案。
