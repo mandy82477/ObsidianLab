@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<meta charset="utf-8">
+<title>已搬家：claude-news</title>
+<meta name="robots" content="noindex">
+<style>
+  body { font-family: system-ui, "Noto Sans TC", sans-serif; margin: 0; padding: 12vh 6vw;
+         color: #2b2926; background: #faf8f4; line-height: 1.7; }
+  a { color: #8a5a1e; }
+  code { font-family: ui-monospace, "JetBrains Mono", monospace; font-size: 0.9em; }
+</style>
+<h1>已搬家</h1>
+<p>CLAUDE NEWS 已於 2026-09-12 分割為獨立 repo <code>claude-news</code>，網站改到
+  <a id="target" href="https://mandy82477.github.io/claude-news/web_reader/">mandy82477.github.io/claude-news/web_reader/</a>。</p>
+<p>正在轉址…若未自動跳轉，請點上方連結。</p>
+<script>
+  (function () {
+    var NEW_ROOT = "https://mandy82477.github.io/claude-news/";
+    var OLD_PREFIX = "/ObsidianLab/CLAUDE_NEWS/";
+    var p = location.pathname;
+    var dest;
+    if (p.indexOf(OLD_PREFIX) === 0) {
+      dest = NEW_ROOT + p.slice(OLD_PREFIX.length);
+    } else {
+      dest = NEW_ROOT + "web_reader/";
+    }
+    dest += location.search + location.hash;
+    document.getElementById("target").href = dest;
+    location.replace(dest);
+  })();
+</script>
