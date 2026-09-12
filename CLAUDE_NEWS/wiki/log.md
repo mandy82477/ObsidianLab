@@ -6232,3 +6232,12 @@ GH Actions 抓料排 10:23 UTC，到 14:45 UTC 仍未落地（+4.4 小時且持�
   - ⏳ 已擱置 1 週｜**patterns 淘汰候選**：Fast Context Task Router（07-05，Microsoft 專案已下架、⏳ 60 天）仍在表上——移除或降註記
   - ⏳ 已擱置 1 週｜**榜單汰換**：Search Arena 連續無法取得、Aider Polyglot 停更——是否汰換／由 SWE-bench Pro 或 Terminal-Bench 3.0 承接（本輪 5b 雲端跳過，未複查）
   - ⏳ 已擱置 2 週｜Q2 資料缺口（gathered_archive 只存刊出量）；5c 產消失衡；ai-agent-safety-archive 狀態統一；5d 歸因日期誤差
+
+## 2026-09-12 追記：渲染層驗收抓到 overview 不上站（補上方 Lint 紀錄的「渲染層驗收」欄）
+
+- 渲染層驗收：查 community-tech-patterns 與 community-tech-tools 兩頁的 build 產物（雲端無瀏覽器，讀 `web_reader/data/wiki/<slug>.json`）——本輪改動的「模式概覽」成熟度欄、主線 tag、「我卡在這裡」決策表與「🧩 Skills 速查」皆確實出現在產物中；`⟨Q-nn⟩` 短標記 14 個正常渲染；`%% … %%` 維運備忘已被建置剝除（產物零殘留）。產物中殘留的 `[[…]]` 共 134 處屬正常，wiki JSON 存的是原始 markdown，由 `app.js` 的 `parseWikilink()` 在前端解析
+- ⚠️ **同時抓到一件實質問題：`wiki/overview.md` 沒有頁面產物。** `build_web.py` 輸出 42 entities／32 topics／136 digests／7 weekly＋radar，其中根層頁只有 `feature-radar.json`，**沒有 `overview.json`**。但 overview 仍以節點身分進了 `graph.json`（`pageType: root`，且已被算進 `alsoSee` 推薦：market-signals、community-tech-discussions 兩項），`wiki/index.md` 概覽區第一列也把它列為讀者入口——**讀者在網站上點進去會是死路**
+- 這正是「不能只信 build 綠燈」要防的東西：`build_web.py` exit 0、測試全綠、markdown 完全正確，壞的是「讀者看到的東西」。步驟 5 每週重寫 overview，而它一直沒上站；本步驟以外沒有任何檢查在看「index 連到的根層頁有沒有對應產物」
+- 未自行修復（改 `build_web.py` 屬程式層設計決定，且不確定 overview 是刻意不上站還是漏掉），已登漏抓帳並列入待使用者裁示：
+  - ⏳ 已擱置 0 週｜**overview 不上站**：擇一——(a) `build_web.py` 比照 feature-radar 產出 overview 頁產物；(b) 確認刻意不上站，則自 index.md 概覽區移除該列並從 graph 節點排除，避免讀者點到死路。另建議加斷言：index.md 連到的每個根層頁都必須有對應產物
+- wikilink 健檢：斷鏈 WARN 13／錨點 WARN 0（斷鏈皆為 `[[news/*]]` 指向未建置的舊日報與 log.md 內的樣板字串，非本輪新增）

@@ -1074,7 +1074,7 @@ window.WIKI_DATA = {
       "pill": "active",
       "firstSeen": "",
       "startDate": "2026-08-08",
-      "lastUpdated": "2026-09-05",
+      "lastUpdated": "2026-09-12",
       "lastNewsUpdate": "2026-08-16",
       "updateFreq": "🗓️ 週更（隨官方文件與社群策展更新；日期停留數天屬正常節奏）",
       "parent": "",
