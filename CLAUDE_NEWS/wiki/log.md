@@ -6250,3 +6250,11 @@ GH Actions 抓料排 10:23 UTC，到 14:45 UTC 仍未落地（+4.4 小時且持�
 **根因：** 頁面 09-05 建頁時定的五段（方向／時效／打折／看什麼／選項／一課）是自訂骨架，八則裡六則同一條 IPO 線、方向欄全是「本體不可買；間接曝險 ～」、打折 (a) 全是「非官方一手」；回顧結算對未上市標的結構上永遠結不了帳（8 列 6 列不可驗證）。修補式設計從既有格式出發，只會換段名不會換起點——正確起點是領域專家的工作流。
 
 **處置：** (a) 判讀格式改為分析師六問：**一眼**（正負 📈📉⚖️〰＋型態、誰有感、硬度五值、線名 ▸ 第 N 則）／**為什麼這樣判**（第一句必寫「新資訊是…」）／**下一個催化劑**／**你的選項**／**一課｜課名**（概念／機制／下次怎麼認三層，同課再現寫「複習：課名」）；「本體不可買」只住敘事線表；開新則門檻＝有新資訊；(b) 頁面上半新增覆寫式「一課一課學」課程表（7 課）與「現在在動的敘事線」（4 線）；(c) 回顧結算改結「下一個催化劑出現了沒」（純庫內、雲端可跑），上市標的另結股價方向，結果對回課程表「押對了嗎」；(d) `.claude/reporter-rules/wiki-ingest-market.md`、`wiki-ingest-market-lint.md`、`.claude/agents/wiki-reporter-market.md`、`.claude/commands/wiki-lint.md` 5h 同步改寫；標題契約 `### 💰 事件名（YYYY-MM-DD）` 不動。設計過程產物：`docs/page-audits/market-signals-2026-09-12-formats{,-fable}.md`。防再犯記入 memory：格式類設計先寫領域專家問題清單再對照回饋。
+
+## 2026-09-12 Query：LLM wiki 專案沉澱在哪 → skill-interest-watch「LLM 知識庫」類是空籃子
+
+**點出什麼：** 使用者問「目前有做 LLM wiki 的專案長怎樣、有沒有可學的，我記得有沉澱一頁」。庫內只有六則各一段的條目散在 patterns 頁與趨勢九；使用者記得的那頁是 [[topics/skill-interest-watch]] 的「LLM 知識庫／文件策展／知識傳承」類，但榜上五個 repo 全是文件轉 skill 工具，沒有一個 LLM wiki，「本庫判斷」欄為「尚無判斷」。
+
+**根因：** 09-03 校準時該類只留 `documentation (agent OR skill) claude in:description` 一條查詢，設定檔 `why` 記著「llm-wiki 專有詞 0 命中」。與 SKILL.md 存量盤點同病：Karpathy 式 LLM wiki 的 repo 描述寫「Karpathy」「LLM wiki」不寫 claude，綁 claude 的查詢結構上撈不到。09-12 `--probe` 實測 `"llm wiki" in:name,description` 30 筆、`karpathy wiki in:name,description` 30 筆全切題（claude-obsidian 14.8k、llm-wiki-agent 3.5k、karpathy-llm-wiki 2.2k、llm-wiki-compiler 2k、llmwiki 1.6k），09-03 的「0 命中」結論已過時。
+
+**處置：** (a) `data/skill_interest_watch.json` 該類加上述兩條查詢（排前），原查詢保留，`why` 改記 09-12 校準；(b) 主編 web 查證六個一手來源（Karpathy 原始模式、Fulkerson 生產版、Ghelbur 重建版、Liu 六個月實錄、CodeAlmanac、wuphf）的設計對照，結論「骨架本庫全有且多數更嚴，真正缺的是 query 作為第一級動作」——待使用者裁決是否沉澱為 `topics/llm-wiki-pattern` 主題頁與 `/wiki-query` skill；(c) 同日根目錄 CLAUDE.md 新增「這是一個 LLM wiki：三個動作」一節。歸因 slug `user-query`。

@@ -137,9 +137,11 @@
       "name": "LLM 知識庫／文件策展／知識傳承",
       "status": "active",
       "queries": [
+        "\"llm wiki\" in:name,description",
+        "karpathy wiki in:name,description",
         "documentation (agent OR skill) claude in:description"
       ],
-      "why": "09-03 校準：Skill_Seekers、DevDocs、notebooklm-mcp、pg-aiguide 切題；\"knowledge base\" 寬 query 被巨頭洗版已棄，llm-wiki 專有詞 0 命中。",
+      "why": "09-12 重校準（使用者提問「LLM wiki 專案沉澱在哪」揭露本類籃子空）：09-03 記的「llm-wiki 專有詞 0 命中」已過時，--probe 實測 \"llm wiki\" 30 筆（claude-obsidian 14.8k、llm-wiki-agent 3.5k、karpathy-llm-wiki 2.2k、llm-wiki-compiler 2k、llmwiki 1.6k）、karpathy wiki 30 筆全切題；雜訊只有 agents-flex（Java 框架）與 TencentDB-Agent-Memory（記憶中樞，邊緣）。09-03 的 documentation 查詢保留，兩條新查詢排前。",
       "guide_section": null,
       "tools_symptom": null,
       "tools_note": null
