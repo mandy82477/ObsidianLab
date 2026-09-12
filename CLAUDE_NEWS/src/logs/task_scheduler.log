@@ -657,3 +657,6 @@
 [週六 2026/09/12 03:54:43.00] Weekly lint OK (cloud) - 六記者+devpractice 全數收報，修 15 頁，10 項待使用者確認；gate 第 1 輪修復後放行（測試全綠），build_web 成功（斷鏈 WARN 13／錨點 WARN 0），渲染層驗收抓到 overview 無頁面產物（已登漏抓帳並列待裁示）；5b/5c/5e/5h/5m 雲端 egress 封鎖跳過；月度項目（蒸餾/6g指標二/6j）非本月首次 lint 跳過
 [cloud weekly-wiki-lint-cloud COMPLETE 2026-09-12T03:54:43Z]
 [cloud daily-news-pipeline-cloud STARTED 2026-09-12T12:03:13Z]
+[週六 2026/09/12 12:04:40.00] === Agent pipeline start (2026-09-12) ===
+[週六 2026/09/12 12:04:40.00] ABORTED: gathered_items.json date=2026-09-11 items=89，非目標日期的新鮮資料
+[cloud daily-news-pipeline-cloud ABORTED 2026-09-12] Step 1a replay 檔缺失（src/gathered_archive/2026-09-12.json 不存在，GitHub Actions daily-gather 尚未上站），Step 1b 新鮮度防線擋下，本班（12 UTC）不生成假日報，交由後續班次接手
