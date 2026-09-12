@@ -481,7 +481,7 @@ Multi-agent 架構與 Skills 設計已是社群定案的做法；還在試的十
 - **主線：** —
 - **核心模式：** AI coding agent 的生產級工程技能（skills）集合，作者為 Addy Osmani（Google Chrome DevRel 資深工程師）；GitHub Search 累積 9.2 萬星
 - **與既有模式的關係：** 補上本頁「Skills 設計」類別一位具名資深工程師的策展案例——與既有 rsmdt/the-startup（套件化 subagent／commands 集合）、baoyu-design（官方工具 Skill 化移植）不同取向，本則訴求「生產級」（production-grade）品質標準的工程技能集合，非單一功能封裝；非大型 codebase 特有痛點，暫不歸入主線 [[topics/community-large-codebase-workflow]] 四條主線
-- **可信度註記：** 星數（9.2 萬），僅取得 GitHub Search 星數，無 forks／issues／近期 commit 佐證可查，未另行查證；repo 僅 2026-02-15 出生（本庫今日首次收錄時約 6.5 個月），星數累積速度偏快，惟作者具名（Addy Osmani，Google 資深工程師，公眾人物，既有龐大社群關注度）且內容具體（生產級技能集合，可查證），依內容具體程度判斷收錄，星數累積速度本身不作為獨立驗證訊號
+- **可信度註記：** 星數（9.2 萬），無 forks／issues／近期 commit 佐證；repo 2026-02-15 出生（收錄時約 6.5 個月），累積速度偏快，惟作者具名（Addy Osmani，Google 資深工程師）且內容具體，依內容判斷收錄，星數速度不作為獨立驗證訊號
 - **來源：** GitHub Search（9.2 萬★，存量盤點｜2026-02-15 出生、本庫今日首次收錄）；[GitHub](https://github.com/addyosmani/agent-skills)
 - **成熟度：** ⏳ 新興（本庫首次收錄，尚無星數以外的社群採用回饋數據）
 
@@ -591,7 +591,7 @@ Multi-agent 架構與 Skills 設計已是社群定案的做法；還在試的十
 - **主線：** —
 - **核心模式：** Garry Tan（YC 總裁）公開自己實際使用的 Claude Code 設定，23 個各司其職的工具分飾 CEO、設計師、工程經理、發布經理、文件工程師與 QA 等角色；GitHub Search 累積 13.0 萬星
 - **與既有模式的關係：** 補上本頁「角色分工型 subagent 設計」的具名高知名度案例——與既有 multi-agent 缺口對照表「Coordination／conflict resolution」缺口相關，本則屬社群自建的角色切分實作範例而非填補缺口本身；非大型 codebase 特有痛點，暫不歸入主線 [[topics/community-large-codebase-workflow]] 四條主線
-- **可信度註記：** 星數（13.0 萬），僅取得 GitHub Search 星數，api.github.com 存取受限、無 forks／issues／近期 commit 佐證可查，未另行查證；repo 僅 2026-03 出生（本庫今日首次收錄時約 5.5 個月），星數累積速度明顯快於同類存量盤點案例（如 x1xhlol 14.3 萬星耗時約 1.5 年），此增速明顯異常；作者具名（Garry Tan，YC 總裁，公眾人物）且內容具體（23 個工具的角色分工清楚可查），依內容具體程度判斷收錄，但星數本身的真實性**未經驗證**，不作為獨立訊號
+- **可信度註記：** 星數（13.0 萬），無 forks／issues／近期 commit 佐證，api.github.com 存取受限；repo 2026-03 出生（約 5.5 個月），累積速度明顯異常（同類 x1xhlol 耗時約 1.5 年）；作者具名（Garry Tan，YC 總裁）且內容具體，依內容判斷收錄，星數真實性未經驗證
 - **來源：** GitHub Search（13.0 萬★，存量盤點｜2026-03-11 出生、本庫今日首次收錄）；[GitHub](https://github.com/garrytan/gstack)
 - **成熟度：** ⏳ 新興（本庫首次收錄，尚無星數以外的社群採用回饋數據）
 
@@ -608,7 +608,7 @@ Multi-agent 架構與 Skills 設計已是社群定案的做法；還在試的十
 
 - **主線：** —
 - **核心模式：** 彙整 Claude Code、Cursor、Devin AI、Replit 等數十款 AI 編碼工具的完整系統提示詞與模型設定；GitHub Search 累積 14.3 萬星
-- **與既有模式的關係：** 呼應本頁既有「system prompt 版本追蹤」類別——phistory（2026-08-08）鎖定 Claude Code／Codex／OpenClaw／Hermes 四款 CLI 的版本快照自動封存；本則規模更大（涵蓋數十款工具，含非 CLI 類的 Cursor、Devin AI、Replit）且性質不同：非自動追蹤工具，而是靜態彙整檔案庫，供讀者橫向比較不同廠商 system prompt 設計取向，屬同一「系統提示詞可見度」關注方向下的另一種資料形式
+- **與既有模式的關係：** 呼應「system prompt 版本追蹤」類別——phistory（08-08）鎖定四款 CLI 的版本快照自動保存；本則規模更大（涵蓋數十款工具，含非 CLI 類）且為靜態彙整檔案庫非自動追蹤，供橫向比較不同廠商設計取向
 - **可信度註記：** 星數（14.3 萬），僅取得 GitHub Search 星數，api.github.com 存取受限、無 forks／issues／近期 commit 佐證可查，未另行查證；因屬本庫首次收錄的既有大型 repo（已成名但本庫從未報導過的 repo），依內容具體程度（涵蓋範圍明確、可查證的公開 system prompt 文字）判斷收錄，星數本身不作為獨立驗證訊號
 - **來源：** GitHub Search（14.3 萬★，存量盤點｜2025-03-05 出生、本庫今日首次收錄）；[GitHub](https://github.com/x1xhlol/system-prompts-and-models-of-ai-tools)
 - **成熟度：** ✅ 廣泛採用（14.3 萬星且已存在近 1.5 年，屬長期累積型參考資源而非新興工具）
@@ -741,7 +741,7 @@ Multi-agent 架構與 Skills 設計已是社群定案的做法；還在試的十
 
 - **主線：** —
 - **核心模式：** 開發者釋出 statuslin.es，蒐集社群提交、經人工審核的 Claude Code status line 樣式展示，每則皆附上真實 sandbox 容器截圖以佐證樣式實際運作效果（而非僅程式碼片段）
-- **與既有模式的關係：** 為 Claude Code 客製化/UI 展示補上一個策展型社群索引，性質類似本頁「介面元件複用」類別的 Brainless（模仿介面風格的 shadcn 元件庫），但聚焦 status line 這個更細分的客製化面向，且以「真實截圖佐證」作為收錄門檻，可信度較單純程式碼片段展示更高；非大型 codebase 特有痛點，暫不歸入主線 [[topics/community-large-codebase-workflow]] 四條主線
+- **與既有模式的關係：** 為 Claude Code 客製化／UI 展示補上策展型社群索引，性質類似「介面元件複用」類別的 Brainless，聚焦 status line 這個更細分面向，以「真實截圖佐證」為收錄依據；非大型 codebase 特有痛點，暫不歸入主線 [[topics/community-large-codebase-workflow]] 四條主線
 - **來源：** 「Show HN: A community library for Claude Code status lines」— Hacker News（score 12）＋跨 2 來源；[statuslin.es](https://statuslin.es)
 - **成熟度：** ⏳ 新興（今日首見，尚待觀察後續提交量與社群採用度）
 
@@ -867,10 +867,10 @@ Multi-agent 架構與 Skills 設計已是社群定案的做法；還在試的十
 - **來源：** 「The Year I Started Leaving Breadcrumbs Instead of Notes」— dev.to（24 讚；依規則以第一手反思內容判斷，非讚數；屬個人筆記習慣反思，非大型 codebase 協作痛點，暫不歸入主線）
 - **成熟度：** ⏳ 新興（第一手個人反思，無具體工具或量化數據，較適合作為現象觀察而非可複用模式）
 
-#### phistory：跨 agent CLI（Claude Code／Codex／OpenClaw／Hermes）system prompt 版本快照自動封存工具（2026-08-08）
+#### phistory：跨 agent CLI（Claude Code／Codex／OpenClaw／Hermes）system prompt 版本快照自動保存工具（2026-08-08）
 
 - **主線：** —
-- **核心模式：** 開源工具 Phistory 自動追蹤並封存多款 agent CLI（Claude Code、Codex、OpenClaw、Hermes）的 system prompt 版本快照，讓使用者可跨版本比對各工具 system prompt 的變動歷程，而非侷限於單一工具的單次檢視
+- **核心模式：** 開源工具 Phistory 自動追蹤並保存多款 agent CLI（Claude Code、Codex、OpenClaw、Hermes）的 system prompt 版本快照，讓使用者可跨版本比對各工具 system prompt 的變動歷程，而非侷限於單一工具的單次檢視
 - **與既有模式的關係：** 呼應本頁既有「作者 grep JSONL 逐字稿，發現隱藏標籤 `<ip_reminder>`」（07-29）等第一手偵測方法論，本工具系統化為跨工具、跨版本的自動保存與比對機制；屬單一工具除錯輔助，非大型 codebase 協作痛點，暫不歸入主線
 - **來源：** GitHub Search（今日日報「⭐ 重點話題」已收錄）；repo 為 [WEIFENG2333/phistory](https://github.com/WEIFENG2333/phistory)，星數已查證（2026-08-13，GitHub API）：519 星／forks 35（6.7%，略低於防刷基準）／open issues 4／最後 push 08-12——forks 比例偏低但有近期實質 commit 與少量 issue 往來，刷星可能性無法完全排除
 - **成熟度：** ⏳ 新興（星數佐證較弱，尚無第一手使用心得或社群討論佐證實際採用效果）
@@ -1112,7 +1112,7 @@ Multi-agent 架構與 Skills 設計已是社群定案的做法；還在試的十
 
 - **核心模式：** 開發者釋出開源畫布工具，讓 Claude 的回應直接顯示在使用者手寫筆記旁，將 AI 輔助思考與紙本手寫筆記工作流結合，而非侷限於純聊天視窗介面
 - **與既有模式的關係：** 與 [[topics/community-tech-discussions]] 07-15 記錄的「r/ClaudeAI 週熱門三則大型個人專案展示」為同一專案（手寫畫布），本頁首次以「模式」角度補記其技術做法；概念上與「介面元件複用」類別（Brainless）同屬 AI coding 工具介面美學探索，但本模式聚焦「手寫 + AI 回應並置」的新互動形式，而非既有元件封裝
-- **來源：** 「I built an open-source canvas where Claude responds beside your handwritings」— Reddit r/ClaudeAI（週熱門，已通過收錄門檻；原貼 2026-07-17）
+- **來源：** 「I built an open-source canvas where Claude responds beside your handwritings」— Reddit r/ClaudeAI（週熱門，已達標；原貼 2026-07-17）
 - **成熟度：** ⏳ 新興（單一開源專案展示，尚無其他採用案例佐證）
 
 #### CodeAlmanac：從與 Claude Code / Codex 對話自動更新的 Karpathy 風格程式碼庫 Wiki（2026-07-22）
@@ -1320,7 +1320,7 @@ Multi-agent 架構與 Skills 設計已是社群定案的做法；還在試的十
   - [CCLimitPing](https://github.com/wavever/CCLimitPing)（Show HN score 2）：5 小時限制解除的瞬間自動觸發 continue
   - [LimitBar](https://mikaweiss6.gumroad.com/l/limitbar)（Show HN score 2，跨來源佐證）：macOS 選單列 app，即時顯示 Claude 用量限制
 - **解決的問題：** 額度耗盡後的手動恢復延遲、以及額度使用狀態缺乏即時可視性，兩者共同構成「額度感知能力不足」的體驗缺口；與既有 Tokenyst（任務層級 token 預算顯示）同屬費用/額度控管工具鏈，但聚焦於「限制與恢復時機」而非「花費金額」
-- **來源：** Hacker News Show HN（07-03，兩則均為個人專案，分數低於工具目錄收錄門檻）
+- **來源：** Hacker News Show HN（07-03，兩則均為個人專案，分數低於工具目錄一般所需分數）
 - **成熟度：** ⏳ 新興（單日兩個獨立小工具同時出現，尚無採用數據，回應的是同晚 Reddit 額度焦慮情緒串所反映的真實痛點，值得後續觀察是否有更成熟工具跟進）
 
 #### 氛圍狀態燈：Hooks 驅動實體 LED 燈號提示 Agent 狀態（2026-07-02）
