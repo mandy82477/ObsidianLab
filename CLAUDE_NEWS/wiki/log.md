@@ -6167,3 +6167,68 @@ GH Actions 抓料排 10:23 UTC，到 14:45 UTC 仍未落地（+4.4 小時且持�
 
 - devpractice 沉澱：候選 4 筆（entities/claude-code：AskUserQuestion 60 秒逾時官方確認為刻意設計非 bug；entities/managed-agents：SDK v1.5.0 新增 Managed Agents auto mode 工具權限設定；topics/ai-agent-safety：Claude Code deny-list 8 種手法可繞過、只有 allow-list 擋得住；topics/community-tech-patterns：drawio-skill 架構圖 Skill）；基準線 b4595f3173→4f4e283ccc
 - market 判讀：1 則（🔴 1／🟡 0：威脅情報報告揭露伊朗/俄羅斯/中國三方濫用案例）；已檢視 89 條，AI 研究員離職示警敘事延燒（Joe Benton／Josh Engels／川普／Musk）判為既有敘事延續、方向未變，不另開新則；里程碑登記 2 筆（政府正式調查或出口管制措施；Moonshot 官方回應非法蒸餾指控）；回顧結算 ⏳ 新增 1 列
+
+## 2026-09-12 Lint（雲端排程執行，weekly-wiki-lint-cloud）
+
+- 修正矛盾：entities/amir-salek 狀態 `active（待核實）` → `active`（頁內 2026-09-06 Bloomberg 查證已補經歷與職掌，標頭／frontmatter 未跟著同步）。同一事實在 topics/ai-talent-flow 仍掛舊懸置，屬 5c 範圍、雲端 egress 封鎖不得自行結案，已開轉知帳 H-28955d 交本機承接
+- 補連結：無孤立頁（六記者逐頁 Grep 反向 wikilink，入鏈最低者 skill-interest-watch 4、pattern-trends 8；archive 子頁 inbound_links 顯示 0 為機制性排除，實有母頁錨點與 index 機器投影）
+- 狀態更新：無（所有 ongoing topics「最後新聞更新」皆在 14 天內；monitoring 的 safety-china-trust-dispute 距今 63 天，不符回升條件）
+- resolved 收尾：已核對 5 個封存頁與 1 個併回殼（community-tech-timeline），callout 與「已併回」句皆在、留原路徑未搬移
+- 新增 entities：無（雲端 runbook 規定步驟 4 只回報不動手，候選見待使用者裁示）
+- 呈現品質：⚠️ 已修復 9 頁（mythos 現況 3 段→2 段並修正「歷史記錄」誤稱、sonnet-5 現況 delta-first 改寫、amir-salek 狀態同步、competitor-landscape 懸置細節 238→184 字元、ai-talent-flow 時序補月份分組、community-tech-patterns／-discussions／-tools／pattern-trends／large-codebase-workflow 週更與超限修復）；📋 待辦 1 頁（ai-agent-safety 技術彙整上半 55 則無主題分組，牽動大量站內錨點，本輪不動刀）；其餘全部通過
+- 入口層健檢：> 500 行者 community-tech-patterns(1443)、-archive(1054)、ai-agent-safety(963)、anthropic-business(852)、claude-code(821)、community-tech-discussions(759)、pricing(735)、-archive(645)、coding-workflow-guide(635) 皆已具入口層，無需補結構；無語意分岔／死案候選
+- 待查證回訪：已更新 1 筆（competitor-landscape DeepSeek V4 Pro 對標對象 → 加 `訊 2026-09-06`，09-06 tech-insider.org 已改對照 Opus 5，惟方法論與分數仍缺）；六類別合計逾 100 筆懸置標記逐一比對近 14 天日報後皆零實質後續，依規則不動標記；無尚未回填的舊語法標記
+- 蒸餾候選（3h）：提案 18 個時段待裁示——人物 4（boris-cherny 2026-04／05、dario-amodei 2026-05／06）、商業 9（enterprise-tool-tracker 2026-04／05、enterprise-cost-management 2026-05／06、pricing 事故 2026-05＋定價促銷 2026-05、ai-talent-flow 2026-06、google-investment 2026-04／05）、安全政策 2（recursive-self-improvement 2026-06〔需先建 archive 子頁〕、safety-china-trust-dispute 2026-06〔僅 1 條，建議併到 07 月一起〕）、功能 2（official-community-gap 2026-05／06）、社群 1（code-quality-decline 2026-06）。全部只提案未執行
+- 規則檔健檢：
+  - 矛盾：3 條待裁示——(a) `.claude/commands/wiki-lint.md` 6g 指標三本文寫「每週」，同檔 :536 輸出模板與 :665 log 模板仍寫「（月度）／非本月首次 lint，跳過」，:218 亦仍把外部死鏈列為雲端跳過項（runbook 已於 2026-08-20 改為雲端照常執行）；(b) `.claude/rules/wiki-ingest-features.md` :32 已知問題狀態「四選一」vs :238 結論層「五值（含 🔎 查無官方）」，安全政策規則檔已採五值；(c) 商業／安全政策規則檔要求把「（未列入總表：表滿載，YYYY-MM-DD）」寫進讀者正文，而 `check_reader_language.py` 把「表滿載」「未收錄」列為禁詞要求移進 `%% %%`——entities/pricing 同頁兩種寫法並存（:254/:315 已在註解內，:304/:320/:325/:353 仍在正文），6l 存量因此結構性清不完
+  - 引用驗證：全部通過（`check_rules.py` 檢查 3：13 個錨點全部有效；四類機械檢查含 94 組 sync_pairs 全綠）
+  - 遵守率：全部通過（近 3 次 ingest 09-09／09-10／09-11：呈現品質審查 3/3、feature-radar 提及 3/3、log 格式 3/3；決策表首選本期無變動，不適用）
+  - 過期規則（> 60 天）：17 個 `##` 區塊（取各標題最新日期計）。逐一比對現狀後，15 個仍吻合；2 個建議複查——`wiki-ingest-format.md` 的 entities／topics 頁面格式模板（140 天）所列節名與現行主力頁（fable-5、opus-5、anthropic-business、ai-agent-safety 等改用結論表與自訂節名）落差已大，模板是否仍為建頁唯一依據待裁示。另發現 `wiki-ingest-community.md` 第 5 條與本檔 5k 回報格式把主線 tag 分母寫死為 115，實測節點數已達 146 且每日成長，寫死分母會讓進度百分比永久失真
+  - 來源健康：無 `ok=false`；社群／媒體來源無連續 3 天 count=0（GitHub Issues 09-09 單日 0 不構成）；清冊／官方型來源 count=0 屬正常。⚠️ 發現窗對帳：`interest:source-resilience` 自 09-04 起連續 7 天完全缺列，查設定檔為刻意移入 `_rejected`，但它不像 `retired` 類別會續寫 `note=retired` 的列——對帳端因此無法分辨「刻意撤下」與「窗死」，建議 `_rejected` 類別比照 retired 續寫列。`repo_star_history.csv` 3,336 行、最新 2026-09-11，持續增長；velocity 窗 09-10 起冷啟動屬正常
+  - 跨檔案語意矛盾（6f）：機械層 94/94 通過；語意層發現 1 處——registry 的「雲端 weekly runbook <-> wiki-lint.md」配對只驗單向（runbook 引用的標題存在於 wiki-lint.md），未驗反向，於是 runbook 步驟表落後 wiki-lint.md 八步（5h／5i／5j／5k／5l／5m／6l／7b 無對應列）而全綠。本輪依 runbook 自身「不要自行猜測略過」條款照 wiki-lint.md 實際內容執行。另 6f 條文指名讀取 `review-commands.md`「同步配對註冊表」，該節已遷入 `.claude/review-registry.json`，條文指向不存在的清單
+  - 成長迴路（月度）：非本月首次 lint（09-02／09-03 已執行），跳過
+  - 規則密度（6h）：density 候選 5 檔（wiki-lint.md 735 行／68 標記、news-pipeline-steps.md 553／38、weekly-report.md 380／28＋教訓 6.1%、wiki-ingest-format.md 324／24、wiki-ingest-features.md 317／35）；依「每次至多提案 2 檔」提案 wiki-lint.md 與 weekly-report.md，待裁示
+  - 突變測試（6i）：`mutate` 87 組配對全部在突變後轉紅，無假看守；`hits report` 無步驟連續零命中達門檻（每月抽 3 支非 registry 檢查人工突變屬月度，非本月首次故跳過）
+  - 連結缺口（6k）：相似候選 10 對（補連結 1：long-context-1m→sonnet-5；併頁候選 1：anthropic-agent-stack ↔ community-large-codebase-workflow，列待裁示；登記無需連結 8）；同新聞候選 6 對（補連結 3：market-signals→jacob-coxon／→evan-hubinger、anthropic-government-policy→community-tech-discussions；登記 3）。`data/graph_gap_ignore.json` 首次啟用，登記 11 對；複跑後同新聞表已清空
+  - 讀者語言（6l）：基線 15 頁／47 筆 → 14 頁／34 筆，本輪清 community-tech-patterns 1 頁（13 筆），新增命中 K=0。原訂清 2 頁，第二頁 entities/pricing（9 筆）因上述矛盾 (c) 無法在不違反另一條規則的前提下處置，改列待裁示
+- 品質指標（6g）：
+  - ref 覆蓋率（每週）：96.4%（09-05～09-11，28 條列／27 有歸因，閾值 80%）。缺 ref 日期：09-05 一則橫跨多個 repo 的彙整型條目，無單一 URL 可附
+  - 採用驗證率（月度）：非本月首次 lint，跳過
+  - 外部死鏈：`data/link_health.json` checked_at 2026-09-11（距今 1 天，新鮮）；dead 5 條／anti_bot 206／unverified 2。5 條 dead 逐一開檔核對，**全部已在頁面標「（原文已失效）」且保留原 URL**，本輪新增標註 0；anti_bot 與 unverified 依規則不派工、不標註
+  - 趨勢判讀：持平（近 3 列 100%／100%／96.4%，單一彙整型條目所致，非歸因格式回歸）
+- 跨家榜單週更（5b）：雲端 egress 封鎖，跳過（已固定由本機 `/weekly` 步驟 0 承接）
+- 逾期待查證清算（5c）：雲端 egress 封鎖，跳過（同上）
+- pricing 通路與乘數複查（5e）：雲端 egress 封鎖，跳過。⚠️ 順檢發現該區塊通路表上方**沒有「資料截至 YYYY-MM-DD」標示**，而 5e 的複查觸發條件正是讀該日期（逾 30 天才查）——欄位不存在等於該步驟本機也永遠不會觸發，已登漏抓帳
+- 投資訊號回顧（5h）：雲端 egress 封鎖，跳過
+- 安全兩頁結論表退場（5i）：safety（複查 11 列，移除 0／補位 0／不動 11，表滿載 11/11，最舊「SSH 私鑰」最後動態 06-20 距今 84 天未逾線；提示注入表 8/8 滿載，導言／收斂點／「仍未有答案的」三處則數皆為 8，一致）／gov-policy（複查 8 列，移除 0／補位 0／不動 8，最舊 07-31 距今 43 天；產品節 3 項對 3 列標「會」，一致）
+- 商業健康度四表健檢（5j）：指標 10 列（移除 0／補位 0，資料日期皆在 180 天內）／風險 6 列（移除 0／補位 0，滿載，最舊 07-23 距今 51 天）／合作 6 列（最後動態 09-01～09-03，移除 0）／人物 5 人（皆仍有對應列或時序條目）／通路快照資料截至 2026-09-03
+- 社群模式概覽退場複查（5k）：列數 20／21（✅4／⚡6／⏳10）／最後動態已重算／退場 1 列（可靠性測試逾 60 天）／補位 0／合併 0／主線 tag 補填 20 則（累計 94/146，主編複點）／滿載讓位：無。另「誰負責拆分」5 列 4 欄結構未偏離、「缺口追蹤」7/8 列狀態值合規（資料截至 09-06）
+- 社群討論兩表（5k）：爭論 10/10（還在吵 5／已共識 2／僵住 3）／討論表移出 1 列（🌙靜候逾 90 天）、改標 10 列（☄️閃現→🌙靜候）／最後一則證據已重算 10 列，全部未跨退場門檻，摘要三數字與重算一致故未改寫
+- 模型頁世代表（5l）：fable-5 資料截至 2026-09-07（距今 5 天，未逾 60 天不需重查）／護欄四類仍為官方公布的四類；opus-5 資料截至 2026-09-07／官方基準表 4 列、社群獨立複測仍未出現；兩頁熱度表對 feature-radar 全覽表現行世代列**一致，未覆寫**
+- code-quality-decline 三條線（5m）：雲端 egress 封鎖，跳過
+- devpractice 週彙整（5f）：本週亮點 10 條（已覆寫 guide「本週 coding 亮點」節，候選帳本近 7 天 33 筆全檢）；深查段第 6 段（測試與上線）已補庫內證據三則並誠實留白一題，標記升為 `[已補：庫內證據]`；跨頁對帳 ⚠️ 失步 1 處（index 開發實務入口第 2 列冷啟動注記過期，主編已更正為「本週誰在竄升（七日星數差，每日快照）」）
+- 讀者模擬：3 題全部 ✅ 3 跳內找到——① Claude Code 重度使用者「Cowork on Windows 現在是壞的嗎」→ index → entities/claude-code →「現在還沒修好的」表（含 #92984 KB5124008 Plan9 掛載失敗）；② AI 系統開發者「dynamic workflows 和 Managed Agents 該用哪個」→ index 開發實務入口 → topics/anthropic-agent-stack「你該用哪個」；③ 生態追蹤者「中國實驗室非法蒸餾指控現在到哪」→ index → topics/anthropic-government-policy「現在有哪幾條線在動」中國線（最後動態 09-11）
+- 質疑代打（7b）：seed=2026-W37，抽中 Q4、Q1，**兩題皆 ✅ 通過**。Q4（讀者查找）擲骰抽中 2026-09-07 Hut 8 / 350 億美元條目 → index → topics/anthropic-business:308 一行制清單、:403 推論確認段、:517 時序行，3 跳內命中。Q1（溯源）擲骰抽中「29%」→ 出自 community-tech-discussions-archive:461「7 個命中案例中 5 個精準（71%）、2 個誤觸（29%）」，回查 news/2026-05-24.md:59-60 有對應條目與原始 Reddit URL，樣本條件（686 技能向量索引、7 個命中）俱在。⚠️ 執行 Q1 時發現探針在雲端失效：雲端為 shallow clone（僅 51 個 commit、最舊 09-09），`git rev-list -1 --before="7 days ago"` 回空字串，diff 靜默產出 0 個候選數字，看起來像「近 7 天沒有新數字」；本輪以 `git fetch --unshallow` 補回 1,842 個 commit 後才跑得動，已登漏抓帳
+- lint 自我遵守率：6/6 位記者回報一次過（3a–3h 八項＋轉知處置共九項皆有具體頁名與結論，無缺項或含糊，未退回任何一位）
+- 行為層抽驗：seed=2026-W37，N=12 項「已修復／已更新」宣稱，抽中第 4 項（商業記者：competitor-landscape 懸置細節條列 238 字元 → 收斂至 200 內）。主編親自開檔核對——該行剝連結後實測 184 字元，`訊 2026-09-06` 確實加上、狀態符號仍為 ❓ 未被更動、探針欄保留，**宣稱如實**
+- 懸置語法 WARN：無（`check_pending_markers.py` 全庫輸出「✅ 懸置標記語法檢查通過」，基線未低於）
+- 熱度降溫（5a）：檢查 36 條（熱度 ≥ 🔥🔥），降 11 條——v2.1.232 Subagent forking 🔥🔥→🔥、語音模式模型選擇 🔥🔥🔥→🔥🔥、Reflect with Claude 🔥🔥→🔥、Claude Science 🔥🔥→🔥、破壞性 Git 指令自動封鎖 🔥🔥→🔥、Claude Code Artifacts 🔥🔥🔥→🔥🔥、Dynamic Workflows 🔥🔥→🔥、Coordinator 模式 🔥🔥→🔥、自架沙箱＋MCP 隧道 🔥🔥→🔥、`/loop`・`/batch`・`/background` 🔥🔥→🔥、Outcomes 規格驗證 🔥🔥→🔥；同步 entities 頁 1 處（claude-science 熱度表）。**判定方法三輪把關**：第一輪別名對（產品名＋描述詞）產出 21 條零命中，比例可疑；第二輪換別名重跑仍 20 條；第三輪以 `--any` 複驗，其中 9 條實際在近 4 週日報出現過（Auto 模式、跨 session 訊息互通、self-hosted-runner、worktree、Sonnet 5、Opus 4.8、macOS Computer Use、Managed Agents、Claude Security、Claude for Teachers、Cowork 行動版），只降三輪皆零命中者——**別名品質沒有任何看守，錯的別名會造成大規模誤降**。⏳ 逾期：3 條（Proactive Workflows、Capability Curve、Dreaming 記憶整合，發布日皆 > 90 天），均已帶「此後未見後續報導」或「最後後續日期」註記且近 4 週零後續，依「已加註者不重複處置」本輪跳過
+- 高引用停滯（5g）：3 頁（首次執行——本步 2026-09-04 立法，晚於上輪 lint）。處置：派記者確認 0／改引用方連結 0／確認無誤留原狀 3——entities/boris-cherny（入鏈 27／39 天）已在現況段明寫「自 2026-08-04 起本庫未再收到他的新公開發言」；topics/coding-workflow-guide（24／27 天）為週更清冊頁，其規則明訂清冊性更新不動「最後新聞更新」，21 天門檻不適用此頁型態；topics/safety-china-trust-dispute（15／63 天）已在 index 鉤子與頁內寫明「記到 07-11，之後見 anthropic-government-policy」，停滯是事實且已寫明
+- 渲染層驗收：見下方收尾段
+- overview.md：已更新（當前局勢改寫三則新段——研究員接連示警、官方威脅情報報告、agent 積木補上編排層；近期重大事件表整表換窗至 2026-09-05～09-11；功能試用推薦表五列逐一對 feature-radar 核對，熱度與試用價值皆一致未動）
+- 規則版本：d213f32f
+- 漏抓帳：本輪 `misses add` 5 筆——(1) 6f 檢查失效：runbook 步驟表落後八步而 registry 單向配對全綠；(2) 7b 檢查失效：Q1 探針在 shallow clone 下靜默回 0；(3) 5d 無對應檢查：查核程序假設歸因條目必在該日日報，但派工實際涵蓋未進日報的抓取條目；(4) 5e 無對應檢查：pricing 通路區塊缺「資料截至」欄位，使 30 天複查條件永不觸發；(5) 6a 無對應檢查：讓位註記格式與讀者語言閘互相否定
+- 歸因抽查（5d）：抽 5 筆，相符 4（08-07 Microsoft 內部備忘錄→enterprise-tool-tracker、09-09 Show HN 六款多代理工具→community-tech-patterns、08-10 issue #73365→claude-code〔176 讚與日報逐字相符〕、08-04 Dark Reading→ai-agent-safety〔「僅標題」誠實標註〕）／修正漂移 0／無對應 1（07-26 issue #48407→claude-code：該日日報無此條目，但頁面事實自洽且內容無誤，屬程序與實作不一致，見漏抓帳 (3)）
+- 待使用者裁示：
+  - ⏳ 已擱置 0 週｜**規則矛盾三條**（見上「規則檔健檢 → 矛盾」a／b／c）：(a) 死鏈節奏本文與模板不一致，建議保留「每週」並刪除模板中的「（月度）／非本月首次 lint，跳過」與 :218 的雲端跳過括號；(b) 已知問題狀態四選一 vs 五值，建議統一為五值（🔎 已是懸置語法正式符號，且安全政策規則檔已採五值）；(c) 讓位註記格式 vs 讀者語言禁詞，建議把讓位註記改寫進 `%% … %%`（讓位理由對讀者價值為零），三份規則檔同批改並回掃既有註記
+  - ⏳ 已擱置 0 週｜**runbook 步驟表落後八步**：`docs/cloud-runbooks/weekly-lint.md` 步驟表缺 5h／5i／5j／5k／5l／5m／6l／7b 列（6a–6g 由「健檢分項」概括條款覆蓋，不算缺）。建議補列並在 `.claude/review-registry.json` 加反向斷言，讓「wiki-lint.md 新增步驟但 runbook 沒跟」在 commit 前就紅
+  - ⏳ 已擱置 0 週｜**主線 tag 分母寫死 115**：`wiki-ingest-community.md` 第 5 條與 `wiki-lint.md` 5k 回報格式的分母應改為動態計算（實測已 146 且每日成長）
+  - ⏳ 已擱置 0 週｜**`_rejected` 發現窗不寫對帳列**：建議比照 `retired` 續寫 `note` 列，讓「刻意撤下」與「窗死」在 `discovery_queue_history.csv` 上分得開
+  - ⏳ 已擱置 0 週｜**蒸餾候選 18 個時段**（見上「蒸餾候選（3h）」）：是否執行、優先序為何；其中 recursive-self-improvement 需先建 archive 子頁
+  - ⏳ 已擱置 0 週｜**規則密度蒸餾提案 2 檔**：wiki-lint.md（735 行／68 標記）、weekly-report.md（380 行／教訓行 6.1%）
+  - ⏳ 已擱置 0 週｜**併頁候選 1 對**（6k）：topics/anthropic-agent-stack ↔ topics/community-large-codebase-workflow（共享鄰居 managed-agents、coding-workflow-guide）——補連結或視為同一件事？
+  - ⏳ 已擱置 0 週｜**頁面格式模板是否仍為建頁唯一依據**：`wiki-ingest-format.md` entities／topics 模板（140 天）所列節名與現行主力頁的結論表結構落差已大
+  - ⏳ 已擱置 1 週｜**步驟 4 建頁候選**：Simon Willison（114 次／15 頁提及，人物）、Codex（212 次／19 頁）、Cursor（111 次／17 頁）、Cowork（90 次／11 頁）——是否建 entities 頁；Codex／Cursor 若建頁須先寫「蒐集邊界」欄
+  - ⏳ 已擱置 1 週｜**patterns 淘汰候選**：Fast Context Task Router（07-05，Microsoft 專案已下架、⏳ 60 天）仍在表上——移除或降註記
+  - ⏳ 已擱置 1 週｜**榜單汰換**：Search Arena 連續無法取得、Aider Polyglot 停更——是否汰換／由 SWE-bench Pro 或 Terminal-Bench 3.0 承接（本輪 5b 雲端跳過，未複查）
+  - ⏳ 已擱置 2 週｜Q2 資料缺口（gathered_archive 只存刊出量）；5c 產消失衡；ai-agent-safety-archive 狀態統一；5d 歸因日期誤差
