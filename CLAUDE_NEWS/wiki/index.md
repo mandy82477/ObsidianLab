@@ -101,6 +101,6 @@
 | [[topics/enterprise-cost-management]] | 💼 商業 | ongoing | 企業規模採用 Claude 的成本結構挑戰：Uber/Microsoft 案例、缺失工具、因應策略；08-14 新增成本管控動態 |
 | [[topics/enterprise-tool-tracker]] | 💼 商業 | ongoing | 大型企業 AI 編碼工具使用追蹤：Microsoft/Amazon/Uber/Apple 等企業當前工具選擇與變化軌跡；07-03 Alibaba 以疑似後門風險禁用 Claude Code（❌ 退出） |
 | [[topics/anthropic-business]] | 💼 商業 | ongoing | Anthropic 商業健康度：現在的數字、IPO 走到哪一格、合作會不會改到你的帳單；補貼倍數只有社群估算　↳ 子故事：[[topics/anthropic-business-archive]] |
-| [[topics/market-signals]] | 💼 商業 | ongoing | 投資訊號判讀：本庫追的消息放進市場框架會看到什麼——方向、時效、該打幾折、接下來看哪個里程碑，附兩週後回顧結算（教學型事件研究，非投資建議；事實在商業各頁，本頁只放觀點） |
+| [[topics/market-signals]] | 💼 商業 | ongoing | 投資訊號判讀：每則消息照分析師六問拆——新資訊嗎、動到哪個數字、誰有感、多可信、下一個催化劑、所以呢——一眼看正負，一課一課學成課程表，兩週後結算催化劑出現了沒（教學型事件研究，非投資建議；事實在商業各頁，本頁只放觀點） |
 | [[topics/recursive-self-improvement]] | 🏛️ 政策/安全 | ongoing | AI 遞歸自我改進：官方《Risk Report August 2026》（08-14）首度就內部 AI R&D 加速幅度提供量化區間自評，並確認 Model 2 暫無釋出計畫 |
 | [[topics/ai-talent-flow]] | 💼 商業 | ongoing | AI 實驗室人才流動與對各公司影響：Google DeepMind 高層與核心研究員異動（事件 08-05，08-13 查證補記），Anthropic 主要承接 |
