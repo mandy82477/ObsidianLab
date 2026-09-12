@@ -138,6 +138,11 @@ date,window,queued,emitted,note
 2026-09-11,interest:orchestration,30,5,ok
 2026-09-11,interest:git-hygiene,0,0,retired
 2026-09-11,interest:knowledge-curation,22,5,ok
+2026-09-12,hn_bridge,0,0,ok
+2026-09-12,rising,5,3,ok
+2026-09-12,crossing,3,3,ok
+2026-09-12,inventory,3,2,ok
+2026-09-12,velocity,4,2,ok
 2026-09-12,interest:project-setup,30,5,ok
 2026-09-12,interest:codebase-understanding,30,5,ok
 2026-09-12,interest:planning,33,5,ok
