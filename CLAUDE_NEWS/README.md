@@ -14,6 +14,8 @@ scripts/        ← 建置工具（build_web.py）
 
 完整流程設計：`src/DesignDocument/Design Diagram.md`
 
+**Web Reader 的目的**：自用（在瀏覽器讀日報與 wiki，不必開 Obsidian）與分享（部署後把連結給別人，免安裝任何工具）。
+
 ---
 
 ## 快速上手

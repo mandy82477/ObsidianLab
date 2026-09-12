@@ -34,11 +34,6 @@
 **新增 source 或 command 時的判斷標準：**
 > 這份資料能幫助**需要深度與穩定資訊的工程師**更了解 Claude / Anthropic 生態系嗎？若否，不收錄。
 
-### Web Reader 目的
-
-- **自用**：在瀏覽器閱讀日報與 wiki，不需開啟 Obsidian 或看 raw Markdown
-- **分享**：部署後可將連結分享給他人，無需安裝任何工具即可瀏覽
-
 ---
 
 ## 專案架構
@@ -92,15 +87,13 @@
 
 **任何 session、任何情境，一律不得 `git add -A` / `git add .`**，一律指名路徑（如 `git add wiki/ .claude/rules/`）。commit 訊息只描述你這次做的事——**訊息裡沒提到的檔案，就不該在這個 commit 裡**。
 
-> 本條原本只寫在 `.claude/commands/news-pipeline-steps.md`「絕不要在補跑流程裡用 `git add -A`」，射程只到補跑流程；**臨時修復工作不在射程內**，於是 2026-08-29 出事：一個訊息為「fix: 目標日期取自耐久的 gathered_archive」的 commit，掃走了同時間另一份工作中的 `wiki/entities/pricing.md`（+43）、`wiki/topics/model-comparison.md`（+30）、`code-quality-decline.md`、`log.md`（+39）。
->
-> 兩層傷害：(a) **commit 了半成品**——那批 wiki 改動當時尚未修完錨點、規則也還沒移到 lint 檔；(b) **殺掉可追溯性**——本專案的品質系統整個建立在「為什麼加這條」查得到（`log.md` 的 Query 條目、`[加入: YYYY-MM-DD]` 標記、幾乎每條規則都寫著「教訓來自 X 月 Y 日」），而這些考古全靠 `git log` / `git blame`。訊息錯置的 commit 會讓那條路斷掉，且**事後補不回來**。
+（立法依據：2026-08-29 一個訊息錯置的 commit 掃走另一份工作的四個 wiki 檔——見沿革檔 `docs/rules-changelog/CLAUDE.md` 2026-08-29）
 
 **判斷式：** 這個 commit 的訊息，說得出裡面每一個檔案為什麼在嗎？說不出 → 你 add 太多了。
 
 **開放迴路掃描：** 每週跑 `python scripts/open_loops.py`，它彙整**五類**開放迴路的可見性（只報數字與最舊年齡，不合併處理權——每類仍由各自流程消化）：未 commit 的實質改動、逾複查日的 workaround、懸置標記逾期＋舊語法盲區（處理端 `/wiki-lint` 5c）、`wiki/reader-notes.md` 的 ⏳（處理端 `/wiki-weekly-review`）、`wiki/feature-radar.md` 的 ⏳（逾期判定端 `/wiki-lint` 5a）。另附一盞「人類質疑時效燈」：`wiki/log.md` 最新 Query 條目距今 >21 天即亮 ⚠（另計不入總；已知質疑模式由 `/wiki-lint` 7b 依 `.claude/rules/wiki-lint-inquiry.md` 抽題代打，新型質疑仍靠使用者）。日常則由 SessionStart hook 在開啟專案時提醒未 commit 的實質改動。
 
-輸出末尾刻意分成**三個數字**，因為它們回答三個不同的問題 `[加入: 2026-08-29]`：
+輸出末尾分成**三個數字**，各答一個問題 `[加入: 2026-08-29]`：
 
 | 數字 | 回答什麼 | 組成 |
 |------|---------|------|
@@ -108,9 +101,7 @@
 | **已跳票** | 已逾自身期限的承諾（同質、可追蹤） | 逾期 workaround ＋ 逾期懸置 ＋ reader-notes ⏳ ＋ feature-radar ⏳ 逾 90 天者 |
 | **存量遷移** | 格式債，沒對讀者承諾過什麼 | 舊語法盲區（另計，不入總） |
 
-**為什麼不是一個總數**：初版只印一個 229，其中 195 由盲區＋逾期懸置主導——其餘四類全部歸零，總數也只掉到 34。那不是彙整，是「盲區筆數＋雜訊」。同時 feature-radar 那一類初版用全文 `count("⏳")`，把跨層重複與圖例都算進去，實測 23 對真實 13（**高報 77%**），且未逾 90 天的觀望根本不算積壓。
-
-**掃描失敗時不得當成 0**：懸置類掃描壞掉會拋 `PendingScanUnavailable`，此時標題印「數量未知」、總計標為下界 `≥`、且 exit code 非 0——一支專門防低報的腳本，自己靜默回 0 就是得了它要治的病。
+掃描失敗時標「數量未知」、總計印下界 `≥`、exit code 非 0，不得靜默回 0。三個數字為何不合併、失敗為何不得當 0：見沿革檔 `docs/rules-changelog/CLAUDE.md` 2026-08-29。
 
 ---
 
@@ -151,23 +142,9 @@
 **新增 wiki 頁面時的判斷標準：**
 > 這個主題已有足夠的具體資訊（名稱 + 狀態 + 至少一個事件）嗎？若今日首見，先附記在相關頁面的歷史記錄，明天再評估是否建頁。
 
-### 🔗 連結與嵌入語法
+### 🔗 連結語法
 
-wiki 正文的連結寫法以 web reader 解析器（`web_reader/assets/app.js` 的 `parseWikilink()`）吃得下的為準——下表以外的 Obsidian 語法在 Obsidian 正常、在網站上壞掉，一律不得寫入 `wiki/`：
-
-| 語法 | 用途 | 判斷 |
-|------|------|------|
-| `[[entities/x]]`、`[[topics/x]]` | 內部連結（含目錄前綴）| ✅ 預設寫法；網站自動顯示中文頁名，**不必為了好看手寫別名** |
-| `[[feature-radar]]`、`[[news/YYYY-MM-DD]]` | 根頁面、日報連結 | ✅ |
-| `[[頁面\|別名]]` | 別名顯示 | ✅ 只在句子需要特定措辭時用（如「取代 [[entities/opus-4-8\|Opus 4.8]] 成為次旗艦」）|
-| `[[頁面#標題]]`、`[[#本頁標題]]` | 跳到該頁某段 | ✅ 錨點須為目標頁的 **h2–h4 標題原文**；建置的 `check_wikilink_anchors()` 會驗，打錯或標題改名會 WARN |
-| `%% 維運備忘 %%` | 註解（單行或跨行）| ✅ Obsidian 顯示為註解、`scripts/build_web.py` 建置時剝除（正文、搜尋索引、日報 digest 都吃不到）。「刪不掉但讀者不該看到」的話寫這裡，見 `.claude/rules/wiki-reporter-shared.md`「維運備忘的家」 |
-| `![[頁面]]`、`![[圖片.png\|300]]` | 嵌入 / 轉引 | ❌ 網站無嵌入渲染，原樣輸出 `![[...]]` |
-| `[[頁面#^區塊id]]`、段落尾 `^區塊id` | 區塊引用 | ❌ 同上，解析器不支援 |
-
-指向長頁面的特定段落時**優先用錨點**（`詳見 [[topics/model-comparison#快速選型表]]`），不要只寫頁名讓讀者自己在數百行裡找。
-
-> 要改用嵌入或區塊 id → 先擴充 `parseWikilink()` / `wikilinkButtonHtml()` 與 `scripts/build_web.py` 的 `check_wikilinks()`，不可只改 wiki 內文。
+wiki 正文只能用 web reader 解析器吃得下的 wikilink 語法；完整語法契約（含 ❌ 嵌入與區塊 id）住 `wiki/CLAUDE.md`「連結慣例」，進入 `wiki/` 自動載入。
 
 ### ✏️ 修改 rules 或 commands 時的注意事項
 
