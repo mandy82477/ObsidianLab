@@ -417,16 +417,6 @@
       "pageType": "entity"
     },
     {
-      "id": "community-pattern-trends",
-      "name": "社群趨勢觀察（週更）",
-      "pageType": "topic"
-    },
-    {
-      "id": "community-tech-tools",
-      "name": "社群工具目錄",
-      "pageType": "topic"
-    },
-    {
       "id": "long-context-1m",
       "name": "1M context：加不加價、你能不能關",
       "pageType": "topic"
